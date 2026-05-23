@@ -14,11 +14,11 @@
       "Tour por la playa Hyeopjae",
       "Tour por la franja de cafés de Jeju"
     ],
-    "ogImage": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
     "title": "Tour auténtico de día completo por el oeste y sur de Jeju | AtoC Korea"
   },
   "catalog_card": {
-    "thumbnail": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+    "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
     "title": "Jeju Oeste-Sur: Auténtico",
     "priceLabel": "Desde US$59 por persona (antes $69, 14% descuento)",
     "shortCardDescription": "Un tour en grupo pequeño que combina las costas occidental y meridional de Jeju en un solo circuito: el Humedal de Altitud 1100 de Hallasan (UNESCO), el Acantilado Jusangjeolli de columnas hexagonales, el mirador panorámico de Songaksan, la Cascada Cheonjeyeon, el Museo del Té O'sulloc y la franja de cafés de la playa Hyeopjae en la costa oeste. Mismo operador que el tour UNESCO del sur, pero con un enfoque más orientado al estilo de vida: \"paisajes volcánicos que se encuentran con costas dramáticas y modernos cafés junto al mar.\"",
@@ -45,7 +45,7 @@
       "Cultura del café",
       "Costero"
     ],
-    "heroImage": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp"
+    "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp"
   },
   "headlineLine1": "Jeju Oeste-Sur",
   "headlineLine2": "Auténtico",
@@ -58,7 +58,7 @@
     "per": "person"
   },
   "hero": {
-    "imageUrl": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+    "imageUrl": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
     "imagePosition": "center 35%",
     "tagline": "Paisajes volcánicos que se encuentran con costas dramáticas y modernos cafés junto al mar — el circuito oeste-sur de Jeju como debe hacerse",
     "pills": [
@@ -153,13 +153,21 @@
     {
       "id": 3,
       "type": "photo",
+      "src": "/images/itinerary/songaksan-coastal-monument.webp",
+      "location": "Monte Songaksan (mirador panorámico)",
+      "alt": "Monte Songaksan (mirador panorámico) — on-route photo",
+      "caption": "Monte Songaksan (mirador panorámico)"
+    },
+    {
+      "id": 4,
+      "type": "photo",
       "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
       "location": "Cascada Cheonjeyeon (Estanque de los Dioses)",
       "alt": "Cascada Cheonjeyeon (Estanque de los Dioses) — gallery image 1",
       "caption": "Cascada Cheonjeyeon (Estanque de los Dioses) — photo 1"
     },
     {
-      "id": 4,
+      "id": 5,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
       "location": "Museo del Té O'sulloc + Campos de Té Verde",
@@ -167,31 +175,7 @@
       "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 1"
     },
     {
-      "id": 5,
-      "type": "photo",
-      "src": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
-      "location": "Museo del Té O'sulloc + Campos de Té Verde",
-      "alt": "Museo del Té O'sulloc + Campos de Té Verde — photo 2",
-      "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 2"
-    },
-    {
       "id": 6,
-      "type": "photo",
-      "src": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
-      "location": "Museo del Té O'sulloc + Campos de Té Verde",
-      "alt": "Museo del Té O'sulloc + Campos de Té Verde — photo 3",
-      "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 3"
-    },
-    {
-      "id": 7,
-      "type": "photo",
-      "src": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
-      "location": "Museo del Té O'sulloc + Campos de Té Verde",
-      "alt": "Museo del Té O'sulloc + Campos de Té Verde — photo 4",
-      "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 4"
-    },
-    {
-      "id": 8,
       "type": "photo",
       "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
       "location": "Playa Hyeopjae + franja de cafés de la costa oeste",
@@ -199,7 +183,7 @@
       "caption": "Playa Hyeopjae + franja de cafés de la costa oeste — photo 1"
     },
     {
-      "id": 9,
+      "id": 7,
       "type": "photo",
       "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
       "location": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO)",
@@ -207,7 +191,7 @@
       "caption": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — photo 2"
     },
     {
-      "id": 10,
+      "id": 8,
       "type": "photo",
       "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
       "location": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO)",
@@ -215,7 +199,31 @@
       "caption": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — photo 3"
     },
     {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21-2.webp",
+      "location": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO)",
+      "alt": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — gallery image 4",
+      "caption": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — photo 4"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22-2.webp",
+      "location": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO)",
+      "alt": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — gallery image 5",
+      "caption": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — photo 5"
+    },
+    {
       "id": 11,
+      "type": "photo",
+      "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23-2.webp",
+      "location": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO)",
+      "alt": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — gallery image 6",
+      "caption": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — photo 6"
+    },
+    {
+      "id": 12,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
       "location": "Acantilado Jusangjeolli (Geoparque UNESCO)",
@@ -223,7 +231,7 @@
       "caption": "Acantilado Jusangjeolli (Geoparque UNESCO) — photo 2"
     },
     {
-      "id": 12,
+      "id": 13,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
       "location": "Acantilado Jusangjeolli (Geoparque UNESCO)",
@@ -231,7 +239,7 @@
       "caption": "Acantilado Jusangjeolli (Geoparque UNESCO) — photo 3"
     },
     {
-      "id": 13,
+      "id": 14,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
       "location": "Acantilado Jusangjeolli (Geoparque UNESCO)",
@@ -239,7 +247,63 @@
       "caption": "Acantilado Jusangjeolli (Geoparque UNESCO) — photo 4"
     },
     {
-      "id": 14,
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+      "location": "Acantilado Jusangjeolli (Geoparque UNESCO)",
+      "alt": "Acantilado Jusangjeolli (Geoparque UNESCO) — gallery image 5",
+      "caption": "Acantilado Jusangjeolli (Geoparque UNESCO) — photo 5"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+      "location": "Acantilado Jusangjeolli (Geoparque UNESCO)",
+      "alt": "Acantilado Jusangjeolli (Geoparque UNESCO) — gallery image 6",
+      "caption": "Acantilado Jusangjeolli (Geoparque UNESCO) — photo 6"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+      "location": "Acantilado Jusangjeolli (Geoparque UNESCO)",
+      "alt": "Acantilado Jusangjeolli (Geoparque UNESCO) — gallery image 7",
+      "caption": "Acantilado Jusangjeolli (Geoparque UNESCO) — photo 7"
+    },
+    {
+      "id": 18,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+      "location": "Acantilado Jusangjeolli (Geoparque UNESCO)",
+      "alt": "Acantilado Jusangjeolli (Geoparque UNESCO) — gallery image 8",
+      "caption": "Acantilado Jusangjeolli (Geoparque UNESCO) — photo 8"
+    },
+    {
+      "id": 19,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/photo-005.webp",
+      "location": "Acantilado Jusangjeolli (Geoparque UNESCO)",
+      "alt": "Acantilado Jusangjeolli (Geoparque UNESCO) — gallery image 9",
+      "caption": "Acantilado Jusangjeolli (Geoparque UNESCO) — photo 9"
+    },
+    {
+      "id": 20,
+      "type": "photo",
+      "src": "/images/itinerary/songaksan-cliff-trail-sunset.webp",
+      "location": "Monte Songaksan (mirador panorámico)",
+      "alt": "Monte Songaksan (mirador panorámico) — on-route photo",
+      "caption": "Monte Songaksan (mirador panorámico)"
+    },
+    {
+      "id": 21,
+      "type": "photo",
+      "src": "/images/itinerary/songaksan-crater-aerial.webp",
+      "location": "Monte Songaksan (mirador panorámico)",
+      "alt": "Monte Songaksan (mirador panorámico) — on-route photo",
+      "caption": "Monte Songaksan (mirador panorámico)"
+    },
+    {
+      "id": 22,
       "type": "photo",
       "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
       "location": "Cascada Cheonjeyeon (Estanque de los Dioses)",
@@ -247,7 +311,7 @@
       "caption": "Cascada Cheonjeyeon (Estanque de los Dioses) — photo 2"
     },
     {
-      "id": 15,
+      "id": 23,
       "type": "photo",
       "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
       "location": "Cascada Cheonjeyeon (Estanque de los Dioses)",
@@ -255,7 +319,63 @@
       "caption": "Cascada Cheonjeyeon (Estanque de los Dioses) — photo 3"
     },
     {
-      "id": 16,
+      "id": 24,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04-2.webp",
+      "location": "Cascada Cheonjeyeon (Estanque de los Dioses)",
+      "alt": "Cascada Cheonjeyeon (Estanque de los Dioses) — gallery image 4",
+      "caption": "Cascada Cheonjeyeon (Estanque de los Dioses) — photo 4"
+    },
+    {
+      "id": 25,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07-2.webp",
+      "location": "Cascada Cheonjeyeon (Estanque de los Dioses)",
+      "alt": "Cascada Cheonjeyeon (Estanque de los Dioses) — gallery image 5",
+      "caption": "Cascada Cheonjeyeon (Estanque de los Dioses) — photo 5"
+    },
+    {
+      "id": 26,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08-2.webp",
+      "location": "Cascada Cheonjeyeon (Estanque de los Dioses)",
+      "alt": "Cascada Cheonjeyeon (Estanque de los Dioses) — gallery image 6",
+      "caption": "Cascada Cheonjeyeon (Estanque de los Dioses) — photo 6"
+    },
+    {
+      "id": 27,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/photo-004.webp",
+      "location": "Cascada Cheonjeyeon (Estanque de los Dioses)",
+      "alt": "Cascada Cheonjeyeon (Estanque de los Dioses) — gallery image 7",
+      "caption": "Cascada Cheonjeyeon (Estanque de los Dioses) — photo 7"
+    },
+    {
+      "id": 28,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
+      "location": "Museo del Té O'sulloc + Campos de Té Verde",
+      "alt": "Museo del Té O'sulloc + Campos de Té Verde — photo 2",
+      "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 2"
+    },
+    {
+      "id": 29,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
+      "location": "Museo del Té O'sulloc + Campos de Té Verde",
+      "alt": "Museo del Té O'sulloc + Campos de Té Verde — photo 3",
+      "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 3"
+    },
+    {
+      "id": 30,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
+      "location": "Museo del Té O'sulloc + Campos de Té Verde",
+      "alt": "Museo del Té O'sulloc + Campos de Té Verde — photo 4",
+      "caption": "Museo del Té O'sulloc + Campos de Té Verde — photo 4"
+    },
+    {
+      "id": 31,
       "type": "photo",
       "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
       "location": "Playa Hyeopjae + franja de cafés de la costa oeste",
@@ -263,12 +383,36 @@
       "caption": "Playa Hyeopjae + franja de cafés de la costa oeste — photo 2"
     },
     {
-      "id": 17,
+      "id": 32,
       "type": "photo",
       "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
       "location": "Playa Hyeopjae + franja de cafés de la costa oeste",
       "alt": "Playa Hyeopjae + franja de cafés de la costa oeste — gallery image 3",
       "caption": "Playa Hyeopjae + franja de cafés de la costa oeste — photo 3"
+    },
+    {
+      "id": 33,
+      "type": "photo",
+      "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01-2.webp",
+      "location": "Playa Hyeopjae + franja de cafés de la costa oeste",
+      "alt": "Playa Hyeopjae + franja de cafés de la costa oeste — gallery image 4",
+      "caption": "Playa Hyeopjae + franja de cafés de la costa oeste — photo 4"
+    },
+    {
+      "id": 34,
+      "type": "photo",
+      "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02-2.webp",
+      "location": "Playa Hyeopjae + franja de cafés de la costa oeste",
+      "alt": "Playa Hyeopjae + franja de cafés de la costa oeste — gallery image 5",
+      "caption": "Playa Hyeopjae + franja de cafés de la costa oeste — photo 5"
+    },
+    {
+      "id": 35,
+      "type": "photo",
+      "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03-2.webp",
+      "location": "Playa Hyeopjae + franja de cafés de la costa oeste",
+      "alt": "Playa Hyeopjae + franja de cafés de la costa oeste — gallery image 6",
+      "caption": "Playa Hyeopjae + franja de cafés de la costa oeste — photo 6"
     }
   ],
   "itineraryStops": [
@@ -371,6 +515,18 @@
         {
           "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -397,6 +553,30 @@
           "location": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO)",
           "caption": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — photo 3",
           "alt": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21-2.webp",
+          "location": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO)",
+          "caption": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — photo 4",
+          "alt": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22-2.webp",
+          "location": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO)",
+          "caption": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — photo 5",
+          "alt": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23-2.webp",
+          "location": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO)",
+          "caption": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — photo 6",
+          "alt": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — gallery image 6"
         }
       ]
     },
@@ -476,6 +656,26 @@
         {
           "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/photo-005.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -510,6 +710,46 @@
           "location": "Acantilado Jusangjeolli (Geoparque UNESCO)",
           "caption": "Acantilado Jusangjeolli (Geoparque UNESCO) — photo 4",
           "alt": "Acantilado Jusangjeolli (Geoparque UNESCO) — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+          "location": "Acantilado Jusangjeolli (Geoparque UNESCO)",
+          "caption": "Acantilado Jusangjeolli (Geoparque UNESCO) — photo 5",
+          "alt": "Acantilado Jusangjeolli (Geoparque UNESCO) — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+          "location": "Acantilado Jusangjeolli (Geoparque UNESCO)",
+          "caption": "Acantilado Jusangjeolli (Geoparque UNESCO) — photo 6",
+          "alt": "Acantilado Jusangjeolli (Geoparque UNESCO) — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+          "location": "Acantilado Jusangjeolli (Geoparque UNESCO)",
+          "caption": "Acantilado Jusangjeolli (Geoparque UNESCO) — photo 7",
+          "alt": "Acantilado Jusangjeolli (Geoparque UNESCO) — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+          "location": "Acantilado Jusangjeolli (Geoparque UNESCO)",
+          "caption": "Acantilado Jusangjeolli (Geoparque UNESCO) — photo 8",
+          "alt": "Acantilado Jusangjeolli (Geoparque UNESCO) — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/photo-005.webp",
+          "location": "Acantilado Jusangjeolli (Geoparque UNESCO)",
+          "caption": "Acantilado Jusangjeolli (Geoparque UNESCO) — photo 9",
+          "alt": "Acantilado Jusangjeolli (Geoparque UNESCO) — gallery image 9"
         }
       ]
     },
@@ -671,6 +911,22 @@
         {
           "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/photo-004.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -697,6 +953,38 @@
           "location": "Cascada Cheonjeyeon (Estanque de los Dioses)",
           "caption": "Cascada Cheonjeyeon (Estanque de los Dioses) — photo 3",
           "alt": "Cascada Cheonjeyeon (Estanque de los Dioses) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04-2.webp",
+          "location": "Cascada Cheonjeyeon (Estanque de los Dioses)",
+          "caption": "Cascada Cheonjeyeon (Estanque de los Dioses) — photo 4",
+          "alt": "Cascada Cheonjeyeon (Estanque de los Dioses) — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07-2.webp",
+          "location": "Cascada Cheonjeyeon (Estanque de los Dioses)",
+          "caption": "Cascada Cheonjeyeon (Estanque de los Dioses) — photo 5",
+          "alt": "Cascada Cheonjeyeon (Estanque de los Dioses) — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08-2.webp",
+          "location": "Cascada Cheonjeyeon (Estanque de los Dioses)",
+          "caption": "Cascada Cheonjeyeon (Estanque de los Dioses) — photo 6",
+          "alt": "Cascada Cheonjeyeon (Estanque de los Dioses) — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/photo-004.webp",
+          "location": "Cascada Cheonjeyeon (Estanque de los Dioses)",
+          "caption": "Cascada Cheonjeyeon (Estanque de los Dioses) — photo 7",
+          "alt": "Cascada Cheonjeyeon (Estanque de los Dioses) — gallery image 7"
         }
       ]
     },
@@ -943,6 +1231,18 @@
         {
           "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -969,6 +1269,30 @@
           "location": "Playa Hyeopjae + franja de cafés de la costa oeste",
           "caption": "Playa Hyeopjae + franja de cafés de la costa oeste — photo 3",
           "alt": "Playa Hyeopjae + franja de cafés de la costa oeste — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01-2.webp",
+          "location": "Playa Hyeopjae + franja de cafés de la costa oeste",
+          "caption": "Playa Hyeopjae + franja de cafés de la costa oeste — photo 4",
+          "alt": "Playa Hyeopjae + franja de cafés de la costa oeste — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02-2.webp",
+          "location": "Playa Hyeopjae + franja de cafés de la costa oeste",
+          "caption": "Playa Hyeopjae + franja de cafés de la costa oeste — photo 5",
+          "alt": "Playa Hyeopjae + franja de cafés de la costa oeste — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03-2.webp",
+          "location": "Playa Hyeopjae + franja de cafés de la costa oeste",
+          "caption": "Playa Hyeopjae + franja de cafés de la costa oeste — photo 6",
+          "alt": "Playa Hyeopjae + franja de cafés de la costa oeste — gallery image 6"
         }
       ]
     },
@@ -2015,7 +2339,10 @@
             "images": [
               "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
               "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
-              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp"
+              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21-2.webp",
+              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22-2.webp",
+              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23-2.webp"
             ],
             "imageCredits": [
               {
@@ -2028,6 +2355,18 @@
               },
               {
                 "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23-2.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2055,6 +2394,30 @@
                 "location": "Humedal de Altitud 1100 de Hallasan (UNESCO)",
                 "caption": "Humedal de Altitud 1100 de Hallasan (UNESCO) — photo 3",
                 "alt": "Humedal de Altitud 1100 de Hallasan (UNESCO) — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21-2.webp",
+                "location": "Humedal de Altitud 1100 de Hallasan (UNESCO)",
+                "caption": "Humedal de Altitud 1100 de Hallasan (UNESCO) — photo 4",
+                "alt": "Humedal de Altitud 1100 de Hallasan (UNESCO) — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22-2.webp",
+                "location": "Humedal de Altitud 1100 de Hallasan (UNESCO)",
+                "caption": "Humedal de Altitud 1100 de Hallasan (UNESCO) — photo 5",
+                "alt": "Humedal de Altitud 1100 de Hallasan (UNESCO) — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23-2.webp",
+                "location": "Humedal de Altitud 1100 de Hallasan (UNESCO)",
+                "caption": "Humedal de Altitud 1100 de Hallasan (UNESCO) — photo 6",
+                "alt": "Humedal de Altitud 1100 de Hallasan (UNESCO) — gallery image 6"
               }
             ]
           },
@@ -2106,7 +2469,12 @@
               "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
               "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
               "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
-              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp"
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+              "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+              "/images/tours/jusangjeolli/photo-005.webp"
             ],
             "imageCredits": [
               {
@@ -2123,6 +2491,26 @@
               },
               {
                 "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/photo-005.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2158,6 +2546,46 @@
                 "location": "Acantilado Jusangjeolli (Geoparque UNESCO)",
                 "caption": "Acantilado Jusangjeolli (Geoparque UNESCO) — photo 4",
                 "alt": "Acantilado Jusangjeolli (Geoparque UNESCO) — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+                "location": "Acantilado Jusangjeolli (Geoparque UNESCO)",
+                "caption": "Acantilado Jusangjeolli (Geoparque UNESCO) — photo 5",
+                "alt": "Acantilado Jusangjeolli (Geoparque UNESCO) — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+                "location": "Acantilado Jusangjeolli (Geoparque UNESCO)",
+                "caption": "Acantilado Jusangjeolli (Geoparque UNESCO) — photo 6",
+                "alt": "Acantilado Jusangjeolli (Geoparque UNESCO) — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+                "location": "Acantilado Jusangjeolli (Geoparque UNESCO)",
+                "caption": "Acantilado Jusangjeolli (Geoparque UNESCO) — photo 7",
+                "alt": "Acantilado Jusangjeolli (Geoparque UNESCO) — gallery image 7"
+              },
+              {
+                "id": 8,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+                "location": "Acantilado Jusangjeolli (Geoparque UNESCO)",
+                "caption": "Acantilado Jusangjeolli (Geoparque UNESCO) — photo 8",
+                "alt": "Acantilado Jusangjeolli (Geoparque UNESCO) — gallery image 8"
+              },
+              {
+                "id": 9,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/photo-005.webp",
+                "location": "Acantilado Jusangjeolli (Geoparque UNESCO)",
+                "caption": "Acantilado Jusangjeolli (Geoparque UNESCO) — photo 9",
+                "alt": "Acantilado Jusangjeolli (Geoparque UNESCO) — gallery image 9"
               }
             ]
           },
@@ -2282,7 +2710,11 @@
             "images": [
               "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
               "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
-              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp"
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04-2.webp",
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07-2.webp",
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08-2.webp",
+              "/images/tours/cheonjeyeon-falls/photo-004.webp"
             ],
             "imageCredits": [
               {
@@ -2295,6 +2727,22 @@
               },
               {
                 "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheonjeyeon-falls/photo-004.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2322,6 +2770,38 @@
                 "location": "Cascada de Cheonjeyeon (Estanque de los Dioses)",
                 "caption": "Cascada de Cheonjeyeon (Estanque de los Dioses) — photo 3",
                 "alt": "Cascada de Cheonjeyeon (Estanque de los Dioses) — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04-2.webp",
+                "location": "Cascada de Cheonjeyeon (Estanque de los Dioses)",
+                "caption": "Cascada de Cheonjeyeon (Estanque de los Dioses) — photo 4",
+                "alt": "Cascada de Cheonjeyeon (Estanque de los Dioses) — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07-2.webp",
+                "location": "Cascada de Cheonjeyeon (Estanque de los Dioses)",
+                "caption": "Cascada de Cheonjeyeon (Estanque de los Dioses) — photo 5",
+                "alt": "Cascada de Cheonjeyeon (Estanque de los Dioses) — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08-2.webp",
+                "location": "Cascada de Cheonjeyeon (Estanque de los Dioses)",
+                "caption": "Cascada de Cheonjeyeon (Estanque de los Dioses) — photo 6",
+                "alt": "Cascada de Cheonjeyeon (Estanque de los Dioses) — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/photo-004.webp",
+                "location": "Cascada de Cheonjeyeon (Estanque de los Dioses)",
+                "caption": "Cascada de Cheonjeyeon (Estanque de los Dioses) — photo 7",
+                "alt": "Cascada de Cheonjeyeon (Estanque de los Dioses) — gallery image 7"
               }
             ]
           },
@@ -2533,7 +3013,10 @@
             "images": [
               "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
               "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
-              "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp"
+              "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
+              "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01-2.webp",
+              "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02-2.webp",
+              "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03-2.webp"
             ],
             "imageCredits": [
               {
@@ -2546,6 +3029,18 @@
               },
               {
                 "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03-2.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2573,6 +3068,30 @@
                 "location": "Playa de Hyeopjae + franja de cafeterías de la costa oeste",
                 "caption": "Playa de Hyeopjae + franja de cafeterías de la costa oeste — photo 3",
                 "alt": "Playa de Hyeopjae + franja de cafeterías de la costa oeste — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01-2.webp",
+                "location": "Playa de Hyeopjae + franja de cafeterías de la costa oeste",
+                "caption": "Playa de Hyeopjae + franja de cafeterías de la costa oeste — photo 4",
+                "alt": "Playa de Hyeopjae + franja de cafeterías de la costa oeste — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02-2.webp",
+                "location": "Playa de Hyeopjae + franja de cafeterías de la costa oeste",
+                "caption": "Playa de Hyeopjae + franja de cafeterías de la costa oeste — photo 5",
+                "alt": "Playa de Hyeopjae + franja de cafeterías de la costa oeste — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03-2.webp",
+                "location": "Playa de Hyeopjae + franja de cafeterías de la costa oeste",
+                "caption": "Playa de Hyeopjae + franja de cafeterías de la costa oeste — photo 6",
+                "alt": "Playa de Hyeopjae + franja de cafeterías de la costa oeste — gallery image 6"
               }
             ]
           },

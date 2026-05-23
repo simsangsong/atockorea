@@ -13,10 +13,10 @@
       "부산 출발 불국사",
       "신라 왕국 문화유산 투어"
     ],
-    "ogImage": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp"
+    "ogImage": "https://www.atockorea.com/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp"
   },
   "catalog_card": {
-    "thumbnail": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+    "thumbnail": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
     "title": "부산 → 경주 고도 일일 투어",
     "priceLabel": "1인 US$39 (정가 $50, 22% 할인)",
     "shortCardDescription": "신라 왕국의 고도(古都) 경주(기원전 57년~935년)로 떠나는 부산 출발 소규모 당일 투어. 유네스코 레거시 버전과 동일한 클래식 6개 명소 코스(아홉산 숲 대나무숲 → 불국사 유네스코 → 경주 쌈밥 점심 → 국립박물관 → 교촌 한옥마을 → 월정교)로 진행되지만, 여유로운 페이스와 이른 귀환(약 18:50)이 특징입니다. 영어·중국어 가능 공인 가이드, 미니밴 제공, 전 일정 입장료 무료(아홉산 ₩5,000 및 점심 식사는 현장 결제).",
@@ -40,7 +40,7 @@
       "부산 출발",
       "이른 귀환"
     ],
-    "heroImage": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp"
+    "heroImage": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp"
   },
   "headlineLine1": "부산 → 경주 고도 일일 투어",
   "headlineLine2": "투어",
@@ -53,7 +53,7 @@
     "discountPercent": null
   },
   "hero": {
-    "imageUrl": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+    "imageUrl": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
     "imagePosition": "center 35%",
     "tagline": "불국사, 박물관, 교촌, 다리 — 여유로운 페이스, 이른 귀환",
     "pills": [
@@ -158,22 +158,22 @@
       "id": 4,
       "type": "photo",
       "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
-      "location": "교촌한옥마을",
-      "alt": "교촌한옥마을 — 갤러리 이미지 1",
-      "caption": "교촌한옥마을 — 사진 1"
+      "location": "교촌 한옥마을",
+      "alt": "교촌 한옥마을 — gallery image 1",
+      "caption": "교촌 한옥마을 — photo 1"
     },
     {
       "id": 5,
       "type": "photo",
-      "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03.webp",
+      "src": "/images/itinerary/woljeonggyo-front-day.webp",
       "location": "월정교",
-      "alt": "월정교 — on-route photo",
-      "caption": "월정교"
+      "alt": "월정교 — gallery image 1",
+      "caption": "월정교 — photo 1"
     },
     {
       "id": 6,
       "type": "photo",
-      "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp",
+      "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03.webp",
       "location": "아홉산숲",
       "alt": "아홉산숲 — gallery image 2",
       "caption": "아홉산숲 — photo 2"
@@ -181,58 +181,186 @@
     {
       "id": 7,
       "type": "photo",
-      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
-      "location": "불국사",
-      "alt": "불국사 — 갤러리 이미지 3",
-      "caption": "불국사 — 사진 3"
+      "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp",
+      "location": "아홉산숲",
+      "alt": "아홉산숲 — gallery image 3",
+      "caption": "아홉산숲 — photo 3"
     },
     {
       "id": 8,
       "type": "photo",
-      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+      "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47-2.webp",
+      "location": "아홉산숲",
+      "alt": "아홉산숲 — gallery image 4",
+      "caption": "아홉산숲 — photo 4"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03-2.webp",
+      "location": "아홉산숲",
+      "alt": "아홉산숲 — gallery image 5",
+      "caption": "아홉산숲 — photo 5"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07-2.webp",
+      "location": "아홉산숲",
+      "alt": "아홉산숲 — gallery image 6",
+      "caption": "아홉산숲 — photo 6"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
       "location": "불국사 (유네스코 세계문화유산)",
       "alt": "불국사 (유네스코 세계문화유산) — gallery image 2",
       "caption": "불국사 (유네스코 세계문화유산) — photo 2"
     },
     {
-      "id": 9,
+      "id": 12,
       "type": "photo",
-      "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
-      "location": "국립경주박물관",
-      "alt": "국립경주박물관 — 갤러리 이미지 3",
-      "caption": "국립경주박물관 — 사진 3"
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+      "location": "불국사 (유네스코 세계문화유산)",
+      "alt": "불국사 (유네스코 세계문화유산) — gallery image 3",
+      "caption": "불국사 (유네스코 세계문화유산) — photo 3"
     },
     {
-      "id": 10,
+      "id": 13,
       "type": "photo",
-      "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp",
+      "src": "/images/tours/bulguksa-temple/photo-001.webp",
+      "location": "불국사 (유네스코 세계문화유산)",
+      "alt": "불국사 (유네스코 세계문화유산) — gallery image 4",
+      "caption": "불국사 (유네스코 세계문화유산) — photo 4"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/bulguksa-temple/photo-002.webp",
+      "location": "불국사 (유네스코 세계문화유산)",
+      "alt": "불국사 (유네스코 세계문화유산) — gallery image 5",
+      "caption": "불국사 (유네스코 세계문화유산) — photo 5"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
       "location": "국립경주박물관",
       "alt": "국립경주박물관 — gallery image 2",
       "caption": "국립경주박물관 — photo 2"
     },
     {
-      "id": 11,
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp",
+      "location": "국립경주박물관",
+      "alt": "국립경주박물관 — gallery image 3",
+      "caption": "국립경주박물관 — photo 3"
+    },
+    {
+      "id": 17,
       "type": "photo",
       "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-53.webp",
-      "location": "교촌한옥마을",
-      "alt": "교촌한옥마을 — 갤러리 이미지 3",
-      "caption": "교촌한옥마을 — 사진 3"
+      "location": "교촌 한옥마을",
+      "alt": "교촌 한옥마을 — gallery image 2",
+      "caption": "교촌 한옥마을 — photo 2"
     },
     {
-      "id": 12,
+      "id": 18,
       "type": "photo",
       "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-57.webp",
-      "location": "교촌한옥마을",
-      "alt": "교촌한옥마을 — 갤러리 이미지 2",
-      "caption": "교촌한옥마을 — 사진 2"
+      "location": "교촌 한옥마을",
+      "alt": "교촌 한옥마을 — gallery image 3",
+      "caption": "교촌 한옥마을 — photo 3"
     },
     {
-      "id": 13,
+      "id": 19,
       "type": "photo",
       "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp",
-      "location": "교촌한옥마을",
-      "alt": "교촌한옥마을 — 갤러리 이미지 3",
-      "caption": "교촌한옥마을 — 사진 3"
+      "location": "교촌 한옥마을",
+      "alt": "교촌 한옥마을 — gallery image 4",
+      "caption": "교촌 한옥마을 — photo 4"
+    },
+    {
+      "id": 20,
+      "type": "photo",
+      "src": "/images/tours/gyochon-hanok-village/photo-001.webp",
+      "location": "교촌 한옥마을",
+      "alt": "교촌 한옥마을 — gallery image 5",
+      "caption": "교촌 한옥마을 — photo 5"
+    },
+    {
+      "id": 21,
+      "type": "photo",
+      "src": "/images/tours/gyochon-hanok-village/photo-002.webp",
+      "location": "교촌 한옥마을",
+      "alt": "교촌 한옥마을 — gallery image 6",
+      "caption": "교촌 한옥마을 — photo 6"
+    },
+    {
+      "id": 22,
+      "type": "photo",
+      "src": "/images/tours/gyochon-hanok-village/photo-003.webp",
+      "location": "교촌 한옥마을",
+      "alt": "교촌 한옥마을 — gallery image 7",
+      "caption": "교촌 한옥마을 — photo 7"
+    },
+    {
+      "id": 23,
+      "type": "photo",
+      "src": "/images/tours/gyochon-hanok-village/photo-004.webp",
+      "location": "교촌 한옥마을",
+      "alt": "교촌 한옥마을 — gallery image 8",
+      "caption": "교촌 한옥마을 — photo 8"
+    },
+    {
+      "id": 24,
+      "type": "photo",
+      "src": "/images/tours/gyochon-hanok-village/photo-005.webp",
+      "location": "교촌 한옥마을",
+      "alt": "교촌 한옥마을 — gallery image 9",
+      "caption": "교촌 한옥마을 — photo 9"
+    },
+    {
+      "id": 25,
+      "type": "photo",
+      "src": "/images/tours/gyochon-hanok-village/photo-006.webp",
+      "location": "교촌 한옥마을",
+      "alt": "교촌 한옥마을 — gallery image 10",
+      "caption": "교촌 한옥마을 — photo 10"
+    },
+    {
+      "id": 26,
+      "type": "photo",
+      "src": "/images/itinerary/woljeonggyo-reflection.webp",
+      "location": "월정교",
+      "alt": "월정교 — gallery image 2",
+      "caption": "월정교 — photo 2"
+    },
+    {
+      "id": 27,
+      "type": "photo",
+      "src": "/images/itinerary/woljeonggyo-pavilion-night.webp",
+      "location": "월정교",
+      "alt": "월정교 — gallery image 3",
+      "caption": "월정교 — photo 3"
+    },
+    {
+      "id": 28,
+      "type": "photo",
+      "src": "/images/tours/woljeonggyo/photo-001.webp",
+      "location": "월정교",
+      "alt": "월정교 — gallery image 4",
+      "caption": "월정교 — photo 4"
+    },
+    {
+      "id": 29,
+      "type": "photo",
+      "src": "/images/tours/woljeonggyo/photo-002.webp",
+      "location": "월정교",
+      "alt": "월정교 — gallery image 5",
+      "caption": "월정교 — photo 5"
     }
   ],
   "itineraryStops": [
@@ -335,6 +463,18 @@
         {
           "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -361,6 +501,30 @@
           "location": "아홉산숲",
           "caption": "아홉산숲 — photo 3",
           "alt": "아홉산숲 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47-2.webp",
+          "location": "아홉산숲",
+          "caption": "아홉산숲 — photo 4",
+          "alt": "아홉산숲 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03-2.webp",
+          "location": "아홉산숲",
+          "caption": "아홉산숲 — photo 5",
+          "alt": "아홉산숲 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07-2.webp",
+          "location": "아홉산숲",
+          "caption": "아홉산숲 — photo 6",
+          "alt": "아홉산숲 — gallery image 6"
         }
       ]
     },
@@ -435,6 +599,14 @@
         {
           "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/bulguksa-temple/photo-001.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/bulguksa-temple/photo-002.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -461,6 +633,22 @@
           "location": "불국사 (유네스코 세계문화유산)",
           "caption": "불국사 (유네스코 세계문화유산) — photo 3",
           "alt": "불국사 (유네스코 세계문화유산) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/photo-001.webp",
+          "location": "불국사 (유네스코 세계문화유산)",
+          "caption": "불국사 (유네스코 세계문화유산) — photo 4",
+          "alt": "불국사 (유네스코 세계문화유산) — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/photo-002.webp",
+          "location": "불국사 (유네스코 세계문화유산)",
+          "caption": "불국사 (유네스코 세계문화유산) — photo 5",
+          "alt": "불국사 (유네스코 세계문화유산) — gallery image 5"
         }
       ]
     },
@@ -666,6 +854,30 @@
         {
           "url": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyochon-hanok-village/photo-001.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyochon-hanok-village/photo-002.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyochon-hanok-village/photo-003.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyochon-hanok-village/photo-004.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyochon-hanok-village/photo-005.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyochon-hanok-village/photo-006.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -673,33 +885,81 @@
           "id": 1,
           "type": "photo",
           "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
-          "location": "교촌한옥마을",
-          "caption": "교촌한옥마을 — 사진 1",
-          "alt": "교촌한옥마을 — 갤러리 이미지 1"
+          "location": "교촌 한옥마을",
+          "caption": "교촌 한옥마을 — photo 1",
+          "alt": "교촌 한옥마을 — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
           "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-53.webp",
-          "location": "교촌한옥마을",
-          "caption": "교촌한옥마을 — 사진 2",
-          "alt": "교촌한옥마을 — 갤러리 이미지 2"
+          "location": "교촌 한옥마을",
+          "caption": "교촌 한옥마을 — photo 2",
+          "alt": "교촌 한옥마을 — gallery image 2"
         },
         {
           "id": 3,
           "type": "photo",
           "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-57.webp",
-          "location": "교촌한옥마을",
-          "caption": "교촌한옥마을 — 사진 3",
-          "alt": "교촌한옥마을 — 갤러리 이미지 3"
+          "location": "교촌 한옥마을",
+          "caption": "교촌 한옥마을 — photo 3",
+          "alt": "교촌 한옥마을 — gallery image 3"
         },
         {
           "id": 4,
           "type": "photo",
           "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp",
-          "location": "교촌한옥마을",
-          "caption": "교촌한옥마을 — 사진 4",
-          "alt": "교촌한옥마을 — 갤러리 이미지 4"
+          "location": "교촌 한옥마을",
+          "caption": "교촌 한옥마을 — photo 4",
+          "alt": "교촌 한옥마을 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/gyochon-hanok-village/photo-001.webp",
+          "location": "교촌 한옥마을",
+          "caption": "교촌 한옥마을 — photo 5",
+          "alt": "교촌 한옥마을 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/gyochon-hanok-village/photo-002.webp",
+          "location": "교촌 한옥마을",
+          "caption": "교촌 한옥마을 — photo 6",
+          "alt": "교촌 한옥마을 — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/gyochon-hanok-village/photo-003.webp",
+          "location": "교촌 한옥마을",
+          "caption": "교촌 한옥마을 — photo 7",
+          "alt": "교촌 한옥마을 — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/gyochon-hanok-village/photo-004.webp",
+          "location": "교촌 한옥마을",
+          "caption": "교촌 한옥마을 — photo 8",
+          "alt": "교촌 한옥마을 — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/gyochon-hanok-village/photo-005.webp",
+          "location": "교촌 한옥마을",
+          "caption": "교촌 한옥마을 — photo 9",
+          "alt": "교촌 한옥마을 — gallery image 9"
+        },
+        {
+          "id": 10,
+          "type": "photo",
+          "src": "/images/tours/gyochon-hanok-village/photo-006.webp",
+          "location": "교촌 한옥마을",
+          "caption": "교촌 한옥마을 — photo 10",
+          "alt": "교촌 한옥마을 — gallery image 10"
         }
       ]
     },
@@ -761,6 +1021,70 @@
         "/images/itinerary/woljeonggyo-front-day.webp",
         "/images/itinerary/woljeonggyo-reflection.webp",
         "/images/itinerary/woljeonggyo-pavilion-night.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/itinerary/woljeonggyo-front-day.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/itinerary/woljeonggyo-reflection.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/itinerary/woljeonggyo-pavilion-night.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/woljeonggyo/photo-001.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/woljeonggyo/photo-002.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/itinerary/woljeonggyo-front-day.webp",
+          "location": "월정교",
+          "caption": "월정교 — photo 1",
+          "alt": "월정교 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/itinerary/woljeonggyo-reflection.webp",
+          "location": "월정교",
+          "caption": "월정교 — photo 2",
+          "alt": "월정교 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/itinerary/woljeonggyo-pavilion-night.webp",
+          "location": "월정교",
+          "caption": "월정교 — photo 3",
+          "alt": "월정교 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/woljeonggyo/photo-001.webp",
+          "location": "월정교",
+          "caption": "월정교 — photo 4",
+          "alt": "월정교 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/woljeonggyo/photo-002.webp",
+          "location": "월정교",
+          "caption": "월정교 — photo 5",
+          "alt": "월정교 — gallery image 5"
+        }
       ]
     },
     {
@@ -1721,7 +2045,10 @@
             "images": [
               "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
               "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03.webp",
-              "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp"
+              "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp",
+              "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47-2.webp",
+              "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03-2.webp",
+              "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07-2.webp"
             ],
             "imageCredits": [
               {
@@ -1734,6 +2061,18 @@
               },
               {
                 "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07-2.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1761,6 +2100,30 @@
                 "location": "아홉산 대나무 숲",
                 "caption": "아홉산 대나무 숲 — photo 3",
                 "alt": "아홉산 대나무 숲 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47-2.webp",
+                "location": "아홉산 대나무 숲",
+                "caption": "아홉산 대나무 숲 — photo 4",
+                "alt": "아홉산 대나무 숲 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03-2.webp",
+                "location": "아홉산 대나무 숲",
+                "caption": "아홉산 대나무 숲 — photo 5",
+                "alt": "아홉산 대나무 숲 — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07-2.webp",
+                "location": "아홉산 대나무 숲",
+                "caption": "아홉산 대나무 숲 — photo 6",
+                "alt": "아홉산 대나무 숲 — gallery image 6"
               }
             ]
           },
@@ -1787,7 +2150,9 @@
             "images": [
               "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
               "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
-              "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp"
+              "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+              "/images/tours/bulguksa-temple/photo-001.webp",
+              "/images/tours/bulguksa-temple/photo-002.webp"
             ],
             "imageCredits": [
               {
@@ -1800,6 +2165,14 @@
               },
               {
                 "url": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/bulguksa-temple/photo-001.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/bulguksa-temple/photo-002.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1827,6 +2200,22 @@
                 "location": "불국사 (유네스코 세계문화유산)",
                 "caption": "불국사 (유네스코 세계문화유산) — photo 3",
                 "alt": "불국사 (유네스코 세계문화유산) — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/photo-001.webp",
+                "location": "불국사 (유네스코 세계문화유산)",
+                "caption": "불국사 (유네스코 세계문화유산) — photo 4",
+                "alt": "불국사 (유네스코 세계문화유산) — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/photo-002.webp",
+                "location": "불국사 (유네스코 세계문화유산)",
+                "caption": "불국사 (유네스코 세계문화유산) — photo 5",
+                "alt": "불국사 (유네스코 세계문화유산) — gallery image 5"
               }
             ]
           },
@@ -1936,7 +2325,13 @@
               "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
               "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-53.webp",
               "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-57.webp",
-              "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp"
+              "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp",
+              "/images/tours/gyochon-hanok-village/photo-001.webp",
+              "/images/tours/gyochon-hanok-village/photo-002.webp",
+              "/images/tours/gyochon-hanok-village/photo-003.webp",
+              "/images/tours/gyochon-hanok-village/photo-004.webp",
+              "/images/tours/gyochon-hanok-village/photo-005.webp",
+              "/images/tours/gyochon-hanok-village/photo-006.webp"
             ],
             "imageCredits": [
               {
@@ -1954,6 +2349,30 @@
               {
                 "url": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp",
                 "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyochon-hanok-village/photo-001.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyochon-hanok-village/photo-002.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyochon-hanok-village/photo-003.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyochon-hanok-village/photo-004.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyochon-hanok-village/photo-005.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyochon-hanok-village/photo-006.webp",
+                "source": "atoc-korea"
               }
             ],
             "galleryItems": [
@@ -1961,33 +2380,81 @@
                 "id": 1,
                 "type": "photo",
                 "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
-                "location": "교촌한옥마을",
-                "caption": "교촌한옥마을 — 사진 1",
-                "alt": "교촌한옥마을 — 갤러리 이미지 1"
+                "location": "교촌 한옥마을",
+                "caption": "교촌 한옥마을 — photo 1",
+                "alt": "교촌 한옥마을 — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
                 "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-53.webp",
-                "location": "교촌한옥마을",
-                "caption": "교촌한옥마을 — 사진 2",
-                "alt": "교촌한옥마을 — 갤러리 이미지 2"
+                "location": "교촌 한옥마을",
+                "caption": "교촌 한옥마을 — photo 2",
+                "alt": "교촌 한옥마을 — gallery image 2"
               },
               {
                 "id": 3,
                 "type": "photo",
                 "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-57.webp",
-                "location": "교촌한옥마을",
-                "caption": "교촌한옥마을 — 사진 3",
-                "alt": "교촌한옥마을 — 갤러리 이미지 3"
+                "location": "교촌 한옥마을",
+                "caption": "교촌 한옥마을 — photo 3",
+                "alt": "교촌 한옥마을 — gallery image 3"
               },
               {
                 "id": 4,
                 "type": "photo",
                 "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp",
-                "location": "교촌한옥마을",
-                "caption": "교촌한옥마을 — 사진 4",
-                "alt": "교촌한옥마을 — 갤러리 이미지 4"
+                "location": "교촌 한옥마을",
+                "caption": "교촌 한옥마을 — photo 4",
+                "alt": "교촌 한옥마을 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/gyochon-hanok-village/photo-001.webp",
+                "location": "교촌 한옥마을",
+                "caption": "교촌 한옥마을 — photo 5",
+                "alt": "교촌 한옥마을 — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/gyochon-hanok-village/photo-002.webp",
+                "location": "교촌 한옥마을",
+                "caption": "교촌 한옥마을 — photo 6",
+                "alt": "교촌 한옥마을 — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/gyochon-hanok-village/photo-003.webp",
+                "location": "교촌 한옥마을",
+                "caption": "교촌 한옥마을 — photo 7",
+                "alt": "교촌 한옥마을 — gallery image 7"
+              },
+              {
+                "id": 8,
+                "type": "photo",
+                "src": "/images/tours/gyochon-hanok-village/photo-004.webp",
+                "location": "교촌 한옥마을",
+                "caption": "교촌 한옥마을 — photo 8",
+                "alt": "교촌 한옥마을 — gallery image 8"
+              },
+              {
+                "id": 9,
+                "type": "photo",
+                "src": "/images/tours/gyochon-hanok-village/photo-005.webp",
+                "location": "교촌 한옥마을",
+                "caption": "교촌 한옥마을 — photo 9",
+                "alt": "교촌 한옥마을 — gallery image 9"
+              },
+              {
+                "id": 10,
+                "type": "photo",
+                "src": "/images/tours/gyochon-hanok-village/photo-006.webp",
+                "location": "교촌 한옥마을",
+                "caption": "교촌 한옥마을 — photo 10",
+                "alt": "교촌 한옥마을 — gallery image 10"
               }
             ]
           },
@@ -2007,7 +2474,39 @@
               "poi_key": "woljeonggyo_bridge",
               "is_attraction": true,
               "fee_krw": 0
-            }
+            },
+            "images": [
+              "/images/tours/woljeonggyo/photo-001.webp",
+              "/images/tours/woljeonggyo/photo-002.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/woljeonggyo/photo-001.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/woljeonggyo/photo-002.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/woljeonggyo/photo-001.webp",
+                "location": "월정교",
+                "caption": "월정교 — photo 1",
+                "alt": "월정교 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/woljeonggyo/photo-002.webp",
+                "location": "월정교",
+                "caption": "월정교 — photo 2",
+                "alt": "월정교 — gallery image 2"
+              }
+            ]
           },
           {
             "number": 8,

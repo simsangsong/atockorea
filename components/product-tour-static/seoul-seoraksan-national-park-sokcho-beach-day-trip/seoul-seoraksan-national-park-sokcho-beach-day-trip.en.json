@@ -13,11 +13,11 @@
       "east coast Korea",
       "Seoraksan Sokcho day trip"
     ],
-    "ogImage": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
     "title": "Seoraksan National Park & Sokcho Beach Day Trip from Seoul | AtoC Korea"
   },
   "catalog_card": {
-    "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+    "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
     "title": "Seoraksan & Sokcho Beach Day Trip",
     "priceLabel": "From US$49 per person (was $57, 14% off)",
     "shortCardDescription": "A small-group day-trip from Seoul to Korea's most-loved national park and the East Sea coastal city of Sokcho. The route pairs Seoraksan's granite peaks, valleys, and Buddhist heritage with the seafood market and beach of Sokcho — a mountain-and-ocean combination only the east coast offers. 12 hours with English-speaking guide and round-trip transport.",
@@ -46,7 +46,7 @@
       "Autumn Foliage",
       "Day Trip"
     ],
-    "heroImage": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp"
+    "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp"
   },
   "headlineLine1": "Seoraksan & Sokcho",
   "headlineLine2": "Beach Day Trip",
@@ -59,7 +59,7 @@
     "discountPercent": 14
   },
   "hero": {
-    "imageUrl": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+    "imageUrl": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
     "imagePosition": "center 35%",
     "tagline": "Korea's most iconic national park, plus the East Sea's friendliest port",
     "pills": [
@@ -138,10 +138,26 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "",
+      "src": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
       "location": "Seoraksan National Park",
-      "alt": "Seoraksan National Park — on-route photo",
-      "caption": "Seoraksan National Park"
+      "alt": "Seoraksan National Park — gallery image 1",
+      "caption": "Seoraksan National Park — photo 1"
+    },
+    {
+      "id": 2,
+      "type": "photo",
+      "src": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+      "location": "Seoraksan National Park",
+      "alt": "Seoraksan National Park — gallery image 2",
+      "caption": "Seoraksan National Park — photo 2"
+    },
+    {
+      "id": 3,
+      "type": "photo",
+      "src": "/images/tours/seoraksan/photo-001.webp",
+      "location": "Seoraksan National Park",
+      "alt": "Seoraksan National Park — gallery image 3",
+      "caption": "Seoraksan National Park — photo 3"
     }
   ],
   "itineraryStops": [
@@ -236,6 +252,46 @@
       "images": [
         "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
         "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seoraksan/photo-001.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+          "location": "Seoraksan National Park",
+          "caption": "Seoraksan National Park — photo 1",
+          "alt": "Seoraksan National Park — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+          "location": "Seoraksan National Park",
+          "caption": "Seoraksan National Park — photo 2",
+          "alt": "Seoraksan National Park — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/seoraksan/photo-001.webp",
+          "location": "Seoraksan National Park",
+          "caption": "Seoraksan National Park — photo 3",
+          "alt": "Seoraksan National Park — gallery image 3"
+        }
       ]
     },
     {
@@ -1254,7 +1310,7 @@
             "name": "Seoraksan National Park",
             "category": "National Park (Mountain)",
             "description": "About three hours of free time at Korea's most-loved national park — its 5th national park (designated March 1970) and Korea's first UNESCO Biosphere Reserve (1982). From the Sogongwon main entrance you can walk the paved path past Sinheungsa Temple's Great Bronze Buddha to Biseondae Rock (1.5 km each way along a stream), or take the optional Gwongeumseong cable car (not included, ~₩15,000) for a high-ridge view.",
-            "image": "",
+            "image": "/images/tours/seoraksan/photo-001.webp",
             "highlights": [
               "Sinheungsa Temple & Great Bronze Buddha",
               "Biseondae Rock & stream trail",
@@ -1288,7 +1344,26 @@
               "sources": [],
               "verified_date": "2026-04-27",
               "note": "Operational details verified via established knowledge"
-            }
+            },
+            "images": [
+              "/images/tours/seoraksan/photo-001.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/seoraksan/photo-001.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/seoraksan/photo-001.webp",
+                "location": "Seoraksan National Park",
+                "caption": "Seoraksan National Park — photo 1",
+                "alt": "Seoraksan National Park — gallery image 1"
+              }
+            ]
           },
           {
             "number": 3,

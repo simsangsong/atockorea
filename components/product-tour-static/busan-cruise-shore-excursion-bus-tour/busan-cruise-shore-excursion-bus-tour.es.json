@@ -14,12 +14,12 @@
       "Tour por Gamcheon en crucero",
       "Tour por Yonggungsa en crucero"
     ],
-    "ogImage": "/images/tours/songdo-beach/chatgpt-image-2026-5-10-12-32-12.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
     "title": "Excursión en tierra desde Busan en crucero · Tour en autobús por la costa | AtoC Korea",
     "description": "Tour diario costero por Busan en autocar grande para pasajeros de crucero: 8 paradas emblemáticas con recogida en la terminal de cruceros y garantía de regreso antes de la salida del barco."
   },
   "catalog_card": {
-    "thumbnail": "/images/tours/songdo-beach/chatgpt-image-2026-5-10-12-32-12.webp",
+    "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
     "title": "Excursión en tierra desde Busan en crucero: Tour en autobús por la costa",
     "priceLabel": "Desde US$49 por persona (antes $55, 11% de descuento)",
     "shortCardDescription": "Tour diario costero por Busan en autocar grande diseñado para pasajeros de crucero: recogida en la terminal de cruceros, 8 paradas emblemáticas (Haedong Yonggungsa, Cementerio Memorial de la ONU, Mercado de Jagalchi, Plaza BIFF, Mercado de Gukje, Pueblo Cultural de Gamcheon, Playa de Songdo, Parque Yongdusan) y garantía de regreso antes de la salida del barco. Categoría económica — mismo recorrido que el producto en grupo reducido, autocar más grande.",
@@ -43,7 +43,7 @@
       "Recogida en el puerto",
       "Regreso garantizado"
     ],
-    "heroImage": "/images/tours/songdo-beach/chatgpt-image-2026-5-10-12-32-12.webp"
+    "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp"
   },
   "headlineLine1": "Excursión en tierra desde Busan en crucero",
   "headlineLine2": "Tour en autobús por la costa",
@@ -56,7 +56,7 @@
     "discountPercent": null
   },
   "hero": {
-    "imageUrl": "/images/tours/songdo-beach/chatgpt-image-2026-5-10-12-32-12.webp",
+    "imageUrl": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
     "imagePosition": "center 40%",
     "tagline": "Ocho lugares emblemáticos de Busan a bordo de un autocar de lujo — recogida en tu terminal de cruceros y regreso con tiempo de sobra antes de la salida del barco",
     "pills": [
@@ -141,74 +141,298 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
-      "location": "Pueblo Cultural de Gamcheon",
-      "alt": "Pueblo Cultural de Gamcheon — imagen de galería 1",
-      "caption": "Pueblo Cultural de Gamcheon — ladera de colores pastel"
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+      "location": "Templo Haedong Yonggungsa",
+      "alt": "Templo Haedong Yonggungsa — on-route photo",
+      "caption": "Templo Haedong Yonggungsa"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
-      "location": "Templo Haedong Yonggungsa",
-      "alt": "Templo Haedong Yonggungsa — imagen de galería 1",
-      "caption": "Haedong Yonggungsa — templo junto al mar"
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+      "location": "Cementerio Memorial de la ONU en Corea",
+      "alt": "Cementerio Memorial de la ONU en Corea — gallery image 1",
+      "caption": "Cementerio Memorial de la ONU en Corea — photo 1"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
-      "location": "Templo Haedong Yonggungsa",
-      "alt": "Templo Haedong Yonggungsa — imagen de galería 2",
-      "caption": "Haedong Yonggungsa — sendero del acantilado"
+      "src": "/images/itinerary/jagalchi-harbor-sign.webp",
+      "location": "Mercado de Pescado Jagalchi",
+      "alt": "Mercado de Pescado Jagalchi — gallery image 1",
+      "caption": "Mercado de Pescado Jagalchi — photo 1"
     },
     {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
-      "location": "Templo Haedong Yonggungsa",
-      "alt": "Templo Haedong Yonggungsa — imagen de galería 3",
-      "caption": "Haedong Yonggungsa — Daeungjeon"
+      "src": "/images/itinerary/gukje-market-arcade-sign-forest.webp",
+      "location": "Mercado Gukje",
+      "alt": "Mercado Gukje — on-route photo",
+      "caption": "Mercado Gukje"
     },
     {
       "id": 5,
       "type": "photo",
-      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+      "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
       "location": "Pueblo Cultural de Gamcheon",
-      "alt": "Pueblo Cultural de Gamcheon — imagen de galería 2",
-      "caption": "Pueblo Cultural de Gamcheon — Jardín del Cielo"
+      "alt": "Pueblo Cultural de Gamcheon — gallery image 1",
+      "caption": "Pueblo Cultural de Gamcheon — photo 1"
     },
     {
       "id": 6,
       "type": "photo",
-      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
-      "location": "Pueblo Cultural de Gamcheon",
-      "alt": "Pueblo Cultural de Gamcheon — imagen de galería 3",
-      "caption": "Pueblo Cultural de Gamcheon — callejón de murales"
+      "src": "/images/tours/songdo-beach/chatgpt-image-2026-5-10-12-32-12.webp",
+      "location": "Playa Songdo",
+      "alt": "Playa Songdo — on-route photo",
+      "caption": "Playa Songdo"
     },
     {
       "id": 7,
       "type": "photo",
       "src": "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57.webp",
-      "location": "Torre Diamante de Busan (Parque Yongdusan)",
-      "alt": "Torre Diamante de Busan (Parque Yongdusan) — imagen de galería 1",
-      "caption": "Torre Diamante de Busan (Parque Yongdusan)"
+      "location": "Parque Yongdusan y Torre de Busan",
+      "alt": "Parque Yongdusan y Torre de Busan — gallery image 1",
+      "caption": "Parque Yongdusan y Torre de Busan — photo 1"
     },
     {
       "id": 8,
       "type": "photo",
-      "src": "/images/tours/busan-tower/kakaotalk-20260510-222952680.webp",
-      "location": "Torre Diamante de Busan (Parque Yongdusan)",
-      "alt": "Torre Diamante de Busan (Parque Yongdusan) — imagen de galería 2",
-      "caption": "Torre Diamante de Busan (Parque Yongdusan)"
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+      "location": "Templo Haedong Yonggungsa",
+      "alt": "Templo Haedong Yonggungsa — on-route photo",
+      "caption": "Templo Haedong Yonggungsa"
     },
     {
       "id": 9,
       "type": "photo",
-      "src": "/images/tours/songdo-beach/chatgpt-image-2026-5-10-12-32-12.webp",
-      "location": "Playa de Songdo",
-      "alt": "Playa de Songdo — imagen de galería 1",
-      "caption": "Playa de Songdo — teleférico y costa del paseo elevado"
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+      "location": "Templo Haedong Yonggungsa",
+      "alt": "Templo Haedong Yonggungsa — on-route photo",
+      "caption": "Templo Haedong Yonggungsa"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+      "location": "Templo Haedong Yonggungsa",
+      "alt": "Templo Haedong Yonggungsa — on-route photo",
+      "caption": "Templo Haedong Yonggungsa"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
+      "location": "Templo Haedong Yonggungsa",
+      "alt": "Templo Haedong Yonggungsa — on-route photo",
+      "caption": "Templo Haedong Yonggungsa"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+      "location": "Cementerio Memorial de la ONU en Corea",
+      "alt": "Cementerio Memorial de la ONU en Corea — gallery image 2",
+      "caption": "Cementerio Memorial de la ONU en Corea — photo 2"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+      "location": "Cementerio Memorial de la ONU en Corea",
+      "alt": "Cementerio Memorial de la ONU en Corea — gallery image 3",
+      "caption": "Cementerio Memorial de la ONU en Corea — photo 3"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+      "location": "Cementerio Memorial de la ONU en Corea",
+      "alt": "Cementerio Memorial de la ONU en Corea — gallery image 9",
+      "caption": "Cementerio Memorial de la ONU en Corea — photo 9"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
+      "location": "Cementerio Memorial de la ONU en Corea",
+      "alt": "Cementerio Memorial de la ONU en Corea — gallery image 10",
+      "caption": "Cementerio Memorial de la ONU en Corea — photo 10"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
+      "location": "Cementerio Memorial de la ONU en Corea",
+      "alt": "Cementerio Memorial de la ONU en Corea — gallery image 11",
+      "caption": "Cementerio Memorial de la ONU en Corea — photo 11"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
+      "location": "Cementerio Memorial de la ONU en Corea",
+      "alt": "Cementerio Memorial de la ONU en Corea — gallery image 12",
+      "caption": "Cementerio Memorial de la ONU en Corea — photo 12"
+    },
+    {
+      "id": 18,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
+      "location": "Cementerio Memorial de la ONU en Corea",
+      "alt": "Cementerio Memorial de la ONU en Corea — gallery image 13",
+      "caption": "Cementerio Memorial de la ONU en Corea — photo 13"
+    },
+    {
+      "id": 19,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
+      "location": "Cementerio Memorial de la ONU en Corea",
+      "alt": "Cementerio Memorial de la ONU en Corea — gallery image 14",
+      "caption": "Cementerio Memorial de la ONU en Corea — photo 14"
+    },
+    {
+      "id": 20,
+      "type": "photo",
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23-2.webp",
+      "location": "Cementerio Memorial de la ONU en Corea",
+      "alt": "Cementerio Memorial de la ONU en Corea — gallery image 15",
+      "caption": "Cementerio Memorial de la ONU en Corea — photo 15"
+    },
+    {
+      "id": 21,
+      "type": "photo",
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43-2.webp",
+      "location": "Cementerio Memorial de la ONU en Corea",
+      "alt": "Cementerio Memorial de la ONU en Corea — gallery image 16",
+      "caption": "Cementerio Memorial de la ONU en Corea — photo 16"
+    },
+    {
+      "id": 22,
+      "type": "photo",
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47-2.webp",
+      "location": "Cementerio Memorial de la ONU en Corea",
+      "alt": "Cementerio Memorial de la ONU en Corea — gallery image 17",
+      "caption": "Cementerio Memorial de la ONU en Corea — photo 17"
+    },
+    {
+      "id": 23,
+      "type": "photo",
+      "src": "/images/itinerary/jagalchi-market-interior.webp",
+      "location": "Mercado de Pescado Jagalchi",
+      "alt": "Mercado de Pescado Jagalchi — gallery image 2",
+      "caption": "Mercado de Pescado Jagalchi — photo 2"
+    },
+    {
+      "id": 24,
+      "type": "photo",
+      "src": "/images/itinerary/jagalchi-night-building.webp",
+      "location": "Mercado de Pescado Jagalchi",
+      "alt": "Mercado de Pescado Jagalchi — gallery image 3",
+      "caption": "Mercado de Pescado Jagalchi — photo 3"
+    },
+    {
+      "id": 25,
+      "type": "photo",
+      "src": "/images/tours/jagalchi-market/photo-001.webp",
+      "location": "Mercado de Pescado Jagalchi",
+      "alt": "Mercado de Pescado Jagalchi — gallery image 4",
+      "caption": "Mercado de Pescado Jagalchi — photo 4"
+    },
+    {
+      "id": 26,
+      "type": "photo",
+      "src": "/images/tours/jagalchi-market/photo-002.webp",
+      "location": "Mercado de Pescado Jagalchi",
+      "alt": "Mercado de Pescado Jagalchi — gallery image 5",
+      "caption": "Mercado de Pescado Jagalchi — photo 5"
+    },
+    {
+      "id": 27,
+      "type": "photo",
+      "src": "/images/tours/jagalchi-market/photo-003.webp",
+      "location": "Mercado de Pescado Jagalchi",
+      "alt": "Mercado de Pescado Jagalchi — gallery image 6",
+      "caption": "Mercado de Pescado Jagalchi — photo 6"
+    },
+    {
+      "id": 28,
+      "type": "photo",
+      "src": "/images/tours/jagalchi-market/photo-004.webp",
+      "location": "Mercado de Pescado Jagalchi",
+      "alt": "Mercado de Pescado Jagalchi — gallery image 7",
+      "caption": "Mercado de Pescado Jagalchi — photo 7"
+    },
+    {
+      "id": 29,
+      "type": "photo",
+      "src": "/images/itinerary/gukje-market-fresh-produce-aisle.webp",
+      "location": "Mercado Gukje",
+      "alt": "Mercado Gukje — on-route photo",
+      "caption": "Mercado Gukje"
+    },
+    {
+      "id": 30,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+      "location": "Pueblo Cultural de Gamcheon",
+      "alt": "Pueblo Cultural de Gamcheon — gallery image 2",
+      "caption": "Pueblo Cultural de Gamcheon — photo 2"
+    },
+    {
+      "id": 31,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
+      "location": "Pueblo Cultural de Gamcheon",
+      "alt": "Pueblo Cultural de Gamcheon — gallery image 3",
+      "caption": "Pueblo Cultural de Gamcheon — photo 3"
+    },
+    {
+      "id": 32,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01-2.webp",
+      "location": "Pueblo Cultural de Gamcheon",
+      "alt": "Pueblo Cultural de Gamcheon — gallery image 7",
+      "caption": "Pueblo Cultural de Gamcheon — photo 7"
+    },
+    {
+      "id": 33,
+      "type": "photo",
+      "src": "/images/tours/busan-tower/kakaotalk-20260510-222952680.webp",
+      "location": "Parque Yongdusan y Torre de Busan",
+      "alt": "Parque Yongdusan y Torre de Busan — gallery image 2",
+      "caption": "Parque Yongdusan y Torre de Busan — photo 2"
+    },
+    {
+      "id": 34,
+      "type": "photo",
+      "src": "/images/tours/busan-tower/kakaotalk-20260510-230009595.webp",
+      "location": "Parque Yongdusan y Torre de Busan",
+      "alt": "Parque Yongdusan y Torre de Busan — gallery image 3",
+      "caption": "Parque Yongdusan y Torre de Busan — photo 3"
+    },
+    {
+      "id": 35,
+      "type": "photo",
+      "src": "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57-2.webp",
+      "location": "Parque Yongdusan y Torre de Busan",
+      "alt": "Parque Yongdusan y Torre de Busan — gallery image 4",
+      "caption": "Parque Yongdusan y Torre de Busan — photo 4"
+    },
+    {
+      "id": 36,
+      "type": "photo",
+      "src": "/images/tours/busan-tower/kakaotalk-20260510-222952680-2.webp",
+      "location": "Parque Yongdusan y Torre de Busan",
+      "alt": "Parque Yongdusan y Torre de Busan — gallery image 5",
+      "caption": "Parque Yongdusan y Torre de Busan — photo 5"
+    },
+    {
+      "id": 37,
+      "type": "photo",
+      "src": "/images/tours/busan-tower/kakaotalk-20260510-230009595-2.webp",
+      "location": "Parque Yongdusan y Torre de Busan",
+      "alt": "Parque Yongdusan y Torre de Busan — gallery image 6",
+      "caption": "Parque Yongdusan y Torre de Busan — photo 6"
     }
   ],
   "itineraryStops": [
@@ -364,6 +588,214 @@
         "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
         "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
         "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47-2.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+          "location": "Cementerio Memorial de la ONU en Corea",
+          "caption": "Cementerio Memorial de la ONU en Corea — photo 1",
+          "alt": "Cementerio Memorial de la ONU en Corea — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+          "location": "Cementerio Memorial de la ONU en Corea",
+          "caption": "Cementerio Memorial de la ONU en Corea — photo 2",
+          "alt": "Cementerio Memorial de la ONU en Corea — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+          "location": "Cementerio Memorial de la ONU en Corea",
+          "caption": "Cementerio Memorial de la ONU en Corea — photo 3",
+          "alt": "Cementerio Memorial de la ONU en Corea — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+          "location": "Cementerio Memorial de la ONU en Corea",
+          "caption": "Cementerio Memorial de la ONU en Corea — photo 4",
+          "alt": "Cementerio Memorial de la ONU en Corea — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+          "location": "Cementerio Memorial de la ONU en Corea",
+          "caption": "Cementerio Memorial de la ONU en Corea — photo 5",
+          "alt": "Cementerio Memorial de la ONU en Corea — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+          "location": "Cementerio Memorial de la ONU en Corea",
+          "caption": "Cementerio Memorial de la ONU en Corea — photo 6",
+          "alt": "Cementerio Memorial de la ONU en Corea — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+          "location": "Cementerio Memorial de la ONU en Corea",
+          "caption": "Cementerio Memorial de la ONU en Corea — photo 7",
+          "alt": "Cementerio Memorial de la ONU en Corea — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
+          "location": "Cementerio Memorial de la ONU en Corea",
+          "caption": "Cementerio Memorial de la ONU en Corea — photo 8",
+          "alt": "Cementerio Memorial de la ONU en Corea — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+          "location": "Cementerio Memorial de la ONU en Corea",
+          "caption": "Cementerio Memorial de la ONU en Corea — photo 9",
+          "alt": "Cementerio Memorial de la ONU en Corea — gallery image 9"
+        },
+        {
+          "id": 10,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
+          "location": "Cementerio Memorial de la ONU en Corea",
+          "caption": "Cementerio Memorial de la ONU en Corea — photo 10",
+          "alt": "Cementerio Memorial de la ONU en Corea — gallery image 10"
+        },
+        {
+          "id": 11,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
+          "location": "Cementerio Memorial de la ONU en Corea",
+          "caption": "Cementerio Memorial de la ONU en Corea — photo 11",
+          "alt": "Cementerio Memorial de la ONU en Corea — gallery image 11"
+        },
+        {
+          "id": 12,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
+          "location": "Cementerio Memorial de la ONU en Corea",
+          "caption": "Cementerio Memorial de la ONU en Corea — photo 12",
+          "alt": "Cementerio Memorial de la ONU en Corea — gallery image 12"
+        },
+        {
+          "id": 13,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
+          "location": "Cementerio Memorial de la ONU en Corea",
+          "caption": "Cementerio Memorial de la ONU en Corea — photo 13",
+          "alt": "Cementerio Memorial de la ONU en Corea — gallery image 13"
+        },
+        {
+          "id": 14,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
+          "location": "Cementerio Memorial de la ONU en Corea",
+          "caption": "Cementerio Memorial de la ONU en Corea — photo 14",
+          "alt": "Cementerio Memorial de la ONU en Corea — gallery image 14"
+        },
+        {
+          "id": 15,
+          "type": "photo",
+          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23-2.webp",
+          "location": "Cementerio Memorial de la ONU en Corea",
+          "caption": "Cementerio Memorial de la ONU en Corea — photo 15",
+          "alt": "Cementerio Memorial de la ONU en Corea — gallery image 15"
+        },
+        {
+          "id": 16,
+          "type": "photo",
+          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43-2.webp",
+          "location": "Cementerio Memorial de la ONU en Corea",
+          "caption": "Cementerio Memorial de la ONU en Corea — photo 16",
+          "alt": "Cementerio Memorial de la ONU en Corea — gallery image 16"
+        },
+        {
+          "id": 17,
+          "type": "photo",
+          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47-2.webp",
+          "location": "Cementerio Memorial de la ONU en Corea",
+          "caption": "Cementerio Memorial de la ONU en Corea — photo 17",
+          "alt": "Cementerio Memorial de la ONU en Corea — gallery image 17"
+        }
       ]
     },
     {
@@ -448,6 +880,94 @@
         "/images/itinerary/jagalchi-harbor-sign.webp",
         "/images/itinerary/jagalchi-market-interior.webp",
         "/images/itinerary/jagalchi-night-building.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/itinerary/jagalchi-harbor-sign.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/itinerary/jagalchi-market-interior.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/itinerary/jagalchi-night-building.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jagalchi-market/photo-001.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jagalchi-market/photo-002.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jagalchi-market/photo-003.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jagalchi-market/photo-004.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/itinerary/jagalchi-harbor-sign.webp",
+          "location": "Mercado de Pescado Jagalchi",
+          "caption": "Mercado de Pescado Jagalchi — photo 1",
+          "alt": "Mercado de Pescado Jagalchi — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/itinerary/jagalchi-market-interior.webp",
+          "location": "Mercado de Pescado Jagalchi",
+          "caption": "Mercado de Pescado Jagalchi — photo 2",
+          "alt": "Mercado de Pescado Jagalchi — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/itinerary/jagalchi-night-building.webp",
+          "location": "Mercado de Pescado Jagalchi",
+          "caption": "Mercado de Pescado Jagalchi — photo 3",
+          "alt": "Mercado de Pescado Jagalchi — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/jagalchi-market/photo-001.webp",
+          "location": "Mercado de Pescado Jagalchi",
+          "caption": "Mercado de Pescado Jagalchi — photo 4",
+          "alt": "Mercado de Pescado Jagalchi — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/jagalchi-market/photo-002.webp",
+          "location": "Mercado de Pescado Jagalchi",
+          "caption": "Mercado de Pescado Jagalchi — photo 5",
+          "alt": "Mercado de Pescado Jagalchi — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/jagalchi-market/photo-003.webp",
+          "location": "Mercado de Pescado Jagalchi",
+          "caption": "Mercado de Pescado Jagalchi — photo 6",
+          "alt": "Mercado de Pescado Jagalchi — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/jagalchi-market/photo-004.webp",
+          "location": "Mercado de Pescado Jagalchi",
+          "caption": "Mercado de Pescado Jagalchi — photo 7",
+          "alt": "Mercado de Pescado Jagalchi — gallery image 7"
+        }
       ]
     },
     {
@@ -624,6 +1144,94 @@
         "/images/itinerary/jagalchi-harbor-sign.webp",
         "/images/itinerary/jagalchi-market-interior.webp",
         "/images/itinerary/jagalchi-night-building.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/itinerary/jagalchi-harbor-sign.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/itinerary/jagalchi-market-interior.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/itinerary/jagalchi-night-building.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01-2.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+          "location": "Pueblo Cultural de Gamcheon",
+          "caption": "Pueblo Cultural de Gamcheon — photo 1",
+          "alt": "Pueblo Cultural de Gamcheon — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+          "location": "Pueblo Cultural de Gamcheon",
+          "caption": "Pueblo Cultural de Gamcheon — photo 2",
+          "alt": "Pueblo Cultural de Gamcheon — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
+          "location": "Pueblo Cultural de Gamcheon",
+          "caption": "Pueblo Cultural de Gamcheon — photo 3",
+          "alt": "Pueblo Cultural de Gamcheon — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/itinerary/jagalchi-harbor-sign.webp",
+          "location": "Pueblo Cultural de Gamcheon",
+          "caption": "Pueblo Cultural de Gamcheon — photo 4",
+          "alt": "Pueblo Cultural de Gamcheon — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/itinerary/jagalchi-market-interior.webp",
+          "location": "Pueblo Cultural de Gamcheon",
+          "caption": "Pueblo Cultural de Gamcheon — photo 5",
+          "alt": "Pueblo Cultural de Gamcheon — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/itinerary/jagalchi-night-building.webp",
+          "location": "Pueblo Cultural de Gamcheon",
+          "caption": "Pueblo Cultural de Gamcheon — photo 6",
+          "alt": "Pueblo Cultural de Gamcheon — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01-2.webp",
+          "location": "Pueblo Cultural de Gamcheon",
+          "caption": "Pueblo Cultural de Gamcheon — photo 7",
+          "alt": "Pueblo Cultural de Gamcheon — gallery image 7"
+        }
       ]
     },
     {
@@ -737,6 +1345,82 @@
         "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57.webp",
         "/images/tours/busan-tower/kakaotalk-20260510-222952680.webp",
         "/images/tours/busan-tower/kakaotalk-20260510-230009595.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/busan-tower/kakaotalk-20260510-222952680.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/busan-tower/kakaotalk-20260510-230009595.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/busan-tower/kakaotalk-20260510-222952680-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/busan-tower/kakaotalk-20260510-230009595-2.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57.webp",
+          "location": "Parque Yongdusan y Torre de Busan",
+          "caption": "Parque Yongdusan y Torre de Busan — photo 1",
+          "alt": "Parque Yongdusan y Torre de Busan — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/busan-tower/kakaotalk-20260510-222952680.webp",
+          "location": "Parque Yongdusan y Torre de Busan",
+          "caption": "Parque Yongdusan y Torre de Busan — photo 2",
+          "alt": "Parque Yongdusan y Torre de Busan — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/busan-tower/kakaotalk-20260510-230009595.webp",
+          "location": "Parque Yongdusan y Torre de Busan",
+          "caption": "Parque Yongdusan y Torre de Busan — photo 3",
+          "alt": "Parque Yongdusan y Torre de Busan — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57-2.webp",
+          "location": "Parque Yongdusan y Torre de Busan",
+          "caption": "Parque Yongdusan y Torre de Busan — photo 4",
+          "alt": "Parque Yongdusan y Torre de Busan — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/busan-tower/kakaotalk-20260510-222952680-2.webp",
+          "location": "Parque Yongdusan y Torre de Busan",
+          "caption": "Parque Yongdusan y Torre de Busan — photo 5",
+          "alt": "Parque Yongdusan y Torre de Busan — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/busan-tower/kakaotalk-20260510-230009595-2.webp",
+          "location": "Parque Yongdusan y Torre de Busan",
+          "caption": "Parque Yongdusan y Torre de Busan — photo 6",
+          "alt": "Parque Yongdusan y Torre de Busan — gallery image 6"
+        }
       ]
     },
     {

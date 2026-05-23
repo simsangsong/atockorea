@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "Tour de un día por el Festival de Hortensias del Suroeste de Jeju | AtoC Korea",
     "metaDescription": "Tour de un día por el suroeste de Jeju exclusivo en verano: Playa Hyeopjae, festival de hortensias del Parque Hallim, Acantilado Jusangjeolli, Cascadas Cheonjeyeon, Camellia Hill, campos de té Osulloc.",
-    "ogImage": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
     "primaryKeywords": [
       "Tour del festival de hortensias de Jeju",
       "Tour de flores de verano en Jeju",
@@ -140,13 +140,21 @@
     {
       "id": 2,
       "type": "photo",
+      "src": "/images/tours/hallim-park/photo-001.webp",
+      "location": "Parque Hallim (Festival de las Hortensias)",
+      "alt": "Parque Hallim (Festival de las Hortensias) — gallery image 1",
+      "caption": "Parque Hallim (Festival de las Hortensias) — photo 1"
+    },
+    {
+      "id": 3,
+      "type": "photo",
       "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
       "location": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon",
       "alt": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon — gallery image 1",
       "caption": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon — photo 1"
     },
     {
-      "id": 3,
+      "id": 4,
       "type": "photo",
       "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
       "location": "Camellia Hill (Túnel de Hortensias)",
@@ -154,7 +162,7 @@
       "caption": "Camellia Hill (Túnel de Hortensias) — photo 1"
     },
     {
-      "id": 4,
+      "id": 5,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
       "location": "Museo del Té Osulloc y Campos de Té",
@@ -162,31 +170,7 @@
       "caption": "Museo del Té Osulloc y Campos de Té — photo 1"
     },
     {
-      "id": 5,
-      "type": "photo",
-      "src": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
-      "location": "Museo del Té Osulloc y Campos de Té",
-      "alt": "Museo del Té Osulloc y Campos de Té — photo 2",
-      "caption": "Museo del Té Osulloc y Campos de Té — photo 2"
-    },
-    {
       "id": 6,
-      "type": "photo",
-      "src": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
-      "location": "Museo del Té Osulloc y Campos de Té",
-      "alt": "Museo del Té Osulloc y Campos de Té — photo 3",
-      "caption": "Museo del Té Osulloc y Campos de Té — photo 3"
-    },
-    {
-      "id": 7,
-      "type": "photo",
-      "src": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
-      "location": "Museo del Té Osulloc y Campos de Té",
-      "alt": "Museo del Té Osulloc y Campos de Té — photo 4",
-      "caption": "Museo del Té Osulloc y Campos de Té — photo 4"
-    },
-    {
-      "id": 8,
       "type": "photo",
       "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
       "location": "Playa Hyeopjae",
@@ -194,7 +178,7 @@
       "caption": "Playa Hyeopjae — photo 2"
     },
     {
-      "id": 9,
+      "id": 7,
       "type": "photo",
       "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
       "location": "Playa Hyeopjae",
@@ -202,7 +186,55 @@
       "caption": "Playa Hyeopjae — photo 3"
     },
     {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01-2.webp",
+      "location": "Playa Hyeopjae",
+      "alt": "Playa Hyeopjae — gallery image 4",
+      "caption": "Playa Hyeopjae — photo 4"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02-2.webp",
+      "location": "Playa Hyeopjae",
+      "alt": "Playa Hyeopjae — gallery image 5",
+      "caption": "Playa Hyeopjae — photo 5"
+    },
+    {
       "id": 10,
+      "type": "photo",
+      "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03-2.webp",
+      "location": "Playa Hyeopjae",
+      "alt": "Playa Hyeopjae — gallery image 6",
+      "caption": "Playa Hyeopjae — photo 6"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/hallim-park/photo-002.webp",
+      "location": "Parque Hallim (Festival de las Hortensias)",
+      "alt": "Parque Hallim (Festival de las Hortensias) — gallery image 2",
+      "caption": "Parque Hallim (Festival de las Hortensias) — photo 2"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/hallim-park/photo-003.webp",
+      "location": "Parque Hallim (Festival de las Hortensias)",
+      "alt": "Parque Hallim (Festival de las Hortensias) — gallery image 3",
+      "caption": "Parque Hallim (Festival de las Hortensias) — photo 3"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/hallim-park/photo-004.webp",
+      "location": "Parque Hallim (Festival de las Hortensias)",
+      "alt": "Parque Hallim (Festival de las Hortensias) — gallery image 4",
+      "caption": "Parque Hallim (Festival de las Hortensias) — photo 4"
+    },
+    {
+      "id": 14,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
       "location": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon",
@@ -210,7 +242,7 @@
       "caption": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon — photo 2"
     },
     {
-      "id": 11,
+      "id": 15,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
       "location": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon",
@@ -218,7 +250,7 @@
       "caption": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon — photo 3"
     },
     {
-      "id": 12,
+      "id": 16,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
       "location": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon",
@@ -226,12 +258,92 @@
       "caption": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon — photo 4"
     },
     {
-      "id": 13,
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+      "location": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon",
+      "alt": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon — gallery image 5",
+      "caption": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon — photo 5"
+    },
+    {
+      "id": 18,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+      "location": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon",
+      "alt": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon — gallery image 6",
+      "caption": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon — photo 6"
+    },
+    {
+      "id": 19,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+      "location": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon",
+      "alt": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon — gallery image 7",
+      "caption": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon — photo 7"
+    },
+    {
+      "id": 20,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+      "location": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon",
+      "alt": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon — gallery image 8",
+      "caption": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon — photo 8"
+    },
+    {
+      "id": 21,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/photo-005.webp",
+      "location": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon",
+      "alt": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon — gallery image 9",
+      "caption": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon — photo 9"
+    },
+    {
+      "id": 22,
       "type": "photo",
       "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
       "location": "Camellia Hill (Túnel de Hortensias)",
       "alt": "Camellia Hill (Túnel de Hortensias) — gallery image 2",
       "caption": "Camellia Hill (Túnel de Hortensias) — photo 2"
+    },
+    {
+      "id": 23,
+      "type": "photo",
+      "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-2.webp",
+      "location": "Camellia Hill (Túnel de Hortensias)",
+      "alt": "Camellia Hill (Túnel de Hortensias) — gallery image 3",
+      "caption": "Camellia Hill (Túnel de Hortensias) — photo 3"
+    },
+    {
+      "id": 24,
+      "type": "photo",
+      "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-2.webp",
+      "location": "Camellia Hill (Túnel de Hortensias)",
+      "alt": "Camellia Hill (Túnel de Hortensias) — gallery image 4",
+      "caption": "Camellia Hill (Túnel de Hortensias) — photo 4"
+    },
+    {
+      "id": 25,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
+      "location": "Museo del Té Osulloc y Campos de Té",
+      "alt": "Museo del Té Osulloc y Campos de Té — photo 2",
+      "caption": "Museo del Té Osulloc y Campos de Té — photo 2"
+    },
+    {
+      "id": 26,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
+      "location": "Museo del Té Osulloc y Campos de Té",
+      "alt": "Museo del Té Osulloc y Campos de Té — photo 3",
+      "caption": "Museo del Té Osulloc y Campos de Té — photo 3"
+    },
+    {
+      "id": 27,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
+      "location": "Museo del Té Osulloc y Campos de Té",
+      "alt": "Museo del Té Osulloc y Campos de Té — photo 4",
+      "caption": "Museo del Té Osulloc y Campos de Té — photo 4"
     }
   ],
   "itineraryStops": [
@@ -306,6 +418,18 @@
         {
           "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -332,6 +456,30 @@
           "location": "Playa Hyeopjae",
           "caption": "Playa Hyeopjae — photo 3",
           "alt": "Playa Hyeopjae — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01-2.webp",
+          "location": "Playa Hyeopjae",
+          "caption": "Playa Hyeopjae — photo 4",
+          "alt": "Playa Hyeopjae — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02-2.webp",
+          "location": "Playa Hyeopjae",
+          "caption": "Playa Hyeopjae — photo 5",
+          "alt": "Playa Hyeopjae — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03-2.webp",
+          "location": "Playa Hyeopjae",
+          "caption": "Playa Hyeopjae — photo 6",
+          "alt": "Playa Hyeopjae — gallery image 6"
         }
       ]
     },
@@ -342,7 +490,7 @@
       "name": "Parque Hallim (Festival de las Hortensias)",
       "category": "Ancla de hortensias + 9 jardines temáticos + 2 cuevas de tubo de lava",
       "description": "**El Parque Hallim (한림공원, fundado en 1971)** es el parque botánico ancla de la costa suroeste — un **complejo de jardines de ~99.000 m² (originalmente 100.000 pyeong / 330.580 m²)** que **el fundador Song Bong-gyu transformó de un páramo arenoso en un paraíso verde** importando tierra y plantando semillas de palma a lo largo de medio siglo. \n\nEl parque atrae a **~1,2 millones de visitantes al año** y organiza su espacio en **nueve jardines temáticos**: el **Jardín Botánico Subtropical**, la **Avenida de las Palmeras**, el **Jardín de Hierbas Silvestres y Flores**, las **Cuevas Hyeopjaegul + Ssangyonggul**, el **Jardín de Piedras y Bonsáis de Jeju**, el **Pueblo Folclórico Jae-Am** (hanok de muros de piedra de la era Joseon con el Restaurante Dolharubang en el lugar), el **Jardín de las Aves**, la **Sala de Exposición de Piedras de Jeju** y el **Jardín Acuático**. \n\nLa decisión estructural definitoria de Hallim es su **calendario mensual de festivales** — **Enero: Narcisos → Febrero: Flor de Ciruelo → Marzo: Tulipanes → Abril: Flor de Cerezo → Mayo: Flores Silvestres / Buganvilla → Junio: Hortensias → Julio–Septiembre: Loto + Nenúfar → Octubre: Cosmos / Pink Muhly → Noviembre: Crisantemos → Diciembre: Camelias** — un ciclo de 12 meses que garantiza un **festival activo con nombre propio cada mes del año**. \n\nLos dos hitos geológicos del parque son la **Cueva Hyeopjaegul (~200m × 10m × 5m, ~25 millones de años de antigüedad)** y la **Cueva Ssangyonggul (~400m × 6m × 3m, 'Dos Dragones')** — ambas parte del mismo **sistema de tubos de lava de 17 km**, pero clasificadas de forma única como **'cuevas bidimensionales'** porque las paredes de los tubos de lava fueron posteriormente recubiertas de **caliza (carbonato de calcio) lixiviada de conchas en el suelo superior**, produciendo la rara combinación mundial de **morfología de tubo de lava + estalactitas/estalagmitas de caliza** en un único sistema de cuevas. \n\nLa temperatura de las cuevas se mantiene a **17–18°C durante todo el año**, convirtiéndolas en refugios naturales de verano. La lista de visitantes ilustres del parque refleja su estatura diplomática: el ex presidente chino Jiang Zemin, el ex primer ministro japonés Nakasone Yasuhiro, el ex presidente surcoreano Kim Dae-jung, el ex presidente de Samsung Lee Kun-hee y el ex presidente del Grupo Hyundai Chung Ju-yung han visitado el parque.",
-      "image": null,
+      "image": "/images/tours/hallim-park/photo-001.webp",
       "highlights": [
         "**Fundado en 1971** por Song Bong-gyu — páramo arenoso transformado en un paraíso verde",
         "**~99.000 m² / 80 acres** — 9 jardines temáticos + ~1,2 millones de visitantes al año",
@@ -388,7 +536,65 @@
         "photo": "El Festival de las Hortensias (junio) y el pink muhly (octubre) son las temporadas fotográficas máximas; las cuevas de lava con iluminación de estalactitas son únicas",
         "facilities": "Restaurantes en el lugar, tienda de regalos, museo de la cueva",
         "tip": "Última entrada 90 minutos antes del cierre; el horario de cierre depende de la puesta de sol; combinar con la Playa de Hyeopjae (5–10 min a pie)"
-      }
+      },
+      "images": [
+        "/images/tours/hallim-park/photo-001.webp",
+        "/images/tours/hallim-park/photo-002.webp",
+        "/images/tours/hallim-park/photo-003.webp",
+        "/images/tours/hallim-park/photo-004.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/hallim-park/photo-001.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hallim-park/photo-002.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hallim-park/photo-003.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hallim-park/photo-004.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/hallim-park/photo-001.webp",
+          "location": "Parque Hallim (Festival de las Hortensias)",
+          "caption": "Parque Hallim (Festival de las Hortensias) — photo 1",
+          "alt": "Parque Hallim (Festival de las Hortensias) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/hallim-park/photo-002.webp",
+          "location": "Parque Hallim (Festival de las Hortensias)",
+          "caption": "Parque Hallim (Festival de las Hortensias) — photo 2",
+          "alt": "Parque Hallim (Festival de las Hortensias) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/hallim-park/photo-003.webp",
+          "location": "Parque Hallim (Festival de las Hortensias)",
+          "caption": "Parque Hallim (Festival de las Hortensias) — photo 3",
+          "alt": "Parque Hallim (Festival de las Hortensias) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/hallim-park/photo-004.webp",
+          "location": "Parque Hallim (Festival de las Hortensias)",
+          "caption": "Parque Hallim (Festival de las Hortensias) — photo 4",
+          "alt": "Parque Hallim (Festival de las Hortensias) — gallery image 4"
+        }
+      ]
     },
     {
       "number": 3,
@@ -514,6 +720,26 @@
         {
           "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/photo-005.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -548,6 +774,46 @@
           "location": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon",
           "caption": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon — photo 4",
           "alt": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+          "location": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon",
+          "caption": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon — photo 5",
+          "alt": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+          "location": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon",
+          "caption": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon — photo 6",
+          "alt": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+          "location": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon",
+          "caption": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon — photo 7",
+          "alt": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+          "location": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon",
+          "caption": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon — photo 8",
+          "alt": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/photo-005.webp",
+          "location": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon",
+          "caption": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon — photo 9",
+          "alt": "Acantilado Jusangjeolli y Cataratas Cheonjeyeon — gallery image 9"
         }
       ]
     },
@@ -617,6 +883,14 @@
         {
           "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -635,6 +909,22 @@
           "location": "Camellia Hill (Túnel de Hortensias)",
           "caption": "Camellia Hill (Túnel de Hortensias) — photo 2",
           "alt": "Camellia Hill (Túnel de Hortensias) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-2.webp",
+          "location": "Camellia Hill (Túnel de Hortensias)",
+          "caption": "Camellia Hill (Túnel de Hortensias) — photo 3",
+          "alt": "Camellia Hill (Túnel de Hortensias) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-2.webp",
+          "location": "Camellia Hill (Túnel de Hortensias)",
+          "caption": "Camellia Hill (Túnel de Hortensias) — photo 4",
+          "alt": "Camellia Hill (Túnel de Hortensias) — gallery image 4"
         }
       ]
     },
@@ -1781,7 +2071,10 @@
             "images": [
               "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
               "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
-              "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp"
+              "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
+              "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01-2.webp",
+              "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02-2.webp",
+              "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03-2.webp"
             ],
             "imageCredits": [
               {
@@ -1794,6 +2087,18 @@
               },
               {
                 "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03-2.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1821,6 +2126,30 @@
                 "location": "Playa Hyeopjae",
                 "caption": "Playa Hyeopjae — photo 3",
                 "alt": "Playa Hyeopjae — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01-2.webp",
+                "location": "Playa Hyeopjae",
+                "caption": "Playa Hyeopjae — photo 4",
+                "alt": "Playa Hyeopjae — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02-2.webp",
+                "location": "Playa Hyeopjae",
+                "caption": "Playa Hyeopjae — photo 5",
+                "alt": "Playa Hyeopjae — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03-2.webp",
+                "location": "Playa Hyeopjae",
+                "caption": "Playa Hyeopjae — photo 6",
+                "alt": "Playa Hyeopjae — gallery image 6"
               }
             ]
           },
@@ -1868,7 +2197,65 @@
                 ""
               ],
               "verified_date": "2026-04-27"
-            }
+            },
+            "images": [
+              "/images/tours/hallim-park/photo-001.webp",
+              "/images/tours/hallim-park/photo-002.webp",
+              "/images/tours/hallim-park/photo-003.webp",
+              "/images/tours/hallim-park/photo-004.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/hallim-park/photo-001.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hallim-park/photo-002.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hallim-park/photo-003.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hallim-park/photo-004.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/hallim-park/photo-001.webp",
+                "location": "Parque Hallim (Festival de las Hortensias)",
+                "caption": "Parque Hallim (Festival de las Hortensias) — photo 1",
+                "alt": "Parque Hallim (Festival de las Hortensias) — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/hallim-park/photo-002.webp",
+                "location": "Parque Hallim (Festival de las Hortensias)",
+                "caption": "Parque Hallim (Festival de las Hortensias) — photo 2",
+                "alt": "Parque Hallim (Festival de las Hortensias) — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/hallim-park/photo-003.webp",
+                "location": "Parque Hallim (Festival de las Hortensias)",
+                "caption": "Parque Hallim (Festival de las Hortensias) — photo 3",
+                "alt": "Parque Hallim (Festival de las Hortensias) — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/hallim-park/photo-004.webp",
+                "location": "Parque Hallim (Festival de las Hortensias)",
+                "caption": "Parque Hallim (Festival de las Hortensias) — photo 4",
+                "alt": "Parque Hallim (Festival de las Hortensias) — gallery image 4"
+              }
+            ]
           },
           {
             "number": 3,
@@ -1955,7 +2342,12 @@
               "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
               "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
               "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
-              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp"
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+              "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+              "/images/tours/jusangjeolli/photo-005.webp"
             ],
             "imageCredits": [
               {
@@ -1972,6 +2364,26 @@
               },
               {
                 "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/photo-005.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2007,6 +2419,46 @@
                 "location": "Acantilado Jusangjeolli y Cascadas Cheonjeyeon",
                 "caption": "Acantilado Jusangjeolli y Cascadas Cheonjeyeon — photo 4",
                 "alt": "Acantilado Jusangjeolli y Cascadas Cheonjeyeon — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+                "location": "Acantilado Jusangjeolli y Cascadas Cheonjeyeon",
+                "caption": "Acantilado Jusangjeolli y Cascadas Cheonjeyeon — photo 5",
+                "alt": "Acantilado Jusangjeolli y Cascadas Cheonjeyeon — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+                "location": "Acantilado Jusangjeolli y Cascadas Cheonjeyeon",
+                "caption": "Acantilado Jusangjeolli y Cascadas Cheonjeyeon — photo 6",
+                "alt": "Acantilado Jusangjeolli y Cascadas Cheonjeyeon — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+                "location": "Acantilado Jusangjeolli y Cascadas Cheonjeyeon",
+                "caption": "Acantilado Jusangjeolli y Cascadas Cheonjeyeon — photo 7",
+                "alt": "Acantilado Jusangjeolli y Cascadas Cheonjeyeon — gallery image 7"
+              },
+              {
+                "id": 8,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+                "location": "Acantilado Jusangjeolli y Cascadas Cheonjeyeon",
+                "caption": "Acantilado Jusangjeolli y Cascadas Cheonjeyeon — photo 8",
+                "alt": "Acantilado Jusangjeolli y Cascadas Cheonjeyeon — gallery image 8"
+              },
+              {
+                "id": 9,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/photo-005.webp",
+                "location": "Acantilado Jusangjeolli y Cascadas Cheonjeyeon",
+                "caption": "Acantilado Jusangjeolli y Cascadas Cheonjeyeon — photo 9",
+                "alt": "Acantilado Jusangjeolli y Cascadas Cheonjeyeon — gallery image 9"
               }
             ]
           },
@@ -2056,7 +2508,9 @@
             },
             "images": [
               "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
-              "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp"
+              "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+              "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-2.webp",
+              "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-2.webp"
             ],
             "imageCredits": [
               {
@@ -2065,6 +2519,14 @@
               },
               {
                 "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-2.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2084,6 +2546,22 @@
                 "location": "Camellia Hill (Túnel de Hortensias)",
                 "caption": "Camellia Hill (Túnel de Hortensias) — photo 2",
                 "alt": "Camellia Hill (Túnel de Hortensias) — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-2.webp",
+                "location": "Camellia Hill (Túnel de Hortensias)",
+                "caption": "Camellia Hill (Túnel de Hortensias) — photo 3",
+                "alt": "Camellia Hill (Túnel de Hortensias) — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-2.webp",
+                "location": "Camellia Hill (Túnel de Hortensias)",
+                "caption": "Camellia Hill (Túnel de Hortensias) — photo 4",
+                "alt": "Camellia Hill (Túnel de Hortensias) — gallery image 4"
               }
             ]
           },

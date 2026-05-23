@@ -14,12 +14,12 @@
       "Tour de un día desde Seúl a Seoraksan",
       "Tour de un día a Seoraksan y Nami"
     ],
-    "ogImage": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
     "title": "Tour de un día por Seúl · Seoraksan + Nami + Calma Matutina | AtoC Korea",
     "description": "Tour de un día en autobús desde Seúl a la montaña más célebre de Corea (Seoraksan), la isla más fotografiada (Nami) y el jardín privado más emblemático (Calma Matutina), todo en un solo día de 13 horas."
   },
   "catalog_card": {
-    "thumbnail": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
+    "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
     "title": "Seúl: Seoraksan + Nami + Calma Matutina",
     "priceLabel": "Desde 59 USD por persona (antes $82, 28% de descuento)",
     "shortCardDescription": "Un tour de un día en autobús de 13 horas desde Seúl que recorre las tres paradas más fotografiadas de Corea: el Parque Nacional Seoraksan (la única Reserva de Biosfera de la UNESCO en Corea), la Isla Nami (el Paseo de las Metasecuoyas de Winter Sonata) y el Jardín de la Calma Matutina (el arboreto privado más emblemático de Corea con 5.000 especies de plantas). Todas las entradas incluidas; guía en inglés; recogida en la Estación de la Universidad Hongik o en la Estación de Myeongdong.",
@@ -43,7 +43,7 @@
       "Todas las entradas incluidas",
       "Día de 13 horas"
     ],
-    "heroImage": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp"
+    "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp"
   },
   "headlineLine1": "Tour de un día por Seúl",
   "headlineLine2": "Seoraksan + Nami + Morning Calm",
@@ -56,7 +56,7 @@
     "discountPercent": null
   },
   "hero": {
-    "imageUrl": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
+    "imageUrl": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
     "imagePosition": "center 40%",
     "tagline": "Los tres destinos de excursión más fotografiados de Corea en un día en autobús de 13 horas desde Seúl: la montaña Seoraksan, los senderos arbolados de la Isla Nami y el Jardín de la Calma Matutina",
     "pills": [
@@ -141,58 +141,122 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
-      "location": "Isla Nami (Namiseom)",
-      "alt": "Isla Nami — imagen de galería 1",
-      "caption": "Isla Nami — avenida de metasecuoyas"
+      "src": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "location": "Parque Nacional Seoraksan",
+      "alt": "Parque Nacional Seoraksan — gallery image 1",
+      "caption": "Parque Nacional Seoraksan — photo 1"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
+      "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
       "location": "Isla Nami (Namiseom)",
-      "alt": "Isla Nami — imagen de galería 2",
-      "caption": "Isla Nami — callejón de ginkgos"
+      "alt": "Isla Nami (Namiseom) — gallery image 1",
+      "caption": "Isla Nami (Namiseom) — photo 1"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
-      "location": "Isla Nami (Namiseom)",
-      "alt": "Isla Nami — imagen de galería 3",
-      "caption": "Isla Nami — sendero ribereño"
+      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31.webp",
+      "location": "Jardín de la Mañana Tranquila (Achimsogwon)",
+      "alt": "Jardín de la Mañana Tranquila (Achimsogwon) — gallery image 1",
+      "caption": "Jardín de la Mañana Tranquila (Achimsogwon) — photo 1"
     },
     {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31.webp",
-      "location": "El Jardín de la Calma Matutina",
-      "alt": "Jardín de la Calma Matutina — imagen de galería 1",
-      "caption": "Jardín de la Calma Matutina — jardines temáticos"
+      "src": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+      "location": "Parque Nacional Seoraksan",
+      "alt": "Parque Nacional Seoraksan — gallery image 2",
+      "caption": "Parque Nacional Seoraksan — photo 2"
     },
     {
       "id": 5,
       "type": "photo",
-      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58.webp",
-      "location": "El Jardín de la Calma Matutina",
-      "alt": "Jardín de la Calma Matutina — imagen de galería 2",
-      "caption": "Jardín de la Calma Matutina — jardín hundido"
+      "src": "/images/tours/seoraksan/photo-001.webp",
+      "location": "Parque Nacional Seoraksan",
+      "alt": "Parque Nacional Seoraksan — gallery image 3",
+      "caption": "Parque Nacional Seoraksan — photo 3"
     },
     {
       "id": 6,
       "type": "photo",
-      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02.webp",
-      "location": "El Jardín de la Calma Matutina",
-      "alt": "Jardín de la Calma Matutina — imagen de galería 3",
-      "caption": "Jardín de la Calma Matutina — festival de iluminación"
+      "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
+      "location": "Isla Nami (Namiseom)",
+      "alt": "Isla Nami (Namiseom) — gallery image 2",
+      "caption": "Isla Nami (Namiseom) — photo 2"
     },
     {
       "id": 7,
       "type": "photo",
+      "src": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
+      "location": "Isla Nami (Namiseom)",
+      "alt": "Isla Nami (Namiseom) — gallery image 3",
+      "caption": "Isla Nami (Namiseom) — photo 3"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-04-2.webp",
+      "location": "Isla Nami (Namiseom)",
+      "alt": "Isla Nami (Namiseom) — gallery image 4",
+      "caption": "Isla Nami (Namiseom) — photo 4"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-05-2.webp",
+      "location": "Isla Nami (Namiseom)",
+      "alt": "Isla Nami (Namiseom) — gallery image 5",
+      "caption": "Isla Nami (Namiseom) — photo 5"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58.webp",
+      "location": "Jardín de la Mañana Tranquila (Achimsogwon)",
+      "alt": "Jardín de la Mañana Tranquila (Achimsogwon) — gallery image 2",
+      "caption": "Jardín de la Mañana Tranquila (Achimsogwon) — photo 2"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02.webp",
+      "location": "Jardín de la Mañana Tranquila (Achimsogwon)",
+      "alt": "Jardín de la Mañana Tranquila (Achimsogwon) — gallery image 3",
+      "caption": "Jardín de la Mañana Tranquila (Achimsogwon) — photo 3"
+    },
+    {
+      "id": 12,
+      "type": "photo",
       "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp",
-      "location": "El Jardín de la Calma Matutina",
-      "alt": "Jardín de la Calma Matutina — imagen de galería 4",
-      "caption": "Jardín de la Calma Matutina — senderos botánicos"
+      "location": "Jardín de la Mañana Tranquila (Achimsogwon)",
+      "alt": "Jardín de la Mañana Tranquila (Achimsogwon) — gallery image 4",
+      "caption": "Jardín de la Mañana Tranquila (Achimsogwon) — photo 4"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31-2.webp",
+      "location": "Jardín de la Mañana Tranquila (Achimsogwon)",
+      "alt": "Jardín de la Mañana Tranquila (Achimsogwon) — gallery image 5",
+      "caption": "Jardín de la Mañana Tranquila (Achimsogwon) — photo 5"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58-2.webp",
+      "location": "Jardín de la Mañana Tranquila (Achimsogwon)",
+      "alt": "Jardín de la Mañana Tranquila (Achimsogwon) — gallery image 6",
+      "caption": "Jardín de la Mañana Tranquila (Achimsogwon) — photo 6"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02-2.webp",
+      "location": "Jardín de la Mañana Tranquila (Achimsogwon)",
+      "alt": "Jardín de la Mañana Tranquila (Achimsogwon) — gallery image 7",
+      "caption": "Jardín de la Mañana Tranquila (Achimsogwon) — photo 7"
     }
   ],
   "itineraryStops": [
@@ -270,6 +334,46 @@
       "images": [
         "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
         "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seoraksan/photo-001.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+          "location": "Parque Nacional Seoraksan",
+          "caption": "Parque Nacional Seoraksan — photo 1",
+          "alt": "Parque Nacional Seoraksan — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+          "location": "Parque Nacional Seoraksan",
+          "caption": "Parque Nacional Seoraksan — photo 2",
+          "alt": "Parque Nacional Seoraksan — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/seoraksan/photo-001.webp",
+          "location": "Parque Nacional Seoraksan",
+          "caption": "Parque Nacional Seoraksan — photo 3",
+          "alt": "Parque Nacional Seoraksan — gallery image 3"
+        }
       ]
     },
     {
@@ -332,6 +436,70 @@
         "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
         "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
         "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/nami-island/kakaotalk-20260510-222949305-04-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/nami-island/kakaotalk-20260510-222949305-05-2.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
+          "location": "Isla Nami (Namiseom)",
+          "caption": "Isla Nami (Namiseom) — photo 1",
+          "alt": "Isla Nami (Namiseom) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
+          "location": "Isla Nami (Namiseom)",
+          "caption": "Isla Nami (Namiseom) — photo 2",
+          "alt": "Isla Nami (Namiseom) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
+          "location": "Isla Nami (Namiseom)",
+          "caption": "Isla Nami (Namiseom) — photo 3",
+          "alt": "Isla Nami (Namiseom) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-04-2.webp",
+          "location": "Isla Nami (Namiseom)",
+          "caption": "Isla Nami (Namiseom) — photo 4",
+          "alt": "Isla Nami (Namiseom) — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-05-2.webp",
+          "location": "Isla Nami (Namiseom)",
+          "caption": "Isla Nami (Namiseom) — photo 5",
+          "alt": "Isla Nami (Namiseom) — gallery image 5"
+        }
       ]
     },
     {
@@ -396,6 +564,94 @@
         "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58.webp",
         "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02.webp",
         "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02-2.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31.webp",
+          "location": "Jardín de la Mañana Tranquila (Achimsogwon)",
+          "caption": "Jardín de la Mañana Tranquila (Achimsogwon) — photo 1",
+          "alt": "Jardín de la Mañana Tranquila (Achimsogwon) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58.webp",
+          "location": "Jardín de la Mañana Tranquila (Achimsogwon)",
+          "caption": "Jardín de la Mañana Tranquila (Achimsogwon) — photo 2",
+          "alt": "Jardín de la Mañana Tranquila (Achimsogwon) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02.webp",
+          "location": "Jardín de la Mañana Tranquila (Achimsogwon)",
+          "caption": "Jardín de la Mañana Tranquila (Achimsogwon) — photo 3",
+          "alt": "Jardín de la Mañana Tranquila (Achimsogwon) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp",
+          "location": "Jardín de la Mañana Tranquila (Achimsogwon)",
+          "caption": "Jardín de la Mañana Tranquila (Achimsogwon) — photo 4",
+          "alt": "Jardín de la Mañana Tranquila (Achimsogwon) — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31-2.webp",
+          "location": "Jardín de la Mañana Tranquila (Achimsogwon)",
+          "caption": "Jardín de la Mañana Tranquila (Achimsogwon) — photo 5",
+          "alt": "Jardín de la Mañana Tranquila (Achimsogwon) — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58-2.webp",
+          "location": "Jardín de la Mañana Tranquila (Achimsogwon)",
+          "caption": "Jardín de la Mañana Tranquila (Achimsogwon) — photo 6",
+          "alt": "Jardín de la Mañana Tranquila (Achimsogwon) — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02-2.webp",
+          "location": "Jardín de la Mañana Tranquila (Achimsogwon)",
+          "caption": "Jardín de la Mañana Tranquila (Achimsogwon) — photo 7",
+          "alt": "Jardín de la Mañana Tranquila (Achimsogwon) — gallery image 7"
+        }
       ]
     },
     {

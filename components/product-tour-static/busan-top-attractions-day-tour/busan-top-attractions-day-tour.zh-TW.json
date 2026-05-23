@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "釜山熱門景點小團體一日遊 | AtoC Korea",
     "metaDescription": "10.5小時釜山小團體經典行程：海東龍宮寺、青沙浦藍線公園、聯合國紀念公園、甘川文化村、札嘎其市場。3個接送地點。",
-    "ogImage": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
     "primaryKeywords": [
       "釜山一日遊",
       "海東龍宮寺",
@@ -31,8 +31,8 @@
       "釜山經典",
       "全年皆宜"
     ],
-    "heroImage": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
-    "thumbnail": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+    "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+    "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
     "priceLabel": "每人 US$29（原價$41，29% 優惠）",
     "shortCardDescription": "單日七站小團體遊，涵蓋釜山經典行程：海東龍宮寺海濱古剎、青沙浦及藍線公園（可選搭天空膠囊列車）、釜山在地午餐、聯合國紀念公墓、甘川文化村彩繪山城，以及札嘎其魚市場。設三個釜山市區接送地點；持證英語導遊帶領；迷您巴士（最多約12人）。所有景點入場免費，僅午餐及自選票券需當日自付。",
     "tags": [
@@ -54,7 +54,7 @@
     "discountPercent": null
   },
   "hero": {
-    "imageUrl": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+    "imageUrl": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
     "imagePosition": "center 40%",
     "tagline": "釜山最受歡迎的七大景點，小團體一日盡覽",
     "pills": [
@@ -134,13 +134,29 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
-      "location": "在韓聯合國紀念公園",
-      "alt": "在韓聯合國紀念公園 — 圖庫圖片 1",
-      "caption": "在韓聯合國紀念公園 — 照片 1"
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+      "location": "海東龍宮寺",
+      "alt": "海東龍宮寺 — on-route photo",
+      "caption": "海東龍宮寺"
     },
     {
       "id": 2,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+      "location": "青沙浦及海雲台藍線公園",
+      "alt": "青沙浦及海雲台藍線公園 — gallery image 1",
+      "caption": "青沙浦及海雲台藍線公園 — photo 1"
+    },
+    {
+      "id": 3,
+      "type": "photo",
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+      "location": "韓國聯合國紀念公墓",
+      "alt": "韓國聯合國紀念公墓 — gallery image 1",
+      "caption": "韓國聯合國紀念公墓 — photo 1"
+    },
+    {
+      "id": 4,
       "type": "photo",
       "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
       "location": "甘川文化村",
@@ -148,84 +164,268 @@
       "caption": "甘川文化村"
     },
     {
-      "id": 3,
-      "type": "photo",
-      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
-      "location": "青沙浦達里石觀景台（藍線公園）",
-      "alt": "青沙浦達里石觀景台（藍線公園） — 圖庫圖片 3",
-      "caption": "青沙浦達里石觀景台（藍線公園） — 照片 3"
-    },
-    {
-      "id": 4,
-      "type": "photo",
-      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39.webp",
-      "location": "青沙浦達里石觀景台（藍線公園）",
-      "alt": "青沙浦達里石觀景台（藍線公園） — 圖庫圖片 4",
-      "caption": "青沙浦達里石觀景台（藍線公園） — 照片 4"
-    },
-    {
       "id": 5,
       "type": "photo",
-      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
-      "location": "青沙浦達里石觀景台（藍線公園）",
-      "alt": "青沙浦達里石觀景台（藍線公園） — 圖庫圖片 5",
-      "caption": "青沙浦達里石觀景台（藍線公園） — 照片 5"
+      "src": "/images/itinerary/jagalchi-harbor-sign.webp",
+      "location": "札嘉其魚市場",
+      "alt": "札嘉其魚市場 — on-route photo",
+      "caption": "札嘉其魚市場"
     },
     {
       "id": 6,
       "type": "photo",
-      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23.webp",
-      "location": "青沙浦達里石觀景台（藍線公園）",
-      "alt": "青沙浦達里石觀景台（藍線公園） — 圖庫圖片 6",
-      "caption": "青沙浦達里石觀景台（藍線公園） — 照片 6"
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+      "location": "海東龍宮寺",
+      "alt": "海東龍宮寺 — on-route photo",
+      "caption": "海東龍宮寺"
     },
     {
       "id": 7,
       "type": "photo",
-      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26.webp",
-      "location": "青沙浦達里石觀景台（藍線公園）",
-      "alt": "青沙浦達里石觀景台（藍線公園） — 圖庫圖片 7",
-      "caption": "青沙浦達里石觀景台（藍線公園） — 照片 7"
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+      "location": "海東龍宮寺",
+      "alt": "海東龍宮寺 — on-route photo",
+      "caption": "海東龍宮寺"
     },
     {
       "id": 8,
       "type": "photo",
-      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19.webp",
-      "location": "青沙浦達里石觀景台（藍線公園）",
-      "alt": "青沙浦達里石觀景台（藍線公園） — 圖庫圖片 8",
-      "caption": "青沙浦達里石觀景台（藍線公園） — 照片 8"
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+      "location": "海東龍宮寺",
+      "alt": "海東龍宮寺 — on-route photo",
+      "caption": "海東龍宮寺"
     },
     {
       "id": 9,
       "type": "photo",
-      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
-      "location": "在韓聯合國紀念公園",
-      "alt": "在韓聯合國紀念公園 — 圖庫圖片 2",
-      "caption": "在韓聯合國紀念公園 — 照片 2"
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
+      "location": "海東龍宮寺",
+      "alt": "海東龍宮寺 — on-route photo",
+      "caption": "海東龍宮寺"
     },
     {
       "id": 10,
       "type": "photo",
-      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
-      "location": "在韓聯合國紀念公園",
-      "alt": "在韓聯合國紀念公園 — 圖庫圖片 3",
-      "caption": "在韓聯合國紀念公園 — 照片 3"
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39.webp",
+      "location": "青沙浦及海雲台藍線公園",
+      "alt": "青沙浦及海雲台藍線公園 — gallery image 2",
+      "caption": "青沙浦及海雲台藍線公園 — photo 2"
     },
     {
       "id": 11,
       "type": "photo",
-      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
-      "location": "甘川文化村",
-      "alt": "甘川文化村 — 圖庫圖片 2",
-      "caption": "甘川文化村 — 照片 2"
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+      "location": "青沙浦及海雲台藍線公園",
+      "alt": "青沙浦及海雲台藍線公園 — gallery image 3",
+      "caption": "青沙浦及海雲台藍線公園 — photo 3"
     },
     {
       "id": 12,
       "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23.webp",
+      "location": "青沙浦及海雲台藍線公園",
+      "alt": "青沙浦及海雲台藍線公園 — gallery image 4",
+      "caption": "青沙浦及海雲台藍線公園 — photo 4"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26.webp",
+      "location": "青沙浦及海雲台藍線公園",
+      "alt": "青沙浦及海雲台藍線公園 — gallery image 5",
+      "caption": "青沙浦及海雲台藍線公園 — photo 5"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19.webp",
+      "location": "青沙浦及海雲台藍線公園",
+      "alt": "青沙浦及海雲台藍線公園 — gallery image 6",
+      "caption": "青沙浦及海雲台藍線公園 — photo 6"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
+      "location": "青沙浦及海雲台藍線公園",
+      "alt": "青沙浦及海雲台藍線公園 — gallery image 7",
+      "caption": "青沙浦及海雲台藍線公園 — photo 7"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-37-36.webp",
+      "location": "青沙浦及海雲台藍線公園",
+      "alt": "青沙浦及海雲台藍線公園 — gallery image 8",
+      "caption": "青沙浦及海雲台藍線公園 — photo 8"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18-2.webp",
+      "location": "青沙浦及海雲台藍線公園",
+      "alt": "青沙浦及海雲台藍線公園 — gallery image 9",
+      "caption": "青沙浦及海雲台藍線公園 — photo 9"
+    },
+    {
+      "id": 18,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39-2.webp",
+      "location": "青沙浦及海雲台藍線公園",
+      "alt": "青沙浦及海雲台藍線公園 — gallery image 10",
+      "caption": "青沙浦及海雲台藍線公園 — photo 10"
+    },
+    {
+      "id": 19,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19-2.webp",
+      "location": "青沙浦及海雲台藍線公園",
+      "alt": "青沙浦及海雲台藍線公園 — gallery image 11",
+      "caption": "青沙浦及海雲台藍線公園 — photo 11"
+    },
+    {
+      "id": 20,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23-2.webp",
+      "location": "青沙浦及海雲台藍線公園",
+      "alt": "青沙浦及海雲台藍線公園 — gallery image 12",
+      "caption": "青沙浦及海雲台藍線公園 — photo 12"
+    },
+    {
+      "id": 21,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26-2.webp",
+      "location": "青沙浦及海雲台藍線公園",
+      "alt": "青沙浦及海雲台藍線公園 — gallery image 13",
+      "caption": "青沙浦及海雲台藍線公園 — photo 13"
+    },
+    {
+      "id": 22,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19-2.webp",
+      "location": "青沙浦及海雲台藍線公園",
+      "alt": "青沙浦及海雲台藍線公園 — gallery image 14",
+      "caption": "青沙浦及海雲台藍線公園 — photo 14"
+    },
+    {
+      "id": 23,
+      "type": "photo",
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+      "location": "韓國聯合國紀念公墓",
+      "alt": "韓國聯合國紀念公墓 — gallery image 2",
+      "caption": "韓國聯合國紀念公墓 — photo 2"
+    },
+    {
+      "id": 24,
+      "type": "photo",
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+      "location": "韓國聯合國紀念公墓",
+      "alt": "韓國聯合國紀念公墓 — gallery image 3",
+      "caption": "韓國聯合國紀念公墓 — photo 3"
+    },
+    {
+      "id": 25,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+      "location": "韓國聯合國紀念公墓",
+      "alt": "韓國聯合國紀念公墓 — gallery image 9",
+      "caption": "韓國聯合國紀念公墓 — photo 9"
+    },
+    {
+      "id": 26,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
+      "location": "韓國聯合國紀念公墓",
+      "alt": "韓國聯合國紀念公墓 — gallery image 10",
+      "caption": "韓國聯合國紀念公墓 — photo 10"
+    },
+    {
+      "id": 27,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
+      "location": "韓國聯合國紀念公墓",
+      "alt": "韓國聯合國紀念公墓 — gallery image 11",
+      "caption": "韓國聯合國紀念公墓 — photo 11"
+    },
+    {
+      "id": 28,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
+      "location": "韓國聯合國紀念公墓",
+      "alt": "韓國聯合國紀念公墓 — gallery image 12",
+      "caption": "韓國聯合國紀念公墓 — photo 12"
+    },
+    {
+      "id": 29,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
+      "location": "韓國聯合國紀念公墓",
+      "alt": "韓國聯合國紀念公墓 — gallery image 13",
+      "caption": "韓國聯合國紀念公墓 — photo 13"
+    },
+    {
+      "id": 30,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
+      "location": "韓國聯合國紀念公墓",
+      "alt": "韓國聯合國紀念公墓 — gallery image 14",
+      "caption": "韓國聯合國紀念公墓 — photo 14"
+    },
+    {
+      "id": 31,
+      "type": "photo",
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23-2.webp",
+      "location": "韓國聯合國紀念公墓",
+      "alt": "韓國聯合國紀念公墓 — gallery image 15",
+      "caption": "韓國聯合國紀念公墓 — photo 15"
+    },
+    {
+      "id": 32,
+      "type": "photo",
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43-2.webp",
+      "location": "韓國聯合國紀念公墓",
+      "alt": "韓國聯合國紀念公墓 — gallery image 16",
+      "caption": "韓國聯合國紀念公墓 — photo 16"
+    },
+    {
+      "id": 33,
+      "type": "photo",
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47-2.webp",
+      "location": "韓國聯合國紀念公墓",
+      "alt": "韓國聯合國紀念公墓 — gallery image 17",
+      "caption": "韓國聯合國紀念公墓 — photo 17"
+    },
+    {
+      "id": 34,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+      "location": "甘川文化村",
+      "alt": "甘川文化村 — on-route photo",
+      "caption": "甘川文化村"
+    },
+    {
+      "id": 35,
+      "type": "photo",
       "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
       "location": "甘川文化村",
-      "alt": "甘川文化村 — 圖庫圖片 3",
-      "caption": "甘川文化村 — 照片 3"
+      "alt": "甘川文化村 — on-route photo",
+      "caption": "甘川文化村"
+    },
+    {
+      "id": 36,
+      "type": "photo",
+      "src": "/images/itinerary/jagalchi-market-interior.webp",
+      "location": "甘川文化村",
+      "alt": "甘川文化村 — on-route photo",
+      "caption": "甘川文化村"
+    },
+    {
+      "id": 37,
+      "type": "photo",
+      "src": "/images/itinerary/jagalchi-night-building.webp",
+      "location": "甘川文化村",
+      "alt": "甘川文化村 — on-route photo",
+      "caption": "甘川文化村"
     }
   ],
   "itineraryStops": [
@@ -399,14 +599,6 @@
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
-          "source": "atoc-korea"
-        },
-        {
           "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39.webp",
           "source": "atoc-korea"
         },
@@ -425,56 +617,152 @@
         {
           "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-37-36.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
         {
-          "id": 3,
+          "id": 1,
           "type": "photo",
           "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
-          "location": "青沙浦達里石觀景台（藍線公園）",
-          "caption": "青沙浦達里石觀景台（藍線公園） — 照片 3",
-          "alt": "青沙浦達里石觀景台（藍線公園） — 圖庫圖片 3"
+          "location": "青沙浦及海雲台藍線公園",
+          "caption": "青沙浦及海雲台藍線公園 — photo 1",
+          "alt": "青沙浦及海雲台藍線公園 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39.webp",
+          "location": "青沙浦及海雲台藍線公園",
+          "caption": "青沙浦及海雲台藍線公園 — photo 2",
+          "alt": "青沙浦及海雲台藍線公園 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+          "location": "青沙浦及海雲台藍線公園",
+          "caption": "青沙浦及海雲台藍線公園 — photo 3",
+          "alt": "青沙浦及海雲台藍線公園 — gallery image 3"
         },
         {
           "id": 4,
           "type": "photo",
-          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39.webp",
-          "location": "青沙浦達里石觀景台（藍線公園）",
-          "caption": "青沙浦達里石觀景台（藍線公園） — 照片 4",
-          "alt": "青沙浦達里石觀景台（藍線公園） — 圖庫圖片 4"
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23.webp",
+          "location": "青沙浦及海雲台藍線公園",
+          "caption": "青沙浦及海雲台藍線公園 — photo 4",
+          "alt": "青沙浦及海雲台藍線公園 — gallery image 4"
         },
         {
           "id": 5,
           "type": "photo",
-          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
-          "location": "青沙浦達里石觀景台（藍線公園）",
-          "caption": "青沙浦達里石觀景台（藍線公園） — 照片 5",
-          "alt": "青沙浦達里石觀景台（藍線公園） — 圖庫圖片 5"
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26.webp",
+          "location": "青沙浦及海雲台藍線公園",
+          "caption": "青沙浦及海雲台藍線公園 — photo 5",
+          "alt": "青沙浦及海雲台藍線公園 — gallery image 5"
         },
         {
           "id": 6,
           "type": "photo",
-          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23.webp",
-          "location": "青沙浦達里石觀景台（藍線公園）",
-          "caption": "青沙浦達里石觀景台（藍線公園） — 照片 6",
-          "alt": "青沙浦達里石觀景台（藍線公園） — 圖庫圖片 6"
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19.webp",
+          "location": "青沙浦及海雲台藍線公園",
+          "caption": "青沙浦及海雲台藍線公園 — photo 6",
+          "alt": "青沙浦及海雲台藍線公園 — gallery image 6"
         },
         {
           "id": 7,
           "type": "photo",
-          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26.webp",
-          "location": "青沙浦達里石觀景台（藍線公園）",
-          "caption": "青沙浦達里石觀景台（藍線公園） — 照片 7",
-          "alt": "青沙浦達里石觀景台（藍線公園） — 圖庫圖片 7"
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
+          "location": "青沙浦及海雲台藍線公園",
+          "caption": "青沙浦及海雲台藍線公園 — photo 7",
+          "alt": "青沙浦及海雲台藍線公園 — gallery image 7"
         },
         {
           "id": 8,
           "type": "photo",
-          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19.webp",
-          "location": "青沙浦達里石觀景台（藍線公園）",
-          "caption": "青沙浦達里石觀景台（藍線公園） — 照片 8",
-          "alt": "青沙浦達里石觀景台（藍線公園） — 圖庫圖片 8"
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-37-36.webp",
+          "location": "青沙浦及海雲台藍線公園",
+          "caption": "青沙浦及海雲台藍線公園 — photo 8",
+          "alt": "青沙浦及海雲台藍線公園 — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18-2.webp",
+          "location": "青沙浦及海雲台藍線公園",
+          "caption": "青沙浦及海雲台藍線公園 — photo 9",
+          "alt": "青沙浦及海雲台藍線公園 — gallery image 9"
+        },
+        {
+          "id": 10,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39-2.webp",
+          "location": "青沙浦及海雲台藍線公園",
+          "caption": "青沙浦及海雲台藍線公園 — photo 10",
+          "alt": "青沙浦及海雲台藍線公園 — gallery image 10"
+        },
+        {
+          "id": 11,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19-2.webp",
+          "location": "青沙浦及海雲台藍線公園",
+          "caption": "青沙浦及海雲台藍線公園 — photo 11",
+          "alt": "青沙浦及海雲台藍線公園 — gallery image 11"
+        },
+        {
+          "id": 12,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23-2.webp",
+          "location": "青沙浦及海雲台藍線公園",
+          "caption": "青沙浦及海雲台藍線公園 — photo 12",
+          "alt": "青沙浦及海雲台藍線公園 — gallery image 12"
+        },
+        {
+          "id": 13,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26-2.webp",
+          "location": "青沙浦及海雲台藍線公園",
+          "caption": "青沙浦及海雲台藍線公園 — photo 13",
+          "alt": "青沙浦及海雲台藍線公園 — gallery image 13"
+        },
+        {
+          "id": 14,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19-2.webp",
+          "location": "青沙浦及海雲台藍線公園",
+          "caption": "青沙浦及海雲台藍線公園 — photo 14",
+          "alt": "青沙浦及海雲台藍線公園 — gallery image 14"
         }
       ]
     },
@@ -595,6 +883,62 @@
         {
           "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -602,25 +946,137 @@
           "id": 1,
           "type": "photo",
           "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
-          "location": "在韓聯合國紀念公園",
-          "caption": "在韓聯合國紀念公園 — 照片 1",
-          "alt": "在韓聯合國紀念公園 — 圖庫圖片 1"
+          "location": "韓國聯合國紀念公墓",
+          "caption": "韓國聯合國紀念公墓 — photo 1",
+          "alt": "韓國聯合國紀念公墓 — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
           "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
-          "location": "在韓聯合國紀念公園",
-          "caption": "在韓聯合國紀念公園 — 照片 2",
-          "alt": "在韓聯合國紀念公園 — 圖庫圖片 2"
+          "location": "韓國聯合國紀念公墓",
+          "caption": "韓國聯合國紀念公墓 — photo 2",
+          "alt": "韓國聯合國紀念公墓 — gallery image 2"
         },
         {
           "id": 3,
           "type": "photo",
           "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
-          "location": "在韓聯合國紀念公園",
-          "caption": "在韓聯合國紀念公園 — 照片 3",
-          "alt": "在韓聯合國紀念公園 — 圖庫圖片 3"
+          "location": "韓國聯合國紀念公墓",
+          "caption": "韓國聯合國紀念公墓 — photo 3",
+          "alt": "韓國聯合國紀念公墓 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+          "location": "韓國聯合國紀念公墓",
+          "caption": "韓國聯合國紀念公墓 — photo 4",
+          "alt": "韓國聯合國紀念公墓 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+          "location": "韓國聯合國紀念公墓",
+          "caption": "韓國聯合國紀念公墓 — photo 5",
+          "alt": "韓國聯合國紀念公墓 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+          "location": "韓國聯合國紀念公墓",
+          "caption": "韓國聯合國紀念公墓 — photo 6",
+          "alt": "韓國聯合國紀念公墓 — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+          "location": "韓國聯合國紀念公墓",
+          "caption": "韓國聯合國紀念公墓 — photo 7",
+          "alt": "韓國聯合國紀念公墓 — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
+          "location": "韓國聯合國紀念公墓",
+          "caption": "韓國聯合國紀念公墓 — photo 8",
+          "alt": "韓國聯合國紀念公墓 — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+          "location": "韓國聯合國紀念公墓",
+          "caption": "韓國聯合國紀念公墓 — photo 9",
+          "alt": "韓國聯合國紀念公墓 — gallery image 9"
+        },
+        {
+          "id": 10,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
+          "location": "韓國聯合國紀念公墓",
+          "caption": "韓國聯合國紀念公墓 — photo 10",
+          "alt": "韓國聯合國紀念公墓 — gallery image 10"
+        },
+        {
+          "id": 11,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
+          "location": "韓國聯合國紀念公墓",
+          "caption": "韓國聯合國紀念公墓 — photo 11",
+          "alt": "韓國聯合國紀念公墓 — gallery image 11"
+        },
+        {
+          "id": 12,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
+          "location": "韓國聯合國紀念公墓",
+          "caption": "韓國聯合國紀念公墓 — photo 12",
+          "alt": "韓國聯合國紀念公墓 — gallery image 12"
+        },
+        {
+          "id": 13,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
+          "location": "韓國聯合國紀念公墓",
+          "caption": "韓國聯合國紀念公墓 — photo 13",
+          "alt": "韓國聯合國紀念公墓 — gallery image 13"
+        },
+        {
+          "id": 14,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
+          "location": "韓國聯合國紀念公墓",
+          "caption": "韓國聯合國紀念公墓 — photo 14",
+          "alt": "韓國聯合國紀念公墓 — gallery image 14"
+        },
+        {
+          "id": 15,
+          "type": "photo",
+          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23-2.webp",
+          "location": "韓國聯合國紀念公墓",
+          "caption": "韓國聯合國紀念公墓 — photo 15",
+          "alt": "韓國聯合國紀念公墓 — gallery image 15"
+        },
+        {
+          "id": 16,
+          "type": "photo",
+          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43-2.webp",
+          "location": "韓國聯合國紀念公墓",
+          "caption": "韓國聯合國紀念公墓 — photo 16",
+          "alt": "韓國聯合國紀念公墓 — gallery image 16"
+        },
+        {
+          "id": 17,
+          "type": "photo",
+          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47-2.webp",
+          "location": "韓國聯合國紀念公墓",
+          "caption": "韓國聯合國紀念公墓 — photo 17",
+          "alt": "韓國聯合國紀念公墓 — gallery image 17"
         }
       ]
     },
@@ -1649,17 +2105,17 @@
               "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
               "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23.webp",
               "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26.webp",
-              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19.webp"
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19.webp",
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-37-36.webp",
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18-2.webp",
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39-2.webp",
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19-2.webp",
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23-2.webp",
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26-2.webp",
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19-2.webp"
             ],
             "imageCredits": [
-              {
-                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
-                "source": "atoc-korea"
-              },
               {
                 "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
                 "source": "atoc-korea"
@@ -1683,56 +2139,152 @@
               {
                 "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19.webp",
                 "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-37-36.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19-2.webp",
+                "source": "atoc-korea"
               }
             ],
             "galleryItems": [
               {
-                "id": 3,
+                "id": 1,
                 "type": "photo",
                 "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
-                "location": "青沙浦達里石觀景台（藍線公園）",
-                "caption": "青沙浦達里石觀景台（藍線公園） — 照片 3",
-                "alt": "青沙浦達里石觀景台（藍線公園） — 圖庫圖片 3"
+                "location": "青沙浦與海雲台藍線公園",
+                "caption": "青沙浦與海雲台藍線公園 — photo 1",
+                "alt": "青沙浦與海雲台藍線公園 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39.webp",
+                "location": "青沙浦與海雲台藍線公園",
+                "caption": "青沙浦與海雲台藍線公園 — photo 2",
+                "alt": "青沙浦與海雲台藍線公園 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+                "location": "青沙浦與海雲台藍線公園",
+                "caption": "青沙浦與海雲台藍線公園 — photo 3",
+                "alt": "青沙浦與海雲台藍線公園 — gallery image 3"
               },
               {
                 "id": 4,
                 "type": "photo",
-                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39.webp",
-                "location": "青沙浦達里石觀景台（藍線公園）",
-                "caption": "青沙浦達里石觀景台（藍線公園） — 照片 4",
-                "alt": "青沙浦達里石觀景台（藍線公園） — 圖庫圖片 4"
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23.webp",
+                "location": "青沙浦與海雲台藍線公園",
+                "caption": "青沙浦與海雲台藍線公園 — photo 4",
+                "alt": "青沙浦與海雲台藍線公園 — gallery image 4"
               },
               {
                 "id": 5,
                 "type": "photo",
-                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
-                "location": "青沙浦達里石觀景台（藍線公園）",
-                "caption": "青沙浦達里石觀景台（藍線公園） — 照片 5",
-                "alt": "青沙浦達里石觀景台（藍線公園） — 圖庫圖片 5"
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26.webp",
+                "location": "青沙浦與海雲台藍線公園",
+                "caption": "青沙浦與海雲台藍線公園 — photo 5",
+                "alt": "青沙浦與海雲台藍線公園 — gallery image 5"
               },
               {
                 "id": 6,
                 "type": "photo",
-                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23.webp",
-                "location": "青沙浦達里石觀景台（藍線公園）",
-                "caption": "青沙浦達里石觀景台（藍線公園） — 照片 6",
-                "alt": "青沙浦達里石觀景台（藍線公園） — 圖庫圖片 6"
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19.webp",
+                "location": "青沙浦與海雲台藍線公園",
+                "caption": "青沙浦與海雲台藍線公園 — photo 6",
+                "alt": "青沙浦與海雲台藍線公園 — gallery image 6"
               },
               {
                 "id": 7,
                 "type": "photo",
-                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26.webp",
-                "location": "青沙浦達里石觀景台（藍線公園）",
-                "caption": "青沙浦達里石觀景台（藍線公園） — 照片 7",
-                "alt": "青沙浦達里石觀景台（藍線公園） — 圖庫圖片 7"
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-03-54.webp",
+                "location": "青沙浦與海雲台藍線公園",
+                "caption": "青沙浦與海雲台藍線公園 — photo 7",
+                "alt": "青沙浦與海雲台藍線公園 — gallery image 7"
               },
               {
                 "id": 8,
                 "type": "photo",
-                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19.webp",
-                "location": "青沙浦達里石觀景台（藍線公園）",
-                "caption": "青沙浦達里石觀景台（藍線公園） — 照片 8",
-                "alt": "青沙浦達里石觀景台（藍線公園） — 圖庫圖片 8"
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-37-36.webp",
+                "location": "青沙浦與海雲台藍線公園",
+                "caption": "青沙浦與海雲台藍線公園 — photo 8",
+                "alt": "青沙浦與海雲台藍線公園 — gallery image 8"
+              },
+              {
+                "id": 9,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18-2.webp",
+                "location": "青沙浦與海雲台藍線公園",
+                "caption": "青沙浦與海雲台藍線公園 — photo 9",
+                "alt": "青沙浦與海雲台藍線公園 — gallery image 9"
+              },
+              {
+                "id": 10,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-35-39-2.webp",
+                "location": "青沙浦與海雲台藍線公園",
+                "caption": "青沙浦與海雲台藍線公園 — photo 10",
+                "alt": "青沙浦與海雲台藍線公園 — gallery image 10"
+              },
+              {
+                "id": 11,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19-2.webp",
+                "location": "青沙浦與海雲台藍線公園",
+                "caption": "青沙浦與海雲台藍線公園 — photo 11",
+                "alt": "青沙浦與海雲台藍線公園 — gallery image 11"
+              },
+              {
+                "id": 12,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-23-2.webp",
+                "location": "青沙浦與海雲台藍線公園",
+                "caption": "青沙浦與海雲台藍線公園 — photo 12",
+                "alt": "青沙浦與海雲台藍線公園 — gallery image 12"
+              },
+              {
+                "id": 13,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-26-2.webp",
+                "location": "青沙浦與海雲台藍線公園",
+                "caption": "青沙浦與海雲台藍線公園 — photo 13",
+                "alt": "青沙浦與海雲台藍線公園 — gallery image 13"
+              },
+              {
+                "id": 14,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-54-19-2.webp",
+                "location": "青沙浦與海雲台藍線公園",
+                "caption": "青沙浦與海雲台藍線公園 — photo 14",
+                "alt": "青沙浦與海雲台藍線公園 — gallery image 14"
               }
             ]
           },
@@ -1775,7 +2327,10 @@
             "images": [
               "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
               "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
-              "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp"
+              "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+              "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23-2.webp",
+              "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43-2.webp",
+              "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47-2.webp"
             ],
             "imageCredits": [
               {
@@ -1789,6 +2344,18 @@
               {
                 "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
                 "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47-2.webp",
+                "source": "atoc-korea"
               }
             ],
             "galleryItems": [
@@ -1796,25 +2363,49 @@
                 "id": 1,
                 "type": "photo",
                 "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
-                "location": "在韓聯合國紀念公園",
-                "caption": "在韓聯合國紀念公園 — 照片 1",
-                "alt": "在韓聯合國紀念公園 — 圖庫圖片 1"
+                "location": "聯合國紀念公墓",
+                "caption": "聯合國紀念公墓 — photo 1",
+                "alt": "聯合國紀念公墓 — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
                 "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
-                "location": "在韓聯合國紀念公園",
-                "caption": "在韓聯合國紀念公園 — 照片 2",
-                "alt": "在韓聯合國紀念公園 — 圖庫圖片 2"
+                "location": "聯合國紀念公墓",
+                "caption": "聯合國紀念公墓 — photo 2",
+                "alt": "聯合國紀念公墓 — gallery image 2"
               },
               {
                 "id": 3,
                 "type": "photo",
                 "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
-                "location": "在韓聯合國紀念公園",
-                "caption": "在韓聯合國紀念公園 — 照片 3",
-                "alt": "在韓聯合國紀念公園 — 圖庫圖片 3"
+                "location": "聯合國紀念公墓",
+                "caption": "聯合國紀念公墓 — photo 3",
+                "alt": "聯合國紀念公墓 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23-2.webp",
+                "location": "聯合國紀念公墓",
+                "caption": "聯合國紀念公墓 — photo 4",
+                "alt": "聯合國紀念公墓 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43-2.webp",
+                "location": "聯合國紀念公墓",
+                "caption": "聯合國紀念公墓 — photo 5",
+                "alt": "聯合國紀念公墓 — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47-2.webp",
+                "location": "聯合國紀念公墓",
+                "caption": "聯合國紀念公墓 — photo 6",
+                "alt": "聯合國紀念公墓 — gallery image 6"
               }
             ]
           },

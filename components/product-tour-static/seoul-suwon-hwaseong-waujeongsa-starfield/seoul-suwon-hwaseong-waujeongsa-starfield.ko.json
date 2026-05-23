@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "수원 화성, 와우정사 & 스타필드 당일 투어 | AtoC Korea",
     "metaDescription": "서울 출발 9~10시간 당일 여행: 유네스코 수원 화성, 스타필드 수원 도서관, 그리고 거대한 야외 불상이 있는 와우정사. 영어 가이드 및 이동 수단 포함.",
-    "ogImage": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
     "primaryKeywords": [
       "수원 화성 당일 투어",
       "용인 와우정사",
@@ -31,8 +31,8 @@
       "문화유산 + 현대 당일 여행",
       "입장료 포함"
     ],
-    "heroImage": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
-    "thumbnail": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
+    "heroImage": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+    "thumbnail": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
     "priceLabel": "",
     "shortCardDescription": "서울 출발 소그룹 당일 여행으로 한국의 세 가지 대조적인 면을 경험하세요: 유네스코 세계유산으로 등재된 수원 화성(18세기 군사 건축물), 사진 명소로 유명한 스타필드 수원 도서관(현대 문화 아이콘), 그리고 용인 와우정사(거대한 야외 불상과 석종). 교통 및 입장료가 포함된 높은 문화유산 가치의 여행입니다.",
     "tags": [
@@ -52,7 +52,7 @@
     "discountPercent": null
   },
   "hero": {
-    "imageUrl": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
+    "imageUrl": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
     "imagePosition": "center 50%",
     "tagline": "18세기 유네스코 성곽부터 한국에서 가장 많이 사진에 담기는 현대 도서관 중 하나, 그리고 고요한 산속 불교 사찰까지—균형 잡힌 하루로 만나는 한국의 세 가지 모습.",
     "pills": [
@@ -134,112 +134,136 @@
       "type": "photo",
       "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
       "location": "수원 화성",
-      "alt": "수원 화성 — 갤러리 이미지 1",
-      "caption": "수원 화성 — 사진 1"
+      "alt": "수원 화성 — gallery image 1",
+      "caption": "수원 화성 — photo 1"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
-      "location": "스타필드 수원 라이브러리",
-      "alt": "스타필드 수원 라이브러리 — 갤러리 이미지 1",
-      "caption": "스타필드 수원 라이브러리 — 사진 1"
+      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
+      "location": "와우정사",
+      "alt": "와우정사 — gallery image 1",
+      "caption": "와우정사 — photo 1"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
-      "location": "와우정사",
-      "alt": "와우정사 — 갤러리 이미지 2",
-      "caption": "와우정사 — 사진 2"
+      "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
+      "location": "수원 화성",
+      "alt": "수원 화성 — gallery image 2",
+      "caption": "수원 화성 — photo 2"
     },
     {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
+      "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
       "location": "수원 화성",
-      "alt": "수원 화성 — 갤러리 이미지 3",
-      "caption": "수원 화성 — 사진 3"
+      "alt": "수원 화성 — gallery image 3",
+      "caption": "수원 화성 — photo 3"
     },
     {
       "id": 5,
       "type": "photo",
-      "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
+      "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
       "location": "수원 화성",
-      "alt": "수원 화성 — 갤러리 이미지 4",
-      "caption": "수원 화성 — 사진 4"
+      "alt": "수원 화성 — gallery image 4",
+      "caption": "수원 화성 — photo 4"
     },
     {
       "id": 6,
       "type": "photo",
-      "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
+      "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
       "location": "수원 화성",
-      "alt": "수원 화성 — 갤러리 이미지 5",
-      "caption": "수원 화성 — 사진 5"
+      "alt": "수원 화성 — gallery image 5",
+      "caption": "수원 화성 — photo 5"
     },
     {
       "id": 7,
       "type": "photo",
-      "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
+      "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305-2.webp",
       "location": "수원 화성",
-      "alt": "수원 화성 — 갤러리 이미지 2",
-      "caption": "수원 화성 — 사진 2"
+      "alt": "수원 화성 — gallery image 6",
+      "caption": "수원 화성 — photo 6"
     },
     {
       "id": 8,
       "type": "photo",
-      "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
-      "location": "스타필드 수원 라이브러리",
-      "alt": "스타필드 수원 라이브러리 — 갤러리 이미지 3",
-      "caption": "스타필드 수원 라이브러리 — 사진 3"
+      "src": "/images/tours/suwon-hwaseong/photo-002.webp",
+      "location": "수원 화성",
+      "alt": "수원 화성 — gallery image 7",
+      "caption": "수원 화성 — photo 7"
     },
     {
       "id": 9,
       "type": "photo",
-      "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
-      "location": "스타필드 수원 라이브러리",
-      "alt": "스타필드 수원 라이브러리 — 갤러리 이미지 4",
-      "caption": "스타필드 수원 라이브러리 — 사진 4"
+      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50.webp",
+      "location": "와우정사",
+      "alt": "와우정사 — gallery image 2",
+      "caption": "와우정사 — photo 2"
     },
     {
       "id": 10,
       "type": "photo",
-      "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
-      "location": "스타필드 수원 라이브러리",
-      "alt": "스타필드 수원 라이브러리 — 갤러리 이미지 5",
-      "caption": "스타필드 수원 라이브러리 — 사진 5"
+      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-03.webp",
+      "location": "와우정사",
+      "alt": "와우정사 — gallery image 3",
+      "caption": "와우정사 — photo 3"
     },
     {
       "id": 11,
       "type": "photo",
-      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50.webp",
-      "location": "Templo Waujeongsa",
-      "alt": "Templo Waujeongsa — gallery image 2",
-      "caption": "Templo Waujeongsa — photo 2"
+      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11.webp",
+      "location": "와우정사",
+      "alt": "와우정사 — gallery image 4",
+      "caption": "와우정사 — photo 4"
     },
     {
       "id": 12,
       "type": "photo",
-      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-03.webp",
-      "location": "Templo Waujeongsa",
-      "alt": "Templo Waujeongsa — gallery image 3",
-      "caption": "Templo Waujeongsa — photo 3"
+      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33.webp",
+      "location": "와우정사",
+      "alt": "와우정사 — gallery image 5",
+      "caption": "와우정사 — photo 5"
     },
     {
       "id": 13,
       "type": "photo",
-      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11.webp",
-      "location": "Templo Waujeongsa",
-      "alt": "Templo Waujeongsa — gallery image 4",
-      "caption": "Templo Waujeongsa — photo 4"
+      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40-2.webp",
+      "location": "와우정사",
+      "alt": "와우정사 — gallery image 6",
+      "caption": "와우정사 — photo 6"
     },
     {
       "id": 14,
       "type": "photo",
-      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33.webp",
-      "location": "Templo Waujeongsa",
-      "alt": "Templo Waujeongsa — gallery image 5",
-      "caption": "Templo Waujeongsa — photo 5"
+      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50-2.webp",
+      "location": "와우정사",
+      "alt": "와우정사 — gallery image 7",
+      "caption": "와우정사 — photo 7"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-03-2.webp",
+      "location": "와우정사",
+      "alt": "와우정사 — gallery image 8",
+      "caption": "와우정사 — photo 8"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11-2.webp",
+      "location": "와우정사",
+      "alt": "와우정사 — gallery image 9",
+      "caption": "와우정사 — photo 9"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33-2.webp",
+      "location": "와우정사",
+      "alt": "와우정사 — gallery image 10",
+      "caption": "와우정사 — photo 10"
     }
   ],
   "itineraryStops": [
@@ -330,6 +354,14 @@
         {
           "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/suwon-hwaseong/photo-002.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -338,40 +370,56 @@
           "type": "photo",
           "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
           "location": "수원 화성",
-          "caption": "수원 화성 — 사진 1",
-          "alt": "수원 화성 — 갤러리 이미지 1"
+          "caption": "수원 화성 — photo 1",
+          "alt": "수원 화성 — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
           "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
           "location": "수원 화성",
-          "caption": "수원 화성 — 사진 2",
-          "alt": "수원 화성 — 갤러리 이미지 2"
+          "caption": "수원 화성 — photo 2",
+          "alt": "수원 화성 — gallery image 2"
         },
         {
           "id": 3,
           "type": "photo",
           "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
           "location": "수원 화성",
-          "caption": "수원 화성 — 사진 3",
-          "alt": "수원 화성 — 갤러리 이미지 3"
+          "caption": "수원 화성 — photo 3",
+          "alt": "수원 화성 — gallery image 3"
         },
         {
           "id": 4,
           "type": "photo",
           "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
           "location": "수원 화성",
-          "caption": "수원 화성 — 사진 4",
-          "alt": "수원 화성 — 갤러리 이미지 4"
+          "caption": "수원 화성 — photo 4",
+          "alt": "수원 화성 — gallery image 4"
         },
         {
           "id": 5,
           "type": "photo",
           "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
           "location": "수원 화성",
-          "caption": "수원 화성 — 사진 5",
-          "alt": "수원 화성 — 갤러리 이미지 5"
+          "caption": "수원 화성 — photo 5",
+          "alt": "수원 화성 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305-2.webp",
+          "location": "수원 화성",
+          "caption": "수원 화성 — photo 6",
+          "alt": "수원 화성 — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/suwon-hwaseong/photo-002.webp",
+          "location": "수원 화성",
+          "caption": "수원 화성 — photo 7",
+          "alt": "수원 화성 — gallery image 7"
         }
       ]
     },
@@ -458,6 +506,22 @@
         {
           "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -465,33 +529,65 @@
           "id": 1,
           "type": "photo",
           "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
-          "location": "스타필드 수원 라이브러리 & 몰",
-          "caption": "스타필드 수원 라이브러리 & 몰 — 사진 1",
-          "alt": "스타필드 수원 라이브러리 & 몰 — 갤러리 이미지 1"
+          "location": "스타필드 수원 도서관 & 몰",
+          "caption": "스타필드 수원 도서관 & 몰 — photo 1",
+          "alt": "스타필드 수원 도서관 & 몰 — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
           "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
-          "location": "스타필드 수원 라이브러리 & 몰",
-          "caption": "스타필드 수원 라이브러리 & 몰 — 사진 2",
-          "alt": "스타필드 수원 라이브러리 & 몰 — 갤러리 이미지 2"
+          "location": "스타필드 수원 도서관 & 몰",
+          "caption": "스타필드 수원 도서관 & 몰 — photo 2",
+          "alt": "스타필드 수원 도서관 & 몰 — gallery image 2"
         },
         {
           "id": 3,
           "type": "photo",
           "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
-          "location": "스타필드 수원 라이브러리 & 몰",
-          "caption": "스타필드 수원 라이브러리 & 몰 — 사진 3",
-          "alt": "스타필드 수원 라이브러리 & 몰 — 갤러리 이미지 3"
+          "location": "스타필드 수원 도서관 & 몰",
+          "caption": "스타필드 수원 도서관 & 몰 — photo 3",
+          "alt": "스타필드 수원 도서관 & 몰 — gallery image 3"
         },
         {
           "id": 4,
           "type": "photo",
           "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
-          "location": "스타필드 수원 라이브러리 & 몰",
-          "caption": "스타필드 수원 라이브러리 & 몰 — 사진 4",
-          "alt": "스타필드 수원 라이브러리 & 몰 — 갤러리 이미지 4"
+          "location": "스타필드 수원 도서관 & 몰",
+          "caption": "스타필드 수원 도서관 & 몰 — photo 4",
+          "alt": "스타필드 수원 도서관 & 몰 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18-2.webp",
+          "location": "스타필드 수원 도서관 & 몰",
+          "caption": "스타필드 수원 도서관 & 몰 — photo 5",
+          "alt": "스타필드 수원 도서관 & 몰 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38-2.webp",
+          "location": "스타필드 수원 도서관 & 몰",
+          "caption": "스타필드 수원 도서관 & 몰 — photo 6",
+          "alt": "스타필드 수원 도서관 & 몰 — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55-2.webp",
+          "location": "스타필드 수원 도서관 & 몰",
+          "caption": "스타필드 수원 도서관 & 몰 — photo 7",
+          "alt": "스타필드 수원 도서관 & 몰 — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58-2.webp",
+          "location": "스타필드 수원 도서관 & 몰",
+          "caption": "스타필드 수원 도서관 & 몰 — photo 8",
+          "alt": "스타필드 수원 도서관 & 몰 — gallery image 8"
         }
       ]
     },
@@ -583,6 +679,26 @@
         {
           "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-03-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -591,40 +707,80 @@
           "type": "photo",
           "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
           "location": "와우정사",
-          "caption": "와우정사 — 사진 1",
-          "alt": "와우정사 — 갤러리 이미지 1"
+          "caption": "와우정사 — photo 1",
+          "alt": "와우정사 — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
           "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50.webp",
           "location": "와우정사",
-          "caption": "와우정사 — 사진 2",
-          "alt": "와우정사 — 갤러리 이미지 2"
+          "caption": "와우정사 — photo 2",
+          "alt": "와우정사 — gallery image 2"
         },
         {
           "id": 3,
           "type": "photo",
           "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-03.webp",
           "location": "와우정사",
-          "caption": "와우정사 — 사진 3",
-          "alt": "와우정사 — 갤러리 이미지 3"
+          "caption": "와우정사 — photo 3",
+          "alt": "와우정사 — gallery image 3"
         },
         {
           "id": 4,
           "type": "photo",
           "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11.webp",
           "location": "와우정사",
-          "caption": "와우정사 — 사진 4",
-          "alt": "와우정사 — 갤러리 이미지 4"
+          "caption": "와우정사 — photo 4",
+          "alt": "와우정사 — gallery image 4"
         },
         {
           "id": 5,
           "type": "photo",
           "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33.webp",
           "location": "와우정사",
-          "caption": "와우정사 — 사진 5",
-          "alt": "와우정사 — 갤러리 이미지 5"
+          "caption": "와우정사 — photo 5",
+          "alt": "와우정사 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40-2.webp",
+          "location": "와우정사",
+          "caption": "와우정사 — photo 6",
+          "alt": "와우정사 — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50-2.webp",
+          "location": "와우정사",
+          "caption": "와우정사 — photo 7",
+          "alt": "와우정사 — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-03-2.webp",
+          "location": "와우정사",
+          "caption": "와우정사 — photo 8",
+          "alt": "와우정사 — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11-2.webp",
+          "location": "와우정사",
+          "caption": "와우정사 — photo 9",
+          "alt": "와우정사 — gallery image 9"
+        },
+        {
+          "id": 10,
+          "type": "photo",
+          "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33-2.webp",
+          "location": "와우정사",
+          "caption": "와우정사 — photo 10",
+          "alt": "와우정사 — gallery image 10"
         }
       ]
     }
@@ -1545,7 +1701,9 @@
               "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
               "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
               "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
-              "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp"
+              "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
+              "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305-2.webp",
+              "/images/tours/suwon-hwaseong/photo-002.webp"
             ],
             "imageCredits": [
               {
@@ -1567,6 +1725,14 @@
               {
                 "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
                 "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/suwon-hwaseong/photo-002.webp",
+                "source": "atoc-korea"
               }
             ],
             "galleryItems": [
@@ -1575,40 +1741,56 @@
                 "type": "photo",
                 "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
                 "location": "수원 화성",
-                "caption": "수원 화성 — 사진 1",
-                "alt": "수원 화성 — 갤러리 이미지 1"
+                "caption": "수원 화성 — photo 1",
+                "alt": "수원 화성 — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
                 "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
                 "location": "수원 화성",
-                "caption": "수원 화성 — 사진 2",
-                "alt": "수원 화성 — 갤러리 이미지 2"
+                "caption": "수원 화성 — photo 2",
+                "alt": "수원 화성 — gallery image 2"
               },
               {
                 "id": 3,
                 "type": "photo",
                 "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
                 "location": "수원 화성",
-                "caption": "수원 화성 — 사진 3",
-                "alt": "수원 화성 — 갤러리 이미지 3"
+                "caption": "수원 화성 — photo 3",
+                "alt": "수원 화성 — gallery image 3"
               },
               {
                 "id": 4,
                 "type": "photo",
                 "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
                 "location": "수원 화성",
-                "caption": "수원 화성 — 사진 4",
-                "alt": "수원 화성 — 갤러리 이미지 4"
+                "caption": "수원 화성 — photo 4",
+                "alt": "수원 화성 — gallery image 4"
               },
               {
                 "id": 5,
                 "type": "photo",
                 "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
                 "location": "수원 화성",
-                "caption": "수원 화성 — 사진 5",
-                "alt": "수원 화성 — 갤러리 이미지 5"
+                "caption": "수원 화성 — photo 5",
+                "alt": "수원 화성 — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305-2.webp",
+                "location": "수원 화성",
+                "caption": "수원 화성 — photo 6",
+                "alt": "수원 화성 — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/suwon-hwaseong/photo-002.webp",
+                "location": "수원 화성",
+                "caption": "수원 화성 — photo 7",
+                "alt": "수원 화성 — gallery image 7"
               }
             ]
           },
@@ -1661,7 +1843,11 @@
               "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
               "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
               "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
-              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp"
+              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
+              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18-2.webp",
+              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38-2.webp",
+              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55-2.webp",
+              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58-2.webp"
             ],
             "imageCredits": [
               {
@@ -1679,6 +1865,22 @@
               {
                 "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
                 "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58-2.webp",
+                "source": "atoc-korea"
               }
             ],
             "galleryItems": [
@@ -1687,32 +1889,64 @@
                 "type": "photo",
                 "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
                 "location": "스타필드 수원 라이브러리 & 몰",
-                "caption": "스타필드 수원 라이브러리 & 몰 — 사진 1",
-                "alt": "스타필드 수원 라이브러리 & 몰 — 갤러리 이미지 1"
+                "caption": "스타필드 수원 라이브러리 & 몰 — photo 1",
+                "alt": "스타필드 수원 라이브러리 & 몰 — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
                 "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
                 "location": "스타필드 수원 라이브러리 & 몰",
-                "caption": "스타필드 수원 라이브러리 & 몰 — 사진 2",
-                "alt": "스타필드 수원 라이브러리 & 몰 — 갤러리 이미지 2"
+                "caption": "스타필드 수원 라이브러리 & 몰 — photo 2",
+                "alt": "스타필드 수원 라이브러리 & 몰 — gallery image 2"
               },
               {
                 "id": 3,
                 "type": "photo",
                 "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
                 "location": "스타필드 수원 라이브러리 & 몰",
-                "caption": "스타필드 수원 라이브러리 & 몰 — 사진 3",
-                "alt": "스타필드 수원 라이브러리 & 몰 — 갤러리 이미지 3"
+                "caption": "스타필드 수원 라이브러리 & 몰 — photo 3",
+                "alt": "스타필드 수원 라이브러리 & 몰 — gallery image 3"
               },
               {
                 "id": 4,
                 "type": "photo",
                 "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
                 "location": "스타필드 수원 라이브러리 & 몰",
-                "caption": "스타필드 수원 라이브러리 & 몰 — 사진 4",
-                "alt": "스타필드 수원 라이브러리 & 몰 — 갤러리 이미지 4"
+                "caption": "스타필드 수원 라이브러리 & 몰 — photo 4",
+                "alt": "스타필드 수원 라이브러리 & 몰 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18-2.webp",
+                "location": "스타필드 수원 라이브러리 & 몰",
+                "caption": "스타필드 수원 라이브러리 & 몰 — photo 5",
+                "alt": "스타필드 수원 라이브러리 & 몰 — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38-2.webp",
+                "location": "스타필드 수원 라이브러리 & 몰",
+                "caption": "스타필드 수원 라이브러리 & 몰 — photo 6",
+                "alt": "스타필드 수원 라이브러리 & 몰 — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55-2.webp",
+                "location": "스타필드 수원 라이브러리 & 몰",
+                "caption": "스타필드 수원 라이브러리 & 몰 — photo 7",
+                "alt": "스타필드 수원 라이브러리 & 몰 — gallery image 7"
+              },
+              {
+                "id": 8,
+                "type": "photo",
+                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58-2.webp",
+                "location": "스타필드 수원 라이브러리 & 몰",
+                "caption": "스타필드 수원 라이브러리 & 몰 — photo 8",
+                "alt": "스타필드 수원 라이브러리 & 몰 — gallery image 8"
               }
             ]
           },
@@ -1765,7 +1999,12 @@
               "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50.webp",
               "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-03.webp",
               "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11.webp",
-              "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33.webp"
+              "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33.webp",
+              "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40-2.webp",
+              "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50-2.webp",
+              "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-03-2.webp",
+              "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11-2.webp",
+              "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33-2.webp"
             ],
             "imageCredits": [
               {
@@ -1787,6 +2026,26 @@
               {
                 "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33.webp",
                 "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-03-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33-2.webp",
+                "source": "atoc-korea"
               }
             ],
             "galleryItems": [
@@ -1795,40 +2054,80 @@
                 "type": "photo",
                 "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
                 "location": "와우정사",
-                "caption": "와우정사 — 사진 1",
-                "alt": "와우정사 — 갤러리 이미지 1"
+                "caption": "와우정사 — photo 1",
+                "alt": "와우정사 — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
                 "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50.webp",
                 "location": "와우정사",
-                "caption": "와우정사 — 사진 2",
-                "alt": "와우정사 — 갤러리 이미지 2"
+                "caption": "와우정사 — photo 2",
+                "alt": "와우정사 — gallery image 2"
               },
               {
                 "id": 3,
                 "type": "photo",
                 "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-03.webp",
                 "location": "와우정사",
-                "caption": "와우정사 — 사진 3",
-                "alt": "와우정사 — 갤러리 이미지 3"
+                "caption": "와우정사 — photo 3",
+                "alt": "와우정사 — gallery image 3"
               },
               {
                 "id": 4,
                 "type": "photo",
                 "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11.webp",
                 "location": "와우정사",
-                "caption": "와우정사 — 사진 4",
-                "alt": "와우정사 — 갤러리 이미지 4"
+                "caption": "와우정사 — photo 4",
+                "alt": "와우정사 — gallery image 4"
               },
               {
                 "id": 5,
                 "type": "photo",
                 "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33.webp",
                 "location": "와우정사",
-                "caption": "와우정사 — 사진 5",
-                "alt": "와우정사 — 갤러리 이미지 5"
+                "caption": "와우정사 — photo 5",
+                "alt": "와우정사 — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40-2.webp",
+                "location": "와우정사",
+                "caption": "와우정사 — photo 6",
+                "alt": "와우정사 — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50-2.webp",
+                "location": "와우정사",
+                "caption": "와우정사 — photo 7",
+                "alt": "와우정사 — gallery image 7"
+              },
+              {
+                "id": 8,
+                "type": "photo",
+                "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-03-2.webp",
+                "location": "와우정사",
+                "caption": "와우정사 — photo 8",
+                "alt": "와우정사 — gallery image 8"
+              },
+              {
+                "id": 9,
+                "type": "photo",
+                "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11-2.webp",
+                "location": "와우정사",
+                "caption": "와우정사 — photo 9",
+                "alt": "와우정사 — gallery image 9"
+              },
+              {
+                "id": 10,
+                "type": "photo",
+                "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33-2.webp",
+                "location": "와우정사",
+                "caption": "와우정사 — photo 10",
+                "alt": "와우정사 — gallery image 10"
               }
             ]
           }

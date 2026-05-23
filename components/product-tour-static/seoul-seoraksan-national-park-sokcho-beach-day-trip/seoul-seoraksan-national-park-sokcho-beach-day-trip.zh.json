@@ -13,11 +13,11 @@
       "韩国东海岸",
       "雪岳山束草一日游"
     ],
-    "ogImage": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
     "title": "首尔出发·雪岳山国家公园与束草海滩一日游 | AtoC Korea"
   },
   "catalog_card": {
-    "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+    "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
     "title": "雪岳山与束草海滩一日游",
     "priceLabel": "",
     "shortCardDescription": "从首尔出发，前往韩国最受欢迎的国家公园及东海岸城市束草的小团一日游。行程将雪岳山的花岗岩山峰、山谷与佛教文化，同束草的海鲜市场和海滩完美结合——这种山海交融的体验只有东海岸才能给你。全程12小时，含英语导游及往返交通。",
@@ -46,7 +46,7 @@
       "秋叶红枫",
       "一日游"
     ],
-    "heroImage": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp"
+    "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp"
   },
   "headlineLine1": "雪岳山与束草",
   "headlineLine2": "海滩一日游",
@@ -59,7 +59,7 @@
     "discountPercent": null
   },
   "hero": {
-    "imageUrl": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+    "imageUrl": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
     "imagePosition": "center 35%",
     "tagline": "韩国最具代表性的国家公园，邂逅东海岸最热情的港口城市",
     "pills": [
@@ -138,9 +138,17 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "",
+      "src": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
       "location": "雪岳山国家公园",
-      "alt": "雪岳山国家公园 — 途中拍摄",
+      "alt": "雪岳山国家公园 — on-route photo",
+      "caption": "雪岳山国家公园"
+    },
+    {
+      "id": 2,
+      "type": "photo",
+      "src": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+      "location": "雪岳山国家公园",
+      "alt": "雪岳山国家公园 — on-route photo",
       "caption": "雪岳山国家公园"
     }
   ],

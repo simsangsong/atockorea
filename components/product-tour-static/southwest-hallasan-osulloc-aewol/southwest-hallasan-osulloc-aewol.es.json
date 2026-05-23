@@ -14,7 +14,7 @@
       "Tour por las cafeterías de la costa de Aewol",
       "Tour por la Playa Hyeopjae"
     ],
-    "ogImage": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
     "title": "Tour al Suroeste de Jeju: Hallasan + Osulloc + Aewol · Grupo Pequeño de 9 horas"
   },
   "catalog_card": {
@@ -30,8 +30,8 @@
       "Ideal para visitantes de Jeju por primera vez",
       "Suroeste de Jeju"
     ],
-    "heroImage": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24.webp",
-    "thumbnail": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24.webp",
+    "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+    "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
     "priceLabel": "Desde US$59 por persona (antes $69, 14% descuento)",
     "shortCardDescription": "Una ruta equilibrada por el suroeste de Jeju que combina un corto paseo por Hallasan, la costa volcánica, la Cascada Cheonjeyeon, los campos de té O'Sulloc y la Calle de Cafeterías de Aewol.",
     "tags": [
@@ -54,7 +54,7 @@
     "per": "person"
   },
   "hero": {
-    "imageUrl": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24.webp",
+    "imageUrl": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
     "imagePosition": "center 35%",
     "tagline": "Un corto paseo por Hallasan, acantilados volcánicos, un sendero hasta una cascada, campos de té y un relajado final en Aewol.",
     "pills": [
@@ -165,42 +165,42 @@
     {
       "id": 5,
       "type": "photo",
-      "src": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
-      "location": "Museo del Té O'sulloc",
-      "alt": "Museo del Té O'sulloc — imagen de galería 2",
-      "caption": "Museo del Té O'sulloc — foto 2"
-    },
-    {
-      "id": 6,
-      "type": "photo",
-      "src": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
-      "location": "Museo del Té O'sulloc",
-      "alt": "Museo del Té O'sulloc — imagen de galería 3",
-      "caption": "Museo del Té O'sulloc — foto 3"
-    },
-    {
-      "id": 7,
-      "type": "photo",
-      "src": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
-      "location": "Museo del Té O'sulloc",
-      "alt": "Museo del Té O'sulloc — imagen de galería 4",
-      "caption": "Museo del Té O'sulloc — foto 4"
-    },
-    {
-      "id": 8,
-      "type": "photo",
       "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24.webp",
       "location": "Calle de Cafés de Aewol (Sendero Costero Handam)",
       "alt": "Calle de Cafés de Aewol (Sendero Costero Handam) — gallery image 1",
       "caption": "Calle de Cafés de Aewol (Sendero Costero Handam) — photo 1"
     },
     {
-      "id": 9,
+      "id": 6,
       "type": "photo",
       "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
       "location": "Hallasan Eoseungsaengak",
       "alt": "Hallasan Eoseungsaengak — gallery image 2",
       "caption": "Hallasan Eoseungsaengak — photo 2"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19-2.webp",
+      "location": "Hallasan Eoseungsaengak",
+      "alt": "Hallasan Eoseungsaengak — gallery image 3",
+      "caption": "Hallasan Eoseungsaengak — photo 3"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20-2.webp",
+      "location": "Hallasan Eoseungsaengak",
+      "alt": "Hallasan Eoseungsaengak — gallery image 4",
+      "caption": "Hallasan Eoseungsaengak — photo 4"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/hallasan-eoseungsaengak/photo-003.webp",
+      "location": "Hallasan Eoseungsaengak",
+      "alt": "Hallasan Eoseungsaengak — gallery image 5",
+      "caption": "Hallasan Eoseungsaengak — photo 5"
     },
     {
       "id": 10,
@@ -229,13 +229,53 @@
     {
       "id": 13,
       "type": "photo",
+      "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+      "location": "Acantilado Daepo Jusangjeolli",
+      "alt": "Acantilado Daepo Jusangjeolli — gallery image 5",
+      "caption": "Acantilado Daepo Jusangjeolli — photo 5"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+      "location": "Acantilado Daepo Jusangjeolli",
+      "alt": "Acantilado Daepo Jusangjeolli — gallery image 6",
+      "caption": "Acantilado Daepo Jusangjeolli — photo 6"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+      "location": "Acantilado Daepo Jusangjeolli",
+      "alt": "Acantilado Daepo Jusangjeolli — gallery image 7",
+      "caption": "Acantilado Daepo Jusangjeolli — photo 7"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+      "location": "Acantilado Daepo Jusangjeolli",
+      "alt": "Acantilado Daepo Jusangjeolli — gallery image 8",
+      "caption": "Acantilado Daepo Jusangjeolli — photo 8"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/photo-005.webp",
+      "location": "Acantilado Daepo Jusangjeolli",
+      "alt": "Acantilado Daepo Jusangjeolli — gallery image 9",
+      "caption": "Acantilado Daepo Jusangjeolli — photo 9"
+    },
+    {
+      "id": 18,
+      "type": "photo",
       "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
       "location": "Cascada Cheonjeyeon",
       "alt": "Cascada Cheonjeyeon — gallery image 2",
       "caption": "Cascada Cheonjeyeon — photo 2"
     },
     {
-      "id": 14,
+      "id": 19,
       "type": "photo",
       "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
       "location": "Cascada Cheonjeyeon",
@@ -243,7 +283,63 @@
       "caption": "Cascada Cheonjeyeon — photo 3"
     },
     {
-      "id": 15,
+      "id": 20,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04-2.webp",
+      "location": "Cascada Cheonjeyeon",
+      "alt": "Cascada Cheonjeyeon — gallery image 4",
+      "caption": "Cascada Cheonjeyeon — photo 4"
+    },
+    {
+      "id": 21,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07-2.webp",
+      "location": "Cascada Cheonjeyeon",
+      "alt": "Cascada Cheonjeyeon — gallery image 5",
+      "caption": "Cascada Cheonjeyeon — photo 5"
+    },
+    {
+      "id": 22,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08-2.webp",
+      "location": "Cascada Cheonjeyeon",
+      "alt": "Cascada Cheonjeyeon — gallery image 6",
+      "caption": "Cascada Cheonjeyeon — photo 6"
+    },
+    {
+      "id": 23,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/photo-004.webp",
+      "location": "Cascada Cheonjeyeon",
+      "alt": "Cascada Cheonjeyeon — gallery image 7",
+      "caption": "Cascada Cheonjeyeon — photo 7"
+    },
+    {
+      "id": 24,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
+      "location": "Museo del Té O'sulloc",
+      "alt": "Museo del Té O'sulloc — imagen de galería 2",
+      "caption": "Museo del Té O'sulloc — foto 2"
+    },
+    {
+      "id": 25,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
+      "location": "Museo del Té O'sulloc",
+      "alt": "Museo del Té O'sulloc — imagen de galería 3",
+      "caption": "Museo del Té O'sulloc — foto 3"
+    },
+    {
+      "id": 26,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
+      "location": "Museo del Té O'sulloc",
+      "alt": "Museo del Té O'sulloc — imagen de galería 4",
+      "caption": "Museo del Té O'sulloc — foto 4"
+    },
+    {
+      "id": 27,
       "type": "photo",
       "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-25.webp",
       "location": "Calle de Cafés de Aewol (Sendero Costero Handam)",
@@ -251,7 +347,7 @@
       "caption": "Calle de Cafés de Aewol (Sendero Costero Handam) — photo 2"
     },
     {
-      "id": 16,
+      "id": 28,
       "type": "photo",
       "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-26.webp",
       "location": "Calle de Cafés de Aewol (Sendero Costero Handam)",
@@ -259,7 +355,7 @@
       "caption": "Calle de Cafés de Aewol (Sendero Costero Handam) — photo 3"
     },
     {
-      "id": 17,
+      "id": 29,
       "type": "photo",
       "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-27.webp",
       "location": "Calle de Cafés de Aewol (Sendero Costero Handam)",
@@ -267,12 +363,44 @@
       "caption": "Calle de Cafés de Aewol (Sendero Costero Handam) — photo 4"
     },
     {
-      "id": 18,
+      "id": 30,
       "type": "photo",
       "src": "/images/tours/aewol-cafe-street/chatgpt-image-2026-5-11-01-14-08.webp",
       "location": "Calle de Cafés de Aewol (Sendero Costero Handam)",
       "alt": "Calle de Cafés de Aewol (Sendero Costero Handam) — gallery image 5",
       "caption": "Calle de Cafés de Aewol (Sendero Costero Handam) — photo 5"
+    },
+    {
+      "id": 31,
+      "type": "photo",
+      "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24-2.webp",
+      "location": "Calle de Cafés de Aewol (Sendero Costero Handam)",
+      "alt": "Calle de Cafés de Aewol (Sendero Costero Handam) — gallery image 6",
+      "caption": "Calle de Cafés de Aewol (Sendero Costero Handam) — photo 6"
+    },
+    {
+      "id": 32,
+      "type": "photo",
+      "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-25-2.webp",
+      "location": "Calle de Cafés de Aewol (Sendero Costero Handam)",
+      "alt": "Calle de Cafés de Aewol (Sendero Costero Handam) — gallery image 7",
+      "caption": "Calle de Cafés de Aewol (Sendero Costero Handam) — photo 7"
+    },
+    {
+      "id": 33,
+      "type": "photo",
+      "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-26-2.webp",
+      "location": "Calle de Cafés de Aewol (Sendero Costero Handam)",
+      "alt": "Calle de Cafés de Aewol (Sendero Costero Handam) — gallery image 8",
+      "caption": "Calle de Cafés de Aewol (Sendero Costero Handam) — photo 8"
+    },
+    {
+      "id": 34,
+      "type": "photo",
+      "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-27-2.webp",
+      "location": "Calle de Cafés de Aewol (Sendero Costero Handam)",
+      "alt": "Calle de Cafés de Aewol (Sendero Costero Handam) — gallery image 9",
+      "caption": "Calle de Cafés de Aewol (Sendero Costero Handam) — photo 9"
     }
   ],
   "itineraryStops": [
@@ -342,6 +470,18 @@
         {
           "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hallasan-eoseungsaengak/photo-003.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -360,6 +500,30 @@
           "location": "Hallasan Eoseungsaengak",
           "caption": "Hallasan Eoseungsaengak — photo 2",
           "alt": "Hallasan Eoseungsaengak — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19-2.webp",
+          "location": "Hallasan Eoseungsaengak",
+          "caption": "Hallasan Eoseungsaengak — photo 3",
+          "alt": "Hallasan Eoseungsaengak — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20-2.webp",
+          "location": "Hallasan Eoseungsaengak",
+          "caption": "Hallasan Eoseungsaengak — photo 4",
+          "alt": "Hallasan Eoseungsaengak — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/hallasan-eoseungsaengak/photo-003.webp",
+          "location": "Hallasan Eoseungsaengak",
+          "caption": "Hallasan Eoseungsaengak — photo 5",
+          "alt": "Hallasan Eoseungsaengak — gallery image 5"
         }
       ]
     },
@@ -439,6 +603,26 @@
         {
           "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/photo-005.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -473,6 +657,46 @@
           "location": "Acantilado Daepo Jusangjeolli",
           "caption": "Acantilado Daepo Jusangjeolli — photo 4",
           "alt": "Acantilado Daepo Jusangjeolli — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+          "location": "Acantilado Daepo Jusangjeolli",
+          "caption": "Acantilado Daepo Jusangjeolli — photo 5",
+          "alt": "Acantilado Daepo Jusangjeolli — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+          "location": "Acantilado Daepo Jusangjeolli",
+          "caption": "Acantilado Daepo Jusangjeolli — photo 6",
+          "alt": "Acantilado Daepo Jusangjeolli — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+          "location": "Acantilado Daepo Jusangjeolli",
+          "caption": "Acantilado Daepo Jusangjeolli — photo 7",
+          "alt": "Acantilado Daepo Jusangjeolli — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+          "location": "Acantilado Daepo Jusangjeolli",
+          "caption": "Acantilado Daepo Jusangjeolli — photo 8",
+          "alt": "Acantilado Daepo Jusangjeolli — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/photo-005.webp",
+          "location": "Acantilado Daepo Jusangjeolli",
+          "caption": "Acantilado Daepo Jusangjeolli — photo 9",
+          "alt": "Acantilado Daepo Jusangjeolli — gallery image 9"
         }
       ]
     },
@@ -586,6 +810,22 @@
         {
           "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/photo-004.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -612,6 +852,38 @@
           "location": "Cascada Cheonjeyeon",
           "caption": "Cascada Cheonjeyeon — photo 3",
           "alt": "Cascada Cheonjeyeon — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04-2.webp",
+          "location": "Cascada Cheonjeyeon",
+          "caption": "Cascada Cheonjeyeon — photo 4",
+          "alt": "Cascada Cheonjeyeon — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07-2.webp",
+          "location": "Cascada Cheonjeyeon",
+          "caption": "Cascada Cheonjeyeon — photo 5",
+          "alt": "Cascada Cheonjeyeon — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08-2.webp",
+          "location": "Cascada Cheonjeyeon",
+          "caption": "Cascada Cheonjeyeon — photo 6",
+          "alt": "Cascada Cheonjeyeon — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/photo-004.webp",
+          "location": "Cascada Cheonjeyeon",
+          "caption": "Cascada Cheonjeyeon — photo 7",
+          "alt": "Cascada Cheonjeyeon — gallery image 7"
         }
       ]
     },
@@ -868,6 +1140,22 @@
         {
           "url": "/images/tours/aewol-cafe-street/chatgpt-image-2026-5-11-01-14-08.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-25-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-26-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-27-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -910,6 +1198,38 @@
           "location": "Calle de Cafés de Aewol (Sendero Costero Handam)",
           "caption": "Calle de Cafés de Aewol (Sendero Costero Handam) — photo 5",
           "alt": "Calle de Cafés de Aewol (Sendero Costero Handam) — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24-2.webp",
+          "location": "Calle de Cafés de Aewol (Sendero Costero Handam)",
+          "caption": "Calle de Cafés de Aewol (Sendero Costero Handam) — photo 6",
+          "alt": "Calle de Cafés de Aewol (Sendero Costero Handam) — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-25-2.webp",
+          "location": "Calle de Cafés de Aewol (Sendero Costero Handam)",
+          "caption": "Calle de Cafés de Aewol (Sendero Costero Handam) — photo 7",
+          "alt": "Calle de Cafés de Aewol (Sendero Costero Handam) — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-26-2.webp",
+          "location": "Calle de Cafés de Aewol (Sendero Costero Handam)",
+          "caption": "Calle de Cafés de Aewol (Sendero Costero Handam) — photo 8",
+          "alt": "Calle de Cafés de Aewol (Sendero Costero Handam) — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-27-2.webp",
+          "location": "Calle de Cafés de Aewol (Sendero Costero Handam)",
+          "caption": "Calle de Cafés de Aewol (Sendero Costero Handam) — photo 9",
+          "alt": "Calle de Cafés de Aewol (Sendero Costero Handam) — gallery image 9"
         }
       ]
     }

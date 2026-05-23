@@ -14,7 +14,7 @@
       "낙산해수욕장 투어",
       "설악산 낙산사 일일 투어"
     ],
-    "ogImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
     "title": "서울 출발 강원도 당일투어 · 설악산 + 낙산사 + 낙산해수욕장 | AtoC Korea",
     "description": "서울에서 출발하는 코치 당일 투어로 한국을 대표하는 국립공원(설악산), 바다 위 천년 절벽 사찰(낙산사), 소나무 숲이 감싼 낙산해수욕장의 모래사장까지 — 동해안에서 즐기는 산에서 바다까지의 하루."
   },
@@ -143,56 +143,64 @@
       "type": "photo",
       "src": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
       "location": "설악산 국립공원",
-      "alt": "설악산 국립공원 — 능선 파노라마",
-      "caption": "설악산 국립공원 — 화강암 능선 파노라마"
+      "alt": "설악산 국립공원 — gallery image 1",
+      "caption": "설악산 국립공원 — photo 1"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
-      "location": "설악산 국립공원",
-      "alt": "설악산 국립공원 — 신흥사와 울산바위",
-      "caption": "설악산 국립공원 — 신흥사와 화강암 봉우리"
+      "src": "/images/tours/naksansa-temple/naksansa-uisangdae-pavilion.webp",
+      "location": "낙산사",
+      "alt": "낙산사 — on-route photo",
+      "caption": "낙산사"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "/images/tours/naksansa-temple/naksansa-uisangdae-pavilion.webp",
-      "location": "낙산사",
-      "alt": "낙산사 — 동해 위 의상대 정자",
-      "caption": "낙산사 — 바다를 마주한 의상대"
+      "src": "/images/tours/naksan-beach/naksan-beach-sign.webp",
+      "location": "낙산해수욕장",
+      "alt": "낙산해수욕장 — on-route photo",
+      "caption": "낙산해수욕장"
     },
     {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/naksansa-temple/naksansa-main-hall.webp",
-      "location": "낙산사",
-      "alt": "낙산사 — 원통보전 본전",
-      "caption": "낙산사 — 단청이 아름다운 원통보전"
+      "src": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+      "location": "설악산 국립공원",
+      "alt": "설악산 국립공원 — gallery image 2",
+      "caption": "설악산 국립공원 — photo 2"
     },
     {
       "id": 5,
       "type": "photo",
-      "src": "/images/tours/naksansa-temple/naksansa-haesu-gwaneum.webp",
-      "location": "낙산사",
-      "alt": "낙산사 — 동해를 바라보는 해수관음상",
-      "caption": "낙산사 — 바다를 굽어보는 해수관음상"
+      "src": "/images/tours/seoraksan/photo-001.webp",
+      "location": "설악산 국립공원",
+      "alt": "설악산 국립공원 — gallery image 3",
+      "caption": "설악산 국립공원 — photo 3"
     },
     {
       "id": 6,
       "type": "photo",
-      "src": "/images/tours/naksan-beach/naksan-beach-sign.webp",
-      "location": "낙산해수욕장",
-      "alt": "낙산해수욕장 — 소나무 숲을 뒤에 둔 동해 해변",
-      "caption": "낙산해수욕장 — 부드러운 모래와 소나무 숲"
+      "src": "/images/tours/naksansa-temple/naksansa-main-hall.webp",
+      "location": "낙산사",
+      "alt": "낙산사 — on-route photo",
+      "caption": "낙산사"
     },
     {
       "id": 7,
       "type": "photo",
+      "src": "/images/tours/naksansa-temple/naksansa-haesu-gwaneum.webp",
+      "location": "낙산사",
+      "alt": "낙산사 — on-route photo",
+      "caption": "낙산사"
+    },
+    {
+      "id": 8,
+      "type": "photo",
       "src": "/images/tours/naksan-beach/naksan-beach-summer-crowd.webp",
       "location": "낙산해수욕장",
-      "alt": "낙산해수욕장 — 동해 해안선",
-      "caption": "낙산해수욕장 — 동해 해안선"
+      "alt": "낙산해수욕장 — on-route photo",
+      "caption": "낙산해수욕장"
     }
   ],
   "itineraryStops": [
@@ -276,6 +284,46 @@
       "images": [
         "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
         "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seoraksan/photo-001.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+          "location": "설악산 국립공원",
+          "caption": "설악산 국립공원 — photo 1",
+          "alt": "설악산 국립공원 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+          "location": "설악산 국립공원",
+          "caption": "설악산 국립공원 — photo 2",
+          "alt": "설악산 국립공원 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/seoraksan/photo-001.webp",
+          "location": "설악산 국립공원",
+          "caption": "설악산 국립공원 — photo 3",
+          "alt": "설악산 국립공원 — gallery image 3"
+        }
       ]
     },
     {

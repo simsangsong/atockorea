@@ -14,7 +14,7 @@
       "洛山海灘遊覽",
       "雪嶽山洛山寺一日遊"
     ],
-    "ogImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
     "title": "首爾出發 江原道一日遊・雪嶽山＋洛山寺＋洛山海灘 | AtoC Korea",
     "description": "從首爾出發的巴士一日遊，探訪韓國最具代表性的國家公園（雪嶽山）、海崖上千年古寺（洛山寺），以及松林環抱的洛山海灘——一趟從山岳到海洋的東海岸一日之旅。"
   },
@@ -143,56 +143,56 @@
       "type": "photo",
       "src": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
       "location": "雪嶽山國家公園",
-      "alt": "雪嶽山國家公園 — 山脊全景",
-      "caption": "雪嶽山國家公園 — 花崗岩山脊全景"
+      "alt": "雪嶽山國家公園 — on-route photo",
+      "caption": "雪嶽山國家公園"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
-      "location": "雪嶽山國家公園",
-      "alt": "雪嶽山國家公園 — 新興寺與蔚山岩",
-      "caption": "雪嶽山國家公園 — 山下新興寺與花崗岩峰"
+      "src": "/images/tours/naksansa-temple/naksansa-uisangdae-pavilion.webp",
+      "location": "洛山寺",
+      "alt": "洛山寺 — on-route photo",
+      "caption": "洛山寺"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "/images/tours/naksansa-temple/naksansa-uisangdae-pavilion.webp",
-      "location": "洛山寺",
-      "alt": "洛山寺 — 俯瞰東海的義湘台",
-      "caption": "洛山寺 — 臨海懸崖上的義湘台"
+      "src": "/images/tours/naksan-beach/naksan-beach-sign.webp",
+      "location": "洛山海水浴場",
+      "alt": "洛山海水浴場 — on-route photo",
+      "caption": "洛山海水浴場"
     },
     {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/naksansa-temple/naksansa-main-hall.webp",
-      "location": "洛山寺",
-      "alt": "洛山寺 — 圓通寶殿正殿",
-      "caption": "洛山寺 — 彩繪華麗的圓通寶殿"
+      "src": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+      "location": "雪嶽山國家公園",
+      "alt": "雪嶽山國家公園 — on-route photo",
+      "caption": "雪嶽山國家公園"
     },
     {
       "id": 5,
       "type": "photo",
-      "src": "/images/tours/naksansa-temple/naksansa-haesu-gwaneum.webp",
+      "src": "/images/tours/naksansa-temple/naksansa-main-hall.webp",
       "location": "洛山寺",
-      "alt": "洛山寺 — 凝望東海的海水觀音像",
-      "caption": "洛山寺 — 守望大海的海水觀音像"
+      "alt": "洛山寺 — on-route photo",
+      "caption": "洛山寺"
     },
     {
       "id": 6,
       "type": "photo",
-      "src": "/images/tours/naksan-beach/naksan-beach-sign.webp",
-      "location": "洛山海灘",
-      "alt": "洛山海灘 — 松林環抱的東海海灘",
-      "caption": "洛山海灘 — 細沙與松林"
+      "src": "/images/tours/naksansa-temple/naksansa-haesu-gwaneum.webp",
+      "location": "洛山寺",
+      "alt": "洛山寺 — on-route photo",
+      "caption": "洛山寺"
     },
     {
       "id": 7,
       "type": "photo",
       "src": "/images/tours/naksan-beach/naksan-beach-summer-crowd.webp",
-      "location": "洛山海灘",
-      "alt": "洛山海灘 — 東海海岸線",
-      "caption": "洛山海灘 — 東海海岸線"
+      "location": "洛山海水浴場",
+      "alt": "洛山海水浴場 — on-route photo",
+      "caption": "洛山海水浴場"
     }
   ],
   "itineraryStops": [

@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "濟州西南繡球花節一日遊 | AtoC Korea",
     "metaDescription": "夏季限定濟州西南一日遊：協才海灘、翰林公園繡球花節、柱狀節理海岸、天帝淵瀑布、山茶花山、雪綠茶田。",
-    "ogImage": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
     "primaryKeywords": [
       "濟州繡球花節行程",
       "濟州夏季賞花行程",
@@ -140,21 +140,29 @@
     {
       "id": 2,
       "type": "photo",
+      "src": "/images/tours/hallim-park/photo-001.webp",
+      "location": "翰林公園（繡球花節）",
+      "alt": "翰林公園（繡球花節） — gallery image 1",
+      "caption": "翰林公園（繡球花節） — photo 1"
+    },
+    {
+      "id": 3,
+      "type": "photo",
       "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
       "location": "柱狀節理海岸及天帝淵瀑布",
       "alt": "柱狀節理海岸及天帝淵瀑布 — gallery image 1",
       "caption": "柱狀節理海岸及天帝淵瀑布 — photo 1"
     },
     {
-      "id": 3,
+      "id": 4,
       "type": "photo",
       "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
-      "location": "茶花之丘 (Camellia Hill)",
-      "alt": "茶花之丘 (Camellia Hill) — 圖庫圖片 1",
-      "caption": "茶花之丘 (Camellia Hill) — 照片 1"
+      "location": "椿花丘（繡球花隧道）",
+      "alt": "椿花丘（繡球花隧道） — gallery image 1",
+      "caption": "椿花丘（繡球花隧道） — photo 1"
     },
     {
-      "id": 4,
+      "id": 5,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
       "location": "奧雪綠茶博物館暨茶園",
@@ -162,31 +170,7 @@
       "caption": "奧雪綠茶博物館暨茶園 — photo 1"
     },
     {
-      "id": 5,
-      "type": "photo",
-      "src": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
-      "location": "奧雪綠茶博物館暨茶園",
-      "alt": "奧雪綠茶博物館暨茶園 — photo 2",
-      "caption": "奧雪綠茶博物館暨茶園 — photo 2"
-    },
-    {
       "id": 6,
-      "type": "photo",
-      "src": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
-      "location": "奧雪綠茶博物館暨茶園",
-      "alt": "奧雪綠茶博物館暨茶園 — photo 3",
-      "caption": "奧雪綠茶博物館暨茶園 — photo 3"
-    },
-    {
-      "id": 7,
-      "type": "photo",
-      "src": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
-      "location": "奧雪綠茶博物館暨茶園",
-      "alt": "奧雪綠茶博物館暨茶園 — photo 4",
-      "caption": "奧雪綠茶博物館暨茶園 — photo 4"
-    },
-    {
-      "id": 8,
       "type": "photo",
       "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
       "location": "挾才海水浴場",
@@ -194,7 +178,7 @@
       "caption": "挾才海水浴場 — photo 2"
     },
     {
-      "id": 9,
+      "id": 7,
       "type": "photo",
       "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
       "location": "挾才海水浴場",
@@ -202,7 +186,55 @@
       "caption": "挾才海水浴場 — photo 3"
     },
     {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01-2.webp",
+      "location": "挾才海水浴場",
+      "alt": "挾才海水浴場 — gallery image 4",
+      "caption": "挾才海水浴場 — photo 4"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02-2.webp",
+      "location": "挾才海水浴場",
+      "alt": "挾才海水浴場 — gallery image 5",
+      "caption": "挾才海水浴場 — photo 5"
+    },
+    {
       "id": 10,
+      "type": "photo",
+      "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03-2.webp",
+      "location": "挾才海水浴場",
+      "alt": "挾才海水浴場 — gallery image 6",
+      "caption": "挾才海水浴場 — photo 6"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/hallim-park/photo-002.webp",
+      "location": "翰林公園（繡球花節）",
+      "alt": "翰林公園（繡球花節） — gallery image 2",
+      "caption": "翰林公園（繡球花節） — photo 2"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/hallim-park/photo-003.webp",
+      "location": "翰林公園（繡球花節）",
+      "alt": "翰林公園（繡球花節） — gallery image 3",
+      "caption": "翰林公園（繡球花節） — photo 3"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/hallim-park/photo-004.webp",
+      "location": "翰林公園（繡球花節）",
+      "alt": "翰林公園（繡球花節） — gallery image 4",
+      "caption": "翰林公園（繡球花節） — photo 4"
+    },
+    {
+      "id": 14,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
       "location": "柱狀節理海岸及天帝淵瀑布",
@@ -210,7 +242,7 @@
       "caption": "柱狀節理海岸及天帝淵瀑布 — photo 2"
     },
     {
-      "id": 11,
+      "id": 15,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
       "location": "柱狀節理海岸及天帝淵瀑布",
@@ -218,7 +250,7 @@
       "caption": "柱狀節理海岸及天帝淵瀑布 — photo 3"
     },
     {
-      "id": 12,
+      "id": 16,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
       "location": "柱狀節理海岸及天帝淵瀑布",
@@ -226,12 +258,92 @@
       "caption": "柱狀節理海岸及天帝淵瀑布 — photo 4"
     },
     {
-      "id": 13,
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+      "location": "柱狀節理海岸及天帝淵瀑布",
+      "alt": "柱狀節理海岸及天帝淵瀑布 — gallery image 5",
+      "caption": "柱狀節理海岸及天帝淵瀑布 — photo 5"
+    },
+    {
+      "id": 18,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+      "location": "柱狀節理海岸及天帝淵瀑布",
+      "alt": "柱狀節理海岸及天帝淵瀑布 — gallery image 6",
+      "caption": "柱狀節理海岸及天帝淵瀑布 — photo 6"
+    },
+    {
+      "id": 19,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+      "location": "柱狀節理海岸及天帝淵瀑布",
+      "alt": "柱狀節理海岸及天帝淵瀑布 — gallery image 7",
+      "caption": "柱狀節理海岸及天帝淵瀑布 — photo 7"
+    },
+    {
+      "id": 20,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+      "location": "柱狀節理海岸及天帝淵瀑布",
+      "alt": "柱狀節理海岸及天帝淵瀑布 — gallery image 8",
+      "caption": "柱狀節理海岸及天帝淵瀑布 — photo 8"
+    },
+    {
+      "id": 21,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/photo-005.webp",
+      "location": "柱狀節理海岸及天帝淵瀑布",
+      "alt": "柱狀節理海岸及天帝淵瀑布 — gallery image 9",
+      "caption": "柱狀節理海岸及天帝淵瀑布 — photo 9"
+    },
+    {
+      "id": 22,
       "type": "photo",
       "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
-      "location": "茶花之丘 (Camellia Hill)",
-      "alt": "茶花之丘 (Camellia Hill) — 圖庫圖片 2",
-      "caption": "茶花之丘 (Camellia Hill) — 照片 2"
+      "location": "椿花丘（繡球花隧道）",
+      "alt": "椿花丘（繡球花隧道） — gallery image 2",
+      "caption": "椿花丘（繡球花隧道） — photo 2"
+    },
+    {
+      "id": 23,
+      "type": "photo",
+      "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-2.webp",
+      "location": "椿花丘（繡球花隧道）",
+      "alt": "椿花丘（繡球花隧道） — gallery image 3",
+      "caption": "椿花丘（繡球花隧道） — photo 3"
+    },
+    {
+      "id": 24,
+      "type": "photo",
+      "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-2.webp",
+      "location": "椿花丘（繡球花隧道）",
+      "alt": "椿花丘（繡球花隧道） — gallery image 4",
+      "caption": "椿花丘（繡球花隧道） — photo 4"
+    },
+    {
+      "id": 25,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
+      "location": "奧雪綠茶博物館暨茶園",
+      "alt": "奧雪綠茶博物館暨茶園 — photo 2",
+      "caption": "奧雪綠茶博物館暨茶園 — photo 2"
+    },
+    {
+      "id": 26,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
+      "location": "奧雪綠茶博物館暨茶園",
+      "alt": "奧雪綠茶博物館暨茶園 — photo 3",
+      "caption": "奧雪綠茶博物館暨茶園 — photo 3"
+    },
+    {
+      "id": 27,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
+      "location": "奧雪綠茶博物館暨茶園",
+      "alt": "奧雪綠茶博物館暨茶園 — photo 4",
+      "caption": "奧雪綠茶博物館暨茶園 — photo 4"
     }
   ],
   "itineraryStops": [
@@ -306,6 +418,18 @@
         {
           "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -332,6 +456,30 @@
           "location": "挾才海水浴場",
           "caption": "挾才海水浴場 — photo 3",
           "alt": "挾才海水浴場 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01-2.webp",
+          "location": "挾才海水浴場",
+          "caption": "挾才海水浴場 — photo 4",
+          "alt": "挾才海水浴場 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02-2.webp",
+          "location": "挾才海水浴場",
+          "caption": "挾才海水浴場 — photo 5",
+          "alt": "挾才海水浴場 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03-2.webp",
+          "location": "挾才海水浴場",
+          "caption": "挾才海水浴場 — photo 6",
+          "alt": "挾才海水浴場 — gallery image 6"
         }
       ]
     },
@@ -342,7 +490,7 @@
       "name": "翰林公園（繡球花節）",
       "category": "繡球花主景＋9座主題庭園＋2座熔岩管洞窟",
       "description": "**翰林公園（한림공원，創立於1971年）** 是濟州島西南海岸最重要的植物公園——這座 **佔地約99,000平方公尺（原規劃為10萬坪／330,580平方公尺）的大型庭園綜合體**，由 **創辦人宋奉奎歷經半世紀引入土壤、種植棕櫚種子，將一片沙地荒原改造為綠色樂園**。公園每年吸引 **約120萬名遊客到訪**，並規劃為 **九大主題庭園**：**亞熱帶植物園**、**棕櫚樹大道**、**野草與花卉庭園**、**狹才洞窟＋雙龍洞窟**、**濟州石與盆景庭園**、**在岩民俗村**（朝鮮時代石牆韓屋，附設石爺爺餐廳）、**鳥類庭園**、**濟州石展示館**，以及 **水庭園**。\n\n翰林公園最具特色的規劃是其 **月度節慶日曆**——**1月水仙花→2月梅花→3月鬱金香→4月櫻花→5月野花／九重葛→6月繡球花→7至9月蓮花＋睡蓮→10月波斯菊／粉黛亂子草→11月菊花→12月山茶花**——12個月的輪替確保 **全年每個月都有指定節慶舉辦**。公園內兩大地質地標為 **狹才洞窟（長約200公尺、寬10公尺、高5公尺，形成於約2,500萬年前）** 與 **雙龍洞窟（長約400公尺、寬6公尺、高3公尺，意為「雙龍」）**——兩者同屬 **全長17公里的熔岩管系統**，但因熔岩管壁後來被 **從上方土壤中滲漏的石灰岩（碳酸鈣）** 所包覆，形成全球罕見的 **熔岩管形態＋石灰岩鐘乳石／石筍** 共存於同一洞窟系統的奇特景觀，因此被特別歸類為 **「二次元洞穴」**。\n\n洞內溫度 **全年維持17至18°C**，是夏季的天然避暑勝地。從訪客名單可見其外交地位之高：中國前國家主席江澤民、日本前首相中曾根康弘、韓國前總統金大中、三星前會長李健熙，以及現代集團前會長鄭周永均曾蒞臨造訪。",
-      "image": null,
+      "image": "/images/tours/hallim-park/photo-001.webp",
       "highlights": [
         "**創立於1971年**，由宋奉奎一手打造——將沙地荒原改造為綠色樂園",
         "**約99,000平方公尺／80英畝**——9座主題庭園，每年約120萬名訪客",
@@ -388,7 +536,65 @@
         "photo": "繡球花節（六月）與粉黛亂子草（十月）為拍照旺季；附有鐘乳石燈光效果的熔岩洞窟景觀獨一無二",
         "facilities": "現場餐廳、禮品店、洞穴博物館",
         "tip": "最後入場時間為關閉前90分鐘；關閉時間視日落而定；可搭配協才海灘遊覽（步行5至10分鐘）"
-      }
+      },
+      "images": [
+        "/images/tours/hallim-park/photo-001.webp",
+        "/images/tours/hallim-park/photo-002.webp",
+        "/images/tours/hallim-park/photo-003.webp",
+        "/images/tours/hallim-park/photo-004.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/hallim-park/photo-001.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hallim-park/photo-002.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hallim-park/photo-003.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hallim-park/photo-004.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/hallim-park/photo-001.webp",
+          "location": "翰林公園（繡球花節）",
+          "caption": "翰林公園（繡球花節） — photo 1",
+          "alt": "翰林公園（繡球花節） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/hallim-park/photo-002.webp",
+          "location": "翰林公園（繡球花節）",
+          "caption": "翰林公園（繡球花節） — photo 2",
+          "alt": "翰林公園（繡球花節） — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/hallim-park/photo-003.webp",
+          "location": "翰林公園（繡球花節）",
+          "caption": "翰林公園（繡球花節） — photo 3",
+          "alt": "翰林公園（繡球花節） — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/hallim-park/photo-004.webp",
+          "location": "翰林公園（繡球花節）",
+          "caption": "翰林公園（繡球花節） — photo 4",
+          "alt": "翰林公園（繡球花節） — gallery image 4"
+        }
+      ]
     },
     {
       "number": 3,
@@ -514,6 +720,26 @@
         {
           "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/photo-005.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -548,6 +774,46 @@
           "location": "柱狀節理海岸及天帝淵瀑布",
           "caption": "柱狀節理海岸及天帝淵瀑布 — photo 4",
           "alt": "柱狀節理海岸及天帝淵瀑布 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+          "location": "柱狀節理海岸及天帝淵瀑布",
+          "caption": "柱狀節理海岸及天帝淵瀑布 — photo 5",
+          "alt": "柱狀節理海岸及天帝淵瀑布 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+          "location": "柱狀節理海岸及天帝淵瀑布",
+          "caption": "柱狀節理海岸及天帝淵瀑布 — photo 6",
+          "alt": "柱狀節理海岸及天帝淵瀑布 — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+          "location": "柱狀節理海岸及天帝淵瀑布",
+          "caption": "柱狀節理海岸及天帝淵瀑布 — photo 7",
+          "alt": "柱狀節理海岸及天帝淵瀑布 — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+          "location": "柱狀節理海岸及天帝淵瀑布",
+          "caption": "柱狀節理海岸及天帝淵瀑布 — photo 8",
+          "alt": "柱狀節理海岸及天帝淵瀑布 — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/photo-005.webp",
+          "location": "柱狀節理海岸及天帝淵瀑布",
+          "caption": "柱狀節理海岸及天帝淵瀑布 — photo 9",
+          "alt": "柱狀節理海岸及天帝淵瀑布 — gallery image 9"
         }
       ]
     },
@@ -617,6 +883,14 @@
         {
           "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -624,17 +898,33 @@
           "id": 1,
           "type": "photo",
           "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
-          "location": "茶花之丘 (Camellia Hill)",
-          "caption": "茶花之丘 (Camellia Hill) — 照片 1",
-          "alt": "茶花之丘 (Camellia Hill) — 圖庫圖片 1"
+          "location": "椿花丘（繡球花隧道）",
+          "caption": "椿花丘（繡球花隧道） — photo 1",
+          "alt": "椿花丘（繡球花隧道） — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
           "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
-          "location": "茶花之丘 (Camellia Hill)",
-          "caption": "茶花之丘 (Camellia Hill) — 照片 2",
-          "alt": "茶花之丘 (Camellia Hill) — 圖庫圖片 2"
+          "location": "椿花丘（繡球花隧道）",
+          "caption": "椿花丘（繡球花隧道） — photo 2",
+          "alt": "椿花丘（繡球花隧道） — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-2.webp",
+          "location": "椿花丘（繡球花隧道）",
+          "caption": "椿花丘（繡球花隧道） — photo 3",
+          "alt": "椿花丘（繡球花隧道） — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-2.webp",
+          "location": "椿花丘（繡球花隧道）",
+          "caption": "椿花丘（繡球花隧道） — photo 4",
+          "alt": "椿花丘（繡球花隧道） — gallery image 4"
         }
       ]
     },
@@ -1781,7 +2071,10 @@
             "images": [
               "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
               "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
-              "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp"
+              "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
+              "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01-2.webp",
+              "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02-2.webp",
+              "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03-2.webp"
             ],
             "imageCredits": [
               {
@@ -1795,6 +2088,18 @@
               {
                 "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
                 "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03-2.webp",
+                "source": "atoc-korea"
               }
             ],
             "galleryItems": [
@@ -1802,25 +2107,49 @@
                 "id": 1,
                 "type": "photo",
                 "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
-                "location": "挾才海水浴場",
-                "caption": "挾才海水浴場 — 照片 1",
-                "alt": "挾才海水浴場 — 圖庫圖片 1"
+                "location": "挾才海灘",
+                "caption": "挾才海灘 — photo 1",
+                "alt": "挾才海灘 — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
                 "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02.webp",
-                "location": "挾才海水浴場",
-                "caption": "挾才海水浴場 — 照片 2",
-                "alt": "挾才海水浴場 — 圖庫圖片 2"
+                "location": "挾才海灘",
+                "caption": "挾才海灘 — photo 2",
+                "alt": "挾才海灘 — gallery image 2"
               },
               {
                 "id": 3,
                 "type": "photo",
                 "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03.webp",
-                "location": "挾才海水浴場",
-                "caption": "挾才海水浴場 — 照片 3",
-                "alt": "挾才海水浴場 — 圖庫圖片 3"
+                "location": "挾才海灘",
+                "caption": "挾才海灘 — photo 3",
+                "alt": "挾才海灘 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01-2.webp",
+                "location": "挾才海灘",
+                "caption": "挾才海灘 — photo 4",
+                "alt": "挾才海灘 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-02-2.webp",
+                "location": "挾才海灘",
+                "caption": "挾才海灘 — photo 5",
+                "alt": "挾才海灘 — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-03-2.webp",
+                "location": "挾才海灘",
+                "caption": "挾才海灘 — photo 6",
+                "alt": "挾才海灘 — gallery image 6"
               }
             ]
           },
@@ -1868,7 +2197,65 @@
                 ""
               ],
               "verified_date": "2026-04-27"
-            }
+            },
+            "images": [
+              "/images/tours/hallim-park/photo-001.webp",
+              "/images/tours/hallim-park/photo-002.webp",
+              "/images/tours/hallim-park/photo-003.webp",
+              "/images/tours/hallim-park/photo-004.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/hallim-park/photo-001.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hallim-park/photo-002.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hallim-park/photo-003.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hallim-park/photo-004.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/hallim-park/photo-001.webp",
+                "location": "翰林公園（繡球花節）",
+                "caption": "翰林公園（繡球花節） — photo 1",
+                "alt": "翰林公園（繡球花節） — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/hallim-park/photo-002.webp",
+                "location": "翰林公園（繡球花節）",
+                "caption": "翰林公園（繡球花節） — photo 2",
+                "alt": "翰林公園（繡球花節） — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/hallim-park/photo-003.webp",
+                "location": "翰林公園（繡球花節）",
+                "caption": "翰林公園（繡球花節） — photo 3",
+                "alt": "翰林公園（繡球花節） — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/hallim-park/photo-004.webp",
+                "location": "翰林公園（繡球花節）",
+                "caption": "翰林公園（繡球花節） — photo 4",
+                "alt": "翰林公園（繡球花節） — gallery image 4"
+              }
+            ]
           },
           {
             "number": 3,
@@ -1955,7 +2342,12 @@
               "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
               "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
               "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
-              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp"
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+              "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+              "/images/tours/jusangjeolli/photo-005.webp"
             ],
             "imageCredits": [
               {
@@ -1972,6 +2364,26 @@
               },
               {
                 "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/photo-005.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2007,6 +2419,46 @@
                 "location": "柱狀節理壁與天帝淵瀑布",
                 "caption": "柱狀節理壁與天帝淵瀑布 — photo 4",
                 "alt": "柱狀節理壁與天帝淵瀑布 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+                "location": "柱狀節理壁與天帝淵瀑布",
+                "caption": "柱狀節理壁與天帝淵瀑布 — photo 5",
+                "alt": "柱狀節理壁與天帝淵瀑布 — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+                "location": "柱狀節理壁與天帝淵瀑布",
+                "caption": "柱狀節理壁與天帝淵瀑布 — photo 6",
+                "alt": "柱狀節理壁與天帝淵瀑布 — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+                "location": "柱狀節理壁與天帝淵瀑布",
+                "caption": "柱狀節理壁與天帝淵瀑布 — photo 7",
+                "alt": "柱狀節理壁與天帝淵瀑布 — gallery image 7"
+              },
+              {
+                "id": 8,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+                "location": "柱狀節理壁與天帝淵瀑布",
+                "caption": "柱狀節理壁與天帝淵瀑布 — photo 8",
+                "alt": "柱狀節理壁與天帝淵瀑布 — gallery image 8"
+              },
+              {
+                "id": 9,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/photo-005.webp",
+                "location": "柱狀節理壁與天帝淵瀑布",
+                "caption": "柱狀節理壁與天帝淵瀑布 — photo 9",
+                "alt": "柱狀節理壁與天帝淵瀑布 — gallery image 9"
               }
             ]
           },
@@ -2056,7 +2508,9 @@
             },
             "images": [
               "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
-              "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp"
+              "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+              "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-2.webp",
+              "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-2.webp"
             ],
             "imageCredits": [
               {
@@ -2066,6 +2520,14 @@
               {
                 "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
                 "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-2.webp",
+                "source": "atoc-korea"
               }
             ],
             "galleryItems": [
@@ -2073,17 +2535,33 @@
                 "id": 1,
                 "type": "photo",
                 "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
-                "location": "茶花之丘 (Camellia Hill)",
-                "caption": "茶花之丘 (Camellia Hill) — 照片 1",
-                "alt": "茶花之丘 (Camellia Hill) — 圖庫圖片 1"
+                "location": "山茶花之丘（繡球花隧道）",
+                "caption": "山茶花之丘（繡球花隧道） — photo 1",
+                "alt": "山茶花之丘（繡球花隧道） — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
                 "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
-                "location": "茶花之丘 (Camellia Hill)",
-                "caption": "茶花之丘 (Camellia Hill) — 照片 2",
-                "alt": "茶花之丘 (Camellia Hill) — 圖庫圖片 2"
+                "location": "山茶花之丘（繡球花隧道）",
+                "caption": "山茶花之丘（繡球花隧道） — photo 2",
+                "alt": "山茶花之丘（繡球花隧道） — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-2.webp",
+                "location": "山茶花之丘（繡球花隧道）",
+                "caption": "山茶花之丘（繡球花隧道） — photo 3",
+                "alt": "山茶花之丘（繡球花隧道） — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-2.webp",
+                "location": "山茶花之丘（繡球花隧道）",
+                "caption": "山茶花之丘（繡球花隧道） — photo 4",
+                "alt": "山茶花之丘（繡球花隧道） — gallery image 4"
               }
             ]
           },

@@ -15,12 +15,12 @@
       "蔚山アメジスト洞窟ツアー",
       "釜山ユネスコ日帰りツアー"
     ],
-    "ogImage": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp",
+    "ogImage": "https://www.atockorea.com/images/itinerary/tongdosa-iljumun.webp",
     "title": "釜山郊外日帰りツアー · 通度寺 + アメジスト + 嶺南アルプス | AtoC Korea",
     "description": "釜山から梁山・蔚山・密陽へ向かうコーチ日帰りツアー — ユネスコ通度寺、地下アメジスト洞窟（ボートオプション）、嶺南アルプス氷谷ケーブルカー、そして甘川文化村でフィナーレ。"
   },
   "catalog_card": {
-    "thumbnail": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp",
+    "thumbnail": "/images/itinerary/tongdosa-iljumun.webp",
     "title": "釜山郊外：通度寺 + アメジスト洞窟 + 嶺南アルプス",
     "priceLabel": "",
     "shortCardDescription": "梁山（通度寺、2018年ユネスコ世界遺産）、蔚山（ボート乗船オプション付きアメジスト洞窟テーマパーク）、密陽（嶺南アルプス氷谷ケーブルカー）を経て、釜山の甘川文化村で締めくくる11時間の郊外コーチ日帰りツアー。ピックアップは3か所（釜山駅 / 西面 / 海雲台）、終了時にチャガルチでの途中下車オプションあり。",
@@ -44,7 +44,7 @@
       "3か所でピックアップ",
       "11時間の日帰り"
     ],
-    "heroImage": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp"
+    "heroImage": "/images/itinerary/tongdosa-iljumun.webp"
   },
   "headlineLine1": "釜山郊外日帰りツアー",
   "headlineLine2": "通度寺 + アメジスト洞窟 + 嶺南アルプス",
@@ -57,7 +57,7 @@
     "discountPercent": 9
   },
   "hero": {
-    "imageUrl": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp",
+    "imageUrl": "/images/itinerary/tongdosa-iljumun.webp",
     "imagePosition": "center 40%",
     "tagline": "釜山発11時間の日帰りツアーで巡る4つの厳選スポット：ユネスコ登録の通度寺、蔚山の地下アメジスト洞窟、密陽・嶺南アルプスの氷の谷ケーブルカー、甘川文化村",
     "pills": [
@@ -142,74 +142,114 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
-      "location": "甘川文化村",
-      "alt": "甘川文化村 — ギャラリー1",
-      "caption": "甘川文化村 — パステルカラーの丘"
+      "src": "/images/itinerary/tongdosa-iljumun.webp",
+      "location": "通度寺（梁山）",
+      "alt": "通度寺（梁山） — on-route photo",
+      "caption": "通度寺（梁山）"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
-      "location": "甘川文化村",
-      "alt": "甘川文化村 — ギャラリー2",
-      "caption": "甘川文化村 — スカイガーデン"
+      "src": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp",
+      "location": "アメジスト洞窟テーマパーク（蔚山）",
+      "alt": "アメジスト洞窟テーマパーク（蔚山） — on-route photo",
+      "caption": "アメジスト洞窟テーマパーク（蔚山）"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
-      "location": "甘川文化村",
-      "alt": "甘川文化村 — ギャラリー3",
-      "caption": "甘川文化村 — 壁画の路地"
+      "src": "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-flight.webp",
+      "location": "嶺南アルプス얼음골ケーブルカー（密陽）",
+      "alt": "嶺南アルプス얼음골ケーブルカー（密陽） — on-route photo",
+      "caption": "嶺南アルプス얼음골ケーブルカー（密陽）"
     },
     {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp",
-      "location": "蔚山 紫水晶洞窟テーマパーク",
-      "alt": "紫水晶洞窟 — 多彩な地下ホールと水路",
-      "caption": "蔚山 紫水晶洞窟 — 多彩な地下ホール"
+      "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+      "location": "甘川文化村",
+      "alt": "甘川文化村 — on-route photo",
+      "caption": "甘川文化村"
     },
     {
       "id": 5,
       "type": "photo",
-      "src": "/images/tours/amethyst-cave/amethyst-cave-entrance-corridor.webp",
-      "location": "蔚山 紫水晶洞窟テーマパーク",
-      "alt": "紫水晶洞窟 — 光が灯る入口通路",
-      "caption": "蔚山 紫水晶洞窟 — 灯りの入口通路"
+      "src": "/images/itinerary/tongdosa-yeongsanjeon.webp",
+      "location": "通度寺（梁山）",
+      "alt": "通度寺（梁山） — on-route photo",
+      "caption": "通度寺（梁山）"
     },
     {
       "id": 6,
       "type": "photo",
-      "src": "/images/tours/amethyst-cave/amethyst-cave-boat-passage.webp",
-      "location": "蔚山 紫水晶洞窟テーマパーク",
-      "alt": "紫水晶洞窟 — 多彩な洞窟ボート探検",
-      "caption": "蔚山 紫水晶洞窟 — 洞窟ボート探検"
+      "src": "/images/tours/amethyst-cave/amethyst-cave-entrance-corridor.webp",
+      "location": "アメジスト洞窟テーマパーク（蔚山）",
+      "alt": "アメジスト洞窟テーマパーク（蔚山） — on-route photo",
+      "caption": "アメジスト洞窟テーマパーク（蔚山）"
     },
     {
       "id": 7,
       "type": "photo",
-      "src": "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-flight.webp",
-      "location": "嶺南アルプス 氷谷ケーブルカー (密陽)",
-      "alt": "嶺南アルプス氷谷ケーブルカー — 森の上を行くゴンドラ",
-      "caption": "嶺南アルプス氷谷ケーブルカー — 森の上を行くゴンドラ"
+      "src": "/images/tours/amethyst-cave/amethyst-cave-boat-passage.webp",
+      "location": "アメジスト洞窟テーマパーク（蔚山）",
+      "alt": "アメジスト洞窟テーマパーク（蔚山） — on-route photo",
+      "caption": "アメジスト洞窟テーマパーク（蔚山）"
     },
     {
       "id": 8,
       "type": "photo",
       "src": "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-valley.webp",
-      "location": "嶺南アルプス 氷谷ケーブルカー (密陽)",
-      "alt": "嶺南アルプス ケーブルカー — 緑深い尾根を渡るゴンドラ",
-      "caption": "嶺南アルプス — 緑の尾根を渡るケーブルカー"
+      "location": "嶺南アルプス얼음골ケーブルカー（密陽）",
+      "alt": "嶺南アルプス얼음골ケーブルカー（密陽） — on-route photo",
+      "caption": "嶺南アルプス얼음골ケーブルカー（密陽）"
     },
     {
       "id": 9,
       "type": "photo",
       "src": "/images/tours/yeongnam-alps/yeongnam-alps-summit-viewpoint.webp",
-      "location": "嶺南アルプス 氷谷ケーブルカー (密陽)",
-      "alt": "嶺南アルプス — 連なる山並みを望む頂上展望台",
-      "caption": "嶺南アルプス — 連なる山並みの頂上展望台"
+      "location": "嶺南アルプス얼음골ケーブルカー（密陽）",
+      "alt": "嶺南アルプス얼음골ケーブルカー（密陽） — on-route photo",
+      "caption": "嶺南アルプス얼음골ケーブルカー（密陽）"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+      "location": "甘川文化村",
+      "alt": "甘川文化村 — on-route photo",
+      "caption": "甘川文化村"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
+      "location": "甘川文化村",
+      "alt": "甘川文化村 — on-route photo",
+      "caption": "甘川文化村"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/itinerary/jagalchi-harbor-sign.webp",
+      "location": "甘川文化村",
+      "alt": "甘川文化村 — on-route photo",
+      "caption": "甘川文化村"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/itinerary/jagalchi-market-interior.webp",
+      "location": "甘川文化村",
+      "alt": "甘川文化村 — on-route photo",
+      "caption": "甘川文化村"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/itinerary/jagalchi-night-building.webp",
+      "location": "甘川文化村",
+      "alt": "甘川文化村 — on-route photo",
+      "caption": "甘川文化村"
     }
   ],
   "itineraryStops": [

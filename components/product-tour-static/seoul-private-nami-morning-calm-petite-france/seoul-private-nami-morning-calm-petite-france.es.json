@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "Tour Privado a Nami, Garden of Morning Calm y Petite France | AtoC Korea",
     "metaDescription": "Excursión privada de 9 a 10 horas desde Seúl a los tres íconos de Gapyeong: Isla Nami, el Garden of Morning Calm y Petite France. Recogida gratuita en hotel de Seúl, guía en inglés.",
-    "ogImage": "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
     "primaryKeywords": [
       "Tour privado a la Isla Nami",
       "Tour al Garden of Morning Calm",
@@ -31,8 +31,8 @@
       "Lugares de Rodaje de K-Dramas",
       "Parejas y Familias"
     ],
-    "heroImage": "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
-    "thumbnail": "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
+    "heroImage": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
+    "thumbnail": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
     "priceLabel": "",
     "shortCardDescription": "Una excursión privada de un día desde Seúl que incluye la experiencia del ferry entre los árboles de la Isla Nami, los paseos temáticos por los jardines del Garden of Morning Calm y el colorido pueblo de El Principito en Petite France. La recogida en hotel, el vehículo privado y el ritmo tranquilo hacen de esta la versión más cómoda del clásico circuito por Gapyeong.",
     "tags": [
@@ -50,7 +50,7 @@
     "salePriceUsd": null
   },
   "hero": {
-    "imageUrl": "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
+    "imageUrl": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
     "imagePosition": "center 45%",
     "tagline": "Desde el cruce en ferry a la Isla Nami hasta los jardines temáticos de Morning Calm y el colorido pueblo de Petite France: el clásico circuito por Gapyeong en formato completamente privado.",
     "pills": [
@@ -132,72 +132,136 @@
       "type": "photo",
       "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
       "location": "Isla Nami (Namiseom)",
-      "alt": "Isla Nami (Namiseom) — imagen de galería 1",
-      "caption": "Isla Nami (Namiseom) — foto 1"
+      "alt": "Isla Nami (Namiseom) — gallery image 1",
+      "caption": "Isla Nami (Namiseom) — photo 1"
     },
     {
       "id": 2,
       "type": "photo",
       "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31.webp",
       "location": "El Jardín de la Calma Matutina",
-      "alt": "El Jardín de la Calma Matutina — imagen de galería 1",
-      "caption": "El Jardín de la Calma Matutina — foto 1"
+      "alt": "El Jardín de la Calma Matutina — gallery image 1",
+      "caption": "El Jardín de la Calma Matutina — photo 1"
     },
     {
       "id": 3,
       "type": "photo",
       "src": "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
-      "location": "Pequeña Francia",
-      "alt": "Pequeña Francia — imagen de galería 1",
-      "caption": "Pequeña Francia — foto 1"
+      "location": "Petite France",
+      "alt": "Petite France — gallery image 1",
+      "caption": "Petite France — photo 1"
     },
     {
       "id": 4,
       "type": "photo",
       "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
       "location": "Isla Nami (Namiseom)",
-      "alt": "Isla Nami (Namiseom) — imagen de galería 2",
-      "caption": "Isla Nami (Namiseom) — foto 2"
+      "alt": "Isla Nami (Namiseom) — gallery image 2",
+      "caption": "Isla Nami (Namiseom) — photo 2"
     },
     {
       "id": 5,
       "type": "photo",
       "src": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
       "location": "Isla Nami (Namiseom)",
-      "alt": "Isla Nami (Namiseom) — imagen de galería 3",
-      "caption": "Isla Nami (Namiseom) — foto 3"
+      "alt": "Isla Nami (Namiseom) — gallery image 3",
+      "caption": "Isla Nami (Namiseom) — photo 3"
     },
     {
       "id": 6,
       "type": "photo",
-      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58.webp",
-      "location": "El Jardín de la Calma Matutina",
-      "alt": "El Jardín de la Calma Matutina — imagen de galería 2",
-      "caption": "El Jardín de la Calma Matutina — foto 2"
+      "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-04-2.webp",
+      "location": "Isla Nami (Namiseom)",
+      "alt": "Isla Nami (Namiseom) — gallery image 4",
+      "caption": "Isla Nami (Namiseom) — photo 4"
     },
     {
       "id": 7,
       "type": "photo",
-      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02.webp",
-      "location": "El Jardín de la Calma Matutina",
-      "alt": "El Jardín de la Calma Matutina — imagen de galería 3",
-      "caption": "El Jardín de la Calma Matutina — foto 3"
+      "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-05-2.webp",
+      "location": "Isla Nami (Namiseom)",
+      "alt": "Isla Nami (Namiseom) — gallery image 5",
+      "caption": "Isla Nami (Namiseom) — photo 5"
     },
     {
       "id": 8,
       "type": "photo",
-      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp",
+      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58.webp",
       "location": "El Jardín de la Calma Matutina",
-      "alt": "El Jardín de la Calma Matutina — imagen de galería 4",
-      "caption": "El Jardín de la Calma Matutina — foto 4"
+      "alt": "El Jardín de la Calma Matutina — gallery image 2",
+      "caption": "El Jardín de la Calma Matutina — photo 2"
     },
     {
       "id": 9,
       "type": "photo",
+      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02.webp",
+      "location": "El Jardín de la Calma Matutina",
+      "alt": "El Jardín de la Calma Matutina — gallery image 3",
+      "caption": "El Jardín de la Calma Matutina — photo 3"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp",
+      "location": "El Jardín de la Calma Matutina",
+      "alt": "El Jardín de la Calma Matutina — gallery image 4",
+      "caption": "El Jardín de la Calma Matutina — photo 4"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31-2.webp",
+      "location": "El Jardín de la Calma Matutina",
+      "alt": "El Jardín de la Calma Matutina — gallery image 5",
+      "caption": "El Jardín de la Calma Matutina — photo 5"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58-2.webp",
+      "location": "El Jardín de la Calma Matutina",
+      "alt": "El Jardín de la Calma Matutina — gallery image 6",
+      "caption": "El Jardín de la Calma Matutina — photo 6"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02-2.webp",
+      "location": "El Jardín de la Calma Matutina",
+      "alt": "El Jardín de la Calma Matutina — gallery image 7",
+      "caption": "El Jardín de la Calma Matutina — photo 7"
+    },
+    {
+      "id": 14,
+      "type": "photo",
       "src": "/images/tours/petite-france/kakaotalk-20260510-222949305-03.webp",
       "location": "Petite France",
-      "alt": "Petite France — imagen de galería 2",
-      "caption": "Petite France — foto 2"
+      "alt": "Petite France — gallery image 2",
+      "caption": "Petite France — photo 2"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/petite-france/kakaotalk-20260510-222949305-02-2.webp",
+      "location": "Petite France",
+      "alt": "Petite France — gallery image 3",
+      "caption": "Petite France — photo 3"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/petite-france/kakaotalk-20260510-222949305-03-2.webp",
+      "location": "Petite France",
+      "alt": "Petite France — gallery image 4",
+      "caption": "Petite France — photo 4"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/petite-france/photo-003.webp",
+      "location": "Petite France",
+      "alt": "Petite France — gallery image 5",
+      "caption": "Petite France — photo 5"
     }
   ],
   "itineraryStops": [
@@ -274,6 +338,14 @@
         {
           "url": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/nami-island/kakaotalk-20260510-222949305-04-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/nami-island/kakaotalk-20260510-222949305-05-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -282,24 +354,40 @@
           "type": "photo",
           "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
           "location": "Isla Nami (Namiseom)",
-          "caption": "Isla Nami (Namiseom) — foto 1",
-          "alt": "Isla Nami (Namiseom) — imagen de galería 1"
+          "caption": "Isla Nami (Namiseom) — photo 1",
+          "alt": "Isla Nami (Namiseom) — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
           "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
           "location": "Isla Nami (Namiseom)",
-          "caption": "Isla Nami (Namiseom) — foto 2",
-          "alt": "Isla Nami (Namiseom) — imagen de galería 2"
+          "caption": "Isla Nami (Namiseom) — photo 2",
+          "alt": "Isla Nami (Namiseom) — gallery image 2"
         },
         {
           "id": 3,
           "type": "photo",
           "src": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
           "location": "Isla Nami (Namiseom)",
-          "caption": "Isla Nami (Namiseom) — foto 3",
-          "alt": "Isla Nami (Namiseom) — imagen de galería 3"
+          "caption": "Isla Nami (Namiseom) — photo 3",
+          "alt": "Isla Nami (Namiseom) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-04-2.webp",
+          "location": "Isla Nami (Namiseom)",
+          "caption": "Isla Nami (Namiseom) — photo 4",
+          "alt": "Isla Nami (Namiseom) — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-05-2.webp",
+          "location": "Isla Nami (Namiseom)",
+          "caption": "Isla Nami (Namiseom) — photo 5",
+          "alt": "Isla Nami (Namiseom) — gallery image 5"
         }
       ]
     },
@@ -382,6 +470,18 @@
         {
           "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -390,32 +490,56 @@
           "type": "photo",
           "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31.webp",
           "location": "El Jardín de la Calma Matutina",
-          "caption": "El Jardín de la Calma Matutina — foto 1",
-          "alt": "El Jardín de la Calma Matutina — imagen de galería 1"
+          "caption": "El Jardín de la Calma Matutina — photo 1",
+          "alt": "El Jardín de la Calma Matutina — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
           "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58.webp",
           "location": "El Jardín de la Calma Matutina",
-          "caption": "El Jardín de la Calma Matutina — foto 2",
-          "alt": "El Jardín de la Calma Matutina — imagen de galería 2"
+          "caption": "El Jardín de la Calma Matutina — photo 2",
+          "alt": "El Jardín de la Calma Matutina — gallery image 2"
         },
         {
           "id": 3,
           "type": "photo",
           "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02.webp",
           "location": "El Jardín de la Calma Matutina",
-          "caption": "El Jardín de la Calma Matutina — foto 3",
-          "alt": "El Jardín de la Calma Matutina — imagen de galería 3"
+          "caption": "El Jardín de la Calma Matutina — photo 3",
+          "alt": "El Jardín de la Calma Matutina — gallery image 3"
         },
         {
           "id": 4,
           "type": "photo",
           "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp",
           "location": "El Jardín de la Calma Matutina",
-          "caption": "El Jardín de la Calma Matutina — foto 4",
-          "alt": "El Jardín de la Calma Matutina — imagen de galería 4"
+          "caption": "El Jardín de la Calma Matutina — photo 4",
+          "alt": "El Jardín de la Calma Matutina — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31-2.webp",
+          "location": "El Jardín de la Calma Matutina",
+          "caption": "El Jardín de la Calma Matutina — photo 5",
+          "alt": "El Jardín de la Calma Matutina — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58-2.webp",
+          "location": "El Jardín de la Calma Matutina",
+          "caption": "El Jardín de la Calma Matutina — photo 6",
+          "alt": "El Jardín de la Calma Matutina — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02-2.webp",
+          "location": "El Jardín de la Calma Matutina",
+          "caption": "El Jardín de la Calma Matutina — photo 7",
+          "alt": "El Jardín de la Calma Matutina — gallery image 7"
         }
       ]
     },
@@ -488,6 +612,18 @@
         {
           "url": "/images/tours/petite-france/kakaotalk-20260510-222949305-03.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/petite-france/kakaotalk-20260510-222949305-02-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/petite-france/kakaotalk-20260510-222949305-03-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/petite-france/photo-003.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -496,16 +632,40 @@
           "type": "photo",
           "src": "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
           "location": "Petite France",
-          "caption": "Petite France — foto 1",
-          "alt": "Petite France — imagen de galería 1"
+          "caption": "Petite France — photo 1",
+          "alt": "Petite France — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
           "src": "/images/tours/petite-france/kakaotalk-20260510-222949305-03.webp",
           "location": "Petite France",
-          "caption": "Petite France — foto 2",
-          "alt": "Petite France — imagen de galería 2"
+          "caption": "Petite France — photo 2",
+          "alt": "Petite France — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/petite-france/kakaotalk-20260510-222949305-02-2.webp",
+          "location": "Petite France",
+          "caption": "Petite France — photo 3",
+          "alt": "Petite France — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/petite-france/kakaotalk-20260510-222949305-03-2.webp",
+          "location": "Petite France",
+          "caption": "Petite France — photo 4",
+          "alt": "Petite France — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/petite-france/photo-003.webp",
+          "location": "Petite France",
+          "caption": "Petite France — photo 5",
+          "alt": "Petite France — gallery image 5"
         }
       ]
     }
@@ -1360,7 +1520,9 @@
             "images": [
               "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
               "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
-              "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp"
+              "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
+              "/images/tours/nami-island/kakaotalk-20260510-222949305-04-2.webp",
+              "/images/tours/nami-island/kakaotalk-20260510-222949305-05-2.webp"
             ],
             "imageCredits": [
               {
@@ -1374,6 +1536,14 @@
               {
                 "url": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
                 "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/nami-island/kakaotalk-20260510-222949305-04-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/nami-island/kakaotalk-20260510-222949305-05-2.webp",
+                "source": "atoc-korea"
               }
             ],
             "galleryItems": [
@@ -1382,24 +1552,40 @@
                 "type": "photo",
                 "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
                 "location": "Isla Nami (Namiseom)",
-                "caption": "Isla Nami (Namiseom) — foto 1",
-                "alt": "Isla Nami (Namiseom) — imagen de galería 1"
+                "caption": "Isla Nami (Namiseom) — photo 1",
+                "alt": "Isla Nami (Namiseom) — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
                 "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
                 "location": "Isla Nami (Namiseom)",
-                "caption": "Isla Nami (Namiseom) — foto 2",
-                "alt": "Isla Nami (Namiseom) — imagen de galería 2"
+                "caption": "Isla Nami (Namiseom) — photo 2",
+                "alt": "Isla Nami (Namiseom) — gallery image 2"
               },
               {
                 "id": 3,
                 "type": "photo",
                 "src": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
                 "location": "Isla Nami (Namiseom)",
-                "caption": "Isla Nami (Namiseom) — foto 3",
-                "alt": "Isla Nami (Namiseom) — imagen de galería 3"
+                "caption": "Isla Nami (Namiseom) — photo 3",
+                "alt": "Isla Nami (Namiseom) — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-04-2.webp",
+                "location": "Isla Nami (Namiseom)",
+                "caption": "Isla Nami (Namiseom) — photo 4",
+                "alt": "Isla Nami (Namiseom) — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-05-2.webp",
+                "location": "Isla Nami (Namiseom)",
+                "caption": "Isla Nami (Namiseom) — photo 5",
+                "alt": "Isla Nami (Namiseom) — gallery image 5"
               }
             ]
           },
@@ -1451,7 +1637,10 @@
               "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31.webp",
               "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58.webp",
               "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02.webp",
-              "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp"
+              "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp",
+              "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31-2.webp",
+              "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58-2.webp",
+              "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02-2.webp"
             ],
             "imageCredits": [
               {
@@ -1469,6 +1658,18 @@
               {
                 "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp",
                 "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02-2.webp",
+                "source": "atoc-korea"
               }
             ],
             "galleryItems": [
@@ -1477,32 +1678,56 @@
                 "type": "photo",
                 "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31.webp",
                 "location": "El Jardín de la Calma Matutina",
-                "caption": "El Jardín de la Calma Matutina — foto 1",
-                "alt": "El Jardín de la Calma Matutina — imagen de galería 1"
+                "caption": "El Jardín de la Calma Matutina — photo 1",
+                "alt": "El Jardín de la Calma Matutina — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
                 "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58.webp",
                 "location": "El Jardín de la Calma Matutina",
-                "caption": "El Jardín de la Calma Matutina — foto 2",
-                "alt": "El Jardín de la Calma Matutina — imagen de galería 2"
+                "caption": "El Jardín de la Calma Matutina — photo 2",
+                "alt": "El Jardín de la Calma Matutina — gallery image 2"
               },
               {
                 "id": 3,
                 "type": "photo",
                 "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02.webp",
                 "location": "El Jardín de la Calma Matutina",
-                "caption": "El Jardín de la Calma Matutina — foto 3",
-                "alt": "El Jardín de la Calma Matutina — imagen de galería 3"
+                "caption": "El Jardín de la Calma Matutina — photo 3",
+                "alt": "El Jardín de la Calma Matutina — gallery image 3"
               },
               {
                 "id": 4,
                 "type": "photo",
                 "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp",
                 "location": "El Jardín de la Calma Matutina",
-                "caption": "El Jardín de la Calma Matutina — foto 4",
-                "alt": "El Jardín de la Calma Matutina — imagen de galería 4"
+                "caption": "El Jardín de la Calma Matutina — photo 4",
+                "alt": "El Jardín de la Calma Matutina — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31-2.webp",
+                "location": "El Jardín de la Calma Matutina",
+                "caption": "El Jardín de la Calma Matutina — photo 5",
+                "alt": "El Jardín de la Calma Matutina — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58-2.webp",
+                "location": "El Jardín de la Calma Matutina",
+                "caption": "El Jardín de la Calma Matutina — photo 6",
+                "alt": "El Jardín de la Calma Matutina — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02-2.webp",
+                "location": "El Jardín de la Calma Matutina",
+                "caption": "El Jardín de la Calma Matutina — photo 7",
+                "alt": "El Jardín de la Calma Matutina — gallery image 7"
               }
             ]
           },
@@ -1552,7 +1777,10 @@
             },
             "images": [
               "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
-              "/images/tours/petite-france/kakaotalk-20260510-222949305-03.webp"
+              "/images/tours/petite-france/kakaotalk-20260510-222949305-03.webp",
+              "/images/tours/petite-france/kakaotalk-20260510-222949305-02-2.webp",
+              "/images/tours/petite-france/kakaotalk-20260510-222949305-03-2.webp",
+              "/images/tours/petite-france/photo-003.webp"
             ],
             "imageCredits": [
               {
@@ -1562,6 +1790,18 @@
               {
                 "url": "/images/tours/petite-france/kakaotalk-20260510-222949305-03.webp",
                 "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/petite-france/kakaotalk-20260510-222949305-02-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/petite-france/kakaotalk-20260510-222949305-03-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/petite-france/photo-003.webp",
+                "source": "atoc-korea"
               }
             ],
             "galleryItems": [
@@ -1570,16 +1810,40 @@
                 "type": "photo",
                 "src": "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
                 "location": "Petite France",
-                "caption": "Petite France — foto 1",
-                "alt": "Petite France — imagen de galería 1"
+                "caption": "Petite France — photo 1",
+                "alt": "Petite France — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
                 "src": "/images/tours/petite-france/kakaotalk-20260510-222949305-03.webp",
                 "location": "Petite France",
-                "caption": "Petite France — foto 2",
-                "alt": "Petite France — imagen de galería 2"
+                "caption": "Petite France — photo 2",
+                "alt": "Petite France — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/petite-france/kakaotalk-20260510-222949305-02-2.webp",
+                "location": "Petite France",
+                "caption": "Petite France — photo 3",
+                "alt": "Petite France — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/petite-france/kakaotalk-20260510-222949305-03-2.webp",
+                "location": "Petite France",
+                "caption": "Petite France — photo 4",
+                "alt": "Petite France — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/petite-france/photo-003.webp",
+                "location": "Petite France",
+                "caption": "Petite France — photo 5",
+                "alt": "Petite France — gallery image 5"
               }
             ]
           }

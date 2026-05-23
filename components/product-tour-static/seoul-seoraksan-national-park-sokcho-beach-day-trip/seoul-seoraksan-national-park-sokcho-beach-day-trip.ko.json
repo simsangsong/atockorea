@@ -13,11 +13,11 @@
       "한국 동해안",
       "설악산 속초 당일치기"
     ],
-    "ogImage": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
     "title": "서울 출발 설악산 국립공원 & 속초 해변 당일치기 | AtoC Korea"
   },
   "catalog_card": {
-    "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+    "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
     "title": "설악산 & 속초 해변 당일치기",
     "priceLabel": "",
     "shortCardDescription": "서울에서 한국에서 가장 사랑받는 국립공원과 동해안 도시 속초로 떠나는 소그룹 당일치기 여행. 설악산의 화강암 봉우리, 계곡, 불교 유산과 속초의 수산시장 및 해변을 함께 즐길 수 있으며, 동해안에서만 경험할 수 있는 산과 바다의 조합입니다. 영어 가이드와 왕복 교통을 포함한 12시간 투어.",
@@ -46,7 +46,7 @@
       "단풍",
       "당일치기"
     ],
-    "heroImage": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp"
+    "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp"
   },
   "headlineLine1": "설악산 & 속초",
   "headlineLine2": "해변 당일치기",
@@ -59,7 +59,7 @@
     "discountPercent": null
   },
   "hero": {
-    "imageUrl": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+    "imageUrl": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
     "imagePosition": "center 35%",
     "tagline": "한국에서 가장 상징적인 국립공원과 동해안의 가장 정겨운 항구 도시",
     "pills": [
@@ -138,10 +138,26 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "",
+      "src": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
       "location": "설악산 국립공원",
-      "alt": "설악산 국립공원 — 경유 포토 스팟",
-      "caption": "설악산 국립공원"
+      "alt": "설악산 국립공원 — gallery image 1",
+      "caption": "설악산 국립공원 — photo 1"
+    },
+    {
+      "id": 2,
+      "type": "photo",
+      "src": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+      "location": "설악산 국립공원",
+      "alt": "설악산 국립공원 — gallery image 2",
+      "caption": "설악산 국립공원 — photo 2"
+    },
+    {
+      "id": 3,
+      "type": "photo",
+      "src": "/images/tours/seoraksan/photo-001.webp",
+      "location": "설악산 국립공원",
+      "alt": "설악산 국립공원 — gallery image 3",
+      "caption": "설악산 국립공원 — photo 3"
     }
   ],
   "itineraryStops": [
@@ -236,6 +252,46 @@
       "images": [
         "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
         "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seoraksan/photo-001.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+          "location": "설악산 국립공원",
+          "caption": "설악산 국립공원 — photo 1",
+          "alt": "설악산 국립공원 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+          "location": "설악산 국립공원",
+          "caption": "설악산 국립공원 — photo 2",
+          "alt": "설악산 국립공원 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/seoraksan/photo-001.webp",
+          "location": "설악산 국립공원",
+          "caption": "설악산 국립공원 — photo 3",
+          "alt": "설악산 국립공원 — gallery image 3"
+        }
       ]
     },
     {
@@ -1249,7 +1305,7 @@
             "name": "설악산 국립공원",
             "category": "국립공원 (산)",
             "description": "한국에서 가장 사랑받는 국립공원에서 약 3시간의 자유 시간을 즐기세요 — 1970년 3월 지정된 대한민국 제5호 국립공원이자 1982년 한국 최초로 유네스코 생물권보전지역으로 선정된 곳입니다. 소공원 정문에서 포장 산책로를 따라 신흥사 통일대불을 지나 비선대(계곡을 따라 편도 1.5km)까지 걸을 수 있으며, 선택 사항인 권금성 케이블카(불포함, 약 ₩15,000)를 타고 능선 위의 탁 트인 전망을 감상할 수도 있습니다.",
-            "image": "",
+            "image": "/images/tours/seoraksan/photo-001.webp",
             "highlights": [
               "신흥사 & 통일대불",
               "비선대 & 계곡 트레일",
@@ -1283,7 +1339,26 @@
               "sources": [],
               "verified_date": "2026-04-27",
               "note": "Operational details verified via established knowledge"
-            }
+            },
+            "images": [
+              "/images/tours/seoraksan/photo-001.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/seoraksan/photo-001.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/seoraksan/photo-001.webp",
+                "location": "설악산 국립공원",
+                "caption": "설악산 국립공원 — photo 1",
+                "alt": "설악산 국립공원 — gallery image 1"
+              }
+            ]
           },
           {
             "number": 3,

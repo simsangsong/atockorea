@@ -14,7 +14,7 @@
       "tour Aldea Seongeup",
       "Jeju grupo pequeño"
     ],
-    "ogImage": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
     "title": "Tour Jeju Este: UNESCO, Lava y Haenyeo | AtoC",
     "description": "Excursión de un día en Jeju Este: Playa Hamdeok → Aldea Seongeup (UNESCO) → Cueva Micheon → Seongsan Ilchulbong (UNESCO) → Museo Haenyeo. Grupo pequeño, 9 horas, entradas incluidas."
   },
@@ -202,13 +202,45 @@
     {
       "id": 9,
       "type": "photo",
+      "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-2.webp",
+      "location": "Playa Hamdeok Seoubong",
+      "alt": "Playa Hamdeok Seoubong — gallery image 5",
+      "caption": "Playa Hamdeok Seoubong — photo 5"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01-2.webp",
+      "location": "Playa Hamdeok Seoubong",
+      "alt": "Playa Hamdeok Seoubong — gallery image 6",
+      "caption": "Playa Hamdeok Seoubong — photo 6"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02-2.webp",
+      "location": "Playa Hamdeok Seoubong",
+      "alt": "Playa Hamdeok Seoubong — gallery image 7",
+      "caption": "Playa Hamdeok Seoubong — photo 7"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04-2.webp",
+      "location": "Playa Hamdeok Seoubong",
+      "alt": "Playa Hamdeok Seoubong — gallery image 8",
+      "caption": "Playa Hamdeok Seoubong — photo 8"
+    },
+    {
+      "id": 13,
+      "type": "photo",
       "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
       "location": "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
       "alt": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — gallery image 2",
       "caption": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — photo 2"
     },
     {
-      "id": 10,
+      "id": 14,
       "type": "photo",
       "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
       "location": "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
@@ -216,7 +248,7 @@
       "caption": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — photo 3"
     },
     {
-      "id": 11,
+      "id": 15,
       "type": "photo",
       "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
       "location": "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
@@ -224,7 +256,7 @@
       "caption": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — photo 4"
     },
     {
-      "id": 12,
+      "id": 16,
       "type": "photo",
       "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
       "location": "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
@@ -232,7 +264,7 @@
       "caption": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — photo 5"
     },
     {
-      "id": 13,
+      "id": 17,
       "type": "photo",
       "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
       "location": "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
@@ -240,7 +272,7 @@
       "caption": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — photo 6"
     },
     {
-      "id": 14,
+      "id": 18,
       "type": "photo",
       "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
       "location": "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
@@ -248,7 +280,39 @@
       "caption": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — photo 7"
     },
     {
-      "id": 15,
+      "id": 19,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51-2.webp",
+      "location": "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
+      "alt": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — gallery image 8",
+      "caption": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — photo 8"
+    },
+    {
+      "id": 20,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22-2.webp",
+      "location": "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
+      "alt": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — gallery image 9",
+      "caption": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — photo 9"
+    },
+    {
+      "id": 21,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26-2.webp",
+      "location": "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
+      "alt": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — gallery image 10",
+      "caption": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — photo 10"
+    },
+    {
+      "id": 22,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34-2.webp",
+      "location": "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
+      "alt": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — gallery image 11",
+      "caption": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — photo 11"
+    },
+    {
+      "id": 23,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
       "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
@@ -256,7 +320,7 @@
       "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 2"
     },
     {
-      "id": 16,
+      "id": 24,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
       "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
@@ -264,7 +328,7 @@
       "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 3"
     },
     {
-      "id": 17,
+      "id": 25,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
       "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
@@ -272,7 +336,7 @@
       "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 4"
     },
     {
-      "id": 18,
+      "id": 26,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
       "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
@@ -280,7 +344,7 @@
       "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 5"
     },
     {
-      "id": 19,
+      "id": 27,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
       "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
@@ -288,7 +352,7 @@
       "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 6"
     },
     {
-      "id": 20,
+      "id": 28,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
       "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
@@ -296,7 +360,7 @@
       "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 7"
     },
     {
-      "id": 21,
+      "id": 29,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
       "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
@@ -304,7 +368,7 @@
       "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 8"
     },
     {
-      "id": 22,
+      "id": 30,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
       "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
@@ -312,7 +376,7 @@
       "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 9"
     },
     {
-      "id": 23,
+      "id": 31,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
       "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
@@ -320,7 +384,63 @@
       "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 10"
     },
     {
-      "id": 24,
+      "id": 32,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52-2.webp",
+      "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
+      "alt": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — gallery image 11",
+      "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 11"
+    },
+    {
+      "id": 33,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19-2.webp",
+      "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
+      "alt": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — gallery image 12",
+      "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 12"
+    },
+    {
+      "id": 34,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25-2.webp",
+      "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
+      "alt": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — gallery image 13",
+      "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 13"
+    },
+    {
+      "id": 35,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57-2.webp",
+      "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
+      "alt": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — gallery image 14",
+      "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 14"
+    },
+    {
+      "id": 36,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08-2.webp",
+      "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
+      "alt": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — gallery image 15",
+      "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 15"
+    },
+    {
+      "id": 37,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22-2.webp",
+      "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
+      "alt": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — gallery image 16",
+      "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 16"
+    },
+    {
+      "id": 38,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24-2.webp",
+      "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
+      "alt": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — gallery image 17",
+      "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 17"
+    },
+    {
+      "id": 39,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
       "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
@@ -328,7 +448,7 @@
       "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 2"
     },
     {
-      "id": 25,
+      "id": 40,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
       "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
@@ -336,7 +456,7 @@
       "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 3"
     },
     {
-      "id": 26,
+      "id": 41,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
       "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
@@ -344,7 +464,7 @@
       "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 4"
     },
     {
-      "id": 27,
+      "id": 42,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
       "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
@@ -352,7 +472,55 @@
       "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 5"
     },
     {
-      "id": 28,
+      "id": 43,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06-2.webp",
+      "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
+      "alt": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — gallery image 6",
+      "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 6"
+    },
+    {
+      "id": 44,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07-2.webp",
+      "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
+      "alt": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — gallery image 7",
+      "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 7"
+    },
+    {
+      "id": 45,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08-2.webp",
+      "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
+      "alt": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — gallery image 8",
+      "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 8"
+    },
+    {
+      "id": 46,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09-2.webp",
+      "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
+      "alt": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — gallery image 9",
+      "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 9"
+    },
+    {
+      "id": 47,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10-2.webp",
+      "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
+      "alt": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — gallery image 10",
+      "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 10"
+    },
+    {
+      "id": 48,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/photo-006.webp",
+      "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
+      "alt": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — gallery image 11",
+      "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 11"
+    },
+    {
+      "id": 49,
       "type": "photo",
       "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-17.webp",
       "location": "Museo Haenyeo (buceadoras de Jeju)",
@@ -360,12 +528,36 @@
       "caption": "Museo Haenyeo (buceadoras de Jeju) — photo 2"
     },
     {
-      "id": 29,
+      "id": 50,
       "type": "photo",
       "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-18.webp",
       "location": "Museo Haenyeo (buceadoras de Jeju)",
       "alt": "Museo Haenyeo (buceadoras de Jeju) — gallery image 3",
       "caption": "Museo Haenyeo (buceadoras de Jeju) — photo 3"
+    },
+    {
+      "id": 51,
+      "type": "photo",
+      "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-16-2.webp",
+      "location": "Museo Haenyeo (buceadoras de Jeju)",
+      "alt": "Museo Haenyeo (buceadoras de Jeju) — gallery image 4",
+      "caption": "Museo Haenyeo (buceadoras de Jeju) — photo 4"
+    },
+    {
+      "id": 52,
+      "type": "photo",
+      "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-17-2.webp",
+      "location": "Museo Haenyeo (buceadoras de Jeju)",
+      "alt": "Museo Haenyeo (buceadoras de Jeju) — gallery image 5",
+      "caption": "Museo Haenyeo (buceadoras de Jeju) — photo 5"
+    },
+    {
+      "id": 53,
+      "type": "photo",
+      "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-18-2.webp",
+      "location": "Museo Haenyeo (buceadoras de Jeju)",
+      "alt": "Museo Haenyeo (buceadoras de Jeju) — gallery image 6",
+      "caption": "Museo Haenyeo (buceadoras de Jeju) — photo 6"
     }
   ],
   "itineraryStops": [
@@ -471,6 +663,22 @@
         {
           "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -505,6 +713,38 @@
           "location": "Playa Hamdeok Seoubong",
           "caption": "Playa Hamdeok Seoubong — photo 4",
           "alt": "Playa Hamdeok Seoubong — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-2.webp",
+          "location": "Playa Hamdeok Seoubong",
+          "caption": "Playa Hamdeok Seoubong — photo 5",
+          "alt": "Playa Hamdeok Seoubong — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01-2.webp",
+          "location": "Playa Hamdeok Seoubong",
+          "caption": "Playa Hamdeok Seoubong — photo 6",
+          "alt": "Playa Hamdeok Seoubong — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02-2.webp",
+          "location": "Playa Hamdeok Seoubong",
+          "caption": "Playa Hamdeok Seoubong — photo 7",
+          "alt": "Playa Hamdeok Seoubong — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04-2.webp",
+          "location": "Playa Hamdeok Seoubong",
+          "caption": "Playa Hamdeok Seoubong — photo 8",
+          "alt": "Playa Hamdeok Seoubong — gallery image 8"
         }
       ]
     },
@@ -596,6 +836,22 @@
         {
           "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -654,6 +910,38 @@
           "location": "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
           "caption": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — photo 7",
           "alt": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51-2.webp",
+          "location": "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
+          "caption": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — photo 8",
+          "alt": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22-2.webp",
+          "location": "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
+          "caption": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — photo 9",
+          "alt": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — gallery image 9"
+        },
+        {
+          "id": 10,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26-2.webp",
+          "location": "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
+          "caption": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — photo 10",
+          "alt": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — gallery image 10"
+        },
+        {
+          "id": 11,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34-2.webp",
+          "location": "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
+          "caption": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — photo 11",
+          "alt": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — gallery image 11"
         }
       ]
     },
@@ -763,6 +1051,34 @@
         {
           "url": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -845,6 +1161,62 @@
           "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
           "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 10",
           "alt": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — gallery image 10"
+        },
+        {
+          "id": 11,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52-2.webp",
+          "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
+          "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 11",
+          "alt": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — gallery image 11"
+        },
+        {
+          "id": 12,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19-2.webp",
+          "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
+          "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 12",
+          "alt": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — gallery image 12"
+        },
+        {
+          "id": 13,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25-2.webp",
+          "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
+          "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 13",
+          "alt": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — gallery image 13"
+        },
+        {
+          "id": 14,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57-2.webp",
+          "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
+          "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 14",
+          "alt": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — gallery image 14"
+        },
+        {
+          "id": 15,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08-2.webp",
+          "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
+          "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 15",
+          "alt": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — gallery image 15"
+        },
+        {
+          "id": 16,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22-2.webp",
+          "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
+          "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 16",
+          "alt": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — gallery image 16"
+        },
+        {
+          "id": 17,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24-2.webp",
+          "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
+          "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 17",
+          "alt": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — gallery image 17"
         }
       ]
     },
@@ -947,6 +1319,30 @@
         {
           "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/photo-006.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -989,6 +1385,54 @@
           "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
           "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 5",
           "alt": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06-2.webp",
+          "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
+          "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 6",
+          "alt": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07-2.webp",
+          "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
+          "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 7",
+          "alt": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08-2.webp",
+          "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
+          "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 8",
+          "alt": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09-2.webp",
+          "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
+          "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 9",
+          "alt": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — gallery image 9"
+        },
+        {
+          "id": 10,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10-2.webp",
+          "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
+          "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 10",
+          "alt": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — gallery image 10"
+        },
+        {
+          "id": 11,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/photo-006.webp",
+          "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
+          "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 11",
+          "alt": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — gallery image 11"
         }
       ],
       "liveStatusWidget": "haenyeo"
@@ -1063,6 +1507,18 @@
         {
           "url": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-18.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-16-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-17-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-18-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -1089,6 +1545,30 @@
           "location": "Museo Haenyeo (buceadoras de Jeju)",
           "caption": "Museo Haenyeo (buceadoras de Jeju) — photo 3",
           "alt": "Museo Haenyeo (buceadoras de Jeju) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-16-2.webp",
+          "location": "Museo Haenyeo (buceadoras de Jeju)",
+          "caption": "Museo Haenyeo (buceadoras de Jeju) — photo 4",
+          "alt": "Museo Haenyeo (buceadoras de Jeju) — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-17-2.webp",
+          "location": "Museo Haenyeo (buceadoras de Jeju)",
+          "caption": "Museo Haenyeo (buceadoras de Jeju) — photo 5",
+          "alt": "Museo Haenyeo (buceadoras de Jeju) — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-18-2.webp",
+          "location": "Museo Haenyeo (buceadoras de Jeju)",
+          "caption": "Museo Haenyeo (buceadoras de Jeju) — photo 6",
+          "alt": "Museo Haenyeo (buceadoras de Jeju) — gallery image 6"
         }
       ]
     },
@@ -2155,7 +2635,11 @@
               "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
               "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
               "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
-              "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp"
+              "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
+              "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-2.webp",
+              "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01-2.webp",
+              "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02-2.webp",
+              "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04-2.webp"
             ],
             "imageCredits": [
               {
@@ -2172,6 +2656,22 @@
               },
               {
                 "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04-2.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2207,6 +2707,38 @@
                 "location": "Playa Hamdeok Seoubong",
                 "caption": "Playa Hamdeok Seoubong — photo 4",
                 "alt": "Playa Hamdeok Seoubong — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-2.webp",
+                "location": "Playa Hamdeok Seoubong",
+                "caption": "Playa Hamdeok Seoubong — photo 5",
+                "alt": "Playa Hamdeok Seoubong — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01-2.webp",
+                "location": "Playa Hamdeok Seoubong",
+                "caption": "Playa Hamdeok Seoubong — photo 6",
+                "alt": "Playa Hamdeok Seoubong — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02-2.webp",
+                "location": "Playa Hamdeok Seoubong",
+                "caption": "Playa Hamdeok Seoubong — photo 7",
+                "alt": "Playa Hamdeok Seoubong — gallery image 7"
+              },
+              {
+                "id": 8,
+                "type": "photo",
+                "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04-2.webp",
+                "location": "Playa Hamdeok Seoubong",
+                "caption": "Playa Hamdeok Seoubong — photo 8",
+                "alt": "Playa Hamdeok Seoubong — gallery image 8"
               }
             ]
           },
@@ -2253,7 +2785,11 @@
               "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
               "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
               "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
-              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp"
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51-2.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22-2.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26-2.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34-2.webp"
             ],
             "imageCredits": [
               {
@@ -2282,6 +2818,22 @@
               },
               {
                 "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34-2.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2341,6 +2893,38 @@
                 "location": "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
                 "caption": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — photo 7",
                 "alt": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — gallery image 7"
+              },
+              {
+                "id": 8,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51-2.webp",
+                "location": "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
+                "caption": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — photo 8",
+                "alt": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — gallery image 8"
+              },
+              {
+                "id": 9,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22-2.webp",
+                "location": "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
+                "caption": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — photo 9",
+                "alt": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — gallery image 9"
+              },
+              {
+                "id": 10,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26-2.webp",
+                "location": "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
+                "caption": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — photo 10",
+                "alt": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — gallery image 10"
+              },
+              {
+                "id": 11,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34-2.webp",
+                "location": "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
+                "caption": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — photo 11",
+                "alt": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — gallery image 11"
               }
             ]
           },
@@ -2389,7 +2973,14 @@
               "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
               "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
               "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
-              "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp"
+              "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52-2.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19-2.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25-2.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57-2.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08-2.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22-2.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24-2.webp"
             ],
             "imageCredits": [
               {
@@ -2430,6 +3021,34 @@
               },
               {
                 "url": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24-2.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2513,6 +3132,62 @@
                 "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
                 "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 10",
                 "alt": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — gallery image 10"
+              },
+              {
+                "id": 11,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52-2.webp",
+                "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
+                "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 11",
+                "alt": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — gallery image 11"
+              },
+              {
+                "id": 12,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19-2.webp",
+                "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
+                "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 12",
+                "alt": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — gallery image 12"
+              },
+              {
+                "id": 13,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25-2.webp",
+                "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
+                "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 13",
+                "alt": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — gallery image 13"
+              },
+              {
+                "id": 14,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57-2.webp",
+                "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
+                "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 14",
+                "alt": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — gallery image 14"
+              },
+              {
+                "id": 15,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08-2.webp",
+                "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
+                "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 15",
+                "alt": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — gallery image 15"
+              },
+              {
+                "id": 16,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22-2.webp",
+                "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
+                "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 16",
+                "alt": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — gallery image 16"
+              },
+              {
+                "id": 17,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24-2.webp",
+                "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
+                "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 17",
+                "alt": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — gallery image 17"
               }
             ]
           },
@@ -2575,7 +3250,13 @@
               "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
               "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
               "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
-              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp"
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06-2.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07-2.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08-2.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09-2.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10-2.webp",
+              "/images/tours/seongsan-ilchulbong/photo-006.webp"
             ],
             "imageCredits": [
               {
@@ -2596,6 +3277,30 @@
               },
               {
                 "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/photo-006.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2639,6 +3344,54 @@
                 "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
                 "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 5",
                 "alt": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06-2.webp",
+                "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
+                "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 6",
+                "alt": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07-2.webp",
+                "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
+                "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 7",
+                "alt": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — gallery image 7"
+              },
+              {
+                "id": 8,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08-2.webp",
+                "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
+                "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 8",
+                "alt": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — gallery image 8"
+              },
+              {
+                "id": 9,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09-2.webp",
+                "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
+                "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 9",
+                "alt": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — gallery image 9"
+              },
+              {
+                "id": 10,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10-2.webp",
+                "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
+                "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 10",
+                "alt": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — gallery image 10"
+              },
+              {
+                "id": 11,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/photo-006.webp",
+                "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
+                "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 11",
+                "alt": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — gallery image 11"
               }
             ]
           },
@@ -2679,7 +3432,10 @@
             "images": [
               "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-16.webp",
               "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-17.webp",
-              "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-18.webp"
+              "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-18.webp",
+              "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-16-2.webp",
+              "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-17-2.webp",
+              "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-18-2.webp"
             ],
             "imageCredits": [
               {
@@ -2692,6 +3448,18 @@
               },
               {
                 "url": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-18.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-16-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-17-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-18-2.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2719,6 +3487,30 @@
                 "location": "Museo Haenyeo (buceadoras de Jeju)",
                 "caption": "Museo Haenyeo (buceadoras de Jeju) — photo 3",
                 "alt": "Museo Haenyeo (buceadoras de Jeju) — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-16-2.webp",
+                "location": "Museo Haenyeo (buceadoras de Jeju)",
+                "caption": "Museo Haenyeo (buceadoras de Jeju) — photo 4",
+                "alt": "Museo Haenyeo (buceadoras de Jeju) — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-17-2.webp",
+                "location": "Museo Haenyeo (buceadoras de Jeju)",
+                "caption": "Museo Haenyeo (buceadoras de Jeju) — photo 5",
+                "alt": "Museo Haenyeo (buceadoras de Jeju) — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-18-2.webp",
+                "location": "Museo Haenyeo (buceadoras de Jeju)",
+                "caption": "Museo Haenyeo (buceadoras de Jeju) — photo 6",
+                "alt": "Museo Haenyeo (buceadoras de Jeju) — gallery image 6"
               }
             ]
           },

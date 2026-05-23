@@ -13,11 +13,11 @@
       "스타필드 도서관 수원 투어",
       "유네스코 한국 당일 투어"
     ],
-    "ogImage": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
     "title": "서울 출발 수원 화성, 한국민속촌 & 스타필드 도서관 당일 투어 | AtoC Korea"
   },
   "catalog_card": {
-    "thumbnail": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
+    "thumbnail": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
     "title": "수원: 화성, 민속촌 & 스타필드",
     "priceLabel": "",
     "shortCardDescription": "서울에서 출발하는 소그룹 문화 당일 투어로, 경기도의 네 가지 대조적인 한국 유산과 현대 생활을 경험합니다: 유네스코 세계유산으로 등재된 수원 화성(18세기 성벽과 성문), 조선 시대 재현 행사가 펼쳐지는 화성행궁, 용인의 몰입형 야외 한국민속촌, 그리고 웅장한 4층 규모의 스타필드 수원 도서관. 교통 및 입장료 포함 10시간 투어.",
@@ -46,7 +46,7 @@
       "민속촌",
       "당일 여행"
     ],
-    "heroImage": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp"
+    "heroImage": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp"
   },
   "headlineLine1": "수원 유산의 하루",
   "headlineLine2": "화성, 민속촌 & 스타필드",
@@ -59,7 +59,7 @@
     "discountPercent": null
   },
   "hero": {
-    "imageUrl": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
+    "imageUrl": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
     "imagePosition": "center 35%",
     "tagline": "한국 유일의 성곽 요새, 민속촌, 그리고 인스타그램을 가득 채운 도서관",
     "pills": [
@@ -140,88 +140,152 @@
       "type": "photo",
       "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
       "location": "수원 화성",
-      "alt": "수원 화성 — 갤러리 이미지 1",
-      "caption": "수원 화성 — 사진 1"
+      "alt": "수원 화성 — gallery image 1",
+      "caption": "수원 화성 — photo 1"
     },
     {
       "id": 2,
       "type": "photo",
       "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
       "location": "한국민속촌 (용인)",
-      "alt": "한국민속촌 (용인) — 갤러리 이미지 1",
-      "caption": "한국민속촌 (용인) — 사진 1"
+      "alt": "한국민속촌 (용인) — gallery image 1",
+      "caption": "한국민속촌 (용인) — photo 1"
     },
     {
       "id": 3,
       "type": "photo",
       "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
-      "location": "스타필드 수원 라이브러리",
-      "alt": "스타필드 수원 라이브러리 — 갤러리 이미지 1",
-      "caption": "스타필드 수원 라이브러리 — 사진 1"
+      "location": "스타필드 라이브러리 수원",
+      "alt": "스타필드 라이브러리 수원 — gallery image 1",
+      "caption": "스타필드 라이브러리 수원 — photo 1"
     },
     {
       "id": 4,
       "type": "photo",
       "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
       "location": "수원 화성",
-      "alt": "수원 화성 — 갤러리 이미지 2",
-      "caption": "수원 화성 — 사진 2"
+      "alt": "수원 화성 — gallery image 2",
+      "caption": "수원 화성 — photo 2"
     },
     {
       "id": 5,
       "type": "photo",
       "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
       "location": "수원 화성",
-      "alt": "수원 화성 — 갤러리 이미지 3",
-      "caption": "수원 화성 — 사진 3"
+      "alt": "수원 화성 — gallery image 3",
+      "caption": "수원 화성 — photo 3"
     },
     {
       "id": 6,
       "type": "photo",
       "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
       "location": "수원 화성",
-      "alt": "수원 화성 — 갤러리 이미지 4",
-      "caption": "수원 화성 — 사진 4"
+      "alt": "수원 화성 — gallery image 4",
+      "caption": "수원 화성 — photo 4"
     },
     {
       "id": 7,
       "type": "photo",
       "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
       "location": "수원 화성",
-      "alt": "수원 화성 — 갤러리 이미지 5",
-      "caption": "수원 화성 — 사진 5"
+      "alt": "수원 화성 — gallery image 5",
+      "caption": "수원 화성 — photo 5"
     },
     {
       "id": 8,
       "type": "photo",
-      "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
-      "location": "한국민속촌 (용인)",
-      "alt": "한국민속촌 (용인) — 갤러리 이미지 2",
-      "caption": "한국민속촌 (용인) — 사진 2"
+      "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305-2.webp",
+      "location": "수원 화성",
+      "alt": "수원 화성 — gallery image 6",
+      "caption": "수원 화성 — photo 6"
     },
     {
       "id": 9,
       "type": "photo",
-      "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
-      "location": "스타필드 수원 라이브러리",
-      "alt": "스타필드 수원 라이브러리 — 갤러리 이미지 2",
-      "caption": "스타필드 수원 라이브러리 — 사진 2"
+      "src": "/images/tours/suwon-hwaseong/photo-002.webp",
+      "location": "수원 화성",
+      "alt": "수원 화성 — gallery image 7",
+      "caption": "수원 화성 — photo 7"
     },
     {
       "id": 10,
       "type": "photo",
-      "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
-      "location": "스타필드 수원 라이브러리",
-      "alt": "스타필드 수원 라이브러리 — 갤러리 이미지 3",
-      "caption": "스타필드 수원 라이브러리 — 사진 3"
+      "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
+      "location": "한국민속촌 (용인)",
+      "alt": "한국민속촌 (용인) — gallery image 2",
+      "caption": "한국민속촌 (용인) — photo 2"
     },
     {
       "id": 11,
       "type": "photo",
+      "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02-2.webp",
+      "location": "한국민속촌 (용인)",
+      "alt": "한국민속촌 (용인) — gallery image 3",
+      "caption": "한국민속촌 (용인) — photo 3"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-2.webp",
+      "location": "한국민속촌 (용인)",
+      "alt": "한국민속촌 (용인) — gallery image 4",
+      "caption": "한국민속촌 (용인) — photo 4"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
+      "location": "스타필드 라이브러리 수원",
+      "alt": "스타필드 라이브러리 수원 — gallery image 2",
+      "caption": "스타필드 라이브러리 수원 — photo 2"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
+      "location": "스타필드 라이브러리 수원",
+      "alt": "스타필드 라이브러리 수원 — gallery image 3",
+      "caption": "스타필드 라이브러리 수원 — photo 3"
+    },
+    {
+      "id": 15,
+      "type": "photo",
       "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
-      "location": "스타필드 수원 라이브러리",
-      "alt": "스타필드 수원 라이브러리 — 갤러리 이미지 4",
-      "caption": "스타필드 수원 라이브러리 — 사진 4"
+      "location": "스타필드 라이브러리 수원",
+      "alt": "스타필드 라이브러리 수원 — gallery image 4",
+      "caption": "스타필드 라이브러리 수원 — photo 4"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18-2.webp",
+      "location": "스타필드 라이브러리 수원",
+      "alt": "스타필드 라이브러리 수원 — gallery image 5",
+      "caption": "스타필드 라이브러리 수원 — photo 5"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38-2.webp",
+      "location": "스타필드 라이브러리 수원",
+      "alt": "스타필드 라이브러리 수원 — gallery image 6",
+      "caption": "스타필드 라이브러리 수원 — photo 6"
+    },
+    {
+      "id": 18,
+      "type": "photo",
+      "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55-2.webp",
+      "location": "스타필드 라이브러리 수원",
+      "alt": "스타필드 라이브러리 수원 — gallery image 7",
+      "caption": "스타필드 라이브러리 수원 — photo 7"
+    },
+    {
+      "id": 19,
+      "type": "photo",
+      "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58-2.webp",
+      "location": "스타필드 라이브러리 수원",
+      "alt": "스타필드 라이브러리 수원 — gallery image 8",
+      "caption": "스타필드 라이브러리 수원 — photo 8"
     }
   ],
   "itineraryStops": [
@@ -345,6 +409,14 @@
         {
           "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/suwon-hwaseong/photo-002.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -353,40 +425,56 @@
           "type": "photo",
           "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
           "location": "수원 화성",
-          "caption": "수원 화성 — 사진 1",
-          "alt": "수원 화성 — 갤러리 이미지 1"
+          "caption": "수원 화성 — photo 1",
+          "alt": "수원 화성 — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
           "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
           "location": "수원 화성",
-          "caption": "수원 화성 — 사진 2",
-          "alt": "수원 화성 — 갤러리 이미지 2"
+          "caption": "수원 화성 — photo 2",
+          "alt": "수원 화성 — gallery image 2"
         },
         {
           "id": 3,
           "type": "photo",
           "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
           "location": "수원 화성",
-          "caption": "수원 화성 — 사진 3",
-          "alt": "수원 화성 — 갤러리 이미지 3"
+          "caption": "수원 화성 — photo 3",
+          "alt": "수원 화성 — gallery image 3"
         },
         {
           "id": 4,
           "type": "photo",
           "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
           "location": "수원 화성",
-          "caption": "수원 화성 — 사진 4",
-          "alt": "수원 화성 — 갤러리 이미지 4"
+          "caption": "수원 화성 — photo 4",
+          "alt": "수원 화성 — gallery image 4"
         },
         {
           "id": 5,
           "type": "photo",
           "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
           "location": "수원 화성",
-          "caption": "수원 화성 — 사진 5",
-          "alt": "수원 화성 — 갤러리 이미지 5"
+          "caption": "수원 화성 — photo 5",
+          "alt": "수원 화성 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305-2.webp",
+          "location": "수원 화성",
+          "caption": "수원 화성 — photo 6",
+          "alt": "수원 화성 — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/suwon-hwaseong/photo-002.webp",
+          "location": "수원 화성",
+          "caption": "수원 화성 — photo 7",
+          "alt": "수원 화성 — gallery image 7"
         }
       ]
     },
@@ -477,6 +565,14 @@
         {
           "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/suwon-hwaseong/photo-002.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -484,41 +580,57 @@
           "id": 1,
           "type": "photo",
           "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
-          "location": "수원 화성",
-          "caption": "수원 화성 — 사진 1",
-          "alt": "수원 화성 — 갤러리 이미지 1"
+          "location": "화성행궁",
+          "caption": "화성행궁 — photo 1",
+          "alt": "화성행궁 — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
           "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
-          "location": "수원 화성",
-          "caption": "수원 화성 — 사진 2",
-          "alt": "수원 화성 — 갤러리 이미지 2"
+          "location": "화성행궁",
+          "caption": "화성행궁 — photo 2",
+          "alt": "화성행궁 — gallery image 2"
         },
         {
           "id": 3,
           "type": "photo",
           "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
-          "location": "수원 화성",
-          "caption": "수원 화성 — 사진 3",
-          "alt": "수원 화성 — 갤러리 이미지 3"
+          "location": "화성행궁",
+          "caption": "화성행궁 — photo 3",
+          "alt": "화성행궁 — gallery image 3"
         },
         {
           "id": 4,
           "type": "photo",
           "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
-          "location": "수원 화성",
-          "caption": "수원 화성 — 사진 4",
-          "alt": "수원 화성 — 갤러리 이미지 4"
+          "location": "화성행궁",
+          "caption": "화성행궁 — photo 4",
+          "alt": "화성행궁 — gallery image 4"
         },
         {
           "id": 5,
           "type": "photo",
           "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
-          "location": "수원 화성",
-          "caption": "수원 화성 — 사진 5",
-          "alt": "수원 화성 — 갤러리 이미지 5"
+          "location": "화성행궁",
+          "caption": "화성행궁 — photo 5",
+          "alt": "화성행궁 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305-2.webp",
+          "location": "화성행궁",
+          "caption": "화성행궁 — photo 6",
+          "alt": "화성행궁 — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/suwon-hwaseong/photo-002.webp",
+          "location": "화성행궁",
+          "caption": "화성행궁 — photo 7",
+          "alt": "화성행궁 — gallery image 7"
         }
       ]
     },
@@ -594,6 +706,14 @@
         {
           "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -602,16 +722,32 @@
           "type": "photo",
           "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
           "location": "한국민속촌 (용인)",
-          "caption": "한국민속촌 (용인) — 사진 1",
-          "alt": "한국민속촌 (용인) — 갤러리 이미지 1"
+          "caption": "한국민속촌 (용인) — photo 1",
+          "alt": "한국민속촌 (용인) — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
           "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
           "location": "한국민속촌 (용인)",
-          "caption": "한국민속촌 (용인) — 사진 2",
-          "alt": "한국민속촌 (용인) — 갤러리 이미지 2"
+          "caption": "한국민속촌 (용인) — photo 2",
+          "alt": "한국민속촌 (용인) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02-2.webp",
+          "location": "한국민속촌 (용인)",
+          "caption": "한국민속촌 (용인) — photo 3",
+          "alt": "한국민속촌 (용인) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-2.webp",
+          "location": "한국민속촌 (용인)",
+          "caption": "한국민속촌 (용인) — photo 4",
+          "alt": "한국민속촌 (용인) — gallery image 4"
         }
       ]
     },
@@ -697,6 +833,22 @@
         {
           "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -704,33 +856,65 @@
           "id": 1,
           "type": "photo",
           "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
-          "location": "스타필드 수원 라이브러리",
-          "caption": "스타필드 수원 라이브러리 — 사진 1",
-          "alt": "스타필드 수원 라이브러리 — 갤러리 이미지 1"
+          "location": "스타필드 라이브러리 수원",
+          "caption": "스타필드 라이브러리 수원 — photo 1",
+          "alt": "스타필드 라이브러리 수원 — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
           "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
-          "location": "스타필드 수원 라이브러리",
-          "caption": "스타필드 수원 라이브러리 — 사진 2",
-          "alt": "스타필드 수원 라이브러리 — 갤러리 이미지 2"
+          "location": "스타필드 라이브러리 수원",
+          "caption": "스타필드 라이브러리 수원 — photo 2",
+          "alt": "스타필드 라이브러리 수원 — gallery image 2"
         },
         {
           "id": 3,
           "type": "photo",
           "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
-          "location": "스타필드 수원 라이브러리",
-          "caption": "스타필드 수원 라이브러리 — 사진 3",
-          "alt": "스타필드 수원 라이브러리 — 갤러리 이미지 3"
+          "location": "스타필드 라이브러리 수원",
+          "caption": "스타필드 라이브러리 수원 — photo 3",
+          "alt": "스타필드 라이브러리 수원 — gallery image 3"
         },
         {
           "id": 4,
           "type": "photo",
           "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
-          "location": "스타필드 수원 라이브러리",
-          "caption": "스타필드 수원 라이브러리 — 사진 4",
-          "alt": "스타필드 수원 라이브러리 — 갤러리 이미지 4"
+          "location": "스타필드 라이브러리 수원",
+          "caption": "스타필드 라이브러리 수원 — photo 4",
+          "alt": "스타필드 라이브러리 수원 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18-2.webp",
+          "location": "스타필드 라이브러리 수원",
+          "caption": "스타필드 라이브러리 수원 — photo 5",
+          "alt": "스타필드 라이브러리 수원 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38-2.webp",
+          "location": "스타필드 라이브러리 수원",
+          "caption": "스타필드 라이브러리 수원 — photo 6",
+          "alt": "스타필드 라이브러리 수원 — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55-2.webp",
+          "location": "스타필드 라이브러리 수원",
+          "caption": "스타필드 라이브러리 수원 — photo 7",
+          "alt": "스타필드 라이브러리 수원 — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58-2.webp",
+          "location": "스타필드 라이브러리 수원",
+          "caption": "스타필드 라이브러리 수원 — photo 8",
+          "alt": "스타필드 라이브러리 수원 — gallery image 8"
         }
       ]
     },
@@ -1701,7 +1885,9 @@
               "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
               "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
               "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
-              "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp"
+              "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
+              "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305-2.webp",
+              "/images/tours/suwon-hwaseong/photo-002.webp"
             ],
             "imageCredits": [
               {
@@ -1723,6 +1909,14 @@
               {
                 "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
                 "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/suwon-hwaseong/photo-002.webp",
+                "source": "atoc-korea"
               }
             ],
             "galleryItems": [
@@ -1731,40 +1925,56 @@
                 "type": "photo",
                 "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
                 "location": "수원 화성",
-                "caption": "수원 화성 — 사진 1",
-                "alt": "수원 화성 — 갤러리 이미지 1"
+                "caption": "수원 화성 — photo 1",
+                "alt": "수원 화성 — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
                 "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
                 "location": "수원 화성",
-                "caption": "수원 화성 — 사진 2",
-                "alt": "수원 화성 — 갤러리 이미지 2"
+                "caption": "수원 화성 — photo 2",
+                "alt": "수원 화성 — gallery image 2"
               },
               {
                 "id": 3,
                 "type": "photo",
                 "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
                 "location": "수원 화성",
-                "caption": "수원 화성 — 사진 3",
-                "alt": "수원 화성 — 갤러리 이미지 3"
+                "caption": "수원 화성 — photo 3",
+                "alt": "수원 화성 — gallery image 3"
               },
               {
                 "id": 4,
                 "type": "photo",
                 "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
                 "location": "수원 화성",
-                "caption": "수원 화성 — 사진 4",
-                "alt": "수원 화성 — 갤러리 이미지 4"
+                "caption": "수원 화성 — photo 4",
+                "alt": "수원 화성 — gallery image 4"
               },
               {
                 "id": 5,
                 "type": "photo",
                 "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
                 "location": "수원 화성",
-                "caption": "수원 화성 — 사진 5",
-                "alt": "수원 화성 — 갤러리 이미지 5"
+                "caption": "수원 화성 — photo 5",
+                "alt": "수원 화성 — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305-2.webp",
+                "location": "수원 화성",
+                "caption": "수원 화성 — photo 6",
+                "alt": "수원 화성 — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/suwon-hwaseong/photo-002.webp",
+                "location": "수원 화성",
+                "caption": "수원 화성 — photo 7",
+                "alt": "수원 화성 — gallery image 7"
               }
             ]
           },
@@ -1817,7 +2027,9 @@
               "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
               "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
               "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
-              "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp"
+              "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
+              "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305-2.webp",
+              "/images/tours/suwon-hwaseong/photo-002.webp"
             ],
             "imageCredits": [
               {
@@ -1839,6 +2051,14 @@
               {
                 "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
                 "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/suwon-hwaseong/photo-002.webp",
+                "source": "atoc-korea"
               }
             ],
             "galleryItems": [
@@ -1846,41 +2066,57 @@
                 "id": 1,
                 "type": "photo",
                 "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
-                "location": "수원 화성",
-                "caption": "수원 화성 — 사진 1",
-                "alt": "수원 화성 — 갤러리 이미지 1"
+                "location": "화성 행궁",
+                "caption": "화성 행궁 — photo 1",
+                "alt": "화성 행궁 — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
                 "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
-                "location": "수원 화성",
-                "caption": "수원 화성 — 사진 2",
-                "alt": "수원 화성 — 갤러리 이미지 2"
+                "location": "화성 행궁",
+                "caption": "화성 행궁 — photo 2",
+                "alt": "화성 행궁 — gallery image 2"
               },
               {
                 "id": 3,
                 "type": "photo",
                 "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
-                "location": "수원 화성",
-                "caption": "수원 화성 — 사진 3",
-                "alt": "수원 화성 — 갤러리 이미지 3"
+                "location": "화성 행궁",
+                "caption": "화성 행궁 — photo 3",
+                "alt": "화성 행궁 — gallery image 3"
               },
               {
                 "id": 4,
                 "type": "photo",
                 "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
-                "location": "수원 화성",
-                "caption": "수원 화성 — 사진 4",
-                "alt": "수원 화성 — 갤러리 이미지 4"
+                "location": "화성 행궁",
+                "caption": "화성 행궁 — photo 4",
+                "alt": "화성 행궁 — gallery image 4"
               },
               {
                 "id": 5,
                 "type": "photo",
                 "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
-                "location": "수원 화성",
-                "caption": "수원 화성 — 사진 5",
-                "alt": "수원 화성 — 갤러리 이미지 5"
+                "location": "화성 행궁",
+                "caption": "화성 행궁 — photo 5",
+                "alt": "화성 행궁 — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305-2.webp",
+                "location": "화성 행궁",
+                "caption": "화성 행궁 — photo 6",
+                "alt": "화성 행궁 — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/suwon-hwaseong/photo-002.webp",
+                "location": "화성 행궁",
+                "caption": "화성 행궁 — photo 7",
+                "alt": "화성 행궁 — gallery image 7"
               }
             ]
           },
@@ -1930,7 +2166,9 @@
             },
             "images": [
               "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp"
+              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
+              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02-2.webp",
+              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-2.webp"
             ],
             "imageCredits": [
               {
@@ -1940,6 +2178,14 @@
               {
                 "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
                 "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-2.webp",
+                "source": "atoc-korea"
               }
             ],
             "galleryItems": [
@@ -1948,16 +2194,32 @@
                 "type": "photo",
                 "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
                 "location": "한국민속촌 (용인)",
-                "caption": "한국민속촌 (용인) — 사진 1",
-                "alt": "한국민속촌 (용인) — 갤러리 이미지 1"
+                "caption": "한국민속촌 (용인) — photo 1",
+                "alt": "한국민속촌 (용인) — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
                 "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
                 "location": "한국민속촌 (용인)",
-                "caption": "한국민속촌 (용인) — 사진 2",
-                "alt": "한국민속촌 (용인) — 갤러리 이미지 2"
+                "caption": "한국민속촌 (용인) — photo 2",
+                "alt": "한국민속촌 (용인) — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02-2.webp",
+                "location": "한국민속촌 (용인)",
+                "caption": "한국민속촌 (용인) — photo 3",
+                "alt": "한국민속촌 (용인) — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-2.webp",
+                "location": "한국민속촌 (용인)",
+                "caption": "한국민속촌 (용인) — photo 4",
+                "alt": "한국민속촌 (용인) — gallery image 4"
               }
             ]
           },
@@ -2010,7 +2272,11 @@
               "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
               "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
               "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
-              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp"
+              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
+              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18-2.webp",
+              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38-2.webp",
+              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55-2.webp",
+              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58-2.webp"
             ],
             "imageCredits": [
               {
@@ -2028,6 +2294,22 @@
               {
                 "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
                 "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58-2.webp",
+                "source": "atoc-korea"
               }
             ],
             "galleryItems": [
@@ -2035,33 +2317,65 @@
                 "id": 1,
                 "type": "photo",
                 "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
-                "location": "스타필드 수원 라이브러리",
-                "caption": "스타필드 수원 라이브러리 — 사진 1",
-                "alt": "스타필드 수원 라이브러리 — 갤러리 이미지 1"
+                "location": "스타필드 라이브러리, 수원",
+                "caption": "스타필드 라이브러리, 수원 — photo 1",
+                "alt": "스타필드 라이브러리, 수원 — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
                 "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
-                "location": "스타필드 수원 라이브러리",
-                "caption": "스타필드 수원 라이브러리 — 사진 2",
-                "alt": "스타필드 수원 라이브러리 — 갤러리 이미지 2"
+                "location": "스타필드 라이브러리, 수원",
+                "caption": "스타필드 라이브러리, 수원 — photo 2",
+                "alt": "스타필드 라이브러리, 수원 — gallery image 2"
               },
               {
                 "id": 3,
                 "type": "photo",
                 "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
-                "location": "스타필드 수원 라이브러리",
-                "caption": "스타필드 수원 라이브러리 — 사진 3",
-                "alt": "스타필드 수원 라이브러리 — 갤러리 이미지 3"
+                "location": "스타필드 라이브러리, 수원",
+                "caption": "스타필드 라이브러리, 수원 — photo 3",
+                "alt": "스타필드 라이브러리, 수원 — gallery image 3"
               },
               {
                 "id": 4,
                 "type": "photo",
                 "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
-                "location": "스타필드 수원 라이브러리",
-                "caption": "스타필드 수원 라이브러리 — 사진 4",
-                "alt": "스타필드 수원 라이브러리 — 갤러리 이미지 4"
+                "location": "스타필드 라이브러리, 수원",
+                "caption": "스타필드 라이브러리, 수원 — photo 4",
+                "alt": "스타필드 라이브러리, 수원 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18-2.webp",
+                "location": "스타필드 라이브러리, 수원",
+                "caption": "스타필드 라이브러리, 수원 — photo 5",
+                "alt": "스타필드 라이브러리, 수원 — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38-2.webp",
+                "location": "스타필드 라이브러리, 수원",
+                "caption": "스타필드 라이브러리, 수원 — photo 6",
+                "alt": "스타필드 라이브러리, 수원 — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55-2.webp",
+                "location": "스타필드 라이브러리, 수원",
+                "caption": "스타필드 라이브러리, 수원 — photo 7",
+                "alt": "스타필드 라이브러리, 수원 — gallery image 7"
+              },
+              {
+                "id": 8,
+                "type": "photo",
+                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58-2.webp",
+                "location": "스타필드 라이브러리, 수원",
+                "caption": "스타필드 라이브러리, 수원 — photo 8",
+                "alt": "스타필드 라이브러리, 수원 — gallery image 8"
               }
             ]
           },

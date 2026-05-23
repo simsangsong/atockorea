@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "Busan Private Car Charter for Cruise Shore (8hr) | AtoC Korea",
     "metaDescription": "8-hour fully customizable Busan private car charter for cruise passengers. English-speaking driver, on-time return planned, hotel/KTX/cruise port pickup.",
-    "ogImage": "/images/tours/busan-private/busan-private-cruise-terminal-thumbnail.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
     "primaryKeywords": [
       "Busan private car charter",
       "Busan cruise shore excursion",
@@ -32,8 +32,8 @@
       "Customizable Route",
       "Cruise Pickup Included"
     ],
-    "heroImage": "/images/tours/busan-private/busan-private-cruise-terminal-thumbnail.webp",
-    "thumbnail": "/images/tours/busan-private/busan-private-cruise-terminal-thumbnail.webp",
+    "heroImage": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+    "thumbnail": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
     "priceLabel": "From US$359 per vehicle (was $379, 1–6 pax, 8h) · 7–12 pax 2× · 13+ pax 3×",
     "shortCardDescription": "A private Busan shore excursion for cruise guests. Choose the places that matter most — Haedong Yonggungsa, Cheongsapo, Blue Line Park, UN Memorial Cemetery, Gamcheon Culture Village, Songdo, Nampo-dong, Jagalchi Market, and more — then adjust the day with your guide around your ship schedule.",
     "tags": [
@@ -54,7 +54,7 @@
     "discountPercent": 5
   },
   "hero": {
-    "imageUrl": "/images/tours/busan-private/busan-private-cruise-terminal-thumbnail.webp",
+    "imageUrl": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
     "imagePosition": "center 50%",
     "tagline": "From UN Memorial Cemetery to Taejongdae cliffs to Gamcheon's painted alleys to Jagalchi's working harbor — eight private hours, your route, your pace, with return planned around your ship time.",
     "pills": [
@@ -134,82 +134,202 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/busan-private/busan-private-thumbnail-gwangalli.webp",
-      "location": "Gwangalli & Gwangan Bridge",
-      "alt": "Private Busan tour — family at Gwangalli with Gwangan Bridge",
-      "caption": "Private Busan tour — family at Gwangalli with Gwangan Bridge"
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+      "location": "East coast highlights option",
+      "alt": "East coast highlights option — gallery image 1",
+      "caption": "East coast highlights option — photo 1"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/gamcheon-culture-village/gamcheon-panorama.webp",
-      "location": "Gamcheon Culture Village",
-      "alt": "Gamcheon Culture Village — colorful hillside panorama",
-      "caption": "Gamcheon Culture Village — colorful hillside panorama"
+      "src": "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57.webp",
+      "location": "Yongdusan Park & Busan Tower",
+      "alt": "Yongdusan Park & Busan Tower — gallery image 1",
+      "caption": "Yongdusan Park & Busan Tower — photo 1"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "/images/tours/gamcheon-culture-village/gamcheon-vibrant-viewpoint.webp",
-      "location": "Gamcheon Culture Village",
-      "alt": "Gamcheon Culture Village — vibrant rooftop viewpoint",
-      "caption": "Gamcheon Culture Village — vibrant rooftop viewpoint"
+      "src": "/images/itinerary/jagalchi-harbor-sign.webp",
+      "location": "Nampo-dong & Jagalchi Fish Market",
+      "alt": "Nampo-dong & Jagalchi Fish Market — gallery image 1",
+      "caption": "Nampo-dong & Jagalchi Fish Market — photo 1"
     },
     {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
-      "location": "Haedong Yonggungsa Temple",
-      "alt": "Haedong Yonggungsa — sunrise cliff temple over the sea",
-      "caption": "Haedong Yonggungsa — sunrise cliff temple over the sea"
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
+      "location": "East coast highlights option",
+      "alt": "East coast highlights option — gallery image 2",
+      "caption": "East coast highlights option — photo 2"
     },
     {
       "id": 5,
       "type": "photo",
-      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
-      "location": "Haedong Yonggungsa Temple",
-      "alt": "Haedong Yonggungsa — Haesu Gwaneum statue facing the sea",
-      "caption": "Haedong Yonggungsa — Haesu Gwaneum statue facing the sea"
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
+      "location": "East coast highlights option",
+      "alt": "East coast highlights option — gallery image 3",
+      "caption": "East coast highlights option — photo 3"
     },
     {
       "id": 6,
       "type": "photo",
-      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
-      "location": "Haedong Yonggungsa Temple",
-      "alt": "Haedong Yonggungsa — dragon hall and signature sculpture",
-      "caption": "Haedong Yonggungsa — dragon hall and signature sculpture"
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
+      "location": "East coast highlights option",
+      "alt": "East coast highlights option — gallery image 4",
+      "caption": "East coast highlights option — photo 4"
     },
     {
       "id": 7,
       "type": "photo",
-      "src": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
-      "location": "Cheongsapo Sky Capsule",
-      "alt": "Cheongsapo Sky Capsule — seaside ride in capsule no. 04",
-      "caption": "Cheongsapo Sky Capsule — seaside ride in capsule no. 04"
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
+      "location": "East coast highlights option",
+      "alt": "East coast highlights option — gallery image 5",
+      "caption": "East coast highlights option — photo 5"
     },
     {
       "id": 8,
       "type": "photo",
-      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
-      "location": "Haeundae Blue Line Park",
-      "alt": "Haeundae Blue Line Park — coastal train route",
-      "caption": "Haeundae Blue Line Park — coastal train route"
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
+      "location": "East coast highlights option",
+      "alt": "East coast highlights option — gallery image 6",
+      "caption": "East coast highlights option — photo 6"
     },
     {
       "id": 9,
       "type": "photo",
-      "src": "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57.webp",
-      "location": "Busan Tower (Yongdusan Park)",
-      "alt": "Busan Tower & Yongdusan Park — Korea bell pavilion at night",
-      "caption": "Busan Tower & Yongdusan Park — Korea bell pavilion at night"
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45-2.webp",
+      "location": "East coast highlights option",
+      "alt": "East coast highlights option — gallery image 7",
+      "caption": "East coast highlights option — photo 7"
     },
     {
       "id": 10,
       "type": "photo",
-      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
-      "location": "Taejongdae",
-      "alt": "Taejongdae — dramatic coastal cliffs at the southern tip",
-      "caption": "Taejongdae — dramatic coastal cliffs at the southern tip"
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04-2.webp",
+      "location": "East coast highlights option",
+      "alt": "East coast highlights option — gallery image 8",
+      "caption": "East coast highlights option — photo 8"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19-2.webp",
+      "location": "East coast highlights option",
+      "alt": "East coast highlights option — gallery image 9",
+      "caption": "East coast highlights option — photo 9"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30-2.webp",
+      "location": "East coast highlights option",
+      "alt": "East coast highlights option — gallery image 10",
+      "caption": "East coast highlights option — photo 10"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34-2.webp",
+      "location": "East coast highlights option",
+      "alt": "East coast highlights option — gallery image 11",
+      "caption": "East coast highlights option — photo 11"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06-2.webp",
+      "location": "East coast highlights option",
+      "alt": "East coast highlights option — gallery image 12",
+      "caption": "East coast highlights option — photo 12"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/busan-tower/kakaotalk-20260510-222952680.webp",
+      "location": "Yongdusan Park & Busan Tower",
+      "alt": "Yongdusan Park & Busan Tower — gallery image 2",
+      "caption": "Yongdusan Park & Busan Tower — photo 2"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/busan-tower/kakaotalk-20260510-230009595.webp",
+      "location": "Yongdusan Park & Busan Tower",
+      "alt": "Yongdusan Park & Busan Tower — gallery image 3",
+      "caption": "Yongdusan Park & Busan Tower — photo 3"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57-2.webp",
+      "location": "Yongdusan Park & Busan Tower",
+      "alt": "Yongdusan Park & Busan Tower — gallery image 4",
+      "caption": "Yongdusan Park & Busan Tower — photo 4"
+    },
+    {
+      "id": 18,
+      "type": "photo",
+      "src": "/images/tours/busan-tower/kakaotalk-20260510-222952680-2.webp",
+      "location": "Yongdusan Park & Busan Tower",
+      "alt": "Yongdusan Park & Busan Tower — gallery image 5",
+      "caption": "Yongdusan Park & Busan Tower — photo 5"
+    },
+    {
+      "id": 19,
+      "type": "photo",
+      "src": "/images/tours/busan-tower/kakaotalk-20260510-230009595-2.webp",
+      "location": "Yongdusan Park & Busan Tower",
+      "alt": "Yongdusan Park & Busan Tower — gallery image 6",
+      "caption": "Yongdusan Park & Busan Tower — photo 6"
+    },
+    {
+      "id": 20,
+      "type": "photo",
+      "src": "/images/itinerary/jagalchi-market-interior.webp",
+      "location": "Nampo-dong & Jagalchi Fish Market",
+      "alt": "Nampo-dong & Jagalchi Fish Market — gallery image 2",
+      "caption": "Nampo-dong & Jagalchi Fish Market — photo 2"
+    },
+    {
+      "id": 21,
+      "type": "photo",
+      "src": "/images/itinerary/jagalchi-night-building.webp",
+      "location": "Nampo-dong & Jagalchi Fish Market",
+      "alt": "Nampo-dong & Jagalchi Fish Market — gallery image 3",
+      "caption": "Nampo-dong & Jagalchi Fish Market — photo 3"
+    },
+    {
+      "id": 22,
+      "type": "photo",
+      "src": "/images/tours/jagalchi-market/photo-001.webp",
+      "location": "Nampo-dong & Jagalchi Fish Market",
+      "alt": "Nampo-dong & Jagalchi Fish Market — gallery image 4",
+      "caption": "Nampo-dong & Jagalchi Fish Market — photo 4"
+    },
+    {
+      "id": 23,
+      "type": "photo",
+      "src": "/images/tours/jagalchi-market/photo-002.webp",
+      "location": "Nampo-dong & Jagalchi Fish Market",
+      "alt": "Nampo-dong & Jagalchi Fish Market — gallery image 5",
+      "caption": "Nampo-dong & Jagalchi Fish Market — photo 5"
+    },
+    {
+      "id": 24,
+      "type": "photo",
+      "src": "/images/tours/jagalchi-market/photo-003.webp",
+      "location": "Nampo-dong & Jagalchi Fish Market",
+      "alt": "Nampo-dong & Jagalchi Fish Market — gallery image 6",
+      "caption": "Nampo-dong & Jagalchi Fish Market — photo 6"
+    },
+    {
+      "id": 25,
+      "type": "photo",
+      "src": "/images/tours/jagalchi-market/photo-004.webp",
+      "location": "Nampo-dong & Jagalchi Fish Market",
+      "alt": "Nampo-dong & Jagalchi Fish Market — gallery image 7",
+      "caption": "Nampo-dong & Jagalchi Fish Market — photo 7"
     }
   ],
   "itineraryStops": [
@@ -396,6 +516,30 @@
         {
           "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -403,49 +547,97 @@
           "id": 1,
           "type": "photo",
           "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
-          "location": "Taejongdae Park",
-          "caption": "Taejongdae Park — photo 1",
-          "alt": "Taejongdae Park — gallery image 1"
+          "location": "East coast highlights option",
+          "caption": "East coast highlights option — photo 1",
+          "alt": "East coast highlights option — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
           "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
-          "location": "Taejongdae Park",
-          "caption": "Taejongdae Park — photo 2",
-          "alt": "Taejongdae Park — gallery image 2"
+          "location": "East coast highlights option",
+          "caption": "East coast highlights option — photo 2",
+          "alt": "East coast highlights option — gallery image 2"
         },
         {
           "id": 3,
           "type": "photo",
           "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
-          "location": "Taejongdae Park",
-          "caption": "Taejongdae Park — photo 3",
-          "alt": "Taejongdae Park — gallery image 3"
+          "location": "East coast highlights option",
+          "caption": "East coast highlights option — photo 3",
+          "alt": "East coast highlights option — gallery image 3"
         },
         {
           "id": 4,
           "type": "photo",
           "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
-          "location": "Taejongdae Park",
-          "caption": "Taejongdae Park — photo 4",
-          "alt": "Taejongdae Park — gallery image 4"
+          "location": "East coast highlights option",
+          "caption": "East coast highlights option — photo 4",
+          "alt": "East coast highlights option — gallery image 4"
         },
         {
           "id": 5,
           "type": "photo",
           "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
-          "location": "Taejongdae Park",
-          "caption": "Taejongdae Park — photo 5",
-          "alt": "Taejongdae Park — gallery image 5"
+          "location": "East coast highlights option",
+          "caption": "East coast highlights option — photo 5",
+          "alt": "East coast highlights option — gallery image 5"
         },
         {
           "id": 6,
           "type": "photo",
           "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
-          "location": "Taejongdae Park",
-          "caption": "Taejongdae Park — photo 6",
-          "alt": "Taejongdae Park — gallery image 6"
+          "location": "East coast highlights option",
+          "caption": "East coast highlights option — photo 6",
+          "alt": "East coast highlights option — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45-2.webp",
+          "location": "East coast highlights option",
+          "caption": "East coast highlights option — photo 7",
+          "alt": "East coast highlights option — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04-2.webp",
+          "location": "East coast highlights option",
+          "caption": "East coast highlights option — photo 8",
+          "alt": "East coast highlights option — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19-2.webp",
+          "location": "East coast highlights option",
+          "caption": "East coast highlights option — photo 9",
+          "alt": "East coast highlights option — gallery image 9"
+        },
+        {
+          "id": 10,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30-2.webp",
+          "location": "East coast highlights option",
+          "caption": "East coast highlights option — photo 10",
+          "alt": "East coast highlights option — gallery image 10"
+        },
+        {
+          "id": 11,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34-2.webp",
+          "location": "East coast highlights option",
+          "caption": "East coast highlights option — photo 11",
+          "alt": "East coast highlights option — gallery image 11"
+        },
+        {
+          "id": 12,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06-2.webp",
+          "location": "East coast highlights option",
+          "caption": "East coast highlights option — photo 12",
+          "alt": "East coast highlights option — gallery image 12"
         }
       ]
     },
@@ -584,6 +776,18 @@
         {
           "url": "/images/tours/busan-tower/kakaotalk-20260510-230009595.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/busan-tower/kakaotalk-20260510-222952680-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/busan-tower/kakaotalk-20260510-230009595-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -610,6 +814,30 @@
           "location": "Yongdusan Park & Busan Tower",
           "caption": "Yongdusan Park & Busan Tower — photo 3",
           "alt": "Yongdusan Park & Busan Tower — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57-2.webp",
+          "location": "Yongdusan Park & Busan Tower",
+          "caption": "Yongdusan Park & Busan Tower — photo 4",
+          "alt": "Yongdusan Park & Busan Tower — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/busan-tower/kakaotalk-20260510-222952680-2.webp",
+          "location": "Yongdusan Park & Busan Tower",
+          "caption": "Yongdusan Park & Busan Tower — photo 5",
+          "alt": "Yongdusan Park & Busan Tower — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/busan-tower/kakaotalk-20260510-230009595-2.webp",
+          "location": "Yongdusan Park & Busan Tower",
+          "caption": "Yongdusan Park & Busan Tower — photo 6",
+          "alt": "Yongdusan Park & Busan Tower — gallery image 6"
         }
       ]
     },
@@ -671,6 +899,94 @@
         "/images/itinerary/jagalchi-harbor-sign.webp",
         "/images/itinerary/jagalchi-market-interior.webp",
         "/images/itinerary/jagalchi-night-building.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/itinerary/jagalchi-harbor-sign.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/itinerary/jagalchi-market-interior.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/itinerary/jagalchi-night-building.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jagalchi-market/photo-001.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jagalchi-market/photo-002.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jagalchi-market/photo-003.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jagalchi-market/photo-004.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/itinerary/jagalchi-harbor-sign.webp",
+          "location": "Nampo-dong & Jagalchi Fish Market",
+          "caption": "Nampo-dong & Jagalchi Fish Market — photo 1",
+          "alt": "Nampo-dong & Jagalchi Fish Market — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/itinerary/jagalchi-market-interior.webp",
+          "location": "Nampo-dong & Jagalchi Fish Market",
+          "caption": "Nampo-dong & Jagalchi Fish Market — photo 2",
+          "alt": "Nampo-dong & Jagalchi Fish Market — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/itinerary/jagalchi-night-building.webp",
+          "location": "Nampo-dong & Jagalchi Fish Market",
+          "caption": "Nampo-dong & Jagalchi Fish Market — photo 3",
+          "alt": "Nampo-dong & Jagalchi Fish Market — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/jagalchi-market/photo-001.webp",
+          "location": "Nampo-dong & Jagalchi Fish Market",
+          "caption": "Nampo-dong & Jagalchi Fish Market — photo 4",
+          "alt": "Nampo-dong & Jagalchi Fish Market — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/jagalchi-market/photo-002.webp",
+          "location": "Nampo-dong & Jagalchi Fish Market",
+          "caption": "Nampo-dong & Jagalchi Fish Market — photo 5",
+          "alt": "Nampo-dong & Jagalchi Fish Market — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/jagalchi-market/photo-003.webp",
+          "location": "Nampo-dong & Jagalchi Fish Market",
+          "caption": "Nampo-dong & Jagalchi Fish Market — photo 6",
+          "alt": "Nampo-dong & Jagalchi Fish Market — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/jagalchi-market/photo-004.webp",
+          "location": "Nampo-dong & Jagalchi Fish Market",
+          "caption": "Nampo-dong & Jagalchi Fish Market — photo 7",
+          "alt": "Nampo-dong & Jagalchi Fish Market — gallery image 7"
+        }
       ]
     },
     {

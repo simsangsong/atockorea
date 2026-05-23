@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "濟州東部櫻花春日一日遊 | AtoC Korea",
     "metaDescription": "春季限定濟州東部一日遊：全農路櫻花街道、加時里10公里油菜花與櫻花大道、米川熔岩洞穴、城山日出峰。三月中旬至四月。",
-    "ogImage": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
     "primaryKeywords": [
       "濟州櫻花之旅",
       "濟州春日之旅",
@@ -132,122 +132,234 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
-      "location": "日出樂園",
-      "alt": "日出樂園 — 圖庫圖片",
-      "caption": "日出樂園"
+      "src": "/images/tours/jeonnong-ro/photo-001.webp",
+      "location": "全農路櫻花街",
+      "alt": "全農路櫻花街 — gallery image 1",
+      "caption": "全農路櫻花街 — photo 1"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
-      "location": "城山日出峰",
-      "alt": "城山日出峰 — 圖庫圖片",
-      "caption": "城山日出峰 — 照片 1"
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+      "location": "녹산로（加時里10公里櫻花＋油菜花公路）",
+      "alt": "녹산로（加時里10公里櫻花＋油菜花公路） — on-route photo",
+      "caption": "녹산로（加時里10公里櫻花＋油菜花公路）"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
-      "location": "日出樂園主題花園",
-      "alt": "日出樂園主題花園 — 途中拍攝照片",
-      "caption": "日出樂園主題花園"
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+      "location": "城山日出峰（UNESCO 拍照景點）",
+      "alt": "城山日出峰（UNESCO 拍照景點） — gallery image 1",
+      "caption": "城山日出峰（UNESCO 拍照景點） — photo 1"
     },
     {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
-      "location": "日出樂園",
-      "alt": "日出樂園 — 圖庫圖片",
-      "caption": "日出樂園 — 照片 1"
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
+      "location": "米川窟（日出樂園）",
+      "alt": "米川窟（日出樂園） — gallery image 2",
+      "caption": "米川窟（日出樂園） — photo 2"
     },
     {
       "id": 5,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
-      "location": "日出樂園",
-      "alt": "日出樂園 — 圖庫圖片",
-      "caption": "日出樂園"
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
+      "location": "米川窟（日出樂園）",
+      "alt": "米川窟（日出樂園） — gallery image 3",
+      "caption": "米川窟（日出樂園） — photo 3"
     },
     {
       "id": 6,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
-      "location": "日出樂園",
-      "alt": "日出樂園 — 圖庫圖片",
-      "caption": "日出樂園"
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
+      "location": "米川窟（日出樂園）",
+      "alt": "米川窟（日出樂園） — gallery image 4",
+      "caption": "米川窟（日出樂園） — photo 4"
     },
     {
       "id": 7,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
-      "location": "日出樂園",
-      "alt": "日出樂園 — 圖庫圖片",
-      "caption": "日出樂園"
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+      "location": "米川窟（日出樂園）",
+      "alt": "米川窟（日出樂園） — gallery image 5",
+      "caption": "米川窟（日出樂園） — photo 5"
     },
     {
       "id": 8,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
-      "location": "日出樂園",
-      "alt": "日出樂園 — 圖庫圖片",
-      "caption": "日出樂園"
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+      "location": "米川窟（日出樂園）",
+      "alt": "米川窟（日出樂園） — gallery image 6",
+      "caption": "米川窟（日出樂園） — photo 6"
     },
     {
       "id": 9,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
-      "location": "日出樂園",
-      "alt": "日出樂園 — 圖庫圖片",
-      "caption": "日出樂園"
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+      "location": "米川窟（日出樂園）",
+      "alt": "米川窟（日出樂園） — gallery image 7",
+      "caption": "米川窟（日出樂園） — photo 7"
     },
     {
       "id": 10,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
-      "location": "日出樂園",
-      "alt": "日出樂園 — 圖庫圖片",
-      "caption": "日出樂園"
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
+      "location": "米川窟（日出樂園）",
+      "alt": "米川窟（日出樂園） — gallery image 8",
+      "caption": "米川窟（日出樂園） — photo 8"
     },
     {
       "id": 11,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
-      "location": "日出樂園",
-      "alt": "日出樂園 — 圖庫圖片",
-      "caption": "日出樂園"
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
+      "location": "米川窟（日出樂園）",
+      "alt": "米川窟（日出樂園） — gallery image 9",
+      "caption": "米川窟（日出樂園） — photo 9"
     },
     {
       "id": 12,
       "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
-      "location": "城山日出峰",
-      "alt": "城山日出峰 — 圖庫圖片",
-      "caption": "城山日出峰"
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
+      "location": "米川窟（日出樂園）",
+      "alt": "米川窟（日出樂園） — gallery image 10",
+      "caption": "米川窟（日出樂園） — photo 10"
     },
     {
       "id": 13,
       "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
-      "location": "城山日出峰",
-      "alt": "城山日出峰 — 圖庫圖片",
-      "caption": "城山日出峰"
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52-2.webp",
+      "location": "米川窟（日出樂園）",
+      "alt": "米川窟（日出樂園） — gallery image 11",
+      "caption": "米川窟（日出樂園） — photo 11"
     },
     {
       "id": 14,
       "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
-      "location": "城山日出峰",
-      "alt": "城山日出峰 — 圖庫圖片",
-      "caption": "城山日出峰"
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19-2.webp",
+      "location": "米川窟（日出樂園）",
+      "alt": "米川窟（日出樂園） — gallery image 12",
+      "caption": "米川窟（日出樂園） — photo 12"
     },
     {
       "id": 15,
       "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25-2.webp",
+      "location": "米川窟（日出樂園）",
+      "alt": "米川窟（日出樂園） — gallery image 13",
+      "caption": "米川窟（日出樂園） — photo 13"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57-2.webp",
+      "location": "米川窟（日出樂園）",
+      "alt": "米川窟（日出樂園） — gallery image 14",
+      "caption": "米川窟（日出樂園） — photo 14"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08-2.webp",
+      "location": "米川窟（日出樂園）",
+      "alt": "米川窟（日出樂園） — gallery image 15",
+      "caption": "米川窟（日出樂園） — photo 15"
+    },
+    {
+      "id": 18,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22-2.webp",
+      "location": "米川窟（日出樂園）",
+      "alt": "米川窟（日出樂園） — gallery image 16",
+      "caption": "米川窟（日出樂園） — photo 16"
+    },
+    {
+      "id": 19,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24-2.webp",
+      "location": "米川窟（日出樂園）",
+      "alt": "米川窟（日出樂園） — gallery image 17",
+      "caption": "米川窟（日出樂園） — photo 17"
+    },
+    {
+      "id": 20,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+      "location": "城山日出峰（UNESCO 拍照景點）",
+      "alt": "城山日出峰（UNESCO 拍照景點） — gallery image 2",
+      "caption": "城山日出峰（UNESCO 拍照景點） — photo 2"
+    },
+    {
+      "id": 21,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+      "location": "城山日出峰（UNESCO 拍照景點）",
+      "alt": "城山日出峰（UNESCO 拍照景點） — gallery image 3",
+      "caption": "城山日出峰（UNESCO 拍照景點） — photo 3"
+    },
+    {
+      "id": 22,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+      "location": "城山日出峰（UNESCO 拍照景點）",
+      "alt": "城山日出峰（UNESCO 拍照景點） — gallery image 4",
+      "caption": "城山日出峰（UNESCO 拍照景點） — photo 4"
+    },
+    {
+      "id": 23,
+      "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
-      "location": "城山日出峰",
-      "alt": "城山日出峰 — 圖庫圖片",
-      "caption": "城山日出峰"
+      "location": "城山日出峰（UNESCO 拍照景點）",
+      "alt": "城山日出峰（UNESCO 拍照景點） — gallery image 5",
+      "caption": "城山日出峰（UNESCO 拍照景點） — photo 5"
+    },
+    {
+      "id": 24,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06-2.webp",
+      "location": "城山日出峰（UNESCO 拍照景點）",
+      "alt": "城山日出峰（UNESCO 拍照景點） — gallery image 6",
+      "caption": "城山日出峰（UNESCO 拍照景點） — photo 6"
+    },
+    {
+      "id": 25,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07-2.webp",
+      "location": "城山日出峰（UNESCO 拍照景點）",
+      "alt": "城山日出峰（UNESCO 拍照景點） — gallery image 7",
+      "caption": "城山日出峰（UNESCO 拍照景點） — photo 7"
+    },
+    {
+      "id": 26,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08-2.webp",
+      "location": "城山日出峰（UNESCO 拍照景點）",
+      "alt": "城山日出峰（UNESCO 拍照景點） — gallery image 8",
+      "caption": "城山日出峰（UNESCO 拍照景點） — photo 8"
+    },
+    {
+      "id": 27,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09-2.webp",
+      "location": "城山日出峰（UNESCO 拍照景點）",
+      "alt": "城山日出峰（UNESCO 拍照景點） — gallery image 9",
+      "caption": "城山日出峰（UNESCO 拍照景點） — photo 9"
+    },
+    {
+      "id": 28,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10-2.webp",
+      "location": "城山日出峰（UNESCO 拍照景點）",
+      "alt": "城山日出峰（UNESCO 拍照景點） — gallery image 10",
+      "caption": "城山日出峰（UNESCO 拍照景點） — photo 10"
+    },
+    {
+      "id": 29,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/photo-006.webp",
+      "location": "城山日出峰（UNESCO 拍照景點）",
+      "alt": "城山日出峰（UNESCO 拍照景點） — gallery image 11",
+      "caption": "城山日出峰（UNESCO 拍照景點） — photo 11"
     }
   ],
   "itineraryStops": [
@@ -310,15 +422,23 @@
         "tip": "賞櫻時機僅有7至10天——如可能，請在行程第一天前往。"
       },
       "images": [
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/jeonnong-ro/photo-001.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/jeonnong-ro/photo-001.webp",
+          "location": "全農路櫻花街",
+          "caption": "全農路櫻花街 — photo 1",
+          "alt": "全農路櫻花街 — gallery image 1"
+        }
       ]
     },
     {
@@ -540,6 +660,34 @@
         {
           "url": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -547,81 +695,137 @@
           "id": 1,
           "type": "photo",
           "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
-          "location": "密川窟（日出樂園）",
-          "caption": "密川窟（日出樂園）——照片 1",
-          "alt": "密川窟（日出樂園）——圖庫圖片 1"
+          "location": "米川窟（日出樂園）",
+          "caption": "米川窟（日出樂園） — photo 1",
+          "alt": "米川窟（日出樂園） — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
           "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
-          "location": "密川窟（日出樂園）",
-          "caption": "密川窟（日出樂園）——照片 2",
-          "alt": "密川窟（日出樂園）——圖庫圖片 2"
+          "location": "米川窟（日出樂園）",
+          "caption": "米川窟（日出樂園） — photo 2",
+          "alt": "米川窟（日出樂園） — gallery image 2"
         },
         {
           "id": 3,
           "type": "photo",
           "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
-          "location": "密川窟（日出樂園）",
-          "caption": "密川窟（日出樂園）——照片 3",
-          "alt": "密川窟（日出樂園）——圖庫圖片 3"
+          "location": "米川窟（日出樂園）",
+          "caption": "米川窟（日出樂園） — photo 3",
+          "alt": "米川窟（日出樂園） — gallery image 3"
         },
         {
           "id": 4,
           "type": "photo",
           "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
-          "location": "密川窟（日出樂園）",
-          "caption": "密川窟（日出樂園）——照片 4 **Translation notes:** - **Micheon Cave** → 密川窟 (phonetic rendering of 미천굴, the lava tube within Ilchul Land) - **Ilchul Land** → 日出樂園 (日出 = \"sunrise / ilchul\"; 樂園 = \"land/park\") - **gallery image** → 圖庫圖片 (standard term for a web gallery image) - **light layer** → 薄外套 (thin outer layer/jacket, natural for cave visit advice) - **combined ticket / bundled** → 聯票／合併販售 (standard ticketing terminology in Traditional Chinese)",
-          "alt": "米川洞窟（日出樂園）——相冊圖片 4"
+          "location": "米川窟（日出樂園）",
+          "caption": "米川窟（日出樂園） — photo 4",
+          "alt": "米川窟（日出樂園） — gallery image 4"
         },
         {
           "id": 5,
           "type": "photo",
           "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
-          "location": "米川洞窟（日出樂園）",
-          "caption": "米川洞窟（日出樂園）——照片 5",
-          "alt": "米川洞窟（日出樂園）——相冊圖片 5"
+          "location": "米川窟（日出樂園）",
+          "caption": "米川窟（日出樂園） — photo 5",
+          "alt": "米川窟（日出樂園） — gallery image 5"
         },
         {
           "id": 6,
           "type": "photo",
           "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
-          "location": "米川洞窟（日出樂園）",
-          "caption": "米川洞窟（日出樂園）——照片 6",
-          "alt": "米川洞窟（日出樂園）——相冊圖片 6"
+          "location": "米川窟（日出樂園）",
+          "caption": "米川窟（日出樂園） — photo 6",
+          "alt": "米川窟（日出樂園） — gallery image 6"
         },
         {
           "id": 7,
           "type": "photo",
           "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
-          "location": "米川洞窟（日出樂園）",
-          "caption": "米川洞窟（日出樂園）——照片 7",
-          "alt": "米川洞窟（日出樂園）——相冊圖片 7"
+          "location": "米川窟（日出樂園）",
+          "caption": "米川窟（日出樂園） — photo 7",
+          "alt": "米川窟（日出樂園） — gallery image 7"
         },
         {
           "id": 8,
           "type": "photo",
           "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
-          "location": "米川洞窟（日出樂園）",
-          "caption": "米川洞窟（日出樂園）——照片 8",
-          "alt": "米川洞窟（日出樂園）——相冊圖片 8"
+          "location": "米川窟（日出樂園）",
+          "caption": "米川窟（日出樂園） — photo 8",
+          "alt": "米川窟（日出樂園） — gallery image 8"
         },
         {
           "id": 9,
           "type": "photo",
           "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
-          "location": "米川洞窟（日出樂園）",
-          "caption": "米川洞窟（日出樂園）——照片 9",
-          "alt": "米川洞窟（日出樂園）——相冊圖片 9"
+          "location": "米川窟（日出樂園）",
+          "caption": "米川窟（日出樂園） — photo 9",
+          "alt": "米川窟（日出樂園） — gallery image 9"
         },
         {
           "id": 10,
           "type": "photo",
           "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
-          "location": "米川洞窟（日出樂園）",
-          "caption": "米川洞窟（日出樂園）——照片 10",
-          "alt": "米川洞窟（日出樂園）——相冊圖片 10"
+          "location": "米川窟（日出樂園）",
+          "caption": "米川窟（日出樂園） — photo 10",
+          "alt": "米川窟（日出樂園） — gallery image 10"
+        },
+        {
+          "id": 11,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52-2.webp",
+          "location": "米川窟（日出樂園）",
+          "caption": "米川窟（日出樂園） — photo 11",
+          "alt": "米川窟（日出樂園） — gallery image 11"
+        },
+        {
+          "id": 12,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19-2.webp",
+          "location": "米川窟（日出樂園）",
+          "caption": "米川窟（日出樂園） — photo 12",
+          "alt": "米川窟（日出樂園） — gallery image 12"
+        },
+        {
+          "id": 13,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25-2.webp",
+          "location": "米川窟（日出樂園）",
+          "caption": "米川窟（日出樂園） — photo 13",
+          "alt": "米川窟（日出樂園） — gallery image 13"
+        },
+        {
+          "id": 14,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57-2.webp",
+          "location": "米川窟（日出樂園）",
+          "caption": "米川窟（日出樂園） — photo 14",
+          "alt": "米川窟（日出樂園） — gallery image 14"
+        },
+        {
+          "id": 15,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08-2.webp",
+          "location": "米川窟（日出樂園）",
+          "caption": "米川窟（日出樂園） — photo 15",
+          "alt": "米川窟（日出樂園） — gallery image 15"
+        },
+        {
+          "id": 16,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22-2.webp",
+          "location": "米川窟（日出樂園）",
+          "caption": "米川窟（日出樂園） — photo 16",
+          "alt": "米川窟（日出樂園） — gallery image 16"
+        },
+        {
+          "id": 17,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24-2.webp",
+          "location": "米川窟（日出樂園）",
+          "caption": "米川窟（日出樂園） — photo 17",
+          "alt": "米川窟（日出樂園） — gallery image 17"
         }
       ]
     },
@@ -779,6 +983,30 @@
         {
           "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/photo-006.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -786,41 +1014,89 @@
           "id": 1,
           "type": "photo",
           "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
-          "location": "城山日出峰（UNESCO 攝影景點）",
-          "caption": "城山日出峰（UNESCO 攝影景點）— 照片 1",
-          "alt": "城山日出峰（UNESCO 攝影景點）— 圖庫照片 1"
+          "location": "城山日出峰（UNESCO 拍照景點）",
+          "caption": "城山日出峰（UNESCO 拍照景點） — photo 1",
+          "alt": "城山日出峰（UNESCO 拍照景點） — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
           "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
-          "location": "城山日出峰（UNESCO 攝影景點）",
-          "caption": "城山日出峰（UNESCO 攝影景點）— 照片 2",
-          "alt": "城山日出峰（UNESCO 攝影景點）— 圖庫照片 2"
+          "location": "城山日出峰（UNESCO 拍照景點）",
+          "caption": "城山日出峰（UNESCO 拍照景點） — photo 2",
+          "alt": "城山日出峰（UNESCO 拍照景點） — gallery image 2"
         },
         {
           "id": 3,
           "type": "photo",
           "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
-          "location": "城山日出峰（UNESCO 攝影景點）",
-          "caption": "城山日出峰（UNESCO 攝影景點）— 照片 3",
-          "alt": "城山日出峰（UNESCO 攝影景點）— 圖庫照片 3"
+          "location": "城山日出峰（UNESCO 拍照景點）",
+          "caption": "城山日出峰（UNESCO 拍照景點） — photo 3",
+          "alt": "城山日出峰（UNESCO 拍照景點） — gallery image 3"
         },
         {
           "id": 4,
           "type": "photo",
           "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
-          "location": "城山日出峰（UNESCO 攝影景點）",
-          "caption": "城山日出峰（UNESCO 攝影景點）— 照片 4",
-          "alt": "城山日出峰（UNESCO 攝影景點）— 圖庫照片 4"
+          "location": "城山日出峰（UNESCO 拍照景點）",
+          "caption": "城山日出峰（UNESCO 拍照景點） — photo 4",
+          "alt": "城山日出峰（UNESCO 拍照景點） — gallery image 4"
         },
         {
           "id": 5,
           "type": "photo",
           "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
-          "location": "城山日出峰（UNESCO 攝影景點）",
-          "caption": "城山日出峰（UNESCO 攝影景點）— 照片 5",
-          "alt": "城山日出峰（UNESCO 攝影景點）— 圖庫照片 5"
+          "location": "城山日出峰（UNESCO 拍照景點）",
+          "caption": "城山日出峰（UNESCO 拍照景點） — photo 5",
+          "alt": "城山日出峰（UNESCO 拍照景點） — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06-2.webp",
+          "location": "城山日出峰（UNESCO 拍照景點）",
+          "caption": "城山日出峰（UNESCO 拍照景點） — photo 6",
+          "alt": "城山日出峰（UNESCO 拍照景點） — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07-2.webp",
+          "location": "城山日出峰（UNESCO 拍照景點）",
+          "caption": "城山日出峰（UNESCO 拍照景點） — photo 7",
+          "alt": "城山日出峰（UNESCO 拍照景點） — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08-2.webp",
+          "location": "城山日出峰（UNESCO 拍照景點）",
+          "caption": "城山日出峰（UNESCO 拍照景點） — photo 8",
+          "alt": "城山日出峰（UNESCO 拍照景點） — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09-2.webp",
+          "location": "城山日出峰（UNESCO 拍照景點）",
+          "caption": "城山日出峰（UNESCO 拍照景點） — photo 9",
+          "alt": "城山日出峰（UNESCO 拍照景點） — gallery image 9"
+        },
+        {
+          "id": 10,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10-2.webp",
+          "location": "城山日出峰（UNESCO 拍照景點）",
+          "caption": "城山日出峰（UNESCO 拍照景點） — photo 10",
+          "alt": "城山日出峰（UNESCO 拍照景點） — gallery image 10"
+        },
+        {
+          "id": 11,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/photo-006.webp",
+          "location": "城山日出峰（UNESCO 拍照景點）",
+          "caption": "城山日出峰（UNESCO 拍照景點） — photo 11",
+          "alt": "城山日出峰（UNESCO 拍照景點） — gallery image 11"
         }
       ],
       "liveStatusWidget": "海女"
