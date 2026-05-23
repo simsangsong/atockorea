@@ -19,6 +19,7 @@ Implemented follow-up changes:
 - Remaining awkward EN copy patterns from the audit now return no static or DB matches.
 - Jeju cruise included/excluded accordion copy now explicitly says `What's included / not included`, with lunch and gratuities marked separate.
 - `vehicle` price type is now accepted in residual TypeScript/admin validation paths.
+- Cruise on-time return / never-miss-the-ship guarantee language is intentional operating policy and must stay strong.
 
 Original audit summary:
 
@@ -234,7 +235,7 @@ Recommended fix:
 
 ## P2 - Optional / Non-Blocking Cleanup
 
-### 7. Incheon Cruise Guarantee Language
+### 7. Cruise On-Time Return Guarantee Language
 
 Affected product:
 
@@ -247,16 +248,14 @@ Phrases:
 
 Note:
 
-- Owner excluded Busan cruise return-time emphasis from this audit's blocking changes.
-- If the same policy applies globally, leave this as intentional.
-- If the brand/legal policy is to avoid guarantee-like claims, soften this copy too.
+- Owner clarified on 2026-05-24 that cruise on-time return is an intentional hard operating guarantee.
+- Strong copy such as `never miss the ship`, `return guaranteed`, and `guaranteed return buffer` should be preserved.
+- Do not soften this language unless the owner explicitly changes the cruise compensation / operations policy.
 
-Recommended softer direction:
+Recommended direction:
 
-- Use wording like:
-  - `planned around your all-aboard time`
-  - `built-in return buffer`
-  - `driver-guide monitors timing and adjusts the route`
+- Keep strong reassurance visible on cruise product pages.
+- Pair the guarantee with operational specifics: all-aboard time intake, return buffer, guide timing checks, and route shortening when needed.
 
 ### 8. Route Variant Shape Is Still Legacy in Source, but Rendering Appears Covered
 
@@ -320,7 +319,7 @@ Recommendation:
 4. Patch customer-visible copy issues in static JSON/catalog and matching DB payloads.
 5. Split Jeju cruise `What's included` / `Not included`.
 6. Extend stale `person | group` type/validation sites to include `vehicle`.
-7. Decide whether Incheon cruise guarantee language should be softened along with other cruise return-time claims.
+7. Preserve strong cruise return guarantee language; do not soften `never miss the ship` / on-time return claims.
 
 ## Verification Checklist After Fixes
 
