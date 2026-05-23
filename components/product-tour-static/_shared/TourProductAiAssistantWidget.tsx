@@ -570,9 +570,13 @@ export function TourProductAiAssistantWidget({
       className={cn("pointer-events-none fixed right-3 z-[65] flex flex-col items-end sm:right-5", bottomClass)}
       data-tour-assistant-root
     >
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {open && (
         <motion.div
+          // framer-motion v12 requires a stable `key` on the direct child
+          // of AnimatePresence for exit detection to fire reliably. With
+          // no key, the exit animation was being skipped on the unmount.
+          key="chatbot-panel"
           // Emerges from the button's bottom-right corner — small scale +
           // soft slide + fade, eased with MSG_EASE so it feels intentional
           // rather than abrupt. Exit is slightly faster (panel disappears

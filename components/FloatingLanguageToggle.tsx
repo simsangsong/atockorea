@@ -3,8 +3,13 @@
 import { useState, useRef, useEffect } from 'react';
 import { useRouter, usePathname, useSearchParams } from 'next/navigation';
 import { Globe } from 'lucide-react';
+import { AnimatePresence, motion } from 'framer-motion';
 import { useI18n, Locale } from '@/lib/i18n';
 import { cn } from '@/lib/utils';
+
+// Same easing as the chatbot panel (TourProductAiAssistantWidget MSG_EASE)
+// so site-wide popovers share a single motion identity.
+const LANG_TOGGLE_EASE = [0.22, 1, 0.36, 1] as const;
 
 const localeShortLabels: Record<Locale, string> = {
   en: 'EN',
@@ -177,15 +182,34 @@ export default function FloatingLanguageToggle() {
       )}
       aria-hidden={hidden ? 'true' : undefined}
     >
+      <AnimatePresence mode="wait">
       {isOpen && (
-        <div
+        <motion.div
+          key="lang-menu"
           role="menu"
           aria-label="Select language"
+          // Emerges from the toggle's top-right corner so the menu looks
+          // like it grows out of the pill. Same scale + slide + fade
+          // grammar the global chatbot panel uses (PR #42) for site-wide
+          // motion consistency.
+          initial={{ opacity: 0, scale: 0.94, y: 6 }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            transition: { duration: 0.2, ease: LANG_TOGGLE_EASE },
+          }}
+          exit={{
+            opacity: 0,
+            scale: 0.96,
+            y: 4,
+            transition: { duration: 0.14, ease: LANG_TOGGLE_EASE },
+          }}
           // Solid white (no alpha, no backdrop-blur) — translucent panels read
           // as gray over dark hero photos and washed out the menu text. Strong
           // drop shadow + 1px border keep the premium feel without depending
           // on background blur.
-          className="absolute bottom-full right-0 mb-2 w-44 overflow-hidden rounded-2xl border border-slate-200 bg-white py-1.5 shadow-[0_22px_44px_-12px_rgba(15,23,42,0.42),0_6px_14px_-4px_rgba(15,23,42,0.18),0_0_0_1px_rgba(15,23,42,0.04)]"
+          className="absolute bottom-full right-0 mb-2 w-44 origin-bottom-right overflow-hidden rounded-2xl border border-slate-200 bg-white py-1.5 shadow-[0_22px_44px_-12px_rgba(15,23,42,0.42),0_6px_14px_-4px_rgba(15,23,42,0.18),0_0_0_1px_rgba(15,23,42,0.04)]"
         >
           {locales.map((loc) => (
             <button
@@ -213,8 +237,9 @@ export default function FloatingLanguageToggle() {
               )}
             </button>
           ))}
-        </div>
+        </motion.div>
       )}
+      </AnimatePresence>
       <button
         type="button"
         onClick={() => setIsOpen((o) => !o)}
