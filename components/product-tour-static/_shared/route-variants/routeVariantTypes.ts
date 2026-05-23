@@ -20,11 +20,19 @@ export type PortVariantStop = {
   duration: string;
   description: string;
   highlights: readonly string[];
-  visitBasics: {
-    hours: string;
-    closed: string;
-    admission: string;
-    walking: string;
+  /** Authoring time-of-day hint (e.g. "Cruise arrival + 30 min"). Surfaced by the
+   *  shared `TourStopDetailDrawer` when present. */
+  time?: string;
+  /** Optional one-liner explaining why this stop fits the day route. */
+  whyOnRoute?: string;
+  /** Optional visit-basics block. Each inner field is independently optional so
+   *  authoring JSON can omit fields that don't apply (e.g. cruise terminals have
+   *  no admission price). */
+  visitBasics?: {
+    hours?: string;
+    closed?: string;
+    admission?: string;
+    walking?: string;
   };
 };
 

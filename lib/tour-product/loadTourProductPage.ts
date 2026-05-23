@@ -4,6 +4,7 @@ import type { Database } from "@/lib/supabase";
 import type { TourProductDetailPayloadV1 } from "@/lib/tour-product/detailPayloadV1";
 import { assembleTourProductReviews } from "@/lib/tour-product/assembleTourProductReviews";
 import { mergeTourProductSectionUi } from "@/lib/tour-product/tourProductSectionUi";
+import { mapItineraryVariantsToRouteVariants } from "@/lib/tour-product/portRouteVariantsAdapter";
 
 type Sb = SupabaseClient<Database>;
 
@@ -173,9 +174,15 @@ export function mergeTourProductPageToViewModel(
     },
     sectionUi: mergeTourProductSectionUi(payload.sectionUi, page.locale),
     ...(payload.pickup_dropoff != null ? { pickup_dropoff: payload.pickup_dropoff } : {}),
-    ...(Array.isArray(payload.routeVariants) && payload.routeVariants.length > 0
-      ? { routeVariants: payload.routeVariants }
-      : {}),
+    ...(() => {
+      if (Array.isArray(payload.routeVariants) && payload.routeVariants.length > 0) {
+        return { routeVariants: payload.routeVariants };
+      }
+      const adapted = mapItineraryVariantsToRouteVariants(
+        (payload as { itinerary_variants?: unknown }).itinerary_variants,
+      );
+      return adapted ? { routeVariants: adapted } : {};
+    })(),
     ...((payload as { pricingTiers?: unknown }).pricingTiers &&
     typeof (payload as { pricingTiers?: unknown }).pricingTiers === "object"
       ? { pricingTiers: (payload as { pricingTiers?: unknown }).pricingTiers }

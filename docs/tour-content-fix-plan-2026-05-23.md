@@ -47,8 +47,8 @@
 | A (NEW, P0) | catalog/page vs offer/checkout 가격 불일치 ($59↔$69 9개 투어) | 높음 — 결제 사기 리스크 | DB-only (tours + tour_product_offers) | ✅ DB written 2026-05-23 |
 | B (NEW, P0) | 시즌 종료 투어 $0 노출 + 시즌 가용성 게이팅 | 중-높음 | 2 tours + API/recommend filter | ✅ code shipped 2026-05-23 |
 | C (NEW, P0) | `vehicle` price type 코드 버그 (per-guest로 곱해짐) | 중 — 결제 차단 (실제는 fraud 보다 checkout-blocked) | checkout context + 부킹카드 + cart UI | ✅ code shipped 2026-05-23 |
-| **D (NEW, P1)** | **Jeju 크루즈 `itinerary_variants` → `routeVariants` 스키마 마이그레이션** | **중 — 포트 변형 itinerary 미렌더 가능성** | **2 tours JSON or backward map** | **⏳ NEXT** |
-| 3 EN | 부산 스톱 회전 재매핑 | 중-높음 | 2 tours × 5 stops × 6 fields | ⏳ |
+| D (NEW, P1) | Jeju 크루즈 `itinerary_variants` → `routeVariants` 스키마 마이그레이션 | 중 — 포트 변형 itinerary 미렌더 | backward adapter (no JSON rewrite) | ✅ code shipped 2026-05-23 |
+| **3 EN** | **부산 스톱 회전 재매핑** | **중-높음** | **2 tours × 5 stops × 6 fields** | **⏳ NEXT** |
 | 5b EN | 수치 정정 (verify 필요 항목) | 중 | ~10 항목 × tours | ⏳ |
 | 6 EN | 갤러리 사진-지명 재매핑 | 중 | ~9 tours × galleryItems | ⏳ |
 | 7 EN | DMZ 다리 150m + 타이포(A easy/the our/? photo) + DMZ refund tone + 잡정리 | 낮음 | ~30 edits | ⏳ |
@@ -205,6 +205,45 @@ AND tour_product_page_id IN (SELECT id FROM tour_product_pages WHERE slug = 'jej
 **검증:**
 - `jest __tests__/lib/tour-product/eastSignatureCheckoutContext.test.ts` → 6/6 pass.
 - `jest __tests__/lib/tour-seasonal-windows.test.ts` → 8/8 pass (회귀 없음).
+- `tsc --noEmit` → 0 errors.
+
+---
+
+### Phase D 상세 — Jeju 크루즈 port 변형 itinerary 렌더 (✅ code shipped 2026-05-23)
+
+**진단:**
+- 두 Jeju 크루즈 투어 (`jeju-cruise-shore-excursion-bus-tour`, `jeju-cruise-shore-excursion-small-group-tour`) 가 `itinerary_variants` 키에 채워진 port 변형 데이터 (Jeju Port + Gangjeong Port, 각각 6~7 스톱) 를 보유.
+- 렌더러 (`PortSelectorTimeline.tsx`) 는 `routeVariants` 키만 읽음. `TOUR_PRODUCT_VIEW_MODEL_KEYS` 도 `routeVariants` 만 화이트리스트.
+- 두 파이프라인 (`buildTourProductViewModelFromFullPageJson` 정적 JSON 경로 + `loadTourProductPage` Supabase 경로) 모두 `routeVariants` 만 매핑 → **port 변형 itinerary 가 한 번도 렌더되지 못함**.
+- 다른 33개 투어 (그 외) 의 `itinerary_variants` 는 모두 빈 배열 → 두 크루즈만 영향.
+
+**Canonical 결정**: backward adapter (JSON rewrite 거부).
+- 이유 1: `itinerary_variants` 의 풍부한 snake_case shape (port_id, port_label, route_focus, pickup_base, duration_band, return_time_band, poi/theme/scenic tags, level scores) 는 매칭 프로파일이 향후 활용할 수 있는 데이터. JSON 재작성은 데이터 손실 위험.
+- 이유 2: 12개 파일 (2 tours × 6 locales) 의 대규모 변형 vs. 30줄짜리 어댑터 = 위험 차이 큼.
+- 이유 3: 두 파이프라인 모두 adapter 한 번 호출로 즉시 정렬됨 — 6개 로케일 동시 fix.
+
+**적용:**
+
+1. **`lib/tour-product/portRouteVariantsAdapter.ts` (신규)** — `mapItineraryVariantsToRouteVariants(raw)` 헬퍼. 입력 미존재/빈 배열/파싱 불가 → `null`. 유효 입력 → `PortRouteVariant[]`. 누락 필드 가드 (port_id 필수, stops[].name 필수, number 자동 fallback, visitBasics 빈 내부 → undefined).
+
+2. **`components/product-tour-static/_shared/route-variants/routeVariantTypes.ts`** — `PortVariantStop.visitBasics` 를 optional 로 완화 + 내부 4 필드 모두 optional. `time?`, `whyOnRoute?` 추가 (소스에 있는데 타입에 없던 두 필드). `TourStopDrawerStop` (superset) 이미 모두 optional → 어셈블 안전.
+
+3. **`buildTourProductViewModelFromJson.ts`** — VIEW_MODEL_KEYS 루프 후, `base.routeVariants` 비어있고 `doc.itinerary_variants` 채워져 있으면 adapter 호출하여 back-fill.
+
+4. **`loadTourProductPage.ts`** — DB payload 도 같은 패턴 (`payload.routeVariants` 우선, 없으면 `payload.itinerary_variants` 어댑팅).
+
+5. **`__tests__/lib/tour-product/portRouteVariantsAdapter.test.ts` (신규)** — 10 케이스:
+   - mapItineraryVariantsToRouteVariants: null 입력 / 빈 stops / 최소 변형 매핑 / number fallback / port_id 누락 스킵 / visitBasics 빈 inner drop / visitBasics 부분 inner 보존
+   - 통합: bus-tour 번들 → routeVariants 2개 (jeju_port + gangjeong_port) / small-group 번들 / non-cruise 투어는 변동 없음
+
+**범위 제외 (의도적):**
+- JSON 재작성 — Phase 후속 (필요시) 또는 영구 미실행 (adapter 충분).
+- `itinerary_variants` 의 나머지 풍부한 메타 (poi_tags, theme_tags, scenic_level 등) 활용 — 매칭 프로파일 트랙에서 진행.
+- `_poi_meta`/`images` 를 `PortVariantStop` 에 추가 — 향후 풍부한 드로어 시 별도 phase.
+
+**검증:**
+- `jest __tests__/lib/tour-product/portRouteVariantsAdapter.test.ts` → 10/10 pass.
+- 전체 회귀 (`tour-seasonal-windows` + `eastSignatureCheckoutContext` + `portRouteVariantsAdapter`) → 24/24 pass.
 - `tsc --noEmit` → 0 errors.
 
 ---
@@ -370,7 +409,8 @@ AND tour_product_page_id IN (SELECT id FROM tour_product_pages WHERE slug = 'jej
 | 5a EN | `b8e8afa9` | [#13](https://github.com/simsangsong/atockorea/pull/13) | ✅ `117b8f26` |
 | A (DB price reconcile) | `6ea957a3` | [#15](https://github.com/simsangsong/atockorea/pull/15) | ✅ `76b27417` |
 | B (seasonal $0 + window gate) | `3dfd19cb` | [#16](https://github.com/simsangsong/atockorea/pull/16) | ✅ `cf5eb7b2` |
-| C (vehicle price type unblock) | (pending) | (pending) | code change; see Phase C detail below |
+| C (vehicle price type unblock) | `583f0bf4` | [#17](https://github.com/simsangsong/atockorea/pull/17) | ✅ `b8332b45` |
+| D (port routeVariants adapter) | (pending) | (pending) | code change; see Phase D detail below |
 | 3 EN | — | — | ⏳ |
 | 5b EN | — | — | ⏳ |
 | 6 EN | — | — | ⏳ |
