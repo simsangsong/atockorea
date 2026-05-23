@@ -31,7 +31,11 @@ import type { Shelf } from "@/lib/tours-shelves";
 
 void Image; // future: shelf hero image (Phase 7.5+); avoid unused-import linter
 
-const SHELF_CARD_IMAGE_SIZES = "(min-width: 768px) 320px, 78vw";
+/** Card width on shelves. Smaller than the 78vw mobile cards from the flat
+ *  grid so the next card's edge peeks in — the horizontal-scroll affordance
+ *  reads at a glance and the catalog reads visually broader. */
+const SHELF_CARD_WIDTH = "min(64vw, 232px)";
+const SHELF_CARD_IMAGE_SIZES = "(min-width: 768px) 232px, 64vw";
 
 /**
  * Mirrors the home featured-grid adapter at
@@ -128,45 +132,68 @@ export function TourShelf({ shelf, className }: TourShelfProps) {
     return null;
   }, [shelf.key, shelf.season, locale]);
 
+  const eyebrowLabel =
+    shelf.key === "editors-pick"
+      ? locale === "ko"
+        ? "에디터스 픽"
+        : "Editor's Pick"
+      : shelf.key === "now-seasonal"
+        ? locale === "ko"
+          ? "지금 시즌"
+          : "Now Seasonal"
+        : shelf.key === "coming-soon"
+          ? locale === "ko"
+            ? "곧 시작"
+            : "Coming Soon"
+          : locale === "ko"
+            ? "큐레이션"
+            : "Curated";
+
   return (
     <section className={cn("relative", className)}>
-      <header className="mb-3 flex items-end justify-between gap-3 px-4 sm:px-5">
-        <div className="min-w-0">
-          <p className="text-[10.5px] font-bold uppercase tracking-[0.22em] text-amber-700/90">
+      <header className="mb-5 px-4 sm:mb-6 sm:px-5">
+        {/* Eyebrow row: small amber rule + uppercase label (carries Phase 1 hero
+            family — amber-700/90 + 0.22em tracking + thin gold prefix line). */}
+        <div className="flex items-center gap-2.5">
+          <span aria-hidden className="block h-px w-6 bg-amber-500/70 sm:w-8" />
+          <p className="text-[10.5px] font-bold uppercase tracking-[0.24em] text-amber-700/95">
             {shelf.key === "editors-pick" ? (
               <span className="inline-flex items-center gap-1.5">
                 <Sparkles className="h-3 w-3" aria-hidden />
-                {locale === "ko" ? "에디터스 픽" : "Editor's Pick"}
+                {eyebrowLabel}
               </span>
-            ) : shelf.key === "now-seasonal" ? (
-              locale === "ko" ? "지금 시즌" : "Now Seasonal"
-            ) : shelf.key === "coming-soon" ? (
-              locale === "ko" ? "곧 시작" : "Coming Soon"
             ) : (
-              locale === "ko" ? "큐레이션" : "Curated"
+              eyebrowLabel
             )}
           </p>
-          <h2 className="mt-1 text-[19px] font-bold tracking-[-0.015em] text-slate-900 sm:text-[22px]">
-            {title}
-          </h2>
-          {subtitle ? (
-            <p className="mt-1.5 max-w-2xl text-[12.5px] leading-relaxed text-slate-600 sm:text-[13px]">
-              {subtitle}
-            </p>
-          ) : null}
-          {seasonBadge ? (
-            <p
-              className={cn(
-                "mt-2 inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-[10.5px] font-semibold",
-                shelf.key === "coming-soon"
-                  ? "bg-slate-100 text-slate-700 ring-1 ring-slate-200"
-                  : "bg-amber-50 text-amber-900 ring-1 ring-amber-100",
-              )}
-            >
-              {seasonBadge}
-            </p>
-          ) : null}
         </div>
+        {/* Display headline — upright serif (Noto Serif KR / Cormorant Garamond),
+            larger size, magazine spread feel. */}
+        <h2
+          className={cn(
+            "mt-3 font-magazine-serif-ko font-semibold leading-[1.12] text-stone-900",
+            "text-[26px] tracking-[-0.018em] sm:text-[32px] sm:tracking-[-0.02em] lg:text-[36px]",
+          )}
+        >
+          {title}
+        </h2>
+        {subtitle ? (
+          <p className="mt-2.5 max-w-2xl text-[13px] leading-[1.65] text-slate-600 sm:mt-3 sm:text-[14px]">
+            {subtitle}
+          </p>
+        ) : null}
+        {seasonBadge ? (
+          <p
+            className={cn(
+              "mt-3 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[10.5px] font-semibold tabular-nums",
+              shelf.key === "coming-soon"
+                ? "bg-slate-100 text-slate-700 ring-1 ring-slate-200"
+                : "bg-amber-50 text-amber-900 ring-1 ring-amber-100",
+            )}
+          >
+            {seasonBadge}
+          </p>
+        ) : null}
       </header>
 
       <div className="relative">
@@ -174,7 +201,7 @@ export function TourShelf({ shelf, className }: TourShelfProps) {
           className="
             -mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto overscroll-x-contain
             scroll-smooth scrollbar-hide px-4 pb-2 [-webkit-overflow-scrolling:touch]
-            sm:-mx-5 sm:px-5
+            sm:-mx-5 sm:gap-4 sm:px-5
           "
         >
           {shelf.tours.map((tour) => (
@@ -197,7 +224,7 @@ function ShelfCard({ product }: { product: StaticTourProductRegistration }) {
   const href = consumerTourDetailHref(product.slug, product.slug);
 
   return (
-    <div className="snap-start shrink-0" style={{ width: "min(78vw, 280px)" }}>
+    <div className="snap-start shrink-0" style={{ width: SHELF_CARD_WIDTH }}>
       <TourListCard
         tour={vm}
         detailHref={href}
