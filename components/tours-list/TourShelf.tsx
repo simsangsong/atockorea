@@ -197,17 +197,30 @@ export function TourShelf({ shelf, className }: TourShelfProps) {
       </header>
 
       <div className="relative">
+        {/*
+          Padding math (left edge):
+            - page <section> = px-2 (8px) / sm:px-4 (16px)
+            - scroll container -mx matches page padding so left edge sits at
+              the viewport edge (full-bleed), then px shifts the first card
+              inward by an editorial buffer (20px / 28px). Without this the
+              first card's location-chip + title read as if they were cropped
+              against the viewport edge.
+          Right edge: matches with `mx` + the trailing spacer below.
+        */}
         <div
           className="
-            -mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto overscroll-x-contain
-            scroll-smooth scrollbar-hide px-4 pb-2 [-webkit-overflow-scrolling:touch]
-            sm:-mx-5 sm:gap-4 sm:px-5
+            -mx-2 flex snap-x snap-mandatory gap-3 overflow-x-auto overscroll-x-contain
+            scroll-smooth scrollbar-hide px-5 pb-2 [-webkit-overflow-scrolling:touch]
+            sm:-mx-4 sm:gap-4 sm:px-7
           "
         >
           {shelf.tours.map((tour) => (
             <ShelfCard key={`${shelf.key}-${tour.slug}`} product={tour} />
           ))}
-          <div className="shrink-0 w-2 sm:w-0" aria-hidden />
+          {/* Trailing spacer — keeps the last card from butting against the right
+              viewport edge once scrolled all the way through. Matches the left
+              `px-` so the rail reads symmetric. */}
+          <div className="shrink-0 w-3 sm:w-5" aria-hidden />
         </div>
         {/* Right-edge fade — premium magazine cue that more cards exist horizontally. */}
         <div
