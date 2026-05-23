@@ -413,7 +413,8 @@ AND tour_product_page_id IN (SELECT id FROM tour_product_pages WHERE slug = 'jej
 | D (port routeVariants adapter) | (pending) | (pending) | code change; see Phase D detail below |
 | 3 EN | `77a4e780` | [#32](https://github.com/simsangsong/atockorea/pull/32) | ✅ `5f54f0d6` |
 | 5b EN (Bukchon+Sanjeong) | `bb6ceda7` | [#33](https://github.com/simsangsong/atockorea/pull/33) | ✅ `376437bc` |
-| 7 EN | (이번 commit) | (이번 commit) | DMZ 220→150m (2 instances) · "A easy" → "An easy" · "the our…tour tour" → "our…tour" (2 instances) · "? photo" → "— photo" (4 tours, ~120 instances) · DMZ refund tone softened (substance preserved) · Silla Gold Crowns stale exhibition removed (description ×2 + highlight, 3 instances) · jeju-cruise "Lunch (pay direct)" → "Lunch break — own expense" (2 tours, ~92 instances) |
+| 7 EN | `64501a61` | [#34](https://github.com/simsangsong/atockorea/pull/34) | ✅ `33818d55` |
+| 6 EN (gallery EN-residual cleanup) | (이번 commit) | (이번 commit) | 4 tours × galleryItems language swaps (75 fields). "(아홉산숲)" / "태종대 해안 절벽" / "감천문화마을" / "용두산공원 & 부산타워" / "용두산공원" / "Templo Waujeongsa" → EN equivalents. description body informational parenthetical 보존 (galleryItems 만 sweep). src↔location attribution mismatch 143개는 photo verify 필요 — 별도 phase. |
 | 5b EN | — | — | ⏳ |
 | 6 EN | — | — | ⏳ |
 | 7 EN | — | — | ⏳ |
