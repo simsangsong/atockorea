@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 
 const siteUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://atockorea.com';
 const siteName = 'AtoC Korea';
-const defaultDescription = "Korea day tours hand-picked by our team — the same operators listed on the world's leading travel platforms, booked direct here at direct prices.";
+const defaultDescription = "Korea day tours checked by our team before they're listed, with routes, guides, and local operations reviewed on the ground.";
 const defaultImage = `${siteUrl}/og-image.jpg`;
 
 export interface SEOConfig {
@@ -177,4 +177,3 @@ export function generateStructuredData(type: 'Tour' | 'Organization' | 'WebSite'
       return baseStructuredData;
   }
 }
-
