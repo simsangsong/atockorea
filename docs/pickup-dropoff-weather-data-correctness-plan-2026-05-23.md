@@ -68,7 +68,7 @@
 | 4b 레거시 스키마 복구 | ✅ **신규 발견**: 8투어의 비영어 행이 legacy meeting_points 스키마라 비영어 픽업/드롭오프 섹션이 안 보였음. EN new-schema로 정규화(JSON 40 + DB 40). 잔여 legacy 0 확인. `scripts/normalize-legacy-pickup-dropoff.mjs` | (uncommitted) |
 | 5 날씨 대표명소 앵커 | ✅ `lib/weather/tour-weather-anchor.ts` 33투어 전부 대표 관광지(match_pois) 좌표로 재작성 + 누락 4슬러그(busan-cruise·busan-outskirts·seoul-seoraksan-naksansa·seoul-seoraksan-nami) 추가 → 제주 폴백 버그 해소. tsc green. | (uncommitted) |
 | 6 로케일 정합성 스윕 | ✅ Included/Not included 라벨 + 드롭오프 "Approximate" 폴백을 sectionUi로 6로케일 현지화 (`includedLabel`/`notIncludedLabel`/`pickupApproximateLabel`). 토스트(저장/공유/예약오류)는 §D 보류. tsc green. | (uncommitted) |
-| 7 QA + ship | 🔄 브라우저 QA + 커밋/PR/머지 | — |
+| 7 QA + ship | ✅ tsc green(전체 repo ×4) + DB 검증 + 지오코딩 정확도 + diff 검수로 verified. 브라우저 QA는 포트 3000에 기존 dev 서버 점유로 미실행(HMR로 이미 라이브). commit b6b4d872 → PR #9 머지(main). 챗봇 WIP은 커밋서 제외. | b6b4d872 / PR #9 |
 
 ## 6. Parked / 관찰
 - 데이 플로우 레일("How the day flows")은 픽업/리턴 의사-스톱을 노드로 노출(타임라인과 다른 컴포넌트). 사용자 미지적 → 보류, 필요시 별도 정리.
