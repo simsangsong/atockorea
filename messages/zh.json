@@ -281,14 +281,11 @@
     "dashboardLabel": "仪表板",
     "reviewsLabel": "评价",
     "settingsLabel": "设置",
-    "dashboard": "仪表板",
     "myBookings": "我的预订",
     "wishlist": "收藏",
-    "reviews": "评价",
     "history": "历史",
     "upcoming": "即将到来",
     "upcomingTours": "即将到来的旅游",
-    "settings": "设置",
     "signOut": "登出",
     "backToMyPage": "返回我的",
     "totalBookings": "总预订数",
@@ -310,7 +307,196 @@
     "dateYesterday": "昨天",
     "dateDaysAgo": "{days}天前",
     "dateWeeksAgo": "{weeks}周前",
-    "dateMonthsAgo": "{months}个月前"
+    "dateMonthsAgo": "{months}个月前",
+    "dashboard": {
+      "errorBanner": "部分仪表板数据加载失败",
+      "retry": "重试",
+      "pendingReviewsTitle": "待写的评价",
+      "pendingReviewsEmpty": "暂无待写的评价",
+      "nextTripTitle": "下一段旅程",
+      "nextTripCta": "查看详情",
+      "nextTripEmpty": "暂无即将到来的行程",
+      "nextTripBrowse": "浏览行程"
+    },
+    "reviews": {
+      "write": {
+        "title": "撰写评价",
+        "subtitle": "分享你在 {tour} 的体验",
+        "ratingLabel": "评分",
+        "ratingRequired": "请选择评分",
+        "ratingSrLabel": "{value} 星",
+        "titleLabel": "评价标题（可选）",
+        "titlePlaceholder": "为你的评价命名",
+        "commentLabel": "你的评价",
+        "commentPlaceholder": "分享你的体验...",
+        "commentRequired": "请填写评价内容",
+        "commentCount": "{count} 字",
+        "photosLabel": "照片（可选）",
+        "photosUploadFailed": "照片上传失败",
+        "cancel": "取消",
+        "submit": "提交评价",
+        "submitting": "提交中...",
+        "signInToUpload": "请登录后再上传图片",
+        "signInToSubmit": "请登录后再撰写评价",
+        "windowNotOpen": "评价于行程当日韩国时间 13:00 起开放",
+        "editTitle": "编辑评价",
+        "updateSubmit": "更新评价",
+        "genericError": "无法处理你的评价"
+      },
+      "cardEdit": "编辑",
+      "cardDelete": "删除",
+      "cardMenu": "打开评价菜单",
+      "deleteConfirmTitle": "删除这条评价？",
+      "deleteConfirmDescription": "该操作无法撤销。",
+      "deleteConfirmCta": "删除"
+    },
+    "settings": {
+      "savedBadge": "已保存",
+      "connectedAccountsTitle": "已绑定的账号",
+      "connectedAccountsEmpty": "尚未绑定任何外部账号",
+      "dangerZoneTitle": "危险操作",
+      "dangerZoneDescription": "账号注销功能即将上线。如有紧急需求，请联系客服。",
+      "deleteAccount": "注销账号",
+      "avatarUploadLabel": "更换头像",
+      "avatarRemove": "使用默认头像"
+    },
+    "bookingsPageSubtitle": "一处管理你的全部预订",
+    "bookingsSectionUpcoming": "即将到来的行程",
+    "bookingsSectionCompleted": "已完成的行程",
+    "bookingsSectionCancelled": "已取消的行程",
+    "bookingsEmpty": "暂无预订",
+    "bookingsLoading": "正在加载预订...",
+    "bookingsError": "错误：{message}",
+    "cancelBookingCta": "取消预订",
+    "writeReviewCta": "撰写评价",
+    "cancelNotAllowed24h": "行程开始前 24 小时内无法取消。请联系客服处理。",
+    "confirmCancelBooking": "确定要取消该预订吗？",
+    "cancelSuccess": "已成功取消预订",
+    "cancelFailed": "取消预订失败：{message}",
+    "signInToCancel": "请登录后再取消预订",
+    "upcomingPageSubtitle": "管理你即将到来的预订",
+    "upcomingEmpty": "暂无即将到来的行程",
+    "upcomingPickupTba": "待定",
+    "historyPageTitle": "预订历史",
+    "historyPageSubtitle": "查看过往的预订记录",
+    "historyEmpty": "暂无预订记录",
+    "historyStatusCompleted": "已完成",
+    "historyStatusCancelled": "已取消",
+    "historyRebookCta": "再次预订",
+    "reviewsPageTitle": "我的评价",
+    "reviewsPageSubtitle": "可从已完成的预订撰写新评价。已发布的评价显示在下方，无法编辑或删除。",
+    "reviewsSectionTitle": "你的评价",
+    "reviewsEmpty": "你还没有写过评价。",
+    "reviewsLoading": "加载中...",
+    "wishlistPageTitle": "我的心愿单",
+    "wishlistCountOne": "已保存 {count} 个行程",
+    "wishlistCountMany": "已保存 {count} 个行程",
+    "wishlistLoading": "正在加载心愿单...",
+    "wishlistRemoveConfirm": "从心愿单中移除该行程？",
+    "wishlistRemoveFailed": "从心愿单移除失败：{message}",
+    "wishlistSignInRequired": "请登录后再管理心愿单",
+    "commonRetry": "重试",
+    "commonViewDetails": "查看详情",
+    "common": {
+      "verifyingSession": "正在验证你的登录...",
+      "confirm": {
+        "cancelBookingTitle": "取消该预订？",
+        "cancelBookingDescription": "取消后预订立即结束。如有退款，按适用政策处理。",
+        "cancelBookingConfirm": "取消预订",
+        "cancel": "关闭",
+        "removeWishlistTitle": "从心愿单移除？",
+        "removeWishlistDescription": "随时可以再加回来。",
+        "removeWishlistConfirm": "移除",
+        "signOutTitle": "退出登录？",
+        "signOutDescription": "需要重新登录才能查看预订。",
+        "signOutConfirm": "退出登录"
+      },
+      "toast": {
+        "bookingCancelled": "预订已取消",
+        "bookingCancelFailed": "取消预订失败",
+        "bookingCancelNotAllowed24h": "行程开始前 24 小时内无法取消",
+        "signInRequired": "请登录后继续",
+        "wishlistRemoved": "已从心愿单移除",
+        "wishlistRemoveFailed": "从心愿单移除失败",
+        "saved": "已保存",
+        "saveFailed": "保存失败",
+        "reviewSubmitted": "评价已提交",
+        "reviewUpdated": "评价已更新",
+        "reviewDeleted": "评价已删除",
+        "reviewFailed": "评价错误：{message}",
+        "reviewWindowNotOpen": "评价于行程当日韩国时间 13:00 起开放",
+        "comingSoon": "即将推出",
+        "avatarUpdated": "头像已更新",
+        "avatarUploadFailed": "头像上传失败"
+      },
+      "percentOff": "{value}% 折扣",
+      "loadingLabel": "加载中...",
+      "errorLoad": "无法加载此内容"
+    },
+    "bookings": {
+      "guestsLabel": "人数",
+      "receiptCta": "查看收据",
+      "addToCalendar": "加入日历",
+      "dayCountdownToday": "今天",
+      "dayCountdownTomorrow": "明天",
+      "dayCountdownPast": "已过",
+      "dayCountdownFuture": "还剩 {days} 天"
+    },
+    "landing": {
+      "greetingMorning": "早安，{name}",
+      "greetingAfternoon": "午安，{name}",
+      "greetingEvening": "晚上好，{name}",
+      "subtitle": "一眼掌握你的 AtoCKorea",
+      "viewDashboard": "查看仪表板",
+      "errorBanner": "部分数据加载失败",
+      "retry": "重试",
+      "profile": {
+        "ringLabel": "个人资料",
+        "completeCta": "完成个人资料 · {pct}%",
+        "completeBadge": "资料已完成"
+      },
+      "nextTrip": {
+        "badgeLabel": "你的下一段旅程",
+        "pickupLabel": "接送",
+        "pickupTba": "待定",
+        "guests": "{count} 位",
+        "viewDetails": "查看详情",
+        "addToCalendar": "加入日历",
+        "receipt": "打开收据"
+      },
+      "emptyHero": {
+        "title": "尚无即将到来的行程",
+        "subtitle": "浏览精选的济州体验，规划你的第一段旅程。",
+        "cta": "探索济州行程"
+      },
+      "quickAccess": {
+        "title": "快捷入口",
+        "count": "{count} 项",
+        "view": "查看",
+        "items": {
+          "bookings": "我的预订",
+          "upcoming": "即将到来",
+          "history": "历史记录",
+          "reviews": "评价",
+          "wishlist": "心愿单",
+          "settings": "设置"
+        }
+      },
+      "pendingReview": {
+        "title": "分享一下你对 {title} 的感受",
+        "cta": "撰写评价",
+        "more": "还有 {count} 条待写"
+      },
+      "wishlist": {
+        "sectionTitle": "已保存的行程",
+        "viewAll": "查看全部（{count}）"
+      },
+      "recommendations": {
+        "title": "为你推荐",
+        "subtitle": "精选高分行程，特别为你",
+        "empty": "暂无推荐"
+      }
+    }
   },
   "admin": {
     "title": "管理员仪表板",
@@ -456,7 +642,19 @@
     "addedToCart": "已加入购物车！",
     "booked": "已预订",
     "save": "收藏",
-    "discountOff": "{percent}% 折扣"
+    "discountOff": "{percent}% 折扣",
+    "noItinerary": "暂无行程",
+    "moreSpots": "+{count} 个景点",
+    "duration": "时长",
+    "lunch": "午餐",
+    "tickets": "门票",
+    "pickup": "接送",
+    "included": "包含",
+    "notIncluded": "不包含",
+    "pickupPointsCountOne": "{count} 个接送点",
+    "pickupPointsCountOther": "{count} 个接送点",
+    "hotelPickup": "酒店接送",
+    "cruiseTerminalPickup": "邮轮码头接送"
   },
   "toursList": {
     "subtitle": "含行程的所有旅游产品，每行一张卡片。",
@@ -577,7 +775,27 @@
           "subtitle": "9 月 30 日开始。粉黛乱子草季。"
         }
       }
-    }
+    },
+    "eyebrow": "行程",
+    "resultsCount": "{count} 个结果",
+    "price": "价格",
+    "priceFrom": "{amount} 起",
+    "priceUpTo": "最高 {amount}",
+    "priceRange": "{min} – {max}",
+    "minPlaceholder": "最小",
+    "maxPlaceholder": "最大",
+    "apply": "应用",
+    "reset": "重置",
+    "resetFilters": "重置筛选",
+    "loadMore": "加载更多",
+    "loadingMore": "加载中...",
+    "emptyTitle": "没有符合条件的行程。",
+    "emptyHint": "请尝试移除筛选条件，或重置查看全部行程。",
+    "searchAriaLabel": "搜索行程",
+    "destinationAriaLabel": "按目的地筛选",
+    "sortAriaLabel": "排序行程",
+    "priceAriaLabel": "价格区间",
+    "popularHint": "依据评分、预订量与新鲜度精选"
   },
   "home": {
     "hero": {
@@ -2008,7 +2226,10 @@
     "emailPlaceholder": "you@example.com",
     "verificationPlaceholder": "000000",
     "fullNamePlaceholder": "张三",
-    "birthYearExample": "例：{year}"
+    "birthYearExample": "例：{year}",
+    "accountGroupTitle": "账号",
+    "identityGroupTitle": "身份信息",
+    "contactGroupTitle": "联系方式与同意"
   },
   "settingsPage": {
     "title": "账户设置",
@@ -2243,6 +2464,11 @@
       "title": "DMZ私人之旅",
       "body": "前往临津阁、第三隧道、都罗展望台与绀岳山吊桥——探访朝鲜半岛最前线的一日固定行程。专车与向导全程陪同，按团队人数收取固定费用。",
       "cta": "查看价格"
+    }
+  },
+  "appShell": {
+    "backButton": {
+      "label": "返回"
     }
   }
 }

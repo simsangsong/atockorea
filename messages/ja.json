@@ -281,13 +281,10 @@
     "dashboardLabel": "ダッシュボード",
     "reviewsLabel": "レビュー",
     "settingsLabel": "設定",
-    "dashboard": "ダッシュボード",
     "myBookings": "マイ予約",
     "wishlist": "ウィッシュリスト",
-    "reviews": "レビュー",
     "history": "履歴",
     "upcoming": "今後の予定",
-    "settings": "設定",
     "signOut": "ログアウト",
     "backToMyPage": "マイページに戻る",
     "upcomingTours": "今後のツアー",
@@ -310,7 +307,196 @@
     "dateYesterday": "昨日",
     "dateDaysAgo": "{days}日前",
     "dateWeeksAgo": "{weeks}週間前",
-    "dateMonthsAgo": "{months}か月前"
+    "dateMonthsAgo": "{months}か月前",
+    "dashboard": {
+      "errorBanner": "ダッシュボードの一部データを読み込めませんでした",
+      "retry": "再試行",
+      "pendingReviewsTitle": "書きかけのレビュー",
+      "pendingReviewsEmpty": "書くべきレビューはありません",
+      "nextTripTitle": "次の旅",
+      "nextTripCta": "詳細を見る",
+      "nextTripEmpty": "今後のツアーはありません",
+      "nextTripBrowse": "ツアーを見る"
+    },
+    "reviews": {
+      "write": {
+        "title": "レビューを書く",
+        "subtitle": "{tour} のご体験を共有してください",
+        "ratingLabel": "評価",
+        "ratingRequired": "評価を選択してください",
+        "ratingSrLabel": "{value} 星",
+        "titleLabel": "レビュータイトル（任意）",
+        "titlePlaceholder": "タイトルを入力してください",
+        "commentLabel": "レビュー本文",
+        "commentPlaceholder": "ご体験を共有してください...",
+        "commentRequired": "レビューを入力してください",
+        "commentCount": "{count} 文字",
+        "photosLabel": "写真（任意）",
+        "photosUploadFailed": "写真のアップロードに失敗しました",
+        "cancel": "キャンセル",
+        "submit": "レビューを投稿",
+        "submitting": "送信中...",
+        "signInToUpload": "画像をアップロードするにはログインしてください",
+        "signInToSubmit": "レビューを書くにはログインしてください",
+        "windowNotOpen": "レビューはツアー当日の韓国時間 13:00 から書けます",
+        "editTitle": "レビューを編集",
+        "updateSubmit": "レビューを更新",
+        "genericError": "レビューを処理できませんでした"
+      },
+      "cardEdit": "編集",
+      "cardDelete": "削除",
+      "cardMenu": "レビューメニューを開く",
+      "deleteConfirmTitle": "このレビューを削除しますか？",
+      "deleteConfirmDescription": "この操作は取り消せません。",
+      "deleteConfirmCta": "削除"
+    },
+    "settings": {
+      "savedBadge": "保存しました",
+      "connectedAccountsTitle": "連携アカウント",
+      "connectedAccountsEmpty": "連携中の外部アカウントはありません",
+      "dangerZoneTitle": "危険ゾーン",
+      "dangerZoneDescription": "アカウント削除は近日対応予定です。お急ぎの場合はカスタマーサポートまでご連絡ください。",
+      "deleteAccount": "アカウントを削除",
+      "avatarUploadLabel": "プロフィール写真を変更",
+      "avatarRemove": "デフォルト画像を使う"
+    },
+    "bookingsPageSubtitle": "すべての予約をまとめて管理できます",
+    "bookingsSectionUpcoming": "今後のツアー",
+    "bookingsSectionCompleted": "完了したツアー",
+    "bookingsSectionCancelled": "キャンセル済みのツアー",
+    "bookingsEmpty": "予約はありません",
+    "bookingsLoading": "予約を読み込み中...",
+    "bookingsError": "エラー：{message}",
+    "cancelBookingCta": "予約をキャンセル",
+    "writeReviewCta": "レビューを書く",
+    "cancelNotAllowed24h": "ツアー出発の 24 時間以内はキャンセルできません。カスタマーサポートまでご連絡ください。",
+    "confirmCancelBooking": "この予約をキャンセルしますか？",
+    "cancelSuccess": "予約をキャンセルしました",
+    "cancelFailed": "予約のキャンセルに失敗しました：{message}",
+    "signInToCancel": "予約をキャンセルするにはログインしてください",
+    "upcomingPageSubtitle": "今後の予約を管理できます",
+    "upcomingEmpty": "今後のツアーはありません",
+    "upcomingPickupTba": "未定",
+    "historyPageTitle": "予約履歴",
+    "historyPageSubtitle": "過去の予約を確認できます",
+    "historyEmpty": "予約履歴はありません",
+    "historyStatusCompleted": "完了",
+    "historyStatusCancelled": "キャンセル済み",
+    "historyRebookCta": "もう一度予約",
+    "reviewsPageTitle": "マイレビュー",
+    "reviewsPageSubtitle": "完了したご予約から新しいレビューを書けます。投稿済みのレビューは以下に表示され、編集や削除はできません。",
+    "reviewsSectionTitle": "投稿したレビュー",
+    "reviewsEmpty": "まだレビューを書いていません。",
+    "reviewsLoading": "読み込み中...",
+    "wishlistPageTitle": "マイウィッシュリスト",
+    "wishlistCountOne": "{count} 件のツアーを保存中",
+    "wishlistCountMany": "{count} 件のツアーを保存中",
+    "wishlistLoading": "ウィッシュリストを読み込み中...",
+    "wishlistRemoveConfirm": "このツアーをウィッシュリストから外しますか？",
+    "wishlistRemoveFailed": "ウィッシュリストから削除できませんでした：{message}",
+    "wishlistSignInRequired": "ウィッシュリストを管理するにはログインしてください",
+    "commonRetry": "再試行",
+    "commonViewDetails": "詳細を見る",
+    "common": {
+      "verifyingSession": "セッションを確認中...",
+      "confirm": {
+        "cancelBookingTitle": "この予約をキャンセルしますか？",
+        "cancelBookingDescription": "キャンセルすると予約はその場で終了し、適用される規定に従って払い戻されます。",
+        "cancelBookingConfirm": "予約をキャンセル",
+        "cancel": "閉じる",
+        "removeWishlistTitle": "ウィッシュリストから外しますか？",
+        "removeWishlistDescription": "いつでも再追加できます。",
+        "removeWishlistConfirm": "削除",
+        "signOutTitle": "ログアウトしますか？",
+        "signOutDescription": "予約を確認するには再度ログインが必要です。",
+        "signOutConfirm": "ログアウト"
+      },
+      "toast": {
+        "bookingCancelled": "予約をキャンセルしました",
+        "bookingCancelFailed": "予約のキャンセルに失敗しました",
+        "bookingCancelNotAllowed24h": "ツアー出発の 24 時間以内はキャンセルできません",
+        "signInRequired": "続行するにはログインしてください",
+        "wishlistRemoved": "ウィッシュリストから削除しました",
+        "wishlistRemoveFailed": "ウィッシュリストから削除できませんでした",
+        "saved": "保存しました",
+        "saveFailed": "保存に失敗しました",
+        "reviewSubmitted": "レビューを投稿しました",
+        "reviewUpdated": "レビューを更新しました",
+        "reviewDeleted": "レビューを削除しました",
+        "reviewFailed": "レビューエラー：{message}",
+        "reviewWindowNotOpen": "レビューはツアー当日の韓国時間 13:00 から書けます",
+        "comingSoon": "近日公開",
+        "avatarUpdated": "プロフィール写真を更新しました",
+        "avatarUploadFailed": "プロフィール写真のアップロードに失敗しました"
+      },
+      "percentOff": "{value}% OFF",
+      "loadingLabel": "読み込み中...",
+      "errorLoad": "このコンテンツを読み込めませんでした"
+    },
+    "bookings": {
+      "guestsLabel": "ご利用人数",
+      "receiptCta": "領収書を見る",
+      "addToCalendar": "カレンダーに追加",
+      "dayCountdownToday": "本日",
+      "dayCountdownTomorrow": "明日",
+      "dayCountdownPast": "過去",
+      "dayCountdownFuture": "あと {days} 日"
+    },
+    "landing": {
+      "greetingMorning": "おはようございます、{name} さん",
+      "greetingAfternoon": "こんにちは、{name} さん",
+      "greetingEvening": "こんばんは、{name} さん",
+      "subtitle": "AtoCKorea のすべてを一目で",
+      "viewDashboard": "ダッシュボードを見る",
+      "errorBanner": "データの一部を読み込めませんでした",
+      "retry": "再試行",
+      "profile": {
+        "ringLabel": "プロフィール",
+        "completeCta": "プロフィールを完成 · {pct}%",
+        "completeBadge": "プロフィール完成"
+      },
+      "nextTrip": {
+        "badgeLabel": "次の旅",
+        "pickupLabel": "送迎",
+        "pickupTba": "未定",
+        "guests": "{count} 名",
+        "viewDetails": "詳細を見る",
+        "addToCalendar": "カレンダーに追加",
+        "receipt": "領収書を開く"
+      },
+      "emptyHero": {
+        "title": "まだ予定の旅行はありません",
+        "subtitle": "キュレーション済みの済州ツアーから、最初の旅を計画しましょう。",
+        "cta": "済州ツアーを見る"
+      },
+      "quickAccess": {
+        "title": "クイックアクセス",
+        "count": "{count} 件",
+        "view": "見る",
+        "items": {
+          "bookings": "マイ予約",
+          "upcoming": "今後の予定",
+          "history": "履歴",
+          "reviews": "レビュー",
+          "wishlist": "ウィッシュリスト",
+          "settings": "設定"
+        }
+      },
+      "pendingReview": {
+        "title": "{title} の感想を共有しませんか",
+        "cta": "レビューを書く",
+        "more": "ほか {count} 件待機中"
+      },
+      "wishlist": {
+        "sectionTitle": "保存したツアー",
+        "viewAll": "すべて見る（{count}）"
+      },
+      "recommendations": {
+        "title": "あなたへのおすすめ",
+        "subtitle": "あなたに合わせて選んだ高評価ツアー",
+        "empty": "まだおすすめはありません"
+      }
+    }
   },
   "admin": {
     "title": "管理者ダッシュボード",
@@ -456,7 +642,19 @@
     "addedToCart": "カートに追加されました！",
     "booked": "予約済み",
     "save": "保存",
-    "discountOff": "{percent}%OFF"
+    "discountOff": "{percent}%OFF",
+    "noItinerary": "行程なし",
+    "moreSpots": "+{count} スポット",
+    "duration": "所要時間",
+    "lunch": "昼食",
+    "tickets": "チケット",
+    "pickup": "送迎",
+    "included": "含む",
+    "notIncluded": "含まない",
+    "pickupPointsCountOne": "送迎ポイント {count} 件",
+    "pickupPointsCountOther": "送迎ポイント {count} 件",
+    "hotelPickup": "ホテル送迎",
+    "cruiseTerminalPickup": "クルーズターミナル送迎"
   },
   "toursList": {
     "subtitle": "行程付き全ツアー、1行1カード表示。",
@@ -577,7 +775,27 @@
           "subtitle": "9 月 30 日開始。ピンクミューリーシーズン。"
         }
       }
-    }
+    },
+    "eyebrow": "ツアー",
+    "resultsCount": "{count} 件",
+    "price": "価格",
+    "priceFrom": "{amount} から",
+    "priceUpTo": "{amount} まで",
+    "priceRange": "{min} – {max}",
+    "minPlaceholder": "最小",
+    "maxPlaceholder": "最大",
+    "apply": "適用",
+    "reset": "リセット",
+    "resetFilters": "フィルターをリセット",
+    "loadMore": "もっと見る",
+    "loadingMore": "読み込み中...",
+    "emptyTitle": "この条件に合うツアーはありません。",
+    "emptyHint": "フィルターを外すか、リセットしてすべてのツアーをご覧ください。",
+    "searchAriaLabel": "ツアーを検索",
+    "destinationAriaLabel": "目的地で絞り込む",
+    "sortAriaLabel": "ツアーを並べ替え",
+    "priceAriaLabel": "価格帯",
+    "popularHint": "評価・予約数・新着でキュレーション"
   },
   "home": {
     "hero": {
@@ -2008,7 +2226,10 @@
     "emailPlaceholder": "you@example.com",
     "verificationPlaceholder": "000000",
     "fullNamePlaceholder": "山田 太郎",
-    "birthYearExample": "例：{year}"
+    "birthYearExample": "例：{year}",
+    "accountGroupTitle": "アカウント",
+    "identityGroupTitle": "本人情報",
+    "contactGroupTitle": "連絡先と同意"
   },
   "settingsPage": {
     "title": "アカウント設定",
@@ -2243,6 +2464,11 @@
       "title": "DMZプライベートツアー",
       "body": "臨津閣、第3トンネル、都羅展望台、紺岳山の吊り橋まで——朝鮮半島の最前線を巡る1日固定行程です。専用車とガイドが同行し、人数に応じた定額料金でご案内します。",
       "cta": "料金を見る"
+    }
+  },
+  "appShell": {
+    "backButton": {
+      "label": "戻る"
     }
   }
 }
