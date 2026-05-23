@@ -85,8 +85,17 @@ const GLOBAL_FORBIDDEN: ReadonlyArray<[string, string]> = [
   ["small-group group", "duplicated-word typo (P1 audit) — should be 'small-group'"],
   ["1100 Road road-closure", "duplicated-word typo (P1 audit) — should be '1100 Road closure'"],
   ["Visit Korea Korea Foundation", "org-name conflation (P1 audit) — should be 'Korea Foundation'"],
-  ["once daily at 14:00", "Haenyeo timing stale (Phase 5b residual) — VisitKorea official is twice daily 13:30 + 15:00"],
-  ["once daily at 14:00 (1 show/day)", "Haenyeo timing stale (Phase 5b residual) — should be 13:30 / 15:00 twice daily"],
+  // Haenyeo show is currently once daily at 14:00 only (operator ground truth
+  // 2026-05-24; external sites like VisitKorea carry stale 13:30/15:00 info).
+  // Phase Z guards against the stale twice-daily phrasings re-appearing.
+  ["13:30 and 15:00", "Haenyeo timing stale — operator says once daily at 14:00 only"],
+  ["13:30과 15:00", "Haenyeo timing stale — operator says once daily at 14:00 only"],
+  ["13:30と15:00", "Haenyeo timing stale — operator says once daily at 14:00 only"],
+  ["13:30和15:00", "Haenyeo timing stale — operator says once daily at 14:00 only"],
+  ["13:30及15:00", "Haenyeo timing stale — operator says once daily at 14:00 only"],
+  ["13:30 y 15:00", "Haenyeo timing stale — operator says once daily at 14:00 only"],
+  ["13:30 + 15:00", "Haenyeo timing stale — operator says once daily at 14:00 only"],
+  ["13:30/15:00", "Haenyeo timing stale — operator says once daily at 14:00 only"],
   // Note: guide first-name leaks (Steven / Chloe / Jina / Hays) need word-boundary regex
   // because "Jina" overlaps with no current real word but "Hays" is rare. Use regex.
 ];
