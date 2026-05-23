@@ -52,7 +52,7 @@
 | 5b EN | 수치 정정 (verify 필요 항목) | 중 | ~10 항목 × tours | ⏳ |
 | 6 EN | 갤러리 사진-지명 재매핑 | 중 | ~9 tours × galleryItems | ⏳ |
 | 7 EN | DMZ 다리 150m + 타이포(A easy/the our/? photo) + DMZ refund tone + 잡정리 | 낮음 | ~30 edits | ⏳ |
-| **Z (NEW)** | **Verification harness — 33 EN URL fetch + grep 검증 + JSON-LD 일치** | **낮음** | **post-ship smoke test** | **⏳** |
+| **Z (NEW)** | **Verification harness — jest known-bad strings sweep across 33 EN bundles** | **낮음** | **post-ship smoke test** | **✅ shipped 2026-05-23 (this commit)** — caught 3 residual review-aggregate leaks (east-signature-nature-core ×2 + busan-small-group-sightseeing-tour-cruise-passengers ×1), cleaned via `scripts/phase-z-review-aggregate-cleanup.mjs`. CI now blocks re-introduction. |
 | 1b–f / 2b–f / 4b–f / 5 locales | ko/ja/zh/zh-TW/es 동기화 (모든 EN phase 종료 후) | 낮음-중 | ~200 files | ⏳ |
 | 8 | per-phase commit + PR + merge + push | 낮음 | per phase | 🔄 ongoing (4 PRs shipped) |
 
@@ -415,6 +415,7 @@ AND tour_product_page_id IN (SELECT id FROM tour_product_pages WHERE slug = 'jej
 | 5b EN (Bukchon+Sanjeong) | `bb6ceda7` | [#33](https://github.com/simsangsong/atockorea/pull/33) | ✅ `376437bc` |
 | 7 EN | `64501a61` | [#34](https://github.com/simsangsong/atockorea/pull/34) | ✅ `33818d55` |
 | 6 EN (gallery EN-residual cleanup) | (이번 commit) | (이번 commit) | 4 tours × galleryItems language swaps (75 fields). "(아홉산숲)" / "태종대 해안 절벽" / "감천문화마을" / "용두산공원 & 부산타워" / "용두산공원" / "Templo Waujeongsa" → EN equivalents. description body informational parenthetical 보존 (galleryItems 만 sweep). src↔location attribution mismatch 143개는 photo verify 필요 — 별도 phase. |
+| **Z (verification harness)** | (this commit) | (this commit) | `__tests__/tour-content/phase-z-known-bad-strings.test.ts` jest sweep — 6 assertions pass, scans all 33 EN bundles for known-bad strings (Phase 1a fabrications + Phase 4a over-claims + Phase 7 typos/encoding + guide name leaks via `\bSteven\b`/`\bChloe\b`/`\bJina\b`/`\bHays\b`/`\bSunny\b` + cruise-only hotel-pickup leaks). Caught 3 residual review-aggregate leaks ("4.8/5 (127 reviews)" ×2 in east-signature-nature-core + "4.9/5 rating across 32 reviews" in busan-small-group-sightseeing-tour-cruise-passengers), cleaned via `scripts/phase-z-review-aggregate-cleanup.mjs`. Test broadens needle list to catch the "X.X/5 rating across" variant the original Phase 1a sweep missed. |
 | 5b EN | — | — | ⏳ |
 | 6 EN | — | — | ⏳ |
 | 7 EN | — | — | ⏳ |
