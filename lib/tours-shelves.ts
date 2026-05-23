@@ -165,39 +165,46 @@ function isPrivate(t: StaticTourProductRegistration): boolean {
 }
 
 /**
- * Classic-bus shelf — large-coach + cruise-bus tours.
+ * Small-group shelf — STRICT explicit-badge only.
  *
- * Slug rule: ends with `-bus-tour` (e.g. `*-cruise-shore-excursion-bus-tour`,
- * `*-classic-bus-tour`) catches the explicit naming.
+ * User directive 2026-05-23: if a join tour doesn't say "Small group" in its
+ * title / badges, it is NOT a small-group tour — it belongs in the Classic Bus
+ * shelf. The `busan-top-attractions-day-tour` (which DOES carry a `Small group`
+ * badge) is the canonical example of what belongs here; tours like
+ * `east-signature-nature-core` or `jeju-grand-highlights-loop` that have
+ * `maxGroupSize=8` but no badge fall through to Classic Bus per this rule.
  *
- * Badge rule: covers wider authoring variants observed in the catalog —
- * `Large coach`, `Bus tour`, `Classic bus`, and `Air-conditioned coach`
- * (the Seoraksan→Naksansa day trip uses the last one).
- */
-function isClassicBus(t: StaticTourProductRegistration): boolean {
-  if (t.slug.endsWith("-bus-tour") || t.slug.includes("classic-bus")) return true;
-  return t.badges.some((b) => /large coach|bus tour|classic bus|air[- ]?conditioned coach/i.test(b));
-}
-
-/**
- * Small-group shelf — every join-format day tour that isn't a Private charter
- * or a Classic Bus / Large-coach tour.
- *
- * Why three signals (badge OR maxGroupSize OR catch-all join default): badges
- * are authored inconsistently across the catalog (e.g. `east-signature-nature-
- * core` and `jeju-grand-highlights-loop` carry `maxGroupSize=8` but no
- * explicit `Small group` badge), so a badge-only matcher silently drops the
- * majority of the small-group inventory. The fallback to `maxGroupSize ≤ 12`
- * + the explicit private/bus exclusion catches every join-format day tour
- * the user expects to find under "Small Group" without leaking private
- * charters or coach tours.
+ * Implementation: only the badge signal counts. The previous `maxGroupSize ≤
+ * 12` fallback (Phase 7.5, PR #26) was reverted — it was over-inclusive.
  */
 function isSmallGroup(t: StaticTourProductRegistration): boolean {
   if (isPrivate(t)) return false;
-  if (isClassicBus(t)) return false;
-  if (t.badges.some((b) => /small\s*group|small shared van/i.test(b))) return true;
-  if (t.maxGroupSize != null && t.maxGroupSize <= 12) return true;
-  return false;
+  return t.badges.some((b) => /small\s*group|small shared van/i.test(b));
+}
+
+/**
+ * Classic-bus shelf — every join-format day tour that ISN'T explicitly small
+ * group (and isn't Private).
+ *
+ * Two layers:
+ *  1. Explicit signal (slug ends with `-bus-tour`, slug contains
+ *     `classic-bus`, or badges mention `Large coach` / `Bus tour` /
+ *     `Classic bus` / `Air-conditioned coach`) → bus.
+ *  2. Default fallback: if the tour isn't private and isn't an explicit
+ *     small-group tour, treat it as bus too. This honors the user's
+ *     2026-05-23 directive that an unmarked join tour is by definition a
+ *     bus tour.
+ */
+function isClassicBus(t: StaticTourProductRegistration): boolean {
+  if (isPrivate(t)) return false;
+  if (t.slug.endsWith("-bus-tour") || t.slug.includes("classic-bus")) return true;
+  if (t.badges.some((b) => /large coach|bus tour|classic bus|air[- ]?conditioned coach/i.test(b))) {
+    return true;
+  }
+  // Default: anything that isn't Private and isn't a badge-marked small-group
+  // tour rolls into the Classic Bus shelf.
+  if (t.badges.some((b) => /small\s*group|small shared van/i.test(b))) return false;
+  return true;
 }
 
 // ---------------------------------------------------------------------------

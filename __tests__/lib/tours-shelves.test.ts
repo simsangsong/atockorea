@@ -119,33 +119,28 @@ describe("format-based shelf matchers", () => {
     expect(isCruise(tour("some-slug", ["Cruise excursion"]))).toBe(true);
   });
 
-  it("isSmallGroup matches explicit small-group badges", () => {
-    expect(isSmallGroup(tour("any", ["Small group"]))).toBe(true);
+  it("isSmallGroup matches explicit small-group badges only (strict — user 2026-05-23)", () => {
+    // Canonical user example: busan-top-attractions-day-tour DOES say
+    // "Small group" → small-group.
+    expect(isSmallGroup(tour("busan-top-attractions-day-tour", ["Small group"], { maxGroupSize: 12 }))).toBe(true);
     expect(isSmallGroup(tour("any", ["Small Group"]))).toBe(true);
     expect(isSmallGroup(tour("any", ["Small shared van"]))).toBe(true);
   });
 
-  it("isSmallGroup falls back to maxGroupSize ≤ 12 when badges don't say so", () => {
-    // Real-world: east-signature-nature-core / jeju-grand-highlights-loop /
-    // southwest-hallasan-osulloc-aewol carry maxGroupSize=8 but no `Small group`
-    // badge. The badge-only matcher silently dropped them.
-    expect(isSmallGroup(tour("east-signature-nature-core", ["First-Time Friendly", "East Jeju Signature"], { maxGroupSize: 8 }))).toBe(true);
-    expect(isSmallGroup(tour("jeju-grand-highlights-loop", ["Best for One-Day Visitors"], { maxGroupSize: 8 }))).toBe(true);
-    expect(isSmallGroup(tour("southwest-hallasan-osulloc-aewol", ["Great for First-Time Jeju Visitors"], { maxGroupSize: 8 }))).toBe(true);
-    expect(isSmallGroup(tour("busan-top-attractions-day-tour", ["Small group"], { maxGroupSize: 12 }))).toBe(true);
+  it("isSmallGroup does NOT pick up tours without an explicit badge (user directive — unbadged join = bus)", () => {
+    // east-signature-nature-core / jeju-grand-highlights-loop / southwest-
+    // hallasan-osulloc-aewol all carry maxGroupSize=8 but no `Small group`
+    // badge. Per the user's 2026-05-23 rule, these belong in Classic Bus, not
+    // Small Group.
+    expect(isSmallGroup(tour("east-signature-nature-core", ["First-Time Friendly", "East Jeju Signature"], { maxGroupSize: 8 }))).toBe(false);
+    expect(isSmallGroup(tour("jeju-grand-highlights-loop", ["Best for One-Day Visitors"], { maxGroupSize: 8 }))).toBe(false);
+    expect(isSmallGroup(tour("southwest-hallasan-osulloc-aewol", ["Great for First-Time Jeju Visitors"], { maxGroupSize: 8 }))).toBe(false);
   });
 
-  it("isSmallGroup excludes Private and Classic Bus, even when maxGroupSize ≤ 12", () => {
-    // incheon-seoul-private-car-shore-excursion-cruise: maxGroupSize=12 but
-    // Private → must NOT land in small-group.
-    expect(isSmallGroup(tour("incheon-seoul-private-car-shore-excursion-cruise", ["Private", "Cruise"], { maxGroupSize: 12 }))).toBe(false);
-    // Large coach bus tour with no maxGroupSize → Bus, not Small Group.
-    expect(isSmallGroup(tour("busan-cruise-shore-excursion-bus-tour", ["Cruise excursion", "Large coach"]))).toBe(false);
-  });
-
-  it("isSmallGroup returns false when no signal at all", () => {
-    // A tour with no maxGroupSize and no small-group / large-coach / private badge.
-    expect(isSmallGroup(tour("hypothetical-no-meta", ["UNESCO"]))).toBe(false);
+  it("isSmallGroup excludes Private even when the badge says small-group", () => {
+    // Defensive: a private tour mis-tagged with a small-group badge should
+    // still land in Private only, not in Small Group.
+    expect(isSmallGroup(tour("jeju-island-private-car-charter-tour", ["Private Tour", "Small group"]))).toBe(false);
   });
 
   it("isPrivate matches private slug or Private Tour badge", () => {
@@ -156,20 +151,41 @@ describe("format-based shelf matchers", () => {
     expect(isPrivate(tour("east-signature-nature-core"))).toBe(false);
   });
 
-  it("isClassicBus matches bus-tour slugs and bus/coach badges (incl. air-conditioned)", () => {
+  it("isClassicBus matches explicit bus-tour slugs and bus/coach badges (incl. air-conditioned)", () => {
     expect(isClassicBus(tour("busan-cruise-shore-excursion-bus-tour"))).toBe(true);
     expect(isClassicBus(tour("any", ["Large coach"]))).toBe(true);
     expect(isClassicBus(tour("any", ["Bus tour"]))).toBe(true);
-    // Real-world: seoul-seoraksan-naksansa-…-day-trip uses "Air-conditioned coach".
     expect(isClassicBus(tour("seoul-seoraksan-naksansa-temple-naksan-beach-day-trip", ["Day trip from Seoul", "Air-conditioned coach"]))).toBe(true);
     expect(isClassicBus(tour("any", ["air conditioned coach"]))).toBe(true);
-    expect(isClassicBus(tour("east-signature-nature-core"))).toBe(false);
   });
 
-  it("multi-shelf overlap (B34) — small-group cruise lands in both", () => {
+  it("isClassicBus catches unmarked join tours as the default (user 2026-05-23 directive)", () => {
+    // No private signal, no small-group badge, no bus-tour slug. Per the user
+    // rule, these are bus tours.
+    expect(isClassicBus(tour("east-signature-nature-core", ["First-Time Friendly", "East Jeju Signature"], { maxGroupSize: 8 }))).toBe(true);
+    expect(isClassicBus(tour("jeju-grand-highlights-loop", ["Best for One-Day Visitors"], { maxGroupSize: 8 }))).toBe(true);
+    expect(isClassicBus(tour("southwest-hallasan-osulloc-aewol", ["Great for First-Time Jeju Visitors"], { maxGroupSize: 8 }))).toBe(true);
+    expect(isClassicBus(tour("jeju-cherry-blossom-tour-east-route", ["Spring only", "East Jeju"], { maxGroupSize: 8 }))).toBe(true);
+    expect(isClassicBus(tour("busan-plum-cherry-blossom-day-tour-to-yangsan-gyeongju", ["Spring Seasonal", "Plum + Cherry Blossom"]))).toBe(true);
+    expect(isClassicBus(tour("pocheon-sanjeong-lake-herb-island-art-valley", ["Nature & Photo Trip"], { maxGroupSize: 8 }))).toBe(true);
+    expect(isClassicBus(tour("seoul-suwon-hwaseong-waujeongsa-starfield", ["UNESCO Heritage", "Heritage + Modern Day Trip"], { maxGroupSize: 8 }))).toBe(true);
+  });
+
+  it("isClassicBus does NOT pull in Private tours (even via the default fallback)", () => {
+    expect(isClassicBus(tour("jeju-island-private-car-charter-tour", ["Private Tour"]))).toBe(false);
+    expect(isClassicBus(tour("seoul-private-nami-morning-calm-petite-france", ["Private Tour"]))).toBe(false);
+  });
+
+  it("isClassicBus does NOT pull in explicit small-group tours", () => {
+    expect(isClassicBus(tour("from-busan-gyeongju-ancient-capital-day-tour", ["Small group", "Calmer pace"], { maxGroupSize: 8 }))).toBe(false);
+    expect(isClassicBus(tour("jeju-eastern-unesco-spots-day-tour", ["Small group", "Jeju", "East Jeju"], { maxGroupSize: 8 }))).toBe(false);
+  });
+
+  it("multi-shelf overlap (B34) — small-group cruise lands in both Cruise and Small Group", () => {
     const t = tour("jeju-cruise-shore-excursion-small-group-tour", ["Cruise excursion", "Small group"]);
     expect(isCruise(t)).toBe(true);
     expect(isSmallGroup(t)).toBe(true);
+    expect(isClassicBus(t)).toBe(false);
   });
 
   it("cruise + bus combo lands in cruise + classic-bus, NOT small-group", () => {
