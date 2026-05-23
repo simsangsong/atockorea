@@ -6,6 +6,55 @@ import { useI18n } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
 /**
+ * °C / °F pill toggle rendered below the two live-weather cards. Stays inside
+ * the weather strip's amber card so it visually groups with the temperatures
+ * it controls.
+ */
+function TempUnitToggle({
+  unit,
+  onChange,
+  locale,
+}: {
+  unit: TempUnit;
+  onChange: (next: TempUnit) => void;
+  locale: string;
+}) {
+  const labels: Record<TempUnit, string> = {
+    C: locale === "ko" ? "섭씨로 보기" : locale === "ja" ? "摂氏で表示" : locale.startsWith("zh") ? "切换为摄氏度" : locale === "es" ? "Mostrar en Celsius" : "Show in Celsius",
+    F: locale === "ko" ? "화씨로 보기" : locale === "ja" ? "華氏で表示" : locale.startsWith("zh") ? "切换为华氏度" : locale === "es" ? "Mostrar en Fahrenheit" : "Show in Fahrenheit",
+  };
+  const units: readonly TempUnit[] = ["C", "F"];
+  return (
+    <div
+      role="group"
+      aria-label={locale === "ko" ? "온도 단위" : "Temperature unit"}
+      className="inline-flex rounded-full bg-white/85 p-0.5 ring-1 ring-amber-100/70 shadow-[0_1px_2px_rgba(26,35,50,0.04)]"
+    >
+      {units.map((u) => {
+        const active = u === unit;
+        return (
+          <button
+            key={u}
+            type="button"
+            onClick={() => onChange(u)}
+            aria-pressed={active}
+            aria-label={labels[u]}
+            className={cn(
+              "rounded-full px-2.5 py-0.5 text-[11px] font-semibold tabular-nums transition-colors",
+              active
+                ? "bg-foreground text-white"
+                : "text-muted-foreground hover:text-foreground",
+            )}
+          >
+            °{u}
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
+/**
  * If a body line is a run-on of "Label (HH:MM), Label (HH:MM), Label (HH:MM)"
  * — typical for pickup/drop-off lists — split it into one sub-item per time
  * so they render as discrete bullets instead of a wall of commas.
@@ -59,6 +108,13 @@ function renderInline(text: string): React.ReactNode[] {
 }
 import type { ForecastApiPayload } from "@/lib/weather/forecast-logic";
 import { isWmoPrecipitationCode } from "@/lib/weather/open-meteo";
+import {
+  convertStaticTempString,
+  formatLiveTemp,
+  useTempUnit,
+  cToF,
+  type TempUnit,
+} from "@/lib/weather/temperature-units";
 import type { EastSignatureNatureCoreDetailViewModel } from "../eastSignatureNatureCoreDetailViewModel";
 
 const SEASON_ICONS = {
@@ -148,6 +204,7 @@ export function TourPracticalDetails({
   const { locale } = useI18n();
   const [expandedItems, setExpandedItems] = useState<string[]>([]);
   const [liveForecast, setLiveForecast] = useState<ForecastApiPayload | null>(null);
+  const [tempUnit, setTempUnit] = useTempUnit();
 
   useEffect(() => {
     if (!useLiveWeather) return;
@@ -184,13 +241,17 @@ export function TourPracticalDetails({
   const staticTomorrow = practicalWeatherStatic?.tomorrow;
 
   const todayTemp =
-    cur != null ? `${cur.tempC}°` : (staticToday?.temp ?? "—");
+    cur != null
+      ? formatLiveTemp(cur.tempC, tempUnit)
+      : convertStaticTempString(staticToday?.temp, tempUnit);
   const todayLabel =
     cur != null ? `Today · ${cur.conditionLabel}` : (staticToday?.label ?? "");
   const tomorrowTemp =
     tomorrowDay != null
-      ? `${tomorrowDay.tempMax}°/${tomorrowDay.tempMin}°`
-      : (staticTomorrow?.temp ?? "—");
+      ? tempUnit === "C"
+        ? `${tomorrowDay.tempMax}°/${tomorrowDay.tempMin}°`
+        : `${cToF(tomorrowDay.tempMax)}°/${cToF(tomorrowDay.tempMin)}°`
+      : convertStaticTempString(staticTomorrow?.temp, tempUnit);
   const tomorrowLabel =
     tomorrowDay != null
       ? `Tomorrow · ${tomorrowDay.conditionLabel}`
@@ -284,6 +345,9 @@ export function TourPracticalDetails({
               <p className="text-[11px] text-muted-foreground mt-1">{tomorrowLabel}</p>
             </div>
           </div>
+        </div>
+        <div className="relative mt-3 flex items-center justify-end">
+          <TempUnitToggle unit={tempUnit} onChange={setTempUnit} locale={locale} />
         </div>
       </div>
 
