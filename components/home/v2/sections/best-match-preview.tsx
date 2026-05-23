@@ -16,8 +16,7 @@ import {
   buildV2BestMatchResultViewModelFromApi,
 } from "@/lib/home/adapters/v2-best-match-result-vm";
 import { getFeaturedJoinTourProduct } from "@/lib/home/featured-join-tour-offer";
-import { getSimilarTours } from "@/lib/home/similar-tours";
-import { SimilarToursStrip } from "@/components/home/v2/SimilarToursStrip";
+import { MatchResultNextSteps } from "@/components/home/v2/MatchResultNextSteps";
 import { homeBtnPrimary, homeBtnSecondary } from "@/lib/home/home-button-classes";
 import {
   asPlannerDestination,
@@ -155,13 +154,6 @@ export function BestMatchPreview() {
       groupMax: groupMaxFor(idle),
     };
   }, [matchResult, t, locale]);
-
-  // v3 §D #1 — similar-tours strip for the matched winner.
-  const similarTours = useMemo(() => {
-    const slug = matchResult?.winner?.product_id;
-    if (!slug) return [];
-    return getSimilarTours(slug, locale, 3);
-  }, [matchResult?.winner?.product_id, locale]);
 
   if (phase === "idle") return null;
 
@@ -413,17 +405,28 @@ export function BestMatchPreview() {
               </div>
             </div>
 
-            {/* v3 §D #1 — winner와 유사한 투어 3개 추천 (region/badge 기반 score) */}
-            {phase === "result" && matchResult?.winner?.product_id && similarTours.length > 0 ? (
-              <SimilarToursStrip
-                winnerSlug={matchResult.winner.product_id}
-                tours={similarTours}
-              />
-            ) : null}
-
             <p className="text-center text-caption font-medium text-slate-600 mt-3 px-1 md:mt-5">
               {resultVm.matchResultRecommendLine}
             </p>
+
+            <MatchResultNextSteps
+              browseHref={resultVm.browseToursHref}
+              buildAction={
+                bridgeDestination
+                  ? {
+                      kind: "button",
+                      label: t("premium.v2.planner.customizeThisDay", {
+                        destination: t(PLANNER_DEST_LABEL_KEY[bridgeDestination]),
+                      }),
+                      onClick: handleCustomizeFromMatch,
+                    }
+                  : {
+                      kind: "link",
+                      label: t("premium.v2.planner.modeBuild"),
+                      href: "/itinerary-builder",
+                    }
+              }
+            />
 
             <div className="mt-3 flex flex-col items-stretch gap-2 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-3 md:mt-4">
               <V0ShadcnButton
@@ -434,37 +437,8 @@ export function BestMatchPreview() {
               >
                 {resultVm.matchResultBackCta}
               </V0ShadcnButton>
-              <V0ShadcnButton asChild variant="outline" className={cn(homeBtnSecondary, "sm:w-auto sm:px-5")}>
-                <Link href={resultVm.browseToursHref}>{resultVm.seeOtherToursCta}</Link>
-              </V0ShadcnButton>
-              {bridgeDestination ? (
-                <V0ShadcnButton
-                  type="button"
-                  variant="outline"
-                  className={cn(homeBtnSecondary, "sm:w-auto sm:px-5")}
-                  onClick={handleCustomizeFromMatch}
-                >
-                  {t("premium.v2.planner.customizeThisDay", {
-                    destination: t(PLANNER_DEST_LABEL_KEY[bridgeDestination]),
-                  })}
-                </V0ShadcnButton>
-              ) : null}
             </div>
 
-            <p className="text-center text-micro text-slate-500 mt-3 leading-relaxed md:mt-5">
-              <span className="mr-1 font-semibold uppercase tracking-[0.12em] text-slate-400">
-                {resultVm.alsoConsiderLabel}
-              </span>
-              <Link href={resultVm.customJoinHref} className="font-semibold text-slate-600 underline-offset-2 hover:underline">
-                {resultVm.alsoConsiderPrivate}
-              </Link>
-              <span className="mx-1.5 text-slate-300" aria-hidden>
-                ·
-              </span>
-              <Link href={resultVm.browseToursHref} className="font-semibold text-slate-600 underline-offset-2 hover:underline">
-                {resultVm.alsoConsiderBus}
-              </Link>
-            </p>
           </div>
         ) : null}
       </div>
