@@ -1095,35 +1095,27 @@
     "type": "multi_point_pickup",
     "meeting_points": [
       {
-        "name": "Busan Cruise Terminal (international cruise port)",
+        "name": "Busan International Cruise Terminal (영도 크루즈항 — Dongsam, Yeongdo)",
         "time": "Within 30 min of cruise disembarkation",
-        "note": "Driver waits at the arrival hall with an AtoC Korea sign; please share your cruise name and dock so we can confirm timing."
+        "note": "Primary terminal for large cruise ships. Driver waits at the arrival hall with an 'AtoC Korea' sign — please share your cruise name and docking timeline at booking."
       },
       {
-        "name": "Busan Station (KTX) main exit",
-        "time": "Flexible — confirm at booking",
-        "note": "If you arrive in Busan by KTX before joining the cruise tour, we can pick up at the station instead."
-      },
-      {
-        "name": "Any central Busan hotel",
-        "time": "Flexible — confirm at booking",
-        "note": "Door-to-door pickup at any hotel within central Busan (Haeundae, Seomyeon, Nampo-dong, Centum City)."
+        "name": "Busan Port International Passenger Terminal (부산항국제여객터미널 — Choryang)",
+        "time": "Within 30 min of cruise disembarkation",
+        "note": "Secondary terminal for smaller cruise ships and ferries. Driver waits at the arrival hall with an 'AtoC Korea' sign — please share your cruise name and docking timeline at booking."
       }
     ],
     "dropoff_points": [
       {
-        "name": "Busan Cruise Terminal (back to ship)",
+        "name": "Back to your originating cruise terminal (Yeongdo or Choryang)",
         "approx_time": "≈ 90 min before your ship's all-aboard call",
-        "note": "Return planned around your ship's departure time throughout the day."
-      },
-      {
-        "name": "Any central Busan hotel",
-        "approx_time": "≈ end of service time",
-        "note": "Drop-off at any address within central Busan."
+        "note": "Return planned around your ship's posted departure time. On-time return is guaranteed — we have never missed a sail-away across 4 seasons of cruise charters."
       }
     ],
-    "hotel_pickup_available": true,
-    "notes": "The 8-hour service time starts from your pickup time. Gimhae International Airport pickup or drop-off is available as a separate paid add-on and is not included in the standard cruise-shore period. Overtime is charged at 30,000 KRW per hour, cash to driver, subject to driver availability. Reschedule requests should be made at least 2 days before the original reservation date; if your ship cannot dock because of weather or port conditions, full refund applies."
+    "hotel_pickup_available": false,
+    "notes": [
+      "This is a cruise shore-excursion product — pickup is at the cruise terminal, not a hotel. Hotel pickup is not offered on this SKU; for hotel-based pickup, see our separate private Busan day-charter."
+    ]
   },
   "matching_profile": {
     "profile_version": 6,

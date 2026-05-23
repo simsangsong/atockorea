@@ -1097,7 +1097,7 @@
     {
       "id": "cruise-pickup",
       "question": "Where exactly is the cruise terminal pickup?",
-      "answer": "At the Busan Port International Cruise Terminal (부산항국제여객터미널) arrival hall, where the AtoC Korea guide waits with a sign. The coach is parked in the terminal coach lot, a 2-minute walk through the covered concourse. Pickup is 08:30; please be at the meeting point by 08:25. If your ship docks at a different terminal (e.g. Busan Port Coral Terminal), notify at booking and the meeting point will be adjusted."
+      "answer": "At the cruise terminal arrival hall. Large cruise ships dock at the Busan International Cruise Terminal (Yeongdo, Dongsam); smaller cruise ships and ferries dock at the Busan Port International Passenger Terminal (Choryang). The pickup terminal is determined by your ship — confirm at booking. Your guide waits with an 'AtoC Korea' sign in the arrival hall, and the coach is parked in the terminal coach lot."
     },
     {
       "id": "sail-away",
@@ -1210,17 +1210,17 @@
   },
   "pickup_dropoff": {
     "primary": {
-      "name": "Busan Port International Cruise Terminal",
-      "address": "Choryangdae-ro 24, Dong-gu, Busan",
-      "time": "08:30 pickup / 19:15–19:30 drop-off",
-      "instructions": "Meet the guide at the terminal arrival hall — look for the 'AtoC Korea / Busan Coastal Tour' sign. Coach boarding at 08:25 in the terminal coach lot, a 2-minute walk through the covered concourse."
+      "name": "Busan International Cruise Terminal (영도 크루즈항 — Dongsam, Yeongdo)",
+      "address": "Dongsam-dong, Yeongdo-gu, Busan",
+      "time": "Confirmed at booking (≈30 min after ship docking) / Return ≈90 min before sail-away",
+      "instructions": "For large cruise ships. Meet the guide at the terminal arrival hall — look for the 'AtoC Korea' sign. Coach parked in the terminal coach lot."
     },
     "alternates": [
       {
-        "name": "Busan Port Coral International Passenger Terminal",
+        "name": "Busan Port International Passenger Terminal (부산항국제여객터미널 — Choryang)",
         "address": "Chungjang-daero 206, Jung-gu, Busan",
-        "time": "08:30 pickup (alternate)",
-        "instructions": "If your cruise line docks at the Coral terminal rather than the Cruise terminal, notify at booking — the coach will pick up at the Coral terminal arrival hall instead."
+        "time": "Alternate pickup for ships docking at Choryang",
+        "instructions": "If your cruise line docks at the Choryang International Passenger Terminal rather than the Yeongdo Cruise Terminal, notify at booking — the coach will pick up at the Choryang terminal arrival hall instead."
       }
     ]
   },
