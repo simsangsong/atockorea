@@ -281,14 +281,11 @@
     "dashboardLabel": "儀表板",
     "reviewsLabel": "評價",
     "settingsLabel": "設定",
-    "dashboard": "儀表板",
     "myBookings": "我的預訂",
     "wishlist": "收藏",
-    "reviews": "評價",
     "history": "歷史",
     "upcoming": "即將到來",
     "upcomingTours": "即將到來的旅遊",
-    "settings": "設定",
     "signOut": "登出",
     "backToMyPage": "返回我的",
     "totalBookings": "總預訂數",
@@ -310,7 +307,196 @@
     "dateYesterday": "昨天",
     "dateDaysAgo": "{days} 天前",
     "dateWeeksAgo": "{weeks} 週前",
-    "dateMonthsAgo": "{months} 個月前"
+    "dateMonthsAgo": "{months} 個月前",
+    "dashboard": {
+      "errorBanner": "部分儀表板資料載入失敗",
+      "retry": "重試",
+      "pendingReviewsTitle": "待寫的評價",
+      "pendingReviewsEmpty": "暫無待寫的評價",
+      "nextTripTitle": "下一段旅程",
+      "nextTripCta": "查看詳情",
+      "nextTripEmpty": "暫無即將到來的行程",
+      "nextTripBrowse": "瀏覽行程"
+    },
+    "reviews": {
+      "write": {
+        "title": "撰寫評價",
+        "subtitle": "分享你在 {tour} 的體驗",
+        "ratingLabel": "評分",
+        "ratingRequired": "請選擇評分",
+        "ratingSrLabel": "{value} 星",
+        "titleLabel": "評價標題（選填）",
+        "titlePlaceholder": "為你的評價命名",
+        "commentLabel": "你的評價",
+        "commentPlaceholder": "分享你的體驗...",
+        "commentRequired": "請填寫評價內容",
+        "commentCount": "{count} 字",
+        "photosLabel": "照片（選填）",
+        "photosUploadFailed": "照片上傳失敗",
+        "cancel": "取消",
+        "submit": "送出評價",
+        "submitting": "送出中...",
+        "signInToUpload": "請登入後再上傳圖片",
+        "signInToSubmit": "請登入後再撰寫評價",
+        "windowNotOpen": "評價於行程當日韓國時間 13:00 起開放",
+        "editTitle": "編輯評價",
+        "updateSubmit": "更新評價",
+        "genericError": "無法處理你的評價"
+      },
+      "cardEdit": "編輯",
+      "cardDelete": "刪除",
+      "cardMenu": "開啟評價選單",
+      "deleteConfirmTitle": "刪除這則評價？",
+      "deleteConfirmDescription": "此動作無法復原。",
+      "deleteConfirmCta": "刪除"
+    },
+    "settings": {
+      "savedBadge": "已儲存",
+      "connectedAccountsTitle": "已綁定的帳號",
+      "connectedAccountsEmpty": "尚未綁定任何外部帳號",
+      "dangerZoneTitle": "危險區域",
+      "dangerZoneDescription": "帳號刪除功能即將上線。如有緊急需求，請聯絡客服。",
+      "deleteAccount": "刪除帳號",
+      "avatarUploadLabel": "更換頭像",
+      "avatarRemove": "使用預設頭像"
+    },
+    "bookingsPageSubtitle": "一處管理你的全部預訂",
+    "bookingsSectionUpcoming": "即將到來的行程",
+    "bookingsSectionCompleted": "已完成的行程",
+    "bookingsSectionCancelled": "已取消的行程",
+    "bookingsEmpty": "暫無預訂",
+    "bookingsLoading": "正在載入預訂...",
+    "bookingsError": "錯誤：{message}",
+    "cancelBookingCta": "取消預訂",
+    "writeReviewCta": "撰寫評價",
+    "cancelNotAllowed24h": "行程開始前 24 小時內無法取消。請聯絡客服處理。",
+    "confirmCancelBooking": "確定要取消這筆預訂嗎？",
+    "cancelSuccess": "已成功取消預訂",
+    "cancelFailed": "取消預訂失敗：{message}",
+    "signInToCancel": "請登入後再取消預訂",
+    "upcomingPageSubtitle": "管理你即將到來的預訂",
+    "upcomingEmpty": "暫無即將到來的行程",
+    "upcomingPickupTba": "待定",
+    "historyPageTitle": "預訂歷史",
+    "historyPageSubtitle": "查看過往的預訂紀錄",
+    "historyEmpty": "暫無預訂紀錄",
+    "historyStatusCompleted": "已完成",
+    "historyStatusCancelled": "已取消",
+    "historyRebookCta": "再次預訂",
+    "reviewsPageTitle": "我的評價",
+    "reviewsPageSubtitle": "可從已完成的預訂撰寫新評價。已發布的評價顯示在下方，無法編輯或刪除。",
+    "reviewsSectionTitle": "你的評價",
+    "reviewsEmpty": "你還沒有寫過評價。",
+    "reviewsLoading": "載入中...",
+    "wishlistPageTitle": "我的願望清單",
+    "wishlistCountOne": "已儲存 {count} 個行程",
+    "wishlistCountMany": "已儲存 {count} 個行程",
+    "wishlistLoading": "正在載入願望清單...",
+    "wishlistRemoveConfirm": "從願望清單中移除這個行程？",
+    "wishlistRemoveFailed": "從願望清單移除失敗：{message}",
+    "wishlistSignInRequired": "請登入後再管理願望清單",
+    "commonRetry": "重試",
+    "commonViewDetails": "查看詳情",
+    "common": {
+      "verifyingSession": "正在驗證你的登入...",
+      "confirm": {
+        "cancelBookingTitle": "取消這筆預訂？",
+        "cancelBookingDescription": "取消後預訂立即結束。如有退款，依適用政策處理。",
+        "cancelBookingConfirm": "取消預訂",
+        "cancel": "關閉",
+        "removeWishlistTitle": "從願望清單移除？",
+        "removeWishlistDescription": "隨時可以再加回來。",
+        "removeWishlistConfirm": "移除",
+        "signOutTitle": "登出？",
+        "signOutDescription": "需要重新登入才能查看預訂。",
+        "signOutConfirm": "登出"
+      },
+      "toast": {
+        "bookingCancelled": "預訂已取消",
+        "bookingCancelFailed": "取消預訂失敗",
+        "bookingCancelNotAllowed24h": "行程開始前 24 小時內無法取消",
+        "signInRequired": "請登入後繼續",
+        "wishlistRemoved": "已從願望清單移除",
+        "wishlistRemoveFailed": "從願望清單移除失敗",
+        "saved": "已儲存",
+        "saveFailed": "儲存失敗",
+        "reviewSubmitted": "評價已送出",
+        "reviewUpdated": "評價已更新",
+        "reviewDeleted": "評價已刪除",
+        "reviewFailed": "評價錯誤：{message}",
+        "reviewWindowNotOpen": "評價於行程當日韓國時間 13:00 起開放",
+        "comingSoon": "即將推出",
+        "avatarUpdated": "頭像已更新",
+        "avatarUploadFailed": "頭像上傳失敗"
+      },
+      "percentOff": "{value}% 折扣",
+      "loadingLabel": "載入中...",
+      "errorLoad": "無法載入此內容"
+    },
+    "bookings": {
+      "guestsLabel": "人數",
+      "receiptCta": "查看收據",
+      "addToCalendar": "加入行事曆",
+      "dayCountdownToday": "今天",
+      "dayCountdownTomorrow": "明天",
+      "dayCountdownPast": "已過",
+      "dayCountdownFuture": "還剩 {days} 天"
+    },
+    "landing": {
+      "greetingMorning": "早安，{name}",
+      "greetingAfternoon": "午安，{name}",
+      "greetingEvening": "晚安，{name}",
+      "subtitle": "一眼掌握你的 AtoCKorea",
+      "viewDashboard": "查看儀表板",
+      "errorBanner": "部分資料載入失敗",
+      "retry": "重試",
+      "profile": {
+        "ringLabel": "個人資料",
+        "completeCta": "完成個人資料 · {pct}%",
+        "completeBadge": "資料已完成"
+      },
+      "nextTrip": {
+        "badgeLabel": "你的下一段旅程",
+        "pickupLabel": "接送",
+        "pickupTba": "待定",
+        "guests": "{count} 位",
+        "viewDetails": "查看詳情",
+        "addToCalendar": "加入行事曆",
+        "receipt": "開啟收據"
+      },
+      "emptyHero": {
+        "title": "尚無即將到來的行程",
+        "subtitle": "瀏覽精選的濟州體驗，規劃你的第一段旅程。",
+        "cta": "探索濟州行程"
+      },
+      "quickAccess": {
+        "title": "快速入口",
+        "count": "{count} 項",
+        "view": "查看",
+        "items": {
+          "bookings": "我的預訂",
+          "upcoming": "即將到來",
+          "history": "歷史紀錄",
+          "reviews": "評價",
+          "wishlist": "願望清單",
+          "settings": "設定"
+        }
+      },
+      "pendingReview": {
+        "title": "分享一下你對 {title} 的感受",
+        "cta": "撰寫評價",
+        "more": "還有 {count} 則待寫"
+      },
+      "wishlist": {
+        "sectionTitle": "已儲存的行程",
+        "viewAll": "查看全部（{count}）"
+      },
+      "recommendations": {
+        "title": "為你推薦",
+        "subtitle": "精選高分行程，特別為你",
+        "empty": "暫無推薦"
+      }
+    }
   },
   "admin": {
     "title": "管理員儀表板",
@@ -456,7 +642,19 @@
     "addedToCart": "已加入購物車！",
     "booked": "已預訂",
     "save": "收藏",
-    "discountOff": "{percent}% 折扣"
+    "discountOff": "{percent}% 折扣",
+    "noItinerary": "尚無行程",
+    "moreSpots": "+{count} 個景點",
+    "duration": "時長",
+    "lunch": "午餐",
+    "tickets": "門票",
+    "pickup": "接送",
+    "included": "包含",
+    "notIncluded": "不包含",
+    "pickupPointsCountOne": "{count} 個接送點",
+    "pickupPointsCountOther": "{count} 個接送點",
+    "hotelPickup": "飯店接送",
+    "cruiseTerminalPickup": "郵輪碼頭接送"
   },
   "toursList": {
     "subtitle": "含行程的所有旅遊產品，每行一張卡片。",
@@ -577,7 +775,27 @@
           "subtitle": "9 月 30 日開始。粉黛亂子草季。"
         }
       }
-    }
+    },
+    "eyebrow": "行程",
+    "resultsCount": "{count} 個結果",
+    "price": "價格",
+    "priceFrom": "{amount} 起",
+    "priceUpTo": "最高 {amount}",
+    "priceRange": "{min} – {max}",
+    "minPlaceholder": "最小",
+    "maxPlaceholder": "最大",
+    "apply": "套用",
+    "reset": "重設",
+    "resetFilters": "重設篩選",
+    "loadMore": "載入更多",
+    "loadingMore": "載入中...",
+    "emptyTitle": "沒有符合條件的行程。",
+    "emptyHint": "請嘗試移除篩選條件，或重設查看全部行程。",
+    "searchAriaLabel": "搜尋行程",
+    "destinationAriaLabel": "依目的地篩選",
+    "sortAriaLabel": "排序行程",
+    "priceAriaLabel": "價格區間",
+    "popularHint": "依評分、預訂量與新鮮度精選"
   },
   "home": {
     "hero": {
@@ -2008,7 +2226,10 @@
     "emailPlaceholder": "you@example.com",
     "verificationPlaceholder": "000000",
     "fullNamePlaceholder": "王小明",
-    "birthYearExample": "例：{year}"
+    "birthYearExample": "例：{year}",
+    "accountGroupTitle": "帳號",
+    "identityGroupTitle": "身分資料",
+    "contactGroupTitle": "聯絡方式與同意"
   },
   "settingsPage": {
     "title": "帳戶設定",
@@ -2243,6 +2464,11 @@
       "title": "DMZ私人之旅",
       "body": "前往臨津閣、第三隧道、都羅展望台與紺岳山吊橋——探訪朝鮮半島最前線的一日固定行程。專車與導遊全程陪同，依團隊人數收取固定費用。",
       "cta": "查看價格"
+    }
+  },
+  "appShell": {
+    "backButton": {
+      "label": "返回"
     }
   }
 }

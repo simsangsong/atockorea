@@ -642,7 +642,19 @@
     "addedToCart": "장바구니에 추가되었습니다!",
     "booked": "예약됨",
     "save": "저장",
-    "discountOff": "{percent}% 할인"
+    "discountOff": "{percent}% 할인",
+    "noItinerary": "일정 없음",
+    "moreSpots": "+{count}곳 더",
+    "duration": "소요 시간",
+    "lunch": "점심",
+    "tickets": "입장권",
+    "pickup": "픽업",
+    "included": "포함",
+    "notIncluded": "미포함",
+    "pickupPointsCountOne": "픽업 장소 {count}곳",
+    "pickupPointsCountOther": "픽업 장소 {count}곳",
+    "hotelPickup": "호텔 픽업",
+    "cruiseTerminalPickup": "크루즈 터미널 픽업"
   },
   "toursList": {
     "subtitle": "일정이 포함된 모든 투어 상품, 카드 한 줄에 하나씩.",
@@ -1321,7 +1333,6 @@
       "selectThemeDesc": "키워드를 눌러 추가하거나 직접 입력하세요.",
       "confirmSuccess": "일정이 준비됐습니다",
       "confirmSuccessDesc": "결제가 완료되면 일정이 등록되고 다른 여행자들이 참여할 수 있습니다.",
-      "verifySuccessKo": "검증된 일정입니다. 즐거운 여행 되세요.",
       "proposeThisTour": "결제 후 투어 발의하기",
       "proposedDone": "투어가 발의됐습니다! 다른 여행자들이 참여할 수 있습니다.",
       "jejuExtraNotice": "제주 동·서 양쪽 방문 시 추가 요금이 발생하며, 당일 가이드에게 현금으로 지불해 주세요.",
@@ -2453,6 +2464,11 @@
       "title": "DMZ 프라이빗 투어",
       "body": "임진각, 제3땅굴, 도라전망대, 감악산 출렁다리까지 — 한반도 최전방을 둘러보는 하루 고정 일정입니다. 전용 차량과 가이드가 함께하며, 인원수에 따른 고정 요금으로 안내합니다.",
       "cta": "요금 확인하기"
+    }
+  },
+  "appShell": {
+    "backButton": {
+      "label": "뒤로"
     }
   }
 }

@@ -281,13 +281,10 @@
     "dashboardLabel": "Panel de control",
     "reviewsLabel": "Reseñas",
     "settingsLabel": "Configuración",
-    "dashboard": "Panel de control",
     "myBookings": "Mis reservas",
     "wishlist": "Lista de deseos",
-    "reviews": "Reseñas",
     "history": "Historial",
     "upcoming": "Próximos",
-    "settings": "Configuración",
     "signOut": "Cerrar sesión",
     "backToMyPage": "Volver a mi página",
     "upcomingTours": "Tours próximos",
@@ -310,7 +307,196 @@
     "dateYesterday": "Ayer",
     "dateDaysAgo": "Hace {days} días",
     "dateWeeksAgo": "Hace {weeks} semanas",
-    "dateMonthsAgo": "Hace {months} meses"
+    "dateMonthsAgo": "Hace {months} meses",
+    "dashboard": {
+      "errorBanner": "No pudimos cargar parte de los datos de tu panel",
+      "retry": "Reintentar",
+      "pendingReviewsTitle": "Reseñas pendientes",
+      "pendingReviewsEmpty": "No hay reseñas pendientes",
+      "nextTripTitle": "Próximo viaje",
+      "nextTripCta": "Ver detalles",
+      "nextTripEmpty": "Sin tours próximos",
+      "nextTripBrowse": "Explorar tours"
+    },
+    "reviews": {
+      "write": {
+        "title": "Escribir una reseña",
+        "subtitle": "Comparte tu experiencia con {tour}",
+        "ratingLabel": "Calificación",
+        "ratingRequired": "Selecciona una calificación",
+        "ratingSrLabel": "{value} estrellas",
+        "titleLabel": "Título de la reseña (opcional)",
+        "titlePlaceholder": "Pon un título a tu reseña",
+        "commentLabel": "Tu reseña",
+        "commentPlaceholder": "Comparte tu experiencia...",
+        "commentRequired": "Por favor escribe una reseña",
+        "commentCount": "{count} caracteres",
+        "photosLabel": "Fotos (opcional)",
+        "photosUploadFailed": "No se pudieron subir las fotos",
+        "cancel": "Cancelar",
+        "submit": "Enviar reseña",
+        "submitting": "Enviando...",
+        "signInToUpload": "Inicia sesión para subir imágenes",
+        "signInToSubmit": "Inicia sesión para escribir una reseña",
+        "windowNotOpen": "Las reseñas se abren a las 13:00 KST del día del tour",
+        "editTitle": "Editar reseña",
+        "updateSubmit": "Actualizar reseña",
+        "genericError": "No pudimos procesar tu reseña"
+      },
+      "cardEdit": "Editar",
+      "cardDelete": "Eliminar",
+      "cardMenu": "Abrir menú de reseña",
+      "deleteConfirmTitle": "¿Eliminar esta reseña?",
+      "deleteConfirmDescription": "Esta acción no se puede deshacer.",
+      "deleteConfirmCta": "Eliminar"
+    },
+    "settings": {
+      "savedBadge": "Guardado",
+      "connectedAccountsTitle": "Cuentas conectadas",
+      "connectedAccountsEmpty": "No hay cuentas externas conectadas",
+      "dangerZoneTitle": "Zona de peligro",
+      "dangerZoneDescription": "La eliminación de cuenta llegará pronto. Para casos urgentes, contacta con atención al cliente.",
+      "deleteAccount": "Eliminar cuenta",
+      "avatarUploadLabel": "Cambiar foto de perfil",
+      "avatarRemove": "Usar imagen predeterminada"
+    },
+    "bookingsPageSubtitle": "Gestiona todas tus reservas en un solo lugar",
+    "bookingsSectionUpcoming": "Tours próximos",
+    "bookingsSectionCompleted": "Tours completados",
+    "bookingsSectionCancelled": "Tours cancelados",
+    "bookingsEmpty": "No hay reservas",
+    "bookingsLoading": "Cargando reservas...",
+    "bookingsError": "Error: {message}",
+    "cancelBookingCta": "Cancelar reserva",
+    "writeReviewCta": "Escribir reseña",
+    "cancelNotAllowed24h": "No se permite la cancelación en las 24 horas previas al tour. Contacta con atención al cliente.",
+    "confirmCancelBooking": "¿Seguro que quieres cancelar esta reserva?",
+    "cancelSuccess": "Reserva cancelada correctamente",
+    "cancelFailed": "No se pudo cancelar la reserva: {message}",
+    "signInToCancel": "Inicia sesión para cancelar reservas",
+    "upcomingPageSubtitle": "Gestiona tus próximas reservas",
+    "upcomingEmpty": "Sin tours próximos",
+    "upcomingPickupTba": "Por confirmar",
+    "historyPageTitle": "Historial de reservas",
+    "historyPageSubtitle": "Consulta tus reservas pasadas",
+    "historyEmpty": "No hay historial de reservas",
+    "historyStatusCompleted": "Completado",
+    "historyStatusCancelled": "Cancelado",
+    "historyRebookCta": "Reservar de nuevo",
+    "reviewsPageTitle": "Mis reseñas",
+    "reviewsPageSubtitle": "Puedes escribir nuevas reseñas desde tus reservas completadas. Las reseñas existentes se muestran abajo y no pueden editarse ni eliminarse.",
+    "reviewsSectionTitle": "Tus reseñas",
+    "reviewsEmpty": "Aún no has escrito ninguna reseña.",
+    "reviewsLoading": "Cargando...",
+    "wishlistPageTitle": "Mi lista de deseos",
+    "wishlistCountOne": "{count} tour guardado",
+    "wishlistCountMany": "{count} tours guardados",
+    "wishlistLoading": "Cargando lista de deseos...",
+    "wishlistRemoveConfirm": "¿Quitar este tour de la lista de deseos?",
+    "wishlistRemoveFailed": "No se pudo eliminar de la lista de deseos: {message}",
+    "wishlistSignInRequired": "Inicia sesión para gestionar la lista de deseos",
+    "commonRetry": "Reintentar",
+    "commonViewDetails": "Ver detalles",
+    "common": {
+      "verifyingSession": "Verificando tu sesión...",
+      "confirm": {
+        "cancelBookingTitle": "¿Cancelar esta reserva?",
+        "cancelBookingDescription": "Al cancelar, la reserva se cierra de inmediato. Los reembolsos, si los hay, siguen la política aplicable.",
+        "cancelBookingConfirm": "Cancelar reserva",
+        "cancel": "Descartar",
+        "removeWishlistTitle": "¿Quitar de la lista de deseos?",
+        "removeWishlistDescription": "Siempre puedes volver a añadirlo.",
+        "removeWishlistConfirm": "Quitar",
+        "signOutTitle": "¿Cerrar sesión?",
+        "signOutDescription": "Tendrás que volver a iniciar sesión para ver tus reservas.",
+        "signOutConfirm": "Cerrar sesión"
+      },
+      "toast": {
+        "bookingCancelled": "Reserva cancelada",
+        "bookingCancelFailed": "No se pudo cancelar la reserva",
+        "bookingCancelNotAllowed24h": "No se permite la cancelación en las 24 horas previas al tour",
+        "signInRequired": "Inicia sesión para continuar",
+        "wishlistRemoved": "Quitado de la lista de deseos",
+        "wishlistRemoveFailed": "No se pudo eliminar de la lista de deseos",
+        "saved": "Guardado",
+        "saveFailed": "No se pudo guardar",
+        "reviewSubmitted": "Reseña enviada",
+        "reviewUpdated": "Reseña actualizada",
+        "reviewDeleted": "Reseña eliminada",
+        "reviewFailed": "Error de reseña: {message}",
+        "reviewWindowNotOpen": "Las reseñas se pueden escribir desde las 13:00 KST del día del tour",
+        "comingSoon": "Próximamente",
+        "avatarUpdated": "Foto de perfil actualizada",
+        "avatarUploadFailed": "No se pudo subir la foto de perfil"
+      },
+      "percentOff": "{value}% de descuento",
+      "loadingLabel": "Cargando...",
+      "errorLoad": "No pudimos cargar este contenido"
+    },
+    "bookings": {
+      "guestsLabel": "Personas",
+      "receiptCta": "Ver recibo",
+      "addToCalendar": "Añadir al calendario",
+      "dayCountdownToday": "Hoy",
+      "dayCountdownTomorrow": "Mañana",
+      "dayCountdownPast": "Pasado",
+      "dayCountdownFuture": "D-{days}"
+    },
+    "landing": {
+      "greetingMorning": "Buenos días, {name}",
+      "greetingAfternoon": "Buenas tardes, {name}",
+      "greetingEvening": "Buenas noches, {name}",
+      "subtitle": "Tu centro de AtoCKorea en un vistazo",
+      "viewDashboard": "Ver panel",
+      "errorBanner": "No pudimos cargar parte de tus datos",
+      "retry": "Reintentar",
+      "profile": {
+        "ringLabel": "Perfil",
+        "completeCta": "Completa tu perfil · {pct}%",
+        "completeBadge": "Perfil completo"
+      },
+      "nextTrip": {
+        "badgeLabel": "Tu próximo viaje",
+        "pickupLabel": "Recogida",
+        "pickupTba": "Por confirmar",
+        "guests": "{count} personas",
+        "viewDetails": "Ver detalles",
+        "addToCalendar": "Añadir al calendario",
+        "receipt": "Abrir recibo"
+      },
+      "emptyHero": {
+        "title": "Aún no tienes próximos viajes",
+        "subtitle": "Descubre experiencias seleccionadas en Jeju y planea tu primer viaje.",
+        "cta": "Explorar tours de Jeju"
+      },
+      "quickAccess": {
+        "title": "Acceso rápido",
+        "count": "{count} elementos",
+        "view": "Ver",
+        "items": {
+          "bookings": "Mis reservas",
+          "upcoming": "Próximos",
+          "history": "Historial",
+          "reviews": "Reseñas",
+          "wishlist": "Lista de deseos",
+          "settings": "Configuración"
+        }
+      },
+      "pendingReview": {
+        "title": "Comparte qué te pareció {title}",
+        "cta": "Escribir reseña",
+        "more": "+{count} más pendientes"
+      },
+      "wishlist": {
+        "sectionTitle": "Tours guardados",
+        "viewAll": "Ver todo ({count})"
+      },
+      "recommendations": {
+        "title": "Recomendados para ti",
+        "subtitle": "Tours mejor valorados elegidos para ti",
+        "empty": "Aún no hay recomendaciones"
+      }
+    }
   },
   "admin": {
     "title": "Panel de administración",
@@ -456,7 +642,19 @@
     "addedToCart": "¡añadido al carrito!",
     "booked": "reservado",
     "save": "Guardar",
-    "discountOff": "{percent}% dto."
+    "discountOff": "{percent}% dto.",
+    "noItinerary": "Sin itinerario",
+    "moreSpots": "+{count} más",
+    "duration": "Duración",
+    "lunch": "Almuerzo",
+    "tickets": "Entradas",
+    "pickup": "Recogida",
+    "included": "Incluido",
+    "notIncluded": "No incluido",
+    "pickupPointsCountOne": "{count} punto de recogida",
+    "pickupPointsCountOther": "{count} puntos de recogida",
+    "hotelPickup": "Recogida en hotel",
+    "cruiseTerminalPickup": "Recogida en terminal de crucero"
   },
   "toursList": {
     "subtitle": "Todos los tours con itinerario, una ficha por línea.",
@@ -577,7 +775,27 @@
           "subtitle": "Abre el 30 sep. Temporada de pasto rosa."
         }
       }
-    }
+    },
+    "eyebrow": "Tours",
+    "resultsCount": "{count} resultados",
+    "price": "Precio",
+    "priceFrom": "Desde {amount}",
+    "priceUpTo": "Hasta {amount}",
+    "priceRange": "{min} – {max}",
+    "minPlaceholder": "Mín",
+    "maxPlaceholder": "Máx",
+    "apply": "Aplicar",
+    "reset": "Restablecer",
+    "resetFilters": "Restablecer filtros",
+    "loadMore": "Cargar más",
+    "loadingMore": "Cargando más...",
+    "emptyTitle": "Ningún tour coincide con estos filtros.",
+    "emptyHint": "Prueba a quitar un filtro, o restablece para ver todos los tours.",
+    "searchAriaLabel": "Buscar tours",
+    "destinationAriaLabel": "Filtrar por destino",
+    "sortAriaLabel": "Ordenar tours",
+    "priceAriaLabel": "Rango de precio",
+    "popularHint": "Seleccionado por valoración, reservas y novedad"
   },
   "home": {
     "hero": {
@@ -2008,7 +2226,10 @@
     "emailPlaceholder": "tu@correo.com",
     "verificationPlaceholder": "000000",
     "fullNamePlaceholder": "María García",
-    "birthYearExample": "p. ej. {year}"
+    "birthYearExample": "p. ej. {year}",
+    "accountGroupTitle": "Cuenta",
+    "identityGroupTitle": "Identidad",
+    "contactGroupTitle": "Contacto y consentimiento"
   },
   "settingsPage": {
     "title": "Configuración de la cuenta",
@@ -2243,6 +2464,11 @@
       "title": "Tour Privado de la DMZ",
       "body": "Un itinerario fijo de día completo hasta la frontera más fortificada de la península coreana: Imjingak, el Tercer Túnel, el Observatorio Dora y el puente colgante de Gamaksan. Precio cerrado según el tamaño del grupo, con coche y guía privados.",
       "cta": "Ver mi precio"
+    }
+  },
+  "appShell": {
+    "backButton": {
+      "label": "Atrás"
     }
   }
 }

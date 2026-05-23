@@ -282,7 +282,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "heroImage": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
         "thumbnail": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
         "priceLabel": "From US$59 per person (was $69, 14% off)",
-        "shortCardDescription": "A easy-to-follow East Jeju day route that starts with stone culture and volcanic context, moves through the coast and Seongsan Ilchulbong, and finishes with Ilchulland and Seongeup Folk Village for a more complete day."
+        "shortCardDescription": "An easy-to-follow East Jeju day route that starts with stone culture and volcanic context, moves through the coast and Seongsan Ilchulbong, and finishes with Ilchulland and Seongeup Folk Village for a more complete day."
       },
       "price": {
         "amountLabel": "59"
@@ -1322,7 +1322,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "heroImage": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
         "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
         "priceLabel": "1인 US$59 (정가 $69, 14% 할인)",
-        "shortCardDescription": "제주 동부 유네스코 및 핵심 명소를 9시간 소그룹으로 일주하는 투어입니다. 함덕 서우봉해변, 성읍민속마을(유네스코), 미천굴 용암동굴(만장굴 운영 중단 기간 대체), 성산일출봉(유네스코 세계자연유산), 해녀박물관(유네스코 해녀문화) 포함. 전 입장료 포함, 공인 가이드, 1,148건 기준 4.9/5 평점."
+        "shortCardDescription": "제주 동부 유네스코 및 핵심 명소를 9시간 소그룹으로 일주하는 투어입니다. 함덕 서우봉해변, 성읍민속마을(유네스코), 미천굴 용암동굴(만장굴 운영 중단 기간 대체), 성산일출봉(유네스코 세계자연유산), 해녀박물관(유네스코 해녀문화) 포함. 전 입장료 포함, 공인 가이드."
       },
       "price": {
         "amountLabel": ""
@@ -1538,7 +1538,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
       "catalog_card": {
         "slug": "seoul-dmz-private-3rd-tunnel-suspension-bridge",
         "title": "서울 DMZ 프라이빗: 제3땅굴 & 출렁다리",
-        "subtitle": "한국의 분단 국경과 220m 산악 출렁다리를 하루에 — 서울 출발 프라이빗 당일 투어.",
+        "subtitle": "한국의 분단 국경과 150m 산악 출렁다리를 하루에 — 서울 출발 프라이빗 당일 투어.",
         "region": "파주 (서울 당일치기)",
         "duration": "8~9시간",
         "stopsCount": 4,
@@ -1552,7 +1552,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "heroImage": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
         "thumbnail": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
         "priceLabel": "",
-        "shortCardDescription": "한국에서 가장 역사적 무게를 지닌 장소와 가장 아름다운 산악 출렁다리를 함께 경험하는 프라이빗 당일 투어. 오전에는 DMZ(임진각 평화공원, 제3침투 땅굴, 도라산 전망대)를 둘러보고, 오후에는 220m 감악산 붉은 출렁다리를 건넙니다. DMZ 구간 입장 시 여권이 필요합니다."
+        "shortCardDescription": "한국에서 가장 역사적 무게를 지닌 장소와 가장 아름다운 산악 출렁다리를 함께 경험하는 프라이빗 당일 투어. 오전에는 DMZ(임진각 평화공원, 제3침투 땅굴, 도라산 전망대)를 둘러보고, 오후에는 150m 감악산 붉은 출렁다리를 건넙니다. DMZ 구간 입장 시 여권이 필요합니다."
       },
       "price": {
         "amountLabel": ""
@@ -2400,7 +2400,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
       "catalog_card": {
         "slug": "seoul-dmz-private-3rd-tunnel-suspension-bridge",
         "title": "首尔非军事区私人游：第三隧道与悬索桥",
-        "subtitle": "朝鲜半岛分裂边境与220米山间悬索桥，首尔出发，一天私人专属体验。",
+        "subtitle": "朝鲜半岛分裂边境与150米山间悬索桥，首尔出发，一天私人专属体验。",
         "region": "坡州（首尔一日游）",
         "duration": "8–9小时",
         "stopsCount": 4,
@@ -2414,7 +2414,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "heroImage": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
         "thumbnail": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
         "priceLabel": "",
-        "shortCardDescription": "私人一日游，将韩国历史底蕴最深厚的景点与最上镜的山间桥梁完美结合。上午游览非军事区（临津阁和平公园、第三渗透隧道、都罗展望台），下午漫步220米甘岳山红色悬索桥。进入非军事区须携带护照。"
+        "shortCardDescription": "私人一日游，将韩国历史底蕴最深厚的景点与最上镜的山间桥梁完美结合。上午游览非军事区（临津阁和平公园、第三渗透隧道、都罗展望台），下午漫步150米甘岳山红色悬索桥。进入非军事区须携带护照。"
       },
       "price": {
         "amountLabel": ""
@@ -3173,7 +3173,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "heroImage": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
         "thumbnail": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
         "priceLabel": "",
-        "shortCardDescription": "小團一日遊，深度遊覽濟州南部經典景點——漢拏山御乘生岳步道（UNESCO生物圈保護區）、山茶花丘花園、三層天帝淵瀑布、六角柱狀節理帶，以及雪綠茶博物館。濟州市及機場設有四個接送地點，持證英語／中文導遊全程陪同，含全部門票，絕無購物壓力。濟州入門級行程中評價最多，4.9/5（648則評價）。"
+        "shortCardDescription": "小團一日遊，深度遊覽濟州南部經典景點——漢拏山御乘生岳步道（UNESCO生物圈保護區）、山茶花丘花園、三層天帝淵瀑布、六角柱狀節理帶，以及雪綠茶博物館。濟州市及機場設有四個接送地點，持證英語／中文導遊全程陪同，含全部門票，絕無購物壓力。濟州入門級行程中評價最多，"
       },
       "price": {
         "amountLabel": ""
@@ -3262,7 +3262,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
       "catalog_card": {
         "slug": "seoul-dmz-private-3rd-tunnel-suspension-bridge",
         "title": "首爾非軍事區私人遊覽：第三條地道與吊橋",
-        "subtitle": "從首爾出發，一天私人行程同時體驗韓國分裂邊境與220公尺高山吊橋。",
+        "subtitle": "從首爾出發，一天私人行程同時體驗韓國分裂邊境與150公尺高山吊橋。",
         "region": "坡州（首爾一日遊）",
         "duration": "8至9小時",
         "stopsCount": 4,
@@ -3276,7 +3276,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "heroImage": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
         "thumbnail": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
         "priceLabel": "",
-        "shortCardDescription": "一趟私人一日遊，將韓國最具歷史份量的地點與最上鏡的山中吊橋完美結合。上午遊覽非軍事區（臨津閣和平公園、第三條滲透地道、都羅展望台），下午漫步於220公尺長的感岳山紅色吊橋。進入非軍事區須出示護照。"
+        "shortCardDescription": "一趟私人一日遊，將韓國最具歷史份量的地點與最上鏡的山中吊橋完美結合。上午遊覽非軍事區（臨津閣和平公園、第三條滲透地道、都羅展望台），下午漫步於150公尺長的感岳山紅色吊橋。進入非軍事區須出示護照。"
       },
       "price": {
         "amountLabel": ""
@@ -3891,7 +3891,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
       "catalog_card": {
         "slug": "jeju-eastern-unesco-lugares-day-tour",
         "title": "Jeju Este: UNESCO Día",
-        "subtitle": "El tour de Jeju Este con más reseñas — 4,9/5 con 1.148 opiniones, todas las entradas incluidas.",
+        "subtitle": "El tour de Jeju Este con más reseñas — todas las entradas incluidas.",
         "region": "Jeju Este",
         "duration": "9 horas",
         "stopsCount": 8,
@@ -4121,7 +4121,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
       "catalog_card": {
         "slug": "seoul-dmz-private-3rd-tunnel-suspension-bridge",
         "title": "DMZ Seúl Privado: 3er Túnel y Puente",
-        "subtitle": "La frontera dividida de Corea y un puente colgante de montaña de 220 metros en un día privado desde Seúl.",
+        "subtitle": "La frontera dividida de Corea y un puente colgante de montaña de 150 metros en un día privado desde Seúl.",
         "region": "Paju (Excursión de un día desde Seúl)",
         "duration": "8–9 horas",
         "stopsCount": 4,
@@ -4135,7 +4135,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "heroImage": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
         "thumbnail": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
         "priceLabel": "",
-        "shortCardDescription": "Una excursión privada de un día que combina el lugar histórico más solemne de Corea con uno de sus puentes de montaña más fotogénicos. Mañana en el DMZ (Parque de la Paz de Imjingak, 3er Túnel de Infiltración, Observatorio Dora), y por la tarde un paseo sobre el Puente Colgante Rojo de Gamaksan de 220 metros. Se requiere pasaporte para la sección del DMZ."
+        "shortCardDescription": "Una excursión privada de un día que combina el lugar histórico más solemne de Corea con uno de sus puentes de montaña más fotogénicos. Mañana en el DMZ (Parque de la Paz de Imjingak, 3er Túnel de Infiltración, Observatorio Dora), y por la tarde un paseo sobre el Puente Colgante Rojo de Gamaksan de 150 metros. Se requiere pasaporte para la sección del DMZ."
       },
       "price": {
         "amountLabel": ""
@@ -4767,7 +4767,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "heroImage": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
         "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
         "priceLabel": "1名様 US$59（定価$69、14%オフ）",
-        "shortCardDescription": "東済州のユネスコ遺産見どころを9時間で巡る少人数日帰りツアー。咸徳ビーチ、城邑民俗村（ユネスコ）、密川洞窟溶岩トンネル（万丈窟閉鎖中の代替見どころ）、城山日出峰（ユネスコ自然遺産）、海女博物館を一日で網羅。全入場料込み、英語・中国語対応の認定ガイド付き。1,148件のクチコミで4.9/5の高評価。"
+        "shortCardDescription": "東済州のユネスコ遺産見どころを9時間で巡る少人数日帰りツアー。咸徳ビーチ、城邑民俗村（ユネスコ）、密川洞窟溶岩トンネル（万丈窟閉鎖中の代替見どころ）、城山日出峰（ユネスコ自然遺産）、海女博物館を一日で網羅。全入場料込み、英語・中国語対応の認定ガイド付き。"
       },
       "price": {
         "amountLabel": ""
@@ -4981,7 +4981,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
       "catalog_card": {
         "slug": "seoul-dmz-private-3rd-tunnel-suspension-bridge",
         "title": "ソウルDMZプライベート：第3トンネル＆橋",
-        "subtitle": "韓国の分断された国境と220メートルの山岳吊り橋を、ソウル発プライベートデイツアーで一度に体験。",
+        "subtitle": "韓国の分断された国境と150メートルの山岳吊り橋を、ソウル発プライベートデイツアーで一度に体験。",
         "region": "坡州（ソウルデイトリップ）",
         "duration": "8〜9時間",
         "stopsCount": 4,
@@ -4995,7 +4995,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "heroImage": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
         "thumbnail": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
         "priceLabel": "",
-        "shortCardDescription": "韓国で最も重みのある歴史的スポットと、最も絵になる山岳吊り橋のひとつを組み合わせたプライベートデイトリップ。午前はDMZ（臨津閣平和公園、第3浸透トンネル、都羅展望台）を訪れ、午後は220メートルのガマクサン・レッド吊り橋を渡ります。DMZエリアへの入場にはパスポートが必要です。"
+        "shortCardDescription": "韓国で最も重みのある歴史的スポットと、最も絵になる山岳吊り橋のひとつを組み合わせたプライベートデイトリップ。午前はDMZ（臨津閣平和公園、第3浸透トンネル、都羅展望台）を訪れ、午後は150メートルのガマクサン・レッド吊り橋を渡ります。DMZエリアへの入場にはパスポートが必要です。"
       },
       "price": {
         "amountLabel": ""
