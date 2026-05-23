@@ -119,26 +119,50 @@ describe("format-based shelf matchers", () => {
     expect(isCruise(tour("some-slug", ["Cruise excursion"]))).toBe(true);
   });
 
-  it("isSmallGroup matches small-group badges (not just maxGroupSize)", () => {
+  it("isSmallGroup matches explicit small-group badges", () => {
     expect(isSmallGroup(tour("any", ["Small group"]))).toBe(true);
     expect(isSmallGroup(tour("any", ["Small Group"]))).toBe(true);
     expect(isSmallGroup(tour("any", ["Small shared van"]))).toBe(true);
-    expect(isSmallGroup(tour("any", ["Large coach"]))).toBe(false);
+  });
+
+  it("isSmallGroup falls back to maxGroupSize ≤ 12 when badges don't say so", () => {
+    // Real-world: east-signature-nature-core / jeju-grand-highlights-loop /
+    // southwest-hallasan-osulloc-aewol carry maxGroupSize=8 but no `Small group`
+    // badge. The badge-only matcher silently dropped them.
+    expect(isSmallGroup(tour("east-signature-nature-core", ["First-Time Friendly", "East Jeju Signature"], { maxGroupSize: 8 }))).toBe(true);
+    expect(isSmallGroup(tour("jeju-grand-highlights-loop", ["Best for One-Day Visitors"], { maxGroupSize: 8 }))).toBe(true);
+    expect(isSmallGroup(tour("southwest-hallasan-osulloc-aewol", ["Great for First-Time Jeju Visitors"], { maxGroupSize: 8 }))).toBe(true);
+    expect(isSmallGroup(tour("busan-top-attractions-day-tour", ["Small group"], { maxGroupSize: 12 }))).toBe(true);
+  });
+
+  it("isSmallGroup excludes Private and Classic Bus, even when maxGroupSize ≤ 12", () => {
+    // incheon-seoul-private-car-shore-excursion-cruise: maxGroupSize=12 but
+    // Private → must NOT land in small-group.
+    expect(isSmallGroup(tour("incheon-seoul-private-car-shore-excursion-cruise", ["Private", "Cruise"], { maxGroupSize: 12 }))).toBe(false);
+    // Large coach bus tour with no maxGroupSize → Bus, not Small Group.
+    expect(isSmallGroup(tour("busan-cruise-shore-excursion-bus-tour", ["Cruise excursion", "Large coach"]))).toBe(false);
+  });
+
+  it("isSmallGroup returns false when no signal at all", () => {
+    // A tour with no maxGroupSize and no small-group / large-coach / private badge.
+    expect(isSmallGroup(tour("hypothetical-no-meta", ["UNESCO"]))).toBe(false);
   });
 
   it("isPrivate matches private slug or Private Tour badge", () => {
     expect(isPrivate(tour("jeju-island-private-car-charter-tour"))).toBe(true);
     expect(isPrivate(tour("seoul-suburbs-private-chartered-car-10hr"))).toBe(true);
     expect(isPrivate(tour("any", ["Private Tour"]))).toBe(true);
-    // "Small group" must NOT be classified as private
     expect(isPrivate(tour("any", ["Small group"]))).toBe(false);
     expect(isPrivate(tour("east-signature-nature-core"))).toBe(false);
   });
 
-  it("isClassicBus matches bus-tour slugs and bus/coach badges", () => {
+  it("isClassicBus matches bus-tour slugs and bus/coach badges (incl. air-conditioned)", () => {
     expect(isClassicBus(tour("busan-cruise-shore-excursion-bus-tour"))).toBe(true);
     expect(isClassicBus(tour("any", ["Large coach"]))).toBe(true);
     expect(isClassicBus(tour("any", ["Bus tour"]))).toBe(true);
+    // Real-world: seoul-seoraksan-naksansa-…-day-trip uses "Air-conditioned coach".
+    expect(isClassicBus(tour("seoul-seoraksan-naksansa-temple-naksan-beach-day-trip", ["Day trip from Seoul", "Air-conditioned coach"]))).toBe(true);
+    expect(isClassicBus(tour("any", ["air conditioned coach"]))).toBe(true);
     expect(isClassicBus(tour("east-signature-nature-core"))).toBe(false);
   });
 
@@ -146,6 +170,13 @@ describe("format-based shelf matchers", () => {
     const t = tour("jeju-cruise-shore-excursion-small-group-tour", ["Cruise excursion", "Small group"]);
     expect(isCruise(t)).toBe(true);
     expect(isSmallGroup(t)).toBe(true);
+  });
+
+  it("cruise + bus combo lands in cruise + classic-bus, NOT small-group", () => {
+    const t = tour("busan-cruise-shore-excursion-bus-tour", ["Cruise excursion", "Large coach"]);
+    expect(isCruise(t)).toBe(true);
+    expect(isClassicBus(t)).toBe(true);
+    expect(isSmallGroup(t)).toBe(false);
   });
 });
 
