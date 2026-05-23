@@ -1,0 +1,354 @@
+{
+  "generated": "2026-05-23T16:47:43.482Z",
+  "notes": "POIs with ≤3 photos or missing folder, requiring photo supplementation",
+  "missingFolders": [
+    "jeonnong-ro",
+    "noksan-ro",
+    "suwon-nammun-market"
+  ],
+  "poiBoostList": [
+    {
+      "folder": "songdo-beach",
+      "photoCount": 1,
+      "poiKeys": [
+        "songdo_beach"
+      ],
+      "sampleStopNames": [
+        "Songdo Beach",
+        "송도해수욕장"
+      ]
+    },
+    {
+      "folder": "gwangjang-market",
+      "photoCount": 1,
+      "poiKeys": [
+        "gwangjang_market"
+      ],
+      "sampleStopNames": [
+        "Lunch at Gwangjang Market",
+        "광장시장에서 점심 식사"
+      ]
+    },
+    {
+      "folder": "bukchon-hanok",
+      "photoCount": 1,
+      "poiKeys": [
+        "bukchon_hanok_village"
+      ],
+      "sampleStopNames": [
+        "Bukchon Hanok Village",
+        "북촌한옥마을"
+      ]
+    },
+    {
+      "folder": "myeongdong",
+      "photoCount": 1,
+      "poiKeys": [
+        "myeongdong"
+      ],
+      "sampleStopNames": [
+        "Myeongdong OR Jogyesa Temple (your choice)",
+        "명동 또는 조계사 (선택)"
+      ]
+    },
+    {
+      "folder": "cheomseongdae",
+      "photoCount": 2,
+      "poiKeys": [
+        "cheomseongdae"
+      ],
+      "sampleStopNames": [
+        "Cheomseongdae Observatory + Daereungwon Tomb Complex",
+        "첨성대 + 대릉원"
+      ]
+    },
+    {
+      "folder": "hallasan-eoseungsaengak",
+      "photoCount": 2,
+      "poiKeys": [
+        "hallasan_eoseungsaengak"
+      ],
+      "sampleStopNames": [
+        "Hallasan Eoseungsaengak",
+        "한라산 어승생악"
+      ]
+    },
+    {
+      "folder": "camellia-hill",
+      "photoCount": 2,
+      "poiKeys": [
+        "camellia_hill"
+      ],
+      "sampleStopNames": [
+        "Camellia Hill (Hydrangea Tunnel)",
+        "카멜리아힐 (수국 터널)"
+      ]
+    },
+    {
+      "folder": "sanjeong-lake",
+      "photoCount": 2,
+      "poiKeys": [
+        "sanjeong_lake"
+      ],
+      "sampleStopNames": [
+        "Sanjeong Lake",
+        "산정호수"
+      ]
+    },
+    {
+      "folder": "pocheon-art-valley",
+      "photoCount": 2,
+      "poiKeys": [
+        "pocheon_art_valley"
+      ],
+      "sampleStopNames": [
+        "Pocheon Art Valley",
+        "포천 아트밸리"
+      ]
+    },
+    {
+      "folder": "imjingak",
+      "photoCount": 2,
+      "poiKeys": [
+        "imjingak_peace_park"
+      ],
+      "sampleStopNames": [
+        "Imjingak Peace Park",
+        "임진각 평화공원"
+      ]
+    },
+    {
+      "folder": "petite-france",
+      "photoCount": 2,
+      "poiKeys": [
+        "petite_france"
+      ],
+      "sampleStopNames": [
+        "Petite France",
+        "쁘띠프랑스"
+      ]
+    },
+    {
+      "folder": "seoraksan-national-park",
+      "photoCount": 2,
+      "poiKeys": [
+        "seoraksan_national_park"
+      ],
+      "sampleStopNames": [
+        "Seoraksan National Park",
+        "설악산 국립공원"
+      ]
+    },
+    {
+      "folder": "naksan-beach",
+      "photoCount": 2,
+      "poiKeys": [
+        "naksan_beach"
+      ],
+      "sampleStopNames": [
+        "Naksan Beach",
+        "낙산해수욕장"
+      ]
+    },
+    {
+      "folder": "korean-folk-village",
+      "photoCount": 2,
+      "poiKeys": [
+        "korean_folk_village_yongin"
+      ],
+      "sampleStopNames": [
+        "Korean Folk Village (Yongin)",
+        "한국민속촌 (용인)"
+      ]
+    },
+    {
+      "folder": "busan-tower",
+      "photoCount": 3,
+      "poiKeys": [
+        "yongdusan_park"
+      ],
+      "sampleStopNames": [
+        "Yongdusan Park & Busan Diamond Tower",
+        "용두산공원 & 부산타워"
+      ]
+    },
+    {
+      "folder": "un-memorial-cemetery",
+      "photoCount": 3,
+      "poiKeys": [
+        "un_memorial_cemetery"
+      ],
+      "sampleStopNames": [
+        "UN Memorial Cemetery in Korea",
+        "재한유엔기념공원"
+      ]
+    },
+    {
+      "folder": "gyeongju-national-museum",
+      "photoCount": 3,
+      "poiKeys": [
+        "gyeongju_national_museum"
+      ],
+      "sampleStopNames": [
+        "Gyeongju National Museum",
+        "국립경주박물관"
+      ]
+    },
+    {
+      "folder": "ahopsan-bamboo",
+      "photoCount": 3,
+      "poiKeys": [
+        "ahopsan_bamboo_forest"
+      ],
+      "sampleStopNames": [
+        "Ahopsan Bamboo Forest (아홉산숲)",
+        "아홉산숲"
+      ]
+    },
+    {
+      "folder": "bulguksa-temple",
+      "photoCount": 3,
+      "poiKeys": [
+        "bulguksa_temple"
+      ],
+      "sampleStopNames": [
+        "Bulguksa Temple (UNESCO World Heritage)",
+        "불국사 (유네스코 세계문화유산)"
+      ]
+    },
+    {
+      "folder": "amethyst-cave",
+      "photoCount": 3,
+      "poiKeys": [
+        "amethyst_cave_themepark"
+      ],
+      "sampleStopNames": [
+        "Amethyst Cave Theme Park (Ulsan)",
+        "자수정동굴나라 (울산)"
+      ]
+    },
+    {
+      "folder": "yeongnam-alps",
+      "photoCount": 3,
+      "poiKeys": [
+        "yeongnam_alps_ice_valley_cable_car"
+      ],
+      "sampleStopNames": [
+        "Yeongnam Alps Ice Valley Cable Car (Miryang)",
+        "영남알프스 얼음골 케이블카(밀양)"
+      ]
+    },
+    {
+      "folder": "jeju-haenyeo-museum",
+      "photoCount": 3,
+      "poiKeys": [
+        "jeju_haenyeo_museum"
+      ],
+      "sampleStopNames": [
+        "Haenyeo Museum (women divers)",
+        "해녀박물관 (제주 해녀 문화)"
+      ]
+    },
+    {
+      "folder": "jeongbang-falls",
+      "photoCount": 3,
+      "poiKeys": [
+        "jeongbang_falls"
+      ],
+      "sampleStopNames": [
+        "Jeongbang Waterfall",
+        "정방폭포"
+      ]
+    },
+    {
+      "folder": "hueree",
+      "photoCount": 3,
+      "poiKeys": [
+        "hueree_natural_park"
+      ],
+      "sampleStopNames": [
+        "Hueree Natural Park — Hydrangea highlight",
+        "휴애리 자연생활공원 — 수국 하이라이트"
+      ]
+    },
+    {
+      "folder": "hyeopjae-beach",
+      "photoCount": 3,
+      "poiKeys": [
+        "hyeopjae_beach"
+      ],
+      "sampleStopNames": [
+        "Hyeopjae Beach",
+        "협재 해수욕장"
+      ]
+    },
+    {
+      "folder": "cheonjeyeon-falls",
+      "photoCount": 3,
+      "poiKeys": [
+        "cheonjeyeon_falls"
+      ],
+      "sampleStopNames": [
+        "Cheonjeyeon Waterfall (Pond of the Gods)",
+        "천제연 폭포 (신들의 연못)"
+      ]
+    },
+    {
+      "folder": "hallasan-1100",
+      "photoCount": 3,
+      "poiKeys": [
+        "hallasan_1100_wetland"
+      ],
+      "sampleStopNames": [
+        "Hallasan 1100 Altitude Wetland (Ramsar + UNESCO)",
+        "한라산 1100고지 습지 (람사르 + 유네스코)"
+      ]
+    },
+    {
+      "folder": "herb-island",
+      "photoCount": 3,
+      "poiKeys": [
+        "herb_island"
+      ],
+      "sampleStopNames": [
+        "Pocheon Herb Island",
+        "포천 허브아일랜드"
+      ]
+    },
+    {
+      "folder": "dmz",
+      "photoCount": 3,
+      "poiKeys": [
+        "third_infiltration_tunnel",
+        "dora_observatory",
+        "gamaksan_red_bridge"
+      ],
+      "sampleStopNames": [
+        "3rd Infiltration Tunnel (Underground Invasion Tunnel)",
+        "Dora Observatory"
+      ]
+    },
+    {
+      "folder": "nami-island",
+      "photoCount": 3,
+      "poiKeys": [
+        "nami_island"
+      ],
+      "sampleStopNames": [
+        "Nami Island (Namiseom)",
+        "남이섬 (나미섬)"
+      ]
+    },
+    {
+      "folder": "naksansa-temple",
+      "photoCount": 3,
+      "poiKeys": [
+        "naksansa_temple"
+      ],
+      "sampleStopNames": [
+        "Naksansa Temple",
+        "낙산사"
+      ]
+    }
+  ]
+}

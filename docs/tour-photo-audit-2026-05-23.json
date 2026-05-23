@@ -1,0 +1,2279 @@
+{
+  "generatedAt": "2026-05-23T16:54:22.394Z",
+  "summary": {
+    "tourSlugs": 34,
+    "locales": 6,
+    "docsScanned": 204,
+    "docsMissing": 0,
+    "totalRefs": 9600,
+    "uniquePhotoPaths": 390,
+    "diskFiles": 479,
+    "crossPoiReuseCount": 9,
+    "missingCount": 0,
+    "orphanCount": 108,
+    "poiFolders": 61,
+    "sparsePois": 5
+  },
+  "sparsePois": [
+    {
+      "folder": "songdo-beach",
+      "photoCount": 1,
+      "uses": 36,
+      "poiKeys": [
+        "songdo_beach"
+      ],
+      "stopNames": [
+        "Songdo Beach",
+        "송도해수욕장",
+        "松島ビーチ",
+        "松岛海滩",
+        "松島海水浴場",
+        "Playa Songdo",
+        "Songdo Beach or Yongdusan Park",
+        "남포동 & 자갈치 수산시장",
+        "南浦洞＆チャガルチ水産市場",
+        "南浦洞与札嘎其水产市场",
+        "南浦洞＆札嘎其魚市場",
+        "Nampo-dong y Mercado de Pescado Jagalchi"
+      ],
+      "locations": [
+        "Songdo Beach",
+        "송도해수욕장",
+        "松島ビーチ",
+        "松岛海滩",
+        "松島海水浴場",
+        "Playa Songdo",
+        "Songdo Beach or Yongdusan Park",
+        "남포동 & 자갈치 수산시장",
+        "南浦洞＆チャガルチ水産市場",
+        "南浦洞与札嘎其水产市场",
+        "南浦洞＆札嘎其魚市場",
+        "Nampo-dong y Mercado de Pescado Jagalchi"
+      ]
+    },
+    {
+      "folder": "myeongdong",
+      "photoCount": 1,
+      "uses": 18,
+      "poiKeys": [
+        "myeongdong"
+      ],
+      "stopNames": [
+        "Myeongdong OR Jogyesa Temple (your choice)",
+        "명동 또는 조계사 (선택)",
+        "明洞（ミョンドン）または曹渓寺（チョゲサ）（お好みでお選びください）",
+        "明洞 或 曹溪寺（您来选择）",
+        "明洞 或 曹溪寺（自由選擇）",
+        "Myeongdong O Templo Jogyesa (a su elección)"
+      ],
+      "locations": [
+        "Myeongdong OR Jogyesa Temple (your choice)",
+        "명동 또는 조계사 (선택)",
+        "明洞（ミョンドン）または曹渓寺（チョゲサ）（お好みでお選びください）",
+        "明洞 或 曹溪寺（您来选择）",
+        "明洞 或 曹溪寺（自由選擇）",
+        "Myeongdong O Templo Jogyesa (a su elección)"
+      ]
+    },
+    {
+      "folder": "jeonnong-ro",
+      "photoCount": 1,
+      "uses": 6,
+      "poiKeys": [],
+      "stopNames": [],
+      "locations": [
+        "Jeonnong-ro Cherry Blossom Street",
+        "전농로 벚꽃길",
+        "全農路（チョンノンノ）桜並木通り",
+        "全农路樱花街",
+        "全農路櫻花街",
+        "Calle de los Cerezos de Jeonnong-ro"
+      ]
+    },
+    {
+      "folder": "jeju-private",
+      "photoCount": 1,
+      "uses": 30,
+      "poiKeys": [],
+      "stopNames": [],
+      "locations": [
+        "Jeju Private Tour",
+        "제주 프라이빗 투어",
+        "済州プライベートツアー",
+        "济州私家车包车游",
+        "濟州私家車包車遊",
+        "Tour privado en Jeju"
+      ]
+    },
+    {
+      "folder": "seoraksan",
+      "photoCount": 1,
+      "uses": 9,
+      "poiKeys": [],
+      "stopNames": [],
+      "locations": [
+        "Seoraksan National Park",
+        "설악산 국립공원",
+        "Parque Nacional Seoraksan",
+        "설악산국립공원",
+        "Parque Nacional de Seoraksan"
+      ]
+    }
+  ],
+  "crossPoiReuse": [
+    {
+      "path": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+      "folderKey": "ilchulland",
+      "usedPoiKeys": [
+        "ilchulland_micheon_cave",
+        "jeonnong_ro_cherry_blossom_street",
+        "noksan_ro_gasiri_blossom_road",
+        "ilchulland_themed_gardens"
+      ],
+      "usedLocations": [
+        "Ilchul Land (Micheon Cave Lava Tube)",
+        "일출랜드 (미천굴 용암동굴)",
+        "イルチュルランド（ミチョン洞窟溶岩チューブ）",
+        "日出乐园（米千洞熔岩管）",
+        "日出樂園（美川窟熔岩管）",
+        "Ilchul Land (Tubo de lava de la cueva Micheon)",
+        "Noksan-ro (Gasi-ri 10 km Cherry + Canola Road)",
+        "녹산로 (가시리 10km 벚꽃 + 유채꽃 드라이브 코스)",
+        "ノクサンロ（녹산로）（ガシリ 10km 桜＋菜の花ロード）",
+        "绿山路（加时里10公里樱花+油菜花公路）",
+        "녹산로（加時里10公里櫻花＋油菜花公路）",
+        "Noksan-ro (Carretera de cerezos + canola de 10 km de Gasi-ri)",
+        "Micheon Cave at Ilchul Land (Manjanggul alternate)",
+        "미천굴 (만장굴 대체, 일출랜드)",
+        "密川洞窟（日出ランド）— 万丈窟の代替",
+        "日出乐园（米川窟熔岩洞穴）",
+        "日出樂園（米川窟熔岩洞穴）",
+        "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
+        "Ilchul Land — Hydrangea Festival + Micheon Cave",
+        "일출랜드 — 수국 축제 + 미천굴",
+        "日出ランド — アジサイ祭り＋密川洞窟",
+        "Ilchul Land — Festival de Hortensias + Cueva Micheon"
+      ],
+      "slugs": [
+        "east-signature-nature-core",
+        "jeju-cherry-blossom-tour-east-route",
+        "jeju-eastern-unesco-spots-day-tour",
+        "jeju-hydrangea-festival-tour-east-route"
+      ],
+      "uses": 108
+    },
+    {
+      "path": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+      "folderKey": "dmz",
+      "usedPoiKeys": [
+        "third_infiltration_tunnel",
+        "dora_observatory",
+        "gamaksan_red_bridge"
+      ],
+      "usedLocations": [
+        "3rd Infiltration Tunnel (Underground Invasion Tunnel)",
+        "제3땅굴 (지하 침투 땅굴)",
+        "第3浸透トンネル（地下侵入トンネル）",
+        "第三条渗透隧道（地下入侵隧道）",
+        "第三條滲透隧道（地下入侵隧道）",
+        "3.er Túnel de Infiltración (Túnel de Invasión Subterráneo)"
+      ],
+      "slugs": [
+        "seoul-dmz-private-3rd-tunnel-suspension-bridge"
+      ],
+      "uses": 36
+    },
+    {
+      "path": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+      "folderKey": "dmz",
+      "usedPoiKeys": [
+        "third_infiltration_tunnel",
+        "dora_observatory"
+      ],
+      "usedLocations": [
+        "3rd Infiltration Tunnel (Underground Invasion Tunnel)",
+        "제3땅굴 (지하 침투 땅굴)",
+        "第3浸透トンネル（地下侵入トンネル）",
+        "第三条渗透隧道（地下入侵隧道）",
+        "第三條滲透隧道（地下入侵隧道）",
+        "3.er Túnel de Infiltración (Túnel de Invasión Subterráneo)"
+      ],
+      "slugs": [
+        "seoul-dmz-private-3rd-tunnel-suspension-bridge"
+      ],
+      "uses": 18
+    },
+    {
+      "path": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+      "folderKey": "dmz",
+      "usedPoiKeys": [
+        "third_infiltration_tunnel",
+        "dora_observatory"
+      ],
+      "usedLocations": [
+        "3rd Infiltration Tunnel (Underground Invasion Tunnel)",
+        "제3땅굴 (지하 침투 땅굴)",
+        "第3浸透トンネル（地下侵入トンネル）",
+        "第三条渗透隧道（地下入侵隧道）",
+        "第三條滲透隧道（地下入侵隧道）",
+        "3.er Túnel de Infiltración (Túnel de Invasión Subterráneo)"
+      ],
+      "slugs": [
+        "seoul-dmz-private-3rd-tunnel-suspension-bridge"
+      ],
+      "uses": 18
+    },
+    {
+      "path": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+      "folderKey": "suwon-hwaseong",
+      "usedPoiKeys": [
+        "hwaseong_fortress",
+        "hwaseong_haenggung",
+        "suwon_nammun_market"
+      ],
+      "usedLocations": [
+        "Suwon Hwaseong Fortress",
+        "수원 화성",
+        "水原華城",
+        "水原华城",
+        "Fortaleza Hwaseong de Suwon",
+        "Fortaleza Suwon Hwaseong"
+      ],
+      "slugs": [
+        "seoul-suwon-hwaseong-folk-village-starfield-library",
+        "seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library",
+        "seoul-suwon-hwaseong-waujeongsa-starfield"
+      ],
+      "uses": 138
+    },
+    {
+      "path": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
+      "folderKey": "suwon-hwaseong",
+      "usedPoiKeys": [
+        "hwaseong_fortress",
+        "hwaseong_haenggung"
+      ],
+      "usedLocations": [
+        "Suwon Hwaseong Fortress",
+        "수원 화성",
+        "水原華城",
+        "水原华城",
+        "Fortaleza Hwaseong de Suwon",
+        "Fortaleza Suwon Hwaseong"
+      ],
+      "slugs": [
+        "seoul-suwon-hwaseong-folk-village-starfield-library",
+        "seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library",
+        "seoul-suwon-hwaseong-waujeongsa-starfield"
+      ],
+      "uses": 48
+    },
+    {
+      "path": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
+      "folderKey": "suwon-hwaseong",
+      "usedPoiKeys": [
+        "hwaseong_fortress",
+        "hwaseong_haenggung"
+      ],
+      "usedLocations": [
+        "Suwon Hwaseong Fortress",
+        "수원 화성",
+        "水原華城",
+        "水原华城",
+        "Fortaleza Hwaseong de Suwon",
+        "Fortaleza Suwon Hwaseong"
+      ],
+      "slugs": [
+        "seoul-suwon-hwaseong-folk-village-starfield-library",
+        "seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library",
+        "seoul-suwon-hwaseong-waujeongsa-starfield"
+      ],
+      "uses": 48
+    },
+    {
+      "path": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
+      "folderKey": "suwon-hwaseong",
+      "usedPoiKeys": [
+        "hwaseong_fortress",
+        "hwaseong_haenggung"
+      ],
+      "usedLocations": [
+        "Suwon Hwaseong Fortress",
+        "수원 화성",
+        "水原華城",
+        "水原华城",
+        "Fortaleza Hwaseong de Suwon",
+        "Fortaleza Suwon Hwaseong"
+      ],
+      "slugs": [
+        "seoul-suwon-hwaseong-folk-village-starfield-library",
+        "seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library",
+        "seoul-suwon-hwaseong-waujeongsa-starfield"
+      ],
+      "uses": 48
+    },
+    {
+      "path": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
+      "folderKey": "suwon-hwaseong",
+      "usedPoiKeys": [
+        "hwaseong_fortress",
+        "hwaseong_haenggung"
+      ],
+      "usedLocations": [
+        "Suwon Hwaseong Fortress",
+        "수원 화성",
+        "水原華城",
+        "水原华城",
+        "Fortaleza Hwaseong de Suwon",
+        "Fortaleza Suwon Hwaseong"
+      ],
+      "slugs": [
+        "seoul-suwon-hwaseong-folk-village-starfield-library",
+        "seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library",
+        "seoul-suwon-hwaseong-waujeongsa-starfield"
+      ],
+      "uses": 48
+    }
+  ],
+  "missing": [],
+  "orphans": [
+    "/images/tours/busan-plum-blossom/photo-001.webp",
+    "/images/tours/busan-private/busan-private-cruise-terminal-thumbnail.webp",
+    "/images/tours/busan-private/busan-private-thumbnail-gwangalli.webp",
+    "/images/tours/cheongsando/photo-001.webp",
+    "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+    "/images/tours/daereungwon/chatgpt-image-2026-5-10-01-37-30-2.webp",
+    "/images/tours/daereungwon/chatgpt-image-2026-5-10-01-37-30.webp",
+    "/images/tours/daereungwon/chatgpt-image-2026-5-10-01-37-33-2.webp",
+    "/images/tours/daereungwon/chatgpt-image-2026-5-10-01-37-33.webp",
+    "/images/tours/everland/chatgpt-image-2026-5-9-11-36-42-2.webp",
+    "/images/tours/everland/chatgpt-image-2026-5-9-11-36-42.webp",
+    "/images/tours/everland/chatgpt-image-2026-5-9-11-36-45-2.webp",
+    "/images/tours/everland/chatgpt-image-2026-5-9-11-36-45.webp",
+    "/images/tours/everland/chatgpt-image-2026-5-9-11-36-56-2.webp",
+    "/images/tours/everland/chatgpt-image-2026-5-9-11-36-56.webp",
+    "/images/tours/everland/chatgpt-image-2026-5-9-11-37-09-2.webp",
+    "/images/tours/everland/chatgpt-image-2026-5-9-11-37-09.webp",
+    "/images/tours/everland/chatgpt-image-2026-5-9-11-38-48-2.webp",
+    "/images/tours/everland/chatgpt-image-2026-5-9-11-38-48.webp",
+    "/images/tours/everland/chatgpt-image-2026-5-9-11-38-57-2.webp",
+    "/images/tours/everland/chatgpt-image-2026-5-9-11-38-57.webp",
+    "/images/tours/everland/chatgpt-image-2026-5-9-11-45-11-2.webp",
+    "/images/tours/everland/chatgpt-image-2026-5-9-11-45-11.webp",
+    "/images/tours/everland/photo-008.webp",
+    "/images/tours/gamaksan-suspension-bridge/chatgpt-image-2026-5-10-10-36-38-2.webp",
+    "/images/tours/gamaksan-suspension-bridge/chatgpt-image-2026-5-10-10-36-38.webp",
+    "/images/tours/gamcheon-culture-village/gamcheon-panorama.webp",
+    "/images/tours/gamcheon-culture-village/gamcheon-vibrant-viewpoint.webp",
+    "/images/tours/hwangnam-bread/photo-001.webp",
+    "/images/tours/hwangnam-bread/photo-002.webp",
+    "/images/tours/iho-teu/chatgpt-image-2026-5-9-01-17-13-2.webp",
+    "/images/tours/iho-teu/chatgpt-image-2026-5-9-01-17-13.webp",
+    "/images/tours/iho-teu/chatgpt-image-2026-5-9-01-17-19-2.webp",
+    "/images/tours/iho-teu/chatgpt-image-2026-5-9-01-17-19.webp",
+    "/images/tours/incheon-cruise/incheon-cruise-terminal-thumbnail.webp",
+    "/images/tours/jeju-cruise-terminal/jeju-cruise-terminal-private-pickup.webp",
+    "/images/tours/jeju-cruise-tour-coast.png",
+    "/images/tours/jeju-eastern-unesco-beach.png",
+    "/images/tours/jeju-eastern-unesco-cover.png",
+    "/images/tours/jeju-eastern-unesco-haenyeo.png",
+    "/images/tours/jeju-eastern-unesco-seongsan.png",
+    "/images/tours/jeju-ecoland/chatgpt-image-2026-5-8-07-50-52-2.webp",
+    "/images/tours/jeju-ecoland/chatgpt-image-2026-5-8-07-50-52.webp",
+    "/images/tours/jeju-ecoland/chatgpt-image-2026-5-8-07-52-28-2.webp",
+    "/images/tours/jeju-ecoland/chatgpt-image-2026-5-8-07-52-28.webp",
+    "/images/tours/jeju-ecoland/chatgpt-image-2026-5-8-07-52-32-2.webp",
+    "/images/tours/jeju-ecoland/chatgpt-image-2026-5-8-07-52-32.webp",
+    "/images/tours/jeju-ecoland/chatgpt-image-2026-5-8-07-52-34-2.webp",
+    "/images/tours/jeju-ecoland/chatgpt-image-2026-5-8-07-52-34.webp",
+    "/images/tours/jeju-ecoland/chatgpt-image-2026-5-8-07-58-24-2.webp",
+    "/images/tours/jeju-ecoland/chatgpt-image-2026-5-8-07-58-24.webp",
+    "/images/tours/jeju-ecoland/chatgpt-image-2026-5-8-08-01-09-2.webp",
+    "/images/tours/jeju-ecoland/chatgpt-image-2026-5-8-08-01-09.webp",
+    "/images/tours/jeju-fantasy-forest/chatgpt-image-2026-5-11-12-23-57.webp",
+    "/images/tours/jeju-private-car-tour-cover.png",
+    "/images/tours/jeju-private-tour-coast.png",
+    "/images/tours/jeju-private-tour-coastal-view.png",
+    "/images/tours/jeju-private-tour-people.png",
+    "/images/tours/jeju-private-tour-road.png",
+    "/images/tours/jeju-private-tour-waterfall.png",
+    "/images/tours/jeju-southern-unesco-snow-road.png",
+    "/images/tours/jeju-west-south-cliff-view.png",
+    "/images/tours/jeju-west-south-cliff-waves.png",
+    "/images/tours/jeju-west-south-cover.png",
+    "/images/tours/jeju-west-south-hiking-trail.png",
+    "/images/tours/jeju-west-south-snow-road.png",
+    "/images/tours/jeju-west-south-tea-field.png",
+    "/images/tours/jinhae-gyeonghwa-station/photo-001.webp",
+    "/images/tours/jinhae-yeojwacheon/photo-001.webp",
+    "/images/tours/sanbangsan/photo-001.webp",
+    "/images/tours/sanbangsan/photo-002.webp",
+    "/images/tours/saryeoni-forest/chatgpt-image-2026-5-8-08-14-51-2.webp",
+    "/images/tours/saryeoni-forest/chatgpt-image-2026-5-8-08-14-51.webp",
+    "/images/tours/saryeoni-forest/chatgpt-image-2026-5-8-08-14-58-2.webp",
+    "/images/tours/saryeoni-forest/chatgpt-image-2026-5-8-08-14-58.webp",
+    "/images/tours/saryeoni-forest/chatgpt-image-2026-5-8-08-15-01-2.webp",
+    "/images/tours/saryeoni-forest/chatgpt-image-2026-5-8-08-15-01.webp",
+    "/images/tours/seokchon-lake/photo-001.webp",
+    "/images/tours/songdo-beach/chatgpt-image-2026-5-10-12-32-12-2.webp",
+    "/images/tours/stone-culture/stone-park-dolhareubang-front.webp",
+    "/images/tours/stone-culture/stone-park-dolhareubang-rows.webp",
+    "/images/tours/stone-culture/stone-park-standing-stones.webp",
+    "/images/tours/stone-culture/stone-park-stone-path-green.webp",
+    "/images/tours/stone-culture/stone-park-water-oreum.webp",
+    "/images/tours/today-green-tea/chatgpt-image-2026-5-8-08-04-40.webp",
+    "/images/tours/today-green-tea/chatgpt-image-2026-5-8-08-05-24.webp",
+    "/images/tours/today-green-tea/chatgpt-image-2026-5-8-08-05-28.webp",
+    "/images/tours/today-green-tea/chatgpt-image-2026-5-8-08-06-55.webp",
+    "/images/tours/today-green-tea/chatgpt-image-2026-5-8-08-14-49.webp",
+    "/images/tours/yakcheonsa/photo-001.webp",
+    "/images/itinerary/bomun-area-amusement-park.webp",
+    "/images/itinerary/bomun-area-pavilion.webp",
+    "/images/itinerary/bomun-lake-aerial.webp",
+    "/images/itinerary/bomun-lake-cherry-blossoms.webp",
+    "/images/itinerary/bukchon-hanok-hanbok-alley.webp",
+    "/images/itinerary/seoraksan-autumn-ridge.webp",
+    "/images/itinerary/seoraksan-cable-car-winter.webp",
+    "/images/itinerary/seoraksan-cliff-panorama.webp",
+    "/images/itinerary/seoraksan-sinheungsa-aerial.webp",
+    "/images/itinerary/songdo-beach-aerial.webp",
+    "/images/itinerary/songdo-beach-sign-couple.webp",
+    "/images/itinerary/songdo-skywalk-cable-car.webp",
+    "/images/hero/busan-hero.jpg",
+    "/images/hero/jeju-hero.jpg",
+    "/images/hero/seoul-hero.jpg",
+    "/images/destinations/busan-card.jpg",
+    "/images/destinations/jeju-card.jpg",
+    "/images/destinations/seoul-card.jpg"
+  ],
+  "perPoi": [
+    {
+      "folder": "songdo-beach",
+      "photoCount": 1,
+      "uses": 36,
+      "poiKeys": [
+        "songdo_beach"
+      ],
+      "stopNames": [
+        "Songdo Beach",
+        "송도해수욕장",
+        "松島ビーチ",
+        "松岛海滩",
+        "松島海水浴場",
+        "Playa Songdo",
+        "Songdo Beach or Yongdusan Park",
+        "남포동 & 자갈치 수산시장",
+        "南浦洞＆チャガルチ水産市場",
+        "南浦洞与札嘎其水产市场",
+        "南浦洞＆札嘎其魚市場",
+        "Nampo-dong y Mercado de Pescado Jagalchi"
+      ],
+      "locations": [
+        "Songdo Beach",
+        "송도해수욕장",
+        "松島ビーチ",
+        "松岛海滩",
+        "松島海水浴場",
+        "Playa Songdo",
+        "Songdo Beach or Yongdusan Park",
+        "남포동 & 자갈치 수산시장",
+        "南浦洞＆チャガルチ水産市場",
+        "南浦洞与札嘎其水产市场",
+        "南浦洞＆札嘎其魚市場",
+        "Nampo-dong y Mercado de Pescado Jagalchi"
+      ]
+    },
+    {
+      "folder": "myeongdong",
+      "photoCount": 1,
+      "uses": 18,
+      "poiKeys": [
+        "myeongdong"
+      ],
+      "stopNames": [
+        "Myeongdong OR Jogyesa Temple (your choice)",
+        "명동 또는 조계사 (선택)",
+        "明洞（ミョンドン）または曹渓寺（チョゲサ）（お好みでお選びください）",
+        "明洞 或 曹溪寺（您来选择）",
+        "明洞 或 曹溪寺（自由選擇）",
+        "Myeongdong O Templo Jogyesa (a su elección)"
+      ],
+      "locations": [
+        "Myeongdong OR Jogyesa Temple (your choice)",
+        "명동 또는 조계사 (선택)",
+        "明洞（ミョンドン）または曹渓寺（チョゲサ）（お好みでお選びください）",
+        "明洞 或 曹溪寺（您来选择）",
+        "明洞 或 曹溪寺（自由選擇）",
+        "Myeongdong O Templo Jogyesa (a su elección)"
+      ]
+    },
+    {
+      "folder": "jeonnong-ro",
+      "photoCount": 1,
+      "uses": 6,
+      "poiKeys": [],
+      "stopNames": [],
+      "locations": [
+        "Jeonnong-ro Cherry Blossom Street",
+        "전농로 벚꽃길",
+        "全農路（チョンノンノ）桜並木通り",
+        "全农路樱花街",
+        "全農路櫻花街",
+        "Calle de los Cerezos de Jeonnong-ro"
+      ]
+    },
+    {
+      "folder": "jeju-private",
+      "photoCount": 1,
+      "uses": 30,
+      "poiKeys": [],
+      "stopNames": [],
+      "locations": [
+        "Jeju Private Tour",
+        "제주 프라이빗 투어",
+        "済州プライベートツアー",
+        "济州私家车包车游",
+        "濟州私家車包車遊",
+        "Tour privado en Jeju"
+      ]
+    },
+    {
+      "folder": "seoraksan",
+      "photoCount": 1,
+      "uses": 9,
+      "poiKeys": [],
+      "stopNames": [],
+      "locations": [
+        "Seoraksan National Park",
+        "설악산 국립공원",
+        "Parque Nacional Seoraksan",
+        "설악산국립공원",
+        "Parque Nacional de Seoraksan"
+      ]
+    },
+    {
+      "folder": "woljeonggyo",
+      "photoCount": 2,
+      "uses": 24,
+      "poiKeys": [],
+      "stopNames": [],
+      "locations": [
+        "Woljeonggyo Bridge",
+        "월정교",
+        "月精橋（ウォルジョンギョ）",
+        "月精桥",
+        "月精橋",
+        "Puente Woljeonggyo"
+      ]
+    },
+    {
+      "folder": "bukchon-hanok",
+      "photoCount": 2,
+      "uses": 48,
+      "poiKeys": [
+        "bukchon_hanok_village"
+      ],
+      "stopNames": [
+        "Bukchon Hanok Village",
+        "북촌한옥마을",
+        "北村韓屋マウル",
+        "北村韩屋村",
+        "北村韓屋村",
+        "Bukchon Hanok Village + Insadong",
+        "북촌 한옥마을 + 인사동",
+        "北村韓屋村 ＋ 仁寺洞",
+        "北村韩屋村 + 仁寺洞",
+        "北村韓屋村 + 仁寺洞",
+        "Pueblo Hanok de Bukchon + Insadong"
+      ],
+      "locations": [
+        "Bukchon Hanok Village",
+        "북촌한옥마을",
+        "北村韓屋マウル",
+        "北村韩屋村",
+        "北村韓屋村",
+        "Bukchon Hanok Village + Insadong",
+        "북촌 한옥마을 + 인사동",
+        "北村韓屋村 ＋ 仁寺洞",
+        "北村韩屋村 + 仁寺洞",
+        "北村韓屋村 + 仁寺洞",
+        "Pueblo Hanok de Bukchon + Insadong"
+      ]
+    },
+    {
+      "folder": "insadong",
+      "photoCount": 2,
+      "uses": 24,
+      "poiKeys": [
+        "insadong"
+      ],
+      "stopNames": [
+        "Insadong cultural street",
+        "인사동 문화 거리",
+        "仁寺洞文化ストリート",
+        "仁寺洞文化街",
+        "Calle cultural de Insadong"
+      ],
+      "locations": [
+        "Insadong cultural street",
+        "인사동 문화 거리",
+        "Calle cultural de Insadong"
+      ]
+    },
+    {
+      "folder": "gwangjang-market",
+      "photoCount": 2,
+      "uses": 20,
+      "poiKeys": [
+        "gwangjang_market"
+      ],
+      "stopNames": [
+        "Lunch at Gwangjang Market",
+        "광장시장에서 점심 식사",
+        "広蔵市場でランチ",
+        "广藏市场午餐",
+        "廣藏市場午餐",
+        "Almuerzo en el Mercado Gwangjang"
+      ],
+      "locations": [
+        "広蔵市場でランチ",
+        "广藏市场午餐",
+        "廣藏市場午餐",
+        "Almuerzo en el Mercado Gwangjang"
+      ]
+    },
+    {
+      "folder": "jeju-tangerine-farm",
+      "photoCount": 2,
+      "uses": 48,
+      "poiKeys": [
+        "jeju_tangerine_picking_experience"
+      ],
+      "stopNames": [
+        "Tangerine (Gyul) Picking Experience — Winter Hallabong Peak",
+        "귤(Gyul) 따기 체험 — 겨울 한라봉 최성수기",
+        "みかん（ギュル）狩り体験 — 冬のハルラボンシーズン",
+        "柑橘（귤）采摘体验 — 冬季汉拿峰柑橘旺季",
+        "橘子（귤）採摘體驗 — 冬季漢拏峰橘當季",
+        "Experiencia de Recolección de Mandarinas (Gyul) — Temporada Pico de Hallabong en Invierno"
+      ],
+      "locations": [
+        "Tangerine (Gyul) Picking Experience — Winter Hallabong Peak",
+        "귤(Gyul) 따기 체험 — 겨울 한라봉 최성수기",
+        "みかん（ギュル）狩り体験 — 冬のハルラボンシーズン",
+        "柑橘（귤）采摘体验 — 冬季汉拿峰柑橘旺季",
+        "橘子（귤）採摘體驗 — 冬季漢拏峰橘當季",
+        "Experiencia de Recolección de Mandarinas (Gyul) — Temporada Pico de Hallabong en Invierno"
+      ]
+    },
+    {
+      "folder": "seoraksan-national-park",
+      "photoCount": 2,
+      "uses": 144,
+      "poiKeys": [
+        "seoraksan_national_park"
+      ],
+      "stopNames": [
+        "Seoraksan National Park",
+        "설악산 국립공원",
+        "雪岳山国立公園",
+        "雪岳山国家公园",
+        "雪嶽山國家公園",
+        "Parque Nacional Seoraksan",
+        "설악산국립공원",
+        "雪岳山国立公园",
+        "雪嶽山國立公園",
+        "Parque Nacional de Seoraksan"
+      ],
+      "locations": [
+        "Seoraksan National Park",
+        "설악산 국립공원",
+        "雪岳山国立公園",
+        "雪岳山国家公园",
+        "雪嶽山國家公園",
+        "Parque Nacional Seoraksan",
+        "설악산국립공원",
+        "雪岳山国立公园",
+        "雪嶽山國立公園",
+        "Parque Nacional de Seoraksan"
+      ]
+    },
+    {
+      "folder": "naksan-beach",
+      "photoCount": 2,
+      "uses": 30,
+      "poiKeys": [
+        "naksan_beach"
+      ],
+      "stopNames": [
+        "Naksan Beach",
+        "낙산해수욕장",
+        "ナクサン・ビーチ（洛山海水浴場）",
+        "洛山海滩",
+        "洛山海水浴場",
+        "Playa de Naksan"
+      ],
+      "locations": [
+        "Naksan Beach",
+        "낙산해수욕장",
+        "ナクサン・ビーチ（洛山海水浴場）",
+        "洛山海滩",
+        "洛山海水浴場",
+        "Playa de Naksan"
+      ]
+    },
+    {
+      "folder": "gyeongju-national-museum",
+      "photoCount": 3,
+      "uses": 84,
+      "poiKeys": [
+        "gyeongju_national_museum"
+      ],
+      "stopNames": [
+        "Gyeongju National Museum",
+        "국립경주박물관",
+        "国立慶州博物館",
+        "庆州国立博物馆",
+        "慶州國立博物館",
+        "Museo Nacional de Gyeongju",
+        "慶州国立博物館"
+      ],
+      "locations": [
+        "Gyeongju National Museum",
+        "국립경주박물관",
+        "国立慶州博物館",
+        "国立庆州博物馆",
+        "國立慶州博物館",
+        "Museo Nacional de Gyeongju"
+      ]
+    },
+    {
+      "folder": "amethyst-cave",
+      "photoCount": 3,
+      "uses": 42,
+      "poiKeys": [
+        "amethyst_cave_themepark"
+      ],
+      "stopNames": [
+        "Amethyst Cave Theme Park (Ulsan)",
+        "자수정동굴나라 (울산)",
+        "アメジスト洞窟テーマパーク（蔚山）",
+        "紫水晶洞主题公园（蔚山）",
+        "紫水晶洞主題公園（蔚山）",
+        "Parque Temático de la Cueva de Amatista (Ulsan)"
+      ],
+      "locations": [
+        "Amethyst Cave Theme Park (Ulsan)",
+        "자수정동굴나라 (울산)",
+        "アメジスト洞窟テーマパーク（蔚山）",
+        "紫水晶洞主题公园（蔚山）",
+        "紫水晶洞主題公園（蔚山）",
+        "Parque Temático de la Cueva de Amatista (Ulsan)"
+      ]
+    },
+    {
+      "folder": "yeongnam-alps",
+      "photoCount": 3,
+      "uses": 42,
+      "poiKeys": [
+        "yeongnam_alps_ice_valley_cable_car"
+      ],
+      "stopNames": [
+        "Yeongnam Alps Ice Valley Cable Car (Miryang)",
+        "영남알프스 얼음골 케이블카(밀양)",
+        "嶺南アルプス얼음골ケーブルカー（密陽）",
+        "岭南阿尔卑斯冰谷缆车（密阳）",
+        "嶺南阿爾卑斯冰谷纜車（密陽）",
+        "Teleférico del Valle de Hielo de los Alpes de Yeongnam (Miryang)"
+      ],
+      "locations": [
+        "Yeongnam Alps Ice Valley Cable Car (Miryang)",
+        "영남알프스 얼음골 케이블카(밀양)",
+        "嶺南アルプス얼음골ケーブルカー（密陽）",
+        "岭南阿尔卑斯冰谷缆车（密阳）",
+        "嶺南阿爾卑斯冰谷纜車（密陽）",
+        "Teleférico del Valle de Hielo de los Alpes de Yeongnam (Miryang)"
+      ]
+    },
+    {
+      "folder": "naksansa-temple",
+      "photoCount": 3,
+      "uses": 42,
+      "poiKeys": [
+        "naksansa_temple"
+      ],
+      "stopNames": [
+        "Naksansa Temple",
+        "낙산사",
+        "洛山寺",
+        "Templo de Naksansa"
+      ],
+      "locations": [
+        "Naksansa Temple",
+        "낙산사",
+        "洛山寺",
+        "Templo de Naksansa"
+      ]
+    },
+    {
+      "folder": "gamcheon-culture-village",
+      "photoCount": 4,
+      "uses": 178,
+      "poiKeys": [
+        "gamcheon_culture_village"
+      ],
+      "stopNames": [
+        "Gamcheon Culture Village",
+        "감천문화마을",
+        "甘川文化村",
+        "Pueblo Cultural de Gamcheon",
+        "Gamcheon Culture Village (Busan)",
+        "용두산공원 & 부산타워",
+        "龍頭山公園＆釜山タワー",
+        "龙头山公园＆釜山塔",
+        "龍頭山公園與釜山塔",
+        "Parque Yongdusan y Torre de Busan"
+      ],
+      "locations": [
+        "Gamcheon Culture Village",
+        "감천문화마을",
+        "甘川文化村",
+        "Pueblo Cultural de Gamcheon",
+        "Gamcheon Culture Village (Busan)",
+        "龍頭山公園＆釜山タワー",
+        "龙头山公园＆釜山塔",
+        "龍頭山公園與釜山塔",
+        "Aldea Cultural de Gamcheon"
+      ]
+    },
+    {
+      "folder": "jagalchi-market",
+      "photoCount": 4,
+      "uses": 40,
+      "poiKeys": [],
+      "stopNames": [],
+      "locations": [
+        "Jagalchi Market",
+        "자갈치 어시장",
+        "Mercado de Pescado Jagalchi",
+        "Nampo-dong & Jagalchi Fish Market",
+        "남포동 & 자갈치 수산시장",
+        "Nampo-dong y Mercado de Pescado Jagalchi",
+        "Jagalchi, BIFF Square & Gukje Market area",
+        "Jagalchi Fish Market"
+      ]
+    },
+    {
+      "folder": "cheomseongdae",
+      "photoCount": 4,
+      "uses": 42,
+      "poiKeys": [
+        "cheomseongdae"
+      ],
+      "stopNames": [
+        "Cheomseongdae Observatory + Daereungwon Tomb Complex",
+        "첨성대 + 대릉원",
+        "瞻星台（チョムソンデ）＋ 大陵苑（テルンウォン）古墳群",
+        "瞻星台天文台 + 大陵苑古墓群",
+        "瞻星臺天文台 + 大陵苑古墓群",
+        "Observatorio Cheomseongdae + Complejo de Tumbas Daereungwon"
+      ],
+      "locations": [
+        "Cheomseongdae Observatory + Daereungwon Tomb Complex",
+        "첨성대 + 대릉원",
+        "瞻星台（チョムソンデ）＋ 大陵苑（テルンウォン）古墳群",
+        "瞻星台天文台 + 大陵苑古墓群",
+        "瞻星臺天文台 + 大陵苑古墓群",
+        "Observatorio Cheomseongdae + Complejo de Tumbas Daereungwon"
+      ]
+    },
+    {
+      "folder": "n-seoul-tower",
+      "photoCount": 4,
+      "uses": 54,
+      "poiKeys": [
+        "n_seoul_tower"
+      ],
+      "stopNames": [
+        "N Seoul Tower (Namsan)",
+        "N서울타워 (남산)",
+        "Nソウルタワー（南山）",
+        "N首尔塔（南山）",
+        "N首爾塔（南山）",
+        "Torre N de Seúl (Namsan)"
+      ],
+      "locations": [
+        "N Seoul Tower (Namsan)",
+        "N서울타워 (남산)",
+        "Nソウルタワー（南山）",
+        "N首尔塔（南山）",
+        "N首爾塔（南山）",
+        "Torre N de Seúl (Namsan)"
+      ]
+    },
+    {
+      "folder": "hallim-park",
+      "photoCount": 4,
+      "uses": 54,
+      "poiKeys": [
+        "hallim_park"
+      ],
+      "stopNames": [
+        "Hallim Park (Hydrangea Festival)",
+        "한림공원 (수국 축제)",
+        "翰林公園（アジサイ祭り）",
+        "翰林公园（绣球花节）",
+        "翰林公園（繡球花節）",
+        "Parque Hallim (Festival de las Hortensias)"
+      ],
+      "locations": [
+        "Hallim Park (Hydrangea Festival)",
+        "한림공원 (수국 축제)",
+        "翰林公園（アジサイ祭り）",
+        "翰林公园（绣球花节）",
+        "翰林公園（繡球花節）",
+        "Parque Hallim (Festival de las Hortensias)"
+      ]
+    },
+    {
+      "folder": "camellia-hill",
+      "photoCount": 4,
+      "uses": 132,
+      "poiKeys": [
+        "camellia_hill"
+      ],
+      "stopNames": [
+        "Camellia Hill (Hydrangea Tunnel)",
+        "카멜리아힐 (수국 터널)",
+        "カメリアヒル（アジサイトンネル）",
+        "茶美利亚山丘（绣球花隧道）",
+        "椿花丘（繡球花隧道）",
+        "Camellia Hill (Túnel de Hortensias)",
+        "Camellia Hill (year-round signature flower garden)",
+        "카멜리아힐 (연중 운영 대표 꽃 정원)",
+        "カメリアヒル（通年楽しめるシグネチャー・フラワーガーデン）",
+        "山茶花山丘（全年特色花园）",
+        "茶花山丘（全年招牌花卉園區）",
+        "Camellia Hill (jardín de flores emblemático durante todo el año)",
+        "카멜리아힐 (사계절 대표 꽃 정원)",
+        "カメリアヒル（年間を通じたシグネチャーフラワーガーデン）",
+        "山茶花山丘（四季特色花卉花园）",
+        "山茶花丘（四季皆宜的招牌花卉園）",
+        "Camellia Hill (jardín floral emblemático durante todo el año)"
+      ],
+      "locations": [
+        "Camellia Hill (Hydrangea Tunnel)",
+        "카멜리아힐 (수국 터널)",
+        "カメリアヒル（アジサイトンネル）",
+        "茶美利亚山丘（绣球花隧道）",
+        "椿花丘（繡球花隧道）",
+        "Camellia Hill (Túnel de Hortensias)",
+        "Camellia Hill",
+        "카멜리아힐",
+        "カメリアヒル",
+        "茶花之丘 (Camellia Hill)",
+        "Camellia Hill (year-round signature flower garden)",
+        "카멜리아힐 (연중 운영 대표 꽃 정원)",
+        "カメリアヒル（通年楽しめるシグネチャー・フラワーガーデン）",
+        "山茶花山丘（全年特色花园）",
+        "茶花山丘（全年招牌花卉園區）",
+        "Camellia Hill (jardín de flores emblemático durante todo el año)",
+        "카멜리아힐 (사계절 대표 꽃 정원)",
+        "カメリアヒル（年間を通じたシグネチャーフラワーガーデン）",
+        "山茶花山丘（四季特色花卉花园）",
+        "山茶花丘（四季皆宜的招牌花卉園）",
+        "Camellia Hill (jardín floral emblemático durante todo el año)"
+      ]
+    },
+    {
+      "folder": "osulloc-tea",
+      "photoCount": 4,
+      "uses": 216,
+      "poiKeys": [
+        "osulloc_tea_museum"
+      ],
+      "stopNames": [
+        "Osulloc Tea Museum & Tea Fields",
+        "오설록 티 뮤지엄 & 차밭",
+        "オスルロック・ティーミュージアム＆茶畑",
+        "雪绿茶博物馆及茶田",
+        "奧雪綠茶博物館暨茶園",
+        "Museo del Té Osulloc y Campos de Té",
+        "O'sulloc Tea Museum + Green Tea Fields",
+        "오설록 티 뮤지엄 + 녹차밭",
+        "オソルロク・ティーミュージアム＋緑茶畑",
+        "雪绿茶博物馆 + 绿茶田",
+        "雪綠茶博物館 + 綠茶田",
+        "Museo del Té O'sulloc + Campos de Té Verde",
+        "O'Sulloc茶博物館＋綠茶田",
+        "O'Sulloc Tea Museum",
+        "오설록 티 뮤지엄",
+        "オソルロック・ティーミュージアム",
+        "雪绿茶博物馆（O'Sulloc Tea Museum）",
+        "O'Sulloc茶博物館",
+        "Museo del Té O'Sulloc"
+      ],
+      "locations": [
+        "Osulloc Tea Museum & Tea Fields",
+        "오설록 티 뮤지엄 & 차밭",
+        "オーソルロック・ティーミュージアム",
+        "雪绿茶博物馆及茶田",
+        "奧雪綠茶博物館暨茶園",
+        "Museo del Té Osulloc y Campos de Té",
+        "O'sulloc Tea Museum + Green Tea Fields",
+        "오설록 티 뮤지엄 + 녹차밭",
+        "雪绿茶博物馆 + 绿茶田",
+        "雪綠茶博物館 + 綠茶田",
+        "Museo del Té O'sulloc + Campos de Té Verde",
+        "雪綠茶博物館",
+        "O'sulloc Tea Museum",
+        "오설록 티 뮤지엄",
+        "雪绿茶博物馆（O'Sulloc Tea Museum）",
+        "Museo del Té O'sulloc"
+      ]
+    },
+    {
+      "folder": "sanjeong-lake",
+      "photoCount": 4,
+      "uses": 60,
+      "poiKeys": [
+        "sanjeong_lake"
+      ],
+      "stopNames": [
+        "Sanjeong Lake",
+        "산정호수",
+        "山井湖（サンジョン湖）",
+        "山井湖",
+        "Lago Sanjeong"
+      ],
+      "locations": [
+        "Sanjeong Lake",
+        "산정호수",
+        "山井湖（サンジョン湖）",
+        "山井湖",
+        "Lago Sanjeong"
+      ]
+    },
+    {
+      "folder": "pocheon-art-valley",
+      "photoCount": 4,
+      "uses": 42,
+      "poiKeys": [
+        "pocheon_art_valley"
+      ],
+      "stopNames": [
+        "Pocheon Art Valley",
+        "포천 아트밸리",
+        "ポチョン・アートバレー",
+        "抱川艺术谷",
+        "抱川藝術谷",
+        "Valle de Arte de Pocheon"
+      ],
+      "locations": [
+        "Pocheon Art Valley",
+        "포천 아트밸리",
+        "ポチョン・アートバレー",
+        "抱川艺术谷",
+        "抱川藝術谷",
+        "Valle de Arte de Pocheon"
+      ]
+    },
+    {
+      "folder": "korean-folk-village",
+      "photoCount": 4,
+      "uses": 42,
+      "poiKeys": [
+        "korean_folk_village_yongin"
+      ],
+      "stopNames": [
+        "Korean Folk Village (Yongin)",
+        "한국민속촌 (용인)",
+        "韓国民俗村（龍仁）",
+        "韩国民俗村（龙仁）",
+        "韓國民俗村（龍仁）",
+        "Pueblo Folclórico Coreano (Yongin)"
+      ],
+      "locations": [
+        "Korean Folk Village (Yongin)",
+        "한국민속촌 (용인)",
+        "韓国民俗村（龍仁）",
+        "韩国民俗村（龙仁）",
+        "韓國民俗村（龍仁）",
+        "Pueblo Folclórico Coreano (Yongin)"
+      ]
+    },
+    {
+      "folder": "haedong-yonggungsa",
+      "photoCount": 5,
+      "uses": 252,
+      "poiKeys": [
+        "haedong_yonggungsa"
+      ],
+      "stopNames": [
+        "Haedong Yonggungsa Temple",
+        "해동 용궁사",
+        "海東龍宮寺",
+        "海东龙宫寺",
+        "Templo Haedong Yonggungsa",
+        "유엔기념공원 (한국전쟁)",
+        "国連記念公園（朝鮮戦争）",
+        "联合国纪念公墓（朝鲜战争）",
+        "聯合國紀念公墓（韓戰）",
+        "Cementerio Memorial de la ONU (Guerra de Corea)"
+      ],
+      "locations": [
+        "Haedong Yonggungsa Temple",
+        "해동 용궁사",
+        "海東龍宮寺",
+        "海东龙宫寺",
+        "Templo Haedong Yonggungsa",
+        "UN Memorial Cemetery in Korea",
+        "태종대 해안 절벽",
+        "テジョンデ（太宗台）沿岸断崖",
+        "太宗台海岸悬崖",
+        "太宗臺海岸懸崖",
+        "Acantilados costeros de Taejongdae"
+      ]
+    },
+    {
+      "folder": "bulguksa-temple",
+      "photoCount": 5,
+      "uses": 216,
+      "poiKeys": [
+        "bulguksa_temple"
+      ],
+      "stopNames": [
+        "Bulguksa Temple (UNESCO World Heritage)",
+        "불국사 (유네스코 세계문화유산)",
+        "仏国寺（ユネスコ世界遺産）",
+        "佛国寺（联合国教科文组织世界遗产）",
+        "佛國寺（UNESCO世界遺產）",
+        "Templo Bulguksa (Patrimonio Mundial de la UNESCO)",
+        "불국사(유네스코 세계유산)",
+        "佛國寺（聯合國教科文組織世界遺產）",
+        "佛国寺（UNESCO世界文化遗产）"
+      ],
+      "locations": [
+        "Bulguksa Temple (UNESCO World Heritage)",
+        "불국사 (유네스코 세계문화유산)",
+        "仏国寺（ユネスコ世界遺産）",
+        "佛国寺（联合国教科文组织世界遗产）",
+        "佛國寺（UNESCO世界遺產）",
+        "Templo Bulguksa (Patrimonio Mundial de la UNESCO)",
+        "불국사(유네스코 세계유산)",
+        "佛國寺（聯合國教科文組織世界遺產）",
+        "佛国寺（UNESCO世界文化遗产）"
+      ]
+    },
+    {
+      "folder": "hallasan-eoseungsaengak",
+      "photoCount": 5,
+      "uses": 204,
+      "poiKeys": [
+        "hallasan_eoseungsaengak"
+      ],
+      "stopNames": [
+        "Hallasan Eoseungsaengak",
+        "한라산 어승생악",
+        "漢拏山 オスンセンアク",
+        "汉拿山御乘生岳",
+        "漢拿山御乘生岳",
+        "Eoseungsaengak Trail (Hallasan UNESCO)",
+        "어승생악 탐방로 (한라산 유네스코)",
+        "エオスンセンアク（御乗生악）トレイル（漢拏山 ユネスコ）",
+        "御承生岳步道（汉拿山联合国教科文组织遗址）",
+        "御乘生岳步道（漢拿山 UNESCO）",
+        "Sendero Eoseungsaengak (Hallasan UNESCO)",
+        "漢拏山（ハルラサン）御乗生岳（オスンセンアク）",
+        "漢拿山魚乘生岳"
+      ],
+      "locations": [
+        "Hallasan Eoseungsaengak",
+        "한라산 어승생악",
+        "漢拏山 オスンセンアク",
+        "汉拿山御乘生岳",
+        "漢拿山御乘生岳",
+        "한라산 어승생악 탐방로",
+        "漢拏山 御乗生岳トレイル",
+        "汉拿山御乘生岳步道",
+        "漢拏山御乘生嶽步道",
+        "Eoseungsaengak Trail (Hallasan UNESCO)",
+        "어승생악 탐방로 (한라산 유네스코)",
+        "エオスンセンアク（御乗生악）トレイル（漢拏山 ユネスコ）",
+        "御承生岳步道（汉拿山联合国教科文组织遗址）",
+        "御乘生岳步道（漢拿山 UNESCO）",
+        "Sendero Eoseungsaengak (Hallasan UNESCO)",
+        "漢拏山（ハルラサン）御乗生岳（オスンセンアク）",
+        "漢拿山魚乘生岳"
+      ]
+    },
+    {
+      "folder": "nami-island",
+      "photoCount": 5,
+      "uses": 126,
+      "poiKeys": [
+        "nami_island"
+      ],
+      "stopNames": [
+        "Nami Island (Namiseom)",
+        "남이섬 (나미섬)",
+        "南怡島（ナミソム）",
+        "南怡岛（Namiseom）",
+        "南怡島（Namiseom）",
+        "Isla Nami (Namiseom)",
+        "南怡岛（南怡洲）",
+        "南怡島（南怡洲）"
+      ],
+      "locations": [
+        "Nami Island (Namiseom)",
+        "남이섬 (나미섬)",
+        "南怡島（ナミソム）",
+        "南怡岛（Namiseom）",
+        "南怡島（Namiseom）",
+        "Isla Nami (Namiseom)",
+        "南怡岛（南怡洲）",
+        "南怡島（南怡洲）"
+      ]
+    },
+    {
+      "folder": "petite-france",
+      "photoCount": 5,
+      "uses": 48,
+      "poiKeys": [
+        "petite_france"
+      ],
+      "stopNames": [
+        "Petite France",
+        "쁘띠프랑스",
+        "プチフランス",
+        "小法国村",
+        "小法國村"
+      ],
+      "locations": [
+        "Petite France",
+        "쁘띠프랑스",
+        "プチフランス",
+        "小法国村",
+        "小法國村"
+      ]
+    },
+    {
+      "folder": "seoul-private-charter",
+      "photoCount": 5,
+      "uses": 54,
+      "poiKeys": [],
+      "stopNames": [],
+      "locations": [
+        "Seoul Private Charter",
+        "서울 프라이빗 차량 투어",
+        "ソウル プライベート貸切",
+        "首尔私家车包车游",
+        "首爾私家車包車遊",
+        "Chárter privado en Seúl",
+        "Gyeongbokgung Palace",
+        "경복궁",
+        "景福宮",
+        "景福宫",
+        "Palacio Gyeongbokgung",
+        "N Seoul Tower (Namsan)",
+        "N서울타워 (남산)",
+        "Nソウルタワー（南山）",
+        "N首尔塔（南山）",
+        "N首爾塔（南山）",
+        "Torre N de Seúl (Namsan)",
+        "Lotte World Tower (Songpa)",
+        "롯데월드타워 (송파)",
+        "ロッテワールドタワー（松坡）",
+        "乐天世界塔（松坡）",
+        "樂天世界塔（松坡）",
+        "Torre Lotte World (Songpa)"
+      ]
+    },
+    {
+      "folder": "un-memorial-cemetery",
+      "photoCount": 6,
+      "uses": 180,
+      "poiKeys": [
+        "un_memorial_cemetery"
+      ],
+      "stopNames": [
+        "UN Memorial Cemetery in Korea",
+        "재한유엔기념공원",
+        "韓国国連記念公園",
+        "驻韩联合国纪念公墓",
+        "韓國聯合國紀念公墓",
+        "Cementerio Memorial de la ONU en Corea",
+        "태종대 해안 절벽",
+        "テジョンデ（太宗台）沿岸断崖",
+        "太宗台海岸悬崖",
+        "太宗臺海岸懸崖",
+        "Acantilados costeros de Taejongdae"
+      ],
+      "locations": [
+        "UN Memorial Cemetery in Korea",
+        "재한유엔기념공원",
+        "韓国国連記念公園",
+        "驻韩联合国纪念公墓",
+        "韓國聯合國紀念公墓",
+        "Cementerio Memorial de la ONU en Corea",
+        "在韓国国連記念公園",
+        "在韩联合国纪念公园",
+        "在韓聯合國紀念公園",
+        "Cementerio Memorial de la ONU (Guerra de Corea)",
+        "태종대 해안 절벽",
+        "テジョンデ（太宗台）沿岸断崖",
+        "太宗台海岸悬崖",
+        "太宗臺海岸懸崖",
+        "Acantilados costeros de Taejongdae"
+      ]
+    },
+    {
+      "folder": "busan-tower",
+      "photoCount": 6,
+      "uses": 108,
+      "poiKeys": [
+        "yongdusan_park"
+      ],
+      "stopNames": [
+        "Yongdusan Park & Busan Diamond Tower",
+        "용두산공원 & 부산타워",
+        "龍頭山公園＆釜山タワー",
+        "龙头山公园与釜山塔",
+        "龍頭山公園與釜山塔",
+        "Parque Yongdusan y Torre de Busan",
+        "Yongdusan Park & Busan Tower"
+      ],
+      "locations": [
+        "Yongdusan Park & Busan Diamond Tower",
+        "용두산공원 & 부산타워",
+        "龍頭山公園＆釜山タワー",
+        "龙头山公园与釜山塔",
+        "龍頭山公園與釜山塔",
+        "Parque Yongdusan y Torre de Busan",
+        "Yongdusan Park & Busan Tower",
+        "부산타워 (용두산공원)"
+      ]
+    },
+    {
+      "folder": "ahopsan-bamboo",
+      "photoCount": 6,
+      "uses": 156,
+      "poiKeys": [
+        "ahopsan_bamboo_forest"
+      ],
+      "stopNames": [
+        "Ahopsan Bamboo Forest (아홉산숲)",
+        "아홉산숲",
+        "アホプサン竹林（아홉산숲）",
+        "九山竹林（아홉산숲）",
+        "아홉산숲竹林（아홉산숲）",
+        "Bosque de Bambú de Ahopsan (아홉산숲)",
+        "阿弘山竹林（아홉산숲）",
+        "Bosque de Bambú Ahopsan (아홉산숲)"
+      ],
+      "locations": [
+        "Ahopsan Bamboo Forest (아홉산숲)",
+        "아홉산숲",
+        "アホプサン竹林（아홉산숲）",
+        "九山竹林（아홉산숲）",
+        "아홉산숲竹林（아홉산숲）",
+        "Bosque de Bambú de Ahopsan (아홉산숲)",
+        "阿弘山竹林（아홉산숲）",
+        "Bosque de Bambú Ahopsan (아홉산숲)"
+      ]
+    },
+    {
+      "folder": "jeju-haenyeo-museum",
+      "photoCount": 6,
+      "uses": 60,
+      "poiKeys": [
+        "jeju_haenyeo_museum"
+      ],
+      "stopNames": [
+        "Haenyeo Museum (women divers)",
+        "해녀박물관 (제주 해녀 문화)",
+        "海女博物館（海女の世界）",
+        "海女博物馆（女性潜水员）",
+        "海女博物館（女性潛水員）",
+        "Museo Haenyeo (buceadoras de Jeju)"
+      ],
+      "locations": [
+        "Haenyeo Museum (women divers)",
+        "해녀박물관 (제주 해녀 문화)",
+        "海女博物館（海女の世界）",
+        "海女博物馆（女性潜水员）",
+        "海女博物館（女性潛水員）",
+        "Museo Haenyeo (buceadoras de Jeju)"
+      ]
+    },
+    {
+      "folder": "jeongbang-falls",
+      "photoCount": 6,
+      "uses": 60,
+      "poiKeys": [
+        "jeongbang_falls"
+      ],
+      "stopNames": [
+        "Jeongbang Waterfall",
+        "정방폭포",
+        "正房瀑布（チョンバン滝）",
+        "正房瀑布",
+        "Cascada Jeongbang"
+      ],
+      "locations": [
+        "Jeongbang Waterfall",
+        "정방폭포",
+        "正房瀑布（チョンバン滝）",
+        "正房瀑布",
+        "Cascada Jeongbang"
+      ]
+    },
+    {
+      "folder": "hueree",
+      "photoCount": 6,
+      "uses": 60,
+      "poiKeys": [
+        "hueree_natural_park"
+      ],
+      "stopNames": [
+        "Hueree Natural Park — Hydrangea highlight",
+        "휴애리 자연생활공원 — 수국 하이라이트",
+        "ヒュアリ自然公園 — アジサイの見どころ",
+        "惠裕园自然生活公园——绣球花亮点",
+        "惠裕園自然生活公園——繡球花亮點",
+        "Parque Natural Hueree — Hortensias del sur"
+      ],
+      "locations": [
+        "Hueree Natural Park — Hydrangea highlight",
+        "휴애리 자연생활공원 — 수국 하이라이트",
+        "ヒュアリ自然公園 — アジサイの見どころ",
+        "惠裕园自然生活公园——绣球花亮点",
+        "惠裕園自然生活公園——繡球花亮點",
+        "Parque Natural Hueree — Hortensias del sur"
+      ]
+    },
+    {
+      "folder": "hyeopjae-beach",
+      "photoCount": 6,
+      "uses": 144,
+      "poiKeys": [
+        "hyeopjae_beach"
+      ],
+      "stopNames": [
+        "Hyeopjae Beach",
+        "협재 해수욕장",
+        "ヒョプジェ海水浴場",
+        "协才海滩",
+        "挾才海水浴場",
+        "Playa Hyeopjae",
+        "Hyeopjae Beach + west-coast café strip",
+        "협재 해수욕장 + 서쪽 해안 카페 거리",
+        "ヒョプチェビーチ＋西海岸カフェ通り",
+        "협재海滩 + 西海岸咖啡街",
+        "狹才海灘＋西海岸咖啡廳街",
+        "Playa Hyeopjae + franja de cafés de la costa oeste"
+      ],
+      "locations": [
+        "Hyeopjae Beach",
+        "협재 해수욕장",
+        "ヒョプジェ海水浴場",
+        "协才海滩",
+        "挾才海水浴場",
+        "Playa Hyeopjae",
+        "협재해수욕장",
+        "挟才海水浴场",
+        "Hyeopjae Beach + west-coast café strip",
+        "협재 해수욕장 + 서쪽 해안 카페 거리",
+        "ヒョプチェビーチ＋西海岸カフェ通り",
+        "협재海滩 + 西海岸咖啡街",
+        "狹才海灘＋西海岸咖啡廳街",
+        "Playa Hyeopjae + franja de cafés de la costa oeste"
+      ]
+    },
+    {
+      "folder": "hallasan-1100",
+      "photoCount": 6,
+      "uses": 78,
+      "poiKeys": [
+        "hallasan_1100_wetland"
+      ],
+      "stopNames": [
+        "Hallasan 1100 Altitude Wetland (Ramsar + UNESCO)",
+        "한라산 1100고지 습지 (람사르 + 유네스코)",
+        "한라산1100高地湿地（ラムサール条約＋ユネスコ）",
+        "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织）",
+        "漢拿山 1100 高地濕地（拉姆薩爾公約 + 聯合國教科文組織）",
+        "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO)"
+      ],
+      "locations": [
+        "Hallasan 1100 Altitude Wetland (Ramsar + UNESCO)",
+        "한라산 1100고지 습지 (람사르 + 유네스코)",
+        "한라산1100高地湿地（ラムサール条約＋ユネスコ）",
+        "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织）",
+        "漢拿山 1100 高地濕地（拉姆薩爾公約 + 聯合國教科文組織）",
+        "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO)"
+      ]
+    },
+    {
+      "folder": "herb-island",
+      "photoCount": 6,
+      "uses": 60,
+      "poiKeys": [
+        "herb_island"
+      ],
+      "stopNames": [
+        "Pocheon Herb Island",
+        "포천 허브아일랜드",
+        "ポチョン・ハーブアイランド",
+        "抱川香草岛",
+        "抱川香草島",
+        "Isla de Hierbas de Pocheon"
+      ],
+      "locations": [
+        "Pocheon Herb Island",
+        "포천 허브아일랜드",
+        "ポチョン・ハーブアイランド",
+        "抱川香草岛",
+        "抱川香草島",
+        "Isla de Hierbas de Pocheon"
+      ]
+    },
+    {
+      "folder": "dmz",
+      "photoCount": 6,
+      "uses": 90,
+      "poiKeys": [
+        "third_infiltration_tunnel",
+        "dora_observatory",
+        "gamaksan_red_bridge"
+      ],
+      "stopNames": [
+        "3rd Infiltration Tunnel (Underground Invasion Tunnel)",
+        "Dora Observatory",
+        "Gamaksan Red Suspension Bridge",
+        "제3땅굴 (지하 침투 땅굴)",
+        "도라산 전망대",
+        "감악산 빨간 출렁다리",
+        "第3浸透トンネル（地下侵入トンネル）",
+        "都羅展望台",
+        "カマクサン（紺岳山）レッド吊り橋",
+        "第三条渗透隧道（地下入侵隧道）",
+        "都罗展望台",
+        "绀岳山红色悬索桥",
+        "第三條滲透隧道（地下入侵隧道）",
+        "紺岳山紅色吊橋",
+        "3.er Túnel de Infiltración (Túnel de Invasión Subterráneo)",
+        "Observatorio Dora",
+        "Puente Colgante Rojo de Gamaksan"
+      ],
+      "locations": [
+        "3rd Infiltration Tunnel (Underground Invasion Tunnel)",
+        "제3땅굴 (지하 침투 땅굴)",
+        "第3浸透トンネル（地下侵入トンネル）",
+        "第三条渗透隧道（地下入侵隧道）",
+        "第三條滲透隧道（地下入侵隧道）",
+        "3.er Túnel de Infiltración (Túnel de Invasión Subterráneo)"
+      ]
+    },
+    {
+      "folder": "cheonjeyeon-falls",
+      "photoCount": 7,
+      "uses": 270,
+      "poiKeys": [
+        "cheonjeyeon_falls"
+      ],
+      "stopNames": [
+        "Cheonjeyeon Waterfall (Pond of the Gods)",
+        "천제연 폭포 (신들의 연못)",
+        "天帝淵の滝（神々の池）",
+        "天帝渊瀑布（神之水潭）",
+        "天帝淵瀑布（神明之池）",
+        "Cascada de Cheonjeyeon (Estanque de los Dioses)",
+        "천제연폭포 (신들의 연못)",
+        "チョンジェヨン滝（神の池）",
+        "天帝渊瀑布（神明之池）",
+        "天帝淵瀑布（天神之池）",
+        "Cascada Cheonjeyeon (Estanque de los Dioses)",
+        "Cheonjeyeon Waterfall",
+        "천제연 폭포",
+        "天帝淵の滝",
+        "天帝渊瀑布",
+        "天帝淵瀑布",
+        "Cascada Cheonjeyeon",
+        "천제연폭포",
+        "天帝淵滝"
+      ],
+      "locations": [
+        "Cheonjeyeon Falls",
+        "천제연 폭포",
+        "天帝淵滝",
+        "天帝渊瀑布",
+        "天帝淵瀑布",
+        "Cataratas Cheonjeyeon",
+        "Cheonjeyeon Waterfall (Pond of the Gods)",
+        "천제연 폭포 (신들의 연못)",
+        "天帝淵の滝（神々の池）",
+        "天帝渊瀑布（神之水潭）",
+        "天帝淵瀑布（神明之池）",
+        "Cascada de Cheonjeyeon (Estanque de los Dioses)",
+        "천제연폭포 (신들의 연못)",
+        "チョンジェヨン滝（神の池）",
+        "天帝渊瀑布（神明之池）",
+        "天帝淵瀑布（天神之池）",
+        "Cascada Cheonjeyeon (Estanque de los Dioses)",
+        "Cheonjeyeon Waterfall",
+        "天帝淵の滝",
+        "Cascada Cheonjeyeon",
+        "천제연폭포"
+      ]
+    },
+    {
+      "folder": "imjingak",
+      "photoCount": 7,
+      "uses": 63,
+      "poiKeys": [
+        "imjingak_peace_park"
+      ],
+      "stopNames": [
+        "Imjingak Peace Park",
+        "임진각 평화공원",
+        "臨津閣平和公園",
+        "临津阁和平公园",
+        "臨津閣和平公園",
+        "Parque de la Paz Imjingak"
+      ],
+      "locations": [
+        "Imjingak Peace Park",
+        "임진각 평화공원",
+        "臨津閣平和公園",
+        "临津阁和平公园",
+        "臨津閣和平公園",
+        "Parque de la Paz Imjingak"
+      ]
+    },
+    {
+      "folder": "garden-of-morning-calm",
+      "photoCount": 7,
+      "uses": 144,
+      "poiKeys": [
+        "garden_of_morning_calm"
+      ],
+      "stopNames": [
+        "The Garden of Morning Calm",
+        "아침고요수목원",
+        "朝の静けさ樹木園",
+        "晨静苑",
+        "晨靜樹木園",
+        "El Jardín de la Calma Matutina",
+        "晨靜苑",
+        "晨静树木园",
+        "Jardín de la Mañana Tranquila (Achimsogwon)"
+      ],
+      "locations": [
+        "The Garden of Morning Calm",
+        "아침고요수목원",
+        "朝の静けさ樹木園",
+        "晨静苑",
+        "晨靜樹木園",
+        "El Jardín de la Calma Matutina",
+        "晨靜苑",
+        "晨静树木园",
+        "Jardín de la Mañana Tranquila (Achimsogwon)"
+      ]
+    },
+    {
+      "folder": "suwon-hwaseong",
+      "photoCount": 7,
+      "uses": 348,
+      "poiKeys": [
+        "hwaseong_fortress",
+        "hwaseong_haenggung",
+        "suwon_nammun_market"
+      ],
+      "stopNames": [
+        "Suwon Hwaseong Fortress",
+        "Hwaseong Haenggung Palace",
+        "수원 화성",
+        "화성행궁",
+        "水原華城",
+        "華城行宮",
+        "水原华城",
+        "华城行宫",
+        "Fortaleza Hwaseong de Suwon",
+        "Palacio Hwaseong Haenggung",
+        "Suwon Nammun Market — Lunch + streetfood",
+        "수원 남문시장 — 점심 + 길거리 음식",
+        "華城行宮（ファソン・ヘングン）",
+        "水原南門市場 — ランチ＋ストリートフード",
+        "水原南门市场 — 午餐 + 街头小吃",
+        "水原南門市場 — 午餐 + 街頭小吃",
+        "Mercado Nammun de Suwon — Almuerzo + comida callejera",
+        "Fortaleza Suwon Hwaseong"
+      ],
+      "locations": [
+        "Suwon Hwaseong Fortress",
+        "수원 화성",
+        "水原華城",
+        "水原华城",
+        "Fortaleza Hwaseong de Suwon",
+        "Fortaleza Suwon Hwaseong"
+      ]
+    },
+    {
+      "folder": "hamdeok-beach",
+      "photoCount": 8,
+      "uses": 192,
+      "poiKeys": [
+        "hamdeok_seoubong_beach"
+      ],
+      "stopNames": [
+        "Hamdeok Seoubong Beach",
+        "함덕 서우봉해변",
+        "咸徳ビーチ",
+        "咸德西牛峰海滩",
+        "鹹德西牛峰海灘",
+        "Playa Hamdeok Seoubong",
+        "咸徳海岸（ハムドクSOWUBONG）"
+      ],
+      "locations": [
+        "Hamdeok Seoubong Beach",
+        "함덕 서우봉해변",
+        "咸徳ビーチ",
+        "咸德西牛峰海滩",
+        "鹹德西牛峰海灘",
+        "Playa Hamdeok Seoubong",
+        "咸徳海岸（ハムドクSOWUBONG）"
+      ]
+    },
+    {
+      "folder": "starfield-library-suwon",
+      "photoCount": 8,
+      "uses": 218,
+      "poiKeys": [
+        "starfield_library_suwon"
+      ],
+      "stopNames": [
+        "Starfield Library Suwon",
+        "스타필드 라이브러리 수원",
+        "スターフィールド図書館 水原",
+        "星空图书馆水原",
+        "星空圖書館 水原",
+        "Biblioteca Starfield Suwon",
+        "スターフィールドライブラリー水原",
+        "Starfield图书馆水原",
+        "Starfield圖書館水原店",
+        "Starfield Suwon Library & Mall",
+        "스타필드 수원 도서관 & 몰",
+        "スターフィールド水原 ライブラリー＆モール",
+        "Starfield 水原图书馆与购物中心",
+        "Starfield 水原圖書館與購物中心",
+        "Biblioteca y Centro Comercial Starfield Suwon"
+      ],
+      "locations": [
+        "Starfield Library Suwon",
+        "스타필드 라이브러리 수원",
+        "スターフィールド図書館 水原",
+        "星空图书馆水原",
+        "星空圖書館 水原",
+        "Biblioteca Starfield Suwon",
+        "スターフィールドライブラリー水原",
+        "Starfield图书馆水原",
+        "Starfield圖書館水原店",
+        "スターフィールド水原 ライブラリー＆モール",
+        "Starfield 水原图书馆与购物中心",
+        "Starfield 水原圖書館與購物中心",
+        "Biblioteca y Centro Comercial Starfield Suwon"
+      ]
+    },
+    {
+      "folder": "jusangjeolli",
+      "photoCount": 9,
+      "uses": 510,
+      "poiKeys": [
+        "daepo_jusangjeolli_cliff"
+      ],
+      "stopNames": [
+        "Daepo Jusangjeolli Cliff",
+        "대포 주상절리 절벽",
+        "大浦柱状節理帯",
+        "大浦柱状节理壁",
+        "大浦柱狀節理海岸",
+        "Acantilado de Daepo Jusangjeolli",
+        "Jusangjeolli Cliff & Cheonjeyeon Falls",
+        "주상절리 절벽 & 천제연 폭포",
+        "柱状節理帯 ＆ 天帝淵瀑布",
+        "柱状节理绝壁与天帝渊瀑布",
+        "柱狀節理海岸及天帝淵瀑布",
+        "Acantilado Jusangjeolli y Cataratas Cheonjeyeon",
+        "Jusangjeolli Cliff (Daepo Columnar Joints)",
+        "주상절리 절벽 (대포 주상절리)",
+        "チュサンジョルリの断崖（大浦柱状節理）",
+        "柱状节理壁（大浦柱状节理）",
+        "柱狀節理壁（大浦柱狀節理）",
+        "Acantilado Jusangjeolli (Juntas Columnares de Daepo)",
+        "Jusangjeolli Cliff (UNESCO Geopark)",
+        "주상절리대 (유네스코 세계지질공원)",
+        "柱状節理帯（ユネスコ・ジオパーク）",
+        "柱状节理壁（UNESCO地质公园）",
+        "柱狀節理峭壁（UNESCO地質公園）",
+        "Acantilado Jusangjeolli (Geoparque UNESCO)",
+        "대포 주상절리대",
+        "大浦柱狀節理壁",
+        "Acantilado Daepo Jusangjeolli"
+      ],
+      "locations": [
+        "Daepo Jusangjeolli Cliff",
+        "대포 주상절리 절벽",
+        "大浦柱状節理帯",
+        "大浦柱状节理壁",
+        "大浦柱狀節理海岸",
+        "Acantilado de Daepo Jusangjeolli",
+        "Jusangjeolli Cliff & Cheonjeyeon Falls",
+        "주상절리 절벽 & 천제연 폭포",
+        "柱状節理帯 ＆ 天帝淵瀑布",
+        "柱状节理绝壁与天帝渊瀑布",
+        "柱狀節理海岸及天帝淵瀑布",
+        "Acantilado Jusangjeolli y Cataratas Cheonjeyeon",
+        "Jusangjeolli Cliff",
+        "주상절리",
+        "柱状節理",
+        "柱状节理",
+        "柱狀節理",
+        "Acantilados Jusangjeolli",
+        "Jusangjeolli Cliff (Daepo Columnar Joints)",
+        "주상절리 절벽 (대포 주상절리)",
+        "チュサンジョルリの断崖（大浦柱状節理）",
+        "柱状节理壁（大浦柱状节理）",
+        "柱狀節理壁（大浦柱狀節理）",
+        "Acantilado Jusangjeolli (Juntas Columnares de Daepo)",
+        "Jusangjeolli Cliff (UNESCO Geopark)",
+        "주상절리대 (유네스코 세계지질공원)",
+        "柱状節理帯（ユネスコ・ジオパーク）",
+        "柱状节理壁（UNESCO地质公园）",
+        "柱狀節理峭壁（UNESCO地質公園）",
+        "Acantilado Jusangjeolli (Geoparque UNESCO)",
+        "대포 주상절리대",
+        "大浦柱狀節理壁",
+        "Acantilado Daepo Jusangjeolli"
+      ]
+    },
+    {
+      "folder": "aewol-cafe-street",
+      "photoCount": 9,
+      "uses": 96,
+      "poiKeys": [
+        "aewol_cafe_street"
+      ],
+      "stopNames": [
+        "Aewol Cafe Street (Handam Coastal Trail)",
+        "애월 카페거리 (한담해안산책로)",
+        "愛月カフェ通り（翰潭海岸散策路）",
+        "涯月咖啡街（汉潭海岸步道）",
+        "涯月咖啡街（翰潭海岸步道）",
+        "Calle de Cafés de Aewol (Sendero Costero Handam)"
+      ],
+      "locations": [
+        "Aewol Cafe Street",
+        "애월 카페거리",
+        "涯月カフェ通り",
+        "涯月咖啡街",
+        "Calle de cafés de Aewol",
+        "Aewol Cafe Street (Handam Coastal Trail)",
+        "애월 카페거리 (한담해안산책로)",
+        "愛月カフェ通り（翰潭海岸散策路）",
+        "涯月咖啡街（汉潭海岸步道）",
+        "涯月咖啡街（翰潭海岸步道）",
+        "Calle de Cafés de Aewol (Sendero Costero Handam)"
+      ]
+    },
+    {
+      "folder": "gyochon-hanok-village",
+      "photoCount": 10,
+      "uses": 180,
+      "poiKeys": [
+        "gyochon_hanok_village"
+      ],
+      "stopNames": [
+        "Gyochon Hanok Village",
+        "교촌 한옥마을",
+        "校村ハノク村",
+        "校村韩屋村",
+        "校村韓屋村",
+        "Aldea Hanok de Gyochon",
+        "校村ハノク村（교촌마을）"
+      ],
+      "locations": [
+        "Gyochon Hanok Village",
+        "교촌 한옥마을",
+        "校村ハノク村",
+        "校村韩屋村",
+        "校村韓屋村",
+        "Aldea Hanok de Gyochon",
+        "校村ハノク村（교촌마을）"
+      ]
+    },
+    {
+      "folder": "gwangmyeong-cave",
+      "photoCount": 10,
+      "uses": 96,
+      "poiKeys": [
+        "gwangmyeong_cave"
+      ],
+      "stopNames": [
+        "Gwangmyeong Cave",
+        "광명동굴",
+        "光明洞窟（クァンミョン洞窟）",
+        "光明洞窟",
+        "Cueva de Gwangmyeong"
+      ],
+      "locations": [
+        "Gwangmyeong Cave",
+        "광명동굴",
+        "光明洞窟（クァンミョン洞窟）",
+        "光明洞窟",
+        "Cueva de Gwangmyeong"
+      ]
+    },
+    {
+      "folder": "waujeongsa",
+      "photoCount": 10,
+      "uses": 96,
+      "poiKeys": [
+        "waujeongsa_temple"
+      ],
+      "stopNames": [
+        "Waujeongsa Temple",
+        "와우정사",
+        "ワウジョンサ（와우정사）",
+        "卧牛精舍",
+        "臥牛精舍",
+        "Templo Waujeongsa"
+      ],
+      "locations": [
+        "Waujeongsa Temple",
+        "와우정사",
+        "ワウジョンサ（와우정사）",
+        "卧牛精舍",
+        "臥牛精舍",
+        "Templo Waujeongsa"
+      ]
+    },
+    {
+      "folder": "seongsan-ilchulbong",
+      "photoCount": 11,
+      "uses": 756,
+      "poiKeys": [
+        "seongsan_ilchulbong"
+      ],
+      "stopNames": [
+        "Seongsan Ilchulbong",
+        "성산일출봉",
+        "城山日出峰",
+        "Seongsan Ilchulbong (UNESCO Photo Stop)",
+        "성산일출봉 (유네스코 포토 스탑)",
+        "城山日出峰（ユネスコ 写真撮影スポット）",
+        "城山日出峰（联合国教科文组织 摄影站）",
+        "城山日出峰（UNESCO 拍照景點）",
+        "Seongsan Ilchulbong (Parada fotográfica UNESCO)",
+        "Seongsan Ilchulbong (UNESCO Sunrise Peak)",
+        "성산일출봉 (유네스코 세계자연유산)",
+        "城山日出峰（ユネスコ世界自然遺産・日出峰）",
+        "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
+        "城山日出峰（ソンサン・イルチュルボン）",
+        "Seongsan Ilchulbong (triple Patrimonio UNESCO)"
+      ],
+      "locations": [
+        "Seongsan Ilchulbong",
+        "성산일출봉",
+        "城山日出峰",
+        "Seongsan Ilchulbong (UNESCO Photo Stop)",
+        "성산일출봉 (유네스코 포토 스탑)",
+        "城山日出峰（ユネスコ 写真撮影スポット）",
+        "城山日出峰（联合国教科文组织 摄影站）",
+        "城山日出峰（UNESCO 拍照景點）",
+        "Seongsan Ilchulbong (Parada fotográfica UNESCO)",
+        "Seongsan Ilchulbong (UNESCO Sunrise Peak)",
+        "성산일출봉 (유네스코 세계자연유산)",
+        "城山日出峰（ユネスコ世界自然遺産・日出峰）",
+        "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
+        "城山日出峰（ソンサン・イルチュルボン）",
+        "Seongsan Ilchulbong (triple Patrimonio UNESCO)"
+      ]
+    },
+    {
+      "folder": "seongeup-folk-village",
+      "photoCount": 11,
+      "uses": 570,
+      "poiKeys": [
+        "seongeup_folk_village"
+      ],
+      "stopNames": [
+        "Seongeup Folk Village",
+        "성읍 민속마을",
+        "城邑民俗村（ソンウプ民俗村）",
+        "城邑民俗村",
+        "Aldea Folclórica de Seongeup",
+        "성읍민속마을",
+        "Pueblo Popular de Seongeup",
+        "Aldea Popular de Seongeup",
+        "Seongeup Folk Village (Korean National Folklore Cultural Heritage)",
+        "성읍민속마을 (유네스코 문화유산)",
+        "城邑民俗村（ユネスコ遺産）",
+        "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
+        "城邑民俗村（ソンウプ・ミンソクマウル）",
+        "Aldea Folclórica Seongeup"
+      ],
+      "locations": [
+        "Seongeup Folk Village",
+        "성읍 민속마을",
+        "城邑民俗村（ソンウプ民俗村）",
+        "城邑民俗村",
+        "Aldea Folclórica de Seongeup",
+        "성읍민속마을",
+        "Pueblo Popular de Seongeup",
+        "Aldea Popular de Seongeup",
+        "Seongeup Folk Village (Korean National Folklore Cultural Heritage)",
+        "성읍민속마을 (유네스코 문화유산)",
+        "城邑民俗村（ユネスコ遺産）",
+        "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
+        "城邑民俗村（ソンウプ・ミンソクマウル）",
+        "Aldea Folclórica Seongeup"
+      ]
+    },
+    {
+      "folder": "taejongdae",
+      "photoCount": 12,
+      "uses": 240,
+      "poiKeys": [
+        "taejongdae"
+      ],
+      "stopNames": [
+        "East coast highlights option",
+        "태종대 해안 절벽",
+        "太宗台の海岸絶壁",
+        "太宗台海岸悬崖",
+        "太宗台海岸峭壁",
+        "Acantilados costeros de Taejongdae"
+      ],
+      "locations": [
+        "UN Memorial Cemetery in Korea",
+        "재한유엔기념공원",
+        "韓国国連記念公園",
+        "驻韩联合国纪念公墓",
+        "韓國聯合國紀念公墓",
+        "Cementerio Memorial de la ONU en Corea",
+        "East coast highlights option",
+        "태종대 해안 절벽",
+        "太宗台の海岸絶壁",
+        "太宗台海岸悬崖",
+        "太宗台海岸峭壁",
+        "Acantilados costeros de Taejongdae",
+        "テジョンデ（太宗台）沿岸断崖",
+        "太宗臺海岸懸崖"
+      ]
+    },
+    {
+      "folder": "jeju-stone-park",
+      "photoCount": 12,
+      "uses": 126,
+      "poiKeys": [
+        "jeju_stone_park"
+      ],
+      "stopNames": [
+        "Jeju Stone Park (Stone Culture Park)",
+        "제주 돌문화공원 (석문화공원)",
+        "済州石文化公園（ストーン・カルチャー・パーク）",
+        "济州石头公园（石文化公园）",
+        "濟州石頭公園（石文化公園）",
+        "Parque de Piedras de Jeju (Parque de Cultura de la Piedra)"
+      ],
+      "locations": [
+        "Jeju Stone Park (Stone Culture Park)",
+        "제주 돌문화공원 (석문화공원)",
+        "済州石文化公園（ストーン・カルチャー・パーク）",
+        "济州石头公园（石文化公园）",
+        "濟州石頭公園（石文化公園）",
+        "Parque de Piedras de Jeju (Parque de Cultura de la Piedra)"
+      ]
+    },
+    {
+      "folder": "seopjikoji",
+      "photoCount": 12,
+      "uses": 348,
+      "poiKeys": [
+        "seopjikoji"
+      ],
+      "stopNames": [
+        "Seopjikoji (East Cape)",
+        "섭지코지 (동쪽 곶)",
+        "ソプジコジ（東岬）",
+        "涉地可支（东岬角）",
+        "涉地可支（東部海岬）",
+        "Seopjikoji (Cabo Este)",
+        "セプジコジ（東の岬）",
+        "涉地可支（东部海角）",
+        "涉地可支（東岬）",
+        "摂地コジ（東岬）",
+        "涉地可支（東岬角）"
+      ],
+      "locations": [
+        "Seopjikoji (East Cape)",
+        "섭지코지 (동쪽 곶)",
+        "ソプジコジ（東岬）",
+        "涉地可支（东岬角）",
+        "涉地可支（東部海岬）",
+        "Seopjikoji (Cabo Este)",
+        "セプジコジ（東の岬）",
+        "涉地可支（东部海角）",
+        "涉地可支（東岬）",
+        "摂地コジ（東岬）",
+        "涉地可支（東岬角）",
+        "Seopjikoji",
+        "섭지코지",
+        "ソプチコジ",
+        "涉地可支"
+      ]
+    },
+    {
+      "folder": "gyeongbokgung",
+      "photoCount": 13,
+      "uses": 312,
+      "poiKeys": [
+        "gyeongbokgung_palace"
+      ],
+      "stopNames": [
+        "Gyeongbokgung Palace",
+        "경복궁",
+        "景福宮",
+        "景福宫",
+        "Palacio de Gyeongbokgung",
+        "Gyeongbokgung Palace + Royal Guard ceremony",
+        "경복궁 + 왕궁 수문장 교대식",
+        "景福宮 ＋ 王宮守門将交代儀式",
+        "景福宫 + 王宫守卫换岗仪式",
+        "景福宮 + 王宮守衛換崗儀式",
+        "Palacio Gyeongbokgung + Ceremonia de la Guardia Real"
+      ],
+      "locations": [
+        "Gyeongbokgung Palace",
+        "경복궁",
+        "景福宮",
+        "景福宫",
+        "Palacio de Gyeongbokgung",
+        "Gyeongbokgung Palace + Royal Guard ceremony",
+        "경복궁 + 왕궁 수문장 교대식",
+        "景福宮 ＋ 王宮守門将交代儀式",
+        "景福宫 + 王宫守卫换岗仪式",
+        "景福宮 + 王宮守衛換崗儀式",
+        "Palacio Gyeongbokgung + Ceremonia de la Guardia Real"
+      ]
+    },
+    {
+      "folder": "cheongsapo-blue-line",
+      "photoCount": 14,
+      "uses": 126,
+      "poiKeys": [
+        "cheongsapo_blue_line_park"
+      ],
+      "stopNames": [
+        "Cheongsapo & Haeundae Blue Line Park",
+        "청사포 & 해운대 블루라인파크",
+        "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。",
+        "青沙浦 & 海云台蓝线公园",
+        "青沙浦及海雲台藍線公園",
+        "Cheongsapo y Haeundae Blue Line Park"
+      ],
+      "locations": [
+        "Cheongsapo & Haeundae Blue Line Park",
+        "청사포 & 해운대 블루라인파크",
+        "青沙浦（チョンサポ）＆海雲台ブルーラインパーク。",
+        "青沙浦 & 海云台蓝线公园",
+        "青沙浦及海雲台藍線公園",
+        "Cheongsapo y Haeundae Blue Line Park"
+      ]
+    },
+    {
+      "folder": "ilchulland",
+      "photoCount": 17,
+      "uses": 708,
+      "poiKeys": [
+        "ilchulland_micheon_cave",
+        "jeonnong_ro_cherry_blossom_street",
+        "noksan_ro_gasiri_blossom_road",
+        "ilchulland_themed_gardens"
+      ],
+      "stopNames": [
+        "Ilchul Land (Micheon Cave Lava Tube)",
+        "일출랜드 (미천굴 용암동굴)",
+        "イルチュルランド（ミチョン洞窟溶岩チューブ）",
+        "日出乐园（米千洞熔岩管）",
+        "日出樂園（美川窟熔岩管）",
+        "Ilchul Land (Tubo de lava de la cueva Micheon)",
+        "Jeonnong-ro Cherry Blossom Street",
+        "Noksan-ro (Gasi-ri 10 km Cherry + Canola Road)",
+        "Micheon Cave (Ilchul Land)",
+        "Ilchul Land Themed Gardens",
+        "전농로 벚꽃길",
+        "녹산로 (가시리 10km 벚꽃 + 유채꽃 드라이브 코스)",
+        "미천굴 (일출랜드)",
+        "일출랜드 테마 정원",
+        "全農路（チョンノンノ）桜並木通り",
+        "ノクサンロ（녹산로）（ガシリ 10km 桜＋菜の花ロード）",
+        "ミチョン窟（イルチュルランド）",
+        "イルチュルランド テーマガーデン",
+        "全农路樱花街",
+        "绿山路（加时里10公里樱花+油菜花公路）",
+        "米泉窟（日出乐园）",
+        "日出乐园主题花园",
+        "全農路櫻花街",
+        "녹산로（加時里10公里櫻花＋油菜花公路）",
+        "米川窟（日出樂園）",
+        "日出樂園主題花園",
+        "Calle de los Cerezos de Jeonnong-ro",
+        "Noksan-ro (Carretera de cerezos + canola de 10 km de Gasi-ri)",
+        "Cueva Micheon (Ilchul Land)",
+        "Jardines Temáticos de Ilchul Land",
+        "Micheon Cave at Ilchul Land (Manjanggul alternate)",
+        "미천굴 (만장굴 대체, 일출랜드)",
+        "密川洞窟（日出ランド）— 万丈窟の代替",
+        "日出乐园（米川窟熔岩洞穴）",
+        "日出樂園（米川窟熔岩洞穴）",
+        "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
+        "Ilchul Land — Hydrangea Festival + Micheon Cave",
+        "일출랜드 — 수국 축제 + 미천굴",
+        "日出ランド — アジサイ祭り＋密川洞窟",
+        "Ilchul Land — Festival de Hortensias + Cueva Micheon"
+      ],
+      "locations": [
+        "Ilchul Land (Micheon Cave Lava Tube)",
+        "일출랜드 (미천굴 용암동굴)",
+        "イルチュルランド（ミチョン洞窟溶岩チューブ）",
+        "日出乐园（米千洞熔岩管）",
+        "日出樂園（美川窟熔岩管）",
+        "Ilchul Land (Tubo de lava de la cueva Micheon)",
+        "Noksan-ro (Gasi-ri 10 km Cherry + Canola Road)",
+        "녹산로 (가시리 10km 벚꽃 + 유채꽃 드라이브 코스)",
+        "ノクサンロ（녹산로）（ガシリ 10km 桜＋菜の花ロード）",
+        "绿山路（加时里10公里樱花+油菜花公路）",
+        "녹산로（加時里10公里櫻花＋油菜花公路）",
+        "Noksan-ro (Carretera de cerezos + canola de 10 km de Gasi-ri)",
+        "Micheon Cave at Ilchul Land (Manjanggul alternate)",
+        "미천굴 (만장굴 대체, 일출랜드)",
+        "密川洞窟（日出ランド）— 万丈窟の代替",
+        "日出乐园（米川窟熔岩洞穴）",
+        "日出樂園（米川窟熔岩洞穴）",
+        "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
+        "Ilchul Land — Hydrangea Festival + Micheon Cave",
+        "일출랜드 — 수국 축제 + 미천굴",
+        "日出ランド — アジサイ祭り＋密川洞窟",
+        "Ilchul Land — Festival de Hortensias + Cueva Micheon",
+        "Micheon Cave (Ilchul Land)",
+        "미천굴 (일출랜드)",
+        "ミチョン窟（イルチュルランド）",
+        "米泉窟（日出乐园）",
+        "米川窟（日出樂園）",
+        "Cueva Micheon (Ilchul Land)"
+      ]
+    }
+  ]
+}

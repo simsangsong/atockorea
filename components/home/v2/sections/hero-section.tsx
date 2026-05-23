@@ -13,9 +13,26 @@ import { LandingPlannerCard } from "./landing-planner-card";
 
 const VALID_DESTINATIONS: ReadonlyArray<HeroDestination> = ["jeju", "seoul", "busan"];
 const HERO_SLIDES = [
-  { src: "/images/hero/jeju-hero.jpg", alt: "Jeju coastline and sky" },
-  { src: "/images/hero/seoul-hero.jpg", alt: "Seoul city travel scene" },
-  { src: "/images/hero/busan-hero.jpg", alt: "Busan coastal travel scene" },
+  {
+    src: "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+    alt: "Haedong Yonggungsa Temple cliff at golden hour, Busan",
+  },
+  {
+    src: "/images/tours/gamcheon-culture-village/gamcheon-panorama.webp",
+    alt: "Gamcheon Culture Village hillside panorama in vivid color, Busan",
+  },
+  {
+    src: "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58.webp",
+    alt: "Garden of Morning Calm in autumn with suspension bridge, Gyeonggi",
+  },
+  {
+    src: "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
+    alt: "Gyeongbokgung Palace courtyard with visitors in hanbok, Seoul",
+  },
+  {
+    src: "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+    alt: "Cheonjeyeon Waterfall emerald pool, Jeju",
+  },
 ] as const;
 
 function readDestinationFromParams(value: string | null): HeroDestination | null {
