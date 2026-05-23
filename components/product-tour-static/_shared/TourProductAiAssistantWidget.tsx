@@ -570,8 +570,27 @@ export function TourProductAiAssistantWidget({
       className={cn("pointer-events-none fixed right-3 z-[65] flex flex-col items-end sm:right-5", bottomClass)}
       data-tour-assistant-root
     >
-      {open && (
-        <div
+      <AnimatePresence>
+        {open && (
+        <motion.div
+          // Emerges from the button's bottom-right corner — small scale +
+          // soft slide + fade, eased with MSG_EASE so it feels intentional
+          // rather than abrupt. Exit is slightly faster (panel disappears
+          // first, button stays). reduce-motion respected via the
+          // motion-reduce check on the parent root.
+          initial={{ opacity: 0, scale: 0.94, y: 12 }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            transition: { duration: 0.22, ease: MSG_EASE },
+          }}
+          exit={{
+            opacity: 0,
+            scale: 0.96,
+            y: 6,
+            transition: { duration: 0.16, ease: MSG_EASE },
+          }}
           className="pointer-events-auto mb-3 flex max-h-[min(78vh,36rem)] w-[min(100vw-1.5rem,26rem)] origin-bottom-right flex-col overflow-hidden rounded-3xl border border-slate-200/90 bg-white shadow-[0_24px_64px_-12px_rgba(26,35,50,0.22),0_0_0_1px_rgba(26,35,50,0.05)]"
           role="dialog"
           aria-label={labels.title}
@@ -797,8 +816,9 @@ export function TourProductAiAssistantWidget({
               {liveSupportActive ? labels.liveNotice : labels.aiNotice}
             </p>
           </div>
-        </div>
-      )}
+        </motion.div>
+        )}
+      </AnimatePresence>
 
       <div className="pointer-events-auto relative">
         <button
