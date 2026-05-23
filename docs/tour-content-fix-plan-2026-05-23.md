@@ -48,7 +48,7 @@
 | B (NEW, P0) | 시즌 종료 투어 $0 노출 + 시즌 가용성 게이팅 | 중-높음 | 2 tours + API/recommend filter | ✅ code shipped 2026-05-23 |
 | C (NEW, P0) | `vehicle` price type 코드 버그 (per-guest로 곱해짐) | 중 — 결제 차단 (실제는 fraud 보다 checkout-blocked) | checkout context + 부킹카드 + cart UI | ✅ code shipped 2026-05-23 |
 | D (NEW, P1) | Jeju 크루즈 `itinerary_variants` → `routeVariants` 스키마 마이그레이션 | 중 — 포트 변형 itinerary 미렌더 | backward adapter (no JSON rewrite) | ✅ code shipped 2026-05-23 |
-| **3 EN** | **부산 스톱 회전 재매핑** | **중-높음** | **2 tours × 5 stops × 6 fields** | **⏳ NEXT** |
+| 3 EN | 부산 스톱 회전 재매핑 (2 tours × ~6 stops × 6 locale) | 중-높음 | mechanical script | ✅ shipped 2026-05-23 (이번 commit) |
 | 5b EN | 수치 정정 (verify 필요 항목) | 중 | ~10 항목 × tours | ⏳ |
 | 6 EN | 갤러리 사진-지명 재매핑 | 중 | ~9 tours × galleryItems | ⏳ |
 | 7 EN | DMZ 다리 150m + 타이포(A easy/the our/? photo) + DMZ refund tone + 잡정리 | 낮음 | ~30 edits | ⏳ |
@@ -411,7 +411,7 @@ AND tour_product_page_id IN (SELECT id FROM tour_product_pages WHERE slug = 'jej
 | B (seasonal $0 + window gate) | `3dfd19cb` | [#16](https://github.com/simsangsong/atockorea/pull/16) | ✅ `cf5eb7b2` |
 | C (vehicle price type unblock) | `583f0bf4` | [#17](https://github.com/simsangsong/atockorea/pull/17) | ✅ `b8332b45` |
 | D (port routeVariants adapter) | (pending) | (pending) | code change; see Phase D detail below |
-| 3 EN | — | — | ⏳ |
+| 3 EN | (이번 commit) | (이번 commit) | 12 files (2 tours × 6 locale) — 5 attraction remaps in small-group + lunch contradiction fix + 2 operational stops cleanup in private-charter |
 | 5b EN | — | — | ⏳ |
 | 6 EN | — | — | ⏳ |
 | 7 EN | — | — | ⏳ |
