@@ -266,50 +266,9 @@
       ],
       "whyOnRoute": "Private routing is the main advantage of this product: less waiting, more control, and a schedule planned around your cruise time.",
       "_poi_meta": {
-        "poi_key": "un_memorial_cemetery",
-        "kb_version": "1.25",
-        "verified_date": "2026-04-29",
-        "sources": [
-          "UNMCK official (unmck.or.kr)",
-          "Wikipedia",
-          "American Battle Monuments Commission",
-          "Korea Tourism Organization (VisitKorea)",
-          "Visit Busan official",
-          "American Battle Monuments Commission (US Korean War Monument at Busan)",
-          "UN General Assembly Resolution 977(X) (December 15, 1955)"
-        ]
+        "poi_key": "OPS_route_planning",
+        "kind": "operational"
       },
-      "smartNotes": {
-        "photo": "**Wall of Remembrance** (40,896 names on 140 marble panels), **Symbolic Area** with 22 sending-state flags, and the **Frank Gaylord US Korean War Monument (2013)** — same sculptor as the Washington DC National Mall memorial. Photography permitted; respectful silence requested.",
-        "tip": "**Only UN cemetery in the world** under UN-administered protected territory (UN GA Resolution 977(X), 1955). The annual **'Turn Toward Busan' ceremony on November 11 at 11:00 AM** is the only time all 22 sending-state flags lower in unison."
-      },
-      "convenience": {
-        "restroom": "At the Visitor Center and Memorial Service Hall",
-        "parking": "Free on-site parking + tour-coach drop-off zone"
-      },
-      "visitBasics": {
-        "hours": "09:00–18:00 (May–Sep) / 09:00–17:00 (Oct–Apr)",
-        "closed": "Open year-round (Memorial Service Hall closed during ceremonies)",
-        "admission": "FREE admission",
-        "walking": "100% wheelchair-accessible — flat paved paths across the 14-hectare grounds"
-      },
-      "image": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
-      "images": [
-        "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
-        "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
-        "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
-        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
-        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
-        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
-        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
-        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
-        "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
-        "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
-        "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
-        "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
-        "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
-        "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp"
-      ],
       "imageCredits": [
         {
           "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
@@ -551,41 +510,9 @@
       ],
       "whyOnRoute": "Cruise shore excursions must protect the return first; sightseeing is planned around that rule.",
       "_poi_meta": {
-        "poi_key": "gamcheon_culture_village",
-        "kb_version": "1.25",
-        "verified_date": "2026-04-29",
-        "sources": [
-          "Visit Busan official",
-          "Wikipedia",
-          "UN-HABITAT 2012 Asian Townscape Awards",
-          "Saha-gu Gamcheon Culture Village Committee",
-          "Korea Tourism Organization",
-          "Korea Tourism Organization (100 Must-Visit Tourist Spots in Korea designation)"
-        ]
-      },
-      "smartNotes": {
-        "photo": "**'Little Prince and Fox bench'** at Sky Garden (Haneul Maru observatory — long queue, free), **rainbow-roof panorama** from Star Viewing Hall, and the **stair-mural alleys**. **No drones, no flash photography in alleys**.",
-        "tip": "**Residents still live here** (~10,000 people, 1955 Taegeukdo refugee settlement) — **keep voices down**, don't enter homes, take rubbish with you. **UN-HABITAT Asian Townscape Award 2012**; ~1.4 million visitors annually. KTO 100 Must-Visit Spots 5x consecutively."
-      },
-      "convenience": {
-        "restroom": "At the info center plaza and along the main alley",
-        "parking": "Limited — coach drop-off near the info center, no large lot"
-      },
-      "visitBasics": {
-        "hours": "09:00–18:00 (Mar–Oct) / 09:00–17:00 (Nov–Feb); info center same hours",
-        "closed": "Open year-round",
-        "admission": "FREE village entry; **Stamp Tour Map ₩2,000** (optional, 9 numbered installations)",
-        "walking": "Steep stair-streets and narrow alleys — **moderate-to-high** difficulty; **NOT stroller- or wheelchair-friendly**; grippy shoes essential"
-      },
-      "image": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
-      "images": [
-        "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
-        "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
-        "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
-        "/images/itinerary/jagalchi-harbor-sign.webp",
-        "/images/itinerary/jagalchi-market-interior.webp",
-        "/images/itinerary/jagalchi-night-building.webp"
-      ]
+        "poi_key": "OPS_busan_cruise_return",
+        "kind": "operational"
+      }
     },
     {
       "number": 6,
