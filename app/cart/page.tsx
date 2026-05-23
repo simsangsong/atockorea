@@ -44,7 +44,7 @@ interface CartItem {
   quantity: number;
   price: number;
   originalPrice: number;
-  priceType: 'person' | 'group';
+  priceType: 'person' | 'group' | 'vehicle';
   image: string;
   duration: string;
   pickupPoint?: string;
@@ -317,16 +317,20 @@ export default function CartPage() {
     router.push('/checkout');
   };
 
-  // Calculate totals
-  const subtotal = cartItems.reduce((sum, item) => {
-    const itemTotal = item.price * item.quantity;
-    return sum + itemTotal;
-  }, 0);
+  // Calculate totals. `vehicle` and `group` price types are fixed per booking — not
+  // multiplied by the guest count — so they behave like single-unit items in the
+  // subtotal. Only `person` pricing scales with quantity.
+  const lineItemTotal = (item: CartItem): number =>
+    item.priceType === "person" ? item.price * item.quantity : item.price;
+  const lineItemDiscount = (item: CartItem): number =>
+    item.priceType === "person"
+      ? (item.originalPrice - item.price) * item.quantity
+      : item.originalPrice - item.price;
 
-  const totalDiscount = cartItems.reduce((sum, item) => {
-    const discount = (item.originalPrice - item.price) * item.quantity;
-    return sum + discount;
-  }, 0) + promoDiscount;
+  const subtotal = cartItems.reduce((sum, item) => sum + lineItemTotal(item), 0);
+
+  const totalDiscount =
+    cartItems.reduce((sum, item) => sum + lineItemDiscount(item), 0) + promoDiscount;
 
   const tax = subtotal * 0.1; // 10% tax
   const total = subtotal - promoDiscount + tax;
@@ -423,8 +427,8 @@ export default function CartPage() {
             {/* Cart Items */}
             <div className="flex-1 space-y-4">
               {cartItems.map((item) => {
-                const itemSubtotal = item.price * item.quantity;
-                const itemDiscount = (item.originalPrice - item.price) * item.quantity;
+                const itemSubtotal = lineItemTotal(item);
+                const itemDiscount = lineItemDiscount(item);
                 const hasDiscount = item.originalPrice > item.price;
 
                 return (
