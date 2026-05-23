@@ -151,12 +151,12 @@ export function TourShelf({ shelf, className }: TourShelfProps) {
 
   return (
     <section className={cn("relative", className)}>
-      <header className="mb-5 px-4 sm:mb-6 sm:px-5">
-        {/* Eyebrow row: small amber rule + uppercase label (carries Phase 1 hero
-            family — amber-700/90 + 0.22em tracking + thin gold prefix line). */}
-        <div className="flex items-center gap-2.5">
-          <span aria-hidden className="block h-px w-6 bg-amber-500/70 sm:w-8" />
-          <p className="text-[10.5px] font-bold uppercase tracking-[0.24em] text-amber-700/95">
+      <header className="mb-7 px-4 sm:mb-9 sm:px-5">
+        {/* Eyebrow row: amber hair-rule + uppercase label. Carries the Phase 1
+            hero family (amber-700 + 0.24em tracking + thin gold prefix). */}
+        <div className="flex items-center gap-3">
+          <span aria-hidden className="block h-px w-8 bg-amber-500/80 sm:w-10" />
+          <p className="text-[10.5px] font-bold uppercase tracking-[0.26em] text-amber-700">
             {shelf.key === "editors-pick" ? (
               <span className="inline-flex items-center gap-1.5">
                 <Sparkles className="h-3 w-3" aria-hidden />
@@ -168,26 +168,26 @@ export function TourShelf({ shelf, className }: TourShelfProps) {
           </p>
         </div>
         {/* Display headline — upright serif (Noto Serif KR / Cormorant Garamond),
-            larger size, magazine spread feel. */}
+            larger size + breathing space below the eyebrow.  italic banned (B18). */}
         <h2
           className={cn(
-            "mt-3 font-magazine-serif-ko font-semibold leading-[1.12] text-stone-900",
-            "text-[26px] tracking-[-0.018em] sm:text-[32px] sm:tracking-[-0.02em] lg:text-[36px]",
+            "mt-5 font-magazine-serif-ko font-semibold leading-[1.12] text-stone-900",
+            "text-[28px] tracking-[-0.018em] sm:mt-6 sm:text-[34px] sm:tracking-[-0.02em] lg:text-[40px]",
           )}
         >
           {title}
         </h2>
         {subtitle ? (
-          <p className="mt-2.5 max-w-2xl text-[13px] leading-[1.65] text-slate-600 sm:mt-3 sm:text-[14px]">
+          <p className="mt-4 max-w-2xl text-[13.5px] leading-[1.7] text-stone-500 sm:mt-5 sm:text-[14.5px]">
             {subtitle}
           </p>
         ) : null}
         {seasonBadge ? (
           <p
             className={cn(
-              "mt-3 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[10.5px] font-semibold tabular-nums",
+              "mt-5 inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[10.5px] font-semibold tabular-nums sm:mt-6",
               shelf.key === "coming-soon"
-                ? "bg-slate-100 text-slate-700 ring-1 ring-slate-200"
+                ? "bg-stone-100 text-stone-700 ring-1 ring-stone-200/80"
                 : "bg-amber-50 text-amber-900 ring-1 ring-amber-100",
             )}
           >
