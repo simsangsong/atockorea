@@ -89,7 +89,7 @@ export type Database = {
           original_price: number | null;
           /** Storage unit for `price` / `original_price`: KRW (won) or USD (dollars). */
           price_currency: 'KRW' | 'USD';
-          price_type: 'person' | 'group';
+          price_type: 'person' | 'group' | 'vehicle';
           image_url: string;
           gallery_images: string[];
           duration: string | null;

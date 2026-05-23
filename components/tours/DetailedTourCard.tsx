@@ -20,7 +20,7 @@ interface DetailedTourCardProps {
     reviewCount: number;
     price: number;
     originalPrice: number | null;
-    priceType: 'person' | 'group';
+    priceType: 'person' | 'group' | 'vehicle';
     duration: string;
     image: string;
     features: string[];

@@ -6,15 +6,17 @@
  *    registry, sitemap entries, and matching-profile bindings (`product_id`).
  *    Letting an admin rename it through a generic PATCH silently breaks links,
  *    SEO, and matching. We require an explicit rename flow instead.
- *  - `price_type` must be one of `'person' | 'group'` — the booking POST relies
- *    on this enum to compute `total_price`. A typo silently mis-prices guests.
+ *  - `price_type` must be one of `'person' | 'group' | 'vehicle'` — the booking
+ *    POST relies on this enum to compute `total_price`. `person` multiplies by
+ *    guest count; `group` and `vehicle` are flat per-booking. A typo silently
+ *    mis-prices guests.
  *
  * Apply with `applyTourWriteRules(body)` before assembling `updateData` /
  * insert payloads. The function MUTATES the body to drop disallowed fields and
  * returns `{ ok }` for valid writes or `{ ok: false, error }` for hard rejects.
  */
 
-const PRICE_TYPES = ["person", "group"] as const;
+const PRICE_TYPES = ["person", "group", "vehicle"] as const;
 
 export type AdminTourWriteResult =
   | { ok: true; warnings: string[] }
