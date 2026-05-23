@@ -11,7 +11,14 @@ import {
   isStaticTourProductBundleRegistered,
 } from "@/components/product-tour-static/_shared/tourProductBundleRegistry";
 import { buildApprovedQaContextText } from "@/lib/chatbot/qaKnowledge";
+import {
+  bookingSpecificReply,
+  classifyChatbotQuery,
+  policyFallbackReply,
+  replyLooksMisrouted,
+} from "@/lib/chatbot/queryIntent";
 import { buildSiteKnowledgeContextText } from "@/lib/chatbot/siteKnowledge";
+import { buildTourCatalogContextText } from "@/lib/chatbot/tourCatalogKnowledge";
 import { buildTourProductAssistantContextText } from "@/lib/tour-product/tourProductAssistantContext";
 import type { TourProductPageLocale } from "@/lib/tour-product/resolveTourProductDbLocale";
 import { logChatTurn, type ChatLogContext } from "@/lib/support/chat-logger";
@@ -21,11 +28,13 @@ import {
   ensureHandoffPrompt,
   handoffRequestText,
   humanHandoffAcknowledgement,
+  userMessageRequestsHumanHandoff,
 } from "@/lib/support/handoff";
 import { notifyTelegramNewTicket } from "@/lib/support/telegram-webhook";
 
 const bodySchema = z.object({
   tourProductSlug: z.string().min(1).max(120),
+  assistantScope: z.enum(["tour", "site"]).optional(),
   messages: z
     .array(
       z.object({
@@ -45,9 +54,11 @@ const bodySchema = z.object({
     .optional(),
   handoffRequested: z.boolean().optional(),
   handoffQuestion: z.string().max(8000).optional(),
+  debugNoSideEffects: z.boolean().optional(),
 });
 
 const SESSION_COOKIE = "atc_chat_sid";
+const SITE_ASSISTANT_SLUG = "__site__";
 
 function makeServiceRoleClient() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -87,6 +98,97 @@ function inferLocaleFromText(text: string): TourProductPageLocale | null {
   if (/\p{Script=Han}/u.test(text)) return "zh";
   if (/[¿¡ñáéíóúü]/i.test(text)) return "es";
   return null;
+}
+
+type CatalogueReplyEntry = {
+  title: string;
+  region: string;
+  duration: string;
+  price: string;
+  summary: string;
+  url: string;
+};
+
+function truncateSentence(value: string, maxChars: number): string {
+  const trimmed = value.replace(/\s+/g, " ").trim();
+  if (trimmed.length <= maxChars) return trimmed;
+  return `${trimmed.slice(0, maxChars - 1).trim()}...`;
+}
+
+function parseCatalogueReplyEntry(line: string): CatalogueReplyEntry | null {
+  if (!line.startsWith("- ")) return null;
+  const parts = line.slice(2).split(" | ");
+  const titlePart = parts[0] ?? "";
+  const title = titlePart.replace(/\s+\([^()]+\)$/, "").trim();
+  const field = (label: string) => parts.find((part) => part.startsWith(`${label}: `))?.slice(label.length + 2).trim() ?? "";
+  const url = field("URL");
+  if (!title || !url) return null;
+  return {
+    title,
+    region: field("Region"),
+    duration: field("Duration"),
+    price: field("Price"),
+    summary: field("Summary"),
+    url,
+  };
+}
+
+function buildCatalogueRecommendationReply(context: string, locale: TourProductPageLocale): string | null {
+  const entries = context
+    .split("\n")
+    .map(parseCatalogueReplyEntry)
+    .filter((entry): entry is CatalogueReplyEntry => entry !== null)
+    .slice(0, 3);
+  if (entries.length === 0) return null;
+
+  if (locale === "ko") {
+    return [
+      "조건에 가장 맞는 공개 상품은 아래예요.",
+      ...entries.map((entry, index) =>
+        [
+          `${index + 1}. ${entry.title}`,
+          entry.region ? `지역: ${entry.region}` : "",
+          entry.duration ? `소요 시간: ${entry.duration}` : "",
+          entry.price ? `가격: ${entry.price}` : "",
+          entry.summary ? truncateSentence(entry.summary, 180) : "",
+          entry.url,
+        ]
+          .filter(Boolean)
+          .join(" · "),
+      ),
+      "정확한 이동 난이도나 동행자 상황에 맞춘 선택이 필요하면 이 채팅에서 담당자에게 바로 연결해 드릴 수 있어요.",
+    ].join("\n");
+  }
+
+  return [
+    "These listed AtoC Korea tours best match your request:",
+    ...entries.map((entry, index) =>
+      [
+        `${index + 1}. ${entry.title}`,
+        entry.region ? `Region: ${entry.region}` : "",
+        entry.duration ? `Duration: ${entry.duration}` : "",
+        entry.price ? `Price: ${entry.price}` : "",
+        entry.summary ? truncateSentence(entry.summary, 180) : "",
+        entry.url,
+      ]
+        .filter(Boolean)
+        .join(" · "),
+    ),
+    "If you need a staff-confirmed fit for mobility, timing, or pickup details, I can connect you with support in this chat.",
+  ].join("\n");
+}
+
+function isPrivacyRequestQuestion(message: string): boolean {
+  return /privacy request|personal data|delete my data|data deletion|개인정보.*(?:요청|삭제|정정|열람)|프라이버시.*요청/i.test(
+    message,
+  );
+}
+
+function privacyRequestReply(locale: TourProductPageLocale): string {
+  if (locale === "ko") {
+    return '개인정보 열람, 정정, 삭제 같은 공식 privacy request는 legal@atockorea.com 으로 보내시면 됩니다. 제목에 "Privacy Request"라고 적고, 본인 확인과 요청 범위를 함께 남겨 주세요. 예약이나 결제 건과 연결된 요청이면 support@atockorea.com 또는 이 채팅에서 담당자 연결로도 이어서 도와드릴 수 있어요.';
+  }
+  return 'Formal privacy requests such as access, correction, or deletion can be sent to legal@atockorea.com. Use "Privacy Request" in the subject and include enough information to verify your identity and the scope of the request. For booking- or payment-linked requests, I can also connect you with support in this chat.';
 }
 
 /** Override with `GEMINI_TOUR_PRODUCT_ASSISTANT_MODEL` when needed. */
@@ -187,19 +289,20 @@ export async function POST(req: NextRequest) {
   }
 
   const { tourProductSlug, messages, pageContext } = parsed.data;
+  const isSiteAssistant = parsed.data.assistantScope === "site" || tourProductSlug === SITE_ASSISTANT_SLUG;
   if (messages[0]?.role !== "user") {
     return NextResponse.json({ error: "first_message_must_be_user" }, { status: 400 });
   }
-  if (!isStaticTourProductBundleRegistered(tourProductSlug)) {
+  if (!isSiteAssistant && !isStaticTourProductBundleRegistered(tourProductSlug)) {
     return NextResponse.json({ error: "unknown_tour" }, { status: 404 });
   }
 
   const locale = localeFromRequest(req);
-  let doc = getStaticTourProductFullPageJson(tourProductSlug, locale);
-  if (!doc && locale !== "en") {
+  let doc = isSiteAssistant ? null : getStaticTourProductFullPageJson(tourProductSlug, locale);
+  if (!doc && !isSiteAssistant && locale !== "en") {
     doc = getStaticTourProductFullPageJson(tourProductSlug, "en");
   }
-  if (!doc) {
+  if (!doc && !isSiteAssistant) {
     return NextResponse.json({ error: "bundle_missing" }, { status: 500 });
   }
 
@@ -209,13 +312,38 @@ export async function POST(req: NextRequest) {
     userLocale: locale,
     userAgent: req.headers.get("user-agent"),
     ip: bestEffortIp(req),
-    tourSlug: tourProductSlug,
+    tourSlug: isSiteAssistant ? null : tourProductSlug,
     pageUrl: pageContext?.url ?? null,
     pageTitle: pageContext?.title ?? null,
     pageSection: pageContext?.section ?? null,
   };
 
-  if (parsed.data.handoffRequested) {
+  const latestUserMessage =
+    [...messages].reverse().find((m) => m.role === "user")?.content ?? handoffRequestText(locale);
+  const detectedIntent = classifyChatbotQuery(latestUserMessage);
+  const directHandoffRequested =
+    parsed.data.handoffRequested ||
+    detectedIntent.intent === "support" ||
+    userMessageRequestsHumanHandoff(latestUserMessage);
+  const debugNoSideEffects =
+    parsed.data.debugNoSideEffects === true && process.env.NODE_ENV !== "production";
+
+  if (directHandoffRequested) {
+    if (debugNoSideEffects) {
+      const handoffLocale = inferLocaleFromText(parsed.data.handoffQuestion ?? latestUserMessage) ?? locale;
+      return applySessionCookie(
+        NextResponse.json({
+          reply: humanHandoffAcknowledgement(handoffLocale, null),
+          ticket_id: null,
+          escalated: false,
+          escalation_reason: "user_requested_human",
+          handoff_offered: false,
+          debug_intent: detectedIntent,
+        }),
+        session,
+      );
+    }
+
     const sb = makeServiceRoleClient();
     if (!sb) {
       return applySessionCookie(
@@ -227,15 +355,13 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const lastUserMessage =
-      [...messages].reverse().find((m) => m.role === "user")?.content ?? handoffRequestText(locale);
     const originalQuestion =
       parsed.data.handoffQuestion?.trim() ||
       [...messages]
         .reverse()
-        .find((m) => m.role === "user" && m.content !== lastUserMessage)
+        .find((m) => m.role === "user" && m.content !== latestUserMessage)
         ?.content ||
-      lastUserMessage;
+      latestUserMessage;
     const handoffLocale = inferLocaleFromText(originalQuestion) ?? locale;
 
     try {
@@ -264,6 +390,34 @@ export async function POST(req: NextRequest) {
     }
   }
 
+  if (detectedIntent.intent === "booking_specific") {
+    return applySessionCookie(
+      NextResponse.json({
+        reply: bookingSpecificReply(inferLocaleFromText(latestUserMessage) ?? locale),
+        ticket_id: null,
+        escalated: false,
+        escalation_reason: "booking_specific_requires_human",
+        handoff_offered: true,
+        debug_intent: debugNoSideEffects ? detectedIntent : undefined,
+      }),
+      session,
+    );
+  }
+
+  if (detectedIntent.intent === "legal" && isPrivacyRequestQuestion(latestUserMessage)) {
+    return applySessionCookie(
+      NextResponse.json({
+        reply: privacyRequestReply(inferLocaleFromText(latestUserMessage) ?? locale),
+        ticket_id: null,
+        escalated: false,
+        escalation_reason: null,
+        handoff_offered: true,
+        debug_intent: debugNoSideEffects ? detectedIntent : undefined,
+      }),
+      session,
+    );
+  }
+
   const key = process.env.GEMINI_API_KEY?.trim();
   if (!key) {
     return applySessionCookie(
@@ -275,19 +429,40 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  const vm = buildTourProductViewModelFromFullPageJson(doc, locale);
-  const productContext = buildTourProductAssistantContextText(vm, locale);
+  const productContext =
+    !isSiteAssistant && doc
+      ? buildTourProductAssistantContextText(buildTourProductViewModelFromFullPageJson(doc, locale), locale)
+      : "No single tour page is active. Answer as the sitewide AtoC Korea assistant using the tour catalogue, approved Q&A, and site knowledge.";
   const last = messages[messages.length - 1];
   if (last?.role !== "user") {
     return NextResponse.json({ error: "last_message_must_be_user" }, { status: 400 });
   }
   const answerLocale = inferLocaleFromText(last.content) ?? locale;
-  const siteKnowledgeContext = buildSiteKnowledgeContextText({
-    locale: answerLocale,
-    query: last.content,
-    maxChunks: 8,
-    maxChars: 7000,
-  });
+  const activeIntent = classifyChatbotQuery(last.content);
+  const useTourCatalog = activeIntent.useTourCatalog || (!isSiteAssistant && activeIntent.intent === "tour_recommendation");
+  const useSiteKnowledge = activeIntent.useSiteKnowledge;
+  const tourCatalogContext = useTourCatalog
+    ? buildTourCatalogContextText({
+        locale: answerLocale,
+        query: last.content,
+        limit: isSiteAssistant ? 10 : 6,
+        maxChars: isSiteAssistant ? 5200 : 3600,
+      })
+    : "Tour catalogue intentionally omitted for this query intent to avoid unrelated product recommendations.";
+  const siteKnowledgeQuery =
+    activeIntent.intent === "legal"
+      ? `${last.content} privacy personal data data deletion privacy request legal legal@atockorea.com support@atockorea.com`
+      : activeIntent.intent === "company"
+        ? `${last.content} company address email contact intermediary operator provider support atockorea`
+        : last.content;
+  const siteKnowledgeContext = useSiteKnowledge
+    ? buildSiteKnowledgeContextText({
+        locale: answerLocale,
+        query: siteKnowledgeQuery,
+        maxChunks: activeIntent.intent === "policy" || activeIntent.intent === "legal" ? 10 : 7,
+        maxChars: activeIntent.intent === "policy" || activeIntent.intent === "legal" ? 8500 : 6200,
+      })
+    : "Site knowledge intentionally omitted for this query intent.";
   let learnedQaContext = "";
   const qaSb = makeServiceRoleClient();
   if (qaSb) {
@@ -295,7 +470,7 @@ export async function POST(req: NextRequest) {
       learnedQaContext = await buildApprovedQaContextText(qaSb, {
         locale: answerLocale,
         query: last.content,
-        tourSlug: tourProductSlug,
+        tourSlug: isSiteAssistant ? null : tourProductSlug,
         limit: 5,
         maxChars: 3500,
       });
@@ -305,16 +480,29 @@ export async function POST(req: NextRequest) {
   }
 
   const systemInstruction = [
-    "You are a helpful customer assistant for a specific tour on AtoC Korea (atockorea.com).",
-    "Answer using the PRODUCT CONTEXT first for this tour, then APPROVED ADMIN Q&A if directly relevant, then SITE KNOWLEDGE for company, legal, footer, policy, and POI questions.",
+    isSiteAssistant
+      ? "You are the sitewide master customer assistant for AtoC Korea (atockorea.com)."
+      : "You are a helpful customer assistant for a specific tour on AtoC Korea (atockorea.com).",
+    `Detected user intent: ${activeIntent.intent} (confidence ${activeIntent.confidence.toFixed(2)}; reasons: ${activeIntent.reasons.join(", ")}).`,
+    isSiteAssistant
+      ? "For product availability and recommendations, answer using the TOUR CATALOGUE first. For policy, company, legal, footer, support, and POI questions, answer using APPROVED ADMIN Q&A and SITE KNOWLEDGE first."
+      : "For this product, answer using the PRODUCT CONTEXT first. Use TOUR CATALOGUE only for explicit cross-product recommendations, then APPROVED ADMIN Q&A and SITE KNOWLEDGE when relevant.",
+    "Context routing is deliberate. If TOUR CATALOGUE says it was intentionally omitted, do not compensate by recommending tours from memory.",
+    "Do not pivot to tour recommendations unless the intent is tour_recommendation or tour_catalog, or unless the user explicitly asks for products, tours, itineraries, or recommendations.",
+    "For policy, legal, company, booking-specific, POI, and unknown questions, answer the exact question first. Do not list tours unless the user asked for tours.",
+    "For tour recommendations, recommend only listed tours that match the requested region, traveler profile, date/season, port, accessibility, or theme. Include the product URL from the context for each recommended tour. If there is no matching listed tour, say that clearly and offer to connect support in this chat.",
+    "For Jeju questions, do not recommend Busan, Gyeongju, Seoul, or other regions unless the user explicitly asks for alternatives.",
     "Approved Admin Q&A is curated from previous human support conversations. Use it only when it clearly matches the user's question and does not conflict with the product or site context.",
     "Do not invent policies, prices, included items, operating hours, or POI facts that are not in the context.",
     "When answering legal or policy questions, summarize the site policy plainly; do not give legal advice.",
-    "If the verified context does not answer the user's question, say that clearly and ask whether to connect them to customer support. Do not guess.",
-    "If the user should book or get a definitive answer from staff, say so clearly.",
+    "If the verified context does not answer the user's question, say that clearly and ask whether to connect them to customer support inside this chat. Do not send the user to the contact page as the primary next step.",
+    "If the user asks to contact support, talk to a person, or get a definitive answer from staff, say you can connect them in this chat.",
+    "For personal booking details such as exact pickup time, driver contact, payment status, booking changes, or booking-specific refund progress, staff must check the booking record; offer support inside this chat.",
     "Keep replies under about 12 sentences unless the user asks for detail.",
     "\n--- PRODUCT CONTEXT ---\n",
     productContext,
+    "\n--- TOUR CATALOGUE ---\n",
+    tourCatalogContext || "No tour catalogue entries matched this question.",
     "\n--- APPROVED ADMIN Q&A ---\n",
     learnedQaContext || "No approved learned Q&A matched this question.",
     "\n--- SITE KNOWLEDGE ---\n",
@@ -352,13 +540,38 @@ export async function POST(req: NextRequest) {
   }
   const elapsedMs = Date.now() - t0;
 
+  const isRecommendationIntent =
+    activeIntent.intent === "tour_recommendation" || activeIntent.intent === "tour_catalog";
+  if (isRecommendationIntent && (replyText.length < 180 || !/\/tour-product\/[a-z0-9-]+/i.test(replyText))) {
+    const catalogueReply = buildCatalogueRecommendationReply(tourCatalogContext, answerLocale);
+    if (catalogueReply) {
+      replyText = catalogueReply;
+    }
+  }
+
   // ──────────────────────────────────────────────────────────────────────
   // Side-effects: chat log + escalation + ticket + telegram. Failures NEVER
   // break the user-facing reply (try/catch each; log and move on).
   // ──────────────────────────────────────────────────────────────────────
   let ticketCreated: number | null = null;
   let escalationReason: string | null = null;
-  let handoffOffered = assistantReplyShouldOfferHandoff(replyText);
+  let forceHandoffOffer = false;
+  if (replyLooksMisrouted(activeIntent.intent, replyText)) {
+    escalationReason = "low_confidence";
+    forceHandoffOffer = true;
+    if (activeIntent.intent === "policy") {
+      replyText = policyFallbackReply(answerLocale);
+    } else if (activeIntent.intent === "booking_specific") {
+      replyText = bookingSpecificReply(answerLocale);
+    } else {
+      replyText = ensureHandoffPrompt(
+        "I could not find a verified answer for that in the current site context.",
+        answerLocale,
+      );
+    }
+  }
+
+  let handoffOffered = forceHandoffOffer || assistantReplyShouldOfferHandoff(replyText);
   if (handoffOffered) {
     replyText = ensureHandoffPrompt(replyText, answerLocale);
   }
@@ -393,7 +606,7 @@ export async function POST(req: NextRequest) {
                 session_id: log.sessionId,
                 trigger_message_id: log.assistantMessageId,
                 user_locale: locale,
-                tour_slug: tourProductSlug,
+                tour_slug: isSiteAssistant ? null : tourProductSlug,
                 page_url: pageContext?.url ?? null,
                 page_title: pageContext?.title ?? null,
                 escalation_reason: decision.reason,
@@ -424,7 +637,7 @@ export async function POST(req: NextRequest) {
                 ticketId: ticketCreated,
                 reason: decision.reason,
                 initialUserMessage: last.content,
-                tourSlug: tourProductSlug,
+                tourSlug: isSiteAssistant ? null : tourProductSlug,
                 pageUrl: pageContext?.url ?? null,
                 pageTitle: pageContext?.title ?? null,
                 userLocale: locale,
@@ -444,6 +657,7 @@ export async function POST(req: NextRequest) {
     escalated: ticketCreated !== null,
     escalation_reason: escalationReason,
     handoff_offered: handoffOffered && ticketCreated === null,
+    debug_intent: debugNoSideEffects ? activeIntent : undefined,
   });
   return applySessionCookie(resp, session);
 }
