@@ -1748,81 +1748,40 @@
     "departure": [
       {
         "order": 1,
-        "time": "08:30",
-        "name": "Ocean Suites Jeju Hotel",
-        "type": "hotel",
-        "note": "Reúnase en el vestíbulo del hotel — el guía sostendrá un letrero de AtoCKorea.",
-        "lat": 33.51823,
-        "lng": 126.52317
+        "time": "Se confirma al reservar (≈30 min tras el atraque del barco)",
+        "name": "Terminal Internacional de Pasajeros de Jeju (제주항 — norte de Jeju)",
+        "type": "cruise_terminal",
+        "note": "Para barcos que atracan en el Puerto de Jeju. Encuentre a su guía en el vestíbulo de llegadas del terminal de cruceros — el guía sostendrá un cartel de AtoC Korea con su nombre.",
+        "lat": 33.5286,
+        "lng": 126.5868
       },
       {
         "order": 2,
-        "time": "08:45",
-        "name": "Aeropuerto Internacional de Jeju (3.ª planta, Puerta 3)",
-        "type": "airport",
-        "note": "Área de salidas en la 3.ª planta. Siga las señales hacia la Puerta 3.",
-        "lat": 33.50708,
-        "lng": 126.49343
-      },
-      {
-        "order": 3,
-        "time": "08:55",
-        "name": "LOTTE City Hotel Jeju",
-        "type": "hotel",
-        "note": "Espere en el vestíbulo principal — el guía lo llamará por su nombre.",
-        "lat": 33.4906,
-        "lng": 126.48643
-      },
-      {
-        "order": 4,
-        "time": "09:05",
-        "name": "Shilla Duty Free (Tienda de Jeju)",
-        "type": "shopping",
-        "note": "Reunirse en la entrada principal de Shilla Duty Free, sucursal de Jeju.",
-        "lat": 33.48631,
-        "lng": 126.48739
+        "time": "Se confirma al reservar (≈30 min tras el atraque del barco)",
+        "name": "Terminal Civil-Militar de Cruceros de Gangjeong (강정항 — sur de Jeju, Seogwipo)",
+        "type": "cruise_terminal",
+        "note": "Para barcos que atracan en el Puerto de Gangjeong. Encuentre a su guía en el vestíbulo de llegadas del terminal de cruceros — el guía sostendrá un cartel de AtoC Korea con su nombre.",
+        "lat": 33.2247,
+        "lng": 126.5512
       }
     ],
     "return": [
       {
         "order": 1,
-        "name": "Ocean Suites Jeju Hotel",
-        "type": "hotel",
-        "lat": 33.51823,
-        "lng": 126.52317
+        "name": "Terminal Internacional de Pasajeros de Jeju (제주항)",
+        "type": "cruise_terminal",
+        "lat": 33.5286,
+        "lng": 126.5868
       },
       {
         "order": 2,
-        "name": "Aeropuerto Internacional de Jeju (3.ª planta, Puerta 3)",
-        "type": "airport",
-        "lat": 33.50708,
-        "lng": 126.49343
-      },
-      {
-        "order": 3,
-        "name": "LOTTE City Hotel Jeju",
-        "type": "hotel",
-        "lat": 33.4906,
-        "lng": 126.48643
-      },
-      {
-        "order": 4,
-        "name": "Shilla Duty Free (tienda de Jeju)",
-        "type": "shopping",
-        "lat": 33.48631,
-        "lng": 126.48739
-      },
-      {
-        "order": 5,
-        "name": "Mercado Tradicional de Dongmun",
-        "type": "market",
-        "lat": 33.51204,
-        "lng": 126.52828
+        "name": "Terminal Civil-Militar de Cruceros de Gangjeong (강정항)",
+        "type": "cruise_terminal",
+        "lat": 33.2247,
+        "lng": 126.5512
       }
     ],
-    "notes": [
-      "El regreso suele ser alrededor de las 17:30–18:00."
-    ]
+    "notes": "El regreso se realiza al mismo terminal de cruceros desde el que comenzó el tour, con un margen cómodo antes del zarpe. Nunca hemos perdido un zarpe — el regreso puntual es el núcleo del producto de excursión en puerto."
   },
   "matching_profile": {
     "profile_version": 6,
