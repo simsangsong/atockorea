@@ -13,6 +13,7 @@ import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { DevChunkRecoveryCleanup } from "@/components/DevChunkRecoveryCleanup";
 import { LocaleCurrencySync } from "@/components/LocaleCurrencySync";
 import { AnalyticsPageViewTracker } from "@/components/analytics/AnalyticsPageViewTracker";
+import { GlobalAiAssistant } from "@/components/GlobalAiAssistant";
 import { Toaster } from "@/components/ui/sonner";
 import { rootHtmlLangFromNextLocaleCookie } from "@/lib/rootHtmlLangFromCookie";
 
@@ -92,6 +93,7 @@ export default async function RootLayout({
                 <div className="relative z-[1] min-h-dvh min-h-[100dvh] flex flex-col">
                   {children}
                 </div>
+                <GlobalAiAssistant />
               </CurrencyProvider>
             </I18nProvider>
           </ErrorBoundary>
