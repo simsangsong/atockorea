@@ -412,7 +412,8 @@ AND tour_product_page_id IN (SELECT id FROM tour_product_pages WHERE slug = 'jej
 | C (vehicle price type unblock) | `583f0bf4` | [#17](https://github.com/simsangsong/atockorea/pull/17) | ✅ `b8332b45` |
 | D (port routeVariants adapter) | (pending) | (pending) | code change; see Phase D detail below |
 | 3 EN | `77a4e780` | [#32](https://github.com/simsangsong/atockorea/pull/32) | ✅ `5f54f0d6` |
-| 5b EN (Bukchon+Sanjeong) | (이번 commit) | (이번 commit) | from-incheon-seoul 600 → 900 (2 instances) + pocheon-sanjeong 3 km → 4 km (9 instances) + 50-60 min → 75 min. Nami/Morning Calm/Ahopsan/Herb Island 4 항목은 이미 통일 확인 (스킵). Waujeongsa 단일화 + schedule arithmetic + 해녀 시간 → 별도 phase (verify 필요). |
+| 5b EN (Bukchon+Sanjeong) | `bb6ceda7` | [#33](https://github.com/simsangsong/atockorea/pull/33) | ✅ `376437bc` |
+| 7 EN | (이번 commit) | (이번 commit) | DMZ 220→150m (2 instances) · "A easy" → "An easy" · "the our…tour tour" → "our…tour" (2 instances) · "? photo" → "— photo" (4 tours, ~120 instances) · DMZ refund tone softened (substance preserved) · Silla Gold Crowns stale exhibition removed (description ×2 + highlight, 3 instances) · jeju-cruise "Lunch (pay direct)" → "Lunch break — own expense" (2 tours, ~92 instances) |
 | 5b EN | — | — | ⏳ |
 | 6 EN | — | — | ⏳ |
 | 7 EN | — | — | ⏳ |
