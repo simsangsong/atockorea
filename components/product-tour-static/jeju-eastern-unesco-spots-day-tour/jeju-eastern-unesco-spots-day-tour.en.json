@@ -6,7 +6,7 @@
   "product_id": "jeju-eastern-unesco-spots-day-tour",
   "seo": {
     "pageTitle": "Jeju Eastern UNESCO Spots Small-Group Day Tour | AtoC Korea",
-    "metaDescription": "9-hour small-group eastern Jeju loop: Hamdeok Beach, Seongeup Folk Village (UNESCO), Micheon lava cave, Seongsan Ilchulbong (UNESCO), Haenyeo Museum. 4.9/5.",
+    "metaDescription": "9-hour small-group eastern Jeju loop: Hamdeok Beach, Seongeup Folk Village, Micheon lava cave, Seongsan Ilchulbong (UNESCO Natural Heritage), Haenyeo Museum. All admissions included.",
     "primaryKeywords": [
       "Jeju eastern UNESCO tour",
       "Seongsan Ilchulbong tour",
@@ -15,14 +15,14 @@
       "Jeju Sunrise Peak day tour"
     ],
     "ogImage": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
-    "title": "Jeju East UNESCO Day Tour · All Admissions · 4.9/5 | AtoC",
-    "description": "East Jeju UNESCO day tour: Seongsan Ilchulbong → Seongeup Folk Village → Haenyeo Museum → Micheon Cave lava tube → Hamdeok Beach. All admissions included, small group, certified guide. 4.9/5 (1,148 reviews)."
+    "title": "Jeju East UNESCO Day Tour · All Admissions Included | AtoC",
+    "description": "East Jeju UNESCO day tour: Seongsan Ilchulbong → Seongeup Folk Village → Haenyeo Museum → Micheon Cave → Hamdeok Beach. All admissions included, small group, certified guide."
   },
   "catalog_card": {
     "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
     "title": "Jeju East UNESCO Day Tour",
     "priceLabel": "From US$59 per person (was $69, 14% off)",
-    "shortCardDescription": "A small-group day tour covering eastern Jeju's UNESCO and signature stops in a single 9-hour loop — Hamdeok Seoubong Beach, Seongeup Folk Village, the Micheon Cave lava tube system (current alternate to closed Manjanggul), Seongsan Ilchulbong (UNESCO Sunrise Peak), and the Haenyeo Museum dedicated to Jeju's UNESCO-listed women divers. ALL admissions included; certified English/Chinese-speaking guide; rated 4.9/5 across 1,148 reviews.",
+    "shortCardDescription": "A small-group day tour covering eastern Jeju's UNESCO and signature stops in a single 9-hour loop — Hamdeok Seoubong Beach, Seongeup Folk Village, Micheon Cave (a separate commercial show cave visited as an alternative when Manjanggul is closed), Seongsan Ilchulbong (UNESCO Natural Heritage Sunrise Peak), and the Haenyeo Museum dedicated to Jeju's UNESCO-listed women divers. ALL admissions included; certified English/Chinese-speaking guide.",
     "tags": [
       "Small group",
       "Jeju",
@@ -61,7 +61,7 @@
   "hero": {
     "imageUrl": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
     "imagePosition": "center 35%",
-    "tagline": "The most reviewed eastern Jeju tour — 4.9/5 across 1,148 reviews, all admissions included",
+    "tagline": "Eastern Jeju's UNESCO and signature stops in a single small-group day, with all admissions included",
     "pills": [
       "Small group",
       "Jeju"
@@ -71,7 +71,7 @@
       "region": "Eastern Jeju",
       "stops": "8 stops",
       "rating": 0,
-      "ratingStars": 5
+      "ratingStars": 0
     }
   },
   "subnavItems": [
@@ -1376,7 +1376,7 @@
       "description": "Authorized Korean tour operator with full insurance",
       "iconBg": "bg-emerald-50/80",
       "iconColor": "text-emerald-600",
-      "body": "Licensed local operator — 4.9/5 across 1,148 reviews, making this the most reviewed eastern Jeju day tour on the market."
+      "body": "Licensed Korean tour operator with full insurance and KTO-certified English/Chinese-speaking guides — no shopping detours, every minute on the route."
     },
     {
       "icon": "route",
@@ -1447,7 +1447,7 @@
     {
       "id": "q3",
       "question": "How is this different from the Southern UNESCO tour?",
-      "answer": "similar local route. The Southern tour covers Hallasan trail, Camellia Hill, Cheonjeyeon Falls, Jusangjeolli, O'sulloc — focused on natural heritage and gardens. This Eastern tour covers Hamdeok Beach, Seongeup Village, Micheon Cave, Seongsan, and the Haenyeo Museum — focused on UNESCO heritage (both natural and cultural) and traditional Jeju life. Most 2-day Jeju visitors do one of each."
+      "answer": "The Southern UNESCO tour covers Hallasan trail, Camellia Hill, Cheonjeyeon Falls, Jusangjeolli, O'sulloc — focused on natural heritage and gardens. This Eastern tour covers Hamdeok Beach, Seongeup Village, Micheon Cave, Seongsan, and the Haenyeo Museum — focused on UNESCO heritage (both natural and cultural) and traditional Jeju life. Most 2-day Jeju visitors do one of each."
     },
     {
       "id": "q4",
@@ -1917,7 +1917,7 @@
     ],
     "reviews_attribution": null,
     "unesco_fit_note": "unesco_fit=5 = 1 WHS (Seongsan Ilchulbong, inscribed 2007) + 1 Intangible Cultural Heritage of Humanity (Culture of Jeju Haenyeo, inscribed 2016, accessed via the Haenyeo Museum stop). Seongeup Folk Village is Korea's national folk heritage — NOT UNESCO — and does not contribute to this score.",
-    "_internal_competing_products_note": "Comp set (internal only): Southern UNESCO sister product, similar local route, $43/pax small-group rate as ceiling reference.",
+    "_internal_competing_products_note": "Comp set (internal only): Southern UNESCO sister product as primary peer reference.",
     "competing_products": [
       "east-signature-nature-core",
       "jeju-grand-highlights-loop",
@@ -1975,7 +1975,7 @@
         "hero": {
           "imageUrl": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
           "imagePosition": "center 35%",
-          "tagline": "The most reviewed eastern Jeju tour — 4.9/5 across 1,148 reviews, all admissions included",
+          "tagline": "Eastern Jeju's UNESCO and signature stops in a single small-group day, with all admissions included",
           "pills": [
             "Small group",
             "Jeju"
@@ -1985,7 +1985,7 @@
             "region": "",
             "stops": "8 stops",
             "rating": 0,
-            "ratingStars": 5
+            "ratingStars": 0
           }
         }
       }
@@ -2042,8 +2042,8 @@
           },
           {
             "icon": "star",
-            "label": "Rating",
-            "value": "4.9/5 across 1,148 reviews — operator's most reviewed Jeju tour"
+            "label": "Group size",
+            "value": "Small-group mini-coach, typically 12–18 guests"
           },
           {
             "icon": "footprints",
@@ -2660,7 +2660,7 @@
           {
             "id": "q3",
             "question": "How is this different from the Southern UNESCO tour?",
-            "answer": "similar local route. The Southern tour covers Hallasan trail, Camellia Hill, Cheonjeyeon Falls, Jusangjeolli, O'sulloc — focused on natural heritage and gardens. This Eastern tour covers Hamdeok Beach, Seongeup Village, Micheon Cave, Seongsan, and the Haenyeo Museum — focused on UNESCO heritage (both natural and cultural) and traditional Jeju life. Most 2-day Jeju visitors do one of each."
+            "answer": "The Southern UNESCO tour covers Hallasan trail, Camellia Hill, Cheonjeyeon Falls, Jusangjeolli, O'sulloc — focused on natural heritage and gardens. This Eastern tour covers Hamdeok Beach, Seongeup Village, Micheon Cave, Seongsan, and the Haenyeo Museum — focused on UNESCO heritage (both natural and cultural) and traditional Jeju life. Most 2-day Jeju visitors do one of each."
           },
           {
             "id": "q4",
