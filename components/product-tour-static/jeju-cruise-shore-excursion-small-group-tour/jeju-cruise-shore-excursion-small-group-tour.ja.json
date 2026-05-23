@@ -3256,5 +3256,44 @@
   "thumbnail": "/images/tours/jeju-cruise-terminal/jeju-cruise-terminal-private-pickup.webp",
   "heroImage": "/images/tours/jeju-cruise-terminal/jeju-cruise-terminal-private-pickup.webp",
   "imageUrl": "/images/tours/jeju-cruise-terminal/jeju-cruise-terminal-private-pickup.webp",
-  "ogImage": "/images/tours/jeju-cruise-terminal/jeju-cruise-terminal-private-pickup.webp"
+  "ogImage": "/images/tours/jeju-cruise-terminal/jeju-cruise-terminal-private-pickup.webp",
+  "pickup_dropoff": {
+    "departure": [
+      {
+        "order": 1,
+        "time": "ご予約時に確定（船舶接岸後約30分）",
+        "name": "済州港 国際旅客ターミナル（제주항 — 済州北部）",
+        "type": "cruise_terminal",
+        "note": "済州港に停泊する船舶用。クルーズターミナルの到着ホールでガイドにお会いください — ガイドはお名前を記したAtoC Koreaのサインを掲げています。",
+        "lat": 33.5286,
+        "lng": 126.5868
+      },
+      {
+        "order": 2,
+        "time": "ご予約時に確定（船舶接岸後約30分）",
+        "name": "江汀港 軍民共用クルーズターミナル（강정항 — 済州南部・西帰浦）",
+        "type": "cruise_terminal",
+        "note": "江汀港に停泊する船舶用。クルーズターミナルの到着ホールでガイドにお会いください — ガイドはお名前を記したAtoC Koreaのサインを掲げています。",
+        "lat": 33.2247,
+        "lng": 126.5512
+      }
+    ],
+    "return": [
+      {
+        "order": 1,
+        "name": "済州港 国際旅客ターミナル（제주항）",
+        "type": "cruise_terminal",
+        "lat": 33.5286,
+        "lng": 126.5868
+      },
+      {
+        "order": 2,
+        "name": "江汀港 軍民共用クルーズターミナル（강정항）",
+        "type": "cruise_terminal",
+        "lat": 33.2247,
+        "lng": 126.5512
+      }
+    ],
+    "notes": "ツアー出発時と同じクルーズターミナルへ戻り、出航時刻前に十分なバッファを設けます。出航に遅れたことは一度もありません — 定刻復帰がクルーズショアエクスカーション商品の核心です。"
+  }
 }
