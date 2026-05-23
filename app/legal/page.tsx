@@ -18,7 +18,10 @@ export default function LegalPage() {
         <LegalDocContainer>
           <LegalDocTitle>Legal</LegalDocTitle>
           <p className="mt-2 mb-6 text-[13px] leading-snug text-slate-600 sm:text-[14px]">
-            Policies for ATOC KOREA LLC’s booking platform. Full texts are linked below.
+            Policies for the AtoC Korea booking platform. The platform is operated by AtoC Korea, LLC (a
+            Wyoming, USA limited liability company); local tour operations and partner management in the
+            Republic of Korea are handled by AtoC Korea, Korea (General Travel Business; Business Registration No.
+            277-01-03977). Full texts are linked below.
           </p>
 
           <LegalDocumentShell>
@@ -30,7 +33,7 @@ export default function LegalPage() {
                 and related matters for our tour booking intermediary platform (Republic of Korea and United States).
               </p>
               <p className="mt-3 text-[13px] text-slate-600">
-                Summary: ATOC KOREA LLC operates only as a booking intermediary. We do not operate tours; independent
+                Summary: AtoC Korea, LLC operates only as a booking intermediary. We do not operate tours; independent
                 third parties deliver tour services. Execution, safety, and quality are the tour provider’s
                 responsibility.
               </p>

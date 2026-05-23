@@ -287,7 +287,7 @@ export default function ContactForm() {
               className="mt-1 w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
             />
             <span className="text-sm text-gray-700">
-              I understand that ATOC KOREA LLC will use my information to respond to this inquiry in accordance with the{' '}
+              I understand that AtoC Korea, LLC will use my information to respond to this inquiry in accordance with the{' '}
               <a href="/legal" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">
                 Privacy Policy
               </a>

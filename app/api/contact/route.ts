@@ -155,7 +155,7 @@ async function sendAutoReplyEmail(toEmail: string, fullName: string) {
 
             <div class="info-box">
               <p style="margin: 0; font-weight: bold;">Important:</p>
-              <p style="margin: 10px 0 0 0;">ATOC KOREA LLC operates solely as a booking intermediary. Tours are delivered by independent third-party providers identified in your booking confirmation.</p>
+              <p style="margin: 10px 0 0 0;">AtoC Korea, LLC operates solely as a booking intermediary. Tours are delivered by independent third-party providers identified in your booking confirmation.</p>
             </div>
 
             <div class="chargeback-notice">
@@ -165,7 +165,7 @@ async function sendAutoReplyEmail(toEmail: string, fullName: string) {
             <p>Thank you,<br>ATOC KOREA Support Team<br><a href="mailto:support@atockorea.com">support@atockorea.com</a></p>
           </div>
           <div class="footer">
-            <p>&copy; 2026 ATOC KOREA LLC. All rights reserved.</p>
+            <p>&copy; 2026 AtoC Korea, LLC. All rights reserved.</p>
             <p>This email was sent from support@atockorea.com</p>
           </div>
         </div>
@@ -183,7 +183,7 @@ To help us assist you faster, please reply to this email with any of the followi
 - Tour date and participant count
 - A short summary of the issue (booking, payment, refund, etc.)
 
-Important: ATOC KOREA LLC operates solely as a booking intermediary. Tours are delivered by independent third-party providers identified in your booking confirmation.
+Important: AtoC Korea, LLC operates solely as a booking intermediary. Tours are delivered by independent third-party providers identified in your booking confirmation.
 
 If your inquiry is urgent and related to payment disputes, please contact us first before initiating a chargeback so we can review and resolve the matter promptly.
 
@@ -193,7 +193,7 @@ Thank you,
 ATOC KOREA Support Team
 support@atockorea.com
 
-(c) 2026 ATOC KOREA LLC. All rights reserved.
+(c) 2026 AtoC Korea, LLC. All rights reserved.
 This email was sent from support@atockorea.com`;
 
     await resend.emails.send({

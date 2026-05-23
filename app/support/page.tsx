@@ -67,7 +67,7 @@ export default function SupportPage() {
                 <li><strong>{t('support.contactPhone')}</strong> +82 10 9780 8027</li>
               </ul>
               <p>
-                <strong>{t('support.contactEntity')}</strong> ATOC KOREA LLC · <strong>{t('support.contactAddress')}</strong> 302, 32, Doryeong-ro 7-gil, Jeju-si, Jeju-do, Republic of Korea
+                <strong>{t('support.contactEntity')}</strong> AtoC Korea, LLC · <strong>{t('support.contactAddress')}</strong> #221-8, 284 Gilju-ro, Wonmi-gu, Bucheon-si, Gyeonggi-do, Republic of Korea
               </p>
               <p>{t('support.contactResponse')}</p>
             </div>

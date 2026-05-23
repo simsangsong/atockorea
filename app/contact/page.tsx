@@ -20,7 +20,7 @@ export default function ContactPage() {
                 If you have questions about a booking, payment, cancellation, or refund, please contact us using the form below or email us directly.
               </p>
               <p className="font-semibold text-gray-900">
-                ATOC KOREA LLC operates solely as a booking intermediary.
+                AtoC Korea, LLC operates solely as a booking intermediary.
                 We provide support for booking confirmations, payment status, refund status, and platform-related questions.
                 Tour operation and on-site service matters are handled by the independent tour provider listed in your booking confirmation.
               </p>
