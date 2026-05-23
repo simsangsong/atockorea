@@ -44,8 +44,8 @@
 | 2a EN | 크루즈 픽업 → 항구로 재구성 | 중 | 7 tours / ~30 edits | ✅ PR #11 (`28d68626`) |
 | 4a EN | UNESCO 사실 정정 | 낮음-중 | 10 tours / 93 edits | ✅ PR #12 (`98a34706`) |
 | 5a EN | 수치 정정 (high-confidence) | 낮음 | 6 tours / 24 edits | ✅ PR #13 (`117b8f26`) |
-| **A (NEW, P0)** | **catalog/page vs offer/checkout 가격 불일치 ($59↔$69 9개 투어)** | **높음 — 결제 사기 리스크** | **DB + JSON sync** | **⏳ NEXT** |
-| **B (NEW, P0)** | **시즌 종료 투어 $0 노출 + 시즌 가용성 게이팅** | **중-높음** | **2 tours + API/recommend filter** | **⏳** |
+| A (NEW, P0) | catalog/page vs offer/checkout 가격 불일치 ($59↔$69 9개 투어) | 높음 — 결제 사기 리스크 | DB-only (tours + tour_product_offers) | ✅ DB written 2026-05-23 |
+| **B (NEW, P0)** | **시즌 종료 투어 $0 노출 + 시즌 가용성 게이팅** | **중-높음** | **2 tours + API/recommend filter** | **⏳ NEXT** |
 | **C (NEW, P0)** | **`vehicle` price type 코드 버그 (per-guest로 곱해짐)** | **중 — 결제 금액 오류** | **체크아웃·카트·예약 API + 부킹카드** | **⏳** |
 | **D (NEW, P1)** | **Jeju 크루즈 `itinerary_variants` → `routeVariants` 스키마 마이그레이션** | **중 — 포트 변형 itinerary 미렌더 가능성** | **2 tours JSON or backward map** | **⏳** |
 | 3 EN | 부산 스톱 회전 재매핑 | 중-높음 | 2 tours × 5 stops × 6 fields | ⏳ |
@@ -88,6 +88,57 @@ A parallel session produced [`docs/tour-product-en-content-fix-plan-2026-05-23.m
 - [`docs/tour-product-en-content-audit-2026-05-23.md`](./tour-product-en-content-audit-2026-05-23.md) — original audit (input to this plan)
 - [`docs/tour-product-en-content-fix-plan-2026-05-23.md`](./tour-product-en-content-fix-plan-2026-05-23.md) — parallel-session plan (cross-referenced here)
 - [`docs/pickup-dropoff-weather-data-correctness-plan-2026-05-23.md`](./pickup-dropoff-weather-data-correctness-plan-2026-05-23.md) — PR #9 merged; this track's Phase 2 supersedes its Phase 3/4 for the Jeju cruise "hotel vs port" category error.
+
+---
+
+### Phase A 상세 — Catalog/page ↔ DB/offer 가격 정합 (✅ DB applied 2026-05-23)
+
+**문제**: 9개 Jeju 투어의 카탈로그/페이지 JSON 은 새 세일 가격($59/$79)으로 마이그레이션됐는데 `public.tours.price` 와 `public.tour_product_offers.amount_minor` 는 구버전($69)에 멈춰 있음. 고객이 $59 보고 클릭 → 체크아웃에서 $69 청구 = 결제 사기 리스크.
+
+**진실 테이블 (수정 전):**
+
+| Slug | JSON `catalog_card.priceLabel` (EN) | JSON `price.amountLabel` | DB `tours.price` / `original_price` | Offer `amount_minor` |
+|---|---|---|---|---|
+| east-signature-nature-core | "From US$59 per person (was $69, 14% off)" | 59 | 69.00 / 79.00 | 6900 |
+| jeju-cherry-blossom-tour-east-route | "From US$59 (was $69, 14% off)" | 59 | 69.00 / 79.00 | 6900 |
+| jeju-eastern-unesco-spots-day-tour | "From US$59 (was $69, 14% off)" | 59 | 69.00 / 79.00 | 6900 |
+| jeju-grand-highlights-loop | "From US$79 (was $89, 11% off)" | 79 | 69.00 / 79.00 | 6900 |
+| jeju-hydrangea-festival-tour-east-route | "From US$59 (was $69, 14% off)" | 59 | 69.00 / 79.00 | 6900 |
+| jeju-hydrangea-festival-tour-southwest-route | "From US$59 (was $69, 14% off)" | 59 | 69.00 / 79.00 | 6900 |
+| jeju-southern-top-unesco-spots-tour | "From US$59 (was $69, 14% off)" | 59 | 69.00 / 79.00 | 6900 |
+| jeju-west-south-full-day-authentic-tour | "From US$59 (was $69, 14% off)" | 59 | 69.00 / 79.00 | 6900 |
+| southwest-hallasan-osulloc-aewol | "From US$59 (was $69, 14% off)" | 59 | 69.00 / 79.00 | 6900 |
+
+**Canonical 결정**: 카탈로그/페이지 = canonical (고객 약속). DB·offer 를 JSON 에 맞춤.
+
+**적용 (DB writes only — JSON·코드 변경 없음):**
+
+```sql
+UPDATE tours SET price = 59.00, original_price = 69.00
+WHERE slug IN ('east-signature-nature-core', 'jeju-cherry-blossom-tour-east-route',
+  'jeju-eastern-unesco-spots-day-tour', 'jeju-hydrangea-festival-tour-east-route',
+  'jeju-hydrangea-festival-tour-southwest-route', 'jeju-southern-top-unesco-spots-tour',
+  'jeju-west-south-full-day-authentic-tour', 'southwest-hallasan-osulloc-aewol');
+
+UPDATE tours SET price = 79.00, original_price = 89.00
+WHERE slug = 'jeju-grand-highlights-loop';
+
+UPDATE tour_product_offers SET amount_minor = 5900 WHERE is_default = true
+AND tour_product_page_id IN (SELECT id FROM tour_product_pages WHERE slug IN (8개));
+
+UPDATE tour_product_offers SET amount_minor = 7900 WHERE is_default = true
+AND tour_product_page_id IN (SELECT id FROM tour_product_pages WHERE slug = 'jeju-grand-highlights-loop');
+```
+
+**사후 검증**: `tours.price * 100 = offer.amount_minor` 모든 9건 OK.
+
+**범위 제외** (의도적):
+- `tour_product_pages.price_amount_label` / `detail_payload.price` / `detail_payload.catalog_card.priceLabel` — 이미 정합 (EN row "59"/"79"; 비-EN locale row 는 빈 라벨로 catalog_card.priceLabel 의 번역본을 사용 — 현 트랙 EN-first 정책과 일치).
+- 기존 booking 의 `bookings.total_price` 등 스냅샷 — 결제 완료 시점 금액 보존이 정상 동작.
+- JSON 파일 — 이미 canonical. 편집 불요.
+- JSON-LD — `vm.price.amountLabel` 에서 가져오므로 자동 정합.
+
+**남은 작업**: Phase B 시작 — busan-plum / busan-spring 의 빈 가격 + `$0` 추천카드 + 시즌 가용성 게이팅.
 
 ---
 
@@ -250,7 +301,8 @@ A parallel session produced [`docs/tour-product-en-content-fix-plan-2026-05-23.m
 | 2a EN | `2ac8c80f` | [#11](https://github.com/simsangsong/atockorea/pull/11) | ✅ `28d68626` |
 | 4a EN | `09de681b` | [#12](https://github.com/simsangsong/atockorea/pull/12) | ✅ `98a34706` |
 | 5a EN | `b8e8afa9` | [#13](https://github.com/simsangsong/atockorea/pull/13) | ✅ `117b8f26` |
-| 3 EN | — | — | ⏳ next |
+| A (DB price reconcile) | doc-only commit (pending) | (pending) | DB writes applied 2026-05-23 (out-of-band via mcp__atockorea__execute_sql) |
+| 3 EN | — | — | ⏳ |
 | 5b EN | — | — | ⏳ |
 | 6 EN | — | — | ⏳ |
 | 7 EN | — | — | ⏳ |
