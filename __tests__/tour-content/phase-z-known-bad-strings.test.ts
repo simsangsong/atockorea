@@ -76,6 +76,10 @@ const GLOBAL_FORBIDDEN: ReadonlyArray<[string, string]> = [
   ],
   ["stretches 220 meters across", "DMZ bridge over-claim (loc-B residual) — should be 150"],
   ["at 220 meters", "DMZ bridge over-claim (loc-B residual) — should be 150"],
+  ["50M viewers", "Jewel in the Palace over-claim (Phase 5b) — Korea pop. ~52M; actual was peak ~57% MBC rating"],
+  ["Camellia Hill ₩10,000", "Camellia Hill stale adult fee (Phase 5b) — VisitKorea official ₩12,000"],
+  ["Camellia Hill (10,000 KRW)", "Camellia Hill stale adult fee (Phase 5b) — should be 12,000 KRW"],
+  ["22 themed gardens", "Garden of Morning Calm over-count (Phase 5b) — VisitKorea official = 20"],
   // Note: guide first-name leaks (Steven / Chloe / Jina / Hays) need word-boundary regex
   // because "Jina" overlaps with no current real word but "Hays" is rare. Use regex.
 ];
