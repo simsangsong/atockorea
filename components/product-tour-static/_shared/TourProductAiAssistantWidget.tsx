@@ -559,7 +559,11 @@ export function TourProductAiAssistantWidget({
   const bottomClass =
     placement === "tour"
       ? "bottom-[calc(9.5rem+env(safe-area-inset-bottom,0px))] sm:bottom-[calc(7.5rem+env(safe-area-inset-bottom,0px))]"
-      : "bottom-[calc(5.25rem+env(safe-area-inset-bottom,0px))] sm:bottom-5";
+      : // Mobile: stack ABOVE FloatingLanguageToggle (which sits at
+        // bottom+80px and is ~44px tall) — 8.5rem clears it with a
+        // 12px breathing gap. Desktop keeps bottom-5 since the lang
+        // toggle is md:hidden and never competes.
+        "bottom-[calc(8.5rem+env(safe-area-inset-bottom,0px))] sm:bottom-5";
 
   return (
     <div
@@ -797,12 +801,6 @@ export function TourProductAiAssistantWidget({
       )}
 
       <div className="pointer-events-auto relative">
-        {!open && (
-          <span
-            aria-hidden
-            className="pointer-events-none absolute inset-0 -z-10 rounded-full bg-sky-800/35 motion-safe:animate-ping"
-          />
-        )}
         <button
           type="button"
           onClick={() => setOpen((o) => !o)}
