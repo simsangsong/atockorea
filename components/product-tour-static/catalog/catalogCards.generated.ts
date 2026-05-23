@@ -303,10 +303,10 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "From Busan",
           "Earlier return"
         ],
-        "heroImage": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
-        "thumbnail": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
+        "heroImage": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+        "thumbnail": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
         "priceLabel": "From US$39 per person (was $50, 22% off)",
-        "shortCardDescription": "Small-group day tour from Busan to Gyeongju, the Silla kingdom's ancient capital (57 BCE–935 CE). Same classic six-attraction route as the UNESCO Legacy version (Ahopsan Bamboo Forest → Bulguksa Temple UNESCO → Gyeongju ssambap lunch → National Museum → Gyochon Hanok Village → Woljeonggyo Bridge) but at a calmer pace and earlier return (≈18:50). English/Chinese-speaking certified guide; mini-van; free admissions throughout (only Ahopsan ₩5,000 and lunch paid on-day)."
+        "shortCardDescription": "Small-group day tour from Busan to Gyeongju, the Silla kingdom's ancient capital (57 BCE–935 CE). Same classic six-attraction route as the longer Busan→Gyeongju UNESCO Legacy tour (Ahopsan Bamboo Forest → Bulguksa Temple UNESCO → Gyeongju ssambap lunch → National Museum → Gyochon Hanok Village → Woljeonggyo Bridge) but at a calmer pace and earlier return (≈18:50). English/Chinese-speaking certified guide; mini-van; free admissions throughout (only Ahopsan ₩5,000 and lunch paid on-day)."
       },
       "price": {
         "amountLabel": "39"
@@ -459,7 +459,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "heroImage": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
         "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
         "priceLabel": "From US$59 per person (was $69, 14% off)",
-        "shortCardDescription": "A small-group day tour covering eastern Jeju's UNESCO and signature stops in a single 9-hour loop — Hamdeok Seoubong Beach, Seongeup Folk Village, the Micheon Cave lava tube system (current alternate to closed Manjanggul), Seongsan Ilchulbong (UNESCO Sunrise Peak), and the Haenyeo Museum dedicated to Jeju's UNESCO-listed women divers. ALL admissions included; certified English/Chinese-speaking guide; rated 4.9/5 across 1,148 reviews."
+        "shortCardDescription": "A small-group day tour covering eastern Jeju's UNESCO and signature stops in a single 9-hour loop — Hamdeok Seoubong Beach, Seongeup Folk Village, Micheon Cave (a separate commercial show cave visited as an alternative when Manjanggul is closed), Seongsan Ilchulbong (UNESCO Natural Heritage Sunrise Peak), and the Haenyeo Museum dedicated to Jeju's UNESCO-listed women divers. ALL admissions included; certified English/Chinese-speaking guide."
       },
       "price": {
         "amountLabel": "59"
@@ -585,7 +585,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "heroImage": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
         "thumbnail": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
         "priceLabel": "From US$59 per person (was $69, 14% off)",
-        "shortCardDescription": "A small-group day tour through southern Jeju's signature stops — the Eoseungsaengak Trail along Hallasan (UNESCO biosphere), Camellia Hill garden, the three-tier Cheonjeyeon Waterfall, the hexagonal Jusangjeolli Cliff, and the O'sulloc Tea Museum. Four pickup points across Jeju City and the airport, certified English/Chinese-speaking guide, all admissions included, no shopping pressure. The most reviewed entry-level Jeju tour at 4.9/5 across 648 reviews."
+        "shortCardDescription": "A small-group day tour through southern Jeju's signature stops — the Eoseungsaengak Trail along Hallasan (UNESCO biosphere), Camellia Hill garden, the three-tier Cheonjeyeon Waterfall, the hexagonal Jusangjeolli Cliff, and the O'sulloc Tea Museum. Four pickup points across Jeju City and the airport, certified English/Chinese-speaking guide, all admissions included, no shopping pressure."
       },
       "price": {
         "amountLabel": "59"
@@ -612,7 +612,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "heroImage": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
         "thumbnail": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
         "priceLabel": "From US$59 per person (was $69, 14% off)",
-        "shortCardDescription": "A small-group day tour pairing Jeju's western and southern coasts in a single loop — Hallasan's 1100 Altitude Wetland (UNESCO), the hexagonal Jusangjeolli Cliff, Songaksan's panoramic viewpoint, Cheonjeyeon Waterfall, O'sulloc Tea Museum, and the Hyeopjae Beach café strip on the west coast. similar local route as the Southern UNESCO tour but with a more lifestyle-oriented framing — 'volcanic landscapes meet dramatic coastlines and trendy seaside cafés.'"
+        "shortCardDescription": "A small-group day tour pairing Jeju's western and southern coasts in a single loop — Hallasan's 1100 Altitude Wetland (UNESCO), the hexagonal Jusangjeolli Cliff, Songaksan's panoramic viewpoint, Cheonjeyeon Waterfall, O'sulloc Tea Museum, and the Hyeopjae Beach café strip on the west coast. A lifestyle-oriented framing — 'volcanic landscapes meet dramatic coastlines and trendy seaside cafés.'"
       },
       "price": {
         "amountLabel": "59"
@@ -762,7 +762,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "heroImage": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
         "thumbnail": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
         "priceLabel": "From US$59 per person (was $82, 28% off)",
-        "shortCardDescription": "A 13-hour coach day tour from Seoul covering Korea's three most-photographed day-trip stops: Seoraksan National Park (Korea's only UNESCO Biosphere Reserve), Nami Island (Winter Sonata's Metasequoia Lane), and the Garden of Morning Calm (Korea's signature private arboretum with 5,000 plant species). All admissions included; English-speaking guide; pickup at Hongik University Station or Myeongdong Station."
+        "shortCardDescription": "A 13-hour coach day tour from Seoul covering Korea's three most-photographed day-trip stops: Seoraksan National Park (Korea's first UNESCO Biosphere Reserve), Nami Island (Winter Sonata's Metasequoia Lane), and the Garden of Morning Calm (Korea's signature private arboretum with 5,000 plant species). All admissions included; English-speaking guide; pickup at Hongik University Station or Myeongdong Station."
       },
       "price": {
         "amountLabel": "59"
@@ -1163,8 +1163,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "부산 출발",
           "이른 귀환"
         ],
-        "heroImage": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
-        "thumbnail": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
+        "heroImage": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+        "thumbnail": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
         "priceLabel": "1인 US$39 (정가 $50, 22% 할인)",
         "shortCardDescription": "신라 왕국의 고도(古都) 경주(기원전 57년~935년)로 떠나는 부산 출발 소규모 당일 투어. 유네스코 레거시 버전과 동일한 클래식 6개 명소 코스(아홉산 숲 대나무숲 → 불국사 유네스코 → 경주 쌈밥 점심 → 국립박물관 → 교촌 한옥마을 → 월정교)로 진행되지만, 여유로운 페이스와 이른 귀환(약 18:50)이 특징입니다. 영어·중국어 가능 공인 가이드, 미니밴 제공, 전 일정 입장료 무료(아홉산 ₩5,000 및 점심 식사는 현장 결제)."
       },
@@ -2023,8 +2023,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "从釜山出发",
           "提前返回"
         ],
-        "heroImage": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
-        "thumbnail": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
+        "heroImage": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+        "thumbnail": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
         "priceLabel": "每人 US$39（原价$50，22% 优惠）",
         "shortCardDescription": "从釜山出发前往庆州的小团体一日游，庆州是新罗王国的古都（公元前57年—公元935年）。与UNESCO遗产版本相同的经典六景路线（阿虎山竹林 → 佛国寺UNESCO → 庆州拌饭午餐 → 国立博物馆 → 校村韩屋村 → 月精桥），但节奏更为悠闲，返回时间更早（约18:50）。配备英语/中文双语认证导游；小型厢式车；全程免费入场（仅阿虎山₩5,000及午餐费用需当天自付）。"
       },
@@ -2883,8 +2883,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "從釜山出發",
           "提早返回"
         ],
-        "heroImage": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
-        "thumbnail": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
+        "heroImage": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+        "thumbnail": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
         "priceLabel": "每人 US$39（原價$50，22% 優惠）",
         "shortCardDescription": "從釜山出發前往新羅王國古都慶州（西元前57年—西元935年）的小團體一日遊。行程與UNESCO遺產版本相同的六大經典景點路線（鵝項山竹林 → 佛國寺UNESCO → 慶州拌飯午餐 → 國立博物館 → 校村韓屋村 → 月精橋），但節奏更從容，返回時間更早（約18:50）。英語／中文認證導遊；小型廂型車；全程免票（僅鵝項山₩5,000及午餐費用需當日自付）。"
       },
@@ -3743,8 +3743,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Desde Busán",
           "Regreso más temprano"
         ],
-        "heroImage": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
-        "thumbnail": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
+        "heroImage": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+        "thumbnail": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
         "priceLabel": "Desde US$39 por persona (antes $50, 22% descuento)",
         "shortCardDescription": "Tour en grupo pequeño de un día desde Busán a Gyeongju, la antigua capital del reino Silla (57 a. C.–935 d. C.). El mismo recorrido clásico de seis atracciones que la versión UNESCO Legacy (Bosque de Bambú de Ahopsan → Templo Bulguksa UNESCO → Almuerzo ssambap en Gyeongju → Museo Nacional → Aldea Hanok de Gyochon → Puente Woljeonggyo), pero a un ritmo más tranquilo y con regreso más temprano (≈18:50). Guía certificado de habla inglesa/china; minivan; entradas gratuitas en todo el recorrido (solo Ahopsan ₩5.000 y el almuerzo se pagan en el día)."
       },
@@ -4600,8 +4600,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "釜山発",
           "早めの帰着"
         ],
-        "heroImage": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
-        "thumbnail": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
+        "heroImage": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+        "thumbnail": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
         "priceLabel": "1名様 US$39（定価$50、22%オフ）",
         "shortCardDescription": "釜山から新羅王国の古都・慶州（紀元前57年〜935年）への少人数日帰りツアー。ユネスコレガシー版と同じ定番6スポットルート（アホプサン竹林 → 仏国寺ユネスコ → 慶州サムバップランチ → 国立博物館 → 校村韓屋村 → 月精橋）を、よりゆったりとしたペースで巡り、早めの帰着（約18:50）。英語・中国語対応の認定ガイド付き、ミニバン使用、全施設入場料込み（アホプサンの₩5,000とランチのみ当日払い）。"
       },

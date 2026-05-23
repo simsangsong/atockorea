@@ -18,6 +18,7 @@ import { ActiveFilterStrip, type ActiveFilterChip } from '@/components/tours-lis
 import { ContextualVignetteBand } from '@/components/tours-list/ContextualVignetteBand';
 import { EmptyStateRecovery } from '@/components/tours-list/EmptyStateRecovery';
 import { ResultsMetaStrip, type CatalogueViewMode } from '@/components/tours-list/ResultsMetaStrip';
+import { ShelvesContainer } from '@/components/tours-list/ShelvesContainer';
 import { EditorialInsert } from '@/components/tours-list/EditorialInsert';
 import { insertForSlot } from '@/lib/tours-list-editorial-inserts';
 import { ConversionRescueBand } from '@/components/tours-list/ConversionRescueBand';
@@ -1117,6 +1118,9 @@ export default function ToursListPage() {
         >
           {isInitialLoading ? (
             <SkeletonGrid count={INITIAL_PAGE_SIZE} />
+          ) : !hasActiveFilters ? (
+            /* Phase 7 B33 — default entry = curated shelves; filter activation flips to the flat grid below. */
+            <ShelvesContainer />
           ) : error ? (
             <div className={`${panelClass} py-6`}>
               <p className="font-medium text-red-600">{error}</p>

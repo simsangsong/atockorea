@@ -503,7 +503,81 @@
     "featCruise": "Crucero",
     "featSeasonal": "De temporada",
     "featPickup": "Recogida en hotel",
-    "featCustom": "Personalizable"
+    "featCustom": "Personalizable",
+    "shelves": {
+      "editorsPick": {
+        "title": "Selección del editor",
+        "subtitle": "Los tours que nuestro equipo reserva para sus propias familias."
+      },
+      "cruiseShoreExcursion": {
+        "title": "Excursión en tierra para cruceros",
+        "subtitle": "Rutas de un día desde los puertos de Busán, Incheon y Jeju."
+      },
+      "smallGroup": {
+        "title": "Grupo reducido",
+        "subtitle": "Furgoneta compartida, ritmo tranquilo, sin paradas de bus turístico."
+      },
+      "private": {
+        "title": "Charter privado",
+        "subtitle": "Vehículo propio, guía-conductor propio, ruta propia."
+      },
+      "classicBus": {
+        "title": "Bus turístico clásico",
+        "subtitle": "Tours en autobús que cubren paradas emblemáticas."
+      },
+      "nowSeasonal": {
+        "camellia": {
+          "title": "Temporada — Camelia",
+          "subtitle": "Temporada de camelia roja de Jeju (15 dic – 15 feb)."
+        },
+        "plum": {
+          "title": "Temporada — Flor de ciruelo",
+          "subtitle": "Ciruelo rojo de Yangsan y Gyeongju (fin feb – med mar)."
+        },
+        "cherry": {
+          "title": "Temporada — Cerezos en flor",
+          "subtitle": "Cerezos de Gyeongju y Busán (fin mar – ppios abr)."
+        },
+        "hydrangea": {
+          "title": "Temporada — Hortensia",
+          "subtitle": "Hortensia azul de Jeju (med may – med jul)."
+        },
+        "maple": {
+          "title": "Temporada — Arce / Otoño",
+          "subtitle": "Follaje otoñal de Seoraksan y Gangwon (med oct – med nov)."
+        },
+        "pink-muhly": {
+          "title": "Temporada — Pasto rosa",
+          "subtitle": "Pasto rosa (fin sep – fin oct)."
+        }
+      },
+      "comingSoon": {
+        "camellia": {
+          "title": "Próximamente — Camelia",
+          "subtitle": "Abre el 15 dic. Temporada invernal de Jeju."
+        },
+        "plum": {
+          "title": "Próximamente — Flor de ciruelo",
+          "subtitle": "Abre el 25 feb. Temporada primaveral Yangsan-Gyeongju."
+        },
+        "cherry": {
+          "title": "Próximamente — Cerezos en flor",
+          "subtitle": "Abre el 28 mar. Temporada Busán-Gyeongju."
+        },
+        "hydrangea": {
+          "title": "Próximamente — Hortensia",
+          "subtitle": "Abre el 15 may. Temporada de hortensia de Jeju."
+        },
+        "maple": {
+          "title": "Próximamente — Arce / Otoño",
+          "subtitle": "Abre el 15 oct. Temporada otoñal de Seoraksan."
+        },
+        "pink-muhly": {
+          "title": "Próximamente — Pasto rosa",
+          "subtitle": "Abre el 30 sep. Temporada de pasto rosa."
+        }
+      }
+    }
   },
   "home": {
     "hero": {

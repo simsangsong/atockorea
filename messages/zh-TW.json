@@ -503,7 +503,81 @@
     "featCruise": "郵輪",
     "featSeasonal": "當季",
     "featPickup": "飯店接送",
-    "featCustom": "可客製"
+    "featCustom": "可客製",
+    "shelves": {
+      "editorsPick": {
+        "title": "編輯精選",
+        "subtitle": "AtoC 團隊帶自家親友出行的路線。"
+      },
+      "cruiseShoreExcursion": {
+        "title": "郵輪岸上遊",
+        "subtitle": "釜山·仁川·濟州郵輪碼頭出發的一日遊。"
+      },
+      "smallGroup": {
+        "title": "小團遊",
+        "subtitle": "共享小巴，節奏舒緩，無大巴團套路。"
+      },
+      "private": {
+        "title": "私人包車",
+        "subtitle": "專車專屬司機嚮導，路線自由定製。"
+      },
+      "classicBus": {
+        "title": "經典巴士團",
+        "subtitle": "大巴覆蓋代表景點的高性價比團。"
+      },
+      "nowSeasonal": {
+        "camellia": {
+          "title": "當季 — 山茶花",
+          "subtitle": "濟州冬季紅山茶花 (12.15 – 2.15)。"
+        },
+        "plum": {
+          "title": "當季 — 梅花",
+          "subtitle": "梁山·慶州 2 月底 – 3 月中旬紅梅花。"
+        },
+        "cherry": {
+          "title": "當季 — 櫻花",
+          "subtitle": "3 月底 – 4 月初慶州·釜山櫻花季。"
+        },
+        "hydrangea": {
+          "title": "當季 — 繡球花",
+          "subtitle": "濟州東·西南 5 月中 – 7 月中旬繡球花季。"
+        },
+        "maple": {
+          "title": "當季 — 紅葉",
+          "subtitle": "10 月中 – 11 月中旬雪嶽山·江原紅葉季。"
+        },
+        "pink-muhly": {
+          "title": "當季 — 粉黛亂子草",
+          "subtitle": "9 月底 – 10 月底粉黛亂子草季。"
+        }
+      },
+      "comingSoon": {
+        "camellia": {
+          "title": "即將開放 — 山茶花",
+          "subtitle": "12 月 15 日開始。濟州山茶花季預約。"
+        },
+        "plum": {
+          "title": "即將開放 — 梅花",
+          "subtitle": "2 月 25 日開始。梁山·慶州春梅季。"
+        },
+        "cherry": {
+          "title": "即將開放 — 櫻花",
+          "subtitle": "3 月 28 日開始。釜山·慶州櫻花季。"
+        },
+        "hydrangea": {
+          "title": "即將開放 — 繡球花",
+          "subtitle": "5 月 15 日開始。濟州繡球花季。"
+        },
+        "maple": {
+          "title": "即將開放 — 紅葉",
+          "subtitle": "10 月 15 日開始。雪嶽山·江原紅葉季。"
+        },
+        "pink-muhly": {
+          "title": "即將開放 — 粉黛亂子草",
+          "subtitle": "9 月 30 日開始。粉黛亂子草季。"
+        }
+      }
+    }
   },
   "home": {
     "hero": {

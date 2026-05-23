@@ -93,6 +93,9 @@ export const CONSUMER_BLOCKED_TOUR_SLUGS = new Set<string>([
   "east-jeju-signature-small-group",
   // Retired 2026-05-14 — replaced by seoul-seoraksan-naksansa-temple-naksan-beach-day-trip.
   "seoul-seoraksan-national-park-sokcho-beach-day-trip",
+  // Retired 2026-05-23 — overlapped with from-busan-gyeongju-ancient-capital-day-tour
+  // (same Busan→Gyeongju route, same $39 price). Keeping the small-group variant active.
+  "busan-gyeongju-unesco-legacy-tour-national-museum",
 ]);
 
 function normalizeTourIdForBlocklist(id: string): string {
