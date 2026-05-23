@@ -80,6 +80,11 @@ const GLOBAL_FORBIDDEN: ReadonlyArray<[string, string]> = [
   ["Camellia Hill ₩10,000", "Camellia Hill stale adult fee (Phase 5b) — VisitKorea official ₩12,000"],
   ["Camellia Hill (10,000 KRW)", "Camellia Hill stale adult fee (Phase 5b) — should be 12,000 KRW"],
   ["22 themed gardens", "Garden of Morning Calm over-count (Phase 5b) — VisitKorea official = 20"],
+  ["route route option", "duplicated-word typo (P1 audit) — should be 'route option'"],
+  ["schedule schedule", "duplicated-word typo (P1 audit) — should be just one 'schedule'"],
+  ["small-group group", "duplicated-word typo (P1 audit) — should be 'small-group'"],
+  ["1100 Road road-closure", "duplicated-word typo (P1 audit) — should be '1100 Road closure'"],
+  ["Visit Korea Korea Foundation", "org-name conflation (P1 audit) — should be 'Korea Foundation'"],
   // Note: guide first-name leaks (Steven / Chloe / Jina / Hays) need word-boundary regex
   // because "Jina" overlaps with no current real word but "Hays" is rare. Use regex.
 ];
