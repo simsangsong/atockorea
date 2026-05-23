@@ -503,7 +503,81 @@
     "featCruise": "クルーズ",
     "featSeasonal": "季節",
     "featPickup": "ホテル送迎",
-    "featCustom": "カスタム可"
+    "featCustom": "カスタム可",
+    "shelves": {
+      "editorsPick": {
+        "title": "エディターズピック",
+        "subtitle": "AtoC チームが家族と一緒に行くツアー。"
+      },
+      "cruiseShoreExcursion": {
+        "title": "クルーズショアエクスカーション",
+        "subtitle": "釜山・仁川・済州のクルーズターミナル発の日帰りツアー。"
+      },
+      "smallGroup": {
+        "title": "スモールグループ",
+        "subtitle": "シェアバン、ゆったりペース、大型バスコースなし。"
+      },
+      "private": {
+        "title": "プライベートチャーター",
+        "subtitle": "専用車・専属ガイド・カスタムルート。"
+      },
+      "classicBus": {
+        "title": "クラシックバスツアー",
+        "subtitle": "大型バスでシグネチャースポットを巡るお得なツアー。"
+      },
+      "nowSeasonal": {
+        "camellia": {
+          "title": "シーズン中 — 椿",
+          "subtitle": "済州の冬の赤椿シーズン (12/15 – 2/15)。"
+        },
+        "plum": {
+          "title": "シーズン中 — 梅",
+          "subtitle": "梁山・慶州エリアの 2 月末〜3 月中旬の紅梅。"
+        },
+        "cherry": {
+          "title": "シーズン中 — 桜",
+          "subtitle": "3 月末〜4 月初の慶州・釜山桜シーズン。"
+        },
+        "hydrangea": {
+          "title": "シーズン中 — 紫陽花",
+          "subtitle": "済州東部・南西部の 5 月中旬〜7 月中旬のあじさいシーズン。"
+        },
+        "maple": {
+          "title": "シーズン中 — 紅葉",
+          "subtitle": "10 月中旬〜11 月中旬の雪嶽山・江原の紅葉シーズン。"
+        },
+        "pink-muhly": {
+          "title": "シーズン中 — ピンクミューリー",
+          "subtitle": "9 月末〜10 月末のピンクミューリーシーズン。"
+        }
+      },
+      "comingSoon": {
+        "camellia": {
+          "title": "間もなく開始 — 椿",
+          "subtitle": "12 月 15 日開始。済州冬の椿シーズン予約受付中。"
+        },
+        "plum": {
+          "title": "間もなく開始 — 梅",
+          "subtitle": "2 月 25 日開始。梁山・慶州の春梅シーズン。"
+        },
+        "cherry": {
+          "title": "間もなく開始 — 桜",
+          "subtitle": "3 月 28 日開始。釜山・慶州桜シーズン。"
+        },
+        "hydrangea": {
+          "title": "間もなく開始 — 紫陽花",
+          "subtitle": "5 月 15 日開始。済州あじさいシーズン。"
+        },
+        "maple": {
+          "title": "間もなく開始 — 紅葉",
+          "subtitle": "10 月 15 日開始。雪嶽山・江原の紅葉シーズン。"
+        },
+        "pink-muhly": {
+          "title": "間もなく開始 — ピンクミューリー",
+          "subtitle": "9 月 30 日開始。ピンクミューリーシーズン。"
+        }
+      }
+    }
   },
   "home": {
     "hero": {

@@ -860,7 +860,81 @@
     "featCruise": "Cruise",
     "featSeasonal": "Seasonal",
     "featPickup": "Hotel pickup",
-    "featCustom": "Customizable"
+    "featCustom": "Customizable",
+    "shelves": {
+      "editorsPick": {
+        "title": "Editor’s Pick",
+        "subtitle": "The trips our team books for their own families."
+      },
+      "cruiseShoreExcursion": {
+        "title": "Cruise Shore Excursion",
+        "subtitle": "Ship-to-tour day routes from Busan, Incheon, and Jeju ports."
+      },
+      "smallGroup": {
+        "title": "Small Group",
+        "subtitle": "Shared vans, calmer pace, no bus-tour stops."
+      },
+      "private": {
+        "title": "Private Charter",
+        "subtitle": "Your own car, your own driver-guide, your own route."
+      },
+      "classicBus": {
+        "title": "Classic Bus Tour",
+        "subtitle": "Large-coach value tours covering signature stops."
+      },
+      "nowSeasonal": {
+        "camellia": {
+          "title": "Now in Season — Camellia",
+          "subtitle": "Jeju’s winter red-bloom window (Dec 15 – Feb 15)."
+        },
+        "plum": {
+          "title": "Now in Season — Plum Blossom",
+          "subtitle": "Late-February to mid-March red plum (Yangsan, Tongdosa)."
+        },
+        "cherry": {
+          "title": "Now in Season — Cherry Blossom",
+          "subtitle": "Late-March to early-April Gyeongju + Busan bloom window."
+        },
+        "hydrangea": {
+          "title": "Now in Season — Hydrangea",
+          "subtitle": "Jeju’s mid-May to mid-July blue-bloom window."
+        },
+        "maple": {
+          "title": "Now in Season — Autumn Foliage",
+          "subtitle": "Mid-October to mid-November Seoraksan & Gangwon foliage."
+        },
+        "pink-muhly": {
+          "title": "Now in Season — Pink Muhly",
+          "subtitle": "Late-September to late-October pink-muhly grass."
+        }
+      },
+      "comingSoon": {
+        "camellia": {
+          "title": "Coming Soon — Camellia",
+          "subtitle": "Opens Dec 15. Booking accepted now for Jeju winter routes."
+        },
+        "plum": {
+          "title": "Coming Soon — Plum Blossom",
+          "subtitle": "Opens Feb 25. Yangsan + Gyeongju spring bloom."
+        },
+        "cherry": {
+          "title": "Coming Soon — Cherry Blossom",
+          "subtitle": "Opens Mar 28. Busan + Gyeongju spring routes."
+        },
+        "hydrangea": {
+          "title": "Coming Soon — Hydrangea",
+          "subtitle": "Opens May 15. Jeju east + southwest blue-bloom routes."
+        },
+        "maple": {
+          "title": "Coming Soon — Autumn Foliage",
+          "subtitle": "Opens Oct 15. Seoraksan & Gangwon fall foliage routes."
+        },
+        "pink-muhly": {
+          "title": "Coming Soon — Pink Muhly",
+          "subtitle": "Opens Sep 30. Pink-muhly grass photo routes."
+        }
+      }
+    }
   },
   "home": {
     "hero": {

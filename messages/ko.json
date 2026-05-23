@@ -709,7 +709,81 @@
     "featCruise": "크루즈",
     "featSeasonal": "시즌",
     "featPickup": "호텔 픽업",
-    "featCustom": "맞춤 코스"
+    "featCustom": "맞춤 코스",
+    "shelves": {
+      "editorsPick": {
+        "title": "에디터스 픽",
+        "subtitle": "저희 팀이 직접 가족과 함께 가는 투어들."
+      },
+      "cruiseShoreExcursion": {
+        "title": "크루즈 쇼어 익스커션",
+        "subtitle": "부산·인천·제주 크루즈 터미널에서 출발하는 하루 투어."
+      },
+      "smallGroup": {
+        "title": "스몰 그룹",
+        "subtitle": "공유 밴, 여유로운 페이스, 대형 관광버스 코스 없음."
+      },
+      "private": {
+        "title": "프라이빗 차터",
+        "subtitle": "나만의 차량, 전담 가이드, 나만의 동선."
+      },
+      "classicBus": {
+        "title": "클래식 버스 투어",
+        "subtitle": "대형 코치로 시그니처 명소를 도는 가성비 투어."
+      },
+      "nowSeasonal": {
+        "camellia": {
+          "title": "지금 시즌 — 동백",
+          "subtitle": "제주 겨울 동백 시즌 (12.15 – 2.15)."
+        },
+        "plum": {
+          "title": "지금 시즌 — 매화",
+          "subtitle": "양산 통도사·경주 일대 2월 말 – 3월 중순 홍매화."
+        },
+        "cherry": {
+          "title": "지금 시즌 — 벚꽃",
+          "subtitle": "3월 말 – 4월 초 경주·부산 벚꽃 시즌."
+        },
+        "hydrangea": {
+          "title": "지금 시즌 — 수국",
+          "subtitle": "제주 동쪽·남서쪽 5월 중순 – 7월 중순 수국 시즌."
+        },
+        "maple": {
+          "title": "지금 시즌 — 단풍",
+          "subtitle": "10월 중순 – 11월 중순 설악산·강원 단풍 시즌."
+        },
+        "pink-muhly": {
+          "title": "지금 시즌 — 핑크뮬리",
+          "subtitle": "9월 말 – 10월 말 핑크뮬리 시즌."
+        }
+      },
+      "comingSoon": {
+        "camellia": {
+          "title": "곧 시작 — 동백",
+          "subtitle": "12월 15일 시작. 제주 동백 시즌 예약 받습니다."
+        },
+        "plum": {
+          "title": "곧 시작 — 매화",
+          "subtitle": "2월 25일 시작. 양산·경주 봄 매화 시즌."
+        },
+        "cherry": {
+          "title": "곧 시작 — 벚꽃",
+          "subtitle": "3월 28일 시작. 부산·경주 벚꽃 시즌."
+        },
+        "hydrangea": {
+          "title": "곧 시작 — 수국",
+          "subtitle": "5월 15일 시작. 제주 수국 시즌."
+        },
+        "maple": {
+          "title": "곧 시작 — 단풍",
+          "subtitle": "10월 15일 시작. 설악산·강원 단풍 시즌."
+        },
+        "pink-muhly": {
+          "title": "곧 시작 — 핑크뮬리",
+          "subtitle": "9월 30일 시작. 핑크뮬리 시즌."
+        }
+      }
+    }
   },
   "home": {
     "hero": {
