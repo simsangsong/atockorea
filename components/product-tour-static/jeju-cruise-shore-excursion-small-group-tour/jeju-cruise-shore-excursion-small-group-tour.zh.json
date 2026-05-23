@@ -3256,5 +3256,44 @@
   "thumbnail": "/images/tours/jeju-cruise-terminal/jeju-cruise-terminal-private-pickup.webp",
   "heroImage": "/images/tours/jeju-cruise-terminal/jeju-cruise-terminal-private-pickup.webp",
   "imageUrl": "/images/tours/jeju-cruise-terminal/jeju-cruise-terminal-private-pickup.webp",
-  "ogImage": "/images/tours/jeju-cruise-terminal/jeju-cruise-terminal-private-pickup.webp"
+  "ogImage": "/images/tours/jeju-cruise-terminal/jeju-cruise-terminal-private-pickup.webp",
+  "pickup_dropoff": {
+    "departure": [
+      {
+        "order": 1,
+        "time": "预订时确认（船舶靠港后约30分钟）",
+        "name": "济州港国际客运码头（제주항 — 济州北部）",
+        "type": "cruise_terminal",
+        "note": "适用于停泊济州港的邮轮。请于邮轮码头到达大厅与导游会合 — 导游手持写有您姓名的 AtoC Korea 接待牌。",
+        "lat": 33.5286,
+        "lng": 126.5868
+      },
+      {
+        "order": 2,
+        "time": "预订时确认（船舶靠港后约30分钟）",
+        "name": "江汀港军民共用邮轮码头（강정항 — 济州南部，西归浦）",
+        "type": "cruise_terminal",
+        "note": "适用于停泊江汀港的邮轮。请于邮轮码头到达大厅与导游会合 — 导游手持写有您姓名的 AtoC Korea 接待牌。",
+        "lat": 33.2247,
+        "lng": 126.5512
+      }
+    ],
+    "return": [
+      {
+        "order": 1,
+        "name": "济州港国际客运码头（제주항）",
+        "type": "cruise_terminal",
+        "lat": 33.5286,
+        "lng": 126.5868
+      },
+      {
+        "order": 2,
+        "name": "江汀港军民共用邮轮码头（강정항）",
+        "type": "cruise_terminal",
+        "lat": 33.2247,
+        "lng": 126.5512
+      }
+    ],
+    "notes": "返回出发时同一邮轮码头，于离港前预留充裕缓冲时间。我们从未错过任何一次离港 — 准时返港是邮轮岸上行程的核心。"
+  }
 }

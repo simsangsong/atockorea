@@ -3256,5 +3256,44 @@
   "thumbnail": "/images/tours/jeju-cruise-terminal/jeju-cruise-terminal-private-pickup.webp",
   "heroImage": "/images/tours/jeju-cruise-terminal/jeju-cruise-terminal-private-pickup.webp",
   "imageUrl": "/images/tours/jeju-cruise-terminal/jeju-cruise-terminal-private-pickup.webp",
-  "ogImage": "/images/tours/jeju-cruise-terminal/jeju-cruise-terminal-private-pickup.webp"
+  "ogImage": "/images/tours/jeju-cruise-terminal/jeju-cruise-terminal-private-pickup.webp",
+  "pickup_dropoff": {
+    "departure": [
+      {
+        "order": 1,
+        "time": "예약 시 확정 (선박 입항 후 약 30분)",
+        "name": "제주항 국제 여객 터미널 (제주항 — 제주 북부)",
+        "type": "cruise_terminal",
+        "note": "제주항에 정박하는 선박용. 크루즈 터미널 도착홀에서 가이드를 만나주세요 — 가이드가 손님 성함이 적힌 AtoC Korea 사인을 들고 있습니다.",
+        "lat": 33.5286,
+        "lng": 126.5868
+      },
+      {
+        "order": 2,
+        "time": "예약 시 확정 (선박 입항 후 약 30분)",
+        "name": "강정 군민 공동 사용 크루즈 터미널 (강정항 — 제주 남부, 서귀포)",
+        "type": "cruise_terminal",
+        "note": "강정항에 정박하는 선박용. 크루즈 터미널 도착홀에서 가이드를 만나주세요 — 가이드가 손님 성함이 적힌 AtoC Korea 사인을 들고 있습니다.",
+        "lat": 33.2247,
+        "lng": 126.5512
+      }
+    ],
+    "return": [
+      {
+        "order": 1,
+        "name": "제주항 국제 여객 터미널 (제주항)",
+        "type": "cruise_terminal",
+        "lat": 33.5286,
+        "lng": 126.5868
+      },
+      {
+        "order": 2,
+        "name": "강정 군민 공동 사용 크루즈 터미널 (강정항)",
+        "type": "cruise_terminal",
+        "lat": 33.2247,
+        "lng": 126.5512
+      }
+    ],
+    "notes": "투어 출발 시 사용한 같은 크루즈 터미널로 복귀하며, 출항 전 충분한 여유 시간을 둡니다. 출항을 놓친 적은 단 한 번도 없습니다 — 정시 복귀가 크루즈 쇼어 엑스커션 상품의 핵심입니다."
+  }
 }
