@@ -186,12 +186,12 @@ export function HaenyeoStatusButton({
   };
 
   const SECTION_SUBHEAD: Record<Locale, string> = {
-    en: "Live feed from haenyeoshow.com — shows run once daily at 14:00 and may be canceled in bad weather.",
-    ko: "haenyeoshow.com 실시간 정보 — 공연은 매일 오후 2시 1회, 악천후 시 취소 가능.",
-    ja: "haenyeoshow.com のライブ情報 — 公演は1日1回14時、悪天候時は中止の可能性あり。",
-    zh: "haenyeoshow.com 实时信息 — 每日下午2点1场，恶劣天气时可能取消。",
-    "zh-TW": "haenyeoshow.com 即時資訊 — 每日下午2點1場，惡劣天氣時可能取消。",
-    es: "Información en vivo de haenyeoshow.com — 1 función diaria a las 14:00; puede cancelarse por mal tiempo.",
+    en: "Live feed from haenyeoshow.com — shows run twice daily at 13:30 and 15:00 and may be canceled in bad weather.",
+    ko: "haenyeoshow.com 실시간 정보 — 공연은 매일 13:30과 15:00 2회, 악천후 시 취소 가능.",
+    ja: "haenyeoshow.com のライブ情報 — 公演は1日2回 13:30 と 15:00、悪天候時は中止の可能性あり。",
+    zh: "haenyeoshow.com 实时信息 — 每日 13:30 和 15:00 各一场（共2场），恶劣天气时可能取消。",
+    "zh-TW": "haenyeoshow.com 即時資訊 — 每日 13:30 與 15:00 各一場（共2場），惡劣天氣時可能取消。",
+    es: "Información en vivo de haenyeoshow.com — 2 funciones diarias a las 13:30 y 15:00; pueden cancelarse por mal tiempo.",
   };
 
   if (variant === "section") {

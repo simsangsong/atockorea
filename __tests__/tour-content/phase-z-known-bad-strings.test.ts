@@ -85,6 +85,8 @@ const GLOBAL_FORBIDDEN: ReadonlyArray<[string, string]> = [
   ["small-group group", "duplicated-word typo (P1 audit) — should be 'small-group'"],
   ["1100 Road road-closure", "duplicated-word typo (P1 audit) — should be '1100 Road closure'"],
   ["Visit Korea Korea Foundation", "org-name conflation (P1 audit) — should be 'Korea Foundation'"],
+  ["once daily at 14:00", "Haenyeo timing stale (Phase 5b residual) — VisitKorea official is twice daily 13:30 + 15:00"],
+  ["once daily at 14:00 (1 show/day)", "Haenyeo timing stale (Phase 5b residual) — should be 13:30 / 15:00 twice daily"],
   // Note: guide first-name leaks (Steven / Chloe / Jina / Hays) need word-boundary regex
   // because "Jina" overlaps with no current real word but "Hays" is rare. Use regex.
 ];
