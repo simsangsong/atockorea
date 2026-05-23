@@ -411,7 +411,8 @@ AND tour_product_page_id IN (SELECT id FROM tour_product_pages WHERE slug = 'jej
 | B (seasonal $0 + window gate) | `3dfd19cb` | [#16](https://github.com/simsangsong/atockorea/pull/16) | ✅ `cf5eb7b2` |
 | C (vehicle price type unblock) | `583f0bf4` | [#17](https://github.com/simsangsong/atockorea/pull/17) | ✅ `b8332b45` |
 | D (port routeVariants adapter) | (pending) | (pending) | code change; see Phase D detail below |
-| 3 EN | (이번 commit) | (이번 commit) | 12 files (2 tours × 6 locale) — 5 attraction remaps in small-group + lunch contradiction fix + 2 operational stops cleanup in private-charter |
+| 3 EN | `77a4e780` | [#32](https://github.com/simsangsong/atockorea/pull/32) | ✅ `5f54f0d6` |
+| 5b EN (Bukchon+Sanjeong) | (이번 commit) | (이번 commit) | from-incheon-seoul 600 → 900 (2 instances) + pocheon-sanjeong 3 km → 4 km (9 instances) + 50-60 min → 75 min. Nami/Morning Calm/Ahopsan/Herb Island 4 항목은 이미 통일 확인 (스킵). Waujeongsa 단일화 + schedule arithmetic + 해녀 시간 → 별도 phase (verify 필요). |
 | 5b EN | — | — | ⏳ |
 | 6 EN | — | — | ⏳ |
 | 7 EN | — | — | ⏳ |
