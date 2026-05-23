@@ -14,12 +14,12 @@
       "甘川クルーズツアー",
       "龍宮寺クルーズツアー"
     ],
-    "ogImage": "/images/tours/songdo-beach/chatgpt-image-2026-5-10-12-32-12.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
     "title": "釜山クルーズ寄港地観光・沿岸バスツアー | AtoC Korea",
     "description": "クルーズ乗客のための大型バス釜山沿岸日帰りツアー：クルーズターミナル送迎付き、厳選8スポット巡り、出港前帰港保証。"
   },
   "catalog_card": {
-    "thumbnail": "/images/tours/songdo-beach/chatgpt-image-2026-5-10-12-32-12.webp",
+    "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
     "title": "釜山クルーズ寄港地：沿岸バスツアー",
     "priceLabel": "お一人様49米ドルから（通常55ドル、11%オフ）",
     "shortCardDescription": "クルーズ乗客のために設計された大型バス釜山沿岸日帰りツアー：クルーズターミナル送迎、厳選8スポット（海東龍宮寺、国連記念公園、チャガルチ市場、BIFFスクエア、国際市場、甘川文化村、松島ビーチ、龍頭山公園）、出港前帰港保証付き。バジェットプラン — 少人数制商品と同じルートを大型バスで。",
@@ -43,7 +43,7 @@
       "港での送迎",
       "帰港保証"
     ],
-    "heroImage": "/images/tours/songdo-beach/chatgpt-image-2026-5-10-12-32-12.webp"
+    "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp"
   },
   "headlineLine1": "釜山クルーズ寄港地",
   "headlineLine2": "沿岸バスツアー",
@@ -56,7 +56,7 @@
     "discountPercent": null
   },
   "hero": {
-    "imageUrl": "/images/tours/songdo-beach/chatgpt-image-2026-5-10-12-32-12.webp",
+    "imageUrl": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
     "imagePosition": "center 40%",
     "tagline": "大型コーチで巡る釜山の8つの名所 — クルーズターミナルでのお迎えから、出港前に余裕を持ってのご帰港まで",
     "pills": [
@@ -141,74 +141,234 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
-      "location": "甘川文化村",
-      "alt": "甘川文化村 — ギャラリー画像 1",
-      "caption": "甘川文化村 — パステルカラーの丘"
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+      "location": "海東龍宮寺",
+      "alt": "海東龍宮寺 — on-route photo",
+      "caption": "海東龍宮寺"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
-      "location": "海東龍宮寺",
-      "alt": "海東龍宮寺 — ギャラリー画像 1",
-      "caption": "海東龍宮寺 — 海辺の寺院"
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+      "location": "韓国国連記念公園",
+      "alt": "韓国国連記念公園 — gallery image 1",
+      "caption": "韓国国連記念公園 — photo 1"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
-      "location": "海東龍宮寺",
-      "alt": "海東龍宮寺 — ギャラリー画像 2",
-      "caption": "海東龍宮寺 — 崖の小道"
+      "src": "/images/itinerary/jagalchi-harbor-sign.webp",
+      "location": "ジャガルチ水産市場",
+      "alt": "ジャガルチ水産市場 — on-route photo",
+      "caption": "ジャガルチ水産市場"
     },
     {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
-      "location": "海東龍宮寺",
-      "alt": "海東龍宮寺 — ギャラリー画像 3",
-      "caption": "海東龍宮寺 — 大雄殿"
+      "src": "/images/itinerary/gukje-market-arcade-sign-forest.webp",
+      "location": "国際市場（クッチェシジャン）",
+      "alt": "国際市場（クッチェシジャン） — on-route photo",
+      "caption": "国際市場（クッチェシジャン）"
     },
     {
       "id": 5,
       "type": "photo",
-      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+      "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
       "location": "甘川文化村",
-      "alt": "甘川文化村 — ギャラリー画像 2",
-      "caption": "甘川文化村 — スカイガーデン"
+      "alt": "甘川文化村 — on-route photo",
+      "caption": "甘川文化村"
     },
     {
       "id": 6,
       "type": "photo",
-      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
-      "location": "甘川文化村",
-      "alt": "甘川文化村 — ギャラリー画像 3",
-      "caption": "甘川文化村 — 壁画の路地"
+      "src": "/images/tours/songdo-beach/chatgpt-image-2026-5-10-12-32-12.webp",
+      "location": "松島ビーチ",
+      "alt": "松島ビーチ — on-route photo",
+      "caption": "松島ビーチ"
     },
     {
       "id": 7,
       "type": "photo",
       "src": "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57.webp",
-      "location": "釜山ダイヤモンドタワー（龍頭山公園）",
-      "alt": "釜山ダイヤモンドタワー（龍頭山公園） — ギャラリー画像 1",
-      "caption": "釜山ダイヤモンドタワー（龍頭山公園）"
+      "location": "龍頭山公園＆釜山タワー",
+      "alt": "龍頭山公園＆釜山タワー — on-route photo",
+      "caption": "龍頭山公園＆釜山タワー"
     },
     {
       "id": 8,
       "type": "photo",
-      "src": "/images/tours/busan-tower/kakaotalk-20260510-222952680.webp",
-      "location": "釜山ダイヤモンドタワー（龍頭山公園）",
-      "alt": "釜山ダイヤモンドタワー（龍頭山公園） — ギャラリー画像 2",
-      "caption": "釜山ダイヤモンドタワー（龍頭山公園）"
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+      "location": "海東龍宮寺",
+      "alt": "海東龍宮寺 — on-route photo",
+      "caption": "海東龍宮寺"
     },
     {
       "id": 9,
       "type": "photo",
-      "src": "/images/tours/songdo-beach/chatgpt-image-2026-5-10-12-32-12.webp",
-      "location": "松島海水浴場",
-      "alt": "松島海水浴場 — ギャラリー画像1",
-      "caption": "松島海水浴場 — ケーブルカーとスカイウォーク沿岸"
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+      "location": "海東龍宮寺",
+      "alt": "海東龍宮寺 — on-route photo",
+      "caption": "海東龍宮寺"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+      "location": "海東龍宮寺",
+      "alt": "海東龍宮寺 — on-route photo",
+      "caption": "海東龍宮寺"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
+      "location": "海東龍宮寺",
+      "alt": "海東龍宮寺 — on-route photo",
+      "caption": "海東龍宮寺"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+      "location": "韓国国連記念公園",
+      "alt": "韓国国連記念公園 — gallery image 2",
+      "caption": "韓国国連記念公園 — photo 2"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+      "location": "韓国国連記念公園",
+      "alt": "韓国国連記念公園 — gallery image 3",
+      "caption": "韓国国連記念公園 — photo 3"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+      "location": "韓国国連記念公園",
+      "alt": "韓国国連記念公園 — gallery image 9",
+      "caption": "韓国国連記念公園 — photo 9"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
+      "location": "韓国国連記念公園",
+      "alt": "韓国国連記念公園 — gallery image 10",
+      "caption": "韓国国連記念公園 — photo 10"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
+      "location": "韓国国連記念公園",
+      "alt": "韓国国連記念公園 — gallery image 11",
+      "caption": "韓国国連記念公園 — photo 11"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
+      "location": "韓国国連記念公園",
+      "alt": "韓国国連記念公園 — gallery image 12",
+      "caption": "韓国国連記念公園 — photo 12"
+    },
+    {
+      "id": 18,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
+      "location": "韓国国連記念公園",
+      "alt": "韓国国連記念公園 — gallery image 13",
+      "caption": "韓国国連記念公園 — photo 13"
+    },
+    {
+      "id": 19,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
+      "location": "韓国国連記念公園",
+      "alt": "韓国国連記念公園 — gallery image 14",
+      "caption": "韓国国連記念公園 — photo 14"
+    },
+    {
+      "id": 20,
+      "type": "photo",
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23-2.webp",
+      "location": "韓国国連記念公園",
+      "alt": "韓国国連記念公園 — gallery image 15",
+      "caption": "韓国国連記念公園 — photo 15"
+    },
+    {
+      "id": 21,
+      "type": "photo",
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43-2.webp",
+      "location": "韓国国連記念公園",
+      "alt": "韓国国連記念公園 — gallery image 16",
+      "caption": "韓国国連記念公園 — photo 16"
+    },
+    {
+      "id": 22,
+      "type": "photo",
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47-2.webp",
+      "location": "韓国国連記念公園",
+      "alt": "韓国国連記念公園 — gallery image 17",
+      "caption": "韓国国連記念公園 — photo 17"
+    },
+    {
+      "id": 23,
+      "type": "photo",
+      "src": "/images/itinerary/jagalchi-market-interior.webp",
+      "location": "ジャガルチ水産市場",
+      "alt": "ジャガルチ水産市場 — on-route photo",
+      "caption": "ジャガルチ水産市場"
+    },
+    {
+      "id": 24,
+      "type": "photo",
+      "src": "/images/itinerary/jagalchi-night-building.webp",
+      "location": "ジャガルチ水産市場",
+      "alt": "ジャガルチ水産市場 — on-route photo",
+      "caption": "ジャガルチ水産市場"
+    },
+    {
+      "id": 25,
+      "type": "photo",
+      "src": "/images/itinerary/gukje-market-fresh-produce-aisle.webp",
+      "location": "国際市場（クッチェシジャン）",
+      "alt": "国際市場（クッチェシジャン） — on-route photo",
+      "caption": "国際市場（クッチェシジャン）"
+    },
+    {
+      "id": 26,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+      "location": "甘川文化村",
+      "alt": "甘川文化村 — on-route photo",
+      "caption": "甘川文化村"
+    },
+    {
+      "id": 27,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
+      "location": "甘川文化村",
+      "alt": "甘川文化村 — on-route photo",
+      "caption": "甘川文化村"
+    },
+    {
+      "id": 28,
+      "type": "photo",
+      "src": "/images/tours/busan-tower/kakaotalk-20260510-222952680.webp",
+      "location": "龍頭山公園＆釜山タワー",
+      "alt": "龍頭山公園＆釜山タワー — on-route photo",
+      "caption": "龍頭山公園＆釜山タワー"
+    },
+    {
+      "id": 29,
+      "type": "photo",
+      "src": "/images/tours/busan-tower/kakaotalk-20260510-230009595.webp",
+      "location": "龍頭山公園＆釜山タワー",
+      "alt": "龍頭山公園＆釜山タワー — on-route photo",
+      "caption": "龍頭山公園＆釜山タワー"
     }
   ],
   "itineraryStops": [
@@ -364,6 +524,214 @@
         "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
         "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
         "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47-2.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+          "location": "韓国国連記念公園",
+          "caption": "韓国国連記念公園 — photo 1",
+          "alt": "韓国国連記念公園 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+          "location": "韓国国連記念公園",
+          "caption": "韓国国連記念公園 — photo 2",
+          "alt": "韓国国連記念公園 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+          "location": "韓国国連記念公園",
+          "caption": "韓国国連記念公園 — photo 3",
+          "alt": "韓国国連記念公園 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+          "location": "韓国国連記念公園",
+          "caption": "韓国国連記念公園 — photo 4",
+          "alt": "韓国国連記念公園 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+          "location": "韓国国連記念公園",
+          "caption": "韓国国連記念公園 — photo 5",
+          "alt": "韓国国連記念公園 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+          "location": "韓国国連記念公園",
+          "caption": "韓国国連記念公園 — photo 6",
+          "alt": "韓国国連記念公園 — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+          "location": "韓国国連記念公園",
+          "caption": "韓国国連記念公園 — photo 7",
+          "alt": "韓国国連記念公園 — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
+          "location": "韓国国連記念公園",
+          "caption": "韓国国連記念公園 — photo 8",
+          "alt": "韓国国連記念公園 — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+          "location": "韓国国連記念公園",
+          "caption": "韓国国連記念公園 — photo 9",
+          "alt": "韓国国連記念公園 — gallery image 9"
+        },
+        {
+          "id": 10,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
+          "location": "韓国国連記念公園",
+          "caption": "韓国国連記念公園 — photo 10",
+          "alt": "韓国国連記念公園 — gallery image 10"
+        },
+        {
+          "id": 11,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
+          "location": "韓国国連記念公園",
+          "caption": "韓国国連記念公園 — photo 11",
+          "alt": "韓国国連記念公園 — gallery image 11"
+        },
+        {
+          "id": 12,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
+          "location": "韓国国連記念公園",
+          "caption": "韓国国連記念公園 — photo 12",
+          "alt": "韓国国連記念公園 — gallery image 12"
+        },
+        {
+          "id": 13,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
+          "location": "韓国国連記念公園",
+          "caption": "韓国国連記念公園 — photo 13",
+          "alt": "韓国国連記念公園 — gallery image 13"
+        },
+        {
+          "id": 14,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
+          "location": "韓国国連記念公園",
+          "caption": "韓国国連記念公園 — photo 14",
+          "alt": "韓国国連記念公園 — gallery image 14"
+        },
+        {
+          "id": 15,
+          "type": "photo",
+          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23-2.webp",
+          "location": "韓国国連記念公園",
+          "caption": "韓国国連記念公園 — photo 15",
+          "alt": "韓国国連記念公園 — gallery image 15"
+        },
+        {
+          "id": 16,
+          "type": "photo",
+          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43-2.webp",
+          "location": "韓国国連記念公園",
+          "caption": "韓国国連記念公園 — photo 16",
+          "alt": "韓国国連記念公園 — gallery image 16"
+        },
+        {
+          "id": 17,
+          "type": "photo",
+          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47-2.webp",
+          "location": "韓国国連記念公園",
+          "caption": "韓国国連記念公園 — photo 17",
+          "alt": "韓国国連記念公園 — gallery image 17"
+        }
       ]
     },
     {

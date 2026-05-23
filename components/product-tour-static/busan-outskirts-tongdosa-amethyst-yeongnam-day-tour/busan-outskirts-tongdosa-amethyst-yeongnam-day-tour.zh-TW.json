@@ -15,12 +15,12 @@
       "蔚山紫水晶洞窟之旅",
       "釜山UNESCO世界遺產一日遊"
     ],
-    "ogImage": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp",
+    "ogImage": "https://www.atockorea.com/images/itinerary/tongdosa-iljumun.webp",
     "title": "釜山近郊一日遊・通度寺 + 紫水晶 + 嶺南阿爾卑斯 | AtoC Korea",
     "description": "從釜山出發的巴士一日遊，途經梁山、蔚山及密陽——UNESCO通度寺、地下紫水晶洞窟（可選搭船）、嶺南阿爾卑斯冰谷纜車，最後以甘川文化村作結。"
   },
   "catalog_card": {
-    "thumbnail": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp",
+    "thumbnail": "/images/itinerary/tongdosa-iljumun.webp",
     "title": "釜山近郊：通度寺 + 紫水晶洞窟 + 嶺南阿爾卑斯",
     "priceLabel": "",
     "shortCardDescription": "11小時釜山近郊巴士一日遊，前往梁山（通度寺，2018年UNESCO世界文化遺產）、蔚山（紫水晶洞窟主題公園，可選搭船）、密陽（嶺南阿爾卑斯冰谷纜車），最後於釜山甘川文化村作結。設三個接送地點（釜山站／西面／海雲台）；行程尾段可選擇在札嘎其下車。",
@@ -44,7 +44,7 @@
       "3個站點接送",
       "11小時行程"
     ],
-    "heroImage": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp"
+    "heroImage": "/images/itinerary/tongdosa-iljumun.webp"
   },
   "headlineLine1": "釜山近郊一日遊",
   "headlineLine2": "通度寺 + 紫水晶洞窟 + 嶺南阿爾卑斯",
@@ -57,7 +57,7 @@
     "discountPercent": 9
   },
   "hero": {
-    "imageUrl": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp",
+    "imageUrl": "/images/itinerary/tongdosa-iljumun.webp",
     "imagePosition": "center 40%",
     "tagline": "從釜山出發的11小時精華一日遊，涵蓋四大亮點：聯合國教科文組織世界遺產通度寺、蔚山地下紫水晶洞窟、密陽嶺南阿爾卑斯冰谷纜車，以及甘川文化村",
     "pills": [
@@ -142,74 +142,114 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
-      "location": "甘川文化村",
-      "alt": "甘川文化村 — 藝廊 1",
-      "caption": "甘川文化村 — 粉彩山坡"
+      "src": "/images/itinerary/tongdosa-iljumun.webp",
+      "location": "通度寺（梁山）",
+      "alt": "通度寺（梁山） — on-route photo",
+      "caption": "通度寺（梁山）"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
-      "location": "甘川文化村",
-      "alt": "甘川文化村 — 藝廊 2",
-      "caption": "甘川文化村 — 天空花園"
+      "src": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp",
+      "location": "紫水晶洞主題公園（蔚山）",
+      "alt": "紫水晶洞主題公園（蔚山） — on-route photo",
+      "caption": "紫水晶洞主題公園（蔚山）"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
-      "location": "甘川文化村",
-      "alt": "甘川文化村 — 藝廊 3",
-      "caption": "甘川文化村 — 壁畫巷弄"
+      "src": "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-flight.webp",
+      "location": "嶺南阿爾卑斯冰谷纜車（密陽）",
+      "alt": "嶺南阿爾卑斯冰谷纜車（密陽） — on-route photo",
+      "caption": "嶺南阿爾卑斯冰谷纜車（密陽）"
     },
     {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp",
-      "location": "蔚山紫水晶洞窟主題公園",
-      "alt": "紫水晶洞窟 — 多彩地下大廳與水道",
-      "caption": "蔚山紫水晶洞窟 — 多彩地下大廳"
+      "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+      "location": "甘川文化村",
+      "alt": "甘川文化村 — on-route photo",
+      "caption": "甘川文化村"
     },
     {
       "id": 5,
       "type": "photo",
-      "src": "/images/tours/amethyst-cave/amethyst-cave-entrance-corridor.webp",
-      "location": "蔚山紫水晶洞窟主題公園",
-      "alt": "紫水晶洞窟 — 燈光閃耀的入口通道",
-      "caption": "蔚山紫水晶洞窟 — 燈光通道"
+      "src": "/images/itinerary/tongdosa-yeongsanjeon.webp",
+      "location": "通度寺（梁山）",
+      "alt": "通度寺（梁山） — on-route photo",
+      "caption": "通度寺（梁山）"
     },
     {
       "id": 6,
       "type": "photo",
-      "src": "/images/tours/amethyst-cave/amethyst-cave-boat-passage.webp",
-      "location": "蔚山紫水晶洞窟主題公園",
-      "alt": "紫水晶洞窟 — 多彩泛舟探險",
-      "caption": "蔚山紫水晶洞窟 — 洞窟泛舟探險"
+      "src": "/images/tours/amethyst-cave/amethyst-cave-entrance-corridor.webp",
+      "location": "紫水晶洞主題公園（蔚山）",
+      "alt": "紫水晶洞主題公園（蔚山） — on-route photo",
+      "caption": "紫水晶洞主題公園（蔚山）"
     },
     {
       "id": 7,
       "type": "photo",
-      "src": "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-flight.webp",
-      "location": "嶺南阿爾卑斯冰谷纜車 (密陽)",
-      "alt": "嶺南阿爾卑斯冰谷纜車 — 飛越森林的纜車",
-      "caption": "嶺南阿爾卑斯冰谷纜車 — 飛越森林的纜車"
+      "src": "/images/tours/amethyst-cave/amethyst-cave-boat-passage.webp",
+      "location": "紫水晶洞主題公園（蔚山）",
+      "alt": "紫水晶洞主題公園（蔚山） — on-route photo",
+      "caption": "紫水晶洞主題公園（蔚山）"
     },
     {
       "id": 8,
       "type": "photo",
       "src": "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-valley.webp",
-      "location": "嶺南阿爾卑斯冰谷纜車 (密陽)",
-      "alt": "嶺南阿爾卑斯纜車 — 穿越翠綠山嶺",
-      "caption": "嶺南阿爾卑斯 — 翠綠山嶺間的纜車"
+      "location": "嶺南阿爾卑斯冰谷纜車（密陽）",
+      "alt": "嶺南阿爾卑斯冰谷纜車（密陽） — on-route photo",
+      "caption": "嶺南阿爾卑斯冰谷纜車（密陽）"
     },
     {
       "id": 9,
       "type": "photo",
       "src": "/images/tours/yeongnam-alps/yeongnam-alps-summit-viewpoint.webp",
-      "location": "嶺南阿爾卑斯冰谷纜車 (密陽)",
-      "alt": "嶺南阿爾卑斯 — 連綿山脊的山頂觀景台",
-      "caption": "嶺南阿爾卑斯 — 山頂觀景台遠眺連綿山脊"
+      "location": "嶺南阿爾卑斯冰谷纜車（密陽）",
+      "alt": "嶺南阿爾卑斯冰谷纜車（密陽） — on-route photo",
+      "caption": "嶺南阿爾卑斯冰谷纜車（密陽）"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+      "location": "甘川文化村",
+      "alt": "甘川文化村 — on-route photo",
+      "caption": "甘川文化村"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
+      "location": "甘川文化村",
+      "alt": "甘川文化村 — on-route photo",
+      "caption": "甘川文化村"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/itinerary/jagalchi-harbor-sign.webp",
+      "location": "甘川文化村",
+      "alt": "甘川文化村 — on-route photo",
+      "caption": "甘川文化村"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/itinerary/jagalchi-market-interior.webp",
+      "location": "甘川文化村",
+      "alt": "甘川文化村 — on-route photo",
+      "caption": "甘川文化村"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/itinerary/jagalchi-night-building.webp",
+      "location": "甘川文化村",
+      "alt": "甘川文化村 — on-route photo",
+      "caption": "甘川文化村"
     }
   ],
   "itineraryStops": [

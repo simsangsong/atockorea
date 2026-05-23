@@ -14,7 +14,7 @@
       "Naksan Beach tour",
       "Seoraksan Naksansa one-day tour"
     ],
-    "ogImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
     "title": "Gangwon-do Day Tour from Seoul · Seoraksan + Naksansa Temple + Naksan Beach | AtoC Korea",
     "description": "Coach day tour from Seoul to Korea's most iconic national park (Seoraksan), a thousand-year cliffside temple above the sea (Naksansa), and the pine-backed sands of Naksan Beach — a mountain-to-ocean day on the East Sea coast."
   },
@@ -143,56 +143,64 @@
       "type": "photo",
       "src": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
       "location": "Seoraksan National Park",
-      "alt": "Seoraksan National Park — panoramic ridge view",
-      "caption": "Seoraksan National Park — panoramic granite ridge"
+      "alt": "Seoraksan National Park — gallery image 1",
+      "caption": "Seoraksan National Park — photo 1"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
-      "location": "Seoraksan National Park",
-      "alt": "Seoraksan National Park — Sinheungsa Temple and Ulsanbawi granite peak",
-      "caption": "Seoraksan National Park — Sinheungsa Temple beneath granite peaks"
+      "src": "/images/tours/naksansa-temple/naksansa-uisangdae-pavilion.webp",
+      "location": "Naksansa Temple",
+      "alt": "Naksansa Temple — on-route photo",
+      "caption": "Naksansa Temple"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "/images/tours/naksansa-temple/naksansa-uisangdae-pavilion.webp",
-      "location": "Naksansa Temple",
-      "alt": "Naksansa Temple — Uisangdae pavilion above the East Sea",
-      "caption": "Naksansa Temple — Uisangdae cliffside pavilion over the sea"
+      "src": "/images/tours/naksan-beach/naksan-beach-sign.webp",
+      "location": "Naksan Beach",
+      "alt": "Naksan Beach — on-route photo",
+      "caption": "Naksan Beach"
     },
     {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/naksansa-temple/naksansa-main-hall.webp",
-      "location": "Naksansa Temple",
-      "alt": "Naksansa Temple — Wontongbojeon main hall",
-      "caption": "Naksansa Temple — colorful Wontongbojeon main hall"
+      "src": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+      "location": "Seoraksan National Park",
+      "alt": "Seoraksan National Park — gallery image 2",
+      "caption": "Seoraksan National Park — photo 2"
     },
     {
       "id": 5,
       "type": "photo",
-      "src": "/images/tours/naksansa-temple/naksansa-haesu-gwaneum.webp",
-      "location": "Naksansa Temple",
-      "alt": "Naksansa Temple — Haesu Gwaneum statue overlooking the East Sea",
-      "caption": "Naksansa Temple — Haesu Gwaneum statue facing the sea"
+      "src": "/images/tours/seoraksan/photo-001.webp",
+      "location": "Seoraksan National Park",
+      "alt": "Seoraksan National Park — gallery image 3",
+      "caption": "Seoraksan National Park — photo 3"
     },
     {
       "id": 6,
       "type": "photo",
-      "src": "/images/tours/naksan-beach/naksan-beach-sign.webp",
-      "location": "Naksan Beach",
-      "alt": "Naksan Beach — pine-backed East Sea beach",
-      "caption": "Naksan Beach — soft sand and pine forest"
+      "src": "/images/tours/naksansa-temple/naksansa-main-hall.webp",
+      "location": "Naksansa Temple",
+      "alt": "Naksansa Temple — on-route photo",
+      "caption": "Naksansa Temple"
     },
     {
       "id": 7,
       "type": "photo",
+      "src": "/images/tours/naksansa-temple/naksansa-haesu-gwaneum.webp",
+      "location": "Naksansa Temple",
+      "alt": "Naksansa Temple — on-route photo",
+      "caption": "Naksansa Temple"
+    },
+    {
+      "id": 8,
+      "type": "photo",
       "src": "/images/tours/naksan-beach/naksan-beach-summer-crowd.webp",
       "location": "Naksan Beach",
-      "alt": "Naksan Beach — East Sea coastline",
-      "caption": "Naksan Beach — East Sea coastline"
+      "alt": "Naksan Beach — on-route photo",
+      "caption": "Naksan Beach"
     }
   ],
   "itineraryStops": [
@@ -276,6 +284,46 @@
       "images": [
         "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
         "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seoraksan/photo-001.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+          "location": "Seoraksan National Park",
+          "caption": "Seoraksan National Park — photo 1",
+          "alt": "Seoraksan National Park — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+          "location": "Seoraksan National Park",
+          "caption": "Seoraksan National Park — photo 2",
+          "alt": "Seoraksan National Park — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/seoraksan/photo-001.webp",
+          "location": "Seoraksan National Park",
+          "caption": "Seoraksan National Park — photo 3",
+          "alt": "Seoraksan National Park — gallery image 3"
+        }
       ]
     },
     {

@@ -13,12 +13,12 @@
       "휴애리 수국 투어",
       "제주 여름 수국 축제"
     ],
-    "ogImage": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-23.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
     "title": "제주 동부 수국 축제 소그룹 투어 | AtoC Korea",
     "description": "제주 동부 여름 수국 투어(5월 말~7월 중순): 함덕해변 → 성읍민속마을 → 성산일출봉 → 일출랜드 수국 축제 → 휴애리 수국 하이라이트. 9시간 소그룹."
   },
   "catalog_card": {
-    "thumbnail": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-23.webp",
+    "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
     "title": "제주 동부 수국 축제 투어",
     "priceLabel": "1인 US$59 (정가 $69, 14% 할인)",
     "shortCardDescription": "제주 동부 수국 시즌 한정(5월 말~7월 중순) 소그룹 투어. 함덕해변, 성읍민속마을(유네스코), 성산일출봉(유네스코), 일출랜드 수국 축제+미천굴, 휴애리 자연생활공원 수국 포함.",
@@ -47,7 +47,7 @@
       "유네스코",
       "축제"
     ],
-    "heroImage": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-23.webp"
+    "heroImage": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp"
   },
   "headlineLine1": "제주 동부 수국 축제 투어",
   "headlineLine2": "투어",
@@ -60,7 +60,7 @@
     "per": "person"
   },
   "hero": {
-    "imageUrl": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-23.webp",
+    "imageUrl": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
     "imagePosition": "center 35%",
     "tagline": "수국 만개 시즌의 제주 동부 — 유네스코 문화유산과 꽃 물결을 9시간에",
     "pills": [
@@ -203,13 +203,45 @@
     {
       "id": 9,
       "type": "photo",
+      "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-2.webp",
+      "location": "함덕 서우봉해변",
+      "alt": "함덕 서우봉해변 — gallery image 5",
+      "caption": "함덕 서우봉해변 — photo 5"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01-2.webp",
+      "location": "함덕 서우봉해변",
+      "alt": "함덕 서우봉해변 — gallery image 6",
+      "caption": "함덕 서우봉해변 — photo 6"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02-2.webp",
+      "location": "함덕 서우봉해변",
+      "alt": "함덕 서우봉해변 — gallery image 7",
+      "caption": "함덕 서우봉해변 — photo 7"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04-2.webp",
+      "location": "함덕 서우봉해변",
+      "alt": "함덕 서우봉해변 — gallery image 8",
+      "caption": "함덕 서우봉해변 — photo 8"
+    },
+    {
+      "id": 13,
+      "type": "photo",
       "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
       "location": "성읍민속마을",
       "alt": "성읍민속마을 — gallery image 2",
       "caption": "성읍민속마을 — photo 2"
     },
     {
-      "id": 10,
+      "id": 14,
       "type": "photo",
       "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
       "location": "성읍민속마을",
@@ -217,7 +249,7 @@
       "caption": "성읍민속마을 — photo 3"
     },
     {
-      "id": 11,
+      "id": 15,
       "type": "photo",
       "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
       "location": "성읍민속마을",
@@ -225,7 +257,7 @@
       "caption": "성읍민속마을 — photo 4"
     },
     {
-      "id": 12,
+      "id": 16,
       "type": "photo",
       "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
       "location": "성읍민속마을",
@@ -233,7 +265,7 @@
       "caption": "성읍민속마을 — photo 5"
     },
     {
-      "id": 13,
+      "id": 17,
       "type": "photo",
       "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
       "location": "성읍민속마을",
@@ -241,7 +273,7 @@
       "caption": "성읍민속마을 — photo 6"
     },
     {
-      "id": 14,
+      "id": 18,
       "type": "photo",
       "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
       "location": "성읍민속마을",
@@ -249,7 +281,39 @@
       "caption": "성읍민속마을 — photo 7"
     },
     {
-      "id": 15,
+      "id": 19,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51-2.webp",
+      "location": "성읍민속마을",
+      "alt": "성읍민속마을 — gallery image 8",
+      "caption": "성읍민속마을 — photo 8"
+    },
+    {
+      "id": 20,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22-2.webp",
+      "location": "성읍민속마을",
+      "alt": "성읍민속마을 — gallery image 9",
+      "caption": "성읍민속마을 — photo 9"
+    },
+    {
+      "id": 21,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26-2.webp",
+      "location": "성읍민속마을",
+      "alt": "성읍민속마을 — gallery image 10",
+      "caption": "성읍민속마을 — photo 10"
+    },
+    {
+      "id": 22,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34-2.webp",
+      "location": "성읍민속마을",
+      "alt": "성읍민속마을 — gallery image 11",
+      "caption": "성읍민속마을 — photo 11"
+    },
+    {
+      "id": 23,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
       "location": "성산일출봉",
@@ -257,7 +321,7 @@
       "caption": "성산일출봉 — photo 2"
     },
     {
-      "id": 16,
+      "id": 24,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
       "location": "성산일출봉",
@@ -265,7 +329,7 @@
       "caption": "성산일출봉 — photo 3"
     },
     {
-      "id": 17,
+      "id": 25,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
       "location": "성산일출봉",
@@ -273,7 +337,7 @@
       "caption": "성산일출봉 — photo 4"
     },
     {
-      "id": 18,
+      "id": 26,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
       "location": "성산일출봉",
@@ -281,7 +345,55 @@
       "caption": "성산일출봉 — photo 5"
     },
     {
-      "id": 19,
+      "id": 27,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06-2.webp",
+      "location": "성산일출봉",
+      "alt": "성산일출봉 — gallery image 6",
+      "caption": "성산일출봉 — photo 6"
+    },
+    {
+      "id": 28,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07-2.webp",
+      "location": "성산일출봉",
+      "alt": "성산일출봉 — gallery image 7",
+      "caption": "성산일출봉 — photo 7"
+    },
+    {
+      "id": 29,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08-2.webp",
+      "location": "성산일출봉",
+      "alt": "성산일출봉 — gallery image 8",
+      "caption": "성산일출봉 — photo 8"
+    },
+    {
+      "id": 30,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09-2.webp",
+      "location": "성산일출봉",
+      "alt": "성산일출봉 — gallery image 9",
+      "caption": "성산일출봉 — photo 9"
+    },
+    {
+      "id": 31,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10-2.webp",
+      "location": "성산일출봉",
+      "alt": "성산일출봉 — gallery image 10",
+      "caption": "성산일출봉 — photo 10"
+    },
+    {
+      "id": 32,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/photo-006.webp",
+      "location": "성산일출봉",
+      "alt": "성산일출봉 — gallery image 11",
+      "caption": "성산일출봉 — photo 11"
+    },
+    {
+      "id": 33,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
       "location": "일출랜드 — 수국 축제 + 미천굴",
@@ -289,7 +401,7 @@
       "caption": "일출랜드 — 수국 축제 + 미천굴 — photo 2"
     },
     {
-      "id": 20,
+      "id": 34,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
       "location": "일출랜드 — 수국 축제 + 미천굴",
@@ -297,7 +409,7 @@
       "caption": "일출랜드 — 수국 축제 + 미천굴 — photo 3"
     },
     {
-      "id": 21,
+      "id": 35,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
       "location": "일출랜드 — 수국 축제 + 미천굴",
@@ -305,7 +417,7 @@
       "caption": "일출랜드 — 수국 축제 + 미천굴 — photo 4"
     },
     {
-      "id": 22,
+      "id": 36,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
       "location": "일출랜드 — 수국 축제 + 미천굴",
@@ -313,7 +425,7 @@
       "caption": "일출랜드 — 수국 축제 + 미천굴 — photo 5"
     },
     {
-      "id": 23,
+      "id": 37,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
       "location": "일출랜드 — 수국 축제 + 미천굴",
@@ -321,7 +433,7 @@
       "caption": "일출랜드 — 수국 축제 + 미천굴 — photo 6"
     },
     {
-      "id": 24,
+      "id": 38,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
       "location": "일출랜드 — 수국 축제 + 미천굴",
@@ -329,7 +441,7 @@
       "caption": "일출랜드 — 수국 축제 + 미천굴 — photo 7"
     },
     {
-      "id": 25,
+      "id": 39,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
       "location": "일출랜드 — 수국 축제 + 미천굴",
@@ -337,7 +449,7 @@
       "caption": "일출랜드 — 수국 축제 + 미천굴 — photo 8"
     },
     {
-      "id": 26,
+      "id": 40,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
       "location": "일출랜드 — 수국 축제 + 미천굴",
@@ -345,7 +457,7 @@
       "caption": "일출랜드 — 수국 축제 + 미천굴 — photo 9"
     },
     {
-      "id": 27,
+      "id": 41,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
       "location": "일출랜드 — 수국 축제 + 미천굴",
@@ -353,7 +465,63 @@
       "caption": "일출랜드 — 수국 축제 + 미천굴 — photo 10"
     },
     {
-      "id": 28,
+      "id": 42,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52-2.webp",
+      "location": "일출랜드 — 수국 축제 + 미천굴",
+      "alt": "일출랜드 — 수국 축제 + 미천굴 — gallery image 11",
+      "caption": "일출랜드 — 수국 축제 + 미천굴 — photo 11"
+    },
+    {
+      "id": 43,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19-2.webp",
+      "location": "일출랜드 — 수국 축제 + 미천굴",
+      "alt": "일출랜드 — 수국 축제 + 미천굴 — gallery image 12",
+      "caption": "일출랜드 — 수국 축제 + 미천굴 — photo 12"
+    },
+    {
+      "id": 44,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25-2.webp",
+      "location": "일출랜드 — 수국 축제 + 미천굴",
+      "alt": "일출랜드 — 수국 축제 + 미천굴 — gallery image 13",
+      "caption": "일출랜드 — 수국 축제 + 미천굴 — photo 13"
+    },
+    {
+      "id": 45,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57-2.webp",
+      "location": "일출랜드 — 수국 축제 + 미천굴",
+      "alt": "일출랜드 — 수국 축제 + 미천굴 — gallery image 14",
+      "caption": "일출랜드 — 수국 축제 + 미천굴 — photo 14"
+    },
+    {
+      "id": 46,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08-2.webp",
+      "location": "일출랜드 — 수국 축제 + 미천굴",
+      "alt": "일출랜드 — 수국 축제 + 미천굴 — gallery image 15",
+      "caption": "일출랜드 — 수국 축제 + 미천굴 — photo 15"
+    },
+    {
+      "id": 47,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22-2.webp",
+      "location": "일출랜드 — 수국 축제 + 미천굴",
+      "alt": "일출랜드 — 수국 축제 + 미천굴 — gallery image 16",
+      "caption": "일출랜드 — 수국 축제 + 미천굴 — photo 16"
+    },
+    {
+      "id": 48,
+      "type": "photo",
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24-2.webp",
+      "location": "일출랜드 — 수국 축제 + 미천굴",
+      "alt": "일출랜드 — 수국 축제 + 미천굴 — gallery image 17",
+      "caption": "일출랜드 — 수국 축제 + 미천굴 — photo 17"
+    },
+    {
+      "id": 49,
       "type": "photo",
       "src": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-43.webp",
       "location": "휴애리 자연생활공원 — 수국 하이라이트",
@@ -361,12 +529,36 @@
       "caption": "휴애리 자연생활공원 — 수국 하이라이트 — photo 2"
     },
     {
-      "id": 29,
+      "id": 50,
       "type": "photo",
       "src": "/images/tours/hueree/chatgpt-image-2026-5-8-08-06-46.webp",
       "location": "휴애리 자연생활공원 — 수국 하이라이트",
       "alt": "휴애리 자연생활공원 — 수국 하이라이트 — gallery image 3",
       "caption": "휴애리 자연생활공원 — 수국 하이라이트 — photo 3"
+    },
+    {
+      "id": 51,
+      "type": "photo",
+      "src": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-23-2.webp",
+      "location": "휴애리 자연생활공원 — 수국 하이라이트",
+      "alt": "휴애리 자연생활공원 — 수국 하이라이트 — gallery image 4",
+      "caption": "휴애리 자연생활공원 — 수국 하이라이트 — photo 4"
+    },
+    {
+      "id": 52,
+      "type": "photo",
+      "src": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-43-2.webp",
+      "location": "휴애리 자연생활공원 — 수국 하이라이트",
+      "alt": "휴애리 자연생활공원 — 수국 하이라이트 — gallery image 5",
+      "caption": "휴애리 자연생활공원 — 수국 하이라이트 — photo 5"
+    },
+    {
+      "id": 53,
+      "type": "photo",
+      "src": "/images/tours/hueree/chatgpt-image-2026-5-8-08-06-46-2.webp",
+      "location": "휴애리 자연생활공원 — 수국 하이라이트",
+      "alt": "휴애리 자연생활공원 — 수국 하이라이트 — gallery image 6",
+      "caption": "휴애리 자연생활공원 — 수국 하이라이트 — photo 6"
     }
   ],
   "itineraryStops": [
@@ -481,6 +673,22 @@
         {
           "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -515,6 +723,38 @@
           "location": "함덕 서우봉해변",
           "caption": "함덕 서우봉해변 — photo 4",
           "alt": "함덕 서우봉해변 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-2.webp",
+          "location": "함덕 서우봉해변",
+          "caption": "함덕 서우봉해변 — photo 5",
+          "alt": "함덕 서우봉해변 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01-2.webp",
+          "location": "함덕 서우봉해변",
+          "caption": "함덕 서우봉해변 — photo 6",
+          "alt": "함덕 서우봉해변 — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02-2.webp",
+          "location": "함덕 서우봉해변",
+          "caption": "함덕 서우봉해변 — photo 7",
+          "alt": "함덕 서우봉해변 — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04-2.webp",
+          "location": "함덕 서우봉해변",
+          "caption": "함덕 서우봉해변 — photo 8",
+          "alt": "함덕 서우봉해변 — gallery image 8"
         }
       ]
     },
@@ -610,6 +850,22 @@
         {
           "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -668,6 +924,38 @@
           "location": "성읍민속마을",
           "caption": "성읍민속마을 — photo 7",
           "alt": "성읍민속마을 — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51-2.webp",
+          "location": "성읍민속마을",
+          "caption": "성읍민속마을 — photo 8",
+          "alt": "성읍민속마을 — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22-2.webp",
+          "location": "성읍민속마을",
+          "caption": "성읍민속마을 — photo 9",
+          "alt": "성읍민속마을 — gallery image 9"
+        },
+        {
+          "id": 10,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26-2.webp",
+          "location": "성읍민속마을",
+          "caption": "성읍민속마을 — photo 10",
+          "alt": "성읍민속마을 — gallery image 10"
+        },
+        {
+          "id": 11,
+          "type": "photo",
+          "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34-2.webp",
+          "location": "성읍민속마을",
+          "caption": "성읍민속마을 — photo 11",
+          "alt": "성읍민속마을 — gallery image 11"
         }
       ]
     },
@@ -795,6 +1083,30 @@
         {
           "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seongsan-ilchulbong/photo-006.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -837,6 +1149,54 @@
           "location": "성산일출봉",
           "caption": "성산일출봉 — photo 5",
           "alt": "성산일출봉 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06-2.webp",
+          "location": "성산일출봉",
+          "caption": "성산일출봉 — photo 6",
+          "alt": "성산일출봉 — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07-2.webp",
+          "location": "성산일출봉",
+          "caption": "성산일출봉 — photo 7",
+          "alt": "성산일출봉 — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08-2.webp",
+          "location": "성산일출봉",
+          "caption": "성산일출봉 — photo 8",
+          "alt": "성산일출봉 — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09-2.webp",
+          "location": "성산일출봉",
+          "caption": "성산일출봉 — photo 9",
+          "alt": "성산일출봉 — gallery image 9"
+        },
+        {
+          "id": 10,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10-2.webp",
+          "location": "성산일출봉",
+          "caption": "성산일출봉 — photo 10",
+          "alt": "성산일출봉 — gallery image 10"
+        },
+        {
+          "id": 11,
+          "type": "photo",
+          "src": "/images/tours/seongsan-ilchulbong/photo-006.webp",
+          "location": "성산일출봉",
+          "caption": "성산일출봉 — photo 11",
+          "alt": "성산일출봉 — gallery image 11"
         }
       ],
       "liveStatusWidget": "haenyeo"
@@ -947,6 +1307,34 @@
         {
           "url": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -1029,6 +1417,62 @@
           "location": "일출랜드 — 수국 축제 + 미천굴",
           "caption": "일출랜드 — 수국 축제 + 미천굴 — photo 10",
           "alt": "일출랜드 — 수국 축제 + 미천굴 — gallery image 10"
+        },
+        {
+          "id": 11,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52-2.webp",
+          "location": "일출랜드 — 수국 축제 + 미천굴",
+          "caption": "일출랜드 — 수국 축제 + 미천굴 — photo 11",
+          "alt": "일출랜드 — 수국 축제 + 미천굴 — gallery image 11"
+        },
+        {
+          "id": 12,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19-2.webp",
+          "location": "일출랜드 — 수국 축제 + 미천굴",
+          "caption": "일출랜드 — 수국 축제 + 미천굴 — photo 12",
+          "alt": "일출랜드 — 수국 축제 + 미천굴 — gallery image 12"
+        },
+        {
+          "id": 13,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25-2.webp",
+          "location": "일출랜드 — 수국 축제 + 미천굴",
+          "caption": "일출랜드 — 수국 축제 + 미천굴 — photo 13",
+          "alt": "일출랜드 — 수국 축제 + 미천굴 — gallery image 13"
+        },
+        {
+          "id": 14,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57-2.webp",
+          "location": "일출랜드 — 수국 축제 + 미천굴",
+          "caption": "일출랜드 — 수국 축제 + 미천굴 — photo 14",
+          "alt": "일출랜드 — 수국 축제 + 미천굴 — gallery image 14"
+        },
+        {
+          "id": 15,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08-2.webp",
+          "location": "일출랜드 — 수국 축제 + 미천굴",
+          "caption": "일출랜드 — 수국 축제 + 미천굴 — photo 15",
+          "alt": "일출랜드 — 수국 축제 + 미천굴 — gallery image 15"
+        },
+        {
+          "id": 16,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22-2.webp",
+          "location": "일출랜드 — 수국 축제 + 미천굴",
+          "caption": "일출랜드 — 수국 축제 + 미천굴 — photo 16",
+          "alt": "일출랜드 — 수국 축제 + 미천굴 — gallery image 16"
+        },
+        {
+          "id": 17,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24-2.webp",
+          "location": "일출랜드 — 수국 축제 + 미천굴",
+          "caption": "일출랜드 — 수국 축제 + 미천굴 — photo 17",
+          "alt": "일출랜드 — 수국 축제 + 미천굴 — gallery image 17"
         }
       ]
     },
@@ -1103,6 +1547,18 @@
         {
           "url": "/images/tours/hueree/chatgpt-image-2026-5-8-08-06-46.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-23-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-43-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hueree/chatgpt-image-2026-5-8-08-06-46-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -1129,6 +1585,30 @@
           "location": "휴애리 자연생활공원 — 수국 하이라이트",
           "caption": "휴애리 자연생활공원 — 수국 하이라이트 — photo 3",
           "alt": "휴애리 자연생활공원 — 수국 하이라이트 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-23-2.webp",
+          "location": "휴애리 자연생활공원 — 수국 하이라이트",
+          "caption": "휴애리 자연생활공원 — 수국 하이라이트 — photo 4",
+          "alt": "휴애리 자연생활공원 — 수국 하이라이트 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-43-2.webp",
+          "location": "휴애리 자연생활공원 — 수국 하이라이트",
+          "caption": "휴애리 자연생활공원 — 수국 하이라이트 — photo 5",
+          "alt": "휴애리 자연생활공원 — 수국 하이라이트 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/hueree/chatgpt-image-2026-5-8-08-06-46-2.webp",
+          "location": "휴애리 자연생활공원 — 수국 하이라이트",
+          "caption": "휴애리 자연생활공원 — 수국 하이라이트 — photo 6",
+          "alt": "휴애리 자연생활공원 — 수국 하이라이트 — gallery image 6"
         }
       ]
     },
@@ -2194,7 +2674,11 @@
               "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
               "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
               "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
-              "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp"
+              "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
+              "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-2.webp",
+              "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01-2.webp",
+              "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02-2.webp",
+              "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04-2.webp"
             ],
             "imageCredits": [
               {
@@ -2211,6 +2695,22 @@
               },
               {
                 "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04-2.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2246,6 +2746,38 @@
                 "location": "함덕 서우봉해변",
                 "caption": "함덕 서우봉해변 — photo 4",
                 "alt": "함덕 서우봉해변 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-2.webp",
+                "location": "함덕 서우봉해변",
+                "caption": "함덕 서우봉해변 — photo 5",
+                "alt": "함덕 서우봉해변 — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01-2.webp",
+                "location": "함덕 서우봉해변",
+                "caption": "함덕 서우봉해변 — photo 6",
+                "alt": "함덕 서우봉해변 — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02-2.webp",
+                "location": "함덕 서우봉해변",
+                "caption": "함덕 서우봉해변 — photo 7",
+                "alt": "함덕 서우봉해변 — gallery image 7"
+              },
+              {
+                "id": 8,
+                "type": "photo",
+                "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04-2.webp",
+                "location": "함덕 서우봉해변",
+                "caption": "함덕 서우봉해변 — photo 8",
+                "alt": "함덕 서우봉해변 — gallery image 8"
               }
             ]
           },
@@ -2296,7 +2828,11 @@
               "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
               "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-41.webp",
               "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
-              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp"
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51-2.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22-2.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26-2.webp",
+              "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34-2.webp"
             ],
             "imageCredits": [
               {
@@ -2325,6 +2861,22 @@
               },
               {
                 "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-52.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34-2.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2384,6 +2936,38 @@
                 "location": "성읍민속마을",
                 "caption": "성읍민속마을 — photo 7",
                 "alt": "성읍민속마을 — gallery image 7"
+              },
+              {
+                "id": 8,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51-2.webp",
+                "location": "성읍민속마을",
+                "caption": "성읍민속마을 — photo 8",
+                "alt": "성읍민속마을 — gallery image 8"
+              },
+              {
+                "id": 9,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22-2.webp",
+                "location": "성읍민속마을",
+                "caption": "성읍민속마을 — photo 9",
+                "alt": "성읍민속마을 — gallery image 9"
+              },
+              {
+                "id": 10,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26-2.webp",
+                "location": "성읍민속마을",
+                "caption": "성읍민속마을 — photo 10",
+                "alt": "성읍민속마을 — gallery image 10"
+              },
+              {
+                "id": 11,
+                "type": "photo",
+                "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34-2.webp",
+                "location": "성읍민속마을",
+                "caption": "성읍민속마을 — photo 11",
+                "alt": "성읍민속마을 — gallery image 11"
               }
             ]
           },
@@ -2462,7 +3046,13 @@
               "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
               "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
               "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
-              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp"
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06-2.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07-2.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08-2.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09-2.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10-2.webp",
+              "/images/tours/seongsan-ilchulbong/photo-006.webp"
             ],
             "imageCredits": [
               {
@@ -2483,6 +3073,30 @@
               },
               {
                 "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/photo-006.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2526,6 +3140,54 @@
                 "location": "성산일출봉",
                 "caption": "성산일출봉 — photo 5",
                 "alt": "성산일출봉 — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06-2.webp",
+                "location": "성산일출봉",
+                "caption": "성산일출봉 — photo 6",
+                "alt": "성산일출봉 — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07-2.webp",
+                "location": "성산일출봉",
+                "caption": "성산일출봉 — photo 7",
+                "alt": "성산일출봉 — gallery image 7"
+              },
+              {
+                "id": 8,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08-2.webp",
+                "location": "성산일출봉",
+                "caption": "성산일출봉 — photo 8",
+                "alt": "성산일출봉 — gallery image 8"
+              },
+              {
+                "id": 9,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09-2.webp",
+                "location": "성산일출봉",
+                "caption": "성산일출봉 — photo 9",
+                "alt": "성산일출봉 — gallery image 9"
+              },
+              {
+                "id": 10,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10-2.webp",
+                "location": "성산일출봉",
+                "caption": "성산일출봉 — photo 10",
+                "alt": "성산일출봉 — gallery image 10"
+              },
+              {
+                "id": 11,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/photo-006.webp",
+                "location": "성산일출봉",
+                "caption": "성산일출봉 — photo 11",
+                "alt": "성산일출봉 — gallery image 11"
               }
             ]
           },
@@ -2578,7 +3240,14 @@
               "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
               "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-20.webp",
               "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-29.webp",
-              "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp"
+              "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52-2.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19-2.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25-2.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57-2.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08-2.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22-2.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24-2.webp"
             ],
             "imageCredits": [
               {
@@ -2619,6 +3288,34 @@
               },
               {
                 "url": "/images/tours/ilchulland/chatgpt-image-2026-5-11-12-24-35.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24-2.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2702,6 +3399,62 @@
                 "location": "일출랜드 — 수국 축제 + 미천굴",
                 "caption": "일출랜드 — 수국 축제 + 미천굴 — photo 10",
                 "alt": "일출랜드 — 수국 축제 + 미천굴 — gallery image 10"
+              },
+              {
+                "id": 11,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52-2.webp",
+                "location": "일출랜드 — 수국 축제 + 미천굴",
+                "caption": "일출랜드 — 수국 축제 + 미천굴 — photo 11",
+                "alt": "일출랜드 — 수국 축제 + 미천굴 — gallery image 11"
+              },
+              {
+                "id": 12,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19-2.webp",
+                "location": "일출랜드 — 수국 축제 + 미천굴",
+                "caption": "일출랜드 — 수국 축제 + 미천굴 — photo 12",
+                "alt": "일출랜드 — 수국 축제 + 미천굴 — gallery image 12"
+              },
+              {
+                "id": 13,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25-2.webp",
+                "location": "일출랜드 — 수국 축제 + 미천굴",
+                "caption": "일출랜드 — 수국 축제 + 미천굴 — photo 13",
+                "alt": "일출랜드 — 수국 축제 + 미천굴 — gallery image 13"
+              },
+              {
+                "id": 14,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57-2.webp",
+                "location": "일출랜드 — 수국 축제 + 미천굴",
+                "caption": "일출랜드 — 수국 축제 + 미천굴 — photo 14",
+                "alt": "일출랜드 — 수국 축제 + 미천굴 — gallery image 14"
+              },
+              {
+                "id": 15,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08-2.webp",
+                "location": "일출랜드 — 수국 축제 + 미천굴",
+                "caption": "일출랜드 — 수국 축제 + 미천굴 — photo 15",
+                "alt": "일출랜드 — 수국 축제 + 미천굴 — gallery image 15"
+              },
+              {
+                "id": 16,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22-2.webp",
+                "location": "일출랜드 — 수국 축제 + 미천굴",
+                "caption": "일출랜드 — 수국 축제 + 미천굴 — photo 16",
+                "alt": "일출랜드 — 수국 축제 + 미천굴 — gallery image 16"
+              },
+              {
+                "id": 17,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24-2.webp",
+                "location": "일출랜드 — 수국 축제 + 미천굴",
+                "caption": "일출랜드 — 수국 축제 + 미천굴 — photo 17",
+                "alt": "일출랜드 — 수국 축제 + 미천굴 — gallery image 17"
               }
             ]
           },
@@ -2747,7 +3500,10 @@
             "images": [
               "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-23.webp",
               "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-43.webp",
-              "/images/tours/hueree/chatgpt-image-2026-5-8-08-06-46.webp"
+              "/images/tours/hueree/chatgpt-image-2026-5-8-08-06-46.webp",
+              "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-23-2.webp",
+              "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-43-2.webp",
+              "/images/tours/hueree/chatgpt-image-2026-5-8-08-06-46-2.webp"
             ],
             "imageCredits": [
               {
@@ -2760,6 +3516,18 @@
               },
               {
                 "url": "/images/tours/hueree/chatgpt-image-2026-5-8-08-06-46.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-23-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-43-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hueree/chatgpt-image-2026-5-8-08-06-46-2.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2787,6 +3555,30 @@
                 "location": "휴애리 자연생활공원 — 수국 하이라이트",
                 "caption": "휴애리 자연생활공원 — 수국 하이라이트 — photo 3",
                 "alt": "휴애리 자연생활공원 — 수국 하이라이트 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-23-2.webp",
+                "location": "휴애리 자연생활공원 — 수국 하이라이트",
+                "caption": "휴애리 자연생활공원 — 수국 하이라이트 — photo 4",
+                "alt": "휴애리 자연생활공원 — 수국 하이라이트 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-43-2.webp",
+                "location": "휴애리 자연생활공원 — 수국 하이라이트",
+                "caption": "휴애리 자연생활공원 — 수국 하이라이트 — photo 5",
+                "alt": "휴애리 자연생활공원 — 수국 하이라이트 — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/hueree/chatgpt-image-2026-5-8-08-06-46-2.webp",
+                "location": "휴애리 자연생활공원 — 수국 하이라이트",
+                "caption": "휴애리 자연생활공원 — 수국 하이라이트 — photo 6",
+                "alt": "휴애리 자연생활공원 — 수국 하이라이트 — gallery image 6"
               }
             ]
           },

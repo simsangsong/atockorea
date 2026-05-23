@@ -15,12 +15,12 @@
       "Excursión a la Cueva de Amatista de Ulsan",
       "Excursión de un día UNESCO desde Busan"
     ],
-    "ogImage": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp",
+    "ogImage": "https://www.atockorea.com/images/itinerary/tongdosa-iljumun.webp",
     "title": "Excursión de un día por los alrededores de Busan · Tongdosa + Amatista + Alpes de Yeongnam | AtoC Korea",
     "description": "Una excursión de un día en autobús desde Busan hacia Yangsan, Ulsan y Miryang — Templo Tongdosa (UNESCO), la Cueva de Amatista subterránea (paseo en bote opcional), el Teleférico del Valle de Hielo de los Alpes de Yeongnam y cierre en el Pueblo Cultural de Gamcheon."
   },
   "catalog_card": {
-    "thumbnail": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp",
+    "thumbnail": "/images/itinerary/tongdosa-iljumun.webp",
     "title": "Alrededores de Busan: Tongdosa + Cueva de Amatista + Alpes de Yeongnam",
     "priceLabel": "",
     "shortCardDescription": "Una excursión de un día de 11 horas en autobús por los alrededores de Busan hacia Yangsan (Templo Tongdosa, Patrimonio Mundial UNESCO 2018), Ulsan (Parque Temático Cueva de Amatista con paseo en bote opcional), Miryang (Teleférico del Valle de Hielo de los Alpes de Yeongnam) y con final en el Pueblo Cultural de Gamcheon en Busan. Tres puntos de recogida (Estación de Busan / Seomyeon / Haeundae); bajada opcional en Jagalchi al final.",
@@ -44,7 +44,7 @@
       "Recogida en 3 estaciones",
       "Día de 11 horas"
     ],
-    "heroImage": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp"
+    "heroImage": "/images/itinerary/tongdosa-iljumun.webp"
   },
   "headlineLine1": "Excursión de un día por los alrededores de Busan",
   "headlineLine2": "Tongdosa + Cueva de Amatista + Alpes de Yeongnam",
@@ -57,7 +57,7 @@
     "discountPercent": 9
   },
   "hero": {
-    "imageUrl": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp",
+    "imageUrl": "/images/itinerary/tongdosa-iljumun.webp",
     "imagePosition": "center 40%",
     "tagline": "Cuatro paradas imprescindibles en un solo día de 11 horas desde Busan: el Templo Tongdosa (Patrimonio de la UNESCO), la Cueva de Amatista subterránea de Ulsan, el teleférico del Valle de Hielo de los Alpes de Yeongnam en Miryang y el Pueblo Cultural de Gamcheon",
     "pills": [
@@ -142,74 +142,122 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
-      "location": "Aldea Cultural de Gamcheon",
-      "alt": "Aldea Cultural de Gamcheon — galería 1",
-      "caption": "Aldea Cultural de Gamcheon — ladera de colores pastel"
+      "src": "/images/itinerary/tongdosa-iljumun.webp",
+      "location": "Templo Tongdosa (Yangsan)",
+      "alt": "Templo Tongdosa (Yangsan) — on-route photo",
+      "caption": "Templo Tongdosa (Yangsan)"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
-      "location": "Aldea Cultural de Gamcheon",
-      "alt": "Aldea Cultural de Gamcheon — galería 2",
-      "caption": "Aldea Cultural de Gamcheon — Jardín del Cielo"
+      "src": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp",
+      "location": "Parque Temático de la Cueva de Amatista (Ulsan)",
+      "alt": "Parque Temático de la Cueva de Amatista (Ulsan) — on-route photo",
+      "caption": "Parque Temático de la Cueva de Amatista (Ulsan)"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
-      "location": "Aldea Cultural de Gamcheon",
-      "alt": "Aldea Cultural de Gamcheon — galería 3",
-      "caption": "Aldea Cultural de Gamcheon — callejón de murales"
+      "src": "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-flight.webp",
+      "location": "Teleférico del Valle de Hielo de los Alpes de Yeongnam (Miryang)",
+      "alt": "Teleférico del Valle de Hielo de los Alpes de Yeongnam (Miryang) — on-route photo",
+      "caption": "Teleférico del Valle de Hielo de los Alpes de Yeongnam (Miryang)"
     },
     {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp",
-      "location": "Parque temático Cueva de Amatista (Ulsan)",
-      "alt": "Cueva de Amatista — sala subterránea iluminada con agua",
-      "caption": "Cueva de Amatista — sala subterránea iluminada"
+      "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+      "location": "Pueblo Cultural de Gamcheon",
+      "alt": "Pueblo Cultural de Gamcheon — gallery image 1",
+      "caption": "Pueblo Cultural de Gamcheon — photo 1"
     },
     {
       "id": 5,
       "type": "photo",
-      "src": "/images/tours/amethyst-cave/amethyst-cave-entrance-corridor.webp",
-      "location": "Parque temático Cueva de Amatista (Ulsan)",
-      "alt": "Cueva de Amatista — corredor de entrada iluminado",
-      "caption": "Cueva de Amatista — corredor de entrada con luces"
+      "src": "/images/itinerary/tongdosa-yeongsanjeon.webp",
+      "location": "Templo Tongdosa (Yangsan)",
+      "alt": "Templo Tongdosa (Yangsan) — on-route photo",
+      "caption": "Templo Tongdosa (Yangsan)"
     },
     {
       "id": 6,
       "type": "photo",
-      "src": "/images/tours/amethyst-cave/amethyst-cave-boat-passage.webp",
-      "location": "Parque temático Cueva de Amatista (Ulsan)",
-      "alt": "Cueva de Amatista — paseo en barco por pasajes coloridos",
-      "caption": "Cueva de Amatista — paseo en barco por la cueva"
+      "src": "/images/tours/amethyst-cave/amethyst-cave-entrance-corridor.webp",
+      "location": "Parque Temático de la Cueva de Amatista (Ulsan)",
+      "alt": "Parque Temático de la Cueva de Amatista (Ulsan) — on-route photo",
+      "caption": "Parque Temático de la Cueva de Amatista (Ulsan)"
     },
     {
       "id": 7,
       "type": "photo",
-      "src": "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-flight.webp",
-      "location": "Teleférico Eolgumgol (Alpes Yeongnam, Miryang)",
-      "alt": "Teleférico Alpes Yeongnam — góndola sobre el valle boscoso",
-      "caption": "Teleférico Alpes Yeongnam — góndola sobre el valle boscoso"
+      "src": "/images/tours/amethyst-cave/amethyst-cave-boat-passage.webp",
+      "location": "Parque Temático de la Cueva de Amatista (Ulsan)",
+      "alt": "Parque Temático de la Cueva de Amatista (Ulsan) — on-route photo",
+      "caption": "Parque Temático de la Cueva de Amatista (Ulsan)"
     },
     {
       "id": 8,
       "type": "photo",
       "src": "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-valley.webp",
-      "location": "Teleférico Eolgumgol (Alpes Yeongnam, Miryang)",
-      "alt": "Teleférico Alpes Yeongnam — cabina entre cordilleras verdes",
-      "caption": "Alpes Yeongnam — teleférico entre cordilleras verdes"
+      "location": "Teleférico del Valle de Hielo de los Alpes de Yeongnam (Miryang)",
+      "alt": "Teleférico del Valle de Hielo de los Alpes de Yeongnam (Miryang) — on-route photo",
+      "caption": "Teleférico del Valle de Hielo de los Alpes de Yeongnam (Miryang)"
     },
     {
       "id": 9,
       "type": "photo",
       "src": "/images/tours/yeongnam-alps/yeongnam-alps-summit-viewpoint.webp",
-      "location": "Teleférico Eolgumgol (Alpes Yeongnam, Miryang)",
-      "alt": "Alpes Yeongnam — mirador en la cima sobre cordilleras infinitas",
-      "caption": "Alpes Yeongnam — mirador sobre cordilleras infinitas"
+      "location": "Teleférico del Valle de Hielo de los Alpes de Yeongnam (Miryang)",
+      "alt": "Teleférico del Valle de Hielo de los Alpes de Yeongnam (Miryang) — on-route photo",
+      "caption": "Teleférico del Valle de Hielo de los Alpes de Yeongnam (Miryang)"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+      "location": "Pueblo Cultural de Gamcheon",
+      "alt": "Pueblo Cultural de Gamcheon — gallery image 2",
+      "caption": "Pueblo Cultural de Gamcheon — photo 2"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
+      "location": "Pueblo Cultural de Gamcheon",
+      "alt": "Pueblo Cultural de Gamcheon — gallery image 3",
+      "caption": "Pueblo Cultural de Gamcheon — photo 3"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/itinerary/jagalchi-harbor-sign.webp",
+      "location": "Pueblo Cultural de Gamcheon",
+      "alt": "Pueblo Cultural de Gamcheon — gallery image 4",
+      "caption": "Pueblo Cultural de Gamcheon — photo 4"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/itinerary/jagalchi-market-interior.webp",
+      "location": "Pueblo Cultural de Gamcheon",
+      "alt": "Pueblo Cultural de Gamcheon — gallery image 5",
+      "caption": "Pueblo Cultural de Gamcheon — photo 5"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/itinerary/jagalchi-night-building.webp",
+      "location": "Pueblo Cultural de Gamcheon",
+      "alt": "Pueblo Cultural de Gamcheon — gallery image 6",
+      "caption": "Pueblo Cultural de Gamcheon — photo 6"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01-2.webp",
+      "location": "Pueblo Cultural de Gamcheon",
+      "alt": "Pueblo Cultural de Gamcheon — gallery image 7",
+      "caption": "Pueblo Cultural de Gamcheon — photo 7"
     }
   ],
   "itineraryStops": [
@@ -506,6 +554,22 @@
         {
           "url": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/itinerary/jagalchi-harbor-sign.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/itinerary/jagalchi-market-interior.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/itinerary/jagalchi-night-building.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -532,6 +596,38 @@
           "location": "Pueblo Cultural de Gamcheon",
           "caption": "Pueblo Cultural de Gamcheon — photo 3",
           "alt": "Pueblo Cultural de Gamcheon — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/itinerary/jagalchi-harbor-sign.webp",
+          "location": "Pueblo Cultural de Gamcheon",
+          "caption": "Pueblo Cultural de Gamcheon — photo 4",
+          "alt": "Pueblo Cultural de Gamcheon — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/itinerary/jagalchi-market-interior.webp",
+          "location": "Pueblo Cultural de Gamcheon",
+          "caption": "Pueblo Cultural de Gamcheon — photo 5",
+          "alt": "Pueblo Cultural de Gamcheon — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/itinerary/jagalchi-night-building.webp",
+          "location": "Pueblo Cultural de Gamcheon",
+          "caption": "Pueblo Cultural de Gamcheon — photo 6",
+          "alt": "Pueblo Cultural de Gamcheon — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01-2.webp",
+          "location": "Pueblo Cultural de Gamcheon",
+          "caption": "Pueblo Cultural de Gamcheon — photo 7",
+          "alt": "Pueblo Cultural de Gamcheon — gallery image 7"
         }
       ]
     },

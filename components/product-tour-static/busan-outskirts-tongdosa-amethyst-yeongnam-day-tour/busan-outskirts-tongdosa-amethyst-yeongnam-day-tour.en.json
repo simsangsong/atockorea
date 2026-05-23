@@ -15,12 +15,12 @@
       "Amethyst Cave Ulsan tour",
       "Busan UNESCO day tour"
     ],
-    "ogImage": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp",
+    "ogImage": "https://www.atockorea.com/images/itinerary/tongdosa-iljumun.webp",
     "title": "Busan Outskirts Day Tour · Tongdosa + Amethyst + Yeongnam Alps | AtoC Korea",
     "description": "A coach day tour from Busan into Yangsan, Ulsan, and Miryang — UNESCO Tongdosa Temple, the underground Amethyst Cave (optional boat), the Yeongnam Alps Ice Valley Cable Car, and a Gamcheon Culture Village close."
   },
   "catalog_card": {
-    "thumbnail": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp",
+    "thumbnail": "/images/itinerary/tongdosa-iljumun.webp",
     "title": "Busan Outskirts: Tongdosa + Amethyst Cave + Yeongnam Alps",
     "priceLabel": "From US$85 per person (was $93, 9% off)",
     "shortCardDescription": "An 11-hour Busan outskirts coach day tour into Yangsan (Tongdosa Temple, UNESCO World Heritage Site 2018), Ulsan (Amethyst Cave Theme Park with optional boat ride), Miryang (Yeongnam Alps Ice Valley Cable Car), and finishing at Gamcheon Culture Village in Busan. Three pickup points (Busan Station / Seomyeon / Haeundae); optional Jagalchi hop-off at the end.",
@@ -44,7 +44,7 @@
       "Pickup at 3 stations",
       "11-hour day"
     ],
-    "heroImage": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp"
+    "heroImage": "/images/itinerary/tongdosa-iljumun.webp"
   },
   "headlineLine1": "Busan Outskirts Day Tour",
   "headlineLine2": "Tongdosa + Amethyst Cave + Yeongnam Alps",
@@ -57,7 +57,7 @@
     "discountPercent": 9
   },
   "hero": {
-    "imageUrl": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp",
+    "imageUrl": "/images/itinerary/tongdosa-iljumun.webp",
     "imagePosition": "center 40%",
     "tagline": "Four signature stops in a single 11-hour day from Busan: UNESCO Tongdosa Temple, Ulsan's underground Amethyst Cave, Miryang's Yeongnam Alps Ice Valley Cable Car, and Gamcheon Culture Village",
     "pills": [
@@ -142,74 +142,122 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
-      "location": "Gamcheon Culture Village",
-      "alt": "Gamcheon Culture Village — gallery 1",
-      "caption": "Gamcheon Culture Village — pastel hillside"
+      "src": "/images/itinerary/tongdosa-iljumun.webp",
+      "location": "Tongdosa Temple (Yangsan)",
+      "alt": "Tongdosa Temple (Yangsan) — on-route photo",
+      "caption": "Tongdosa Temple (Yangsan)"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
-      "location": "Gamcheon Culture Village",
-      "alt": "Gamcheon Culture Village — gallery 2",
-      "caption": "Gamcheon Culture Village — Sky Garden"
+      "src": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp",
+      "location": "Amethyst Cave Theme Park (Ulsan)",
+      "alt": "Amethyst Cave Theme Park (Ulsan) — on-route photo",
+      "caption": "Amethyst Cave Theme Park (Ulsan)"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
-      "location": "Gamcheon Culture Village",
-      "alt": "Gamcheon Culture Village — gallery 3",
-      "caption": "Gamcheon Culture Village — mural alley"
+      "src": "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-flight.webp",
+      "location": "Yeongnam Alps Ice Valley Cable Car (Miryang)",
+      "alt": "Yeongnam Alps Ice Valley Cable Car (Miryang) — on-route photo",
+      "caption": "Yeongnam Alps Ice Valley Cable Car (Miryang)"
     },
     {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp",
-      "location": "Amethyst Cave Theme Park (Ulsan)",
-      "alt": "Amethyst Cave — colorful underground hall with water",
-      "caption": "Amethyst Cave Theme Park — colorful underground hall"
+      "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+      "location": "Gamcheon Culture Village (Busan)",
+      "alt": "Gamcheon Culture Village (Busan) — gallery image 1",
+      "caption": "Gamcheon Culture Village (Busan) — photo 1"
     },
     {
       "id": 5,
       "type": "photo",
-      "src": "/images/tours/amethyst-cave/amethyst-cave-entrance-corridor.webp",
-      "location": "Amethyst Cave Theme Park (Ulsan)",
-      "alt": "Amethyst Cave — illuminated entrance corridor",
-      "caption": "Amethyst Cave Theme Park — illuminated entrance corridor"
+      "src": "/images/itinerary/tongdosa-yeongsanjeon.webp",
+      "location": "Tongdosa Temple (Yangsan)",
+      "alt": "Tongdosa Temple (Yangsan) — on-route photo",
+      "caption": "Tongdosa Temple (Yangsan)"
     },
     {
       "id": 6,
       "type": "photo",
-      "src": "/images/tours/amethyst-cave/amethyst-cave-boat-passage.webp",
+      "src": "/images/tours/amethyst-cave/amethyst-cave-entrance-corridor.webp",
       "location": "Amethyst Cave Theme Park (Ulsan)",
-      "alt": "Amethyst Cave — boat ride through colored passages",
-      "caption": "Amethyst Cave Theme Park — boat ride through the cave"
+      "alt": "Amethyst Cave Theme Park (Ulsan) — on-route photo",
+      "caption": "Amethyst Cave Theme Park (Ulsan)"
     },
     {
       "id": 7,
       "type": "photo",
-      "src": "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-flight.webp",
-      "location": "Yeongnam Alps Ice Valley Cable Car (Miryang)",
-      "alt": "Yeongnam Alps Cable Car — gondola above the forested valley",
-      "caption": "Yeongnam Alps Cable Car — gondola above the forested valley"
+      "src": "/images/tours/amethyst-cave/amethyst-cave-boat-passage.webp",
+      "location": "Amethyst Cave Theme Park (Ulsan)",
+      "alt": "Amethyst Cave Theme Park (Ulsan) — on-route photo",
+      "caption": "Amethyst Cave Theme Park (Ulsan)"
     },
     {
       "id": 8,
       "type": "photo",
       "src": "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-valley.webp",
       "location": "Yeongnam Alps Ice Valley Cable Car (Miryang)",
-      "alt": "Yeongnam Alps Cable Car — cabin amid lush green ridges",
-      "caption": "Yeongnam Alps — cable car between green ridges"
+      "alt": "Yeongnam Alps Ice Valley Cable Car (Miryang) — on-route photo",
+      "caption": "Yeongnam Alps Ice Valley Cable Car (Miryang)"
     },
     {
       "id": 9,
       "type": "photo",
       "src": "/images/tours/yeongnam-alps/yeongnam-alps-summit-viewpoint.webp",
       "location": "Yeongnam Alps Ice Valley Cable Car (Miryang)",
-      "alt": "Yeongnam Alps — summit viewpoint over endless mountain ridges",
-      "caption": "Yeongnam Alps — summit viewpoint over endless ridges"
+      "alt": "Yeongnam Alps Ice Valley Cable Car (Miryang) — on-route photo",
+      "caption": "Yeongnam Alps Ice Valley Cable Car (Miryang)"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+      "location": "Gamcheon Culture Village (Busan)",
+      "alt": "Gamcheon Culture Village (Busan) — gallery image 2",
+      "caption": "Gamcheon Culture Village (Busan) — photo 2"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
+      "location": "Gamcheon Culture Village (Busan)",
+      "alt": "Gamcheon Culture Village (Busan) — gallery image 3",
+      "caption": "Gamcheon Culture Village (Busan) — photo 3"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/itinerary/jagalchi-harbor-sign.webp",
+      "location": "Gamcheon Culture Village (Busan)",
+      "alt": "Gamcheon Culture Village (Busan) — gallery image 4",
+      "caption": "Gamcheon Culture Village (Busan) — photo 4"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/itinerary/jagalchi-market-interior.webp",
+      "location": "Gamcheon Culture Village (Busan)",
+      "alt": "Gamcheon Culture Village (Busan) — gallery image 5",
+      "caption": "Gamcheon Culture Village (Busan) — photo 5"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/itinerary/jagalchi-night-building.webp",
+      "location": "Gamcheon Culture Village (Busan)",
+      "alt": "Gamcheon Culture Village (Busan) — gallery image 6",
+      "caption": "Gamcheon Culture Village (Busan) — photo 6"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01-2.webp",
+      "location": "Gamcheon Culture Village (Busan)",
+      "alt": "Gamcheon Culture Village (Busan) — gallery image 7",
+      "caption": "Gamcheon Culture Village (Busan) — photo 7"
     }
   ],
   "itineraryStops": [
@@ -492,6 +540,94 @@
         "/images/itinerary/jagalchi-harbor-sign.webp",
         "/images/itinerary/jagalchi-market-interior.webp",
         "/images/itinerary/jagalchi-night-building.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/itinerary/jagalchi-harbor-sign.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/itinerary/jagalchi-market-interior.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/itinerary/jagalchi-night-building.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01-2.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+          "location": "Gamcheon Culture Village (Busan)",
+          "caption": "Gamcheon Culture Village (Busan) — photo 1",
+          "alt": "Gamcheon Culture Village (Busan) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+          "location": "Gamcheon Culture Village (Busan)",
+          "caption": "Gamcheon Culture Village (Busan) — photo 2",
+          "alt": "Gamcheon Culture Village (Busan) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
+          "location": "Gamcheon Culture Village (Busan)",
+          "caption": "Gamcheon Culture Village (Busan) — photo 3",
+          "alt": "Gamcheon Culture Village (Busan) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/itinerary/jagalchi-harbor-sign.webp",
+          "location": "Gamcheon Culture Village (Busan)",
+          "caption": "Gamcheon Culture Village (Busan) — photo 4",
+          "alt": "Gamcheon Culture Village (Busan) — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/itinerary/jagalchi-market-interior.webp",
+          "location": "Gamcheon Culture Village (Busan)",
+          "caption": "Gamcheon Culture Village (Busan) — photo 5",
+          "alt": "Gamcheon Culture Village (Busan) — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/itinerary/jagalchi-night-building.webp",
+          "location": "Gamcheon Culture Village (Busan)",
+          "caption": "Gamcheon Culture Village (Busan) — photo 6",
+          "alt": "Gamcheon Culture Village (Busan) — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01-2.webp",
+          "location": "Gamcheon Culture Village (Busan)",
+          "caption": "Gamcheon Culture Village (Busan) — photo 7",
+          "alt": "Gamcheon Culture Village (Busan) — gallery image 7"
+        }
       ]
     },
     {

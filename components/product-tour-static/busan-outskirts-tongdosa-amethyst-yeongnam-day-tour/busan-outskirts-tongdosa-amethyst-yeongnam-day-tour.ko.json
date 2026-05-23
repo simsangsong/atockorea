@@ -15,12 +15,12 @@
       "울산 자수정 동굴 투어",
       "부산 유네스코 당일 투어"
     ],
-    "ogImage": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp",
+    "ogImage": "https://www.atockorea.com/images/itinerary/tongdosa-iljumun.webp",
     "title": "부산 외곽 당일 투어 · 통도사 + 자수정 + 영남 알프스 | AtoC Korea",
     "description": "부산에서 출발해 양산, 울산, 밀양을 돌아보는 코치 당일 투어 — 유네스코 통도사, 지하 자수정 동굴 (선택 보트), 영남 알프스 얼음골 케이블카, 그리고 감천문화마을 마무리."
   },
   "catalog_card": {
-    "thumbnail": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp",
+    "thumbnail": "/images/itinerary/tongdosa-iljumun.webp",
     "title": "부산 외곽: 통도사 + 자수정 동굴 + 영남 알프스",
     "priceLabel": "",
     "shortCardDescription": "양산(통도사, 2018 유네스코 세계문화유산), 울산(자수정 동굴 테마파크, 선택 보트 탑승), 밀양(영남 알프스 얼음골 케이블카)을 거쳐 부산 감천문화마을에서 마무리하는 11시간 부산 외곽 코치 당일 투어. 픽업 3개소(부산역 / 서면 / 해운대) 운영; 마지막에 자갈치 선택 하차 가능.",
@@ -44,7 +44,7 @@
       "3개 정류장 픽업",
       "11시간 일정"
     ],
-    "heroImage": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp"
+    "heroImage": "/images/itinerary/tongdosa-iljumun.webp"
   },
   "headlineLine1": "부산 외곽 당일 투어",
   "headlineLine2": "통도사 + 자수정 동굴 + 영남 알프스",
@@ -57,7 +57,7 @@
     "discountPercent": 9
   },
   "hero": {
-    "imageUrl": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp",
+    "imageUrl": "/images/itinerary/tongdosa-iljumun.webp",
     "imagePosition": "center 40%",
     "tagline": "부산에서 출발하는 11시간 당일치기 대표 명소 4곳: 유네스코 통도사, 울산 지하 자수정동굴, 밀양 영남알프스 얼음골 케이블카, 감천문화마을",
     "pills": [
@@ -142,74 +142,122 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
-      "location": "감천문화마을",
-      "alt": "감천문화마을 — 갤러리 1",
-      "caption": "감천문화마을 — 파스텔 언덕"
+      "src": "/images/itinerary/tongdosa-iljumun.webp",
+      "location": "통도사 (양산)",
+      "alt": "통도사 (양산) — on-route photo",
+      "caption": "통도사 (양산)"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
-      "location": "감천문화마을",
-      "alt": "감천문화마을 — 갤러리 2",
-      "caption": "감천문화마을 — 하늘정원"
+      "src": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp",
+      "location": "자수정동굴나라 (울산)",
+      "alt": "자수정동굴나라 (울산) — on-route photo",
+      "caption": "자수정동굴나라 (울산)"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
-      "location": "감천문화마을",
-      "alt": "감천문화마을 — 갤러리 3",
-      "caption": "감천문화마을 — 벽화 골목"
+      "src": "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-flight.webp",
+      "location": "영남알프스 얼음골 케이블카(밀양)",
+      "alt": "영남알프스 얼음골 케이블카(밀양) — on-route photo",
+      "caption": "영남알프스 얼음골 케이블카(밀양)"
     },
     {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp",
-      "location": "울산 자수정 동굴 테마파크",
-      "alt": "자수정 동굴 — 형형색색 지하 홀과 수로",
-      "caption": "울산 자수정 동굴 — 형형색색 지하 홀"
+      "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+      "location": "감천문화마을",
+      "alt": "감천문화마을 — gallery image 1",
+      "caption": "감천문화마을 — photo 1"
     },
     {
       "id": 5,
       "type": "photo",
-      "src": "/images/tours/amethyst-cave/amethyst-cave-entrance-corridor.webp",
-      "location": "울산 자수정 동굴 테마파크",
-      "alt": "자수정 동굴 — 조명이 빛나는 입구 통로",
-      "caption": "울산 자수정 동굴 — 빛이 흐르는 입구 통로"
+      "src": "/images/itinerary/tongdosa-yeongsanjeon.webp",
+      "location": "통도사 (양산)",
+      "alt": "통도사 (양산) — on-route photo",
+      "caption": "통도사 (양산)"
     },
     {
       "id": 6,
       "type": "photo",
-      "src": "/images/tours/amethyst-cave/amethyst-cave-boat-passage.webp",
-      "location": "울산 자수정 동굴 테마파크",
-      "alt": "자수정 동굴 — 형형색색 보트 탐험",
-      "caption": "울산 자수정 동굴 — 동굴 보트 탐험"
+      "src": "/images/tours/amethyst-cave/amethyst-cave-entrance-corridor.webp",
+      "location": "자수정동굴나라 (울산)",
+      "alt": "자수정동굴나라 (울산) — on-route photo",
+      "caption": "자수정동굴나라 (울산)"
     },
     {
       "id": 7,
       "type": "photo",
-      "src": "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-flight.webp",
-      "location": "영남알프스 얼음골 케이블카 (밀양)",
-      "alt": "영남알프스 얼음골 케이블카 — 숲 위를 나는 곤돌라",
-      "caption": "영남알프스 얼음골 케이블카 — 숲 위를 나는 곤돌라"
+      "src": "/images/tours/amethyst-cave/amethyst-cave-boat-passage.webp",
+      "location": "자수정동굴나라 (울산)",
+      "alt": "자수정동굴나라 (울산) — on-route photo",
+      "caption": "자수정동굴나라 (울산)"
     },
     {
       "id": 8,
       "type": "photo",
       "src": "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-valley.webp",
-      "location": "영남알프스 얼음골 케이블카 (밀양)",
-      "alt": "영남알프스 케이블카 — 푸른 능선 사이를 가로지르는 곤돌라",
-      "caption": "영남알프스 — 푸른 능선 사이의 케이블카"
+      "location": "영남알프스 얼음골 케이블카(밀양)",
+      "alt": "영남알프스 얼음골 케이블카(밀양) — on-route photo",
+      "caption": "영남알프스 얼음골 케이블카(밀양)"
     },
     {
       "id": 9,
       "type": "photo",
       "src": "/images/tours/yeongnam-alps/yeongnam-alps-summit-viewpoint.webp",
-      "location": "영남알프스 얼음골 케이블카 (밀양)",
-      "alt": "영남알프스 — 끝없는 능선이 펼쳐진 정상 전망대",
-      "caption": "영남알프스 — 능선이 펼쳐진 정상 전망대"
+      "location": "영남알프스 얼음골 케이블카(밀양)",
+      "alt": "영남알프스 얼음골 케이블카(밀양) — on-route photo",
+      "caption": "영남알프스 얼음골 케이블카(밀양)"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+      "location": "감천문화마을",
+      "alt": "감천문화마을 — gallery image 2",
+      "caption": "감천문화마을 — photo 2"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
+      "location": "감천문화마을",
+      "alt": "감천문화마을 — gallery image 3",
+      "caption": "감천문화마을 — photo 3"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/itinerary/jagalchi-harbor-sign.webp",
+      "location": "감천문화마을",
+      "alt": "감천문화마을 — gallery image 4",
+      "caption": "감천문화마을 — photo 4"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/itinerary/jagalchi-market-interior.webp",
+      "location": "감천문화마을",
+      "alt": "감천문화마을 — gallery image 5",
+      "caption": "감천문화마을 — photo 5"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/itinerary/jagalchi-night-building.webp",
+      "location": "감천문화마을",
+      "alt": "감천문화마을 — gallery image 6",
+      "caption": "감천문화마을 — photo 6"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01-2.webp",
+      "location": "감천문화마을",
+      "alt": "감천문화마을 — gallery image 7",
+      "caption": "감천문화마을 — photo 7"
     }
   ],
   "itineraryStops": [
@@ -506,6 +554,22 @@
         {
           "url": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/itinerary/jagalchi-harbor-sign.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/itinerary/jagalchi-market-interior.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/itinerary/jagalchi-night-building.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -532,6 +596,38 @@
           "location": "감천문화마을",
           "caption": "감천문화마을 — photo 3",
           "alt": "감천문화마을 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/itinerary/jagalchi-harbor-sign.webp",
+          "location": "감천문화마을",
+          "caption": "감천문화마을 — photo 4",
+          "alt": "감천문화마을 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/itinerary/jagalchi-market-interior.webp",
+          "location": "감천문화마을",
+          "caption": "감천문화마을 — photo 5",
+          "alt": "감천문화마을 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/itinerary/jagalchi-night-building.webp",
+          "location": "감천문화마을",
+          "caption": "감천문화마을 — photo 6",
+          "alt": "감천문화마을 — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01-2.webp",
+          "location": "감천문화마을",
+          "caption": "감천문화마을 — photo 7",
+          "alt": "감천문화마을 — gallery image 7"
         }
       ]
     },

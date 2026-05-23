@@ -13,11 +13,11 @@
       "costa este de Corea",
       "Excursión de un día a Seoraksan y Sokcho"
     ],
-    "ogImage": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
     "title": "Parque Nacional Seoraksan y Excursión de un día a la Playa de Sokcho desde Seúl | AtoC Korea"
   },
   "catalog_card": {
-    "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+    "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
     "title": "Excursión de un día a Seoraksan y la Playa de Sokcho",
     "priceLabel": "",
     "shortCardDescription": "Una excursión de un día en grupo reducido desde Seúl hasta el parque nacional más querido de Corea y la ciudad costera de Sokcho, a orillas del Mar del Este. El recorrido combina los picos de granito, los valles y el patrimonio budista de Seoraksan con el mercado de mariscos y la playa de Sokcho — una combinación de montaña y océano que solo ofrece la costa este. 12 horas con guía de habla inglesa y transporte de ida y vuelta.",
@@ -46,7 +46,7 @@
       "Follaje Otoñal",
       "Excursión de un día"
     ],
-    "heroImage": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp"
+    "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp"
   },
   "headlineLine1": "Seoraksan y Sokcho",
   "headlineLine2": "Excursión a la Playa",
@@ -59,7 +59,7 @@
     "discountPercent": null
   },
   "hero": {
-    "imageUrl": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+    "imageUrl": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
     "imagePosition": "center 35%",
     "tagline": "El parque nacional más icónico de Corea, más el puerto más acogedor del Mar del Este",
     "pills": [
@@ -138,10 +138,26 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "",
-      "location": "Parque Nacional Seoraksan",
-      "alt": "Parque Nacional Seoraksan — foto en ruta",
-      "caption": "Parque Nacional Seoraksan"
+      "src": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "location": "Parque Nacional de Seoraksan",
+      "alt": "Parque Nacional de Seoraksan — gallery image 1",
+      "caption": "Parque Nacional de Seoraksan — photo 1"
+    },
+    {
+      "id": 2,
+      "type": "photo",
+      "src": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+      "location": "Parque Nacional de Seoraksan",
+      "alt": "Parque Nacional de Seoraksan — gallery image 2",
+      "caption": "Parque Nacional de Seoraksan — photo 2"
+    },
+    {
+      "id": 3,
+      "type": "photo",
+      "src": "/images/tours/seoraksan/photo-001.webp",
+      "location": "Parque Nacional de Seoraksan",
+      "alt": "Parque Nacional de Seoraksan — gallery image 3",
+      "caption": "Parque Nacional de Seoraksan — photo 3"
     }
   ],
   "itineraryStops": [
@@ -236,6 +252,46 @@
       "images": [
         "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
         "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seoraksan/photo-001.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+          "location": "Parque Nacional de Seoraksan",
+          "caption": "Parque Nacional de Seoraksan — photo 1",
+          "alt": "Parque Nacional de Seoraksan — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+          "location": "Parque Nacional de Seoraksan",
+          "caption": "Parque Nacional de Seoraksan — photo 2",
+          "alt": "Parque Nacional de Seoraksan — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/seoraksan/photo-001.webp",
+          "location": "Parque Nacional de Seoraksan",
+          "caption": "Parque Nacional de Seoraksan — photo 3",
+          "alt": "Parque Nacional de Seoraksan — gallery image 3"
+        }
       ]
     },
     {
@@ -1254,7 +1310,7 @@
             "name": "Parque Nacional Seoraksan",
             "category": "Parque Nacional (Montaña)",
             "description": "Aproximadamente tres horas de tiempo libre en el parque nacional más querido de Corea — el 5.º parque nacional del país (designado en marzo de 1970) y la primera Reserva de la Biosfera de la UNESCO en Corea (1982). Desde la entrada principal de Sogongwon se puede caminar por el sendero pavimentado frente al Gran Buda de Bronce del Templo Sinheungsa hasta la Roca Biseondae (1,5 km de ida a orillas de un arroyo), o tomar el teleférico opcional de Gwongeumseong (no incluido, aprox. ₩15.000) para disfrutar de vistas desde la cresta de la montaña.",
-            "image": "",
+            "image": "/images/tours/seoraksan/photo-001.webp",
             "highlights": [
               "Templo Sinheungsa y Gran Buda de Bronce",
               "Roca Biseondae y sendero junto al arroyo",
@@ -1288,7 +1344,26 @@
               "sources": [],
               "verified_date": "2026-04-27",
               "note": "Operational details verified via established knowledge"
-            }
+            },
+            "images": [
+              "/images/tours/seoraksan/photo-001.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/seoraksan/photo-001.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/seoraksan/photo-001.webp",
+                "location": "Parque Nacional Seoraksan",
+                "caption": "Parque Nacional Seoraksan — photo 1",
+                "alt": "Parque Nacional Seoraksan — gallery image 1"
+              }
+            ]
           },
           {
             "number": 3,

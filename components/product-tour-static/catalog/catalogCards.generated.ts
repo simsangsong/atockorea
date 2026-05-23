@@ -81,8 +81,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Pickup at port",
           "Return guaranteed"
         ],
-        "heroImage": "/images/tours/songdo-beach/chatgpt-image-2026-5-10-12-32-12.webp",
-        "thumbnail": "/images/tours/songdo-beach/chatgpt-image-2026-5-10-12-32-12.webp",
+        "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+        "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
         "priceLabel": "From US$49 per person (was $55, 11% off)",
         "shortCardDescription": "A large-coach Busan coastal day tour built for cruise passengers: cruise terminal pickup, 8 signature stops (Haedong Yonggungsa, UN Memorial Cemetery, Jagalchi Market, BIFF Square, Gukje Market, Gamcheon Culture Village, Songdo Beach, Yongdusan Park), and a return-before-sail-away guarantee. Budget tier — same circuit as the small-group product, larger coach."
       },
@@ -106,8 +106,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Small group",
           "From Busan"
         ],
-        "heroImage": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
-        "thumbnail": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+        "heroImage": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+        "thumbnail": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
         "priceLabel": "From US$39 per person (was $50, 22% off)",
         "shortCardDescription": "A culture-rich Gyeongju day trip from Busan. Start with Ahopsan Forest, continue to Bulguksa Temple, walk through Gyochon Village and the House of Choi area, see Silla royal-tomb scenery around Daereungwon and Hwangnidan-gil, then finish with the National Museum or Donggung Palace option and Woljeonggyo Bridge."
       },
@@ -131,8 +131,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Pickup at 3 stations",
           "11-hour day"
         ],
-        "heroImage": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp",
-        "thumbnail": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp",
+        "heroImage": "/images/itinerary/tongdosa-iljumun.webp",
+        "thumbnail": "/images/itinerary/tongdosa-iljumun.webp",
         "priceLabel": "From US$85 per person (was $93, 9% off)",
         "shortCardDescription": "An 11-hour Busan outskirts coach day tour into Yangsan (Tongdosa Temple, UNESCO World Heritage Site 2018), Ulsan (Amethyst Cave Theme Park with optional boat ride), Miryang (Yeongnam Alps Ice Valley Cable Car), and finishing at Gamcheon Culture Village in Busan. Three pickup points (Busan Station / Seomyeon / Haeundae); optional Jagalchi hop-off at the end."
       },
@@ -156,8 +156,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "2 UNESCO Sites",
           "Busan Pickup"
         ],
-        "heroImage": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
-        "thumbnail": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+        "heroImage": "/images/itinerary/tongdosa-iljumun.webp",
+        "thumbnail": "/images/itinerary/tongdosa-iljumun.webp",
         "priceLabel": "",
         "shortCardDescription": "An 8.5-hour Busan-departure dual-season shuttle covering Yangsan and Gyeongju. The default itinerary visits Tongdosa Temple (UNESCO Sansa, Korea's Three Jewel Temple, with the 350-year Jajangmae plum tree), Wondong Plum Blossom Village (Minari Samgyeopsal lunch in greenhouse pop-up restaurants), Bulguksa Temple (UNESCO World Heritage), and Bomun Lake (8 km cherry blossom loop). Wider operating window than cherry-only tours: ~Feb 25 – Apr 10 covers both plum and cherry blossom peaks. Daily route shifts emphasis based on plum vs cherry bloom status."
       },
@@ -180,8 +180,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Customizable Route",
           "Cruise Pickup Included"
         ],
-        "heroImage": "/images/tours/busan-private/busan-private-cruise-terminal-thumbnail.webp",
-        "thumbnail": "/images/tours/busan-private/busan-private-cruise-terminal-thumbnail.webp",
+        "heroImage": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+        "thumbnail": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
         "priceLabel": "From US$359 per vehicle (was $379, 1–6 pax, 8h) · 7–12 pax 2× · 13+ pax 3×",
         "shortCardDescription": "A private Busan shore excursion for cruise guests. Choose the places that matter most — Haedong Yonggungsa, Cheongsapo, Blue Line Park, UN Memorial Cemetery, Gamcheon Culture Village, Songdo, Nampo-dong, Jagalchi Market, and more — then adjust the day with your guide around your ship schedule."
       },
@@ -205,8 +205,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Pickup at port",
           "9-hour shore day"
         ],
-        "heroImage": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
-        "thumbnail": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+        "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+        "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
         "priceLabel": "From US$79 per person (was $85, 7% off)",
         "shortCardDescription": "A small-group Busan shore excursion for cruise passengers. Visit a balanced mix of Busan highlights such as Haedong Yonggungsa, UN Memorial Cemetery, Jagalchi/BIFF/Gukje market area, Gamcheon Culture Village, Songdo Beach, and Yongdusan Park when time allows. Route order and stops may adjust to ship schedule, traffic, and weather."
       },
@@ -230,8 +230,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "UNESCO Sites",
           "Busan Pickup"
         ],
-        "heroImage": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
-        "thumbnail": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+        "heroImage": "/images/itinerary/bomun-lake-cherry-blossom-promenade.webp",
+        "thumbnail": "/images/itinerary/bomun-lake-cherry-blossom-promenade.webp",
         "priceLabel": "",
         "shortCardDescription": "An 8.5-hour Busan-departure shuttle tour to Gyeongju's biggest spring cherry blossom spots. The default route covers Bomun Lake (8 km of cherry tree-lined lakeside walking), the Cheomseongdae + Daereungwon historic core (UNESCO Gyeongju Historic Areas), and Bulguksa Temple (UNESCO World Heritage with mid-April yaezakura double cherry blossom). 2–3 stops are confirmed each morning based on the day's bloom report. Tour operates Mar 28 to Apr 10 only — full refund if bloom is materially delayed or finished."
       },
@@ -255,8 +255,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Busan classic",
           "Year-round"
         ],
-        "heroImage": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
-        "thumbnail": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+        "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+        "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
         "priceLabel": "From US$29 per person (was $41, 29% off)",
         "shortCardDescription": "A balanced Busan city tour for first-time visitors: seaside temple, Cheongsapo coastal viewpoint, optional Blue Line Park/Sky Capsule area, Korean War memorial history, colorful Gamcheon Culture Village, and a market-area finish near Jagalchi/Nampo-dong."
       },
@@ -279,8 +279,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "First-Time Friendly",
           "East Jeju Signature"
         ],
-        "heroImage": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
-        "thumbnail": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+        "heroImage": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
+        "thumbnail": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
         "priceLabel": "From US$59 per person (was $69, 14% off)",
         "shortCardDescription": "An easy-to-follow East Jeju day route that starts with stone culture and volcanic context, moves through the coast and Seongsan Ilchulbong, and finishes with Ilchulland and Seongeup Folk Village for a more complete day."
       },
@@ -304,8 +304,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "From Busan",
           "Earlier return"
         ],
-        "heroImage": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
-        "thumbnail": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+        "heroImage": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+        "thumbnail": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
         "priceLabel": "From US$39 per person (was $50, 22% off)",
         "shortCardDescription": "Small-group day tour from Busan to Gyeongju, the Silla kingdom's ancient capital (57 BCE–935 CE). Same classic six-attraction route as the longer Busan→Gyeongju UNESCO Legacy tour (Ahopsan Bamboo Forest → Bulguksa Temple UNESCO → Gyeongju ssambap lunch → National Museum → Gyochon Hanok Village → Woljeonggyo Bridge) but at a calmer pace and earlier return (≈18:50). English/Chinese-speaking certified guide; mini-van; free admissions throughout (only Ahopsan ₩5,000 and lunch paid on-day)."
       },
@@ -329,8 +329,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Pickup at Incheon port",
           "9-hour window"
         ],
-        "heroImage": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
-        "thumbnail": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
+        "heroImage": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+        "thumbnail": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
         "priceLabel": "From US$69 per person (was $76, 9% off)",
         "shortCardDescription": "Shared-van day tour from Incheon Cruise Terminal hitting Seoul's headline central-city stops in a single 9-hour window: Gyeongbokgung Palace (or Changdeokgung on Tuesdays), Bukchon Hanok Village, lunch at Gwangjang Market (the city's most-photographed streetfood alley), and Insadong cultural street. Pickup calibrated to your specific ship's disembarkation; certified English/Chinese-speaking guide; ≈75 min return drive built in."
       },
@@ -356,8 +356,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Customizable",
           "Guaranteed return"
         ],
-        "heroImage": "/images/tours/incheon-cruise/incheon-cruise-terminal-thumbnail.webp",
-        "thumbnail": "/images/tours/incheon-cruise/incheon-cruise-terminal-thumbnail.webp",
+        "heroImage": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+        "thumbnail": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
         "priceLabel": "From US$419 per vehicle",
         "shortCardDescription": "An 8-hour private car charter built around your ship's all-aboard time, not a fixed schedule. Gangway pickup at Incheon Cruise Terminal, English-speaking driver-guide, and a customizable route through Gyeongbokgung Palace, Bukchon Hanok Village + Insadong, lunch of your choice, N Seoul Tower, and Myeongdong or Jogyesa Temple. The driver-guide holds a 60-minute traffic buffer before sailaway so you never miss the ship."
       },
@@ -430,8 +430,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Premium cruise",
           "Small group"
         ],
-        "heroImage": "/images/tours/jeju-cruise-terminal/jeju-cruise-terminal-private-pickup.webp",
-        "thumbnail": "/images/tours/jeju-cruise-terminal/jeju-cruise-terminal-private-pickup.webp",
+        "heroImage": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+        "thumbnail": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
         "priceLabel": "From US$79 per person (was $85, 7% off)",
         "shortCardDescription": "A small group tour cruise shore excursion that adapts the route to your cruise port. Jeju Port (north) runs an east-coast UNESCO route via Seongsan Ilchulbong; Gangjeong Port (south) runs a Hallasan 1100 + south-coast geology + Olle Market route. Both return to the cruise terminal with comfortable buffer."
       },
@@ -481,8 +481,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Best for One-Day Visitors",
           "Fast-Paced Highlights"
         ],
-        "heroImage": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
-        "thumbnail": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
         "priceLabel": "From US$79 per person (was $89, 11% off)",
         "shortCardDescription": "A high-efficiency Jeju full-island route for travelers with limited time, linking Hallasan, the south coast, and Seongsan Ilchulbong in one day."
       },
@@ -509,8 +509,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "UNESCO",
           "Festival"
         ],
-        "heroImage": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-23.webp",
-        "thumbnail": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-23.webp",
+        "heroImage": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+        "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
         "priceLabel": "From US$59 per person (was $69, 14% off)",
         "shortCardDescription": "A seasonal small-group day-tour of east Jeju built around the island's hydrangea festivals (late May to mid-July, peak mid-June) at Hueree Natural Park and Ilchul Land. The route also covers two UNESCO World Heritage sites — Seongsan Ilchulbong (Sunrise Peak) and Seongeup Folk Village — plus Hamdeok Beach and the Micheon Cave lava tube. Hotel pickup in Jeju City, English/Chinese-speaking licensed guide-driver."
       },
@@ -584,8 +584,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Value priced",
           "No shopping"
         ],
-        "heroImage": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
-        "thumbnail": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
         "priceLabel": "From US$59 per person (was $69, 14% off)",
         "shortCardDescription": "A small-group day tour through southern Jeju's signature stops — the Eoseungsaengak Trail along Hallasan (UNESCO biosphere), Camellia Hill garden, the three-tier Cheonjeyeon Waterfall, the hexagonal Jusangjeolli Cliff, and the O'sulloc Tea Museum. Four pickup points across Jeju City and the airport, certified English/Chinese-speaking guide, all admissions included, no shopping pressure."
       },
@@ -611,8 +611,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Café Culture",
           "Coastal"
         ],
-        "heroImage": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
-        "thumbnail": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+        "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
         "priceLabel": "From US$59 per person (was $69, 14% off)",
         "shortCardDescription": "A small-group day tour pairing Jeju's western and southern coasts in a single loop — Hallasan's 1100 Altitude Wetland (UNESCO), the hexagonal Jusangjeolli Cliff, Songaksan's panoramic viewpoint, Cheonjeyeon Waterfall, O'sulloc Tea Museum, and the Hyeopjae Beach café strip on the west coast. A lifestyle-oriented framing — 'volcanic landscapes meet dramatic coastlines and trendy seaside cafés.'"
       },
@@ -639,8 +639,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Camellia",
           "Snow"
         ],
-        "heroImage": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
-        "thumbnail": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+        "heroImage": "/images/tours/jeju-tangerine-farm/photo-001.webp",
+        "thumbnail": "/images/tours/jeju-tangerine-farm/photo-001.webp",
         "priceLabel": "From US$59 per person (was $69, 14% off)",
         "shortCardDescription": "A seasonal winter day-tour of southwest Jeju (December through February) built around the three things only Jeju does well in winter: snow on Hallasan's slopes, red camellias in full bloom at Camellia Hill, and pick-your-own Jeju tangerines (gyul) at a working orchard. The route also covers Cheonjeyeon Falls, Jusangjeolli columnar cliffs, and the Osulloc Tea Museum. Hotel pickup in Jeju City, English/Chinese-speaking licensed guide."
       },
@@ -711,8 +711,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "K-Drama Filming Locations",
           "Couples & Families"
         ],
-        "heroImage": "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
-        "thumbnail": "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
+        "heroImage": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
+        "thumbnail": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
         "priceLabel": "US$189 per person",
         "shortCardDescription": "A private day trip from Seoul covering Nami Island's tree-lined ferry experience, the Garden of Morning Calm's themed garden walks, and the colorful Le Petit Prince village of Petite France. Hotel pickup, private vehicle, and a relaxed pace make this the comfort-led version of a classic Gapyeong loop."
       },
@@ -761,8 +761,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "All admissions included",
           "13-hour day"
         ],
-        "heroImage": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
-        "thumbnail": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
+        "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+        "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
         "priceLabel": "From US$59 per person (was $82, 28% off)",
         "shortCardDescription": "A 13-hour coach day tour from Seoul covering Korea's three most-photographed day-trip stops: Seoraksan National Park (Korea's first UNESCO Biosphere Reserve), Nami Island (Winter Sonata's Metasequoia Lane), and the Garden of Morning Calm (Korea's signature private arboretum with 5,000 plant species). All admissions included; English-speaking guide; pickup at Hongik University Station or Myeongdong Station."
       },
@@ -789,8 +789,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Autumn Foliage",
           "Day Trip"
         ],
-        "heroImage": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
-        "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+        "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+        "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
         "priceLabel": "From US$49 per person (was $57, 14% off)",
         "shortCardDescription": "A small-group day-trip from Seoul to Korea's most-loved national park and the East Sea coastal city of Sokcho. The route pairs Seoraksan's granite peaks, valleys, and Buddhist heritage with the seafood market and beach of Sokcho — a mountain-and-ocean combination only the east coast offers. 12 hours with English-speaking guide and round-trip transport."
       },
@@ -841,8 +841,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Folk Village",
           "Day Trip"
         ],
-        "heroImage": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-        "thumbnail": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
+        "heroImage": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+        "thumbnail": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
         "priceLabel": "From US$59 per person (was $66, 11% off)",
         "shortCardDescription": "A small-group cultural day-trip from Seoul to Gyeonggi Province covering four contrasting sides of Korean heritage and modern life: the UNESCO-listed Suwon Hwaseong Fortress (18th-century walls and gates), the restored Hwaseong Haenggung Palace with its Joseon-era reenactments, the immersive open-air Korean Folk Village in Yongin, and the dramatic four-floor Starfield Library Suwon. 10 hours with included transport and admissions."
       },
@@ -869,8 +869,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Shopping",
           "Day Trip"
         ],
-        "heroImage": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-15.webp",
-        "thumbnail": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-15.webp",
+        "heroImage": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+        "thumbnail": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
         "priceLabel": "From US$52 per person (was $59, 12% off)",
         "shortCardDescription": "A small-group cultural day-trip from Seoul covering four contrasting sides of Gyeonggi Province: the UNESCO-listed Suwon Hwaseong Fortress with its 18th-century walls and Haenggung Palace, the dramatic LED-lit underground theme park inside Gwangmyeong Cave (a former Japanese-era gold mine), the four-floor Starfield Library Suwon, and the 1,000-year-old Nammun traditional market for street food. 9 hours with included transport and admissions."
       },
@@ -893,8 +893,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Heritage + Modern Day Trip",
           "Admission Included"
         ],
-        "heroImage": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
-        "thumbnail": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
+        "heroImage": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+        "thumbnail": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
         "priceLabel": "From US$47 per person (was $54, 13% off)",
         "shortCardDescription": "A small-group day-trip from Seoul covering three contrasting sides of Korea: the UNESCO-listed Suwon Hwaseong Fortress (18th-century military architecture), the photogenic Starfield Suwon Library (contemporary cultural icon), and Waujeongsa Temple in Yongin (giant outdoor Buddha and stone bell). Strong heritage value with included transport and admission."
       },
@@ -916,8 +916,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Great for First-Time Jeju Visitors",
           "Jeju Southwest"
         ],
-        "heroImage": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24.webp",
-        "thumbnail": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24.webp",
+        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
         "priceLabel": "From US$59 per person (was $69, 14% off)",
         "shortCardDescription": "A well-balanced Jeju southwest route linking a short Hallasan walk, volcanic coastline, Cheonjeyeon Waterfall, O’Sulloc tea fields, and Aewol Cafe Street."
       },
@@ -943,8 +943,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "항구 픽업",
           "귀환 보장"
         ],
-        "heroImage": "/images/tours/songdo-beach/chatgpt-image-2026-5-10-12-32-12.webp",
-        "thumbnail": "/images/tours/songdo-beach/chatgpt-image-2026-5-10-12-32-12.webp",
+        "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+        "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
         "priceLabel": "1인 US$49부터 (정가 $55, 11% 할인)",
         "shortCardDescription": "크루즈 승객을 위해 설계된 대형 버스 부산 해안 당일 투어: 크루즈 터미널 픽업, 8개 대표 명소(해동용궁사, UN기념공원, 자갈치시장, BIFF광장, 국제시장, 감천문화마을, 송도해수욕장, 용두산공원) 방문, 출항 전 귀환 보장. 합리적인 가격대 — 소규모 그룹 상품과 동일한 코스, 대형 버스 이용."
       },
@@ -968,8 +968,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "소규모 그룹",
           "부산 출발"
         ],
-        "heroImage": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
-        "thumbnail": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+        "heroImage": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+        "thumbnail": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
         "priceLabel": "1인 US$39 (정가 $50, 22% 할인)",
         "shortCardDescription": "신라왕국의 수도로 992년(기원전 57년~서기 935년)간 번성했으며 한국에서 유네스코 세계유산이 가장 밀집된 도시 경주로 떠나는 소규모 부산 출발 당일 투어. 코스: 아홉산 대나무 숲 → 불국사 (유네스코) → 경주 쌈밥 점심 → 국립경주박물관 → 교촌 한옥마을 → 월정교. 영어·중국어 구사 공인 가이드, 미니밴, 불국사 및 박물관 입장료 무료."
       },
@@ -993,8 +993,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "3개 정류장 픽업",
           "11시간 일정"
         ],
-        "heroImage": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp",
-        "thumbnail": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp",
+        "heroImage": "/images/itinerary/tongdosa-iljumun.webp",
+        "thumbnail": "/images/itinerary/tongdosa-iljumun.webp",
         "priceLabel": "",
         "shortCardDescription": "양산(통도사, 2018 유네스코 세계문화유산), 울산(자수정 동굴 테마파크, 선택 보트 탑승), 밀양(영남 알프스 얼음골 케이블카)을 거쳐 부산 감천문화마을에서 마무리하는 11시간 부산 외곽 코치 당일 투어. 픽업 3개소(부산역 / 서면 / 해운대) 운영; 마지막에 자갈치 선택 하차 가능."
       },
@@ -1018,8 +1018,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "유네스코 등재 2곳",
           "부산 픽업"
         ],
-        "heroImage": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
-        "thumbnail": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+        "heroImage": "/images/itinerary/tongdosa-iljumun.webp",
+        "thumbnail": "/images/itinerary/tongdosa-iljumun.webp",
         "priceLabel": "",
         "shortCardDescription": "양산과 경주를 아우르는 8.5시간 부산 출발 이중 시즌 셔틀 투어입니다. 기본 일정은 통도사(유네스코 산사·한국 삼보 사찰, 수령 350년 자장매 보유), 원동 매화마을(비닐하우스 팝업 식당에서 미나리 삼겹살 점심 식사), 불국사(유네스코 세계문화유산), 보문호(8km 벚꽃 산책로)를 방문합니다. 벚꽃 전용 투어보다 넓은 운행 기간으로, 약 2월 25일 ~ 4월 10일 동안 매화와 벚꽃 절정 시기를 모두 커버합니다. 매화와 벚꽃의 개화 상황에 따라 매일 코스 비중을 탄력적으로 조정합니다."
       },
@@ -1042,8 +1042,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "맞춤형 루트",
           "크루즈 픽업 포함"
         ],
-        "heroImage": "/images/tours/busan-private/busan-private-cruise-terminal-thumbnail.webp",
-        "thumbnail": "/images/tours/busan-private/busan-private-cruise-terminal-thumbnail.webp",
+        "heroImage": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+        "thumbnail": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
         "priceLabel": "차량 1대 8시간 기준 $359 (정가 $379, 1–6인) · 7–12인 2배 · 13인 이상 3배",
         "shortCardDescription": "공인 영어 구사 드라이버 가이드와 함께하는 크루즈 승객을 위한 8시간 부산 프라이빗 전세차. 기본 일정은 UN기념공원, 태종대 절벽, 감천문화마을, 용두산공원, 자갈치시장으로 구성됩니다. 완전 맞춤 변경 가능. 크루즈 터미널, KTX역, 또는 부산 시내 호텔 어디서든 픽업 가능; 선박으로의 정시 귀환 보장."
       },
@@ -1067,8 +1067,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "항구 픽업",
           "9시간 일정"
         ],
-        "heroImage": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
-        "thumbnail": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+        "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+        "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
         "priceLabel": "1인 US$79 (정가 $85, 7% 할인)",
         "shortCardDescription": "부산 크루즈 터미널에서 출발해 9시간 동안 가장 인기 있는 다섯 곳을 공유 밴으로 둘러보는 당일 투어: 유엔기념공원(한국전쟁 역사), 태종대 해안 절벽, 현지 부산 식당에서의 점심, 감천문화마을(색채 가득한 산복 마을), 부산타워 전망대 관람이 가능한 용두산공원, 그리고 자갈치시장. 승선한 선박의 하선 일정에 맞춰 픽업 시간을 조율해 드립니다. 영어·중국어 공인 가이드 동행."
       },
@@ -1092,8 +1092,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "유네스코 유적지",
           "부산 픽업"
         ],
-        "heroImage": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
-        "thumbnail": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+        "heroImage": "/images/itinerary/bomun-lake-cherry-blossom-promenade.webp",
+        "thumbnail": "/images/itinerary/bomun-lake-cherry-blossom-promenade.webp",
         "priceLabel": "",
         "shortCardDescription": "경주의 대표 봄 벚꽃 명소를 찾아가는 부산 출발 8.5시간 셔틀 투어. 기본 코스는 보문호(호반을 따라 이어지는 8km 벚꽃길), 첨성대·대릉원 역사 지구(유네스코 경주 역사 지역), 불국사(4월 중순 겹벚꽃 야에자쿠라로 유명한 유네스코 세계문화유산)를 포함합니다. 당일 개화 상황 보고에 따라 매일 아침 2~3곳의 방문지가 확정됩니다. 투어는 3월 28일~4월 10일만 운행되며, 개화가 현저히 지연되거나 종료된 경우 전액 환불해 드립니다."
       },
@@ -1117,8 +1117,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "부산 클래식",
           "연중 운영"
         ],
-        "heroImage": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
-        "thumbnail": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+        "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+        "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
         "priceLabel": "1인 US$29 (정가 $41, 29% 할인)",
         "shortCardDescription": "해동 용궁사 해변 사원, 청사포 & 블루라인 파크(스카이 캡슐 선택 가능), 부산 현지 점심식사, UN 기념 공원, 감천문화마을 알록달록 산비탈, 자갈치 수산시장을 포함한 7개 코스 소그룹 당일 투어. 부산 중심부 3개 픽업 포인트 제공, 공인 영어 가이드 동행, 미니버스 운행(최대 약 12명). 모든 관광지 입장료 무료; 점심 및 선택 티켓만 현장 결제."
       },
@@ -1141,8 +1141,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "첫 여행자 추천",
           "제주 동부 시그니처"
         ],
-        "heroImage": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
-        "thumbnail": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+        "heroImage": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
+        "thumbnail": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
         "priceLabel": "",
         "shortCardDescription": "돌문화와 화산 지형으로 시작해 해안과 성산일출봉을 거쳐 일출랜드와 성읍민속마을로 마무리되는, 더욱 알찬 하루를 위한 제주 동부 당일 코스입니다."
       },
@@ -1166,8 +1166,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "부산 출발",
           "이른 귀환"
         ],
-        "heroImage": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
-        "thumbnail": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+        "heroImage": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+        "thumbnail": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
         "priceLabel": "1인 US$39 (정가 $50, 22% 할인)",
         "shortCardDescription": "신라 왕국의 고도(古都) 경주(기원전 57년~935년)로 떠나는 부산 출발 소규모 당일 투어. 유네스코 레거시 버전과 동일한 클래식 6개 명소 코스(아홉산 숲 대나무숲 → 불국사 유네스코 → 경주 쌈밥 점심 → 국립박물관 → 교촌 한옥마을 → 월정교)로 진행되지만, 여유로운 페이스와 이른 귀환(약 18:50)이 특징입니다. 영어·중국어 가능 공인 가이드, 미니밴 제공, 전 일정 입장료 무료(아홉산 ₩5,000 및 점심 식사는 현장 결제)."
       },
@@ -1191,8 +1191,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "인천 항구 픽업",
           "9시간 일정"
         ],
-        "heroImage": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
-        "thumbnail": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
+        "heroImage": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+        "thumbnail": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
         "priceLabel": "1인 US$69 (정가 $76, 9% 할인)",
         "shortCardDescription": "인천 크루즈 터미널 출발, 9시간 일정으로 서울의 대표 도심 명소를 소형 밴으로 둘러보는 당일 투어: 경복궁(화요일에는 창덕궁 방문), 북촌 한옥마을, 광장시장 점심(서울에서 가장 많이 촬영되는 길거리 음식 골목), 인사동 문화거리. 승선하신 선박의 하선 시간에 맞춰 픽업 조정; 공인 영어·중국어 가이드 동행; 왕복 약 75분 이동 시간 포함."
       },
@@ -1218,8 +1218,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "맞춤형",
           "귀선 보장"
         ],
-        "heroImage": "/images/tours/incheon-cruise/incheon-cruise-terminal-thumbnail.webp",
-        "thumbnail": "/images/tours/incheon-cruise/incheon-cruise-terminal-thumbnail.webp",
+        "heroImage": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+        "thumbnail": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
         "priceLabel": "차량당 US$419부터",
         "shortCardDescription": "정해진 일정이 아닌, 출항 시간에 맞춰 설계된 8시간 프라이빗 차량 투어. 인천 크루즈 터미널 갱웨이 픽업, 영어 구사 드라이버 가이드, 경복궁, 북촌 한옥마을 + 인사동, 원하시는 점심 식사, N서울타워, 명동 또는 조계사로 이어지는 맞춤형 코스. 드라이버 가이드가 출항 전 60분의 교통 여유 시간을 확보하여 절대 배를 놓치지 않습니다."
       },
@@ -1292,8 +1292,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "프리미엄 크루즈",
           "소그룹"
         ],
-        "heroImage": "/images/tours/jeju-cruise-terminal/jeju-cruise-terminal-private-pickup.webp",
-        "thumbnail": "/images/tours/jeju-cruise-terminal/jeju-cruise-terminal-private-pickup.webp",
+        "heroImage": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+        "thumbnail": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
         "priceLabel": "1인 US$79 (정가 $85, 7% 할인)",
         "shortCardDescription": "입항 항구에 따라 루트가 달라지는 소그룹 크루즈 기항지 투어입니다. 제주항(북쪽)은 성산일출봉을 경유하는 동해안 유네스코 루트로, 강정항(남쪽)은 한라산 1100고지 + 남해안 지질 명소 + 올레시장 루트로 운행됩니다. 두 루트 모두 여유 있게 크루즈 터미널로 귀환합니다."
       },
@@ -1343,8 +1343,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "당일 여행객에게 최적",
           "빠르게 즐기는 하이라이트"
         ],
-        "heroImage": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
-        "thumbnail": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
         "priceLabel": "1인 US$79 (정가 $89, 11% 할인)",
         "shortCardDescription": "시간이 부족한 여행객을 위한 고효율 제주 전 지역 코스로, 한라산, 남쪽 해안, 성산일출봉을 하루에 연결합니다."
       },
@@ -1371,8 +1371,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "유네스코",
           "축제"
         ],
-        "heroImage": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-23.webp",
-        "thumbnail": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-23.webp",
+        "heroImage": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+        "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
         "priceLabel": "1인 US$59 (정가 $69, 14% 할인)",
         "shortCardDescription": "제주 동부 수국 시즌 한정(5월 말~7월 중순) 소그룹 투어. 함덕해변, 성읍민속마을(유네스코), 성산일출봉(유네스코), 일출랜드 수국 축제+미천굴, 휴애리 자연생활공원 수국 포함."
       },
@@ -1446,8 +1446,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "합리적인 가격",
           "쇼핑 없음"
         ],
-        "heroImage": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
-        "thumbnail": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
         "priceLabel": "",
         "shortCardDescription": "제주 남부의 대표 명소를 소그룹으로 둘러보는 당일 투어 — 한라산 어승생악 트레일 (유네스코 생물권보전지역), 카멜리아힐 가든, 3단 폭포 천제연, 육각형 주상절리, 그리고 오설록 티 뮤지엄. 제주시 전역 및 공항 포함 총 4곳의 픽업 포인트 운영, 공인 영어·중국어 가이드 동반, 입장료 전체 포함, 쇼핑 강요 없음. 648개의 리뷰에서 4.9/5를 기록한, 제주 입문 투어 중 가장 많은 리뷰를 보유한 투어입니다."
       },
@@ -1473,8 +1473,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "카페 문화",
           "해안"
         ],
-        "heroImage": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
-        "thumbnail": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+        "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
         "priceLabel": "1인 US$59 (정가 $69, 14% 할인)",
         "shortCardDescription": "제주의 서부와 남부 해안을 하나의 코스로 연결하는 소그룹 일일 투어 — 한라산 1100 고지 습지 (유네스코), 육각형 주상절리대, 송악산 파노라마 전망대, 천제연 폭포, 오설록 티 뮤지엄, 그리고 서쪽 해안의 협재 해변 카페 거리. 남부 유네스코 투어와 동일한 운영사이지만, 보다 라이프스타일 지향적인 콘셉트 — '화산 지형과 웅장한 해안선, 그리고 트렌디한 바닷가 카페의 만남.'"
       },
@@ -1501,8 +1501,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "동백",
           "눈"
         ],
-        "heroImage": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
-        "thumbnail": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+        "heroImage": "/images/tours/jeju-tangerine-farm/photo-001.webp",
+        "thumbnail": "/images/tours/jeju-tangerine-farm/photo-001.webp",
         "priceLabel": "",
         "shortCardDescription": "12월부터 2월까지 운영되는 제주 서남부 겨울 당일 투어로, 제주의 겨울을 대표하는 세 가지 매력을 중심으로 구성됩니다: 한라산 기슭의 설경, 카멜리아힐의 붉은 동백 만개, 그리고 실제 과수원에서 직접 따는 제주 귤(감귤) 체험. 코스에는 천제연폭포, 주상절리, 오설록 티 뮤지엄도 포함됩니다. 제주시 내 호텔 픽업 제공, 영어·중국어 가능 공인 가이드 동행."
       },
@@ -1573,8 +1573,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "한국 드라마 촬영지",
           "커플 & 가족"
         ],
-        "heroImage": "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
-        "thumbnail": "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
+        "heroImage": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
+        "thumbnail": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
         "priceLabel": "",
         "shortCardDescription": "남이섬의 가로수길 페리 체험, 아침고요수목원의 테마 정원 산책, 어린왕자 마을 쁘띠프랑스의 알록달록한 풍경까지 하루에 담는 서울 출발 프라이빗 당일 투어. 호텔 픽업, 프라이빗 차량, 여유로운 일정으로 즐기는 가평 코스의 프리미엄 버전."
       },
@@ -1623,8 +1623,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "입장료 전액 포함",
           "13시간 당일 일정"
         ],
-        "heroImage": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
-        "thumbnail": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
+        "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+        "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
         "priceLabel": "1인 US$59부터 (정가 $82, 28% 할인)",
         "shortCardDescription": "서울 출발 13시간 코치 당일 투어로, 한국에서 가장 많이 촬영되는 당일 여행지 세 곳을 모두 방문합니다: 설악산 국립공원(한국 유일의 유네스코 생물권보전지역), 남이섬(겨울연가의 메타세쿼이아길), 아침고요수목원(5,000여 종의 식물을 보유한 한국 대표 프라이빗 수목원). 전 일정 입장료 포함, 영어 안내 가이드, 홍익대입구역 또는 명동역 픽업."
       },
@@ -1651,8 +1651,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "단풍",
           "당일치기"
         ],
-        "heroImage": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
-        "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+        "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+        "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
         "priceLabel": "",
         "shortCardDescription": "서울에서 한국에서 가장 사랑받는 국립공원과 동해안 도시 속초로 떠나는 소그룹 당일치기 여행. 설악산의 화강암 봉우리, 계곡, 불교 유산과 속초의 수산시장 및 해변을 함께 즐길 수 있으며, 동해안에서만 경험할 수 있는 산과 바다의 조합입니다. 영어 가이드와 왕복 교통을 포함한 12시간 투어."
       },
@@ -1703,8 +1703,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "민속촌",
           "당일 여행"
         ],
-        "heroImage": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-        "thumbnail": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
+        "heroImage": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+        "thumbnail": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
         "priceLabel": "",
         "shortCardDescription": "서울에서 출발하는 소그룹 문화 당일 투어로, 경기도의 네 가지 대조적인 한국 유산과 현대 생활을 경험합니다: 유네스코 세계유산으로 등재된 수원 화성(18세기 성벽과 성문), 조선 시대 재현 행사가 펼쳐지는 화성행궁, 용인의 몰입형 야외 한국민속촌, 그리고 웅장한 4층 규모의 스타필드 수원 도서관. 교통 및 입장료 포함 10시간 투어."
       },
@@ -1731,8 +1731,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "쇼핑",
           "당일 여행"
         ],
-        "heroImage": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-15.webp",
-        "thumbnail": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-15.webp",
+        "heroImage": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+        "thumbnail": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
         "priceLabel": "",
         "shortCardDescription": "경기도의 대조적인 네 가지 매력을 경험하는 서울 출발 소그룹 문화 당일 여행: 18세기 성곽과 행궁을 품은 유네스코 세계문화유산 수원 화성, 일제강점기 금광이었던 광명동굴 내 화려한 LED 지하 테마파크, 4층 규모의 스타필드 라이브러리 수원, 그리고 길거리 음식을 즐길 수 있는 천 년 역사의 남문 전통시장. 교통 및 입장료 포함, 총 9시간 진행."
       },
@@ -1755,8 +1755,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "문화유산 + 현대 당일 여행",
           "입장료 포함"
         ],
-        "heroImage": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
-        "thumbnail": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
+        "heroImage": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+        "thumbnail": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
         "priceLabel": "",
         "shortCardDescription": "서울 출발 소그룹 당일 여행으로 한국의 세 가지 대조적인 면을 경험하세요: 유네스코 세계유산으로 등재된 수원 화성(18세기 군사 건축물), 사진 명소로 유명한 스타필드 수원 도서관(현대 문화 아이콘), 그리고 용인 와우정사(거대한 야외 불상과 석종). 교통 및 입장료가 포함된 높은 문화유산 가치의 여행입니다."
       },
@@ -1778,8 +1778,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "제주 첫 방문자에게 적합",
           "제주 서남부"
         ],
-        "heroImage": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24.webp",
-        "thumbnail": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24.webp",
+        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
         "priceLabel": "1인 US$59 (정가 $69, 14% 할인)",
         "shortCardDescription": "짧은 한라산 트레킹, 화산 해안선, 천제연 폭포, 오설록 차밭, 애월 카페거리를 연결하는 균형 잡힌 제주 서남부 코스"
       },
@@ -1805,8 +1805,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "港口接送",
           "保证返回"
         ],
-        "heroImage": "/images/tours/songdo-beach/chatgpt-image-2026-5-10-12-32-12.webp",
-        "thumbnail": "/images/tours/songdo-beach/chatgpt-image-2026-5-10-12-32-12.webp",
+        "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+        "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
         "priceLabel": "每人起价49美元（原价55美元，优惠11%）",
         "shortCardDescription": "专为邮轮旅客打造的釜山沿海大巴一日游：提供邮轮码头接送，游览8个标志性景点（海东龙宫寺、联合国纪念公墓、札嘎其市场、BIFF广场、国际市场、甘川文化村、松岛海水浴场、龙头山公园），并保证在邮轮启航前返回。经济实惠之选——与小团产品路线相同，采用大型巴士。"
       },
@@ -1830,8 +1830,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "小团体",
           "从釜山出发"
         ],
-        "heroImage": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
-        "thumbnail": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+        "heroImage": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+        "thumbnail": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
         "priceLabel": "每人 US$39（原价$50，22% 优惠）",
         "shortCardDescription": "从釜山出发前往庆州的小团体一日游。庆州是新罗王国长达992年的都城（公元前57年至公元935年），也是韩国UNESCO世界遗产最为集中的城市。行程路线：阿弘山竹林 → 佛国寺（UNESCO）→ 庆州包饭午餐 → 庆州国立博物馆 → 校村韩屋村 → 月精桥。全程配备英语／中文双语持证导游；提供小型厢式车接送；佛国寺及博物馆门票均免费。"
       },
@@ -1855,8 +1855,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "3处上车地点",
           "11小时全天行程"
         ],
-        "heroImage": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp",
-        "thumbnail": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp",
+        "heroImage": "/images/itinerary/tongdosa-iljumun.webp",
+        "thumbnail": "/images/itinerary/tongdosa-iljumun.webp",
         "priceLabel": "",
         "shortCardDescription": "11小时釜山郊区大巴一日游，途经梁山（通度寺，2018年联合国教科文组织世界文化遗产）、蔚山（紫水晶洞窟主题公园，可选游船）、密阳（岭南阿尔卑斯冰谷缆车），最终在釜山甘川文化村收尾。三处上车地点（釜山站／西面／海云台）；行程结束时可选择在札嘎其下车。"
       },
@@ -1880,8 +1880,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "2处UNESCO世界遗产",
           "釜山上车接送"
         ],
-        "heroImage": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
-        "thumbnail": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+        "heroImage": "/images/itinerary/tongdosa-iljumun.webp",
+        "thumbnail": "/images/itinerary/tongdosa-iljumun.webp",
         "priceLabel": "",
         "shortCardDescription": "8.5小时釜山出发双花期接驳游，途经梁山与庆州。默认行程游览通度寺（UNESCO山寺，韩国三宝寺刹，内有树龄350年慈藏梅）、院洞梅花村（温室快闪餐厅享用水芹五花肉午餐）、佛国寺（UNESCO世界遗产）及普门湖（8公里樱花环湖路）。运营时间比纯樱花游更长：约2月25日 – 4月10日，同时涵盖梅花与樱花花期。每日路线根据梅花及樱花实际开放状况灵活调整侧重。"
       },
@@ -1904,8 +1904,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "可定制路线",
           "含邮轮码头接送"
         ],
-        "heroImage": "/images/tours/busan-private/busan-private-cruise-terminal-thumbnail.webp",
-        "thumbnail": "/images/tours/busan-private/busan-private-cruise-terminal-thumbnail.webp",
+        "heroImage": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+        "thumbnail": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
         "priceLabel": "车辆1辆8小时 $359（原价 $379，1–6人）· 7–12人 2倍 · 13人以上 3倍",
         "shortCardDescription": "为釜山邮轮旅客提供的8小时私人包车服务，配备持牌英语司机导游。默认行程涵盖联合国纪念公墓、太宗台悬崖、甘川文化村、龙头山公园及扎嘎其市场，全程可定制。可在邮轮码头、KTX车站或釜山市区任意酒店接送，保证准时返回船上。"
       },
@@ -1929,8 +1929,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "码头接送",
           "9小时行程"
         ],
-        "heroImage": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
-        "thumbnail": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+        "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+        "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
         "priceLabel": "每人 US$79（原价$85，7% 优惠）",
         "shortCardDescription": "从釜山邮轮码头出发的共乘面包车一日游，9小时内涵盖城市最受欢迎的五大景点：联合国纪念公墓（朝鲜战争背景）、太宗台海岸悬崖、在釜山当地餐厅用午餐、甘川文化村（彩绘山城）、龙头山公园（可选釜山塔瞭望台）以及札嘎其市场。接送时间根据您所乘船只的下船时间灵活调配。持证英语／中文导游随行。"
       },
@@ -1954,8 +1954,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "联合国教科文组织遗址",
           "釜山接送"
         ],
-        "heroImage": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
-        "thumbnail": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+        "heroImage": "/images/itinerary/bomun-lake-cherry-blossom-promenade.webp",
+        "thumbnail": "/images/itinerary/bomun-lake-cherry-blossom-promenade.webp",
         "priceLabel": "",
         "shortCardDescription": "8.5小时从釜山出发的班车游，前往庆州最大的春季赏樱胜地。默认路线涵盖普门湖（8公里樱花树环绕的湖畔漫步）、瞻星台与大陵苑历史核心区（联合国教科文组织庆州历史地区），以及佛国寺（联合国教科文组织世界遗产，四月中旬盛开八重樱）。每天上午根据当日花况报告确认2至3个停靠点。行程仅限3月28日至4月10日运营——若花期明显延误或已结束，提供全额退款。"
       },
@@ -1979,8 +1979,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "釜山经典",
           "全年开放"
         ],
-        "heroImage": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
-        "thumbnail": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+        "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+        "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
         "priceLabel": "每人 US$29（原价$41，29% 优惠）",
         "shortCardDescription": "一日七站小团游，涵盖釜山经典线路：海东龙宫寺海边寺庙、青沙浦及蓝线公园（可选天空胶囊缆车）、釜山本地午餐、联合国纪念公墓、甘川文化村彩绘山坡，以及札嘎其海鲜市场。釜山市中心设三个接送地点；持证英语导游；小型巴士（最多约12人）。所有景点门票均免费，仅午餐及可选项目需当日现场付款。"
       },
@@ -2003,8 +2003,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "适合初次游客",
           "济州岛东部经典"
         ],
-        "heroImage": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
-        "thumbnail": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+        "heroImage": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
+        "thumbnail": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
         "priceLabel": "",
         "shortCardDescription": "这条轻松易行的济州岛东部一日游路线，从石文化与火山地貌出发，途经海岸与城山日出峰，最后以日出乐园和城邑民俗村收尾，让整日行程更加丰富完整。"
       },
@@ -2028,8 +2028,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "从釜山出发",
           "提前返回"
         ],
-        "heroImage": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
-        "thumbnail": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+        "heroImage": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+        "thumbnail": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
         "priceLabel": "每人 US$39（原价$50，22% 优惠）",
         "shortCardDescription": "从釜山出发前往庆州的小团体一日游，庆州是新罗王国的古都（公元前57年—公元935年）。与UNESCO遗产版本相同的经典六景路线（阿虎山竹林 → 佛国寺UNESCO → 庆州拌饭午餐 → 国立博物馆 → 校村韩屋村 → 月精桥），但节奏更为悠闲，返回时间更早（约18:50）。配备英语/中文双语认证导游；小型厢式车；全程免费入场（仅阿虎山₩5,000及午餐费用需当天自付）。"
       },
@@ -2053,8 +2053,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "仁川港接送",
           "9小时行程窗口"
         ],
-        "heroImage": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
-        "thumbnail": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
+        "heroImage": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+        "thumbnail": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
         "priceLabel": "每人 US$69（原价$76，9% 优惠）",
         "shortCardDescription": "从仁川邮轮码头出发的共乘面包车一日游，在9小时内游览首尔核心市区的标志性景点：景福宫（周二改为昌德宫）、北村韩屋村、广藏市场午餐（首尔最上镜的街头美食街）及仁寺洞文化街。接送时间根据您所乘船只的具体下船时间灵活安排；持证英语/中文双语导游；含约75分钟返程车程。"
       },
@@ -2080,8 +2080,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "可定制",
           "保证返船"
         ],
-        "heroImage": "/images/tours/incheon-cruise/incheon-cruise-terminal-thumbnail.webp",
-        "thumbnail": "/images/tours/incheon-cruise/incheon-cruise-terminal-thumbnail.webp",
+        "heroImage": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+        "thumbnail": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
         "priceLabel": "每车 US$419 起",
         "shortCardDescription": "8小时私人包车行程完全以您的船只返航时间为准，而非固定日程安排。在仁川邮轮码头登船口接送，配备英语导游司机，路线灵活可定制，途经景福宫、北村韩屋村及仁寺洞，自选午餐地点，游览首尔塔及明洞或曹溪寺。导游司机在返航前预留60分钟交通缓冲时间，确保您绝不错过班船。"
       },
@@ -2154,8 +2154,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "高端邮轮",
           "小团"
         ],
-        "heroImage": "/images/tours/jeju-cruise-terminal/jeju-cruise-terminal-private-pickup.webp",
-        "thumbnail": "/images/tours/jeju-cruise-terminal/jeju-cruise-terminal-private-pickup.webp",
+        "heroImage": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+        "thumbnail": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
         "priceLabel": "每人 US$79（原价$85，7% 优惠）",
         "shortCardDescription": "根据邮轮靠港口灵活调整路线的小团靠港游。济州港（北部）走东海岸UNESCO路线，途经城山日出峰；江汀港（南部）走汉拿山1100高地＋南海岸地质奇观＋偶来市场路线。两条线路均留有充裕时间返回邮轮码头。"
       },
@@ -2205,8 +2205,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "最适合一日游客",
           "快节奏精华游"
         ],
-        "heroImage": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
-        "thumbnail": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
         "priceLabel": "每人 US$79（原价$89，11% 优惠）",
         "shortCardDescription": "专为时间有限的旅行者打造的高效济州全岛线路，一天串联汉拿山、南海岸风光与城山日出峰。"
       },
@@ -2233,8 +2233,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "世界遗产",
           "节庆活动"
         ],
-        "heroImage": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-23.webp",
-        "thumbnail": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-23.webp",
+        "heroImage": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+        "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
         "priceLabel": "每人 US$59（原价$69，14% 优惠）",
         "shortCardDescription": "夏季限定东济州小团一日游，以岛内绣球花节庆为主题：城山日出峰（UNESCO）、山房山绣球花节、涉地可支海岸及成音浦港游船。6月下旬至7月下旬运营，正值绣球花盛放期。"
       },
@@ -2308,8 +2308,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "价格实惠",
           "无购物"
         ],
-        "heroImage": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
-        "thumbnail": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
         "priceLabel": "",
         "shortCardDescription": "畅游济州南部标志性景点的小团一日游——途经汉拿山御乘生岳步道（联合国教科文组织生物圈保护区）、山茶花之丘花园、三层天帝渊瀑布、六边形柱状节理带以及雪绿茶博物馆。提供济州市区及机场四处上车地点，配备持证英语/中文导游，含全部景点门票，无购物压力。济州入门级游览中评价最多的产品，648条评价综合评分高达4.9/5。"
       },
@@ -2335,8 +2335,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "咖啡文化",
           "海岸"
         ],
-        "heroImage": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
-        "thumbnail": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+        "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
         "priceLabel": "每人 US$59（原价$69，14% 优惠）",
         "shortCardDescription": "一日小团游，将济州西海岸与南海岸串联成一条环线——汉拿山1100海拔湿地（联合国教科文组织）、六边形柱状节理带、松岳山全景观景台、天帝渊瀑布、O'sulloc茶博物馆，以及西海岸的协涯海滩咖啡街。与南部联合国教科文组织线路为同一运营商，但更注重生活方式体验——\"火山地貌邂逅壮观海岸线与时尚海滨咖啡馆\"。"
       },
@@ -2363,8 +2363,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "山茶花",
           "雪"
         ],
-        "heroImage": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
-        "thumbnail": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+        "heroImage": "/images/tours/jeju-tangerine-farm/photo-001.webp",
+        "thumbnail": "/images/tours/jeju-tangerine-farm/photo-001.webp",
         "priceLabel": "",
         "shortCardDescription": "这是一条仅在冬季（12月至2月）运营的济州西南部一日游线路，以济州冬季三大独特体验为核心：汉拿山山坡的皑皑白雪、山茶花之丘盛开的红色山茶花，以及在真实果园亲手采摘济州柑橘。线路还涵盖天帝渊瀑布、柱状节理带及雪绿茶博物馆。提供济州市酒店接送，配备持证英语/中文导游。"
       },
@@ -2435,8 +2435,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "韩剧取景地",
           "情侣与家庭"
         ],
-        "heroImage": "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
-        "thumbnail": "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
+        "heroImage": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
+        "thumbnail": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
         "priceLabel": "",
         "shortCardDescription": "从首尔出发的私人一日游，涵盖南怡岛林荫渡船体验、晨静园主题花园漫步，以及充满色彩的小王子风情村小法国。酒店接送、私家车出行，悠闲的游览节奏，带您以最舒适的方式体验经典的加平环线之旅。"
       },
@@ -2485,8 +2485,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "全程门票已含",
           "13小时全天行程"
         ],
-        "heroImage": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
-        "thumbnail": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
+        "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+        "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
         "priceLabel": "每人起价59美元（原价82美元，立省28%）",
         "shortCardDescription": "从首尔出发的13小时大巴一日游，涵盖韩国三大最热门一日游目的地：雪岳山国立公园（韩国唯一的UNESCO生物圈保护区）、南怡岛（《冬季恋歌》取景地的水杉大道）以及晨静园（拥有5,000种植物的韩国标志性私家植物园）。全程门票已含；配备英语导游；在弘益大学站或明洞站接送。"
       },
@@ -2513,8 +2513,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "秋叶红枫",
           "一日游"
         ],
-        "heroImage": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
-        "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+        "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+        "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
         "priceLabel": "",
         "shortCardDescription": "从首尔出发，前往韩国最受欢迎的国家公园及东海岸城市束草的小团一日游。行程将雪岳山的花岗岩山峰、山谷与佛教文化，同束草的海鲜市场和海滩完美结合——这种山海交融的体验只有东海岸才能给你。全程12小时，含英语导游及往返交通。"
       },
@@ -2565,8 +2565,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "民俗村",
           "一日游"
         ],
-        "heroImage": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-        "thumbnail": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
+        "heroImage": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+        "thumbnail": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
         "priceLabel": "",
         "shortCardDescription": "从首尔出发前往京畿道的文化小团一日游，涵盖韩国历史遗产与现代生活的四个截然不同的面貌：被列入联合国教科文组织世界遗产名录的水原华城（18世纪城墙与城门）、经修复的华城行宫及其朝鲜时代情景再现表演、龙仁沉浸式露天韩国民俗村，以及气势恢宏的四层星空水原图书馆。全程10小时，含交通及门票。"
       },
@@ -2593,8 +2593,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "购物",
           "一日游"
         ],
-        "heroImage": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-15.webp",
-        "thumbnail": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-15.webp",
+        "heroImage": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+        "thumbnail": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
         "priceLabel": "",
         "shortCardDescription": "首尔出发的小团文化一日游，带您领略京畿道四种截然不同的风貌：UNESCO世界遗产水原华城，拥有18世纪城墙与行宫；光明洞窟内震撼人心的LED灯光地下主题公园（昔日日据时代金矿）；四层楼高的水原星空图书馆；以及拥有千年历史的南门传统市场，尽享街头美食。全程9小时，含交通及门票。"
       },
@@ -2617,8 +2617,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "文化遗产与现代融合一日游",
           "含门票"
         ],
-        "heroImage": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
-        "thumbnail": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
+        "heroImage": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+        "thumbnail": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
         "priceLabel": "",
         "shortCardDescription": "从首尔出发的小团一日游，探索韩国三个截然不同的面貌：列入联合国教科文组织世界遗产名录的水原华城（18世纪军事建筑）、以摄影闻名的星野水原图书馆（当代文化地标），以及龙仁卧牛精舍（巨型露天佛像与石钟）。遗产价值丰富，含交通及门票。"
       },
@@ -2640,8 +2640,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "非常适合初次游览济州岛的旅客",
           "济州岛西南部"
         ],
-        "heroImage": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24.webp",
-        "thumbnail": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24.webp",
+        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
         "priceLabel": "每人 US$59（原价$69，14% 优惠）",
         "shortCardDescription": "一条均衡的济州岛西南部路线，串联短途汉拿山徒步、火山海岸线、天帝渊瀑布、雪绿茶茶园及涯月咖啡街。"
       },
@@ -2667,8 +2667,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "港口接送",
           "保證返回"
         ],
-        "heroImage": "/images/tours/songdo-beach/chatgpt-image-2026-5-10-12-32-12.webp",
-        "thumbnail": "/images/tours/songdo-beach/chatgpt-image-2026-5-10-12-32-12.webp",
+        "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+        "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
         "priceLabel": "每人起價 US$49（原價 $55，優惠 11%）",
         "shortCardDescription": "專為郵輪旅客打造的釜山海岸大型巴士一日遊：提供郵輪碼頭接送，涵蓋8個經典景點（海東龍宮寺、聯合國軍紀念公墓、札嘎其市場、BIFF廣場、國際市場、甘川文化村、松島海灘、龍頭山公園），並保證於郵輪啟航前返回。經濟型方案——與小團體行程路線相同，改以大型巴士出發。"
       },
@@ -2692,8 +2692,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "小團體",
           "從釜山出發"
         ],
-        "heroImage": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
-        "thumbnail": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+        "heroImage": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+        "thumbnail": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
         "priceLabel": "每人 US$39（原價$50，22% 優惠）",
         "shortCardDescription": "從釜山出發的小團體慶州一日遊。慶州是新羅王國的首都，歷時992年（西元前57年—西元935年），亦是韓國UNESCO世界遺產最密集之地。行程路線：鵝項山竹林 → 佛國寺（UNESCO）→ 慶州包飯午餐 → 慶州國立博物館 → 校村韓屋村 → 月精橋。提供英語／中文認證導遊；小型廂型車接送；佛國寺及博物館門票免費。"
       },
@@ -2717,8 +2717,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "3個站點接送",
           "11小時行程"
         ],
-        "heroImage": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp",
-        "thumbnail": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp",
+        "heroImage": "/images/itinerary/tongdosa-iljumun.webp",
+        "thumbnail": "/images/itinerary/tongdosa-iljumun.webp",
         "priceLabel": "",
         "shortCardDescription": "11小時釜山近郊巴士一日遊，前往梁山（通度寺，2018年UNESCO世界文化遺產）、蔚山（紫水晶洞窟主題公園，可選搭船）、密陽（嶺南阿爾卑斯冰谷纜車），最後於釜山甘川文化村作結。設三個接送地點（釜山站／西面／海雲台）；行程尾段可選擇在札嘎其下車。"
       },
@@ -2742,8 +2742,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "2處UNESCO遺址",
           "釜山接送"
         ],
-        "heroImage": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
-        "thumbnail": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+        "heroImage": "/images/itinerary/tongdosa-iljumun.webp",
+        "thumbnail": "/images/itinerary/tongdosa-iljumun.webp",
         "priceLabel": "",
         "shortCardDescription": "8.5小時釜山出發雙花季接駁遊，涵蓋梁山與慶州。預設行程造訪通度寺（UNESCO山寺、韓國三寶寺剎，附有樹齡350年慈藏梅）、院洞梅花村（溫室快閃餐廳享用水芹五花肉午餐）、佛國寺（UNESCO世界遺產）及普門湖（8公里櫻花環湖步道）。營運期間比純賞櫻行程更長：約2月25日至4月10日，涵蓋梅花與櫻花兩個花期高峰。每日路線依梅花或櫻花盛開狀況調整重點景點。"
       },
@@ -2766,8 +2766,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "路線可客製化",
           "含郵輪碼頭接送"
         ],
-        "heroImage": "/images/tours/busan-private/busan-private-cruise-terminal-thumbnail.webp",
-        "thumbnail": "/images/tours/busan-private/busan-private-cruise-terminal-thumbnail.webp",
+        "heroImage": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+        "thumbnail": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
         "priceLabel": "車輛1輛8小時 $359（原價 $379，1–6人）· 7–12人 2倍 · 13人以上 3倍",
         "shortCardDescription": "專為釜山郵輪旅客提供的8小時私人包車服務，配備持牌英語司機導遊。預設行程涵蓋聯合國紀念公墓、太宗臺懸崖、甘川文化村、龍頭山公園及札嘎其市場。全程可客製化。可於郵輪碼頭、KTX車站或釜山市區任意飯店接送，保證準時返回郵輪。"
       },
@@ -2791,8 +2791,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "港口接送",
           "9小時行程"
         ],
-        "heroImage": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
-        "thumbnail": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+        "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+        "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
         "priceLabel": "每人 US$79（原價$85，7% 優惠）",
         "shortCardDescription": "從釜山郵輪碼頭出發的共乘廂型車一日遊，在9小時內走遍城市五大人氣景點：聯合國紀念公墓（韓戰歷史背景）、太宗臺海岸懸崖、當地釜山餐廳午餐、甘川文化村（彩繪山城聚落）、龍頭山公園（可選擇前往釜山塔觀景台）及札嘎其市場。接送時間依您所搭船隻的下船時間靈活調整。配備英語／中文認證導遊。"
       },
@@ -2816,8 +2816,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "聯合國教科文組織遺址",
           "釜山接送"
         ],
-        "heroImage": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
-        "thumbnail": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+        "heroImage": "/images/itinerary/bomun-lake-cherry-blossom-promenade.webp",
+        "thumbnail": "/images/itinerary/bomun-lake-cherry-blossom-promenade.webp",
         "priceLabel": "",
         "shortCardDescription": "從釜山出發的8.5小時接駁旅遊，前往慶州最大春季賞櫻景點。預設行程涵蓋普門湖（8公里湖畔櫻花步道）、瞻星台＋大陵苑歷史核心區（聯合國教科文組織慶州歷史地區），以及佛國寺（聯合國教科文組織世界遺產，四月中旬盛開八重櫻）。每日2至3個景點於當天早晨根據花況報告確認。旅遊僅限3月28日至4月10日營運——如花期明顯延遲或已結束，將全額退款。"
       },
@@ -2841,8 +2841,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "釜山經典",
           "全年皆宜"
         ],
-        "heroImage": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
-        "thumbnail": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+        "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+        "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
         "priceLabel": "每人 US$29（原價$41，29% 優惠）",
         "shortCardDescription": "單日七站小團體遊，涵蓋釜山經典行程：海東龍宮寺海濱古剎、青沙浦及藍線公園（可選搭天空膠囊列車）、釜山在地午餐、聯合國紀念公墓、甘川文化村彩繪山城，以及札嘎其魚市場。設三個釜山市區接送地點；持證英語導遊帶領；迷您巴士（最多約12人）。所有景點入場免費，僅午餐及自選票券需當日自付。"
       },
@@ -2865,8 +2865,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "適合初次造訪",
           "濟州東部經典"
         ],
-        "heroImage": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
-        "thumbnail": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+        "heroImage": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
+        "thumbnail": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
         "priceLabel": "",
         "shortCardDescription": "這條簡單易懂的濟州東部一日路線，從石文化與火山地貌出發，途經海岸線與城山日出峰，最後以日出樂園和城邑民俗村作結，打造更完整的一日遊體驗。"
       },
@@ -2890,8 +2890,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "從釜山出發",
           "提早返回"
         ],
-        "heroImage": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
-        "thumbnail": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+        "heroImage": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+        "thumbnail": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
         "priceLabel": "每人 US$39（原價$50，22% 優惠）",
         "shortCardDescription": "從釜山出發前往新羅王國古都慶州（西元前57年—西元935年）的小團體一日遊。行程與UNESCO遺產版本相同的六大經典景點路線（鵝項山竹林 → 佛國寺UNESCO → 慶州拌飯午餐 → 國立博物館 → 校村韓屋村 → 月精橋），但節奏更從容，返回時間更早（約18:50）。英語／中文認證導遊；小型廂型車；全程免票（僅鵝項山₩5,000及午餐費用需當日自付）。"
       },
@@ -2915,8 +2915,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "於仁川港接送",
           "9小時行程"
         ],
-        "heroImage": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
-        "thumbnail": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
+        "heroImage": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+        "thumbnail": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
         "priceLabel": "每人 US$69（原價$76，9% 優惠）",
         "shortCardDescription": "從仁川郵輪碼頭出發的共乘廂型車一日遊，在9小時內暢遊首爾市中心精華景點：景福宮（週二改訪昌德宮）、北村韓屋村、廣藏市場午餐（全市最具話題的街頭美食巷弄），以及仁寺洞文化街。接送時間依您所搭船隻的靠港時程調整；配備英語／中文認證導遊；回程車程約75分鐘已含在內。"
       },
@@ -2942,8 +2942,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "可客製化",
           "保證返船"
         ],
-        "heroImage": "/images/tours/incheon-cruise/incheon-cruise-terminal-thumbnail.webp",
-        "thumbnail": "/images/tours/incheon-cruise/incheon-cruise-terminal-thumbnail.webp",
+        "heroImage": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+        "thumbnail": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
         "priceLabel": "每車 US$419 起",
         "shortCardDescription": "以您的郵輪返航時間為基準安排的8小時私人包車，而非固定行程。在仁川郵輪碼頭舷梯處接送，配備英語導遊兼司機，行程可彈性調整，途經景福宮、北村韓屋村＋仁寺洞、自選午餐、N首爾塔，以及明洞或曹溪寺。導遊兼司機會在返航前預留60分鐘的交通緩衝時間，確保您絕不錯過郵輪。"
       },
@@ -3016,8 +3016,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "頂級郵輪",
           "小團體"
         ],
-        "heroImage": "/images/tours/jeju-cruise-terminal/jeju-cruise-terminal-private-pickup.webp",
-        "thumbnail": "/images/tours/jeju-cruise-terminal/jeju-cruise-terminal-private-pickup.webp",
+        "heroImage": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+        "thumbnail": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
         "priceLabel": "每人 US$79（原價$85，7% 優惠）",
         "shortCardDescription": "此小團體郵輪靠港觀光行程可依您的靠港地點彈性調整路線。濟州港（北部）走東海岸UNESCO路線，途經城山日出峰；江汀港（南部）走漢拏山1100高地＋南海岸地質景觀＋偶來市場路線。兩條路線均保留充裕時間返回郵輪碼頭。"
       },
@@ -3067,8 +3067,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "最適合一日遊旅客",
           "緊湊精華行程"
         ],
-        "heroImage": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
-        "thumbnail": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
         "priceLabel": "每人 US$79（原價$89，11% 優惠）",
         "shortCardDescription": "專為時間有限的旅客設計的高效率濟州全島路線，一天串聯漢拏山、南海岸與城山日出峰。"
       },
@@ -3095,8 +3095,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "世界遺產",
           "節慶活動"
         ],
-        "heroImage": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-23.webp",
-        "thumbnail": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-23.webp",
+        "heroImage": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+        "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
         "priceLabel": "每人 US$59（原價$69，14% 優惠）",
         "shortCardDescription": "夏季限定東濟州小團體一日遊，以島內繡球花節慶為主題：城山日出峰（UNESCO）、山房山繡球花節、涉地可支海岸及成音浦港遊船。6月下旬至7月下旬運營，正值繡球花盛放期。"
       },
@@ -3170,8 +3170,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "價格實惠",
           "無購物"
         ],
-        "heroImage": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
-        "thumbnail": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
         "priceLabel": "",
         "shortCardDescription": "小團一日遊，深度遊覽濟州南部經典景點——漢拏山御乘生岳步道（UNESCO生物圈保護區）、山茶花丘花園、三層天帝淵瀑布、六角柱狀節理帶，以及雪綠茶博物館。濟州市及機場設有四個接送地點，持證英語／中文導遊全程陪同，含全部門票，絕無購物壓力。濟州入門級行程中評價最多，"
       },
@@ -3197,8 +3197,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "咖啡文化",
           "海岸"
         ],
-        "heroImage": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
-        "thumbnail": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+        "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
         "priceLabel": "每人 US$59（原價$69，14% 優惠）",
         "shortCardDescription": "一日小團遊，將濟州西海岸與南海岸串聯成單一環線——漢拿山1100高地濕地（UNESCO）、六角形柱狀節理帶、松岳山全景瞭望台、天帝淵瀑布、雪綠茶博物館，以及西海岸的協才海灘咖啡街。與南部UNESCO行程為同一家經營者，但定調更偏生活風格——「火山地貌邂逅壯麗海岸線與時尚海濱咖啡廳」。"
       },
@@ -3225,8 +3225,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "山茶花",
           "雪"
         ],
-        "heroImage": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
-        "thumbnail": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+        "heroImage": "/images/tours/jeju-tangerine-farm/photo-001.webp",
+        "thumbnail": "/images/tours/jeju-tangerine-farm/photo-001.webp",
         "priceLabel": "",
         "shortCardDescription": "這是一趟濟州島西南部的冬季限定一日遊（12月至2月），以濟州冬季三大獨特體驗為核心：漢拿山山坡上的皚皚白雪、山茶花丘盛開的紅色山茶花，以及在真實農場親手採摘濟州橘子（귤）。行程還涵蓋天帝淵瀑布、柱狀節理帶及雪綠茶博物館。提供濟州市區飯店接送，配備持牌英語／中文導遊。"
       },
@@ -3297,8 +3297,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "韓劇拍攝地",
           "情侶及家庭適合"
         ],
-        "heroImage": "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
-        "thumbnail": "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
+        "heroImage": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
+        "thumbnail": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
         "priceLabel": "",
         "shortCardDescription": "從首爾出發的私人一日遊，涵蓋南怡島林蔭大道的渡輪體驗、晨靜苑的主題花園漫步，以及色彩繽紛的小王子村莊小法國村。飯店接送、私人座駕及悠閒節奏，讓您以最舒適的方式體驗經典加平環線之旅。"
       },
@@ -3347,8 +3347,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "全程門票已含",
           "13小時全日行程"
         ],
-        "heroImage": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
-        "thumbnail": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
+        "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+        "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
         "priceLabel": "每人低至59美元起（原價82美元，立省28%）",
         "shortCardDescription": "從首爾出發的13小時巴士一日遊，涵蓋韓國三大熱門攝影打卡景點：雪嶽山國立公園（韓國唯一的聯合國教科文組織生物圈保護區）、南怡島（《冬季戀歌》取景地的水杉林蔭大道）及晨靜苑（韓國代表性私人植物園，擁有5,000種植物）。全程門票已含；提供英語導遊；於弘益大學站或明洞站接送。"
       },
@@ -3375,8 +3375,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "秋季楓葉",
           "一日遊"
         ],
-        "heroImage": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
-        "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+        "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+        "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
         "priceLabel": "",
         "shortCardDescription": "從首爾出發的小團體一日遊，前往韓國最受歡迎的國家公園及東海岸城市束草。行程結合雪嶽山的花崗岩山峰、幽深山谷與佛教文化遺跡，以及束草的海鮮市場與海灘——這種山海共融的絕妙體驗，唯有東海岸方能實現。全程12小時，附英語導遊及來回接送服務。"
       },
@@ -3427,8 +3427,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "民俗村",
           "一日遊"
         ],
-        "heroImage": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-        "thumbnail": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
+        "heroImage": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+        "thumbnail": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
         "priceLabel": "",
         "shortCardDescription": "從首爾出發前往京畿道的小團體文化一日遊，帶您體驗韓國歷史遺產與現代生活的四大截然不同面貌：列入UNESCO世界遺產的水原華城（18世紀城牆與城門）、修復後的華城行宮及其朝鮮時代重現活動、龍仁引人入勝的露天韓國民俗村，以及壯觀的四層樓星野水原圖書館。全程10小時，含交通及門票費用。"
       },
@@ -3455,8 +3455,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "購物",
           "一日遊"
         ],
-        "heroImage": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-15.webp",
-        "thumbnail": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-15.webp",
+        "heroImage": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+        "thumbnail": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
         "priceLabel": "",
         "shortCardDescription": "首爾出發小團體文化一日遊，帶您探索京畿道四大截然不同的面貌：列入UNESCO世界遺產名錄的水原華城，擁有18世紀古城牆與行宮；前日據時代金礦改建而成、璀璨LED燈光點綴的地下主題樂園光明洞窟；四層樓高的水原星空圖書館；以及擁有千年歷史的南門傳統市場，可品嚐道地街頭小吃。全程9小時，含交通接送與門票。"
       },
@@ -3479,8 +3479,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "文化遺產與現代融合一日遊",
           "含門票"
         ],
-        "heroImage": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
-        "thumbnail": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
+        "heroImage": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+        "thumbnail": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
         "priceLabel": "",
         "shortCardDescription": "從首爾出發的小團一日遊，探索韓國三個截然不同的面貌：列入UNESCO世界遺產的水原華城（18世紀軍事建築）、極具拍照魅力的星空水原圖書館（當代文化地標），以及龍仁的臥牛精舍（巨型露天佛像與石鐘）。文化價值豐富，含交通接送與門票。"
       },
@@ -3502,8 +3502,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "非常適合初次造訪濟州的旅客",
           "濟州西南部"
         ],
-        "heroImage": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24.webp",
-        "thumbnail": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24.webp",
+        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
         "priceLabel": "每人 US$59（原價$69，14% 優惠）",
         "shortCardDescription": "行程均衡的濟州西南路線，串聯短程漢拿山健行、火山海岸線、天帝淵瀑布、雪綠茶園與涯月咖啡街。"
       },
@@ -3529,8 +3529,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Recogida en el puerto",
           "Regreso garantizado"
         ],
-        "heroImage": "/images/tours/songdo-beach/chatgpt-image-2026-5-10-12-32-12.webp",
-        "thumbnail": "/images/tours/songdo-beach/chatgpt-image-2026-5-10-12-32-12.webp",
+        "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+        "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
         "priceLabel": "Desde US$49 por persona (antes $55, 11% de descuento)",
         "shortCardDescription": "Tour diario costero por Busan en autocar grande diseñado para pasajeros de crucero: recogida en la terminal de cruceros, 8 paradas emblemáticas (Haedong Yonggungsa, Cementerio Memorial de la ONU, Mercado de Jagalchi, Plaza BIFF, Mercado de Gukje, Pueblo Cultural de Gamcheon, Playa de Songdo, Parque Yongdusan) y garantía de regreso antes de la salida del barco. Categoría económica — mismo recorrido que el producto en grupo reducido, autocar más grande."
       },
@@ -3554,8 +3554,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Grupo reducido",
           "Desde Busan"
         ],
-        "heroImage": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
-        "thumbnail": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+        "heroImage": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+        "thumbnail": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
         "priceLabel": "Desde US$39 por persona (antes $50, 22% descuento)",
         "shortCardDescription": "Tour de un día en grupo reducido de Busan a Gyeongju, capital del Reino Silla durante 992 años (57 a. C.–935 d. C.) y la mayor concentración de sitios Patrimonio de la Humanidad de la UNESCO en Corea. Ruta: Bosque de Bambú de Ahopsan → Templo Bulguksa (UNESCO) → Almuerzo ssambap en Gyeongju → Museo Nacional de Gyeongju → Aldea Hanok de Gyochon → Puente Woljeonggyo. Guía certificado con dominio del inglés y chino; minivan; entrada gratuita al Templo Bulguksa y al museo."
       },
@@ -3579,8 +3579,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Recogida en 3 estaciones",
           "Día de 11 horas"
         ],
-        "heroImage": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp",
-        "thumbnail": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp",
+        "heroImage": "/images/itinerary/tongdosa-iljumun.webp",
+        "thumbnail": "/images/itinerary/tongdosa-iljumun.webp",
         "priceLabel": "",
         "shortCardDescription": "Una excursión de un día de 11 horas en autobús por los alrededores de Busan hacia Yangsan (Templo Tongdosa, Patrimonio Mundial UNESCO 2018), Ulsan (Parque Temático Cueva de Amatista con paseo en bote opcional), Miryang (Teleférico del Valle de Hielo de los Alpes de Yeongnam) y con final en el Pueblo Cultural de Gamcheon en Busan. Tres puntos de recogida (Estación de Busan / Seomyeon / Haeundae); bajada opcional en Jagalchi al final."
       },
@@ -3604,8 +3604,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "2 Sitios UNESCO",
           "Recogida en Busan"
         ],
-        "heroImage": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
-        "thumbnail": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+        "heroImage": "/images/itinerary/tongdosa-iljumun.webp",
+        "thumbnail": "/images/itinerary/tongdosa-iljumun.webp",
         "priceLabel": "",
         "shortCardDescription": "Un servicio de transporte de doble temporada de 8,5 horas con salida desde Busan que cubre Yangsan y Gyeongju. El itinerario estándar visita el Templo Tongdosa (UNESCO Sansa, el Templo de las Tres Joyas de Corea, con el ciruelo Jajangmae de 350 años), el Pueblo de Floración de Ciruelos Wondong (almuerzo de Minari Samgyeopsal en restaurantes emergentes de invernadero), el Templo Bulguksa (Patrimonio Mundial de la UNESCO) y el Lago Bomun (circuito de cerezos en flor de 8 km). Período de operación más amplio que los tours exclusivos de cerezos: ~25 de feb – 10 de abr cubre los picos de floración tanto de ciruelos como de cerezos. La ruta diaria ajusta el énfasis según el estado de floración de ciruelos versus cerezos."
       },
@@ -3628,8 +3628,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Ruta Personalizable",
           "Recogida en Crucero Incluida"
         ],
-        "heroImage": "/images/tours/busan-private/busan-private-cruise-terminal-thumbnail.webp",
-        "thumbnail": "/images/tours/busan-private/busan-private-cruise-terminal-thumbnail.webp",
+        "heroImage": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+        "thumbnail": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
         "priceLabel": "Desde US$359 por vehículo (antes $379, 1–6 pax, 8h) · 7–12 pax 2× · 13+ pax 3×",
         "shortCardDescription": "Alquiler privado de auto de 8 horas para pasajeros de crucero en Busan con conductor-guía autorizado de habla inglesa. El itinerario predeterminado incluye el Cementerio Memorial de las Naciones Unidas, los acantilados de Taejongdae, la Aldea Cultural de Gamcheon, el Parque Yongdusan y el Mercado de Jagalchi. Totalmente personalizable. Recogida en la terminal de cruceros, la estación KTX o cualquier hotel céntrico de Busan; el regreso puntual al barco está garantizado."
       },
@@ -3653,8 +3653,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Recogida en el puerto",
           "Ventana de 9 horas"
         ],
-        "heroImage": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
-        "thumbnail": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+        "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+        "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
         "priceLabel": "Desde US$79 por persona (antes $85, 7% descuento)",
         "shortCardDescription": "Tour de día en furgoneta compartida desde la terminal de cruceros de Busan que incluye las cinco paradas más solicitadas de la ciudad en una ventana de 9 horas: Cementerio Memorial de la ONU (contexto de la Guerra de Corea), acantilados costeros de Taejongdae, almuerzo en un restaurante local de Busan, Pueblo Cultural de Gamcheon (la ladera pintada), Parque Yongdusan con observatorio opcional en la Torre de Busan, y Mercado de Jagalchi. Recogida coordinada con el desembarco específico de su barco. Guía certificado con habla inglesa y china."
       },
@@ -3678,8 +3678,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Sitios UNESCO",
           "Recogida en Busan"
         ],
-        "heroImage": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
-        "thumbnail": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+        "heroImage": "/images/itinerary/bomun-lake-cherry-blossom-promenade.webp",
+        "thumbnail": "/images/itinerary/bomun-lake-cherry-blossom-promenade.webp",
         "priceLabel": "",
         "shortCardDescription": "Un tour en lanzadera de 8,5 horas con salida desde Busan a los principales lugares de cerezos en flor de primavera en Gyeongju. El itinerario predeterminado incluye el Lago Bomun (8 km de paseo junto al lago bordeado de cerezos), el núcleo histórico de Cheomseongdae + Daereungwon (Áreas Históricas de Gyeongju, Patrimonio UNESCO), y el Templo Bulguksa (Patrimonio Mundial UNESCO con la doble flor de cerezo yaezakura de mediados de abril). Se confirman 2–3 paradas cada mañana según el informe de floración del día. El tour opera solo del 28 de marzo al 10 de abril — reembolso completo si la floración se retrasa considerablemente o ya ha terminado."
       },
@@ -3703,8 +3703,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Clásico de Busan",
           "Todo el año"
         ],
-        "heroImage": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
-        "thumbnail": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+        "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+        "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
         "priceLabel": "Desde US$29 por persona (antes $41, 29% descuento)",
         "shortCardDescription": "Tour de un día en grupo pequeño con 7 paradas que recorre el circuito clásico de Busan: el templo costero de Haedong Yonggungsa, Cheongsapo y el Parque Blue Line (Sky Capsule opcional), almuerzo local en Busan, Cementerio Memorial de la ONU, las laderas pintadas del Pueblo Cultural de Gamcheon y el Mercado de Pescado Jagalchi. Tres puntos de recogida en el centro de Busan; guía certificado de habla inglesa; minibús (≈12 personas máx.). La entrada a todos los sitios es gratuita; solo el almuerzo y las entradas opcionales se pagan el día del tour."
       },
@@ -3727,8 +3727,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Ideal para Primera Visita",
           "Signature del Este de Jeju"
         ],
-        "heroImage": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
-        "thumbnail": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+        "heroImage": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
+        "thumbnail": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
         "priceLabel": "",
         "shortCardDescription": "Un itinerario de día por el este de Jeju fácil de seguir que comienza con la cultura de la piedra y el contexto volcánico, recorre la costa y Seongsan Ilchulbong, y termina con Ilchulland y la Aldea Folclórica de Seongeup para una jornada más completa."
       },
@@ -3752,8 +3752,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Desde Busán",
           "Regreso más temprano"
         ],
-        "heroImage": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
-        "thumbnail": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+        "heroImage": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+        "thumbnail": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
         "priceLabel": "Desde US$39 por persona (antes $50, 22% descuento)",
         "shortCardDescription": "Tour en grupo pequeño de un día desde Busán a Gyeongju, la antigua capital del reino Silla (57 a. C.–935 d. C.). El mismo recorrido clásico de seis atracciones que la versión UNESCO Legacy (Bosque de Bambú de Ahopsan → Templo Bulguksa UNESCO → Almuerzo ssambap en Gyeongju → Museo Nacional → Aldea Hanok de Gyochon → Puente Woljeonggyo), pero a un ritmo más tranquilo y con regreso más temprano (≈18:50). Guía certificado de habla inglesa/china; minivan; entradas gratuitas en todo el recorrido (solo Ahopsan ₩5.000 y el almuerzo se pagan en el día)."
       },
@@ -3777,8 +3777,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Recogida en el puerto de Incheon",
           "Ventana de 9 horas"
         ],
-        "heroImage": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
-        "thumbnail": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
+        "heroImage": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+        "thumbnail": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
         "priceLabel": "Desde US$69 por persona (antes $76, 9% descuento)",
         "shortCardDescription": "Excursión de un día en furgoneta compartida desde la Terminal de Cruceros de Incheon visitando los principales puntos turísticos del centro de Seúl en una ventana de 9 horas: Palacio Gyeongbokgung (o Changdeokgung los martes), Pueblo Hanok de Bukchon, almuerzo en el Mercado Gwangjang (el callejón de comida callejera más fotografiado de la ciudad) y la calle cultural de Insadong. Recogida coordinada con el desembarco específico de su barco; guía certificado con inglés y chino; ≈75 min de trayecto de regreso incluidos."
       },
@@ -3804,8 +3804,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Personalizable",
           "Regreso garantizado"
         ],
-        "heroImage": "/images/tours/incheon-cruise/incheon-cruise-terminal-thumbnail.webp",
-        "thumbnail": "/images/tours/incheon-cruise/incheon-cruise-terminal-thumbnail.webp",
+        "heroImage": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+        "thumbnail": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
         "priceLabel": "Desde US$419 por vehículo",
         "shortCardDescription": "Un alquiler de auto privado de 8 horas diseñado en torno a la hora de embarque de su crucero, no a un horario fijo. Recogida en la pasarela de la Terminal de Cruceros de Incheon, guía-conductor de habla inglesa e itinerario personalizable por el Palacio Gyeongbokgung, el Pueblo Hanok de Bukchon + Insadong, almuerzo a su elección, la Torre N de Seúl y Myeongdong o el Templo Jogyesa. El guía-conductor mantiene un margen de 60 minutos antes del zarpe para que nunca pierda el barco."
       },
@@ -3878,8 +3878,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Crucero premium",
           "Grupo pequeño"
         ],
-        "heroImage": "/images/tours/jeju-cruise-terminal/jeju-cruise-terminal-private-pickup.webp",
-        "thumbnail": "/images/tours/jeju-cruise-terminal/jeju-cruise-terminal-private-pickup.webp",
+        "heroImage": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+        "thumbnail": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
         "priceLabel": "Desde US$79 por persona (antes $85, 7% descuento)",
         "shortCardDescription": "Un tour en grupo pequeño desde crucero que adapta la ruta según el puerto de llegada. El Puerto de Jeju (norte) sigue una ruta costera este del Patrimonio UNESCO con parada en Seongsan Ilchulbong; el Puerto de Gangjeong (sur) incluye la ruta Hallasan 1100 + geología de la costa sur + Mercado Olle. Ambas rutas regresan a la terminal del crucero con tiempo de margen confortable."
       },
@@ -3928,8 +3928,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Ideal para Visitantes de un Solo Día",
           "Atractivos a Ritmo Acelerado"
         ],
-        "heroImage": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
-        "thumbnail": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
         "priceLabel": "Desde US$79 por persona (antes $89, 11% descuento)",
         "shortCardDescription": "Una ruta de alta eficiencia por toda la isla de Jeju para viajeros con tiempo limitado, que une Hallasan, la costa sur y Seongsan Ilchulbong en un solo día."
       },
@@ -3954,8 +3954,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Seongsan UNESCO",
           "Grupo pequeño"
         ],
-        "heroImage": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-23.webp",
-        "thumbnail": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-23.webp",
+        "heroImage": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+        "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
         "priceLabel": "Desde US$59 por persona (antes $69, 14% descuento)",
         "shortCardDescription": "El azul del verano de Jeju en un día: Playa Hamdeok (aguas esmeralda) → Aldea Folclórica Seongeup (1423) → Seongsan Ilchulbong (triple UNESCO) → Ilchul Land (Festival de Hortensias + Cueva Micheon) → Parque Natural Hueree (el mayor espectáculo de hortensias del sur de Jeju). Solo temporada de hortensias (junio-agosto). Grupo pequeño, recogida en hotel."
       },
@@ -4029,8 +4029,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Precio accesible",
           "Sin compras"
         ],
-        "heroImage": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
-        "thumbnail": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
         "priceLabel": "",
         "shortCardDescription": "Una excursión de un día en grupo reducido por los puntos emblemáticos del sur de Jeju: el Sendero Eoseungsaengak en Hallasan (biosfera UNESCO), el jardín Camellia Hill, la Cascada Cheonjeyeon de tres niveles, el Acantilado hexagonal Jusangjeolli y el Museo del Té O'sulloc. Cuatro puntos de recogida en Jeju City y el aeropuerto, guía certificado en inglés y chino, todas las entradas incluidas, sin presión de compras. El tour de Jeju de nivel inicial con más reseñas: 4,9/5 en 648 valoraciones."
       },
@@ -4056,8 +4056,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Cultura del café",
           "Costero"
         ],
-        "heroImage": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
-        "thumbnail": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+        "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
         "priceLabel": "Desde US$59 por persona (antes $69, 14% descuento)",
         "shortCardDescription": "Un tour en grupo pequeño que combina las costas occidental y meridional de Jeju en un solo circuito: el Humedal de Altitud 1100 de Hallasan (UNESCO), el Acantilado Jusangjeolli de columnas hexagonales, el mirador panorámico de Songaksan, la Cascada Cheonjeyeon, el Museo del Té O'sulloc y la franja de cafés de la playa Hyeopjae en la costa oeste. Mismo operador que el tour UNESCO del sur, pero con un enfoque más orientado al estilo de vida: \"paisajes volcánicos que se encuentran con costas dramáticas y modernos cafés junto al mar.\""
       },
@@ -4084,8 +4084,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Camelia",
           "Nieve"
         ],
-        "heroImage": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
-        "thumbnail": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+        "heroImage": "/images/tours/jeju-tangerine-farm/photo-001.webp",
+        "thumbnail": "/images/tours/jeju-tangerine-farm/photo-001.webp",
         "priceLabel": "",
         "shortCardDescription": "Un recorrido de día de temporada invernal por el suroeste de Jeju (de diciembre a febrero) centrado en las tres experiencias únicas de Jeju en invierno: nieve en las laderas de Hallasan, camelias rojas en plena floración en Camellia Hill y recolección propia de mandarinas de Jeju (gyul) en un huerto en activo. El itinerario también incluye las Cascadas de Cheonjeyeon, los acantilados de columnas basálticas de Jusangjeolli y el Museo del Té Osulloc. Recogida en hotel en Jeju City; guía oficial con habla inglesa y china."
       },
@@ -4156,8 +4156,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Lugares de Rodaje de K-Dramas",
           "Parejas y Familias"
         ],
-        "heroImage": "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
-        "thumbnail": "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
+        "heroImage": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
+        "thumbnail": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
         "priceLabel": "",
         "shortCardDescription": "Una excursión privada de un día desde Seúl que incluye la experiencia del ferry entre los árboles de la Isla Nami, los paseos temáticos por los jardines del Garden of Morning Calm y el colorido pueblo de El Principito en Petite France. La recogida en hotel, el vehículo privado y el ritmo tranquilo hacen de esta la versión más cómoda del clásico circuito por Gapyeong."
       },
@@ -4206,8 +4206,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Todas las entradas incluidas",
           "Día de 13 horas"
         ],
-        "heroImage": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
-        "thumbnail": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
+        "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+        "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
         "priceLabel": "Desde 59 USD por persona (antes $82, 28% de descuento)",
         "shortCardDescription": "Un tour de un día en autobús de 13 horas desde Seúl que recorre las tres paradas más fotografiadas de Corea: el Parque Nacional Seoraksan (la única Reserva de Biosfera de la UNESCO en Corea), la Isla Nami (el Paseo de las Metasecuoyas de Winter Sonata) y el Jardín de la Calma Matutina (el arboreto privado más emblemático de Corea con 5.000 especies de plantas). Todas las entradas incluidas; guía en inglés; recogida en la Estación de la Universidad Hongik o en la Estación de Myeongdong."
       },
@@ -4234,8 +4234,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Follaje Otoñal",
           "Excursión de un día"
         ],
-        "heroImage": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
-        "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+        "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+        "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
         "priceLabel": "",
         "shortCardDescription": "Una excursión de un día en grupo reducido desde Seúl hasta el parque nacional más querido de Corea y la ciudad costera de Sokcho, a orillas del Mar del Este. El recorrido combina los picos de granito, los valles y el patrimonio budista de Seoraksan con el mercado de mariscos y la playa de Sokcho — una combinación de montaña y océano que solo ofrece la costa este. 12 horas con guía de habla inglesa y transporte de ida y vuelta."
       },
@@ -4286,8 +4286,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Pueblo Folclórico",
           "Excursión de un día"
         ],
-        "heroImage": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-        "thumbnail": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
+        "heroImage": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+        "thumbnail": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
         "priceLabel": "",
         "shortCardDescription": "Una excursión cultural de día en grupo reducido desde Seúl hasta la provincia de Gyeonggi, que abarca cuatro facetas contrastantes del patrimonio coreano y la vida moderna: la Fortaleza Suwon Hwaseong (Patrimonio de la Humanidad UNESCO, con murallas y puertas del siglo XVIII), el restaurado Palacio Hwaseong Haenggung con sus recreaciones de la era Joseon, el envolvente Pueblo Folclórico Coreano al aire libre en Yongin, y la espectacular Biblioteca Starfield Suwon de cuatro plantas. 10 horas con transporte y entradas incluidos."
       },
@@ -4314,8 +4314,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Compras",
           "Excursión de un día"
         ],
-        "heroImage": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-15.webp",
-        "thumbnail": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-15.webp",
+        "heroImage": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+        "thumbnail": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
         "priceLabel": "",
         "shortCardDescription": "Una excursión cultural de un día en grupo reducido desde Seúl que recorre cuatro facetas contrastantes de la provincia de Gyeonggi: la Fortaleza Suwon Hwaseong declarada Patrimonio de la UNESCO, con sus murallas del siglo XVIII y el Palacio Haenggung; el impresionante parque temático subterráneo iluminado con LED en el interior de la Cueva Gwangmyeong (una antigua mina de oro de la época japonesa); la Biblioteca Starfield de Suwon de cuatro pisos; y el mercado tradicional Nammun de más de 1.000 años de antigüedad, ideal para la gastronomía callejera. 9 horas con transporte y entradas incluidos."
       },
@@ -4361,8 +4361,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Ideal para visitantes de Jeju por primera vez",
           "Suroeste de Jeju"
         ],
-        "heroImage": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24.webp",
-        "thumbnail": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24.webp",
+        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
         "priceLabel": "Desde US$59 por persona (antes $69, 14% descuento)",
         "shortCardDescription": "Una ruta equilibrada por el suroeste de Jeju que combina un corto paseo por Hallasan, la costa volcánica, la Cascada Cheonjeyeon, los campos de té O'Sulloc y la Calle de Cafeterías de Aewol."
       },
@@ -4388,8 +4388,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "港での送迎",
           "帰港保証"
         ],
-        "heroImage": "/images/tours/songdo-beach/chatgpt-image-2026-5-10-12-32-12.webp",
-        "thumbnail": "/images/tours/songdo-beach/chatgpt-image-2026-5-10-12-32-12.webp",
+        "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+        "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
         "priceLabel": "お一人様49米ドルから（通常55ドル、11%オフ）",
         "shortCardDescription": "クルーズ乗客のために設計された大型バス釜山沿岸日帰りツアー：クルーズターミナル送迎、厳選8スポット（海東龍宮寺、国連記念公園、チャガルチ市場、BIFFスクエア、国際市場、甘川文化村、松島ビーチ、龍頭山公園）、出港前帰港保証付き。バジェットプラン — 少人数制商品と同じルートを大型バスで。"
       },
@@ -4413,8 +4413,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "少人数制",
           "釜山発"
         ],
-        "heroImage": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
-        "thumbnail": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+        "heroImage": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+        "thumbnail": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
         "priceLabel": "1名様 US$39（定価$50、22%オフ）",
         "shortCardDescription": "釜山発・少人数制慶州日帰りツアー。慶州は992年間（紀元前57年〜935年）にわたり新羅王国の都として栄え、韓国で最もユネスコ世界遺産が集中するエリアです。ルート：アホプサン竹林 → 仏国寺（ユネスコ）→ 慶州サムパプランチ → 慶州国立博物館 → 校村韓屋村 → 月精橋。英語・中国語対応の公認ガイド付き、ミニバン使用、仏国寺・博物館の入場料は無料。"
       },
@@ -4438,8 +4438,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "3か所でピックアップ",
           "11時間の日帰り"
         ],
-        "heroImage": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp",
-        "thumbnail": "/images/tours/amethyst-cave/amethyst-cave-hall-water.webp",
+        "heroImage": "/images/itinerary/tongdosa-iljumun.webp",
+        "thumbnail": "/images/itinerary/tongdosa-iljumun.webp",
         "priceLabel": "",
         "shortCardDescription": "梁山（通度寺、2018年ユネスコ世界遺産）、蔚山（ボート乗船オプション付きアメジスト洞窟テーマパーク）、密陽（嶺南アルプス氷谷ケーブルカー）を経て、釜山の甘川文化村で締めくくる11時間の郊外コーチ日帰りツアー。ピックアップは3か所（釜山駅 / 西面 / 海雲台）、終了時にチャガルチでの途中下車オプションあり。"
       },
@@ -4463,8 +4463,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "ユネスコ登録2か所",
           "釜山発着"
         ],
-        "heroImage": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
-        "thumbnail": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+        "heroImage": "/images/itinerary/tongdosa-iljumun.webp",
+        "thumbnail": "/images/itinerary/tongdosa-iljumun.webp",
         "priceLabel": "",
         "shortCardDescription": "梁山と慶州を巡る釜山発8.5時間の二季節シャトルツアー。基本コースでは、通度寺（ユネスコ山寺・韓国三宝寺院の一つ、樹齢350年のジャジャンメ梅）、院洞梅の花村（ビニールハウスのポップアップレストランでミナリサムギョプサルのランチ）、仏国寺（ユネスコ世界遺産）、普門湖（8km桜並木周遊）を訪れます。桜のみのツアーより運行期間が広く、約2月25日〜4月10日に梅と桜の両シーズンをカバー。当日の梅・桜の開花状況に応じてルートの重点を調整します。"
       },
@@ -4487,8 +4487,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "カスタマイズ可能なルート",
           "クルーズターミナル送迎込み"
         ],
-        "heroImage": "/images/tours/busan-private/busan-private-cruise-terminal-thumbnail.webp",
-        "thumbnail": "/images/tours/busan-private/busan-private-cruise-terminal-thumbnail.webp",
+        "heroImage": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+        "thumbnail": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
         "priceLabel": "車両1台8時間 $359（定価 $379、1–6名）· 7–12名は2倍 · 13名以上は3倍",
         "shortCardDescription": "公認英語対応ドライバーガイド付きの、釜山クルーズ乗客向け8時間プライベートカーチャーター。標準行程はUN記念公園、太宗台、甘川文化村、龍頭山公園、チャガルチ市場をカバー。完全カスタマイズ可能。クルーズターミナル、KTX駅、釜山市内の主要ホテルからの送迎；時間厳守での帰港を保証。"
       },
@@ -4512,8 +4512,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "港でのピックアップ",
           "9時間の行程"
         ],
-        "heroImage": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
-        "thumbnail": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+        "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+        "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
         "priceLabel": "1名様 US$79（定価$85、7%オフ）",
         "shortCardDescription": "釜山クルーズターミナル発の乗合バン日帰りツアーで、人気の5スポットを9時間で巡ります：国連記念公園（朝鮮戦争の歴史）、太宗台の海岸断崖、地元レストランでの昼食、甘川文化村（カラフルな丘の街）、龍頭山公園（釜山タワー展望台はオプション）、チャガルチ市場。お客様の船の下船時刻に合わせたピックアップ。英語・中国語対応の認定ガイド付き。"
       },
@@ -4537,8 +4537,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "ユネスコ世界遺産",
           "釜山発着"
         ],
-        "heroImage": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
-        "thumbnail": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
+        "heroImage": "/images/itinerary/bomun-lake-cherry-blossom-promenade.webp",
+        "thumbnail": "/images/itinerary/bomun-lake-cherry-blossom-promenade.webp",
         "priceLabel": "",
         "shortCardDescription": "慶州の主要な春の桜スポットを巡る、釜山発8.5時間のシャトルツアー。基本ルートは、普門湖（桜並木が続く8kmの湖畔散策）、瞻星台＋大陵苑の歴史エリア（ユネスコ・慶州歴史地区）、仏国寺（ユネスコ世界遺産・4月中旬には八重桜が見頃を迎える）をカバーします。当日の開花情報をもとに、毎朝2〜3か所の立ち寄りスポットを確定します。ツアーは3月28日〜4月10日限定運行——開花が大幅に遅れる、またはすでに終了している場合は全額返金いたします。"
       },
@@ -4562,8 +4562,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "釜山定番",
           "通年催行"
         ],
-        "heroImage": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
-        "thumbnail": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+        "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+        "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
         "priceLabel": "1名様 US$29（定価$41、29%オフ）",
         "shortCardDescription": "釜山の定番スポットを巡る1日7か所の小グループツアー：海辺に立つ海東龍宮寺、チョンサポ＆ブルーラインパーク（スカイカプセルはオプション）、釜山の地元ランチ、国連記念公園、甘川文化村の色鮮やかな丘の街並み、チャガルチ魚市場。釜山中心部の3か所から乗車可能。公認英語ガイド付き、ミニコーチ（最大約12名）。各観光地の入場料は無料。ランチとオプション券のみ当日払い。"
       },
@@ -4586,8 +4586,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "初めての方にも安心",
           "済州島東部シグネチャー"
         ],
-        "heroImage": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
-        "thumbnail": "/images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp",
+        "heroImage": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
+        "thumbnail": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
         "priceLabel": "",
         "shortCardDescription": "石の文化と火山の背景からスタートし、海岸と城山日出峰を経て、イルチュルランドと城邑民俗村で締めくくる、充実した1日を過ごせるわかりやすい済州島東部の日帰りルートです。"
       },
@@ -4611,8 +4611,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "釜山発",
           "早めの帰着"
         ],
-        "heroImage": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
-        "thumbnail": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+        "heroImage": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+        "thumbnail": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
         "priceLabel": "1名様 US$39（定価$50、22%オフ）",
         "shortCardDescription": "釜山から新羅王国の古都・慶州（紀元前57年〜935年）への少人数日帰りツアー。ユネスコレガシー版と同じ定番6スポットルート（アホプサン竹林 → 仏国寺ユネスコ → 慶州サムバップランチ → 国立博物館 → 校村韓屋村 → 月精橋）を、よりゆったりとしたペースで巡り、早めの帰着（約18:50）。英語・中国語対応の認定ガイド付き、ミニバン使用、全施設入場料込み（アホプサンの₩5,000とランチのみ当日払い）。"
       },
@@ -4636,8 +4636,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "仁川港でのお迎え",
           "9時間のウィンドウ"
         ],
-        "heroImage": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
-        "thumbnail": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
+        "heroImage": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+        "thumbnail": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
         "priceLabel": "1名様 US$69（定価$76、9%オフ）",
         "shortCardDescription": "仁川クルーズターミナル発のシェアバン日帰りツアー。9時間のウィンドウでソウルの主要スポットを一挙に巡ります：景福宮（火曜日は昌徳宮）、北村韓屋村、広蔵市場でのランチ（ソウルで最も写真映えするストリートフードの路地）、そして仁寺洞文化通り。お客様のクルーズ船の下船時刻に合わせたピックアップ。認定英語・中国語ガイド付き。帰路の車移動約75分を含みます。"
       },
@@ -4663,8 +4663,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "カスタマイズ可能",
           "帰船保証"
         ],
-        "heroImage": "/images/tours/incheon-cruise/incheon-cruise-terminal-thumbnail.webp",
-        "thumbnail": "/images/tours/incheon-cruise/incheon-cruise-terminal-thumbnail.webp",
+        "heroImage": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+        "thumbnail": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
         "priceLabel": "1台あたり US$419〜",
         "shortCardDescription": "船の出港時刻に合わせて組み立てる、8時間のプライベート専用車チャーター。固定スケジュールはありません。仁川クルーズターミナルのタラップでお出迎えし、英語対応のドライバーガイドが景福宮・北村韓屋村＋仁寺洞・お好みのランチ・Nソウルタワー・明洞または曹渓寺をご案内します。ドライバーガイドは出港時刻の60分前を交通渋滞バッファーとして確保するため、乗り遅れの心配はありません。"
       },
@@ -4737,8 +4737,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "プレミアムクルーズ",
           "少人数グループ"
         ],
-        "heroImage": "/images/tours/jeju-cruise-terminal/jeju-cruise-terminal-private-pickup.webp",
-        "thumbnail": "/images/tours/jeju-cruise-terminal/jeju-cruise-terminal-private-pickup.webp",
+        "heroImage": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+        "thumbnail": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
         "priceLabel": "1名様 US$79（定価$85、7%オフ）",
         "shortCardDescription": "寄港地に合わせてルートが変わる少人数グループ制クルーズ寄港地観光です。済州港（北部）発は城山日出峰を経由する東海岸ユネスコルート、江汀港（南部）発は漢拏山1100高地＋南海岸の地質スポット＋オルレ市場を巡るルートをご案内します。どちらもクルーズターミナルへ余裕を持って帰港します。"
       },
@@ -4788,8 +4788,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "日帰り旅行者に最適",
           "テンポよく巡るハイライトコース"
         ],
-        "heroImage": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
-        "thumbnail": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
         "priceLabel": "1名様 US$79（定価$89、11%オフ）",
         "shortCardDescription": "時間の限られた旅行者のための効率的な済州全島ルート。漢拏山、南海岸、城山日出峰を1日でつなぎます。"
       },
@@ -4814,8 +4814,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "ユネスコ",
           "東ルート"
         ],
-        "heroImage": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-23.webp",
-        "thumbnail": "/images/tours/hueree/chatgpt-image-2026-5-8-08-01-23.webp",
+        "heroImage": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+        "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
         "priceLabel": "1名様 US$59（定価$69、14%オフ）",
         "shortCardDescription": "済州東部アジサイ祭りシーズン（6〜8月）の少人数日帰りツアー。咸徳海岸→城邑民俗村→城山日出峰（ユネスコ）→日出ランド（アジサイ祭り＋密川洞窟）→ヒュアリ自然公園（韓国有数のアジサイ見どころ）。9時間、済州市内ホテル発着。"
       },
@@ -4889,8 +4889,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "お手頃価格",
           "買い物なし"
         ],
-        "heroImage": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
-        "thumbnail": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
         "priceLabel": "",
         "shortCardDescription": "済州南部の定番スポットを巡る少人数日帰りツアー。漢拏山（ユネスコ生物圏保護区）のオソングセンアク登山道、カメリアヒルガーデン、三段からなる天帝淵瀑布、六角形の柱状節理帯、そしてオスルロック緑茶博物館を訪れます。済州市内と空港の4か所で送迎可能。英語・中国語認定ガイド付き、全入場料込み、買い物の押し売りなし。648件のレビューで4.9/5という、最もレビュー数の多い入門レベルの済州ツアーです。"
       },
@@ -4916,8 +4916,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "カフェ文化",
           "海岸"
         ],
-        "heroImage": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
-        "thumbnail": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+        "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
         "priceLabel": "1名様 US$59（定価$69、14%オフ）",
         "shortCardDescription": "済州島の西海岸と南海岸を一度に巡る少人数日帰りツアー。漢拏山1100高地湿地（ユネスコ）、六角形の柱状節理帯、松岳山のパノラマ展望台、天帝淵滝、オソルロックティーミュージアム、そして西海岸の協財海岸カフェエリアをご案内します。南部ユネスコツアーと同じ運営会社ですが、よりライフスタイル志向のコンセプトで構成——「火山の景観とドラマティックな海岸線、トレンディな海辺カフェが融合する」旅をお届けします。"
       },
@@ -4944,8 +4944,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "椿（つばき）",
           "雪"
         ],
-        "heroImage": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
-        "thumbnail": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+        "heroImage": "/images/tours/jeju-tangerine-farm/photo-001.webp",
+        "thumbnail": "/images/tours/jeju-tangerine-farm/photo-001.webp",
         "priceLabel": "",
         "shortCardDescription": "12月から2月にかけて済州島南西部を巡る季節限定の日帰りツアーです。冬の済州ならではの三つの魅力を中心に構成されています：漢拏山の斜面に広がる雪景色、カメリアヒルで満開を迎える赤い椿、そして現役の農園でのみかん（ギュル）狩り体験。コースには天帝淵の滝、柱状節理帯、オソルロック・ティーミュージアムも含まれます。済州市内のホテルから送迎あり、英語・中国語対応の公認ガイドが同行します。"
       },
@@ -5016,8 +5016,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "韓国ドラマのロケ地",
           "カップル・ファミリー向け"
         ],
-        "heroImage": "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
-        "thumbnail": "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
+        "heroImage": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
+        "thumbnail": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
         "priceLabel": "",
         "shortCardDescription": "ソウル発の貸切日帰りツアーで、ナミ島の並木道とフェリー体験、晨園のテーマガーデン散策、そしてカラフルな星の王子さまの村・プチフランスをお楽しみいただけます。ホテル送迎・貸切車・ゆったりとしたペースで、定番の加平ルートを最高の快適さでご案内します。"
       },
@@ -5066,8 +5066,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "入場料すべて込み",
           "13時間の行程"
         ],
-        "heroImage": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
-        "thumbnail": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
+        "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+        "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
         "priceLabel": "お一人様 US$59〜（通常$82、28%割引）",
         "shortCardDescription": "ソウル発13時間バス日帰りツアーで、韓国で最も写真に撮られる3大スポットを訪問：雪岳山国立公園（韓国唯一のユネスコ生物圏保護区）、南怡島（冬のソナタのメタセコイア並木）、晨静苑（5,000種類の植物を誇る韓国を代表するプライベート樹木園）。入場料すべて込み、英語ガイド付き、弘大入口駅または明洞駅よりピックアップ。"
       },
@@ -5094,8 +5094,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "紅葉",
           "日帰り旅行"
         ],
-        "heroImage": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
-        "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+        "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+        "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
         "priceLabel": "",
         "shortCardDescription": "ソウルから韓国で最も愛される国立公園と、東海岸の都市・束草への少人数日帰り旅行です。雪岳山の花崗岩の峰々、渓谷、仏教文化遺産と、束草の水産市場・ビーチを組み合わせたルートは、東海岸ならではの山と海の絶景体験です。英語ガイド付き、往復送迎込みの12時間ツアー。"
       },
@@ -5146,8 +5146,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "民俗村",
           "日帰り旅行"
         ],
-        "heroImage": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-        "thumbnail": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
+        "heroImage": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+        "thumbnail": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
         "priceLabel": "",
         "shortCardDescription": "ソウルから京畿道へ向かう少人数文化日帰り旅行。韓国の歴史遺産と現代の暮らしの対照的な4つの側面をめぐります：ユネスコ世界遺産に登録された水原華城（18世紀の城壁と城門）、朝鮮時代の再現イベントが催される復元された華城行宮、龍仁にある没入感あふれる野外型韓国民俗村、そして圧倒的な存在感を放つ4フロアのスターフィールドライブラリー水原。交通費と入場料込みの10時間ツアー。"
       },
@@ -5174,8 +5174,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "ショッピング",
           "日帰り旅行"
         ],
-        "heroImage": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-15.webp",
-        "thumbnail": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-15.webp",
+        "heroImage": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+        "thumbnail": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
         "priceLabel": "",
         "shortCardDescription": "ソウル発の少人数制文化日帰りツアーで、京畿道の対照的な4つの魅力を巡ります。18世紀の城壁と行宮を有するユネスコ世界遺産・水原華城、旧日本時代の金鉱跡に広がるLEDライトアップの地下テーマパーク「光明洞窟」、4フロアにわたるスターフィールドライブラリー水原、そして1,000年の歴史を誇る南門伝統市場のストリートフード。交通費・入場料込みの9時間コースです。"
       },
@@ -5198,8 +5198,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "世界遺産＋現代文化の日帰り旅行",
           "入場料込み"
         ],
-        "heroImage": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
-        "thumbnail": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
+        "heroImage": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+        "thumbnail": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
         "priceLabel": "",
         "shortCardDescription": "ソウル発の少人数制日帰りツアーで、対照的な韓国の3つの魅力を巡ります：ユネスコ世界遺産に登録された水原華城（18世紀の軍事建築）、フォトジェニックなスターフィールド水原図書館（現代の文化的名所）、龍仁の臥牛精舎（巨大な野外仏像と石鐘）。交通・入場料込みで、充実した世界遺産体験をお届けします。"
       },
@@ -5221,8 +5221,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "済州島初訪問者に最適",
           "済州島南西部"
         ],
-        "heroImage": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24.webp",
-        "thumbnail": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24.webp",
+        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
         "priceLabel": "1名様 US$59（定価$69、14%オフ）",
         "shortCardDescription": "漢拏山の軽ハイキング、火山性海岸線、天帝淵瀑布、オスルロクの茶畑、涯月カフェストリートをつなぐ、バランスの取れた済州島南西部ルート。"
       },

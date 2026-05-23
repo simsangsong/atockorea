@@ -14,12 +14,12 @@
       "서울 당일 투어 설악산",
       "설악산·남이섬 1일 투어"
     ],
-    "ogImage": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
     "title": "서울 당일 투어 · 설악산 + 남이섬 + 아침고요 | AtoC Korea",
     "description": "서울에서 출발하는 코치 당일 투어로, 한국에서 가장 사랑받는 산(설악산), 가장 많이 사진에 담기는 섬(남이섬), 그리고 대표적인 프라이빗 정원(아침고요수목원)을 단 하루 13시간 만에 모두 만나보세요."
   },
   "catalog_card": {
-    "thumbnail": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
+    "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
     "title": "서울: 설악산 + 남이섬 + 아침고요",
     "priceLabel": "1인 US$59부터 (정가 $82, 28% 할인)",
     "shortCardDescription": "서울 출발 13시간 코치 당일 투어로, 한국에서 가장 많이 촬영되는 당일 여행지 세 곳을 모두 방문합니다: 설악산 국립공원(한국 유일의 유네스코 생물권보전지역), 남이섬(겨울연가의 메타세쿼이아길), 아침고요수목원(5,000여 종의 식물을 보유한 한국 대표 프라이빗 수목원). 전 일정 입장료 포함, 영어 안내 가이드, 홍익대입구역 또는 명동역 픽업.",
@@ -43,7 +43,7 @@
       "입장료 전액 포함",
       "13시간 당일 일정"
     ],
-    "heroImage": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp"
+    "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp"
   },
   "headlineLine1": "서울 당일 투어",
   "headlineLine2": "설악산 + 남이섬 + 아침고요수목원",
@@ -56,7 +56,7 @@
     "discountPercent": null
   },
   "hero": {
-    "imageUrl": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
+    "imageUrl": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
     "imagePosition": "center 40%",
     "tagline": "서울에서 출발하는 13시간 코치 투어로 한국에서 가장 많이 사진에 담기는 당일치기 명소 세 곳: 설악산, 남이섬의 가로수길, 아침고요수목원",
     "pills": [
@@ -141,58 +141,122 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
-      "location": "남이섬 (나미섬)",
-      "alt": "남이섬 — 갤러리 이미지 1",
-      "caption": "남이섬 — 메타세쿼이아 길"
+      "src": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "location": "설악산국립공원",
+      "alt": "설악산국립공원 — gallery image 1",
+      "caption": "설악산국립공원 — photo 1"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
+      "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
       "location": "남이섬 (나미섬)",
-      "alt": "남이섬 — 갤러리 이미지 2",
-      "caption": "남이섬 — 은행나무길"
+      "alt": "남이섬 (나미섬) — gallery image 1",
+      "caption": "남이섬 (나미섬) — photo 1"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
-      "location": "남이섬 (나미섬)",
-      "alt": "남이섬 — 갤러리 이미지 3",
-      "caption": "남이섬 — 강변 산책로"
+      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31.webp",
+      "location": "아침고요수목원",
+      "alt": "아침고요수목원 — gallery image 1",
+      "caption": "아침고요수목원 — photo 1"
     },
     {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31.webp",
-      "location": "아침고요수목원",
-      "alt": "아침고요수목원 — 갤러리 이미지 1",
-      "caption": "아침고요수목원 — 테마 정원"
+      "src": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+      "location": "설악산국립공원",
+      "alt": "설악산국립공원 — gallery image 2",
+      "caption": "설악산국립공원 — photo 2"
     },
     {
       "id": 5,
       "type": "photo",
-      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58.webp",
-      "location": "아침고요수목원",
-      "alt": "아침고요수목원 — 갤러리 이미지 2",
-      "caption": "아침고요수목원 — 선큰 가든"
+      "src": "/images/tours/seoraksan/photo-001.webp",
+      "location": "설악산국립공원",
+      "alt": "설악산국립공원 — gallery image 3",
+      "caption": "설악산국립공원 — photo 3"
     },
     {
       "id": 6,
       "type": "photo",
-      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02.webp",
-      "location": "아침고요수목원",
-      "alt": "아침고요수목원 — 갤러리 이미지 3",
-      "caption": "아침고요수목원 — 빛 축제"
+      "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
+      "location": "남이섬 (나미섬)",
+      "alt": "남이섬 (나미섬) — gallery image 2",
+      "caption": "남이섬 (나미섬) — photo 2"
     },
     {
       "id": 7,
       "type": "photo",
+      "src": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
+      "location": "남이섬 (나미섬)",
+      "alt": "남이섬 (나미섬) — gallery image 3",
+      "caption": "남이섬 (나미섬) — photo 3"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-04-2.webp",
+      "location": "남이섬 (나미섬)",
+      "alt": "남이섬 (나미섬) — gallery image 4",
+      "caption": "남이섬 (나미섬) — photo 4"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-05-2.webp",
+      "location": "남이섬 (나미섬)",
+      "alt": "남이섬 (나미섬) — gallery image 5",
+      "caption": "남이섬 (나미섬) — photo 5"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58.webp",
+      "location": "아침고요수목원",
+      "alt": "아침고요수목원 — gallery image 2",
+      "caption": "아침고요수목원 — photo 2"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02.webp",
+      "location": "아침고요수목원",
+      "alt": "아침고요수목원 — gallery image 3",
+      "caption": "아침고요수목원 — photo 3"
+    },
+    {
+      "id": 12,
+      "type": "photo",
       "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp",
       "location": "아침고요수목원",
-      "alt": "아침고요수목원 — 갤러리 이미지 4",
-      "caption": "아침고요수목원 — 식물 산책로"
+      "alt": "아침고요수목원 — gallery image 4",
+      "caption": "아침고요수목원 — photo 4"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31-2.webp",
+      "location": "아침고요수목원",
+      "alt": "아침고요수목원 — gallery image 5",
+      "caption": "아침고요수목원 — photo 5"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58-2.webp",
+      "location": "아침고요수목원",
+      "alt": "아침고요수목원 — gallery image 6",
+      "caption": "아침고요수목원 — photo 6"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02-2.webp",
+      "location": "아침고요수목원",
+      "alt": "아침고요수목원 — gallery image 7",
+      "caption": "아침고요수목원 — photo 7"
     }
   ],
   "itineraryStops": [
@@ -270,6 +334,46 @@
       "images": [
         "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
         "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seoraksan/photo-001.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+          "location": "설악산국립공원",
+          "caption": "설악산국립공원 — photo 1",
+          "alt": "설악산국립공원 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+          "location": "설악산국립공원",
+          "caption": "설악산국립공원 — photo 2",
+          "alt": "설악산국립공원 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/seoraksan/photo-001.webp",
+          "location": "설악산국립공원",
+          "caption": "설악산국립공원 — photo 3",
+          "alt": "설악산국립공원 — gallery image 3"
+        }
       ]
     },
     {
@@ -332,6 +436,70 @@
         "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
         "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
         "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/nami-island/kakaotalk-20260510-222949305-04-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/nami-island/kakaotalk-20260510-222949305-05-2.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
+          "location": "남이섬 (나미섬)",
+          "caption": "남이섬 (나미섬) — photo 1",
+          "alt": "남이섬 (나미섬) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
+          "location": "남이섬 (나미섬)",
+          "caption": "남이섬 (나미섬) — photo 2",
+          "alt": "남이섬 (나미섬) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
+          "location": "남이섬 (나미섬)",
+          "caption": "남이섬 (나미섬) — photo 3",
+          "alt": "남이섬 (나미섬) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-04-2.webp",
+          "location": "남이섬 (나미섬)",
+          "caption": "남이섬 (나미섬) — photo 4",
+          "alt": "남이섬 (나미섬) — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-05-2.webp",
+          "location": "남이섬 (나미섬)",
+          "caption": "남이섬 (나미섬) — photo 5",
+          "alt": "남이섬 (나미섬) — gallery image 5"
+        }
       ]
     },
     {
@@ -396,6 +564,94 @@
         "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58.webp",
         "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02.webp",
         "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02-2.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31.webp",
+          "location": "아침고요수목원",
+          "caption": "아침고요수목원 — photo 1",
+          "alt": "아침고요수목원 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58.webp",
+          "location": "아침고요수목원",
+          "caption": "아침고요수목원 — photo 2",
+          "alt": "아침고요수목원 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02.webp",
+          "location": "아침고요수목원",
+          "caption": "아침고요수목원 — photo 3",
+          "alt": "아침고요수목원 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp",
+          "location": "아침고요수목원",
+          "caption": "아침고요수목원 — photo 4",
+          "alt": "아침고요수목원 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31-2.webp",
+          "location": "아침고요수목원",
+          "caption": "아침고요수목원 — photo 5",
+          "alt": "아침고요수목원 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58-2.webp",
+          "location": "아침고요수목원",
+          "caption": "아침고요수목원 — photo 6",
+          "alt": "아침고요수목원 — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02-2.webp",
+          "location": "아침고요수목원",
+          "caption": "아침고요수목원 — photo 7",
+          "alt": "아침고요수목원 — gallery image 7"
+        }
       ]
     },
     {

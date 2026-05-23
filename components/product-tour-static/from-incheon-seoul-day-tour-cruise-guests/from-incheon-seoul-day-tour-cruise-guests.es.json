@@ -13,10 +13,10 @@
       "Excursión de un día a Seúl desde Incheon",
       "Tour en crucero al Palacio Gyeongbokgung"
     ],
-    "ogImage": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp"
+    "ogImage": "https://www.atockorea.com/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp"
   },
   "catalog_card": {
-    "thumbnail": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
+    "thumbnail": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
     "title": "Incheon→Seúl: Tour de Crucero",
     "priceLabel": "Desde US$69 por persona (antes $76, 9% descuento)",
     "shortCardDescription": "Excursión de un día en furgoneta compartida desde la Terminal de Cruceros de Incheon visitando los principales puntos turísticos del centro de Seúl en una ventana de 9 horas: Palacio Gyeongbokgung (o Changdeokgung los martes), Pueblo Hanok de Bukchon, almuerzo en el Mercado Gwangjang (el callejón de comida callejera más fotografiado de la ciudad) y la calle cultural de Insadong. Recogida coordinada con el desembarco específico de su barco; guía certificado con inglés y chino; ≈75 min de trayecto de regreso incluidos.",
@@ -40,7 +40,7 @@
       "Recogida en el puerto de Incheon",
       "Ventana de 9 horas"
     ],
-    "heroImage": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp"
+    "heroImage": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp"
   },
   "headlineLine1": "Incheon→Seúl",
   "headlineLine2": "Tour de Crucero",
@@ -53,7 +53,7 @@
     "discountPercent": null
   },
   "hero": {
-    "imageUrl": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
+    "imageUrl": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
     "imagePosition": "center 35%",
     "tagline": "Cuatro paradas en el centro de Seúl coordinadas con el horario de su barco",
     "pills": [
@@ -157,13 +157,21 @@
     {
       "id": 4,
       "type": "photo",
+      "src": "/images/tours/insadong/photo-001.webp",
+      "location": "Calle cultural de Insadong",
+      "alt": "Calle cultural de Insadong — gallery image 1",
+      "caption": "Calle cultural de Insadong — photo 1"
+    },
+    {
+      "id": 5,
+      "type": "photo",
       "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10.webp",
       "location": "Palacio de Gyeongbokgung",
       "alt": "Palacio de Gyeongbokgung — gallery image 2",
       "caption": "Palacio de Gyeongbokgung — photo 2"
     },
     {
-      "id": 5,
+      "id": 6,
       "type": "photo",
       "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11.webp",
       "location": "Palacio de Gyeongbokgung",
@@ -171,7 +179,7 @@
       "caption": "Palacio de Gyeongbokgung — photo 3"
     },
     {
-      "id": 6,
+      "id": 7,
       "type": "photo",
       "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-12-08.webp",
       "location": "Palacio de Gyeongbokgung",
@@ -179,7 +187,7 @@
       "caption": "Palacio de Gyeongbokgung — photo 4"
     },
     {
-      "id": 7,
+      "id": 8,
       "type": "photo",
       "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-13-43.webp",
       "location": "Palacio de Gyeongbokgung",
@@ -187,7 +195,7 @@
       "caption": "Palacio de Gyeongbokgung — photo 5"
     },
     {
-      "id": 8,
+      "id": 9,
       "type": "photo",
       "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
       "location": "Palacio de Gyeongbokgung",
@@ -195,7 +203,7 @@
       "caption": "Palacio de Gyeongbokgung — photo 6"
     },
     {
-      "id": 9,
+      "id": 10,
       "type": "photo",
       "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
       "location": "Palacio de Gyeongbokgung",
@@ -203,7 +211,7 @@
       "caption": "Palacio de Gyeongbokgung — photo 7"
     },
     {
-      "id": 10,
+      "id": 11,
       "type": "photo",
       "src": "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
       "location": "Palacio de Gyeongbokgung",
@@ -211,12 +219,68 @@
       "caption": "Palacio de Gyeongbokgung — photo 8"
     },
     {
-      "id": 11,
+      "id": 12,
       "type": "photo",
       "src": "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
       "location": "Palacio de Gyeongbokgung",
       "alt": "Palacio de Gyeongbokgung — gallery image 9",
       "caption": "Palacio de Gyeongbokgung — photo 9"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09-2.webp",
+      "location": "Palacio de Gyeongbokgung",
+      "alt": "Palacio de Gyeongbokgung — gallery image 10",
+      "caption": "Palacio de Gyeongbokgung — photo 10"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10-2.webp",
+      "location": "Palacio de Gyeongbokgung",
+      "alt": "Palacio de Gyeongbokgung — gallery image 11",
+      "caption": "Palacio de Gyeongbokgung — photo 11"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11-2.webp",
+      "location": "Palacio de Gyeongbokgung",
+      "alt": "Palacio de Gyeongbokgung — gallery image 12",
+      "caption": "Palacio de Gyeongbokgung — photo 12"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/gyeongbokgung/photo-004.webp",
+      "location": "Palacio de Gyeongbokgung",
+      "alt": "Palacio de Gyeongbokgung — gallery image 13",
+      "caption": "Palacio de Gyeongbokgung — photo 13"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07-2.webp",
+      "location": "Bukchon Hanok Village",
+      "alt": "Bukchon Hanok Village — gallery image 2",
+      "caption": "Bukchon Hanok Village — photo 2"
+    },
+    {
+      "id": 18,
+      "type": "photo",
+      "src": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36-2.webp",
+      "location": "Almuerzo en el Mercado Gwangjang",
+      "alt": "Almuerzo en el Mercado Gwangjang — gallery image 2",
+      "caption": "Almuerzo en el Mercado Gwangjang — photo 2"
+    },
+    {
+      "id": 19,
+      "type": "photo",
+      "src": "/images/tours/insadong/photo-002.webp",
+      "location": "Calle cultural de Insadong",
+      "alt": "Calle cultural de Insadong — gallery image 2",
+      "caption": "Calle cultural de Insadong — photo 2"
     }
   ],
   "itineraryStops": [
@@ -379,6 +443,22 @@
         {
           "url": "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongbokgung/photo-004.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -453,6 +533,38 @@
           "location": "Palacio de Gyeongbokgung",
           "caption": "Palacio de Gyeongbokgung — photo 9",
           "alt": "Palacio de Gyeongbokgung — gallery image 9"
+        },
+        {
+          "id": 10,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09-2.webp",
+          "location": "Palacio de Gyeongbokgung",
+          "caption": "Palacio de Gyeongbokgung — photo 10",
+          "alt": "Palacio de Gyeongbokgung — gallery image 10"
+        },
+        {
+          "id": 11,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10-2.webp",
+          "location": "Palacio de Gyeongbokgung",
+          "caption": "Palacio de Gyeongbokgung — photo 11",
+          "alt": "Palacio de Gyeongbokgung — gallery image 11"
+        },
+        {
+          "id": 12,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11-2.webp",
+          "location": "Palacio de Gyeongbokgung",
+          "caption": "Palacio de Gyeongbokgung — photo 12",
+          "alt": "Palacio de Gyeongbokgung — gallery image 12"
+        },
+        {
+          "id": 13,
+          "type": "photo",
+          "src": "/images/tours/gyeongbokgung/photo-004.webp",
+          "location": "Palacio de Gyeongbokgung",
+          "caption": "Palacio de Gyeongbokgung — photo 13",
+          "alt": "Palacio de Gyeongbokgung — gallery image 13"
         }
       ]
     },
@@ -519,6 +631,10 @@
         {
           "url": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -529,6 +645,14 @@
           "location": "Bukchon Hanok Village",
           "caption": "Bukchon Hanok Village — photo 1",
           "alt": "Bukchon Hanok Village — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07-2.webp",
+          "location": "Bukchon Hanok Village",
+          "caption": "Bukchon Hanok Village — photo 2",
+          "alt": "Bukchon Hanok Village — gallery image 2"
         }
       ]
     },
@@ -595,6 +719,10 @@
         {
           "url": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -605,6 +733,14 @@
           "location": "Almuerzo en el Mercado Gwangjang",
           "caption": "Almuerzo en el Mercado Gwangjang — photo 1",
           "alt": "Almuerzo en el Mercado Gwangjang — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36-2.webp",
+          "location": "Almuerzo en el Mercado Gwangjang",
+          "caption": "Almuerzo en el Mercado Gwangjang — photo 2",
+          "alt": "Almuerzo en el Mercado Gwangjang — gallery image 2"
         }
       ]
     },
@@ -663,7 +799,39 @@
           "Wikipedia (Insadong)"
         ]
       },
-      "image": null
+      "image": "/images/tours/insadong/photo-001.webp",
+      "images": [
+        "/images/tours/insadong/photo-001.webp",
+        "/images/tours/insadong/photo-002.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/insadong/photo-001.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/insadong/photo-002.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/insadong/photo-001.webp",
+          "location": "Calle cultural de Insadong",
+          "caption": "Calle cultural de Insadong — photo 1",
+          "alt": "Calle cultural de Insadong — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/insadong/photo-002.webp",
+          "location": "Calle cultural de Insadong",
+          "caption": "Calle cultural de Insadong — photo 2",
+          "alt": "Calle cultural de Insadong — gallery image 2"
+        }
+      ]
     },
     {
       "number": 6,
@@ -1501,7 +1669,11 @@
               "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-01-27-33.webp",
               "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
               "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
-              "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp"
+              "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
+              "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09-2.webp",
+              "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10-2.webp",
+              "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11-2.webp",
+              "/images/tours/gyeongbokgung/photo-004.webp"
             ],
             "imageCredits": [
               {
@@ -1538,6 +1710,22 @@
               },
               {
                 "url": "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyeongbokgung/photo-004.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1613,6 +1801,38 @@
                 "location": "Palacio Gyeongbokgung",
                 "caption": "Palacio Gyeongbokgung — photo 9",
                 "alt": "Palacio Gyeongbokgung — gallery image 9"
+              },
+              {
+                "id": 10,
+                "type": "photo",
+                "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09-2.webp",
+                "location": "Palacio Gyeongbokgung",
+                "caption": "Palacio Gyeongbokgung — photo 10",
+                "alt": "Palacio Gyeongbokgung — gallery image 10"
+              },
+              {
+                "id": 11,
+                "type": "photo",
+                "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10-2.webp",
+                "location": "Palacio Gyeongbokgung",
+                "caption": "Palacio Gyeongbokgung — photo 11",
+                "alt": "Palacio Gyeongbokgung — gallery image 11"
+              },
+              {
+                "id": 12,
+                "type": "photo",
+                "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11-2.webp",
+                "location": "Palacio Gyeongbokgung",
+                "caption": "Palacio Gyeongbokgung — photo 12",
+                "alt": "Palacio Gyeongbokgung — gallery image 12"
+              },
+              {
+                "id": 13,
+                "type": "photo",
+                "src": "/images/tours/gyeongbokgung/photo-004.webp",
+                "location": "Palacio Gyeongbokgung",
+                "caption": "Palacio Gyeongbokgung — photo 13",
+                "alt": "Palacio Gyeongbokgung — gallery image 13"
               }
             ]
           },
@@ -1636,11 +1856,16 @@
               "quiet_hours": "22:00-10:00 daily"
             },
             "images": [
-              "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp"
+              "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+              "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07-2.webp"
             ],
             "imageCredits": [
               {
                 "url": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07-2.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1652,6 +1877,14 @@
                 "location": "Pueblo Hanok de Bukchon",
                 "caption": "Pueblo Hanok de Bukchon — photo 1",
                 "alt": "Pueblo Hanok de Bukchon — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07-2.webp",
+                "location": "Pueblo Hanok de Bukchon",
+                "caption": "Pueblo Hanok de Bukchon — photo 2",
+                "alt": "Pueblo Hanok de Bukchon — gallery image 2"
               }
             ]
           },
@@ -1675,11 +1908,16 @@
               "lunch_budget_krw": "10000-20000"
             },
             "images": [
-              "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp"
+              "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
+              "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36-2.webp"
             ],
             "imageCredits": [
               {
                 "url": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36-2.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1691,6 +1929,14 @@
                 "location": "Almuerzo en el Mercado Gwangjang",
                 "caption": "Almuerzo en el Mercado Gwangjang — photo 1",
                 "alt": "Almuerzo en el Mercado Gwangjang — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/gwangjang-market/chatgpt-image-2026-5-10-10-43-36-2.webp",
+                "location": "Almuerzo en el Mercado Gwangjang",
+                "caption": "Almuerzo en el Mercado Gwangjang — photo 2",
+                "alt": "Almuerzo en el Mercado Gwangjang — gallery image 2"
               }
             ]
           },
@@ -1711,7 +1957,39 @@
               "poi_key": "insadong",
               "is_attraction": true,
               "fee_krw": 0
-            }
+            },
+            "images": [
+              "/images/tours/insadong/photo-001.webp",
+              "/images/tours/insadong/photo-002.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/insadong/photo-001.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/insadong/photo-002.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/insadong/photo-001.webp",
+                "location": "Calle cultural de Insadong",
+                "caption": "Calle cultural de Insadong — photo 1",
+                "alt": "Calle cultural de Insadong — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/insadong/photo-002.webp",
+                "location": "Calle cultural de Insadong",
+                "caption": "Calle cultural de Insadong — photo 2",
+                "alt": "Calle cultural de Insadong — gallery image 2"
+              }
+            ]
           },
           {
             "number": 6,

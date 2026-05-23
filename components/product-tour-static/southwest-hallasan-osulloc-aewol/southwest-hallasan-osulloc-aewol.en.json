@@ -14,7 +14,7 @@
       "Aewol coast café tour",
       "Hyeopjae Beach tour"
     ],
-    "ogImage": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
     "title": "Southwest Jeju: Hallasan + Osulloc + Aewol | AtoC Korea",
     "description": "Southwest Jeju small-group year-round day tour: Hallasan 1100 Road wetland → Jusangjeolli cliff (UNESCO Geopark) → Cheonjeyeon Waterfall → Osulloc Tea Museum + green tea fields → Aewol Handam coastal trail. 9 hours, all admissions included."
   },
@@ -31,8 +31,8 @@
       "Great for First-Time Jeju Visitors",
       "Jeju Southwest"
     ],
-    "heroImage": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24.webp",
-    "thumbnail": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24.webp",
+    "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+    "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
     "priceLabel": "From US$59 per person (was $69, 14% off)",
     "shortCardDescription": "A well-balanced Jeju southwest route linking a short Hallasan walk, volcanic coastline, Cheonjeyeon Waterfall, O’Sulloc tea fields, and Aewol Cafe Street.",
     "tags": [
@@ -55,7 +55,7 @@
     "per": "person"
   },
   "hero": {
-    "imageUrl": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24.webp",
+    "imageUrl": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
     "imagePosition": "center 35%",
     "tagline": "A short Hallasan walk, volcanic cliffs, a waterfall trail, tea fields, and a relaxed Aewol finish.",
     "pills": [
@@ -166,13 +166,165 @@
     {
       "id": 5,
       "type": "photo",
+      "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24.webp",
+      "location": "Aewol Cafe Street (Handam Coastal Trail)",
+      "alt": "Aewol Cafe Street (Handam Coastal Trail) — gallery image 1",
+      "caption": "Aewol Cafe Street (Handam Coastal Trail) — photo 1"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+      "location": "Hallasan Eoseungsaengak",
+      "alt": "Hallasan Eoseungsaengak — gallery image 2",
+      "caption": "Hallasan Eoseungsaengak — photo 2"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19-2.webp",
+      "location": "Hallasan Eoseungsaengak",
+      "alt": "Hallasan Eoseungsaengak — gallery image 3",
+      "caption": "Hallasan Eoseungsaengak — photo 3"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20-2.webp",
+      "location": "Hallasan Eoseungsaengak",
+      "alt": "Hallasan Eoseungsaengak — gallery image 4",
+      "caption": "Hallasan Eoseungsaengak — photo 4"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/hallasan-eoseungsaengak/photo-003.webp",
+      "location": "Hallasan Eoseungsaengak",
+      "alt": "Hallasan Eoseungsaengak — gallery image 5",
+      "caption": "Hallasan Eoseungsaengak — photo 5"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+      "location": "Daepo Jusangjeolli Cliff",
+      "alt": "Daepo Jusangjeolli Cliff — gallery image 2",
+      "caption": "Daepo Jusangjeolli Cliff — photo 2"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+      "location": "Daepo Jusangjeolli Cliff",
+      "alt": "Daepo Jusangjeolli Cliff — gallery image 3",
+      "caption": "Daepo Jusangjeolli Cliff — photo 3"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+      "location": "Daepo Jusangjeolli Cliff",
+      "alt": "Daepo Jusangjeolli Cliff — gallery image 4",
+      "caption": "Daepo Jusangjeolli Cliff — photo 4"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+      "location": "Daepo Jusangjeolli Cliff",
+      "alt": "Daepo Jusangjeolli Cliff — gallery image 5",
+      "caption": "Daepo Jusangjeolli Cliff — photo 5"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+      "location": "Daepo Jusangjeolli Cliff",
+      "alt": "Daepo Jusangjeolli Cliff — gallery image 6",
+      "caption": "Daepo Jusangjeolli Cliff — photo 6"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+      "location": "Daepo Jusangjeolli Cliff",
+      "alt": "Daepo Jusangjeolli Cliff — gallery image 7",
+      "caption": "Daepo Jusangjeolli Cliff — photo 7"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+      "location": "Daepo Jusangjeolli Cliff",
+      "alt": "Daepo Jusangjeolli Cliff — gallery image 8",
+      "caption": "Daepo Jusangjeolli Cliff — photo 8"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/photo-005.webp",
+      "location": "Daepo Jusangjeolli Cliff",
+      "alt": "Daepo Jusangjeolli Cliff — gallery image 9",
+      "caption": "Daepo Jusangjeolli Cliff — photo 9"
+    },
+    {
+      "id": 18,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+      "location": "Cheonjeyeon Waterfall",
+      "alt": "Cheonjeyeon Waterfall — gallery image 2",
+      "caption": "Cheonjeyeon Waterfall — photo 2"
+    },
+    {
+      "id": 19,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+      "location": "Cheonjeyeon Waterfall",
+      "alt": "Cheonjeyeon Waterfall — gallery image 3",
+      "caption": "Cheonjeyeon Waterfall — photo 3"
+    },
+    {
+      "id": 20,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04-2.webp",
+      "location": "Cheonjeyeon Waterfall",
+      "alt": "Cheonjeyeon Waterfall — gallery image 4",
+      "caption": "Cheonjeyeon Waterfall — photo 4"
+    },
+    {
+      "id": 21,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07-2.webp",
+      "location": "Cheonjeyeon Waterfall",
+      "alt": "Cheonjeyeon Waterfall — gallery image 5",
+      "caption": "Cheonjeyeon Waterfall — photo 5"
+    },
+    {
+      "id": 22,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08-2.webp",
+      "location": "Cheonjeyeon Waterfall",
+      "alt": "Cheonjeyeon Waterfall — gallery image 6",
+      "caption": "Cheonjeyeon Waterfall — photo 6"
+    },
+    {
+      "id": 23,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/photo-004.webp",
+      "location": "Cheonjeyeon Waterfall",
+      "alt": "Cheonjeyeon Waterfall — gallery image 7",
+      "caption": "Cheonjeyeon Waterfall — photo 7"
+    },
+    {
+      "id": 24,
+      "type": "photo",
       "src": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
       "location": "O'sulloc Tea Museum",
       "alt": "O'sulloc Tea Museum — gallery image 2",
       "caption": "O'sulloc Tea Museum — photo 2"
     },
     {
-      "id": 6,
+      "id": 25,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
       "location": "O'sulloc Tea Museum",
@@ -180,7 +332,7 @@
       "caption": "O'sulloc Tea Museum — photo 3"
     },
     {
-      "id": 7,
+      "id": 26,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
       "location": "O'sulloc Tea Museum",
@@ -188,92 +340,68 @@
       "caption": "O'sulloc Tea Museum — photo 4"
     },
     {
-      "id": 8,
-      "type": "photo",
-      "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24.webp",
-      "location": "Aewol Cafe Street",
-      "alt": "Aewol Cafe Street — gallery image 2",
-      "caption": "Aewol Cafe Street — photo 2"
-    },
-    {
-      "id": 9,
-      "type": "photo",
-      "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
-      "location": "Hallasan Eoseungsaengak Trail",
-      "alt": "Hallasan Eoseungsaengak Trail — gallery image 2",
-      "caption": "Hallasan Eoseungsaengak Trail — photo 2"
-    },
-    {
-      "id": 10,
-      "type": "photo",
-      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
-      "location": "Daepo Jusangjeolli Cliff",
-      "alt": "Daepo Jusangjeolli Cliff — gallery image 3",
-      "caption": "Daepo Jusangjeolli Cliff — photo 3"
-    },
-    {
-      "id": 11,
-      "type": "photo",
-      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
-      "location": "Daepo Jusangjeolli Cliff",
-      "alt": "Daepo Jusangjeolli Cliff — gallery image 4",
-      "caption": "Daepo Jusangjeolli Cliff — photo 4"
-    },
-    {
-      "id": 12,
-      "type": "photo",
-      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
-      "location": "Jusangjeolli Cliff",
-      "alt": "Jusangjeolli Cliff — gallery image 2",
-      "caption": "Jusangjeolli Cliff — photo 2"
-    },
-    {
-      "id": 13,
-      "type": "photo",
-      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
-      "location": "Cheonjeyeon Waterfall",
-      "alt": "Cheonjeyeon Waterfall — gallery image 3",
-      "caption": "Cheonjeyeon Waterfall — photo 3"
-    },
-    {
-      "id": 14,
-      "type": "photo",
-      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
-      "location": "Cheonjeyeon Waterfall",
-      "alt": "Cheonjeyeon Waterfall — gallery image 2",
-      "caption": "Cheonjeyeon Waterfall — photo 2"
-    },
-    {
-      "id": 15,
+      "id": 27,
       "type": "photo",
       "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-25.webp",
+      "location": "Aewol Cafe Street (Handam Coastal Trail)",
+      "alt": "Aewol Cafe Street (Handam Coastal Trail) — gallery image 2",
+      "caption": "Aewol Cafe Street (Handam Coastal Trail) — photo 2"
+    },
+    {
+      "id": 28,
+      "type": "photo",
+      "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-26.webp",
       "location": "Aewol Cafe Street (Handam Coastal Trail)",
       "alt": "Aewol Cafe Street (Handam Coastal Trail) — gallery image 3",
       "caption": "Aewol Cafe Street (Handam Coastal Trail) — photo 3"
     },
     {
-      "id": 16,
+      "id": 29,
       "type": "photo",
-      "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-26.webp",
+      "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-27.webp",
       "location": "Aewol Cafe Street (Handam Coastal Trail)",
       "alt": "Aewol Cafe Street (Handam Coastal Trail) — gallery image 4",
       "caption": "Aewol Cafe Street (Handam Coastal Trail) — photo 4"
     },
     {
-      "id": 17,
-      "type": "photo",
-      "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-27.webp",
-      "location": "Aewol Cafe Street (Handam Coastal Trail)",
-      "alt": "Aewol Cafe Street (Handam Coastal Trail) — gallery image 5",
-      "caption": "Aewol Cafe Street (Handam Coastal Trail) — photo 5"
-    },
-    {
-      "id": 18,
+      "id": 30,
       "type": "photo",
       "src": "/images/tours/aewol-cafe-street/chatgpt-image-2026-5-11-01-14-08.webp",
       "location": "Aewol Cafe Street (Handam Coastal Trail)",
       "alt": "Aewol Cafe Street (Handam Coastal Trail) — gallery image 5",
       "caption": "Aewol Cafe Street (Handam Coastal Trail) — photo 5"
+    },
+    {
+      "id": 31,
+      "type": "photo",
+      "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24-2.webp",
+      "location": "Aewol Cafe Street (Handam Coastal Trail)",
+      "alt": "Aewol Cafe Street (Handam Coastal Trail) — gallery image 6",
+      "caption": "Aewol Cafe Street (Handam Coastal Trail) — photo 6"
+    },
+    {
+      "id": 32,
+      "type": "photo",
+      "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-25-2.webp",
+      "location": "Aewol Cafe Street (Handam Coastal Trail)",
+      "alt": "Aewol Cafe Street (Handam Coastal Trail) — gallery image 7",
+      "caption": "Aewol Cafe Street (Handam Coastal Trail) — photo 7"
+    },
+    {
+      "id": 33,
+      "type": "photo",
+      "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-26-2.webp",
+      "location": "Aewol Cafe Street (Handam Coastal Trail)",
+      "alt": "Aewol Cafe Street (Handam Coastal Trail) — gallery image 8",
+      "caption": "Aewol Cafe Street (Handam Coastal Trail) — photo 8"
+    },
+    {
+      "id": 34,
+      "type": "photo",
+      "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-27-2.webp",
+      "location": "Aewol Cafe Street (Handam Coastal Trail)",
+      "alt": "Aewol Cafe Street (Handam Coastal Trail) — gallery image 9",
+      "caption": "Aewol Cafe Street (Handam Coastal Trail) — photo 9"
     }
   ],
   "itineraryStops": [
@@ -343,6 +471,18 @@
         {
           "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hallasan-eoseungsaengak/photo-003.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -361,6 +501,30 @@
           "location": "Hallasan Eoseungsaengak",
           "caption": "Hallasan Eoseungsaengak — photo 2",
           "alt": "Hallasan Eoseungsaengak — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19-2.webp",
+          "location": "Hallasan Eoseungsaengak",
+          "caption": "Hallasan Eoseungsaengak — photo 3",
+          "alt": "Hallasan Eoseungsaengak — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20-2.webp",
+          "location": "Hallasan Eoseungsaengak",
+          "caption": "Hallasan Eoseungsaengak — photo 4",
+          "alt": "Hallasan Eoseungsaengak — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/hallasan-eoseungsaengak/photo-003.webp",
+          "location": "Hallasan Eoseungsaengak",
+          "caption": "Hallasan Eoseungsaengak — photo 5",
+          "alt": "Hallasan Eoseungsaengak — gallery image 5"
         }
       ]
     },
@@ -440,6 +604,26 @@
         {
           "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/photo-005.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -474,6 +658,46 @@
           "location": "Daepo Jusangjeolli Cliff",
           "caption": "Daepo Jusangjeolli Cliff — photo 4",
           "alt": "Daepo Jusangjeolli Cliff — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+          "location": "Daepo Jusangjeolli Cliff",
+          "caption": "Daepo Jusangjeolli Cliff — photo 5",
+          "alt": "Daepo Jusangjeolli Cliff — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+          "location": "Daepo Jusangjeolli Cliff",
+          "caption": "Daepo Jusangjeolli Cliff — photo 6",
+          "alt": "Daepo Jusangjeolli Cliff — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+          "location": "Daepo Jusangjeolli Cliff",
+          "caption": "Daepo Jusangjeolli Cliff — photo 7",
+          "alt": "Daepo Jusangjeolli Cliff — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+          "location": "Daepo Jusangjeolli Cliff",
+          "caption": "Daepo Jusangjeolli Cliff — photo 8",
+          "alt": "Daepo Jusangjeolli Cliff — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/photo-005.webp",
+          "location": "Daepo Jusangjeolli Cliff",
+          "caption": "Daepo Jusangjeolli Cliff — photo 9",
+          "alt": "Daepo Jusangjeolli Cliff — gallery image 9"
         }
       ]
     },
@@ -587,6 +811,22 @@
         {
           "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/photo-004.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -613,6 +853,38 @@
           "location": "Cheonjeyeon Waterfall",
           "caption": "Cheonjeyeon Waterfall — photo 3",
           "alt": "Cheonjeyeon Waterfall — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04-2.webp",
+          "location": "Cheonjeyeon Waterfall",
+          "caption": "Cheonjeyeon Waterfall — photo 4",
+          "alt": "Cheonjeyeon Waterfall — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07-2.webp",
+          "location": "Cheonjeyeon Waterfall",
+          "caption": "Cheonjeyeon Waterfall — photo 5",
+          "alt": "Cheonjeyeon Waterfall — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08-2.webp",
+          "location": "Cheonjeyeon Waterfall",
+          "caption": "Cheonjeyeon Waterfall — photo 6",
+          "alt": "Cheonjeyeon Waterfall — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/photo-004.webp",
+          "location": "Cheonjeyeon Waterfall",
+          "caption": "Cheonjeyeon Waterfall — photo 7",
+          "alt": "Cheonjeyeon Waterfall — gallery image 7"
         }
       ]
     },
@@ -869,6 +1141,22 @@
         {
           "url": "/images/tours/aewol-cafe-street/chatgpt-image-2026-5-11-01-14-08.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-25-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-26-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-27-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -911,6 +1199,38 @@
           "location": "Aewol Cafe Street (Handam Coastal Trail)",
           "caption": "Aewol Cafe Street (Handam Coastal Trail) — photo 5",
           "alt": "Aewol Cafe Street (Handam Coastal Trail) — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24-2.webp",
+          "location": "Aewol Cafe Street (Handam Coastal Trail)",
+          "caption": "Aewol Cafe Street (Handam Coastal Trail) — photo 6",
+          "alt": "Aewol Cafe Street (Handam Coastal Trail) — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-25-2.webp",
+          "location": "Aewol Cafe Street (Handam Coastal Trail)",
+          "caption": "Aewol Cafe Street (Handam Coastal Trail) — photo 7",
+          "alt": "Aewol Cafe Street (Handam Coastal Trail) — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-26-2.webp",
+          "location": "Aewol Cafe Street (Handam Coastal Trail)",
+          "caption": "Aewol Cafe Street (Handam Coastal Trail) — photo 8",
+          "alt": "Aewol Cafe Street (Handam Coastal Trail) — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-27-2.webp",
+          "location": "Aewol Cafe Street (Handam Coastal Trail)",
+          "caption": "Aewol Cafe Street (Handam Coastal Trail) — photo 9",
+          "alt": "Aewol Cafe Street (Handam Coastal Trail) — gallery image 9"
         }
       ]
     }

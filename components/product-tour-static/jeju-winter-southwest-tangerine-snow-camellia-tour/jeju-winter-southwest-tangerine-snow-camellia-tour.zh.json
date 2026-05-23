@@ -14,12 +14,12 @@
       "济州汉拿山雪景",
       "济州12月游览"
     ],
-    "ogImage": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/jeju-tangerine-farm/photo-001.webp",
     "title": "济州冬季之旅：柑橘、雪景与山茶花 | AtoC Korea",
     "description": "济州冬季西南部小团游：汉拿山雪地徒步 → 柑橘农场采摘（汉拿峰柑橘盛产期12月至2月）→ 山茶花之丘山茶花季 → 柱状节理带悬崖 → 天帝渊瀑布。仅限12月至2月。"
   },
   "catalog_card": {
-    "thumbnail": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+    "thumbnail": "/images/tours/jeju-tangerine-farm/photo-001.webp",
     "title": "济州冬季：柑橘、雪景与山茶花",
     "priceLabel": "",
     "shortCardDescription": "这是一条仅在冬季（12月至2月）运营的济州西南部一日游线路，以济州冬季三大独特体验为核心：汉拿山山坡的皑皑白雪、山茶花之丘盛开的红色山茶花，以及在真实果园亲手采摘济州柑橘。线路还涵盖天帝渊瀑布、柱状节理带及雪绿茶博物馆。提供济州市酒店接送，配备持证英语/中文导游。",
@@ -48,7 +48,7 @@
       "山茶花",
       "雪"
     ],
-    "heroImage": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp"
+    "heroImage": "/images/tours/jeju-tangerine-farm/photo-001.webp"
   },
   "headlineLine1": "济州冬季",
   "headlineLine2": "橘子、雪与山茶花",
@@ -61,7 +61,7 @@
     "per": "person"
   },
   "hero": {
-    "imageUrl": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+    "imageUrl": "/images/tours/jeju-tangerine-farm/photo-001.webp",
     "imagePosition": "center 35%",
     "tagline": "冬日济州独有的三大魅力——雪、山茶花与柑橘",
     "pills": [
@@ -140,74 +140,178 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
-      "location": "茶花之丘 (Camellia Hill)",
-      "alt": "茶花之丘 (Camellia Hill) — 图库图片",
-      "caption": "茶花之丘 (Camellia Hill) — 照片 1"
+      "src": "/images/tours/jeju-tangerine-farm/photo-001.webp",
+      "location": "柑橘（귤）采摘体验 — 冬季汉拿峰柑橘旺季",
+      "alt": "柑橘（귤）采摘体验 — 冬季汉拿峰柑橘旺季 — gallery image 1",
+      "caption": "柑橘（귤）采摘体验 — 冬季汉拿峰柑橘旺季 — photo 1"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
-      "location": "大浦柱状节理壁",
-      "alt": "大浦柱状节理壁 — 图库图片 1",
-      "caption": "大浦柱状节理壁 — 照片 1"
+      "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
+      "location": "山茶花山丘（四季特色花卉花园）",
+      "alt": "山茶花山丘（四季特色花卉花园） — gallery image 1",
+      "caption": "山茶花山丘（四季特色花卉花园） — photo 1"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
-      "location": "天帝渊瀑布",
-      "alt": "天帝渊瀑布 — 图库图片 1",
-      "caption": "天帝渊瀑布 — 照片 1"
+      "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+      "location": "大浦柱状节理壁",
+      "alt": "大浦柱状节理壁 — gallery image 1",
+      "caption": "大浦柱状节理壁 — photo 1"
     },
     {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
-      "location": "茶花之丘 (Camellia Hill)",
-      "alt": "茶花之丘 (Camellia Hill) — 图库图片",
-      "caption": "茶花之丘 (Camellia Hill) — 照片 2"
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+      "location": "天帝渊瀑布",
+      "alt": "天帝渊瀑布 — gallery image 1",
+      "caption": "天帝渊瀑布 — photo 1"
     },
     {
       "id": 5,
       "type": "photo",
-      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
-      "location": "大浦柱状节理壁",
-      "alt": "大浦柱状节理壁 — 图库图片 2",
-      "caption": "大浦柱状节理壁 — 照片 2"
+      "src": "/images/tours/jeju-tangerine-farm/photo-002.webp",
+      "location": "柑橘（귤）采摘体验 — 冬季汉拿峰柑橘旺季",
+      "alt": "柑橘（귤）采摘体验 — 冬季汉拿峰柑橘旺季 — gallery image 2",
+      "caption": "柑橘（귤）采摘体验 — 冬季汉拿峰柑橘旺季 — photo 2"
     },
     {
       "id": 6,
       "type": "photo",
-      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
-      "location": "大浦柱状节理壁",
-      "alt": "大浦柱状节理壁 — 图库图片 3",
-      "caption": "大浦柱状节理壁 — 照片 3"
+      "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+      "location": "山茶花山丘（四季特色花卉花园）",
+      "alt": "山茶花山丘（四季特色花卉花园） — gallery image 2",
+      "caption": "山茶花山丘（四季特色花卉花园） — photo 2"
     },
     {
       "id": 7,
       "type": "photo",
-      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
-      "location": "大浦柱状节理壁",
-      "alt": "大浦柱状节理壁 — 图库图片 4",
-      "caption": "大浦柱状节理壁 — 照片 4"
+      "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-2.webp",
+      "location": "山茶花山丘（四季特色花卉花园）",
+      "alt": "山茶花山丘（四季特色花卉花园） — gallery image 3",
+      "caption": "山茶花山丘（四季特色花卉花园） — photo 3"
     },
     {
       "id": 8,
       "type": "photo",
-      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
-      "location": "天帝渊瀑布",
-      "alt": "天帝渊瀑布 — 图库图片 2",
-      "caption": "天帝渊瀑布 — 图片2"
+      "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-2.webp",
+      "location": "山茶花山丘（四季特色花卉花园）",
+      "alt": "山茶花山丘（四季特色花卉花园） — gallery image 4",
+      "caption": "山茶花山丘（四季特色花卉花园） — photo 4"
     },
     {
       "id": 9,
       "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+      "location": "大浦柱状节理壁",
+      "alt": "大浦柱状节理壁 — gallery image 2",
+      "caption": "大浦柱状节理壁 — photo 2"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+      "location": "大浦柱状节理壁",
+      "alt": "大浦柱状节理壁 — gallery image 3",
+      "caption": "大浦柱状节理壁 — photo 3"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+      "location": "大浦柱状节理壁",
+      "alt": "大浦柱状节理壁 — gallery image 4",
+      "caption": "大浦柱状节理壁 — photo 4"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+      "location": "大浦柱状节理壁",
+      "alt": "大浦柱状节理壁 — gallery image 5",
+      "caption": "大浦柱状节理壁 — photo 5"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+      "location": "大浦柱状节理壁",
+      "alt": "大浦柱状节理壁 — gallery image 6",
+      "caption": "大浦柱状节理壁 — photo 6"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+      "location": "大浦柱状节理壁",
+      "alt": "大浦柱状节理壁 — gallery image 7",
+      "caption": "大浦柱状节理壁 — photo 7"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+      "location": "大浦柱状节理壁",
+      "alt": "大浦柱状节理壁 — gallery image 8",
+      "caption": "大浦柱状节理壁 — photo 8"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/photo-005.webp",
+      "location": "大浦柱状节理壁",
+      "alt": "大浦柱状节理壁 — gallery image 9",
+      "caption": "大浦柱状节理壁 — photo 9"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+      "location": "天帝渊瀑布",
+      "alt": "天帝渊瀑布 — gallery image 2",
+      "caption": "天帝渊瀑布 — photo 2"
+    },
+    {
+      "id": 18,
+      "type": "photo",
       "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
       "location": "天帝渊瀑布",
-      "alt": "天帝渊瀑布 — 图库图片3",
-      "caption": "天帝渊瀑布 — 图片3"
+      "alt": "天帝渊瀑布 — gallery image 3",
+      "caption": "天帝渊瀑布 — photo 3"
+    },
+    {
+      "id": 19,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04-2.webp",
+      "location": "天帝渊瀑布",
+      "alt": "天帝渊瀑布 — gallery image 4",
+      "caption": "天帝渊瀑布 — photo 4"
+    },
+    {
+      "id": 20,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07-2.webp",
+      "location": "天帝渊瀑布",
+      "alt": "天帝渊瀑布 — gallery image 5",
+      "caption": "天帝渊瀑布 — photo 5"
+    },
+    {
+      "id": 21,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08-2.webp",
+      "location": "天帝渊瀑布",
+      "alt": "天帝渊瀑布 — gallery image 6",
+      "caption": "天帝渊瀑布 — photo 6"
+    },
+    {
+      "id": 22,
+      "type": "photo",
+      "src": "/images/tours/cheonjeyeon-falls/photo-004.webp",
+      "location": "天帝渊瀑布",
+      "alt": "天帝渊瀑布 — gallery image 7",
+      "caption": "天帝渊瀑布 — photo 7"
     }
   ],
   "itineraryStops": [
@@ -322,7 +426,40 @@
       },
       "smartNotes": {},
       "convenience": {},
-      "visitBasics": {}
+      "visitBasics": {},
+      "image": "/images/tours/jeju-tangerine-farm/photo-001.webp",
+      "images": [
+        "/images/tours/jeju-tangerine-farm/photo-001.webp",
+        "/images/tours/jeju-tangerine-farm/photo-002.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/jeju-tangerine-farm/photo-001.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jeju-tangerine-farm/photo-002.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/jeju-tangerine-farm/photo-001.webp",
+          "location": "柑橘（귤）采摘体验 — 冬季汉拿峰柑橘旺季",
+          "caption": "柑橘（귤）采摘体验 — 冬季汉拿峰柑橘旺季 — photo 1",
+          "alt": "柑橘（귤）采摘体验 — 冬季汉拿峰柑橘旺季 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/jeju-tangerine-farm/photo-002.webp",
+          "location": "柑橘（귤）采摘体验 — 冬季汉拿峰柑橘旺季",
+          "caption": "柑橘（귤）采摘体验 — 冬季汉拿峰柑橘旺季 — photo 2",
+          "alt": "柑橘（귤）采摘体验 — 冬季汉拿峰柑橘旺季 — gallery image 2"
+        }
+      ]
     },
     {
       "number": 4,
@@ -421,6 +558,14 @@
         {
           "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-2.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -428,17 +573,33 @@
           "id": 1,
           "type": "photo",
           "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
-          "location": "茶花之丘 (Camellia Hill)",
-          "caption": "茶花之丘 (Camellia Hill)",
-          "alt": "茶花之丘 (Camellia Hill) — 图库图片"
+          "location": "山茶花山丘（四季特色花卉花园）",
+          "caption": "山茶花山丘（四季特色花卉花园） — photo 1",
+          "alt": "山茶花山丘（四季特色花卉花园） — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
           "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
-          "location": "茶花之丘 (Camellia Hill)",
-          "caption": "茶花之丘 (Camellia Hill)",
-          "alt": "茶花之丘 (Camellia Hill) — 图库图片"
+          "location": "山茶花山丘（四季特色花卉花园）",
+          "caption": "山茶花山丘（四季特色花卉花园） — photo 2",
+          "alt": "山茶花山丘（四季特色花卉花园） — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-2.webp",
+          "location": "山茶花山丘（四季特色花卉花园）",
+          "caption": "山茶花山丘（四季特色花卉花园） — photo 3",
+          "alt": "山茶花山丘（四季特色花卉花园） — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-2.webp",
+          "location": "山茶花山丘（四季特色花卉花园）",
+          "caption": "山茶花山丘（四季特色花卉花园） — photo 4",
+          "alt": "山茶花山丘（四季特色花卉花园） — gallery image 4"
         }
       ]
     },
@@ -518,6 +679,26 @@
         {
           "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jusangjeolli/photo-005.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -526,32 +707,72 @@
           "type": "photo",
           "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
           "location": "大浦柱状节理壁",
-          "caption": "大浦柱状节理壁 — 照片 1",
-          "alt": "大浦柱状节理壁 — 图库图片 1"
+          "caption": "大浦柱状节理壁 — photo 1",
+          "alt": "大浦柱状节理壁 — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
           "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
           "location": "大浦柱状节理壁",
-          "caption": "大浦柱状节理壁 — 照片 2",
-          "alt": "大浦柱状节理壁 — 图库图片 2"
+          "caption": "大浦柱状节理壁 — photo 2",
+          "alt": "大浦柱状节理壁 — gallery image 2"
         },
         {
           "id": 3,
           "type": "photo",
           "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
           "location": "大浦柱状节理壁",
-          "caption": "大浦柱状节理壁 — 照片 3",
-          "alt": "大浦柱状节理壁 — 图库图片 3"
+          "caption": "大浦柱状节理壁 — photo 3",
+          "alt": "大浦柱状节理壁 — gallery image 3"
         },
         {
           "id": 4,
           "type": "photo",
           "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
           "location": "大浦柱状节理壁",
-          "caption": "大浦柱状节理壁 — 照片 4",
-          "alt": "大浦柱状节理壁 — 图库图片 4"
+          "caption": "大浦柱状节理壁 — photo 4",
+          "alt": "大浦柱状节理壁 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+          "location": "大浦柱状节理壁",
+          "caption": "大浦柱状节理壁 — photo 5",
+          "alt": "大浦柱状节理壁 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+          "location": "大浦柱状节理壁",
+          "caption": "大浦柱状节理壁 — photo 6",
+          "alt": "大浦柱状节理壁 — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+          "location": "大浦柱状节理壁",
+          "caption": "大浦柱状节理壁 — photo 7",
+          "alt": "大浦柱状节理壁 — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+          "location": "大浦柱状节理壁",
+          "caption": "大浦柱状节理壁 — photo 8",
+          "alt": "大浦柱状节理壁 — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/jusangjeolli/photo-005.webp",
+          "location": "大浦柱状节理壁",
+          "caption": "大浦柱状节理壁 — photo 9",
+          "alt": "大浦柱状节理壁 — gallery image 9"
         }
       ]
     },
@@ -626,6 +847,22 @@
         {
           "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
           "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08-2.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/photo-004.webp",
+          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
@@ -634,24 +871,56 @@
           "type": "photo",
           "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
           "location": "天帝渊瀑布",
-          "caption": "天帝渊瀑布 — 照片 1",
-          "alt": "天帝渊瀑布 — 图库图片 1"
+          "caption": "天帝渊瀑布 — photo 1",
+          "alt": "天帝渊瀑布 — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
           "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
           "location": "天帝渊瀑布",
-          "caption": "天帝渊瀑布 — 照片 2",
-          "alt": "天帝渊瀑布 — 图库图片 2"
+          "caption": "天帝渊瀑布 — photo 2",
+          "alt": "天帝渊瀑布 — gallery image 2"
         },
         {
           "id": 3,
           "type": "photo",
           "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
           "location": "天帝渊瀑布",
-          "caption": "天帝渊瀑布 — 照片 3",
-          "alt": "天帝渊瀑布 — 图库图片 3"
+          "caption": "天帝渊瀑布 — photo 3",
+          "alt": "天帝渊瀑布 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04-2.webp",
+          "location": "天帝渊瀑布",
+          "caption": "天帝渊瀑布 — photo 4",
+          "alt": "天帝渊瀑布 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07-2.webp",
+          "location": "天帝渊瀑布",
+          "caption": "天帝渊瀑布 — photo 5",
+          "alt": "天帝渊瀑布 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08-2.webp",
+          "location": "天帝渊瀑布",
+          "caption": "天帝渊瀑布 — photo 6",
+          "alt": "天帝渊瀑布 — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/photo-004.webp",
+          "location": "天帝渊瀑布",
+          "caption": "天帝渊瀑布 — photo 7",
+          "alt": "天帝渊瀑布 — gallery image 7"
         }
       ]
     },
@@ -1720,7 +1989,10 @@
             "images": [
               "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
               "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
-              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp"
+              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21-2.webp",
+              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22-2.webp",
+              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23-2.webp"
             ],
             "imageCredits": [
               {
@@ -1734,6 +2006,18 @@
               {
                 "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
                 "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23-2.webp",
+                "source": "atoc-korea"
               }
             ],
             "galleryItems": [
@@ -1741,25 +2025,49 @@
                 "id": 1,
                 "type": "photo",
                 "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
-                "location": "汉拿山观景台（御里牧或1100湿地）",
-                "caption": "汉拿山观景台（御里牧或1100湿地）— 照片 1",
-                "alt": "汉拿山观景台（御里牧或1100湿地）— 图库图片 1"
+                "location": "汉拿山观景点（御里牧或 1100 湿地）",
+                "caption": "汉拿山观景点（御里牧或 1100 湿地） — photo 1",
+                "alt": "汉拿山观景点（御里牧或 1100 湿地） — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
                 "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
-                "location": "汉拿山观景台（御里牧或1100湿地）",
-                "caption": "汉拿山观景台（御里牧或1100湿地）— 照片 2",
-                "alt": "汉拿山观景台（御里牧或1100湿地）— 图库图片 2"
+                "location": "汉拿山观景点（御里牧或 1100 湿地）",
+                "caption": "汉拿山观景点（御里牧或 1100 湿地） — photo 2",
+                "alt": "汉拿山观景点（御里牧或 1100 湿地） — gallery image 2"
               },
               {
                 "id": 3,
                 "type": "photo",
                 "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
-                "location": "汉拿山观景台（御里牧或1100湿地）",
-                "caption": "汉拿山观景台（御里牧或1100湿地）— 照片 3",
-                "alt": "汉拿山观景台（御里牧或1100湿地）— 图库图片 3"
+                "location": "汉拿山观景点（御里牧或 1100 湿地）",
+                "caption": "汉拿山观景点（御里牧或 1100 湿地） — photo 3",
+                "alt": "汉拿山观景点（御里牧或 1100 湿地） — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21-2.webp",
+                "location": "汉拿山观景点（御里牧或 1100 湿地）",
+                "caption": "汉拿山观景点（御里牧或 1100 湿地） — photo 4",
+                "alt": "汉拿山观景点（御里牧或 1100 湿地） — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22-2.webp",
+                "location": "汉拿山观景点（御里牧或 1100 湿地）",
+                "caption": "汉拿山观景点（御里牧或 1100 湿地） — photo 5",
+                "alt": "汉拿山观景点（御里牧或 1100 湿地） — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23-2.webp",
+                "location": "汉拿山观景点（御里牧或 1100 湿地）",
+                "caption": "汉拿山观景点（御里牧或 1100 湿地） — photo 6",
+                "alt": "汉拿山观景点（御里牧或 1100 湿地） — gallery image 6"
               }
             ]
           },
@@ -1872,7 +2180,9 @@
             },
             "images": [
               "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
-              "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp"
+              "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
+              "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-2.webp",
+              "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-2.webp"
             ],
             "imageCredits": [
               {
@@ -1882,6 +2192,14 @@
               {
                 "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
                 "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-2.webp",
+                "source": "atoc-korea"
               }
             ],
             "galleryItems": [
@@ -1889,17 +2207,33 @@
                 "id": 1,
                 "type": "photo",
                 "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
-                "location": "茶花之丘 (Camellia Hill)",
-                "caption": "茶花之丘 (Camellia Hill) — 照片 1",
-                "alt": "茶花之丘 (Camellia Hill) — 图库图片"
+                "location": "山茶花之丘——冬季盛景",
+                "caption": "山茶花之丘——冬季盛景 — photo 1",
+                "alt": "山茶花之丘——冬季盛景 — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
                 "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
-                "location": "茶花之丘 (Camellia Hill)",
-                "caption": "茶花之丘 (Camellia Hill) — 照片 2",
-                "alt": "茶花之丘 (Camellia Hill) — 图库图片"
+                "location": "山茶花之丘——冬季盛景",
+                "caption": "山茶花之丘——冬季盛景 — photo 2",
+                "alt": "山茶花之丘——冬季盛景 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-2.webp",
+                "location": "山茶花之丘——冬季盛景",
+                "caption": "山茶花之丘——冬季盛景 — photo 3",
+                "alt": "山茶花之丘——冬季盛景 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-2.webp",
+                "location": "山茶花之丘——冬季盛景",
+                "caption": "山茶花之丘——冬季盛景 — photo 4",
+                "alt": "山茶花之丘——冬季盛景 — gallery image 4"
               }
             ]
           },
@@ -1950,7 +2284,12 @@
               "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
               "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
               "`/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp`",
-              "`/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp`"
+              "`/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp`",
+              "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+              "/images/tours/jusangjeolli/photo-005.webp"
             ],
             "imageCredits": [
               {
@@ -1962,11 +2301,31 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+                "url": "`/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp`",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+                "url": "`/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp`",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/photo-005.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1975,33 +2334,73 @@
                 "id": 1,
                 "type": "photo",
                 "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
-                "location": "柱状节理崖（大浦柱状节理）",
-                "caption": "柱状节理崖（大浦柱状节理）— 照片 1",
-                "alt": "柱状节理崖（大浦柱状节理）— 图库图片 1"
+                "location": "柱状节理壁（大浦柱状节理）",
+                "caption": "柱状节理壁（大浦柱状节理） — photo 1",
+                "alt": "柱状节理壁（大浦柱状节理） — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
                 "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
-                "location": "柱状节理崖（大浦柱状节理）",
-                "caption": "柱状节理崖（大浦柱状节理）— 照片 2",
-                "alt": "柱状节理崖（大浦柱状节理）— 图库图片 2"
+                "location": "柱状节理壁（大浦柱状节理）",
+                "caption": "柱状节理壁（大浦柱状节理） — photo 2",
+                "alt": "柱状节理壁（大浦柱状节理） — gallery image 2"
               },
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
-                "location": "柱状节理崖（大浦柱状节理）",
-                "caption": "柱状节理崖（大浦柱状节理）— 照片 3",
-                "alt": "柱状节理崖（大浦柱状节理）— 图库图片 3"
+                "src": "`/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp`",
+                "location": "柱状节理壁（大浦柱状节理）",
+                "caption": "柱状节理壁（大浦柱状节理） — photo 3",
+                "alt": "柱状节理壁（大浦柱状节理） — gallery image 3"
               },
               {
                 "id": 4,
                 "type": "photo",
-                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
-                "location": "柱状节理崖（大浦柱状节理）",
-                "caption": "柱状节理崖（大浦柱状节理）— 照片 4",
-                "alt": "柱状节理崖（大浦柱状节理）— 图库图片 4"
+                "src": "`/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp`",
+                "location": "柱状节理壁（大浦柱状节理）",
+                "caption": "柱状节理壁（大浦柱状节理） — photo 4",
+                "alt": "柱状节理壁（大浦柱状节理） — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04-2.webp",
+                "location": "柱状节理壁（大浦柱状节理）",
+                "caption": "柱状节理壁（大浦柱状节理） — photo 5",
+                "alt": "柱状节理壁（大浦柱状节理） — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+                "location": "柱状节理壁（大浦柱状节理）",
+                "caption": "柱状节理壁（大浦柱状节理） — photo 6",
+                "alt": "柱状节理壁（大浦柱状节理） — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+                "location": "柱状节理壁（大浦柱状节理）",
+                "caption": "柱状节理壁（大浦柱状节理） — photo 7",
+                "alt": "柱状节理壁（大浦柱状节理） — gallery image 7"
+              },
+              {
+                "id": 8,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+                "location": "柱状节理壁（大浦柱状节理）",
+                "caption": "柱状节理壁（大浦柱状节理） — photo 8",
+                "alt": "柱状节理壁（大浦柱状节理） — gallery image 8"
+              },
+              {
+                "id": 9,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/photo-005.webp",
+                "location": "柱状节理壁（大浦柱状节理）",
+                "caption": "柱状节理壁（大浦柱状节理） — photo 9",
+                "alt": "柱状节理壁（大浦柱状节理） — gallery image 9"
               }
             ]
           },
@@ -2053,7 +2452,11 @@
             "images": [
               "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
               "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
-              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp"
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04-2.webp",
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07-2.webp",
+              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08-2.webp",
+              "/images/tours/cheonjeyeon-falls/photo-004.webp"
             ],
             "imageCredits": [
               {
@@ -2067,6 +2470,22 @@
               {
                 "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
                 "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheonjeyeon-falls/photo-004.webp",
+                "source": "atoc-korea"
               }
             ],
             "galleryItems": [
@@ -2074,25 +2493,57 @@
                 "id": 1,
                 "type": "photo",
                 "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
-                "location": "天帝渊瀑布 + 天女桥",
-                "caption": "天帝渊瀑布 + 天女桥 — 图片 1",
-                "alt": "天帝渊瀑布 + 天女桥 — 相册图片 1"
+                "location": "天帝渊瀑布 + 仙临桥",
+                "caption": "天帝渊瀑布 + 仙临桥 — photo 1",
+                "alt": "天帝渊瀑布 + 仙临桥 — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
                 "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
-                "location": "天帝渊瀑布 + 天女桥",
-                "caption": "天帝渊瀑布 + 天女桥 — 图片 2",
-                "alt": "天帝渊瀑布 + 天女桥 — 相册图片 2"
+                "location": "天帝渊瀑布 + 仙临桥",
+                "caption": "天帝渊瀑布 + 仙临桥 — photo 2",
+                "alt": "天帝渊瀑布 + 仙临桥 — gallery image 2"
               },
               {
                 "id": 3,
                 "type": "photo",
                 "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
-                "location": "天帝渊瀑布 + 天女桥",
-                "caption": "天帝渊瀑布 + 天女桥 — 图片 3",
-                "alt": "天帝渊瀑布 + 天女桥 — 相册图片 3"
+                "location": "天帝渊瀑布 + 仙临桥",
+                "caption": "天帝渊瀑布 + 仙临桥 — photo 3",
+                "alt": "天帝渊瀑布 + 仙临桥 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04-2.webp",
+                "location": "天帝渊瀑布 + 仙临桥",
+                "caption": "天帝渊瀑布 + 仙临桥 — photo 4",
+                "alt": "天帝渊瀑布 + 仙临桥 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07-2.webp",
+                "location": "天帝渊瀑布 + 仙临桥",
+                "caption": "天帝渊瀑布 + 仙临桥 — photo 5",
+                "alt": "天帝渊瀑布 + 仙临桥 — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08-2.webp",
+                "location": "天帝渊瀑布 + 仙临桥",
+                "caption": "天帝渊瀑布 + 仙临桥 — photo 6",
+                "alt": "天帝渊瀑布 + 仙临桥 — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/photo-004.webp",
+                "location": "天帝渊瀑布 + 仙临桥",
+                "caption": "天帝渊瀑布 + 仙临桥 — photo 7",
+                "alt": "天帝渊瀑布 + 仙临桥 — gallery image 7"
               }
             ]
           },

@@ -13,11 +13,11 @@
       "韓国東海岸",
       "雪岳山・束草日帰り旅行"
     ],
-    "ogImage": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
     "title": "ソウル発 雪岳山国立公園＆束草ビーチ日帰りツアー | AtoC Korea"
   },
   "catalog_card": {
-    "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+    "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
     "title": "雪岳山＆束草ビーチ日帰りツアー",
     "priceLabel": "",
     "shortCardDescription": "ソウルから韓国で最も愛される国立公園と、東海岸の都市・束草への少人数日帰り旅行です。雪岳山の花崗岩の峰々、渓谷、仏教文化遺産と、束草の水産市場・ビーチを組み合わせたルートは、東海岸ならではの山と海の絶景体験です。英語ガイド付き、往復送迎込みの12時間ツアー。",
@@ -46,7 +46,7 @@
       "紅葉",
       "日帰り旅行"
     ],
-    "heroImage": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp"
+    "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp"
   },
   "headlineLine1": "雪岳山＆束草",
   "headlineLine2": "ビーチ日帰り旅行",
@@ -59,7 +59,7 @@
     "discountPercent": null
   },
   "hero": {
-    "imageUrl": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+    "imageUrl": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
     "imagePosition": "center 35%",
     "tagline": "韓国を代表する国立公園と、東海岸で最も親しみやすい港町",
     "pills": [
@@ -138,10 +138,18 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "",
-      "location": "雪嶽山国立公園",
-      "alt": "雪嶽山国立公園 — ルート上の撮影スポット",
-      "caption": "雪嶽山国立公園"
+      "src": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "location": "雪岳山国立公園",
+      "alt": "雪岳山国立公園 — on-route photo",
+      "caption": "雪岳山国立公園"
+    },
+    {
+      "id": 2,
+      "type": "photo",
+      "src": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+      "location": "雪岳山国立公園",
+      "alt": "雪岳山国立公園 — on-route photo",
+      "caption": "雪岳山国立公園"
     }
   ],
   "itineraryStops": [
