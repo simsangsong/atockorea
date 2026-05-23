@@ -32,11 +32,12 @@
 | 4 — Editorial Grid (3-up vertical default + view toggle) + 6번째마다 Editorial Insert + Conversion Rescue Band | ✅ 완료 | 2026-05-20 | 2026-05-20 | 6e758dc2 | 4.0-4.11 완료. Editorial 그리드(모바일 2열)·view toggle·Insert(6/12/18)·RescueBand(28+)·End-of-results·Tier B Features 멀티셀렉트·More 버튼(2.7). **Duration은 DROP**(전 투어 종일, B13). 카드 SHA `a931fe4e` 전구간 유지. type-check clean |
 | 5 — Tier B 필터 (Time·Group·Language) — **API 확장 의존** | 📦 보류 (데이터 부재 — 2026-05-20 실사 확정) | — | — | — | **실 데이터 실사 결과(2026-05-20): group_size = 33개 전부 "Small group"(구분 0) · time_of_day 컬럼 없음 + 전 투어 종일 · guide_languages 데이터 전무.** 세 필터 모두 백필 시 fabrication → B13 위반. 사용자 "B(보류 유지)" 선택. 인벤토리 다양화(반나절·대형그룹·다국어) 또는 투어별 실 데이터 제공 시 진입 |
 | 6 — 모션 폴리시 (hero scroll-collapse·card stagger·refetch shimmer·editorial insert reveal) | ✅ 완료 | 2026-05-20 | 2026-05-20 | d9badcc8 | insert/band whileInView fade-up · active filter chip AnimatePresence fade-scale · refetch opacity 70 · reduce-motion 가드 전면. hero ken burns/collapse Phase 1 완료. **6.3 per-card stagger는 LCP/CLS·B2·B11 리스크로 의도적 생략**. next build ✓. 카드 SHA `a931fe4e` |
+| 7 — Curated Themed Shelves (시즌·테마 셸프 IA, 작은 인벤토리 시각 커버) | 🔄 진행 중 | 2026-05-23 | — | (planner-first pending) | **신규 페이지 IA: 필터 미적용 시 default = 셸프 / 필터 적용 시 = Phase 4 flat grid (B33)**. 동일 투어 multi-shelf 허용 (B34). 6 시즌 윈도우 하드코딩 (camellia 12-15/2-15·plum 2-25/3-20·cherry 3-28/4-12·hydrangea 5-15/7-15·maple 10-15/11-15·pink-muhly 9-30/10-30, B35). Coming Soon = 시즌 시작 D-90 (B35). Editor's Pick 독립 셸프 격상, Editorial Insert는 flat-grid 모드 전용 (B36). 카드 SHA `a931fe4e` 유지 + site-native 톤(B32) carry-over (B37). 사용자 명시 trigger: "투어 30몇개 시각적 약점 커버" |
 
 상태 마커: ⏳ 대기 / 🔄 진행 중 / ⏸ 보류 / ✅ 완료 / ❌ 중단·롤백 / 📦 백로그
 
-**현재 활성 Phase: 없음 — Phase 0·1·2·3·4·6 ✅ 완료. Phase 5(시간/그룹/언어 필터)만 📦 보류 (DB 컬럼 부재, 백엔드 스프린트 필요).**
-**프로젝트 상태: /tours/list 매거진 톤 업그레이드 핵심 완료. Phase 5는 DB 확장 합의 시 진입 (§6.5). 잔여 폴리시/측정(Lighthouse LCP, 60fps 실측)은 사용자 dev 환경에서 확인 권장.**
+**현재 활성 Phase: 7 (Curated Themed Shelves) 🔄. Phase 0·1·2·3·4·6 ✅ 완료. Phase 5는 📦 보류 (DB 확장 의존).**
+**프로젝트 상태: /tours/list 매거진 톤 업그레이드 1차(Phase 1-6) 완료 → Phase 7로 페이지 IA 자체를 셸프 기반 큐레이션으로 전환. 작은 인벤토리(~30개)를 시각적 풍부함으로 커버하는 게 목표.**
 
 **참고: B32로 B1(ivory+amber)이 site-native(파스텔 메시 + 반투명 화이트 + slate-900)로 번복됨. Phase 3 신규 컴포넌트도 site-native 톤. 단, ContextualVignetteBand의 destination accent(volcano teal 등 7색)는 B6 약속이라 유지 — accent는 컨텍스트 강조용이지 base 톤 아님.**
 
@@ -82,6 +83,11 @@
 | B30 | 2026-05-20 | **자연 single-layer 오버레이 복구 (B29 solid 패널 wash 번복, B26 wash 복원).** 사용자 12차 지시: "두세 대화 전 사진 왼쪽 부분에 흰색 오버레이 한층 자연스럽게 씌운 적 있잖아 그거 복구". B29의 또렷한 solid 패널(첫 62% near-opaque)이 boxy하게 읽힘 → B26의 부드러운 연속 fade로 복원. wash `inset-y-0 left-0 w-[88%/56%/440px]` + `0%/0.95 → 62%/0.93 → 82%/0.70 → 94%/0.26 → transparent` (solid 패널) → **`inset-y-0 left-0 right-0` (full-width) + `0%/0.92 → 28%/0.72 → 52%/0.38 → 70%/0.12 → 82%/transparent`** (B26 연속 smooth fade). **카피 폰트(B29: 15/17/20)·max-w·spacing은 그대로 유지** — 오버레이만 자연스러운 버전으로 교체. | 사용자 12차 — solid 패널은 "필터" 의도와 달리 박스처럼 boxy. B26 연속 fade가 사진에 organic하게 녹아들면서 좌측 작은 카피는 여전히 cream 위에 앉음. wash만 교체, 작은 폰트는 유지 (B29 폰트 OK). | — |
 | B31 | 2026-05-20 | **Hero 큐레이터 라인 ("Edited from Seoul") 제거.** 사용자 13차 지시: "edited from seoul 이거도 지워". CatalogueHero에서 큐레이터 `<p>` + `heroCurator` const 삭제. hero는 이제 masthead(Issue·Spring) + h1(title+accent) + sub 3요소만. 큐레이터 시그니처는 footer strip(`footerCuratorLine`)에만 존재. `toursList.heroCurator` i18n 키는 보존 (재사용 대비, dead 아님). | 사용자 13차 — hero가 더 간결해짐. 큐레이터 시그니처는 footer에서 한 번이면 충분 (hero+footer 중복 제거). B26에서 "since 2014" 뺀 것의 연장선. | — |
 | B32 | 2026-05-20 | **B1 전면 번복 — list 배경/rail/액센트를 site-native(파스텔 메시 + 반투명 화이트 + slate-900)로.** 사용자 14차 지시 + AskUserQuestion 3답: "아이보리 배경도 별로 브라운도 별로, 메인페이지·리스트 전체톤에 안 맞아" → ①배경=중립 화이트(메시 약하게), ②액센트=사이트 동일 slate-900 차콜, ③Hero=그대로 유지. **코드 실사 결과**: `body::before` 파스텔 메시(peach `rgba(255,237,213)` + sky `191,219,254` + lavender `221,214,254` + mint `187,247,208` on `#fffaf6→#f7fbff→#fbf7ff`), SitePageShell `bg-transparent`, 랜딩 매처 칩 `bg-slate-900 text-white`. ivory `#faf8f3`는 이 메시를 덮고 amber-900은 차콜 톤과 충돌. **수정**: (a) `app/tours/list/page.tsx` main `bg-[#faf8f3]` → `bg-white/55` (메시 약하게 비침). (b) rail 토큰(`LIST_RAIL_BG/BORDER/SHADOW_WARM`·`LIST_FIELD_CLS`·`LIST_SELECT_CLS`·`LIST_CHIP_ACTIVE/INACTIVE`)을 amber → 반투명 화이트 + slate-900으로. (c) page.tsx 인라인 amber(eyebrow/divider/reset/apply/mobile chip/refetch)를 slate/neutral로. (d) `LIST_FORBIDDEN_TOKENS`에서 slate-900 제거(이제 액센트), `LIST_REQUIRED_TOKENS` amber→slate 갱신. **Hero(inline amber)·footer(amber 토큰 EYEBROW/CURATOR/DISPLAY)는 매거진 시그니처로 유지** (사용자 "Hero 그대로"). | 사용자 정확한 진단 — B1(ivory+amber)이 처음부터 실제 사이트 톤 오해였음. 진짜 가족 컬러 = 파스텔 메시 + slate-900. 업그레이드의 본질은 컬러(ivory+amber)가 아니라 구조(h-11·spacing·segmented·dismissible chip·hero). 컬러는 site-native, 구조만 격상. Hero는 warm 매거진 cover로 별개 유지 (cover warm + body neutral은 정상 매거진 패턴) | — |
+| B33 | 2026-05-23 | **Phase 7 IA: 진입 시 default = 셸프 / 필터 적용 시 = Phase 4 flat grid.** `hasActiveFilters` 헬퍼(search·destination·tourType·features·minPriceUsd·maxPriceUsd 중 하나라도 활성) → flat grid 분기. 미적용 시 → ShelvesContainer. URL이 셸프 클릭 시 자동으로 해당 필터 query를 적용해 flat grid로 진입 (셸프 = 사용자가 메뉴에서 고르는 큐레이션 진입점, flat grid = 결과 페이지). 양방향 토글 등 사용자 수동 view-mode 스위치 미도입 — 시각적 일관성 우선. | 사용자 1번 답 (AskUserQuestion 2026-05-23): "기본 진입 = 셸프 / 필터 적용 시 = flat grid". e-commerce 표준 패턴(Amazon storefront / Zalando home → search). 매거진 톤도 큐레이션 진입 + 검색 결과 분리 패턴 정합 | — |
+| B34 | 2026-05-23 | **동일 투어 multi-shelf 허용.** 스몰그룹 크루즈 투어는 "Cruise Shore Excursion" + "Small Group" 두 셸프에 동시 등장. 한 투어가 어떤 슬롯에 들어가는지는 `lib/tours-shelves.ts`의 slug→shelves 매핑이 결정 (일대다). 셸프별 카드 정렬은 셸프 정의 우선순위 + 알파벳/평점 보조. | 사용자 2번 답: "허용 (e.g. 스몰그룹 크루즈 = '크루즈' + '스몰그룹')". 사용자 핵심 동기 ("30몇개 시각적 약점 커버")의 직접 해결책. 사용자 perception은 "선택지가 많다" — 인벤토리 fact과 perception의 합법적 갭. SEO 영향: 셸프는 클라이언트 렌더, 동일 카드 중복은 canonical detail URL 1개로 수렴 (중복 컨텐츠 문제 없음) | — |
+| B35 | 2026-05-23 | **시즌 윈도우 코드 하드코딩 + Coming Soon D-90 규칙.** `lib/tours-shelves.ts`에 6 시즌 윈도우: camellia 12-15~2-15, plum-blossom 2-25~3-20, cherry-blossom 3-28~4-12, hydrangea 5-15~7-15, maple-leaf 10-15~11-15, pink-muhly 9-30~10-30. 윈도우는 MM-DD 매년 반복 (lib/tour-seasonal-windows.ts와 같은 패턴, 2027 자동 반복). `getSeasonalShelvesForDate(today)` → Now Seasonal(현재 윈도우 내) + Coming Soon(시즌 시작 D-1 ~ D-90). DB 컬럼 추가 안 함 (Phase 5 게이팅과 같은 이유 — 백엔드 스프린트 회피, 인벤토리 안정성). admin 입력 마이그레이션은 향후 phase. | 사용자 답 (AskUserQuestion 3·4): "코드 하드코딩". 인벤토리 작음(~30 tour) + 시즌 자체 안정 → DB 추가는 over-engineering. 사용자 명시 윈도우 4개(camellia/plum/cherry/pink-muhly) + 사용자 답 추가 2개(hydrangea 5-15~7-15, maple 10-15~11-15) | — |
+| B36 | 2026-05-23 | **Editor's Pick 독립 셸프로 격상 + Editorial Insert는 flat-grid 모드 전용 유지.** 셸프 모드에서는 Editorial Insert(6/12/18 슬롯 col-span-full)가 의미 없음 — 셸프 사이의 큐레이션 노트(작은 secondary 셸프 또는 single Insert variant)로 변환 가능하나 일단 셸프 모드에서는 미출력. flat-grid 모드 (필터 활성)에서는 기존 B8 룰 그대로 유지 (Insert 3변형 6/12/18). | 사용자 4번 답: "독립 셸프로 격상 + Editorial Insert는 셸프 사이 큐레이션 노트로 유지". Editor's Pick은 카탈로그의 가장 강한 큐레이션 시그니처 — 셸프 위 첫번째 노출이 적합. Editorial Insert는 grid 시각 리듬용 패턴이라 grid 모드에서만 동작 | — |
+| B37 | 2026-05-23 | **B2(카드 SHA `a931fe4e` 유지) + B32(site-native 톤) + B11(scroll-freeze 가드) + B12(신규 라이브러리 금지) + B14(i18n 6 locale 동시) + B16(가족 컬러) 모두 Phase 7 carry-over.** TourShelf horizontal scroll-snap = CSS `scroll-snap-type` + IntersectionObserver(기존 자산) — 신규 carousel 라이브러리 0. 셸프 컴포넌트의 모든 color token = site-native(white/55·slate-900) — amber 톤은 hero/footer 시그니처에만. | 사용자 결정 명시는 안 했지만, 모든 prior binding decisions은 §A 5번 룰("랜딩 + 상세 + 4단계 모든 binding decisions auto-apply")에 따라 자동 carry-over. 명시적으로 row로 박아두는 게 reversal 방지 | — |
 
 ---
 
@@ -91,6 +97,7 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 
 | 날짜 | 항목 | 커밋 | 비고 |
 |---|---|---|---|
+| 2026-05-23 | **Phase 7 시작 — Curated Themed Shelves (planner-first commit).** §A에 Phase 7 🔄 row 추가, §B에 B33-B37 binding decisions 박음 (셸프 IA / multi-shelf / 시즌 윈도우 / Editor's Pick / carry-over 가드), §D에 4개 추가 보류 아이디어 등록 (admin 시즌 입력 UI / in-between strip / wishlist 카운트 / personalized 셸프), §6.7 sub-task 표 신설 (7.0 게이트 → 7.8 ship). 사용자 4-question AskUserQuestion + 3-question 결정 후 진행 승인. 워크트리 `atockorea-shelves` + 브랜치 `feat/tours-list-curated-shelves` from origin/main `bb351316`. | (pending — planner commit) | 코드 변경 0. 사용자 "Phase 7.1 진입 승인" 후 7.1부터 실행 |
 | 2026-05-20 | **Phase 3.2/3.3 — ContextualVignetteBand (destination 7-accent, B6).** mapContextToAccent+ACCENT(lib/tours-hub-accents) 활용. destination/feature 컨텍스트에서만 등장, accent 그라데이션 rule + 틴트 eyebrow + reset. base는 site-native, accent는 컨텍스트 강조. i18n 6 locale 2키. | b707eeaa | Jeju→teal 등 7-accent 계승. 카드 SHA `a931fe4e` |
 | 2026-05-20 | **Phase 3.6/3.7/3.8 — EmptyStateRecovery 3-action (B10).** (a) 최제약 필터 자동 감지·해제(휴리스틱 price>dest>features>type>search), (b) /itinerary-builder, (c) /support 컨시어지. page.tsx empty 브랜치 교체. i18n 6 locale 5키. 3.4/3.5(ResultsMeta+view toggle)는 Phase 4 이관. | 31dcef0e | Phase 3 코어 완료. 카드 SHA `a931fe4e` |
 | 2026-05-20 | **후속 — hero 이미지 LCP 최적화.** catalogue-hero.jpg 실제 PNG 1672x941 2099KB → 실제 JPEG q82(mozjpeg) 178KB (-92%). 치수·시각 동일. hero priority 이미지라 LCP 직결 (Phase 1 LCP 노트 이행). | 5195d3be | Lighthouse 정밀 측정은 사용자 dev 환경 권장 — 소스 경량화로 LCP 전송량 대폭 감소 |
@@ -153,6 +160,10 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 | Filter rail 좌측 사이드바 (Booking.com 식) | 데스크탑 패턴 | 모바일 호환 비용 ↑, 현재 sticky top rail이 모바일-친화. Phase 4까지 보류 |
 | 2.7 "More" 버튼 (Tier B 펼치기 + 활성 카운터) | Phase 2.7 | ✅ Phase 4.10에서 구현 완료 (6e758dc2) |
 | Duration 필터 (Half/Full/Multi-day) | Phase 4.10 | **DROP** — 실 데이터 확인 결과 전 활성 투어가 8~13h 종일 데이투어. 구분 무의미(전부 매칭 or 0). B13(동작 안 하는 필터 금지). 향후 멀티데이/반나절 인벤토리 생기면 재고 |
+| 시즌 admin 입력 UI (관리자가 시즌 윈도우 변경) | Phase 7 | 윈도우 자체가 안정 (annual MM-DD). 인벤토리 ~30개 + 시즌 6개 → DB 추가 비용 > 이익. 윈도우 변경 시 `lib/tours-shelves.ts` 수정 + 새 PR로 충분. 인벤토리 또는 시즌 수 100+ 시 재고 |
+| 셸프 사이 큐레이션 노트(작은 in-between strip) | Phase 7 / B36 | Phase 7 핵심 셸프 8개 안정 후 추가 가능. 지금 추가하면 Phase 7 첫 ship 부피만 커짐 |
+| 위시리스트 카운트 미니 뱃지 셸프 카드에 ("3 picked") | Phase 7 | wishlist API 통합 비용. Phase 7 핵심 ship 후 |
+| Personalized "추천: 너만의 픽" 셸프 (홈 matcher 결과 활용) | Phase 7 | 사용자 행동 데이터(home matcher result session 등) 누적 후 — 이미 §D에 등록된 상위 보류 항목과 동일 |
 
 ---
 
@@ -491,6 +502,44 @@ import type { StripAccent } from '@/components/tours-hub/TourCollectionStrip';
 | 6.8 | **scroll-freeze 회귀 측정** — Chrome DevTools Performance, 60fps 유지 | Phase 0.5 baseline 대비 동등 또는 우수 |
 
 **Phase 6 ✅ 조건**: 60fps 유지. reduce-motion 환경에서 모든 모션 비활성화. mobile/desktop 모두 LCP regression ≤ +50ms.
+
+---
+
+### 6.7 Phase 7 — Curated Themed Shelves (시즌·테마 셸프 IA)
+
+**목적**: 페이지 IA를 "필터→flat grid"에서 "셸프 큐레이션→필터 시 flat grid"로 격상. 인벤토리 ~30개의 작은 규모를 다층 큐레이션으로 시각적 풍부함 제공. 매거진 톤(Phase 1-6) + 매핑 데이터(B35 시즌 윈도우) + carry-over 가드(B37) 결합.
+
+**셸프 후보 (8개, 우선순위 순)**:
+1. **Editor's Pick** — 큐레이터 직접 픽 5-6개 (계절·신상·시그니처). 셸프 모드 최상단 (B36 격상)
+2. **Now Seasonal** — 현재 시즌 윈도우 안 (2026-05-23 = 수국 시즌 ✅)
+3. **Coming Soon** — 시즌 시작 D-90 ~ D-1 (시즌 시작 카운트다운)
+4. **Cruise Shore Excursion** — jeju/busan/incheon cruise + cruise-guests 슬러그 4-5개
+5. **Small Group** — small-group 슬러그 또는 max group ≤ 8
+6. **Private** — `price_type='vehicle'` 5개 + private 차터 슬러그
+7. **Classic Bus Tour** — `*-bus-tour` / `bus-tour-*` 슬러그 패턴
+8. **From Seoul / Jeju / Busan** — 도시 베이스 모음 (선택, Phase 7 차후 추가 가능)
+
+**Sub-task 표**:
+
+| # | 작업 | 파일 | 통과 기준 | 상태 |
+|---|---|---|---|---|
+| 7.0 | **게이트** — 워크트리 + 브랜치 + planner-first commit (§A·§B·§C·§D·§6.7) + B33-B37 박기 + 카드 baseline 재확인 | planner | 7개 체크리스트 모두 통과 + 사용자 "Phase 7.1 진입 승인" | 🔄 |
+| 7.1 | `lib/tours-shelves.ts` 신규 — 셸프 정의 + slug→shelves 매핑 + 시즌 윈도우 6개(B35) + `getShelvesForDate(today, tours)` 헬퍼 | 신규 | 7.8 unit test 통과 | ⏳ |
+| 7.2 | `components/tours-list/TourShelf.tsx` 신규 — horizontal scroll-snap rail. h2 라벨 + 큐레이션 한 줄 + horizontal card scroll (CSS scroll-snap, no carousel lib — B12·B37) | 신규 | 카드 SHA `a931fe4e` 0 변경. scroll-snap 동작. B11 scroll-freeze 0 | ⏳ |
+| 7.3 | `components/tours-list/ShelvesContainer.tsx` 신규 — `getShelvesForDate` 호출 + 셸프 목록 렌더 + 빈 셸프 자동 hide | 신규 | 2026-05-23 기준 Now Seasonal(수국) + Cruise + Small Group + Private + Bus + Editor's Pick 6개 렌더 | ⏳ |
+| 7.4 | `app/tours/list/page.tsx` — `hasActiveFilters` 헬퍼 + 분기 (`{hasActiveFilters ? <FlatGrid /> : <ShelvesContainer />}`) (B33) | page.tsx | 필터 없을 때 셸프 / 필터 있을 때 grid | ⏳ |
+| 7.5 | Coming Soon 셸프 + "Booking opens YYYY-MM-DD · D-N" 카운트다운 라벨. 시즌 시작 90일 전 등장, 시즌 진입 시 Now Seasonal로 자연 승급 | TourShelf | 시즌 시작 D-90 게이트 (lib 7.1) | ⏳ |
+| 7.6 | Editor's Pick 셸프 (B36 격상) + Editorial Insert는 flat-grid 모드 전용 (셸프 모드에서 미출력) | EditorialInsert / ShelvesContainer | 모드별 분기 정확 | ⏳ |
+| 7.7 | i18n 6 locale (en/ko/zh/zh-TW/es/ja) × 셸프 라벨 + 시즌 카피 + D-N 템플릿. `toursList.shelves.*` 네임스페이스 신규 (B14) | messages/*.json | 6 locale × ~20 키 동시 적층 | ⏳ |
+| 7.8 | unit test — 시즌 윈도우 in/out/D-90/D+30, 셸프 매핑(cruise/small-group/private/bus 슬러그 패턴), 빈 셸프 hide, Editor's Pick 우선순위. + 카드 SHA `a931fe4e` git hash-object 검증. + slate-200/900 grep in components/tours-list/TourShelf.tsx / ShelvesContainer.tsx | 신규 jest + grep | jest pass · 카드 SHA 일치 · slate grep 0 (B1·B37) | ⏳ |
+
+**Phase 7 ✅ 조건**:
+- `git hash-object components/tour/TourListCard.tsx` 출력 = `a931fe4e8de9d02e3af235690ca78d86f8c089f9` (B2 carry-over)
+- `grep -E "(slate-200|amber-900)" components/tours-list/TourShelf.tsx components/tours-list/ShelvesContainer.tsx` = 0 (B37 site-native carry-over; amber는 hero/footer 시그니처 외 금지)
+- jest unit tests pass (lib/tours-shelves.ts 시즌 윈도우 + 매핑 로직)
+- `tsc --noEmit` 0 errors
+- 필터 미적용 진입 시 셸프 6개 렌더 (2026-05-23 기준: Editor's Pick + Now Seasonal hydrangea + Cruise + Small Group + Private + Classic Bus). 필터 적용 시 기존 Phase 4 flat grid 그대로
+- 사용자 시각 승인 ("셸프 진입 통과")
 
 ---
 
