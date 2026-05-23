@@ -158,25 +158,46 @@ function isCruise(t: StaticTourProductRegistration): boolean {
   return t.badges.some((b) => /cruise/i.test(b));
 }
 
-function isSmallGroup(t: StaticTourProductRegistration): boolean {
-  if (t.maxGroupSize != null && t.maxGroupSize <= 12) {
-    // 12-pax is the small-group ceiling per current inventory. Private (vehicle)
-    // tours can carry maxGroupSize=12 too, so private wins when both match —
-    // the page-side filter falls through to the next shelf already, so this is
-    // safe by overlap (B34).
-  }
-  return t.badges.some((b) => /small\s*group|small shared van/i.test(b));
-}
-
 function isPrivate(t: StaticTourProductRegistration): boolean {
   if (t.slug.includes("private")) return true;
   if (t.slug.includes("private-car-charter") || t.slug.includes("chartered-car")) return true;
   return t.badges.some((b) => /private\s*tour|private(?!\s*group)/i.test(b));
 }
 
+/**
+ * Classic-bus shelf — large-coach + cruise-bus tours.
+ *
+ * Slug rule: ends with `-bus-tour` (e.g. `*-cruise-shore-excursion-bus-tour`,
+ * `*-classic-bus-tour`) catches the explicit naming.
+ *
+ * Badge rule: covers wider authoring variants observed in the catalog —
+ * `Large coach`, `Bus tour`, `Classic bus`, and `Air-conditioned coach`
+ * (the Seoraksan→Naksansa day trip uses the last one).
+ */
 function isClassicBus(t: StaticTourProductRegistration): boolean {
   if (t.slug.endsWith("-bus-tour") || t.slug.includes("classic-bus")) return true;
-  return t.badges.some((b) => /large coach|bus tour|classic bus/i.test(b));
+  return t.badges.some((b) => /large coach|bus tour|classic bus|air[- ]?conditioned coach/i.test(b));
+}
+
+/**
+ * Small-group shelf — every join-format day tour that isn't a Private charter
+ * or a Classic Bus / Large-coach tour.
+ *
+ * Why three signals (badge OR maxGroupSize OR catch-all join default): badges
+ * are authored inconsistently across the catalog (e.g. `east-signature-nature-
+ * core` and `jeju-grand-highlights-loop` carry `maxGroupSize=8` but no
+ * explicit `Small group` badge), so a badge-only matcher silently drops the
+ * majority of the small-group inventory. The fallback to `maxGroupSize ≤ 12`
+ * + the explicit private/bus exclusion catches every join-format day tour
+ * the user expects to find under "Small Group" without leaking private
+ * charters or coach tours.
+ */
+function isSmallGroup(t: StaticTourProductRegistration): boolean {
+  if (isPrivate(t)) return false;
+  if (isClassicBus(t)) return false;
+  if (t.badges.some((b) => /small\s*group|small shared van/i.test(b))) return true;
+  if (t.maxGroupSize != null && t.maxGroupSize <= 12) return true;
+  return false;
 }
 
 // ---------------------------------------------------------------------------
