@@ -4,6 +4,10 @@ import { getKrwPerUsd } from '@/lib/exchange/usdBasedRates.server';
 import { tourListPricesToUsdSync } from '@/lib/tour-list-price-usd.server';
 import { ACTIVE_BOOKING_STATUSES } from '@/lib/constants/booking-status';
 import { isTourIdBlockedFromConsumerSurfaces } from '@/lib/tour-consumer-visibility';
+import {
+  getSeasonalOperatingWindow,
+  isDateOutsideSeasonalWindow,
+} from '@/lib/tour-seasonal-windows';
 
 function isJejuEastTour(tour: { city?: string | null; slug?: string | null; title?: string | null }) {
   const city = (tour.city || '').toLowerCase();
@@ -77,6 +81,23 @@ export async function GET(
         date,
         tourId,
         reason: 'This Jeju East tour is not available on Mondays.',
+      });
+    }
+
+    // Business rule: season-locked tours are bookable only inside their annual operating window.
+    const seasonalWindow = getSeasonalOperatingWindow(tour.slug);
+    if (seasonalWindow && isDateOutsideSeasonalWindow(tour.slug, date)) {
+      return NextResponse.json({
+        available: false,
+        availableSpots: 0,
+        maxCapacity: null,
+        requestedGuests: guests,
+        canAccommodate: false,
+        price: listUnitUsd,
+        priceOverride: null,
+        date,
+        tourId,
+        reason: `This is a season-locked tour (${seasonalWindow.seasonLabel}, ${seasonalWindow.startMonthDay} – ${seasonalWindow.endMonthDay}). The selected date is outside the operating window.`,
       });
     }
 
