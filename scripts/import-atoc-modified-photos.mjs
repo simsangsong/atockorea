@@ -193,7 +193,7 @@ const FOLDER_MAP = {
   월정교: { assetSlug: "woljeonggyo", poiKeys: ["woljeonggyo_bridge"] },
   약천사: { assetSlug: "yakcheonsa", poiKeys: ["yakcheonsa_temple"] },
   설악산: {
-    assetSlug: "seoraksan",
+    assetSlug: "seoraksan-national-park",
     poiKeys: ["seoraksan_national_park"],
     nameGuard: /seoraksan|설악/i,
   },
