@@ -1159,7 +1159,7 @@
       "theme": "Beach"
     },
     {
-      "name": "Seongeup Folk Village (UNESCO)",
+      "name": "Seongeup Folk Village (Korean National Folklore Cultural Heritage)",
       "type": "primary",
       "theme": "Heritage Village"
     },
@@ -1372,7 +1372,7 @@
       "description": "Carefully planned itinerary, not a generic loop",
       "iconBg": "bg-sky-50/80",
       "iconColor": "text-sky-600",
-      "body": "Route packs two hydrangea festival venues (Ilchul Land + Hueree) plus the triple-UNESCO Seongsan Ilchulbong into a single 9-hour loop — something impossible to replicate with public buses."
+      "body": "Route packs two hydrangea festival venues (Ilchul Land + Hueree) plus the UNESCO World Natural Heritage component Seongsan Ilchulbong into a single 9-hour loop — something impossible to replicate with public buses."
     },
     {
       "icon": "users",
@@ -1412,7 +1412,7 @@
       "timing": "During tour",
       "title": "Stop-by-Stop Tips",
       "detail": "Real-time guidance at each location",
-      "description": "Guide narrates hydrangea horticultural context, Seongeup's heritage, and Seongsan's triple-UNESCO geology."
+      "description": "Guide narrates hydrangea horticultural context, Seongeup's heritage, and Seongsan's UNESCO World Heritage volcanic geology."
     },
     {
       "timing": "After tour",
@@ -1907,12 +1907,12 @@
       "ilchulland_micheon_cave",
       "hueree_natural_park"
     ],
-    "audit_summary": "East-Jeju Hydrangea Festival route — 9-hr small-group minicoach loop. 5 substantive POI anchors: 1 emerald-coast beach (Hamdeok) + 1 Joseon folk village (Seongeup, National Folklore Cultural Heritage No. 188) + 1 triple-UNESCO tuff cone (Seongsan: World Heritage 2007 + Global Geopark 2010 + Biosphere 2002) + 2 hydrangea festival anchors (Ilchul Land Micheon Cave + Hueree Natural Park). Designed for **June peak hydrangea window (June 10–25)** with Hueree greenhouse + Ilchul Land lava-tube + Seongeup hanok interiors as the **3-tier indoor weather-alternative stack**. Cross-batch reuse: 4 of 5 substantive bodies imported verbatim (14a Seongsan, 14b Hamdeok + Seongeup + Ilchulland); only Hueree authored fresh.",
+    "audit_summary": "East-Jeju Hydrangea Festival route — 9-hr small-group minicoach loop. 5 substantive POI anchors: 1 emerald-coast beach (Hamdeok) + 1 Joseon folk village (Seongeup, National Folklore Cultural Heritage No. 188) + 1 UNESCO World Heritage tuff cone (Seongsan: World Heritage 2007 + Global Geopark 2010 + Biosphere 2002) + 2 hydrangea festival anchors (Ilchul Land Micheon Cave + Hueree Natural Park). Designed for **June peak hydrangea window (June 10–25)** with Hueree greenhouse + Ilchul Land lava-tube + Seongeup hanok interiors as the **3-tier indoor weather-alternative stack**. Cross-batch reuse: 4 of 5 substantive bodies imported verbatim (14a Seongsan, 14b Hamdeok + Seongeup + Ilchulland); only Hueree authored fresh.",
     "score_rationale": {
       "high_scores": {
         "east_jeju_fit=1.0": "All 5 substantive stops are on the east-coast/east-inland corridor",
         "hydrangea_festival_anchor_count=2": "Ilchul Land + Hueree both during June peak",
-        "unesco_triple_anchor_fit=1.0": "Seongsan carries simultaneous triple-UNESCO designation",
+        "unesco_triple_anchor_fit=1.0": "Seongsan is a UNESCO World Heritage component within Jeju's island-wide Biosphere and Geopark designations",
         "natural_monument_anchor_count=2": "Seongsan tuff cone + Jeju Black Pig (Hueree show)",
         "year_round_flower_park_fit=1.0": "Hueree's 5-festival rotation guarantees active festival 320+ days/year",
         "macro_floral_fit=1.0": "Two hydrangea festival venues — peak macro-photography opportunities"
@@ -1923,7 +1923,7 @@
         "private_tour_fit=0.05": "Fixed small-group itinerary; private re-routing would forfeit the operator's vetted lunch venues + bloom-status calibration"
       }
     },
-    "differentiation_vs_southwest_hydrangea_sister": "Same 'hydrangea festival' product family, but **east-UNESCO + heritage emphasis**: triple-UNESCO Seongsan + National Folklore Heritage Seongeup + Hamdeok emerald + 2 hydrangea festival venues (Ilchul Land + Hueree). The southwest sister covers **west-coast beach + columnar joints + Camellia Hill hydrangea tunnel + Osulloc tea fields** — a more garden-and-geology-coded, lower-climb route. Booking matrix: guests with strong UNESCO interest + willing to climb Seongsan should book east; guests with lower mobility tolerance or stronger west-coast/beach interest should book southwest.",
+    "differentiation_vs_southwest_hydrangea_sister": "Same 'hydrangea festival' product family, but **east-UNESCO + heritage emphasis**: UNESCO World Heritage Seongsan + National Folklore Heritage Seongeup + Hamdeok emerald + 2 hydrangea festival venues (Ilchul Land + Hueree). The southwest sister covers **west-coast beach + columnar joints + Camellia Hill hydrangea tunnel + Osulloc tea fields** — a more garden-and-geology-coded, lower-climb route. Booking matrix: guests with strong UNESCO interest + willing to climb Seongsan should book east; guests with lower mobility tolerance or stronger west-coast/beach interest should book southwest.",
     "seasonal_window": {
       "best_months": [
         "June (peak hydrangea)",
@@ -2693,7 +2693,7 @@
             "theme": "Beach"
           },
           {
-            "name": "Seongeup Folk Village (UNESCO)",
+            "name": "Seongeup Folk Village (Korean National Folklore Cultural Heritage)",
             "type": "primary",
             "theme": "Heritage Village"
           },
