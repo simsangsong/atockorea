@@ -61,12 +61,21 @@ export function ShelvesContainer({ now }: ShelvesContainerProps) {
   if (shelves.length === 0) return null;
 
   return (
-    <div className="space-y-16 pt-2 sm:space-y-20 lg:space-y-24">
-      {shelves.map((shelf) => (
-        <TourShelf
-          key={`${shelf.key}:${shelf.labelI18nKey}`}
-          shelf={shelf}
-        />
+    <div className="space-y-24 pt-4 sm:space-y-32 lg:space-y-40">
+      {shelves.map((shelf, index) => (
+        <div key={`${shelf.key}:${shelf.labelI18nKey}`}>
+          {/* Hairline divider above every shelf after the first, giving an
+              extra visual rest before the next eyebrow + headline. */}
+          {index > 0 ? (
+            <div className="mb-12 flex justify-center sm:mb-16">
+              <span
+                aria-hidden
+                className="block h-px w-12 bg-stone-300/70 sm:w-16"
+              />
+            </div>
+          ) : null}
+          <TourShelf shelf={shelf} />
+        </div>
       ))}
     </div>
   );
