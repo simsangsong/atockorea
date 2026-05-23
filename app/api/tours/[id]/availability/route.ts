@@ -163,6 +163,27 @@ export async function GET(
         : null;
     const finalPrice = overrideUsd != null ? overrideUsd : listUnitUsd;
 
+    // Zero-price guard: refuse to expose a sellable date with $0 / NaN price.
+    // This catches data-quality regressions (e.g., a seasonal product whose
+    // tours.price / tour_product_offers.amount_minor are still 0 because
+    // pricing hasn't been backfilled yet). Without this guard the API would
+    // happily return available:true, price:0, letting a guest book a free
+    // tour by accident.
+    if (!Number.isFinite(finalPrice) || finalPrice <= 0) {
+      return NextResponse.json({
+        available: false,
+        availableSpots: 0,
+        maxCapacity,
+        requestedGuests: guests,
+        canAccommodate: false,
+        price: finalPrice,
+        priceOverride: overrideUsd,
+        date,
+        tourId,
+        reason: 'Pricing for this tour has not been confirmed yet. Please contact support or check back later.',
+      });
+    }
+
     return NextResponse.json({
       available: canAccommodate && isAvailable,
       availableSpots,
