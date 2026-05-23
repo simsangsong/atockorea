@@ -40,6 +40,7 @@ export default function PrivacyPolicyPage() {
                 <li>{t('privacy.s1.li1')}</li>
                 <li>{t('privacy.s1.li2')}</li>
                 <li>{t('privacy.s1.li3')}</li>
+                <li>{t('privacy.s1.koreaOps')}</li>
               </ul>
               <p>{t('privacy.s1.p2')}</p>
             </LegalSection>
@@ -202,6 +203,7 @@ export default function PrivacyPolicyPage() {
               <p>{t('privacy.s14.p1')}</p>
               <ul>
                 <li>{t('privacy.s14.li1')}</li>
+                <li>{t('privacy.s14.koreaOps')}</li>
                 <li>
                   Contact:{' '}
                   <a href="mailto:support@atockorea.com">

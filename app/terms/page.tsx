@@ -182,9 +182,10 @@ export default function TermsOfServicePage() {
 
             <LegalSection title={t('terms.s16.title')}>
               <p>{t('terms.s16.p1')}</p>
+              <p>{t('terms.s16.operations')}</p>
               <ul>
                 <li>
-                  <strong>{t('terms.s16.entity')}</strong> ATOC KOREA LLC
+                  <strong>{t('terms.s16.entity')}</strong> AtoC Korea, LLC
                 </li>
                 <li>
                   <strong>{t('terms.s16.email')}</strong>{' '}
@@ -194,7 +195,7 @@ export default function TermsOfServicePage() {
                   <strong>{t('terms.s16.phone')}</strong> +82 10 9780 8027
                 </li>
                 <li>
-                  <strong>{t('terms.s16.address')}</strong> 302, 32, Doryeong-ro 7-gil, Jeju-si, Jeju-do, Republic of Korea
+                  <strong>{t('terms.s16.address')}</strong> #221-8, 284 Gilju-ro, Wonmi-gu, Bucheon-si, Gyeonggi-do, Republic of Korea
                 </li>
                 <li>
                   <strong>{t('terms.s16.registered')}</strong> 30 N Gould St, STE R, Sheridan, WY 82801, USA

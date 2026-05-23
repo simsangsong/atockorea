@@ -120,6 +120,7 @@ export default function RefundPolicyPage() {
 
             <LegalSection title={t('refund.s11.title')}>
               <p>{t('refund.s11.p1')}</p>
+              <p>{t('refund.s11.operations')}</p>
               <p>{t('refund.s11.p2')}</p>
               <ul>
                 <li>
@@ -130,10 +131,10 @@ export default function RefundPolicyPage() {
                   <strong>{t('refund.s11.phone')}</strong> +82 10 9780 8027
                 </li>
                 <li>
-                  <strong>{t('refund.s11.entity')}</strong> ATOC KOREA LLC
+                  <strong>{t('refund.s11.entity')}</strong> AtoC Korea, LLC
                 </li>
                 <li>
-                  <strong>{t('refund.s11.address')}</strong> 302, 32, Doryeong-ro 7-gil, Jeju-si, Jeju-do, Republic of Korea
+                  <strong>{t('refund.s11.address')}</strong> #221-8, 284 Gilju-ro, Wonmi-gu, Bucheon-si, Gyeonggi-do, Republic of Korea
                 </li>
               </ul>
             </LegalSection>

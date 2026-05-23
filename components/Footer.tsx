@@ -29,20 +29,24 @@ export default function Footer({ premiumHandoff }: FooterProps) {
             </h3>
             <div className="grid grid-cols-2 gap-x-4 gap-y-0.5 text-[11px] leading-snug text-slate-300 sm:gap-x-6 sm:text-xs sm:leading-normal">
               <p>
-                <span className="font-semibold text-slate-200">{t('home.footer.name')}:</span>{' '}
-                {t('home.footer.companyName')}
-              </p>
-              <p>
-                <span className="font-semibold text-slate-200">{t('home.footer.entityLabel')}:</span>{' '}
-                {t('home.footer.entity')}
+                <span className="font-semibold text-slate-200">{t('home.footer.platformOperatorLabel')}:</span>{' '}
+                {t('home.footer.platformOperator')}
               </p>
               <p>
                 <span className="font-semibold text-slate-200">{t('home.footer.stateLabel')}:</span>{' '}
-                {t('home.footer.state')}
+                {t('home.footer.state')}, USA
+              </p>
+              <p>
+                <span className="font-semibold text-slate-200">{t('home.footer.koreaOperationsLabel')}:</span>{' '}
+                {t('home.footer.koreaOperator')}
               </p>
               <p>
                 <span className="font-semibold text-slate-200">{t('home.footer.industryLabel')}:</span>{' '}
-                {t('home.footer.industry')}
+                {t('home.footer.koreaBusinessType')}
+              </p>
+              <p>
+                <span className="font-semibold text-slate-200">{t('home.footer.businessReg')}:</span>{' '}
+                {t('home.footer.businessRegNo')}
               </p>
             </div>
           </div>
@@ -70,7 +74,7 @@ export default function Footer({ premiumHandoff }: FooterProps) {
             </div>
             <p className="mt-1.5 pt-1.5 border-t border-slate-800/80 sm:mt-2 sm:pt-2">
               <span className="font-semibold text-slate-200">{t('home.footer.address')}:</span>{' '}
-              302, 32, Doryeong-ro 7-gil, Jeju-si, Jeju-do
+              {t('home.footer.koreaAddress')}
             </p>
             <p className="mt-1">
               <span className="font-semibold text-slate-200">{t('home.footer.registeredAddressLabel')}:</span>

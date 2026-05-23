@@ -1244,22 +1244,29 @@
       "privacy": "隱私政策",
       "cookies": "Cookie政策",
       "refundPolicy": "退款政策",
-      "legalSummary": "ATOC KOREA LLC 僅作為預訂中介營運，不直接提供旅遊服務。旅遊由獨立之第三方供應商提供。",
-      "copyright": "© 2026 AtoC Korea. 保留所有權利。"
+      "legalSummary": "AtoC Korea, LLC（美國懷俄明州有限責任公司）營運本預訂平台；韓國當地的旅遊營運及合作夥伴管理由 AtoC Korea, Korea（營業登記號 277-01-03977）負責。平台僅作為預訂仲介，不提供旅遊服務——旅遊由獨立第三方供應商提供。",
+      "copyright": "© 2026 AtoC Korea. 保留所有權利。",
+      "platformOperatorLabel": "平台營運",
+      "koreaOperationsLabel": "韓國當地營運",
+      "platformOperator": "AtoC Korea, LLC",
+      "koreaOperator": "AtoC Korea, Korea",
+      "businessRegNo": "277-01-03977",
+      "koreaBusinessType": "綜合旅行業",
+      "koreaAddress": "#221-8, 284 Gilju-ro, Wonmi-gu, Bucheon-si, Gyeonggi-do, Republic of Korea"
     }
   },
   "about": {
     "title": "關於我們",
     "ourStory": {
       "title": "我們的故事",
-      "p1": "ATOC KOREA LLC 作為線上旅遊預訂平台，僅擔任旅行者與獨立旅遊服務提供者之間的中介。",
+      "p1": "AtoC Korea, LLC 作為線上旅遊預訂平台，僅擔任旅行者與獨立旅遊服務提供者之間的中介。",
       "p2": "我們的平台讓客戶能夠發現、比較並預訂由第三方旅遊營運商與專業導遊提供的旅行體驗。",
       "facilitate": "我們透過以下方式協助預訂流程：",
       "li1": "展示旅遊營運商提供的旅遊資訊",
       "li2": "當我們提供線上付款時，透過可信的第三方支付服務商協助完成付款（我們不儲存您的完整卡號）",
       "li3": "發出含提供方詳情及取消條款的預訂確認",
       "li4": "支援與預訂相關的溝通",
-      "disclaimer": "ATOC KOREA LLC 不營運旅遊、不雇用導遊或司機，也不提供現場旅行服務。所有旅遊與體驗均由獨立的第三方提供者提供。旅遊的執行、安全及服務品質責任由旅遊提供者承擔。"
+      "disclaimer": "AtoC Korea, LLC 不營運旅遊、不雇用導遊或司機，也不提供現場旅行服務。所有旅遊與體驗均由獨立的第三方提供者提供。旅遊的執行、安全及服務品質責任由旅遊提供者承擔。"
     },
     "whyChooseUs": {
       "title": "為什麼選擇我們",
@@ -1283,13 +1290,13 @@
       "allPartners": "所有合作夥伴均：",
       "li1": "獨立營運",
       "li2": "對旅遊執行與合規負責",
-      "li3": "非 ATOC KOREA LLC 的員工或代理人",
+      "li3": "非 AtoC Korea, LLC 的員工或代理人",
       "contactBefore": "合作諮詢請透過",
       "contactAfter": "頁面聯絡我們。"
     },
     "careers": {
       "title": "職業機會",
-      "p1": "ATOC KOREA LLC 為技術驅動的預訂平台，致力於建構可靠、透明的旅行基礎設施。",
+      "p1": "AtoC Korea, LLC 為技術驅動的預訂平台，致力於建構可靠、透明的旅行基礎設施。",
       "weSeek": "我們偶爾徵求以下領域人才：",
       "li1": "平台營運",
       "li2": "客戶支援",
@@ -1356,10 +1363,10 @@
   "terms": {
     "title": "服務條款",
     "introPrefix": "最後更新：",
-    "introSuffix": "。本條款適用於您對 ATOC KOREA LLC 平台的使用，旨在符合大韓民國及美國適用法律。",
+    "introSuffix": "。本條款適用於您對 AtoC Korea, LLC 平台的使用，旨在符合大韓民國及美國適用法律。",
     "s1": {
       "title": "1. 同意條款",
-      "p1Before": "本服務條款（「條款」）是您（「用戶」、「您」）與懷俄明州有限責任公司 ATOC KOREA LLC（「公司」、「我們」）之間具有約束力的協議。存取或使用我們的網站 atockorea.com、預訂平台、行動體驗或相關服務（統稱「平台」），即表示您同意受本條款及我們的 ",
+      "p1Before": "本服務條款（「條款」）是您（「用戶」、「您」）與懷俄明州有限責任公司 AtoC Korea, LLC（「公司」、「我們」）之間具有約束力的協議。存取或使用我們的網站 atockorea.com、預訂平台、行動體驗或相關服務（統稱「平台」），即表示您同意受本條款及我們的 ",
       "p1After": " 約束。如不同意，請勿使用平台。",
       "p2": "我們可能不時更新本條款。更新後的條款將發布於本頁並更新「最後更新」日期。重大變更可能透過電子郵件或平台醒目通知。變更生效日後繼續使用即視為接受修訂條款。若您所在司法管轄區要求對修訂條款明確同意，我們可能於適用情況下徵求該同意。",
       "p3": "您聲明您已滿 18 歲（或您所在司法管轄區之成年年齡）且具有訂立本協議之法律能力。若您代表他人預訂，您聲明您有權約束該等人且其同意本條款。"
@@ -1453,7 +1460,7 @@
       "p2Before": "我們建議您先透過 ",
       "p2After": " 聯絡我們以善意解決爭議。若我們於合理期限內（如 30 天）無法解決，則：",
       "li1": "美國用戶：任何訴訟或程序應僅於懷俄明州州法院或聯邦法院提起，您同意該等法院之對人管轄。",
-      "li2": "大韓民國用戶：您得依韓國法於您居住地法院或韓國濟州特別自治道法院提起訴訟。本條款任何內容均不剝奪您受韓國法下強制性消費者爭議解決機制（如韓國消費者院、電子商務爭議解決）保護之權利。",
+      "li2": "大韓民國用戶：您得依韓國法於您居住地法院或韓國京畿道富川市法院提起訴訟。本條款任何內容均不剝奪您受韓國法下強制性消費者爭議解決機制（如韓國消費者院、電子商務爭議解決）保護之權利。",
       "li3": "其他司法管轄區用戶：得依適用法律於懷俄明州法院或您居住地法院提起訴訟或程序。",
       "p3": "若適用法律對消費者爭議要求不同準據法或管轄地（如歐盟或韓國強制性消費者保護），該法律或管轄地於要求範圍內適用。"
     },
@@ -1480,7 +1487,8 @@
       "email": "電子郵件：",
       "phone": "電話：",
       "address": "地址：",
-      "registered": "註冊地址："
+      "registered": "註冊地址：",
+      "operations": "AtoC Korea, LLC（美國懷俄明州）作為預訂仲介營運本平台。韓國當地的旅遊營運及合作夥伴管理由 AtoC Korea, Korea（綜合旅行業，營業登記號 277-01-03977）負責。"
     },
     "backToLegal": "返回法律資訊"
   },
@@ -1490,11 +1498,12 @@
     "introSuffix": "。本政策旨在符合包括韓國《個人資訊保護法》(PIPA) 及美國州隱私法（如加州 CCPA/CPRA、維吉尼亞、科羅拉多、康乃狄克、猶他）在內之適用隱私法律。",
     "s1": {
       "title": "1. 資料控制者與範圍",
-      "p1": "資料控制者（營運方）：懷俄明州有限責任公司 ATOC KOREA LLC（「我們」）。就韓國《個人資訊保護法》(PIPA) 而言，我們為本政策所述處理之個人資訊控制者。",
+      "p1": "資料控制者（營運方）：懷俄明州有限責任公司 AtoC Korea, LLC（「我們」）。就韓國《個人資訊保護法》(PIPA) 而言，我們為本政策所述處理之個人資訊控制者。",
       "li1": "註冊地址：30 N Gould St, STE R, Sheridan, WY 82801, USA",
-      "li2": "營運/聯絡地址：302, 32, Doryeong-ro 7-gil, Jeju-si, Jeju-do, Republic of Korea",
+      "li2": "營運/聯絡地址：#221-8, 284 Gilju-ro, Wonmi-gu, Bucheon-si, Gyeonggi-do, Republic of Korea",
       "li3": "聯絡：support@atockorea.com",
-      "p2": "本隱私權政策適用於我們透過 atockorea.com 網站、預訂平台、聯絡表單、電子郵件（含 support@atockorea.com）及我們營運之任何關聯服務蒐集之個人資訊，適用於韓國、美國（含加州及有其他綜合隱私法之州居民）及我們提供服務之其他司法管轄區之使用者與訪客。"
+      "p2": "本隱私權政策適用於我們透過 atockorea.com 網站、預訂平台、聯絡表單、電子郵件（含 support@atockorea.com）及我們營運之任何關聯服務蒐集之個人資訊，適用於韓國、美國（含加州及有其他綜合隱私法之州居民）及我們提供服務之其他司法管轄區之使用者與訪客。",
+      "koreaOps": "韓國當地營運：AtoC Korea, Korea — 當地旅遊營運及合作夥伴管理（綜合旅行業，營業登記號 277-01-03977）"
     },
     "s2": {
       "title": "2. 我們蒐集的資訊",
@@ -1598,7 +1607,7 @@
       "p2": "行使上述任何權利，請透過以下方式聯絡我們：",
       "li12": "電子郵件：support@atockorea.com（主旨註明「隱私請求」）",
       "li13": "電話：support@atockorea.com",
-      "li14": "郵寄：ATOC KOREA LLC, 302, 32, Doryeong-ro 7-gil, Jeju-si, Jeju-do, Republic of Korea",
+      "li14": "郵寄：AtoC Korea, LLC, #221-8, 284 Gilju-ro, Wonmi-gu, Bucheon-si, Gyeonggi-do, Republic of Korea",
       "p3": "我們將於處理您之請求前驗證您之身分，並於適用法律要求之期限內答覆。加州居民若對我們之答覆不滿意，可聯絡加州檢察長或向加州隱私保護局申訴。韓國可聯絡個人資訊保護委員會(PIPC)或相關機關。"
     },
     "s12": {
@@ -1612,11 +1621,12 @@
     "s14": {
       "title": "14. 隱私負責人與聯絡",
       "p1": "有關本隱私權政策、行使權利或舉報問題，可聯絡我們之隱私聯絡人：",
-      "li1": "實體：ATOC KOREA LLC",
+      "li1": "實體：AtoC Korea, LLC",
       "li2": "聯絡：support@atockorea.com（隱私事宜可於主旨註明「隱私」或「資料保護」）",
       "li3": "電話：support@atockorea.com",
-      "li4": "地址：302, 32, Doryeong-ro 7-gil, Jeju-si, Jeju-do, Republic of Korea",
-      "p2": "就韓國《個人資訊保護法》而言，上述聯絡人為個人資訊相關諮詢之聯絡點。我們將依適用法律回應合法請求。"
+      "li4": "地址：#221-8, 284 Gilju-ro, Wonmi-gu, Bucheon-si, Gyeonggi-do, Republic of Korea",
+      "p2": "就韓國《個人資訊保護法》而言，上述聯絡人為個人資訊相關諮詢之聯絡點。我們將依適用法律回應合法請求。",
+      "koreaOps": "韓國當地營運：AtoC Korea, Korea — 當地旅遊營運及合作夥伴管理（綜合旅行業，營業登記號 277-01-03977）"
     },
     "backToLegal": "返回法律資訊",
     "googleApi": {
@@ -1667,10 +1677,10 @@
   "cookiePolicy": {
     "title": "Cookie 政策",
     "introPrefix": "最後更新：",
-    "introSuffix": "。本 Cookie 政策說明 ATOC KOREA LLC 如何在平台上使用 Cookie 及類似技術以及您如何管理偏好，旨在滿足 GDPR、ePrivacy 及美國州隱私法等適用法律之透明度要求。當我們使用第三方支付服務商進行結帳時，將於此揭露其 Cookie 做法，以便您清楚瞭解支付及反詐騙相關 Cookie。",
+    "introSuffix": "。本 Cookie 政策說明 AtoC Korea, LLC 如何在平台上使用 Cookie 及類似技術以及您如何管理偏好，旨在滿足 GDPR、ePrivacy 及美國州隱私法等適用法律之透明度要求。當我們使用第三方支付服務商進行結帳時，將於此揭露其 Cookie 做法，以便您清楚瞭解支付及反詐騙相關 Cookie。",
     "s1": {
       "title": "1. 介紹與範圍",
-      "p1": "ATOC KOREA LLC（「我們」）營運 atockorea.com 網站及預訂平台。本 Cookie 政策適用於平台所有訪客與使用者，包括您瀏覽網站、註冊帳戶、預訂或完成付款時。政策說明：",
+      "p1": "AtoC Korea, LLC（「我們」）營運 atockorea.com 網站及預訂平台。本 Cookie 政策適用於平台所有訪客與使用者，包括您瀏覽網站、註冊帳戶、預訂或完成付款時。政策說明：",
       "li1": "Cookie 及類似技術是什麼",
       "li2": "我們及服務提供方使用哪些 Cookie 及原因",
       "li3": "我們使用第三方支付服務商時與支付處理及反詐騙相關之 Cookie 使用",
@@ -1756,7 +1766,7 @@
   "refund": {
     "title": "退款政策",
     "introPrefix": "最後更新：",
-    "introSuffix": " 本退款政策適用於透過 ATOC KOREA LLC 平台進行之預訂，旨在符合韓國及美國適用法律。請與我們的 ",
+    "introSuffix": " 本退款政策適用於透過 AtoC Korea, LLC 平台進行之預訂，旨在符合韓國及美國適用法律。請與我們的 ",
     "introAfterTerms": " 及 ",
     "introAfter": " 一併閱讀。",
     "s1": {
@@ -1768,7 +1778,7 @@
     "s2": {
       "title": "2. 定義",
       "booking": "預訂指您透過平台就旅遊提供者提供之旅遊服務所為之預約。",
-      "platform": "平台指 ATOC KOREA LLC 為瀏覽及預訂旅遊與活動而營運之網站、應用程式及相關系統。",
+      "platform": "平台指 AtoC Korea, LLC 為瀏覽及預訂旅遊與活動而營運之網站、應用程式及相關系統。",
       "tourProvider": "旅遊提供者（營運者、商戶）指營運旅遊服務之獨立第三人。旅遊提供者非本公司之員工或代理人。",
       "platformFees": "平台費指我們就中介服務收取之費用。",
       "tourFees": "旅遊費指就旅遊服務支付之金額，由我們或我們指定之付款服務商代旅遊提供者收取。",
@@ -1837,7 +1847,8 @@
       "emailNote": "（請註明預訂編號及申請理由）",
       "phone": "電話：",
       "entity": "實體：",
-      "address": "地址："
+      "address": "地址：",
+      "operations": "AtoC Korea, LLC（美國懷俄明州）作為預訂仲介營運本平台。韓國當地的旅遊營運及合作夥伴管理由 AtoC Korea, Korea（綜合旅行業，營業登記號 277-01-03977）負責。"
     },
     "backToLegal": "返回法律資訊"
   },

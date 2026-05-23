@@ -24,7 +24,7 @@ export default function DSAPage() {
 
           <LegalDocumentShell>
             <LegalSection title="Overview">
-              <p>This website is operated by ATOC KOREA LLC, an online travel booking platform.</p>
+              <p>This website is operated by AtoC Korea, LLC, an online travel booking platform.</p>
               <p>
                 The platform facilitates reservations between users and independent third-party tour providers. ATOC
                 KOREA LLC does not provide tour services directly.
@@ -44,7 +44,7 @@ export default function DSAPage() {
             </LegalSection>
 
             <LegalSection title="Role under the DSA">
-              <p>ATOC KOREA LLC qualifies as an online intermediary service provider under the Digital Services Act.</p>
+              <p>AtoC Korea, LLC qualifies as an online intermediary service provider under the Digital Services Act.</p>
               <p>
                 We do not host illegal content knowingly and cooperate with lawful orders from competent authorities.
               </p>

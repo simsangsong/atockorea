@@ -1579,7 +1579,7 @@
       "industry": "Travel agency",
       "industryLabel": "Industry",
       "companyDescription": "Online booking and sales of tours for travelers to Korea",
-      "legalSummary": "ATOC KOREA LLC operates solely as a booking intermediary and does not provide tour services. Tours are delivered by independent third-party providers.",
+      "legalSummary": "AtoC Korea, LLC (a Wyoming, USA limited liability company) operates this booking platform; local tour operations and partner management in the Republic of Korea are handled by AtoC Korea, Korea (Business Registration No. 277-01-03977). The platform acts solely as a booking intermediary and does not provide tour services — tours are delivered by independent third-party providers.",
       "description": "Licensed Korea-based platform for Korea's day tours. Direct partnership with local travel agencies.",
       "businessReg": "Business Registration",
       "ecommerceReg": "E-commerce Registration",
@@ -1602,7 +1602,14 @@
       "privacy": "Privacy Policy",
       "cookies": "Cookie Policy",
       "refundPolicy": "Refund Policy",
-      "copyright": "© 2026 AtoC Korea. All rights reserved."
+      "copyright": "© 2026 AtoC Korea. All rights reserved.",
+      "platformOperatorLabel": "Platform operator",
+      "koreaOperationsLabel": "Korea operations",
+      "platformOperator": "AtoC Korea, LLC",
+      "koreaOperator": "AtoC Korea, Korea",
+      "businessRegNo": "277-01-03977",
+      "koreaBusinessType": "General Travel Business",
+      "koreaAddress": "#221-8, 284 Gilju-ro, Wonmi-gu, Bucheon-si, Gyeonggi-do, Republic of Korea"
     }
   },
   "trustBar": {
@@ -1621,14 +1628,14 @@
     "title": "About Us",
     "ourStory": {
       "title": "Our Story",
-      "p1": "ATOC KOREA LLC operates an online travel booking platform acting solely as an intermediary between travelers and independent tour providers.",
+      "p1": "AtoC Korea, LLC operates an online travel booking platform acting solely as an intermediary between travelers and independent tour providers.",
       "p2": "Our platform enables customers to discover, compare, and reserve travel experiences offered by third-party tour operators and professional guides.",
       "facilitate": "We facilitate the booking process by:",
       "li1": "Displaying tour information provided by tour operators",
       "li2": "When we offer online payment, facilitating payment through trusted third-party payment providers (we do not store your full card number)",
       "li3": "Issuing booking confirmations with provider details and cancellation terms",
       "li4": "Supporting communication related to bookings",
-      "disclaimer": "ATOC KOREA LLC does not operate tours, employ guides or drivers, or provide on-site travel services. All tours and experiences are delivered by independent third-party providers. Responsibility for tour execution, safety, and service quality rests with the tour provider."
+      "disclaimer": "AtoC Korea, LLC does not operate tours, employ guides or drivers, or provide on-site travel services. All tours and experiences are delivered by independent third-party providers. Responsibility for tour execution, safety, and service quality rests with the tour provider."
     },
     "whyChooseUs": {
       "title": "Why Choose Us",
@@ -1652,13 +1659,13 @@
       "allPartners": "All partners:",
       "li1": "Operate independently",
       "li2": "Remain responsible for tour execution and compliance",
-      "li3": "Are not employees or agents of ATOC KOREA LLC",
+      "li3": "Are not employees or agents of AtoC Korea, LLC",
       "contactBefore": "For partnership inquiries, please contact us via the ",
       "contactAfter": " page."
     },
     "careers": {
       "title": "Careers",
-      "p1": "ATOC KOREA LLC is a technology-driven booking platform focused on building reliable and transparent travel infrastructure.",
+      "p1": "AtoC Korea, LLC is a technology-driven booking platform focused on building reliable and transparent travel infrastructure.",
       "weSeek": "We occasionally seek professionals in:",
       "li1": "Platform operations",
       "li2": "Customer support",
@@ -1725,10 +1732,10 @@
   "terms": {
     "title": "Terms of Service",
     "introPrefix": "Last updated: ",
-    "introSuffix": ". These terms apply to your use of the ATOC KOREA LLC platform and are intended to comply with applicable law in the Republic of Korea and the United States.",
+    "introSuffix": ". These terms apply to your use of the AtoC Korea, LLC platform and are intended to comply with applicable law in the Republic of Korea and the United States.",
     "s1": {
       "title": "1. Agreement to Terms",
-      "p1Before": "These Terms of Service (\"Terms\") are a binding agreement between you (\"User,\" \"you,\" \"your\") and ATOC KOREA LLC (\"Company,\" \"we,\" \"us,\" \"our\"), a Wyoming limited liability company. By accessing or using our website atockorea.com, our booking platform, mobile experience, or related services (collectively, the \"Platform\"), you agree to be bound by these Terms and our ",
+      "p1Before": "These Terms of Service (\"Terms\") are a binding agreement between you (\"User,\" \"you,\" \"your\") and AtoC Korea, LLC (\"Company,\" \"we,\" \"us,\" \"our\"), a Wyoming limited liability company. By accessing or using our website atockorea.com, our booking platform, mobile experience, or related services (collectively, the \"Platform\"), you agree to be bound by these Terms and our ",
       "p1After": ". If you do not agree, do not use the Platform.",
       "p2": "We may update these Terms from time to time. We will post the updated Terms on this page and update the \"Last updated\" date. Material changes may be communicated by email or a prominent notice on the Platform. Continued use after the effective date of changes constitutes acceptance of the revised Terms. If you are a consumer in a jurisdiction that requires explicit consent to amended terms, we may seek such consent where applicable.",
       "p3": "You represent that you are at least 18 years of age (or the age of majority in your jurisdiction) and have the legal capacity to enter into this agreement. If you are booking on behalf of others, you represent that you have authority to bind them and that they agree to these Terms."
@@ -1822,7 +1829,7 @@
       "p2Before": "We encourage you to contact us first at ",
       "p2After": " to resolve any dispute in good faith. If we cannot resolve the dispute within a reasonable time (e.g., 30 days), then:",
       "li1": "For users in the United States: Any legal action or proceeding shall be brought exclusively in the state or federal courts located in Wyoming, and you consent to the personal jurisdiction of such courts.",
-      "li2": "For users in the Republic of Korea: You may bring claims in the courts of your place of residence or in the courts of Jeju-si, Republic of Korea, as permitted by Korean law. Nothing in these Terms deprives you of the protection of mandatory consumer dispute resolution mechanisms under Korean law (e.g., Korea Consumer Agency, e-commerce dispute resolution).",
+      "li2": "For users in the Republic of Korea: You may bring claims in the courts of your place of residence or in the courts of Bucheon-si, Gyeonggi-do, Republic of Korea, as permitted by Korean law. Nothing in these Terms deprives you of the protection of mandatory consumer dispute resolution mechanisms under Korean law (e.g., Korea Consumer Agency, e-commerce dispute resolution).",
       "li3": "For users in other jurisdictions: Any legal action or proceeding may be brought in the courts of Wyoming or in the courts of your place of residence, as permitted by applicable law.",
       "p3": "Where applicable law requires a different governing law or forum for consumer disputes (e.g., EU or Korean mandatory consumer protection), that law or forum will apply to the extent required."
     },
@@ -1849,7 +1856,8 @@
       "email": "Email:",
       "phone": "Phone:",
       "address": "Address:",
-      "registered": "Registered address:"
+      "registered": "Registered address:",
+      "operations": "AtoC Korea, LLC (Wyoming, USA) operates this Platform as a booking intermediary. Local tour operations and partner management in the Republic of Korea are handled by AtoC Korea, Korea (General Travel Business; Business Registration No. 277-01-03977)."
     },
     "backToLegal": "Back to Legal"
   },
@@ -1859,11 +1867,12 @@
     "introSuffix": ". This policy is designed to comply with applicable privacy laws including the Republic of Korea's Personal Information Protection Act (PIPA) and U.S. state privacy laws (e.g., California CCPA/CPRA, Virginia, Colorado, Connecticut, Utah).",
     "s1": {
       "title": "1. Data Controller and Scope",
-      "p1": "Data controller (operator): ATOC KOREA LLC (\"we,\" \"us,\" \"our\"), a Wyoming limited liability company. For purposes of the Republic of Korea's Personal Information Protection Act (PIPA), we are the personal information controller responsible for the processing described in this policy.",
+      "p1": "Data controller (operator): AtoC Korea, LLC (\"we,\" \"us,\" \"our\"), a Wyoming limited liability company. For purposes of the Republic of Korea's Personal Information Protection Act (PIPA), we are the personal information controller responsible for the processing described in this policy.",
       "li1": "Registered address: 30 N Gould St, STE R, Sheridan, WY 82801, USA",
-      "li2": "Operating/contact address: 302, 32, Doryeong-ro 7-gil, Jeju-si, Jeju-do, Republic of Korea",
+      "li2": "Operating/contact address: #221-8, 284 Gilju-ro, Wonmi-gu, Bucheon-si, Gyeonggi-do, Republic of Korea",
       "li3": "Contact: support@atockorea.com",
-      "p2": "This Privacy Policy applies to personal information we collect through our website atockorea.com, our booking platform, contact forms, email (including support@atockorea.com), and any linked services we operate. It applies to users and visitors in the Republic of Korea, the United States (including residents of California and other states with comprehensive privacy laws), and other jurisdictions where we offer services."
+      "p2": "This Privacy Policy applies to personal information we collect through our website atockorea.com, our booking platform, contact forms, email (including support@atockorea.com), and any linked services we operate. It applies to users and visitors in the Republic of Korea, the United States (including residents of California and other states with comprehensive privacy laws), and other jurisdictions where we offer services.",
+      "koreaOps": "Korea operations: AtoC Korea, Korea — local tour operations and partner management (General Travel Business; Business Registration No. 277-01-03977)"
     },
     "s2": {
       "title": "2. Information We Collect",
@@ -1967,7 +1976,7 @@
       "p2": "To exercise any of the above rights, please contact us at:",
       "li12": "Email: support@atockorea.com (subject line: \"Privacy Request\")",
       "li13": "Phone: support@atockorea.com",
-      "li14": "Mail: ATOC KOREA LLC, 302, 32, Doryeong-ro 7-gil, Jeju-si, Jeju-do, Republic of Korea",
+      "li14": "Mail: AtoC Korea, LLC, #221-8, 284 Gilju-ro, Wonmi-gu, Bucheon-si, Gyeonggi-do, Republic of Korea",
       "p3": "We will verify your identity before processing your request and respond within the time required by applicable law (e.g., 30–45 days for CCPA requests, or as required under Korean law). If you are a California resident and are not satisfied with our response, you may contact the California Attorney General or lodge a complaint with the California Privacy Protection Agency. In Korea, you may contact the Personal Information Protection Commission (PIPC) or the relevant authority."
     },
     "s12": {
@@ -1981,11 +1990,12 @@
     "s14": {
       "title": "14. Privacy Officer and Contact",
       "p1": "For questions about this Privacy Policy, to exercise your rights, or to report a concern, you may contact our privacy contact:",
-      "li1": "Entity: ATOC KOREA LLC",
+      "li1": "Entity: AtoC Korea, LLC",
       "li2": "Contact: support@atockorea.com (for privacy matters you may use the subject line \"Privacy\" or \"Data Protection\")",
       "li3": "Phone: support@atockorea.com",
-      "li4": "Address: 302, 32, Doryeong-ro 7-gil, Jeju-si, Jeju-do, Republic of Korea",
-      "p2": "For purposes of the Republic of Korea's Personal Information Protection Act, the above contact serves as the point of contact for personal information-related inquiries. We will respond to legitimate requests in accordance with applicable law."
+      "li4": "Address: #221-8, 284 Gilju-ro, Wonmi-gu, Bucheon-si, Gyeonggi-do, Republic of Korea",
+      "p2": "For purposes of the Republic of Korea's Personal Information Protection Act, the above contact serves as the point of contact for personal information-related inquiries. We will respond to legitimate requests in accordance with applicable law.",
+      "koreaOps": "Korea operations: AtoC Korea, Korea — local tour operations and partner management (General Travel Business; Business Registration No. 277-01-03977)"
     },
     "backToLegal": "Back to Legal",
     "googleApi": {
@@ -2036,10 +2046,10 @@
   "cookiePolicy": {
     "title": "Cookie Policy",
     "introPrefix": "Last updated: ",
-    "introSuffix": ". This Cookie Policy explains how ATOC KOREA LLC uses cookies and similar technologies on our platform and how you can manage your preferences. It is intended to meet transparency requirements under applicable law (including GDPR, ePrivacy, and U.S. state privacy laws). When we use third-party payment providers for checkout, we will disclose their cookie practices here so you have clear information about payment and fraud-prevention cookies.",
+    "introSuffix": ". This Cookie Policy explains how AtoC Korea, LLC uses cookies and similar technologies on our platform and how you can manage your preferences. It is intended to meet transparency requirements under applicable law (including GDPR, ePrivacy, and U.S. state privacy laws). When we use third-party payment providers for checkout, we will disclose their cookie practices here so you have clear information about payment and fraud-prevention cookies.",
     "s1": {
       "title": "1. Introduction and Scope",
-      "p1": "ATOC KOREA LLC (\"we,\" \"us,\" \"our\") operates the website and booking platform at atockorea.com. This Cookie Policy applies to all visitors and users of our platform, including when you browse our site, create an account, make a booking, or complete a payment. It describes:",
+      "p1": "AtoC Korea, LLC (\"we,\" \"us,\" \"our\") operates the website and booking platform at atockorea.com. This Cookie Policy applies to all visitors and users of our platform, including when you browse our site, create an account, make a booking, or complete a payment. It describes:",
       "li1": "What cookies and similar technologies are",
       "li2": "What cookies we and our service providers use, and why",
       "li3": "How cookies may be used in connection with payment processing and fraud prevention when we use third-party payment providers",
@@ -2125,7 +2135,7 @@
   "refund": {
     "title": "Refund Policy",
     "introPrefix": "Last updated: ",
-    "introSuffix": " This Refund Policy applies to bookings made through the ATOC KOREA LLC platform and is designed to comply with applicable law in the Republic of Korea and the United States. It should be read together with our ",
+    "introSuffix": " This Refund Policy applies to bookings made through the AtoC Korea, LLC platform and is designed to comply with applicable law in the Republic of Korea and the United States. It should be read together with our ",
     "introAfterTerms": " and ",
     "introAfter": ".",
     "s1": {
@@ -2137,7 +2147,7 @@
     "s2": {
       "title": "2. Definitions",
       "booking": "Booking means a reservation you make through the Platform for a Tour Service supplied by a Tour Provider.",
-      "platform": "Platform means the website, apps, and related systems operated by ATOC KOREA LLC for browsing and booking tours and activities.",
+      "platform": "Platform means the website, apps, and related systems operated by AtoC Korea, LLC for browsing and booking tours and activities.",
       "tourProvider": "Tour Provider (Operator, Merchant) means the independent third party that operates the Tour Service. Tour Providers are not employees or agents of the Company.",
       "platformFees": "Platform Fees means fees we charge for our intermediation services (e.g., reservation processing, payment handling, administrative services).",
       "tourFees": "Tour Fees means amounts paid for the Tour Service, which we or our designated payment provider collect on behalf of the Tour Provider (minus Platform Fees and any applicable payment processor fees when we use a third-party processor).",
@@ -2206,7 +2216,8 @@
       "emailNote": "(include your booking reference and reason for the request)",
       "phone": "Phone:",
       "entity": "Entity:",
-      "address": "Address:"
+      "address": "Address:",
+      "operations": "AtoC Korea, LLC (Wyoming, USA) operates this Platform as a booking intermediary. Local tour operations and partner management in the Republic of Korea are handled by AtoC Korea, Korea (General Travel Business; Business Registration No. 277-01-03977)."
     },
     "backToLegal": "Back to Legal"
   },
