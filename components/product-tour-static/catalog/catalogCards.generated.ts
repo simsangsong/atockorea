@@ -275,6 +275,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "rating": 0,
         "reviewCount": 0,
         "badges": [
+          "Small group",
           "First-Time Friendly",
           "East Jeju Signature"
         ],
@@ -476,6 +477,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "rating": 0,
         "reviewCount": 0,
         "badges": [
+          "Small group",
           "Best for One-Day Visitors",
           "Fast-Paced Highlights"
         ],
@@ -1135,6 +1137,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "rating": 0,
         "reviewCount": 0,
         "badges": [
+          "소그룹",
           "첫 여행자 추천",
           "제주 동부 시그니처"
         ],
@@ -1336,6 +1339,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "rating": 0,
         "reviewCount": 0,
         "badges": [
+          "소그룹",
           "당일 여행객에게 최적",
           "빠르게 즐기는 하이라이트"
         ],
@@ -1995,6 +1999,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "rating": 0,
         "reviewCount": 0,
         "badges": [
+          "小团",
           "适合初次游客",
           "济州岛东部经典"
         ],
@@ -2196,6 +2201,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "rating": 0,
         "reviewCount": 0,
         "badges": [
+          "小团",
           "最适合一日游客",
           "快节奏精华游"
         ],
@@ -2855,6 +2861,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "rating": 0,
         "reviewCount": 0,
         "badges": [
+          "小團體",
           "適合初次造訪",
           "濟州東部經典"
         ],
@@ -3056,6 +3063,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "rating": 0,
         "reviewCount": 0,
         "badges": [
+          "小團體",
           "最適合一日遊旅客",
           "緊湊精華行程"
         ],
@@ -3715,6 +3723,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "rating": 0,
         "reviewCount": 0,
         "badges": [
+          "Grupo pequeño",
           "Ideal para Primera Visita",
           "Signature del Este de Jeju"
         ],
@@ -3915,6 +3924,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "rating": 0,
         "reviewCount": 0,
         "badges": [
+          "Grupo pequeño",
           "Ideal para Visitantes de un Solo Día",
           "Atractivos a Ritmo Acelerado"
         ],
@@ -4572,6 +4582,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "rating": 0,
         "reviewCount": 0,
         "badges": [
+          "スモールグループ",
           "初めての方にも安心",
           "済州島東部シグネチャー"
         ],
@@ -4773,6 +4784,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "rating": 0,
         "reviewCount": 0,
         "badges": [
+          "スモールグループ",
           "日帰り旅行者に最適",
           "テンポよく巡るハイライトコース"
         ],

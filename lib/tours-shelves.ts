@@ -177,9 +177,18 @@ function isPrivate(t: StaticTourProductRegistration): boolean {
  * Implementation: only the badge signal counts. The previous `maxGroupSize ≤
  * 12` fallback (Phase 7.5, PR #26) was reverted — it was over-inclusive.
  */
+/**
+ * Multi-locale small-group badge matcher. catalog_card.badges is locale-
+ * specific text, so the previous English-only regex silently dropped the
+ * shelf on every non-EN page. Patterns below cover the wording actually
+ * used in each locale's badges array (en / ko / ja / zh / zh-TW / es).
+ */
+const SMALL_GROUP_BADGE_RE =
+  /small\s*group|small shared van|소\s*그룹|스몰\s*그룹|スモール\s*グループ|小团|小團體|grupo\s*peque[ñn]o|grupo\s*reducido/i;
+
 function isSmallGroup(t: StaticTourProductRegistration): boolean {
   if (isPrivate(t)) return false;
-  return t.badges.some((b) => /small\s*group|small shared van/i.test(b));
+  return t.badges.some((b) => SMALL_GROUP_BADGE_RE.test(b));
 }
 
 /**
@@ -202,8 +211,8 @@ function isClassicBus(t: StaticTourProductRegistration): boolean {
     return true;
   }
   // Default: anything that isn't Private and isn't a badge-marked small-group
-  // tour rolls into the Classic Bus shelf.
-  if (t.badges.some((b) => /small\s*group|small shared van/i.test(b))) return false;
+  // tour (any locale) rolls into the Classic Bus shelf.
+  if (t.badges.some((b) => SMALL_GROUP_BADGE_RE.test(b))) return false;
   return true;
 }
 
