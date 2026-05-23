@@ -1585,8 +1585,8 @@
     },
     {
       "id": "included",
-      "title": "What's included",
-      "preview": "Guide, vehicle, pickup, admissions",
+      "title": "Included / Not included",
+      "preview": "Guide, vehicle, pickup, admissions — lunch / shopping / tips own expense",
       "variant": "included",
       "content": [
         "English-speaking guide",
@@ -1597,7 +1597,8 @@
         "Lunch break — own expense at local restaurant (₩10–15k)",
         "Personal shopping",
         "Gratuities"
-      ]
+      ],
+      "includedCount": 5
     }
   ],
   "practicalWeatherStatic": {
