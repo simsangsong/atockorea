@@ -46,8 +46,8 @@
 | 5a EN | 수치 정정 (high-confidence) | 낮음 | 6 tours / 24 edits | ✅ PR #13 (`117b8f26`) |
 | A (NEW, P0) | catalog/page vs offer/checkout 가격 불일치 ($59↔$69 9개 투어) | 높음 — 결제 사기 리스크 | DB-only (tours + tour_product_offers) | ✅ DB written 2026-05-23 |
 | B (NEW, P0) | 시즌 종료 투어 $0 노출 + 시즌 가용성 게이팅 | 중-높음 | 2 tours + API/recommend filter | ✅ code shipped 2026-05-23 |
-| **C (NEW, P0)** | **`vehicle` price type 코드 버그 (per-guest로 곱해짐)** | **중 — 결제 금액 오류** | **체크아웃·카트·예약 API + 부킹카드** | **⏳ NEXT** |
-| **D (NEW, P1)** | **Jeju 크루즈 `itinerary_variants` → `routeVariants` 스키마 마이그레이션** | **중 — 포트 변형 itinerary 미렌더 가능성** | **2 tours JSON or backward map** | **⏳** |
+| C (NEW, P0) | `vehicle` price type 코드 버그 (per-guest로 곱해짐) | 중 — 결제 차단 (실제는 fraud 보다 checkout-blocked) | checkout context + 부킹카드 + cart UI | ✅ code shipped 2026-05-23 |
+| **D (NEW, P1)** | **Jeju 크루즈 `itinerary_variants` → `routeVariants` 스키마 마이그레이션** | **중 — 포트 변형 itinerary 미렌더 가능성** | **2 tours JSON or backward map** | **⏳ NEXT** |
 | 3 EN | 부산 스톱 회전 재매핑 | 중-높음 | 2 tours × 5 stops × 6 fields | ⏳ |
 | 5b EN | 수치 정정 (verify 필요 항목) | 중 | ~10 항목 × tours | ⏳ |
 | 6 EN | 갤러리 사진-지명 재매핑 | 중 | ~9 tours × galleryItems | ⏳ |
@@ -173,6 +173,38 @@ AND tour_product_page_id IN (SELECT id FROM tour_product_pages WHERE slug = 'jej
 
 **검증:**
 - `jest __tests__/lib/tour-seasonal-windows.test.ts` → 8/8 pass.
+- `tsc --noEmit` → 0 errors.
+
+---
+
+### Phase C 상세 — `vehicle` price type 결제 차단 해제 (✅ code shipped 2026-05-23)
+
+**진단:**
+- DB 5개 투어가 `price_type='vehicle'`: busan-private-car-charter-cruise-shore ($359), incheon-seoul-private-car-shore-excursion-cruise ($419), jeju-island-private-car-charter-tour ($249), seoul-dmz-private-3rd-tunnel-suspension-bridge ($419), seoul-suburbs-private-chartered-car-10hr ($179).
+- `lib/tour-product/eastSignatureCheckoutContext.ts` line 36 (구버전) 가 `data.price_type === "group" ? "group" : "person"` 으로 vehicle 을 person 으로 무음 변환.
+- 클라이언트가 변환된 person 가정으로 `unitPrice × guests` 계산 → 잘못된 total 표시 + 결제 payload 전송.
+- 서버 `/api/bookings` 는 DB 의 vehicle 값으로 fixed price 계산 → 클라이언트와 서버 불일치 → `PRICE_MISMATCH` 거부.
+- **실제 영향**: 결제 사기 아님 (서버가 거부) → vehicle 5개 투어 **체크아웃 자체가 차단**됨.
+- 서버 사이드 카트/체크아웃/예약 계산은 이미 안전 패턴 (`price_type === 'person' ? *guests : fixed`). 클라이언트 단의 type union 좁힘이 유일한 진짜 버그.
+
+**적용:**
+
+1. **`lib/tour-product/eastSignatureCheckoutContext.ts`** — `TourProductCheckoutContext.priceType` union 을 `"person" | "group" | "vehicle"` 로 확장. 변환 로직 `rawPriceType === "group" || rawPriceType === "vehicle" ? rawPriceType : "person"` 로 보존.
+
+2. **`TourDesktopBookingCard.tsx` + `TourStickyBookingBar.tsx`** — `perUnitLabel` 분기에 vehicle 추가 (`"/ vehicle"` 표시). 기존 estimatedTotal 로직 (`priceType === 'person' ? *guests : fixed`) 은 vehicle 케이스에서 자동으로 fixed 처리.
+
+3. **`app/cart/page.tsx`** — `CartItem.priceType` union 확장 + UI 보강. `subtotal`, `itemSubtotal`, `itemDiscount` 가 `item.price * item.quantity` 로 무조건 곱했던 pre-existing 버그 같이 수정 (`lineItemTotal` / `lineItemDiscount` 헬퍼). vehicle + group 둘 다 정확한 fixed 표시. 디스플레이 `/ ${item.priceType}` 는 이미 동적 → 자동으로 "/ vehicle" 표시.
+
+4. **`__tests__/lib/tour-product/eastSignatureCheckoutContext.test.ts` (신규)** — `buildBookingPayload` 6 케이스: person 곱셈 / group 고정 / **vehicle multi-guest 고정 (regression scenario)** / vehicle max-guests / 소수점 라운딩 / ISO 타임스탬프.
+
+**범위 제외 (의도적):**
+- 다른 표면의 type union `'person' | 'group'` 잔존 (TourCard, TourList, SeasonalTours, DetailedTourCard, data/tours, src/types/tours, types/tour, mobile/types/tour, lib/db-relations, lib/supabase, lib/admin/tour-write-rules, app/admin/products) — 모두 결제 경로 밖이므로 별도 phase 로 미룸. 표시 라벨이 vehicle 일 때 "/ group" 으로 떨어지는 부분도 동일 보류.
+- DB enum 변경 / `lib/supabase.ts` regen — schema 도 변경하면 admin/관리자 도구 영향 → 별도 phase.
+- 서버 사이드 `app/api/bookings/route.ts`, `app/checkout/page.tsx`, `app/api/cart/route.ts` — 이미 안전 패턴 보유, 변경 불요.
+
+**검증:**
+- `jest __tests__/lib/tour-product/eastSignatureCheckoutContext.test.ts` → 6/6 pass.
+- `jest __tests__/lib/tour-seasonal-windows.test.ts` → 8/8 pass (회귀 없음).
 - `tsc --noEmit` → 0 errors.
 
 ---
@@ -337,7 +369,8 @@ AND tour_product_page_id IN (SELECT id FROM tour_product_pages WHERE slug = 'jej
 | 4a EN | `09de681b` | [#12](https://github.com/simsangsong/atockorea/pull/12) | ✅ `98a34706` |
 | 5a EN | `b8e8afa9` | [#13](https://github.com/simsangsong/atockorea/pull/13) | ✅ `117b8f26` |
 | A (DB price reconcile) | `6ea957a3` | [#15](https://github.com/simsangsong/atockorea/pull/15) | ✅ `76b27417` |
-| B (seasonal $0 + window gate) | (pending) | (pending) | code change; see Phase B detail below |
+| B (seasonal $0 + window gate) | `3dfd19cb` | [#16](https://github.com/simsangsong/atockorea/pull/16) | ✅ `cf5eb7b2` |
+| C (vehicle price type unblock) | (pending) | (pending) | code change; see Phase C detail below |
 | 3 EN | — | — | ⏳ |
 | 5b EN | — | — | ⏳ |
 | 6 EN | — | — | ⏳ |

@@ -6,7 +6,12 @@ export type TourProductCheckoutContext = {
   tourId: string;
   /** List unit in USD (major units); UI uses CurrencyProvider to show other currencies. */
   unitPriceUsd: number;
-  priceType: "person" | "group";
+  /**
+   * Pricing unit. `vehicle` (private car charters) and `group` behave identically in the
+   * total-price calculation — both are fixed regardless of guest count — but they read
+   * differently in UI labels, so they stay as distinct values rather than collapsing.
+   */
+  priceType: "person" | "group" | "vehicle";
 };
 
 async function loadCheckoutContextFromToursTable(
@@ -30,10 +35,13 @@ async function loadCheckoutContextFromToursTable(
         },
         krwPerUsd,
       );
+      const rawPriceType = data.price_type;
+      const priceType: TourProductCheckoutContext["priceType"] =
+        rawPriceType === "group" || rawPriceType === "vehicle" ? rawPriceType : "person";
       return {
         tourId: data.id,
         unitPriceUsd: priceUsd,
-        priceType: data.price_type === "group" ? "group" : "person",
+        priceType,
       };
     }
   } catch {

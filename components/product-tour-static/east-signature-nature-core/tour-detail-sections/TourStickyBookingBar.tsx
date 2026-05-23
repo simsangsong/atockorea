@@ -213,7 +213,12 @@ export function TourStickyBookingBar({ price, checkout, selectedPortLabel, secti
         ? Math.round(((originalUnitPriceUsd - unitPriceUsd) / originalUnitPriceUsd) * 100)
         : 0;
 
-  const perUnitLabel = checkout?.priceType === "group" ? "group" : price.per;
+  const perUnitLabel =
+    checkout?.priceType === "group"
+      ? "group"
+      : checkout?.priceType === "vehicle"
+        ? "vehicle"
+        : price.per;
 
   const estimatedTotalFormatted =
     estimatedTotal != null && currencyCtx
