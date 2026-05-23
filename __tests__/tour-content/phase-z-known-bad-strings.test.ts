@@ -74,6 +74,8 @@ const GLOBAL_FORBIDDEN: ReadonlyArray<[string, string]> = [
     "Gamaksan Red Suspension Bridge — 220 meters",
     "DMZ bridge over-claim (Phase 7) — should be 150 meters",
   ],
+  ["stretches 220 meters across", "DMZ bridge over-claim (loc-B residual) — should be 150"],
+  ["at 220 meters", "DMZ bridge over-claim (loc-B residual) — should be 150"],
   // Note: guide first-name leaks (Steven / Chloe / Jina / Hays) need word-boundary regex
   // because "Jina" overlaps with no current real word but "Hays" is rare. Use regex.
 ];
