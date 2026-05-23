@@ -67,7 +67,7 @@ export async function PUT(
     // Calculate new total price
     const unitPrice = parseFloat(existingItem.unit_price.toString());
     const guests = numberOfGuests !== undefined ? numberOfGuests : (existingItem.number_of_guests || 1);
-    const tour = existingItem.tours as { price_type?: 'person' | 'group' } | null | undefined;
+    const tour = existingItem.tours as { price_type?: 'person' | 'group' | 'vehicle' } | null | undefined;
     const totalPrice = tour?.price_type === 'person'
       ? unitPrice * guests
       : unitPrice;
@@ -205,4 +205,3 @@ export async function DELETE(
     );
   }
 }
-

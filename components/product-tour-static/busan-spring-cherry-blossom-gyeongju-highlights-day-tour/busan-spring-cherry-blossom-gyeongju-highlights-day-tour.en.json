@@ -34,7 +34,7 @@
     ],
     "heroImage": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
     "thumbnail": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
-    "priceLabel": "",
+    "priceLabel": "From US$52 per person (was $58, 10% off)",
     "shortCardDescription": "An 8.5-hour Busan-departure shuttle tour to Gyeongju's biggest spring cherry blossom spots. The default route covers Bomun Lake (8 km of cherry tree-lined lakeside walking), the Cheomseongdae + Daereungwon historic core (UNESCO Gyeongju Historic Areas), and Bulguksa Temple (UNESCO World Heritage with mid-April yaezakura double cherry blossom). 2–3 stops are confirmed each morning based on the day's bloom report. Tour operates Mar 28 to Apr 10 only — full refund if bloom is materially delayed or finished.",
     "tags": [
       "spring_seasonal",
@@ -47,9 +47,12 @@
   "headlineLine1": "Busan to Gyeongju",
   "headlineLine2": "Cherry Blossom Tour",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "52",
     "currency": "USD",
-    "per": "person"
+    "per": "person",
+    "salePriceUsd": 52,
+    "originalPriceUsd": 58,
+    "discountPercent": 10
   },
   "hero": {
     "imageUrl": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
@@ -819,9 +822,12 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
     "price": {
-      "amountLabel": "",
+      "amountLabel": "52",
       "currency": "USD",
-      "per": "person"
+      "per": "person",
+      "salePriceUsd": 52,
+      "originalPriceUsd": 58,
+      "discountPercent": 10
     }
   },
   "pickup_dropoff": {
@@ -2032,11 +2038,13 @@
       "props": {
         "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
         "price": {
-          "amountLabel": "",
+          "amountLabel": "52",
           "currency": "USD",
           "per": "person",
-          "priceSource": "getyourguide_t1031312",
-          "priceNote": "Small-group price not yet confirmed from operator listing. Comparable Gyeongju-from-Busan tours range $54–90 across packages and operators. Once confirmed, AtoC Korea sale price applies a flat 10% discount.",
+          "salePriceUsd": 52,
+          "originalPriceUsd": 58,
+          "priceSource": "getyourguide_t1192332",
+          "priceNote": "Seasonal Gyeongju-from-Busan day tours currently list around US$56-58 on GetYourGuide. AtoC Korea sale price applies a flat 10% discount.",
           "discountPercent": 10
         }
       }

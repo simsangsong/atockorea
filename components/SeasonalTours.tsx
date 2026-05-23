@@ -15,7 +15,7 @@ interface Tour {
   rating?: number;
   review_count?: number;
   badges?: string[];
-  price_type?: 'person' | 'group';
+  price_type?: 'person' | 'group' | 'vehicle';
   duration?: string;
 }
 
@@ -142,4 +142,3 @@ export default function SeasonalTours() {
     </section>
   );
 }
-

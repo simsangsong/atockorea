@@ -54,8 +54,8 @@ export async function POST(request: NextRequest) {
     }
 
     // For CREATE, slug is allowed (it's a new product). Validate price_type only.
-    if (typeof body.price_type !== 'string' || !['person', 'group'].includes(body.price_type)) {
-      return ErrorResponses.validationError(`Invalid price_type "${String(body.price_type)}" — must be 'person' or 'group'`);
+    if (typeof body.price_type !== 'string' || !['person', 'group', 'vehicle'].includes(body.price_type)) {
+      return ErrorResponses.validationError(`Invalid price_type "${String(body.price_type)}" — must be 'person', 'group', or 'vehicle'`);
     }
 
     // Prepare tour data
@@ -68,7 +68,7 @@ export async function POST(request: NextRequest) {
       description: body.description || null,
       price: parseFloat(body.price),
       original_price: body.original_price ? parseFloat(body.original_price) : null,
-      price_type: body.price_type, // 'person' or 'group'
+      price_type: body.price_type, // 'person', 'group', or 'vehicle'
       merchant_id: body.merchant_id || null,
       image_url: body.image_url,
       gallery_images: body.gallery_images || [],

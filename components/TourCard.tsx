@@ -40,7 +40,7 @@ interface TourCardProps {
   duration?: string;
   price?: number;
   originalPriceKRW?: number; // 할인 전 가격 (원가) — 있으면 카드에 표시
-  priceType?: "person" | "group";
+  priceType?: "person" | "group" | "vehicle";
   image?: string;
   badge?: string;
   badgeVariant?: "default" | "brand"; // brand = blue (AtoC), default = orange
@@ -382,4 +382,3 @@ export default function TourCard({
     </div>
   );
 }
-

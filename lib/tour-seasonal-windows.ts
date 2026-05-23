@@ -30,6 +30,16 @@ const SEASONAL_OPERATING_WINDOWS: Record<string, SeasonalOperatingWindow> = {
     endMonthDay: "04-10",
     seasonLabel: "Late-March to early-April cherry blossom season",
   },
+  "jeju-cherry-blossom-tour-east-route": {
+    startMonthDay: "03-25",
+    endMonthDay: "04-10",
+    seasonLabel: "Late-March to early-April Jeju cherry blossom season",
+  },
+  "jeju-winter-southwest-tangerine-snow-camellia-tour": {
+    startMonthDay: "12-01",
+    endMonthDay: "02-29",
+    seasonLabel: "December to February Jeju winter route",
+  },
 };
 
 export function getSeasonalOperatingWindow(slug: string | null | undefined): SeasonalOperatingWindow | null {
@@ -46,5 +56,8 @@ export function isDateOutsideSeasonalWindow(
   if (!win) return false;
   const md = dateString.slice(5, 10);
   if (md.length !== 5) return false;
-  return md < win.startMonthDay || md > win.endMonthDay;
+  if (win.startMonthDay <= win.endMonthDay) {
+    return md < win.startMonthDay || md > win.endMonthDay;
+  }
+  return md > win.endMonthDay && md < win.startMonthDay;
 }
