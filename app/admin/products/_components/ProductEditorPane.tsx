@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { toast } from 'sonner';
 import {
   ExternalLink,
@@ -8,7 +8,6 @@ import {
   Loader2,
   Eye,
   EyeOff,
-  ImageIcon,
   Sparkles,
   ChevronDown,
   AlertTriangle,
@@ -38,6 +37,25 @@ type Props = {
   onBackToList: () => void;
 };
 
+const buildSavePatch = (source: ProductPageRow): Partial<ProductPageRow> => ({
+  title: source.title,
+  subtitle: source.subtitle,
+  headline_line_1: source.headline_line_1,
+  headline_line_2: source.headline_line_2,
+  region_label: source.region_label,
+  duration_label: source.duration_label,
+  card_short_description: source.card_short_description,
+  seo_title: source.seo_title,
+  meta_description: source.meta_description,
+  is_published: source.is_published,
+  hero_image_url: source.hero_image_url,
+  thumbnail_url: source.thumbnail_url,
+  detail_payload: source.detail_payload,
+});
+
+const serializeSavePatch = (source: ProductPageRow): string =>
+  JSON.stringify(buildSavePatch(source));
+
 /**
  * Editor pane — for Phase 2-A1 we expose only the basic-info subset
  * (title/subtitle/SEO/hero+thumbnail preview). Subsequent sprints add the
@@ -59,8 +77,12 @@ export function ProductEditorPane({
 }: Props) {
   const [draft, setDraft] = useState<ProductPageRow | null>(row);
   const [saving, setSaving] = useState(false);
+  const saveQueueRef = useRef<Promise<void>>(Promise.resolve());
+  const latestSaveIdRef = useRef(0);
+  const lastPersistedSignatureRef = useRef(row ? serializeSavePatch(row) : '');
 
   useEffect(() => {
+    lastPersistedSignatureRef.current = row ? serializeSavePatch(row) : '';
     setDraft(row);
   }, [row]);
 
@@ -82,6 +104,56 @@ export function ProductEditorPane({
       JSON.stringify(draft.detail_payload) !== JSON.stringify(row.detail_payload)
     );
   })();
+
+  const persistDraft = useCallback(async (
+    source: ProductPageRow,
+    options: { silent?: boolean } = {},
+  ) => {
+    const saveId = latestSaveIdRef.current + 1;
+    latestSaveIdRef.current = saveId;
+    const previousSignature = lastPersistedSignatureRef.current;
+    const signature = serializeSavePatch(source);
+    lastPersistedSignatureRef.current = signature;
+    setSaving(true);
+
+    const run = async () => {
+      try {
+        const updated = await saveProductPage(slug, locale, buildSavePatch(source));
+        if (latestSaveIdRef.current === saveId) {
+          lastPersistedSignatureRef.current = serializeSavePatch(updated);
+          onSaved(updated);
+          if (!options.silent) {
+            toast.success('저장되었습니다', {
+              description: `${slug} · ${LOCALE_LABELS[locale]}`,
+            });
+          }
+        }
+      } catch (e) {
+        const msg = e instanceof Error ? e.message : String(e);
+        if (latestSaveIdRef.current === saveId) {
+          lastPersistedSignatureRef.current = previousSignature;
+        }
+        toast.error(options.silent ? '미디어 자동 저장 실패' : '저장 실패', { description: msg });
+      } finally {
+        if (latestSaveIdRef.current === saveId) {
+          setSaving(false);
+        }
+      }
+    };
+
+    saveQueueRef.current = saveQueueRef.current.catch(() => undefined).then(run);
+    await saveQueueRef.current;
+  }, [locale, onSaved, slug]);
+
+  useEffect(() => {
+    if (!draft || !dirty) return;
+    const signature = serializeSavePatch(draft);
+    if (signature === lastPersistedSignatureRef.current) return;
+    const id = window.setTimeout(() => {
+      void persistDraft(draft, { silent: true });
+    }, 650);
+    return () => window.clearTimeout(id);
+  }, [dirty, draft, persistDraft]);
 
   // Media state derived from detail_payload + top-level columns. Saving writes
   // back to all three locations (thumbnail_url, hero_image_url, and the
@@ -263,37 +335,12 @@ export function ProductEditorPane({
     }));
     updated.detail_payload = payload;
     setDraft(updated);
+    void persistDraft(updated, { silent: true });
   };
 
   const onSave = async () => {
     if (!draft || !dirty) return;
-    setSaving(true);
-    try {
-      const updated = await saveProductPage(slug, locale, {
-        title: draft.title,
-        subtitle: draft.subtitle,
-        headline_line_1: draft.headline_line_1,
-        headline_line_2: draft.headline_line_2,
-        region_label: draft.region_label,
-        duration_label: draft.duration_label,
-        card_short_description: draft.card_short_description,
-        seo_title: draft.seo_title,
-        meta_description: draft.meta_description,
-        is_published: draft.is_published,
-        hero_image_url: draft.hero_image_url,
-        thumbnail_url: draft.thumbnail_url,
-        detail_payload: draft.detail_payload,
-      });
-      onSaved(updated);
-      toast.success('저장되었습니다', {
-        description: `${slug} · ${LOCALE_LABELS[locale]}`,
-      });
-    } catch (e) {
-      const msg = e instanceof Error ? e.message : String(e);
-      toast.error('저장 실패', { description: msg });
-    } finally {
-      setSaving(false);
-    }
+    await persistDraft(draft);
   };
 
   return (

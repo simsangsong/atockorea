@@ -22,6 +22,10 @@ import type { TourMatchApiResponse } from '@/lib/tour-match-v2/api-types';
 import { cn } from '@/lib/utils';
 import { analytics } from '@/src/design/analytics';
 import { MatchResultNextSteps } from '@/components/home/v2/MatchResultNextSteps';
+import {
+  getCardImageFromAdminMedia,
+  useTourProductCardMedia,
+} from '@/hooks/useTourProductCardMedia';
 
 type Phase = 'idle' | 'loading' | 'result';
 
@@ -191,6 +195,18 @@ export default function MatchPage() {
     () => (winner ? getStaticTourProductBySlug(winner.product_id, locale) : undefined),
     [winner, locale],
   );
+  const winnerMediaSlugs = useMemo(
+    () => (winner ? [winner.product_id] : []),
+    [winner],
+  );
+  const winnerMediaBySlug = useTourProductCardMedia(winnerMediaSlugs, locale);
+  const winnerImageUrl = winnerProduct
+    ? getCardImageFromAdminMedia(
+        winnerProduct.slug,
+        winnerProduct.thumbnail || winnerProduct.heroImage || '',
+        winnerMediaBySlug,
+      )
+    : '';
   const winnerHref = winner ? safeDetailHrefForSlug(winner.product_id) : '/tours/list';
 
   const noMatchMessage = useMemo(() => {
@@ -306,6 +322,7 @@ export default function MatchPage() {
                   <WinnerCard
                     product={winnerProduct}
                     winnerId={winner.product_id}
+                    imageUrl={winnerImageUrl}
                     explanation={result.matchExplanation}
                     href={winnerHref}
                     detailLabel={t('matchViewDetailCta')}
@@ -424,6 +441,7 @@ function LoadingStepsRow({
 function WinnerCard({
   product,
   winnerId,
+  imageUrl,
   explanation,
   href,
   detailLabel,
@@ -432,6 +450,7 @@ function WinnerCard({
 }: {
   product: ReturnType<typeof getStaticTourProductBySlug>;
   winnerId: string;
+  imageUrl: string;
   explanation: string | null;
   href: string;
   detailLabel: string;
@@ -440,11 +459,11 @@ function WinnerCard({
 }) {
   return (
     <div className="mt-3 overflow-hidden rounded-2xl border border-slate-200/70 bg-white/85 shadow-[0_10px_30px_-12px_rgba(15,23,42,0.15)]">
-      {product?.heroImage ? (
+      {imageUrl ? (
         <div className="relative aspect-[16/8] w-full">
           <Image
-            src={product.heroImage}
-            alt={product.title}
+            src={imageUrl}
+            alt={product?.title ?? winnerId}
             fill
             sizes="(min-width: 768px) 640px, 100vw"
             className="object-cover"

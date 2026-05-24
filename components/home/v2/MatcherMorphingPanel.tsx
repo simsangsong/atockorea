@@ -15,7 +15,7 @@
 // "다시 매칭" reset button. framer-motion `layout` makes the height
 // change smooth as content swaps between loading skeleton and result.
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
@@ -27,6 +27,10 @@ import {
   hrefStaticTourProductDetail,
 } from "@/components/product-tour-static/catalog/staticTourCatalogCards";
 import { useI18n, useTranslations } from "@/lib/i18n";
+import {
+  getCardImageFromAdminMedia,
+  useTourProductCardMedia,
+} from "@/hooks/useTourProductCardMedia";
 import { analytics, getExperimentVariantAsync } from "@/src/design/analytics";
 import {
   asPlannerDestination,
@@ -52,6 +56,13 @@ export function MatcherMorphingPanel() {
 
   const [variant, setVariant] = useState<string | null>(null);
   const isDesktop = useMediaQuery("(min-width: 768px)");
+  const winnerSlug = matchResult?.winner?.product_id ?? null;
+  const winner = winnerSlug ? getStaticTourProductBySlug(winnerSlug, locale) : null;
+  const winnerMediaSlugs = useMemo(() => (winnerSlug ? [winnerSlug] : []), [winnerSlug]);
+  const winnerMediaBySlug = useTourProductCardMedia(winnerMediaSlugs, locale);
+  const winnerImage = winner
+    ? getCardImageFromAdminMedia(winner.slug, winner.heroImage, winnerMediaBySlug)
+    : "";
 
   // home_result_morphing A/B — variant resolves once the shared experiment
   // registry fetch settles. Async `.then(setVariant)` keeps the assignment off
@@ -73,9 +84,6 @@ export function MatcherMorphingPanel() {
   //   - mobile → D.2 bottom-sheet handles
   //   - idle phase → matcher form is what should show, not this panel
   if (variant !== "B" || !isDesktop || phase === "idle") return null;
-
-  const winnerSlug = matchResult?.winner?.product_id;
-  const winner = winnerSlug ? getStaticTourProductBySlug(winnerSlug, locale) : null;
 
   return (
     <div
@@ -131,7 +139,7 @@ export function MatcherMorphingPanel() {
               className="focus-ring relative block aspect-[16/9] w-full overflow-hidden"
             >
               <Image
-                src={winner.heroImage}
+                src={winnerImage}
                 alt={winner.title}
                 fill
                 sizes="(min-width: 1024px) 32rem, 100vw"

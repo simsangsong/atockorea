@@ -110,6 +110,11 @@ function buildMergedHero(
   const baseImageUrl = cleanImageUrl(payloadHero.imageUrl) || cleanImageUrl(fallbackHero.imageUrl);
   const imageUrl = cleanImageUrl(page.hero_image_url) || baseImageUrl;
   const payloadImages = Array.isArray(payloadHero.images) ? payloadHero.images : [];
+  const galleryImages = Array.isArray(payload.galleryItems)
+    ? payload.galleryItems
+        .map((item) => (isRecord(item) ? item.src : null))
+        .filter((url): url is string => cleanImageUrl(url).length > 0)
+    : [];
 
   return {
     imageUrl,
@@ -129,7 +134,7 @@ function buildMergedHero(
       rating: numberOrFallback(payloadMeta.rating, fallbackHero.meta.rating),
       ratingStars: numberOrFallback(payloadMeta.ratingStars, fallbackHero.meta.ratingStars),
     },
-    images: uniqueImageUrls([imageUrl, ...payloadImages]),
+    images: uniqueImageUrls([imageUrl, ...payloadImages, ...galleryImages]),
   };
 }
 

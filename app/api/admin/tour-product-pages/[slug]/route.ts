@@ -20,7 +20,7 @@ export async function GET(
     await requireAdmin(req);
     const { slug } = await params;
     const url = new URL(req.url);
-    const locale = (url.searchParams.get('locale') || 'en').toLowerCase();
+    const locale = normalizeTourProductPageLocale(url.searchParams.get('locale'));
     const supabase = createServerClient();
 
     const { data, error } = await supabase
@@ -46,11 +46,12 @@ export async function GET(
     }
 
     return NextResponse.json({ data: data ?? null, locale });
-  } catch (error: any) {
-    if (error?.message === 'Unauthorized' || String(error?.message ?? '').includes('Forbidden')) {
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : String(error);
+    if (message === 'Unauthorized' || message.includes('Forbidden')) {
       return NextResponse.json({ error: 'Admin access required' }, { status: 403 });
     }
-    return NextResponse.json({ error: 'Internal server error', details: error?.message }, { status: 500 });
+    return NextResponse.json({ error: 'Internal server error', details: message }, { status: 500 });
   }
 }
 
@@ -84,6 +85,83 @@ function isPlainObject(v: unknown): v is Record<string, unknown> {
   return typeof v === 'object' && v !== null && !Array.isArray(v);
 }
 
+function normalizeTourProductPageLocale(raw: unknown): string {
+  const value = String(raw || 'en').trim();
+  const lower = value.toLowerCase();
+  if (lower === 'zh-cn') return 'zh';
+  if (lower === 'zh-tw') return 'zh-TW';
+  if (lower === 'en' || lower === 'ko' || lower === 'ja' || lower === 'zh' || lower === 'es') {
+    return lower;
+  }
+  return value;
+}
+
+function cleanStringOrNull(value: unknown): string | null {
+  return typeof value === 'string' && value.trim().length > 0 ? value.trim() : null;
+}
+
+type MediaPropagationPatch = {
+  thumbnailUrl: string | null;
+  heroUrl: string | null;
+  heroImages?: string[];
+  galleryItems?: unknown[];
+};
+
+function mediaPatchFromUpdatedRow(row: Record<string, unknown>): MediaPropagationPatch {
+  const payload = isPlainObject(row.detail_payload) ? row.detail_payload : {};
+  const hero = isPlainObject(payload.hero) ? payload.hero : {};
+  return {
+    thumbnailUrl: cleanStringOrNull(row.thumbnail_url),
+    heroUrl: cleanStringOrNull(row.hero_image_url),
+    heroImages: Array.isArray(hero.images)
+      ? hero.images.filter((value): value is string => typeof value === 'string' && value.trim().length > 0)
+      : undefined,
+    galleryItems: Array.isArray(payload.galleryItems) ? payload.galleryItems : undefined,
+  };
+}
+
+function payloadMediaSignature(raw: unknown): string {
+  const payload = isPlainObject(raw) ? raw : {};
+  const catalog = isPlainObject(payload.catalog_card) ? payload.catalog_card : {};
+  const hero = isPlainObject(payload.hero) ? payload.hero : {};
+  const heroImages = Array.isArray(hero.images)
+    ? hero.images.map(cleanStringOrNull).filter((value): value is string => Boolean(value))
+    : [];
+  const galleryItems = Array.isArray(payload.galleryItems)
+    ? payload.galleryItems
+        .map((item) => (isPlainObject(item) ? cleanStringOrNull(item.src) : null))
+        .filter((value): value is string => Boolean(value))
+    : [];
+
+  return JSON.stringify({
+    catalogThumbnail: cleanStringOrNull(catalog.thumbnail),
+    catalogHero: cleanStringOrNull(catalog.heroImage),
+    heroImage: cleanStringOrNull(hero.imageUrl),
+    heroImages,
+    galleryItems,
+  });
+}
+
+function mergeMediaIntoPayload(raw: unknown, media: MediaPropagationPatch): Record<string, unknown> {
+  const payload = isPlainObject(raw) ? { ...raw } : {};
+  const catalog = isPlainObject(payload.catalog_card) ? { ...payload.catalog_card } : {};
+  catalog.thumbnail = media.thumbnailUrl;
+  catalog.heroImage = media.heroUrl;
+  payload.catalog_card = catalog;
+
+  const hero = isPlainObject(payload.hero) ? { ...payload.hero } : {};
+  if (media.heroUrl) hero.imageUrl = media.heroUrl;
+  else delete hero.imageUrl;
+  if (media.heroImages) hero.images = media.heroImages;
+  payload.hero = hero;
+
+  if (media.galleryItems) {
+    payload.galleryItems = media.galleryItems;
+  }
+
+  return payload;
+}
+
 /**
  * PATCH /api/admin/tour-product-pages/[slug]
  *
@@ -107,8 +185,8 @@ export async function PATCH(
     const { slug } = await params;
     const body = await req.json();
 
-    const locale = String(body.locale || 'en').toLowerCase();
-    const SUPPORTED_LOCALES = ['en', 'ko', 'ja', 'zh', 'zh-cn', 'zh-tw', 'es'];
+    const locale = normalizeTourProductPageLocale(body.locale);
+    const SUPPORTED_LOCALES = ['en', 'ko', 'ja', 'zh', 'zh-TW', 'es'];
     if (!SUPPORTED_LOCALES.includes(locale)) {
       return NextResponse.json(
         { error: `Unsupported locale "${locale}"`, code: 'INVALID_LOCALE' },
@@ -154,7 +232,7 @@ export async function PATCH(
 
     const { data: existing, error: fetchError } = await supabase
       .from('tour_product_pages')
-      .select('id, slug, locale')
+      .select('id, slug, locale, thumbnail_url, hero_image_url, detail_payload')
       .eq('slug', slug)
       .eq('locale', locale)
       .maybeSingle();
@@ -197,13 +275,26 @@ export async function PATCH(
     // images without a separate save. Skipped if neither image field was
     // touched in this PATCH. Title stays per-locale on `tour_product_pages`
     // only — we never overwrite tours.title from non-EN locales.
+    const thumbnailTouched =
+      Object.prototype.hasOwnProperty.call(updates, 'thumbnail_url') &&
+      cleanStringOrNull(updates.thumbnail_url) !==
+        cleanStringOrNull((existing as Record<string, unknown>).thumbnail_url);
+    const heroTouched =
+      Object.prototype.hasOwnProperty.call(updates, 'hero_image_url') &&
+      cleanStringOrNull(updates.hero_image_url) !==
+        cleanStringOrNull((existing as Record<string, unknown>).hero_image_url);
+    const detailMediaTouched =
+      Object.prototype.hasOwnProperty.call(updates, 'detail_payload') &&
+      payloadMediaSignature(updates.detail_payload) !==
+        payloadMediaSignature((existing as Record<string, unknown>).detail_payload);
+    const mediaTouched = thumbnailTouched || heroTouched || detailMediaTouched;
+    const mediaPatch = mediaPatchFromUpdatedRow(updated as Record<string, unknown>);
+
     const toursPatch: Record<string, unknown> = {};
-    if (Object.prototype.hasOwnProperty.call(updates, 'thumbnail_url')) {
-      toursPatch.image_url = updates.thumbnail_url ?? updates.hero_image_url ?? null;
-    } else if (Object.prototype.hasOwnProperty.call(updates, 'hero_image_url')) {
-      toursPatch.image_url = updates.hero_image_url ?? null;
+    if (mediaTouched) {
+      toursPatch.image_url = mediaPatch.thumbnailUrl ?? mediaPatch.heroUrl ?? null;
     }
-    if (Object.prototype.hasOwnProperty.call(updates, 'detail_payload')) {
+    if (detailMediaTouched) {
       const payload = updates.detail_payload as Record<string, unknown> | undefined;
       if (payload && Array.isArray(payload.galleryItems)) {
         const urls = (payload.galleryItems as Array<Record<string, unknown>>)
@@ -223,6 +314,45 @@ export async function PATCH(
       }
     }
 
+    if (mediaTouched) {
+      const { data: siblingRows, error: siblingFetchErr } = await supabase
+        .from('tour_product_pages')
+        .select('id, detail_payload')
+        .eq('slug', slug)
+        .neq('id', updated.id);
+
+      if (siblingFetchErr) {
+        console.warn(
+          '[PATCH /api/admin/tour-product-pages] sibling media fetch failed',
+          slug,
+          siblingFetchErr.message,
+        );
+      } else {
+        const siblingUpdatedAt = new Date().toISOString();
+        const siblingUpdates = ((siblingRows ?? []) as Array<{ id: string; detail_payload: unknown }>).map((row) =>
+          supabase
+            .from('tour_product_pages')
+            .update({
+              thumbnail_url: mediaPatch.thumbnailUrl,
+              hero_image_url: mediaPatch.heroUrl,
+              detail_payload: mergeMediaIntoPayload(row.detail_payload, mediaPatch),
+              updated_at: siblingUpdatedAt,
+            })
+            .eq('id', row.id),
+        );
+        const siblingResults = await Promise.all(siblingUpdates);
+        for (const result of siblingResults) {
+          if (result.error) {
+            console.warn(
+              '[PATCH /api/admin/tour-product-pages] sibling media update failed',
+              slug,
+              result.error.message,
+            );
+          }
+        }
+      }
+    }
+
     // Invalidate cached customer-facing pages so changes surface on the next
     // visit. `force-dynamic` on the route handles SSR; this also nudges
     // CDN/RSC cache layers above it.
@@ -230,6 +360,7 @@ export async function PATCH(
       revalidatePath(`/tour-product/${slug}`);
       revalidatePath('/tour-product/[slug]', 'page');
       revalidatePath('/api/tours');
+      revalidatePath('/api/tour-product-card-media');
       revalidatePath('/');
       revalidatePath('/tours/list');
     } catch (e) {
@@ -237,13 +368,14 @@ export async function PATCH(
     }
 
     return NextResponse.json({ data: updated, message: 'Page updated successfully' });
-  } catch (error: any) {
-    if (error?.message === 'Unauthorized' || String(error?.message ?? '').includes('Forbidden')) {
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : String(error);
+    if (message === 'Unauthorized' || message.includes('Forbidden')) {
       return NextResponse.json({ error: 'Admin access required' }, { status: 403 });
     }
     console.error('[PATCH /api/admin/tour-product-pages]', error);
     return NextResponse.json(
-      { error: 'Internal server error', details: error?.message },
+      { error: 'Internal server error', details: message },
       { status: 500 },
     );
   }

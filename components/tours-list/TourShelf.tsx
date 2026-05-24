@@ -28,6 +28,8 @@ import type { TourCardViewModel } from "@/src/types/tours";
 import { cn } from "@/lib/utils";
 import type { StaticTourProductRegistration } from "@/components/product-tour-static/catalog/staticTourCatalogCards";
 import type { Shelf } from "@/lib/tours-shelves";
+import type { TourProductCardMediaMap } from "@/lib/tour-product/cardMediaTypes";
+import { getCardImageFromAdminMedia } from "@/hooks/useTourProductCardMedia";
 
 void Image; // future: shelf hero image (Phase 7.5+); avoid unused-import linter
 
@@ -104,13 +106,12 @@ export type TourShelfProps = {
   shelf: Shelf;
   /** Optional surface above the cards (used by Coming Soon to show D-N + open date). */
   className?: string;
+  mediaBySlug?: TourProductCardMediaMap;
 };
 
-export function TourShelf({ shelf, className }: TourShelfProps) {
+export function TourShelf({ shelf, className, mediaBySlug }: TourShelfProps) {
   const { locale } = useI18n();
   const t = useTranslations();
-  if (shelf.tours.length === 0) return null;
-
   const titleKey = `toursList.shelves.${shelf.labelI18nKey}`;
   const subtitleKey = shelf.subtitleI18nKey ? `toursList.shelves.${shelf.subtitleI18nKey}` : null;
   const title = t(titleKey);
@@ -148,6 +149,8 @@ export function TourShelf({ shelf, className }: TourShelfProps) {
           : locale === "ko"
             ? "큐레이션"
             : "Curated";
+
+  if (shelf.tours.length === 0) return null;
 
   return (
     <section className={cn("relative", className)}>
@@ -215,7 +218,7 @@ export function TourShelf({ shelf, className }: TourShelfProps) {
           "
         >
           {shelf.tours.map((tour) => (
-            <ShelfCard key={`${shelf.key}-${tour.slug}`} product={tour} />
+            <ShelfCard key={`${shelf.key}-${tour.slug}`} product={tour} mediaBySlug={mediaBySlug} />
           ))}
           {/* Trailing spacer — keeps the last card from butting against the right
               viewport edge once scrolled all the way through. Matches the left
@@ -232,8 +235,24 @@ export function TourShelf({ shelf, className }: TourShelfProps) {
   );
 }
 
-function ShelfCard({ product }: { product: StaticTourProductRegistration }) {
-  const vm = useMemo(() => staticRegistrationToCardViewModel(product), [product]);
+function ShelfCard({
+  product,
+  mediaBySlug,
+}: {
+  product: StaticTourProductRegistration;
+  mediaBySlug?: TourProductCardMediaMap;
+}) {
+  const fallbackImage = product.thumbnail || product.heroImage;
+  const imageUrl = mediaBySlug
+    ? getCardImageFromAdminMedia(product.slug, fallbackImage, mediaBySlug)
+    : fallbackImage;
+  const vm = useMemo(
+    () => ({
+      ...staticRegistrationToCardViewModel(product),
+      imageUrl,
+    }),
+    [product, imageUrl],
+  );
   const href = consumerTourDetailHref(product.slug, product.slug);
 
   return (

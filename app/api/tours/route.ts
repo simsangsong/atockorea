@@ -14,6 +14,7 @@ import {
 } from '@/lib/tour-catalog-type-infer';
 import { getStaticTourProductBySlug } from '@/components/product-tour-static/catalog/staticTourCatalogCards';
 import type { TourProductPageLocale } from '@/lib/tour-product/resolveTourProductDbLocale';
+import { loadTourProductCardMediaBySlug } from '@/lib/tour-product/resolveTourProductCardMedia.server';
 
 const SUPPORTED_LOCALES = ['en', 'ko', 'zh', 'zh-TW', 'es', 'ja'] as const;
 type SupportedLocale = typeof SUPPORTED_LOCALES[number];
@@ -73,12 +74,6 @@ type TourListRow = {
   is_active?: boolean | null;
   created_at?: string | null;
   updated_at?: string | null;
-};
-
-type TourProductPageMedia = {
-  slug?: string | null;
-  thumbnail_url?: string | null;
-  hero_image_url?: string | null;
 };
 
 function parseLocale(value: string | null): SupportedLocale | null {
@@ -348,23 +343,10 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
           .filter(Boolean)
       )
     );
-    const productPageMediaBySlug = new Map<string, TourProductPageMedia>();
-    if (slugsForMedia.length > 0) {
-      const { data: pageMedia, error: pageMediaError } = await supabase
-        .from('tour_product_pages')
-        .select('slug, thumbnail_url, hero_image_url')
-        .eq('locale', localeForCards)
-        .in('slug', slugsForMedia);
-
-      if (pageMediaError) {
-        logger.warn?.('Failed to load tour product page card media', { error: pageMediaError.message });
-      } else {
-        for (const row of (pageMedia ?? []) as TourProductPageMedia[]) {
-          const s = typeof row.slug === 'string' ? row.slug.trim() : '';
-          if (s) productPageMediaBySlug.set(s, row);
-        }
-      }
-    }
+    const productPageMediaBySlug =
+      slugsForMedia.length > 0
+        ? await loadTourProductCardMediaBySlug(supabase, slugsForMedia, localeForCards)
+        : {};
 
     let transformedTours = tourRows.map((tour) => {
       const pickupPoints = compactList
@@ -406,7 +388,7 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
 
       const slugStr = typeof tour.slug === 'string' ? tour.slug.trim() : '';
       const staticCard = slugStr ? getStaticTourProductBySlug(slugStr, localeForCards) : undefined;
-      const productPageMedia = slugStr ? productPageMediaBySlug.get(slugStr) : undefined;
+      const productPageMedia = slugStr ? productPageMediaBySlug[slugStr] : undefined;
 
       // Compact mode pulls only the first gallery URL via
       // `gallery_thumb` (a JSONB `->>0` selector); full mode keeps the
@@ -418,10 +400,17 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
           : Array.isArray(tour.gallery_images) && tour.gallery_images.length > 0
             ? tour.gallery_images[0]
             : '';
-      const productPageThumb = productPageMedia?.thumbnail_url?.trim() || '';
-      const productPageHero = productPageMedia?.hero_image_url?.trim() || '';
+      const productPageThumb = productPageMedia?.thumbnailUrl?.trim() || '';
+      const productPageHero = productPageMedia?.heroImageUrl?.trim() || '';
       const staticThumb = staticCard?.thumbnail?.trim() || '';
-      let listImage = productPageThumb || tour.image_url || galleryFirst || productPageHero || staticThumb || '';
+      const listImage =
+        productPageMedia?.cardImageUrl?.trim() ||
+        productPageThumb ||
+        productPageHero ||
+        tour.image_url ||
+        galleryFirst ||
+        staticThumb ||
+        '';
       let galleryOut = Array.isArray(tour.gallery_images) ? [...tour.gallery_images] : [];
       const thumb = productPageThumb || staticThumb;
       if (thumb) {
@@ -657,7 +646,7 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
       },
       {
         headers: {
-          'Cache-Control': 'public, s-maxage=15, stale-while-revalidate=30',
+          'Cache-Control': 'no-store, max-age=0',
         },
       }
     );

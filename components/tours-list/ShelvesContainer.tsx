@@ -15,6 +15,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useI18n } from "@/lib/i18n";
 import { listStaticTourProducts } from "@/components/product-tour-static/catalog/staticTourCatalogCards";
 import { getShelvesForDate } from "@/lib/tours-shelves";
+import { useTourProductCardMedia } from "@/hooks/useTourProductCardMedia";
 import { TourShelf } from "./TourShelf";
 
 /**
@@ -57,6 +58,11 @@ export function ShelvesContainer({ now }: ShelvesContainerProps) {
     const tours = listStaticTourProducts(locale);
     return getShelvesForDate(renderDate, tours);
   }, [renderDate, locale]);
+  const shelfSlugs = useMemo(
+    () => Array.from(new Set(shelves.flatMap((shelf) => shelf.tours.map((tour) => tour.slug)))),
+    [shelves],
+  );
+  const mediaBySlug = useTourProductCardMedia(shelfSlugs, locale);
 
   if (shelves.length === 0) return null;
 
@@ -74,7 +80,7 @@ export function ShelvesContainer({ now }: ShelvesContainerProps) {
               />
             </div>
           ) : null}
-          <TourShelf shelf={shelf} />
+          <TourShelf shelf={shelf} mediaBySlug={mediaBySlug} />
         </div>
       ))}
     </div>

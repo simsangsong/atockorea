@@ -1,5 +1,6 @@
 "use client";
 
+import { useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Clock, Star } from "lucide-react";
@@ -8,7 +9,12 @@ import {
   type StaticTourProductRegistration,
 } from "@/components/product-tour-static/catalog/staticTourCatalogCards";
 import { useCurrencyOptional } from "@/lib/currency";
+import { useI18n } from "@/lib/i18n";
 import type { TourProductSectionUiV1 } from "@/lib/tour-product/tourProductSectionUi";
+import {
+  getCardImageFromAdminMedia,
+  useTourProductCardMedia,
+} from "@/hooks/useTourProductCardMedia";
 
 export type TourRecommendationsSectionProps = {
   recommendations: readonly StaticTourProductRegistration[];
@@ -18,6 +24,12 @@ export type TourRecommendationsSectionProps = {
 
 export function TourRecommendationsSection({ recommendations, sectionUi }: TourRecommendationsSectionProps) {
   const currencyCtx = useCurrencyOptional();
+  const { locale } = useI18n();
+  const recommendationSlugs = useMemo(
+    () => recommendations.map((rec) => rec.slug),
+    [recommendations],
+  );
+  const mediaBySlug = useTourProductCardMedia(recommendationSlugs, locale);
 
   if (recommendations.length === 0) return null;
 
@@ -41,7 +53,10 @@ export function TourRecommendationsSection({ recommendations, sectionUi }: TourR
       >
         {recommendations.map((rec) => {
           const rawSrc = rec.thumbnail?.trim() || rec.heroImage?.trim() || "";
-          const imageSrc = rawSrc.length > 0 ? rawSrc : null;
+          const mediaSrc = rawSrc.length > 0
+            ? getCardImageFromAdminMedia(rec.slug, rawSrc, mediaBySlug)
+            : "";
+          const imageSrc = mediaSrc.length > 0 ? mediaSrc : null;
           const tag = rec.badges[0] ?? rec.region;
           const priceFormatted = currencyCtx ? currencyCtx.formatPrice(rec.listPriceUsd) : `$${rec.listPriceUsd}`;
           const compareAtFormatted =

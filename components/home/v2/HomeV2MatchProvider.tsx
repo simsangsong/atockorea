@@ -12,8 +12,10 @@ import {
 } from "react";
 import { analytics } from "@/src/design/analytics";
 import { useHomepageJoinCardImage } from "@/hooks/home/useHomepageJoinCardImage";
+import { useTourProductCardMedia } from "@/hooks/useTourProductCardMedia";
 import { DEFAULT_HOMEPAGE_PRODUCT_CARD_IMAGES } from "@/lib/homepage-product-card-images.shared";
 import { clearHomepageMatchTimeouts } from "@/lib/home/services/hero-match-schedule";
+import { useI18n } from "@/lib/i18n";
 import type { TourMatchApiResponse } from "@/lib/tour-match-v2/api-types";
 
 export type HomeV2MatchPhase = "idle" | "loading" | "result";
@@ -40,6 +42,7 @@ export type HomeV2MatchContextValue = {
 const HomeV2MatchContext = createContext<HomeV2MatchContextValue | null>(null);
 
 export function HomeV2MatchProvider({ children }: { children: ReactNode }) {
+  const { locale } = useI18n();
   const baseJoinImageUrl = useHomepageJoinCardImage(DEFAULT_HOMEPAGE_PRODUCT_CARD_IMAGES.join);
   const [phase, setPhase] = useState<HomeV2MatchPhase>("idle");
   const [loadingStep, setLoadingStep] = useState<0 | 1 | 2>(0);
@@ -50,9 +53,12 @@ export function HomeV2MatchProvider({ children }: { children: ReactNode }) {
   const timeoutsRef = useRef<ReturnType<typeof setTimeout>[]>([]);
 
   useEffect(() => () => clearHomepageMatchTimeouts(timeoutsRef), []);
+  const winnerSlug = matchResult?.winner?.product_id ?? null;
+  const winnerMediaSlugs = useMemo(() => (winnerSlug ? [winnerSlug] : []), [winnerSlug]);
+  const winnerMediaBySlug = useTourProductCardMedia(winnerMediaSlugs, locale);
 
   useEffect(() => {
-    const slug = matchResult?.winner?.product_id;
+    const slug = winnerSlug;
     if (!slug) {
       setMatchedJoinImageUrl(null);
       return;
@@ -62,7 +68,7 @@ export function HomeV2MatchProvider({ children }: { children: ReactNode }) {
     import("@/components/product-tour-static/catalog/staticTourCatalogCards")
       .then(({ getStaticTourProductBySlug }) => {
         if (cancelled) return;
-        setMatchedJoinImageUrl(getStaticTourProductBySlug(slug)?.heroImage ?? null);
+        setMatchedJoinImageUrl(getStaticTourProductBySlug(slug, locale)?.heroImage ?? null);
       })
       .catch(() => {
         if (!cancelled) setMatchedJoinImageUrl(null);
@@ -71,11 +77,15 @@ export function HomeV2MatchProvider({ children }: { children: ReactNode }) {
     return () => {
       cancelled = true;
     };
-  }, [matchResult?.winner?.product_id]);
+  }, [winnerSlug, locale]);
+
+  const matchedAdminImageUrl = winnerSlug
+    ? winnerMediaBySlug[winnerSlug]?.heroImageUrl || winnerMediaBySlug[winnerSlug]?.cardImageUrl || null
+    : null;
 
   const joinImageUrl = useMemo(
-    () => matchedJoinImageUrl ?? baseJoinImageUrl,
-    [matchedJoinImageUrl, baseJoinImageUrl],
+    () => matchedAdminImageUrl ?? matchedJoinImageUrl ?? baseJoinImageUrl,
+    [matchedAdminImageUrl, matchedJoinImageUrl, baseJoinImageUrl],
   );
 
   const resetMatchToIdle = useCallback(() => {

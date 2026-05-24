@@ -11,6 +11,10 @@ import {
 } from "@/components/product-tour-static/catalog/staticTourCatalogCards";
 import { analytics } from "@/src/design/analytics";
 import { cn } from "@/lib/utils";
+import {
+  getCardImageFromAdminMedia,
+  useTourProductCardMedia,
+} from "@/hooks/useTourProductCardMedia";
 
 // Hard-coded for destination/style variety so the idle preview gives a
 // deterministic "variability signal" (v3 §3 P0-B). Real catalog data — no
@@ -45,6 +49,7 @@ export function IdleMatchPreviewCarousel() {
       .map((slug) => list.find((p) => p.slug === slug))
       .filter((p): p is NonNullable<typeof p> => Boolean(p));
   }, [locale]);
+  const cardMediaBySlug = useTourProductCardMedia(IDLE_PREVIEW_SLUGS, locale);
 
   const [activeIndex, setActiveIndex] = useState(0);
   const sectionRef = useRef<HTMLElement>(null);
@@ -136,7 +141,7 @@ export function IdleMatchPreviewCarousel() {
                 }}
               >
                 <Image
-                  src={card.thumbnail || card.heroImage}
+                  src={getCardImageFromAdminMedia(card.slug, card.thumbnail || card.heroImage, cardMediaBySlug)}
                   alt={card.title}
                   fill
                   sizes="(max-width: 768px) 90vw, 576px"
