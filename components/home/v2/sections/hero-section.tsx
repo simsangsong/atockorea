@@ -4,11 +4,9 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
-import { getCurrentSeason } from "@/lib/home/season";
 import { useTranslations } from "@/lib/i18n";
 import { appendIntentPhraseToIntentField } from "@/lib/home/services/hero-intent-append-chip";
 import type { HeroDestination } from "@/lib/home/types/hero-planner";
-import { analytics } from "@/src/design/analytics";
 import { LandingPlannerCard } from "./landing-planner-card";
 
 const VALID_DESTINATIONS: ReadonlyArray<HeroDestination> = ["jeju", "seoul", "busan"];
@@ -101,35 +99,8 @@ export function HeroSection() {
     reduceMotion ? [1, 1, 1] : [1, 0.92, 0.7],
   );
 
-  // Season pill — auto-rotates by current month. Initialized lazily so the
-  // server-rendered HTML matches whatever month the request lands in.
-  const season = useMemo(() => getCurrentSeason(), []);
-  const SeasonIcon = season.Icon;
-  const seasonLabel = t(season.labelKey);
-  const seasonPhrase = t(season.phraseKey);
-
-  // Phase C.1: 200ms glow ring on intent textarea after a season-chip click,
-  // so the user gets a visual confirmation that the phrase landed in the
-  // input. Auto-clears via setTimeout.
-  const [intentGlowing, setIntentGlowing] = useState(false);
-  const intentGlowTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
   const appendChip = useCallback((phrase: string) => {
     setIntent((prev) => appendIntentPhraseToIntentField(prev, phrase));
-  }, []);
-
-  const handleSeasonChipClick = useCallback(() => {
-    appendChip(seasonPhrase);
-    analytics.homeHeroSeasonChipClick({ season: season.key });
-    setIntentGlowing(true);
-    if (intentGlowTimerRef.current) clearTimeout(intentGlowTimerRef.current);
-    intentGlowTimerRef.current = setTimeout(() => setIntentGlowing(false), 200);
-  }, [appendChip, seasonPhrase, season.key]);
-
-  useEffect(() => {
-    return () => {
-      if (intentGlowTimerRef.current) clearTimeout(intentGlowTimerRef.current);
-    };
   }, []);
 
   return (
@@ -161,7 +132,7 @@ export function HeroSection() {
           turn the homepage into a single oversized hero image. */}
       <div
         ref={heroPanelRef}
-        className="relative flex min-h-[38vh] flex-col justify-end overflow-hidden bg-black pb-3 sm:min-h-[40vh] md:min-h-[46vh] md:pb-5 lg:min-h-[clamp(420px,48vh,580px)]"
+        className="relative flex min-h-[38vh] flex-col justify-end overflow-hidden bg-black pb-1.5 sm:min-h-[40vh] md:min-h-[46vh] md:pb-2.5 lg:min-h-[clamp(420px,48vh,580px)]"
       >
         <div className="absolute inset-0">
           {/* Photo crossfade — slides up under parallax as the user scrolls,
@@ -206,38 +177,21 @@ export function HeroSection() {
             drifts down slightly + fades during scroll-past so it doesn't
             compete with sections below. */}
         <motion.div
-          className="relative z-10 mx-auto mb-1 w-full max-w-2xl px-3 pb-0.5 text-center sm:px-5 md:mb-2 md:px-8"
+          className="relative z-10 mx-auto mb-0 w-full max-w-2xl px-3 text-center sm:px-5 md:mb-0.5 md:px-8"
           style={{ y: headlineY, opacity: headlineOpacity }}
         >
-          <div className="relative inline-block max-w-full px-5 py-3 md:px-7 md:py-4">
+          {/* Photo-visibility pass: season chip removed (§B reversal of Phase
+              C.1, 2026-05-24). H1+subhead shrunk ~15% and the inner padding
+              tightened so the text panel hugs the bottom edge — frees the
+              top ~80px of the photo for the cinematic crop. The radial
+              gradient is tightened to track the smaller text. */}
+          <div className="relative inline-block max-w-full px-4 py-1.5 md:px-6 md:py-2">
             <span
               aria-hidden
-              className="pointer-events-none absolute -inset-x-10 -inset-y-6 -z-10 rounded-[3rem] bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.88)_0%,rgba(0,0,0,0.72)_35%,rgba(0,0,0,0.45)_60%,rgba(0,0,0,0.18)_80%,transparent_95%)] md:-inset-x-16 md:-inset-y-8"
+              className="pointer-events-none absolute -inset-x-8 -inset-y-4 -z-10 rounded-[3rem] bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.88)_0%,rgba(0,0,0,0.72)_35%,rgba(0,0,0,0.45)_60%,rgba(0,0,0,0.18)_80%,transparent_95%)] md:-inset-x-14 md:-inset-y-6"
             />
-            {/* Phase C.1: season pill upgraded from <div> to <button>. Click
-                injects a short phrase ({phraseKey} translation) into the
-                matcher intent textarea + triggers a 200ms glow ring as
-                visual confirmation. Weak hover affordance (no "buttoney"
-                rest state) to keep the cinematic feel — v3 §5 C.1 spec. */}
-            <button
-              type="button"
-              onClick={handleSeasonChipClick}
-              aria-label={t("premium.v2.season.chipAria", { phrase: seasonPhrase })}
-              className="focus-ring mb-2.5 inline-flex items-center gap-1.5 rounded-full bg-white/15 px-2.5 py-1 ring-1 ring-white/25 backdrop-blur-md transition-colors duration-200 hover:bg-white/20 hover:ring-white/40 md:mb-3"
-            >
-              <SeasonIcon className="h-3 w-3 text-amber-200" aria-hidden />
-              <span className="text-[10px] font-bold uppercase tracking-[0.14em] text-white/95">
-                {seasonLabel}
-              </span>
-            </button>
-            {/* Hero H1 — Inter at medium weight via Next.js-loaded
-                --font-inter. Previously used a system SF Pro stack which
-                rendered as SF on Mac/iOS and Segoe/Roboto on Win/Android
-                — the brand looked like two different products depending
-                on the visitor's OS. Inter is web-loaded so every visitor
-                gets the same letterforms. Sizes preserved (user tuned). */}
             <h1
-              className="text-[1.35rem] font-medium leading-[1.15] tracking-[-0.025em] text-white md:text-[1.75rem] lg:text-[2.15rem]"
+              className="text-[1.1rem] font-medium leading-[1.18] tracking-[-0.025em] text-white md:text-[1.4rem] lg:text-[1.7rem]"
               style={{
                 fontFamily: "var(--font-inter), Inter, system-ui, sans-serif",
                 textShadow: "0 2px 12px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.45)",
@@ -247,7 +201,7 @@ export function HeroSection() {
             </h1>
 
             <p
-              className="mx-auto mt-2 max-w-md text-caption font-normal tracking-[-0.01em] text-white/85 md:mt-3"
+              className="mx-auto mt-1.5 max-w-md text-[0.78rem] font-normal leading-snug tracking-[-0.01em] text-white/85 md:mt-2 md:text-caption"
               style={{
                 fontFamily: "var(--font-inter), Inter, system-ui, sans-serif",
                 textShadow: "0 1px 8px rgba(0,0,0,0.55), 0 1px 2px rgba(0,0,0,0.45)",
@@ -332,7 +286,6 @@ export function HeroSection() {
           intent={intent}
           onIntentChange={setIntent}
           onAppendChip={appendChip}
-          intentGlowing={intentGlowing}
         />
       </div>
     </section>

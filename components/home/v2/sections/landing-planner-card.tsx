@@ -47,9 +47,6 @@ export type LandingPlannerCardProps = {
    *  HeroSection (functional setState) so the season pill in the photo
    *  block and the style chips here mutate the same field consistently. */
   onAppendChip: (phrase: string) => void;
-  /** 200ms glow ring after a season-chip injection. Owned by HeroSection
-   *  because the season pill that triggers it lives in the photo headline. */
-  intentGlowing: boolean;
 };
 
 /**
@@ -69,7 +66,6 @@ export function LandingPlannerCard({
   intent,
   onIntentChange,
   onAppendChip,
-  intentGlowing,
 }: LandingPlannerCardProps) {
   const t = useTranslations("home");
   const { locale } = useI18n();
@@ -296,10 +292,7 @@ export function LandingPlannerCard({
               autoComplete="off"
               aria-label={t("premium.hero.intentInputAria")}
               className={cn(
-                "w-full resize-none rounded-button border bg-slate-50 px-3.5 text-slate-800 transition-[height,padding,border-color,background-color,box-shadow] duration-300 ease-out placeholder:text-slate-400 focus:border-slate-300 focus:bg-white focus-ring md:px-4",
-                intentGlowing
-                  ? "border-amber-400 shadow-[0_0_0_3px_rgba(251,191,36,0.25)]"
-                  : "border-slate-200/70",
+                "w-full resize-none rounded-button border border-slate-200/70 bg-slate-50 px-3.5 text-slate-800 transition-[height,padding,border-color,background-color] duration-300 ease-out placeholder:text-slate-400 focus:border-slate-300 focus:bg-white focus-ring md:px-4",
                 intentExpanded
                   ? "h-32 overflow-auto py-3 text-caption md:h-40 md:py-4"
                   : "h-12 overflow-hidden truncate py-3.5 text-[11px] leading-tight md:h-14 md:py-4 md:text-caption",
