@@ -28,7 +28,6 @@ import { fileURLToPath } from "url";
 import {
   applyCatalogHeroThumbnails,
   syncRootGalleryFromItinerary,
-  absoluteSiteUrlForOg,
   firstCatalogImageFromPayload,
 } from "./tour-payload-thumb-sync.mjs";
 
@@ -585,13 +584,12 @@ async function main() {
       const fp = join(staticRoot, slug, `${slug}.${locale}.json`);
       const payload = JSON.parse(readFileSync(fp, "utf8"));
       const heroRel = firstCatalogImageFromPayload(payload);
-      const heroAbs = heroRel ? absoluteSiteUrlForOg(heroRel) : null;
       const { error } = await supabase
         .from("tour_product_pages")
         .update({
           detail_payload: payload,
-          ...(heroAbs
-            ? { hero_image_url: heroAbs, thumbnail_url: heroAbs }
+          ...(heroRel
+            ? { hero_image_url: heroRel, thumbnail_url: heroRel }
             : {}),
         })
         .eq("slug", slug)
