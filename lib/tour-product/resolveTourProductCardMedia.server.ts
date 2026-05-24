@@ -16,6 +16,13 @@ type TourFallbackMediaRow = {
   slug?: string | null;
   image_url?: string | null;
   gallery_thumb?: string | null;
+  updated_at?: string | null;
+};
+
+type TourFallbackMedia = {
+  imageUrl: string | null;
+  galleryThumb: string | null;
+  updatedAt: string | null;
 };
 
 function cleanUrl(value: unknown): string {
@@ -53,6 +60,10 @@ function pickLatestMediaRow(
 ): PageMediaRow | null {
   const candidates = rows.filter(rowHasMedia);
   if (candidates.length === 0) return null;
+  const preferred = candidates.filter((row) => normalizeLocale(row.locale) === preferredLocale);
+  if (preferred.length > 0) {
+    return preferred.sort((a, b) => updatedMs(b) - updatedMs(a))[0] ?? null;
+  }
   return candidates.sort((a, b) => {
     const timeDelta = updatedMs(b) - updatedMs(a);
     if (timeDelta !== 0) return timeDelta;
@@ -80,7 +91,7 @@ export async function loadTourProductCardMediaBySlug(
       .in("slug", uniqueSlugs),
     supabase
       .from("tours")
-      .select("slug, image_url, gallery_thumb:gallery_images->>0")
+      .select("slug, image_url, gallery_thumb:gallery_images->>0, updated_at")
       .in("slug", uniqueSlugs),
   ]);
 
@@ -100,27 +111,36 @@ export async function loadTourProductCardMediaBySlug(
     pageRowsBySlug.set(slug, list);
   }
 
-  const fallbackBySlug = new Map<string, string>();
+  const fallbackBySlug = new Map<string, TourFallbackMedia>();
   for (const row of ((fallbackResult.data ?? []) as TourFallbackMediaRow[])) {
     const slug = normalizeSlug(row.slug);
     if (!slug) continue;
-    const fallback = cleanUrl(row.image_url) || cleanUrl(row.gallery_thumb);
-    if (fallback) fallbackBySlug.set(slug, fallback);
+    const imageUrl = cleanUrl(row.image_url) || null;
+    const galleryThumb = cleanUrl(row.gallery_thumb) || null;
+    if (imageUrl || galleryThumb) {
+      fallbackBySlug.set(slug, {
+        imageUrl,
+        galleryThumb,
+        updatedAt: row.updated_at ?? null,
+      });
+    }
   }
 
   const out: TourProductCardMediaMap = {};
   for (const slug of uniqueSlugs) {
     const pageRow = pickLatestMediaRow(pageRowsBySlug.get(slug) ?? [], preferredLocale);
-    const thumbnailUrl = cleanUrl(pageRow?.thumbnail_url) || null;
+    const tourFallback = fallbackBySlug.get(slug);
+    const tourImageUrl = tourFallback?.imageUrl ?? null;
+    const thumbnailUrl = tourImageUrl || cleanUrl(pageRow?.thumbnail_url) || null;
     const heroImageUrl = cleanUrl(pageRow?.hero_image_url) || null;
-    const fallbackUrl = fallbackBySlug.get(slug) ?? null;
+    const galleryFallbackUrl = tourFallback?.galleryThumb ?? null;
     out[slug] = {
       slug,
       thumbnailUrl,
       heroImageUrl,
-      cardImageUrl: thumbnailUrl || heroImageUrl || fallbackUrl,
-      sourceLocale: pageRow?.locale ?? null,
-      updatedAt: pageRow?.updated_at ?? null,
+      cardImageUrl: tourImageUrl || thumbnailUrl || heroImageUrl || galleryFallbackUrl,
+      sourceLocale: tourImageUrl ? "tours" : (pageRow?.locale ?? null),
+      updatedAt: tourImageUrl ? (tourFallback?.updatedAt ?? null) : (pageRow?.updated_at ?? null),
     };
   }
 
