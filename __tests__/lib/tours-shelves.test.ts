@@ -88,7 +88,7 @@ describe("season window primitives", () => {
       expect(Object.keys(SEASON_WINDOWS).sort()).toEqual(
         ["camellia", "cherry", "hydrangea", "maple", "pink-muhly", "plum"].sort(),
       );
-      for (const [key, w] of Object.entries(SEASON_WINDOWS)) {
+      for (const w of Object.values(SEASON_WINDOWS)) {
         expect(w.startMonthDay).toMatch(/^\d\d-\d\d$/);
         expect(w.endMonthDay).toMatch(/^\d\d-\d\d$/);
         expect(typeof w.matchesTour).toBe("function");
@@ -120,11 +120,14 @@ describe("format-based shelf matchers", () => {
   });
 
   it("isSmallGroup matches explicit small-group badges only (strict — user 2026-05-23)", () => {
-    // Canonical user example: busan-top-attractions-day-tour DOES say
-    // "Small group" → small-group.
-    expect(isSmallGroup(tour("busan-top-attractions-day-tour", ["Small group"], { maxGroupSize: 12 }))).toBe(true);
     expect(isSmallGroup(tour("any", ["Small Group"]))).toBe(true);
     expect(isSmallGroup(tour("any", ["Small shared van"]))).toBe(true);
+  });
+
+  it("isSmallGroup lets known bus SKUs override stale small-group badges", () => {
+    expect(isSmallGroup(tour("busan-top-attractions-day-tour", ["Small group"], { maxGroupSize: 12 }))).toBe(false);
+    expect(isSmallGroup(tour("from-busan-gyeongju-ancient-capital-day-tour", ["Small group", "Calmer pace"], { maxGroupSize: 8 }))).toBe(false);
+    expect(isSmallGroup(tour("jeju-eastern-unesco-spots-day-tour", ["Small group", "Jeju", "East Jeju"], { maxGroupSize: 8 }))).toBe(false);
   });
 
   it("isSmallGroup does NOT pick up tours without an explicit badge (user directive — unbadged join = bus)", () => {
@@ -176,9 +179,11 @@ describe("format-based shelf matchers", () => {
     expect(isClassicBus(tour("seoul-private-nami-morning-calm-petite-france", ["Private Tour"]))).toBe(false);
   });
 
-  it("isClassicBus does NOT pull in explicit small-group tours", () => {
-    expect(isClassicBus(tour("from-busan-gyeongju-ancient-capital-day-tour", ["Small group", "Calmer pace"], { maxGroupSize: 8 }))).toBe(false);
-    expect(isClassicBus(tour("jeju-eastern-unesco-spots-day-tour", ["Small group", "Jeju", "East Jeju"], { maxGroupSize: 8 }))).toBe(false);
+  it("isClassicBus lets known bus SKUs override stale small-group badges", () => {
+    expect(isClassicBus(tour("from-busan-gyeongju-ancient-capital-day-tour", ["Small group", "Calmer pace"], { maxGroupSize: 8 }))).toBe(true);
+    expect(isClassicBus(tour("jeju-eastern-unesco-spots-day-tour", ["Small group", "Jeju", "East Jeju"], { maxGroupSize: 8 }))).toBe(true);
+    expect(isClassicBus(tour("jeju-southern-top-unesco-spots-tour", ["Small group", "Jeju", "South Jeju"], { maxGroupSize: 8 }))).toBe(true);
+    expect(isClassicBus(tour("jeju-west-south-full-day-authentic-tour", ["Small Group", "Jeju"], { maxGroupSize: 8 }))).toBe(true);
   });
 
   it("multi-shelf overlap (B34) — small-group cruise lands in both Cruise and Small Group", () => {

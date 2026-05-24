@@ -10,11 +10,19 @@ const KNOWN_BUS_TOUR_SLUGS = new Set([
   "busan-plum-cherry-blossom-day-tour-to-yangsan-gyeongju",
   "busan-spring-cherry-blossom-gyeongju-highlights-day-tour",
   "busan-top-attractions-day-tour",
+  "from-busan-gyeongju-ancient-capital-day-tour",
+  "from-incheon-seoul-day-tour-cruise-guests",
   "jeju-cruise-shore-excursion-bus-tour",
+  "jeju-eastern-unesco-spots-day-tour",
+  "jeju-southern-top-unesco-spots-tour",
+  "jeju-west-south-full-day-authentic-tour",
   "seoul-seoraksan-national-park-sokcho-beach-day-trip",
   "seoul-suwon-hwaseong-folk-village-starfield-library",
   "seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library",
 ]);
+
+const SMALL_GROUP_TEXT_RE =
+  /\bsmall\s*[- ]?\s*group\b|\bsmall\s+shared\s+van\b|\uc18c\s*\uaddc\ubaa8\s*\uadf8\ub8f9|\uc18c\s*\uadf8\ub8f9|\u5c11\u4eba\u6570|\u5c11\u4eba\u6578|\u5c0f\s*\u56e2|\u5c0f\s*\u5718|\u5c0f\s*\u56e2\u4f53|\u5c0f\s*\u5718\u9ad4|grupo\s*peque(?:\u00f1|n)o|grupo\s*reducido/i;
 
 /**
  * Product detail profiles mark these as `vehicle_type: coach` / `vehicle_type_legacy: bus_coach`.
@@ -48,6 +56,7 @@ export function isKnownJoinTourSlug(slug: string | undefined | null): boolean {
 export function tagIndicatesSmallGroupJoin(tag: string | undefined | null): boolean {
   const t = (tag ?? "").trim().toLowerCase();
   if (!t) return false;
+  if (SMALL_GROUP_TEXT_RE.test(t)) return true;
   return /small\s*group|소그룹|拼团|少人数|grupo\s*pequeño|small-group/i.test(t);
 }
 
@@ -61,10 +70,11 @@ export function titleForCatalogType(title: string, type: TourCatalogType): strin
 
 export function tagsForCatalogType(tags: string[], type: TourCatalogType): string[] {
   if (type === "join") return tags;
-  return tags.filter((tag) => !/\bsmall\s*[- ]?\s*group\b/i.test(String(tag)));
+  return tags.filter((tag) => !SMALL_GROUP_TEXT_RE.test(String(tag)));
 }
 
 function badgeIndicatesSmallGroup(badges: string[]): boolean {
+  if (badges.some((b) => SMALL_GROUP_TEXT_RE.test(String(b)))) return true;
   return badges.some((b) =>
     /\bsmall\s*group\b|소그룹|少人数|精品小团|小团|小團|拼团/i.test(String(b)),
   );
@@ -73,7 +83,7 @@ function badgeIndicatesSmallGroup(badges: string[]): boolean {
 function titleIndicatesSmallGroup(title: string): boolean {
   const t = title.toLowerCase();
   return (
-    /\bsmall\s*[- ]?\s*group\b/i.test(title) ||
+    SMALL_GROUP_TEXT_RE.test(title) ||
     /\bsemi[- ]\s*f\.?\s*i\.?\s*t\.?\b/i.test(title) ||
     /\bout[\s-]*travel/i.test(title) ||
     /소그룹|精品小团|小团一日游|拼团|少人数/i.test(title) ||

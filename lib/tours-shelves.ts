@@ -17,6 +17,7 @@
 "use client";
 
 import type { StaticTourProductRegistration } from "@/components/product-tour-static/catalog/staticTourCatalogCards";
+import { isKnownBusTourSlug } from "@/lib/tour-catalog-type-infer";
 
 // ---------------------------------------------------------------------------
 // Shelves
@@ -169,10 +170,8 @@ function isPrivate(t: StaticTourProductRegistration): boolean {
  *
  * User directive 2026-05-23: if a join tour doesn't say "Small group" in its
  * title / badges, it is NOT a small-group tour — it belongs in the Classic Bus
- * shelf. The `busan-top-attractions-day-tour` (which DOES carry a `Small group`
- * badge) is the canonical example of what belongs here; tours like
- * `east-signature-nature-core` or `jeju-grand-highlights-loop` that have
- * `maxGroupSize=8` but no badge fall through to Classic Bus per this rule.
+ * shelf. User directive 2026-05-25: stale `Small group` badges on known bus
+ * SKUs do not count; the central known-bus list wins.
  *
  * Implementation: only the badge signal counts. The previous `maxGroupSize ≤
  * 12` fallback (Phase 7.5, PR #26) was reverted — it was over-inclusive.
@@ -188,6 +187,7 @@ const SMALL_GROUP_BADGE_RE =
 
 function isSmallGroup(t: StaticTourProductRegistration): boolean {
   if (isPrivate(t)) return false;
+  if (isKnownBusTourSlug(t.slug)) return false;
   return t.badges.some((b) => SMALL_GROUP_BADGE_RE.test(b));
 }
 
@@ -206,6 +206,7 @@ function isSmallGroup(t: StaticTourProductRegistration): boolean {
  */
 function isClassicBus(t: StaticTourProductRegistration): boolean {
   if (isPrivate(t)) return false;
+  if (isKnownBusTourSlug(t.slug)) return true;
   if (t.slug.endsWith("-bus-tour") || t.slug.includes("classic-bus")) return true;
   if (t.badges.some((b) => /large coach|bus tour|classic bus|air[- ]?conditioned coach/i.test(b))) {
     return true;
