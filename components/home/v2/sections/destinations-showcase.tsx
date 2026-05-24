@@ -73,14 +73,18 @@ export function DestinationsShowcase() {
         {/* Mobile snap-scroll wrapped in `relative` so the right-edge fade can
             absolutely position. The fade signals "more content →" since the
             scrollbar is hidden. Hidden on md+ where the grid layout shows
-            everything at once. */}
+            everything at once.
+            2026-05-25 spacing pass: side padding 16→24px and gap 14→18px so
+            the cards don't bleed against the viewport edge on mobile. Card
+            width 60vw→55vw frees ~5vw of breathing room on each side and
+            makes the "peek next card" affordance read more clearly. */}
         <div className="relative -mx-4 md:mx-auto md:max-w-4xl">
-          <div ref={scrollRef} className="flex snap-x snap-mandatory gap-3.5 overflow-x-auto px-4 pb-3 scrollbar-hide md:grid md:auto-rows-fr md:grid-cols-3 md:gap-5 md:overflow-visible md:px-0 md:pb-0">
+          <div ref={scrollRef} className="flex snap-x snap-mandatory gap-[18px] overflow-x-auto px-6 pb-3 scrollbar-hide md:grid md:auto-rows-fr md:grid-cols-3 md:gap-5 md:overflow-visible md:px-0 md:pb-0">
             {DESTINATIONS.map((dest) => (
               <motion.div
                 key={dest.id}
                 variants={REVEAL_ITEM_VARIANTS}
-                className="w-[60vw] flex-shrink-0 snap-start md:w-auto"
+                className="w-[55vw] flex-shrink-0 snap-start md:w-auto"
               >
                 <DestinationCard
                   name={t(dest.nameKey)}
