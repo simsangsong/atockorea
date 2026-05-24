@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Clock, Compass, Footprints, Heart, Share2, Star } from "lucide-react";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
@@ -66,7 +66,13 @@ export function TourHeroSection({
     }
   }, [headlineLine1, headlineLine2]);
 
-  const slides = hero.images && hero.images.length > 0 ? hero.images : [hero.imageUrl];
+  const slides = useMemo(() => {
+    const urls = [hero.imageUrl, ...(Array.isArray(hero.images) ? hero.images : [])]
+      .map((url) => (typeof url === "string" ? url.trim() : ""))
+      .filter((url) => url.length > 0);
+    return Array.from(new Set(urls));
+  }, [hero.imageUrl, hero.images]);
+  const slidesKey = slides.join("|");
   /* Magazine issue number (stable per-tour, 좌상단 Bodoni italic). */
   const issueNumber = (() => {
     const seed = (slides[0] ?? tourProductSlug).toString();
@@ -94,6 +100,11 @@ export function TourHeroSection({
 
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    setActiveSlideIdx(0);
+    prevSlideIdxRef.current = -1;
+  }, [slidesKey]);
 
   useEffect(() => {
     if (slides.length <= 1 || !heroInView) return;

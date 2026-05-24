@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Header from '@/components/Header';
@@ -23,6 +24,12 @@ export default function LocaleHomePage() {
   const router = useRouter();
   const locale = params?.locale as string | undefined;
 
+  useEffect(() => {
+    if (locale === 'en') {
+      router.replace('/');
+    }
+  }, [locale, router]);
+
   if (!locale) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
@@ -32,7 +39,6 @@ export default function LocaleHomePage() {
   }
 
   if (locale === 'en') {
-    router.replace('/');
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
         <p className="text-gray-500">Redirecting...</p>

@@ -11,6 +11,7 @@ import { inferTourCatalogType, tagsForCatalogType } from "@/lib/tour-catalog-typ
 import { useCurrencyOptional } from "@/lib/currency";
 import { useI18n, useTranslations } from "@/lib/i18n";
 import { HOME_CTA_BROWSE_TOURS_HREF } from "@/lib/home/home-cta-routes";
+import { adaptToursListResponse } from "@/src/lib/adapters/tours-adapter";
 import { SnapScrollDots } from "@/components/home/v2/ui/SnapScrollDots";
 import { homeBtnSecondary } from "@/lib/home/home-button-classes";
 import { analytics } from "@/src/design/analytics";
@@ -34,6 +35,11 @@ const FEATURED_LIMIT = FEATURED_PRODUCT_SLUGS.length;
 
 type DestinationsApiResponse = {
   total?: number;
+};
+
+type LiveFeaturedToursState = {
+  locale: string;
+  tours: TourCardViewModel[];
 };
 
 function isTourProductLocale(locale: string): locale is TourProductPageLocale {
@@ -99,12 +105,34 @@ function buildStaticFeaturedTours(locale: string): TourCardViewModel[] {
     .map(productToCard);
 }
 
+function cardSlug(tour: TourCardViewModel): string {
+  return tour.slug?.trim() || tour.id;
+}
+
+function mergeLiveCardMedia(
+  fallbackTours: TourCardViewModel[],
+  liveTours: TourCardViewModel[] | null,
+): TourCardViewModel[] {
+  if (!liveTours || liveTours.length === 0) return fallbackTours;
+
+  const liveBySlug = new Map<string, TourCardViewModel>();
+  for (const tour of liveTours) {
+    const slug = cardSlug(tour);
+    if (slug && tour.imageUrl) liveBySlug.set(slug, tour);
+  }
+
+  return fallbackTours.map((fallback) => {
+    const live = liveBySlug.get(cardSlug(fallback));
+    if (!live?.imageUrl || live.imageUrl === fallback.imageUrl) return fallback;
+    return { ...fallback, imageUrl: live.imageUrl };
+  });
+}
+
 /**
  * "Most loved this week" product rail.
  *
- * The rail starts with static catalog cards so a slow live API cannot leave a
- * blank white section. When /api/tours responds quickly, the cards are swapped
- * to live list data.
+ * The rail keeps its curated static slug order, then overlays live admin media
+ * from /api/tours so product dashboard image edits surface on the landing page.
  */
 export function FeaturedProductsShowcase() {
   const t = useTranslations("home");
@@ -114,7 +142,12 @@ export function FeaturedProductsShowcase() {
   const fallbackTours = useMemo(() => buildStaticFeaturedTours(locale), [locale]);
 
   const [totalCount, setTotalCount] = useState<number | null>(null);
-  const tours = fallbackTours;
+  const [liveToursState, setLiveToursState] = useState<LiveFeaturedToursState | null>(null);
+  const liveToursForLocale = liveToursState?.locale === locale ? liveToursState.tours : null;
+  const tours = useMemo(
+    () => mergeLiveCardMedia(fallbackTours, liveToursForLocale),
+    [fallbackTours, liveToursForLocale],
+  );
 
   const formatPrice = useCallback(
     (priceUsd: number) => {
@@ -131,6 +164,24 @@ export function FeaturedProductsShowcase() {
   useEffect(() => {
     const controller = new AbortController();
 
+    const params = new URLSearchParams({
+      compact: "1",
+      limit: "300",
+      locale,
+      useScoreSort: "false",
+    });
+
+    fetch(`/api/tours?${params.toString()}`, {
+      signal: controller.signal,
+      cache: "no-store",
+    })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((data) => {
+        if (!data) return;
+        setLiveToursState({ locale, tours: adaptToursListResponse(data) });
+      })
+      .catch(() => {});
+
     fetch("/api/tours/destinations", { signal: controller.signal })
       .then((r) => (r.ok ? (r.json() as Promise<DestinationsApiResponse>) : null))
       .then((data) => {
@@ -142,7 +193,7 @@ export function FeaturedProductsShowcase() {
     return () => {
       controller.abort();
     };
-  }, []);
+  }, [locale]);
 
   if (tours.length < 3) return null;
 

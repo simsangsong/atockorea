@@ -86,8 +86,14 @@ export default async function RegisteredTourProductPage({
   // content when only the EN row exists in the DB (currently the common case).
   let viewModel: Awaited<ReturnType<typeof loadTourProductViewModelBySlugFromSupabase>> = null;
   const forceStatic = process.env.TOUR_PRODUCT_FORCE_STATIC_BUNDLE === "1";
-  const supabaseClient =
-    process.env.TOUR_PRODUCT_USE_SUPABASE === "1" && !forceStatic ? createAnonServerClient() : null;
+  let supabaseClient: ReturnType<typeof createAnonServerClient> | null = null;
+  if (!forceStatic) {
+    try {
+      supabaseClient = createAnonServerClient();
+    } catch (e) {
+      console.error("[RegisteredTourProductPage] Supabase client unavailable, using JSON bundle", slug, e);
+    }
+  }
 
   if (supabaseClient) {
     try {

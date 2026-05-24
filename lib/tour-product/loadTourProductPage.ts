@@ -66,6 +66,73 @@ function parsePayload(raw: unknown): TourProductDetailPayloadV1 | null {
   return raw as unknown as TourProductDetailPayloadV1;
 }
 
+function cleanImageUrl(value: unknown): string {
+  return typeof value === "string" ? value.trim() : "";
+}
+
+function uniqueImageUrls(values: readonly unknown[]): string[] {
+  const out: string[] = [];
+  const seen = new Set<string>();
+  for (const value of values) {
+    const url = cleanImageUrl(value);
+    if (!url || seen.has(url)) continue;
+    seen.add(url);
+    out.push(url);
+  }
+  return out;
+}
+
+function numberOrFallback(value: unknown, fallback: number): number {
+  const n = typeof value === "number" ? value : typeof value === "string" ? Number(value) : NaN;
+  return Number.isFinite(n) ? n : fallback;
+}
+
+function buildMergedHero(
+  page: Database["public"]["Tables"]["tour_product_pages"]["Row"],
+  payload: TourProductDetailPayloadV1,
+): TourProductDetailPayloadV1["hero"] {
+  const fallbackHero: TourProductDetailPayloadV1["hero"] = {
+    imageUrl: page.hero_image_url ?? "",
+    imagePosition: "center 35%",
+    tagline: page.subtitle ?? "",
+    pills: Array.isArray(page.badges) ? page.badges.filter((p): p is string => typeof p === "string") : [],
+    meta: {
+      duration: page.duration_label ?? "",
+      region: page.region_label ?? "",
+      stops: page.stops_count != null ? `${page.stops_count} stops` : "",
+      rating: page.rating_avg != null ? Number(page.rating_avg) : 0,
+      ratingStars: 4,
+    },
+  };
+
+  const payloadHero: Record<string, unknown> = isRecord(payload.hero) ? payload.hero : {};
+  const payloadMeta: Record<string, unknown> = isRecord(payloadHero.meta) ? payloadHero.meta : {};
+  const baseImageUrl = cleanImageUrl(payloadHero.imageUrl) || cleanImageUrl(fallbackHero.imageUrl);
+  const imageUrl = cleanImageUrl(page.hero_image_url) || baseImageUrl;
+  const payloadImages = Array.isArray(payloadHero.images) ? payloadHero.images : [];
+
+  return {
+    imageUrl,
+    imagePosition:
+      typeof payloadHero.imagePosition === "string" && payloadHero.imagePosition.trim()
+        ? payloadHero.imagePosition
+        : fallbackHero.imagePosition,
+    tagline: typeof payloadHero.tagline === "string" ? payloadHero.tagline : fallbackHero.tagline,
+    pills: Array.isArray(payloadHero.pills)
+      ? payloadHero.pills.filter((p: unknown): p is string => typeof p === "string")
+      : fallbackHero.pills,
+    meta: {
+      duration:
+        typeof payloadMeta.duration === "string" ? payloadMeta.duration : fallbackHero.meta.duration,
+      region: typeof payloadMeta.region === "string" ? payloadMeta.region : fallbackHero.meta.region,
+      stops: typeof payloadMeta.stops === "string" ? payloadMeta.stops : fallbackHero.meta.stops,
+      rating: numberOrFallback(payloadMeta.rating, fallbackHero.meta.rating),
+      ratingStars: numberOrFallback(payloadMeta.ratingStars, fallbackHero.meta.ratingStars),
+    },
+    images: uniqueImageUrls([imageUrl, ...payloadImages]),
+  };
+}
+
 /**
  * Supabase 행이 있어도 `detail_payload`가 비어 있거나 초기 시드만 있으면 플래그십 레이아웃이 깨집니다.
  * 이때는 `null`을 반환해 각 `/tour-product/[slug]` 페이지가 번들 정적 뷰모델로 폴백하도록 합니다.
@@ -111,21 +178,7 @@ export function mergeTourProductPageToViewModel(
         : String(defaultOffer.amount_minor)
     : page.price_amount_label ?? "0";
 
-  const hero =
-    payload.hero ??
-    ({
-      imageUrl: page.hero_image_url ?? "",
-      imagePosition: "center 35%",
-      tagline: page.subtitle ?? "",
-      pills: page.badges ?? [],
-      meta: {
-        duration: page.duration_label ?? "",
-        region: page.region_label ?? "",
-        stops: page.stops_count != null ? `${page.stops_count} stops` : "",
-        rating: page.rating_avg != null ? Number(page.rating_avg) : 0,
-        ratingStars: 4,
-      },
-    } as TourProductDetailPayloadV1["hero"]);
+  const hero = buildMergedHero(page, payload);
 
   const vm = {
     headlineLine1: page.headline_line_1 ?? payload.headlineLine1 ?? "",
@@ -237,4 +290,3 @@ export async function loadTourProductViewModelBySlugFromSupabase(
 
   return vm;
 }
-
