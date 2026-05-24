@@ -16,9 +16,9 @@ import { cn } from "@/lib/utils";
 // deterministic "variability signal" (v3 §3 P0-B). Real catalog data — no
 // fake recommendation cards (v3 §B 2026-05-17 binding decision).
 const IDLE_PREVIEW_SLUGS = [
-  "east-signature-nature-core",
-  "seoul-seoraksan-nami-island-morning-calm-day-tour",
   "busan-top-attractions-day-tour",
+  "jeju-grand-highlights-loop",
+  "seoul-suburbs-private-chartered-car-10hr",
 ] as const;
 
 const FADE_INTERVAL_MS = 5000;
@@ -136,7 +136,7 @@ export function IdleMatchPreviewCarousel() {
                 }}
               >
                 <Image
-                  src={card.heroImage}
+                  src={card.thumbnail || card.heroImage}
                   alt={card.title}
                   fill
                   sizes="(max-width: 768px) 90vw, 576px"

@@ -5,7 +5,6 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import TourListCard from "@/components/tour/TourListCard";
 import { V0ShadcnButton } from "@/components/home/v2/ui/v0-shadcn-button";
-import { adaptToursListResponse } from "@/src/lib/adapters/tours-adapter";
 import type { TourCardViewModel } from "@/src/types/tours";
 import { consumerTourDetailHref } from "@/lib/tour-consumer-visibility";
 import { inferTourCatalogType, tagsForCatalogType } from "@/lib/tour-catalog-type-infer";
@@ -22,16 +21,16 @@ import {
 import type { TourProductPageLocale } from "@/lib/tour-product/resolveTourProductDbLocale";
 import { cn } from "@/lib/utils";
 
-const FEATURED_LIMIT = 6;
-const FEATURED_FETCH_TIMEOUT_MS = 4500;
-const FEATURED_FALLBACK_SLUGS = [
-  "east-signature-nature-core",
+const FEATURED_PRODUCT_SLUGS = [
+  "seoul-suwon-hwaseong-waujeongsa-starfield",
+  "busan-top-attractions-day-tour",
   "jeju-grand-highlights-loop",
-  "southwest-hallasan-osulloc-aewol",
-  "busan-small-group-sightseeing-tour-cruise-passengers",
-  "busan-gyeongju-unesco-legacy-tour-national-museum",
-  "seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library",
+  "seoul-suburbs-private-chartered-car-10hr",
+  "seoul-suwon-hwaseong-waujeongsa-starfield",
+  "jeju-island-private-car-charter-tour",
+  "seoul-suwon-hwaseong-folk-village-starfield-library",
 ] as const;
+const FEATURED_LIMIT = FEATURED_PRODUCT_SLUGS.length;
 
 type DestinationsApiResponse = {
   total?: number;
@@ -89,7 +88,7 @@ function buildStaticFeaturedTours(locale: string): TourCardViewModel[] {
     listStaticTourProducts(productLocale).map((product) => [product.slug, product]),
   );
 
-  return FEATURED_FALLBACK_SLUGS
+  return FEATURED_PRODUCT_SLUGS
     .map((slug) => bySlug.get(slug))
     .filter((product): product is StaticTourProductRegistration => {
       if (!product) return false;
@@ -97,8 +96,7 @@ function buildStaticFeaturedTours(locale: string): TourCardViewModel[] {
       if (!product.thumbnail && !product.heroImage) return false;
       return consumerTourDetailHref(product.slug, product.slug) !== "/tours/list";
     })
-    .map(productToCard)
-    .slice(0, FEATURED_LIMIT);
+    .map(productToCard);
 }
 
 /**
@@ -115,15 +113,8 @@ export function FeaturedProductsShowcase() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const fallbackTours = useMemo(() => buildStaticFeaturedTours(locale), [locale]);
 
-  const [liveTours, setLiveTours] = useState<{
-    locale: string;
-    tours: TourCardViewModel[];
-  } | null>(null);
   const [totalCount, setTotalCount] = useState<number | null>(null);
-  const tours =
-    liveTours?.locale === locale && liveTours.tours.length >= 3
-      ? liveTours.tours
-      : fallbackTours;
+  const tours = fallbackTours;
 
   const formatPrice = useCallback(
     (priceUsd: number) => {
@@ -139,34 +130,6 @@ export function FeaturedProductsShowcase() {
 
   useEffect(() => {
     const controller = new AbortController();
-    const timeoutId = window.setTimeout(() => controller.abort(), FEATURED_FETCH_TIMEOUT_MS);
-    const params = new URLSearchParams({
-      sortBy: "popular",
-      limit: String(FEATURED_LIMIT),
-      locale,
-      compact: "1",
-      // Keep this rail out of the booking-score path. The copy is editorial,
-      // and waiting on score enrichment is not worth blocking the home page.
-      useScoreSort: "false",
-    });
-
-    fetch(`/api/tours?${params.toString()}`, { signal: controller.signal })
-      .then((r) => (r.ok ? r.json() : { tours: [] }))
-      .then((data) => {
-        if (controller.signal.aborted) return;
-        const adapted = adaptToursListResponse(data);
-        const validTours = adapted.filter((tour) => {
-          const hasPrice = typeof tour.priceFrom === "number" && tour.priceFrom > 0;
-          const hasImage = Boolean(tour.imageUrl);
-          const hasTitle = Boolean(tour.title && tour.title.trim());
-          return hasPrice && hasImage && hasTitle;
-        });
-        if (validTours.length >= 3) setLiveTours({ locale, tours: validTours });
-      })
-      .catch((err) => {
-        if (controller.signal.aborted) return;
-        if (err && (err.name === "AbortError" || err.code === 20)) return;
-      });
 
     fetch("/api/tours/destinations", { signal: controller.signal })
       .then((r) => (r.ok ? (r.json() as Promise<DestinationsApiResponse>) : null))
@@ -177,10 +140,9 @@ export function FeaturedProductsShowcase() {
       .catch(() => {});
 
     return () => {
-      window.clearTimeout(timeoutId);
       controller.abort();
     };
-  }, [locale]);
+  }, []);
 
   if (tours.length < 3) return null;
 
@@ -207,9 +169,9 @@ export function FeaturedProductsShowcase() {
             ref={scrollRef}
             className="flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-2 scrollbar-hide md:grid md:grid-cols-3 md:gap-5 md:overflow-visible md:px-0 md:pb-0"
           >
-            {tours.slice(0, FEATURED_LIMIT).map((tour) => (
+            {tours.slice(0, FEATURED_LIMIT).map((tour, index) => (
               <div
-                key={tour.id}
+                key={`${tour.id}-${index}`}
                 className="w-[44vw] flex-shrink-0 snap-start md:w-auto"
                 onClick={() =>
                   analytics.homeFeaturedCardClick({
