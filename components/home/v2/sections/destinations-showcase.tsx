@@ -22,21 +22,21 @@ type DestinationDef = {
 const DESTINATIONS: ReadonlyArray<DestinationDef> = [
   {
     id: "Seoul",
-    imageSrc: "/images/destinations/seoul-card.jpg",
+    imageSrc: "/images/destinations/seoul-card.webp",
     nameKey: "premium.v2.destinations.seoul.name",
     altKey: "premium.v2.destinations.seoul.alt",
     taglineKey: "premium.v2.destinations.seoul.tagline",
   },
   {
     id: "Busan",
-    imageSrc: "/images/destinations/busan-card.jpg",
+    imageSrc: "/images/destinations/busan-card.webp",
     nameKey: "premium.v2.destinations.busan.name",
     altKey: "premium.v2.destinations.busan.alt",
     taglineKey: "premium.v2.destinations.busan.tagline",
   },
   {
     id: "Jeju",
-    imageSrc: "/images/destinations/jeju-card.jpg",
+    imageSrc: "/images/destinations/jeju-card.webp",
     nameKey: "premium.v2.destinations.jeju.name",
     altKey: "premium.v2.destinations.jeju.alt",
     taglineKey: "premium.v2.destinations.jeju.tagline",
