@@ -152,8 +152,8 @@
       "type": "photo",
       "src": "/images/itinerary/bomun-lake-cherry-blossom-promenade.webp",
       "location": "Bomun Lake (cherry blossom centerpiece)",
-      "alt": "Bomun Lake (cherry blossom centerpiece) — on-route photo",
-      "caption": "Bomun Lake (cherry blossom centerpiece)"
+      "alt": "Bomun Lake (cherry blossom centerpiece) — gallery image 1",
+      "caption": "Bomun Lake (cherry blossom centerpiece) — photo 1"
     },
     {
       "id": 4,
@@ -198,18 +198,66 @@
     {
       "id": 9,
       "type": "photo",
-      "src": "/images/itinerary/bomun-lake-cherry-blossoms-with-coasters.webp",
-      "location": "Bomun Lake (cherry blossom centerpiece)",
-      "alt": "Bomun Lake (cherry blossom centerpiece) — on-route photo",
-      "caption": "Bomun Lake (cherry blossom centerpiece)"
+      "src": "/images/tours/bulguksa-temple/bulguksa-cheongun-baegun-bridges.webp",
+      "location": "Bulguksa Temple (UNESCO World Heritage)",
+      "alt": "Bulguksa Temple (UNESCO World Heritage) — gallery image 6",
+      "caption": "Bulguksa Temple (UNESCO World Heritage) — photo 6"
     },
     {
       "id": 10,
       "type": "photo",
+      "src": "/images/tours/bulguksa-temple/bulguksa-dabotap-courtyard.webp",
+      "location": "Bulguksa Temple (UNESCO World Heritage)",
+      "alt": "Bulguksa Temple (UNESCO World Heritage) — gallery image 7",
+      "caption": "Bulguksa Temple (UNESCO World Heritage) — photo 7"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/bulguksa-temple/photo-003.webp",
+      "location": "Bulguksa Temple (UNESCO World Heritage)",
+      "alt": "Bulguksa Temple (UNESCO World Heritage) — gallery image 8",
+      "caption": "Bulguksa Temple (UNESCO World Heritage) — photo 8"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/bulguksa-temple/photo-004.webp",
+      "location": "Bulguksa Temple (UNESCO World Heritage)",
+      "alt": "Bulguksa Temple (UNESCO World Heritage) — gallery image 9",
+      "caption": "Bulguksa Temple (UNESCO World Heritage) — photo 9"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/itinerary/bomun-lake-cherry-blossoms-with-coasters.webp",
+      "location": "Bomun Lake (cherry blossom centerpiece)",
+      "alt": "Bomun Lake (cherry blossom centerpiece) — gallery image 2",
+      "caption": "Bomun Lake (cherry blossom centerpiece) — photo 2"
+    },
+    {
+      "id": 14,
+      "type": "photo",
       "src": "/images/itinerary/bomun-lake-lakeside-pavilion-reflection.webp",
       "location": "Bomun Lake (cherry blossom centerpiece)",
-      "alt": "Bomun Lake (cherry blossom centerpiece) — on-route photo",
-      "caption": "Bomun Lake (cherry blossom centerpiece)"
+      "alt": "Bomun Lake (cherry blossom centerpiece) — gallery image 3",
+      "caption": "Bomun Lake (cherry blossom centerpiece) — photo 3"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/bomun-lake/bomun-lake-aerial-resort.webp",
+      "location": "Bomun Lake (cherry blossom centerpiece)",
+      "alt": "Bomun Lake (cherry blossom centerpiece) — gallery image 4",
+      "caption": "Bomun Lake (cherry blossom centerpiece) — photo 4"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/bomun-lake/gyeongju-world-roller-coaster-cherry.webp",
+      "location": "Bomun Lake (cherry blossom centerpiece)",
+      "alt": "Bomun Lake (cherry blossom centerpiece) — gallery image 5",
+      "caption": "Bomun Lake (cherry blossom centerpiece) — photo 5"
     }
   ],
   "itineraryStops": [
@@ -404,7 +452,11 @@
         "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
         "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
         "/images/tours/bulguksa-temple/photo-001.webp",
-        "/images/tours/bulguksa-temple/photo-002.webp"
+        "/images/tours/bulguksa-temple/photo-002.webp",
+        "/images/tours/bulguksa-temple/bulguksa-cheongun-baegun-bridges.webp",
+        "/images/tours/bulguksa-temple/bulguksa-dabotap-courtyard.webp",
+        "/images/tours/bulguksa-temple/photo-003.webp",
+        "/images/tours/bulguksa-temple/photo-004.webp"
       ],
       "imageCredits": [
         {
@@ -425,6 +477,22 @@
         },
         {
           "url": "/images/tours/bulguksa-temple/photo-002.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/bulguksa-temple/bulguksa-cheongun-baegun-bridges.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/bulguksa-temple/bulguksa-dabotap-courtyard.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/bulguksa-temple/photo-003.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/bulguksa-temple/photo-004.webp",
           "source": "atoc-korea"
         }
       ],
@@ -468,6 +536,38 @@
           "location": "Bulguksa Temple (UNESCO World Heritage)",
           "caption": "Bulguksa Temple (UNESCO World Heritage) — photo 5",
           "alt": "Bulguksa Temple (UNESCO World Heritage) — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/bulguksa-cheongun-baegun-bridges.webp",
+          "location": "Bulguksa Temple (UNESCO World Heritage)",
+          "caption": "Bulguksa Temple (UNESCO World Heritage) — photo 6",
+          "alt": "Bulguksa Temple (UNESCO World Heritage) — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/bulguksa-dabotap-courtyard.webp",
+          "location": "Bulguksa Temple (UNESCO World Heritage)",
+          "caption": "Bulguksa Temple (UNESCO World Heritage) — photo 7",
+          "alt": "Bulguksa Temple (UNESCO World Heritage) — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/photo-003.webp",
+          "location": "Bulguksa Temple (UNESCO World Heritage)",
+          "caption": "Bulguksa Temple (UNESCO World Heritage) — photo 8",
+          "alt": "Bulguksa Temple (UNESCO World Heritage) — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/bulguksa-temple/photo-004.webp",
+          "location": "Bulguksa Temple (UNESCO World Heritage)",
+          "caption": "Bulguksa Temple (UNESCO World Heritage) — photo 9",
+          "alt": "Bulguksa Temple (UNESCO World Heritage) — gallery image 9"
         }
       ]
     },
@@ -531,7 +631,73 @@
       "images": [
         "/images/itinerary/bomun-lake-cherry-blossom-promenade.webp",
         "/images/itinerary/bomun-lake-cherry-blossoms-with-coasters.webp",
-        "/images/itinerary/bomun-lake-lakeside-pavilion-reflection.webp"
+        "/images/itinerary/bomun-lake-lakeside-pavilion-reflection.webp",
+        "/images/tours/bomun-lake/bomun-lake-aerial-resort.webp",
+        "/images/tours/bomun-lake/gyeongju-world-roller-coaster-cherry.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/itinerary/bomun-lake-cherry-blossom-promenade.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/itinerary/bomun-lake-cherry-blossoms-with-coasters.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/itinerary/bomun-lake-lakeside-pavilion-reflection.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/bomun-lake/bomun-lake-aerial-resort.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/bomun-lake/gyeongju-world-roller-coaster-cherry.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/itinerary/bomun-lake-cherry-blossom-promenade.webp",
+          "location": "Bomun Lake (cherry blossom centerpiece)",
+          "caption": "Bomun Lake (cherry blossom centerpiece) — photo 1",
+          "alt": "Bomun Lake (cherry blossom centerpiece) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/itinerary/bomun-lake-cherry-blossoms-with-coasters.webp",
+          "location": "Bomun Lake (cherry blossom centerpiece)",
+          "caption": "Bomun Lake (cherry blossom centerpiece) — photo 2",
+          "alt": "Bomun Lake (cherry blossom centerpiece) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/itinerary/bomun-lake-lakeside-pavilion-reflection.webp",
+          "location": "Bomun Lake (cherry blossom centerpiece)",
+          "caption": "Bomun Lake (cherry blossom centerpiece) — photo 3",
+          "alt": "Bomun Lake (cherry blossom centerpiece) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/bomun-lake/bomun-lake-aerial-resort.webp",
+          "location": "Bomun Lake (cherry blossom centerpiece)",
+          "caption": "Bomun Lake (cherry blossom centerpiece) — photo 4",
+          "alt": "Bomun Lake (cherry blossom centerpiece) — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/bomun-lake/gyeongju-world-roller-coaster-cherry.webp",
+          "location": "Bomun Lake (cherry blossom centerpiece)",
+          "caption": "Bomun Lake (cherry blossom centerpiece) — photo 5",
+          "alt": "Bomun Lake (cherry blossom centerpiece) — gallery image 5"
+        }
       ]
     },
     {
@@ -1364,7 +1530,11 @@
               "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp",
               "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47-2.webp",
               "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03-2.webp",
-              "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07-2.webp"
+              "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07-2.webp",
+              "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47-3.webp",
+              "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03-3.webp",
+              "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07-3.webp",
+              "/images/tours/ahopsan-bamboo/ahopsan-entrance-marker.webp"
             ],
             "imageCredits": [
               {
@@ -1389,6 +1559,22 @@
               },
               {
                 "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47-3.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03-3.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07-3.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ahopsan-bamboo/ahopsan-entrance-marker.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1440,6 +1626,38 @@
                 "location": "Ahopsan Bamboo Forest",
                 "caption": "Ahopsan Bamboo Forest — photo 6",
                 "alt": "Ahopsan Bamboo Forest — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47-3.webp",
+                "location": "Ahopsan Bamboo Forest",
+                "caption": "Ahopsan Bamboo Forest — photo 7",
+                "alt": "Ahopsan Bamboo Forest — gallery image 7"
+              },
+              {
+                "id": 8,
+                "type": "photo",
+                "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03-3.webp",
+                "location": "Ahopsan Bamboo Forest",
+                "caption": "Ahopsan Bamboo Forest — photo 8",
+                "alt": "Ahopsan Bamboo Forest — gallery image 8"
+              },
+              {
+                "id": 9,
+                "type": "photo",
+                "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07-3.webp",
+                "location": "Ahopsan Bamboo Forest",
+                "caption": "Ahopsan Bamboo Forest — photo 9",
+                "alt": "Ahopsan Bamboo Forest — gallery image 9"
+              },
+              {
+                "id": 10,
+                "type": "photo",
+                "src": "/images/tours/ahopsan-bamboo/ahopsan-entrance-marker.webp",
+                "location": "Ahopsan Bamboo Forest",
+                "caption": "Ahopsan Bamboo Forest — photo 10",
+                "alt": "Ahopsan Bamboo Forest — gallery image 10"
               }
             ]
           },
@@ -1472,7 +1690,11 @@
               "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
               "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
               "/images/tours/bulguksa-temple/photo-001.webp",
-              "/images/tours/bulguksa-temple/photo-002.webp"
+              "/images/tours/bulguksa-temple/photo-002.webp",
+              "/images/tours/bulguksa-temple/bulguksa-cheongun-baegun-bridges.webp",
+              "/images/tours/bulguksa-temple/bulguksa-dabotap-courtyard.webp",
+              "/images/tours/bulguksa-temple/photo-003.webp",
+              "/images/tours/bulguksa-temple/photo-004.webp"
             ],
             "imageCredits": [
               {
@@ -1493,6 +1715,22 @@
               },
               {
                 "url": "/images/tours/bulguksa-temple/photo-002.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/bulguksa-temple/bulguksa-cheongun-baegun-bridges.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/bulguksa-temple/bulguksa-dabotap-courtyard.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/bulguksa-temple/photo-003.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/bulguksa-temple/photo-004.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1536,6 +1774,38 @@
                 "location": "Bulguksa Temple (UNESCO World Heritage)",
                 "caption": "Bulguksa Temple (UNESCO World Heritage) — photo 5",
                 "alt": "Bulguksa Temple (UNESCO World Heritage) — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/bulguksa-cheongun-baegun-bridges.webp",
+                "location": "Bulguksa Temple (UNESCO World Heritage)",
+                "caption": "Bulguksa Temple (UNESCO World Heritage) — photo 6",
+                "alt": "Bulguksa Temple (UNESCO World Heritage) — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/bulguksa-dabotap-courtyard.webp",
+                "location": "Bulguksa Temple (UNESCO World Heritage)",
+                "caption": "Bulguksa Temple (UNESCO World Heritage) — photo 7",
+                "alt": "Bulguksa Temple (UNESCO World Heritage) — gallery image 7"
+              },
+              {
+                "id": 8,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/photo-003.webp",
+                "location": "Bulguksa Temple (UNESCO World Heritage)",
+                "caption": "Bulguksa Temple (UNESCO World Heritage) — photo 8",
+                "alt": "Bulguksa Temple (UNESCO World Heritage) — gallery image 8"
+              },
+              {
+                "id": 9,
+                "type": "photo",
+                "src": "/images/tours/bulguksa-temple/photo-004.webp",
+                "location": "Bulguksa Temple (UNESCO World Heritage)",
+                "caption": "Bulguksa Temple (UNESCO World Heritage) — photo 9",
+                "alt": "Bulguksa Temple (UNESCO World Heritage) — gallery image 9"
               }
             ]
           },
@@ -1657,7 +1927,14 @@
               "/images/tours/gyochon-hanok-village/photo-003.webp",
               "/images/tours/gyochon-hanok-village/photo-004.webp",
               "/images/tours/gyochon-hanok-village/photo-005.webp",
-              "/images/tours/gyochon-hanok-village/photo-006.webp"
+              "/images/tours/gyochon-hanok-village/photo-006.webp",
+              "/images/tours/gyochon-hanok-village/gyochon-hanok-village-marker.webp",
+              "/images/tours/gyochon-hanok-village/photo-002-2.webp",
+              "/images/tours/gyochon-hanok-village/photo-003-2.webp",
+              "/images/tours/gyochon-hanok-village/photo-004-2.webp",
+              "/images/tours/gyochon-hanok-village/photo-005-2.webp",
+              "/images/tours/gyochon-hanok-village/photo-006-2.webp",
+              "/images/tours/gyochon-hanok-village/photo-007.webp"
             ],
             "imageCredits": [
               {
@@ -1698,6 +1975,34 @@
               },
               {
                 "url": "/images/tours/gyochon-hanok-village/photo-006.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyochon-hanok-village/gyochon-hanok-village-marker.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyochon-hanok-village/photo-002-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyochon-hanok-village/photo-003-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyochon-hanok-village/photo-004-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyochon-hanok-village/photo-005-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyochon-hanok-village/photo-006-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gyochon-hanok-village/photo-007.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1781,6 +2086,62 @@
                 "location": "Gyochon Hanok Village",
                 "caption": "Gyochon Hanok Village — photo 10",
                 "alt": "Gyochon Hanok Village — gallery image 10"
+              },
+              {
+                "id": 11,
+                "type": "photo",
+                "src": "/images/tours/gyochon-hanok-village/gyochon-hanok-village-marker.webp",
+                "location": "Gyochon Hanok Village",
+                "caption": "Gyochon Hanok Village — photo 11",
+                "alt": "Gyochon Hanok Village — gallery image 11"
+              },
+              {
+                "id": 12,
+                "type": "photo",
+                "src": "/images/tours/gyochon-hanok-village/photo-002-2.webp",
+                "location": "Gyochon Hanok Village",
+                "caption": "Gyochon Hanok Village — photo 12",
+                "alt": "Gyochon Hanok Village — gallery image 12"
+              },
+              {
+                "id": 13,
+                "type": "photo",
+                "src": "/images/tours/gyochon-hanok-village/photo-003-2.webp",
+                "location": "Gyochon Hanok Village",
+                "caption": "Gyochon Hanok Village — photo 13",
+                "alt": "Gyochon Hanok Village — gallery image 13"
+              },
+              {
+                "id": 14,
+                "type": "photo",
+                "src": "/images/tours/gyochon-hanok-village/photo-004-2.webp",
+                "location": "Gyochon Hanok Village",
+                "caption": "Gyochon Hanok Village — photo 14",
+                "alt": "Gyochon Hanok Village — gallery image 14"
+              },
+              {
+                "id": 15,
+                "type": "photo",
+                "src": "/images/tours/gyochon-hanok-village/photo-005-2.webp",
+                "location": "Gyochon Hanok Village",
+                "caption": "Gyochon Hanok Village — photo 15",
+                "alt": "Gyochon Hanok Village — gallery image 15"
+              },
+              {
+                "id": 16,
+                "type": "photo",
+                "src": "/images/tours/gyochon-hanok-village/photo-006-2.webp",
+                "location": "Gyochon Hanok Village",
+                "caption": "Gyochon Hanok Village — photo 16",
+                "alt": "Gyochon Hanok Village — gallery image 16"
+              },
+              {
+                "id": 17,
+                "type": "photo",
+                "src": "/images/tours/gyochon-hanok-village/photo-007.webp",
+                "location": "Gyochon Hanok Village",
+                "caption": "Gyochon Hanok Village — photo 17",
+                "alt": "Gyochon Hanok Village — gallery image 17"
               }
             ]
           },
@@ -1805,7 +2166,10 @@
             },
             "images": [
               "/images/tours/woljeonggyo/photo-001.webp",
-              "/images/tours/woljeonggyo/photo-002.webp"
+              "/images/tours/woljeonggyo/photo-002.webp",
+              "/images/tours/woljeonggyo/woljeonggyo-cherry-reflection.webp",
+              "/images/tours/woljeonggyo/photo-002-2.webp",
+              "/images/tours/woljeonggyo/photo-003.webp"
             ],
             "imageCredits": [
               {
@@ -1814,6 +2178,18 @@
               },
               {
                 "url": "/images/tours/woljeonggyo/photo-002.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/woljeonggyo/woljeonggyo-cherry-reflection.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/woljeonggyo/photo-002-2.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/woljeonggyo/photo-003.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1833,6 +2209,30 @@
                 "location": "Woljeonggyo Bridge",
                 "caption": "Woljeonggyo Bridge — photo 2",
                 "alt": "Woljeonggyo Bridge — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/woljeonggyo/woljeonggyo-cherry-reflection.webp",
+                "location": "Woljeonggyo Bridge",
+                "caption": "Woljeonggyo Bridge — photo 3",
+                "alt": "Woljeonggyo Bridge — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/woljeonggyo/photo-002-2.webp",
+                "location": "Woljeonggyo Bridge",
+                "caption": "Woljeonggyo Bridge — photo 4",
+                "alt": "Woljeonggyo Bridge — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/woljeonggyo/photo-003.webp",
+                "location": "Woljeonggyo Bridge",
+                "caption": "Woljeonggyo Bridge — photo 5",
+                "alt": "Woljeonggyo Bridge — gallery image 5"
               }
             ]
           },

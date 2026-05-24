@@ -160,8 +160,8 @@
       "type": "photo",
       "src": "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-flight.webp",
       "location": "Teleférico del Valle de Hielo de los Alpes de Yeongnam (Miryang)",
-      "alt": "Teleférico del Valle de Hielo de los Alpes de Yeongnam (Miryang) — on-route photo",
-      "caption": "Teleférico del Valle de Hielo de los Alpes de Yeongnam (Miryang)"
+      "alt": "Teleférico del Valle de Hielo de los Alpes de Yeongnam (Miryang) — gallery image 1",
+      "caption": "Teleférico del Valle de Hielo de los Alpes de Yeongnam (Miryang) — photo 1"
     },
     {
       "id": 4,
@@ -200,19 +200,27 @@
       "type": "photo",
       "src": "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-valley.webp",
       "location": "Teleférico del Valle de Hielo de los Alpes de Yeongnam (Miryang)",
-      "alt": "Teleférico del Valle de Hielo de los Alpes de Yeongnam (Miryang) — on-route photo",
-      "caption": "Teleférico del Valle de Hielo de los Alpes de Yeongnam (Miryang)"
+      "alt": "Teleférico del Valle de Hielo de los Alpes de Yeongnam (Miryang) — gallery image 2",
+      "caption": "Teleférico del Valle de Hielo de los Alpes de Yeongnam (Miryang) — photo 2"
     },
     {
       "id": 9,
       "type": "photo",
       "src": "/images/tours/yeongnam-alps/yeongnam-alps-summit-viewpoint.webp",
       "location": "Teleférico del Valle de Hielo de los Alpes de Yeongnam (Miryang)",
-      "alt": "Teleférico del Valle de Hielo de los Alpes de Yeongnam (Miryang) — on-route photo",
-      "caption": "Teleférico del Valle de Hielo de los Alpes de Yeongnam (Miryang)"
+      "alt": "Teleférico del Valle de Hielo de los Alpes de Yeongnam (Miryang) — gallery image 3",
+      "caption": "Teleférico del Valle de Hielo de los Alpes de Yeongnam (Miryang) — photo 3"
     },
     {
       "id": 10,
+      "type": "photo",
+      "src": "/images/tours/yeongnam-alps/yeongnam-alps-ice-valley-cable-car.webp",
+      "location": "Teleférico del Valle de Hielo de los Alpes de Yeongnam (Miryang)",
+      "alt": "Teleférico del Valle de Hielo de los Alpes de Yeongnam (Miryang) — gallery image 4",
+      "caption": "Teleférico del Valle de Hielo de los Alpes de Yeongnam (Miryang) — photo 4"
+    },
+    {
+      "id": 11,
       "type": "photo",
       "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
       "location": "Pueblo Cultural de Gamcheon",
@@ -220,7 +228,7 @@
       "caption": "Pueblo Cultural de Gamcheon — photo 2"
     },
     {
-      "id": 11,
+      "id": 12,
       "type": "photo",
       "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
       "location": "Pueblo Cultural de Gamcheon",
@@ -228,7 +236,7 @@
       "caption": "Pueblo Cultural de Gamcheon — photo 3"
     },
     {
-      "id": 12,
+      "id": 13,
       "type": "photo",
       "src": "/images/itinerary/jagalchi-harbor-sign.webp",
       "location": "Pueblo Cultural de Gamcheon",
@@ -236,7 +244,7 @@
       "caption": "Pueblo Cultural de Gamcheon — photo 4"
     },
     {
-      "id": 13,
+      "id": 14,
       "type": "photo",
       "src": "/images/itinerary/jagalchi-market-interior.webp",
       "location": "Pueblo Cultural de Gamcheon",
@@ -244,7 +252,7 @@
       "caption": "Pueblo Cultural de Gamcheon — photo 5"
     },
     {
-      "id": 14,
+      "id": 15,
       "type": "photo",
       "src": "/images/itinerary/jagalchi-night-building.webp",
       "location": "Pueblo Cultural de Gamcheon",
@@ -252,12 +260,28 @@
       "caption": "Pueblo Cultural de Gamcheon — photo 6"
     },
     {
-      "id": 15,
+      "id": 16,
       "type": "photo",
-      "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01-2.webp",
+      "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01-3.webp",
       "location": "Pueblo Cultural de Gamcheon",
       "alt": "Pueblo Cultural de Gamcheon — gallery image 7",
       "caption": "Pueblo Cultural de Gamcheon — photo 7"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-day-sign.webp",
+      "location": "Pueblo Cultural de Gamcheon",
+      "alt": "Pueblo Cultural de Gamcheon — gallery image 8",
+      "caption": "Pueblo Cultural de Gamcheon — photo 8"
+    },
+    {
+      "id": 18,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-night.webp",
+      "location": "Pueblo Cultural de Gamcheon",
+      "alt": "Pueblo Cultural de Gamcheon — gallery image 9",
+      "caption": "Pueblo Cultural de Gamcheon — photo 9"
     }
   ],
   "itineraryStops": [
@@ -473,7 +497,60 @@
       "images": [
         "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-flight.webp",
         "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-valley.webp",
-        "/images/tours/yeongnam-alps/yeongnam-alps-summit-viewpoint.webp"
+        "/images/tours/yeongnam-alps/yeongnam-alps-summit-viewpoint.webp",
+        "/images/tours/yeongnam-alps/yeongnam-alps-ice-valley-cable-car.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-flight.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-valley.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/yeongnam-alps/yeongnam-alps-summit-viewpoint.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/yeongnam-alps/yeongnam-alps-ice-valley-cable-car.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-flight.webp",
+          "location": "Teleférico del Valle de Hielo de los Alpes de Yeongnam (Miryang)",
+          "caption": "Teleférico del Valle de Hielo de los Alpes de Yeongnam (Miryang) — photo 1",
+          "alt": "Teleférico del Valle de Hielo de los Alpes de Yeongnam (Miryang) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-valley.webp",
+          "location": "Teleférico del Valle de Hielo de los Alpes de Yeongnam (Miryang)",
+          "caption": "Teleférico del Valle de Hielo de los Alpes de Yeongnam (Miryang) — photo 2",
+          "alt": "Teleférico del Valle de Hielo de los Alpes de Yeongnam (Miryang) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/yeongnam-alps/yeongnam-alps-summit-viewpoint.webp",
+          "location": "Teleférico del Valle de Hielo de los Alpes de Yeongnam (Miryang)",
+          "caption": "Teleférico del Valle de Hielo de los Alpes de Yeongnam (Miryang) — photo 3",
+          "alt": "Teleférico del Valle de Hielo de los Alpes de Yeongnam (Miryang) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/yeongnam-alps/yeongnam-alps-ice-valley-cable-car.webp",
+          "location": "Teleférico del Valle de Hielo de los Alpes de Yeongnam (Miryang)",
+          "caption": "Teleférico del Valle de Hielo de los Alpes de Yeongnam (Miryang) — photo 4",
+          "alt": "Teleférico del Valle de Hielo de los Alpes de Yeongnam (Miryang) — gallery image 4"
+        }
       ]
     },
     {
@@ -540,7 +617,10 @@
         "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
         "/images/itinerary/jagalchi-harbor-sign.webp",
         "/images/itinerary/jagalchi-market-interior.webp",
-        "/images/itinerary/jagalchi-night-building.webp"
+        "/images/itinerary/jagalchi-night-building.webp",
+        "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01-3.webp",
+        "/images/tours/gamcheon-culture-village/gamcheon-little-prince-day-sign.webp",
+        "/images/tours/gamcheon-culture-village/gamcheon-little-prince-night.webp"
       ],
       "imageCredits": [
         {
@@ -568,7 +648,15 @@
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01-2.webp",
+          "url": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01-3.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-day-sign.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-night.webp",
           "source": "atoc-korea"
         }
       ],
@@ -624,10 +712,26 @@
         {
           "id": 7,
           "type": "photo",
-          "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01-2.webp",
+          "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01-3.webp",
           "location": "Pueblo Cultural de Gamcheon",
           "caption": "Pueblo Cultural de Gamcheon — photo 7",
           "alt": "Pueblo Cultural de Gamcheon — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-day-sign.webp",
+          "location": "Pueblo Cultural de Gamcheon",
+          "caption": "Pueblo Cultural de Gamcheon — photo 8",
+          "alt": "Pueblo Cultural de Gamcheon — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-night.webp",
+          "location": "Pueblo Cultural de Gamcheon",
+          "caption": "Pueblo Cultural de Gamcheon — photo 9",
+          "alt": "Pueblo Cultural de Gamcheon — gallery image 9"
         }
       ]
     },

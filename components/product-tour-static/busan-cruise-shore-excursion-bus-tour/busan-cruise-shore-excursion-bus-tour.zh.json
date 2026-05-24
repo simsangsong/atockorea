@@ -19,7 +19,7 @@
     "description": "专为邮轮旅客打造的釜山沿海大巴一日游：8个标志性景点，提供邮轮码头接送，保证在邮轮启航前返回。"
   },
   "catalog_card": {
-    "thumbnail": "/images/tours/busan-cruise-terminal/busan-cruise-terminal-bus-pickup.webp",
+    "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
     "title": "釜山邮轮靠岸：沿海巴士观光",
     "priceLabel": "每人起价49美元（原价55美元，优惠11%）",
     "shortCardDescription": "专为邮轮旅客打造的釜山沿海大巴一日游：提供邮轮码头接送，游览8个标志性景点（海东龙宫寺、联合国纪念公墓、札嘎其市场、BIFF广场、国际市场、甘川文化村、松岛海水浴场、龙头山公园），并保证在邮轮启航前返回。经济实惠之选——与小团产品路线相同，采用大型巴士。",
@@ -43,7 +43,7 @@
       "港口接送",
       "保证返回"
     ],
-    "heroImage": "/images/tours/busan-cruise-terminal/busan-cruise-terminal-bus-pickup.webp",
+    "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
     "imageAlt": "在釜山国际邮轮码头停靠的邮轮和AtoC Korea白色旅游大巴，导游挥手迎接抵达的4位客人"
   },
   "headlineLine1": "釜山邮轮靠岸游",
@@ -144,8 +144,8 @@
       "type": "photo",
       "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
       "location": "海东龙宫寺",
-      "alt": "海东龙宫寺 — on-route photo",
-      "caption": "海东龙宫寺"
+      "alt": "海东龙宫寺 — gallery image 1",
+      "caption": "海东龙宫寺 — photo 1"
     },
     {
       "id": 2,
@@ -166,13 +166,21 @@
     {
       "id": 4,
       "type": "photo",
+      "src": "/images/tours/biff-square/biff-gwangbok-night-umbrellas.webp",
+      "location": "BIFF广场",
+      "alt": "BIFF广场 — gallery image 1",
+      "caption": "BIFF广场 — photo 1"
+    },
+    {
+      "id": 5,
+      "type": "photo",
       "src": "/images/itinerary/gukje-market-arcade-sign-forest.webp",
       "location": "国际市场",
       "alt": "国际市场 — on-route photo",
       "caption": "国际市场"
     },
     {
-      "id": 5,
+      "id": 6,
       "type": "photo",
       "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
       "location": "甘川文化村",
@@ -180,7 +188,7 @@
       "caption": "甘川文化村"
     },
     {
-      "id": 6,
+      "id": 7,
       "type": "photo",
       "src": "/images/tours/songdo-beach/chatgpt-image-2026-5-10-12-32-12.webp",
       "location": "松岛海滩",
@@ -188,7 +196,7 @@
       "caption": "松岛海滩"
     },
     {
-      "id": 7,
+      "id": 8,
       "type": "photo",
       "src": "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57.webp",
       "location": "龙头山公园与釜山塔",
@@ -196,39 +204,47 @@
       "caption": "龙头山公园与釜山塔"
     },
     {
-      "id": 8,
+      "id": 9,
       "type": "photo",
       "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
       "location": "海东龙宫寺",
-      "alt": "海东龙宫寺 — on-route photo",
-      "caption": "海东龙宫寺"
-    },
-    {
-      "id": 9,
-      "type": "photo",
-      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
-      "location": "海东龙宫寺",
-      "alt": "海东龙宫寺 — on-route photo",
-      "caption": "海东龙宫寺"
+      "alt": "海东龙宫寺 — gallery image 2",
+      "caption": "海东龙宫寺 — photo 2"
     },
     {
       "id": 10,
       "type": "photo",
-      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
       "location": "海东龙宫寺",
-      "alt": "海东龙宫寺 — on-route photo",
-      "caption": "海东龙宫寺"
+      "alt": "海东龙宫寺 — gallery image 3",
+      "caption": "海东龙宫寺 — photo 3"
     },
     {
       "id": 11,
       "type": "photo",
-      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
       "location": "海东龙宫寺",
-      "alt": "海东龙宫寺 — on-route photo",
-      "caption": "海东龙宫寺"
+      "alt": "海东龙宫寺 — gallery image 4",
+      "caption": "海东龙宫寺 — photo 4"
     },
     {
       "id": 12,
+      "type": "photo",
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
+      "location": "海东龙宫寺",
+      "alt": "海东龙宫寺 — gallery image 5",
+      "caption": "海东龙宫寺 — photo 5"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+      "location": "海东龙宫寺",
+      "alt": "海东龙宫寺 — gallery image 6",
+      "caption": "海东龙宫寺 — photo 6"
+    },
+    {
+      "id": 14,
       "type": "photo",
       "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
       "location": "驻韩联合国纪念公墓",
@@ -236,7 +252,7 @@
       "caption": "驻韩联合国纪念公墓 — photo 2"
     },
     {
-      "id": 13,
+      "id": 15,
       "type": "photo",
       "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
       "location": "驻韩联合国纪念公墓",
@@ -244,79 +260,31 @@
       "caption": "驻韩联合国纪念公墓 — photo 3"
     },
     {
-      "id": 14,
-      "type": "photo",
-      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
-      "location": "驻韩联合国纪念公墓",
-      "alt": "驻韩联合国纪念公墓 — gallery image 9",
-      "caption": "驻韩联合国纪念公墓 — photo 9"
-    },
-    {
-      "id": 15,
-      "type": "photo",
-      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
-      "location": "驻韩联合国纪念公墓",
-      "alt": "驻韩联合国纪念公墓 — gallery image 10",
-      "caption": "驻韩联合国纪念公墓 — photo 10"
-    },
-    {
       "id": 16,
       "type": "photo",
-      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23-3.webp",
       "location": "驻韩联合国纪念公墓",
-      "alt": "驻韩联合国纪念公墓 — gallery image 11",
-      "caption": "驻韩联合国纪念公墓 — photo 11"
+      "alt": "驻韩联合国纪念公墓 — gallery image 4",
+      "caption": "驻韩联合国纪念公墓 — photo 4"
     },
     {
       "id": 17,
       "type": "photo",
-      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43-3.webp",
       "location": "驻韩联合国纪念公墓",
-      "alt": "驻韩联合国纪念公墓 — gallery image 12",
-      "caption": "驻韩联合国纪念公墓 — photo 12"
+      "alt": "驻韩联合国纪念公墓 — gallery image 5",
+      "caption": "驻韩联合国纪念公墓 — photo 5"
     },
     {
       "id": 18,
       "type": "photo",
-      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47-3.webp",
       "location": "驻韩联合国纪念公墓",
-      "alt": "驻韩联合国纪念公墓 — gallery image 13",
-      "caption": "驻韩联合国纪念公墓 — photo 13"
+      "alt": "驻韩联合国纪念公墓 — gallery image 6",
+      "caption": "驻韩联合国纪念公墓 — photo 6"
     },
     {
       "id": 19,
-      "type": "photo",
-      "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
-      "location": "驻韩联合国纪念公墓",
-      "alt": "驻韩联合国纪念公墓 — gallery image 14",
-      "caption": "驻韩联合国纪念公墓 — photo 14"
-    },
-    {
-      "id": 20,
-      "type": "photo",
-      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23-2.webp",
-      "location": "驻韩联合国纪念公墓",
-      "alt": "驻韩联合国纪念公墓 — gallery image 15",
-      "caption": "驻韩联合国纪念公墓 — photo 15"
-    },
-    {
-      "id": 21,
-      "type": "photo",
-      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43-2.webp",
-      "location": "驻韩联合国纪念公墓",
-      "alt": "驻韩联合国纪念公墓 — gallery image 16",
-      "caption": "驻韩联合国纪念公墓 — photo 16"
-    },
-    {
-      "id": 22,
-      "type": "photo",
-      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47-2.webp",
-      "location": "驻韩联合国纪念公墓",
-      "alt": "驻韩联合国纪念公墓 — gallery image 17",
-      "caption": "驻韩联合国纪念公墓 — photo 17"
-    },
-    {
-      "id": 23,
       "type": "photo",
       "src": "/images/itinerary/jagalchi-market-interior.webp",
       "location": "札嘎其鱼市场",
@@ -324,7 +292,7 @@
       "caption": "札嘎其鱼市场"
     },
     {
-      "id": 24,
+      "id": 20,
       "type": "photo",
       "src": "/images/itinerary/jagalchi-night-building.webp",
       "location": "札嘎其鱼市场",
@@ -332,7 +300,63 @@
       "caption": "札嘎其鱼市场"
     },
     {
+      "id": 21,
+      "type": "photo",
+      "src": "/images/tours/jagalchi-market/photo-001.webp",
+      "location": "札嘎其鱼市场",
+      "alt": "札嘎其鱼市场 — on-route photo",
+      "caption": "札嘎其鱼市场"
+    },
+    {
+      "id": 22,
+      "type": "photo",
+      "src": "/images/tours/jagalchi-market/photo-002.webp",
+      "location": "札嘎其鱼市场",
+      "alt": "札嘎其鱼市场 — on-route photo",
+      "caption": "札嘎其鱼市场"
+    },
+    {
+      "id": 23,
+      "type": "photo",
+      "src": "/images/tours/jagalchi-market/photo-003.webp",
+      "location": "札嘎其鱼市场",
+      "alt": "札嘎其鱼市场 — on-route photo",
+      "caption": "札嘎其鱼市场"
+    },
+    {
+      "id": 24,
+      "type": "photo",
+      "src": "/images/tours/jagalchi-market/photo-004.webp",
+      "location": "札嘎其鱼市场",
+      "alt": "札嘎其鱼市场 — on-route photo",
+      "caption": "札嘎其鱼市场"
+    },
+    {
       "id": 25,
+      "type": "photo",
+      "src": "/images/tours/biff-square/biff-square-arch-ai.webp",
+      "location": "BIFF广场",
+      "alt": "BIFF广场 — gallery image 2",
+      "caption": "BIFF广场 — photo 2"
+    },
+    {
+      "id": 26,
+      "type": "photo",
+      "src": "/images/tours/biff-square/biff-square-arch-day.webp",
+      "location": "BIFF广场",
+      "alt": "BIFF广场 — gallery image 3",
+      "caption": "BIFF广场 — photo 3"
+    },
+    {
+      "id": 27,
+      "type": "photo",
+      "src": "/images/tours/biff-square/biff-street-food-collage.webp",
+      "location": "BIFF广场",
+      "alt": "BIFF广场 — gallery image 4",
+      "caption": "BIFF广场 — photo 4"
+    },
+    {
+      "id": 28,
       "type": "photo",
       "src": "/images/itinerary/gukje-market-fresh-produce-aisle.webp",
       "location": "国际市场",
@@ -340,7 +364,7 @@
       "caption": "国际市场"
     },
     {
-      "id": 26,
+      "id": 29,
       "type": "photo",
       "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
       "location": "甘川文化村",
@@ -348,7 +372,7 @@
       "caption": "甘川文化村"
     },
     {
-      "id": 27,
+      "id": 30,
       "type": "photo",
       "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
       "location": "甘川文化村",
@@ -356,7 +380,7 @@
       "caption": "甘川文化村"
     },
     {
-      "id": 28,
+      "id": 31,
       "type": "photo",
       "src": "/images/tours/busan-tower/kakaotalk-20260510-222952680.webp",
       "location": "龙头山公园与釜山塔",
@@ -364,7 +388,7 @@
       "caption": "龙头山公园与釜山塔"
     },
     {
-      "id": 29,
+      "id": 32,
       "type": "photo",
       "src": "/images/tours/busan-tower/kakaotalk-20260510-230009595.webp",
       "location": "龙头山公园与釜山塔",
@@ -450,7 +474,84 @@
         "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
         "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
         "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
-        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp"
+        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
+        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+          "location": "海东龙宫寺",
+          "caption": "海东龙宫寺 — photo 1",
+          "alt": "海东龙宫寺 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+          "location": "海东龙宫寺",
+          "caption": "海东龙宫寺 — photo 2",
+          "alt": "海东龙宫寺 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+          "location": "海东龙宫寺",
+          "caption": "海东龙宫寺 — photo 3",
+          "alt": "海东龙宫寺 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+          "location": "海东龙宫寺",
+          "caption": "海东龙宫寺 — photo 4",
+          "alt": "海东龙宫寺 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
+          "location": "海东龙宫寺",
+          "caption": "海东龙宫寺 — photo 5",
+          "alt": "海东龙宫寺 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+          "location": "海东龙宫寺",
+          "caption": "海东龙宫寺 — photo 6",
+          "alt": "海东龙宫寺 — gallery image 6"
+        }
       ]
     },
     {
@@ -513,7 +614,10 @@
       "images": [
         "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
         "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
-        "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp"
+        "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+        "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23-3.webp",
+        "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43-3.webp",
+        "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47-3.webp"
       ],
       "imageCredits": [
         {
@@ -529,59 +633,15 @@
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23-3.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43-3.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23-2.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43-2.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47-2.webp",
+          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47-3.webp",
           "source": "atoc-korea"
         }
       ],
@@ -613,7 +673,7 @@
         {
           "id": 4,
           "type": "photo",
-          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23-3.webp",
           "location": "驻韩联合国纪念公墓",
           "caption": "驻韩联合国纪念公墓 — photo 4",
           "alt": "驻韩联合国纪念公墓 — gallery image 4"
@@ -621,7 +681,7 @@
         {
           "id": 5,
           "type": "photo",
-          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43-3.webp",
           "location": "驻韩联合国纪念公墓",
           "caption": "驻韩联合国纪念公墓 — photo 5",
           "alt": "驻韩联合国纪念公墓 — gallery image 5"
@@ -629,98 +689,10 @@
         {
           "id": 6,
           "type": "photo",
-          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47-3.webp",
           "location": "驻韩联合国纪念公墓",
           "caption": "驻韩联合国纪念公墓 — photo 6",
           "alt": "驻韩联合国纪念公墓 — gallery image 6"
-        },
-        {
-          "id": 7,
-          "type": "photo",
-          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
-          "location": "驻韩联合国纪念公墓",
-          "caption": "驻韩联合国纪念公墓 — photo 7",
-          "alt": "驻韩联合国纪念公墓 — gallery image 7"
-        },
-        {
-          "id": 8,
-          "type": "photo",
-          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
-          "location": "驻韩联合国纪念公墓",
-          "caption": "驻韩联合国纪念公墓 — photo 8",
-          "alt": "驻韩联合国纪念公墓 — gallery image 8"
-        },
-        {
-          "id": 9,
-          "type": "photo",
-          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
-          "location": "驻韩联合国纪念公墓",
-          "caption": "驻韩联合国纪念公墓 — photo 9",
-          "alt": "驻韩联合国纪念公墓 — gallery image 9"
-        },
-        {
-          "id": 10,
-          "type": "photo",
-          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
-          "location": "驻韩联合国纪念公墓",
-          "caption": "驻韩联合国纪念公墓 — photo 10",
-          "alt": "驻韩联合国纪念公墓 — gallery image 10"
-        },
-        {
-          "id": 11,
-          "type": "photo",
-          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
-          "location": "驻韩联合国纪念公墓",
-          "caption": "驻韩联合国纪念公墓 — photo 11",
-          "alt": "驻韩联合国纪念公墓 — gallery image 11"
-        },
-        {
-          "id": 12,
-          "type": "photo",
-          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
-          "location": "驻韩联合国纪念公墓",
-          "caption": "驻韩联合国纪念公墓 — photo 12",
-          "alt": "驻韩联合国纪念公墓 — gallery image 12"
-        },
-        {
-          "id": 13,
-          "type": "photo",
-          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
-          "location": "驻韩联合国纪念公墓",
-          "caption": "驻韩联合国纪念公墓 — photo 13",
-          "alt": "驻韩联合国纪念公墓 — gallery image 13"
-        },
-        {
-          "id": 14,
-          "type": "photo",
-          "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
-          "location": "驻韩联合国纪念公墓",
-          "caption": "驻韩联合国纪念公墓 — photo 14",
-          "alt": "驻韩联合国纪念公墓 — gallery image 14"
-        },
-        {
-          "id": 15,
-          "type": "photo",
-          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23-2.webp",
-          "location": "驻韩联合国纪念公墓",
-          "caption": "驻韩联合国纪念公墓 — photo 15",
-          "alt": "驻韩联合国纪念公墓 — gallery image 15"
-        },
-        {
-          "id": 16,
-          "type": "photo",
-          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43-2.webp",
-          "location": "驻韩联合国纪念公墓",
-          "caption": "驻韩联合国纪念公墓 — photo 16",
-          "alt": "驻韩联合国纪念公墓 — gallery image 16"
-        },
-        {
-          "id": 17,
-          "type": "photo",
-          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47-2.webp",
-          "location": "驻韩联合国纪念公墓",
-          "caption": "驻韩联合国纪念公墓 — photo 17",
-          "alt": "驻韩联合国纪念公墓 — gallery image 17"
         }
       ]
     },
@@ -861,7 +833,66 @@
         "closed": "全年开放；BIFF电影节期间（十月）最为热闹",
         "walking": "轻松——平坦铺装步行街",
         "admission": "免费"
-      }
+      },
+      "image": "/images/tours/biff-square/biff-gwangbok-night-umbrellas.webp",
+      "images": [
+        "/images/tours/biff-square/biff-gwangbok-night-umbrellas.webp",
+        "/images/tours/biff-square/biff-square-arch-ai.webp",
+        "/images/tours/biff-square/biff-square-arch-day.webp",
+        "/images/tours/biff-square/biff-street-food-collage.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/biff-square/biff-gwangbok-night-umbrellas.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/biff-square/biff-square-arch-ai.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/biff-square/biff-square-arch-day.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/biff-square/biff-street-food-collage.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/biff-square/biff-gwangbok-night-umbrellas.webp",
+          "location": "BIFF广场",
+          "caption": "BIFF广场 — photo 1",
+          "alt": "BIFF广场 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/biff-square/biff-square-arch-ai.webp",
+          "location": "BIFF广场",
+          "caption": "BIFF广场 — photo 2",
+          "alt": "BIFF广场 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/biff-square/biff-square-arch-day.webp",
+          "location": "BIFF广场",
+          "caption": "BIFF广场 — photo 3",
+          "alt": "BIFF广场 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/biff-square/biff-street-food-collage.webp",
+          "location": "BIFF广场",
+          "caption": "BIFF广场 — photo 4",
+          "alt": "BIFF广场 — gallery image 4"
+        }
+      ]
     },
     {
       "name": "国际市场",

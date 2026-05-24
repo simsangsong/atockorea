@@ -158,6 +158,30 @@
       "location": "설악산 국립공원",
       "alt": "설악산 국립공원 — gallery image 3",
       "caption": "설악산 국립공원 — photo 3"
+    },
+    {
+      "id": 4,
+      "type": "photo",
+      "src": "/images/tours/seoraksan-national-park/seoraksan-gwongumseong-cable-car.webp",
+      "location": "설악산 국립공원",
+      "alt": "설악산 국립공원 — gallery image 4",
+      "caption": "설악산 국립공원 — photo 4"
+    },
+    {
+      "id": 5,
+      "type": "photo",
+      "src": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsan-rock.webp",
+      "location": "설악산 국립공원",
+      "alt": "설악산 국립공원 — gallery image 5",
+      "caption": "설악산 국립공원 — photo 5"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/seoraksan-national-park/photo-003.webp",
+      "location": "설악산 국립공원",
+      "alt": "설악산 국립공원 — gallery image 6",
+      "caption": "설악산 국립공원 — photo 6"
     }
   ],
   "itineraryStops": [
@@ -252,7 +276,10 @@
       "images": [
         "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
         "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
-        "/images/tours/seoraksan-national-park/photo-001.webp"
+        "/images/tours/seoraksan-national-park/photo-001.webp",
+        "/images/tours/seoraksan-national-park/seoraksan-gwongumseong-cable-car.webp",
+        "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsan-rock.webp",
+        "/images/tours/seoraksan-national-park/photo-003.webp"
       ],
       "imageCredits": [
         {
@@ -265,6 +292,18 @@
         },
         {
           "url": "/images/tours/seoraksan-national-park/photo-001.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seoraksan-national-park/seoraksan-gwongumseong-cable-car.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsan-rock.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seoraksan-national-park/photo-003.webp",
           "source": "atoc-korea"
         }
       ],
@@ -292,6 +331,30 @@
           "location": "설악산 국립공원",
           "caption": "설악산 국립공원 — photo 3",
           "alt": "설악산 국립공원 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/seoraksan-national-park/seoraksan-gwongumseong-cable-car.webp",
+          "location": "설악산 국립공원",
+          "caption": "설악산 국립공원 — photo 4",
+          "alt": "설악산 국립공원 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsan-rock.webp",
+          "location": "설악산 국립공원",
+          "caption": "설악산 국립공원 — photo 5",
+          "alt": "설악산 국립공원 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/seoraksan-national-park/photo-003.webp",
+          "location": "설악산 국립공원",
+          "caption": "설악산 국립공원 — photo 6",
+          "alt": "설악산 국립공원 — gallery image 6"
         }
       ]
     },
@@ -1342,11 +1405,26 @@
               "note": "Operational details verified via established knowledge"
             },
             "images": [
-              "/images/tours/seoraksan-national-park/photo-001.webp"
+              "/images/tours/seoraksan-national-park/photo-001.webp",
+              "/images/tours/seoraksan-national-park/seoraksan-gwongumseong-cable-car.webp",
+              "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsan-rock.webp",
+              "/images/tours/seoraksan-national-park/photo-003.webp"
             ],
             "imageCredits": [
               {
                 "url": "/images/tours/seoraksan-national-park/photo-001.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seoraksan-national-park/seoraksan-gwongumseong-cable-car.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsan-rock.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seoraksan-national-park/photo-003.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1358,6 +1436,30 @@
                 "location": "설악산 국립공원",
                 "caption": "설악산 국립공원 — photo 1",
                 "alt": "설악산 국립공원 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/seoraksan-national-park/seoraksan-gwongumseong-cable-car.webp",
+                "location": "설악산 국립공원",
+                "caption": "설악산 국립공원 — photo 2",
+                "alt": "설악산 국립공원 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsan-rock.webp",
+                "location": "설악산 국립공원",
+                "caption": "설악산 국립공원 — photo 3",
+                "alt": "설악산 국립공원 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/seoraksan-national-park/photo-003.webp",
+                "location": "설악산 국립공원",
+                "caption": "설악산 국립공원 — photo 4",
+                "alt": "설악산 국립공원 — gallery image 4"
               }
             ]
           },

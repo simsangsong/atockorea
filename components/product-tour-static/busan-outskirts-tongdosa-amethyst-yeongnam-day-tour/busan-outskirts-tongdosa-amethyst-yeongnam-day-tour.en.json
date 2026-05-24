@@ -160,8 +160,8 @@
       "type": "photo",
       "src": "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-flight.webp",
       "location": "Yeongnam Alps Ice Valley Cable Car (Miryang)",
-      "alt": "Yeongnam Alps Ice Valley Cable Car (Miryang) — on-route photo",
-      "caption": "Yeongnam Alps Ice Valley Cable Car (Miryang)"
+      "alt": "Yeongnam Alps Ice Valley Cable Car (Miryang) — gallery image 1",
+      "caption": "Yeongnam Alps Ice Valley Cable Car (Miryang) — photo 1"
     },
     {
       "id": 4,
@@ -200,19 +200,27 @@
       "type": "photo",
       "src": "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-valley.webp",
       "location": "Yeongnam Alps Ice Valley Cable Car (Miryang)",
-      "alt": "Yeongnam Alps Ice Valley Cable Car (Miryang) — on-route photo",
-      "caption": "Yeongnam Alps Ice Valley Cable Car (Miryang)"
+      "alt": "Yeongnam Alps Ice Valley Cable Car (Miryang) — gallery image 2",
+      "caption": "Yeongnam Alps Ice Valley Cable Car (Miryang) — photo 2"
     },
     {
       "id": 9,
       "type": "photo",
       "src": "/images/tours/yeongnam-alps/yeongnam-alps-summit-viewpoint.webp",
       "location": "Yeongnam Alps Ice Valley Cable Car (Miryang)",
-      "alt": "Yeongnam Alps Ice Valley Cable Car (Miryang) — on-route photo",
-      "caption": "Yeongnam Alps Ice Valley Cable Car (Miryang)"
+      "alt": "Yeongnam Alps Ice Valley Cable Car (Miryang) — gallery image 3",
+      "caption": "Yeongnam Alps Ice Valley Cable Car (Miryang) — photo 3"
     },
     {
       "id": 10,
+      "type": "photo",
+      "src": "/images/tours/yeongnam-alps/yeongnam-alps-ice-valley-cable-car.webp",
+      "location": "Yeongnam Alps Ice Valley Cable Car (Miryang)",
+      "alt": "Yeongnam Alps Ice Valley Cable Car (Miryang) — gallery image 4",
+      "caption": "Yeongnam Alps Ice Valley Cable Car (Miryang) — photo 4"
+    },
+    {
+      "id": 11,
       "type": "photo",
       "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
       "location": "Gamcheon Culture Village (Busan)",
@@ -220,7 +228,7 @@
       "caption": "Gamcheon Culture Village (Busan) — photo 2"
     },
     {
-      "id": 11,
+      "id": 12,
       "type": "photo",
       "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
       "location": "Gamcheon Culture Village (Busan)",
@@ -228,7 +236,7 @@
       "caption": "Gamcheon Culture Village (Busan) — photo 3"
     },
     {
-      "id": 12,
+      "id": 13,
       "type": "photo",
       "src": "/images/itinerary/jagalchi-harbor-sign.webp",
       "location": "Gamcheon Culture Village (Busan)",
@@ -236,7 +244,7 @@
       "caption": "Gamcheon Culture Village (Busan) — photo 4"
     },
     {
-      "id": 13,
+      "id": 14,
       "type": "photo",
       "src": "/images/itinerary/jagalchi-market-interior.webp",
       "location": "Gamcheon Culture Village (Busan)",
@@ -244,7 +252,7 @@
       "caption": "Gamcheon Culture Village (Busan) — photo 5"
     },
     {
-      "id": 14,
+      "id": 15,
       "type": "photo",
       "src": "/images/itinerary/jagalchi-night-building.webp",
       "location": "Gamcheon Culture Village (Busan)",
@@ -252,12 +260,28 @@
       "caption": "Gamcheon Culture Village (Busan) — photo 6"
     },
     {
-      "id": 15,
+      "id": 16,
       "type": "photo",
-      "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01-2.webp",
+      "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01-3.webp",
       "location": "Gamcheon Culture Village (Busan)",
       "alt": "Gamcheon Culture Village (Busan) — gallery image 7",
       "caption": "Gamcheon Culture Village (Busan) — photo 7"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-day-sign.webp",
+      "location": "Gamcheon Culture Village (Busan)",
+      "alt": "Gamcheon Culture Village (Busan) — gallery image 8",
+      "caption": "Gamcheon Culture Village (Busan) — photo 8"
+    },
+    {
+      "id": 18,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-night.webp",
+      "location": "Gamcheon Culture Village (Busan)",
+      "alt": "Gamcheon Culture Village (Busan) — gallery image 9",
+      "caption": "Gamcheon Culture Village (Busan) — photo 9"
     }
   ],
   "itineraryStops": [
@@ -473,7 +497,60 @@
       "images": [
         "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-flight.webp",
         "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-valley.webp",
-        "/images/tours/yeongnam-alps/yeongnam-alps-summit-viewpoint.webp"
+        "/images/tours/yeongnam-alps/yeongnam-alps-summit-viewpoint.webp",
+        "/images/tours/yeongnam-alps/yeongnam-alps-ice-valley-cable-car.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-flight.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-valley.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/yeongnam-alps/yeongnam-alps-summit-viewpoint.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/yeongnam-alps/yeongnam-alps-ice-valley-cable-car.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-flight.webp",
+          "location": "Yeongnam Alps Ice Valley Cable Car (Miryang)",
+          "caption": "Yeongnam Alps Ice Valley Cable Car (Miryang) — photo 1",
+          "alt": "Yeongnam Alps Ice Valley Cable Car (Miryang) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-valley.webp",
+          "location": "Yeongnam Alps Ice Valley Cable Car (Miryang)",
+          "caption": "Yeongnam Alps Ice Valley Cable Car (Miryang) — photo 2",
+          "alt": "Yeongnam Alps Ice Valley Cable Car (Miryang) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/yeongnam-alps/yeongnam-alps-summit-viewpoint.webp",
+          "location": "Yeongnam Alps Ice Valley Cable Car (Miryang)",
+          "caption": "Yeongnam Alps Ice Valley Cable Car (Miryang) — photo 3",
+          "alt": "Yeongnam Alps Ice Valley Cable Car (Miryang) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/yeongnam-alps/yeongnam-alps-ice-valley-cable-car.webp",
+          "location": "Yeongnam Alps Ice Valley Cable Car (Miryang)",
+          "caption": "Yeongnam Alps Ice Valley Cable Car (Miryang) — photo 4",
+          "alt": "Yeongnam Alps Ice Valley Cable Car (Miryang) — gallery image 4"
+        }
       ]
     },
     {
@@ -539,7 +616,10 @@
         "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
         "/images/itinerary/jagalchi-harbor-sign.webp",
         "/images/itinerary/jagalchi-market-interior.webp",
-        "/images/itinerary/jagalchi-night-building.webp"
+        "/images/itinerary/jagalchi-night-building.webp",
+        "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01-3.webp",
+        "/images/tours/gamcheon-culture-village/gamcheon-little-prince-day-sign.webp",
+        "/images/tours/gamcheon-culture-village/gamcheon-little-prince-night.webp"
       ],
       "imageCredits": [
         {
@@ -567,7 +647,15 @@
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01-2.webp",
+          "url": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01-3.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-day-sign.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-night.webp",
           "source": "atoc-korea"
         }
       ],
@@ -623,10 +711,26 @@
         {
           "id": 7,
           "type": "photo",
-          "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01-2.webp",
+          "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01-3.webp",
           "location": "Gamcheon Culture Village (Busan)",
           "caption": "Gamcheon Culture Village (Busan) — photo 7",
           "alt": "Gamcheon Culture Village (Busan) — gallery image 7"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-day-sign.webp",
+          "location": "Gamcheon Culture Village (Busan)",
+          "caption": "Gamcheon Culture Village (Busan) — photo 8",
+          "alt": "Gamcheon Culture Village (Busan) — gallery image 8"
+        },
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-night.webp",
+          "location": "Gamcheon Culture Village (Busan)",
+          "caption": "Gamcheon Culture Village (Busan) — photo 9",
+          "alt": "Gamcheon Culture Village (Busan) — gallery image 9"
         }
       ]
     },
