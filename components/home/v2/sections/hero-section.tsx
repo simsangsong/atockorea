@@ -12,24 +12,24 @@ import { LandingPlannerCard } from "./landing-planner-card";
 const VALID_DESTINATIONS: ReadonlyArray<HeroDestination> = ["jeju", "seoul", "busan"];
 const HERO_SLIDES = [
   {
-    src: "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
-    alt: "Haedong Yonggungsa Temple cliff at golden hour, Busan",
+    src: "/images/home/hero/01-gyeongbokgung-sunset.webp",
+    alt: "Gwanghwamun Gate at Gyeongbokgung Palace at sunset with light trails, Seoul",
   },
   {
-    src: "/images/tours/gamcheon-culture-village/gamcheon-panorama.webp",
-    alt: "Gamcheon Culture Village hillside panorama in vivid color, Busan",
+    src: "/images/home/hero/02-haeundae-blueline-tram.webp",
+    alt: "Haeundae Blueline Park sky tram passing cherry blossoms above the East Sea, Busan",
   },
   {
-    src: "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58.webp",
-    alt: "Garden of Morning Calm in autumn with suspension bridge, Gyeonggi",
+    src: "/images/home/hero/03-cherry-blossom-canola-road.webp",
+    alt: "Cherry blossom and canola flower country road in full spring bloom, Jeju",
   },
   {
-    src: "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
-    alt: "Gyeongbokgung Palace courtyard with visitors in hanbok, Seoul",
+    src: "/images/home/hero/04-haedong-yonggungsa-sunrise.webp",
+    alt: "Haedong Yonggungsa Temple on the sea cliffs at golden sunrise, Busan",
   },
   {
-    src: "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
-    alt: "Cheonjeyeon Waterfall emerald pool, Jeju",
+    src: "/images/home/hero/05-seopjikoji-horse.webp",
+    alt: "Seopjikoji headland with a grazing horse and Seongsan Ilchulbong in the distance, Jeju",
   },
 ] as const;
 
@@ -151,11 +151,37 @@ export function HeroSection() {
                   loading={index === 0 ? "eager" : "lazy"}
                   sizes="100vw"
                   className="home-hero-slide object-cover object-center"
-                  style={{ animationDelay: `${index * 4.5}s` }}
+                  style={{
+                    animationDelay: `${index * 4.5}s`,
+                    filter: "saturate(1.08) contrast(1.06) brightness(0.99)",
+                  }}
                 />
               );
             })}
           </motion.div>
+          {/* Editorial film grain (Kodak Portra 400 입자감) — identical SVG
+              fractalNoise recipe as TourListCard + CatalogueHero (B2 family),
+              so the hero photography reads as the same image identity as the
+              card grid below. Pure CSS data-URL, ~1KB, no runtime cost. */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 z-[1] mix-blend-overlay"
+            style={{
+              backgroundImage:
+                "url(\"data:image/svg+xml,%3Csvg xmlns='http%3A//www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
+              opacity: 0.12,
+            }}
+          />
+          {/* Editorial corner roll-off vignette — transparent 60% → 0.15 alpha.
+              Tracks corners only, never dims the subject mid-frame. */}
+          <span
+            aria-hidden
+            className="pointer-events-none absolute inset-0 z-[1]"
+            style={{
+              background:
+                "radial-gradient(ellipse at center, transparent 60%, rgba(0,0,0,0.15) 100%)",
+            }}
+          />
           {/* Darken overlay — fades from 0 → 0.5 over the scroll range, giving
               a cinematic "lights fade" handoff into the trust panel below. */}
           <motion.div
