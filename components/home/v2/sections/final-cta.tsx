@@ -4,7 +4,7 @@ import type { CSSProperties } from "react";
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { V0ShadcnButton } from "@/components/home/v2/ui/v0-shadcn-button";
-import { ArrowRight, Clock, Users, Star, CheckCircle } from "lucide-react";
+import { ArrowRight, Clock, Users, ShieldCheck, CheckCircle } from "lucide-react";
 import { analytics } from "@/src/design/analytics";
 import {
   HOME_CTA_BROWSE_TOURS_HREF,
@@ -49,13 +49,10 @@ export function FinalCTA() {
             {t("premium.v2.finalCtaBlock.subtitle")}
           </p>
 
-          {/* Trust strip — single horizontal row with hairline dividers,
-              below the headline but ABOVE the CTA so it primes the click
-              with credibility. Star gets the single amber accent (the page's
-              one universal rating-color convention). */}
+          {/* Trust strip: compact operational reassurance before the CTA. */}
           <div className="mb-8 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 md:mb-10 md:gap-x-7">
             <span className="inline-flex items-center gap-1.5 text-caption font-semibold text-white/85">
-              <Star className="h-4 w-4 fill-amber-400 text-amber-400" aria-hidden />
+              <ShieldCheck className="h-4 w-4 text-amber-300" aria-hidden />
               {t("premium.v2.finalCtaBlock.trust1Fallback")}
             </span>
             <span className="inline-flex items-center gap-1.5 text-caption font-semibold text-white/85">

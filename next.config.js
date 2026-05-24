@@ -189,6 +189,8 @@ const nextConfig = {
       { protocol: 'https', hostname: 'farm7.staticflickr.com', pathname: '/**' },
       { protocol: 'https', hostname: 'farm8.staticflickr.com', pathname: '/**' },
       { protocol: 'https', hostname: 'farm9.staticflickr.com', pathname: '/**' },
+      { protocol: 'https', hostname: 'atockorea.com', pathname: '/images/**' },
+      { protocol: 'https', hostname: 'www.atockorea.com', pathname: '/images/**' },
       { protocol: 'https', hostname: '**.supabase.co', pathname: '/**' },
       { protocol: 'https', hostname: '**.supabase.in', pathname: '/**' },
       { protocol: 'https', hostname: 'cdn.visitjeju.net', pathname: '/**' },

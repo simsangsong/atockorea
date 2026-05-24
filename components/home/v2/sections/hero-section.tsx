@@ -263,16 +263,8 @@ export function HeroSection() {
         className="relative px-4 md:px-8 pt-0 pb-8 md:pb-10"
         style={{ background: "linear-gradient(to bottom, #faf9f7, #fdfcfb, #ffffff)" }}
       >
-        {/* ── Curation Proof ───────────────────────────────────────────
-            Replaces the old 4.9★ / 100K+ / 8 stat row. The headline's two
-            clauses map 1:1 to the two stats — "Curated by humans" → the
-            shortlist count, "Proven by travelers" → combined OTA bookings —
-            so the value proposition lands at a glance. The proof line carries
-            the breadth-of-review signal qualitatively (no fabricated count).
-            Fold-aware: mobile keeps tight padding and hides the longer proof
-            line so the matcher CTA stays close to the iPhone 14 fold (Phase
-            0c). Headline uses the hero's Inter family — no serif departure —
-            to preserve the established premium type voice. */}
+        {/* Curation proof: the compact stat row reinforces direct vetting
+            without changing the fold height or premium visual rhythm. */}
         <div className="mx-auto max-w-xl px-1 pt-3 pb-4 md:pt-5 md:pb-6">
           <h2
             className="text-center text-[0.98rem] font-bold leading-snug tracking-[-0.015em] text-slate-900 md:text-[1.2rem]"
@@ -281,11 +273,7 @@ export function HeroSection() {
             {t("premium.hero.curationHeadline")}
           </h2>
 
-          {/* Three stats under the two-clause headline: "Curated by humans"
-              → 30 curated tours; "Proven by travelers" → 100K+ OTA bookings
-              + 4.9★ average rating. The star rating is kept as the strongest
-              single conversion signal; the amber star ties to the brand
-              accent. Concise labels keep all three readable in 3 columns. */}
+          {/* Concise labels keep all three trust signals readable in 3 columns. */}
           <div className="mx-auto mt-3 grid max-w-md grid-cols-3 divide-x divide-slate-200/70 text-center md:mt-4">
             <div className="px-2.5">
               <span className="block text-h3 font-extrabold leading-none text-slate-900 md:text-[1.5rem]">
@@ -307,7 +295,7 @@ export function HeroSection() {
 
             <div className="px-2.5">
               <span className="block text-h3 font-extrabold leading-none text-slate-900 md:text-[1.5rem]">
-                {t("premium.hero.curationRatingValue")}<span className="text-[0.6em] text-amber-400">★</span>
+                {t("premium.hero.curationRatingValue")}
               </span>
               <span className="mt-1.5 block text-caption font-medium leading-tight text-slate-500">
                 {t("premium.hero.curationRatingLabel")}
@@ -319,7 +307,7 @@ export function HeroSection() {
             {t("premium.hero.curationProof")}
           </p>
         </div>
-        {/* ────────────────────────────────────────────────────────── */}
+        {/* End curation proof. */}
 
         {/* Unified planner header (responsive — Gate 0.2). Mobile keeps the
             eyebrow-only slim header (B.3 fold recovery: the matcher CTA
