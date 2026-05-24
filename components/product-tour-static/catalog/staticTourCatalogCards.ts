@@ -15,6 +15,7 @@
  */
 
 import type { TourProductPageLocale as Locale } from "@/lib/tour-product/resolveTourProductDbLocale";
+import { isTourSlugBlockedFromConsumerSurfaces } from "@/lib/tour-consumer-visibility";
 import {
   SLIM_CATALOG_PAGES_BY_LOCALE,
   SLIM_CATALOG_SLUG_ORDER,
@@ -128,22 +129,28 @@ function buildRegistration(slug: string, locale: Locale): StaticTourProductRegis
 
 const PER_LOCALE_PRODUCTS: Record<Locale, readonly StaticTourProductRegistration[]> = {
   en: SLIM_CATALOG_SLUG_ORDER.map((s) => buildRegistration(s, "en")).filter(
-    (r): r is StaticTourProductRegistration => r !== null,
+    (r): r is StaticTourProductRegistration =>
+      r !== null && !isTourSlugBlockedFromConsumerSurfaces(r.slug),
   ),
   ko: SLIM_CATALOG_SLUG_ORDER.map((s) => buildRegistration(s, "ko")).filter(
-    (r): r is StaticTourProductRegistration => r !== null,
+    (r): r is StaticTourProductRegistration =>
+      r !== null && !isTourSlugBlockedFromConsumerSurfaces(r.slug),
   ),
   zh: SLIM_CATALOG_SLUG_ORDER.map((s) => buildRegistration(s, "zh")).filter(
-    (r): r is StaticTourProductRegistration => r !== null,
+    (r): r is StaticTourProductRegistration =>
+      r !== null && !isTourSlugBlockedFromConsumerSurfaces(r.slug),
   ),
   "zh-TW": SLIM_CATALOG_SLUG_ORDER.map((s) => buildRegistration(s, "zh-TW")).filter(
-    (r): r is StaticTourProductRegistration => r !== null,
+    (r): r is StaticTourProductRegistration =>
+      r !== null && !isTourSlugBlockedFromConsumerSurfaces(r.slug),
   ),
   es: SLIM_CATALOG_SLUG_ORDER.map((s) => buildRegistration(s, "es")).filter(
-    (r): r is StaticTourProductRegistration => r !== null,
+    (r): r is StaticTourProductRegistration =>
+      r !== null && !isTourSlugBlockedFromConsumerSurfaces(r.slug),
   ),
   ja: SLIM_CATALOG_SLUG_ORDER.map((s) => buildRegistration(s, "ja")).filter(
-    (r): r is StaticTourProductRegistration => r !== null,
+    (r): r is StaticTourProductRegistration =>
+      r !== null && !isTourSlugBlockedFromConsumerSurfaces(r.slug),
   ),
 };
 
