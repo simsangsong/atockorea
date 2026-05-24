@@ -829,32 +829,50 @@ export function TourProductAiAssistantWidget({
           type="button"
           onClick={() => setOpen((o) => !o)}
           className={cn(
-            "group relative flex items-center justify-center rounded-full text-white transition-[box-shadow,transform] duration-200 ease-out",
+            "group relative flex items-center justify-center overflow-hidden rounded-full text-white transition-[box-shadow,transform] duration-200 ease-out",
             "h-[3.75rem] w-[3.75rem] sm:h-[4.25rem] sm:w-[4.25rem]",
-            "focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400/55 focus-visible:ring-offset-2",
+            "focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2",
             "active:scale-[0.94]",
+            "backdrop-blur-xl backdrop-saturate-150",
+            "ring-1 ring-white/15",
             open
-              ? "bg-home-v2-navy-900 shadow-[0_4px_24px_rgba(23,45,74,0.42)]"
+              ? "bg-black/80 shadow-[0_4px_18px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.18)]"
               : [
-                  // Deep navy base aligned with landing v2 primary CTAs
-                  // (home-v2-navy-800 #1e3a5f → -900 #172d4a → -950 #0f141c).
-                  "bg-gradient-to-br from-home-v2-navy-800 via-home-v2-navy-900 to-home-v2-navy-950",
-                  // Layered shadow + inner top-light + inner bottom-dark for
-                  // the 3D pebble feel, + a 1px amber hairline halo (the
-                  // signature accent that runs through landing/hub/detail).
-                  "shadow-[0_1px_2px_rgba(0,0,0,0.12),0_8px_22px_-4px_rgba(23,45,74,0.38),0_22px_50px_-10px_rgba(23,45,74,0.5),inset_0_1px_0_rgba(255,255,255,0.2),inset_0_-3px_8px_rgba(0,0,0,0.22),0_0_0_1px_rgba(251,191,36,0.22)]",
-                  // Hover: stronger lift + the amber halo grows from
-                  // hairline to 1.5px for a warm, intentional cue.
-                  "hover:-translate-y-0.5 hover:shadow-[0_2px_4px_rgba(0,0,0,0.14),0_12px_28px_-6px_rgba(23,45,74,0.45),0_28px_60px_-12px_rgba(23,45,74,0.58),inset_0_1px_0_rgba(255,255,255,0.2),inset_0_-3px_8px_rgba(0,0,0,0.22),0_0_0_1.5px_rgba(251,191,36,0.36)]",
+                  // True black-glass orb — translucent dark gradient picks
+                  // up the page behind it via backdrop-blur, so the button
+                  // reads as a polished glass pebble rather than a solid
+                  // chip.
+                  "bg-gradient-to-br from-slate-900/65 via-black/72 to-black/85",
+                  // Floating drop shadow + curved rim light (inset top
+                  // highlight) + inner bottom darken for sphere depth.
+                  "shadow-[0_2px_6px_rgba(0,0,0,0.35),0_10px_26px_-6px_rgba(0,0,0,0.55),0_24px_50px_-12px_rgba(0,0,0,0.45),inset_0_1.5px_0_rgba(255,255,255,0.3),inset_0_-2px_6px_rgba(0,0,0,0.45)]",
+                  // Hover: brighter glass rim + a touch more lift.
+                  "hover:-translate-y-0.5 hover:ring-white/25 hover:shadow-[0_3px_8px_rgba(0,0,0,0.4),0_14px_32px_-6px_rgba(0,0,0,0.6),0_30px_60px_-12px_rgba(0,0,0,0.55),inset_0_1.5px_0_rgba(255,255,255,0.36),inset_0_-2px_6px_rgba(0,0,0,0.48)]",
                 ],
           )}
           aria-expanded={open}
           aria-label={open ? labels.close : labels.title}
         >
+          {/* Specular gloss arc — the wet "glass" highlight that hugs the
+              top edge. Sits behind the icon so the robot still reads
+              cleanly. */}
+          {!open && (
+            <span
+              aria-hidden
+              className="pointer-events-none absolute inset-x-2.5 top-1.5 h-3.5 rounded-full bg-gradient-to-b from-white/35 via-white/12 to-transparent blur-[1.5px]"
+            />
+          )}
+          {/* Subtle bottom under-glow for a "floating-on-glass" sit. */}
+          {!open && (
+            <span
+              aria-hidden
+              className="pointer-events-none absolute inset-x-4 bottom-1.5 h-2 rounded-full bg-white/[0.06] blur-[3px]"
+            />
+          )}
           {open ? (
-            <X className="h-6 w-6" strokeWidth={2.2} />
+            <X className="relative h-6 w-6" strokeWidth={2.2} />
           ) : (
-            <ChatBotAvatar className="h-11 w-11 drop-shadow-[0_2px_3px_rgba(0,0,0,0.25)] sm:h-12 sm:w-12" />
+            <ChatBotAvatar className="relative h-11 w-11 drop-shadow-[0_2px_4px_rgba(0,0,0,0.45)] sm:h-12 sm:w-12" />
           )}
         </button>
         {!open && (
