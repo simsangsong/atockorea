@@ -206,31 +206,32 @@ export function HeroSection() {
           className="relative z-10 mx-auto mb-0 w-full max-w-2xl px-3 text-center sm:px-5 md:mb-0.5 md:px-8"
           style={{ y: headlineY, opacity: headlineOpacity }}
         >
-          {/* Photo-visibility pass: season chip removed (§B reversal of Phase
-              C.1, 2026-05-24). H1+subhead shrunk ~15% and the inner padding
-              tightened so the text panel hugs the bottom edge — frees the
-              top ~80px of the photo for the cinematic crop. The radial
-              gradient is tightened to track the smaller text. */}
+          {/* Photo-visibility pass round 2 (§B 2026-05-24 (3)): the dark
+              radial scrim behind the headline is dramatically lightened
+              (~60% opacity reduction across all stops) so the hero photo
+              reads through the text panel, and the text-shadow stack is
+              strengthened (blur 12→16, alpha 0.5→0.6) to keep white
+              copy legible against any photo. */}
           <div className="relative inline-block max-w-full px-4 py-1.5 md:px-6 md:py-2">
             <span
               aria-hidden
-              className="pointer-events-none absolute -inset-x-8 -inset-y-4 -z-10 rounded-[3rem] bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.88)_0%,rgba(0,0,0,0.72)_35%,rgba(0,0,0,0.45)_60%,rgba(0,0,0,0.18)_80%,transparent_95%)] md:-inset-x-14 md:-inset-y-6"
+              className="pointer-events-none absolute -inset-x-8 -inset-y-4 -z-10 rounded-[3rem] bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.35)_0%,rgba(0,0,0,0.25)_35%,rgba(0,0,0,0.12)_60%,rgba(0,0,0,0.04)_80%,transparent_95%)] md:-inset-x-14 md:-inset-y-6"
             />
             <h1
               className="text-[1.1rem] font-medium leading-[1.18] tracking-[-0.025em] text-white md:text-[1.4rem] lg:text-[1.7rem]"
               style={{
                 fontFamily: "var(--font-inter), Inter, system-ui, sans-serif",
-                textShadow: "0 2px 12px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.45)",
+                textShadow: "0 2px 16px rgba(0,0,0,0.6), 0 1px 4px rgba(0,0,0,0.55)",
               }}
             >
               {t("premium.hero.headlineLine1")}
             </h1>
 
             <p
-              className="mx-auto mt-1.5 max-w-md text-[0.78rem] font-normal leading-snug tracking-[-0.01em] text-white/85 md:mt-2 md:text-caption"
+              className="mx-auto mt-1.5 max-w-md text-[0.78rem] font-normal leading-snug tracking-[-0.01em] text-white/90 md:mt-2 md:text-caption"
               style={{
                 fontFamily: "var(--font-inter), Inter, system-ui, sans-serif",
-                textShadow: "0 1px 8px rgba(0,0,0,0.55), 0 1px 2px rgba(0,0,0,0.45)",
+                textShadow: "0 1px 12px rgba(0,0,0,0.65), 0 1px 3px rgba(0,0,0,0.55)",
               }}
             >
               {t("premium.hero.atfHeroSubhead")}
