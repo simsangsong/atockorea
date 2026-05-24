@@ -227,14 +227,6 @@
       "caption": "Gyeongbokgung Palace — photo 10"
     },
     {
-      "id": 13,
-      "type": "photo",
-      "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09-3.webp",
-      "location": "Gyeongbokgung Palace",
-      "alt": "Gyeongbokgung Palace — gallery image 11",
-      "caption": "Gyeongbokgung Palace — photo 11"
-    },
-    {
       "id": 14,
       "type": "photo",
       "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10-3.webp",
@@ -299,14 +291,6 @@
       "caption": "Gyeongbokgung Palace — photo 19"
     },
     {
-      "id": 22,
-      "type": "photo",
-      "src": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07-3.webp",
-      "location": "Bukchon Hanok Village",
-      "alt": "Bukchon Hanok Village — gallery image 2",
-      "caption": "Bukchon Hanok Village — photo 2"
-    },
-    {
       "id": 23,
       "type": "photo",
       "src": "/images/tours/bukchon-hanok/bukchon-hanbok-alley-back.webp",
@@ -329,22 +313,6 @@
       "location": "Insadong cultural street",
       "alt": "Insadong cultural street — gallery image 2",
       "caption": "Insadong cultural street — photo 2"
-    },
-    {
-      "id": 26,
-      "type": "photo",
-      "src": "/images/tours/insadong/photo-001-2.webp",
-      "location": "Insadong cultural street",
-      "alt": "Insadong cultural street — gallery image 3",
-      "caption": "Insadong cultural street — photo 3"
-    },
-    {
-      "id": 27,
-      "type": "photo",
-      "src": "/images/tours/insadong/photo-002-2.webp",
-      "location": "Insadong cultural street",
-      "alt": "Insadong cultural street — gallery image 4",
-      "caption": "Insadong cultural street — photo 4"
     }
   ],
   "itineraryStops": [
@@ -471,7 +439,6 @@
         "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
         "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
         "/images/tours/gyeongbokgung/photo-004.webp",
-        "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09-3.webp",
         "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10-3.webp",
         "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11-3.webp",
         "/images/tours/gyeongbokgung/gwanghwamun-gate-front-day.webp",
@@ -523,7 +490,7 @@
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09-3.webp",
+          "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
           "source": "atoc-korea"
         },
         {
@@ -643,7 +610,7 @@
         {
           "id": 11,
           "type": "photo",
-          "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09-3.webp",
+          "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
           "location": "Gyeongbokgung Palace",
           "caption": "Gyeongbokgung Palace — photo 11",
           "alt": "Gyeongbokgung Palace — gallery image 11"
@@ -772,7 +739,6 @@
       "image": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
       "images": [
         "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
-        "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07-3.webp",
         "/images/tours/bukchon-hanok/bukchon-hanbok-alley-back.webp",
         "/images/tours/bukchon-hanok/bukchon-hanbok-two-women.webp"
       ],
@@ -782,7 +748,7 @@
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07-3.webp",
+          "url": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
           "source": "atoc-korea"
         },
         {
@@ -806,7 +772,7 @@
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07-3.webp",
+          "src": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
           "location": "Bukchon Hanok Village",
           "caption": "Bukchon Hanok Village — photo 2",
           "alt": "Bukchon Hanok Village — gallery image 2"
@@ -976,9 +942,7 @@
       "image": "/images/tours/insadong/photo-001.webp",
       "images": [
         "/images/tours/insadong/photo-001.webp",
-        "/images/tours/insadong/photo-002.webp",
-        "/images/tours/insadong/photo-001-2.webp",
-        "/images/tours/insadong/photo-002-2.webp"
+        "/images/tours/insadong/photo-002.webp"
       ],
       "imageCredits": [
         {
@@ -990,11 +954,11 @@
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/insadong/photo-001-2.webp",
+          "url": "/images/tours/insadong/photo-001.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/insadong/photo-002-2.webp",
+          "url": "/images/tours/insadong/photo-002.webp",
           "source": "atoc-korea"
         }
       ],
@@ -1018,7 +982,7 @@
         {
           "id": 3,
           "type": "photo",
-          "src": "/images/tours/insadong/photo-001-2.webp",
+          "src": "/images/tours/insadong/photo-001.webp",
           "location": "Insadong cultural street",
           "caption": "Insadong cultural street — photo 3",
           "alt": "Insadong cultural street — gallery image 3"
@@ -1026,7 +990,7 @@
         {
           "id": 4,
           "type": "photo",
-          "src": "/images/tours/insadong/photo-002-2.webp",
+          "src": "/images/tours/insadong/photo-002.webp",
           "location": "Insadong cultural street",
           "caption": "Insadong cultural street — photo 4",
           "alt": "Insadong cultural street — gallery image 4"
@@ -1894,11 +1858,11 @@
               "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-26.webp",
               "/images/tours/gyeongbokgung/chatgpt-image-2026-5-11-12-21-39.webp",
               "/images/tours/gyeongbokgung/kakaotalk-20260511-010727643.webp",
-              "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09-2.webp",
+              "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
               "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10-2.webp",
               "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11-2.webp",
               "/images/tours/gyeongbokgung/photo-004.webp",
-              "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09-3.webp",
+              "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
               "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-10-3.webp",
               "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-11-3.webp",
               "/images/tours/gyeongbokgung/gwanghwamun-gate-front-day.webp",
@@ -1946,7 +1910,7 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09-2.webp",
+                "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
                 "source": "atoc-korea"
               },
               {
@@ -1962,7 +1926,7 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09-3.webp",
+                "url": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
                 "source": "atoc-korea"
               },
               {
@@ -2074,7 +2038,7 @@
               {
                 "id": 10,
                 "type": "photo",
-                "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09-2.webp",
+                "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
                 "location": "Gyeongbokgung Palace",
                 "caption": "Gyeongbokgung Palace — photo 10",
                 "alt": "Gyeongbokgung Palace — gallery image 10"
@@ -2106,7 +2070,7 @@
               {
                 "id": 14,
                 "type": "photo",
-                "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09-3.webp",
+                "src": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
                 "location": "Gyeongbokgung Palace",
                 "caption": "Gyeongbokgung Palace — photo 14",
                 "alt": "Gyeongbokgung Palace — gallery image 14"
@@ -2198,8 +2162,8 @@
             },
             "images": [
               "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
-              "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07-2.webp",
-              "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07-3.webp",
+              "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
+              "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
               "/images/tours/bukchon-hanok/bukchon-hanbok-alley-back.webp",
               "/images/tours/bukchon-hanok/bukchon-hanbok-two-women.webp"
             ],
@@ -2209,11 +2173,11 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07-2.webp",
+                "url": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07-3.webp",
+                "url": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
                 "source": "atoc-korea"
               },
               {
@@ -2237,7 +2201,7 @@
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07-2.webp",
+                "src": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
                 "location": "Bukchon Hanok Village",
                 "caption": "Bukchon Hanok Village — photo 2",
                 "alt": "Bukchon Hanok Village — gallery image 2"
@@ -2245,7 +2209,7 @@
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07-3.webp",
+                "src": "/images/tours/bukchon-hanok/kakaotalk-20260510-222949305-07.webp",
                 "location": "Bukchon Hanok Village",
                 "caption": "Bukchon Hanok Village — photo 3",
                 "alt": "Bukchon Hanok Village — gallery image 3"
@@ -2354,8 +2318,8 @@
             "images": [
               "/images/tours/insadong/photo-001.webp",
               "/images/tours/insadong/photo-002.webp",
-              "/images/tours/insadong/photo-001-2.webp",
-              "/images/tours/insadong/photo-002-2.webp"
+              "/images/tours/insadong/photo-001.webp",
+              "/images/tours/insadong/photo-002.webp"
             ],
             "imageCredits": [
               {
@@ -2367,11 +2331,11 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/insadong/photo-001-2.webp",
+                "url": "/images/tours/insadong/photo-001.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/insadong/photo-002-2.webp",
+                "url": "/images/tours/insadong/photo-002.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2395,7 +2359,7 @@
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/insadong/photo-001-2.webp",
+                "src": "/images/tours/insadong/photo-001.webp",
                 "location": "Insadong cultural street",
                 "caption": "Insadong cultural street — photo 3",
                 "alt": "Insadong cultural street — gallery image 3"
@@ -2403,7 +2367,7 @@
               {
                 "id": 4,
                 "type": "photo",
-                "src": "/images/tours/insadong/photo-002-2.webp",
+                "src": "/images/tours/insadong/photo-002.webp",
                 "location": "Insadong cultural street",
                 "caption": "Insadong cultural street — photo 4",
                 "alt": "Insadong cultural street — gallery image 4"
