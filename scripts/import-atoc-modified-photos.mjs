@@ -173,6 +173,15 @@ const FOLDER_MAP = {
     poiKeys: [],
     skipJson: true,
   },
+  /** 2026-05-25 atoc-photos batch — new POIs / locations (BIFF / 영남알프스 / 보문호수 / 해동용궁사) */
+  BIFF광장: { assetSlug: "biff-square", poiKeys: ["biff_square"], nameGuard: /biff|film festival|광장|영화제/i },
+  영남알프스: {
+    assetSlug: "yeongnam-alps",
+    poiKeys: ["yeongnam_alps_ice_valley_cable_car"],
+    nameGuard: /yeongnam|영남알프스|alps|얼음골|cable car|케이블카/i,
+  },
+  보문호수: { assetSlug: "bomun-lake", poiKeys: ["bomun_lake"], nameGuard: /bomun|보문|경주월드|gyeongju world/i },
+  해동용궁사: { assetSlug: "haedong-yonggungsa", poiKeys: ["haedong_yonggungsa"] },
   /** 2026-05-24 atoc-photos batch — new POIs / locations */
   한림공원: { assetSlug: "hallim-park", poiKeys: ["hallim_park"] },
   자갈치시장: {

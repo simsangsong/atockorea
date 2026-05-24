@@ -160,8 +160,8 @@
       "type": "photo",
       "src": "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-flight.webp",
       "location": "嶺南アルプス얼음골ケーブルカー（密陽）",
-      "alt": "嶺南アルプス얼음골ケーブルカー（密陽） — on-route photo",
-      "caption": "嶺南アルプス얼음골ケーブルカー（密陽）"
+      "alt": "嶺南アルプス얼음골ケーブルカー（密陽） — gallery image 1",
+      "caption": "嶺南アルプス얼음골ケーブルカー（密陽） — photo 1"
     },
     {
       "id": 4,
@@ -200,19 +200,27 @@
       "type": "photo",
       "src": "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-valley.webp",
       "location": "嶺南アルプス얼음골ケーブルカー（密陽）",
-      "alt": "嶺南アルプス얼음골ケーブルカー（密陽） — on-route photo",
-      "caption": "嶺南アルプス얼음골ケーブルカー（密陽）"
+      "alt": "嶺南アルプス얼음골ケーブルカー（密陽） — gallery image 2",
+      "caption": "嶺南アルプス얼음골ケーブルカー（密陽） — photo 2"
     },
     {
       "id": 9,
       "type": "photo",
       "src": "/images/tours/yeongnam-alps/yeongnam-alps-summit-viewpoint.webp",
       "location": "嶺南アルプス얼음골ケーブルカー（密陽）",
-      "alt": "嶺南アルプス얼음골ケーブルカー（密陽） — on-route photo",
-      "caption": "嶺南アルプス얼음골ケーブルカー（密陽）"
+      "alt": "嶺南アルプス얼음골ケーブルカー（密陽） — gallery image 3",
+      "caption": "嶺南アルプス얼음골ケーブルカー（密陽） — photo 3"
     },
     {
       "id": 10,
+      "type": "photo",
+      "src": "/images/tours/yeongnam-alps/yeongnam-alps-ice-valley-cable-car.webp",
+      "location": "嶺南アルプス얼음골ケーブルカー（密陽）",
+      "alt": "嶺南アルプス얼음골ケーブルカー（密陽） — gallery image 4",
+      "caption": "嶺南アルプス얼음골ケーブルカー（密陽） — photo 4"
+    },
+    {
+      "id": 11,
       "type": "photo",
       "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
       "location": "甘川文化村",
@@ -220,7 +228,7 @@
       "caption": "甘川文化村"
     },
     {
-      "id": 11,
+      "id": 12,
       "type": "photo",
       "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
       "location": "甘川文化村",
@@ -228,7 +236,7 @@
       "caption": "甘川文化村"
     },
     {
-      "id": 12,
+      "id": 13,
       "type": "photo",
       "src": "/images/itinerary/jagalchi-harbor-sign.webp",
       "location": "甘川文化村",
@@ -236,7 +244,7 @@
       "caption": "甘川文化村"
     },
     {
-      "id": 13,
+      "id": 14,
       "type": "photo",
       "src": "/images/itinerary/jagalchi-market-interior.webp",
       "location": "甘川文化村",
@@ -244,7 +252,7 @@
       "caption": "甘川文化村"
     },
     {
-      "id": 14,
+      "id": 15,
       "type": "photo",
       "src": "/images/itinerary/jagalchi-night-building.webp",
       "location": "甘川文化村",
@@ -465,7 +473,60 @@
       "images": [
         "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-flight.webp",
         "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-valley.webp",
-        "/images/tours/yeongnam-alps/yeongnam-alps-summit-viewpoint.webp"
+        "/images/tours/yeongnam-alps/yeongnam-alps-summit-viewpoint.webp",
+        "/images/tours/yeongnam-alps/yeongnam-alps-ice-valley-cable-car.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-flight.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-valley.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/yeongnam-alps/yeongnam-alps-summit-viewpoint.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/yeongnam-alps/yeongnam-alps-ice-valley-cable-car.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-flight.webp",
+          "location": "嶺南アルプス얼음골ケーブルカー（密陽）",
+          "caption": "嶺南アルプス얼음골ケーブルカー（密陽） — photo 1",
+          "alt": "嶺南アルプス얼음골ケーブルカー（密陽） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/yeongnam-alps/yeongnam-alps-cable-car-valley.webp",
+          "location": "嶺南アルプス얼음골ケーブルカー（密陽）",
+          "caption": "嶺南アルプス얼음골ケーブルカー（密陽） — photo 2",
+          "alt": "嶺南アルプス얼음골ケーブルカー（密陽） — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/yeongnam-alps/yeongnam-alps-summit-viewpoint.webp",
+          "location": "嶺南アルプス얼음골ケーブルカー（密陽）",
+          "caption": "嶺南アルプス얼음골ケーブルカー（密陽） — photo 3",
+          "alt": "嶺南アルプス얼음골ケーブルカー（密陽） — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/yeongnam-alps/yeongnam-alps-ice-valley-cable-car.webp",
+          "location": "嶺南アルプス얼음골ケーブルカー（密陽）",
+          "caption": "嶺南アルプス얼음골ケーブルカー（密陽） — photo 4",
+          "alt": "嶺南アルプス얼음골ケーブルカー（密陽） — gallery image 4"
+        }
       ]
     },
     {
