@@ -16,12 +16,15 @@ type DestinationCardProps = {
 /**
  * Portrait destination card — Vogue/Bazaar cover treatment (2026-05-25).
  *
- * Photo treatment (aggressive editorial pass per user direction):
- *   • B2-family filter dialed up — saturate 1.18 / contrast 1.18 / brightness 0.92
- *     (deeper magazine cover tone, slight darken accepted as the price of premium)
- *   • SVG fractalNoise film grain (opacity 0.16, mix-blend-overlay) — stronger
- *     than hero's 0.12 because portrait cards read closer
- *   • Corner roll-off vignette (transparent 50% → rgba(0,0,0,0.28))
+ * Photo treatment (refined 2026-05-25 — user note: "조금만 밝고 고급지게,
+ * 그렇다고 너무 밝게는 말고"):
+ *   • Filter softened from the first pass — saturate 1.14 / contrast 1.10 /
+ *     brightness 0.98 (was 1.18/1.18/0.92). Still richer than neutral but
+ *     the moodiness no longer reads as "underexposed"
+ *   • SVG fractalNoise film grain opacity 0.13 (was 0.16) so the grain
+ *     supports tone instead of muddying it
+ *   • Corner roll-off vignette transparent 55% → rgba(0,0,0,0.20) (was
+ *     50%→0.28) — same shape, lighter outer ring
  *   • Existing bottom-up dark gradient retained for name legibility
  *
  * Typography (Kinfolk / Vogue Korea cover, upright serif — italic banned per §B
@@ -52,30 +55,31 @@ export function DestinationCard({
           fill
           sizes="(max-width: 768px) 60vw, 33vw"
           className="object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.04] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
-          style={{ filter: "saturate(1.18) contrast(1.18) brightness(0.92)" }}
+          style={{ filter: "saturate(1.14) contrast(1.10) brightness(0.98)" }}
         />
       </div>
 
       {/* Editorial film grain — same fractalNoise recipe as hero / TourListCard,
-          opacity bumped 0.12→0.16 because the portrait card reads at closer
-          range and the grain needs to register. */}
+          opacity 0.13 (softened from initial 0.16 after the photo brightness
+          was nudged up — grain supports tone instead of muddying it). */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 mix-blend-overlay"
         style={{
           backgroundImage:
             "url(\"data:image/svg+xml,%3Csvg xmlns='http%3A//www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
-          opacity: 0.16,
+          opacity: 0.13,
         }}
       />
-      {/* Corner roll-off vignette — deeper than hero's (0.15 → 0.28) for that
-          editorial "shot for print" feel. */}
+      {/* Corner roll-off vignette — softened from initial pass (50%→0.28) to
+          a more present-but-airy 55%→0.20 so the photo breathes under the
+          new brightness target. */}
       <span
         aria-hidden
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.28) 100%)",
+            "radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.20) 100%)",
         }}
       />
 
