@@ -178,7 +178,7 @@
       "caption": "귤(Gyul) 따기 체험 — 겨울 한라봉 최성수기 — photo 2"
     },
     {
-      "id": 8,
+      "id": 6,
       "type": "photo",
       "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
       "location": "카멜리아힐 (사계절 대표 꽃 정원)",
@@ -186,7 +186,7 @@
       "caption": "카멜리아힐 (사계절 대표 꽃 정원) — photo 2"
     },
     {
-      "id": 11,
+      "id": 7,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
       "location": "대포 주상절리대",
@@ -194,7 +194,7 @@
       "caption": "대포 주상절리대 — photo 2"
     },
     {
-      "id": 12,
+      "id": 8,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
       "location": "대포 주상절리대",
@@ -202,7 +202,7 @@
       "caption": "대포 주상절리대 — photo 3"
     },
     {
-      "id": 13,
+      "id": 9,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
       "location": "대포 주상절리대",
@@ -210,7 +210,7 @@
       "caption": "대포 주상절리대 — photo 4"
     },
     {
-      "id": 14,
+      "id": 10,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/photo-005.webp",
       "location": "대포 주상절리대",
@@ -218,7 +218,7 @@
       "caption": "대포 주상절리대 — photo 5"
     },
     {
-      "id": 20,
+      "id": 11,
       "type": "photo",
       "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
       "location": "천제연 폭포",
@@ -226,7 +226,7 @@
       "caption": "천제연 폭포 — photo 2"
     },
     {
-      "id": 21,
+      "id": 12,
       "type": "photo",
       "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
       "location": "천제연 폭포",
@@ -234,7 +234,7 @@
       "caption": "천제연 폭포 — photo 3"
     },
     {
-      "id": 22,
+      "id": 13,
       "type": "photo",
       "src": "/images/tours/cheonjeyeon-falls/photo-004.webp",
       "location": "천제연 폭포",
@@ -1681,53 +1681,7 @@
       "section_html_id": null,
       "component": "투어 분위기 갤러리",
       "props": {
-        "galleryItems": [
-          {
-            "id": "g1",
-            "type": "photo",
-            "src": "",
-            "alt": "남서쪽 전망대에서 바라본 한라산의 눈 덮인 능선, 전경에 낮은 숲이 펼쳐진 모습",
-            "caption": "남서쪽 전망대에서 바라본 한라산 겨울 풍경",
-            "location": "한라산 1100도로 또는 어리목 탐방로 입구, 제주 중심부",
-            "atmosphere": "청명한 겨울 산의 공기; 해안 지역에 눈이 없어도 정상부의 설경을 볼 수 있음"
-          },
-          {
-            "id": "g2",
-            "type": "photo",
-            "src": "",
-            "alt": "붉은 꽃이 만개한 성숙한 동백나무가 줄지어 선 정원 산책로",
-            "caption": "동백수목원 겨울 만개 시기 (12월~2월)",
-            "location": "동백수목원, 안덕, 제주 남부",
-            "atmosphere": "6,000그루 이상의 동백나무와 500여 품종이 어우러진 겨울 최성수기 풍경"
-          },
-          {
-            "id": "g3",
-            "type": "photo",
-            "src": "",
-            "alt": "제주 과수원의 낮은 나무에서 잘 익은 주황빛 귤을 따는 손",
-            "caption": "제주 귤(감귤) 과수원 겨울 수확 체험",
-            "location": "제주 남서부 감귤 과수원 (특정 농장은 순환 운영)",
-            "atmosphere": "제주 농업 직접 체험; 가위와 바구니 제공"
-          },
-          {
-            "id": "g4",
-            "type": "photo",
-            "src": "",
-            "alt": "겨울 바다에서 솟아오른 육각형 주상절리 절벽",
-            "caption": "대포 주상절리 용암 절벽",
-            "location": "대포, 중문 해안, 제주 남부",
-            "atmosphere": "UNESCO 세계지질공원 겨울 해안선; 절벽 아래 장엄한 파도"
-          },
-          {
-            "id": "g5",
-            "type": "photo",
-            "src": "",
-            "alt": "선임교가 위를 가로지르는 숲속 계곡의 3단 폭포",
-            "caption": "천제연 폭포와 선임교(칠선녀교)",
-            "location": "천제연 폭포, 서귀포, 제주 남부",
-            "atmosphere": "숲속 계곡 폭포 정차지; 전설 속 일곱 선녀가 묘사된 다리"
-          }
-        ]
+        "galleryItems": []
       }
     },
     {
@@ -1811,13 +1765,7 @@
             "images": [
               "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
               "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
-              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
-              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21-2.webp",
-              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22-2.webp",
-              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23-2.webp",
-              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21-3.webp",
-              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22-3.webp",
-              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23-3.webp"
+              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp"
             ],
             "imageCredits": [
               {
@@ -1833,27 +1781,27 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21-2.webp",
+                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22-2.webp",
+                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23-2.webp",
+                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21-3.webp",
+                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22-3.webp",
+                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23-3.webp",
+                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1881,54 +1829,6 @@
                 "location": "한라산 전망대 (어리목 또는 1100 습지)",
                 "caption": "한라산 전망대 (어리목 또는 1100 습지) — photo 3",
                 "alt": "한라산 전망대 (어리목 또는 1100 습지) — gallery image 3"
-              },
-              {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21-2.webp",
-                "location": "한라산 전망대 (어리목 또는 1100 습지)",
-                "caption": "한라산 전망대 (어리목 또는 1100 습지) — photo 4",
-                "alt": "한라산 전망대 (어리목 또는 1100 습지) — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22-2.webp",
-                "location": "한라산 전망대 (어리목 또는 1100 습지)",
-                "caption": "한라산 전망대 (어리목 또는 1100 습지) — photo 5",
-                "alt": "한라산 전망대 (어리목 또는 1100 습지) — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23-2.webp",
-                "location": "한라산 전망대 (어리목 또는 1100 습지)",
-                "caption": "한라산 전망대 (어리목 또는 1100 습지) — photo 6",
-                "alt": "한라산 전망대 (어리목 또는 1100 습지) — gallery image 6"
-              },
-              {
-                "id": 7,
-                "type": "photo",
-                "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21-3.webp",
-                "location": "한라산 전망대 (어리목 또는 1100 습지)",
-                "caption": "한라산 전망대 (어리목 또는 1100 습지) — photo 7",
-                "alt": "한라산 전망대 (어리목 또는 1100 습지) — gallery image 7"
-              },
-              {
-                "id": 8,
-                "type": "photo",
-                "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22-3.webp",
-                "location": "한라산 전망대 (어리목 또는 1100 습지)",
-                "caption": "한라산 전망대 (어리목 또는 1100 습지) — photo 8",
-                "alt": "한라산 전망대 (어리목 또는 1100 습지) — gallery image 8"
-              },
-              {
-                "id": 9,
-                "type": "photo",
-                "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23-3.webp",
-                "location": "한라산 전망대 (어리목 또는 1100 습지)",
-                "caption": "한라산 전망대 (어리목 또는 1100 습지) — photo 9",
-                "alt": "한라산 전망대 (어리목 또는 1100 습지) — gallery image 9"
               }
             ]
           },
@@ -2034,18 +1934,13 @@
               "verified": true,
               "sources": [
                 "VisitKorea",
-                "",
                 "third-party booking site"
               ],
               "verified_date": "2026-04-27"
             },
             "images": [
               "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
-              "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
-              "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-2.webp",
-              "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-2.webp",
-              "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-3.webp",
-              "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-3.webp"
+              "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp"
             ],
             "imageCredits": [
               {
@@ -2057,19 +1952,19 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-2.webp",
+                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-2.webp",
+                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-3.webp",
+                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-3.webp",
+                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2089,38 +1984,6 @@
                 "location": "카멜리아 힐 — 겨울 절정",
                 "caption": "카멜리아 힐 — 겨울 절정 — photo 2",
                 "alt": "카멜리아 힐 — 겨울 절정 — gallery image 2"
-              },
-              {
-                "id": 3,
-                "type": "photo",
-                "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-2.webp",
-                "location": "카멜리아 힐 — 겨울 절정",
-                "caption": "카멜리아 힐 — 겨울 절정 — photo 3",
-                "alt": "카멜리아 힐 — 겨울 절정 — gallery image 3"
-              },
-              {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-2.webp",
-                "location": "카멜리아 힐 — 겨울 절정",
-                "caption": "카멜리아 힐 — 겨울 절정 — photo 4",
-                "alt": "카멜리아 힐 — 겨울 절정 — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-3.webp",
-                "location": "카멜리아 힐 — 겨울 절정",
-                "caption": "카멜리아 힐 — 겨울 절정 — photo 5",
-                "alt": "카멜리아 힐 — 겨울 절정 — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-3.webp",
-                "location": "카멜리아 힐 — 겨울 절정",
-                "caption": "카멜리아 힐 — 겨울 절정 — photo 6",
-                "alt": "카멜리아 힐 — 겨울 절정 — gallery image 6"
               }
             ]
           },
@@ -2172,15 +2035,8 @@
               "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
               "`/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp`",
               "`/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp`",
-              "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
-              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
-              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
-              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
-              "/images/tours/jusangjeolli/photo-005.webp",
-              "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
-              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-3.webp",
-              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-3.webp",
-              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-3.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
               "/images/tours/jusangjeolli/photo-005.webp"
             ],
             "imageCredits": [
@@ -2205,15 +2061,15 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
                 "source": "atoc-korea"
               },
               {
@@ -2225,15 +2081,15 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-3.webp",
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-3.webp",
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-3.webp",
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
                 "source": "atoc-korea"
               },
               {
@@ -2277,82 +2133,26 @@
               {
                 "id": 5,
                 "type": "photo",
-                "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
-                "location": "주상절리대 (대포 주상절리)",
-                "caption": "주상절리대 (대포 주상절리) — photo 5",
-                "alt": "주상절리대 (대포 주상절리) — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
-                "location": "주상절리대 (대포 주상절리)",
-                "caption": "주상절리대 (대포 주상절리) — photo 6",
-                "alt": "주상절리대 (대포 주상절리) — gallery image 6"
-              },
-              {
-                "id": 7,
-                "type": "photo",
-                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
                 "location": "주상절리대 (대포 주상절리)",
                 "caption": "주상절리대 (대포 주상절리) — photo 7",
                 "alt": "주상절리대 (대포 주상절리) — gallery image 7"
               },
               {
-                "id": 8,
+                "id": 6,
                 "type": "photo",
-                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
                 "location": "주상절리대 (대포 주상절리)",
                 "caption": "주상절리대 (대포 주상절리) — photo 8",
                 "alt": "주상절리대 (대포 주상절리) — gallery image 8"
               },
               {
-                "id": 9,
+                "id": 7,
                 "type": "photo",
                 "src": "/images/tours/jusangjeolli/photo-005.webp",
                 "location": "주상절리대 (대포 주상절리)",
                 "caption": "주상절리대 (대포 주상절리) — photo 9",
                 "alt": "주상절리대 (대포 주상절리) — gallery image 9"
-              },
-              {
-                "id": 10,
-                "type": "photo",
-                "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
-                "location": "주상절리대 (대포 주상절리)",
-                "caption": "주상절리대 (대포 주상절리) — photo 10",
-                "alt": "주상절리대 (대포 주상절리) — gallery image 10"
-              },
-              {
-                "id": 11,
-                "type": "photo",
-                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-3.webp",
-                "location": "주상절리대 (대포 주상절리)",
-                "caption": "주상절리대 (대포 주상절리) — photo 11",
-                "alt": "주상절리대 (대포 주상절리) — gallery image 11"
-              },
-              {
-                "id": 12,
-                "type": "photo",
-                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-3.webp",
-                "location": "주상절리대 (대포 주상절리)",
-                "caption": "주상절리대 (대포 주상절리) — photo 12",
-                "alt": "주상절리대 (대포 주상절리) — gallery image 12"
-              },
-              {
-                "id": 13,
-                "type": "photo",
-                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-3.webp",
-                "location": "주상절리대 (대포 주상절리)",
-                "caption": "주상절리대 (대포 주상절리) — photo 13",
-                "alt": "주상절리대 (대포 주상절리) — gallery image 13"
-              },
-              {
-                "id": 14,
-                "type": "photo",
-                "src": "/images/tours/jusangjeolli/photo-005.webp",
-                "location": "주상절리대 (대포 주상절리)",
-                "caption": "주상절리대 (대포 주상절리) — photo 14",
-                "alt": "주상절리대 (대포 주상절리) — gallery image 14"
               }
             ]
           },
@@ -2402,13 +2202,6 @@
               "verified_date": "2026-04-27"
             },
             "images": [
-              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
-              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
-              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
-              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
-              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
-              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
-              "/images/tours/cheonjeyeon-falls/photo-004.webp",
               "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
               "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
               "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
@@ -2488,66 +2281,10 @@
               {
                 "id": 4,
                 "type": "photo",
-                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
-                "location": "천제연폭포 + 선임교",
-                "caption": "천제연폭포 + 선임교 — photo 4",
-                "alt": "천제연폭포 + 선임교 — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
-                "location": "천제연폭포 + 선임교",
-                "caption": "천제연폭포 + 선임교 — photo 5",
-                "alt": "천제연폭포 + 선임교 — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
-                "location": "천제연폭포 + 선임교",
-                "caption": "천제연폭포 + 선임교 — photo 6",
-                "alt": "천제연폭포 + 선임교 — gallery image 6"
-              },
-              {
-                "id": 7,
-                "type": "photo",
                 "src": "/images/tours/cheonjeyeon-falls/photo-004.webp",
                 "location": "천제연폭포 + 선임교",
                 "caption": "천제연폭포 + 선임교 — photo 7",
                 "alt": "천제연폭포 + 선임교 — gallery image 7"
-              },
-              {
-                "id": 8,
-                "type": "photo",
-                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
-                "location": "천제연폭포 + 선임교",
-                "caption": "천제연폭포 + 선임교 — photo 8",
-                "alt": "천제연폭포 + 선임교 — gallery image 8"
-              },
-              {
-                "id": 9,
-                "type": "photo",
-                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
-                "location": "천제연폭포 + 선임교",
-                "caption": "천제연폭포 + 선임교 — photo 9",
-                "alt": "천제연폭포 + 선임교 — gallery image 9"
-              },
-              {
-                "id": 10,
-                "type": "photo",
-                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
-                "location": "천제연폭포 + 선임교",
-                "caption": "천제연폭포 + 선임교 — photo 10",
-                "alt": "천제연폭포 + 선임교 — gallery image 10"
-              },
-              {
-                "id": 11,
-                "type": "photo",
-                "src": "/images/tours/cheonjeyeon-falls/photo-004.webp",
-                "location": "천제연폭포 + 선임교",
-                "caption": "천제연폭포 + 선임교 — photo 11",
-                "alt": "천제연폭포 + 선임교 — gallery image 11"
               }
             ]
           },
@@ -3146,8 +2883,6 @@
           "Hunting for Bliss",
           "Soul of Seoul",
           "Roaming Sonaa",
-          "",
-          "",
           "NOL World"
         ],
         "_extended_dimensions_documented_only": {

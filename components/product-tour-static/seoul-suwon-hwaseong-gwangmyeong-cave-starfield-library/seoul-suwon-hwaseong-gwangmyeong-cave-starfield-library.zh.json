@@ -216,7 +216,7 @@
       "caption": "Starfield图书馆水原 — photo 4"
     },
     {
-      "id": 15,
+      "id": 11,
       "type": "photo",
       "src": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-22.webp",
       "location": "光明洞窟",
@@ -224,7 +224,7 @@
       "caption": "光明洞窟 — photo 2"
     },
     {
-      "id": 16,
+      "id": 12,
       "type": "photo",
       "src": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-28.webp",
       "location": "光明洞窟",
@@ -232,20 +232,12 @@
       "caption": "光明洞窟 — photo 3"
     },
     {
-      "id": 17,
+      "id": 13,
       "type": "photo",
       "src": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-09.webp",
       "location": "光明洞窟",
       "alt": "光明洞窟 — gallery image 4",
       "caption": "光明洞窟 — photo 4"
-    },
-    {
-      "id": 18,
-      "type": "photo",
-      "src": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-23.webp",
-      "location": "光明洞窟",
-      "alt": "光明洞窟 — gallery image 5",
-      "caption": "光明洞窟 — photo 5"
     }
   ],
   "itineraryStops": [
@@ -792,8 +784,7 @@
         "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-15.webp",
         "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-22.webp",
         "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-28.webp",
-        "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-09.webp",
-        "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-23.webp"
+        "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-09.webp"
       ],
       "imageCredits": [
         {
@@ -813,7 +804,7 @@
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-23.webp",
+          "url": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-09.webp",
           "source": "atoc-korea"
         }
       ],
@@ -849,14 +840,6 @@
           "location": "光明洞窟",
           "caption": "光明洞窟 — photo 4",
           "alt": "光明洞窟 — gallery image 4"
-        },
-        {
-          "id": 5,
-          "type": "photo",
-          "src": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-23.webp",
-          "location": "光明洞窟",
-          "caption": "光明洞窟 — photo 5",
-          "alt": "光明洞窟 — gallery image 5"
         }
       ]
     },
@@ -1723,58 +1706,13 @@
       "props": {
         "galleryItems": [
           {
-            "id": "g1",
+            "id": 1,
             "type": "photo",
             "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
             "alt": "水原华城城墙段，远处可见长安门，山脊线上分布着多处敌台",
             "caption": "华城——1997年列入联合国教科文组织世界遗产",
             "location": "水原华城，长安门至华西门段，水原",
             "atmosphere": "城墙建于1794至1796年，由正祖大王主持修建；是韩国唯一保存完整的城郭都市"
-          },
-          {
-            "id": "g2",
-            "type": "photo",
-            "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
-            "alt": "水原华城 — 图库图片",
-            "caption": "水原华城",
-            "location": "水原华城",
-            "atmosphere": "韩国最大的行宫；每日举行王室卫队换岗仪式及武术表演"
-          },
-          {
-            "id": "g3",
-            "type": "photo",
-            "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
-            "alt": "水原华城 — 图库图片",
-            "caption": "水原华城",
-            "location": "水原华城",
-            "atmosphere": "昔日始兴金矿（1912—1972年）；隧道总长7.8千米；全年恒温12°C"
-          },
-          {
-            "id": "g4",
-            "type": "photo",
-            "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
-            "alt": "水原华城 — 图库图片",
-            "caption": "水原华城",
-            "location": "水原华城",
-            "atmosphere": "韩国最大的龙雕（41米，800千克，\"洞窟之主\"），由维塔工作室（《指环王》道具制作公司）打造"
-          },
-          {
-            "id": "g5",
-            "type": "photo",
-            "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
-            "alt": "水原华城 — 图库图片",
-            "caption": "水原华城",
-            "location": "水原华城",
-            "atmosphere": "新世界旗舰第二代星菲尔德，2024年1月开业；免费入场；设有黑胶唱片试听区"
-          },
-          {
-            "id": "g6",
-            "type": "photo",
-            "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
-            "alt": "水原南门市场有顶棚的小巷，摊位出售水原式烤排骨、炸鸡及传统甜食",
-            "caption": "水原南门市场 — 正祖大王时期创立的220年历史市场",
-            "location": "水原南门市场，水原华城南门",
-            "atmosphere": "220年历史；正祖大王建造华城时创立；炸鸡胡同 + 9个分市场"
           }
         ]
       }
@@ -1969,7 +1907,6 @@
               "verified": true,
               "sources": [
                 "Wikipedia",
-                "",
                 "TimeTravelTurtle"
               ],
               "verified_date": "2026-04-27"
@@ -2125,15 +2062,7 @@
               "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
               "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
               "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
-              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
-              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18-2.webp",
-              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38-2.webp",
-              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55-2.webp",
-              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58-2.webp",
-              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18-3.webp",
-              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38-3.webp",
-              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55-3.webp",
-              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58-3.webp"
+              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp"
             ],
             "imageCredits": [
               {
@@ -2153,35 +2082,35 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18-2.webp",
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38-2.webp",
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55-2.webp",
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58-2.webp",
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18-3.webp",
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38-3.webp",
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55-3.webp",
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58-3.webp",
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2217,70 +2146,6 @@
                 "location": "水原星野图书馆",
                 "caption": "水原星野图书馆 — photo 4",
                 "alt": "水原星野图书馆 — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18-2.webp",
-                "location": "水原星野图书馆",
-                "caption": "水原星野图书馆 — photo 5",
-                "alt": "水原星野图书馆 — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38-2.webp",
-                "location": "水原星野图书馆",
-                "caption": "水原星野图书馆 — photo 6",
-                "alt": "水原星野图书馆 — gallery image 6"
-              },
-              {
-                "id": 7,
-                "type": "photo",
-                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55-2.webp",
-                "location": "水原星野图书馆",
-                "caption": "水原星野图书馆 — photo 7",
-                "alt": "水原星野图书馆 — gallery image 7"
-              },
-              {
-                "id": 8,
-                "type": "photo",
-                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58-2.webp",
-                "location": "水原星野图书馆",
-                "caption": "水原星野图书馆 — photo 8",
-                "alt": "水原星野图书馆 — gallery image 8"
-              },
-              {
-                "id": 9,
-                "type": "photo",
-                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18-3.webp",
-                "location": "水原星野图书馆",
-                "caption": "水原星野图书馆 — photo 9",
-                "alt": "水原星野图书馆 — gallery image 9"
-              },
-              {
-                "id": 10,
-                "type": "photo",
-                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38-3.webp",
-                "location": "水原星野图书馆",
-                "caption": "水原星野图书馆 — photo 10",
-                "alt": "水原星野图书馆 — gallery image 10"
-              },
-              {
-                "id": 11,
-                "type": "photo",
-                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55-3.webp",
-                "location": "水原星野图书馆",
-                "caption": "水原星野图书馆 — photo 11",
-                "alt": "水原星野图书馆 — gallery image 11"
-              },
-              {
-                "id": 12,
-                "type": "photo",
-                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58-3.webp",
-                "location": "水原星野图书馆",
-                "caption": "水原星野图书馆 — photo 12",
-                "alt": "水原星野图书馆 — gallery image 12"
               }
             ]
           },
@@ -2331,18 +2196,7 @@
               "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-15.webp",
               "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-22.webp",
               "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-28.webp",
-              "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-09.webp",
-              "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-23.webp",
-              "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-15-2.webp",
-              "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-22-2.webp",
-              "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-28-2.webp",
-              "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-09.webp",
-              "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-23-2.webp",
-              "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-15-3.webp",
-              "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-22-3.webp",
-              "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-28-3.webp",
-              "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-09.webp",
-              "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-23-3.webp"
+              "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-09.webp"
             ],
             "imageCredits": [
               {
@@ -2362,19 +2216,19 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-23.webp",
+                "url": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-09.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-15-2.webp",
+                "url": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-15.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-22-2.webp",
+                "url": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-22.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-28-2.webp",
+                "url": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-28.webp",
                 "source": "atoc-korea"
               },
               {
@@ -2382,19 +2236,19 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-23-2.webp",
+                "url": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-09.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-15-3.webp",
+                "url": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-15.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-22-3.webp",
+                "url": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-22.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-28-3.webp",
+                "url": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-28.webp",
                 "source": "atoc-korea"
               },
               {
@@ -2402,7 +2256,7 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-23-3.webp",
+                "url": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-09.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2438,94 +2292,6 @@
                 "location": "光明洞窟",
                 "caption": "光明洞窟 — photo 4",
                 "alt": "光明洞窟 — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-23.webp",
-                "location": "光明洞窟",
-                "caption": "光明洞窟 — photo 5",
-                "alt": "光明洞窟 — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-15-2.webp",
-                "location": "光明洞窟",
-                "caption": "光明洞窟 — photo 6",
-                "alt": "光明洞窟 — gallery image 6"
-              },
-              {
-                "id": 7,
-                "type": "photo",
-                "src": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-22-2.webp",
-                "location": "光明洞窟",
-                "caption": "光明洞窟 — photo 7",
-                "alt": "光明洞窟 — gallery image 7"
-              },
-              {
-                "id": 8,
-                "type": "photo",
-                "src": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-28-2.webp",
-                "location": "光明洞窟",
-                "caption": "光明洞窟 — photo 8",
-                "alt": "光明洞窟 — gallery image 8"
-              },
-              {
-                "id": 9,
-                "type": "photo",
-                "src": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-09.webp",
-                "location": "光明洞窟",
-                "caption": "光明洞窟 — photo 9",
-                "alt": "光明洞窟 — gallery image 9"
-              },
-              {
-                "id": 10,
-                "type": "photo",
-                "src": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-23-2.webp",
-                "location": "光明洞窟",
-                "caption": "光明洞窟 — photo 10",
-                "alt": "光明洞窟 — gallery image 10"
-              },
-              {
-                "id": 11,
-                "type": "photo",
-                "src": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-15-3.webp",
-                "location": "光明洞窟",
-                "caption": "光明洞窟 — photo 11",
-                "alt": "光明洞窟 — gallery image 11"
-              },
-              {
-                "id": 12,
-                "type": "photo",
-                "src": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-22-3.webp",
-                "location": "光明洞窟",
-                "caption": "光明洞窟 — photo 12",
-                "alt": "光明洞窟 — gallery image 12"
-              },
-              {
-                "id": 13,
-                "type": "photo",
-                "src": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-10-12-03-28-3.webp",
-                "location": "光明洞窟",
-                "caption": "光明洞窟 — photo 13",
-                "alt": "光明洞窟 — gallery image 13"
-              },
-              {
-                "id": 14,
-                "type": "photo",
-                "src": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-09.webp",
-                "location": "光明洞窟",
-                "caption": "光明洞窟 — photo 14",
-                "alt": "光明洞窟 — gallery image 14"
-              },
-              {
-                "id": 15,
-                "type": "photo",
-                "src": "/images/tours/gwangmyeong-cave/chatgpt-image-2026-5-9-11-48-23-3.webp",
-                "location": "光明洞窟",
-                "caption": "光明洞窟 — photo 15",
-                "alt": "光明洞窟 — gallery image 15"
               }
             ]
           },

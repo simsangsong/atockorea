@@ -193,7 +193,7 @@
       "caption": "Eoseungsaengak Trail (Hallasan UNESCO) — photo 3"
     },
     {
-      "id": 11,
+      "id": 8,
       "type": "photo",
       "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
       "location": "Camellia Hill (year-round signature flower garden)",
@@ -201,7 +201,7 @@
       "caption": "Camellia Hill (year-round signature flower garden) — photo 2"
     },
     {
-      "id": 14,
+      "id": 9,
       "type": "photo",
       "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
       "location": "Cheonjeyeon Waterfall (Pond of the Gods)",
@@ -209,7 +209,7 @@
       "caption": "Cheonjeyeon Waterfall (Pond of the Gods) — photo 2"
     },
     {
-      "id": 15,
+      "id": 10,
       "type": "photo",
       "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
       "location": "Cheonjeyeon Waterfall (Pond of the Gods)",
@@ -217,7 +217,7 @@
       "caption": "Cheonjeyeon Waterfall (Pond of the Gods) — photo 3"
     },
     {
-      "id": 16,
+      "id": 11,
       "type": "photo",
       "src": "/images/tours/cheonjeyeon-falls/photo-004.webp",
       "location": "Cheonjeyeon Waterfall (Pond of the Gods)",
@@ -225,7 +225,7 @@
       "caption": "Cheonjeyeon Waterfall (Pond of the Gods) — photo 4"
     },
     {
-      "id": 21,
+      "id": 12,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
       "location": "Jusangjeolli Cliff (Daepo Columnar Joints)",
@@ -233,7 +233,7 @@
       "caption": "Jusangjeolli Cliff (Daepo Columnar Joints) — photo 2"
     },
     {
-      "id": 22,
+      "id": 13,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
       "location": "Jusangjeolli Cliff (Daepo Columnar Joints)",
@@ -241,7 +241,7 @@
       "caption": "Jusangjeolli Cliff (Daepo Columnar Joints) — photo 3"
     },
     {
-      "id": 23,
+      "id": 14,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
       "location": "Jusangjeolli Cliff (Daepo Columnar Joints)",
@@ -249,7 +249,7 @@
       "caption": "Jusangjeolli Cliff (Daepo Columnar Joints) — photo 4"
     },
     {
-      "id": 24,
+      "id": 15,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/photo-005.webp",
       "location": "Jusangjeolli Cliff (Daepo Columnar Joints)",
@@ -257,7 +257,7 @@
       "caption": "Jusangjeolli Cliff (Daepo Columnar Joints) — photo 5"
     },
     {
-      "id": 30,
+      "id": 16,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
       "location": "O'sulloc Tea Museum + Green Tea Fields",
@@ -265,7 +265,7 @@
       "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 2"
     },
     {
-      "id": 31,
+      "id": 17,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
       "location": "O'sulloc Tea Museum + Green Tea Fields",
@@ -273,7 +273,7 @@
       "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 3"
     },
     {
-      "id": 32,
+      "id": 18,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
       "location": "O'sulloc Tea Museum + Green Tea Fields",
@@ -1894,53 +1894,7 @@
       "section_html_id": null,
       "component": "TourAtmosphereGallery",
       "props": {
-        "galleryItems": [
-          {
-            "id": "g1",
-            "type": "photo",
-            "src": "",
-            "alt": "Jusangjeolli Cliff — hexagonal volcanic columns on Jeju's south coast",
-            "caption": "Jusangjeolli Cliff — hexagonal volcanic columns on Jeju's south coast",
-            "location": "",
-            "atmosphere": ""
-          },
-          {
-            "id": "g2",
-            "type": "photo",
-            "src": "",
-            "alt": "Eoseungsaengak Trail along Hallasan, the UNESCO biosphere reserve",
-            "caption": "Eoseungsaengak Trail along Hallasan, the UNESCO biosphere reserve",
-            "location": "",
-            "atmosphere": ""
-          },
-          {
-            "id": "g3",
-            "type": "photo",
-            "src": "",
-            "alt": "Camellia Hill — 6,000+ trees across 250 varieties",
-            "caption": "Camellia Hill — 6,000+ trees across 250 varieties",
-            "location": "",
-            "atmosphere": ""
-          },
-          {
-            "id": "g4",
-            "type": "photo",
-            "src": "",
-            "alt": "Cheonjeyeon Falls and the Seonimgyo Bridge of Seven Nymphs",
-            "caption": "Cheonjeyeon Falls and the Seonimgyo Bridge of Seven Nymphs",
-            "location": "",
-            "atmosphere": ""
-          },
-          {
-            "id": "g5",
-            "type": "photo",
-            "src": "",
-            "alt": "O'sulloc Tea Museum and surrounding green tea fields",
-            "caption": "O'sulloc Tea Museum and surrounding green tea fields",
-            "location": "",
-            "atmosphere": ""
-          }
-        ]
+        "galleryItems": []
       }
     },
     {
@@ -2025,11 +1979,6 @@
             "images": [
               "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
               "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
-              "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19-2.webp",
-              "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20-2.webp",
-              "/images/tours/hallasan-eoseungsaengak/photo-003.webp",
-              "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19-3.webp",
-              "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20-3.webp",
               "/images/tours/hallasan-eoseungsaengak/photo-003.webp"
             ],
             "imageCredits": [
@@ -2042,11 +1991,11 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19-2.webp",
+                "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20-2.webp",
+                "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
                 "source": "atoc-korea"
               },
               {
@@ -2054,11 +2003,11 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19-3.webp",
+                "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20-3.webp",
+                "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
                 "source": "atoc-korea"
               },
               {
@@ -2086,50 +2035,10 @@
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19-2.webp",
-                "location": "Eoseungsaengak Trail (Hallasan UNESCO)",
-                "caption": "Eoseungsaengak Trail (Hallasan UNESCO) — photo 3",
-                "alt": "Eoseungsaengak Trail (Hallasan UNESCO) — gallery image 3"
-              },
-              {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20-2.webp",
-                "location": "Eoseungsaengak Trail (Hallasan UNESCO)",
-                "caption": "Eoseungsaengak Trail (Hallasan UNESCO) — photo 4",
-                "alt": "Eoseungsaengak Trail (Hallasan UNESCO) — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
                 "src": "/images/tours/hallasan-eoseungsaengak/photo-003.webp",
                 "location": "Eoseungsaengak Trail (Hallasan UNESCO)",
                 "caption": "Eoseungsaengak Trail (Hallasan UNESCO) — photo 5",
                 "alt": "Eoseungsaengak Trail (Hallasan UNESCO) — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19-3.webp",
-                "location": "Eoseungsaengak Trail (Hallasan UNESCO)",
-                "caption": "Eoseungsaengak Trail (Hallasan UNESCO) — photo 6",
-                "alt": "Eoseungsaengak Trail (Hallasan UNESCO) — gallery image 6"
-              },
-              {
-                "id": 7,
-                "type": "photo",
-                "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20-3.webp",
-                "location": "Eoseungsaengak Trail (Hallasan UNESCO)",
-                "caption": "Eoseungsaengak Trail (Hallasan UNESCO) — photo 7",
-                "alt": "Eoseungsaengak Trail (Hallasan UNESCO) — gallery image 7"
-              },
-              {
-                "id": 8,
-                "type": "photo",
-                "src": "/images/tours/hallasan-eoseungsaengak/photo-003.webp",
-                "location": "Eoseungsaengak Trail (Hallasan UNESCO)",
-                "caption": "Eoseungsaengak Trail (Hallasan UNESCO) — photo 8",
-                "alt": "Eoseungsaengak Trail (Hallasan UNESCO) — gallery image 8"
               }
             ]
           },
@@ -2173,18 +2082,13 @@
               "verified": true,
               "sources": [
                 "VisitKorea",
-                "",
                 "third-party booking site"
               ],
               "verified_date": "2026-04-27"
             },
             "images": [
               "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
-              "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
-              "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-2.webp",
-              "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-2.webp",
-              "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-3.webp",
-              "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-3.webp"
+              "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp"
             ],
             "imageCredits": [
               {
@@ -2196,19 +2100,19 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-2.webp",
+                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-2.webp",
+                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-3.webp",
+                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-3.webp",
+                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2228,38 +2132,6 @@
                 "location": "Camellia Hill (year-round signature flower garden)",
                 "caption": "Camellia Hill (year-round signature flower garden) — photo 2",
                 "alt": "Camellia Hill (year-round signature flower garden) — gallery image 2"
-              },
-              {
-                "id": 3,
-                "type": "photo",
-                "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-2.webp",
-                "location": "Camellia Hill (year-round signature flower garden)",
-                "caption": "Camellia Hill (year-round signature flower garden) — photo 3",
-                "alt": "Camellia Hill (year-round signature flower garden) — gallery image 3"
-              },
-              {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-2.webp",
-                "location": "Camellia Hill (year-round signature flower garden)",
-                "caption": "Camellia Hill (year-round signature flower garden) — photo 4",
-                "alt": "Camellia Hill (year-round signature flower garden) — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-3.webp",
-                "location": "Camellia Hill (year-round signature flower garden)",
-                "caption": "Camellia Hill (year-round signature flower garden) — photo 5",
-                "alt": "Camellia Hill (year-round signature flower garden) — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-3.webp",
-                "location": "Camellia Hill (year-round signature flower garden)",
-                "caption": "Camellia Hill (year-round signature flower garden) — photo 6",
-                "alt": "Camellia Hill (year-round signature flower garden) — gallery image 6"
               }
             ]
           },
@@ -2343,13 +2215,6 @@
               "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
               "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
               "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
-              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
-              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
-              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
-              "/images/tours/cheonjeyeon-falls/photo-004.webp",
-              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
-              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
-              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
               "/images/tours/cheonjeyeon-falls/photo-004.webp"
             ],
             "imageCredits": [
@@ -2426,66 +2291,10 @@
               {
                 "id": 4,
                 "type": "photo",
-                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
-                "location": "Cheonjeyeon Waterfall (Pond of the Gods)",
-                "caption": "Cheonjeyeon Waterfall (Pond of the Gods) — photo 4",
-                "alt": "Cheonjeyeon Waterfall (Pond of the Gods) — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
-                "location": "Cheonjeyeon Waterfall (Pond of the Gods)",
-                "caption": "Cheonjeyeon Waterfall (Pond of the Gods) — photo 5",
-                "alt": "Cheonjeyeon Waterfall (Pond of the Gods) — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
-                "location": "Cheonjeyeon Waterfall (Pond of the Gods)",
-                "caption": "Cheonjeyeon Waterfall (Pond of the Gods) — photo 6",
-                "alt": "Cheonjeyeon Waterfall (Pond of the Gods) — gallery image 6"
-              },
-              {
-                "id": 7,
-                "type": "photo",
                 "src": "/images/tours/cheonjeyeon-falls/photo-004.webp",
                 "location": "Cheonjeyeon Waterfall (Pond of the Gods)",
                 "caption": "Cheonjeyeon Waterfall (Pond of the Gods) — photo 7",
                 "alt": "Cheonjeyeon Waterfall (Pond of the Gods) — gallery image 7"
-              },
-              {
-                "id": 8,
-                "type": "photo",
-                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
-                "location": "Cheonjeyeon Waterfall (Pond of the Gods)",
-                "caption": "Cheonjeyeon Waterfall (Pond of the Gods) — photo 8",
-                "alt": "Cheonjeyeon Waterfall (Pond of the Gods) — gallery image 8"
-              },
-              {
-                "id": 9,
-                "type": "photo",
-                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
-                "location": "Cheonjeyeon Waterfall (Pond of the Gods)",
-                "caption": "Cheonjeyeon Waterfall (Pond of the Gods) — photo 9",
-                "alt": "Cheonjeyeon Waterfall (Pond of the Gods) — gallery image 9"
-              },
-              {
-                "id": 10,
-                "type": "photo",
-                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
-                "location": "Cheonjeyeon Waterfall (Pond of the Gods)",
-                "caption": "Cheonjeyeon Waterfall (Pond of the Gods) — photo 10",
-                "alt": "Cheonjeyeon Waterfall (Pond of the Gods) — gallery image 10"
-              },
-              {
-                "id": 11,
-                "type": "photo",
-                "src": "/images/tours/cheonjeyeon-falls/photo-004.webp",
-                "location": "Cheonjeyeon Waterfall (Pond of the Gods)",
-                "caption": "Cheonjeyeon Waterfall (Pond of the Gods) — photo 11",
-                "alt": "Cheonjeyeon Waterfall (Pond of the Gods) — gallery image 11"
               }
             ]
           },
@@ -2538,15 +2347,6 @@
               "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
               "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
               "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
-              "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
-              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
-              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
-              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
-              "/images/tours/jusangjeolli/photo-005.webp",
-              "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
-              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-3.webp",
-              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-3.webp",
-              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-3.webp",
               "/images/tours/jusangjeolli/photo-005.webp"
             ],
             "imageCredits": [
@@ -2571,15 +2371,15 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
                 "source": "atoc-korea"
               },
               {
@@ -2591,15 +2391,15 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-3.webp",
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-3.webp",
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-3.webp",
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
                 "source": "atoc-korea"
               },
               {
@@ -2643,82 +2443,10 @@
               {
                 "id": 5,
                 "type": "photo",
-                "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
-                "location": "Jusangjeolli Cliff (Daepo Columnar Joints)",
-                "caption": "Jusangjeolli Cliff (Daepo Columnar Joints) — photo 5",
-                "alt": "Jusangjeolli Cliff (Daepo Columnar Joints) — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
-                "location": "Jusangjeolli Cliff (Daepo Columnar Joints)",
-                "caption": "Jusangjeolli Cliff (Daepo Columnar Joints) — photo 6",
-                "alt": "Jusangjeolli Cliff (Daepo Columnar Joints) — gallery image 6"
-              },
-              {
-                "id": 7,
-                "type": "photo",
-                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
-                "location": "Jusangjeolli Cliff (Daepo Columnar Joints)",
-                "caption": "Jusangjeolli Cliff (Daepo Columnar Joints) — photo 7",
-                "alt": "Jusangjeolli Cliff (Daepo Columnar Joints) — gallery image 7"
-              },
-              {
-                "id": 8,
-                "type": "photo",
-                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
-                "location": "Jusangjeolli Cliff (Daepo Columnar Joints)",
-                "caption": "Jusangjeolli Cliff (Daepo Columnar Joints) — photo 8",
-                "alt": "Jusangjeolli Cliff (Daepo Columnar Joints) — gallery image 8"
-              },
-              {
-                "id": 9,
-                "type": "photo",
                 "src": "/images/tours/jusangjeolli/photo-005.webp",
                 "location": "Jusangjeolli Cliff (Daepo Columnar Joints)",
                 "caption": "Jusangjeolli Cliff (Daepo Columnar Joints) — photo 9",
                 "alt": "Jusangjeolli Cliff (Daepo Columnar Joints) — gallery image 9"
-              },
-              {
-                "id": 10,
-                "type": "photo",
-                "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
-                "location": "Jusangjeolli Cliff (Daepo Columnar Joints)",
-                "caption": "Jusangjeolli Cliff (Daepo Columnar Joints) — photo 10",
-                "alt": "Jusangjeolli Cliff (Daepo Columnar Joints) — gallery image 10"
-              },
-              {
-                "id": 11,
-                "type": "photo",
-                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-3.webp",
-                "location": "Jusangjeolli Cliff (Daepo Columnar Joints)",
-                "caption": "Jusangjeolli Cliff (Daepo Columnar Joints) — photo 11",
-                "alt": "Jusangjeolli Cliff (Daepo Columnar Joints) — gallery image 11"
-              },
-              {
-                "id": 12,
-                "type": "photo",
-                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-3.webp",
-                "location": "Jusangjeolli Cliff (Daepo Columnar Joints)",
-                "caption": "Jusangjeolli Cliff (Daepo Columnar Joints) — photo 12",
-                "alt": "Jusangjeolli Cliff (Daepo Columnar Joints) — gallery image 12"
-              },
-              {
-                "id": 13,
-                "type": "photo",
-                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-3.webp",
-                "location": "Jusangjeolli Cliff (Daepo Columnar Joints)",
-                "caption": "Jusangjeolli Cliff (Daepo Columnar Joints) — photo 13",
-                "alt": "Jusangjeolli Cliff (Daepo Columnar Joints) — gallery image 13"
-              },
-              {
-                "id": 14,
-                "type": "photo",
-                "src": "/images/tours/jusangjeolli/photo-005.webp",
-                "location": "Jusangjeolli Cliff (Daepo Columnar Joints)",
-                "caption": "Jusangjeolli Cliff (Daepo Columnar Joints) — photo 14",
-                "alt": "Jusangjeolli Cliff (Daepo Columnar Joints) — gallery image 14"
               }
             ]
           },
@@ -2763,7 +2491,6 @@
               "sources": [
                 "VisitKorea",
                 "Osulloc.com",
-                "",
                 "third-party booking site"
               ],
               "verified_date": "2026-04-27",
@@ -3435,7 +3162,6 @@
           "Ramsar SIS",
           "AllTrails",
           "Inside Jeju",
-          "",
           "Jeju Tourism Org"
         ]
       }

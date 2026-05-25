@@ -1084,53 +1084,7 @@
       "section_html_id": null,
       "component": "**Galería del ambiente del tour**",
       "props": {
-        "galleryItems": [
-          {
-            "id": "g1",
-            "type": "photo",
-            "src": "",
-            "alt": "**Horizonte de Seúl con la Torre Lotte World y el río Han visibles al atardecer, visto desde un mirador al sur de la ciudad**",
-            "caption": "**Horizonte de Seúl — punto de salida flexible**",
-            "location": "**Seúl (ciudad de salida)**",
-            "atmosphere": "**El moderno Seúl como punto de partida flexible; recogida en hotel en vehículo privado**"
-          },
-          {
-            "id": "g2",
-            "type": "photo",
-            "src": "",
-            "alt": "**El sendero de metasecuoyas bordeado de árboles de la Isla Nami, con viajeros caminando bajo árboles altos en un amplio camino de grava**",
-            "caption": "**Sendero de metasecuoyas de la Isla Nami — atractivo principal de la Ruta 1**",
-            "location": "**Isla Nami, Gapyeong (opción de la Ruta 1)**",
-            "atmosphere": "Senderos arbolados y breve travesía en ferry; lugar de rodaje del K-drama *Winter Sonata*"
-          },
-          {
-            "id": "g3",
-            "type": "photo",
-            "src": "",
-            "alt": "Parterres temáticos del Jardín de la Calma Matutina con flores de temporada y sinuosos caminos de piedra",
-            "caption": "Jardín de la Calma Matutina — parada fotográfica de la Ruta 1",
-            "location": "Jardín de la Calma Matutina, Gapyeong (opción Ruta 1)",
-            "atmosphere": "20 jardines temáticos en 330 000 m²; fundado en 1996 por Han Sang-kyung"
-          },
-          {
-            "id": "g4",
-            "type": "photo",
-            "src": "",
-            "alt": "Aldea de Petite France con casas de colores vivos de estilo mediterráneo en una ladera de Gapyeong",
-            "caption": "Petite France — aldea de *El Principito* (Ruta 1)",
-            "location": "Petite France, Gapyeong (opción Ruta 1)",
-            "atmosphere": "Pintoresca aldea en ladera; lugar de rodaje del K-drama *Mi amor de las estrellas*"
-          },
-          {
-            "id": "g5",
-            "type": "photo",
-            "src": "",
-            "alt": "Parque de Paz Imjingak de la DMZ con el Puente de la Libertad visible al fondo de la zona monumental, cerca de Paju",
-            "caption": "Parque de Paz Imjingak — ancla de la Ruta 2",
-            "location": "Parque de Paz Imjingak, Paju (opción Ruta 2)",
-            "atmosphere": "El parque fronterizo de mayor carga histórica de Corea; Puente de la Libertad (1953); a 7 km de la MDL"
-          }
-        ]
+        "galleryItems": []
       }
     },
     {
@@ -1271,11 +1225,7 @@
             },
             "images": [
               "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
-              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-2.webp",
-              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-3.webp"
+              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp"
             ],
             "imageCredits": [
               {
@@ -1291,7 +1241,7 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-2.webp",
+                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
                 "source": "atoc-korea"
               },
               {
@@ -1299,7 +1249,7 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-3.webp",
+                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1319,38 +1269,6 @@
                 "location": "Ruta 3: Everland + Pueblo Folclórico Coreano",
                 "caption": "Ruta 3: Everland + Pueblo Folclórico Coreano — photo 2",
                 "alt": "Ruta 3: Everland + Pueblo Folclórico Coreano — gallery image 2"
-              },
-              {
-                "id": 3,
-                "type": "photo",
-                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-                "location": "Ruta 3: Everland + Pueblo Folclórico Coreano",
-                "caption": "Ruta 3: Everland + Pueblo Folclórico Coreano — photo 3",
-                "alt": "Ruta 3: Everland + Pueblo Folclórico Coreano — gallery image 3"
-              },
-              {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-2.webp",
-                "location": "Ruta 3: Everland + Pueblo Folclórico Coreano",
-                "caption": "Ruta 3: Everland + Pueblo Folclórico Coreano — photo 4",
-                "alt": "Ruta 3: Everland + Pueblo Folclórico Coreano — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-                "location": "Ruta 3: Everland + Pueblo Folclórico Coreano",
-                "caption": "Ruta 3: Everland + Pueblo Folclórico Coreano — photo 5",
-                "alt": "Ruta 3: Everland + Pueblo Folclórico Coreano — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-3.webp",
-                "location": "Ruta 3: Everland + Pueblo Folclórico Coreano",
-                "caption": "Ruta 3: Everland + Pueblo Folclórico Coreano — photo 6",
-                "alt": "Ruta 3: Everland + Pueblo Folclórico Coreano — gallery image 6"
               }
             ]
           },

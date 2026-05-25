@@ -64,7 +64,7 @@ const FOLDER_MAP = {
   },
   북촌한옥마을: { assetSlug: "bukchon-hanok", poiKeys: ["bukchon_hanok_village"] },
   쁘디프랑스: { assetSlug: "petite-france", poiKeys: ["petite_france"] },
-  사려니숲길: { assetSlug: "saryeoni-forest", poiKeys: [], skipJson: true },
+  // 사려니숲길 — dropped from site per user direction 2026-05-26.
   산정호수: { assetSlug: "sanjeong-lake", poiKeys: ["sanjeong_lake"] },
   섭지코지: { assetSlug: "seopjikoji", poiKeys: ["seopjikoji"] },
   성산일출봉: { assetSlug: "seongsan-ilchulbong", poiKeys: ["seongsan_ilchulbong"] },
@@ -89,12 +89,7 @@ const FOLDER_MAP = {
   어승생악: { assetSlug: "hallasan-eoseungsaengak", poiKeys: ["hallasan_eoseungsaengak"] },
   에버랜드: { assetSlug: "everland", poiKeys: [], skipJson: true },
   에코랜드: { assetSlug: "jeju-ecoland", poiKeys: [], skipJson: true },
-  /** 별도 장소(오설록 티뮤지엄과 무관). POI 미정 — public 폴더에만 적재, JSON 미반영 */
-  "오늘은 녹차한잔": {
-    assetSlug: "today-green-tea",
-    poiKeys: [],
-    skipJson: true,
-  },
+  // 오늘은 녹차한잔 — dropped from site per user direction 2026-05-26.
   와우정사: { assetSlug: "waujeongsa", poiKeys: ["waujeongsa_temple"] },
   유엔기념공원: { assetSlug: "un-memorial-cemetery", poiKeys: ["un_memorial_cemetery"] },
   이호테우: { assetSlug: "iho-teu", poiKeys: [], skipJson: true },
@@ -165,14 +160,7 @@ const FOLDER_MAP = {
     assetSlug: "osulloc-tea",
     poiKeys: ["osulloc_tea_museum"],
   },
-  /**
-   * 제주 환상숲 (곶자왈) — not yet on itinerary POI keys; assets only until a stop uses this key.
-   */
-  환상숲: {
-    assetSlug: "jeju-fantasy-forest",
-    poiKeys: [],
-    skipJson: true,
-  },
+  // 환상숲 — dropped from site per user direction 2026-05-26.
   /** 2026-05-25 atoc-photos batch — new POIs / locations (BIFF / 영남알프스 / 보문호수 / 해동용궁사) */
   BIFF광장: { assetSlug: "biff-square", poiKeys: ["biff_square"], nameGuard: /biff|film festival|광장|영화제/i },
   영남알프스: {
@@ -221,11 +209,22 @@ const FOLDER_MAP = {
   },
   /** 부산 매화 — placeholder asset for plum-blossom tour gallery; no POI yet. */
   부산매화: { assetSlug: "busan-plum-blossom", poiKeys: [], skipJson: true },
-  /** 경주 황남빵 본점 — bakery/food spot, not a POI; assets only. */
-  황남빵: { assetSlug: "hwangnam-bread", poiKeys: [], skipJson: true },
+  /** 경주 황남빵 본점 — folded into the Gyochon Hanok Village stop's gallery
+   *  (user direction 2026-05-26). Future runs of this importer drop the photos
+   *  into `gyochon-hanok-village/` so they appear in the same itineraryStops. */
+  황남빵: { assetSlug: "gyochon-hanok-village", poiKeys: ["gyochon_hanok_village"] },
 };
 
-const SKIP_FOLDERS = new Set(["미적용", "미배정", "새 폴더"]);
+const SKIP_FOLDERS = new Set([
+  "미적용",
+  "미배정",
+  "새 폴더",
+  // 2026-05-26 — site no longer features these locations; source folders kept
+  // on disk for reference only.
+  "오늘은 녹차한잔",
+  "사려니숲길",
+  "환상숲",
+]);
 
 const IMG_EXT = new Set([".jpg", ".jpeg", ".png", ".webp", ".tif", ".tiff", ".avif"]);
 

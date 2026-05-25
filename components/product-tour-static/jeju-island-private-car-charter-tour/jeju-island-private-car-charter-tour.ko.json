@@ -1075,53 +1075,7 @@
       "section_html_id": null,
       "component": "TourAtmosphereGallery",
       "props": {
-        "galleryItems": [
-          {
-            "id": "g1",
-            "type": "photo",
-            "src": "",
-            "alt": "성산일출봉 일출 봉우리",
-            "caption": "성산일출봉 일출 봉우리",
-            "location": "성산일출봉",
-            "atmosphere": "제주에서 가장 상징적인 유네스코 랜드마크이자 동쪽 코스의 핵심 명소"
-          },
-          {
-            "id": "g2",
-            "type": "photo",
-            "src": "",
-            "alt": "주상절리 현무암 절벽",
-            "caption": "주상절리 현무암 절벽",
-            "location": "주상절리",
-            "atmosphere": "남쪽 해안의 육각형 현무암 주상절리"
-          },
-          {
-            "id": "g3",
-            "type": "photo",
-            "src": "",
-            "alt": "협재해수욕장 제주 서쪽",
-            "caption": "협재해수욕장 제주 서쪽",
-            "location": "협재해수욕장",
-            "atmosphere": "서쪽 해안의 에메랄드빛 바다와 흰 모래사장"
-          },
-          {
-            "id": "g4",
-            "type": "photo",
-            "src": "",
-            "alt": "오설록 티 뮤지엄과 차밭",
-            "caption": "오설록 티 뮤지엄과 차밭",
-            "location": "오설록 차밭",
-            "atmosphere": "녹차밭의 고즈넉한 풍경과 여유로운 오전 휴식"
-          },
-          {
-            "id": "g5",
-            "type": "photo",
-            "src": "",
-            "alt": "서귀포 천지연 폭포",
-            "caption": "서귀포 천지연 폭포",
-            "location": "천지연 폭포",
-            "atmosphere": "남쪽 코스의 숲속 폭포"
-          }
-        ]
+        "galleryItems": []
       }
     },
     {

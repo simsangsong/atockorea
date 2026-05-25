@@ -228,7 +228,7 @@
       "caption": "テジョンデ（太宗台）沿岸断崖 — photo 3"
     },
     {
-      "id": 16,
+      "id": 13,
       "type": "photo",
       "src": "/images/itinerary/jagalchi-market-interior.webp",
       "location": "甘川文化村",
@@ -236,7 +236,7 @@
       "caption": "甘川文化村"
     },
     {
-      "id": 17,
+      "id": 14,
       "type": "photo",
       "src": "/images/itinerary/jagalchi-night-building.webp",
       "location": "甘川文化村",
@@ -244,7 +244,7 @@
       "caption": "甘川文化村"
     },
     {
-      "id": 18,
+      "id": 15,
       "type": "photo",
       "src": "/images/tours/jagalchi-market/photo-001.webp",
       "location": "甘川文化村",
@@ -252,7 +252,7 @@
       "caption": "甘川文化村"
     },
     {
-      "id": 19,
+      "id": 16,
       "type": "photo",
       "src": "/images/tours/jagalchi-market/photo-002.webp",
       "location": "甘川文化村",
@@ -260,23 +260,23 @@
       "caption": "甘川文化村"
     },
     {
-      "id": 20,
+      "id": 17,
       "type": "photo",
-      "src": "/images/tours/jagalchi-market/photo-003.webp",
+      "src": "/images/tours/jagalchi-market/jagalchi-seafood-collage-ai.webp",
       "location": "甘川文化村",
       "alt": "甘川文化村 — on-route photo",
       "caption": "甘川文化村"
     },
     {
-      "id": 21,
+      "id": 18,
       "type": "photo",
-      "src": "/images/tours/jagalchi-market/photo-004.webp",
+      "src": "/images/tours/jagalchi-market/photo-010.webp",
       "location": "甘川文化村",
       "alt": "甘川文化村 — on-route photo",
       "caption": "甘川文化村"
     },
     {
-      "id": 22,
+      "id": 19,
       "type": "photo",
       "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
       "location": "龍頭山公園＆釜山タワー",
@@ -284,9 +284,9 @@
       "caption": "龍頭山公園＆釜山タワー"
     },
     {
-      "id": 23,
+      "id": 20,
       "type": "photo",
-      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
+      "src": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-night.webp",
       "location": "龍頭山公園＆釜山タワー",
       "alt": "龍頭山公園＆釜山タワー — on-route photo",
       "caption": "龍頭山公園＆釜山タワー"
@@ -662,8 +662,8 @@
         "/images/itinerary/jagalchi-night-building.webp",
         "/images/tours/jagalchi-market/photo-001.webp",
         "/images/tours/jagalchi-market/photo-002.webp",
-        "/images/tours/jagalchi-market/photo-003.webp",
-        "/images/tours/jagalchi-market/photo-004.webp"
+        "/images/tours/jagalchi-market/jagalchi-seafood-collage-ai.webp",
+        "/images/tours/jagalchi-market/photo-010.webp"
       ]
     },
     {
@@ -727,7 +727,7 @@
       "images": [
         "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
         "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
-        "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-12-22-38.webp",
+        "/images/tours/gamcheon-culture-village/gamcheon-little-prince-night.webp",
         "/images/itinerary/jagalchi-harbor-sign.webp",
         "/images/itinerary/jagalchi-market-interior.webp",
         "/images/itinerary/jagalchi-night-building.webp"
@@ -1616,49 +1616,13 @@
       "props": {
         "galleryItems": [
           {
-            "id": "g1",
+            "id": 1,
             "type": "photo",
             "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
             "alt": "在韓国国連記念公園 — ギャラリー画像",
             "caption": "在韓国国連記念公園",
             "location": "在韓国国連記念公園",
             "atmosphere": "明るいパステルカラー、細い路地、丘の階段"
-          },
-          {
-            "id": "g2",
-            "type": "photo",
-            "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
-            "alt": "在韓国国連記念公園 — ギャラリー画像",
-            "caption": "在韓国国連記念公園",
-            "location": "在韓国国連記念公園",
-            "atmosphere": "広大な海、断崖の端、潮風"
-          },
-          {
-            "id": "g3",
-            "type": "photo",
-            "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
-            "alt": "在韓国国連記念公園 — ギャラリー画像",
-            "caption": "在韓国国連記念公園",
-            "location": "在韓国国連記念公園",
-            "atmosphere": "静寂で厳粛、思索に満ちた場所"
-          },
-          {
-            "id": "g4",
-            "type": "photo",
-            "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
-            "alt": "在韓国国連記念公園 — ギャラリー画像",
-            "caption": "在韓国国連記念公園",
-            "location": "在韓国国連記念公園",
-            "atmosphere": "活魚の屋台、市場の喧騒、2階のレストラン"
-          },
-          {
-            "id": "g5",
-            "type": "photo",
-            "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
-            "alt": "在韓国国連記念公園 — ギャラリー画像",
-            "caption": "在韓国国連記念公園",
-            "location": "在韓国国連記念公園",
-            "atmosphere": "松に覆われた丘の頂、360度のパノラマ都市景観"
           }
         ]
       }
@@ -1708,13 +1672,7 @@
             "images": [
               "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
               "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
-              "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
-              "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23-2.webp",
-              "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43-2.webp",
-              "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47-2.webp",
-              "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23-3.webp",
-              "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43-3.webp",
-              "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47-3.webp"
+              "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp"
             ],
             "imageCredits": [
               {
@@ -1730,27 +1688,27 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23-2.webp",
+                "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43-2.webp",
+                "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47-2.webp",
+                "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23-3.webp",
+                "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43-3.webp",
+                "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47-3.webp",
+                "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1778,54 +1736,6 @@
                 "location": "国連記念公園（朝鮮戦争）",
                 "caption": "国連記念公園（朝鮮戦争） — photo 3",
                 "alt": "国連記念公園（朝鮮戦争） — gallery image 3"
-              },
-              {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23-2.webp",
-                "location": "国連記念公園（朝鮮戦争）",
-                "caption": "国連記念公園（朝鮮戦争） — photo 4",
-                "alt": "国連記念公園（朝鮮戦争） — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43-2.webp",
-                "location": "国連記念公園（朝鮮戦争）",
-                "caption": "国連記念公園（朝鮮戦争） — photo 5",
-                "alt": "国連記念公園（朝鮮戦争） — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47-2.webp",
-                "location": "国連記念公園（朝鮮戦争）",
-                "caption": "国連記念公園（朝鮮戦争） — photo 6",
-                "alt": "国連記念公園（朝鮮戦争） — gallery image 6"
-              },
-              {
-                "id": 7,
-                "type": "photo",
-                "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23-3.webp",
-                "location": "国連記念公園（朝鮮戦争）",
-                "caption": "国連記念公園（朝鮮戦争） — photo 7",
-                "alt": "国連記念公園（朝鮮戦争） — gallery image 7"
-              },
-              {
-                "id": 8,
-                "type": "photo",
-                "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43-3.webp",
-                "location": "国連記念公園（朝鮮戦争）",
-                "caption": "国連記念公園（朝鮮戦争） — photo 8",
-                "alt": "国連記念公園（朝鮮戦争） — gallery image 8"
-              },
-              {
-                "id": 9,
-                "type": "photo",
-                "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47-3.webp",
-                "location": "国連記念公園（朝鮮戦争）",
-                "caption": "国連記念公園（朝鮮戦争） — photo 9",
-                "alt": "国連記念公園（朝鮮戦争） — gallery image 9"
               }
             ]
           },
@@ -1855,18 +1765,6 @@
               "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
               "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
               "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
-              "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
-              "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45-2.webp",
-              "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
-              "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19-2.webp",
-              "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30-2.webp",
-              "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34-2.webp",
-              "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
-              "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45-3.webp",
-              "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
-              "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19-3.webp",
-              "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30-3.webp",
-              "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34-3.webp",
               "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp"
             ],
             "imageCredits": [
@@ -1895,7 +1793,7 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45-2.webp",
+                "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
                 "source": "atoc-korea"
               },
               {
@@ -1903,15 +1801,15 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19-2.webp",
+                "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30-2.webp",
+                "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34-2.webp",
+                "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
                 "source": "atoc-korea"
               },
               {
@@ -1919,7 +1817,7 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45-3.webp",
+                "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
                 "source": "atoc-korea"
               },
               {
@@ -1927,15 +1825,15 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19-3.webp",
+                "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30-3.webp",
+                "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34-3.webp",
+                "url": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
                 "source": "atoc-korea"
               },
               {
@@ -1991,102 +1889,6 @@
                 "location": "太宗台の断崖絶壁",
                 "caption": "太宗台の断崖絶壁 — photo 6",
                 "alt": "太宗台の断崖絶壁 — gallery image 6"
-              },
-              {
-                "id": 7,
-                "type": "photo",
-                "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45-2.webp",
-                "location": "太宗台の断崖絶壁",
-                "caption": "太宗台の断崖絶壁 — photo 7",
-                "alt": "太宗台の断崖絶壁 — gallery image 7"
-              },
-              {
-                "id": 8,
-                "type": "photo",
-                "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
-                "location": "太宗台の断崖絶壁",
-                "caption": "太宗台の断崖絶壁 — photo 8",
-                "alt": "太宗台の断崖絶壁 — gallery image 8"
-              },
-              {
-                "id": 9,
-                "type": "photo",
-                "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19-2.webp",
-                "location": "太宗台の断崖絶壁",
-                "caption": "太宗台の断崖絶壁 — photo 9",
-                "alt": "太宗台の断崖絶壁 — gallery image 9"
-              },
-              {
-                "id": 10,
-                "type": "photo",
-                "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30-2.webp",
-                "location": "太宗台の断崖絶壁",
-                "caption": "太宗台の断崖絶壁 — photo 10",
-                "alt": "太宗台の断崖絶壁 — gallery image 10"
-              },
-              {
-                "id": 11,
-                "type": "photo",
-                "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34-2.webp",
-                "location": "太宗台の断崖絶壁",
-                "caption": "太宗台の断崖絶壁 — photo 11",
-                "alt": "太宗台の断崖絶壁 — gallery image 11"
-              },
-              {
-                "id": 12,
-                "type": "photo",
-                "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
-                "location": "太宗台の断崖絶壁",
-                "caption": "太宗台の断崖絶壁 — photo 12",
-                "alt": "太宗台の断崖絶壁 — gallery image 12"
-              },
-              {
-                "id": 13,
-                "type": "photo",
-                "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45-3.webp",
-                "location": "太宗台の断崖絶壁",
-                "caption": "太宗台の断崖絶壁 — photo 13",
-                "alt": "太宗台の断崖絶壁 — gallery image 13"
-              },
-              {
-                "id": 14,
-                "type": "photo",
-                "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
-                "location": "太宗台の断崖絶壁",
-                "caption": "太宗台の断崖絶壁 — photo 14",
-                "alt": "太宗台の断崖絶壁 — gallery image 14"
-              },
-              {
-                "id": 15,
-                "type": "photo",
-                "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19-3.webp",
-                "location": "太宗台の断崖絶壁",
-                "caption": "太宗台の断崖絶壁 — photo 15",
-                "alt": "太宗台の断崖絶壁 — gallery image 15"
-              },
-              {
-                "id": 16,
-                "type": "photo",
-                "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30-3.webp",
-                "location": "太宗台の断崖絶壁",
-                "caption": "太宗台の断崖絶壁 — photo 16",
-                "alt": "太宗台の断崖絶壁 — gallery image 16"
-              },
-              {
-                "id": 17,
-                "type": "photo",
-                "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34-3.webp",
-                "location": "太宗台の断崖絶壁",
-                "caption": "太宗台の断崖絶壁 — photo 17",
-                "alt": "太宗台の断崖絶壁 — gallery image 17"
-              },
-              {
-                "id": 18,
-                "type": "photo",
-                "src": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
-                "location": "太宗台の断崖絶壁",
-                "caption": "太宗台の断崖絶壁 — photo 18",
-                "alt": "太宗台の断崖絶壁 — gallery image 18"
               }
             ]
           },

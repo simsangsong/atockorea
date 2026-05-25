@@ -1084,53 +1084,7 @@
       "section_html_id": null,
       "component": "투어 분위기 갤러리",
       "props": {
-        "galleryItems": [
-          {
-            "id": "g1",
-            "type": "photo",
-            "src": "",
-            "alt": "황혼 무렵 남서울 전망대에서 바라본 롯데월드타워와 한강이 보이는 서울 도심 스카이라인",
-            "caption": "서울 스카이라인 — 유연한 출발 지점",
-            "location": "서울 (출발 도시)",
-            "atmosphere": "유연한 출발 기점인 현대 서울; 전용 차량 호텔 픽업"
-          },
-          {
-            "id": "g2",
-            "type": "photo",
-            "src": "",
-            "alt": "자갈길 위를 걷는 여행객들과 함께 펼쳐지는 남이섬의 메타세쿼이아 가로수길",
-            "caption": "남이섬 메타세쿼이아길 — 1번 코스 하이라이트",
-            "location": "남이섬, 가평 (1번 코스 옵션)",
-            "atmosphere": "가로수길과 짧은 페리 탑승; 드라마 〈겨울연가〉 촬영지"
-          },
-          {
-            "id": "g3",
-            "type": "photo",
-            "src": "",
-            "alt": "아침고요수목원의 테마별 꽃밭과 계절 꽃들, 구불구불한 돌길 산책로",
-            "caption": "아침고요수목원 — 1번 코스 포토 스팟",
-            "location": "아침고요수목원, 가평 (1번 코스 옵션)",
-            "atmosphere": "33만 ㎡에 걸쳐 조성된 20개의 테마 정원; 1996년 한상경 교수에 의해 설립"
-          },
-          {
-            "id": "g4",
-            "type": "photo",
-            "src": "",
-            "alt": "가평 언덕 위에 자리한 밝고 화사한 지중해풍 건물들로 이루어진 쁘띠프랑스 마을",
-            "caption": "쁘띠프랑스 — 어린 왕자 테마 마을 (1번 코스)",
-            "location": "쁘띠프랑스, 가평 (1번 코스 옵션)",
-            "atmosphere": "알록달록한 언덕 마을; 드라마 〈별에서 온 그대〉 촬영지"
-          },
-          {
-            "id": "g5",
-            "type": "photo",
-            "src": "",
-            "alt": "파주 임진각 평화공원의 기념비 구역 너머로 보이는 자유의 다리",
-            "caption": "임진각 평화공원 — 2번 코스 핵심 명소",
-            "location": "임진각 평화공원, 파주 (2번 코스 옵션)",
-            "atmosphere": "한국에서 역사적으로 가장 깊은 의미를 지닌 접경 공원; 자유의 다리 (1953년); 군사분계선으로부터 7km"
-          }
-        ]
+        "galleryItems": []
       }
     },
     {
@@ -1271,11 +1225,7 @@
             },
             "images": [
               "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
-              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-2.webp",
-              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-3.webp"
+              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp"
             ],
             "imageCredits": [
               {
@@ -1291,7 +1241,7 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-2.webp",
+                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
                 "source": "atoc-korea"
               },
               {
@@ -1299,7 +1249,7 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-3.webp",
+                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1319,38 +1269,6 @@
                 "location": "코스 3: 에버랜드 + 한국민속촌",
                 "caption": "코스 3: 에버랜드 + 한국민속촌 — photo 2",
                 "alt": "코스 3: 에버랜드 + 한국민속촌 — gallery image 2"
-              },
-              {
-                "id": 3,
-                "type": "photo",
-                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-                "location": "코스 3: 에버랜드 + 한국민속촌",
-                "caption": "코스 3: 에버랜드 + 한국민속촌 — photo 3",
-                "alt": "코스 3: 에버랜드 + 한국민속촌 — gallery image 3"
-              },
-              {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-2.webp",
-                "location": "코스 3: 에버랜드 + 한국민속촌",
-                "caption": "코스 3: 에버랜드 + 한국민속촌 — photo 4",
-                "alt": "코스 3: 에버랜드 + 한국민속촌 — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-                "location": "코스 3: 에버랜드 + 한국민속촌",
-                "caption": "코스 3: 에버랜드 + 한국민속촌 — photo 5",
-                "alt": "코스 3: 에버랜드 + 한국민속촌 — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-3.webp",
-                "location": "코스 3: 에버랜드 + 한국민속촌",
-                "caption": "코스 3: 에버랜드 + 한국민속촌 — photo 6",
-                "alt": "코스 3: 에버랜드 + 한국민속촌 — gallery image 6"
               }
             ]
           },

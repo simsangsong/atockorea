@@ -1084,53 +1084,7 @@
       "section_html_id": null,
       "component": "TourAtmosphereGallery",
       "props": {
-        "galleryItems": [
-          {
-            "id": "g1",
-            "type": "photo",
-            "src": "",
-            "alt": "Seoul city skyline with Lotte World Tower and Han River visible at dusk, viewed from a south-Seoul vantage",
-            "caption": "Seoul skyline — flexible departure point",
-            "location": "Seoul (departure city)",
-            "atmosphere": "Modern Seoul as the flexible starting point; private vehicle hotel pickup"
-          },
-          {
-            "id": "g2",
-            "type": "photo",
-            "src": "",
-            "alt": "Nami Island's tree-lined metasequoia path with travelers walking under tall trees on a wide gravel walkway",
-            "caption": "Nami Island metasequoia path — Route 1 highlight",
-            "location": "Nami Island, Gapyeong (Route 1 option)",
-            "atmosphere": "Tree-lined paths and short ferry crossing; Winter Sonata K-drama filming location"
-          },
-          {
-            "id": "g3",
-            "type": "photo",
-            "src": "",
-            "alt": "Garden of Morning Calm's themed flower beds with seasonal blooms and curving stone walking paths",
-            "caption": "Garden of Morning Calm — Route 1 photo stop",
-            "location": "Garden of Morning Calm, Gapyeong (Route 1 option)",
-            "atmosphere": "20 themed gardens across 330,000 m²; founded 1996 by Han Sang-kyung"
-          },
-          {
-            "id": "g4",
-            "type": "photo",
-            "src": "",
-            "alt": "Petite France village with brightly colored Mediterranean-style houses on a hillside in Gapyeong",
-            "caption": "Petite France — Le Petit Prince village (Route 1)",
-            "location": "Petite France, Gapyeong (Route 1 option)",
-            "atmosphere": "Colorful hillside village; My Love from the Star K-drama filming location"
-          },
-          {
-            "id": "g5",
-            "type": "photo",
-            "src": "",
-            "alt": "DMZ Imjingak Peace Park with the Bridge of Freedom visible behind the monument area near Paju",
-            "caption": "Imjingak Peace Park — Route 2 anchor",
-            "location": "Imjingak Peace Park, Paju (Route 2 option)",
-            "atmosphere": "Korea's most historically charged border park; Bridge of Freedom (1953); 7 km from MDL"
-          }
-        ]
+        "galleryItems": []
       }
     },
     {
@@ -1271,11 +1225,7 @@
             },
             "images": [
               "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
-              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-2.webp",
-              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-3.webp"
+              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp"
             ],
             "imageCredits": [
               {
@@ -1291,7 +1241,7 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-2.webp",
+                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
                 "source": "atoc-korea"
               },
               {
@@ -1299,7 +1249,7 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-3.webp",
+                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1319,38 +1269,6 @@
                 "location": "Route 3: Everland + Korean Folk Village",
                 "caption": "Route 3: Everland + Korean Folk Village — photo 2",
                 "alt": "Route 3: Everland + Korean Folk Village — gallery image 2"
-              },
-              {
-                "id": 3,
-                "type": "photo",
-                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-                "location": "Route 3: Everland + Korean Folk Village",
-                "caption": "Route 3: Everland + Korean Folk Village — photo 3",
-                "alt": "Route 3: Everland + Korean Folk Village — gallery image 3"
-              },
-              {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-2.webp",
-                "location": "Route 3: Everland + Korean Folk Village",
-                "caption": "Route 3: Everland + Korean Folk Village — photo 4",
-                "alt": "Route 3: Everland + Korean Folk Village — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-                "location": "Route 3: Everland + Korean Folk Village",
-                "caption": "Route 3: Everland + Korean Folk Village — photo 5",
-                "alt": "Route 3: Everland + Korean Folk Village — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-3.webp",
-                "location": "Route 3: Everland + Korean Folk Village",
-                "caption": "Route 3: Everland + Korean Folk Village — photo 6",
-                "alt": "Route 3: Everland + Korean Folk Village — gallery image 6"
               }
             ]
           },

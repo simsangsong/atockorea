@@ -1075,53 +1075,7 @@
       "section_html_id": null,
       "component": "旅遊氛圍圖庫",
       "props": {
-        "galleryItems": [
-          {
-            "id": "g1",
-            "type": "photo",
-            "src": "",
-            "alt": "城山日出峰日出景點",
-            "caption": "城山日出峰日出景點",
-            "location": "城山日出峰",
-            "atmosphere": "濟州最具代表性的聯合國教科文組織世界遺產，東線必訪景點"
-          },
-          {
-            "id": "g2",
-            "type": "photo",
-            "src": "",
-            "alt": "柱狀節理帶玄武岩懸崖",
-            "caption": "柱狀節理帶玄武岩懸崖",
-            "location": "柱狀節理帶懸崖",
-            "atmosphere": "南海岸的六角形玄武岩石柱"
-          },
-          {
-            "id": "g3",
-            "type": "photo",
-            "src": "",
-            "alt": "協才海灘 濟州西部",
-            "caption": "協才海灘 濟州西部",
-            "location": "協才海灘",
-            "atmosphere": "西海岸的翡翠綠海水與白色沙灘"
-          },
-          {
-            "id": "g4",
-            "type": "photo",
-            "src": "",
-            "alt": "O'sulloc茶博物館與茶園",
-            "caption": "O'sulloc茶博物館與茶園",
-            "location": "O'sulloc茶田",
-            "atmosphere": "綠茶田排列成行，讓午間時光得以舒緩放鬆"
-          },
-          {
-            "id": "g5",
-            "type": "photo",
-            "src": "",
-            "alt": "西歸浦天地淵瀑布",
-            "caption": "西歸浦天地淵瀑布",
-            "location": "天地淵瀑布",
-            "atmosphere": "南線森林瀑布"
-          }
-        ]
+        "galleryItems": []
       }
     },
     {

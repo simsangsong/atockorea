@@ -174,14 +174,6 @@
       "location": "설악산 국립공원",
       "alt": "설악산 국립공원 — gallery image 5",
       "caption": "설악산 국립공원 — photo 5"
-    },
-    {
-      "id": 6,
-      "type": "photo",
-      "src": "/images/tours/seoraksan-national-park/photo-003.webp",
-      "location": "설악산 국립공원",
-      "alt": "설악산 국립공원 — gallery image 6",
-      "caption": "설악산 국립공원 — photo 6"
     }
   ],
   "itineraryStops": [
@@ -278,8 +270,7 @@
         "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
         "/images/tours/seoraksan-national-park/photo-001.webp",
         "/images/tours/seoraksan-national-park/seoraksan-gwongumseong-cable-car.webp",
-        "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsan-rock.webp",
-        "/images/tours/seoraksan-national-park/photo-003.webp"
+        "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsan-rock.webp"
       ],
       "imageCredits": [
         {
@@ -303,7 +294,7 @@
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/seoraksan-national-park/photo-003.webp",
+          "url": "/images/tours/seoraksan-national-park/photo-001.webp",
           "source": "atoc-korea"
         }
       ],
@@ -347,14 +338,6 @@
           "location": "설악산 국립공원",
           "caption": "설악산 국립공원 — photo 5",
           "alt": "설악산 국립공원 — gallery image 5"
-        },
-        {
-          "id": 6,
-          "type": "photo",
-          "src": "/images/tours/seoraksan-national-park/photo-003.webp",
-          "location": "설악산 국립공원",
-          "caption": "설악산 국립공원 — photo 6",
-          "alt": "설악산 국립공원 — gallery image 6"
         }
       ]
     },
@@ -1279,53 +1262,7 @@
       "section_html_id": null,
       "component": "TourAtmosphereGallery",
       "props": {
-        "galleryItems": [
-          {
-            "id": "g1",
-            "type": "photo",
-            "src": "",
-            "alt": "설악산 국립공원의 화강암 능선이 숲으로 뒤덮인 계곡 위로 솟아오르며, 암벽을 배경으로 케이블카 와이어가 보이는 풍경",
-            "caption": "설악산 능선 — 1982년 유네스코 생물권 보전지역 지정",
-            "location": "강원도 설악산 국립공원, 소공원 입구",
-            "atmosphere": "공원 정문의 시원한 산 공기; 신흥사를 지나는 포장된 접근 탐방로"
-          },
-          {
-            "id": "g2",
-            "type": "photo",
-            "src": "",
-            "alt": "설악산 신흥사 경내 건물을 배경으로 연꽃 자세로 앉아 있는 신흥사 대형 청동불상",
-            "caption": "신흥사 대청동불 — 공원 입구",
-            "location": "설악산 국립공원 소공원, 신흥사",
-            "atmosphere": "공원 입구에서 약 600m의 평탄한 포장 도로; 한국 최대 규모의 앉은 청동불상(약 14m)"
-          },
-          {
-            "id": "g3",
-            "type": "photo",
-            "src": "",
-            "alt": "매끄러운 화강암 슬랩 위로 맑은 물이 흐르는 설악산 계곡 탐방로 변의 비선대 암석 지형",
-            "caption": "비선대 계곡길 — 평탄한 1.5km 선택 코스",
-            "location": "설악산 소공원 구역, 비선대",
-            "atmosphere": "계곡 변 평탄한 탐방로; 매끄러운 화강암 위로 흐르는 맑은 물; 고도 변화 없음"
-          },
-          {
-            "id": "g4",
-            "type": "photo",
-            "src": "",
-            "alt": "살아 있는 동해 회, 킹크랩, 해산물을 진열한 좌판이 늘어선 속초관광수산시장 내부",
-            "caption": "속초수산시장 — 회, 킹크랩, 아바이 오징어",
-            "location": "속초 해안가, 속초관광수산시장",
-            "atmosphere": "지붕 있는 콘크리트 바닥 시장; 동해 생선회, 아바이식 순대 오징어(한국전쟁 피난민 음식)"
-          },
-          {
-            "id": "g5",
-            "type": "photo",
-            "src": "",
-            "alt": "내륙으로 설악산의 실루엣이 보이는 동해를 바라보는 속초해수욕장의 긴 황금빛 모래사장",
-            "caption": "속초해수욕장 — 동해 해안선, 내륙의 설악산",
-            "location": "속초, 동해 해안, 속초해수욕장",
-            "atmosphere": "1km 평탄한 모래 해변; 남쪽 끝의 속초 아이 대관람차; 수영 시즌 7~8월"
-          }
-        ]
+        "galleryItems": []
       }
     },
     {
@@ -1407,8 +1344,7 @@
             "images": [
               "/images/tours/seoraksan-national-park/photo-001.webp",
               "/images/tours/seoraksan-national-park/seoraksan-gwongumseong-cable-car.webp",
-              "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsan-rock.webp",
-              "/images/tours/seoraksan-national-park/photo-003.webp"
+              "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsan-rock.webp"
             ],
             "imageCredits": [
               {
@@ -1424,7 +1360,7 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/seoraksan-national-park/photo-003.webp",
+                "url": "/images/tours/seoraksan-national-park/photo-001.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1452,14 +1388,6 @@
                 "location": "설악산 국립공원",
                 "caption": "설악산 국립공원 — photo 3",
                 "alt": "설악산 국립공원 — gallery image 3"
-              },
-              {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/tours/seoraksan-national-park/photo-003.webp",
-                "location": "설악산 국립공원",
-                "caption": "설악산 국립공원 — photo 4",
-                "alt": "설악산 국립공원 — gallery image 4"
               }
             ]
           },

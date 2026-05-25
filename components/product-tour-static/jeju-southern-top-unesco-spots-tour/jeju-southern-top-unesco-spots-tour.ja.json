@@ -193,7 +193,7 @@
       "caption": "エオスンセンアク（御乗生악）トレイル（漢拏山 ユネスコ） — photo 3"
     },
     {
-      "id": 11,
+      "id": 8,
       "type": "photo",
       "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
       "location": "カメリアヒル（通年楽しめるシグネチャー・フラワーガーデン）",
@@ -201,7 +201,7 @@
       "caption": "カメリアヒル（通年楽しめるシグネチャー・フラワーガーデン） — photo 2"
     },
     {
-      "id": 14,
+      "id": 9,
       "type": "photo",
       "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
       "location": "天帝淵の滝（神々の池）",
@@ -209,7 +209,7 @@
       "caption": "天帝淵の滝（神々の池） — photo 2"
     },
     {
-      "id": 15,
+      "id": 10,
       "type": "photo",
       "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
       "location": "天帝淵の滝（神々の池）",
@@ -217,7 +217,7 @@
       "caption": "天帝淵の滝（神々の池） — photo 3"
     },
     {
-      "id": 16,
+      "id": 11,
       "type": "photo",
       "src": "/images/tours/cheonjeyeon-falls/photo-004.webp",
       "location": "天帝淵の滝（神々の池）",
@@ -225,7 +225,7 @@
       "caption": "天帝淵の滝（神々の池） — photo 4"
     },
     {
-      "id": 21,
+      "id": 12,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
       "location": "チュサンジョルリの断崖（大浦柱状節理）",
@@ -233,7 +233,7 @@
       "caption": "チュサンジョルリの断崖（大浦柱状節理） — photo 2"
     },
     {
-      "id": 22,
+      "id": 13,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
       "location": "チュサンジョルリの断崖（大浦柱状節理）",
@@ -241,7 +241,7 @@
       "caption": "チュサンジョルリの断崖（大浦柱状節理） — photo 3"
     },
     {
-      "id": 23,
+      "id": 14,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
       "location": "チュサンジョルリの断崖（大浦柱状節理）",
@@ -249,7 +249,7 @@
       "caption": "チュサンジョルリの断崖（大浦柱状節理） — photo 4"
     },
     {
-      "id": 24,
+      "id": 15,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/photo-005.webp",
       "location": "チュサンジョルリの断崖（大浦柱状節理）",
@@ -257,7 +257,7 @@
       "caption": "チュサンジョルリの断崖（大浦柱状節理） — photo 5"
     },
     {
-      "id": 30,
+      "id": 16,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
       "location": "オーソルロック・ティーミュージアム",
@@ -265,7 +265,7 @@
       "caption": "オーソルロック・ティーミュージアム — 写真 2"
     },
     {
-      "id": 31,
+      "id": 17,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
       "location": "オーソルロック・ティーミュージアム",
@@ -273,7 +273,7 @@
       "caption": "オーソルロック・ティーミュージアム — 写真 3"
     },
     {
-      "id": 32,
+      "id": 18,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
       "location": "オーソルロック・ティーミュージアム",
@@ -1894,53 +1894,7 @@
       "section_html_id": null,
       "component": "TourAtmosphereGallery",
       "props": {
-        "galleryItems": [
-          {
-            "id": "g1",
-            "type": "photo",
-            "src": "",
-            "alt": "チュサンジョルリ（柱状節理帯）― 済州島南岸に広がる六角形の火山柱状岩",
-            "caption": "チュサンジョルリ（柱状節理帯）― 済州島南岸に広がる六角形の火山柱状岩",
-            "location": "",
-            "atmosphere": ""
-          },
-          {
-            "id": "g2",
-            "type": "photo",
-            "src": "",
-            "alt": "ユネスコ生物圏保護区・ハルラ山沿いのオスンセンアク登山道",
-            "caption": "ユネスコ生物圏保護区・ハルラ山沿いのオスンセンアク登山道",
-            "location": "",
-            "atmosphere": ""
-          },
-          {
-            "id": "g3",
-            "type": "photo",
-            "src": "",
-            "alt": "カメリアヒル ― 250品種・6,000本以上のツバキが咲き誇る",
-            "caption": "カメリアヒル ― 250品種・6,000本以上のツバキが咲き誇る",
-            "location": "",
-            "atmosphere": ""
-          },
-          {
-            "id": "g4",
-            "type": "photo",
-            "src": "",
-            "alt": "チョンジェヨン（天帝淵）滝と七人の仙女にちなむソニムギョ橋",
-            "caption": "チョンジェヨン（天帝淵）滝と七人の仙女にちなむソニムギョ橋",
-            "location": "",
-            "atmosphere": ""
-          },
-          {
-            "id": "g5",
-            "type": "photo",
-            "src": "",
-            "alt": "オーソルロック茶博物館と周辺に広がる緑茶畑",
-            "caption": "オーソルロック茶博物館と周辺に広がる緑茶畑",
-            "location": "",
-            "atmosphere": ""
-          }
-        ]
+        "galleryItems": []
       }
     },
     {
@@ -2025,11 +1979,6 @@
             "images": [
               "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
               "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
-              "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19-2.webp",
-              "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20-2.webp",
-              "/images/tours/hallasan-eoseungsaengak/photo-003.webp",
-              "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19-3.webp",
-              "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20-3.webp",
               "/images/tours/hallasan-eoseungsaengak/photo-003.webp"
             ],
             "imageCredits": [
@@ -2042,11 +1991,11 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19-2.webp",
+                "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20-2.webp",
+                "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
                 "source": "atoc-korea"
               },
               {
@@ -2054,11 +2003,11 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19-3.webp",
+                "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20-3.webp",
+                "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
                 "source": "atoc-korea"
               },
               {
@@ -2086,50 +2035,10 @@
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19-2.webp",
-                "location": "オスンセンアクトレイル（ハルラ山・ユネスコ）",
-                "caption": "オスンセンアクトレイル（ハルラ山・ユネスコ） — photo 3",
-                "alt": "オスンセンアクトレイル（ハルラ山・ユネスコ） — gallery image 3"
-              },
-              {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20-2.webp",
-                "location": "オスンセンアクトレイル（ハルラ山・ユネスコ）",
-                "caption": "オスンセンアクトレイル（ハルラ山・ユネスコ） — photo 4",
-                "alt": "オスンセンアクトレイル（ハルラ山・ユネスコ） — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
                 "src": "/images/tours/hallasan-eoseungsaengak/photo-003.webp",
                 "location": "オスンセンアクトレイル（ハルラ山・ユネスコ）",
                 "caption": "オスンセンアクトレイル（ハルラ山・ユネスコ） — photo 5",
                 "alt": "オスンセンアクトレイル（ハルラ山・ユネスコ） — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19-3.webp",
-                "location": "オスンセンアクトレイル（ハルラ山・ユネスコ）",
-                "caption": "オスンセンアクトレイル（ハルラ山・ユネスコ） — photo 6",
-                "alt": "オスンセンアクトレイル（ハルラ山・ユネスコ） — gallery image 6"
-              },
-              {
-                "id": 7,
-                "type": "photo",
-                "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20-3.webp",
-                "location": "オスンセンアクトレイル（ハルラ山・ユネスコ）",
-                "caption": "オスンセンアクトレイル（ハルラ山・ユネスコ） — photo 7",
-                "alt": "オスンセンアクトレイル（ハルラ山・ユネスコ） — gallery image 7"
-              },
-              {
-                "id": 8,
-                "type": "photo",
-                "src": "/images/tours/hallasan-eoseungsaengak/photo-003.webp",
-                "location": "オスンセンアクトレイル（ハルラ山・ユネスコ）",
-                "caption": "オスンセンアクトレイル（ハルラ山・ユネスコ） — photo 8",
-                "alt": "オスンセンアクトレイル（ハルラ山・ユネスコ） — gallery image 8"
               }
             ]
           },
@@ -2173,18 +2082,13 @@
               "verified": true,
               "sources": [
                 "VisitKorea",
-                "",
                 "third-party booking site"
               ],
               "verified_date": "2026-04-27"
             },
             "images": [
               "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
-              "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
-              "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-2.webp",
-              "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-2.webp",
-              "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-3.webp",
-              "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-3.webp"
+              "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp"
             ],
             "imageCredits": [
               {
@@ -2196,19 +2100,19 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-2.webp",
+                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-2.webp",
+                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-3.webp",
+                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-3.webp",
+                "url": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2228,38 +2132,6 @@
                 "location": "カメリアヒル（通年のシグネチャーフラワーガーデン）",
                 "caption": "カメリアヒル（通年のシグネチャーフラワーガーデン） — photo 2",
                 "alt": "カメリアヒル（通年のシグネチャーフラワーガーデン） — gallery image 2"
-              },
-              {
-                "id": 3,
-                "type": "photo",
-                "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-2.webp",
-                "location": "カメリアヒル（通年のシグネチャーフラワーガーデン）",
-                "caption": "カメリアヒル（通年のシグネチャーフラワーガーデン） — photo 3",
-                "alt": "カメリアヒル（通年のシグネチャーフラワーガーデン） — gallery image 3"
-              },
-              {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-2.webp",
-                "location": "カメリアヒル（通年のシグネチャーフラワーガーデン）",
-                "caption": "カメリアヒル（通年のシグネチャーフラワーガーデン） — photo 4",
-                "alt": "カメリアヒル（通年のシグネチャーフラワーガーデン） — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-10-11-57-34-3.webp",
-                "location": "カメリアヒル（通年のシグネチャーフラワーガーデン）",
-                "caption": "カメリアヒル（通年のシグネチャーフラワーガーデン） — photo 5",
-                "alt": "カメリアヒル（通年のシグネチャーフラワーガーデン） — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/camellia-hill/chatgpt-image-2026-5-8-07-37-57-3.webp",
-                "location": "カメリアヒル（通年のシグネチャーフラワーガーデン）",
-                "caption": "カメリアヒル（通年のシグネチャーフラワーガーデン） — photo 6",
-                "alt": "カメリアヒル（通年のシグネチャーフラワーガーデン） — gallery image 6"
               }
             ]
           },
@@ -2343,13 +2215,6 @@
               "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
               "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
               "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
-              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
-              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
-              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
-              "/images/tours/cheonjeyeon-falls/photo-004.webp",
-              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
-              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
-              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
               "/images/tours/cheonjeyeon-falls/photo-004.webp"
             ],
             "imageCredits": [
@@ -2426,66 +2291,10 @@
               {
                 "id": 4,
                 "type": "photo",
-                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
-                "location": "天帝淵瀑布（天帝の池）",
-                "caption": "天帝淵瀑布（天帝の池） — photo 4",
-                "alt": "天帝淵瀑布（天帝の池） — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
-                "location": "天帝淵瀑布（天帝の池）",
-                "caption": "天帝淵瀑布（天帝の池） — photo 5",
-                "alt": "天帝淵瀑布（天帝の池） — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
-                "location": "天帝淵瀑布（天帝の池）",
-                "caption": "天帝淵瀑布（天帝の池） — photo 6",
-                "alt": "天帝淵瀑布（天帝の池） — gallery image 6"
-              },
-              {
-                "id": 7,
-                "type": "photo",
                 "src": "/images/tours/cheonjeyeon-falls/photo-004.webp",
                 "location": "天帝淵瀑布（天帝の池）",
                 "caption": "天帝淵瀑布（天帝の池） — photo 7",
                 "alt": "天帝淵瀑布（天帝の池） — gallery image 7"
-              },
-              {
-                "id": 8,
-                "type": "photo",
-                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
-                "location": "天帝淵瀑布（天帝の池）",
-                "caption": "天帝淵瀑布（天帝の池） — photo 8",
-                "alt": "天帝淵瀑布（天帝の池） — gallery image 8"
-              },
-              {
-                "id": 9,
-                "type": "photo",
-                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
-                "location": "天帝淵瀑布（天帝の池）",
-                "caption": "天帝淵瀑布（天帝の池） — photo 9",
-                "alt": "天帝淵瀑布（天帝の池） — gallery image 9"
-              },
-              {
-                "id": 10,
-                "type": "photo",
-                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
-                "location": "天帝淵瀑布（天帝の池）",
-                "caption": "天帝淵瀑布（天帝の池） — photo 10",
-                "alt": "天帝淵瀑布（天帝の池） — gallery image 10"
-              },
-              {
-                "id": 11,
-                "type": "photo",
-                "src": "/images/tours/cheonjeyeon-falls/photo-004.webp",
-                "location": "天帝淵瀑布（天帝の池）",
-                "caption": "天帝淵瀑布（天帝の池） — photo 11",
-                "alt": "天帝淵瀑布（天帝の池） — gallery image 11"
               }
             ]
           },
@@ -2538,15 +2347,6 @@
               "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
               "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
               "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
-              "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
-              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
-              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
-              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
-              "/images/tours/jusangjeolli/photo-005.webp",
-              "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
-              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-3.webp",
-              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-3.webp",
-              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-3.webp",
               "/images/tours/jusangjeolli/photo-005.webp"
             ],
             "imageCredits": [
@@ -2571,15 +2371,15 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
                 "source": "atoc-korea"
               },
               {
@@ -2591,15 +2391,15 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-3.webp",
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-3.webp",
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-3.webp",
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
                 "source": "atoc-korea"
               },
               {
@@ -2643,82 +2443,10 @@
               {
                 "id": 5,
                 "type": "photo",
-                "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
-                "location": "柱状節理壁（大浦柱状節理）",
-                "caption": "柱状節理壁（大浦柱状節理） — photo 5",
-                "alt": "柱状節理壁（大浦柱状節理） — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-2.webp",
-                "location": "柱状節理壁（大浦柱状節理）",
-                "caption": "柱状節理壁（大浦柱状節理） — photo 6",
-                "alt": "柱状節理壁（大浦柱状節理） — gallery image 6"
-              },
-              {
-                "id": 7,
-                "type": "photo",
-                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-2.webp",
-                "location": "柱状節理壁（大浦柱状節理）",
-                "caption": "柱状節理壁（大浦柱状節理） — photo 7",
-                "alt": "柱状節理壁（大浦柱状節理） — gallery image 7"
-              },
-              {
-                "id": 8,
-                "type": "photo",
-                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-2.webp",
-                "location": "柱状節理壁（大浦柱状節理）",
-                "caption": "柱状節理壁（大浦柱状節理） — photo 8",
-                "alt": "柱状節理壁（大浦柱状節理） — gallery image 8"
-              },
-              {
-                "id": 9,
-                "type": "photo",
                 "src": "/images/tours/jusangjeolli/photo-005.webp",
                 "location": "柱状節理壁（大浦柱状節理）",
                 "caption": "柱状節理壁（大浦柱状節理） — photo 9",
                 "alt": "柱状節理壁（大浦柱状節理） — gallery image 9"
-              },
-              {
-                "id": 10,
-                "type": "photo",
-                "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
-                "location": "柱状節理壁（大浦柱状節理）",
-                "caption": "柱状節理壁（大浦柱状節理） — photo 10",
-                "alt": "柱状節理壁（大浦柱状節理） — gallery image 10"
-              },
-              {
-                "id": 11,
-                "type": "photo",
-                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11-3.webp",
-                "location": "柱状節理壁（大浦柱状節理）",
-                "caption": "柱状節理壁（大浦柱状節理） — photo 11",
-                "alt": "柱状節理壁（大浦柱状節理） — gallery image 11"
-              },
-              {
-                "id": 12,
-                "type": "photo",
-                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12-3.webp",
-                "location": "柱状節理壁（大浦柱状節理）",
-                "caption": "柱状節理壁（大浦柱状節理） — photo 12",
-                "alt": "柱状節理壁（大浦柱状節理） — gallery image 12"
-              },
-              {
-                "id": 13,
-                "type": "photo",
-                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13-3.webp",
-                "location": "柱状節理壁（大浦柱状節理）",
-                "caption": "柱状節理壁（大浦柱状節理） — photo 13",
-                "alt": "柱状節理壁（大浦柱状節理） — gallery image 13"
-              },
-              {
-                "id": 14,
-                "type": "photo",
-                "src": "/images/tours/jusangjeolli/photo-005.webp",
-                "location": "柱状節理壁（大浦柱状節理）",
-                "caption": "柱状節理壁（大浦柱状節理） — photo 14",
-                "alt": "柱状節理壁（大浦柱状節理） — gallery image 14"
               }
             ]
           },
@@ -2763,7 +2491,6 @@
               "sources": [
                 "VisitKorea",
                 "Osulloc.com",
-                "",
                 "third-party booking site"
               ],
               "verified_date": "2026-04-27",
@@ -3435,7 +3162,6 @@
           "Ramsar SIS",
           "AllTrails",
           "Inside Jeju",
-          "",
           "Jeju Tourism Org"
         ]
       }
