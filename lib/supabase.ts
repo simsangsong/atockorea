@@ -1,19 +1,28 @@
 import { createClient } from '@supabase/supabase-js';
+import { createBrowserClient, createServerClient as createSsrServerClient } from '@supabase/ssr';
 
 // Get environment variables
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
 
-// Create Supabase client for client-side usage
-// Only create client if environment variables are available
+/**
+ * Browser Supabase client (cookie-backed session via `@supabase/ssr`).
+ *
+ * Cookie-based storage replaces the previous `createClient` + localStorage
+ * pattern. Cookies are accessible from server components / route handlers
+ * via `createSupabaseServerComponentClient()` (below), which is what
+ * makes proper SSR auth possible. Auth flags (autoRefreshToken /
+ * persistSession / detectSessionInUrl) are enabled by default in
+ * `createBrowserClient`, so no extra config is needed.
+ *
+ * Migration note: users who were signed in via the pre-ssr build hold a
+ * session in localStorage that this client cannot see — they will be
+ * signed out once and need to sign in again. Acceptable tradeoff: the
+ * cookie session is the only one a server component can read, and
+ * was already broken for many users (infinite-spinner symptom, see #82).
+ */
 export const supabase = supabaseUrl && supabaseAnonKey
-  ? createClient(supabaseUrl, supabaseAnonKey, {
-      auth: {
-        autoRefreshToken: true,
-        persistSession: true,
-        detectSessionInUrl: true,
-      },
-    })
+  ? createBrowserClient(supabaseUrl, supabaseAnonKey)
   : null;
 
 // Create Supabase client for server-side usage (with service role key)
@@ -46,6 +55,55 @@ export const createAnonServerClient = () => {
     },
   });
 };
+
+/**
+ * Cookie-scoped anon client for Server Components / Route Handlers / Server
+ * Actions. The caller passes in a Next.js cookie store (typically `await
+ * cookies()` from `next/headers`) so this module stays import-safe from
+ * client components — referencing `next/headers` here directly would mark
+ * `lib/supabase.ts` server-only and break the browser `supabase` export.
+ *
+ * Usage in a Route Handler:
+ *   import { cookies } from 'next/headers';
+ *   import { createSupabaseServerComponentClient } from '@/lib/supabase';
+ *   const supabase = createSupabaseServerComponentClient(await cookies());
+ *   const { data: { user } } = await supabase.auth.getUser();
+ *
+ * In Server Components, `setAll` writes will throw — that's expected and
+ * silently swallowed; Next.js only allows cookie writes from Route
+ * Handlers and Server Actions.
+ */
+type SupabaseCookieAdapter = {
+  getAll(): Array<{ name: string; value: string }>;
+  set?(name: string, value: string, options?: Record<string, unknown>): void;
+};
+
+export function createSupabaseServerComponentClient(cookieStore: SupabaseCookieAdapter) {
+  if (!supabaseUrl || !supabaseAnonKey) {
+    const missing = [!supabaseUrl && 'NEXT_PUBLIC_SUPABASE_URL', !supabaseAnonKey && 'NEXT_PUBLIC_SUPABASE_ANON_KEY']
+      .filter(Boolean)
+      .join(', ');
+    throw new Error(`Missing Supabase env: ${missing}`);
+  }
+  return createSsrServerClient(supabaseUrl, supabaseAnonKey, {
+    cookies: {
+      getAll() {
+        return cookieStore.getAll();
+      },
+      setAll(toSet) {
+        if (typeof cookieStore.set !== 'function') return;
+        try {
+          for (const { name, value, options } of toSet) {
+            cookieStore.set(name, value, options);
+          }
+        } catch {
+          // Server Components cannot mutate cookies; ignore. Route Handlers
+          // and Server Actions can, and they get the write through.
+        }
+      },
+    },
+  });
+}
 
 /** Alias for service-role server client (itinerary cache, admin batch jobs). */
 export const createServiceRoleClient = createServerClient;
