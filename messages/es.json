@@ -600,7 +600,8 @@
       "errorRedirectingToSignIn": "Redirigiendo a la página de inicio de sesión...",
       "lineSuccessBody": "Inicio de sesión con LINE completado. Redirigiendo...",
       "redirectingToSignUp": "Redirigiendo al registro...",
-      "defaultErrorMessage": "La autenticación falló."
+      "defaultErrorMessage": "La autenticación falló.",
+      "expiredBody": "Tu sesión de inicio caducó. Redirigiendo a iniciar sesión — vuelve a intentarlo."
     }
   },
   "forgotIdPage": {
