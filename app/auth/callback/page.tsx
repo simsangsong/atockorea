@@ -275,8 +275,28 @@ function AuthCallbackContent() {
       } catch (error: any) {
         console.error('OAuth callback error:', error);
         setStatus('error');
-        setMessage(error?.message || t('auth.callbackPage.defaultErrorMessage'));
 
+        // PKCE / code-verifier errors are a one-time artefact of the
+        // localStorage → cookies session migration (@supabase/ssr adoption,
+        // PR #84): the verifier was written by the old client and is
+        // unreachable for the new one. Don't show users the raw library
+        // message — it's noisy and mentions internal storage details that
+        // aren't actionable. Just clear any stale cookies and bounce them
+        // to /signin so a fresh OAuth round completes the migration.
+        const rawMsg = String(error?.message ?? '').toLowerCase();
+        const isPkceMigrationArtefact =
+          rawMsg.includes('pkce') ||
+          rawMsg.includes('code verifier') ||
+          rawMsg.includes('code_verifier');
+
+        if (isPkceMigrationArtefact) {
+          setMessage(t('auth.callbackPage.expiredBody'));
+          try { await supabase?.auth.signOut(); } catch { /* noop */ }
+          setTimeout(() => { router.replace('/signin?reason=expired'); }, 1200);
+          return;
+        }
+
+        setMessage(error?.message || t('auth.callbackPage.defaultErrorMessage'));
         setTimeout(() => {
           router.push('/signin');
         }, 3000);

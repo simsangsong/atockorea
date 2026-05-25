@@ -600,7 +600,8 @@
       "errorRedirectingToSignIn": "Redirecting to the sign-in page shortly...",
       "lineSuccessBody": "LINE sign-in complete. Redirecting...",
       "redirectingToSignUp": "Redirecting to sign up...",
-      "defaultErrorMessage": "Authentication failed."
+      "defaultErrorMessage": "Authentication failed.",
+      "expiredBody": "Your sign-in session expired. Redirecting to the sign-in page — please try again."
     }
   },
   "forgotIdPage": {

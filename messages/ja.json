@@ -600,7 +600,8 @@
       "errorRedirectingToSignIn": "まもなくログインページへリダイレクトします...",
       "lineSuccessBody": "LINEログインが完了しました。リダイレクト中...",
       "redirectingToSignUp": "登録ページへリダイレクト中...",
-      "defaultErrorMessage": "認証に失敗しました。"
+      "defaultErrorMessage": "認証に失敗しました。",
+      "expiredBody": "サインインセッションの有効期限が切れました。サインインページへリダイレクトします — もう一度お試しください。"
     }
   },
   "forgotIdPage": {

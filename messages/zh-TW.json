@@ -600,7 +600,8 @@
       "errorRedirectingToSignIn": "即將導向登入頁...",
       "lineSuccessBody": "LINE 登入完成，正在導向...",
       "redirectingToSignUp": "正在導向註冊頁...",
-      "defaultErrorMessage": "驗證失敗。"
+      "defaultErrorMessage": "驗證失敗。",
+      "expiredBody": "登入工作階段已過期，正在導向登入頁 — 請重新嘗試。"
     }
   },
   "forgotIdPage": {

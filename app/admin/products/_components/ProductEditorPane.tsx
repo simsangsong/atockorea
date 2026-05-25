@@ -109,6 +109,24 @@ export function ProductEditorPane({
     source: ProductPageRow,
     options: { silent?: boolean } = {},
   ) => {
+    // Cross-product save guard. If the user is mid-edit on slug A and
+    // then clicks slug B in the list pane before our 650ms debounce
+    // fires, `persistDraft` gets rebuilt with slug=B but the pending
+    // `draft` still belongs to slug=A. Without this check the autosave
+    // would fire `saveProductPage(slug=B, …, draft of A)` and overwrite
+    // B's row with A's content (caused the Pocheon ↔ Jeju Winter
+    // "merge" data loss bug reported 2026-05-25). Reject any source
+    // whose slug/locale no longer matches the currently selected pair.
+    if (source.slug !== slug || source.locale !== locale) {
+      if (process.env.NODE_ENV === 'development') {
+        console.warn(
+          '[ProductEditorPane] dropping stale auto-save',
+          { sourceSlug: source.slug, currentSlug: slug, sourceLocale: source.locale, currentLocale: locale },
+        );
+      }
+      return;
+    }
+
     const saveId = latestSaveIdRef.current + 1;
     latestSaveIdRef.current = saveId;
     const previousSignature = lastPersistedSignatureRef.current;
@@ -147,13 +165,16 @@ export function ProductEditorPane({
 
   useEffect(() => {
     if (!draft || !dirty) return;
+    // Same cross-product guard as persistDraft: don't even schedule an
+    // autosave when the draft still belongs to the previous selection.
+    if (draft.slug !== slug || draft.locale !== locale) return;
     const signature = serializeSavePatch(draft);
     if (signature === lastPersistedSignatureRef.current) return;
     const id = window.setTimeout(() => {
       void persistDraft(draft, { silent: true });
     }, 650);
     return () => window.clearTimeout(id);
-  }, [dirty, draft, persistDraft]);
+  }, [dirty, draft, locale, persistDraft, slug]);
 
   // Media state derived from detail_payload + top-level columns. Saving writes
   // back to all three locations (thumbnail_url, hero_image_url, and the
