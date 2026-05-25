@@ -9,6 +9,7 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import { useTranslations } from "@/lib/i18n";
 import { useCurrency, CURRENCY_LIST, type CurrencyCode } from "@/lib/currency";
 import { supabase } from "@/lib/supabase";
+import { useSession } from "@/lib/auth-session";
 import { cn } from "@/lib/utils";
 
 interface UserProfile {
@@ -33,119 +34,74 @@ export default function Header({ premiumTourDetail = false }: HeaderProps) {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [user, setUser] = useState<UserProfile | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
+
+  // Read the session from the global provider in app/layout.tsx — see
+  // lib/auth-session.tsx for why this replaced the local getSession +
+  // onAuthStateChange dance (the previous code deadlocked the SDK and
+  // surfaced as 5–6s `auth.getSession timed out` console spam).
+  const { status: sessionStatus, session: authSession } = useSession();
+  const isLoading = sessionStatus === 'checking';
+  const authUserId = authSession?.user?.id ?? null;
+  const authUserEmail = authSession?.user?.email ?? null;
+  const authUserMeta = authSession?.user?.user_metadata ?? null;
 
   // Sign-in / sign-up / mypage use the same light frosted header as the rest of the site
   // (dark bar was jarring next to pastel page backgrounds and glass auth cards).
   const isDarkPage = false;
 
-  // Load user session and profile
+  // Load (or lazy-create) the user_profiles row whenever the signed-in
+  // user changes. Keyed only on the user id so a TOKEN_REFRESHED event
+  // (same user, new access_token) does not re-hit the table.
   useEffect(() => {
-    /**
-     * Race a promise against a timeout. supabase-js 2.39 can hang on
-     * `getSession()` when the persisted token is stale or the auth worker
-     * hasn't booted yet — we fall back to "no session" so the header never
-     * sits on the spinner forever (issue surfaced by ops on 2026-05-25).
-     */
-    const withAuthTimeout = <T,>(p: PromiseLike<T>, ms: number, label: string): Promise<T | null> =>
-      Promise.race<T | null>([
-        Promise.resolve(p),
-        new Promise<null>((resolve) => {
-          setTimeout(() => {
-            console.warn(`[Header] ${label} timed out after ${ms}ms — treating as signed-out`);
-            resolve(null);
-          }, ms);
-        }),
-      ]);
+    if (!authUserId) {
+      setUser(null);
+      return;
+    }
+    if (!supabase) return;
 
-    const loadUser = async () => {
-      if (!supabase) {
-        setIsLoading(false);
+    let cancelled = false;
+    (async () => {
+      const { data: profile, error } = await supabase!
+        .from('user_profiles')
+        .select('id, full_name, avatar_url, role')
+        .eq('id', authUserId)
+        .single();
+      if (cancelled) return;
+
+      if (!error && profile) {
+        setUser(profile as UserProfile);
         return;
       }
 
-      try {
-        const sessionResult = await withAuthTimeout(
-          supabase.auth.getSession(),
-          6000,
-          'auth.getSession',
-        );
-        const session = sessionResult?.data?.session ?? null;
-        const sessionError = sessionResult?.error ?? null;
-
-        if (sessionError || !session?.user) {
-          setUser(null);
-          setIsLoading(false);
-          return;
-        }
-
-        const profileResult = await withAuthTimeout(
-          supabase
-            .from('user_profiles')
-            .select('id, full_name, avatar_url, role')
-            .eq('id', session.user.id)
-            .single(),
-          5000,
-          'user_profiles.select',
-        );
-        const profile = profileResult?.data ?? null;
-        const profileError = profileResult?.error ?? null;
-
-        if (profileError || !profile) {
-          // If profile doesn't exist, create it
-          const { data: newProfile } = await supabase
-            .from('user_profiles')
-            .insert({
-              id: session.user.id,
-              full_name: session.user.user_metadata?.full_name || 
-                         session.user.email?.split('@')[0] || 
-                         'User',
-              role: 'customer',
-            })
-            .select()
-            .single();
-
-          if (newProfile) {
-            setUser(newProfile);
-          } else {
-            setUser(null);
-          }
-        } else {
-          setUser(profile);
-        }
-      } catch (error) {
-        console.error('Error loading user:', error);
-        setUser(null);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    loadUser();
-
-    // Listen for auth state changes
-    let subscription: { unsubscribe: () => void } | null = null;
-    if (supabase) {
-      const authStateChangeResult = supabase.auth.onAuthStateChange((_event, session) => {
-        if (session?.user) {
-          loadUser();
-        } else {
-          setUser(null);
-        }
-      });
-      subscription = authStateChangeResult?.data?.subscription || null;
-    }
-
-    // Listen for search open event
-    const handleOpenSearch = () => {
-      setIsSearchOpen(true);
-    };
-    window.addEventListener("openSearch", handleOpenSearch);
+      // No profile row yet — create one. Fall back to whatever the auth
+      // metadata gave us so the avatar / display name don't reset to "User".
+      const meta = (authUserMeta as Record<string, unknown> | null) ?? {};
+      const { data: created } = await supabase!
+        .from('user_profiles')
+        .insert({
+          id: authUserId,
+          full_name:
+            (typeof meta.full_name === 'string' && meta.full_name) ||
+            (authUserEmail ? authUserEmail.split('@')[0] : null) ||
+            'User',
+          role: 'customer',
+        })
+        .select()
+        .single();
+      if (!cancelled) setUser((created as UserProfile | null) ?? null);
+    })();
 
     return () => {
-      subscription?.unsubscribe();
-      window.removeEventListener("openSearch", handleOpenSearch);
+      cancelled = true;
     };
+  }, [authUserId, authUserEmail, authUserMeta]);
+
+  // Window-level "open the search modal" event — kept separate from auth
+  // so it stays alive across SessionProvider re-renders.
+  useEffect(() => {
+    const handleOpenSearch = () => setIsSearchOpen(true);
+    window.addEventListener('openSearch', handleOpenSearch);
+    return () => window.removeEventListener('openSearch', handleOpenSearch);
   }, []);
 
   const handleSearch = (e: React.FormEvent) => {
