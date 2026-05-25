@@ -64,9 +64,37 @@ async function getSessionWithRetry() {
 
 export function MyPageSessionProvider({ children }: { children: ReactNode }) {
   const [status, setStatus] = useState<'checking' | 'ready'>('checking');
-  const [session, setSession] = useState<Session | null>(null);
+  const [session, setSessionState] = useState<Session | null>(null);
   const [profile, setProfile] = useState<MyPageProfile | null>(null);
   const supplementAttemptedRef = useRef(false);
+  /**
+   * Ref mirror of `session` so `getAccessToken` / `refreshProfile` can read
+   * the latest value without depending on it in `useCallback`. Without this
+   * the callbacks change identity every time supabase emits a new Session
+   * object (INITIAL_SESSION, SIGNED_IN, TOKEN_REFRESHED), which used to
+   * cascade into /mypage's fetchAll re-firing on every event and pinning
+   * the page on the "verifying session" spinner (reported 2026-05-25).
+   */
+  const sessionRef = useRef<Session | null>(null);
+
+  /**
+   * Dedupe Session objects whose access_token + user.id are unchanged.
+   * @supabase/ssr re-emits a fresh Session reference on every auth event
+   * (and `getSession()` call), and React treats those as state changes
+   * even though the user identity hasn't moved — feeding the render
+   * cascade above.
+   */
+  const setSession = useCallback((next: Session | null) => {
+    const prev = sessionRef.current;
+    if (
+      prev?.access_token === next?.access_token &&
+      (prev?.user?.id ?? null) === (next?.user?.id ?? null)
+    ) {
+      return;
+    }
+    sessionRef.current = next;
+    setSessionState(next);
+  }, []);
 
   const loadProfile = useCallback(async (activeSession: Session | null) => {
     if (!activeSession?.user) {
@@ -155,7 +183,12 @@ export function MyPageSessionProvider({ children }: { children: ReactNode }) {
       const { supabase } = await import('@/lib/supabase');
       if (!supabase || cancelled) return;
       const { data: sub } = supabase.auth.onAuthStateChange((_event, nextSession) => {
+        const prev = sessionRef.current;
+        const sameSession =
+          prev?.access_token === nextSession?.access_token &&
+          (prev?.user?.id ?? null) === (nextSession?.user?.id ?? null);
         setSession(nextSession);
+        if (sameSession) return;
         if (!nextSession) {
           setProfile(null);
           supplementAttemptedRef.current = false;
@@ -170,21 +203,21 @@ export function MyPageSessionProvider({ children }: { children: ReactNode }) {
       cancelled = true;
       unsubscribe?.();
     };
-  }, [loadProfile]);
+  }, [loadProfile, setSession]);
 
   const refreshProfile = useCallback(async () => {
-    await loadProfile(session);
-  }, [loadProfile, session]);
+    await loadProfile(sessionRef.current);
+  }, [loadProfile]);
 
   const getAccessToken = useCallback(async () => {
-    if (session?.access_token) return session.access_token;
+    if (sessionRef.current?.access_token) return sessionRef.current.access_token;
     const nextSession = await getSessionWithRetry();
     setSession(nextSession);
     if (nextSession) {
       void loadProfile(nextSession);
     }
     return nextSession?.access_token ?? null;
-  }, [loadProfile, session]);
+  }, [loadProfile, setSession]);
 
   const value = useMemo<MyPageSessionContextValue>(
     () => ({
