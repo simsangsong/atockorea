@@ -10,20 +10,79 @@
  */
 import { NextRequest, NextResponse } from "next/server";
 
-function buildAllowedOrigins(): Set<string> {
-  const out = new Set<string>();
-  const candidates = [
-    process.env.NEXT_PUBLIC_APP_URL,
-    process.env.NEXT_PUBLIC_SITE_URL,
-    process.env.APP_URL,
-  ];
-  for (const c of candidates) {
-    if (!c) continue;
+const DEFAULT_PRODUCTION_ORIGINS = [
+  "https://atockorea.com",
+  "https://www.atockorea.com",
+];
+
+function hasScheme(value: string): boolean {
+  return /^[a-z][a-z\d+.-]*:\/\//i.test(value);
+}
+
+function addWwwVariant(out: Set<string>, origin: string): void {
+  try {
+    const url = new URL(origin);
+    const hostname = url.hostname.toLowerCase();
+
+    if (
+      hostname === "localhost" ||
+      hostname.includes(":") ||
+      /^\d+\.\d+\.\d+\.\d+$/.test(hostname)
+    ) {
+      return;
+    }
+
+    if (hostname.startsWith("www.")) {
+      url.hostname = hostname.slice(4);
+      out.add(url.origin);
+      return;
+    }
+
+    if (hostname.split(".").length === 2) {
+      url.hostname = `www.${hostname}`;
+      out.add(url.origin);
+    }
+  } catch {
+    /* ignore malformed env */
+  }
+}
+
+function addOriginCandidates(
+  out: Set<string>,
+  value: string | undefined,
+  includeWwwVariant = true
+): void {
+  if (!value) return;
+
+  for (const raw of value.split(",")) {
+    const trimmed = raw.trim();
+    if (!trimmed) continue;
+
     try {
-      out.add(new URL(c).origin);
+      const candidate = hasScheme(trimmed) ? trimmed : `https://${trimmed}`;
+      const origin = new URL(candidate).origin;
+      out.add(origin);
+      if (includeWwwVariant) addWwwVariant(out, origin);
     } catch {
       /* ignore malformed env */
     }
+  }
+}
+
+function buildAllowedOrigins(): Set<string> {
+  const out = new Set<string>();
+  const candidates = [
+    process.env.ALLOWED_ORIGINS,
+    process.env.CSRF_ALLOWED_ORIGINS,
+    process.env.NEXT_PUBLIC_APP_URL,
+    process.env.NEXT_PUBLIC_SITE_URL,
+    process.env.APP_URL,
+    process.env.VERCEL_PROJECT_PRODUCTION_URL,
+    process.env.VERCEL_URL,
+    ...DEFAULT_PRODUCTION_ORIGINS,
+  ];
+  for (const c of candidates) {
+    addOriginCandidates(out, c);
   }
   if (process.env.NODE_ENV !== "production") {
     out.add("http://localhost:3000");
@@ -39,10 +98,34 @@ function allowedOrigins(): Set<string> {
   return cachedAllowed;
 }
 
-function isAllowedOriginValue(origin: string): boolean {
+function requestOrigins(req: NextRequest): Set<string> {
+  const out = new Set<string>();
+
+  addOriginCandidates(out, req.url, false);
+
+  const forwardedHost = req.headers.get("x-forwarded-host")?.split(",")[0]?.trim();
+  const host = forwardedHost || req.headers.get("host")?.split(",")[0]?.trim();
+
+  if (host) {
+    let protocol = req.headers.get("x-forwarded-proto")?.split(",")[0]?.trim();
+    if (!protocol) {
+      try {
+        protocol = new URL(req.url).protocol.replace(/:$/, "");
+      } catch {
+        protocol = "https";
+      }
+    }
+
+    addOriginCandidates(out, `${protocol}://${host}`, false);
+  }
+
+  return out;
+}
+
+function isAllowedOriginValue(origin: string, req: NextRequest): boolean {
   try {
     const o = new URL(origin).origin;
-    return allowedOrigins().has(o);
+    return allowedOrigins().has(o) || requestOrigins(req).has(o);
   } catch {
     return false;
   }
@@ -70,7 +153,7 @@ export function checkOrigin(
   const hasBearer = auth.toLowerCase().startsWith("bearer ");
 
   if (origin) {
-    if (isAllowedOriginValue(origin)) return null;
+    if (isAllowedOriginValue(origin, req)) return null;
     return NextResponse.json(
       { error: "forbidden", code: "ORIGIN_NOT_ALLOWED" },
       { status: 403 }
@@ -78,7 +161,7 @@ export function checkOrigin(
   }
 
   if (referer) {
-    if (isAllowedOriginValue(referer)) return null;
+    if (isAllowedOriginValue(referer, req)) return null;
     return NextResponse.json(
       { error: "forbidden", code: "REFERER_NOT_ALLOWED" },
       { status: 403 }
