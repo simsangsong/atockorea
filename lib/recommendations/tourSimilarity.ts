@@ -64,9 +64,36 @@ function parseDurationHours(duration: string | null | undefined): number {
   return 0;
 }
 
+/**
+ * Coarse buckets so "East Jeju", "Eastern Jeju", "Southwest Jeju" and
+ * "Jeju Full-Island Route" all share the same diversity slot. Without
+ * this the perRegionCap stops working — each Jeju sub-region has a
+ * different first token, so the cap never triggers and the strip ends
+ * up 5-of-6 Jeju. Order matters: gangwon before seoul (Seoraksan
+ * regions include "Seoul → Gangwon"), gyeongju before busan ("Gyeongju
+ * (from Busan)").
+ */
+const COARSE_REGION_BUCKETS: ReadonlyArray<{ key: string; tokens: readonly string[] }> = [
+  { key: "jeju", tokens: ["jeju", "济州", "濟州", "제주"] },
+  { key: "gangwon", tokens: ["gangwon", "seoraksan", "yangyang", "sokcho", "강원", "설악산"] },
+  { key: "gyeongju", tokens: ["gyeongju", "경주", "庆州", "慶州"] },
+  { key: "busan", tokens: ["busan", "yangsan", "ulsan", "miryang", "부산", "釜山"] },
+  { key: "pocheon", tokens: ["pocheon", "포천", "抱川"] },
+  { key: "paju", tokens: ["paju", "파주", "坡州"] },
+  { key: "gapyeong", tokens: ["gapyeong", "가평", "加平"] },
+  { key: "suwon", tokens: ["suwon", "수원", "水原"] },
+  { key: "gyeonggi", tokens: ["gyeonggi", "경기", "京畿"] },
+  { key: "incheon", tokens: ["incheon", "인천", "仁川"] },
+  { key: "seoul", tokens: ["seoul", "서울", "首尔", "首爾"] },
+];
+
 function dominantRegionToken(region: string | null | undefined): string {
+  const lc = (region ?? "").toLowerCase();
+  for (const bucket of COARSE_REGION_BUCKETS) {
+    if (bucket.tokens.some((t) => lc.includes(t))) return bucket.key;
+  }
   const tokens = tokenize(region, 3);
-  return tokens[0] ?? (region ?? "").toLowerCase().trim();
+  return tokens[0] ?? lc.trim();
 }
 
 export type TourSimilarityAnchor = {
