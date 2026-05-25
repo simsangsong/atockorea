@@ -61,7 +61,7 @@
     "reserve": "Reserve",
     "chooseAnotherDate": "Choose another date",
     "checkingAvailability": "Checking availability…",
-    "payLater": "Pay nothing today",
+    "payLater": "Charged on tour day",
     "spotsLeftTemplate": "{count} spots left",
     "selectDate": "Select Date",
     "numberOfGuests": "Number of Guests",
@@ -257,12 +257,12 @@
     "secureCheckout": "Secure checkout"
   },
   "checkout": {
-    "cardOnFileTitle": "Nothing charged today",
-    "cardOnFileSubtitle": "We just save your card securely to confirm your reservation — nothing is charged today, and you can cancel for free up to 24 hours before your tour.",
+    "cardOnFileTitle": "Card saved today — charged on tour day",
+    "cardOnFileSubtitle": "We save your card securely today to confirm your reservation. Your tour price will be charged automatically at 10:00 AM Korea time on the tour date. Cancel at least 24 hours before departure for a fee-free refund.",
     "holdNow": "Place hold & confirm reservation",
     "saveCardAndReserve": "Save card & confirm reservation",
-    "holdDisclosureNow": "{amount} hold placed today, charged only on no-show.",
-    "holdDisclosureLater": "{amount} hold placed ~5 days before your tour, charged only on no-show."
+    "holdDisclosureNow": "{amount} authorization placed today. It will be charged automatically at 10:00 AM Korea time on the tour date unless you cancel at least 24 hours before departure.",
+    "holdDisclosureLater": "Card saved today. A {amount} authorization is placed about 5 days before your tour and charged automatically at 10:00 AM Korea time on the tour date unless you cancel at least 24 hours before departure."
   },
   "wishlist": {
     "title": "My Wishlist",

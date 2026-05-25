@@ -61,7 +61,7 @@
     "reserve": "繼續預訂",
     "chooseAnotherDate": "選擇其他日期",
     "checkingAvailability": "正在查詢余位…",
-    "payLater": "今日無需付款",
+    "payLater": "出行當天自動扣款",
     "spotsLeftTemplate": "剩餘 {count} 個名額",
     "selectDate": "選擇日期",
     "numberOfGuests": "人數",
@@ -257,12 +257,12 @@
     "secureCheckout": "安全結帳"
   },
   "checkout": {
-    "cardOnFileTitle": "今日不會扣款",
-    "cardOnFileSubtitle": "我們只會安全保存您的信用卡以確認預訂，今日不會扣取任何費用，並可於出發前 24 小時內免費取消。",
+    "cardOnFileTitle": "今日僅保存信用卡，出行當天自動扣款",
+    "cardOnFileSubtitle": "我們今天會安全保存您的信用卡以確認預訂。團費將於出行當天韓國時間上午 10:00 自動扣款；如不想繼續，請至少於出發前 24 小時取消，即可免手續費退款。",
     "holdNow": "登記保證金並確認預訂",
     "saveCardAndReserve": "儲存卡片並確認預訂",
-    "holdDisclosureNow": "今日預授權 {amount}，僅在未到場時實際扣款。",
-    "holdDisclosureLater": "在出行前約 5 天預授權 {amount}，僅在未到場時實際扣款。"
+    "holdDisclosureNow": "今日預授權 {amount}。如未至少於出發前 24 小時取消，將於出行當天韓國時間上午 10:00 自動扣款。",
+    "holdDisclosureLater": "今日僅保存信用卡。出行前約 5 天會預授權 {amount}，如未至少於出發前 24 小時取消，將於出行當天韓國時間上午 10:00 自動扣款。"
   },
   "wishlist": {
     "title": "我的收藏",

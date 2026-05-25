@@ -142,11 +142,11 @@ function CardFormInner({
     leadDays <= 7
       ? tt(
           'checkout.holdDisclosureNow',
-          `${formatUsd(amountUsdCents)} authorization placed today. It will be charged automatically at 10:00 AM Korea time on the tour date after pickup time has passed.`,
+          `${formatUsd(amountUsdCents)} authorization placed today. It will be charged automatically at 10:00 AM Korea time on the tour date unless you cancel at least 24 hours before departure.`,
         ).replace('{amount}', formatUsd(amountUsdCents))
       : tt(
           'checkout.holdDisclosureLater',
-          `Card saved today. A ${formatUsd(amountUsdCents)} authorization is placed about 5 days before your tour and charged automatically at 10:00 AM Korea time on the tour date.`,
+          `Card saved today. A ${formatUsd(amountUsdCents)} authorization is placed about 5 days before your tour and charged automatically at 10:00 AM Korea time on the tour date unless you cancel at least 24 hours before departure.`,
         ).replace('{amount}', formatUsd(amountUsdCents));
 
   return (

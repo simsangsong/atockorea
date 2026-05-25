@@ -119,7 +119,7 @@ export async function POST(req: NextRequest) {
           break;
         }
 
-        /** Send "card on file — no charge today" confirmation email. */
+        /** Send card-on-file confirmation for the tour-day auto-charge flow. */
         await sendCardOnFileEmail(supabase, bookingId, pi).catch((err) =>
           console.error('Card-on-file email failed:', err),
         );

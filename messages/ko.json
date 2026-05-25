@@ -61,7 +61,7 @@
     "reserve": "예약 진행",
     "chooseAnotherDate": "다른 날짜 선택",
     "checkingAvailability": "예약 가능 확인 중…",
-    "payLater": "오늘 결제 없음",
+    "payLater": "투어 당일 자동 청구",
     "spotsLeftTemplate": "{count}자리 남음",
     "selectDate": "날짜 선택",
     "numberOfGuests": "인원수",
@@ -257,12 +257,12 @@
     "secureCheckout": "안전한 결제"
   },
   "checkout": {
-    "cardOnFileTitle": "오늘은 결제되는 금액이 없어요",
-    "cardOnFileSubtitle": "예약 확정을 위해 카드만 안전하게 등록할 뿐, 오늘 빠져나가는 금액은 없습니다. 투어 24시간 전까지 무료로 취소할 수 있어요.",
+    "cardOnFileTitle": "오늘은 카드만 등록 — 투어 당일 자동 청구",
+    "cardOnFileSubtitle": "예약 확정을 위해 오늘은 카드를 안전하게 등록합니다. 투어 요금은 투어 당일 한국시간 오전 10시에 자동 청구됩니다. 원하지 않으면 출발 24시간 전까지 수수료 없이 취소/환불할 수 있어요.",
     "holdNow": "보증금 등록 후 예약 확정",
     "saveCardAndReserve": "카드 등록 후 예약 확정",
-    "holdDisclosureNow": "오늘 {amount} 보증금이 등록되며, 노쇼 시에만 청구됩니다.",
-    "holdDisclosureLater": "투어 5일 전 {amount} 보증금이 등록되며, 노쇼 시에만 청구됩니다."
+    "holdDisclosureNow": "오늘 {amount} 승인 처리가 진행되며, 출발 24시간 전까지 취소하지 않으면 투어 당일 한국시간 오전 10시에 자동 청구됩니다.",
+    "holdDisclosureLater": "오늘은 카드만 등록합니다. 투어 약 5일 전 {amount} 승인이 진행되고, 출발 24시간 전까지 취소하지 않으면 투어 당일 한국시간 오전 10시에 자동 청구됩니다."
   },
   "wishlist": {
     "title": "내 위시리스트",

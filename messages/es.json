@@ -61,7 +61,7 @@
     "reserve": "Continuar reserva",
     "chooseAnotherDate": "Elegir otra fecha",
     "checkingAvailability": "Comprobando disponibilidad…",
-    "payLater": "No pagas nada hoy",
+    "payLater": "Cobro automático el día del tour",
     "spotsLeftTemplate": "{count} plazas disponibles",
     "selectDate": "Seleccionar fecha",
     "numberOfGuests": "Número de huéspedes",
@@ -257,12 +257,12 @@
     "secureCheckout": "Pago seguro"
   },
   "checkout": {
-    "cardOnFileTitle": "Hoy no se cobra nada",
-    "cardOnFileSubtitle": "Solo guardamos tu tarjeta de forma segura para confirmar la reserva; hoy no se cobra nada y puedes cancelar gratis hasta 24 horas antes del tour.",
+    "cardOnFileTitle": "Tarjeta guardada hoy — cobro el día del tour",
+    "cardOnFileSubtitle": "Guardamos tu tarjeta de forma segura hoy para confirmar la reserva. El precio del tour se cobrará automáticamente a las 10:00 a. m. hora de Corea el día del tour. Si no quieres continuar, cancela al menos 24 horas antes de la salida para recibir un reembolso sin cargos.",
     "holdNow": "Reservar con autorización de tarjeta",
     "saveCardAndReserve": "Guardar tarjeta y confirmar reserva",
-    "holdDisclosureNow": "Hoy se autoriza {amount}; se cobra solo si no te presentas.",
-    "holdDisclosureLater": "Se autoriza {amount} unos 5 días antes del tour; se cobra solo si no te presentas."
+    "holdDisclosureNow": "Hoy se autoriza {amount}. Se cobrará automáticamente a las 10:00 a. m. hora de Corea el día del tour, salvo que canceles al menos 24 horas antes de la salida.",
+    "holdDisclosureLater": "Hoy guardamos tu tarjeta. Se autorizará {amount} unos 5 días antes del tour y se cobrará automáticamente a las 10:00 a. m. hora de Corea el día del tour, salvo que canceles al menos 24 horas antes de la salida."
   },
   "wishlist": {
     "title": "Mi lista de deseos",

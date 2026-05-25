@@ -61,7 +61,7 @@
     "reserve": "予約に進む",
     "chooseAnotherDate": "別の日を選択",
     "checkingAvailability": "空き状況を確認中…",
-    "payLater": "本日の支払いなし",
+    "payLater": "ツアー当日自動決済",
     "spotsLeftTemplate": "残り{count}席",
     "selectDate": "日付を選択",
     "numberOfGuests": "人数",
@@ -257,12 +257,12 @@
     "secureCheckout": "安全な決済"
   },
   "checkout": {
-    "cardOnFileTitle": "本日のお支払いはありません",
-    "cardOnFileSubtitle": "ご予約を確定するためにカード情報を安全に登録するだけで、本日課金されることはありません。ツアー開始の24時間前まで無料でキャンセルいただけます。",
+    "cardOnFileTitle": "本日はカード登録のみ — ツアー当日に自動決済",
+    "cardOnFileSubtitle": "ご予約確定のため、本日はカード情報を安全に登録します。ツアー代金はツアー当日の韓国時間10:00に自動決済されます。ご希望でない場合は、出発24時間前までにキャンセルすると手数料なしで返金されます。",
     "holdNow": "保証金を登録して予約確定",
     "saveCardAndReserve": "カードを登録して予約確定",
-    "holdDisclosureNow": "本日 {amount} の保証金が確保されます。ノーショー時のみ請求。",
-    "holdDisclosureLater": "ツアー5日前に {amount} の保証金が確保されます。ノーショー時のみ請求。"
+    "holdDisclosureNow": "本日 {amount} のオーソリが行われます。出発24時間前までにキャンセルされない場合、ツアー当日の韓国時間10:00に自動決済されます。",
+    "holdDisclosureLater": "本日はカード登録のみです。ツアー約5日前に {amount} のオーソリが行われ、出発24時間前までにキャンセルされない場合、ツアー当日の韓国時間10:00に自動決済されます。"
   },
   "wishlist": {
     "title": "マイウィッシュリスト",

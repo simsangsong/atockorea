@@ -548,14 +548,16 @@ export default function CheckoutPage() {
                         <h2 className={MYPAGE_SECTION_TITLE}>
                           {(() => {
                             const v = t('checkout.cardOnFileTitle');
-                            return v === 'checkout.cardOnFileTitle' ? 'Nothing charged today' : v;
+                            return v === 'checkout.cardOnFileTitle'
+                              ? 'Card saved today — charged on tour day'
+                              : v;
                           })()}
                         </h2>
                         <p className="mt-1 text-[13px] leading-relaxed text-slate-600">
                           {(() => {
                             const v = t('checkout.cardOnFileSubtitle');
                             return v === 'checkout.cardOnFileSubtitle'
-                              ? 'We just save your card securely to confirm your reservation — nothing is charged today, and you can cancel for free up to 24 hours before your tour.'
+                              ? 'We save your card securely today to confirm your reservation. Your tour price will be charged automatically at 10:00 AM Korea time on the tour date. Cancel at least 24 hours before departure for a fee-free refund.'
                               : v;
                           })()}
                         </p>
