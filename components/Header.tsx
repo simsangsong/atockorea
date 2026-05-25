@@ -41,6 +41,23 @@ export default function Header({ premiumTourDetail = false }: HeaderProps) {
 
   // Load user session and profile
   useEffect(() => {
+    /**
+     * Race a promise against a timeout. supabase-js 2.39 can hang on
+     * `getSession()` when the persisted token is stale or the auth worker
+     * hasn't booted yet — we fall back to "no session" so the header never
+     * sits on the spinner forever (issue surfaced by ops on 2026-05-25).
+     */
+    const withAuthTimeout = <T,>(p: PromiseLike<T>, ms: number, label: string): Promise<T | null> =>
+      Promise.race<T | null>([
+        Promise.resolve(p),
+        new Promise<null>((resolve) => {
+          setTimeout(() => {
+            console.warn(`[Header] ${label} timed out after ${ms}ms — treating as signed-out`);
+            resolve(null);
+          }, ms);
+        }),
+      ]);
+
     const loadUser = async () => {
       if (!supabase) {
         setIsLoading(false);
@@ -48,21 +65,31 @@ export default function Header({ premiumTourDetail = false }: HeaderProps) {
       }
 
       try {
-        // Get current session
-        const { data: { session }, error: sessionError } = await supabase.auth.getSession() || { data: { session: null }, error: null };
-        
+        const sessionResult = await withAuthTimeout(
+          supabase.auth.getSession(),
+          6000,
+          'auth.getSession',
+        );
+        const session = sessionResult?.data?.session ?? null;
+        const sessionError = sessionResult?.error ?? null;
+
         if (sessionError || !session?.user) {
           setUser(null);
           setIsLoading(false);
           return;
         }
 
-        // Get user profile
-        const { data: profile, error: profileError } = await supabase
-          .from('user_profiles')
-          .select('id, full_name, avatar_url, role')
-          .eq('id', session.user.id)
-          .single();
+        const profileResult = await withAuthTimeout(
+          supabase
+            .from('user_profiles')
+            .select('id, full_name, avatar_url, role')
+            .eq('id', session.user.id)
+            .single(),
+          5000,
+          'user_profiles.select',
+        );
+        const profile = profileResult?.data ?? null;
+        const profileError = profileResult?.error ?? null;
 
         if (profileError || !profile) {
           // If profile doesn't exist, create it

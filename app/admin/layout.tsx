@@ -111,6 +111,23 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     }
   }, [pathname, router]);
 
+  /**
+   * Race a promise against a timeout so we never sit on the loading splash
+   * forever when supabase-js hangs (stale persisted token, auth worker not
+   * yet booted). Resolves to `null` on timeout so the caller can fall
+   * through to the not-authenticated state instead of the spinner.
+   */
+  const withAuthTimeout = async <T,>(p: PromiseLike<T>, ms: number, label: string): Promise<T | null> =>
+    Promise.race<T | null>([
+      Promise.resolve(p),
+      new Promise<null>((resolve) => {
+        setTimeout(() => {
+          console.warn(`[AdminLayout] ${label} timed out after ${ms}ms — redirecting to signin`);
+          resolve(null);
+        }, ms);
+      }),
+    ]);
+
   const checkAuth = async () => {
     try {
       setIsLoading(true);
@@ -120,18 +137,39 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         return;
       }
 
-      const { data: { session }, error: sessionError } = await supabase.auth.getSession();
+      const sessionResult = await withAuthTimeout(
+        supabase.auth.getSession(),
+        6000,
+        'auth.getSession',
+      );
+      if (!sessionResult) {
+        // Timeout — bounce to signin so the user has a way out.
+        setIsAuthenticated(false);
+        router.push('/signin?redirect=/admin');
+        return;
+      }
+      const { data: { session } = { session: null }, error: sessionError } = sessionResult;
       if (sessionError || !session) {
         setIsAuthenticated(false);
         router.push('/signin?redirect=/admin');
         return;
       }
 
-      const { data: profile, error: profileError } = await supabase
-        .from('user_profiles')
-        .select('id, full_name, role')
-        .eq('id', session.user.id)
-        .single();
+      const profileResult = await withAuthTimeout(
+        supabase
+          .from('user_profiles')
+          .select('id, full_name, role')
+          .eq('id', session.user.id)
+          .single(),
+        5000,
+        'user_profiles.select',
+      );
+      if (!profileResult) {
+        setIsAuthenticated(false);
+        router.push('/signin?redirect=/admin');
+        return;
+      }
+      const { data: profile, error: profileError } = profileResult;
 
       if (profileError) {
         const isJwtExpired = (profileError.message || '').toLowerCase().includes('jwt expired');
