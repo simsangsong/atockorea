@@ -164,7 +164,7 @@
       "caption": "山井湖 — photo 2"
     },
     {
-      "id": 7,
+      "id": 5,
       "type": "photo",
       "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
       "location": "抱川香草岛",
@@ -172,7 +172,7 @@
       "caption": "抱川香草岛 — photo 2"
     },
     {
-      "id": 8,
+      "id": 6,
       "type": "photo",
       "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp",
       "location": "抱川香草岛",
@@ -180,7 +180,7 @@
       "caption": "抱川香草岛 — photo 3"
     },
     {
-      "id": 12,
+      "id": 7,
       "type": "photo",
       "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
       "location": "抱川艺术谷",
@@ -1239,49 +1239,13 @@
       "props": {
         "galleryItems": [
           {
-            "id": "g1",
+            "id": 1,
             "type": "photo",
             "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
             "alt": "山井湖 — 图库图片",
             "caption": "山井湖",
             "location": "山井湖",
             "atmosphere": "地中海风格香草花园，种植有季节性薰衣草、雏菊及粉黛乱子草"
-          },
-          {
-            "id": "g2",
-            "type": "photo",
-            "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
-            "alt": "群山环抱的湖泊，设有平坦的湖畔步道，郁郁葱葱的山崖倒映湖中",
-            "caption": "明星山山井湖（抱川）",
-            "location": "山井湖",
-            "atmosphere": "群山环抱的湖泊，设有步行道及湖畔咖啡馆"
-          },
-          {
-            "id": "g3",
-            "type": "photo",
-            "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
-            "alt": "山井湖 — 图库图片",
-            "caption": "山井湖",
-            "location": "山井湖",
-            "atmosphere": "前花岗岩采石场内的翡翠色天柱湖"
-          },
-          {
-            "id": "g4",
-            "type": "photo",
-            "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
-            "alt": "山井湖 — 图库图片",
-            "caption": "山井湖",
-            "location": "山井湖",
-            "atmosphere": "日落后浪漫的灯光秀"
-          },
-          {
-            "id": "g5",
-            "type": "photo",
-            "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
-            "alt": "山井湖 — 图库图片",
-            "caption": "山井湖",
-            "location": "山井湖",
-            "atmosphere": "季节性路线中的可选瀑布停留点"
           }
         ]
       }
@@ -1337,11 +1301,7 @@
             },
             "images": [
               "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
-              "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
-              "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25-2.webp",
-              "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29-2.webp",
-              "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25-3.webp",
-              "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29-3.webp"
+              "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp"
             ],
             "imageCredits": [
               {
@@ -1353,19 +1313,19 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25-2.webp",
+                "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29-2.webp",
+                "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25-3.webp",
+                "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29-3.webp",
+                "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1385,38 +1345,6 @@
                 "location": "山井湖",
                 "caption": "山井湖 — photo 2",
                 "alt": "山井湖 — gallery image 2"
-              },
-              {
-                "id": 3,
-                "type": "photo",
-                "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25-2.webp",
-                "location": "山井湖",
-                "caption": "山井湖 — photo 3",
-                "alt": "山井湖 — gallery image 3"
-              },
-              {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29-2.webp",
-                "location": "山井湖",
-                "caption": "山井湖 — photo 4",
-                "alt": "山井湖 — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25-3.webp",
-                "location": "山井湖",
-                "caption": "山井湖 — photo 5",
-                "alt": "山井湖 — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29-3.webp",
-                "location": "山井湖",
-                "caption": "山井湖 — photo 6",
-                "alt": "山井湖 — gallery image 6"
               }
             ]
           },
@@ -1466,13 +1394,7 @@
             "images": [
               "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
               "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
-              "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp",
-              "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37-2.webp",
-              "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42-2.webp",
-              "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30-2.webp",
-              "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37-3.webp",
-              "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42-3.webp",
-              "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30-3.webp"
+              "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp"
             ],
             "imageCredits": [
               {
@@ -1488,27 +1410,27 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37-2.webp",
+                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42-2.webp",
+                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30-2.webp",
+                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37-3.webp",
+                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42-3.webp",
+                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30-3.webp",
+                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1536,54 +1458,6 @@
                 "location": "香草岛",
                 "caption": "香草岛 — photo 3",
                 "alt": "香草岛 — gallery image 3"
-              },
-              {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37-2.webp",
-                "location": "香草岛",
-                "caption": "香草岛 — photo 4",
-                "alt": "香草岛 — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42-2.webp",
-                "location": "香草岛",
-                "caption": "香草岛 — photo 5",
-                "alt": "香草岛 — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30-2.webp",
-                "location": "香草岛",
-                "caption": "香草岛 — photo 6",
-                "alt": "香草岛 — gallery image 6"
-              },
-              {
-                "id": 7,
-                "type": "photo",
-                "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37-3.webp",
-                "location": "香草岛",
-                "caption": "香草岛 — photo 7",
-                "alt": "香草岛 — gallery image 7"
-              },
-              {
-                "id": 8,
-                "type": "photo",
-                "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42-3.webp",
-                "location": "香草岛",
-                "caption": "香草岛 — photo 8",
-                "alt": "香草岛 — gallery image 8"
-              },
-              {
-                "id": 9,
-                "type": "photo",
-                "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30-3.webp",
-                "location": "香草岛",
-                "caption": "香草岛 — photo 9",
-                "alt": "香草岛 — gallery image 9"
               }
             ]
           },
@@ -1636,11 +1510,7 @@
             },
             "images": [
               "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
-              "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
-              "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52-2.webp",
-              "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57-2.webp",
-              "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52-3.webp",
-              "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57-3.webp"
+              "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp"
             ],
             "imageCredits": [
               {
@@ -1652,19 +1522,19 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52-2.webp",
+                "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57-2.webp",
+                "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52-3.webp",
+                "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57-3.webp",
+                "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1684,38 +1554,6 @@
                 "location": "抱川艺术谷",
                 "caption": "抱川艺术谷 — photo 2",
                 "alt": "抱川艺术谷 — gallery image 2"
-              },
-              {
-                "id": 3,
-                "type": "photo",
-                "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52-2.webp",
-                "location": "抱川艺术谷",
-                "caption": "抱川艺术谷 — photo 3",
-                "alt": "抱川艺术谷 — gallery image 3"
-              },
-              {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57-2.webp",
-                "location": "抱川艺术谷",
-                "caption": "抱川艺术谷 — photo 4",
-                "alt": "抱川艺术谷 — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52-3.webp",
-                "location": "抱川艺术谷",
-                "caption": "抱川艺术谷 — photo 5",
-                "alt": "抱川艺术谷 — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57-3.webp",
-                "location": "抱川艺术谷",
-                "caption": "抱川艺术谷 — photo 6",
-                "alt": "抱川艺术谷 — gallery image 6"
               }
             ]
           }

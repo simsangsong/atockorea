@@ -200,7 +200,7 @@
       "caption": "Suwon Hwaseong Fortress — photo 6"
     },
     {
-      "id": 11,
+      "id": 9,
       "type": "photo",
       "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
       "location": "Korean Folk Village (Yongin)",
@@ -208,7 +208,7 @@
       "caption": "Korean Folk Village (Yongin) — photo 2"
     },
     {
-      "id": 14,
+      "id": 10,
       "type": "photo",
       "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
       "location": "Starfield Library Suwon",
@@ -216,7 +216,7 @@
       "caption": "Starfield Library Suwon — photo 2"
     },
     {
-      "id": 15,
+      "id": 11,
       "type": "photo",
       "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
       "location": "Starfield Library Suwon",
@@ -224,7 +224,7 @@
       "caption": "Starfield Library Suwon — photo 3"
     },
     {
-      "id": 16,
+      "id": 12,
       "type": "photo",
       "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
       "location": "Starfield Library Suwon",
@@ -462,7 +462,6 @@
           "VisitKorea",
           "Wikipedia",
           "Suwon CVB",
-          "",
           "Korea Tourism Organization (english.visitkorea.or.kr — Hwaseong Haenggung official listing)",
           "Cultural Heritage Administration / Korea Heritage Service (cha.go.kr — Hwaseong Haenggung Historic Site No. 478)",
           "Suwon City Tourism (suwon.go.kr/tour — Royal Guard Changing Ceremony + Mu-ye 24-gi schedule)",
@@ -1604,49 +1603,13 @@
       "props": {
         "galleryItems": [
           {
-            "id": "g1",
+            "id": 1,
             "type": "photo",
             "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
             "alt": "Section of the 5.7 km UNESCO-listed Suwon Hwaseong Fortress wall winding along a ridgeline with stone bastions and a major gate visible",
             "caption": "Suwon Hwaseong Fortress — UNESCO since 1997",
             "location": "Suwon Hwaseong Fortress, Janganmun-Hwaseomun section, Suwon",
             "atmosphere": "Stone walls built 1794-1796 under King Jeongjo; sweeping city views; the only remaining walled fortress city in Korea"
-          },
-          {
-            "id": "g2",
-            "type": "photo",
-            "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
-            "alt": "Hwaseong Haenggung Palace courtyard with traditional Korean wooden buildings, painted eaves, and stone-flagged ground",
-            "caption": "Hwaseong Haenggung — Korea's largest detached palace",
-            "location": "Hwaseong Haenggung Palace, inside the fortress, Suwon",
-            "atmosphere": "Korea's largest haenggung; King Jeongjo's temporary residence; restored from 19th-century fire"
-          },
-          {
-            "id": "g3",
-            "type": "photo",
-            "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
-            "alt": "Royal-guard reenactment performers in Joseon-era armor lined up in the Haenggung Palace courtyard",
-            "caption": "Royal guard ceremony at Haenggung",
-            "location": "Hwaseong Haenggung Palace courtyards",
-            "atmosphere": "Daily royal-guard reenactment and martial-arts demos; performance times posted at the entrance"
-          },
-          {
-            "id": "g4",
-            "type": "photo",
-            "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
-            "alt": "Suwon Hwaseong Fortress — gallery image",
-            "caption": "Suwon Hwaseong Fortress",
-            "location": "Suwon Hwaseong Fortress",
-            "atmosphere": "270+ traditional houses across late-Joseon Korea; equestrian shows; major K-drama filming location"
-          },
-          {
-            "id": "g5",
-            "type": "photo",
-            "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
-            "alt": "Starfield Library Suwon's four-story atrium with 22-meter-tall floor-to-ceiling bookshelves and reading lounges below",
-            "caption": "Starfield Library Suwon — 22 m bookshelves",
-            "location": "Starfield Suwon Library, Yeongtong-gu, Suwon",
-            "atmosphere": "Shinsegae's flagship 2nd-generation Starfield, opened January 2024; free entry; vinyl-listening area"
           }
         ]
       }
@@ -1736,9 +1699,6 @@
               "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
               "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
               "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
-              "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
-              "/images/tours/suwon-hwaseong/photo-002.webp",
-              "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
               "/images/tours/suwon-hwaseong/photo-002.webp"
             ],
             "imageCredits": [
@@ -1823,34 +1783,10 @@
               {
                 "id": 6,
                 "type": "photo",
-                "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
-                "location": "Suwon Hwaseong Fortress",
-                "caption": "Suwon Hwaseong Fortress — photo 6",
-                "alt": "Suwon Hwaseong Fortress — gallery image 6"
-              },
-              {
-                "id": 7,
-                "type": "photo",
                 "src": "/images/tours/suwon-hwaseong/photo-002.webp",
                 "location": "Suwon Hwaseong Fortress",
                 "caption": "Suwon Hwaseong Fortress — photo 7",
                 "alt": "Suwon Hwaseong Fortress — gallery image 7"
-              },
-              {
-                "id": 8,
-                "type": "photo",
-                "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
-                "location": "Suwon Hwaseong Fortress",
-                "caption": "Suwon Hwaseong Fortress — photo 8",
-                "alt": "Suwon Hwaseong Fortress — gallery image 8"
-              },
-              {
-                "id": 9,
-                "type": "photo",
-                "src": "/images/tours/suwon-hwaseong/photo-002.webp",
-                "location": "Suwon Hwaseong Fortress",
-                "caption": "Suwon Hwaseong Fortress — photo 9",
-                "alt": "Suwon Hwaseong Fortress — gallery image 9"
               }
             ]
           },
@@ -1893,7 +1829,6 @@
               "verified": true,
               "sources": [
                 "Wikipedia",
-                "",
                 "TimeTravelTurtle"
               ],
               "verified_date": "2026-04-27"
@@ -1904,9 +1839,6 @@
               "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
               "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
               "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
-              "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
-              "/images/tours/suwon-hwaseong/photo-002.webp",
-              "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
               "/images/tours/suwon-hwaseong/photo-002.webp"
             ],
             "imageCredits": [
@@ -1991,34 +1923,10 @@
               {
                 "id": 6,
                 "type": "photo",
-                "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
-                "location": "Hwaseong Haenggung Palace",
-                "caption": "Hwaseong Haenggung Palace — photo 6",
-                "alt": "Hwaseong Haenggung Palace — gallery image 6"
-              },
-              {
-                "id": 7,
-                "type": "photo",
                 "src": "/images/tours/suwon-hwaseong/photo-002.webp",
                 "location": "Hwaseong Haenggung Palace",
                 "caption": "Hwaseong Haenggung Palace — photo 7",
                 "alt": "Hwaseong Haenggung Palace — gallery image 7"
-              },
-              {
-                "id": 8,
-                "type": "photo",
-                "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
-                "location": "Hwaseong Haenggung Palace",
-                "caption": "Hwaseong Haenggung Palace — photo 8",
-                "alt": "Hwaseong Haenggung Palace — gallery image 8"
-              },
-              {
-                "id": 9,
-                "type": "photo",
-                "src": "/images/tours/suwon-hwaseong/photo-002.webp",
-                "location": "Hwaseong Haenggung Palace",
-                "caption": "Hwaseong Haenggung Palace — photo 9",
-                "alt": "Hwaseong Haenggung Palace — gallery image 9"
               }
             ]
           },
@@ -2068,11 +1976,7 @@
             },
             "images": [
               "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
-              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-2.webp",
-              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-3.webp"
+              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp"
             ],
             "imageCredits": [
               {
@@ -2088,7 +1992,7 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-2.webp",
+                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
                 "source": "atoc-korea"
               },
               {
@@ -2096,7 +2000,7 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-3.webp",
+                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2116,38 +2020,6 @@
                 "location": "Korean Folk Village (Yongin)",
                 "caption": "Korean Folk Village (Yongin) — photo 2",
                 "alt": "Korean Folk Village (Yongin) — gallery image 2"
-              },
-              {
-                "id": 3,
-                "type": "photo",
-                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-                "location": "Korean Folk Village (Yongin)",
-                "caption": "Korean Folk Village (Yongin) — photo 3",
-                "alt": "Korean Folk Village (Yongin) — gallery image 3"
-              },
-              {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-2.webp",
-                "location": "Korean Folk Village (Yongin)",
-                "caption": "Korean Folk Village (Yongin) — photo 4",
-                "alt": "Korean Folk Village (Yongin) — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-                "location": "Korean Folk Village (Yongin)",
-                "caption": "Korean Folk Village (Yongin) — photo 5",
-                "alt": "Korean Folk Village (Yongin) — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-3.webp",
-                "location": "Korean Folk Village (Yongin)",
-                "caption": "Korean Folk Village (Yongin) — photo 6",
-                "alt": "Korean Folk Village (Yongin) — gallery image 6"
               }
             ]
           },
@@ -2200,15 +2072,7 @@
               "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
               "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
               "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
-              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
-              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18-2.webp",
-              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38-2.webp",
-              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55-2.webp",
-              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58-2.webp",
-              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18-3.webp",
-              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38-3.webp",
-              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55-3.webp",
-              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58-3.webp"
+              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp"
             ],
             "imageCredits": [
               {
@@ -2228,35 +2092,35 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18-2.webp",
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38-2.webp",
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55-2.webp",
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58-2.webp",
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18-3.webp",
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38-3.webp",
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55-3.webp",
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58-3.webp",
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2292,70 +2156,6 @@
                 "location": "Starfield Library, Suwon",
                 "caption": "Starfield Library, Suwon — photo 4",
                 "alt": "Starfield Library, Suwon — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18-2.webp",
-                "location": "Starfield Library, Suwon",
-                "caption": "Starfield Library, Suwon — photo 5",
-                "alt": "Starfield Library, Suwon — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38-2.webp",
-                "location": "Starfield Library, Suwon",
-                "caption": "Starfield Library, Suwon — photo 6",
-                "alt": "Starfield Library, Suwon — gallery image 6"
-              },
-              {
-                "id": 7,
-                "type": "photo",
-                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55-2.webp",
-                "location": "Starfield Library, Suwon",
-                "caption": "Starfield Library, Suwon — photo 7",
-                "alt": "Starfield Library, Suwon — gallery image 7"
-              },
-              {
-                "id": 8,
-                "type": "photo",
-                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58-2.webp",
-                "location": "Starfield Library, Suwon",
-                "caption": "Starfield Library, Suwon — photo 8",
-                "alt": "Starfield Library, Suwon — gallery image 8"
-              },
-              {
-                "id": 9,
-                "type": "photo",
-                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18-3.webp",
-                "location": "Starfield Library, Suwon",
-                "caption": "Starfield Library, Suwon — photo 9",
-                "alt": "Starfield Library, Suwon — gallery image 9"
-              },
-              {
-                "id": 10,
-                "type": "photo",
-                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38-3.webp",
-                "location": "Starfield Library, Suwon",
-                "caption": "Starfield Library, Suwon — photo 10",
-                "alt": "Starfield Library, Suwon — gallery image 10"
-              },
-              {
-                "id": 11,
-                "type": "photo",
-                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55-3.webp",
-                "location": "Starfield Library, Suwon",
-                "caption": "Starfield Library, Suwon — photo 11",
-                "alt": "Starfield Library, Suwon — gallery image 11"
-              },
-              {
-                "id": 12,
-                "type": "photo",
-                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58-3.webp",
-                "location": "Starfield Library, Suwon",
-                "caption": "Starfield Library, Suwon — photo 12",
-                "alt": "Starfield Library, Suwon — gallery image 12"
               }
             ]
           },

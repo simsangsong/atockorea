@@ -1075,53 +1075,7 @@
       "section_html_id": null,
       "component": "旅游氛围图集",
       "props": {
-        "galleryItems": [
-          {
-            "id": "g1",
-            "type": "photo",
-            "src": "",
-            "alt": "城山日出峰",
-            "caption": "城山日出峰",
-            "location": "城山日出峰",
-            "atmosphere": "济州岛最具标志性的联合国教科文组织世界遗产，东线核心必游景点"
-          },
-          {
-            "id": "g2",
-            "type": "photo",
-            "src": "",
-            "alt": "柱状节理玄武岩悬崖",
-            "caption": "柱状节理玄武岩悬崖",
-            "location": "柱状节理带",
-            "atmosphere": "南海岸的六角形玄武岩石柱群"
-          },
-          {
-            "id": "g3",
-            "type": "photo",
-            "src": "",
-            "alt": "协才海滩 济州西部",
-            "caption": "协才海滩 济州西部",
-            "location": "协才海滩",
-            "atmosphere": "西海岸翡翠色海水与洁白沙滩"
-          },
-          {
-            "id": "g4",
-            "type": "photo",
-            "src": "",
-            "alt": "雪绿茶博物馆与茶田",
-            "caption": "雪绿茶博物馆与茶田",
-            "location": "雪绿茶田",
-            "atmosphere": "一望无际的绿茶田垄，宁静惬意的午间休憩之地"
-          },
-          {
-            "id": "g5",
-            "type": "photo",
-            "src": "",
-            "alt": "西归浦天地渊瀑布",
-            "caption": "西归浦天地渊瀑布",
-            "location": "天地渊瀑布",
-            "atmosphere": "南线森林瀑布"
-          }
-        ]
+        "galleryItems": []
       }
     },
     {

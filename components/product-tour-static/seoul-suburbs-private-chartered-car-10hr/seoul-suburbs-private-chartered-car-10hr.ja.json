@@ -1084,53 +1084,7 @@
       "section_html_id": null,
       "component": "ツアー雰囲気ギャラリー",
       "props": {
-        "galleryItems": [
-          {
-            "id": "g1",
-            "type": "photo",
-            "src": "",
-            "alt": "夕暮れ時の南ソウルからの眺め。ロッテワールドタワーと漢江を望むソウルの都市景観",
-            "caption": "ソウルのスカイライン — 柔軟な出発地点",
-            "location": "ソウル（出発都市）",
-            "atmosphere": "柔軟な出発地点となるモダンなソウル；専用車によるホテルピックアップ"
-          },
-          {
-            "id": "g2",
-            "type": "photo",
-            "src": "",
-            "alt": "広い砂利道の並木道を背の高い木々の下を歩く旅行者たちのいる、ナミ島のメタセコイア並木道",
-            "caption": "ナミ島のメタセコイア並木道 — ルート1のハイライト",
-            "location": "ナミ島、加平（ルート1オプション）",
-            "atmosphere": "並木道と短いフェリー乗船；韓国ドラマ「冬のソナタ」のロケ地"
-          },
-          {
-            "id": "g3",
-            "type": "photo",
-            "src": "",
-            "alt": "季節の花々とカーブを描く石畳の散歩道が続く、アチムコヨウ樹木園のテーマ別花壇",
-            "caption": "アチムコヨウ樹木園 — ルート1の撮影スポット",
-            "location": "アチムコヨウ樹木園、加平（ルート1オプション）",
-            "atmosphere": "33万㎡に広がる20のテーマガーデン；1996年ハン・サンギョン氏により設立"
-          },
-          {
-            "id": "g4",
-            "type": "photo",
-            "src": "",
-            "alt": "加平の丘陵に建つ、カラフルな地中海風の家々が並ぶプチフランス村",
-            "caption": "プチフランス — 星の王子さまの村（ルート1）",
-            "location": "プチフランス、加平（ルート1オプション）",
-            "atmosphere": "カラフルな丘陵の村；韓国ドラマ「星から来たあなた」のロケ地"
-          },
-          {
-            "id": "g5",
-            "type": "photo",
-            "src": "",
-            "alt": "パジュ近郊、記念碑エリアの背後に自由の橋が見えるDMZ臨津閣平和公園",
-            "caption": "臨津閣平和公園 — ルート2のメインスポット",
-            "location": "臨津閣平和公園、坡州（ルート2オプション）",
-            "atmosphere": "韓国で最も歴史的な重みを持つ国境の公園。自由の橋（1953年）。MDLから7km。"
-          }
-        ]
+        "galleryItems": []
       }
     },
     {
@@ -1271,11 +1225,7 @@
             },
             "images": [
               "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
-              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-2.webp",
-              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-3.webp"
+              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp"
             ],
             "imageCredits": [
               {
@@ -1291,7 +1241,7 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-2.webp",
+                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
                 "source": "atoc-korea"
               },
               {
@@ -1299,7 +1249,7 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-3.webp",
+                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1319,38 +1269,6 @@
                 "location": "ルート3：エバーランド＋韓国民俗村",
                 "caption": "ルート3：エバーランド＋韓国民俗村 — photo 2",
                 "alt": "ルート3：エバーランド＋韓国民俗村 — gallery image 2"
-              },
-              {
-                "id": 3,
-                "type": "photo",
-                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-                "location": "ルート3：エバーランド＋韓国民俗村",
-                "caption": "ルート3：エバーランド＋韓国民俗村 — photo 3",
-                "alt": "ルート3：エバーランド＋韓国民俗村 — gallery image 3"
-              },
-              {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-2.webp",
-                "location": "ルート3：エバーランド＋韓国民俗村",
-                "caption": "ルート3：エバーランド＋韓国民俗村 — photo 4",
-                "alt": "ルート3：エバーランド＋韓国民俗村 — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-                "location": "ルート3：エバーランド＋韓国民俗村",
-                "caption": "ルート3：エバーランド＋韓国民俗村 — photo 5",
-                "alt": "ルート3：エバーランド＋韓国民俗村 — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-3.webp",
-                "location": "ルート3：エバーランド＋韓国民俗村",
-                "caption": "ルート3：エバーランド＋韓国民俗村 — photo 6",
-                "alt": "ルート3：エバーランド＋韓国民俗村 — gallery image 6"
               }
             ]
           },

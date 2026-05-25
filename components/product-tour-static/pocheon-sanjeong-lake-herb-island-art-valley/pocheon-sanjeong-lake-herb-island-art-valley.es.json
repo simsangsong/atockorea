@@ -164,7 +164,7 @@
       "caption": "Lago Sanjeong — photo 2"
     },
     {
-      "id": 7,
+      "id": 5,
       "type": "photo",
       "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
       "location": "Isla de Hierbas de Pocheon",
@@ -172,7 +172,7 @@
       "caption": "Isla de Hierbas de Pocheon — photo 2"
     },
     {
-      "id": 8,
+      "id": 6,
       "type": "photo",
       "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp",
       "location": "Isla de Hierbas de Pocheon",
@@ -180,7 +180,7 @@
       "caption": "Isla de Hierbas de Pocheon — photo 3"
     },
     {
-      "id": 12,
+      "id": 7,
       "type": "photo",
       "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
       "location": "Valle de Arte de Pocheon",
@@ -1239,49 +1239,13 @@
       "props": {
         "galleryItems": [
           {
-            "id": "g1",
+            "id": 1,
             "type": "photo",
             "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
             "alt": "Lago Sanjeong — imagen de galería",
             "caption": "Lago Sanjeong",
             "location": "Lago Sanjeong",
             "atmosphere": "Jardines de hierbas de estilo mediterráneo con lavanda de temporada, margaritas y muhly rosado"
-          },
-          {
-            "id": "g2",
-            "type": "photo",
-            "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
-            "alt": "Lago rodeado de montañas con un sendero llano junto a la orilla y acantilados boscosos reflejados en el agua",
-            "caption": "Lago Sanjeong en el Monte Myeongseongsan (Pocheon)",
-            "location": "Lago Sanjeong",
-            "atmosphere": "Lago rodeado de montañas con senderos y cafés junto a la orilla"
-          },
-          {
-            "id": "g3",
-            "type": "photo",
-            "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
-            "alt": "Lago Sanjeong — imagen de galería",
-            "caption": "Lago Sanjeong",
-            "location": "Lago Sanjeong",
-            "atmosphere": "Lago Cheonjuho esmeralda en el interior de la antigua cantera de granito"
-          },
-          {
-            "id": "g4",
-            "type": "photo",
-            "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
-            "alt": "Lago Sanjeong — imagen de galería",
-            "caption": "Lago Sanjeong",
-            "location": "Lago Sanjeong",
-            "atmosphere": "Románticas exhibiciones de luces tras la puesta de sol"
-          },
-          {
-            "id": "g5",
-            "type": "photo",
-            "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
-            "alt": "Lago Sanjeong — imagen de galería",
-            "caption": "Lago Sanjeong",
-            "location": "Lago Sanjeong",
-            "atmosphere": "Parada opcional en la cascada en las versiones de temporada del recorrido"
           }
         ]
       }
@@ -1337,11 +1301,7 @@
             },
             "images": [
               "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
-              "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
-              "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25-2.webp",
-              "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29-2.webp",
-              "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25-3.webp",
-              "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29-3.webp"
+              "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp"
             ],
             "imageCredits": [
               {
@@ -1353,19 +1313,19 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25-2.webp",
+                "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29-2.webp",
+                "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25-3.webp",
+                "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29-3.webp",
+                "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1385,38 +1345,6 @@
                 "location": "Lago Sanjeong",
                 "caption": "Lago Sanjeong — photo 2",
                 "alt": "Lago Sanjeong — gallery image 2"
-              },
-              {
-                "id": 3,
-                "type": "photo",
-                "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25-2.webp",
-                "location": "Lago Sanjeong",
-                "caption": "Lago Sanjeong — photo 3",
-                "alt": "Lago Sanjeong — gallery image 3"
-              },
-              {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29-2.webp",
-                "location": "Lago Sanjeong",
-                "caption": "Lago Sanjeong — photo 4",
-                "alt": "Lago Sanjeong — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25-3.webp",
-                "location": "Lago Sanjeong",
-                "caption": "Lago Sanjeong — photo 5",
-                "alt": "Lago Sanjeong — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29-3.webp",
-                "location": "Lago Sanjeong",
-                "caption": "Lago Sanjeong — photo 6",
-                "alt": "Lago Sanjeong — gallery image 6"
               }
             ]
           },
@@ -1466,13 +1394,7 @@
             "images": [
               "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
               "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
-              "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp",
-              "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37-2.webp",
-              "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42-2.webp",
-              "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30-2.webp",
-              "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37-3.webp",
-              "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42-3.webp",
-              "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30-3.webp"
+              "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp"
             ],
             "imageCredits": [
               {
@@ -1488,27 +1410,27 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37-2.webp",
+                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42-2.webp",
+                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30-2.webp",
+                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37-3.webp",
+                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42-3.webp",
+                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30-3.webp",
+                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1536,54 +1458,6 @@
                 "location": "Herb Island",
                 "caption": "Herb Island — photo 3",
                 "alt": "Herb Island — gallery image 3"
-              },
-              {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37-2.webp",
-                "location": "Herb Island",
-                "caption": "Herb Island — photo 4",
-                "alt": "Herb Island — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42-2.webp",
-                "location": "Herb Island",
-                "caption": "Herb Island — photo 5",
-                "alt": "Herb Island — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30-2.webp",
-                "location": "Herb Island",
-                "caption": "Herb Island — photo 6",
-                "alt": "Herb Island — gallery image 6"
-              },
-              {
-                "id": 7,
-                "type": "photo",
-                "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37-3.webp",
-                "location": "Herb Island",
-                "caption": "Herb Island — photo 7",
-                "alt": "Herb Island — gallery image 7"
-              },
-              {
-                "id": 8,
-                "type": "photo",
-                "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42-3.webp",
-                "location": "Herb Island",
-                "caption": "Herb Island — photo 8",
-                "alt": "Herb Island — gallery image 8"
-              },
-              {
-                "id": 9,
-                "type": "photo",
-                "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30-3.webp",
-                "location": "Herb Island",
-                "caption": "Herb Island — photo 9",
-                "alt": "Herb Island — gallery image 9"
               }
             ]
           },
@@ -1636,11 +1510,7 @@
             },
             "images": [
               "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
-              "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
-              "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52-2.webp",
-              "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57-2.webp",
-              "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52-3.webp",
-              "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57-3.webp"
+              "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp"
             ],
             "imageCredits": [
               {
@@ -1652,19 +1522,19 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52-2.webp",
+                "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57-2.webp",
+                "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52-3.webp",
+                "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57-3.webp",
+                "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1684,38 +1554,6 @@
                 "location": "Pocheon Art Valley",
                 "caption": "Pocheon Art Valley — photo 2",
                 "alt": "Pocheon Art Valley — gallery image 2"
-              },
-              {
-                "id": 3,
-                "type": "photo",
-                "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52-2.webp",
-                "location": "Pocheon Art Valley",
-                "caption": "Pocheon Art Valley — photo 3",
-                "alt": "Pocheon Art Valley — gallery image 3"
-              },
-              {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57-2.webp",
-                "location": "Pocheon Art Valley",
-                "caption": "Pocheon Art Valley — photo 4",
-                "alt": "Pocheon Art Valley — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52-3.webp",
-                "location": "Pocheon Art Valley",
-                "caption": "Pocheon Art Valley — photo 5",
-                "alt": "Pocheon Art Valley — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57-3.webp",
-                "location": "Pocheon Art Valley",
-                "caption": "Pocheon Art Valley — photo 6",
-                "alt": "Pocheon Art Valley — gallery image 6"
               }
             ]
           }

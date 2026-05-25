@@ -164,7 +164,7 @@
       "caption": "산정호수 — photo 2"
     },
     {
-      "id": 7,
+      "id": 5,
       "type": "photo",
       "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
       "location": "포천 허브아일랜드",
@@ -172,7 +172,7 @@
       "caption": "포천 허브아일랜드 — photo 2"
     },
     {
-      "id": 8,
+      "id": 6,
       "type": "photo",
       "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp",
       "location": "포천 허브아일랜드",
@@ -180,7 +180,7 @@
       "caption": "포천 허브아일랜드 — photo 3"
     },
     {
-      "id": 12,
+      "id": 7,
       "type": "photo",
       "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
       "location": "포천 아트밸리",
@@ -1239,49 +1239,13 @@
       "props": {
         "galleryItems": [
           {
-            "id": "g1",
+            "id": 1,
             "type": "photo",
             "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
             "alt": "산정호수 — 갤러리 이미지",
             "caption": "산정호수",
             "location": "산정호수",
             "atmosphere": "계절별 라벤더, 데이지, 핑크뮬리가 있는 지중해풍 허브 정원"
-          },
-          {
-            "id": "g2",
-            "type": "photo",
-            "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
-            "alt": "평탄한 호숫가 산책로와 수면에 비치는 울창한 절벽이 있는 산으로 둘러싸인 호수",
-            "caption": "명성산 산정호수 (포천)",
-            "location": "산정호수",
-            "atmosphere": "산책로와 호숫가 카페가 있는 산으로 둘러싸인 호수"
-          },
-          {
-            "id": "g3",
-            "type": "photo",
-            "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
-            "alt": "산정호수 — 갤러리 이미지",
-            "caption": "산정호수",
-            "location": "산정호수",
-            "atmosphere": "옛 화강암 채석장 내부의 에메랄드빛 천주호"
-          },
-          {
-            "id": "g4",
-            "type": "photo",
-            "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
-            "alt": "산정호수 — 갤러리 이미지",
-            "caption": "산정호수",
-            "location": "산정호수",
-            "atmosphere": "일몰 후 펼쳐지는 로맨틱한 빛의 향연"
-          },
-          {
-            "id": "g5",
-            "type": "photo",
-            "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
-            "alt": "산정호수 — 갤러리 이미지",
-            "caption": "산정호수",
-            "location": "산정호수",
-            "atmosphere": "계절별 루트에서 선택 가능한 폭포 방문지"
           }
         ]
       }
@@ -1337,11 +1301,7 @@
             },
             "images": [
               "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
-              "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
-              "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25-2.webp",
-              "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29-2.webp",
-              "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25-3.webp",
-              "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29-3.webp"
+              "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp"
             ],
             "imageCredits": [
               {
@@ -1353,19 +1313,19 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25-2.webp",
+                "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29-2.webp",
+                "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25-3.webp",
+                "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29-3.webp",
+                "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1385,38 +1345,6 @@
                 "location": "산정호수",
                 "caption": "산정호수 — photo 2",
                 "alt": "산정호수 — gallery image 2"
-              },
-              {
-                "id": 3,
-                "type": "photo",
-                "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25-2.webp",
-                "location": "산정호수",
-                "caption": "산정호수 — photo 3",
-                "alt": "산정호수 — gallery image 3"
-              },
-              {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29-2.webp",
-                "location": "산정호수",
-                "caption": "산정호수 — photo 4",
-                "alt": "산정호수 — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25-3.webp",
-                "location": "산정호수",
-                "caption": "산정호수 — photo 5",
-                "alt": "산정호수 — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29-3.webp",
-                "location": "산정호수",
-                "caption": "산정호수 — photo 6",
-                "alt": "산정호수 — gallery image 6"
               }
             ]
           },
@@ -1466,13 +1394,7 @@
             "images": [
               "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
               "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
-              "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp",
-              "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37-2.webp",
-              "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42-2.webp",
-              "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30-2.webp",
-              "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37-3.webp",
-              "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42-3.webp",
-              "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30-3.webp"
+              "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp"
             ],
             "imageCredits": [
               {
@@ -1488,27 +1410,27 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37-2.webp",
+                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42-2.webp",
+                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30-2.webp",
+                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37-3.webp",
+                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42-3.webp",
+                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30-3.webp",
+                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1536,54 +1458,6 @@
                 "location": "허브아일랜드",
                 "caption": "허브아일랜드 — photo 3",
                 "alt": "허브아일랜드 — gallery image 3"
-              },
-              {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37-2.webp",
-                "location": "허브아일랜드",
-                "caption": "허브아일랜드 — photo 4",
-                "alt": "허브아일랜드 — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42-2.webp",
-                "location": "허브아일랜드",
-                "caption": "허브아일랜드 — photo 5",
-                "alt": "허브아일랜드 — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30-2.webp",
-                "location": "허브아일랜드",
-                "caption": "허브아일랜드 — photo 6",
-                "alt": "허브아일랜드 — gallery image 6"
-              },
-              {
-                "id": 7,
-                "type": "photo",
-                "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37-3.webp",
-                "location": "허브아일랜드",
-                "caption": "허브아일랜드 — photo 7",
-                "alt": "허브아일랜드 — gallery image 7"
-              },
-              {
-                "id": 8,
-                "type": "photo",
-                "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42-3.webp",
-                "location": "허브아일랜드",
-                "caption": "허브아일랜드 — photo 8",
-                "alt": "허브아일랜드 — gallery image 8"
-              },
-              {
-                "id": 9,
-                "type": "photo",
-                "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30-3.webp",
-                "location": "허브아일랜드",
-                "caption": "허브아일랜드 — photo 9",
-                "alt": "허브아일랜드 — gallery image 9"
               }
             ]
           },
@@ -1636,11 +1510,7 @@
             },
             "images": [
               "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
-              "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
-              "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52-2.webp",
-              "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57-2.webp",
-              "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52-3.webp",
-              "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57-3.webp"
+              "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp"
             ],
             "imageCredits": [
               {
@@ -1652,19 +1522,19 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52-2.webp",
+                "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57-2.webp",
+                "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52-3.webp",
+                "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57-3.webp",
+                "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1684,38 +1554,6 @@
                 "location": "포천 아트밸리",
                 "caption": "포천 아트밸리 — photo 2",
                 "alt": "포천 아트밸리 — gallery image 2"
-              },
-              {
-                "id": 3,
-                "type": "photo",
-                "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52-2.webp",
-                "location": "포천 아트밸리",
-                "caption": "포천 아트밸리 — photo 3",
-                "alt": "포천 아트밸리 — gallery image 3"
-              },
-              {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57-2.webp",
-                "location": "포천 아트밸리",
-                "caption": "포천 아트밸리 — photo 4",
-                "alt": "포천 아트밸리 — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52-3.webp",
-                "location": "포천 아트밸리",
-                "caption": "포천 아트밸리 — photo 5",
-                "alt": "포천 아트밸리 — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57-3.webp",
-                "location": "포천 아트밸리",
-                "caption": "포천 아트밸리 — photo 6",
-                "alt": "포천 아트밸리 — gallery image 6"
               }
             ]
           }

@@ -174,14 +174,6 @@
       "location": "Parque Nacional de Seoraksan",
       "alt": "Parque Nacional de Seoraksan — gallery image 5",
       "caption": "Parque Nacional de Seoraksan — photo 5"
-    },
-    {
-      "id": 6,
-      "type": "photo",
-      "src": "/images/tours/seoraksan-national-park/photo-003.webp",
-      "location": "Parque Nacional de Seoraksan",
-      "alt": "Parque Nacional de Seoraksan — gallery image 6",
-      "caption": "Parque Nacional de Seoraksan — photo 6"
     }
   ],
   "itineraryStops": [
@@ -278,8 +270,7 @@
         "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
         "/images/tours/seoraksan-national-park/photo-001.webp",
         "/images/tours/seoraksan-national-park/seoraksan-gwongumseong-cable-car.webp",
-        "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsan-rock.webp",
-        "/images/tours/seoraksan-national-park/photo-003.webp"
+        "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsan-rock.webp"
       ],
       "imageCredits": [
         {
@@ -303,7 +294,7 @@
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/seoraksan-national-park/photo-003.webp",
+          "url": "/images/tours/seoraksan-national-park/photo-001.webp",
           "source": "atoc-korea"
         }
       ],
@@ -347,14 +338,6 @@
           "location": "Parque Nacional de Seoraksan",
           "caption": "Parque Nacional de Seoraksan — photo 5",
           "alt": "Parque Nacional de Seoraksan — gallery image 5"
-        },
-        {
-          "id": 6,
-          "type": "photo",
-          "src": "/images/tours/seoraksan-national-park/photo-003.webp",
-          "location": "Parque Nacional de Seoraksan",
-          "caption": "Parque Nacional de Seoraksan — photo 6",
-          "alt": "Parque Nacional de Seoraksan — gallery image 6"
         }
       ]
     },
@@ -1284,53 +1267,7 @@
       "section_html_id": null,
       "component": "**TourAtmosphereGallery** → TourAtmosphereGallery *(nombre de componente UI — sin cambios)*",
       "props": {
-        "galleryItems": [
-          {
-            "id": "g1",
-            "type": "photo",
-            "src": "",
-            "alt": "**Granite ridges of Seoraksan National Park rising over a wooded valley, with cable-car cables visible against the rock face** → Crestas de granito del Parque Nacional Seoraksan que se elevan sobre un valle boscoso, con los cables del teleférico visibles frente a la pared rocosa",
-            "caption": "**Seoraksan ridges — UNESCO Biosphere Reserve since 1982** → Crestas de Seoraksan — Reserva de la Biosfera de la UNESCO desde 1982 > **Notas:** Los nombres de componentes UI (líneas 3, 8, 23) se han dejado intactos, ya que son identificadores de código. Los topónimos coreanos (Seoraksan, Gangwon-do) se mantienen en su forma original, pues no tienen traducción establecida al español.",
-            "location": "Parque Nacional Seoraksan, entrada Sogongwon, Gangwon-do",
-            "atmosphere": "Aire fresco de montaña en la entrada principal del parque; sendero pavimentado junto al Templo Sinheungsa"
-          },
-          {
-            "id": "g2",
-            "type": "photo",
-            "src": "",
-            "alt": "Gran estatua del Buda de Bronce del Templo Sinheungsa en Seoraksan, sentado en posición de loto con los edificios del templo al fondo",
-            "caption": "Gran Buda de Bronce de Sinheungsa — entrada del parque",
-            "location": "Templo Sinheungsa, Sogongwon, Parque Nacional Seoraksan",
-            "atmosphere": "≈600 m de caminata plana pavimentada desde la entrada del parque; el Buda de bronce sentado más grande de Corea (≈14 m)"
-          },
-          {
-            "id": "g3",
-            "type": "photo",
-            "src": "",
-            "alt": "Formación rocosa Biseondae a lo largo del sendero junto al arroyo en Seoraksan, con agua cristalina fluyendo entre losas de granito pulidas",
-            "caption": "Sendero del arroyo Biseondae — caminata opcional plana de 1,5 km",
-            "location": "Biseondae, sección Sogongwon, Seoraksan",
-            "atmosphere": "Sendero plano junto al arroyo; agua cristalina sobre granito pulido; sin desnivel"
-          },
-          {
-            "id": "g4",
-            "type": "photo",
-            "src": "",
-            "alt": "Interior del Mercado Pesquero Turístico de Sokcho con puestos cubiertos que exhiben sashimi vivo del Mar del Este, cangrejo rey y mariscos",
-            "caption": "Mercado Pesquero de Sokcho — sashimi, cangrejo rey, calamar abai",
-            "location": "Mercado Pesquero Turístico de Sokcho, paseo marítimo de Sokcho",
-            "atmosphere": "Mercado techado con suelo de cemento; sashimi del Mar del Este, calamar relleno estilo abai (plato de los refugiados de la Guerra de Corea)"
-          },
-          {
-            "id": "g5",
-            "type": "photo",
-            "src": "",
-            "alt": "Larga franja de arena dorada de la Playa de Sokcho con vistas al Mar del Este y la silueta de Seoraksan visible tierra adentro",
-            "caption": "Playa de Sokcho — costa del Mar del Este, Seoraksan tierra adentro",
-            "location": "Playa de Sokcho, costa del Mar del Este, Sokcho",
-            "atmosphere": "Playa de arena plana de 1 km; noria Sokcho Eye en el extremo sur; temporada de baño julio-agosto"
-          }
-        ]
+        "galleryItems": []
       }
     },
     {
@@ -1412,8 +1349,7 @@
             "images": [
               "/images/tours/seoraksan-national-park/photo-001.webp",
               "/images/tours/seoraksan-national-park/seoraksan-gwongumseong-cable-car.webp",
-              "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsan-rock.webp",
-              "/images/tours/seoraksan-national-park/photo-003.webp"
+              "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsan-rock.webp"
             ],
             "imageCredits": [
               {
@@ -1429,7 +1365,7 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/seoraksan-national-park/photo-003.webp",
+                "url": "/images/tours/seoraksan-national-park/photo-001.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1457,14 +1393,6 @@
                 "location": "Parque Nacional Seoraksan",
                 "caption": "Parque Nacional Seoraksan — photo 3",
                 "alt": "Parque Nacional Seoraksan — gallery image 3"
-              },
-              {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/tours/seoraksan-national-park/photo-003.webp",
-                "location": "Parque Nacional Seoraksan",
-                "caption": "Parque Nacional Seoraksan — photo 4",
-                "alt": "Parque Nacional Seoraksan — gallery image 4"
               }
             ]
           },

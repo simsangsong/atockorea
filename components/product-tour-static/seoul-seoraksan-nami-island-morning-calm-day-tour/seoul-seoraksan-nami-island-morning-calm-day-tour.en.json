@@ -197,21 +197,13 @@
     {
       "id": 8,
       "type": "photo",
-      "src": "/images/tours/seoraksan-national-park/photo-003.webp",
-      "location": "Seoraksan National Park",
-      "alt": "Seoraksan National Park — gallery image 6",
-      "caption": "Seoraksan National Park — photo 6"
-    },
-    {
-      "id": 9,
-      "type": "photo",
       "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
       "location": "Nami Island (Namiseom)",
       "alt": "Nami Island (Namiseom) — gallery image 2",
       "caption": "Nami Island (Namiseom) — photo 2"
     },
     {
-      "id": 10,
+      "id": 9,
       "type": "photo",
       "src": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
       "location": "Nami Island (Namiseom)",
@@ -219,7 +211,7 @@
       "caption": "Nami Island (Namiseom) — photo 3"
     },
     {
-      "id": 13,
+      "id": 10,
       "type": "photo",
       "src": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
       "location": "Nami Island (Namiseom)",
@@ -227,7 +219,7 @@
       "caption": "Nami Island (Namiseom) — photo 6"
     },
     {
-      "id": 14,
+      "id": 11,
       "type": "photo",
       "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58.webp",
       "location": "The Garden of Morning Calm",
@@ -235,28 +227,20 @@
       "caption": "The Garden of Morning Calm — photo 2"
     },
     {
-      "id": 15,
+      "id": 12,
       "type": "photo",
-      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02.webp",
+      "src": "/images/tours/garden-of-morning-calm/garden-of-morning-calm-flowers.webp",
       "location": "The Garden of Morning Calm",
       "alt": "The Garden of Morning Calm — gallery image 3",
       "caption": "The Garden of Morning Calm — photo 3"
     },
     {
-      "id": 16,
+      "id": 13,
       "type": "photo",
       "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp",
       "location": "The Garden of Morning Calm",
       "alt": "The Garden of Morning Calm — gallery image 4",
       "caption": "The Garden of Morning Calm — photo 4"
-    },
-    {
-      "id": 20,
-      "type": "photo",
-      "src": "/images/tours/garden-of-morning-calm/garden-of-morning-calm-flowers.webp",
-      "location": "The Garden of Morning Calm",
-      "alt": "The Garden of Morning Calm — gallery image 8",
-      "caption": "The Garden of Morning Calm — photo 8"
     }
   ],
   "itineraryStops": [
@@ -336,8 +320,7 @@
         "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
         "/images/tours/seoraksan-national-park/photo-001.webp",
         "/images/tours/seoraksan-national-park/seoraksan-gwongumseong-cable-car.webp",
-        "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsan-rock.webp",
-        "/images/tours/seoraksan-national-park/photo-003.webp"
+        "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsan-rock.webp"
       ],
       "imageCredits": [
         {
@@ -361,7 +344,7 @@
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/seoraksan-national-park/photo-003.webp",
+          "url": "/images/tours/seoraksan-national-park/photo-001.webp",
           "source": "atoc-korea"
         }
       ],
@@ -405,14 +388,6 @@
           "location": "Seoraksan National Park",
           "caption": "Seoraksan National Park — photo 5",
           "alt": "Seoraksan National Park — gallery image 5"
-        },
-        {
-          "id": 6,
-          "type": "photo",
-          "src": "/images/tours/seoraksan-national-park/photo-003.webp",
-          "location": "Seoraksan National Park",
-          "caption": "Seoraksan National Park — photo 6",
-          "alt": "Seoraksan National Park — gallery image 6"
         }
       ]
     },
@@ -520,7 +495,7 @@
           "alt": "Nami Island (Namiseom) — gallery image 3"
         },
         {
-          "id": 6,
+          "id": 4,
           "type": "photo",
           "src": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
           "location": "Nami Island (Namiseom)",
@@ -587,9 +562,8 @@
       "images": [
         "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31.webp",
         "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58.webp",
-        "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02.webp",
-        "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp",
-        "/images/tours/garden-of-morning-calm/garden-of-morning-calm-flowers.webp"
+        "/images/tours/garden-of-morning-calm/garden-of-morning-calm-flowers.webp",
+        "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp"
       ],
       "imageCredits": [
         {
@@ -601,7 +575,7 @@
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02.webp",
+          "url": "/images/tours/garden-of-morning-calm/garden-of-morning-calm-flowers.webp",
           "source": "atoc-korea"
         },
         {
@@ -633,7 +607,7 @@
         {
           "id": 3,
           "type": "photo",
-          "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02.webp",
+          "src": "/images/tours/garden-of-morning-calm/garden-of-morning-calm-flowers.webp",
           "location": "The Garden of Morning Calm",
           "caption": "The Garden of Morning Calm — photo 3",
           "alt": "The Garden of Morning Calm — gallery image 3"
@@ -645,14 +619,6 @@
           "location": "The Garden of Morning Calm",
           "caption": "The Garden of Morning Calm — photo 4",
           "alt": "The Garden of Morning Calm — gallery image 4"
-        },
-        {
-          "id": 8,
-          "type": "photo",
-          "src": "/images/tours/garden-of-morning-calm/garden-of-morning-calm-flowers.webp",
-          "location": "The Garden of Morning Calm",
-          "caption": "The Garden of Morning Calm — photo 8",
-          "alt": "The Garden of Morning Calm — gallery image 8"
         }
       ]
     },

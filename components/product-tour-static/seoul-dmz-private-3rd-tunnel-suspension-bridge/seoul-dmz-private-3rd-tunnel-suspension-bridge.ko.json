@@ -155,7 +155,7 @@
     {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31.webp",
+      "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-3.webp",
       "location": "임진각 평화공원",
       "alt": "임진각 평화공원 — gallery image 2",
       "caption": "임진각 평화공원 — photo 2"
@@ -185,7 +185,7 @@
       "caption": "임진각 평화공원 — photo 5"
     },
     {
-      "id": 13,
+      "id": 8,
       "type": "photo",
       "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
       "location": "제3땅굴 (지하 침투 땅굴)",
@@ -193,7 +193,7 @@
       "caption": "제3땅굴 (지하 침투 땅굴) — photo 2"
     },
     {
-      "id": 14,
+      "id": 9,
       "type": "photo",
       "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
       "location": "제3땅굴 (지하 침투 땅굴)",
@@ -260,7 +260,7 @@
       "image": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
       "images": [
         "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
-        "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31.webp",
+        "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-3.webp",
         "/images/tours/imjingak/dmz-01.webp",
         "/images/tours/imjingak/photo-004.webp",
         "/images/tours/imjingak/photo-005.webp"
@@ -271,7 +271,7 @@
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31.webp",
+          "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-3.webp",
           "source": "atoc-korea"
         },
         {
@@ -299,7 +299,7 @@
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31.webp",
+          "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-3.webp",
           "location": "임진각 평화공원",
           "caption": "임진각 평화공원 — photo 2",
           "alt": "임진각 평화공원 — gallery image 2"
@@ -593,9 +593,9 @@
       "image": "/images/tours/gamaksan-suspension-bridge/chatgpt-image-2026-5-10-10-36-38.webp",
       "images": [
         "/images/tours/gamaksan-suspension-bridge/chatgpt-image-2026-5-10-10-36-38.webp",
-        "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-3.webp",
+        "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
         "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-        "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-3.webp"
+        "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
       ],
       "imageCredits": [
         {
@@ -603,7 +603,7 @@
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-3.webp",
+          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
           "source": "atoc-korea"
         },
         {
@@ -611,7 +611,7 @@
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-3.webp",
+          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
           "source": "atoc-korea"
         }
       ],
@@ -625,15 +625,15 @@
           "alt": "감악산 빨간 출렁다리 — gallery image 1"
         },
         {
-          "id": 3,
+          "id": 2,
           "type": "photo",
-          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-3.webp",
+          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
           "location": "감악산 빨간 출렁다리",
           "caption": "감악산 빨간 출렁다리 — photo 3",
           "alt": "감악산 빨간 출렁다리 — gallery image 3"
         },
         {
-          "id": 4,
+          "id": 3,
           "type": "photo",
           "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
           "location": "감악산 빨간 출렁다리",
@@ -641,9 +641,9 @@
           "alt": "감악산 빨간 출렁다리 — gallery image 4"
         },
         {
-          "id": 5,
+          "id": 4,
           "type": "photo",
-          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-3.webp",
+          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
           "location": "감악산 빨간 출렁다리",
           "caption": "감악산 빨간 출렁다리 — photo 5",
           "alt": "감악산 빨간 출렁다리 — gallery image 5"
@@ -1427,49 +1427,13 @@
       "props": {
         "galleryItems": [
           {
-            "id": "g1",
+            "id": 1,
             "type": "photo",
             "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
             "alt": "임진각 망배단과 자유의 다리, 리본과 추모 현판",
             "caption": "임진각 평화공원 (1972년 조성된 추모 공간)",
             "location": "임진각 평화공원",
             "atmosphere": "망배단, 자유의 다리, 그리고 총탄 자국이 남은 증기기관차"
-          },
-          {
-            "id": "g2",
-            "type": "photo",
-            "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
-            "alt": "임진각 — 갤러리 이미지",
-            "caption": "임진각",
-            "location": "임진각",
-            "atmosphere": "1978년 발견된, 기습 침투를 위해 건설된 지하 통로"
-          },
-          {
-            "id": "g3",
-            "type": "photo",
-            "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
-            "alt": "임진각 — 갤러리 이미지",
-            "caption": "임진각",
-            "location": "임진각",
-            "atmosphere": "북한 국경 너머로 직접 바라보는 전경"
-          },
-          {
-            "id": "g4",
-            "type": "photo",
-            "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
-            "alt": "임진각 — 갤러리 이미지",
-            "caption": "임진각",
-            "location": "임진각",
-            "atmosphere": "한국에서 가장 긴 빨간 현수교가 울창한 계곡을 가로질러 150미터에 걸쳐 이어집니다"
-          },
-          {
-            "id": "g5",
-            "type": "photo",
-            "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
-            "alt": "임진각 — 갤러리 이미지",
-            "caption": "임진각",
-            "location": "임진각",
-            "atmosphere": "비무장지대와 감악산 사이의 드라이브 코스"
           }
         ]
       }
@@ -1520,20 +1484,12 @@
               "verified": true,
               "sources": [
                 "Paju City",
-                "",
                 "Soul of Seoul"
               ],
               "verified_date": "2026-04-27"
             },
             "images": [
               "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
-              "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31.webp",
-              "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40-2.webp",
-              "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-2.webp",
-              "/images/tours/imjingak/dmz-01.webp",
-              "/images/tours/imjingak/photo-004.webp",
-              "/images/tours/imjingak/photo-005.webp",
-              "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40-3.webp",
               "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-3.webp",
               "/images/tours/imjingak/dmz-01.webp",
               "/images/tours/imjingak/photo-004.webp",
@@ -1545,15 +1501,15 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31.webp",
+                "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-3.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40-2.webp",
+                "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-2.webp",
+                "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-3.webp",
                 "source": "atoc-korea"
               },
               {
@@ -1569,7 +1525,7 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40-3.webp",
+                "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
                 "source": "atoc-korea"
               },
               {
@@ -1601,7 +1557,7 @@
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31.webp",
+                "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-3.webp",
                 "location": "임진각 평화공원",
                 "caption": "임진각 평화공원 — photo 2",
                 "alt": "임진각 평화공원 — gallery image 2"
@@ -1609,29 +1565,13 @@
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40-2.webp",
-                "location": "임진각 평화공원",
-                "caption": "임진각 평화공원 — photo 3",
-                "alt": "임진각 평화공원 — gallery image 3"
-              },
-              {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-2.webp",
-                "location": "임진각 평화공원",
-                "caption": "임진각 평화공원 — photo 4",
-                "alt": "임진각 평화공원 — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
                 "src": "/images/tours/imjingak/dmz-01.webp",
                 "location": "임진각 평화공원",
                 "caption": "임진각 평화공원 — photo 5",
                 "alt": "임진각 평화공원 — gallery image 5"
               },
               {
-                "id": 6,
+                "id": 4,
                 "type": "photo",
                 "src": "/images/tours/imjingak/photo-004.webp",
                 "location": "임진각 평화공원",
@@ -1639,52 +1579,12 @@
                 "alt": "임진각 평화공원 — gallery image 6"
               },
               {
-                "id": 7,
+                "id": 5,
                 "type": "photo",
                 "src": "/images/tours/imjingak/photo-005.webp",
                 "location": "임진각 평화공원",
                 "caption": "임진각 평화공원 — photo 7",
                 "alt": "임진각 평화공원 — gallery image 7"
-              },
-              {
-                "id": 8,
-                "type": "photo",
-                "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40-3.webp",
-                "location": "임진각 평화공원",
-                "caption": "임진각 평화공원 — photo 8",
-                "alt": "임진각 평화공원 — gallery image 8"
-              },
-              {
-                "id": 9,
-                "type": "photo",
-                "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-3.webp",
-                "location": "임진각 평화공원",
-                "caption": "임진각 평화공원 — photo 9",
-                "alt": "임진각 평화공원 — gallery image 9"
-              },
-              {
-                "id": 10,
-                "type": "photo",
-                "src": "/images/tours/imjingak/dmz-01.webp",
-                "location": "임진각 평화공원",
-                "caption": "임진각 평화공원 — photo 10",
-                "alt": "임진각 평화공원 — gallery image 10"
-              },
-              {
-                "id": 11,
-                "type": "photo",
-                "src": "/images/tours/imjingak/photo-004.webp",
-                "location": "임진각 평화공원",
-                "caption": "임진각 평화공원 — photo 11",
-                "alt": "임진각 평화공원 — gallery image 11"
-              },
-              {
-                "id": 12,
-                "type": "photo",
-                "src": "/images/tours/imjingak/photo-005.webp",
-                "location": "임진각 평화공원",
-                "caption": "임진각 평화공원 — photo 12",
-                "alt": "임진각 평화공원 — gallery image 12"
               }
             ]
           },
@@ -1737,13 +1637,7 @@
             "images": [
               "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
               "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-2.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-2.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-3.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-3.webp"
+              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
             ],
             "imageCredits": [
               {
@@ -1759,7 +1653,7 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-2.webp",
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
                 "source": "atoc-korea"
               },
               {
@@ -1767,11 +1661,11 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-2.webp",
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-3.webp",
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
                 "source": "atoc-korea"
               },
               {
@@ -1779,7 +1673,7 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-3.webp",
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1807,54 +1701,6 @@
                 "location": "제3땅굴",
                 "caption": "제3땅굴 — photo 3",
                 "alt": "제3땅굴 — gallery image 3"
-              },
-              {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-2.webp",
-                "location": "제3땅굴",
-                "caption": "제3땅굴 — photo 4",
-                "alt": "제3땅굴 — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-                "location": "제3땅굴",
-                "caption": "제3땅굴 — photo 5",
-                "alt": "제3땅굴 — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-2.webp",
-                "location": "제3땅굴",
-                "caption": "제3땅굴 — photo 6",
-                "alt": "제3땅굴 — gallery image 6"
-              },
-              {
-                "id": 7,
-                "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-3.webp",
-                "location": "제3땅굴",
-                "caption": "제3땅굴 — photo 7",
-                "alt": "제3땅굴 — gallery image 7"
-              },
-              {
-                "id": 8,
-                "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-                "location": "제3땅굴",
-                "caption": "제3땅굴 — photo 8",
-                "alt": "제3땅굴 — gallery image 8"
-              },
-              {
-                "id": 9,
-                "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-3.webp",
-                "location": "제3땅굴",
-                "caption": "제3땅굴 — photo 9",
-                "alt": "제3땅굴 — gallery image 9"
               }
             ]
           },
@@ -1905,13 +1751,7 @@
             "images": [
               "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
               "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-2.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-2.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-3.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-3.webp"
+              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
             ],
             "imageCredits": [
               {
@@ -1927,7 +1767,7 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-2.webp",
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
                 "source": "atoc-korea"
               },
               {
@@ -1935,11 +1775,11 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-2.webp",
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-3.webp",
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
                 "source": "atoc-korea"
               },
               {
@@ -1947,7 +1787,7 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-3.webp",
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1975,54 +1815,6 @@
                 "location": "도라전망대",
                 "caption": "도라전망대 — photo 3",
                 "alt": "도라전망대 — gallery image 3"
-              },
-              {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-2.webp",
-                "location": "도라전망대",
-                "caption": "도라전망대 — photo 4",
-                "alt": "도라전망대 — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-                "location": "도라전망대",
-                "caption": "도라전망대 — photo 5",
-                "alt": "도라전망대 — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-2.webp",
-                "location": "도라전망대",
-                "caption": "도라전망대 — photo 6",
-                "alt": "도라전망대 — gallery image 6"
-              },
-              {
-                "id": 7,
-                "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-3.webp",
-                "location": "도라전망대",
-                "caption": "도라전망대 — photo 7",
-                "alt": "도라전망대 — gallery image 7"
-              },
-              {
-                "id": 8,
-                "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-                "location": "도라전망대",
-                "caption": "도라전망대 — photo 8",
-                "alt": "도라전망대 — gallery image 8"
-              },
-              {
-                "id": 9,
-                "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-3.webp",
-                "location": "도라전망대",
-                "caption": "도라전망대 — photo 9",
-                "alt": "도라전망대 — gallery image 9"
               }
             ]
           },
@@ -2072,13 +1864,7 @@
             "images": [
               "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
               "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-2.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-2.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-3.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-3.webp"
+              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
             ],
             "imageCredits": [
               {
@@ -2094,7 +1880,7 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-2.webp",
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
                 "source": "atoc-korea"
               },
               {
@@ -2102,11 +1888,11 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-2.webp",
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-3.webp",
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
                 "source": "atoc-korea"
               },
               {
@@ -2114,7 +1900,7 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-3.webp",
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2142,54 +1928,6 @@
                 "location": "감악산 붉은 출렁다리",
                 "caption": "감악산 붉은 출렁다리 — photo 3",
                 "alt": "감악산 붉은 출렁다리 — gallery image 3"
-              },
-              {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-2.webp",
-                "location": "감악산 붉은 출렁다리",
-                "caption": "감악산 붉은 출렁다리 — photo 4",
-                "alt": "감악산 붉은 출렁다리 — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-                "location": "감악산 붉은 출렁다리",
-                "caption": "감악산 붉은 출렁다리 — photo 5",
-                "alt": "감악산 붉은 출렁다리 — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-2.webp",
-                "location": "감악산 붉은 출렁다리",
-                "caption": "감악산 붉은 출렁다리 — photo 6",
-                "alt": "감악산 붉은 출렁다리 — gallery image 6"
-              },
-              {
-                "id": 7,
-                "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-3.webp",
-                "location": "감악산 붉은 출렁다리",
-                "caption": "감악산 붉은 출렁다리 — photo 7",
-                "alt": "감악산 붉은 출렁다리 — gallery image 7"
-              },
-              {
-                "id": 8,
-                "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-                "location": "감악산 붉은 출렁다리",
-                "caption": "감악산 붉은 출렁다리 — photo 8",
-                "alt": "감악산 붉은 출렁다리 — gallery image 8"
-              },
-              {
-                "id": 9,
-                "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-3.webp",
-                "location": "감악산 붉은 출렁다리",
-                "caption": "감악산 붉은 출렁다리 — photo 9",
-                "alt": "감악산 붉은 출렁다리 — gallery image 9"
               }
             ]
           }

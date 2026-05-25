@@ -197,21 +197,13 @@
     {
       "id": 8,
       "type": "photo",
-      "src": "/images/tours/seoraksan-national-park/photo-003.webp",
-      "location": "Seoraksan National Park",
-      "alt": "Seoraksan National Park — gallery image 6",
-      "caption": "Seoraksan National Park — photo 6"
-    },
-    {
-      "id": 9,
-      "type": "photo",
       "src": "/images/tours/naksansa-temple/naksansa-main-hall.webp",
       "location": "Naksansa Temple",
       "alt": "Naksansa Temple — on-route photo",
       "caption": "Naksansa Temple"
     },
     {
-      "id": 10,
+      "id": 9,
       "type": "photo",
       "src": "/images/tours/naksansa-temple/naksansa-haesu-gwaneum.webp",
       "location": "Naksansa Temple",
@@ -219,7 +211,7 @@
       "caption": "Naksansa Temple"
     },
     {
-      "id": 11,
+      "id": 10,
       "type": "photo",
       "src": "/images/tours/naksan-beach/naksan-beach-summer-crowd.webp",
       "location": "Naksan Beach",
@@ -310,8 +302,7 @@
         "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
         "/images/tours/seoraksan-national-park/photo-001.webp",
         "/images/tours/seoraksan-national-park/seoraksan-gwongumseong-cable-car.webp",
-        "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsan-rock.webp",
-        "/images/tours/seoraksan-national-park/photo-003.webp"
+        "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsan-rock.webp"
       ],
       "imageCredits": [
         {
@@ -335,7 +326,7 @@
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/seoraksan-national-park/photo-003.webp",
+          "url": "/images/tours/seoraksan-national-park/photo-001.webp",
           "source": "atoc-korea"
         }
       ],
@@ -379,14 +370,6 @@
           "location": "Seoraksan National Park",
           "caption": "Seoraksan National Park — photo 5",
           "alt": "Seoraksan National Park — gallery image 5"
-        },
-        {
-          "id": 6,
-          "type": "photo",
-          "src": "/images/tours/seoraksan-national-park/photo-003.webp",
-          "location": "Seoraksan National Park",
-          "caption": "Seoraksan National Park — photo 6",
-          "alt": "Seoraksan National Park — gallery image 6"
         }
       ]
     },

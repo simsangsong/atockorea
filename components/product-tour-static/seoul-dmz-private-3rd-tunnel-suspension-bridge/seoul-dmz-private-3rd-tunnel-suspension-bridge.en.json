@@ -155,7 +155,7 @@
     {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31.webp",
+      "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-3.webp",
       "location": "Imjingak Peace Park",
       "alt": "Imjingak Peace Park — gallery image 2",
       "caption": "Imjingak Peace Park — photo 2"
@@ -185,7 +185,7 @@
       "caption": "Imjingak Peace Park — photo 5"
     },
     {
-      "id": 13,
+      "id": 8,
       "type": "photo",
       "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
       "location": "3rd Infiltration Tunnel (Underground Invasion Tunnel)",
@@ -193,7 +193,7 @@
       "caption": "3rd Infiltration Tunnel (Underground Invasion Tunnel) — photo 2"
     },
     {
-      "id": 14,
+      "id": 9,
       "type": "photo",
       "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
       "location": "3rd Infiltration Tunnel (Underground Invasion Tunnel)",
@@ -260,7 +260,7 @@
       "image": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
       "images": [
         "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
-        "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31.webp",
+        "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-3.webp",
         "/images/tours/imjingak/dmz-01.webp",
         "/images/tours/imjingak/photo-004.webp",
         "/images/tours/imjingak/photo-005.webp"
@@ -271,7 +271,7 @@
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31.webp",
+          "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-3.webp",
           "source": "atoc-korea"
         },
         {
@@ -299,7 +299,7 @@
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31.webp",
+          "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-3.webp",
           "location": "Imjingak Peace Park",
           "caption": "Imjingak Peace Park — photo 2",
           "alt": "Imjingak Peace Park — gallery image 2"
@@ -593,9 +593,9 @@
       "image": "/images/tours/gamaksan-suspension-bridge/chatgpt-image-2026-5-10-10-36-38.webp",
       "images": [
         "/images/tours/gamaksan-suspension-bridge/chatgpt-image-2026-5-10-10-36-38.webp",
-        "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-3.webp",
+        "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
         "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-        "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-3.webp"
+        "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
       ],
       "imageCredits": [
         {
@@ -603,7 +603,7 @@
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-3.webp",
+          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
           "source": "atoc-korea"
         },
         {
@@ -611,7 +611,7 @@
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-3.webp",
+          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
           "source": "atoc-korea"
         }
       ],
@@ -625,15 +625,15 @@
           "alt": "Gamaksan Red Suspension Bridge — gallery image 1"
         },
         {
-          "id": 3,
+          "id": 2,
           "type": "photo",
-          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-3.webp",
+          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
           "location": "Gamaksan Red Suspension Bridge",
           "caption": "Gamaksan Red Suspension Bridge — photo 3",
           "alt": "Gamaksan Red Suspension Bridge — gallery image 3"
         },
         {
-          "id": 4,
+          "id": 3,
           "type": "photo",
           "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
           "location": "Gamaksan Red Suspension Bridge",
@@ -641,9 +641,9 @@
           "alt": "Gamaksan Red Suspension Bridge — gallery image 4"
         },
         {
-          "id": 5,
+          "id": 4,
           "type": "photo",
-          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-3.webp",
+          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
           "location": "Gamaksan Red Suspension Bridge",
           "caption": "Gamaksan Red Suspension Bridge — photo 5",
           "alt": "Gamaksan Red Suspension Bridge — gallery image 5"
@@ -1427,49 +1427,13 @@
       "props": {
         "galleryItems": [
           {
-            "id": "g1",
+            "id": 1,
             "type": "photo",
             "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
             "alt": "The Mangbaedan Altar and Bridge of Freedom at Imjingak, with ribbons and memorial plaques",
             "caption": "Imjingak Peace Park (1972 memorial site)",
             "location": "Imjingak Peace Park",
             "atmosphere": "Mangbaedan Altar, Freedom Bridge, and the bullet-ridden steam locomotive"
-          },
-          {
-            "id": "g2",
-            "type": "photo",
-            "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
-            "alt": "Imjingak — gallery image",
-            "caption": "Imjingak",
-            "location": "Imjingak",
-            "atmosphere": "Underground passage built for a surprise invasion, discovered in 1978"
-          },
-          {
-            "id": "g3",
-            "type": "photo",
-            "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
-            "alt": "Imjingak — gallery image",
-            "caption": "Imjingak",
-            "location": "Imjingak",
-            "atmosphere": "Direct view across the border into North Korea"
-          },
-          {
-            "id": "g4",
-            "type": "photo",
-            "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
-            "alt": "Imjingak — gallery image",
-            "caption": "Imjingak",
-            "location": "Imjingak",
-            "atmosphere": "Korea's longest red suspension bridge stretches 150 meters across a forested valley"
-          },
-          {
-            "id": "g5",
-            "type": "photo",
-            "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
-            "alt": "Imjingak — gallery image",
-            "caption": "Imjingak",
-            "location": "Imjingak",
-            "atmosphere": "The drive between the DMZ and Gamaksan"
           }
         ]
       }
@@ -1520,20 +1484,12 @@
               "verified": true,
               "sources": [
                 "Paju City",
-                "",
                 "Soul of Seoul"
               ],
               "verified_date": "2026-04-27"
             },
             "images": [
               "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
-              "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31.webp",
-              "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40-2.webp",
-              "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-2.webp",
-              "/images/tours/imjingak/dmz-01.webp",
-              "/images/tours/imjingak/photo-004.webp",
-              "/images/tours/imjingak/photo-005.webp",
-              "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40-3.webp",
               "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-3.webp",
               "/images/tours/imjingak/dmz-01.webp",
               "/images/tours/imjingak/photo-004.webp",
@@ -1545,15 +1501,15 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31.webp",
+                "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-3.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40-2.webp",
+                "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-2.webp",
+                "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-3.webp",
                 "source": "atoc-korea"
               },
               {
@@ -1569,7 +1525,7 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40-3.webp",
+                "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
                 "source": "atoc-korea"
               },
               {
@@ -1601,7 +1557,7 @@
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31.webp",
+                "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-3.webp",
                 "location": "Imjingak Peace Park",
                 "caption": "Imjingak Peace Park — photo 2",
                 "alt": "Imjingak Peace Park — gallery image 2"
@@ -1609,29 +1565,13 @@
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40-2.webp",
-                "location": "Imjingak Peace Park",
-                "caption": "Imjingak Peace Park — photo 3",
-                "alt": "Imjingak Peace Park — gallery image 3"
-              },
-              {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-2.webp",
-                "location": "Imjingak Peace Park",
-                "caption": "Imjingak Peace Park — photo 4",
-                "alt": "Imjingak Peace Park — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
                 "src": "/images/tours/imjingak/dmz-01.webp",
                 "location": "Imjingak Peace Park",
                 "caption": "Imjingak Peace Park — photo 5",
                 "alt": "Imjingak Peace Park — gallery image 5"
               },
               {
-                "id": 6,
+                "id": 4,
                 "type": "photo",
                 "src": "/images/tours/imjingak/photo-004.webp",
                 "location": "Imjingak Peace Park",
@@ -1639,52 +1579,12 @@
                 "alt": "Imjingak Peace Park — gallery image 6"
               },
               {
-                "id": 7,
+                "id": 5,
                 "type": "photo",
                 "src": "/images/tours/imjingak/photo-005.webp",
                 "location": "Imjingak Peace Park",
                 "caption": "Imjingak Peace Park — photo 7",
                 "alt": "Imjingak Peace Park — gallery image 7"
-              },
-              {
-                "id": 8,
-                "type": "photo",
-                "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40-3.webp",
-                "location": "Imjingak Peace Park",
-                "caption": "Imjingak Peace Park — photo 8",
-                "alt": "Imjingak Peace Park — gallery image 8"
-              },
-              {
-                "id": 9,
-                "type": "photo",
-                "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-3.webp",
-                "location": "Imjingak Peace Park",
-                "caption": "Imjingak Peace Park — photo 9",
-                "alt": "Imjingak Peace Park — gallery image 9"
-              },
-              {
-                "id": 10,
-                "type": "photo",
-                "src": "/images/tours/imjingak/dmz-01.webp",
-                "location": "Imjingak Peace Park",
-                "caption": "Imjingak Peace Park — photo 10",
-                "alt": "Imjingak Peace Park — gallery image 10"
-              },
-              {
-                "id": 11,
-                "type": "photo",
-                "src": "/images/tours/imjingak/photo-004.webp",
-                "location": "Imjingak Peace Park",
-                "caption": "Imjingak Peace Park — photo 11",
-                "alt": "Imjingak Peace Park — gallery image 11"
-              },
-              {
-                "id": 12,
-                "type": "photo",
-                "src": "/images/tours/imjingak/photo-005.webp",
-                "location": "Imjingak Peace Park",
-                "caption": "Imjingak Peace Park — photo 12",
-                "alt": "Imjingak Peace Park — gallery image 12"
               }
             ]
           },
@@ -1737,13 +1637,7 @@
             "images": [
               "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
               "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-2.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-2.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-3.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-3.webp"
+              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
             ],
             "imageCredits": [
               {
@@ -1759,7 +1653,7 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-2.webp",
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
                 "source": "atoc-korea"
               },
               {
@@ -1767,11 +1661,11 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-2.webp",
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-3.webp",
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
                 "source": "atoc-korea"
               },
               {
@@ -1779,7 +1673,7 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-3.webp",
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1807,54 +1701,6 @@
                 "location": "3rd Infiltration Tunnel",
                 "caption": "3rd Infiltration Tunnel — photo 3",
                 "alt": "3rd Infiltration Tunnel — gallery image 3"
-              },
-              {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-2.webp",
-                "location": "3rd Infiltration Tunnel",
-                "caption": "3rd Infiltration Tunnel — photo 4",
-                "alt": "3rd Infiltration Tunnel — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-                "location": "3rd Infiltration Tunnel",
-                "caption": "3rd Infiltration Tunnel — photo 5",
-                "alt": "3rd Infiltration Tunnel — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-2.webp",
-                "location": "3rd Infiltration Tunnel",
-                "caption": "3rd Infiltration Tunnel — photo 6",
-                "alt": "3rd Infiltration Tunnel — gallery image 6"
-              },
-              {
-                "id": 7,
-                "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-3.webp",
-                "location": "3rd Infiltration Tunnel",
-                "caption": "3rd Infiltration Tunnel — photo 7",
-                "alt": "3rd Infiltration Tunnel — gallery image 7"
-              },
-              {
-                "id": 8,
-                "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-                "location": "3rd Infiltration Tunnel",
-                "caption": "3rd Infiltration Tunnel — photo 8",
-                "alt": "3rd Infiltration Tunnel — gallery image 8"
-              },
-              {
-                "id": 9,
-                "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-3.webp",
-                "location": "3rd Infiltration Tunnel",
-                "caption": "3rd Infiltration Tunnel — photo 9",
-                "alt": "3rd Infiltration Tunnel — gallery image 9"
               }
             ]
           },
@@ -1905,13 +1751,7 @@
             "images": [
               "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
               "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-2.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-2.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-3.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-3.webp"
+              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
             ],
             "imageCredits": [
               {
@@ -1927,7 +1767,7 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-2.webp",
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
                 "source": "atoc-korea"
               },
               {
@@ -1935,11 +1775,11 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-2.webp",
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-3.webp",
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
                 "source": "atoc-korea"
               },
               {
@@ -1947,7 +1787,7 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-3.webp",
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1975,54 +1815,6 @@
                 "location": "Dora Observatory",
                 "caption": "Dora Observatory — photo 3",
                 "alt": "Dora Observatory — gallery image 3"
-              },
-              {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-2.webp",
-                "location": "Dora Observatory",
-                "caption": "Dora Observatory — photo 4",
-                "alt": "Dora Observatory — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-                "location": "Dora Observatory",
-                "caption": "Dora Observatory — photo 5",
-                "alt": "Dora Observatory — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-2.webp",
-                "location": "Dora Observatory",
-                "caption": "Dora Observatory — photo 6",
-                "alt": "Dora Observatory — gallery image 6"
-              },
-              {
-                "id": 7,
-                "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-3.webp",
-                "location": "Dora Observatory",
-                "caption": "Dora Observatory — photo 7",
-                "alt": "Dora Observatory — gallery image 7"
-              },
-              {
-                "id": 8,
-                "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-                "location": "Dora Observatory",
-                "caption": "Dora Observatory — photo 8",
-                "alt": "Dora Observatory — gallery image 8"
-              },
-              {
-                "id": 9,
-                "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-3.webp",
-                "location": "Dora Observatory",
-                "caption": "Dora Observatory — photo 9",
-                "alt": "Dora Observatory — gallery image 9"
               }
             ]
           },
@@ -2072,13 +1864,7 @@
             "images": [
               "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
               "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-2.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-2.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-3.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-3.webp"
+              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
             ],
             "imageCredits": [
               {
@@ -2094,7 +1880,7 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-2.webp",
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
                 "source": "atoc-korea"
               },
               {
@@ -2102,11 +1888,11 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-2.webp",
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-3.webp",
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
                 "source": "atoc-korea"
               },
               {
@@ -2114,7 +1900,7 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-3.webp",
+                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2142,54 +1928,6 @@
                 "location": "Gamaksan Red Suspension Bridge",
                 "caption": "Gamaksan Red Suspension Bridge — photo 3",
                 "alt": "Gamaksan Red Suspension Bridge — gallery image 3"
-              },
-              {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-2.webp",
-                "location": "Gamaksan Red Suspension Bridge",
-                "caption": "Gamaksan Red Suspension Bridge — photo 4",
-                "alt": "Gamaksan Red Suspension Bridge — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-                "location": "Gamaksan Red Suspension Bridge",
-                "caption": "Gamaksan Red Suspension Bridge — photo 5",
-                "alt": "Gamaksan Red Suspension Bridge — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-2.webp",
-                "location": "Gamaksan Red Suspension Bridge",
-                "caption": "Gamaksan Red Suspension Bridge — photo 6",
-                "alt": "Gamaksan Red Suspension Bridge — gallery image 6"
-              },
-              {
-                "id": 7,
-                "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43-3.webp",
-                "location": "Gamaksan Red Suspension Bridge",
-                "caption": "Gamaksan Red Suspension Bridge — photo 7",
-                "alt": "Gamaksan Red Suspension Bridge — gallery image 7"
-              },
-              {
-                "id": 8,
-                "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-                "location": "Gamaksan Red Suspension Bridge",
-                "caption": "Gamaksan Red Suspension Bridge — photo 8",
-                "alt": "Gamaksan Red Suspension Bridge — gallery image 8"
-              },
-              {
-                "id": 9,
-                "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32-3.webp",
-                "location": "Gamaksan Red Suspension Bridge",
-                "caption": "Gamaksan Red Suspension Bridge — photo 9",
-                "alt": "Gamaksan Red Suspension Bridge — gallery image 9"
               }
             ]
           }

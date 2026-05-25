@@ -1084,53 +1084,7 @@
       "section_html_id": null,
       "component": "旅遊氛圍圖庫",
       "props": {
-        "galleryItems": [
-          {
-            "id": "g1",
-            "type": "photo",
-            "src": "",
-            "alt": "首爾城市天際線，黃昏時分從首爾南部制高點眺望，樂天世界塔與漢江盡收眼底",
-            "caption": "首爾天際線——彈性出發地點",
-            "location": "首爾（出發城市）",
-            "atmosphere": "以現代首爾為彈性出發地；私人車輛飯店接送"
-          },
-          {
-            "id": "g2",
-            "type": "photo",
-            "src": "",
-            "alt": "南怡島水杉林蔭大道，旅客漫步於寬闊砂石步道，高聳樹木夾道而行",
-            "caption": "南怡島水杉步道——路線1亮點",
-            "location": "南怡島，加平（路線1選項）",
-            "atmosphere": "林蔭步道與短程渡輪；韓劇《冬季戀歌》拍攝地"
-          },
-          {
-            "id": "g3",
-            "type": "photo",
-            "src": "",
-            "alt": "晨靜樹木園主題花圃盛開著當季花卉，蜿蜒石板步道穿梭其間",
-            "caption": "晨靜樹木園——路線1拍照景點",
-            "location": "晨靜樹木園，加平（路線1選項）",
-            "atmosphere": "佔地33萬平方公尺，設有20座主題花園；1996年由韓尚敬創立"
-          },
-          {
-            "id": "g4",
-            "type": "photo",
-            "src": "",
-            "alt": "法國小村莊，色彩繽紛的地中海風格建築依山而建，坐落於加平山丘上",
-            "caption": "法國小村莊——小王子村（路線1）",
-            "location": "法國小村莊，加平（路線1選項）",
-            "atmosphere": "色彩繽紛的山丘村莊；韓劇《來自星星的你》拍攝地"
-          },
-          {
-            "id": "g5",
-            "type": "photo",
-            "src": "",
-            "alt": "非軍事區臨津閣和平公園，自由之橋在坡州紀念區後方清晰可見",
-            "caption": "臨津閣和平公園——路線2核心景點",
-            "location": "臨津閣和平公園，坡州（路線2選項）",
-            "atmosphere": "韓國歷史意義最深重的邊境公園；自由之橋（1953年）；距軍事分界線7公里"
-          }
-        ]
+        "galleryItems": []
       }
     },
     {
@@ -1271,11 +1225,7 @@
             },
             "images": [
               "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
-              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-2.webp",
-              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-3.webp"
+              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp"
             ],
             "imageCredits": [
               {
@@ -1291,7 +1241,7 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-2.webp",
+                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
                 "source": "atoc-korea"
               },
               {
@@ -1299,7 +1249,7 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-3.webp",
+                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1319,38 +1269,6 @@
                 "location": "路線三：愛寶樂園 + 韓國民俗村",
                 "caption": "路線三：愛寶樂園 + 韓國民俗村 — photo 2",
                 "alt": "路線三：愛寶樂園 + 韓國民俗村 — gallery image 2"
-              },
-              {
-                "id": 3,
-                "type": "photo",
-                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-                "location": "路線三：愛寶樂園 + 韓國民俗村",
-                "caption": "路線三：愛寶樂園 + 韓國民俗村 — photo 3",
-                "alt": "路線三：愛寶樂園 + 韓國民俗村 — gallery image 3"
-              },
-              {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-2.webp",
-                "location": "路線三：愛寶樂園 + 韓國民俗村",
-                "caption": "路線三：愛寶樂園 + 韓國民俗村 — photo 4",
-                "alt": "路線三：愛寶樂園 + 韓國民俗村 — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-                "location": "路線三：愛寶樂園 + 韓國民俗村",
-                "caption": "路線三：愛寶樂園 + 韓國民俗村 — photo 5",
-                "alt": "路線三：愛寶樂園 + 韓國民俗村 — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-3.webp",
-                "location": "路線三：愛寶樂園 + 韓國民俗村",
-                "caption": "路線三：愛寶樂園 + 韓國民俗村 — photo 6",
-                "alt": "路線三：愛寶樂園 + 韓國民俗村 — gallery image 6"
               }
             ]
           },

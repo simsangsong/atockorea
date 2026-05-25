@@ -200,7 +200,7 @@
       "caption": "韩国民俗村（龙仁） — photo 2"
     },
     {
-      "id": 11,
+      "id": 9,
       "type": "photo",
       "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
       "location": "星空图书馆水原",
@@ -208,7 +208,7 @@
       "caption": "星空图书馆水原 — photo 2"
     },
     {
-      "id": 12,
+      "id": 10,
       "type": "photo",
       "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
       "location": "星空图书馆水原",
@@ -216,7 +216,7 @@
       "caption": "星空图书馆水原 — photo 3"
     },
     {
-      "id": 13,
+      "id": 11,
       "type": "photo",
       "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
       "location": "星空图书馆水原",
@@ -442,7 +442,6 @@
           "VisitKorea",
           "Wikipedia",
           "Suwon CVB",
-          "",
           "Korea Tourism Organization (english.visitkorea.or.kr — Hwaseong Haenggung official listing)",
           "Cultural Heritage Administration / Korea Heritage Service (cha.go.kr — Hwaseong Haenggung Historic Site No. 478)",
           "Suwon City Tourism (suwon.go.kr/tour — Royal Guard Changing Ceremony + Mu-ye 24-gi schedule)",
@@ -1572,49 +1571,13 @@
       "props": {
         "galleryItems": [
           {
-            "id": "g1",
+            "id": 1,
             "type": "photo",
             "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
             "alt": "水原华城城墙一段，全长5.7公里，被列入UNESCO世界遗产，沿山脊蜿蜒而行，可见石制堡垒与主要城门",
             "caption": "水原华城——1997年列入UNESCO世界遗产",
             "location": "水原华城，长安门至华西门段，水原",
             "atmosphere": "城墙建于1794至1796年，由正祖大王主持修建；可俯瞰城市全景；是韩国现存唯一的城郭都市"
-          },
-          {
-            "id": "g2",
-            "type": "photo",
-            "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
-            "alt": "水原华城 — 图库图片",
-            "caption": "水原华城",
-            "location": "水原华城",
-            "atmosphere": "韩国最大行宫；正祖大王的临时行在；经19世纪火灾后修复重建"
-          },
-          {
-            "id": "g3",
-            "type": "photo",
-            "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
-            "alt": "水原华城 — 图库图片",
-            "caption": "水原华城",
-            "location": "水原华城",
-            "atmosphere": "每日举行王室近卫队再现及武艺演示；演出时间公示于入口处"
-          },
-          {
-            "id": "g4",
-            "type": "photo",
-            "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
-            "alt": "水原华城 — 图库图片",
-            "caption": "水原华城",
-            "location": "水原华城",
-            "atmosphere": "270余座还原朝鲜后期风貌的传统建筑；马术表演；韩剧重要拍摄地"
-          },
-          {
-            "id": "g5",
-            "type": "photo",
-            "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
-            "alt": "水原华城 — 图库图片",
-            "caption": "水原华城",
-            "location": "水原华城",
-            "atmosphere": "新世界旗舰第二代Starfield，2024年1月开业；免费入场；设黑胶唱片试听区"
           }
         ]
       }
@@ -1809,7 +1772,6 @@
               "verified": true,
               "sources": [
                 "Wikipedia",
-                "",
                 "TimeTravelTurtle"
               ],
               "verified_date": "2026-04-27"
@@ -1932,11 +1894,7 @@
             },
             "images": [
               "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
-              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-2.webp",
-              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-3.webp"
+              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp"
             ],
             "imageCredits": [
               {
@@ -1952,7 +1910,7 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-2.webp",
+                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
                 "source": "atoc-korea"
               },
               {
@@ -1960,7 +1918,7 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-3.webp",
+                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1980,38 +1938,6 @@
                 "location": "韩国民俗村（龙仁）",
                 "caption": "韩国民俗村（龙仁） — photo 2",
                 "alt": "韩国民俗村（龙仁） — gallery image 2"
-              },
-              {
-                "id": 3,
-                "type": "photo",
-                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-                "location": "韩国民俗村（龙仁）",
-                "caption": "韩国民俗村（龙仁） — photo 3",
-                "alt": "韩国民俗村（龙仁） — gallery image 3"
-              },
-              {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-2.webp",
-                "location": "韩国民俗村（龙仁）",
-                "caption": "韩国民俗村（龙仁） — photo 4",
-                "alt": "韩国民俗村（龙仁） — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-                "location": "韩国民俗村（龙仁）",
-                "caption": "韩国民俗村（龙仁） — photo 5",
-                "alt": "韩国民俗村（龙仁） — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-3.webp",
-                "location": "韩国民俗村（龙仁）",
-                "caption": "韩国民俗村（龙仁） — photo 6",
-                "alt": "韩国民俗村（龙仁） — gallery image 6"
               }
             ]
           },
@@ -2064,15 +1990,7 @@
               "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
               "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
               "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
-              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
-              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18-2.webp",
-              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38-2.webp",
-              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55-2.webp",
-              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58-2.webp",
-              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18-3.webp",
-              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38-3.webp",
-              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55-3.webp",
-              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58-3.webp"
+              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp"
             ],
             "imageCredits": [
               {
@@ -2092,35 +2010,35 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18-2.webp",
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38-2.webp",
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55-2.webp",
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58-2.webp",
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18-3.webp",
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38-3.webp",
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55-3.webp",
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58-3.webp",
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2156,70 +2074,6 @@
                 "location": "星空图书馆，水原",
                 "caption": "星空图书馆，水原 — photo 4",
                 "alt": "星空图书馆，水原 — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18-2.webp",
-                "location": "星空图书馆，水原",
-                "caption": "星空图书馆，水原 — photo 5",
-                "alt": "星空图书馆，水原 — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38-2.webp",
-                "location": "星空图书馆，水原",
-                "caption": "星空图书馆，水原 — photo 6",
-                "alt": "星空图书馆，水原 — gallery image 6"
-              },
-              {
-                "id": 7,
-                "type": "photo",
-                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55-2.webp",
-                "location": "星空图书馆，水原",
-                "caption": "星空图书馆，水原 — photo 7",
-                "alt": "星空图书馆，水原 — gallery image 7"
-              },
-              {
-                "id": 8,
-                "type": "photo",
-                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58-2.webp",
-                "location": "星空图书馆，水原",
-                "caption": "星空图书馆，水原 — photo 8",
-                "alt": "星空图书馆，水原 — gallery image 8"
-              },
-              {
-                "id": 9,
-                "type": "photo",
-                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18-3.webp",
-                "location": "星空图书馆，水原",
-                "caption": "星空图书馆，水原 — photo 9",
-                "alt": "星空图书馆，水原 — gallery image 9"
-              },
-              {
-                "id": 10,
-                "type": "photo",
-                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38-3.webp",
-                "location": "星空图书馆，水原",
-                "caption": "星空图书馆，水原 — photo 10",
-                "alt": "星空图书馆，水原 — gallery image 10"
-              },
-              {
-                "id": 11,
-                "type": "photo",
-                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55-3.webp",
-                "location": "星空图书馆，水原",
-                "caption": "星空图书馆，水原 — photo 11",
-                "alt": "星空图书馆，水原 — gallery image 11"
-              },
-              {
-                "id": 12,
-                "type": "photo",
-                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58-3.webp",
-                "location": "星空图书馆，水原",
-                "caption": "星空图书馆，水原 — photo 12",
-                "alt": "星空图书馆，水原 — gallery image 12"
               }
             ]
           },

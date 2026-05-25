@@ -186,7 +186,7 @@
       "caption": "Suwon Hwaseong Fortress — photo 6"
     },
     {
-      "id": 10,
+      "id": 8,
       "type": "photo",
       "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50.webp",
       "location": "Waujeongsa Temple",
@@ -194,7 +194,7 @@
       "caption": "Waujeongsa Temple — photo 2"
     },
     {
-      "id": 11,
+      "id": 9,
       "type": "photo",
       "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-03.webp",
       "location": "Waujeongsa Temple",
@@ -202,15 +202,15 @@
       "caption": "Waujeongsa Temple — photo 3"
     },
     {
-      "id": 12,
+      "id": 10,
       "type": "photo",
-      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11.webp",
+      "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11-3.webp",
       "location": "Waujeongsa Temple",
       "alt": "Waujeongsa Temple — gallery image 4",
       "caption": "Waujeongsa Temple — photo 4"
     },
     {
-      "id": 13,
+      "id": 11,
       "type": "photo",
       "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33.webp",
       "location": "Waujeongsa Temple",
@@ -549,7 +549,7 @@
         "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
         "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50.webp",
         "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-03.webp",
-        "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11.webp",
+        "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11-3.webp",
         "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33.webp"
       ],
       "imageCredits": [
@@ -566,7 +566,7 @@
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11.webp",
+          "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11-3.webp",
           "source": "atoc-korea"
         },
         {
@@ -602,7 +602,7 @@
         {
           "id": 4,
           "type": "photo",
-          "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11.webp",
+          "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11-3.webp",
           "location": "Waujeongsa Temple",
           "caption": "Waujeongsa Temple — photo 4",
           "alt": "Waujeongsa Temple — gallery image 4"
@@ -1428,53 +1428,7 @@
       "section_html_id": null,
       "component": "TourAtmosphereGallery",
       "props": {
-        "galleryItems": [
-          {
-            "id": "g1",
-            "type": "photo",
-            "src": "",
-            "alt": "Suwon Hwaseong Fortress wall and gate built of stone blocks with characteristic upturned eaves visible above the gateway",
-            "caption": "Hwaseong Fortress wall and gate",
-            "location": "Suwon Hwaseong Fortress, Suwon, Gyeonggi-do",
-            "atmosphere": "Stone walls built 1794-1796 under King Jeongjo; UNESCO World Heritage Site since 1997"
-          },
-          {
-            "id": "g2",
-            "type": "photo",
-            "src": "",
-            "alt": "Towering library bookshelves in the Starfield Library atrium — COEX Seoul (same design lineage as Starfield Suwon; Unsplash)",
-            "caption": "Starfield Library — iconic multi-storey bookshelves",
-            "location": "Starfield Library COEX, Gangnam, Seoul (concept matches Suwon branch)",
-            "atmosphere": "Shinsegae's flagship 2nd-generation Starfield, opened January 2024; free entry; vinyl-record listening seats"
-          },
-          {
-            "id": "g3",
-            "type": "photo",
-            "src": "",
-            "alt": "Ornate Korean Buddhist temple rooflines and eaves among green trees — representative heritage mood for stops like Waujeongsa (stock photo, Gunsan-si; Unsplash license)",
-            "caption": "Korean Buddhist temple architecture — heritage mood",
-            "location": "Representative Korean Buddhist temple imagery (Waujeongsa: Yongin)",
-            "atmosphere": "Stock scene of Korean Buddhist temple roofs (Gunsan-si). Waujeongsa (Yongin) is famous for thousands of pan-Asian statues, the Buldu Buddha head, and the giant wooden reclining Buddha."
-          },
-          {
-            "id": "g4",
-            "type": "photo",
-            "src": "",
-            "alt": "Section of the Hwaseong fortress wall walk with stone parapets, beacon mound visible ahead, and Suwon city below",
-            "caption": "Hwaseong wall walk — sweeping city views",
-            "location": "Hwaseong Wall, Janganmun section, Suwon",
-            "atmosphere": "1 km wall walk between Janganmun and Hwaseomun; steep gradients; bastions and command posts"
-          },
-          {
-            "id": "g5",
-            "type": "photo",
-            "src": "",
-            "alt": "Hwaseong Haenggung Palace's traditional Korean wooden buildings with painted eaves arranged around a stone-flagged courtyard",
-            "caption": "Hwaseong Haenggung Palace courtyards",
-            "location": "Hwaseong Haenggung Palace, inside the fortress, Suwon",
-            "atmosphere": "Korea's largest haenggung (detached palace); King Jeongjo's temporary residence; restored from 19th-century fire"
-          }
-        ]
+        "galleryItems": []
       }
     },
     {
@@ -1535,9 +1489,6 @@
               "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
               "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
               "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
-              "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
-              "/images/tours/suwon-hwaseong/photo-002.webp",
-              "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
               "/images/tours/suwon-hwaseong/photo-002.webp"
             ],
             "imageCredits": [
@@ -1622,34 +1573,10 @@
               {
                 "id": 6,
                 "type": "photo",
-                "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
-                "location": "Suwon Hwaseong Fortress",
-                "caption": "Suwon Hwaseong Fortress — photo 6",
-                "alt": "Suwon Hwaseong Fortress — gallery image 6"
-              },
-              {
-                "id": 7,
-                "type": "photo",
                 "src": "/images/tours/suwon-hwaseong/photo-002.webp",
                 "location": "Suwon Hwaseong Fortress",
                 "caption": "Suwon Hwaseong Fortress — photo 7",
                 "alt": "Suwon Hwaseong Fortress — gallery image 7"
-              },
-              {
-                "id": 8,
-                "type": "photo",
-                "src": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
-                "location": "Suwon Hwaseong Fortress",
-                "caption": "Suwon Hwaseong Fortress — photo 8",
-                "alt": "Suwon Hwaseong Fortress — gallery image 8"
-              },
-              {
-                "id": 9,
-                "type": "photo",
-                "src": "/images/tours/suwon-hwaseong/photo-002.webp",
-                "location": "Suwon Hwaseong Fortress",
-                "caption": "Suwon Hwaseong Fortress — photo 9",
-                "alt": "Suwon Hwaseong Fortress — gallery image 9"
               }
             ]
           },
@@ -1702,15 +1629,7 @@
               "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
               "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
               "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
-              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
-              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18-2.webp",
-              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38-2.webp",
-              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55-2.webp",
-              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58-2.webp",
-              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18-3.webp",
-              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38-3.webp",
-              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55-3.webp",
-              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58-3.webp"
+              "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp"
             ],
             "imageCredits": [
               {
@@ -1730,35 +1649,35 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18-2.webp",
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38-2.webp",
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55-2.webp",
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58-2.webp",
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18-3.webp",
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38-3.webp",
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55-3.webp",
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58-3.webp",
+                "url": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1794,70 +1713,6 @@
                 "location": "Starfield Suwon Library & Mall",
                 "caption": "Starfield Suwon Library & Mall — photo 4",
                 "alt": "Starfield Suwon Library & Mall — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18-2.webp",
-                "location": "Starfield Suwon Library & Mall",
-                "caption": "Starfield Suwon Library & Mall — photo 5",
-                "alt": "Starfield Suwon Library & Mall — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38-2.webp",
-                "location": "Starfield Suwon Library & Mall",
-                "caption": "Starfield Suwon Library & Mall — photo 6",
-                "alt": "Starfield Suwon Library & Mall — gallery image 6"
-              },
-              {
-                "id": 7,
-                "type": "photo",
-                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55-2.webp",
-                "location": "Starfield Suwon Library & Mall",
-                "caption": "Starfield Suwon Library & Mall — photo 7",
-                "alt": "Starfield Suwon Library & Mall — gallery image 7"
-              },
-              {
-                "id": 8,
-                "type": "photo",
-                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58-2.webp",
-                "location": "Starfield Suwon Library & Mall",
-                "caption": "Starfield Suwon Library & Mall — photo 8",
-                "alt": "Starfield Suwon Library & Mall — gallery image 8"
-              },
-              {
-                "id": 9,
-                "type": "photo",
-                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-18-3.webp",
-                "location": "Starfield Suwon Library & Mall",
-                "caption": "Starfield Suwon Library & Mall — photo 9",
-                "alt": "Starfield Suwon Library & Mall — gallery image 9"
-              },
-              {
-                "id": 10,
-                "type": "photo",
-                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-07-38-3.webp",
-                "location": "Starfield Suwon Library & Mall",
-                "caption": "Starfield Suwon Library & Mall — photo 10",
-                "alt": "Starfield Suwon Library & Mall — gallery image 10"
-              },
-              {
-                "id": 11,
-                "type": "photo",
-                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-55-3.webp",
-                "location": "Starfield Suwon Library & Mall",
-                "caption": "Starfield Suwon Library & Mall — photo 11",
-                "alt": "Starfield Suwon Library & Mall — gallery image 11"
-              },
-              {
-                "id": 12,
-                "type": "photo",
-                "src": "/images/tours/starfield-library-suwon/chatgpt-image-2026-5-10-12-22-58-3.webp",
-                "location": "Starfield Suwon Library & Mall",
-                "caption": "Starfield Suwon Library & Mall — photo 12",
-                "alt": "Starfield Suwon Library & Mall — gallery image 12"
               }
             ]
           },
@@ -1909,18 +1764,8 @@
               "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
               "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50.webp",
               "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-03.webp",
-              "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11.webp",
-              "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33.webp",
-              "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40-2.webp",
-              "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50-2.webp",
-              "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-03.webp",
-              "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11-2.webp",
-              "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33-2.webp",
-              "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40-3.webp",
-              "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50-3.webp",
-              "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-03.webp",
               "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11-3.webp",
-              "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33-3.webp"
+              "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33.webp"
             ],
             "imageCredits": [
               {
@@ -1936,7 +1781,7 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11.webp",
+                "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11-3.webp",
                 "source": "atoc-korea"
               },
               {
@@ -1944,31 +1789,11 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40-2.webp",
+                "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50-2.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-03.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11-2.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33-2.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40-3.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50-3.webp",
+                "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50.webp",
                 "source": "atoc-korea"
               },
               {
@@ -1980,7 +1805,27 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33-3.webp",
+                "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-03.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11-3.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2012,7 +1857,7 @@
               {
                 "id": 4,
                 "type": "photo",
-                "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11.webp",
+                "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11-3.webp",
                 "location": "Waujeongsa Temple",
                 "caption": "Waujeongsa Temple — photo 4",
                 "alt": "Waujeongsa Temple — gallery image 4"
@@ -2024,86 +1869,6 @@
                 "location": "Waujeongsa Temple",
                 "caption": "Waujeongsa Temple — photo 5",
                 "alt": "Waujeongsa Temple — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40-2.webp",
-                "location": "Waujeongsa Temple",
-                "caption": "Waujeongsa Temple — photo 6",
-                "alt": "Waujeongsa Temple — gallery image 6"
-              },
-              {
-                "id": 7,
-                "type": "photo",
-                "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50-2.webp",
-                "location": "Waujeongsa Temple",
-                "caption": "Waujeongsa Temple — photo 7",
-                "alt": "Waujeongsa Temple — gallery image 7"
-              },
-              {
-                "id": 8,
-                "type": "photo",
-                "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-03.webp",
-                "location": "Waujeongsa Temple",
-                "caption": "Waujeongsa Temple — photo 8",
-                "alt": "Waujeongsa Temple — gallery image 8"
-              },
-              {
-                "id": 9,
-                "type": "photo",
-                "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11-2.webp",
-                "location": "Waujeongsa Temple",
-                "caption": "Waujeongsa Temple — photo 9",
-                "alt": "Waujeongsa Temple — gallery image 9"
-              },
-              {
-                "id": 10,
-                "type": "photo",
-                "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33-2.webp",
-                "location": "Waujeongsa Temple",
-                "caption": "Waujeongsa Temple — photo 10",
-                "alt": "Waujeongsa Temple — gallery image 10"
-              },
-              {
-                "id": 11,
-                "type": "photo",
-                "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-40-3.webp",
-                "location": "Waujeongsa Temple",
-                "caption": "Waujeongsa Temple — photo 11",
-                "alt": "Waujeongsa Temple — gallery image 11"
-              },
-              {
-                "id": 12,
-                "type": "photo",
-                "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-03-50-3.webp",
-                "location": "Waujeongsa Temple",
-                "caption": "Waujeongsa Temple — photo 12",
-                "alt": "Waujeongsa Temple — gallery image 12"
-              },
-              {
-                "id": 13,
-                "type": "photo",
-                "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-03.webp",
-                "location": "Waujeongsa Temple",
-                "caption": "Waujeongsa Temple — photo 13",
-                "alt": "Waujeongsa Temple — gallery image 13"
-              },
-              {
-                "id": 14,
-                "type": "photo",
-                "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-07-11-3.webp",
-                "location": "Waujeongsa Temple",
-                "caption": "Waujeongsa Temple — photo 14",
-                "alt": "Waujeongsa Temple — gallery image 14"
-              },
-              {
-                "id": 15,
-                "type": "photo",
-                "src": "/images/tours/waujeongsa/chatgpt-image-2026-5-10-12-14-33-3.webp",
-                "location": "Waujeongsa Temple",
-                "caption": "Waujeongsa Temple — photo 15",
-                "alt": "Waujeongsa Temple — gallery image 15"
               }
             ]
           }

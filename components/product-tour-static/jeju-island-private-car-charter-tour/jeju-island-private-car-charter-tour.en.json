@@ -1085,53 +1085,7 @@
       "section_html_id": null,
       "component": "TourAtmosphereGallery",
       "props": {
-        "galleryItems": [
-          {
-            "id": "g1",
-            "type": "photo",
-            "src": "",
-            "alt": "Seongsan Ilchulbong sunrise peak",
-            "caption": "Seongsan Ilchulbong sunrise peak",
-            "location": "Seongsan Ilchulbong",
-            "atmosphere": "Jeju's most iconic UNESCO landmark, a flagship East-route stop"
-          },
-          {
-            "id": "g2",
-            "type": "photo",
-            "src": "",
-            "alt": "Jusangjeolli basalt cliff",
-            "caption": "Jusangjeolli basalt cliff",
-            "location": "Jusangjeolli Cliff",
-            "atmosphere": "Hexagonal basalt columns on the South coast"
-          },
-          {
-            "id": "g3",
-            "type": "photo",
-            "src": "",
-            "alt": "Hyeopjae Beach West Jeju",
-            "caption": "Hyeopjae Beach West Jeju",
-            "location": "Hyeopjae Beach",
-            "atmosphere": "Emerald water and white sand on the West coast"
-          },
-          {
-            "id": "g4",
-            "type": "photo",
-            "src": "",
-            "alt": "O'sulloc tea museum and fields",
-            "caption": "O'sulloc tea museum and fields",
-            "location": "O'sulloc Tea Fields",
-            "atmosphere": "Green tea-field rows and a calming midday reset"
-          },
-          {
-            "id": "g5",
-            "type": "photo",
-            "src": "",
-            "alt": "Cheonjiyeon waterfall in Seogwipo",
-            "caption": "Cheonjiyeon waterfall in Seogwipo",
-            "location": "Cheonjiyeon Falls",
-            "atmosphere": "Forest waterfall on the South route"
-          }
-        ]
+        "galleryItems": []
       }
     },
     {

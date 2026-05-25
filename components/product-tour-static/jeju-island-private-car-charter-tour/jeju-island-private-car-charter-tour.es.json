@@ -1075,53 +1075,7 @@
       "section_html_id": null,
       "component": "TourAtmosphereGallery",
       "props": {
-        "galleryItems": [
-          {
-            "id": "g1",
-            "type": "photo",
-            "src": "",
-            "alt": "Pico del amanecer de Seongsan Ilchulbong",
-            "caption": "Pico del amanecer de Seongsan Ilchulbong",
-            "location": "Seongsan Ilchulbong",
-            "atmosphere": "El hito UNESCO más emblemático de Jeju, parada insignia de la ruta Este"
-          },
-          {
-            "id": "g2",
-            "type": "photo",
-            "src": "",
-            "alt": "Acantilado de basalto de Jusangjeolli",
-            "caption": "Acantilado de basalto de Jusangjeolli",
-            "location": "Acantilado de Jusangjeolli",
-            "atmosphere": "Columnas de basalto hexagonales en la costa sur"
-          },
-          {
-            "id": "g3",
-            "type": "photo",
-            "src": "",
-            "alt": "Playa Hyeopjae, Jeju Oeste",
-            "caption": "Playa Hyeopjae, Jeju Oeste",
-            "location": "Playa Hyeopjae",
-            "atmosphere": "Aguas esmeralda y arena blanca en la costa oeste"
-          },
-          {
-            "id": "g4",
-            "type": "photo",
-            "src": "",
-            "alt": "Museo y campos de té O'sulloc",
-            "caption": "Museo y campos de té O'sulloc",
-            "location": "Campos de Té O'sulloc",
-            "atmosphere": "Hileras de campos de té verde y un reconfortante descanso a mediodía"
-          },
-          {
-            "id": "g5",
-            "type": "photo",
-            "src": "",
-            "alt": "Cascada Cheonjiyeon en Seogwipo",
-            "caption": "Cascada Cheonjiyeon en Seogwipo",
-            "location": "Cascadas Cheonjiyeon",
-            "atmosphere": "Cascada en el bosque de la ruta Sur"
-          }
-        ]
+        "galleryItems": []
       }
     },
     {

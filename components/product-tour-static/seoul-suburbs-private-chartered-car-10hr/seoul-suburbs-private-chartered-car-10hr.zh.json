@@ -1084,53 +1084,7 @@
       "section_html_id": null,
       "component": "旅游氛围图库",
       "props": {
-        "galleryItems": [
-          {
-            "id": "g1",
-            "type": "photo",
-            "src": "",
-            "alt": "黄昏时分从首尔南部俯瞰的城市天际线，可见乐天世界大厦与汉江",
-            "caption": "首尔天际线——灵活出发地",
-            "location": "首尔（出发城市）",
-            "atmosphere": "以现代首尔为灵活出发点；专车酒店接送"
-          },
-          {
-            "id": "g2",
-            "type": "photo",
-            "src": "",
-            "alt": "南怡岛绿树成荫的水杉小径，旅客在宽阔的砾石步道上漫步于高大树木之间",
-            "caption": "南怡岛水杉小径——路线1亮点",
-            "location": "南怡岛，加平（路线1可选）",
-            "atmosphere": "绿树成荫的小径与短途渡轮；韩剧《冬季恋歌》拍摄地"
-          },
-          {
-            "id": "g3",
-            "type": "photo",
-            "src": "",
-            "alt": "晨静树木园主题花坛，盛开着应季鲜花，蜿蜒的石板步道穿行其间",
-            "caption": "晨静树木园——路线1拍照站",
-            "location": "晨静树木园，加平（路线1可选）",
-            "atmosphere": "共20个主题花园，占地330,000平方米；1996年由韩相庆创立"
-          },
-          {
-            "id": "g4",
-            "type": "photo",
-            "src": "",
-            "alt": "加平小法国村，色彩缤纷的地中海风格房屋依山而建",
-            "caption": "小法国村——小王子主题村庄（路线1）",
-            "location": "小法国村，加平（路线1可选）",
-            "atmosphere": "色彩缤纷的山坡村庄；韩剧《来自星星的你》拍摄地"
-          },
-          {
-            "id": "g5",
-            "type": "photo",
-            "src": "",
-            "alt": "非军事区临津阁和平公园，坡州纪念碑区域后方可见自由桥",
-            "caption": "临津阁和平公园——路线2核心景点",
-            "location": "临津阁和平公园，坡州（路线2可选）",
-            "atmosphere": "韩国历史底蕴最深厚的边境公园；自由桥（1953年）；距军事分界线7公里"
-          }
-        ]
+        "galleryItems": []
       }
     },
     {
@@ -1271,11 +1225,7 @@
             },
             "images": [
               "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
-              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-2.webp",
-              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-3.webp"
+              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp"
             ],
             "imageCredits": [
               {
@@ -1291,7 +1241,7 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-2.webp",
+                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
                 "source": "atoc-korea"
               },
               {
@@ -1299,7 +1249,7 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-3.webp",
+                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1319,38 +1269,6 @@
                 "location": "路线三：爱宝乐园 + 韩国民俗村",
                 "caption": "路线三：爱宝乐园 + 韩国民俗村 — photo 2",
                 "alt": "路线三：爱宝乐园 + 韩国民俗村 — gallery image 2"
-              },
-              {
-                "id": 3,
-                "type": "photo",
-                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-                "location": "路线三：爱宝乐园 + 韩国民俗村",
-                "caption": "路线三：爱宝乐园 + 韩国民俗村 — photo 3",
-                "alt": "路线三：爱宝乐园 + 韩国民俗村 — gallery image 3"
-              },
-              {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-2.webp",
-                "location": "路线三：爱宝乐园 + 韩国民俗村",
-                "caption": "路线三：爱宝乐园 + 韩国民俗村 — photo 4",
-                "alt": "路线三：爱宝乐园 + 韩国民俗村 — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-                "location": "路线三：爱宝乐园 + 韩国民俗村",
-                "caption": "路线三：爱宝乐园 + 韩国民俗村 — photo 5",
-                "alt": "路线三：爱宝乐园 + 韩国民俗村 — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38-3.webp",
-                "location": "路线三：爱宝乐园 + 韩国民俗村",
-                "caption": "路线三：爱宝乐园 + 韩国民俗村 — photo 6",
-                "alt": "路线三：爱宝乐园 + 韩国民俗村 — gallery image 6"
               }
             ]
           },

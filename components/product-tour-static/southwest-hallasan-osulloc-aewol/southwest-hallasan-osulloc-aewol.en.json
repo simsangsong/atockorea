@@ -188,7 +188,7 @@
       "caption": "Hallasan Eoseungsaengak — photo 3"
     },
     {
-      "id": 11,
+      "id": 8,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
       "location": "Daepo Jusangjeolli Cliff",
@@ -196,7 +196,7 @@
       "caption": "Daepo Jusangjeolli Cliff — photo 2"
     },
     {
-      "id": 12,
+      "id": 9,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
       "location": "Daepo Jusangjeolli Cliff",
@@ -204,7 +204,7 @@
       "caption": "Daepo Jusangjeolli Cliff — photo 3"
     },
     {
-      "id": 13,
+      "id": 10,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
       "location": "Daepo Jusangjeolli Cliff",
@@ -212,7 +212,7 @@
       "caption": "Daepo Jusangjeolli Cliff — photo 4"
     },
     {
-      "id": 14,
+      "id": 11,
       "type": "photo",
       "src": "/images/tours/jusangjeolli/photo-005.webp",
       "location": "Daepo Jusangjeolli Cliff",
@@ -220,7 +220,7 @@
       "caption": "Daepo Jusangjeolli Cliff — photo 5"
     },
     {
-      "id": 20,
+      "id": 12,
       "type": "photo",
       "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
       "location": "Cheonjeyeon Waterfall",
@@ -228,7 +228,7 @@
       "caption": "Cheonjeyeon Waterfall — photo 2"
     },
     {
-      "id": 21,
+      "id": 13,
       "type": "photo",
       "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
       "location": "Cheonjeyeon Waterfall",
@@ -236,7 +236,7 @@
       "caption": "Cheonjeyeon Waterfall — photo 3"
     },
     {
-      "id": 22,
+      "id": 14,
       "type": "photo",
       "src": "/images/tours/cheonjeyeon-falls/photo-004.webp",
       "location": "Cheonjeyeon Waterfall",
@@ -244,7 +244,7 @@
       "caption": "Cheonjeyeon Waterfall — photo 4"
     },
     {
-      "id": 27,
+      "id": 15,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
       "location": "O'sulloc Tea Museum",
@@ -252,7 +252,7 @@
       "caption": "O'sulloc Tea Museum — photo 2"
     },
     {
-      "id": 28,
+      "id": 16,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
       "location": "O'sulloc Tea Museum",
@@ -260,7 +260,7 @@
       "caption": "O'sulloc Tea Museum — photo 3"
     },
     {
-      "id": 29,
+      "id": 17,
       "type": "photo",
       "src": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
       "location": "O'sulloc Tea Museum",
@@ -268,7 +268,7 @@
       "caption": "O'sulloc Tea Museum — photo 4"
     },
     {
-      "id": 30,
+      "id": 18,
       "type": "photo",
       "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-25.webp",
       "location": "Aewol Cafe Street (Handam Coastal Trail)",
@@ -276,7 +276,7 @@
       "caption": "Aewol Cafe Street (Handam Coastal Trail) — photo 2"
     },
     {
-      "id": 31,
+      "id": 19,
       "type": "photo",
       "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-26.webp",
       "location": "Aewol Cafe Street (Handam Coastal Trail)",
@@ -284,7 +284,7 @@
       "caption": "Aewol Cafe Street (Handam Coastal Trail) — photo 3"
     },
     {
-      "id": 32,
+      "id": 20,
       "type": "photo",
       "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-27.webp",
       "location": "Aewol Cafe Street (Handam Coastal Trail)",
@@ -292,7 +292,7 @@
       "caption": "Aewol Cafe Street (Handam Coastal Trail) — photo 4"
     },
     {
-      "id": 33,
+      "id": 21,
       "type": "photo",
       "src": "/images/tours/aewol-cafe-street/chatgpt-image-2026-5-11-01-14-08.webp",
       "location": "Aewol Cafe Street (Handam Coastal Trail)",
@@ -1871,62 +1871,7 @@
       "id": "atmosphere",
       "component": "TourAtmosphereGallery",
       "props": {
-        "galleryItems": [
-          {
-            "id": 1,
-            "type": "video",
-            "src": "",
-            "location": "Overall Route",
-            "atmosphere": "A full-day view of how the route flows",
-            "alt": "Overall atmosphere of the Jeju southwest route",
-            "caption": "Overall atmosphere of the Jeju southwest route"
-          },
-          {
-            "id": 2,
-            "type": "photo",
-            "src": "",
-            "location": "Hallasan Opening Stop",
-            "atmosphere": "Fresh mountain air",
-            "alt": "Hallasan Eoseungsaengak trail",
-            "caption": "Hallasan Eoseungsaengak trail"
-          },
-          {
-            "id": 3,
-            "type": "photo",
-            "src": "",
-            "location": "Volcanic Coastline",
-            "atmosphere": "A powerful basalt shoreline",
-            "alt": "Basalt sea cliffs at Daepo Jusangjeolli",
-            "caption": "Basalt sea cliffs at Daepo Jusangjeolli"
-          },
-          {
-            "id": 4,
-            "type": "photo",
-            "src": "",
-            "location": "Forest Trail and Waterfall",
-            "atmosphere": "A cooler, calmer middle section",
-            "alt": "Forest trail at Cheonjeyeon Waterfall",
-            "caption": "Forest trail at Cheonjeyeon Waterfall"
-          },
-          {
-            "id": 5,
-            "type": "photo",
-            "src": "",
-            "location": "Tea Fields Break",
-            "atmosphere": "Open green scenery with a softer mood",
-            "alt": "Atmosphere around O’Sulloc Tea Museum and the tea fields",
-            "caption": "Atmosphere around O’Sulloc Tea Museum and the tea fields"
-          },
-          {
-            "id": 6,
-            "type": "video",
-            "src": "",
-            "location": "Aewol Coastal Finale",
-            "atmosphere": "A relaxed close to the day",
-            "alt": "Aewol Cafe Street on the coast",
-            "caption": "Aewol Cafe Street on the coast"
-          }
-        ]
+        "galleryItems": []
       }
     },
     {

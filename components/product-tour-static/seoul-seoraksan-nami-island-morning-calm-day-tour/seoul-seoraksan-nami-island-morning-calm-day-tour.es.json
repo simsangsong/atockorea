@@ -197,21 +197,13 @@
     {
       "id": 8,
       "type": "photo",
-      "src": "/images/tours/seoraksan-national-park/photo-003.webp",
-      "location": "Parque Nacional Seoraksan",
-      "alt": "Parque Nacional Seoraksan — gallery image 6",
-      "caption": "Parque Nacional Seoraksan — photo 6"
-    },
-    {
-      "id": 9,
-      "type": "photo",
       "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
       "location": "Isla Nami (Namiseom)",
       "alt": "Isla Nami (Namiseom) — gallery image 2",
       "caption": "Isla Nami (Namiseom) — photo 2"
     },
     {
-      "id": 10,
+      "id": 9,
       "type": "photo",
       "src": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
       "location": "Isla Nami (Namiseom)",
@@ -219,7 +211,7 @@
       "caption": "Isla Nami (Namiseom) — photo 3"
     },
     {
-      "id": 13,
+      "id": 10,
       "type": "photo",
       "src": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
       "location": "Isla Nami (Namiseom)",
@@ -227,7 +219,7 @@
       "caption": "Isla Nami (Namiseom) — photo 6"
     },
     {
-      "id": 14,
+      "id": 11,
       "type": "photo",
       "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58.webp",
       "location": "Jardín de la Mañana Tranquila (Achimsogwon)",
@@ -235,28 +227,20 @@
       "caption": "Jardín de la Mañana Tranquila (Achimsogwon) — photo 2"
     },
     {
-      "id": 15,
+      "id": 12,
       "type": "photo",
-      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02.webp",
+      "src": "/images/tours/garden-of-morning-calm/garden-of-morning-calm-flowers.webp",
       "location": "Jardín de la Mañana Tranquila (Achimsogwon)",
       "alt": "Jardín de la Mañana Tranquila (Achimsogwon) — gallery image 3",
       "caption": "Jardín de la Mañana Tranquila (Achimsogwon) — photo 3"
     },
     {
-      "id": 16,
+      "id": 13,
       "type": "photo",
       "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp",
       "location": "Jardín de la Mañana Tranquila (Achimsogwon)",
       "alt": "Jardín de la Mañana Tranquila (Achimsogwon) — gallery image 4",
       "caption": "Jardín de la Mañana Tranquila (Achimsogwon) — photo 4"
-    },
-    {
-      "id": 20,
-      "type": "photo",
-      "src": "/images/tours/garden-of-morning-calm/garden-of-morning-calm-flowers.webp",
-      "location": "Jardín de la Mañana Tranquila (Achimsogwon)",
-      "alt": "Jardín de la Mañana Tranquila (Achimsogwon) — gallery image 8",
-      "caption": "Jardín de la Mañana Tranquila (Achimsogwon) — photo 8"
     }
   ],
   "itineraryStops": [
@@ -336,8 +320,7 @@
         "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
         "/images/tours/seoraksan-national-park/photo-001.webp",
         "/images/tours/seoraksan-national-park/seoraksan-gwongumseong-cable-car.webp",
-        "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsan-rock.webp",
-        "/images/tours/seoraksan-national-park/photo-003.webp"
+        "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsan-rock.webp"
       ],
       "imageCredits": [
         {
@@ -361,7 +344,7 @@
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/seoraksan-national-park/photo-003.webp",
+          "url": "/images/tours/seoraksan-national-park/photo-001.webp",
           "source": "atoc-korea"
         }
       ],
@@ -405,14 +388,6 @@
           "location": "Parque Nacional Seoraksan",
           "caption": "Parque Nacional Seoraksan — photo 5",
           "alt": "Parque Nacional Seoraksan — gallery image 5"
-        },
-        {
-          "id": 6,
-          "type": "photo",
-          "src": "/images/tours/seoraksan-national-park/photo-003.webp",
-          "location": "Parque Nacional Seoraksan",
-          "caption": "Parque Nacional Seoraksan — photo 6",
-          "alt": "Parque Nacional Seoraksan — gallery image 6"
         }
       ]
     },
@@ -522,7 +497,7 @@
           "alt": "Isla Nami (Namiseom) — gallery image 3"
         },
         {
-          "id": 6,
+          "id": 4,
           "type": "photo",
           "src": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
           "location": "Isla Nami (Namiseom)",
@@ -591,9 +566,8 @@
       "images": [
         "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31.webp",
         "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58.webp",
-        "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02.webp",
-        "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp",
-        "/images/tours/garden-of-morning-calm/garden-of-morning-calm-flowers.webp"
+        "/images/tours/garden-of-morning-calm/garden-of-morning-calm-flowers.webp",
+        "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp"
       ],
       "imageCredits": [
         {
@@ -605,7 +579,7 @@
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02.webp",
+          "url": "/images/tours/garden-of-morning-calm/garden-of-morning-calm-flowers.webp",
           "source": "atoc-korea"
         },
         {
@@ -637,7 +611,7 @@
         {
           "id": 3,
           "type": "photo",
-          "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-44-02.webp",
+          "src": "/images/tours/garden-of-morning-calm/garden-of-morning-calm-flowers.webp",
           "location": "Jardín de la Mañana Tranquila (Achimsogwon)",
           "caption": "Jardín de la Mañana Tranquila (Achimsogwon) — photo 3",
           "alt": "Jardín de la Mañana Tranquila (Achimsogwon) — gallery image 3"
@@ -649,14 +623,6 @@
           "location": "Jardín de la Mañana Tranquila (Achimsogwon)",
           "caption": "Jardín de la Mañana Tranquila (Achimsogwon) — photo 4",
           "alt": "Jardín de la Mañana Tranquila (Achimsogwon) — gallery image 4"
-        },
-        {
-          "id": 8,
-          "type": "photo",
-          "src": "/images/tours/garden-of-morning-calm/garden-of-morning-calm-flowers.webp",
-          "location": "Jardín de la Mañana Tranquila (Achimsogwon)",
-          "caption": "Jardín de la Mañana Tranquila (Achimsogwon) — photo 8",
-          "alt": "Jardín de la Mañana Tranquila (Achimsogwon) — gallery image 8"
         }
       ]
     },
