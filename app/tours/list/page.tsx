@@ -941,7 +941,9 @@ export default function ToursListPage() {
         </div>
         {/* End sticky header stack (CatalogueHero + filter rail) */}
 
-        {/* Contextual vignette band (Phase 3.2) — destination/feature 7-accent (B6). */}
+        {/* Contextual vignette band (Phase 3.2) — destination/feature 7-accent (B6).
+            Upgraded 2026-05-25 to the shelf magazine typography so the filter
+            view doesn't visibly drop to an older Phase 4 layout. */}
         <ContextualVignetteBand
           destination={destination}
           features={features}
@@ -949,6 +951,7 @@ export default function ToursListPage() {
           line={t('toursList.contextBandLine', {
             context: destination !== 'all' ? translateCity(destination, t) : features.trim(),
           })}
+          eyebrowPrefix={t('toursList.contextBandEyebrow')}
           resetLabel={t('toursList.contextBandReset')}
           onReset={resetFilters}
         />
