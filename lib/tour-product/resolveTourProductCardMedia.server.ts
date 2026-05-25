@@ -130,17 +130,38 @@ export async function loadTourProductCardMediaBySlug(
   for (const slug of uniqueSlugs) {
     const pageRow = pickLatestMediaRow(pageRowsBySlug.get(slug) ?? [], preferredLocale);
     const tourFallback = fallbackBySlug.get(slug);
+    const pageThumbnail = cleanUrl(pageRow?.thumbnail_url) || null;
+    const pageHero = cleanUrl(pageRow?.hero_image_url) || null;
     const tourImageUrl = tourFallback?.imageUrl ?? null;
-    const thumbnailUrl = tourImageUrl || cleanUrl(pageRow?.thumbnail_url) || null;
-    const heroImageUrl = cleanUrl(pageRow?.hero_image_url) || null;
     const galleryFallbackUrl = tourFallback?.galleryThumb ?? null;
+
+    // Priority: tour_product_pages > tours > hero > gallery thumb.
+    // `tour_product_pages.thumbnail_url` is what the admin v2 editor writes,
+    // so it MUST win. The previous order (tours.image_url first) silently
+    // pinned the card to the legacy mirror and ignored every admin save
+    // whenever tours.image_url was non-null — that's the "옛날 썸네일"
+    // bug confirmed against 15+ drifted rows on 2026-05-25.
+    const thumbnailUrl = pageThumbnail || tourImageUrl || null;
+    const heroImageUrl = pageHero;
+    const cardImageUrl = pageThumbnail || tourImageUrl || pageHero || galleryFallbackUrl;
+    const winningSource = pageThumbnail
+      ? (pageRow?.locale ?? null)
+      : tourImageUrl
+        ? "tours"
+        : null;
+    const winningUpdatedAt = pageThumbnail
+      ? (pageRow?.updated_at ?? null)
+      : tourImageUrl
+        ? (tourFallback?.updatedAt ?? null)
+        : null;
+
     out[slug] = {
       slug,
       thumbnailUrl,
       heroImageUrl,
-      cardImageUrl: tourImageUrl || thumbnailUrl || heroImageUrl || galleryFallbackUrl,
-      sourceLocale: tourImageUrl ? "tours" : (pageRow?.locale ?? null),
-      updatedAt: tourImageUrl ? (tourFallback?.updatedAt ?? null) : (pageRow?.updated_at ?? null),
+      cardImageUrl,
+      sourceLocale: winningSource,
+      updatedAt: winningUpdatedAt,
     };
   }
 

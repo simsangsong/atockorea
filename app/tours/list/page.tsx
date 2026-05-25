@@ -23,6 +23,10 @@ import { EditorialInsert } from '@/components/tours-list/EditorialInsert';
 import { insertForSlot } from '@/lib/tours-list-editorial-inserts';
 import { ConversionRescueBand } from '@/components/tours-list/ConversionRescueBand';
 import {
+  getCardImageFromAdminMedia,
+  useTourProductCardMedia,
+} from '@/hooks/useTourProductCardMedia';
+import {
   LIST_FIELD_CLS,
   LIST_CHIP_ACTIVE_CLS,
   LIST_CHIP_INACTIVE_CLS,
@@ -635,6 +639,22 @@ export default function ToursListPage() {
   const isInitialLoading = loading && tours.length === 0;
   const isRefetching = loading && tours.length > 0;
 
+  /**
+   * Pull the latest admin-saved thumbnails from `/api/tour-product-card-media`
+   * (which reads `tour_product_pages.thumbnail_url`) and override
+   * `tour.imageUrl` per card. Without this the flat-grid view keeps showing
+   * stale images from `tours.image_url` whenever the admin-v2 mirror to the
+   * tours table fell behind — confirmed drift on 15+ rows as of 2026-05-25
+   * (e.g. `southwest-hallasan-osulloc-aewol`, `jeju-grand-highlights-loop`,
+   * `east-signature-nature-core`). The shelves view already does this via
+   * `TourShelf`/`ShelfCard`; this brings the filtered view to parity.
+   */
+  const visibleSlugs = useMemo(
+    () => visibleTours.map((t) => t.slug).filter((s): s is string => Boolean(s)),
+    [visibleTours],
+  );
+  const flatGridMediaBySlug = useTourProductCardMedia(visibleSlugs, locale);
+
   return (
     <SitePageShell>
       {/* B32: site-native — neutral white veil over the page's pastel mesh
@@ -1180,10 +1200,24 @@ export default function ToursListPage() {
                 {visibleTours.map((tour, i) => {
                   // Editorial insert after the 6th / 12th / 18th card (B8).
                   const insert = insertForSlot(i + 1);
+                  // Admin-v2 thumbnail override (see flatGridMediaBySlug
+                  // doc comment above): the card uses the freshest image
+                  // from `tour_product_pages.thumbnail_url`, falling back
+                  // to the `tours.image_url` we already have on the row.
+                  const overriddenImageUrl = tour.slug
+                    ? getCardImageFromAdminMedia(
+                        tour.slug,
+                        tour.imageUrl ?? '',
+                        flatGridMediaBySlug,
+                      )
+                    : tour.imageUrl;
+                  const cardTour = overriddenImageUrl && overriddenImageUrl !== tour.imageUrl
+                    ? { ...tour, imageUrl: overriddenImageUrl }
+                    : tour;
                   return (
                     <React.Fragment key={tour.id}>
                       <TourListCard
-                        tour={tour}
+                        tour={cardTour}
                         detailHref={consumerTourDetailHref(tour.id, tour.slug)}
                         formatPriceFn={formatPrice}
                         layout={viewMode === 'editorial' ? 'vertical' : 'horizontal'}
