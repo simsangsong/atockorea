@@ -5,8 +5,47 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { match } from '@formatjs/intl-localematcher';
 import Negotiator from 'negotiator';
+import { createServerClient as createSsrServerClient } from '@supabase/ssr';
 import { matchesEastSignatureSlugSegment } from '@/src/lib/east-signature-nature-core-match';
 import { CANONICAL_EAST_SIGNATURE_PRODUCT_PATH } from '@/lib/tour-consumer-visibility';
+
+/**
+ * Refresh the Supabase session on every navigation (recommended
+ * `@supabase/ssr` pattern). Reads the request cookies, calls
+ * `auth.getUser()` which validates the token + rotates it if needed,
+ * and writes any updated cookies onto the response.
+ *
+ * Skipping this means access tokens expire (~1hr) and the user gets
+ * silently signed out mid-session. Doing it in middleware ensures every
+ * page navigation keeps the session alive without client-side polling.
+ */
+async function refreshSupabaseSession(request: NextRequest, response: NextResponse): Promise<void> {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const anon = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  if (!url || !anon) return;
+
+  const supabase = createSsrServerClient(url, anon, {
+    cookies: {
+      getAll() {
+        return request.cookies.getAll();
+      },
+      setAll(toSet) {
+        for (const { name, value, options } of toSet) {
+          response.cookies.set(name, value, options);
+        }
+      },
+    },
+  });
+
+  // IMPORTANT: do not run code between `createServerClient` and `auth.getUser()`
+  // — the SSR helper relies on this ordering to keep the cookie writes
+  // tied to a single auth call.
+  try {
+    await supabase.auth.getUser();
+  } catch {
+    // Network blip or supabase outage — leave existing cookies in place.
+  }
+}
 
 const SUPPORTED_LOCALES = ['en', 'ko', 'zh-CN', 'zh-TW', 'ja', 'es'];
 const DEFAULT_LOCALE = 'en';
@@ -194,7 +233,13 @@ function redirectLegacyEastSignatureCheckoutPaths(request: NextRequest): NextRes
   return null;
 }
 
-export function middleware(request: NextRequest) {
+/**
+ * Pure routing decision: returns the response that should be sent for
+ * the current request based on locale, admin path normalization, and
+ * legacy URL redirects. Stays synchronous so the auth refresh can wrap
+ * it without rewriting the existing branch structure.
+ */
+function routeRequest(request: NextRequest): NextResponse {
   const { pathname } = request.nextUrl;
 
   // 0. 잘못된 정적 경로 수정: /next/ → /_next/ (일부 환경에서 생성되는 오타 보정)
@@ -315,6 +360,19 @@ export function middleware(request: NextRequest) {
   url.searchParams.set('locale', matchedLocale);
 
   return NextResponse.rewrite(url);
+}
+
+/**
+ * Middleware entry. Decides routing first (synchronous, pure), then
+ * refreshes the Supabase session and writes any rotated cookies onto
+ * the response we're returning — that way the browser always gets the
+ * fresh tokens regardless of whether we're passing through, rewriting,
+ * or redirecting.
+ */
+export async function middleware(request: NextRequest): Promise<NextResponse> {
+  const response = routeRequest(request);
+  await refreshSupabaseSession(request, response);
+  return response;
 }
 
 export const config = {
