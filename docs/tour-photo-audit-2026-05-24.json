@@ -1,18 +1,18 @@
 {
-  "generatedAt": "2026-05-24T02:01:48.184Z",
+  "generatedAt": "2026-05-24T01:54:03.690Z",
   "summary": {
     "tourSlugs": 34,
     "locales": 6,
     "docsScanned": 204,
     "docsMissing": 0,
-    "totalRefs": 10068,
-    "uniquePhotoPaths": 392,
+    "totalRefs": 10272,
+    "uniquePhotoPaths": 391,
     "diskFiles": 479,
-    "crossPoiReuseCount": 10,
-    "missingCount": 0,
-    "orphanCount": 106,
+    "crossPoiReuseCount": 21,
+    "missingCount": 1,
+    "orphanCount": 108,
     "poiFolders": 61,
-    "sparsePois": 4
+    "sparsePois": 5
   },
   "sparsePois": [
     {
@@ -104,9 +104,344 @@
         "濟州私家車包車遊",
         "Tour privado en Jeju"
       ]
+    },
+    {
+      "folder": "seoraksan",
+      "photoCount": 1,
+      "uses": 9,
+      "poiKeys": [],
+      "stopNames": [],
+      "locations": [
+        "Seoraksan National Park",
+        "설악산 국립공원",
+        "Parque Nacional Seoraksan",
+        "설악산국립공원",
+        "Parque Nacional de Seoraksan"
+      ]
     }
   ],
   "crossPoiReuse": [
+    {
+      "path": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+      "folderKey": "haedong-yonggungsa",
+      "usedPoiKeys": [
+        "haedong_yonggungsa",
+        "un_memorial_cemetery"
+      ],
+      "usedLocations": [
+        "Haedong Yonggungsa Temple",
+        "해동 용궁사",
+        "海東龍宮寺",
+        "海东龙宫寺",
+        "Templo Haedong Yonggungsa",
+        "UN Memorial Cemetery in Korea",
+        "태종대 해안 절벽",
+        "テジョンデ（太宗台）沿岸断崖",
+        "太宗台海岸悬崖",
+        "太宗臺海岸懸崖",
+        "Acantilados costeros de Taejongdae"
+      ],
+      "slugs": [
+        "busan-cruise-shore-excursion-bus-tour",
+        "busan-small-group-sightseeing-tour-cruise-passengers",
+        "busan-top-attractions-day-tour"
+      ],
+      "uses": 126
+    },
+    {
+      "path": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+      "folderKey": "haedong-yonggungsa",
+      "usedPoiKeys": [
+        "haedong_yonggungsa",
+        "un_memorial_cemetery"
+      ],
+      "usedLocations": [
+        "Haedong Yonggungsa Temple",
+        "해동 용궁사",
+        "海東龍宮寺",
+        "海东龙宫寺",
+        "Templo Haedong Yonggungsa",
+        "UN Memorial Cemetery in Korea",
+        "태종대 해안 절벽",
+        "テジョンデ（太宗台）沿岸断崖",
+        "太宗台海岸悬崖",
+        "太宗臺海岸懸崖",
+        "Acantilados costeros de Taejongdae"
+      ],
+      "slugs": [
+        "busan-cruise-shore-excursion-bus-tour",
+        "busan-small-group-sightseeing-tour-cruise-passengers",
+        "busan-top-attractions-day-tour"
+      ],
+      "uses": 54
+    },
+    {
+      "path": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+      "folderKey": "haedong-yonggungsa",
+      "usedPoiKeys": [
+        "haedong_yonggungsa",
+        "un_memorial_cemetery"
+      ],
+      "usedLocations": [
+        "Haedong Yonggungsa Temple",
+        "해동 용궁사",
+        "海東龍宮寺",
+        "海东龙宫寺",
+        "Templo Haedong Yonggungsa",
+        "UN Memorial Cemetery in Korea",
+        "태종대 해안 절벽",
+        "テジョンデ（太宗台）沿岸断崖",
+        "太宗台海岸悬崖",
+        "太宗臺海岸懸崖",
+        "Acantilados costeros de Taejongdae"
+      ],
+      "slugs": [
+        "busan-cruise-shore-excursion-bus-tour",
+        "busan-small-group-sightseeing-tour-cruise-passengers",
+        "busan-top-attractions-day-tour"
+      ],
+      "uses": 54
+    },
+    {
+      "path": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+      "folderKey": "haedong-yonggungsa",
+      "usedPoiKeys": [
+        "haedong_yonggungsa",
+        "un_memorial_cemetery"
+      ],
+      "usedLocations": [
+        "Haedong Yonggungsa Temple",
+        "해동 용궁사",
+        "海東龍宮寺",
+        "海东龙宫寺",
+        "Templo Haedong Yonggungsa",
+        "UN Memorial Cemetery in Korea",
+        "태종대 해안 절벽",
+        "テジョンデ（太宗台）沿岸断崖",
+        "太宗台海岸悬崖",
+        "太宗臺海岸懸崖",
+        "Acantilados costeros de Taejongdae"
+      ],
+      "slugs": [
+        "busan-cruise-shore-excursion-bus-tour",
+        "busan-small-group-sightseeing-tour-cruise-passengers",
+        "busan-top-attractions-day-tour"
+      ],
+      "uses": 54
+    },
+    {
+      "path": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
+      "folderKey": "haedong-yonggungsa",
+      "usedPoiKeys": [
+        "haedong_yonggungsa",
+        "un_memorial_cemetery"
+      ],
+      "usedLocations": [
+        "Haedong Yonggungsa Temple",
+        "해동 용궁사",
+        "海東龍宮寺",
+        "海东龙宫寺",
+        "Templo Haedong Yonggungsa",
+        "UN Memorial Cemetery in Korea",
+        "태종대 해안 절벽",
+        "テジョンデ（太宗台）沿岸断崖",
+        "太宗台海岸悬崖",
+        "太宗臺海岸懸崖",
+        "Acantilados costeros de Taejongdae"
+      ],
+      "slugs": [
+        "busan-cruise-shore-excursion-bus-tour",
+        "busan-small-group-sightseeing-tour-cruise-passengers",
+        "busan-top-attractions-day-tour"
+      ],
+      "uses": 54
+    },
+    {
+      "path": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+      "folderKey": "taejongdae",
+      "usedPoiKeys": [
+        "un_memorial_cemetery",
+        "taejongdae"
+      ],
+      "usedLocations": [
+        "UN Memorial Cemetery in Korea",
+        "재한유엔기념공원",
+        "韓国国連記念公園",
+        "驻韩联合国纪念公墓",
+        "韓國聯合國紀念公墓",
+        "Cementerio Memorial de la ONU en Corea",
+        "East coast highlights option",
+        "태종대 해안 절벽",
+        "太宗台の海岸絶壁",
+        "太宗台海岸悬崖",
+        "太宗台海岸峭壁",
+        "Acantilados costeros de Taejongdae",
+        "テジョンデ（太宗台）沿岸断崖",
+        "太宗臺海岸懸崖"
+      ],
+      "slugs": [
+        "busan-cruise-shore-excursion-bus-tour",
+        "busan-private-car-charter-cruise-shore",
+        "busan-small-group-sightseeing-tour-cruise-passengers",
+        "busan-top-attractions-day-tour"
+      ],
+      "uses": 72
+    },
+    {
+      "path": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-04.webp",
+      "folderKey": "taejongdae",
+      "usedPoiKeys": [
+        "un_memorial_cemetery",
+        "taejongdae"
+      ],
+      "usedLocations": [
+        "UN Memorial Cemetery in Korea",
+        "재한유엔기념공원",
+        "韓国国連記念公園",
+        "驻韩联合国纪念公墓",
+        "韓國聯合國紀念公墓",
+        "Cementerio Memorial de la ONU en Corea",
+        "East coast highlights option",
+        "태종대 해안 절벽",
+        "太宗台の海岸絶壁",
+        "太宗台海岸悬崖",
+        "太宗台海岸峭壁",
+        "Acantilados costeros de Taejongdae",
+        "テジョンデ（太宗台）沿岸断崖",
+        "太宗臺海岸懸崖"
+      ],
+      "slugs": [
+        "busan-cruise-shore-excursion-bus-tour",
+        "busan-private-car-charter-cruise-shore",
+        "busan-small-group-sightseeing-tour-cruise-passengers",
+        "busan-top-attractions-day-tour"
+      ],
+      "uses": 48
+    },
+    {
+      "path": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-19.webp",
+      "folderKey": "taejongdae",
+      "usedPoiKeys": [
+        "un_memorial_cemetery",
+        "taejongdae"
+      ],
+      "usedLocations": [
+        "UN Memorial Cemetery in Korea",
+        "재한유엔기념공원",
+        "韓国国連記念公園",
+        "驻韩联合国纪念公墓",
+        "韓國聯合國紀念公墓",
+        "Cementerio Memorial de la ONU en Corea",
+        "East coast highlights option",
+        "태종대 해안 절벽",
+        "太宗台の海岸絶壁",
+        "太宗台海岸悬崖",
+        "太宗台海岸峭壁",
+        "Acantilados costeros de Taejongdae",
+        "テジョンデ（太宗台）沿岸断崖",
+        "太宗臺海岸懸崖"
+      ],
+      "slugs": [
+        "busan-cruise-shore-excursion-bus-tour",
+        "busan-private-car-charter-cruise-shore",
+        "busan-small-group-sightseeing-tour-cruise-passengers",
+        "busan-top-attractions-day-tour"
+      ],
+      "uses": 48
+    },
+    {
+      "path": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-30.webp",
+      "folderKey": "taejongdae",
+      "usedPoiKeys": [
+        "un_memorial_cemetery",
+        "taejongdae"
+      ],
+      "usedLocations": [
+        "UN Memorial Cemetery in Korea",
+        "재한유엔기념공원",
+        "韓国国連記念公園",
+        "驻韩联合国纪念公墓",
+        "韓國聯合國紀念公墓",
+        "Cementerio Memorial de la ONU en Corea",
+        "East coast highlights option",
+        "태종대 해안 절벽",
+        "太宗台の海岸絶壁",
+        "太宗台海岸悬崖",
+        "太宗台海岸峭壁",
+        "Acantilados costeros de Taejongdae",
+        "テジョンデ（太宗台）沿岸断崖",
+        "太宗臺海岸懸崖"
+      ],
+      "slugs": [
+        "busan-cruise-shore-excursion-bus-tour",
+        "busan-private-car-charter-cruise-shore",
+        "busan-small-group-sightseeing-tour-cruise-passengers",
+        "busan-top-attractions-day-tour"
+      ],
+      "uses": 48
+    },
+    {
+      "path": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-27-34.webp",
+      "folderKey": "taejongdae",
+      "usedPoiKeys": [
+        "un_memorial_cemetery",
+        "taejongdae"
+      ],
+      "usedLocations": [
+        "UN Memorial Cemetery in Korea",
+        "재한유엔기념공원",
+        "韓国国連記念公園",
+        "驻韩联合国纪念公墓",
+        "韓國聯合國紀念公墓",
+        "Cementerio Memorial de la ONU en Corea",
+        "East coast highlights option",
+        "태종대 해안 절벽",
+        "太宗台の海岸絶壁",
+        "太宗台海岸悬崖",
+        "太宗台海岸峭壁",
+        "Acantilados costeros de Taejongdae",
+        "テジョンデ（太宗台）沿岸断崖",
+        "太宗臺海岸懸崖"
+      ],
+      "slugs": [
+        "busan-cruise-shore-excursion-bus-tour",
+        "busan-private-car-charter-cruise-shore",
+        "busan-small-group-sightseeing-tour-cruise-passengers",
+        "busan-top-attractions-day-tour"
+      ],
+      "uses": 48
+    },
+    {
+      "path": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-29-06.webp",
+      "folderKey": "taejongdae",
+      "usedPoiKeys": [
+        "un_memorial_cemetery",
+        "taejongdae"
+      ],
+      "usedLocations": [
+        "UN Memorial Cemetery in Korea",
+        "재한유엔기념공원",
+        "韓国国連記念公園",
+        "驻韩联合国纪念公墓",
+        "韓國聯合國紀念公墓",
+        "Cementerio Memorial de la ONU en Corea",
+        "East coast highlights option",
+        "태종대 해안 절벽",
+        "太宗台の海岸絶壁",
+        "太宗台海岸悬崖",
+        "太宗台海岸峭壁",
+        "Acantilados costeros de Taejongdae",
+        "テジョンデ（太宗台）沿岸断崖",
+        "太宗臺海岸懸崖"
+      ],
+      "slugs": [
+        "busan-cruise-shore-excursion-bus-tour",
+        "busan-private-car-charter-cruise-shore",
+        "busan-small-group-sightseeing-tour-cruise-passengers",
+        "busan-top-attractions-day-tour"
+      ],
+      "uses": 48
+    },
     {
       "path": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
       "folderKey": "ilchulland",
@@ -153,7 +488,8 @@
       "folderKey": "dmz",
       "usedPoiKeys": [
         "third_infiltration_tunnel",
-        "dora_observatory"
+        "dora_observatory",
+        "gamaksan_red_bridge"
       ],
       "usedLocations": [
         "3rd Infiltration Tunnel (Underground Invasion Tunnel)",
@@ -166,14 +502,15 @@
       "slugs": [
         "seoul-dmz-private-3rd-tunnel-suspension-bridge"
       ],
-      "uses": 30
+      "uses": 42
     },
     {
       "path": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
       "folderKey": "dmz",
       "usedPoiKeys": [
         "third_infiltration_tunnel",
-        "dora_observatory"
+        "dora_observatory",
+        "gamaksan_red_bridge"
       ],
       "usedLocations": [
         "3rd Infiltration Tunnel (Underground Invasion Tunnel)",
@@ -186,14 +523,15 @@
       "slugs": [
         "seoul-dmz-private-3rd-tunnel-suspension-bridge"
       ],
-      "uses": 18
+      "uses": 24
     },
     {
       "path": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
       "folderKey": "dmz",
       "usedPoiKeys": [
         "third_infiltration_tunnel",
-        "dora_observatory"
+        "dora_observatory",
+        "gamaksan_red_bridge"
       ],
       "usedLocations": [
         "3rd Infiltration Tunnel (Underground Invasion Tunnel)",
@@ -206,7 +544,7 @@
       "slugs": [
         "seoul-dmz-private-3rd-tunnel-suspension-bridge"
       ],
-      "uses": 18
+      "uses": 24
     },
     {
       "path": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
@@ -340,7 +678,13 @@
       "uses": 39
     }
   ],
-  "missing": [],
+  "missing": [
+    {
+      "path": "/images/tours/seoraksan/photo-001.webp",
+      "refCount": 9,
+      "sampleSlug": "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip"
+    }
+  ],
   "orphans": [
     "/images/tours/busan-plum-blossom/photo-001.webp",
     "/images/tours/busan-private/busan-private-cruise-terminal-thumbnail.webp",
@@ -366,6 +710,8 @@
     "/images/tours/everland/chatgpt-image-2026-5-9-11-45-11-2.webp",
     "/images/tours/everland/chatgpt-image-2026-5-9-11-45-11.webp",
     "/images/tours/everland/photo-008.webp",
+    "/images/tours/gamaksan-suspension-bridge/chatgpt-image-2026-5-10-10-36-38-2.webp",
+    "/images/tours/gamaksan-suspension-bridge/chatgpt-image-2026-5-10-10-36-38.webp",
     "/images/tours/gamcheon-culture-village/gamcheon-panorama.webp",
     "/images/tours/gamcheon-culture-village/gamcheon-vibrant-viewpoint.webp",
     "/images/tours/hwangnam-bread/photo-001.webp",
@@ -541,6 +887,20 @@
       ]
     },
     {
+      "folder": "seoraksan",
+      "photoCount": 1,
+      "uses": 9,
+      "poiKeys": [],
+      "stopNames": [],
+      "locations": [
+        "Seoraksan National Park",
+        "설악산 국립공원",
+        "Parque Nacional Seoraksan",
+        "설악산국립공원",
+        "Parque Nacional de Seoraksan"
+      ]
+    },
+    {
       "folder": "woljeonggyo",
       "photoCount": 2,
       "uses": 48,
@@ -665,23 +1025,6 @@
       ]
     },
     {
-      "folder": "gamaksan-suspension-bridge",
-      "photoCount": 2,
-      "uses": 18,
-      "poiKeys": [
-        "gamaksan_red_bridge"
-      ],
-      "stopNames": [
-        "Gamaksan Red Suspension Bridge",
-        "감악산 빨간 출렁다리",
-        "カマクサン（紺岳山）レッド吊り橋",
-        "绀岳山红色悬索桥",
-        "紺岳山紅色吊橋",
-        "Puente Colgante Rojo de Gamaksan"
-      ],
-      "locations": []
-    },
-    {
       "folder": "naksan-beach",
       "photoCount": 2,
       "uses": 30,
@@ -781,7 +1124,7 @@
     {
       "folder": "seoraksan-national-park",
       "photoCount": 3,
-      "uses": 171,
+      "uses": 162,
       "poiKeys": [
         "seoraksan_national_park"
       ],
@@ -1140,21 +1483,33 @@
     {
       "folder": "haedong-yonggungsa",
       "photoCount": 5,
-      "uses": 252,
+      "uses": 342,
       "poiKeys": [
-        "haedong_yonggungsa"
+        "haedong_yonggungsa",
+        "un_memorial_cemetery"
       ],
       "stopNames": [
         "Haedong Yonggungsa Temple",
+        "UN Memorial Cemetery in Korea",
         "해동 용궁사",
+        "재한유엔기념공원",
         "海東龍宮寺",
+        "韓国国連記念公園",
         "海东龙宫寺",
+        "驻韩联合国纪念公墓",
+        "韓國聯合國紀念公墓",
         "Templo Haedong Yonggungsa",
+        "Cementerio Memorial de la ONU en Corea",
         "유엔기념공원 (한국전쟁)",
+        "태종대 해안 절벽",
         "国連記念公園（朝鮮戦争）",
+        "テジョンデ（太宗台）沿岸断崖",
         "联合国纪念公墓（朝鲜战争）",
+        "太宗台海岸悬崖",
         "聯合國紀念公墓（韓戰）",
-        "Cementerio Memorial de la ONU (Guerra de Corea)"
+        "太宗臺海岸懸崖",
+        "Cementerio Memorial de la ONU (Guerra de Corea)",
+        "Acantilados costeros de Taejongdae"
       ],
       "locations": [
         "Haedong Yonggungsa Temple",
@@ -1576,23 +1931,30 @@
     {
       "folder": "dmz",
       "photoCount": 6,
-      "uses": 84,
+      "uses": 108,
       "poiKeys": [
         "third_infiltration_tunnel",
-        "dora_observatory"
+        "dora_observatory",
+        "gamaksan_red_bridge"
       ],
       "stopNames": [
         "3rd Infiltration Tunnel (Underground Invasion Tunnel)",
         "Dora Observatory",
+        "Gamaksan Red Suspension Bridge",
         "제3땅굴 (지하 침투 땅굴)",
         "도라산 전망대",
+        "감악산 빨간 출렁다리",
         "第3浸透トンネル（地下侵入トンネル）",
         "都羅展望台",
+        "カマクサン（紺岳山）レッド吊り橋",
         "第三条渗透隧道（地下入侵隧道）",
         "都罗展望台",
+        "绀岳山红色悬索桥",
         "第三條滲透隧道（地下入侵隧道）",
+        "紺岳山紅色吊橋",
         "3.er Túnel de Infiltración (Túnel de Invasión Subterráneo)",
-        "Observatorio Dora"
+        "Observatorio Dora",
+        "Puente Colgante Rojo de Gamaksan"
       ],
       "locations": [
         "3rd Infiltration Tunnel (Underground Invasion Tunnel)",
@@ -2071,17 +2433,26 @@
     {
       "folder": "taejongdae",
       "photoCount": 12,
-      "uses": 240,
+      "uses": 348,
       "poiKeys": [
+        "un_memorial_cemetery",
         "taejongdae"
       ],
       "stopNames": [
+        "UN Memorial Cemetery in Korea",
+        "재한유엔기념공원",
+        "韓国国連記念公園",
+        "驻韩联合国纪念公墓",
+        "韓國聯合國紀念公墓",
+        "Cementerio Memorial de la ONU en Corea",
         "East coast highlights option",
         "태종대 해안 절벽",
         "太宗台の海岸絶壁",
         "太宗台海岸悬崖",
         "太宗台海岸峭壁",
-        "Acantilados costeros de Taejongdae"
+        "Acantilados costeros de Taejongdae",
+        "テジョンデ（太宗台）沿岸断崖",
+        "太宗臺海岸懸崖"
       ],
       "locations": [
         "UN Memorial Cemetery in Korea",
