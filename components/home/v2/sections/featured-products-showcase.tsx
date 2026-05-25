@@ -218,7 +218,7 @@ export function FeaturedProductsShowcase() {
         <div className="relative -mx-4 md:mx-0">
           <div
             ref={scrollRef}
-            className="flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-2 scrollbar-hide md:grid md:grid-cols-3 md:gap-5 md:overflow-visible md:px-0 md:pb-0"
+            className="flex snap-x snap-mandatory scroll-px-6 gap-3 overflow-x-auto pb-2 pl-6 pr-10 scrollbar-hide md:grid md:grid-cols-3 md:gap-5 md:overflow-visible md:px-0 md:pb-0"
           >
             {tours.slice(0, FEATURED_LIMIT).map((tour, index) => (
               <div
@@ -243,7 +243,7 @@ export function FeaturedProductsShowcase() {
           </div>
           <div
             aria-hidden
-            className="pointer-events-none absolute inset-y-0 right-0 w-14 bg-gradient-to-l from-white via-white/90 to-transparent md:hidden"
+            className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-white via-white/65 to-transparent md:hidden"
           />
         </div>
         <SnapScrollDots

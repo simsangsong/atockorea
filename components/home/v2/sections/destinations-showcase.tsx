@@ -71,8 +71,8 @@ export function DestinationsShowcase() {
         </motion.div>
 
         {/* Mobile keeps the snap rail inset so cards feel intentional, not cut off. */}
-        <div className="relative mx-2 overflow-hidden md:mx-auto md:max-w-4xl md:overflow-visible">
-          <div ref={scrollRef} className="flex snap-x snap-mandatory scroll-px-3 gap-[18px] overflow-x-auto px-3 pb-3 scrollbar-hide md:grid md:auto-rows-fr md:grid-cols-3 md:gap-5 md:overflow-visible md:px-0 md:pb-0">
+        <div className="relative -mx-4 overflow-hidden md:mx-auto md:max-w-4xl md:overflow-visible">
+          <div ref={scrollRef} className="flex snap-x snap-mandatory scroll-px-6 gap-4 overflow-x-auto pb-3 pl-6 pr-10 scrollbar-hide md:grid md:auto-rows-fr md:grid-cols-3 md:gap-5 md:overflow-visible md:px-0 md:pb-0">
             {DESTINATIONS.map((dest) => (
               <motion.div
                 key={dest.id}
@@ -92,7 +92,7 @@ export function DestinationsShowcase() {
           </div>
           <div
             aria-hidden
-            className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-white/95 via-white/65 to-transparent md:hidden"
+            className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-white/95 via-white/55 to-transparent md:hidden"
           />
         </div>
         <SnapScrollDots containerRef={scrollRef} count={DESTINATIONS.length} />

@@ -50,7 +50,7 @@ export function ChooseTravelStyle() {
         {/* relative wrapper hosts the right-edge fade overlay so users see
             "more →" on mobile where the scrollbar is hidden. */}
         <div className="relative -mx-4 md:mx-0">
-        <div ref={scrollRef} className="flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-2 scrollbar-none md:grid md:grid-cols-3 md:gap-4 md:overflow-visible md:px-0 md:pb-0 md:snap-none">
+        <div ref={scrollRef} className="flex snap-x snap-mandatory scroll-px-6 gap-3 overflow-x-auto pb-2 pl-6 pr-10 scrollbar-none md:grid md:grid-cols-3 md:gap-4 md:overflow-visible md:px-0 md:pb-0 md:snap-none">
           {/* Small Group — featured (dark slate, amber accent only) */}
           <motion.div
             variants={REVEAL_ITEM_VARIANTS}
@@ -202,7 +202,7 @@ export function ChooseTravelStyle() {
         </div>
           <div
             aria-hidden
-            className="pointer-events-none absolute inset-y-0 right-0 w-14 bg-gradient-to-l from-slate-50 via-slate-50/90 to-transparent md:hidden"
+            className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-slate-50 via-slate-50/65 to-transparent md:hidden"
           />
         </div>
         <SnapScrollDots containerRef={scrollRef} count={3} />
