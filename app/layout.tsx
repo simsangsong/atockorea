@@ -9,6 +9,7 @@ import "./globals.css";
 // `--home-*` tokens are referenced by Tailwind shadow classes on /match and /mypage too.
 import { I18nProvider } from "@/lib/i18n";
 import { CurrencyProvider } from "@/lib/currency";
+import { SessionProvider } from "@/lib/auth-session";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { DevChunkRecoveryCleanup } from "@/components/DevChunkRecoveryCleanup";
 import { LocaleCurrencySync } from "@/components/LocaleCurrencySync";
@@ -87,13 +88,15 @@ export default async function RootLayout({
           <ErrorBoundary>
             <I18nProvider>
               <CurrencyProvider>
-                <DevChunkRecoveryCleanup />
-                <LocaleCurrencySync />
-                <AnalyticsPageViewTracker />
-                <div className="relative z-[1] min-h-dvh min-h-[100dvh] flex flex-col">
-                  {children}
-                </div>
-                <GlobalAiAssistant />
+                <SessionProvider>
+                  <DevChunkRecoveryCleanup />
+                  <LocaleCurrencySync />
+                  <AnalyticsPageViewTracker />
+                  <div className="relative z-[1] min-h-dvh min-h-[100dvh] flex flex-col">
+                    {children}
+                  </div>
+                  <GlobalAiAssistant />
+                </SessionProvider>
               </CurrencyProvider>
             </I18nProvider>
           </ErrorBoundary>

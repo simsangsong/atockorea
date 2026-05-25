@@ -11,6 +11,7 @@ import {
   type ReactNode,
 } from 'react';
 import type { Session, User } from '@supabase/supabase-js';
+import { useSession } from '@/lib/auth-session';
 
 type MyPageProfile = {
   full_name?: string | null;
@@ -44,61 +45,30 @@ function isMissingMypagePreferencesColumn(error: unknown) {
   return `${maybeError.message ?? ''} ${maybeError.details ?? ''}`.includes('mypage_preferences');
 }
 
-async function getSessionWithRetry() {
-  const { supabase } = await import('@/lib/supabase');
-  if (!supabase) return null;
-  try {
-    const { data } = await supabase.auth.getSession();
-    if (data.session) return data.session;
-  } catch {
-    await new Promise((resolve) => setTimeout(resolve, 600));
-    try {
-      const { data } = await supabase.auth.getSession();
-      if (data.session) return data.session;
-    } catch {
-      // fall through
-    }
-  }
-  return null;
-}
-
+/**
+ * /mypage-specific session wrapper. Reads the global Supabase session
+ * from `lib/auth-session` (one shared subscription for the whole app —
+ * see the docblock there for the deadlock that motivated it) and adds
+ * the profile-row loading + auth-metadata supplement that only /mypage
+ * and its children care about.
+ */
 export function MyPageSessionProvider({ children }: { children: ReactNode }) {
-  const [status, setStatus] = useState<'checking' | 'ready'>('checking');
-  const [session, setSessionState] = useState<Session | null>(null);
+  const {
+    status,
+    session,
+    user,
+    accessToken,
+    getAccessToken,
+  } = useSession();
+
   const [profile, setProfile] = useState<MyPageProfile | null>(null);
   const supplementAttemptedRef = useRef(false);
-  /**
-   * Ref mirror of `session` so `getAccessToken` / `refreshProfile` can read
-   * the latest value without depending on it in `useCallback`. Without this
-   * the callbacks change identity every time supabase emits a new Session
-   * object (INITIAL_SESSION, SIGNED_IN, TOKEN_REFRESHED), which used to
-   * cascade into /mypage's fetchAll re-firing on every event and pinning
-   * the page on the "verifying session" spinner (reported 2026-05-25).
-   */
-  const sessionRef = useRef<Session | null>(null);
-
-  /**
-   * Dedupe Session objects whose access_token + user.id are unchanged.
-   * @supabase/ssr re-emits a fresh Session reference on every auth event
-   * (and `getSession()` call), and React treats those as state changes
-   * even though the user identity hasn't moved — feeding the render
-   * cascade above.
-   */
-  const setSession = useCallback((next: Session | null) => {
-    const prev = sessionRef.current;
-    if (
-      prev?.access_token === next?.access_token &&
-      (prev?.user?.id ?? null) === (next?.user?.id ?? null)
-    ) {
-      return;
-    }
-    sessionRef.current = next;
-    setSessionState(next);
-  }, []);
+  const lastLoadedUserIdRef = useRef<string | null>(null);
 
   const loadProfile = useCallback(async (activeSession: Session | null) => {
     if (!activeSession?.user) {
       setProfile(null);
+      lastLoadedUserIdRef.current = null;
       return;
     }
 
@@ -130,6 +100,7 @@ export function MyPageSessionProvider({ children }: { children: ReactNode }) {
     }
 
     setProfile((data as MyPageProfile | null) ?? null);
+    lastLoadedUserIdRef.current = activeSession.user.id;
 
     if (supplementAttemptedRef.current || !data) return;
     supplementAttemptedRef.current = true;
@@ -169,67 +140,37 @@ export function MyPageSessionProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
+  // Load the profile when the signed-in user actually changes. Keyed on
+  // user.id (not the whole session object) so a TOKEN_REFRESHED event
+  // for the same user does NOT re-hit user_profiles every time the token
+  // rotates — the cascade that pinned /mypage on its skeleton before.
   useEffect(() => {
-    let cancelled = false;
-    let unsubscribe: (() => void) | null = null;
-
-    (async () => {
-      const initialSession = await getSessionWithRetry();
-      if (cancelled) return;
-      setSession(initialSession);
-      setStatus('ready');
-      if (initialSession) await loadProfile(initialSession);
-
-      const { supabase } = await import('@/lib/supabase');
-      if (!supabase || cancelled) return;
-      const { data: sub } = supabase.auth.onAuthStateChange((_event, nextSession) => {
-        const prev = sessionRef.current;
-        const sameSession =
-          prev?.access_token === nextSession?.access_token &&
-          (prev?.user?.id ?? null) === (nextSession?.user?.id ?? null);
-        setSession(nextSession);
-        if (sameSession) return;
-        if (!nextSession) {
-          setProfile(null);
-          supplementAttemptedRef.current = false;
-          return;
-        }
-        void loadProfile(nextSession);
-      });
-      unsubscribe = () => sub.subscription.unsubscribe();
-    })();
-
-    return () => {
-      cancelled = true;
-      unsubscribe?.();
-    };
-  }, [loadProfile, setSession]);
+    const uid = session?.user?.id ?? null;
+    if (uid === lastLoadedUserIdRef.current) return;
+    if (!uid) {
+      setProfile(null);
+      supplementAttemptedRef.current = false;
+      lastLoadedUserIdRef.current = null;
+      return;
+    }
+    void loadProfile(session);
+  }, [session, loadProfile]);
 
   const refreshProfile = useCallback(async () => {
-    await loadProfile(sessionRef.current);
-  }, [loadProfile]);
-
-  const getAccessToken = useCallback(async () => {
-    if (sessionRef.current?.access_token) return sessionRef.current.access_token;
-    const nextSession = await getSessionWithRetry();
-    setSession(nextSession);
-    if (nextSession) {
-      void loadProfile(nextSession);
-    }
-    return nextSession?.access_token ?? null;
-  }, [loadProfile, setSession]);
+    await loadProfile(session);
+  }, [loadProfile, session]);
 
   const value = useMemo<MyPageSessionContextValue>(
     () => ({
       status,
       session,
-      user: session?.user ?? null,
-      accessToken: session?.access_token ?? null,
+      user,
+      accessToken,
       profile,
       refreshProfile,
       getAccessToken,
     }),
-    [getAccessToken, profile, refreshProfile, session, status],
+    [accessToken, getAccessToken, profile, refreshProfile, session, status, user],
   );
 
   return (
