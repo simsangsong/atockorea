@@ -1,4 +1,5 @@
-import { createServerClient } from './supabase';
+import { cookies } from 'next/headers';
+import { createServerClient, createSupabaseServerComponentClient } from './supabase';
 import { NextRequest, NextResponse } from 'next/server';
 
 export type UserRole = 'customer' | 'merchant' | 'admin';
@@ -28,202 +29,65 @@ export function adminAuthJsonResponse(e: AdminAuthFailure): NextResponse {
 }
 
 /**
- * Bearer token or Supabase session cookie `access_token` (for user-scoped Supabase clients).
- */
-export function getAccessTokenFromRequest(req: NextRequest): string | null {
-  const authHeader = req.headers.get('authorization');
-  if (authHeader?.startsWith('Bearer ')) {
-    const t = authHeader.slice(7).trim();
-    if (t) return t;
-  }
-
-  const cookies = req.cookies;
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
-  const projectRef = supabaseUrl.match(/https:\/\/([^.]+)\.supabase\.co/)?.[1];
-  if (!projectRef) return null;
-
-  const cookieNames = [
-    `sb-${projectRef}-auth-token`,
-    `sb-${projectRef}-auth-token.0`,
-    `sb-${projectRef}-auth-token.1`,
-  ];
-  const parts: string[] = [];
-  for (const name of cookieNames) {
-    const c = cookies.get(name);
-    if (c?.value) parts.push(c.value);
-  }
-  if (parts.length === 0) return null;
-
-  const combined = parts.join('');
-  try {
-    const sessionData = JSON.parse(combined) as {
-      access_token?: string;
-      accessToken?: string;
-      session?: { access_token?: string };
-    };
-    const accessToken =
-      sessionData?.access_token || sessionData?.accessToken || sessionData?.session?.access_token;
-    return typeof accessToken === 'string' && accessToken ? accessToken : null;
-  } catch {
-    return null;
-  }
-}
-
-/**
- * Get current authenticated user from request
- * Supports both Authorization header and cookie-based authentication
+ * Get current authenticated user from request.
+ *
+ * Supports both:
+ *   1. `Authorization: Bearer <jwt>` header — for API clients passing a
+ *      token explicitly (mobile, server-to-server, automation).
+ *   2. Supabase session cookies — for browser requests. After
+ *      adopting `@supabase/ssr` (PR #84) the cookie reading is handled by
+ *      the SSR helper instead of a hand-rolled chunk parser, which
+ *      removed ~125 lines of cookie wrangling that existed because the
+ *      browser used to store the session in localStorage.
  */
 export async function getAuthUser(req: NextRequest): Promise<AuthUser | null> {
   try {
-    const supabase = createServerClient();
-    let user: any = null;
-    
-    // Method 1: Try Authorization header (for API clients)
+    const adminSupabase = createServerClient(); // service-role: profile/merchant lookups
+    let user: { id: string; email?: string | null } | null = null;
+
     const authHeader = req.headers.get('authorization');
     if (authHeader?.startsWith('Bearer ')) {
       const token = authHeader.substring(7);
-      const { data: { user: authUser }, error } = await supabase.auth.getUser(token);
-      if (!error && authUser) {
-        user = authUser;
-      }
+      const { data, error } = await adminSupabase.auth.getUser(token);
+      if (!error && data?.user) user = data.user;
     }
-    
-    // Method 2: Try cookie-based authentication (for browser requests)
+
     if (!user) {
-      // Get all cookies
-      const cookies = req.cookies;
-      
-      // Try to find Supabase auth token in cookies
-      // Supabase stores session in cookies with pattern: sb-<project-ref>-auth-token
-      const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
-      const projectRef = supabaseUrl.match(/https:\/\/([^.]+)\.supabase\.co/)?.[1];
-      const isDev = process.env.NODE_ENV === 'development';
-
-      if (projectRef) {
-        // Try different cookie name patterns
-        const cookieNames = [
-          `sb-${projectRef}-auth-token`,
-          `sb-${projectRef}-auth-token-code-verifier`,
-          `sb-${projectRef}-auth-token.0`,
-          `sb-${projectRef}-auth-token.1`,
-        ];
-
-        // Collect all matching cookies (may be split into multiple parts)
-        const matchingCookies: Array<{ name: string; value: string }> = [];
-        for (const cookieName of cookieNames) {
-          const cookie = cookies.get(cookieName);
-          if (cookie) {
-            matchingCookies.push({ name: cookieName, value: cookie.value });
-          }
-        }
-
-        // Try to combine split cookies or parse individually
-        if (matchingCookies.length > 0) {
-          // Sort by name to ensure correct order for split cookies
-          matchingCookies.sort((a, b) => a.name.localeCompare(b.name));
-
-          // Try combined value first (for split cookies like .0, .1, etc.)
-          const combinedValue = matchingCookies.map(c => c.value).join('');
-
-          try {
-            const sessionData = JSON.parse(combinedValue);
-            const accessToken = sessionData?.access_token || sessionData?.accessToken || sessionData?.session?.access_token;
-
-            if (accessToken) {
-              const { data: { user: authUser }, error } = await supabase.auth.getUser(accessToken);
-              if (!error && authUser) {
-                user = authUser;
-              } else if (isDev) {
-                console.warn('[getAuthUser] Token validation failed:', error?.message);
-              }
-            }
-          } catch (e: any) {
-            if (isDev) {
-              console.warn('[getAuthUser] Cookie parse error:', e.message);
-            }
-            
-            // Try each cookie individually
-            for (const cookie of matchingCookies) {
-              try {
-                const sessionData = JSON.parse(cookie.value);
-                const accessToken = sessionData?.access_token || sessionData?.accessToken;
-
-                if (accessToken) {
-                  const { data: { user: authUser }, error } = await supabase.auth.getUser(accessToken);
-                  if (!error && authUser) {
-                    user = authUser;
-                    break;
-                  }
-                }
-              } catch {
-                // Not JSON, try as direct token
-                try {
-                  const { data: { user: authUser }, error } = await supabase.auth.getUser(cookie.value);
-                  if (!error && authUser) {
-                    user = authUser;
-                    break;
-                  }
-                } catch {
-                  // Skip this cookie
-                }
-              }
-            }
-          }
+      try {
+        const cookieStore = await cookies();
+        const ssrSupabase = createSupabaseServerComponentClient({
+          getAll: () => cookieStore.getAll(),
+          set: (name, value, options) => {
+            try { cookieStore.set(name, value, options); } catch { /* response cookies not writable in this context */ }
+          },
+        });
+        const { data } = await ssrSupabase.auth.getUser();
+        if (data?.user) user = data.user;
+      } catch (e) {
+        if (process.env.NODE_ENV === 'development') {
+          console.warn('[getAuthUser] ssr cookie read failed:', (e as Error)?.message);
         }
       }
+    }
 
-      // Fallback: Try common cookie names for auth tokens
-      if (!user && projectRef) {
-        const fallbackCookieNames = [
-          'sb-auth-token',
-          'supabase-auth-token',
-          'auth-token',
-        ];
-        
-        for (const cookieName of fallbackCookieNames) {
-          const cookie = cookies.get(cookieName);
-          if (cookie) {
-            try {
-              const parsed = JSON.parse(cookie.value);
-              const accessToken = parsed?.access_token || parsed?.accessToken;
-              if (accessToken) {
-                const { data: { user: authUser }, error } = await supabase.auth.getUser(accessToken);
-                if (!error && authUser) {
-                  user = authUser;
-                  break;
-                }
-              }
-            } catch (e) {
-              // Not JSON, skip
-            }
-          }
-        }
-      }
-      
-    }
-    
-    if (!user) {
-      return null;
-    }
-    
-    // Get user profile with role
-    const { data: profile } = await supabase
+    if (!user) return null;
+
+    const { data: profile } = await adminSupabase
       .from('user_profiles')
       .select('role')
       .eq('id', user.id)
       .single();
-    
-    // Get merchant_id if user is a merchant
+
     let merchantId: string | undefined;
     if (profile?.role === 'merchant') {
-      const { data: merchant } = await supabase
+      const { data: merchant } = await adminSupabase
         .from('merchants')
         .select('id')
         .eq('user_id', user.id)
         .single();
       merchantId = merchant?.id;
     }
-    
+
     return {
       id: user.id,
       email: user.email || '',
