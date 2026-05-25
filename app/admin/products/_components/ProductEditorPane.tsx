@@ -184,10 +184,11 @@ export function ProductEditorPane({
     if (!draft) return { thumbnailUrl: null, heroUrl: null, heroImages: [], gallery: [] };
     const payload = (draft.detail_payload || {}) as Record<string, unknown>;
     const galleryItems = Array.isArray(payload.galleryItems)
-      ? (payload.galleryItems as Array<Record<string, unknown>>)
+      ? (payload.galleryItems as Array<Record<string, unknown> | null | undefined>)
       : [];
     const gallery: GalleryEntry[] = [];
     galleryItems.forEach((g, idx) => {
+      if (!g || typeof g !== 'object') return;
       const url = typeof g.src === 'string' ? (g.src as string) : '';
       if (!url) return;
       gallery.push({
@@ -237,10 +238,11 @@ export function ProductEditorPane({
   const itinerary: ItineraryStop[] = (() => {
     const payload = (draft?.detail_payload || {}) as Record<string, unknown>;
     const raw = Array.isArray(payload.itineraryStops)
-      ? (payload.itineraryStops as Array<Record<string, unknown>>)
+      ? (payload.itineraryStops as Array<Record<string, unknown> | null | undefined>)
       : [];
     const out: ItineraryStop[] = [];
     raw.forEach((s, idx) => {
+      if (!s || typeof s !== 'object') return;
       out.push({
         id: `stop-${idx}-${typeof s.name === 'string' ? (s.name as string).slice(0, 12) : ''}`,
         number: typeof s.number === 'number' ? (s.number as number) : idx + 1,
@@ -263,9 +265,10 @@ export function ProductEditorPane({
       ? payload.staticQuestions
       : Array.isArray(payload.faqs)
         ? payload.faqs
-        : []) as Array<Record<string, unknown>>;
+        : []) as Array<Record<string, unknown> | null | undefined>;
     const out: FAQItem[] = [];
     raw.forEach((q, idx) => {
+      if (!q || typeof q !== 'object') return;
       const question =
         typeof q.question === 'string' ? (q.question as string) : '';
       const answer = typeof q.answer === 'string' ? (q.answer as string) : '';
