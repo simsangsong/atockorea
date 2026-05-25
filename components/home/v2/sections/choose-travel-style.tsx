@@ -8,8 +8,8 @@ import { V0ShadcnButton } from "@/components/home/v2/ui/v0-shadcn-button";
 import { ArrowRight, Car, Bus, Award, Users } from "lucide-react";
 import { analytics } from "@/src/design/analytics";
 import {
-  HOME_CTA_BROWSE_TOURS_HREF,
-  HOME_CTA_MATCHING_HREF,
+  HOME_CTA_BUS_LIST_HREF,
+  HOME_CTA_PRIVATE_LIST_HREF,
   HOME_CTA_SMALL_GROUP_LIST_HREF,
 } from "@/lib/home/home-cta-routes";
 import { useTranslations } from "@/lib/i18n";
@@ -106,16 +106,16 @@ export function ChooseTravelStyle() {
             </V0ShadcnButton>
           </motion.div>
 
-          {/* Private — neutral white card */}
+          {/* Private — white pod with subtle mint warm-light (premium, not minty) */}
           <motion.div
             variants={REVEAL_ITEM_VARIANTS}
-            className="group relative w-[68vw] flex-none snap-start overflow-hidden rounded-card border border-slate-200/70 bg-white p-4 md:p-5 shadow-2 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-slate-300/90 flex flex-col motion-reduce:hover:translate-y-0 motion-reduce:transition-none md:w-auto"
+            className="group relative w-[68vw] flex-none snap-start overflow-hidden rounded-card border border-emerald-100/60 bg-gradient-to-b from-white via-white to-emerald-50/40 p-4 md:p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_1px_2px_rgba(15,23,42,0.04),0_8px_22px_-12px_rgba(16,122,87,0.10),0_18px_36px_-18px_rgba(15,23,42,0.12)] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-emerald-200/75 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.95),0_2px_4px_rgba(15,23,42,0.05),0_10px_28px_-12px_rgba(16,122,87,0.16),0_22px_42px_-18px_rgba(15,23,42,0.16)] flex flex-col motion-reduce:hover:translate-y-0 motion-reduce:transition-none md:w-auto"
           >
             <div className="flex items-center justify-between mb-4 mt-1">
-              <div className="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-slate-100 border border-slate-200 flex items-center justify-center">
+              <div className="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-emerald-50/70 border border-emerald-100/70 flex items-center justify-center">
                 <Car className="w-4 h-4 md:w-5 md:h-5 text-slate-700" />
               </div>
-              <span className="text-micro font-bold text-slate-700 bg-slate-100 border border-slate-200 px-2.5 py-1 rounded-full tracking-wide">
+              <span className="text-micro font-bold text-slate-700 bg-white/70 border border-emerald-100/60 px-2.5 py-1 rounded-full tracking-wide backdrop-blur-[2px]">
                 {t("premium.v2.chooseStyle.privateBadge")}
               </span>
             </div>
@@ -141,7 +141,7 @@ export function ChooseTravelStyle() {
               className={cn(homeBtnPrimary, "mt-4")}
             >
               <Link
-                href={HOME_CTA_MATCHING_HREF}
+                href={HOME_CTA_PRIVATE_LIST_HREF}
                 onClick={() => {
                   analytics.homeCtaClick({ source: "choose_style_private_custom" });
                 }}
@@ -152,16 +152,16 @@ export function ChooseTravelStyle() {
             </V0ShadcnButton>
           </motion.div>
 
-          {/* Bus — neutral white card */}
+          {/* Bus — white pod with subtle mint warm-light (matches Private card) */}
           <motion.div
             variants={REVEAL_ITEM_VARIANTS}
-            className="group relative w-[68vw] flex-none snap-start overflow-hidden rounded-card border border-slate-200/70 bg-white p-4 md:p-5 shadow-2 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-slate-300/90 flex flex-col motion-reduce:hover:translate-y-0 motion-reduce:transition-none md:w-auto"
+            className="group relative w-[68vw] flex-none snap-start overflow-hidden rounded-card border border-emerald-100/60 bg-gradient-to-b from-white via-white to-emerald-50/40 p-4 md:p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_1px_2px_rgba(15,23,42,0.04),0_8px_22px_-12px_rgba(16,122,87,0.10),0_18px_36px_-18px_rgba(15,23,42,0.12)] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-emerald-200/75 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.95),0_2px_4px_rgba(15,23,42,0.05),0_10px_28px_-12px_rgba(16,122,87,0.16),0_22px_42px_-18px_rgba(15,23,42,0.16)] flex flex-col motion-reduce:hover:translate-y-0 motion-reduce:transition-none md:w-auto"
           >
             <div className="flex items-center justify-between mb-4 mt-1">
-              <div className="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-slate-100 border border-slate-200 flex items-center justify-center">
+              <div className="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-emerald-50/70 border border-emerald-100/70 flex items-center justify-center">
                 <Bus className="w-4 h-4 md:w-5 md:h-5 text-slate-700" />
               </div>
-              <span className="text-micro font-bold text-slate-700 bg-slate-100 border border-slate-200 px-2.5 py-1 rounded-full tracking-wide">
+              <span className="text-micro font-bold text-slate-700 bg-white/70 border border-emerald-100/60 px-2.5 py-1 rounded-full tracking-wide backdrop-blur-[2px]">
                 {t("premium.v2.chooseStyle.busBadge")}
               </span>
             </div>
@@ -189,7 +189,7 @@ export function ChooseTravelStyle() {
               className={cn(homeBtnPrimary, "mt-4")}
             >
               <Link
-                href={HOME_CTA_BROWSE_TOURS_HREF}
+                href={HOME_CTA_BUS_LIST_HREF}
                 onClick={() => {
                   analytics.homeCtaClick({ source: "choose_style_browse_bus" });
                 }}
