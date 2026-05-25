@@ -96,6 +96,19 @@ export const CONSUMER_BLOCKED_TOUR_SLUGS = new Set<string>([
   // Retired 2026-05-23 — overlapped with from-busan-gyeongju-ancient-capital-day-tour
   // (same Busan→Gyeongju route, same $39 price). Keeping the small-group variant active.
   "busan-gyeongju-unesco-legacy-tour-national-museum",
+  // Paused 2026-05-25 — all Seoul-region day tours taken offline (matcher Seoul tab shows
+  // "coming soon" until operators are re-vetted). Mirrors tours.is_active = false in DB.
+  "from-incheon-seoul-day-tour-cruise-guests",
+  "incheon-seoul-private-car-shore-excursion-cruise",
+  "pocheon-sanjeong-lake-herb-island-art-valley",
+  "seoul-dmz-private-3rd-tunnel-suspension-bridge",
+  "seoul-private-nami-morning-calm-petite-france",
+  "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip",
+  "seoul-seoraksan-nami-island-morning-calm-day-tour",
+  "seoul-suburbs-private-chartered-car-10hr",
+  "seoul-suwon-hwaseong-folk-village-starfield-library",
+  "seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library",
+  "seoul-suwon-hwaseong-waujeongsa-starfield",
 ]);
 
 function normalizeTourIdForBlocklist(id: string): string {

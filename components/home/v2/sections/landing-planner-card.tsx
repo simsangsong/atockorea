@@ -329,6 +329,24 @@ export function LandingPlannerCard({
         </div>
 
         {/* ── Mode body (only this cross-fades on switch) ─────────────── */}
+        {/* Seoul gate (2026-05-25): all Seoul day-tours paused (tours.is_active=false + consumer
+            blocklist). The matcher would return nothing and the builder routes into a region with
+            no bookable products, so we replace the CTA body with a coming-soon notice while still
+            letting users flip the destination back to Jeju/Busan above. */}
+        {destination === "seoul" ? (
+          <div
+            role="status"
+            aria-live="polite"
+            className="rounded-button border border-amber-200/80 bg-amber-50 p-4 text-center md:p-5"
+          >
+            <p className="text-caption font-semibold text-amber-900 md:text-[15px]">
+              {t("premium.hero.seoulComingSoonTitle")}
+            </p>
+            <p className="mt-1.5 text-micro leading-relaxed text-amber-800 md:text-caption">
+              {t("premium.hero.seoulComingSoonBody")}
+            </p>
+          </div>
+        ) : (
         <AnimatePresence mode="wait" initial={false}>
           <motion.div key={mode} {...bodyMotion}>
             {mode === "match" ? (
@@ -393,6 +411,7 @@ export function LandingPlannerCard({
             )}
           </motion.div>
         </AnimatePresence>
+        )}
       </div>
     </div>
   );

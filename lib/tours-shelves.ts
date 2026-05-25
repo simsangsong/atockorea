@@ -230,9 +230,9 @@ const EDITORS_PICK_SLUGS: readonly string[] = [
   "east-signature-nature-core",
   "jeju-grand-highlights-loop",
   "jeju-cruise-shore-excursion-small-group-tour",
-  "seoul-private-nami-morning-calm-petite-france",
+  "busan-small-group-sightseeing-tour-cruise-passengers",
   "busan-top-attractions-day-tour",
-  "pocheon-sanjeong-lake-herb-island-art-valley",
+  "southwest-hallasan-osulloc-aewol",
 ] as const;
 
 // ---------------------------------------------------------------------------
