@@ -20,14 +20,29 @@ function normalizeSlugs(slugs: readonly string[]): string[] {
   ).sort();
 }
 
+/**
+ * Read tour card media (admin v2 overrides) for a set of slugs.
+ *
+ * `initialMediaBySlug` lets a server component pre-resolve the admin
+ * thumbnails for the SAME (slugs, locale) pair and pass them down, so the
+ * very first client render already shows the freshest URL — no
+ * "stale-static-catalog-flips-to-admin-saved" flash on the home
+ * Most-Loved rail or `/tours/list` shelves. Without it the hook starts
+ * empty, fetches on mount, and the swap is visible.
+ */
 export function useTourProductCardMedia(
   slugs: readonly string[],
   locale: string,
+  initialMediaBySlug?: TourProductCardMediaMap,
 ): TourProductCardMediaMap {
   const normalizedSlugs = useMemo(() => normalizeSlugs(slugs), [slugs]);
   const slugKey = normalizedSlugs.join(",");
   const requestKey = `${locale}|${slugKey}`;
-  const [state, setState] = useState<MediaState | null>(null);
+  const [state, setState] = useState<MediaState | null>(() =>
+    initialMediaBySlug && Object.keys(initialMediaBySlug).length > 0
+      ? { key: requestKey, media: initialMediaBySlug }
+      : null,
+  );
 
   useEffect(() => {
     if (!slugKey) return;

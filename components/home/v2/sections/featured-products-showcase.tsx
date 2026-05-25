@@ -20,17 +20,10 @@ import {
   type StaticTourProductRegistration,
 } from "@/components/product-tour-static/catalog/staticTourCatalogCards";
 import type { TourProductPageLocale } from "@/lib/tour-product/resolveTourProductDbLocale";
+import type { TourProductCardMediaMap } from "@/lib/tour-product/cardMediaTypes";
 import { cn } from "@/lib/utils";
 
-const FEATURED_PRODUCT_SLUGS = [
-  "seoul-suwon-hwaseong-waujeongsa-starfield",
-  "busan-top-attractions-day-tour",
-  "jeju-grand-highlights-loop",
-  "seoul-suburbs-private-chartered-car-10hr",
-  "seoul-suwon-hwaseong-waujeongsa-starfield",
-  "jeju-island-private-car-charter-tour",
-  "seoul-suwon-hwaseong-folk-village-starfield-library",
-] as const;
+import { FEATURED_PRODUCT_SLUGS } from "./featured-product-slugs";
 const FEATURED_LIMIT = FEATURED_PRODUCT_SLUGS.length;
 
 type DestinationsApiResponse = {
@@ -88,7 +81,10 @@ function productToCard(product: StaticTourProductRegistration): TourCardViewMode
   };
 }
 
-function buildStaticFeaturedTours(locale: string): TourCardViewModel[] {
+function buildStaticFeaturedTours(
+  locale: string,
+  mediaBySlug?: TourProductCardMediaMap,
+): TourCardViewModel[] {
   const productLocale = isTourProductLocale(locale) ? locale : "en";
   const bySlug = new Map(
     listStaticTourProducts(productLocale).map((product) => [product.slug, product]),
@@ -102,7 +98,18 @@ function buildStaticFeaturedTours(locale: string): TourCardViewModel[] {
       if (!product.thumbnail && !product.heroImage) return false;
       return consumerTourDetailHref(product.slug, product.slug) !== "/tours/list";
     })
-    .map(productToCard);
+    .map((product) => {
+      const card = productToCard(product);
+      // Server-resolved admin override (PR #92): if the SSR pre-fetch
+      // gave us the freshest thumbnail URL for this slug, swap it onto
+      // the card BEFORE first paint so the rail never flashes the
+      // build-time static image and then flips to the admin-saved one.
+      const adminImage = mediaBySlug?.[product.slug]?.cardImageUrl;
+      if (adminImage && adminImage !== card.imageUrl) {
+        return { ...card, imageUrl: adminImage };
+      }
+      return card;
+    });
 }
 
 function cardSlug(tour: TourCardViewModel): string {
@@ -133,13 +140,29 @@ function mergeLiveCardMedia(
  *
  * The rail keeps its curated static slug order, then overlays live admin media
  * from /api/tours so product dashboard image edits surface on the landing page.
+ *
+ * `initialMediaBySlug` is the server-rendered admin-media snapshot for the
+ * featured slugs (resolved in HomeV2Page via `loadTourProductCardMediaBySlug`).
+ * Without it the rail first paints with the build-time static catalog
+ * thumbnail and then flips to the admin-saved image once the client effect
+ * resolves — visible flash on every navigation. With it the very first
+ * render already has the freshest URL.
  */
-export function FeaturedProductsShowcase() {
+export type FeaturedProductsShowcaseProps = {
+  initialMediaBySlug?: TourProductCardMediaMap;
+};
+
+export function FeaturedProductsShowcase({
+  initialMediaBySlug,
+}: FeaturedProductsShowcaseProps = {}) {
   const t = useTranslations("home");
   const { locale } = useI18n();
   const currencyCtx = useCurrencyOptional();
   const scrollRef = useRef<HTMLDivElement>(null);
-  const fallbackTours = useMemo(() => buildStaticFeaturedTours(locale), [locale]);
+  const fallbackTours = useMemo(
+    () => buildStaticFeaturedTours(locale, initialMediaBySlug),
+    [locale, initialMediaBySlug],
+  );
 
   const [totalCount, setTotalCount] = useState<number | null>(null);
   const [liveToursState, setLiveToursState] = useState<LiveFeaturedToursState | null>(null);
