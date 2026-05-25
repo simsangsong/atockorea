@@ -22,7 +22,7 @@ import {
 const IDLE_PREVIEW_SLUGS = [
   "busan-top-attractions-day-tour",
   "jeju-grand-highlights-loop",
-  "seoul-suburbs-private-chartered-car-10hr",
+  "southwest-hallasan-osulloc-aewol",
 ] as const;
 
 const FADE_INTERVAL_MS = 5000;

@@ -8,11 +8,11 @@
  * iterable" at SSR.
  */
 export const FEATURED_PRODUCT_SLUGS = [
-  "seoul-suwon-hwaseong-waujeongsa-starfield",
+  "east-signature-nature-core",
   "busan-top-attractions-day-tour",
   "jeju-grand-highlights-loop",
-  "seoul-suburbs-private-chartered-car-10hr",
-  "seoul-suwon-hwaseong-waujeongsa-starfield",
+  "southwest-hallasan-osulloc-aewol",
+  "from-busan-gyeongju-ancient-capital-day-tour",
   "jeju-island-private-car-charter-tour",
-  "seoul-suwon-hwaseong-folk-village-starfield-library",
+  "jeju-eastern-unesco-spots-day-tour",
 ] as const;
