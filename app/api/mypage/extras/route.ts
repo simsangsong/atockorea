@@ -7,12 +7,18 @@ import {
   tourListPricesToUsdSync,
 } from '@/lib/tour-list-price-usd.server';
 import { isTourRowHiddenFromPublicTourApi } from '@/lib/tour-consumer-visibility';
+import {
+  buildUserAffinityAnchor,
+  pickTourRecommendations,
+  type UserSignalEntry,
+} from '@/lib/recommendations/tourSimilarity';
 
 const SUPPORTED_LOCALES = ['en', 'ko', 'zh', 'zh-TW', 'es', 'ja'] as const;
 type SupportedLocale = typeof SUPPORTED_LOCALES[number];
 
 type BookedTourRow = {
   tour_id?: string | null;
+  tours?: NestedTour | null;
 };
 
 type NestedTour = {
@@ -75,7 +81,20 @@ export async function GET(req: NextRequest) {
     const [bookedToursRes, wishlistRes, tourRowsRes, krwPerUsd] = await Promise.all([
       supabase
         .from('bookings')
-        .select('tour_id')
+        .select(`
+          tour_id,
+          tours (
+            id,
+            slug,
+            title,
+            city,
+            price,
+            original_price,
+            price_currency,
+            image_url,
+            duration
+          )
+        `)
         .eq('user_id', user.id)
         .order('created_at', { ascending: false })
         .limit(200),
@@ -107,7 +126,7 @@ export async function GET(req: NextRequest) {
         )
         .eq('is_active', true)
         .order('rating', { ascending: false })
-        .limit(18),
+        .limit(50),
       getKrwPerUsd(),
     ]);
 
@@ -156,11 +175,58 @@ export async function GET(req: NextRequest) {
       return typeof tour.price === 'number' && Number.isFinite(tour.price) && tour.price > 0;
     });
 
-    const filteredRecommendations = pricedRecommendationPool
-      .filter((tour) => !bookedTourIds.has(tour.id) && !wishlistTourIds.has(tour.id))
-      .slice(0, 6);
+    // Derive user affinity signal from booked + wishlisted tours so the
+    // recommendation strip reflects what the user has actually shown interest
+    // in (city / duration / price band). Falls back to popularity ranking
+    // (already the order of pricedRecommendationPool) when there is no signal.
+    const signalEntries: UserSignalEntry[] = [
+      ...bookedTourRows.map((b) => {
+        const t = b.tours ?? null;
+        const { priceUsd } = t
+          ? tourListPricesToUsdSync(
+              { price: t.price, original_price: t.original_price, price_currency: t.price_currency },
+              krwPerUsd,
+            )
+          : { priceUsd: 0 };
+        return {
+          city: t?.city ?? null,
+          region: t?.city ?? null,
+          duration: t?.duration ?? null,
+          listPriceUsd: priceUsd,
+        };
+      }),
+      ...wishlistData.map((w) => ({
+        city: w.tours?.city ?? null,
+        region: w.tours?.city ?? null,
+        duration: w.tours?.duration ?? null,
+        listPriceUsd: typeof w.tours?.price === 'number' ? w.tours.price : 0,
+      })),
+    ];
+    const affinityAnchor = buildUserAffinityAnchor(signalEntries);
+
+    const eligiblePool = pricedRecommendationPool.filter(
+      (tour) => !bookedTourIds.has(tour.id) && !wishlistTourIds.has(tour.id),
+    );
+
+    let scoredRecommendations = eligiblePool;
+    if (affinityAnchor) {
+      const candidates = eligiblePool.map((tour) => ({
+        slug: tour.slug ?? tour.id,
+        region: tour.city ?? '',
+        duration: tour.duration ?? '',
+        listPriceUsd: tour.price,
+        rating: tour.rating,
+        reviewCount: tour.reviewCount,
+        _row: tour,
+      }));
+      const picks = pickTourRecommendations(affinityAnchor, candidates, { k: 6 });
+      scoredRecommendations = picks.map((p) => p._row);
+    }
+
     const recommendations =
-      filteredRecommendations.length >= 3 ? filteredRecommendations : pricedRecommendationPool.slice(0, 6);
+      scoredRecommendations.length >= 3
+        ? scoredRecommendations.slice(0, 6)
+        : pricedRecommendationPool.slice(0, 6);
 
     return NextResponse.json(
       {

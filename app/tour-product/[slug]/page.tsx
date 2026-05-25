@@ -6,7 +6,11 @@ import {
   getStaticTourProductFullPageJson,
   isStaticTourProductBundleRegistered,
 } from "@/components/product-tour-static/_shared/tourProductBundleRegistry";
-import { listStaticTourProducts } from "@/components/product-tour-static/catalog/staticTourCatalogCards";
+import {
+  listStaticTourProducts,
+  type StaticTourProductRegistration,
+} from "@/components/product-tour-static/catalog/staticTourCatalogCards";
+import { pickTourRecommendations } from "@/lib/recommendations/tourSimilarity";
 import { TourProductDetailClient } from "@/components/product-tour-static/_shared/TourProductDetailClient";
 import { tourProductJsonLdScripts } from "@/lib/seo/tourProductJsonLd";
 import { createAnonServerClient } from "@/lib/supabase";
@@ -149,15 +153,16 @@ export default async function RegisteredTourProductPage({
 
   const jsonLdScripts = tourProductJsonLdScripts(viewModel, slug);
 
-  // Recommendations: pick up to 6 other tours for this locale, prioritizing same region.
-  // Drop entries without a parseable price so off-season / unpriced products don't
-  // render as "$0" cards (mirrors the homepage featured-grid filter).
+  // Recommendations: rank all other tours by a similarity score (region token
+  // overlap + badge overlap + duration tier + price band) with a popularity
+  // tiebreak and a per-region diversity cap. Replaces the prior "same region
+  // first, slice(0,6)" heuristic that always returned the same 6 cards.
+  // Unpriced items are dropped so off-season products don't render as $0 cards.
   const allCatalog = listStaticTourProducts(locale);
-  const currentRegion = allCatalog.find((p) => p.slug === slug)?.region ?? "";
-  const otherTours = allCatalog.filter((p) => p.slug !== slug && p.listPriceUsd > 0);
-  const sameRegion = otherTours.filter((p) => p.region === currentRegion);
-  const otherRegions = otherTours.filter((p) => p.region !== currentRegion);
-  const recommendations = [...sameRegion, ...otherRegions].slice(0, 6);
+  const anchor = allCatalog.find((p) => p.slug === slug);
+  const recommendations: readonly StaticTourProductRegistration[] = anchor
+    ? pickTourRecommendations(anchor, allCatalog, { k: 6 })
+    : allCatalog.filter((p) => p.slug !== slug && p.listPriceUsd > 0).slice(0, 6);
 
   return (
     <>
