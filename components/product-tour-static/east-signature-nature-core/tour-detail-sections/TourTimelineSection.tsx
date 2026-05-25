@@ -162,12 +162,19 @@ export function TourTimelineSection({
   const [internalPortIndex, setInternalPortIndex] = useState(0);
   const hasRouteVariants = Array.isArray(routeVariants) && routeVariants.length > 0;
 
+  // Defensive: some Supabase rows historically stored deleted stops as literal
+  // `null` instead of splicing them out of the array. Drop nulls/non-objects
+  // up-front so downstream `stop.number` / `stop.name` accesses don't crash.
+  const safeStops: readonly ItineraryStop[] = Array.isArray(itineraryStops)
+    ? itineraryStops.filter((s): s is ItineraryStop => s != null && typeof s === "object")
+    : [];
+
   // Pickup / return pseudo-stops are already rendered by the dedicated PickupOnlyCards
   // (above) and DropoffOnlyCard (below). Strip them from the numbered timeline so they
   // don't appear twice. The authoritative signal is the locale-independent `_role` marker;
   // the multilingual regex is a back-compat fallback for stops authored before the marker.
-  const firstStop = itineraryStops[0];
-  const lastStop = itineraryStops[itineraryStops.length - 1];
+  const firstStop = safeStops[0];
+  const lastStop = safeStops[safeStops.length - 1];
   const hasPickupCard =
     !hasRouteVariants && !!pickup_dropoff && (pickup_dropoff.departure?.length ?? 0) > 0;
   const hasDropoffCard =
@@ -183,7 +190,7 @@ export function TourTimelineSection({
     lastStop !== firstStop &&
     (lastStop._role === "dropoff" ||
       DROPOFF_STOP_RX.test((lastStop.category ?? "") + " " + (lastStop.name ?? "")));
-  let working = itineraryStops;
+  let working: readonly ItineraryStop[] = safeStops;
   if (lastIsDropoff && working.length > 1) working = working.slice(0, -1);
   if (firstIsPickup && working.length > 1) working = working.slice(1);
   const displayStops =
