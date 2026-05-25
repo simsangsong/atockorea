@@ -16,6 +16,7 @@ import { useI18n } from "@/lib/i18n";
 import { listStaticTourProducts } from "@/components/product-tour-static/catalog/staticTourCatalogCards";
 import { getShelvesForDate } from "@/lib/tours-shelves";
 import { useTourProductCardMedia } from "@/hooks/useTourProductCardMedia";
+import type { TourProductCardMediaMap } from "@/lib/tour-product/cardMediaTypes";
 import { TourShelf } from "./TourShelf";
 
 /**
@@ -29,9 +30,16 @@ function readNow(): Date {
 export type ShelvesContainerProps = {
   /** Override `now` for testing — production sites read the system clock. */
   now?: Date;
+  /**
+   * Server-resolved admin-media map for the catalog slugs (PR #92). Seeded into
+   * `useTourProductCardMedia` so the very first render already shows the
+   * admin-saved thumbnail instead of the build-time static catalog image —
+   * eliminates the visible flash users reported on 2026-05-25.
+   */
+  initialMediaBySlug?: TourProductCardMediaMap;
 };
 
-export function ShelvesContainer({ now }: ShelvesContainerProps) {
+export function ShelvesContainer({ now, initialMediaBySlug }: ShelvesContainerProps) {
   const { locale } = useI18n();
 
   // Lazy-evaluate "today" so SSR and CSR match on initial paint, then the
@@ -62,7 +70,7 @@ export function ShelvesContainer({ now }: ShelvesContainerProps) {
     () => Array.from(new Set(shelves.flatMap((shelf) => shelf.tours.map((tour) => tour.slug)))),
     [shelves],
   );
-  const mediaBySlug = useTourProductCardMedia(shelfSlugs, locale);
+  const mediaBySlug = useTourProductCardMedia(shelfSlugs, locale, initialMediaBySlug);
 
   if (shelves.length === 0) return null;
 

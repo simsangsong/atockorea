@@ -2,6 +2,7 @@ export { HeroSection } from "./hero-section";
 export { DestinationsShowcase } from "./destinations-showcase";
 export { ChooseTravelStyle } from "./choose-travel-style";
 export { FeaturedProductsShowcase } from "./featured-products-showcase";
+export { FEATURED_PRODUCT_SLUGS } from "./featured-product-slugs";
 export { WhyAtockorea } from "./why-atockorea";
 export { ProcessOperational } from "./process-operational";
 export { FinalCTA } from "./final-cta";
