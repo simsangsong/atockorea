@@ -10,12 +10,22 @@ import type { RegionSlug } from "@/lib/itinerary-builder/regions";
 import { localizePoiRow, normalizeBuilderLocale } from "@/lib/itinerary-builder/locale-content";
 import { useI18n, useTranslations } from "@/lib/i18n";
 import { homeBtnPrimary } from "@/lib/home/home-button-classes";
+import {
+  jejuZone,
+  quote,
+  tierForLocale,
+  type CruisePort,
+  type JejuPickupZone,
+  type PricingTrack,
+} from "@/lib/quote-engine/pricing-policy";
 import POICatalogMap from "./POICatalogMap";
 import ResultTimeline from "./ResultTimeline";
 import QuoteModal from "./QuoteModal";
 import AIRecommendPanel from "./AIRecommendPanel";
 import POICatalogGrid from "./POICatalogGrid";
 import POIDetailModal from "./POIDetailModal";
+import PlannerTopRail from "./PlannerTopRail";
+import LivePriceCard from "./LivePriceCard";
 
 interface Props {
   region: RegionSlug;
@@ -92,12 +102,51 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
   const matcherTrack = searchParams?.get("track") ?? null;
   const matcherOrigin = searchParams?.get("origin") ?? null;
   const isDmz = matcherTrack === "dmz";
+  const isCruise = matcherTrack === "cruise";
   const dmzT = useTranslations("itineraryBuilder.dmz");
   const activeLocale = normalizeBuilderLocale(searchParams?.get("locale")) ?? locale;
   const localizedPois = useMemo(
     () => pois.map((poi) => localizePoiRow(poi, activeLocale)),
     [activeLocale, pois]
   );
+
+  // Phase 10.3 D17 — live price lifted from QuoteModal into the shell so the
+  // PlannerTopRail's LivePriceCard and the QuoteModal both render the SAME
+  // number. Both call this single `pricing-policy.quote()` invocation.
+  const cartPois = useMemo(() => {
+    const byKey = new Map(localizedPois.map((p) => [p.poi_key, p]));
+    return cart.map((k) => byKey.get(k)).filter((p): p is MatchPoiRow => !!p);
+  }, [cart, localizedPois]);
+
+  const livePrice = useMemo(() => {
+    const sp = searchParams;
+    const track: PricingTrack = (sp?.get("track") as PricingTrack) || "private";
+    const guideLanguage = sp?.get("lang") || locale;
+    const date = sp?.get("date") || null;
+    const paxRaw = Number(sp?.get("party") ?? 2);
+    const pax = Number.isFinite(paxRaw) && paxRaw > 0 ? Math.round(paxRaw) : 2;
+    const durationRaw = Number(sp?.get("duration") ?? sp?.get("hours") ?? 8);
+    const durationHours = Number.isFinite(durationRaw) && durationRaw > 0 ? durationRaw : 8;
+    const pickup = (sp?.get("pickup") as JejuPickupZone) || "city";
+    const cruisePort = sp?.get("port") === "jeju_port" ? "jeju_port" : "gangjeong";
+
+    const poiRegions = cartPois.map((p) => p.region);
+    const jejuPoiZones =
+      region === "jeju" ? cartPois.map((p) => jejuZone(p.lat, p.lng)) : undefined;
+
+    return quote({
+      track,
+      region,
+      guideLanguageTier: tierForLocale(guideLanguage),
+      durationHours,
+      pax,
+      requestedDate: date,
+      jejuPickupZone: region === "jeju" && track !== "cruise" && track !== "dmz" ? pickup : null,
+      cruisePort: (track === "cruise" && region === "jeju" ? (cruisePort as CruisePort) : null),
+      poiRegions,
+      jejuPoiZones,
+    });
+  }, [searchParams, region, locale, cartPois]);
 
   const handleGetQuote = useCallback(() => {
     if (cart.length === 0) return;
@@ -110,6 +159,7 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
   if (isDmz) {
     return (
       <ActiveStopProvider>
+        <PlannerTopRail region={region} />
         <section className="mx-auto max-w-3xl px-4 py-10 md:px-6 md:py-16 lg:px-8">
           <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_16px_40px_-24px_rgba(15,23,42,0.30)]">
             <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-amber-900 px-6 py-8 md:px-10 md:py-10">
@@ -119,16 +169,26 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
               </p>
               <h1 className="text-h3 text-white">{dmzT("title")}</h1>
             </div>
-            <div className="px-6 py-7 md:px-10 md:py-9">
+            <div className="space-y-5 px-6 py-7 md:px-10 md:py-9">
               <p className="text-sm leading-relaxed text-slate-600">{dmzT("body")}</p>
-              <button
-                type="button"
-                onClick={() => setQuoteOpen(true)}
-                className={`${homeBtnPrimary} group mt-6 inline-flex items-center justify-center gap-2 shadow-md hover:gap-3`}
-              >
-                {dmzT("cta")}
-                <ArrowRight className="h-4 w-4" aria-hidden />
-              </button>
+              <LivePriceCard price={livePrice} isJeju={false} />
+              {livePrice.autoQuotable ? (
+                <button
+                  type="button"
+                  onClick={() => setQuoteOpen(true)}
+                  className={`${homeBtnPrimary} group mt-2 inline-flex items-center justify-center gap-2 shadow-md hover:gap-3`}
+                >
+                  예약하기 · 카드 등록
+                  <ArrowRight className="h-4 w-4" aria-hidden />
+                </button>
+              ) : (
+                <a
+                  href="mailto:contact@atockorea.com?subject=DMZ%20group%20quote%20request"
+                  className={`${homeBtnPrimary} group mt-2 inline-flex items-center justify-center gap-2 shadow-md hover:gap-3 text-center`}
+                >
+                  맞춤 견적 문의 · contact@atockorea.com
+                </a>
+              )}
             </div>
           </div>
         </section>
@@ -138,6 +198,7 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
           cart={[]}
           region={region}
           pois={localizedPois}
+          price={livePrice}
         />
       </ActiveStopProvider>
     );
@@ -145,6 +206,7 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
 
   return (
     <ActiveStopProvider>
+      <PlannerTopRail region={region} />
       {/* Two-column hero band — sticky map (left) + interaction rail (right).
           The rail holds only the surfaces that benefit from sticky proximity
           to the map: AI matcher + cart actions. The full POI catalog grid
@@ -196,12 +258,19 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
             <AIRecommendPanel
               region={region}
               pois={localizedPois}
+              cart={cart}
               onAccept={acceptRecommendation}
               onOpenDetail={setDetailPoi}
               onPreview={setPreviewKeys}
               track={matcherTrack}
               origin={matcherOrigin}
             />
+            {/* Phase 10.3 — always-visible live price (cart-aware) so users see
+                the number before clicking "Get quote". Same component, same
+                inputs the QuoteModal renders → one number, one truth. */}
+            <div className="mb-4 px-4 md:px-0">
+              <LivePriceCard price={livePrice} isJeju={region === "jeju"} />
+            </div>
             <ResultTimeline
               cart={cart}
               pois={localizedPois}
@@ -210,6 +279,7 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
               onGetQuote={handleGetQuote}
               cruiseBudgetMinutes={cruiseBudgetMinutes}
               onOpenDetail={setDetailPoi}
+              autoQuotable={livePrice.autoQuotable}
             />
           </div>
         </div>
@@ -234,6 +304,7 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
         cart={cart}
         region={region}
         pois={localizedPois}
+        price={livePrice}
       />
 
       {/* R1 — one shared detail drawer for the timeline + the catalog grid.

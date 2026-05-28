@@ -141,9 +141,15 @@ export async function PUT(
 
     // On cancel: restore inventory and send cancellation email (same logic as public PUT)
     if (body.status === 'cancelled' && existing.status !== 'cancelled') {
+      // Phase 10.6d — builder bookings have NULL tour_id, no inventory row
+      // to restore. Skip the inventory branch loudly so the (legitimate)
+      // skip doesn't read like a silent bug.
+      if (!existing.tour_id) {
+        console.info(`[admin/orders cancel] booking ${id} has no tour_id — skipping inventory restore (builder booking)`);
+      }
       try {
         const dateStr = existing.booking_date?.toString().split('T')[0];
-        if (dateStr) {
+        if (dateStr && existing.tour_id) {
           const { data: inventory } = await supabase
             .from('product_inventory')
             .select('*')
@@ -189,7 +195,30 @@ export async function PUT(
               // special_requests may be invalid JSON; use existing customerEmail/customerName
             }
           }
-          if (customerEmail && tour?.title) {
+          /**
+           * Phase 10.6d — branch on `source`. Builder bookings have NO
+           * `tour.title` (tour_id is NULL), so the legacy
+           * `if (customerEmail && tour?.title)` gate silently dropped the
+           * cancellation email for them. Now: builder rows dispatch to
+           * sendBuilderBookingCancellationEmail (emerald-tone parity);
+           * tour-product rows take the original path.
+           */
+          const isBuilder = (b as { source?: string }).source === 'itinerary_builder';
+          if (isBuilder && customerEmail) {
+            const { sendBuilderBookingCancellationEmail } = await import(
+              '@/lib/email-templates/builder-booking-cancellation'
+            );
+            await sendBuilderBookingCancellationEmail({
+              to: customerEmail,
+              bookingId: id,
+              bookingReference: ((b as { booking_reference?: string | null }).booking_reference) ?? null,
+              tourDate: (b as { tour_date?: string | null }).tour_date ?? null,
+              numberOfGuests: (b as { number_of_guests?: number | null }).number_of_guests ?? null,
+              totalKrw: parseFloat(String((b as any).final_price ?? 0)),
+              customerName,
+              refundEligible: (b as { refund_eligible?: boolean }).refund_eligible !== false,
+            });
+          } else if (customerEmail && tour?.title) {
             const { sendBookingCancellationEmail } = await import('@/lib/email');
             await sendBookingCancellationEmail({
               to: customerEmail,

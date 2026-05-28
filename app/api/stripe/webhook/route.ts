@@ -390,6 +390,7 @@ async function sendCardOnFileEmail(
     .select(
       `
       id, tour_id, user_id, booking_date, tour_date, number_of_guests, final_price,
+      currency, source, itinerary,
       pickup_point_id, contact_email, contact_name, contact_phone, booking_reference,
       tours ( id, title, image_url ),
       user_profiles ( email, full_name )
@@ -411,6 +412,44 @@ async function sendCardOnFileEmail(
     (booking as { contact_name?: string }).contact_name ??
     profile?.full_name ??
     'Guest';
+
+  /**
+   * Phase 10 D17/D23: itinerary-builder bookings have `source='itinerary_builder'`,
+   * NULL tour_id, and an `itinerary` jsonb payload. They get a different
+   * confirmation email (no tour title to reference). Phase 5 wires the
+   * real template; Phase 2 ships a graceful placeholder so the webhook
+   * stops silently skipping builder bookings entirely.
+   */
+  const isBuilder = (booking as { source?: string }).source === 'itinerary_builder';
+  if (isBuilder) {
+    if (!customerEmail) return;
+    try {
+      const { sendBuilderBookingConfirmationEmail } = await import(
+        '@/lib/email-templates/builder-booking-confirmation'
+      );
+      const result = await sendBuilderBookingConfirmationEmail({
+        to: customerEmail,
+        bookingId: booking.id,
+        bookingReference:
+          (booking as { booking_reference?: string | null }).booking_reference ?? null,
+        bookingDate: booking.booking_date,
+        tourDate: booking.tour_date as string | null,
+        numberOfGuests: booking.number_of_guests,
+        totalKrw: parseFloat(String(booking.final_price ?? 0)),
+        customerName,
+        itinerary: (booking as { itinerary?: unknown }).itinerary,
+        paymentStatus: 'authorized',
+      });
+      if (!result.success) {
+        console.error('Builder confirmation email failed:', result.error);
+      } else {
+        console.log(`Builder confirmation email sent: ${result.messageId}`);
+      }
+    } catch (err) {
+      console.error('Builder confirmation email dispatch error:', err);
+    }
+    return;
+  }
 
   if (!booking.tours) return;
 

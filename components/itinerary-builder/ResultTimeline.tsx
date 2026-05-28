@@ -43,6 +43,9 @@ interface Props {
   onRemove: (key: string) => void;
   onReorder: (next: string[]) => void;
   onGetQuote: () => void;
+  /** Phase 10.5b — when false the CTA flips to a mailto contact gate
+   *  (14+ pax non-DMZ, >28 pax DMZ, Solati under min-hours). */
+  autoQuotable?: boolean;
   /** Cruise track time budget in minutes (e.g. 6h cruise = 360). */
   cruiseBudgetMinutes?: number | null;
   /** R1 — card body tap opens the shared POIDetailModal (lifted to BuilderShell). */
@@ -76,6 +79,7 @@ export default function ResultTimeline({
   onGetQuote,
   cruiseBudgetMinutes,
   onOpenDetail,
+  autoQuotable = true,
 }: Props) {
   const t = useTranslations("itineraryBuilder.cart");
   const tt = useTranslations("itineraryBuilder.timeline");
@@ -179,6 +183,7 @@ export default function ResultTimeline({
           cruiseBudgetMinutes={cruiseBudgetMinutes ?? null}
           overBudget={overBudget}
           onGetQuote={onGetQuote}
+          autoQuotable={autoQuotable}
           t={t}
         />
       ) : null}
@@ -376,14 +381,22 @@ function EmptyState({
   body: string;
   lookLabel: string;
 }) {
+  // Phase 10.4.1 — premium re-do. Very-light mint card floating on the
+  // stone-50 page background; NO border (user direction 2026-05-29).
+  // Layered shadow + slight hover lift = floating feel; mint surface
+  // ties the rail's three cards together as one composition.
   return (
-    <div className="rounded-xl border border-slate-200/80 bg-slate-50/65 px-5 py-9 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.75)]">
-      <span className="mx-auto mb-3 inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white text-slate-500 shadow-sm ring-1 ring-slate-200/80">
-        <MapPin className="h-4 w-4" strokeWidth={2} aria-hidden />
+    <div className="rounded-card bg-emerald-50/50 px-5 py-10 text-center shadow-[0_2px_8px_rgba(15,23,42,0.04),0_22px_50px_-20px_rgba(15,23,42,0.20)] transition-shadow duration-300 ease-out hover:shadow-[0_4px_14px_rgba(15,23,42,0.06),0_30px_64px_-20px_rgba(15,23,42,0.26)]">
+      <span className="mx-auto mb-3.5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-white text-emerald-700 shadow-[0_1px_2px_rgba(15,23,42,0.06),0_6px_14px_-4px_rgba(15,23,42,0.12)]">
+        <MapPin className="h-5 w-5" strokeWidth={2} aria-hidden />
       </span>
-      <p className="text-caption font-bold text-slate-900">{headline}</p>
-      <p className="mx-auto mt-1.5 max-w-[26ch] text-micro leading-relaxed text-slate-500">{body}</p>
-      <p className="mt-3 inline-flex items-center gap-1 text-micro font-medium text-slate-500">
+      <p className="text-body font-bold leading-snug tracking-tight text-slate-900">
+        {headline}
+      </p>
+      <p className="mx-auto mt-2 max-w-[28ch] text-caption leading-relaxed text-slate-500">
+        {body}
+      </p>
+      <p className="mt-4 inline-flex items-center gap-1 rounded-full bg-white px-2.5 py-1 text-micro font-semibold text-slate-600 shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
         {/* Mobile: rail is below sticky map → arrow points up.
             lg+: rail is right of map → arrow points left. */}
         <ArrowUp className="h-3 w-3 lg:hidden" aria-hidden />
@@ -401,6 +414,7 @@ function Footer({
   cruiseBudgetMinutes,
   overBudget,
   onGetQuote,
+  autoQuotable,
   t,
 }: {
   stayMinutes: number;
@@ -409,6 +423,7 @@ function Footer({
   cruiseBudgetMinutes: number | null;
   overBudget: boolean;
   onGetQuote: () => void;
+  autoQuotable: boolean;
   t: ReturnType<typeof useTranslations>;
 }) {
   return (
@@ -454,14 +469,33 @@ function Footer({
           })}
         </p>
       ) : null}
-      <button
-        type="button"
-        onClick={onGetQuote}
-        className={`${homeBtnPrimary} w-full`}
-      >
-        {t("getQuoteCta")}
-      </button>
-      <p className="mt-2 text-center text-micro text-slate-500">{t("getQuoteHint")}</p>
+      {autoQuotable ? (
+        <>
+          <button
+            type="button"
+            onClick={onGetQuote}
+            className={`${homeBtnPrimary} w-full`}
+          >
+            {t("getQuoteCta")}
+          </button>
+          <p className="mt-2 text-center text-micro text-slate-500">{t("getQuoteHint")}</p>
+        </>
+      ) : (
+        // Phase 10.5b — out-of-scope (14+ pax non-DMZ / >28 pax DMZ /
+        // Solati under min-hours). Disabled CTA + mailto gate. No DB row
+        // is ever created for these requests (D4/D19 spin-off planner).
+        <>
+          <a
+            href="mailto:contact@atockorea.com?subject=Custom%20itinerary%20quote%20request"
+            className={`${homeBtnPrimary} w-full text-center`}
+          >
+            맞춤 견적 문의하기 · contact@atockorea.com
+          </a>
+          <p className="mt-2 text-center text-micro text-slate-500">
+            이 일정은 그룹/일정 특수성 때문에 즉시 예약이 어렵습니다. 이메일로 빠르게 응답드릴게요.
+          </p>
+        </>
+      )}
     </div>
   );
 }

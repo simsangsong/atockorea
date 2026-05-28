@@ -26,6 +26,9 @@ export async function GET(req: NextRequest) {
       : 'created_at';
     const order = searchParams.get('order') === 'asc' ? 'asc' : 'desc';
 
+    /** Phase 10.6 — accept source filter chip ('tour_product' / 'itinerary_builder'). */
+    const source = searchParams.get('source') || '';
+
     let query = supabase
       .from('bookings')
       .select('*')
@@ -34,6 +37,9 @@ export async function GET(req: NextRequest) {
 
     if (status) {
       query = query.eq('status', status);
+    }
+    if (source) {
+      query = query.eq('source', source);
     }
 
     const { data: rows, error } = await query;
@@ -92,8 +98,16 @@ export async function GET(req: NextRequest) {
       number_of_guests: b.number_of_guests ?? b.number_of_people ?? 1,
       number_of_people: b.number_of_people ?? b.number_of_guests ?? 1,
       final_price: b.final_price,
+      /** Phase 10.6 — currency + source + booking_reference + itinerary
+       *  carried through so the admin list can render KRW/USD correctly,
+       *  badge builder rows, and link to the bookings page. */
+      currency: b.currency ?? 'usd',
+      source: b.source ?? 'tour_product',
+      booking_reference: b.booking_reference ?? null,
+      itinerary: b.itinerary ?? null,
       status: b.status,
       payment_status: b.payment_status,
+      payment_intent_status: b.payment_intent_status ?? null,
       pickup_point_id: b.pickup_point_id,
       contact_name: b.contact_name ?? null,
       contact_email: b.contact_email ?? null,

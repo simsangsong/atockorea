@@ -52,15 +52,27 @@ export async function GET(req: NextRequest) {
       .select('*', { count: 'exact', head: true })
       .eq('status', 'pending');
 
-    // Get total revenue (sum of all paid bookings)
+    /** Phase 10.6 — split revenue by currency. Pre-Phase-10 the dashboard
+     *  hardcoded ₩ but legacy data is USD; after Phase 10.2 builder bookings
+     *  land in KRW. Sum each currency separately so the dashboard renders
+     *  honest totals per currency instead of mixing them. */
     const { data: bookings } = await supabase
       .from('bookings')
-      .select('final_price, payment_status')
+      .select('final_price, payment_status, currency')
       .eq('payment_status', 'paid');
 
-    const totalRevenue = bookings?.reduce((sum, booking) => 
-      sum + parseFloat(booking.final_price.toString()), 0
-    ) || 0;
+    const revenueByCurrency = (bookings ?? []).reduce(
+      (acc, b) => {
+        const ccy = (b as { currency?: string | null }).currency === 'krw' ? 'krw' : 'usd';
+        acc[ccy] = (acc[ccy] ?? 0) + parseFloat(String(b.final_price ?? 0));
+        return acc;
+      },
+      { usd: 0, krw: 0 } as { usd: number; krw: number },
+    );
+    /** Backwards-compat scalar — pre-Phase-10 dashboards may still read this.
+     *  Equals the USD bucket since legacy data is USD-only; new dashboards
+     *  should read revenueByCurrency.{usd,krw} separately. */
+    const totalRevenue = revenueByCurrency.usd;
 
     // Get recent bookings (last 20 for better visibility)
     const { data: recentBookings, error: bookingsError } = await supabase
@@ -73,6 +85,8 @@ export async function GET(req: NextRequest) {
         number_of_guests,
         number_of_people,
         final_price,
+        currency,
+        source,
         status,
         payment_status,
         pickup_point_id,
@@ -110,6 +124,7 @@ export async function GET(req: NextRequest) {
         todayOrders: todayOrders || 0,
         pendingOrders: pendingOrders || 0,
         totalRevenue,
+        revenueByCurrency,
       },
       recentBookings: recentBookings || [],
     });

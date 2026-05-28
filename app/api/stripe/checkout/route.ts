@@ -77,6 +77,8 @@ export async function POST(req: NextRequest) {
         tour_id,
         tour_date,
         final_price,
+        currency,
+        source,
         payment_status,
         status,
         contact_email,
@@ -103,13 +105,21 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Booking already authorized' }, { status: 400 });
     }
 
-    const finalPriceUsd = Number(booking.final_price);
-    if (!Number.isFinite(finalPriceUsd) || finalPriceUsd <= 0) {
+    const finalPrice = Number(booking.final_price);
+    if (!Number.isFinite(finalPrice) || finalPrice <= 0) {
       return NextResponse.json({ error: 'Booking has no valid price' }, { status: 400 });
     }
 
-    /** Authorized amount = full tour amount, captured on tour day at 10:00 AM KST. */
-    const noShowFeeUsdCents = Math.round(finalPriceUsd * 100);
+    /**
+     * Per Phase 10 D16: bookings.currency tells us whether `final_price` is in
+     * USD (legacy tour-product, two-decimal — convert to cents) or KRW
+     * (itinerary-builder, zero-decimal — already whole minor units). Stripe
+     * supports both natively. Existing rows default to 'usd' so the legacy
+     * path is unchanged.
+     */
+    const currency: 'usd' | 'krw' = booking.currency === 'krw' ? 'krw' : 'usd';
+    const amountMinor =
+      currency === 'krw' ? Math.round(finalPrice) : Math.round(finalPrice * 100);
 
     const customerEmail =
       bookingData?.customerInfo?.email ?? (booking as { contact_email?: string }).contact_email ?? null;
@@ -171,24 +181,36 @@ export async function POST(req: NextRequest) {
     }
     const lead = daysUntil(tourDateStr);
 
+    /** Source-aware metadata: tour_id is NULL for itinerary-builder bookings. */
+    const baseMetadata: Record<string, string> = {
+      booking_id: bookingId,
+      kind: '__placeholder__',
+      ...(customerName ? { customer_name: customerName } : {}),
+    };
+    if (booking.tour_id != null) baseMetadata.tour_id = String(booking.tour_id);
+    if ((booking as { source?: string }).source) baseMetadata.source = String((booking as { source?: string }).source);
+
+    /** Description differs slightly for builder bookings (no parent tour title). */
+    const intentDescription = booking.tour_id
+      ? `Tour-day auto charge authorization: ${tourTitle} (booking ${bookingId})`
+      : `Custom itinerary auto charge authorization (booking ${bookingId})`;
+    const setupDescription = booking.tour_id
+      ? `Card on file for tour-day auto charge: ${tourTitle} (booking ${bookingId})`
+      : `Card on file for custom itinerary auto charge (booking ${bookingId})`;
+
     if (lead <= HOLD_WINDOW_DAYS) {
       /* === Path A — tour within 7 days: place the auth hold immediately. === */
       const paymentIntent = await stripe.paymentIntents.create({
-        amount: noShowFeeUsdCents,
-        currency: 'usd',
+        amount: amountMinor,
+        currency,
         capture_method: 'manual',
         customer: customerId,
         setup_future_usage: 'off_session',
         payment_method_types: ['card'],
         receipt_email: customerEmail ?? undefined,
-        description: `Tour-day auto charge authorization: ${tourTitle} (booking ${bookingId})`,
+        description: intentDescription,
         statement_descriptor_suffix: 'TOUR HOLD',
-        metadata: {
-          booking_id: bookingId,
-          tour_id: String(booking.tour_id),
-          ...(customerName ? { customer_name: customerName } : {}),
-          kind: 'tour_day_auto_charge_hold',
-        },
+        metadata: { ...baseMetadata, kind: 'tour_day_auto_charge_hold' },
       });
 
       const expiresAt = new Date(Date.now() + HOLD_WINDOW_DAYS * MS_PER_DAY).toISOString();
@@ -202,7 +224,11 @@ export async function POST(req: NextRequest) {
           stripe_customer_id: customerId,
           payment_intent_status: 'auth_pending',
           authorization_expires_at: expiresAt,
-          no_show_fee_usd_cents: noShowFeeUsdCents,
+          /** Legacy USD-cents mirror — preserved for cron compatibility. KRW
+           *  bookings still write a USD-cents-shaped int here (it's the same
+           *  amount in minor units; the cron reads `final_price` + `currency`
+           *  in §2-cron-verify so this stays informational only). */
+          no_show_fee_usd_cents: currency === 'usd' ? amountMinor : null,
           card_collection_method: 'immediate_hold',
           payment_reference: paymentIntent.id,
           updated_at: new Date().toISOString(),
@@ -215,7 +241,10 @@ export async function POST(req: NextRequest) {
         paymentIntentId: paymentIntent.id,
         publishableKey,
         bookingId,
-        amountUsdCents: noShowFeeUsdCents,
+        currency,
+        amountMinor,
+        /** @deprecated USD-only callers — use `currency` + `amountMinor`. */
+        amountUsdCents: currency === 'usd' ? amountMinor : undefined,
         leadDays: lead,
       });
     }
@@ -225,13 +254,8 @@ export async function POST(req: NextRequest) {
       customer: customerId,
       payment_method_types: ['card'],
       usage: 'off_session',
-      description: `Card on file for tour-day auto charge: ${tourTitle} (booking ${bookingId})`,
-      metadata: {
-        booking_id: bookingId,
-        tour_id: String(booking.tour_id),
-        ...(customerName ? { customer_name: customerName } : {}),
-        kind: 'tour_day_auto_charge_setup',
-      },
+      description: setupDescription,
+      metadata: { ...baseMetadata, kind: 'tour_day_auto_charge_setup' },
     });
 
     await supabase
@@ -243,7 +267,7 @@ export async function POST(req: NextRequest) {
         stripe_customer_id: customerId,
         payment_intent_status: 'setup_pending_hold',
         authorization_expires_at: null,
-        no_show_fee_usd_cents: noShowFeeUsdCents,
+        no_show_fee_usd_cents: currency === 'usd' ? amountMinor : null,
         card_collection_method: 'setup_intent_then_hold',
         payment_reference: setupIntent.id,
         updated_at: new Date().toISOString(),
@@ -256,7 +280,10 @@ export async function POST(req: NextRequest) {
       setupIntentId: setupIntent.id,
       publishableKey,
       bookingId,
-      amountUsdCents: noShowFeeUsdCents,
+      currency,
+      amountMinor,
+      /** @deprecated USD-only callers — use `currency` + `amountMinor`. */
+      amountUsdCents: currency === 'usd' ? amountMinor : undefined,
       leadDays: lead,
     });
   } catch (error: unknown) {

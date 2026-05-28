@@ -49,9 +49,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry(baseUrl, '/tours/list', { changeFrequency: 'daily', priority: 0.9 }),
     entry(baseUrl, '/search', { changeFrequency: 'daily', priority: 0.75 }),
     entry(baseUrl, '/itinerary-builder', { changeFrequency: 'weekly', priority: 0.75 }),
-    entry(baseUrl, '/itinerary-builder/busan', { changeFrequency: 'weekly', priority: 0.7 }),
-    entry(baseUrl, '/itinerary-builder/jeju', { changeFrequency: 'weekly', priority: 0.7 }),
-    entry(baseUrl, '/itinerary-builder/seoul', { changeFrequency: 'weekly', priority: 0.65 }),
+    // Phase 10.3.2 — `/itinerary-builder/[region]` was collapsed into
+    // `/itinerary-builder?region=…` (308 redirect for backwards compat).
+    // Sitemap now points to the canonical query-param form so crawlers
+    // don't waste budget on the redirect hop.
+    entry(baseUrl, '/itinerary-builder?region=busan', { changeFrequency: 'weekly', priority: 0.7 }),
+    entry(baseUrl, '/itinerary-builder?region=jeju', { changeFrequency: 'weekly', priority: 0.7 }),
+    entry(baseUrl, '/itinerary-builder?region=seoul', { changeFrequency: 'weekly', priority: 0.65 }),
     entry(baseUrl, '/contact', { changeFrequency: 'monthly', priority: 0.45 }),
     entry(baseUrl, '/support', { changeFrequency: 'monthly', priority: 0.45 }),
     entry(baseUrl, '/about', { changeFrequency: 'monthly', priority: 0.4 }),

@@ -2341,7 +2341,10 @@
       "close": "Close",
       "responseHint": "We'll respond within 24 hours by email.",
       "errorEmailRequired": "Please enter your email so we can reply.",
+      "errorDateRequired": "Please pick a tour date — we use it to lock in pricing.",
       "errorGeneric": "Couldn't send the request — please try again or contact support.",
+      "errorOutOfScope": "This trip needs a custom quote — please email {email} and we'll get back to you fast.",
+      "errorPriceChanged": "Prices just updated. New total: {total}. Please re-check and confirm.",
       "eyebrow": "Custom itinerary",
       "guideLanguageLabel": "Guide language",
       "durationLabel": "Tour length",
@@ -2424,8 +2427,8 @@
       "cruiseBudget": "Cruise time window",
       "cruiseOverBudget": "Over budget by {over} — trim a stop or shorten visits",
       "remove": "Remove",
-      "getQuoteCta": "Get a custom quote",
-      "getQuoteHint": "We'll respond within 24 hours"
+      "getQuoteCta": "Book + hold card",
+      "getQuoteHint": "Card saved securely · captured on tour day · 24h free cancellation"
     },
     "grid": {
       "title": "Curated stops",
@@ -2468,6 +2471,31 @@
       "title": "DMZ Private Tour",
       "body": "A fixed full-day itinerary to the edge of the Korean peninsula's most fortified border — Imjingak, the 3rd Infiltration Tunnel, Dora Observatory, and the Gamaksan suspension bridge. Flat price by group size, with your own car + guide.",
       "cta": "See my price"
+    },
+    "planner": {
+      "track": "Trip type",
+      "region": "Region",
+      "date": "Date",
+      "party": "Guests",
+      "lang": "Guide language",
+      "duration": "Duration",
+      "hours": "Hours ashore",
+      "ship": "Ship",
+      "pickup": "Pickup zone",
+      "port": "Cruise port",
+      "editTrip": "Edit your trip",
+      "close": "Close",
+      "done": "Done",
+      "pickupZones": {
+        "city": "Jeju City",
+        "north": "North (Hagwi · Aewol)",
+        "outer": "Outer (Hyeopjae · Seongsan · Seogwipo)",
+        "cross_island": "Cross-island (150 km+)"
+      },
+      "ports": {
+        "gangjeong": "Gangjeong (Seogwipo)",
+        "jeju_port": "Jeju Port"
+      }
     }
   },
   "appShell": {
