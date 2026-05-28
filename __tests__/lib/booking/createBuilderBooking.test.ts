@@ -170,4 +170,36 @@ describe("createBuilderBooking — Phase 10 D11/D12/D17/D25", () => {
     const row = createBuilderBooking(makeBaselineInput({ pax: 0 }));
     expect(row.number_of_guests).toBe(1);
   });
+
+  describe("audit fixes 2026-05-29", () => {
+    it("audit fix #2 — NaN pax never reaches the DB column", () => {
+      const row = createBuilderBooking(makeBaselineInput({ pax: NaN as unknown as number }));
+      expect(row.number_of_guests).toBe(1);
+      expect(Number.isNaN(row.number_of_guests)).toBe(false);
+      // Same defensive clamp in the jsonb mirror.
+      expect(row.itinerary.pax).toBe(1);
+      expect(Number.isNaN(row.itinerary.pax)).toBe(false);
+    });
+
+    it("audit fix #2 — Infinity pax also clamps to 1", () => {
+      const row = createBuilderBooking(
+        makeBaselineInput({ pax: Number.POSITIVE_INFINITY as unknown as number }),
+      );
+      expect(row.number_of_guests).toBe(1);
+      expect(row.itinerary.pax).toBe(1);
+    });
+
+    it("audit fix #2 — negative pax clamps to 1", () => {
+      const row = createBuilderBooking(makeBaselineInput({ pax: -5 }));
+      expect(row.number_of_guests).toBe(1);
+      expect(row.itinerary.pax).toBe(1);
+    });
+
+    it("audit fix #3 — number_of_guests and itinerary.pax never disagree", () => {
+      for (const pax of [0, 1, 2, 7, 13, 99]) {
+        const row = createBuilderBooking(makeBaselineInput({ pax }));
+        expect(row.itinerary.pax).toBe(row.number_of_guests);
+      }
+    });
+  });
 });

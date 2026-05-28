@@ -50,13 +50,47 @@ export type NoShowHoldCardFormProps = {
   amountUsdCents?: number;
 };
 
-/** Resolve the deprecated `amountUsdCents` alias into the unified shape. */
-function resolveAmount(props: NoShowHoldCardFormProps): { currency: 'usd' | 'krw'; amountMinor: number } {
-  if (props.currency && typeof props.amountMinor === 'number') {
-    return { currency: props.currency, amountMinor: props.amountMinor };
+/**
+ * Resolve `(currency, amountMinor, amountUsdCents)` into a unified
+ * `{currency, amountMinor}` shape.
+ *
+ * Precedence (Phase 10.2.1 audit fix #1 + #11):
+ *   1. Explicit `currency` ALWAYS wins, even when `amountMinor` is missing —
+ *      previously this guard required BOTH props which silently dropped a
+ *      KRW currency signal if the amount was undefined (rendered '$0' to
+ *      the user). Now we honor the caller's currency choice and only fall
+ *      back to USD when no currency is explicit at all.
+ *   2. If no `currency` but the deprecated `amountUsdCents` is present,
+ *      treat as USD cents (legacy tour-product flow).
+ *   3. Otherwise USD/0 (last-resort default). In dev, emit a console.warn
+ *      so the silent-$0 case is loud during testing.
+ *
+ * Exported for unit testing — see __tests__/components/checkout/NoShowHoldCardForm.format.test.ts.
+ */
+export function resolveAmount(
+  props: Pick<NoShowHoldCardFormProps, 'currency' | 'amountMinor' | 'amountUsdCents'>,
+): { currency: 'usd' | 'krw'; amountMinor: number } {
+  if (props.currency) {
+    const amountMinor =
+      typeof props.amountMinor === 'number'
+        ? props.amountMinor
+        : typeof props.amountUsdCents === 'number' && props.currency === 'usd'
+          ? props.amountUsdCents
+          : 0;
+    if (amountMinor === 0 && process.env.NODE_ENV !== 'production') {
+      console.warn(
+        `[NoShowHoldCardForm] resolveAmount: currency='${props.currency}' but no amountMinor provided — rendering 0.`,
+      );
+    }
+    return { currency: props.currency, amountMinor };
   }
   if (typeof props.amountUsdCents === 'number') {
     return { currency: 'usd', amountMinor: props.amountUsdCents };
+  }
+  if (process.env.NODE_ENV !== 'production') {
+    console.warn(
+      '[NoShowHoldCardForm] resolveAmount: no currency or amount provided — defaulting to USD/0.',
+    );
   }
   return { currency: 'usd', amountMinor: 0 };
 }

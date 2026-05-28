@@ -52,6 +52,7 @@ function fmtKrw(n: number): string {
 interface ItineraryPayload {
   poi_keys?: string[];
   region?: string;
+  /** 'private' | 'cruise' | 'dmz' — DMZ has fixed-price (duration_hours=0). */
   track?: string;
   duration_hours?: number;
   guide_language?: string;
@@ -83,7 +84,17 @@ function buildHtml(input: BuilderBookingConfirmationInput): string {
         ? "DMZ private tour"
         : "private day trip";
   const lang = it.guide_language ? ` · ${escapeHtml(it.guide_language)} guide` : "";
-  const hours = it.duration_hours ? ` · ${it.duration_hours}h` : "";
+  /**
+   * Audit fix #4 — DMZ track sets duration_hours=0 (fixed-price product, no
+   * customer-chosen duration). Falsy check would drop the row entirely; we
+   * detect DMZ explicitly and render a label instead.
+   */
+  const hours =
+    it.track === "dmz"
+      ? " · DMZ tour"
+      : typeof it.duration_hours === "number" && it.duration_hours > 0
+        ? ` · ${it.duration_hours}h`
+        : "";
 
   return `<!DOCTYPE html>
 <html><body style="margin:0;padding:24px;font-family:system-ui,-apple-system,sans-serif;background:#f8fafc;color:#0f172a;">

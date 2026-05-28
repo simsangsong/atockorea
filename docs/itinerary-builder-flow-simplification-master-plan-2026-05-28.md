@@ -568,12 +568,13 @@ booking in `/admin/orders` (Phase 6 polishes the ops side).
 
 ---
 
-### Phase 6 — Ops surface: just show builder bookings in `/admin/orders` (0.5d)
+### Phase 6 — Ops surface: builder bookings in `/admin/orders` + currency-aware admin/customer formatters (1d)
 
 **Deliverable:** ops sees itinerary bookings inside `/admin/orders`
-alongside tour-product bookings; nothing else changes on the ops side.
-There is no "set quote amount" form because there are no manual quotes
-to set.
+alongside tour-product bookings; every customer-visible and admin-visible
+surface that renders a booking total reads `bookings.currency` instead
+of assuming USD/`$`. There is no "set quote amount" form because there
+are no manual quotes to set.
 
 **Tasks:**
 - [ ] (6a) `app/admin/orders/page.tsx` — add a `source` filter (chips:
@@ -585,16 +586,54 @@ to set.
   the guide language / duration / pickup zone. Reuse `match_pois` for
   POI name lookup. Settlement (capture/release) is the EXISTING
   `/api/admin/orders/[id]/settle` flow — no changes.
+- [ ] **(6c) Currency-aware formatting sweep (Phase 10.2.1 audit gap):**
+  promote `NoShowHoldCardForm.formatHoldAmount()` (or extract the same
+  logic to `lib/format/currency.ts`) and apply it everywhere the legacy
+  `$`-prefix + `parseFloat(final_price).toFixed(2)` pattern exists. Add
+  `currency` to every `bookings` SELECT that feeds a price-displaying
+  surface. Required sites (verified at audit 2026-05-29):
+  - `app/admin/orders/page.tsx:313` — list-row total cell ("$" → currency-aware).
+  - `app/admin/orders/[id]/page.tsx:482-487` — "Hold Amount" derives
+    from `final_price + currency` (NOT from `no_show_fee_usd_cents`,
+    which Phase 2 explicitly NULLs out for KRW).
+  - `app/admin/page.tsx:158,292` — admin dashboard "총 매출" hardcoded
+    `₩` but legacy rows are USD → renders `$52` USD as `₩52`. Existing
+    pre-Phase-10 bug, must be fixed in the same sweep.
+  - `app/api/bookings/[id]/receipt/route.ts:49,105` — customer-printable
+    receipt hardcoded `$${final}` and `.toFixed(2)`. Branch on
+    `booking.currency`.
+  - `app/api/admin/orders/route.ts` — add `currency` to the returned
+    `Order` shape so the list page has the data.
+- [ ] **(6d) Builder cancellation parity (Phase 10.2.1 audit gap):**
+  - `app/api/admin/orders/[id]/route.ts:143-203` admin cancellation gates
+    email send on `customerEmail && tour?.title` — builder bookings
+    (no parent tour) silently get NO cancellation email. Branch on
+    `booking.source === 'itinerary_builder'` and dispatch a builder
+    cancellation email (new template `lib/email-templates/builder-booking-cancellation.ts`,
+    same minimal-stub pattern as builder-booking-confirmation.ts).
+  - `app/api/bookings/[id]/route.ts:380-405` customer-cancellation path
+    passes `refundAmount: parseFloat(final_price)` with no currency arg
+    to `sendBookingCancellationEmail` / `notifyBookingCancelled`. Thread
+    `currency: booking.currency ?? 'usd'` through and have the
+    templates format accordingly.
 
 **Acceptance:**
 - [ ] Submit an itinerary as a customer → ops sees it in
   `/admin/orders?source=itinerary_builder` immediately, with PI/SI
   status visible like any tour-product booking.
+- [ ] A KRW builder booking displays as "₩340,000" everywhere (admin
+  list, admin detail "Hold Amount", admin dashboard "총 매출",
+  customer-printable receipt). A USD tour-product booking still
+  displays as "$52" in every same surface.
+- [ ] Builder cancellation (customer self-cancel + admin cancel) sends
+  a confirmation email in KRW with correct currency formatting.
 - [ ] Tour-day capture / release works via the existing settle endpoint
   (no new ops form to learn).
 
-**Cut-line:** Ops has one queue. The "10 proposals = 하루 다 가" problem
-is gone — ops only touches what would have been a settlement anyway.
+**Cut-line:** Ops has one queue with currency labels you can trust.
+The "10 proposals = 하루 다 가" problem is gone — ops only touches
+what would have been a settlement anyway, and customer receipts /
+emails don't lie about which currency was charged.
 
 ---
 

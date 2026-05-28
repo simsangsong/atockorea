@@ -122,8 +122,26 @@ function nullable(s: string | null | undefined): string | null {
   return v.length > 0 ? v : null;
 }
 
+/**
+ * Clamp pax to a positive integer. NaN / Infinity / negative / 0 all collapse
+ * to 1. Audit fix #2 — `Math.max(1, Math.round(NaN))` returns NaN, which made
+ * the bookings INSERT crash with 'invalid input syntax for type integer: NaN'.
+ */
+function safePax(pax: number | null | undefined): number {
+  const n = typeof pax === "number" && Number.isFinite(pax) ? Math.round(pax) : NaN;
+  return Number.isFinite(n) && n >= 1 ? n : 1;
+}
+
 export function createBuilderBooking(input: BuilderBookingInput): BuilderBookingRow {
   const total = Math.round(input.price.total);
+  /**
+   * Audit fix #3 — derive `guests` once and use the same value in both
+   * `number_of_guests` (the column) and `itinerary.pax` (the jsonb). Previously
+   * the jsonb stored the raw `input.pax` while the column stored the clamped
+   * value, so a caller passing pax=0 ended up with column=1 + jsonb=0 → BI
+   * disagreement.
+   */
+  const guests = safePax(input.pax);
   return {
     user_id: input.userId ?? null,
     tour_id: null,
@@ -131,7 +149,7 @@ export function createBuilderBooking(input: BuilderBookingInput): BuilderBooking
     booking_reference: input.bookingReferenceOverride ?? bookingReferenceSlug(),
     booking_date: todayYmd(),
     tour_date: input.tourDate,
-    number_of_guests: Math.max(1, Math.round(input.pax)),
+    number_of_guests: guests,
     /** D11 — flat-rate; three columns hold the same value so legacy BI joins
      *  on `unit_price` get a sensible number. Per-person fiction would corrupt
      *  Solati 10-13 pax reports (one price, many guests). */
@@ -161,7 +179,7 @@ export function createBuilderBooking(input: BuilderBookingInput): BuilderBooking
       vehicle: input.price.vehicle,
       tier: input.price.tier,
       peak_season: input.price.peakSeason,
-      pax: input.pax,
+      pax: guests,
       locale: nullable(input.locale),
       source_url: nullable(input.sourceUrl),
       notes: nullable(input.notes),
