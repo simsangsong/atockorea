@@ -101,10 +101,18 @@ export async function POST(request: Request) {
   // ── Optional fields with safe defaults ───────────────────────────────────
   const contactName = typeof body.contact_name === "string" ? body.contact_name.trim() : null;
   const contactPhone = typeof body.contact_phone === "string" ? body.contact_phone.trim() : null;
-  const partySize =
-    typeof body.party_size === "number" && Number.isFinite(body.party_size) && body.party_size > 0
-      ? Math.round(body.party_size)
-      : 2;
+  // Phase 10.5.1 audit fix — party_size was silently defaulting to 2 when
+  // missing or non-numeric. Now strict: server-side 400 when missing/invalid.
+  // The browser modal always sends a value; the strict gate catches API
+  // clients (Postman, automation) that would otherwise silently book 2 pax.
+  if (
+    typeof body.party_size !== "number" ||
+    !Number.isFinite(body.party_size) ||
+    body.party_size <= 0
+  ) {
+    return badRequest("party_size", "must be a positive number");
+  }
+  const partySize = Math.round(body.party_size);
   const notes = typeof body.notes === "string" ? body.notes.trim().slice(0, 2000) : null;
   const locale = typeof body.locale === "string" ? body.locale : null;
   const sourceUrl = typeof body.source_url === "string" ? body.source_url : null;
@@ -159,11 +167,28 @@ export async function POST(request: Request) {
         },
       ]),
     );
+    // Phase 10.5.1 audit fix — reject submissions that reference POIs the
+    // server can't resolve (deleted/renamed between page load and submit).
+    // Was silently dropping them and pricing on a SHORTER list while the
+    // booking row stored the full cart → ops surcharge disagrees with the
+    // displayed price.
+    const missing = poiKeys.filter((k) => !poiByKey.has(k));
+    if (missing.length > 0) {
+      return badRequest("poi_keys", `unknown stops: ${missing.join(",")}`);
+    }
     const orderedPois = poiKeys
       .map((k) => poiByKey.get(k))
       .filter((p): p is NonNullable<typeof p> => !!p);
     poiRegions = orderedPois.map((p) => p.region);
-    if (region === "jeju") jejuPoiZones = orderedPois.map((p) => jejuZone(p.lat, p.lng));
+    if (region === "jeju") {
+      // Phase 10.5.1 audit fix — jejuZone(0,0) silently classifies as
+      // 'west' (lng<=126.42) for any POI whose lat/lng came back null from
+      // match_pois, inflating the cross-region surcharge. Skip non-finite
+      // coords so they don't poison the cross-region detection.
+      jejuPoiZones = orderedPois
+        .filter((p) => Number.isFinite(p.lat) && Number.isFinite(p.lng) && (p.lat !== 0 || p.lng !== 0))
+        .map((p) => jejuZone(p.lat, p.lng));
+    }
   }
 
   // ── Authoritative price recompute ────────────────────────────────────────
@@ -183,6 +208,17 @@ export async function POST(request: Request) {
 
   // ── Out-of-scope hard gate (D4/D19) — no DB write, no email pipe ────────
   if (!price.autoQuotable) {
+    // Phase 10.5.1 audit fix — trackEvent is a no-op server-side
+    // (analytics.ts:342 returns when window is undefined). Use console.info
+    // so the OOS rate is visible in Vercel/serverless logs. Phase 8 cut-over
+    // runbook will graph these from the log aggregator.
+    console.info("[/api/itinerary/book] out_of_scope", {
+      region,
+      track,
+      pax: partySize,
+      violations: price.violations,
+      contactEmail,
+    });
     trackEvent("itinerary_book_out_of_scope_blocked", {
       region,
       track,
@@ -214,6 +250,14 @@ export async function POST(request: Request) {
 
   // ── Price-mismatch defense (mirrors /api/bookings/route.ts:298-309) ─────
   if (clientQuotedTotal != null && Math.abs(clientQuotedTotal - price.total) > 1) {
+    console.warn("[/api/itinerary/book] price_changed", {
+      clientTotal: clientQuotedTotal,
+      serverTotal: price.total,
+      delta: price.total - clientQuotedTotal,
+      region,
+      track,
+      pax: partySize,
+    });
     trackEvent("itinerary_book_price_changed", {
       clientTotal: clientQuotedTotal,
       serverTotal: price.total,

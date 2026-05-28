@@ -92,7 +92,10 @@ export default function QuoteModal({
       return;
     }
     if (!date) {
-      setError(t("errorEmailRequired").replace("email", "date") || "Tour date is required.");
+      // Phase 10.5.1 audit fix — was `.replace("email","date")` hack which
+      // returned the unchanged Korean string in non-EN locales (since the
+      // KO message has no "email" substring). Proper i18n key now.
+      setError(t("errorDateRequired"));
       return;
     }
     setSubmitting(true);
@@ -103,13 +106,19 @@ export default function QuoteModal({
        * /itinerary-builder/checkout with for the Stripe card hold. The legacy
        * proposal endpoint is going away in 10.5c.
        */
+      // Phase 10.5.1 audit fix — guard against `?party=abc` URL-tamper:
+      // Number("abc") is NaN which serializes to null in JSON; the server
+      // would silently default to 2. Now we coerce explicitly and fall back
+      // to the same default the live-price card uses.
+      const parsedParty = Number(party);
+      const partySize = Number.isFinite(parsedParty) && parsedParty > 0 ? Math.round(parsedParty) : 2;
       const body = {
         poi_keys: cart,
         region,
         track,
         guide_language: guideLang,
         duration_hours: isDmz ? undefined : Number(duration) || 8,
-        party_size: party ? Number(party) : 2,
+        party_size: partySize,
         jeju_pickup_zone: region === "jeju" && !isDmz && !isCruise ? pickup : undefined,
         cruise_port: isCruise && region === "jeju" ? cruisePort : undefined,
         requested_date: date,
@@ -129,17 +138,20 @@ export default function QuoteModal({
       });
       const data = await res.json();
       if (!res.ok || !data.ok) {
-        // Phase 10.5b — surface the specific failure modes:
+        // Phase 10.5.1 audit fix — was hardcoded Korean copy. Now uses
+        // proper i18n keys so EN/JA/ES/ZH/ZH-TW users see localized
+        // messages (Phase 7 will transcreate the new keys into the
+        // remaining 4 locales; EN+KO populated here).
         //   422 out_of_scope → mailto contact gate
         //   409 price_changed → re-confirm prompt
         //   503 booking_disabled → kill-switch message
         if (res.status === 422 && data.contact_email) {
+          setError(t("errorOutOfScope", { email: data.contact_email as string }));
+        } else if (res.status === 409 && typeof data.server_total === "number") {
           setError(
-            `${data.error === "out_of_scope" ? "이 일정은 맞춤 견적이 필요합니다 — " : ""}${data.contact_email}로 문의해 주세요.`,
-          );
-        } else if (res.status === 409 && data.server_total) {
-          setError(
-            `가격이 변경되었어요. 새 합계 ₩${data.server_total.toLocaleString()}. 다시 확인 후 진행해 주세요.`,
+            t("errorPriceChanged", {
+              total: `₩${data.server_total.toLocaleString()}`,
+            }),
           );
         } else {
           setError(data.error || t("errorGeneric"));

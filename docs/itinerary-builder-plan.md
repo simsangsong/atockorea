@@ -1,5 +1,22 @@
 # Custom Itinerary Builder — Master Planner
 
+> **⚠️ READER NOTE (2026-05-29):** Phase 10 (flow simplification +
+> card-hold booking) deleted the entire Phase 4/5 quote pipe described in
+> §F Phases 4-5 below. The historical instructions in those sections
+> (e.g., POST /api/itinerary/quote → tour_quote_requests → Slack →
+> /admin/itinerary-quotes → /itinerary-builder/thanks) are **retained
+> for archaeology only** — those routes no longer exist on `main`.
+>
+> For the current booking flow, see the spin-off planner:
+> [docs/itinerary-builder-flow-simplification-master-plan-2026-05-28.md](./itinerary-builder-flow-simplification-master-plan-2026-05-28.md)
+>
+> Live route map (after Phase 10):
+> - `POST /api/itinerary/book` (replaces /quote)
+> - `/itinerary-builder?region=…` (single planner route)
+> - `/itinerary-builder/checkout?bookingId=…` (Stripe card hold)
+> - `/itinerary-builder/confirmation/[bookingId]` (replaces /thanks)
+> - Admin: `/admin/orders?source=itinerary_builder` (replaces /admin/itinerary-quotes)
+
 > **Single source of truth** for the map + POI + AI-itinerary feature.
 > This is a living document: status, decisions, change log, and the
 > 6-phase plan all live here. The `/itinerary-builder` skill is wired

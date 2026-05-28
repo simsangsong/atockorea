@@ -16,6 +16,8 @@
  */
 
 import { sendEmail } from "@/lib/email";
+import { formatPriceLineLabel } from "@/lib/quote-engine/price-line-labels";
+import type { PriceLine } from "@/lib/quote-engine/pricing-policy";
 
 export interface BuilderBookingConfirmationInput {
   to: string;
@@ -50,12 +52,6 @@ function fmtKrw(n: number): string {
   return `₩${Math.round(n).toLocaleString("ko-KR")}`;
 }
 
-interface ItineraryBreakdownLine {
-  code: string;
-  amount: number;
-  meta?: Record<string, unknown>;
-}
-
 interface ItineraryPayload {
   poi_keys?: string[];
   region?: string;
@@ -63,41 +59,12 @@ interface ItineraryPayload {
   track?: string;
   duration_hours?: number;
   guide_language?: string;
-  breakdown?: ItineraryBreakdownLine[];
+  breakdown?: PriceLine[];
 }
 
 function readItinerary(value: unknown): ItineraryPayload {
   if (!value || typeof value !== "object") return {};
   return value as ItineraryPayload;
-}
-
-/** Human-readable label for a breakdown line code. */
-function lineLabel(line: ItineraryBreakdownLine): string {
-  const meta = line.meta ?? {};
-  switch (line.code) {
-    case "base":
-      return `Base — ${meta.hours ?? "?"}h ${meta.tier ?? "english"} tour`;
-    case "pax_tier":
-      return meta.vehicle === "van"
-        ? "Van (7-9 pax)"
-        : meta.peak
-          ? "Solati peak season"
-          : "Solati (10-13 pax)";
-    case "region":
-      return "Region surcharge";
-    case "jeju_cross_region":
-      return "Jeju cross-region";
-    case "jeju_pickup":
-      return `Jeju pickup (${meta.zone ?? "city"})`;
-    case "dmz_base":
-      return `DMZ tour (${meta.pax ?? "?"} pax)`;
-    case "cruise_excursion":
-      return "Cruise shore-excursion add-on";
-    case "gangjeong_port":
-      return "Gangjeong Port surcharge";
-    default:
-      return line.code;
-  }
 }
 
 /**
@@ -132,7 +99,7 @@ function buildHtml(input: BuilderBookingConfirmationInput): string {
   const breakdownRows = (it.breakdown ?? [])
     .map(
       (line) =>
-        `<tr><td style="padding:6px 0;color:#475569;font-size:13px;">${escapeHtml(lineLabel(line))}</td><td style="padding:6px 0;text-align:right;font-weight:600;color:#0f172a;font-size:13px;">${fmtKrw(line.amount)}</td></tr>`,
+        `<tr><td style="padding:6px 0;color:#475569;font-size:13px;">${escapeHtml(formatPriceLineLabel(line))}</td><td style="padding:6px 0;text-align:right;font-weight:600;color:#0f172a;font-size:13px;">${fmtKrw(line.amount)}</td></tr>`,
     )
     .join("");
 

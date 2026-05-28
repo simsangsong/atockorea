@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { CheckCircle2, MapPin, ShieldCheck, Wallet, ArrowRight } from "lucide-react";
+import { CheckCircle2, Clock, MapPin, ShieldCheck, Wallet, ArrowRight } from "lucide-react";
 import { SitePageShell } from "@/src/components/layout/SitePageShell";
 import { createServerClient } from "@/lib/supabase";
 import { homeBtnPrimary } from "@/lib/home/home-button-classes";
 import { cn } from "@/lib/utils";
 import type { PriceLine } from "@/lib/quote-engine/pricing-policy";
+import { formatPriceLineLabel } from "@/lib/quote-engine/price-line-labels";
 
 export const dynamic = "force-dynamic";
 
@@ -65,6 +66,22 @@ export default async function ItineraryBuilderConfirmationPage({
   const breakdown = itinerary.breakdown ?? [];
   const region = itinerary.region ?? "korea";
 
+  /**
+   * Phase 10.5.1 audit fix — gate the "Confirmed" hero on the actual
+   * payment_intent_status. Between Stripe Elements success and the
+   * `payment_intent.amount_capturable_updated` webhook there is a brief
+   * window (typically <2s, longer under load) where `status` is still
+   * `pending`. Showing a green ✓ Confirmed during that window misleads
+   * the customer and the email "is on its way" line lies (the webhook
+   * sends the email).
+   */
+  const paymentStatus = (booking.payment_intent_status as string | null) ?? null;
+  const isAuthorized =
+    paymentStatus === "authorized" ||
+    paymentStatus === "captured" ||
+    paymentStatus === "setup_pending_hold" ||
+    booking.status === "confirmed";
+
   // Stop strip — fetch POI names for the cart sequence.
   let stops: { poi_key: string; name: string; image: string | null }[] = [];
   if (itinerary.poi_keys && itinerary.poi_keys.length > 0) {
@@ -94,19 +111,38 @@ export default async function ItineraryBuilderConfirmationPage({
     <SitePageShell>
       <main className="min-h-screen bg-stone-50">
         <section className="mx-auto max-w-3xl px-4 py-10 md:px-6 md:py-16 lg:px-8">
-          {/* Hero — confirmed badge + booking reference */}
+          {/* Hero — confirmed badge + booking reference (status-gated) */}
           <div className="rounded-card bg-emerald-50/50 p-6 shadow-[0_2px_8px_rgba(15,23,42,0.04),0_24px_56px_-22px_rgba(15,23,42,0.22)] md:p-9">
-            <p className="mb-2 inline-flex items-center gap-1.5 text-eyebrow text-emerald-700">
-              <CheckCircle2 className="h-4 w-4" strokeWidth={2.25} aria-hidden />
-              확정되었습니다 · Confirmed
-            </p>
-            <h1 className="text-h3 font-bold tracking-tight text-slate-900 md:text-h2">
-              Your {trackLabel.toLowerCase()} in {region.charAt(0).toUpperCase() + region.slice(1)} is set
-            </h1>
-            <p className="mt-2 text-body leading-relaxed text-slate-600">
-              Card saved securely — no charge today. We&apos;ll capture {KRW(total)} at 10:00 AM Korea
-              time on the tour date. Free cancellation up to 24 hours before departure.
-            </p>
+            {isAuthorized ? (
+              <>
+                <p className="mb-2 inline-flex items-center gap-1.5 text-eyebrow text-emerald-700">
+                  <CheckCircle2 className="h-4 w-4" strokeWidth={2.25} aria-hidden />
+                  확정되었습니다 · Confirmed
+                </p>
+                <h1 className="text-h3 font-bold tracking-tight text-slate-900 md:text-h2">
+                  Your {trackLabel.toLowerCase()} in {region.charAt(0).toUpperCase() + region.slice(1)} is set
+                </h1>
+                <p className="mt-2 text-body leading-relaxed text-slate-600">
+                  Card saved securely — no charge today. We&apos;ll capture {KRW(total)} at 10:00 AM
+                  Korea time on the tour date. Free cancellation up to 24 hours before departure.
+                </p>
+              </>
+            ) : (
+              <>
+                <p className="mb-2 inline-flex items-center gap-1.5 text-eyebrow text-slate-500">
+                  <Clock className="h-4 w-4 text-emerald-600" strokeWidth={2.25} aria-hidden />
+                  처리 중 · Processing
+                </p>
+                <h1 className="text-h3 font-bold tracking-tight text-slate-900 md:text-h2">
+                  Almost there — finishing your reservation
+                </h1>
+                <p className="mt-2 text-body leading-relaxed text-slate-600">
+                  Stripe accepted your card; we&rsquo;re syncing the booking now. A confirmation
+                  email arrives once the card hold is registered (usually a few seconds). You can
+                  safely close this tab — the email will reach you either way.
+                </p>
+              </>
+            )}
 
             <dl className="mt-5 grid grid-cols-2 gap-x-4 gap-y-2.5 rounded-button bg-white px-4 py-3 shadow-[0_1px_2px_rgba(15,23,42,0.04)] md:grid-cols-3">
               <div>
@@ -168,7 +204,7 @@ export default async function ItineraryBuilderConfirmationPage({
                     key={line.code}
                     className="flex items-baseline justify-between gap-3 text-caption text-slate-700"
                   >
-                    <span>{line.code}</span>
+                    <span>{formatPriceLineLabel(line)}</span>
                     <span className="font-semibold tabular-nums text-slate-900">{KRW(line.amount)}</span>
                   </li>
                 ))}
