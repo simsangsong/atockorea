@@ -2468,6 +2468,31 @@
       "title": "DMZ Private Tour",
       "body": "A fixed full-day itinerary to the edge of the Korean peninsula's most fortified border — Imjingak, the 3rd Infiltration Tunnel, Dora Observatory, and the Gamaksan suspension bridge. Flat price by group size, with your own car + guide.",
       "cta": "See my price"
+    },
+    "planner": {
+      "track": "Trip type",
+      "region": "Region",
+      "date": "Date",
+      "party": "Guests",
+      "lang": "Guide language",
+      "duration": "Duration",
+      "hours": "Hours ashore",
+      "ship": "Ship",
+      "pickup": "Pickup zone",
+      "port": "Cruise port",
+      "editTrip": "Edit your trip",
+      "close": "Close",
+      "done": "Done",
+      "pickupZones": {
+        "city": "Jeju City",
+        "north": "North (Hagwi · Aewol)",
+        "outer": "Outer (Hyeopjae · Seongsan · Seogwipo)",
+        "cross_island": "Cross-island (150 km+)"
+      },
+      "ports": {
+        "gangjeong": "Gangjeong (Seogwipo)",
+        "jeju_port": "Jeju Port"
+      }
     }
   },
   "appShell": {
