@@ -376,14 +376,21 @@ function EmptyState({
   body: string;
   lookLabel: string;
 }) {
+  // Phase 3.1 — premium empty state. Landing-card tone: white card on a
+  // hairline ring with a soft shadow; amber-tinted circular icon to echo
+  // the AIRecommendPanel + LivePriceCard amber identity above.
   return (
-    <div className="rounded-xl border border-slate-200/80 bg-slate-50/65 px-5 py-9 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.75)]">
-      <span className="mx-auto mb-3 inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white text-slate-500 shadow-sm ring-1 ring-slate-200/80">
-        <MapPin className="h-4 w-4" strokeWidth={2} aria-hidden />
+    <div className="rounded-card border border-slate-200/80 bg-white px-5 py-10 text-center shadow-[0_1px_2px_rgba(15,23,42,0.04),0_12px_28px_-18px_rgba(15,23,42,0.18)]">
+      <span className="mx-auto mb-3.5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-amber-50 text-amber-700 ring-1 ring-amber-200">
+        <MapPin className="h-5 w-5" strokeWidth={2} aria-hidden />
       </span>
-      <p className="text-caption font-bold text-slate-900">{headline}</p>
-      <p className="mx-auto mt-1.5 max-w-[26ch] text-micro leading-relaxed text-slate-500">{body}</p>
-      <p className="mt-3 inline-flex items-center gap-1 text-micro font-medium text-slate-500">
+      <p className="text-body font-bold leading-snug tracking-tight text-slate-900">
+        {headline}
+      </p>
+      <p className="mx-auto mt-2 max-w-[28ch] text-caption leading-relaxed text-slate-500">
+        {body}
+      </p>
+      <p className="mt-4 inline-flex items-center gap-1 rounded-full bg-slate-50 px-2.5 py-1 text-micro font-semibold text-slate-600 ring-1 ring-slate-200">
         {/* Mobile: rail is below sticky map → arrow points up.
             lg+: rail is right of map → arrow points left. */}
         <ArrowUp className="h-3 w-3 lg:hidden" aria-hidden />

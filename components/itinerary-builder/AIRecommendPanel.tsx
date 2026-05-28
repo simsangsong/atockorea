@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Loader2, AlertCircle, Clock, ChevronRight } from "lucide-react";
+import { Loader2, AlertCircle, Clock, ChevronRight, Sparkles, ArrowRight } from "lucide-react";
+import { homeBtnPrimary } from "@/lib/home/home-button-classes";
+import { cn } from "@/lib/utils";
 import {
   REVEAL_ITEM_VARIANTS,
   useRevealContainerProps,
@@ -171,13 +173,24 @@ export default function AIRecommendPanel({
     <section className="px-4 pt-4 pb-3 md:px-6 md:pt-5 md:pb-4">
       <motion.div
         {...reveal}
-        className="relative mx-auto max-w-3xl overflow-hidden rounded-2xl border border-white/80 bg-white/90 shadow-[0_16px_40px_-24px_rgba(15,23,42,0.28)] backdrop-blur-md"
+        className="relative mx-auto max-w-3xl overflow-hidden rounded-card border border-slate-200/80 bg-white shadow-[0_1px_2px_rgba(15,23,42,0.04),0_18px_44px_-24px_rgba(15,23,42,0.18)]"
       >
-        {/* Header — always visible */}
-        <motion.div variants={REVEAL_ITEM_VARIANTS} className="px-5 pt-5 pb-3 md:px-6 md:pt-5">
-          <p className="mb-2 text-eyebrow text-amber-700">{t("eyebrow")}</p>
+        {/* Premium accent rail — single hairline amber line at the top of
+            the card matches the LivePriceCard amber identity below, so the
+            rail reads as one unified composition. */}
+        <span
+          aria-hidden
+          className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber-300/70 to-transparent"
+        />
+
+        {/* Header — eyebrow with Sparkles (landing-card convention) */}
+        <motion.div variants={REVEAL_ITEM_VARIANTS} className="px-5 pt-5 pb-3 md:px-6 md:pt-6">
+          <p className="mb-2 inline-flex items-center gap-1.5 text-eyebrow text-amber-700">
+            <Sparkles className="h-3 w-3" aria-hidden />
+            {t("eyebrow")}
+          </p>
           {!collapsed ? (
-            <p className="text-body text-slate-600">{t("intro")}</p>
+            <p className="text-body leading-relaxed text-slate-600">{t("intro")}</p>
           ) : null}
         </motion.div>
 
@@ -187,19 +200,17 @@ export default function AIRecommendPanel({
             <button
               type="button"
               onClick={() => setCollapsed(false)}
-              className="inline-flex items-center gap-1.5 rounded-full bg-slate-50 px-3 py-1.5 text-micro font-semibold text-slate-700 ring-1 ring-slate-200 transition-colors duration-200 ease-out hover:bg-white hover:ring-slate-300"
+              className="focus-ring inline-flex items-center gap-1.5 rounded-full bg-white px-3.5 py-1.5 text-micro font-semibold text-slate-800 ring-1 ring-slate-200 shadow-sm transition-colors duration-200 ease-out hover:bg-slate-50 hover:ring-slate-300"
             >
+              <Sparkles className="h-3 w-3 text-amber-500" aria-hidden />
               {t("getAnother")}
             </button>
           </div>
         ) : (
           <>
-            {/* Preset chips */}
-            <motion.div
-              variants={REVEAL_ITEM_VARIANTS}
-              className="px-5 pb-2 md:px-6"
-            >
-              <p className="mb-2 text-micro font-semibold uppercase tracking-wide text-slate-500">
+            {/* Preset chips — premium white-surface pills, amber hover hint */}
+            <motion.div variants={REVEAL_ITEM_VARIANTS} className="px-5 pb-3 md:px-6">
+              <p className="mb-2 text-micro font-semibold uppercase tracking-wider text-slate-500">
                 {t("presetsLabel")}
               </p>
               <div className="-mx-1 flex flex-wrap gap-1.5 px-1 pb-1">
@@ -209,7 +220,7 @@ export default function AIRecommendPanel({
                     type="button"
                     onClick={() => handlePreset(p.intent)}
                     disabled={loading}
-                    className="inline-flex items-center rounded-full bg-slate-50 px-3 py-1 text-micro font-semibold text-slate-700 ring-1 ring-slate-200 transition-colors duration-150 ease-out hover:bg-slate-100 hover:ring-slate-300 disabled:cursor-not-allowed disabled:opacity-60"
+                    className="focus-ring inline-flex items-center rounded-full bg-white px-3 py-1.5 text-micro font-semibold text-slate-800 ring-1 ring-slate-200 shadow-[0_1px_2px_rgba(15,23,42,0.04)] transition-all duration-150 ease-out hover:-translate-y-px hover:bg-amber-50/60 hover:ring-amber-300 hover:shadow-[0_2px_6px_rgba(245,158,11,0.12)] disabled:cursor-not-allowed disabled:opacity-60 motion-reduce:hover:translate-y-0"
                   >
                     {t(`presets.${p.key}`)}
                   </button>
@@ -233,7 +244,7 @@ export default function AIRecommendPanel({
                   value={intent}
                   onChange={(e) => setIntent(e.target.value)}
                   placeholder={t("intentPlaceholder")}
-                  className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-200"
+                  className="focus-ring w-full rounded-button border border-slate-200 bg-slate-50/60 px-3.5 py-2.5 text-sm text-slate-900 transition-colors duration-200 placeholder:text-slate-400 focus:border-slate-300 focus:bg-white"
                 />
               </div>
               <label className="md:w-24">
@@ -243,7 +254,7 @@ export default function AIRecommendPanel({
                 <select
                   value={maxHours}
                   onChange={(e) => setMaxHours(Number(e.target.value))}
-                  className="w-full rounded-lg border border-slate-300 bg-white px-2 py-2.5 text-sm focus:border-amber-500 focus:outline-none"
+                  className="focus-ring w-full rounded-button border border-slate-200 bg-slate-50/60 px-2.5 py-2.5 text-sm font-semibold text-slate-900 tabular-nums transition-colors duration-200 focus:border-slate-300 focus:bg-white"
                 >
                   {[4, 6, 8, 10, 12].map((h) => (
                     <option key={h} value={h}>{h}h</option>
@@ -253,10 +264,14 @@ export default function AIRecommendPanel({
               <button
                 type="submit"
                 disabled={loading}
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-2.5 text-caption font-bold text-slate-900 shadow-sm ring-1 ring-slate-300 transition-colors duration-200 ease-out hover:bg-slate-50 hover:ring-slate-400 disabled:cursor-not-allowed disabled:bg-slate-100 disabled:text-slate-400 md:w-auto"
+                className={cn(
+                  homeBtnPrimary,
+                  "group !h-auto !w-full !py-3 inline-flex items-center justify-center gap-2 shadow-md hover:gap-3 md:!w-auto md:!px-6 md:!py-2.5",
+                )}
               >
-                {loading ? <Loader2 className="h-4 w-4 animate-spin" aria-hidden /> : null}
+                {loading ? <Loader2 className="h-4 w-4 animate-spin" aria-hidden /> : <Sparkles className="h-4 w-4" aria-hidden />}
                 {loading ? t("submitting") : t("submit")}
+                {!loading ? <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden /> : null}
               </button>
             </motion.form>
           </>

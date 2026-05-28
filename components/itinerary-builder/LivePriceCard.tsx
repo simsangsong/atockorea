@@ -59,7 +59,13 @@ export default function LivePriceCard({ price, isJeju, compact = false }: Props)
 
   return (
     <div className="space-y-3">
-      <div className="rounded-xl border border-amber-200 bg-amber-50/60 p-4">
+      <div className="relative overflow-hidden rounded-card border border-amber-200/80 bg-gradient-to-br from-amber-50/80 via-white to-amber-50/40 p-4 shadow-[0_1px_2px_rgba(245,158,11,0.06),0_12px_28px_-18px_rgba(245,158,11,0.30)]">
+        {/* Premium hairline rail at the top echoes the AIRecommendPanel
+            accent above — unified card-style language. */}
+        <span
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber-300/80 to-transparent"
+        />
         {!compact ? (
           <p className="mb-2.5 inline-flex items-center gap-1.5 text-eyebrow !text-amber-800">
             <Sparkles className="h-3 w-3" aria-hidden />
@@ -81,16 +87,18 @@ export default function LivePriceCard({ price, isJeju, compact = false }: Props)
                 </li>
               ))}
             </ul>
-            <div className="mt-2.5 flex items-baseline justify-between border-t border-amber-200 pt-2.5">
-              <span className="text-caption font-bold text-slate-900">
+            <div className="mt-3 flex items-baseline justify-between border-t border-amber-200/80 pt-3">
+              <span className="text-caption font-bold tracking-tight text-slate-900">
                 {t("pricing.total")}
               </span>
-              <span className="text-h3 font-bold text-slate-900 tabular-nums">
+              <span className="text-h3 font-bold tabular-nums text-slate-900">
                 {KRW(price.total)}
               </span>
             </div>
             {!compact ? (
-              <p className="mt-1.5 text-micro text-slate-500">{t("pricing.estimateNote")}</p>
+              <p className="mt-1.5 text-micro leading-relaxed text-slate-500">
+                {t("pricing.estimateNote")}
+              </p>
             ) : null}
           </>
         ) : (
@@ -108,15 +116,17 @@ export default function LivePriceCard({ price, isJeju, compact = false }: Props)
         )}
       </div>
 
-      {/* Not-included + Jeju single-region notices (§5, §6 of pricing policy) */}
-      <div className="space-y-1.5 rounded-lg bg-slate-50 px-3.5 py-3 ring-1 ring-slate-200">
-        <p className="flex items-start gap-1.5 text-micro text-slate-600">
-          <Info className="mt-0.5 h-3 w-3 flex-shrink-0 text-slate-400" aria-hidden />
+      {/* Not-included + Jeju single-region notices (§5, §6 of pricing policy)
+          — soft callouts inside a white card with a hairline ring, echoing
+          the rest of the rail's white-on-amber composition. */}
+      <div className="space-y-2 rounded-card border border-slate-200/70 bg-white px-3.5 py-3 shadow-[0_1px_2px_rgba(15,23,42,0.03)]">
+        <p className="flex items-start gap-1.5 text-micro leading-relaxed text-slate-600">
+          <Info className="mt-0.5 h-3 w-3 flex-shrink-0 text-amber-500" aria-hidden />
           {t("pricing.notIncluded")}
         </p>
         {isJeju ? (
-          <p className="flex items-start gap-1.5 text-micro text-slate-600">
-            <Info className="mt-0.5 h-3 w-3 flex-shrink-0 text-slate-400" aria-hidden />
+          <p className="flex items-start gap-1.5 text-micro leading-relaxed text-slate-600">
+            <Info className="mt-0.5 h-3 w-3 flex-shrink-0 text-amber-500" aria-hidden />
             {t("pricing.jejuSingleRegion")}
           </p>
         ) : null}
