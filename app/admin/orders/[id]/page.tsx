@@ -4,11 +4,13 @@ import { useState, useEffect } from 'react';
 import { useRouter, useParams } from 'next/navigation';
 import Link from 'next/link';
 import { supabase } from '@/lib/supabase';
+import { formatBookingPrice, formatHoldAmount } from '@/lib/format/currency';
 
 interface Booking {
   id: string;
   user_id: string;
-  tour_id: string;
+  /** Phase 10.5 — NULL for itinerary_builder bookings. */
+  tour_id: string | null;
   tour_date: string;
   tour_time: string | null;
   number_of_people?: number;
@@ -18,6 +20,22 @@ interface Booking {
   total_price: number;
   discount_amount: number;
   final_price: number;
+  /** Phase 10.6 — currency-aware money rendering. */
+  currency?: 'usd' | 'krw' | string | null;
+  /** Phase 10.6 — 'tour_product' (default) | 'itinerary_builder'. */
+  source?: 'tour_product' | 'itinerary_builder' | string;
+  booking_reference?: string | null;
+  /** Phase 10.5 — builder booking payload (poi_keys, region, track,
+   *  duration_hours, guide_language, breakdown, etc.). NULL for tour rows. */
+  itinerary?: {
+    poi_keys?: string[];
+    region?: string;
+    track?: string;
+    duration_hours?: number;
+    guide_language?: string;
+    breakdown?: { code: string; amount: number; meta?: Record<string, unknown> }[];
+    vehicle?: string;
+  } | null;
   status: 'pending' | 'confirmed' | 'completed' | 'cancelled' | 'no_show';
   payment_status: string;
   payment_method: string | null;
@@ -334,47 +352,111 @@ export default function OrderDetailPage() {
           </div>
         </div>
 
-        {/* Tour Information */}
-        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">Tour Information</h2>
-          <div className="space-y-3">
-            <div>
-              <span className="text-gray-600">Tour:</span>
-              <Link
-                href={`/tour/${booking.tours?.slug}`}
-                target="_blank"
-                className="ml-2 text-indigo-600 hover:text-indigo-700 font-medium"
-              >
-                {booking.tours?.title || 'N/A'}
-              </Link>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-gray-600">City:</span>
-              <span className="text-gray-900">{booking.tours?.city || 'N/A'}</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-gray-600">Tour Date:</span>
-              <span className="text-gray-900">
-                {new Date(booking.tour_date).toLocaleDateString()}
+        {/* Tour Information — Phase 10.6 branches to a Builder Itinerary
+            section when source==='itinerary_builder'. Same card chrome so
+            the admin layout stays consistent. */}
+        {booking.source === 'itinerary_builder' ? (
+          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+            <div className="flex items-start justify-between gap-3 mb-4">
+              <h2 className="text-xl font-semibold text-gray-900">Custom Itinerary</h2>
+              <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-0.5 text-[11px] font-semibold text-emerald-800 ring-1 ring-emerald-200">
+                📋 Builder
               </span>
             </div>
-            {booking.tour_time && (
+            <div className="space-y-3">
               <div className="flex justify-between">
-                <span className="text-gray-600">Tour Time:</span>
-                <span className="text-gray-900">{booking.tour_time}</span>
+                <span className="text-gray-600">Region:</span>
+                <span className="text-gray-900 capitalize">{booking.itinerary?.region ?? '—'}</span>
               </div>
-            )}
-            {booking.pickup_points && (
-              <div>
-                <span className="text-gray-600">Pickup Point:</span>
-                <div className="mt-1 text-sm text-gray-900">
-                  <div className="font-medium">{booking.pickup_points.name}</div>
-                  <div className="text-gray-500">{booking.pickup_points.address}</div>
+              <div className="flex justify-between">
+                <span className="text-gray-600">Track:</span>
+                <span className="text-gray-900 capitalize">{booking.itinerary?.track ?? '—'}</span>
+              </div>
+              {booking.itinerary?.duration_hours != null ? (
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Duration:</span>
+                  <span className="text-gray-900">
+                    {booking.itinerary.duration_hours > 0
+                      ? `${booking.itinerary.duration_hours}h`
+                      : 'Fixed product'}
+                  </span>
                 </div>
+              ) : null}
+              <div className="flex justify-between">
+                <span className="text-gray-600">Guide language:</span>
+                <span className="text-gray-900">{booking.itinerary?.guide_language ?? '—'}</span>
               </div>
-            )}
+              {booking.itinerary?.vehicle ? (
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Vehicle:</span>
+                  <span className="text-gray-900 capitalize">{booking.itinerary.vehicle}</span>
+                </div>
+              ) : null}
+              <div className="flex justify-between">
+                <span className="text-gray-600">Tour Date:</span>
+                <span className="text-gray-900">
+                  {new Date(booking.tour_date).toLocaleDateString()}
+                </span>
+              </div>
+              {booking.itinerary?.poi_keys && booking.itinerary.poi_keys.length > 0 ? (
+                <div>
+                  <span className="text-gray-600 block mb-2">Stops ({booking.itinerary.poi_keys.length}):</span>
+                  <ol className="space-y-1 rounded-lg bg-slate-50 p-3">
+                    {booking.itinerary.poi_keys.map((k, i) => (
+                      <li key={k} className="flex items-center gap-2 text-sm">
+                        <span className="inline-flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-white text-[10px] font-semibold tabular-nums text-slate-700 ring-1 ring-slate-200">
+                          {String(i + 1).padStart(2, '0')}
+                        </span>
+                        <span className="text-slate-700">{k}</span>
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+              ) : null}
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+            <h2 className="text-xl font-semibold text-gray-900 mb-4">Tour Information</h2>
+            <div className="space-y-3">
+              <div>
+                <span className="text-gray-600">Tour:</span>
+                <Link
+                  href={`/tour/${booking.tours?.slug}`}
+                  target="_blank"
+                  className="ml-2 text-indigo-600 hover:text-indigo-700 font-medium"
+                >
+                  {booking.tours?.title || 'N/A'}
+                </Link>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-gray-600">City:</span>
+                <span className="text-gray-900">{booking.tours?.city || 'N/A'}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-gray-600">Tour Date:</span>
+                <span className="text-gray-900">
+                  {new Date(booking.tour_date).toLocaleDateString()}
+                </span>
+              </div>
+              {booking.tour_time && (
+                <div className="flex justify-between">
+                  <span className="text-gray-600">Tour Time:</span>
+                  <span className="text-gray-900">{booking.tour_time}</span>
+                </div>
+              )}
+              {booking.pickup_points && (
+                <div>
+                  <span className="text-gray-600">Pickup Point:</span>
+                  <div className="mt-1 text-sm text-gray-900">
+                    <div className="font-medium">{booking.pickup_points.name}</div>
+                    <div className="text-gray-500">{booking.pickup_points.address}</div>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
 
         {/* Customer Information */}
         <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
@@ -437,22 +519,22 @@ export default function OrderDetailPage() {
             </div>
             <div className="flex justify-between">
               <span className="text-gray-600">Unit Price:</span>
-              <span className="text-gray-900">₩{booking.unit_price.toLocaleString()}</span>
+              <span className="text-gray-900">{formatBookingPrice(booking.unit_price, booking.currency)}</span>
             </div>
             <div className="flex justify-between">
               <span className="text-gray-600">Total Price:</span>
-              <span className="text-gray-900">₩{booking.total_price.toLocaleString()}</span>
+              <span className="text-gray-900">{formatBookingPrice(booking.total_price, booking.currency)}</span>
             </div>
             {booking.discount_amount > 0 && (
               <div className="flex justify-between text-red-600">
                 <span>Discount:</span>
-                <span>-₩{booking.discount_amount.toLocaleString()}</span>
+                <span>-{formatBookingPrice(booking.discount_amount, booking.currency)}</span>
               </div>
             )}
             <div className="flex justify-between pt-3 border-t border-gray-200">
               <span className="text-lg font-semibold text-gray-900">Final Price:</span>
               <span className="text-lg font-bold text-indigo-600">
-                ₩{booking.final_price.toLocaleString()}
+                {formatBookingPrice(booking.final_price, booking.currency)}
               </span>
             </div>
           </div>
@@ -481,9 +563,16 @@ export default function OrderDetailPage() {
             <div className="flex justify-between">
               <span className="text-gray-600">Hold Amount:</span>
               <span className="text-gray-900">
-                {booking.no_show_fee_usd_cents != null
-                  ? `$${(booking.no_show_fee_usd_cents / 100).toLocaleString()}`
-                  : '—'}
+                {/* Phase 10.6 — currency-aware: KRW builder bookings have
+                    no_show_fee_usd_cents=NULL (intentionally — final_price
+                    is the canonical hold amount). Helper falls back to
+                    final_price + currency when the legacy USD-cents
+                    snapshot is missing. */}
+                {formatHoldAmount(
+                  booking.final_price,
+                  booking.currency,
+                  booking.no_show_fee_usd_cents,
+                )}
               </span>
             </div>
             <div className="flex justify-between">

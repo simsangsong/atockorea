@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
+import { formatBookingPrice } from '@/lib/format/currency';
 
 /**
  * GET /api/bookings/[id]/receipt
@@ -46,7 +47,11 @@ export async function GET(
     const pickup = (booking as any).pickup_points || null;
     const tourDate = booking.tour_date || booking.booking_date || '';
     const formatted = tourDate ? new Date(tourDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : '—';
-    const final = Number(booking.final_price ?? 0).toFixed(2);
+    /** Phase 10.6 — currency-aware total. KRW builder bookings rendered as
+     *  ₩340,000 instead of the previous `$${Number(...).toFixed(2)}` which
+     *  would have printed `$340000.00` (wrong symbol + decimal mess). */
+    const currency = (booking as { currency?: string }).currency ?? 'usd';
+    const formattedTotal = formatBookingPrice(Number(booking.final_price ?? 0), currency);
     const guests = booking.number_of_guests || 1;
     const status = String(booking.status || '').toUpperCase();
 
@@ -102,7 +107,7 @@ export async function GET(
     <div class="section">
       <div class="row"><span class="label">Payment status</span><span class="value">${escape(booking.payment_status || '—')}</span></div>
       <div class="row"><span class="label">Payment method</span><span class="value">${escape(booking.payment_method || '—')}</span></div>
-      <div class="row total"><span class="label">Total paid</span><span class="value">$${escape(final)}</span></div>
+      <div class="row total"><span class="label">Total paid</span><span class="value">${escape(formattedTotal)}</span></div>
     </div>
     <div class="no-print" style="margin-top:28px; text-align:right;">
       <a href="#" class="no-print-btn" onclick="window.print();return false;">Print / Save PDF</a>

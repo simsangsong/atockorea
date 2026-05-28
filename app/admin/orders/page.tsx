@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { supabase } from '@/lib/supabase';
 import { BookingStatusBadge } from '@/components/admin/BookingStatusBadge';
+import { formatBookingPrice, type BookingCurrency } from '@/lib/format/currency';
 
 interface Booking {
   id: string;
@@ -14,6 +15,12 @@ interface Booking {
   number_of_people?: number;
   total_price?: number;
   final_price: number;
+  /** Phase 10.6 — present for all rows after the bookings.currency column
+   *  default 'usd' was added; KRW for itinerary_builder rows. */
+  currency?: BookingCurrency;
+  /** Phase 10.6 — 'tour_product' (default) | 'itinerary_builder'. */
+  source?: 'tour_product' | 'itinerary_builder' | string;
+  booking_reference?: string | null;
   status: 'pending' | 'confirmed' | 'completed' | 'cancelled' | 'no_show';
   payment_status: string;
   created_at: string;
@@ -46,13 +53,15 @@ export default function OrdersPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [statusFilter, setStatusFilter] = useState('');
+  /** Phase 10.6 — source filter chip: '' (all) | 'tour_product' | 'itinerary_builder'. */
+  const [sourceFilter, setSourceFilter] = useState<'' | 'tour_product' | 'itinerary_builder'>('');
   const [orderBy, setOrderBy] = useState<OrderBy>('created_at');
   const [orderDir, setOrderDir] = useState<OrderDir>('desc');
   const [exporting, setExporting] = useState(false);
 
   useEffect(() => {
     fetchBookings();
-  }, [statusFilter, orderBy, orderDir]);
+  }, [statusFilter, sourceFilter, orderBy, orderDir]);
 
   const fetchBookings = async () => {
     try {
@@ -66,6 +75,7 @@ export default function OrdersPage() {
 
       const params = new URLSearchParams();
       if (statusFilter) params.set('status', statusFilter);
+      if (sourceFilter) params.set('source', sourceFilter);
       params.set('orderBy', orderBy);
       params.set('order', orderDir);
       const response = await fetch(`/api/admin/orders?${params.toString()}`, {
@@ -215,6 +225,32 @@ export default function OrdersPage() {
       </div>
 
       <div className="bg-white rounded-lg border border-gray-200/60 shadow-sm p-4 flex flex-wrap items-center gap-4">
+        {/* Phase 10.6 — source filter chips (All / Tour product / Itinerary builder).
+            Chip style mirrors the landing-card pill tone so the admin surface
+            doesn't drift visually from the customer-facing planner. */}
+        <div className="flex items-center gap-1.5">
+          {[
+            { value: '' as const, label: 'All' },
+            { value: 'tour_product' as const, label: 'Tour product' },
+            { value: 'itinerary_builder' as const, label: '📋 Custom itinerary' },
+          ].map((opt) => {
+            const active = sourceFilter === opt.value;
+            return (
+              <button
+                key={opt.value || 'all'}
+                type="button"
+                onClick={() => setSourceFilter(opt.value)}
+                className={`inline-flex items-center rounded-full px-3 py-1.5 text-xs font-semibold transition-all ${
+                  active
+                    ? 'bg-slate-900 text-white shadow-sm'
+                    : 'bg-slate-50 text-slate-700 ring-1 ring-slate-200 hover:bg-slate-100'
+                }`}
+              >
+                {opt.label}
+              </button>
+            );
+          })}
+        </div>
         <select
           value={statusFilter}
           onChange={(e) => setStatusFilter(e.target.value)}
@@ -286,7 +322,19 @@ export default function OrdersPage() {
                         <tr key={booking.id} className="hover:bg-gray-50/50 transition-colors">
                           <td className="px-5 py-4 whitespace-nowrap text-xs font-mono text-gray-500">{booking.id.substring(0, 8)}...</td>
                           <td className="px-5 py-4">
-                            <div className="text-sm font-medium text-gray-900">{booking.tours?.title || 'Tour'}</div>
+                            {booking.source === 'itinerary_builder' ? (
+                              <div className="flex flex-col gap-0.5">
+                                <span className="inline-flex w-fit items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold text-emerald-800 ring-1 ring-emerald-200">
+                                  📋 Custom itinerary
+                                </span>
+                                <div className="text-xs text-gray-500">
+                                  {(booking as any).itinerary?.region ?? '—'} ·{' '}
+                                  {(booking as any).itinerary?.track ?? '—'}
+                                </div>
+                              </div>
+                            ) : (
+                              <div className="text-sm font-medium text-gray-900">{booking.tours?.title || 'Tour'}</div>
+                            )}
                           </td>
                           <td className="px-5 py-4">
                             <div className="text-sm text-gray-900">{booking.user_profiles?.full_name || booking.contact_name || 'Guest'}</div>
@@ -309,8 +357,14 @@ export default function OrdersPage() {
                             )}
                           </td>
                           <td className="px-5 py-4 whitespace-nowrap">
+                            {/* Phase 10.6 — currency-aware formatting. KRW
+                                bookings (itinerary_builder) render as ₩340,000,
+                                USD bookings (tour_product legacy) as $52.00. */}
                             <div className="text-sm font-semibold text-gray-900">
-                              ${parseFloat(String(booking.final_price)).toLocaleString()}
+                              {formatBookingPrice(
+                                parseFloat(String(booking.final_price)),
+                                booking.currency ?? 'usd',
+                              )}
                             </div>
                           </td>
                           <td className="px-5 py-4 whitespace-nowrap">

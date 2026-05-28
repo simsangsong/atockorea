@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { supabase } from '@/lib/supabase';
 import { BookingStatusBadge } from '@/components/admin/BookingStatusBadge';
+import { formatBookingPrice } from '@/lib/format/currency';
 
 interface Stats {
   totalMerchants: number;
@@ -14,12 +15,16 @@ interface Stats {
   todayOrders: number;
   pendingOrders: number;
   totalRevenue: number;
+  revenueByCurrency?: { usd: number; krw: number };
 }
 
 interface RecentBooking {
   id: string;
   created_at: string;
   final_price: number;
+  /** Phase 10.6 — currency-aware money rendering on the recent-bookings list. */
+  currency?: 'usd' | 'krw' | string | null;
+  source?: string | null;
   status: string;
   payment_status: string;
   contact_name?: string | null;
@@ -154,10 +159,16 @@ export default function AdminDashboard() {
       link: '/admin/orders',
     },
     {
+      // Phase 10.6 — render the dominant currency (USD legacy) as the
+      // headline number + tuck the KRW (itinerary-builder) total as a sub.
+      // Mixing them into a single ₩ string mis-labels USD bookings as
+      // ~1000× cheaper than they actually are.
       title: '총 매출',
-      value: `₩${(stats.totalRevenue || 0).toLocaleString()}`,
+      value: `$${(stats.revenueByCurrency?.usd ?? stats.totalRevenue ?? 0).toLocaleString('en-US', { maximumFractionDigits: 0 })}`,
       change: null,
-      subtitle: '결제 완료 기준',
+      subtitle: stats.revenueByCurrency?.krw && stats.revenueByCurrency.krw > 0
+        ? `+ ₩${stats.revenueByCurrency.krw.toLocaleString('ko-KR')} (커스텀 일정)`
+        : '결제 완료 기준',
       link: '/admin/analytics',
     },
   ];
@@ -289,7 +300,7 @@ export default function AdminDashboard() {
                     새 예약: {booking.tours?.title || '투어'}
                   </p>
                   <p className="text-xs text-slate-500 mt-0.5">
-                    {booking.user_profiles?.full_name || booking.contact_name || '게스트'} · {formatDate(booking.created_at)} · ₩{parseFloat(booking.final_price.toString()).toLocaleString()}
+                    {booking.user_profiles?.full_name || booking.contact_name || '게스트'} · {formatDate(booking.created_at)} · {formatBookingPrice(parseFloat(booking.final_price.toString()), booking.currency)}
                   </p>
                 </div>
                 <BookingStatusBadge status={booking.status} className="rounded-lg flex-shrink-0" />
