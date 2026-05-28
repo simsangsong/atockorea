@@ -18,7 +18,7 @@
 | **Current phase** | Phase 10 — Flow simplification + card-hold booking 🔄 (branch `feat/itinerary-builder-flow-simplification`, worktree `C:/Users/sangsong/atockorea-flow-simp`, off `origin/main` `46b529d0`). Phase 8 admin-tooling continues on `feat/admin-match-pois-editor`; Phase 9 pricing track is code-complete (interactive QA pending). |
 | **Blocked on** | — (Phase 9 interactive QA is a separate track; Phase 10 only consumes the pricing module) |
 | **Last updated** | 2026-05-29 |
-| **Last commit touching this feature** | `049c9aab` — feat(quote-engine): cruise +40k + Gangjeong port +70k surcharges (Phase 9 D15) — Phase 10 will overwrite after first commit |
+| **Last commit touching this feature** | `8bef20be` — docs(planner): register Phase 10 (flow simplification + card-hold booking) — D16-D26 + §F Phase 10 entry |
 | **Owner** | simsangsong |
 | **Reviewers** | — |
 | **Branch** | `feat/itinerary-builder-flow-simplification` (Phase 10, off `origin/main`). Other in-flight tracks: `feat/admin-match-pois-editor` (Phase 8), `feat/itinerary-builder-pricing` (Phase 9 QA), `fix/itinerary-builder-poi-data-quality` (data-quality). |
