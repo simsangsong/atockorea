@@ -18,7 +18,7 @@
 | **Current phase** | Phase 10 — Flow simplification + card-hold booking 🔄 (branch `feat/itinerary-builder-flow-simplification`, worktree `C:/Users/sangsong/atockorea-flow-simp`, off `origin/main` `46b529d0`). Phase 8 admin-tooling continues on `feat/admin-match-pois-editor`; Phase 9 pricing track is code-complete (interactive QA pending). |
 | **Blocked on** | — (Phase 9 interactive QA is a separate track; Phase 10 only consumes the pricing module) |
 | **Last updated** | 2026-05-29 |
-| **Last commit touching this feature** | `2cbe643e` — feat(builder): Phase 10.2 — bookings KRW support + Stripe currency stack (migration + checkout + webhook + cron + form + helper + tests) |
+| **Last commit touching this feature** | `f652559e` — fix(builder): Phase 10.2.1 audit fixes #1-4 (resolveAmount KRW default · safePax NaN-clamp · pax/guests parity · DMZ duration_hours email) + Phase 6 plan 6c/6d (currency-aware sweep + cancellation parity) |
 | **Owner** | simsangsong |
 | **Reviewers** | — |
 | **Branch** | `feat/itinerary-builder-flow-simplification` (Phase 10, off `origin/main`). Other in-flight tracks: `feat/admin-match-pois-editor` (Phase 8), `feat/itinerary-builder-pricing` (Phase 9 QA), `fix/itinerary-builder-poi-data-quality` (data-quality). |
@@ -546,6 +546,7 @@ Slack escalation, `quote_memory` precedent system) is deleted.
 **Sub-phases (mirroring §D of the spin-off planner):**
 - [x] (10.1) Planner registration + decision lock-in — `8bef20be` (D16-D26 + §F Phase 10 entry + spin-off doc).
 - [x] (10.2) Schema migration `bookings.currency` / `source` / `itinerary` + Stripe currency stack (checkout, webhook, recapture-holds cron, NoShowHoldCardForm generalization, `createBuilderBooking()` helper, settle endpoint verified) — `2cbe643e` · 47/47 tests green · build green · migration applied to prod-mirror.
+- [x] (10.2.1) Audit fixes #1–4 (5 finder agents + 1 sweep + DB verification 2026-05-29): `resolveAmount` honors explicit currency even when amountMinor missing · `safePax()` clamps NaN/Infinity/negative pax · `itinerary.pax === number_of_guests` invariant · DMZ duration_hours=0 email regression. Phase 6 plan extended with 6c (currency-aware admin/customer formatters) + 6d (builder cancellation email parity). Pre-existing recapture-holds idempotencyKey bug spun off as separate follow-up. — `f652559e` · 57/57 tests green · build green.
 - [ ] (10.3) Unified planner shell — `PlannerTopRail` + `LivePriceCard` + collapse `/itinerary-builder/[region]` → `?region=`; QuoteModal slimmed to contact-only; IntakeForm deleted.
 - [ ] (10.4) Auto-run AI recommendation on mount (debounced); cart directly populated; "Take this itinerary" click removed.
 - [ ] (10.5) `/api/itinerary/book` + `/itinerary-builder/checkout` + `/itinerary-builder/confirmation/[id]` + `builder-booking-confirmation.ts` email + price-mismatch defense (409); **delete** entire quote pipe + INSERT-trigger safety migration.
