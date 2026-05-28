@@ -568,7 +568,8 @@ export default function CheckoutPage() {
                       publishableKey={paymentSession.publishableKey}
                       clientSecret={paymentSession.clientSecret}
                       intentType={paymentSession.intentType}
-                      amountUsdCents={paymentSession.amountUsdCents}
+                      currency="usd"
+                      amountMinor={paymentSession.amountUsdCents}
                       leadDays={paymentSession.leadDays}
                       returnUrl={`${typeof window !== 'undefined' ? window.location.origin : ''}/tour/${params.id}/confirmation?booking_id=${encodeURIComponent(paymentSession.bookingId)}`}
                     />

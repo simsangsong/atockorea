@@ -19,6 +19,18 @@ function getStripePromise(publishableKey: string): Promise<StripeJS | null> {
   return cached;
 }
 
+/**
+ * Currency-aware authorization-hold card form. Generalized from USD-only to
+ * support the itinerary-builder's KRW bookings (Phase 10 D9/D23).
+ *
+ * - `currency:'usd'` + `amountMinor` in cents (legacy tour-product flow)
+ * - `currency:'krw'` + `amountMinor` in whole KRW (Stripe treats KRW as
+ *   zero-decimal; no division required)
+ *
+ * For one PR cycle, the legacy `amountUsdCents` prop is accepted as a
+ * deprecated alias and mapped to `{ currency:'usd', amountMinor:<cents> }`
+ * so the tour-product checkout page can migrate independently.
+ */
 export type NoShowHoldCardFormProps = {
   /** Stripe publishable key returned from `/api/stripe/checkout`. */
   publishableKey: string;
@@ -28,11 +40,26 @@ export type NoShowHoldCardFormProps = {
   intentType: 'payment_intent' | 'setup_intent';
   /** Where to land after a successful confirmation. Stripe appends its own params. */
   returnUrl: string;
-  /** USD-cent amount authorized for tour-day automatic capture. */
-  amountUsdCents: number;
   /** Days from today to tour date — controls the disclosure copy ("hold today" vs "hold ~5 days before"). */
   leadDays: number;
+  /** ISO 4217 currency. Required when `amountMinor` is provided. */
+  currency?: 'usd' | 'krw';
+  /** Authorized amount in the currency's minor units (cents for USD, whole KRW for KRW). */
+  amountMinor?: number;
+  /** @deprecated Use `currency:'usd' + amountMinor` instead. Kept for one PR cycle. */
+  amountUsdCents?: number;
 };
+
+/** Resolve the deprecated `amountUsdCents` alias into the unified shape. */
+function resolveAmount(props: NoShowHoldCardFormProps): { currency: 'usd' | 'krw'; amountMinor: number } {
+  if (props.currency && typeof props.amountMinor === 'number') {
+    return { currency: props.currency, amountMinor: props.amountMinor };
+  }
+  if (typeof props.amountUsdCents === 'number') {
+    return { currency: 'usd', amountMinor: props.amountUsdCents };
+  }
+  return { currency: 'usd', amountMinor: 0 };
+}
 
 export function NoShowHoldCardForm(props: NoShowHoldCardFormProps) {
   const stripePromise = useMemo(
@@ -62,20 +89,28 @@ export function NoShowHoldCardForm(props: NoShowHoldCardFormProps) {
   );
 }
 
-function formatUsd(cents: number): string {
+/**
+ * Format an amount in a currency's minor units. KRW is zero-decimal in Stripe
+ * (and IRL), so `amountMinor` is already whole won; USD needs /100.
+ */
+export function formatHoldAmount(currency: 'usd' | 'krw', amountMinor: number): string {
+  if (currency === 'krw') {
+    return new Intl.NumberFormat('ko-KR', {
+      style: 'currency',
+      currency: 'KRW',
+      maximumFractionDigits: 0,
+    }).format(amountMinor);
+  }
   return new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
     maximumFractionDigits: 0,
-  }).format(cents / 100);
+  }).format(amountMinor / 100);
 }
 
-function CardFormInner({
-  intentType,
-  returnUrl,
-  amountUsdCents,
-  leadDays,
-}: NoShowHoldCardFormProps) {
+function CardFormInner(props: NoShowHoldCardFormProps) {
+  const { intentType, returnUrl, leadDays } = props;
+  const { currency, amountMinor } = resolveAmount(props);
   const stripe = useStripe();
   const elements = useElements();
   const t = useTranslations();
@@ -138,16 +173,17 @@ function CardFormInner({
       ? tt('checkout.holdNow', 'Place hold & confirm reservation')
       : tt('checkout.saveCardAndReserve', 'Save card & confirm reservation');
 
+  const formattedAmount = formatHoldAmount(currency, amountMinor);
   const disclosureLine =
     leadDays <= 7
       ? tt(
           'checkout.holdDisclosureNow',
-          `${formatUsd(amountUsdCents)} authorization placed today. It will be charged automatically at 10:00 AM Korea time on the tour date unless you cancel at least 24 hours before departure.`,
-        ).replace('{amount}', formatUsd(amountUsdCents))
+          `${formattedAmount} authorization placed today. It will be charged automatically at 10:00 AM Korea time on the tour date unless you cancel at least 24 hours before departure.`,
+        ).replace('{amount}', formattedAmount)
       : tt(
           'checkout.holdDisclosureLater',
-          `Card saved today. A ${formatUsd(amountUsdCents)} authorization is placed about 5 days before your tour and charged automatically at 10:00 AM Korea time on the tour date unless you cancel at least 24 hours before departure.`,
-        ).replace('{amount}', formatUsd(amountUsdCents));
+          `Card saved today. A ${formattedAmount} authorization is placed about 5 days before your tour and charged automatically at 10:00 AM Korea time on the tour date unless you cancel at least 24 hours before departure.`,
+        ).replace('{amount}', formattedAmount);
 
   return (
     <form

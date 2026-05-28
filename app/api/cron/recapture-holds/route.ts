@@ -103,7 +103,7 @@ export async function GET(req: NextRequest) {
     .from('bookings')
     .select(
       `
-      id, tour_id, tour_date, final_price, no_show_fee_usd_cents,
+      id, tour_id, tour_date, final_price, currency, source, no_show_fee_usd_cents,
       stripe_customer_id, stripe_payment_method_id, contact_email, contact_name,
       payment_intent_id, payment_intent_status, card_collection_method, status,
       tours ( title )
@@ -134,13 +134,29 @@ export async function GET(req: NextRequest) {
       continue;
     }
 
-    /** Compute the hold amount. Prefer the stored cents (immutable at booking time)
-     *  over the live final_price (which may have changed for some reason). */
-    let amountCents = booking.no_show_fee_usd_cents ? Number(booking.no_show_fee_usd_cents) : null;
-    if (!amountCents && Number.isFinite(Number(booking.final_price))) {
-      amountCents = Math.round(Number(booking.final_price) * 100);
+    /**
+     * Compute the hold amount in the booking's minor units. USD final_price is
+     * two-decimal (× 100 → cents); KRW final_price is whole won already (× 1).
+     * For USD we prefer the immutable `no_show_fee_usd_cents` snapshot taken
+     * at booking time. For KRW we always derive from `final_price` (the snapshot
+     * column is USD-only and is NULL for KRW bookings).
+     * Phase 10 D16 — see /api/stripe/checkout.
+     */
+    const holdCurrency: 'usd' | 'krw' =
+      (booking as { currency?: string }).currency === 'krw' ? 'krw' : 'usd';
+    let amountMinor: number | null = null;
+    if (holdCurrency === 'usd') {
+      amountMinor = booking.no_show_fee_usd_cents
+        ? Number(booking.no_show_fee_usd_cents)
+        : Number.isFinite(Number(booking.final_price))
+          ? Math.round(Number(booking.final_price) * 100)
+          : null;
+    } else {
+      amountMinor = Number.isFinite(Number(booking.final_price))
+        ? Math.round(Number(booking.final_price))
+        : null;
     }
-    if (!amountCents || amountCents <= 0) {
+    if (!amountMinor || amountMinor <= 0) {
       summary.skipped += 1;
       continue;
     }
@@ -176,11 +192,21 @@ export async function GET(req: NextRequest) {
 
     const tour = Array.isArray(booking.tours) ? booking.tours[0] : booking.tours;
     const tourTitle = (tour as { title?: string } | null)?.title ?? 'Tour';
+    const isBuilder = (booking as { source?: string }).source === 'itinerary_builder';
+    const description = isBuilder
+      ? `Custom itinerary auto charge authorization (re-auth, booking ${booking.id})`
+      : `Tour-day auto charge authorization (re-auth): ${tourTitle} (booking ${booking.id})`;
+    const piMetadata: Record<string, string> = {
+      booking_id: booking.id,
+      kind: 'tour_day_auto_charge_reauth',
+    };
+    if (booking.tour_id != null) piMetadata.tour_id = String(booking.tour_id);
+    if (isBuilder) piMetadata.source = 'itinerary_builder';
 
     try {
       const pi = await stripe.paymentIntents.create({
-        amount: amountCents,
-        currency: 'usd',
+        amount: amountMinor,
+        currency: holdCurrency,
         capture_method: 'manual',
         customer: booking.stripe_customer_id as string,
         payment_method: paymentMethodId,
@@ -188,13 +214,9 @@ export async function GET(req: NextRequest) {
         off_session: true,
         payment_method_types: ['card'],
         receipt_email: booking.contact_email ?? undefined,
-        description: `Tour-day auto charge authorization (re-auth): ${tourTitle} (booking ${booking.id})`,
+        description,
         statement_descriptor_suffix: 'TOUR HOLD',
-        metadata: {
-          booking_id: booking.id,
-          tour_id: String(booking.tour_id),
-          kind: 'tour_day_auto_charge_reauth',
-        },
+        metadata: piMetadata,
       });
 
       const expiresAt = new Date(Date.now() + HOLD_VALIDITY_DAYS * MS_PER_DAY).toISOString();
