@@ -59,16 +59,10 @@ export default function LivePriceCard({ price, isJeju, compact = false }: Props)
 
   return (
     <div className="space-y-3">
-      <div className="relative overflow-hidden rounded-card border border-amber-200/80 bg-gradient-to-br from-amber-50/80 via-white to-amber-50/40 p-4 shadow-[0_1px_2px_rgba(245,158,11,0.06),0_12px_28px_-18px_rgba(245,158,11,0.30)]">
-        {/* Premium hairline rail at the top echoes the AIRecommendPanel
-            accent above — unified card-style language. */}
-        <span
-          aria-hidden
-          className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber-300/80 to-transparent"
-        />
+      <div className="rounded-card bg-emerald-50/50 p-4 shadow-[0_2px_8px_rgba(15,23,42,0.04),0_22px_50px_-20px_rgba(15,23,42,0.20)] transition-shadow duration-300 ease-out hover:shadow-[0_4px_14px_rgba(15,23,42,0.06),0_30px_64px_-20px_rgba(15,23,42,0.26)]">
         {!compact ? (
-          <p className="mb-2.5 inline-flex items-center gap-1.5 text-eyebrow !text-amber-800">
-            <Sparkles className="h-3 w-3" aria-hidden />
+          <p className="mb-2.5 inline-flex items-center gap-1.5 text-eyebrow text-slate-500">
+            <Sparkles className="h-3 w-3 text-emerald-600" aria-hidden />
             {t("pricing.title")}
           </p>
         ) : null}
@@ -87,7 +81,7 @@ export default function LivePriceCard({ price, isJeju, compact = false }: Props)
                 </li>
               ))}
             </ul>
-            <div className="mt-3 flex items-baseline justify-between border-t border-amber-200/80 pt-3">
+            <div className="mt-3 flex items-baseline justify-between border-t border-emerald-200/40 pt-3">
               <span className="text-caption font-bold tracking-tight text-slate-900">
                 {t("pricing.total")}
               </span>
@@ -103,7 +97,7 @@ export default function LivePriceCard({ price, isJeju, compact = false }: Props)
           </>
         ) : (
           <div className="flex items-start gap-2">
-            <Info className="mt-0.5 h-4 w-4 flex-shrink-0 text-amber-700" aria-hidden />
+            <Info className="mt-0.5 h-4 w-4 flex-shrink-0 text-slate-500" aria-hidden />
             <div>
               <p className="text-caption font-bold text-slate-800">
                 {t("pricing.manualTitle")}
@@ -117,16 +111,16 @@ export default function LivePriceCard({ price, isJeju, compact = false }: Props)
       </div>
 
       {/* Not-included + Jeju single-region notices (§5, §6 of pricing policy)
-          — soft callouts inside a white card with a hairline ring, echoing
-          the rest of the rail's white-on-amber composition. */}
-      <div className="space-y-2 rounded-card border border-slate-200/70 bg-white px-3.5 py-3 shadow-[0_1px_2px_rgba(15,23,42,0.03)]">
+          — borderless mint card matching the price card above. Floats on the
+          stone-50 page background; no amber accents (user direction 2026-05-29). */}
+      <div className="space-y-2 rounded-card bg-emerald-50/40 px-3.5 py-3 shadow-[0_1px_4px_rgba(15,23,42,0.04),0_12px_30px_-18px_rgba(15,23,42,0.14)]">
         <p className="flex items-start gap-1.5 text-micro leading-relaxed text-slate-600">
-          <Info className="mt-0.5 h-3 w-3 flex-shrink-0 text-amber-500" aria-hidden />
+          <Info className="mt-0.5 h-3 w-3 flex-shrink-0 text-slate-400" aria-hidden />
           {t("pricing.notIncluded")}
         </p>
         {isJeju ? (
           <p className="flex items-start gap-1.5 text-micro leading-relaxed text-slate-600">
-            <Info className="mt-0.5 h-3 w-3 flex-shrink-0 text-amber-500" aria-hidden />
+            <Info className="mt-0.5 h-3 w-3 flex-shrink-0 text-slate-400" aria-hidden />
             {t("pricing.jejuSingleRegion")}
           </p>
         ) : null}

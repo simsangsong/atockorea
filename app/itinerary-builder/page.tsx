@@ -104,7 +104,9 @@ export default async function ItineraryBuilderPage({
 
   return (
     <SitePageShell>
-      <main className="min-h-screen bg-white/55">
+      {/* Phase 10.4.1 — premium warm-gray page background (user direction
+          2026-05-29). Cards float as very-light mint surfaces on top. */}
+      <main className="min-h-screen bg-stone-50">
         <BuilderShell
           region={region}
           pois={pois}

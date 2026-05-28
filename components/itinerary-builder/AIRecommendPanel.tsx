@@ -303,20 +303,15 @@ export default function AIRecommendPanel({
     <section className="px-4 pt-4 pb-3 md:px-6 md:pt-5 md:pb-4">
       <motion.div
         {...reveal}
-        className="relative mx-auto max-w-3xl overflow-hidden rounded-card border border-slate-200/80 bg-white shadow-[0_1px_2px_rgba(15,23,42,0.04),0_18px_44px_-24px_rgba(15,23,42,0.18)]"
+        className="relative mx-auto max-w-3xl overflow-hidden rounded-card bg-emerald-50/50 shadow-[0_2px_8px_rgba(15,23,42,0.04),0_24px_56px_-22px_rgba(15,23,42,0.22)] transition-shadow duration-300 ease-out hover:shadow-[0_4px_14px_rgba(15,23,42,0.06),0_32px_72px_-22px_rgba(15,23,42,0.28)]"
       >
-        {/* Premium accent rail — single hairline amber line at the top of
-            the card matches the LivePriceCard amber identity below, so the
-            rail reads as one unified composition. */}
-        <span
-          aria-hidden
-          className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber-300/70 to-transparent"
-        />
-
-        {/* Header — eyebrow with Sparkles (landing-card convention) */}
+        {/* Header — Sparkles eyebrow (landing convention), but the amber
+            accent moves to the icon only so the eyebrow text stays neutral
+            slate. No yellow tint on surfaces or borders anywhere on this
+            card. */}
         <motion.div variants={REVEAL_ITEM_VARIANTS} className="px-5 pt-5 pb-3 md:px-6 md:pt-6">
-          <p className="mb-2 inline-flex items-center gap-1.5 text-eyebrow text-amber-700">
-            <Sparkles className="h-3 w-3" aria-hidden />
+          <p className="mb-2 inline-flex items-center gap-1.5 text-eyebrow text-slate-500">
+            <Sparkles className="h-3 w-3 text-emerald-600" aria-hidden />
             {t("eyebrow")}
           </p>
           {!collapsed ? (
@@ -330,9 +325,9 @@ export default function AIRecommendPanel({
             <button
               type="button"
               onClick={() => setCollapsed(false)}
-              className="focus-ring inline-flex items-center gap-1.5 rounded-full bg-white px-3.5 py-1.5 text-micro font-semibold text-slate-800 ring-1 ring-slate-200 shadow-sm transition-colors duration-200 ease-out hover:bg-slate-50 hover:ring-slate-300"
+              className="focus-ring inline-flex items-center gap-1.5 rounded-full bg-white px-3.5 py-1.5 text-micro font-semibold text-slate-800 shadow-[0_1px_2px_rgba(15,23,42,0.04),0_2px_6px_-2px_rgba(15,23,42,0.10)] transition-all duration-200 ease-out hover:-translate-y-px hover:shadow-[0_2px_4px_rgba(15,23,42,0.06),0_8px_18px_-4px_rgba(15,23,42,0.16)]"
             >
-              <Sparkles className="h-3 w-3 text-amber-500" aria-hidden />
+              <Sparkles className="h-3 w-3 text-emerald-600" aria-hidden />
               {t("getAnother")}
             </button>
           </div>
@@ -350,7 +345,7 @@ export default function AIRecommendPanel({
                     type="button"
                     onClick={() => handlePreset(p.intent)}
                     disabled={loading}
-                    className="focus-ring inline-flex items-center rounded-full bg-white px-3 py-1.5 text-micro font-semibold text-slate-800 ring-1 ring-slate-200 shadow-[0_1px_2px_rgba(15,23,42,0.04)] transition-all duration-150 ease-out hover:-translate-y-px hover:bg-amber-50/60 hover:ring-amber-300 hover:shadow-[0_2px_6px_rgba(245,158,11,0.12)] disabled:cursor-not-allowed disabled:opacity-60 motion-reduce:hover:translate-y-0"
+                    className="focus-ring inline-flex items-center rounded-full bg-white px-3 py-1.5 text-micro font-semibold text-slate-800 shadow-[0_1px_2px_rgba(15,23,42,0.04),0_2px_6px_-2px_rgba(15,23,42,0.08)] transition-all duration-150 ease-out hover:-translate-y-px hover:shadow-[0_2px_4px_rgba(15,23,42,0.06),0_8px_18px_-4px_rgba(15,23,42,0.14)] disabled:cursor-not-allowed disabled:opacity-60 motion-reduce:hover:translate-y-0"
                   >
                     {t(`presets.${p.key}`)}
                   </button>
@@ -374,7 +369,7 @@ export default function AIRecommendPanel({
                   value={intent}
                   onChange={(e) => setIntent(e.target.value)}
                   placeholder={t("intentPlaceholder")}
-                  className="focus-ring w-full rounded-button border border-slate-200 bg-slate-50/60 px-3.5 py-2.5 text-sm text-slate-900 transition-colors duration-200 placeholder:text-slate-400 focus:border-slate-300 focus:bg-white"
+                  className="focus-ring w-full rounded-button bg-white px-3.5 py-2.5 text-sm text-slate-900 shadow-[0_1px_2px_rgba(15,23,42,0.04),inset_0_0_0_1px_rgba(15,23,42,0.04)] transition-shadow duration-200 placeholder:text-slate-400 focus:shadow-[0_1px_2px_rgba(15,23,42,0.06),inset_0_0_0_1px_rgba(15,23,42,0.08)]"
                 />
               </div>
               {/* Phase 10.4 — hours select removed; PlannerTopRail's
