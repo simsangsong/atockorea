@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { redirect } from "next/navigation";
 import { createServerClient } from "@/lib/supabase";
 import { SitePageShell } from "@/src/components/layout/SitePageShell";
 import {
@@ -43,10 +44,43 @@ export const metadata: Metadata = {
 export default async function ItineraryBuilderPage({
   searchParams,
 }: {
-  searchParams: Promise<{ region?: string }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const sp = await searchParams;
-  const region: RegionSlug = isRegionSlug(sp.region ?? "") ? (sp.region as RegionSlug) : DEFAULT_REGION;
+
+  /**
+   * Audit fix #5/#6 (Phase 10.3.2): rewrite the URL to a canonical
+   * (region, track) pair so it never contradicts itself.
+   *   - `?region=` missing or invalid → coerce to DEFAULT_REGION.
+   *   - `?track=dmz` always implies `region=seoul` (DMZ is Seoul-only —
+   *     deep-links like `?region=jeju&track=dmz` previously rendered a
+   *     DMZ product card while LivePriceCard treated the trip as Jeju
+   *     and the share-link continued to mis-report the region).
+   * All other params (date, party, lang, duration, hours, ship, port,
+   * pickup, intent, locale, origin, …) are preserved verbatim.
+   */
+  const requestedRegion = typeof sp.region === "string" ? sp.region : null;
+  const requestedTrack = typeof sp.track === "string" ? sp.track : null;
+  const canonicalRegion: RegionSlug =
+    requestedTrack === "dmz"
+      ? "seoul"
+      : isRegionSlug(requestedRegion ?? "")
+        ? (requestedRegion as RegionSlug)
+        : DEFAULT_REGION;
+  if (requestedRegion !== canonicalRegion) {
+    const qs = new URLSearchParams();
+    qs.set("region", canonicalRegion);
+    for (const [k, v] of Object.entries(sp)) {
+      if (k === "region") continue;
+      if (Array.isArray(v)) {
+        for (const item of v) if (item) qs.append(k, item);
+      } else if (v) {
+        qs.set(k, v);
+      }
+    }
+    redirect(`/itinerary-builder?${qs.toString()}`);
+  }
+  const region: RegionSlug = canonicalRegion;
 
   const cluster = REGION_CLUSTER[region];
   const center = REGION_CENTER[region];

@@ -5,7 +5,9 @@
  * `poi_key` values, in user-chosen order. Keeping state in the URL means
  * itineraries are share-able (D5 2026-05-16: no auth, URL params carry state).
  *
- * Example: `/itinerary-builder/busan?pois=haedong_yonggungsa,jagalchi_market&date=2026-05-20&party=4`
+ * Example: `/itinerary-builder?region=busan&pois=haedong_yonggungsa,jagalchi_market&date=2026-05-20&party=4`
+ * (The legacy `/itinerary-builder/[region]` path was collapsed in Phase 10.3
+ * — it now 308-redirects to the canonical `?region=` form.)
  */
 
 import { useCallback, useMemo } from "react";

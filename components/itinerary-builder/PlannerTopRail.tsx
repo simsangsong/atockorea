@@ -99,20 +99,57 @@ export default function PlannerTopRail({ region }: Props) {
   const isJejuLand = region === "jeju" && !isDmz && !isCruise;
   const isJejuCruise = region === "jeju" && isCruise;
 
-  /** Write a partial URL update, preserving any existing params. */
+  /**
+   * Write a partial URL update, preserving any existing params.
+   *
+   * Audit fix #2/#3/#6 (Phase 10.3.2): some updates trigger an implicit
+   * "clean slate" for related params:
+   *   - region change → drop `?pois=` (the cart from the OLD region's POIs
+   *     would byKey-miss against the NEW region's POI set and silently
+   *     produce a 0-stop quote).
+   *   - track=dmz → force region=seoul (DMZ is Seoul-only; deep-links like
+   *     `?region=jeju&track=dmz` previously produced contradictory state)
+   *     AND drop cruise/private-only params (hours, ship, port, pickup,
+   *     duration) so a private→dmz→back-to-private toggle returns clean.
+   *   - track=cruise → drop the private-only `duration` param so
+   *     QuoteModal.handleSubmit's `duration ?? hours` fallback resolves to
+   *     `hours` as intended.
+   *   - track=private → drop cruise-only params (hours, ship, port).
+   */
   const patch = useCallback(
     (updates: Record<string, string | null>) => {
       const params = new URLSearchParams(sp?.toString() ?? "");
+      // Apply explicit updates first.
       for (const [k, v] of Object.entries(updates)) {
         if (v == null || v === "") params.delete(k);
         else params.set(k, v);
       }
+      // Then apply implicit cleanups derived from those updates.
+      if ("region" in updates) {
+        params.delete("pois");
+      }
+      if (updates.track === "dmz") {
+        params.set("region", "seoul");
+        params.delete("hours");
+        params.delete("ship");
+        params.delete("port");
+        params.delete("pickup");
+        params.delete("duration");
+      } else if (updates.track === "cruise") {
+        params.delete("duration");
+      } else if (updates.track === "private") {
+        params.delete("hours");
+        params.delete("ship");
+        params.delete("port");
+      }
+
       // Region change is special — POIs are fetched server-side, so this is a
       // hard navigation (page replays). Everything else is `replace` to keep
       // the planner mounted.
       const qs = params.toString();
       const href = `/itinerary-builder${qs ? `?${qs}` : ""}`;
-      if (updates.region) router.push(href);
+      const requiresHardNav = "region" in updates || updates.track === "dmz";
+      if (requiresHardNav) router.push(href);
       else router.replace(href, { scroll: false });
     },
     [router, sp],
@@ -123,13 +160,19 @@ export default function PlannerTopRail({ region }: Props) {
     if (dateError && date) setDateError(false);
   }, [date, dateError]);
 
-  // Solati (10-13 pax) needs ≥6h. Bump duration if it's too short.
+  // Solati (10-13 pax) needs ≥6h. Bump the relevant duration param if it's
+  // too short. Audit fix #4 — read `hours` on cruise track, `duration` on
+  // private; ignore DMZ entirely (no duration concept).
   useEffect(() => {
+    if (isDmz) return;
     const p = Number(party);
-    if (Number.isFinite(p) && p >= 10 && p <= 13 && Number(duration) < 6) {
-      patch({ duration: "6" });
+    if (!Number.isFinite(p) || p < 10 || p > 13) return;
+    const relevantKey = isCruise ? "hours" : "duration";
+    const relevantValue = isCruise ? hours : duration;
+    if (Number(relevantValue) < 6) {
+      patch({ [relevantKey]: "6" });
     }
-  }, [party, duration, patch]);
+  }, [party, duration, hours, isCruise, isDmz, patch]);
 
   /** Build a compact summary chip ("Busan · 2026-08-20 · 4명 · EN · 8h"). */
   const summary = useMemo(() => {
@@ -143,8 +186,20 @@ export default function PlannerTopRail({ region }: Props) {
     return parts.join(" · ");
   }, [region, date, party, lang, duration, hours, isCruise, isDmz]);
 
-  /** Inline form body — re-used by both the desktop bar and the mobile sheet. */
-  function FormBody({ inSheet }: { inSheet: boolean }) {
+  /**
+   * Inline form body — re-used by both the desktop bar and the mobile sheet.
+   *
+   * Audit fix #1 (Phase 10.3.2): previously declared as `function FormBody({inSheet})`
+   * and rendered as `<FormBody inSheet={...} />`. Because the function was
+   * declared INSIDE the parent component, every parent render created a new
+   * function reference, which React treats as a different component type and
+   * REMOUNTS the entire subtree on every URL change. Result: input/select
+   * focus was lost on every keystroke and Korean/Japanese IME composition
+   * broke mid-character. Now rendered as `{renderForm(false)}` — a plain
+   * function call that returns JSX (NOT a component), so React reconciles
+   * it as part of the parent's own render tree. Focus + IME preserved.
+   */
+  const renderForm = (inSheet: boolean) => {
     return (
       <div
         className={cn(
@@ -307,13 +362,13 @@ export default function PlannerTopRail({ region }: Props) {
         ) : null}
       </div>
     );
-  }
+  };
 
   return (
     <>
       {/* Desktop bar — full expanded controls on md+ */}
       <div className="sticky top-16 z-30 hidden border-b border-slate-200/80 bg-white/95 backdrop-blur-md md:block">
-        <FormBody inSheet={false} />
+        {renderForm(false)}
       </div>
 
       {/* Mobile chip — collapsed summary; tap to open sheet */}
@@ -351,7 +406,7 @@ export default function PlannerTopRail({ region }: Props) {
                 <X className="h-5 w-5" aria-hidden />
               </button>
             </div>
-            <FormBody inSheet />
+            {renderForm(true)}
             <div className="border-t border-slate-200 p-4">
               <button
                 type="button"
