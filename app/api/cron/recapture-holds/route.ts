@@ -178,24 +178,35 @@ export async function GET(req: NextRequest) {
     const tourTitle = (tour as { title?: string } | null)?.title ?? 'Tour';
 
     try {
-      const pi = await stripe.paymentIntents.create({
-        amount: amountCents,
-        currency: 'usd',
-        capture_method: 'manual',
-        customer: booking.stripe_customer_id as string,
-        payment_method: paymentMethodId,
-        confirm: true,
-        off_session: true,
-        payment_method_types: ['card'],
-        receipt_email: booking.contact_email ?? undefined,
-        description: `Tour-day auto charge authorization (re-auth): ${tourTitle} (booking ${booking.id})`,
-        statement_descriptor_suffix: 'TOUR HOLD',
-        metadata: {
-          booking_id: booking.id,
-          tour_id: String(booking.tour_id),
-          kind: 'tour_day_auto_charge_reauth',
+      /** Idempotency key prevents double-authorizing the card if Stripe returns
+       *  5xx / the network drops after PI creation but before the DB update lands.
+       *  The next cron run picks the booking up again (payment_intent_id IS NULL)
+       *  and re-issuing with the same key reuses the prior PI instead of creating
+       *  a second hold. Keyed by (booking, day) so a deliberate retry on a later
+       *  day is still possible. */
+      const pi = await stripe.paymentIntents.create(
+        {
+          amount: amountCents,
+          currency: 'usd',
+          capture_method: 'manual',
+          customer: booking.stripe_customer_id as string,
+          payment_method: paymentMethodId,
+          confirm: true,
+          off_session: true,
+          payment_method_types: ['card'],
+          receipt_email: booking.contact_email ?? undefined,
+          description: `Tour-day auto charge authorization (re-auth): ${tourTitle} (booking ${booking.id})`,
+          statement_descriptor_suffix: 'TOUR HOLD',
+          metadata: {
+            booking_id: booking.id,
+            tour_id: String(booking.tour_id),
+            kind: 'tour_day_auto_charge_reauth',
+          },
         },
-      });
+        {
+          idempotencyKey: `reauth-${booking.id}-${todayYmd}`,
+        },
+      );
 
       const expiresAt = new Date(Date.now() + HOLD_VALIDITY_DAYS * MS_PER_DAY).toISOString();
 
