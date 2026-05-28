@@ -24,6 +24,10 @@ interface Props {
   pois?: MatchPoiRow[];
   /** Authoritative price computed in BuilderShell (Phase 10.3 D17). */
   price: PriceResult;
+  /** Optional phone collected separately — currently unused since the
+   *  slim modal asks only for name+email+notes. Reserved for Phase 6+
+   *  ops-side enhancements. */
+  contactPhone?: string | null;
 }
 
 /**
@@ -87,41 +91,63 @@ export default function QuoteModal({
       setError(t("errorEmailRequired"));
       return;
     }
+    if (!date) {
+      setError(t("errorEmailRequired").replace("email", "date") || "Tour date is required.");
+      return;
+    }
     setSubmitting(true);
     try {
+      /**
+       * Phase 10.5b — POST /api/itinerary/book (NOT /quote). The new endpoint
+       * creates a real `bookings` row + returns the booking_id we redirect to
+       * /itinerary-builder/checkout with for the Stripe card hold. The legacy
+       * proposal endpoint is going away in 10.5c.
+       */
       const body = {
         poi_keys: cart,
         region,
         track,
         guide_language: guideLang,
         duration_hours: isDmz ? undefined : Number(duration) || 8,
-        party_size: party ? Number(party) : null,
+        party_size: party ? Number(party) : 2,
         jeju_pickup_zone: region === "jeju" && !isDmz && !isCruise ? pickup : undefined,
         cruise_port: isCruise && region === "jeju" ? cruisePort : undefined,
-        requested_date: date || null,
+        requested_date: date,
         contact_email: email.trim(),
         contact_name: name.trim() || null,
-        language: guideLang,
         notes: notes.trim() || null,
         locale,
-        intake: {
-          ...(ship ? { ship } : {}),
-          ...(isCruise ? { hours: Number(duration) || 6 } : {}),
-        },
         source_url: typeof window !== "undefined" ? window.location.href : null,
+        /** Phase 10.5a price-mismatch defense — server compares to its own
+         *  recompute and returns 409 if they disagree by >₩1. */
+        client_quoted_total: price.total,
       };
-      const res = await fetch("/api/itinerary/quote", {
+      const res = await fetch("/api/itinerary/book", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
       });
       const data = await res.json();
       if (!res.ok || !data.ok) {
-        setError(data.error || t("errorGeneric"));
+        // Phase 10.5b — surface the specific failure modes:
+        //   422 out_of_scope → mailto contact gate
+        //   409 price_changed → re-confirm prompt
+        //   503 booking_disabled → kill-switch message
+        if (res.status === 422 && data.contact_email) {
+          setError(
+            `${data.error === "out_of_scope" ? "이 일정은 맞춤 견적이 필요합니다 — " : ""}${data.contact_email}로 문의해 주세요.`,
+          );
+        } else if (res.status === 409 && data.server_total) {
+          setError(
+            `가격이 변경되었어요. 새 합계 ₩${data.server_total.toLocaleString()}. 다시 확인 후 진행해 주세요.`,
+          );
+        } else {
+          setError(data.error || t("errorGeneric"));
+        }
         setSubmitting(false);
         return;
       }
-      router.push(`/itinerary-builder/thanks?quote_id=${encodeURIComponent(data.quote_id)}`);
+      router.push(`/itinerary-builder/checkout?bookingId=${encodeURIComponent(data.booking_id)}`);
     } catch (err) {
       setError(err instanceof Error ? err.message : t("errorGeneric"));
       setSubmitting(false);

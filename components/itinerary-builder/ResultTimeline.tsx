@@ -43,6 +43,9 @@ interface Props {
   onRemove: (key: string) => void;
   onReorder: (next: string[]) => void;
   onGetQuote: () => void;
+  /** Phase 10.5b — when false the CTA flips to a mailto contact gate
+   *  (14+ pax non-DMZ, >28 pax DMZ, Solati under min-hours). */
+  autoQuotable?: boolean;
   /** Cruise track time budget in minutes (e.g. 6h cruise = 360). */
   cruiseBudgetMinutes?: number | null;
   /** R1 — card body tap opens the shared POIDetailModal (lifted to BuilderShell). */
@@ -76,6 +79,7 @@ export default function ResultTimeline({
   onGetQuote,
   cruiseBudgetMinutes,
   onOpenDetail,
+  autoQuotable = true,
 }: Props) {
   const t = useTranslations("itineraryBuilder.cart");
   const tt = useTranslations("itineraryBuilder.timeline");
@@ -179,6 +183,7 @@ export default function ResultTimeline({
           cruiseBudgetMinutes={cruiseBudgetMinutes ?? null}
           overBudget={overBudget}
           onGetQuote={onGetQuote}
+          autoQuotable={autoQuotable}
           t={t}
         />
       ) : null}
@@ -409,6 +414,7 @@ function Footer({
   cruiseBudgetMinutes,
   overBudget,
   onGetQuote,
+  autoQuotable,
   t,
 }: {
   stayMinutes: number;
@@ -417,6 +423,7 @@ function Footer({
   cruiseBudgetMinutes: number | null;
   overBudget: boolean;
   onGetQuote: () => void;
+  autoQuotable: boolean;
   t: ReturnType<typeof useTranslations>;
 }) {
   return (
@@ -462,14 +469,33 @@ function Footer({
           })}
         </p>
       ) : null}
-      <button
-        type="button"
-        onClick={onGetQuote}
-        className={`${homeBtnPrimary} w-full`}
-      >
-        {t("getQuoteCta")}
-      </button>
-      <p className="mt-2 text-center text-micro text-slate-500">{t("getQuoteHint")}</p>
+      {autoQuotable ? (
+        <>
+          <button
+            type="button"
+            onClick={onGetQuote}
+            className={`${homeBtnPrimary} w-full`}
+          >
+            {t("getQuoteCta")}
+          </button>
+          <p className="mt-2 text-center text-micro text-slate-500">{t("getQuoteHint")}</p>
+        </>
+      ) : (
+        // Phase 10.5b — out-of-scope (14+ pax non-DMZ / >28 pax DMZ /
+        // Solati under min-hours). Disabled CTA + mailto gate. No DB row
+        // is ever created for these requests (D4/D19 spin-off planner).
+        <>
+          <a
+            href="mailto:contact@atockorea.com?subject=Custom%20itinerary%20quote%20request"
+            className={`${homeBtnPrimary} w-full text-center`}
+          >
+            맞춤 견적 문의하기 · contact@atockorea.com
+          </a>
+          <p className="mt-2 text-center text-micro text-slate-500">
+            이 일정은 그룹/일정 특수성 때문에 즉시 예약이 어렵습니다. 이메일로 빠르게 응답드릴게요.
+          </p>
+        </>
+      )}
     </div>
   );
 }

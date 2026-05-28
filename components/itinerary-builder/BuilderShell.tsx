@@ -172,14 +172,23 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
             <div className="space-y-5 px-6 py-7 md:px-10 md:py-9">
               <p className="text-sm leading-relaxed text-slate-600">{dmzT("body")}</p>
               <LivePriceCard price={livePrice} isJeju={false} />
-              <button
-                type="button"
-                onClick={() => setQuoteOpen(true)}
-                className={`${homeBtnPrimary} group mt-2 inline-flex items-center justify-center gap-2 shadow-md hover:gap-3`}
-              >
-                {dmzT("cta")}
-                <ArrowRight className="h-4 w-4" aria-hidden />
-              </button>
+              {livePrice.autoQuotable ? (
+                <button
+                  type="button"
+                  onClick={() => setQuoteOpen(true)}
+                  className={`${homeBtnPrimary} group mt-2 inline-flex items-center justify-center gap-2 shadow-md hover:gap-3`}
+                >
+                  예약하기 · 카드 등록
+                  <ArrowRight className="h-4 w-4" aria-hidden />
+                </button>
+              ) : (
+                <a
+                  href="mailto:contact@atockorea.com?subject=DMZ%20group%20quote%20request"
+                  className={`${homeBtnPrimary} group mt-2 inline-flex items-center justify-center gap-2 shadow-md hover:gap-3 text-center`}
+                >
+                  맞춤 견적 문의 · contact@atockorea.com
+                </a>
+              )}
             </div>
           </div>
         </section>
@@ -270,6 +279,7 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
               onGetQuote={handleGetQuote}
               cruiseBudgetMinutes={cruiseBudgetMinutes}
               onOpenDetail={setDetailPoi}
+              autoQuotable={livePrice.autoQuotable}
             />
           </div>
         </div>
