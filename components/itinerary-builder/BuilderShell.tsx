@@ -249,6 +249,7 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
             <AIRecommendPanel
               region={region}
               pois={localizedPois}
+              cart={cart}
               onAccept={acceptRecommendation}
               onOpenDetail={setDetailPoi}
               onPreview={setPreviewKeys}
