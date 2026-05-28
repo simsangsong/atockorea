@@ -2341,6 +2341,9 @@
       "close": "关闭",
       "responseHint": "我们将在24小时内通过电子邮件回复。",
       "errorEmailRequired": "请填写您的电子邮件地址以便我们回复。",
+      "errorDateRequired": "请选择行程日期 — 价格以日期为准计算。",
+      "errorOutOfScope": "此行程需定制报价 — 请发送邮件至 {email}，我们会尽快回复。",
+      "errorPriceChanged": "价格已更新。新合计:{total}。请重新确认后继续。",
       "errorGeneric": "无法发送请求 — 请重试或联系客服。",
       "eyebrow": "定制行程",
       "guideLanguageLabel": "向导语言",
@@ -2424,8 +2427,8 @@
       "cruiseBudget": "在港游玩时间",
       "cruiseOverBudget": "超出预算 {over} — 请删减景点或缩短游览时间",
       "remove": "移除",
-      "getQuoteCta": "获取定制报价",
-      "getQuoteHint": "我们将在24小时内回复"
+      "getQuoteCta": "立即预订 · 卡片登记",
+      "getQuoteHint": "卡片安全保存 · 行程当日自动结算 · 24小时内免费取消"
     },
     "grid": {
       "title": "精选景点",
@@ -2468,6 +2471,31 @@
       "title": "DMZ私人之旅",
       "body": "前往临津阁、第三隧道、都罗展望台与绀岳山吊桥——探访朝鲜半岛最前线的一日固定行程。专车与向导全程陪同，按团队人数收取固定费用。",
       "cta": "查看价格"
+    },
+    "planner": {
+      "track": "行程类型",
+      "region": "地区",
+      "date": "日期",
+      "party": "人数",
+      "lang": "导游语言",
+      "duration": "时长",
+      "hours": "停留时间",
+      "ship": "船名",
+      "pickup": "接送区域",
+      "port": "邮轮港口",
+      "editTrip": "编辑行程",
+      "close": "关闭",
+      "done": "完成",
+      "pickupZones": {
+        "city": "济州市内",
+        "north": "北部(涯月·翰林)",
+        "outer": "外圈(挟才·城山·西归浦)",
+        "cross_island": "跨岛(150km以上)"
+      },
+      "ports": {
+        "gangjeong": "江汀(西归浦)",
+        "jeju_port": "济州港"
+      }
     }
   },
   "appShell": {

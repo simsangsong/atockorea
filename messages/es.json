@@ -2341,7 +2341,10 @@
       "close": "Cerrar",
       "responseHint": "Te responderemos por correo electrónico en un plazo de 24 horas.",
       "errorEmailRequired": "Por favor, ingresa tu correo electrónico para que podamos responderte.",
+      "errorDateRequired": "Elige la fecha del tour — el precio se calcula a partir de ella.",
       "errorGeneric": "No se pudo enviar la solicitud — por favor, inténtalo de nuevo o contacta a soporte.",
+      "errorOutOfScope": "Este viaje necesita una cotización personalizada — escríbenos a {email} y te respondemos rápido.",
+      "errorPriceChanged": "El precio se acaba de actualizar. Nuevo total: {total}. Revísalo y vuelve a confirmar.",
       "eyebrow": "Itinerario a medida",
       "guideLanguageLabel": "Idioma del guía",
       "durationLabel": "Duración del tour",
@@ -2424,8 +2427,8 @@
       "cruiseBudget": "Tiempo disponible en tierra",
       "cruiseOverBudget": "Excede el presupuesto por {over} — elimina una parada o acorta las visitas",
       "remove": "Eliminar",
-      "getQuoteCta": "Obtener una cotización personalizada",
-      "getQuoteHint": "Te responderemos en 24 horas"
+      "getQuoteCta": "Reservar · guardar tarjeta",
+      "getQuoteHint": "Tarjeta guardada con seguridad · cobro el día del tour · cancelación gratis hasta 24h antes"
     },
     "grid": {
       "title": "Paradas seleccionadas",
@@ -2468,6 +2471,31 @@
       "title": "Tour Privado de la DMZ",
       "body": "Un itinerario fijo de día completo hasta la frontera más fortificada de la península coreana: Imjingak, el Tercer Túnel, el Observatorio Dora y el puente colgante de Gamaksan. Precio cerrado según el tamaño del grupo, con coche y guía privados.",
       "cta": "Ver mi precio"
+    },
+    "planner": {
+      "track": "Tipo de viaje",
+      "region": "Región",
+      "date": "Fecha",
+      "party": "Personas",
+      "lang": "Idioma del guía",
+      "duration": "Duración",
+      "hours": "Horas en tierra",
+      "ship": "Crucero",
+      "pickup": "Zona de recogida",
+      "port": "Puerto de cruceros",
+      "editTrip": "Editar viaje",
+      "close": "Cerrar",
+      "done": "Listo",
+      "pickupZones": {
+        "city": "Centro de Jeju",
+        "north": "Norte (Aewol · Hallim)",
+        "outer": "Periferia (Hyeopjae · Seongsan · Seogwipo)",
+        "cross_island": "Cruce de isla (más de 150 km)"
+      },
+      "ports": {
+        "gangjeong": "Gangjeong (Seogwipo)",
+        "jeju_port": "Puerto de Jeju"
+      }
     }
   },
   "appShell": {
