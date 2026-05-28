@@ -15,13 +15,13 @@
 
 | Field | Value |
 |---|---|
-| **Current phase** | Phase 9 — Pricing policy overhaul 🔄 (pricing track, branch `feat/itinerary-builder-pricing`). Phase 8 admin-tooling track continues independently on `feat/admin-match-pois-editor`. |
-| **Blocked on** | — (optional ops follow-ups: tune POI profile dimensions based on real recommendation quality; preset KRW tuning; admin page i18n) |
-| **Last updated** | 2026-05-21 |
-| **Last commit touching this feature** | `049c9aab` — feat(quote-engine): cruise +40k + Gangjeong port +70k surcharges (Phase 9 D15) |
+| **Current phase** | Phase 10 — Flow simplification + card-hold booking 🔄 (branch `feat/itinerary-builder-flow-simplification`, worktree `C:/Users/sangsong/atockorea-flow-simp`, off `origin/main` `46b529d0`). Phase 8 admin-tooling continues on `feat/admin-match-pois-editor`; Phase 9 pricing track is code-complete (interactive QA pending). |
+| **Blocked on** | — (Phase 9 interactive QA is a separate track; Phase 10 only consumes the pricing module) |
+| **Last updated** | 2026-05-29 |
+| **Last commit touching this feature** | `049c9aab` — feat(quote-engine): cruise +40k + Gangjeong port +70k surcharges (Phase 9 D15) — Phase 10 will overwrite after first commit |
 | **Owner** | simsangsong |
 | **Reviewers** | — |
-| **Branch** | `feat/admin-match-pois-editor` (off `main`; independent of `fix/itinerary-builder-poi-data-quality` + `feat/unified-landing-planner`) |
+| **Branch** | `feat/itinerary-builder-flow-simplification` (Phase 10, off `origin/main`). Other in-flight tracks: `feat/admin-match-pois-editor` (Phase 8), `feat/itinerary-builder-pricing` (Phase 9 QA), `fix/itinerary-builder-poi-data-quality` (data-quality). |
 
 ### Phase progress
 
@@ -39,10 +39,13 @@ Revised 2026-05-16 after D1-D8: original 6 phases → 7 phases (new Phase 5 for 
 | 7 — AI recommendation engine | ✅ complete | 2026-05-17 | 2026-05-17 | `7aa60f0a` |
 | 8 — Admin `match_pois` editor (tooling track) | 🔄 in progress | 2026-05-21 | — | (planner commit first) |
 | 9 — Pricing policy overhaul (pricing track) | 🔄 code-complete, interactive QA pending | 2026-05-22 | — | `c0aa783f` · `3f21ef16` · `25e25744` · `634e287e` · `f89845e1` · `7931d0f9` |
+| 10 — Flow simplification + card-hold booking (flow track) | 🔄 in progress | 2026-05-29 | — | (planner commit first) |
 
 Legend: ⏸ not started · 🔄 in progress · ✅ complete · ⚠️ blocked · ❌ abandoned
 
 > **Phase 8 is an admin-tooling track**, not a continuation of the user-facing MVP. It promotes the §E parked idea "/admin/pois browse + edit UI" (D10). It does not block or depend on the two spun-off planners (UI/UX upgrade, V2 redesign) or the POI-data-quality branch.
+
+> **Phase 10 is a flow-simplification + booking-model track** spun off via `docs/itinerary-builder-flow-simplification-master-plan-2026-05-28.md` (D16-D26). It deletes the vestigial quote pipe (Phase 4/5 leftover after Phase 9 made it obsolete) and wires builder bookings to the standard `bookings` + Stripe card-hold infrastructure. Independent of Phase 8/9/V2 redesign — the only shared surface is the `lib/quote-engine/pricing-policy.ts` module which it consumes unchanged.
 
 ---
 
@@ -69,6 +72,17 @@ Append a new row whenever a §5 question gets answered or a new architectural ca
 | 2026-05-22 | D13 | **New pricing model replaces the Phase 5 placeholder.** Axis = **guide-language tier × duration bucket** base table + pax-tier surcharge + region surcharge (was: (region,track) base + continuous per-hour/per-km/per-poi + language premium). Language tiers (user 2026-05-22): `english`={en,ja,es}, `chinese`={zh,zh-TW,ko}, `smart_guide`=hidden AI-assisted tier with a **Korean-speaking** guide (user corrected the doc's "Chinese guide"), priced chinese+₩20k. Duration is **customer-chosen** (4-12h), decoupled from cart drive+stay (now a hint). Per-km/per-poi pricing **removed**. 14+ pax (non-DMZ) → manual escalation. New copy is **transcreated** (native tone first, not literal) into all 6 locales. | Matches the real AtoC private-tour pricing in `pricing_update_instructions.md`. Phase 5's continuous model was a placeholder seeded from a 2026-05-17 chat. |
 | 2026-05-22 | D14 | **Pricing source of truth moves from DB `quote_presets` → TS `lib/quote-engine/pricing-policy.ts`** (imported by BOTH client and server). | The new model is too complex for safe Studio JSON editing, and the user's "real-time price in the builder" decision requires the pricing data in-bundle client-side. One module = no client/server drift. Ops price changes go through PR+deploy; an `PRICING_AUTOQUOTE_ENABLED` env kill-switch preserves the R6 emergency-disable capability without a deploy. `quote_presets` table is left in place but no longer read by the new flow. |
 | 2026-05-22 | D15 | **Cruise shore-excursion surcharges.** Cruise track adds a flat **+₩40,000** on top of the day rate (reuses the language×duration base); Jeju cruise embarking at **Gangjeong Port (강정항, Seogwipo terminal)** adds **+₩70,000** more. Hotel pickup-zone surcharge is suppressed for cruise (pickup = the port, not a hotel). New cruise-port selector on Jeju cruise defaults to Gangjeong (the primary international terminal); Busan/Seoul cruise never gets the Gangjeong add. | User 2026-05-22. Encodes the cruise-vs-land cost delta + the extra drive distance from the Seogwipo cruise terminal. Constants `CRUISE_EXCURSION_SURCHARGE` / `GANGJEONG_PORT_SURCHARGE` in `pricing-policy.ts`. |
+| 2026-05-29 | D16 | **`bookings.currency` column added; builder bookings store KRW `final_price`; `/api/stripe/checkout` + webhook branch on currency.** | Avoids FX risk and KRW→USD round-trip loss. Stripe supports KRW natively (zero-decimal). User-facing prices stay in the currency the tour actually costs. Phase 10 D1. |
+| 2026-05-29 | D17 | **`bookings.itinerary jsonb` column** stores `{poi_keys, region, track, duration_hours, guide_language, jeju_pickup_zone, cruise_port, breakdown}` for builder rows. | Mirrors the existing `auto_quote_breakdown` shape. One column vs 8 sparse columns most tour rows wouldn't use. Phase 10 D2. |
+| 2026-05-29 | D18 | **`tour_quote_requests` + `quote_presets` + `quote_memory` writes BLOCKED immediately** (INSERT trigger in cut-over migration). Tables retained 90 days for audit, then dropped. | The pricing table (Phase 9) makes the manual-quote path vestigial; production DB shows zero manual responses in history. Keeping the pipe creates the "10 proposals = 하루 다 가" ops pain. Phase 10 D3. |
+| 2026-05-29 | D19 | **Out-of-scope (14+ pax non-DMZ, >28 pax DMZ) = hard UI gate + mailto, NO DB row, NO email pipe.** | Real frequency is near-zero (1 quote total in DB history). Building a workflow for that traffic is the exact trap that created Phase 4/5's vestigial pipe. If volume ever materializes, promote to a phase. Phase 10 D4. |
+| 2026-05-29 | D20 | **AI recommendation auto-runs on planner mount** when pricing inputs (`intent`/`region`/`duration`) are present; 500 ms debounce; 3-fires-per-session cap. | Removes the "Take this itinerary" extra click — the user's primary complaint. Cost-bounded by the session cap. Phase 10 D5. |
+| 2026-05-29 | D21 | **`/itinerary-builder` is the single planner route**; `/itinerary-builder/[region]` 308-redirects (via `next.config.js`) to `?region=…`. | Removes one navigation step. Existing home entry sections (`itinerary-builder-entry.tsx`, `landing-planner-card.tsx`) already pass `?region=` — no changes needed. Phase 10 D8. |
+| 2026-05-29 | D22 | **`/admin/itinerary-quotes` (page + API + sidebar entry) removed immediately** in the Phase 10 cut-over commit. Ops uses `/admin/orders` with a `source` filter. | Per D18 there are no new manual quotes to respond to. A dead sidebar entry creates ambiguity ("should I be checking this?"). Phase 10 D6. |
+| 2026-05-29 | D23 | **`NoShowHoldCardForm` generalized** to accept `currency: 'usd'\|'krw'` + `amountMinor` (integer minor units; cents for USD, whole KRW for KRW). `amountUsdCents` retained as a deprecated alias for one PR cycle; tour-product callers updated explicitly in the same commit. | Builder KRW bookings can't reuse a USD-cents-only component; forking duplicates the Stripe Elements integration. Generalization is ~30 LOC + a snapshot test per currency. Phase 10 D9. |
+| 2026-05-29 | D24 | **Booking handoff = URL-only `?bookingId=…`** for the builder (vs. tour-product's `sessionStorage` pattern). | Preserves D5 share-able-link discipline + survives refresh + works for any future email-delivery path (e.g., resend checkout link). Cost: one server-side fetch of the booking on checkout page mount. Phase 10 D10. |
+| 2026-05-29 | D25 | **Builder `bookings` row writes `unit_price = total_price = final_price`** (flat-rate KRW). | Builder pricing is per-tour (Solati ₩340k for 1 pax or for 13 pax). A per-person fiction (`final / guests`) would corrupt BI. Smallest schema lie that's still useful for reports that join on `unit_price`. Phase 10 D11. |
+| 2026-05-29 | D26 | **`bookings.merchant_id = process.env.ATOC_DEFAULT_MERCHANT_ID \|\| null`** for builder rows. Verified during Phase 2 task 2e against `/api/admin/orders/[id]/settle`. | Builder has no parent tour to inherit `merchant_id` from. Env-sentinel keeps it tunable without redeploy if AtoC ever wants to route builder revenue to a different merchant. Phase 10 D12. |
 
 ---
 
@@ -104,6 +118,7 @@ One line per material change to this doc or per phase deliverable.
 | 2026-05-22 | (Phase 9 start) | **Phase 9 started — Pricing policy overhaul.** Isolated worktree `feat/itinerary-builder-pricing` off `origin/main` (per `feedback_worktree_isolation.md`; main dir is on the contended `feat/unified-landing-planner` with other sessions' uncommitted changes). Decisions D12-D14 logged. Implementation plan = §F Phase 9 tasks 9a-9h: (9a) `pricing-policy.ts` typed model + pure compute/constraints + unit tests; (9b) refactor `quote-engine` onto it; (9c) rewire `/api/itinerary/quote`; (9d) Seoul region + Jeju zone classifier; (9e) IntakeForm region+duration+guide-language; (9f) QuoteModal live price + Solati disable + notices; (9g) DMZ fixed-price product; (9h) i18n transcreation (6 locales) + thanks/email. Code reality verified: quote engine + builder components identical between `origin/main` and current HEAD; `quote_presets` referenced in only 4 files; Seoul/gyeonggi/gangwon POIs exist; no admin presets editor. Land in small commits per the planner-after-every-commit rule. |
 | 2026-05-22 | `3f21ef16`·`25e25744`·`634e287e`·`f89845e1`·`7931d0f9` | **Phase 9 code-complete (9a-9h).** (9a) `lib/quote-engine/pricing-policy.ts` — single SoT (English/Chinese hour tables, smart_guide hidden = chinese+₩20k, pax tiers + Solati min-6h + peak, region/Jeju-cross/Jeju-pickup surcharges, DMZ fixed table) + 30 passing unit tests reproducing every doc example. (9b) engine refactored onto it (types slimmed, fingerprint de-distanced, dead preset files deleted). (9c) `POST /api/itinerary/quote` recomputes via the same module; DMZ track (migration `20260522000000` widened the track CHECK); 14+/>28 → manual; `PRICING_AUTOQUOTE_ENABLED` kill-switch. (9d) Seoul cluster expanded (+gangwon/incheon); coord-based `jejuZone`. (9e) IntakeForm: Seoul region + DMZ track + guide-language + duration picker. (9f) QuoteModal: live price (same module → matches server), Solati 4h/5h disable, Jeju pickup, not-included + Jeju single-region notices, itemized breakdown. (9g) DMZ fixed-price product panel in BuilderShell. (9h) 6-locale transcreation (`scripts/inject-pricing-i18n.mjs`) + thanks/email new line-item breakdown. **Evidence:** `npm run build` green (full route manifest); 30/30 unit tests; `tsc --noEmit` clean. **Repair:** `f89845e1` restored `lib/itinerary-builder/locale-content.ts` (+ `types.ts` PoiLocalizedContent) — origin/main's BuilderShell imported it but a botched result-richness merge dropped it (main did not type-check). **Pending:** interactive browser QA (preview blocked by contended dev env). |
 | 2026-05-22 | `049c9aab` | **D15 — cruise + Gangjeong surcharges.** `pricing-policy.ts` adds `cruise_excursion` (+₩40k, all cruise tracks) + `gangjeong_port` (+₩70k, Jeju cruise from Gangjeong) lines; cruise suppresses the hotel pickup zone. QuoteModal gains a Jeju cruise-port selector (defaults Gangjeong); API reads `cruise_port`; line labels + 6-locale copy added (`scripts/inject-cruise-i18n.mjs`). 5 new unit tests → **35/35**. `npm run build` green. |
+| 2026-05-29 | (Phase 10 start) | **Phase 10 started — Flow simplification + card-hold booking.** Spin-off planner `docs/itinerary-builder-flow-simplification-master-plan-2026-05-28.md` (v2 after gap-review pass). §B D16-D26 logged. Isolated worktree `C:/Users/sangsong/atockorea-flow-simp` on `feat/itinerary-builder-flow-simplification` off `origin/main` `46b529d0`. **Goal:** delete the vestigial Phase 4/5 quote pipe (made obsolete by Phase 9's pricing table), collapse the 3-screen redundant intake into a unified planner shell, auto-run AI recommendation on entry, and route in-scope itineraries directly into the standard `bookings`+`/api/stripe/checkout` card-hold infrastructure. Out-of-scope (14+ pax / >28 DMZ) gates to a mailto with NO DB write. Plan = 8 phases (~5.5 person-days). Phase 1 = this commit (planner registration); no code until D1-D12 ratified. |
 | 2026-05-22 | (branch `fix/recommend-meal-midday`) | **Phase 7 recommendation bug-fix (user-reported): lunch placed as stop 1.** `lib/itinerary-match-engine/sequence.ts` `tspRoute` optimizes drive time only, so a meal POI (e.g. "Lunch at Gwangjang Market") could land first/last. Added `isMealStop` + `placeMealsMidday` (final step of `sequence()`): keeps non-meal stops in drive-optimized order, re-inserts meal stops around the midpoint → morning sights → lunch → afternoon. 5 unit tests (`sequence-meal-midday.test.ts`); `npm run build` green. Also surfaced this turn: Seoul build now routes to the builder (separate landing-uiux PR #3), and the `/itinerary-builder/[region]` map failure is `ApiTargetBlockedMapError` — the `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` has an API restriction excluding Maps JavaScript API (fix in GCP Console, not code). |
 
 ---
@@ -145,6 +160,8 @@ Things that came up during this work but aren't in the 6-phase plan. Park them h
 | 2026-05-18 | **UI/UX upgrade — builder surfaces visually mismatched with home v2** | Functional MVP (Phase 1–7) is done. Design polish is a separate track. | **Promoted to dedicated planner: [`docs/itinerary-builder-uiux-master-plan-2026-05-18.md`](./itinerary-builder-uiux-master-plan-2026-05-18.md)** — 10 phases (A–J), ~5 person-days. Phase B onward executed only after user sign-off. |
 | 2026-05-18 | **V2 redesign — structural pivot from cart-side-panel to sticky map + photo-pin markers + vertical itineraryStop timeline + bi-directional map↔card sync** | Surfaced from world-class designer critique 2026-05-18: result paradigm buries map (audit §J.1), amber inflation (§J.4), Add/Added color inversion (§J.5), IntakeForm copy untrue (§J.8). Old UIUX plan's Phases F–J were skin-deep polish on a layout this redesign replaces. | **Promoted to dedicated planner: [`docs/itinerary-builder-redesign-master-plan-2026-05-18.md`](./itinerary-builder-redesign-master-plan-2026-05-18.md)** — 13 phases (0–12), ~9 person-days. Phase 0 is a go/no-go gate (photo-pin readability on Korean POI imagery). Skill: `itinerary-builder-redesign`. |
 | 2026-05-20 | **POI data quality — visible builder POIs with missing/wrong `default_image_url` + empty structured fields** | Data-integrity track, distinct from the feature build (Phases 1–7 ✅) and from the UI/UX + V2 redesign tracks. Verified 2026-05-21: image layer = tour-JSON seed + orphan writes; KB/import-match-v18 is NOT the source. | **Promoted to dedicated planner: [`docs/itinerary-builder-poi-data-quality-master-plan-2026-05-20.md`](./itinerary-builder-poi-data-quality-master-plan-2026-05-20.md)** (revised 2026-05-21). Phase 0 provenance gate PASSED. Track A immediate fixes (woljeonggyo+tongdosa image wiring, jeju_tangerine `{}`→null, jeonnong/noksan ilchulland removal) executing under the `itinerary-builder` skill — no separate skill exists for this track. |
+| 2026-05-29 | **Flow simplification + card-hold booking** — customer flow redundant across 3 screens (intake/cart-page/quote-modal all asking date·party·lang·duration); submission only sends a proposal — no card hold, no booking record; ops drowns in manual email handshakes. | The Phase 4/5 quote pipe became vestigial after Phase 9 shipped the real pricing table — but the pipe wasn't removed. User 2026-05-28: "하루에 이런 제안 열개만 받아도 하루가 다 가." | **Promoted to dedicated planner: [`docs/itinerary-builder-flow-simplification-master-plan-2026-05-28.md`](./itinerary-builder-flow-simplification-master-plan-2026-05-28.md)** (v2 after gap-review). 8 phases (1-8), ~5.5 person-days. §C D1-D12 ratified by user 2026-05-29 (recommended options across the board). Phase 10 entry below in §F. |
+| 2026-05-29 | Customer self-serve cancellation UI (`/booking/[ref]` cancel flow for ALL booking types) | Verified 2026-05-28: no cancellation route exists for any booking today. Cancellation is webhook-driven (ops cancels PI in Stripe Dashboard → webhook syncs status). Builder bookings inherit this gap — see Phase 10 planner §L. | Future feature, not blocking Phase 10. Scope: tour-product + itinerary_builder. Re-evaluate after 30 days of builder traffic. |
 
 ---
 
@@ -507,6 +524,44 @@ POST /api/admin/quotes/[id]/respond  (ops manually responds via admin route)
 - [ ] **Interactive QA (pending):** browser preview was blocked by the contended dev environment (user's own dev server on :3000 + multiple worktrees; `preview_start` couldn't bind). Verify in browser: `/itinerary-builder` 3 tracks + 3 regions + guide/duration controls; `/itinerary-builder/seoul?track=dmz` panel → modal shows ₩630,000 (2pax) → ₩830,000 (7pax); a Jeju cart live price + notices in a non-EN locale.
 
 **Cut-line:** New pricing policy is live and authoritative for busan/jeju/seoul private + cruise + DMZ. Smart Guide stays hidden until ops flips it on.
+
+---
+
+### Phase 10 — Flow simplification + card-hold booking (flow track) (5-6 days)
+
+**Per D16-D26 2026-05-29:** This is a spun-off planner. Full
+specification, decisions, risks, telemetry, runbook, and per-phase
+checklists live in
+[`docs/itinerary-builder-flow-simplification-master-plan-2026-05-28.md`](./itinerary-builder-flow-simplification-master-plan-2026-05-28.md).
+
+**Deliverable:** the customer reaches "card on file booking" in ≤2
+clicks from a home idle-preview chip; in-scope itineraries create a
+`bookings` row with PI/SI populated, zero ops touch; out-of-scope (14+
+pax / >28 DMZ) gates to a mailto with NO DB write; ops sees builder
+bookings inside `/admin/orders` with a `source` filter; the entire
+Phase 4/5 quote pipe (`/api/itinerary/quote`, `/admin/itinerary-quotes`,
+Slack escalation, `quote_memory` precedent system) is deleted.
+
+**Sub-phases (mirroring §D of the spin-off planner):**
+- [ ] (10.1) Planner registration + decision lock-in (this commit) — §B D16-D26 logged, §E parked-idea row added, §F Phase 10 entry added.
+- [ ] (10.2) Schema migration `bookings.currency` / `source` / `itinerary` + Stripe currency stack (checkout, webhook, NoShowHoldCardForm generalization, `createBuilderBooking()` helper, settle endpoint verification).
+- [ ] (10.3) Unified planner shell — `PlannerTopRail` + `LivePriceCard` + collapse `/itinerary-builder/[region]` → `?region=`; QuoteModal slimmed to contact-only; IntakeForm deleted.
+- [ ] (10.4) Auto-run AI recommendation on mount (debounced); cart directly populated; "Take this itinerary" click removed.
+- [ ] (10.5) `/api/itinerary/book` + `/itinerary-builder/checkout` + `/itinerary-builder/confirmation/[id]` + `builder-booking-confirmation.ts` email + price-mismatch defense (409); **delete** entire quote pipe + INSERT-trigger safety migration.
+- [ ] (10.6) `/admin/orders` source filter + builder-row itinerary section; remove `/admin/itinerary-quotes` sidebar entry.
+- [ ] (10.7) i18n hand-edit for all new keys × 6 locales (per `feedback_i18n_translate_script_drops_keys`).
+- [ ] (10.8) Cut-over per §M runbook (pre-cut / cut / 72h post-cut / 30d / 90d follow-ups) + mark Phase 10 ✅.
+
+**Acceptance:** See §G of the spin-off planner — 11 ALL-of criteria
+(customer ≤2-click flow, in-scope bookings have PI/SI, out-of-scope
+zero-DB gate, ops single-queue, pricing module unchanged, KRW Stripe
+end-to-end, USD regression preserved, form snapshot tests, build/tsc
+green, 6-locale parity, 72h observation passes).
+
+**Cut-line:** The "10 proposals = 하루 다 가" ops pain is gone; builder
+bookings live in the same `/admin/orders` queue as tour-product
+bookings; settlement uses the existing `/api/admin/orders/[id]/settle`
+endpoint with no new ops form to learn.
 
 ---
 
