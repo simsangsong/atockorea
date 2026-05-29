@@ -28,8 +28,8 @@
 |---|---|
 | **Current phase** | **🎉 ALL 12 PHASES COMPLETE (2026-05-18).** V2 redesign shipped end-to-end. Phase 12 sweep recorded 6 responsive screenshots (375/768/1024/1440 across 3 routes) + a11y self-review (70 aria-* occurrences across 7 builder components; modals carry role="dialog" + aria-modal; map markers carry per-pin "Stop N: name" labels; reduce-motion guards on photo pins + active card + scrollIntoView + price counter). |
 | **Blocked on** | — (V2 redesign complete; merge `redesign-spike` → `main` when user ready; optional follow-ups in §C below). |
-| **Last updated** | 2026-05-18 |
-| **Last commit touching this track** | `0d6a4d6c` — feat(itinerary-builder-redesign): Phase 11 — animated price counter |
+| **Last updated** | 2026-05-29 |
+| **Last commit touching this track** | `31f2765` — fix(builder): map pins 1:1 with timeline + premium map glaze (post-completion fixes; §B V15 + §C 2026-05-29) |
 | **Owner** | simsangsong |
 | **Reviewers** | — |
 | **Related planners** | `docs/itinerary-builder-plan.md` (feature/data — Phases 1-7 DONE), `docs/itinerary-builder-uiux-master-plan-2026-05-18.md` (Phases A–E DONE; F–J **superseded by this plan**), `docs/landing-page-uiux-master-plan-v3-2026-05-17.md` (design language reference) |
