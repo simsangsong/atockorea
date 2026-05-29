@@ -256,8 +256,12 @@ export function LandingPlannerCard({
         >
           {(
             [
-              ["match", "modeMatch"] as const,
+              // Phase 14 — Build myself first (user reordered 2026-05-29).
+              // The build flow is the primary CTA now that hero collects the
+              // full pricing input set; "Match me" reads as the secondary
+              // path for casual visitors.
               ["build", "modeBuild"] as const,
+              ["match", "modeMatch"] as const,
             ] as const
           ).map(([m, labelKey]) => (
             <button
@@ -436,7 +440,11 @@ export function LandingPlannerCard({
                     Row 2: Guests + Hours.
                     Caption line: "5 inputs required for accurate quote". */}
                 <div className="mb-3 space-y-2.5 md:mb-4 md:space-y-3">
-                  <div className="grid grid-cols-1 gap-2.5 md:grid-cols-[1fr,auto] md:gap-3">
+                  {/* Phase 14 — Date + Language sit side-by-side on ALL
+                      breakpoints (was grid-cols-1 mobile). Compact 50/50
+                      split; both controls drop to h-11 to keep the card
+                      from getting taller. */}
+                  <div className="grid grid-cols-2 gap-2 md:gap-3">
                     <div>
                       <label
                         htmlFor="hero-build-date"
@@ -467,7 +475,7 @@ export function LandingPlannerCard({
                         id="hero-build-lang"
                         value={buildLang}
                         onChange={(e) => setBuildLang(e.target.value)}
-                        className="focus-ring h-12 w-full rounded-button border border-slate-200/70 bg-slate-50 px-3 text-[14px] font-semibold text-slate-900 transition-colors duration-200 focus:border-slate-300 focus:bg-white md:h-14 md:w-40 md:text-[15px]"
+                        className="focus-ring h-11 w-full rounded-button border border-slate-200/70 bg-slate-50 px-2.5 text-[13px] font-semibold text-slate-900 transition-colors duration-200 focus:border-slate-300 focus:bg-white md:h-12 md:px-3 md:text-[14px]"
                       >
                         {HERO_LANG_OPTIONS.map((g) => (
                           <option key={g.code} value={g.code}>
