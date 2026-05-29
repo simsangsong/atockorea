@@ -32,13 +32,13 @@
 
 | Field | Value |
 |---|---|
-| **Current phase** | Phase 12 — Hero-driven builder + auto-flow + typography 🔄 (branch `feat/hero-builder-inputs`). Started 2026-05-29 same day Phase 11 merged, after user feedback on the live PR-merged surface. |
+| **Current phase** | Phase 13 — Builder back to standalone page + hero language input + unified timeline 🔄 (branch `feat/builder-back-to-standalone`). User reversed Phase 11's home-absorption after seeing the duplicate-timeline confusion live. |
 | **Blocked on** | — |
 | **Last updated** | 2026-05-29 |
-| **Last commit touching this feature** | `565a4610` — Phase 11 merged (PR #100) on main. |
+| **Last commit touching this feature** | `2964ffde` — Phase 12 merged (PR #101) on main. |
 | **Owner** | simsangsong |
 | **Reviewers** | — |
-| **Branch** | `feat/hero-builder-inputs` (Phase 12, off `origin/main`). |
+| **Branch** | `feat/builder-back-to-standalone` (Phase 13, off `origin/main`). |
 
 ### Phase progress
 
@@ -58,7 +58,8 @@ Revised 2026-05-16 after D1-D8: original 6 phases → 7 phases (new Phase 5 for 
 | 9 — Pricing policy overhaul (pricing track) | 🔄 code-complete, interactive QA pending | 2026-05-22 | — | `c0aa783f` · `3f21ef16` · `25e25744` · `634e287e` · `f89845e1` · `7931d0f9` |
 | 10 — Flow simplification + card-hold booking (flow track) | ✅ complete | 2026-05-29 | 2026-05-29 | merged to main via [PR #99](https://github.com/simsangsong/atockorea/pull/99) — merge sha `7db45877` |
 | 11 — Absorb planner page into landing page (matcher-pattern unification) | ✅ complete | 2026-05-29 | 2026-05-29 | merged to main via [PR #100](https://github.com/simsangsong/atockorea/pull/100) — merge sha `565a4610` |
-| 12 — Hero-driven builder + auto-flow + typography unification | 🔄 in progress | 2026-05-29 | — | (planner commit first) |
+| 12 — Hero-driven builder + auto-flow + typography unification | ✅ complete | 2026-05-29 | 2026-05-29 | merged to main via [PR #101](https://github.com/simsangsong/atockorea/pull/101) — merge sha `2964ffde` |
+| 13 — Builder back to standalone page + hero language input + unified timeline | 🔄 in progress | 2026-05-29 | — | (planner commit first) |
 
 Legend: ⏸ not started · 🔄 in progress · ✅ complete · ⚠️ blocked · ❌ abandoned
 
@@ -111,6 +112,11 @@ Append a new row whenever a §5 question gets answered or a new architectural ca
 | 2026-05-29 | D33 | **AIRecommendPanel re-introduces a bounded auto-run useEffect:** fires only when `?autoRun=1` deep-link present AND intent OR presets set; removes the autoRun param via `router.replace` immediately after firing. | Drives the hero→builder happy path; preserves D28's "every match is explicit" for in-builder edits. Phase 12 spin-off §P D33. |
 | 2026-05-29 | D34 | **Post-match smooth-scroll `ResultTimeline` into the viewport.** Cart auto-apply (Phase 11) unchanged. | Phase 11 had cart populating but rendering far below the AI panel — closes the "did anything happen?" gap. Phase 12 spin-off §P D34. |
 | 2026-05-29 | D35 | **Typography unification.** AIRecommendPanel + HomeBuilderSection use landing tokens (`text-eyebrow / text-display / text-h3 / text-caption / text-micro`) and the existing landing chip class verbatim. | Premium visual parity. User reported the new panel's font scale felt off-brand. Phase 12 spin-off §P D35. |
+| 2026-05-29 | D36 | **Reverses D27 — builder returns to a standalone page at `/itinerary-builder`.** Hero conditions flow via URL (`?region=…&date=…&lang=…&party=…&duration=…&intent=…&autoRun=1`) so the page opens with the matcher firing automatically. `HomeBuilderSection` is unmounted from `HomeV2Page`; the section + API endpoint files remain on disk for now (parked for cleanup). | User saw the duplicate-timeline experience on the home embed (AI result card stack ABOVE the cart timeline, both showing the same recommendation) and decided the home is too crowded for the builder. Standalone page = focused canvas; hero handles the input handoff. Phase 13 D36. |
+| 2026-05-29 | D37 | **Hero "Build myself" tab gains a Language selector**, rendered side-by-side with Date in a 2-column row. Selector lists en/ko/ja/zh/zh-TW/es (mirrors GUIDE_LANGS in PlannerTopRail); default = current site locale. | User: "랜딩페이지 선택창에 언어 선택도 필수로 넣어야 돼" — language directly affects pricing tier (English vs Chinese vs Smart guide via D13), so collecting it on the hero before quote is essential. Phase 13 D37. |
+| 2026-05-29 | D38 | **AIRecommendPanel's result preview stripe is REMOVED.** ResultTimeline is now the SINGLE timeline view of the itinerary. After the matcher returns, `onAccept` fires (Phase 11 D28 auto-apply) → cart populates → ResultTimeline renders. No duplicate. | User: "위에 일정표 있고 아래에 똑같이 일정표 또 있으면 혼란스러우니까... 하나로 통합." The two-card duplicate confused customers. The result stripe served a "preview before Apply" purpose that the explicit-multi-select-preset model (Phase 11 D28) no longer needs. Phase 13 D38. |
+| 2026-05-29 | D39 | **A one-line caption below the hero inputs reads:** "정확한 견적을 위해 목적지·날짜·언어·인원·시간 5가지 모두 필요" (transcreated per locale). | User asked for an explicit "these 5 inputs are needed for an accurate quote" caption so the customer doesn't skip language and end up with the wrong tier price. Phase 13 D39. |
+| 2026-05-29 | D40 | **`?autoRun=1` is forwarded** by the hero CTA to `/itinerary-builder` (was `/?` in Phase 12 D33). The AIRecommendPanel's bounded auto-run useEffect logic from D33 is unchanged — only the target route changes. | Phase 13 D36 flips the target route; D33's auto-run mechanics still apply on the standalone page. Phase 13 D40. |
 
 ---
 
