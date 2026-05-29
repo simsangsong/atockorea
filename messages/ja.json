@@ -1064,7 +1064,8 @@
           "seoulBuildTitle": "ソウルの地図ビルダーは近日登場予定です。",
           "seoulBuildBody": "気になる場所をお知らせいただければ、一日を直接プランニングいたします。",
           "seoulBuildCta": "ソウルの一日をリクエスト",
-          "customizeThisDay": "{destination}で自分だけの一日をつくる"
+          "customizeThisDay": "{destination}で自分だけの一日をつくる",
+          "buildMissingError": "次の項目を入力してください：{fields}"
         },
         "season": {
           "springBlossom": "桜シーズン",

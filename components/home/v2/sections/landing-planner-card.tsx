@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, ChevronDown, Check } from "lucide-react";
 import { V0ShadcnButton } from "@/components/home/v2/ui/v0-shadcn-button";
 import { homeBtnPrimary } from "@/lib/home/home-button-classes";
 import { useI18n, useTranslations } from "@/lib/i18n";
@@ -55,6 +55,114 @@ const BTN_PRIMARY_STYLE = {
   boxShadow: "var(--home-shadow-btn-primary)",
   border: "none",
 } as const;
+
+/**
+ * Premium on-brand language dropdown. Replaces the native `<select>` (which
+ * popped the un-brandable OS picker sheet on mobile) with a button + custom
+ * popover list — same family as IntakeDateField. Closes on outside-click /
+ * Escape; the popover is absolutely positioned so it never resizes the
+ * Date+Language grid row.
+ */
+function LangDropdown({
+  id,
+  value,
+  options,
+  onChange,
+  ariaLabel,
+}: {
+  id: string;
+  value: string;
+  options: { code: string; label: string }[];
+  onChange: (code: string) => void;
+  ariaLabel: string;
+}) {
+  const reduce = useReducedMotion();
+  const [open, setOpen] = useState(false);
+  const wrapRef = useRef<HTMLDivElement | null>(null);
+  const selected = options.find((o) => o.code === value) ?? options[0];
+
+  useEffect(() => {
+    if (!open) return;
+    function onDoc(e: MouseEvent) {
+      if (wrapRef.current && !wrapRef.current.contains(e.target as Node)) setOpen(false);
+    }
+    function onKey(e: KeyboardEvent) {
+      if (e.key === "Escape") setOpen(false);
+    }
+    document.addEventListener("mousedown", onDoc);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onDoc);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
+
+  return (
+    <div ref={wrapRef} className="relative">
+      <button
+        type="button"
+        id={id}
+        onClick={() => setOpen((o) => !o)}
+        aria-haspopup="listbox"
+        aria-expanded={open}
+        aria-label={ariaLabel}
+        className={cn(
+          "focus-ring flex h-11 w-full items-center justify-between gap-2 rounded-button border bg-slate-50 px-3 text-left text-[13px] font-semibold text-slate-900 transition-colors duration-200 md:h-12 md:text-[14px]",
+          open ? "border-slate-300 bg-white" : "border-slate-200/70 hover:border-slate-300",
+        )}
+      >
+        <span className="truncate">{selected?.label}</span>
+        <ChevronDown
+          className={cn(
+            "h-4 w-4 flex-shrink-0 text-slate-400 transition-transform duration-200",
+            open && "rotate-180",
+          )}
+          aria-hidden
+        />
+      </button>
+
+      <AnimatePresence>
+        {open ? (
+          <motion.ul
+            role="listbox"
+            aria-label={ariaLabel}
+            initial={reduce ? { opacity: 0 } : { opacity: 0, y: -6 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={reduce ? { opacity: 0 } : { opacity: 0, y: -6 }}
+            transition={{ duration: reduce ? 0 : 0.18, ease: [0.22, 1, 0.36, 1] }}
+            className="absolute right-0 top-full z-50 mt-2 w-full min-w-[10rem] overflow-hidden rounded-2xl border border-slate-200/70 bg-white p-1.5 shadow-[0_12px_40px_-12px_rgba(15,23,42,0.25)]"
+          >
+            {options.map((o) => {
+              const active = o.code === value;
+              return (
+                <li key={o.code}>
+                  <button
+                    type="button"
+                    role="option"
+                    aria-selected={active}
+                    onClick={() => {
+                      onChange(o.code);
+                      setOpen(false);
+                    }}
+                    className={cn(
+                      "flex w-full items-center justify-between gap-2 rounded-xl px-3 py-2.5 text-left text-[13px] transition-colors duration-150",
+                      active
+                        ? "bg-slate-900 font-semibold text-white"
+                        : "text-slate-700 hover:bg-slate-100",
+                    )}
+                  >
+                    <span className="truncate">{o.label}</span>
+                    {active ? <Check className="h-4 w-4 flex-shrink-0" aria-hidden /> : null}
+                  </button>
+                </li>
+              );
+            })}
+          </motion.ul>
+        ) : null}
+      </AnimatePresence>
+    </div>
+  );
+}
 
 export type LandingPlannerCardProps = {
   destination: HeroDestination;
@@ -111,6 +219,9 @@ export function LandingPlannerCard({
     HERO_LANG_OPTIONS.some((g) => g.code === locale) ? locale : "en",
   );
   const [buildDateInvalid, setBuildDateInvalid] = useState(false);
+  // Red validation banner above the Build CTA — lists the missing required
+  // inputs so the user knows what to fill in (was: a silent no-op + border flash).
+  const [buildError, setBuildError] = useState<string | null>(null);
 
   // Phase 5 bridge — a match-result surface dispatches PLANNER_BUILD_EVENT when
   // the user picks "Build your own day in {destination}". The result surface has
@@ -171,12 +282,22 @@ export function LandingPlannerCard({
   );
 
   const handleStartBuilding = useCallback(() => {
-    // Phase 12 D32 — date is required so the matcher + price card can render
-    // the actual quote. If empty, flash the field and bail without nav.
-    if (!buildDate) {
-      setBuildDateInvalid(true);
+    // Required-input gate. Destination / language / hours always carry a
+    // default, so only date + a valid guest count can be missing. If anything
+    // is missing, surface a red banner naming the fields (instead of a silent
+    // no-op) and bail without nav.
+    const missing: string[] = [];
+    if (!buildDate) missing.push(t("premium.v2.planner.buildDateLabel"));
+    const partyNum = Number(buildParty);
+    if (!String(buildParty).trim() || !Number.isFinite(partyNum) || partyNum < 1) {
+      missing.push(t("premium.v2.planner.buildPartyLabel"));
+    }
+    if (missing.length > 0) {
+      setBuildDateInvalid(!buildDate);
+      setBuildError(t("premium.v2.planner.buildMissingError", { fields: missing.join(", ") }));
       return;
     }
+    setBuildError(null);
     analytics.unifiedPlannerBuildStart({
       destination,
       hasIntent: intent.trim().length > 0,
@@ -208,10 +329,11 @@ export function LandingPlannerCard({
     router.push(`/itinerary-builder?${qs.toString()}`);
   }, [router, destination, intent, selectedChipCount, buildDate, buildParty, buildDuration, buildLang, t]);
 
-  // Clear the invalid flash as soon as the user picks a date.
+  // Clear the invalid flash + red banner as soon as the user edits date/guests.
   useEffect(() => {
     if (buildDateInvalid && buildDate) setBuildDateInvalid(false);
-  }, [buildDate, buildDateInvalid]);
+    if (buildError) setBuildError(null);
+  }, [buildDate, buildParty, buildDateInvalid, buildError]);
 
   const chipLooksSelected = useCallback(
     (label: string) => intent.includes(label),
@@ -474,18 +596,13 @@ export function LandingPlannerCard({
                       >
                         {t("premium.v2.planner.buildLangLabel")}
                       </label>
-                      <select
+                      <LangDropdown
                         id="hero-build-lang"
                         value={buildLang}
-                        onChange={(e) => setBuildLang(e.target.value)}
-                        className="focus-ring h-11 w-full rounded-button border border-slate-200/70 bg-slate-50 px-2.5 text-[13px] font-semibold text-slate-900 transition-colors duration-200 focus:border-slate-300 focus:bg-white md:h-12 md:px-3 md:text-[14px]"
-                      >
-                        {HERO_LANG_OPTIONS.map((g) => (
-                          <option key={g.code} value={g.code}>
-                            {g.label}
-                          </option>
-                        ))}
-                      </select>
+                        options={HERO_LANG_OPTIONS}
+                        onChange={setBuildLang}
+                        ariaLabel={t("premium.v2.planner.buildLangLabel")}
+                      />
                     </div>
                   </div>
                   <div className="grid grid-cols-[auto,1fr] gap-3">
@@ -570,6 +687,15 @@ export function LandingPlannerCard({
                 <p className="mb-3 mt-2.5 text-center text-micro text-slate-500">
                   {t("premium.v2.planner.buildPreviewMicrocopy")}
                 </p>
+                {buildError ? (
+                  <p
+                    role="alert"
+                    aria-live="assertive"
+                    className="mb-2.5 rounded-button border border-rose-200 bg-rose-50 px-3 py-2 text-center text-[12px] font-semibold leading-snug text-rose-600"
+                  >
+                    {buildError}
+                  </p>
+                ) : null}
                 <V0ShadcnButton
                   type="button"
                   size="lg"
