@@ -112,7 +112,7 @@ export default async function ItineraryBuilderConfirmationPage({
       <main className="min-h-screen bg-stone-50">
         <section className="mx-auto max-w-3xl px-4 py-10 md:px-6 md:py-16 lg:px-8">
           {/* Hero — confirmed badge + booking reference (status-gated) */}
-          <div className="rounded-card bg-emerald-50/50 p-6 shadow-[0_2px_8px_rgba(15,23,42,0.04),0_24px_56px_-22px_rgba(15,23,42,0.22)] md:p-9">
+          <div className="rounded-card bg-emerald-50/30 ring-1 ring-emerald-100/40 p-6 shadow-[0_2px_8px_rgba(15,23,42,0.04),0_24px_56px_-22px_rgba(15,23,42,0.22),inset_0_1px_0_rgba(255,255,255,0.9)] md:p-9">
             {isAuthorized ? (
               <>
                 <p className="mb-2 inline-flex items-center gap-1.5 text-eyebrow text-emerald-700">
@@ -168,7 +168,7 @@ export default async function ItineraryBuilderConfirmationPage({
 
           {/* Itinerary stop strip */}
           {stops.length > 0 ? (
-            <div className="mt-5 rounded-card bg-emerald-50/40 p-5 shadow-[0_1px_4px_rgba(15,23,42,0.04),0_18px_40px_-18px_rgba(15,23,42,0.16)]">
+            <div className="mt-5 rounded-card bg-emerald-50/25 ring-1 ring-emerald-100/40 p-5 shadow-[0_1px_4px_rgba(15,23,42,0.04),0_18px_40px_-18px_rgba(15,23,42,0.16),inset_0_1px_0_rgba(255,255,255,0.9)]">
               <p className="mb-3 inline-flex items-center gap-1.5 text-eyebrow text-slate-500">
                 <MapPin className="h-3 w-3 text-emerald-600" aria-hidden />
                 Your day
@@ -196,7 +196,7 @@ export default async function ItineraryBuilderConfirmationPage({
 
           {/* Price breakdown */}
           {breakdown.length > 0 ? (
-            <div className="mt-5 rounded-card bg-emerald-50/40 p-5 shadow-[0_1px_4px_rgba(15,23,42,0.04),0_18px_40px_-18px_rgba(15,23,42,0.16)]">
+            <div className="mt-5 rounded-card bg-emerald-50/25 ring-1 ring-emerald-100/40 p-5 shadow-[0_1px_4px_rgba(15,23,42,0.04),0_18px_40px_-18px_rgba(15,23,42,0.16),inset_0_1px_0_rgba(255,255,255,0.9)]">
               <p className="mb-3 text-eyebrow text-slate-500">Breakdown</p>
               <ul className="space-y-1.5">
                 {breakdown.map((line) => (

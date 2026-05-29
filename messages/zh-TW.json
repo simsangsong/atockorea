@@ -2302,8 +2302,10 @@
   "itineraryBuilder": {
     "home": {
       "eyebrow": "自訂行程規劃",
-      "title": "或打造您的韓國專屬一日遊",
-      "subtitle": "在地圖上選擇您真正想去的地點，我們將為您報價。",
+      "title": "打造您的韓國專屬一日遊",
+      "subtitle": "選擇地區、人數、日期，即時顯示路線與價格。綁定信用卡即可預訂。",
+      "loading": "正在載入地圖…",
+      "error": "地圖載入失敗，請重新整理頁面。",
       "busanName": "Busan",
       "busanTagline": "海邊古剎 + 歷史古都 + 尋味市集",
       "busanStops": "20個精選景點",
@@ -2441,7 +2443,8 @@
     "ai": {
       "eyebrow": "讓AI為您建議行程",
       "intro": "告訴我們您的興趣 — 我們將從本地區景點為您規劃路線。",
-      "presetsLabel": "或從預設選項開始",
+      "presetsLabel": "可自由複選喜歡的主題",
+      "presetsSelectedHint": "已選 {count} 項 — 準備好後請點「推薦」",
       "presets": {
         "firstTime": "韓國初體驗",
         "family": "親子同樂",

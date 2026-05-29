@@ -145,7 +145,7 @@ export default async function ItineraryBuilderCheckoutPage({
           <div className="grid gap-6 lg:grid-cols-3">
             {/* Card form (lg: 2 cols) */}
             <div className="lg:col-span-2">
-              <div className="rounded-card bg-emerald-50/50 p-5 shadow-[0_2px_8px_rgba(15,23,42,0.04),0_22px_50px_-20px_rgba(15,23,42,0.20)] md:p-7">
+              <div className="rounded-card bg-emerald-50/30 ring-1 ring-emerald-100/40 p-5 shadow-[0_2px_8px_rgba(15,23,42,0.04),0_22px_50px_-20px_rgba(15,23,42,0.20),inset_0_1px_0_rgba(255,255,255,0.9)] md:p-7">
                 <CheckoutCardClient
                   bookingId={bookingId}
                   currency={(booking.currency as "krw" | "usd") ?? "krw"}
@@ -162,7 +162,7 @@ export default async function ItineraryBuilderCheckoutPage({
               <div className="space-y-4">
                 <LivePriceCard price={price} isJeju={region === "jeju"} compact />
                 {poiThumbs.length > 0 ? (
-                  <div className="rounded-card bg-emerald-50/40 px-3.5 py-3 shadow-[0_1px_4px_rgba(15,23,42,0.04),0_12px_30px_-18px_rgba(15,23,42,0.14)]">
+                  <div className="rounded-card bg-emerald-50/25 ring-1 ring-emerald-100/40 px-3.5 py-3 shadow-[0_1px_4px_rgba(15,23,42,0.04),0_12px_30px_-18px_rgba(15,23,42,0.14),inset_0_1px_0_rgba(255,255,255,0.9)]">
                     <p className="mb-2 text-micro font-semibold uppercase tracking-wider text-slate-500">
                       Your itinerary
                     </p>

@@ -32,13 +32,13 @@
 
 | Field | Value |
 |---|---|
-| **Current phase** | Phase 10 — Flow simplification + card-hold booking ✅ (all 8 sub-phases + 3 audit checkpoints complete on branch `feat/itinerary-builder-flow-simplification`). Awaiting PR review + merge to main. Phase 8 admin-tooling continues on `feat/admin-match-pois-editor`; Phase 9 pricing track is code-complete (interactive QA pending). |
-| **Blocked on** | — (Phase 9 interactive QA is a separate track; Phase 10 only consumes the pricing module) |
+| **Current phase** | Phase 11 — Absorb planner page into landing page 🔄 (branch `feat/itinerary-builder-on-home`). Started 2026-05-29 same day Phase 10 merged, after user feedback on the live PR-merged surface. |
+| **Blocked on** | — |
 | **Last updated** | 2026-05-29 |
-| **Last commit touching this feature** | `6de0159b` — feat(i18n): Phase 10.7 — transcreate planner/cart/error keys into ko/ja/zh/zh-TW/es. Phase 7 complete: 6-locale parity restored. Phase 10 ready for PR review. |
+| **Last commit touching this feature** | `7db45877` — Phase 10 merged (PR #99) on main. |
 | **Owner** | simsangsong |
 | **Reviewers** | — |
-| **Branch** | `feat/itinerary-builder-flow-simplification` (Phase 10, off `origin/main`). Other in-flight tracks: `feat/admin-match-pois-editor` (Phase 8), `feat/itinerary-builder-pricing` (Phase 9 QA), `fix/itinerary-builder-poi-data-quality` (data-quality). |
+| **Branch** | `feat/itinerary-builder-on-home` (Phase 11, off `origin/main`). Other in-flight tracks unchanged. |
 
 ### Phase progress
 
@@ -56,7 +56,8 @@ Revised 2026-05-16 after D1-D8: original 6 phases → 7 phases (new Phase 5 for 
 | 7 — AI recommendation engine | ✅ complete | 2026-05-17 | 2026-05-17 | `7aa60f0a` |
 | 8 — Admin `match_pois` editor (tooling track) | 🔄 in progress | 2026-05-21 | — | (planner commit first) |
 | 9 — Pricing policy overhaul (pricing track) | 🔄 code-complete, interactive QA pending | 2026-05-22 | — | `c0aa783f` · `3f21ef16` · `25e25744` · `634e287e` · `f89845e1` · `7931d0f9` |
-| 10 — Flow simplification + card-hold booking (flow track) | ✅ complete (awaiting merge) | 2026-05-29 | 2026-05-29 | `8bef20be` · `2cbe643e` · `f652559e` · `697477e3` · `1dcc3366` · `929bbfcb` · `51a27c2d` · `19220277` · `4bc11bf4` · `72755e39` · `bac9a5fc` · `a591ac5c` · `64069fb4` · `514083d8` · `6de0159b` |
+| 10 — Flow simplification + card-hold booking (flow track) | ✅ complete | 2026-05-29 | 2026-05-29 | merged to main via [PR #99](https://github.com/simsangsong/atockorea/pull/99) — merge sha `7db45877` |
+| 11 — Absorb planner page into landing page (matcher-pattern unification) | 🔄 in progress | 2026-05-29 | — | (planner commit first) |
 
 Legend: ⏸ not started · 🔄 in progress · ✅ complete · ⚠️ blocked · ❌ abandoned
 
@@ -100,6 +101,11 @@ Append a new row whenever a §5 question gets answered or a new architectural ca
 | 2026-05-29 | D24 | **Booking handoff = URL-only `?bookingId=…`** for the builder (vs. tour-product's `sessionStorage` pattern). | Preserves D5 share-able-link discipline + survives refresh + works for any future email-delivery path (e.g., resend checkout link). Cost: one server-side fetch of the booking on checkout page mount. Phase 10 D10. |
 | 2026-05-29 | D25 | **Builder `bookings` row writes `unit_price = total_price = final_price`** (flat-rate KRW). | Builder pricing is per-tour (Solati ₩340k for 1 pax or for 13 pax). A per-person fiction (`final / guests`) would corrupt BI. Smallest schema lie that's still useful for reports that join on `unit_price`. Phase 10 D11. |
 | 2026-05-29 | D26 | **`bookings.merchant_id = process.env.ATOC_DEFAULT_MERCHANT_ID \|\| null`** for builder rows. Verified during Phase 2 task 2e against `/api/admin/orders/[id]/settle`. | Builder has no parent tour to inherit `merchant_id` from. Env-sentinel keeps it tunable without redeploy if AtoC ever wants to route builder revenue to a different merchant. Phase 10 D12. |
+| 2026-05-29 | D27 | **Planner inputs + result + map + price all render on `/` directly.** `/itinerary-builder` and `/itinerary-builder/[region]` become permanent redirects to `/?…` preserving every URL param. `/itinerary-builder/checkout` and `/itinerary-builder/confirmation/[id]` stay (booking surface, not the planner). | Phase 10's "home chip → /itinerary-builder?region=…" was still a 2-step input funnel ("랜딩페이지 선택창은 그냥 장식용이야?"). The matcher pattern (inputs + result inline on `/`) is the user's mental model; the planner should mirror it. Spin-off planner §O.2. |
+| 2026-05-29 | D28 | **Preset chips are multi-select toggles**, not single-fire triggers. A separate "추천받기" CTA concatenates the active preset intents + custom intent text and fires `/api/itinerary/match`. **Auto-run useEffect from Phase 10 D20 is REMOVED** — every match is explicit. | Real planning is multi-axis ("family + foodie + UNESCO"). Single-fire chips force the user to pick one bucket. Auto-run had a 3-fire session cap because it kept surprising users mid-edit; explicit CTA ends the problem class. Spin-off planner §O.2 D28. |
+| 2026-05-29 | D29 | **Mint surfaces lightened** from `bg-emerald-50/50` → `bg-emerald-50/30` + `ring-1 ring-emerald-100/40` + inset top highlight (`box-shadow: inset 0 1px 0 rgba(255,255,255,0.9)`). Layered drop-shadow + hover-lift retained. | User direction 2026-05-29: "거의 흰 색에 가까운 민트로 하라고 은은하게 빛나는것처럼" — near-white with a glow, not a colored panel. Phase 10's 50% mint read as a saturated brand color, not a floating card. Spin-off planner §O.2 D29. |
+| 2026-05-29 | D30 | **HomeBuilderSection is client-side with lazy POI fetch** via new `GET /api/itinerary-builder/pois?region=<slug>` endpoint. SSR only pre-fetches POIs when the URL carries `?region=` (deep-link); a cold landing-page visitor ships zero POI bytes. | Landing-page TTFB matters more than instant builder paint for non-engaged visitors. Direct deep-links (blog, redirect from old `/itinerary-builder?region=…`) still get the no-skeleton experience. Spin-off planner §O.2 D30. |
+| 2026-05-29 | D31 | **PlannerTopRail desktop bar always expanded on `/`** (no chip collapse). Mobile keeps the bottom-sheet pattern but the trigger is a labeled "여행 설정 편집 ›" button, not the Phase 10 summary chip. | Phase 10 mobile chip ("Busan · 2026-08-20 · 4명 · EN · 8h") was reported as invisible-as-interactive by user 2026-05-29. The builder is the primary CTA on `/` and deserves real estate. Spin-off planner §O.2 D31. |
 
 ---
 

@@ -1,12 +1,10 @@
 import { permanentRedirect } from "next/navigation";
 
 /**
- * Phase 10.3 D21 — `/itinerary-builder/[region]` is collapsed into
- * `/itinerary-builder?region=…`. This route stays only as a 308
- * (permanent) redirect to preserve SEO + inbound bookmarks.
- *
- * Existing query params (track / lang / date / party / duration / hours /
- * ship / intent / pickup / port / locale / origin) are forwarded verbatim.
+ * Phase 11 D27 — `/itinerary-builder/[region]` is collapsed into `/?…`
+ * (the planner now lives on the home page). 308 permanent redirect
+ * preserves SEO + every existing query param, plus adds `builder=open`
+ * so the home page auto-scrolls to the builder section.
  */
 export default async function LegacyRegionPage({
   params,
@@ -18,13 +16,14 @@ export default async function LegacyRegionPage({
   const [{ region }, sp] = await Promise.all([params, searchParams]);
   const qs = new URLSearchParams();
   qs.set("region", region);
+  qs.set("builder", "open");
   for (const [k, v] of Object.entries(sp ?? {})) {
-    if (k === "region") continue;
+    if (k === "region" || k === "builder") continue;
     if (Array.isArray(v)) {
       for (const item of v) if (item) qs.append(k, item);
     } else if (v) {
       qs.set(k, v);
     }
   }
-  permanentRedirect(`/itinerary-builder?${qs.toString()}`);
+  permanentRedirect(`/?${qs.toString()}`);
 }

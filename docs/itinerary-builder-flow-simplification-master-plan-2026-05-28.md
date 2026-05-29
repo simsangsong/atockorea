@@ -1011,3 +1011,103 @@ Once §C decisions are signed off, the parent planner
 - **POI data quality** (`docs/itinerary-builder-poi-data-quality-master-plan-2026-05-20.md`):
   no overlap. Builder bookings render POI names from `match_pois` —
   whatever names are correct on cut-over day are what customers see.
+
+---
+
+## O · Phase 11 — Absorb the planner page into the landing page (2026-05-29)
+
+### O.1 Problem (verbatim user complaint after Phase 10 shipped)
+
+After Phase 10 reduced the funnel to "home chip → /itinerary-builder?region=… →
+card-hold", the user opened the live planner page and reported four
+issues on the same surface:
+
+1. **Mint surface is too saturated.** The `bg-emerald-50/50` floating
+   cards read as a solid mint panel, not a subtle "floating glow" lift
+   off the warm-gray page.
+2. **Time/people tabs feel "missing".** PlannerTopRail's mobile branch
+   collapses to a 1-line summary chip ("Busan · 2026-08-20 · 4명 · EN ·
+   8h") that the user did not read as interactive — it looked like a
+   breadcrumb.
+3. **Preset chips single-fire.** Clicking one preset (First time / Family /
+   UNESCO / Foodie / Beaches+cafes) immediately runs the matcher and
+   loads the cart. Cannot combine "Family + UNESCO" or "Foodie + Beaches".
+4. **Two input surfaces is still two inputs.** The home idle-preview chip
+   collects nothing beyond a destination, but the planner page collects
+   region + date + party + lang + duration + presets. The user reads this
+   as: "랜딩페이지 선택창은 그냥 장식용이야?" — the home is decoration,
+   the real form is one tap away.
+
+The user offered two paths and chose **path (a)**: absorb the planner
+page into the landing page so that inputs + result + map + price all
+render on `/` in a single screen, matcher-pattern style.
+
+### O.2 Decisions (D27–D31, copied to parent planner §B)
+
+| ID | Decision | Rationale |
+|---|---|---|
+| **D27** | The planner inputs + result + map + price live on `/` directly. `app/itinerary-builder/page.tsx` becomes a permanent redirect to `/?…` preserving every URL param. `app/itinerary-builder/[region]/page.tsx` already redirects; updated target. `/itinerary-builder/checkout` + `/itinerary-builder/confirmation/[id]` STAY (booking surface, not the planner). | Matches matcher mental model the user already understands. Removes the "one extra page after the home" tap. Inbound bookmarks survive via 308. |
+| **D28** | Preset chips are **multi-select toggles**. Selecting one chip just toggles it in a set; a separate "추천받기" button (CTA) concatenates the active preset intents (joined by " · ") with any custom intent text, then fires `/api/itinerary/match`. **Auto-run useEffect from Phase 10 D20 is REMOVED** — every match is explicit. AUTO_RUN_CAP sessionStorage gate becomes vestigial; left in for analytics-cleanup later. | Multi-select matches the user's actual planning model ("family AND foodie"). Manual fire ends the "I clicked once and a result blew through me" surprise. |
+| **D29** | The mint surface shade lightens from `bg-emerald-50/50` → `bg-emerald-50/30` and gains a subtle inset glow ring `ring-1 ring-emerald-100/40` (NOT a solid border) plus a slightly brighter top highlight via `[box-shadow:inset_0_1px_0_rgba(255,255,255,0.9)]`. Layered drop-shadow + hover-lift retained. | The user's words: "거의 흰 색에 가까운 민트로 하라고 은은하게 빛나는것처럼" — near-white with a glow, not a colored panel. |
+| **D30** | The on-home planner section is a **client component** (`HomeBuilderSection`) that lazy-loads POIs via a new `GET /api/itinerary-builder/pois?region=<slug>` endpoint when the user first interacts (changes a tab, focuses the intent input, or clicks a preset). Initial home paint ships zero POI bytes. Server-side prefetch only happens when the URL carries `?region=` (inbound link from another page) — then the home pre-loads that region's POIs at SSR for a no-skeleton first paint. | Landing page TTFB stays unaffected for the 90% of visitors who do not engage the builder. Direct deep-links (e.g. from blog posts) get the no-skeleton experience. |
+| **D31** | `PlannerTopRail` desktop bar is **always expanded on `/`** (no mobile-chip collapse). Mobile keeps the sheet-on-tap pattern but the trigger is changed from a 1-line summary chip to a labeled "여행 설정 편집 ›" button so it reads as obviously interactive. | Phase 10's compact chip was a footgun (user complaint #2). The builder is the primary CTA on `/`, so it deserves first-class real estate, not a chip. |
+
+### O.3 Scope changes vs Phase 10 deliverables
+
+| Phase 10 deliverable | Phase 11 effect |
+|---|---|
+| `/itinerary-builder?region=…` is the planner route | Demoted to permanent-redirect shim. Target = `/?region=…&builder=open` |
+| PlannerTopRail mobile collapses to summary chip | Replaced with labeled "여행 설정 편집" trigger |
+| Auto-run useEffect with 500ms debounce + AUTO_RUN_CAP | Removed. Manual "추천받기" only. |
+| `bg-emerald-50/50` mint floating cards | Lightened to `bg-emerald-50/30` + glow ring |
+| ItineraryBuilderEntry section with 3 region cards | DELETED. The new `HomeBuilderSection` IS the entry. |
+
+The Phase 10 booking flow (Stripe card hold, /checkout, /confirmation,
+admin orders) is untouched. The pricing engine is untouched. POI fetch
+SELECT is untouched. The 6-locale i18n payload gains ≤ 8 new keys.
+
+### O.4 Sub-checklist
+
+- [ ] 11A — Read home + matcher code in detail
+- [ ] 11B — Planner doc + decision log (this section + D27–D31 in parent)
+- [ ] 11C — New `GET /api/itinerary-builder/pois?region=<slug>` endpoint
+- [ ] 11C — New `components/home/v2/sections/home-builder-section.tsx` (client)
+- [ ] 11C — Multi-select preset state in AIRecommendPanel; remove auto-run effect
+- [ ] 11C — PlannerTopRail `patch()` rewrites to `/` instead of `/itinerary-builder`
+- [ ] 11C — PlannerTopRail mobile trigger labeled ("여행 설정 편집 ›") not summary chip
+- [ ] 11D — Inline result panel (timeline + map + LivePriceCard) below inputs
+- [ ] 11D — `HomeBuilderSection` mounted in HomeV2Page between DeferredBestMatchPreview and FeaturedProductsShowcase
+- [ ] 11E — Lighten mint shade across LivePriceCard, AIRecommendPanel, EmptyState, notIncluded card
+- [ ] 11F — `app/itinerary-builder/page.tsx` → `permanentRedirect` to `/?…`
+- [ ] 11F — `app/itinerary-builder/[region]/page.tsx` → updated `permanentRedirect` target
+- [ ] 11F — Delete ItineraryBuilderEntry mount (it's unmounted today; safe to delete the section file too)
+- [ ] 11G — 6-locale i18n for `home.builder.*` new keys
+- [ ] 11H — `npm run build` green
+- [ ] 11H — 5-finder + verifier + sweep audit on the diff (≤ 15 findings, all fixed)
+- [ ] 11I — PR + merge to main + memory + planner bump
+
+### O.5 Acceptance
+
+- [ ] On `/`, the builder is visible above the fold on desktop and at most
+      one short scroll on mobile. No second "go to /itinerary-builder" tap.
+- [ ] Clicking 2+ preset chips toggles a set; `/api/itinerary/match` is
+      NOT called until the user clicks "추천받기".
+- [ ] Concatenated intent (preset labels + custom text) is what the API
+      receives. Verifiable by reading the request body in DevTools.
+- [ ] `bg-emerald-50/50` is replaced by `bg-emerald-50/30 + ring-1 ring-emerald-100/40` everywhere it appears in the builder surfaces — grep returns 0 hits for `emerald-50/50` after the diff.
+- [ ] `/itinerary-builder` → 308 → `/` with every query param preserved.
+- [ ] Inbound `/itinerary-builder?region=jeju` lands on `/?region=jeju&builder=open`, the builder section is pre-expanded, POIs server-prefetched.
+- [ ] 6-locale parity for any new keys (grep all 6 files for the key, all present).
+- [ ] No `tour_quote_requests` writes after deploy (no behavior change vs Phase 10 — defense check).
+- [ ] /itinerary-builder/checkout + /confirmation/[id] still 200 (booking flow unchanged).
+
+### O.6 Risk register
+
+| Risk | Mitigation |
+|---|---|
+| Loading the BuilderShell on `/` increases landing-page JS bundle | HomeBuilderSection is a dynamic import (`next/dynamic`) with no SSR — landing-page TTFB unchanged for non-builder visitors. |
+| Region change triggers a hard nav today (POIs SSR-fetched) | New `/api/itinerary-builder/pois` endpoint lets the home rail do client-side refetch instead. Hard nav reserved for `track=dmz` (still needs SEO-friendly URL state). |
+| Multi-select preset intent might confuse the matcher (combined intents could under-match) | Backend takes free text; testing 2-3 preset combos vs individual presets shows the model handles compound intents fine. Document in §C. If quality drops, fall back to "join with newlines instead of ·". |
+| Removing auto-run could surprise Phase 10 users mid-session | Phase 10 has been live < 24h; the auto-run shipped in the same release. No documented user expectation to break. |
+| Deleting ItineraryBuilderEntry might leave dead i18n keys | The keys (`itineraryBuilder.home.busanName` etc.) are referenced only by that component. Remove component → grep returns 0 → delete keys in same commit. |
+
