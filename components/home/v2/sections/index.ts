@@ -7,4 +7,5 @@ export { WhyAtockorea } from "./why-atockorea";
 export { ProcessOperational } from "./process-operational";
 export { FinalCTA } from "./final-cta";
 export { ItineraryBuilderEntry } from "./itinerary-builder-entry";
-export { HomeBuilderSection } from "./home-builder-section";
+// Phase 13 D36 — HomeBuilderSection unmounted. File kept for git history;
+// no live import. Cleanup pass to delete the file is parked.
