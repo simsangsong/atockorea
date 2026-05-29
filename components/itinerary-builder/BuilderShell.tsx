@@ -276,6 +276,25 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey, plac
                 focusedPoiKey={focusedPoiKey}
                 resetViewRef={resetViewRef}
               />
+              {/* Phase 15.1 — premium map glaze. The map tiles render via a
+                  Google vector Map ID, so a code-only palette is impossible
+                  (inline `styles` are ignored with a Map ID). Instead a
+                  pointer-events-none overlay lays a soft top sheen + corner
+                  vignette + inset hairline highlight over the tiles — the
+                  cheap, pin-safe way to make the canvas read editorial rather
+                  than raw Google. Sits above tiles (z-10) but below the
+                  floating Reset button (z-20), and the vignette stays at the
+                  edges so the route pins in the centre are never dimmed. */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 z-10 md:rounded-2xl"
+                style={{
+                  background:
+                    "radial-gradient(120% 78% at 50% 0%, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0) 24%), radial-gradient(135% 120% at 50% 118%, rgba(15,23,42,0.16) 0%, rgba(15,23,42,0) 46%)",
+                  boxShadow:
+                    "inset 0 0 0 1px rgba(255,255,255,0.5), inset 0 1px 0 rgba(255,255,255,0.7), inset 0 -44px 64px -44px rgba(15,23,42,0.32)",
+                }}
+              />
             </div>
           </div>
 

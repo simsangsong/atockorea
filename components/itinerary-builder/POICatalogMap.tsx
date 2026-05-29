@@ -3,7 +3,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Loader } from "@googlemaps/js-api-loader";
 import { createRoot, type Root } from "react-dom/client";
-import { MarkerClusterer } from "@googlemaps/markerclusterer";
 import { useTranslations } from "@/lib/i18n";
 import type { MatchPoiRow } from "@/lib/itinerary-builder/types";
 import type { RegionSlug } from "@/lib/itinerary-builder/regions";
@@ -26,9 +25,9 @@ const CONTAINER_STYLE = {
 
 /**
  * Detach an AdvancedMarkerElement from the map. Setting `map = null` makes the
- * Maps SDK call `getRootNode()` on the marker's content element; when the
- * MarkerClusterer has already removed the marker (or React unmounted its DOM),
- * that element is detached and the setter throws "Cannot read properties of
+ * Maps SDK call `getRootNode()` on the marker's content element; when React
+ * has already unmounted its DOM, that element is detached and the setter
+ * throws "Cannot read properties of
  * undefined (reading 'getRootNode')". The marker is being torn down anyway, so
  * swallow it rather than crash the region page.
  */
@@ -91,7 +90,6 @@ export default function POICatalogMap({
   // StrictMode-safe one-shot guard so the map is created exactly once even
   // though React dev double-invokes effects.
   const mapInitStartedRef = useRef(false);
-  const clustererRef = useRef<MarkerClusterer | null>(null);
   const markersRef = useRef<google.maps.marker.AdvancedMarkerElement[]>([]);
   // Imperative InfoWindow (the wrapper <InfoWindow> needs the <GoogleMap>
   // context we no longer use). Renders the React content into a detached root.
@@ -278,12 +276,7 @@ export default function POICatalogMap({
       return;
     }
 
-    // Tear down prior clusterer + markers (in case of hot-reload or pois change)
-    try {
-      clustererRef.current?.clearMarkers();
-    } catch {
-      // clearMarkers can throw if the clusterer is mid-teardown — ignore.
-    }
+    // Tear down prior markers (in case of hot-reload or pois change).
     markersRef.current.forEach(detachMarker);
     markersRef.current = [];
 
@@ -327,6 +320,13 @@ export default function POICatalogMap({
       try {
       const seq = seqIndex.get(poi.poi_key);
       const inRoute = seq != null;
+      // The result map shows ONLY the itinerary's stops, 1:1 with the timeline
+      // sequence numbers. Out-of-route catalog POIs are intentionally NOT
+      // pinned here — previously they were rendered as slate dots and fed into
+      // MarkerClusterer, which drew blue "count" badges (2, 3, …) that read as
+      // bogus stop numbers and cluttered the canvas. Browse/add still happens
+      // in the POICatalogGrid below; map-tap discovery is dropped on purpose.
+      if (!inRoute) continue;
       const content = buildPhotoPinContent({
         imageUrl: inRoute ? poi.default_image_url || poi.images?.[0] || null : null,
         seq: inRoute && seq != null ? seq : null,
@@ -408,20 +408,13 @@ export default function POICatalogMap({
     }
 
     markersRef.current = markers;
-    try {
-      clustererRef.current = new MarkerClusterer({ map, markers });
-    } catch (err) {
-      console.warn("[POICatalogMap] MarkerClusterer init failed; markers rendered without clustering.", err);
-      markers.forEach((m) => (m.map = map));
-    }
+    // No clustering: a day's route is only a handful of stops and each pin
+    // must stay 1:1 with its timeline sequence badge. The <80m pin-offset
+    // logic above already keeps near-coincident stops readable. Attach each
+    // marker directly to the map.
+    markers.forEach((m) => (m.map = map));
 
     return () => {
-      try {
-        clustererRef.current?.clearMarkers();
-      } catch {
-        // ignore — clusterer may be mid-teardown
-      }
-      clustererRef.current = null;
       markers.forEach(detachMarker);
       markersRef.current = [];
     };
