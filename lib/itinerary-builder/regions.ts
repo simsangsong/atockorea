@@ -24,11 +24,20 @@ export const REGION_CLUSTER: Record<RegionSlug, readonly string[]> = {
   seoul: ["seoul", "gyeonggi", "gangwon", "incheon"],
 };
 
-/** Map centroid per region for initial camera. */
+/** Map centroid per region for initial camera.
+ *
+ *  Phase 15 — zooms lowered so the entire region cluster is visible on
+ *  first paint (was Jeju 10 / Busan 9 / Seoul 10 → city-level crop on
+ *  mobile, especially when only one POI was matched). New defaults:
+ *   - Jeju: 9 (whole island + a bit of ocean)
+ *   - Busan: 8 (Busan + Yangsan/Gyeongju/Ulsan/Miryang cluster)
+ *   - Seoul: 9 (greater Seoul + Gyeonggi day-trip corridors)
+ *  Lat/lng nudged slightly to keep the cluster centered on a 16:9-ish
+ *  mobile aspect (40-42vh × full-width). */
 export const REGION_CENTER: Record<RegionSlug, { lat: number; lng: number; zoom: number }> = {
-  busan: { lat: 35.18, lng: 129.07, zoom: 9 },
-  jeju: { lat: 33.40, lng: 126.55, zoom: 10 },
-  seoul: { lat: 37.57, lng: 127.00, zoom: 10 },
+  busan: { lat: 35.55, lng: 129.05, zoom: 8 },
+  jeju: { lat: 33.39, lng: 126.55, zoom: 9 },
+  seoul: { lat: 37.55, lng: 127.10, zoom: 9 },
 };
 
 export function isRegionSlug(value: string | undefined): value is RegionSlug {
