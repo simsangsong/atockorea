@@ -1111,3 +1111,50 @@ SELECT is untouched. The 6-locale i18n payload gains ≤ 8 new keys.
 | Removing auto-run could surprise Phase 10 users mid-session | Phase 10 has been live < 24h; the auto-run shipped in the same release. No documented user expectation to break. |
 | Deleting ItineraryBuilderEntry might leave dead i18n keys | The keys (`itineraryBuilder.home.busanName` etc.) are referenced only by that component. Remove component → grep returns 0 → delete keys in same commit. |
 
+---
+
+## P · Phase 12 — Hero-driven builder + auto-flow (2026-05-29)
+
+### P.1 Problem (user feedback after Phase 11 PR #100 shipped)
+
+Live verification of the merged Phase 11 surface surfaced four issues:
+
+1. **Inputs in the wrong place.** date / party / duration / lang sit inside `PlannerTopRail` which is in the builder section ("Design your own day in Korea") well below the hero. Customer wants conditions set BEFORE matcher fires: "조건 미리 셋팅해놓고 돌려야지 정확한 견적이 나오지."
+2. **Typography drift.** New "LET AI SUGGEST YOUR DAY" eyebrow, "TAP ANY (COMBINE FREELY)" label, preset chips use ad-hoc sizes/weights instead of landing tokens.
+3. **Hero CTA doesn't produce a result.** "Start Building" expands/scrolls to builder but no matcher runs — user sees input form again, not the itinerary.
+4. **Result must auto-apply.** No "Apply this day" extra click — recommendation is the working draft the user then edits.
+
+### P.2 Decisions (D32–D35)
+
+| ID | Decision | Rationale |
+|---|---|---|
+| **D32** | Hero "Build myself" tab gains **date / party / duration** inputs. URL on Start Building: `?region=…&date=…&party=…&duration=…&intent=…&autoRun=1&builder=open`. Lang stays in PlannerTopRail (locale default; power-user override). | User said conditions must be set BEFORE matcher runs. Hero is where the customer already engages. |
+| **D33** | `AIRecommendPanel` re-introduces a **bounded auto-run useEffect**: fires only when `?autoRun=1` deep-link present AND intent OR presets set. After firing, removes autoRun param via `router.replace`. | Drives the hero→builder happy path without breaking Phase 11 D28's "every match is explicit" principle for in-builder edits. |
+| **D34** | After matcher success, **smooth-scroll `ResultTimeline` into the viewport**. Cart auto-apply unchanged (Phase 11 wired this already). | Phase 11 had cart populating but rendering far below the AI panel — auto-scroll closes the "did anything happen?" gap. |
+| **D35** | Audit and unify `AIRecommendPanel` + `HomeBuilderSection` typography to landing tokens. Preset chips re-style to the landing chip class verbatim. | Premium visual parity with rest of home. |
+
+### P.3 Sub-checklist
+
+- [x] 12A — Read HeroSection + LandingPlannerCard build-mode
+- [ ] 12B — Planner doc + parent §B (this section)
+- [ ] 12C — Hero build mode: date (IntakeDateField) + party (number) + duration (chip group) + URL push w/ autoRun=1
+- [ ] 12D — AIRecommendPanel autoRun useEffect (single-fire, removes param) + post-match smooth scroll to ResultTimeline
+- [ ] 12E — Typography unification (eyebrow / labels / chip sizes match landing)
+- [ ] 12F — Build green + audit + PR + merge
+
+### P.4 Acceptance
+
+- [ ] Hero "Build myself" → fill date+party+duration → Start Building → page scrolls to builder, matcher auto-fires, itinerary appears in ResultTimeline (auto-scrolled), LivePriceCard reflects conditions.
+- [ ] After matcher fires, `autoRun` param removed from URL (no re-fire on subsequent patches).
+- [ ] Visual diff: eyebrows/labels/chips match landing tokens.
+- [ ] No "Apply this day" click required for auto-run path; manual in-builder fires still respect D28.
+
+### P.5 Risk register
+
+| Risk | Mitigation |
+|---|---|
+| Auto-run re-fires on URL patch | Strip `autoRun` immediately after fire. |
+| Auto-scroll fights `?builder=open` section scroll | Different targets, ~600ms apart. Acceptable. |
+| Hero card crowding | Limit to 3 fields, compact `text-[11px] md:text-caption` scale matching existing chip row. |
+| User changes inputs in PlannerTopRail after auto-run | URL change re-renders builder; matcher does NOT re-fire (D28). Cart stays as last accepted. |
+
