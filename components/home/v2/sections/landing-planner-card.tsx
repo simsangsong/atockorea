@@ -91,7 +91,10 @@ export function LandingPlannerCard({
   const router = useRouter();
   const reduceMotion = useReducedMotion();
 
-  const [mode, setMode] = useState<PlannerMode>("match");
+  // Default mode is "build" (user decision 2026-05-29; reverses the unified
+  // plan's original "match" default). The Build/Match segmented control still
+  // lets visitors flip to the matcher in one click.
+  const [mode, setMode] = useState<PlannerMode>("build");
   const [intentExpanded, setIntentExpanded] = useState(false);
   const intentInputRef = useRef<HTMLTextAreaElement>(null);
   const intentFocusFiredRef = useRef(false);

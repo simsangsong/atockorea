@@ -206,10 +206,15 @@ type PlannerMode = "match" | "build";
 Default:
 
 ```ts
-const [mode, setMode] = useState<PlannerMode>("match");
+const [mode, setMode] = useState<PlannerMode>("build"); // 2026-05-29 — was "match" (see note below)
 ```
 
-Reasons:
+> **2026-05-29 reversal (user decision):** default flipped `match` → `build`.
+> The original `match` default below was overridden by the product owner —
+> first paint now opens the builder, with the matcher one click away via the
+> segmented control. See the landing master plan §B 2026-05-29 row.
+
+Original reasons for `match` (no longer the default):
 
 - `match` is better for first-time visitors.
 - It preserves the current homepage conversion intent.
