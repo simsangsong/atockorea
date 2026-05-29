@@ -32,13 +32,13 @@
 
 | Field | Value |
 |---|---|
-| **Current phase** | Phase 11 — Absorb planner page into landing page 🔄 (branch `feat/itinerary-builder-on-home`). Started 2026-05-29 same day Phase 10 merged, after user feedback on the live PR-merged surface. |
+| **Current phase** | Phase 12 — Hero-driven builder + auto-flow + typography 🔄 (branch `feat/hero-builder-inputs`). Started 2026-05-29 same day Phase 11 merged, after user feedback on the live PR-merged surface. |
 | **Blocked on** | — |
 | **Last updated** | 2026-05-29 |
-| **Last commit touching this feature** | `7db45877` — Phase 10 merged (PR #99) on main. |
+| **Last commit touching this feature** | `565a4610` — Phase 11 merged (PR #100) on main. |
 | **Owner** | simsangsong |
 | **Reviewers** | — |
-| **Branch** | `feat/itinerary-builder-on-home` (Phase 11, off `origin/main`). Other in-flight tracks unchanged. |
+| **Branch** | `feat/hero-builder-inputs` (Phase 12, off `origin/main`). |
 
 ### Phase progress
 
@@ -57,7 +57,8 @@ Revised 2026-05-16 after D1-D8: original 6 phases → 7 phases (new Phase 5 for 
 | 8 — Admin `match_pois` editor (tooling track) | 🔄 in progress | 2026-05-21 | — | (planner commit first) |
 | 9 — Pricing policy overhaul (pricing track) | 🔄 code-complete, interactive QA pending | 2026-05-22 | — | `c0aa783f` · `3f21ef16` · `25e25744` · `634e287e` · `f89845e1` · `7931d0f9` |
 | 10 — Flow simplification + card-hold booking (flow track) | ✅ complete | 2026-05-29 | 2026-05-29 | merged to main via [PR #99](https://github.com/simsangsong/atockorea/pull/99) — merge sha `7db45877` |
-| 11 — Absorb planner page into landing page (matcher-pattern unification) | 🔄 in progress | 2026-05-29 | — | (planner commit first) |
+| 11 — Absorb planner page into landing page (matcher-pattern unification) | ✅ complete | 2026-05-29 | 2026-05-29 | merged to main via [PR #100](https://github.com/simsangsong/atockorea/pull/100) — merge sha `565a4610` |
+| 12 — Hero-driven builder + auto-flow + typography unification | 🔄 in progress | 2026-05-29 | — | (planner commit first) |
 
 Legend: ⏸ not started · 🔄 in progress · ✅ complete · ⚠️ blocked · ❌ abandoned
 
@@ -106,6 +107,10 @@ Append a new row whenever a §5 question gets answered or a new architectural ca
 | 2026-05-29 | D29 | **Mint surfaces lightened** from `bg-emerald-50/50` → `bg-emerald-50/30` + `ring-1 ring-emerald-100/40` + inset top highlight (`box-shadow: inset 0 1px 0 rgba(255,255,255,0.9)`). Layered drop-shadow + hover-lift retained. | User direction 2026-05-29: "거의 흰 색에 가까운 민트로 하라고 은은하게 빛나는것처럼" — near-white with a glow, not a colored panel. Phase 10's 50% mint read as a saturated brand color, not a floating card. Spin-off planner §O.2 D29. |
 | 2026-05-29 | D30 | **HomeBuilderSection is client-side with lazy POI fetch** via new `GET /api/itinerary-builder/pois?region=<slug>` endpoint. SSR only pre-fetches POIs when the URL carries `?region=` (deep-link); a cold landing-page visitor ships zero POI bytes. | Landing-page TTFB matters more than instant builder paint for non-engaged visitors. Direct deep-links (blog, redirect from old `/itinerary-builder?region=…`) still get the no-skeleton experience. Spin-off planner §O.2 D30. |
 | 2026-05-29 | D31 | **PlannerTopRail desktop bar always expanded on `/`** (no chip collapse). Mobile keeps the bottom-sheet pattern but the trigger is a labeled "여행 설정 편집 ›" button, not the Phase 10 summary chip. | Phase 10 mobile chip ("Busan · 2026-08-20 · 4명 · EN · 8h") was reported as invisible-as-interactive by user 2026-05-29. The builder is the primary CTA on `/` and deserves real estate. Spin-off planner §O.2 D31. |
+| 2026-05-29 | D32 | **Hero "Build myself" tab gains date/party/duration inputs.** "Start Building" pushes URL with all preferences + `?autoRun=1&builder=open`. Lang stays in PlannerTopRail (locale default + power-user override). | User said conditions must be set BEFORE matcher fires for accurate pricing. Hero is where the customer already engages. Phase 12 spin-off §P D32. |
+| 2026-05-29 | D33 | **AIRecommendPanel re-introduces a bounded auto-run useEffect:** fires only when `?autoRun=1` deep-link present AND intent OR presets set; removes the autoRun param via `router.replace` immediately after firing. | Drives the hero→builder happy path; preserves D28's "every match is explicit" for in-builder edits. Phase 12 spin-off §P D33. |
+| 2026-05-29 | D34 | **Post-match smooth-scroll `ResultTimeline` into the viewport.** Cart auto-apply (Phase 11) unchanged. | Phase 11 had cart populating but rendering far below the AI panel — closes the "did anything happen?" gap. Phase 12 spin-off §P D34. |
+| 2026-05-29 | D35 | **Typography unification.** AIRecommendPanel + HomeBuilderSection use landing tokens (`text-eyebrow / text-display / text-h3 / text-caption / text-micro`) and the existing landing chip class verbatim. | Premium visual parity. User reported the new panel's font scale felt off-brand. Phase 12 spin-off §P D35. |
 
 ---
 

@@ -115,7 +115,8 @@ export default function ResultTimeline({
 
   return (
     <section
-      className="border border-white/80 bg-white/90 px-4 py-5 shadow-[0_16px_40px_-24px_rgba(15,23,42,0.28)] backdrop-blur-md md:px-6 md:py-6 lg:rounded-2xl"
+      data-result-timeline
+      className="scroll-mt-24 border border-white/80 bg-white/90 px-4 py-5 shadow-[0_16px_40px_-24px_rgba(15,23,42,0.28)] backdrop-blur-md md:px-6 md:py-6 lg:rounded-2xl"
       aria-label={t("title")}
     >
       <header className="mb-4 flex items-center justify-between">

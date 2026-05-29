@@ -1,7 +1,7 @@
 "use client";
 
-import { useRef, useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 import { Loader2, AlertCircle, Check, Clock, ChevronRight, Sparkles, ArrowRight } from "lucide-react";
 import { homeBtnPrimary } from "@/lib/home/home-button-classes";
@@ -108,6 +108,8 @@ export default function AIRecommendPanel({
   const t = useTranslations("itineraryBuilder.ai");
   const reveal = useRevealContainerProps();
   const sp = useSearchParams();
+  const router = useRouter();
+  const pathname = usePathname() ?? "/";
   const poiByKey = new Map(pois.map((p) => [p.poi_key, p]));
   const [intent, setIntent] = useState(() =>
     typeof window === "undefined" ? "" : new URLSearchParams(window.location.search).get("intent")?.trim() ?? "",
@@ -200,6 +202,19 @@ export default function AIRecommendPanel({
           poiCount: recs.length,
           totalMinutes: data.total_minutes ?? 0,
         });
+        // Phase 12 D34 — smooth-scroll the ResultTimeline into the viewport
+        // so the customer SEES the itinerary land. Phase 11 had cart
+        // auto-application working but the timeline rendered far below the
+        // AI panel; users reported "nothing happens" because the result was
+        // offscreen. requestAnimationFrame + 80ms timeout lets React commit
+        // the cart-driven re-render before we measure offsets.
+        if (typeof window !== "undefined") {
+          window.setTimeout(() => {
+            const el = document.querySelector("[data-result-timeline]") as HTMLElement | null;
+            if (!el) return;
+            el.scrollIntoView({ behavior: "smooth", block: "start" });
+          }, 80);
+        }
       } else {
         // Phase 11 audit fix #7 — replaces the Phase-10 auto-run analytics
         // for the empty-result case. Without this ops can't see when the
@@ -234,10 +249,41 @@ export default function AIRecommendPanel({
     });
   }
 
-  // Phase 11 D28 — the auto-run useEffect that fired the matcher on every
-  // (intent, region, track, maxHours) change has been removed. Every match
-  // is now explicit (user clicks "추천받기"). AUTO_RUN_CAP storage key is
-  // retained only so analytics-cleanup can drain it later.
+  /**
+   * Phase 12 D33 — bounded auto-run.
+   *
+   * The hero "Build myself" CTA pushes `?autoRun=1` so the matcher fires
+   * automatically once the user arrives in the builder section. After
+   * firing (whether success or failure), the autoRun param is stripped via
+   * `router.replace` so a refresh or any subsequent URL patch does NOT
+   * re-fire the matcher. In-builder edits keep Phase 11 D28's "every
+   * match is explicit" contract.
+   *
+   * Gates:
+   *  - `?autoRun=1` URL param present
+   *  - intent text OR at least one preset selected
+   *  - not already loading (in flight)
+   *  - hasn't already auto-fired in this mount
+   */
+  const autoRunFiredRef = useRef(false);
+  const autoRunRequested = sp?.get("autoRun") === "1";
+  useEffect(() => {
+    if (!autoRunRequested) return;
+    if (autoRunFiredRef.current) return;
+    if (loading) return;
+    const combined = buildCombinedIntent();
+    if (combined.trim().length < 2) return;
+    autoRunFiredRef.current = true;
+    // Strip autoRun from URL so refresh/patch doesn't re-fire.
+    const next = new URLSearchParams(sp?.toString() ?? "");
+    next.delete("autoRun");
+    const qs = next.toString();
+    router.replace(`${pathname}${qs ? `?${qs}` : ""}`, { scroll: false });
+    void runMatch(combined);
+    // runMatch is stable in this component (closure over current state);
+    // we only want this to fire once per mount when autoRun is set.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [autoRunRequested]);
 
   const recommended = result?.recommended_pois ?? [];
   const totalH = result?.total_minutes
@@ -271,7 +317,8 @@ export default function AIRecommendPanel({
             {t("eyebrow")}
           </p>
           {!collapsed ? (
-            <p className="text-body leading-relaxed text-slate-600">{t("intro")}</p>
+            // Phase 12 D35 — text-body → text-caption to match landing micro-copy scale
+            <p className="text-caption leading-relaxed text-slate-600">{t("intro")}</p>
           ) : null}
         </motion.div>
 
@@ -294,11 +341,15 @@ export default function AIRecommendPanel({
                 fires until the user clicks "추천받기" below. Selected chips
                 read as filled slate-900 surfaces with a check icon so the
                 "I've selected this" state is unmistakable. */}
+            {/* Phase 12 D35 — typography unification. Label uses text-eyebrow
+                (the landing convention for section labels). Chips use the
+                same class as the landing destination/style chips so they
+                read as one design family across the page. */}
             <motion.div variants={REVEAL_ITEM_VARIANTS} className="px-5 pb-3 md:px-6">
-              <p className="mb-2 text-micro font-semibold uppercase tracking-wider text-slate-500">
+              <p className="mb-2 text-eyebrow text-slate-500">
                 {t("presetsLabel")}
               </p>
-              <div className="-mx-1 flex flex-wrap gap-1.5 px-1 pb-1">
+              <div className="-mx-1 flex flex-wrap gap-1.5 px-1 pb-1 md:gap-2">
                 {PRESETS.map((p) => {
                   const selected = selectedPresets.has(p.key);
                   return (
@@ -309,10 +360,10 @@ export default function AIRecommendPanel({
                       disabled={loading}
                       aria-pressed={selected}
                       className={cn(
-                        "focus-ring inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-micro font-semibold transition-all duration-150 ease-out disabled:cursor-not-allowed disabled:opacity-60 motion-reduce:hover:translate-y-0",
+                        "focus-ring inline-flex items-center gap-1 rounded-full border px-3 py-1.5 text-[11px] font-medium transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-60 md:px-3.5 md:py-2 md:text-caption",
                         selected
-                          ? "bg-slate-900 text-white shadow-[0_2px_8px_rgba(15,23,42,0.18),0_6px_16px_-4px_rgba(15,23,42,0.22)] hover:-translate-y-px"
-                          : "bg-white text-slate-800 shadow-[0_1px_2px_rgba(15,23,42,0.04),0_2px_6px_-2px_rgba(15,23,42,0.08)] hover:-translate-y-px hover:shadow-[0_2px_4px_rgba(15,23,42,0.06),0_8px_18px_-4px_rgba(15,23,42,0.14)]",
+                          ? "border-slate-900 bg-slate-900 text-white"
+                          : "border-slate-200/70 bg-slate-50 text-slate-700 hover:bg-slate-100",
                       )}
                     >
                       {selected ? <Check className="h-3 w-3" aria-hidden /> : null}
