@@ -21,7 +21,7 @@ import IntakeDateField from "@/components/itinerary-builder/IntakeDateField";
 /** Phase 12 D32 — duration options for the hero build-mode chip group.
  *  Mirrors PRIVATE_HOURS in PlannerTopRail; the chip group is a friendlier
  *  surface than a <select> for the hero card. */
-const HERO_DURATION_OPTIONS = [4, 6, 8, 10, 12] as const;
+const HERO_DURATION_OPTIONS = [4, 6, 8, 10] as const;
 
 /** Phase 13 D37 — guide language options. Mirrors GUIDE_LANGS in
  *  PlannerTopRail so the hero handoff lands on a value the builder
@@ -621,7 +621,7 @@ export function LandingPlannerCard({
                         max={30}
                         value={buildParty}
                         onChange={(e) => setBuildParty(e.target.value)}
-                        className="focus-ring h-12 w-20 rounded-button border border-slate-200/70 bg-slate-50 px-3 text-center text-[14px] font-semibold tabular-nums text-slate-900 transition-colors duration-200 focus:border-slate-300 focus:bg-white md:h-14 md:text-[15px]"
+                        className="focus-ring h-12 w-16 rounded-full border border-slate-200/70 bg-slate-50 px-2 text-center text-[15px] font-semibold tabular-nums text-slate-900 transition-colors duration-200 focus:border-slate-300 focus:bg-white"
                       />
                     </div>
                     <div>
@@ -629,7 +629,7 @@ export function LandingPlannerCard({
                         {t("premium.v2.planner.buildDurationLabel")}
                       </p>
                       <div
-                        className="flex gap-1.5 overflow-x-auto pb-1 scrollbar-none md:gap-2"
+                        className="flex gap-2 overflow-x-auto scrollbar-none"
                         role="radiogroup"
                         aria-label={t("premium.v2.planner.buildDurationLabel")}
                       >
@@ -643,7 +643,7 @@ export function LandingPlannerCard({
                               aria-checked={active}
                               onClick={() => setBuildDuration(h)}
                               className={cn(
-                                "focus-ring flex-none rounded-full border px-3 py-1.5 text-[11px] font-medium tabular-nums transition-colors duration-200 md:px-3.5 md:py-2 md:text-caption",
+                                "focus-ring flex h-12 min-w-[3rem] flex-none items-center justify-center rounded-full border px-3.5 text-caption font-medium tabular-nums transition-colors duration-200",
                                 active
                                   ? "border-slate-900 bg-slate-900 text-white"
                                   : "border-slate-200/70 bg-slate-50 text-slate-600 hover:bg-slate-100",
