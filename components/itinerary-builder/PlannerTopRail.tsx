@@ -17,6 +17,17 @@ interface Props {
   /** Active region (always resolved at the server; if user changes via the
    *  rail, it triggers a hard navigation that re-fetches POIs). */
   region: RegionSlug;
+  /**
+   * Phase 11 D27/D31 — where this rail is mounted.
+   *  - "page" (legacy): top-rail sits on `/itinerary-builder` (still routed
+   *    here for QA / fallback) and writes URL updates back to that path.
+   *  - "home" (default): rail sits on `/` (matcher-pattern unified planner)
+   *    and writes URL updates back to `/`. Mobile trigger is a labeled
+   *    "Edit trip" button (NOT a summary chip) per user feedback 2026-05-29.
+   *  - When omitted, defaults to "page" to preserve any caller that does
+   *    not yet pass the prop.
+   */
+  placement?: "page" | "home";
 }
 
 const GUIDE_LANGS: { code: string; label: string }[] = [
@@ -73,13 +84,14 @@ function readPort(sp: URLSearchParams | null): CruisePort {
  *  - cruise:  region + lang + hours (4-12) + ship + date + party + (Jeju port)
  *  - dmz:     lang + date + party (region forced to Seoul, no duration)
  */
-export default function PlannerTopRail({ region }: Props) {
+export default function PlannerTopRail({ region, placement = "page" }: Props) {
   const t = useTranslations("itineraryBuilder.planner");
   const tIntake = useTranslations("itineraryBuilder.intake");
   const { locale } = useI18n();
   const router = useRouter();
   const sp = useSearchParams();
   const today = useMemo(() => new Date().toISOString().slice(0, 10), []);
+  const basePath = placement === "home" ? "/" : "/itinerary-builder";
 
   // URL-derived state (no local mirror — every change re-writes the URL).
   const track = readTrack(sp);
@@ -143,16 +155,30 @@ export default function PlannerTopRail({ region }: Props) {
         params.delete("port");
       }
 
-      // Region change is special — POIs are fetched server-side, so this is a
-      // hard navigation (page replays). Everything else is `replace` to keep
-      // the planner mounted.
+      // Region change is special — on the legacy "/itinerary-builder" placement
+      // POIs are fetched server-side so it must be a hard navigation. On the
+      // "home" placement region changes drive a client-side POI refetch, so
+      // they can stay within the SPA — replace() keeps the planner mounted
+      // and avoids scrolling the page back to the top.
+      //
+      // Phase 11 D30: when placement="home" the URL stays on `/` (or whatever
+      // the user's locale-prefixed home is) and region change triggers
+      // HomeBuilderSection's effect-keyed POI fetch.
       const qs = params.toString();
-      const href = `/itinerary-builder${qs ? `?${qs}` : ""}`;
-      const requiresHardNav = "region" in updates || updates.track === "dmz";
+      // On home, mark the builder as opened so a deep-link/refresh re-expands it.
+      if (placement === "home" && !params.has("builder")) {
+        const next = new URLSearchParams(params);
+        next.set("builder", "open");
+        const href = `${basePath}?${next.toString()}`;
+        router.replace(href, { scroll: false });
+        return;
+      }
+      const href = `${basePath}${qs ? `?${qs}` : ""}`;
+      const requiresHardNav = placement === "page" && ("region" in updates || updates.track === "dmz");
       if (requiresHardNav) router.push(href);
       else router.replace(href, { scroll: false });
     },
-    [router, sp],
+    [router, sp, basePath, placement],
   );
 
   // Hide the date error as soon as the user fills it.
@@ -364,24 +390,47 @@ export default function PlannerTopRail({ region }: Props) {
     );
   };
 
+  const isHome = placement === "home";
+  // Phase 11 D31 — on "home" placement the rail is not sticky (it scrolls
+  // with the section) and the mobile mobile trigger is a labeled "Edit
+  // trip" button rather than a compact summary chip (Phase 10 chip was
+  // reported as invisible-as-interactive by user 2026-05-29).
+  const desktopBarClass = isHome
+    ? "hidden rounded-card bg-white/95 shadow-[0_2px_8px_rgba(15,23,42,0.04),0_22px_50px_-20px_rgba(15,23,42,0.20)] ring-1 ring-emerald-100/40 md:block"
+    : "sticky top-16 z-30 hidden border-b border-slate-200/80 bg-white/95 backdrop-blur-md md:block";
+  const mobileTriggerWrapClass = isHome
+    ? "rounded-card bg-white/95 shadow-[0_2px_8px_rgba(15,23,42,0.04),0_22px_50px_-20px_rgba(15,23,42,0.20)] ring-1 ring-emerald-100/40 md:hidden"
+    : "sticky top-16 z-30 border-b border-slate-200/80 bg-white/95 backdrop-blur-md md:hidden";
+
   return (
     <>
       {/* Desktop bar — full expanded controls on md+ */}
-      <div className="sticky top-16 z-30 hidden border-b border-slate-200/80 bg-white/95 backdrop-blur-md md:block">
+      <div className={desktopBarClass}>
         {renderForm(false)}
       </div>
 
-      {/* Mobile chip — collapsed summary; tap to open sheet */}
-      <div className="sticky top-16 z-30 border-b border-slate-200/80 bg-white/95 backdrop-blur-md md:hidden">
+      {/* Mobile trigger — on "home" placement a labeled "Edit trip" button;
+          on legacy "page" placement a compact summary chip. Both tap to
+          open the sheet with the full controls. */}
+      <div className={mobileTriggerWrapClass}>
         <button
           type="button"
           onClick={() => setSheetOpen(true)}
           className="flex w-full items-center justify-between gap-3 px-4 py-3 text-left"
           aria-expanded={sheetOpen}
         >
-          <span className="min-w-0 flex-1 truncate text-caption font-semibold text-slate-700">
-            {summary}
-          </span>
+          {isHome ? (
+            <span className="flex min-w-0 flex-1 flex-col gap-0.5">
+              <span className="text-eyebrow text-slate-500">{t("editTrip")}</span>
+              <span className="truncate text-caption font-semibold text-slate-800">
+                {summary}
+              </span>
+            </span>
+          ) : (
+            <span className="min-w-0 flex-1 truncate text-caption font-semibold text-slate-700">
+              {summary}
+            </span>
+          )}
           <ChevronDown className="h-4 w-4 flex-shrink-0 text-slate-500" aria-hidden />
         </button>
       </div>

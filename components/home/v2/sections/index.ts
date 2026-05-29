@@ -7,3 +7,4 @@ export { WhyAtockorea } from "./why-atockorea";
 export { ProcessOperational } from "./process-operational";
 export { FinalCTA } from "./final-cta";
 export { ItineraryBuilderEntry } from "./itinerary-builder-entry";
+export { HomeBuilderSection } from "./home-builder-section";

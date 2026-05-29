@@ -2302,8 +2302,10 @@
   "itineraryBuilder": {
     "home": {
       "eyebrow": "自定义行程规划",
-      "title": "或打造您的韩国专属一日游",
-      "subtitle": "在地图上挑选您心仪的景点。我们将为您报价。",
+      "title": "打造您的韩国专属一日游",
+      "subtitle": "选择地区、人数、日期,即时显示路线与价格。绑定信用卡即可预订。",
+      "loading": "正在加载地图…",
+      "error": "地图加载失败 — 请刷新页面。",
       "busanName": "Busan",
       "busanTagline": "海边寺庙 + 古都风韵 + 逛市集寻味",
       "busanStops": "20个精选景点",
@@ -2441,7 +2443,8 @@
     "ai": {
       "eyebrow": "让AI为您规划一日游",
       "intro": "告诉我们您的兴趣 — 我们将从该地区景点为您规划路线。",
-      "presetsLabel": "或从预设方案开始",
+      "presetsLabel": "可自由多选喜欢的主题",
+      "presetsSelectedHint": "已选 {count} 项 — 准备好后点击「推荐」",
       "presets": {
         "firstTime": "韩国初体验",
         "family": "亲子家庭游",

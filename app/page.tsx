@@ -6,6 +6,13 @@ import { createServerClient } from "@/lib/supabase";
 import { loadTourProductCardMediaBySlug } from "@/lib/tour-product/resolveTourProductCardMedia.server";
 import type { TourProductCardMediaMap } from "@/lib/tour-product/cardMediaTypes";
 import { generateMetadata as generateSEOMetadata } from "@/lib/seo";
+import {
+  REGION_CLUSTER,
+  isRegionSlug,
+  type RegionSlug,
+} from "@/lib/itinerary-builder/regions";
+import { isBuilderAttraction } from "@/lib/itinerary-match-engine/poi-taxonomy";
+import type { MatchPoiRow } from "@/lib/itinerary-builder/types";
 
 /**
  * Default home (`/`). Stays a server component so we can pre-resolve the
@@ -51,15 +58,62 @@ async function loadFeaturedMediaBySlug(locale: string): Promise<TourProductCardM
   }
 }
 
-export default async function HomePage() {
+/**
+ * Phase 11 D30 — SSR-prefetch POIs for the home-embedded builder when an
+ * inbound link carries `?region=`. Cold landing visits skip this; the
+ * builder lazy-fetches on first interaction so TTFB stays unaffected.
+ */
+async function loadBuilderPois(region: RegionSlug): Promise<MatchPoiRow[]> {
+  try {
+    const cluster = REGION_CLUSTER[region];
+    const supabase = createServerClient();
+    const { data, error } = await supabase
+      .from("match_pois")
+      .select(
+        "poi_key, name_en, name_ko, names_other_locales, content_locales, region, category, default_image_url, default_stay_minutes, lat, lng, stop_role, is_attraction, is_operational, builder_profile_source, builder_profile_version, poi_meta, description, highlights, images, why_on_route, smart_notes, visit_basics, convenience",
+      )
+      .in("region", cluster as unknown as string[])
+      .not("name_en", "is", null)
+      .not("lat", "is", null);
+    if (error) throw new Error(error.message);
+    return ((data ?? []) as MatchPoiRow[]).filter(
+      (p) =>
+        p.is_attraction === true ||
+        (p.is_attraction == null && isBuilderAttraction(p.poi_key)),
+    );
+  } catch (e) {
+    if (process.env.NODE_ENV === "development") {
+      console.warn("[/] builder POI prefetch failed:", (e as Error)?.message);
+    }
+    return [];
+  }
+}
+
+export default async function HomePage({
+  searchParams,
+}: {
+  searchParams?: Promise<Record<string, string | string[] | undefined>>;
+}) {
+  const sp = (await searchParams) ?? {};
   const cookieStore = await cookies();
   const locale = resolveLocaleFromCookie(cookieStore.get("NEXT_LOCALE")?.value);
   const featuredMediaBySlug = await loadFeaturedMediaBySlug(locale);
 
+  const rawRegion = typeof sp.region === "string" ? sp.region : null;
+  const builderRegion: RegionSlug | null =
+    rawRegion && isRegionSlug(rawRegion) ? (rawRegion as RegionSlug) : null;
+  const builderPois = builderRegion ? await loadBuilderPois(builderRegion) : null;
+
   return (
     <SitePageShell>
       <main className="bg-transparent">
-        <HomeMainBody featuredMediaBySlug={featuredMediaBySlug} />
+        <HomeMainBody
+          featuredMediaBySlug={featuredMediaBySlug}
+          builderInitialRegion={builderRegion}
+          builderInitialPois={builderPois}
+          builderMapId={process.env.NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID || ""}
+          builderApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ""}
+        />
       </main>
     </SitePageShell>
   );

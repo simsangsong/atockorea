@@ -385,8 +385,9 @@ function EmptyState({
   // stone-50 page background; NO border (user direction 2026-05-29).
   // Layered shadow + slight hover lift = floating feel; mint surface
   // ties the rail's three cards together as one composition.
+  // Phase 11 D29 — shade lightened to emerald-50/30 + glow ring.
   return (
-    <div className="rounded-card bg-emerald-50/50 px-5 py-10 text-center shadow-[0_2px_8px_rgba(15,23,42,0.04),0_22px_50px_-20px_rgba(15,23,42,0.20)] transition-shadow duration-300 ease-out hover:shadow-[0_4px_14px_rgba(15,23,42,0.06),0_30px_64px_-20px_rgba(15,23,42,0.26)]">
+    <div className="rounded-card bg-emerald-50/30 ring-1 ring-emerald-100/40 px-5 py-10 text-center shadow-[0_2px_8px_rgba(15,23,42,0.04),0_22px_50px_-20px_rgba(15,23,42,0.20),inset_0_1px_0_rgba(255,255,255,0.9)] transition-shadow duration-300 ease-out hover:shadow-[0_4px_14px_rgba(15,23,42,0.06),0_30px_64px_-20px_rgba(15,23,42,0.26),inset_0_1px_0_rgba(255,255,255,0.95)]">
       <span className="mx-auto mb-3.5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-white text-emerald-700 shadow-[0_1px_2px_rgba(15,23,42,0.06),0_6px_14px_-4px_rgba(15,23,42,0.12)]">
         <MapPin className="h-5 w-5" strokeWidth={2} aria-hidden />
       </span>

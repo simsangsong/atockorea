@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
-import { Loader2, AlertCircle, Clock, ChevronRight, Sparkles, ArrowRight } from "lucide-react";
+import { Loader2, AlertCircle, Check, Clock, ChevronRight, Sparkles, ArrowRight } from "lucide-react";
 import { homeBtnPrimary } from "@/lib/home/home-button-classes";
 import { cn } from "@/lib/utils";
 import {
@@ -33,32 +33,6 @@ interface Props {
   onPreview?: (poiKeys: string[] | null) => void;
   track?: string | null;
   origin?: string | null;
-}
-
-/** Per-session cap to avoid runaway Haiku spend on misbehaving auto-runs. */
-const AUTO_RUN_CAP = 3;
-const AUTO_RUN_STORAGE_KEY = "itinerary_auto_run_count";
-
-function readAutoRunCount(): number {
-  if (typeof window === "undefined") return 0;
-  try {
-    const v = window.sessionStorage.getItem(AUTO_RUN_STORAGE_KEY);
-    const n = v ? Number(v) : 0;
-    return Number.isFinite(n) && n > 0 ? n : 0;
-  } catch {
-    return 0;
-  }
-}
-
-function bumpAutoRunCount(): number {
-  if (typeof window === "undefined") return 0;
-  try {
-    const next = readAutoRunCount() + 1;
-    window.sessionStorage.setItem(AUTO_RUN_STORAGE_KEY, String(next));
-    return next;
-  } catch {
-    return 0;
-  }
 }
 
 /**
@@ -138,11 +112,15 @@ export default function AIRecommendPanel({
   const [intent, setIntent] = useState(() =>
     typeof window === "undefined" ? "" : new URLSearchParams(window.location.search).get("intent")?.trim() ?? "",
   );
+  // Phase 11 D28 — preset chips are multi-select toggles, not single-fire
+  // triggers. Selecting a chip toggles it into the set; running the matcher
+  // is a separate explicit click on the CTA.
+  const [selectedPresets, setSelectedPresets] = useState<Set<string>>(new Set());
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<MatchResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
   // Collapse the form panel once the user has a result. Re-expand when
-  // they click the "Get another suggestion" pill (or another preset).
+  // they click the "Get another suggestion" pill.
   const [collapsed, setCollapsed] = useState(false);
 
   /**
@@ -158,30 +136,36 @@ export default function AIRecommendPanel({
   })();
 
   /**
-   * Phase 10.4 — auto-run guard. The cart "tracks" the AI recommendation by
-   * default; once the user manually edits the cart (cart ≠ lastAutoSet) the
-   * auto-run goes silent so we don't fight their edits.
+   * Tracks the last AI-loaded recommendation so we can hide the "Load into
+   * cart" CTA when the cart already matches it (avoids a no-op button).
    */
-  const lastAutoSetRef = useRef<string[]>([]);
-  const lastFingerprintRef = useRef<string>("");
+  const lastAcceptedSetRef = useRef<string[]>([]);
 
-  async function runMatch(intentText: string, opts?: { auto?: boolean }) {
+  /**
+   * Build the combined intent string the matcher will see. Phase 11 D28 —
+   * selected preset chips contribute their seed text (joined with " · "),
+   * then the user's custom intent text is appended if present.
+   */
+  function buildCombinedIntent(): string {
+    const presetIntents = PRESETS
+      .filter((p) => selectedPresets.has(p.key))
+      .map((p) => p.intent);
+    const customTrimmed = intent.trim();
+    const parts = [...presetIntents];
+    if (customTrimmed) parts.push(customTrimmed);
+    return parts.join(" · ");
+  }
+
+  async function runMatch(intentText: string) {
     setError(null);
     onPreview?.(null);
     const trimmed = intentText.trim();
     if (trimmed.length < 2) {
-      if (!opts?.auto) setError(t("errorMin"));
+      setError(t("errorMin"));
       return;
     }
     setLoading(true);
     try {
-      if (opts?.auto) {
-        trackEvent("itinerary_auto_recommend_fired", {
-          region,
-          duration: maxHours,
-          fingerprint: lastFingerprintRef.current,
-        });
-      }
       const res = await fetch("/api/itinerary/match", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -196,41 +180,24 @@ export default function AIRecommendPanel({
       const data = (await res.json()) as MatchResponse;
       if (!res.ok || !data.ok) {
         setError(data.error || `HTTP ${res.status}`);
-        if (opts?.auto) {
-          trackEvent("itinerary_auto_recommend_failed", {
-            region,
-            errorCode: data.error || `HTTP ${res.status}`,
-          });
-        }
         setLoading(false);
         return;
       }
       setResult(data);
       setCollapsed(true);
       onPreview?.(data.recommended_pois ?? null);
-      // Phase 10.4 — auto-runs load the recommendation directly into the cart
-      // (no separate "Apply this day" click). The manual flow also calls
-      // onAccept; same `acceptRecommendation` callback in BuilderShell.
       if ((data.recommended_pois?.length ?? 0) > 0) {
         const recs = data.recommended_pois!;
-        lastAutoSetRef.current = recs;
+        lastAcceptedSetRef.current = recs;
         onAccept(recs);
-        if (opts?.auto) {
-          trackEvent("itinerary_auto_recommend_succeeded", {
-            region,
-            poiCount: recs.length,
-            totalMinutes: data.total_minutes ?? 0,
-          });
-        }
+        trackEvent("itinerary_recommend_succeeded", {
+          region,
+          poiCount: recs.length,
+          totalMinutes: data.total_minutes ?? 0,
+        });
       }
     } catch (e) {
       setError(e instanceof Error ? e.message : "request_failed");
-      if (opts?.auto) {
-        trackEvent("itinerary_auto_recommend_failed", {
-          region,
-          errorCode: e instanceof Error ? e.message : "request_failed",
-        });
-      }
     } finally {
       setLoading(false);
     }
@@ -238,72 +205,44 @@ export default function AIRecommendPanel({
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    await runMatch(intent);
+    await runMatch(buildCombinedIntent());
   }
 
-  function handlePreset(presetIntent: string) {
-    setIntent(presetIntent);
-    // Re-run from a preset always re-opens the form briefly then
-    // collapses after match returns.
-    setCollapsed(false);
-    void runMatch(presetIntent);
+  function togglePreset(presetKey: string) {
+    setSelectedPresets((prev) => {
+      const next = new Set(prev);
+      if (next.has(presetKey)) next.delete(presetKey);
+      else next.add(presetKey);
+      return next;
+    });
   }
 
-  /**
-   * Phase 10.4 (4a) — auto-run useEffect.
-   *
-   * Fires `/api/itinerary/match` automatically when (intent, region, track,
-   * maxHours) change AND the cart is either empty OR still matches the last
-   * auto-loaded set (i.e., the user hasn't taken over editing). Debounced
-   * 500ms. Per-session cap of AUTO_RUN_CAP fires to bound Haiku spend.
-   *
-   * Dedup fingerprint: changing only the ship name or pickup zone (params
-   * the matcher doesn't read) doesn't re-fire.
-   */
-  useEffect(() => {
-    const trimmedIntent = intent.trim();
-    if (!trimmedIntent || trimmedIntent.length < 2) return;
-    if (loading) return;
-
-    const userOwnsCart = cart.length > 0 && !isSameKeySet(cart, lastAutoSetRef.current);
-    if (userOwnsCart) return;
-
-    const fingerprint = `${region}|${track ?? ""}|${maxHours}|${trimmedIntent.toLowerCase()}`;
-    if (fingerprint === lastFingerprintRef.current) return;
-
-    if (readAutoRunCount() >= AUTO_RUN_CAP) {
-      trackEvent("itinerary_auto_recommend_exceeded", {
-        region,
-        cap: AUTO_RUN_CAP,
-      });
-      return;
-    }
-
-    const timer = window.setTimeout(() => {
-      lastFingerprintRef.current = fingerprint;
-      bumpAutoRunCount();
-      void runMatch(trimmedIntent, { auto: true });
-    }, 500);
-
-    return () => window.clearTimeout(timer);
-    // runMatch reads region/track/origin/maxHours via closure — we depend on
-    // their primitive values, not on the function identity.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [intent, region, track, maxHours, cart]);
+  // Phase 11 D28 — the auto-run useEffect that fired the matcher on every
+  // (intent, region, track, maxHours) change has been removed. Every match
+  // is now explicit (user clicks "추천받기"). AUTO_RUN_CAP storage key is
+  // retained only so analytics-cleanup can drain it later.
 
   const recommended = result?.recommended_pois ?? [];
   const totalH = result?.total_minutes
     ? Math.round((result.total_minutes / 60) * 10) / 10
     : 0;
   /** Hide the "Apply this day" CTA when the cart already matches the
-   *  recommendation (auto-run flow); manual flow can still see + use it. */
+   *  recommendation (every recommendation auto-applies on completion, so
+   *  this is the common case post-Phase-11). */
   const cartMatchesResult = recommended.length > 0 && isSameKeySet(cart, recommended);
+  // Disable the submit until something to feed the matcher exists.
+  const combinedReady =
+    selectedPresets.size > 0 || intent.trim().length >= 2;
 
   return (
     <section className="px-4 pt-4 pb-3 md:px-6 md:pt-5 md:pb-4">
       <motion.div
         {...reveal}
-        className="relative mx-auto max-w-3xl overflow-hidden rounded-card bg-emerald-50/50 shadow-[0_2px_8px_rgba(15,23,42,0.04),0_24px_56px_-22px_rgba(15,23,42,0.22)] transition-shadow duration-300 ease-out hover:shadow-[0_4px_14px_rgba(15,23,42,0.06),0_32px_72px_-22px_rgba(15,23,42,0.28)]"
+        // Phase 11 D29 — near-white mint with subtle glow ring. User
+        // direction 2026-05-29: "거의 흰 색에 가까운 민트로 하라고
+        // 은은하게 빛나는것처럼." Inset white highlight + outer mint ring
+        // gives the "floating + glowing" feel without saturating the card.
+        className="relative mx-auto max-w-3xl overflow-hidden rounded-card bg-emerald-50/30 ring-1 ring-emerald-100/40 shadow-[0_2px_8px_rgba(15,23,42,0.04),0_24px_56px_-22px_rgba(15,23,42,0.22),inset_0_1px_0_rgba(255,255,255,0.9)] transition-shadow duration-300 ease-out hover:shadow-[0_4px_14px_rgba(15,23,42,0.06),0_32px_72px_-22px_rgba(15,23,42,0.28),inset_0_1px_0_rgba(255,255,255,0.95)]"
       >
         {/* Header — Sparkles eyebrow (landing convention), but the amber
             accent moves to the icon only so the eyebrow text stays neutral
@@ -333,27 +272,50 @@ export default function AIRecommendPanel({
           </div>
         ) : (
           <>
-            {/* Preset chips — premium white-surface pills, amber hover hint */}
+            {/* Preset chips — multi-select toggles (Phase 11 D28).
+                Selecting one chip toggles it into the active set; nothing
+                fires until the user clicks "추천받기" below. Selected chips
+                read as filled slate-900 surfaces with a check icon so the
+                "I've selected this" state is unmistakable. */}
             <motion.div variants={REVEAL_ITEM_VARIANTS} className="px-5 pb-3 md:px-6">
               <p className="mb-2 text-micro font-semibold uppercase tracking-wider text-slate-500">
                 {t("presetsLabel")}
               </p>
               <div className="-mx-1 flex flex-wrap gap-1.5 px-1 pb-1">
-                {PRESETS.map((p) => (
-                  <button
-                    key={p.key}
-                    type="button"
-                    onClick={() => handlePreset(p.intent)}
-                    disabled={loading}
-                    className="focus-ring inline-flex items-center rounded-full bg-white px-3 py-1.5 text-micro font-semibold text-slate-800 shadow-[0_1px_2px_rgba(15,23,42,0.04),0_2px_6px_-2px_rgba(15,23,42,0.08)] transition-all duration-150 ease-out hover:-translate-y-px hover:shadow-[0_2px_4px_rgba(15,23,42,0.06),0_8px_18px_-4px_rgba(15,23,42,0.14)] disabled:cursor-not-allowed disabled:opacity-60 motion-reduce:hover:translate-y-0"
-                  >
-                    {t(`presets.${p.key}`)}
-                  </button>
-                ))}
+                {PRESETS.map((p) => {
+                  const selected = selectedPresets.has(p.key);
+                  return (
+                    <button
+                      key={p.key}
+                      type="button"
+                      onClick={() => togglePreset(p.key)}
+                      disabled={loading}
+                      aria-pressed={selected}
+                      className={cn(
+                        "focus-ring inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-micro font-semibold transition-all duration-150 ease-out disabled:cursor-not-allowed disabled:opacity-60 motion-reduce:hover:translate-y-0",
+                        selected
+                          ? "bg-slate-900 text-white shadow-[0_2px_8px_rgba(15,23,42,0.18),0_6px_16px_-4px_rgba(15,23,42,0.22)] hover:-translate-y-px"
+                          : "bg-white text-slate-800 shadow-[0_1px_2px_rgba(15,23,42,0.04),0_2px_6px_-2px_rgba(15,23,42,0.08)] hover:-translate-y-px hover:shadow-[0_2px_4px_rgba(15,23,42,0.06),0_8px_18px_-4px_rgba(15,23,42,0.14)]",
+                      )}
+                    >
+                      {selected ? <Check className="h-3 w-3" aria-hidden /> : null}
+                      {t(`presets.${p.key}`)}
+                    </button>
+                  );
+                })}
               </div>
+              {selectedPresets.size > 0 ? (
+                <p className="mt-2 text-micro text-slate-500">
+                  {t("presetsSelectedHint", { count: selectedPresets.size })}
+                </p>
+              ) : null}
             </motion.div>
 
-            {/* Custom intent input + submit */}
+            {/* Custom intent input + submit (Phase 11 D28 — single explicit
+                fire of `/api/itinerary/match`, no auto-run). The submit is
+                gated on `combinedReady` so the user gets a clear "you need
+                to pick something" affordance instead of an opaque min-length
+                error. */}
             <motion.form
               variants={REVEAL_ITEM_VARIANTS}
               onSubmit={onSubmit}
@@ -372,13 +334,9 @@ export default function AIRecommendPanel({
                   className="focus-ring w-full rounded-button bg-white px-3.5 py-2.5 text-sm text-slate-900 shadow-[0_1px_2px_rgba(15,23,42,0.04),inset_0_0_0_1px_rgba(15,23,42,0.04)] transition-shadow duration-200 placeholder:text-slate-400 focus:shadow-[0_1px_2px_rgba(15,23,42,0.06),inset_0_0_0_1px_rgba(15,23,42,0.08)]"
                 />
               </div>
-              {/* Phase 10.4 — hours select removed; PlannerTopRail's
-                  duration/hours field is the single source. The recommendation
-                  caps at the same value so the AI never proposes a day longer
-                  than the trip the user picked. */}
               <button
                 type="submit"
-                disabled={loading}
+                disabled={loading || !combinedReady}
                 className={cn(
                   homeBtnPrimary,
                   "group !h-auto !w-full !py-3 inline-flex items-center justify-center gap-2 shadow-md hover:gap-3 md:!w-auto md:!px-6 md:!py-2.5",
@@ -424,7 +382,7 @@ export default function AIRecommendPanel({
                 <button
                   type="button"
                   onClick={() => {
-                    lastAutoSetRef.current = recommended;
+                    lastAcceptedSetRef.current = recommended;
                     onAccept(recommended);
                   }}
                   className="inline-flex items-center gap-1 rounded-full bg-slate-900 px-3 py-1.5 text-micro font-bold text-white shadow-sm transition-colors hover:bg-slate-800"

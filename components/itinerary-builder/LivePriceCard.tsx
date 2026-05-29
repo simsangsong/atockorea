@@ -59,7 +59,8 @@ export default function LivePriceCard({ price, isJeju, compact = false }: Props)
 
   return (
     <div className="space-y-3">
-      <div className="rounded-card bg-emerald-50/50 p-4 shadow-[0_2px_8px_rgba(15,23,42,0.04),0_22px_50px_-20px_rgba(15,23,42,0.20)] transition-shadow duration-300 ease-out hover:shadow-[0_4px_14px_rgba(15,23,42,0.06),0_30px_64px_-20px_rgba(15,23,42,0.26)]">
+      {/* Phase 11 D29 — near-white mint surface + glow ring */}
+      <div className="rounded-card bg-emerald-50/30 ring-1 ring-emerald-100/40 p-4 shadow-[0_2px_8px_rgba(15,23,42,0.04),0_22px_50px_-20px_rgba(15,23,42,0.20),inset_0_1px_0_rgba(255,255,255,0.9)] transition-shadow duration-300 ease-out hover:shadow-[0_4px_14px_rgba(15,23,42,0.06),0_30px_64px_-20px_rgba(15,23,42,0.26),inset_0_1px_0_rgba(255,255,255,0.95)]">
         {!compact ? (
           <p className="mb-2.5 inline-flex items-center gap-1.5 text-eyebrow text-slate-500">
             <Sparkles className="h-3 w-3 text-emerald-600" aria-hidden />
@@ -112,8 +113,9 @@ export default function LivePriceCard({ price, isJeju, compact = false }: Props)
 
       {/* Not-included + Jeju single-region notices (§5, §6 of pricing policy)
           — borderless mint card matching the price card above. Floats on the
-          stone-50 page background; no amber accents (user direction 2026-05-29). */}
-      <div className="space-y-2 rounded-card bg-emerald-50/40 px-3.5 py-3 shadow-[0_1px_4px_rgba(15,23,42,0.04),0_12px_30px_-18px_rgba(15,23,42,0.14)]">
+          stone-50 page background; no amber accents (user direction 2026-05-29).
+          Phase 11 D29 — near-white shade + glow ring. */}
+      <div className="space-y-2 rounded-card bg-emerald-50/25 ring-1 ring-emerald-100/40 px-3.5 py-3 shadow-[0_1px_4px_rgba(15,23,42,0.04),0_12px_30px_-18px_rgba(15,23,42,0.14),inset_0_1px_0_rgba(255,255,255,0.9)]">
         <p className="flex items-start gap-1.5 text-micro leading-relaxed text-slate-600">
           <Info className="mt-0.5 h-3 w-3 flex-shrink-0 text-slate-400" aria-hidden />
           {t("pricing.notIncluded")}

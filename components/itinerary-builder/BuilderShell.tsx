@@ -33,6 +33,17 @@ interface Props {
   center: { lat: number; lng: number; zoom: number };
   mapId: string;
   apiKey: string;
+  /**
+   * Phase 11 D27/D30/D31 — controls layout chrome and URL routing.
+   *  - "page" (default): mounted on `/itinerary-builder` (legacy / fallback);
+   *    sticky map + sticky rail compete with the site header at top-16.
+   *  - "home": mounted inside HomeV2Page → no sticky map (map scrolls with
+   *    the section), no sticky rail (PlannerTopRail's `placement="home"`
+   *    drops the sticky and uses a labeled mobile trigger). POICatalogGrid
+   *    is hidden — the builder shares the page with many other sections,
+   *    and the full catalog browse belongs on a dedicated route.
+   */
+  placement?: "page" | "home";
 }
 
 /**
@@ -55,7 +66,7 @@ interface Props {
  * Cart URL state, drag-to-reorder, AI focus-pin sync, cruise time budget,
  * and quote modal flow are all preserved exactly.
  */
-export default function BuilderShell({ region, pois, center, mapId, apiKey }: Props) {
+export default function BuilderShell({ region, pois, center, mapId, apiKey, placement = "page" }: Props) {
   const { locale } = useI18n();
   const { cart, add, remove, reorder, has, clear } = useCart();
   const searchParams = useSearchParams();
@@ -159,7 +170,7 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
   if (isDmz) {
     return (
       <ActiveStopProvider>
-        <PlannerTopRail region={region} />
+        <PlannerTopRail region={region} placement={placement} />
         <section className="mx-auto max-w-3xl px-4 py-10 md:px-6 md:py-16 lg:px-8">
           <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_16px_40px_-24px_rgba(15,23,42,0.30)]">
             <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-amber-900 px-6 py-8 md:px-10 md:py-10">
@@ -204,9 +215,21 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
     );
   }
 
+  const isHome = placement === "home";
+  // Phase 11 D27/D30 — on `placement="home"` the map is NOT sticky (it
+  // scrolls with the section) so the user reaches the rest of the home
+  // page without fighting a viewport-locked map. lg height also bounded so
+  // we don't punch a `100vh - 7rem` hole into the home compositions.
+  const mapColumnClass = isHome
+    ? "-mx-4 mb-4 md:mx-0 lg:mb-0 lg:min-w-0 lg:flex-1 lg:self-start"
+    : "sticky top-16 z-20 -mx-4 mb-4 md:mx-0 lg:top-20 lg:z-10 lg:mb-0 lg:min-w-0 lg:flex-1 lg:self-start";
+  const mapInnerClass = isHome
+    ? "relative h-[42vh] min-h-[280px] overflow-hidden bg-white/85 shadow-[0_16px_40px_-24px_rgba(15,23,42,0.30)] backdrop-blur md:rounded-2xl lg:h-[560px] ring-1 ring-emerald-100/40"
+    : "relative h-[40vh] min-h-[260px] overflow-hidden border border-white/80 bg-white/85 shadow-[0_16px_40px_-24px_rgba(15,23,42,0.30)] backdrop-blur md:rounded-2xl lg:h-[calc(100vh-7rem)]";
+
   return (
     <ActiveStopProvider>
-      <PlannerTopRail region={region} />
+      <PlannerTopRail region={region} placement={placement} />
       {/* Two-column hero band — sticky map (left) + interaction rail (right).
           The rail holds only the surfaces that benefit from sticky proximity
           to the map: AI matcher + cart actions. The full POI catalog grid
@@ -214,13 +237,12 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
           for the rationale (a 400px rail can't host a 3-4 col card grid
           cleanly, and the grid is secondary browsing once the map is the
           primary canvas). */}
-      <section className="pb-6 md:pb-8">
+      <section className={isHome ? "pt-4 pb-6 md:pt-5 md:pb-8" : "pb-6 md:pb-8"}>
         <div className="mx-auto max-w-7xl px-4 md:px-6 lg:flex lg:items-start lg:gap-6 lg:px-8">
-          {/* Map column — sticky on both mobile (top 16) and lg+ (top 20).
-              On <lg the column has no width constraint; on lg+ it grows
-              to fill the remaining space next to the 400px right rail. */}
-          <div className="sticky top-16 z-20 -mx-4 mb-4 md:mx-0 lg:top-20 lg:z-10 lg:mb-0 lg:min-w-0 lg:flex-1 lg:self-start">
-            <div className="relative h-[40vh] min-h-[260px] overflow-hidden border border-white/80 bg-white/85 shadow-[0_16px_40px_-24px_rgba(15,23,42,0.30)] backdrop-blur md:rounded-2xl lg:h-[calc(100vh-7rem)]">
+          {/* Map column — sticky on the page placement; on the home embed
+              the map flows with the section so the user can scroll past it. */}
+          <div className={mapColumnClass}>
+            <div className={mapInnerClass}>
               {/* Floating Reset View — bottom-right of the map. Replaces
                   the old "Map preview · N stops · M in cart" header bar. */}
               <button
@@ -285,18 +307,21 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey }: Pr
         </div>
       </section>
 
-      {/* POI catalog grid — full-width browse below the map+rail band.
-          Stays here because the grid's responsive 1/2/3/4-col layout needs
-          page-width breathing room; cramming it into a 400px rail breaks
-          the card density home v2 set as the reference. */}
-      <POICatalogGrid
-        pois={localizedPois}
-        cart={cart}
-        onAdd={add}
-        onRemove={remove}
-        onFocus={focusPoi}
-        onOpenDetail={setDetailPoi}
-      />
+      {/* POI catalog grid — only on the legacy `/itinerary-builder` page
+          placement. On the home embed the builder shares the page with many
+          other sections and a 80-card grid here would dominate the home
+          scroll. (Future: spin out a dedicated `/itinerary-builder/browse`
+          route if standalone catalog browsing is needed again.) */}
+      {!isHome ? (
+        <POICatalogGrid
+          pois={localizedPois}
+          cart={cart}
+          onAdd={add}
+          onRemove={remove}
+          onFocus={focusPoi}
+          onOpenDetail={setDetailPoi}
+        />
+      ) : null}
 
       <QuoteModal
         open={quoteOpen}

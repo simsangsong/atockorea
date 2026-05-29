@@ -2302,8 +2302,10 @@
   "itineraryBuilder": {
     "home": {
       "eyebrow": "Creador de itinerarios personalizados",
-      "title": "O diseña tu día ideal en Corea",
-      "subtitle": "Elige las paradas que realmente quieres en el mapa. Nosotros te lo cotizamos.",
+      "title": "Diseña tu día ideal en Corea",
+      "subtitle": "Elige región, viajeros y fecha — la ruta y el precio aparecen al instante. Reserva con tarjeta en archivo.",
+      "loading": "Cargando el mapa…",
+      "error": "No se pudo cargar el mapa. Actualiza la página.",
       "busanName": "Busan",
       "busanTagline": "Templos marinos + capitales históricas + paseos por mercados",
       "busanStops": "20 paradas seleccionadas",
@@ -2441,7 +2443,8 @@
     "ai": {
       "eyebrow": "Deja que la IA sugiera tu día",
       "intro": "Dinos qué te gusta — diseñaremos una ruta con las paradas de esta región.",
-      "presetsLabel": "O empieza con una opción preestablecida",
+      "presetsLabel": "Toca las que quieras (combina libremente)",
+      "presetsSelectedHint": "{count} seleccionada(s) — toca «Recomendar» cuando estés lista/o",
       "presets": {
         "firstTime": "Primera vez en Corea",
         "family": "Familia con niños",
