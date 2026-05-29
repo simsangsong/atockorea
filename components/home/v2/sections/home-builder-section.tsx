@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { Loader2, Sparkles } from "lucide-react";
 import {
@@ -21,9 +21,14 @@ interface Props {
    */
   initialRegion?: RegionSlug | null;
   initialPois?: MatchPoiRow[] | null;
-  /** Server-resolved Google Maps env (server components can't touch process.env in client comp). */
-  mapId: string;
-  apiKey: string;
+  /**
+   * Google Maps env. Optional: when omitted (e.g. on `/[locale]/page.tsx`,
+   * which is a client component and doesn't pass these props), we fall back
+   * to `process.env.NEXT_PUBLIC_GOOGLE_MAPS_*` directly. Next.js inlines
+   * `NEXT_PUBLIC_*` at build time, so client components can read them.
+   */
+  mapId?: string;
+  apiKey?: string;
 }
 
 const DEFAULT_REGION: RegionSlug = "busan";
@@ -36,16 +41,9 @@ const DEFAULT_REGION: RegionSlug = "busan";
  * `ItineraryBuilderEntry` (3 region cards linking out to `/itinerary-builder`).
  *
  * Region selection lives in the URL (`?region=`) — PlannerTopRail writes
- * region changes back via `router.replace('/')`, and this section's
+ * region changes back via `router.replace(pathname?…)`, and this section's
  * `useEffect` re-fetches POIs when the URL region changes. POIs SSR-prefetch
  * only when an inbound link carried `?region=`; cold visits lazy-fetch.
- *
- * URL contract on `/`:
- *   - `?region=busan|jeju|seoul` — active region
- *   - `?builder=open` — auto-expand + auto-scroll into view (set by the
- *     `/itinerary-builder` redirect so inbound bookmarks land smoothly)
- *   - all other planner params (date, party, lang, duration, hours, ship,
- *     port, pickup, intent) are owned by PlannerTopRail / AIRecommendPanel.
  */
 export function HomeBuilderSection({
   initialRegion,
@@ -55,33 +53,57 @@ export function HomeBuilderSection({
 }: Props) {
   const t = useTranslations("itineraryBuilder.home");
   const sp = useSearchParams();
+
+  // Phase 11 audit fix #1 — the URL is the SoT for region. `initialRegion`
+  // only seeds the FIRST resolution; once mounted, PlannerTopRail's
+  // router.replace updates `?region=`, and the URL drives every subsequent
+  // re-fetch. Previously the ternary preferred `initialRegion` forever,
+  // pinning region to the SSR value and silently no-op'ing the chips.
   const urlRegion = sp?.get("region") ?? null;
-  const region: RegionSlug =
-    initialRegion && isRegionSlug(initialRegion) ? initialRegion
-      : isRegionSlug(urlRegion ?? "") ? (urlRegion as RegionSlug)
+  const region: RegionSlug = isRegionSlug(urlRegion ?? "")
+    ? (urlRegion as RegionSlug)
+    : initialRegion && isRegionSlug(initialRegion)
+      ? initialRegion
       : DEFAULT_REGION;
   const center = REGION_CENTER[region];
 
-  const [pois, setPois] = useState<MatchPoiRow[] | null>(
-    initialPois && initialRegion === region ? initialPois : null,
+  // Phase 11 audit fix #3 — only the FIRST region (which SSR prefetched)
+  // gets to skip the loading flash. Once the user changes region the
+  // SSR set is stale, so we lazy-fetch and show the spinner. Tracking
+  // the prefetched-region in a ref lets us recognize the warm case
+  // across re-renders without re-doing the comparison on every render.
+  const prefetchedRegionRef = useRef<RegionSlug | null>(
+    initialRegion && initialPois ? initialRegion : null,
   );
-  const [loading, setLoading] = useState<boolean>(!pois);
+  const [pois, setPois] = useState<MatchPoiRow[] | null>(
+    prefetchedRegionRef.current === region ? (initialPois ?? null) : null,
+  );
+  const [loading, setLoading] = useState<boolean>(
+    !(prefetchedRegionRef.current === region && initialPois),
+  );
   const [error, setError] = useState<string | null>(null);
 
-  // Refetch when the URL region changes (PlannerTopRail.patch routes here
-  // with router.replace, so the searchParams change but the page does NOT
-  // remount). The SSR-prefetched payload is reused only for the initial
-  // region; every subsequent change goes through the API.
+  // Refetch when the URL region changes. The first effect run on a warm
+  // (SSR-prefetched) load early-returns so we don't unmount BuilderShell
+  // and lose Google Maps / AI panel / quote-modal state during a redundant
+  // network round-trip.
   useEffect(() => {
-    let cancelled = false;
+    if (prefetchedRegionRef.current === region) {
+      // Consume the prefetch token — subsequent region changes always fetch.
+      prefetchedRegionRef.current = null;
+      return;
+    }
+    const controller = new AbortController();
     setLoading(true);
     setError(null);
-    fetch(`/api/itinerary-builder/pois?region=${region}`)
+    fetch(`/api/itinerary-builder/pois?region=${region}`, {
+      signal: controller.signal,
+    })
       .then(async (r) => {
         const json = (await r.json()) as
           | { ok: true; pois: MatchPoiRow[] }
           | { ok: false; error: string };
-        if (cancelled) return;
+        if (controller.signal.aborted) return;
         if (!r.ok || !json.ok) {
           setError(!json.ok ? json.error : `HTTP ${r.status}`);
           setLoading(false);
@@ -91,32 +113,30 @@ export function HomeBuilderSection({
         setLoading(false);
       })
       .catch((e) => {
-        if (cancelled) return;
+        if (controller.signal.aborted) return;
         setError(e instanceof Error ? e.message : "fetch_failed");
         setLoading(false);
       });
-    return () => {
-      cancelled = true;
-    };
+    return () => controller.abort();
   }, [region]);
 
   // Auto-scroll into view when the inbound link asks for it (e.g. the
-  // `/itinerary-builder` permanent redirect sets `?builder=open`).
+  // `/itinerary-builder` permanent redirect sets `?builder=open`). Phase 11
+  // audit fix #6 — gate on `ready` so we don't scroll users to a loading
+  // spinner, then re-fire when content actually arrives.
   const sectionId = "home-builder";
   const wantsAutoScroll = sp?.get("builder") === "open";
+  const ready = useMemo(() => !loading && Array.isArray(pois), [loading, pois]);
+  const didAutoScrollRef = useRef(false);
   useEffect(() => {
-    if (!wantsAutoScroll) return;
+    if (!wantsAutoScroll || !ready || didAutoScrollRef.current) return;
     const el = document.getElementById(sectionId);
     if (!el) return;
-    // Wait one frame so layout has settled with whatever was prefetched.
+    didAutoScrollRef.current = true;
     requestAnimationFrame(() => {
       el.scrollIntoView({ behavior: "smooth", block: "start" });
     });
-  }, [wantsAutoScroll]);
-
-  // Reuse the same initialPois only for the first region; once the user
-  // changes region the SSR set is stale.
-  const ready = useMemo(() => !loading && Array.isArray(pois), [loading, pois]);
+  }, [wantsAutoScroll, ready]);
 
   return (
     <section
@@ -143,8 +163,8 @@ export function HomeBuilderSection({
             region={region}
             pois={pois}
             center={center}
-            mapId={mapId}
-            apiKey={apiKey}
+            mapId={mapId || process.env.NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID || ""}
+            apiKey={apiKey || process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ""}
             placement="home"
           />
         ) : (
@@ -159,7 +179,7 @@ export function HomeBuilderSection({
 
 function LoadingState({ label }: { label: string }) {
   return (
-    <div className="flex h-[320px] items-center justify-center rounded-card bg-emerald-50/30 shadow-[0_2px_8px_rgba(15,23,42,0.04),0_22px_50px_-20px_rgba(15,23,42,0.20)] ring-1 ring-emerald-100/40">
+    <div className="flex h-[320px] items-center justify-center rounded-card bg-emerald-50/30 shadow-[0_2px_8px_rgba(15,23,42,0.04),0_22px_50px_-20px_rgba(15,23,42,0.20),inset_0_1px_0_rgba(255,255,255,0.9)] ring-1 ring-emerald-100/40">
       <span className="inline-flex items-center gap-2 text-caption font-semibold text-slate-600">
         <Loader2 className="h-4 w-4 animate-spin text-emerald-600" aria-hidden />
         {label}

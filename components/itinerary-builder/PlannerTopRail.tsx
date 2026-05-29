@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { ChevronDown, MapPin, Ship, Car, ShieldAlert, X } from "lucide-react";
 import { useI18n, useTranslations } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
@@ -90,8 +90,15 @@ export default function PlannerTopRail({ region, placement = "page" }: Props) {
   const { locale } = useI18n();
   const router = useRouter();
   const sp = useSearchParams();
+  const pathname = usePathname() ?? "/";
   const today = useMemo(() => new Date().toISOString().slice(0, 10), []);
-  const basePath = placement === "home" ? "/" : "/itinerary-builder";
+  // Phase 11 audit fix #2 — for placement="home" we must preserve the
+  // locale-prefixed pathname (`/ko`, `/ja`, `/zh`, `/zh-TW`, `/es`),
+  // NOT hardcode `/`. Otherwise every rail interaction on a non-EN home
+  // silently navigates the user to the English home and loses locale.
+  // For placement="page" the legacy `/itinerary-builder` route is not
+  // locale-prefixed today, so we keep it literal.
+  const basePath = placement === "home" ? pathname : "/itinerary-builder";
 
   // URL-derived state (no local mirror — every change re-writes the URL).
   const track = readTrack(sp);
@@ -161,18 +168,13 @@ export default function PlannerTopRail({ region, placement = "page" }: Props) {
       // they can stay within the SPA — replace() keeps the planner mounted
       // and avoids scrolling the page back to the top.
       //
-      // Phase 11 D30: when placement="home" the URL stays on `/` (or whatever
-      // the user's locale-prefixed home is) and region change triggers
-      // HomeBuilderSection's effect-keyed POI fetch.
-      const qs = params.toString();
-      // On home, mark the builder as opened so a deep-link/refresh re-expands it.
+      // Phase 11 D30 / audit fix #9: single code path so future cleanup-rule
+      // additions (e.g. "on region change also delete ?intent=") apply to
+      // both the cold first-call and warm subsequent-call cases.
       if (placement === "home" && !params.has("builder")) {
-        const next = new URLSearchParams(params);
-        next.set("builder", "open");
-        const href = `${basePath}?${next.toString()}`;
-        router.replace(href, { scroll: false });
-        return;
+        params.set("builder", "open");
       }
+      const qs = params.toString();
       const href = `${basePath}${qs ? `?${qs}` : ""}`;
       const requiresHardNav = placement === "page" && ("region" in updates || updates.track === "dmz");
       if (requiresHardNav) router.push(href);

@@ -179,7 +179,12 @@ export default function AIRecommendPanel({
       });
       const data = (await res.json()) as MatchResponse;
       if (!res.ok || !data.ok) {
-        setError(data.error || `HTTP ${res.status}`);
+        const errorCode = data.error || `HTTP ${res.status}`;
+        setError(errorCode);
+        trackEvent("itinerary_recommend_failed", {
+          region,
+          errorCode,
+        });
         setLoading(false);
         return;
       }
@@ -195,9 +200,21 @@ export default function AIRecommendPanel({
           poiCount: recs.length,
           totalMinutes: data.total_minutes ?? 0,
         });
+      } else {
+        // Phase 11 audit fix #7 — replaces the Phase-10 auto-run analytics
+        // for the empty-result case. Without this ops can't see when the
+        // matcher returns ok=true but no POIs (silent no-suggestion).
+        trackEvent("itinerary_recommend_empty", {
+          region,
+        });
       }
     } catch (e) {
-      setError(e instanceof Error ? e.message : "request_failed");
+      const errorCode = e instanceof Error ? e.message : "request_failed";
+      setError(errorCode);
+      trackEvent("itinerary_recommend_failed", {
+        region,
+        errorCode,
+      });
     } finally {
       setLoading(false);
     }

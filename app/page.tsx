@@ -97,12 +97,17 @@ export default async function HomePage({
   const sp = (await searchParams) ?? {};
   const cookieStore = await cookies();
   const locale = resolveLocaleFromCookie(cookieStore.get("NEXT_LOCALE")?.value);
-  const featuredMediaBySlug = await loadFeaturedMediaBySlug(locale);
 
   const rawRegion = typeof sp.region === "string" ? sp.region : null;
   const builderRegion: RegionSlug | null =
     rawRegion && isRegionSlug(rawRegion) ? (rawRegion as RegionSlug) : null;
-  const builderPois = builderRegion ? await loadBuilderPois(builderRegion) : null;
+
+  // Phase 11 audit fix #10 — run the two SSR fetches in parallel so a
+  // `?region=` deep-link doesn't pay sum-of-round-trips on TTFB.
+  const [featuredMediaBySlug, builderPois] = await Promise.all([
+    loadFeaturedMediaBySlug(locale),
+    builderRegion ? loadBuilderPois(builderRegion) : Promise.resolve(null),
+  ]);
 
   return (
     <SitePageShell>
