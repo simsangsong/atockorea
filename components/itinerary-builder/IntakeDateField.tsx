@@ -14,9 +14,15 @@ import { cn } from "@/lib/utils";
  *   • click a day in the month grid, and
  *   • type it directly (YYYY-MM-DD) in the field at the top.
  *
- * Inline expansion (vs. an overlay popover) is deliberate: the field sits near
- * the bottom of a scrolling card, so a fixed/absolute popover would clip or
- * mis-anchor on mobile. Expanding in place is robust on every viewport.
+ * The calendar opens as a left-anchored popover (`absolute`) at its natural
+ * width. Earlier it expanded inline in normal flow, which inherited the width
+ * of the trigger — fine when the field is full-width, but every real caller
+ * now drops it into a narrow column (landing planner card's 50% grid cell,
+ * PlannerTopRail's `min-w-[180px]`). Inline there crushed the 7-col grid:
+ * weekday headers collapsed ("SunMonTue…") and the day cells overlapped.
+ * Absolute positioning takes the panel out of grid/flex track sizing, so the
+ * parent layout is untouched and the calendar always renders at full size.
+ * A `max-w` viewport guard keeps it from clipping on small screens.
  *
  * No new deps (V11) — framer-motion + lucide are already in the bundle.
  * Month/weekday names are locale-aware via `Intl.DateTimeFormat`.
@@ -205,7 +211,7 @@ export default function IntakeDateField({
             animate={{ opacity: 1, y: 0 }}
             exit={reduce ? { opacity: 0 } : { opacity: 0, y: -6 }}
             transition={{ duration: reduce ? 0 : 0.18, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-2 rounded-2xl border border-slate-200/70 bg-white p-3 shadow-[0_12px_40px_-12px_rgba(15,23,42,0.25)]"
+            className="absolute left-0 top-full z-50 mt-2 w-[18rem] max-w-[calc(100vw-2rem)] rounded-2xl border border-slate-200/70 bg-white p-3 shadow-[0_12px_40px_-12px_rgba(15,23,42,0.25)]"
           >
             {/* Type-in row */}
             <input
