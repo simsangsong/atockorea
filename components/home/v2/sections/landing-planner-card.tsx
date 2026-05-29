@@ -16,6 +16,12 @@ import { useHomeV2Match } from "@/components/home/v2/HomeV2MatchProvider";
 import { analytics, getExperimentVariantAsync } from "@/src/design/analytics";
 import { PLANNER_BUILD_EVENT } from "@/lib/home/planner-build-bridge";
 import { cn } from "@/lib/utils";
+import IntakeDateField from "@/components/itinerary-builder/IntakeDateField";
+
+/** Phase 12 D32 — duration options for the hero build-mode chip group.
+ *  Mirrors PRIVATE_HOURS in PlannerTopRail; the chip group is a friendlier
+ *  surface than a <select> for the hero card. */
+const HERO_DURATION_OPTIONS = [4, 6, 8, 10, 12] as const;
 
 /** v3 Phase D.1 — desktop in-place morphing panel.
  *
@@ -79,6 +85,16 @@ export function LandingPlannerCard({
   const intentFocusFiredRef = useRef(false);
   const cardRef = useRef<HTMLDivElement>(null);
 
+  // Phase 12 D32 — hero build-mode preference inputs. Held at card scope so
+  // values survive a Match ↔ Build mode flip. Defaults mirror PlannerTopRail
+  // (party 2 / duration 8h) so the price computed by the matcher on
+  // auto-fire matches what a customer who skips the inputs would have seen.
+  const today = useMemo(() => new Date().toISOString().slice(0, 10), []);
+  const [buildDate, setBuildDate] = useState("");
+  const [buildParty, setBuildParty] = useState("2");
+  const [buildDuration, setBuildDuration] = useState<number>(8);
+  const [buildDateInvalid, setBuildDateInvalid] = useState(false);
+
   // Phase 5 bridge — a match-result surface dispatches PLANNER_BUILD_EVENT when
   // the user picks "Build your own day in {destination}". The result surface has
   // already reset the match to idle (closing itself), so here we just flip into
@@ -138,17 +154,44 @@ export function LandingPlannerCard({
   );
 
   const handleStartBuilding = useCallback(() => {
+    // Phase 12 D32 — date is required so the matcher + price card can render
+    // the actual quote. If empty, flash the field and bail without nav.
+    if (!buildDate) {
+      setBuildDateInvalid(true);
+      return;
+    }
     analytics.unifiedPlannerBuildStart({
       destination,
       hasIntent: intent.trim().length > 0,
       selectedChipCount,
     });
-    // ?region=... (not the direct /[region] route) so the builder IntakeForm
-    // pre-fills and keeps its track/date step. intent rides along for Phase 4.
-    router.push(
-      `/itinerary-builder?region=${destination}&intent=${encodeURIComponent(intent)}`,
-    );
-  }, [router, destination, intent, selectedChipCount]);
+    // Phase 12 D27 + D32 + D33 — push to `/` (planner now lives on the home
+    // page; Phase 11 retired `/itinerary-builder`). All hero preferences ride
+    // along. `autoRun=1` tells AIRecommendPanel to fire the matcher once on
+    // mount; `builder=open` triggers HomeBuilderSection's auto-scroll into
+    // view. The matcher will strip `autoRun` after firing so refresh doesn't
+    // re-fire.
+    const qs = new URLSearchParams();
+    qs.set("region", destination);
+    qs.set("date", buildDate);
+    qs.set("party", String(buildParty));
+    qs.set("duration", String(buildDuration));
+    // Phase 12 D33 — autoRun requires SOMETHING for the matcher to work
+    // with. If the customer didn't pick style chips or type intent, fall
+    // back to a balanced default so the auto-fire still produces an
+    // itinerary they can edit. Same pattern the match flow already uses
+    // (`handleSubmit` falls back to `defaultMatchIntent`).
+    const fallbackIntent = t("premium.hero.defaultMatchIntent");
+    qs.set("intent", intent.trim() || fallbackIntent);
+    qs.set("autoRun", "1");
+    qs.set("builder", "open");
+    router.push(`/?${qs.toString()}`);
+  }, [router, destination, intent, selectedChipCount, buildDate, buildParty, buildDuration, t]);
+
+  // Clear the invalid flash as soon as the user picks a date.
+  useEffect(() => {
+    if (buildDateInvalid && buildDate) setBuildDateInvalid(false);
+  }, [buildDate, buildDateInvalid]);
 
   const chipLooksSelected = useCallback(
     (label: string) => intent.includes(label),
@@ -369,6 +412,85 @@ export function LandingPlannerCard({
               </>
             ) : (
               <>
+                {/* Phase 12 D32 — date / party / duration inputs sit at the
+                    very top of the build-mode body so the customer sets
+                    pricing-relevant conditions BEFORE clicking Start Building.
+                    Typography (text-caption labels, text-[11px] md:text-caption
+                    inputs) matches the existing destination + style chip rows
+                    above. */}
+                <div className="mb-3 space-y-2.5 md:mb-4 md:space-y-3">
+                  <div>
+                    <label
+                      htmlFor="hero-build-date"
+                      className="mb-1.5 block text-caption font-semibold text-slate-700"
+                    >
+                      {t("premium.v2.planner.buildDateLabel")}
+                    </label>
+                    <IntakeDateField
+                      id="hero-build-date"
+                      value={buildDate}
+                      onChange={setBuildDate}
+                      min={today}
+                      locale={locale}
+                      invalid={buildDateInvalid}
+                      placeholder={t("premium.v2.planner.buildDatePlaceholder")}
+                      todayLabel={t("premium.v2.planner.buildDateToday")}
+                      tomorrowLabel={t("premium.v2.planner.buildDateTomorrow")}
+                    />
+                  </div>
+                  <div className="grid grid-cols-[auto,1fr] gap-3">
+                    <div>
+                      <label
+                        htmlFor="hero-build-party"
+                        className="mb-1.5 block text-caption font-semibold text-slate-700"
+                      >
+                        {t("premium.v2.planner.buildPartyLabel")}
+                      </label>
+                      <input
+                        id="hero-build-party"
+                        type="number"
+                        inputMode="numeric"
+                        min={1}
+                        max={30}
+                        value={buildParty}
+                        onChange={(e) => setBuildParty(e.target.value)}
+                        className="focus-ring h-12 w-20 rounded-button border border-slate-200/70 bg-slate-50 px-3 text-center text-[14px] font-semibold tabular-nums text-slate-900 transition-colors duration-200 focus:border-slate-300 focus:bg-white md:h-14 md:text-[15px]"
+                      />
+                    </div>
+                    <div>
+                      <p className="mb-1.5 block text-caption font-semibold text-slate-700">
+                        {t("premium.v2.planner.buildDurationLabel")}
+                      </p>
+                      <div
+                        className="flex gap-1.5 overflow-x-auto pb-1 scrollbar-none md:gap-2"
+                        role="radiogroup"
+                        aria-label={t("premium.v2.planner.buildDurationLabel")}
+                      >
+                        {HERO_DURATION_OPTIONS.map((h) => {
+                          const active = buildDuration === h;
+                          return (
+                            <button
+                              key={h}
+                              type="button"
+                              role="radio"
+                              aria-checked={active}
+                              onClick={() => setBuildDuration(h)}
+                              className={cn(
+                                "focus-ring flex-none rounded-full border px-3 py-1.5 text-[11px] font-medium tabular-nums transition-colors duration-200 md:px-3.5 md:py-2 md:text-caption",
+                                active
+                                  ? "border-slate-900 bg-slate-900 text-white"
+                                  : "border-slate-200/70 bg-slate-50 text-slate-600 hover:bg-slate-100",
+                              )}
+                            >
+                              {h}h
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
                 <div className="overflow-hidden rounded-button border border-slate-200/70">
                   <div className="relative h-24 w-full md:h-28">
                     <Image
