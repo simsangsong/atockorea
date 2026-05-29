@@ -23,6 +23,18 @@ import IntakeDateField from "@/components/itinerary-builder/IntakeDateField";
  *  surface than a <select> for the hero card. */
 const HERO_DURATION_OPTIONS = [4, 6, 8, 10, 12] as const;
 
+/** Phase 13 D37 — guide language options. Mirrors GUIDE_LANGS in
+ *  PlannerTopRail so the hero handoff lands on a value the builder
+ *  understands. Lang directly drives the pricing tier (Phase 9 D13). */
+const HERO_LANG_OPTIONS: { code: string; label: string }[] = [
+  { code: "en", label: "English" },
+  { code: "ko", label: "한국어" },
+  { code: "ja", label: "日本語" },
+  { code: "zh", label: "中文 (简体)" },
+  { code: "zh-TW", label: "中文 (繁體)" },
+  { code: "es", label: "Español" },
+];
+
 /** v3 Phase D.1 — desktop in-place morphing panel.
  *
  *  Dynamic + ssr:false so the heavy static-tour-product registry chain
@@ -85,14 +97,16 @@ export function LandingPlannerCard({
   const intentFocusFiredRef = useRef(false);
   const cardRef = useRef<HTMLDivElement>(null);
 
-  // Phase 12 D32 — hero build-mode preference inputs. Held at card scope so
-  // values survive a Match ↔ Build mode flip. Defaults mirror PlannerTopRail
-  // (party 2 / duration 8h) so the price computed by the matcher on
-  // auto-fire matches what a customer who skips the inputs would have seen.
+  // Phase 12 D32 / Phase 13 D37 — hero build-mode preference inputs. Held
+  // at card scope so values survive a Match ↔ Build mode flip. Defaults
+  // mirror PlannerTopRail (party 2 / duration 8h / lang = site locale).
   const today = useMemo(() => new Date().toISOString().slice(0, 10), []);
   const [buildDate, setBuildDate] = useState("");
   const [buildParty, setBuildParty] = useState("2");
   const [buildDuration, setBuildDuration] = useState<number>(8);
+  const [buildLang, setBuildLang] = useState<string>(() =>
+    HERO_LANG_OPTIONS.some((g) => g.code === locale) ? locale : "en",
+  );
   const [buildDateInvalid, setBuildDateInvalid] = useState(false);
 
   // Phase 5 bridge — a match-result surface dispatches PLANNER_BUILD_EVENT when
@@ -176,6 +190,7 @@ export function LandingPlannerCard({
     qs.set("date", buildDate);
     qs.set("party", String(buildParty));
     qs.set("duration", String(buildDuration));
+    qs.set("lang", buildLang);
     // Phase 12 D33 — autoRun requires SOMETHING for the matcher to work
     // with. If the customer didn't pick style chips or type intent, fall
     // back to a balanced default so the auto-fire still produces an
@@ -184,9 +199,11 @@ export function LandingPlannerCard({
     const fallbackIntent = t("premium.hero.defaultMatchIntent");
     qs.set("intent", intent.trim() || fallbackIntent);
     qs.set("autoRun", "1");
-    qs.set("builder", "open");
-    router.push(`/?${qs.toString()}`);
-  }, [router, destination, intent, selectedChipCount, buildDate, buildParty, buildDuration, t]);
+    // Phase 13 D36/D40 — target back to the standalone /itinerary-builder
+    // page. Phase 12 sent users to `/?…&builder=open` (the home-absorbed
+    // surface); that duplicate-timeline layout was rejected by the user.
+    router.push(`/itinerary-builder?${qs.toString()}`);
+  }, [router, destination, intent, selectedChipCount, buildDate, buildParty, buildDuration, buildLang, t]);
 
   // Clear the invalid flash as soon as the user picks a date.
   useEffect(() => {
@@ -412,31 +429,53 @@ export function LandingPlannerCard({
               </>
             ) : (
               <>
-                {/* Phase 12 D32 — date / party / duration inputs sit at the
-                    very top of the build-mode body so the customer sets
-                    pricing-relevant conditions BEFORE clicking Start Building.
-                    Typography (text-caption labels, text-[11px] md:text-caption
-                    inputs) matches the existing destination + style chip rows
-                    above. */}
+                {/* Phase 12 D32 / Phase 13 D37+D39 — hero build-mode inputs.
+                    Row 1: Date + Language (2-col grid; language directly
+                    drives the pricing tier per Phase 9 D13 so it MUST be
+                    collected on the hero, not deferred to PlannerTopRail).
+                    Row 2: Guests + Hours.
+                    Caption line: "5 inputs required for accurate quote". */}
                 <div className="mb-3 space-y-2.5 md:mb-4 md:space-y-3">
-                  <div>
-                    <label
-                      htmlFor="hero-build-date"
-                      className="mb-1.5 block text-caption font-semibold text-slate-700"
-                    >
-                      {t("premium.v2.planner.buildDateLabel")}
-                    </label>
-                    <IntakeDateField
-                      id="hero-build-date"
-                      value={buildDate}
-                      onChange={setBuildDate}
-                      min={today}
-                      locale={locale}
-                      invalid={buildDateInvalid}
-                      placeholder={t("premium.v2.planner.buildDatePlaceholder")}
-                      todayLabel={t("premium.v2.planner.buildDateToday")}
-                      tomorrowLabel={t("premium.v2.planner.buildDateTomorrow")}
-                    />
+                  <div className="grid grid-cols-1 gap-2.5 md:grid-cols-[1fr,auto] md:gap-3">
+                    <div>
+                      <label
+                        htmlFor="hero-build-date"
+                        className="mb-1.5 block text-caption font-semibold text-slate-700"
+                      >
+                        {t("premium.v2.planner.buildDateLabel")}
+                      </label>
+                      <IntakeDateField
+                        id="hero-build-date"
+                        value={buildDate}
+                        onChange={setBuildDate}
+                        min={today}
+                        locale={locale}
+                        invalid={buildDateInvalid}
+                        placeholder={t("premium.v2.planner.buildDatePlaceholder")}
+                        todayLabel={t("premium.v2.planner.buildDateToday")}
+                        tomorrowLabel={t("premium.v2.planner.buildDateTomorrow")}
+                      />
+                    </div>
+                    <div>
+                      <label
+                        htmlFor="hero-build-lang"
+                        className="mb-1.5 block text-caption font-semibold text-slate-700"
+                      >
+                        {t("premium.v2.planner.buildLangLabel")}
+                      </label>
+                      <select
+                        id="hero-build-lang"
+                        value={buildLang}
+                        onChange={(e) => setBuildLang(e.target.value)}
+                        className="focus-ring h-12 w-full rounded-button border border-slate-200/70 bg-slate-50 px-3 text-[14px] font-semibold text-slate-900 transition-colors duration-200 focus:border-slate-300 focus:bg-white md:h-14 md:w-40 md:text-[15px]"
+                      >
+                        {HERO_LANG_OPTIONS.map((g) => (
+                          <option key={g.code} value={g.code}>
+                            {g.label}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
                   </div>
                   <div className="grid grid-cols-[auto,1fr] gap-3">
                     <div>
@@ -489,6 +528,10 @@ export function LandingPlannerCard({
                       </div>
                     </div>
                   </div>
+                  {/* Phase 13 D39 — 5-input accuracy caption */}
+                  <p className="text-micro leading-relaxed text-slate-500">
+                    {t("premium.v2.planner.buildAccurateQuoteCaption")}
+                  </p>
                 </div>
 
                 <div className="overflow-hidden rounded-button border border-slate-200/70">

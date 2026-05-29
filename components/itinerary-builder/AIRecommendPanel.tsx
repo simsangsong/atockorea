@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
-import { Loader2, AlertCircle, Check, Clock, ChevronRight, Sparkles, ArrowRight } from "lucide-react";
+import { Loader2, AlertCircle, Check, Sparkles, ArrowRight } from "lucide-react";
 import { homeBtnPrimary } from "@/lib/home/home-button-classes";
 import { cn } from "@/lib/utils";
 import {
@@ -18,18 +18,14 @@ import type { MatchPoiRow } from "@/lib/itinerary-builder/types";
 interface Props {
   region: RegionSlug;
   pois: MatchPoiRow[];
-  /** Current cart — used by the auto-run gate (Phase 10.4) to decide
-   *  whether the AI is still "owning" the cart or the user took over. */
-  cart: string[];
-  /** Replace the cart with the recommended sequence (auto-load + manual
-   *  Apply both route through this). */
+  /** Replace the cart with the recommended sequence. Phase 11 D28 made
+   *  every match auto-apply via this callback; Phase 13 D38 removed the
+   *  separate "Apply this day" CTA and the result preview stripe, leaving
+   *  this as the single hand-off into ResultTimeline. */
   onAccept: (poiKeys: string[]) => void;
-  /** R2 — open the shared detail drawer lifted to BuilderShell (RR2/RR-R3).
-   *  Map focus is now accessible via the drawer's "See on map" button,
-   *  so the old `onFocusPoi` prop has been retired. */
-  onOpenDetail?: (poi: MatchPoiRow) => void;
-  /** R4 — surface the matched stops to the map as a PREVIEW before the user
-   *  presses Apply, so they can see where the suggested stops are. null clears it. */
+  /** R4 — surface the matched stops to the map as a preview while the
+   *  match is in flight. ResultTimeline takes over after the match
+   *  resolves (cart auto-applies). */
   onPreview?: (poiKeys: string[] | null) => void;
   track?: string | null;
   origin?: string | null;
@@ -87,20 +83,13 @@ const PRESETS: { key: string; intent: string }[] = [
  *     result stripe (large preview cards + Apply day CTA) renders
  *     inline so it visually reads as the prequel to the timeline below.
  */
-/** Format stay minutes into a compact string, e.g. 90 → "1h 30m", 45 → "45m". */
-function formatMinutes(min: number): string {
-  if (min < 60) return `${min}m`;
-  const h = Math.floor(min / 60);
-  const m = min % 60;
-  return m ? `${h}h ${m}m` : `${h}h`;
-}
+// Phase 13 D38 — `formatMinutes` was used by the removed per-POI result
+// stripe; ResultTimeline has its own copy in lib/itinerary-builder/distance.
 
 export default function AIRecommendPanel({
   region,
   pois,
-  cart,
   onAccept,
-  onOpenDetail,
   onPreview,
   track,
   origin,
@@ -110,7 +99,11 @@ export default function AIRecommendPanel({
   const sp = useSearchParams();
   const router = useRouter();
   const pathname = usePathname() ?? "/";
-  const poiByKey = new Map(pois.map((p) => [p.poi_key, p]));
+  // pois is still accepted for forward-compat with the lifted detail drawer
+  // (BuilderShell looks up POI rows by key when the timeline opens one), but
+  // AIRecommendPanel itself no longer needs to read the catalog after the
+  // result preview stripe was removed in Phase 13 D38.
+  void pois;
   const [intent, setIntent] = useState(() =>
     typeof window === "undefined" ? "" : new URLSearchParams(window.location.search).get("intent")?.trim() ?? "",
   );
@@ -289,10 +282,6 @@ export default function AIRecommendPanel({
   const totalH = result?.total_minutes
     ? Math.round((result.total_minutes / 60) * 10) / 10
     : 0;
-  /** Hide the "Apply this day" CTA when the cart already matches the
-   *  recommendation (every recommendation auto-applies on completion, so
-   *  this is the common case post-Phase-11). */
-  const cartMatchesResult = recommended.length > 0 && isSameKeySet(cart, recommended);
   // Disable the submit until something to feed the matcher exists.
   const combinedReady =
     selectedPresets.size > 0 || intent.trim().length >= 2;
@@ -428,165 +417,26 @@ export default function AIRecommendPanel({
           </div>
         ) : null}
 
-        {/* Result stripe — renders inline so it visually reads as the
-            prequel to the timeline below (BuilderShell DOM order:
-            AI panel → ResultTimeline, so this stripe sits ABOVE the
-            timeline's first card). */}
+        {/* Phase 13 D38 — Result stripe REMOVED. ResultTimeline below is the
+            single source of truth for the itinerary. The matcher's success
+            path calls `onAccept(recommended)` (via Phase 11 D28 auto-apply)
+            which populates the cart; ResultTimeline then renders the same
+            POI sequence with full drag/remove/drawer interactivity. The
+            previous duplicate "result preview cards + cart timeline" layout
+            confused customers ("위에 일정표 있고 아래에 똑같이 일정표 또
+            있으면 혼란스러우니까... 하나로 통합", user 2026-05-29).
+
+            One small UI affordance is retained: a one-line success summary
+            so the customer sees "4 stops matched · ~7.8h day" without
+            re-counting the timeline, then naturally scrolls to ResultTimeline
+            (post-match smooth-scroll from D34). */}
         {result?.ok && recommended.length > 0 ? (
-          <motion.div
-            variants={REVEAL_ITEM_VARIANTS}
-            initial="hidden"
-            animate="visible"
-            className="border-t border-slate-100 bg-white px-5 py-4 md:px-6"
-          >
-            <div className="mb-3 flex items-center justify-between gap-2">
-              <p className="text-caption font-bold text-slate-900">
-                {t("resultsSummary", { count: recommended.length, hours: totalH })}
-              </p>
-              {/* Phase 10.4 — Apply CTA hidden when the cart already matches
-                  the recommendation (auto-run flow). Still shown for the rare
-                  case where the user manually re-ran but didn't accept. */}
-              {!cartMatchesResult ? (
-                <button
-                  type="button"
-                  onClick={() => {
-                    lastAcceptedSetRef.current = recommended;
-                    onAccept(recommended);
-                  }}
-                  className="inline-flex items-center gap-1 rounded-full bg-slate-900 px-3 py-1.5 text-micro font-bold text-white shadow-sm transition-colors hover:bg-slate-800"
-                >
-                  {t("loadIntoCart")}
-                  <ChevronRight className="h-3 w-3" aria-hidden />
-                </button>
-              ) : null}
-            </div>
-            {/* R2 — large card stack (preview / Apply variant).
-                No drag, no remove. Tap card → shared POIDetailModal via
-                onOpenDetail (lifted to BuilderShell). Sequence amber node
-                sits on the relative <li> so overflow-hidden on the card
-                button does not clip it. Rationale labels inside card footer.
-                V5: amber = sequence only; V4: no bi-sync needed here (map
-                focus available via drawer's focus button). RR6: previewHint
-                i18n'd via translate-itinerary-builder-messages.mjs. */}
-            <ol className="relative space-y-2.5 pl-9">
-              {/* Subtle slate connector — same tour-detail timeline language
-                  as ResultTimeline so the suggestion reads as a preview of the
-                  day. Amber sequence identity lives on the map photo-pins. */}
-              <span
-                aria-hidden
-                className="pointer-events-none absolute left-[17px] top-5 bottom-5 w-px bg-slate-200"
-              />
-              {(result.per_poi_score ?? []).map((p, i) => {
-                const poi = poiByKey.get(p.poi_key) ?? null;
-                const photos =
-                  Array.isArray(poi?.images) && poi!.images!.length > 0
-                    ? (poi!.images as string[])
-                    : poi?.default_image_url
-                    ? [poi.default_image_url]
-                    : [];
-                return (
-                  <li key={p.poi_key} className="relative">
-                    {/* White/slate sequence node in the left gutter — tour-detail
-                        parity (amber sequence identity now lives on the map). */}
-                    <span
-                      aria-hidden
-                      className="absolute -left-9 top-2 z-10 flex h-9 w-9 items-center justify-center rounded-full text-[12px] font-medium tabular-nums tracking-[0.04em] text-slate-600 ring-1 ring-white"
-                      style={{
-                        background: "#ffffff",
-                        boxShadow:
-                          "0 1px 2px rgba(15,23,42,0.06), 0 4px 12px -4px rgba(15,23,42,0.10), inset 0 0.5px 0 rgba(255,255,255,0.9)",
-                      }}
-                    >
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-
-                    {/* Card body — tap opens shared detail drawer (RR2). */}
-                    <button
-                      type="button"
-                      onClick={() => { if (poi && onOpenDetail) onOpenDetail(poi); }}
-                      className="group block w-full overflow-hidden rounded-2xl bg-white text-left ring-1 ring-slate-200/60 shadow-[0_1px_2px_rgba(15,23,42,0.04),0_4px_12px_-2px_rgba(15,23,42,0.06)] transition-[transform,box-shadow] duration-200 ease-out hover:-translate-y-px hover:shadow-[0_2px_6px_rgba(15,23,42,0.06),0_8px_20px_-4px_rgba(15,23,42,0.10)] motion-reduce:transition-none"
-                    >
-                      {/* Compose photo strip */}
-                      {photos.length > 0 ? (
-                        <div className="flex gap-1.5 overflow-x-auto px-3 pb-1.5 pt-3 scrollbar-hide">
-                          {photos.map((src, pi) => (
-                            <span
-                              key={`${src}-${pi}`}
-                              className="relative h-14 w-20 flex-shrink-0 overflow-hidden rounded-md bg-slate-100 ring-1 ring-slate-900/5"
-                            >
-                              {/* eslint-disable-next-line @next/next/no-img-element */}
-                              <img
-                                src={src}
-                                alt=""
-                                width={80}
-                                height={56}
-                                loading="lazy"
-                                decoding="async"
-                                className="h-full w-full object-cover"
-                              />
-                            </span>
-                          ))}
-                        </div>
-                      ) : (
-                        <div className="flex px-3 pb-1.5 pt-3">
-                          <span className="flex h-14 w-20 items-center justify-center rounded-md bg-slate-100 text-2xl font-bold text-slate-300 ring-1 ring-slate-900/5">
-                            {(poi?.name_en?.[0] ?? p.name_en?.[0] ?? "?").toUpperCase()}
-                          </span>
-                        </div>
-                      )}
-
-                      {/* Header: duration + name + category + chevron */}
-                      <div className="px-3.5 pb-3 pt-2">
-                        <div className="flex items-start justify-between gap-2.5">
-                          <div className="min-w-0 flex-1">
-                            {poi?.default_stay_minutes ? (
-                              <div className="flex items-center gap-1 text-micro text-slate-500">
-                                <Clock className="h-3 w-3" aria-hidden />
-                                <span className="tabular-nums">
-                                  {formatMinutes(poi.default_stay_minutes)}
-                                </span>
-                              </div>
-                            ) : null}
-                            <h3 className="mt-1 truncate text-caption font-semibold leading-snug tracking-tight text-slate-900">
-                              {poi?.name_en ?? p.name_en}
-                            </h3>
-                            {poi?.name_ko ? (
-                              <p className="mt-0.5 truncate text-micro text-slate-500">
-                                {poi.name_ko}
-                              </p>
-                            ) : null}
-                            {poi?.category ? (
-                              <p className="mt-1 truncate text-[10px] font-medium uppercase tracking-wide text-slate-400">
-                                {poi.category}
-                              </p>
-                            ) : null}
-                          </div>
-                          <ChevronRight
-                            className="mt-1 h-4 w-4 flex-shrink-0 text-slate-400 group-hover:text-slate-600"
-                            aria-hidden
-                          />
-                        </div>
-                        {/* Rationale pills — slate (not amber), V5 compliant */}
-                        {p.rationale && p.rationale.length > 0 ? (
-                          <div className="mt-2 flex flex-wrap gap-1">
-                            {p.rationale.slice(0, 3).map((label) => (
-                              <span
-                                key={`${p.poi_key}-${label}`}
-                                className="rounded-full bg-slate-50 px-1.5 py-0.5 text-[10px] font-semibold leading-none text-slate-500 ring-1 ring-slate-200"
-                              >
-                                {label}
-                              </span>
-                            ))}
-                          </div>
-                        ) : null}
-                      </div>
-                    </button>
-                  </li>
-                );
-              })}
-            </ol>
-            <p className="mt-3 text-micro text-slate-500">{t("previewHint")}</p>
-          </motion.div>
+          <div className="border-t border-slate-100 px-5 py-3 md:px-6">
+            <p className="text-caption font-semibold text-slate-700">
+              {t("resultsSummary", { count: recommended.length, hours: totalH })}
+            </p>
+            <p className="mt-1 text-micro text-slate-500">{t("appliedToTimelineHint")}</p>
+          </div>
         ) : result?.ok && recommended.length === 0 ? (
           <div className="border-t border-slate-100 px-5 py-3 md:px-6">
             <p className="rounded-md bg-amber-50 px-3 py-2 text-caption text-amber-800 ring-1 ring-amber-100">
