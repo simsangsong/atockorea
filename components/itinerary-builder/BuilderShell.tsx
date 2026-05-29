@@ -223,9 +223,17 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey, plac
   const mapColumnClass = isHome
     ? "-mx-4 mb-4 md:mx-0 lg:mb-0 lg:min-w-0 lg:flex-1 lg:self-start"
     : "sticky top-16 z-20 -mx-4 mb-4 md:mx-0 lg:top-20 lg:z-10 lg:mb-0 lg:min-w-0 lg:flex-1 lg:self-start";
+  // Phase 15 — premium map frame. Replaces the plain `border border-white/80`
+  // with a mint glow ring + layered outer shadow + inset white highlight
+  // that matches the builder's other floating cards (LivePriceCard,
+  // EmptyState, AIRecommendPanel). The map content itself is still rendered
+  // by the Google Maps Map ID (vector); for a fully restyled palette the
+  // user would create a new Map ID in Google Cloud Console and swap
+  // NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID — code-only changes can't override the
+  // map renderer when a Map ID is set (inline `styles` is ignored).
   const mapInnerClass = isHome
-    ? "relative h-[42vh] min-h-[280px] overflow-hidden bg-white/85 shadow-[0_16px_40px_-24px_rgba(15,23,42,0.30)] backdrop-blur md:rounded-2xl lg:h-[560px] ring-1 ring-emerald-100/40"
-    : "relative h-[40vh] min-h-[260px] overflow-hidden border border-white/80 bg-white/85 shadow-[0_16px_40px_-24px_rgba(15,23,42,0.30)] backdrop-blur md:rounded-2xl lg:h-[calc(100vh-7rem)]";
+    ? "relative h-[42vh] min-h-[280px] overflow-hidden bg-white/85 ring-1 ring-emerald-100/40 shadow-[0_2px_8px_rgba(15,23,42,0.04),0_24px_56px_-22px_rgba(15,23,42,0.24),inset_0_1px_0_rgba(255,255,255,0.9)] backdrop-blur md:rounded-2xl lg:h-[560px]"
+    : "relative h-[40vh] min-h-[260px] overflow-hidden bg-white/85 ring-1 ring-emerald-100/40 shadow-[0_2px_10px_rgba(15,23,42,0.05),0_28px_64px_-22px_rgba(15,23,42,0.26),inset_0_1px_0_rgba(255,255,255,0.92)] backdrop-blur md:rounded-2xl lg:h-[calc(100vh-7rem)]";
 
   return (
     <ActiveStopProvider>
