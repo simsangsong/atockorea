@@ -264,7 +264,15 @@ export default function AIRecommendPanel({
     if (!autoRunRequested) return;
     if (autoRunFiredRef.current) return;
     if (loading) return;
-    const combined = buildCombinedIntent();
+    // Read the intent from the reactive search params (route-consistent)
+    // rather than only `buildCombinedIntent()`, whose `intent` state is seeded
+    // from `window.location.search` in a useState initializer. On a soft
+    // client navigation from the landing planner that seed can be empty,
+    // making `combined` < 2 chars so the auto-run silently no-ops and the user
+    // has to press the CTA again (the reported bug). The URL `intent` param is
+    // always set by the landing build-submit, so prefer it.
+    const urlIntent = (sp?.get("intent") ?? "").trim();
+    const combined = urlIntent.length >= 2 ? urlIntent : buildCombinedIntent();
     if (combined.trim().length < 2) return;
     autoRunFiredRef.current = true;
     // Strip autoRun from URL so refresh/patch doesn't re-fire.

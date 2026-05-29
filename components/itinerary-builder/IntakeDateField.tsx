@@ -211,7 +211,7 @@ export default function IntakeDateField({
             animate={{ opacity: 1, y: 0 }}
             exit={reduce ? { opacity: 0 } : { opacity: 0, y: -6 }}
             transition={{ duration: reduce ? 0 : 0.18, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute left-0 top-full z-50 mt-2 w-[18rem] max-w-[calc(100vw-2rem)] rounded-2xl border border-slate-200/70 bg-white p-3 shadow-[0_12px_40px_-12px_rgba(15,23,42,0.25)]"
+            className="absolute left-0 top-full z-50 mt-2 w-[20rem] max-w-[calc(100vw-2rem)] rounded-2xl border border-slate-200/70 bg-white p-3.5 shadow-[0_16px_48px_-16px_rgba(15,23,42,0.28)]"
           >
             {/* Type-in row */}
             <input
@@ -252,20 +252,23 @@ export default function IntakeDateField({
               </button>
             </div>
 
-            {/* Weekday header */}
-            <div className="grid grid-cols-7 gap-0.5 px-1">
+            {/* Weekday header — each cell fills its grid column (min-w-0 +
+                centered) so CJK two-char labels never collide. */}
+            <div className="grid grid-cols-7 gap-1 px-0.5">
               {weekdays.map((w, i) => (
                 <div
                   key={i}
-                  className="py-1 text-center text-[11px] font-medium text-slate-400"
+                  className="flex min-w-0 items-center justify-center py-1 text-[11px] font-semibold tracking-wide text-slate-400"
                 >
                   {w}
                 </div>
               ))}
             </div>
 
-            {/* Day grid */}
-            <div className="grid grid-cols-7 gap-0.5 px-1">
+            {/* Day grid — each day fills its grid cell (aspect-square w-full)
+                rather than a fixed 36px circle, so the numbers can never
+                overlap regardless of popover width. */}
+            <div className="mt-0.5 grid grid-cols-7 gap-1 px-0.5">
               {cells.map((d) => {
                 const iso = toISO(d);
                 const inMonth = d.getMonth() === view.getMonth();
@@ -279,12 +282,12 @@ export default function IntakeDateField({
                     disabled={disabled}
                     onClick={() => pick(d)}
                     className={cn(
-                      "mx-auto flex h-9 w-9 items-center justify-center rounded-full text-sm transition-colors duration-150",
+                      "flex aspect-square w-full items-center justify-center rounded-full text-[13px] tabular-nums transition-colors duration-150",
                       disabled && "cursor-not-allowed text-slate-300",
                       !disabled && !isSel && "text-slate-700 hover:bg-slate-100",
                       !inMonth && !isSel && !disabled && "text-slate-400",
-                      isSel && "bg-slate-900 font-semibold text-white",
-                      isToday && !isSel && "ring-1 ring-inset ring-slate-300"
+                      isSel && "bg-slate-900 font-semibold text-white shadow-[0_2px_8px_rgba(15,23,42,0.28)]",
+                      isToday && !isSel && "font-semibold text-slate-900 ring-1 ring-inset ring-slate-300"
                     )}
                   >
                     {d.getDate()}

@@ -1064,7 +1064,8 @@
           "seoulBuildTitle": "서울 지도 빌더는 곧 추가됩니다.",
           "seoulBuildBody": "원하시는 장소를 알려주시면 일정을 직접 만들어 드릴게요.",
           "seoulBuildCta": "서울 하루 요청하기",
-          "customizeThisDay": "{destination}에서 나만의 하루 만들기"
+          "customizeThisDay": "{destination}에서 나만의 하루 만들기",
+          "buildMissingError": "다음 항목을 입력해 주세요: {fields}"
         },
         "season": {
           "springBlossom": "벚꽃 시즌",
