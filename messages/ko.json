@@ -2364,6 +2364,8 @@
       "pickupLabel": "제주 픽업 지역",
       "cartHeader": "선택한 장소",
       "andNMore": "+{n}곳",
+      "guideCuratedTitle": "가이드 추천 일정",
+      "guideCuratedNotice": "선택한 장소가 없어요 — 날짜·인원·취향을 바탕으로 가이드가 동선을 설계해 드리며, 아래 표시된 기본 요금이 적용됩니다.",
       "pricing": {
         "title": "예상 금액",
         "total": "예상 합계",
@@ -2447,7 +2449,27 @@
       "inCartBadge": "일정 추가됨 · #{number}",
       "details": "상세 정보",
       "added": "추가됨",
-      "add": "추가"
+      "add": "추가",
+      "noneInFilter": "이 필터에 맞는 장소가 없어요 — 필터를 해제하면 전체가 보여요."
+    },
+    "filter": {
+      "label": "유형별 필터",
+      "all": "전체",
+      "groups": {
+        "temple": "사찰",
+        "heritage": "유적·문화재",
+        "landmark": "랜드마크",
+        "nature": "자연",
+        "waterfall": "폭포",
+        "beach": "해변",
+        "coastal": "해안",
+        "village": "마을",
+        "food_market": "미식·시장",
+        "cafe": "카페",
+        "indoor_culture": "박물관·예술",
+        "theme_park": "테마파크",
+        "other": "기타"
+      }
     },
     "ai": {
       "eyebrow": "AI가 추천하는 나만의 하루",
@@ -2478,7 +2500,9 @@
       "emptyHeadline": "한 곳씩 골라 하루를 완성하세요",
       "emptyBody": "지도나 추천 목록에서 장소를 추가하면 여기에 동선 순서대로 정리됩니다.",
       "lookAtMap": "지도로 돌아가기",
-      "driveBetween": "{duration} 이동"
+      "driveBetween": "{duration} 이동",
+      "guideCurateCta": "가이드에게 일정 맡기기",
+      "guideCurateHint": "어디로 갈지 모르겠다면, 기본 요금으로 예약하면 가이드가 동선을 직접 설계해 드려요 — 카드는 안전하게 보관되고 투어 당일에 결제됩니다."
     },
     "dmz": {
       "title": "DMZ 프라이빗 투어",

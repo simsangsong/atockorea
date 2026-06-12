@@ -2364,6 +2364,8 @@
       "pickupLabel": "済州の送迎エリア",
       "cartHeader": "選んだスポット",
       "andNMore": "他{n}件",
+      "guideCuratedTitle": "ガイドおまかせプラン",
+      "guideCuratedNotice": "スポットが選択されていません — 日程・人数・ご希望をもとにガイドがルートを設計します。料金は下記の基本料金です。",
       "pricing": {
         "title": "概算料金",
         "total": "概算合計",
@@ -2447,7 +2449,27 @@
       "inCartBadge": "追加済み · #{number}",
       "details": "詳細",
       "added": "追加済み",
-      "add": "追加"
+      "add": "追加",
+      "noneInFilter": "この絞り込みに合うスポットがありません — 解除するとすべて表示されます。"
+    },
+    "filter": {
+      "label": "タイプで絞り込む",
+      "all": "すべて",
+      "groups": {
+        "temple": "寺院",
+        "heritage": "史跡",
+        "landmark": "ランドマーク",
+        "nature": "自然",
+        "waterfall": "滝",
+        "beach": "ビーチ",
+        "coastal": "海岸",
+        "village": "村・集落",
+        "food_market": "グルメ・市場",
+        "cafe": "カフェ",
+        "indoor_culture": "美術館・博物館",
+        "theme_park": "テーマパーク",
+        "other": "その他"
+      }
     },
     "ai": {
       "eyebrow": "AIがあなたの1日を提案",
@@ -2478,7 +2500,9 @@
       "emptyHeadline": "一か所ずつ、あなたの一日を組み立てましょう",
       "emptyBody": "地図や厳選リストからスポットを追加すると、ここにルート順に並びます。",
       "lookAtMap": "地図に戻る",
-      "driveBetween": "{duration} 移動"
+      "driveBetween": "{duration} 移動",
+      "guideCurateCta": "ガイドにおまかせ",
+      "guideCurateHint": "行き先が決まらなくても大丈夫。基本料金で予約すれば、ガイドがルートを設計します。カードは安全に保管され、ツアー当日に決済されます。"
     },
     "dmz": {
       "title": "DMZプライベートツアー",

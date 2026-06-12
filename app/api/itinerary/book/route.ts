@@ -94,9 +94,11 @@ export async function POST(request: Request) {
   const poiKeys: string[] = poiKeysRaw
     .filter((k): k is string => typeof k === "string" && k.trim().length > 0)
     .slice(0, 30);
-  if (track !== "dmz" && poiKeys.length === 0) {
-    return badRequest("poi_keys", "must include at least 1 stop");
-  }
+  // Empty cart is allowed: the customer books WITHOUT picking stops and lets
+  // the guide curate the day (`guide_curated`). Priced at the deterministic
+  // base (no sub-region surcharges). DMZ is excluded — it's a FIXED itinerary
+  // that is stop-less by design, not a guide-curated custom day.
+  const guideCurated = track !== "dmz" && poiKeys.length === 0;
 
   // ── Optional fields with safe defaults ───────────────────────────────────
   const contactName = typeof body.contact_name === "string" ? body.contact_name.trim() : null;
@@ -291,6 +293,7 @@ export async function POST(request: Request) {
     locale,
     sourceUrl,
     price,
+    guideCurated,
   });
 
   const { data: inserted, error: insertError } = await supabase
@@ -316,6 +319,8 @@ export async function POST(request: Request) {
     pax: partySize,
     totalKrw: price.total,
     leadDays: leadDaysFrom(requestedDate),
+    guideCurated,
+    stops: poiKeys.length,
   });
 
   return NextResponse.json({

@@ -2364,6 +2364,8 @@
       "pickupLabel": "Jeju pickup area",
       "cartHeader": "Your stops",
       "andNMore": "+{n} more",
+      "guideCuratedTitle": "Guide-curated day",
+      "guideCuratedNotice": "You haven't picked any stops — our guide will design the route from your dates, group, and interests, at the base price shown below.",
       "pricing": {
         "title": "Estimated price",
         "total": "Estimated total",
@@ -2447,7 +2449,27 @@
       "inCartBadge": "In cart · #{number}",
       "details": "Details",
       "added": "Added",
-      "add": "Add"
+      "add": "Add",
+      "noneInFilter": "No stops match this filter — clear it to see every stop."
+    },
+    "filter": {
+      "label": "Filter by type",
+      "all": "All",
+      "groups": {
+        "temple": "Temples",
+        "heritage": "Heritage",
+        "landmark": "Landmarks",
+        "nature": "Nature",
+        "waterfall": "Waterfalls",
+        "beach": "Beaches",
+        "coastal": "Coast",
+        "village": "Villages",
+        "food_market": "Food & markets",
+        "cafe": "Cafés",
+        "indoor_culture": "Museums & art",
+        "theme_park": "Theme parks",
+        "other": "More"
+      }
     },
     "ai": {
       "eyebrow": "Let AI suggest your day",
@@ -2478,7 +2500,9 @@
       "emptyHeadline": "Build your day, stop by stop",
       "emptyBody": "Add stops from the map or the curated list — they'll line up here as your route.",
       "lookAtMap": "Back to the map",
-      "driveBetween": "{duration} drive"
+      "driveBetween": "{duration} drive",
+      "guideCurateCta": "Let our guide plan it",
+      "guideCurateHint": "Not sure where to go? Book the day at the base price and our guide designs the route for you — card saved securely, captured on tour day."
     },
     "dmz": {
       "title": "DMZ Private Tour",

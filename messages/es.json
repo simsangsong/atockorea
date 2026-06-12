@@ -2364,6 +2364,8 @@
       "pickupLabel": "Zona de recogida en Jeju",
       "cartHeader": "Tus paradas",
       "andNMore": "+{n} más",
+      "guideCuratedTitle": "Día diseñado por el guía",
+      "guideCuratedNotice": "No has elegido ningún lugar: nuestro guía diseñará la ruta según tus fechas, grupo e intereses, al precio base que se muestra abajo.",
       "pricing": {
         "title": "Precio estimado",
         "total": "Total estimado",
@@ -2447,7 +2449,27 @@
       "inCartBadge": "En tu ruta · #{number}",
       "details": "Detalles",
       "added": "Añadido",
-      "add": "Añadir"
+      "add": "Añadir",
+      "noneInFilter": "Ningún lugar coincide con este filtro: bórralo para ver todos."
+    },
+    "filter": {
+      "label": "Filtrar por tipo",
+      "all": "Todo",
+      "groups": {
+        "temple": "Templos",
+        "heritage": "Patrimonio",
+        "landmark": "Lugares icónicos",
+        "nature": "Naturaleza",
+        "waterfall": "Cascadas",
+        "beach": "Playas",
+        "coastal": "Costa",
+        "village": "Pueblos",
+        "food_market": "Comida y mercados",
+        "cafe": "Cafés",
+        "indoor_culture": "Museos y arte",
+        "theme_park": "Parques temáticos",
+        "other": "Más"
+      }
     },
     "ai": {
       "eyebrow": "Deja que la IA sugiera tu día",
@@ -2478,7 +2500,9 @@
       "emptyHeadline": "Arma tu día, parada por parada",
       "emptyBody": "Agrega paradas desde el mapa o la lista seleccionada — se alinearán aquí según tu ruta.",
       "lookAtMap": "Volver al mapa",
-      "driveBetween": "{duration} en auto"
+      "driveBetween": "{duration} en auto",
+      "guideCurateCta": "Que lo planee nuestro guía",
+      "guideCurateHint": "¿No sabes a dónde ir? Reserva el día al precio base y nuestro guía diseña la ruta — tarjeta guardada de forma segura, se cobra el día del tour."
     },
     "dmz": {
       "title": "Tour Privado de la DMZ",

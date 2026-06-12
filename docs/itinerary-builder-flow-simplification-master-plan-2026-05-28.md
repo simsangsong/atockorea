@@ -1158,3 +1158,32 @@ Live verification of the merged Phase 11 surface surfaced four issues:
 | Hero card crowding | Limit to 3 fields, compact `text-[11px] md:text-caption` scale matching existing chip row. |
 | User changes inputs in PlannerTopRail after auto-run | URL change re-renders builder; matcher does NOT re-fire (D28). Cart stays as last accepted. |
 
+## Q · Phase 16 — De-AI the builder surface (manual compose + category filter + guide-curated booking) (2026-06-12)
+
+**User complaint (verbatim, paraphrased):** the AI matcher is "아직 이른" (too early) for the current business stage — its recommendations feel inaccurate AND it costs LLM tokens. Wants: pick stops directly from a map + list, an optional lightweight filter, or just book empty and let the guide plan.
+
+**Root-cause diagnosis (verified in code):** the ONLY LLM call in the builder flow is `parseQuery(intent)` (Gemini Haiku) in `app/api/itinerary/match/route.ts:77`. Scoring (`scorePoi`), sequencing (TSP), and pricing are all deterministic (zero token). Both the token cost AND the "inaccurate" feel trace to that single free-text parse step. So removing the matcher from the surface solves both at once.
+
+### Q.1 Binding decisions
+| ID | Decision | Reason |
+|---|---|---|
+| D41 | **Remove `AIRecommendPanel` + `/api/itinerary/match` from the builder surface** (component + endpoint PRESERVED in the tree, just not rendered). | De-AI per user; keep the engine for a future re-introduction once POI data matures. |
+| D42 | **Replace it with a deterministic client-side category filter** (`CategoryFilterBar`) over the catalog grid, driven by the existing `BUILDER_POI_META.categoryGroup` taxonomy (`resolveBuilderPoiMeta`). Zero tokens, zero network. The raw `match_pois.category` column is free-text marketing copy (one unique string per POI) and is NOT a usable facet — the taxonomy enum is. | An honest "filter the list by what it is" beats an opaque AI guess; reuses existing taxonomy. |
+| D43 | **Empty cart is bookable** — the customer books WITHOUT picking stops and the guide curates the day at the deterministic base price (`itinerary.guide_curated = true`). DMZ excluded (fixed product). Reachable via the empty-timeline CTA + a notice in the booking modal. | User wants a no-effort path; the base price is deterministic so the card-hold commitment is well-defined. Keeps ONE pipe (booking) — does NOT revive the deleted quote/email pipe (D4/D19). |
+
+### Q.2 What shipped
+- `lib/booking/createBuilderBooking.ts` — `guideCurated` input + `itinerary.guide_curated` jsonb field (defaults to `poiKeys.length === 0`).
+- `app/api/itinerary/book/route.ts` — dropped the "≥1 stop" guard; empty cart allowed; `guideCurated = track !== "dmz" && poiKeys.length === 0`; flag on the booking + telemetry.
+- `components/itinerary-builder/CategoryFilterBar.tsx` — NEW; chips from `categoryGroup`, multi-select, counts, "All" reset; hides when ≤1 group.
+- `components/itinerary-builder/BuilderShell.tsx` — removed AI panel + preview state; added `selectedGroups` filter + `filteredPois`; `handleGuideCurate` opens the modal with an empty cart; live price + timeline rail unchanged.
+- `components/itinerary-builder/POICatalogGrid.tsx` — `filterSlot` prop (chips under the header) + empty-filter message.
+- `components/itinerary-builder/ResultTimeline.tsx` — `onGuideCurate` → guide-curate CTA + hint in the empty state.
+- `components/itinerary-builder/QuoteModal.tsx` — empty-cart submit enabled; guide-curated notice replaces the cart strip.
+- i18n: new `itineraryBuilder.filter.*`, `grid.noneInFilter`, `timeline.guideCurate*`, `quote.guideCurated*` across all 6 locales (hand-authored to avoid the translate-script key-drop).
+
+### Q.3 Acceptance (verified 2026-06-12)
+- `tsc --noEmit` clean · `npm run build` green (all `/itinerary-builder*` routes present) · `createBuilderBooking` jest 15/15 (incl. 3 new guide-curated cases).
+- Browser (worktree dev :3316): AI panel absent; filter chips render with counts (사찰3 / 자연3 / 미식·시장3 …); filtering 20 → 자연 3 → +해안 5 → 전체 20; guide-curate CTA opens the booking modal with empty cart, base price shown, submit ENABLED, "가이드 추천 일정" notice. (Map tiles blank only due to the `localhost` GMaps referrer allowlist — env, not code.)
+
+**Not done (parked):** `/api/itinerary/match` + `AIRecommendPanel` + `lib/itinerary-match-engine/*` retained but unused; `?intent=` / `?autoRun=1` become inert (no auto-build). Pricing policy, DMZ, cruise budget untouched.
+

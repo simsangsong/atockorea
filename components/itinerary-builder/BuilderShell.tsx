@@ -21,11 +21,12 @@ import {
 import POICatalogMap from "./POICatalogMap";
 import ResultTimeline from "./ResultTimeline";
 import QuoteModal from "./QuoteModal";
-import AIRecommendPanel from "./AIRecommendPanel";
 import POICatalogGrid from "./POICatalogGrid";
 import POIDetailModal from "./POIDetailModal";
 import PlannerTopRail from "./PlannerTopRail";
 import LivePriceCard from "./LivePriceCard";
+import CategoryFilterBar, { poiGroup } from "./CategoryFilterBar";
+import type { PoiCategoryGroup } from "@/lib/itinerary-match-engine/poi-taxonomy";
 
 interface Props {
   region: RegionSlug;
@@ -68,16 +69,16 @@ interface Props {
  */
 export default function BuilderShell({ region, pois, center, mapId, apiKey, placement = "page" }: Props) {
   const { locale } = useI18n();
-  const { cart, add, remove, reorder, has, clear } = useCart();
+  const { cart, add, remove, reorder, has } = useCart();
   const searchParams = useSearchParams();
   const [quoteOpen, setQuoteOpen] = useState(false);
   const [focusedPoiKey, setFocusedPoiKey] = useState<string | null>(null);
   // R1 — single shared detail drawer for BOTH the timeline and the catalog
   // grid (RR2/RR-R3). Lifted here so there is exactly one modal instance.
   const [detailPoi, setDetailPoi] = useState<MatchPoiRow | null>(null);
-  // R4 — AI-matched stops projected onto the map as a preview BEFORE the user
-  // presses Apply, so they can see where the suggested stops actually are.
-  const [previewKeys, setPreviewKeys] = useState<string[] | null>(null);
+  // Category filter — deterministic, client-side facet over the catalog grid
+  // (replaces the AI matcher). Empty = show all. See CategoryFilterBar.
+  const [selectedGroups, setSelectedGroups] = useState<Set<PoiCategoryGroup>>(new Set());
   const resetViewRef = useRef<(() => void) | null>(null);
 
   // Bump key tracker so repeated clicks on the same POI re-open its InfoWindow
@@ -87,19 +88,15 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey, plac
     requestAnimationFrame(() => setFocusedPoiKey(key));
   }, []);
 
-  const acceptRecommendation = useCallback(
-    (poiKeys: string[]) => {
-      // Replace the cart with the recommended sequence
-      clear();
-      // The preview is now the real cart — drop the preview overlay.
-      setPreviewKeys(null);
-      // Defer the bulk-add so the URL state has a chance to clear first
-      requestAnimationFrame(() => {
-        reorder(poiKeys);
-      });
-    },
-    [clear, reorder]
-  );
+  const toggleGroup = useCallback((group: PoiCategoryGroup) => {
+    setSelectedGroups((prev) => {
+      const next = new Set(prev);
+      if (next.has(group)) next.delete(group);
+      else next.add(group);
+      return next;
+    });
+  }, []);
+  const clearGroups = useCallback(() => setSelectedGroups(new Set()), []);
 
   // Phase 4b — cruise track time budget: if `?track=cruise&hours=N` is set,
   // CartPanel renders the budget + warning when total exceeds.
@@ -111,7 +108,6 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey, plac
     return Math.round(hours * 60);
   }, [searchParams]);
   const matcherTrack = searchParams?.get("track") ?? null;
-  const matcherOrigin = searchParams?.get("origin") ?? null;
   const isDmz = matcherTrack === "dmz";
   const isCruise = matcherTrack === "cruise";
   const dmzT = useTranslations("itineraryBuilder.dmz");
@@ -120,6 +116,13 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey, plac
     () => pois.map((poi) => localizePoiRow(poi, activeLocale)),
     [activeLocale, pois]
   );
+
+  // Category-filtered view for the catalog grid (empty selection = all). The
+  // map keeps every pin for geographic context; only the browse list filters.
+  const filteredPois = useMemo(() => {
+    if (selectedGroups.size === 0) return localizedPois;
+    return localizedPois.filter((poi) => selectedGroups.has(poiGroup(poi)));
+  }, [localizedPois, selectedGroups]);
 
   // Phase 10.3 D17 — live price lifted from QuoteModal into the shell so the
   // PlannerTopRail's LivePriceCard and the QuoteModal both render the SAME
@@ -163,6 +166,10 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey, plac
     if (cart.length === 0) return;
     setQuoteOpen(true);
   }, [cart.length]);
+
+  // Guide-curated path — open the booking modal with an empty cart so the
+  // guide plans the day at the base price. Reachable from the empty timeline.
+  const handleGuideCurate = useCallback(() => setQuoteOpen(true), []);
 
   // DMZ is a fixed-price-by-pax product — no POI building. Short-circuit the
   // map/cart builder and show a product panel that opens the quote modal in
@@ -269,7 +276,7 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey, plac
                 mapId={mapId}
                 apiKey={apiKey}
                 cart={cart}
-                previewKeys={previewKeys}
+                previewKeys={null}
                 onAdd={add}
                 onRemove={remove}
                 hasInCart={has}
@@ -304,18 +311,10 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey, plac
               with `<ResultTimeline>`, which is always-visible: scrolls
               normally on mobile, sticks alongside the map on lg+. */}
           <div className="lg:w-[400px] lg:flex-shrink-0 lg:overflow-y-auto lg:self-stretch">
-            <AIRecommendPanel
-              region={region}
-              pois={localizedPois}
-              onAccept={acceptRecommendation}
-              onPreview={setPreviewKeys}
-              track={matcherTrack}
-              origin={matcherOrigin}
-            />
             {/* Phase 10.3 — always-visible live price (cart-aware) so users see
                 the number before clicking "Get quote". Same component, same
                 inputs the QuoteModal renders → one number, one truth. */}
-            <div className="mb-4 px-4 md:px-0">
+            <div className="mb-4 px-4 pt-4 md:px-0">
               <LivePriceCard price={livePrice} isJeju={region === "jeju"} />
             </div>
             <ResultTimeline
@@ -324,6 +323,7 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey, plac
               onRemove={remove}
               onReorder={reorder}
               onGetQuote={handleGetQuote}
+              onGuideCurate={handleGuideCurate}
               cruiseBudgetMinutes={cruiseBudgetMinutes}
               onOpenDetail={setDetailPoi}
               autoQuotable={livePrice.autoQuotable}
@@ -339,12 +339,20 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey, plac
           route if standalone catalog browsing is needed again.) */}
       {!isHome ? (
         <POICatalogGrid
-          pois={localizedPois}
+          pois={filteredPois}
           cart={cart}
           onAdd={add}
           onRemove={remove}
           onFocus={focusPoi}
           onOpenDetail={setDetailPoi}
+          filterSlot={
+            <CategoryFilterBar
+              pois={localizedPois}
+              selected={selectedGroups}
+              onToggle={toggleGroup}
+              onClear={clearGroups}
+            />
+          }
         />
       ) : null}
 

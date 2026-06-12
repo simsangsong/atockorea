@@ -17,6 +17,9 @@ interface Props {
   onFocus: (key: string) => void;
   /** R1 — open the shared detail drawer lifted to BuilderShell (RR2/RR-R3). */
   onOpenDetail: (poi: MatchPoiRow) => void;
+  /** Optional filter UI (category chips) rendered under the header, above the
+   *  grid. Passed from BuilderShell so the grid stays presentation-only. */
+  filterSlot?: React.ReactNode;
 }
 
 /**
@@ -35,7 +38,7 @@ interface Props {
  * (V5 — sequence identity), Details button → onOpenDetail drawer (R1/RR2),
  * Add/Remove cart wiring, h-full card stretch.
  */
-export default function POICatalogGrid({ pois, cart, onAdd, onRemove, onFocus, onOpenDetail }: Props) {
+export default function POICatalogGrid({ pois, cart, onAdd, onRemove, onFocus, onOpenDetail, filterSlot }: Props) {
   const reveal = useRevealContainerProps();
   const t = useTranslations("itineraryBuilder.grid");
 
@@ -67,6 +70,21 @@ export default function POICatalogGrid({ pois, cart, onAdd, onRemove, onFocus, o
             {t("hint")}
           </p>
         </motion.header>
+
+        {/* Category filter chips (deterministic facet) — sits between the
+            header and the grid so it reads as "filter this list". */}
+        {filterSlot ? (
+          <motion.div variants={REVEAL_ITEM_VARIANTS}>{filterSlot}</motion.div>
+        ) : null}
+
+        {ordered.length === 0 ? (
+          <motion.p
+            variants={REVEAL_ITEM_VARIANTS}
+            className="rounded-card bg-slate-50 px-4 py-8 text-center text-caption text-slate-500 ring-1 ring-slate-200/70"
+          >
+            {t("noneInFilter")}
+          </motion.p>
+        ) : null}
 
         {/* Responsive grid — 2-col mobile, 2/3/4-col at md/lg/xl.
             Replaces the Phase D horizontal snap rail: a browse grid for

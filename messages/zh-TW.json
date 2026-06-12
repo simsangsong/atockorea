@@ -2364,6 +2364,8 @@
       "pickupLabel": "濟州接送區域",
       "cartHeader": "您選擇的景點",
       "andNMore": "+{n}個",
+      "guideCuratedTitle": "導遊定製行程",
+      "guideCuratedNotice": "你還沒有選擇景點 — 導遊會根據你的日期、人數和喜好規劃路線，價格為下方顯示的基礎價格。",
       "pricing": {
         "title": "預估價格",
         "total": "預估總計",
@@ -2447,7 +2449,27 @@
       "inCartBadge": "已加入行程 · #{number}",
       "details": "詳情",
       "added": "已加入",
-      "add": "加入"
+      "add": "加入",
+      "noneInFilter": "沒有符合此篩選的景點 — 清除篩選即可查看全部。"
+    },
+    "filter": {
+      "label": "依類型篩選",
+      "all": "全部",
+      "groups": {
+        "temple": "寺院",
+        "heritage": "古蹟",
+        "landmark": "地標",
+        "nature": "自然",
+        "waterfall": "瀑布",
+        "beach": "海灘",
+        "coastal": "海岸",
+        "village": "村落",
+        "food_market": "美食與市場",
+        "cafe": "咖啡廳",
+        "indoor_culture": "博物館與藝術",
+        "theme_park": "主題樂園",
+        "other": "更多"
+      }
     },
     "ai": {
       "eyebrow": "讓AI為您建議行程",
@@ -2478,7 +2500,9 @@
       "emptyHeadline": "逐站打造你的行程",
       "emptyBody": "從地圖或精選清單新增景點，它們會依路線順序排列在這裡。",
       "lookAtMap": "返回地圖",
-      "driveBetween": "{duration} 車程"
+      "driveBetween": "{duration} 車程",
+      "guideCurateCta": "交給導遊規劃",
+      "guideCurateHint": "還沒想好去哪裡？以基礎價格預訂，導遊會為你規劃路線 — 卡片安全保存，行程當天扣款。"
     },
     "dmz": {
       "title": "DMZ私人之旅",
