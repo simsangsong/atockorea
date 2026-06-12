@@ -40,6 +40,16 @@ interface Props {
  */
 export default function POICatalogGrid({ pois, cart, onAdd, onRemove, onFocus, onOpenDetail, filterSlot }: Props) {
   const reveal = useRevealContainerProps();
+  // The POI list is primary content that MUST always be visible — it cannot be
+  // gated behind a scroll-reveal. On mobile the grid sits below the sticky map,
+  // so the shared `whileInView` (trigger once at 15% visibility) could leave the
+  // cards stuck at opacity:0 ("no POIs"). Animate on MOUNT instead (same fix
+  // pattern as IntakeForm): keep the staggered fade-in, drop the scroll gate.
+  const revealMount = {
+    initial: reveal.initial,
+    animate: "visible" as const,
+    variants: reveal.variants,
+  };
   const t = useTranslations("itineraryBuilder.grid");
 
   // Map poi_key → 1-indexed cart position; null when not in cart.
@@ -55,7 +65,7 @@ export default function POICatalogGrid({ pois, cart, onAdd, onRemove, onFocus, o
 
   return (
     <section className="relative overflow-hidden border-t border-slate-200/60 px-4 py-6 md:px-6 md:py-8">
-      <motion.div {...reveal} className="relative mx-auto max-w-7xl">
+      <motion.div {...revealMount} className="relative mx-auto max-w-7xl">
         <motion.header
           variants={REVEAL_ITEM_VARIANTS}
           className="mb-4 flex items-baseline justify-between md:mb-5"
