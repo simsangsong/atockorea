@@ -171,6 +171,43 @@ describe("createBuilderBooking — Phase 10 D11/D12/D17/D25", () => {
     expect(row.number_of_guests).toBe(1);
   });
 
+  describe("guide-curated empty cart", () => {
+    it("flags guide_curated when no stops are picked (private)", () => {
+      const price = quote({
+        track: "private",
+        region: "busan",
+        guideLanguageTier: "english",
+        durationHours: 8,
+        pax: 2,
+        poiRegions: [],
+      });
+      const row = createBuilderBooking(makeBaselineInput({ poiKeys: [], price }));
+      expect(row.itinerary.guide_curated).toBe(true);
+      expect(row.itinerary.poi_keys).toEqual([]);
+      // Base price still computes (no sub-region surcharges with an empty cart).
+      expect(row.final_price).toBe(340000);
+    });
+
+    it("does NOT flag guide_curated when stops are picked", () => {
+      const row = createBuilderBooking(makeBaselineInput());
+      expect(row.itinerary.guide_curated).toBe(false);
+    });
+
+    it("explicit guideCurated=false wins over the empty-cart default (DMZ)", () => {
+      const price = quote({
+        track: "dmz",
+        region: "seoul",
+        guideLanguageTier: "english",
+        durationHours: 0,
+        pax: 7,
+      });
+      const row = createBuilderBooking(
+        makeBaselineInput({ region: "seoul", track: "dmz", durationHours: 0, poiKeys: [], pax: 7, price, guideCurated: false }),
+      );
+      expect(row.itinerary.guide_curated).toBe(false);
+    });
+  });
+
   describe("audit fixes 2026-05-29", () => {
     it("audit fix #2 — NaN pax never reaches the DB column", () => {
       const row = createBuilderBooking(makeBaselineInput({ pax: NaN as unknown as number }));

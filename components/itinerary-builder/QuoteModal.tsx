@@ -218,6 +218,19 @@ export default function QuoteModal({
             onSubmit={handleSubmit}
             className="max-h-[calc(92vh-88px)] space-y-4 overflow-y-auto p-5 md:p-6"
           >
+            {/* Guide-curated booking — no stops picked. Replace the cart strip
+                with a short notice so the customer knows the guide plans the
+                day at the shown base price. (DMZ is always stop-less by design,
+                so this notice is only for private/cruise empty carts.) */}
+            {!isDmz && cartThumbs.length === 0 ? (
+              <div className="rounded-xl bg-emerald-50/50 px-3.5 py-3 ring-1 ring-emerald-100">
+                <p className="text-caption font-bold text-slate-800">{t("guideCuratedTitle")}</p>
+                <p className="mt-1 text-micro leading-relaxed text-slate-600">
+                  {t("guideCuratedNotice")}
+                </p>
+              </div>
+            ) : null}
+
             {/* Cart thumbnail strip (skipped for DMZ — fixed itinerary) */}
             {!isDmz && cartThumbs.length > 0 ? (
               <div className="rounded-xl bg-slate-50 px-3 py-2.5 ring-1 ring-slate-200">
@@ -298,7 +311,7 @@ export default function QuoteModal({
 
             <button
               type="submit"
-              disabled={submitting || (!isDmz && cart.length === 0)}
+              disabled={submitting}
               className={`${homeBtnPrimary} inline-flex items-center justify-center gap-2 shadow-md disabled:cursor-not-allowed disabled:bg-slate-300 ${submitting ? "opacity-90" : ""}`}
             >
               {submitting ? (

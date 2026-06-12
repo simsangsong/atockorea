@@ -2364,6 +2364,8 @@
       "pickupLabel": "济州接送区域",
       "cartHeader": "您选择的景点",
       "andNMore": "+{n}个",
+      "guideCuratedTitle": "向导定制行程",
+      "guideCuratedNotice": "你还没有选择景点 — 向导会根据你的日期、人数和喜好来规划路线，价格为下方显示的基础价格。",
       "pricing": {
         "title": "预估价格",
         "total": "预估总计",
@@ -2447,7 +2449,27 @@
       "inCartBadge": "已在行程中 · #{number}",
       "details": "详情",
       "added": "已添加",
-      "add": "添加"
+      "add": "添加",
+      "noneInFilter": "没有符合此筛选的景点 — 清除筛选即可查看全部。"
+    },
+    "filter": {
+      "label": "按类型筛选",
+      "all": "全部",
+      "groups": {
+        "temple": "寺院",
+        "heritage": "古迹",
+        "landmark": "地标",
+        "nature": "自然",
+        "waterfall": "瀑布",
+        "beach": "海滩",
+        "coastal": "海岸",
+        "village": "村落",
+        "food_market": "美食与市场",
+        "cafe": "咖啡馆",
+        "indoor_culture": "博物馆与艺术",
+        "theme_park": "主题公园",
+        "other": "更多"
+      }
     },
     "ai": {
       "eyebrow": "让AI为您规划一日游",
@@ -2478,7 +2500,9 @@
       "emptyHeadline": "逐站打造你的行程",
       "emptyBody": "从地图或精选清单添加景点，它们会按路线顺序排列在这里。",
       "lookAtMap": "返回地图",
-      "driveBetween": "{duration} 车程"
+      "driveBetween": "{duration} 车程",
+      "guideCurateCta": "交给向导规划",
+      "guideCurateHint": "还没想好去哪里？以基础价格预订，向导会为你规划路线 — 卡片安全保存，行程当天扣款。"
     },
     "dmz": {
       "title": "DMZ私人之旅",

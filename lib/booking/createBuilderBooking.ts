@@ -52,6 +52,13 @@ export interface BuilderBookingInput {
   notes?: string | null;
   locale?: string | null;
   sourceUrl?: string | null;
+  /**
+   * Guide-curated booking — the customer booked WITHOUT picking any stops
+   * (`poiKeys` empty) and asked the guide to plan the day. Priced at the
+   * deterministic base (no sub-region surcharges). Flagged so ops knows the
+   * itinerary needs to be authored after booking.
+   */
+  guideCurated?: boolean;
   /** Authenticated user id, when available. Builder allows guest checkout (D5). */
   userId?: string | null;
   /** The authoritative server-recomputed price. */
@@ -90,6 +97,7 @@ export interface BuilderBookingRow {
     guide_language_tier: GuideLanguageTier;
     jeju_pickup_zone: JejuPickupZone | null;
     cruise_port: CruisePort | null;
+    guide_curated: boolean;
     breakdown: PriceLine[];
     vehicle: VehicleClass;
     tier: GuideLanguageTier;
@@ -175,6 +183,7 @@ export function createBuilderBooking(input: BuilderBookingInput): BuilderBooking
       guide_language_tier: input.guideLanguageTier,
       jeju_pickup_zone: input.jejuPickupZone ?? null,
       cruise_port: input.cruisePort ?? null,
+      guide_curated: input.guideCurated ?? input.poiKeys.length === 0,
       breakdown: input.price.lines,
       vehicle: input.price.vehicle,
       tier: input.price.tier,

@@ -43,6 +43,9 @@ interface Props {
   onRemove: (key: string) => void;
   onReorder: (next: string[]) => void;
   onGetQuote: () => void;
+  /** Guide-curated path — open the booking modal with an EMPTY cart so the
+   *  guide plans the day. Shown in the empty state when provided. */
+  onGuideCurate?: () => void;
   /** Phase 10.5b — when false the CTA flips to a mailto contact gate
    *  (14+ pax non-DMZ, >28 pax DMZ, Solati under min-hours). */
   autoQuotable?: boolean;
@@ -77,6 +80,7 @@ export default function ResultTimeline({
   onRemove,
   onReorder,
   onGetQuote,
+  onGuideCurate,
   cruiseBudgetMinutes,
   onOpenDetail,
   autoQuotable = true,
@@ -129,7 +133,14 @@ export default function ResultTimeline({
       </header>
 
       {isEmpty ? (
-        <EmptyState headline={tt("emptyHeadline")} body={tt("emptyBody")} lookLabel={tt("lookAtMap")} />
+        <EmptyState
+          headline={tt("emptyHeadline")}
+          body={tt("emptyBody")}
+          lookLabel={tt("lookAtMap")}
+          guideCurateLabel={onGuideCurate && autoQuotable ? tt("guideCurateCta") : undefined}
+          guideCurateHint={onGuideCurate && autoQuotable ? tt("guideCurateHint") : undefined}
+          onGuideCurate={autoQuotable ? onGuideCurate : undefined}
+        />
       ) : (
         <DndContext
           sensors={sensors}
@@ -377,10 +388,16 @@ function EmptyState({
   headline,
   body,
   lookLabel,
+  guideCurateLabel,
+  guideCurateHint,
+  onGuideCurate,
 }: {
   headline: string;
   body: string;
   lookLabel: string;
+  guideCurateLabel?: string;
+  guideCurateHint?: string;
+  onGuideCurate?: () => void;
 }) {
   // Phase 10.4.1 — premium re-do. Very-light mint card floating on the
   // stone-50 page background; NO border (user direction 2026-05-29).
@@ -405,6 +422,20 @@ function EmptyState({
         <ArrowLeft className="hidden h-3 w-3 lg:inline" aria-hidden />
         {lookLabel}
       </p>
+
+      {/* Guide-curated path — book without picking stops; the guide plans the
+          day at the deterministic base price. Sits under the "back to map"
+          nudge as the secondary, no-effort option. */}
+      {onGuideCurate && guideCurateLabel ? (
+        <div className="mt-6 border-t border-emerald-100/60 pt-5">
+          <button type="button" onClick={onGuideCurate} className={`${homeBtnPrimary} w-full`}>
+            {guideCurateLabel}
+          </button>
+          {guideCurateHint ? (
+            <p className="mt-2 text-micro leading-relaxed text-slate-500">{guideCurateHint}</p>
+          ) : null}
+        </div>
+      ) : null}
     </div>
   );
 }
