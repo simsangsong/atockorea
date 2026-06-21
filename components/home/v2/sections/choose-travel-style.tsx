@@ -47,6 +47,16 @@ export function ChooseTravelStyle() {
     analytics.homePartyStepperChange({ party: next });
   };
 
+  // Reform U5 — dynamic recommendation. The "Recommended" badge moves from the
+  // small-group card (curated value for small parties) to the private card once
+  // a private charter is actually cheaper than per-seat small-group pricing.
+  // Crossover N* = ceil(private vehicle ÷ small-group per-person) = honest, not
+  // hardcoded (e.g. 198/59 → 4: at 4+ private beats small-group on price too).
+  const sgCrossover = Math.ceil(
+    CHOOSE_STYLE_CARD_USD.private.list / featuredJoin.listPriceUsd,
+  );
+  const recommendPrivate = party >= sgCrossover;
+
   return (
     <section className="section-py-sm px-4 md:px-6 bg-slate-50">
       <motion.div {...reveal} className="max-w-4xl mx-auto">
@@ -89,10 +99,14 @@ export function ChooseTravelStyle() {
               <div className="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-white/10 border border-white/15 flex items-center justify-center">
                 <Users className="w-4 h-4 md:w-5 md:h-5 text-white" />
               </div>
-              <span className="text-micro font-bold text-amber-300 bg-white/5 border border-white/15 px-2.5 py-1 rounded-full tracking-wide flex items-center gap-1">
-                <Award className="w-3 h-3" />
-                {t("premium.v2.chooseStyle.recommended")}
-              </span>
+              {/* U5 — recommended badge shows here only while small-group is the
+                  better value (party below the private crossover). */}
+              {!recommendPrivate ? (
+                <span className="text-micro font-bold text-amber-300 bg-white/5 border border-white/15 px-2.5 py-1 rounded-full tracking-wide flex items-center gap-1">
+                  <Award className="w-3 h-3" />
+                  {t("premium.v2.chooseStyle.recommended")}
+                </span>
+              ) : null}
             </div>
 
             <h3 className="text-base md:text-lg font-bold text-white mb-1">
@@ -116,7 +130,7 @@ export function ChooseTravelStyle() {
                 <span className="text-micro text-white/70 font-semibold">{t("premium.v2.chooseStyle.perPerson")}</span>
               </div>
               {/* U1 live price — per-person × party = total for the group. */}
-              <p className="mt-1.5 text-micro font-semibold tabular-nums text-amber-200/90">
+              <p className="mt-1.5 text-caption font-semibold tabular-nums text-amber-200/90">
                 {t("premium.v2.chooseStyle.totalForParty", {
                   total: formatPrice(featuredJoin.listPriceUsd * party),
                   count: party,
@@ -152,9 +166,19 @@ export function ChooseTravelStyle() {
               <div className="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-emerald-50/70 border border-emerald-100/70 flex items-center justify-center">
                 <Car className="w-4 h-4 md:w-5 md:h-5 text-slate-700" />
               </div>
-              <span className="text-micro font-bold text-slate-700 bg-white/70 border border-emerald-100/60 px-2.5 py-1 rounded-full tracking-wide backdrop-blur-[2px]">
-                {t("premium.v2.chooseStyle.privateBadge")}
-              </span>
+              {/* U5 — the "Recommended" badge lands here once a private charter
+                  is the better value (party ≥ crossover); otherwise the neutral
+                  "Private" tag. */}
+              {recommendPrivate ? (
+                <span className="text-micro font-bold text-amber-700 bg-amber-50 border border-amber-200/80 px-2.5 py-1 rounded-full tracking-wide flex items-center gap-1">
+                  <Award className="w-3 h-3" />
+                  {t("premium.v2.chooseStyle.recommended")}
+                </span>
+              ) : (
+                <span className="text-micro font-bold text-slate-700 bg-white/70 border border-emerald-100/60 px-2.5 py-1 rounded-full tracking-wide backdrop-blur-[2px]">
+                  {t("premium.v2.chooseStyle.privateBadge")}
+                </span>
+              )}
             </div>
 
             <h3 className="text-base md:text-lg font-bold text-slate-900 mb-1">{t("premium.v2.chooseStyle.privateTitle")}</h3>
@@ -171,7 +195,7 @@ export function ChooseTravelStyle() {
                 <span className="text-slate-500 text-micro font-semibold">{t("premium.v2.chooseStyle.privatePerVehicle")}</span>
               </div>
               {/* U1 live price — one vehicle ÷ party = effective per-person. */}
-              <p className="mt-1.5 text-micro font-semibold tabular-nums text-emerald-700">
+              <p className="mt-1.5 text-caption font-semibold tabular-nums text-emerald-700">
                 {t("premium.v2.chooseStyle.perPersonForParty", {
                   perPerson: formatPrice(Math.round(CHOOSE_STYLE_CARD_USD.private.list / party)),
                   count: party,
@@ -227,7 +251,7 @@ export function ChooseTravelStyle() {
                 <span className="text-slate-500 text-micro font-semibold">{t("premium.v2.chooseStyle.busPerPerson")}</span>
               </div>
               {/* U1 live price — per-person × party = total for the group. */}
-              <p className="mt-1.5 text-micro font-semibold tabular-nums text-emerald-700">
+              <p className="mt-1.5 text-caption font-semibold tabular-nums text-emerald-700">
                 {t("premium.v2.chooseStyle.totalForParty", {
                   total: formatPrice(CHOOSE_STYLE_CARD_USD.bus.from * party),
                   count: party,
