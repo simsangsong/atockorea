@@ -76,12 +76,30 @@ export function ChooseTravelStyle() {
   // In Wave 0 it carries forward into the card links so the catalogue can
   // pre-fill group size (U9 continuity seed). Default 2, no gate.
   const [party, setParty] = useState(2);
-  const withParty = (href: string) =>
-    `${href}${href.includes("?") ? "&" : "?"}party=${party}`;
+  // Reform U6 — destination strip. `all` = no narrowing (default, non-gating);
+  // a city carries into the card links so /tours/list pre-filters by region
+  // (it reads ?destination=jeju|busan|seoul, ToursListClient).
+  const [destination, setDestination] = useState<"all" | "jeju" | "busan" | "seoul">("all");
+  const withParams = (href: string) => {
+    const sep = href.includes("?") ? "&" : "?";
+    let url = `${href}${sep}party=${party}`;
+    if (destination !== "all") url += `&destination=${destination}`;
+    return url;
+  };
   const handleStepperChange = (next: number) => {
     setParty(next);
     analytics.homePartyStepperChange({ party: next });
   };
+  const handleDestinationChange = (next: typeof destination) => {
+    setDestination(next);
+    if (next !== "all") analytics.homeDestinationCardClick({ destination: next });
+  };
+  const DESTINATIONS = [
+    { value: "all", labelKey: "premium.v2.chooseStyle.destAll" },
+    { value: "jeju", labelKey: "hero.destinations.jeju" },
+    { value: "busan", labelKey: "hero.destinations.busan" },
+    { value: "seoul", labelKey: "hero.destinations.seoul" },
+  ] as const;
 
   // Reform U5 — dynamic recommendation. The "Recommended" badge moves from the
   // small-group card (curated value for small parties) to the private card once
@@ -109,9 +127,44 @@ export function ChooseTravelStyle() {
           </h2>
         </motion.div>
 
-        {/* U2/V6 — party stepper. Sits directly above the cards so changing it
-            visibly drives the cards (live price lands Wave 1). */}
-        <motion.div variants={REVEAL_ITEM_VARIANTS} className="mb-6 md:mb-7">
+        {/* U6 + U2/V6 — destination + party strip directly above the cards.
+            Destination defaults to "all" (non-gating); changing it narrows the
+            card links + drives live price via party. */}
+        <motion.div
+          variants={REVEAL_ITEM_VARIANTS}
+          className="mb-6 flex flex-col items-center gap-4 md:mb-7 md:flex-row md:justify-center md:gap-8"
+        >
+          <div className="flex flex-col items-center gap-1.5">
+            <span className="text-caption font-semibold text-slate-700">
+              {t("premium.v2.chooseStyle.destinationLabel")}
+            </span>
+            <div
+              role="radiogroup"
+              aria-label={t("premium.v2.chooseStyle.destinationLabel")}
+              className="flex flex-wrap justify-center gap-2"
+            >
+              {DESTINATIONS.map((d) => {
+                const active = destination === d.value;
+                return (
+                  <button
+                    key={d.value}
+                    type="button"
+                    role="radio"
+                    aria-checked={active}
+                    onClick={() => handleDestinationChange(d.value)}
+                    className={cn(
+                      "focus-ring rounded-full border px-3.5 py-2 text-caption font-semibold transition-colors duration-200",
+                      active
+                        ? "border-slate-900 bg-slate-900 text-white"
+                        : "border-slate-200/70 bg-white text-slate-700 hover:border-slate-300 hover:bg-slate-50",
+                    )}
+                  >
+                    {t(d.labelKey)}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
           <PartyStepper
             value={party}
             onChange={handleStepperChange}
@@ -189,7 +242,7 @@ export function ChooseTravelStyle() {
               style={chooseStyleFeaturedWhiteCtaStyle}
             >
               <Link
-                href={withParty(HOME_CTA_SMALL_GROUP_LIST_HREF)}
+                href={withParams(HOME_CTA_SMALL_GROUP_LIST_HREF)}
                 onClick={() => {
                   analytics.homeCtaClick({ source: "choose_style_featured_join" });
                   analytics.homeTourTypeCardClick({ type: "small_group", party });
@@ -261,7 +314,7 @@ export function ChooseTravelStyle() {
               className={cn(homeBtnPrimary, "mt-4")}
             >
               <Link
-                href={withParty(HOME_CTA_PRIVATE_LIST_HREF)}
+                href={withParams(HOME_CTA_PRIVATE_LIST_HREF)}
                 onClick={() => {
                   analytics.homeCtaClick({ source: "choose_style_private_custom" });
                   analytics.homeTourTypeCardClick({ type: "private", party });
@@ -274,7 +327,7 @@ export function ChooseTravelStyle() {
             {/* U4 — curated private list is the primary path; building a custom
                 day from scratch is the secondary "or…" option. */}
             <Link
-              href={`/itinerary-builder?party=${party}`}
+              href={`/itinerary-builder?party=${party}${destination !== "all" ? `&region=${destination}` : ""}`}
               className="focus-ring mt-2.5 flex items-center justify-center gap-1 text-micro font-semibold text-slate-500 transition-colors duration-200 hover:text-slate-800"
             >
               {t("premium.v2.chooseStyle.privateBuildOwn")}
@@ -330,7 +383,7 @@ export function ChooseTravelStyle() {
               className={cn(homeBtnPrimary, "mt-4")}
             >
               <Link
-                href={withParty(HOME_CTA_BUS_LIST_HREF)}
+                href={withParams(HOME_CTA_BUS_LIST_HREF)}
                 onClick={() => {
                   analytics.homeCtaClick({ source: "choose_style_browse_bus" });
                   analytics.homeTourTypeCardClick({ type: "bus", party });
