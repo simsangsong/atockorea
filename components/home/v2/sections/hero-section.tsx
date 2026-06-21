@@ -1,15 +1,10 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { useSearchParams } from "next/navigation";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { useTranslations } from "@/lib/i18n";
-import { appendIntentPhraseToIntentField } from "@/lib/home/services/hero-intent-append-chip";
-import type { HeroDestination } from "@/lib/home/types/hero-planner";
-import { LandingPlannerCard } from "./landing-planner-card";
 
-const VALID_DESTINATIONS: ReadonlyArray<HeroDestination> = ["jeju", "seoul", "busan"];
 const HERO_SLIDES = [
   {
     src: "/images/home/hero/01-gyeongbokgung-sunset.webp",
@@ -33,24 +28,8 @@ const HERO_SLIDES = [
   },
 ] as const;
 
-function readDestinationFromParams(value: string | null): HeroDestination | null {
-  if (!value) return null;
-  const lower = value.toLowerCase();
-  return (VALID_DESTINATIONS as ReadonlyArray<string>).includes(lower)
-    ? (lower as HeroDestination)
-    : null;
-}
-
 export function HeroSection() {
   const t = useTranslations("home");
-  const searchParams = useSearchParams();
-
-  const initialDestination = useMemo(
-    () => readDestinationFromParams(searchParams?.get("destination") ?? null) ?? "jeju",
-    [searchParams],
-  );
-  const [destination, setDestination] = useState<HeroDestination>(initialDestination);
-  const [intent, setIntent] = useState("");
 
   const heroSectionRef = useRef<HTMLElement>(null);
   const heroPanelRef = useRef<HTMLDivElement>(null);
@@ -98,10 +77,6 @@ export function HeroSection() {
     [0, 0.6, 1],
     reduceMotion ? [1, 1, 1] : [1, 0.92, 0.7],
   );
-
-  const appendChip = useCallback((phrase: string) => {
-    setIntent((prev) => appendIntentPhraseToIntentField(prev, phrase));
-  }, []);
 
   return (
     <section ref={heroSectionRef} className="relative flex flex-col" data-home-hero>
@@ -290,30 +265,10 @@ export function HeroSection() {
         </div>
         {/* End curation proof. */}
 
-        {/* Unified planner header (responsive — Gate 0.2). Mobile keeps the
-            eyebrow-only slim header (B.3 fold recovery: the matcher CTA
-            already sits below the effective fold, so no extra height here).
-            Desktop has vertical room, so it adds the planner headline +
-            subhead that frame the Match / Build modes. */}
-        <div className="mx-auto mb-3 max-w-lg px-1 text-center md:mb-4">
-          <span className="text-eyebrow">
-            {t("premium.v2.hero.matcherEyebrow")}
-          </span>
-          <h2 className="mt-1.5 hidden text-h3 font-bold tracking-tight text-slate-900 md:block">
-            {t("premium.v2.planner.headline")}
-          </h2>
-          <p className="mt-1 hidden text-caption text-slate-500 md:block">
-            {t("premium.v2.planner.subhead")}
-          </p>
-        </div>
-
-        <LandingPlannerCard
-          destination={destination}
-          onDestinationChange={setDestination}
-          intent={intent}
-          onIntentChange={setIntent}
-          onAppendChip={appendChip}
-        />
+        {/* Reform W1e-3 — the Match/Build planner card has been removed from
+            the hero. The hero is now photo + H1 + curation proof; the primary
+            decision is the tour-type section directly below, and the matcher
+            lives in the "Get a recommendation" card there. */}
       </div>
     </section>
   );
