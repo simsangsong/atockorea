@@ -33,10 +33,13 @@ export default function HomeV2Page({ featuredMediaBySlug }: HomeV2PageProps = {}
       <HomeV2MatchProvider>
         <div className="home-v2-body-isolate relative z-0">
           <HeroSection />
+          {/* Reform W1e-1 — the tour-type decision (ChooseTravelStyle) is the
+              primary action, so it leads right after the hero instead of sitting
+              at slot 5. Match preview / featured / destinations follow. */}
+          <ChooseTravelStyle />
           <DeferredBestMatchPreview />
           <FeaturedProductsShowcase initialMediaBySlug={featuredMediaBySlug} />
           <DestinationsShowcase />
-          <ChooseTravelStyle />
           <WhyAtockorea />
           <ProcessOperational />
           <FinalCTA />
