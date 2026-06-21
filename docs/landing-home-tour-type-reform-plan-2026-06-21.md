@@ -306,3 +306,16 @@ tokens-first(애드혹 값 금지) · `focus-ring` · framer만(새 라이브러
 - **U6/U11 — Wave 0에선 비파괴.** `ChooseTravelStyle`은 현재 slot 5(Featured·Destinations 아래)라 카드 상단 이동·토글 제거·목적지 통합은 **Wave 1**(파괴적 IA 스왑). 따라서 fold 예산(U11) 실측도 카드가 상단 오는 Wave 1에서. Wave 0 스테퍼는 slot 5 카드 위에 안착(fold 영향 0).
 
 **Wave 0 산출(코드):** `components/home/v2/ui/PartyStepper.tsx`(신규) · `choose-travel-style.tsx`(스테퍼 마운트+party 운반+세리프+이벤트) · `analytics.ts`(2 이벤트) · 6 로케일 `chooseStyle.party*` i18n. **Wave 0 비파괴 — 기존 카드/라우팅 유지, 추가만.**
+- **세리프 되돌림(2026-06-21):** V1 섹션 타이틀 세리프는 사용자 반려 → 표준 `text-h2`로 복귀(§12 V1 수정).
+
+---
+
+## 14. 구현 로그 — Wave 1 (검증 가능 단위로 분할)
+
+Wave 1(IA 스왑+실시간 가격+추천 배지+매처 카드+Private 리스트+비주얼)은 묶음이 크고 라이브 QA가 헤드리스 한계로 어려워, **검증 가능한 소단위(W1a/b/c…)로 분할**하여 ship→라이브 확인 리듬으로 진행.
+
+- **W1a — U1 실시간 가격 (스테퍼 활성화).** Wave 0 스테퍼가 드디어 카드 가격을 움직임. 인원(party)에 따라:
+  - **그룹(소그룹·버스):** 1인당 × party = 총액 라인(`totalForParty`). 소그룹 $59/인, 버스 $39/인.
+  - **프라이빗:** 1대 ÷ party = 1인당 라인(`perPersonForParty`). $198/대.
+  - → 고객이 스테퍼만 움직여 **크로스오버를 직접 봄**(예: 4인↑ 프라이빗이 소그룹보다 유리, 6인↑ 버스보다 유리). 가격 출처 = 카드 표시 from-상수(엔진 정밀가는 다음 단계 리스트/빌더), `≈` + currency 변환(`formatPrice`). `partyCaption`도 "가격 기준"으로 승격. 6 로케일 i18n.
+  - **다음(W1b~):** U5 동적 추천 배지(현 static "Recommended"를 party 기반으로) → U3 매처 "추천받기" 카드 → U4 Private 리스트-먼저 → IA 스왑(카드 상단+토글 제거) → V2~V5/V7 카드 비주얼·모션.

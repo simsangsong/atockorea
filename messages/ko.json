@@ -1212,9 +1212,11 @@
           "busF3": "부담 없는 가격",
           "busCta": "버스 투어 둘러보기",
           "partyLabel": "여행 인원",
-          "partyCaption": "{count}명 기준",
+          "partyCaption": "{count}명 기준 가격",
           "partyDecrease": "인원 줄이기",
-          "partyIncrease": "인원 늘리기"
+          "partyIncrease": "인원 늘리기",
+          "totalForParty": "{count}명이면 ≈ {total}",
+          "perPersonForParty": "{count}명이면 1인당 ≈ {perPerson}"
         },
         "process": {
           "eyebrow": "이용 방법",

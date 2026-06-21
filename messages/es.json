@@ -1212,9 +1212,11 @@
           "busF3": "Muy asequible",
           "busCta": "Ver tours en autobús",
           "partyLabel": "Viajeros",
-          "partyCaption": "Para {count} viajeros",
+          "partyCaption": "Precios para {count}",
           "partyDecrease": "Menos viajeros",
-          "partyIncrease": "Más viajeros"
+          "partyIncrease": "Más viajeros",
+          "totalForParty": "≈ {total} para {count}",
+          "perPersonForParty": "≈ {perPerson} / persona para {count}"
         },
         "process": {
           "eyebrow": "CÓMO FUNCIONA",

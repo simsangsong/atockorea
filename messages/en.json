@@ -1351,9 +1351,11 @@
           "busF3": "Easy value",
           "busCta": "Browse bus tours",
           "partyLabel": "Travelers",
-          "partyCaption": "For {count} travelers",
+          "partyCaption": "Prices for {count}",
           "partyDecrease": "Fewer travelers",
-          "partyIncrease": "More travelers"
+          "partyIncrease": "More travelers",
+          "totalForParty": "≈ {total} for {count}",
+          "perPersonForParty": "≈ {perPerson} / person for {count}"
         },
         "process": {
           "eyebrow": "HOW IT WORKS",

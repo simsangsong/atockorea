@@ -1212,9 +1212,11 @@
           "busF3": "輕鬆好價",
           "busCta": "瀏覽巴士行程",
           "partyLabel": "人數",
-          "partyCaption": "{count}人出遊",
+          "partyCaption": "{count}人價格",
           "partyDecrease": "減少人數",
-          "partyIncrease": "增加人數"
+          "partyIncrease": "增加人數",
+          "totalForParty": "{count}人 ≈ {total}",
+          "perPersonForParty": "{count}人時人均 ≈ {perPerson}"
         },
         "process": {
           "eyebrow": "預訂流程",
