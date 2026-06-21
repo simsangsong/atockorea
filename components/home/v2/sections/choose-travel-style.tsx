@@ -17,7 +17,7 @@ import {
 import { useTranslations } from "@/lib/i18n";
 import { useCurrency } from "@/lib/currency";
 import { getFeaturedJoinTourProduct } from "@/lib/home/featured-join-tour-offer";
-import { CHOOSE_STYLE_CARD_USD } from "@/lib/home/choose-style-card-usd";
+import { CHOOSE_STYLE_CARD_USD, privateVehicleUsd } from "@/lib/home/choose-style-card-usd";
 import { SnapScrollDots } from "@/components/home/v2/ui/SnapScrollDots";
 import { homeBtnInverse, homeBtnPrimary } from "@/lib/home/home-button-classes";
 import {
@@ -101,15 +101,14 @@ export function ChooseTravelStyle() {
     { value: "seoul", labelKey: "hero.destinations.seoul" },
   ] as const;
 
-  // Reform U5 — dynamic recommendation. The "Recommended" badge moves from the
-  // small-group card (curated value for small parties) to the private card once
-  // a private charter is actually cheaper than per-seat small-group pricing.
-  // Crossover N* = ceil(private vehicle ÷ small-group per-person) = honest, not
-  // hardcoded (e.g. 198/59 → 4: at 4+ private beats small-group on price too).
-  const sgCrossover = Math.ceil(
-    CHOOSE_STYLE_CARD_USD.private.list / featuredJoin.listPriceUsd,
-  );
-  const recommendPrivate = party >= sgCrossover;
+  // Private per-vehicle price for the current party — tiered (sedan/van/solati),
+  // so it jumps at 7 and 10 pax to match the real PAX_TIERS table.
+  const privateVehicle = privateVehicleUsd(party);
+  // Reform U5 — dynamic recommendation. The "Recommended" badge sits on
+  // small-group for small parties and moves to private once a private charter
+  // is actually the better value (compared against the real tiered price, not a
+  // flat one): private vehicle ≤ small-group per-person × party.
+  const recommendPrivate = privateVehicle <= featuredJoin.listPriceUsd * party;
 
   return (
     <section className="section-py-sm px-4 md:px-6 bg-slate-50">
@@ -290,19 +289,19 @@ export function ChooseTravelStyle() {
             <div className="mb-4">
               <p className="text-micro text-slate-400 mb-0.5 uppercase tracking-wider">{t("premium.v2.chooseStyle.from")}</p>
               <div className="flex items-baseline gap-1.5">
-                <span className="text-xl md:text-2xl font-bold text-slate-900 tracking-tight">
-                  {formatPrice(CHOOSE_STYLE_CARD_USD.private.list)}
+                <span className="text-xl md:text-2xl font-bold text-slate-900 tabular-nums tracking-tight">
+                  {formatPrice(privateVehicle)}
                 </span>
                 <span className="text-slate-500 text-micro font-semibold">{t("premium.v2.chooseStyle.privatePerVehicle")}</span>
               </div>
-              {/* U1 live price — one vehicle ÷ party = effective per-person. */}
+              {/* U1 live price — tiered vehicle ÷ party = effective per-person. */}
               <LivePrice
                 party={party}
                 reduce={reduce}
                 className="mt-1.5 text-caption font-semibold tabular-nums text-emerald-700"
               >
                 {t("premium.v2.chooseStyle.perPersonForParty", {
-                  perPerson: formatPrice(Math.round(CHOOSE_STYLE_CARD_USD.private.list / party)),
+                  perPerson: formatPrice(Math.round(privateVehicle / party)),
                   count: party,
                 })}
               </LivePrice>
