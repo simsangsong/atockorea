@@ -1349,7 +1349,11 @@
           "busF1": "Proven route",
           "busF2": "Structured day",
           "busF3": "Easy value",
-          "busCta": "Browse bus tours"
+          "busCta": "Browse bus tours",
+          "partyLabel": "Travelers",
+          "partyCaption": "For {count} travelers",
+          "partyDecrease": "Fewer travelers",
+          "partyIncrease": "More travelers"
         },
         "process": {
           "eyebrow": "HOW IT WORKS",

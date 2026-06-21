@@ -292,3 +292,17 @@ FinalCTA
 tokens-first(애드혹 값 금지) · `focus-ring` · framer만(새 라이브러리 0) · **amber는 액센트로만(범람 금지)** · premium > 절제 · 화보 톤 보존. 모두 `docs/home-ux-upgrade-plan.md` + 마스터플랜 §B 영구 결정 준수. 모든 home-v2 비주얼 변경은 landing-page-uiux 스킬 경유.
 
 **배치:** V6/V1은 Wave 0(스테퍼·타이포), V2~V5·V7~V9는 Wave 1(카드·가격·모션), V10~V11은 Wave 1~2(펼침·운반).
+
+---
+
+## 13. 구현 로그 — Wave 0 (실측 기반 조정)
+
+코드 실사로 드러난 조정. 모두 §B 존중 + inert UX 방지 원칙.
+
+- **U12 Hero H1 — 통째 교체 대신 보존 + Wave 1 연기.** 현 H1(`premium.hero.headlineLine1` "checked before they're listed")는 **§B 2026-05-23 큐레이션/신뢰 메시지**라 가치 큼. "타입 선택 티업"은 이미 `ChooseTravelStyle` 카피("HOW YOU LIKE TO TRAVEL / Pick your pace")가 수행 → **U12는 V1 세리프 강조로 충족.** hero H1 리프레이밍은 카드가 hero로 올라오는 **Wave 1**(선택이 H1 바로 아래 올 때)로 연기. §B 큐레이션 H1 무훼손.
+- **U2 PartyStepper — Wave 0 마운트 + 실동작(inert 금지).** `ChooseTravelStyle` 카드 바로 위에 마운트. 기본 2, 게이트 없음(≥44px 탭타깃, tokens). **party를 3개 카드 링크로 운반**(`?…&party=N`) → U9 연속성 시드 + `home_party_stepper_change` 발화. **실시간 가격·동적 추천 배지는 Wave 1**(엔진 PV/그룹 GP 결선 시 caption도 "{count}명 기준 가격"으로 승격).
+- **U13 계측 — 신규 이벤트 2종.** `home_tour_type_card_click {type,party}` + `home_party_stepper_change {party}`. 기존 `home_cta_click`는 유지(중복 아님 — 전자는 reform 퍼널 격리용). baseline 수집 시작.
+- **V1 세리프 — chooseStyle 타이틀 → `font-magazine-serif-ko` font-light**(Destinations 카드와 톤 통일). 카피 무변경(i18n 0), 폰트만.
+- **U6/U11 — Wave 0에선 비파괴.** `ChooseTravelStyle`은 현재 slot 5(Featured·Destinations 아래)라 카드 상단 이동·토글 제거·목적지 통합은 **Wave 1**(파괴적 IA 스왑). 따라서 fold 예산(U11) 실측도 카드가 상단 오는 Wave 1에서. Wave 0 스테퍼는 slot 5 카드 위에 안착(fold 영향 0).
+
+**Wave 0 산출(코드):** `components/home/v2/ui/PartyStepper.tsx`(신규) · `choose-travel-style.tsx`(스테퍼 마운트+party 운반+세리프+이벤트) · `analytics.ts`(2 이벤트) · 6 로케일 `chooseStyle.party*` i18n. **Wave 0 비파괴 — 기존 카드/라우팅 유지, 추가만.**
