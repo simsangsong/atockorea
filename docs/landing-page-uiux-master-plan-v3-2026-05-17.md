@@ -39,7 +39,7 @@ v3 만든 이유:
 - ✅ 완료
 - ❌ 중단/롤백
 
-**현재 활성 Phase: 🔄 "투어타입 우선" 홈 개혁 Wave 1 — W1a~W1e 완료, W1f(카드 비주얼·모션) 남음.** 플랜 `docs/landing-home-tour-type-reform-plan-2026-06-21.md`. 진행: W1a 실시간 가격·W1b 동적 배지·W1c 매처 카드·W1d Private 리스트+매처 프리미엄·W1e-1 섹션 상단 이동·W1e-2 콘솔리데이션 취소(3카드 유지)·**W1e-3 hero 플래너 제거(타입 카드가 1차 결정, 매처=추천받기 카드)**. 카드 구조 = 타입 3장{소그룹·프라이빗·버스}+추천받기 풀폭. landing-planner-card 코드 보존(언마운트). 남은: W1f 비주얼·모션, 목적지 스트립(U6). (이전: v3 본 실행 + Phase D 완료, 통합 플래너 Phase 1–4 완료.)
+**현재 활성 Phase: 🔄 "투어타입 우선" 홈 개혁 Wave 1 — 핵심 완료(W1a~W1f + U6). 남은: V2 사진 텍스처(에셋 대기), 라이브 QA·퍼널 모니터링.** 플랜 `docs/landing-home-tour-type-reform-plan-2026-06-21.md`. 완성 IA: Hero(사진+H1+큐레이션) → 목적지+인원 스트립(U6) → 타입 3카드{소그룹·프라이빗·버스}(실시간 가격 U1·동적 배지 U5·elevation V7) → 추천받기 카드(U3=매처). hero 플래너 제거(W1e-3), landing-planner-card 코드 보존. (이전: v3 본 실행 + Phase D 완료, 통합 플래너 Phase 1–4 완료.)
 **실험 상태 (2026-05-21): 4종 모두 running이나 검정력 없음 (변이당 10-15명 / min 200). home_cta_copy / home_result_morphing / home_result_bottomsheet는 통합 플래너가 surface를 대체하므로 conclude 권장 — 단 production DB write는 사용자 승인 대기 (Phase 2 CTA 재구성 전 처리). home_sticky_threshold는 미충돌로 running 유지.**
 **다음 액션 (사용자 결정 대기): (1) 3개 power-empty 실험 conclude (DB write 사용자 승인 필요), (2) ~~Seoul 'Request a Seoul day' 타깃 확정~~ → **해결 2026-05-22**: Seoul도 빌더로 라우팅 (itinerary builder Phase 9 D12에서 Seoul+DMZ 빌더 지원 추가). landing-planner-card의 seoul 'coming soon' 분기 제거, PLANNER_BUILD_PREVIEW에 seoul 추가. 커밋 `4ef6ac08`. (3) Phase 5 go/no-go. traffic 누적 전까지 정성 판단 (v3 §12).**
 
@@ -148,6 +148,7 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 | 2026-06-21 (13) | **W1e-2 콘솔리데이션 취소 (사용자 "3카드로 줄이지 말고 추천 카드를 밑에") — 문서 번복 기록** | (pending) | 코드 변경 0(현 라이브가 이미 3카드+추천 아래). reform §0/§3 카드구조 번복 + §14 W1e-2 취소 + §B 번복 row. 최종 카드 구조 = 타입 3장{소그룹·프라이빗·버스} 유지 + 추천받기 풀폭 아래. 남은 W1e-3(hero 토글 제거)는 사용자 go 대기 |
 | 2026-06-21 (14) | **Wave 1 W1e-3 — hero Match/Build 플래너 제거** (사용자 "가 제거, 안전하게 한스텝씩") | (pending) | `hero-section.tsx`: `LandingPlannerCard` + 플래너 헤더(매처 eyebrow/headline/subhead) 언마운트 + dead code 전부 정리(useSearchParams·useMemo·useCallback·destination/intent state·appendChip·readDestinationFromParams·VALID_DESTINATIONS·import). `landing-planner-card.tsx`는 **삭제 안 함**(언마운트만, 코드 보존). hero = 사진+H1+큐레이션; 첫 결정=타입 카드, 매처=추천받기 카드(/match). 검증: tsc 클린·hero-section lint 0(잔여 6 pre-existing)·build green. ⚠ 부작용: 홈 목적지 선택기 사라짐(→/tours/list). U6 목적지 스트립 추후 |
 | 2026-06-21 (15) | **Wave 1 W1f — 카드 비주얼·모션 (V5 가격 크로스페이드 + V7 추천 카드 elevation)** (사용자 "w1f 진행") | (pending) | `choose-travel-style.tsx`: (V5) `LivePrice` 헬퍼 — 인원 변경 시 3 카드 실시간 가격 크로스페이드(AnimatePresence `initial={false}` SSR-safe·reduce-motion 가드). (V7) 추천 카드 1장만 앰버 링(`ring-2 ring-amber-300/70 ring-offset`; 소그룹 party<N*/프라이빗 ≥N*). V2 사진 텍스처는 에셋 필요로 보류. 검증: tsc 클린·lint 0(잔여 pre-existing)·build green |
+| 2026-06-21 (16) | **Wave 1 U6 — 목적지 스트립 (W1e-3 후 목적지 선택기 복원)** (사용자 "U6도 진행") | (pending) | `choose-travel-style.tsx`: 타입 카드 위에 목적지 칩(All Korea/Jeju/Busan/Seoul, 기본 all·비-게이팅)+인원 스테퍼 한 줄 스트립. 목적지→카드 링크 `&destination=`(/, ToursListClient가 읽어 실제 필터 — 실사 확인), 빌더 보조링크 `&region=`. `withParty`→`withParams`. i18n 2키(destinationLabel/destAll), 지역명 `hero.destinations.*` 재사용. **reform IA 완성**: Hero→목적지+인원 스트립→타입 3카드(가격·배지·elevation)→추천받기. 남은: V2 사진 텍스처(에셋), 라이브 QA. 검증: tsc/lint/build green |
 
 Phase 안에 없지만 좋은 아이디어. Phase 끝나기 전엔 손대지 말 것. 추가 시 출처 + 보류 이유 명시.
 
