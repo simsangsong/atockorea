@@ -609,7 +609,12 @@ export function LandingPlannerCard({
                       />
                     </div>
                   </div>
-                  <div className="grid grid-cols-[auto,1fr] gap-3">
+                  {/* Phase 15 — Guests + Hours sit 50/50 (matches the Date +
+                      Language row above). Subtle color split: Guests is the
+                      editable field → bg-white; Hours is a selector → bg-slate-50
+                      (the SelectDropdown default). Same h-11/md:h-12 +
+                      rounded-button so all four controls read as one family. */}
+                  <div className="grid grid-cols-2 gap-2 md:gap-3">
                     <div>
                       <label
                         htmlFor="hero-build-party"
@@ -625,7 +630,7 @@ export function LandingPlannerCard({
                         max={30}
                         value={buildParty}
                         onChange={(e) => setBuildParty(e.target.value)}
-                        className="focus-ring h-11 w-16 rounded-full border border-slate-200/70 bg-slate-50 px-2 text-center text-[15px] font-semibold tabular-nums text-slate-900 transition-colors duration-200 focus:border-slate-300 focus:bg-white md:h-12"
+                        className="focus-ring h-11 w-full rounded-button border border-slate-200/70 bg-white px-3 text-center text-[15px] font-semibold tabular-nums text-slate-900 transition-colors duration-200 hover:border-slate-300 focus:border-slate-300 md:h-12"
                       />
                     </div>
                     <div>
