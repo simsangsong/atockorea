@@ -1,9 +1,9 @@
 "use client";
 
-import type { CSSProperties } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import { useMemo, useRef, useState } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { PartyStepper } from "@/components/home/v2/ui/PartyStepper";
 import { V0ShadcnButton } from "@/components/home/v2/ui/v0-shadcn-button";
 import { ArrowRight, Car, Bus, Award, Users, Sparkles } from "lucide-react";
@@ -30,12 +30,47 @@ const chooseStyleFeaturedWhiteCtaStyle: CSSProperties = {
   boxShadow: "var(--home-shadow-btn-secondary)",
 };
 
+/**
+ * V5 — live-price line that crossfades when `party` changes (key={party}).
+ * `initial={false}` on AnimatePresence keeps first paint deterministic
+ * (SSR-safe, no hydration flash); only party-driven changes animate.
+ */
+function LivePrice({
+  party,
+  reduce,
+  className,
+  children,
+}: {
+  party: number;
+  reduce: boolean;
+  className?: string;
+  children: ReactNode;
+}) {
+  return (
+    <p className={className}>
+      <AnimatePresence mode="wait" initial={false}>
+        <motion.span
+          key={party}
+          initial={reduce ? false : { opacity: 0, y: 3 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={reduce ? { opacity: 0 } : { opacity: 0, y: -3 }}
+          transition={{ duration: reduce ? 0 : 0.2, ease: [0.22, 1, 0.36, 1] }}
+          className="inline-block"
+        >
+          {children}
+        </motion.span>
+      </AnimatePresence>
+    </p>
+  );
+}
+
 export function ChooseTravelStyle() {
   const t = useTranslations("home");
   const { formatPrice } = useCurrency();
   const scrollRef = useRef<HTMLDivElement>(null);
   const featuredJoin = useMemo(() => getFeaturedJoinTourProduct(), []);
   const reveal = useRevealContainerProps();
+  const reduce = !!useReducedMotion(); // V5 — gate the price crossfade
 
   // Reform U2/V6 — party drives the (Wave 1) live price + dynamic recommend.
   // In Wave 0 it carries forward into the card links so the catalogue can
@@ -94,7 +129,11 @@ export function ChooseTravelStyle() {
           {/* Small Group — featured (dark slate, amber accent only) */}
           <motion.div
             variants={REVEAL_ITEM_VARIANTS}
-            className="relative w-[68vw] flex-none snap-start overflow-hidden rounded-card border border-slate-700/50 bg-slate-900 p-4 md:p-5 shadow-2 transition-all duration-300 ease-out hover:-translate-y-0.5 flex flex-col motion-reduce:hover:translate-y-0 motion-reduce:transition-none md:w-auto"
+            className={cn(
+              "relative w-[68vw] flex-none snap-start overflow-hidden rounded-card border border-slate-700/50 bg-slate-900 p-4 md:p-5 shadow-2 transition-all duration-300 ease-out hover:-translate-y-0.5 flex flex-col motion-reduce:hover:translate-y-0 motion-reduce:transition-none md:w-auto",
+              // V7 — elevate the recommended card (small-group below the crossover).
+              !recommendPrivate && "ring-2 ring-amber-300/70 ring-offset-2 ring-offset-slate-50",
+            )}
           >
             <div className="flex items-center justify-between mb-4 mt-1">
               <div className="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-white/10 border border-white/15 flex items-center justify-center">
@@ -131,12 +170,16 @@ export function ChooseTravelStyle() {
                 <span className="text-micro text-white/70 font-semibold">{t("premium.v2.chooseStyle.perPerson")}</span>
               </div>
               {/* U1 live price — per-person × party = total for the group. */}
-              <p className="mt-1.5 text-caption font-semibold tabular-nums text-amber-200/90">
+              <LivePrice
+                party={party}
+                reduce={reduce}
+                className="mt-1.5 text-caption font-semibold tabular-nums text-amber-200/90"
+              >
                 {t("premium.v2.chooseStyle.totalForParty", {
                   total: formatPrice(featuredJoin.listPriceUsd * party),
                   count: party,
                 })}
-              </p>
+              </LivePrice>
             </div>
 
             <V0ShadcnButton
@@ -161,7 +204,11 @@ export function ChooseTravelStyle() {
           {/* Private — white pod with subtle mint warm-light (premium, not minty) */}
           <motion.div
             variants={REVEAL_ITEM_VARIANTS}
-            className="group relative w-[68vw] flex-none snap-start overflow-hidden rounded-card border border-emerald-100/60 bg-gradient-to-b from-white via-white to-emerald-50/40 p-4 md:p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_1px_2px_rgba(15,23,42,0.04),0_8px_22px_-12px_rgba(16,122,87,0.10),0_18px_36px_-18px_rgba(15,23,42,0.12)] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-emerald-200/75 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.95),0_2px_4px_rgba(15,23,42,0.05),0_10px_28px_-12px_rgba(16,122,87,0.16),0_22px_42px_-18px_rgba(15,23,42,0.16)] flex flex-col motion-reduce:hover:translate-y-0 motion-reduce:transition-none md:w-auto"
+            className={cn(
+              "group relative w-[68vw] flex-none snap-start overflow-hidden rounded-card border border-emerald-100/60 bg-gradient-to-b from-white via-white to-emerald-50/40 p-4 md:p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_1px_2px_rgba(15,23,42,0.04),0_8px_22px_-12px_rgba(16,122,87,0.10),0_18px_36px_-18px_rgba(15,23,42,0.12)] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-emerald-200/75 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.95),0_2px_4px_rgba(15,23,42,0.05),0_10px_28px_-12px_rgba(16,122,87,0.16),0_22px_42px_-18px_rgba(15,23,42,0.16)] flex flex-col motion-reduce:hover:translate-y-0 motion-reduce:transition-none md:w-auto",
+              // V7 — elevate the recommended card (private at/above the crossover).
+              recommendPrivate && "ring-2 ring-amber-300/70 ring-offset-2 ring-offset-slate-50",
+            )}
           >
             <div className="flex items-center justify-between mb-4 mt-1">
               <div className="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-emerald-50/70 border border-emerald-100/70 flex items-center justify-center">
@@ -196,12 +243,16 @@ export function ChooseTravelStyle() {
                 <span className="text-slate-500 text-micro font-semibold">{t("premium.v2.chooseStyle.privatePerVehicle")}</span>
               </div>
               {/* U1 live price — one vehicle ÷ party = effective per-person. */}
-              <p className="mt-1.5 text-caption font-semibold tabular-nums text-emerald-700">
+              <LivePrice
+                party={party}
+                reduce={reduce}
+                className="mt-1.5 text-caption font-semibold tabular-nums text-emerald-700"
+              >
                 {t("premium.v2.chooseStyle.perPersonForParty", {
                   perPerson: formatPrice(Math.round(CHOOSE_STYLE_CARD_USD.private.list / party)),
                   count: party,
                 })}
-              </p>
+              </LivePrice>
             </div>
 
             <V0ShadcnButton
@@ -261,12 +312,16 @@ export function ChooseTravelStyle() {
                 <span className="text-slate-500 text-micro font-semibold">{t("premium.v2.chooseStyle.busPerPerson")}</span>
               </div>
               {/* U1 live price — per-person × party = total for the group. */}
-              <p className="mt-1.5 text-caption font-semibold tabular-nums text-emerald-700">
+              <LivePrice
+                party={party}
+                reduce={reduce}
+                className="mt-1.5 text-caption font-semibold tabular-nums text-emerald-700"
+              >
                 {t("premium.v2.chooseStyle.totalForParty", {
                   total: formatPrice(CHOOSE_STYLE_CARD_USD.bus.from * party),
                   count: party,
                 })}
-              </p>
+              </LivePrice>
             </div>
 
             <V0ShadcnButton
