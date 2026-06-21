@@ -220,6 +220,15 @@ export function ChooseTravelStyle() {
                 <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
               </Link>
             </V0ShadcnButton>
+            {/* U4 — curated private list is the primary path; building a custom
+                day from scratch is the secondary "or…" option. */}
+            <Link
+              href={`/itinerary-builder?party=${party}`}
+              className="focus-ring mt-2.5 flex items-center justify-center gap-1 text-micro font-semibold text-slate-500 transition-colors duration-200 hover:text-slate-800"
+            >
+              {t("premium.v2.chooseStyle.privateBuildOwn")}
+              <ArrowRight className="h-3 w-3" />
+            </Link>
           </motion.div>
 
           {/* Bus — white pod with subtle mint warm-light (matches Private card) */}
@@ -288,26 +297,26 @@ export function ChooseTravelStyle() {
         {/* U3 — matcher "Get a recommendation" entry. A co-equal but secondary
             (outline) full-width card under the type cards, so the undecided
             segment isn't pushed to a buried link. Routes to the matcher. */}
-        <motion.div variants={REVEAL_ITEM_VARIANTS} className="mt-4 md:mt-5">
+        <motion.div variants={REVEAL_ITEM_VARIANTS} className="mt-5 md:mt-6">
           <Link
             href={HOME_CTA_MATCHING_HREF}
             onClick={() => analytics.homeTourTypeCardClick({ type: "recommend", party })}
-            className="focus-ring group flex items-center gap-3.5 rounded-card border border-slate-200/70 bg-white px-4 py-3.5 transition-colors duration-200 hover:border-slate-300 hover:bg-slate-50 md:px-5 md:py-4"
+            className="focus-ring group flex items-center gap-4 overflow-hidden rounded-card border border-slate-200/70 bg-gradient-to-b from-white to-slate-50/70 px-5 py-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_1px_2px_rgba(15,23,42,0.04),0_10px_30px_-14px_rgba(15,23,42,0.14)] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.95),0_2px_4px_rgba(15,23,42,0.05),0_16px_38px_-16px_rgba(15,23,42,0.2)] motion-reduce:hover:translate-y-0 motion-reduce:transition-none md:gap-5 md:px-7 md:py-6"
           >
-            <div className="flex h-10 w-10 flex-none items-center justify-center rounded-lg border border-slate-200/70 bg-slate-100">
-              <Sparkles className="h-5 w-5 text-slate-700" />
+            <div className="flex h-12 w-12 flex-none items-center justify-center rounded-xl border border-amber-200/70 bg-amber-50 shadow-sm md:h-14 md:w-14">
+              <Sparkles className="h-6 w-6 text-amber-500 md:h-7 md:w-7" />
             </div>
             <div className="min-w-0 flex-1">
-              <p className="text-caption font-bold text-slate-900 md:text-[15px]">
+              <p className="text-[15px] font-bold tracking-tight text-slate-900 md:text-lg">
                 {t("premium.v2.chooseStyle.recommendCardTitle")}
               </p>
-              <p className="text-micro leading-snug text-slate-500 md:text-caption">
+              <p className="mt-0.5 text-caption leading-snug text-slate-500 md:text-[13px]">
                 {t("premium.v2.chooseStyle.recommendCardDesc")}
               </p>
             </div>
-            <span className="flex flex-none items-center gap-1 text-caption font-semibold text-slate-700">
+            <span className="flex flex-none items-center gap-1.5 text-caption font-semibold text-slate-700 md:text-[15px]">
               <span className="hidden sm:inline">{t("premium.v2.chooseStyle.recommendCardCta")}</span>
-              <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
+              <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 md:h-5 md:w-5" />
             </span>
           </Link>
         </motion.div>
