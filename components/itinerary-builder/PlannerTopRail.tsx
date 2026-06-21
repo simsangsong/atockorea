@@ -12,6 +12,7 @@ import type {
   PricingTrack,
 } from "@/lib/quote-engine/pricing-policy";
 import IntakeDateField from "./IntakeDateField";
+import SelectDropdown from "./SelectDropdown";
 
 interface Props {
   /** Active region (always resolved at the server; if user changes via the
@@ -38,8 +39,17 @@ const GUIDE_LANGS: { code: string; label: string }[] = [
   { code: "zh-TW", label: "中文 (繁體)" },
   { code: "es", label: "Español" },
 ];
-const PRIVATE_HOURS = [4, 5, 6, 7, 8, 9, 10, 11, 12];
-const CRUISE_HOURS = [4, 6, 8, 10, 12];
+// Premium-dropdown option shape ({ code, label }) so the time picker renders
+// through the shared SelectDropdown (same on-brand popover as the hero + date
+// field) instead of the native OS <select> sheet.
+const PRIVATE_HOUR_OPTIONS = [4, 5, 6, 7, 8, 9, 10, 11, 12].map((h) => ({
+  code: String(h),
+  label: `${h}h`,
+}));
+const CRUISE_HOUR_OPTIONS = [4, 6, 8, 10, 12].map((h) => ({
+  code: String(h),
+  label: `${h}h`,
+}));
 const PICKUP_ZONES: JejuPickupZone[] = ["city", "north", "outer", "cross_island"];
 
 const TRACK_OPTIONS: Array<{ value: PricingTrack; Icon: typeof Car }> = [
@@ -329,19 +339,17 @@ export default function PlannerTopRail({ region, placement = "page" }: Props) {
             label={isCruise ? t("hours") : t("duration")}
             inSheet={inSheet}
           >
-            <select
-              value={isCruise ? hours : duration}
-              onChange={(e) =>
-                patch(isCruise ? { hours: e.target.value } : { duration: e.target.value })
-              }
-              className="rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-1.5 text-caption font-semibold tabular-nums focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-200"
-            >
-              {(isCruise ? CRUISE_HOURS : PRIVATE_HOURS).map((h) => (
-                <option key={h} value={h}>
-                  {h}h
-                </option>
-              ))}
-            </select>
+            <div className="min-w-[100px]">
+              <SelectDropdown
+                id="planner-rail-hours"
+                value={isCruise ? hours : duration}
+                options={isCruise ? CRUISE_HOUR_OPTIONS : PRIVATE_HOUR_OPTIONS}
+                onChange={(code) =>
+                  patch(isCruise ? { hours: code } : { duration: code })
+                }
+                ariaLabel={isCruise ? t("hours") : t("duration")}
+              />
+            </div>
           </Field>
         ) : null}
 
