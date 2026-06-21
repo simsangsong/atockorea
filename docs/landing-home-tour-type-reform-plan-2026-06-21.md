@@ -267,7 +267,7 @@ FinalCTA
 **전제:** 기존 `ChooseTravelStyle` 비주얼은 이미 정제됨(다크 슬레이트+앰버 / 화이트 민트 팟 + 레이어드 inset·soft 섀도우, `rounded-card`·`shadow-2`·scroll-reveal·`SnapScrollDots`·hover `-translate-y-0.5`·motion-reduce 가드·모바일 snap). **새로 만들지 않고 상속·확장**한다. 신규 라이브러리 0(framer만).
 
 ### 고급스러움 (premium) — 5 레버
-- **V1. 에디토리얼 타이포** — 섹션 타이틀/eyebrow를 Destinations와 같은 매거진 세리프(Noto Serif KR → Cormorant, 이미 layout 로드됨). 카드에 작은 세리프 eyebrow("Private day"/"Group tour"). italic 금지(§B 2026-05-20).
+- **V1. 에디토리얼 타이포** — ⚠ **수정(2026-06-21, 사용자 반려):** 섹션 헤딩(h2)에 매거진 세리프는 **금지** — plain 배경 섹션 타이틀에선 "혼자 따로 노는" 느낌, 다른 섹션 헤딩(Featured/Why/Process)이 전부 Inter 산세리프라 톤 충돌. **섹션 헤딩은 표준 `text-h2`(Inter) 유지.** 매거진 세리프는 **사진 카드 위 타이틀**(Destinations 지역명, Wave 1 카드 사진 eyebrow)에만 — 사진 컨텍스트에서만 에디토리얼로 읽힘. italic 금지(§B 2026-05-20).
 - **V2. 사진 텍스처(선택, 임팩트 큼)** — 카드 상단 얇은 듀오톤 사진 스트립(프라이빗=해안/프라이빗카 / 그룹=소그룹 순간) + 기존 B2/Vogue 필터(`saturate/contrast/brightness`) + 필름그레인. 히어로↔Destinations↔카드 이미지 아이덴티티 통일. (WebP, LCP-safe: fold 아래/lazy)
 - **V3. 실시간 가격을 "장부(ledger)"로** — `tabular-nums` + 헤어라인 divider, 1인당가 muted slate, "✓ 프라이빗이 더 쌉니다"는 시끄러운 배지 아닌 **조용한 emerald 한 줄.** 절제 = 고급.
 - **V4. 머티리얼 깊이 유지** — 현 inset+soft 레이어드 섀도우 보존(평탄화 금지).
@@ -302,7 +302,7 @@ tokens-first(애드혹 값 금지) · `focus-ring` · framer만(새 라이브러
 - **U12 Hero H1 — 통째 교체 대신 보존 + Wave 1 연기.** 현 H1(`premium.hero.headlineLine1` "checked before they're listed")는 **§B 2026-05-23 큐레이션/신뢰 메시지**라 가치 큼. "타입 선택 티업"은 이미 `ChooseTravelStyle` 카피("HOW YOU LIKE TO TRAVEL / Pick your pace")가 수행 → **U12는 V1 세리프 강조로 충족.** hero H1 리프레이밍은 카드가 hero로 올라오는 **Wave 1**(선택이 H1 바로 아래 올 때)로 연기. §B 큐레이션 H1 무훼손.
 - **U2 PartyStepper — Wave 0 마운트 + 실동작(inert 금지).** `ChooseTravelStyle` 카드 바로 위에 마운트. 기본 2, 게이트 없음(≥44px 탭타깃, tokens). **party를 3개 카드 링크로 운반**(`?…&party=N`) → U9 연속성 시드 + `home_party_stepper_change` 발화. **실시간 가격·동적 추천 배지는 Wave 1**(엔진 PV/그룹 GP 결선 시 caption도 "{count}명 기준 가격"으로 승격).
 - **U13 계측 — 신규 이벤트 2종.** `home_tour_type_card_click {type,party}` + `home_party_stepper_change {party}`. 기존 `home_cta_click`는 유지(중복 아님 — 전자는 reform 퍼널 격리용). baseline 수집 시작.
-- **V1 세리프 — chooseStyle 타이틀 → `font-magazine-serif-ko` font-light**(Destinations 카드와 톤 통일). 카피 무변경(i18n 0), 폰트만.
+- **V1 세리프 — ❌ 반려·되돌림(2026-06-21 사용자 피드백 "톤이 따로 논다").** chooseStyle 섹션 타이틀을 `font-magazine-serif-ko`로 했다가, plain 섹션 헤딩엔 안 어울려 **표준 `text-h2`(Inter)로 복귀.** 세리프는 사진 카드 타이틀에만(§12 V1 수정 참조).
 - **U6/U11 — Wave 0에선 비파괴.** `ChooseTravelStyle`은 현재 slot 5(Featured·Destinations 아래)라 카드 상단 이동·토글 제거·목적지 통합은 **Wave 1**(파괴적 IA 스왑). 따라서 fold 예산(U11) 실측도 카드가 상단 오는 Wave 1에서. Wave 0 스테퍼는 slot 5 카드 위에 안착(fold 영향 0).
 
 **Wave 0 산출(코드):** `components/home/v2/ui/PartyStepper.tsx`(신규) · `choose-travel-style.tsx`(스테퍼 마운트+party 운반+세리프+이벤트) · `analytics.ts`(2 이벤트) · 6 로케일 `chooseStyle.party*` i18n. **Wave 0 비파괴 — 기존 카드/라우팅 유지, 추가만.**
