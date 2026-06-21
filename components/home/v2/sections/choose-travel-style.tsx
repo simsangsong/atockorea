@@ -54,8 +54,11 @@ export function ChooseTravelStyle() {
           <p className="mb-3 text-eyebrow md:mb-4">
             {t("premium.v2.chooseStyle.eyebrow")}
           </p>
-          {/* V1 — editorial magazine serif (matches Destinations cards). */}
-          <h2 className="text-h2 font-magazine-serif-ko font-light tracking-[0.01em] text-slate-900">
+          {/* Standard section heading (Inter sans) — matches Featured / Why /
+              Process headings. V1's magazine serif was rejected here: it reads
+              as out-of-place on a plain section title (the editorial serif
+              belongs on photo-card titles like Destinations, not section h2s). */}
+          <h2 className="text-h2 text-slate-900">
             {t("premium.v2.chooseStyle.title")}
           </h2>
         </motion.div>
