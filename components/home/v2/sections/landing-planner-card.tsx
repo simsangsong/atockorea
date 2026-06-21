@@ -18,10 +18,14 @@ import { PLANNER_BUILD_EVENT } from "@/lib/home/planner-build-bridge";
 import { cn } from "@/lib/utils";
 import IntakeDateField from "@/components/itinerary-builder/IntakeDateField";
 
-/** Phase 12 D32 — duration options for the hero build-mode chip group.
- *  Mirrors PRIVATE_HOURS in PlannerTopRail; the chip group is a friendlier
- *  surface than a <select> for the hero card. */
-const HERO_DURATION_OPTIONS = [4, 6, 8, 10] as const;
+/** Phase 12 D32 / Phase 15 — duration options for the hero build-mode dial.
+ *  Mirrors PRIVATE_HOURS in PlannerTopRail. Was a fixed 4/6/8/10 chip group;
+ *  now a free 4→10h selection rendered through the premium SelectDropdown
+ *  (same on-brand popover as language) so odd-hour tours (5h/7h/9h) are
+ *  bookable from the hero. Shape matches SelectDropdown's { code, label }. */
+const HERO_DURATION_OPTIONS: { code: string; label: string }[] = [
+  4, 5, 6, 7, 8, 9, 10,
+].map((h) => ({ code: String(h), label: `${h}h` }));
 
 /** Phase 13 D37 — guide language options. Mirrors GUIDE_LANGS in
  *  PlannerTopRail so the hero handoff lands on a value the builder
@@ -57,13 +61,13 @@ const BTN_PRIMARY_STYLE = {
 } as const;
 
 /**
- * Premium on-brand language dropdown. Replaces the native `<select>` (which
- * popped the un-brandable OS picker sheet on mobile) with a button + custom
- * popover list — same family as IntakeDateField. Closes on outside-click /
- * Escape; the popover is absolutely positioned so it never resizes the
- * Date+Language grid row.
+ * Premium on-brand dropdown (language + duration dial). Replaces the native
+ * `<select>` (which popped the un-brandable OS picker sheet on mobile) with a
+ * button + custom popover list — same family as IntakeDateField. Closes on
+ * outside-click / Escape; the popover is absolutely positioned so it never
+ * resizes the grid row it lives in.
  */
-function LangDropdown({
+function SelectDropdown({
   id,
   value,
   options,
@@ -596,7 +600,7 @@ export function LandingPlannerCard({
                       >
                         {t("premium.v2.planner.buildLangLabel")}
                       </label>
-                      <LangDropdown
+                      <SelectDropdown
                         id="hero-build-lang"
                         value={buildLang}
                         options={HERO_LANG_OPTIONS}
@@ -621,39 +625,23 @@ export function LandingPlannerCard({
                         max={30}
                         value={buildParty}
                         onChange={(e) => setBuildParty(e.target.value)}
-                        className="focus-ring h-12 w-16 rounded-full border border-slate-200/70 bg-slate-50 px-2 text-center text-[15px] font-semibold tabular-nums text-slate-900 transition-colors duration-200 focus:border-slate-300 focus:bg-white"
+                        className="focus-ring h-11 w-16 rounded-full border border-slate-200/70 bg-slate-50 px-2 text-center text-[15px] font-semibold tabular-nums text-slate-900 transition-colors duration-200 focus:border-slate-300 focus:bg-white md:h-12"
                       />
                     </div>
                     <div>
-                      <p className="mb-1.5 block text-caption font-semibold text-slate-700">
-                        {t("premium.v2.planner.buildDurationLabel")}
-                      </p>
-                      <div
-                        className="flex gap-2 overflow-x-auto scrollbar-none"
-                        role="radiogroup"
-                        aria-label={t("premium.v2.planner.buildDurationLabel")}
+                      <label
+                        htmlFor="hero-build-hours"
+                        className="mb-1.5 block text-caption font-semibold text-slate-700"
                       >
-                        {HERO_DURATION_OPTIONS.map((h) => {
-                          const active = buildDuration === h;
-                          return (
-                            <button
-                              key={h}
-                              type="button"
-                              role="radio"
-                              aria-checked={active}
-                              onClick={() => setBuildDuration(h)}
-                              className={cn(
-                                "focus-ring flex h-12 min-w-[3rem] flex-none items-center justify-center rounded-full border px-3.5 text-caption font-medium tabular-nums transition-colors duration-200",
-                                active
-                                  ? "border-slate-900 bg-slate-900 text-white"
-                                  : "border-slate-200/70 bg-slate-50 text-slate-600 hover:bg-slate-100",
-                              )}
-                            >
-                              {h}h
-                            </button>
-                          );
-                        })}
-                      </div>
+                        {t("premium.v2.planner.buildDurationLabel")}
+                      </label>
+                      <SelectDropdown
+                        id="hero-build-hours"
+                        value={String(buildDuration)}
+                        options={HERO_DURATION_OPTIONS}
+                        onChange={(code) => setBuildDuration(Number(code))}
+                        ariaLabel={t("premium.v2.planner.buildDurationLabel")}
+                      />
                     </div>
                   </div>
                   {/* Phase 13 D39 — 5-input accuracy caption */}
