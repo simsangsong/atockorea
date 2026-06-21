@@ -192,6 +192,7 @@ FinalCTA
 | **U11** 모바일 fold 예산 (타입 카드 1장 fold 위 peek) | 390x844 스냅샷에서 카드 peek 확인 |
 | **U12** Hero H1 리프레이밍 | 6 로케일 카피, 화보 톤 무훼손 |
 | **U13** 퍼널 계측(타입클릭→리스트/빌더→장바구니→예약) | 이벤트 콘솔 발화 + baseline 수집 시작 |
+| **비주얼(§12)** 인원 스테퍼 슬림 pill + 섹션/H1 에디토리얼 세리프 | 스테퍼 탭타깃 ≥44px·"{party}명 기준" 캡션, 세리프 토큰(§12 V1·V6), 화보 톤 무훼손 |
 
 ### Wave 1 — 전환 엔진 (돈을 움직이는 레버) — **Wave 0 완료 후**
 | 항목 | 수용 기준 |
@@ -201,6 +202,7 @@ FinalCTA
 | **U3** "추천받기" 동등 카드 + 매처 인페이스 재사용 | 카드 클릭 → 기존 매처 결과 발화 |
 | **U4** Private → 큐레이션 프라이빗 리스트(빌더 보조) | 라우팅 정확, "직접 짜기"는 보조 위계 |
 | (동시) `ChooseTravelStyle` 상단 이동 + Match/Build 토글 제거 | 토글 잔재 0, 빌드 green, fold 스냅샷 |
+| **비주얼(§12)** 카드 역할 재매핑 + 실시간 가격 "장부" + 추천 1장 격상 + 마이크로 모션 | 추천 카드만 2px 액센트(나머지 동일), 가격 tabular-nums·"✓ 쌉니다" emerald 1줄, party 변경 시 숫자 롤·배지 슬라이드(framer, reduce-motion 가드), 카드당 ≤3요소 |
 | → **풀스왑 후 퍼널 전후 비교**[U13] | 타입클릭→다음단계 CVR 정성 판단 |
 
 ### Wave 2 — 마감 + 신뢰
@@ -257,3 +259,36 @@ FinalCTA
    - ⚠ **운영자 재검증 hold를 되돌림 = 사용자 책임 결정.** 운영자 미검증 투어가 고객에게 노출됨.
 
 **§B 번복 로깅(마스터플랜)·§A 활성 Phase 전환은 Wave 0 착수 시 처리. 서울 재활성화(코드 2파일)는 그 선행 step — 라이브 ship 여부는 사용자 go 확인.**
+
+---
+
+## 12. 비주얼 디자인 — 고급(premium) + 직관(intuitive)
+
+**전제:** 기존 `ChooseTravelStyle` 비주얼은 이미 정제됨(다크 슬레이트+앰버 / 화이트 민트 팟 + 레이어드 inset·soft 섀도우, `rounded-card`·`shadow-2`·scroll-reveal·`SnapScrollDots`·hover `-translate-y-0.5`·motion-reduce 가드·모바일 snap). **새로 만들지 않고 상속·확장**한다. 신규 라이브러리 0(framer만).
+
+### 고급스러움 (premium) — 5 레버
+- **V1. 에디토리얼 타이포** — 섹션 타이틀/eyebrow를 Destinations와 같은 매거진 세리프(Noto Serif KR → Cormorant, 이미 layout 로드됨). 카드에 작은 세리프 eyebrow("Private day"/"Group tour"). italic 금지(§B 2026-05-20).
+- **V2. 사진 텍스처(선택, 임팩트 큼)** — 카드 상단 얇은 듀오톤 사진 스트립(프라이빗=해안/프라이빗카 / 그룹=소그룹 순간) + 기존 B2/Vogue 필터(`saturate/contrast/brightness`) + 필름그레인. 히어로↔Destinations↔카드 이미지 아이덴티티 통일. (WebP, LCP-safe: fold 아래/lazy)
+- **V3. 실시간 가격을 "장부(ledger)"로** — `tabular-nums` + 헤어라인 divider, 1인당가 muted slate, "✓ 프라이빗이 더 쌉니다"는 시끄러운 배지 아닌 **조용한 emerald 한 줄.** 절제 = 고급.
+- **V4. 머티리얼 깊이 유지** — 현 inset+soft 레이어드 섀도우 보존(평탄화 금지).
+- **V5. 마이크로 모션** — party 변경 시 가격 숫자 **롤/크로스페이드**, 추천 배지 카드 간 **슬라이드**(framer, `Math.round` 표시, reduce-motion 가드). "반응의 우아함" = 고급의 결정타.
+
+### 직관성 (intuitive) — 6 레버
+- **V6. 인원 스테퍼 = 명백한 컨트롤** — 카드 바로 위 슬림 pill 스테퍼(− 2 +), 탭타깃 ≥44px + "{party}명 기준" 캡션. 바꾸면 카드 눈앞 갱신 = 즉각 인과(핵심 직관 장치).
+- **V7. 추천 카드 1장만 시각 격상** — 디자인시스템 관례(featured=2px 액센트 보더)로 동적 추천 카드만 미묘한 elevation + "{party}명엔 이게 이득" 세리프 eyebrow. <1초 시선 유도. 나머지 2장은 동일 위계.
+- **V8. 카드 = 한눈에 "이게 나야?"** — 아이콘 + 1줄 + 가격 + Best-for 태그 1개. 그 외 전부 펼침(§3.5 ≤3요소 예산).
+- **V9. 경로 의미를 위계로** — 프라이빗/그룹 = solid primary CTA(`homeBtnPrimary`), 추천받기 = **ghost/outline**(도우미). 무게로 메인 vs 안전망 구분.
+- **V10. 점진적 공개** — "자세히 ▾"로 정원(세단 6/밴 13)·장단점 노출. 표면 calm 유지.
+- **V11. 연속성 어포던스** — 고른 목적지+인원이 다음 화면으로 보이게 따라감(작은 요약 칩, U9와 연계). "기억했나?" 불안 제거.
+
+### 카드 역할 재매핑 (기존 자산 재활용)
+| 카드 | 기존 비주얼 자산 | 근거 |
+|---|---|---|
+| **그룹** | 다크 슬레이트 + 앰버(현 Small Group 카드) | 소셜·활기 에너지 |
+| **프라이빗** | 화이트 민트 팟(현 Private 카드) | 프리미엄·고AOV 경로 |
+| **추천받기** | 더 조용한 ghost 카드(신규, 보조 위계) | 안전망이라 시각 무게 ↓ |
+
+### 가드 (design-system 준수)
+tokens-first(애드혹 값 금지) · `focus-ring` · framer만(새 라이브러리 0) · **amber는 액센트로만(범람 금지)** · premium > 절제 · 화보 톤 보존. 모두 `docs/home-ux-upgrade-plan.md` + 마스터플랜 §B 영구 결정 준수. 모든 home-v2 비주얼 변경은 landing-page-uiux 스킬 경유.
+
+**배치:** V6/V1은 Wave 0(스테퍼·타이포), V2~V5·V7~V9는 Wave 1(카드·가격·모션), V10~V11은 Wave 1~2(펼침·운반).
