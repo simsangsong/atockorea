@@ -6,10 +6,11 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { PartyStepper } from "@/components/home/v2/ui/PartyStepper";
 import { V0ShadcnButton } from "@/components/home/v2/ui/v0-shadcn-button";
-import { ArrowRight, Car, Bus, Award, Users } from "lucide-react";
+import { ArrowRight, Car, Bus, Award, Users, Sparkles } from "lucide-react";
 import { analytics } from "@/src/design/analytics";
 import {
   HOME_CTA_BUS_LIST_HREF,
+  HOME_CTA_MATCHING_HREF,
   HOME_CTA_PRIVATE_LIST_HREF,
   HOME_CTA_SMALL_GROUP_LIST_HREF,
 } from "@/lib/home/home-cta-routes";
@@ -283,6 +284,33 @@ export function ChooseTravelStyle() {
           />
         </div>
         <SnapScrollDots containerRef={scrollRef} count={3} />
+
+        {/* U3 — matcher "Get a recommendation" entry. A co-equal but secondary
+            (outline) full-width card under the type cards, so the undecided
+            segment isn't pushed to a buried link. Routes to the matcher. */}
+        <motion.div variants={REVEAL_ITEM_VARIANTS} className="mt-4 md:mt-5">
+          <Link
+            href={HOME_CTA_MATCHING_HREF}
+            onClick={() => analytics.homeTourTypeCardClick({ type: "recommend", party })}
+            className="focus-ring group flex items-center gap-3.5 rounded-card border border-slate-200/70 bg-white px-4 py-3.5 transition-colors duration-200 hover:border-slate-300 hover:bg-slate-50 md:px-5 md:py-4"
+          >
+            <div className="flex h-10 w-10 flex-none items-center justify-center rounded-lg border border-slate-200/70 bg-slate-100">
+              <Sparkles className="h-5 w-5 text-slate-700" />
+            </div>
+            <div className="min-w-0 flex-1">
+              <p className="text-caption font-bold text-slate-900 md:text-[15px]">
+                {t("premium.v2.chooseStyle.recommendCardTitle")}
+              </p>
+              <p className="text-micro leading-snug text-slate-500 md:text-caption">
+                {t("premium.v2.chooseStyle.recommendCardDesc")}
+              </p>
+            </div>
+            <span className="flex flex-none items-center gap-1 text-caption font-semibold text-slate-700">
+              <span className="hidden sm:inline">{t("premium.v2.chooseStyle.recommendCardCta")}</span>
+              <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
+            </span>
+          </Link>
+        </motion.div>
       </motion.div>
     </section>
   );
