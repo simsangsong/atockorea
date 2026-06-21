@@ -39,7 +39,7 @@ v3 만든 이유:
 - ✅ 완료
 - ❌ 중단/롤백
 
-**현재 활성 Phase: 🔄 "투어타입 우선" 홈 개혁 Wave 0 (골격+계측) — 시작 2026-06-21.** 플랜 `docs/landing-home-tour-type-reform-plan-2026-06-21.md`. Wave 0 = PartyStepper(U2/V6) 마운트+party 운반 / 퍼널 이벤트 2종(U13) / chooseStyle 세리프(V1) / 비파괴 추가. U12 hero H1·U6 IA 스왑·토글 제거는 Wave 1. (이전: v3 본 실행 + Phase D 완료, 통합 플래너 Phase 1–4 완료.)
+**현재 활성 Phase: 🔄 "투어타입 우선" 홈 개혁 Wave 1 — W1a~W1e 완료, W1f(카드 비주얼·모션) 남음.** 플랜 `docs/landing-home-tour-type-reform-plan-2026-06-21.md`. 진행: W1a 실시간 가격·W1b 동적 배지·W1c 매처 카드·W1d Private 리스트+매처 프리미엄·W1e-1 섹션 상단 이동·W1e-2 콘솔리데이션 취소(3카드 유지)·**W1e-3 hero 플래너 제거(타입 카드가 1차 결정, 매처=추천받기 카드)**. 카드 구조 = 타입 3장{소그룹·프라이빗·버스}+추천받기 풀폭. landing-planner-card 코드 보존(언마운트). 남은: W1f 비주얼·모션, 목적지 스트립(U6). (이전: v3 본 실행 + Phase D 완료, 통합 플래너 Phase 1–4 완료.)
 **실험 상태 (2026-05-21): 4종 모두 running이나 검정력 없음 (변이당 10-15명 / min 200). home_cta_copy / home_result_morphing / home_result_bottomsheet는 통합 플래너가 surface를 대체하므로 conclude 권장 — 단 production DB write는 사용자 승인 대기 (Phase 2 CTA 재구성 전 처리). home_sticky_threshold는 미충돌로 running 유지.**
 **다음 액션 (사용자 결정 대기): (1) 3개 power-empty 실험 conclude (DB write 사용자 승인 필요), (2) ~~Seoul 'Request a Seoul day' 타깃 확정~~ → **해결 2026-05-22**: Seoul도 빌더로 라우팅 (itinerary builder Phase 9 D12에서 Seoul+DMZ 빌더 지원 추가). landing-planner-card의 seoul 'coming soon' 분기 제거, PLANNER_BUILD_PREVIEW에 seoul 추가. 커밋 `4ef6ac08`. (3) Phase 5 go/no-go. traffic 누적 전까지 정성 판단 (v3 §12).**
 
@@ -146,6 +146,7 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 | 2026-06-21 (11) | **Wave 1 W1d — U4 Private 리스트-먼저 + 매처 카드 프리미엄화** (사용자 "매처 카드 사이즈 늘리고 고급스럽게 + 다음 스텝") | (pending) | `choose-travel-style.tsx`: (a) Private 카드는 이미 리스트 라우팅 → 빌더 보조 링크 "또는 직접 일정 짜기"(`/itinerary-builder?party=`) 메인 CTA 아래 추가(U4). `privateBuildOwn` i18n 6 로케일. (b) 매처 카드 프리미엄화: 패딩↑(py-5/6)·아이콘 12/14 amber-50 원형+골드 Sparkles·타이틀 lg·white→slate-50 그라데이션+레이어드 섀도우+hover lift. amber 단일 액센트(§B 절제). 검증: tsc/build |
 | 2026-06-21 (12) | **Wave 1 W1e-1 — 투어타입 섹션 상단 이동** (사용자 "진행") | (pending) | `HomeV2Page.tsx`: `ChooseTravelStyle`을 Hero 바로 아래(slot 2)로 이동(기존 slot 5). reform IA(Hero→투어타입) 핵심 가시 변경, 저위험 한 줄 reorder. **W1e 소분할**: W1e-2 콘솔리데이션(소그룹+버스→그룹, A/B 확인 대기) · W1e-3 hero Match/Build 토글 제거(최고위험)는 이어서. 과도기 hero 토글↔타입카드 공존. 검증: tsc/build |
 | 2026-06-21 (13) | **W1e-2 콘솔리데이션 취소 (사용자 "3카드로 줄이지 말고 추천 카드를 밑에") — 문서 번복 기록** | (pending) | 코드 변경 0(현 라이브가 이미 3카드+추천 아래). reform §0/§3 카드구조 번복 + §14 W1e-2 취소 + §B 번복 row. 최종 카드 구조 = 타입 3장{소그룹·프라이빗·버스} 유지 + 추천받기 풀폭 아래. 남은 W1e-3(hero 토글 제거)는 사용자 go 대기 |
+| 2026-06-21 (14) | **Wave 1 W1e-3 — hero Match/Build 플래너 제거** (사용자 "가 제거, 안전하게 한스텝씩") | (pending) | `hero-section.tsx`: `LandingPlannerCard` + 플래너 헤더(매처 eyebrow/headline/subhead) 언마운트 + dead code 전부 정리(useSearchParams·useMemo·useCallback·destination/intent state·appendChip·readDestinationFromParams·VALID_DESTINATIONS·import). `landing-planner-card.tsx`는 **삭제 안 함**(언마운트만, 코드 보존). hero = 사진+H1+큐레이션; 첫 결정=타입 카드, 매처=추천받기 카드(/match). 검증: tsc 클린·hero-section lint 0(잔여 6 pre-existing)·build green. ⚠ 부작용: 홈 목적지 선택기 사라짐(→/tours/list). U6 목적지 스트립 추후 |
 
 Phase 안에 없지만 좋은 아이디어. Phase 끝나기 전엔 손대지 말 것. 추가 시 출처 + 보류 이유 명시.
 
