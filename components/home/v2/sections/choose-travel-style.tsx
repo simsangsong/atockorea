@@ -115,6 +115,13 @@ export function ChooseTravelStyle() {
                 </span>
                 <span className="text-micro text-white/70 font-semibold">{t("premium.v2.chooseStyle.perPerson")}</span>
               </div>
+              {/* U1 live price — per-person × party = total for the group. */}
+              <p className="mt-1.5 text-micro font-semibold tabular-nums text-amber-200/90">
+                {t("premium.v2.chooseStyle.totalForParty", {
+                  total: formatPrice(featuredJoin.listPriceUsd * party),
+                  count: party,
+                })}
+              </p>
             </div>
 
             <V0ShadcnButton
@@ -163,6 +170,13 @@ export function ChooseTravelStyle() {
                 </span>
                 <span className="text-slate-500 text-micro font-semibold">{t("premium.v2.chooseStyle.privatePerVehicle")}</span>
               </div>
+              {/* U1 live price — one vehicle ÷ party = effective per-person. */}
+              <p className="mt-1.5 text-micro font-semibold tabular-nums text-emerald-700">
+                {t("premium.v2.chooseStyle.perPersonForParty", {
+                  perPerson: formatPrice(Math.round(CHOOSE_STYLE_CARD_USD.private.list / party)),
+                  count: party,
+                })}
+              </p>
             </div>
 
             <V0ShadcnButton
@@ -212,6 +226,13 @@ export function ChooseTravelStyle() {
                 </span>
                 <span className="text-slate-500 text-micro font-semibold">{t("premium.v2.chooseStyle.busPerPerson")}</span>
               </div>
+              {/* U1 live price — per-person × party = total for the group. */}
+              <p className="mt-1.5 text-micro font-semibold tabular-nums text-emerald-700">
+                {t("premium.v2.chooseStyle.totalForParty", {
+                  total: formatPrice(CHOOSE_STYLE_CARD_USD.bus.from * party),
+                  count: party,
+                })}
+              </p>
             </div>
 
             <V0ShadcnButton

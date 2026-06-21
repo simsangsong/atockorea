@@ -1212,9 +1212,11 @@
           "busF3": "手頃な価格",
           "busCta": "バスツアーを見る",
           "partyLabel": "人数",
-          "partyCaption": "{count}名で表示",
+          "partyCaption": "{count}名の料金",
           "partyDecrease": "人数を減らす",
-          "partyIncrease": "人数を増やす"
+          "partyIncrease": "人数を増やす",
+          "totalForParty": "{count}名で ≈ {total}",
+          "perPersonForParty": "{count}名なら1人 ≈ {perPerson}"
         },
         "process": {
           "eyebrow": "ご利用方法",
