@@ -1,9 +1,10 @@
 "use client";
 
 import type { CSSProperties } from "react";
-import { useMemo, useRef } from "react";
+import { useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { PartyStepper } from "@/components/home/v2/ui/PartyStepper";
 import { V0ShadcnButton } from "@/components/home/v2/ui/v0-shadcn-button";
 import { ArrowRight, Car, Bus, Award, Users } from "lucide-react";
 import { analytics } from "@/src/design/analytics";
@@ -35,16 +36,41 @@ export function ChooseTravelStyle() {
   const featuredJoin = useMemo(() => getFeaturedJoinTourProduct(), []);
   const reveal = useRevealContainerProps();
 
+  // Reform U2/V6 — party drives the (Wave 1) live price + dynamic recommend.
+  // In Wave 0 it carries forward into the card links so the catalogue can
+  // pre-fill group size (U9 continuity seed). Default 2, no gate.
+  const [party, setParty] = useState(2);
+  const withParty = (href: string) =>
+    `${href}${href.includes("?") ? "&" : "?"}party=${party}`;
+  const handleStepperChange = (next: number) => {
+    setParty(next);
+    analytics.homePartyStepperChange({ party: next });
+  };
+
   return (
     <section className="section-py-sm px-4 md:px-6 bg-slate-50">
       <motion.div {...reveal} className="max-w-4xl mx-auto">
-        <motion.div variants={REVEAL_ITEM_VARIANTS} className="text-center mb-7 md:mb-9">
+        <motion.div variants={REVEAL_ITEM_VARIANTS} className="text-center mb-5 md:mb-6">
           <p className="mb-3 text-eyebrow md:mb-4">
             {t("premium.v2.chooseStyle.eyebrow")}
           </p>
-          <h2 className="text-h2 text-slate-900">
+          {/* V1 — editorial magazine serif (matches Destinations cards). */}
+          <h2 className="text-h2 font-magazine-serif-ko font-light tracking-[0.01em] text-slate-900">
             {t("premium.v2.chooseStyle.title")}
           </h2>
+        </motion.div>
+
+        {/* U2/V6 — party stepper. Sits directly above the cards so changing it
+            visibly drives the cards (live price lands Wave 1). */}
+        <motion.div variants={REVEAL_ITEM_VARIANTS} className="mb-6 md:mb-7">
+          <PartyStepper
+            value={party}
+            onChange={handleStepperChange}
+            label={t("premium.v2.chooseStyle.partyLabel")}
+            caption={t("premium.v2.chooseStyle.partyCaption", { count: party })}
+            decreaseAria={t("premium.v2.chooseStyle.partyDecrease")}
+            increaseAria={t("premium.v2.chooseStyle.partyIncrease")}
+          />
         </motion.div>
 
         {/* relative wrapper hosts the right-edge fade overlay so users see
@@ -95,9 +121,10 @@ export function ChooseTravelStyle() {
               style={chooseStyleFeaturedWhiteCtaStyle}
             >
               <Link
-                href={HOME_CTA_SMALL_GROUP_LIST_HREF}
+                href={withParty(HOME_CTA_SMALL_GROUP_LIST_HREF)}
                 onClick={() => {
                   analytics.homeCtaClick({ source: "choose_style_featured_join" });
+                  analytics.homeTourTypeCardClick({ type: "small_group", party });
                 }}
               >
                 {t("premium.v2.chooseStyle.sgCta")}
@@ -141,9 +168,10 @@ export function ChooseTravelStyle() {
               className={cn(homeBtnPrimary, "mt-4")}
             >
               <Link
-                href={HOME_CTA_PRIVATE_LIST_HREF}
+                href={withParty(HOME_CTA_PRIVATE_LIST_HREF)}
                 onClick={() => {
                   analytics.homeCtaClick({ source: "choose_style_private_custom" });
+                  analytics.homeTourTypeCardClick({ type: "private", party });
                 }}
               >
                 {t("premium.v2.chooseStyle.privateCta")}
@@ -189,9 +217,10 @@ export function ChooseTravelStyle() {
               className={cn(homeBtnPrimary, "mt-4")}
             >
               <Link
-                href={HOME_CTA_BUS_LIST_HREF}
+                href={withParty(HOME_CTA_BUS_LIST_HREF)}
                 onClick={() => {
                   analytics.homeCtaClick({ source: "choose_style_browse_bus" });
+                  analytics.homeTourTypeCardClick({ type: "bus", party });
                 }}
               >
                 {t("premium.v2.chooseStyle.busCta")}

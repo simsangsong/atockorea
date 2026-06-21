@@ -426,6 +426,17 @@ export type HomeHeroSeason =
 export type UnifiedPlannerMode = "match" | "build";
 export type UnifiedPlannerDestination = "jeju" | "seoul" | "busan";
 
+/** Reform (tour-type-first home) — the tour-type card funnel. `type` is the
+ *  card chosen; forward-compatible with the 3-card structure (private / group /
+ *  recommend) while the current cards are private / small_group / bus.
+ *  `party` rides along so the funnel can segment by group size (U13). */
+export type HomeTourTypeCard =
+  | "private"
+  | "small_group"
+  | "bus"
+  | "group"
+  | "recommend";
+
 // ===========================================================================
 // Public API — unchanged signatures
 // ===========================================================================
@@ -463,6 +474,17 @@ export const analytics = {
   /** v3 Phase 0a — destination card click (Seoul/Busan/Jeju 3-up rail). */
   homeDestinationCardClick: (payload: { destination: string }) =>
     trackEvent("home_destination_card_click", payload),
+
+  /** Reform U13 — tour-type card click (the reform funnel entry point). Carries
+   *  the current party size so the funnel can segment private vs group by group
+   *  size. Distinct from `home_cta_click` so the reform surface is isolatable. */
+  homeTourTypeCardClick: (payload: { type: HomeTourTypeCard; party: number }) =>
+    trackEvent("home_tour_type_card_click", payload),
+
+  /** Reform U13 — party stepper changed above the tour-type cards. Fires on a
+   *  settled value change (not per keystroke); `party` is the new count. */
+  homePartyStepperChange: (payload: { party: number }) =>
+    trackEvent("home_party_stepper_change", payload),
 
   /** Unified planner — user toggled the Match me / Build myself segmented
    *  control. `mode` is the mode being switched TO. Fires only on an actual
