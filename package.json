@@ -41,6 +41,8 @@
     "stress:noshow": "npx tsx scripts/stress-noshow-hold.ts",
     "import:match-v18": "node scripts/import-match-v18.mjs",
     "chat:classify": "node scripts/classify-chat-messages.mjs",
+    "rag:index": "node --env-file=.env.local --import tsx scripts/build-knowledge-index.ts",
+    "rag:index:dry": "node --env-file=.env.local --import tsx scripts/build-knowledge-index.ts --dry-run",
     "gen:southwest-tour-product-zh-TW-sql": "node scripts/gen-southwest-tour-product-zh-TW-sql.mjs",
     "gen:southwest-tour-product-zh-CN-sql": "node scripts/gen-southwest-tour-product-zh-CN-sql.mjs",
     "gen:southwest-tour-product-ko-sql": "node scripts/gen-southwest-tour-product-ko-sql.mjs",
