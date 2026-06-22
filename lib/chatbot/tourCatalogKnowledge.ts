@@ -114,6 +114,22 @@ function scoreTour(tour: CatalogTour, query: string): number {
     if (/\b(hike|hiking|trail|mountain|hallasan|seoraksan|tunnel|cave)\b/i.test(blob)) score -= 7;
   }
 
+  // Accessibility: strongly prefer flexible private/charter options; hard-penalize
+  // hiking/climbing tours that the context flags as unsuitable for wheelchairs.
+  const wantsAccessible = /\b(accessible|wheelchair|step[- ]?free)\b/i.test(query);
+  if (wantsAccessible) {
+    if (/\b(private|charter|custom|car|hotel pickup)\b/i.test(blob)) score += 14;
+    if (/\b(hike|hiking|trail|mountain|hallasan|seoraksan|oreum|cave|climb|stairs|tunnel)\b/i.test(blob)) score -= 14;
+  }
+
+  // Families with young children: favor flexible / gentle tours, lightly penalize
+  // strenuous hikes. Do NOT penalize on duration (long tours can suit families).
+  const wantsFamily = /\b(family|kids)\b/i.test(query);
+  if (wantsFamily) {
+    if (/\b(private|small group|car|hotel pickup|beach|market|garden|theme|easy|relaxed)\b/i.test(blob)) score += 6;
+    if (/\b(hike|hiking|trail|mountain|hallasan|seoraksan|strenuous|steep|advanced)\b/i.test(blob)) score -= 5;
+  }
+
   return score;
 }
 
