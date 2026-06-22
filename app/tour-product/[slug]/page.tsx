@@ -20,7 +20,19 @@ import { resolveTourProductDbLocale } from "@/lib/tour-product/resolveTourProduc
 import { isTourSlugBlockedFromConsumerSurfaces } from "@/lib/tour-consumer-visibility";
 
 type RouteParams = { slug: string };
-type RouteSearchParams = { locale?: string | string[] };
+type RouteSearchParams = { locale?: string | string[]; party?: string | string[] };
+
+/**
+ * U9 carry-through — parse the upstream `?party=` group size (home stepper →
+ * /tours/list → detail) into a guest count for the booking cards. Returns
+ * undefined for missing/invalid input so the cards keep their default.
+ */
+function parsePartyParam(raw: string | string[] | undefined): number | undefined {
+  const v = Array.isArray(raw) ? raw[0] : raw;
+  if (!v) return undefined;
+  const n = Number.parseInt(v, 10);
+  return Number.isFinite(n) && n > 0 ? n : undefined;
+}
 
 /**
  * Always re-render on each request — admin saves to `tour_product_pages` must
@@ -83,6 +95,7 @@ export default async function RegisteredTourProductPage({
   const slug = await resolveRegisteredSlug(params);
   const sp = (await searchParams) ?? {};
   const locale = await resolveTourProductDbLocale(sp.locale);
+  const initialGuests = parsePartyParam(sp.party);
 
   // Resolution order: Supabase locale → static JSON locale → Supabase EN fallback.
   // Falling through to the static JSON for the requested locale before trying
@@ -179,6 +192,7 @@ export default async function RegisteredTourProductPage({
         tourProductSlug={slug}
         recommendations={recommendations}
         locale={locale}
+        initialGuests={initialGuests}
       />
     </>
   );

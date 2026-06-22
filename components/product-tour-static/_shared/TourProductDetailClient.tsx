@@ -46,6 +46,12 @@ export type TourProductDetailClientProps = {
   recommendations?: readonly StaticTourProductRegistration[];
   /** Active locale — propagated to client widgets (e.g. HaenyeoStatusButton). */
   locale?: "en" | "ko" | "ja" | "zh" | "zh-TW" | "es";
+  /**
+   * U9 carry-through — group size seeded from the upstream `?party=` query param
+   * (home stepper → /tours/list → detail). Forwarded to the booking cards so the
+   * visitor is not re-asked for a party size they already chose.
+   */
+  initialGuests?: number;
 };
 
 /**
@@ -56,7 +62,7 @@ export type TourProductDetailClientProps = {
  * `app/tour-product/[slug]/page.tsx`; existing East / Jeju pages continue to
  * render through their slug-specific clients until migrated.
  */
-export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, recommendations, locale = "en" }: TourProductDetailClientProps) {
+export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, recommendations, locale = "en", initialGuests }: TourProductDetailClientProps) {
   const vm = viewModel;
   const t = useTranslations();
   const hasRouteVariants = Array.isArray(vm.routeVariants) && vm.routeVariants.length > 0;
@@ -297,6 +303,7 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
               selectedPortLabel={selectedPortLabel}
               sectionUi={vm.sectionUi}
               pricingTiers={vm.pricingTiers}
+              initialGuests={initialGuests}
             />
           </div>
         </aside>
@@ -310,6 +317,7 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
           selectedPortLabel={selectedPortLabel}
           sectionUi={vm.sectionUi}
           pricingTiers={vm.pricingTiers}
+          initialGuests={initialGuests}
         />
       </div>
 
