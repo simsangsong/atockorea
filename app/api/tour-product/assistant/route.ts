@@ -470,9 +470,9 @@ export async function POST(req: NextRequest) {
   // Falls back to the legacy keyword builders (siteKnowledge + approved Q&A) on
   // any failure or when disabled (CHAT_RAG=0 / no OPENAI_API_KEY).
   let ragContext = "";
-  // Opt-in: set CHAT_RAG=1 (and OPENAI_API_KEY) to activate. Lets merge stay
-  // decoupled from go-live and flip off instantly in case of trouble.
-  const ragEnabled = process.env.CHAT_RAG === "1" && Boolean(process.env.OPENAI_API_KEY?.trim());
+  // On whenever an OpenAI key is present; set CHAT_RAG=0 as a kill switch to
+  // instantly fall back to the legacy keyword builders.
+  const ragEnabled = process.env.CHAT_RAG !== "0" && Boolean(process.env.OPENAI_API_KEY?.trim());
   if (ragEnabled && qaSb) {
     try {
       const chunks = await retrieveKnowledge(qaSb, {
