@@ -26,6 +26,7 @@
     "adding": "添加中..."
   },
   "nav": {
+    "tourRoom": "行程室",
     "home": "首页",
     "tours": "旅游",
     "about": "关于",
@@ -38,6 +39,31 @@
     "wishlist": "收藏",
     "whyAtoc": "关于 AtoC",
     "support": "支持"
+  },
+  "tourRoom": {
+    "title": "行程室",
+    "liveNow": "进行中",
+    "today": "今天",
+    "tomorrow": "明天",
+    "date": "日期",
+    "time": "时间",
+    "guests": "人数",
+    "reference": "预订编号",
+    "chatHeading": "与向导的对话",
+    "chatPlaceholder": "输入消息…",
+    "send": "发送",
+    "chatEmpty": "还没有消息，先和向导打个招呼吧！",
+    "sendError": "发送失败，请重试。",
+    "senderGuide": "向导",
+    "senderTeam": "AtoC",
+    "noActiveTitle": "暂无进行中的行程",
+    "noActiveDesc": "行程室将在出行前一天开放。",
+    "opensSoon": "行程室将在出行前一天开放，我们会把一切都为您准备在这里。",
+    "viewUpcoming": "查看即将出行",
+    "browseTours": "浏览行程",
+    "signInTitle": "登录以打开行程室",
+    "signInDesc": "登录后即可查看行程详情并与向导聊天。",
+    "loadError": "无法打开此行程室。"
   },
   "tour": {
     "title": "旅游",

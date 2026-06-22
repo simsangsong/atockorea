@@ -87,6 +87,7 @@ const RESERVED_ROOT_SEGMENTS = new Set([
   'tour',
   'tour-preview',
   'tour-product',
+  'tour-room',
 ]);
 
 function singlePathSegment(pathname: string): string | null {

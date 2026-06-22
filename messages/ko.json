@@ -26,6 +26,7 @@
     "adding": "추가 중..."
   },
   "nav": {
+    "tourRoom": "투어룸",
     "home": "홈",
     "tours": "투어",
     "about": "소개",
@@ -38,6 +39,31 @@
     "wishlist": "위시리스트",
     "whyAtoc": "AtoC 소개",
     "support": "고객지원"
+  },
+  "tourRoom": {
+    "title": "투어룸",
+    "liveNow": "실시간",
+    "today": "오늘",
+    "tomorrow": "내일",
+    "date": "날짜",
+    "time": "시간",
+    "guests": "인원",
+    "reference": "예약번호",
+    "chatHeading": "가이드와의 대화",
+    "chatPlaceholder": "메시지를 입력하세요…",
+    "send": "전송",
+    "chatEmpty": "아직 메시지가 없어요. 가이드에게 인사를 건네보세요!",
+    "sendError": "전송하지 못했어요. 다시 시도해 주세요.",
+    "senderGuide": "가이드",
+    "senderTeam": "AtoC",
+    "noActiveTitle": "진행 중인 투어가 없어요",
+    "noActiveDesc": "투어룸은 투어 전날 열립니다.",
+    "opensSoon": "투어룸은 투어 전날 열립니다. 모든 준비를 여기에 모아둘게요.",
+    "viewUpcoming": "예정된 투어 보기",
+    "browseTours": "투어 둘러보기",
+    "signInTitle": "로그인하고 투어룸 열기",
+    "signInDesc": "로그인하면 투어 정보를 확인하고 가이드와 대화할 수 있어요.",
+    "loadError": "투어룸을 열 수 없습니다."
   },
   "tour": {
     "title": "투어",
