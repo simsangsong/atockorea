@@ -362,18 +362,21 @@ export function TourDesktopBookingCard({
       {pricingTiers && pricingTiers.tiers.length > 0 && (
         <div className="mb-4 rounded-2xl border border-slate-200/70 bg-slate-50/60 p-3">
           {pricingTiers.durations.length > 1 && (
-            <div className="mb-2 flex items-center justify-between">
-              <span className={`${fieldLabelClass}`}>Duration</span>
-              <div className="inline-flex rounded-full bg-white p-0.5 shadow-sm ring-1 ring-slate-200">
+            <div className="mb-2.5">
+              <span className={`${fieldLabelClass} mb-1.5 block`}>Duration</span>
+              {/* Horizontally scrollable hour pills (4h–10h) — the row scrolls on
+                  narrow rails instead of wrapping/clipping. */}
+              <div className="-mx-1 flex gap-1.5 overflow-x-auto scrollbar-none px-1 pb-0.5">
                 {pricingTiers.durations.map((d) => (
                   <button
                     key={d}
                     type="button"
                     onClick={() => setSelectedDuration(d)}
-                    className={`rounded-full px-3 py-1 text-xs font-semibold transition-colors ${
+                    aria-pressed={selectedDuration === d}
+                    className={`shrink-0 rounded-full px-3 py-1 text-xs font-semibold ring-1 transition-colors ${
                       selectedDuration === d
-                        ? "bg-foreground text-white"
-                        : "text-muted-foreground hover:text-foreground"
+                        ? "bg-foreground text-white ring-foreground"
+                        : "bg-white text-muted-foreground ring-slate-200 hover:text-foreground"
                     }`}
                   >
                     {d}
@@ -382,8 +385,9 @@ export function TourDesktopBookingCard({
               </div>
             </div>
           )}
-          <div className="overflow-hidden rounded-xl border border-slate-200/70 bg-white">
-            <table className="w-full text-[12px]">
+          {/* Matrix scrolls horizontally so all duration columns stay reachable. */}
+          <div className="overflow-x-auto rounded-xl border border-slate-200/70 bg-white scrollbar-none">
+            <table className="w-full min-w-max text-[12px]">
               <thead className="bg-slate-100/70 text-[10.5px] uppercase tracking-wide text-muted-foreground">
                 <tr>
                   <th className="px-2.5 py-1.5 text-left font-semibold">Group size</th>

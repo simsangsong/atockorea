@@ -44,6 +44,7 @@
 | 2026-05-17 | 마스터 플랜 v1 작성 (1차 Claude audit + Codex review 통합) | 초기 | 16개 결정, Sprint 1-4 정의 |
 | 2026-05-18 | §A 상태 대시보드 + §B 결정 로그 + §C 변경 로그 + §D parked + §8 세계최고 디자이너 audit 추가 | (이 커밋) | User 요청으로 픽셀단위 review 진행. 16 section + Drawer 분석. §B-P1 premium up-only 결정 신규. Sprint 1-4 작업 시작 전 단계. |
 | 2026-05-23 | **별도 트랙 개시 — 픽업/드롭오프/날씨 데이터 정합성**: `docs/pickup-dropoff-weather-data-correctness-plan-2026-05-23.md` | — | User 보고(픽업/드롭오프 "중구난방"). 비주얼 Sprint와 별개의 데이터+i18n 버그 수정 트랙: 지도 핀 좌표, "Hotel pickup"→"N pickup points", 타임라인 드롭오프 중복, 날씨 앵커→대표명소, 하드코딩 영어 6로케일. Sprint 1-4 비주얼 작업과 충돌 없음(데이터/카피 레이어). |
+| 2026-06-22 | **프라이빗 차터 시간선택(4~10h) + 인원×시간 실시간 가격 — pricingTiers 데이터 채움 + 선택기 스크롤화 (사용자 "프라이빗 투어들에 시간 선택 스크롤 + 인원수·duration 실시간 가격 CTA 옆 반영", "4·5·6·7·8·9·10 다 넣어")** | (이번 commit) | 예약 카드의 duration 선택기+`tierPriceUsd`(인원 tier×시간) 실시간 가격 메커니즘은 이미 존재(Sprint 1) — 차량 차터 프라이빗 중 4개만 `pricingTiers` 보유, **jeju 차터엔 없었음**. `scripts/apply-private-pricing-tiers.mjs`로 **엔진(`pricing-policy.ts`) 도출 매트릭스**를 4개 차터(jeju 추가 + seoul-suburbs·busan·incheon realign)×6 로케일=24 JSON에 주입: durations **4·5·6·7·8·9·10h**(매 시간), tier 세단(1–6)/밴(7–9)/솔라티(10–13), 가격=(ENGLISH_BASE[h]+surcharge)÷1480. diff=pricingTiers 블록만(컨텐츠 무손상; jeju는 순수 +57). 선택기 UI: segmented→**가로 스크롤 pill 행**(7개), 매트릭스 wrapper `overflow-hidden`→`overflow-x-auto`(8열 클립 방지) — 데스크톱+Sticky 양쪽. **DMZ 제외**(엔진 track=dmz=인원 고정가·시간 무관 → 매트릭스 부적합, 별도 처리 필요) + **Nami 제외**(1인당 유지, 사용자 지시). 검증: 24 JSON parse / tsc 0 / lint 0(잔여 6 pre-existing) / build green. ⚠ 라이브 QA + DMZ 후속. |
 
 ## §D 보류 / parked
 
