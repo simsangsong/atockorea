@@ -27,4 +27,12 @@ describe("tour catalogue chatbot context", () => {
     expect(firstTourLine).toContain("jeju-island-private-car-charter-tour");
     expect(context.toLowerCase()).toContain("jeju");
   });
+
+  it("prefers flexible private/charter options for accessibility questions (multilingual)", () => {
+    for (const query of ["wheelchair accessible tour", "車椅子で参加できるツアーはありますか？", "휠체어로 갈 수 있는 투어 있어요?"]) {
+      const context = buildTourCatalogContextText({ locale: "en", query, limit: 4, maxChars: 2500 });
+      const firstTourLine = context.split("\n").find((line) => line.startsWith("- ")) ?? "";
+      expect(firstTourLine.toLowerCase()).toMatch(/private|charter/);
+    }
+  });
 });

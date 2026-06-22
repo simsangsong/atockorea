@@ -558,13 +558,28 @@ export function expandQueryForTourCatalogue(query: string): string {
   addIf(["인천", "incheon", "仁川"], ["incheon"]);
   addIf(["남이섬", "nami"], ["nami"]);
   addIf(["설악산", "seoraksan"], ["seoraksan"]);
-  addIf(["부모님", "어르신", "70대", "무릎", "오래 걷", "힘든", "빡세지", "senior", "parents", "low walking"], [
-    "parents",
-    "senior",
-    "relaxed",
-    "low mobility",
-  ]);
-  addIf(["아이", "초등학생", "가족", "유모차", "kids", "children", "family", "stroller"], ["family", "kids"]);
+  addIf(
+    [
+      "부모님", "어르신", "70대", "무릎", "오래 걷", "힘든", "빡세지", "senior", "seniors", "elderly",
+      "parents", "low walking", "高齢", "シニア", "年配", "ゆっくり", "老人", "长辈", "年长", "老年",
+      "mayores", "tercera edad", "ancianos", "relajado",
+    ],
+    ["parents", "senior", "relaxed", "low mobility"],
+  );
+  addIf(
+    [
+      "아이", "초등학생", "가족", "유모차", "kids", "children", "family", "stroller", "家族", "子供",
+      "子ども", "小孩", "家庭", "親子", "亲子", "儿童", "niños", "niñas", "niño", "familia",
+    ],
+    ["family", "kids"],
+  );
+  addIf(
+    [
+      "휠체어", "배리어프리", "거동", "車椅子", "車いす", "輪椅", "无障碍", "無障礙", "wheelchair",
+      "accessible", "accessibility", "step free", "step-free", "mobility", "silla de ruedas",
+    ],
+    ["accessible", "wheelchair", "private", "low mobility"],
+  );
   addIf(["크루즈", "기항", "항구", "cruise", "shore", "port"], ["cruise", "shore excursion", "port"]);
   addIf(["공항", "airport"], ["airport"]);
   addIf(["전용차", "프라이빗", "private", "charter"], ["private", "charter"]);
