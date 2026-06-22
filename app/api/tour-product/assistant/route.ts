@@ -19,6 +19,22 @@ import {
 } from "@/lib/chatbot/queryIntent";
 import { buildSiteKnowledgeContextText } from "@/lib/chatbot/siteKnowledge";
 import { buildTourCatalogContextText } from "@/lib/chatbot/tourCatalogKnowledge";
+import {
+  extractBookingCredentials,
+  hasBothCredentials,
+  isBookingWriteRequest,
+  verifyAndFetchBooking,
+  buildVerifiedBookingContext,
+  bookingCredentialsPrompt,
+  bookingNotFoundReply,
+  bookingLockedReply,
+} from "@/lib/chatbot/bookingLookup";
+import {
+  checkBookingLookupAllowed,
+  recordBookingLookupAttempt,
+  recordBookingLookupFailure,
+  recordBookingLookupSuccess,
+} from "@/lib/chatbot/bookingLookupRateLimit";
 import { retrieveKnowledge, buildRagContextText } from "@/lib/rag/retrieve";
 import {
   recommendToursViaMatcher,
@@ -397,18 +413,87 @@ export async function POST(req: NextRequest) {
     }
   }
 
+  // Read-only booking lookup. Booking-specific questions used to hand off to a
+  // human unconditionally; now we verify identity (booking reference + email)
+  // and answer pickup/time/status/payment/refund-progress from the booking
+  // record. Writes (cancel/change/refund processing) still hand off — see the
+  // bookingWriteRequest force-handoff below.
+  let verifiedBookingContext = "";
+  let bookingWriteRequest = false;
   if (detectedIntent.intent === "booking_specific") {
-    return applySessionCookie(
-      NextResponse.json({
-        reply: bookingSpecificReply(inferLocaleFromText(latestUserMessage) ?? locale),
-        ticket_id: null,
-        escalated: false,
-        escalation_reason: "booking_specific_requires_human",
-        handoff_offered: true,
-        debug_intent: debugNoSideEffects ? detectedIntent : undefined,
-      }),
-      session,
-    );
+    const bookingLocale = inferLocaleFromText(latestUserMessage) ?? locale;
+    // Credentials may arrive across separate turns (reference now, email next).
+    const recentUserText = messages
+      .filter((m) => m.role === "user")
+      .slice(-6)
+      .map((m) => m.content)
+      .join("\n");
+    const creds = extractBookingCredentials(recentUserText);
+    bookingWriteRequest = isBookingWriteRequest(latestUserMessage);
+
+    if (!hasBothCredentials(creds)) {
+      return applySessionCookie(
+        NextResponse.json({
+          reply: bookingCredentialsPrompt(bookingLocale),
+          ticket_id: null,
+          escalated: false,
+          escalation_reason: "booking_specific_requires_identity",
+          handoff_offered: true,
+          debug_intent: debugNoSideEffects ? detectedIntent : undefined,
+        }),
+        session,
+      );
+    }
+
+    const rlKey = `${session.token}|${bestEffortIp(req) ?? "noip"}`;
+    const gate = checkBookingLookupAllowed(rlKey);
+    if (!gate.allowed) {
+      return applySessionCookie(
+        NextResponse.json({
+          reply: bookingLockedReply(bookingLocale),
+          ticket_id: null,
+          escalated: false,
+          escalation_reason:
+            gate.reason === "locked" ? "booking_lookup_locked" : "booking_lookup_rate_limited",
+          handoff_offered: true,
+          debug_intent: debugNoSideEffects ? detectedIntent : undefined,
+        }),
+        session,
+      );
+    }
+    recordBookingLookupAttempt(rlKey);
+
+    const lookupSb = makeServiceRoleClient();
+    let bookingView: Awaited<ReturnType<typeof verifyAndFetchBooking>> = null;
+    if (lookupSb) {
+      try {
+        bookingView = await verifyAndFetchBooking(lookupSb, creds);
+      } catch (lookupErr) {
+        console.error("[tour-product/assistant] booking lookup error:", (lookupErr as Error).message);
+      }
+    }
+
+    if (!bookingView) {
+      // Identical message regardless of which field was wrong (anti-enumeration).
+      recordBookingLookupFailure(rlKey);
+      return applySessionCookie(
+        NextResponse.json({
+          reply: bookingNotFoundReply(bookingLocale),
+          ticket_id: null,
+          escalated: false,
+          escalation_reason: "booking_not_found",
+          handoff_offered: true,
+          debug_intent: debugNoSideEffects ? detectedIntent : undefined,
+        }),
+        session,
+      );
+    }
+
+    // Verified — clear failures and let the model answer from the booking facts
+    // (read-only). A write request still falls through but forces a handoff
+    // offer at the end so we never imply we changed anything.
+    recordBookingLookupSuccess(rlKey);
+    verifiedBookingContext = buildVerifiedBookingContext(bookingView);
   }
 
   if (detectedIntent.intent === "legal" && isPrivacyRequestQuestion(latestUserMessage)) {
@@ -565,8 +650,12 @@ export async function POST(req: NextRequest) {
     "When answering legal or policy questions, summarize the site policy plainly; do not give legal advice.",
     "If the verified context does not answer the user's question, say that clearly and ask whether to connect them to customer support inside this chat. Do not send the user to the contact page as the primary next step.",
     "If the user asks to contact support, talk to a person, or get a definitive answer from staff, say you can connect them in this chat.",
-    "For personal booking details such as exact pickup time, driver contact, payment status, booking changes, or booking-specific refund progress, staff must check the booking record; offer support inside this chat.",
+    verifiedBookingContext
+      ? "The user's own booking has been verified (booking reference + email). Answer their booking question — pickup, tour time, status, payment status, refund progress, guests, amount — using ONLY the VERIFIED BOOKING facts below. Never reveal or mention payment-method, card, or internal IDs. For changes, cancellation, or refund PROCESSING, tell them our staff will handle it and offer support in this chat — never claim you have changed, cancelled, rescheduled, or refunded anything."
+      : "For personal booking details such as exact pickup time, driver contact, payment status, booking changes, or booking-specific refund progress, staff must check the booking record; offer support inside this chat.",
     "Keep replies under about 12 sentences unless the user asks for detail.",
+    verifiedBookingContext ? "\n--- VERIFIED BOOKING (this user's own; verified by reference + email) ---\n" : "",
+    verifiedBookingContext,
     "\n--- PRODUCT CONTEXT ---\n",
     productContext,
     matcherContext
@@ -642,8 +731,13 @@ export async function POST(req: NextRequest) {
   // ──────────────────────────────────────────────────────────────────────
   let ticketCreated: number | null = null;
   let escalationReason: string | null = null;
-  let forceHandoffOffer = false;
-  if (replyLooksMisrouted(activeIntent.intent, replyText)) {
+  // A write request on a verified booking forces a support-handoff offer so we
+  // never imply the change was done in-chat.
+  let forceHandoffOffer = bookingWriteRequest;
+  // Skip the misrouted override for a verified booking answer — those facts are
+  // not tour-heavy, and clobbering with the generic handoff would drop a real
+  // answer the user is entitled to.
+  if (!verifiedBookingContext && replyLooksMisrouted(activeIntent.intent, replyText)) {
     escalationReason = "low_confidence";
     forceHandoffOffer = true;
     if (activeIntent.intent === "policy") {
