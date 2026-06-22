@@ -32,21 +32,27 @@
 - `lib/rag/retrieve.ts` — 쿼리 임베딩 → 벡터+키워드 병렬 → RRF 융합 + source_type 다양성 캡 + locale 우선 → 인용 URL 포함 컨텍스트
 - `app/api/tour-product/assistant/route.ts` 에 `buildRagContext()` 주입 (키워드 폴백 보존, 플래그 가드)
 
-## Phase 2 — 자동 Q&A 수집 루프
-- 기존 `createQaDraftFromSupportReply`(티켓) + AI대화 자동 추출 배치(Gemini 판정, `sanitizeQaText` PII, 임베딩 유사도 중복제거)
-- `/admin/qa-review` 리뷰 UI 강화(편집/승인/반려/일괄)
-- 승인 → `knowledge_chunks(source_type=qa)` 자동 임베딩 = 루프 닫힘
+## Phase 2 — 자동 Q&A 수집 루프 ✅
+- `lib/rag/qa-index.ts`: 승인 → `knowledge_chunks(source_type=qa)` 임베딩, 반려/비활성 → 제거. PATCH `/api/admin/qa-pairs/[id]`에 연결(비치명적).
+- `scripts/harvest-qa-candidates.ts`(`npm run rag:harvest`): confident·non-escalated AI턴 → Gemini 재사용성 판정 → PII 새니타이즈 + 중복제거 → draft. 티켓 경로는 기존 `createQaDraftFromSupportReply`.
+- 리뷰 UI는 기존 `/admin/qa-review` 사용. 검증: 409 후보, 승인→임베딩→검색(sim 0.84)→제거 확인.
 
-## Phase 3 — 피드백 신호
-- 위젯 답변별 👍/👎 + 종료 설문
-- `chat_feedback` 테이블 + `POST .../assistant/feedback`
-- 긍정 Q&A 랭킹 부스트 / 부정·저신뢰 = 커버리지 갭 플래그
+## Phase 3 — 피드백 신호 ✅
+- `chat_feedback` 테이블 + `POST /api/tour-product/assistant/feedback`(쿠키 스코프, locale 추론)
+- 위젯 답변별 👍/👎(메시지당 1표, 6개 언어 라벨)
+- 하베스트가 👎 답변 제외 + 👍 답변 우선
 
-## Phase 4 — 분석 대시보드
-- `/admin/chatbot-analytics`: 볼륨·에스컬레이션율·핸드오프율·의도분포
-- 커버리지 갭 클러스터(저신뢰+부정+에스컬레이션) → 원클릭 Q&A 초안
-- Q&A 건강도, 피드백 도움률, RAG 적중률(min_sim 이상 검색 여부)
-- pg_cron 정기 집계 + 인덱스 재빌드
+## Phase 4 — 분석 대시보드 ✅
+- `/admin/chatbot-analytics` + `GET /api/admin/chatbot-analytics`: 볼륨·에스컬레이션율·도움률·카테고리분포·Q&A파이프라인·RAG인덱스(타입별 count, 1000행 캡 회피)
+- 커버리지 갭(👎/에스컬레이션 질문) → 원클릭 "Q&A 초안 만들기"
+- 어드민 사이드바 "챗봇 분석" 링크 추가
+
+## 운영 (스케줄링)
+- **실시간**: Q&A 승인 시 자동 임베딩(루프 핵심) — cron 불필요.
+- **콘텐츠 변경 시**: `npm run rag:index` (content_hash 증분, 변경분만 재임베딩).
+- **주기적 학습**: `npm run rag:harvest` (예: 주 1회) — 신규 대화에서 Q&A 초안 수확.
+- pg_cron은 OpenAI/Node 호출 불가 → 위 스크립트를 CI/Vercel Cron/수동으로 운영(자동화는 선택, 미구현).
+- **활성화**: Vercel `OPENAI_API_KEY`(완료) + RAG 기본 ON, `CHAT_RAG=0`이 킬스위치.
 
 ## 원칙
 - 각 Phase 독립 출시(빌드 그린 + 테스트). main 경합 회피 위해 worktree에서 작업.
