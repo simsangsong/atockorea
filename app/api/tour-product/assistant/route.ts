@@ -559,12 +559,20 @@ export async function POST(req: NextRequest) {
     parts: [{ text: m.content }],
   }));
 
+  // Lower temperature for a factual support assistant: more consistent, more
+  // faithful to the verified context, less run-to-run variance. Override with
+  // GEMINI_ASSISTANT_TEMPERATURE if a warmer tone is wanted.
+  const temperature = (() => {
+    const raw = Number(process.env.GEMINI_ASSISTANT_TEMPERATURE);
+    return Number.isFinite(raw) && raw >= 0 && raw <= 1 ? raw : 0.35;
+  })();
+
   const t0 = Date.now();
   let replyText = "";
   try {
     const chat = model.startChat({
       history,
-      generationConfig: { maxOutputTokens: 1200, temperature: 0.6 },
+      generationConfig: { maxOutputTokens: 1200, temperature },
     });
     const res = await chat.sendMessage(last.content);
     replyText = res.response.text()?.trim() ?? "";
@@ -579,7 +587,11 @@ export async function POST(req: NextRequest) {
 
   const isRecommendationIntent =
     activeIntent.intent === "tour_recommendation" || activeIntent.intent === "tour_catalog";
-  if (isRecommendationIntent && (replyText.length < 180 || !/\/tour-product\/[a-z0-9-]+/i.test(replyText))) {
+  // Deterministic catalogue fallback ONLY when the model essentially returned
+  // nothing useful (short AND no product URL). A substantive, constraint-aware
+  // answer is preserved instead of being clobbered by a flat top-3 list — the
+  // top-3 padding was the main cause of low grounding on constrained queries.
+  if (isRecommendationIntent && replyText.length < 180 && !/\/tour-product\/[a-z0-9-]+/i.test(replyText)) {
     const catalogueReply = buildCatalogueRecommendationReply(tourCatalogContext, answerLocale);
     if (catalogueReply) {
       replyText = catalogueReply;
