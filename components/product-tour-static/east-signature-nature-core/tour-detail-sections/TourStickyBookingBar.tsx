@@ -438,18 +438,20 @@ export function TourStickyBookingBar({ price, checkout, selectedPortLabel, secti
 
                 <div className="tour-booking-drawer-footer shrink-0 overflow-visible border-t border-border/60 px-3 py-2 sm:px-5">
                   {pricingTiers && pricingTiers.durations.length > 1 && (
-                    <div className="mb-2 flex items-center justify-between gap-2">
-                      <span className={`${fieldLabelClass}`}>Duration</span>
-                      <div className="inline-flex rounded-full bg-white p-0.5 shadow-sm ring-1 ring-slate-200">
+                    <div className="mb-2">
+                      <span className={`${fieldLabelClass} mb-1.5 block`}>Duration</span>
+                      {/* Horizontally scrollable hour pills (4h–10h). */}
+                      <div className="-mx-1 flex gap-1.5 overflow-x-auto scrollbar-none px-1 pb-0.5">
                         {pricingTiers.durations.map((d) => (
                           <button
                             key={d}
                             type="button"
                             onClick={() => setSelectedDuration(d)}
-                            className={`rounded-full px-3 py-1 text-xs font-semibold transition-colors ${
+                            aria-pressed={selectedDuration === d}
+                            className={`shrink-0 rounded-full px-3 py-1 text-xs font-semibold ring-1 transition-colors ${
                               selectedDuration === d
-                                ? "bg-foreground text-white"
-                                : "text-muted-foreground hover:text-foreground"
+                                ? "bg-foreground text-white ring-foreground"
+                                : "bg-white text-muted-foreground ring-slate-200 hover:text-foreground"
                             }`}
                           >
                             {d}
