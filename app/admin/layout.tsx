@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import type { LucideIcon } from 'lucide-react';
 import {
   BarChart3,
+  Bot,
   Building2,
   ChevronDown,
   CircleHelp,
@@ -43,6 +44,7 @@ const adminMenuItems: AdminMenuItem[] = [
   { path: '/admin/cms', label: '콘텐츠 CMS', icon: Sparkles },
   { path: '/admin/match-pois', label: '매칭 POI 관리', icon: MapPin, badge: 'NEW' },
   { path: '/admin/analytics', label: '데이터 분석', icon: BarChart3 },
+  { path: '/admin/chatbot-analytics', label: '챗봇 분석', icon: Bot, badge: 'NEW' },
   { path: '/admin/settings', label: '시스템 설정', icon: Settings },
 ];
 
@@ -58,6 +60,7 @@ const pathToBreadcrumb: Record<string, string> = {
   '/admin/cms': '콘텐츠 CMS',
   '/admin/match-pois': '매칭 POI 관리',
   '/admin/analytics': '데이터 분석',
+  '/admin/chatbot-analytics': '챗봇 분석',
   '/admin/settings': '시스템 설정',
 };
 

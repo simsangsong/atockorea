@@ -7,6 +7,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { requireAdmin, AdminAuthFailure, adminAuthJsonResponse } from "@/lib/auth";
 import { createServerClient } from "@/lib/supabase";
+import { syncQaPairToIndex } from "@/lib/rag/qa-index";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -73,7 +74,16 @@ export async function PATCH(req: NextRequest, { params }: RouteParams) {
     const { error } = await sb.from("qa_pairs").update(update).eq("id", id);
     if (error) return NextResponse.json({ error: error.message }, { status: 500 });
 
-    return NextResponse.json({ ok: true, status: STATUS_MAP[parsed.data.action] });
+    // Close the learning loop: approved -> embed into RAG; otherwise remove.
+    // Non-fatal — a retrieval-index hiccup must not fail the review action.
+    let indexed: "indexed" | "removed" | "skipped" = "skipped";
+    try {
+      indexed = await syncQaPairToIndex(sb, id);
+    } catch (indexErr) {
+      console.error("[PATCH /api/admin/qa-pairs/[id]] RAG index sync error:", (indexErr as Error).message);
+    }
+
+    return NextResponse.json({ ok: true, status: STATUS_MAP[parsed.data.action], indexed });
   } catch (e) {
     if (e instanceof AdminAuthFailure) return adminAuthJsonResponse(e);
     console.error("[PATCH /api/admin/qa-pairs/[id]] error:", e);

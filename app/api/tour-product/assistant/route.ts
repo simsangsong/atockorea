@@ -19,6 +19,7 @@ import {
 } from "@/lib/chatbot/queryIntent";
 import { buildSiteKnowledgeContextText } from "@/lib/chatbot/siteKnowledge";
 import { buildTourCatalogContextText } from "@/lib/chatbot/tourCatalogKnowledge";
+import { retrieveKnowledge, buildRagContextText } from "@/lib/rag/retrieve";
 import { buildTourProductAssistantContextText } from "@/lib/tour-product/tourProductAssistantContext";
 import type { TourProductPageLocale } from "@/lib/tour-product/resolveTourProductDbLocale";
 import { logChatTurn, type ChatLogContext } from "@/lib/support/chat-logger";
@@ -463,9 +464,32 @@ export async function POST(req: NextRequest) {
         maxChars: activeIntent.intent === "policy" || activeIntent.intent === "legal" ? 8500 : 6200,
       })
     : "Site knowledge intentionally omitted for this query intent.";
-  let learnedQaContext = "";
   const qaSb = makeServiceRoleClient();
-  if (qaSb) {
+
+  // ── RAG: semantic + keyword hybrid retrieval over the whole knowledge index.
+  // Falls back to the legacy keyword builders (siteKnowledge + approved Q&A) on
+  // any failure or when disabled (CHAT_RAG=0 / no OPENAI_API_KEY).
+  let ragContext = "";
+  // On whenever an OpenAI key is present; set CHAT_RAG=0 as a kill switch to
+  // instantly fall back to the legacy keyword builders.
+  const ragEnabled = process.env.CHAT_RAG !== "0" && Boolean(process.env.OPENAI_API_KEY?.trim());
+  if (ragEnabled && qaSb) {
+    try {
+      const chunks = await retrieveKnowledge(qaSb, {
+        query: last.content,
+        locale: answerLocale,
+        sourceTypes: ["poi", "tour_product", "site", "policy", "qa"],
+        limit: 8,
+      });
+      ragContext = buildRagContextText(chunks, { maxChars: 8000 });
+    } catch (ragErr) {
+      console.error("[tour-product/assistant] RAG retrieval error:", (ragErr as Error).message);
+    }
+  }
+
+  // Legacy fallback context (also used to complement RAG misses).
+  let learnedQaContext = "";
+  if (!ragContext && qaSb) {
     try {
       learnedQaContext = await buildApprovedQaContextText(qaSb, {
         locale: answerLocale,
@@ -478,6 +502,18 @@ export async function POST(req: NextRequest) {
       console.error("[tour-product/assistant] approved QA lookup error:", (qaErr as Error).message);
     }
   }
+
+  const knowledgeSections = ragContext
+    ? [
+        "\n--- VERIFIED KNOWLEDGE (semantic search over POI, tours, policies, site, and approved Q&A) ---\n",
+        ragContext,
+      ]
+    : [
+        "\n--- APPROVED ADMIN Q&A ---\n",
+        learnedQaContext || "No approved learned Q&A matched this question.",
+        "\n--- SITE KNOWLEDGE ---\n",
+        siteKnowledgeContext || "No additional sitewide knowledge matched this question.",
+      ];
 
   const systemInstruction = [
     isSiteAssistant
@@ -503,10 +539,7 @@ export async function POST(req: NextRequest) {
     productContext,
     "\n--- TOUR CATALOGUE ---\n",
     tourCatalogContext || "No tour catalogue entries matched this question.",
-    "\n--- APPROVED ADMIN Q&A ---\n",
-    learnedQaContext || "No approved learned Q&A matched this question.",
-    "\n--- SITE KNOWLEDGE ---\n",
-    siteKnowledgeContext || "No additional sitewide knowledge matched this question.",
+    ...knowledgeSections,
   ].join("\n");
 
   const modelName = process.env.GEMINI_TOUR_PRODUCT_ASSISTANT_MODEL?.trim() || DEFAULT_GEMINI_MODEL;
