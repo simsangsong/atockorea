@@ -178,7 +178,7 @@ export function ruleParse(query: string): ParsedQueryV2 {
   const negative_signals: string[] = [];
 
   for (const [seasonKey, info] of Object.entries(TAXONOMY.seasons ?? {}) as any[]) {
-    const all = [...(info.ko ?? []), ...(info.en ?? []), ...(info.ja ?? []), ...(info.zh ?? [])];
+    const all = [...(info.ko ?? []), ...(info.en ?? []), ...(info.ja ?? []), ...(info.zh ?? []), ...(info.es ?? [])];
     if (matchAnyPositive(query, all)) {
       season = seasonKey as any;
       months = [...info.months];
@@ -188,7 +188,7 @@ export function ruleParse(query: string): ParsedQueryV2 {
 
   const season_locks: string[] = [];
   for (const [lockKey, info] of Object.entries(TAXONOMY.season_locks ?? {}) as any[]) {
-    const all = [...(info.ko ?? []), ...(info.en ?? []), ...(info.ja ?? []), ...(info.zh ?? [])];
+    const all = [...(info.ko ?? []), ...(info.en ?? []), ...(info.ja ?? []), ...(info.zh ?? []), ...(info.es ?? [])];
     if (matchAnyPositive(query, all)) {
       season_locks.push(lockKey);
       // Do NOT default-fill months from the season_lock here. The seasonal-gate
@@ -223,7 +223,7 @@ export function ruleParse(query: string): ParsedQueryV2 {
   // Personas
   const personas: string[] = [];
   for (const [key, info] of Object.entries(TAXONOMY.personas ?? {}) as any[]) {
-    const all = [...(info.ko ?? []), ...(info.en ?? []), ...(info.ja ?? []), ...(info.zh ?? [])];
+    const all = [...(info.ko ?? []), ...(info.en ?? []), ...(info.ja ?? []), ...(info.zh ?? []), ...(info.es ?? [])];
     if (matchAnyPositive(query, all)) {
       personas.push(key);
       const fit = info.fit_dim;
@@ -245,7 +245,7 @@ export function ruleParse(query: string): ParsedQueryV2 {
   // Themes
   const themes: string[] = [];
   for (const [key, info] of Object.entries(TAXONOMY.themes ?? {}) as any[]) {
-    const all = [...(info.ko ?? []), ...(info.en ?? []), ...(info.ja ?? []), ...(info.zh ?? [])];
+    const all = [...(info.ko ?? []), ...(info.en ?? []), ...(info.ja ?? []), ...(info.zh ?? []), ...(info.es ?? [])];
     if (matchAnyPositive(query, all)) {
       themes.push(key);
       for (const dim of info.boost_dims ?? []) bumpDim(boost, dim, 1.2);
@@ -281,7 +281,7 @@ export function ruleParse(query: string): ParsedQueryV2 {
   // Pace
   let pace: ParsedQueryV2["pace"] = null;
   for (const [key, info] of Object.entries(TAXONOMY.pace_dimensions ?? {}) as any[]) {
-    const all = [...(info.ko ?? []), ...(info.en ?? []), ...(info.ja ?? []), ...(info.zh ?? [])];
+    const all = [...(info.ko ?? []), ...(info.en ?? []), ...(info.ja ?? []), ...(info.zh ?? []), ...(info.es ?? [])];
     if (matchAnyPositive(query, all)) {
       if (key.includes("relaxed")) pace = "relaxed";
       else if (key.includes("active")) pace = "active";
@@ -306,7 +306,7 @@ export function ruleParse(query: string): ParsedQueryV2 {
   // Format
   let fmt: ParsedQueryV2["format"] = null;
   for (const [key, info] of Object.entries(TAXONOMY.format_constraints ?? {}) as any[]) {
-    const all = [...(info.ko ?? []), ...(info.en ?? []), ...(info.ja ?? []), ...(info.zh ?? [])];
+    const all = [...(info.ko ?? []), ...(info.en ?? []), ...(info.ja ?? []), ...(info.zh ?? []), ...(info.es ?? [])];
     if (matchAnyPositive(query, all)) {
       fmt = key as any;
       const fit = info.fit_dim;
@@ -318,7 +318,7 @@ export function ruleParse(query: string): ParsedQueryV2 {
   // Duration
   let duration: ParsedQueryV2["duration_constraint"] = null;
   for (const [key, info] of Object.entries(TAXONOMY.duration_constraints ?? {}) as any[]) {
-    const all = [...(info.ko ?? []), ...(info.en ?? []), ...(info.ja ?? []), ...(info.zh ?? [])];
+    const all = [...(info.ko ?? []), ...(info.en ?? []), ...(info.ja ?? []), ...(info.zh ?? []), ...(info.es ?? [])];
     if (matchAnyPositive(query, all)) {
       duration = key as any;
       break;
@@ -344,7 +344,7 @@ export function ruleParse(query: string): ParsedQueryV2 {
   // Hard constraints
   const hard_constraints: string[] = [];
   for (const [key, info] of Object.entries(TAXONOMY.hard_constraints ?? {}) as any[]) {
-    const all = [...(info.ko ?? []), ...(info.en ?? []), ...(info.ja ?? []), ...(info.zh ?? [])];
+    const all = [...(info.ko ?? []), ...(info.en ?? []), ...(info.ja ?? []), ...(info.zh ?? []), ...(info.es ?? [])];
     if (matchAnyPositive(query, all)) {
       hard_constraints.push(key);
       const f = info.filter_dim;
