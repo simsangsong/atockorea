@@ -3,6 +3,7 @@
 import type { CSSProperties, ReactNode } from "react";
 import { useMemo, useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { PartyStepper } from "@/components/home/v2/ui/PartyStepper";
 import { V0ShadcnButton } from "@/components/home/v2/ui/v0-shadcn-button";
@@ -61,6 +62,67 @@ function LivePrice({
         </motion.span>
       </AnimatePresence>
     </p>
+  );
+}
+
+/**
+ * Film-grain noise tile (same recipe as the hero) layered over the card photo
+ * strip so the duotone reads as printed editorial texture, not a flat stock cut.
+ */
+const CARD_GRAIN_BG =
+  "url(\"data:image/svg+xml,%3Csvg xmlns='http%3A//www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")";
+
+/**
+ * V2 — thin duotone photo strip at the top of each type card. Reuses existing
+ * site photography (no new assets): small-group → Jagalchi market travelers,
+ * private → Seoul private-car view of Gyeongbokgung, bus → branded coach at the
+ * Busan cruise terminal. The photo is tinted toward the card's colour identity
+ * (slate for the dark small-group card, emerald for the white private/bus pods)
+ * via the Vogue saturate/contrast/brightness filter + a multiply tone overlay,
+ * then a bottom fade melts it into the card body, with a faint film grain on
+ * top. Sits below the hero, so lazy-loaded (LCP-safe).
+ */
+function CardPhotoStrip({
+  src,
+  alt,
+  tone,
+}: {
+  src: string;
+  alt: string;
+  tone: "slate" | "emerald";
+}) {
+  return (
+    <div className="relative -mx-4 -mt-4 mb-4 h-24 overflow-hidden md:-mx-5 md:-mt-5 md:h-28">
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        loading="lazy"
+        sizes="(min-width: 768px) 300px, 70vw"
+        className="object-cover [filter:saturate(1.1)_contrast(1.06)_brightness(0.96)]"
+      />
+      <div
+        aria-hidden
+        className={cn(
+          "absolute inset-0 mix-blend-multiply",
+          tone === "slate" ? "bg-slate-800/55" : "bg-emerald-900/30",
+        )}
+      />
+      <div
+        aria-hidden
+        className={cn(
+          "absolute inset-0",
+          tone === "slate"
+            ? "bg-gradient-to-t from-slate-900 via-slate-900/35 to-slate-900/5"
+            : "bg-gradient-to-t from-white via-white/25 to-transparent",
+        )}
+      />
+      <div
+        aria-hidden
+        className="absolute inset-0 opacity-[0.12] mix-blend-overlay"
+        style={{ backgroundImage: CARD_GRAIN_BG }}
+      />
+    </div>
   );
 }
 
@@ -187,6 +249,11 @@ export function ChooseTravelStyle() {
               !recommendPrivate && "ring-2 ring-amber-300/70 ring-offset-2 ring-offset-slate-50",
             )}
           >
+            <CardPhotoStrip
+              src="/images/tours/jagalchi-market/jagalchi-interior-foreign-tourists.webp"
+              alt={t("premium.v2.chooseStyle.smallGroupTitle")}
+              tone="slate"
+            />
             <div className="flex items-center justify-between mb-4 mt-1">
               <div className="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-white/10 border border-white/15 flex items-center justify-center">
                 <Users className="w-4 h-4 md:w-5 md:h-5 text-white" />
@@ -262,6 +329,11 @@ export function ChooseTravelStyle() {
               recommendPrivate && "ring-2 ring-amber-300/70 ring-offset-2 ring-offset-slate-50",
             )}
           >
+            <CardPhotoStrip
+              src="/images/tours/seoul-private-charter/seoul-private-gyeongbokgung-from-car.webp"
+              alt={t("premium.v2.chooseStyle.privateTitle")}
+              tone="emerald"
+            />
             <div className="flex items-center justify-between mb-4 mt-1">
               <div className="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-emerald-50/70 border border-emerald-100/70 flex items-center justify-center">
                 <Car className="w-4 h-4 md:w-5 md:h-5 text-slate-700" />
@@ -339,6 +411,11 @@ export function ChooseTravelStyle() {
             variants={REVEAL_ITEM_VARIANTS}
             className="group relative w-[68vw] flex-none snap-start overflow-hidden rounded-card border border-emerald-100/60 bg-gradient-to-b from-white via-white to-emerald-50/40 p-4 md:p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_1px_2px_rgba(15,23,42,0.04),0_8px_22px_-12px_rgba(16,122,87,0.10),0_18px_36px_-18px_rgba(15,23,42,0.12)] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-emerald-200/75 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.95),0_2px_4px_rgba(15,23,42,0.05),0_10px_28px_-12px_rgba(16,122,87,0.16),0_22px_42px_-18px_rgba(15,23,42,0.16)] flex flex-col motion-reduce:hover:translate-y-0 motion-reduce:transition-none md:w-auto"
           >
+            <CardPhotoStrip
+              src="/images/tours/busan-cruise-terminal/busan-cruise-terminal-bus-pickup.webp"
+              alt={t("premium.v2.chooseStyle.busTitle")}
+              tone="emerald"
+            />
             <div className="flex items-center justify-between mb-4 mt-1">
               <div className="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-emerald-50/70 border border-emerald-100/70 flex items-center justify-center">
                 <Bus className="w-4 h-4 md:w-5 md:h-5 text-slate-700" />
