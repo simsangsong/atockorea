@@ -227,6 +227,10 @@ async function featureTests(sb: ReturnType<typeof client>) {
 async function main() {
   if (!process.env.OPENAI_API_KEY) throw new Error("OPENAI_API_KEY required (RAG)");
   if (!process.env.GEMINI_API_KEY) throw new Error("GEMINI_API_KEY required");
+  // Hard-disable chat audit logging so the test NEVER creates real tickets /
+  // chat logs / Telegram notifications, regardless of .env.local.
+  delete process.env.CHAT_AUDIT_LOG;
+  delete process.env.TOUR_MATCH_AUDIT_LOG;
   const sb = client();
   const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
   const model = genAI.getGenerativeModel({
