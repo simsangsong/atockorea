@@ -517,7 +517,15 @@ export async function POST(req: NextRequest) {
   if (useTourCatalog && qaSb) {
     try {
       matcherResult = await recommendToursViaMatcher(qaSb, last.content, answerLocale);
-      matcherContext = buildMatcherContextText(matcherResult);
+      // Inject only on a confident (STRONG) match. Skip accessibility and family
+      // queries — for those the authored per-tour Best-fit prose grounds better
+      // than the matcher's coarser wheelchair/family fit dimensions. The matcher
+      // owns region/theme/season/general-persona; Best-fit owns those nuances.
+      const isFamilyOrAccess =
+        matcherResult.hardConstraints.includes("wheelchair") ||
+        matcherResult.personas.some((p) => p.startsWith("family") || p.startsWith("families"));
+      const injectable = matcherResult.status === "STRONG_MATCH" && !isFamilyOrAccess;
+      matcherContext = injectable ? buildMatcherContextText(matcherResult) : "";
     } catch (matcherErr) {
       console.error("[tour-product/assistant] matcher error:", (matcherErr as Error).message);
     }

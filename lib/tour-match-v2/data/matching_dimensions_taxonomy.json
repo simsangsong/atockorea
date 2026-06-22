@@ -419,6 +419,20 @@
         "family",
         "families"
       ],
+      "ja": [
+        "家族",
+        "ファミリー"
+      ],
+      "zh": [
+        "家庭",
+        "一家",
+        "亲子",
+        "親子"
+      ],
+      "es": [
+        "familia",
+        "en familia"
+      ],
       "fit_dim": "family_fit"
     },
     "family_with_young_kids": {
@@ -430,6 +444,24 @@
       "en": [
         "young kids",
         "toddlers"
+      ],
+      "ja": [
+        "子供",
+        "子ども",
+        "幼児",
+        "小さい子"
+      ],
+      "zh": [
+        "小孩",
+        "儿童",
+        "孩子",
+        "幼儿",
+        "带娃"
+      ],
+      "es": [
+        "niños",
+        "niños pequeños",
+        "con niños"
       ],
       "fit_dim": [
         "family_with_young_kids_fit",
@@ -498,6 +530,22 @@
       "en": [
         "senior",
         "elderly"
+      ],
+      "ja": [
+        "高齢",
+        "シニア",
+        "年配"
+      ],
+      "zh": [
+        "老人",
+        "长辈",
+        "年长",
+        "老年"
+      ],
+      "es": [
+        "mayores",
+        "tercera edad",
+        "ancianos"
       ],
       "fit_dim": [
         "senior_couples_fit",
@@ -902,11 +950,27 @@
     "wheelchair": {
       "ko": [
         "휠체어",
-        "장애"
+        "장애",
+        "배리어프리",
+        "무장애"
       ],
       "en": [
         "wheelchair",
         "accessible"
+      ],
+      "ja": [
+        "車椅子",
+        "車いす",
+        "バリアフリー"
+      ],
+      "zh": [
+        "轮椅",
+        "輪椅",
+        "无障碍",
+        "無障礙"
+      ],
+      "es": [
+        "silla de ruedas"
       ],
       "filter_dim": "wheelchair_accessible_anchor_fit"
     },

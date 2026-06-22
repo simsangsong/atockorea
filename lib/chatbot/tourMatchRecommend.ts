@@ -29,6 +29,8 @@ export type MatcherResult = {
   status: string;
   recommendations: MatcherRecommendation[];
   notes: string[];
+  hardConstraints: string[];
+  personas: string[];
 };
 
 /** Run the deterministic matcher for a free-text query. Throws on data failure. */
@@ -58,7 +60,13 @@ export async function recommendToursViaMatcher(
       score: m.total_score,
     };
   });
-  return { status: res.match_status, recommendations, notes: res.notes };
+  return {
+    status: res.match_status,
+    recommendations,
+    notes: res.notes,
+    hardConstraints: parsed.hard_constraints ?? [],
+    personas: parsed.personas ?? [],
+  };
 }
 
 /**
