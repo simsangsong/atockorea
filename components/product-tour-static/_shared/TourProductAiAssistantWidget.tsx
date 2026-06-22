@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Headphones, Send, Sparkles, X } from "lucide-react";
+import { Headphones, Send, Sparkles, ThumbsDown, ThumbsUp, X } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
@@ -122,6 +122,20 @@ const SITE_ASSISTANT_SLUG = "__site__";
 const STORAGE_PREFIX = "tour-product-assistant:";
 const LIVE_TICKET_PREFIX = "tour-product-assistant-live-ticket:";
 const MSG_EASE = [0.22, 1, 0.36, 1] as const;
+
+type FeedbackLabels = { helpful: string; notHelpful: string; thanks: string; noted: string };
+
+function feedbackLabels(lang: string): FeedbackLabels {
+  if (lang.startsWith("ko"))
+    return { helpful: "도움이 됐어요", notHelpful: "도움이 안 됐어요", thanks: "고마워요!", noted: "알려줘서 고마워요" };
+  if (lang.startsWith("ja"))
+    return { helpful: "役に立った", notHelpful: "役に立たなかった", thanks: "ありがとうございます！", noted: "フィードバックに感謝します" };
+  if (lang.startsWith("es"))
+    return { helpful: "Útil", notHelpful: "No fue útil", thanks: "¡Gracias!", noted: "Gracias por tu comentario" };
+  if (lang.startsWith("zh"))
+    return { helpful: "有帮助", notHelpful: "没帮助", thanks: "谢谢！", noted: "感谢反馈" };
+  return { helpful: "Helpful", notHelpful: "Not helpful", thanks: "Thanks!", noted: "Thanks for the feedback" };
+}
 
 function labelsFor(lang: string, scope: AssistantScope): UiLabels {
   if (lang.startsWith("ko")) {
@@ -257,6 +271,7 @@ export function TourProductAiAssistantWidget({
   const storageKey = tourProductSlug || SITE_ASSISTANT_SLUG;
   const [uiLang, setUiLang] = useState("en");
   const labels = useMemo(() => labelsFor(uiLang, scope), [scope, uiLang]);
+  const fb = useMemo(() => feedbackLabels(uiLang), [uiLang]);
   const quickChips = useMemo(
     () => (supportQuickChips && supportQuickChips.length > 0 ? supportQuickChips : labels.defaultQuickChips),
     [labels.defaultQuickChips, supportQuickChips],
@@ -269,6 +284,7 @@ export function TourProductAiAssistantWidget({
   const [activeTicketId, setActiveTicketId] = useState<number | null>(() => readStoredTicketId(storageKey));
   const [liveStatus, setLiveStatus] = useState<string | null>(null);
   const [messages, setMessages] = useState<ChatMessage[]>(() => readStoredMessages(storageKey));
+  const [feedback, setFeedback] = useState<Record<number, 1 | -1>>({});
   const listRef = useRef<HTMLDivElement>(null);
   const inputId = useId();
   const lastSupportMessageIdRef = useRef(0);
@@ -289,6 +305,30 @@ export function TourProductAiAssistantWidget({
           }
         : undefined,
     [],
+  );
+
+  const sendFeedback = useCallback(
+    (index: number, rating: 1 | -1) => {
+      if (feedback[index]) return; // one vote per message
+      const answer = messages[index]?.content ?? "";
+      if (!answer) return;
+      const question = index > 0 && messages[index - 1]?.role === "user" ? messages[index - 1].content : undefined;
+      setFeedback((prev) => ({ ...prev, [index]: rating }));
+      void fetch("/api/tour-product/assistant/feedback", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          rating,
+          answer,
+          question,
+          tourProductSlug: storageKey,
+          pageUrl: typeof window !== "undefined" ? window.location.href.slice(0, 2000) : undefined,
+        }),
+      }).catch(() => {
+        /* best-effort; keep the optimistic UI */
+      });
+    },
+    [feedback, messages, storageKey],
   );
 
   const runAssistant = useCallback(
@@ -706,6 +746,36 @@ export function TourProductAiAssistantWidget({
                         </span>
                       )}
                       <span className="whitespace-pre-wrap break-words">{m.content}</span>
+                      {(!m.origin || m.origin === "ai") && (
+                        <div className="mt-1.5 flex items-center gap-1.5 border-t border-slate-100 pt-1.5">
+                          {feedback[i] ? (
+                            <span className="text-[10px] font-medium text-slate-400">
+                              {feedback[i] === 1 ? fb.thanks : fb.noted}
+                            </span>
+                          ) : (
+                            <>
+                              <button
+                                type="button"
+                                aria-label={fb.helpful}
+                                title={fb.helpful}
+                                onClick={() => sendFeedback(i, 1)}
+                                className="rounded-full p-1 text-slate-400 transition hover:bg-emerald-50 hover:text-emerald-600"
+                              >
+                                <ThumbsUp className="h-3.5 w-3.5" />
+                              </button>
+                              <button
+                                type="button"
+                                aria-label={fb.notHelpful}
+                                title={fb.notHelpful}
+                                onClick={() => sendFeedback(i, -1)}
+                                className="rounded-full p-1 text-slate-400 transition hover:bg-rose-50 hover:text-rose-600"
+                              >
+                                <ThumbsDown className="h-3.5 w-3.5" />
+                              </button>
+                            </>
+                          )}
+                        </div>
+                      )}
                     </div>
                   </motion.div>
                 ),

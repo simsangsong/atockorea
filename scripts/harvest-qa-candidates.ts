@@ -101,6 +101,22 @@ async function alreadyHarvested(sb: SupabaseClient): Promise<Set<number>> {
   return ids;
 }
 
+function normAnswer(s: string): string {
+  return s.replace(/\s+/g, " ").trim().slice(0, 400);
+}
+
+/** Quality signal: answers users marked 👎 (skip) and 👍 (prioritize). */
+async function loadFeedback(sb: SupabaseClient): Promise<{ neg: Set<string>; pos: Set<string> }> {
+  const neg = new Set<string>();
+  const pos = new Set<string>();
+  const { data } = await sb.from("chat_feedback").select("rating, answer");
+  for (const row of (data as Array<{ rating: number; answer: string | null }> | null) ?? []) {
+    if (!row.answer) continue;
+    (row.rating < 0 ? neg : pos).add(normAnswer(row.answer));
+  }
+  return { neg, pos };
+}
+
 type Judgement = { reusable: boolean; question?: string; answer?: string; category?: string };
 
 async function judge(model: ReturnType<GoogleGenerativeAI["getGenerativeModel"]>, c: Candidate): Promise<Judgement> {
@@ -138,8 +154,15 @@ async function main() {
   console.log("Loading chat messages…");
   const messages = await loadMessages(sb);
   const harvested = await alreadyHarvested(sb);
-  const pairs = buildPairs(messages).filter((p) => !harvested.has(p.assistantId));
-  console.log(`  ${messages.length} messages → ${pairs.length} new candidate pairs (cap ${argLimit})`);
+  const { neg, pos } = await loadFeedback(sb);
+  const pairs = buildPairs(messages)
+    .filter((p) => !harvested.has(p.assistantId))
+    .filter((p) => !neg.has(normAnswer(p.answer))) // skip answers users flagged 👎
+    // Prioritize 👍-rated answers for review.
+    .sort((a, b) => Number(pos.has(normAnswer(b.answer))) - Number(pos.has(normAnswer(a.answer))));
+  console.log(
+    `  ${messages.length} messages → ${pairs.length} new candidate pairs (👍${pos.size}/👎${neg.size} feedback, cap ${argLimit})`,
+  );
 
   const candidates = pairs.slice(0, argLimit);
   let created = 0;
