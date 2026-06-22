@@ -6,7 +6,7 @@ import Link from "next/link";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { PartyStepper } from "@/components/home/v2/ui/PartyStepper";
 import { V0ShadcnButton } from "@/components/home/v2/ui/v0-shadcn-button";
-import { ArrowRight, Car, Bus, Award, Users, Sparkles } from "lucide-react";
+import { ArrowRight, Car, Bus, Award, Users, Sparkles, Check } from "lucide-react";
 import { analytics } from "@/src/design/analytics";
 import {
   HOME_CTA_BUS_LIST_HREF,
@@ -400,6 +400,28 @@ export function ChooseTravelStyle() {
           />
         </div>
         <SnapScrollDots containerRef={scrollRef} count={3} />
+
+        {/* U7 — risk-reversal trust line (once, below the cards). All three
+            points are already-stated policy: free cancellation 24h + card-hold
+            (no charge today) + vetted operators. */}
+        <motion.div
+          variants={REVEAL_ITEM_VARIANTS}
+          className="mt-5 flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 md:mt-6"
+        >
+          {[
+            "premium.v2.chooseStyle.riskFreeCancel",
+            "premium.v2.chooseStyle.riskNoChargeToday",
+            "premium.v2.chooseStyle.riskCheckedOperators",
+          ].map((key) => (
+            <span
+              key={key}
+              className="flex items-center gap-1.5 text-micro font-medium text-slate-500 md:text-caption"
+            >
+              <Check className="h-3.5 w-3.5 flex-none text-emerald-600" aria-hidden />
+              {t(key)}
+            </span>
+          ))}
+        </motion.div>
 
         {/* U3 — matcher "Get a recommendation" entry. A co-equal but secondary
             (outline) full-width card under the type cards, so the undecided
