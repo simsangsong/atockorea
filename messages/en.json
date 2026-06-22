@@ -1364,7 +1364,12 @@
           "destAll": "All Korea",
           "riskFreeCancel": "Free cancellation up to 24h",
           "riskNoChargeToday": "No charge today — card just holds your spot",
-          "riskCheckedOperators": "Every operator checked first"
+          "riskCheckedOperators": "Every operator checked first",
+          "seasonActive": "{season} · about {count} days left",
+          "seasonSoon": "{season} begins in about {count} days",
+          "seasonCherryBlossom": "Cherry blossom season",
+          "seasonSummer": "Peak summer season",
+          "seasonAutumn": "Autumn foliage season"
         },
         "process": {
           "eyebrow": "HOW IT WORKS",

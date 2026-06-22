@@ -1225,7 +1225,12 @@
           "destAll": "全部",
           "riskFreeCancel": "24小時前免費取消",
           "riskNoChargeToday": "今日不收費 — 僅用卡確認預約",
-          "riskCheckedOperators": "營運商均經核實"
+          "riskCheckedOperators": "營運商均經核實",
+          "seasonActive": "{season} · 僅剩約{count}天",
+          "seasonSoon": "{season}約{count}天後開始",
+          "seasonCherryBlossom": "櫻花季",
+          "seasonSummer": "盛夏季",
+          "seasonAutumn": "楓葉季"
         },
         "process": {
           "eyebrow": "預訂流程",

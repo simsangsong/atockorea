@@ -1225,7 +1225,12 @@
           "destAll": "全部",
           "riskFreeCancel": "24小时前免费取消",
           "riskNoChargeToday": "今日不收费 — 仅用卡确认预约",
-          "riskCheckedOperators": "运营商均经核实"
+          "riskCheckedOperators": "运营商均经核实",
+          "seasonActive": "{season} · 仅剩约{count}天",
+          "seasonSoon": "{season}约{count}天后开始",
+          "seasonCherryBlossom": "樱花季",
+          "seasonSummer": "盛夏季",
+          "seasonAutumn": "红叶季"
         },
         "process": {
           "eyebrow": "预订流程",
