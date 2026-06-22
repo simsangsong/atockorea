@@ -7,7 +7,7 @@ import Image from "next/image";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { PartyStepper } from "@/components/home/v2/ui/PartyStepper";
 import { V0ShadcnButton } from "@/components/home/v2/ui/v0-shadcn-button";
-import { ArrowRight, Car, Bus, Award, Users, Sparkles, Check, Flower2, Sun, Leaf } from "lucide-react";
+import { ArrowRight, Car, Bus, Award, Users, Sparkles, Check, Flower2, Sun, Leaf, MapPin } from "lucide-react";
 import {
   currentSeasonNote,
   seasonNameKey,
@@ -559,10 +559,40 @@ export function ChooseTravelStyle() {
           ))}
         </motion.div>
 
+        {/* Dedicated itinerary-builder entry — promoted from the Private card's
+            quiet text link to a co-equal full-width card (§B reversal of U4).
+            Leads with the hour-by-hour + map customization that is the builder's
+            distinct merit. Emerald tone keeps it in the premium/private family
+            and distinct from the amber matcher card below. Carries party +
+            destination→region so the builder opens pre-seeded. */}
+        <motion.div variants={REVEAL_ITEM_VARIANTS} className="mt-5 md:mt-6">
+          <Link
+            href={`/itinerary-builder?party=${party}${destination !== "all" ? `&region=${destination}` : ""}`}
+            onClick={() => analytics.homeTourTypeCardClick({ type: "builder", party })}
+            className="focus-ring group flex items-center gap-4 overflow-hidden rounded-card border border-emerald-200/70 bg-gradient-to-b from-white to-emerald-50/50 px-5 py-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_1px_2px_rgba(15,23,42,0.04),0_10px_30px_-14px_rgba(16,122,87,0.16)] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-emerald-300 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.95),0_2px_4px_rgba(15,23,42,0.05),0_16px_38px_-16px_rgba(16,122,87,0.22)] motion-reduce:hover:translate-y-0 motion-reduce:transition-none md:gap-5 md:px-7 md:py-6"
+          >
+            <div className="flex h-12 w-12 flex-none items-center justify-center rounded-xl border border-emerald-200/70 bg-emerald-50 shadow-sm md:h-14 md:w-14">
+              <MapPin className="h-6 w-6 text-emerald-600 md:h-7 md:w-7" />
+            </div>
+            <div className="min-w-0 flex-1">
+              <p className="text-[15px] font-bold tracking-tight text-slate-900 md:text-lg">
+                {t("premium.v2.chooseStyle.builderCardTitle")}
+              </p>
+              <p className="mt-0.5 text-caption leading-snug text-slate-500 md:text-[13px]">
+                {t("premium.v2.chooseStyle.builderCardDesc")}
+              </p>
+            </div>
+            <span className="flex flex-none items-center gap-1.5 text-caption font-semibold text-emerald-700 md:text-[15px]">
+              <span className="hidden sm:inline">{t("premium.v2.chooseStyle.builderCardCta")}</span>
+              <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 md:h-5 md:w-5" />
+            </span>
+          </Link>
+        </motion.div>
+
         {/* U3 — matcher "Get a recommendation" entry. A co-equal but secondary
             (outline) full-width card under the type cards, so the undecided
             segment isn't pushed to a buried link. Routes to the matcher. */}
-        <motion.div variants={REVEAL_ITEM_VARIANTS} className="mt-5 md:mt-6">
+        <motion.div variants={REVEAL_ITEM_VARIANTS} className="mt-4 md:mt-5">
           <Link
             href={HOME_CTA_MATCHING_HREF}
             onClick={() => analytics.homeTourTypeCardClick({ type: "recommend", party })}
