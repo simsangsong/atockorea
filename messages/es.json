@@ -1225,7 +1225,12 @@
           "destAll": "Toda Corea",
           "riskFreeCancel": "Cancelación gratis hasta 24h antes",
           "riskNoChargeToday": "Sin cargo hoy — la tarjeta solo reserva tu plaza",
-          "riskCheckedOperators": "Operadores verificados"
+          "riskCheckedOperators": "Operadores verificados",
+          "seasonActive": "{season} · quedan unos {count} días",
+          "seasonSoon": "{season} empieza en unos {count} días",
+          "seasonCherryBlossom": "Temporada de cerezos en flor",
+          "seasonSummer": "Temporada alta de verano",
+          "seasonAutumn": "Temporada de follaje otoñal"
         },
         "process": {
           "eyebrow": "CÓMO FUNCIONA",

@@ -1,13 +1,19 @@
 "use client";
 
 import type { CSSProperties, ReactNode } from "react";
-import { useMemo, useRef, useState } from "react";
+import { useMemo, useRef, useState, useSyncExternalStore } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { PartyStepper } from "@/components/home/v2/ui/PartyStepper";
 import { V0ShadcnButton } from "@/components/home/v2/ui/v0-shadcn-button";
-import { ArrowRight, Car, Bus, Award, Users, Sparkles, Check } from "lucide-react";
+import { ArrowRight, Car, Bus, Award, Users, Sparkles, Check, Flower2, Sun, Leaf } from "lucide-react";
+import {
+  currentSeasonNote,
+  seasonNameKey,
+  type SeasonKey,
+  type SeasonNote,
+} from "@/lib/home/season-notes";
 import { analytics } from "@/src/design/analytics";
 import {
   HOME_CTA_BUS_LIST_HREF,
@@ -126,6 +132,56 @@ function CardPhotoStrip({
   );
 }
 
+const SEASON_ICON: Record<SeasonKey, typeof Flower2> = {
+  cherryBlossom: Flower2,
+  summer: Sun,
+  autumn: Leaf,
+};
+
+/**
+ * Client-only season note via useSyncExternalStore: the server snapshot is
+ * `null` (renders nothing) and the client snapshot is computed once from the
+ * browser's clock, so SSR/CSR can never mismatch on a date boundary (a UTC
+ * server vs a KST client could otherwise disagree by a day). Cached so the
+ * getSnapshot reference stays stable across renders.
+ */
+let clientSeasonNote: SeasonNote | null | undefined;
+const subscribeNoop = () => () => {};
+function readClientSeasonNote(): SeasonNote | null {
+  if (clientSeasonNote === undefined) {
+    clientSeasonNote = currentSeasonNote(new Date());
+  }
+  return clientSeasonNote;
+}
+
+/**
+ * U8 — honest seasonality cue. The only urgency we surface: AtoC tours are
+ * on-demand (availability is effectively unlimited), so "N spots left" scarcity
+ * is N/A by design — we never fabricate it. This chip shows a calendar-true
+ * scenic-season note (active countdown or a ≤30-day lead) derived from the
+ * engine's peak ranges; renders nothing when no season is active or imminent.
+ */
+function SeasonNoteChip() {
+  const t = useTranslations("home");
+  const note = useSyncExternalStore(subscribeNoop, readClientSeasonNote, () => null);
+  if (!note) return null;
+  const Icon = SEASON_ICON[note.key];
+  const label = t(
+    note.state === "active"
+      ? "premium.v2.chooseStyle.seasonActive"
+      : "premium.v2.chooseStyle.seasonSoon",
+    { season: t(seasonNameKey(note.key)), count: note.days },
+  );
+  return (
+    <div className="mb-4 flex justify-center md:mb-5">
+      <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-200/70 bg-amber-50 px-3 py-1 text-caption font-semibold text-amber-800">
+        <Icon className="h-3.5 w-3.5 flex-none text-amber-500" aria-hidden />
+        {label}
+      </span>
+    </div>
+  );
+}
+
 export function ChooseTravelStyle() {
   const t = useTranslations("home");
   const { formatPrice } = useCurrency();
@@ -187,6 +243,9 @@ export function ChooseTravelStyle() {
             {t("premium.v2.chooseStyle.title")}
           </h2>
         </motion.div>
+
+        {/* U8 — calendar-true seasonality cue (no fabricated scarcity). */}
+        <SeasonNoteChip />
 
         {/* U6 + U2/V6 — destination + party strip directly above the cards.
             Destination defaults to "all" (non-gating); changing it narrows the
