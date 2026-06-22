@@ -435,6 +435,7 @@ export type HomeTourTypeCard =
   | "small_group"
   | "bus"
   | "group"
+  | "builder"
   | "recommend";
 
 // ===========================================================================
