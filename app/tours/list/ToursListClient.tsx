@@ -693,7 +693,20 @@ export default function ToursListClient({ initialMediaBySlug }: ToursListClientP
       {/* B32: site-native — neutral white veil over the page's pastel mesh
           (body::before), NOT a solid ivory that covers it. bg-white/55 keeps
           the mesh faintly visible so list matches every other consumer page. */}
-      <main className="bg-white/55 pb-24">
+      {/*
+        Scroll-jitter fix (B11 scroll-freeze guard): the CatalogueHero collapses
+        240→88 on scroll via a scrollY-linked height (Phase 1/6). That collapse
+        shrinks the sticky header's flow box, which shortens the document. On a
+        SHORT result set (e.g. ?type=private — few cards) on a tall viewport, the
+        document can become shorter than the scroll position mid-collapse, so the
+        browser clamps scrollY back up → the hero re-expands → the page grows →
+        clamp again: a violent up/down oscillation. Flooring the page to
+        viewport + 16rem pins the document height while the header collapses
+        (natural content < floor), so maxScroll stays constant and the loop can
+        never form. Tall result sets exceed the floor and are unaffected. No new
+        scroll-linked animation or library (B11/B12 preserved).
+      */}
+      <main className="min-h-[calc(100vh+16rem)] bg-white/55 pb-24">
         {/*
           Sticky header stack — Catalogue Hero (Phase 1) + filter rail share a
           single sticky context so the hero's 240→88 collapse (driven by
