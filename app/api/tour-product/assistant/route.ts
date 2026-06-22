@@ -20,6 +20,12 @@ import {
 import { buildSiteKnowledgeContextText } from "@/lib/chatbot/siteKnowledge";
 import { buildTourCatalogContextText } from "@/lib/chatbot/tourCatalogKnowledge";
 import { retrieveKnowledge, buildRagContextText } from "@/lib/rag/retrieve";
+import {
+  recommendToursViaMatcher,
+  buildMatcherContextText,
+  buildMatcherReply,
+  type MatcherResult,
+} from "@/lib/chatbot/tourMatchRecommend";
 import { buildTourProductAssistantContextText } from "@/lib/tour-product/tourProductAssistantContext";
 import type { TourProductPageLocale } from "@/lib/tour-product/resolveTourProductDbLocale";
 import { logChatTurn, type ChatLogContext } from "@/lib/support/chat-logger";
@@ -503,6 +509,20 @@ export async function POST(req: NextRequest) {
     }
   }
 
+  // For recommendation intent, run the production v1.8 matcher over the authored
+  // matching_profile metadata (personas, pace, wheelchair/dietary hard filters,
+  // seasonal gates). This is the authoritative ranking the model must follow.
+  let matcherResult: MatcherResult | null = null;
+  let matcherContext = "";
+  if (useTourCatalog && qaSb) {
+    try {
+      matcherResult = await recommendToursViaMatcher(qaSb, last.content, answerLocale);
+      matcherContext = buildMatcherContextText(matcherResult);
+    } catch (matcherErr) {
+      console.error("[tour-product/assistant] matcher error:", (matcherErr as Error).message);
+    }
+  }
+
   const knowledgeSections = ragContext
     ? [
         "\n--- VERIFIED KNOWLEDGE (semantic search over POI, tours, policies, site, and approved Q&A) ---\n",
@@ -541,6 +561,11 @@ export async function POST(req: NextRequest) {
     "Keep replies under about 12 sentences unless the user asks for detail.",
     "\n--- PRODUCT CONTEXT ---\n",
     productContext,
+    matcherContext
+      ? "Use the MATCHER RANKING below as a strong signal for which tours fit (it scores authored persona/pace/seasonal metadata), but ALWAYS honor the user's stated constraints using the Best-fit (who this tour suits) info in VERIFIED KNOWLEDGE. If the matcher ranking conflicts with a stated accessibility, mobility, pace, or who's-travelling need, prefer the tour whose Best-fit matches — never recommend a tour the Best-fit marks as less ideal for that need."
+      : "",
+    matcherContext ? "\n--- MATCHER RANKING ---\n" : "",
+    matcherContext,
     "\n--- TOUR CATALOGUE ---\n",
     tourCatalogContext || "No tour catalogue entries matched this question.",
     ...knowledgeSections,
@@ -592,7 +617,12 @@ export async function POST(req: NextRequest) {
   // answer is preserved instead of being clobbered by a flat top-3 list — the
   // top-3 padding was the main cause of low grounding on constrained queries.
   if (isRecommendationIntent && replyText.length < 180 && !/\/tour-product\/[a-z0-9-]+/i.test(replyText)) {
-    const catalogueReply = buildCatalogueRecommendationReply(tourCatalogContext, answerLocale);
+    // Prefer the matcher-ranked reply only on a STRONG match (its weak/CJK-parsed
+    // rankings can miss accessibility); otherwise the keyword catalogue (which
+    // carries the accessibility/family/relaxed profiles) is the safer fallback.
+    const catalogueReply =
+      (matcherResult?.status === "STRONG_MATCH" ? buildMatcherReply(matcherResult, answerLocale) : null) ||
+      buildCatalogueRecommendationReply(tourCatalogContext, answerLocale);
     if (catalogueReply) {
       replyText = catalogueReply;
     }
