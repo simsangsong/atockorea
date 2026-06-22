@@ -69,18 +69,25 @@ export type TourStickyBookingBarProps = Pick<EastSignatureNatureCoreDetailViewMo
   sectionUi?: TourProductSectionUiV1;
   /** Optional — private/charter products price by group size × duration. */
   pricingTiers?: EastSignatureNatureCoreDetailViewModel["pricingTiers"];
+  /**
+   * U9 carry-through — initial guest count seeded from the upstream `?party=`
+   * query param (home stepper → /tours/list → detail). Clamped to
+   * [1, MAX_GUESTS]; absent → DEFAULT_GUESTS as before.
+   */
+  initialGuests?: number;
 };
 
-export function TourStickyBookingBar({ price, checkout, selectedPortLabel, sectionUi, pricingTiers }: TourStickyBookingBarProps) {
+export function TourStickyBookingBar({ price, checkout, selectedPortLabel, sectionUi, pricingTiers, initialGuests }: TourStickyBookingBarProps) {
   const portCtaPrefix = sectionUi?.portSelectorCtaPrefix ?? "Docking at";
   const router = useRouter();
   const currencyCtx = useCurrencyOptional();
   const t = useTranslations();
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [busy, setBusy] = useState(false);
+  const seededGuests = initialGuests != null ? clampGuests(initialGuests) : DEFAULT_GUESTS;
   const [dateYmd, setDateYmd] = useState(initialDateYmd);
-  const [guestCount, setGuestCount] = useState(DEFAULT_GUESTS);
-  const [guestEditValue, setGuestEditValue] = useState(String(DEFAULT_GUESTS));
+  const [guestCount, setGuestCount] = useState(seededGuests);
+  const [guestEditValue, setGuestEditValue] = useState(String(seededGuests));
   const [guestFieldEditing, setGuestFieldEditing] = useState(false);
   const guestFieldEditingRef = useRef(false);
   const [preferredLanguage, setPreferredLanguage] = useState<PreferredLanguage>("en");

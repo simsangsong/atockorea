@@ -207,6 +207,25 @@ export default function ToursListClient({ initialMediaBySlug }: ToursListClientP
     setFeatures(featuresFromUrl);
   }, [searchParams]);
 
+  // --- U9 carry-through ------------------------------------------------------------------
+  // The upstream `?party=` group size (home stepper → list) rides onto each
+  // tour's detail link so the booking card opens with the size the visitor
+  // already chose instead of re-asking. Party is a booking quantity, not a
+  // catalogue filter, so it is forwarded only — never folded into list/API
+  // filter state.
+  const carriedParty = (() => {
+    const raw = searchParams.get('party');
+    if (!raw) return null;
+    const n = Number.parseInt(raw, 10);
+    return Number.isFinite(n) && n > 0 ? n : null;
+  })();
+  const detailHrefWithParty = (id: string | null | undefined, slug?: string | null): string => {
+    const base = consumerTourDetailHref(id, slug);
+    if (carriedParty == null || base === '/tours/list') return base;
+    const sep = base.includes('?') ? '&' : '?';
+    return `${base}${sep}party=${carriedParty}`;
+  };
+
   // --- Debounce search input ------------------------------------------------------------
   useEffect(() => {
     const handle = window.setTimeout(() => {
@@ -1235,7 +1254,7 @@ export default function ToursListClient({ initialMediaBySlug }: ToursListClientP
                     <React.Fragment key={tour.id}>
                       <TourListCard
                         tour={cardTour}
-                        detailHref={consumerTourDetailHref(tour.id, tour.slug)}
+                        detailHref={detailHrefWithParty(tour.id, tour.slug)}
                         formatPriceFn={formatPrice}
                         layout={viewMode === 'editorial' ? 'vertical' : 'horizontal'}
                         imageSizes={
