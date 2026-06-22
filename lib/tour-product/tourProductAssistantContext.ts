@@ -46,6 +46,41 @@ function buildGlobalPoliciesBlock(locale?: TourProductPageLocale): string {
   return lines.join("\n\n");
 }
 
+type WhyTourWorksLike = {
+  bestFor?: readonly string[];
+  lessIdeal?: readonly string[];
+  lessIdealFor?: readonly string[];
+  routeLogicSections?: ReadonlyArray<{
+    title?: string;
+    items?: ReadonlyArray<{ label?: string; detail?: string }>;
+  }>;
+};
+
+/** Render the authored best-fit / less-ideal / route-logic info as plain text. */
+function buildFitBlock(vm: TourProductDetailViewModel): string {
+  const fit = (vm as { whyTourWorks?: WhyTourWorksLike }).whyTourWorks;
+  if (!fit) return "";
+  const clean = (arr?: readonly string[]) =>
+    (arr ?? []).map((s) => s.replace(/\s+/g, " ").trim()).filter(Boolean);
+  const bestFor = clean(fit.bestFor);
+  const lessIdeal = clean(fit.lessIdealFor ?? fit.lessIdeal);
+  const routeLogic = (fit.routeLogicSections ?? [])
+    .map((section) => {
+      const items = (section.items ?? [])
+        .map((it) => [it.label, it.detail].filter(Boolean).join(" — ").trim())
+        .filter(Boolean);
+      if (items.length === 0) return "";
+      return `${section.title ? `${section.title}: ` : ""}${items.join("; ")}`;
+    })
+    .filter(Boolean);
+
+  const parts: string[] = [];
+  if (bestFor.length) parts.push(`Best for: ${bestFor.join("; ")}`);
+  if (lessIdeal.length) parts.push(`Less ideal for: ${lessIdeal.join("; ")}`);
+  if (routeLogic.length) parts.push(`Why this route works: ${routeLogic.join(" | ")}`);
+  return parts.join("\n");
+}
+
 /**
  * Compact plain-text product context for the tour detail AI assistant (server-side).
  */
@@ -93,6 +128,12 @@ export function buildTourProductAssistantContextText(
       .join("\n");
     lines.push(`## Itinerary (excerpt)\n${block}`);
   }
+
+  // Best-fit / suitability — already authored per tour (bestFor / lessIdeal /
+  // routeLogic). Surfacing it lets the assistant ground accessibility, pace,
+  // family, and mobility recommendations instead of guessing.
+  const fitBlock = buildFitBlock(vm);
+  if (fitBlock) lines.push(`## Best fit (who this tour suits)\n${fitBlock}`);
 
   const faq = asFaqList(staticQuestions).slice(0, 14);
   if (faq.length) {
