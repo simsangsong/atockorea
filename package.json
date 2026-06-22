@@ -45,6 +45,7 @@
     "rag:index:dry": "node --env-file=.env.local --import tsx scripts/build-knowledge-index.ts --dry-run",
     "rag:harvest": "node --env-file=.env.local --import tsx scripts/harvest-qa-candidates.ts",
     "rag:harvest:dry": "node --env-file=.env.local --import tsx scripts/harvest-qa-candidates.ts --dry-run",
+    "rag:pressure": "node --env-file=.env.local --import tsx scripts/chatbot-pressure-test.ts",
     "gen:southwest-tour-product-zh-TW-sql": "node scripts/gen-southwest-tour-product-zh-TW-sql.mjs",
     "gen:southwest-tour-product-zh-CN-sql": "node scripts/gen-southwest-tour-product-zh-CN-sql.mjs",
     "gen:southwest-tour-product-ko-sql": "node scripts/gen-southwest-tour-product-ko-sql.mjs",
