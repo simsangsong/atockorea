@@ -194,30 +194,16 @@ export function ChooseTravelStyle() {
   // In Wave 0 it carries forward into the card links so the catalogue can
   // pre-fill group size (U9 continuity seed). Default 2, no gate.
   const [party, setParty] = useState(2);
-  // Reform U6 — destination strip. `all` = no narrowing (default, non-gating);
-  // a city carries into the card links so /tours/list pre-filters by region
-  // (it reads ?destination=jeju|busan|seoul, ToursListClient).
-  const [destination, setDestination] = useState<"all" | "jeju" | "busan" | "seoul">("all");
+  // Reform U6 destination strip removed (user direction 2026-06-22) — the home
+  // strip is now party-only; destination is chosen on /tours/list instead.
   const withParams = (href: string) => {
     const sep = href.includes("?") ? "&" : "?";
-    let url = `${href}${sep}party=${party}`;
-    if (destination !== "all") url += `&destination=${destination}`;
-    return url;
+    return `${href}${sep}party=${party}`;
   };
   const handleStepperChange = (next: number) => {
     setParty(next);
     analytics.homePartyStepperChange({ party: next });
   };
-  const handleDestinationChange = (next: typeof destination) => {
-    setDestination(next);
-    if (next !== "all") analytics.homeDestinationCardClick({ destination: next });
-  };
-  const DESTINATIONS = [
-    { value: "all", labelKey: "premium.v2.chooseStyle.destAll" },
-    { value: "jeju", labelKey: "hero.destinations.jeju" },
-    { value: "busan", labelKey: "hero.destinations.busan" },
-    { value: "seoul", labelKey: "hero.destinations.seoul" },
-  ] as const;
 
   // Private per-vehicle price for the current party — tiered (sedan/van/solati),
   // so it jumps at 7 and 10 pax to match the real PAX_TIERS table.
@@ -247,44 +233,12 @@ export function ChooseTravelStyle() {
         {/* U8 — calendar-true seasonality cue (no fabricated scarcity). */}
         <SeasonNoteChip />
 
-        {/* U6 + U2/V6 — destination + party strip directly above the cards.
-            Destination defaults to "all" (non-gating); changing it narrows the
-            card links + drives live price via party. */}
+        {/* U2/V6 — party stepper directly above the cards (destination strip
+            removed 2026-06-22; destination is chosen on /tours/list). */}
         <motion.div
           variants={REVEAL_ITEM_VARIANTS}
-          className="mb-6 flex flex-col items-center gap-4 md:mb-7 md:flex-row md:justify-center md:gap-8"
+          className="mb-6 flex flex-col items-center gap-4 md:mb-7"
         >
-          <div className="flex flex-col items-center gap-1.5">
-            <span className="text-caption font-semibold text-slate-700">
-              {t("premium.v2.chooseStyle.destinationLabel")}
-            </span>
-            <div
-              role="radiogroup"
-              aria-label={t("premium.v2.chooseStyle.destinationLabel")}
-              className="flex flex-wrap justify-center gap-2"
-            >
-              {DESTINATIONS.map((d) => {
-                const active = destination === d.value;
-                return (
-                  <button
-                    key={d.value}
-                    type="button"
-                    role="radio"
-                    aria-checked={active}
-                    onClick={() => handleDestinationChange(d.value)}
-                    className={cn(
-                      "focus-ring rounded-full border px-3.5 py-2 text-caption font-semibold transition-colors duration-200",
-                      active
-                        ? "border-slate-900 bg-slate-900 text-white"
-                        : "border-slate-200/70 bg-white text-slate-700 hover:border-slate-300 hover:bg-slate-50",
-                    )}
-                  >
-                    {t(d.labelKey)}
-                  </button>
-                );
-              })}
-            </div>
-          </div>
           <PartyStepper
             value={party}
             onChange={handleStepperChange}
@@ -457,7 +411,7 @@ export function ChooseTravelStyle() {
             {/* U4 — curated private list is the primary path; building a custom
                 day from scratch is the secondary "or…" option. */}
             <Link
-              href={`/itinerary-builder?party=${party}${destination !== "all" ? `&region=${destination}` : ""}`}
+              href={`/itinerary-builder?party=${party}`}
               className="focus-ring mt-2.5 flex items-center justify-center gap-1 text-micro font-semibold text-slate-500 transition-colors duration-200 hover:text-slate-800"
             >
               {t("premium.v2.chooseStyle.privateBuildOwn")}
@@ -563,11 +517,11 @@ export function ChooseTravelStyle() {
             quiet text link to a co-equal full-width card (§B reversal of U4).
             Leads with the hour-by-hour + map customization that is the builder's
             distinct merit. Emerald tone keeps it in the premium/private family
-            and distinct from the amber matcher card below. Carries party +
-            destination→region so the builder opens pre-seeded. */}
+            and distinct from the amber matcher card below. Carries party so the
+            builder opens pre-seeded. */}
         <motion.div variants={REVEAL_ITEM_VARIANTS} className="mt-5 md:mt-6">
           <Link
-            href={`/itinerary-builder?party=${party}${destination !== "all" ? `&region=${destination}` : ""}`}
+            href={`/itinerary-builder?party=${party}`}
             onClick={() => analytics.homeTourTypeCardClick({ type: "builder", party })}
             className="focus-ring group flex items-center gap-4 overflow-hidden rounded-card border border-emerald-200/70 bg-gradient-to-b from-white to-emerald-50/50 px-5 py-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_1px_2px_rgba(15,23,42,0.04),0_10px_30px_-14px_rgba(16,122,87,0.16)] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-emerald-300 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.95),0_2px_4px_rgba(15,23,42,0.05),0_16px_38px_-16px_rgba(16,122,87,0.22)] motion-reduce:hover:translate-y-0 motion-reduce:transition-none md:gap-5 md:px-7 md:py-6"
           >
