@@ -132,6 +132,13 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey, plac
     return cart.map((k) => byKey.get(k)).filter((p): p is MatchPoiRow => !!p);
   }, [cart, localizedPois]);
 
+  // Booked duration in hours (URL `duration`/`hours`, default 8) — used for the
+  // timeline footer's "drive time > 60% of tour" warning.
+  const tourDurationHours = (() => {
+    const raw = Number(searchParams?.get("duration") ?? searchParams?.get("hours") ?? 8);
+    return Number.isFinite(raw) && raw > 0 ? raw : 8;
+  })();
+
   const livePrice = useMemo(() => {
     const sp = searchParams;
     const track: PricingTrack = (sp?.get("track") as PricingTrack) || "private";
@@ -325,6 +332,7 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey, plac
               onGetQuote={handleGetQuote}
               onGuideCurate={handleGuideCurate}
               cruiseBudgetMinutes={cruiseBudgetMinutes}
+              durationMinutes={tourDurationHours * 60}
               onOpenDetail={setDetailPoi}
               autoQuotable={livePrice.autoQuotable}
             />

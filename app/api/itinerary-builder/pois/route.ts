@@ -6,7 +6,7 @@ import {
   type RegionSlug,
 } from "@/lib/itinerary-builder/regions";
 import type { MatchPoiRow } from "@/lib/itinerary-builder/types";
-import { isBuilderAttraction } from "@/lib/itinerary-match-engine/poi-taxonomy";
+import { isBuilderAttraction, hasBuilderPhoto } from "@/lib/itinerary-match-engine/poi-taxonomy";
 
 /**
  * GET /api/itinerary-builder/pois?region=busan|jeju|seoul
@@ -49,8 +49,10 @@ export async function GET(req: NextRequest) {
 
   const pois = ((data ?? []) as MatchPoiRow[]).filter(
     (p) =>
-      p.is_attraction === true ||
-      (p.is_attraction == null && isBuilderAttraction(p.poi_key)),
+      (p.is_attraction === true ||
+        (p.is_attraction == null && isBuilderAttraction(p.poi_key))) &&
+      // Phase A — hide POIs without a displayable photo from the builder.
+      hasBuilderPhoto(p),
   );
 
   return NextResponse.json({ ok: true, region, pois });

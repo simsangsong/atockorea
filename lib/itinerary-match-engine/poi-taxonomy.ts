@@ -110,6 +110,22 @@ export function isBuilderAttraction(poiKey: string): boolean {
   return getBuilderPoiMeta(poiKey).kind === "attraction";
 }
 
+/**
+ * Whether a POI has a displayable photo for the builder catalogue. Mirrors the
+ * card render fallback (`default_image_url || images[0]`). Photoless POIs are
+ * hidden from the builder for now (Phase A) until real photos are wired.
+ */
+export function hasBuilderPhoto(poi: {
+  default_image_url?: string | null;
+  images?: unknown;
+}): boolean {
+  if (typeof poi.default_image_url === "string" && poi.default_image_url.trim() !== "") {
+    return true;
+  }
+  const first = Array.isArray(poi.images) ? poi.images[0] : undefined;
+  return typeof first === "string" && first.trim() !== "";
+}
+
 export function resolveBuilderOrigin(
   region: "busan" | "jeju" | "seoul",
   track?: string | null,

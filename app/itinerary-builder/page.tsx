@@ -9,7 +9,7 @@ import {
   type RegionSlug,
 } from "@/lib/itinerary-builder/regions";
 import type { MatchPoiRow } from "@/lib/itinerary-builder/types";
-import { isBuilderAttraction } from "@/lib/itinerary-match-engine/poi-taxonomy";
+import { isBuilderAttraction, hasBuilderPhoto } from "@/lib/itinerary-match-engine/poi-taxonomy";
 import BuilderShell from "@/components/itinerary-builder/BuilderShell";
 
 /**
@@ -84,7 +84,10 @@ export default async function ItineraryBuilderPage({
     throw new Error(`Failed to load POIs for ${region}: ${error.message}`);
   }
   const pois = ((data ?? []) as MatchPoiRow[]).filter(
-    (p) => p.is_attraction === true || (p.is_attraction == null && isBuilderAttraction(p.poi_key)),
+    (p) =>
+      (p.is_attraction === true || (p.is_attraction == null && isBuilderAttraction(p.poi_key))) &&
+      // Phase A — hide POIs without a displayable photo from the builder.
+      hasBuilderPhoto(p),
   );
 
   return (
