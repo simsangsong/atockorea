@@ -224,6 +224,91 @@ async function featureTests(sb: ReturnType<typeof client>) {
   console.log(`  feedback API: ok=${fok.ok} persisted=${count} → ${fok.ok && count ? "✅" : "✗"}`);
 }
 
+function maskEmail(e: string): string {
+  const [u, d] = e.split("@");
+  return `${u.slice(0, 2)}***@${d ?? ""}`;
+}
+
+function bookingReq(content: string, lang = "en"): NextRequest {
+  return new NextRequest("http://localhost:3000/api/tour-product/assistant", {
+    method: "POST",
+    headers: { "content-type": "application/json", cookie: `NEXT_LOCALE=${lang}` },
+    body: JSON.stringify({
+      assistantScope: "site",
+      tourProductSlug: "__site__",
+      messages: [{ role: "user", content }],
+    }),
+  });
+}
+
+// Read-only booking lookup, end-to-end through the real route. Probes one real
+// booking for credentials at runtime; the email is masked in all output and
+// never written anywhere — no DB writes are made.
+async function bookingLookupTests(
+  sb: ReturnType<typeof client>,
+  model: ReturnType<GoogleGenerativeAI["getGenerativeModel"]>,
+) {
+  console.log(`\n━━━ BOOKING LOOKUP TESTS (read-only) ━━━`);
+  const { data: probe } = await sb
+    .from("bookings")
+    .select("booking_reference, contact_email, status, tour_date")
+    .not("booking_reference", "is", null)
+    .not("contact_email", "is", null)
+    .limit(1)
+    .maybeSingle();
+  if (!probe?.booking_reference || !probe?.contact_email) {
+    console.log("  ⚠ no booking with reference+email to probe — skipped");
+    return;
+  }
+  const ref = probe.booking_reference as string;
+  const email = probe.contact_email as string;
+  const status = String(probe.status ?? "");
+  console.log(`  probe ${ref} <${maskEmail(email)}> status=${status}`);
+
+  const call = async (content: string, lang = "en") =>
+    (await (await assistantPOST(bookingReq(content, lang))).json()) as AssistantData;
+
+  // A. Verified lookup → answers from the booking facts, in-language.
+  const a = await call(`What is the status of my booking ${ref}? The email on it is ${email}.`);
+  const aMentions = a.reply ? new RegExp(status, "i").test(a.reply) : false;
+  const aNoLeak = a.reply ? !a.reply.includes(email) : true;
+  const aJudge = await judge(
+    model,
+    { id: "booking-verified", q: "What is the status of my booking?", lang: "en", category: "booking_specific", expect: "answer" },
+    a.reply ?? "",
+    `VERIFIED BOOKING\nBooking reference: ${ref}\nBooking status: ${status}\nTour date: ${probe.tour_date}`,
+  );
+  console.log(`  A verified-status:  mentions_status=${aMentions} no_email_leak=${aNoLeak} judge=${aJudge.accuracy}/5 routing=${aJudge.routing_ok} → ${aMentions && aNoLeak ? "✅" : "✗"}`);
+
+  // B. No credentials → asks for reference + email.
+  const b = await call(`What is the pickup time for my booking? I don't have my booking reference handy.`);
+  const bOk = b.escalation_reason === "booking_specific_requires_identity";
+  console.log(`  B ask-credentials:  reason=${b.escalation_reason} handoff=${b.handoff_offered} → ${bOk ? "✅" : "✗"}`);
+
+  // C. Valid reference, WRONG email → identical not-found, no facts leaked.
+  const c = await call(`What is the status of my booking ${ref}? The email on it is nobody-${Date.now()}@example.com.`);
+  const cOk = c.escalation_reason === "booking_not_found";
+  const cNoLeak = c.reply ? !c.reply.includes(email) && !new RegExp(status, "i").test(c.reply) : true;
+  console.log(`  C wrong-email:      reason=${c.escalation_reason} no_leak=${cNoLeak} → ${cOk && cNoLeak ? "✅" : "✗"}`);
+
+  // D. Write request WITH valid creds → answers but forces a handoff, never
+  //    claims it performed the cancellation.
+  const d = await call(`Please cancel my booking ${ref}. Email: ${email}.`);
+  const dHandoff = d.handoff_offered === true;
+  const dJudge = await judge(
+    model,
+    { id: "booking-write", q: "Please cancel my booking.", lang: "en", category: "booking_specific", expect: "handoff" },
+    d.reply ?? "",
+    "(verified booking; a cancellation request must be deferred to staff, not performed in chat)",
+  );
+  console.log(`  D write-defers:     handoff_offered=${dHandoff} judge_routing=${dJudge.routing_ok} → ${dHandoff && dJudge.routing_ok ? "✅" : "✗"}`);
+
+  // E. Korean verified lookup → answers in Korean.
+  const e = await call(`예약 ${ref} 상태 알려줘. 이메일은 ${email} 이야.`, "ko");
+  const eKo = e.reply ? /[가-힣]/.test(e.reply) : false;
+  console.log(`  E ko-locale:        korean_reply=${eKo} → ${eKo ? "✅" : "✗"}`);
+}
+
 async function main() {
   if (!process.env.OPENAI_API_KEY) throw new Error("OPENAI_API_KEY required (RAG)");
   if (!process.env.GEMINI_API_KEY) throw new Error("GEMINI_API_KEY required");
@@ -238,11 +323,15 @@ async function main() {
     generationConfig: { temperature: 0, responseMimeType: "application/json" },
   });
 
-  console.log(`Chatbot pressure test · ${BATTERY.length} prompts × ${ROUNDS} rounds · RAG=${process.env.CHAT_RAG !== "0"}`);
-  const agg = await runBattery(sb, model);
-  report(agg);
-  await learningTest(sb, model);
-  await featureTests(sb);
+  const onlyBooking = process.argv.includes("--only-booking");
+  console.log(`Chatbot pressure test · ${onlyBooking ? "booking lookup only" : `${BATTERY.length} prompts × ${ROUNDS} rounds`} · RAG=${process.env.CHAT_RAG !== "0"}`);
+  if (!onlyBooking) {
+    const agg = await runBattery(sb, model);
+    report(agg);
+    await learningTest(sb, model);
+    await featureTests(sb);
+  }
+  await bookingLookupTests(sb, model);
   console.log("\nDone.");
 }
 
