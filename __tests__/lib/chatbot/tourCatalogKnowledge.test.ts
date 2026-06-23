@@ -28,6 +28,20 @@ describe("tour catalogue chatbot context", () => {
     expect(context.toLowerCase()).toContain("jeju");
   });
 
+  it("gives a region-balanced spread for a generic 'which tours' question (not only Busan)", () => {
+    const context = buildTourCatalogContextText({
+      locale: "en",
+      query: "Which tours do you offer?",
+      limit: 10,
+      maxChars: 7000,
+    }).toLowerCase();
+    // The no-signal fallback must span regions, not collapse to the alphabetical
+    // head (all Busan). Expect at least Busan + Jeju + one more region present.
+    const regions = ["busan", "jeju", "seoul", "dmz"].filter((r) => context.includes(r));
+    expect(regions).toContain("jeju");
+    expect(regions.length).toBeGreaterThanOrEqual(3);
+  });
+
   it("prefers flexible private/charter options for accessibility questions (multilingual)", () => {
     for (const query of ["wheelchair accessible tour", "車椅子で参加できるツアーはありますか？", "휠체어로 갈 수 있는 투어 있어요?"]) {
       const context = buildTourCatalogContextText({ locale: "en", query, limit: 4, maxChars: 2500 });
