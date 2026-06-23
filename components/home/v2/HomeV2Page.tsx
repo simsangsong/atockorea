@@ -3,6 +3,7 @@ import {
   DestinationsShowcase,
   ChooseTravelStyle,
   FeaturedProductsShowcase,
+  AiAgentBand,
   WhyAtockorea,
   ProcessOperational,
   FinalCTA,
@@ -40,6 +41,9 @@ export default function HomeV2Page({ featuredMediaBySlug }: HomeV2PageProps = {}
           <DeferredBestMatchPreview />
           <FeaturedProductsShowcase initialMediaBySlug={featuredMediaBySlug} />
           <DestinationsShowcase />
+          {/* L2 (chatbot promo) — "Your Korea travel agent" band sits in the
+              value-prop cluster, just before the Why pillars. */}
+          <AiAgentBand />
           <WhyAtockorea />
           <ProcessOperational />
           <FinalCTA />

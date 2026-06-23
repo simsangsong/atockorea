@@ -1185,6 +1185,24 @@
             "body": "AI 客服 24 小時在線。遇到 AI 處理不了的狀況，由韓語團隊接手（9:00–21:00 KST）。"
           }
         },
+        "aiAgent": {
+          "eyebrow": "AI 旅行管家",
+          "title": "不只是聊天機器人，",
+          "titleAccent": "更是真正的旅行管家",
+          "subtitle": "它能推薦行程、報價、查詢你的預訂，必要時還能轉接真人。用你的語言，問什麼都行。",
+          "cap": {
+            "answer": "有問必答",
+            "recommend": "推薦行程",
+            "quote": "即時報價",
+            "details": "收集資訊",
+            "lookup": "查詢預訂",
+            "human": "轉接真人"
+          },
+          "sampleLabel": "範例",
+          "sampleUser": "我們4人，帶孩子在釜山玩2天 — 有什麼推薦?",
+          "sampleAgent": "我會把甘川文化村和海雲台行程用私人包車安排在一起。要現在出報價，還是先幫你鎖定日期?",
+          "cta": "立即諮詢"
+        },
         "chooseStyle": {
           "eyebrow": "您喜歡的旅行方式",
           "title": "選擇節奏，剩下交給我們。",
@@ -1304,6 +1322,7 @@
           "reviewCardStarsAria": "滿分 5 分，{rating} 分"
         },
         "finalCtaBlock": {
+          "askAgent": "或諮詢 AI 助手",
           "eyebrow": "隨時開始",
           "title": "您的韓國一日遊，30 秒內為您挑選。",
           "subtitle": "親選營運商 · 真人客服 · 直接下單預訂。",
