@@ -224,11 +224,12 @@ export default function OrdersPage() {
         </button>
       </div>
 
-      <div className="bg-white rounded-lg border border-gray-200/60 shadow-sm p-4 flex flex-wrap items-center gap-4">
+      <div className="bg-white rounded-lg border border-gray-200/60 shadow-sm p-4 flex flex-wrap items-center gap-3 md:gap-4">
         {/* Phase 10.6 — source filter chips (All / Tour product / Itinerary builder).
             Chip style mirrors the landing-card pill tone so the admin surface
-            doesn't drift visually from the customer-facing planner. */}
-        <div className="flex items-center gap-1.5">
+            doesn't drift visually from the customer-facing planner.
+            On mobile the chips scroll horizontally instead of wrapping. */}
+        <div className="-mx-1 flex w-full items-center gap-1.5 overflow-x-auto px-1 pb-1 md:mx-0 md:w-auto md:overflow-visible md:px-0 md:pb-0">
           {[
             { value: '' as const, label: 'All' },
             { value: 'tour_product' as const, label: 'Tour product' },
@@ -240,7 +241,7 @@ export default function OrdersPage() {
                 key={opt.value || 'all'}
                 type="button"
                 onClick={() => setSourceFilter(opt.value)}
-                className={`inline-flex items-center rounded-full px-3 py-1.5 text-xs font-semibold transition-all ${
+                className={`inline-flex flex-shrink-0 items-center rounded-full px-3 py-1.5 text-xs font-semibold transition-all ${
                   active
                     ? 'bg-slate-900 text-white shadow-sm'
                     : 'bg-slate-50 text-slate-700 ring-1 ring-slate-200 hover:bg-slate-100'
@@ -254,7 +255,7 @@ export default function OrdersPage() {
         <select
           value={statusFilter}
           onChange={(e) => setStatusFilter(e.target.value)}
-          className="px-4 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          className="min-w-0 flex-1 px-4 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 md:flex-none"
         >
           <option value="">All statuses</option>
           <option value="pending">Pending</option>
@@ -263,11 +264,11 @@ export default function OrdersPage() {
           <option value="cancelled">Cancelled</option>
           <option value="no_show">No-show</option>
         </select>
-        <span className="text-sm text-gray-500">Sort</span>
+        <span className="hidden text-sm text-gray-500 md:inline">Sort</span>
         <select
           value={orderBy}
           onChange={(e) => setOrderBy(e.target.value as OrderBy)}
-          className="px-4 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          className="min-w-0 flex-1 px-4 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 md:flex-none"
         >
           <option value="created_at">Created at</option>
           <option value="tour_date">Tour date</option>
@@ -276,7 +277,7 @@ export default function OrdersPage() {
         <select
           value={orderDir}
           onChange={(e) => setOrderDir(e.target.value as OrderDir)}
-          className="px-4 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          className="min-w-0 flex-1 px-4 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 md:flex-none"
         >
           <option value="desc">Newest first</option>
           <option value="asc">Oldest first</option>
@@ -301,7 +302,8 @@ export default function OrdersPage() {
                     })}
                 <span className="ml-2 text-sm font-normal text-gray-500">({items.length})</span>
               </h2>
-              <div className="bg-white rounded-lg border border-gray-200/60 shadow-sm overflow-hidden">
+              {/* Desktop: full table. Hidden on mobile where 9 columns can't fit. */}
+              <div className="hidden md:block bg-white rounded-lg border border-gray-200/60 shadow-sm overflow-hidden">
                 <div className="overflow-x-auto">
                   <table className="w-full">
                     <thead className="bg-gray-50 border-b border-gray-200">
@@ -380,6 +382,59 @@ export default function OrdersPage() {
                     </tbody>
                   </table>
                 </div>
+              </div>
+
+              {/* Mobile: tap-through cards. Surfaces status, who, when/where and
+                  amount in a scannable stack so a reservation reads at a glance
+                  on a narrow screen. */}
+              <div className="space-y-2.5 md:hidden">
+                {items.map((booking) => (
+                  <Link
+                    key={booking.id}
+                    href={`/admin/orders/${booking.id}`}
+                    className="block rounded-xl border border-gray-200/70 bg-white p-4 shadow-sm transition-colors active:bg-gray-50"
+                  >
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="min-w-0">
+                        {booking.source === 'itinerary_builder' ? (
+                          <span className="inline-flex w-fit items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold text-emerald-800 ring-1 ring-emerald-200">
+                            📋 Custom itinerary
+                          </span>
+                        ) : (
+                          <h3 className="truncate text-sm font-semibold text-gray-900">
+                            {booking.tours?.title || 'Tour'}
+                          </h3>
+                        )}
+                      </div>
+                      <BookingStatusBadge status={booking.status} className="flex-shrink-0 font-semibold" />
+                    </div>
+
+                    <div className="mt-2 flex items-center gap-1.5 text-sm text-gray-700">
+                      <span className="font-medium text-gray-900">
+                        {booking.user_profiles?.full_name || booking.contact_name || 'Guest'}
+                      </span>
+                      <span className="text-gray-300">·</span>
+                      <span>{booking.number_of_guests ?? booking.number_of_people ?? 1}명</span>
+                    </div>
+
+                    <div className="mt-1 text-xs text-gray-500">
+                      {formatDate(booking.tour_date || booking.created_at)}
+                      {booking.pickup_points ? (
+                        <>
+                          <span className="mx-1 text-gray-300">·</span>
+                          {booking.pickup_points.name}
+                        </>
+                      ) : null}
+                    </div>
+
+                    <div className="mt-3 flex items-center justify-between border-t border-gray-100 pt-3">
+                      <span className="text-base font-bold text-gray-900">
+                        {formatBookingPrice(parseFloat(String(booking.final_price)), booking.currency ?? 'usd')}
+                      </span>
+                      <span className="text-xs font-semibold text-indigo-600">상세 보기 →</span>
+                    </div>
+                  </Link>
+                ))}
               </div>
             </div>
           ))
