@@ -105,10 +105,29 @@ export async function GET(req: NextRequest) {
       .order("created_at", { ascending: false })
       .limit(25);
 
+    // Quote funnel — bookings the chatbot created (itinerary.source_url='chatbot').
+    const { data: funnelRows } = await sb
+      .from("bookings")
+      .select("final_price, status, payment_status")
+      .filter("itinerary->>source_url", "eq", "chatbot")
+      .gte("created_at", since)
+      .limit(2000);
+    const funnel = { bookings: 0, confirmed: 0, pending: 0, valueKrw: 0 };
+    for (const r of (funnelRows as Array<{ final_price: number | string; status: string; payment_status: string }> | null) ?? []) {
+      funnel.bookings += 1;
+      funnel.valueKrw += Number(r.final_price) || 0;
+      if (r.status === "confirmed" || r.payment_status === "authorized" || r.payment_status === "paid") funnel.confirmed += 1;
+      else funnel.pending += 1;
+    }
+
     return NextResponse.json({
       window_days: sinceDays,
       volume: { sessions, messages, userMessages, escalatedMessages, tickets },
       escalationRate: userMessages ? escalatedMessages / userMessages : 0,
+      // Deflection = share of user turns answered WITHOUT a human handoff.
+      // (Honest: not "resolution" — we lack a positive resolved signal.)
+      deflectionRate: userMessages ? (userMessages - escalatedMessages) / userMessages : null,
+      funnel,
       feedback: { positive: posFb, negative: negFb, total: totalFb, helpfulRate: totalFb ? posFb / totalFb : null },
       qa: { ...qaCounts, active: qaActive },
       rag: { bySource: ragBySource, total: Object.values(ragBySource).reduce((a, b) => a + b, 0), lastRefresh: lastRow?.updated_at ?? null },
