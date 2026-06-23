@@ -470,24 +470,24 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
       "catalog_card": {
         "slug": "jeju-grand-highlights-loop",
         "title": "Jeju Grand Highlights Loop",
-        "subtitle": "From Hallasan to Seongsan Ilchulbong, see Jeju’s signature highlights in one day.",
+        "subtitle": "Jeju's three UNESCO sites, a live haenyeo show, sea-cliffs and an ocean waterfall — the island's absolute best in one day.",
         "region": "Jeju Full-Island Route",
-        "duration": "9–9.5 hours",
-        "stopsCount": 5,
+        "duration": "10–10.5 hours",
+        "stopsCount": 7,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
           "Small group",
-          "Best for One-Day Visitors",
-          "Fast-Paced Highlights"
+          "3 UNESCO Sites",
+          "Best for One-Day Visitors"
         ],
-        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "priceLabel": "From US$79 per person (was $89, 11% off)",
-        "shortCardDescription": "A high-efficiency Jeju full-island route for travelers with limited time, linking Hallasan, the south coast, and Seongsan Ilchulbong in one day."
+        "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "priceLabel": "From US$100 per person (was $112, 11% off)",
+        "shortCardDescription": "A high-intensity full-island route linking three UNESCO World Heritage sites — Hallasan, Seongsan Ilchulbong and Manjanggul lava tube — with a living haenyeo free-diving show, the Jusangjeolli columnar cliffs and the ocean-falling Jeongbang Waterfall. Jeju's signature highlights, concentrated into a single day."
       },
       "price": {
-        "amountLabel": "79"
+        "amountLabel": "100"
       }
     },
     "jeju-hydrangea-festival-tour-east-route": {
@@ -1331,25 +1331,25 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
     "jeju-grand-highlights-loop": {
       "catalog_card": {
         "slug": "jeju-grand-highlights-loop",
-        "title": "제주 그랜드 하이라이트 일일 투어",
-        "subtitle": "한라산부터 성산일출봉까지, 제주의 대표 명소를 하루에 만나보세요.",
+        "title": "제주 그랜드 하이라이트 루프",
+        "subtitle": "제주의 유네스코 3대 명소, 생생한 해녀 물질 시연, 해안 절벽과 바다로 떨어지는 폭포까지 — 제주 최고의 명소를 하루에 만나는 투어.",
         "region": "제주 전 지역 코스",
-        "duration": "9~9.5시간",
-        "stopsCount": 5,
+        "duration": "10~10.5시간",
+        "stopsCount": 7,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
           "소그룹",
-          "당일 여행객에게 최적",
-          "빠르게 즐기는 하이라이트"
+          "유네스코 3대 명소",
+          "당일 여행객에게 최적"
         ],
-        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "priceLabel": "1인 US$79 (정가 $89, 11% 할인)",
-        "shortCardDescription": "시간이 부족한 여행객을 위한 고효율 제주 전 지역 코스로, 한라산, 남쪽 해안, 성산일출봉을 하루에 연결합니다."
+        "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "priceLabel": "1인 US$100부터 (기존 $112, 11% 할인)",
+        "shortCardDescription": "한라산, 성산일출봉, 만장굴 용암동굴까지 유네스코 세계유산 3곳을 연결하고, 살아 있는 해녀 물질 시연, 주상절리 절벽, 바다로 떨어지는 정방폭포를 더한 고밀도 전 지역 코스입니다. 제주의 대표 명소를 하루에 응축한 일정입니다."
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "100"
       }
     },
     "jeju-hydrangea-festival-tour-east-route": {
@@ -2193,25 +2193,25 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
     "jeju-grand-highlights-loop": {
       "catalog_card": {
         "slug": "jeju-grand-highlights-loop",
-        "title": "济州全岛精华一日游",
-        "subtitle": "从汉拿山到城山日出峰，一天尽览济州标志性景点。",
+        "title": "济州精华环岛游",
+        "subtitle": "济州三处联合国教科文组织遗址、海女现场表演、海崖与直泻入海的瀑布——一天尽览全岛最精华的景致。",
         "region": "济州全岛线路",
-        "duration": "9–9.5小时",
-        "stopsCount": 5,
+        "duration": "10–10.5小时",
+        "stopsCount": 7,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
           "小团",
-          "最适合一日游客",
-          "快节奏精华游"
+          "3处联合国教科文组织遗址",
+          "最适合一日游客"
         ],
-        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "priceLabel": "每人 US$79（原价$89，11% 优惠）",
-        "shortCardDescription": "专为时间有限的旅行者打造的高效济州全岛线路，一天串联汉拿山、南海岸风光与城山日出峰。"
+        "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "priceLabel": "每人 US$100 起（原价 $112，立减 11%）",
+        "shortCardDescription": "一条高强度的全岛线路，串联三处联合国教科文组织世界遗产——汉拿山、城山日出峰与万丈窟熔岩洞，并融入海女徒手潜水现场表演、柱状节理海崖以及直泻入海的正房瀑布。济州的标志性精华，浓缩于一日之内。"
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "100"
       }
     },
     "jeju-hydrangea-festival-tour-east-route": {
@@ -3055,25 +3055,25 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
     "jeju-grand-highlights-loop": {
       "catalog_card": {
         "slug": "jeju-grand-highlights-loop",
-        "title": "濟州全島精華一日遊",
-        "subtitle": "從漢拏山到城山日出峰，一天盡覽濟州代表性精華景點。",
+        "title": "濟州精華環島遊",
+        "subtitle": "濟州三大聯合國教科文組織遺址、現場海女表演、海崖與直落入海的瀑布——一天盡覽全島絕對精華。",
         "region": "濟州全島路線",
-        "duration": "9至9.5小時",
-        "stopsCount": 5,
+        "duration": "10–10.5 小時",
+        "stopsCount": 7,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
           "小團體",
-          "最適合一日遊旅客",
-          "緊湊精華行程"
+          "3 處聯合國教科文組織遺址",
+          "最適合一日遊旅客"
         ],
-        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "priceLabel": "每人 US$79（原價$89，11% 優惠）",
-        "shortCardDescription": "專為時間有限的旅客設計的高效率濟州全島路線，一天串聯漢拏山、南海岸與城山日出峰。"
+        "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "priceLabel": "每人 US$100 起（原價 $112，現省 11%）",
+        "shortCardDescription": "一條高強度的全島路線，串聯三處聯合國教科文組織世界遺產——漢拏山、城山日出峰與萬丈窟熔岩洞——並結合現場海女自由潛水表演、柱狀節理海崖，以及直落入海的正房瀑布。濟州的代表性精華，濃縮於一日之內。"
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "100"
       }
     },
     "jeju-hydrangea-festival-tour-east-route": {
@@ -3916,25 +3916,25 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
     "jeju-grand-highlights-loop": {
       "catalog_card": {
         "slug": "jeju-grand-highlights-loop",
-        "title": "Jeju Completo: Hitos del Día",
-        "subtitle": "De Hallasan a Seongsan Ilchulbong, descubre los principales atractivos de Jeju en un solo día.",
+        "title": "Gran Circuito de los Mejores Atractivos de Jeju",
+        "subtitle": "Los tres sitios UNESCO de Jeju, un espectáculo de haenyeo en vivo, acantilados marinos y una cascada que cae al océano: lo mejor de la isla en un solo día.",
         "region": "Ruta por toda la isla de Jeju",
-        "duration": "9–9,5 horas",
-        "stopsCount": 5,
+        "duration": "10–10,5 horas",
+        "stopsCount": 7,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
           "Grupo pequeño",
-          "Ideal para Visitantes de un Solo Día",
-          "Atractivos a Ritmo Acelerado"
+          "3 sitios UNESCO",
+          "Ideal para visitantes de un solo día"
         ],
-        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "priceLabel": "Desde US$79 por persona (antes $89, 11% descuento)",
-        "shortCardDescription": "Una ruta de alta eficiencia por toda la isla de Jeju para viajeros con tiempo limitado, que une Hallasan, la costa sur y Seongsan Ilchulbong en un solo día."
+        "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "priceLabel": "Desde US$100 por persona (antes $112, 11% de descuento)",
+        "shortCardDescription": "Una ruta intensa por toda la isla que enlaza tres sitios del Patrimonio Mundial de la UNESCO —Hallasan, Seongsan Ilchulbong y el tubo de lava de Manjanggul— con un espectáculo en vivo de buceo libre de las haenyeo, los acantilados columnares de Jusangjeolli y la cascada Jeongbang que cae al océano. Los atractivos emblemáticos de Jeju, concentrados en un solo día."
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "100"
       }
     },
     "jeju-hydrangea-festival-tour-east-route": {
@@ -4776,25 +4776,25 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
     "jeju-grand-highlights-loop": {
       "catalog_card": {
         "slug": "jeju-grand-highlights-loop",
-        "title": "済州グランドハイライトツアー",
-        "subtitle": "漢拏山から城山日出峰まで、済州を代表するハイライトスポットを1日で巡ります。",
+        "title": "済州グランドハイライトループ",
+        "subtitle": "済州の3つのユネスコ遺産、海女（ヘニョ）の実演、海岸の断崖、そして海へ落ちる瀑布——島の真の最高峰を1日で。",
         "region": "済州全島ルート",
-        "duration": "9〜9.5時間",
-        "stopsCount": 5,
+        "duration": "10〜10.5時間",
+        "stopsCount": 7,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
-          "スモールグループ",
-          "日帰り旅行者に最適",
-          "テンポよく巡るハイライトコース"
+          "少人数制",
+          "ユネスコ3遺産",
+          "日帰り旅行者に最適"
         ],
-        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "priceLabel": "1名様 US$79（定価$89、11%オフ）",
-        "shortCardDescription": "時間の限られた旅行者のための効率的な済州全島ルート。漢拏山、南海岸、城山日出峰を1日でつなぎます。"
+        "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "priceLabel": "1名 US$100〜（通常 $112、11%オフ）",
+        "shortCardDescription": "3つのユネスコ世界遺産——漢拏山(ハルラサン)、城山日出峰、万丈窟溶岩洞窟——を、生きた海女（ヘニョ）の素潜り実演、柱状節理の断崖、海へ落ちる正房瀑布とつなぐ、密度の高い全島ルート。済州を象徴するハイライトを、1日に凝縮しました。"
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "100"
       }
     },
     "jeju-hydrangea-festival-tour-east-route": {
