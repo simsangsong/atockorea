@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Headphones, Send, Sparkles, ThumbsDown, ThumbsUp, X } from "lucide-react";
+import { ArrowRight, Headphones, Send, Sparkles, ThumbsDown, ThumbsUp, X } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
@@ -125,11 +125,22 @@ type UiLabels = {
   handoffRequest: string;
   directSupportQuestion: string;
   defaultQuickChips: string[];
+  // L1 (chatbot promo) — idle teaser bubble copy shown on the global/landing
+  // placement to advertise that this is a full-funnel agent, not a FAQ bot.
+  teaserTitle: string;
+  teaserBody: string;
+  teaserCta: string;
 };
 
 const SITE_ASSISTANT_SLUG = "__site__";
 const STORAGE_PREFIX = "tour-product-assistant:";
 const LIVE_TICKET_PREFIX = "tour-product-assistant-live-ticket:";
+// L1 — once the visitor dismisses (or opens from) the teaser, don't nag again
+// this session.
+const TEASER_DISMISS_KEY = "atc-assistant-teaser-dismissed";
+// L3 — any surface can open the assistant by dispatching this CustomEvent:
+//   window.dispatchEvent(new CustomEvent("atc:open-assistant", { detail: { source } }))
+const OPEN_ASSISTANT_EVENT = "atc:open-assistant";
 const MSG_EASE = [0.22, 1, 0.36, 1] as const;
 
 type FeedbackLabels = { helpful: string; notHelpful: string; thanks: string; noted: string };
@@ -180,6 +191,9 @@ function labelsFor(lang: string, scope: AssistantScope): UiLabels {
       handoffRequest: "담당자에게 연결해 주세요.",
       directSupportQuestion: "고객이 챗봇에서 상담 연결을 요청했습니다.",
       defaultQuickChips: ["어떤 투어가 있나요?", "환불 규정이 궁금해요", "제주/부산/서울 투어를 추천해 주세요"],
+      teaserTitle: "AI 여행 에이전트",
+      teaserBody: "맞춤 투어 추천부터 견적·예약 조회, 상담사 연결까지. 무엇이든 물어보세요 — 한국어 OK.",
+      teaserCta: "대화 시작",
     };
   }
 
@@ -219,6 +233,9 @@ function labelsFor(lang: string, scope: AssistantScope): UiLabels {
       "What is the refund policy?",
       "Recommend a tour for Seoul, Busan, or Jeju",
     ],
+    teaserTitle: "Your Korea travel agent",
+    teaserBody: "Tour picks, instant quotes, booking lookups, and a human when you need one. Ask anything — in your language.",
+    teaserCta: "Start chatting",
   };
 }
 
@@ -300,8 +317,48 @@ export function TourProductAiAssistantWidget({
   const liveSupportActive = activeTicketId !== null && liveStatus !== "resolved" && liveStatus !== "closed";
   const title = productTitle?.trim() || labels.siteTitle;
 
+  // L1 (chatbot promo) — idle teaser bubble state. Only ever shown on the
+  // global/landing placement (see effect below).
+  const [teaserVisible, setTeaserVisible] = useState(false);
+
   useEffect(() => {
     setUiLang(inferClientLanguage());
+  }, []);
+
+  const dismissTeaser = useCallback(() => {
+    setTeaserVisible(false);
+    try {
+      window.sessionStorage.setItem(TEASER_DISMISS_KEY, "1");
+    } catch {
+      /* private mode / storage blocked — fine, teaser just won't persist */
+    }
+  }, []);
+
+  // L1 — surface the teaser after a short idle so it reads as an invitation,
+  // not a load-time pop-up. Global placement only; never while the panel is
+  // open; never if dismissed/opened earlier this session.
+  useEffect(() => {
+    if (placement !== "global" || typeof window === "undefined") return;
+    if (open) return;
+    try {
+      if (window.sessionStorage.getItem(TEASER_DISMISS_KEY) === "1") return;
+    } catch {
+      /* storage blocked — still allow the teaser */
+    }
+    const id = window.setTimeout(() => setTeaserVisible(true), 6000);
+    return () => window.clearTimeout(id);
+  }, [placement, open]);
+
+  // L3 — let any surface (hero CTA, "추천받기" card, sticky CTA) open the
+  // assistant by dispatching `atc:open-assistant`. The widget otherwise has no
+  // external open affordance besides its own FAB.
+  useEffect(() => {
+    function onExternalOpen() {
+      setOpen(true);
+      setTeaserVisible(false);
+    }
+    window.addEventListener(OPEN_ASSISTANT_EVENT, onExternalOpen as EventListener);
+    return () => window.removeEventListener(OPEN_ASSISTANT_EVENT, onExternalOpen as EventListener);
   }, []);
 
   const pageContext = useCallback(
@@ -900,6 +957,50 @@ export function TourProductAiAssistantWidget({
             </p>
           </div>
         </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* L1 — idle teaser bubble. Promotes the assistant as a full-funnel
+          agent (recommend → quote → booking lookup → human), not a FAQ bot.
+          Tapping the body opens the chat; the × dismisses for the session. */}
+      <AnimatePresence>
+        {teaserVisible && !open && (
+          <motion.div
+            key="assistant-teaser"
+            initial={{ opacity: 0, y: 10, scale: 0.96 }}
+            animate={{ opacity: 1, y: 0, scale: 1, transition: { duration: 0.24, ease: MSG_EASE } }}
+            exit={{ opacity: 0, y: 8, scale: 0.97, transition: { duration: 0.16, ease: MSG_EASE } }}
+            className="pointer-events-auto mb-3 w-[min(100vw-2rem,17rem)] origin-bottom-right"
+          >
+            <div className="relative rounded-2xl border border-slate-200/90 bg-white p-3.5 pr-8 shadow-[0_16px_40px_-12px_rgba(26,35,50,0.28),0_0_0_1px_rgba(26,35,50,0.04)]">
+              <button
+                type="button"
+                onClick={dismissTeaser}
+                aria-label={labels.close}
+                className="absolute right-1.5 top-1.5 inline-flex h-6 w-6 items-center justify-center rounded-full text-slate-400 transition hover:bg-slate-100 hover:text-slate-700"
+              >
+                <X className="h-3.5 w-3.5" strokeWidth={2} />
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setOpen(true);
+                  dismissTeaser();
+                }}
+                className="block w-full text-left"
+              >
+                <p className="flex items-center gap-1.5 text-caption font-bold text-slate-900">
+                  <Sparkles className="h-3.5 w-3.5 flex-shrink-0 text-amber-500" strokeWidth={2.2} />
+                  {labels.teaserTitle}
+                </p>
+                <p className="mt-1 text-[12px] leading-snug text-slate-600">{labels.teaserBody}</p>
+                <span className="mt-2 inline-flex items-center gap-1 text-[12px] font-semibold text-sky-700">
+                  {labels.teaserCta}
+                  <ArrowRight className="h-3.5 w-3.5" strokeWidth={2.2} />
+                </span>
+              </button>
+            </div>
+          </motion.div>
         )}
       </AnimatePresence>
 

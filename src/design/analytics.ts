@@ -386,7 +386,8 @@ export type HomeCtaSource =
   | "best_match_result_card_hero"
   | "best_match_result_primary"
   | "final_cta_custom_join"
-  | "final_cta_browse_styles";
+  | "final_cta_browse_styles"
+  | "chatbot_open_choose_style";
 
 /** Standalone `/match` page — funnel events distinct from the in-page home planner flow. */
 export type MatchPageOutcome = "matched" | "no_match" | "error";
