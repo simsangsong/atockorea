@@ -51,6 +51,9 @@ interface Props {
   autoQuotable?: boolean;
   /** Cruise track time budget in minutes (e.g. 6h cruise = 360). */
   cruiseBudgetMinutes?: number | null;
+  /** Booked tour duration in minutes (durationHours × 60) — drives the
+   *  "drive time exceeds 60% of the tour" warning (Phase A). */
+  durationMinutes?: number | null;
   /** R1 — card body tap opens the shared POIDetailModal (lifted to BuilderShell). */
   onOpenDetail?: (poi: MatchPoiRow) => void;
 }
@@ -82,6 +85,7 @@ export default function ResultTimeline({
   onGetQuote,
   onGuideCurate,
   cruiseBudgetMinutes,
+  durationMinutes,
   onOpenDetail,
   autoQuotable = true,
 }: Props) {
@@ -194,6 +198,7 @@ export default function ResultTimeline({
           totalMin={totalMin}
           cruiseBudgetMinutes={cruiseBudgetMinutes ?? null}
           overBudget={overBudget}
+          durationMinutes={durationMinutes ?? null}
           onGetQuote={onGetQuote}
           autoQuotable={autoQuotable}
           t={t}
@@ -446,6 +451,7 @@ function Footer({
   totalMin,
   cruiseBudgetMinutes,
   overBudget,
+  durationMinutes,
   onGetQuote,
   autoQuotable,
   t,
@@ -455,10 +461,16 @@ function Footer({
   totalMin: number;
   cruiseBudgetMinutes: number | null;
   overBudget: boolean;
+  durationMinutes: number | null;
   onGetQuote: () => void;
   autoQuotable: boolean;
   t: ReturnType<typeof useTranslations>;
 }) {
+  // Phase A — warn when driving alone eats more than 60% of the booked tour
+  // duration (too much road, not enough sightseeing).
+  const driveRatio =
+    durationMinutes != null && durationMinutes > 0 ? driveMin / durationMinutes : 0;
+  const driveTooHigh = driveRatio > 0.6;
   return (
     <div className="mt-4 border-t border-slate-200 pt-4">
       <dl className="mb-3 space-y-1 text-caption text-slate-600">
@@ -500,6 +512,11 @@ function Footer({
           {t("cruiseOverBudget", {
             over: formatMinutes(totalMin - cruiseBudgetMinutes),
           })}
+        </p>
+      ) : null}
+      {driveTooHigh ? (
+        <p className="mb-3 rounded-md bg-amber-50 px-2.5 py-1.5 text-micro font-semibold text-amber-800 ring-1 ring-amber-200">
+          {t("driveRatioTooHigh", { percent: Math.round(driveRatio * 100) })}
         </p>
       ) : null}
       {autoQuotable ? (
