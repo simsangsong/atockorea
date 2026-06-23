@@ -2468,6 +2468,7 @@
       "cruiseBudget": "크루즈 체류 가능 시간",
       "cruiseOverBudget": "{over} 초과 — 여행지를 줄이거나 방문 시간을 단축하세요",
       "driveRatioTooHigh": "이동에 투어 시간의 약 {percent}%가 쓰여요. 장소를 줄이거나 더 가까운 곳으로 바꿔보세요 (60% 이하 권장).",
+      "jejuEastMixNotice": "제주 동부를 서부·남부와 함께 담으면 거리 추가요금이 발생할 수 있어요.",
       "remove": "제거",
       "getQuoteCta": "예약하기 · 카드 등록",
       "getQuoteHint": "카드 안전 보관 · 투어 당일 자동 결제 · 24시간 무료 취소"
@@ -2478,6 +2479,7 @@
       "inCartBadge": "일정 추가됨 · #{number}",
       "details": "상세 정보",
       "added": "추가됨",
+      "blockedRegion": "다른 권역",
       "add": "추가",
       "noneInFilter": "이 필터에 맞는 장소가 없어요 — 필터를 해제하면 전체가 보여요."
     },

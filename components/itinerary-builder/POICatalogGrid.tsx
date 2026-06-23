@@ -20,6 +20,9 @@ interface Props {
   /** Optional filter UI (category chips) rendered under the header, above the
    *  grid. Passed from BuilderShell so the grid stays presentation-only. */
   filterSlot?: React.ReactNode;
+  /** Phase C — poi_keys that can't join the current cart (different day-trip
+   *  cluster). Their Add button is disabled. */
+  blockedKeys?: Set<string>;
 }
 
 /**
@@ -38,7 +41,7 @@ interface Props {
  * (V5 — sequence identity), Details button → onOpenDetail drawer (R1/RR2),
  * Add/Remove cart wiring, h-full card stretch.
  */
-export default function POICatalogGrid({ pois, cart, onAdd, onRemove, onFocus, onOpenDetail, filterSlot }: Props) {
+export default function POICatalogGrid({ pois, cart, onAdd, onRemove, onFocus, onOpenDetail, filterSlot, blockedKeys }: Props) {
   const reveal = useRevealContainerProps();
   // The POI list is primary content that MUST always be visible — it cannot be
   // gated behind a scroll-reveal. On mobile the grid sits below the sticky map,
@@ -103,6 +106,7 @@ export default function POICatalogGrid({ pois, cart, onAdd, onRemove, onFocus, o
           {ordered.map((poi) => {
             const seq = cartPosition.get(poi.poi_key);
             const inCart = seq != null;
+            const blocked = !inCart && (blockedKeys?.has(poi.poi_key) ?? false);
             const imgSrc = poi.default_image_url || poi.images?.[0] || null;
             return (
               <motion.li
@@ -184,18 +188,25 @@ export default function POICatalogGrid({ pois, cart, onAdd, onRemove, onFocus, o
                     </button>
                     <button
                       type="button"
+                      disabled={blocked}
                       onClick={(e) => {
                         e.stopPropagation();
+                        if (blocked) return;
                         if (inCart) onRemove(poi.poi_key);
                         else onAdd(poi.poi_key);
                       }}
                       className={`group/btn inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-micro font-bold transition-colors duration-200 ease-out ${
-                        inCart
-                          ? "bg-emerald-50 text-emerald-700 ring-1 ring-emerald-200 hover:bg-rose-50 hover:text-rose-700 hover:ring-rose-200"
-                          : "bg-white text-slate-900 ring-1 ring-slate-300 hover:bg-slate-50 hover:ring-slate-400"
+                        blocked
+                          ? "cursor-not-allowed bg-slate-50 text-slate-400 ring-1 ring-slate-200"
+                          : inCart
+                            ? "bg-emerald-50 text-emerald-700 ring-1 ring-emerald-200 hover:bg-rose-50 hover:text-rose-700 hover:ring-rose-200"
+                            : "bg-white text-slate-900 ring-1 ring-slate-300 hover:bg-slate-50 hover:ring-slate-400"
                       }`}
+                      title={blocked ? t("blockedRegion") : undefined}
                     >
-                      {inCart ? (
+                      {blocked ? (
+                        t("blockedRegion")
+                      ) : inCart ? (
                         <>
                           <Check className="h-3.5 w-3.5" aria-hidden />
                           {t("added")}

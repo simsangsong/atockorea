@@ -27,6 +27,7 @@ import PlannerTopRail from "./PlannerTopRail";
 import LivePriceCard from "./LivePriceCard";
 import CategoryFilterBar, { poiGroup } from "./CategoryFilterBar";
 import AIRecommendPanel from "./AIRecommendPanel";
+import { tourCluster, cartAddDecision, cartHasJejuEastMix } from "@/lib/itinerary-builder/clusters";
 import type { PoiCategoryGroup } from "@/lib/itinerary-match-engine/poi-taxonomy";
 
 interface Props {
@@ -115,6 +116,7 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey, plac
   const isDmz = matcherTrack === "dmz";
   const isCruise = matcherTrack === "cruise";
   const dmzT = useTranslations("itineraryBuilder.dmz");
+  const cartT = useTranslations("itineraryBuilder.cart");
   const activeLocale = normalizeBuilderLocale(searchParams?.get("locale")) ?? locale;
   const localizedPois = useMemo(
     () => pois.map((poi) => localizePoiRow(poi, activeLocale)),
@@ -142,6 +144,29 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey, plac
     const raw = Number(searchParams?.get("duration") ?? searchParams?.get("hours") ?? 8);
     return Number.isFinite(raw) && raw > 0 ? raw : 8;
   })();
+
+  // Phase C — day-trip clustering. POIs from incompatible clusters can't share
+  // one cart: Seoul/Busan areas hard-block, Jeju East mixing warns (+surcharge).
+  const cartClusters = useMemo(() => cartPois.map((p) => tourCluster(p)), [cartPois]);
+  const blockedKeys = useMemo(() => {
+    const blocked = new Set<string>();
+    if (cartPois.length === 0) return blocked;
+    for (const poi of localizedPois) {
+      if (cart.includes(poi.poi_key)) continue;
+      if (cartAddDecision(cartClusters, tourCluster(poi)) === "block") blocked.add(poi.poi_key);
+    }
+    return blocked;
+  }, [localizedPois, cart, cartPois.length, cartClusters]);
+  const jejuEastMix = useMemo(() => cartHasJejuEastMix(cartClusters), [cartClusters]);
+
+  const addGuarded = useCallback(
+    (key: string) => {
+      const poi = localizedPois.find((p) => p.poi_key === key);
+      if (poi && cartAddDecision(cartClusters, tourCluster(poi)) === "block") return;
+      add(key);
+    },
+    [add, cartClusters, localizedPois],
+  );
 
   const livePrice = useMemo(() => {
     const sp = searchParams;
@@ -284,7 +309,7 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey, plac
                 apiKey={apiKey}
                 cart={cart}
                 previewKeys={previewKeys}
-                onAdd={add}
+                onAdd={addGuarded}
                 onRemove={remove}
                 hasInCart={has}
                 focusedPoiKey={focusedPoiKey}
@@ -338,6 +363,11 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey, plac
                 track={searchParams?.get("track")}
               />
             </div>
+            {jejuEastMix ? (
+              <p className="mb-4 mx-4 rounded-md bg-amber-50 px-3 py-2 text-micro font-semibold text-amber-800 ring-1 ring-amber-200 md:mx-0">
+                {cartT("jejuEastMixNotice")}
+              </p>
+            ) : null}
             <ResultTimeline
               cart={cart}
               pois={localizedPois}
@@ -362,10 +392,11 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey, plac
         <POICatalogGrid
           pois={filteredPois}
           cart={cart}
-          onAdd={add}
+          onAdd={addGuarded}
           onRemove={remove}
           onFocus={focusPoi}
           onOpenDetail={setDetailPoi}
+          blockedKeys={blockedKeys}
           filterSlot={
             <CategoryFilterBar
               pois={localizedPois}
