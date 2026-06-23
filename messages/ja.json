@@ -2468,6 +2468,7 @@
       "cruiseBudget": "寄港時間",
       "cruiseOverBudget": "予算を{over}超過しています — 立ち寄り先を減らすか、滞在時間を短縮してください",
       "driveRatioTooHigh": "移動がツアー時間の約{percent}%を占めています。立ち寄り先を減らすか、近い場所に変えましょう（60%以下を推奨）。",
+      "jejuEastMixNotice": "済州東部を西部・南部と一緒に組むと、距離追加料金が発生する場合があります。",
       "remove": "削除",
       "getQuoteCta": "予約する · カード登録",
       "getQuoteHint": "カードを安全に保管 · ツアー当日に自動決済 · 24時間まで無料キャンセル"
@@ -2478,6 +2479,7 @@
       "inCartBadge": "追加済み · #{number}",
       "details": "詳細",
       "added": "追加済み",
+      "blockedRegion": "別エリア",
       "add": "追加",
       "noneInFilter": "この絞り込みに合うスポットがありません — 解除するとすべて表示されます。"
     },
