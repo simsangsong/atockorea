@@ -337,13 +337,30 @@ export default function AdminContactsPage() {
           </div>
         </div>
 
-        {/* Inquiry Details */}
-        <div className="lg:col-span-1">
+        {/* Inquiry Details — on mobile this slides up as a full-height sheet so
+            the selected inquiry isn't buried under the whole list. On lg+ it's
+            the sticky right rail as before. */}
+        <div
+          className={`lg:col-span-1 ${
+            selectedInquiry
+              ? 'fixed inset-x-0 bottom-0 top-[52px] z-50 overflow-y-auto bg-white p-4 shadow-2xl lg:static lg:inset-auto lg:z-auto lg:overflow-visible lg:bg-transparent lg:p-0 lg:shadow-none'
+              : 'hidden lg:block'
+          }`}
+        >
           {selectedInquiry ? (
-            <div className="bg-white rounded-lg border border-gray-200/60 shadow-sm p-5 sticky top-5">
+            <div className="bg-white lg:rounded-lg lg:border lg:border-gray-200/60 lg:p-5 lg:shadow-sm lg:sticky lg:top-5">
               <div className="space-y-4">
                 <div>
-                  <h2 className="text-lg font-bold text-gray-900 mb-2">Inquiry Details</h2>
+                  <div className="mb-2 flex items-center justify-between">
+                    <h2 className="text-lg font-bold text-gray-900">Inquiry Details</h2>
+                    <button
+                      type="button"
+                      onClick={() => setSelectedInquiry(null)}
+                      className="-mr-1 inline-flex items-center gap-1 rounded-lg px-2 py-1 text-sm font-medium text-gray-500 hover:bg-gray-100 lg:hidden"
+                    >
+                      목록 ✕
+                    </button>
+                  </div>
                   <div className="flex items-center gap-2 mb-4">
                     <span className={`px-2 py-1 text-xs font-semibold rounded-md ${getStatusColor(selectedInquiry.status)}`}>
                       {selectedInquiry.status}
