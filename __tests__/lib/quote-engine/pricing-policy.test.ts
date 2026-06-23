@@ -220,27 +220,34 @@ describe("classifyJejuHotelZone (D.2 auto-detect)", () => {
   });
 });
 
-describe("cruise shore-excursion surcharges", () => {
-  it("cruise track adds a flat ₩40,000", () => {
+describe("cruise private — uniform flat premium", () => {
+  it("cruise track adds a flat ₩50,000 over the private day rate", () => {
     const r = quote(input({ track: "cruise", region: "busan", durationHours: 8, pax: 2 }));
-    expect(r.total).toBe(340000 + 40000);
-    expect(r.lines.find((l) => l.code === "cruise_excursion")?.amount).toBe(40000);
+    expect(r.total).toBe(340000 + 50000);
+    expect(r.lines.find((l) => l.code === "cruise_excursion")?.amount).toBe(50000);
   });
 
-  it("Gangjeong port adds ₩70,000 on top of the cruise add", () => {
+  it("is exactly ₩50,000 more than the equivalent private tour", () => {
+    const args = { region: "busan" as const, durationHours: 8, pax: 2 };
+    const priv = quote(input({ track: "private", ...args }));
+    const cruise = quote(input({ track: "cruise", ...args }));
+    expect(cruise.total - priv.total).toBe(50000);
+  });
+
+  it("Gangjeong adds a ₩20,000 distance surcharge — ₩70,000 premium total", () => {
     const r = quote(
       input({ track: "cruise", region: "jeju", durationHours: 6, pax: 2, cruisePort: "gangjeong" })
     );
-    // base 280k + cruise 40k + gangjeong 70k
-    expect(r.total).toBe(280000 + 40000 + 70000);
-    expect(r.lines.find((l) => l.code === "gangjeong_port")?.amount).toBe(70000);
+    // base 280k + flat cruise 50k + Gangjeong distance 20k.
+    expect(r.total).toBe(280000 + 50000 + 20000);
+    expect(r.lines.find((l) => l.code === "gangjeong_port")?.amount).toBe(20000);
   });
 
-  it("non-Gangjeong Jeju cruise gets only the ₩40,000 cruise add", () => {
+  it("non-Gangjeong Jeju cruise gets only the flat ₩50,000 add", () => {
     const r = quote(
       input({ track: "cruise", region: "jeju", durationHours: 6, pax: 2, cruisePort: "jeju_port" })
     );
-    expect(r.total).toBe(280000 + 40000);
+    expect(r.total).toBe(280000 + 50000);
     expect(r.lines.find((l) => l.code === "gangjeong_port")).toBeUndefined();
   });
 

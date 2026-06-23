@@ -2403,6 +2403,9 @@
         "solatiMinHint": "10–13人（Solati商务车）最少预订6小时。",
         "notIncluded": "餐饮费用及景点门票不含于行程费用中，请于当日现场另行支付。",
         "jejuSingleRegion": "济州一日游仅限游览一个区域（东部、西部或南部）。若需跨越两个区域，需加收₩60,000。",
+        "cruisePickupPort": "接送一律在邮轮停靠的港口 — 无需酒店接送。",
+        "cruiseGuarantee": "100%保证开船前返回邮轮。",
+        "cruiseFlexible": "出发时间可根据邮轮实际抵港时间灵活调整。",
         "lines": {
           "base": "基础 — {hours}小时私人包车",
           "van": "车辆 — 商务车（7–9人）",
@@ -2418,9 +2421,14 @@
           "cruiseExcursion": "邮轮岸上观光",
           "gangjeongPort": "江汀港"
         },
-        "pickupZones": { "city": "济州市区", "out_west": "市外 — 西部", "out_east": "市外 — 东部", "out_south": "市外 — 南部" },
+        "pickupZones": {
+          "city": "济州市区",
+          "out_west": "市外 — 西部",
+          "out_east": "市外 — 东部",
+          "out_south": "市外 — 南部"
+        },
         "cruisePorts": {
-          "gangjeong": "江汀港（西归浦）+₩70,000",
+          "gangjeong": "江汀港（西归浦）+₩20,000",
           "jeju_port": "济州港（市区）"
         }
       },
@@ -2553,7 +2561,12 @@
       "editTrip": "编辑行程",
       "close": "关闭",
       "done": "完成",
-      "pickupZones": { "city": "济州市区", "out_west": "市外 — 西部", "out_east": "市外 — 东部", "out_south": "市外 — 南部" },
+      "pickupZones": {
+        "city": "济州市区",
+        "out_west": "市外 — 西部",
+        "out_east": "市外 — 东部",
+        "out_south": "市外 — 南部"
+      },
       "ports": {
         "gangjeong": "江汀(西归浦)",
         "jeju_port": "济州港"
