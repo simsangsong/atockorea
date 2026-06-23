@@ -19,8 +19,10 @@ export const CANONICAL_JEJU_GRAND_PRODUCT_PATH = "/tour-product/jeju-grand-highl
 export const CANONICAL_SOUTHWEST_PRODUCT_PATH = "/tour-product/southwest-hallasan-osulloc-aewol";
 
 /**
- * Single slug we keep in GET /api/tours (and derived cards). Other East Signature–family
- * rows are duplicate/legacy marketing SKUs for the same experience.
+ * Canonical East Signature row slug. Its `/tour-product/east-signature-nature-core`
+ * detail page stays live, but as of 2026-06-23 it (and the rest of the East
+ * Signature family) is hidden from the public tour list/catalogue per product
+ * decision — see `isTourSlugHiddenFromPublicCatalog`.
  */
 export const CANONICAL_EAST_SIGNATURE_CATALOG_SLUG = "east-signature-nature-core";
 
@@ -100,6 +102,8 @@ export const CONSUMER_BLOCKED_TOUR_SLUGS = new Set<string>([
   // All 11 Seoul-region day tours back online per product decision; DB is_active was
   // already true (the 2026-05-25 "Mirrors is_active=false" note was stale — the pause
   // was enforced by this blocklist + the landing-planner Seoul gate only).
+  // Hidden 2026-06-23 per product decision — removed from the public tour list/catalogue.
+  "jeju-west-south-full-day-authentic-tour",
 ]);
 
 function normalizeTourIdForBlocklist(id: string): string {
@@ -163,14 +167,19 @@ export function consumerTourCheckoutHref(tourId: string | null | undefined, slug
 }
 
 /**
- * Hide duplicate flagship rows from consumer tour lists (web + mobile + search).
+ * Hide flagship / duplicate rows from consumer tour lists (web + mobile + search).
  * Blocked tour ids are removed separately (`isTourIdBlockedFromConsumerSurfaces`).
+ *
+ * As of 2026-06-23 the entire East Signature family — including the canonical
+ * `east-signature-nature-core` — is hidden here per product decision. Its
+ * `/tour-product/east-signature-nature-core` detail page stays reachable
+ * (`consumerTourDetailHref` is unaffected) and it is dropped from the home
+ * "Most loved" rail via `FEATURED_PRODUCT_SLUGS`.
  */
 export function isTourSlugHiddenFromPublicCatalog(slug: unknown): boolean {
   if (slug == null || typeof slug !== "string") return false;
   const s = slug.trim().toLowerCase();
   if (!s) return false;
-  if (s === CANONICAL_EAST_SIGNATURE_CATALOG_SLUG) return false;
   if (s === "jeju-east-small-group-template-preview") return true;
   if (matchesEastSignatureSlugSegment(s)) return true;
   if (isTourSlugBlockedFromConsumerSurfaces(s)) return true;

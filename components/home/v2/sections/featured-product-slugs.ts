@@ -8,7 +8,8 @@
  * iterable" at SSR.
  */
 export const FEATURED_PRODUCT_SLUGS = [
-  "east-signature-nature-core",
+  // east-signature-nature-core removed 2026-06-23 — hidden from the public
+  // catalogue/list per product decision (see lib/tour-consumer-visibility.ts).
   "busan-top-attractions-day-tour",
   "jeju-grand-highlights-loop",
   "southwest-hallasan-osulloc-aewol",
