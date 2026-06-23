@@ -40,6 +40,9 @@ import {
   missingQuoteSlots,
   quoteSlotPrompt,
   buildQuoteReply,
+  createQuoteBooking,
+  quoteEmailPrompt,
+  checkoutReadyReply,
 } from "@/lib/chatbot/quoteFlow";
 import { allowRequest } from "@/lib/chatbot/requestRateLimit";
 import { retrieveKnowledge, buildRagContextText } from "@/lib/rag/retrieve";
@@ -576,18 +579,44 @@ export async function POST(req: NextRequest) {
         session,
       );
     }
-    const { reply, autoQuotable } = buildQuoteReply(draft, quoteLocale);
-    return applySessionCookie(
-      NextResponse.json({
-        reply,
-        ticket_id: null,
-        escalated: false,
-        escalation_reason: null,
-        handoff_offered: !autoQuotable,
-        debug_intent: debugNoSideEffects ? detectedIntent : undefined,
-      }),
-      session,
-    );
+    const { reply: quoteReply, autoQuotable } = buildQuoteReply(draft, quoteLocale);
+    const respond = (reply: string, extra: Record<string, unknown> = {}) =>
+      applySessionCookie(
+        NextResponse.json({
+          reply,
+          ticket_id: null,
+          escalated: false,
+          escalation_reason: null,
+          handoff_offered: !autoQuotable,
+          debug_intent: debugNoSideEffects ? detectedIntent : undefined,
+          ...extra,
+        }),
+        session,
+      );
+
+    // Oversized / out-of-scope → hand off (buildQuoteReply already worded it).
+    if (!autoQuotable) return respond(quoteReply);
+
+    // Q3 — customer confirmed booking. Need an email to create the booking.
+    if (draft.readyToBook && !debugNoSideEffects) {
+      if (!draft.contactEmail) return respond(quoteEmailPrompt(quoteLocale));
+      const bookSb = makeServiceRoleClient();
+      const result = bookSb
+        ? await createQuoteBooking(bookSb, draft, quoteLocale)
+        : ({ ok: false, error: "insert_failed" } as const);
+      if (result.ok) {
+        // Surface a structured checkout_url so the widget can render a button;
+        // the path is also in the reply text as a fallback.
+        return respond(checkoutReadyReply(result.checkoutPath, quoteLocale), {
+          checkout_url: result.checkoutPath,
+        });
+      }
+      // disabled / insert_failed → fall back to the quote + a gentle retry.
+      return respond(quoteReply);
+    }
+
+    // Quote shown; not yet booking (or debug mode) → ask to confirm.
+    return respond(quoteReply);
   }
 
   const productContext =

@@ -1,10 +1,22 @@
+import type { SupabaseClient } from "@supabase/supabase-js";
 import {
   sanitizeDraft,
   missingQuoteSlots,
   quoteSlotPrompt,
   buildQuoteReply,
+  createQuoteBooking,
   type QuoteDraft,
 } from "@/lib/chatbot/quoteFlow";
+
+function mockSb(id = "bk-1"): SupabaseClient {
+  return {
+    from: () => ({
+      insert: () => ({
+        select: () => ({ single: async () => ({ data: { id }, error: null }) }),
+      }),
+    }),
+  } as unknown as SupabaseClient;
+}
 
 const base: QuoteDraft = {
   region: null,
@@ -100,5 +112,27 @@ describe("buildQuoteReply", () => {
     const r = buildQuoteReply(d, "en");
     expect(r.autoQuotable).toBe(false);
     expect(r.reply.toLowerCase()).toContain("coordinator");
+  });
+});
+
+describe("createQuoteBooking", () => {
+  const ready: QuoteDraft = { ...base, region: "jeju", track: "private", requestedDate: "2026-07-03", party: 4, durationHours: 8, language: "ko", jejuPickupZone: "city", contactEmail: "a@b.com", readyToBook: true };
+
+  it("creates a booking and returns the checkout path", async () => {
+    const r = await createQuoteBooking(mockSb("bk-42"), ready, "ko");
+    expect(r).toEqual({ ok: true, bookingId: "bk-42", checkoutPath: "/itinerary-builder/checkout?bookingId=bk-42" });
+  });
+
+  it("returns out_of_scope for oversized groups (no insert)", async () => {
+    const r = await createQuoteBooking(mockSb(), { ...ready, party: 20 }, "ko");
+    expect(r).toEqual({ ok: false, error: "out_of_scope" });
+  });
+
+  it("respects the PRICING_AUTOQUOTE_ENABLED kill-switch", async () => {
+    const prev = process.env.PRICING_AUTOQUOTE_ENABLED;
+    process.env.PRICING_AUTOQUOTE_ENABLED = "false";
+    const r = await createQuoteBooking(mockSb(), ready, "ko");
+    process.env.PRICING_AUTOQUOTE_ENABLED = prev;
+    expect(r).toEqual({ ok: false, error: "disabled" });
   });
 });

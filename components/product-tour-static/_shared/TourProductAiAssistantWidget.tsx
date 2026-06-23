@@ -48,6 +48,19 @@ type ChatMessage = {
   content: string;
   origin?: "ai" | "admin" | "support_user" | "system";
   supportMessageId?: number;
+  /** Quote funnel (Q3) — renders a "go to checkout" button under the message. */
+  checkoutUrl?: string;
+};
+
+// Quote-funnel checkout CTA, keyed on the widget locale (avoids threading a
+// label through every localized labels object).
+const CHECKOUT_CTA: Record<string, string> = {
+  ko: "결제하러 가기 →",
+  en: "Go to checkout →",
+  ja: "決済に進む →",
+  zh: "前往结账 →",
+  "zh-TW": "前往結帳 →",
+  es: "Ir al pago →",
 };
 
 // The server caps the history at 24 messages (zod). Trim to the most recent
@@ -67,6 +80,9 @@ type AssistantResponse = {
   escalated?: boolean;
   escalation_reason?: string | null;
   handoff_offered?: boolean;
+  /** Quote funnel (Q3) — present when the bot created a booking; the widget
+   *  renders a "go to checkout" button. */
+  checkout_url?: string | null;
 };
 
 type LiveSupportMessage = {
@@ -369,7 +385,10 @@ export function TourProductAiAssistantWidget({
           return;
         }
         if (data.reply) {
-          setMessages([...next, { role: "assistant", content: data.reply, origin: "ai" }]);
+          setMessages([
+            ...next,
+            { role: "assistant", content: data.reply, origin: "ai", checkoutUrl: data.checkout_url ?? undefined },
+          ]);
           const lastUserQuestion = [...next].reverse().find((m) => m.role === "user")?.content ?? "";
           setHandoffOffer(data.handoff_offered ? { question: lastUserQuestion } : null);
           if (data.ticket_id && data.escalated) {
@@ -755,6 +774,14 @@ export function TourProductAiAssistantWidget({
                         </span>
                       )}
                       <span className="whitespace-pre-wrap break-words">{m.content}</span>
+                      {m.checkoutUrl ? (
+                        <a
+                          href={m.checkoutUrl}
+                          className="mt-2.5 flex w-full items-center justify-center gap-1.5 rounded-full bg-slate-900 px-4 py-2 text-[12.5px] font-bold text-white transition-colors hover:bg-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
+                        >
+                          {CHECKOUT_CTA[uiLang] ?? CHECKOUT_CTA.en}
+                        </a>
+                      ) : null}
                       {(!m.origin || m.origin === "ai") && (
                         <div className="mt-1.5 flex items-center gap-1.5 border-t border-slate-100 pt-1.5">
                           {feedback[i] ? (

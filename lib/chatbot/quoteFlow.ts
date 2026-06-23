@@ -9,6 +9,7 @@
 // Q3 (booking + checkout hand-off) builds on the same QuoteDraft.
 
 import type { GoogleGenerativeAI } from "@google/generative-ai";
+import type { SupabaseClient } from "@supabase/supabase-js";
 import type { TourProductPageLocale } from "@/lib/tour-product/resolveTourProductDbLocale";
 import {
   quote,
@@ -17,6 +18,8 @@ import {
   type PricingRegion,
   type PricingTrack,
 } from "@/lib/quote-engine/pricing-policy";
+import { createBuilderBooking } from "@/lib/booking/createBuilderBooking";
+import type { RegionSlug } from "@/lib/itinerary-builder/regions";
 
 /** Localized KRW amount, e.g. "₩320,000". */
 function formatKrw(amount: number, locale: string): string {
@@ -214,4 +217,91 @@ export async function extractQuoteDraft(
   } catch {
     return { ...EMPTY_DRAFT };
   }
+}
+
+/** Ask for the email needed to create the booking (Q3). */
+export function quoteEmailPrompt(locale: TourProductPageLocale): string {
+  const m: Record<TourProductPageLocale, string> = {
+    en: "Great! What email should I put on the booking? I'll then give you a secure checkout link.",
+    ko: "좋아요! 예약에 사용할 이메일을 알려주시면 안전한 결제 링크를 드릴게요.",
+    ja: "ありがとうございます！ご予約に使うメールアドレスを教えてください。安全な決済リンクをお送りします。",
+    zh: "好的！请告诉我预订使用的邮箱，我会给你一个安全的结账链接。",
+    "zh-TW": "好的！請告訴我預訂使用的電子郵件，我會給你一個安全的結帳連結。",
+    es: "¡Genial! ¿Qué correo pongo en la reserva? Te daré un enlace de pago seguro.",
+  };
+  return m[locale] ?? m.en;
+}
+
+/** Reply once the booking is created — points to the checkout link. */
+export function checkoutReadyReply(checkoutPath: string, locale: TourProductPageLocale): string {
+  const m: Record<TourProductPageLocale, string> = {
+    en: `All set — your booking is reserved. Open checkout to save your card (no charge now; you're charged on tour day, 100% refund up to 24h before): ${checkoutPath}`,
+    ko: `예약이 준비됐어요. 아래 링크에서 카드만 등록하면 끝이에요 (지금 결제 아님 · 투어 당일 청구 · 24시간 전 100% 환불): ${checkoutPath}`,
+    ja: `ご予約が確保できました。下のリンクでカードを登録するだけです（今は課金されません・当日課金・24時間前まで全額返金）：${checkoutPath}`,
+    zh: `预订已为你保留。点击下面的链接登记银行卡即可（现在不扣款 · 当天扣款 · 提前24小时全额退款）：${checkoutPath}`,
+    "zh-TW": `預訂已為你保留。點擊下面的連結登記信用卡即可（現在不扣款 · 當天扣款 · 提前24小時全額退款）：${checkoutPath}`,
+    es: `Listo — tu reserva está apartada. Abre el pago para guardar tu tarjeta (sin cargo ahora; se cobra el día del tour, reembolso 100% hasta 24h antes): ${checkoutPath}`,
+  };
+  return m[locale] ?? m.en;
+}
+
+export type CreateQuoteBookingResult =
+  | { ok: true; bookingId: string; checkoutPath: string }
+  | { ok: false; error: "out_of_scope" | "disabled" | "insert_failed" };
+
+/**
+ * Q3 — create a PENDING booking from the completed quote draft (guide-curated:
+ * the guide finalizes the exact stops) and return the checkout deep-link.
+ * NO money moves here; the card hold happens only when the customer submits
+ * the card on the checkout page. Mirrors `/api/itinerary/book` (kill-switch +
+ * out-of-scope gate) but skips the POI-validation step (no specific POIs yet).
+ */
+export async function createQuoteBooking(
+  sb: SupabaseClient,
+  draft: QuoteDraft,
+  locale: TourProductPageLocale,
+): Promise<CreateQuoteBookingResult> {
+  if (process.env.PRICING_AUTOQUOTE_ENABLED === "false") return { ok: false, error: "disabled" };
+  if (!draft.region || !draft.requestedDate || !draft.party || !draft.durationHours || !draft.contactEmail) {
+    return { ok: false, error: "insert_failed" };
+  }
+  const region = draft.region;
+  const track = draft.track ?? "private";
+  const language = draft.language ?? locale;
+  const tier = tierForLocale(language);
+  const jejuPickupZone = region === "jeju" && track !== "cruise" ? draft.jejuPickupZone ?? "city" : null;
+  const price = quote({
+    track,
+    region,
+    guideLanguageTier: tier,
+    durationHours: draft.durationHours,
+    pax: draft.party,
+    requestedDate: draft.requestedDate,
+    jejuPickupZone,
+  });
+  if (!price.autoQuotable) return { ok: false, error: "out_of_scope" };
+
+  const row = createBuilderBooking({
+    poiKeys: [],
+    region: region as RegionSlug,
+    track,
+    durationHours: draft.durationHours,
+    guideLanguage: language,
+    guideLanguageTier: tier,
+    jejuPickupZone,
+    cruisePort: null,
+    tourDate: draft.requestedDate,
+    pax: draft.party,
+    contact: { name: draft.contactName ?? "", email: draft.contactEmail, phone: null },
+    notes: draft.poiIntent,
+    locale,
+    sourceUrl: "chatbot",
+    price,
+    guideCurated: true,
+  });
+
+  const { data, error } = await sb.from("bookings").insert(row).select("id").single();
+  if (error || !data) return { ok: false, error: "insert_failed" };
+  const bookingId = (data as { id: string }).id;
+  return { ok: true, bookingId, checkoutPath: `/itinerary-builder/checkout?bookingId=${bookingId}` };
 }
