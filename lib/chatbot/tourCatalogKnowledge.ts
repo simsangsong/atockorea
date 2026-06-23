@@ -147,6 +147,35 @@ function formatTourLine(tour: CatalogTour): string {
   return `- ${parts.join(" | ")}`;
 }
 
+// Coarse region key (first token) so "Busan → Yangsan → …" route strings still
+// group under "busan".
+function regionKey(tour: CatalogTour): string {
+  return normalize(tour.region).split(/[\s→\-/]+/)[0] || "other";
+}
+
+// Round-robin across regions. Used for the no-signal fallback so a broad
+// "what tours do you offer?" spans Busan/Jeju/Seoul/DMZ instead of collapsing
+// to whichever region sorts first alphabetically (Busan).
+function diversifyByRegion<T extends { tour: CatalogTour }>(items: T[], limit: number): T[] {
+  const groups = new Map<string, T[]>();
+  for (const item of items) {
+    const key = regionKey(item.tour);
+    const bucket = groups.get(key);
+    if (bucket) bucket.push(item);
+    else groups.set(key, [item]);
+  }
+  const queues = Array.from(groups.values());
+  const out: T[] = [];
+  let i = 0;
+  while (out.length < limit && queues.some((q) => q.length > 0)) {
+    const q = queues[i % queues.length];
+    const next = q.shift();
+    if (next) out.push(next);
+    i += 1;
+  }
+  return out;
+}
+
 export function buildTourCatalogContextText({
   locale = "en",
   query,
@@ -165,11 +194,14 @@ export function buildTourCatalogContextText({
     .sort((a, b) => b.score - a.score || a.tour.title.localeCompare(b.tour.title));
 
   const matched = ranked.filter((item) => item.score > 0).slice(0, limit);
-  const selected = matched.length > 0 ? matched : ranked.slice(0, Math.min(limit, 10));
+  // No query signal (e.g. "which tours do you offer?") → don't fall back to the
+  // alphabetical head (all Busan); give a region-balanced spread instead.
+  const selected = matched.length > 0 ? matched : diversifyByRegion(ranked, Math.min(limit, 10));
 
   const lines = [
     "### Public tour catalogue",
     "Use this catalogue to answer questions about available AtoC Korea tours and to recommend product pages. Do not invent tours that are not listed here.",
+    "If the user asks broadly which tours are offered or where AtoC operates, give a short overview spanning the regions/types below (Busan, Jeju, Seoul, DMZ, cruise) rather than listing one region — then offer to narrow down.",
     ...selected.map((item) => formatTourLine(item.tour)),
   ];
 
