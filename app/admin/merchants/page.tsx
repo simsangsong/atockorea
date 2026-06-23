@@ -211,26 +211,26 @@ export default function MerchantsPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex items-start justify-between gap-3">
         <div>
           <div className="flex items-center gap-2">
             <Building2 className="size-6 text-blue-600" />
-            <h1 className="text-2xl font-bold text-gray-900">업체 관리</h1>
+            <h1 className="text-xl font-bold text-gray-900 md:text-2xl">업체 관리</h1>
           </div>
-          <p className="text-gray-600 mt-2">등록된 여행사 계정과 운영 상태를 관리합니다.</p>
+          <p className="text-sm text-gray-600 mt-2 md:text-base">등록된 여행사 계정과 운영 상태를 관리합니다.</p>
         </div>
         <Link
           href="/admin/merchants/create"
-          className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+          className="inline-flex flex-shrink-0 items-center gap-2 rounded-lg bg-blue-600 px-3 py-2.5 font-semibold text-white transition-colors hover:bg-blue-700 md:px-5"
         >
           <Plus className="size-4" />
-          업체 추가
+          <span className="hidden sm:inline">업체 추가</span>
         </Link>
       </div>
 
       {/* Search and Filters */}
       <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-4">
-        <div className="flex gap-4">
+        <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
           <div className="relative flex-1">
             <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-gray-400" />
             <input
@@ -246,29 +246,31 @@ export default function MerchantsPage() {
               className="w-full px-4 py-2 pl-9 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
-          <select
-            value={statusFilter}
-            onChange={(e) => setStatusFilter(e.target.value)}
-            className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            <option value="">전체 상태</option>
-            <option value="active">운영중</option>
-            <option value="pending">대기</option>
-            <option value="suspended">중지</option>
-            <option value="inactive">비활성</option>
-          </select>
-          <button
-            onClick={fetchMerchants}
-            className="inline-flex items-center gap-2 px-5 py-2 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-colors"
-          >
-            <Search className="size-4" />
-            검색
-          </button>
+          <div className="flex gap-3">
+            <select
+              value={statusFilter}
+              onChange={(e) => setStatusFilter(e.target.value)}
+              className="min-w-0 flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 sm:flex-none"
+            >
+              <option value="">전체 상태</option>
+              <option value="active">운영중</option>
+              <option value="pending">대기</option>
+              <option value="suspended">중지</option>
+              <option value="inactive">비활성</option>
+            </select>
+            <button
+              onClick={fetchMerchants}
+              className="inline-flex flex-shrink-0 items-center gap-2 px-5 py-2 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-colors"
+            >
+              <Search className="size-4" />
+              검색
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* Merchants Table */}
-      <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+      {/* Merchants Table — desktop only (6 columns don't fit on mobile) */}
+      <div className="hidden md:block bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead className="bg-gray-50 border-b border-gray-200">
@@ -362,6 +364,73 @@ export default function MerchantsPage() {
             </tbody>
           </table>
         </div>
+      </div>
+
+      {/* Merchants cards — mobile only */}
+      <div className="space-y-2.5 md:hidden">
+        {filteredMerchants.length === 0 ? (
+          <div className="rounded-xl border border-gray-200 bg-white p-8 text-center text-sm text-gray-500">
+            등록된 업체가 없습니다
+          </div>
+        ) : (
+          filteredMerchants.map((merchant) => (
+            <div key={merchant.id} className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+              <div className="flex items-start justify-between gap-3">
+                <div className="min-w-0">
+                  <h3 className="truncate text-sm font-semibold text-gray-900">{merchant.company_name}</h3>
+                  {merchant.is_verified && (
+                    <span className="mt-0.5 inline-flex items-center gap-1 text-xs text-blue-600">
+                      <CheckCircle2 className="size-3" />
+                      인증됨
+                    </span>
+                  )}
+                </div>
+                <span
+                  className={`flex-shrink-0 rounded-full px-2 py-1 text-xs font-semibold ${getStatusColor(merchant.status)}`}
+                >
+                  {getStatusLabel(merchant.status)}
+                </span>
+              </div>
+
+              <dl className="mt-3 space-y-1 text-xs">
+                <div className="flex gap-2">
+                  <dt className="w-12 flex-shrink-0 text-gray-400">담당자</dt>
+                  <dd className="min-w-0 truncate text-gray-700">{merchant.contact_person || '—'}</dd>
+                </div>
+                <div className="flex gap-2">
+                  <dt className="w-12 flex-shrink-0 text-gray-400">이메일</dt>
+                  <dd className="min-w-0 truncate text-gray-700">{merchant.contact_email || '—'}</dd>
+                </div>
+                <div className="flex gap-2">
+                  <dt className="w-12 flex-shrink-0 text-gray-400">연락처</dt>
+                  <dd className="min-w-0 truncate text-gray-700">{merchant.contact_phone || '—'}</dd>
+                </div>
+              </dl>
+
+              <div className="mt-3 flex items-center justify-between border-t border-gray-100 pt-3">
+                <span className="text-xs text-gray-400">
+                  {new Date(merchant.created_at).toLocaleDateString()}
+                </span>
+                <div className="flex items-center gap-4">
+                  <Link
+                    href={`/admin/merchants/${merchant.id}`}
+                    className="inline-flex items-center gap-1 text-sm font-medium text-blue-600"
+                  >
+                    <Eye className="size-4" />
+                    보기
+                  </Link>
+                  <button
+                    onClick={() => handleDelete(merchant.id)}
+                    className="inline-flex items-center gap-1 text-sm font-medium text-red-600"
+                  >
+                    <Trash2 className="size-4" />
+                    삭제
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))
+        )}
       </div>
     </div>
   );

@@ -91,7 +91,11 @@ export function ProductsListPane({
   }, [items, query, cityFilter, statusFilter]);
 
   return (
-    <aside className="flex flex-col w-80 flex-shrink-0 bg-white border-r border-slate-200">
+    <aside
+      className={`w-full flex-shrink-0 flex-col border-r border-slate-200 bg-white lg:flex lg:w-80 ${
+        selectedSlug ? 'hidden' : 'flex'
+      }`}
+    >
       {/* Header — count + refresh */}
       <div className="px-4 pt-4 pb-3 border-b border-slate-100">
         <div className="flex items-center justify-between mb-3">
