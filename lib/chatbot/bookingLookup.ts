@@ -70,11 +70,21 @@ export type SafeBookingView = {
   status: string;
   paymentStatus: string | null;
   settlementStatus: string | null;
+  currency: string;
   amount: { value: number; currency: string } | null;
   refund: { eligible: boolean; processed: boolean; amount: number | null } | null;
   cancellation: { cancelledAt: string; reason: string | null } | null;
   specialRequests: string | null;
 };
+
+// Collapse whitespace + cap length on user-controlled free text before it goes
+// into the model context, so injected newlines / "SYSTEM:" lines can't fake
+// structure (defence-in-depth alongside the route's prompt-injection guard).
+function neutralizeFreeText(value: string | null, max = 500): string | null {
+  if (typeof value !== "string") return null;
+  const cleaned = value.replace(/\s+/g, " ").trim();
+  return cleaned ? cleaned.slice(0, max) : null;
+}
 
 // The ONLY columns we read. Nothing sensitive (stripe_*, payment_intent_id,
 // setup_intent_id, payment_reference, user_id, merchant_id, contact_phone) is
@@ -104,11 +114,17 @@ export function mapBookingRowToSafeView(
     bookingReference: String(row.booking_reference ?? ""),
     tourName,
     tourDate: typeof row.tour_date === "string" ? row.tour_date : null,
-    tourTime: typeof row.tour_time === "string" ? row.tour_time.slice(0, 5) : null,
+    // tour_time is a Postgres TIME (HH:MM:SS); guard the slice in case the
+    // stored value is shorter/malformed so we never show a truncated time.
+    tourTime:
+      typeof row.tour_time === "string" && /^\d{2}:\d{2}/.test(row.tour_time)
+        ? row.tour_time.slice(0, 5)
+        : null,
     guests: num(row.number_of_guests),
     status: String(row.status ?? "unknown"),
     paymentStatus: typeof row.payment_status === "string" ? row.payment_status : null,
     settlementStatus: typeof row.settlement_status === "string" ? row.settlement_status : null,
+    currency,
     amount: amountValue !== null ? { value: amountValue, currency } : null,
     refund: hasRefundInfo
       ? {
@@ -121,13 +137,14 @@ export function mapBookingRowToSafeView(
       typeof row.cancelled_at === "string" && row.cancelled_at
         ? {
             cancelledAt: row.cancelled_at,
-            reason: typeof row.cancellation_reason === "string" ? row.cancellation_reason : null,
+            reason: neutralizeFreeText(
+              typeof row.cancellation_reason === "string" ? row.cancellation_reason : null,
+            ),
           }
         : null,
-    specialRequests:
-      typeof row.special_requests === "string" && row.special_requests.trim()
-        ? row.special_requests.trim()
-        : null,
+    specialRequests: neutralizeFreeText(
+      typeof row.special_requests === "string" ? row.special_requests : null,
+    ),
   };
 }
 
@@ -187,7 +204,7 @@ export function buildVerifiedBookingContext(view: SafeBookingView): string {
   if (view.refund) {
     const amount =
       view.refund.amount != null
-        ? `, amount=${view.refund.amount.toFixed(2)} ${view.amount?.currency ?? "USD"}`
+        ? `, amount=${view.refund.amount.toFixed(2)} ${view.currency}`
         : "";
     lines.push(
       `Refund: eligible=${view.refund.eligible ? "yes" : "no"}, processed=${view.refund.processed ? "yes" : "no"}${amount}`,

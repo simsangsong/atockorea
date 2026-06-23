@@ -9,9 +9,15 @@ import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { z } from "zod";
 
+import { allowRequest } from "@/lib/chatbot/requestRateLimit";
+
 export const runtime = "nodejs";
 
 const SESSION_COOKIE = "atc_chat_sid";
+
+function bestEffortIp(req: NextRequest): string | null {
+  return req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? req.headers.get("x-real-ip") ?? null;
+}
 
 const bodySchema = z.object({
   rating: z.union([z.literal(1), z.literal(-1)]),
@@ -38,6 +44,22 @@ function serviceClient() {
 }
 
 export async function POST(req: NextRequest) {
+  // Require a chat session (real users always have one after the first reply)
+  // and throttle by IP so the unauthenticated endpoint can't be spammed to
+  // poison harvest/analytics.
+  const sessionToken = req.cookies.get(SESSION_COOKIE)?.value ?? null;
+  if (!sessionToken || sessionToken.length < 16) {
+    return NextResponse.json({ ok: false, error: "missing_chat_session" }, { status: 401 });
+  }
+  const ip = bestEffortIp(req);
+  const gate = allowRequest("feedback", ip ? `ip:${ip}` : `sess:${sessionToken}`, { perMinute: 12, perHour: 100 });
+  if (!gate.allowed) {
+    return NextResponse.json(
+      { ok: false, error: "rate_limited" },
+      { status: 429, headers: { "Retry-After": String(Math.ceil(gate.retryAfterMs / 1000)) } },
+    );
+  }
+
   let json: unknown;
   try {
     json = await req.json();
@@ -53,7 +75,6 @@ export async function POST(req: NextRequest) {
   if (!sb) return NextResponse.json({ ok: false }, { status: 503 });
 
   const { rating, answer, question, reason, tourProductSlug, pageUrl } = parsed.data;
-  const sessionToken = req.cookies.get(SESSION_COOKIE)?.value ?? null;
 
   const { error } = await sb.from("chat_feedback").insert({
     session_token: sessionToken,

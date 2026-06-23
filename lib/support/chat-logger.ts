@@ -31,10 +31,19 @@ export type ChatTurn = {
   elapsedMs?: number;
 };
 
+let warnedDefaultSalt = false;
+
 function hashIp(ip: string | null | undefined): string | null {
   if (!ip) return null;
+  const salt = process.env.IP_HASH_SALT;
+  if (!salt && process.env.NODE_ENV === "production" && !warnedDefaultSalt) {
+    warnedDefaultSalt = true;
+    console.warn(
+      "[chat-logger] IP_HASH_SALT is not set in production — using a weak default salt. Set IP_HASH_SALT to a secret value.",
+    );
+  }
   return createHash("sha256")
-    .update(ip + (process.env.IP_HASH_SALT ?? "atockorea-default-salt"))
+    .update(ip + (salt ?? "atockorea-default-salt"))
     .digest("hex")
     .slice(0, 32);
 }

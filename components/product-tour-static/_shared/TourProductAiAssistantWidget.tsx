@@ -50,6 +50,15 @@ type ChatMessage = {
   supportMessageId?: number;
 };
 
+// The server caps the history at 24 messages (zod). Trim to the most recent
+// window before sending so long conversations don't 400 and break the chat;
+// drop any leading assistant turn so the window still starts with a user message.
+function trimChatHistory(messages: ChatMessage[], max = 24): ChatMessage[] {
+  let window = messages.slice(-max);
+  while (window.length > 1 && window[0].role !== "user") window = window.slice(1);
+  return window;
+}
+
 type AssistantResponse = {
   reply?: string;
   error?: string;
@@ -341,7 +350,7 @@ export function TourProductAiAssistantWidget({
           body: JSON.stringify({
             assistantScope: scope,
             tourProductSlug: storageKey,
-            messages: next,
+            messages: trimChatHistory(next),
             pageContext: pageContext(),
           }),
         });
