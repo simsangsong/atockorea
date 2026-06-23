@@ -74,7 +74,10 @@ export default function CategoryFilterBar({ pois, selected, onToggle, onClear }:
       <p className="mb-2 text-micro font-semibold uppercase tracking-wider text-slate-500">
         {t("label")}
       </p>
-      <div className="-mx-1 flex flex-wrap gap-1.5 px-1">
+      {/* Single-row horizontal scroll (compact) instead of a 4-row wrap that
+          shoved the catalog grid far down the page. scrollbar-hide + snap keeps
+          it tidy; -mx/px gutter lets the first/last chip bleed to the edge. */}
+      <div className="scrollbar-hide -mx-4 flex gap-1.5 overflow-x-auto px-4 md:-mx-1 md:px-1">
         <button
           type="button"
           onClick={onClear}
@@ -107,7 +110,9 @@ export default function CategoryFilterBar({ pois, selected, onToggle, onClear }:
 
 function chipClass(active: boolean): string {
   return cn(
-    "inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-caption font-semibold transition-colors duration-150 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400",
+    // Compact pill: px-2.5 py-1 + text-micro so 13 groups read as a tidy single
+    // row, matching the site's compact filter language (was px-3 py-1.5 chunky).
+    "inline-flex shrink-0 items-center gap-1 whitespace-nowrap rounded-full border px-2.5 py-1 text-micro font-semibold transition-colors duration-150 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400",
     active
       ? "border-slate-900 bg-slate-900 text-white shadow-1"
       : "border-slate-200 bg-slate-50 text-slate-700 hover:border-slate-300 hover:bg-slate-100",

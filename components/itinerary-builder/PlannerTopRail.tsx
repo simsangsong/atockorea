@@ -247,7 +247,7 @@ export default function PlannerTopRail({ region, placement = "page" }: Props) {
       >
         {/* Track */}
         <Field label={t("track")} inSheet={inSheet}>
-          <div className="flex gap-1.5">
+          <div className="flex flex-wrap gap-1.5">
             {TRACK_OPTIONS.map(({ value, Icon }) => {
               const active = track === value;
               return (
@@ -269,7 +269,7 @@ export default function PlannerTopRail({ region, placement = "page" }: Props) {
         {/* Region (hidden for DMZ — forced to Seoul) */}
         {!isDmz ? (
           <Field label={t("region")} inSheet={inSheet}>
-            <div className="flex gap-1.5">
+            <div className="flex flex-wrap gap-1.5">
               {(["busan", "jeju", "seoul"] as RegionSlug[]).map((r) => {
                 const active = region === r;
                 return (
@@ -315,23 +315,21 @@ export default function PlannerTopRail({ region, placement = "page" }: Props) {
             inputMode="numeric"
             value={party}
             onChange={(e) => patch({ party: e.target.value })}
-            className="w-20 rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-1.5 text-caption font-semibold tabular-nums focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-200"
+            className={cn(FIELD_INPUT_CLASS, "w-20 tabular-nums")}
           />
         </Field>
 
         {/* Guide language */}
         <Field label={t("lang")} inSheet={inSheet}>
-          <select
-            value={lang}
-            onChange={(e) => patch({ lang: e.target.value })}
-            className="rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-1.5 text-caption font-semibold focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-200"
-          >
-            {GUIDE_LANGS.map((g) => (
-              <option key={g.code} value={g.code}>
-                {g.label}
-              </option>
-            ))}
-          </select>
+          <div className="min-w-[140px]">
+            <SelectDropdown
+              id="planner-lang"
+              value={lang}
+              options={GUIDE_LANGS}
+              onChange={(code) => patch({ lang: code })}
+              ariaLabel={t("lang")}
+            />
+          </div>
         </Field>
 
         {/* Duration (private) / Hours (cruise) — hidden for DMZ */}
@@ -362,7 +360,7 @@ export default function PlannerTopRail({ region, placement = "page" }: Props) {
               value={ship}
               onChange={(e) => patch({ ship: e.target.value || null })}
               placeholder="MS Westerdam…"
-              className="w-44 rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-1.5 text-caption focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-200"
+              className={cn(FIELD_INPUT_CLASS, "w-44 font-normal")}
             />
           </Field>
         ) : null}
@@ -376,17 +374,13 @@ export default function PlannerTopRail({ region, placement = "page" }: Props) {
                 placeholder={t("hotelSearchPlaceholder")}
                 onZone={(zone) => patch({ pickup: zone })}
               />
-              <select
+              <SelectDropdown
+                id="planner-pickup"
                 value={pickup}
-                onChange={(e) => patch({ pickup: e.target.value })}
-                className="rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-1.5 text-caption font-semibold focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-200"
-              >
-                {PICKUP_ZONES.map((z) => (
-                  <option key={z} value={z}>
-                    {t(`pickupZones.${z}`)}
-                  </option>
-                ))}
-              </select>
+                options={PICKUP_ZONES.map((z) => ({ code: z, label: t(`pickupZones.${z}`) }))}
+                onChange={(code) => patch({ pickup: code })}
+                ariaLabel={t("pickup")}
+              />
             </div>
           </Field>
         ) : null}
@@ -394,14 +388,18 @@ export default function PlannerTopRail({ region, placement = "page" }: Props) {
         {/* Cruise port (Jeju cruise — Gangjeong adds a surcharge) */}
         {isJejuCruise ? (
           <Field label={t("port")} inSheet={inSheet}>
-            <select
-              value={port}
-              onChange={(e) => patch({ port: e.target.value })}
-              className="rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-1.5 text-caption font-semibold focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-200"
-            >
-              <option value="gangjeong">{t("ports.gangjeong")}</option>
-              <option value="jeju_port">{t("ports.jeju_port")}</option>
-            </select>
+            <div className="min-w-[160px]">
+              <SelectDropdown
+                id="planner-port"
+                value={port}
+                options={[
+                  { code: "gangjeong", label: t("ports.gangjeong") },
+                  { code: "jeju_port", label: t("ports.jeju_port") },
+                ]}
+                onChange={(code) => patch({ port: code })}
+                ariaLabel={t("port")}
+              />
+            </div>
           </Field>
         ) : null}
       </div>
@@ -511,9 +509,17 @@ function Field({
 
 function chipClass(active: boolean): string {
   return cn(
-    "inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-caption font-semibold transition-colors duration-150 ease-out",
+    // whitespace-nowrap: long locale labels (e.g. KR "개인 차량 / 육로 여행")
+    // must never break mid-phrase inside the pill — the row wraps instead.
+    "inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border px-2.5 py-1 text-caption font-semibold transition-colors duration-150 ease-out",
     active
       ? "border-slate-900 bg-slate-900 text-white"
       : "border-slate-200 bg-slate-50 text-slate-700 hover:border-slate-300 hover:bg-slate-100",
   );
 }
+
+// Shared text-input look so the party + ship fields read as the same control
+// family as the SelectDropdown / IntakeDateField (h-11/h-12, rounded-button,
+// frosted slate-50) instead of cramped native-height inputs.
+const FIELD_INPUT_CLASS =
+  "h-11 rounded-button border border-slate-200/70 bg-slate-50 px-3 text-[13px] font-semibold text-slate-900 transition-colors duration-200 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-200 md:h-12 md:text-[14px]";

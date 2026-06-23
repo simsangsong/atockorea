@@ -19,7 +19,7 @@ export default function POIInfoWindowContent({ poi, inCart = false, onAdd, onRem
   const summary = (() => {
     const desc = poi.poi_meta && typeof poi.poi_meta === "object" ? (poi.poi_meta as Record<string, unknown>) : null;
     const raw = desc && typeof desc.summary === "string" ? (desc.summary as string) : "";
-    if (raw) return raw.slice(0, 140);
+    if (raw) return raw.slice(0, 90);
     if (poi.category) return poi.category;
     return "";
   })();
@@ -30,17 +30,21 @@ export default function POIInfoWindowContent({ poi, inCart = false, onAdd, onRem
   // = emerald (success) hover→rose (destructive). The amber primary stays
   // reserved for the page-level Get-Quote CTA + photo-pin sequence badge.
   const buttonClass = inCart
-    ? "mt-3 w-full rounded-md bg-emerald-50 px-3 py-2 text-micro font-semibold text-emerald-700 ring-1 ring-emerald-200 transition-colors hover:bg-rose-50 hover:text-rose-700 hover:ring-rose-200"
-    : "mt-3 w-full rounded-md bg-white px-3 py-2 text-micro font-bold text-slate-900 shadow-sm ring-1 ring-slate-300 transition-colors hover:bg-slate-50 hover:ring-slate-400";
+    ? "mt-2 w-full rounded-md bg-emerald-50 px-3 py-1.5 text-micro font-semibold text-emerald-700 ring-1 ring-emerald-200 transition-colors hover:bg-rose-50 hover:text-rose-700 hover:ring-rose-200"
+    : "mt-2 w-full rounded-md bg-white px-3 py-1.5 text-micro font-bold text-slate-900 shadow-sm ring-1 ring-slate-300 transition-colors hover:bg-slate-50 hover:ring-slate-400";
 
+  // Compact card so it never overflows / clips on a short mobile map (40vh).
+  // Image capped at a short fixed height (~88px) instead of a tall 16:10 crop
+  // that, at the old 280px width, rendered ~175px tall and got cut by the map
+  // edges (reported 2026-06-23).
   return (
-    <div className="max-w-[280px] p-1 font-sans">
+    <div className="max-w-[208px] p-0.5 font-sans">
       {poi.default_image_url ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img
           src={poi.default_image_url}
           alt={poi.name_en}
-          className="mb-2 aspect-[16/10] w-full rounded-md object-cover"
+          className="mb-1.5 h-[88px] w-full rounded-md object-cover"
         />
       ) : null}
       <h3 className="text-caption font-bold leading-snug text-slate-900">{poi.name_en}</h3>
@@ -48,9 +52,9 @@ export default function POIInfoWindowContent({ poi, inCart = false, onAdd, onRem
         <p className="mt-0.5 text-micro text-slate-500">{poi.name_ko}</p>
       ) : null}
       {summary ? (
-        <p className="mt-1.5 text-caption leading-snug text-slate-700">{summary}</p>
+        <p className="mt-1 line-clamp-2 text-micro leading-snug text-slate-600">{summary}</p>
       ) : null}
-      <div className="mt-2 flex items-center justify-between text-micro text-slate-500">
+      <div className="mt-1.5 flex items-center justify-between text-micro text-slate-500">
         {poi.default_stay_minutes ? (
           <span>{t("stayMinutesPattern", { minutes: poi.default_stay_minutes })}</span>
         ) : (
