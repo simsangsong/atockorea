@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import { ShieldCheck, Lock, CalendarClock, RotateCcw } from "lucide-react";
 import { useTranslations } from "@/lib/i18n";
 
 const HERO_SLIDES = [
@@ -30,6 +31,16 @@ const HERO_SLIDES = [
 
 export function HeroSection() {
   const t = useTranslations("home");
+
+  // What makes AtoC more than a booking agency — the four assurances shown
+  // under the hero (dual registration, secure global pay, pay-on-tour-day,
+  // 100% refund window).
+  const assurances = [
+    { Icon: ShieldCheck, label: t("premium.hero.assureCert") },
+    { Icon: Lock, label: t("premium.hero.assurePay") },
+    { Icon: CalendarClock, label: t("premium.hero.assureBookNow") },
+    { Icon: RotateCcw, label: t("premium.hero.assureRefund") },
+  ];
 
   const heroSectionRef = useRef<HTMLElement>(null);
   const heroPanelRef = useRef<HTMLDivElement>(null);
@@ -219,51 +230,25 @@ export function HeroSection() {
         className="relative px-4 md:px-8 pt-0 pb-8 md:pb-10"
         style={{ background: "linear-gradient(to bottom, #faf9f7, #fdfcfb, #ffffff)" }}
       >
-        {/* Curation proof: the compact stat row reinforces direct vetting
-            without changing the fold height or premium visual rhythm. */}
-        <div className="mx-auto max-w-xl px-1 pt-3 pb-4 md:pt-5 md:pb-6">
-          <h2
-            className="text-center text-[0.98rem] font-bold leading-snug tracking-[-0.015em] text-slate-900 md:text-[1.2rem]"
-            style={{ fontFamily: "var(--font-inter), Inter, system-ui, sans-serif" }}
-          >
-            {t("premium.hero.curationHeadline")}
-          </h2>
-
-          {/* Concise labels keep all three trust signals readable in 3 columns. */}
-          <div className="mx-auto mt-3 grid max-w-md grid-cols-3 divide-x divide-slate-200/70 text-center md:mt-4">
-            <div className="px-2.5">
-              <span className="block text-h3 font-extrabold leading-none text-slate-900 md:text-[1.5rem]">
-                {t("premium.hero.curationShortlistValue")}
-              </span>
-              <span className="mt-1.5 block text-caption font-medium leading-tight text-slate-500">
-                {t("premium.hero.curationShortlistLabel")}
-              </span>
-            </div>
-
-            <div className="px-2.5">
-              <span className="block text-h3 font-extrabold leading-none text-slate-900 md:text-[1.5rem]">
-                {t("premium.hero.curationBookingsValue")}
-              </span>
-              <span className="mt-1.5 block text-caption font-medium leading-tight text-slate-500">
-                {t("premium.hero.curationBookingsLabel")}
-              </span>
-            </div>
-
-            <div className="px-2.5">
-              <span className="block text-h3 font-extrabold leading-none text-slate-900 md:text-[1.5rem]">
-                {t("premium.hero.curationRatingValue")}
-              </span>
-              <span className="mt-1.5 block text-caption font-medium leading-tight text-slate-500">
-                {t("premium.hero.curationRatingLabel")}
-              </span>
-            </div>
+        {/* Trust assurances — what makes AtoC more than a booking agency:
+            dual US/Korea registration, secure global payment, pay-on-tour-day,
+            and a 100% refund window. Replaces the prior curation stat row. */}
+        <div className="mx-auto max-w-2xl px-1 pt-3 pb-4 md:pt-5 md:pb-6">
+          <div className="mx-auto grid max-w-xl grid-cols-2 gap-2.5 md:max-w-3xl md:grid-cols-4 md:gap-3">
+            {assurances.map(({ Icon, label }) => (
+              <div
+                key={label}
+                className="flex flex-col items-center gap-1.5 rounded-xl border border-slate-200/70 bg-white/60 px-2.5 py-3 text-center md:py-4"
+              >
+                <Icon className="h-5 w-5 text-slate-600" strokeWidth={1.75} aria-hidden />
+                <span className="text-[0.72rem] font-medium leading-snug text-slate-600 md:text-caption">
+                  {label}
+                </span>
+              </div>
+            ))}
           </div>
-
-          <p className="mx-auto mt-3 hidden max-w-md text-center text-caption leading-relaxed text-slate-500 md:mt-4 md:block">
-            {t("premium.hero.curationProof")}
-          </p>
         </div>
-        {/* End curation proof. */}
+        {/* End trust assurances. */}
 
         {/* Reform W1e-3 — the Match/Build planner card has been removed from
             the hero. The hero is now photo + H1 + curation proof; the primary
