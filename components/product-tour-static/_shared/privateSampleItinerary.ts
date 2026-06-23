@@ -222,6 +222,31 @@ function seoulConfig(): PrivateSampleItineraryConfig {
   };
 }
 
+const JEJU_CONFIG: PrivateSampleItineraryConfig = {
+  title: { ko: "샘플 일정", en: "Sample Itineraries" },
+  subtitle: {
+    ko: "프라이빗 차량 투어의 예시 일정입니다. 아래 일정을 기준으로 고객님 일정에 맞춰 자유롭게 조정해 드립니다.",
+    en: "Example day plans for the private charter. Use them as a starting point — we tailor the day to you.",
+  },
+  samples: [
+    sampleDay(
+      "jeju-east",
+      { ko: "제주 동부", en: "Jeju East" },
+      { ko: "성산일출봉·우도·섭지코지 등 제주 동부 핵심 코스", en: "Core Jeju-east highlights — Seongsan Ilchulbong, Udo, Seopjikoji" },
+      5,
+    ),
+    sampleDay(
+      "jeju-west",
+      { ko: "제주 서부", en: "Jeju West" },
+      { ko: "한림공원·오설록·애월 등 제주 서부 핵심 코스", en: "Core Jeju-west highlights — Hallim Park, Osulloc, Aewol" },
+      5,
+    ),
+  ],
+  rulesTitle: { ko: "프라이빗 투어 안내", en: "Private Tour Guidelines" },
+  // No region surcharge specified for Jeju — common private-tour rules only.
+  rules: [...COMMON_PRIVATE_RULES],
+};
+
 /**
  * Slug → sample-itinerary config. Only the dedicated private car-charter
  * products opt in; everything else returns null and the section is hidden.
@@ -230,6 +255,7 @@ const PRIVATE_SAMPLE_ITINERARY: Record<string, PrivateSampleItineraryConfig> = {
   "busan-private-car-charter-cruise-shore": BUSAN_CONFIG,
   "seoul-suburbs-private-chartered-car-10hr": seoulConfig(),
   "incheon-seoul-private-car-shore-excursion-cruise": seoulConfig(),
+  "jeju-island-private-car-charter-tour": JEJU_CONFIG,
 };
 
 export function getPrivateSampleItineraryConfig(
