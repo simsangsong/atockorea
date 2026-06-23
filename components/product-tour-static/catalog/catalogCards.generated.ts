@@ -738,11 +738,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
         "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
-        "priceLabel": "From US$52 per person (was $58, 10% off)",
+        "priceLabel": "From US$53 per person (was $58, 9% off)",
         "shortCardDescription": "A 12-hour coach day trip from Seoul to the East Sea coast: hike Seoraksan National Park, visit the cliffside Naksansa Temple, and walk pine-backed Naksan Beach. Departs Mondays and Thursdays with an English-speaking guide and round-trip transfers from Hongik or Myeongdong."
       },
       "price": {
-        "amountLabel": "52"
+        "amountLabel": "53"
       }
     },
     "seoul-seoraksan-nami-island-morning-calm-day-tour": {
@@ -763,11 +763,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
         "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
-        "priceLabel": "From US$59 per person (was $82, 28% off)",
+        "priceLabel": "US$71 per person",
         "shortCardDescription": "A 13-hour coach day tour from Seoul covering Korea's three most-photographed day-trip stops: Seoraksan National Park (Korea's first UNESCO Biosphere Reserve), Nami Island (Winter Sonata's Metasequoia Lane), and the Garden of Morning Calm (Korea's signature private arboretum with 5,000 plant species). All admissions included; English-speaking guide; pickup at Hongik University Station or Myeongdong Station."
       },
       "price": {
-        "amountLabel": "59"
+        "amountLabel": "71"
       }
     },
     "seoul-seoraksan-national-park-sokcho-beach-day-trip": {
@@ -843,11 +843,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
         "thumbnail": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
-        "priceLabel": "From US$59 per person (was $66, 11% off)",
+        "priceLabel": "From US$60 per person (was $66, 9% off)",
         "shortCardDescription": "A small-group cultural day-trip from Seoul to Gyeonggi Province covering four contrasting sides of Korean heritage and modern life: the UNESCO-listed Suwon Hwaseong Fortress (18th-century walls and gates), the restored Hwaseong Haenggung Palace with its Joseon-era reenactments, the immersive open-air Korean Folk Village in Yongin, and the dramatic four-floor Starfield Library Suwon. 10 hours with included transport and admissions."
       },
       "price": {
-        "amountLabel": "59"
+        "amountLabel": "60"
       }
     },
     "seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library": {
@@ -857,7 +857,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "subtitle": "A small-group cultural day-trip from Seoul covering four contrasting sides of Gyeonggi Province: the UNESCO-listed Suwon Hwaseong Fortress with its…",
         "region": "Gyeonggi-do (south of Seoul)",
         "duration": "9 hours",
-        "stopsCount": 7,
+        "stopsCount": 6,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
@@ -871,11 +871,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
         "thumbnail": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
-        "priceLabel": "From US$52 per person (was $59, 12% off)",
-        "shortCardDescription": "A small-group cultural day-trip from Seoul covering four contrasting sides of Gyeonggi Province: the UNESCO-listed Suwon Hwaseong Fortress with its 18th-century walls and Haenggung Palace, the dramatic LED-lit underground theme park inside Gwangmyeong Cave (a former Japanese-era gold mine), the four-floor Starfield Library Suwon, and the 1,000-year-old Nammun traditional market for street food. 9 hours with included transport and admissions."
+        "priceLabel": "From US$53 per person (was $59, 10% off)",
+        "shortCardDescription": "A small-group cultural day-trip from Seoul covering three contrasting sides of Gyeonggi Province: the UNESCO-listed Suwon Hwaseong Fortress with its 18th-century walls and Haenggung Palace, the dramatic LED-lit underground theme park inside Gwangmyeong Cave (a former Japanese-era gold mine), the four-floor Starfield Library Suwon. 9 hours with included transport and admissions."
       },
       "price": {
-        "amountLabel": "52"
+        "amountLabel": "53"
       }
     },
     "seoul-suwon-hwaseong-waujeongsa-starfield": {
@@ -885,7 +885,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "subtitle": "UNESCO fortress, mountain temple, and viral library—Korea's past, spirit, and present in one Seoul day-trip.",
         "region": "Suwon & Yongin",
         "duration": "9–10 hours",
-        "stopsCount": 3,
+        "stopsCount": 4,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
@@ -895,11 +895,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
         "thumbnail": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
-        "priceLabel": "From US$47 per person (was $54, 13% off)",
+        "priceLabel": "From US$51 per person (was $54, 6% off)",
         "shortCardDescription": "A small-group day-trip from Seoul covering three contrasting sides of Korea: the UNESCO-listed Suwon Hwaseong Fortress (18th-century military architecture), the photogenic Starfield Suwon Library (contemporary cultural icon), and Waujeongsa Temple in Yongin (giant outdoor Buddha and stone bell). Strong heritage value with included transport and admission."
       },
       "price": {
-        "amountLabel": "47"
+        "amountLabel": "51"
       }
     },
     "southwest-hallasan-osulloc-aewol": {
@@ -1719,7 +1719,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "subtitle": "경기도의 대조적인 네 가지 매력을 경험하는 서울 출발 소그룹 문화 당일 여행: 유네스코 세계문화유산 수원 화성과…",
         "region": "경기도 (서울 남쪽)",
         "duration": "9시간",
-        "stopsCount": 7,
+        "stopsCount": 6,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
@@ -1734,7 +1734,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "heroImage": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
         "thumbnail": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
         "priceLabel": "",
-        "shortCardDescription": "경기도의 대조적인 네 가지 매력을 경험하는 서울 출발 소그룹 문화 당일 여행: 18세기 성곽과 행궁을 품은 유네스코 세계문화유산 수원 화성, 일제강점기 금광이었던 광명동굴 내 화려한 LED 지하 테마파크, 4층 규모의 스타필드 라이브러리 수원, 그리고 길거리 음식을 즐길 수 있는 천 년 역사의 남문 전통시장. 교통 및 입장료 포함, 총 9시간 진행."
+        "shortCardDescription": "경기도의 대조적인 세 가지 매력을 경험하는 서울 출발 소그룹 문화 당일 여행: 18세기 성곽과 행궁을 품은 유네스코 세계문화유산 수원 화성, 일제강점기 금광이었던 광명동굴 내 화려한 LED 지하 테마파크, 4층 규모의 스타필드 라이브러리 수원. 교통 및 입장료 포함, 총 9시간 진행."
       },
       "price": {
         "amountLabel": ""
@@ -1747,7 +1747,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "subtitle": "유네스코 성곽, 산사, 그리고 화제의 도서관—하나의 서울 당일 여행으로 만나는 한국의 과거, 정신, 그리고 현재.",
         "region": "수원 & 용인",
         "duration": "9~10시간",
-        "stopsCount": 3,
+        "stopsCount": 4,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
@@ -2581,7 +2581,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "subtitle": "首尔出发的小团文化一日游，带您领略京畿道四种截然不同的风貌：UNESCO世界遗产水原华城……",
         "region": "京畿道（首尔以南）",
         "duration": "9小时",
-        "stopsCount": 7,
+        "stopsCount": 6,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
@@ -2596,7 +2596,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "heroImage": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
         "thumbnail": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
         "priceLabel": "",
-        "shortCardDescription": "首尔出发的小团文化一日游，带您领略京畿道四种截然不同的风貌：UNESCO世界遗产水原华城，拥有18世纪城墙与行宫；光明洞窟内震撼人心的LED灯光地下主题公园（昔日日据时代金矿）；四层楼高的水原星空图书馆；以及拥有千年历史的南门传统市场，尽享街头美食。全程9小时，含交通及门票。"
+        "shortCardDescription": "首尔出发的小团文化一日游，带您领略京畿道三种截然不同的风貌：UNESCO世界遗产水原华城，拥有18世纪城墙与行宫；光明洞窟内震撼人心的LED灯光地下主题公园（昔日日据时代金矿）；四层楼高的水原星空图书馆。全程9小时，含交通及门票。"
       },
       "price": {
         "amountLabel": ""
@@ -2609,7 +2609,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "subtitle": "联合国教科文组织要塞、山间寺庙与网红图书馆——一次首尔一日游，尽览韩国的历史、精神与现代。",
         "region": "水原与龙仁",
         "duration": "9至10小时",
-        "stopsCount": 3,
+        "stopsCount": 4,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
@@ -3443,7 +3443,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "subtitle": "首爾出發小團體文化一日遊，帶您探索京畿道四大截然不同的面貌：列入UNESCO世界遺產名錄的水原華城……",
         "region": "京畿道（首爾以南）",
         "duration": "9小時",
-        "stopsCount": 7,
+        "stopsCount": 6,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
@@ -3458,7 +3458,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "heroImage": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
         "thumbnail": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
         "priceLabel": "",
-        "shortCardDescription": "首爾出發小團體文化一日遊，帶您探索京畿道四大截然不同的面貌：列入UNESCO世界遺產名錄的水原華城，擁有18世紀古城牆與行宮；前日據時代金礦改建而成、璀璨LED燈光點綴的地下主題樂園光明洞窟；四層樓高的水原星空圖書館；以及擁有千年歷史的南門傳統市場，可品嚐道地街頭小吃。全程9小時，含交通接送與門票。"
+        "shortCardDescription": "首爾出發小團體文化一日遊，帶您探索京畿道三大截然不同的面貌：列入UNESCO世界遺產名錄的水原華城，擁有18世紀古城牆與行宮；前日據時代金礦改建而成、璀璨LED燈光點綴的地下主題樂園光明洞窟；四層樓高的水原星空圖書館。全程9小時，含交通接送與門票。"
       },
       "price": {
         "amountLabel": ""
@@ -3471,7 +3471,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "subtitle": "UNESCO世界遺產城堡、山中寺院與網紅圖書館——從首爾出發，一日盡覽韓國的過去、靈魂與現在。",
         "region": "水原與龍仁",
         "duration": "9至10小時",
-        "stopsCount": 3,
+        "stopsCount": 4,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
@@ -4302,7 +4302,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "subtitle": "Una excursión cultural de un día en grupo reducido desde Seúl que recorre cuatro facetas contrastantes de la provincia de Gyeonggi: la Fortaleza Suwon Hwaseong declarada Patrimonio de la UNESCO, con sus…",
         "region": "Gyeonggi-do (al sur de Seúl)",
         "duration": "9 horas",
-        "stopsCount": 7,
+        "stopsCount": 6,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
@@ -4317,7 +4317,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "heroImage": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
         "thumbnail": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
         "priceLabel": "",
-        "shortCardDescription": "Una excursión cultural de un día en grupo reducido desde Seúl que recorre cuatro facetas contrastantes de la provincia de Gyeonggi: la Fortaleza Suwon Hwaseong declarada Patrimonio de la UNESCO, con sus murallas del siglo XVIII y el Palacio Haenggung; el impresionante parque temático subterráneo iluminado con LED en el interior de la Cueva Gwangmyeong (una antigua mina de oro de la época japonesa); la Biblioteca Starfield de Suwon de cuatro pisos; y el mercado tradicional Nammun de más de 1.000 años de antigüedad, ideal para la gastronomía callejera. 9 horas con transporte y entradas incluidos."
+        "shortCardDescription": "Una excursión cultural de un día en grupo reducido desde Seúl que recorre tres facetas contrastantes de la provincia de Gyeonggi: la Fortaleza Suwon Hwaseong declarada Patrimonio de la UNESCO, con sus murallas del siglo XVIII y el Palacio Haenggung; el impresionante parque temático subterráneo iluminado con LED en el interior de la Cueva Gwangmyeong (una antigua mina de oro de la época japonesa); la Biblioteca Starfield de Suwon de cuatro pisos. 9 horas con transporte y entradas incluidos."
       },
       "price": {
         "amountLabel": ""
@@ -4330,7 +4330,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "subtitle": "Fortaleza UNESCO, templo de montaña y biblioteca viral: el pasado, el espíritu y el presente de Corea en una excursión de un día desde Seúl.",
         "region": "Suwon y Yongin",
         "duration": "9–10 horas",
-        "stopsCount": 3,
+        "stopsCount": 4,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
@@ -5162,7 +5162,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "subtitle": "ソウル発の少人数制文化日帰りツアーで、京畿道の対照的な4つの魅力を巡ります：ユネスコ世界遺産・水原華城…",
         "region": "京畿道（ソウル南部）",
         "duration": "9時間",
-        "stopsCount": 7,
+        "stopsCount": 6,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
@@ -5177,7 +5177,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "heroImage": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
         "thumbnail": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
         "priceLabel": "",
-        "shortCardDescription": "ソウル発の少人数制文化日帰りツアーで、京畿道の対照的な4つの魅力を巡ります。18世紀の城壁と行宮を有するユネスコ世界遺産・水原華城、旧日本時代の金鉱跡に広がるLEDライトアップの地下テーマパーク「光明洞窟」、4フロアにわたるスターフィールドライブラリー水原、そして1,000年の歴史を誇る南門伝統市場のストリートフード。交通費・入場料込みの9時間コースです。"
+        "shortCardDescription": "ソウル発の少人数制文化日帰りツアーで、京畿道の対照的な3つの魅力を巡ります。18世紀の城壁と行宮を有するユネスコ世界遺産・水原華城、旧日本時代の金鉱跡に広がるLEDライトアップの地下テーマパーク「光明洞窟」、4フロアにわたるスターフィールドライブラリー水原。交通費・入場料込みの9時間コースです。"
       },
       "price": {
         "amountLabel": ""
@@ -5190,7 +5190,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "subtitle": "ユネスコ登録の城郭、山の寺院、話題の図書館——韓国の過去・精神・現在をソウル発日帰りで一度に体験。",
         "region": "水原・龍仁",
         "duration": "9〜10時間",
-        "stopsCount": 3,
+        "stopsCount": 4,
         "rating": 0,
         "reviewCount": 0,
         "badges": [

@@ -1047,7 +1047,7 @@
     {
       "icon": "users",
       "title": "精选团队规模",
-      "description": "按路线合理控制人数 > **注：** 第20、23条为界面样式类名（CSS class），已按原文保留，无需翻译。",
+      "description": "按路线合理控制人数",
       "iconBg": "bg-amber-50/80",
       "iconColor": "text-amber-600"
     }
@@ -1567,7 +1567,7 @@
     {
       "id": "atmosphere",
       "section_html_id": null,
-      "component": "TourAtmosphereGallery > **注：** 第7条 `TourTabsNav` 及第12条 `TourAtAGlance`、第25条 `TourAtmosphereGallery` 为UI组件名称（技术标识符），已保留原文不作翻译。如需本地化处理，请告知。",
+      "component": "TourAtmosphereGallery",
       "props": {
         "galleryItems": [
           {
