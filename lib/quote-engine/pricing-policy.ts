@@ -29,7 +29,7 @@ export type PricingRegion = "busan" | "jeju" | "seoul";
 export type VehicleClass = "sedan" | "van" | "solati" | "multi";
 
 /** Customer-facing pickup-zone selector for Jeju (drives a pickup surcharge). */
-export type JejuPickupZone = "city" | "north" | "outer" | "cross_island";
+export type JejuPickupZone = "city" | "out_west" | "out_east" | "out_south";
 /** Cruise embarkation port — only Gangjeong (Jeju) carries a surcharge. */
 export type CruisePort = "gangjeong" | "jeju_port";
 /** Per-POI Jeju tour-region classification (drives the cross-region surcharge). */
@@ -162,20 +162,26 @@ export const SUBREGION_SURCHARGE: Record<string, number> = {
   jeju: 0,
 };
 
-/** Jeju covering ≥2 of {East, West, South} in one day. */
-export const JEJU_CROSS_REGION_SURCHARGE = 60000;
+/** Jeju itinerary mixing the East side with West/South (long cross-island day). */
+export const JEJU_EAST_MIX_SURCHARGE = 60000;
+/** Out-of-city ("시외") hotel pickup on the OPPOSITE side of the tour. */
+export const JEJU_CROSS_SIDE_SURCHARGE = 40000;
+/** Combined Jeju distance surcharges (pickup + cross-side + east-mix) are capped. */
+export const JEJU_SURCHARGE_CAP = 100000;
 
 /** Cruise shore-excursion private tour — flat add on top of the day rate. */
 export const CRUISE_EXCURSION_SURCHARGE = 40000;
 /** Gangjeong (Seogwipo) cruise terminal — extra on top of the cruise add. */
 export const GANGJEONG_PORT_SURCHARGE = 70000;
 
-/** Jeju pickup-zone surcharge (customer-selected). */
+/** Jeju hotel pickup-zone surcharge. 시내(downtown, Oedo-dong … Ildo/Geonip-dong)
+ *  = free; out-of-city (시외) by side = +₩60k. A cross-side pickup adds +₩40k
+ *  (see quote); the combined Jeju distance surcharge is capped at JEJU_SURCHARGE_CAP. */
 export const JEJU_PICKUP_SURCHARGE: Record<JejuPickupZone, number> = {
   city: 0,
-  north: 40000,
-  outer: 60000,
-  cross_island: 30000,
+  out_west: 60000,
+  out_east: 60000,
+  out_south: 60000,
 };
 
 /**
@@ -272,11 +278,33 @@ export function regionSurcharge(poiRegions: string[] | undefined): number {
   }, 0);
 }
 
-/** Does the cart span ≥2 of Jeju's {East, West, South} tour regions? */
-export function isJejuCrossRegion(zones: JejuZone[] | undefined): boolean {
+/** Tour itinerary mixes the East side with West or South (East + City stays free). */
+export function isJejuEastMix(zones: JejuZone[] | undefined): boolean {
   if (!zones) return false;
-  const tourZones = new Set(zones.filter((z) => z !== "city"));
-  return tourZones.size >= 2;
+  const set = new Set(zones);
+  return set.has("east") && (set.has("west") || set.has("south"));
+}
+
+/** Geographic side of an out-of-city pickup zone (null for downtown). */
+export function jejuPickupSide(zone: JejuPickupZone): "west" | "east" | "south" | null {
+  if (zone === "out_west") return "west";
+  if (zone === "out_east") return "east";
+  if (zone === "out_south") return "south";
+  return null;
+}
+
+/** Out-of-city hotel sits on the opposite side from where the tour goes
+ *  (west hotel ↔ east tour, or east hotel ↔ west tour). */
+export function isJejuCrossSidePickup(
+  zone: JejuPickupZone | null | undefined,
+  zones: JejuZone[] | undefined,
+): boolean {
+  const side = zone ? jejuPickupSide(zone) : null;
+  if (!side || !zones) return false;
+  const set = new Set(zones);
+  if (side === "west" && set.has("east")) return true;
+  if (side === "east" && set.has("west")) return true;
+  return false;
 }
 
 /** Is an ISO date inside a configured peak-season range? */
@@ -387,25 +415,48 @@ export function quote(input: PriceInput): PriceResult {
   }
 
   if (input.region === "jeju") {
-    if (isJejuCrossRegion(input.jejuPoiZones)) {
-      lines.push({
-        code: "jeju_cross_region",
-        labelKey: "lines.jejuCrossRegion",
-        amount: JEJU_CROSS_REGION_SURCHARGE,
+    // Collect the Jeju distance surcharges, then cap their combined total.
+    const jejuLines: PriceLine[] = [];
+    // (1) Itinerary mixes East with West/South.
+    if (isJejuEastMix(input.jejuPoiZones)) {
+      jejuLines.push({
+        code: "jeju_east_mix",
+        labelKey: "lines.jejuEastMix",
+        amount: JEJU_EAST_MIX_SURCHARGE,
       });
     }
-    // Hotel pickup zone applies to land tours; cruise pickup is the port.
+    // Hotel pickup applies to land tours; cruise pickup is the port.
     if (input.track !== "cruise") {
       const pickup = input.jejuPickupZone ?? "city";
+      // (2) Out-of-city ("시외") hotel.
       const pickupAmt = JEJU_PICKUP_SURCHARGE[pickup] ?? 0;
       if (pickupAmt > 0) {
-        lines.push({
+        jejuLines.push({
           code: "jeju_pickup",
           labelKey: "lines.jejuPickup",
           amount: pickupAmt,
           meta: { zone: pickup },
         });
       }
+      // (3) Out-of-city hotel on the opposite side of the tour.
+      if (isJejuCrossSidePickup(pickup, input.jejuPoiZones)) {
+        jejuLines.push({
+          code: "jeju_cross_side",
+          labelKey: "lines.jejuCrossSide",
+          amount: JEJU_CROSS_SIDE_SURCHARGE,
+        });
+      }
+    }
+    const jejuSum = jejuLines.reduce((s, l) => s + l.amount, 0);
+    if (jejuSum > JEJU_SURCHARGE_CAP) {
+      // Over the cap → one consolidated capped line instead of the itemized set.
+      lines.push({
+        code: "jeju_distance_capped",
+        labelKey: "lines.jejuDistanceCapped",
+        amount: JEJU_SURCHARGE_CAP,
+      });
+    } else {
+      lines.push(...jejuLines);
     }
   }
 

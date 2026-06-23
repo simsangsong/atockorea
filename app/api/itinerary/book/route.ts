@@ -54,7 +54,7 @@ interface BookBody {
   client_quoted_total?: unknown;
 }
 
-const PICKUP_ZONES: JejuPickupZone[] = ["city", "north", "outer", "cross_island"];
+const PICKUP_ZONES: JejuPickupZone[] = ["city", "out_west", "out_east", "out_south"];
 const OUT_OF_SCOPE_CONTACT_EMAIL = "contact@atockorea.com";
 
 function isEmail(s: string): boolean {

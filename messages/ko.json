@@ -2411,16 +2411,14 @@
           "region": "시외 할증",
           "jejuCrossRegion": "두 구역 방문 할증",
           "jejuPickup": "픽업 지역 ({zone})",
+          "jejuEastMix": "동부 혼합 할증",
+          "jejuCrossSide": "반대편 픽업 할증",
+          "jejuDistanceCapped": "제주 거리 할증 (상한)",
           "dmzBase": "DMZ 프라이빗 투어 ({pax}인)",
           "cruiseExcursion": "크루즈 기항지 투어",
           "gangjeongPort": "강정항"
         },
-        "pickupZones": {
-          "city": "제주시내 — 할증 없음",
-          "north": "북쪽 (애월·삼양) +₩40,000",
-          "outer": "외곽 (성산·서귀포) +₩60,000",
-          "cross_island": "크로스 아일랜드 (150km 이상) +₩30,000"
-        },
+        "pickupZones": { "city": "제주 시내", "out_west": "시외 — 서쪽", "out_east": "시외 — 동쪽", "out_south": "시외 — 남쪽" },
         "cruisePorts": {
           "gangjeong": "강정항 (서귀포) +₩70,000",
           "jeju_port": "제주항 (제주시)"
@@ -2554,12 +2552,7 @@
       "editTrip": "여행 정보 수정",
       "close": "닫기",
       "done": "완료",
-      "pickupZones": {
-        "city": "제주시 시내",
-        "north": "북부 (애월·한림)",
-        "outer": "외곽 (협재·성산·서귀포)",
-        "cross_island": "섬 횡단 (150km 이상)"
-      },
+      "pickupZones": { "city": "제주 시내", "out_west": "시외 — 서쪽", "out_east": "시외 — 동쪽", "out_south": "시외 — 남쪽" },
       "ports": {
         "gangjeong": "강정(서귀포)",
         "jeju_port": "제주항"
