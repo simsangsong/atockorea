@@ -35,6 +35,12 @@ import {
   recordBookingLookupFailure,
   recordBookingLookupSuccess,
 } from "@/lib/chatbot/bookingLookupRateLimit";
+import {
+  extractQuoteDraft,
+  missingQuoteSlots,
+  quoteSlotPrompt,
+  buildQuoteReply,
+} from "@/lib/chatbot/quoteFlow";
 import { allowRequest } from "@/lib/chatbot/requestRateLimit";
 import { retrieveKnowledge, buildRagContextText } from "@/lib/rag/retrieve";
 import {
@@ -543,6 +549,43 @@ export async function POST(req: NextRequest) {
         { error: "assistant_unconfigured", message: "AI assistant is not configured." },
         { status: 503 },
       ),
+      session,
+    );
+  }
+
+  // Quote funnel (Phase Q0–Q2): collect the private-tour quote inputs across
+  // the conversation, then show a deterministic price. The model only extracts
+  // slots; the missing-slot control flow + the price() stay deterministic.
+  if (detectedIntent.intent === "quote_request") {
+    const quoteLocale = inferLocaleFromText(latestUserMessage) ?? locale;
+    const quoteModel = process.env.GEMINI_TOUR_PRODUCT_ASSISTANT_MODEL?.trim() || DEFAULT_GEMINI_MODEL;
+    const todayISO = new Date().toISOString().slice(0, 10);
+    const draft = await extractQuoteDraft(new GoogleGenerativeAI(key), quoteModel, messages, todayISO);
+    if (!draft.language) draft.language = quoteLocale;
+    const missing = missingQuoteSlots(draft);
+    if (missing.length > 0) {
+      return applySessionCookie(
+        NextResponse.json({
+          reply: quoteSlotPrompt(missing, quoteLocale),
+          ticket_id: null,
+          escalated: false,
+          escalation_reason: null,
+          handoff_offered: false,
+          debug_intent: debugNoSideEffects ? detectedIntent : undefined,
+        }),
+        session,
+      );
+    }
+    const { reply, autoQuotable } = buildQuoteReply(draft, quoteLocale);
+    return applySessionCookie(
+      NextResponse.json({
+        reply,
+        ticket_id: null,
+        escalated: false,
+        escalation_reason: null,
+        handoff_offered: !autoQuotable,
+        debug_intent: debugNoSideEffects ? detectedIntent : undefined,
+      }),
       session,
     );
   }

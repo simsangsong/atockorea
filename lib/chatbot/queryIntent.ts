@@ -3,6 +3,7 @@ import type { TourProductPageLocale } from "@/lib/tour-product/resolveTourProduc
 export type ChatbotIntent =
   | "tour_recommendation"
   | "tour_catalog"
+  | "quote_request"
   | "policy"
   | "booking_specific"
   | "company"
@@ -113,6 +114,24 @@ const TOUR_TERMS = [
   "推荐",
   "privado",
   "tour privado",
+];
+
+// Price/quote signals — trigger the custom-quote funnel when paired with a
+// tour/region/private signal (see classifyChatbotQuery).
+const QUOTE_TERMS = [
+  "quote", "get a price", "price", "pricing", "cost", "how much", "how much is",
+  "견적", "가격", "얼마", "비용", "요금",
+  "見積", "見積もり", "料金", "いくら",
+  "报价", "報價", "价格", "價格", "多少钱", "多少錢", "费用", "費用",
+  "presupuesto", "precio", "cuánto", "cuanto", "cuesta",
+];
+
+const PRIVATE_TOUR_TERMS = [
+  "private", "charter", "custom", "build my own", "build a", "tailor",
+  "맞춤", "프라이빗", "전세", "전용", "직접 짜",
+  "プライベート", "貸切", "チャーター", "オーダーメイド",
+  "私人", "包车", "包車", "定制", "客製",
+  "privado", "a medida", "personalizado",
 ];
 
 const EXPLICIT_RECOMMENDATION_TERMS = [
@@ -466,11 +485,30 @@ export function classifyChatbotQuery(message: string): ChatbotIntentResult {
   const regionScore = scoreAny(q, REGION_TERMS);
   const tourScore = scoreAny(q, TOUR_TERMS);
   const explicitRecommendation = hasAny(q, EXPLICIT_RECOMMENDATION_TERMS) && tourScore > 0;
+  const quoteScore = scoreAny(q, QUOTE_TERMS);
+  const privateScore = scoreAny(q, PRIVATE_TOUR_TERMS);
 
   const looksBookingSpecific =
     personalScore > 0 &&
     (hasPersonalMarker || strongPersonalScore > 0) &&
     !(policyScore > 0 && !hasPersonalMarker);
+
+  // Custom private-tour quote funnel: an explicit price/quote ask paired with a
+  // private, tour, or region signal → slot-collect → quote gate (route).
+  // Checked BEFORE booking_specific so a NEW-tour quote that mentions "픽업"
+  // (pickup zone) isn't mistaken for an existing-booking pickup-time question.
+  // A bare existing-booking question ("내 예약 픽업 시간?") has no quote/tour/
+  // region cue, so it still falls through to booking_specific below.
+  const looksQuoteRequest =
+    quoteScore > 0 && (privateScore > 0 || tourScore > 0 || regionScore > 0);
+  if (looksQuoteRequest) {
+    reasons.push("custom_quote_request");
+    return result("quote_request", 0.74 + quoteScore * 0.05 + privateScore * 0.03, reasons, {
+      useTourCatalog: false,
+      useSiteKnowledge: false,
+      requiresHuman: false,
+    });
+  }
 
   if (looksBookingSpecific) {
     reasons.push("personal_booking_detail");
