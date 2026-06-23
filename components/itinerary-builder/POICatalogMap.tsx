@@ -250,15 +250,18 @@ export default function POICatalogMap({
     };
   }, []);
 
-  // Phase 7 — external focus (AIRecommendPanel chip or CartPanel row click)
+  // Phase 7 — external focus (AIRecommendPanel chip / timeline / grid "show on
+  // map"). Pan to the POI + open its InfoWindow, but DO NOT force a zoom-in.
+  // The old `setZoom(12)` yanked the camera in so far that the rest of the
+  // selected route fell off-screen and the user had to manually zoom back out
+  // (reported 2026-06-23). Keeping the current zoom (set by auto-fitBounds)
+  // means the focused stop stays framed *within* the whole day's route.
   useEffect(() => {
     if (!focusedPoiKey || !map || !pois.length) return;
     const poi = pois.find((p) => p.poi_key === focusedPoiKey);
     if (!poi) return;
     setSelected(poi);
     map.panTo({ lat: poi.lat, lng: poi.lng });
-    const z = map.getZoom();
-    if (typeof z === "number" && z < 12) map.setZoom(12);
   }, [focusedPoiKey, map, pois]);
 
   // V2 Phase 2 — photo-pin marker system (production). Three-tier:
