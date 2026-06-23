@@ -154,24 +154,56 @@ describe("Jeju zones + cross-region + pickup (§6, §7)", () => {
     expect(jejuZone(33.51, 126.49)).toBe("city"); // Jeju city
   });
 
-  it("Jeju English 6h crossing East+South + outer pickup = 280k + 60k + 60k = ₩400,000", () => {
+  it("Jeju English 6h East+South mix with downtown pickup = 280k + 60k = ₩340,000", () => {
     const r = quote(
       input({
         region: "jeju",
         durationHours: 6,
         pax: 2,
         jejuPoiZones: ["east", "south"],
-        jejuPickupZone: "outer",
+        jejuPickupZone: "city",
       })
     );
-    expect(r.total).toBe(400000);
-    expect(r.lines.find((l) => l.code === "jeju_cross_region")?.amount).toBe(60000);
-    expect(r.lines.find((l) => l.code === "jeju_pickup")?.amount).toBe(60000);
+    expect(r.total).toBe(340000);
+    expect(r.lines.find((l) => l.code === "jeju_east_mix")?.amount).toBe(60000);
+    expect(r.lines.find((l) => l.code === "jeju_pickup")).toBeUndefined();
   });
 
-  it("single Jeju zone incurs no cross-region surcharge", () => {
+  it("East + City only incurs no East-mix surcharge", () => {
     const r = quote(input({ region: "jeju", jejuPoiZones: ["east", "city"] }));
-    expect(r.lines.find((l) => l.code === "jeju_cross_region")).toBeUndefined();
+    expect(r.lines.find((l) => l.code === "jeju_east_mix")).toBeUndefined();
+  });
+
+  it("West + South combine free (no East-mix)", () => {
+    const r = quote(input({ region: "jeju", jejuPoiZones: ["west", "south"] }));
+    expect(r.lines.find((l) => l.code === "jeju_east_mix")).toBeUndefined();
+  });
+
+  it("cross-side: west hotel + east tour adds pickup 60k + cross-side 40k", () => {
+    const r = quote(
+      input({ region: "jeju", durationHours: 6, pax: 2, jejuPoiZones: ["east"], jejuPickupZone: "out_west" })
+    );
+    expect(r.lines.find((l) => l.code === "jeju_pickup")?.amount).toBe(60000);
+    expect(r.lines.find((l) => l.code === "jeju_cross_side")?.amount).toBe(40000);
+    expect(r.lines.find((l) => l.code === "jeju_east_mix")).toBeUndefined(); // east-only ≠ mix
+    expect(r.total).toBe(280000 + 100000);
+  });
+
+  it("Jeju distance surcharges are capped at ₩100,000", () => {
+    // east-mix 60k + pickup 60k + cross-side 40k = 160k → capped to 100k
+    const r = quote(
+      input({ region: "jeju", durationHours: 6, pax: 2, jejuPoiZones: ["east", "west"], jejuPickupZone: "out_west" })
+    );
+    expect(r.lines.find((l) => l.code === "jeju_distance_capped")?.amount).toBe(100000);
+    expect(r.lines.find((l) => l.code === "jeju_pickup")).toBeUndefined();
+    expect(r.lines.find((l) => l.code === "jeju_east_mix")).toBeUndefined();
+    expect(r.total).toBe(280000 + 100000);
+  });
+
+  it("city (downtown) pickup adds no surcharge", () => {
+    const r = quote(input({ region: "jeju", jejuPoiZones: ["west"], jejuPickupZone: "city" }));
+    expect(r.lines.find((l) => l.code === "jeju_pickup")).toBeUndefined();
+    expect(r.lines.find((l) => l.code === "jeju_cross_side")).toBeUndefined();
   });
 });
 
@@ -201,7 +233,7 @@ describe("cruise shore-excursion surcharges", () => {
 
   it("cruise ignores the hotel pickup-zone surcharge (pickup is the port)", () => {
     const r = quote(
-      input({ track: "cruise", region: "jeju", durationHours: 6, jejuPickupZone: "outer" })
+      input({ track: "cruise", region: "jeju", durationHours: 6, jejuPickupZone: "out_east" })
     );
     expect(r.lines.find((l) => l.code === "jeju_pickup")).toBeUndefined();
   });

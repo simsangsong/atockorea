@@ -2411,16 +2411,14 @@
           "region": "Out-of-city surcharge",
           "jejuCrossRegion": "Two-region surcharge",
           "jejuPickup": "Pickup area ({zone})",
+          "jejuEastMix": "East-side mix",
+          "jejuCrossSide": "Cross-side pickup",
+          "jejuDistanceCapped": "Jeju distance surcharge (capped)",
           "dmzBase": "DMZ private tour ({pax} guests)",
           "cruiseExcursion": "Cruise shore-excursion",
           "gangjeongPort": "Gangjeong Port"
         },
-        "pickupZones": {
-          "city": "Jeju City — no surcharge",
-          "north": "North coast (Aewol, Samyang) +₩40,000",
-          "outer": "Outer areas (Seongsan, Seogwipo) +₩60,000",
-          "cross_island": "Cross-island (150 km+) +₩30,000"
-        },
+        "pickupZones": { "city": "Jeju city (downtown)", "out_west": "Out-of-city — west", "out_east": "Out-of-city — east", "out_south": "Out-of-city — south" },
         "cruisePorts": {
           "gangjeong": "Gangjeong Port (Seogwipo) +₩70,000",
           "jeju_port": "Jeju Port (city, north)"
@@ -2554,12 +2552,7 @@
       "editTrip": "Edit your trip",
       "close": "Close",
       "done": "Done",
-      "pickupZones": {
-        "city": "Jeju City",
-        "north": "North (Hagwi · Aewol)",
-        "outer": "Outer (Hyeopjae · Seongsan · Seogwipo)",
-        "cross_island": "Cross-island (150 km+)"
-      },
+      "pickupZones": { "city": "Jeju city (downtown)", "out_west": "Out-of-city — west", "out_east": "Out-of-city — east", "out_south": "Out-of-city — south" },
       "ports": {
         "gangjeong": "Gangjeong (Seogwipo)",
         "jeju_port": "Jeju Port"

@@ -42,6 +42,12 @@ export default function LivePriceCard({ price, isJeju, compact = false }: Props)
         return t("pricing.lines.region");
       case "jeju_cross_region":
         return t("pricing.lines.jejuCrossRegion");
+      case "jeju_east_mix":
+        return t("pricing.lines.jejuEastMix");
+      case "jeju_cross_side":
+        return t("pricing.lines.jejuCrossSide");
+      case "jeju_distance_capped":
+        return t("pricing.lines.jejuDistanceCapped");
       case "jeju_pickup":
         return t("pricing.lines.jejuPickup", {
           zone: t(`pricing.pickupZones.${meta.zone ?? "city"}`),

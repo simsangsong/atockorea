@@ -2411,16 +2411,14 @@
           "region": "市区外附加费",
           "jejuCrossRegion": "跨两区附加费",
           "jejuPickup": "接送区域（{zone}）",
+          "jejuEastMix": "东部混合附加费",
+          "jejuCrossSide": "对面接送附加费",
+          "jejuDistanceCapped": "济州距离附加费（上限）",
           "dmzBase": "DMZ私人之旅（{pax}人）",
           "cruiseExcursion": "邮轮岸上观光",
           "gangjeongPort": "江汀港"
         },
-        "pickupZones": {
-          "city": "济州市区 — 无附加费",
-          "north": "北部（涯月、三阳）+₩40,000",
-          "outer": "外围（城山、西归浦）+₩60,000",
-          "cross_island": "跨岛（150公里以上）+₩30,000"
-        },
+        "pickupZones": { "city": "济州市区", "out_west": "市外 — 西部", "out_east": "市外 — 东部", "out_south": "市外 — 南部" },
         "cruisePorts": {
           "gangjeong": "江汀港（西归浦）+₩70,000",
           "jeju_port": "济州港（市区）"
@@ -2554,12 +2552,7 @@
       "editTrip": "编辑行程",
       "close": "关闭",
       "done": "完成",
-      "pickupZones": {
-        "city": "济州市内",
-        "north": "北部(涯月·翰林)",
-        "outer": "外圈(挟才·城山·西归浦)",
-        "cross_island": "跨岛(150km以上)"
-      },
+      "pickupZones": { "city": "济州市区", "out_west": "市外 — 西部", "out_east": "市外 — 东部", "out_south": "市外 — 南部" },
       "ports": {
         "gangjeong": "江汀(西归浦)",
         "jeju_port": "济州港"

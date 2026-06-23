@@ -50,7 +50,7 @@ const CRUISE_HOUR_OPTIONS = [4, 6, 8, 10, 12].map((h) => ({
   code: String(h),
   label: `${h}h`,
 }));
-const PICKUP_ZONES: JejuPickupZone[] = ["city", "north", "outer", "cross_island"];
+const PICKUP_ZONES: JejuPickupZone[] = ["city", "out_west", "out_east", "out_south"];
 
 const TRACK_OPTIONS: Array<{ value: PricingTrack; Icon: typeof Car }> = [
   { value: "private", Icon: Car },
