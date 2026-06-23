@@ -30,3 +30,5 @@ export { TourStickyBookingBar } from "./TourStickyBookingBar";
 export type { TourStickyBookingBarProps } from "./TourStickyBookingBar";
 export { TourDesktopBookingCard } from "./TourDesktopBookingCard";
 export type { TourDesktopBookingCardProps } from "./TourDesktopBookingCard";
+export { TourPrivateSampleItinerarySection } from "./TourPrivateSampleItinerarySection";
+export type { TourPrivateSampleItinerarySectionProps } from "./TourPrivateSampleItinerarySection";
