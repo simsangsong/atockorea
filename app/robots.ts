@@ -12,6 +12,33 @@ function siteUrl(): string {
     : normalized;
 }
 
+// AI agents / LLM crawlers we explicitly welcome. They are pointed at the
+// token-efficient agent surfaces (/llms.txt, /agents.md, /feed/) and kept out
+// of the same private areas as search crawlers.
+const AI_AGENTS = [
+  'GPTBot',
+  'OAI-SearchBot',
+  'ChatGPT-User',
+  'ClaudeBot',
+  'Claude-User',
+  'anthropic-ai',
+  'Google-Extended',
+  'PerplexityBot',
+  'Perplexity-User',
+  'Applebot-Extended',
+  'Bytespider',
+  'CCBot',
+];
+
+const PRIVATE_PATHS = [
+  '/api/',
+  '/admin/',
+  '/merchant/',
+  '/mypage/',
+  '/auth/',
+  '/dashboard/',
+];
+
 export default function robots(): MetadataRoute.Robots {
   const baseUrl = siteUrl();
 
@@ -20,28 +47,19 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: [
-          '/api/',
-          '/admin/',
-          '/merchant/',
-          '/mypage/',
-          '/auth/',
-          '/dashboard/',
-          '/test/',
-          '/test-admin/',
-        ],
+        disallow: [...PRIVATE_PATHS, '/test/', '/test-admin/'],
       },
       {
         userAgent: 'Googlebot',
         allow: '/',
-        disallow: [
-          '/api/',
-          '/admin/',
-          '/merchant/',
-          '/mypage/',
-          '/auth/',
-          '/dashboard/',
-        ],
+        disallow: PRIVATE_PATHS,
+      },
+      {
+        // AI agents: full content access, but allow the MCP discovery card and
+        // agent feeds explicitly so /api/ disallow doesn't hide them.
+        userAgent: AI_AGENTS,
+        allow: ['/', '/llms.txt', '/agents.md', '/feed/', '/.well-known/'],
+        disallow: PRIVATE_PATHS,
       },
     ],
     sitemap: `${baseUrl}/sitemap.xml`,

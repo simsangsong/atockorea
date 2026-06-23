@@ -50,14 +50,23 @@ export function buildTourProductJsonLd(vm: ViewModelLike, slug: string): unknown
   const name = safeProductName(vm);
   const blocks: unknown[] = [];
 
+  const provider = {
+    "@type": "TravelAgency",
+    name: "AtoC Korea",
+    url: siteOrigin(),
+    areaServed: { "@type": "Country", name: "South Korea" },
+  };
+
   const product: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Product",
     name,
     url,
+    category: "Tour",
     image: vm.hero?.imageUrl ? [vm.hero.imageUrl] : undefined,
     description: vm.hero?.tagline ?? undefined,
     brand: { "@type": "Brand", name: "AtoC Korea" },
+    provider,
   };
 
   const price = safePrice(vm);
@@ -68,6 +77,7 @@ export function buildTourProductJsonLd(vm: ViewModelLike, slug: string): unknown
       priceCurrency: price.priceCurrency,
       availability: "https://schema.org/InStock",
       url,
+      seller: provider,
     };
   }
 
