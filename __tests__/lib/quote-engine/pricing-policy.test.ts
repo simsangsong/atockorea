@@ -8,6 +8,7 @@ import {
   dmzPrice,
   isPeakSeason,
   evaluateConstraints,
+  classifyJejuHotelZone,
   type PriceInput,
 } from "@/lib/quote-engine/pricing-policy";
 
@@ -204,6 +205,18 @@ describe("Jeju zones + cross-region + pickup (§6, §7)", () => {
     const r = quote(input({ region: "jeju", jejuPoiZones: ["west"], jejuPickupZone: "city" }));
     expect(r.lines.find((l) => l.code === "jeju_pickup")).toBeUndefined();
     expect(r.lines.find((l) => l.code === "jeju_cross_side")).toBeUndefined();
+  });
+});
+
+describe("classifyJejuHotelZone (D.2 auto-detect)", () => {
+  it("maps hotel coordinates to pickup zones", () => {
+    expect(classifyJejuHotelZone(33.5, 126.52)).toBe("city"); // Jeju City downtown
+    expect(classifyJejuHotelZone(33.51, 126.49)).toBe("city"); // airport-area downtown box
+    expect(classifyJejuHotelZone(33.25, 126.56)).toBe("out_south"); // Seogwipo
+    expect(classifyJejuHotelZone(33.41, 126.27)).toBe("out_west"); // Hallim
+    expect(classifyJejuHotelZone(33.46, 126.94)).toBe("out_east"); // Seongsan
+    expect(classifyJejuHotelZone(33.46, 126.33)).toBe("out_west"); // Aewol
+    expect(classifyJejuHotelZone(NaN, NaN)).toBe("city"); // bad input → safe default
   });
 });
 

@@ -6,6 +6,7 @@ import { ChevronDown, MapPin, Ship, Car, ShieldAlert, X } from "lucide-react";
 import { useI18n, useTranslations } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import type { RegionSlug } from "@/lib/itinerary-builder/regions";
+import HotelZoneAutocomplete from "./HotelZoneAutocomplete";
 import type {
   CruisePort,
   JejuPickupZone,
@@ -369,17 +370,24 @@ export default function PlannerTopRail({ region, placement = "page" }: Props) {
         {/* Jeju hotel pickup (land tours only) */}
         {isJejuLand ? (
           <Field label={t("pickup")} inSheet={inSheet}>
-            <select
-              value={pickup}
-              onChange={(e) => patch({ pickup: e.target.value })}
-              className="rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-1.5 text-caption font-semibold focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-200"
-            >
-              {PICKUP_ZONES.map((z) => (
-                <option key={z} value={z}>
-                  {t(`pickupZones.${z}`)}
-                </option>
-              ))}
-            </select>
+            <div className="flex flex-col gap-1.5">
+              {/* Phase D.2 — search your hotel; the zone is auto-detected. */}
+              <HotelZoneAutocomplete
+                placeholder={t("hotelSearchPlaceholder")}
+                onZone={(zone) => patch({ pickup: zone })}
+              />
+              <select
+                value={pickup}
+                onChange={(e) => patch({ pickup: e.target.value })}
+                className="rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-1.5 text-caption font-semibold focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-200"
+              >
+                {PICKUP_ZONES.map((z) => (
+                  <option key={z} value={z}>
+                    {t(`pickupZones.${z}`)}
+                  </option>
+                ))}
+              </select>
+            </div>
           </Field>
         ) : null}
 
