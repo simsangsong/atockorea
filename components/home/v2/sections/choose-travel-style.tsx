@@ -205,6 +205,17 @@ export function ChooseTravelStyle() {
     analytics.homePartyStepperChange({ party: next });
   };
 
+  // L3 (chatbot promo) — open the global AI assistant from the landing. The
+  // widget (TourProductAiAssistantWidget) listens for `atc:open-assistant`.
+  const openAssistant = () => {
+    analytics.homeCtaClick({ source: "chatbot_open_choose_style" });
+    if (typeof window !== "undefined") {
+      window.dispatchEvent(
+        new CustomEvent("atc:open-assistant", { detail: { source: "choose_style" } }),
+      );
+    }
+  };
+
   // Private per-vehicle price for the current party — tiered (sedan/van/solati),
   // so it jumps at 7 and 10 pax to match the real PAX_TIERS table.
   const privateVehicle = privateVehicleUsd(party);
@@ -575,6 +586,22 @@ export function ChooseTravelStyle() {
               <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 md:h-5 md:w-5" />
             </span>
           </Link>
+        </motion.div>
+
+        {/* L3 (chatbot promo) — "talk to the AI agent now" secondary affordance.
+            Opens the always-present global assistant instead of routing away,
+            so the undecided visitor can ask anything (recommend → quote →
+            booking lookup → human) in one tap. */}
+        <motion.div variants={REVEAL_ITEM_VARIANTS} className="mt-3 text-center">
+          <button
+            type="button"
+            onClick={openAssistant}
+            className="focus-ring group inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-caption font-semibold text-slate-500 transition-colors duration-200 hover:text-amber-700"
+          >
+            <Sparkles className="h-3.5 w-3.5 flex-none text-amber-500" aria-hidden />
+            {t("premium.v2.chooseStyle.askAgentCta")}
+            <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
+          </button>
         </motion.div>
       </motion.div>
     </section>

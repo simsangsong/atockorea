@@ -1185,6 +1185,24 @@
             "body": "AI 客服 24 小时在线。遇到 AI 处理不了的情况，由韩语团队接手（9:00–21:00 KST）。"
           }
         },
+        "aiAgent": {
+          "eyebrow": "AI 旅行管家",
+          "title": "不只是聊天机器人，",
+          "titleAccent": "更是真正的旅行管家",
+          "subtitle": "它能推荐行程、报价、查询你的预订，必要时还能转接真人。用你的语言，问什么都行。",
+          "cap": {
+            "answer": "有问必答",
+            "recommend": "推荐行程",
+            "quote": "即时报价",
+            "details": "收集信息",
+            "lookup": "查询预订",
+            "human": "转接真人"
+          },
+          "sampleLabel": "示例",
+          "sampleUser": "我们4人，带孩子在釜山玩2天 — 有什么推荐?",
+          "sampleAgent": "我会把甘川文化村和海云台行程用私人包车安排在一起。要现在出报价，还是先帮你锁定日期?",
+          "cta": "立即咨询"
+        },
         "chooseStyle": {
           "eyebrow": "您喜欢的旅行方式",
           "title": "选择节奏，剩下交给我们。",
@@ -1225,6 +1243,7 @@
           "recommendCardTitle": "不确定选哪个？",
           "recommendCardDesc": "回答几个问题，我们为你推荐合适的行程。",
           "recommendCardCta": "获取推荐",
+          "askAgentCta": "或立即咨询 AI 助手",
           "builderCardTitle": "定制属于你的一天",
           "builderCardDesc": "选择时长，在地图上逐站定制你的路线。",
           "builderCardCta": "打开定制器",
@@ -1303,6 +1322,7 @@
           "reviewCardStarsAria": "5 分制 {rating} 分"
         },
         "finalCtaBlock": {
+          "askAgent": "或咨询 AI 助手",
           "eyebrow": "随时开始",
           "title": "您的韩国一日游，30 秒内为您挑选。",
           "subtitle": "亲选运营商 · 真人客服 · 直接下单预订。",
