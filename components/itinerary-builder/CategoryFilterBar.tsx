@@ -97,7 +97,12 @@ export default function CategoryFilterBar({ pois, selected, onToggle, onClear }:
               className={chipClass(active)}
             >
               {t(`groups.${group}`)}
-              <span className={cn("tabular-nums", active ? "text-white/70" : "text-slate-400")}>
+              <span
+                className={cn(
+                  "text-[9px] tabular-nums",
+                  active ? "text-white/65" : "text-slate-400",
+                )}
+              >
                 {count}
               </span>
             </button>
@@ -110,9 +115,10 @@ export default function CategoryFilterBar({ pois, selected, onToggle, onClear }:
 
 function chipClass(active: boolean): string {
   return cn(
-    // Compact pill: px-2.5 py-1 + text-micro so 13 groups read as a tidy single
-    // row, matching the site's compact filter language (was px-3 py-1.5 chunky).
-    "inline-flex shrink-0 items-center gap-1 whitespace-nowrap rounded-full border px-2.5 py-1 text-micro font-semibold transition-colors duration-150 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400",
+    // Compact pill: px-2.5 py-[3px] + text-micro so 13 groups read as a tidy,
+    // low-profile single row, matching the site's compact filter language
+    // (was px-3 py-1.5 chunky; py trimmed further per user 2026-06-23).
+    "inline-flex shrink-0 items-center gap-1 whitespace-nowrap rounded-full border px-2.5 py-[3px] text-micro font-semibold transition-colors duration-150 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400",
     active
       ? "border-slate-900 bg-slate-900 text-white shadow-1"
       : "border-slate-200 bg-slate-50 text-slate-700 hover:border-slate-300 hover:bg-slate-100",
