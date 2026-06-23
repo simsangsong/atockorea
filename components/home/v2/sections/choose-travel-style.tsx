@@ -7,7 +7,7 @@ import Image from "next/image";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { PartyStepper } from "@/components/home/v2/ui/PartyStepper";
 import { V0ShadcnButton } from "@/components/home/v2/ui/v0-shadcn-button";
-import { ArrowRight, Car, Bus, Award, Users, Sparkles, Check, Flower2, Sun, Leaf, MapPin } from "lucide-react";
+import { ArrowRight, Car, Bus, Award, Users, Sparkles, Check, Flower2, Sun, Leaf, MapPin, Clock } from "lucide-react";
 import {
   currentSeasonNote,
   seasonNameKey,
@@ -367,8 +367,15 @@ export function ChooseTravelStyle() {
             </div>
 
             <h3 className="text-base md:text-lg font-bold text-slate-900 mb-1">{t("premium.v2.chooseStyle.privateTitle")}</h3>
-            <p className="text-caption text-slate-600 mb-3 leading-relaxed line-clamp-3 flex-1">
+            <p className="text-caption text-slate-600 mb-2 leading-relaxed line-clamp-3 flex-1">
               {t("premium.v2.chooseStyle.privateDesc")}
+            </p>
+            {/* Flexibility proof for the "유연성 UP" badge: hourly duration choice
+                + route customization — the concrete differentiator vs fixed OTA
+                private tours. */}
+            <p className="mb-3 flex items-start gap-1.5 text-micro font-semibold leading-snug text-emerald-700">
+              <Clock className="mt-px h-3.5 w-3.5 flex-none" aria-hidden />
+              {t("premium.v2.chooseStyle.privateFlexLine")}
             </p>
 
             <div className="mb-4">
