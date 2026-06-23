@@ -307,6 +307,23 @@ export function isJejuCrossSidePickup(
   return false;
 }
 
+/**
+ * Classify a Jeju hotel coordinate into a pickup zone (Phase D.2 auto-detect
+ * from a Google Places hotel pick). Downtown (시내) ≈ the north-coast core
+ * from Oedo-dong (west) to Ildo/Geonip-dong (east); outside that is
+ * out-of-city, split by side.
+ */
+export function classifyJejuHotelZone(lat: number, lng: number): JejuPickupZone {
+  if (!Number.isFinite(lat) || !Number.isFinite(lng)) return "city";
+  // Downtown box along the north coast (Oedo-dong … Ildo/Geonip-dong).
+  if (lat >= 33.48 && lat <= 33.55 && lng >= 126.44 && lng <= 126.575) return "city";
+  if (lat <= 33.32) return "out_south"; // Seogwipo / south coast
+  if (lng <= 126.42) return "out_west"; // Hallim / Aewol west end
+  if (lng >= 126.62) return "out_east"; // Jocheon / Gujwa / Seongsan
+  // North-central but outside downtown → split by the downtown-centre lng.
+  return lng < 126.51 ? "out_west" : "out_east";
+}
+
 /** Is an ISO date inside a configured peak-season range? */
 export function isPeakSeason(dateISO: string | null | undefined): boolean {
   if (!dateISO) return false;
