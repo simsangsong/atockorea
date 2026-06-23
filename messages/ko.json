@@ -2403,6 +2403,9 @@
         "solatiMinHint": "10~13인(쏠라티 차량)은 6시간부터 예약 가능합니다.",
         "notIncluded": "식사 비용 및 관광지 입장료는 투어 요금에 포함되지 않으며 현장에서 별도 결제합니다.",
         "jejuSingleRegion": "제주 투어는 하루에 동쪽, 서쪽, 남쪽 중 한 구역만 방문 가능합니다. 두 구역 방문 시 ₩60,000이 추가됩니다.",
+        "cruisePickupPort": "픽업·드롭오프는 무조건 기항 항구에서 — 호텔 이동이 필요 없습니다.",
+        "cruiseGuarantee": "출항 전 선박 복귀 100% 보장.",
+        "cruiseFlexible": "출발 시간은 선박 입항 시간에 맞춰 유연하게 조정됩니다.",
         "lines": {
           "base": "기본 — {hours}시간 프라이빗 투어",
           "van": "차량 — 밴 (7~9인)",
@@ -2418,9 +2421,14 @@
           "cruiseExcursion": "크루즈 기항지 투어",
           "gangjeongPort": "강정항"
         },
-        "pickupZones": { "city": "제주 시내", "out_west": "시외 — 서쪽", "out_east": "시외 — 동쪽", "out_south": "시외 — 남쪽" },
+        "pickupZones": {
+          "city": "제주 시내",
+          "out_west": "시외 — 서쪽",
+          "out_east": "시외 — 동쪽",
+          "out_south": "시외 — 남쪽"
+        },
         "cruisePorts": {
-          "gangjeong": "강정항 (서귀포) +₩70,000",
+          "gangjeong": "강정항 (서귀포)",
           "jeju_port": "제주항 (제주시)"
         }
       },
@@ -2553,7 +2561,12 @@
       "editTrip": "여행 정보 수정",
       "close": "닫기",
       "done": "완료",
-      "pickupZones": { "city": "제주 시내", "out_west": "시외 — 서쪽", "out_east": "시외 — 동쪽", "out_south": "시외 — 남쪽" },
+      "pickupZones": {
+        "city": "제주 시내",
+        "out_west": "시외 — 서쪽",
+        "out_east": "시외 — 동쪽",
+        "out_south": "시외 — 남쪽"
+      },
       "ports": {
         "gangjeong": "강정(서귀포)",
         "jeju_port": "제주항"

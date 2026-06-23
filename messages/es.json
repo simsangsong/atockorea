@@ -2403,6 +2403,9 @@
         "solatiMinHint": "Los grupos de 10–13 (furgoneta Solati) parten de 6 horas.",
         "notIncluded": "Los costos de comidas y entradas a atracciones NO están incluidos en el precio del tour y se pagarán por separado el día del recorrido.",
         "jejuSingleRegion": "Cada tour cubre UNA región de Jeju (Este, Oeste o Sur). Visitar dos regiones conlleva un cargo adicional de ₩60,000.",
+        "cruisePickupPort": "Recogida y regreso siempre en el puerto de tu crucero, sin traslado al hotel.",
+        "cruiseGuarantee": "Regreso al barco antes de zarpar garantizado al 100 %.",
+        "cruiseFlexible": "La hora de salida se ajusta a la llegada real de tu crucero.",
         "lines": {
           "base": "Base — tour privado de {hours} h",
           "van": "Vehículo — furgoneta (7–9 pers.)",
@@ -2418,9 +2421,14 @@
           "cruiseExcursion": "Excursión de crucero",
           "gangjeongPort": "Puerto de Gangjeong"
         },
-        "pickupZones": { "city": "Ciudad de Jeju (centro)", "out_west": "Fuera de la ciudad — oeste", "out_east": "Fuera de la ciudad — este", "out_south": "Fuera de la ciudad — sur" },
+        "pickupZones": {
+          "city": "Ciudad de Jeju (centro)",
+          "out_west": "Fuera de la ciudad — oeste",
+          "out_east": "Fuera de la ciudad — este",
+          "out_south": "Fuera de la ciudad — sur"
+        },
         "cruisePorts": {
-          "gangjeong": "Puerto de Gangjeong (Seogwipo) +₩70,000",
+          "gangjeong": "Puerto de Gangjeong (Seogwipo)",
           "jeju_port": "Puerto de Jeju (ciudad)"
         }
       },
@@ -2553,7 +2561,12 @@
       "editTrip": "Editar viaje",
       "close": "Cerrar",
       "done": "Listo",
-      "pickupZones": { "city": "Ciudad de Jeju (centro)", "out_west": "Fuera de la ciudad — oeste", "out_east": "Fuera de la ciudad — este", "out_south": "Fuera de la ciudad — sur" },
+      "pickupZones": {
+        "city": "Ciudad de Jeju (centro)",
+        "out_west": "Fuera de la ciudad — oeste",
+        "out_east": "Fuera de la ciudad — este",
+        "out_south": "Fuera de la ciudad — sur"
+      },
       "ports": {
         "gangjeong": "Gangjeong (Seogwipo)",
         "jeju_port": "Puerto de Jeju"

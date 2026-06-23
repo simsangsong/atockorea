@@ -2403,6 +2403,9 @@
         "solatiMinHint": "Groups of 10–13 (Solati van) start from 6 hours.",
         "notIncluded": "Meal costs and attraction entrance tickets are NOT included in the tour price and will be paid separately on the day.",
         "jejuSingleRegion": "Each tour covers ONE region of Jeju (East, West, or South). Covering two regions incurs an additional fee of ₩60,000.",
+        "cruisePickupPort": "Pickup & drop-off is always your ship's port — no hotel transfer needed.",
+        "cruiseGuarantee": "Guaranteed back to the ship before sail-away — 100%.",
+        "cruiseFlexible": "Departure time flexes to your ship's actual arrival.",
         "lines": {
           "base": "Base — {hours}h private tour",
           "van": "Vehicle — van (7–9 guests)",
@@ -2418,9 +2421,14 @@
           "cruiseExcursion": "Cruise shore-excursion",
           "gangjeongPort": "Gangjeong Port"
         },
-        "pickupZones": { "city": "Jeju city (downtown)", "out_west": "Out-of-city — west", "out_east": "Out-of-city — east", "out_south": "Out-of-city — south" },
+        "pickupZones": {
+          "city": "Jeju city (downtown)",
+          "out_west": "Out-of-city — west",
+          "out_east": "Out-of-city — east",
+          "out_south": "Out-of-city — south"
+        },
         "cruisePorts": {
-          "gangjeong": "Gangjeong Port (Seogwipo) +₩70,000",
+          "gangjeong": "Gangjeong Port (Seogwipo)",
           "jeju_port": "Jeju Port (city, north)"
         }
       },
@@ -2553,7 +2561,12 @@
       "editTrip": "Edit your trip",
       "close": "Close",
       "done": "Done",
-      "pickupZones": { "city": "Jeju city (downtown)", "out_west": "Out-of-city — west", "out_east": "Out-of-city — east", "out_south": "Out-of-city — south" },
+      "pickupZones": {
+        "city": "Jeju city (downtown)",
+        "out_west": "Out-of-city — west",
+        "out_east": "Out-of-city — east",
+        "out_south": "Out-of-city — south"
+      },
       "ports": {
         "gangjeong": "Gangjeong (Seogwipo)",
         "jeju_port": "Jeju Port"

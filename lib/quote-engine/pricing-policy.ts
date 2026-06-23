@@ -30,7 +30,7 @@ export type VehicleClass = "sedan" | "van" | "solati" | "multi";
 
 /** Customer-facing pickup-zone selector for Jeju (drives a pickup surcharge). */
 export type JejuPickupZone = "city" | "out_west" | "out_east" | "out_south";
-/** Cruise embarkation port — only Gangjeong (Jeju) carries a surcharge. */
+/** Cruise embarkation port (records the pickup/drop-off location; no surcharge). */
 export type CruisePort = "gangjeong" | "jeju_port";
 /** Per-POI Jeju tour-region classification (drives the cross-region surcharge). */
 export type JejuZone = "east" | "west" | "south" | "city";
@@ -169,10 +169,15 @@ export const JEJU_CROSS_SIDE_SURCHARGE = 40000;
 /** Combined Jeju distance surcharges (pickup + cross-side + east-mix) are capped. */
 export const JEJU_SURCHARGE_CAP = 100000;
 
-/** Cruise shore-excursion private tour — flat add on top of the day rate. */
-export const CRUISE_EXCURSION_SURCHARGE = 40000;
-/** Gangjeong (Seogwipo) cruise terminal — extra on top of the cruise add. */
-export const GANGJEONG_PORT_SURCHARGE = 70000;
+/**
+ * Cruise private — a flat premium on top of the equivalent private day rate.
+ * Uniform ("일괄") across every region and port: the cruise pickup & drop-off
+ * is ALWAYS the ship's home port in that city, so there is no port-distance
+ * differential (Gangjeong vs Jeju Port both price the same now). The cruise
+ * promise — guaranteed back-to-ship before sail-away and a departure time that
+ * flexes to the ship's actual arrival — is operational, not a line item.
+ */
+export const CRUISE_EXCURSION_SURCHARGE = 50000;
 
 /** Jeju hotel pickup-zone surcharge. 시내(downtown, Oedo-dong … Ildo/Geonip-dong)
  *  = free; out-of-city (시외) by side = +₩60k. A cross-side pickup adds +₩40k
@@ -477,20 +482,15 @@ export function quote(input: PriceInput): PriceResult {
     }
   }
 
-  // Cruise shore-excursion: flat add, plus a Gangjeong-terminal surcharge.
+  // Cruise private: one uniform flat premium over the private day rate. The
+  // docking port (`input.cruisePort`) is recorded for the pickup location only
+  // — it no longer changes the price.
   if (input.track === "cruise") {
     lines.push({
       code: "cruise_excursion",
       labelKey: "lines.cruiseExcursion",
       amount: CRUISE_EXCURSION_SURCHARGE,
     });
-    if (input.cruisePort === "gangjeong") {
-      lines.push({
-        code: "gangjeong_port",
-        labelKey: "lines.gangjeongPort",
-        amount: GANGJEONG_PORT_SURCHARGE,
-      });
-    }
   }
 
   const total = lines.reduce((s, l) => s + l.amount, 0);

@@ -263,7 +263,7 @@ export default function QuoteModal({
             ) : null}
 
             {/* Live price summary (same component as the planner rail). */}
-            <LivePriceCard price={price} isJeju={region === "jeju"} compact />
+            <LivePriceCard price={price} isJeju={region === "jeju"} isCruise={isCruise} compact />
 
             {/* Contact-only fields — pricing inputs live in the PlannerTopRail */}
             <label className="block">

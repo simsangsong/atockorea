@@ -2403,6 +2403,9 @@
         "solatiMinHint": "10〜13名（ソラティ）は6時間からのご予約となります。",
         "notIncluded": "食事代および観光地の入場料はツアー料金に含まれておらず、当日現地にて別途お支払いいただきます。",
         "jejuSingleRegion": "済州ツアーは1日につき東部・西部・南部のいずれか1エリアのみを巡ります。2エリアを巡る場合は₩60,000が追加されます。",
+        "cruisePickupPort": "送迎は必ず寄港地の港から — ホテル送迎は不要です。",
+        "cruiseGuarantee": "出航前の本船帰着を100％保証します。",
+        "cruiseFlexible": "出発時間は本船の実際の入港時間に合わせて柔軟に調整します。",
         "lines": {
           "base": "基本 — {hours}時間プライベートツアー",
           "van": "車両 — バン（7〜9名）",
@@ -2418,9 +2421,14 @@
           "cruiseExcursion": "クルーズ寄港地ツアー",
           "gangjeongPort": "江汀港（カンジョン）"
         },
-        "pickupZones": { "city": "済州市内", "out_west": "市外 — 西部", "out_east": "市外 — 東部", "out_south": "市外 — 南部" },
+        "pickupZones": {
+          "city": "済州市内",
+          "out_west": "市外 — 西部",
+          "out_east": "市外 — 東部",
+          "out_south": "市外 — 南部"
+        },
         "cruisePorts": {
-          "gangjeong": "江汀港（西帰浦）+₩70,000",
+          "gangjeong": "江汀港（西帰浦）",
           "jeju_port": "済州港（済州市）"
         }
       },
@@ -2553,7 +2561,12 @@
       "editTrip": "旅行内容を編集",
       "close": "閉じる",
       "done": "完了",
-      "pickupZones": { "city": "済州市内", "out_west": "市外 — 西部", "out_east": "市外 — 東部", "out_south": "市外 — 南部" },
+      "pickupZones": {
+        "city": "済州市内",
+        "out_west": "市外 — 西部",
+        "out_east": "市外 — 東部",
+        "out_south": "市外 — 南部"
+      },
       "ports": {
         "gangjeong": "江汀(西帰浦)",
         "jeju_port": "済州港"
