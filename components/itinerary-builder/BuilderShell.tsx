@@ -26,6 +26,7 @@ import POIDetailModal from "./POIDetailModal";
 import PlannerTopRail from "./PlannerTopRail";
 import LivePriceCard from "./LivePriceCard";
 import CategoryFilterBar, { poiGroup } from "./CategoryFilterBar";
+import AIRecommendPanel from "./AIRecommendPanel";
 import type { PoiCategoryGroup } from "@/lib/itinerary-match-engine/poi-taxonomy";
 
 interface Props {
@@ -73,6 +74,9 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey, plac
   const searchParams = useSearchParams();
   const [quoteOpen, setQuoteOpen] = useState(false);
   const [focusedPoiKey, setFocusedPoiKey] = useState<string | null>(null);
+  // Phase B — AI matcher preview: highlight matched pins on the map while the
+  // recommendation is in flight (ResultTimeline takes over once it applies).
+  const [previewKeys, setPreviewKeys] = useState<string[] | null>(null);
   // R1 — single shared detail drawer for BOTH the timeline and the catalog
   // grid (RR2/RR-R3). Lifted here so there is exactly one modal instance.
   const [detailPoi, setDetailPoi] = useState<MatchPoiRow | null>(null);
@@ -173,10 +177,6 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey, plac
     if (cart.length === 0) return;
     setQuoteOpen(true);
   }, [cart.length]);
-
-  // Guide-curated path — open the booking modal with an empty cart so the
-  // guide plans the day at the base price. Reachable from the empty timeline.
-  const handleGuideCurate = useCallback(() => setQuoteOpen(true), []);
 
   // DMZ is a fixed-price-by-pax product — no POI building. Short-circuit the
   // map/cart builder and show a product panel that opens the quote modal in
@@ -283,7 +283,7 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey, plac
                 mapId={mapId}
                 apiKey={apiKey}
                 cart={cart}
-                previewKeys={null}
+                previewKeys={previewKeys}
                 onAdd={add}
                 onRemove={remove}
                 hasInCart={has}
@@ -324,13 +324,26 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey, plac
             <div className="mb-4 px-4 pt-4 md:px-0">
               <LivePriceCard price={livePrice} isJeju={region === "jeju"} />
             </div>
+            {/* Phase B — AI recommendation, reusing the preserved matcher.
+                Replaces the "let a guide plan it" empty-cart CTA: the AI
+                proposes a sequence and applies it straight into the cart.
+                The category filter (in the catalog grid below) stays for
+                manual browsing. */}
+            <div className="mb-4 px-4 md:px-0">
+              <AIRecommendPanel
+                region={region}
+                pois={localizedPois}
+                onAccept={(keys) => reorder(keys)}
+                onPreview={setPreviewKeys}
+                track={searchParams?.get("track")}
+              />
+            </div>
             <ResultTimeline
               cart={cart}
               pois={localizedPois}
               onRemove={remove}
               onReorder={reorder}
               onGetQuote={handleGetQuote}
-              onGuideCurate={handleGuideCurate}
               cruiseBudgetMinutes={cruiseBudgetMinutes}
               durationMinutes={tourDurationHours * 60}
               onOpenDetail={setDetailPoi}
