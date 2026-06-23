@@ -234,18 +234,21 @@ describe("cruise private — uniform flat premium", () => {
     expect(cruise.total - priv.total).toBe(50000);
   });
 
-  it("prices the same at every Jeju port — no port-distance differential", () => {
-    const gangjeong = quote(
+  it("Gangjeong adds a ₩20,000 distance surcharge — ₩70,000 premium total", () => {
+    const r = quote(
       input({ track: "cruise", region: "jeju", durationHours: 6, pax: 2, cruisePort: "gangjeong" })
     );
-    const jejuPort = quote(
+    // base 280k + flat cruise 50k + Gangjeong distance 20k.
+    expect(r.total).toBe(280000 + 50000 + 20000);
+    expect(r.lines.find((l) => l.code === "gangjeong_port")?.amount).toBe(20000);
+  });
+
+  it("non-Gangjeong Jeju cruise gets only the flat ₩50,000 add", () => {
+    const r = quote(
       input({ track: "cruise", region: "jeju", durationHours: 6, pax: 2, cruisePort: "jeju_port" })
     );
-    // base 280k + flat cruise 50k, regardless of port.
-    expect(gangjeong.total).toBe(280000 + 50000);
-    expect(jejuPort.total).toBe(280000 + 50000);
-    expect(gangjeong.lines.find((l) => l.code === "gangjeong_port")).toBeUndefined();
-    expect(jejuPort.lines.find((l) => l.code === "gangjeong_port")).toBeUndefined();
+    expect(r.total).toBe(280000 + 50000);
+    expect(r.lines.find((l) => l.code === "gangjeong_port")).toBeUndefined();
   });
 
   it("cruise ignores the hotel pickup-zone surcharge (pickup is the port)", () => {

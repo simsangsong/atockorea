@@ -30,7 +30,7 @@ export type VehicleClass = "sedan" | "van" | "solati" | "multi";
 
 /** Customer-facing pickup-zone selector for Jeju (drives a pickup surcharge). */
 export type JejuPickupZone = "city" | "out_west" | "out_east" | "out_south";
-/** Cruise embarkation port (records the pickup/drop-off location; no surcharge). */
+/** Cruise embarkation port — Gangjeong (Jeju) carries a distance surcharge. */
 export type CruisePort = "gangjeong" | "jeju_port";
 /** Per-POI Jeju tour-region classification (drives the cross-region surcharge). */
 export type JejuZone = "east" | "west" | "south" | "city";
@@ -171,13 +171,18 @@ export const JEJU_SURCHARGE_CAP = 100000;
 
 /**
  * Cruise private — a flat premium on top of the equivalent private day rate.
- * Uniform ("일괄") across every region and port: the cruise pickup & drop-off
- * is ALWAYS the ship's home port in that city, so there is no port-distance
- * differential (Gangjeong vs Jeju Port both price the same now). The cruise
- * promise — guaranteed back-to-ship before sail-away and a departure time that
- * flexes to the ship's actual arrival — is operational, not a line item.
+ * Uniform ("일괄") at ₩50,000 for every region and port, EXCEPT Gangjeong
+ * (Seogwipo): its remote south-coast terminal adds a ₩20,000 distance
+ * surcharge on top, so a Gangjeong cruise day carries a ₩70,000 premium total
+ * (₩50k flat + ₩20k distance). The pickup & drop-off is ALWAYS the ship's
+ * home port in that city (no hotel transfer). The cruise promise — guaranteed
+ * back-to-ship before sail-away and a departure time that flexes to the ship's
+ * actual arrival — is operational, not a line item.
  */
 export const CRUISE_EXCURSION_SURCHARGE = 50000;
+/** Gangjeong (Seogwipo) cruise terminal — distance surcharge on top of the flat
+ *  cruise add (₩50k + ₩20k = ₩70k total premium at Gangjeong). */
+export const GANGJEONG_PORT_SURCHARGE = 20000;
 
 /** Jeju hotel pickup-zone surcharge. 시내(downtown, Oedo-dong … Ildo/Geonip-dong)
  *  = free; out-of-city (시외) by side = +₩60k. A cross-side pickup adds +₩40k
@@ -482,15 +487,22 @@ export function quote(input: PriceInput): PriceResult {
     }
   }
 
-  // Cruise private: one uniform flat premium over the private day rate. The
-  // docking port (`input.cruisePort`) is recorded for the pickup location only
-  // — it no longer changes the price.
+  // Cruise private: a uniform flat premium over the private day rate, plus a
+  // Gangjeong (Seogwipo) distance surcharge for that remote south-coast
+  // terminal. The docking port is recorded for the pickup location.
   if (input.track === "cruise") {
     lines.push({
       code: "cruise_excursion",
       labelKey: "lines.cruiseExcursion",
       amount: CRUISE_EXCURSION_SURCHARGE,
     });
+    if (input.cruisePort === "gangjeong") {
+      lines.push({
+        code: "gangjeong_port",
+        labelKey: "lines.gangjeongPort",
+        amount: GANGJEONG_PORT_SURCHARGE,
+      });
+    }
   }
 
   const total = lines.reduce((s, l) => s + l.amount, 0);

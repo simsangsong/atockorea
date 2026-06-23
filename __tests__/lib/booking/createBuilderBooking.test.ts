@@ -117,11 +117,10 @@ describe("createBuilderBooking — Phase 10 D11/D12/D17/D25", () => {
     );
     expect(row.itinerary.cruise_port).toBe("gangjeong");
     expect(row.itinerary.track).toBe("cruise");
-    // Cruise private is a single uniform +₩50k line — the docking port is
-    // recorded for pickup but no longer carries a separate surcharge.
+    // Cruise +₩50k flat + Gangjeong +₩20k distance must show as separate lines.
     const codes = row.itinerary.breakdown.map((l) => l.code);
     expect(codes).toContain("cruise_excursion");
-    expect(codes).not.toContain("gangjeong_port");
+    expect(codes).toContain("gangjeong_port");
   });
 
   it("DMZ track — fixed-price row stores nothing surprising", () => {
