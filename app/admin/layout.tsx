@@ -16,10 +16,12 @@ import {
   LogOut,
   Mail,
   MapPin,
+  Menu,
   MessageSquareText,
   Package,
   Settings,
   Sparkles,
+  X,
 } from 'lucide-react';
 import Logo from '@/components/Logo';
 import { supabase } from '@/lib/supabase';
@@ -47,6 +49,23 @@ const adminMenuItems: AdminMenuItem[] = [
   { path: '/admin/chatbot-analytics', label: '챗봇 분석', icon: Bot, badge: 'NEW' },
   { path: '/admin/settings', label: '시스템 설정', icon: Settings },
 ];
+
+/**
+ * The four high-frequency destinations surfaced in the mobile bottom tab bar
+ * so the most common admin flows stay within one-thumb reach. The 5th slot
+ * ("더보기") opens the full drawer. Paths are a subset of adminMenuItems so
+ * the menu stays a single source of truth.
+ */
+const mobileTabPaths = ['/admin', '/admin/orders', '/admin/merchants', '/admin/contacts'] as const;
+const mobileTabItems = mobileTabPaths.map(
+  (path) => adminMenuItems.find((item) => item.path === path)!,
+);
+const mobileTabLabels: Record<string, string> = {
+  '/admin': '대시보드',
+  '/admin/orders': '주문',
+  '/admin/merchants': '업체',
+  '/admin/contacts': '문의',
+};
 
 const pathToBreadcrumb: Record<string, string> = {
   '/admin': '대시보드',
@@ -102,10 +121,26 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   const [isLoading, setIsLoading] = useState(true);
   const [user, setUser] = useState<any>(null);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   useEffect(() => {
     checkAuth();
   }, []);
+
+  // Close the mobile drawer whenever the route changes so tapping a menu item
+  // navigates and dismisses the overlay in one gesture.
+  useEffect(() => {
+    setMobileNavOpen(false);
+  }, [pathname]);
+
+  // Lock body scroll while the drawer is open so the backdrop doesn't scroll.
+  useEffect(() => {
+    if (typeof document === 'undefined') return;
+    document.body.style.overflow = mobileNavOpen ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileNavOpen]);
 
   useEffect(() => {
     const normalized = normalizeAdminPathname(pathname);
@@ -264,12 +299,33 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
   return (
     <div className="min-h-screen bg-[#eef2f7] flex text-slate-900">
-      <aside className="fixed inset-y-0 left-0 z-40 flex w-[216px] flex-col bg-[#111827] text-white shadow-xl">
+      {/* Mobile drawer backdrop. Tapping it dismisses the nav. */}
+      {mobileNavOpen ? (
+        <div
+          className="fixed inset-0 z-40 bg-slate-950/50 backdrop-blur-sm md:hidden"
+          onClick={() => setMobileNavOpen(false)}
+          aria-hidden
+        />
+      ) : null}
+
+      <aside
+        className={`fixed inset-y-0 left-0 z-50 flex w-[264px] max-w-[82vw] flex-col bg-[#111827] text-white shadow-2xl transition-transform duration-300 ease-out md:z-40 md:w-[216px] md:max-w-none md:translate-x-0 md:shadow-xl md:transition-none ${
+          mobileNavOpen ? 'translate-x-0' : '-translate-x-full'
+        }`}
+      >
         <div className="flex h-14 items-center gap-2 border-b border-white/10 px-3">
           <Logo className="h-9 min-w-0 flex-1" variant="onDark" compact />
           <span className="rounded-md border border-white/10 bg-white/10 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-slate-200">
             Admin
           </span>
+          <button
+            type="button"
+            onClick={() => setMobileNavOpen(false)}
+            className="-mr-1 flex size-8 items-center justify-center rounded-lg text-slate-300 hover:bg-white/10 hover:text-white md:hidden"
+            aria-label="메뉴 닫기"
+          >
+            <X className="size-5" />
+          </button>
         </div>
 
         <nav className="flex-1 space-y-0.5 overflow-y-auto px-2 py-3">
@@ -311,39 +367,59 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         </div>
       </aside>
 
-      <div className="flex min-h-screen flex-1 flex-col pl-[216px]">
-        <header className="sticky top-0 z-30 flex h-[52px] items-center justify-between border-b border-slate-200/90 bg-white/95 px-5 shadow-sm backdrop-blur">
-          <nav className="flex min-w-0 items-center gap-2 text-sm text-slate-500">
-            {breadcrumbs.map((crumb, i) => (
-              <span key={crumb.path} className="flex min-w-0 items-center gap-2">
-                {i > 0 ? <span className="text-slate-300">/</span> : null}
-                {i === breadcrumbs.length - 1 ? (
-                  <span className="truncate font-semibold text-slate-950">{crumb.label}</span>
-                ) : (
-                  <Link href={crumb.path} className="truncate hover:text-blue-600 transition-colors">
-                    {crumb.label}
-                  </Link>
-                )}
-              </span>
-            ))}
-          </nav>
+      <div className="flex min-h-screen flex-1 flex-col pl-0 md:pl-[216px]">
+        <header className="sticky top-0 z-30 flex h-[52px] items-center justify-between gap-2 border-b border-slate-200/90 bg-white/95 px-4 shadow-sm backdrop-blur md:px-5">
+          <div className="flex min-w-0 items-center gap-2">
+            <button
+              type="button"
+              onClick={() => setMobileNavOpen(true)}
+              className="-ml-1 flex size-9 flex-shrink-0 items-center justify-center rounded-lg text-slate-600 hover:bg-slate-100 hover:text-slate-950 md:hidden"
+              aria-label="메뉴 열기"
+            >
+              <Menu className="size-5" />
+            </button>
 
-          <div className="flex items-center gap-2.5">
+            {/* Full breadcrumb trail on desktop; just the current page on mobile
+                so the header never overflows on a narrow screen. */}
+            <nav className="hidden min-w-0 items-center gap-2 text-sm text-slate-500 md:flex">
+              {breadcrumbs.map((crumb, i) => (
+                <span key={crumb.path} className="flex min-w-0 items-center gap-2">
+                  {i > 0 ? <span className="text-slate-300">/</span> : null}
+                  {i === breadcrumbs.length - 1 ? (
+                    <span className="truncate font-semibold text-slate-950">{crumb.label}</span>
+                  ) : (
+                    <Link href={crumb.path} className="truncate hover:text-blue-600 transition-colors">
+                      {crumb.label}
+                    </Link>
+                  )}
+                </span>
+              ))}
+            </nav>
+            <span className="truncate text-sm font-semibold text-slate-950 md:hidden">
+              {breadcrumbs[breadcrumbs.length - 1]?.label}
+            </span>
+          </div>
+
+          <div className="flex flex-shrink-0 items-center gap-1.5 md:gap-2.5">
             <a
               href="mailto:support@atockorea.com"
-              className="inline-flex h-8 items-center gap-1.5 rounded-lg px-2.5 text-xs font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-950 transition-colors"
+              className="inline-flex h-8 items-center gap-1.5 rounded-lg px-2 text-xs font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-950 transition-colors md:px-2.5"
+              aria-label="Help"
             >
               <CircleHelp className="size-4" />
-              Help
+              <span className="hidden md:inline">Help</span>
             </a>
 
             <div className="relative">
               <button
                 type="button"
                 onClick={() => setUserMenuOpen((open) => !open)}
-                className="flex h-8 items-center gap-2 rounded-lg px-2.5 text-xs text-slate-700 hover:bg-slate-100 transition-colors"
+                className="flex h-8 items-center gap-2 rounded-lg px-2 text-xs text-slate-700 hover:bg-slate-100 transition-colors md:px-2.5"
               >
-                <span className="max-w-[180px] truncate font-medium">{user?.email || 'Admin'}</span>
+                <span className="hidden max-w-[180px] truncate font-medium md:inline">{user?.email || 'Admin'}</span>
+                <span className="flex size-6 items-center justify-center rounded-full bg-slate-900 text-[11px] font-bold uppercase text-white md:hidden">
+                  {(user?.email || 'A').charAt(0)}
+                </span>
                 <ChevronDown className={`size-4 text-slate-400 transition-transform ${userMenuOpen ? 'rotate-180' : ''}`} />
               </button>
 
@@ -370,10 +446,42 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           </div>
         </header>
 
-        <main className="flex-1 overflow-auto p-5">
+        <main className="flex-1 overflow-auto p-4 pb-[calc(4rem+env(safe-area-inset-bottom))] md:p-5 md:pb-5">
           {children}
         </main>
       </div>
+
+      {/* Mobile bottom tab bar — one-thumb access to the four highest-traffic
+          flows; the 5th slot opens the full drawer. Hidden from md: up where the
+          persistent sidebar already covers navigation. */}
+      <nav className="fixed inset-x-0 bottom-0 z-30 flex h-16 items-stretch border-t border-slate-200 bg-white/95 pb-[env(safe-area-inset-bottom)] shadow-[0_-1px_8px_rgba(15,23,42,0.06)] backdrop-blur md:hidden">
+        {mobileTabItems.map((item) => {
+          const isActive = item.path === bestMatch;
+          const Icon = item.icon;
+          return (
+            <Link
+              key={item.path}
+              href={item.path}
+              aria-current={isActive ? 'page' : undefined}
+              className={`flex flex-1 flex-col items-center justify-center gap-0.5 text-[10px] font-medium transition-colors ${
+                isActive ? 'text-blue-600' : 'text-slate-500'
+              }`}
+            >
+              <Icon className={`size-5 ${isActive ? 'text-blue-600' : 'text-slate-400'}`} />
+              {mobileTabLabels[item.path] ?? item.label}
+            </Link>
+          );
+        })}
+        <button
+          type="button"
+          onClick={() => setMobileNavOpen(true)}
+          className="flex flex-1 flex-col items-center justify-center gap-0.5 text-[10px] font-medium text-slate-500"
+          aria-label="더보기"
+        >
+          <Menu className="size-5 text-slate-400" />
+          더보기
+        </button>
+      </nav>
     </div>
   );
 }
