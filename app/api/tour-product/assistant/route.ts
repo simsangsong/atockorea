@@ -73,6 +73,7 @@ import {
   userMessageRequestsHumanHandoff,
 } from "@/lib/support/handoff";
 import { notifyTelegramNewTicket } from "@/lib/support/telegram-webhook";
+import { SSE_HEADERS, sseEvent } from "@/lib/chatbot/sseStream";
 
 const bodySchema = z.object({
   tourProductSlug: z.string().min(1).max(120),
@@ -97,6 +98,12 @@ const bodySchema = z.object({
   handoffRequested: z.boolean().optional(),
   handoffQuestion: z.string().max(8000).optional(),
   debugNoSideEffects: z.boolean().optional(),
+  /**
+   * Opt into SSE token streaming for the free-form model answer (Track 2).
+   * Deterministic gates still return buffered JSON; the server only streams
+   * when this is true AND CHAT_STREAMING !== "0" (D-T2-1, D-T2-5).
+   */
+  stream: z.boolean().optional(),
 });
 
 const SESSION_COOKIE = "atc_chat_sid";
@@ -246,6 +253,16 @@ function applySessionCookie(resp: NextResponse, session: { token: string; setCoo
     });
   }
   return resp;
+}
+
+/**
+ * Serialize the session cookie as a `Set-Cookie` header value for the raw
+ * `Response` used by the streaming path (NextResponse.cookies isn't available
+ * there). Attributes mirror `applySessionCookie` exactly.
+ */
+function serializeSessionCookie(token: string): string {
+  const maxAge = 60 * 60 * 24 * 30;
+  return `${SESSION_COOKIE}=${token}; Path=/; Max-Age=${maxAge}; HttpOnly; SameSite=Lax`;
 }
 
 async function createSupportTicketAndNotify(
@@ -1072,6 +1089,107 @@ export async function POST(req: NextRequest) {
     const raw = Number(process.env.GEMINI_ASSISTANT_TEMPERATURE);
     return Number.isFinite(raw) && raw >= 0 && raw <= 1 ? raw : 0.35;
   })();
+
+  // ── SSE streaming branch (Track 2, D-T2-1/D-T2-5). Every deterministic gate
+  // has already returned buffered JSON above, so reaching here means a free-form
+  // model answer — the only thing we ever stream. We only stream when the client
+  // asked (stream:true), the kill switch is on (CHAT_STREAMING !== "0"), and
+  // we're not in debug mode. Otherwise fall through to the buffered path so
+  // rollback is a one-line env flip with no client/code change (D-T2-5).
+  const wantStream =
+    parsed.data.stream === true &&
+    process.env.CHAT_STREAMING !== "0" &&
+    !debugNoSideEffects;
+
+  if (wantStream) {
+    const streamT0 = Date.now();
+    const stream = new ReadableStream<Uint8Array>({
+      async start(controller) {
+        let buf = "";
+        try {
+          const chat = model.startChat({
+            history,
+            generationConfig: { maxOutputTokens: 1200, temperature },
+          });
+          const { stream: modelStream } = await chat.sendMessageStream(last.content);
+          for await (const chunk of modelStream) {
+            if (req.signal.aborted) break;
+            const t = chunk.text();
+            if (t) {
+              buf += t;
+              controller.enqueue(sseEvent("delta", { text: t }));
+            }
+          }
+
+          // Client disconnected mid-stream: skip all side-effects, just close.
+          if (req.signal.aborted) return;
+
+          const replyBuffer = buf.trim();
+          if (!replyBuffer) {
+            controller.enqueue(sseEvent("error", { error: "assistant_failed" }));
+            return;
+          }
+
+          // Same finalize as the buffered path, over the full buffer (D-T2-3).
+          const finalized = await finalizeAssistantTurn({
+            replyText: replyBuffer,
+            activeIntent,
+            matcherResult,
+            answerLocale,
+            tourCatalogContext,
+            verifiedBookingContext,
+            bookingWriteRequest,
+            ctx,
+            userMessage: last.content,
+            modelName,
+            elapsedMs: Date.now() - streamT0,
+            locale,
+            isSiteAssistant,
+            tourProductSlug,
+            pageContext,
+            memoryEnabled,
+            qaSb,
+            debugNoSideEffects,
+            memoryKey,
+            priorMemory,
+            genAI,
+          });
+
+          // done.reply is the authoritative text — the client snaps the bubble
+          // to it (D-T2-4), correcting any rare post-process override.
+          controller.enqueue(
+            sseEvent("done", {
+              reply: finalized.reply,
+              ticket_id: finalized.ticket_id,
+              escalated: finalized.escalated,
+              escalation_reason: finalized.escalation_reason,
+              handoff_offered: finalized.handoff_offered,
+              checkout_url: null,
+            }),
+          );
+        } catch (e) {
+          console.error("[tour-product/assistant] stream error:", e);
+          try {
+            controller.enqueue(sseEvent("error", { error: "assistant_failed" }));
+          } catch {
+            /* connection already torn down */
+          }
+        } finally {
+          try {
+            controller.close();
+          } catch {
+            /* already closed */
+          }
+        }
+      },
+    });
+
+    const headers = new Headers(SSE_HEADERS);
+    if (session.setCookie) {
+      headers.append("Set-Cookie", serializeSessionCookie(session.token));
+    }
+    return new Response(stream, { headers });
+  }
 
   const t0 = Date.now();
   let replyText = "";
