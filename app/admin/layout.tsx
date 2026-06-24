@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { Toaster } from 'sonner';
 import type { LucideIcon } from 'lucide-react';
 import {
   BarChart3,
@@ -298,7 +299,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     .sort((a, b) => b.path.length - a.path.length)[0]?.path;
 
   return (
-    <div className="min-h-screen bg-[#eef2f7] flex text-slate-900">
+    <div className="admin-root min-h-screen bg-admin-bg flex text-slate-900">
       {/* Mobile drawer backdrop. Tapping it dismisses the nav. */}
       {mobileNavOpen ? (
         <div
@@ -321,7 +322,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           <button
             type="button"
             onClick={() => setMobileNavOpen(false)}
-            className="-mr-1 flex size-8 items-center justify-center rounded-lg text-slate-300 hover:bg-white/10 hover:text-white md:hidden"
+            className="-mr-1 flex size-11 items-center justify-center rounded-lg text-slate-300 hover:bg-white/10 hover:text-white md:hidden"
             aria-label="메뉴 닫기"
           >
             <X className="size-5" />
@@ -368,12 +369,12 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       </aside>
 
       <div className="flex min-h-screen flex-1 flex-col pl-0 md:pl-[216px]">
-        <header className="sticky top-0 z-30 flex h-[52px] items-center justify-between gap-2 border-b border-slate-200/90 bg-white/95 px-4 shadow-sm backdrop-blur md:px-5">
+        <header className="sticky top-0 z-30 flex min-h-[52px] items-center justify-between gap-2 border-b border-slate-200/90 bg-white/95 px-4 pt-[env(safe-area-inset-top)] shadow-sm backdrop-blur md:px-5">
           <div className="flex min-w-0 items-center gap-2">
             <button
               type="button"
               onClick={() => setMobileNavOpen(true)}
-              className="-ml-1 flex size-9 flex-shrink-0 items-center justify-center rounded-lg text-slate-600 hover:bg-slate-100 hover:text-slate-950 md:hidden"
+              className="-ml-1 flex size-11 flex-shrink-0 items-center justify-center rounded-lg text-slate-600 hover:bg-slate-100 hover:text-slate-950 md:hidden"
               aria-label="메뉴 열기"
             >
               <Menu className="size-5" />
@@ -482,6 +483,10 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           더보기
         </button>
       </nav>
+
+      {/* W1.2: admin toast host. top-center clears the bottom nav; richColors gives
+          success/error styling. Admin actions use sonner toasts going forward. */}
+      <Toaster position="top-center" richColors closeButton />
     </div>
   );
 }

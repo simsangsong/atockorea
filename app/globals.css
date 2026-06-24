@@ -1128,6 +1128,19 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     --font-sans: "Pretendard", ui-sans-serif, system-ui, sans-serif;
     /* Warm-cream top tint, mint mid (matches body::before) */
     --page-gradient-fallback: #f4f4f6;
+
+    /* ── Admin premium surface system (W1.1 / spec §2) — light ── */
+    --admin-bg: oklch(0.965 0.003 240);
+    --admin-surface: oklch(1 0 0);
+    --admin-surface-hover: oklch(0.982 0 0);
+    --admin-surface-raised: oklch(1 0 0);
+    --admin-border: oklch(0.922 0 0);
+    --admin-border-strong: oklch(0.87 0 0);
+    --shadow-admin-card: var(--shadow-1);
+    --shadow-admin-float: var(--shadow-2);
+    --shadow-admin-popover: var(--shadow-3);
+    /* chrome accent = brand.blue (#1E4EDF); focus ring kept distinct from consumer amber */
+    --admin-focus-ring: 30 78 223; /* rgb channels — use as rgb(var(--admin-focus-ring)/.6) */
   }
   .dark {
     --background: oklch(0.145 0 0);
@@ -1162,6 +1175,65 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     --sidebar-border: oklch(1 0 0 / 10%);
     --sidebar-ring: oklch(0.556 0 0);
     --font-sans: "Pretendard", ui-sans-serif, system-ui, sans-serif;
+
+    /* ── Admin premium surface system (W1.1 / spec §2) — dark (navy-tinted) ── */
+    --admin-bg: oklch(0.115 0.01 250);
+    --admin-surface: oklch(0.158 0.01 250);
+    --admin-surface-hover: oklch(0.185 0.01 250);
+    --admin-surface-raised: oklch(0.195 0.012 250);
+    --admin-border: oklch(1 0 0 / 9%);
+    --admin-border-strong: oklch(1 0 0 / 16%);
+    --admin-focus-ring: 96 165 250; /* blue-400 */
+  }
+  /*
+   * Admin root: tabular-nums for aligned money/counts/IDs (highest-ROI type rule),
+   * plus a single focus-ring token distinct from the consumer amber ring. Applied
+   * via <div class="admin-root"> in the admin layout.
+   */
+  .admin-root {
+    font-feature-settings: "tnum" 1, "kern" 1;
+  }
+  /*
+   * iOS zoom guard (W1.4 / spec §6.1): iOS Safari auto-zooms any focused field
+   * whose font is below 16px. Floor inputs at 16px on mobile only — desktop keeps
+   * Tailwind density. The .admin-root selector has enough specificity to override
+   * raw `text-sm`/`text-xs` admin inputs; the bare selector catches class-less ones.
+   */
+  @media (max-width: 767px) {
+    input,
+    select,
+    textarea {
+      font-size: max(16px, 1em);
+    }
+    .admin-root input,
+    .admin-root select,
+    .admin-root textarea {
+      font-size: 16px;
+    }
+  }
+  /* Admin skeleton shimmer (W1.6 / spec §4.5) — used by <Skeleton>. */
+  @keyframes admin-shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+  .admin-shimmer {
+    background-image: linear-gradient(
+      90deg,
+      var(--admin-surface-hover) 25%,
+      var(--admin-border) 37%,
+      var(--admin-surface-hover) 63%
+    );
+    background-size: 200% 100%;
+    animation: admin-shimmer 1.4s ease-in-out infinite;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .admin-shimmer {
+      animation: none;
+    }
   }
   * {
     border-color: var(--border);

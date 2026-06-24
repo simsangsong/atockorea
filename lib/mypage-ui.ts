@@ -141,7 +141,7 @@ export const AUTH_FIELD_LABEL =
   "mb-2 block text-[13px] font-medium tracking-tight text-slate-700";
 
 export const AUTH_INPUT =
-  "w-full rounded-2xl border border-slate-200 bg-white px-4 py-3.5 text-[15px] text-slate-900 outline-none transition-all placeholder:text-slate-400 focus:border-slate-900 focus:ring-2 focus:ring-slate-900/12";
+  "w-full rounded-2xl border border-slate-200 bg-white px-4 py-3.5 text-[16px] text-slate-900 outline-none transition-all placeholder:text-slate-400 focus:border-slate-900 focus:ring-2 focus:ring-slate-900/12";
 
 /** Auth 전용 비밀번호 show/hide 토글과 함께 쓸 때 오른쪽 안쪽 여백 */
 export const AUTH_INPUT_WITH_TOGGLE = cn(AUTH_INPUT, "pr-12");
