@@ -149,14 +149,15 @@ export async function POST(
           quality: transcribed.quality,
         },
       };
-      senderRole = String(form.get('senderRole') || senderRole) as typeof senderRole;
+      // PA-3: senderRole is server-authoritative (derived from the authenticated
+      // identity above); never trust a client-supplied role.
       targetLocales = parseLocales(form.get('targetLocales'), defaultTargetLocalesFor(senderRole, booking));
       guestEmail = String(form.get('contactEmail') || '');
       guestName = String(form.get('contactName') || '');
     } else {
       const body = await req.json().catch(() => ({}));
       text = typeof body.text === 'string' ? body.text.trim() : '';
-      senderRole = typeof body.senderRole === 'string' ? body.senderRole : senderRole;
+      // PA-3: senderRole is server-authoritative; ignore any client-supplied role.
       targetLocales = parseLocales(body.targetLocales, defaultTargetLocalesFor(senderRole, booking));
       guestEmail = String(body.contactEmail || '');
       guestName = String(body.contactName || '');
