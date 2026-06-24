@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 import { createServerClient } from '@/lib/supabase';
+import { verifyCheckoutOwnership } from '@/lib/checkout-auth';
 
 /**
  * Card-on-file checkout — authorizes now and collects automatically on tour day.
@@ -81,6 +82,7 @@ export async function POST(req: NextRequest) {
         source,
         payment_status,
         status,
+        user_id,
         contact_email,
         contact_name,
         contact_phone,
@@ -96,6 +98,37 @@ export async function POST(req: NextRequest) {
 
     if (bookingError || !booking) {
       return NextResponse.json({ error: 'Booking not found' }, { status: 404 });
+    }
+
+    /**
+     * N14 — ownership guard. This route mutates Stripe state on a booking that
+     * is addressed only by a public UUID, so we require the caller to also prove
+     * they know an email tied to the booking before we cancel prior holds or
+     * create new intents. The check runs against the *caller-supplied* email
+     * (request body), never the server-resolved fallback below.
+     */
+    const suppliedEmail = bookingData?.customerInfo?.email;
+    const ownerEmails: Array<string | null | undefined> = [
+      (booking as { contact_email?: string | null }).contact_email,
+    ];
+    // Fallback for logged-in bookings stored with a user link but no contact_email.
+    if (!ownerEmails.some(Boolean) && (booking as { user_id?: string | null }).user_id) {
+      try {
+        const { data: ownerUser } = await supabase.auth.admin.getUserById(
+          String((booking as { user_id?: string | null }).user_id),
+        );
+        if (ownerUser?.user?.email) ownerEmails.push(ownerUser.user.email);
+      } catch (lookupErr) {
+        console.warn('[stripe/checkout] owner user lookup failed:', lookupErr);
+      }
+    }
+    const ownership = verifyCheckoutOwnership(suppliedEmail, ownerEmails);
+    if (!ownership.ok) {
+      console.warn(`[stripe/checkout] ownership check failed (${ownership.reason}) for booking ${bookingId}`);
+      return NextResponse.json(
+        { error: 'Could not verify booking ownership. Please use the email on the booking.' },
+        { status: 403 },
+      );
     }
 
     if (
