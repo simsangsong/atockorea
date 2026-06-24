@@ -201,7 +201,9 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
         </div>
       </div>
 
-      {/* ── Route logic — unchanged white ── */}
+      {/* ── Route logic — unchanged white. Hidden when no sections are authored
+            (e.g. private-charter products that drop the route-selection logic). ── */}
+      {(whyTourWorks.routeLogicSections?.length ?? 0) > 0 && (
       <div className="overflow-hidden rounded-[20px] bg-white shadow-[0_1px_2px_rgba(0,0,0,0.03),0_4px_12px_-2px_rgba(0,0,0,0.055)]">
         <button
           type="button"
@@ -245,6 +247,7 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
           </div>
         </div>
       </div>
+      )}
     </div>
   );
 }

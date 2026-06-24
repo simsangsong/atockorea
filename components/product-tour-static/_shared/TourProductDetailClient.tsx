@@ -16,6 +16,7 @@ import {
   TourIncludedSection,
   TourPickupDropoffSection,
   TourPracticalDetails,
+  TourPrivateTourPolicySection,
   TourRecommendationsSection,
   TourReviewsSection,
   TourStickyBookingBar,
@@ -208,6 +209,17 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
             />
           </div>
         </section>
+
+        {vm.privateTourPolicy ? (
+          <section id="private-tour-policy" className="mx-3 mt-4 lg:mx-0">
+            <div className="mx-auto max-w-2xl px-4 sm:px-5 py-5">
+              <TourPrivateTourPolicySection
+                privateTourPolicy={vm.privateTourPolicy}
+                sectionUi={vm.sectionUi}
+              />
+            </div>
+          </section>
+        ) : null}
 
         {vm.pickup_dropoff ? (
           <section id="pickup-dropoff" className="mx-3 mt-4 lg:mx-0">

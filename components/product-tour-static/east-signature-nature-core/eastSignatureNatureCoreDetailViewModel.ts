@@ -21,6 +21,7 @@ import type {
   ItineraryStop,
   PracticalAccordionItem,
   PracticalWeatherStatic,
+  PrivateTourPolicy,
   ReviewsSummary,
   RouteFlowStop,
   RoutePhase,
@@ -63,4 +64,6 @@ export type EastSignatureNatureCoreDetailViewModel = {
   routeVariants?: readonly PortRouteVariant[];
   /** Optional — private/charter products with per-vehicle pricing that varies by pax + duration. */
   pricingTiers?: TourProductPricingTiers;
+  /** Optional — private/charter "how the tour works" rules block, rendered below the itinerary. */
+  privateTourPolicy?: PrivateTourPolicy;
 };

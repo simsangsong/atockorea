@@ -145,7 +145,7 @@ export default async function RegisteredTourProductPage({
   try {
     const staticDoc = getStaticTourProductFullPageJson(slug, locale);
     if (staticDoc) {
-      const extensions: Array<keyof typeof staticDoc> = ["liveStatusSection", "pricingTiers", "price"];
+      const extensions: Array<keyof typeof staticDoc> = ["liveStatusSection", "pricingTiers", "price", "privateTourPolicy"];
       for (const k of extensions) {
         const v = (staticDoc as Record<string, unknown>)[k as string];
         if (v !== undefined && (viewModel as Record<string, unknown>)[k as string] === undefined) {

@@ -135,6 +135,24 @@ export type WhyTourWorks = {
   routeLogicSections?: readonly WhyTourWorksSection[];
 };
 
+/**
+ * Optional "how the private tour works" rules block, rendered directly below the
+ * itinerary. Authored only by private/charter products (e.g. the Jeju private car
+ * charter); other tours omit it and the section is skipped. `icon` is a stable
+ * key mapped to a Lucide icon in `TourPrivateTourPolicySection`.
+ */
+export type PrivateTourPolicyGroup = {
+  icon?: "route" | "pickup" | "time" | "price";
+  title: string;
+  items: readonly string[];
+};
+
+export type PrivateTourPolicy = {
+  title: string;
+  subtitle?: string;
+  groups: readonly PrivateTourPolicyGroup[];
+};
+
 export type PracticalAccordionItem = {
   id: string;
   title: string;
