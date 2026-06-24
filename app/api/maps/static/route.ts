@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
+import { sanitizeStaticMapSearch } from "@/lib/maps-proxy";
+import { mapsStaticRateLimit } from "@/lib/rate-limit";
 
 /**
  * Proxy for Google Maps Static API.
@@ -20,9 +22,19 @@ async function fetchStaticMap(search: string, key: string) {
 }
 
 export async function GET(req: NextRequest) {
+  // N19: throttle per-IP — this proxy spends our billable Maps key and is public.
+  const limited = mapsStaticRateLimit(req);
+  if (limited) return limited;
+
+  // N19: only forward known Static Maps parameters (and never a caller `key`).
+  const sanitized = sanitizeStaticMapSearch(req.nextUrl.search);
+  if (!sanitized.ok) {
+    return new NextResponse("Invalid map request", { status: 400 });
+  }
+  const search = sanitized.search; // includes the leading ?, no API key
+
   const serverKey = process.env.GOOGLE_MAPS_API_KEY;
   const publicKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
-  const search = req.nextUrl.search; // already includes the leading ?
 
   const keysToTry = [serverKey, publicKey].filter(
     (k): k is string => typeof k === "string" && k.length > 0,

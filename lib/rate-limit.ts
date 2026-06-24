@@ -91,3 +91,11 @@ export const emailCheckRateLimit = rateLimit({
   maxRequests: 15, // 15 lookups per minute per IP
 });
 
+// N19: /api/maps/static proxies Google Static Maps with our billable key. It is
+// unauthenticated by design (used by public pickup-detail cards), so throttle
+// per-IP to blunt billing abuse via the proxy.
+export const mapsStaticRateLimit = rateLimit({
+  windowMs: 60 * 1000, // 1 minute
+  maxRequests: 60, // 60 map tiles per minute per IP
+});
+
