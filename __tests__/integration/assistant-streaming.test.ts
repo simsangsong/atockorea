@@ -80,7 +80,7 @@ describe("assistant route — SSE streaming (integration)", () => {
   beforeEach(() => {
     jest.resetModules();
     process.env = { ...OLD_ENV, GEMINI_API_KEY: "test-key" };
-    delete process.env.CHAT_STREAMING; // default-on
+    process.env.CHAT_STREAMING = "1"; // kill switch defaults OFF; enable for these tests
     delete process.env.NEXT_PUBLIC_SUPABASE_URL;
     delete process.env.SUPABASE_SERVICE_ROLE_KEY;
     delete process.env.OPENAI_API_KEY;
@@ -122,6 +122,23 @@ describe("assistant route — SSE streaming (integration)", () => {
     // ...and done.reply is that same (trimmed) buffer — the authority (D-T2-4).
     const done = JSON.parse(dones[0].data) as { reply: string; handoff_offered: boolean };
     expect(done.reply).toBe(MODEL_CHUNKS.join("").trim());
+  });
+
+  it("ships dark: with the kill switch unset, stream:true still returns buffered JSON (D-T2-5)", async () => {
+    delete process.env.CHAT_STREAMING; // default OFF
+    const { POST } = await import("@/app/api/tour-product/assistant/route");
+    const res = await POST(
+      makeReq({
+        assistantScope: "site",
+        tourProductSlug: "__site__",
+        messages: [{ role: "user", content: "What is the weather like in Jeju in summer?" }],
+        stream: true,
+      }),
+    );
+
+    expect(res.headers.get("content-type")).toContain("application/json");
+    const body = (await res.json()) as { reply?: string };
+    expect(body.reply).toBe(MODEL_CHUNKS.join("").trim());
   });
 
   it("keeps deterministic gates on buffered JSON even with stream:true (D-T2-2)", async () => {

@@ -1093,12 +1093,15 @@ export async function POST(req: NextRequest) {
   // ── SSE streaming branch (Track 2, D-T2-1/D-T2-5). Every deterministic gate
   // has already returned buffered JSON above, so reaching here means a free-form
   // model answer — the only thing we ever stream. We only stream when the client
-  // asked (stream:true), the kill switch is on (CHAT_STREAMING !== "0"), and
-  // we're not in debug mode. Otherwise fall through to the buffered path so
-  // rollback is a one-line env flip with no client/code change (D-T2-5).
+  // asked (stream:true), the kill switch is explicitly ON (CHAT_STREAMING === "1"),
+  // and we're not in debug mode. The switch defaults OFF so the feature ships
+  // DARK: an unset env (the default everywhere until prod QA) falls through to
+  // the buffered path with zero production impact. Light it up in prod with
+  // CHAT_STREAMING=1 + redeploy; roll back by unsetting it (or =0) — no code
+  // change, the client auto-falls back via content-type (D-T2-5).
   const wantStream =
     parsed.data.stream === true &&
-    process.env.CHAT_STREAMING !== "0" &&
+    process.env.CHAT_STREAMING === "1" &&
     !debugNoSideEffects;
 
   if (wantStream) {
