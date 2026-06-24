@@ -32,6 +32,9 @@ everything in one batch.
 
 ## Status
 
+_Empty — nothing pending. All staged SQL has been applied and moved to
+`supabase/migrations/`._
+
 | File | Change | Authored | Applied to prod? |
 |---|---|---|---|
-| `20260624033518_create_chat_memory.sql` | `chat_memory` table (Track 3.2 rolling cross-session chatbot memory) | 2026-06-24 | ✅ already applied live via MCP `apply_migration` (migration `20260624033518`). Idempotent — re-running is a safe no-op. Kept here as the version-controlled record. |
+| `20260624033518_create_chat_memory.sql` | `chat_memory` table (Track 3.2 rolling cross-session chatbot memory) | 2026-06-24 | ✅ applied live via MCP `apply_migration` (migration `20260624033518`). **Moved to `supabase/migrations/` on 2026-06-24** after a batch-apply pass confirmed it live. |
