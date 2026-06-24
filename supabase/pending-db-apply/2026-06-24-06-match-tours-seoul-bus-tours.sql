@@ -78,3 +78,8 @@ UPDATE public.match_tours SET
 WHERE slug = 'seoul-seoraksan-naksansa-temple-naksan-beach-day-trip';
 
 COMMIT;
+-- verification
+SELECT slug, anchor_poi_keys, secondary_themes,
+       (matching_profile->>'food_fit') AS food_fit,
+       jsonb_array_length(full_document->'itineraryStops') AS stop_count
+  FROM public.match_tours WHERE slug IN ('seoul-suwon-hwaseong-waujeongsa-starfield','seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library','seoul-suwon-hwaseong-folk-village-starfield-library','seoul-seoraksan-nami-island-morning-calm-day-tour','seoul-seoraksan-naksansa-temple-naksan-beach-day-trip') ORDER BY slug;
