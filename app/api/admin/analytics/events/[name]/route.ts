@@ -6,6 +6,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { requireAdmin, adminAuthJsonResponse, AdminAuthFailure } from '@/lib/auth';
+import { buildEventTimeseries } from '@/lib/analytics/event-detail';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -78,27 +79,14 @@ export async function GET(
     );
   }
 
-  // Time series — sum across locale/device by day
-  const tsMap = new Map<string, number>();
-  for (const r of dailyRes.data ?? []) {
-    const day = (r.day as string).slice(0, 10);
-    tsMap.set(day, (tsMap.get(day) ?? 0) + Number(r.event_count ?? 0));
-  }
-  // Fold in raw counts for buckets the matview hasn't rolled up yet (last hour)
-  for (const r of rawRes.data ?? []) {
-    const day = (r.server_ts as string).slice(0, 10);
-    // Only add if this day is missing from matview (matview lags up to 1h)
-    if (!tsMap.has(day)) {
-      tsMap.set(day, (tsMap.get(day) ?? 0) + 1);
-    } else {
-      // Matview has this day — but it may not include the last hour. We'd
-      // double-count if we added. Acceptable approximation for now;
-      // Phase 7 cron eliminates the gap.
-    }
-  }
-  const timeseries = Array.from(tsMap.entries())
-    .map(([day, count]) => ({ day, count }))
-    .sort((a, b) => a.day.localeCompare(b.day));
+  // Time series + true total: matview is authoritative for elapsed days; raw
+  // (newest-first, capped) provides fresh counts for today. See event-detail.ts.
+  const todayUtc = new Date().toISOString().slice(0, 10);
+  const { timeseries, total_events } = buildEventTimeseries(
+    (dailyRes.data ?? []) as { day: string; event_count?: number | null }[],
+    (rawRes.data ?? []).map((r) => r.server_ts as string),
+    todayUtc,
+  );
 
   // Breakdown by locale + device_class
   const localeMap = new Map<string, number>();
@@ -164,9 +152,14 @@ export async function GET(
     range,
     start: startIso,
     summary: {
-      total_events: (rawRes.data ?? []).length,
+      // Authoritative total from the matview-backed series (was the capped raw
+      // row count — a 50k subset mislabelled as the total).
+      total_events,
+      // session/user counts are distinct over the raw sample; when sample_capped
+      // they are a lower bound, not the true distinct over the full range.
       session_count: sessions.size,
       user_count: users.size,
+      events_sampled: (rawRes.data ?? []).length,
       sample_capped: (rawRes.data ?? []).length >= RAW_PULL_CAP,
     },
     timeseries,
