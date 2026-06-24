@@ -47,7 +47,7 @@
 
 상태 마커: ⏳ 대기 / 🔄 진행 중 / ⏸ 보류 / ✅ 완료 / ❌ 중단
 
-**현재 활성 Phase: Wave 0(즉시 핫픽스) 실행 중. ✅ W0.1(P1 권한상승 차단) 완료·라이브 검증 — 다음 W0.2(N27 REVOKE). 진단(Phase 0~0.13) 종결. 실행은 §R WBS 기준. 다음 액션 = 사용자 결정(§J #11~14 + #2/#6/#8~10) → R0(N27 REVOKE·마이그레이션 정합·미진단라우트)+R2.0(모바일 기반) → Phase 1(§R-1). 🔒 보안 트랙(§R-9)이 P1·P2·W-3·CB-1/2·PA-1/2 등으로 대폭 확장(라이브 즉시 리스크 → 어드민 Phase와 병행/선행 권고). 💴 머니패스 무결성 트랙(§T.10) 신설 — W-10 환불경로는 §G 정산 선행. ⚠️ R0.2(repo≠live 정합)는 Phase 4 하드 선행. 준비사양 §Q — 승인 시 즉시 실행.**
+**현재 활성 Phase: Wave 0(즉시 핫픽스) 실행 중. ✅ W0.1(P1 권한상승 차단)·✅ W0.2(N27 anon-exec REVOKE) 완료·라이브 검증 — 다음 W0.3(cron secret URL 제거). 진단(Phase 0~0.13) 종결. 실행은 §R WBS 기준. 다음 액션 = 사용자 결정(§J #11~14 + #2/#6/#8~10) → R0(N27 REVOKE·마이그레이션 정합·미진단라우트)+R2.0(모바일 기반) → Phase 1(§R-1). 🔒 보안 트랙(§R-9)이 P1·P2·W-3·CB-1/2·PA-1/2 등으로 대폭 확장(라이브 즉시 리스크 → 어드민 Phase와 병행/선행 권고). 💴 머니패스 무결성 트랙(§T.10) 신설 — W-10 환불경로는 §G 정산 선행. ⚠️ R0.2(repo≠live 정합)는 Phase 4 하드 선행. 준비사양 §Q — 승인 시 즉시 실행.**
 
 > 실행 순서 원칙: **Phase 1(기능 안정화) → 2(디자인 토큰) → 3(UI 개편)** 은 사용자 체감 라인. **Phase 4(데이터) → 5(통계) → 6(세무)** 는 데이터 라인으로 병행 가능. Phase 6은 §J 세무 SIGN-OFF가 없으면 시작 금지.
 
@@ -95,7 +95,8 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 | 2026-06-24 | Phase 0.11 — §S 섹션별 딥리뷰 + 모바일/UX. 8 에이전트. 모바일 정량판정(29p중 12p 반응형0·최악 support/match-pois/sessions/retention). 신규 S-F1~F16(stats OOM·Math.random 비번·audit actor·에디터 데이터손상)·S-U1~U11(ConfirmDialog/Sonner 기존자산·URL필터·nav IA). 모바일 패턴 카탈로그→R2.0 기반 티켓 | (this) | REFUTED: SortableImageCard 케이싱·"전부 데스크톱전용"(셸은 모바일 인지) |
 | 2026-06-24 | Phase 0.12 — §T 최종 전수검수(미검수영역). 7 에이전트(미진단어드민라우트·Stripe머니패스·인증RBAC·챗봇·공개API·lib·고객UI)+라이브 DB/RLS/storage 스윕. 🔴🔴 P1 라이브확정 권한상승(고객→admin). W1-15·CB1-15·PA·AR·LIB·CK1-3·N34. 보안트랙 대폭확장+머니패스 무결성 트랙 신설 | (this) | 굿뉴스 확정: requireAdmin 서버DB검증·service-role 번들유출0·웹훅서명O·머니cron fail-closed·pricing 수학 깨끗 |
 | 2026-06-24 | Phase 0.13 — §U 프리미엄 모바일 도약 + 완성도 보정. 7 에이전트(누락스윕+프리미엄모바일6). blind spot(merchant/dashboard 포털·미언급 공개API). 프리미엄 결정8·4페이지 청사진·본문 stale 정정·WBS 고아 입양. 컴패니언 설계스펙 문서 신설 | (this)+`docs/admin-premium-mobile-design-spec-2026-06-24.md` | settlements requireAdmin 보유(REFUTED)·vercel cron 5개 확인. 신규 R10(머천트포털)·J #15~17. **진단 종결** |
-| 2026-06-24 | **W0.1 🔒 P1 권한상승 차단(구현)** — `user_profiles` UPDATE/INSERT RLS에 role 가드 추가. UPDATE는 role 불변(`private.current_profile_role()` SECURITY DEFINER 헬퍼로 재귀 회피, private 스키마=비노출), INSERT는 customer만 허용. 마이그레이션 `20260624000000_secure_user_profiles_role_rls.sql` | — | 라이브 재현 테스트 4종 PASS(고객 role→admin UPDATE 거부·정상 필드수정 통과·INSERT admin 거부·INSERT customer 통과). advisor 순회귀 0(헬퍼 비노출). 정상 흐름 무영향(role 변경은 전부 service-role 경로) |
+| 2026-06-24 | **W0.1 🔒 P1 권한상승 차단(구현)** — `user_profiles` UPDATE/INSERT RLS에 role 가드 추가. UPDATE는 role 불변(`private.current_profile_role()` SECURITY DEFINER 헬퍼로 재귀 회피, private 스키마=비노출), INSERT는 customer만 허용. 마이그레이션 `20260624000000_secure_user_profiles_role_rls.sql` | 7d7c2244 | 라이브 재현 테스트 4종 PASS(고객 role→admin UPDATE 거부·정상 필드수정 통과·INSERT admin 거부·INSERT customer 통과). advisor 순회귀 0(헬퍼 비노출). 정상 흐름 무영향(role 변경은 전부 service-role 경로) |
+| 2026-06-24 | **W0.2 🔒 N27 anon-exec REVOKE(구현)** — analytics 4 SECURITY DEFINER 함수(`anonymize_old_analytics`·`refresh_analytics_materialized_views`·`analytics_health_snapshot`·`handle_new_user`) EXECUTE를 PUBLIC/anon/authenticated에서 회수, service_role만 부여. 마이그레이션 `20260624001000_revoke_anon_exec_analytics_funcs.sql` | — | 호출부 3개(cron 2 + admin health) 전부 service-role → 무영향. advisor 0028·0029 SECURITY DEFINER 항목 전부 소거 확인. handle_new_user는 트리거라 발화 무관 |
 
 ---
 
