@@ -270,3 +270,57 @@ export type TourProductPricingTiers = {
     perPaxAdd: number;
   };
 };
+
+/**
+ * Sample-itinerary section — private/charter products only.
+ *
+ * A private charter has no fixed route, so instead of the route-flow + numbered
+ * timeline logic we surface a few *sample* day plans the guest can mix-and-match
+ * with their driver-guide. Each variant is a stack of empty slots that authoring
+ * fills in later (`import는 나중에`); pickup/drop-off default to the guest's hotel.
+ * The private-tour rules block renders directly below the variants.
+ */
+export type SampleItineraryStopSlot = {
+  /** Optional clock window, e.g. "09:00" or "09:00–11:00". */
+  time?: string;
+  /** Stop name — left empty while the slot is awaiting content import. */
+  title?: string;
+  /** Short supporting line (area, theme, or note). */
+  note?: string;
+};
+
+export type SampleItineraryVariant = {
+  /** Stable key, e.g. "pocheon" / "seoul-city" / "suwon-hwaseong". */
+  id: string;
+  /** Tab label, e.g. "Pocheon" / "포천". */
+  label: string;
+  /** One-line teaser shown under the tab strip when the variant is active. */
+  summary?: string;
+  /** Optional duration hint, e.g. "~10 hours". */
+  durationLabel?: string;
+  /** Ordered stop slots between the hotel pickup and drop-off bookends. */
+  stops: readonly SampleItineraryStopSlot[];
+};
+
+export type PrivateTourRuleGroup = {
+  heading: string;
+  items: readonly string[];
+};
+
+export type SampleItinerarySection = {
+  title?: string;
+  subtitle?: string;
+  /** Fixed hotel bookend labels — pickup/drop-off default to the guest's hotel. */
+  pickupDefaultLabel?: string;
+  dropoffDefaultLabel?: string;
+  /** Placeholder copy for slots that have no title yet. */
+  slotPlaceholder?: string;
+  /** "Not included" heading + chips (parking, tolls, admission, meals …). */
+  notIncludedLabel?: string;
+  notIncluded?: readonly string[];
+  variants: readonly SampleItineraryVariant[];
+  /** Private-tour rules block rendered below the sample variants. */
+  rulesTitle?: string;
+  rulesSubtitle?: string;
+  rules?: readonly PrivateTourRuleGroup[];
+};

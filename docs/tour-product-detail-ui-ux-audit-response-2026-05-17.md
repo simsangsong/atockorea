@@ -44,12 +44,15 @@
 | 2026-05-17 | 마스터 플랜 v1 작성 (1차 Claude audit + Codex review 통합) | 초기 | 16개 결정, Sprint 1-4 정의 |
 | 2026-05-18 | §A 상태 대시보드 + §B 결정 로그 + §C 변경 로그 + §D parked + §8 세계최고 디자이너 audit 추가 | (이 커밋) | User 요청으로 픽셀단위 review 진행. 16 section + Drawer 분석. §B-P1 premium up-only 결정 신규. Sprint 1-4 작업 시작 전 단계. |
 | 2026-05-23 | **별도 트랙 개시 — 픽업/드롭오프/날씨 데이터 정합성**: `docs/pickup-dropoff-weather-data-correctness-plan-2026-05-23.md` | — | User 보고(픽업/드롭오프 "중구난방"). 비주얼 Sprint와 별개의 데이터+i18n 버그 수정 트랙: 지도 핀 좌표, "Hotel pickup"→"N pickup points", 타임라인 드롭오프 중복, 날씨 앵커→대표명소, 하드코딩 영어 6로케일. Sprint 1-4 비주얼 작업과 충돌 없음(데이터/카피 레이어). |
+| 2026-06-24 | **별도 트랙 — 프라이빗 차터 샘플 일정 섹션 + 프라이빗 규칙 (사용자 "프라이빗투어상품 상세페이지내 샘플 일정 … 일단 일정 슬롯만 만들고 import는 나중에, logic 지우고 픽업 드롭오프는 호텔 디폴트, 규칙들 일정 섹션 밑에 상세 설명")** | (이번 commit) | **대상: `seoul-suburbs-private-chartered-car-10hr`만** (서울권 샘플 3종 포천/서울시내/수원화성). 신규 `sampleItineraries` VM 필드 + opt-in 게이트: 해당 필드가 있으면 orchestrator가 DayFlow+Timeline 대신 신규 `TourSampleItinerarySection` 렌더 + **routeFlow/routePhases 로직 + AI 추천 위젯 비활성**(사용자 "logic 지우고 … matching/AI 추천"). 픽업/드롭오프는 호텔 디폴트 북엔드로 고정. 샘플 스톱은 **빈 슬롯 placeholder**(import 나중에) 4개씩. 불포함 칩(주차비/톨비/입장료/식사) + 규칙 블록(이용시간·픽업·일정·불포함·변경) 일정 섹션 하단. 6 로케일 JSON 주입(en/ko 작성, ja/zh/zh-TW/es는 영문 스캐폴드—번역 import 후속) + DB `tour_product_pages.detail_payload` 머지 SQL을 `supabase/pending-db-apply/`에 적재(다른 세션 일괄 업로드용). **Sprint 1-4 비주얼 작업과 충돌 없음**(게이트는 이 상품 한정, 나머지 상품은 기존 DayFlow+Timeline 유지). ⚠ 실제 스톱 콘텐츠 import + 비영문 번역 후속. |
 | 2026-06-22 | **프라이빗 차터 시간선택(4~10h) + 인원×시간 실시간 가격 — pricingTiers 데이터 채움 + 선택기 스크롤화 (사용자 "프라이빗 투어들에 시간 선택 스크롤 + 인원수·duration 실시간 가격 CTA 옆 반영", "4·5·6·7·8·9·10 다 넣어")** | (이번 commit) | 예약 카드의 duration 선택기+`tierPriceUsd`(인원 tier×시간) 실시간 가격 메커니즘은 이미 존재(Sprint 1) — 차량 차터 프라이빗 중 4개만 `pricingTiers` 보유, **jeju 차터엔 없었음**. `scripts/apply-private-pricing-tiers.mjs`로 **엔진(`pricing-policy.ts`) 도출 매트릭스**를 4개 차터(jeju 추가 + seoul-suburbs·busan·incheon realign)×6 로케일=24 JSON에 주입: durations **4·5·6·7·8·9·10h**(매 시간), tier 세단(1–6)/밴(7–9)/솔라티(10–13), 가격=(ENGLISH_BASE[h]+surcharge)÷1480. diff=pricingTiers 블록만(컨텐츠 무손상; jeju는 순수 +57). 선택기 UI: segmented→**가로 스크롤 pill 행**(7개), 매트릭스 wrapper `overflow-hidden`→`overflow-x-auto`(8열 클립 방지) — 데스크톱+Sticky 양쪽. **DMZ 제외**(엔진 track=dmz=인원 고정가·시간 무관 → 매트릭스 부적합, 별도 처리 필요) + **Nami 제외**(1인당 유지, 사용자 지시). 검증: 24 JSON parse / tsc 0 / lint 0(잔여 6 pre-existing) / build green. ⚠ 라이브 QA + DMZ 후속. |
 
 ## §D 보류 / parked
 
 | 항목 | 이유 | 재검토 시점 |
 |---|---|---|
+| 프라이빗 샘플 일정 — 실제 스톱 콘텐츠 import (포천/서울시내/수원화성 각 슬롯 채우기) | "일단 슬롯만, import는 나중에" (사용자 2026-06-24) | 콘텐츠 확정 후 |
+| 프라이빗 샘플 일정 — ja/zh/zh-TW/es 번역 (현재 영문 스캐폴드) | 비영문 로케일 번역 import 후속 | 번역 준비 후 |
 | Hero overlay (title + price) | 다국어 폭 측정 필요, LCP 회귀 위험 | Sprint 4 acceptance 후 |
 | Hero/Gallery watermark 일괄 제거 | 정책팀 컨펌 대기 | 정책 확정 후 |
 | Interactive map (Mapbox/Google JS) | 성능·비용·scroll-freeze 가드 충돌 가능 | Sprint 5+ |

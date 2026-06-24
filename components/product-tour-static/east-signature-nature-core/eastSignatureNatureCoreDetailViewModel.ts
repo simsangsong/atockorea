@@ -25,6 +25,7 @@ import type {
   RouteFlowStop,
   RoutePhase,
   RouteShapeIntro,
+  SampleItinerarySection,
   SeasonalVariation,
   StaticQuestion,
   SubnavItem,
@@ -63,4 +64,11 @@ export type EastSignatureNatureCoreDetailViewModel = {
   routeVariants?: readonly PortRouteVariant[];
   /** Optional — private/charter products with per-vehicle pricing that varies by pax + duration. */
   pricingTiers?: TourProductPricingTiers;
+  /**
+   * Optional — private/charter products surface *sample* day plans instead of a
+   * fixed route-flow + numbered timeline. When present, the orchestrator swaps
+   * DayFlow + Timeline for the sample-itinerary section and skips the route/AI
+   * recommend logic (pickup/drop-off default to the guest's hotel).
+   */
+  sampleItineraries?: SampleItinerarySection;
 };

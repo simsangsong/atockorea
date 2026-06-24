@@ -1947,5 +1947,96 @@
         }
       }
     ]
+  },
+  "sampleItineraries": {
+    "title": "Sample itineraries",
+    "subtitle": "A private charter has no fixed route — these are sample day plans you can adapt with your driver-guide. Pickup and drop-off default to your hotel.",
+    "pickupDefaultLabel": "Pickup — your Seoul hotel (door-to-door)",
+    "dropoffDefaultLabel": "Drop-off — your Seoul hotel",
+    "slotPlaceholder": "Stop to be confirmed — itinerary details coming soon",
+    "notIncludedLabel": "Not included",
+    "notIncluded": [
+      "Parking fees",
+      "Tolls",
+      "Admission / entrance fees",
+      "Meals"
+    ],
+    "variants": [
+      {
+        "id": "pocheon",
+        "label": "Pocheon",
+        "durationLabel": "~10 hours",
+        "summary": "Lakes, herb gardens and art valleys in Pocheon, about 1.5 hours northeast of Seoul.",
+        "stops": [
+          {},
+          {},
+          {},
+          {}
+        ]
+      },
+      {
+        "id": "seoul-city",
+        "label": "Seoul City",
+        "durationLabel": "~10 hours",
+        "summary": "Palaces, traditional markets and landmark districts within central Seoul.",
+        "stops": [
+          {},
+          {},
+          {},
+          {}
+        ]
+      },
+      {
+        "id": "suwon-hwaseong",
+        "label": "Suwon Hwaseong",
+        "durationLabel": "~10 hours",
+        "summary": "Hwaseong Fortress and Suwon-area highlights south of Seoul.",
+        "stops": [
+          {},
+          {},
+          {},
+          {}
+        ]
+      }
+    ],
+    "rulesTitle": "Private tour — how it works",
+    "rulesSubtitle": "Everything you should know before booking this private charter.",
+    "rules": [
+      {
+        "heading": "Service window",
+        "items": [
+          "The 10-hour service window starts at your pickup time.",
+          "Overtime is 30,000 KRW per hour, paid in cash to the driver, subject to availability.",
+          "Please be ready in the hotel lobby 10 minutes before the agreed pickup time."
+        ]
+      },
+      {
+        "heading": "Pickup & drop-off",
+        "items": [
+          "Door-to-door pickup and drop-off at any hotel within the supported area, by default.",
+          "Incheon and Gimpo airport pickup/drop-off available on request (counts inside the service window)."
+        ]
+      },
+      {
+        "heading": "Itinerary",
+        "items": [
+          "Routes above are samples — mix the stops or send your own plan, finalized with your driver-guide.",
+          "Driving times and distances depend on traffic and the stops you choose."
+        ]
+      },
+      {
+        "heading": "Not included",
+        "items": [
+          "Parking fees, tolls, admission/entrance fees and meals are not included.",
+          "These are settled directly on the day, including the driver-guide's where applicable."
+        ]
+      },
+      {
+        "heading": "Changes",
+        "items": [
+          "Reschedule requests should be made at least 2 days before the reserved date."
+        ]
+      }
+    ]
   }
 }

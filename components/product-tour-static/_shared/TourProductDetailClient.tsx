@@ -18,6 +18,7 @@ import {
   TourPracticalDetails,
   TourRecommendationsSection,
   TourReviewsSection,
+  TourSampleItinerarySection,
   TourStickyBookingBar,
   TourTabsNav,
   TourTimelineSection,
@@ -66,6 +67,11 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
   const vm = viewModel;
   const t = useTranslations();
   const hasRouteVariants = Array.isArray(vm.routeVariants) && vm.routeVariants.length > 0;
+  // Private/charter products surface *sample* day plans instead of the fixed
+  // route-flow + numbered timeline. When present we swap DayFlow + Timeline for
+  // the sample-itinerary section and drop the route/AI recommend logic.
+  const hasSampleItineraries =
+    !!vm.sampleItineraries && (vm.sampleItineraries.variants?.length ?? 0) > 0;
   const [selectedPortIndex, setSelectedPortIndex] = useState(0);
   const selectedPortLabel = hasRouteVariants
     ? vm.routeVariants?.[Math.min(selectedPortIndex, (vm.routeVariants?.length ?? 1) - 1)]?.title
@@ -187,26 +193,34 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
           id="itinerary"
           className="mx-3 mt-4 lg:mx-0"
         >
-          <div className="mx-auto max-w-2xl px-4 sm:px-5 pt-6 pb-3 space-y-7">
-            <TourDayFlowSection
-              routeFlowStops={vm.routeFlowStops}
-              routePhases={vm.routePhases}
-              routeShapeIntro={vm.routeShapeIntro}
-              sectionUi={vm.sectionUi}
-              itineraryStops={vm.itineraryStops}
-            />
-          </div>
-          <div className="mx-auto max-w-2xl px-4 sm:px-5 pt-2 pb-4">
-            <TourTimelineSection
-              itineraryStops={vm.itineraryStops}
-              sectionUi={vm.sectionUi}
-              pickup_dropoff={vm.pickup_dropoff}
-              routeVariants={vm.routeVariants}
-              selectedPortIndex={selectedPortIndex}
-              onPortChange={setSelectedPortIndex}
-              locale={locale}
-            />
-          </div>
+          {hasSampleItineraries ? (
+            <div className="mx-auto max-w-2xl px-4 sm:px-5 pt-6 pb-4">
+              <TourSampleItinerarySection sampleItineraries={vm.sampleItineraries!} />
+            </div>
+          ) : (
+            <>
+              <div className="mx-auto max-w-2xl px-4 sm:px-5 pt-6 pb-3 space-y-7">
+                <TourDayFlowSection
+                  routeFlowStops={vm.routeFlowStops}
+                  routePhases={vm.routePhases}
+                  routeShapeIntro={vm.routeShapeIntro}
+                  sectionUi={vm.sectionUi}
+                  itineraryStops={vm.itineraryStops}
+                />
+              </div>
+              <div className="mx-auto max-w-2xl px-4 sm:px-5 pt-2 pb-4">
+                <TourTimelineSection
+                  itineraryStops={vm.itineraryStops}
+                  sectionUi={vm.sectionUi}
+                  pickup_dropoff={vm.pickup_dropoff}
+                  routeVariants={vm.routeVariants}
+                  selectedPortIndex={selectedPortIndex}
+                  onPortChange={setSelectedPortIndex}
+                  locale={locale}
+                />
+              </div>
+            </>
+          )}
         </section>
 
         {vm.pickup_dropoff ? (
@@ -321,11 +335,15 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
         />
       </div>
 
-      <TourProductAiAssistantWidget
-        tourProductSlug={tourProductSlug}
-        productTitle={productTitle}
-        supportQuickChips={supportQuickChips}
-      />
+      {/* AI recommend / matching assistant — suppressed on private/charter
+          products whose itinerary is sample-driven, not algorithm-matched. */}
+      {!hasSampleItineraries && (
+        <TourProductAiAssistantWidget
+          tourProductSlug={tourProductSlug}
+          productTitle={productTitle}
+          supportQuickChips={supportQuickChips}
+        />
+      )}
     </div>
   );
 }

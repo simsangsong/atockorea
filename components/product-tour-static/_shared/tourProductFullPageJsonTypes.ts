@@ -41,6 +41,9 @@ export const TOUR_PRODUCT_VIEW_MODEL_KEYS = [
   "routeVariants",
   /** Optional — private/charter tours with pax × duration pricing matrix. */
   "pricingTiers",
+  /** Optional — private/charter tours surface sample day plans + private-tour
+   *  rules instead of a fixed route-flow timeline. */
+  "sampleItineraries",
   /** Optional — opt-in section rendered above the itinerary for tours with a
    *  live external status feed (currently only `"haenyeo"` for Jeju east tours
    *  that include the haenyeo-show stop). */

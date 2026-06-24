@@ -245,6 +245,10 @@ export function mergeTourProductPageToViewModel(
     typeof (payload as { pricingTiers?: unknown }).pricingTiers === "object"
       ? { pricingTiers: (payload as { pricingTiers?: unknown }).pricingTiers }
       : {}),
+    ...((payload as { sampleItineraries?: unknown }).sampleItineraries &&
+    typeof (payload as { sampleItineraries?: unknown }).sampleItineraries === "object"
+      ? { sampleItineraries: (payload as { sampleItineraries?: unknown }).sampleItineraries }
+      : {}),
   };
 
   /** 정적 이스트 템플릿에서 `typeof vm`이 매우 좁음; DB/JSON 조립은 동일 스키마 런타임 보장 → 단언. */
