@@ -73,6 +73,7 @@ import {
   userMessageRequestsHumanHandoff,
 } from "@/lib/support/handoff";
 import { notifyTelegramNewTicket } from "@/lib/support/telegram-webhook";
+import { SSE_HEADERS, sseEvent } from "@/lib/chatbot/sseStream";
 
 const bodySchema = z.object({
   tourProductSlug: z.string().min(1).max(120),
@@ -97,6 +98,12 @@ const bodySchema = z.object({
   handoffRequested: z.boolean().optional(),
   handoffQuestion: z.string().max(8000).optional(),
   debugNoSideEffects: z.boolean().optional(),
+  /**
+   * Opt into SSE token streaming for the free-form model answer (Track 2).
+   * Deterministic gates still return buffered JSON; the server only streams
+   * when this is true AND CHAT_STREAMING !== "0" (D-T2-1, D-T2-5).
+   */
+  stream: z.boolean().optional(),
 });
 
 const SESSION_COOKIE = "atc_chat_sid";
@@ -248,6 +255,16 @@ function applySessionCookie(resp: NextResponse, session: { token: string; setCoo
   return resp;
 }
 
+/**
+ * Serialize the session cookie as a `Set-Cookie` header value for the raw
+ * `Response` used by the streaming path (NextResponse.cookies isn't available
+ * there). Attributes mirror `applySessionCookie` exactly.
+ */
+function serializeSessionCookie(token: string): string {
+  const maxAge = 60 * 60 * 24 * 30;
+  return `${SESSION_COOKIE}=${token}; Path=/; Max-Age=${maxAge}; HttpOnly; SameSite=Lax`;
+}
+
 async function createSupportTicketAndNotify(
   sb: SupabaseClient,
   ctx: ChatLogContext,
@@ -315,6 +332,230 @@ async function createSupportTicketAndNotify(
   });
 
   return ticketId;
+}
+
+/**
+ * Post-model finalize: catalogue fallback, misrouted override, handoff prompt,
+ * chat logging + escalation + ticket, and cross-session memory roll-forward.
+ *
+ * Extracted verbatim from the inline post-processing block so the buffered path
+ * and the (forthcoming) SSE streaming path run the EXACT same finalize logic on
+ * the full model buffer — a single source of truth for side-effects (D-T2-3,
+ * D-T2-6 R6). No behavior change vs. the previous inline code.
+ */
+type FinalizeAssistantTurnInput = {
+  /** Trimmed full model reply buffer (non-empty). */
+  replyText: string;
+  activeIntent: ReturnType<typeof classifyChatbotQuery>;
+  matcherResult: MatcherResult | null;
+  answerLocale: TourProductPageLocale;
+  tourCatalogContext: string;
+  verifiedBookingContext: string;
+  bookingWriteRequest: boolean;
+  ctx: ChatLogContext;
+  /** The latest user message (last.content). */
+  userMessage: string;
+  modelName: string;
+  elapsedMs: number;
+  locale: TourProductPageLocale;
+  isSiteAssistant: boolean;
+  tourProductSlug: string;
+  pageContext: { url?: string; title?: string; section?: string } | undefined;
+  memoryEnabled: boolean;
+  qaSb: SupabaseClient | null;
+  debugNoSideEffects: boolean;
+  memoryKey: MemoryKey;
+  priorMemory: { summary: string; turnCount: number } | null;
+  genAI: GoogleGenerativeAI;
+};
+
+type FinalizeAssistantTurnResult = {
+  reply: string;
+  ticket_id: number | null;
+  escalated: boolean;
+  escalation_reason: string | null;
+  handoff_offered: boolean;
+};
+
+async function finalizeAssistantTurn(
+  input: FinalizeAssistantTurnInput,
+): Promise<FinalizeAssistantTurnResult> {
+  const {
+    activeIntent,
+    matcherResult,
+    answerLocale,
+    tourCatalogContext,
+    verifiedBookingContext,
+    bookingWriteRequest,
+    ctx,
+    userMessage,
+    modelName,
+    elapsedMs,
+    locale,
+    isSiteAssistant,
+    tourProductSlug,
+    pageContext,
+    memoryEnabled,
+    qaSb,
+    debugNoSideEffects,
+    memoryKey,
+    priorMemory,
+    genAI,
+  } = input;
+  let replyText = input.replyText;
+
+  const isRecommendationIntent =
+    activeIntent.intent === "tour_recommendation" || activeIntent.intent === "tour_catalog";
+  // Deterministic catalogue fallback ONLY when the model essentially returned
+  // nothing useful (short AND no product URL). A substantive, constraint-aware
+  // answer is preserved instead of being clobbered by a flat top-3 list — the
+  // top-3 padding was the main cause of low grounding on constrained queries.
+  if (isRecommendationIntent && replyText.length < 180 && !/\/tour-product\/[a-z0-9-]+/i.test(replyText)) {
+    // Prefer the matcher-ranked reply only on a STRONG match (its weak/CJK-parsed
+    // rankings can miss accessibility); otherwise the keyword catalogue (which
+    // carries the accessibility/family/relaxed profiles) is the safer fallback.
+    const catalogueReply =
+      (matcherResult?.status === "STRONG_MATCH" ? buildMatcherReply(matcherResult, answerLocale) : null) ||
+      buildCatalogueRecommendationReply(tourCatalogContext, answerLocale);
+    if (catalogueReply) {
+      replyText = catalogueReply;
+    }
+  }
+
+  // ──────────────────────────────────────────────────────────────────────
+  // Side-effects: chat log + escalation + ticket + telegram. Failures NEVER
+  // break the user-facing reply (try/catch each; log and move on).
+  // ──────────────────────────────────────────────────────────────────────
+  let ticketCreated: number | null = null;
+  let escalationReason: string | null = null;
+  // A write request on a verified booking forces a support-handoff offer so we
+  // never imply the change was done in-chat.
+  let forceHandoffOffer = bookingWriteRequest;
+  // Skip the misrouted override for a verified booking answer — those facts are
+  // not tour-heavy, and clobbering with the generic handoff would drop a real
+  // answer the user is entitled to.
+  if (!verifiedBookingContext && replyLooksMisrouted(activeIntent.intent, replyText)) {
+    escalationReason = "low_confidence";
+    forceHandoffOffer = true;
+    if (activeIntent.intent === "policy") {
+      replyText = policyFallbackReply(answerLocale);
+    } else if (activeIntent.intent === "booking_specific") {
+      replyText = bookingSpecificReply(answerLocale);
+    } else {
+      replyText = ensureHandoffPrompt(
+        "I could not find a verified answer for that in the current site context.",
+        answerLocale,
+      );
+    }
+  }
+
+  let handoffOffered = forceHandoffOffer || assistantReplyShouldOfferHandoff(replyText);
+  if (handoffOffered) {
+    replyText = ensureHandoffPrompt(replyText, answerLocale);
+  }
+
+  if (process.env.TOUR_MATCH_AUDIT_LOG === "1" || process.env.CHAT_AUDIT_LOG === "1") {
+    const sb = makeServiceRoleClient();
+    if (sb) {
+      try {
+        const log = await logChatTurn(sb, ctx, {
+          userMessage,
+          assistantReply: replyText,
+          model: modelName,
+          elapsedMs,
+        });
+
+        // Escalation detection
+        const decision = await detectEscalation(sb, userMessage, replyText, answerLocale);
+        if (decision.escalate) {
+          escalationReason = decision.reason;
+          if (decision.reason === "low_confidence") {
+            handoffOffered = true;
+            replyText = ensureHandoffPrompt(replyText, answerLocale);
+          } else if (
+            decision.reason === "user_requested_human" ||
+            decision.reason === "sensitive_topic" ||
+            decision.reason === "keyword_match"
+          ) {
+            const summary = buildAdminSummary(userMessage, decision);
+            const { data: ticket } = await sb
+              .from("support_tickets")
+              .insert({
+                session_id: log.sessionId,
+                trigger_message_id: log.assistantMessageId,
+                user_locale: locale,
+                tour_slug: isSiteAssistant ? null : tourProductSlug,
+                page_url: pageContext?.url ?? null,
+                page_title: pageContext?.title ?? null,
+                escalation_reason: decision.reason,
+                initial_user_message: userMessage,
+                initial_summary: summary,
+                status: "open",
+                priority: decision.reason === "sensitive_topic" ? "high" : "normal",
+                unread_for_admin: true,
+              })
+              .select("id")
+              .single();
+
+            if (ticket) {
+              ticketCreated = ticket.id as number;
+              handoffOffered = false;
+              // Mark the triggering chat message as escalated and link to ticket
+              await sb
+                .from("chat_messages")
+                .update({
+                  escalated: true,
+                  escalation_reason: decision.reason,
+                  ticket_id: ticketCreated,
+                })
+                .eq("id", log.assistantMessageId);
+
+              // Fire Telegram notification (no-op if env missing)
+              await notifyTelegramNewTicket(sb, {
+                ticketId: ticketCreated,
+                reason: decision.reason,
+                initialUserMessage: userMessage,
+                tourSlug: isSiteAssistant ? null : tourProductSlug,
+                pageUrl: pageContext?.url ?? null,
+                pageTitle: pageContext?.title ?? null,
+                userLocale: locale,
+              });
+            }
+          }
+        }
+      } catch (logErr) {
+        console.error("[tour-product/assistant] log/escalate error:", (logErr as Error).message);
+      }
+    }
+  }
+
+  // Roll the cross-session memory forward (Track 3.2). Only for intents that
+  // carry durable preferences, and never in debug mode. Best-effort and awaited
+  // (serverless can't reliably finish background work after the response).
+  if (
+    memoryEnabled &&
+    qaSb &&
+    !debugNoSideEffects &&
+    isMemoryRelevantIntent(activeIntent.intent)
+  ) {
+    await updateSessionMemory(qaSb, {
+      key: memoryKey,
+      priorSummary: priorMemory?.summary ?? null,
+      turnCount: priorMemory?.turnCount ?? 0,
+      userMessage,
+      assistantReply: replyText,
+      genAI,
+      modelName,
+    });
+  }
+
+  return {
+    reply: replyText,
+    ticket_id: ticketCreated,
+    escalated: ticketCreated !== null,
+    escalation_reason: escalationReason,
+    handoff_offered: handoffOffered && ticketCreated === null,
+  };
 }
 
 export async function POST(req: NextRequest) {
@@ -849,6 +1090,110 @@ export async function POST(req: NextRequest) {
     return Number.isFinite(raw) && raw >= 0 && raw <= 1 ? raw : 0.35;
   })();
 
+  // ── SSE streaming branch (Track 2, D-T2-1/D-T2-5). Every deterministic gate
+  // has already returned buffered JSON above, so reaching here means a free-form
+  // model answer — the only thing we ever stream. We only stream when the client
+  // asked (stream:true), the kill switch is explicitly ON (CHAT_STREAMING === "1"),
+  // and we're not in debug mode. The switch defaults OFF so the feature ships
+  // DARK: an unset env (the default everywhere until prod QA) falls through to
+  // the buffered path with zero production impact. Light it up in prod with
+  // CHAT_STREAMING=1 + redeploy; roll back by unsetting it (or =0) — no code
+  // change, the client auto-falls back via content-type (D-T2-5).
+  const wantStream =
+    parsed.data.stream === true &&
+    process.env.CHAT_STREAMING === "1" &&
+    !debugNoSideEffects;
+
+  if (wantStream) {
+    const streamT0 = Date.now();
+    const stream = new ReadableStream<Uint8Array>({
+      async start(controller) {
+        let buf = "";
+        try {
+          const chat = model.startChat({
+            history,
+            generationConfig: { maxOutputTokens: 1200, temperature },
+          });
+          const { stream: modelStream } = await chat.sendMessageStream(last.content);
+          for await (const chunk of modelStream) {
+            if (req.signal.aborted) break;
+            const t = chunk.text();
+            if (t) {
+              buf += t;
+              controller.enqueue(sseEvent("delta", { text: t }));
+            }
+          }
+
+          // Client disconnected mid-stream: skip all side-effects, just close.
+          if (req.signal.aborted) return;
+
+          const replyBuffer = buf.trim();
+          if (!replyBuffer) {
+            controller.enqueue(sseEvent("error", { error: "assistant_failed" }));
+            return;
+          }
+
+          // Same finalize as the buffered path, over the full buffer (D-T2-3).
+          const finalized = await finalizeAssistantTurn({
+            replyText: replyBuffer,
+            activeIntent,
+            matcherResult,
+            answerLocale,
+            tourCatalogContext,
+            verifiedBookingContext,
+            bookingWriteRequest,
+            ctx,
+            userMessage: last.content,
+            modelName,
+            elapsedMs: Date.now() - streamT0,
+            locale,
+            isSiteAssistant,
+            tourProductSlug,
+            pageContext,
+            memoryEnabled,
+            qaSb,
+            debugNoSideEffects,
+            memoryKey,
+            priorMemory,
+            genAI,
+          });
+
+          // done.reply is the authoritative text — the client snaps the bubble
+          // to it (D-T2-4), correcting any rare post-process override.
+          controller.enqueue(
+            sseEvent("done", {
+              reply: finalized.reply,
+              ticket_id: finalized.ticket_id,
+              escalated: finalized.escalated,
+              escalation_reason: finalized.escalation_reason,
+              handoff_offered: finalized.handoff_offered,
+              checkout_url: null,
+            }),
+          );
+        } catch (e) {
+          console.error("[tour-product/assistant] stream error:", e);
+          try {
+            controller.enqueue(sseEvent("error", { error: "assistant_failed" }));
+          } catch {
+            /* connection already torn down */
+          }
+        } finally {
+          try {
+            controller.close();
+          } catch {
+            /* already closed */
+          }
+        }
+      },
+    });
+
+    const headers = new Headers(SSE_HEADERS);
+    if (session.setCookie) {
+      headers.append("Set-Cookie", serializeSessionCookie(session.token));
+    }
+    return new Response(stream, { headers });
+  }
+
   const t0 = Date.now();
   let replyText = "";
   try {
@@ -867,157 +1212,36 @@ export async function POST(req: NextRequest) {
   }
   const elapsedMs = Date.now() - t0;
 
-  const isRecommendationIntent =
-    activeIntent.intent === "tour_recommendation" || activeIntent.intent === "tour_catalog";
-  // Deterministic catalogue fallback ONLY when the model essentially returned
-  // nothing useful (short AND no product URL). A substantive, constraint-aware
-  // answer is preserved instead of being clobbered by a flat top-3 list — the
-  // top-3 padding was the main cause of low grounding on constrained queries.
-  if (isRecommendationIntent && replyText.length < 180 && !/\/tour-product\/[a-z0-9-]+/i.test(replyText)) {
-    // Prefer the matcher-ranked reply only on a STRONG match (its weak/CJK-parsed
-    // rankings can miss accessibility); otherwise the keyword catalogue (which
-    // carries the accessibility/family/relaxed profiles) is the safer fallback.
-    const catalogueReply =
-      (matcherResult?.status === "STRONG_MATCH" ? buildMatcherReply(matcherResult, answerLocale) : null) ||
-      buildCatalogueRecommendationReply(tourCatalogContext, answerLocale);
-    if (catalogueReply) {
-      replyText = catalogueReply;
-    }
-  }
-
-  // ──────────────────────────────────────────────────────────────────────
-  // Side-effects: chat log + escalation + ticket + telegram. Failures NEVER
-  // break the user-facing reply (try/catch each; log and move on).
-  // ──────────────────────────────────────────────────────────────────────
-  let ticketCreated: number | null = null;
-  let escalationReason: string | null = null;
-  // A write request on a verified booking forces a support-handoff offer so we
-  // never imply the change was done in-chat.
-  let forceHandoffOffer = bookingWriteRequest;
-  // Skip the misrouted override for a verified booking answer — those facts are
-  // not tour-heavy, and clobbering with the generic handoff would drop a real
-  // answer the user is entitled to.
-  if (!verifiedBookingContext && replyLooksMisrouted(activeIntent.intent, replyText)) {
-    escalationReason = "low_confidence";
-    forceHandoffOffer = true;
-    if (activeIntent.intent === "policy") {
-      replyText = policyFallbackReply(answerLocale);
-    } else if (activeIntent.intent === "booking_specific") {
-      replyText = bookingSpecificReply(answerLocale);
-    } else {
-      replyText = ensureHandoffPrompt(
-        "I could not find a verified answer for that in the current site context.",
-        answerLocale,
-      );
-    }
-  }
-
-  let handoffOffered = forceHandoffOffer || assistantReplyShouldOfferHandoff(replyText);
-  if (handoffOffered) {
-    replyText = ensureHandoffPrompt(replyText, answerLocale);
-  }
-
-  if (process.env.TOUR_MATCH_AUDIT_LOG === "1" || process.env.CHAT_AUDIT_LOG === "1") {
-    const sb = makeServiceRoleClient();
-    if (sb) {
-      try {
-        const log = await logChatTurn(sb, ctx, {
-          userMessage: last.content,
-          assistantReply: replyText,
-          model: modelName,
-          elapsedMs,
-        });
-
-        // Escalation detection
-        const decision = await detectEscalation(sb, last.content, replyText, answerLocale);
-        if (decision.escalate) {
-          escalationReason = decision.reason;
-          if (decision.reason === "low_confidence") {
-            handoffOffered = true;
-            replyText = ensureHandoffPrompt(replyText, answerLocale);
-          } else if (
-            decision.reason === "user_requested_human" ||
-            decision.reason === "sensitive_topic" ||
-            decision.reason === "keyword_match"
-          ) {
-            const summary = buildAdminSummary(last.content, decision);
-            const { data: ticket } = await sb
-              .from("support_tickets")
-              .insert({
-                session_id: log.sessionId,
-                trigger_message_id: log.assistantMessageId,
-                user_locale: locale,
-                tour_slug: isSiteAssistant ? null : tourProductSlug,
-                page_url: pageContext?.url ?? null,
-                page_title: pageContext?.title ?? null,
-                escalation_reason: decision.reason,
-                initial_user_message: last.content,
-                initial_summary: summary,
-                status: "open",
-                priority: decision.reason === "sensitive_topic" ? "high" : "normal",
-                unread_for_admin: true,
-              })
-              .select("id")
-              .single();
-
-            if (ticket) {
-              ticketCreated = ticket.id as number;
-              handoffOffered = false;
-              // Mark the triggering chat message as escalated and link to ticket
-              await sb
-                .from("chat_messages")
-                .update({
-                  escalated: true,
-                  escalation_reason: decision.reason,
-                  ticket_id: ticketCreated,
-                })
-                .eq("id", log.assistantMessageId);
-
-              // Fire Telegram notification (no-op if env missing)
-              await notifyTelegramNewTicket(sb, {
-                ticketId: ticketCreated,
-                reason: decision.reason,
-                initialUserMessage: last.content,
-                tourSlug: isSiteAssistant ? null : tourProductSlug,
-                pageUrl: pageContext?.url ?? null,
-                pageTitle: pageContext?.title ?? null,
-                userLocale: locale,
-              });
-            }
-          }
-        }
-      } catch (logErr) {
-        console.error("[tour-product/assistant] log/escalate error:", (logErr as Error).message);
-      }
-    }
-  }
-
-  // Roll the cross-session memory forward (Track 3.2). Only for intents that
-  // carry durable preferences, and never in debug mode. Best-effort and awaited
-  // (serverless can't reliably finish background work after the response).
-  if (
-    memoryEnabled &&
-    qaSb &&
-    !debugNoSideEffects &&
-    isMemoryRelevantIntent(activeIntent.intent)
-  ) {
-    await updateSessionMemory(qaSb, {
-      key: memoryKey,
-      priorSummary: priorMemory?.summary ?? null,
-      turnCount: priorMemory?.turnCount ?? 0,
-      userMessage: last.content,
-      assistantReply: replyText,
-      genAI,
-      modelName,
-    });
-  }
+  const finalized = await finalizeAssistantTurn({
+    replyText,
+    activeIntent,
+    matcherResult,
+    answerLocale,
+    tourCatalogContext,
+    verifiedBookingContext,
+    bookingWriteRequest,
+    ctx,
+    userMessage: last.content,
+    modelName,
+    elapsedMs,
+    locale,
+    isSiteAssistant,
+    tourProductSlug,
+    pageContext,
+    memoryEnabled,
+    qaSb,
+    debugNoSideEffects,
+    memoryKey,
+    priorMemory,
+    genAI,
+  });
 
   const resp = NextResponse.json({
-    reply: replyText,
-    ticket_id: ticketCreated,
-    escalated: ticketCreated !== null,
-    escalation_reason: escalationReason,
-    handoff_offered: handoffOffered && ticketCreated === null,
+    reply: finalized.reply,
+    ticket_id: finalized.ticket_id,
+    escalated: finalized.escalated,
+    escalation_reason: finalized.escalation_reason,
+    handoff_offered: finalized.handoff_offered,
     debug_intent: debugNoSideEffects ? activeIntent : undefined,
   });
   return applySessionCookie(resp, session);
