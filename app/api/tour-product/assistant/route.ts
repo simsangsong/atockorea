@@ -24,11 +24,13 @@ import {
   hasBothCredentials,
   isBookingWriteRequest,
   verifyAndFetchBooking,
+  findBookingForUser,
   buildVerifiedBookingContext,
   bookingCredentialsPrompt,
   bookingNotFoundReply,
   bookingLockedReply,
 } from "@/lib/chatbot/bookingLookup";
+import { getAuthUser } from "@/lib/auth";
 import {
   checkBookingLookupAllowed,
   recordBookingLookupAttempt,
@@ -361,6 +363,15 @@ export async function POST(req: NextRequest) {
   }
 
   const session = getOrCreateSessionToken(req);
+  // Best-effort identity (Track 3). Logged-in visitors get their session linked
+  // to their account and can ask about their booking without re-entering a
+  // reference. Never throws — anonymous chat must keep working.
+  let authUser: Awaited<ReturnType<typeof getAuthUser>> = null;
+  try {
+    authUser = await getAuthUser(req);
+  } catch (authErr) {
+    console.error("[tour-product/assistant] auth lookup error:", (authErr as Error).message);
+  }
   const ctx: ChatLogContext = {
     sessionToken: session.token,
     userLocale: locale,
@@ -370,6 +381,7 @@ export async function POST(req: NextRequest) {
     pageUrl: pageContext?.url ?? null,
     pageTitle: pageContext?.title ?? null,
     pageSection: pageContext?.section ?? null,
+    userId: authUser?.id ?? null,
   };
 
   const latestUserMessage =
@@ -462,7 +474,26 @@ export async function POST(req: NextRequest) {
     const creds = extractBookingCredentials(recentUserText);
     bookingWriteRequest = isBookingWriteRequest(latestUserMessage);
 
-    if (!hasBothCredentials(creds)) {
+    // Logged-in shortcut (Track 3): an authenticated visitor doesn't need to
+    // re-type a reference — their account already proves identity. We look up
+    // THEIR most recent booking only (by user_id / account email), so there's
+    // no enumeration surface and the credential rate-limit doesn't apply.
+    if (!hasBothCredentials(creds) && authUser) {
+      const lookupSb = makeServiceRoleClient();
+      if (lookupSb) {
+        try {
+          const ownBooking = await findBookingForUser(lookupSb, {
+            id: authUser.id,
+            email: authUser.email,
+          });
+          if (ownBooking) verifiedBookingContext = buildVerifiedBookingContext(ownBooking);
+        } catch (ownErr) {
+          console.error("[tour-product/assistant] own-booking lookup error:", (ownErr as Error).message);
+        }
+      }
+    }
+
+    if (!verifiedBookingContext && !hasBothCredentials(creds)) {
       return applySessionCookie(
         NextResponse.json({
           reply: bookingCredentialsPrompt(bookingLocale),
@@ -476,59 +507,64 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Key the enumeration lock on IP (not the client-controlled session cookie,
-    // which an attacker could rotate per request to dodge the lockout). Fall
-    // back to the session token only when no IP is available.
-    const lookupIp = bestEffortIp(req);
-    const rlKey = lookupIp ? `ip:${lookupIp}` : `sess:${session.token}`;
-    const gate = checkBookingLookupAllowed(rlKey);
-    if (!gate.allowed) {
-      return applySessionCookie(
-        NextResponse.json({
-          reply: bookingLockedReply(bookingLocale),
-          ticket_id: null,
-          escalated: false,
-          escalation_reason:
-            gate.reason === "locked" ? "booking_lookup_locked" : "booking_lookup_rate_limited",
-          handoff_offered: true,
-          debug_intent: debugNoSideEffects ? detectedIntent : undefined,
-        }),
-        session,
-      );
-    }
-    recordBookingLookupAttempt(rlKey);
-
-    const lookupSb = makeServiceRoleClient();
-    let bookingView: Awaited<ReturnType<typeof verifyAndFetchBooking>> = null;
-    if (lookupSb) {
-      try {
-        bookingView = await verifyAndFetchBooking(lookupSb, creds);
-      } catch (lookupErr) {
-        console.error("[tour-product/assistant] booking lookup error:", (lookupErr as Error).message);
+    // Credential path: only when the visitor supplied reference+email (the
+    // logged-in shortcut above may have already set verifiedBookingContext, in
+    // which case there are no creds and we skip the rate-limited enumeration path).
+    if (hasBothCredentials(creds)) {
+      // Key the enumeration lock on IP (not the client-controlled session cookie,
+      // which an attacker could rotate per request to dodge the lockout). Fall
+      // back to the session token only when no IP is available.
+      const lookupIp = bestEffortIp(req);
+      const rlKey = lookupIp ? `ip:${lookupIp}` : `sess:${session.token}`;
+      const gate = checkBookingLookupAllowed(rlKey);
+      if (!gate.allowed) {
+        return applySessionCookie(
+          NextResponse.json({
+            reply: bookingLockedReply(bookingLocale),
+            ticket_id: null,
+            escalated: false,
+            escalation_reason:
+              gate.reason === "locked" ? "booking_lookup_locked" : "booking_lookup_rate_limited",
+            handoff_offered: true,
+            debug_intent: debugNoSideEffects ? detectedIntent : undefined,
+          }),
+          session,
+        );
       }
-    }
+      recordBookingLookupAttempt(rlKey);
 
-    if (!bookingView) {
-      // Identical message regardless of which field was wrong (anti-enumeration).
-      recordBookingLookupFailure(rlKey);
-      return applySessionCookie(
-        NextResponse.json({
-          reply: bookingNotFoundReply(bookingLocale),
-          ticket_id: null,
-          escalated: false,
-          escalation_reason: "booking_not_found",
-          handoff_offered: true,
-          debug_intent: debugNoSideEffects ? detectedIntent : undefined,
-        }),
-        session,
-      );
-    }
+      const lookupSb = makeServiceRoleClient();
+      let bookingView: Awaited<ReturnType<typeof verifyAndFetchBooking>> = null;
+      if (lookupSb) {
+        try {
+          bookingView = await verifyAndFetchBooking(lookupSb, creds);
+        } catch (lookupErr) {
+          console.error("[tour-product/assistant] booking lookup error:", (lookupErr as Error).message);
+        }
+      }
 
-    // Verified — clear failures and let the model answer from the booking facts
-    // (read-only). A write request still falls through but forces a handoff
-    // offer at the end so we never imply we changed anything.
-    recordBookingLookupSuccess(rlKey);
-    verifiedBookingContext = buildVerifiedBookingContext(bookingView);
+      if (!bookingView) {
+        // Identical message regardless of which field was wrong (anti-enumeration).
+        recordBookingLookupFailure(rlKey);
+        return applySessionCookie(
+          NextResponse.json({
+            reply: bookingNotFoundReply(bookingLocale),
+            ticket_id: null,
+            escalated: false,
+            escalation_reason: "booking_not_found",
+            handoff_offered: true,
+            debug_intent: debugNoSideEffects ? detectedIntent : undefined,
+          }),
+          session,
+        );
+      }
+
+      // Verified — clear failures and let the model answer from the booking facts
+      // (read-only). A write request still falls through but forces a handoff
+      // offer at the end so we never imply we changed anything.
+      recordBookingLookupSuccess(rlKey);
+      verifiedBookingContext = buildVerifiedBookingContext(bookingView);
+    }
   }
 
   if (detectedIntent.intent === "legal" && isPrivacyRequestQuestion(latestUserMessage)) {

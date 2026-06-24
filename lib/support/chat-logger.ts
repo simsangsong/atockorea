@@ -19,6 +19,9 @@ export type ChatLogContext = {
   pageUrl?: string | null;
   pageTitle?: string | null;
   pageSection?: string | null;
+  /** Logged-in user id (cross-session memory foundation, Track 3). Null/omitted
+   *  for anonymous visitors. */
+  userId?: string | null;
 };
 
 export type ChatTurn = {
@@ -65,7 +68,13 @@ async function ensureSession(
   if (existing) {
     await sb
       .from("chat_sessions")
-      .update({ last_seen_at: new Date().toISOString(), user_locale: ctx.userLocale ?? undefined })
+      .update({
+        last_seen_at: new Date().toISOString(),
+        user_locale: ctx.userLocale ?? undefined,
+        // Link the session to the user once they're logged in (a session can
+        // start anonymous and become identified mid-conversation).
+        user_id: ctx.userId ?? undefined,
+      })
       .eq("id", existing.id);
     return { sessionId: existing.id as string, nextMessageIndex: (existing.message_count as number) + 1 };
   }
@@ -77,6 +86,7 @@ async function ensureSession(
       user_locale: ctx.userLocale ?? null,
       user_agent: ctx.userAgent ?? null,
       ip_hash: hashIp(ctx.ip),
+      user_id: ctx.userId ?? null,
     })
     .select("id")
     .single();
