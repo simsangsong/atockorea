@@ -97,6 +97,19 @@ module.exports = {
           DEFAULT: 'var(--card)',
           foreground: 'var(--card-foreground)',
         },
+        /**
+         * Admin premium surface system (W1.1 / spec §2). 3-layer surfaces +
+         * 2-tier borders; navy-tinted in dark. Use bg-admin-surface,
+         * border-admin-border, bg-admin-bg, etc. Values: globals.css @layer base.
+         */
+        admin: {
+          bg: 'var(--admin-bg)',
+          surface: 'var(--admin-surface)',
+          'surface-hover': 'var(--admin-surface-hover)',
+          'surface-raised': 'var(--admin-surface-raised)',
+          border: 'var(--admin-border)',
+          'border-strong': 'var(--admin-border-strong)',
+        },
         /** Matches v0 / shadcn-style `gray-150` used by tour-detail-template */
         gray: {
           150: '#ebebeb',
@@ -149,6 +162,10 @@ module.exports = {
         'design-sm': '0 1px 2px rgba(0,0,0,0.05)',
         'design-md': '0 4px 10px rgba(0,0,0,0.08)',
         'design-lg': '0 12px 24px rgba(0,0,0,0.10)',
+        /** Admin premium elevation (W1.1 / spec §2) — aliases of --shadow-1/2/3 */
+        'admin-card': 'var(--shadow-admin-card)',
+        'admin-float': 'var(--shadow-admin-float)',
+        'admin-popover': 'var(--shadow-admin-popover)',
         'home-panel': 'var(--home-shadow-panel), 0 0 0 1px rgba(15, 23, 42, 0.035)',
         'home-neutral-card':
           'var(--home-shadow-neutral-card), 0 0 0 1px rgba(15, 23, 42, 0.032)',

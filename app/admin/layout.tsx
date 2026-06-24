@@ -298,7 +298,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     .sort((a, b) => b.path.length - a.path.length)[0]?.path;
 
   return (
-    <div className="min-h-screen bg-[#eef2f7] flex text-slate-900">
+    <div className="admin-root min-h-screen bg-admin-bg flex text-slate-900">
       {/* Mobile drawer backdrop. Tapping it dismisses the nav. */}
       {mobileNavOpen ? (
         <div
