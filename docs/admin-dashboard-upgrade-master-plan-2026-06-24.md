@@ -32,7 +32,8 @@
 | 0.8 | Codex 플랜 리뷰 통합 (§M) — 인접범위 전체스택 감사 | ✅ 완료 | 3 감사 에이전트 file:line 검증. N11~N26 신규(공개 보안 BLOCKER 4 + MAJOR 다수) + 정정 로그(REFUTED 2: RAG·reviews버킷 / IMPRECISE 6). 별도 doc 생성 거부(단일 SoT). 공개 보안 트랙 분리 권고 |
 | 0.9 | 라이브 DB 대조 (§N) — K-0 해소 | ✅ 완료 | atockorea MCP 라이브 연결. **마이그레이션 드리프트(repo≠live, BLOCKER급 거버넌스)** 발견. N1 REFUTED→드리프트 재분류. **N27(anon-exec PII 익명화 RPC, BLOCKER)**·N28~N32 + perf 62/62/134. §G-6 DDL 충돌0·F1~F3/R1 라이브 확정. D-14·notifications·payments부재 확정 |
 | 0.10 | 플랜 완전화 감사 v3 (§O~§R) | ✅ 완료 | 3 감사 에이전트(완전성갭/신규결함·업그레이드/DDL어드버서리얼). **N33(site_settings 부재 BLOCKER)·B-1(노쇼 전액청구 돈버그 BLOCKER)·B-2/B-3/M-4/M-6/M-7/M-8**. §G-6 DDL 정정 12델타(C#3 FOR UPDATE는 라이브 probe로 REFUTED). 횡단 워크스트림 WS-A~J. 업그레이드 U-1~U-10(§P). 준비사양(§Q: N27 SQL·정합 런북·Phase1 턴키). **실행 WBS(§R) PR 단위 티켓화** |
-| 1 | 기능 안정화 (BLOCKER/MAJOR 버그 수정) | ⏳ 대기 | §D + §O.2. BLOCKER: N23·N27·**N33·B-1**(돈). 선행 게이트 R0(N27 REVOKE·마이그레이션 정합·미진단 라우트). 티켓=§R-1 |
+| 0.11 | 섹션별 딥 리뷰 + 모바일/UX (§S) | ✅ 완료 | 8 에이전트(페이지군6+모바일전담+UX전담). **모바일 판정: 부분 사용가능**(셸 OK, 29p중 12p 반응형0). 신규 결함 S-F1~F16(S-F1 stats OOM·**S-F2 Math.random 비번**·S-F3 audit actor·S-F4/F5 에디터 데이터손상 BLOCKER급). UX 시스템 S-U1~U11(ConfirmDialog/Sonner 기존자산 미사용·URL필터·nav IA). REFUTED 2(SortableImageCard 케이싱·"전부 데스크톱"). **진단 종료점** |
+| 1 | 기능 안정화 (BLOCKER/MAJOR 버그 수정) | ⏳ 대기 | §D + §O.2 + §S.2. BLOCKER: N23·N27·**N33·B-1·S-F1·S-F2**. 선행 게이트 R0 + R2.0(모바일 기반). 티켓=§R-1 |
 | 2 | 디자인 시스템 통합 (토큰·팔레트·타이포·i18n) | ⏳ 대기 | §H.1. 모든 페이지 개편의 선행 조건 |
 | 3 | 페이지별 UI/UX 개편 | ⏳ 대기 | §H.2~. Phase 2 토큰 위에서 한 페이지씩 |
 | 4 | 데이터 모델 확장 (정산 원가/수수료·귀속·감사로그·견적 이탈) | ⏳ 대기 | §E·§F·§G. 마이그레이션 + 백필 |
@@ -88,6 +89,7 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 | 2026-06-24 | Phase 0.8 — §M Codex 리뷰 통합. 3 감사 에이전트(공개커머스/보안인프라/데이터RAG성능) file:line 검증. N11~N26 + R5/R6 REFUTED + P1~P3. 별도 deep-audit doc 생성 거부(단일 SoT). 공개 보안 트랙 분리 | (this) | Codex 21주장 중 REFUTED 2(RAG 완전연결·reviews=폴더)·IMPRECISE 6 — 무검증 인용 차단 |
 | 2026-06-24 | Phase 0.9 — §N 라이브 DB 대조(atockorea MCP). 마이그레이션 드리프트(repo 32 vs live 48, ~9만 일치)·N1 REFUTED→드리프트·N27 anon-exec PII RPC(BLOCKER)·N28~N32·perf 62/62/134. §G-6 DDL 라이브 충돌0, F1~F3/R1 라이브 확정 | (this) | K-0 해소. pending-db-apply 수동 워크플로가 드리프트 원인. payments/notifications 라이브 부재 확정 |
 | 2026-06-24 | Phase 0.10 — §O~§R 플랜 완전화. 3 감사 에이전트 + 라이브 검증. N33(site_settings 부재)·B-1(노쇼 돈버그)·B-2/B-3/M-4/M-6/M-7/M-8 신규. §G-6 DDL 12델타 정정(C#3 FOR UPDATE는 probe로 REFUTED). 횡단 WS-A~J·업그레이드 U-1~10·준비사양(N27 SQL/정합 런북/Phase1 턴키)·실행 WBS(§R) | (this) | unified_inquiries 컬럼 라이브 검증·E-5 재고UI 보류(availability unlimited 충돌)·N1/D-15 stale 정정 |
+| 2026-06-24 | Phase 0.11 — §S 섹션별 딥리뷰 + 모바일/UX. 8 에이전트. 모바일 정량판정(29p중 12p 반응형0·최악 support/match-pois/sessions/retention). 신규 S-F1~F16(stats OOM·Math.random 비번·audit actor·에디터 데이터손상)·S-U1~U11(ConfirmDialog/Sonner 기존자산·URL필터·nav IA). 모바일 패턴 카탈로그→R2.0 기반 티켓 | (this) | REFUTED: SortableImageCard 케이싱·"전부 데스크톱전용"(셸은 모바일 인지). 진단 종료점 — Phase 1 착수 권고 |
 
 ---
 
@@ -1125,6 +1127,84 @@ GRANT  EXECUTE ON FUNCTION public.analytics_health_snapshot()               TO s
 
 ---
 
+# §S. 섹션별 딥 리뷰 + 모바일/UX 집중 감사 (Phase 0.11 — 2026-06-24)
+
+> 사용자 지시("섹션별 에이전트 전부 파견, 더 깊은 리뷰, UI/UX 중점 + 모바일 최적화(사용 절반+이 모바일)"). 8개 에이전트(페이지군 6 + 모바일 전담 + UI/UX 휴리스틱 전담) file:line 직접 대조. **검증 가능한 에이전트 주장은 검증**(예: SortableImageCard 케이싱·셸 데스크톱전용 → REFUTED). 기존 §D/§K-6/§M/§N/§O와 중복은 제거, 신규만 등재.
+
+## S.0 왜 딥 리뷰마다 결함이 나오나 (수렴 진단)
+- **매 패스 = 새 렌즈/표면.** Phase0(mock-trace)→§K(재검증)→§M(공개API)→§N(라이브DB)→§O(미진단 라우트)→§S(모바일/UX 품질). 매번 *직전에 안 본 코드*를 봄 → 신규 결함은 부실이 아니라 범위 확장의 정상 산물.
+- **수렴 신호:** 이미 본 영역에선 *정정*만, 신규 correctness 버그는 새 표면에서만. §S는 마지막 큰 미탐색 렌즈(실제 UX/모바일). **이후 패스는 회귀(중복)율이 급증할 것** — §S를 사실상 진단 종료점으로 보고 Phase 1 착수 권고.
+- **근본 원인:** 어드민이 여러 세션에 걸쳐 빠르게 증축됨 + 신/구 코드 세대 공존(products/poi=현대, orders/merchants/contacts=레거시) → 결함 밀도가 구세대에 집중.
+
+## S.1 모바일 정량 판정 (사용 절반+ = 1급 렌즈)
+- **판정: 부분 사용가능.** ✅ 셸은 모바일 인지(`layout.tsx`: 햄버거+드로어 `w-[264px]`·하단 탭바·`pb-[calc(4rem+safe-area)]`) → "어드민 전부 데스크톱 전용"은 **REFUTED**. ✅ orders/merchants/contacts/dashboard는 `md:hidden` 카드 폴백 보유.
+- **❌ 그러나 29개 페이지 파일 중 12개가 반응형 클래스(`sm:/md:/lg:`) 0개**, 7개는 1~2개뿐. 개별 페이지 콘텐츠(테이블·에디터·차트)가 모바일에서 깨짐.
+- **최악(375px 즉시 파손):** ① `support`(9컬럼 `<table>` 폴백 0) ② `match-pois`(`w-80 flex-shrink-0` 2-pane, 브레이크포인트 0 → 에디터 ~55px 슬리버, **완전 사용불가**) ③ `analytics/product/sessions`·`events`(`grid-cols-12` 반응형 0) ④ `retention`(코호트 매트릭스, 레이아웃 컨테이너 `overflow` 미제약으로 뷰포트 밖 출혈) ⑤ `qa-review`·`settings`(반응형 0).
+
+### S.1-MOB 모바일 패턴 카탈로그 (반복 결함 — 토큰/기반에서 일괄 처리)
+| 패턴 | 심각도 | 대표 증거 | 일괄 수정 |
+|---|---|---|---|
+| **iOS 입력 줌**(`<input/select/textarea>` font<16px) | 🟠 광범위(~30+) | `SortableImageCard.tsx:128,135`·`ProductEditorPane.tsx:832`·`contacts:371`·`emails:430`·`support/[id]:211` `text-sm/xs` | 전역 CSS `input,select,textarea{font-size:max(16px,1em)}` 또는 `text-base` 일괄 |
+| **터치타깃 <44px**(`p-1/p-1.5/h-7` 아이콘버튼) | 🟠 광범위 | `ProductsListPane:109`·`MediaSection:413`·`PoiListPane:97,106`·`merchants:422`·`orders:244` | `min-h-[44px] min-w-[44px]` 또는 hit-area 확장 wrapper |
+| **마이크로 텍스트** `text-[9/10/11px]` | 🟠 다수 | `SortableImageCard:100-116`(9px)·`layout:351`·`sessions:140`(11px mono)·`orders:400`(10px) | 의미전달 텍스트 최소 `text-xs`(12px) |
+| **반응형 없는 데이터 테이블/그리드** | 🔴 5+ 페이지 | `support:105`(9-col)·`sessions:119`·`events:117`(grid-12)·`retention:112` | `overflow-x-auto`+`min-w` 또는 `md:hidden` 테이블 / 카드 폴백(orders 패턴 복제) |
+| **고정폭 pane 미붕괴** | 🔴 | `match-pois/PoiListPane:87` `w-80 flex-shrink-0`(브레이크포인트 0) | `hidden lg:flex`+모바일 list→detail 푸시(products 패턴 복제) |
+| **hover 전용 툴팁/액션**(터치 무반응) | 🟠 | `analytics/product/page:78`·`events/[name]:69`·`retention:151` `title+group-hover`; `upload:108` 복사버튼 | tap 팝오버 또는 상시 표시 |
+| **90바 차트 ~3.5px 비가시** | 🟠 | `product/page` MiniBarChart·`events/[name]` 90일 | >30바 다운샘플 또는 라인차트 |
+| **`top-[52px]`/`100vh` 모바일 취약** | 🟡 | `contacts:346` `top-[52px]`·`match-pois:35` `100vh`(dvh 아님) | CSS var(헤더h)·`100dvh` |
+| **헤더 safe-area-inset-top 누락**(노치 침범) | 🟡 | `layout:371` `h-[52px] sticky` | `pt-[env(safe-area-inset-top)]` |
+| **iOS WebView `confirm()` 억제** → 정산 무음실패 | 🟠 | `orders/[id]:123`·`merchants:82,117` native `confirm` | ConfirmDialog 교체(S.3와 동일 수정) |
+
+## S.2 신규 기능/정확성 결함 (8 에이전트 합산·중복제거, §D/§N/§O 기존 제외)
+| ID | 심각도 | 결함 | 증거 |
+|---|---|---|---|
+| **S-F1** | 🔴 | `stats` 매출이 **전 paid 예약을 Node로 적재해 JS SUM**(`.limit()` 없음) → 5만행+ OOM/타임아웃. (§N26 overfetch와 별개 — 이건 stats route) | `api/admin/stats/route.ts:59-71` |
+| **S-F2** | 🔴 | 머천트 생성이 **`Math.random()`로 임시 비밀번호 생성**(비-CSPRNG). 안전한 `/create`(crypto.randomBytes)는 dead. UI는 약한 쪽 호출. | `api/admin/merchants/route.ts:117` vs `create/route.ts:46` |
+| **S-F3** | 🟠 | 머천트 생성 audit_logs actor가 **관리자 아닌 신규 머천트 user_id**(주석은 "Admin user ID"라 자칭) → 감사 추적 무효. §E-3/§K-7.4 헬퍼 설계에 직접 영향. | `create/route.ts:127-139` |
+| **S-F4** | 🟠 | ProductEditor `onMediaChange`가 교차상품 stale-save 가드 우회 → 갤러리 드래그가 상품전환 후 완료 시 **다른 상품 미디어 덮어씀**(무음 데이터 손상). | `ProductEditorPane.tsx:387` |
+| **S-F5** | 🟠 | 로케일 전환이 `useEffect([row])`로 `draft`를 즉시 덮어써 **미저장 편집 무음 폐기**(beforeunload·확인 없음). | `ProductEditorPane.tsx:95-105,409` |
+| **S-F6** | 🟠 | 머천트 DELETE가 **merchants 삭제 후 user_profiles 역할 리셋** → FK cascade면 역할리셋 no-op, Auth 계정 불일치. | `merchants/[id]/route.ts:208-218` |
+| **S-F7** | 🟠 | 머천트 PUT가 빈 body(`{}`) 수용 → `.update({})` no-op인데 **200 success 반환**(무변경 위장). | `merchants/[id]/route.ts:117-122` |
+| **S-F8** | 🟠 | 머천트 검색이 **서버+클라 이중 필터**(`page.tsx:177` 클라 재필터 + `:51` 서버) → status+검색 동시 시 모순 결과. effect dep에 `searchQuery` 누락(stale closure). | `merchants/page.tsx:33-35,177-182` |
+| **S-F9** | 🟠 | `emails` 페이지가 `response.json()`을 `response.ok` 검사 **전에** 호출 → 비-JSON 5xx 시 파싱 throw로 `finally` 미실행 → **로딩 영구 고착**. | `emails/page.tsx:104-105` |
+| **S-F10** | 🟠 | `experiments/[key]` 막대폭이 빈 데이터에서 `Math.max(...[])=-Infinity` → `width:NaN%`(무음 오표시). funnels/[key]·events도 유사 빈배열 spread. | `experiments/[key]/page.tsx:99` |
+| **S-F11** | 🟡 | settle 캡처가 `tour_completed`에도 booking을 즉시 `completed`로 — 투어 미실행 시 조기 완료 표기 + 정산후 메일 없음. | `settle/route.ts:175` |
+| **S-F12** | 🟡 | `orders/[id]` `holdMsLeft`가 렌더시 `Date.now()` 1회 계산 → "Xh left"/"EXPIRED" 정적(만료 임박 오표시). | `orders/[id]/page.tsx:281-288` |
+| **S-F13** | 🟡 | merchant create 폼에 `addressLine2` state는 있으나 **입력 필드 미렌더**(수집·편집 불가). | `create/page.tsx:19` vs JSX |
+| **S-F14** | 🟡 | 머천트 `merchant_settings` insert fire-and-forget(에러 삼킴) → 설정 없는 머천트 고아 가능. | `create/route.ts:119-125` |
+| **S-F15** | 🟡 | contacts read-마킹 낙관적 업데이트가 PATCH 실패 시 **롤백 없음**(세션 내내 잘못된 read 상태). | `contacts/page.tsx:92-118` |
+| **S-F16** | 🟡 | match-pois `dirty`가 `JSON.stringify` 키순서 의존 → API 응답 키 재정렬 시 **첫 로드부터 false-dirty**(Save 즉시 활성). products `detail_payload` 비교도 동일. | `PoiEditorPane.tsx:29-36`·`ProductEditorPane.tsx:129` |
+
+## S.3 UI/UX 시스템 결함 (휴리스틱 — §K-6 드리프트 넘어선 품질)
+> 최악 휴리스틱 = **에러 예방/복구**. 핵심: 재사용 자산이 이미 있는데 미사용.
+| ID | 항목 | 증거·기회 |
+|---|---|---|
+| **S-U1** | **`ConfirmDialog`가 이미 존재**(`components/mypage/ConfirmDialog.tsx`) + **Sonner 설치·products에서 사용 중**인데, 레거시 페이지는 27+ `alert()/confirm()` 그대로. | 신규 컴포넌트 발명 불필요 — 기존 채택. merchants/orders/contacts/layout. iOS WebView `confirm` 억제(S.1-MOB) 동시 해결 |
+| **S-U2** | **URL 필터 영속 전무**(orders/merchants/contacts/support 전부 useState만) → 새로고침·공유·뒤로가기로 필터 컨텍스트 소실. | `useSearchParams`+`router.replace` 패턴(§P U-8과 연계) |
+| **S-U3** | **재fetch 시 전체 스피너 교체**(stale 미유지) → 필터/정렬마다 리스트 전체가 사라짐(최고트래픽 orders). | `isFetching` 오버레이로 전환(데이터 유지) |
+| **S-U4** | **날짜포맷 3개 로케일 혼재**(`ko-KR`/`en-US`/무인자) + `getStatusColor` 3곳 복붙. | 공유 유틸 `lib/format/date.ts`·`booking-status.ts` |
+| **S-U5** | **support·qa-review가 nav(`adminMenuItems`)에 없음** → 내부 링크로만 도달(IA 결함). nav 그룹핑(운영/소통/콘텐츠/분석/시스템)도 없음. | `layout.tsx:38-51` |
+| **S-U6** | **레거시 `/admin/analytics` ↔ `/product/*` 상호 링크/리다이렉트 없음** → 강력한 엔진이 사이드바에서 안 보임(§B 결정 직결). chatbot escalation율은 계산되나 **미렌더**. | `analytics/page.tsx`·`chatbot-analytics/page.tsx:125` |
+| **S-U7** | **"Coming Soon: 오토세이브+단축키" 카드가 사실과 반대**(오토세이브는 이미 구현됨 L191) — 라이브 UI에 잘못된 미래약속 표시. | `ProductEditorPane.tsx:709-717` |
+| **S-U8** | contacts 관리자 노트·ProductEditor에 **dirty/미저장 경고 부재**(전환 시 무음 폐기). 폼 일반: disabled-on-submit·필드별 에러·autofocus 부재(레거시 전반). | `contacts:148-178` |
+| **S-U9** | support 채팅 버블 **정렬 깨짐**(assistant `self-end`가 column flex에서 무효 → 전부 좌측). 메타에 날짜 없이 시각만(멀티데이 모호). | `support/[id]/page.tsx:165-184,177` |
+| **S-U10** | 색상 단독 신호(unread dot·상태배지)에 aria/텍스트 보조 없음; 인박스 행 `<button>`에 aria-label 없음; 셀렉트 visible label 없음. | `contacts:292`·`orders:255`(aria-label 0) |
+| **S-U11** | chatbot-analytics `p-6`가 셸 `p-4` 위에 **이중 패딩**(40px 거터, 타 페이지 16px); settings는 `gray-*`/`indigo-*`(타 페이지 `slate-*`/`blue-*`). | `chatbot-analytics:113`·`settings:94+` |
+
+## S.4 검증/정정 (에이전트 주장 재검증)
+- ❌ **REFUTED — SortableImageCard 케이싱**: 에이전트4가 "파일 없음(케이싱)"이라 했으나 `app/admin/products/_components/sections/SortableImageCard.tsx` **정확한 케이싱으로 실재**(glob 실패였음). CI 빌드 리스크 없음.
+- ❌ **REFUTED — "어드민 전부 데스크톱 전용"**: 셸은 모바일 인지(S.1). 정확히는 **셸 OK / 개별 페이지 콘텐츠 파손**.
+- ✅ 기존 강화 확인(중복, 신규 아님): D-1 하드코딩0·D-8 cms loadState·D-12 chatbot 30일·D-13 support 더블서밋·B-2 onAuthStateChange·M-6 KST·M-8 프로필 자동생성·N10 qa serial count — 라이브/코드 재확인됨.
+
+## S.5 §R WBS 반영 (모바일/UX를 기반·페이지에 분배)
+- **R2(토큰) 확장 — 신규 R2.0 "모바일 기반 + 공유 유틸"(선행):** 전역 입력 16px(iOS줌)·터치타깃 44px 유틸·`text-xs` 최소·`100dvh`·safe-area-inset·`ConfirmDialog`/Sonner 채택·`lib/format/{date,booking-status}` 공유유틸·`useUrlFilters` 훅. **이게 R3 모든 페이지 개편의 기반.**
+- **R3(페이지 개편) DoD에 "모바일 패리티" 필수화:** 각 페이지 = 반응형(테이블→카드 폴백) + 터치타깃 + 입력16px + stale-유지 fetch + URL필터 + alert→ConfirmDialog/toast + dirty가드. **우선순위 재정렬(모바일 최악순):** support(R3.x)·match-pois·analytics sessions/events/retention을 상위로.
+- **R1(기능 안정화)에 신규 BLOCKER 추가:** S-F1(stats OOM)·S-F2(Math.random 비번)·S-F3(audit actor)·S-F4/S-F5(에디터 데이터손상).
+- **§E-3/§K-7.4 audit 설계 정정:** actor=관리자 id 보장(S-F3).
+- **nav IA 수정(S-U5)·analytics 엔진 노출(S-U6)** → R3.1/H-2에 편입.
+
+---
+
 # §L. 세션 인수인계 (다음 세션이 100% 이어받기 위한 단일 요약)
 
 ## L-0. 한 줄 상태
@@ -1139,6 +1219,7 @@ GRANT  EXECUTE ON FUNCTION public.analytics_health_snapshot()               TO s
 - **0.8 Codex 통합**(§M): 3 감사 에이전트 file:line 검증 → 공개 보안 BLOCKER 4(N11 inventory·N13 promo·N14 checkout IDOR·N16 confirm-email IDOR) + MAJOR 다수 + ⚙️어드민(N23 cron fail-open·N24 webhook·N25 notifications드리프트·N26 overfetch). **REFUTED 2**(R5 RAG 완전연결·R6 reviews=폴더), IMPRECISE 6. 별도 doc 생성 거부.
 - **0.9 라이브 DB 대조**(§N): atockorea MCP 라이브 연결(K-0 해소). **마이그레이션 드리프트(repo 32 vs live 48, ~9만 일치 — pending-db-apply 수동 워크플로)** = BLOCKER급 거버넌스. N1 REFUTED(라이브 실재)→드리프트 재분류. **N27**(anon/PUBLIC이 REST로 비가역 PII 익명화 RPC 호출, BLOCKER)·N28(contact_inquiries permissive insert)·N29(matview API 노출)·N30~N32. §G-6 DDL 라이브 충돌0·F1~F3(통화혼입 ACTIVE: krw+usd 실데이터)·R1(UNIQUE) 라이브 확정. payments/notifications 라이브 부재 확정. perf 62 rls_initplan/62 multi-policy/134 unused-index.
 - **0.10 완전화 감사**(§O~§R): 3 감사 에이전트 + 라이브 검증. **N33**(site_settings 어떤 스키마에도 부재 → D-11 설정·D-8 CMS·홈카드 영속 전부 무력, BLOCKER)·**B-1**(노쇼가 위약금 아닌 전액 청구, 돈 BLOCKER)·B-2(layout onAuthStateChange 없음)·B-3(상태 state machine 없음)·M-4(투어 DELETE 예약무시)·M-6(KST 타임존)·M-7(형제로케일 덮어쓰기)·M-8(layout 프로필 자동생성). §G-6 DDL **12 정정 델타**(O.3) — C#3 FOR UPDATE는 라이브 probe로 **REFUTED**(구문 유효). 누락 횡단 워크스트림 WS-A~J(관측성·테스트·롤백·rate-limit·i18n·a11y·perf·DR·RBAC·시크릿). 업그레이드 U-1~U-10(§P). 준비사양 §Q(N27 SQL·정합 런북·Phase1 턴키). **실행 WBS §R**(PR단위 티켓 R0~R9).
+- **0.11 섹션별 딥리뷰 + 모바일/UX**(§S): 8 에이전트. **모바일 부분 사용가능**(셸은 햄버거+드로어+하단탭으로 모바일 인지 — "전부 데스크톱전용" REFUTED / 그러나 29p중 12p 반응형0, 최악 support·match-pois·sessions·retention). 신규 기능결함 **S-F1**(stats 매출 OOM)·**S-F2**(머천트 비번 `Math.random()` 비-CSPRNG)·**S-F3**(audit actor=관리자 아닌 신규머천트)·S-F4/F5(에디터 교차상품/로케일 데이터손상)·F6~F16. UX 시스템 **S-U1**(ConfirmDialog·Sonner 기존자산 미사용→27+ alert/confirm)·S-U2(URL필터 영속0)·S-U3(재fetch 스피너교체)·S-U4(날짜포맷/getStatusColor 중복)·S-U5(support·qa-review nav 부재 IA)·S-U6~U11. 모바일 패턴 카탈로그(iOS줌·터치44px·micro텍스트·테이블폴백) → **R2.0 기반 티켓** 신설, R3 페이지 DoD에 모바일패리티 필수화. **진단 종료점 — Phase 1 착수 권고.**
 
 ## L-2. 다음 할 일 (우선순위)
 1. ✅ **③ §G 정산/세무 데이터모델 + 마이그레이션 브리지 — 완료**(§G-6). 다음 세션은 이 설계를 Phase 4 마이그레이션으로 구현(사용자 승인 + §J #2/#6/#8~10 입력 후).
