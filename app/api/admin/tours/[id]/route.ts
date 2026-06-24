@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { requireAdmin } from '@/lib/auth';
 import { applyTourWriteRules } from '@/lib/admin/tour-write-rules';
+import { ACTIVE_BOOKING_STATUSES } from '@/lib/constants/booking-status';
 
 function parseNullableNumber(value: unknown): number | null {
   if (value === null || value === undefined || value === '') return null;
@@ -348,6 +349,28 @@ export async function DELETE(
 
     if (!existing) {
       return NextResponse.json({ error: 'Tour not found' }, { status: 404 });
+    }
+
+    // M-4: don't orphan active/future bookings. Mirror the merchant DELETE guard.
+    const { count: activeBookings, error: countError } = await supabase
+      .from('bookings')
+      .select('id', { count: 'exact', head: true })
+      .eq('tour_id', tourId)
+      .in('status', ACTIVE_BOOKING_STATUSES as unknown as string[]);
+
+    if (countError) {
+      return NextResponse.json(
+        { error: 'Failed to check existing bookings', details: countError.message },
+        { status: 500 }
+      );
+    }
+    if (activeBookings && activeBookings > 0) {
+      return NextResponse.json(
+        {
+          error: `Cannot delete this tour — ${activeBookings} active booking(s) still reference it. Cancel or complete them first.`,
+        },
+        { status: 409 }
+      );
     }
 
     await supabase.from('pickup_points').delete().eq('tour_id', tourId);
