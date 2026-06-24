@@ -443,7 +443,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
       "catalog_card": {
         "slug": "jeju-eastern-unesco-spots-day-tour",
         "title": "Jeju East UNESCO Day Tour",
-        "subtitle": "Small-group mini-coach with English/Chinese guide — 9-hour eastern Jeju loop covering Hamdeok, Seongeup, Micheon Cave, Seongsan UNESCO crater, and the Haenyeo Museum.",
+        "subtitle": "Small-group minibus with English/Chinese guide — loop Hamdeok Beach, Seongeup Folk Village, Seongsan Ilchulbong (UNESCO), the haenyeo diving performance, and Manjanggul (UNESCO) in a 9-hour eastern route.",
         "region": "Eastern Jeju",
         "duration": "9 hours",
         "stopsCount": 8,
@@ -459,11 +459,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
         "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
-        "priceLabel": "From US$59 per person (was $69, 14% off)",
-        "shortCardDescription": "A small-group day tour covering eastern Jeju's UNESCO and signature stops in a single 9-hour loop — Hamdeok Seoubong Beach, Seongeup Folk Village, Micheon Cave (a separate commercial show cave visited as an alternative when Manjanggul is closed), Seongsan Ilchulbong (UNESCO Natural Heritage Sunrise Peak), and the Haenyeo Museum dedicated to Jeju's UNESCO-listed women divers. ALL admissions included; certified English/Chinese-speaking guide."
+        "priceLabel": "From US$47 per person (was $59, 20% off) · ≈₩72,000",
+        "shortCardDescription": "Loop eastern Jeju's UNESCO sights in a 9-hour small group. Includes Hamdeok Seoubong Beach, Seongeup Folk Village (UNESCO folk heritage), Seongsan Ilchulbong and Manjanggul — two UNESCO World Natural Heritage sites inscribed together in 2007 — plus a haenyeo diving performance (Haenyeo Museum if canceled). All admissions included, certified English/Chinese-speaking guide."
       },
       "price": {
-        "amountLabel": "59"
+        "amountLabel": "47"
       }
     },
     "jeju-grand-highlights-loop": {
@@ -1305,7 +1305,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
       "catalog_card": {
         "slug": "jeju-eastern-unesco-spots-day-tour",
         "title": "제주 동부 유네스코 일일 투어",
-        "subtitle": "소그룹 미니버스, 영어·중국어 가이드 — 함덕해변·성읍민속마을·미천굴·성산일출봉(유네스코)·해녀박물관을 9시간 동부 루프로 일주합니다.",
+        "subtitle": "소그룹 미니버스, 영어·중국어 가이드 — 함덕해변·성읍민속마을·성산일출봉(유네스코)·해녀 물질공연·만장굴(유네스코)을 9시간 동부 루프로 일주합니다.",
         "region": "동제주",
         "duration": "9시간",
         "stopsCount": 8,
@@ -1321,11 +1321,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
         "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
-        "priceLabel": "1인 US$59 (정가 $69, 14% 할인)",
-        "shortCardDescription": "제주 동부 유네스코 및 핵심 명소를 9시간 소그룹으로 일주하는 투어입니다. 함덕 서우봉해변, 성읍민속마을(유네스코), 미천굴 용암동굴(만장굴 운영 중단 기간 대체), 성산일출봉(유네스코 세계자연유산), 해녀박물관(유네스코 해녀문화) 포함. 전 입장료 포함, 공인 가이드."
+        "priceLabel": "1인 US$47 (정가 $59, 20% 할인) · 약 72,000원",
+        "shortCardDescription": "제주 동부 유네스코 명소를 9시간 소그룹으로 일주합니다. 함덕 서우봉해변, 성읍민속마을(유네스코 민속), 성산일출봉과 만장굴 — 2007년 함께 등재된 두 유네스코 세계자연유산, 그리고 해녀 물질공연(취소 시 해녀박물관) 포함. 전 입장료 포함, 공인 영어·중국어 가이드."
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "47"
       }
     },
     "jeju-grand-highlights-loop": {
@@ -2167,7 +2167,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
       "catalog_card": {
         "slug": "jeju-eastern-unesco-spots-day-tour",
         "title": "济州东部UNESCO一日游",
-        "subtitle": "含英文/中文导游的小团迷您巴士——9小时东济州环线，覆盖顶级UNESCO景点。",
+        "subtitle": "小团迷你巴士，英语·中文导游 — 以9小时东部环线游览咸德海水浴场·城邑民俗村·城山日出峰（联合国教科文组织）·海女潜水表演·万丈窟（联合国教科文组织）。",
         "region": "济州东部",
         "duration": "9小时",
         "stopsCount": 8,
@@ -2183,11 +2183,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
         "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
-        "priceLabel": "每人 US$59（原价$69，14% 优惠）",
-        "shortCardDescription": "涵盖东济州UNESCO及代表性景点的小团一日游：济州石文化公园、城山日出峰（UNESCO）、涉地可支海岸、万丈窟熔岩洞穴（UNESCO）及私人马场体验。通过合理安排游览顺序，尽量避开旺季人流。"
+        "priceLabel": "每人 US$47（原价 $59，立减20%），约₩72,000",
+        "shortCardDescription": "以9小时小团环游济州东部联合国教科文组织景点。涵盖咸德海水浴场、城邑民俗村（联合国教科文组织民俗）、城山日出峰与万丈窟 — 2007年共同登录的两处联合国教科文组织世界自然遗产，以及海女潜水表演（取消时改为海女博物馆）。含全部门票，持证英语·中文导游。"
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "47"
       }
     },
     "jeju-grand-highlights-loop": {
@@ -3029,7 +3029,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
       "catalog_card": {
         "slug": "jeju-eastern-unesco-spots-day-tour",
         "title": "濟州東部UNESCO一日遊",
-        "subtitle": "含英語/中文導遊的小團體迷您巴士——9小時東濟州環線，覆蓋頂級UNESCO景點。",
+        "subtitle": "小團體迷你巴士、英語·中文導遊 — 以9小時東部環線環遊咸德海灘·城邑民俗村·城山日出峰（聯合國教科文組織）·海女潛水表演·萬丈窟（聯合國教科文組織）。",
         "region": "濟州東部",
         "duration": "9小時",
         "stopsCount": 8,
@@ -3045,11 +3045,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
         "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
-        "priceLabel": "每人 US$59（原價$69，14% 優惠）",
-        "shortCardDescription": "涵蓋東濟州UNESCO及代表性景點的小團體一日遊：濟州石文化公園、城山日出峰（UNESCO）、涉地可支海岸、萬丈窟熔岩洞穴（UNESCO）及私人馬場體驗。透過合理安排遊覽順序，盡量避開旺季人流。"
+        "priceLabel": "每人 US$47（原價 $59，省20%），約₩72,000",
+        "shortCardDescription": "以9小時小團體環遊濟州東部的聯合國教科文組織景點。涵蓋咸德西牛峰海水浴場、城邑民俗村（聯合國教科文組織民俗）、城山日出峰與萬丈窟 — 2007年一同登錄的兩處聯合國教科文組織世界自然遺產，以及海女潛水表演（取消時改為海女博物館）。含全部門票，配備認證英語·中文導遊。"
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "47"
       }
     },
     "jeju-grand-highlights-loop": {
@@ -3891,7 +3891,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
       "catalog_card": {
         "slug": "jeju-eastern-unesco-lugares-day-tour",
         "title": "Jeju Este: UNESCO Día",
-        "subtitle": "El tour de Jeju Este con más reseñas — todas las entradas incluidas.",
+        "subtitle": "Minibús de grupo pequeño, guía en inglés y chino — recorre en un bucle por el este de 9 horas la playa Hamdeok, la Aldea Folclórica de Seongeup, Seongsan Ilchulbong (UNESCO), el espectáculo de buceo de las haenyeo y Manjanggul (UNESCO).",
         "region": "Jeju Este",
         "duration": "9 horas",
         "stopsCount": 8,
@@ -3906,11 +3906,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
         "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
-        "priceLabel": "Desde US$59 por persona (antes $69, 14% descuento)",
-        "shortCardDescription": "Excursión de un día en grupo pequeño por el este de Jeju cubriendo los hitos UNESCO y los puntos representativos en un único recorrido de 9 horas: Playa Hamdeok Seoubong, Aldea Folclórica Seongeup, Cueva Micheon en Ilchul Land, Seongsan Ilchulbong (Pico del Amanecer, Patrimonio Natural UNESCO) y el Museo Haenyeo. Todas las entradas incluidas, guía certificado."
+        "priceLabel": "US$47 por persona (precio normal $59, 20% de descuento) · aprox. 72.000 won",
+        "shortCardDescription": "Recorre los lugares UNESCO del este de Jeju en un bucle en grupo pequeño de 9 horas. Incluye la playa Hamdeok Seoubong, la Aldea Folclórica de Seongeup (patrimonio folclórico UNESCO), Seongsan Ilchulbong y Manjanggul — los dos sitios del Patrimonio Natural Mundial de la UNESCO inscritos juntos en 2007 — y el espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela). Todas las entradas incluidas, guía certificado en inglés y chino."
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "47"
       }
     },
     "jeju-grand-highlights-loop": {
@@ -4750,7 +4750,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
       "catalog_card": {
         "slug": "jeju-eastern-unesco-spots-day-tour",
         "title": "済州東部ユネスコ日帰りツアー",
-        "subtitle": "英語・中国語ガイド付き少人数・ミニコーチ — 咸徳、城邑、密川洞窟、城山日出峰、海女博物館を巡る9時間の東済州ループ",
+        "subtitle": "少人数ミニバス、英語・中国語ガイド — 咸徳ビーチ・城邑民俗村・城山日出峰（ユネスコ）・海女の素潜り実演・万丈窟（ユネスコ）を9時間の東部ループで一周します。",
         "region": "東済州",
         "duration": "9時間",
         "stopsCount": 8,
@@ -4766,11 +4766,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
         "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
-        "priceLabel": "1名様 US$59（定価$69、14%オフ）",
-        "shortCardDescription": "東済州のユネスコ遺産見どころを9時間で巡る少人数日帰りツアー。咸徳ビーチ、城邑民俗村（ユネスコ）、密川洞窟溶岩トンネル（万丈窟閉鎖中の代替見どころ）、城山日出峰（ユネスコ自然遺産）、海女博物館を一日で網羅。全入場料込み、英語・中国語対応の認定ガイド付き。"
+        "priceLabel": "1名様 US$47（定価$59、20%オフ）・約72,000ウォン",
+        "shortCardDescription": "済州東部のユネスコ見どころを9時間の少人数で一周します。咸徳ソウボン海水浴場、城邑民俗村（ユネスコ民俗）、城山日出峰と万丈窟 — 2007年にともに登録された2つのユネスコ世界自然遺産、そして海女の素潜り実演（中止時は海女博物館）を含みます。全入場料込み、英語・中国語対応の認定ガイド付き。"
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "47"
       }
     },
     "jeju-grand-highlights-loop": {

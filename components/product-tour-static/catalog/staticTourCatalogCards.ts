@@ -67,7 +67,7 @@ const SLUG_OVERRIDES: Record<string, SlugOverride> = {
   "jeju-cherry-blossom-tour-east-route": { listPriceUsd: 59, compareAtPriceUsd: 69, maxGroupSize: 8 },
   "jeju-cruise-shore-excursion-bus-tour": { listPriceUsd: 52, compareAtPriceUsd: 59 },
   "jeju-cruise-shore-excursion-small-group-tour": { listPriceUsd: 79, compareAtPriceUsd: 85, maxGroupSize: 8 },
-  "jeju-eastern-unesco-spots-day-tour": { listPriceUsd: 59, compareAtPriceUsd: 69, maxGroupSize: 8 },
+  "jeju-eastern-unesco-spots-day-tour": { listPriceUsd: 47, compareAtPriceUsd: 59, maxGroupSize: 8 },
   "jeju-hydrangea-festival-tour-east-route": { listPriceUsd: 59, compareAtPriceUsd: 69, maxGroupSize: 8 },
   "jeju-hydrangea-festival-tour-southwest-route": { listPriceUsd: 59, compareAtPriceUsd: 69, maxGroupSize: 8 },
   "jeju-southern-top-unesco-spots-tour": { listPriceUsd: 59, compareAtPriceUsd: 69, maxGroupSize: 8 },
