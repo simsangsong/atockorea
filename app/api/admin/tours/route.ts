@@ -3,6 +3,7 @@ import { createServerClient } from '@/lib/supabase';
 import { handleApiError, ErrorResponses } from '@/lib/error-handler';
 import { requireAdmin } from '@/lib/auth';
 import { applyTourWriteRules } from '@/lib/admin/tour-write-rules';
+import { mapPickupPoints } from '@/lib/admin/pickup-points';
 
 /**
  * POST /api/admin/tours
@@ -101,32 +102,30 @@ export async function POST(request: NextRequest) {
       return handleApiError(tourError);
     }
 
-    // Insert pickup points if provided
-    if (body.pickup_points && Array.isArray(body.pickup_points) && body.pickup_points.length > 0) {
-      const pickupPoints = body.pickup_points.map((pp: any) => ({
-        tour_id: tour.id,
-        name: pp.name,
-        address: pp.address || '',
-        lat: pp.lat ? parseFloat(pp.lat) : null,
-        lng: pp.lng ? parseFloat(pp.lng) : null,
-        pickup_time: pp.pickup_time || null,
-        image_url: pp.image_url && String(pp.image_url).trim() ? String(pp.image_url).trim() : null,
-      }));
-
-      const { error: ppError } = await supabase
-        .from('pickup_points')
-        .insert(pickupPoints);
-
-      if (ppError) {
-        // Log error but don't fail the request
-        console.error('Error inserting pickup points:', ppError);
+    // Insert pickup points if provided. AR-3: the tour row already exists and we
+    // have no transaction to roll it back, so a pickup failure is surfaced as an
+    // explicit warning rather than a silent 201 that hides the data loss.
+    let pickupWarning: string | null = null;
+    if (body.pickup_points !== undefined) {
+      const mapped = mapPickupPoints(body.pickup_points, tour.id);
+      if (!mapped.ok) {
+        pickupWarning = mapped.error;
+      } else if (mapped.rows.length > 0) {
+        const { error: ppError } = await supabase.from('pickup_points').insert(mapped.rows);
+        if (ppError) {
+          console.error('Error inserting pickup points:', ppError);
+          pickupWarning = ppError.message;
+        }
       }
     }
 
     return NextResponse.json({
       success: true,
       data: tour,
-      message: 'Tour created successfully',
+      ...(pickupWarning ? { pickupWarning } : {}),
+      message: pickupWarning
+        ? 'Tour created, but pickup points were not saved. Please re-add them.'
+        : 'Tour created successfully',
     }, { status: 201 });
 
   } catch (error) {
@@ -291,34 +290,35 @@ export async function PATCH(request: NextRequest) {
       return handleApiError(tourError);
     }
 
-    // Update pickup points if provided
+    // Update pickup points if provided. AR-3: validate the new set BEFORE the
+    // destructive delete (so malformed input never wipes existing pickups), and
+    // restore the previous rows best-effort if the insert fails (no transaction).
     if (body.pickup_points !== undefined && Array.isArray(body.pickup_points)) {
-      // Delete existing pickup points
-      await supabase
+      const mapped = mapPickupPoints(body.pickup_points, tourId);
+      if (!mapped.ok) {
+        return NextResponse.json(
+          { error: 'Invalid pickup locations', details: mapped.error },
+          { status: 400 }
+        );
+      }
+
+      const { data: previousPickups } = await supabase
         .from('pickup_points')
-        .delete()
+        .select('tour_id, name, address, lat, lng, pickup_time, image_url')
         .eq('tour_id', tourId);
 
-      // Insert new pickup points if any
-      if (body.pickup_points.length > 0) {
-        const pickupPoints = body.pickup_points.map((pp: any) => ({
-          tour_id: tourId,
-          name: pp.name,
-          address: pp.address || '',
-          lat: pp.lat ? parseFloat(pp.lat) : null,
-          lng: pp.lng ? parseFloat(pp.lng) : null,
-          pickup_time: pp.pickup_time || null,
-          image_url: pp.image_url && String(pp.image_url).trim() ? String(pp.image_url).trim() : null,
-        }));
+      await supabase.from('pickup_points').delete().eq('tour_id', tourId);
 
-        const { error: ppError } = await supabase
-          .from('pickup_points')
-          .insert(pickupPoints);
-
+      if (mapped.rows.length > 0) {
+        const { error: ppError } = await supabase.from('pickup_points').insert(mapped.rows);
         if (ppError) {
           console.error('Error updating pickup points:', ppError);
+          // Best-effort restore so the edit doesn't lose the existing pickups.
+          if (previousPickups && previousPickups.length > 0) {
+            await supabase.from('pickup_points').insert(previousPickups);
+          }
           return NextResponse.json(
-            { error: 'Failed to save pickup locations', details: ppError.message },
+            { error: 'Failed to save pickup locations (previous pickups restored)', details: ppError.message },
             { status: 400 }
           );
         }
