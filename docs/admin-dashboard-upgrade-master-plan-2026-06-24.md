@@ -27,6 +27,7 @@
 | 0 | 진단 + 마스터 플랜 (이 문서) | ✅ 완료 | 5개 도메인 병렬 코드감사 + 세법 리서치 종합 |
 | 0.5 | 검증 2차 패스 (§K) — 전 주장 코드 재대조 | ✅ 완료 | 3개 감사 에이전트 재검증. 핵심 주장 CONFIRMED, C1~C12 정정 + N1~N10 신규결함 + R1~R4 위험. 라이브 DB는 MCP 미연결(K-0) |
 | 0.6 | UI/UX 코드 심층 감사 (§K-6) — §H 실행 사양화 | ✅ 완료 | 3개 UI 감사 에이전트. 토큰·`ui/*` 16개 100% 미사용 발견 → §H-1 정정(신규도입→채택). 드리프트 정량화 + 현재값→토큰 매핑표 + 우선순위(legacy analytics #1) |
+| 0.7 | §E/§F 기능 설계 사양 (§K-7) — DDL + 이벤트 taxonomy | ✅ 완료 | 마이그레이션 대조 후 quote_drafts·빌더 이벤트+funnel·귀속FK+익명화정합(R4/N1)·audit 헬퍼·unified_inquiries 뷰·상품 funnel matview 구체 DDL |
 | 1 | 기능 안정화 (BLOCKER/MAJOR 버그 수정) | ⏳ 대기 | §D. 코드는 멀쩡해 보이나 깨진 기능 우선 |
 | 2 | 디자인 시스템 통합 (토큰·팔레트·타이포·i18n) | ⏳ 대기 | §H.1. 모든 페이지 개편의 선행 조건 |
 | 3 | 페이지별 UI/UX 개편 | ⏳ 대기 | §H.2~. Phase 2 토큰 위에서 한 페이지씩 |
@@ -78,6 +79,7 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 | 2026-06-24 | §J 갱신 — 등록 주=Wyoming 확정 + Form 5472 + 수익인식 설명 | fae9319 | — |
 | 2026-06-24 | Phase 0.5 — 검증 2차 패스(§K). 전 주장 코드 재대조, C1~C12 정정·N1~N10 신규·R1~R4 위험. §D/§D-15 본문 직접 수정 | (this) | 라이브 DB는 MCP가 타 프로젝트(Kursoflow) 연결로 미검증(K-0) |
 | 2026-06-24 | Phase 0.6 — UI/UX 코드 심층 감사(§K-6). 토큰·`ui/*` 16개 미사용 발견 → §H-1 정정, 현재값→토큰 매핑표·컴포넌트 키트·우선순위 | (this) | 모범 사례 products/match-pois/analytics-product 구조 보존 |
+| 2026-06-24 | Phase 0.7 — §E/§F 기능 설계(§K-7). quote_drafts·빌더 이벤트+funnel·귀속FK+익명화정합·audit 헬퍼·unified_inquiries·상품 funnel matview DDL. 실제 스키마(contact_inquiries/audit_logs/bookings/analytics_funnels/matview) 대조 | (this) | event_name free-form·payload 평면스칼라 확인 → 신규 이벤트 등록 불필요 |
 
 ---
 
@@ -486,3 +488,135 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 | UI-4 | contacts 모바일 시트가 헤더 높이 `top-[52px]` 하드코딩 결합(브리틀) |
 | UI-5 | legacy-analytics `÷30` 가짜 일평균 + placeholder 차트 production 노출 |
 | UI-6 | 상태색·KPI카드 3중 분기 통합(StatusBadge/StatCard) |
+
+---
+
+# §K-7. §E/§F 기능 설계 사양 (DDL + 이벤트 taxonomy, 2026-06-24)
+
+> §K-5 ② 수행. 실제 마이그레이션/스키마와 대조해 충돌 없는 구체 DDL·이벤트 정의로 정밀화. **모든 마이그레이션은 additive(`ADD COLUMN IF NOT EXISTS`/`CREATE ... IF NOT EXISTS`)**. 라이브 DB 미연결이므로 배포 전 K-0 대조 필수.
+
+## K-7.0 검증된 기준 사실 (DDL 근거)
+- `analytics_events`: `event_name`는 **free-form**(`z.string().min(1).max(128)`, 인제스트 `app/api/analytics/events/route.ts:44`) — **신규 이벤트명 등록 불필요**. `payload`는 flat key→scalar(`z.record(union(string,number,boolean,null))`) + 서버 `scrubPayload` PII 드롭리스트. 신규 payload 필드는 평면 스칼라면 자동 흐름.
+- `analytics_funnels(key,name,description,steps jsonb,conversion_window_seconds default 1800)`; step 형태: `{"event_name","filter": {...}|null,"label"}`, filter 연산자 예 `page_path`/`page_path_like`/`source`/`phase`.
+- matview 패턴(`analytics_events_daily`): `WHERE anonymized_at IS NULL AND server_ts >= now()-'90 days'` + `GROUP BY` + UNIQUE index(동시 refresh). refresh는 cron `analytics-refresh-views`.
+- `contact_inquiries`(archive `contact-inquiries-schema.sql`): id·full_name·email·subject·message·booking_reference·tour_date·phone_whatsapp·attachment_urls·status(new/in_progress/resolved/closed)·is_read·admin_notes·privacy_consent·created_at·updated_at.
+- `audit_logs`(archive): id·user_id(→auth.users)·action·resource_type·resource_id(uuid)·details jsonb·ip_address inet·user_agent·created_at + 인덱스 4개. **이미 존재, 컬럼 추가 불필요.**
+- `bookings` 현존 컬럼: 기본 + payment_intent_id·setup_intent_id·stripe_customer_id·stripe_payment_method_id·payment_intent_status·authorization_expires_at·no_show_fee_usd_cents·card_collection_method·**currency('usd')·source('tour_product')·itinerary jsonb**. **부재(신설 대상):** anonymous_id·session_id·utm_*·referrer·landing_path + (§G) merchant_cost·operational_fee·fx_rate_to_usd·usd_amount·stripe_charge_id·stripe_balance_txn_id·stripe_fee·revenue_treatment·place_of_performance·us_source.
+- N1 재확인: `anonymize_old_analytics`·`analytics_health_snapshot` CREATE FUNCTION **마이그레이션에 없음** → Phase 5에서 신설.
+
+## K-7.1 `quote_drafts` — 견적/빌더 진행 + 이탈 추적 (Phase 4)
+```sql
+CREATE TABLE IF NOT EXISTS public.quote_drafts (
+  id uuid PRIMARY KEY DEFAULT uuid_generate_v4(),
+  anonymous_id text NOT NULL,                 -- analytics 쿠키와 동일 (세션 join 키)
+  user_id uuid REFERENCES auth.users(id) ON DELETE SET NULL,
+  session_id text,
+  region text, track text,                    -- private/cruise/dmz 등
+  poi_keys text[] DEFAULT '{}',
+  party_size integer, requested_date date,
+  intake jsonb DEFAULT '{}'::jsonb,           -- 연락처/메모 (PII 가능 → 익명화 대상)
+  last_stage text NOT NULL DEFAULT 'started'  -- started|poi_added|quote_modal|intake|price_shown|abandoned|converted
+    CHECK (last_stage IN ('started','poi_added','quote_modal','intake','price_shown','abandoned','converted')),
+  price_shown_krw integer,
+  converted_booking_id uuid REFERENCES public.bookings(id) ON DELETE SET NULL,
+  abandoned_at timestamptz,
+  anonymized_at timestamptz,                  -- 90일 익명화 (intake/anonymous_id 스크럽)
+  created_at timestamptz NOT NULL DEFAULT now(),
+  updated_at timestamptz NOT NULL DEFAULT now()
+);
+CREATE INDEX IF NOT EXISTS idx_quote_drafts_anon ON public.quote_drafts(anonymous_id);
+CREATE INDEX IF NOT EXISTS idx_quote_drafts_stage ON public.quote_drafts(last_stage);
+CREATE INDEX IF NOT EXISTS idx_quote_drafts_created ON public.quote_drafts(created_at DESC);
+ALTER TABLE public.quote_drafts ENABLE ROW LEVEL SECURITY;  -- write=service_role, read=admin (analytics 패턴 동일)
+```
+- 빌더 진행 시 `anonymous_id` 기준 upsert로 `last_stage` 전진. `converted_booking_id` 채워지면 전환. **`tour_quote_requests`(write-blocked, 은퇴)와 별개** — 그 테이블은 건드리지 않음.
+- 어드민 "견적 요청" 탭: `last_stage` 깔때기 + 미전환(`abandoned`/`intake`) 드래프트에 연락처 있으면 follow-up. retention: `intake`/`anonymous_id`는 K-7.3 익명화 RPC 범위에 포함.
+
+## K-7.2 빌더 스테이지 이벤트 taxonomy + funnel (Phase 5)
+신규 이벤트(기존 `itinerary_*` 컨벤션 준수, payload는 평면 스칼라):
+| event_name | payload(예) | 비고 |
+|---|---|---|
+| `itinerary_builder_poi_added` | `{region, track, poi_key, poi_count}` | 담기 |
+| `itinerary_builder_poi_removed` | `{region, poi_key, poi_count}` | |
+| `itinerary_builder_quote_modal_opened` | `{region, track, poi_count}` | 견적 모달 |
+| `itinerary_builder_intake_submitted` | `{region, track, party_size}` | 연락처 입력(본문 미저장) |
+| `itinerary_builder_price_shown` | `{region, track, price_krw}` | 가격 노출 |
+| `itinerary_builder_abandoned` | `{region, last_stage, poi_count}` | beforeunload/sendBeacon |
+- `itinerary_builder_booking_submitted`(기존)을 `CONVERSION_EVENT_NAMES`에 추가할지 검토(세션 converted 반영). funnel 시드 1행:
+```sql
+INSERT INTO public.analytics_funnels (key,name,description,steps) VALUES
+('builder_quote_funnel','빌더 견적 펀널',
+ 'build start → poi add → quote modal → intake → price shown → booking',
+ '[{"event_name":"unified_planner_build_start","filter":null,"label":"빌드 시작"},
+   {"event_name":"itinerary_builder_poi_added","filter":null,"label":"POI 담기"},
+   {"event_name":"itinerary_builder_quote_modal_opened","filter":null,"label":"견적 모달"},
+   {"event_name":"itinerary_builder_intake_submitted","filter":null,"label":"인테이크"},
+   {"event_name":"itinerary_builder_price_shown","filter":null,"label":"가격 노출"},
+   {"event_name":"itinerary_builder_booking_submitted","filter":null,"label":"예약 제출"}]'::jsonb)
+ON CONFLICT (key) DO NOTHING;
+```
+
+## K-7.3 귀속 FK + 익명화 정합 (Phase 4 — R4/N1 동시 해결)
+```sql
+-- 주문/문의/티켓에 first-touch 귀속 비정규화 (체크아웃/제출 시 SDK 쿠키에서 set)
+ALTER TABLE public.bookings        ADD COLUMN IF NOT EXISTS anonymous_id text,
+  ADD COLUMN IF NOT EXISTS attribution_session_id text,
+  ADD COLUMN IF NOT EXISTS utm_source text, ADD COLUMN IF NOT EXISTS utm_medium text,
+  ADD COLUMN IF NOT EXISTS utm_campaign text, ADD COLUMN IF NOT EXISTS referrer text,
+  ADD COLUMN IF NOT EXISTS landing_path text;
+ALTER TABLE public.support_tickets ADD COLUMN IF NOT EXISTS anonymous_id text,
+  ADD COLUMN IF NOT EXISTS utm_source text, ADD COLUMN IF NOT EXISTS referrer text, ADD COLUMN IF NOT EXISTS landing_path text;
+ALTER TABLE public.contact_inquiries ADD COLUMN IF NOT EXISTS anonymous_id text,
+  ADD COLUMN IF NOT EXISTS utm_source text, ADD COLUMN IF NOT EXISTS referrer text, ADD COLUMN IF NOT EXISTS landing_path text;
+```
+- **R4 정합 규칙(중요):** `bookings`는 세무상 ≥7년 보존(§G) → 90일 익명화로 행 삭제 불가. 따라서 익명화 RPC가 이 컬럼들에서 **`anonymous_id`는 해시·`referrer`는 NULL(쿼리스트링 PII 가능)** 처리하되 **`utm_*`/`landing_path`(비PII)는 보존**. `support_tickets`/`contact_inquiries`/`quote_drafts.intake`도 동일 스크럽 범위에 추가.
+- **N1 해결:** `anonymize_old_analytics()` RPC를 **신설**(현재 cron이 호출하나 정의 없음)하고 위 신규 컬럼 + analytics 테이블을 한 함수에서 스크럽. `analytics_health_snapshot()`도 동일 마이그레이션에서 신설(§D-15). 배포 체크(U4)로 "호출되나 미정의 RPC" 재발 방지.
+
+## K-7.4 `audit_logs` 채택 (Phase 4 — 테이블 재사용, 헬퍼 신설)
+- 헬퍼 `lib/admin/audit.ts`: `logAdminAction({ userId, action, resourceType, resourceId, details, ip, userAgent })` → 기존 insert 형태(`merchants/create/route.ts:129`)와 동일 컬럼. service-role로 best-effort(실패해도 주 작업 비차단), 단 **실패 시 console.error + 알림**.
+- 의무 적용 라우트(현재 2곳 → 전 mutation): orders status/settle, 환불, settlements 생성, support 답장, tour/product 편집, merchant 생성/수정/정지, settings 변경, qa-pairs 승인/거부. `details`에 before/after diff(jsonb).
+- 어드민 "활동 기록" 화면: actor·action·resource·diff 펼치기 + 날짜/액션/actor 필터(`audit_logs` 인덱스 이미 존재).
+
+## K-7.5 `unified_inquiries` 통합 인박스 뷰 (Phase 4)
+```sql
+CREATE OR REPLACE VIEW public.unified_inquiries AS
+  SELECT 'contact'::text AS source, ci.id, ci.full_name AS contact_name, ci.email AS contact_email,
+         ci.subject AS title, ci.status, ci.is_read, NULL::text AS category, ci.created_at
+    FROM public.contact_inquiries ci
+  UNION ALL
+  SELECT 'email', re.id, re.from_name, re.from_email, re.subject,
+         CASE WHEN re.is_archived THEN 'archived' ELSE 'open' END, re.is_read, re.category, re.received_at
+    FROM public.received_emails re
+  UNION ALL
+  SELECT 'ticket', st.id, NULL, NULL, st.initial_summary, st.status,
+         (st.unread_for_admin > 0), st.escalation_reason, st.created_at
+    FROM public.support_tickets st;
+```
+- 어드민 단일 인박스: source 칩(contact/email/ticket) + 카테고리 칩 + **날짜 그룹 + 접기/펼치기** + 검색. 미처리 배지 = 대시보드 D-1 하드코딩 0 대체(`SELECT count(*) ... WHERE is_read=false/status='new'/unread_for_admin>0`). (정렬/페이지네이션은 뷰 위 쿼리에서; 대량 시 matview 전환.)
+- 주의: 컬럼명은 K-7.0 확인값 기준. `received_emails.from_name`/`category`/`received_at`, `support_tickets.initial_summary`/`unread_for_admin`/`escalation_reason` 실재 확인 후 배포(K-0).
+
+## K-7.6 상품별 funnel matview + slug 표준화 (Phase 5)
+- **선행:** product-funnel 이벤트에 `slug`(또는 `product_id`) **평면 필드 표준 부착** — 현재 `home_featured_card_click{slug}`만 보유, `detail_viewed`/`checkout_started`/`booking_confirmed`는 비일관. SDK 호출부에 `slug` 추가.
+- matview(events_daily 패턴 mirror):
+```sql
+CREATE MATERIALIZED VIEW IF NOT EXISTS public.analytics_product_funnel_daily AS
+SELECT date_trunc('day', server_ts) AS day,
+       (payload->>'slug') AS slug,
+       count(*) FILTER (WHERE event_name='product_impression')      AS impressions,
+       count(*) FILTER (WHERE event_name='home_featured_card_click') AS card_clicks,
+       count(*) FILTER (WHERE event_name='detail_viewed')           AS detail_views,
+       count(*) FILTER (WHERE event_name='checkout_started')        AS checkouts,
+       count(*) FILTER (WHERE event_name='booking_confirmed')       AS conversions,
+       count(DISTINCT session_id)                                   AS sessions
+FROM public.analytics_events
+WHERE anonymized_at IS NULL AND server_ts >= now()-interval '90 days'
+  AND (payload ? 'slug')
+GROUP BY 1,2;
+CREATE UNIQUE INDEX IF NOT EXISTS idx_product_funnel_daily_unique ON public.analytics_product_funnel_daily(day, slug);
+```
+- bounce rate = 상품 상세 단일-페이지 세션 비율(별도 세션 파생). refresh를 기존 `analytics-refresh-views` cron에 추가. 신규 이벤트 `product_impression`(노출, payload `{slug, position}`) 신설.
+
+## K-7.7 마이그레이션 순서·백필·오픈
+1. 순서: (a) quote_drafts/attribution ALTER/audit 무관 additive → 언제든. (b) `anonymize_old_analytics`·`analytics_health_snapshot` RPC 신설은 cron 의존이라 **우선**. (c) product-funnel matview는 slug 이벤트 표준화 배포 후 데이터 쌓이면 의미.
+2. 백필: 과거 bookings 귀속(utm/anonymous_id)은 **소급 불가**(당시 미수집) — 신규 건부터. quote_drafts도 신규부터.
+3. 오픈: `CONVERSION_EVENT_NAMES`에 builder 이벤트 추가 여부; unified_inquiries 대량 시 matview 전환 임계; product_impression 노출 정의(viewport 진입 기준).
