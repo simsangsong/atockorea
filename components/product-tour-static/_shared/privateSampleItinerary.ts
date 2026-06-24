@@ -196,15 +196,21 @@ function seoulConfig(): PrivateSampleItineraryConfig {
     },
     samples: [
       sampleDay(
+        "pocheon",
+        { ko: "포천", en: "Pocheon" },
+        { ko: "산정호수·허브아일랜드·아트밸리 등 포천 근교 코스", en: "Pocheon highlights — Sanjeong Lake, Herb Island, Art Valley" },
+        5,
+      ),
+      sampleDay(
         "seoul-city",
         { ko: "서울 시내", en: "Seoul City" },
         { ko: "고궁·남산·홍대 등 서울 시내 핵심 코스", en: "Core Seoul-city highlights — palaces, Namsan, Hongdae" },
         5,
       ),
       sampleDay(
-        "seoul-suburbs",
-        { ko: "서울 근교", en: "Seoul Suburbs" },
-        { ko: "남이섬·아침고요수목원 등 경기·강원 근교 코스", en: "Suburban Gyeonggi/Gangwon — Nami Island, Garden of Morning Calm" },
+        "suwon-hwaseong",
+        { ko: "수원화성", en: "Suwon Hwaseong" },
+        { ko: "수원화성·한국민속촌·스타필드 등 수원권 코스", en: "Suwon-area highlights — Hwaseong Fortress, Korean Folk Village, Starfield" },
         5,
       ),
     ],
