@@ -4,7 +4,7 @@ import type { CSSProperties } from "react";
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { V0ShadcnButton } from "@/components/home/v2/ui/v0-shadcn-button";
-import { ArrowRight, Clock, Users, ShieldCheck, CheckCircle } from "lucide-react";
+import { ArrowRight, Clock, Users, ShieldCheck, CheckCircle, Sparkles } from "lucide-react";
 import { analytics } from "@/src/design/analytics";
 import {
   HOME_CTA_BROWSE_TOURS_HREF,
@@ -109,6 +109,25 @@ export function FinalCTA() {
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </V0ShadcnButton>
+
+            {/* L4 (chatbot promo) — tertiary "ask the AI agent" affordance.
+                Opens the global assistant in place instead of routing away. */}
+            <button
+              type="button"
+              onClick={() => {
+                analytics.homeCtaClick({ source: "chatbot_open_final_cta" });
+                if (typeof window !== "undefined") {
+                  window.dispatchEvent(
+                    new CustomEvent("atc:open-assistant", { detail: { source: "final_cta" } }),
+                  );
+                }
+              }}
+              className="focus-ring group inline-flex w-full items-center justify-center gap-1.5 py-1.5 text-caption font-semibold text-white/55 transition-colors duration-200 hover:text-amber-300"
+            >
+              <Sparkles className="h-3.5 w-3.5 flex-none text-amber-300" aria-hidden />
+              {t("premium.v2.finalCtaBlock.askAgent")}
+              <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
+            </button>
           </div>
         </div>
       </div>

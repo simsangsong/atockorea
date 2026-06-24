@@ -443,7 +443,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
       "catalog_card": {
         "slug": "jeju-eastern-unesco-spots-day-tour",
         "title": "Jeju East UNESCO Day Tour",
-        "subtitle": "Small-group mini-coach with English/Chinese guide — 9-hour eastern Jeju loop covering Hamdeok, Seongeup, Micheon Cave, Seongsan UNESCO crater, and the Haenyeo Museum.",
+        "subtitle": "Small-group minibus with English/Chinese guide — loop Hamdeok Beach, Seongeup Folk Village, Seongsan Ilchulbong (UNESCO), the haenyeo diving performance, and Manjanggul (UNESCO) in a 9-hour eastern route.",
         "region": "Eastern Jeju",
         "duration": "9 hours",
         "stopsCount": 8,
@@ -459,35 +459,35 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
         "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
-        "priceLabel": "From US$59 per person (was $69, 14% off)",
-        "shortCardDescription": "A small-group day tour covering eastern Jeju's UNESCO and signature stops in a single 9-hour loop — Hamdeok Seoubong Beach, Seongeup Folk Village, Micheon Cave (a separate commercial show cave visited as an alternative when Manjanggul is closed), Seongsan Ilchulbong (UNESCO Natural Heritage Sunrise Peak), and the Haenyeo Museum dedicated to Jeju's UNESCO-listed women divers. ALL admissions included; certified English/Chinese-speaking guide."
+        "priceLabel": "From US$47 per person (was $59, 20% off) · ≈₩72,000",
+        "shortCardDescription": "Loop eastern Jeju's UNESCO sights in a 9-hour small group. Includes Hamdeok Seoubong Beach, Seongeup Folk Village (UNESCO folk heritage), Seongsan Ilchulbong and Manjanggul — two UNESCO World Natural Heritage sites inscribed together in 2007 — plus a haenyeo diving performance (Haenyeo Museum if canceled). All admissions included, certified English/Chinese-speaking guide."
       },
       "price": {
-        "amountLabel": "59"
+        "amountLabel": "47"
       }
     },
     "jeju-grand-highlights-loop": {
       "catalog_card": {
         "slug": "jeju-grand-highlights-loop",
         "title": "Jeju Grand Highlights Loop",
-        "subtitle": "From Hallasan to Seongsan Ilchulbong, see Jeju’s signature highlights in one day.",
+        "subtitle": "Jeju's three UNESCO sites, a live haenyeo show, sea-cliffs and an ocean waterfall — the island's absolute best in one day.",
         "region": "Jeju Full-Island Route",
-        "duration": "9–9.5 hours",
-        "stopsCount": 5,
+        "duration": "10–10.5 hours",
+        "stopsCount": 7,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
           "Small group",
-          "Best for One-Day Visitors",
-          "Fast-Paced Highlights"
+          "3 UNESCO Sites",
+          "Best for One-Day Visitors"
         ],
-        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "priceLabel": "From US$79 per person (was $89, 11% off)",
-        "shortCardDescription": "A high-efficiency Jeju full-island route for travelers with limited time, linking Hallasan, the south coast, and Seongsan Ilchulbong in one day."
+        "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "priceLabel": "From US$100 per person (was $112, 11% off)",
+        "shortCardDescription": "A high-intensity full-island route linking three UNESCO World Heritage sites — Hallasan, Seongsan Ilchulbong and Manjanggul lava tube — with a living haenyeo free-diving show, the Jusangjeolli columnar cliffs and the ocean-falling Jeongbang Waterfall. Jeju's signature highlights, concentrated into a single day."
       },
       "price": {
-        "amountLabel": "79"
+        "amountLabel": "100"
       }
     },
     "jeju-hydrangea-festival-tour-east-route": {
@@ -738,11 +738,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
         "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
-        "priceLabel": "From US$52 per person (was $58, 10% off)",
+        "priceLabel": "From US$53 per person (was $58, 9% off)",
         "shortCardDescription": "A 12-hour coach day trip from Seoul to the East Sea coast: hike Seoraksan National Park, visit the cliffside Naksansa Temple, and walk pine-backed Naksan Beach. Departs Mondays and Thursdays with an English-speaking guide and round-trip transfers from Hongik or Myeongdong."
       },
       "price": {
-        "amountLabel": "52"
+        "amountLabel": "53"
       }
     },
     "seoul-seoraksan-nami-island-morning-calm-day-tour": {
@@ -763,11 +763,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
         "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
-        "priceLabel": "From US$59 per person (was $82, 28% off)",
+        "priceLabel": "US$71 per person",
         "shortCardDescription": "A 13-hour coach day tour from Seoul covering Korea's three most-photographed day-trip stops: Seoraksan National Park (Korea's first UNESCO Biosphere Reserve), Nami Island (Winter Sonata's Metasequoia Lane), and the Garden of Morning Calm (Korea's signature private arboretum with 5,000 plant species). All admissions included; English-speaking guide; pickup at Hongik University Station or Myeongdong Station."
       },
       "price": {
-        "amountLabel": "59"
+        "amountLabel": "71"
       }
     },
     "seoul-seoraksan-national-park-sokcho-beach-day-trip": {
@@ -843,11 +843,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
         "thumbnail": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
-        "priceLabel": "From US$59 per person (was $66, 11% off)",
+        "priceLabel": "From US$60 per person (was $66, 9% off)",
         "shortCardDescription": "A small-group cultural day-trip from Seoul to Gyeonggi Province covering four contrasting sides of Korean heritage and modern life: the UNESCO-listed Suwon Hwaseong Fortress (18th-century walls and gates), the restored Hwaseong Haenggung Palace with its Joseon-era reenactments, the immersive open-air Korean Folk Village in Yongin, and the dramatic four-floor Starfield Library Suwon. 10 hours with included transport and admissions."
       },
       "price": {
-        "amountLabel": "59"
+        "amountLabel": "60"
       }
     },
     "seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library": {
@@ -857,7 +857,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "subtitle": "A small-group cultural day-trip from Seoul covering four contrasting sides of Gyeonggi Province: the UNESCO-listed Suwon Hwaseong Fortress with its…",
         "region": "Gyeonggi-do (south of Seoul)",
         "duration": "9 hours",
-        "stopsCount": 7,
+        "stopsCount": 6,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
@@ -871,11 +871,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
         "thumbnail": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
-        "priceLabel": "From US$52 per person (was $59, 12% off)",
-        "shortCardDescription": "A small-group cultural day-trip from Seoul covering four contrasting sides of Gyeonggi Province: the UNESCO-listed Suwon Hwaseong Fortress with its 18th-century walls and Haenggung Palace, the dramatic LED-lit underground theme park inside Gwangmyeong Cave (a former Japanese-era gold mine), the four-floor Starfield Library Suwon, and the 1,000-year-old Nammun traditional market for street food. 9 hours with included transport and admissions."
+        "priceLabel": "From US$53 per person (was $59, 10% off)",
+        "shortCardDescription": "A small-group cultural day-trip from Seoul covering three contrasting sides of Gyeonggi Province: the UNESCO-listed Suwon Hwaseong Fortress with its 18th-century walls and Haenggung Palace, the dramatic LED-lit underground theme park inside Gwangmyeong Cave (a former Japanese-era gold mine), the four-floor Starfield Library Suwon. 9 hours with included transport and admissions."
       },
       "price": {
-        "amountLabel": "52"
+        "amountLabel": "53"
       }
     },
     "seoul-suwon-hwaseong-waujeongsa-starfield": {
@@ -885,7 +885,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "subtitle": "UNESCO fortress, mountain temple, and viral library—Korea's past, spirit, and present in one Seoul day-trip.",
         "region": "Suwon & Yongin",
         "duration": "9–10 hours",
-        "stopsCount": 3,
+        "stopsCount": 4,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
@@ -895,11 +895,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
         "thumbnail": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
-        "priceLabel": "From US$47 per person (was $54, 13% off)",
+        "priceLabel": "From US$51 per person (was $54, 6% off)",
         "shortCardDescription": "A small-group day-trip from Seoul covering three contrasting sides of Korea: the UNESCO-listed Suwon Hwaseong Fortress (18th-century military architecture), the photogenic Starfield Suwon Library (contemporary cultural icon), and Waujeongsa Temple in Yongin (giant outdoor Buddha and stone bell). Strong heritage value with included transport and admission."
       },
       "price": {
-        "amountLabel": "47"
+        "amountLabel": "51"
       }
     },
     "southwest-hallasan-osulloc-aewol": {
@@ -1305,7 +1305,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
       "catalog_card": {
         "slug": "jeju-eastern-unesco-spots-day-tour",
         "title": "제주 동부 유네스코 일일 투어",
-        "subtitle": "소그룹 미니버스, 영어·중국어 가이드 — 함덕해변·성읍민속마을·미천굴·성산일출봉(유네스코)·해녀박물관을 9시간 동부 루프로 일주합니다.",
+        "subtitle": "소그룹 미니버스, 영어·중국어 가이드 — 함덕해변·성읍민속마을·성산일출봉(유네스코)·해녀 물질공연·만장굴(유네스코)을 9시간 동부 루프로 일주합니다.",
         "region": "동제주",
         "duration": "9시간",
         "stopsCount": 8,
@@ -1321,35 +1321,35 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
         "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
-        "priceLabel": "1인 US$59 (정가 $69, 14% 할인)",
-        "shortCardDescription": "제주 동부 유네스코 및 핵심 명소를 9시간 소그룹으로 일주하는 투어입니다. 함덕 서우봉해변, 성읍민속마을(유네스코), 미천굴 용암동굴(만장굴 운영 중단 기간 대체), 성산일출봉(유네스코 세계자연유산), 해녀박물관(유네스코 해녀문화) 포함. 전 입장료 포함, 공인 가이드."
+        "priceLabel": "1인 US$47 (정가 $59, 20% 할인) · 약 72,000원",
+        "shortCardDescription": "제주 동부 유네스코 명소를 9시간 소그룹으로 일주합니다. 함덕 서우봉해변, 성읍민속마을(유네스코 민속), 성산일출봉과 만장굴 — 2007년 함께 등재된 두 유네스코 세계자연유산, 그리고 해녀 물질공연(취소 시 해녀박물관) 포함. 전 입장료 포함, 공인 영어·중국어 가이드."
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "47"
       }
     },
     "jeju-grand-highlights-loop": {
       "catalog_card": {
         "slug": "jeju-grand-highlights-loop",
-        "title": "제주 그랜드 하이라이트 일일 투어",
-        "subtitle": "한라산부터 성산일출봉까지, 제주의 대표 명소를 하루에 만나보세요.",
+        "title": "제주 그랜드 하이라이트 루프",
+        "subtitle": "제주의 유네스코 3대 명소, 생생한 해녀 물질 시연, 해안 절벽과 바다로 떨어지는 폭포까지 — 제주 최고의 명소를 하루에 만나는 투어.",
         "region": "제주 전 지역 코스",
-        "duration": "9~9.5시간",
-        "stopsCount": 5,
+        "duration": "10~10.5시간",
+        "stopsCount": 7,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
           "소그룹",
-          "당일 여행객에게 최적",
-          "빠르게 즐기는 하이라이트"
+          "유네스코 3대 명소",
+          "당일 여행객에게 최적"
         ],
-        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "priceLabel": "1인 US$79 (정가 $89, 11% 할인)",
-        "shortCardDescription": "시간이 부족한 여행객을 위한 고효율 제주 전 지역 코스로, 한라산, 남쪽 해안, 성산일출봉을 하루에 연결합니다."
+        "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "priceLabel": "1인 US$100부터 (기존 $112, 11% 할인)",
+        "shortCardDescription": "한라산, 성산일출봉, 만장굴 용암동굴까지 유네스코 세계유산 3곳을 연결하고, 살아 있는 해녀 물질 시연, 주상절리 절벽, 바다로 떨어지는 정방폭포를 더한 고밀도 전 지역 코스입니다. 제주의 대표 명소를 하루에 응축한 일정입니다."
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "100"
       }
     },
     "jeju-hydrangea-festival-tour-east-route": {
@@ -1719,7 +1719,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "subtitle": "경기도의 대조적인 네 가지 매력을 경험하는 서울 출발 소그룹 문화 당일 여행: 유네스코 세계문화유산 수원 화성과…",
         "region": "경기도 (서울 남쪽)",
         "duration": "9시간",
-        "stopsCount": 7,
+        "stopsCount": 6,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
@@ -1734,7 +1734,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "heroImage": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
         "thumbnail": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
         "priceLabel": "",
-        "shortCardDescription": "경기도의 대조적인 네 가지 매력을 경험하는 서울 출발 소그룹 문화 당일 여행: 18세기 성곽과 행궁을 품은 유네스코 세계문화유산 수원 화성, 일제강점기 금광이었던 광명동굴 내 화려한 LED 지하 테마파크, 4층 규모의 스타필드 라이브러리 수원, 그리고 길거리 음식을 즐길 수 있는 천 년 역사의 남문 전통시장. 교통 및 입장료 포함, 총 9시간 진행."
+        "shortCardDescription": "경기도의 대조적인 세 가지 매력을 경험하는 서울 출발 소그룹 문화 당일 여행: 18세기 성곽과 행궁을 품은 유네스코 세계문화유산 수원 화성, 일제강점기 금광이었던 광명동굴 내 화려한 LED 지하 테마파크, 4층 규모의 스타필드 라이브러리 수원. 교통 및 입장료 포함, 총 9시간 진행."
       },
       "price": {
         "amountLabel": ""
@@ -1747,7 +1747,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "subtitle": "유네스코 성곽, 산사, 그리고 화제의 도서관—하나의 서울 당일 여행으로 만나는 한국의 과거, 정신, 그리고 현재.",
         "region": "수원 & 용인",
         "duration": "9~10시간",
-        "stopsCount": 3,
+        "stopsCount": 4,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
@@ -2167,7 +2167,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
       "catalog_card": {
         "slug": "jeju-eastern-unesco-spots-day-tour",
         "title": "济州东部UNESCO一日游",
-        "subtitle": "含英文/中文导游的小团迷您巴士——9小时东济州环线，覆盖顶级UNESCO景点。",
+        "subtitle": "小团迷你巴士，英语·中文导游 — 以9小时东部环线游览咸德海水浴场·城邑民俗村·城山日出峰（联合国教科文组织）·海女潜水表演·万丈窟（联合国教科文组织）。",
         "region": "济州东部",
         "duration": "9小时",
         "stopsCount": 8,
@@ -2183,35 +2183,35 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
         "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
-        "priceLabel": "每人 US$59（原价$69，14% 优惠）",
-        "shortCardDescription": "涵盖东济州UNESCO及代表性景点的小团一日游：济州石文化公园、城山日出峰（UNESCO）、涉地可支海岸、万丈窟熔岩洞穴（UNESCO）及私人马场体验。通过合理安排游览顺序，尽量避开旺季人流。"
+        "priceLabel": "每人 US$47（原价 $59，立减20%），约₩72,000",
+        "shortCardDescription": "以9小时小团环游济州东部联合国教科文组织景点。涵盖咸德海水浴场、城邑民俗村（联合国教科文组织民俗）、城山日出峰与万丈窟 — 2007年共同登录的两处联合国教科文组织世界自然遗产，以及海女潜水表演（取消时改为海女博物馆）。含全部门票，持证英语·中文导游。"
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "47"
       }
     },
     "jeju-grand-highlights-loop": {
       "catalog_card": {
         "slug": "jeju-grand-highlights-loop",
-        "title": "济州全岛精华一日游",
-        "subtitle": "从汉拿山到城山日出峰，一天尽览济州标志性景点。",
+        "title": "济州精华环岛游",
+        "subtitle": "济州三处联合国教科文组织遗址、海女现场表演、海崖与直泻入海的瀑布——一天尽览全岛最精华的景致。",
         "region": "济州全岛线路",
-        "duration": "9–9.5小时",
-        "stopsCount": 5,
+        "duration": "10–10.5小时",
+        "stopsCount": 7,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
           "小团",
-          "最适合一日游客",
-          "快节奏精华游"
+          "3处联合国教科文组织遗址",
+          "最适合一日游客"
         ],
-        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "priceLabel": "每人 US$79（原价$89，11% 优惠）",
-        "shortCardDescription": "专为时间有限的旅行者打造的高效济州全岛线路，一天串联汉拿山、南海岸风光与城山日出峰。"
+        "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "priceLabel": "每人 US$100 起（原价 $112，立减 11%）",
+        "shortCardDescription": "一条高强度的全岛线路，串联三处联合国教科文组织世界遗产——汉拿山、城山日出峰与万丈窟熔岩洞，并融入海女徒手潜水现场表演、柱状节理海崖以及直泻入海的正房瀑布。济州的标志性精华，浓缩于一日之内。"
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "100"
       }
     },
     "jeju-hydrangea-festival-tour-east-route": {
@@ -2581,7 +2581,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "subtitle": "首尔出发的小团文化一日游，带您领略京畿道四种截然不同的风貌：UNESCO世界遗产水原华城……",
         "region": "京畿道（首尔以南）",
         "duration": "9小时",
-        "stopsCount": 7,
+        "stopsCount": 6,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
@@ -2596,7 +2596,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "heroImage": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
         "thumbnail": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
         "priceLabel": "",
-        "shortCardDescription": "首尔出发的小团文化一日游，带您领略京畿道四种截然不同的风貌：UNESCO世界遗产水原华城，拥有18世纪城墙与行宫；光明洞窟内震撼人心的LED灯光地下主题公园（昔日日据时代金矿）；四层楼高的水原星空图书馆；以及拥有千年历史的南门传统市场，尽享街头美食。全程9小时，含交通及门票。"
+        "shortCardDescription": "首尔出发的小团文化一日游，带您领略京畿道三种截然不同的风貌：UNESCO世界遗产水原华城，拥有18世纪城墙与行宫；光明洞窟内震撼人心的LED灯光地下主题公园（昔日日据时代金矿）；四层楼高的水原星空图书馆。全程9小时，含交通及门票。"
       },
       "price": {
         "amountLabel": ""
@@ -2609,7 +2609,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "subtitle": "联合国教科文组织要塞、山间寺庙与网红图书馆——一次首尔一日游，尽览韩国的历史、精神与现代。",
         "region": "水原与龙仁",
         "duration": "9至10小时",
-        "stopsCount": 3,
+        "stopsCount": 4,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
@@ -3029,7 +3029,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
       "catalog_card": {
         "slug": "jeju-eastern-unesco-spots-day-tour",
         "title": "濟州東部UNESCO一日遊",
-        "subtitle": "含英語/中文導遊的小團體迷您巴士——9小時東濟州環線，覆蓋頂級UNESCO景點。",
+        "subtitle": "小團體迷你巴士、英語·中文導遊 — 以9小時東部環線環遊咸德海灘·城邑民俗村·城山日出峰（聯合國教科文組織）·海女潛水表演·萬丈窟（聯合國教科文組織）。",
         "region": "濟州東部",
         "duration": "9小時",
         "stopsCount": 8,
@@ -3045,35 +3045,35 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
         "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
-        "priceLabel": "每人 US$59（原價$69，14% 優惠）",
-        "shortCardDescription": "涵蓋東濟州UNESCO及代表性景點的小團體一日遊：濟州石文化公園、城山日出峰（UNESCO）、涉地可支海岸、萬丈窟熔岩洞穴（UNESCO）及私人馬場體驗。透過合理安排遊覽順序，盡量避開旺季人流。"
+        "priceLabel": "每人 US$47（原價 $59，省20%），約₩72,000",
+        "shortCardDescription": "以9小時小團體環遊濟州東部的聯合國教科文組織景點。涵蓋咸德西牛峰海水浴場、城邑民俗村（聯合國教科文組織民俗）、城山日出峰與萬丈窟 — 2007年一同登錄的兩處聯合國教科文組織世界自然遺產，以及海女潛水表演（取消時改為海女博物館）。含全部門票，配備認證英語·中文導遊。"
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "47"
       }
     },
     "jeju-grand-highlights-loop": {
       "catalog_card": {
         "slug": "jeju-grand-highlights-loop",
-        "title": "濟州全島精華一日遊",
-        "subtitle": "從漢拏山到城山日出峰，一天盡覽濟州代表性精華景點。",
+        "title": "濟州精華環島遊",
+        "subtitle": "濟州三大聯合國教科文組織遺址、現場海女表演、海崖與直落入海的瀑布——一天盡覽全島絕對精華。",
         "region": "濟州全島路線",
-        "duration": "9至9.5小時",
-        "stopsCount": 5,
+        "duration": "10–10.5 小時",
+        "stopsCount": 7,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
           "小團體",
-          "最適合一日遊旅客",
-          "緊湊精華行程"
+          "3 處聯合國教科文組織遺址",
+          "最適合一日遊旅客"
         ],
-        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "priceLabel": "每人 US$79（原價$89，11% 優惠）",
-        "shortCardDescription": "專為時間有限的旅客設計的高效率濟州全島路線，一天串聯漢拏山、南海岸與城山日出峰。"
+        "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "priceLabel": "每人 US$100 起（原價 $112，現省 11%）",
+        "shortCardDescription": "一條高強度的全島路線，串聯三處聯合國教科文組織世界遺產——漢拏山、城山日出峰與萬丈窟熔岩洞——並結合現場海女自由潛水表演、柱狀節理海崖，以及直落入海的正房瀑布。濟州的代表性精華，濃縮於一日之內。"
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "100"
       }
     },
     "jeju-hydrangea-festival-tour-east-route": {
@@ -3443,7 +3443,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "subtitle": "首爾出發小團體文化一日遊，帶您探索京畿道四大截然不同的面貌：列入UNESCO世界遺產名錄的水原華城……",
         "region": "京畿道（首爾以南）",
         "duration": "9小時",
-        "stopsCount": 7,
+        "stopsCount": 6,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
@@ -3458,7 +3458,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "heroImage": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
         "thumbnail": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
         "priceLabel": "",
-        "shortCardDescription": "首爾出發小團體文化一日遊，帶您探索京畿道四大截然不同的面貌：列入UNESCO世界遺產名錄的水原華城，擁有18世紀古城牆與行宮；前日據時代金礦改建而成、璀璨LED燈光點綴的地下主題樂園光明洞窟；四層樓高的水原星空圖書館；以及擁有千年歷史的南門傳統市場，可品嚐道地街頭小吃。全程9小時，含交通接送與門票。"
+        "shortCardDescription": "首爾出發小團體文化一日遊，帶您探索京畿道三大截然不同的面貌：列入UNESCO世界遺產名錄的水原華城，擁有18世紀古城牆與行宮；前日據時代金礦改建而成、璀璨LED燈光點綴的地下主題樂園光明洞窟；四層樓高的水原星空圖書館。全程9小時，含交通接送與門票。"
       },
       "price": {
         "amountLabel": ""
@@ -3471,7 +3471,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "subtitle": "UNESCO世界遺產城堡、山中寺院與網紅圖書館——從首爾出發，一日盡覽韓國的過去、靈魂與現在。",
         "region": "水原與龍仁",
         "duration": "9至10小時",
-        "stopsCount": 3,
+        "stopsCount": 4,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
@@ -3891,7 +3891,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
       "catalog_card": {
         "slug": "jeju-eastern-unesco-lugares-day-tour",
         "title": "Jeju Este: UNESCO Día",
-        "subtitle": "El tour de Jeju Este con más reseñas — todas las entradas incluidas.",
+        "subtitle": "Minibús de grupo pequeño, guía en inglés y chino — recorre en un bucle por el este de 9 horas la playa Hamdeok, la Aldea Folclórica de Seongeup, Seongsan Ilchulbong (UNESCO), el espectáculo de buceo de las haenyeo y Manjanggul (UNESCO).",
         "region": "Jeju Este",
         "duration": "9 horas",
         "stopsCount": 8,
@@ -3906,35 +3906,35 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
         "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
-        "priceLabel": "Desde US$59 por persona (antes $69, 14% descuento)",
-        "shortCardDescription": "Excursión de un día en grupo pequeño por el este de Jeju cubriendo los hitos UNESCO y los puntos representativos en un único recorrido de 9 horas: Playa Hamdeok Seoubong, Aldea Folclórica Seongeup, Cueva Micheon en Ilchul Land, Seongsan Ilchulbong (Pico del Amanecer, Patrimonio Natural UNESCO) y el Museo Haenyeo. Todas las entradas incluidas, guía certificado."
+        "priceLabel": "US$47 por persona (precio normal $59, 20% de descuento) · aprox. 72.000 won",
+        "shortCardDescription": "Recorre los lugares UNESCO del este de Jeju en un bucle en grupo pequeño de 9 horas. Incluye la playa Hamdeok Seoubong, la Aldea Folclórica de Seongeup (patrimonio folclórico UNESCO), Seongsan Ilchulbong y Manjanggul — los dos sitios del Patrimonio Natural Mundial de la UNESCO inscritos juntos en 2007 — y el espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela). Todas las entradas incluidas, guía certificado en inglés y chino."
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "47"
       }
     },
     "jeju-grand-highlights-loop": {
       "catalog_card": {
         "slug": "jeju-grand-highlights-loop",
-        "title": "Jeju Completo: Hitos del Día",
-        "subtitle": "De Hallasan a Seongsan Ilchulbong, descubre los principales atractivos de Jeju en un solo día.",
+        "title": "Gran Circuito de los Mejores Atractivos de Jeju",
+        "subtitle": "Los tres sitios UNESCO de Jeju, un espectáculo de haenyeo en vivo, acantilados marinos y una cascada que cae al océano: lo mejor de la isla en un solo día.",
         "region": "Ruta por toda la isla de Jeju",
-        "duration": "9–9,5 horas",
-        "stopsCount": 5,
+        "duration": "10–10,5 horas",
+        "stopsCount": 7,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
           "Grupo pequeño",
-          "Ideal para Visitantes de un Solo Día",
-          "Atractivos a Ritmo Acelerado"
+          "3 sitios UNESCO",
+          "Ideal para visitantes de un solo día"
         ],
-        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "priceLabel": "Desde US$79 por persona (antes $89, 11% descuento)",
-        "shortCardDescription": "Una ruta de alta eficiencia por toda la isla de Jeju para viajeros con tiempo limitado, que une Hallasan, la costa sur y Seongsan Ilchulbong en un solo día."
+        "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "priceLabel": "Desde US$100 por persona (antes $112, 11% de descuento)",
+        "shortCardDescription": "Una ruta intensa por toda la isla que enlaza tres sitios del Patrimonio Mundial de la UNESCO —Hallasan, Seongsan Ilchulbong y el tubo de lava de Manjanggul— con un espectáculo en vivo de buceo libre de las haenyeo, los acantilados columnares de Jusangjeolli y la cascada Jeongbang que cae al océano. Los atractivos emblemáticos de Jeju, concentrados en un solo día."
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "100"
       }
     },
     "jeju-hydrangea-festival-tour-east-route": {
@@ -4302,7 +4302,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "subtitle": "Una excursión cultural de un día en grupo reducido desde Seúl que recorre cuatro facetas contrastantes de la provincia de Gyeonggi: la Fortaleza Suwon Hwaseong declarada Patrimonio de la UNESCO, con sus…",
         "region": "Gyeonggi-do (al sur de Seúl)",
         "duration": "9 horas",
-        "stopsCount": 7,
+        "stopsCount": 6,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
@@ -4317,7 +4317,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "heroImage": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
         "thumbnail": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
         "priceLabel": "",
-        "shortCardDescription": "Una excursión cultural de un día en grupo reducido desde Seúl que recorre cuatro facetas contrastantes de la provincia de Gyeonggi: la Fortaleza Suwon Hwaseong declarada Patrimonio de la UNESCO, con sus murallas del siglo XVIII y el Palacio Haenggung; el impresionante parque temático subterráneo iluminado con LED en el interior de la Cueva Gwangmyeong (una antigua mina de oro de la época japonesa); la Biblioteca Starfield de Suwon de cuatro pisos; y el mercado tradicional Nammun de más de 1.000 años de antigüedad, ideal para la gastronomía callejera. 9 horas con transporte y entradas incluidos."
+        "shortCardDescription": "Una excursión cultural de un día en grupo reducido desde Seúl que recorre tres facetas contrastantes de la provincia de Gyeonggi: la Fortaleza Suwon Hwaseong declarada Patrimonio de la UNESCO, con sus murallas del siglo XVIII y el Palacio Haenggung; el impresionante parque temático subterráneo iluminado con LED en el interior de la Cueva Gwangmyeong (una antigua mina de oro de la época japonesa); la Biblioteca Starfield de Suwon de cuatro pisos. 9 horas con transporte y entradas incluidos."
       },
       "price": {
         "amountLabel": ""
@@ -4330,7 +4330,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "subtitle": "Fortaleza UNESCO, templo de montaña y biblioteca viral: el pasado, el espíritu y el presente de Corea en una excursión de un día desde Seúl.",
         "region": "Suwon y Yongin",
         "duration": "9–10 horas",
-        "stopsCount": 3,
+        "stopsCount": 4,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
@@ -4750,7 +4750,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
       "catalog_card": {
         "slug": "jeju-eastern-unesco-spots-day-tour",
         "title": "済州東部ユネスコ日帰りツアー",
-        "subtitle": "英語・中国語ガイド付き少人数・ミニコーチ — 咸徳、城邑、密川洞窟、城山日出峰、海女博物館を巡る9時間の東済州ループ",
+        "subtitle": "少人数ミニバス、英語・中国語ガイド — 咸徳ビーチ・城邑民俗村・城山日出峰（ユネスコ）・海女の素潜り実演・万丈窟（ユネスコ）を9時間の東部ループで一周します。",
         "region": "東済州",
         "duration": "9時間",
         "stopsCount": 8,
@@ -4766,35 +4766,35 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
         "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
-        "priceLabel": "1名様 US$59（定価$69、14%オフ）",
-        "shortCardDescription": "東済州のユネスコ遺産見どころを9時間で巡る少人数日帰りツアー。咸徳ビーチ、城邑民俗村（ユネスコ）、密川洞窟溶岩トンネル（万丈窟閉鎖中の代替見どころ）、城山日出峰（ユネスコ自然遺産）、海女博物館を一日で網羅。全入場料込み、英語・中国語対応の認定ガイド付き。"
+        "priceLabel": "1名様 US$47（定価$59、20%オフ）・約72,000ウォン",
+        "shortCardDescription": "済州東部のユネスコ見どころを9時間の少人数で一周します。咸徳ソウボン海水浴場、城邑民俗村（ユネスコ民俗）、城山日出峰と万丈窟 — 2007年にともに登録された2つのユネスコ世界自然遺産、そして海女の素潜り実演（中止時は海女博物館）を含みます。全入場料込み、英語・中国語対応の認定ガイド付き。"
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "47"
       }
     },
     "jeju-grand-highlights-loop": {
       "catalog_card": {
         "slug": "jeju-grand-highlights-loop",
-        "title": "済州グランドハイライトツアー",
-        "subtitle": "漢拏山から城山日出峰まで、済州を代表するハイライトスポットを1日で巡ります。",
+        "title": "済州グランドハイライトループ",
+        "subtitle": "済州の3つのユネスコ遺産、海女（ヘニョ）の実演、海岸の断崖、そして海へ落ちる瀑布——島の真の最高峰を1日で。",
         "region": "済州全島ルート",
-        "duration": "9〜9.5時間",
-        "stopsCount": 5,
+        "duration": "10〜10.5時間",
+        "stopsCount": 7,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
-          "スモールグループ",
-          "日帰り旅行者に最適",
-          "テンポよく巡るハイライトコース"
+          "少人数制",
+          "ユネスコ3遺産",
+          "日帰り旅行者に最適"
         ],
-        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "priceLabel": "1名様 US$79（定価$89、11%オフ）",
-        "shortCardDescription": "時間の限られた旅行者のための効率的な済州全島ルート。漢拏山、南海岸、城山日出峰を1日でつなぎます。"
+        "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "priceLabel": "1名 US$100〜（通常 $112、11%オフ）",
+        "shortCardDescription": "3つのユネスコ世界遺産——漢拏山(ハルラサン)、城山日出峰、万丈窟溶岩洞窟——を、生きた海女（ヘニョ）の素潜り実演、柱状節理の断崖、海へ落ちる正房瀑布とつなぐ、密度の高い全島ルート。済州を象徴するハイライトを、1日に凝縮しました。"
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "100"
       }
     },
     "jeju-hydrangea-festival-tour-east-route": {
@@ -5162,7 +5162,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "subtitle": "ソウル発の少人数制文化日帰りツアーで、京畿道の対照的な4つの魅力を巡ります：ユネスコ世界遺産・水原華城…",
         "region": "京畿道（ソウル南部）",
         "duration": "9時間",
-        "stopsCount": 7,
+        "stopsCount": 6,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
@@ -5177,7 +5177,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "heroImage": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
         "thumbnail": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
         "priceLabel": "",
-        "shortCardDescription": "ソウル発の少人数制文化日帰りツアーで、京畿道の対照的な4つの魅力を巡ります。18世紀の城壁と行宮を有するユネスコ世界遺産・水原華城、旧日本時代の金鉱跡に広がるLEDライトアップの地下テーマパーク「光明洞窟」、4フロアにわたるスターフィールドライブラリー水原、そして1,000年の歴史を誇る南門伝統市場のストリートフード。交通費・入場料込みの9時間コースです。"
+        "shortCardDescription": "ソウル発の少人数制文化日帰りツアーで、京畿道の対照的な3つの魅力を巡ります。18世紀の城壁と行宮を有するユネスコ世界遺産・水原華城、旧日本時代の金鉱跡に広がるLEDライトアップの地下テーマパーク「光明洞窟」、4フロアにわたるスターフィールドライブラリー水原。交通費・入場料込みの9時間コースです。"
       },
       "price": {
         "amountLabel": ""
@@ -5190,7 +5190,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "subtitle": "ユネスコ登録の城郭、山の寺院、話題の図書館——韓国の過去・精神・現在をソウル発日帰りで一度に体験。",
         "region": "水原・龍仁",
         "duration": "9〜10時間",
-        "stopsCount": 3,
+        "stopsCount": 4,
         "rating": 0,
         "reviewCount": 0,
         "badges": [

@@ -89,7 +89,7 @@ export default function ProductsV2Page() {
   );
 
   return (
-    <div className="-m-6 h-[calc(100vh-3.5rem)] flex bg-slate-50">
+    <div className="-m-4 flex h-[calc(100dvh-3.25rem-4rem)] bg-slate-50 md:-m-6 md:h-[calc(100vh-3.5rem)]">
       {/* List pane */}
       <ProductsListPane
         items={list.items}
@@ -134,7 +134,7 @@ export default function ProductsV2Page() {
 
 function EmptyEditorPane() {
   return (
-    <section className="flex-1 flex flex-col items-center justify-center bg-slate-50 px-6">
+    <section className="hidden flex-1 flex-col items-center justify-center bg-slate-50 px-6 lg:flex">
       <div className="w-16 h-16 mb-4 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center shadow-lg">
         <Sparkles className="size-8 text-white" />
       </div>

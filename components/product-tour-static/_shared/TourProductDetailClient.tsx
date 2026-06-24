@@ -16,12 +16,14 @@ import {
   TourIncludedSection,
   TourPickupDropoffSection,
   TourPracticalDetails,
+  TourPrivateSampleItinerarySection,
   TourRecommendationsSection,
   TourReviewsSection,
   TourStickyBookingBar,
   TourTabsNav,
   TourTimelineSection,
 } from "@/components/product-tour-static/east-signature-nature-core/tour-detail-sections";
+import { getPrivateSampleItineraryConfig } from "@/components/product-tour-static/_shared/privateSampleItinerary";
 import type { StaticTourProductRegistration } from "@/components/product-tour-static/catalog/staticTourCatalogCards";
 import { TourProductAiAssistantWidget } from "@/components/product-tour-static/_shared/TourProductAiAssistantWidget";
 import { HaenyeoStatusButton } from "@/components/product-tour-static/_shared/HaenyeoStatusButton";
@@ -74,6 +76,12 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
   const supportQuickChips = useMemo(() => pickAssistantQuickChipsFromViewModel(vm, 4), [vm]);
   const hasPlatformCompareLinks = useMemo(
     () => getTourCompareLinks(tourProductSlug) !== null,
+    [tourProductSlug],
+  );
+  // Private car-charter products surface a "Sample Itineraries" section (example
+  // day plans + private-tour rules). Returns null for every other product.
+  const privateSampleItinerary = useMemo(
+    () => getPrivateSampleItineraryConfig(tourProductSlug),
     [tourProductSlug],
   );
   return (
@@ -208,6 +216,17 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
             />
           </div>
         </section>
+
+        {privateSampleItinerary ? (
+          <section id="sample-itinerary" className="mx-3 mt-4 lg:mx-0">
+            <div className="mx-auto max-w-2xl px-4 sm:px-5 py-5">
+              <TourPrivateSampleItinerarySection
+                config={privateSampleItinerary}
+                locale={locale}
+              />
+            </div>
+          </section>
+        ) : null}
 
         {vm.pickup_dropoff ? (
           <section id="pickup-dropoff" className="mx-3 mt-4 lg:mx-0">

@@ -347,7 +347,7 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey, plac
                 the number before clicking "Get quote". Same component, same
                 inputs the QuoteModal renders → one number, one truth. */}
             <div className="mb-4 px-4 pt-4 md:px-0">
-              <LivePriceCard price={livePrice} isJeju={region === "jeju"} />
+              <LivePriceCard price={livePrice} isJeju={region === "jeju"} isCruise={isCruise} />
             </div>
             {/* Phase B — AI recommendation, reusing the preserved matcher.
                 Replaces the "let a guide plan it" empty-cart CTA: the AI

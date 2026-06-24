@@ -5,68 +5,71 @@
   "locale": "zh",
   "product_id": "jeju-grand-highlights-loop",
   "seo": {
-    "pageTitle": "济州精华环岛游 | AtoC Korea",
-    "metaDescription": "小团10小时济州精华环线：城山日出峰（联合国教科文组织）、万丈窟、天地渊瀑布、柱状节理带、翰林公园。",
+    "pageTitle": "济州精华环岛游 — 3处联合国教科文组织遗址 + 海女 | AtoC Korea",
+    "metaDescription": "小团10.5小时济州环线：汉拿山1100高地、柱状节理海崖、正房瀑布、海女徒手潜水现场表演、城山日出峰与万丈窟熔岩洞——一天尽览三处联合国教科文组织遗址。",
     "primaryKeywords": [
       "济州精华小团游",
       "济州一日全岛游",
+      "济州联合国教科文组织一日游",
       "城山日出峰游览",
-      "天地渊瀑布游览",
-      "柱状节理带游览"
+      "万丈窟熔岩洞游览",
+      "济州海女表演游"
     ],
-    "ogImage": "https://www.atockorea.com/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-    "title": "济州精华环线 · 10小时小团 · 联合国教科文组织遗址 + 瀑布 + 悬崖"
+    "ogImage": "https://www.atockorea.com/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+    "title": "济州精华环岛游 · 3处联合国教科文组织遗址 + 海女 + 海崖 | AtoC",
+    "description": "济州全岛精华小团一日游：汉拿山1100高地 → 柱状节理海崖 → 正房瀑布 → 海女徒手潜水表演 → 城山日出峰 → 万丈窟熔岩洞。一天10.5小时尽览三处联合国教科文组织世界遗产。"
   },
   "catalog_card": {
     "slug": "jeju-grand-highlights-loop",
-    "title": "济州全岛精华一日游",
-    "subtitle": "从汉拿山到城山日出峰，一天尽览济州标志性景点。",
+    "title": "济州精华环岛游",
+    "subtitle": "济州三处联合国教科文组织遗址、海女现场表演、海崖与直泻入海的瀑布——一天尽览全岛最精华的景致。",
     "region": "济州全岛线路",
-    "duration": "9–9.5小时",
-    "stopsCount": 5,
+    "duration": "10–10.5小时",
+    "stopsCount": 7,
     "rating": 0,
     "reviewCount": 0,
     "badges": [
       "小团",
-      "最适合一日游客",
-      "快节奏精华游"
+      "3处联合国教科文组织遗址",
+      "最适合一日游客"
     ],
-    "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-    "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-    "priceLabel": "每人 US$79（原价$89，11% 优惠）",
-    "shortCardDescription": "专为时间有限的旅行者打造的高效济州全岛线路，一天串联汉拿山、南海岸风光与城山日出峰。",
+    "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+    "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+    "priceLabel": "每人 US$100 起（原价 $112，立减 11%）",
+    "shortCardDescription": "一条高强度的全岛线路，串联三处联合国教科文组织世界遗产——汉拿山、城山日出峰与万丈窟熔岩洞，并融入海女徒手潜水现场表演、柱状节理海崖以及直泻入海的正房瀑布。济州的标志性精华，浓缩于一日之内。",
     "tags": [
-      "small_group",
+      "小团",
       "济州",
-      "island_wide",
+      "全岛",
       "联合国教科文组织",
-      "first_time_friendly",
+      "海女文化",
       "精华景点"
     ]
   },
   "headlineLine1": "济州全岛精华一日游",
   "headlineLine2": "一日游",
   "price": {
-    "amountLabel": "",
-    "originalPriceUsd": null,
-    "salePriceUsd": null,
-    "discountPercent": null,
+    "amountLabel": "100",
+    "originalPriceUsd": 112,
+    "salePriceUsd": 100,
+    "discountPercent": 11,
     "currency": "USD",
-    "per": "person"
+    "per": "person",
+    "priceNote": "小团双语全岛游（约每人 ₩138,000）。AtoC Korea 直营销售；较运营商基准价立减 11%。"
   },
   "hero": {
-    "imageUrl": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+    "imageUrl": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
     "imagePosition": "center 35%",
-    "tagline": "专为时间有限的旅行者设计，这条高密度线路一天内涵盖汉拿山、壮观的南海岸风光、瀑布与城山日出峰。",
+    "tagline": "用高强度的一天纵贯全岛——汉拿山高山湿地、柱状节理海崖、直泻入海的瀑布、海女徒手潜水现场表演、城山日出峰凝灰岩锥与万丈窟熔岩洞。三处联合国教科文组织世界遗产，外加济州两大最受喜爱的自然地标。",
     "pills": [
-      "最适合一日游客",
-      "小团一日游",
-      "标志性景点"
+      "3处联合国教科文组织遗址",
+      "海女文化",
+      "小团一日游"
     ],
     "meta": {
-      "duration": "9–9.5小时",
+      "duration": "10–10.5小时",
       "region": "济州全岛线路",
-      "stops": "5个站点",
+      "stops": "7个站点",
       "rating": 0,
       "ratingStars": 0
     }
@@ -128,226 +131,209 @@
       "icon": "gauge",
       "label": "节奏均衡",
       "value": "快",
-      "level": 3
+      "level": 4
     }
   ],
   "galleryItems": [
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-      "location": "汉拿山御乘生岳",
-      "alt": "汉拿山御乘生岳 — gallery image 1",
-      "caption": "汉拿山御乘生岳 — photo 1"
+      "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+      "location": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织）",
+      "alt": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — gallery image 1",
+      "caption": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — photo 1"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
-      "location": "大浦柱状节理壁",
-      "alt": "大浦柱状节理壁 — gallery image 1",
-      "caption": "大浦柱状节理壁 — photo 1"
+      "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+      "location": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织）",
+      "alt": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — gallery image 2",
+      "caption": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — photo 2"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
-      "location": "正房瀑布",
-      "alt": "正房瀑布 — gallery image 1",
-      "caption": "正房瀑布 — photo 1"
+      "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+      "location": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织）",
+      "alt": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — gallery image 3",
+      "caption": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — photo 3"
     },
     {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
-      "location": "城山日出峰",
-      "alt": "城山日出峰 — gallery image 1",
-      "caption": "城山日出峰 — photo 1"
-    },
-    {
-      "id": 5,
-      "type": "photo",
-      "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
-      "location": "汉拿山御乘生岳",
-      "alt": "汉拿山御乘生岳 — gallery image 2",
-      "caption": "汉拿山御乘生岳 — photo 2"
-    },
-    {
-      "id": 6,
-      "type": "photo",
-      "src": "/images/tours/hallasan-eoseungsaengak/photo-003.webp",
-      "location": "汉拿山御乘生岳",
-      "alt": "汉拿山御乘生岳 — gallery image 3",
-      "caption": "汉拿山御乘生岳 — photo 3"
-    },
-    {
-      "id": 7,
-      "type": "photo",
-      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
-      "location": "大浦柱状节理壁",
-      "alt": "大浦柱状节理壁 — gallery image 2",
-      "caption": "大浦柱状节理壁 — photo 2"
-    },
-    {
-      "id": 8,
-      "type": "photo",
-      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
-      "location": "大浦柱状节理壁",
-      "alt": "大浦柱状节理壁 — gallery image 3",
-      "caption": "大浦柱状节理壁 — photo 3"
-    },
-    {
-      "id": 9,
-      "type": "photo",
-      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+      "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
       "location": "大浦柱状节理壁",
       "alt": "大浦柱状节理壁 — gallery image 4",
       "caption": "大浦柱状节理壁 — photo 4"
     },
     {
-      "id": 10,
+      "id": 5,
       "type": "photo",
-      "src": "/images/tours/jusangjeolli/photo-005.webp",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
       "location": "大浦柱状节理壁",
       "alt": "大浦柱状节理壁 — gallery image 5",
       "caption": "大浦柱状节理壁 — photo 5"
     },
     {
-      "id": 11,
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+      "location": "大浦柱状节理壁",
+      "alt": "大浦柱状节理壁 — gallery image 6",
+      "caption": "大浦柱状节理壁 — photo 6"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+      "location": "大浦柱状节理壁",
+      "alt": "大浦柱状节理壁 — gallery image 7",
+      "caption": "大浦柱状节理壁 — photo 7"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+      "location": "正房瀑布",
+      "alt": "正房瀑布 — gallery image 8",
+      "caption": "正房瀑布 — photo 8"
+    },
+    {
+      "id": 9,
       "type": "photo",
       "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
       "location": "正房瀑布",
-      "alt": "正房瀑布 — gallery image 2",
-      "caption": "正房瀑布 — photo 2"
+      "alt": "正房瀑布 — gallery image 9",
+      "caption": "正房瀑布 — photo 9"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
+      "location": "正房瀑布",
+      "alt": "正房瀑布 — gallery image 10",
+      "caption": "正房瀑布 — photo 10"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-diving-ai.webp",
+      "location": "城山海女徒手潜水表演",
+      "alt": "城山海女徒手潜水表演 — gallery image 11",
+      "caption": "城山海女徒手潜水表演 — photo 11"
     },
     {
       "id": 12,
       "type": "photo",
-      "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
-      "location": "正房瀑布",
-      "alt": "正房瀑布 — gallery image 3",
-      "caption": "正房瀑布 — photo 3"
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+      "location": "城山日出峰",
+      "alt": "城山日出峰 — gallery image 12",
+      "caption": "城山日出峰 — photo 12"
     },
     {
       "id": 13,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
       "location": "城山日出峰",
-      "alt": "城山日出峰 — gallery image 2",
-      "caption": "城山日出峰 — photo 2"
+      "alt": "城山日出峰 — gallery image 13",
+      "caption": "城山日出峰 — photo 13"
     },
     {
       "id": 14,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
       "location": "城山日出峰",
-      "alt": "城山日出峰 — gallery image 3",
-      "caption": "城山日出峰 — photo 3"
+      "alt": "城山日出峰 — gallery image 14",
+      "caption": "城山日出峰 — photo 14"
     },
     {
       "id": 15,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
       "location": "城山日出峰",
-      "alt": "城山日出峰 — gallery image 4",
-      "caption": "城山日出峰 — photo 4"
+      "alt": "城山日出峰 — gallery image 15",
+      "caption": "城山日出峰 — photo 15"
     },
     {
       "id": 16,
       "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
-      "location": "城山日出峰",
-      "alt": "城山日出峰 — gallery image 5",
-      "caption": "城山日出峰 — photo 5"
-    },
-    {
-      "id": 17,
-      "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/photo-006.webp",
-      "location": "城山日出峰",
-      "alt": "城山日出峰 — gallery image 6",
-      "caption": "城山日出峰 — photo 6"
-    },
-    {
-      "id": 18,
-      "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/seongsan-haenyeo-show-ai.webp",
-      "location": "城山日出峰",
-      "alt": "城山日出峰 — gallery image 12",
-      "caption": "城山日出峰 — photo 12"
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+      "location": "万丈窟熔岩洞",
+      "alt": "万丈窟熔岩洞 — gallery image 16",
+      "caption": "万丈窟熔岩洞 — photo 16"
     }
   ],
   "itineraryStops": [
     {
       "number": 1,
-      "time": "09:30",
-      "duration": "75 分钟",
-      "name": "汉拿山御乘生岳",
-      "category": "汉拿山山麓步道（御里牧）——UNESCO世界遗产体验",
-      "description": "**御乘生岳（어승생악，海拔1,169米）**是**汉拿山（한라산，海拔1,950米）**西麓的一座寄生火山锥（오름／*oreum*）。汉拿山是韩国最高峰，也是济州岛的地质核心。汉拿山拥有**无与伦比的多重殊荣**：**UNESCO世界自然遗产（2007年7月2日列入）**、**UNESCO生物圈保护区（2002年）**、**韩国国立公园（1970年3月24日指定）**以及**天然纪念物第182号（1966年）**——是韩国唯一同时获得三项UNESCO自然类认定的地点。\n\n御乘生岳登山口位于**御里牧游客中心**，全程**仅约1.3公里、爬升约200米**，即可抵达宽阔的山顶观景台，往返约60分钟，让游客无需进行长达9小时的白鹿潭火山口全程攀登，便可领略**\"汉拿山UNESCO风韵\"**。晴天时，站在观景台上可远眺**黄海、汉拿山白鹿潭峰顶火山湖（백록담）以及向南延伸的寄生火山锥群**。植物亮点：此海拔带（1,000–1,300米）是**落叶阔叶林与韩国冷杉（구상나무，*Abies koreana*——IUCN近危物种，韩国高山特有种）林带之间的过渡地带**。\n\n汉拿山共栖息着**逾2,000种植物**，约占**朝鲜半岛全部植物种类的一半**。山顶观景台还保存着一处历史遗迹：**1945年日本帝国军队修建的土垒卡（토치카，混凝土碉堡／通讯据点）**，建于二战末期，是韩国保存至今海拔最高的二战日军工事之一。入场费及停车费均**免费**；游览御乘生岳**无需预约**（白鹿潭峰顶路线每日限额1,000人，须提前预约）。",
-      "image": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+      "time": "08:45",
+      "duration": "45分钟",
+      "name": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织）",
+      "category": "高山湿地 — 拉姆萨尔遗址 + 汉拿山联合国教科文组织世界遗产区内",
+      "description": "**汉拿山1100高地湿地（한라산 1100고지 습지）**是位于汉拿山高原的高海拔山地湿地系统，**海拔恰好1,100米**，沿**1100号国道——韩国海拔最高的国道**，连接济州市与西归浦中文区。该遗址被列为**国际重要湿地（拉姆萨尔湿地，编号1893，2009年10月12日指定）**，同时位于**汉拿山联合国教科文组织世界遗产（2007年）**、**济州岛联合国教科文组织生物圈保护区（2002年）**及**汉拿山国家公园（1970年）**范围之内，是全球少数同时拥有**四项国际/国家重叠认定**的遗址之一。\n\n湿地由**16处以上不连续的淡水沼泽和水池**组成，分布于低坡度高原地段，可汇聚并留存雨水，形成**小型永久湖泊和泥炭沼泽**，孕育多样的植物群落，济州特有种比例较高。已记录的生物多样性包括**韩国境内3种受威胁鸟类和1种受威胁植物**，以及济州岛特有的哺乳动物、爬行动物和昆虫物种。该遗址**2008年接待游客90万人次**（汉拿山游客中心数据）。\n\n游客体验：设有**1公里木栈道环线**，配备观景台、解说标牌，以及登山口的小型自然历史展览。**秋季红叶（10月至11月）**与**冬季雪景（12月至2月）**是拍照最多的季节；**春夏季节**则可欣赏湿地植物及特有物种。**免费入场**；毗邻的**1100休息区（1100 휴게소）**提供室内卫生间、咖啡厅及小型纪念品商店。拉姆萨尔名录中记录了该遗址对当地社区的**文化与宗教重要意义**——历史上与山水神灵相关的萨满朝圣活动由来已久。",
+      "image": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
       "highlights": [
-        "**汉拿山 = 韩国唯一获得三项自然类认定的地点**：UNESCO世界遗产（2007年）＋生物圈保护区（2002年）＋国立公园（1970年）",
-        "**御乘生岳山顶海拔1,169米**——寄生火山锥（oreum），为济州360余座火山锥之一",
-        "步道全长**单程1.3公里／爬升约200米**——宽阔石阶＋木栈道，穿运动鞋即可轻松完成",
-        "观景台全景涵盖**汉拿山白鹿潭火山口、黄海及南部火山锥群**",
-        "植物过渡带——**韩国冷杉（*Abies koreana*，IUCN近危物种）**林带起始于约100米以上的位置",
-        "山顶保存有**1945年日本帝国军队土垒卡碉堡**——罕见的高海拔二战遗迹",
-        "**免费入场**＋免费停车；无预约名额限制（白鹿潭峰顶路线每日限额1,000人）",
-        "汉拿山栖息着**逾2,000种植物**——约占朝鲜半岛全部植物的一半",
-        "往返游览时间**约60分钟**＝充分领略\"UNESCO风韵\"，无需9小时白鹿潭攀登"
+        "**拉姆萨尔湿地第1893号**（2009年10月12日指定）— 国际重要湿地",
+        "**海拔1,100米** — 位于韩国**最高国道**（1100号国道）沿线",
+        "**四重国际认定** — 拉姆萨尔湿地 + 联合国教科文组织世界遗产 + 生物圈保护区 + 国家公园",
+        "**16处以上不连续湿地** — 淡水沼泽 + 水池 + 泥炭沼泽",
+        "**3种受威胁鸟类 + 1种受威胁植物**；多种济州特有物种",
+        "**2008年接待游客90万人次** — 由汉拿山游客中心管理",
+        "**1公里木栈道环线**，设有观景台及解说牌",
+        "**秋季红叶＋冬季白雪** = 标志性摄影季节",
+        "**免费入场**；毗邻1100休息区（室内卫生间＋咖啡厅）"
       ],
       "timeUsed": [
-        "御里牧停车＋如厕＋步道简介——约10分钟",
-        "沿1.3公里步道上行至观景台——约25分钟",
-        "山顶观景台拍照＋参观土垒卡碉堡——约15分钟",
-        "下山——约20分钟",
-        "缓冲／集合整队——约5分钟"
+        "大巴抵达＋停车于1100休息区 — 约5分钟",
+        "木栈道环线＋观景台 — 约25分钟",
+        "解说牌＋自然历史展览 — 约10分钟",
+        "缓冲时间／咖啡厅卫生间 — 约5分钟"
       ],
-      "whyOnRoute": "**精华游览路线的开篇锚点**。以汉拿山作为起点，可首先建立济州岛的地质认知框架——整座岛屿本身就是一座盾状火山的山坡，而此后的每一处景点（柱状节理带熔岩柱→正房瀑布直泻入海→城山凝灰岩锥）都是同一次汉拿山火山喷发历史在不同地点的延续表达。御乘生岳是**唯一能在60分钟内、无需预约、同时体验UNESCO世界遗产＋生物圈保护区＋地质公园的汉拿山步道**——灵室及城板岳步道均需5至9小时，且白鹿潭峰顶每日限额1,000人。对于初次游览济州的游客而言，这是行程中性价比最高的汉拿山入门体验。上午09:30的早出发还可赶在云层之前——春夏季节汉拿山常于11:00前后云雾笼罩。",
+      "whyOnRoute": "1100高地是唯一无需预约、也无需多小时登顶徒步即可纳入全岛环线的汉拿山站点。在韩国海拔最高的公路上,一段短暂的高山木栈道让全天行程在汉拿山联合国教科文组织世界遗产区域内拉开序幕,随后才开始漫长的南行驾驶。",
       "_poi_meta": {
-        "poi_key": "hallasan_eoseungsaengak",
-        "kb_version": "1.18",
+        "poi_key": "hallasan_1100_wetland",
+        "kb_version": "1.20",
         "verified_date": "2026-04-29",
         "sources": [
-          "UNESCO WHC inscription 1264 (Jeju Volcanic Island and Lava Tubes, 2007)",
-          "Hallasan National Park official site (hallasan.go.kr)",
-          "Korea National Park Service designation records",
-          "VisitKorea — Hallasan Eoseungsaengak trail",
-          "Korea Forest Service — Abies koreana red list status"
+          "Ramsar Sites Information Service — 1100 Altitude Wetland (Site No. 1893)",
+          "UNESCO Man and the Biosphere Programme — Jeju Island Biosphere Reserve",
+          "Korea National Park Service — Hallasan National Park 1100 Wetland records",
+          "Mt Halla Visitor Centre — visitor management documentation",
+          "Jeju Special Self-Governing Province — Wetland Protected Area designation 2009"
         ]
       },
       "visitBasics": {
-        "hours": "05:00起开放，可能有季节性限制",
-        "closed": "恶劣天气时可能限制进入",
+        "hours": "全天24小时开放（木栈道）；游客中心09:00–18:00",
+        "closed": "大雪期间1100公路可能临时封闭（12月至2月）",
         "admission": "免费",
-        "walking": "坡度适中"
+        "walking": "轻松 — 1公里木栈道；地势平坦，无障碍通行"
       },
       "convenience": {
-        "restroom": "步道入口处",
-        "parking": "提供停车位"
+        "restroom": "游客中心内有售",
+        "parking": "游客中心免费停车"
       },
       "smartNotes": {
-        "photo": "晴天时，拍摄山脊的宽幅全景与远景通常优于近距离人像。",
-        "facilities": "基本服务设施主要集中于入口附近区域。",
-        "tip": "尤其是雨后或在较寒冷的季节，这里对鞋底抓地力和保暖的要求比大多数其他景点更高。"
+        "photo": "通往湿地的木栈道远眺汉拿山，是经典取景地；秋季（十月）草色金黄",
+        "facilities": "游客中心提供小食及旅游资讯",
+        "tip": "请备多层衣物 — 此处气温较济州沿海低5–10°C；冬季请提前查看路况；如向南下行，可顺道游览天帝渊瀑布"
       },
       "images": [
-        "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
-        "/images/tours/hallasan-eoseungsaengak/photo-003.webp"
+        "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+        "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+          "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+          "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/hallasan-eoseungsaengak/photo-003.webp",
+          "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
           "source": "atoc-korea"
         }
       ],
@@ -355,32 +341,32 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-          "location": "汉拿山御乘生岳",
-          "caption": "汉拿山御乘生岳 — photo 1",
-          "alt": "汉拿山御乘生岳 — gallery image 1"
+          "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+          "location": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织）",
+          "caption": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — photo 1",
+          "alt": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
-          "location": "汉拿山御乘生岳",
-          "caption": "汉拿山御乘生岳 — photo 2",
-          "alt": "汉拿山御乘生岳 — gallery image 2"
+          "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+          "location": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织）",
+          "caption": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — photo 2",
+          "alt": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — gallery image 2"
         },
         {
           "id": 3,
           "type": "photo",
-          "src": "/images/tours/hallasan-eoseungsaengak/photo-003.webp",
-          "location": "汉拿山御乘生岳",
-          "caption": "汉拿山御乘生岳 — photo 3",
-          "alt": "汉拿山御乘生岳 — gallery image 3"
+          "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+          "location": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织）",
+          "caption": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — photo 3",
+          "alt": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — gallery image 3"
         }
       ]
     },
     {
       "number": 2,
-      "time": "11:15",
+      "time": "10:00",
       "duration": "45分钟",
       "name": "大浦柱状节理壁",
       "category": "火山海岸线——六边形柱状节理熔岩",
@@ -404,7 +390,7 @@
         "继续沿木栈道环路游览——约10分钟",
         "返回大巴——约10分钟"
       ],
-      "whyOnRoute": "**行程环线中\"柱状熔岩\"的核心锚点**。汉拿山确立了火山喷发的源头，而柱状节理则呈现出**同一熔岩抵达海洋并凝固成几何形态**的过程——构成一段贯穿30公里海岸线的完整地质叙事。中门是从西南海岸折返向东通往正房和城山的自然枢纽，因此这一站也承担着地理衔接的功能。与**龙头海岸（涨潮或恶劣天气时关闭，约30%的到访日无法游览）**或**松岳山（步行距离多1.6公里，石柱分布较分散）**相比，大浦**全天候开放、无障碍设施完善，距大巴步行仅需15分钟**——是南海岸单位时间内游览价值最高的景点。11:15到达的时间窗口也恰好**早于中午邮轮港口岸上游览的高峰时段**，避开了12:15后涌入观景台的人潮。",
+      "whyOnRoute": "柱状节理是济州火山地质最高效的单点展示——南海岸的一处短暂停留,直观地浓缩了“熔岩入海”的故事,正位于汉拿山高地与正房瀑布之间的途中。",
       "_poi_meta": {
         "poi_key": "daepo_jusangjeolli_cliff",
         "kb_version": "1.18",
@@ -506,47 +492,7 @@
     },
     {
       "number": 3,
-      "time": "12:15",
-      "duration": "60分钟",
-      "name": "午餐 — 西归浦当地美食",
-      "category": "午间休整 — 西归浦当地料理",
-      "description": "**西归浦（서귀포）市中心60分钟休整** — 济州岛南部城市，以在**西归浦每日偶来市场（서귀포매일올레시장）**靠岸的新鲜海鲜及富饶的鲍鱼海岸线而著称。根据季节和团体规模，默认轮换菜单如下：捕捞旺季（9月至2月）在西归浦专门店享用**带鱼炖（갈치조림，红烧带鱼）**；全年可在面向市场的餐厅享用**鲍鱼拌饭（전복비빔밥）**；或为偏好烤肉的宾客提供**济州黑猪烤肉（흑돼지구이）**。\n\n黑猪（***Sus scrofa* domesticus，济州黑猪品种**）于**2015年被列为文化遗产资料第5号**，至今仍是济州岛的受保护品种。素食替代选项可按需提供：**拌面（비빔국수，凉拌辣面）**搭配时令蔬菜。午餐地点**距正房瀑布步行仅5分钟** — 食欲旺盛的宾客可在继续步行前，先在市场的茶饮/咖啡一条街短暂停留。",
-      "image": null,
-      "highlights": [
-        "**西归浦**中心区 — 济州岛南部渔业/海鲜之都",
-        "应季（9月至2月）供应**带鱼炖（갈치조림）**，**鲍鱼拌饭（전복비빔밥）**全年供应",
-        "**黑猪（济州黑猪）**可选 — 文化遗产资料第5号（2015年）",
-        "应要求提供**素食拌面（비빔국수）**替代选项",
-        "午餐场所**距正房瀑布入口步行约5分钟** — 大巴转场极少",
-        "上车时收集团体饮食需求；菜单提前确认"
-      ],
-      "timeUsed": [
-        "步行至午餐场所 — 约5分钟",
-        "点餐 + 用餐 + 饮品 — 约45分钟",
-        "步行至正房瀑布入口 — 约5分钟",
-        "缓冲时间 — 约5分钟"
-      ],
-      "whyOnRoute": "西归浦的中心位置使**正房瀑布成为午餐后的步行下一站**（午餐与第4站之间无需大巴转场），相较于中文村一带的午餐选择可节省约15分钟。带鱼、黑猪与鲍鱼是济州岛三大招牌食材，均为本地捕捞/养殖所得 — 宾客可在一顿饭中体验当日最具济州饮食文化代表性的美食。此外，这一节奏也恰好衔接了上午的汉拿山徒步与悬崖步道，为下午的城山登顶储备体力。",
-      "visitBasics": {
-        "hours": "视餐厅营业时间而定",
-        "closed": "因场地而异",
-        "admission": "餐费在现场结算，另有说明除外",
-        "walking": "极少"
-      },
-      "convenience": {
-        "restroom": "餐厅室内",
-        "parking": "提供停车位"
-      },
-      "smartNotes": {
-        "photo": "由于当日行程以自然风光为主，美食照片有助于丰富路线的视觉节奏。",
-        "facilities": "餐饮相关设施通常十分齐全。",
-        "tip": "建议在此从容用餐，切勿匆忙，以免影响下午的游览体力。"
-      },
-      "images": []
-    },
-    {
-      "number": 4,
-      "time": "13:35",
+      "time": "11:05",
       "duration": "60分钟",
       "name": "正房瀑布",
       "category": "海岸瀑布 — 直接飞流入海（亚洲唯一）",
@@ -570,7 +516,7 @@
         "返回大巴 — 约10分钟",
         "缓冲时间 — 约5分钟"
       ],
-      "whyOnRoute": "正房瀑布是**行程中唯一一处地质、神话与地名词源在同一画面中交汇**的停留点 — 直泻入海的瀑布以最直观的方式诠释了\"西归浦\"地名的由来。与**天帝渊（三级内陆瀑布，北约3公里）**相比，此处游览**时间更短、景观更震撼、且可步行至午餐地点** — 天帝渊需绕道中文旅游区，且需在林间步道上花费30分钟以上。13:35的下午时段恰好能赶上\"瀑布迎光\"窗口（14:00–14:30），便于拍照留念。离开后，大巴将沿1132号公路向东驶向城山 — 沿途65分钟的海岸风光可透过车窗欣赏**济州东部火山丘群**的壮丽景色。",
+      "whyOnRoute": "正房瀑布——亚洲唯一直泻入海的瀑布——距西归浦的午餐区仅几分钟车程,因此可在正午休整前无缝衔接,毫无折返。",
       "_poi_meta": {
         "poi_key": "jeongbang_falls",
         "kb_version": "1.18",
@@ -645,8 +591,105 @@
       ]
     },
     {
-      "number": 5,
-      "time": "15:25",
+      "number": 4,
+      "time": "12:15",
+      "duration": "60分钟",
+      "name": "午餐 — 西归浦当地美食",
+      "category": "午间休整 — 西归浦当地料理",
+      "description": "**西归浦（서귀포）市中心60分钟休整** — 济州岛南部城市，以在**西归浦每日偶来市场（서귀포매일올레시장）**靠岸的新鲜海鲜及富饶的鲍鱼海岸线而著称。根据季节和团体规模，默认轮换菜单如下：捕捞旺季（9月至2月）在西归浦专门店享用**带鱼炖（갈치조림，红烧带鱼）**；全年可在面向市场的餐厅享用**鲍鱼拌饭（전복비빔밥）**；或为偏好烤肉的宾客提供**济州黑猪烤肉（흑돼지구이）**。\n\n黑猪（***Sus scrofa* domesticus，济州黑猪品种**）于**2015年被列为文化遗产资料第5号**，至今仍是济州岛的受保护品种。素食替代选项可按需提供：**拌面（비빔국수，凉拌辣面）**搭配时令蔬菜。午餐地点**距正房瀑布步行仅5分钟** — 食欲旺盛的宾客可在继续步行前，先在市场的茶饮/咖啡一条街短暂停留。",
+      "image": null,
+      "highlights": [
+        "**西归浦**中心区 — 济州岛南部渔业/海鲜之都",
+        "应季（9月至2月）供应**带鱼炖（갈치조림）**，**鲍鱼拌饭（전복비빔밥）**全年供应",
+        "**黑猪（济州黑猪）**可选 — 文化遗产资料第5号（2015年）",
+        "应要求提供**素食拌面（비빔국수）**替代选项",
+        "午餐场所**距正房瀑布入口步行约5分钟** — 大巴转场极少",
+        "上车时收集团体饮食需求；菜单提前确认"
+      ],
+      "timeUsed": [
+        "步行至午餐场所 — 约5分钟",
+        "点餐 + 用餐 + 饮品 — 约45分钟",
+        "步行至正房瀑布入口 — 约5分钟",
+        "缓冲时间 — 约5分钟"
+      ],
+      "whyOnRoute": "午餐安排在西归浦市中心,位于南海岸各站点与漫长东行驾驶之间,让团队恢复体力,以充沛状态迎接下午的攀登与洞穴。",
+      "visitBasics": {
+        "hours": "视餐厅营业时间而定",
+        "closed": "因场地而异",
+        "admission": "餐费在现场结算，另有说明除外",
+        "walking": "极少"
+      },
+      "convenience": {
+        "restroom": "餐厅室内",
+        "parking": "提供停车位"
+      },
+      "smartNotes": {
+        "photo": "由于当日行程以自然风光为主，美食照片有助于丰富路线的视觉节奏。",
+        "facilities": "餐饮相关设施通常十分齐全。",
+        "tip": "建议在此从容用餐，切勿匆忙，以免影响下午的游览体力。"
+      },
+      "images": []
+    },
+    {
+      "time": "14:00",
+      "duration": "45分钟",
+      "name": "城山海女徒手潜水表演",
+      "category": "联合国教科文组织非物质文化遗产——女性潜水员现场表演",
+      "description": "济州的海女（女性潜水员）于2016年被列为联合国教科文组织人类非物质文化遗产。在城山日出峰南侧的小湾,资深潜水员——许多已年逾六旬乃至八旬——每日进行徒手潜水表演,通常于13:30与15:00前后举行。她们以传统劳作歌谣开场,随后在不借助任何呼吸装备的情况下潜入水下5至10米,采集海螺、海胆与鲍鱼,出水时发出标志性的“숨비소리（sumbi-sori）”——一种让她们在长时间潜水后吐气换气的哨音般呼吸声。表演结束后,潜水员会在海边将新鲜渔获切成生鱼片现场售卖。这是一次罕见而鲜活的相遇,得以亲见一种已传承400年、却随着潜水员逐渐老去而日渐消失的母系潜水文化。表演在露天进行,取决于海况;遇取消之日,路线将改为参观附近下道的海女博物馆,以潜水装备、历史与影像在室内讲述同样的故事。",
+      "image": "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-diving-ai.webp",
+      "highlights": [
+        "联合国教科文组织非物质文化遗产（2016年）——济州的女性潜水员",
+        "城山小湾的徒手潜水现场表演（约13:30 / 15:00）",
+        "传统潜水歌谣与标志性的“숨비소리”换气声",
+        "取消时的替代方案：室内海女博物馆讲述同样的故事"
+      ],
+      "timeUsed": [
+        "步行下至海女小湾——约5分钟",
+        "徒手潜水表演 + 潜水歌谣——约25分钟",
+        "海边新鲜渔获 / 生鱼片——约10分钟",
+        "返回大巴——约5分钟"
+      ],
+      "whyOnRoute": "海女表演为一整天的火山地貌增添了人文与文化的一层——而且由于它恰位于城山脚下,在登山前无需任何额外驾驶。",
+      "_poi_meta": {
+        "poi_key": "jeju_haenyeo_museum",
+        "kb_version": "1.29",
+        "verified_date": "2026-06-23",
+        "sources": [
+          "VisitKorea",
+          "UNESCO ICH 2016",
+          "Jeju Haenyeo Museum"
+        ]
+      },
+      "smartNotes": {
+        "photo": "潜水员身着潜水服入水的瞬间,以及随后摊放在礁石上的新鲜渔获",
+        "facilities": "潜水员的摊位售卖刚出水的新鲜海胆、海螺与鲍鱼生鱼片",
+        "tip": "表演时间随海况与季节变动——由导游当日确认。若取消,您将改为参观海女博物馆。"
+      },
+      "convenience": {
+        "restroom": "城山日出峰入口广场设有洗手间",
+        "parking": "与城山日出峰停车场共用"
+      },
+      "visitBasics": {
+        "hours": "露天表演通常于13:30与15:00前后举行（视季节与天气而定）",
+        "closed": "海况或天气恶劣时取消；海女博物馆周一闭馆",
+        "admission": "观看表演免费；海女博物馆（替代方案）成人约 ₩1,100",
+        "walking": "极少——一小段平缓步道下至小湾"
+      },
+      "images": [
+        "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-diving-ai.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-diving-ai.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [],
+      "number": 5
+    },
+    {
+      "number": 6,
+      "time": "14:55",
       "duration": "90分钟",
       "name": "城山日出峰",
       "category": "UNESCO世界遗产凝灰岩锥 — 日出峰（三重UNESCO认定）",
@@ -670,7 +713,7 @@
         "下山 — 约20分钟",
         "可选：在山脚观看海女表演（每日1场，下午2点；恶劣天气时可能取消）— 约10分钟"
       ],
-      "whyOnRoute": "**精华路线的收官之作** — 岛上联合国教科文组织遗产最密集的单一景点，也是全天行程中唯一能站在**5,000年历史的水成火山地貌**上，同时将**海岛、大海与汉拿山尽收眼底**的地方。地理上是东海岸的终章，地质上是继汉拿山火山源头与柱状节理之壁熔岩之后的**第三个火山篇章**。午后抵达（15:25）可在登山前赶上山脚的**14:00海女表演**，约16:30时分**柔和的黄金时段光线**洒落火山口边缘，并在**19:00公园关闭**前从容下山。春秋傍晚额外福利：下山时机恰好让游客抵达**日出峰村**用晚餐或乘车返回，此时山脊从西面迎来落日余晖。与日出观景相比（虽广受欢迎，但需04:30出发且错失全天日光游览），午后游城山可以用一个充实的全岛联合国教科文组织遗产日取代单纯的日出奇景。",
+      "whyOnRoute": "城山日出峰是全天的招牌攀登——一座三重联合国教科文组织认定的凝灰岩锥,紧邻海女小湾,因此团队可先观看潜水表演,再无需额外驾驶即可登山。",
       "_poi_meta": {
         "poi_key": "seongsan_ilchulbong",
         "kb_version": "1.18",
@@ -800,99 +843,166 @@
         }
       ],
       "liveStatusWidget": "haenyeo"
+    },
+    {
+      "time": "16:55",
+      "duration": "50分钟",
+      "name": "万丈窟熔岩洞",
+      "category": "联合国教科文组织熔岩洞——世界自然遗产洞穴终章",
+      "description": "万丈窟是世界上最优秀的熔岩洞之一,也是济州联合国教科文组织名录的核心洞穴。它形成于约10万至30万年前,当时拒文岳火山系统的熔岩向海洋下泄,留下一条约7.4公里长的隧道。其中1公里路段对游客开放,终点是一根高7.6米的熔岩石柱——已知地球上最高的熔岩石柱——由熔岩从上层通道倾泻而下凝结而成。沿途洞穴呈现教科书般的火山特征:熔岩钟乳石、条纹状的熔岩流痕、地面上绳状的绳状熔岩、洞穴珊瑚,以及一块巧合之下酷似济州岛轮廓的“熔岩龟”岩石。它属于2007年列入的“济州火山岛与熔岩洞穴”联合国教科文组织世界遗产地。洞内全年保持约11–21°C的稳定温度,因此夏凉冬暖——雨天更是天然的避雨之所。地面崎岖、潮湿、光线昏暗,公众步道往返约1公里,需30至45分钟。万丈窟会因保护与客流管控而不定期关闭;遇此情况,路线将改为参观附近的日出乐园美千洞——同属一火山系统的另一处熔岩洞。",
+      "image": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+      "highlights": [
+        "属于联合国教科文组织“济州火山岛与熔岩洞穴”世界遗产地（2007年）",
+        "终点是已知世界上最高的熔岩石柱——约7.6米",
+        "在7.4公里熔岩洞系统中开放1公里可通行通道",
+        "全年凉爽11–21°C——全天的天然避雨避暑之所"
+      ],
+      "timeUsed": [
+        "抵达 + 万丈窟停车——约5分钟",
+        "步行至7.6米熔岩石柱——约20分钟",
+        "熔岩石柱 + 返程步行——约20分钟",
+        "入口处缓冲 / 洗手间——约5分钟"
+      ],
+      "whyOnRoute": "万丈窟以第三处联合国教科文组织自然遗产、也是全天唯一有遮蔽的室内站点为环线收尾。它距城山约30分钟车程,正位于返回济州市的途中,因此能在不增加额外路程的情况下闭合整条环线。",
+      "_poi_meta": {
+        "poi_key": "manjanggul_lava_tube",
+        "kb_version": "1.29",
+        "verified_date": "2026-06-23",
+        "sources": [
+          "UNESCO World Heritage 2007",
+          "Jeju World Natural Heritage Center",
+          "VisitKorea"
+        ]
+      },
+      "smartNotes": {
+        "photo": "步道尽头的7.6米熔岩石柱,以及形似济州岛的“熔岩龟”岩石",
+        "facilities": "入口处设有咖啡馆、洗手间及一家小商店;拒文岳熔岩洞系统就在附近",
+        "tip": "请携带一件轻便外套——洞内全年凉爽——并穿着防滑鞋以应对潮湿、不平的地面。关闭日行程将改为参观日出乐园美千洞熔岩洞。"
+      },
+      "convenience": {
+        "restroom": "入口广场设有洗手间",
+        "parking": "入口处设有免费停车场"
+      },
+      "visitBasics": {
+        "hours": "每日09:00–18:00（最后入场约17:10）",
+        "closed": "每月第一个周三；不定期保护性关闭",
+        "admission": "成人 ₩4,000 / 青少年 ₩2,000；7岁以下及65岁以上免费",
+        "walking": "中等——往返约1公里,洞内地面崎岖、潮湿、光线昏暗,部分顶部低矮"
+      },
+      "images": [
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [],
+      "number": 7
     }
   ],
   "routeFlowStops": [
     {
-      "name": "御乘生岳",
-      "theme": "汉拿山",
+      "name": "汉拿山1100",
+      "theme": "高地",
       "type": "01"
     },
     {
-      "name": "柱状节理之壁",
-      "theme": "悬崖",
+      "name": "柱状节理",
+      "theme": "海崖",
       "type": "02"
-    },
-    {
-      "name": "午餐",
-      "theme": "休整",
-      "type": "03"
     },
     {
       "name": "正房",
       "theme": "瀑布",
+      "type": "03"
+    },
+    {
+      "name": "午餐",
+      "theme": "休整",
       "type": "04"
+    },
+    {
+      "name": "海女表演",
+      "theme": "文化",
+      "type": "05"
     },
     {
       "name": "城山",
       "theme": "火山口",
-      "type": "05"
+      "type": "06"
+    },
+    {
+      "name": "万丈窟",
+      "theme": "熔岩洞",
+      "type": "07"
     }
   ],
   "routePhases": [
     {
-      "phase": "上午",
-      "duration": "1-2",
+      "phase": "上午——高山与南海岸",
+      "duration": "1-3",
       "description": ""
     },
     {
-      "phase": "中午至午后",
-      "duration": "3-4",
+      "phase": "正午——午餐与海女文化",
+      "duration": "4-5",
       "description": ""
     },
     {
-      "phase": "终章",
-      "duration": "5",
+      "phase": "终章——火山口与熔岩洞",
+      "duration": "6-7",
       "description": ""
     }
   ],
   "routeShapeIntro": {
     "title": "全日行程脉络",
-    "subtitle": "行程从汉拿山出发，途经南海岸，最终抵达城山日出峰。接送时间通常为08:30至09:00，返回济州市约在17:40至18:00。"
+    "subtitle": "行程从汉拿山1100高地出发，途经南海岸的海崖与瀑布，午餐稍作休整，随后东行欣赏海女徒手潜水现场表演、攀登城山日出峰，并探访万丈窟熔岩洞。全程约180公里、约5小时车程；接送通常为08:30–09:00，约18:00–18:30返回济州市。"
   },
   "whyTourWorks": {
     "bestFor": [
       "在济州只有一天时间的旅行者",
-      "上午抵达济州的旅行者",
-      "希望游览标志性景点的旅行者",
-      "喜欢积极观光的旅行者"
+      "希望游览济州联合国教科文组织遗址的初次到访者",
+      "希望同时领略标志性地标与当地文化的旅行者",
+      "喜欢积极、充实的全天观光的旅行者"
     ],
     "routeLogicSections": [
       {
-        "title": "专为时间有限的旅行者设计",
+        "title": "专为一天尽览济州精华而设计",
         "icon": "clock-3",
         "iconBg": "bg-amber-50/80",
         "items": [
           {
-            "label": "从汉拿山出发",
-            "detail": "以汉拿山作为起点，在横跨全岛的长途驾车开始之前，让全天行程充分感受济州的山地地貌。"
+            "label": "以汉拿山高地开篇",
+            "detail": "从海拔1,100米的高山湿地起步，在漫长的横岛驾驶开始之前，先以济州的山地核心为全天行程定下基调。"
           },
           {
             "label": "将南海岸安排在行程中段",
-            "detail": "柱状节理带、午餐与正房瀑布维持了从西向东的行程流动，同时全天保持了丰富的视觉密度。"
+            "detail": "柱状节理、正房瀑布与午餐串起从西向东的行程流动，同时让正午时段始终保持丰富的视觉密度。"
           },
           {
-            "label": "以城山日出峰收尾",
-            "detail": "以城山作为终点，让整个路线不再像是各自独立的区域站点，而更像是一次完整的济州精华之旅。"
+            "label": "以东部的火山口与熔岩洞收尾",
+            "detail": "海女文化、城山攀登与万丈窟熔岩洞，将东段行程凝聚成一段有力的联合国教科文组织终章，而非各自独立的零散站点。"
           }
         ]
       },
       {
-        "title": "为何这一天行程格外充实",
+        "title": "为何这一天格外充实",
         "icon": "mountain",
         "iconBg": "bg-sky-50/80",
         "items": [
           {
-            "label": "两段更为活跃的步行路段",
-            "detail": "御乘生岳与城山日出峰使这条路线比典型的小团体一日游更具运动性。"
+            "label": "三处联合国教科文组织世界遗产",
+            "detail": "汉拿山、城山日出峰与万丈窟均属于济州的联合国教科文组织遗产名录——在济州一日之内可达成的最高遗产密度。"
           },
           {
-            "label": "优先考虑景观密度",
-            "detail": "这不是一条慢游路线，而是专为希望体验更丰富、更深刻的济州一日游旅行者而设计的。"
+            "label": "一层鲜活的文化体验",
+            "detail": "海女徒手潜水表演在一整天的火山地貌之外，增添了一份联合国教科文组织非物质文化遗产的体验。"
           },
           {
-            "label": "时间有限时尤为值得",
-            "detail": "如果您只有一天时间，集中游览济州最具代表性的标志性景点，往往比节奏过于轻松更有意义。"
+            "label": "时间利用价值最大化",
+            "detail": "高山、海崖、瀑布、文化、火山口与熔岩洞汇于一条环线——经过精心设计，使一日行程依然如同一次完整的济州之旅。"
           }
         ]
       },
@@ -902,12 +1012,12 @@
         "iconBg": "bg-slate-50/80",
         "items": [
           {
-            "label": "汉拿山进入限制",
-            "detail": "御乘生岳可能受季节性规定或天气相关管控的影响。"
+            "label": "海女表演视天气而定",
+            "detail": "露天徒手潜水表演在海况较大时可能取消；遇此情况，路线将改为参观海女博物馆。"
           },
           {
-            "label": "开阔海岸站点的风力",
-            "detail": "柱状节理带和城山日出峰是最容易受天气影响的两处海岸亮点。"
+            "label": "万丈窟有不定期关闭",
+            "detail": "若熔岩洞因保护或客流管控而关闭，将以附近的日出乐园美千洞熔岩洞作为替代。"
           },
           {
             "label": "返回时间可能略有变动",
@@ -917,10 +1027,10 @@
       }
     ],
     "lessIdealFor": [
-      "偏好慢节奏的旅客",
-      "希望避免爬楼梯或上坡行走的旅客",
+      "偏好慢节奏、轻松游览的旅行者",
+      "希望避免爬楼梯或上坡行走的旅行者",
       "携带年幼儿童出行的团体",
-      "高度依赖婴儿车的团体"
+      "对凉爽、昏暗洞穴通道感到不适的宾客"
     ]
   },
   "practicalAccordionItems": [
@@ -930,7 +1040,7 @@
       "preview": "早出发，傍晚返回济州市",
       "content": [
         "济州市接客时间为08:30至09:00",
-        "约17:40至18:00返回济州市",
+        "约18:00–18:30返回济州市",
         "可视情况安排机场接送",
         "最终集合时间于前一晚确认"
       ]
@@ -938,24 +1048,24 @@
     {
       "id": "walking",
       "title": "步行与地形",
-      "preview": "比标准路线更为活跃",
+      "preview": "含台阶、攀登与洞穴的活跃路线",
       "content": [
-        "本路线包含两个相对较为活跃的步行路段。",
-        "御乘生岳包含上坡行走和台阶路段。",
+        "汉拿山1100湿地为约1公里、轻松易行的木栈道环路。",
         "正房瀑布包含台阶和崎岖的岩石步道。",
-        "若团体选择登顶，城山日出峰将更具挑战性。",
+        "若团队选择登顶，城山日出峰为石阶攀登路段。",
+        "万丈窟往返约1公里，洞内地面崎岖、潮湿、光线昏暗。",
         "强烈建议穿着舒适且防滑性能良好的鞋子。"
       ]
     },
     {
       "id": "weather",
       "title": "天气与关闭情况调整",
-      "preview": "通常按计划进行，必要时作出调整",
+      "preview": "通常按计划进行，并预设备选方案",
       "content": [
-        "小雨：行程通常正常进行",
-        "大风：柱状节理带或城山日出峰等开阔路段的停留时间可能缩短",
-        "汉拿山管制：若御乘生岳受到限制，路线可能进行调整或替换",
-        "关闭日：必要时可能使用备选站点或调整停留时间"
+        "小雨：行程通常正常进行——洞穴本身即是天然避雨处",
+        "海况较大：海女徒手潜水表演可能改为参观海女博物馆",
+        "万丈窟关闭：改为前往附近的日出乐园美千洞熔岩洞",
+        "冬季：汉拿山1100高地可能有积雪或结冰——路线可能调整停留时间"
       ]
     },
     {
@@ -963,8 +1073,8 @@
       "title": "若您当天抵达或离开济州",
       "preview": "您需要预留充裕的傍晚缓冲时间",
       "content": [
-        "这是一条高密度路线，让您在一天之内游览济州岛的标志性精华景点。",
-        "根据您的行程安排，当天抵达或离开均可，但前提是傍晚须留有充足的缓冲时间。",
+        "这是一条高密度路线，让您在一天之内游览济州的标志性精华景点。",
+        "当天抵达或离开均可行，但前提是傍晚须留有充足的缓冲时间。",
         "强烈建议搭乘晚班航班。",
         "在评估时间风险时，请将交通状况、步行节奏及现场实际情况一并纳入考量。"
       ]
@@ -972,11 +1082,11 @@
     {
       "id": "wear",
       "title": "着装与携带物品",
-      "preview": "步行鞋、分层穿搭服装及轻便防风外套",
+      "preview": "步行鞋、分层穿搭及一件入洞用的轻便外套",
       "content": [
         "防滑性能良好的步行鞋",
-        "适应山地与海岸温差的分层穿搭服装",
-        "轻便防风外套",
+        "适应山地、海岸与洞穴温差的分层穿搭服装",
+        "一件轻便外套——万丈窟全年凉爽",
         "帽子及防晒用品",
         "水瓶"
       ]
@@ -984,13 +1094,13 @@
     {
       "id": "included",
       "title": "含包项目 / 不含项目",
-      "preview": "含导游、车辆、接送及门票",
-      "variant": "含",
+      "preview": "含导游、车辆、接送及全部门票",
+      "variant": "included",
       "content": [
         "专业英语导游",
         "小团体专用车辆",
         "济州市区酒店接送服务",
-        "全部景点门票",
+        "全部景点门票（汉拿山1100、柱状节理、正房、城山、万丈窟／替代日改为海女博物馆）",
         "瓶装水",
         "午餐（现场自付）",
         "个人购物费用",
@@ -1052,21 +1162,24 @@
   "bookingTrustItems": [
     {
       "icon": "clock-3",
-      "title": "最大化一天内的游览内容",
-      "description": "专为时间有限的旅行者设计",
-      "iconBg": "bg-emerald-50/80"
+      "title": "一天尽览济州精华",
+      "description": "三处联合国教科文组织遗址外加海女文化",
+      "iconBg": "bg-emerald-50/80",
+      "body": "持牌当地运营商专为只有一天时间、却希望尽览济州最具辨识度地标的旅行者打造此环线——汉拿山高地、柱状节理海崖、直泻入海的瀑布、海女现场表演、城山日出峰凝灰岩锥与万丈窟熔岩洞，汇于一条环线。"
     },
     {
       "icon": "mountain",
-      "title": "聚焦标志性景点",
-      "description": "从汉拿山一路延伸至城山",
-      "iconBg": "bg-sky-50/80"
+      "title": "聚焦标志性地标",
+      "description": "从汉拿山高地到联合国教科文组织熔岩洞",
+      "iconBg": "bg-sky-50/80",
+      "body": "由经常运营全岛环线的线路专家执行——站点顺序最大限度减少折返，并将南海岸与海女站点的时间衔接潮汐、光线与表演时刻。"
     },
     {
       "icon": "users",
       "title": "小团队运营",
-      "description": "更能灵活应对路况和现场情况",
-      "iconBg": "bg-amber-50/80"
+      "description": "更能灵活应对关闭与现场情况",
+      "iconBg": "bg-amber-50/80",
+      "body": "小团形式让全天行程保持灵活——导游可将海女表演改为博物馆，或将万丈窟改为日出乐园熔岩洞，而不打乱整条路线。"
     }
   ],
   "bookingSupportSteps": [
@@ -1105,37 +1218,37 @@
     {
       "id": "one-day",
       "question": "如果我在济州只有一天，这条路线合适吗？",
-      "answer": "是的。这条路线专为希望在一天内游览济州核心景点的旅行者设计，节奏比标准一日游更快。"
+      "answer": "合适。这条路线专为一天内游览济州核心地标而打造——三处联合国教科文组织遗址、海女文化、海崖与瀑布——节奏比标准一日游更快。"
+    },
+    {
+      "id": "unesco",
+      "question": "哪些站点是联合国教科文组织遗址？",
+      "answer": "共三处：汉拿山1100高地（属汉拿山世界遗产区域）、城山日出峰，以及万丈窟熔岩洞——均在济州“火山岛与熔岩洞穴”名录之内。海女表演亦为联合国教科文组织非物质文化遗产。"
+    },
+    {
+      "id": "haenyeo",
+      "question": "如果海女表演取消会怎样？",
+      "answer": "露天徒手潜水表演取决于海况。若取消，路线将改为参观附近的海女博物馆，以室内方式讲述同样的女性潜水员故事。"
+    },
+    {
+      "id": "manjanggul",
+      "question": "万丈窟一直开放吗？",
+      "answer": "万丈窟会因保护与客流管控而不定期关闭。关闭时，行程将改为前往附近的日出乐园美千洞——同属一火山系统的另一处熔岩洞。"
     },
     {
       "id": "tiring",
       "question": "这条路线会令人感到疲惫吗？",
-      "answer": "通常比典型的小团一日游更为紧凑，因为有两段较为明显的步行路段，且路线覆盖了岛屿的大部分区域。"
-    },
-    {
-      "id": "parents",
-      "question": "适合带父母一起出行吗？",
-      "answer": "这取决于他们对步行和较快观光节奏的适应程度。这条路线更适合活力充沛的成年旅行者，而非完全悠闲的观光游客。"
+      "answer": "它比典型的小团一日游更为活跃：路线覆盖岛屿大部分区域，并包含城山攀登、正房台阶与万丈窟洞穴步行。"
     },
     {
       "id": "flight",
       "question": "如果我当天抵达或离开济州，可以参加吗？",
-      "answer": "有可能，但前提是您在傍晚有充裕的时间富余。如果航班时间较紧，则不建议选择此路线。"
+      "answer": "有可能，但前提是傍晚留有充裕的缓冲时间。如果航班时间较紧，则不建议选择此路线。"
     },
     {
-      "id": "order",
-      "question": "当天的游览顺序可以更改吗？",
-      "answer": "可以。为确保行程顺利进行，游览顺序可能会根据交通、天气及人流情况做出小幅调整。"
-    },
-    {
-      "id": "seongsan-last",
-      "question": "为什么城山日出峰安排在最后？",
-      "answer": "因为这样能让全天行程以更有力的方式收尾。经过汉拿山、南海岸和正房瀑布之后，城山日出峰作为最具象征意义的压轴景点再合适不过。"
-    },
-    {
-      "id": "summit",
-      "question": "我们必须登顶城山日出峰吗？",
-      "answer": "不一定。团队是否登顶以及该路段的侧重程度，可能会根据行程节奏、天气和人流情况有所调整。"
+      "id": "manjanggul-last",
+      "question": "为什么万丈窟安排在最后？",
+      "answer": "它位于返回济州市的途中，在一整天的露天地貌之后，作为凉爽、有遮蔽的联合国教科文组织终章再合适不过。"
     }
   ],
   "guestReviews": [],
@@ -1174,12 +1287,13 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id 在运行时从 Supabase / 环境变量中解析；不属于静态 JSONB 的一部分。",
     "price": {
-      "amountLabel": "79",
-      "originalPriceUsd": 89,
-      "salePriceUsd": 79,
+      "amountLabel": "100",
+      "originalPriceUsd": 112,
+      "salePriceUsd": 100,
       "discountPercent": 11,
       "currency": "USD",
-      "per": "person"
+      "per": "person",
+      "priceNote": "小团双语全岛游（约每人 ₩138,000）。AtoC Korea 直营销售；较运营商基准价立减 11%。"
     }
   },
   "matching_profile": {
@@ -1198,20 +1312,23 @@
       "first_time_friendly",
       "iconic_landmarks",
       "volcano",
-      "waterfalls"
+      "waterfalls",
+      "haenyeo_culture",
+      "lava_tube"
     ],
     "poi_tags": [
+      "hallasan_1100_wetland",
+      "daepo_jusangjeolli_cliff",
+      "jeongbang_falls",
+      "jeju_haenyeo_museum",
       "seongsan_ilchulbong",
-      "manjanggul_cave",
-      "cheonjiyeon_falls",
-      "jusangjeolli",
-      "hallim_park"
+      "manjanggul_lava_tube"
     ],
     "pace_level": 1,
     "walking_level": 0.8,
     "scenic_level": 1,
     "photo_level": 1,
-    "culture_level": 0.4,
+    "culture_level": 3,
     "relax_level": 0.4,
     "first_time_fit": 1,
     "family_fit": 0.8,
@@ -1220,8 +1337,8 @@
     "active_traveler_fit": 0.8,
     "one_day_fit": 1,
     "same_day_flight_fit": 0.4,
-    "rain_fit": 0.5,
-    "value_for_money_fit": 1,
+    "rain_fit": 3,
+    "value_for_money_fit": 5,
     "iconic_landmark_fit": 1,
     "cafe_fit": 0.2,
     "adult_family_fit": 1,
@@ -1230,11 +1347,11 @@
     "senior_general_fit": 0.6,
     "mobility_friendly_fit": 0.4,
     "stroller_fit": 0.2,
-    "indoor_ratio": 0.05,
+    "indoor_ratio": 32,
     "weather_sensitivity": 0.75,
-    "local_culture_fit": 0.6,
+    "local_culture_fit": 4,
     "shopping_fit": 0.2,
-    "storytelling_fit": 0.8,
+    "storytelling_fit": 5,
     "comfort_level": 0.4,
     "budget_fit": 0.6,
     "premium_fit": 0.5,
@@ -1243,8 +1360,8 @@
     "bus_fit": 0.2,
     "price_band": "mid",
     "pickup_base": "jeju_city",
-    "return_time_band": "17:40-18:15",
-    "duration_band": "9h",
+    "return_time_band": "18:00-18:30",
+    "duration_band": "10.5h",
     "min_recommended_age": 10,
     "hard_constraints": {
       "avoidIf": [
@@ -1266,27 +1383,27 @@
     "keywords": [
       "jeju one day tour",
       "jeju full island loop",
-      "hallasan",
+      "jeju unesco day tour",
+      "hallasan 1100",
       "seongsan ilchulbong",
+      "manjanggul lava tube",
       "jusangjeolli cliff",
       "jeongbang waterfall",
+      "jeju haenyeo show",
       "jeju grand tour",
-      "fast paced jeju tour",
       "jeju highlights",
       "jeju iconic landmarks",
-      "jeju day trip",
-      "jeju full day highlights",
-      "hallasan to seongsan",
-      "jeju small group day tour"
+      "three unesco sites jeju",
+      "jeju full day highlights"
     ],
     "synonym_hints": [
       "full island loop",
+      "three unesco sites in one day",
       "highlights in one day",
       "busy but iconic",
+      "haenyeo culture",
+      "lava tube cave",
       "see more in one day",
-      "fast highlights route",
-      "jeju full day landmarks",
-      "one day around jeju",
       "iconic jeju route"
     ],
     "profile_version": 6,
@@ -1295,14 +1412,14 @@
     "destination_region": "jeju",
     "vehicle_type": "minicoach",
     "vehicle_type_legacy": "minicoach",
-    "duration_hours": 10,
+    "duration_hours": 10.5,
     "anchor_poi_keys": [
+      "hallasan_1100_wetland",
       "seongsan_ilchulbong",
-      "manjanggul_cave",
-      "jusangjeolli"
+      "manjanggul_lava_tube"
     ],
     "pickup_base_normalized": "jeju_city",
-    "unesco_fit": 1,
+    "unesco_fit": 5,
     "family_with_teens_fit": 1,
     "solo_traveler_fit": 0.85,
     "food_fit": 0.6,
@@ -1310,7 +1427,7 @@
     "beach_fit": 0.6,
     "nightlife_fit": 0.2,
     "no_shopping_fit": 1,
-    "intangible_heritage_fit": 0.85,
+    "intangible_heritage_fit": 4,
     "seasonality": "year_round",
     "profile_format": "small_group_fixed_itinerary",
     "private_tour_fit": 0.05,
@@ -1460,9 +1577,10 @@
       "columnar_jointing",
       "tuff_cone",
       "ocean_waterfall",
+      "lava_tube",
       "haenyeo_culture",
-      "yeongjusipgyeong",
-      "world_natural_heritage"
+      "world_natural_heritage",
+      "intangible_heritage"
     ],
     "best_for": [
       "first_time_jeju",
@@ -1482,26 +1600,30 @@
       "guests_avoiding_stairs"
     ],
     "anchor_pois": [
-      "Hallasan Eoseungsaengak",
+      "Hallasan 1100 Altitude Wetland",
       "Daepo Jusangjeolli",
       "Jeongbang Falls",
-      "Seongsan Ilchulbong"
+      "Seongsan Haenyeo Show",
+      "Seongsan Ilchulbong",
+      "Manjanggul Lava Tube"
     ],
     "anchor_poi_keys": [
-      "hallasan_eoseungsaengak",
+      "hallasan_1100_wetland",
       "daepo_jusangjeolli_cliff",
       "jeongbang_falls",
-      "seongsan_ilchulbong"
+      "jeju_haenyeo_museum",
+      "seongsan_ilchulbong",
+      "manjanggul_lava_tube"
     ],
     "reviews_attribution": null,
-    "unesco_fit_note": "unesco_fit=5: two UNESCO Natural Heritage sites on route from the Jeju Volcanic Island and Lava Tubes inscription (2007) — Manjanggul Cave and Seongsan Ilchulbong. Highest possible UNESCO density for a one-day Jeju tour.",
+    "unesco_fit_note": "unesco_fit=5: three UNESCO World Heritage natural sites on one route from the Jeju Volcanic Island and Lava Tubes inscription (2007) — Hallasan, Seongsan Ilchulbong and the Manjanggul lava tube — plus the haenyeo free-diving show (UNESCO Intangible Cultural Heritage, 2016). Highest possible UNESCO density for a one-day Jeju tour.",
     "competing_products": [
       "southwest-hallasan-osulloc-aewol",
       "east-signature-nature-core",
       "jeju-southern-top-unesco-spots-tour",
       "jeju-eastern-unesco-spots-day-tour"
     ],
-    "audit_summary": "Highlights loop covers Jeju's NORTH (Hallasan UNESCO Triple-stack at Eoseungsaengak), SOUTH (Daepo Jusangjeolli columnar lava + Jeongbang ocean-falling waterfall), and EAST (Seongsan Ilchulbong Triple-UNESCO Surtseyan tuff cone). The single most representative single-day intro to Jeju for first-time visitors, anchored by 3 of the island's 4 UNESCO-status volcanic sites + the Asia-unique ocean-falling waterfall.",
+    "audit_summary": "Grand highlights loop covering three UNESCO World Heritage sites in one day — Hallasan (1100 alpine wetland), Seongsan Ilchulbong (Surtseyan tuff cone) and the Manjanggul lava tube — plus a living haenyeo free-diving show (UNESCO Intangible Heritage), the Jusangjeolli columnar cliffs and the ocean-falling Jeongbang Waterfall. About 180 km and ~5 hours driving across a ~10.5-hour day. The single most representative high-intensity intro to Jeju for first-time visitors.",
     "score_rationale": {
       "high_scores": {
         "first_time_jeju_fit=1.0": "Single best intro to Jeju's UNESCO + volcanic identity; covers 3 cardinal directions (N/S/E) in one day",
@@ -1542,7 +1664,7 @@
         "October (foliage)"
       ]
     },
-    "kb_anchor_version": "1.18"
+    "kb_anchor_version": "1.29"
   },
   "page_sections": [
     {
@@ -1552,18 +1674,18 @@
         "headlineLine1": "济州全岛精华一日游",
         "headlineLine2": "一日游",
         "hero": {
-          "imageUrl": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+          "imageUrl": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
           "imagePosition": "center 35%",
-          "tagline": "专为时间有限的旅行者设计，这条高密度路线在一天内涵盖汉拿山、壮观的南海岸风光、瀑布及城山日出峰。",
+          "tagline": "用高强度的一天纵贯全岛——汉拿山高山湿地、柱状节理海崖、直泻入海的瀑布、海女徒手潜水现场表演、城山日出峰凝灰岩锥与万丈窟熔岩洞。三处联合国教科文组织世界遗产，外加济州两大最受喜爱的自然地标。",
           "pills": [
-            "最适合一日游旅客",
-            "小团体一日游",
-            "标志性亮点"
+            "3处联合国教科文组织遗址",
+            "海女文化",
+            "小团一日游"
           ],
           "meta": {
-            "duration": "9–9.5 小时",
-            "region": "济州全岛路线",
-            "stops": "5 个景点",
+            "duration": "10–10.5小时",
+            "region": "济州全岛线路",
+            "stops": "7个站点",
             "rating": 0,
             "ratingStars": 0
           }
@@ -1581,7 +1703,7 @@
           },
           {
             "id": "itinerary",
-            "label": "行程"
+            "label": "行程安排"
           },
           {
             "id": "details",
@@ -1605,33 +1727,39 @@
         "glanceItems": [
           {
             "icon": "camera",
-            "label": "拍照潜力",
-            "value": "高"
+            "label": "拍照价值",
+            "value": "高",
+            "level": 5
           },
           {
             "icon": "mountain",
-            "label": "景色密度",
-            "value": "非常高"
+            "label": "风景",
+            "value": "高",
+            "level": 5
           },
           {
             "icon": "footprints",
-            "label": "步行难度",
-            "value": "中等偏高"
+            "label": "步行",
+            "value": "高",
+            "level": 4
           },
           {
             "icon": "cloud-rain",
-            "label": "雨天适合度",
-            "value": "中等"
+            "label": "雨天安全性",
+            "value": "中等",
+            "level": 3
           },
           {
             "icon": "users",
-            "label": "家庭适合度",
-            "value": "中等"
+            "label": "适合家庭",
+            "value": "中等",
+            "level": 3
           },
           {
             "icon": "gauge",
-            "label": "节奏",
-            "value": "快"
+            "label": "节奏均衡",
+            "value": "快",
+            "level": 4
           }
         ]
       }
@@ -1644,11 +1772,130 @@
           {
             "id": 1,
             "type": "photo",
-            "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-            "location": "汉拿山御乘生岳步道",
-            "atmosphere": "一日尽览济州标志性风景",
-            "alt": "汉拿山御乘生岳步道 — 图库图片",
-            "caption": "汉拿山御乘生岳步道"
+            "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+            "location": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织）",
+            "alt": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — gallery image 1",
+            "caption": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — photo 1"
+          },
+          {
+            "id": 2,
+            "type": "photo",
+            "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+            "location": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织）",
+            "alt": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — gallery image 2",
+            "caption": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — photo 2"
+          },
+          {
+            "id": 3,
+            "type": "photo",
+            "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+            "location": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织）",
+            "alt": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — gallery image 3",
+            "caption": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — photo 3"
+          },
+          {
+            "id": 4,
+            "type": "photo",
+            "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+            "location": "大浦柱状节理壁",
+            "alt": "大浦柱状节理壁 — gallery image 4",
+            "caption": "大浦柱状节理壁 — photo 4"
+          },
+          {
+            "id": 5,
+            "type": "photo",
+            "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+            "location": "大浦柱状节理壁",
+            "alt": "大浦柱状节理壁 — gallery image 5",
+            "caption": "大浦柱状节理壁 — photo 5"
+          },
+          {
+            "id": 6,
+            "type": "photo",
+            "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+            "location": "大浦柱状节理壁",
+            "alt": "大浦柱状节理壁 — gallery image 6",
+            "caption": "大浦柱状节理壁 — photo 6"
+          },
+          {
+            "id": 7,
+            "type": "photo",
+            "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+            "location": "大浦柱状节理壁",
+            "alt": "大浦柱状节理壁 — gallery image 7",
+            "caption": "大浦柱状节理壁 — photo 7"
+          },
+          {
+            "id": 8,
+            "type": "photo",
+            "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+            "location": "正房瀑布",
+            "alt": "正房瀑布 — gallery image 8",
+            "caption": "正房瀑布 — photo 8"
+          },
+          {
+            "id": 9,
+            "type": "photo",
+            "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
+            "location": "正房瀑布",
+            "alt": "正房瀑布 — gallery image 9",
+            "caption": "正房瀑布 — photo 9"
+          },
+          {
+            "id": 10,
+            "type": "photo",
+            "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
+            "location": "正房瀑布",
+            "alt": "正房瀑布 — gallery image 10",
+            "caption": "正房瀑布 — photo 10"
+          },
+          {
+            "id": 11,
+            "type": "photo",
+            "src": "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-diving-ai.webp",
+            "location": "城山海女徒手潜水表演",
+            "alt": "城山海女徒手潜水表演 — gallery image 11",
+            "caption": "城山海女徒手潜水表演 — photo 11"
+          },
+          {
+            "id": 12,
+            "type": "photo",
+            "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+            "location": "城山日出峰",
+            "alt": "城山日出峰 — gallery image 12",
+            "caption": "城山日出峰 — photo 12"
+          },
+          {
+            "id": 13,
+            "type": "photo",
+            "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+            "location": "城山日出峰",
+            "alt": "城山日出峰 — gallery image 13",
+            "caption": "城山日出峰 — photo 13"
+          },
+          {
+            "id": 14,
+            "type": "photo",
+            "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+            "location": "城山日出峰",
+            "alt": "城山日出峰 — gallery image 14",
+            "caption": "城山日出峰 — photo 14"
+          },
+          {
+            "id": 15,
+            "type": "photo",
+            "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+            "location": "城山日出峰",
+            "alt": "城山日出峰 — gallery image 15",
+            "caption": "城山日出峰 — photo 15"
+          },
+          {
+            "id": 16,
+            "type": "photo",
+            "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+            "location": "万丈窟熔岩洞",
+            "alt": "万丈窟熔岩洞 — gallery image 16",
+            "caption": "万丈窟熔岩洞 — photo 16"
           }
         ]
       }
@@ -1660,188 +1907,639 @@
         "itineraryStops": [
           {
             "number": 1,
-            "time": "09:30",
-            "duration": "70 分钟",
-            "name": "汉拿山御乘生岳",
-            "category": "汉拿山山麓步道",
-            "description": "在汉拿山清新的高原空气中开启新的一天。御乘生岳将森林步道、火山坡地与观景点串联一体，从第一站起便为行程带来精彩的开篇。",
-            "image": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+            "time": "08:45",
+            "duration": "45分钟",
+            "name": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织）",
+            "category": "高山湿地 — 拉姆萨尔遗址 + 汉拿山联合国教科文组织世界遗产区内",
+            "description": "**汉拿山1100高地湿地（한라산 1100고지 습지）**是位于汉拿山高原的高海拔山地湿地系统，**海拔恰好1,100米**，沿**1100号国道——韩国海拔最高的国道**，连接济州市与西归浦中文区。该遗址被列为**国际重要湿地（拉姆萨尔湿地，编号1893，2009年10月12日指定）**，同时位于**汉拿山联合国教科文组织世界遗产（2007年）**、**济州岛联合国教科文组织生物圈保护区（2002年）**及**汉拿山国家公园（1970年）**范围之内，是全球少数同时拥有**四项国际/国家重叠认定**的遗址之一。\n\n湿地由**16处以上不连续的淡水沼泽和水池**组成，分布于低坡度高原地段，可汇聚并留存雨水，形成**小型永久湖泊和泥炭沼泽**，孕育多样的植物群落，济州特有种比例较高。已记录的生物多样性包括**韩国境内3种受威胁鸟类和1种受威胁植物**，以及济州岛特有的哺乳动物、爬行动物和昆虫物种。该遗址**2008年接待游客90万人次**（汉拿山游客中心数据）。\n\n游客体验：设有**1公里木栈道环线**，配备观景台、解说标牌，以及登山口的小型自然历史展览。**秋季红叶（10月至11月）**与**冬季雪景（12月至2月）**是拍照最多的季节；**春夏季节**则可欣赏湿地植物及特有物种。**免费入场**；毗邻的**1100休息区（1100 휴게소）**提供室内卫生间、咖啡厅及小型纪念品商店。拉姆萨尔名录中记录了该遗址对当地社区的**文化与宗教重要意义**——历史上与山水神灵相关的萨满朝圣活动由来已久。",
+            "image": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
             "highlights": [
-              "汉拿山最易到达的标志性观景点之一",
-              "以森林步道与山间清新空气为主题的清爽出发",
-              "比直接从城市前往海岸更令人难忘",
-              "即便时间有限，也能留下深刻印象的第一站"
+              "**拉姆萨尔湿地第1893号**（2009年10月12日指定）— 国际重要湿地",
+              "**海拔1,100米** — 位于韩国**最高国道**（1100号国道）沿线",
+              "**四重国际认定** — 拉姆萨尔湿地 + 联合国教科文组织世界遗产 + 生物圈保护区 + 国家公园",
+              "**16处以上不连续湿地** — 淡水沼泽 + 水池 + 泥炭沼泽",
+              "**3种受威胁鸟类 + 1种受威胁植物**；多种济州特有物种",
+              "**2008年接待游客90万人次** — 由汉拿山游客中心管理",
+              "**1公里木栈道环线**，设有观景台及解说牌",
+              "**秋季红叶＋冬季白雪** = 标志性摄影季节",
+              "**免费入场**；毗邻1100休息区（室内卫生间＋咖啡厅）"
             ],
             "timeUsed": [
-              "抵达后的路线说明与步伐确认",
-              "前往观景点的主要上坡步行",
-              "下山前的短暂拍照与休息"
+              "大巴抵达＋停车于1100休息区 — 约5分钟",
+              "木栈道环线＋观景台 — 约25分钟",
+              "解说牌＋自然历史展览 — 约10分钟",
+              "缓冲时间／咖啡厅卫生间 — 约5分钟"
             ],
-            "whyOnRoute": "从这里出发，在行程转向南部海岸之前，先积累海拔高度、充沛体力，并深切感受汉拿山的独特魅力。",
+            "whyOnRoute": "1100高地是唯一无需预约、也无需多小时登顶徒步即可纳入全岛环线的汉拿山站点。在韩国海拔最高的公路上,一段短暂的高山木栈道让全天行程在汉拿山联合国教科文组织世界遗产区域内拉开序幕,随后才开始漫长的南行驾驶。",
+            "_poi_meta": {
+              "poi_key": "hallasan_1100_wetland",
+              "kb_version": "1.20",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Ramsar Sites Information Service — 1100 Altitude Wetland (Site No. 1893)",
+                "UNESCO Man and the Biosphere Programme — Jeju Island Biosphere Reserve",
+                "Korea National Park Service — Hallasan National Park 1100 Wetland records",
+                "Mt Halla Visitor Centre — visitor management documentation",
+                "Jeju Special Self-Governing Province — Wetland Protected Area designation 2009"
+              ]
+            },
             "visitBasics": {
-              "hours": "从 05:00 起，可能受季节性限制",
-              "closed": "恶劣天气下可能受到限制",
+              "hours": "全天24小时开放（木栈道）；游客中心09:00–18:00",
+              "closed": "大雪期间1100公路可能临时封闭（12月至2月）",
               "admission": "免费",
-              "walking": "中等坡度"
+              "walking": "轻松 — 1公里木栈道；地势平坦，无障碍通行"
             },
             "convenience": {
-              "restroom": "在步道入口处",
-              "parking": "提供停车场"
+              "restroom": "游客中心内有售",
+              "parking": "游客中心免费停车"
             },
             "smartNotes": {
-              "photo": "晴天时，山脊的广角远景照片通常比近距离人像更为出色。",
-              "facilities": "基本设施主要集中在入口附近区域。",
-              "tip": "尤其是雨后或较寒冷的季节，防滑与保暖在这里比其他大多数停靠点更为重要。"
+              "photo": "通往湿地的木栈道远眺汉拿山，是经典取景地；秋季（十月）草色金黄",
+              "facilities": "游客中心提供小食及旅游资讯",
+              "tip": "请备多层衣物 — 此处气温较济州沿海低5–10°C；冬季请提前查看路况；如向南下行，可顺道游览天帝渊瀑布"
             },
-            "images": []
+            "images": [
+              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+                "location": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织）",
+                "caption": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — photo 1",
+                "alt": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+                "location": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织）",
+                "caption": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — photo 2",
+                "alt": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+                "location": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织）",
+                "caption": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — photo 3",
+                "alt": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — gallery image 3"
+              }
+            ]
           },
           {
             "number": 2,
-            "time": "11:15",
-            "duration": "40 分钟",
-            "name": "大浦柱状节理带",
-            "category": "玄武岩海岸线",
-            "description": "从汉拿山下来后，南海岸的氛围骤然一变。海浪、玄武岩石柱与悬崖峭壁的对比，使这里成为一处视觉冲击力极强的打卡地，在午餐前便迅速拉高了全天的视觉强度。",
-            "image": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+            "time": "10:00",
+            "duration": "45分钟",
+            "name": "大浦柱状节理壁",
+            "category": "火山海岸线——六边形柱状节理熔岩",
+            "description": "**大浦柱状节理（대포 주상절리，\"Jisatgae\"）**是位于中门海岸的一段**长约1公里的六边形柱状节理玄武岩崖壁**，于**2005年1月6日被列为天然纪念物第443号**。石柱从海面耸立**30至40米**，紧密排列成**5至7边形多边形**（多为六边形）——这一几何形态源于**约25万至14万年前汉拿山侧翼喷发的熔融玄武岩浆抵达海洋后冷却收缩**，沿垂直于冷却面的方向断裂而成。\n\n在全球范围内，柱状节理以**英国巨人堤道（Giant's Causeway）**、**美国魔鬼柱（Devils Postpile）**和**苏格兰芬加尔洞穴（Fingal's Cave）**最为著名——大浦柱状节理是**东亚最具代表性的柱状节理景观**，也是最易抵达的。长达800米的**木栈道环路**将游客引至可直接俯瞰石柱的护栏崖边；**涨潮时海浪拍打石柱，浪花可飞溅至20米高**，偶尔越过护栏。\n\n门票：**成人₩2,000 / 青少年₩1,000 / 7岁以下及65岁以上免费**。该景点隶属**济州全球地质公园（联合国教科文组织2010年10月认定）**，是岛上**13个官方地质遗址**之一，与城山日出峰、万丈窟熔岩洞、水月峰并列。崖顶观景台**无障碍设施完善**（可供轮椅及婴儿车通行）。环路沿线设有三个观景平台，各呈现不同的石柱角度：**第一观景台**以侧面展现石柱（最适合拍摄六边形几何构图），**中间观景台**可俯瞰石柱顶部的纹理图案，**远端观景台**则在晴天以汉拿山为背景，尽收1公里海岸线全景。\n\n**最佳拍摄时段为14:00至16:00**，此时西斜阳光正面照射石柱面；黄昏时分可拍摄剪影构图，但石柱细节质感有所欠缺。开放时间：**09:00至18:00（最后入场17:30）**，全年运营。",
+            "image": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
             "highlights": [
-              "沿海岸线绵延排列的六角形玄武岩石柱",
-              "汉拿山段过后令人震撼的海崖对比景观",
-              "短暂而高效的停留，视觉冲击力极强",
-              "济州岛南部标志性的拍照胜地之一"
+              "**天然纪念物第443号**——**2005年1月6日**指定，是济州最新认定的海岸天然纪念物",
+              "石柱耸立**30至40米**，沿**1公里**海岸线紧密排列成**5至7边形多边形**（多为六边形）",
+              "成因：**约25万至14万年前汉拿山侧翼熔岩流入海洋冷却**，垂直于冷却面方向收缩断裂而成",
+              "**东亚首屈一指的柱状节理景观**——与巨人堤道、魔鬼柱、芬加尔洞穴齐名",
+              "**涨潮时浪花可飞溅至20米高**——拍摄浪花奇观的绝佳时机",
+              "**0.8公里木栈道环路**，步行约15分钟——无障碍观景台，可供轮椅及婴儿车通行",
+              "隶属**济州全球地质公园（联合国教科文组织2010年10月认定）**——全岛共13处官方地质遗址",
+              "门票：**成人₩2,000 / 青少年₩1,000 / 7岁以下及65岁以上免费**",
+              "晴天可向北眺望汉拿山顶，地质上与景区**直接位于其下游方向**"
             ],
             "timeUsed": [
-              "在入口处进行简短介绍",
-              "步行前往主要海岸观景台",
-              "拍照留念后返回集合点"
+              "停车 + 购票 + 入场——约5分钟",
+              "步行至第一观景台——约5分钟",
+              "崖边石柱观赏 + 拍照——约15分钟",
+              "继续沿木栈道环路游览——约10分钟",
+              "返回大巴——约10分钟"
             ],
-            "whyOnRoute": "无需增加上午的长途步行段，即可尽览济州南海岸的视觉风情。",
+            "whyOnRoute": "柱状节理是济州火山地质最高效的单点展示——南海岸的一处短暂停留,直观地浓缩了“熔岩入海”的故事,正位于汉拿山高地与正房瀑布之间的途中。",
+            "_poi_meta": {
+              "poi_key": "daepo_jusangjeolli_cliff",
+              "kb_version": "1.18",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Cultural Heritage Administration — Natural Monument No. 443 designation (2005-01-06)",
+                "Jeju Global Geopark official site (geopark.jeju.go.kr)",
+                "UNESCO Global Geoparks Network — Jeju (2010 designation)",
+                "VisitJeju — Daepo Jusangjeolli",
+                "Korea Geological Survey — Jeju basalt formation studies"
+              ]
+            },
             "visitBasics": {
-              "hours": "09:00–18:00（最后入场 17:40）",
+              "hours": "09:00–18:00（最后入场17:40）",
               "closed": "全年开放",
-              "admission": "成人 2,000 韩元 / 儿童及青少年 1,000 韩元",
-              "walking": "轻松至中等难度"
+              "admission": "成人₩2,000 / 儿童及青少年₩1,000",
+              "walking": "轻松至适中"
             },
             "convenience": {
               "restroom": "入口区域",
-              "parking": "提供停车位（收费停车场）"
+              "parking": "提供停车场（收费停车场）"
             },
             "smartNotes": {
-              "photo": "海浪方向、浪花飞溅与侧光变化能迅速改变景致氛围，因此宽幅海岸构图在此尤为适用。",
-              "facilities": "入口区域设施完善，通往观景台的步道也相对平坦易行。",
-              "tip": "即便晴天，海岸通常也比济州岛内陆更为寒冷、风力更强。"
+              "photo": "浪向、浪花及侧光变化迅速，宽幅海岸构图在此处尤为出彩。",
+              "facilities": "入口区域设施完善，观景步道本身相对简单易行。",
+              "tip": "即便是晴天，海岸通常也比济州内陆感觉更寒冷、风更大。"
             },
-            "images": []
+            "images": [
+              "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+              "/images/tours/jusangjeolli/photo-005.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jusangjeolli/photo-005.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+                "location": "大浦柱状节理壁",
+                "caption": "大浦柱状节理壁 — photo 1",
+                "alt": "大浦柱状节理壁 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+                "location": "大浦柱状节理壁",
+                "caption": "大浦柱状节理壁 — photo 2",
+                "alt": "大浦柱状节理壁 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+                "location": "大浦柱状节理壁",
+                "caption": "大浦柱状节理壁 — photo 3",
+                "alt": "大浦柱状节理壁 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+                "location": "大浦柱状节理壁",
+                "caption": "大浦柱状节理壁 — photo 4",
+                "alt": "大浦柱状节理壁 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/jusangjeolli/photo-005.webp",
+                "location": "大浦柱状节理壁",
+                "caption": "大浦柱状节理壁 — photo 5",
+                "alt": "大浦柱状节理壁 — gallery image 5"
+              }
+            ]
           },
           {
             "number": 3,
-            "time": "12:15",
-            "duration": "60 分钟",
-            "name": "午餐",
-            "category": "午餐休息站",
-            "description": "这不仅仅是行程中的一次休息，更是关键的恢复节点，有助于为下午的正房瀑布与城山日出峰保存体力。",
-            "image": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-            "highlights": [
-              "快节奏路线中一个界限清晰的恢复休整点",
-              "向东出发前补充能量的时机",
-              "适合不同年龄层的活跃旅行者",
-              "有效避免全天行程显得过于紧凑压缩"
-            ],
-            "timeUsed": [
-              "抵达并就座",
-              "用餐及短暂休息",
-              "准备出发，前往下午的行程路线"
-            ],
-            "whyOnRoute": "将午餐安排在此处，有助于稳定下半程行程，使路线不至于沦为纯粹的赶路奔波。",
-            "visitBasics": {
-              "hours": "视餐厅营业时间而定",
-              "closed": "因场馆而异",
-              "admission": "除非另有说明，餐费在现场支付",
-              "walking": "极少"
-            },
-            "convenience": {
-              "restroom": "餐厅内部",
-              "parking": "提供停车位"
-            },
-            "smartNotes": {
-              "photo": "由于全天行程以自然风光为主，餐食照片有助于丰富路线的视觉节奏。",
-              "facilities": "餐饮相关设施通常十分完善。",
-              "tip": "与其匆忙用餐而消耗下午的精力，不如在这里从容进食。"
-            },
-            "images": []
-          },
-          {
-            "number": 4,
-            "time": "13:35",
-            "duration": "50分钟",
+            "time": "11:05",
+            "duration": "60分钟",
             "name": "正房瀑布",
-            "category": "瀑布入海之处",
-            "description": "午餐后，正房瀑布为路线增添了截然不同的质感。石阶、海雾以及向海岸倾泻而下的瀑布，共同构成了济州南部最具特色的景观之一。",
-            "image": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+            "category": "海岸瀑布 — 直接飞流入海（亚洲唯一）",
+            "description": "**正房瀑布（정방폭포，意为\"直泻入海之瀑\"）**是**亚洲唯一一座直接流入大海的瀑布** — 从玄武岩峭壁垂直跌落**23米**，直泻太平洋，无中间水潭，无河床出口。瀑布宽**8米**，底部形成5米深的水潭，每逢涨潮便与大海相连。正是这一独特的地理特征，使正房瀑布跻身**\"瀛州十景（영주십경，济州十大风景名胜）\"**之列 — 这是朝鲜时代文人记录岛上最具诗意景观的经典名录。\n\n瀛州十景由**18世纪儒学学者李源祚（이원조）**整理成文，其中还包括城山日出、汉拿山顶和天帝渊，意味着今日行程一日之内便可涵盖**十景中的3处**。峭壁旁刻有铭文**\"徐불과차（서불과차，徐福向西而归）\"**，相传出自**徐福（서복）**之手 — 他是传说中秦朝炼丹方士，奉**秦始皇（约公元前219年）**之命寻访长生不老之药。当地传说称他途经此处踏上归途，这处铭文亦成为地名**\"西归浦\"（서귀포，\"徐福西归之地\"）**的语源根据。\n\n进入景区需沿**130级石阶**下至海湾（坡度较陡，建议穿着护膝鞋履）。门票：**成人2,000韩元 / 青少年1,000韩元 / 7岁以下及65岁以上免费**。瀑布底部飞溅的水雾营造出清凉宜人的微气候，是夏季著名的消暑胜地。**当地海女（해녀，女性潜水员 — 2016年联合国教科文组织非物质文化遗产）**在风平浪静的日子里，有时会直接在海湾出售新鲜海胆、鲍鱼和海螺 — 这是在正式博物馆场景之外，亲眼目睹潜水社群劳作的珍贵拍摄机会。",
+            "image": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
             "highlights": [
-              "瀑布与岩石海岸同框的紧凑画面",
-              "午餐后氛围的明显转变",
-              "在向东驾车前保持强烈的视觉张力",
-              "即使在高密度精华路线中也增添了多样性"
+              "**亚洲唯一直接飞流入海的瀑布** — 垂直落差23米，无河床",
+              "瀑布宽**8米**，底部5米水潭随每次涨潮汇入太平洋",
+              "荣列**\"瀛州十景\"** — 朝鲜时代济州十大风景名胜之一",
+              "**\"徐福过此\"题刻** — 相传为徐福（秦朝方士，约公元前219年）所题，\"西归浦\"地名由此而来",
+              "通往海湾的**130级石阶** — 建议穿着护膝鞋履",
+              "门票 **成人₩2,000 / 青少年₩1,000 / 7岁以下及65岁以上免费**",
+              "瀑布底部水雾弥漫，形成天然微气候 — 夏日消暑胜地",
+              "天气晴好时，当地**海女（해녀，女性潜水员）**有时会在海湾出售新鲜渔获",
+              "摄影\"黄金时段\"通常为**14:00–14:30**，此时西侧阳光直照瀑布正面"
             ],
             "timeUsed": [
-              "抵达与入口动线确认",
-              "参观主瀑布区域",
-              "拍照留念、短暂休息后返回"
+              "入口 + 购票 + 下行（130级台阶）— 约10分钟",
+              "海湾观景台 + 瀑布摄影 — 约25分钟",
+              "崖边步道 + 徐福题刻（可选）— 约10分钟",
+              "返回大巴 — 约10分钟",
+              "缓冲时间 — 约5分钟"
             ],
-            "whyOnRoute": "在前往城山的较长车程之前，再次加深对南海岸的印象。",
+            "whyOnRoute": "正房瀑布——亚洲唯一直泻入海的瀑布——距西归浦的午餐区仅几分钟车程,因此可在正午休整前无缝衔接,毫无折返。",
+            "_poi_meta": {
+              "poi_key": "jeongbang_falls",
+              "kb_version": "1.18",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Korea Cultural Heritage Foundation — Yeongjusipgyeong canon",
+                "VisitJeju — Jeongbang Pokpo official listing",
+                "Seogwipo City tourism office — admission and access",
+                "Korea Geological Survey — coastal waterfall inventory",
+                "Jeju Folklore Records — Xu Fu / Seobulgwacha inscription study"
+              ]
+            },
             "visitBasics": {
               "hours": "09:00–17:20",
               "closed": "全年开放",
-              "admission": "成人2,000韩元 / 儿童1,000韩元",
-              "walking": "中等难度，有台阶"
+              "admission": "成人 2,000韩元 / 儿童 1,000韩元",
+              "walking": "中等难度，含台阶"
             },
             "convenience": {
               "restroom": "入口区域",
               "parking": "提供停车位"
             },
             "smartNotes": {
-              "photo": "下方的岩石区域适合拍摄富有氛围感的照片，但脚下的地面与海浪飞溅可能使体验感觉更为费力。",
+              "photo": "下方礁石区域适合拍摄富有氛围感的照片，但地面不平且有海浪飞溅，实际体验可能比预期更为费力。",
               "facilities": "基础设施位于入口附近。",
-              "tip": "由于台阶和岩石小径，实际到达现场通常会感觉比地图上看起来更耗费体力。"
+              "tip": "由于存在台阶和崎岖石路，实地游览通常比地图上看起来更耗费体力。"
+            },
+            "images": [
+              "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+              "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
+              "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+                "location": "正房瀑布",
+                "caption": "正房瀑布 — photo 1",
+                "alt": "正房瀑布 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
+                "location": "正房瀑布",
+                "caption": "正房瀑布 — photo 2",
+                "alt": "正房瀑布 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
+                "location": "正房瀑布",
+                "caption": "正房瀑布 — photo 3",
+                "alt": "正房瀑布 — gallery image 3"
+              }
+            ]
+          },
+          {
+            "number": 4,
+            "time": "12:15",
+            "duration": "60分钟",
+            "name": "午餐 — 西归浦当地美食",
+            "category": "午间休整 — 西归浦当地料理",
+            "description": "**西归浦（서귀포）市中心60分钟休整** — 济州岛南部城市，以在**西归浦每日偶来市场（서귀포매일올레시장）**靠岸的新鲜海鲜及富饶的鲍鱼海岸线而著称。根据季节和团体规模，默认轮换菜单如下：捕捞旺季（9月至2月）在西归浦专门店享用**带鱼炖（갈치조림，红烧带鱼）**；全年可在面向市场的餐厅享用**鲍鱼拌饭（전복비빔밥）**；或为偏好烤肉的宾客提供**济州黑猪烤肉（흑돼지구이）**。\n\n黑猪（***Sus scrofa* domesticus，济州黑猪品种**）于**2015年被列为文化遗产资料第5号**，至今仍是济州岛的受保护品种。素食替代选项可按需提供：**拌面（비빔국수，凉拌辣面）**搭配时令蔬菜。午餐地点**距正房瀑布步行仅5分钟** — 食欲旺盛的宾客可在继续步行前，先在市场的茶饮/咖啡一条街短暂停留。",
+            "image": null,
+            "highlights": [
+              "**西归浦**中心区 — 济州岛南部渔业/海鲜之都",
+              "应季（9月至2月）供应**带鱼炖（갈치조림）**，**鲍鱼拌饭（전복비빔밥）**全年供应",
+              "**黑猪（济州黑猪）**可选 — 文化遗产资料第5号（2015年）",
+              "应要求提供**素食拌面（비빔국수）**替代选项",
+              "午餐场所**距正房瀑布入口步行约5分钟** — 大巴转场极少",
+              "上车时收集团体饮食需求；菜单提前确认"
+            ],
+            "timeUsed": [
+              "步行至午餐场所 — 约5分钟",
+              "点餐 + 用餐 + 饮品 — 约45分钟",
+              "步行至正房瀑布入口 — 约5分钟",
+              "缓冲时间 — 约5分钟"
+            ],
+            "whyOnRoute": "午餐安排在西归浦市中心,位于南海岸各站点与漫长东行驾驶之间,让团队恢复体力,以充沛状态迎接下午的攀登与洞穴。",
+            "visitBasics": {
+              "hours": "视餐厅营业时间而定",
+              "closed": "因场地而异",
+              "admission": "餐费在现场结算，另有说明除外",
+              "walking": "极少"
+            },
+            "convenience": {
+              "restroom": "餐厅室内",
+              "parking": "提供停车位"
+            },
+            "smartNotes": {
+              "photo": "由于当日行程以自然风光为主，美食照片有助于丰富路线的视觉节奏。",
+              "facilities": "餐饮相关设施通常十分齐全。",
+              "tip": "建议在此从容用餐，切勿匆忙，以免影响下午的游览体力。"
             },
             "images": []
           },
           {
-            "number": 5,
-            "time": "15:25",
-            "duration": "70分钟",
-            "name": "城山日出峰",
-            "category": "火山口终章",
-            "description": "以城山日出峰作为收尾，赋予这条路线最鲜明的压轴亮点。在游览汉拿山、南海岸与正房瀑布之后，以济州最具代表性的地标之一结束这一天，让整条路线显得圆满完整。",
-            "image": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+            "time": "14:00",
+            "duration": "45分钟",
+            "name": "城山海女徒手潜水表演",
+            "category": "联合国教科文组织非物质文化遗产——女性潜水员现场表演",
+            "description": "济州的海女（女性潜水员）于2016年被列为联合国教科文组织人类非物质文化遗产。在城山日出峰南侧的小湾,资深潜水员——许多已年逾六旬乃至八旬——每日进行徒手潜水表演,通常于13:30与15:00前后举行。她们以传统劳作歌谣开场,随后在不借助任何呼吸装备的情况下潜入水下5至10米,采集海螺、海胆与鲍鱼,出水时发出标志性的“숨비소리（sumbi-sori）”——一种让她们在长时间潜水后吐气换气的哨音般呼吸声。表演结束后,潜水员会在海边将新鲜渔获切成生鱼片现场售卖。这是一次罕见而鲜活的相遇,得以亲见一种已传承400年、却随着潜水员逐渐老去而日渐消失的母系潜水文化。表演在露天进行,取决于海况;遇取消之日,路线将改为参观附近下道的海女博物馆,以潜水装备、历史与影像在室内讲述同样的故事。",
+            "image": "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-diving-ai.webp",
             "highlights": [
-              "以济州标志性地标作为最后一站",
-              "高密度行程结束时令人印象深刻的视觉收获",
-              "可根据团队节奏灵活选择登顶或在较低观景点游览",
-              "对于时间有限的初次游客而言，这是最清晰理想的收尾"
+              "联合国教科文组织非物质文化遗产（2016年）——济州的女性潜水员",
+              "城山小湾的徒手潜水现场表演（约13:30 / 15:00）",
+              "传统潜水歌谣与标志性的“숨비소리”换气声",
+              "取消时的替代方案：室内海女博物馆讲述同样的故事"
             ],
             "timeUsed": [
-              "抵达后进行路线与步行节奏说明",
-              "主路徒步或低处观景点方案",
-              "拍照留念、集合整队，启程返回济州市"
+              "步行下至海女小湾——约5分钟",
+              "徒手潜水表演 + 潜水歌谣——约25分钟",
+              "海边新鲜渔获 / 生鱼片——约10分钟",
+              "返回大巴——约5分钟"
             ],
-            "whyOnRoute": "这里是结束这一天最具象征意义的地方，也是让整条路线真正呈现济州全岛精华之旅的收官一站。",
+            "whyOnRoute": "海女表演为一整天的火山地貌增添了人文与文化的一层——而且由于它恰位于城山脚下,在登山前无需任何额外驾驶。",
+            "_poi_meta": {
+              "poi_key": "jeju_haenyeo_museum",
+              "kb_version": "1.29",
+              "verified_date": "2026-06-23",
+              "sources": [
+                "VisitKorea",
+                "UNESCO ICH 2016",
+                "Jeju Haenyeo Museum"
+              ]
+            },
+            "smartNotes": {
+              "photo": "潜水员身着潜水服入水的瞬间,以及随后摊放在礁石上的新鲜渔获",
+              "facilities": "潜水员的摊位售卖刚出水的新鲜海胆、海螺与鲍鱼生鱼片",
+              "tip": "表演时间随海况与季节变动——由导游当日确认。若取消,您将改为参观海女博物馆。"
+            },
+            "convenience": {
+              "restroom": "城山日出峰入口广场设有洗手间",
+              "parking": "与城山日出峰停车场共用"
+            },
             "visitBasics": {
-              "hours": "付费入场时间因季节而异",
-              "closed": "每月第一个周一休馆（若逢法定节假日，则顺延至次日）",
-              "admission": "成人 5,000 韩元 / 儿童 2,500 韩元",
-              "walking": "若选择登顶，难度为中等至中等偏高"
+              "hours": "露天表演通常于13:30与15:00前后举行（视季节与天气而定）",
+              "closed": "海况或天气恶劣时取消；海女博物馆周一闭馆",
+              "admission": "观看表演免费；海女博物馆（替代方案）成人约 ₩1,100",
+              "walking": "极少——一小段平缓步道下至小湾"
+            },
+            "images": [
+              "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-diving-ai.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-diving-ai.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [],
+            "number": 5
+          },
+          {
+            "number": 6,
+            "time": "14:55",
+            "duration": "90分钟",
+            "name": "城山日出峰",
+            "category": "UNESCO世界遗产凝灰岩锥 — 日出峰（三重UNESCO认定）",
+            "description": "**城山日出峰（성산일출봉，\"日出峰\"）**是一座**有5,000年历史的苏特塞型水成火山凝灰岩锥** — 这是一种罕见的地貌，形成于水下玄武岩喷发冲破海面之际：岩浆与海水相遇，蒸汽爆炸产生的火山灰堆积成**高182米、形如要塞的火山口**边缘，而非典型的熔岩锥。UNESCO将其正式认定为**\"苏特塞型火山地貌出露过程的杰出典范\"**。火山口**直径600米、深90米**，周围环绕着**99块锯齿状岩石**，当地传说将其比作石制王冠。\n\n城山日出峰拥有**三重UNESCO认定**：**世界自然遗产（2007年7月2日列入）**，作为**\"济州火山岛与熔岩洞穴\"**遗产地的组成部分；**生物圈保护区（2002年）**；以及**世界地质公园（2010年10月）** — 在韩国，仅有汉拿山与其并列享有此等殊荣。火山锥海侧基部凿有**18处日本二战遗迹洞穴**（1945年神风特攻队自杀艇掩体）。步道：**单程0.8公里，海拔上升约140米，石阶步道往返约60分钟**。\n\n**海女（해녀）表演**在火山锥下方礁石海湾**每日14:00各举行一场** — 济州女性潜水员（2016年UNESCO非物质文化遗产）不借助水肺装备潜水作业。门票自**2025年4月更新**：**成人₩5,000 / 青少年及儿童₩2,500 / 团体成人₩1,600**，7岁以下及65岁以上免费。峰顶观景台同时也是**瀛洲十景**之一，且是韩国最具代表性的**年度元旦日出朝圣地** — 每年1月1日凌晨有逾5万名游客登顶迎接日出，自1995年起举办市政日出节活动。\n\n从峰顶可清晰望见4公里外的**牛岛（우도，\"牛岛\"）** — 韩国最大的附属火山岛，可从城山港乘坐**15分钟轮渡**（往返₩10,500）前往，适合行程有余裕的游客另行安排游览。",
+            "image": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+            "highlights": [
+              "**三重UNESCO认定**：2007年7月2日世界遗产 + 2002年生物圈保护区 + 2010年10月世界地质公园",
+              "**距今5,000年** — 苏特塞型水成火山喷发，岩浆遇海水蒸汽爆炸而成",
+              "火山口**直径600米、深90米**，周围环绕**99块锯齿状岩石**（\"石制王冠\"）",
+              "**海拔182米** — 步道单程0.8公里 / 海拔上升约140米，石阶步道往返60分钟",
+              "基部凿有**18处日本二战遗迹洞穴** — 1945年神风特攻队自杀艇掩体",
+              "**海女表演每日14:00** 在海滨小湾举行 — 2016年联合国教科文组织非物质文化遗产",
+              "**2025年4月更新票价**：成人₩5,000 / 青少年₩2,500 / 7岁以下及65岁以上免费",
+              "春秋开放时间 **05:00–19:00**（最后入场18:20）",
+              "**每月第一个周一闭园**（不定期休息日）"
+            ],
+            "timeUsed": [
+              "停车 + 购票 + 景区简介 — 约10分钟",
+              "登顶观景台（0.8公里 / 爬升140米）— 约30分钟",
+              "山顶观景 + 火山口边缘拍照 — 约20分钟",
+              "下山 — 约20分钟",
+              "可选：在山脚观看海女表演（每日1场，下午2点；恶劣天气时可能取消）— 约10分钟"
+            ],
+            "whyOnRoute": "城山日出峰是全天的招牌攀登——一座三重联合国教科文组织认定的凝灰岩锥,紧邻海女小湾,因此团队可先观看潜水表演,再无需额外驾驶即可登山。",
+            "_poi_meta": {
+              "poi_key": "seongsan_ilchulbong",
+              "kb_version": "1.18",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "UNESCO WHC inscription 1264 (Jeju Volcanic Island and Lava Tubes, 2007-07-02)",
+                "UNESCO Global Geoparks Network — Jeju (2010-10 designation)",
+                "Cultural Heritage Administration — Natural Monument designation 2000-07-19",
+                "Seongsan Ilchulbong official site (seongsan.kr) — April 2025 admission update",
+                "Jeju Haenyeo Museum — UNESCO Intangible 2016 inscription record"
+              ]
+            },
+            "visitBasics": {
+              "hours": "收费入场时间可能因季节而有所不同",
+              "closed": "每月第一个周一闭园（若适逢公共假期则顺延至次日）",
+              "admission": "成人5,000韩元 / 儿童2,500韩元",
+              "walking": "若选择登顶，难度为中等至中等偏难"
             },
             "convenience": {
               "restroom": "山脚区域及周边设施",
               "parking": "设有大型停车场"
             },
             "smartNotes": {
-              "photo": "比起只拍摄山顶，将火山口与海岸线一同纳入画面的宽幅构图通常更具视觉满足感。",
-              "facilities": "山脚区域的设施较为完善。",
-              "tip": "人流量、天气状况以及团队体能水平，都会影响登顶体验的难度与满足感。"
+              "photo": "拍摄时不妨尝试更宽广的构图，将火山口与海岸线同时纳入画面，往往比只拍山顶更有收获感。",
+              "facilities": "山脚区域设施完善。",
+              "tip": "人流、天气以及团队体能水平均会影响登顶体验的难度与满意度。"
             },
-            "images": []
+            "images": [
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+              "/images/tours/seongsan-ilchulbong/photo-006.webp",
+              "/images/tours/seongsan-ilchulbong/seongsan-haenyeo-show-ai.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/photo-006.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/seongsan-haenyeo-show-ai.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/seongsan-ilchulbong/photo-006.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+                "location": "城山日出峰",
+                "caption": "城山日出峰 — photo 1",
+                "alt": "城山日出峰 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+                "location": "城山日出峰",
+                "caption": "城山日出峰 — photo 2",
+                "alt": "城山日出峰 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+                "location": "城山日出峰",
+                "caption": "城山日出峰 — photo 3",
+                "alt": "城山日出峰 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+                "location": "城山日出峰",
+                "caption": "城山日出峰 — photo 4",
+                "alt": "城山日出峰 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+                "location": "城山日出峰",
+                "caption": "城山日出峰 — photo 5",
+                "alt": "城山日出峰 — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/photo-006.webp",
+                "location": "城山日出峰",
+                "caption": "城山日出峰 — photo 6",
+                "alt": "城山日出峰 — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/seongsan-ilchulbong/seongsan-haenyeo-show-ai.webp",
+                "location": "城山日出峰",
+                "caption": "城山日出峰 — photo 12",
+                "alt": "城山日出峰 — gallery image 12"
+              }
+            ],
+            "liveStatusWidget": "haenyeo"
+          },
+          {
+            "time": "16:55",
+            "duration": "50分钟",
+            "name": "万丈窟熔岩洞",
+            "category": "联合国教科文组织熔岩洞——世界自然遗产洞穴终章",
+            "description": "万丈窟是世界上最优秀的熔岩洞之一,也是济州联合国教科文组织名录的核心洞穴。它形成于约10万至30万年前,当时拒文岳火山系统的熔岩向海洋下泄,留下一条约7.4公里长的隧道。其中1公里路段对游客开放,终点是一根高7.6米的熔岩石柱——已知地球上最高的熔岩石柱——由熔岩从上层通道倾泻而下凝结而成。沿途洞穴呈现教科书般的火山特征:熔岩钟乳石、条纹状的熔岩流痕、地面上绳状的绳状熔岩、洞穴珊瑚,以及一块巧合之下酷似济州岛轮廓的“熔岩龟”岩石。它属于2007年列入的“济州火山岛与熔岩洞穴”联合国教科文组织世界遗产地。洞内全年保持约11–21°C的稳定温度,因此夏凉冬暖——雨天更是天然的避雨之所。地面崎岖、潮湿、光线昏暗,公众步道往返约1公里,需30至45分钟。万丈窟会因保护与客流管控而不定期关闭;遇此情况,路线将改为参观附近的日出乐园美千洞——同属一火山系统的另一处熔岩洞。",
+            "image": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+            "highlights": [
+              "属于联合国教科文组织“济州火山岛与熔岩洞穴”世界遗产地（2007年）",
+              "终点是已知世界上最高的熔岩石柱——约7.6米",
+              "在7.4公里熔岩洞系统中开放1公里可通行通道",
+              "全年凉爽11–21°C——全天的天然避雨避暑之所"
+            ],
+            "timeUsed": [
+              "抵达 + 万丈窟停车——约5分钟",
+              "步行至7.6米熔岩石柱——约20分钟",
+              "熔岩石柱 + 返程步行——约20分钟",
+              "入口处缓冲 / 洗手间——约5分钟"
+            ],
+            "whyOnRoute": "万丈窟以第三处联合国教科文组织自然遗产、也是全天唯一有遮蔽的室内站点为环线收尾。它距城山约30分钟车程,正位于返回济州市的途中,因此能在不增加额外路程的情况下闭合整条环线。",
+            "_poi_meta": {
+              "poi_key": "manjanggul_lava_tube",
+              "kb_version": "1.29",
+              "verified_date": "2026-06-23",
+              "sources": [
+                "UNESCO World Heritage 2007",
+                "Jeju World Natural Heritage Center",
+                "VisitKorea"
+              ]
+            },
+            "smartNotes": {
+              "photo": "步道尽头的7.6米熔岩石柱,以及形似济州岛的“熔岩龟”岩石",
+              "facilities": "入口处设有咖啡馆、洗手间及一家小商店;拒文岳熔岩洞系统就在附近",
+              "tip": "请携带一件轻便外套——洞内全年凉爽——并穿着防滑鞋以应对潮湿、不平的地面。关闭日行程将改为参观日出乐园美千洞熔岩洞。"
+            },
+            "convenience": {
+              "restroom": "入口广场设有洗手间",
+              "parking": "入口处设有免费停车场"
+            },
+            "visitBasics": {
+              "hours": "每日09:00–18:00（最后入场约17:10）",
+              "closed": "每月第一个周三；不定期保护性关闭",
+              "admission": "成人 ₩4,000 / 青少年 ₩2,000；7岁以下及65岁以上免费",
+              "walking": "中等——往返约1公里,洞内地面崎岖、潮湿、光线昏暗,部分顶部低矮"
+            },
+            "images": [
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [],
+            "number": 7
           }
         ]
       }
@@ -1852,51 +2550,61 @@
       "props": {
         "routeFlowStops": [
           {
-            "name": "御乘生岳",
-            "theme": "汉拿山",
+            "name": "汉拿山1100",
+            "theme": "高地",
             "type": "01"
           },
           {
             "name": "柱状节理",
-            "theme": "悬崖",
+            "theme": "海崖",
             "type": "02"
-          },
-          {
-            "name": "午餐",
-            "theme": "休整",
-            "type": "03"
           },
           {
             "name": "正房",
             "theme": "瀑布",
+            "type": "03"
+          },
+          {
+            "name": "午餐",
+            "theme": "休整",
             "type": "04"
+          },
+          {
+            "name": "海女表演",
+            "theme": "文化",
+            "type": "05"
           },
           {
             "name": "城山",
             "theme": "火山口",
-            "type": "05"
+            "type": "06"
+          },
+          {
+            "name": "万丈窟",
+            "theme": "熔岩洞",
+            "type": "07"
           }
         ],
         "routePhases": [
           {
-            "phase": "上午",
-            "duration": "1-2",
+            "phase": "上午——高山与南海岸",
+            "duration": "1-3",
             "description": ""
           },
           {
-            "phase": "正午至午后",
-            "duration": "3-4",
+            "phase": "正午——午餐与海女文化",
+            "duration": "4-5",
             "description": ""
           },
           {
-            "phase": "终章",
-            "duration": "5",
+            "phase": "终章——火山口与熔岩洞",
+            "duration": "6-7",
             "description": ""
           }
         ],
         "routeShapeIntro": {
-          "title": "全天行程脉络",
-          "subtitle": "行程从汉拿山出发，途经南部海岸，最终抵达城山日出峰。接送时间通常为08:30至09:00，返回济州市约在17:40至18:00之间。"
+          "title": "全日行程脉络",
+          "subtitle": "行程从汉拿山1100高地出发，途经南海岸的海崖与瀑布，午餐稍作休整，随后东行欣赏海女徒手潜水现场表演、攀登城山日出峰，并探访万丈窟熔岩洞。全程约180公里、约5小时车程；接送通常为08:30–09:00，约18:00–18:30返回济州市。"
         }
       }
     },
@@ -1907,74 +2615,74 @@
         "whyTourWorks": {
           "bestFor": [
             "在济州只有一天时间的旅行者",
-            "上午抵达济州的旅行者",
-            "希望游览标志性景点的旅行者",
-            "喜欢积极游览的旅行者"
+            "希望游览济州联合国教科文组织遗址的初次到访者",
+            "希望同时领略标志性地标与当地文化的旅行者",
+            "喜欢积极、充实的全天观光的旅行者"
           ],
           "routeLogicSections": [
             {
-              "title": "专为时间有限的旅行者打造",
+              "title": "专为一天尽览济州精华而设计",
               "icon": "clock-3",
               "iconBg": "bg-amber-50/80",
               "items": [
                 {
-                  "label": "从汉拿山出发",
-                  "detail": "以汉拿山作为起点，在漫长的跨岛驾车行程开始之前，让这一天充分感受到济州独特的山岳地貌。"
+                  "label": "以汉拿山高地开篇",
+                  "detail": "从海拔1,100米的高山湿地起步，在漫长的横岛驾驶开始之前，先以济州的山地核心为全天行程定下基调。"
                 },
                 {
-                  "label": "将南部海岸安排在行程中段",
-                  "detail": "柱状节理带、午餐以及正房瀑布，保持了由西向东的流畅节奏，同时全天维持着丰富的视觉密度。"
+                  "label": "将南海岸安排在行程中段",
+                  "detail": "柱状节理、正房瀑布与午餐串起从西向东的行程流动，同时让正午时段始终保持丰富的视觉密度。"
                 },
                 {
-                  "label": "以城山日出峰收尾",
-                  "detail": "以城山作为终点，让整条路线不再像是分散的区域景点，而更像是一段完整的济州精华之旅。"
+                  "label": "以东部的火山口与熔岩洞收尾",
+                  "detail": "海女文化、城山攀登与万丈窟熔岩洞，将东段行程凝聚成一段有力的联合国教科文组织终章，而非各自独立的零散站点。"
                 }
               ]
             },
             {
-              "title": "为何这一天感觉格外充实",
+              "title": "为何这一天格外充实",
               "icon": "mountain",
               "iconBg": "bg-sky-50/80",
               "items": [
                 {
-                  "label": "两段更为积极的步行路段",
-                  "detail": "御乘生岳与城山日出峰，使这条路线比一般小团一日游具有更强的体力活动性。"
+                  "label": "三处联合国教科文组织世界遗产",
+                  "detail": "汉拿山、城山日出峰与万丈窟均属于济州的联合国教科文组织遗产名录——在济州一日之内可达成的最高遗产密度。"
                 },
                 {
-                  "label": "注重景观密度",
-                  "detail": "这不是一条悠闲漫步的路线，而是专为希望在一天内获得更丰富、更深刻济州体验的旅行者所设计的。"
+                  "label": "一层鲜活的文化体验",
+                  "detail": "海女徒手潜水表演在一整天的火山地貌之外，增添了一份联合国教科文组织非物质文化遗产的体验。"
                 },
                 {
-                  "label": "时间有限时尤为值得",
-                  "detail": "如果只有一天时间，通常更建议集中游览济州岛最具代表性的标志性景点，而非将行程节奏安排得过于悠闲。"
+                  "label": "时间利用价值最大化",
+                  "detail": "高山、海崖、瀑布、文化、火山口与熔岩洞汇于一条环线——经过精心设计，使一日行程依然如同一次完整的济州之旅。"
                 }
               ]
             },
             {
-              "title": "当现场情况发生变化时",
+              "title": "当现场条件发生变化时",
               "icon": "wind",
               "iconBg": "bg-slate-50/80",
               "items": [
                 {
-                  "label": "汉拿山入山限制",
-                  "detail": "御乘生岳可能受季节性规定或天气相关管控措施的影响。"
+                  "label": "海女表演视天气而定",
+                  "detail": "露天徒手潜水表演在海况较大时可能取消；遇此情况，路线将改为参观海女博物馆。"
                 },
                 {
-                  "label": "沿海开阔景点的风力影响",
-                  "detail": "柱状节理带和城山日出峰是最容易受天气影响的两处沿海亮点景点。"
+                  "label": "万丈窟有不定期关闭",
+                  "detail": "若熔岩洞因保护或客流管控而关闭，将以附近的日出乐园美千洞熔岩洞作为替代。"
                 },
                 {
-                  "label": "返程时间可能略有变动",
-                  "detail": "交通状况、团队步行速度以及现场客流量均可能导致最终返程时间出现小幅变动。"
+                  "label": "返回时间可能略有变动",
+                  "detail": "交通状况、团队步行速度以及现场人流量均可能导致最终返回时间出现小幅变化。"
                 }
               ]
             }
           ],
           "lessIdealFor": [
-            "偏好慢节奏的旅行者",
+            "偏好慢节奏、轻松游览的旅行者",
             "希望避免爬楼梯或上坡行走的旅行者",
-            "携带幼儿出行的团体",
-            "高度依赖婴儿车出行的团体"
+            "携带年幼儿童出行的团体",
+            "对凉爽、昏暗洞穴通道感到不适的宾客"
           ]
         }
       }
@@ -1989,8 +2697,8 @@
             "title": "接送时间",
             "preview": "早出发，傍晚返回济州市",
             "content": [
-              "济州市接客时间为08:30至09:00之间",
-              "约17:40至18:00返回济州市",
+              "济州市接客时间为08:30至09:00",
+              "约18:00–18:30返回济州市",
               "可视情况安排机场接送",
               "最终集合时间于前一晚确认"
             ]
@@ -1998,59 +2706,59 @@
           {
             "id": "walking",
             "title": "步行与地形",
-            "preview": "比标准路线更需体力",
+            "preview": "含台阶、攀登与洞穴的活跃路线",
             "content": [
-              "本路线包含两段相对需要较多体力的步行路段。",
-              "御乘生岳包含上坡行走和台阶路段。",
-              "正房瀑布包含台阶和石质步行小径。",
-              "如果团队选择登顶，城山日出峰的体力消耗将相对更大。",
-              "强烈建议穿着防滑舒适的鞋子。"
+              "汉拿山1100湿地为约1公里、轻松易行的木栈道环路。",
+              "正房瀑布包含台阶和崎岖的岩石步道。",
+              "若团队选择登顶，城山日出峰为石阶攀登路段。",
+              "万丈窟往返约1公里，洞内地面崎岖、潮湿、光线昏暗。",
+              "强烈建议穿着舒适且防滑性能良好的鞋子。"
             ]
           },
           {
             "id": "weather",
-            "title": "天气与关闭情况的调整",
-            "preview": "通常按计划进行，如有需要将作出相应调整",
+            "title": "天气与关闭情况调整",
+            "preview": "通常按计划进行，并预设备选方案",
             "content": [
-              "小雨：游览通常正常进行",
-              "大风天气：柱状节理海岸或城山日出峰等开阔地段可能缩短停留时间",
-              "汉拿山限制：若御乘生岳受到管制，路线可能进行调整或更换",
-              "闭园日：如有必要，将安排替代景点或调整停留时间"
+              "小雨：行程通常正常进行——洞穴本身即是天然避雨处",
+              "海况较大：海女徒手潜水表演可能改为参观海女博物馆",
+              "万丈窟关闭：改为前往附近的日出乐园美千洞熔岩洞",
+              "冬季：汉拿山1100高地可能有积雪或结冰——路线可能调整停留时间"
             ]
           },
           {
             "id": "flight",
-            "title": "如果您当天抵达或离开济州",
-            "preview": "您需要留出充裕的傍晚缓冲时间",
+            "title": "若您当天抵达或离开济州",
+            "preview": "您需要预留充裕的傍晚缓冲时间",
             "content": [
-              "这是一条高密度路线，可在一天内览尽济州的标志性精华景点。",
-              "当天抵达或离开均可行，具体取决于您的行程安排，但前提是留出足够的傍晚缓冲时间。",
-              "强烈建议搭乘晚班飞机。",
-              "在评估时间风险时，请将交通状况、步行速度及现场实际情况纳入考量。"
+              "这是一条高密度路线，让您在一天之内游览济州的标志性精华景点。",
+              "当天抵达或离开均可行，但前提是傍晚须留有充足的缓冲时间。",
+              "强烈建议搭乘晚班航班。",
+              "在评估时间风险时，请将交通状况、步行节奏及现场实际情况一并纳入考量。"
             ]
           },
           {
             "id": "wear",
             "title": "着装与携带物品",
-            "preview": "步行鞋、分层着装及轻薄防风外套",
+            "preview": "步行鞋、分层穿搭及一件入洞用的轻便外套",
             "content": [
-              "防滑步行鞋",
-              "适应山地与海岸温差的分层着装",
-              "轻薄防风外套",
+              "防滑性能良好的步行鞋",
+              "适应山地、海岸与洞穴温差的分层穿搭服装",
+              "一件轻便外套——万丈窟全年凉爽",
               "帽子及防晒用品",
-              "水壶"
+              "水瓶"
             ]
           },
           {
             "id": "included",
-            "title": "费用包含 / 不含项目",
-            "preview": "含导游、车辆、接送及门票",
-            "variant": "含",
+            "title": "含包项目 / 不含项目",
+            "preview": "含导游、车辆、接送及全部门票",
+            "variant": "included",
             "content": [
               "专业英语导游",
-              "小型团队车辆",
-              "济州市酒店接送",
-              "所有景点门票",
+              "小团体专用车辆",
+              "济州市区酒店接送服务",
+              "全部景点门票（汉拿山1100、柱状节理、正房、城山、万丈窟／替代日改为海女博物馆）",
               "瓶装水",
               "午餐（现场自付）",
               "个人购物费用",
@@ -2094,19 +2802,19 @@
         "seasonalVariations": [
           {
             "season": "春季",
-            "description": "山间空气格外清新，全岛能见度通常更加清晰明亮。"
+            "description": "山间空气格外清新，全岛能见度通常更为清晰明亮。"
           },
           {
             "season": "夏季",
-            "description": "白昼最长，海岸色彩往往最为鲜艳饱和。"
+            "description": "白昼最长，海岸色彩往往显得最为鲜艳饱满。"
           },
           {
-            "season": "秋季",
-            "description": "晴朗的天空使全岛路线从头到尾都令人格外满足。"
+            "season": "秋天",
+            "description": "晴朗的天空往往让全岛路线从头到尾都格外令人满足。"
           },
           {
-            "season": "冬季",
-            "description": "空气变得更加清冽透澈，山与海之间的对比也愈发强烈。"
+            "season": "冬天",
+            "description": "空气变得更加清冽通透，山与海之间的对比也愈发鲜明。"
           }
         ]
       }
@@ -2119,52 +2827,55 @@
           {
             "timing": "预订后",
             "title": "即时确认",
-            "detail": "预订确认单将附带路线摘要发送给您。"
+            "detail": "系统将发送预订确认，并附上行程路线摘要。"
           },
           {
             "timing": "出发前12小时",
             "title": "出发前提醒",
-            "detail": "提前分享天气说明及路线调整建议。"
+            "detail": "提前告知天气情况及路线调整指引。"
           },
           {
-            "timing": "前一晚",
+            "timing": "出发前一晚",
             "title": "最终接送通知",
             "detail": "您将收到确切的接送时间及联系方式。"
           },
           {
             "timing": "出发当天早晨",
             "title": "当日路线说明",
-            "detail": "出发前将简要分享最新的现场情况。"
+            "detail": "出发前将简要告知最新现场动态。"
           },
           {
-            "timing": "行程中",
-            "title": "逐站引导",
-            "detail": "在每个站点按需分享关键信息。"
+            "timing": "游览途中",
+            "title": "逐站导览",
+            "detail": "在每个站点按需提供关键信息。"
           },
           {
-            "timing": "行程结束后",
-            "title": "行程后支持",
-            "detail": "如有需要，可提供后续支持及额外建议。"
+            "timing": "游览结束后",
+            "title": "游览后支持 > **注：** 第 7、10、13 行（`bg-emerald-50/80`、`bg-sky-50/80`、`bg-amber-50/80`）为 CSS 样式类名，保持原文不译。",
+            "detail": "如有需要，可提供后续支持与额外建议。"
           }
         ],
         "bookingTrustItems": [
           {
             "icon": "clock-3",
-            "title": "最大化一日内的游览体验",
-            "description": "专为时间有限的旅行者设计",
-            "iconBg": "bg-emerald-50/80"
+            "title": "一天尽览济州精华",
+            "description": "三处联合国教科文组织遗址外加海女文化",
+            "iconBg": "bg-emerald-50/80",
+            "body": "持牌当地运营商专为只有一天时间、却希望尽览济州最具辨识度地标的旅行者打造此环线——汉拿山高地、柱状节理海崖、直泻入海的瀑布、海女现场表演、城山日出峰凝灰岩锥与万丈窟熔岩洞，汇于一条环线。"
           },
           {
             "icon": "mountain",
-            "title": "专注于标志性景点",
-            "description": "从汉拿山一路直达城山",
-            "iconBg": "bg-sky-50/80"
+            "title": "聚焦标志性地标",
+            "description": "从汉拿山高地到联合国教科文组织熔岩洞",
+            "iconBg": "bg-sky-50/80",
+            "body": "由经常运营全岛环线的线路专家执行——站点顺序最大限度减少折返，并将南海岸与海女站点的时间衔接潮汐、光线与表演时刻。"
           },
           {
             "icon": "users",
-            "title": "小团运营",
-            "description": "更能灵活应对路况与现场情况",
-            "iconBg": "bg-amber-50/80"
+            "title": "小团队运营",
+            "description": "更能灵活应对关闭与现场情况",
+            "iconBg": "bg-amber-50/80",
+            "body": "小团形式让全天行程保持灵活——导游可将海女表演改为博物馆，或将万丈窟改为日出乐园熔岩洞，而不打乱整条路线。"
           }
         ]
       }
@@ -2176,38 +2887,38 @@
         "staticQuestions": [
           {
             "id": "one-day",
-            "question": "如果我在济州岛只有一天，这条路线合适吗？",
-            "answer": "是的。这条路线专为希望在一天内游览济州岛核心景点的旅行者设计，节奏比标准一日游更快。"
+            "question": "如果我在济州只有一天，这条路线合适吗？",
+            "answer": "合适。这条路线专为一天内游览济州核心地标而打造——三处联合国教科文组织遗址、海女文化、海崖与瀑布——节奏比标准一日游更快。"
+          },
+          {
+            "id": "unesco",
+            "question": "哪些站点是联合国教科文组织遗址？",
+            "answer": "共三处：汉拿山1100高地（属汉拿山世界遗产区域）、城山日出峰，以及万丈窟熔岩洞——均在济州“火山岛与熔岩洞穴”名录之内。海女表演亦为联合国教科文组织非物质文化遗产。"
+          },
+          {
+            "id": "haenyeo",
+            "question": "如果海女表演取消会怎样？",
+            "answer": "露天徒手潜水表演取决于海况。若取消，路线将改为参观附近的海女博物馆，以室内方式讲述同样的女性潜水员故事。"
+          },
+          {
+            "id": "manjanggul",
+            "question": "万丈窟一直开放吗？",
+            "answer": "万丈窟会因保护与客流管控而不定期关闭。关闭时，行程将改为前往附近的日出乐园美千洞——同属一火山系统的另一处熔岩洞。"
           },
           {
             "id": "tiring",
-            "question": "这条路线会让人觉得很累吗？",
-            "answer": "通常比普通小团一日游感觉更为充实，因为有两段较为明显的步行区间，且路线覆盖了岛屿的大部分区域。"
-          },
-          {
-            "id": "parents",
-            "question": "适合带父母一同出行吗？",
-            "answer": "这取决于他们对步行及较快游览节奏的适应程度。这条路线更适合体力较好的成年旅行者，而非完全轻松悠闲的观光游览。"
+            "question": "这条路线会令人感到疲惫吗？",
+            "answer": "它比典型的小团一日游更为活跃：路线覆盖岛屿大部分区域，并包含城山攀登、正房台阶与万丈窟洞穴步行。"
           },
           {
             "id": "flight",
-            "question": "如果我当天抵达或离开济州岛，可以参加吗？",
-            "answer": "有可能，但前提是您傍晚有充裕的时间余量。若航班时间较为紧张，则不建议选择此路线。"
+            "question": "如果我当天抵达或离开济州，可以参加吗？",
+            "answer": "有可能，但前提是傍晚留有充裕的缓冲时间。如果航班时间较紧，则不建议选择此路线。"
           },
           {
-            "id": "order",
-            "question": "当天的停靠顺序可以更改吗？",
-            "answer": "可以。为确保行程顺利进行，停靠顺序可能会根据交通、天气及人流状况略作调整。"
-          },
-          {
-            "id": "seongsan-last",
-            "question": "城山日出峰为何安排在最后？",
-            "answer": "因为这样能让全天行程以更有力的方式收尾。在游览汉拿山、南海岸和正房瀑布之后，城山日出峰作为最具象征意义的压轴景点，效果最佳。"
-          },
-          {
-            "id": "summit",
-            "question": "我们必须登顶城山日出峰吗？",
-            "answer": "不一定。团队是否登顶，以及该环节的侧重程度，可能会根据行程节奏、天气和人流情况而有所调整。"
+            "id": "manjanggul-last",
+            "question": "为什么万丈窟安排在最后？",
+            "answer": "它位于返回济州市的途中，在一整天的露天地貌之后，作为凉爽、有遮蔽的联合国教科文组织终章再合适不过。"
           }
         ]
       }
@@ -2257,12 +2968,13 @@
       "props": {
         "note": "checkout_tour_id 在运行时从 Supabase / 环境变量中解析；不属于静态 JSONB 的一部分。",
         "price": {
-          "amountLabel": "78",
+          "amountLabel": "100",
+          "originalPriceUsd": 112,
+          "salePriceUsd": 100,
+          "discountPercent": 11,
           "currency": "USD",
           "per": "person",
-          "priceSource": "internal",
-          "priceNote": "小团双语全岛游。AtoC Korea 直销；相较运营商底价享受 10% 折扣。",
-          "discountPercent": 10
+          "priceNote": "小团双语全岛游（约每人 ₩138,000）。AtoC Korea 直营销售；较运营商基准价立减 11%。"
         }
       }
     }
@@ -2270,7 +2982,7 @@
   "itinerary_variants": [],
   "_publication": {
     "schema_version": "v4_canonical",
-    "last_modified": "2026-04-28",
+    "last_modified": "2026-06-23",
     "version_history": [
       "v1_smallgroup",
       "v15_unified"
@@ -2374,7 +3086,8 @@
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0
-      }
+      },
+      "v18_course_change_2026_06_23": "Course changed to 7-stop UNESCO grand loop: Hallasan 1100 highland → Jusangjeolli → Jeongbang → lunch → Seongsan haenyeo free-diving show (museum alternate) → Seongsan Ilchulbong climb → Manjanggul lava tube (Ilchul Land Micheon Cave alternate). Price → US$100 (≈ ₩138,000). Duration → 10–10.5h, ~180 km, ~5h driving. stopsCount 5→7. Eoseungsaengak swapped for the 1100 wetland; Haenyeo and Manjanggul added. Matching raised: culture 2→3, local_culture_fit 3→4, intangible_heritage_fit 2→4, storytelling 4→5, indoor_ratio 28→32, rain_fit 2→3, duration_band→10.5h. Pickup/drop-off unchanged."
     }
   }
 }

@@ -1185,6 +1185,24 @@
             "body": "AIコンシェルジュは24時間。AIで対応しきれないときは、韓国語チームが引き継ぎます（9:00〜21:00 KST）。"
           }
         },
+        "aiAgent": {
+          "eyebrow": "AI旅行エージェント",
+          "title": "チャットボットではなく、",
+          "titleAccent": "本物の旅行エージェント",
+          "subtitle": "ツアーを提案し、見積もりを出し、予約を照会し、必要なら担当者にもおつなぎします。何でも、あなたの言語でどうぞ。",
+          "cap": {
+            "answer": "何でも回答",
+            "recommend": "ツアー提案",
+            "quote": "即時見積もり",
+            "details": "情報を収集",
+            "lookup": "予約を照会",
+            "human": "担当者に接続"
+          },
+          "sampleLabel": "例",
+          "sampleUser": "4人、子ども連れで釜山2日 — おすすめは?",
+          "sampleAgent": "甘川文化村と海雲台のコースをプライベートカーでまとめます。お見積もりか、日程の確保はいかがですか?",
+          "cta": "今すぐ相談"
+        },
         "chooseStyle": {
           "eyebrow": "どんな旅にしますか",
           "title": "ペースを選んでください。あとはお任せください。",
@@ -1225,6 +1243,7 @@
           "recommendCardTitle": "どれが合うか迷ったら？",
           "recommendCardDesc": "簡単な質問に答えるだけで、ぴったりの一日をご提案します。",
           "recommendCardCta": "おすすめを見る",
+          "askAgentCta": "または今すぐAIエージェントに質問",
           "builderCardTitle": "自分だけの一日を作る",
           "builderCardDesc": "時間を選び、地図でルートを一カ所ずつカスタマイズ。",
           "builderCardCta": "ビルダーを開く",
@@ -1303,6 +1322,7 @@
           "reviewCardStarsAria": "5点満点中 {rating}"
         },
         "finalCtaBlock": {
+          "askAgent": "またはAIエージェントに質問",
           "eyebrow": "準備ができたら",
           "title": "あなたの韓国一日ツアー、30秒で見つかります。",
           "subtitle": "厳選した運営会社 · 本物の人のサポート · 直接予約まで。",
@@ -2403,6 +2423,9 @@
         "solatiMinHint": "10〜13名（ソラティ）は6時間からのご予約となります。",
         "notIncluded": "食事代および観光地の入場料はツアー料金に含まれておらず、当日現地にて別途お支払いいただきます。",
         "jejuSingleRegion": "済州ツアーは1日につき東部・西部・南部のいずれか1エリアのみを巡ります。2エリアを巡る場合は₩60,000が追加されます。",
+        "cruisePickupPort": "送迎は必ず寄港地の港から — ホテル送迎は不要です。",
+        "cruiseGuarantee": "出航前の本船帰着を100％保証します。",
+        "cruiseFlexible": "出発時間は本船の実際の入港時間に合わせて柔軟に調整します。",
         "lines": {
           "base": "基本 — {hours}時間プライベートツアー",
           "van": "車両 — バン（7〜9名）",
@@ -2418,9 +2441,14 @@
           "cruiseExcursion": "クルーズ寄港地ツアー",
           "gangjeongPort": "江汀港（カンジョン）"
         },
-        "pickupZones": { "city": "済州市内", "out_west": "市外 — 西部", "out_east": "市外 — 東部", "out_south": "市外 — 南部" },
+        "pickupZones": {
+          "city": "済州市内",
+          "out_west": "市外 — 西部",
+          "out_east": "市外 — 東部",
+          "out_south": "市外 — 南部"
+        },
         "cruisePorts": {
-          "gangjeong": "江汀港（西帰浦）+₩70,000",
+          "gangjeong": "江汀港（西帰浦）+₩20,000",
           "jeju_port": "済州港（済州市）"
         }
       },
@@ -2553,7 +2581,12 @@
       "editTrip": "旅行内容を編集",
       "close": "閉じる",
       "done": "完了",
-      "pickupZones": { "city": "済州市内", "out_west": "市外 — 西部", "out_east": "市外 — 東部", "out_south": "市外 — 南部" },
+      "pickupZones": {
+        "city": "済州市内",
+        "out_west": "市外 — 西部",
+        "out_east": "市外 — 東部",
+        "out_south": "市外 — 南部"
+      },
       "ports": {
         "gangjeong": "江汀(西帰浦)",
         "jeju_port": "済州港"

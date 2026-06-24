@@ -1079,7 +1079,7 @@
     {
       "icon": "users",
       "title": "Tamaño de grupo seleccionado",
-      "description": "Dimensionado adecuadamente para la ruta > **Notes:** Lines 6, 8 (dashes) and lines 20, 23 (CSS utility class names) are kept as-is, since they are either punctuation/symbols or technical code strings that should not be translated.",
+      "description": "Dimensionado adecuadamente para la ruta",
       "iconBg": "bg-amber-50/80 *(clase CSS — sin traducción)*",
       "iconColor": "text-amber-600"
     }
@@ -1599,7 +1599,7 @@
     {
       "id": "atmosphere",
       "section_html_id": null,
-      "component": "TourAtmosphereGallery **Notes:** - **Lines 7, 12, 25** (`TourTabsNav`, `TourAtAGlance`, `TourAtmosphereGallery`) are kept as-is — these appear to be UI component/code identifiers that should not be translated. - Proper nouns (Hwaseong, Haenggung, Starfield, Suwon, Yongin, Gyeonggi) are retained in their original form, as is standard practice for place and brand names.",
+      "component": "TourAtmosphereGallery",
       "props": {
         "galleryItems": [
           {
@@ -1793,7 +1793,7 @@
           {
             "number": 3,
             "time": "≈ 11:00",
-            "duration": "60-90 min > **Notes:** Image file paths (lines 5–9) are left unchanged as they are asset URLs. The duration \"60–90 min\" (line 25) is universally understood and kept as-is in Spanish contexts.",
+            "duration": "60-90 min",
             "name": "Palacio Hwaseong Haenggung",
             "category": "Palacio Real de Joseon",
             "description": "La residencia real temporal dentro de la fortaleza, utilizada por el rey Jeongjo cuando visitaba la tumba de su padre. Restaurado tras un incendio en el siglo XIX, es el haenggung (palacio anexo) más grande de Corea. Actuaciones en vivo —ceremonias de la guardia real, demostraciones de artes marciales— se realizan la mayoría de los días y dan vida a los patios.",
@@ -1838,7 +1838,7 @@
               "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-00-57.webp",
               "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-43.webp",
               "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-09-58.webp",
-              "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp > **Notes:** Image paths (lines 4, 21–25) are left unchanged as they are file references, not translatable text. Korean proper nouns (*Hwaseong*, *Haenggung*, *Sinpungnu*, *Bongsudang*, *hanbok*) are retained as they are culturally specific terms.",
+              "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
               "/images/tours/suwon-hwaseong/photo-002.webp"
             ],
             "imageCredits": [
@@ -1859,7 +1859,7 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp > **Notes:** Image paths (lines 4, 21–25) are left unchanged as they are file references, not translatable text. Korean proper nouns (*Hwaseong*, *Haenggung*, *Sinpungnu*, *Bongsudang*, *hanbok*) are retained as they are culturally specific terms.",
+                "url": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
                 "source": "atoc-korea"
               },
               {
@@ -1915,7 +1915,7 @@
               {
                 "id": 5,
                 "type": "photo",
-                "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp > **Notes:** Image paths (lines 4, 21–25) are left unchanged as they are file references, not translatable text. Korean proper nouns (*Hwaseong*, *Haenggung*, *Sinpungnu*, *Bongsudang*, *hanbok*) are retained as they are culturally specific terms.",
+                "src": "/images/tours/suwon-hwaseong/chatgpt-image-2026-5-11-01-12-24.webp",
                 "location": "Palacio Hwaseong Haenggung",
                 "caption": "Palacio Hwaseong Haenggung — photo 5",
                 "alt": "Palacio Hwaseong Haenggung — gallery image 5"
@@ -1945,7 +1945,7 @@
               "Lugar de rodaje de K-dramas"
             ],
             "timeUsed": [
-              "Llegada, venta de entradas y sesión informativa de orientación > **Notes:** The proper name *Hwaseong Haenggung* is preserved in all lines as it is a registered cultural heritage site name. The image file path (line 20) is left unchanged as it is a technical asset reference. *K-drama* is retained untranslated as it is a universally recognized loanword in Spanish-speaking travel markets.",
+              "Llegada, venta de entradas y sesión informativa de orientación",
               "Exploración de la atracción principal con tiempo para fotos",
               "Cierre y reagrupación en el vehículo"
             ],
@@ -2212,7 +2212,7 @@
             "theme": "Palacio Patrimonio"
           },
           {
-            "name": "Pueblo Folclórico Coreano (Yongin) > **Notes:** > - Lines **9**, **13**, and **18** are kept as-is (duration, file path, and component name are untranslatable technical/UI strings). > - \"Seoul\" is rendered as **Seúl** (standard Spanish spelling). > - Proper nouns like *Hwaseong*, *Haenggung*, and *Yongin* are preserved unchanged.",
+            "name": "Pueblo Folclórico Coreano (Yongin)",
             "type": "primary",
             "theme": "Pueblo Patrimonial"
           },
@@ -2414,8 +2414,8 @@
           {
             "icon": "users",
             "title": "Grupos de tamaño seleccionado",
-            "description": "Dimensionado adecuadamente para la ruta > **Notes:** Lines 5, 7, 17, 20, and 23 were left unchanged — they are punctuation marks (—), a component identifier, and CSS utility class names that should not be translated.",
-            "iconBg": "`bg-amber-50/80` *(CSS class — sin cambios / unchanged)*",
+            "description": "Dimensionado adecuadamente para la ruta",
+            "iconBg": "`bg-amber-50/80`",
             "iconColor": "text-amber-600"
           }
         ],
@@ -2471,7 +2471,7 @@
           },
           {
             "id": "q3",
-            "question": "¿Cuánto de la muralla de la fortaleza recorreremos a pie? --- > **Notas / Notes:** > - Items **1** and **20** are technical identifiers (CSS class and React component name) and are left unchanged. > - Proper nouns (Suwon, Hwaseong, Haenggung, Starfield, Hanbok, Galbi) are kept in their original form as they are recognized names.",
+            "question": "¿Cuánto de la muralla de la fortaleza recorreremos a pie?",
             "answer": "Aproximadamente 1 km del recorrido circular de 5,7 km, normalmente el tramo entre Janganmun y Hwaseomun, que incluye algunos bastiones y un montículo de señales. El recorrido completo tarda más de 3 horas y no está incluido en este itinerario."
           },
           {

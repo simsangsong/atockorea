@@ -1324,6 +1324,24 @@
             "body": "AI concierge 24/7. When AI hits its limit, a Korean-speaking team takes over (9 AM–9 PM KST)."
           }
         },
+        "aiAgent": {
+          "eyebrow": "Your AI travel agent",
+          "title": "Not a chatbot —",
+          "titleAccent": "a real travel agent",
+          "subtitle": "It recommends tours, quotes prices, looks up your booking, and brings in a human when you need one. Ask anything, in your language.",
+          "cap": {
+            "answer": "Answers anything",
+            "recommend": "Recommends tours",
+            "quote": "Instant quotes",
+            "details": "Takes your details",
+            "lookup": "Looks up bookings",
+            "human": "Connects a human"
+          },
+          "sampleLabel": "Example",
+          "sampleUser": "4 of us, 2 days in Busan with kids — what fits?",
+          "sampleAgent": "I'd pair Gamcheon Culture Village with a Haeundae day by private car. Want a quote, or shall I hold a date?",
+          "cta": "Start chatting"
+        },
         "chooseStyle": {
           "eyebrow": "HOW YOU LIKE TO TRAVEL",
           "title": "Pick your pace. We'll handle the rest.",
@@ -1364,6 +1382,7 @@
           "recommendCardTitle": "Not sure which to pick?",
           "recommendCardDesc": "Answer a few quick questions — we’ll recommend your day.",
           "recommendCardCta": "Get a recommendation",
+          "askAgentCta": "Or ask the AI agent now",
           "builderCardTitle": "Build your own day",
           "builderCardDesc": "Pick your hours and customize the route on the map, stop by stop.",
           "builderCardCta": "Open the builder",
@@ -1442,6 +1461,7 @@
           "reviewCardStarsAria": "{rating} out of 5 stars"
         },
         "finalCtaBlock": {
+          "askAgent": "Or ask the AI agent",
           "eyebrow": "READY WHEN YOU ARE",
           "title": "Your Korea day, picked in 30 seconds.",
           "subtitle": "Hand-picked operators. Real human support. Direct booking.",
@@ -2403,6 +2423,9 @@
         "solatiMinHint": "Groups of 10–13 (Solati van) start from 6 hours.",
         "notIncluded": "Meal costs and attraction entrance tickets are NOT included in the tour price and will be paid separately on the day.",
         "jejuSingleRegion": "Each tour covers ONE region of Jeju (East, West, or South). Covering two regions incurs an additional fee of ₩60,000.",
+        "cruisePickupPort": "Pickup & drop-off is always your ship's port — no hotel transfer needed.",
+        "cruiseGuarantee": "Guaranteed back to the ship before sail-away — 100%.",
+        "cruiseFlexible": "Departure time flexes to your ship's actual arrival.",
         "lines": {
           "base": "Base — {hours}h private tour",
           "van": "Vehicle — van (7–9 guests)",
@@ -2418,9 +2441,14 @@
           "cruiseExcursion": "Cruise shore-excursion",
           "gangjeongPort": "Gangjeong Port"
         },
-        "pickupZones": { "city": "Jeju city (downtown)", "out_west": "Out-of-city — west", "out_east": "Out-of-city — east", "out_south": "Out-of-city — south" },
+        "pickupZones": {
+          "city": "Jeju city (downtown)",
+          "out_west": "Out-of-city — west",
+          "out_east": "Out-of-city — east",
+          "out_south": "Out-of-city — south"
+        },
         "cruisePorts": {
-          "gangjeong": "Gangjeong Port (Seogwipo) +₩70,000",
+          "gangjeong": "Gangjeong Port (Seogwipo) +₩20,000",
           "jeju_port": "Jeju Port (city, north)"
         }
       },
@@ -2553,7 +2581,12 @@
       "editTrip": "Edit your trip",
       "close": "Close",
       "done": "Done",
-      "pickupZones": { "city": "Jeju city (downtown)", "out_west": "Out-of-city — west", "out_east": "Out-of-city — east", "out_south": "Out-of-city — south" },
+      "pickupZones": {
+        "city": "Jeju city (downtown)",
+        "out_west": "Out-of-city — west",
+        "out_east": "Out-of-city — east",
+        "out_south": "Out-of-city — south"
+      },
       "ports": {
         "gangjeong": "Gangjeong (Seogwipo)",
         "jeju_port": "Jeju Port"

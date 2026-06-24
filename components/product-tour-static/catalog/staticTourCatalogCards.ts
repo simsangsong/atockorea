@@ -67,7 +67,7 @@ const SLUG_OVERRIDES: Record<string, SlugOverride> = {
   "jeju-cherry-blossom-tour-east-route": { listPriceUsd: 59, compareAtPriceUsd: 69, maxGroupSize: 8 },
   "jeju-cruise-shore-excursion-bus-tour": { listPriceUsd: 52, compareAtPriceUsd: 59 },
   "jeju-cruise-shore-excursion-small-group-tour": { listPriceUsd: 79, compareAtPriceUsd: 85, maxGroupSize: 8 },
-  "jeju-eastern-unesco-spots-day-tour": { listPriceUsd: 59, compareAtPriceUsd: 69, maxGroupSize: 8 },
+  "jeju-eastern-unesco-spots-day-tour": { listPriceUsd: 47, compareAtPriceUsd: 59, maxGroupSize: 8 },
   "jeju-hydrangea-festival-tour-east-route": { listPriceUsd: 59, compareAtPriceUsd: 69, maxGroupSize: 8 },
   "jeju-hydrangea-festival-tour-southwest-route": { listPriceUsd: 59, compareAtPriceUsd: 69, maxGroupSize: 8 },
   "jeju-southern-top-unesco-spots-tour": { listPriceUsd: 59, compareAtPriceUsd: 69, maxGroupSize: 8 },
@@ -76,12 +76,13 @@ const SLUG_OVERRIDES: Record<string, SlugOverride> = {
   "pocheon-sanjeong-lake-herb-island-art-valley": { listPriceUsd: 49, compareAtPriceUsd: 62, maxGroupSize: 8 },
   "seoul-dmz-private-3rd-tunnel-suspension-bridge": { listPriceUsd: 419, maxGroupSize: 15 },
   "seoul-private-nami-morning-calm-petite-france": { listPriceUsd: 189 },
-  "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip": { listPriceUsd: 52, compareAtPriceUsd: 58, maxGroupSize: 8 },
+  "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip": { listPriceUsd: 53, compareAtPriceUsd: 58, maxGroupSize: 8 },
+  "seoul-seoraksan-nami-island-morning-calm-day-tour": { listPriceUsd: 71, maxGroupSize: 8 },
   "seoul-seoraksan-national-park-sokcho-beach-day-trip": { listPriceUsd: 49, compareAtPriceUsd: 57, maxGroupSize: 8 },
   "seoul-suburbs-private-chartered-car-10hr": { listPriceUsd: 179, maxGroupSize: 13 },
-  "seoul-suwon-hwaseong-folk-village-starfield-library": { listPriceUsd: 59, compareAtPriceUsd: 66, maxGroupSize: 8 },
-  "seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library": { listPriceUsd: 52, compareAtPriceUsd: 59, maxGroupSize: 8 },
-  "seoul-suwon-hwaseong-waujeongsa-starfield": { listPriceUsd: 47, compareAtPriceUsd: 54, maxGroupSize: 8 },
+  "seoul-suwon-hwaseong-folk-village-starfield-library": { listPriceUsd: 60, compareAtPriceUsd: 66, maxGroupSize: 8 },
+  "seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library": { listPriceUsd: 53, compareAtPriceUsd: 59, maxGroupSize: 8 },
+  "seoul-suwon-hwaseong-waujeongsa-starfield": { listPriceUsd: 51, compareAtPriceUsd: 54, maxGroupSize: 8 },
 };
 
 function parseListPriceUsd(page: SlimCatalogPage | undefined): number {

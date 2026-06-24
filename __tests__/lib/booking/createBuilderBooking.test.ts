@@ -117,7 +117,7 @@ describe("createBuilderBooking — Phase 10 D11/D12/D17/D25", () => {
     );
     expect(row.itinerary.cruise_port).toBe("gangjeong");
     expect(row.itinerary.track).toBe("cruise");
-    // Cruise +₩40k + Gangjeong +₩70k must show up as separate breakdown lines.
+    // Cruise +₩50k flat + Gangjeong +₩20k distance must show as separate lines.
     const codes = row.itinerary.breakdown.map((l) => l.code);
     expect(codes).toContain("cruise_excursion");
     expect(codes).toContain("gangjeong_port");

@@ -1185,6 +1185,24 @@
             "body": "AI 컨시어지 24시간 대기. AI로 안 풀리는 건 한국어 팀이 바로 이어받아요 (오전 9시 – 오후 9시 KST)."
           }
         },
+        "aiAgent": {
+          "eyebrow": "AI 여행 에이전트",
+          "title": "챗봇이 아니라,",
+          "titleAccent": "진짜 여행 에이전트",
+          "subtitle": "투어를 추천하고, 견적을 내고, 예약을 조회하고, 필요하면 사람까지 연결합니다. 무엇이든, 당신의 언어로 물어보세요.",
+          "cap": {
+            "answer": "무엇이든 답변",
+            "recommend": "투어 추천",
+            "quote": "즉석 견적",
+            "details": "정보 수집",
+            "lookup": "예약 조회",
+            "human": "상담사 연결"
+          },
+          "sampleLabel": "예시",
+          "sampleUser": "4명, 아이들과 부산 2일 — 뭐가 좋을까요?",
+          "sampleAgent": "감천문화마을과 해운대 코스를 프라이빗 차량으로 묶어 드릴게요. 견적 볼까요, 날짜를 잡아드릴까요?",
+          "cta": "지금 대화 시작"
+        },
         "chooseStyle": {
           "eyebrow": "어떻게 다니실 건가요",
           "title": "페이스만 고르세요. 나머지는 우리가 챙길게요.",
@@ -1225,6 +1243,7 @@
           "recommendCardTitle": "어떤 게 맞을지 모르겠다면?",
           "recommendCardDesc": "몇 가지만 답하면 맞는 하루를 추천해 드려요.",
           "recommendCardCta": "추천받기",
+          "askAgentCta": "또는 AI 에이전트에게 바로 물어보기",
           "builderCardTitle": "내 일정 직접 짜기",
           "builderCardDesc": "원하는 시간을 정하고 지도에서 코스를 한 곳씩 직접 맞춰보세요.",
           "builderCardCta": "빌더 열기",
@@ -1303,6 +1322,7 @@
           "reviewCardStarsAria": "5점 만점 중 {rating}점"
         },
         "finalCtaBlock": {
+          "askAgent": "또는 AI 에이전트에게 물어보기",
           "eyebrow": "준비되셨다면",
           "title": "당신의 한국 데이투어, 30초 만에 골라드려요.",
           "subtitle": "직접 선별한 운영사 · 진짜 사람의 응대 · 바로 예약까지.",
@@ -2403,6 +2423,9 @@
         "solatiMinHint": "10~13인(쏠라티 차량)은 6시간부터 예약 가능합니다.",
         "notIncluded": "식사 비용 및 관광지 입장료는 투어 요금에 포함되지 않으며 현장에서 별도 결제합니다.",
         "jejuSingleRegion": "제주 투어는 하루에 동쪽, 서쪽, 남쪽 중 한 구역만 방문 가능합니다. 두 구역 방문 시 ₩60,000이 추가됩니다.",
+        "cruisePickupPort": "픽업·드롭오프는 무조건 기항 항구에서 — 호텔 이동이 필요 없습니다.",
+        "cruiseGuarantee": "출항 전 선박 복귀 100% 보장.",
+        "cruiseFlexible": "출발 시간은 선박 입항 시간에 맞춰 유연하게 조정됩니다.",
         "lines": {
           "base": "기본 — {hours}시간 프라이빗 투어",
           "van": "차량 — 밴 (7~9인)",
@@ -2418,9 +2441,14 @@
           "cruiseExcursion": "크루즈 기항지 투어",
           "gangjeongPort": "강정항"
         },
-        "pickupZones": { "city": "제주 시내", "out_west": "시외 — 서쪽", "out_east": "시외 — 동쪽", "out_south": "시외 — 남쪽" },
+        "pickupZones": {
+          "city": "제주 시내",
+          "out_west": "시외 — 서쪽",
+          "out_east": "시외 — 동쪽",
+          "out_south": "시외 — 남쪽"
+        },
         "cruisePorts": {
-          "gangjeong": "강정항 (서귀포) +₩70,000",
+          "gangjeong": "강정항 (서귀포) +₩20,000",
           "jeju_port": "제주항 (제주시)"
         }
       },
@@ -2553,7 +2581,12 @@
       "editTrip": "여행 정보 수정",
       "close": "닫기",
       "done": "완료",
-      "pickupZones": { "city": "제주 시내", "out_west": "시외 — 서쪽", "out_east": "시외 — 동쪽", "out_south": "시외 — 남쪽" },
+      "pickupZones": {
+        "city": "제주 시내",
+        "out_west": "시외 — 서쪽",
+        "out_east": "시외 — 동쪽",
+        "out_south": "시외 — 남쪽"
+      },
       "ports": {
         "gangjeong": "강정(서귀포)",
         "jeju_port": "제주항"

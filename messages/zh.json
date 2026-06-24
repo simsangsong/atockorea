@@ -1185,6 +1185,24 @@
             "body": "AI 客服 24 小时在线。遇到 AI 处理不了的情况，由韩语团队接手（9:00–21:00 KST）。"
           }
         },
+        "aiAgent": {
+          "eyebrow": "AI 旅行管家",
+          "title": "不只是聊天机器人，",
+          "titleAccent": "更是真正的旅行管家",
+          "subtitle": "它能推荐行程、报价、查询你的预订，必要时还能转接真人。用你的语言，问什么都行。",
+          "cap": {
+            "answer": "有问必答",
+            "recommend": "推荐行程",
+            "quote": "即时报价",
+            "details": "收集信息",
+            "lookup": "查询预订",
+            "human": "转接真人"
+          },
+          "sampleLabel": "示例",
+          "sampleUser": "我们4人，带孩子在釜山玩2天 — 有什么推荐?",
+          "sampleAgent": "我会把甘川文化村和海云台行程用私人包车安排在一起。要现在出报价，还是先帮你锁定日期?",
+          "cta": "立即咨询"
+        },
         "chooseStyle": {
           "eyebrow": "您喜欢的旅行方式",
           "title": "选择节奏，剩下交给我们。",
@@ -1225,6 +1243,7 @@
           "recommendCardTitle": "不确定选哪个？",
           "recommendCardDesc": "回答几个问题，我们为你推荐合适的行程。",
           "recommendCardCta": "获取推荐",
+          "askAgentCta": "或立即咨询 AI 助手",
           "builderCardTitle": "定制属于你的一天",
           "builderCardDesc": "选择时长，在地图上逐站定制你的路线。",
           "builderCardCta": "打开定制器",
@@ -1303,6 +1322,7 @@
           "reviewCardStarsAria": "5 分制 {rating} 分"
         },
         "finalCtaBlock": {
+          "askAgent": "或咨询 AI 助手",
           "eyebrow": "随时开始",
           "title": "您的韩国一日游，30 秒内为您挑选。",
           "subtitle": "亲选运营商 · 真人客服 · 直接下单预订。",
@@ -2403,6 +2423,9 @@
         "solatiMinHint": "10–13人（Solati商务车）最少预订6小时。",
         "notIncluded": "餐饮费用及景点门票不含于行程费用中，请于当日现场另行支付。",
         "jejuSingleRegion": "济州一日游仅限游览一个区域（东部、西部或南部）。若需跨越两个区域，需加收₩60,000。",
+        "cruisePickupPort": "接送一律在邮轮停靠的港口 — 无需酒店接送。",
+        "cruiseGuarantee": "100%保证开船前返回邮轮。",
+        "cruiseFlexible": "出发时间可根据邮轮实际抵港时间灵活调整。",
         "lines": {
           "base": "基础 — {hours}小时私人包车",
           "van": "车辆 — 商务车（7–9人）",
@@ -2418,9 +2441,14 @@
           "cruiseExcursion": "邮轮岸上观光",
           "gangjeongPort": "江汀港"
         },
-        "pickupZones": { "city": "济州市区", "out_west": "市外 — 西部", "out_east": "市外 — 东部", "out_south": "市外 — 南部" },
+        "pickupZones": {
+          "city": "济州市区",
+          "out_west": "市外 — 西部",
+          "out_east": "市外 — 东部",
+          "out_south": "市外 — 南部"
+        },
         "cruisePorts": {
-          "gangjeong": "江汀港（西归浦）+₩70,000",
+          "gangjeong": "江汀港（西归浦）+₩20,000",
           "jeju_port": "济州港（市区）"
         }
       },
@@ -2553,7 +2581,12 @@
       "editTrip": "编辑行程",
       "close": "关闭",
       "done": "完成",
-      "pickupZones": { "city": "济州市区", "out_west": "市外 — 西部", "out_east": "市外 — 东部", "out_south": "市外 — 南部" },
+      "pickupZones": {
+        "city": "济州市区",
+        "out_west": "市外 — 西部",
+        "out_east": "市外 — 东部",
+        "out_south": "市外 — 南部"
+      },
       "ports": {
         "gangjeong": "江汀(西归浦)",
         "jeju_port": "济州港"

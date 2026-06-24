@@ -31,7 +31,7 @@ INSERT INTO public.tours (
   'A small-group cultural day-trip from Seoul covering four contrasting sides of Gyeonggi Province: the UNESCO-listed Suwon Hwaseong Fortress with its…',
   'A small-group cultural day-trip from Seoul covering four contrasting sides of Gyeonggi Province: the UNESCO-listed Suwon Hwaseong Fortress with its 18th-century walls and Haenggung Palace, the dramatic LED-lit underground theme park inside Gwangmyeong Cave (a former Japanese-era gold mine), the four-floor Starfield Library Suwon, and the 1,000-year-old Nammun traditional market for street food. 9 hours with included transport and admissions.',
   'A small-group cultural day-trip from Seoul covering four contrasting sides of Gyeonggi Province: the UNESCO-listed Suwon Hwaseong Fortress with its…',
-  54.00,
+  53,
   NULL,
   'USD',
   'person',

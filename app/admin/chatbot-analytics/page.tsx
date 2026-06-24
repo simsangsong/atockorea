@@ -14,6 +14,8 @@ type Analytics = {
   window_days: number;
   volume: { sessions: number; messages: number; userMessages: number; escalatedMessages: number; tickets: number };
   escalationRate: number;
+  deflectionRate: number | null;
+  funnel: { bookings: number; confirmed: number; pending: number; valueKrw: number };
   feedback: { positive: number; negative: number; total: number; helpfulRate: number | null };
   qa: Record<string, number>;
   rag: { bySource: Record<string, number>; total: number; lastRefresh: string | null };
@@ -123,8 +125,20 @@ export default function ChatbotAnalyticsPage() {
       <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
         <Stat label="세션" value={data.volume.sessions.toLocaleString()} />
         <Stat label="사용자 질문" value={data.volume.userMessages.toLocaleString()} sub={`총 메시지 ${data.volume.messages.toLocaleString()}`} />
-        <Stat label="에스컬레이션율" value={pct(data.escalationRate)} sub={`티켓 ${data.volume.tickets} · 에스컬 ${data.volume.escalatedMessages}`} />
+        <Stat label="디플렉션율" value={pct(data.deflectionRate)} sub="사람 없이 응대 (≠해결)" />
         <Stat label="답변 도움률" value={pct(data.feedback.helpfulRate)} sub={`👍 ${data.feedback.positive} / 👎 ${data.feedback.negative}`} />
+      </div>
+
+      {/* Chatbot quote → checkout funnel (bookings the bot created) */}
+      <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+        <h2 className="text-sm font-semibold text-slate-900">챗봇 견적 → 예약 퍼널</h2>
+        <p className="text-xs text-slate-500">최근 {data.window_days}일 · 챗봇이 만든 예약 (source_url=chatbot)</p>
+        <div className="mt-3 grid grid-cols-2 gap-2 text-center md:grid-cols-4">
+          <div><div className="text-2xl font-bold text-slate-900">{data.funnel.bookings.toLocaleString()}</div><div className="text-xs text-slate-500">예약 생성</div></div>
+          <div><div className="text-2xl font-bold text-emerald-600">{data.funnel.confirmed.toLocaleString()}</div><div className="text-xs text-slate-500">결제확정/홀드</div></div>
+          <div><div className="text-2xl font-bold text-amber-600">{data.funnel.pending.toLocaleString()}</div><div className="text-xs text-slate-500">결제 대기</div></div>
+          <div><div className="text-2xl font-bold text-slate-900">₩{Math.round(data.funnel.valueKrw).toLocaleString()}</div><div className="text-xs text-slate-500">예약 금액</div></div>
+        </div>
       </div>
 
       {/* Q&A pipeline + RAG index */}

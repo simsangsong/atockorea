@@ -1185,6 +1185,24 @@
             "body": "Concierge IA 24/7. Cuando la IA no llega, un equipo en coreano toma el relevo (9:00–21:00 KST)."
           }
         },
+        "aiAgent": {
+          "eyebrow": "Tu agente de viajes IA",
+          "title": "No es un chatbot,",
+          "titleAccent": "es un agente de viajes",
+          "subtitle": "Recomienda tours, cotiza precios, consulta tu reserva y te conecta con una persona cuando hace falta. Pregunta lo que sea, en tu idioma.",
+          "cap": {
+            "answer": "Responde todo",
+            "recommend": "Recomienda tours",
+            "quote": "Cotiza al instante",
+            "details": "Toma tus datos",
+            "lookup": "Consulta reservas",
+            "human": "Conecta con humano"
+          },
+          "sampleLabel": "Ejemplo",
+          "sampleUser": "Somos 4, 2 días en Busan con niños — ¿qué nos recomiendas?",
+          "sampleAgent": "Combinaría el Pueblo Cultural de Gamcheon con un día en Haeundae en coche privado. ¿Te doy una cotización o reservo una fecha?",
+          "cta": "Empezar a chatear"
+        },
         "chooseStyle": {
           "eyebrow": "CÓMO TE GUSTA VIAJAR",
           "title": "Elige tu ritmo. Nosotros nos encargamos del resto.",
@@ -1225,6 +1243,7 @@
           "recommendCardTitle": "¿No sabes cuál elegir?",
           "recommendCardDesc": "Responde unas preguntas y te recomendamos tu día.",
           "recommendCardCta": "Obtener recomendación",
+          "askAgentCta": "O pregunta al agente IA ahora",
           "builderCardTitle": "Diseña tu propio día",
           "builderCardDesc": "Elige tus horas y personaliza la ruta en el mapa, parada a parada.",
           "builderCardCta": "Abrir el creador",
@@ -1303,6 +1322,7 @@
           "reviewCardStarsAria": "{rating} de 5 estrellas"
         },
         "finalCtaBlock": {
+          "askAgent": "O pregunta al agente IA",
           "eyebrow": "CUANDO ESTÉS LISTO",
           "title": "Tu día en Corea, elegido en 30 segundos.",
           "subtitle": "Operadores seleccionados · Soporte humano real · Reserva directa.",
@@ -2403,6 +2423,9 @@
         "solatiMinHint": "Los grupos de 10–13 (furgoneta Solati) parten de 6 horas.",
         "notIncluded": "Los costos de comidas y entradas a atracciones NO están incluidos en el precio del tour y se pagarán por separado el día del recorrido.",
         "jejuSingleRegion": "Cada tour cubre UNA región de Jeju (Este, Oeste o Sur). Visitar dos regiones conlleva un cargo adicional de ₩60,000.",
+        "cruisePickupPort": "Recogida y regreso siempre en el puerto de tu crucero, sin traslado al hotel.",
+        "cruiseGuarantee": "Regreso al barco antes de zarpar garantizado al 100 %.",
+        "cruiseFlexible": "La hora de salida se ajusta a la llegada real de tu crucero.",
         "lines": {
           "base": "Base — tour privado de {hours} h",
           "van": "Vehículo — furgoneta (7–9 pers.)",
@@ -2418,9 +2441,14 @@
           "cruiseExcursion": "Excursión de crucero",
           "gangjeongPort": "Puerto de Gangjeong"
         },
-        "pickupZones": { "city": "Ciudad de Jeju (centro)", "out_west": "Fuera de la ciudad — oeste", "out_east": "Fuera de la ciudad — este", "out_south": "Fuera de la ciudad — sur" },
+        "pickupZones": {
+          "city": "Ciudad de Jeju (centro)",
+          "out_west": "Fuera de la ciudad — oeste",
+          "out_east": "Fuera de la ciudad — este",
+          "out_south": "Fuera de la ciudad — sur"
+        },
         "cruisePorts": {
-          "gangjeong": "Puerto de Gangjeong (Seogwipo) +₩70,000",
+          "gangjeong": "Puerto de Gangjeong (Seogwipo) +₩20,000",
           "jeju_port": "Puerto de Jeju (ciudad)"
         }
       },
@@ -2553,7 +2581,12 @@
       "editTrip": "Editar viaje",
       "close": "Cerrar",
       "done": "Listo",
-      "pickupZones": { "city": "Ciudad de Jeju (centro)", "out_west": "Fuera de la ciudad — oeste", "out_east": "Fuera de la ciudad — este", "out_south": "Fuera de la ciudad — sur" },
+      "pickupZones": {
+        "city": "Ciudad de Jeju (centro)",
+        "out_west": "Fuera de la ciudad — oeste",
+        "out_east": "Fuera de la ciudad — este",
+        "out_south": "Fuera de la ciudad — sur"
+      },
       "ports": {
         "gangjeong": "Gangjeong (Seogwipo)",
         "jeju_port": "Puerto de Jeju"
