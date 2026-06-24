@@ -19,7 +19,10 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
 const SLUG = "jeju-eastern-unesco-spots-day-tour";
 const BUNDLE_DIR = path.join(ROOT, "components/product-tour-static", SLUG);
-const en = JSON.parse(readFileSync(path.join(BUNDLE_DIR, `${SLUG}.en.json`), "utf8"));
+const LOCALES = ["en", "ko", "ja", "zh", "zh-TW", "es"];
+const bundle = (loc) =>
+  JSON.parse(readFileSync(path.join(BUNDLE_DIR, `${SLUG}.${loc}.json`), "utf8"));
+const en = bundle("en");
 
 const q = (s) => `'${String(s).replace(/'/g, "''")}'`;
 const jsonb = (v) => `${q(JSON.stringify(v))}::jsonb`;
@@ -123,53 +126,58 @@ out += [
 ].map((c) => `  ${c} = EXCLUDED.${c}`).join(",\n");
 out += `;\n\n`;
 
-// ---- 2) tour_product_pages (EN) ------------------------------------------
+// ---- 2) tour_product_pages (6 locales) -----------------------------------
 out += `-- ---------------------------------------------------------------------------\n`;
-out += `-- 2) tour_product_pages — marketing detail + detail_payload (view-model)\n`;
+out += `-- 2) tour_product_pages — marketing detail + detail_payload (6 locales)\n`;
 out += `-- ---------------------------------------------------------------------------\n`;
-out += `INSERT INTO public.tour_product_pages (\n`;
-out += `  slug, locale, product_id, is_published, sort_order, tour_id,\n`;
-out += `  title, subtitle, region_label, duration_label, stops_count,\n`;
-out += `  rating_avg, review_count, badges, hero_image_url, thumbnail_url,\n`;
-out += `  card_short_description, seo_title, meta_description,\n`;
-out += `  headline_line_1, headline_line_2,\n`;
-out += `  price_amount_label, price_currency, price_per, detail_payload\n`;
-out += `) VALUES (\n`;
-out += `  ${q(SLUG)},\n`;
-out += `  'en',\n`;
-out += `  ${q(SLUG)},\n`;
-out += `  TRUE,\n`;
-out += `  1,\n`;
-out += `  (SELECT id FROM public.tours WHERE slug = ${q(SLUG)} LIMIT 1),\n`;
-out += `  ${q(cc.title || "Jeju Eastern UNESCO Spots Day Tour")},\n`;
-out += `  ${q(cc.subtitle)},\n`;
-out += `  ${q(cc.region || "Eastern Jeju")},\n`;
-out += `  ${q(cc.duration || "9 hours")},\n`;
-out += `  ${num(cc.stopsCount || 8)},\n`;
-out += `  4.9,\n`;
-out += `  1148,\n`;
-out += `  ${jsonb(badges)},\n`;
-out += `  ${q(en.hero?.imageUrl || cc.heroImage || "")},\n`;
-out += `  ${q(cc.thumbnail || cc.heroImage || "")},\n`;
-out += `  ${q(cc.shortCardDescription)},\n`;
-out += `  ${q(seo.pageTitle)},\n`;
-out += `  ${q(seo.metaDescription)},\n`;
-out += `  ${q(en.headlineLine1 || "")},\n`;
-out += `  ${q(en.headlineLine2 || "")},\n`;
-out += `  ${q(String(PRICE_USD))},\n`;
-out += `  'USD',\n`;
-out += `  'person',\n`;
-out += `  ${jsonb(en)}\n`;
-out += `)\n`;
-out += `ON CONFLICT (slug, locale) DO UPDATE SET\n`;
-out += [
-  "product_id", "is_published", "sort_order", "tour_id", "title", "subtitle",
-  "region_label", "duration_label", "stops_count", "rating_avg", "review_count",
-  "badges", "hero_image_url", "thumbnail_url", "card_short_description",
-  "seo_title", "meta_description", "headline_line_1", "headline_line_2",
-  "price_amount_label", "price_currency", "price_per", "detail_payload",
-].map((c) => `  ${c} = EXCLUDED.${c}`).join(",\n");
-out += `,\n  updated_at = NOW();\n\n`;
+for (const loc of LOCALES) {
+  const b = loc === "en" ? en : bundle(loc);
+  const lcc = b.catalog_card || {};
+  const lseo = b.seo || {};
+  out += `INSERT INTO public.tour_product_pages (\n`;
+  out += `  slug, locale, product_id, is_published, sort_order, tour_id,\n`;
+  out += `  title, subtitle, region_label, duration_label, stops_count,\n`;
+  out += `  rating_avg, review_count, badges, hero_image_url, thumbnail_url,\n`;
+  out += `  card_short_description, seo_title, meta_description,\n`;
+  out += `  headline_line_1, headline_line_2,\n`;
+  out += `  price_amount_label, price_currency, price_per, detail_payload\n`;
+  out += `) VALUES (\n`;
+  out += `  ${q(SLUG)},\n`;
+  out += `  ${q(loc)},\n`;
+  out += `  ${q(SLUG)},\n`;
+  out += `  TRUE,\n`;
+  out += `  1,\n`;
+  out += `  (SELECT id FROM public.tours WHERE slug = ${q(SLUG)} LIMIT 1),\n`;
+  out += `  ${q(lcc.title || "Jeju Eastern UNESCO Spots Day Tour")},\n`;
+  out += `  ${q(lcc.subtitle || "")},\n`;
+  out += `  ${q(lcc.region || "Eastern Jeju")},\n`;
+  out += `  ${q(lcc.duration || "9 hours")},\n`;
+  out += `  ${num(lcc.stopsCount || 8)},\n`;
+  out += `  4.9,\n`;
+  out += `  1148,\n`;
+  out += `  ${jsonb(lcc.badges || badges)},\n`;
+  out += `  ${q(b.hero?.imageUrl || lcc.heroImage || "")},\n`;
+  out += `  ${q(lcc.thumbnail || lcc.heroImage || "")},\n`;
+  out += `  ${q(lcc.shortCardDescription || "")},\n`;
+  out += `  ${q(lseo.pageTitle || "")},\n`;
+  out += `  ${q(lseo.metaDescription || "")},\n`;
+  out += `  ${q(b.headlineLine1 || "")},\n`;
+  out += `  ${q(b.headlineLine2 || "")},\n`;
+  out += `  ${q(String(PRICE_USD))},\n`;
+  out += `  'USD',\n`;
+  out += `  'person',\n`;
+  out += `  ${jsonb(b)}\n`;
+  out += `)\n`;
+  out += `ON CONFLICT (slug, locale) DO UPDATE SET\n`;
+  out += [
+    "product_id", "is_published", "sort_order", "tour_id", "title", "subtitle",
+    "region_label", "duration_label", "stops_count", "rating_avg", "review_count",
+    "badges", "hero_image_url", "thumbnail_url", "card_short_description",
+    "seo_title", "meta_description", "headline_line_1", "headline_line_2",
+    "price_amount_label", "price_currency", "price_per", "detail_payload",
+  ].map((c) => `  ${c} = EXCLUDED.${c}`).join(",\n");
+  out += `,\n  updated_at = NOW();\n\n`;
+}
 
 // ---- 3) tour_product_offers ----------------------------------------------
 out += `-- ---------------------------------------------------------------------------\n`;
@@ -264,9 +272,9 @@ out += `SELECT product_id, product_type, region_type, price_band, profile_versio
 
 const targets = [
   path.join(ROOT, "supabase/manual", `insert-${SLUG}-product.generated.sql`),
-  path.join(ROOT, "supabase/pending-upload", `insert-${SLUG}-product.generated.sql`),
+  path.join(ROOT, "supabase/pending-db-apply", `2026-06-24-07-${SLUG}.sql`),
 ];
-mkdirSync(path.join(ROOT, "supabase/pending-upload"), { recursive: true });
+mkdirSync(path.join(ROOT, "supabase/pending-db-apply"), { recursive: true });
 for (const t of targets) {
   writeFileSync(t, out, "utf8");
   console.log(`✓ wrote ${path.relative(ROOT, t)} (${(out.length / 1024).toFixed(1)} KB)`);
