@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
+import { requireAdmin, adminAuthJsonResponse, AdminAuthFailure } from '@/lib/auth';
 import { getKrwPerUsd } from '@/lib/exchange/usdBasedRates.server';
 import { mapNestedTourRowsToUsd, mapNestedTourToUsdRow } from '@/lib/tour-list-price-usd.server';
 
@@ -8,6 +9,12 @@ import { mapNestedTourRowsToUsd, mapNestedTourToUsdRow } from '@/lib/tour-list-p
  * Get inventory for tours
  */
 export async function GET(req: NextRequest) {
+  try {
+    await requireAdmin(req);
+  } catch (err) {
+    if (err instanceof AdminAuthFailure) return adminAuthJsonResponse(err);
+    throw err;
+  }
   try {
     const supabase = createServerClient();
     const { searchParams } = new URL(req.url);
@@ -73,6 +80,12 @@ export async function GET(req: NextRequest) {
  * Create or update inventory entry
  */
 export async function POST(req: NextRequest) {
+  try {
+    await requireAdmin(req);
+  } catch (err) {
+    if (err instanceof AdminAuthFailure) return adminAuthJsonResponse(err);
+    throw err;
+  }
   try {
     const supabase = createServerClient();
     const body = await req.json();
