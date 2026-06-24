@@ -2,14 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { motion } from "framer-motion";
-import { Loader2, AlertCircle, Check, Sparkles, ArrowRight } from "lucide-react";
+import { Loader2, AlertCircle, Check, Sparkles, ArrowRight, X } from "lucide-react";
 import { homeBtnPrimary } from "@/lib/home/home-button-classes";
 import { cn } from "@/lib/utils";
-import {
-  REVEAL_ITEM_VARIANTS,
-  useRevealContainerProps,
-} from "@/components/home/v2/ui/reveal";
 import { useTranslations } from "@/lib/i18n";
 import { trackEvent } from "@/src/design/analytics";
 import type { RegionSlug } from "@/lib/itinerary-builder/regions";
@@ -95,7 +90,6 @@ export default function AIRecommendPanel({
   origin,
 }: Props) {
   const t = useTranslations("itineraryBuilder.ai");
-  const reveal = useRevealContainerProps();
   const sp = useSearchParams();
   const router = useRouter();
   const pathname = usePathname() ?? "/";
@@ -114,9 +108,10 @@ export default function AIRecommendPanel({
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<MatchResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
-  // Collapse the form panel once the user has a result. Re-expand when
-  // they click the "Get another suggestion" pill.
-  const [collapsed, setCollapsed] = useState(false);
+  // The panel is now a slim trigger button; the intent input + example
+  // prompts live inside a tap-to-open dialog (user 2026-06-23). A successful
+  // match closes the dialog and the itinerary lands in ResultTimeline below.
+  const [dialogOpen, setDialogOpen] = useState(false);
 
   /**
    * Phase 10.4 — duration is owned by PlannerTopRail in the URL (`?duration`
@@ -184,7 +179,7 @@ export default function AIRecommendPanel({
         return;
       }
       setResult(data);
-      setCollapsed(true);
+      setDialogOpen(false);
       onPreview?.(data.recommended_pois ?? null);
       if ((data.recommended_pois?.length ?? 0) > 0) {
         const recs = data.recommended_pois!;
@@ -286,6 +281,16 @@ export default function AIRecommendPanel({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [autoRunRequested]);
 
+  // Close the dialog on Escape (a11y — mirrors the PlannerTopRail sheet).
+  useEffect(() => {
+    if (!dialogOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setDialogOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [dialogOpen]);
+
   const recommended = result?.recommended_pois ?? [];
   const totalH = result?.total_minutes
     ? Math.round((result.total_minutes / 60) * 10) / 10
@@ -293,166 +298,176 @@ export default function AIRecommendPanel({
   // Disable the submit until something to feed the matcher exists.
   const combinedReady =
     selectedPresets.size > 0 || intent.trim().length >= 2;
+  const hasResult = !!result?.ok && recommended.length > 0;
 
   return (
     <section className="px-4 pt-4 pb-3 md:px-6 md:pt-5 md:pb-4">
-      <motion.div
-        {...reveal}
-        // Phase 11 D29 — near-white mint with subtle glow ring. User
-        // direction 2026-05-29: "거의 흰 색에 가까운 민트로 하라고
-        // 은은하게 빛나는것처럼." Inset white highlight + outer mint ring
-        // gives the "floating + glowing" feel without saturating the card.
-        className="relative mx-auto max-w-3xl overflow-hidden rounded-card bg-emerald-50/30 ring-1 ring-emerald-100/40 shadow-[0_2px_8px_rgba(15,23,42,0.04),0_24px_56px_-22px_rgba(15,23,42,0.22),inset_0_1px_0_rgba(255,255,255,0.9)] transition-shadow duration-300 ease-out hover:shadow-[0_4px_14px_rgba(15,23,42,0.06),0_32px_72px_-22px_rgba(15,23,42,0.28),inset_0_1px_0_rgba(255,255,255,0.95)]"
+      {/* Slim trigger button (user 2026-06-23) — replaces the big always-open
+          card. Tapping opens the dialog with the intent input + example
+          prompts. Keeps the Phase 11 D29 near-white mint identity in a
+          compact form (emerald icon chip + ring). After a match it shows the
+          one-line result summary; tap again to refine. */}
+      <button
+        type="button"
+        onClick={() => {
+          setError(null);
+          setDialogOpen(true);
+        }}
+        aria-haspopup="dialog"
+        aria-expanded={dialogOpen}
+        className="focus-ring group mx-auto flex w-full max-w-3xl items-center gap-3 rounded-card bg-emerald-50/40 px-4 py-3 text-left ring-1 ring-emerald-100/60 shadow-[0_2px_8px_rgba(15,23,42,0.04),0_18px_44px_-24px_rgba(15,23,42,0.22),inset_0_1px_0_rgba(255,255,255,0.9)] transition-all duration-200 ease-out hover:-translate-y-px hover:shadow-[0_4px_14px_rgba(15,23,42,0.06),0_26px_60px_-22px_rgba(15,23,42,0.28),inset_0_1px_0_rgba(255,255,255,0.95)]"
       >
-        {/* Header — Sparkles eyebrow (landing convention), but the amber
-            accent moves to the icon only so the eyebrow text stays neutral
-            slate. No yellow tint on surfaces or borders anywhere on this
-            card. */}
-        <motion.div variants={REVEAL_ITEM_VARIANTS} className="px-5 pt-5 pb-3 md:px-6 md:pt-6">
-          <p className="mb-2 inline-flex items-center gap-1.5 text-eyebrow text-slate-500">
-            <Sparkles className="h-3 w-3 text-emerald-600" aria-hidden />
-            {t("eyebrow")}
-          </p>
-          {!collapsed ? (
-            // Phase 12 D35 — text-body → text-caption to match landing micro-copy scale
-            <p className="text-caption leading-relaxed text-slate-600">{t("intro")}</p>
-          ) : null}
-        </motion.div>
+        <span className="grid h-9 w-9 flex-shrink-0 place-items-center rounded-xl bg-white text-emerald-600 ring-1 ring-emerald-100">
+          {loading ? (
+            <Loader2 className="h-4 w-4 animate-spin" aria-hidden />
+          ) : (
+            <Sparkles className="h-4 w-4" aria-hidden />
+          )}
+        </span>
+        <span className="flex min-w-0 flex-1 flex-col">
+          <span className="truncate text-caption font-bold text-slate-900">
+            {loading
+              ? t("submitting")
+              : hasResult
+                ? t("resultsSummary", { count: recommended.length, hours: totalH })
+                : t("triggerTitle")}
+          </span>
+          <span className="truncate text-micro text-slate-500">
+            {hasResult ? t("appliedToTimelineHint") : t("triggerSub")}
+          </span>
+        </span>
+        <ArrowRight
+          className="h-4 w-4 flex-shrink-0 text-slate-400 transition-transform group-hover:translate-x-0.5"
+          aria-hidden
+        />
+      </button>
 
-        {/* Collapsed mode — show "Get another suggestion" pill */}
-        {collapsed && !loading ? (
-          <div className="border-t border-slate-100 px-5 py-3 md:px-6">
-            <button
-              type="button"
-              onClick={() => setCollapsed(false)}
-              className="focus-ring inline-flex items-center gap-1.5 rounded-full bg-white px-3.5 py-1.5 text-micro font-semibold text-slate-800 shadow-[0_1px_2px_rgba(15,23,42,0.04),0_2px_6px_-2px_rgba(15,23,42,0.10)] transition-all duration-200 ease-out hover:-translate-y-px hover:shadow-[0_2px_4px_rgba(15,23,42,0.06),0_8px_18px_-4px_rgba(15,23,42,0.16)]"
-            >
-              <Sparkles className="h-3 w-3 text-emerald-600" aria-hidden />
-              {t("getAnother")}
-            </button>
-          </div>
-        ) : (
-          <>
-            {/* Preset chips — multi-select toggles (Phase 11 D28).
-                Selecting one chip toggles it into the active set; nothing
-                fires until the user clicks "추천받기" below. Selected chips
-                read as filled slate-900 surfaces with a check icon so the
-                "I've selected this" state is unmistakable. */}
-            {/* Phase 12 D35 — typography unification. Label uses text-eyebrow
-                (the landing convention for section labels). Chips use the
-                same class as the landing destination/style chips so they
-                read as one design family across the page. */}
-            <motion.div variants={REVEAL_ITEM_VARIANTS} className="px-5 pb-3 md:px-6">
-              <p className="mb-2 text-eyebrow text-slate-500">
-                {t("presetsLabel")}
-              </p>
-              <div className="-mx-1 flex flex-wrap gap-1.5 px-1 pb-1 md:gap-2">
-                {PRESETS.map((p) => {
-                  const selected = selectedPresets.has(p.key);
-                  return (
-                    <button
-                      key={p.key}
-                      type="button"
-                      onClick={() => togglePreset(p.key)}
-                      disabled={loading}
-                      aria-pressed={selected}
-                      className={cn(
-                        "focus-ring inline-flex items-center gap-1 rounded-full border px-3 py-1.5 text-[11px] font-medium transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-60 md:px-3.5 md:py-2 md:text-caption",
-                        selected
-                          ? "border-slate-900 bg-slate-900 text-white"
-                          : "border-slate-200/70 bg-slate-50 text-slate-700 hover:bg-slate-100",
-                      )}
-                    >
-                      {selected ? <Check className="h-3 w-3" aria-hidden /> : null}
-                      {t(`presets.${p.key}`)}
-                    </button>
-                  );
-                })}
+      {/* Empty-result fallback (match returned ok but no stops) — kept inline
+          under the button so the user isn't left without feedback. */}
+      {result?.ok && recommended.length === 0 ? (
+        <p className="mx-auto mt-2 max-w-3xl rounded-md bg-amber-50 px-3 py-2 text-caption text-amber-800 ring-1 ring-amber-100">
+          {result.message || t("noMatchFallback")}
+        </p>
+      ) : null}
+
+      {/* Dialog — bottom sheet on mobile, centered card on md+. Holds the
+          "type anything" guidance + free-text input + example prompt chips. */}
+      {dialogOpen ? (
+        <div
+          className="fixed inset-0 z-50 flex items-end justify-center md:items-center"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="ai-dialog-title"
+        >
+          <div
+            className="absolute inset-0 bg-slate-900/55 backdrop-blur-sm"
+            onClick={() => setDialogOpen(false)}
+            aria-hidden
+          />
+          <form
+            onSubmit={onSubmit}
+            className="relative flex max-h-[90vh] w-full flex-col overflow-hidden rounded-t-2xl bg-white shadow-2xl md:m-4 md:w-auto md:min-w-[26rem] md:max-w-md md:rounded-2xl"
+          >
+            {/* Header */}
+            <div className="flex items-center justify-between gap-3 border-b border-slate-100 px-5 py-3.5">
+              <span
+                id="ai-dialog-title"
+                className="inline-flex items-center gap-2 text-caption font-bold text-slate-900"
+              >
+                <Sparkles className="h-4 w-4 text-emerald-600" aria-hidden />
+                {t("dialogTitle")}
+              </span>
+              <button
+                type="button"
+                onClick={() => setDialogOpen(false)}
+                aria-label={t("dialogClose")}
+                className="rounded-full p-1 text-slate-500 transition-colors hover:bg-slate-100"
+              >
+                <X className="h-5 w-5" aria-hidden />
+              </button>
+            </div>
+
+            {/* Body */}
+            <div className="flex-1 space-y-4 overflow-y-auto px-5 py-4">
+              <p className="text-caption leading-relaxed text-slate-600">{t("dialogGuide")}</p>
+
+              <textarea
+                id="ai-intent"
+                rows={3}
+                value={intent}
+                onChange={(e) => setIntent(e.target.value)}
+                placeholder={t("intentPlaceholder")}
+                autoFocus
+                className="focus-ring w-full resize-none rounded-button bg-slate-50 px-3.5 py-3 text-sm text-slate-900 shadow-[inset_0_0_0_1px_rgba(15,23,42,0.06)] transition-shadow duration-200 placeholder:text-slate-400 focus:shadow-[inset_0_0_0_1px_rgba(15,23,42,0.12)]"
+              />
+
+              {/* Example prompts — tap to combine (multi-select). The matcher
+                  uses each chip's seed intent; the user's free text is added
+                  on top (buildCombinedIntent). */}
+              <div>
+                <p className="mb-2 text-eyebrow text-slate-500">{t("examplesLabel")}</p>
+                <div className="flex flex-wrap gap-1.5">
+                  {PRESETS.map((p) => {
+                    const selected = selectedPresets.has(p.key);
+                    return (
+                      <button
+                        key={p.key}
+                        type="button"
+                        onClick={() => togglePreset(p.key)}
+                        disabled={loading}
+                        aria-pressed={selected}
+                        className={cn(
+                          "focus-ring inline-flex items-center gap-1 rounded-full border px-2.5 py-1 text-micro font-semibold transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-60",
+                          selected
+                            ? "border-slate-900 bg-slate-900 text-white"
+                            : "border-slate-200/70 bg-slate-50 text-slate-700 hover:bg-slate-100",
+                        )}
+                      >
+                        {selected ? <Check className="h-3 w-3" aria-hidden /> : null}
+                        {t(`presets.${p.key}`)}
+                      </button>
+                    );
+                  })}
+                </div>
+                {selectedPresets.size > 0 ? (
+                  <p className="mt-2 text-micro text-slate-500">
+                    {t("presetsSelectedHint", { count: selectedPresets.size })}
+                  </p>
+                ) : null}
               </div>
-              {selectedPresets.size > 0 ? (
-                <p className="mt-2 text-micro text-slate-500">
-                  {t("presetsSelectedHint", { count: selectedPresets.size })}
+
+              {error ? (
+                <p className="inline-flex items-center gap-1.5 rounded-md bg-rose-50 px-3 py-2 text-caption font-semibold text-rose-700 ring-1 ring-rose-100">
+                  <AlertCircle className="h-3.5 w-3.5" aria-hidden />
+                  {error}
                 </p>
               ) : null}
-            </motion.div>
+            </div>
 
-            {/* Custom intent input + submit (Phase 11 D28 — single explicit
-                fire of `/api/itinerary/match`, no auto-run). The submit is
-                gated on `combinedReady` so the user gets a clear "you need
-                to pick something" affordance instead of an opaque min-length
-                error. */}
-            <motion.form
-              variants={REVEAL_ITEM_VARIANTS}
-              onSubmit={onSubmit}
-              className="flex flex-col gap-3 px-5 pb-5 md:flex-row md:items-end md:gap-3 md:px-6 md:pb-6"
-            >
-              <div className="flex-1">
-                <label htmlFor="ai-intent" className="mb-1.5 block text-caption font-semibold text-slate-700">
-                  {t("intentLabel")}
-                </label>
-                <input
-                  id="ai-intent"
-                  type="text"
-                  value={intent}
-                  onChange={(e) => setIntent(e.target.value)}
-                  placeholder={t("intentPlaceholder")}
-                  className="focus-ring w-full rounded-button bg-white px-3.5 py-2.5 text-sm text-slate-900 shadow-[0_1px_2px_rgba(15,23,42,0.04),inset_0_0_0_1px_rgba(15,23,42,0.04)] transition-shadow duration-200 placeholder:text-slate-400 focus:shadow-[0_1px_2px_rgba(15,23,42,0.06),inset_0_0_0_1px_rgba(15,23,42,0.08)]"
-                />
-              </div>
+            {/* Footer — submit */}
+            <div className="border-t border-slate-100 px-5 py-3.5">
               <button
                 type="submit"
                 disabled={loading || !combinedReady}
                 className={cn(
                   homeBtnPrimary,
-                  "group !h-auto !w-full !py-3 inline-flex items-center justify-center gap-2 shadow-md hover:gap-3 md:!w-auto md:!px-6 md:!py-2.5",
+                  "group !h-auto !w-full !py-3 inline-flex items-center justify-center gap-2 shadow-md hover:gap-3 disabled:cursor-not-allowed disabled:opacity-60",
                 )}
               >
-                {loading ? <Loader2 className="h-4 w-4 animate-spin" aria-hidden /> : <Sparkles className="h-4 w-4" aria-hidden />}
+                {loading ? (
+                  <Loader2 className="h-4 w-4 animate-spin" aria-hidden />
+                ) : (
+                  <Sparkles className="h-4 w-4" aria-hidden />
+                )}
                 {loading ? t("submitting") : t("submit")}
-                {!loading ? <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden /> : null}
+                {!loading ? (
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden />
+                ) : null}
               </button>
-            </motion.form>
-          </>
-        )}
-
-        {/* Error banner */}
-        {error ? (
-          <div className="border-t border-slate-100 px-5 py-3 md:px-6">
-            <p className="inline-flex items-center gap-1.5 rounded-md bg-rose-50 px-3 py-2 text-caption font-semibold text-rose-700 ring-1 ring-rose-100">
-              <AlertCircle className="h-3.5 w-3.5" aria-hidden />
-              {error}
-            </p>
-          </div>
-        ) : null}
-
-        {/* Phase 13 D38 — Result stripe REMOVED. ResultTimeline below is the
-            single source of truth for the itinerary. The matcher's success
-            path calls `onAccept(recommended)` (via Phase 11 D28 auto-apply)
-            which populates the cart; ResultTimeline then renders the same
-            POI sequence with full drag/remove/drawer interactivity. The
-            previous duplicate "result preview cards + cart timeline" layout
-            confused customers ("위에 일정표 있고 아래에 똑같이 일정표 또
-            있으면 혼란스러우니까... 하나로 통합", user 2026-05-29).
-
-            One small UI affordance is retained: a one-line success summary
-            so the customer sees "4 stops matched · ~7.8h day" without
-            re-counting the timeline, then naturally scrolls to ResultTimeline
-            (post-match smooth-scroll from D34). */}
-        {result?.ok && recommended.length > 0 ? (
-          <div className="border-t border-slate-100 px-5 py-3 md:px-6">
-            <p className="text-caption font-semibold text-slate-700">
-              {t("resultsSummary", { count: recommended.length, hours: totalH })}
-            </p>
-            <p className="mt-1 text-micro text-slate-500">{t("appliedToTimelineHint")}</p>
-          </div>
-        ) : result?.ok && recommended.length === 0 ? (
-          <div className="border-t border-slate-100 px-5 py-3 md:px-6">
-            <p className="rounded-md bg-amber-50 px-3 py-2 text-caption text-amber-800 ring-1 ring-amber-100">
-              {result.message || t("noMatchFallback")}
-            </p>
-          </div>
-        ) : null}
-      </motion.div>
+            </div>
+          </form>
+        </div>
+      ) : null}
     </section>
   );
 }
