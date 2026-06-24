@@ -8,7 +8,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { requireAdmin, adminAuthJsonResponse, AdminAuthFailure } from '@/lib/auth';
-import { eventMatchesStep } from '@/lib/analytics/event-match';
+import { walkFunnel } from '@/lib/analytics/funnel-walk';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -43,6 +43,7 @@ function rangeStart(range: Range): Date {
 
 type RawEvent = {
   session_id: string;
+  anonymous_id: string | null;
   event_name: string;
   payload: Record<string, unknown> | null;
   page_path: string | null;
@@ -110,7 +111,7 @@ export async function GET(
   const { data: raw, error: rawErr } = await supabase
     .from('analytics_events')
     .select(
-      'session_id, event_name, payload, page_path, locale, device_class, utm_source, country_code, server_ts',
+      'session_id, anonymous_id, event_name, payload, page_path, locale, device_class, utm_source, country_code, server_ts',
     )
     .in('event_name', distinctEventNames)
     .gte('server_ts', startIso)
@@ -126,67 +127,17 @@ export async function GET(
 
   const events = (raw ?? []) as RawEvent[];
 
-  // Group by session, in chronological order (already sorted by server_ts)
-  const sessionEvents = new Map<string, RawEvent[]>();
-  for (const ev of events) {
-    let arr = sessionEvents.get(ev.session_id);
-    if (!arr) {
-      arr = [];
-      sessionEvents.set(ev.session_id, arr);
-    }
-    arr.push(ev);
-  }
-
-  // Per-session walk: how many steps did this session complete?
-  type StepRollup = {
-    bucket: string;
-    counts: number[];
-  };
-  const bucketRollups = new Map<string, StepRollup>();
-  function bucketRollup(b: string): StepRollup {
-    let r = bucketRollups.get(b);
-    if (!r) {
-      r = { bucket: b, counts: steps.map(() => 0) };
-      bucketRollups.set(b, r);
-    }
-    return r;
-  }
-
   const windowMs = Math.max(60, funnel.conversion_window_seconds ?? 1800) * 1000;
 
-  for (const [, evs] of sessionEvents) {
-    let stepIdx = 0;
-    let stepStartTs: number | null = null;
-    let firstStepEv: RawEvent | null = null;
+  // Group by VISITOR (anonymous_id, falling back to session_id) so a funnel that
+  // spans multiple sessions can still complete within the conversion window
+  // (D-15: session-only grouping made multi-session funnels impossible).
+  const { groups_considered, rollups } = walkFunnel(events, steps, windowMs, {
+    groupKey: (ev) => ev.anonymous_id ?? ev.session_id,
+    bucketKey: breakdown === 'none' ? undefined : (ev) => breakdownKey(ev, breakdown),
+  });
 
-    for (const ev of evs) {
-      if (stepIdx >= steps.length) break;
-      const ts = new Date(ev.server_ts).getTime();
-      if (stepIdx > 0 && stepStartTs !== null && ts - stepStartTs > windowMs) {
-        // Conversion window exceeded — short-circuit
-        break;
-      }
-      if (eventMatchesStep(ev, steps[stepIdx])) {
-        if (stepIdx === 0) {
-          stepStartTs = ts;
-          firstStepEv = ev;
-        }
-        stepIdx += 1;
-      }
-    }
-
-    if (stepIdx === 0) continue;
-    const bucketLabel =
-      breakdown === 'none' ? 'all' : breakdownKey(firstStepEv ?? evs[0], breakdown);
-    const roll = bucketRollup(bucketLabel);
-    for (let i = 0; i < stepIdx; i++) {
-      roll.counts[i] += 1;
-    }
-  }
-
-  const breakdownEntries = Array.from(bucketRollups.values()).sort(
-    (a, b) => b.counts[0] - a.counts[0],
-  );
+  const breakdownEntries = rollups.sort((a, b) => b.counts[0] - a.counts[0]);
 
   const allBucket = breakdownEntries.find((b) => b.bucket === 'all');
   const overall =
@@ -196,7 +147,7 @@ export async function GET(
       for (const b of breakdownEntries) {
         for (let i = 0; i < counts.length; i++) counts[i] += b.counts[i];
       }
-      return { bucket: 'all', counts } satisfies StepRollup;
+      return { bucket: 'all', counts };
     })();
 
   return NextResponse.json({
@@ -211,7 +162,8 @@ export async function GET(
     start: startIso,
     breakdown,
     summary: {
-      sessions_considered: sessionEvents.size,
+      // Now visitor-grouped (anonymous_id), not session-grouped.
+      visitors_considered: groups_considered,
       events_scanned: events.length,
       events_cap_hit: events.length >= RAW_PULL_CAP,
     },
