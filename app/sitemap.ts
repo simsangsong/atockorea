@@ -58,6 +58,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry(baseUrl, '/itinerary-builder?region=seoul', { changeFrequency: 'weekly', priority: 0.65 }),
     entry(baseUrl, '/contact', { changeFrequency: 'monthly', priority: 0.45 }),
     entry(baseUrl, '/support', { changeFrequency: 'monthly', priority: 0.45 }),
+    entry(baseUrl, '/for-agents', { changeFrequency: 'monthly', priority: 0.4 }),
     entry(baseUrl, '/about', { changeFrequency: 'monthly', priority: 0.4 }),
     entry(baseUrl, '/privacy', { changeFrequency: 'yearly', priority: 0.2 }),
     entry(baseUrl, '/terms', { changeFrequency: 'yearly', priority: 0.2 }),

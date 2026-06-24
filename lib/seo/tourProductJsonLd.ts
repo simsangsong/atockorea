@@ -84,6 +84,33 @@ export function buildTourProductJsonLd(vm: ViewModelLike, slug: string): unknown
 
   blocks.push(product);
 
+  // TouristTrip — the travel-native schema.org type. LLMs and agent crawlers
+  // that understand trips (not just generic Products) get a cleaner read of
+  // what this is, who runs it, and the offer. Mirrors the Product offer.
+  const trip: Record<string, unknown> = {
+    "@context": "https://schema.org",
+    "@type": "TouristTrip",
+    name,
+    url,
+    description: vm.hero?.tagline ?? undefined,
+    image: vm.hero?.imageUrl ? [vm.hero.imageUrl] : undefined,
+    provider: {
+      "@type": "Organization",
+      name: "AtoC Korea",
+      url: siteOrigin(),
+    },
+  };
+  if (price) {
+    trip.offers = {
+      "@type": "Offer",
+      price: price.price,
+      priceCurrency: price.priceCurrency,
+      availability: "https://schema.org/InStock",
+      url,
+    };
+  }
+  blocks.push(trip);
+
   const faqs = (vm.staticQuestions ?? []).filter((q) => q?.question && q?.answer);
   if (faqs.length > 0) {
     blocks.push({
