@@ -113,15 +113,35 @@ POST /api/agent/v1/book    { quote_token, contact? }   -> { checkout_url }   (hu
 - `AGENT_API_KEYS` — optional. Comma-separated `label:key` pairs to grant
   higher rate limits to trusted agents.
 
+## Phase 5 — Availability + observability ✅ (shipped 2026-06-24)
+
+- `lib/agent/availability.ts` — read-only inventory check (product_inventory −
+  active bookings, default capacity fallback) reusing the service client. **No
+  new SQL** — pure TS, mirrors POST /api/bookings. Returns
+  `available | sold_out | unknown`; never holds inventory or charges.
+- `app/api/agent/v1/tours/[slug]/availability/route.ts` — `GET …?date=` + the
+  MCP **`check_availability`** tool.
+- `lib/agent/events.ts` + `supabase/pending-db-apply/2026-06-24-09-agent-channel-events.sql`
+  — best-effort telemetry (`quote_issued`, `booking_handoff`,
+  `availability_checked`, `mcp_tool_call`). Degrades gracefully until applied.
+  No raw IP stored.
+- `supabase/pending-db-apply/2026-06-24-10-agent-reservations-updated-at.sql` —
+  `updated_at` trigger for the reservations table.
+- Surfaced in OpenAPI, llms.txt, `/.well-known/agent.json`, `/for-agents`.
+
+### Staged SQL awaiting a connected session (apply in filename order)
+- `2026-06-24-08-agent-reservations.sql`
+- `2026-06-24-09-agent-channel-events.sql`
+- `2026-06-24-10-agent-reservations-updated-at.sql` (after 08)
+
 ## Still open (future)
 
 - Global (cross-instance) rate limiting via Upstash/Redis — current limiter is
   per-instance.
-- Apply `0001_agent_reservations.sql`, then optionally an admin view of leads.
+- Apply the staged SQL above, then optionally an admin view of leads + an
+  agent-channel funnel dashboard reading `agent_channel_events`.
 - Structured-data expansion: `ItemList` JSON-LD on `/tours/list`,
   `BreadcrumbList` on detail pages.
-- Real availability check in the agent channel (today pricing assumes default
-  capacity; inventory lives in the origin-locked pipeline).
 - Delegated payment (agent charges) — only if/when the business accepts the risk.
 
 ---

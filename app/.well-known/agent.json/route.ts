@@ -45,6 +45,7 @@ export function GET() {
       endpoints: {
         catalog: `${base}/api/agent/v1/tours`,
         tour: `${base}/api/agent/v1/tours/{slug}`,
+        availability: `${base}/api/agent/v1/tours/{slug}/availability?date=YYYY-MM-DD`,
         quote: `${base}/api/agent/v1/quote`,
         book: `${base}/api/agent/v1/book`,
         openapi: `${base}/api/agent/openapi.json`,
@@ -55,7 +56,7 @@ export function GET() {
         url: `${base}/api/agent/mcp`,
         transport: "streamable-http",
         protocol: "Model Context Protocol",
-        tools: ["search_tours", "get_tour", "quote_price", "create_booking"],
+        tools: ["search_tours", "get_tour", "check_availability", "quote_price", "create_booking"],
       },
     },
     {

@@ -4,6 +4,7 @@ import { verifyQuote } from "@/lib/agent/quoteToken";
 import { buildCheckoutUrl } from "@/lib/agent/checkoutUrl";
 import { rateLimit, rateLimitHeaders } from "@/lib/agent/rateLimit";
 import { recordReservation } from "@/lib/agent/reservation";
+import { logAgentEvent, userAgentOf } from "@/lib/agent/events";
 
 /**
  * POST /api/agent/v1/book — turn a signed quote into a hosted-checkout handoff.
@@ -115,6 +116,22 @@ export async function POST(req: NextRequest) {
     checkoutUrl,
     contact: { name, email, phone },
     apiKeyLabel: rl.apiKeyLabel,
+  });
+
+  void logAgentEvent({
+    eventType: "booking_handoff",
+    channel: "rest",
+    slug: item.slug,
+    tourDate: payload.date,
+    guests: payload.guests,
+    apiKeyLabel: rl.apiKeyLabel,
+    userAgent: userAgentOf(req),
+    props: {
+      reservation_id: reservation.reservationId,
+      replayed: reservation.replayed,
+      persisted: reservation.persisted,
+      estimated_total_usd: payload.estimatedTotalUsd,
+    },
   });
 
   return NextResponse.json(

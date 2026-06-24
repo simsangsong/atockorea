@@ -8,6 +8,8 @@ import { signQuote, verifyQuote, AGENT_QUOTE_TTL_SECONDS } from "@/lib/agent/quo
 import { buildCheckoutUrl } from "@/lib/agent/checkoutUrl";
 import { rateLimit, rateLimitHeaders } from "@/lib/agent/rateLimit";
 import { recordReservation } from "@/lib/agent/reservation";
+import { checkAvailability } from "@/lib/agent/availability";
+import { logAgentEvent } from "@/lib/agent/events";
 
 /**
  * POST /api/agent/mcp — Model Context Protocol server (Streamable HTTP).
@@ -56,6 +58,19 @@ const TOOLS = [
       type: "object",
       properties: { slug: { type: "string" } },
       required: ["slug"],
+    },
+  },
+  {
+    name: "check_availability",
+    description:
+      "Best-effort, read-only availability for a tour on a date. Use to sanity-check a date before quoting. Not authoritative — availability is finally enforced at checkout; returns status 'available' | 'sold_out' | 'unknown'.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        slug: { type: "string" },
+        date: { type: "string", description: "YYYY-MM-DD, today or later" },
+      },
+      required: ["slug", "date"],
     },
   },
   {
@@ -128,6 +143,16 @@ async function runTool(
       const item = slug ? getAgentCatalogItem(slug) : null;
       if (!item) return { error: "tour_not_found", slug };
       return { tour: item };
+    }
+    case "check_availability": {
+      const slug = typeof args.slug === "string" ? args.slug.trim() : "";
+      const item = slug ? getAgentCatalogItem(slug) : null;
+      if (!item) return { error: "tour_not_found", slug };
+      const date = typeof args.date === "string" ? args.date.trim() : "";
+      if (!isYmd(date)) return { error: "invalid_date", detail: "date must be YYYY-MM-DD" };
+      const todayUtc = new Date().toISOString().slice(0, 10);
+      if (date < todayUtc) return { error: "date_in_past", detail: `date must be on or after ${todayUtc}` };
+      return await checkAvailability(item.slug, date);
     }
     case "quote_price": {
       const slug = typeof args.slug === "string" ? args.slug.trim() : "";
@@ -231,7 +256,7 @@ function rpcError(id: JsonRpcId, code: number, message: string, data?: unknown) 
 
 async function handleRpc(
   msg: Record<string, unknown>,
-  ctx: { apiKeyLabel: string | null },
+  ctx: { apiKeyLabel: string | null; userAgent: string | null },
 ): Promise<object | null> {
   const id = (msg.id ?? null) as JsonRpcId;
   const method = typeof msg.method === "string" ? msg.method : "";
@@ -268,6 +293,16 @@ async function handleRpc(
       }
       const out = await runTool(toolName, args, ctx);
       const isError = !!out && typeof out === "object" && "error" in (out as object);
+      void logAgentEvent({
+        eventType: "mcp_tool_call",
+        channel: "mcp",
+        slug: typeof args.slug === "string" ? args.slug : null,
+        tourDate: typeof args.date === "string" ? args.date : null,
+        guests: typeof args.guests === "number" ? args.guests : null,
+        apiKeyLabel: ctx.apiKeyLabel,
+        userAgent: ctx.userAgent,
+        props: { tool: toolName, is_error: isError },
+      });
       return rpcResult(id, {
         content: [{ type: "text", text: JSON.stringify(out, null, 2) }],
         structuredContent: out,
@@ -296,7 +331,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json(rpcError(null, -32700, "Parse error"), { status: 400, headers: CORS });
   }
 
-  const ctx = { apiKeyLabel: rl.apiKeyLabel };
+  const ctx = { apiKeyLabel: rl.apiKeyLabel, userAgent: req.headers.get("user-agent") };
 
   // Batch or single.
   if (Array.isArray(body)) {
