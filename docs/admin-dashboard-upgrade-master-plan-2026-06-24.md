@@ -31,7 +31,8 @@
 | 0.75 | §G 정산/세무 데이터모델 + 마이그레이션 브리지 (§G-6) | ✅ 완료 | RPC/스키마/settle 라우트 직접 재검증(F1~F8). tours.cost_price·bookings 원가/FX/Stripe·settlements 통화/basis DDL + RPC v2(원가기준·통화강제) + R1 라벨링 브리지 + R2 배포동기화 + R3 FX 강등. 신규 결함: RPC 통화혼입(F3) |
 | 0.8 | Codex 플랜 리뷰 통합 (§M) — 인접범위 전체스택 감사 | ✅ 완료 | 3 감사 에이전트 file:line 검증. N11~N26 신규(공개 보안 BLOCKER 4 + MAJOR 다수) + 정정 로그(REFUTED 2: RAG·reviews버킷 / IMPRECISE 6). 별도 doc 생성 거부(단일 SoT). 공개 보안 트랙 분리 권고 |
 | 0.9 | 라이브 DB 대조 (§N) — K-0 해소 | ✅ 완료 | atockorea MCP 라이브 연결. **마이그레이션 드리프트(repo≠live, BLOCKER급 거버넌스)** 발견. N1 REFUTED→드리프트 재분류. **N27(anon-exec PII 익명화 RPC, BLOCKER)**·N28~N32 + perf 62/62/134. §G-6 DDL 충돌0·F1~F3/R1 라이브 확정. D-14·notifications·payments부재 확정 |
-| 1 | 기능 안정화 (BLOCKER/MAJOR 버그 수정) | ⏳ 대기 | §D. 코드는 멀쩡해 보이나 깨진 기능 우선. + N23(cron fail-open)·**N27(anon-exec RPC)** BLOCKER. **§N.1 마이그레이션 정합이 Phase 0 선행** |
+| 0.10 | 플랜 완전화 감사 v3 (§O~§R) | ✅ 완료 | 3 감사 에이전트(완전성갭/신규결함·업그레이드/DDL어드버서리얼). **N33(site_settings 부재 BLOCKER)·B-1(노쇼 전액청구 돈버그 BLOCKER)·B-2/B-3/M-4/M-6/M-7/M-8**. §G-6 DDL 정정 12델타(C#3 FOR UPDATE는 라이브 probe로 REFUTED). 횡단 워크스트림 WS-A~J. 업그레이드 U-1~U-10(§P). 준비사양(§Q: N27 SQL·정합 런북·Phase1 턴키). **실행 WBS(§R) PR 단위 티켓화** |
+| 1 | 기능 안정화 (BLOCKER/MAJOR 버그 수정) | ⏳ 대기 | §D + §O.2. BLOCKER: N23·N27·**N33·B-1**(돈). 선행 게이트 R0(N27 REVOKE·마이그레이션 정합·미진단 라우트). 티켓=§R-1 |
 | 2 | 디자인 시스템 통합 (토큰·팔레트·타이포·i18n) | ⏳ 대기 | §H.1. 모든 페이지 개편의 선행 조건 |
 | 3 | 페이지별 UI/UX 개편 | ⏳ 대기 | §H.2~. Phase 2 토큰 위에서 한 페이지씩 |
 | 4 | 데이터 모델 확장 (정산 원가/수수료·귀속·감사로그·견적 이탈) | ⏳ 대기 | §E·§F·§G. 마이그레이션 + 백필 |
@@ -42,7 +43,7 @@
 
 상태 마커: ⏳ 대기 / 🔄 진행 중 / ⏸ 보류 / ✅ 완료 / ❌ 중단
 
-**현재 활성 Phase: Phase 0~0.9(진단·검증·UI감사·기능설계·§G정산설계·Codex통합·라이브DB대조) 모두 완료 — 코드는 미수정. 다음 액션 = 사용자 결정(§J #11 공개보안 트랙 + §J #2/#6/#8~10 정산·세무 입력) → Phase 1 착수. Phase 1 BLOCKER = §D 6건 + N2(업로드 검증 dead code)·N23(cron fail-open)·N27(anon-exec PII RPC). N1은 §N.1 마이그레이션 드리프트로 재분류(라이브 함수는 실재). 🔒 공개 보안 BLOCKER(N11/N13/N14/N16/N27)는 별도 트랙(§M.3). ⚠️ §N.1 repo≠live 마이그레이션 정합이 Phase 4 데이터 작업의 선행 게이트.**
+**현재 활성 Phase: Phase 0~0.10(진단·검증·UI감사·기능설계·§G정산설계·Codex통합·라이브DB대조·완전화감사) 모두 완료 — 코드는 미수정. 실행은 §R WBS(PR단위 티켓) 기준. 다음 액션 = 사용자 결정(§J #11~13 + #2/#6/#8~10) → 선행 게이트 R0(R0.1 N27 REVOKE·R0.2 마이그레이션 정합·R0.3 미진단 라우트) → Phase 1(§R-1). Phase 1 BLOCKER = §D 6건 + N2·N23·N27·N33·B-1(돈). 🔒 공개 보안 트랙(N11/N13/N14/N16/N27 + N28~N30)은 §R-9 별도 PR. ⚠️ R0.2(repo≠live 정합)는 Phase 4 하드 선행. 준비사양은 §Q(N27 SQL·정합 런북·Phase1 턴키) — 승인 시 즉시 실행.**
 
 > 실행 순서 원칙: **Phase 1(기능 안정화) → 2(디자인 토큰) → 3(UI 개편)** 은 사용자 체감 라인. **Phase 4(데이터) → 5(통계) → 6(세무)** 는 데이터 라인으로 병행 가능. Phase 6은 §J 세무 SIGN-OFF가 없으면 시작 금지.
 
@@ -86,6 +87,7 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 | 2026-06-24 | Phase 0.75 — §G-6 정산/세무 데이터모델+마이그레이션 브리지. RPC 본문/GRANT/settle 라우트/스키마 직접 재검증(F1~F8). 신규 DDL(tours.cost_price·bookings 11컬럼·settlements basis/통화·merchants W-8) + RPC v2(원가기준·1정산1통화) + R1 라벨링 브리지 + R2 원자배포 체크리스트 + R3 FX 강등 + J-8~J-10 | (this) | 신규 결함 F3: RPC가 통화필터 없이 final_price SUM → usd/krw 혼입 |
 | 2026-06-24 | Phase 0.8 — §M Codex 리뷰 통합. 3 감사 에이전트(공개커머스/보안인프라/데이터RAG성능) file:line 검증. N11~N26 + R5/R6 REFUTED + P1~P3. 별도 deep-audit doc 생성 거부(단일 SoT). 공개 보안 트랙 분리 | (this) | Codex 21주장 중 REFUTED 2(RAG 완전연결·reviews=폴더)·IMPRECISE 6 — 무검증 인용 차단 |
 | 2026-06-24 | Phase 0.9 — §N 라이브 DB 대조(atockorea MCP). 마이그레이션 드리프트(repo 32 vs live 48, ~9만 일치)·N1 REFUTED→드리프트·N27 anon-exec PII RPC(BLOCKER)·N28~N32·perf 62/62/134. §G-6 DDL 라이브 충돌0, F1~F3/R1 라이브 확정 | (this) | K-0 해소. pending-db-apply 수동 워크플로가 드리프트 원인. payments/notifications 라이브 부재 확정 |
+| 2026-06-24 | Phase 0.10 — §O~§R 플랜 완전화. 3 감사 에이전트 + 라이브 검증. N33(site_settings 부재)·B-1(노쇼 돈버그)·B-2/B-3/M-4/M-6/M-7/M-8 신규. §G-6 DDL 12델타 정정(C#3 FOR UPDATE는 probe로 REFUTED). 횡단 WS-A~J·업그레이드 U-1~10·준비사양(N27 SQL/정합 런북/Phase1 턴키)·실행 WBS(§R) | (this) | unified_inquiries 컬럼 라이브 검증·E-5 재고UI 보류(availability unlimited 충돌)·N1/D-15 stale 정정 |
 
 ---
 
@@ -925,6 +927,204 @@ CREATE UNIQUE INDEX IF NOT EXISTS idx_product_funnel_daily_unique ON public.anal
 
 ---
 
+# §O. 플랜 완전화 감사 v3 (Phase 0.10 — 2026-06-24)
+
+> 사용자 지시("플랜 마지막 전반 심층 감사 → 모든 문제·업그레이드 상정 → 완전화"). 3개 독립 감사 에이전트(완전성 갭 / 신규결함·업그레이드 / §G-6·§K-7 DDL 어드버서리얼) + 세션 라이브 검증. 전 항목 file:line/플랜 위치 인용. **에이전트 주장도 무검증 반영 금지** — 검증 가능한 것은 검증함(예: C#3 FOR UPDATE 구문 → 라이브 probe로 REFUTED).
+
+## O.1 커버리지 갭 — 플랜이 진단 안 한 어드민 표면 (Phase 1/3 편입)
+| 대상 | 상태 | 조치 |
+|---|---|---|
+| `app/admin/analytics/product/sessions/page.tsx` + `[id]/page.tsx` | **미진단** | §D-15는 라우트 수학만 — 이 두 UI 페이지는 어디에도 없음. §D에 D-17로 추가, §H-3 순서에 편입 |
+| `api/admin/tours/route.ts`·`[id]/route.ts`·`[id]/bus-detail`·`[id]/tour-mode` | **미진단** | 투어 CRUD/버스/투어모드 — D-9(상품에디터)와 별개 경로. **M-4(DELETE가 예약 무시) 포함** → Phase 1 |
+| `api/admin/tour-product-pages/[slug]/route.ts` | **미진단** | 핵심 콘텐츠 write 경로. **M-7(형제 로케일 무동의 덮어쓰기) 포함** → Phase 1/3 |
+| `api/admin/cms/{export,import,section-images}` | **미진단** | CMS 보조 경로(§D-8은 메인만). import는 대량 write → 안전성 미평가 |
+| `api/admin/homepage-product-card-images/route.ts` | **미진단** | **N33(site_settings 부재) 직격** → Phase 1 |
+| `api/admin/email-diag/route.ts` | **미진단** | 진단 GET이 어떤 env 세팅됐는지 노출(정보 유출 가능) → 보안 트랙 |
+| `api/admin/tour-content/generate/route.ts` | **미진단** | OpenAI+TTS+Storage write 복합. 비용/실패/멱등 미평가 |
+| `api/admin/stats/route.ts` | 부분(N26 각주) | **M-6(KST 타임존 오프셋) 포함** → Phase 1 |
+
+## O.2 신규 결함 레지스터 (감사 v3 — N33·B·M·N)
+심각도 🔴BLOCKER 🟠MAJOR 🟡MINOR. 트랙: ⚙️어드민 🔒보안.
+| ID | 심각도 | 결함 (검증된 메커니즘) | 증거 |
+|---|---|---|---|
+| **N33** | 🔴⚙️ | **`site_settings` 테이블이 어떤 스키마에도 라이브 부재**인데 D-11 설정저장·D-8 CMS 오버라이드·홈 상품카드 이미지가 모두 read/write → 영속 전부 무력(쓰기 에러, 읽기는 D-11 "에러 삼키고 기본값"으로 위장). **D-8/D-11을 더 깊게 정정**(no-op의 진짜 원인=테이블 부재). notifications(N25)·드리프트(§N.1)와 동류. | `settings/route.ts:27,87,107`·`lib/cms-content.server.ts:48,77`·`homepage-product-card-images/route.ts:30,104`; live `to_regclass` 전 스키마 NULL |
+| **B-1** | 🔴⚙️💰 | **no-show 정산이 위약금 대신 전액 청구.** settle가 `no_show_fee_usd_cents`를 select만 하고 `paymentIntents.capture()`에 `amount_to_capture` 미전달 → Stripe 기본=전액 캡처. 노쇼 $60 의도가 $300 청구. | `settle/route.ts:90,165` |
+| **B-2** | 🟠⚙️ | 어드민 layout이 `checkAuth()` 마운트 1회만, `onAuthStateChange` 구독 없음 → 세션 만료 무표시(액션 실패로만 발견). 전역 `auth-session.tsx`는 올바른데 layout 미연결. | `layout.tsx:126-128,169-263` |
+| **B-3** | 🟠⚙️ | 주문 상태 전이 state machine 부재 — `no_show`/`payment_status`만 차단, 그 외 `body.status`는 검증 없이 통과(`completed→pending`·`cancelled→confirmed`·임의 문자열). | `orders/[id]/route.ts:122-134` |
+| **M-4** | 🟠⚙️ | `DELETE /api/admin/tours/[id]`가 활성/미래 예약 검사 없이 삭제(pickup_points만 정리) → 예약이 NULL-join 고아화. merchant DELETE는 `ACTIVE_BOOKING_STATUSES` 가드 있음(대조). | `tours/[id]/route.ts:333-372` vs `merchants/[id]/route.ts:192-201` |
+| **M-6** | 🟠⚙️ | `stats`의 `today=new Date().toISOString()`(UTC) → KST(+9) 오전 9시간 동안 "오늘 주문 0" 오표시. 취소 시 재고복원 날짜 매칭(`orders/[id]:151`)도 동일 오프셋. | `stats/route.ts:43-47`, `orders/[id]/route.ts:151` |
+| **M-7** | 🟠⚙️ | `tour-product-pages PATCH`가 한 로케일 편집 시 형제 로케일의 thumbnail/hero/catalog_card까지 덮어씀(의도지만 opt-out·확인·audit 없음) → 계절 KO 캠페인 편집이 EN/JA/ZH hero 파괴. | `tour-product-pages/[slug]/route.ts:317-354` |
+| **M-8** | 🟠⚙️ | layout이 `PGRST116`(프로필 없음) 시 인증 가드 안에서 `customer` 프로필 자동 INSERT(데이터 변이). 자기 프로필 삭제 유저가 `/admin` 방문마다 재생성. | `layout.tsx:221-238` |
+| **M-1** | 🟠⚙️ | retention 라우트 `.limit(500_000)` 원시 이벤트 Node 적재 → 트래픽 증가 시 Vercel 1GB 초과 크래시(안전밸브 없음). §D-15 retention 결함과 별개의 스케일 폭탄. | `analytics/retention/route.ts:37-38` |
+| **N-2** | 🟡⚙️ | `bus-detail POST`가 `payload` 임의 JSON 무검증 저장(크기/형태). | `tours/[id]/bus-detail/route.ts:22` |
+| **N-3** | 🟡⚙️ | `events/[name]` summary `total_events`가 raw-pull cap(≤50k) 길이 → 고볼륨 이벤트는 항상 "50000" 오표시. | `analytics/events/[name]/route.ts:163` |
+| **N-5** | 🟡⚙️ | `merchants [id] PUT`가 allowlist 없이 필드 수용 — `contactEmail` 형식·`status` enum 미검증("hacked" 영속). | `merchants/[id]/route.ts:108-116` |
+| (중복) | — | **M-3**=experiments 필터 폐기(기존 N7), **M-5**=qa-pairs 순차 count(기존 N10), **M-2**=funnel cap 무음(기존 §D-15), **N-1**=upload DELETE bucket(기존 N17), **N-4**=layout stale token(B-2 일부). 신규 아님 — 기존 항목 강화. |
+
+## O.3 §G-6/§K-7 DDL 어드버서리얼 정정 (적용 델타 — 구현 전 필수)
+> 에이전트 C 15건 중 검증 결과. **C#3(FOR UPDATE 구문 무효)는 라이브 probe로 REFUTED** — `CREATE TEMP TABLE AS SELECT … FOR UPDATE OF b`는 유효·v1 정상. 나머지 유효 결함의 **수정 델타**(§G-6.2 RPC v2·§G-6.1 DDL·§K-7에 적용):
+| # | 심각도 | 결함 | 수정 델타 |
+|---|---|---|---|
+| C1 | 🔴 | `v_skipped` 별도 SELECT가 `NOT EXISTS`·cand 제외 누락 → 과대카운트·dirty read | `v_skipped`를 `pg_temp.cand` 빌드 쿼리 한 패스에서 `count(*) FILTER (WHERE merchant_cost IS NULL)`로 산출(별도 테이블스캔 제거) |
+| C2 | 🔴 | `settlement_bookings`에서 `platform_fee_amount==operational_fee_amount`, `merchant_payout_amount==merchant_cost_amount` 중복·명명 혼란(`platform_fee_amount`가 실제론 op_fee) | cost_plus에선 `platform_fee_amount`에 op_fee 넣지 말고 **`operational_fee_amount` 단일 사용**, `platform_fee_amount`는 flat_rate 전용(NULL for cost_plus)으로 의미 분리. 리포트 조인 영향 문서화 |
+| C4 | 🟠 | 음수 `op_fee`(final_price<merchant_cost) 무음 수용 → 음수 fee/과대 payout | 후보 필터에 `AND (p_fee_basis='flat_rate' OR b.final_price>=b.merchant_cost)` + 제외건 `v_negative_margin` 카운트 반환(§J-9 정책 확정 전 차단·보고) |
+| C5 | 🟠 | `total_usd_amount` 컬럼 추가하나 RPC가 미채움 → 항상 NULL(세무 USD 대사 핵심) | RPC INSERT에 `total_usd_amount = (SELECT SUM(usd_amount) FROM cand)` 추가. usd_amount 미포착건 있으면 NULL-aware |
+| C6 | 🟠 | `DROP FUNCTION (4-arg)` 후, 재현환경 replay 시 옛 `restrict_…` GRANT 마이그레이션이 없는 시그니처에 REVOKE/GRANT → 에러 | §N.1 정합 시 옛 restrict 마이그레이션을 신규 시그니처로 갱신 또는 `IF EXISTS` 가드. (드리프트 정합과 묶기) |
+| C7 | 🟠 | `settlements.currency NOT NULL DEFAULT 'usd'` → 미래에 과거 KRW 정산이 생기면 'usd'로 오백필 | 백필 단계는 **nullable**로 추가 → §G-6.3 UPDATE로 통화 보정 → 검증 후 `SET NOT NULL` |
+| C8 | 🟠 | `partially_refunded` 건이 `payment_status='paid'` 필터에서 영구 누락(정산 0회). `collectedOffline` 경로가 취소/환불건도 paid化(D-3) | RPC에 partial-refund 처리(net `final_price−refund_amount` 정산 또는 `v_excluded_partial` 카운트) + D-3 가드를 정산 전제로 명시 |
+| C9 | 🟡 | `usd_amount=final_price×fx_rate_to_usd`(settle 코드, §G-6.5) 명시 ROUND 없음 | settle 코드에 `ROUND(...,2)` + KRW는 정수화 규칙 명시 |
+| C10 | 🟡 | (no-bug, 문서화) 트리거는 `settlements.status→completed`에서 발화, settlement_bookings INSERT 아님 → `settlement_status='pending'` 필터는 `NOT EXISTS`와 부분 중복. | §N.4에 "재정산 차단의 진짜 락은 NOT EXISTS, settlement_status는 보조" 주석 추가 |
+| C11 | 🟡 | `quote_drafts.price_shown_krw integer`가 KRW 하드코딩 → USD 견적 손실 | `price_shown numeric(12,2)` + `price_shown_currency text`로 교체(§K-7.1) |
+| C12 | 🟡 | `unified_inquiries`가 ticket 브랜치 `escalation_reason`을 `category`로 사용 → 카테고리 칩 오염 | ticket `category`는 별도/NULL, `escalation_reason`은 `details` 컬럼으로 분리(§K-7.5) |
+| C13 | 🟡 | 상품 funnel matview: `payload->>'slug'=''` 빈문자가 UNIQUE 충돌; cron의 `REFRESH … CONCURRENTLY` 사용 미확인 | matview WHERE에 `AND nullif(payload->>'slug','') IS NOT NULL`; cron이 CONCURRENT 쓰는지 확인(§K-7.6) |
+| C14/C15 | 🟡 | `NOT VALID` 의미 주석 필요; §G-6.3 백필 WHERE의 `IS DISTINCT FROM 'cost_plus'` 불필요 | 주석 추가 + `WHERE platform_fee_rate IS NULL`로 단순화 |
+> **참고(검증된 사실):** unified_inquiries가 참조하는 컬럼은 **라이브 전수 실재 확인**(received_emails.from_name/category/received_at·support_tickets.initial_summary/unread_for_admin/escalation_reason·contact_inquiries.full_name 등) → 시퀀싱 리스크 해소.
+
+## O.4 누락 횡단 워크스트림 (플랜 신규 편입 — "하이엔드" 전제)
+| WS | 갭 | 편입 |
+|---|---|---|
+| **WS-A 관측성** | 에러추적/구조화로그/알림 부재(Telegram만). 어드민 mutation 실패 알림 경로 없음 | Sentry류 + audit 실패 alert + P95/에러율 임계. Phase 1 말 + §P U-10 |
+| **WS-B 테스트 전략** | §I가 종류만, 목표치 0(커버리지%·E2E 시나리오·perf 임계·Stripe/Supabase 모킹) | 각 Phase DoD에 골든테스트(analytics 수학)·E2E 핵심플로우·계약테스트 구체화 |
+| **WS-C 롤백/플래그** | RPC만 롤백 명시. UI 16페이지 개편·Phase1 패치 롤백 절차 없음 | 페이지별 feature flag + Phase1 패치 역적용 절차 |
+| **WS-D Rate-limit(어드민)** | 공개 API만 다룸. 어드민 라우트 자체 무제한(탈취 토큰 DoS/대량변이) | 어드민 글로벌 rate-limit + 멱등키(§P U-2) |
+| **WS-E i18n 인벤토리** | "키화"만, 택소노미/키수/네임스페이스(`admin.orders.*`) 없음 | 키 인벤토리 + 네임스페이스 설계 + 영어전용(settings) 키화 범위 |
+| **WS-F a11y 체크리스트** | 방향성만. WCAG 레벨·axe CI 게이트·수동범위 없음 | WCAG 2.1 AA 목표 + axe-core CI + 키보드/대비 체크리스트 |
+| **WS-G perf 예산** | 페이지네이션 기본값·쿼리 타임아웃·응답 목표 없음. 62 RLS initplan/62 multi-policy(§N.6) | 리스트 기본 50행·쿼리 타임아웃·RLS initplan `(select auth.uid())` 래핑·FK 인덱스 |
+| **WS-H 백업/DR** | 세무 7년만. RPO/RTO·PITR·복구테스트 없음. §N.1 드리프트 자체가 DR 갭 | Supabase PITR 확인 + repo 재현성 복구(=§N.1) + 복구 리허설 |
+| **WS-I RBAC 세분화** | 단일 `admin` 게이트. read-only 분석가/풀어드민/머천트 레벨 미검토. N31 13테이블 | 역할/권한 모델 설계(최소 admin·analyst·support) |
+| **WS-J 시크릿 위생** | 평문 PAT(D-4)·tax_id PII(§G-6.1)·email-diag 노출. 회전정책/vault 없음 | env 인벤토리 + 회전정책 + tax_id 암호화/vault |
+
+## O.5 정합성 정정 (본문 stale → 갱신 필요)
+| 위치 | 문제 | 조치(이 문서 내) |
+|---|---|---|
+| §K-7.3 / §K-7.7 | "N1 해결: `anonymize_old_analytics()` **신설**(정의 없음)" — §N.2에서 라이브 실재로 REFUTED됐는데 신설 문구 잔존 | 본 절에서 정정: **신설 아님 → repo 마이그레이션에 흡수(드리프트 정합, §N.1)** + N27 REVOKE 포함 |
+| §D-15 | "health/route.ts:20 미배포 시 500" — §N.2에서 라이브 실재로 해소 | 정정: 함수 라이브 실재(프로덕션 정상), 잔여는 §N.1 드리프트(재현환경) |
+| §E-5 | "재고/가용성 관리 UI 신설" — **프로젝트 결정 `availability unlimited → no scarcity UI`와 충돌**(빈 product_inventory는 의도) | 정정: 재고 편집 UI는 **보류**(온디맨드=무한). 정산·환불·알림·⌘K만 §E-5 유지 |
+| §K-7.4 | audit 의무 라우트가 미진단 경로(tours/[id]·tour-product-pages) 누락 | O.1 미진단 라우트 진단 후 audit 목록에 편입 |
+| §B / §G-6.4 | "모든 mutation에 audit_logs" vs RPC 스왑 체크리스트에 audit 단계 없음 | §G-6.4에 정산 마이그레이션 audit 단계 추가 |
+| §G-6.5 / §G-4 | FX 신규건만 vs 1099-K 대사가 과거 FX 가정 | §G-4 리포트에 "과거 FX 근사·미설명 delta 플래그" 명시(CPA 고지) |
+
+## O.6 시퀀싱 게이트 (의존 그래프 — Phase 순서 확정)
+1. **G0 마이그레이션 정합(§N.1)** → 모든 Phase 4~6 DDL의 **하드 선행**. 안 되면 정산/익명화/matview 배포 위험.
+2. **G1 N27 REVOKE** → Phase 4 `anonymize_old_analytics` 확장(귀속컬럼 스크럽) **전에** 필수(안 그러면 확장표면이 anon 호출 가능).
+3. **G2 J-3(gross/net) 사전응답** → Phase 4 `revenue_treatment` 컬럼이 의미 가지려면 필요(미정 시 전건 NULL).
+4. **G3 slug 이벤트 계측(Phase 4 조기)** → Phase 5 상품 funnel matview 데이터 전제.
+5. **G4 RPC v2 + 호출부 + 정산 UI 동시배포(R2)** → 정산 UI(§E-5)를 Phase 7로 미루면 옛 3-arg 호출로 수개월 파손 → **정산 UI를 RPC와 같은 릴리스(Phase 4)로 당김**.
+6. **G5 미진단 라우트 진단(O.1)** → audit 의무(§K-7.4)·Phase 3 UI 개편 전.
+
+---
+
+# §P. 하이엔드 업그레이드 로드맵 (목표: "더 업그레이드 불필요" 수준)
+> 감사 v3 도출. 각 항목 [가치 / 근거 / 노력 / 확장 Phase]. 우선순위 = 운영 임팩트.
+| ID | 업그레이드 | 가치·근거 | 노력 | Phase |
+|---|---|---|---|---|
+| **U-1** | Supabase Realtime 라이브 피드(주문/문의/티켓) | 투어당일 실시간 유입을 새로고침 없이. 현 전부 mount 1회 fetch | 1-2d | 3(리스트) |
+| **U-2** | Stripe capture/release **멱등키** + 어드민 mutation 멱등 | 더블클릭/재시도 시 2중 캡처·DB 2회 update 방지. settle 무방비 | 0.5d | 4(정산) |
+| **U-3** | 서버드리븐 가상화 DataTable + URL 필터상태 | 5만행 일괄→북마크/공유가능·빠름. `?status=pending&page=2` | 3-4d | 3 |
+| **U-4** | ⌘K 커맨드 팔레트(주문/POI/CMS/이동) | 키보드 우선 — "월드클래스" 체감. 현 클릭 과다 | 2d | 신규 |
+| **U-5** | 인라인 audit/diff 뷰어(편집 이력 드로어) | M-7 형제로케일 덮어쓰기 등 "누가 뭘" 가시화. audit_logs(§E-3) 위 | 3d | 7 |
+| **U-6** | 파괴적 액션 **undo**(soft-delete+30s) | 투어/머천트/QA 영구삭제 비가역 → 표준 안전망 | 2d | 3/7 |
+| **U-7** | 주문/QA **bulk 액션**(다중선택 batch) | 성수기 반복작업 급감. batch API+상태가드 재사용 | 2-3d | 3 |
+| **U-8** | Saved views + URL 상태 영속(분석/주문) | 필터 북마크/공유/새로고침 생존 | 1-2d/섹션 | 3/5 |
+| **U-9** | 알림센터(노쇼위험·hold만료·에스컬·부정피드백) | 시급 액션을 벨로 집약. 현 수동확인 | 2d | 7 |
+| **U-10** | 관측성 미니대시(라우트 지연·쿼리비용) | 솔로 운영자 회귀 조기감지. health 페이지 확장 | 1-2d | 5 |
+
+---
+
+# §Q. 비구현 준비 사양 (turnkey — 적용 전, 승인 시 즉시 실행 가능)
+
+> 사용자 지시("추천순서 중 실제 구현 제외 스텝 진행"). 아래는 **코드/DB 미적용** 상태의 완성 사양. 승인 시 그대로 실행.
+
+## Q-1. N27 즉시 차단 SQL (라이브 검증된 정확 대상)
+라이브 확인: 과다권한 SECURITY DEFINER 함수 = 정확히 4개. 정산 RPC는 이미 올바름(레퍼런스).
+```sql
+-- 적용 마이그레이션 (additive·idempotent). 정산 RPC restrict 패턴 복제.
+REVOKE EXECUTE ON FUNCTION public.anonymize_old_analytics(integer)          FROM PUBLIC, anon, authenticated;
+REVOKE EXECUTE ON FUNCTION public.refresh_analytics_materialized_views()    FROM PUBLIC, anon, authenticated;
+REVOKE EXECUTE ON FUNCTION public.analytics_health_snapshot()               FROM PUBLIC, anon, authenticated;
+REVOKE EXECUTE ON FUNCTION public.handle_new_user()                         FROM PUBLIC;   -- 트리거 전용, API 불요
+GRANT  EXECUTE ON FUNCTION public.anonymize_old_analytics(integer)          TO service_role;
+GRANT  EXECUTE ON FUNCTION public.refresh_analytics_materialized_views()    TO service_role;
+GRANT  EXECUTE ON FUNCTION public.analytics_health_snapshot()               TO service_role;
+```
+- **검증(적용 후):** `SELECT routine_name, grantee FROM information_schema.routine_privileges WHERE routine_name IN (…) AND grantee IN ('PUBLIC','anon','authenticated');` → **0행** 기대. + `get_advisors(security)`에서 `anon_security_definer_function_executable` 4건 소거 확인.
+- **영향:** cron/health 라우트는 service-role 사용 → 정상. anon/authenticated REST 호출만 차단. **롤백:** 위 GRANT를 PUBLIC으로 되돌리면 됨(권장 안 함).
+- **주의:** `handle_new_user`는 `auth.users` 트리거 — EXECUTE grant와 무관하게 트리거는 발화하므로 REVOKE 안전.
+
+## Q-2. §N.1 마이그레이션 정합 런북 (repo↔live 재현성 복구)
+> 목표: repo `supabase/migrations/`로 라이브를 재현 가능하게 + drift 재발 방지. **DDL 미적용 — 절차만.**
+1. **백업/안전:** Supabase PITR 시점 확인 + `pg_dump --schema-only` 스냅샷 보관.
+2. **baseline 스냅샷:** `supabase db pull`(또는 `pg_dump --schema-only`)로 **라이브 실스키마**를 단일 baseline 마이그레이션으로 추출 → 기존 repo `migrations/`(드리프트본)와 비교.
+3. **차분 분류:** 라이브 전용 39개(§N.1) 각각을 (a)정식 마이그레이션 흡수 (b)pending-db-apply 출처 매핑. repo 전용 23개는 라이브 미적용/이중스탬프 판별.
+4. **재정렬:** baseline 이후로 마이그레이션 히스토리 단일화. `supabase migration repair`로 버전 정합(라운드↔정밀 스탬프 충돌 해소).
+5. **pending-db-apply 정식화:** 향후 모든 스키마 변경은 `migrations/`로만. `pending-db-apply`/`manual`은 일회성 데이터 패치 전용으로 격리.
+6. **CI drift 게이트(U4):** PR에서 `supabase db diff`로 repo↔shadow DB 차이 0 검증. "코드가 호출하나 미정의 RPC/테이블"(N1·N25·N33류) 정적 체크 추가.
+7. **검증:** 새 shadow 환경에 repo만으로 `db reset` → 라이브와 스키마 동등 확인.
+
+## Q-3. Phase 1 BLOCKER 턴키 수정 사양 (코드 미적용)
+| ID | 파일 | 수정 사양 | DoD/테스트 |
+|---|---|---|---|
+| B-1 | `settle/route.ts:165` | `capture(piId, { amount_to_capture: reason==='no_show' ? booking.no_show_fee_usd_cents : undefined, idempotencyKey:… })`. KRW/USD 단위 일치 확인(cents) | 노쇼 캡처액=위약금. 골든: $300 hold·$60 fee→$60 캡처 |
+| N33 | site_settings | **마이그레이션 신설**(`CREATE TABLE site_settings`, archive `notifications-schema` 패턴) + RLS(service-role write/admin) **또는** 코드가 기대하는 컬럼 스키마 도출 후 정식화. §N.1 정합과 묶기 | settings 저장→재로드 영속. CMS 오버라이드 반영 |
+| N23+N27 | cron + DB | N27=Q-1 REVOKE. N23=cron `if(!secret) return true` 제거(시크릿 필수화) | anon REST 호출 차단(401), 시크릿 없으면 cron 거부 |
+| D-2 no_show | `orders/[id]/route.ts:116` | 드롭다운 `no_show` 옵션 제거 또는 PUT가 settle 경로로 위임 | 드롭다운 no_show 선택이 실패 안 함 |
+| D-14 | `qa-pairs/route.ts:35` | `.eq('review_status', …)` 값을 `draft|approved|rejected|needs_edit`로 교정(UI 옵션도) | 필터가 실제 행 반환 |
+| D-11/settings | settings 토글 | maintenance/registration **reader 구현**(미들웨어 게이트) 또는 토글 제거 + N33 site_settings 영속 | 토글이 실제 강제 |
+| D-1 | `page.tsx:119,129,303` | 하드코딩 0 → 실 카운트(unified_inquiries 등), `parseFloat(x.toString())`→`String(x)` null-safe | 대시보드 실데이터·null 무크래시 |
+| B-3 | `orders/[id]/route.ts:122` | 상태 전이 allowlist(state machine) | 불법 전이 400 |
+| 머천트 평문비번(D-4) | `merchants/create/route.ts:164-176` | 응답에서 평문 비번 제거(주석이 "remove in production") | 응답에 비번 없음 |
+
+---
+
+# §R. 실행 WBS — Phase 잘게 쪼갠 티켓 (PR 단위)
+
+> 사용자 지시("섹션 너무 광범위하게 잡지 말고 잘게 쪼개"). 각 티켓 = 1 PR 목표. [범위·핵심파일·DoD·의존]. 트랙: 🔒보안(별도) ⚙️어드민 🧱데이터 📊통계 🎨UI 💴세무.
+
+## R-0. 선행 게이트 (G0~G5, §O.6) — 코드 전 필수
+- **R0.1 🔒 N27 REVOKE**(Q-1) — DDL 1개. 의존: 없음. DoD: advisor 4건 소거. *(가장 시급·1줄)*
+- **R0.2 🧱 마이그레이션 정합**(Q-2) — 런북 7단계. 의존: PITR 확인. DoD: shadow `db reset`=live 동등 + CI drift 게이트. *(Phase 4 하드 선행)*
+- **R0.3 📊 미진단 라우트 진단**(O.1: tours/**·tour-product-pages·cms 보조·email-diag·tour-content) — 진단 문서화. DoD: D-17+ 추가.
+
+## R-1. 기능 안정화 (BLOCKER/MAJOR) — 페이지별 1티켓
+- R1.1 ⚙️💰 **B-1 no_show 부분캡처**(Q-3) — 의존 R0.1. *(돈 버그·최우선)*
+- R1.2 ⚙️ **N33 site_settings 정식화** — 의존 R0.2. (D-8/D-11 동반 해결)
+- R1.3 🔒 **N23 cron 시크릿 필수화** — 의존 R0.1.
+- R1.4 ⚙️ 주문: D-2(email 폴백)·no_show 드롭다운·B-3 state machine·status 검증 — 1티켓.
+- R1.5 ⚙️ 대시보드 D-1(하드코딩0·null-safe)·M-6 KST 타임존.
+- R1.6 ⚙️ 머천트 D-4(평문비번 제거·롤백·N4·N5 allowlist)·create 표준화.
+- R1.7 ⚙️ QA D-14(review_status 값)·문의 D-5·메일 D-6(페이지리셋·디바운스).
+- R1.8 ⚙️ 설정 D-11(토글 reader 또는 제거)·업로드 D-7/N2(검증·N17 bucket allowlist).
+- R1.9 ⚙️ 투어 M-4(DELETE 예약가드)·M-7(형제로케일 opt-out)·M-8(layout 프로필 자동생성 제거)·B-2(onAuthStateChange).
+- R1.10 📊 analytics 수학버그(§D-15: visitors distinct·funnel 세션·retention left-censor·experiments filter·M-1 retention cap) — 골든테스트 동반.
+
+## R-2. 디자인 토큰 (Phase 2) — 기반 1티켓씩
+- R2.1 🎨 토큰 채택 기반(globals/tailwind 매핑, §K-6.3) + sonner 전역 마운트.
+- R2.2 🎨 어드민 키트 신설(PageHeading·StatCard·EmptyState·FilterBar·DataTable·ConfirmDialog·StatusBadge, §K-6.4).
+- R2.3 🎨 i18n 인벤토리·네임스페이스(WS-E) + a11y 체크리스트·axe CI(WS-F).
+
+## R-3. UI 개편 (Phase 3) — 페이지당 1티켓 (토큰+버그 동반)
+- R3.1 레거시 `/admin/analytics` 폐기→자체엔진 연결(K-6.6 #1). R3.2 주문. R3.3 통합문의 인박스(§E-4). R3.4 정산 운영 UI(G4 동시배포). R3.5 머천트. R3.6 분석 product 페이지군(+sessions O.1). R3.7 챗봇분석. R3.8 POI/CMS/업로드. R3.9 설정/감사로그. + 횡단: U-1 Realtime·U-3 DataTable·U-6 undo·U-7 bulk·U-8 saved views.
+
+## R-4. 데이터 모델 (Phase 4) — 마이그레이션 묶음별 1티켓
+- R4.1 🧱 정산/세무 DDL(§G-6.1, **O.3 델타 반영**) — additive 컬럼·인덱스. 의존 R0.2.
+- R4.2 🧱 RPC v2(§G-6.2, **C1/C2/C4/C5/C7/C8 수정 반영**) + 호출부 + 정산 UI **동시배포**(R2 게이트). 의존 R4.1. + U-2 멱등키.
+- R4.3 🧱 귀속FK+익명화 정합(§K-7.3, R4 컬럼 스크럽) + N27 후 RPC 확장. 의존 R0.1.
+- R4.4 🧱 quote_drafts(§K-7.1, **C11 price_shown 수정**)·audit_logs 헬퍼(§K-7.4)·unified_inquiries(§K-7.5, **C12 category 수정**).
+- R4.5 🧱 slug 이벤트 계측(G3) — Phase 5 matview 전제.
+
+## R-5. 통계 (Phase 5) — R5.1 수학버그 골든테스트(R1.10 연계) · R5.2 상품 funnel matview(§K-7.6, **C13 수정**) · R5.3 귀속/이탈/bounce 지표 · R5.4 perf(WS-G: RLS initplan 62·multi-policy 62·FK인덱스) · R5.5 U-10 관측성.
+
+## R-6. 세무 (Phase 6, SIGN-OFF 후) — §G-4 서류별 1티켓(수익요약·1099-K대사·W-8·sourcing·nexus·WY캘린더·5472·아카이브). 의존 §J #2/#3 + §G-5 게이트.
+
+## R-7. 신규 운영기능 (Phase 7) — §E-5(정산운영은 R3.4로 당김·환불워크플로·알림센터 U-9)·⌘K U-4·audit UI U-5. **재고 UI는 보류**(O.5).
+
+## R-8. 검증 (Phase 8) — §I + WS-B 목표치: 부하(5만행)·null회귀·권한·금액정합(Stripe대사)·analytics 골든·E2E 핵심플로우·advisor 재실행(보안/perf 회귀).
+
+## R-9. 🔒 공개 보안 트랙 (별도 PR, 어드민과 독립 — §M.3)
+- R9.1 N11 inventory 인증. R9.2 N13 promo-codes 인증. R9.3 N14 checkout 소유권. R9.4 N16 confirm-email 토큰필수. R9.5 N15 oversell 원자성. R9.6 N17 upload·N19 maps proxy·N18 LINE OAuth. R9.7 N20 보안헤더·N21 middleware. R9.8 N28 contact_inquiries·N29 matview API·N30 버킷listing(§N.3). R9.9 N24 Resend 멱등.
+
+---
+
 # §L. 세션 인수인계 (다음 세션이 100% 이어받기 위한 단일 요약)
 
 ## L-0. 한 줄 상태
@@ -938,17 +1138,20 @@ CREATE UNIQUE INDEX IF NOT EXISTS idx_product_funnel_daily_unique ON public.anal
 - **0.75 §G 정산/세무**(§G-6): RPC/GRANT/settle 라우트/스키마 직접 재검증(F1~F8) → tours.cost_price·bookings 원가/FX/Stripe·settlements basis/통화·merchants W-8 **DDL** + **RPC v2**(원가기준 `fee=customer−cost`·1정산1통화) + **R1 라벨링 브리지**(과거 flat_rate 동결·재계산 불필요) + **R2 원자배포**(4-arg→6-arg, GRANT 재발급) + **R3 FX 신규건만**. 신규결함 F3(RPC 통화혼입).
 - **0.8 Codex 통합**(§M): 3 감사 에이전트 file:line 검증 → 공개 보안 BLOCKER 4(N11 inventory·N13 promo·N14 checkout IDOR·N16 confirm-email IDOR) + MAJOR 다수 + ⚙️어드민(N23 cron fail-open·N24 webhook·N25 notifications드리프트·N26 overfetch). **REFUTED 2**(R5 RAG 완전연결·R6 reviews=폴더), IMPRECISE 6. 별도 doc 생성 거부.
 - **0.9 라이브 DB 대조**(§N): atockorea MCP 라이브 연결(K-0 해소). **마이그레이션 드리프트(repo 32 vs live 48, ~9만 일치 — pending-db-apply 수동 워크플로)** = BLOCKER급 거버넌스. N1 REFUTED(라이브 실재)→드리프트 재분류. **N27**(anon/PUBLIC이 REST로 비가역 PII 익명화 RPC 호출, BLOCKER)·N28(contact_inquiries permissive insert)·N29(matview API 노출)·N30~N32. §G-6 DDL 라이브 충돌0·F1~F3(통화혼입 ACTIVE: krw+usd 실데이터)·R1(UNIQUE) 라이브 확정. payments/notifications 라이브 부재 확정. perf 62 rls_initplan/62 multi-policy/134 unused-index.
+- **0.10 완전화 감사**(§O~§R): 3 감사 에이전트 + 라이브 검증. **N33**(site_settings 어떤 스키마에도 부재 → D-11 설정·D-8 CMS·홈카드 영속 전부 무력, BLOCKER)·**B-1**(노쇼가 위약금 아닌 전액 청구, 돈 BLOCKER)·B-2(layout onAuthStateChange 없음)·B-3(상태 state machine 없음)·M-4(투어 DELETE 예약무시)·M-6(KST 타임존)·M-7(형제로케일 덮어쓰기)·M-8(layout 프로필 자동생성). §G-6 DDL **12 정정 델타**(O.3) — C#3 FOR UPDATE는 라이브 probe로 **REFUTED**(구문 유효). 누락 횡단 워크스트림 WS-A~J(관측성·테스트·롤백·rate-limit·i18n·a11y·perf·DR·RBAC·시크릿). 업그레이드 U-1~U-10(§P). 준비사양 §Q(N27 SQL·정합 런북·Phase1 턴키). **실행 WBS §R**(PR단위 티켓 R0~R9).
 
 ## L-2. 다음 할 일 (우선순위)
 1. ✅ **③ §G 정산/세무 데이터모델 + 마이그레이션 브리지 — 완료**(§G-6). 다음 세션은 이 설계를 Phase 4 마이그레이션으로 구현(사용자 승인 + §J #2/#6/#8~10 입력 후).
 2. **사용자 결정 대기(블로킹):**
    - **§J #11 — 공개 보안 트랙**: §M의 N11/N13/N14/N16(BLOCKER IDOR/무인증) 등을 **어드민 Phase와 별개로 즉시 패치할지** 결정. (이건 어드민 개편이 아니라 라이브 서비스 보안 — 가장 시급할 수 있음.)
    - **§J #2 소유구조 / #6 원가소스 / #8~10 정산 정책** — Phase 4·6 블로커.
-3. ✅ **④ 라이브 DB 대조 — 완료**(§N). atockorea MCP는 **이미 연결돼 있었음**(`mcp__atockorea__*` 사용). K-0 해소. 신규 라이브 결함(N27 BLOCKER·N28~N32·마이그레이션 드리프트) 도출, §G-6 DDL 충돌0 확정.
-4. **신규 선행 게이트(§N):**
-   - **§N.1 마이그레이션 정합** — repo `migrations/`가 라이브와 갈림 → `db pull` baseline + pending-db-apply 정식화 + CI drift 체크. **Phase 4(정산 마이그레이션 포함)의 안전 배포 전제.** (§J #12)
-   - **N27 즉시 차단** — analytics maintenance 함수 `REVOKE EXECUTE FROM PUBLIC, anon, authenticated`(정산 RPC 패턴 복제). 한 줄. (§J #11)
-5. 이후: Phase 1(기능 안정화 — §D BLOCKER + N2/**N23/N27**) → 2(디자인 토큰) → 3(UI 개편) → 4(데이터 — **§N.1 정합 선행** + §G-6 정산 마이그레이션 + N25/N28~N31) → 5(통계 — +N22 + perf 62/62/134) → 6(세무 SIGN-OFF 후) → 7(신규기능 — +N24) → 8(검증). **🔒 공개 보안 트랙은 별도 PR**(§M.3).
+3. ✅ **④ 라이브 DB 대조 — 완료**(§N). atockorea MCP는 **이미 연결돼 있었음**(`mcp__atockorea__*` 사용). K-0 해소.
+4. ✅ **⑤ 플랜 완전화 감사 — 완료**(§O~§R). 모든 가능 문제·업그레이드 상정 → §O(완전화)·§P(업그레이드)·§Q(준비사양)·§R(WBS). 실제 코드/DB 구현만 제외하고 준비스텝 완료.
+5. **실행 = §R WBS 순서** (PR단위):
+   - **R0 선행 게이트**(코드 전): R0.1 N27 REVOKE(§Q-1, 1줄·즉시) → R0.2 마이그레이션 정합(§Q-2 런북) → R0.3 미진단 라우트 진단(§O.1).
+   - **R1 기능 안정화** → R2 토큰 → R3 UI → R4 데이터(§G-6 O.3 델타 반영) → R5 통계 → R6 세무(SIGN-OFF 후) → R7 신규기능 → R8 검증.
+   - **R9 🔒 공개 보안 트랙**(별도 PR, 어드민 독립): N11/N13/N14/N16/N27/N28~N30/N15/N17~21/N24.
+6. **사용자 결정 대기(블로킹)**: §J #11(공개보안 트랙)·#12(마이그레이션 정합)·#13(RLS no-policy)·#2/#6/#8~10(정산·세무). + 코드/DB 수정 착수 승인(지금까지 플랜만).
 
 ## L-3. 절대 잊지 말 컨텍스트 / 함정
 - **코드 수정 착수 전 사용자 승인 필수** (지금까지 "플랜만"). 착수 시 Phase 1부터.
