@@ -16,6 +16,36 @@
  */
 
 import type { TourProductDetailViewModel } from "@/components/product-tour-static/_shared/tourProductFullPageJsonTypes";
+import { getStaticTourProductBySlug } from "@/components/product-tour-static/catalog/staticTourCatalogCards";
+
+/**
+ * Every tour's booking flow offers a guide in English, Chinese, or Korean
+ * (see LANG_OPTIONS in bookingShared) — a sourced, accurate basis for
+ * `inLanguage` rather than guessing per tour.
+ */
+const GUIDE_LANGUAGES = ["en", "zh", "ko"] as const;
+
+/**
+ * Conservative tour-type label from the hero pills + price basis. Returns a
+ * label ONLY when the format is explicit (a "private vehicle"/"bus tour"/"small
+ * group" cue or per-vehicle pricing); otherwise `undefined` so we omit rather
+ * than mislabel. The shared `inferTourCatalogType` heuristic is tuned for DB
+ * catalogue rows and over-defaults to "bus" on view-model inputs, so we don't
+ * use it here.
+ */
+function deriveTourTypeLabel(
+  pills: readonly string[] | undefined,
+  per: string | undefined,
+): string | undefined {
+  const hay = (pills ?? []).join(" ").toLowerCase();
+  const unit = (per ?? "").toLowerCase();
+  if (unit === "vehicle" || /private vehicle|private tour|private car|licensed driver/.test(hay)) {
+    return "Private tour";
+  }
+  if (/coach tour|bus tour|large coach|\bcoach\b/.test(hay)) return "Bus tour";
+  if (/small.?group/.test(hay)) return "Small-group tour";
+  return undefined;
+}
 
 type StaticQuestion = { id?: string | number; question: string; answer: string };
 
@@ -156,6 +186,12 @@ export function buildTourProductJsonLd(vm: ViewModelLike, slug: string): unknown
   const price = safePrice(vm);
   const offer = price ? buildOffer(vm, url, price) : null;
 
+  // Derived (not authored) facts, only when accurate: tour-type label from the
+  // explicit pill/price cue (omitted when ambiguous); max group size from the
+  // catalogue registry (omitted when the slug isn't in it). No fabrication.
+  const tourTypeLabel = deriveTourTypeLabel(vm.hero?.pills, vm.price?.per);
+  const maxGroupSize = getStaticTourProductBySlug(slug)?.maxGroupSize;
+
   const product: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -165,6 +201,7 @@ export function buildTourProductJsonLd(vm: ViewModelLike, slug: string): unknown
     description: vm.hero?.tagline ?? undefined,
     brand: { "@type": "Brand", name: "AtoC Korea" },
   };
+  if (tourTypeLabel) product.category = tourTypeLabel;
 
   if (offer) product.offers = offer;
 
@@ -199,11 +236,15 @@ export function buildTourProductJsonLd(vm: ViewModelLike, slug: string): unknown
       name: "AtoC Korea",
       url: siteOrigin(),
     },
+    inLanguage: [...GUIDE_LANGUAGES],
   };
   const duration = isoDuration(vm.hero?.meta?.duration);
   if (duration) trip.duration = duration;
   const bestFor = (vm.whyTourWorks?.bestFor ?? []).filter(Boolean);
   if (bestFor.length > 0) trip.touristType = bestFor;
+  if (typeof maxGroupSize === "number" && maxGroupSize > 0) {
+    trip.maximumAttendeeCapacity = maxGroupSize;
+  }
   if (offer) trip.offers = offer;
   blocks.push(trip);
 
