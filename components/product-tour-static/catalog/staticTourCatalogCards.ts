@@ -57,7 +57,7 @@ type SlugOverride = {
 const SLUG_OVERRIDES: Record<string, SlugOverride> = {
   "east-signature-nature-core": { listPriceUsd: 59, compareAtPriceUsd: 69, maxGroupSize: 8 },
   "jeju-grand-highlights-loop": { listPriceUsd: 79, compareAtPriceUsd: 89, maxGroupSize: 8 },
-  "southwest-hallasan-osulloc-aewol": { listPriceUsd: 59, compareAtPriceUsd: 69, maxGroupSize: 8 },
+  "southwest-hallasan-osulloc-aewol": { listPriceUsd: 52, maxGroupSize: 8 },
   "busan-gyeongju-unesco-legacy-tour-national-museum": { listPriceUsd: 39, compareAtPriceUsd: 50, maxGroupSize: 8 },
   "busan-small-group-sightseeing-tour-cruise-passengers": { listPriceUsd: 79, compareAtPriceUsd: 85, maxGroupSize: 8 },
   "busan-top-attractions-day-tour": { listPriceUsd: 29, compareAtPriceUsd: 41, maxGroupSize: 12 },
