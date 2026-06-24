@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { requireAdmin } from '@/lib/auth';
+import {
+  isValidAdminStatus,
+  isAllowedStatusTransition,
+} from '@/lib/admin/booking-status-transition';
 
 export const dynamic = 'force-dynamic';
 
@@ -119,7 +123,25 @@ export async function PUT(
         { status: 400 }
       );
     }
-    if (body.status !== undefined) updateData.status = body.status;
+    if (body.status !== undefined) {
+      // B-3: validate the value and the transition (state machine) so illegal
+      // moves like completed→pending / cancelled→confirmed and arbitrary strings
+      // can't be written.
+      const next = String(body.status);
+      if (!isValidAdminStatus(next)) {
+        return NextResponse.json(
+          { error: `Invalid status '${next}'. Allowed: pending, confirmed, completed, cancelled.` },
+          { status: 400 }
+        );
+      }
+      if (!isAllowedStatusTransition(existing.status as string, next)) {
+        return NextResponse.json(
+          { error: `Illegal status transition: ${existing.status} → ${next}.` },
+          { status: 400 }
+        );
+      }
+      updateData.status = next;
+    }
 
     if (Object.keys(updateData).length === 0) {
       return NextResponse.json({ error: 'No fields to update' }, { status: 400 });
