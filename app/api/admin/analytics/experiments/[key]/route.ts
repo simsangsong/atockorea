@@ -9,7 +9,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { createServerClient } from '@/lib/supabase';
 import { requireAdmin, adminAuthJsonResponse, AdminAuthFailure } from '@/lib/auth';
-import { chiSquare2x2PValue } from '@/lib/analytics/experiment-assignment';
+import { aggregateExperimentVariants, type ExperimentEvent } from '@/lib/analytics/experiment-stats';
+import type { MatchableStep } from '@/lib/analytics/event-match';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -63,10 +64,14 @@ export async function GET(
   const variants = (exp.variants as Array<{ key: string; weight: number; label?: string }>) ?? [];
   const expKey = exp.key as string;
 
-  // Pull all events in window that have this experiment assignment set
+  // Pull all events in window that have this experiment assignment set. payload +
+  // context columns are needed so the conversion step's filter can be applied
+  // (D-15: the conversion filter used to be dropped via `void conversionFilter`).
   const { data: evs, error: evErr } = await supabase
     .from('analytics_events')
-    .select('event_name, session_id, anonymous_id, experiment_assignments, server_ts')
+    .select(
+      'event_name, session_id, anonymous_id, experiment_assignments, server_ts, payload, page_path, locale, device_class',
+    )
     .gte('server_ts', startIso)
     .not('experiment_assignments', 'is', null)
     .limit(200_000);
@@ -74,87 +79,35 @@ export async function GET(
     return NextResponse.json({ error: 'query_failed', message: evErr.message }, { status: 500 });
   }
 
-  // Build per-variant: sessions + conversion sessions
-  const sessionsByVariant = new Map<string, Set<string>>();
-  const conversionsByVariant = new Map<string, Set<string>>();
-
-  // Pull funnel definition if primary_metric_funnel_key is set
-  let conversionEventName: string | null = null;
-  let conversionFilter: Record<string, unknown> | null = null;
+  // Pull funnel definition if primary_metric_funnel_key is set. The conversion is
+  // the funnel's final step (event name + filter).
+  let conversionStep: MatchableStep | null = null;
   if (exp.primary_metric_funnel_key) {
     const { data: funnel } = await supabase
       .from('analytics_funnels')
       .select('steps')
       .eq('key', exp.primary_metric_funnel_key)
       .maybeSingle();
-    const steps = (funnel?.steps as Array<{ event_name: string; filter?: Record<string, unknown> | null }>) ?? [];
+    const steps = (funnel?.steps as MatchableStep[]) ?? [];
     const last = steps[steps.length - 1];
-    if (last) {
-      conversionEventName = last.event_name;
-      conversionFilter = last.filter ?? null;
-    }
+    if (last) conversionStep = { event_name: last.event_name, filter: last.filter ?? null };
   }
 
-  for (const row of evs ?? []) {
-    const assignments = (row.experiment_assignments as Record<string, string>) ?? {};
-    const variant = assignments[expKey];
-    if (!variant) continue;
-
-    let sset = sessionsByVariant.get(variant);
-    if (!sset) {
-      sset = new Set();
-      sessionsByVariant.set(variant, sset);
-    }
-    sset.add(row.session_id as string);
-
-    if (conversionEventName && row.event_name === conversionEventName) {
-      // Apply payload filter if any (very lightweight match — only simple key/val)
-      // For full match logic, the funnel route does the heavy lifting; here we
-      // accept the looser "event name match" approximation.
-      void conversionFilter;
-      let cset = conversionsByVariant.get(variant);
-      if (!cset) {
-        cset = new Set();
-        conversionsByVariant.set(variant, cset);
-      }
-      cset.add(row.session_id as string);
-    }
-  }
-
-  const variantStats = variants.map((v) => {
-    const sessions = sessionsByVariant.get(v.key)?.size ?? 0;
-    const conversions = conversionsByVariant.get(v.key)?.size ?? 0;
-    const rate = sessions === 0 ? 0 : conversions / sessions;
-    return {
-      key: v.key,
-      label: v.label ?? v.key,
-      weight: v.weight,
-      sessions,
-      conversions,
-      conversion_rate: rate,
-    };
-  });
-
-  // Pairwise chi-square — compare each variant against the first variant (control)
-  let chiSquare: ReturnType<typeof chiSquare2x2PValue> | null = null;
-  if (variantStats.length >= 2 && conversionEventName) {
-    const control = variantStats[0];
-    const challenger = variantStats[1];
-    chiSquare = chiSquare2x2PValue(
-      control.conversions,
-      control.sessions - control.conversions,
-      challenger.conversions,
-      challenger.sessions - challenger.conversions,
-    );
-  }
+  const { variant_stats, chi_square, pairwise_chi_square } = aggregateExperimentVariants(
+    (evs ?? []) as ExperimentEvent[],
+    expKey,
+    variants,
+    conversionStep,
+  );
 
   return NextResponse.json({
     experiment: exp,
     range,
     start: startIso,
-    conversion_event_name: conversionEventName,
-    variant_stats: variantStats,
-    chi_square: chiSquare,
+    conversion_event_name: conversionStep?.event_name ?? null,
+    variant_stats,
+    chi_square,
+    pairwise_chi_square,
     summary: {
       events_scanned: (evs ?? []).length,
     },

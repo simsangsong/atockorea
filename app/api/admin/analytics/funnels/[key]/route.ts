@@ -8,6 +8,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { requireAdmin, adminAuthJsonResponse, AdminAuthFailure } from '@/lib/auth';
+import { eventMatchesStep } from '@/lib/analytics/event-match';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -51,40 +52,6 @@ type RawEvent = {
   country_code: string | null;
   server_ts: string;
 };
-
-function eventMatchesStep(ev: RawEvent, step: FunnelStep): boolean {
-  if (ev.event_name !== step.event_name) return false;
-  const filter = step.filter;
-  if (!filter || typeof filter !== 'object') return true;
-
-  for (const [k, expected] of Object.entries(filter)) {
-    if (expected === null || expected === undefined) continue;
-    // Special-case context-column filters
-    if (k === 'page_path') {
-      if (ev.page_path !== expected) return false;
-      continue;
-    }
-    if (k === 'page_path_like') {
-      if (!ev.page_path) return false;
-      const pattern = String(expected).replace(/%/g, '.*').replace(/_/g, '.');
-      const rx = new RegExp(`^${pattern}$`);
-      if (!rx.test(ev.page_path)) return false;
-      continue;
-    }
-    if (k === 'locale') {
-      if (ev.locale !== expected) return false;
-      continue;
-    }
-    if (k === 'device_class') {
-      if (ev.device_class !== expected) return false;
-      continue;
-    }
-    // Otherwise: payload key match
-    const payload = ev.payload ?? {};
-    if ((payload as Record<string, unknown>)[k] !== expected) return false;
-  }
-  return true;
-}
 
 function breakdownKey(ev: RawEvent, key: BreakdownKey): string {
   if (key === 'locale') return ev.locale ?? '(none)';
