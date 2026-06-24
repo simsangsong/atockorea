@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { requireAdmin } from '@/lib/auth';
 import { createMerchantRateLimit } from '@/lib/rate-limit';
-import crypto from 'crypto';
+import { generateTempPassword } from '@/lib/admin/temp-password';
 
 /**
  * POST /api/admin/merchants/create
@@ -42,8 +42,8 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Generate temporary password
-    const tempPassword = crypto.randomBytes(12).toString('base64').slice(0, 16) + '!Aa1';
+    // Generate temporary password (crypto-strong; delivered by email only)
+    const tempPassword = generateTempPassword();
     
     // Create user account in Supabase Auth
     const { data: authData, error: authError } = await supabase.auth.admin.createUser({
@@ -140,6 +140,7 @@ export async function POST(req: NextRequest) {
     }
 
     // Send welcome email with login credentials
+    let emailSent = false;
     try {
       const { sendMerchantWelcomeEmail } = await import('@/lib/email');
       const emailResult = await sendMerchantWelcomeEmail({
@@ -152,27 +153,28 @@ export async function POST(req: NextRequest) {
       });
 
       if (emailResult.success) {
+        emailSent = true;
         console.log(`Welcome email sent to ${contact_email} for merchant ${merchant.id}`);
       } else {
         console.error(`Failed to send welcome email: ${emailResult.error}`);
-        // Continue even if email fails - credentials are still returned in response
       }
     } catch (emailError) {
       console.error('Error sending merchant welcome email:', emailError);
       // Continue even if email fails
     }
-    const credentials = {
-      email: contact_email,
-      temporaryPassword: tempPassword,
-      loginUrl: `${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/merchant/login`,
-      message: 'Please change password on first login',
-    };
 
+    // D-4: never return the plaintext temporary password in the API response
+    // (it leaks into logs/proxies/clients). The merchant receives it by email;
+    // if the email failed, the admin should trigger a password reset rather than
+    // surface the secret here.
     return NextResponse.json(
       {
         merchant,
-        credentials, // Remove this in production, send via email instead
-        message: 'Merchant account created successfully. Credentials sent to email.',
+        emailSent,
+        loginUrl: `${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/merchant/login`,
+        message: emailSent
+          ? 'Merchant account created. Login credentials were emailed to the merchant.'
+          : 'Merchant account created, but the welcome email failed to send. Use “reset password” to re-issue credentials.',
       },
       { status: 201 }
     );

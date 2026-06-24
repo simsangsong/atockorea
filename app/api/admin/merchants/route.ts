@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { AdminAuthFailure, adminAuthJsonResponse, requireAdmin } from '@/lib/auth';
 import { getMerchantProfileMap } from '@/lib/admin/merchant-profiles';
+import { generateTempPassword } from '@/lib/admin/temp-password';
 
 /**
  * GET /api/admin/merchants
@@ -113,8 +114,9 @@ export async function POST(req: NextRequest) {
 
     // Create user account if requested
     if (createUser && !userId) {
-      // Generate temporary password
-      temporaryPassword = `Temp${Math.random().toString(36).slice(-8)}!`;
+      // Generate temporary password (crypto-strong; delivered by email only).
+      // S-F2: Math.random() is not a CSPRNG.
+      temporaryPassword = generateTempPassword();
       
       const { data: authData, error: authError } = await supabase.auth.admin.createUser({
         email: contactEmail,
