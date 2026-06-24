@@ -1211,6 +1211,30 @@ input[type="time"]::-webkit-calendar-picker-indicator {
       font-size: 16px;
     }
   }
+  /* Admin skeleton shimmer (W1.6 / spec §4.5) — used by <Skeleton>. */
+  @keyframes admin-shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+  .admin-shimmer {
+    background-image: linear-gradient(
+      90deg,
+      var(--admin-surface-hover) 25%,
+      var(--admin-border) 37%,
+      var(--admin-surface-hover) 63%
+    );
+    background-size: 200% 100%;
+    animation: admin-shimmer 1.4s ease-in-out infinite;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .admin-shimmer {
+      animation: none;
+    }
+  }
   * {
     border-color: var(--border);
     outline-color: var(--ring);
