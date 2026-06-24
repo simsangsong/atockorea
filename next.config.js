@@ -135,6 +135,37 @@ const nextConfig = {
       },
     ];
   },
+  /**
+   * N20 — baseline security response headers (previously absent entirely).
+   *
+   * Scope is the safe, framework-agnostic subset that does not risk breaking
+   * third-party embeds (Stripe Elements, Google Maps, LINE OAuth):
+   *   - HSTS: force HTTPS for a year (prod is HTTPS-only behind Vercel).
+   *   - X-Content-Type-Options: stop MIME sniffing.
+   *   - X-Frame-Options + frame-ancestors: block clickjacking via framing.
+   *   - Referrer-Policy: don't leak full URLs (which can carry bookingId/token).
+   *   - Permissions-Policy: drop powerful features we never use.
+   * A full Content-Security-Policy is intentionally deferred — our pages load
+   * inline Stripe/Maps scripts and would need a nonce/allowlist pass first
+   * (tracked separately) to avoid breaking checkout and map tiles.
+   */
+  async headers() {
+    const securityHeaders = [
+      {
+        key: 'Strict-Transport-Security',
+        value: 'max-age=31536000; includeSubDomains',
+      },
+      { key: 'X-Content-Type-Options', value: 'nosniff' },
+      { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
+      { key: 'Content-Security-Policy', value: "frame-ancestors 'self'" },
+      { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+      {
+        key: 'Permissions-Policy',
+        value: 'camera=(), microphone=(), geolocation=(self), browsing-topics=()',
+      },
+    ];
+    return [{ source: '/:path*', headers: securityHeaders }];
+  },
   generateBuildId: async () => `build-${Date.now()}`,
   /** Slow disks / AV scans can hit default chunk load timeouts in dev (ChunkLoadError on app/layout). */
   webpack: (config, { dev, isServer }) => {
