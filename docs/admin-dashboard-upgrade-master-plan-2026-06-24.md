@@ -30,7 +30,8 @@
 | 0.7 | §E/§F 기능 설계 사양 (§K-7) — DDL + 이벤트 taxonomy | ✅ 완료 | 마이그레이션 대조 후 quote_drafts·빌더 이벤트+funnel·귀속FK+익명화정합(R4/N1)·audit 헬퍼·unified_inquiries 뷰·상품 funnel matview 구체 DDL |
 | 0.75 | §G 정산/세무 데이터모델 + 마이그레이션 브리지 (§G-6) | ✅ 완료 | RPC/스키마/settle 라우트 직접 재검증(F1~F8). tours.cost_price·bookings 원가/FX/Stripe·settlements 통화/basis DDL + RPC v2(원가기준·통화강제) + R1 라벨링 브리지 + R2 배포동기화 + R3 FX 강등. 신규 결함: RPC 통화혼입(F3) |
 | 0.8 | Codex 플랜 리뷰 통합 (§M) — 인접범위 전체스택 감사 | ✅ 완료 | 3 감사 에이전트 file:line 검증. N11~N26 신규(공개 보안 BLOCKER 4 + MAJOR 다수) + 정정 로그(REFUTED 2: RAG·reviews버킷 / IMPRECISE 6). 별도 doc 생성 거부(단일 SoT). 공개 보안 트랙 분리 권고 |
-| 1 | 기능 안정화 (BLOCKER/MAJOR 버그 수정) | ⏳ 대기 | §D. 코드는 멀쩡해 보이나 깨진 기능 우선. + N23(cron fail-open) BLOCKER |
+| 0.9 | 라이브 DB 대조 (§N) — K-0 해소 | ✅ 완료 | atockorea MCP 라이브 연결. **마이그레이션 드리프트(repo≠live, BLOCKER급 거버넌스)** 발견. N1 REFUTED→드리프트 재분류. **N27(anon-exec PII 익명화 RPC, BLOCKER)**·N28~N32 + perf 62/62/134. §G-6 DDL 충돌0·F1~F3/R1 라이브 확정. D-14·notifications·payments부재 확정 |
+| 1 | 기능 안정화 (BLOCKER/MAJOR 버그 수정) | ⏳ 대기 | §D. 코드는 멀쩡해 보이나 깨진 기능 우선. + N23(cron fail-open)·**N27(anon-exec RPC)** BLOCKER. **§N.1 마이그레이션 정합이 Phase 0 선행** |
 | 2 | 디자인 시스템 통합 (토큰·팔레트·타이포·i18n) | ⏳ 대기 | §H.1. 모든 페이지 개편의 선행 조건 |
 | 3 | 페이지별 UI/UX 개편 | ⏳ 대기 | §H.2~. Phase 2 토큰 위에서 한 페이지씩 |
 | 4 | 데이터 모델 확장 (정산 원가/수수료·귀속·감사로그·견적 이탈) | ⏳ 대기 | §E·§F·§G. 마이그레이션 + 백필 |
@@ -41,7 +42,7 @@
 
 상태 마커: ⏳ 대기 / 🔄 진행 중 / ⏸ 보류 / ✅ 완료 / ❌ 중단
 
-**현재 활성 Phase: Phase 0~0.8(진단·검증·UI감사·기능설계·§G정산설계·Codex통합) 모두 완료 — 코드는 미수정. 다음 액션 = 사용자 결정(§J #11 공개보안 트랙 착수 여부 + §J #2/#6/#8~10 정산·세무 입력) → Phase 1 착수. Phase 1 BLOCKER = §D 6건 + N1(익명화 RPC 미배포)·N2(업로드 검증 dead code)·N23(cron fail-open). 🔒 공개 보안 BLOCKER(N11/N13/N14/N16)는 별도 트랙(§M.3).**
+**현재 활성 Phase: Phase 0~0.9(진단·검증·UI감사·기능설계·§G정산설계·Codex통합·라이브DB대조) 모두 완료 — 코드는 미수정. 다음 액션 = 사용자 결정(§J #11 공개보안 트랙 + §J #2/#6/#8~10 정산·세무 입력) → Phase 1 착수. Phase 1 BLOCKER = §D 6건 + N2(업로드 검증 dead code)·N23(cron fail-open)·N27(anon-exec PII RPC). N1은 §N.1 마이그레이션 드리프트로 재분류(라이브 함수는 실재). 🔒 공개 보안 BLOCKER(N11/N13/N14/N16/N27)는 별도 트랙(§M.3). ⚠️ §N.1 repo≠live 마이그레이션 정합이 Phase 4 데이터 작업의 선행 게이트.**
 
 > 실행 순서 원칙: **Phase 1(기능 안정화) → 2(디자인 토큰) → 3(UI 개편)** 은 사용자 체감 라인. **Phase 4(데이터) → 5(통계) → 6(세무)** 는 데이터 라인으로 병행 가능. Phase 6은 §J 세무 SIGN-OFF가 없으면 시작 금지.
 
@@ -84,6 +85,7 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 | 2026-06-24 | Phase 0.7 — §E/§F 기능 설계(§K-7). quote_drafts·빌더 이벤트+funnel·귀속FK+익명화정합·audit 헬퍼·unified_inquiries·상품 funnel matview DDL. 실제 스키마(contact_inquiries/audit_logs/bookings/analytics_funnels/matview) 대조 | (this) | event_name free-form·payload 평면스칼라 확인 → 신규 이벤트 등록 불필요 |
 | 2026-06-24 | Phase 0.75 — §G-6 정산/세무 데이터모델+마이그레이션 브리지. RPC 본문/GRANT/settle 라우트/스키마 직접 재검증(F1~F8). 신규 DDL(tours.cost_price·bookings 11컬럼·settlements basis/통화·merchants W-8) + RPC v2(원가기준·1정산1통화) + R1 라벨링 브리지 + R2 원자배포 체크리스트 + R3 FX 강등 + J-8~J-10 | (this) | 신규 결함 F3: RPC가 통화필터 없이 final_price SUM → usd/krw 혼입 |
 | 2026-06-24 | Phase 0.8 — §M Codex 리뷰 통합. 3 감사 에이전트(공개커머스/보안인프라/데이터RAG성능) file:line 검증. N11~N26 + R5/R6 REFUTED + P1~P3. 별도 deep-audit doc 생성 거부(단일 SoT). 공개 보안 트랙 분리 | (this) | Codex 21주장 중 REFUTED 2(RAG 완전연결·reviews=폴더)·IMPRECISE 6 — 무검증 인용 차단 |
+| 2026-06-24 | Phase 0.9 — §N 라이브 DB 대조(atockorea MCP). 마이그레이션 드리프트(repo 32 vs live 48, ~9만 일치)·N1 REFUTED→드리프트·N27 anon-exec PII RPC(BLOCKER)·N28~N32·perf 62/62/134. §G-6 DDL 라이브 충돌0, F1~F3/R1 라이브 확정 | (this) | K-0 해소. pending-db-apply 수동 워크플로가 드리프트 원인. payments/notifications 라이브 부재 확정 |
 
 ---
 
@@ -513,7 +515,9 @@ GRANT EXECUTE ON FUNCTION public.create_merchant_settlement(uuid,date,date,text,
 8. 🔲 **1정산=1통화 강제 적합성**(§G-6.7) — 다통화 머천트는 통화별 분리 정산으로 운영 OK인지.
 9. 🔲 **원가 역전(operational_fee < 0) 처리 정책**(§G-6.7) — customer < merchant_cost 건 차단/경고/허용.
 10. 🔲 **`revenue_treatment` 기록 시점**(§G-6.7) — 예약 생성 vs 정산 vs 결산 중 언제 gross/net 확정.
-11. 🔲 **공개 보안 트랙 착수 승인**(§M.4) — N11/N13/N14/N16 등 어드민과 별개의 즉시 라이브 리스크를 별도 PR로 우선 패치할지 / 어드민 Phase 1과 병행할지.
+11. 🔲 **공개 보안 트랙 착수 승인**(§M.4/§N.3) — N11/N13/N14/N16/**N27**(라이브 확정 BLOCKER) 등 어드민과 별개의 즉시 라이브 리스크를 별도 PR로 우선 패치할지 / 어드민 Phase 1과 병행할지. **N27은 REVOKE 한 줄로 즉시 차단 가능.**
+12. 🔲 **마이그레이션 정합(§N.1) 착수 승인** — repo `migrations/`가 라이브와 크게 갈림(pending-db-apply 수동 워크플로). `db pull` baseline + 정식화 + CI drift 체크. **Phase 4 정산 마이그레이션의 안전 배포 선행 조건.**
+13. 🔲 **RLS-no-policy 13개 테이블 의도 확인**(§N.3 N31) — service_role 전용 의도면 정상, user-readable 의도면 정책 누락.
 
 ---
 
@@ -535,10 +539,10 @@ GRANT EXECUTE ON FUNCTION public.create_merchant_settlement(uuid,date,date,text,
 
 > 목적: 1차 플랜(§D~§J)의 모든 주장을 **실제 코드/마이그레이션과 재대조**하여 오류·과장·로직모순·잠재위험을 잡고, 신규 결함·업그레이드 여지를 추가. 방법: 3개 독립 코드감사 에이전트(§D-1~9 / §D-10~15 / §G·§E·§F)가 인용 file:line을 직접 열어 CONFIRMED/REFUTED/IMPRECISE/STALE 판정 + 증거 인용. 결과: 핵심 주장 대부분 CONFIRMED, 아래 정정/신규 항목 도출. §D/§D-15 본문은 위에서 직접 수정 완료, 여기엔 전체 감사 기록을 보존.
 
-## K-0. 라이브 DB 검증 한계 (중요)
-- 이 세션의 Supabase MCP는 **다른 프로젝트("Kursoflow", ref `thgyevrqykkscvcpwmfp")에 연결**돼 있음 — atockorea(`config.toml` project_id=`atockorea`, 실제 ref `cghyvbwmijqpahnoduyv`)가 아님. atockorea의 어떤 테이블(bookings/merchants/tours/analytics_events/chat_messages/settlements 등)도 거기 없음.
-- 따라서 **라이브 배포 DB 직접 검증은 불가**. 모든 DB 주장은 **repo 마이그레이션 파일 기준**(코드가 기대하는 스키마의 single source of truth)으로 검증됨. 1차 분석이 "live 존재 불확실"로 표기한 `payments` 등은 여전히 미확인.
-- **액션 필요**: 라이브 검증을 원하면 atockorea Supabase 프로젝트를 이 세션 MCP에 연결. (배포 누락 RPC — K-2 N1 — 확인의 전제이기도 함.)
+## K-0. 라이브 DB 검증 한계 → ✅ 해소 (2026-06-24, §N 참조)
+- ~~이 세션의 Supabase MCP는 다른 프로젝트(Kursoflow)에 연결~~ → **정정/해소:** `~/.claude.json` mcpServers에 **`atockorea` 서버가 올바른 project_ref(`cghyvbwmijqpahnoduyv`)로 이미 구성**돼 있었음. 이전 세션이 `mcp__atockorea__*` 도구를 안 썼을 뿐. 설정 변경 불필요.
+- **§N에서 라이브 직접 검증 완료**(테이블 70개·RPC·제약·트리거·정책·advisor). 미검증 잔여 없음. `payments`는 **라이브 부재로 확정**(§N.4), N1 함수는 **라이브 실재**(§N.2 — 진짜 문제는 repo 드리프트 §N.1).
+- (역사 보존) 1차~0.7 단계의 DB 주장은 repo 마이그레이션 기준이었고, §N에서 라이브와 대조해 대부분 확정·일부 재분류(N1).
 
 ## K-1. 정정 항목 (플랜 본문 반영 완료)
 | ID | 위치 | 정정 내용 |
@@ -844,7 +848,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS idx_product_funnel_daily_unique ON public.anal
 | P3 | IMPRECISE | builder POI payload는 **~100-400KB/지역 추정**(1MB+ 아님 — Codex 과장). `content_locales` 6-locale JSONB가 지배적. `force-dynamic`·무압축. | 압축/컬럼 슬림/캐시 후보. `itinerary-builder/pois/route.ts:37`, `poi_kb json 296KB` |
 
 ## M.3 플랜 편입 결정
-1. **🔒 공개 보안 트랙 신설(별도, 어드민 Phase와 독립):** N11·N13·N14·N16(BLOCKER) + N15·N17·N18·N19·N20·N12·N21(MAJOR/NOTE). **어드민 대시보드 개편과 무관하나 라이브 서비스의 즉시 리스크** → 사용자에게 **별도 보안 하드닝 PR 트랙**으로 분리 권고(이 플랜의 Phase 1~8에 섞지 않음 — 범위·배포 단위 상이). §J에 게이트로 등재.
+1. **🔒 공개 보안 트랙 신설(별도, 어드민 Phase와 독립):** N11·N13·N14·N16·**N27**(BLOCKER) + N15·N17·N18·N19·N20·N12·N21·**N28·N29·N30**(MAJOR/MINOR). **어드민 대시보드 개편과 무관하나 라이브 서비스의 즉시 리스크** → 사용자에게 **별도 보안 하드닝 PR 트랙**으로 분리 권고(이 플랜의 Phase 1~8에 섞지 않음 — 범위·배포 단위 상이). §J에 게이트로 등재. **N27(라이브 확정, §N.3)은 DB 한 줄 REVOKE로 즉시 차단 가능 — 최우선.**
 2. **⚙️ 어드민/인프라 — 기존 Phase 매핑:**
    - N23(cron fail-open) → **Phase 1 BLOCKER 추가**(N1·N2와 같은 "미배포/페일오픈 인프라" 묶음, U4 배포 게이트 확장).
    - N25(notifications 드리프트) → **Phase 4** 스키마 정합(N1 RPC 신설과 동일 마이그레이션 부류) + §E-5 알림센터 선행.
@@ -856,6 +860,68 @@ CREATE UNIQUE INDEX IF NOT EXISTS idx_product_funnel_daily_unique ON public.anal
 
 ## M.4 신규 오픈 입력 (§J 편입)
 - **J-11 🔲 공개 보안 트랙 착수 승인** — N11/N13/N14/N16 등은 어드민 개편과 별개의 **즉시 라이브 리스크**. 별도 PR로 우선 패치할지, 어드민 Phase 1과 병행할지 사용자 결정 필요.
+
+---
+
+# §N. 라이브 DB 대조 결과 (K-0 해소, Phase 0.9 — 2026-06-24)
+
+> §K-5 ④ 수행. **atockorea Supabase MCP가 라이브 연결됨**(project_ref `cghyvbwmijqpahnoduyv`, URL `https://cghyvbwmijqpahnoduyv.supabase.co`) — K-0의 "MCP 미연결" 한계 **해소**. 이전 세션은 `mcp__atockorea__*` 도구를 안 썼을 뿐, 설정은 이미 올바름(`~/.claude.json` mcpServers.atockorea, project_ref 정확). 이하 모든 주장은 **라이브 DB 직접 쿼리 + Supabase advisor 린트**로 검증.
+
+## N.0 연결·도구
+- 도구: `mcp__atockorea__{get_project_url,list_tables,execute_sql,list_migrations,get_advisors}`. 읽기 전용 조회만 수행(스키마 변경 0). 라이브 테이블 70개 확인(bookings 7행·tours 34·chat_messages 1382·analytics_events 3132·knowledge_chunks 2193 등).
+
+## N.1 ⚠️ 마이그레이션 드리프트 — repo ≠ live (BLOCKER급 거버넌스 결함, 신규)
+- **사실:** 라이브 마이그레이션 48개 vs repo `supabase/migrations/` 32개 중 **버전 일치 ~9개뿐.** repo는 라운드 타임스탬프(`…120000`/`…100000`/`…000000`), 라이브는 정밀(`…075806`/`…153016`). **라이브 전용 39개**(예: `analytics_maintenance_functions`·`anonymize_use_builtin_sha256`·`security_rls_hardening`·`function_search_path_hardening`·`agent_reservations`·`agent_channel_events`·`creative_studio_*`·`chatbot_rag_*`·`create_chat_memory`·`chat_feedback`)가 repo `migrations/`에 **없음**. repo 전용 23개는 라이브에 다른 버전으로 존재하거나 부재.
+- **원인:** `supabase/pending-db-apply/`(수동 SQL 스테이징, 예 `2026-06-24-08-agent-reservations.sql`·`-10-agent-channel-events.sql`가 라이브 전용 마이그레이션과 일치) + `supabase/manual/`로 **수기 적용** → 라이브 마이그레이션 히스토리만 갱신되고 repo `migrations/`는 미동기. `create_analytics_schema`는 repo `20260517140000` vs 라이브 `20260517062504`로 **버전·내용 모두 갈림**.
+- **함의(왜 BLOCKER급):** repo `migrations/`로 `supabase db reset`/CI/신규 환경 재현 시 **라이브와 다른 스키마 생성**(라이브 전용 39개 누락) → N1류 "코드는 호출하나 함수/테이블 없음"이 **재현 환경에서만 폭발**. `db push`는 버전 불일치로 전량 재적용 시도 위험. **repo는 라이브 스키마의 신뢰 가능한 SoT가 아님.**
+- **Phase 매핑:** Phase 0(데이터) 선행 과제로 **마이그레이션 정합(reconciliation)** 추가 — 라이브 스키마를 `supabase db pull`로 baseline 스냅샷화 + pending-db-apply 워크플로를 정식 마이그레이션으로 흡수 + CI drift 체크(U4 확장). **이게 안 되면 Phase 4 정산 마이그레이션도 안전 배포 불가.**
+
+## N.2 N1 재정의 — REFUTED(라이브) → 드리프트로 재분류
+- `anonymize_old_analytics(retention_days integer DEFAULT 90)`·`analytics_health_snapshot()`·`refresh_analytics_materialized_views()` **모두 라이브 실재**(SECURITY DEFINER). cron/health 라우트 호출명·인자 **일치**(cron은 `rpc('anonymize_old_analytics',{...})`, 기본값 90 → 인자 생략도 동작). ∴ **프로덕션에서 500 안 남** — 플랜 N1의 "미배포 → 무음 500"은 **라이브 기준 틀림**.
+- **단, repo `migrations/`엔 이 함수들의 CREATE가 없음**(§N.1) → N1의 본질은 "미배포"가 아니라 **repo 드리프트**(재현 환경에서만 부재). N1을 **§N.1 드리프트 항목으로 재분류**, 심각도는 유지(재현·CI 리스크).
+
+## N.3 🔴 신규 라이브 보안 결함 (Supabase advisor + 직접 확인)
+| ID | 심각도 | 결함 | 증거 |
+|---|---|---|---|
+| **N27** | 🔴 BLOCKER | `anonymize_old_analytics`·`refresh_analytics_materialized_views`·`analytics_health_snapshot`의 EXECUTE가 **PUBLIC·anon·authenticated에 부여** → **누구나 REST `/rest/v1/rpc/anonymize_old_analytics` 직접 호출로 비가역 PII 익명화/매트뷰 강제refresh DoS**. N23(cron fail-open)보다 심각 — cron 시크릿과 무관하게 DB-레벨에서 노출. **정산 RPC(`create_merchant_settlement`)는 `service_role`+`postgres`로 정확히 REVOKE됨** — 같은 패턴을 analytics 함수에 미적용한 누락. | advisor `anon_security_definer_function_executable` + `routine_privileges` grantee=PUBLIC/anon/authenticated. 정산 grant=service_role/postgres만 |
+| **N28** | 🟠 MAJOR | `contact_inquiries` INSERT 정책 `"Anyone can create contact inquiries"` **WITH CHECK (true)**(anon/authenticated) → DB-레벨 무제한 문의 생성(스팸/poisoning). SELECT/UPDATE는 admin-only(정상). 공개 폼 자체는 정상이나 **rate-limit·검증이 앱 레벨에만** 의존. | advisor `rls_policy_always_true` + pg_policies |
+| **N29** | 🟠 MAJOR | 매트뷰 `analytics_sessions_daily`·`analytics_events_daily`가 **anon/authenticated에 SELECT 노출**(Data API) → 집계 분석 데이터 공개 열람 가능. | advisor `materialized_view_in_api` |
+| **N30** | 🟡 MINOR | public 버킷 `product-images`·`tour-gallery`·`tour-images`가 **broad SELECT 정책으로 전체 파일 리스팅 허용**(객체 URL 접근엔 불필요). 파일 열거 노출. | advisor `public_bucket_allows_listing` |
+| **N31** | 🟡 INFO | RLS enabled·**정책 0개** 테이블 13개(`agent_channel_events`·`agent_reservations`·`chat_feedback`·`chat_memory`·`knowledge_chunks`·`verification_codes`·`tour_rooms`·`tour_room_messages`·`tour_audio_assets`·`tour_content_jobs`·`tour_generated_courses`·`tour_room_spot_events`·`tour_room_messages`). service_role 전용이면 정상(의도)이나, user-readable 의도면 깨진 것 → 의도 확인 필요. | advisor `rls_enabled_no_policy` |
+| **N32** | 🟡 WARN | 하드닝 잔여: `function_search_path_mutable` 2개(`tg_*_set_updated_at`), `extension_in_public`(`vector`·`pg_trgm`), Auth `leaked_password_protection` 비활성. | advisor |
+
+> N27은 §M의 N23(cron route fail-open)과 **합산 시 동일 표면의 2중 노출** — 앱 라우트와 DB RPC 양쪽 다 무방비. 수정: 두 analytics maintenance 함수에 `REVOKE EXECUTE FROM PUBLIC, anon, authenticated` + cron route 시크릿 강제(N23). **공개 보안 트랙(§M.3)에 N27 BLOCKER 추가.**
+
+## N.4 §G-6 정산/세무 DDL 라이브 정합 (충돌 0 — 안전)
+- **라이브 컬럼 대조(F1~F8 라이브 검증):**
+  - `bookings`: `currency`(default `'usd'` 소문자, NOT NULL)·`source`·`itinerary` **실재**(+ 라이브 추가분 `tax_amount`·`promo_code`·`promo_discount`·`paid_at`·`preferred_language`·`booking_reference`·`number_of_people` — archive보다 풍부). **§G-6.1 신규 11컬럼은 전부 부재** → `ADD COLUMN IF NOT EXISTS` 충돌 없음. ✓
+  - `settlements` 컬럼 = archive와 동일(currency/fee_basis/basis 컬럼 **부재**) → §G-6.1(c) 충돌 없음. ✓
+  - `settlement_bookings` 제약 = **`UNIQUE (booking_id)` 라이브 확인**(+FK 2·PK) → **R1 가드 라이브 실재 확정**. cost/통화 컬럼 부재 → §G-6.1 충돌 없음. ✓
+  - `settlements` 트리거 2개: **`update_booking_settlement_status_trigger`**(정산 시 `bookings.settlement_status` 자동 전이 — §G-6.2 RPC v2가 의존하는 동작, 별도 코드 불요)·`update_settlement_updated_at`. settlement_bookings 트리거 없음.
+  - `tours` 원가 컬럼·`merchants` 세무(w8/tax/us_person) 컬럼 **부재** → §G-6.1(a)(d) 충돌 없음. ✓
+  - `create_merchant_settlement` 라이브 시그니처 = `(p_merchant_id uuid, p_period_start date, p_period_end date, p_platform_fee_rate numeric)` — **F1(4-arg) 라이브 확정**. EXECUTE grant=`service_role`+`postgres`만 — **F2(REVOKE) 라이브 확정**. → §G-6.2 R2(시그니처 변경 시 GRANT 재발급) 그대로 유효.
+- **F3(통화 혼입) 라이브 ACTIVE 확정:** `bookings.currency` 실데이터에 **`krw`·`usd` 둘 다 존재**(7행). 현 RPC가 통화필터 없이 `SUM(final_price)` → 두 통화 혼산 위험이 **이론이 아니라 실재 데이터로 성립**. §G-6.2 "1정산=1통화" 강제 정당성 라이브 입증. (현재 `settlement_status`는 전부 `pending` → 아직 정산 0건이라 과거 동결(R1) 이슈는 미발생, 설계는 그대로 필요.)
+- **payments 테이블:** 라이브 **부재**(archive `:314` 정의되나 미배포) → F8 "존재 불확실"을 **부재로 확정**. 정산/결제 추적은 `bookings` 단일 테이블에 의존(payments 미사용).
+
+## N.5 데이터·기능 결함 라이브 재확인
+- **D-14 BLOCKER 확정:** `qa_pairs` 8행 **전부 `review_status='draft'`** → 쿼리의 `.eq('review_status','true'/'false')`는 영구 0행. 라이브 데이터로 재확인.
+- **D-1 null 크래시:** 현재 `bookings.final_price` null **0건**(7행 모두 채워짐) → 크래시는 **잠복**(데이터가 운 좋게 안전). 방어코드는 여전히 필요(미래 null 진입 시 폭발).
+- **빌더 funnel 부재 확정:** `analytics_funnels` 5개(`matcher_funnel`·`featured_pickup_funnel`·`idle_preview_funnel`·`destinations_funnel`·`tour_mode_funnel`) — **`builder_quote_funnel` 없음** → §K-7.2 시드 필요 확정.
+- **audit_logs 0행 / chat_feedback 0행 / chat_memory 0행** — §E-3(감사로그 미기록)·피드백 미수집 라이브 확인. **knowledge_chunks 2193행** → §M R5(RAG 완전연결) 라이브 재확증.
+- **N25(notifications) 라이브 CONFIRMED 부재** / quote_drafts·unified_inquiries·analytics_product_funnel_daily 부재(신규 대상, 예상대로).
+
+## N.6 성능 어드바이저 (Phase 5 / perf 트랙)
+283개 perf 린트: **unused_index 134**(INFO, 쓰기 오버헤드·블로트), **auth_rls_initplan 62**(WARN, RLS가 행마다 `auth.uid()` 재평가 → `(select auth.uid())`로 래핑 필요; repo에 `optimize_user_profiles_rls_auth_uid` 선례 있으나 62개 잔존), **multiple_permissive_policies 62**(WARN, 중복 허용정책 — 예 `emails` SELECT에 "Admins view all"+"Users view own" 동시 평가), **unindexed_foreign_keys 24**(INFO), **auth_db_connections_absolute 1**(Auth 커넥션 10 상한). → Phase 5/별도 perf 트랙. 정산·analytics 쿼리 스케일(§I 5만행) 전 RLS initplan·FK 인덱스 우선.
+
+## N.7 플랜 본문 반영 매핑
+| 항목 | 갱신 |
+|---|---|
+| K-0 | **해소** — 라이브 연결됨(§N.0). 잔여 "미검증"은 없음. |
+| N1 | REFUTED(라이브 실재) → **§N.1 마이그레이션 드리프트로 재분류**(재현/CI 리스크 유지). |
+| N25 / payments | 라이브 **부재 CONFIRMED**. |
+| R5(RAG) | knowledge_chunks 2193행으로 **라이브 재확증**. |
+| F1·F2·F3·R1 | 라이브 확정(§N.4). §G-6 DDL **충돌 0 — Phase 4 안전 배포 가능**(단 §N.1 드리프트 정합 선행). |
+| 신규 | **N27(BLOCKER)·N28·N29·N30·N31·N32** + **마이그레이션 드리프트(§N.1, BLOCKER급)** + perf 62/62/134(§N.6). |
 
 ---
 
@@ -871,14 +937,18 @@ CREATE UNIQUE INDEX IF NOT EXISTS idx_product_funnel_daily_unique ON public.anal
 - **0.7 기능 설계**(§K-7): quote_drafts·빌더 이벤트+funnel·귀속FK+익명화정합·audit 헬퍼·unified_inquiries 뷰·상품 funnel matview **구체 DDL**(마이그레이션 대조 완료).
 - **0.75 §G 정산/세무**(§G-6): RPC/GRANT/settle 라우트/스키마 직접 재검증(F1~F8) → tours.cost_price·bookings 원가/FX/Stripe·settlements basis/통화·merchants W-8 **DDL** + **RPC v2**(원가기준 `fee=customer−cost`·1정산1통화) + **R1 라벨링 브리지**(과거 flat_rate 동결·재계산 불필요) + **R2 원자배포**(4-arg→6-arg, GRANT 재발급) + **R3 FX 신규건만**. 신규결함 F3(RPC 통화혼입).
 - **0.8 Codex 통합**(§M): 3 감사 에이전트 file:line 검증 → 공개 보안 BLOCKER 4(N11 inventory·N13 promo·N14 checkout IDOR·N16 confirm-email IDOR) + MAJOR 다수 + ⚙️어드민(N23 cron fail-open·N24 webhook·N25 notifications드리프트·N26 overfetch). **REFUTED 2**(R5 RAG 완전연결·R6 reviews=폴더), IMPRECISE 6. 별도 doc 생성 거부.
+- **0.9 라이브 DB 대조**(§N): atockorea MCP 라이브 연결(K-0 해소). **마이그레이션 드리프트(repo 32 vs live 48, ~9만 일치 — pending-db-apply 수동 워크플로)** = BLOCKER급 거버넌스. N1 REFUTED(라이브 실재)→드리프트 재분류. **N27**(anon/PUBLIC이 REST로 비가역 PII 익명화 RPC 호출, BLOCKER)·N28(contact_inquiries permissive insert)·N29(matview API 노출)·N30~N32. §G-6 DDL 라이브 충돌0·F1~F3(통화혼입 ACTIVE: krw+usd 실데이터)·R1(UNIQUE) 라이브 확정. payments/notifications 라이브 부재 확정. perf 62 rls_initplan/62 multi-policy/134 unused-index.
 
 ## L-2. 다음 할 일 (우선순위)
 1. ✅ **③ §G 정산/세무 데이터모델 + 마이그레이션 브리지 — 완료**(§G-6). 다음 세션은 이 설계를 Phase 4 마이그레이션으로 구현(사용자 승인 + §J #2/#6/#8~10 입력 후).
 2. **사용자 결정 대기(블로킹):**
    - **§J #11 — 공개 보안 트랙**: §M의 N11/N13/N14/N16(BLOCKER IDOR/무인증) 등을 **어드민 Phase와 별개로 즉시 패치할지** 결정. (이건 어드민 개편이 아니라 라이브 서비스 보안 — 가장 시급할 수 있음.)
    - **§J #2 소유구조 / #6 원가소스 / #8~10 정산 정책** — Phase 4·6 블로커.
-3. **④ 라이브 DB 대조**: 현재 MCP가 **타 프로젝트(Kursoflow, ref thgyev...)** 연결 → atockorea(ref `cghyvbwmijqpahnoduyv`) 검증 불가(K-0). 사용자가 Supabase MCP 토큰을 atockorea 조직으로 교체해야 N1·N25 실배포·`payments`/`notifications` 테이블 존재 등 확정 가능.
-4. 이후: Phase 1(기능 안정화 — §D BLOCKER + N1/N2/**N23**) → 2(디자인 토큰) → 3(UI 개편) → 4(데이터 — §G-6 정산 마이그레이션 + N25) → 5(통계 — +N22) → 6(세무 SIGN-OFF 후) → 7(신규기능 — +N24) → 8(검증). **🔒 공개 보안 트랙은 별도 PR**(§M.3).
+3. ✅ **④ 라이브 DB 대조 — 완료**(§N). atockorea MCP는 **이미 연결돼 있었음**(`mcp__atockorea__*` 사용). K-0 해소. 신규 라이브 결함(N27 BLOCKER·N28~N32·마이그레이션 드리프트) 도출, §G-6 DDL 충돌0 확정.
+4. **신규 선행 게이트(§N):**
+   - **§N.1 마이그레이션 정합** — repo `migrations/`가 라이브와 갈림 → `db pull` baseline + pending-db-apply 정식화 + CI drift 체크. **Phase 4(정산 마이그레이션 포함)의 안전 배포 전제.** (§J #12)
+   - **N27 즉시 차단** — analytics maintenance 함수 `REVOKE EXECUTE FROM PUBLIC, anon, authenticated`(정산 RPC 패턴 복제). 한 줄. (§J #11)
+5. 이후: Phase 1(기능 안정화 — §D BLOCKER + N2/**N23/N27**) → 2(디자인 토큰) → 3(UI 개편) → 4(데이터 — **§N.1 정합 선행** + §G-6 정산 마이그레이션 + N25/N28~N31) → 5(통계 — +N22 + perf 62/62/134) → 6(세무 SIGN-OFF 후) → 7(신규기능 — +N24) → 8(검증). **🔒 공개 보안 트랙은 별도 PR**(§M.3).
 
 ## L-3. 절대 잊지 말 컨텍스트 / 함정
 - **코드 수정 착수 전 사용자 승인 필수** (지금까지 "플랜만"). 착수 시 Phase 1부터.
@@ -892,9 +962,14 @@ CREATE UNIQUE INDEX IF NOT EXISTS idx_product_funnel_daily_unique ON public.anal
 - 토큰·`components/ui/*`(16) + `components/admin/*`(2: BookingStatusBadge·ImageUploader) 존재, 어드민 미사용.
 - 정산 모델이 flat 10%만 — 원가/운영수수료/FX 미포착(=핵심 결함). settle 라우트 자체는 Stripe서 금액 읽고 멱등(견고).
 - 자체 analytics 엔진에 집계 수학 버그 다수(§D-15: visitors distinct 합산·funnel 세션한정·retention left-censor·experiments filter 폐기).
-- N1: cron이 호출하는 `anonymize_old_analytics`·`analytics_health_snapshot` RPC가 마이그레이션에 없음. **N25: `notifications` 테이블도 동일 드리프트**(코드 참조·migration CREATE 없음).
+- N1 재정의(§N.2): `anonymize_old_analytics`·`analytics_health_snapshot`·`refresh_analytics_materialized_views`는 **라이브 실재**(프로덕션 정상). 진짜 문제 = **repo migrations 누락(§N.1 드리프트)** → CI/reset에서만 부재. **N25 notifications·payments도 라이브 부재 확정.**
+- **마이그레이션 드리프트(§N.1)**: repo `supabase/migrations/`(32)와 라이브(48)가 크게 갈림(`pending-db-apply` 수동 적용). repo로 라이브 재현 불가 → Phase 4 선행 정합 필수.
+- **N27(§N.3, 라이브 BLOCKER)**: analytics maintenance 함수가 PUBLIC/anon에 EXECUTE → 누구나 REST로 비가역 PII 익명화 호출. 정산 RPC는 REVOKE됨(대조). REVOKE 한 줄로 차단.
 - 이벤트 인제스트: `event_name` free-form, payload 평면 스칼라 → 신규 이벤트 등록 불필요.
 - **§G-6 핵심**: RPC 실제 4-arg `(uuid,date,date,numeric)`+GRANT가 그 시그니처에 묶임(호출부는 3-arg). RPC가 통화필터 없이 `SUM(final_price)`→usd/krw 혼입(F3). tours 원가컬럼·bookings charge/fee/FX·코드 FX포착 전무. R1=과거 정산 재계산 불필요(라벨링만), R2=시그니처 변경 원자배포+GRANT 재발급, R3=FX 신규건만.
 - **§M 핵심(Codex 통합)**: 공개 보안 BLOCKER 실재 — `/api/inventory`·`/api/promo-codes` 무인증, `/api/stripe/checkout`·`confirm-email` IDOR, cron fail-open(N23). **RAG는 완전 연결됨**(Codex 오류 R5). Codex 무검증 인용 금지 — verdict가 사실.
 - **방법론 함정**: 작업 브랜치는 **로컬 부재 → `git fetch origin` 후 `origin/claude/admin-dashboard-upgrade-yvb88c`에서 워크트리**(`C:\Users\sangsong\atockorea-admin`)로 작업(메인 working dir은 타 세션과 경합). CLAUDE.md·플랜은 이 브랜치에만 존재.
+- **라이브 DB(§N)**: `mcp__atockorea__*` 도구로 atockorea(`cghyvbwmijqpahnoduyv`) 직접 조회 가능(읽기 전용 유지, 스키마 변경 금지 — 플랜만). **repo migrations ≠ live**(§N.1) — DB 사실은 라이브 우선, repo 마이그레이션만 믿지 말 것.
+- **N27/N28/N29(§N.3)**: Supabase advisor가 잡은 라이브 보안결함 — anon이 REST로 SECURITY DEFINER PII 함수 실행·contact_inquiries permissive insert·matview API 노출. 어드민 코드 밖이지만 즉시 리스크 → 🔒 보안 트랙.
+- **신규 advisor 재실행 권장**: DDL 변경(Phase 4) 후 `mcp__atockorea__get_advisors`(security/performance) 재실행해 RLS·grant 회귀 확인(U4 게이트).
 - 분석 진짜 화면은 `/admin/analytics/product/*`(모던), nav의 `/admin/analytics`는 placeholder(폐기 대상).
