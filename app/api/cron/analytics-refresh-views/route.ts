@@ -10,12 +10,12 @@ export const dynamic = 'force-dynamic';
 
 function isAuthorized(req: NextRequest): boolean {
   const secret = process.env.CRON_SECRET;
-  if (!secret) return true; // dev fallback
+  // Fail closed: a missing CRON_SECRET must reject, never run unguarded (N23).
+  if (!secret) return false;
+  // Only the Authorization header is accepted — no `?secret=` query fallback
+  // (W-3: query strings leak via logs/Referer). Vercel Cron sets this header.
   const header = req.headers.get('authorization');
-  if (header === `Bearer ${secret}`) return true;
-  const query = req.nextUrl.searchParams.get('secret');
-  if (query === secret) return true;
-  return false;
+  return header === `Bearer ${secret}`;
 }
 
 export async function GET(req: NextRequest): Promise<NextResponse> {
