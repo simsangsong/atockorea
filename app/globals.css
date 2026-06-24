@@ -1193,6 +1193,24 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   .admin-root {
     font-feature-settings: "tnum" 1, "kern" 1;
   }
+  /*
+   * iOS zoom guard (W1.4 / spec §6.1): iOS Safari auto-zooms any focused field
+   * whose font is below 16px. Floor inputs at 16px on mobile only — desktop keeps
+   * Tailwind density. The .admin-root selector has enough specificity to override
+   * raw `text-sm`/`text-xs` admin inputs; the bare selector catches class-less ones.
+   */
+  @media (max-width: 767px) {
+    input,
+    select,
+    textarea {
+      font-size: max(16px, 1em);
+    }
+    .admin-root input,
+    .admin-root select,
+    .admin-root textarea {
+      font-size: 16px;
+    }
+  }
   * {
     border-color: var(--border);
     outline-color: var(--ring);
