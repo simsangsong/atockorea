@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { requireAdmin } from '@/lib/auth';
+import { kstDayBounds } from '@/lib/admin/kst-day';
 
 // Force dynamic rendering for API routes that use headers
 export const dynamic = 'force-dynamic';
@@ -38,13 +39,14 @@ export async function GET(req: NextRequest) {
       .from('bookings')
       .select('*', { count: 'exact', head: true });
 
-    // Get today's bookings
-    const today = new Date().toISOString().split('T')[0];
+    // Get today's bookings — M-6: use KST day bounds (was UTC, so KST 00:00–09:00
+    // counted the wrong day and showed "0 orders today").
+    const { startIso: todayStart, endIso: todayEnd } = kstDayBounds();
     const { count: todayOrders } = await supabase
       .from('bookings')
       .select('*', { count: 'exact', head: true })
-      .gte('created_at', `${today}T00:00:00`)
-      .lte('created_at', `${today}T23:59:59`);
+      .gte('created_at', todayStart)
+      .lte('created_at', todayEnd);
 
     // Pending bookings (for dashboard "Pending items")
     const { count: pendingOrders } = await supabase
