@@ -428,3 +428,9 @@ UPDATE public.tour_product_offers o SET amount_minor = 6000, currency = 'USD'
  WHERE o.tour_product_page_id = p.id AND p.slug = 'seoul-suwon-hwaseong-folk-village-starfield-library' AND p.locale = 'en' AND o.is_default AND o.is_active;
 
 COMMIT;
+
+-- verification
+SELECT slug, price, original_price, price_currency, jsonb_array_length(schedule) AS schedule_len, is_active
+  FROM public.tours WHERE slug = 'seoul-suwon-hwaseong-folk-village-starfield-library';
+SELECT slug, locale, stops_count, price_amount_label
+  FROM public.tour_product_pages WHERE slug = 'seoul-suwon-hwaseong-folk-village-starfield-library' ORDER BY locale;

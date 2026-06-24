@@ -19,7 +19,7 @@ const LOCALES = ["en", "ko", "ja", "zh", "zh-TW", "es"];
 
 // ---- arg parse ----
 const argv = process.argv.slice(2);
-let outDir = join(root, "supabase/pending-upload");
+let outDir = join(root, "supabase/pending-db-apply");
 const slugs = [];
 for (let i = 0; i < argv.length; i++) {
   if (argv[i] === "--out-dir") outDir = join(root, argv[++i]);
