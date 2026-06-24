@@ -34,7 +34,7 @@
     ],
     "heroImage": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
     "thumbnail": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
-    "priceLabel": "1인 US$79 (정가 $85, 7% 할인)",
+    "priceLabel": "",
     "shortCardDescription": "입항 항구에 따라 루트가 달라지는 소그룹 크루즈 기항지 투어입니다. 제주항(북쪽)은 성산일출봉을 경유하는 동해안 유네스코 루트로, 강정항(남쪽)은 한라산 1100고지 + 남해안 지질 명소 + 올레시장 루트로 운행됩니다. 두 루트 모두 여유 있게 크루즈 터미널로 귀환합니다.",
     "tags": [
       "cruise_excursion",
@@ -47,12 +47,12 @@
   "headlineLine1": "제주 크루즈 기항지 소그룹 투어",
   "headlineLine2": "투어",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "72",
     "currency": "USD",
     "per": "person",
-    "salePriceUsd": null,
-    "originalPriceUsd": null,
-    "discountPercent": null
+    "salePriceUsd": 72,
+    "originalPriceUsd": 85,
+    "discountPercent": 15
   },
   "hero": {
     "imageUrl": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
@@ -1641,6 +1641,15 @@
         "개인 쇼핑",
         "팁"
       ]
+    },
+    {
+      "id": "cancellation",
+      "title": "취소 정책",
+      "preview": "픽업 24시간 전까지 무료 취소.",
+      "content": [
+        "픽업 24시간 전까지 무료 취소.",
+        "당일 취소 및 노쇼는 환불되지 않습니다."
+      ]
     }
   ],
   "practicalWeatherStatic": {
@@ -1770,12 +1779,12 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id는 런타임 시 Supabase / 환경 변수에서 확인됩니다. 정적 JSONB의 일부가 아닙니다. user_port는 크루즈 일정에서 예약 시 확인됩니다.",
     "price": {
-      "amountLabel": "79",
+      "amountLabel": "72",
       "currency": "USD",
       "per": "person",
-      "salePriceUsd": 79,
+      "salePriceUsd": 72,
       "originalPriceUsd": 85,
-      "discountPercent": 7
+      "discountPercent": 15
     }
   },
   "matching_profile": {

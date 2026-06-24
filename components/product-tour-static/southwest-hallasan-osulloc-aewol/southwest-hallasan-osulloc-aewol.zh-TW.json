@@ -32,7 +32,7 @@
     ],
     "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
     "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
-    "priceLabel": "每人 US$52",
+    "priceLabel": "",
     "shortCardDescription": "串聯漢拿山1100高地濕地、火山海岸線、天帝淵瀑布、O'Sulloc茶園、涯月咖啡街與梨湖泰烏日落的均衡濟州西南部一日行程。",
     "tags": [
       "small_group",
@@ -46,9 +46,9 @@
   "headlineLine1": "濟州西南",
   "headlineLine2": "漢拿山·O'Sulloc·涯月·梨湖泰烏",
   "price": {
-    "amountLabel": "52",
+    "amountLabel": "49",
     "originalPriceUsd": null,
-    "salePriceUsd": 52,
+    "salePriceUsd": 49,
     "discountPercent": null,
     "currency": "USD",
     "per": "person"
@@ -1269,6 +1269,15 @@
         "個人購物費用",
         "導遊小費"
       ]
+    },
+    {
+      "id": "cancellation",
+      "title": "取消政策",
+      "preview": "接送前24小時可免費取消。",
+      "content": [
+        "接送前24小時可免費取消。",
+        "當天取消及未出現恕不退款。"
+      ]
     }
   ],
   "practicalWeatherStatic": {
@@ -1467,16 +1476,16 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id 於執行時從 Supabase／環境變數解析；非靜態 JSONB 的一部分。",
     "price": {
-      "amountLabel": "52",
+      "amountLabel": "49",
       "originalPriceUsd": null,
-      "salePriceUsd": 52,
+      "salePriceUsd": 49,
       "discountPercent": null,
       "currency": "USD",
       "per": "person"
     }
   },
   "matching_profile": {
-    "product_type": "small_group",
+    "product_type": "bus",
     "route_type": "fixed_route",
     "region_type": "jeju_southwest",
     "region_tags": [

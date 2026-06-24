@@ -47,10 +47,10 @@
   "headlineLine1": "제주 크루즈 기항지",
   "headlineLine2": "코치 투어",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "59",
     "currency": "USD",
     "per": "person",
-    "salePriceUsd": null,
+    "salePriceUsd": 59,
     "originalPriceUsd": null,
     "discountPercent": null
   },
@@ -1631,6 +1631,15 @@
         "개인 쇼핑",
         "팁 (그래튜이티)"
       ]
+    },
+    {
+      "id": "cancellation",
+      "title": "취소 정책",
+      "preview": "픽업 24시간 전까지 무료 취소.",
+      "content": [
+        "픽업 24시간 전까지 무료 취소.",
+        "당일 취소 및 노쇼는 환불되지 않습니다."
+      ]
     }
   ],
   "practicalWeatherStatic": {
@@ -1769,10 +1778,10 @@
   "sticky_booking_bar": {
     "note": "크루즈 항구, 여행 날짜, 인원수를 선택하여 예약 가능 여부를 확인하고 예약을 완료하세요.",
     "price": {
-      "amountLabel": "",
+      "amountLabel": "59",
       "currency": "USD",
       "per": "person",
-      "salePriceUsd": null,
+      "salePriceUsd": 59,
       "originalPriceUsd": null,
       "discountPercent": null
     }
@@ -1820,7 +1829,7 @@
     "profile_version": 6,
     "is_active": true,
     "product_id": "jeju-cruise-shore-excursion-bus-tour",
-    "product_type": "small_group_fixed_itinerary",
+    "product_type": "bus",
     "route_type": "cruise_shore_excursion_pair_route_variants",
     "destination_region": "jeju",
     "region_type": "island_full",

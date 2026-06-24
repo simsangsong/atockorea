@@ -21,7 +21,7 @@
   "catalog_card": {
     "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
     "title": "Jeju Este: UNESCO Día",
-    "priceLabel": "US$47 por persona (precio normal $59, 20% de descuento) · aprox. 72.000 won",
+    "priceLabel": "",
     "shortCardDescription": "Recorre los lugares UNESCO del este de Jeju en un bucle en grupo pequeño de 9 horas. Incluye la playa Hamdeok Seoubong, la Aldea Folclórica de Seongeup (patrimonio folclórico UNESCO), Seongsan Ilchulbong y Manjanggul — los dos sitios del Patrimonio Natural Mundial de la UNESCO inscritos juntos en 2007 — y el espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela). Todas las entradas incluidas, guía certificado en inglés y chino.",
     "tags": [
       "grupo reducido",
@@ -50,10 +50,10 @@
   "headlineLine1": "Jeju Este",
   "headlineLine2": "UNESCO Día",
   "price": {
-    "amountLabel": "47",
+    "amountLabel": "49",
     "originalPriceUsd": 59,
-    "salePriceUsd": 47,
-    "discountPercent": 20,
+    "salePriceUsd": 49,
+    "discountPercent": 17,
     "currency": "USD",
     "per": "person"
   },
@@ -1381,10 +1381,10 @@
   "sticky_booking_bar": {
     "note": "La disponibilidad se confirma en el paso de pago.",
     "price": {
-      "amountLabel": "47",
+      "amountLabel": "49",
       "originalPriceUsd": 59,
-      "salePriceUsd": 47,
-      "discountPercent": 20,
+      "salePriceUsd": 49,
+      "discountPercent": 17,
       "currency": "USD",
       "per": "person"
     }
@@ -1473,7 +1473,7 @@
     "profile_version": 7,
     "is_active": true,
     "product_id": "jeju-eastern-unesco-lugares-day-tour",
-    "product_type": "small_group",
+    "product_type": "bus",
     "route_type": "fixed_route",
     "destination_region": "jeju",
     "region_type": "jeju_east",

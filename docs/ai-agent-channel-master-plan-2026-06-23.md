@@ -12,6 +12,41 @@ The agent's journey: **① Discover → ② Fetch/Understand → ③ Trust/Book.
 
 ---
 
+## ⚠️ Reorientation (2026-06-24) — read this first
+
+After Phase 0–5 we course-corrected. The near-term reality is **read-the-web
+agents** (ChatGPT search, Perplexity, Gemini, Google AI Mode, Operator) that
+crawl and parse the **rendered consumer pages** — they do NOT call a bespoke
+JSON API. So the highest-ROI work is making the **existing tour pages**
+maximally AI-readable and trustworthy, not a separate agent API.
+
+- The `/api/agent/*` REST channel + MCP server (Phase 1–5) are kept as
+  **future infrastructure** (valuable when OTA×AI direct-integration arrives,
+  e.g. Booking×OpenAI) but are **not** the current priority. Not deleted.
+- Current priority = the consumer page's machine structure. Audit found the
+  *content* is already strong (real FAQ, real review bodies, pricing
+  transparency, best-for/not-for, pickup w/ coords); the gaps are *structural*.
+
+### Phase 6 — AI-readable page schema ✅ (shipped 2026-06-24)
+`lib/seo/tourProductJsonLd.ts` enhanced (existing data only, no page rebuild):
+- **Individual `Review`** objects (author, body, rating, date) — was aggregate-only.
+- **`Offer`**: `priceValidUntil`, price-basis `priceSpecification` (per
+  person/vehicle), and `cancellationPolicy` (refund terms next to price).
+- **`TouristTrip`**: ISO-8601 `duration`, `touristType` (from best-for).
+- **`BreadcrumbList`** block.
+Verified: tsc + ESLint clean; runtime check on representative input passes.
+
+### Phase 6 — still open (next, by ROI)
+- **Deep-linkable booking URL** on the detail page: `?date=&guests=&language=&course=`
+  pre-fills the booking card (the user's priority #5).
+- **Structured fields** in the data model: `languages[]`, min/max group size,
+  `tourType` enum (currently narrative text only) → then add `inLanguage` /
+  participant count to JSON-LD.
+- **Reviews content**: some products ship `guestReviews: []` — backfill.
+- `ItemList` JSON-LD on `/tours/list`.
+
+---
+
 ## Decisions (locked)
 
 - **D1 — Payment model:** human confirms at hosted checkout. The agent channel

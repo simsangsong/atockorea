@@ -150,3 +150,12 @@ data: {"error":"assistant_failed"}   ← 모델 실패 시. 클라는 폴백 메
 ## 9. 진행 로그 (착수 시 갱신)
 
 - 2026-06-24 플랜 작성(이 문서). 코드 실사 완료, 자산 검증(sendMessageStream@0.24.1, SSE 레퍼런스, 위젯 소비). 착수 대기.
+- 2026-06-24 **구현 완료 (S0–S5, 집중 세션)**. 기준 origin/main `1ee54b6`(9894edf2 이후, Track 3 머지 직후). 브랜치 `claude/chatbot-sse-streaming-track2-q4zcdh`.
+  - **S0 스코프 확정**: `/api/tour-product/assistant` POST 런타임 소비자는 위젯 `TourProductAiAssistantWidget.tsx` 하나뿐. 홈 섹션(ai-agent-band/final-cta/choose-travel-style)은 모두 `atc:open-assistant` CustomEvent로 같은 위젯을 열 뿐 직접 호출 안 함. `live`/`feedback`는 별개 엔드포인트, 압박테스트 스크립트는 stream 미지정→JSON. → 단일 분기로 충분(R7 해소). 워크트리: ephemeral 컨테이너 자체가 격리이고 보호할 병행 main 체크아웃이 없어 junction footgun 회피 위해 지정 브랜치 클린 체크아웃에서 직접 작업.
+  - **S1 후처리 추출 (무동작, 독립 커밋 `7908181`)**: 모델호출 이후 블록(카탈로그폴백·misrouted override·핸드오프·로깅/에스컬레이션/티켓·세션기억)을 `finalizeAssistantTurn(...)`로 추출, 버퍼드 경로가 호출하도록 교체. 앱코드 tsc 클린 + chatbot/support/quote jest 129/129 그린(바이트 동일). R1 해소.
+  - **S2 SSE 유틸 + 라우트 분기 (커밋 `3e50e08`, default-off 보정 후속 커밋)**: `lib/chatbot/sseStream.ts`(sseEvent/sseComment/SSE_HEADERS, X-Accel-Buffering:no+no-transform). 라우트에 `stream` 스키마 필드 + `wantStream = stream===true && CHAT_STREAMING==="1" && !debug` 분기. **킬스위치 기본 OFF(`=== "1"`)** — 사용자 결정으로 D-T2-5의 "초기 출시 default-off 다크 머지" 의도를 채택(공식 산문 `!== "0"`은 폐기). env 미설정=다크. 스트리밍 시 delta enqueue→full buffer로 `finalizeAssistantTurn` 재사용→done 1개(또는 error). abort 시 사이드이펙트 스킵. 세션쿠키 Set-Cookie 직렬화. 게이트/버퍼드 경로 무변경.
+  - **S3 위젯 클라이언트 (커밋 `a3a8c49`)**: `lib/chatbot/clientSse.ts`(`parseSseBuffer` — 청크 경계 누적 분리). runAssistant `stream:true` + content-type 분기. delta 단일 버블 누적, 첫 토큰 시 타이핑 표시 해제, done.reply 확정 교체(handoff/ticket/checkout 적용), error 폴백. 비-SSE 응답은 기존 res.json() 경로(롤백 무변경). 핸드오프 fetch는 게이트 경로라 그대로.
+  - **S4 검증**: 단위 sseStream(5)+clientSse 경계(7, 바이트단위·불규칙청크). 통합 `__tests__/integration/assistant-streaming.test.ts`(Gemini stream 모킹→text/event-stream+X-Accel-Buffering:no, delta≥1+done 1+done.reply=버퍼; privacy 게이트는 stream:true여도 application/json). 전체 jest 363 pass(기존 무관 실패 5 suite 동일). `npm run build` 그린(exit 0).
+  - **S5 다크 머지**: 킬스위치 기본 OFF(`=== "1"`)라 `CHAT_STREAMING` 미설정으로 main 머지 시 프로덕션 **완전 다크**(클라가 stream:true를 보내도 서버는 버퍼드 JSON, 클라는 content-type으로 자동 폴백). 통합 테스트 "ships dark"가 이 동작을 고정.
+  - **S6 프로덕션 점등(후속, 코드 외)**: Vercel env `CHAT_STREAMING=1` + 재배포(env는 재배포해야 적용). 실서버에서 S4 재검(타이핑/abort/모델에러/게이트 즉답/세션기억/checkout 버튼). 문제 시 변수 삭제 또는 `=0` + 재배포로 즉시 롤백(코드 재배포 불필요).
+  - **미해결/후속**: 메모리 `project_chatbot_agent_roadmap` 트랙2 갱신은 이 세션에 메모리 쓰기 도구가 없어 미반영 — 사용자/후속 세션에서 반영 필요.

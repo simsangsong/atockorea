@@ -91,6 +91,11 @@ export const CONSUMER_BLOCKED_TOUR_SLUGS = new Set<string>([
   "jeju-island-full-day-tour-cruise-passengers",
   "jeju-eastern-unesco-spots-bus-tour",
   "east-jeju-signature-small-group",
+  // Deactivated 2026-06-24 (product decision) — hidden from list + all consumer
+  // surfaces (chatbot catalog, home). DB is_active=false also removes them from
+  // /api/tours + the matcher (match_tours rows deleted).
+  "east-signature-nature-core",
+  "jeju-west-south-full-day-authentic-tour",
   // Retired 2026-05-14 — replaced by seoul-seoraksan-naksansa-temple-naksan-beach-day-trip.
   "seoul-seoraksan-national-park-sokcho-beach-day-trip",
   // Retired 2026-05-23 — overlapped with from-busan-gyeongju-ancient-capital-day-tour

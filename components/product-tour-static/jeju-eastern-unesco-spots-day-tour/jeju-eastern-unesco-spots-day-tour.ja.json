@@ -21,7 +21,7 @@
   "catalog_card": {
     "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
     "title": "済州東部ユネスコ日帰りツアー",
-    "priceLabel": "1名様 US$47（定価$59、20%オフ）・約72,000ウォン",
+    "priceLabel": "",
     "shortCardDescription": "済州東部のユネスコ見どころを9時間の少人数で一周します。咸徳ソウボン海水浴場、城邑民俗村（ユネスコ民俗）、城山日出峰と万丈窟 — 2007年にともに登録された2つのユネスコ世界自然遺産、そして海女の素潜り実演（中止時は海女博物館）を含みます。全入場料込み、英語・中国語対応の認定ガイド付き。",
     "tags": [
       "少人数ツアー",
@@ -51,10 +51,10 @@
   "headlineLine1": "済州東部ユネスコ日帰りツアー",
   "headlineLine2": "ツアー",
   "price": {
-    "amountLabel": "47",
+    "amountLabel": "49",
     "originalPriceUsd": 59,
-    "salePriceUsd": 47,
-    "discountPercent": 20,
+    "salePriceUsd": 49,
+    "discountPercent": 17,
     "currency": "USD",
     "per": "person"
   },
@@ -1389,10 +1389,10 @@
   "sticky_booking_bar": {
     "note": "予約可否は決済ステップで確認されます。",
     "price": {
-      "amountLabel": "47",
+      "amountLabel": "49",
       "originalPriceUsd": 59,
-      "salePriceUsd": 47,
-      "discountPercent": 20,
+      "salePriceUsd": 49,
+      "discountPercent": 17,
       "currency": "USD",
       "per": "person"
     }
@@ -1481,7 +1481,7 @@
     "profile_version": 7,
     "is_active": true,
     "product_id": "jeju-eastern-unesco-spots-day-tour",
-    "product_type": "small_group",
+    "product_type": "bus",
     "route_type": "fixed_route",
     "destination_region": "jeju",
     "region_type": "jeju_east",

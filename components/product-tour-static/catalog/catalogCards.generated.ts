@@ -407,11 +407,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
         "thumbnail": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
-        "priceLabel": "From US$52 per person (was $59, 12% off)",
+        "priceLabel": "",
         "shortCardDescription": "A bus tour (large coach) cruise shore excursion that adapts the route to your cruise port. Jeju Port (north) runs an east-coast UNESCO route via Seongsan Ilchulbong; Gangjeong Port (south) runs a Hallasan 1100 + south-coast geology + Olle Market route. Both return to the cruise terminal with comfortable buffer."
       },
       "price": {
-        "amountLabel": "52"
+        "amountLabel": "59"
       }
     },
     "jeju-cruise-shore-excursion-small-group-tour": {
@@ -432,11 +432,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
         "thumbnail": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
-        "priceLabel": "From US$79 per person (was $85, 7% off)",
+        "priceLabel": "",
         "shortCardDescription": "A small group tour cruise shore excursion that adapts the route to your cruise port. Jeju Port (north) runs an east-coast UNESCO route via Seongsan Ilchulbong; Gangjeong Port (south) runs a Hallasan 1100 + south-coast geology + Olle Market route. Both return to the cruise terminal with comfortable buffer."
       },
       "price": {
-        "amountLabel": "79"
+        "amountLabel": "72"
       }
     },
     "jeju-eastern-unesco-spots-day-tour": {
@@ -459,11 +459,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
         "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
-        "priceLabel": "From US$47 per person (was $59, 20% off) · ≈₩72,000",
+        "priceLabel": "",
         "shortCardDescription": "Loop eastern Jeju's UNESCO sights in a 9-hour small group. Includes Hamdeok Seoubong Beach, Seongeup Folk Village (UNESCO folk heritage), Seongsan Ilchulbong and Manjanggul — two UNESCO World Natural Heritage sites inscribed together in 2007 — plus a haenyeo diving performance (Haenyeo Museum if canceled). All admissions included, certified English/Chinese-speaking guide."
       },
       "price": {
-        "amountLabel": "47"
+        "amountLabel": "49"
       }
     },
     "jeju-grand-highlights-loop": {
@@ -483,11 +483,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
         "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
-        "priceLabel": "From US$100 per person (was $112, 11% off)",
+        "priceLabel": "",
         "shortCardDescription": "A high-intensity full-island route linking three UNESCO World Heritage sites — Hallasan, Seongsan Ilchulbong and Manjanggul lava tube — with a living haenyeo free-diving show, the Jusangjeolli columnar cliffs and the ocean-falling Jeongbang Waterfall. Jeju's signature highlights, concentrated into a single day."
       },
       "price": {
-        "amountLabel": "100"
+        "amountLabel": "88"
       }
     },
     "jeju-hydrangea-festival-tour-east-route": {
@@ -590,7 +590,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "shortCardDescription": "A small-group day tour through southern Jeju's signature Seogwipo stops — Jeongbang Falls, Asia's only waterfall that drops directly into the sea, the Oedolgae rock pinnacle with a coastal walk on Olle Route 7, East Asia's largest temple Yakcheonsa, the O'sulloc Tea Museum, and the Hallasan Eoseungsaengak Trail. Four pickup points across Jeju City and the airport, certified English/Chinese-speaking guide, free admission at almost every stop except Jeongbang Falls, no shopping pressure."
       },
       "price": {
-        "amountLabel": "59"
+        "amountLabel": "49"
       }
     },
     "jeju-west-south-full-day-authentic-tour": {
@@ -918,11 +918,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
         "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
-        "priceLabel": "US$52 / person",
+        "priceLabel": "",
         "shortCardDescription": "A well-balanced Jeju southwest day route linking the Hallasan 1100 Highland wetland, volcanic coastline, Cheonjeyeon Waterfall, O'Sulloc tea fields, Aewol Cafe Street, and the Iho Tewoo sunset."
       },
       "price": {
-        "amountLabel": "52"
+        "amountLabel": "49"
       }
     }
   },
@@ -1273,7 +1273,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "shortCardDescription": "크루즈 기항지에 따라 루트가 달라지는 대형 코치 버스 투어입니다. 제주항(북부)은 성산일출봉을 경유하는 동해안 유네스코 루트, 강정항(남부)은 한라산 1100 + 남해안 지질 + 올레 시장 코스로 운행합니다. 두 코스 모두 여유 있는 시간에 맞춰 크루즈 터미널로 귀환합니다."
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "59"
       }
     },
     "jeju-cruise-shore-excursion-small-group-tour": {
@@ -1294,11 +1294,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
         "thumbnail": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
-        "priceLabel": "1인 US$79 (정가 $85, 7% 할인)",
+        "priceLabel": "",
         "shortCardDescription": "입항 항구에 따라 루트가 달라지는 소그룹 크루즈 기항지 투어입니다. 제주항(북쪽)은 성산일출봉을 경유하는 동해안 유네스코 루트로, 강정항(남쪽)은 한라산 1100고지 + 남해안 지질 명소 + 올레시장 루트로 운행됩니다. 두 루트 모두 여유 있게 크루즈 터미널로 귀환합니다."
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "72"
       }
     },
     "jeju-eastern-unesco-spots-day-tour": {
@@ -1321,11 +1321,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
         "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
-        "priceLabel": "1인 US$47 (정가 $59, 20% 할인) · 약 72,000원",
+        "priceLabel": "",
         "shortCardDescription": "제주 동부 유네스코 명소를 9시간 소그룹으로 일주합니다. 함덕 서우봉해변, 성읍민속마을(유네스코 민속), 성산일출봉과 만장굴 — 2007년 함께 등재된 두 유네스코 세계자연유산, 그리고 해녀 물질공연(취소 시 해녀박물관) 포함. 전 입장료 포함, 공인 영어·중국어 가이드."
       },
       "price": {
-        "amountLabel": "47"
+        "amountLabel": "49"
       }
     },
     "jeju-grand-highlights-loop": {
@@ -1345,11 +1345,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
         "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
-        "priceLabel": "1인 US$100부터 (기존 $112, 11% 할인)",
+        "priceLabel": "",
         "shortCardDescription": "한라산, 성산일출봉, 만장굴 용암동굴까지 유네스코 세계유산 3곳을 연결하고, 살아 있는 해녀 물질 시연, 주상절리 절벽, 바다로 떨어지는 정방폭포를 더한 고밀도 전 지역 코스입니다. 제주의 대표 명소를 하루에 응축한 일정입니다."
       },
       "price": {
-        "amountLabel": "100"
+        "amountLabel": "88"
       }
     },
     "jeju-hydrangea-festival-tour-east-route": {
@@ -1452,7 +1452,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "shortCardDescription": "제주 남부 서귀포의 대표 명소를 소그룹으로 둘러보는 당일 투어 — 아시아에서 유일하게 바다로 직접 떨어지는 정방폭포, 외돌개 기암과 올레 7코스 해안 산책, 동아시아 최대 사찰 약천사, 오설록 티 뮤지엄, 그리고 한라산 어승생악 탐방로. 제주시 전역 및 공항 포함 4곳의 픽업 포인트, 공인 영어·중국어 가이드 동반, 정방폭포 외 거의 전 코스 무료 입장, 쇼핑 강요 없음."
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "49"
       }
     },
     "jeju-west-south-full-day-authentic-tour": {
@@ -1780,11 +1780,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
         "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
-        "priceLabel": "1인 US$52",
+        "priceLabel": "",
         "shortCardDescription": "한라산 1100고지 습지, 화산 해안선, 천제연 폭포, 오설록 차밭, 애월 카페거리, 이호테우 일몰을 잇는 균형 잡힌 제주 서남부 하루 코스."
       },
       "price": {
-        "amountLabel": "52"
+        "amountLabel": "49"
       }
     }
   },
@@ -2135,7 +2135,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "shortCardDescription": "这是一款根据停靠港口灵活调整路线的旅游大巴邮轮靠岸游。济州港（北部）走东海岸UNESCO路线，途经城山日出峰；江汀港（南部）走汉拿山1100高地+南海岸地质景观+偶来市场路线。两条路线均预留充裕时间返回邮轮码头。"
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "59"
       }
     },
     "jeju-cruise-shore-excursion-small-group-tour": {
@@ -2156,11 +2156,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
         "thumbnail": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
-        "priceLabel": "每人 US$79（原价$85，7% 优惠）",
+        "priceLabel": "",
         "shortCardDescription": "根据邮轮靠港口灵活调整路线的小团靠港游。济州港（北部）走东海岸UNESCO路线，途经城山日出峰；江汀港（南部）走汉拿山1100高地＋南海岸地质奇观＋偶来市场路线。两条线路均留有充裕时间返回邮轮码头。"
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "72"
       }
     },
     "jeju-eastern-unesco-spots-day-tour": {
@@ -2183,11 +2183,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
         "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
-        "priceLabel": "每人 US$47（原价 $59，立减20%），约₩72,000",
+        "priceLabel": "",
         "shortCardDescription": "以9小时小团环游济州东部联合国教科文组织景点。涵盖咸德海水浴场、城邑民俗村（联合国教科文组织民俗）、城山日出峰与万丈窟 — 2007年共同登录的两处联合国教科文组织世界自然遗产，以及海女潜水表演（取消时改为海女博物馆）。含全部门票，持证英语·中文导游。"
       },
       "price": {
-        "amountLabel": "47"
+        "amountLabel": "49"
       }
     },
     "jeju-grand-highlights-loop": {
@@ -2207,11 +2207,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
         "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
-        "priceLabel": "每人 US$100 起（原价 $112，立减 11%）",
+        "priceLabel": "",
         "shortCardDescription": "一条高强度的全岛线路，串联三处联合国教科文组织世界遗产——汉拿山、城山日出峰与万丈窟熔岩洞，并融入海女徒手潜水现场表演、柱状节理海崖以及直泻入海的正房瀑布。济州的标志性精华，浓缩于一日之内。"
       },
       "price": {
-        "amountLabel": "100"
+        "amountLabel": "88"
       }
     },
     "jeju-hydrangea-festival-tour-east-route": {
@@ -2314,7 +2314,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "shortCardDescription": "畅游济州南部西归浦标志性景点的小团一日游——亚洲唯一直落入海的正房瀑布、外突岩奇岩与偶来7号路线海岸漫步、东亚最大寺院药泉寺、雪绿茶博物馆，以及汉拿山御乘生岳步道。提供济州市区及机场四处上车地点，配备持证英语/中文导游，除正房瀑布外几乎全程免费入场，无购物压力。"
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "49"
       }
     },
     "jeju-west-south-full-day-authentic-tour": {
@@ -2642,11 +2642,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
         "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
-        "priceLabel": "每人 US$52",
+        "priceLabel": "",
         "shortCardDescription": "一条均衡的济州西南一日路线，串联汉拿山1100高地湿地、火山海岸线、天帝渊瀑布、雪绿茶茶园、涯月咖啡街与梨湖泰乌日落。"
       },
       "price": {
-        "amountLabel": "52"
+        "amountLabel": "49"
       }
     }
   },
@@ -2997,7 +2997,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "shortCardDescription": "本行程為大型旅遊巴郵輪岸上觀光，依您的靠港地點彈性調整路線。濟州港（北部）走途經城山日出峰的東海岸UNESCO世界遺產路線；江汀港（南部）走漢拿山1100高地＋南海岸地質景觀＋偶來市場路線。兩條路線均預留充裕緩衝時間返回郵輪碼頭。"
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "59"
       }
     },
     "jeju-cruise-shore-excursion-small-group-tour": {
@@ -3018,11 +3018,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
         "thumbnail": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
-        "priceLabel": "每人 US$79（原價$85，7% 優惠）",
+        "priceLabel": "",
         "shortCardDescription": "此小團體郵輪靠港觀光行程可依您的靠港地點彈性調整路線。濟州港（北部）走東海岸UNESCO路線，途經城山日出峰；江汀港（南部）走漢拏山1100高地＋南海岸地質景觀＋偶來市場路線。兩條路線均保留充裕時間返回郵輪碼頭。"
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "72"
       }
     },
     "jeju-eastern-unesco-spots-day-tour": {
@@ -3045,11 +3045,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
         "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
-        "priceLabel": "每人 US$47（原價 $59，省20%），約₩72,000",
+        "priceLabel": "",
         "shortCardDescription": "以9小時小團體環遊濟州東部的聯合國教科文組織景點。涵蓋咸德西牛峰海水浴場、城邑民俗村（聯合國教科文組織民俗）、城山日出峰與萬丈窟 — 2007年一同登錄的兩處聯合國教科文組織世界自然遺產，以及海女潛水表演（取消時改為海女博物館）。含全部門票，配備認證英語·中文導遊。"
       },
       "price": {
-        "amountLabel": "47"
+        "amountLabel": "49"
       }
     },
     "jeju-grand-highlights-loop": {
@@ -3069,11 +3069,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
         "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
-        "priceLabel": "每人 US$100 起（原價 $112，現省 11%）",
+        "priceLabel": "",
         "shortCardDescription": "一條高強度的全島路線，串聯三處聯合國教科文組織世界遺產——漢拏山、城山日出峰與萬丈窟熔岩洞——並結合現場海女自由潛水表演、柱狀節理海崖，以及直落入海的正房瀑布。濟州的代表性精華，濃縮於一日之內。"
       },
       "price": {
-        "amountLabel": "100"
+        "amountLabel": "88"
       }
     },
     "jeju-hydrangea-festival-tour-east-route": {
@@ -3176,7 +3176,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "shortCardDescription": "小團一日遊，深度遊覽濟州南部西歸浦的經典景點——亞洲唯一直落入海的正房瀑布、外突岩奇岩與偶來7號路線海岸漫步、東亞最大寺院藥泉寺、雪綠茶博物館（Osulloc），以及漢拏山御乘生岳步道。濟州市全區及機場設有四個接送地點，持證英語・中文導遊全程陪同，除正房瀑布外幾乎全程免費入場，絕無購物壓力。"
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "49"
       }
     },
     "jeju-west-south-full-day-authentic-tour": {
@@ -3504,11 +3504,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
         "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
-        "priceLabel": "每人 US$52",
+        "priceLabel": "",
         "shortCardDescription": "串聯漢拿山1100高地濕地、火山海岸線、天帝淵瀑布、O'Sulloc茶園、涯月咖啡街與梨湖泰烏日落的均衡濟州西南部一日行程。"
       },
       "price": {
-        "amountLabel": "52"
+        "amountLabel": "49"
       }
     }
   },
@@ -3859,7 +3859,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "shortCardDescription": "Tour en autobús (autocar grande) desde crucero que adapta la ruta según el puerto de llegada. El Puerto de Jeju (norte) recorre una ruta UNESCO por la costa este pasando por Seongsan Ilchulbong; el Puerto de Gangjeong (sur) recorre una ruta por Hallasan 1100 + geología de la costa sur + Mercado Olle. Ambas rutas regresan a la terminal de cruceros con tiempo de margen suficiente."
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "59"
       }
     },
     "jeju-cruise-shore-excursion-small-group-tour": {
@@ -3880,11 +3880,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
         "thumbnail": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
-        "priceLabel": "Desde US$79 por persona (antes $85, 7% descuento)",
+        "priceLabel": "",
         "shortCardDescription": "Un tour en grupo pequeño desde crucero que adapta la ruta según el puerto de llegada. El Puerto de Jeju (norte) sigue una ruta costera este del Patrimonio UNESCO con parada en Seongsan Ilchulbong; el Puerto de Gangjeong (sur) incluye la ruta Hallasan 1100 + geología de la costa sur + Mercado Olle. Ambas rutas regresan a la terminal del crucero con tiempo de margen confortable."
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "72"
       }
     },
     "jeju-eastern-unesco-lugares-day-tour": {
@@ -3906,11 +3906,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
         "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
-        "priceLabel": "US$47 por persona (precio normal $59, 20% de descuento) · aprox. 72.000 won",
+        "priceLabel": "",
         "shortCardDescription": "Recorre los lugares UNESCO del este de Jeju en un bucle en grupo pequeño de 9 horas. Incluye la playa Hamdeok Seoubong, la Aldea Folclórica de Seongeup (patrimonio folclórico UNESCO), Seongsan Ilchulbong y Manjanggul — los dos sitios del Patrimonio Natural Mundial de la UNESCO inscritos juntos en 2007 — y el espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela). Todas las entradas incluidas, guía certificado en inglés y chino."
       },
       "price": {
-        "amountLabel": "47"
+        "amountLabel": "49"
       }
     },
     "jeju-grand-highlights-loop": {
@@ -3930,11 +3930,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
         "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
-        "priceLabel": "Desde US$100 por persona (antes $112, 11% de descuento)",
+        "priceLabel": "",
         "shortCardDescription": "Una ruta intensa por toda la isla que enlaza tres sitios del Patrimonio Mundial de la UNESCO —Hallasan, Seongsan Ilchulbong y el tubo de lava de Manjanggul— con un espectáculo en vivo de buceo libre de las haenyeo, los acantilados columnares de Jusangjeolli y la cascada Jeongbang que cae al océano. Los atractivos emblemáticos de Jeju, concentrados en un solo día."
       },
       "price": {
-        "amountLabel": "100"
+        "amountLabel": "88"
       }
     },
     "jeju-hydrangea-festival-tour-east-route": {
@@ -4035,7 +4035,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "shortCardDescription": "Una excursión de un día en grupo reducido por los principales puntos emblemáticos del sur de Jeju (Seogwipo): la Cascada Jeongbang, la única de Asia que cae directamente al mar, la roca Oedolgae y el paseo costero del Sendero Olle Ruta 7, el Templo Yakcheonsa (el mayor de Asia Oriental), el Museo del Té Osulloc y el Sendero Eoseungsaengak del Hallasan. Cuatro puntos de recogida en toda la Ciudad de Jeju y el aeropuerto, guía certificado en inglés y chino, entrada gratuita en casi todas las paradas salvo la Cascada Jeongbang, sin presión de compras."
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "49"
       }
     },
     "jeju-west-south-full-day-authentic-tour": {
@@ -4363,11 +4363,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
         "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
-        "priceLabel": "US$52 / persona",
+        "priceLabel": "",
         "shortCardDescription": "Una ruta equilibrada de un día por el suroeste de Jeju que enlaza el humedal de las Tierras Altas 1100 de Hallasan, la costa volcánica, la Cascada Cheonjeyeon, los campos de té O'Sulloc, la calle de cafeterías de Aewol y el atardecer en Iho Tewoo."
       },
       "price": {
-        "amountLabel": "52"
+        "amountLabel": "49"
       }
     }
   },
@@ -4718,7 +4718,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "shortCardDescription": "寄港地に合わせてルートが変わる、大型コーチによるクルーズ寄港地バスツアー。済州港（北部）は城山日出峰を経由する東海岸ユネスコルート、江汀港（南部）はハルラ山1100＋南海岸の地質スポット＋オルレ市場ルートをご案内。いずれも余裕を持ってクルーズターミナルに帰着します。"
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "59"
       }
     },
     "jeju-cruise-shore-excursion-small-group-tour": {
@@ -4739,11 +4739,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
         "thumbnail": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
-        "priceLabel": "1名様 US$79（定価$85、7%オフ）",
+        "priceLabel": "",
         "shortCardDescription": "寄港地に合わせてルートが変わる少人数グループ制クルーズ寄港地観光です。済州港（北部）発は城山日出峰を経由する東海岸ユネスコルート、江汀港（南部）発は漢拏山1100高地＋南海岸の地質スポット＋オルレ市場を巡るルートをご案内します。どちらもクルーズターミナルへ余裕を持って帰港します。"
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "72"
       }
     },
     "jeju-eastern-unesco-spots-day-tour": {
@@ -4766,11 +4766,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
         "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
-        "priceLabel": "1名様 US$47（定価$59、20%オフ）・約72,000ウォン",
+        "priceLabel": "",
         "shortCardDescription": "済州東部のユネスコ見どころを9時間の少人数で一周します。咸徳ソウボン海水浴場、城邑民俗村（ユネスコ民俗）、城山日出峰と万丈窟 — 2007年にともに登録された2つのユネスコ世界自然遺産、そして海女の素潜り実演（中止時は海女博物館）を含みます。全入場料込み、英語・中国語対応の認定ガイド付き。"
       },
       "price": {
-        "amountLabel": "47"
+        "amountLabel": "49"
       }
     },
     "jeju-grand-highlights-loop": {
@@ -4790,11 +4790,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
         "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
-        "priceLabel": "1名 US$100〜（通常 $112、11%オフ）",
+        "priceLabel": "",
         "shortCardDescription": "3つのユネスコ世界遺産——漢拏山(ハルラサン)、城山日出峰、万丈窟溶岩洞窟——を、生きた海女（ヘニョ）の素潜り実演、柱状節理の断崖、海へ落ちる正房瀑布とつなぐ、密度の高い全島ルート。済州を象徴するハイライトを、1日に凝縮しました。"
       },
       "price": {
-        "amountLabel": "100"
+        "amountLabel": "88"
       }
     },
     "jeju-hydrangea-festival-tour-east-route": {
@@ -4895,7 +4895,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "shortCardDescription": "済州南部ソギポの定番スポットを少人数で巡る日帰りツアー — アジアで唯一海へ直接落ちる正房瀑布、外突き岩の奇岩とオルレ7コースの海岸散策、東アジア最大の寺院・薬泉寺、オソルロックティーミュージアム、そして漢拏山御乗生岳の登山道。済州市内全域と空港を含む4か所のピックアップポイント、英語・中国語の認定ガイド同行、正房瀑布以外はほぼ全コース入場無料、買い物の押し売りなし。"
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "49"
       }
     },
     "jeju-west-south-full-day-authentic-tour": {
@@ -5223,11 +5223,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
         "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
-        "priceLabel": "1名様 US$52",
+        "priceLabel": "",
         "shortCardDescription": "漢拏山1100高地の湿地、火山性海岸線、天帝淵滝、オソルロクの茶畑、愛月カフェ通り、梨湖テウの夕日をつなぐ、バランスの取れた済州島南西部の1日コース。"
       },
       "price": {
-        "amountLabel": "52"
+        "amountLabel": "49"
       }
     }
   }

@@ -35,7 +35,7 @@
     ],
     "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
     "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
-    "priceLabel": "1名 US$100〜（通常 $112、11%オフ）",
+    "priceLabel": "",
     "shortCardDescription": "3つのユネスコ世界遺産——漢拏山(ハルラサン)、城山日出峰、万丈窟溶岩洞窟——を、生きた海女（ヘニョ）の素潜り実演、柱状節理の断崖、海へ落ちる正房瀑布とつなぐ、密度の高い全島ルート。済州を象徴するハイライトを、1日に凝縮しました。",
     "tags": [
       "少人数制",
@@ -49,13 +49,12 @@
   "headlineLine1": "済州グランドハイライトツアー",
   "headlineLine2": "ツアー",
   "price": {
-    "amountLabel": "100",
+    "amountLabel": "88",
     "originalPriceUsd": 112,
-    "salePriceUsd": 100,
-    "discountPercent": 11,
+    "salePriceUsd": 88,
+    "discountPercent": 21,
     "currency": "USD",
-    "per": "person",
-    "priceNote": "少人数制・二言語対応の済州全島ツアー（1名あたり約₩138,000）。AtoC Korea直販。オペレーター基本料金から11%割引適用。"
+    "per": "person"
   },
   "hero": {
     "imageUrl": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
@@ -1106,6 +1105,15 @@
         "個人的なショッピング費用",
         "ガイドへのチップ"
       ]
+    },
+    {
+      "id": "cancellation",
+      "title": "キャンセルポリシー",
+      "preview": "ピックアップの24時間前まで無料キャンセル可能。",
+      "content": [
+        "ピックアップの24時間前まで無料キャンセル可能。",
+        "当日のキャンセルおよびノーショーは返金不可です。"
+      ]
     }
   ],
   "practicalWeatherStatic": {
@@ -1287,13 +1295,12 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_idはSupabase / envから実行時に解決されます。静的JSONBには含まれません。",
     "price": {
-      "amountLabel": "100",
+      "amountLabel": "88",
       "originalPriceUsd": 112,
-      "salePriceUsd": 100,
-      "discountPercent": 11,
+      "salePriceUsd": 88,
+      "discountPercent": 21,
       "currency": "USD",
-      "per": "person",
-      "priceNote": "少人数制・二言語対応の済州全島ツアー（1名あたり約₩138,000）。AtoC Korea直販。オペレーター基本料金から11%割引適用。"
+      "per": "person"
     }
   },
   "matching_profile": {

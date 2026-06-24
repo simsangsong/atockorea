@@ -35,7 +35,7 @@
     ],
     "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
     "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
-    "priceLabel": "1인 US$100부터 (기존 $112, 11% 할인)",
+    "priceLabel": "",
     "shortCardDescription": "한라산, 성산일출봉, 만장굴 용암동굴까지 유네스코 세계유산 3곳을 연결하고, 살아 있는 해녀 물질 시연, 주상절리 절벽, 바다로 떨어지는 정방폭포를 더한 고밀도 전 지역 코스입니다. 제주의 대표 명소를 하루에 응축한 일정입니다.",
     "tags": [
       "소그룹",
@@ -49,13 +49,12 @@
   "headlineLine1": "제주 그랜드 하이라이트 일일 투어",
   "headlineLine2": "투어",
   "price": {
-    "amountLabel": "100",
+    "amountLabel": "88",
     "originalPriceUsd": 112,
-    "salePriceUsd": 100,
-    "discountPercent": 11,
+    "salePriceUsd": 88,
+    "discountPercent": 21,
     "currency": "USD",
-    "per": "person",
-    "priceNote": "소그룹 2개 국어 진행 제주 전 지역 투어(1인 약 ₩138,000). AtoC Korea 직접 판매, 운영사 기준가 대비 11% 할인 적용."
+    "per": "person"
   },
   "hero": {
     "imageUrl": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
@@ -1106,6 +1105,15 @@
         "개인 쇼핑 비용",
         "가이드 팁"
       ]
+    },
+    {
+      "id": "cancellation",
+      "title": "취소 정책",
+      "preview": "픽업 24시간 전까지 무료 취소.",
+      "content": [
+        "픽업 24시간 전까지 무료 취소.",
+        "당일 취소 및 노쇼는 환불되지 않습니다."
+      ]
     }
   ],
   "practicalWeatherStatic": {
@@ -1287,13 +1295,12 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id는 런타임 시 Supabase / 환경 변수에서 확인되며, 정적 JSONB의 일부가 아닙니다.",
     "price": {
-      "amountLabel": "100",
+      "amountLabel": "88",
       "originalPriceUsd": 112,
-      "salePriceUsd": 100,
-      "discountPercent": 11,
+      "salePriceUsd": 88,
+      "discountPercent": 21,
       "currency": "USD",
-      "per": "person",
-      "priceNote": "소그룹 2개 국어 진행 제주 전 지역 투어(1인 약 ₩138,000). AtoC Korea 직접 판매, 운영사 기준가 대비 11% 할인 적용."
+      "per": "person"
     }
   },
   "matching_profile": {

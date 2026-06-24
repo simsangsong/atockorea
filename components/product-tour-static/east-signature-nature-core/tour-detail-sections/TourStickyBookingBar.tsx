@@ -75,9 +75,12 @@ export type TourStickyBookingBarProps = Pick<EastSignatureNatureCoreDetailViewMo
    * [1, MAX_GUESTS]; absent → DEFAULT_GUESTS as before.
    */
   initialGuests?: number;
+  /** Deep-link seeding — `?date=`/`?language=` from the URL pre-fill the bar. */
+  seedDateYmd?: string;
+  seedLanguage?: PreferredLanguage;
 };
 
-export function TourStickyBookingBar({ price, checkout, selectedPortLabel, sectionUi, pricingTiers, initialGuests }: TourStickyBookingBarProps) {
+export function TourStickyBookingBar({ price, checkout, selectedPortLabel, sectionUi, pricingTiers, initialGuests, seedDateYmd, seedLanguage }: TourStickyBookingBarProps) {
   const portCtaPrefix = sectionUi?.portSelectorCtaPrefix ?? "Docking at";
   const router = useRouter();
   const currencyCtx = useCurrencyOptional();
@@ -85,12 +88,12 @@ export function TourStickyBookingBar({ price, checkout, selectedPortLabel, secti
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [busy, setBusy] = useState(false);
   const seededGuests = initialGuests != null ? clampGuests(initialGuests) : DEFAULT_GUESTS;
-  const [dateYmd, setDateYmd] = useState(initialDateYmd);
+  const [dateYmd, setDateYmd] = useState(() => seedDateYmd ?? initialDateYmd());
   const [guestCount, setGuestCount] = useState(seededGuests);
   const [guestEditValue, setGuestEditValue] = useState(String(seededGuests));
   const [guestFieldEditing, setGuestFieldEditing] = useState(false);
   const guestFieldEditingRef = useRef(false);
-  const [preferredLanguage, setPreferredLanguage] = useState<PreferredLanguage>("en");
+  const [preferredLanguage, setPreferredLanguage] = useState<PreferredLanguage>(seedLanguage ?? "en");
   const [availability, setAvailability] = useState<AvailabilityState>({ status: "idle" });
   const [selectedDuration, setSelectedDuration] = useState<string | null>(
     pricingTiers && pricingTiers.durations.length > 0 ? pricingTiers.durations[0]! : null,

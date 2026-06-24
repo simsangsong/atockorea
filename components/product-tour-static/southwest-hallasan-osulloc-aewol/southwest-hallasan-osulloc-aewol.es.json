@@ -32,7 +32,7 @@
     ],
     "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
     "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
-    "priceLabel": "US$52 / persona",
+    "priceLabel": "",
     "shortCardDescription": "Una ruta equilibrada de un día por el suroeste de Jeju que enlaza el humedal de las Tierras Altas 1100 de Hallasan, la costa volcánica, la Cascada Cheonjeyeon, los campos de té O'Sulloc, la calle de cafeterías de Aewol y el atardecer en Iho Tewoo.",
     "tags": [
       "small_group",
@@ -46,9 +46,9 @@
   "headlineLine1": "Jeju Suroeste",
   "headlineLine2": "Hallasan, O'Sulloc, Aewol e Iho Tewoo",
   "price": {
-    "amountLabel": "52",
+    "amountLabel": "49",
     "originalPriceUsd": null,
-    "salePriceUsd": 52,
+    "salePriceUsd": 49,
     "discountPercent": null,
     "currency": "USD",
     "per": "person"
@@ -1269,6 +1269,15 @@
         "Gastos personales de compras",
         "Propinas para el guía"
       ]
+    },
+    {
+      "id": "cancellation",
+      "title": "Cancelación",
+      "preview": "Cancelación gratuita hasta 24 horas antes de la recogida.",
+      "content": [
+        "Cancelación gratuita hasta 24 horas antes de la recogida.",
+        "Las cancelaciones el mismo día y las ausencias no son reembolsables."
+      ]
     }
   ],
   "practicalWeatherStatic": {
@@ -1467,16 +1476,16 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id se resuelve en tiempo de ejecución desde Supabase / env; no forma parte del JSONB estático.",
     "price": {
-      "amountLabel": "52",
+      "amountLabel": "49",
       "originalPriceUsd": null,
-      "salePriceUsd": 52,
+      "salePriceUsd": 49,
       "discountPercent": null,
       "currency": "USD",
       "per": "person"
     }
   },
   "matching_profile": {
-    "product_type": "small_group",
+    "product_type": "bus",
     "route_type": "fixed_route",
     "region_type": "jeju_southwest",
     "region_tags": [
