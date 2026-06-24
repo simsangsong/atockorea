@@ -15,6 +15,7 @@
 | `docs/atockorea-analytics-master-plan-2026-05-17.md` | 자체 analytics 시스템 마스터 플랜(Phase 1~7 완료). 통계 확장은 이 문서를 입력으로 사용 |
 | `docs/STRIPE_SETUP.md` / `STRIPE_BUSINESS_DESCRIPTION.md` / `MERCHANT_ONBOARDING.md` | 결제·온보딩 현행 기준 |
 | `supabase/_archive/20260422-220935/root-sql/complete-database-schema.sql` | 기초 비즈니스 테이블 canonical 정의(migrations는 ALTER만 수행) |
+| **`docs/admin-premium-mobile-design-spec-2026-06-24.md`** | **§U의 실행 상세(프리미엄 모바일 buildable spec — 토큰·컴포넌트 키트·인터랙션 라이브러리·페이지 청사진). Phase 2/3 모바일 개편의 단일 구현 기준** |
 
 > ⚠️ **법무·세무 면책:** §G(세무/정산)와 본 문서의 모든 세법 해석은 **1차 리서치 결과이며 법률·세무 자문이 아니다.** "SIGN-OFF 필수"로 표기된 항목은 **미국 세무 변호사 + CPA의 검토·승인 전에는 어떤 자동 생성 서류도 신뢰·제출 금지.**
 
@@ -33,8 +34,9 @@
 | 0.9 | 라이브 DB 대조 (§N) — K-0 해소 | ✅ 완료 | atockorea MCP 라이브 연결. **마이그레이션 드리프트(repo≠live, BLOCKER급 거버넌스)** 발견. N1 REFUTED→드리프트 재분류. **N27(anon-exec PII 익명화 RPC, BLOCKER)**·N28~N32 + perf 62/62/134. §G-6 DDL 충돌0·F1~F3/R1 라이브 확정. D-14·notifications·payments부재 확정 |
 | 0.10 | 플랜 완전화 감사 v3 (§O~§R) | ✅ 완료 | 3 감사 에이전트(완전성갭/신규결함·업그레이드/DDL어드버서리얼). **N33(site_settings 부재 BLOCKER)·B-1(노쇼 전액청구 돈버그 BLOCKER)·B-2/B-3/M-4/M-6/M-7/M-8**. §G-6 DDL 정정 12델타(C#3 FOR UPDATE는 라이브 probe로 REFUTED). 횡단 워크스트림 WS-A~J. 업그레이드 U-1~U-10(§P). 준비사양(§Q: N27 SQL·정합 런북·Phase1 턴키). **실행 WBS(§R) PR 단위 티켓화** |
 | 0.11 | 섹션별 딥 리뷰 + 모바일/UX (§S) | ✅ 완료 | 8 에이전트(페이지군6+모바일전담+UX전담). **모바일 판정: 부분 사용가능**(셸 OK, 29p중 12p 반응형0). 신규 결함 S-F1~F16(S-F1 stats OOM·**S-F2 Math.random 비번**·S-F3 audit actor·S-F4/F5 에디터 데이터손상 BLOCKER급). UX 시스템 S-U1~U11(ConfirmDialog/Sonner 기존자산 미사용·URL필터·nav IA). REFUTED 2(SortableImageCard 케이싱·"전부 데스크톱") |
-| 0.12 | 최종 전수 검수 — 미검수 영역 (§T) | ✅ 완료 | 7 에이전트(미진단 어드민라우트·Stripe머니패스·인증RBAC·챗봇·공개API·lib·고객UI) + 라이브 DB/RLS/storage 스윕. 🔴🔴 **P1 라이브확정 권한상승**(고객→admin RLS WITH CHECK 부재). W1-15(머니패스: 환불라우트 부재·webhook 상태가드·cron secret URL)·CB1-15(예약 enumeration·CORS*)·PA(reminders GET·upload DELETE)·CK1-3(카트 세금/프로모)·LIB(이메일XSS·FX폴백)·N34. **굿뉴스: requireAdmin 견고·service-role 번들유출0·웹훅서명O. 진단(Phase 0) 종결** |
-| 1 | 기능 안정화 (BLOCKER/MAJOR 버그 수정) | ⏳ 대기 | §D + §O.2 + §S.2 + §T. 선행 게이트 R0 + R2.0. 티켓=§R-1. **🔒 R9.0 P1(권한상승)이 전 항목 최우선** |
+| 0.12 | 최종 전수 검수 — 미검수 영역 (§T) | ✅ 완료 | 7 에이전트(미진단 어드민라우트·Stripe머니패스·인증RBAC·챗봇·공개API·lib·고객UI) + 라이브 DB/RLS/storage 스윕. 🔴🔴 **P1 라이브확정 권한상승**(고객→admin RLS WITH CHECK 부재). W1-15(머니패스: 환불라우트 부재·webhook 상태가드·cron secret URL)·CB1-15(예약 enumeration·CORS*)·PA(reminders GET·upload DELETE)·CK1-3(카트 세금/프로모)·LIB(이메일XSS·FX폴백)·N34. **굿뉴스: requireAdmin 견고·service-role 번들유출0·웹훅서명O** |
+| 0.13 | 프리미엄 모바일 도약 + 완성도 보정 (§U + 컴패니언) | ✅ 완료 | 7 에이전트(누락스윕 + 프리미엄모바일 6). **신규 blind spot: `app/merchant/**` 포털·`app/dashboard/**`·미언급 공개API 다수.** 프리미엄 결정 8(바텀내비5·AdminPageShell·시트/스와이프/낙관적·alert폐기·토큰·타입램프·폼16px·다크). 4 페이지 청사진. 본문 stale 정정(D-11/D-15/N1/G-6.2). WBS 고아 입양. 컴패니언 `docs/admin-premium-mobile-design-spec-2026-06-24.md`. **진단 종결** |
+| 1 | 기능 안정화 (BLOCKER/MAJOR 버그 수정) | ⏳ 대기 | §D + §O.2 + §S.2 + §T. 선행 게이트 R0 + R2.0(프리미엄 모바일 기반). 티켓=§R-1. **🔒 R9.0 P1(권한상승)이 전 항목 최우선** |
 | 2 | 디자인 시스템 통합 (토큰·팔레트·타이포·i18n) | ⏳ 대기 | §H.1. 모든 페이지 개편의 선행 조건 |
 | 3 | 페이지별 UI/UX 개편 | ⏳ 대기 | §H.2~. Phase 2 토큰 위에서 한 페이지씩 |
 | 4 | 데이터 모델 확장 (정산 원가/수수료·귀속·감사로그·견적 이탈) | ⏳ 대기 | §E·§F·§G. 마이그레이션 + 백필 |
@@ -45,7 +47,7 @@
 
 상태 마커: ⏳ 대기 / 🔄 진행 중 / ⏸ 보류 / ✅ 완료 / ❌ 중단
 
-**현재 활성 Phase: Phase 0~0.12(진단 전 단계: 검증·UI/모바일·§G정산·Codex·라이브DB·완전화·미검수영역) 완료 — 진단 종결, 코드 미수정. 실행은 §R WBS 기준. 🔴🔴 최우선 = 🔒R9.0 P1(라이브 확정 고객→admin 권한상승, RLS WITH CHECK 1줄). 다음 액션 = 사용자 결정(§J #11~14 + #2/#6/#8~10) → R0(N27 REVOKE·마이그레이션 정합·미진단라우트)+R2.0(모바일 기반) → Phase 1(§R-1). 🔒 보안 트랙(§R-9)이 P1·P2·W-3·CB-1/2·PA-1/2 등으로 대폭 확장(라이브 즉시 리스크 → 어드민 Phase와 병행/선행 권고). 💴 머니패스 무결성 트랙(§T.10) 신설 — W-10 환불경로는 §G 정산 선행. ⚠️ R0.2(repo≠live 정합)는 Phase 4 하드 선행. 준비사양 §Q — 승인 시 즉시 실행.**
+**현재 활성 Phase: Phase 0~0.13(진단 전 단계 + 프리미엄 모바일 설계 + 완성도 보정) 완료 — 진단 종결, 코드 미수정. 실행은 §R WBS 기준. 🔴🔴 최우선 = 🔒R9.0 P1(라이브 확정 고객→admin 권한상승, RLS WITH CHECK 1줄). 다음 액션 = 사용자 결정(§J #11~14 + #2/#6/#8~10) → R0(N27 REVOKE·마이그레이션 정합·미진단라우트)+R2.0(모바일 기반) → Phase 1(§R-1). 🔒 보안 트랙(§R-9)이 P1·P2·W-3·CB-1/2·PA-1/2 등으로 대폭 확장(라이브 즉시 리스크 → 어드민 Phase와 병행/선행 권고). 💴 머니패스 무결성 트랙(§T.10) 신설 — W-10 환불경로는 §G 정산 선행. ⚠️ R0.2(repo≠live 정합)는 Phase 4 하드 선행. 준비사양 §Q — 승인 시 즉시 실행.**
 
 > 실행 순서 원칙: **Phase 1(기능 안정화) → 2(디자인 토큰) → 3(UI 개편)** 은 사용자 체감 라인. **Phase 4(데이터) → 5(통계) → 6(세무)** 는 데이터 라인으로 병행 가능. Phase 6은 §J 세무 SIGN-OFF가 없으면 시작 금지.
 
@@ -91,7 +93,8 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 | 2026-06-24 | Phase 0.9 — §N 라이브 DB 대조(atockorea MCP). 마이그레이션 드리프트(repo 32 vs live 48, ~9만 일치)·N1 REFUTED→드리프트·N27 anon-exec PII RPC(BLOCKER)·N28~N32·perf 62/62/134. §G-6 DDL 라이브 충돌0, F1~F3/R1 라이브 확정 | (this) | K-0 해소. pending-db-apply 수동 워크플로가 드리프트 원인. payments/notifications 라이브 부재 확정 |
 | 2026-06-24 | Phase 0.10 — §O~§R 플랜 완전화. 3 감사 에이전트 + 라이브 검증. N33(site_settings 부재)·B-1(노쇼 돈버그)·B-2/B-3/M-4/M-6/M-7/M-8 신규. §G-6 DDL 12델타 정정(C#3 FOR UPDATE는 probe로 REFUTED). 횡단 WS-A~J·업그레이드 U-1~10·준비사양(N27 SQL/정합 런북/Phase1 턴키)·실행 WBS(§R) | (this) | unified_inquiries 컬럼 라이브 검증·E-5 재고UI 보류(availability unlimited 충돌)·N1/D-15 stale 정정 |
 | 2026-06-24 | Phase 0.11 — §S 섹션별 딥리뷰 + 모바일/UX. 8 에이전트. 모바일 정량판정(29p중 12p 반응형0·최악 support/match-pois/sessions/retention). 신규 S-F1~F16(stats OOM·Math.random 비번·audit actor·에디터 데이터손상)·S-U1~U11(ConfirmDialog/Sonner 기존자산·URL필터·nav IA). 모바일 패턴 카탈로그→R2.0 기반 티켓 | (this) | REFUTED: SortableImageCard 케이싱·"전부 데스크톱전용"(셸은 모바일 인지) |
-| 2026-06-24 | Phase 0.12 — §T 최종 전수검수(미검수영역). 7 에이전트(미진단어드민라우트·Stripe머니패스·인증RBAC·챗봇·공개API·lib·고객UI)+라이브 DB/RLS/storage 스윕. 🔴🔴 P1 라이브확정 권한상승(고객→admin). W1-15·CB1-15·PA·AR·LIB·CK1-3·N34. 보안트랙 대폭확장+머니패스 무결성 트랙 신설 | (this) | 굿뉴스 확정: requireAdmin 서버DB검증·service-role 번들유출0·웹훅서명O·머니cron fail-closed·pricing 수학 깨끗. **진단(Phase 0) 종결** |
+| 2026-06-24 | Phase 0.12 — §T 최종 전수검수(미검수영역). 7 에이전트(미진단어드민라우트·Stripe머니패스·인증RBAC·챗봇·공개API·lib·고객UI)+라이브 DB/RLS/storage 스윕. 🔴🔴 P1 라이브확정 권한상승(고객→admin). W1-15·CB1-15·PA·AR·LIB·CK1-3·N34. 보안트랙 대폭확장+머니패스 무결성 트랙 신설 | (this) | 굿뉴스 확정: requireAdmin 서버DB검증·service-role 번들유출0·웹훅서명O·머니cron fail-closed·pricing 수학 깨끗 |
+| 2026-06-24 | Phase 0.13 — §U 프리미엄 모바일 도약 + 완성도 보정. 7 에이전트(누락스윕+프리미엄모바일6). blind spot(merchant/dashboard 포털·미언급 공개API). 프리미엄 결정8·4페이지 청사진·본문 stale 정정·WBS 고아 입양. 컴패니언 설계스펙 문서 신설 | (this)+`docs/admin-premium-mobile-design-spec-2026-06-24.md` | settlements requireAdmin 보유(REFUTED)·vercel cron 5개 확인. 신규 R10(머천트포털)·J #15~17. **진단 종결** |
 
 ---
 
@@ -525,6 +528,9 @@ GRANT EXECUTE ON FUNCTION public.create_merchant_settlement(uuid,date,date,text,
 12. 🔲 **마이그레이션 정합(§N.1) 착수 승인** — repo `migrations/`가 라이브와 크게 갈림(pending-db-apply 수동 워크플로). `db pull` baseline + 정식화 + CI drift 체크. **Phase 4 정산 마이그레이션의 안전 배포 선행 조건.**
 13. 🔲 **RLS-no-policy 13개 테이블 의도 확인**(§N.3 N31) — service_role 전용 의도면 정상, user-readable 의도면 정책 누락.
 14. 🔴🔲 **P1 권한상승 즉시 패치 승인(§T.1, 라이브 확정)** — `user_profiles` UPDATE/INSERT RLS에 role `WITH CHECK` 추가. **전 항목 최우선**(고객이 직접 admin 자기승격 가능). 마이그레이션 1줄. 다른 결정과 무관하게 **지금 바로** 권고.
+15. 🔲 **`app/dashboard/**` 정체·존속 결정**(§U.0.1) — 미상 4페이지 포털, 레거시 폐기 vs 흡수.
+16. 🔲 **다크모드 도입 범위**(§U.1) — 어드민 전용 vs 전사.
+17. 🔲 **통합 인박스(`/admin/inbox`) 확정**(§U.2/§E-4) — contacts/emails/support 3페이지 대체 여부.
 
 ---
 
@@ -1304,6 +1310,63 @@ GRANT  EXECUTE ON FUNCTION public.analytics_health_snapshot()               TO s
 
 ---
 
+# §U. 프리미엄 모바일 SaaS 도약 + 완성도 보정 (Phase 0.13 — 2026-06-24)
+
+> 사용자 지시("전 Phase 누락 점검 + 모바일 UI를 프리미엄 SaaS로 도약 — 조작편의·가독성·모바일 적합도 세계 최고 수준"). 7 에이전트(전체플랜 누락스윕 + 프리미엄 모바일 6: IA·인터랙션·가독성·폼/머니·디자인시스템·페이지청사진) + 라이브 검증. **실행 상세(컴포넌트/토큰/청사진/마이그레이션 맵)는 컴패니언 문서 `docs/admin-premium-mobile-design-spec-2026-06-24.md` (= 이 §U의 buildable spec).**
+
+## U.0 완성도 보정 — 전체 플랜 누락 스윕 (Track A)
+### U.0.1 진짜 blind spot (8 라운드 전부 미언급 — 신규)
+| 표면 | 사실 | 조치 |
+|---|---|---|
+| **`app/merchant/**` 머천트 포털 전체** | 6 페이지(login·orders·products·analytics·settings + page)+`layout.tsx` + `api/merchant/orders`·`api/merchant/products`. **인증/RLS/데이터 스코프 미감사.** 라이브 확인됨. | 신규 감사 트랙 R10(머천트 포털) — 어드민과 별개 사용자(merchant role). P1 권한상승과 함께 RLS 스코프 점검 |
+| **`app/dashboard/**`** | 4 페이지(page·bookings·members·stats). 미상 레거시/2차 대시보드. | 정체·인증 확인 후 폐기 또는 흡수 결정(§J #15) |
+| 미언급 공개 API | `telegram/support-webhook`(웹훅 인증?)·`haenyeo-status`·`tour-mode/bookings`·`tours/[id]/availability`·`tours/destinations`·공개 `tours`·`user-settings`·`wishlist`·`weather/forecast`·`logs/error`·공개 `cms/content`·**`assistant/live`(3번째 챗봇 엔드포인트)**·**`tour-product/match`(주 매처)**·`analytics/identify`·`analytics/experiments/active`·`agent/openapi.json`. | 🔒 보안 트랙 R9에 "공개 API 2차 스윕" 추가 |
+### U.0.2 검증으로 정정/안심 (라이브/코드 확인)
+- ✅ **`api/settlements/route.ts`는 POST에 `requireAdmin`(:93)·GET에 getAuthUser(:22) 보유** → "auth 가드 부재" 우려 **REFUTED**(가드됨).
+- ✅ **vercel.json 크론 5개 확인**: emails/reminders(9시)·recapture-holds(19시)·capture-tour-day(1시)·analytics-refresh(17시)·analytics-anonymize(18시). cron 스케줄 자체는 정상(emails/reminders GET 우회=PA-1만 버그).
+- ✅ SortableImageCard 케이싱·"전부 데스크톱전용"은 이미 §S.4에서 REFUTED.
+### U.0.3 본문 stale 정정 (§N이 refute한 텍스트가 본문에 잔존 — 명시 정정)
+| 위치 | stale | 정정 |
+|---|---|---|
+| §D-15 "health/route.ts:20 미배포시 500" | §N.2가 라이브 실재 확인 | **함수 라이브 실재(프로덕션 정상), 잔여=repo 드리프트(§N.1)**. §D-15 단독 독해 주의 |
+| §D-11 "설정 저장은 되나 강제 안함" | N33이 site_settings 부재 확인 | **저장도 무력**(테이블 부재로 쓰기 에러, 읽기는 기본값 위장). D-11+N33 합본 |
+| §K-7.7 / §K-7.3 "N1 RPC 신설" | §N.2 라이브 실재 | **신설 아님 → repo 마이그레이션 흡수**(드리프트 정합) |
+| §G-6.2 RPC v2 SQL 블록 | O.3 C2 정정이 블록에 미반영 | **구현 시 O.3 C1·C2·C4·C5·C7·C8 델타 반드시 적용**(블록 verbatim 구현 금지) |
+### U.0.4 WBS 고아 입양 (티켓 없던 결함 → §R 배치)
+- **R1 추가:** S-F6~F16(머천트 DELETE순서·빈PUT200·이중필터·emails 500·experiment NaN·settle조기완료·holdMsLeft·addressLine2·merchant_settings·contacts롤백·false-dirty)·LIB-2(DMZ 차량)·LIB-6(라벨)·AR-3(픽업 비원자).
+- **R9 추가:** PA-3~PA-6·CB-3·CB-6/10/12/15·N32(search_path·extension·leaked-pw)·N34(storage)·공개 API 2차 스윕·머천트 포털 RLS.
+- **💴 머니패스 트랙 추가:** W-2·W-5·W-8·W-11·W-12·LIB-3(FX)·CK-1/2/3/6/7/9.
+- **WS-A~J(횡단 10) 각각 R-티켓화**(관측성=1순위: notifications/이메일/FX/결제불일치 무알림 다발). **U-1~U-10 각 R-서브티켓.**
+
+## U.1 프리미엄 모바일 — 핵심 결정 (binding)
+> 진단(§S)이 "무엇이 깨졌나"였다면, §U는 "세계 최고 프리미엄 SaaS로 어떻게"다. 전부 **신규 의존성 0**(기존 토큰·`components/ui/*`·framer-motion·sonner·ConfirmDialog).
+| # | 결정 | 근거 |
+|---|---|---|
+| 1 | **바텀내비 5슬롯 재편**(홈·주문·**수신함**(contacts+support)·챗봇·더보기) + More 그룹핑 + **support/QA를 nav에 추가** | 현 12 flat·support·QA nav 부재(IA결함) |
+| 2 | **`AdminPageShell` 공통 크롬 계약**(sticky헤더+safe-area-inset-top+필터바+바텀패딩) | 12/29 무반응형 페이지가 1줄로 패리티 |
+| 3 | **시트 우선**(상세·필터·정산=바텀시트) + **SwipeRow**(스와이프 액션) + **낙관적+Undo** + **재fetch stale 유지** | 현 풀스피너 교체·confirm()·무제스처 |
+| 4 | **alert/confirm 전수 폐기 → toast(Sonner)+ConfirmDialog**, **Toaster 미마운트 → 추가** | iOS WebView `confirm()` 무확인 true 반환 = **정산 머니버그** |
+| 5 | **디자인 토큰 확정**(`--admin-*` surface/border/shadow + 간격 4/6/8/12 + radius 12px + **tabular-nums** + 단일 accent brand.blue) | 3팔레트·raw hex·4 H1·`text-[9/10/11px]` 44곳 |
+| 6 | **5역할 타입 램프 + DataCard 폴백**(모든 테이블) + **차트 모바일화**(스파크라인·주간버킷·frozen 히트맵) | support 9-col·sessions grid-12·90바 ~3.5px |
+| 7 | **폼 16px 입력 + inputmode + sticky CTA + 머니 확인 시트** | AUTH_INPUT 15px(iOS줌)·체크아웃 CTA 화면밖·정산 확인 부재 |
+| 8 | **프리미엄 다크모드**(navy-tinted oklch) + Lucide stroke 규율(이모지 제거) + 절제된 모션(skeleton shimmer·spring 드로어) | "generic 내부툴"→"프리미엄 SaaS" |
+
+## U.2 페이지 청사진 요약 (4 템플릿 — 상세는 컴패니언 §8)
+- **대시보드:** 액션 큐 strip(대기예약·미처리문의·에스컬) + 매출 KPI 2-up(USD/KRW) + 스파크라인을 above-fold; floating help 제거.
+- **주문:** sticky 필터바+검색(신규) + DataCard 스와이프; 상세에 **sticky 바텀 머니 액션바**(청구/현장/노쇼, hold상태색).
+- **통합 인박스(`/admin/inbox` 신규):** 3소스 UNION + 카테고리칩 + 스와이프-해결 + 바텀시트 상세/답장 컴포저.
+- **분석:** KPI 카드 내 스파크라인(별도 차트 제거) + SessionCard(grid-12 대체) + frozen-column 히트맵.
+
+## U.3 §R WBS — 프리미엄 모바일 트랙 (R2.0 확장 + R3 재정의)
+- **R2.0(기반, 선행) 대폭 확장:** Toaster 마운트 + `AdminPageShell` + 토큰(`--admin-*`·tabular-nums·radius12) + 16px 입력 전역 + 44px 터치 + 100dvh/safe-area + `lib/admin/haptics`·단일 Spinner·`SwipeRow`·skeleton·`useUrlFilters`·Lucide 일괄. **이게 R3 전 페이지의 빌드 기반.**
+- **R3(페이지) DoD 강화:** 청사진(U.2/컴패니언§8) 순 + 모바일 패리티(반응형·터치44·16px·stale유지·URL필터·toast/ConfirmDialog·dirty가드·inputmode·다크·a11y). 우선순위: 머니 안전 직결(orders/[id] confirm→머니시트·support 더블탭·AUTH_INPUT) → 대시보드 → 주문 → 통합인박스 → 분석.
+- **신규 R10 머천트 포털 트랙**(U.0.1) — RLS 스코프·인증 감사 후 모바일 패리티.
+
+## U.4 신규 오픈 입력 (§J)
+- **J-15** 🔲 `app/dashboard/**` 정체·존속 결정(레거시 폐기 vs 흡수). **J-16** 🔲 다크모드 도입 범위(어드민 전용 vs 전사). **J-17** 🔲 통합 인박스(`/admin/inbox`)가 contacts/emails/support 3페이지를 대체할지(§E-4 확정).
+
+---
+
 # §L. 세션 인수인계 (다음 세션이 100% 이어받기 위한 단일 요약)
 
 ## L-0. 한 줄 상태
@@ -1318,6 +1381,7 @@ GRANT  EXECUTE ON FUNCTION public.analytics_health_snapshot()               TO s
 - **0.8 Codex 통합**(§M): 3 감사 에이전트 file:line 검증 → 공개 보안 BLOCKER 4(N11 inventory·N13 promo·N14 checkout IDOR·N16 confirm-email IDOR) + MAJOR 다수 + ⚙️어드민(N23 cron fail-open·N24 webhook·N25 notifications드리프트·N26 overfetch). **REFUTED 2**(R5 RAG 완전연결·R6 reviews=폴더), IMPRECISE 6. 별도 doc 생성 거부.
 - **0.9 라이브 DB 대조**(§N): atockorea MCP 라이브 연결(K-0 해소). **마이그레이션 드리프트(repo 32 vs live 48, ~9만 일치 — pending-db-apply 수동 워크플로)** = BLOCKER급 거버넌스. N1 REFUTED(라이브 실재)→드리프트 재분류. **N27**(anon/PUBLIC이 REST로 비가역 PII 익명화 RPC 호출, BLOCKER)·N28(contact_inquiries permissive insert)·N29(matview API 노출)·N30~N32. §G-6 DDL 라이브 충돌0·F1~F3(통화혼입 ACTIVE: krw+usd 실데이터)·R1(UNIQUE) 라이브 확정. payments/notifications 라이브 부재 확정. perf 62 rls_initplan/62 multi-policy/134 unused-index.
 - **0.10 완전화 감사**(§O~§R): 3 감사 에이전트 + 라이브 검증. **N33**(site_settings 어떤 스키마에도 부재 → D-11 설정·D-8 CMS·홈카드 영속 전부 무력, BLOCKER)·**B-1**(노쇼가 위약금 아닌 전액 청구, 돈 BLOCKER)·B-2(layout onAuthStateChange 없음)·B-3(상태 state machine 없음)·M-4(투어 DELETE 예약무시)·M-6(KST 타임존)·M-7(형제로케일 덮어쓰기)·M-8(layout 프로필 자동생성). §G-6 DDL **12 정정 델타**(O.3) — C#3 FOR UPDATE는 라이브 probe로 **REFUTED**(구문 유효). 누락 횡단 워크스트림 WS-A~J(관측성·테스트·롤백·rate-limit·i18n·a11y·perf·DR·RBAC·시크릿). 업그레이드 U-1~U-10(§P). 준비사양 §Q(N27 SQL·정합 런북·Phase1 턴키). **실행 WBS §R**(PR단위 티켓 R0~R9).
+- **0.13 프리미엄 모바일 + 완성도 보정**(§U + 컴패니언 `docs/admin-premium-mobile-design-spec-2026-06-24.md`): 7 에이전트(누락스윕+프리미엄모바일6). **blind spot: `app/merchant/**` 포털(6p+2api)·`app/dashboard/**`(4p)·미언급 공개API 다수**(assistant/live·tour-product/match·wishlist·user-settings 등). 프리미엄 결정8(바텀내비5+수신함통합·`AdminPageShell` 공통크롬·시트우선+SwipeRow+낙관적Undo·alert/confirm 전수폐기→toast/ConfirmDialog+Toaster마운트·`--admin-*` 토큰+tabular-nums+radius12·5역할 타입램프+DataCard·폼16px+머니확인시트·navy 다크모드). 4 페이지 청사진(대시보드 액션큐·주문 sticky머니바·통합인박스·분석 스파크라인/frozen히트맵). 본문 stale 정정(D-11/D-15/N1/G-6.2). WBS 고아 입양(S-F6~16·PA-3~6·WS-A~J·U-1~10). 신규 R10 머천트포털. **검증: settlements requireAdmin 보유(REFUTED)·cron 5개 확인.**
 - **0.12 최종 전수검수**(§T): 7 에이전트(미진단어드민라우트·Stripe머니패스·인증RBAC·챗봇·공개API·lib·고객UI) + 라이브 DB/RLS/storage 스윕. 🔴🔴 **P1 라이브확정: 고객→admin 권한상승**(`user_profiles` UPDATE/INSERT RLS에 role WITH CHECK 부재 → PostgREST 직접 PATCH로 자기승격). W1-15 머니패스(**환불 라우트 부재 W-10**·webhook 상태가드 W-1·cron secret URL W-3·캡처 조기청구 W-9)·CB1-15(**예약 enumeration: 인메모리 RL CB-2**·CORS* CB-1·무인증 챗봇예약 CB-5)·PA(reminders GET 메일발송·upload DELETE IDOR)·CK1-3(카트 유령세금·프로모 GET/POST 깨짐)·LIB-1(이메일XSS)·LIB-3(FX폴백 7%)·N34(storage). **굿뉴스: requireAdmin 서버DB검증·service-role 번들유출0·웹훅서명O·머니cron fail-closed·pricing 수학 깨끗.** 보안트랙 R9 대폭확장 + 💴머니패스 무결성 트랙 신설. **진단(Phase 0) 종결.**
 - **0.11 섹션별 딥리뷰 + 모바일/UX**(§S): 8 에이전트. **모바일 부분 사용가능**(셸은 햄버거+드로어+하단탭으로 모바일 인지 — "전부 데스크톱전용" REFUTED / 그러나 29p중 12p 반응형0, 최악 support·match-pois·sessions·retention). 신규 기능결함 **S-F1**(stats 매출 OOM)·**S-F2**(머천트 비번 `Math.random()` 비-CSPRNG)·**S-F3**(audit actor=관리자 아닌 신규머천트)·S-F4/F5(에디터 교차상품/로케일 데이터손상)·F6~F16. UX 시스템 **S-U1**(ConfirmDialog·Sonner 기존자산 미사용→27+ alert/confirm)·S-U2(URL필터 영속0)·S-U3(재fetch 스피너교체)·S-U4(날짜포맷/getStatusColor 중복)·S-U5(support·qa-review nav 부재 IA)·S-U6~U11. 모바일 패턴 카탈로그(iOS줌·터치44px·micro텍스트·테이블폴백) → **R2.0 기반 티켓** 신설, R3 페이지 DoD에 모바일패리티 필수화. **진단 종료점 — Phase 1 착수 권고.**
 
