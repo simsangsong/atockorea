@@ -28,7 +28,9 @@
 | 0.5 | 검증 2차 패스 (§K) — 전 주장 코드 재대조 | ✅ 완료 | 3개 감사 에이전트 재검증. 핵심 주장 CONFIRMED, C1~C12 정정 + N1~N10 신규결함 + R1~R4 위험. 라이브 DB는 MCP 미연결(K-0) |
 | 0.6 | UI/UX 코드 심층 감사 (§K-6) — §H 실행 사양화 | ✅ 완료 | 3개 UI 감사 에이전트. 토큰·`ui/*` 16개 100% 미사용 발견 → §H-1 정정(신규도입→채택). 드리프트 정량화 + 현재값→토큰 매핑표 + 우선순위(legacy analytics #1) |
 | 0.7 | §E/§F 기능 설계 사양 (§K-7) — DDL + 이벤트 taxonomy | ✅ 완료 | 마이그레이션 대조 후 quote_drafts·빌더 이벤트+funnel·귀속FK+익명화정합(R4/N1)·audit 헬퍼·unified_inquiries 뷰·상품 funnel matview 구체 DDL |
-| 1 | 기능 안정화 (BLOCKER/MAJOR 버그 수정) | ⏳ 대기 | §D. 코드는 멀쩡해 보이나 깨진 기능 우선 |
+| 0.75 | §G 정산/세무 데이터모델 + 마이그레이션 브리지 (§G-6) | ✅ 완료 | RPC/스키마/settle 라우트 직접 재검증(F1~F8). tours.cost_price·bookings 원가/FX/Stripe·settlements 통화/basis DDL + RPC v2(원가기준·통화강제) + R1 라벨링 브리지 + R2 배포동기화 + R3 FX 강등. 신규 결함: RPC 통화혼입(F3) |
+| 0.8 | Codex 플랜 리뷰 통합 (§M) — 인접범위 전체스택 감사 | ✅ 완료 | 3 감사 에이전트 file:line 검증. N11~N26 신규(공개 보안 BLOCKER 4 + MAJOR 다수) + 정정 로그(REFUTED 2: RAG·reviews버킷 / IMPRECISE 6). 별도 doc 생성 거부(단일 SoT). 공개 보안 트랙 분리 권고 |
+| 1 | 기능 안정화 (BLOCKER/MAJOR 버그 수정) | ⏳ 대기 | §D. 코드는 멀쩡해 보이나 깨진 기능 우선. + N23(cron fail-open) BLOCKER |
 | 2 | 디자인 시스템 통합 (토큰·팔레트·타이포·i18n) | ⏳ 대기 | §H.1. 모든 페이지 개편의 선행 조건 |
 | 3 | 페이지별 UI/UX 개편 | ⏳ 대기 | §H.2~. Phase 2 토큰 위에서 한 페이지씩 |
 | 4 | 데이터 모델 확장 (정산 원가/수수료·귀속·감사로그·견적 이탈) | ⏳ 대기 | §E·§F·§G. 마이그레이션 + 백필 |
@@ -39,7 +41,7 @@
 
 상태 마커: ⏳ 대기 / 🔄 진행 중 / ⏸ 보류 / ✅ 완료 / ❌ 중단
 
-**현재 활성 Phase: Phase 0 + 0.5(검증) 완료. 다음 액션 = §J 오픈 입력 확인 + §K-5 다음 세션 범위(§H UI/UX 심층 검증 등) → Phase 1 착수. Phase 1 BLOCKER는 §D 6건 + N1(익명화 RPC 미배포)·N2(업로드 검증 dead code) 포함.**
+**현재 활성 Phase: Phase 0~0.8(진단·검증·UI감사·기능설계·§G정산설계·Codex통합) 모두 완료 — 코드는 미수정. 다음 액션 = 사용자 결정(§J #11 공개보안 트랙 착수 여부 + §J #2/#6/#8~10 정산·세무 입력) → Phase 1 착수. Phase 1 BLOCKER = §D 6건 + N1(익명화 RPC 미배포)·N2(업로드 검증 dead code)·N23(cron fail-open). 🔒 공개 보안 BLOCKER(N11/N13/N14/N16)는 별도 트랙(§M.3).**
 
 > 실행 순서 원칙: **Phase 1(기능 안정화) → 2(디자인 토큰) → 3(UI 개편)** 은 사용자 체감 라인. **Phase 4(데이터) → 5(통계) → 6(세무)** 는 데이터 라인으로 병행 가능. Phase 6은 §J 세무 SIGN-OFF가 없으면 시작 금지.
 
@@ -80,6 +82,8 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 | 2026-06-24 | Phase 0.5 — 검증 2차 패스(§K). 전 주장 코드 재대조, C1~C12 정정·N1~N10 신규·R1~R4 위험. §D/§D-15 본문 직접 수정 | (this) | 라이브 DB는 MCP가 타 프로젝트(Kursoflow) 연결로 미검증(K-0) |
 | 2026-06-24 | Phase 0.6 — UI/UX 코드 심층 감사(§K-6). 토큰·`ui/*` 16개 미사용 발견 → §H-1 정정, 현재값→토큰 매핑표·컴포넌트 키트·우선순위 | (this) | 모범 사례 products/match-pois/analytics-product 구조 보존 |
 | 2026-06-24 | Phase 0.7 — §E/§F 기능 설계(§K-7). quote_drafts·빌더 이벤트+funnel·귀속FK+익명화정합·audit 헬퍼·unified_inquiries·상품 funnel matview DDL. 실제 스키마(contact_inquiries/audit_logs/bookings/analytics_funnels/matview) 대조 | (this) | event_name free-form·payload 평면스칼라 확인 → 신규 이벤트 등록 불필요 |
+| 2026-06-24 | Phase 0.75 — §G-6 정산/세무 데이터모델+마이그레이션 브리지. RPC 본문/GRANT/settle 라우트/스키마 직접 재검증(F1~F8). 신규 DDL(tours.cost_price·bookings 11컬럼·settlements basis/통화·merchants W-8) + RPC v2(원가기준·1정산1통화) + R1 라벨링 브리지 + R2 원자배포 체크리스트 + R3 FX 강등 + J-8~J-10 | (this) | 신규 결함 F3: RPC가 통화필터 없이 final_price SUM → usd/krw 혼입 |
+| 2026-06-24 | Phase 0.8 — §M Codex 리뷰 통합. 3 감사 에이전트(공개커머스/보안인프라/데이터RAG성능) file:line 검증. N11~N26 + R5/R6 REFUTED + P1~P3. 별도 deep-audit doc 생성 거부(단일 SoT). 공개 보안 트랙 분리 | (this) | Codex 21주장 중 REFUTED 2(RAG 완전연결·reviews=폴더)·IMPRECISE 6 — 무검증 인용 차단 |
 
 ---
 
@@ -293,6 +297,175 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 
 ---
 
+## G-6. 정산/세무 데이터모델 + 마이그레이션 브리지 상세 설계 (Phase 4 — §L-2 ③)
+
+> §L-2 ③ 착수. **코드 직접 대조로 전 사실 재검증 완료**(2026-06-24): RPC 본문(`20260515132911`)·GRANT(`20260515134209`)·`settlements`/`settlement_bookings`/`bookings`/`tours` 스키마(archive `complete-database-schema.sql`)·`bookings` 확장(`20260529000000`)·holds 컬럼(`20260501100000`)·settle 라우트(`app/api/admin/orders/[id]/settle/route.ts`)·settlements 라우트. 모든 마이그레이션은 **additive**(`ADD COLUMN IF NOT EXISTS`). 배포 전 K-0(라이브 DB 미연결) 대조 필수.
+
+### G-6.0 검증된 기준 사실 (설계 근거 — file:line)
+| # | 사실 | 증거 |
+|---|---|---|
+| F1 | RPC 실제 시그니처는 **4-arg** `create_merchant_settlement(p_merchant_id uuid, p_period_start date, p_period_end date, p_platform_fee_rate numeric DEFAULT 0.10)`. **호출부는 3-arg**(rate 미전달 → 기본 0.10) `app/api/settlements/route.ts:110-114`. (플랜 R2의 "3-arg"는 **호출부** 기준 — 함수 자체는 4-arg가 정확.) | `20260515132911_*.sql:6-11`, `settlements/route.ts:110-114` |
+| F2 | GRANT/REVOKE는 **정확히 `(uuid, date, date, numeric)` 시그니처**에 묶임 → 시그니처 변경 시 **신규 시그니처에 GRANT 재발급 필수**(안 하면 service_role도 실행 불가, 런타임 파손). | `20260515134209_*.sql:3-7` |
+| F3 | RPC가 `SUM(final_price)`를 **통화 필터 없이** 집계(`b.payment_status='paid' AND b.status='completed' AND b.settlement_status='pending'`만 필터) → **usd·krw 예약이 한 SUM에 혼입**(현재진행형 결함). `settlements`에 통화 컬럼 없음. | `20260515132911_*.sql:42-60`, archive `:429-466` |
+| F4 | `settlement_bookings`는 `CONSTRAINT unique_booking_settlement UNIQUE(booking_id)` + RPC `NOT EXISTS (SELECT 1 FROM settlement_bookings WHERE booking_id=b.id)` 가드 → **이미 정산된 건 재정산 불가**(R1 확정). `settlement_bookings`는 `booking_revenue/platform_fee_amount/merchant_payout_amount` **스냅샷**(불변 회계 기록). | archive `:473-487`, `20260515132911_*.sql:51-55,88-101` |
+| F5 | `tours`에 **원가 컬럼 전무**(cost/wholesale/net_price grep 0건). `bookings`에 charge_id·balance_transaction·fee·통화환산 컬럼 **전무**(holds 마이그레이션은 PI/SI/customer/PM id + status만 추가). | archive `tours :137+`, `20260501100000_*.sql:19-26` |
+| F6 | **코드 어디서도 Stripe `balance_transaction`/`exchange_rate`/`stripe_fee`/`application_fee` 미포착**(grep 0건). settle 캡처는 `captured.amount_received`·`captured.currency`만 읽음 → fee·FX 정보 버려짐(R3 확정의 근본 원인). | settle `:203-204`, grep app/+lib/ 0건 |
+| F7 | N3 재확인: `payments.currency DEFAULT 'USD'`(archive `:321`, 대문자) vs `bookings.currency DEFAULT 'usd'`(`20260529000000_*.sql:5`, 소문자). 신규 통화 의존 컬럼·정산 필터는 **case 정규화(lower) 필수**. | archive `:321`, `20260529000000_*.sql:5` |
+| F8 | `payments` 테이블은 **archive canonical 스키마에 정의됨**(`:314`) — §0 기준 canonical. 라이브 배포 여부만 K-0 미확정. | archive `:314-346` |
+
+### G-6.1 신규 컬럼 DDL (additive — Phase 4)
+```sql
+-- (a) tours: 도매 원가 (머천트 상품의 원가 SoT)
+ALTER TABLE public.tours
+  ADD COLUMN IF NOT EXISTS cost_price numeric(12,2),       -- 머천트 도매 원가
+  ADD COLUMN IF NOT EXISTS cost_currency text DEFAULT 'usd';
+ALTER TABLE public.tours
+  ADD CONSTRAINT tours_cost_currency_lower CHECK (cost_currency = lower(cost_currency)) NOT VALID;
+
+-- (b) bookings: 거래별 원가·운영수수료·통화·FX·Stripe 추적·수익인식
+ALTER TABLE public.bookings
+  ADD COLUMN IF NOT EXISTS merchant_cost numeric(12,2),          -- 이 예약의 실원가 (tour 단가×인원 또는 계약 단가)
+  ADD COLUMN IF NOT EXISTS operational_fee numeric(12,2),        -- = customer_amount − merchant_cost (ATOC 실수취 마진)
+  ADD COLUMN IF NOT EXISTS fx_rate_to_usd numeric(18,8),         -- 거래일(캡처 시점) KRW→USD; usd 예약은 1
+  ADD COLUMN IF NOT EXISTS usd_amount numeric(12,2),             -- final_price × fx_rate_to_usd (감사용 USD 환산)
+  ADD COLUMN IF NOT EXISTS stripe_charge_id text,                -- latest_charge id
+  ADD COLUMN IF NOT EXISTS stripe_balance_txn_id text,           -- balance_transaction id (exchange_rate·fee 출처)
+  ADD COLUMN IF NOT EXISTS stripe_fee numeric(12,2),             -- Stripe 수수료 (balance_txn.fee)
+  ADD COLUMN IF NOT EXISTS revenue_treatment text                -- gross(principal) | net(agent) — CPA 사실판정(§G-3.1)
+    CHECK (revenue_treatment IS NULL OR revenue_treatment IN ('gross','net')),
+  ADD COLUMN IF NOT EXISTS place_of_performance text DEFAULT 'KR',  -- 용역 수행지 (sourcing 앵커, §G-3.3)
+  ADD COLUMN IF NOT EXISTS us_source boolean DEFAULT false;      -- US-source 소득 여부 (1042-S 트리거; 기대값 false)
+CREATE INDEX IF NOT EXISTS idx_bookings_balance_txn ON public.bookings(stripe_balance_txn_id) WHERE stripe_balance_txn_id IS NOT NULL;
+
+-- (c) settlements: 통화 + 정산기준(basis) 라벨 + 실제 적용 rate (R1 브리지 핵심)
+ALTER TABLE public.settlements
+  ADD COLUMN IF NOT EXISTS currency text NOT NULL DEFAULT 'usd',
+  ADD COLUMN IF NOT EXISTS fee_basis text NOT NULL DEFAULT 'flat_rate'  -- 'flat_rate'(레거시 10%) | 'cost_plus'(원가기준)
+    CHECK (fee_basis IN ('flat_rate','cost_plus')),
+  ADD COLUMN IF NOT EXISTS platform_fee_rate numeric,    -- flat_rate일 때 적용된 rate(과거=0.10), cost_plus면 NULL
+  ADD COLUMN IF NOT EXISTS total_merchant_cost numeric(12,2),    -- cost_plus 집계 합
+  ADD COLUMN IF NOT EXISTS total_operational_fee numeric(12,2),  -- cost_plus 마진 합 (= platform_fee와 일치)
+  ADD COLUMN IF NOT EXISTS total_usd_amount numeric(12,2);       -- 통화 혼합 방지용 USD 환산 합
+ALTER TABLE public.settlement_bookings
+  ADD COLUMN IF NOT EXISTS currency text,
+  ADD COLUMN IF NOT EXISTS merchant_cost_amount numeric(12,2),
+  ADD COLUMN IF NOT EXISTS operational_fee_amount numeric(12,2),
+  ADD COLUMN IF NOT EXISTS fee_basis text;        -- 행 단위로도 basis 동결(스냅샷 회계 무결성)
+
+-- (d) merchants: 세무 신분 (W-8 / 원천징수 판정 입력)
+ALTER TABLE public.merchants
+  ADD COLUMN IF NOT EXISTS is_us_person boolean,
+  ADD COLUMN IF NOT EXISTS tax_id text,           -- 암호화/마스킹 저장 권장 (PII)
+  ADD COLUMN IF NOT EXISTS w8_on_file boolean DEFAULT false,
+  ADD COLUMN IF NOT EXISTS w8_expiry date;
+```
+> ⚠️ `tax_id`는 PII·민감정보 → 평문 저장 금지(앱 레벨 암호화 또는 별도 vault). 익명화 RPC(K-7.3) 범위에는 **넣지 않음**(세무 보존 7년 > 90일 스크럽). 대신 접근 통제·감사로 보호.
+
+### G-6.2 RPC v2 — 원가 기준 정산 (`create_merchant_settlement` 교체)
+설계 원칙: **(1) 통화를 1정산=1통화로 강제**(F3 혼입 차단), **(2) basis 파라미터로 flat_rate/cost_plus 선택**(과거 호환 + 신규), **(3) cost_plus는 `operational_fee = customer − merchant_cost`**, **(4) merchant_cost 결손 건은 정산 후보에서 제외 + 카운트 반환**(조용한 0원 마진 방지).
+
+```sql
+DROP FUNCTION IF EXISTS public.create_merchant_settlement(uuid, date, date, numeric);  -- F2: 기존 시그니처 폐기
+CREATE OR REPLACE FUNCTION public.create_merchant_settlement(
+  p_merchant_id uuid,
+  p_period_start date,
+  p_period_end date,
+  p_currency text DEFAULT 'usd',                 -- 1정산=1통화 (lower 강제)
+  p_fee_basis text DEFAULT 'cost_plus',          -- 신규 기본 = 원가기준
+  p_platform_fee_rate numeric DEFAULT 0.10       -- flat_rate일 때만 사용 (레거시 재현용)
+) RETURNS public.settlements
+LANGUAGE plpgsql SECURITY DEFINER SET search_path = public, pg_temp
+AS $$
+DECLARE v_settlement public.settlements; v_currency text := lower(p_currency);
+        v_rev numeric; v_cost numeric; v_fee numeric; v_n int; v_skipped int;
+BEGIN
+  -- (검증 가드: merchant_id/period/basis/통화/rate 범위 — 기존 22023/P0002 패턴 유지)
+  IF p_fee_basis NOT IN ('flat_rate','cost_plus') THEN RAISE EXCEPTION 'invalid fee_basis' USING ERRCODE='22023'; END IF;
+
+  CREATE TEMP TABLE pg_temp.cand ON COMMIT DROP AS
+  SELECT b.id, b.final_price, b.merchant_cost, b.currency,
+         (b.final_price - b.merchant_cost) AS op_fee
+  FROM public.bookings b
+  WHERE b.merchant_id = p_merchant_id
+    AND b.payment_status='paid' AND b.status='completed' AND b.settlement_status='pending'
+    AND lower(b.currency) = v_currency                       -- F3 통화 혼입 차단
+    AND b.booking_date BETWEEN p_period_start AND p_period_end
+    AND NOT EXISTS (SELECT 1 FROM public.settlement_bookings sb WHERE sb.booking_id=b.id)  -- F4 재정산 차단
+    AND (p_fee_basis='flat_rate' OR b.merchant_cost IS NOT NULL)   -- cost_plus는 원가 있는 건만
+  FOR UPDATE OF b;
+
+  SELECT count(*) INTO v_skipped FROM public.bookings b
+   WHERE b.merchant_id=p_merchant_id AND b.payment_status='paid' AND b.status='completed'
+     AND b.settlement_status='pending' AND lower(b.currency)=v_currency
+     AND b.booking_date BETWEEN p_period_start AND p_period_end
+     AND p_fee_basis='cost_plus' AND b.merchant_cost IS NULL;   -- 원가결손으로 제외된 건 수
+
+  SELECT COALESCE(SUM(final_price),0), COALESCE(SUM(merchant_cost),0),
+         CASE WHEN p_fee_basis='flat_rate' THEN ROUND(COALESCE(SUM(final_price),0)*p_platform_fee_rate,2)
+              ELSE COALESCE(SUM(op_fee),0) END, count(*)
+    INTO v_rev, v_cost, v_fee, v_n FROM pg_temp.cand;
+  IF v_n = 0 THEN RAISE EXCEPTION 'no settleable bookings (skipped_missing_cost=%)', v_skipped USING ERRCODE='P0002'; END IF;
+
+  INSERT INTO public.settlements (merchant_id, settlement_period_start, settlement_period_end,
+     total_revenue, platform_fee, merchant_payout, total_bookings, status,
+     currency, fee_basis, platform_fee_rate, total_merchant_cost, total_operational_fee)
+  VALUES (p_merchant_id, p_period_start, p_period_end, v_rev,
+     v_fee, (v_rev - v_fee), v_n, 'pending',
+     v_currency, p_fee_basis, CASE WHEN p_fee_basis='flat_rate' THEN p_platform_fee_rate END, v_cost, v_fee)
+  RETURNING * INTO v_settlement;
+
+  INSERT INTO public.settlement_bookings (settlement_id, booking_id, booking_revenue,
+     platform_fee_amount, merchant_payout_amount, currency, merchant_cost_amount, operational_fee_amount, fee_basis)
+  SELECT v_settlement.id, id, final_price,
+     CASE WHEN p_fee_basis='flat_rate' THEN ROUND(final_price*p_platform_fee_rate,2) ELSE op_fee END,
+     CASE WHEN p_fee_basis='flat_rate' THEN ROUND(final_price*(1-p_platform_fee_rate),2) ELSE merchant_cost END,
+     v_currency, merchant_cost, op_fee, p_fee_basis
+  FROM pg_temp.cand;
+  RETURN v_settlement;
+END; $$;
+
+-- F2: 신규 시그니처에 GRANT 재발급 (동일 마이그레이션 — 안 하면 service_role도 실행 불가)
+REVOKE ALL ON FUNCTION public.create_merchant_settlement(uuid,date,date,text,text,numeric) FROM PUBLIC, anon, authenticated;
+GRANT EXECUTE ON FUNCTION public.create_merchant_settlement(uuid,date,date,text,text,numeric) TO service_role;
+```
+
+### G-6.3 R1 — 과거(10%)/신규(원가기준) 회계기준 공존 브리지
+- **핵심 통찰:** `settlement_bookings.UNIQUE(booking_id)` + RPC `NOT EXISTS` 가드 덕분에 **마이그레이션이 과거 정산을 건드릴 필요가 없다.** 과거에 이미 정산된 예약은 새 RPC 후보 쿼리에서 자동 제외되고, 과거 `settlements`/`settlement_bookings` 행은 옛 10% 스냅샷 그대로 **동결**(불변 회계 기록으로 올바름 — 소급 재계산은 회계상 오히려 위험).
+- **브리지 = 데이터 재계산이 아니라 "기준 라벨링":** 과거 행에 `fee_basis='flat_rate'`, `platform_fee_rate=0.10`, `currency=<추정>`만 백필 → 리포트가 두 기준을 **합산하지 않고 분리 집계**하게 함. 신규 정산은 `fee_basis='cost_plus'`.
+  ```sql
+  UPDATE public.settlements SET fee_basis='flat_rate', platform_fee_rate=0.10
+    WHERE fee_basis IS DISTINCT FROM 'cost_plus' AND platform_fee_rate IS NULL;
+  UPDATE public.settlement_bookings SET fee_basis='flat_rate' WHERE fee_basis IS NULL;
+  -- currency 백필: 레거시는 거의 usd. 라이브 대조 후 실제 분포 확인하여 보정(K-0).
+  ```
+- **기간 straddle(한 정산기간에 과거 정산건 + 신규 미정산건 혼재):** 새 RPC가 미정산 건만 집어가므로 **double-count 불가** — 같은 기간에 cost_plus 정산을 추가 생성하면 과거 flat 정산과 별개 행으로 공존. 리포트는 `(merchant_id, period, fee_basis)`로 그룹.
+- **불변식:** 한 booking은 평생 정확히 1개 settlement_bookings 행(UNIQUE) → 기준 전환이 과거 지급액을 변경하지 않음. 머천트 분쟁 방지.
+
+### G-6.4 R2 — RPC 시그니처 변경 배포 동기화 (파손 방지 체크리스트)
+1. `DROP FUNCTION (uuid,date,date,numeric)` + `CREATE` 신규 6-arg + `GRANT ... TO service_role` (신규 시그니처) — **한 마이그레이션**.
+2. **동일 배포에서** `app/api/settlements/route.ts:110-114` 호출을 신규 파라미터로 갱신(`p_currency`/`p_fee_basis` 전달; 미전달 시 기본 cost_plus·usd). 어드민 정산 운영 화면(§E-5)도 통화·basis 선택 UI 동반.
+3. 순서 위험: 마이그레이션 먼저 배포되고 앱이 옛 3-arg를 호출하면 **함수 없음 → 런타임 500.** ∴ 마이그레이션+코드 **원자 배포**(같은 PR/릴리스). 롤백 시 역순.
+4. 회귀 테스트: flat_rate 경로가 과거와 **동일 숫자** 산출(골든 테스트)임을 먼저 증명 후 cost_plus 활성화.
+
+### G-6.5 R3 — FX·Stripe fee 백필 (best-effort, 강등)
+- **과거 건:** 거래일 환율 저장본 없음 + Stripe `balance_transaction`/`charge_id` 미포착(F6) → **감사급 USD 환산·실수수료 소급 불가.** 과거 KRW 예약의 `usd_amount`/`fx_rate_to_usd`/`stripe_fee`는 **NULL 유지 또는 근사치 + `fx_source='approx'` 플래그**(절대 감사 신뢰 금지).
+- **신규 건(전진 포착):** 캡처 시 PaymentIntent를 `expand:['latest_charge.balance_transaction']`로 조회 → `balance_transaction.exchange_rate`(거래일 FX)·`.fee`(실수수료)·`charge.id`·`balance_transaction.id`를 settle 라우트에서 `bookings`에 기록. **이 변경은 Phase 4 settle 라우트 수정과 묶임**(현재 settle은 `amount_received`/`currency`만 읽음 — F6). offline 수금 건은 Stripe 거래 없음 → FX 포착 불가(수기 입력).
+- **결론:** "거래일 포착" 백필은 **신규 건부터만 정확**, 과거는 근사·플래그. §G-4 1099-K 대사 리포트는 이 한계를 명시.
+
+### G-6.6 merchant_cost 백필 (§J #6 오픈 입력 의존)
+- `bookings.merchant_cost` 소급: 당시 미수집 → **머천트 계약 단가표 기반 수기/스크립트 보정**(tour×인원 또는 계약 단가). §J #6 미해결이면 cost_plus 정산은 **신규 건부터만** 의미(과거는 flat_rate 동결 유지).
+- 신규 건: 체크아웃/예약 생성 시 `tours.cost_price × number_of_guests`(또는 빌더 원가 모델)로 `merchant_cost`·`operational_fee` 자동 계산·기록 → 정산 RPC는 읽기만.
+
+### G-6.7 마이그레이션 순서 · 게이트
+1. **무해 additive(G-6.1 컬럼·인덱스)** — 언제든 선배포 가능(코드 무의존).
+2. **RPC v2 + GRANT + 호출부(G-6.2/R2)** — 원자 배포. flat_rate 골든 테스트 통과 후.
+3. **settle 라우트 FX/fee 포착(G-6.5)** — Phase 4 코드 작업.
+4. **백필(G-6.3 라벨링 즉시 / G-6.6 원가 = §J #6 후 / G-6.5 FX = 신규만)**.
+5. **자동 서류(§G-4)는 절대 여기 포함 금지** — §J #2(소유구조)·CPA SIGN-OFF(§G-5) 게이트 통과 후 Phase 6.
+- **신규 오픈 입력 → §J 편입:** (J-8) 1정산=1통화 강제가 머천트 운영과 맞는지(다통화 머천트는 통화별 분리 정산), (J-9) `operational_fee = customer − merchant_cost` 음수(원가 역전) 시 처리 정책, (J-10) `revenue_treatment` 행 단위 기록 시점(예약 생성 vs 정산 vs 결산).
+
+---
+
 # §H. UI/UX 전면 개편 플랜
 
 > 진단: 사용자 표현대로 "원시적". 근거 — **3개 팔레트 혼재**(대시보드 slate/blue · 주문 indigo/gray/green · 분석 rainbow-emoji 🏢🎫📦💰), 페이지마다 **영/한 무작위 혼용**, **`alert()` 저장 확인**, 정보 위계 부재(text-xl~text-3xl 제각각), 빈/로딩/에러 상태 비일관, 모바일에서 죽는 컨트롤(미리보기 desktop-only 등), 강력한 analytics가 메뉴에 노출 안 됨(IA 결함), placeholder 화면이 메인 분석으로 노출.
@@ -335,8 +508,12 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 3. ⚠️ **수익인식 정책(상품군별 gross/net) — "임의 선택"이 아니라 CPA 사실판정** — §G-3.1 게이트. 아래 설명 참조. ATOC가 가격/할인 재량·전액 수금·차지백 리스크·예약계약을 가지면 회계상 **principal(gross)** 쪽으로 기움(자체 프라이빗투어는 거의 확실히 principal). 대리판매 tenant 상품은 "통제권이 진짜 tenant에 있는가"에 따라 agent(net) 가능. **gross/net은 보고 총수입을 ~10× 좌우**(sales tax 과세표준·nexus 임계·1099-K 대사에 연쇄)하므로 CPA가 상품군별로 확정해야 함. → 시스템은 양쪽(gross/net) 뷰를 모두 산출하도록 설계(§G-4)하여 CPA가 포지션만 고르면 되게 함.
 4. 🔲 **모든 tenant 투어가 한국에서 수행됨 확인** — §G-3.3 sourcing 앵커.
 5. 🔲 **미국 거주 계약자/제휴자에게 연 $600↑ 지급 여부** — §G-3.4(1099-NEC) on/off.
-6. 🔲 **머천트별 실원가(원가) 소스** — 기존 예약 백필 방법(계약서 단가표 등).
+6. 🔲 **머천트별 실원가(원가) 소스** — 기존 예약 백필 방법(계약서 단가표 등). (§G-6.6)
 7. 🔲 **어드민 디자인 방향성** — 어드민 전용 중립 톤 vs customer amber 계승 정도.
+8. 🔲 **1정산=1통화 강제 적합성**(§G-6.7) — 다통화 머천트는 통화별 분리 정산으로 운영 OK인지.
+9. 🔲 **원가 역전(operational_fee < 0) 처리 정책**(§G-6.7) — customer < merchant_cost 건 차단/경고/허용.
+10. 🔲 **`revenue_treatment` 기록 시점**(§G-6.7) — 예약 생성 vs 정산 vs 결산 중 언제 gross/net 확정.
+11. 🔲 **공개 보안 트랙 착수 승인**(§M.4) — N11/N13/N14/N16 등 어드민과 별개의 즉시 라이브 리스크를 별도 PR로 우선 패치할지 / 어드민 Phase 1과 병행할지.
 
 ---
 
@@ -623,26 +800,85 @@ CREATE UNIQUE INDEX IF NOT EXISTS idx_product_funnel_daily_unique ON public.anal
 
 ---
 
+# §M. Codex 플랜 리뷰 통합 — 전체 스택 인접범위 감사 (2026-06-24, Phase 0.8)
+
+> **경위:** 외부 "Codex" 에이전트가 별도 통합 감사 문서(`atockorea-full-stack-deep-audit-2026-06-24.md`) 생성을 제안하며 공개 커머스·API 보안·DB 드리프트·성능·RAG 등 **어드민 범위 밖 신규 주장 다수**를 제기. 본 세션 판단으로 **별도 문서는 생성하지 않음**(아래 §M.0 근거 — 단일 SoT 원칙). 대신 Codex 주장 중 가치 있는 항목을 **3개 독립 코드감사 에이전트로 file:line 직접 검증**(CONFIRMED/REFUTED/IMPRECISE)한 뒤, 검증된 것만 이 플랜에 편입. **Codex 주장은 그 자체로 사실이 아니며**, 아래 검증 verdict가 진실 기준.
+
+## M.0 메타 판단 — Codex 리뷰의 가치와 처리 방침
+| 판단 | 내용 |
+|---|---|
+| **가치 있음** | Codex는 **어드민 범위 밖**(공개 커머스·공개 API 보안·인프라 config)의 실재 BLOCKER 보안결함 다수를 정확히 포착. 이 플랜이 `app/admin/**`에 집중해 놓친 영역. → 검증 후 §M에 보존. |
+| **신뢰 불가(그대로 반영 금지)** | Codex 주장의 **상당수가 부정확/과장/STALE**. 검증 결과 21개 중 **REFUTED 2 + IMPRECISE 6**. 특히 "RAG 미연결"은 완전 오류(실제 완전 연결·활성). 무검증 인용은 플랜 철칙(§K) 위반 → **전수 file:line 재검증 후 편입**. |
+| **별도 문서 생성 거부** | Codex가 제안한 `atockorea-full-stack-deep-audit-2026-06-24.md` **생성 안 함.** 근거: §0 "이 문서가 어드민 개편의 **유일한** 실행 기준" — 경쟁 문서는 SoT 분열. 인접범위 보안은 §M에 **레지스터로 기록 + 별도 보안 하드닝 트랙으로 분리**(어드민 Phase 1~8과 독립). |
+| **범위 경계** | 공개 커머스/인증/인프라 결함은 **어드민 대시보드 개편 Phase가 아님** → "🔒 보안 트랙(별도 PR)"로 태깅. 어드민 범위와 겹치는 것(overfetch·notifications 드리프트·analytics cron·webhook)만 기존 Phase에 매핑. |
+
+## M.1 검증 결과 통합 (3 감사 에이전트, file:line 직접 대조)
+심각도: 🔴 BLOCKER · 🟠 MAJOR · 🟡 MINOR/NOTE. 트랙: 🔒=공개 보안(별도) · ⚙️=어드민/인프라(기존 Phase).
+
+| ID | Verdict | 심각도/트랙 | 결함 (검증된 정확한 메커니즘) | 증거 file:line |
+|---|---|---|---|---|
+| **N11** | CONFIRMED | 🔴🔒 | `/api/inventory` (GET/POST) + `/api/inventory/[id]` (GET/PUT) **인증 0건** — 첫 줄부터 service-role 클라이언트. 익명 누구나 재고 생성/덮어쓰기(RLS 우회). | `inventory/route.ts:10-198`, `[id]/route.ts:8-117` |
+| **N12** | CONFIRMED | 🟡🔒 | `cart_items` **TS 타입(`lib/supabase.ts:234-249`)이 SQL과 불일치** — `booking_date`/`number_of_guests` 누락, `quantity` vs `number_of_guests`. 코드는 SQL 실컬럼 사용(런타임 동작은 함, 타입 안전성만 깨짐). *(Codex "live schema 불일치"는 과장 — 타입 드리프트.)* | `lib/supabase.ts:234-249` vs archive `:404-418`, `cart/route.ts:134,141-191` |
+| **N13** | CONFIRMED | 🔴🔒 | `/api/promo-codes` **GET(전체 목록)·POST(생성) 인증 없음**(코드 주석이 "admin only - add auth check if needed"로 누락 자인). validate도 무인증. → 누구나 프로모코드 생성·열람. *(Codex "coupon-apply GET/필드 불일치"는 부정확 — validate는 POST, 필드 일치.)* | `promo-codes/route.ts:8-92,98-190`, `validate/route.ts:8` |
+| **N14** | CONFIRMED | 🔴🔒 | `/api/stripe/checkout`가 **공개 `bookingId`를 소유권 검증 없이 신뢰** → 기존 PI/SI를 무조건 cancel(`:163-176`). 유효 UUID 아는 자가 **타인 예약의 결제 hold 취소**(IDOR). | `stripe/checkout/route.ts:58,97,163-176` |
+| **N15** | CONFIRMED | 🟠🔒 | 예약 생성이 **non-atomic read-then-write**(FOR UPDATE/트랜잭션 없음): 재고 조회→앱에서 잔여 계산→insert→별도 재고 update(에러 무음 흡수) → **동시요청 oversell**(TOCTOU). | `bookings/route.ts:219-250,369,394-423` |
+| **N16** | CONFIRMED | 🔴🔒 | `confirm-email`의 `accessToken`이 **선택적** — 생략하면 소유권 가드(`if(accessToken&&…)`)를 건너뛰고 바로 `auth.admin.updateUserById(userId,{email_confirm:true})` → **임의 userId 이메일 확인**(IDOR). *(Codex "토큰 전혀 불요"는 약간 과장 — 정확히는 토큰 생략 시 우회.)* | `auth/confirm-email/route.ts:16-30` |
+| **N17** | CONFIRMED | 🟠🔒 | 공개 `/api/upload`은 **인증 요구됨**(`:71-83`, anon 아님 — Codex 오류) BUT (1) `file.type`만 검사·**매직바이트 sniff 없음**(`:99-103`), (2) DELETE `bucket` 파라미터 **화이트리스트 없음**(`:239`) → 인증유저가 타 버킷 삭제 시도(IDOR). | `upload/route.ts:71-83,99-103,234-255` |
+| **N18** | CONFIRMED | 🟠🔒 | LINE OAuth: **static state `'line_oauth_state'`**(`:48`, CSRF 무방비) + **id_token 서명 미검증**(base64 디코드만, 주석이 자인 `:124-132`) + **magic-link URL을 API 응답 본문에 반환**(`:251`). | `auth/line/route.ts:48,124-132,251` |
+| **N19** | CONFIRMED | 🟠🔒 | `/api/maps/static`이 **raw 쿼리스트링 전체를 Google에 그대로 전달**(`:16,25`), 인증·rate-limit·파라미터 화이트리스트 전무 → 누구나 앱 키로 고비용 요청 남발(빌링 남용). | `maps/static/route.ts:16,22,25` |
+| **N20** | CONFIRMED | 🟠🔒 | `next.config.js`에 **`headers()` 함수 부재** — CSP/X-Frame-Options/HSTS/X-Content-Type-Options/Permissions-Policy 전무. | `next.config.js:7-245` |
+| **N21** | CONFIRMED | 🟡🔒 | `middleware.ts` matcher가 **`/api` 전체 제외**(`:379` `['/((?!_next|api|.*\\..*).*)']`) → 미들웨어 보호가 API 라우트에 미적용(각 라우트가 자체 가드 책임). | `middleware.ts:253-258,379` |
+| **N22** | IMPRECISE | 🟠⚙️ | analytics 인제스트는 **Zod 스키마+봇필터+PII 스크럽 방어 존재**(Codex가 축소) BUT **rate-limit·origin 체크 없음** → 위조 이벤트 poisoning 가능(형태는 Zod로 제한). | `analytics/events/route.ts:62-83,96-98,123-129` |
+| **N23** | CONFIRMED | 🔴⚙️ | analytics cron **fail-open**: `if(!secret) return true`(`analytics-anonymize:15-23`, refresh-views 동일) → `CRON_SECRET` 미설정/회전 시 **누구나 비가역 익명화 트리거**. N1(미배포 RPC)과 결합 시 더 위험. | `cron/analytics-anonymize/route.ts:15-23`, `analytics-refresh-views:11-19` |
+| **N24** | CONFIRMED | 🟠⚙️ | Resend 웹훅 **비멱등**: `received_emails`는 `message_id` 중복 시 200 조기반환(`:201-202`) → 1차에 `contact_inquiries` insert 실패(`:212,222-228`) 후 재시도 시 **문의가 영구 유실**(early-return이 inquiry insert 전). | `webhooks/resend/route.ts:193,201-202,212,222-228` |
+| **N25** | CONFIRMED | 🟠⚙️ | `notifications` 테이블이 **코드 7곳 참조**(`api/notifications/**`, `lib/notifications.ts:37`)하나 **migrations에 CREATE 없음**(archive `notifications-schema.sql`만 — 미승격). N1·`analytics_health_snapshot`와 **동일 드리프트 부류** → migration-only 리셋 시 알림기능 파손. §E-5 알림센터의 전제. | `api/notifications/route.ts:29,52,115`, `lib/notifications.ts:37`, migrations grep 0건 |
+| **N26** | CONFIRMED(부분) | 🟠⚙️ | admin orders `select('*')` 최대 **5만행**+JS측 조인 조립(`orders/route.ts:35,69-118`) = §D-2/§I 재확인. *(단 stats route는 대부분 `count head:true`로 효율적, revenue만 3컬럼 JS reduce — Codex "stats 대량 select" 과장.)* | `admin/orders/route.ts:35,69-118`, `admin/stats/route.ts:21-64` |
+| **R5** | REFUTED | — | ❌ Codex "RAG/`knowledge_chunks`/`chat_feedback`/`chat_memory`가 챗봇 경로에 미연결"은 **오류**. 실제 메인 챗봇(`tour-product/assistant/route.ts`)이 하이브리드 RAG 검색(`retrieveKnowledge` `:722-734`, `match_knowledge_chunks`+`keyword_knowledge_chunks` RRF)·`chat_memory` 읽기(`:710-712`)·쓰기(`:1004-1013`) **완전 연결·활성**(kill switch `CHAT_RAG=0`만 옵션). 프로젝트 메모리 PR #139~143과 일치. | `assistant/route.ts:36-40,57-58,710-734,1004-1013`, `lib/rag/retrieve`, `lib/chatbot/sessionMemory:63` |
+| **R6** | REFUTED | — | ❌ Codex "review 업로드가 존재하지 않는 `reviews` 버킷 사용"은 **오류**. `REVIEW_FOLDER='reviews'`는 **버킷이 아니라 폴더 프리픽스** — 실제 업로드는 `type='product'`→**`tour-images` 버킷**(실재, `storage-setup.sql:15-26`). `reviews` 버킷 참조 코드 0건. | `lib/review-upload-client.ts:4,37`, `upload/route.ts:93` |
+
+## M.2 성능 관찰 (Codex 제기 — 정밀 정정, Phase 5/별도 perf 트랙)
+| ID | Verdict | 정밀 사실 | 처리 |
+|---|---|---|---|
+| P1 | IMPRECISE | tours-list **SSR preload + 클라 `no-store` refetch** 이중요청은 실재하나 **의도적 회복탄력 패턴**(SSR 실패 삼키고 클라 재요청, 첫 렌더 flash 없음·`initialMediaBySlug`로 초기화). | perf 최적화 후보(첫 로드 시 클라 fetch 단락). 버그 아님. `tours/list/page.tsx:19,33`, `useTourProductCardMedia.ts:41-58` |
+| P2 | IMPRECISE | `tour-product-card-media`는 `force-dynamic`+`no-store`이나 **요청당 2쿼리(2N 아님)** — `.in("slug", uniqueSlugs)` 배치(최대 160 slug 1요청). Codex "slug당 2쿼리"는 오류. | 캐시 도입 여지(force-dynamic 완화). `route.ts:5-6`, `resolveTourProductCardMedia.server.ts:87-96` |
+| P3 | IMPRECISE | builder POI payload는 **~100-400KB/지역 추정**(1MB+ 아님 — Codex 과장). `content_locales` 6-locale JSONB가 지배적. `force-dynamic`·무압축. | 압축/컬럼 슬림/캐시 후보. `itinerary-builder/pois/route.ts:37`, `poi_kb json 296KB` |
+
+## M.3 플랜 편입 결정
+1. **🔒 공개 보안 트랙 신설(별도, 어드민 Phase와 독립):** N11·N13·N14·N16(BLOCKER) + N15·N17·N18·N19·N20·N12·N21(MAJOR/NOTE). **어드민 대시보드 개편과 무관하나 라이브 서비스의 즉시 리스크** → 사용자에게 **별도 보안 하드닝 PR 트랙**으로 분리 권고(이 플랜의 Phase 1~8에 섞지 않음 — 범위·배포 단위 상이). §J에 게이트로 등재.
+2. **⚙️ 어드민/인프라 — 기존 Phase 매핑:**
+   - N23(cron fail-open) → **Phase 1 BLOCKER 추가**(N1·N2와 같은 "미배포/페일오픈 인프라" 묶음, U4 배포 게이트 확장).
+   - N25(notifications 드리프트) → **Phase 4** 스키마 정합(N1 RPC 신설과 동일 마이그레이션 부류) + §E-5 알림센터 선행.
+   - N24(Resend 웹훅 비멱등) → **Phase 4/7** §E-4 통합 인박스의 데이터 무결성 선행(문의 유실 차단).
+   - N22(analytics poisoning) → **Phase 5** §F-1 엔진 정합과 함께(rate-limit·origin).
+   - N26(admin overfetch) → 기존 §D-2·§I에 이미 포함 — 재확인만.
+   - P1·P2·P3(perf) → **Phase 5/별도 perf 트랙**(perf/site-load-tier1 브랜치 계열과 조율).
+3. **정정 로그(숨기지 않음):** Codex 21개 주장 중 **REFUTED 2(R5 RAG·R6 reviews버킷) + IMPRECISE 6(N12·N16·N17·N22·N26 + P1/P2/P3 과장)**. 무검증 인용 금지 원칙(§K) 준수 — verdict가 사실 기준.
+
+## M.4 신규 오픈 입력 (§J 편입)
+- **J-11 🔲 공개 보안 트랙 착수 승인** — N11/N13/N14/N16 등은 어드민 개편과 별개의 **즉시 라이브 리스크**. 별도 PR로 우선 패치할지, 어드민 Phase 1과 병행할지 사용자 결정 필요.
+
+---
+
 # §L. 세션 인수인계 (다음 세션이 100% 이어받기 위한 단일 요약)
 
 ## L-0. 한 줄 상태
 어드민 대시보드 전면 개편 **플랜 수립·검증 단계**. **코드는 아직 한 줄도 안 고침**(사용자 지시: 진단·플랜만). 산출물 = 이 문서 1개. 브랜치 `claude/admin-dashboard-upgrade-yvb88c`.
 
-## L-1. 지금까지 (Phase 0~0.7 ✅, §A·§C 참조)
+## L-1. 지금까지 (Phase 0~0.8 ✅, §A·§C 참조)
 - **0 진단**(§D 기능·§E 신규기능·§F 통계·§G 세무/정산·§H UI/UX·§J 오픈입력): 5개 도메인 병렬 코드감사 + 미국 세법 리서치.
 - **0.5 검증**(§K): 전 주장 코드 재대조 → C1~C12 정정(과장/오인용 수정, §D 본문 반영), N1~N10 신규결함, R1~R4 위험.
 - **0.6 UI 감사**(§K-6): 토큰+`components/ui/*` 16개가 존재하나 어드민 100% 미사용 → §H "신규 도입→채택"으로 정정. 현재값→토큰 매핑표.
 - **0.7 기능 설계**(§K-7): quote_drafts·빌더 이벤트+funnel·귀속FK+익명화정합·audit 헬퍼·unified_inquiries 뷰·상품 funnel matview **구체 DDL**(마이그레이션 대조 완료).
+- **0.75 §G 정산/세무**(§G-6): RPC/GRANT/settle 라우트/스키마 직접 재검증(F1~F8) → tours.cost_price·bookings 원가/FX/Stripe·settlements basis/통화·merchants W-8 **DDL** + **RPC v2**(원가기준 `fee=customer−cost`·1정산1통화) + **R1 라벨링 브리지**(과거 flat_rate 동결·재계산 불필요) + **R2 원자배포**(4-arg→6-arg, GRANT 재발급) + **R3 FX 신규건만**. 신규결함 F3(RPC 통화혼입).
+- **0.8 Codex 통합**(§M): 3 감사 에이전트 file:line 검증 → 공개 보안 BLOCKER 4(N11 inventory·N13 promo·N14 checkout IDOR·N16 confirm-email IDOR) + MAJOR 다수 + ⚙️어드민(N23 cron fail-open·N24 webhook·N25 notifications드리프트·N26 overfetch). **REFUTED 2**(R5 RAG 완전연결·R6 reviews=폴더), IMPRECISE 6. 별도 doc 생성 거부.
 
 ## L-2. 다음 할 일 (우선순위)
-1. **③ §G 정산/세무 데이터모델 + 마이그레이션 브리지 상세** ← 다음 착수 지점.
-   - DDL: `tours.cost_price`+`cost_currency`; `bookings`에 merchant_cost·operational_fee·fx_rate_to_usd·usd_amount·stripe_charge_id·stripe_balance_txn_id·stripe_fee·revenue_treatment(gross/net)·place_of_performance·us_source; `settlements`에 currency.
-   - **R1 우회 전략 설계**: `settlement_bookings`는 `UNIQUE(booking_id)`+`NOT EXISTS` 가드로 이미 정산된 건 재정산 불가 → 과거(10%)/신규(원가기준) 회계기준 공존 브리지(컬럼 의미 유지 vs 신규 컬럼, 기간 straddle).
-   - **R2**: `create_merchant_settlement` 시그니처 변경은 `app/api/settlements/route.ts`(현 3-arg)와 동일 배포.
-   - **R3**: FX 백필은 Stripe balance-txn `exchange_rate` 기준 best-effort(offline 수금건 불가).
-   - 자동 서류(§G-4)는 §J #2(소유구조)·CPA SIGN-OFF(§G-5) 게이트 후.
-2. **④ 라이브 DB 대조**: 현재 MCP가 **타 프로젝트(Kursoflow, ref thgyev...)** 연결 → atockorea(ref `cghyvbwmijqpahnoduyv`) 검증 불가(K-0). 사용자가 Supabase MCP 토큰을 atockorea 조직으로 교체해야 N1 실배포·`payments` 테이블 존재 등 확정 가능.
-3. 이후: Phase 1(기능 안정화 — §D BLOCKER + N1/N2) → 2(디자인 토큰) → 3(UI 개편) → 4(데이터) → 5(통계) → 6(세무) → 7(신규기능) → 8(검증).
+1. ✅ **③ §G 정산/세무 데이터모델 + 마이그레이션 브리지 — 완료**(§G-6). 다음 세션은 이 설계를 Phase 4 마이그레이션으로 구현(사용자 승인 + §J #2/#6/#8~10 입력 후).
+2. **사용자 결정 대기(블로킹):**
+   - **§J #11 — 공개 보안 트랙**: §M의 N11/N13/N14/N16(BLOCKER IDOR/무인증) 등을 **어드민 Phase와 별개로 즉시 패치할지** 결정. (이건 어드민 개편이 아니라 라이브 서비스 보안 — 가장 시급할 수 있음.)
+   - **§J #2 소유구조 / #6 원가소스 / #8~10 정산 정책** — Phase 4·6 블로커.
+3. **④ 라이브 DB 대조**: 현재 MCP가 **타 프로젝트(Kursoflow, ref thgyev...)** 연결 → atockorea(ref `cghyvbwmijqpahnoduyv`) 검증 불가(K-0). 사용자가 Supabase MCP 토큰을 atockorea 조직으로 교체해야 N1·N25 실배포·`payments`/`notifications` 테이블 존재 등 확정 가능.
+4. 이후: Phase 1(기능 안정화 — §D BLOCKER + N1/N2/**N23**) → 2(디자인 토큰) → 3(UI 개편) → 4(데이터 — §G-6 정산 마이그레이션 + N25) → 5(통계 — +N22) → 6(세무 SIGN-OFF 후) → 7(신규기능 — +N24) → 8(검증). **🔒 공개 보안 트랙은 별도 PR**(§M.3).
 
 ## L-3. 절대 잊지 말 컨텍스트 / 함정
 - **코드 수정 착수 전 사용자 승인 필수** (지금까지 "플랜만"). 착수 시 Phase 1부터.
@@ -656,6 +892,9 @@ CREATE UNIQUE INDEX IF NOT EXISTS idx_product_funnel_daily_unique ON public.anal
 - 토큰·`components/ui/*`(16) + `components/admin/*`(2: BookingStatusBadge·ImageUploader) 존재, 어드민 미사용.
 - 정산 모델이 flat 10%만 — 원가/운영수수료/FX 미포착(=핵심 결함). settle 라우트 자체는 Stripe서 금액 읽고 멱등(견고).
 - 자체 analytics 엔진에 집계 수학 버그 다수(§D-15: visitors distinct 합산·funnel 세션한정·retention left-censor·experiments filter 폐기).
-- N1: cron이 호출하는 `anonymize_old_analytics`·`analytics_health_snapshot` RPC가 마이그레이션에 없음.
+- N1: cron이 호출하는 `anonymize_old_analytics`·`analytics_health_snapshot` RPC가 마이그레이션에 없음. **N25: `notifications` 테이블도 동일 드리프트**(코드 참조·migration CREATE 없음).
 - 이벤트 인제스트: `event_name` free-form, payload 평면 스칼라 → 신규 이벤트 등록 불필요.
+- **§G-6 핵심**: RPC 실제 4-arg `(uuid,date,date,numeric)`+GRANT가 그 시그니처에 묶임(호출부는 3-arg). RPC가 통화필터 없이 `SUM(final_price)`→usd/krw 혼입(F3). tours 원가컬럼·bookings charge/fee/FX·코드 FX포착 전무. R1=과거 정산 재계산 불필요(라벨링만), R2=시그니처 변경 원자배포+GRANT 재발급, R3=FX 신규건만.
+- **§M 핵심(Codex 통합)**: 공개 보안 BLOCKER 실재 — `/api/inventory`·`/api/promo-codes` 무인증, `/api/stripe/checkout`·`confirm-email` IDOR, cron fail-open(N23). **RAG는 완전 연결됨**(Codex 오류 R5). Codex 무검증 인용 금지 — verdict가 사실.
+- **방법론 함정**: 작업 브랜치는 **로컬 부재 → `git fetch origin` 후 `origin/claude/admin-dashboard-upgrade-yvb88c`에서 워크트리**(`C:\Users\sangsong\atockorea-admin`)로 작업(메인 working dir은 타 세션과 경합). CLAUDE.md·플랜은 이 브랜치에만 존재.
 - 분석 진짜 화면은 `/admin/analytics/product/*`(모던), nav의 `/admin/analytics`는 placeholder(폐기 대상).
