@@ -905,24 +905,24 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
     "southwest-hallasan-osulloc-aewol": {
       "catalog_card": {
         "slug": "southwest-hallasan-osulloc-aewol",
-        "title": "Jeju Southwest: Hallasan, O'Sulloc & Aewol",
-        "subtitle": "A short Hallasan walk, volcanic cliffs, a waterfall trail, tea fields, and a relaxed Aewol finish.",
+        "title": "Southwest Jeju: Hallasan, O'Sulloc, Aewol & Iho Tewoo",
+        "subtitle": "The 1100 Highland wetland boardwalk, volcanic cliffs, a waterfall trail, tea fields, and an Aewol–Iho Tewoo sunset finish",
         "region": "Jeju Southwest",
-        "duration": "8 hours",
-        "stopsCount": 6,
+        "duration": "9 hours",
+        "stopsCount": 7,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
           "Great for First-Time Jeju Visitors",
           "Jeju Southwest"
         ],
-        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "priceLabel": "From US$59 per person (was $69, 14% off)",
-        "shortCardDescription": "A well-balanced Jeju southwest route linking a short Hallasan walk, volcanic coastline, Cheonjeyeon Waterfall, O’Sulloc tea fields, and Aewol Cafe Street."
+        "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "priceLabel": "US$52 / person",
+        "shortCardDescription": "A well-balanced Jeju southwest day route linking the Hallasan 1100 Highland wetland, volcanic coastline, Cheonjeyeon Waterfall, O'Sulloc tea fields, Aewol Cafe Street, and the Iho Tewoo sunset."
       },
       "price": {
-        "amountLabel": "59"
+        "amountLabel": "52"
       }
     }
   },
@@ -1767,24 +1767,24 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
     "southwest-hallasan-osulloc-aewol": {
       "catalog_card": {
         "slug": "southwest-hallasan-osulloc-aewol",
-        "title": "제주 서남부: 한라산·오설록·애월",
-        "subtitle": "짧은 한라산 트레킹, 화산 절벽, 폭포 트레일, 차밭, 그리고 여유로운 애월 마무리",
+        "title": "제주 서남부: 한라산·오설록·애월·이호테우",
+        "subtitle": "1100고지 습지 데크길, 화산 절벽, 폭포 트레일, 차밭, 그리고 애월·이호테우 일몰 마무리",
         "region": "제주 서남부",
-        "duration": "8시간",
-        "stopsCount": 6,
+        "duration": "9시간",
+        "stopsCount": 7,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
           "제주 첫 방문자에게 적합",
           "제주 서남부"
         ],
-        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "priceLabel": "1인 US$59 (정가 $69, 14% 할인)",
-        "shortCardDescription": "짧은 한라산 트레킹, 화산 해안선, 천제연 폭포, 오설록 차밭, 애월 카페거리를 연결하는 균형 잡힌 제주 서남부 코스"
+        "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "priceLabel": "1인 US$52",
+        "shortCardDescription": "한라산 1100고지 습지, 화산 해안선, 천제연 폭포, 오설록 차밭, 애월 카페거리, 이호테우 일몰을 잇는 균형 잡힌 제주 서남부 하루 코스."
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "52"
       }
     }
   },
@@ -2629,24 +2629,24 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
     "southwest-hallasan-osulloc-aewol": {
       "catalog_card": {
         "slug": "southwest-hallasan-osulloc-aewol",
-        "title": "济州西南：汉拿山·Osulloc·涯月",
-        "subtitle": "短途汉拿山徒步、火山悬崖、瀑布小径、茶田，以悠闲的涯月之旅收尾。",
+        "title": "济州西南：汉拿山·雪绿茶·涯月·梨湖泰乌",
+        "subtitle": "1100高地湿地栈道、火山悬崖、瀑布小径、茶园，以及涯月·梨湖泰乌日落收尾",
         "region": "济州岛西南部",
-        "duration": "8小时",
-        "stopsCount": 6,
+        "duration": "9小时",
+        "stopsCount": 7,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
-          "非常适合初次游览济州岛的旅客",
-          "济州岛西南部"
+          "适合初次造访济州的旅客",
+          "济州西南部"
         ],
-        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "priceLabel": "每人 US$59（原价$69，14% 优惠）",
-        "shortCardDescription": "一条均衡的济州岛西南部路线，串联短途汉拿山徒步、火山海岸线、天帝渊瀑布、雪绿茶茶园及涯月咖啡街。"
+        "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "priceLabel": "每人 US$52",
+        "shortCardDescription": "一条均衡的济州西南一日路线，串联汉拿山1100高地湿地、火山海岸线、天帝渊瀑布、雪绿茶茶园、涯月咖啡街与梨湖泰乌日落。"
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "52"
       }
     }
   },
@@ -3491,24 +3491,24 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
     "southwest-hallasan-osulloc-aewol": {
       "catalog_card": {
         "slug": "southwest-hallasan-osulloc-aewol",
-        "title": "濟州西南：漢拿山·Osulloc·涯月",
-        "subtitle": "短程漢拿山健行、火山懸崖、瀑布步道、茶園，以悠閒的涯月作為完美收尾。",
+        "title": "濟州西南部：漢拿山·O'Sulloc·涯月·梨湖泰烏",
+        "subtitle": "1100高地濕地棧道、火山懸崖、瀑布步道、茶園，以涯月與梨湖泰烏日落作為收尾",
         "region": "濟州西南部",
-        "duration": "8小時",
-        "stopsCount": 6,
+        "duration": "9小時",
+        "stopsCount": 7,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
-          "非常適合初次造訪濟州的旅客",
+          "適合初次造訪濟州的旅客",
           "濟州西南部"
         ],
-        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "priceLabel": "每人 US$59（原價$69，14% 優惠）",
-        "shortCardDescription": "行程均衡的濟州西南路線，串聯短程漢拿山健行、火山海岸線、天帝淵瀑布、雪綠茶園與涯月咖啡街。"
+        "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "priceLabel": "每人 US$52",
+        "shortCardDescription": "串聯漢拿山1100高地濕地、火山海岸線、天帝淵瀑布、O'Sulloc茶園、涯月咖啡街與梨湖泰烏日落的均衡濟州西南部一日行程。"
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "52"
       }
     }
   },
@@ -4350,24 +4350,24 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
     "southwest-hallasan-osulloc-aewol": {
       "catalog_card": {
         "slug": "southwest-hallasan-osulloc-aewol",
-        "title": "Jeju Suroeste: Hallasan y Aewol",
-        "subtitle": "Un corto paseo por Hallasan, acantilados volcánicos, un sendero hasta una cascada, campos de té y un relajado final en Aewol.",
+        "title": "Suroeste de Jeju: Hallasan, O'Sulloc, Aewol e Iho Tewoo",
+        "subtitle": "Pasarela del humedal de las Tierras Altas 1100, acantilados volcánicos, sendero a la cascada, campos de té y un final al atardecer en Aewol e Iho Tewoo",
         "region": "Suroeste de Jeju",
-        "duration": "8 horas",
-        "stopsCount": 6,
+        "duration": "9 horas",
+        "stopsCount": 7,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
           "Ideal para visitantes de Jeju por primera vez",
           "Suroeste de Jeju"
         ],
-        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "priceLabel": "Desde US$59 por persona (antes $69, 14% descuento)",
-        "shortCardDescription": "Una ruta equilibrada por el suroeste de Jeju que combina un corto paseo por Hallasan, la costa volcánica, la Cascada Cheonjeyeon, los campos de té O'Sulloc y la Calle de Cafeterías de Aewol."
+        "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "priceLabel": "US$52 / persona",
+        "shortCardDescription": "Una ruta equilibrada de un día por el suroeste de Jeju que enlaza el humedal de las Tierras Altas 1100 de Hallasan, la costa volcánica, la Cascada Cheonjeyeon, los campos de té O'Sulloc, la calle de cafeterías de Aewol y el atardecer en Iho Tewoo."
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "52"
       }
     }
   },
@@ -5210,24 +5210,24 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
     "southwest-hallasan-osulloc-aewol": {
       "catalog_card": {
         "slug": "southwest-hallasan-osulloc-aewol",
-        "title": "済州南西部：漢拏山・O'sulloc・涯月",
-        "subtitle": "漢拏山の軽ハイキング、火山性断崖、滝のトレイル、茶畑、そしてのんびりとした涯月でのフィナーレ。",
+        "title": "済州島南西部：漢拏山・オソルロク・愛月・梨湖テウ",
+        "subtitle": "1100高地湿地のデッキ歩道、火山性断崖、滝のトレイル、茶畑、そして愛月・梨湖テウの夕日でのフィナーレ",
         "region": "済州島南西部",
-        "duration": "8時間",
-        "stopsCount": 6,
+        "duration": "9時間",
+        "stopsCount": 7,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
           "済州島初訪問者に最適",
           "済州島南西部"
         ],
-        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "priceLabel": "1名様 US$59（定価$69、14%オフ）",
-        "shortCardDescription": "漢拏山の軽ハイキング、火山性海岸線、天帝淵瀑布、オスルロクの茶畑、涯月カフェストリートをつなぐ、バランスの取れた済州島南西部ルート。"
+        "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "priceLabel": "1名様 US$52",
+        "shortCardDescription": "漢拏山1100高地の湿地、火山性海岸線、天帝淵滝、オソルロクの茶畑、愛月カフェ通り、梨湖テウの夕日をつなぐ、バランスの取れた済州島南西部の1日コース。"
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "52"
       }
     }
   }
