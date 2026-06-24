@@ -38,8 +38,11 @@ export async function GET(req: NextRequest) {
     const { data, error } = await q;
     if (error) return NextResponse.json({ error: error.message }, { status: 500 });
 
+    // D-14: count the semantic review states only. 'true'/'false' are a legacy
+    // boolean-migration artifact still permitted by the CHECK constraint but
+    // never set by the app (0 rows live), so they don't belong as filter tabs.
     const counts: Record<string, number> = {};
-    for (const s of ["draft", "true", "false", "needs_edit", "approved", "rejected"]) {
+    for (const s of ["draft", "needs_edit", "approved", "rejected"]) {
       const { count } = await sb
         .from("qa_pairs")
         .select("id", { count: "exact", head: true })

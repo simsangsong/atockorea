@@ -537,18 +537,18 @@ export async function sendBookingCancellationEmail({
           <h1>Booking Cancelled</h1>
         </div>
         <div class="content">
-          <p>Dear ${customerName},</p>
+          <p>Dear ${escapeHtml(customerName)},</p>
           <p>Your booking has been cancelled as requested.</p>
-          
+
           <div class="content-box">
             <h2 style="margin-top: 0; color: #f5576c;">Cancellation Details</h2>
             <div class="info-row">
               <span class="info-label">Booking ID:</span>
-              <span class="info-value">${bookingId}</span>
+              <span class="info-value">${escapeHtml(bookingId)}</span>
             </div>
             <div class="info-row">
               <span class="info-label">Tour:</span>
-              <span class="info-value">${tourTitle}</span>
+              <span class="info-value">${escapeHtml(tourTitle)}</span>
             </div>
             <div class="info-row">
               <span class="info-label">Original Date:</span>
@@ -681,18 +681,18 @@ export async function sendMerchantWelcomeEmail({
           <h1>Welcome to AtoCKorea!</h1>
         </div>
         <div class="content">
-          <p>Dear ${contactPerson},</p>
-          <p>Congratulations! Your merchant account for <strong>${companyName}</strong> has been created successfully.</p>
-          
+          <p>Dear ${escapeHtml(contactPerson)},</p>
+          <p>Congratulations! Your merchant account for <strong>${escapeHtml(companyName)}</strong> has been created successfully.</p>
+
           <div class="content-box">
             <h2 style="margin-top: 0; color: #667eea;">Your Login Credentials</h2>
             <div class="info-row">
               <span class="info-label">Login Email:</span>
-              <span class="info-value">${loginEmail}</span>
+              <span class="info-value">${escapeHtml(loginEmail)}</span>
             </div>
             <div class="info-row">
               <span class="info-label">Temporary Password:</span>
-              <span class="info-value" style="font-family: monospace; background: #f0f0f0; padding: 5px 10px; border-radius: 4px;">${temporaryPassword}</span>
+              <span class="info-value" style="font-family: monospace; background: #f0f0f0; padding: 5px 10px; border-radius: 4px;">${escapeHtml(temporaryPassword)}</span>
             </div>
           </div>
 

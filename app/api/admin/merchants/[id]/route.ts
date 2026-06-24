@@ -3,6 +3,7 @@ import { createServerClient } from '@/lib/supabase';
 import { AdminAuthFailure, adminAuthJsonResponse, requireAdmin } from '@/lib/auth';
 import { ACTIVE_BOOKING_STATUSES } from '@/lib/constants/booking-status';
 import { getMerchantProfileMap } from '@/lib/admin/merchant-profiles';
+import { validateMerchantUpdate } from '@/lib/admin/merchant-update';
 
 /**
  * GET /api/admin/merchants/[id]
@@ -97,22 +98,18 @@ export async function PUT(
     const supabase = createServerClient();
     const body = await req.json();
 
-    const {
-      status,
-      isVerified,
-      companyName,
-      contactPerson,
-      contactEmail,
-      contactPhone,
-    } = body;
+    // N-5: allowlist + validate (status enum, email format, boolean) so bad
+    // input fails with a clean 400 instead of a DB CHECK 500 or silent persist.
+    const validation = validateMerchantUpdate(body as Record<string, unknown>);
+    if (!validation.ok) {
+      return NextResponse.json({ error: validation.error }, { status: 400 });
+    }
+    const updateData = validation.updateData;
 
-    const updateData: any = {};
-    if (status !== undefined) updateData.status = status;
-    if (isVerified !== undefined) updateData.is_verified = isVerified;
-    if (companyName !== undefined) updateData.company_name = companyName;
-    if (contactPerson !== undefined) updateData.contact_person = contactPerson;
-    if (contactEmail !== undefined) updateData.contact_email = contactEmail;
-    if (contactPhone !== undefined) updateData.contact_phone = contactPhone;
+    // S-F7: reject an empty update instead of issuing a no-op write.
+    if (Object.keys(updateData).length === 0) {
+      return NextResponse.json({ error: 'No valid fields to update' }, { status: 400 });
+    }
 
     const { data: merchant, error } = await supabase
       .from('merchants')
