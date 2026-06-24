@@ -26,6 +26,7 @@
 |---|---|---|---|
 | 0 | 진단 + 마스터 플랜 (이 문서) | ✅ 완료 | 5개 도메인 병렬 코드감사 + 세법 리서치 종합 |
 | 0.5 | 검증 2차 패스 (§K) — 전 주장 코드 재대조 | ✅ 완료 | 3개 감사 에이전트 재검증. 핵심 주장 CONFIRMED, C1~C12 정정 + N1~N10 신규결함 + R1~R4 위험. 라이브 DB는 MCP 미연결(K-0) |
+| 0.6 | UI/UX 코드 심층 감사 (§K-6) — §H 실행 사양화 | ✅ 완료 | 3개 UI 감사 에이전트. 토큰·`ui/*` 16개 100% 미사용 발견 → §H-1 정정(신규도입→채택). 드리프트 정량화 + 현재값→토큰 매핑표 + 우선순위(legacy analytics #1) |
 | 1 | 기능 안정화 (BLOCKER/MAJOR 버그 수정) | ⏳ 대기 | §D. 코드는 멀쩡해 보이나 깨진 기능 우선 |
 | 2 | 디자인 시스템 통합 (토큰·팔레트·타이포·i18n) | ⏳ 대기 | §H.1. 모든 페이지 개편의 선행 조건 |
 | 3 | 페이지별 UI/UX 개편 | ⏳ 대기 | §H.2~. Phase 2 토큰 위에서 한 페이지씩 |
@@ -76,6 +77,7 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 | 2026-06-24 | Phase 0 — 어드민 전면 진단 + 마스터 플랜 작성 | (this) | 5개 도메인 병렬 감사(페이지·API·DB·정산/세무·UI) 종합 |
 | 2026-06-24 | §J 갱신 — 등록 주=Wyoming 확정 + Form 5472 + 수익인식 설명 | fae9319 | — |
 | 2026-06-24 | Phase 0.5 — 검증 2차 패스(§K). 전 주장 코드 재대조, C1~C12 정정·N1~N10 신규·R1~R4 위험. §D/§D-15 본문 직접 수정 | (this) | 라이브 DB는 MCP가 타 프로젝트(Kursoflow) 연결로 미검증(K-0) |
+| 2026-06-24 | Phase 0.6 — UI/UX 코드 심층 감사(§K-6). 토큰·`ui/*` 16개 미사용 발견 → §H-1 정정, 현재값→토큰 매핑표·컴포넌트 키트·우선순위 | (this) | 모범 사례 products/match-pois/analytics-product 구조 보존 |
 
 ---
 
@@ -294,8 +296,9 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 > 진단: 사용자 표현대로 "원시적". 근거 — **3개 팔레트 혼재**(대시보드 slate/blue · 주문 indigo/gray/green · 분석 rainbow-emoji 🏢🎫📦💰), 페이지마다 **영/한 무작위 혼용**, **`alert()` 저장 확인**, 정보 위계 부재(text-xl~text-3xl 제각각), 빈/로딩/에러 상태 비일관, 모바일에서 죽는 컨트롤(미리보기 desktop-only 등), 강력한 analytics가 메뉴에 노출 안 됨(IA 결함), placeholder 화면이 메인 분석으로 노출.
 
 ## H-1. 디자인 시스템 통합 (Phase 2 — 전 페이지 개편의 선행 조건)
-- **토큰**: 단일 팔레트(중립 slate + 단일 accent), 시맨틱 색(success/warn/danger/info), 라운드/섀도/스페이싱/타이포 스케일 토큰화(tailwind config + CSS 변수). 기존 customer 사이트의 amber 규율과 충돌 없이 어드민 전용 스코프.
-- **컴포넌트 키트**(`components/admin/ui/*`): Button(variant/size/loading), Input/Select/Textarea(label·error·hint), Table(정렬·빈·로딩·페이지네이션), Card/StatCard, Badge(상태 시맨틱), Tabs, Drawer/Modal(=alert 대체), Toast, EmptyState, FilterBar, DateRange, Pagination, Skeleton.
+> ⚠️ **검증 정정(§K-6):** 당초 "토큰/컴포넌트 키트를 **신규 도입**"이라 했으나 코드 감사 결과 **토큰 시스템(`tailwind.config.js:40-185`)도 16개 `components/ui/*` 라이브러리(button/card/input/badge/select/tabs/skeleton/**sonner 토스트 호스트** 등)도 이미 존재**하며 어드민이 **100% 우회**(미사용). 따라서 작업은 "신규 도입"이 아니라 **기존 토큰·`ui/*` 채택 + 어드민 전용 갭 컴포넌트만 신설**. 상세 사양·매핑표는 §K-6.
+- **토큰**: 신규 발명 금지 — 기존 shadcn 중립(oklch) 토큰(`--primary`/`--card`/`--muted`/`--border`/`--ring`, `globals.css:1095+`)을 어드민 surface/text 기반으로 채택, accent 1개(`brand.blue #1E4EDF` 또는 customer amber 중 §J #7 결정), 상태색은 `status.{success/warning/error/info}`(`src/design/tokens.ts`)로 통일. raw `slate/indigo/gray/green/...` 하드코딩 제거. (현재값→토큰 매핑표 = §K-6.3.)
+- **컴포넌트 키트**: 기존 `components/ui/*`(Button/Card/Input/Select/Badge/Tabs/Skeleton/Dialog/Sheet/Sonner) **채택**; 어드민 전용으로 **신설**할 것만: `PageHeading`, `StatCard`(현재 3중 구현 통합), `EmptyState`, `FilterBar`, `DataTable`(정렬·빈·로딩·페이지네이션), `ConfirmDialog`(=`confirm()` 대체). `components/admin/`엔 현재 `BookingStatusBadge`·`ImageUploader` 2개뿐.
 - **i18n**: 어드민 문자열 키화(ko 1차), 영/한 혼용 제거.
 - **표준 패턴**: 페이지 헤더(타이틀+액션+breadcrumb), 리스트(FilterBar+Table+Pagination), 마스터-디테일(데스크탑 우측 레일 / 모바일 시트), 폼(검증·dirty·저장상태·확인 모달).
 - **a11y**: aria-label·focus ring·키보드 내비·대비 기준. 토글 `aria-pressed`, 글리프 버튼 라벨.
@@ -408,3 +411,78 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 2. **§E/§F 기능 설계 정밀화** — `quote_drafts` 스키마·이벤트 taxonomy(C9 반영)·`unified_inquiries` view DDL 초안·per-product funnel matview 정의.
 3. **§G 세무** — 소유구조(§J #2) 확인 후 Form 5472 데이터 요구 확정; settlement 마이그레이션 브리지(R1/R2) 상세 설계.
 4. **라이브 DB 대조** — atockorea 프로젝트 MCP 연결 시 K-0/N1 실배포 상태 확정.
+
+---
+
+# §K-6. UI/UX 코드 감사 결과 + §H 실행 사양 (2026-06-24)
+
+> §K-5 ①(§H 심층 검증) 수행 완료. 3개 독립 UI 감사 에이전트가 전 어드민 페이지의 실제 className·팔레트·타이포·i18n·alert·모바일·a11y를 file:line으로 추출. 결과를 §H 실행 사양으로 정리.
+
+## K-6.0 핵심 발견 (§H 근본 정정)
+1. **어드민은 디자인 토큰 0개·공유 UI 프리미티브 0개 사용.** 완전한 토큰 시스템(`tailwind.config.js:40-185`: fontSize 스케일·`brand`/`status` 색·`design-*` shadow/radius·`motion-*`)과 **16개 `components/ui/*`**(button·card·input·badge·dialog·select·tabs·skeleton·**sonner**…)가 존재하나 **모든 어드민 페이지가 import 0건**. 최대 레버 = `ui/{button,card,input,badge,skeleton,tabs}` + `StatCard`/`EmptyState` 채택.
+2. **3개 디자인 세대 공존:** (a) 레거시 `gray`+이모지+`alert`+placeholder 차트(`/admin/analytics`), (b) 정제된 slate+blue+sonner 에디터(`products`·`match-pois`), (c) 플랫 모노크롬 데이터 대시보드(`analytics/product`). `chatbot-analytics`는 (b)의 카드 + (a)의 이모지/alert 습관을 혼용.
+3. **shell(`layout.tsx`)이 최고 수준**(slate+blue-600, Lucide, 우수한 a11y/모바일) — 대시보드는 이를 계승하나 나머지는 indigo/gray로 드리프트.
+
+## K-6.1 디자인 기반 인벤토리
+- `tailwind.config.js`: `font-sans=Pretendard`, fontSize xs~5xl(주석이 "arbitrary `text-[12.5px]` 금지" 명시하나 어드민이 `text-[9px]/[10px]/[11px]/[13px]` 남용), `brand{navy,blue,ocean}`·`status{success,warning,error,info,neutral}`, `design-{sm,md,lg}` shadow/radius, `motion-{fast,base,slow}`.
+- `globals.css`: customer amber 토큰(`--accent: amber.700`) + shadcn 중립 oklch 토큰(`--primary`≈near-black·`--card`·`--muted`·`--border`·`--ring`, line 1095+).
+- `components/ui/*`(16): accordion·badge·button(CVA variants)·card·dialog·dropdown-menu·input·label·select·separator·sheet·skeleton·sonner·tabs·textarea.
+- `components/admin/*`(2): `BookingStatusBadge`(green/yellow/red/blue/rose), `ImageUploader`(indigo+이모지+alert, products MediaSection로 대체됨).
+
+## K-6.2 드리프트 정량화 (증거 기반)
+| 차원 | 실태 |
+|---|---|
+| accent | **2개 시스템 공존** — shell/대시보드 `blue-600` vs 나머지 `indigo-600`; chatbot은 `sky-950`. merchants-list는 blue accent인데 spinner는 indigo(자기모순) |
+| neutral | **2개** — shell/대시보드/products/poi/analytics-product/chatbot `slate-*` vs orders/merchants/contacts/legacy-analytics `gray-*` |
+| spinner | **3개 구현** — `border-2 border-t-transparent h-11`(shell)·`h-10`(대시보드/orders/contacts)·`border-b-2 h-12`(orders-detail/merchants) |
+| H1 | **4종** — `text-xl/semibold`(대시보드)·`text-2xl/bold`(orders/contacts)·`text-xl→2xl`(merchants-list)·`text-3xl/bold`(detail/create/legacy-analytics) |
+| card | **3종** — `rounded-xl slate-200/80`·`rounded-lg gray-200/60`·`rounded-xl gray-200`; analytics-product만 `rounded-lg` no-shadow |
+| 피드백 | **27+ raw `alert()`/`confirm()`**(order-detail만 ~13; merchants/create는 **로그인 자격증명을 alert에 담음**) + cms 블루 status 배너 + support/qa 인라인 배너 3종 혼재. products/poi/analytics-product는 sonner/인라인(모범) |
+| 빈/에러 | contacts는 **에러 무음**(console만), legacy-analytics·chatbot은 빈 상태 없음/널에 blank |
+| i18n | settings=영어전용, cms=한국어전용, merchants list=한국어인데 detail/create=영어전용(동일 기능), order-detail=버튼 안에서 한·영 병기, **emails 코드주석은 중국어** |
+| 상태색 | **3중 분기** — `BookingStatusBadge` green/yellow/red vs 패널 emerald/amber/rose vs analytics red |
+| KPI 카드 | **3중 비호환 구현** — legacy 인라인×4 vs `KpiCard`(analytics-product) vs `Stat`(chatbot) |
+| 이모지 아이콘 | legacy-analytics 🏢🎫📦💰, chatbot 👍👎✓, support-detail 📋💬👤⚠️ (aria 없음) |
+| 컴포넌트 재사용 | `ui/*` 0건, `components/admin/*` 0건(in-scope); order-detail은 `BookingStatusBadge` 재구현; input className 9~15회 복붙 |
+
+## K-6.3 토큰 채택 전략 + 현재값→토큰 매핑 (Phase 2 산출물)
+- 결정 축(§J #7): **어드민 중립 톤 채택** 권장 — surface/text = shadcn 중립 oklch, accent 1개 = `brand.blue`(shell이 이미 blue-600), 상태 = `status.*`.
+
+| 현재 (하드코딩) | → 토큰/표준 |
+|---|---|
+| `text-gray-900/700/...`, `bg-gray-50` | `text-foreground`/`text-muted-foreground`, `bg-muted` (slate 계열로 통일) |
+| `bg-blue-600 / bg-indigo-600 / bg-sky-950` (primary 버튼) | `ui/button variant=default`(=`bg-primary`) 또는 accent 토큰 |
+| `bg-green-*/emerald-*`(성공), `amber/yellow`(경고), `red/rose`(에러) | `status.success / status.warning / status.error` |
+| `bg-blue-500/green-500/purple-500/orange-500`(legacy KPI) | 채도 솔리드 폐기 → 모노크롬 `StatCard` |
+| `rounded-lg/xl` 혼용, `shadow-sm/lg/xl/2xl` | `rounded-design-md`(12px) + `shadow-design-sm/md` |
+| `text-[9px]/[10px]/[11px]/[13px]` | fontSize 토큰(`text-xs` 최소) |
+| spinner 3종 | `ui/skeleton` + 단일 Spinner |
+| `🏢🎫📦💰👍👎` 이모지 | Lucide 아이콘 |
+
+## K-6.4 컴포넌트 키트 (존재 채택 + 신설)
+- **채택(이미 존재):** `ui/button`(CVA), `ui/card`, `ui/input`, `ui/label`, `ui/select`, `ui/textarea`, `ui/badge`, `ui/tabs`, `ui/skeleton`, `ui/dialog`, `ui/sheet`, `ui/sonner`(토스트 호스트 — 전역 1회 마운트 후 `toast()` 통일).
+- **신설(어드민 전용):** `PageHeading`(타이틀+액션+breadcrumb, H1 4종 통일), `StatCard`(KPI 3중 구현 통합·모노크롬), `EmptyState`(아이콘+카피+액션), `FilterBar`(칩+검색 디바운스+날짜), `DataTable`(정렬·빈·로딩·페이지네이션·모바일 카드 폴백), `ConfirmDialog`(=`confirm()` 대체), `StatusBadge` 통합(BookingStatusBadge + 패널 상태색 단일화).
+
+## K-6.5 i18n · 피드백 · a11y 표준
+- **i18n:** 어드민 문자열 ko 1차 키화(`messages/`), 한 화면 내 영/한 혼용·버튼 내 병기 제거, 숫자/통화는 `toLocaleString('ko-KR')` 일괄(현재 일부만). **중국어 코드주석(emails) 정리.**
+- **피드백:** `alert()/confirm()` 27+건 전량 → `toast`(성공/에러) + `ConfirmDialog`(파괴적 액션) + 인라인 폼 에러. **자격증명을 alert로 노출(merchants/create)** 즉시 제거.
+- **a11y:** 모든 `select`/`input`에 `label`+`htmlFor`, 글리프 버튼(`↻`·`✕`·`ⓘ`)에 `aria-label`, 이모지 아이콘 → Lucide + `aria-hidden`, 클릭 `div`(emails 행) → `button`, 색상-단독 신호(unread dot) 보조 텍스트, `min-h-touch`(44px) 적용.
+
+## K-6.6 페이지별 개편 우선순위
+1. **`/admin/analytics`(레거시) — 최우선 폐기/교체**: 레인보우 `*-500` 솔리드·이모지·영어전용·`alert()`·**production에 "Chart will be added here" placeholder**(`:205`)·`÷30` 가짜 평균. 바로 옆 `analytics/product`(모던·실데이터)로 흡수하거나 모노크롬 재작성. (§B 결정 "nav→자체 엔진 연결"과 직결.)
+2. 주문/예약·통합 문의·정산(운영 핵심, gray→slate·indigo→accent·alert→toast·DataTable).
+3. 머천트(i18n 통일 list↔detail, 자격증명 alert 제거).
+4. 대시보드(인라인 SVG→Lucide, 하드코딩 0/null 동반 수정).
+5. chatbot-analytics(이모지/alert 제거, KpiCard 통합, 기간 선택기).
+6. POI/CMS/업로드/설정/지원/QA(토큰 채택, 모바일 패리티 — support 테이블 `overflow-x` 등).
+- 모범 사례(products·match-pois·analytics-product)는 토큰/`ui/*` 채택만 추가, 구조 보존.
+
+## K-6.7 신규 발견 (UI 영역, 플랜 본문 §H 보강)
+| ID | 항목 |
+|---|---|
+| UI-1 | 16개 `components/ui/*` + 토큰 전부 미사용(최대 레버) — §H-1 정정 반영 완료 |
+| UI-2 | `ImageUploader`(admin) vs products `MediaSection` 2개 업로더가 accent·피드백 불일치 — 단일화 |
+| UI-3 | `match-pois` 모바일 흐름 깨짐: 리스트 `w-80` 비축소 + 높이 계산이 모바일 bottom-nav(4rem) 무시(`page.tsx:35`) → "목록으로" 복귀 불가 |
+| UI-4 | contacts 모바일 시트가 헤더 높이 `top-[52px]` 하드코딩 결합(브리틀) |
+| UI-5 | legacy-analytics `÷30` 가짜 일평균 + placeholder 차트 production 노출 |
+| UI-6 | 상태색·KPI카드 3중 분기 통합(StatusBadge/StatCard) |
