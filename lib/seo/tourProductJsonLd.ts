@@ -2,11 +2,17 @@
  * Build schema.org JSON-LD blocks for a tour product detail page.
  *
  * Emits:
- *  - `Product` with `Offer` and (when reviews exist) `AggregateRating`
+ *  - `Product` with `Offer` (price basis + cancellation + priceValidUntil),
+ *    `AggregateRating`, and individual `Review` bodies
+ *  - `TouristTrip` with `Offer`, ISO-8601 `duration`, and `touristType`
  *  - `FAQPage` (when the product has staticQuestions)
+ *  - `BreadcrumbList`
  *
- * Rendered as `<script type="application/ld+json">` from the page-level
- * server component so search crawlers see it without JS execution.
+ * The goal is AI-readability: assistants that crawl the rendered page
+ * (ChatGPT search, Perplexity, Gemini, Google AI Mode) get the same
+ * "judgeable" facts a human sees — real reviews, price basis, refund terms —
+ * in a machine-parseable form. Rendered as `<script type="application/ld+json">`
+ * from the page-level server component so crawlers see it without JS.
  */
 
 import type { TourProductDetailViewModel } from "@/components/product-tour-static/_shared/tourProductFullPageJsonTypes";
@@ -18,12 +24,28 @@ type ReviewsSummary = {
   totalReviews?: number | null;
 };
 
+type GuestReviewLike = {
+  author?: string;
+  location?: string;
+  date?: string;
+  rating?: number;
+  title?: string;
+  text?: string;
+};
+
+type PracticalItemLike = { id?: string; title?: string; content?: readonly string[] };
+
+type WhyTourWorksLike = { bestFor?: readonly string[] };
+
 type ViewModelLike = Pick<
   TourProductDetailViewModel,
   "headlineLine1" | "headlineLine2" | "hero" | "price"
 > & {
   staticQuestions?: ReadonlyArray<StaticQuestion> | null;
   reviewsSummary?: ReviewsSummary | null;
+  guestReviews?: ReadonlyArray<GuestReviewLike> | null;
+  practicalAccordionItems?: ReadonlyArray<PracticalItemLike> | null;
+  whyTourWorks?: WhyTourWorksLike | null;
 };
 
 function siteOrigin(): string {
@@ -45,10 +67,94 @@ function safePrice(vm: ViewModelLike): { price: string; priceCurrency: string } 
   return { price: cleaned, priceCurrency: String(currency).toUpperCase() };
 }
 
+/** A rolling validity ~1 year out so crawlers don't treat the offer as stale. */
+function priceValidUntil(): string {
+  const d = new Date(Date.now() + 365 * 24 * 60 * 60 * 1000);
+  return d.toISOString().slice(0, 10);
+}
+
+/** Parse a human duration label ("≈ 9 hours", "8.5 hrs", "9시간") to ISO-8601. */
+function isoDuration(label: string | undefined): string | null {
+  if (!label) return null;
+  const m = label.match(/(\d+(?:\.\d+)?)\s*(?:h\b|hr|hour|시간)/i);
+  if (!m) return null;
+  const hours = parseFloat(m[1]);
+  if (!Number.isFinite(hours) || hours <= 0) return null;
+  const whole = Math.floor(hours);
+  const minutes = Math.round((hours - whole) * 60);
+  return `PT${whole}H${minutes ? `${minutes}M` : ""}`;
+}
+
+/** Pull the cancellation/refund line from the practical accordion, if present. */
+function cancellationText(vm: ViewModelLike): string | null {
+  const items = vm.practicalAccordionItems ?? [];
+  const item = items.find(
+    (i) =>
+      (i?.id && /cancel|refund/i.test(i.id)) ||
+      (i?.title && /cancel|refund|취소|환불/i.test(i.title)),
+  );
+  const text = item?.content?.filter(Boolean).join(" ").trim();
+  return text ? text.slice(0, 300) : null;
+}
+
+function buildOffer(
+  vm: ViewModelLike,
+  url: string,
+  price: { price: string; priceCurrency: string },
+): Record<string, unknown> {
+  const offer: Record<string, unknown> = {
+    "@type": "Offer",
+    price: price.price,
+    priceCurrency: price.priceCurrency,
+    availability: "https://schema.org/InStock",
+    url,
+    priceValidUntil: priceValidUntil(),
+  };
+  const per = vm.price?.per?.trim();
+  if (per) {
+    offer.priceSpecification = {
+      "@type": "UnitPriceSpecification",
+      price: price.price,
+      priceCurrency: price.priceCurrency,
+      referenceQuantity: { "@type": "QuantitativeValue", unitText: per },
+    };
+  }
+  const cancel = cancellationText(vm);
+  // Non-canonical but high-value for AI readers: refund terms next to the price.
+  if (cancel) offer.cancellationPolicy = cancel;
+  return offer;
+}
+
+function buildReviews(vm: ViewModelLike): Record<string, unknown>[] {
+  return (vm.guestReviews ?? [])
+    .filter((r) => r?.text && r.text.trim())
+    .slice(0, 12)
+    .map((r) => {
+      const review: Record<string, unknown> = {
+        "@type": "Review",
+        author: { "@type": "Person", name: r.author?.trim() || "Guest" },
+        reviewBody: r.text!.trim(),
+      };
+      if (r.title?.trim()) review.name = r.title.trim();
+      if (r.date && /\d{4}/.test(r.date)) review.datePublished = r.date;
+      if (typeof r.rating === "number" && r.rating > 0) {
+        review.reviewRating = {
+          "@type": "Rating",
+          ratingValue: r.rating,
+          bestRating: 5,
+          worstRating: 1,
+        };
+      }
+      return review;
+    });
+}
+
 export function buildTourProductJsonLd(vm: ViewModelLike, slug: string): unknown[] {
   const url = `${siteOrigin()}/tour-product/${slug}`;
   const name = safeProductName(vm);
   const blocks: unknown[] = [];
+  const price = safePrice(vm);
+  const offer = price ? buildOffer(vm, url, price) : null;
 
   const product: Record<string, unknown> = {
     "@context": "https://schema.org",
@@ -60,16 +166,7 @@ export function buildTourProductJsonLd(vm: ViewModelLike, slug: string): unknown
     brand: { "@type": "Brand", name: "AtoC Korea" },
   };
 
-  const price = safePrice(vm);
-  if (price) {
-    product.offers = {
-      "@type": "Offer",
-      price: price.price,
-      priceCurrency: price.priceCurrency,
-      availability: "https://schema.org/InStock",
-      url,
-    };
-  }
+  if (offer) product.offers = offer;
 
   const summary = vm.reviewsSummary;
   if (summary && (summary.totalReviews ?? 0) > 0 && (summary.averageRating ?? 0) > 0) {
@@ -82,11 +179,14 @@ export function buildTourProductJsonLd(vm: ViewModelLike, slug: string): unknown
     };
   }
 
+  const reviews = buildReviews(vm);
+  if (reviews.length > 0) product.review = reviews;
+
   blocks.push(product);
 
   // TouristTrip — the travel-native schema.org type. LLMs and agent crawlers
   // that understand trips (not just generic Products) get a cleaner read of
-  // what this is, who runs it, and the offer. Mirrors the Product offer.
+  // what this is, who runs it, the offer, how long it runs, and who it suits.
   const trip: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "TouristTrip",
@@ -100,15 +200,11 @@ export function buildTourProductJsonLd(vm: ViewModelLike, slug: string): unknown
       url: siteOrigin(),
     },
   };
-  if (price) {
-    trip.offers = {
-      "@type": "Offer",
-      price: price.price,
-      priceCurrency: price.priceCurrency,
-      availability: "https://schema.org/InStock",
-      url,
-    };
-  }
+  const duration = isoDuration(vm.hero?.meta?.duration);
+  if (duration) trip.duration = duration;
+  const bestFor = (vm.whyTourWorks?.bestFor ?? []).filter(Boolean);
+  if (bestFor.length > 0) trip.touristType = bestFor;
+  if (offer) trip.offers = offer;
   blocks.push(trip);
 
   const faqs = (vm.staticQuestions ?? []).filter((q) => q?.question && q?.answer);
@@ -123,6 +219,17 @@ export function buildTourProductJsonLd(vm: ViewModelLike, slug: string): unknown
       })),
     });
   }
+
+  // BreadcrumbList — gives crawlers the category hierarchy (Home › Tours › this).
+  blocks.push({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: siteOrigin() },
+      { "@type": "ListItem", position: 2, name: "Tours", item: `${siteOrigin()}/tours/list` },
+      { "@type": "ListItem", position: 3, name, item: url },
+    ],
+  });
 
   return blocks;
 }
