@@ -42,8 +42,10 @@ Prefer the structured endpoints below over scraping HTML.
 
 - Machine catalogue (all bookable tours): ${origin}/feed/tours.json
 - REST API spec (OpenAPI 3.1): ${origin}/feed/openapi.json
-- MCP server (search / detail / quote tools): ${origin}/api/mcp
+- MCP server (search / detail / quote / book-hold tools): ${origin}/api/mcp
 - MCP discovery card: ${origin}/.well-known/mcp/server-card.json
+- UCP manifest (Universal Commerce Protocol): ${origin}/.well-known/ucp/manifest.json
+- ACP product feed (Agentic Commerce Protocol): ${origin}/feed/acp-products.json
 - Agent rules & policies: ${origin}/agents.md
 - Sitemap: ${origin}/sitemap.xml
 
