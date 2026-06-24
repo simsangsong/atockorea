@@ -25,6 +25,7 @@
 | Phase | 제목 | 상태 | 비고 |
 |---|---|---|---|
 | 0 | 진단 + 마스터 플랜 (이 문서) | ✅ 완료 | 5개 도메인 병렬 코드감사 + 세법 리서치 종합 |
+| 0.5 | 검증 2차 패스 (§K) — 전 주장 코드 재대조 | ✅ 완료 | 3개 감사 에이전트 재검증. 핵심 주장 CONFIRMED, C1~C12 정정 + N1~N10 신규결함 + R1~R4 위험. 라이브 DB는 MCP 미연결(K-0) |
 | 1 | 기능 안정화 (BLOCKER/MAJOR 버그 수정) | ⏳ 대기 | §D. 코드는 멀쩡해 보이나 깨진 기능 우선 |
 | 2 | 디자인 시스템 통합 (토큰·팔레트·타이포·i18n) | ⏳ 대기 | §H.1. 모든 페이지 개편의 선행 조건 |
 | 3 | 페이지별 UI/UX 개편 | ⏳ 대기 | §H.2~. Phase 2 토큰 위에서 한 페이지씩 |
@@ -36,7 +37,7 @@
 
 상태 마커: ⏳ 대기 / 🔄 진행 중 / ⏸ 보류 / ✅ 완료 / ❌ 중단
 
-**현재 활성 Phase: Phase 0 완료. 다음 액션 = §J 오픈 입력(주(州) 등록지·수익인식 정책 등) 확인 → Phase 1 착수.**
+**현재 활성 Phase: Phase 0 + 0.5(검증) 완료. 다음 액션 = §J 오픈 입력 확인 + §K-5 다음 세션 범위(§H UI/UX 심층 검증 등) → Phase 1 착수. Phase 1 BLOCKER는 §D 6건 + N1(익명화 RPC 미배포)·N2(업로드 검증 dead code) 포함.**
 
 > 실행 순서 원칙: **Phase 1(기능 안정화) → 2(디자인 토큰) → 3(UI 개편)** 은 사용자 체감 라인. **Phase 4(데이터) → 5(통계) → 6(세무)** 는 데이터 라인으로 병행 가능. Phase 6은 §J 세무 SIGN-OFF가 없으면 시작 금지.
 
@@ -73,6 +74,8 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 | 날짜 | 항목 | 커밋 | 비고 |
 |---|---|---|---|
 | 2026-06-24 | Phase 0 — 어드민 전면 진단 + 마스터 플랜 작성 | (this) | 5개 도메인 병렬 감사(페이지·API·DB·정산/세무·UI) 종합 |
+| 2026-06-24 | §J 갱신 — 등록 주=Wyoming 확정 + Form 5472 + 수익인식 설명 | fae9319 | — |
+| 2026-06-24 | Phase 0.5 — 검증 2차 패스(§K). 전 주장 코드 재대조, C1~C12 정정·N1~N10 신규·R1~R4 위험. §D/§D-15 본문 직접 수정 | (this) | 라이브 DB는 MCP가 타 프로젝트(Kursoflow) 연결로 미검증(K-0) |
 
 ---
 
@@ -89,18 +92,18 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 - 정상: USD 헤드라인 + KRW 서브 분리 표기(`:167-170`)는 의도적·정확.
 
 ## D-2. 주문/예약 (`orders/page.tsx`, `orders/[id]/page.tsx`)
-- **BLOCKER** — 목록·CSV의 고객 이메일이 **항상 공란**: 페이지는 `user_profiles.email`을 읽지만(`orders/page.tsx:343`, CSV `:159`) 라우트가 프로필에서 `id, full_name`만 select(`api/admin/orders/route.ts:74`) 후 `email: '' `로 매핑(`:83`).
-- **BLOCKER** — 주문상세 상태 `<select>`에 `no_show` 옵션 있으나 PUT 라우트가 400으로 거부(`orders/[id]/page.tsx:310-314` vs `api/admin/orders/[id]/route.ts:116-121`) → "No-show" 선택은 항상 실패하는 죽은 옵션.
+- **MAJOR** (당초 BLOCKER → 검증 후 하향) — 목록·CSV에서 **`user_profiles` 조인이 `email`을 select하지 않아 프로필 이메일은 항상 공란**(`api/admin/orders/route.ts:74,83`). 단 UI는 `contact_email` 폴백이 있어(`orders/page.tsx:343`, CSV `:159`; 라우트가 `contact_email` 반환 `:113`) 게스트/빌더 예약은 정상 표시되고, **로그인 유저 예약 중 contact_email 없는 건만 N/A**. (당초 "항상 공란"은 과장 — 폴백 누락분만 공란.)
+- **BLOCKER** — 주문상세 상태 `<select>`에 `no_show` 옵션(`orders/[id]/page.tsx:314`, select 블록 `304-315`)이 있으나 PUT 라우트가 400으로 거부(`api/admin/orders/[id]/route.ts:116-121`) → "No-show" 선택은 항상 실패. (별도의 전용 no-show 버튼 `[id]/page.tsx:654-666`은 settle 경로로 정상 작동 — 드롭다운 옵션만 죽은 경로.)
 - **BLOCKER**(API) — `orders/route.ts:120` `count`가 전체가 아니라 페이지 크기. 사실상 **페이지네이션 없음**, `select('*')` 최대 5만행 메모리 적재(`:7,22,34`).
 - **MAJOR** — CSV "Amount"가 통화 없는 raw 숫자(`orders/page.tsx:164`): KRW 340000과 USD 52.00 구분 불가. Currency/Source 컬럼 부재.
 - **MAJOR** — 클라이언트 날짜 그룹핑이 서버 정렬과 충돌(`:117,128-130`): 선택한 `orderBy`와 화면 순서 불일치.
 - **MAJOR** — 상태 변경 PUT이 검증 없이 `status` 수용(`api/admin/orders/[id]/route.ts:122`) → `completed` 직접 지정으로 정산 우회 가능. 낙관적 롤백 없어 거부 시 select가 잘못된 값에 고정.
-- **MAJOR** — `special_requests`를 무조건 `JSON.parse` → 평문이면 조용히 누락(`orders/[id]/page.tsx:483-508`). 빌더(KRW) `itinerary.breakdown`은 fetch하나 미렌더, Unit/Total이 `—`/`₩0`(`:521-531`).
+- **MAJOR** — `special_requests`를 `JSON.parse`하되 **try/catch로 감싸 평문이면 조용히 null 반환·아무것도 미표시**(`orders/[id]/page.tsx:484-507`). (당초 "무조건 parse로 throw"는 부정확 — 크래시는 없고 표시만 안 됨.) 빌더(KRW) `itinerary.breakdown`은 fetch하나 미렌더(`:358-417`); Unit/Total `—`/`₩0`은 빌더가 unit/total_price를 채우지 않아 생기는 결과(하드코딩 리터럴 아님).
 - **MINOR** — `new Date(tour_date)` 무방비 "Invalid Date"; `/tour/[slug]` 링크는 실제 `/tour-product/[slug]`와 불일치로 404 추정.
 
 ## D-3. 정산 (`api/admin/orders/[id]/settle/route.ts`, `api/settlements/route.ts`)
 - **MAJOR** — `collectedOffline` 해제 경로에 예약 상태 가드 없음 → 취소/환불 건도 paid/completed로 정산 가능. `no_show_fee_usd_cents`는 조회만 하고 미정산.
-- 정상(예외적으로 견고) — settle는 **유일하게** `adminAuthJsonResponse`로 `AdminAuthFailure`를 정확히 401/403 처리, **모든 금액을 Stripe에서 읽음(클라 신뢰 금액·하드코딩 수수료 없음)**, Stripe PI 상태에 멱등. (정산 "로직"은 정확하나 "모델"이 틀림 → §G 참조.)
+- 정상(예외적으로 견고) — settle는 **orders/정산 체인에서 유일하게** `adminAuthJsonResponse`로 `AdminAuthFailure`를 정확히 401/403 처리(검증: `merchants/route.ts`·`emails/[id]/reply/route.ts`도 이 헬퍼 사용 — "전 라우트 중 유일"은 과장), **모든 금액을 Stripe에서 읽음(클라 신뢰 금액·하드코딩 수수료 없음)**, Stripe PI 상태에 멱등. (정산 "로직"은 정확하나 "모델"이 틀림 → §G 참조.)
 
 ## D-4. 업체/Merchant (`merchants/page.tsx`, `[id]`, `create`)
 - **BLOCKER**(API) — `merchants/create/route.ts:164-176`가 **평문 임시 비밀번호를 HTTP 응답으로 반환**(코드 주석 자체가 "remove in production"). 즉시 제거 대상.
@@ -150,7 +153,7 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 
 ## D-12. 챗봇 분석 (`chatbot-analytics/page.tsx`)
 - **MAJOR** — 헤드라인 지표가 전체 기간인데 라벨은 "최근 30일"(`:64,117,135`): 라우트의 volume/feedback/Q&A/RAG 카운트에 날짜 필터 없음(`api/admin/chatbot-analytics/route.ts:44-72`). 라벨과 수치 모순.
-- **MAJOR** — `days` 윈도우가 라우트엔 있으나 UI는 30 하드코딩·선택기 없음(죽은 컨트롤). `escalationRate` 등 fetch하나 미렌더.
+- **MAJOR** — `days` 윈도우가 라우트엔 있으나 **UI에 기간 선택기 자체가 없음(30 하드코딩)**. `escalationRate`·`escalatedMessages`·`tickets` fetch하나 미렌더. 검증 정정: volume/feedback/Q&A/RAG 카운트는 무필터(전체기간)이나 `categories`·`funnel`은 `since` 적용 → "최근 30일" 라벨이 전체기간+윈도우 혼합 수치를 덮음.
 - 데이터 caveat — `chat_messages.category`/`chat_feedback.*` 부재 시 페이지 500.
 
 ## D-13. 지원 티켓 (`support/page.tsx`, `[id]`)
@@ -163,9 +166,9 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 
 ## D-15. 통계/Analytics 엔진 정확성 (`api/admin/analytics/**`) — ⚠️ 핵심
 > 이 자체 엔진은 "잘 만든 부분"으로 보였으나, **집계 수학에 다수 정확성 버그**가 있어 통계를 신뢰할 수 없음. requireAdmin은 11개 라우트 전부 정상.
-- **BLOCKER** — `overview/route.ts:69-76` total_visitors가 버킷별 distinct 합산을 전체 distinct로 오표기(과대집계).
-- **BLOCKER** — `funnels/[key]/route.ts:163-218` funnel을 세션 단위 + 30분 윈도우로만 계산 → 다중세션/장기 funnel 완료 불가. `:151` 200k cap ASC 정렬로 cap-hit 시 최근 데이터 유실.
-- **BLOCKER** — `retention/route.ts:29,53-54,87` cohort 기준일을 윈도우 가장자리에 고정(실제 first-seen 아님) → cohort/분모 손상. 주석은 SQL window 함수라지만 실제로는 최대 50만행을 JS로 적재(`:34-38`). 익명→로그인 identity stitching 없음(`:51`).
+- **BLOCKER** — `overview/route.ts:73-76` **total_visitors**가 버킷별(day·locale·device·utm) distinct 합산을 전체 distinct로 오표기(과대집계). 검증 정정: `total_sessions`(`:69-72`)는 `count(*)` 합산이라 **정확함**(행이 disjoint). 같은 결함이 일별 timeseries(`:99-112`)에도 있어 일별 visitor/conversion도 과대. 수정은 distinct 계열만 타깃.
+- **BLOCKER** — `funnels/[key]/route.ts:163-218` funnel을 **세션 단위로만** 계산 → 다중세션/장기 funnel 완료 불가. 윈도우는 funnel의 `conversion_window_seconds`(기본 30분, `:188`)로 **설정 가능**(당초 "30분 하드코딩"은 부정확 — 세션 한정이 진짜 결함). `:151` 200k cap ASC 정렬로 cap-hit 시 최근 데이터 유실(`events_cap_hit` 플래그 `:249`).
+- **BLOCKER** — `retention/route.ts:47-61,87` cohort 기준일을 **로드된 윈도우 내 first-seen으로 left-censoring** → `startIso` 이전 첫 방문 유저가 오분류돼 cohort 크기/분모 손상(당초 "윈도우 가장자리 고정"은 메커니즘 부정확, 손상은 실재). 주석(`:4-6,32-33`)은 SQL window 함수 + `analytics_users` 조인이라지만 **실제로는 최대 50만행 JS 적재(`:34-38`)·조인 없음**(주석이 적극적으로 오도). 익명→로그인 identity stitching 없음(`:51`).
 - **BLOCKER** — `experiments/[key]/route.ts:110-121` 전환을 이벤트명만으로 계산하고 funnel 필터 폐기(`void conversionFilter`) → 전환율·chi-square 무효. chi-square가 variant[0] vs [1] 하드코딩(`:140-149`, 3+ variant 미지원).
 - **BLOCKER** — `events/[name]/route.ts:64-65,167-169` 50k cap 부분집합을 totals로 라벨; timeseries 신선도 로직 반전으로 오늘 마지막 시간 무음 누락(`:88-97`).
 - **MAJOR** — `events/route.ts:86-89` distinct 합산 오표기; raw 24h 병합이 first/last_seen만 갱신·카운트 미반영(`:118-133`); raw 24h 쿼리 무제한(`:51-53`).
@@ -343,3 +346,65 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 | 6 세무 자동화 | 수익요약·1099-K 대사·W-8 대시보드·sourcing 원장·nexus 모니터·아카이브 (SIGN-OFF 후) |
 | 7 신규 운영 기능 | 통합 인박스·견적추적·대화 뷰어·감사 UI·정산 운영·환불·재고·⌘K |
 | 8 검증 | 부하·널·권한·금액정합·분석정확성·E2E |
+
+---
+
+# §K. 검증 2차 패스 (Plan Audit v2 — 2026-06-24)
+
+> 목적: 1차 플랜(§D~§J)의 모든 주장을 **실제 코드/마이그레이션과 재대조**하여 오류·과장·로직모순·잠재위험을 잡고, 신규 결함·업그레이드 여지를 추가. 방법: 3개 독립 코드감사 에이전트(§D-1~9 / §D-10~15 / §G·§E·§F)가 인용 file:line을 직접 열어 CONFIRMED/REFUTED/IMPRECISE/STALE 판정 + 증거 인용. 결과: 핵심 주장 대부분 CONFIRMED, 아래 정정/신규 항목 도출. §D/§D-15 본문은 위에서 직접 수정 완료, 여기엔 전체 감사 기록을 보존.
+
+## K-0. 라이브 DB 검증 한계 (중요)
+- 이 세션의 Supabase MCP는 **다른 프로젝트("Kursoflow", ref `thgyevrqykkscvcpwmfp")에 연결**돼 있음 — atockorea(`config.toml` project_id=`atockorea`, 실제 ref `cghyvbwmijqpahnoduyv`)가 아님. atockorea의 어떤 테이블(bookings/merchants/tours/analytics_events/chat_messages/settlements 등)도 거기 없음.
+- 따라서 **라이브 배포 DB 직접 검증은 불가**. 모든 DB 주장은 **repo 마이그레이션 파일 기준**(코드가 기대하는 스키마의 single source of truth)으로 검증됨. 1차 분석이 "live 존재 불확실"로 표기한 `payments` 등은 여전히 미확인.
+- **액션 필요**: 라이브 검증을 원하면 atockorea Supabase 프로젝트를 이 세션 MCP에 연결. (배포 누락 RPC — K-2 N1 — 확인의 전제이기도 함.)
+
+## K-1. 정정 항목 (플랜 본문 반영 완료)
+| ID | 위치 | 정정 내용 |
+|---|---|---|
+| C1 | §D-2 | 주문 email "**항상 공란**"은 과장 → BLOCKER→MAJOR 하향. `contact_email` 폴백 작동, 폴백 없는 로그인-유저 건만 공란. |
+| C2 | §D-2 | `no_show` 옵션 cite `310-314`→`314`(select 블록 `304-315`). 전용 no-show 버튼(`654-666`)은 정상. BLOCKER 유지. |
+| C3 | §D-2 | `special_requests`는 try/catch로 감싼 parse(크래시 없음·미표시) — "무조건 parse" 부정확. Unit/Total `₩0`은 빌더 미입력 결과. |
+| C4 | §D-3 | settle "**유일하게** adminAuthJsonResponse"는 과장 — merchants·emails/reply도 사용. "orders/정산 체인에서 유일"로 정정. |
+| C5 | §D-15 | overview: `total_sessions`(`:69-72`)는 **정확**, `total_visitors`(`:73-76`)만 과대. timeseries(`:99-112`)도 과대. cite 정정. |
+| C6 | §D-15 | funnels 윈도우는 `conversion_window_seconds`(기본 30분, `:188`) **설정 가능** — "30분 하드코딩" 부정확. 세션 한정이 진짜 결함. |
+| C7 | §D-15 | retention은 "윈도우 가장자리 고정"이 아니라 **윈도우 내 first-seen left-censoring**(`:47-61,87`). 주석의 `analytics_users` 조인 주장은 허위. |
+| C8 | §D-12 | "죽은 컨트롤"→**기간 선택기 자체가 없음(30 하드코딩)**. 카운트 일부만 무필터(전체기간)/일부만 윈도우. |
+| C9 | §E-1 | 견적 funnel 실제 이벤트명은 `itinerary_recommend_succeeded/empty/failed`·`itinerary_builder_booking_submitted`(plan 약칭은 쿼리 미스매치 유발). 중간 스테이지 이벤트는 **0개 실재**(신규 정의 필요는 그대로). |
+| C10 | §E-1 | `tour_quote_requests` 마이그레이션 파일명 정정: 생성=`20260517130000_create_tour_quote_requests.sql`, 차단=`20260529001000_block_quote_table_writes.sql`(INSERT-only, UPDATE 허용), 완화=`20260529002000_relax_quote_table_trigger_to_insert_only.sql`. 차단 대상에 `quote_memory`·`quote_presets` 포함. |
+| C11 | §D-10 | lat/lng 범위 경고는 **인라인 소프트 경고 존재**(`PoiEditorPane.tsx:473`); 다만 **서버 거부는 toast로만** 표면화·필드 인라인 매핑 없음. "인라인 표시 없음"은 부정확. |
+| C12 | §D-13 | support `limit`은 쿼리로 최대 200까지 설정 가능하나 **UI가 미전송 → 실효 50**(`tickets/route.ts:21`, `page.tsx:51`). |
+
+판정 요약: §D-1~D-15 및 §G/§E/§F의 **핵심 주장은 모두 CONFIRMED**(STALE/완전 REFUTED 없음). 위 C1~C12는 심각도/메커니즘/인용 정밀화이며 결함 자체는 실재.
+
+## K-2. 신규 결함 (플랜이 놓친 것 — Phase 1/4/5에 편입)
+| ID | 심각도 | 결함 | 증거 |
+|---|---|---|---|
+| N1 | **BLOCKER** | 90일 익명화 cron이 호출하는 RPC `anonymize_old_analytics`가 **어떤 마이그레이션에도 없음** → 프라이버시 스크럽이 프로덕션에서 무음 500 가능. `analytics_health_snapshot()`(§D-15)와 같은 부류. | `app/api/cron/analytics-anonymize/route.ts` rpc 호출 vs `supabase/**` grep 0건. §F-1 "미배포 RPC" 목록에 추가. |
+| N2 | **MAJOR(보안)** | `lib/file-upload.ts:validateFile`(크기+타입 검증)이 **dead code** — upload 라우트가 호출 안 함 → product 5MB/gallery 10MB/video 250MB 한도 전부 미적용(D-7 BLOCKER의 근본원인). | `route.ts`는 `allowedTypes.includes(file.type)`만 검사. |
+| N3 | **MAJOR(데이터)** | `bookings.currency` 기본값이 archive 스키마 `'USD'`(대문자) vs 마이그레이션 `'usd'`(소문자), 체크아웃/웹훅 분기는 대소문자 민감(`=== 'krw'`). 신규 통화 의존 정산 컬럼은 case 정규화 필수. | archive vs `20260529000000`. |
+| N4 | MAJOR | UI 경로(`/api/admin/merchants` POST)로 생성된 머천트는 **rollback뿐 아니라 `merchant_settings` 행·audit_logs도 누락** — `/create` 라우트만 셋 다 수행. | `route.ts:119-194` vs `create/route.ts:80-136`. |
+| N5 | MAJOR | overview 일별 timeseries(`:99-112`) visitor/conversion **과대**(C5와 동근), 멀티-디바이스/locale 유저 중복. 플랜은 헤드라인 total만 지적. | — |
+| N6 | MAJOR | events/route.ts raw-24h 병합이 신규 이벤트를 `event_count:0`으로 추가 후 `:136` 정렬 → 신선 이벤트가 **0건으로 최하위 오정렬**. | `:118-133,136`. |
+| N7 | MAJOR | experiments 전환이 `void conversionFilter`로 funnel 필터 폐기 + **세션이 전환 이벤트명만 1회 발화하면 전환 처리**(`:108`) → 분자/분모 모두 step 순서 무시. chi-square도 variant[0]vs[1] 하드코딩(3+ 미지원). | `:90-95,108,114,140-149`. |
+| N8 | MINOR | `merchants/[id]/page.tsx:333` 투어 링크 `/tour/${tour.id}` — **prefix 오류 + slug 자리에 id**(이중 404). | — |
+| N9 | MINOR | upload 다중파일 `Promise.all`(`:137-140`)이 일부 실패 시 **이미 업로드된 파일 Storage 고아** + 500. | — |
+| N10 | MINOR | qa-pairs GET 카운트 6개를 **순차 await**(`route.ts:42-48`), 그중 `true`/`false` 2개는 항상-0 낭비 쿼리(D-14 BLOCKER 강화). | — |
+
+## K-3. 제안 변경의 위험 (Phase 4/5/6 설계 보강)
+- **R1 — 정산 재작성 vs frozen 스냅샷:** `settlement_bookings`는 `UNIQUE(booking_id)` + RPC의 `NOT EXISTS` 가드로 **이미 정산된 건은 재정산 불가**. 따라서 flat-10% → 원가기준 전환은 신규 정산엔 안전하나 **과거 정산은 옛 10% 기준으로 동결**되어 두 회계기준이 공존. 마이그레이션 브리지(컬럼 의미 유지/신규 컬럼/기간 straddle 처리) 명시 필요.
+- **R2 — RPC 시그니처 변경 배포 동기화:** `create_merchant_settlement`에 cost 파라미터 추가 시 `app/api/settlements/route.ts`(현 3-arg 호출)와 **동일 배포로** 갱신 안 하면 런타임 파손.
+- **R3 — FX 백필은 best-effort:** 과거 환율 저장본 없음. 감사급 소스는 Stripe balance-txn `exchange_rate`뿐 → `stripe_balance_txn_id` 향후 저장 전제 + capture된 건만 가능(offline 수금 건 불가). 플랜의 "거래일 포착" 백필은 **근사치**로 강등.
+- **R4 — 귀속 비정규화 vs 익명화:** `bookings`/`support_tickets`에 utm/referrer/anonymous_id 추가 시 익명화 RPC 범위 밖 → **90일 스크럽을 무력화하는 PII 사본** 생성. 익명화 RPC 범위에 신규 컬럼 포함 또는 write 시 해시 필수.
+
+## K-4. 업그레이드/확장 여지 (코드 근거)
+- **U1 — null-safe 표준화:** dashboard(`page.tsx:303`)는 크래시형 `parseFloat(x.toString())`, orders-list(`:367,432`)는 안전형 `parseFloat(String(x))` — 이미 안전 패턴이 repo에 존재. 전역 `String(...)` 표준 + 머천트(`[id]:340`, list `:179-181`) 적용.
+- **U2 — search sanitize 재사용:** `contacts/route.ts:45`가 이미 `.slice(0,200).replace(/'/g,"''")` 적용 — merchants(`route.ts:31`) 인젝션 수정은 신규 발명 말고 이 패턴 재사용.
+- **U3 — upload 보안 일괄:** `validateFile`(N2) 호출 + 매직바이트 sniff + `folder` 화이트리스트 + 부분실패 정리(N9) 동시 처리.
+- **U4 — 미배포 RPC 게이트:** N1·`analytics_health_snapshot` 등 "코드가 호출하나 마이그레이션에 없는 RPC"를 CI/배포 체크로 가드(반복 결함 부류).
+- **U5 — analytics 집계 정합 테스트:** distinct/세션/cohort 계열에 known-input→expected-output 골든 테스트(C5~C7, N5~N7 회귀 방지).
+
+## K-5. 다음 세션 범위 (생략·건너뛰기 없이 진행)
+1. **§H UI/UX 심층 검증** — 페이지별 실제 className/팔레트/i18n/모바일 패리티를 코드로 대조해 토큰 매핑표(현재값→토큰) 작성.
+2. **§E/§F 기능 설계 정밀화** — `quote_drafts` 스키마·이벤트 taxonomy(C9 반영)·`unified_inquiries` view DDL 초안·per-product funnel matview 정의.
+3. **§G 세무** — 소유구조(§J #2) 확인 후 Form 5472 데이터 요구 확정; settlement 마이그레이션 브리지(R1/R2) 상세 설계.
+4. **라이브 DB 대조** — atockorea 프로젝트 MCP 연결 시 K-0/N1 실배포 상태 확정.
