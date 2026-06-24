@@ -1087,52 +1087,92 @@ GRANT  EXECUTE ON FUNCTION public.analytics_health_snapshot()               TO s
 
 ---
 
-# §R. 실행 WBS — Phase 잘게 쪼갠 티켓 (PR 단위)
+# §R. 실행 WBS — 웨이브·티켓 (PR 단위, 잘게 분할 v2)
 
-> 사용자 지시("섹션 너무 광범위하게 잡지 말고 잘게 쪼개"). 각 티켓 = 1 PR 목표. [범위·핵심파일·DoD·의존]. 트랙: 🔒보안(별도) ⚙️어드민 🧱데이터 📊통계 🎨UI 💴세무.
+> 각 티켓 = 1 PR. 형식 `[track] 제목 — 핵심파일 | 의존 | DoD`. 트랙: 🔒보안 ⚙️기능 🧱데이터 📊통계 🎨UI/모바일 💴세무 🏪머천트. **공통 DoD(전 티켓):** 빌드 green · 변경범위 단위/회귀 테스트 · 커밋 푸터 모델식별자 금지 · DB변경 티켓은 additive + 적용 후 `mcp__atockorea__get_advisors` 재실행. **웨이브 = 의존 순서**(W0가 가장 먼저). 같은 웨이브 내 티켓은 병렬 가능.
 
-## R-0. 선행 게이트 (G0~G5, §O.6) — 코드 전 필수
-- **R0.1 🔒 N27 REVOKE**(Q-1) — DDL 1개. 의존: 없음. DoD: advisor 4건 소거. *(가장 시급·1줄)*
-- **R0.2 🧱 마이그레이션 정합**(Q-2) — 런북 7단계. 의존: PITR 확인. DoD: shadow `db reset`=live 동등 + CI drift 게이트. *(Phase 4 하드 선행)*
-- **R0.3 📊 미진단 라우트 진단**(O.1: tours/**·tour-product-pages·cms 보조·email-diag·tour-content) — 진단 문서화. DoD: D-17+ 추가.
+## Wave 0 — 🔴 즉시 핫픽스 (라이브 보안·머니, 각 독립·소형 PR — 승인 즉시 최우선)
+- **W0.1 🔒 P1 권한상승 차단** — `user_profiles` UPDATE/INSERT RLS에 role `WITH CHECK` 추가(또는 role을 admin-only SECURITY DEFINER RPC로 분리). 마이그레이션 1개 | 의존 없음 | DoD: 비-admin이 PATCH로 role 변경 시 RLS 거부(라이브 재현 테스트), advisor 재실행. *(전 항목 최우선, §T.1)*
+- **W0.2 🔒 N27 anon-exec REVOKE**(§Q-1) — analytics 4함수 `REVOKE EXECUTE FROM PUBLIC,anon,authenticated` + service_role GRANT | 의존 없음 | DoD: advisor `anon_security_definer_function_executable` 4건 0, cron/health 정상.
+- **W0.3 🔒 W-3 cron secret URL 제거** — `recapture-holds`·`capture-tour-day` `?secret=` 폴백 삭제, `Authorization: Bearer`만 | 의존 없음 | DoD: 쿼리 secret 거부.
+- **W0.4 🔒 N23 cron fail-open 제거** — `analytics-anonymize`·`analytics-refresh-views` `if(!secret) return true`→`false` | 의존 없음 | DoD: 시크릿 없으면 cron 거부.
+- **W0.5 💰 B-1 노쇼 부분캡처**(§Q-3) — `settle/route.ts:165` `amount_to_capture` + 멱등키 | 의존 없음 | DoD: 골든($300 hold·$60 fee→$60).
+- **W0.6 🔒💰 W-1 webhook 상태가드** — `payment_intent.succeeded`가 cancelled/no_show 덮어쓰기 차단(`.not('status','in',...)`) | 의존 없음 | DoD: 취소예약이 paid로 안 바뀜.
 
-## R-1. 기능 안정화 (BLOCKER/MAJOR) — 페이지별 1티켓
-- R1.1 ⚙️💰 **B-1 no_show 부분캡처**(Q-3) — 의존 R0.1. *(돈 버그·최우선)*
-- R1.2 ⚙️ **N33 site_settings 정식화** — 의존 R0.2. (D-8/D-11 동반 해결)
-- R1.3 🔒 **N23 cron 시크릿 필수화** — 의존 R0.1.
-- R1.4 ⚙️ 주문: D-2(email 폴백)·no_show 드롭다운·B-3 state machine·status 검증 — 1티켓.
-- R1.5 ⚙️ 대시보드 D-1(하드코딩0·null-safe)·M-6 KST 타임존.
-- R1.6 ⚙️ 머천트 D-4(평문비번 제거·롤백·N4·N5 allowlist)·create 표준화.
-- R1.7 ⚙️ QA D-14(review_status 값)·문의 D-5·메일 D-6(페이지리셋·디바운스).
-- R1.8 ⚙️ 설정 D-11(토글 reader 또는 제거)·업로드 D-7/N2(검증·N17 bucket allowlist).
-- R1.9 ⚙️ 투어 M-4(DELETE 예약가드)·M-7(형제로케일 opt-out)·M-8(layout 프로필 자동생성 제거)·B-2(onAuthStateChange).
-- R1.10 📊 analytics 수학버그(§D-15: visitors distinct·funnel 세션·retention left-censor·experiments filter·M-1 retention cap) — 골든테스트 동반.
+## Wave 1 — 🎨 프리미엄 모바일 기반 (R2.0, 전 페이지 개편의 토대 — 컴패니언 §2~7)
+> ⚠️ Wave 4(페이지 개편) 전 필수. 순서: W1.1→나머지 병렬.
+- **W1.1 🎨 디자인 토큰** — `globals.css`에 `--admin-*`(surface/border/shadow) + `.admin-root` tabular-nums + radius 12px 매핑(`tailwind.config.js`) + navy 다크 토큰 | 의존 없음 | DoD: 토큰 정의, 라이트/다크 렌더.
+- **W1.2 🎨 Toaster 마운트 + sonner 채택 시작** — `app/admin/layout.tsx`에 `<Toaster position="top-center" richColors/>` | W1.1 | DoD: toast 표시.
+- **W1.3 🎨 AdminPageShell** — 공통 크롬(sticky헤더+`pt-[env(safe-area-inset-top)]`+필터바 슬롯+`pb-[calc(4rem+safe-area)]`) | W1.1 | DoD: 1페이지 적용 데모.
+- **W1.4 🎨 입력 16px 전역** — `lib/mypage-ui.ts:143` `AUTH_INPUT` 15→16px + 어드민 입력 `text-sm`→`text-base` + 전역 `input,select,textarea{font-size:max(16px,1em)}` | 의존 없음 | DoD: iOS 줌 없음.
+- **W1.5 🎨 터치타깃 44px + safe-area** — `layout.tsx` 헤더(`size-9`/`h-8`→`min-h-11`)·바텀탭·아이콘버튼 | W1.1 | DoD: 핵심 인터랙티브 ≥44px.
+- **W1.6 🎨 유틸 키트** — `lib/admin/haptics.ts`·단일 `Spinner`·`SwipeRow`(framer)·skeleton(`admin-shimmer`)·`useUrlFilters` 훅 | W1.1 | DoD: 각 단위 테스트.
+- **W1.7 🎨 컴포넌트 키트 Tier1** — `AdminPageHeader·StatCard·DataTable·FilterBar·StatusBadge`(아이콘+pill)(컴패니언 §7) | W1.1 | DoD: Storybook/데모 렌더.
+- **W1.8 🎨 컴포넌트 키트 Tier2** — `DataCard·FilterSheet·EmptyState·ConfirmSheet·ActivityRow` | W1.7 | DoD: 동일.
+- **W1.9 🎨 Lucide 일괄 + 이모지 제거** — 인라인 SVG(`page.tsx:112-136`)·이모지(`orders:237` 📋 등)→Lucide, stroke 규율 | W1.1 | DoD: 어드민 이모지 0.
+- **W1.10 🎨 바텀내비 5슬롯 재편 + nav 그룹핑** — `layout.tsx:38-59` 홈/주문/수신함/챗봇/더보기 + support·QA 추가 + More 그룹 | W1.3 | DoD: 전 섹션 도달 가능.
+- **W1.11 🎨 i18n 인벤토리·네임스페이스(WS-E) + a11y 체크리스트·axe CI(WS-F)** | 의존 없음 | DoD: 키 택소노미 + CI 게이트.
 
-## R-2. 디자인 토큰 (Phase 2) — 기반 1티켓씩
-- R2.1 🎨 토큰 채택 기반(globals/tailwind 매핑, §K-6.3) + sonner 전역 마운트.
-- R2.2 🎨 어드민 키트 신설(PageHeading·StatCard·EmptyState·FilterBar·DataTable·ConfirmDialog·StatusBadge, §K-6.4).
-- R2.3 🎨 i18n 인벤토리·네임스페이스(WS-E) + a11y 체크리스트·axe CI(WS-F).
+## Wave 2 — 🧱 인프라 게이트 (데이터 작업 선행)
+- **W2.1 🧱 마이그레이션 정합**(§Q-2 런북 7단계) — `db pull` baseline + pending-db-apply 정식화 + CI drift 게이트 | PITR 확인(§J) | DoD: shadow `db reset`=live 동등.
+- **W2.2 📊 미진단 라우트 진단 마무리**(§U.0.1: cms/import·머천트포털 API 등 잔여) | 없음 | DoD: §D 본문에 신규 결함 등재.
+- **W2.3 🔒 N32 하드닝** — function search_path·extension out of public·leaked-password-protection 활성 | 없음 | DoD: advisor WARN 소거.
 
-## R-3. UI 개편 (Phase 3) — 페이지당 1티켓 (토큰+버그 동반)
-- R3.1 레거시 `/admin/analytics` 폐기→자체엔진 연결(K-6.6 #1). R3.2 주문. R3.3 통합문의 인박스(§E-4). R3.4 정산 운영 UI(G4 동시배포). R3.5 머천트. R3.6 분석 product 페이지군(+sessions O.1). R3.7 챗봇분석. R3.8 POI/CMS/업로드. R3.9 설정/감사로그. + 횡단: U-1 Realtime·U-3 DataTable·U-6 undo·U-7 bulk·U-8 saved views.
+## Wave 3 — ⚙️ 기능 안정화 (Phase 1, 페이지/도메인별 소형 PR)
+- **W3.1 ⚙️ N33 site_settings 정식화** — 마이그레이션 + RLS(D-8/D-11 동반) | W2.1 | DoD: 설정 저장→영속, CMS 오버라이드 반영.
+- **W3.2 ⚙️ 주문 라우트** — D-2(email select)·no_show 드롭다운 제거·B-3 state machine·status 검증·**S-F1 stats OOM(SQL 집계)**·M-6 KST | W1.* | DoD: 불법전이 400·매출 SQL 집계·KST 오늘.
+- **W3.3 ⚙️ 대시보드** — D-1(하드코딩0→실카운트·null-safe `String()`) | W1.7 | DoD: 실데이터, null 무크래시.
+- **W3.4 ⚙️ 머천트** — D-4 평문비번 제거·**S-F2 Math.random→crypto**·롤백·**S-F3 audit actor=admin**·S-F6 DELETE순서·S-F7 빈PUT·S-F8 이중필터·N4/N5 allowlist·S-F13 addressLine2·S-F14 settings | W1.* | DoD: 각 결함 회귀테스트.
+- **W3.5 ⚙️ 문의/메일/지원/QA** — D-5(페이지리셋·디바운스)·D-6·D-14(review_status 값)·S-F9 emails 500·S-F12 holdMsLeft·support 더블탭 가드 | W1.* | DoD: 필터/검색 정상·중복발송 차단.
+- **W3.6 ⚙️ 설정/업로드** — D-11(토글 reader 또는 제거)·D-7/N2(validateFile·매직바이트)·N17 bucket allowlist | W3.1 | DoD: 토글 강제·업로드 검증.
+- **W3.7 ⚙️ 투어/콘텐츠 라우트** — M-4(DELETE 예약가드)·M-7(형제로케일 opt-out+audit)·AR-1(tour-content 캡)·AR-3(픽업 비원자) | W2.2 | DoD: 삭제 가드·원자 교체.
+- **W3.8 ⚙️ 인증/세션** — B-2(onAuthStateChange)·M-8(프로필 자동생성 제거)·P3(middleware /admin 서버가드)·P5/P6(세션 응답·비번변경) | W1.2 | DoD: 만료 표시·서버 게이트.
+- **W3.9 📊 analytics 수학버그 + 골든테스트** — D-15(visitors distinct·funnel 세션·retention left-censor·experiments filter)·M-1 retention cap·S-F10 NaN | 없음 | DoD: known-input→expected 골든.
+- **W3.10 ⚙️ lib 정확성** — LIB-1 이메일 XSS(escapeHtml)·LIB-2 DMZ 차량·LIB-3 FX 폴백(env+알림)·LIB-6 라벨·`import 'server-only'` | 없음 | DoD: 템플릿 escape·FX 경고.
 
-## R-4. 데이터 모델 (Phase 4) — 마이그레이션 묶음별 1티켓
-- R4.1 🧱 정산/세무 DDL(§G-6.1, **O.3 델타 반영**) — additive 컬럼·인덱스. 의존 R0.2.
-- R4.2 🧱 RPC v2(§G-6.2, **C1/C2/C4/C5/C7/C8 수정 반영**) + 호출부 + 정산 UI **동시배포**(R2 게이트). 의존 R4.1. + U-2 멱등키.
-- R4.3 🧱 귀속FK+익명화 정합(§K-7.3, R4 컬럼 스크럽) + N27 후 RPC 확장. 의존 R0.1.
-- R4.4 🧱 quote_drafts(§K-7.1, **C11 price_shown 수정**)·audit_logs 헬퍼(§K-7.4)·unified_inquiries(§K-7.5, **C12 category 수정**).
-- R4.5 🧱 slug 이벤트 계측(G3) — Phase 5 matview 전제.
+## Wave 4 — 🎨 페이지별 프리미엄 모바일 개편 (Phase 2/3, 컴패니언 §8 청사진 순)
+> 각 페이지 DoD: 반응형(테이블→DataCard)·터치44·16px·stale유지·URL필터·alert/confirm→toast/ConfirmDialog·dirty가드·다크·a11y. 머니 직결 우선.
+- **W4.1 🎨💰 주문 상세 머니액션 시트** — confirm()→머니 확인 시트(금액·멱등)·sticky 바텀바·toast | W1.8 | DoD: iOS WebView 무확인 발화 차단.
+- **W4.2 🎨 주문 목록** — sticky 필터바+검색 신규·DataCard 스와이프·skeleton·prefetch | W1.* | DoD: 청사진 §8.2.
+- **W4.3 🎨 대시보드** — 액션큐 strip·매출 KPI 2-up·스파크라인·floating help 제거 | W3.3 | DoD: 청사진 §8.1.
+- **W4.4 🎨 통합 인박스 `/admin/inbox`**(§E-4) — `/api/admin/inbox` UNION·카테고리칩·스와이프해결·바텀시트 답장 | W1.8 | DoD: 청사진 §8.3.
+- **W4.5 🎨 정산 운영 UI** — `app/admin/settlements/**`(§E-5) — RPC v2 동시배포(W5.2 게이트)·통화/basis·명세서 | W5.2 | DoD: 정산 생성·미리보기.
+- **W4.6 🎨 머천트 페이지** — i18n 통일·머니없는 폼·멀티스텝 create·자격증명 alert 제거 | W3.4 | DoD: KO 통일·sticky CTA.
+- **W4.7 🎨 분석 페이지군** — 레거시 `/admin/analytics` 폐기→엔진 연결·KPI 스파크라인·SessionCard·frozen 히트맵·기간선택기 | W3.9 | DoD: 청사진 §8.4.
+- **W4.8 🎨 챗봇분석** — 이모지/alert 제거·KpiCard 통합·escalation율 렌더·기간선택기 | W1.7 | DoD: 라벨=데이터.
+- **W4.9 🎨 POI/CMS/업로드** — match-pois 모바일(w-80→lg:flex)·CMS·업로드 hover→tap | W1.* | DoD: 모바일 사용가능.
+- **W4.10 🎨 설정/감사로그 UI** — 토큰 채택·감사 타임라인(W5.4) | W3.6 | DoD: slate 통일.
+- **W4.11 🎨 횡단 인터랙션** — U-1 Realtime·U-3 가상 DataTable·U-6 undo·U-7 bulk·U-8 saved views | W1.6 | DoD: 각 적용.
 
-## R-5. 통계 (Phase 5) — R5.1 수학버그 골든테스트(R1.10 연계) · R5.2 상품 funnel matview(§K-7.6, **C13 수정**) · R5.3 귀속/이탈/bounce 지표 · R5.4 perf(WS-G: RLS initplan 62·multi-policy 62·FK인덱스) · R5.5 U-10 관측성.
+## Wave 5 — 🧱 데이터 모델 (Phase 4, §G-6/§K-7, **O.3 델타 필수 적용**)
+- **W5.1 🧱 정산/세무 DDL**(§G-6.1) — additive 컬럼·인덱스(tours.cost_price·bookings 11·settlements basis/통화·merchants W-8) | W2.1 | DoD: advisor 재실행.
+- **W5.2 🧱 RPC v2 + 호출부 + 정산UI 동시배포**(§G-6.2, O.3 C1/C2/C4/C5/C7/C8) + U-2 멱등키 | W5.1 | DoD: flat_rate 골든=과거 동일, GRANT 재발급.
+- **W5.3 🧱 귀속FK + 익명화 정합**(§K-7.3, R4/N1) + N27 후 RPC 확장 | W0.2·W2.1 | DoD: 90일 스크럽이 신규 컬럼 포함.
+- **W5.4 🧱 audit_logs 헬퍼**(§K-7.4) — `lib/admin/audit.ts` actor=admin + 전 mutation 의무호출 | W2.1 | DoD: 정산/환불/편집에 기록.
+- **W5.5 🧱 quote_drafts**(§K-7.1, C11)·**unified_inquiries**(§K-7.5, C12)·빌더 이벤트(§K-7.2) | W2.1 | DoD: 뷰 생성·이벤트 발화.
+- **W5.6 🧱 slug 이벤트 계측**(G3) — Phase 5 matview 전제 | 없음 | DoD: product 이벤트에 slug.
+- **W5.7 💰 환불 경로 신설**(W-10) — `POST /api/admin/orders/[id]/refund` + `charge.refunded` 핸들러 | W0.6 | DoD: 환불→DB paid→refunded 동기화. *(§G 정산 대사 전제)*
 
-## R-6. 세무 (Phase 6, SIGN-OFF 후) — §G-4 서류별 1티켓(수익요약·1099-K대사·W-8·sourcing·nexus·WY캘린더·5472·아카이브). 의존 §J #2/#3 + §G-5 게이트.
+## Wave 6 — 📊 통계 (Phase 5)
+- W6.1 수학버그 골든(W3.9 연계) · W6.2 상품 funnel matview(§K-7.6, C13) · W6.3 귀속/이탈/bounce · W6.4 perf(WS-G: RLS initplan 62·multi-policy 62·FK인덱스·unused index) · W6.5 U-10 관측성(WS-A) | 의존 W5.6.
 
-## R-7. 신규 운영기능 (Phase 7) — §E-5(정산운영은 R3.4로 당김·환불워크플로·알림센터 U-9)·⌘K U-4·audit UI U-5. **재고 UI는 보류**(O.5).
+## Wave 7 — ⚙️ 신규 운영기능 (Phase 7)
+- W7.1 환불/취소 워크플로 UI(W5.7) · W7.2 알림센터(U-9, notifications 테이블 선행) · W7.3 ⌘K(U-4) · W7.4 audit UI(U-5, W5.4) · W7.5 글로벌 검색. **재고 UI 보류**(O.5).
 
-## R-8. 검증 (Phase 8) — §I + WS-B 목표치: 부하(5만행)·null회귀·권한·금액정합(Stripe대사)·analytics 골든·E2E 핵심플로우·advisor 재실행(보안/perf 회귀).
+## Wave 8 — 💴 세무 (Phase 6, §G-5 SIGN-OFF + §J #2/#3 후에만)
+- §G-4 서류별 1티켓: 수익요약·1099-K대사(W5.7 환불 전제)·W-8 대시보드·sourcing 원장·nexus 모니터·WY 캘린더·5472 트래커·아카이브.
 
-## R-9. 🔒 공개 보안 트랙 (별도 PR, 어드민과 독립 — §M.3)
-- R9.1 N11 inventory 인증. R9.2 N13 promo-codes 인증. R9.3 N14 checkout 소유권. R9.4 N16 confirm-email 토큰필수. R9.5 N15 oversell 원자성. R9.6 N17 upload·N19 maps proxy·N18 LINE OAuth. R9.7 N20 보안헤더·N21 middleware. R9.8 N28 contact_inquiries·N29 matview API·N30 버킷listing(§N.3). R9.9 N24 Resend 멱등.
+## Wave 9 — 🔒 공개 보안 트랙 (어드민과 독립·병렬 PR — §M.3/§T)
+- W9.1 N11 inventory 인증 · W9.2 N13 promo-codes 인증 · W9.3 N14 checkout 소유권 + W-7 · W9.4 N16 confirm-email + P2 create-profile · W9.5 N15 oversell 원자성 · W9.6 N17 upload DELETE 소유권(PA-2)·N19 maps·N18 LINE OAuth · W9.7 N20 보안헤더·N21 middleware · W9.8 N28 contact_inquiries·N29 matview API·N30/N34 버킷 · W9.9 N24 Resend 멱등·PA-1 reminders GET · W9.10 P4 check-email RL·PA-3 senderRole·PA-4 게스트 스프레이·PA-5 AI RL·PA-6 contact/verification RL · W9.11 챗봇 CB-1 CORS·CB-2 durable RL(Upstash)·CB-3 debug flag·CB-5 무인증 예약·CB-6/10/12/15 · W9.12 고객 머니 CK-1 세금·CK-2/3 프로모·CK-6/7/9.
+
+## Wave 10 — 🏪 머천트/레거시 포털 (§U.0.1 blind spot)
+- W10.1 🏪 머천트 포털(`app/merchant/**`) 인증/RLS 스코프 감사 + 모바일 패리티 | W0.1·W1.* | DoD: merchant role 데이터 격리 검증.
+- W10.2 ⚙️ `app/dashboard/**` 정체 확정(§J #15) → 폐기 또는 흡수.
+
+## Wave 11 — ✅ 검증 (Phase 8, §I + WS-B)
+- 부하(5만행)·null회귀·권한·금액정합(Stripe대사)·analytics 골든·E2E 핵심플로우·**advisor 재실행(보안/perf 회귀)**·Playwright 모바일 뷰포트.
+
+> **크로스컷 워크스트림(WS-A~J)은 위 웨이브에 분산:** 관측성(W6.5)·테스트(전 DoD)·롤백/플래그(각 페이지)·rate-limit(W9.10/11)·i18n(W1.11)·a11y(W1.11)·perf(W6.4)·DR(W2.1)·RBAC(W10.1)·시크릿(W0.*).
 
 ---
 

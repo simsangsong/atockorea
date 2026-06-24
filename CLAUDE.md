@@ -3,18 +3,23 @@
 ## 진행 중인 대규모 작업: 어드민 대시보드 전면 개편
 
 **마스터 플랜(단일 기준):** `docs/admin-dashboard-upgrade-master-plan-2026-06-24.md`
+**모바일 설계 상세:** `docs/admin-premium-mobile-design-spec-2026-06-24.md`
+**다음 세션 실행 프롬프트:** `docs/NEXT-SESSION-EXECUTION-PROMPT.md` ← **구현 이어받으면 이걸 먼저**
 **개발 브랜치:** `claude/admin-dashboard-upgrade-yvb88c`
 
-이 작업을 이어받을 때는 **반드시 위 플랜 문서를 먼저 읽고**, 특히 다음 섹션을 확인:
-- **§L 세션 인수인계** — 현재 상태·다음 할 일·함정 (가장 먼저 읽을 것)
-- §A 상태 대시보드 / §C 변경 로그 — Phase 진행 현황
-- §K / §K-6 / §K-7 — 검증 2차 패스 + UI 감사 + 기능 설계 DDL
+**상태: 진단·플랜(Phase 0~0.13) 완료. 다음은 실제 구현 — §R 실행 WBS의 Wave 0부터.**
+
+이어받을 때 읽기 순서:
+- `docs/NEXT-SESSION-EXECUTION-PROMPT.md` (구현 부트스트랩)
+- 플랜 **§L 인수인계 → §A 상태 → §R 실행 WBS(웨이브·티켓)** → 착수 티켓 관련 섹션(§T 보안·§G-6 정산·§U/컴패니언 모바일)
 
 ### 핵심 규칙 (이 작업 한정)
-1. **현재까지 코드 미수정 — 진단·플랜만.** 코드 착수는 사용자 승인 후 Phase 1부터.
-2. **세무(§G)는 자율 제출 금지** — CPA/세무변호사 SIGN-OFF 게이트.
-3. 라이브 DB: 현재 Supabase MCP가 **다른 프로젝트(Kursoflow)** 연결 → atockorea 검증 불가(플랜 K-0). 라이브 대조하려면 사용자가 atockorea Supabase 조직 토큰으로 교체 필요.
-4. 병렬 감사 에이전트에는 **"하위 에이전트 spawn 금지 + 최종 메시지로 직접 반환"**을 항상 명시(전달 유실 방지).
-5. 커밋 푸터에 모델 식별자(claude-opus-4-8 등) 절대 포함 금지. 커밋/푸시는 위 브랜치로.
+1. **브랜치는 로컬 부재 가능 → `git fetch origin` 후 워크트리 `C:\Users\sangsong\atockorea-admin`에서 작업.** 메인 dir은 타 세션 경합.
+2. **라이브 DB는 `mcp__atockorea__*`로 연결됨**(`cghyvbwmijqpahnoduyv`). DDL은 additive + 적용 후 `get_advisors` 재실행.
+3. **🔴 W0.1 P1 권한상승(고객→admin RLS WITH CHECK 부재)이 단일 최우선** — 라이브 확정, 마이그레이션 1줄.
+4. **세무(Wave 8)는 자율 제출 금지** — CPA/세무변호사 SIGN-OFF + §J #2/#3 게이트 후에만.
+5. 병렬 감사 에이전트에는 **"하위 에이전트 spawn 금지 + 최종 메시지로 직접 반환"** 항상 명시.
+6. **커밋 푸터에 모델 식별자 절대 금지**(`Co-Authored-By: Claude <noreply@anthropic.com>`만). 커밋/푸시는 위 브랜치.
+7. 진행 보고는 **한국어**(코드·커밋은 영어).
 
-**다음 착수 지점:** §G 정산/세무 데이터모델 + 마이그레이션 브리지 상세(§L-2 ③).
+**다음 착수 지점:** §R Wave 0 → **W0.1 P1 권한상승 차단**(사용자 승인 즉시).
