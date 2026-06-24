@@ -46,6 +46,20 @@ export function GET() {
           responses: { "200": { description: "Tour record" }, "404": { description: "Not found" } },
         },
       },
+      "/api/agent/v1/tours/{slug}/availability": {
+        get: {
+          operationId: "checkAvailability",
+          summary: "Best-effort, read-only availability for a date",
+          parameters: [
+            { name: "slug", in: "path", required: true, schema: { type: "string" } },
+            { name: "date", in: "query", required: true, schema: { type: "string", format: "date" } },
+          ],
+          responses: {
+            "200": { description: "Availability (status: available | sold_out | unknown). Not authoritative — enforced at checkout." },
+            "404": { description: "Tour not found" },
+          },
+        },
+      },
       "/api/agent/v1/quote": {
         post: {
           operationId: "createQuote",
@@ -120,7 +134,7 @@ export function GET() {
         url: `${base}/api/agent/mcp`,
         transport: "streamable-http",
         protocol: "Model Context Protocol",
-        tools: ["search_tours", "get_tour", "quote_price", "create_booking"],
+        tools: ["search_tours", "get_tour", "check_availability", "quote_price", "create_booking"],
       },
     },
   };

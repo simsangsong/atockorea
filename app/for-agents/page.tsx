@@ -83,8 +83,9 @@ export default function ForAgentsPage() {
         <p className="mt-3 leading-relaxed text-neutral-600">
           Connect an MCP client to <Code>/api/agent/mcp</Code> (Model Context
           Protocol over Streamable HTTP). Tools: <Code>search_tours</Code>,{" "}
-          <Code>get_tour</Code>, <Code>quote_price</Code>, and{" "}
-          <Code>create_booking</Code>. Same guarantees as the REST channel —
+          <Code>get_tour</Code>, <Code>check_availability</Code>,{" "}
+          <Code>quote_price</Code>, and <Code>create_booking</Code>. Same
+          guarantees as the REST channel —
           signed prices, and <Code>create_booking</Code> returns a hosted
           checkout URL the traveller pays. No card is charged by the agent.
         </p>
@@ -96,6 +97,11 @@ export default function ForAgentsPage() {
           <li>
             <strong>Discover</strong> — <Code>GET /api/agent/v1/tours?region=jeju&amp;search=unesco</Code>{" "}
             returns the catalogue. One tour: <Code>GET /api/agent/v1/tours/&#123;slug&#125;</Code>.
+          </li>
+          <li>
+            <strong>Check availability</strong> (optional) —{" "}
+            <Code>GET /api/agent/v1/tours/&#123;slug&#125;/availability?date=YYYY-MM-DD</Code>{" "}
+            for a best-effort open/sold-out read before quoting.
           </li>
           <li>
             <strong>Quote</strong> — <Code>POST /api/agent/v1/quote</Code> with{" "}

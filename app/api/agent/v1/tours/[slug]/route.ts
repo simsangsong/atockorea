@@ -34,6 +34,7 @@ export async function GET(
         // Agents do not charge cards. They price, then hand the traveller a
         // hosted checkout URL where the human confirms and pays.
         flow: "human_confirms_at_hosted_checkout",
+        availability_endpoint: `${base}/api/agent/v1/tours/${item.slug}/availability?date=YYYY-MM-DD`,
         quote_endpoint: `${base}/api/agent/v1/quote`,
         book_endpoint: `${base}/api/agent/v1/book`,
         checkout_url: item.url,
