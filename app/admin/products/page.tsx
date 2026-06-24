@@ -14,7 +14,7 @@
  * `reloadKey` so the iframe re-fetches the freshly-saved page.
  */
 
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { Sparkles } from 'lucide-react';
 import { ProductsListPane } from './_components/ProductsListPane';
 import { ProductEditorPane } from './_components/ProductEditorPane';
@@ -69,9 +69,18 @@ export default function ProductsV2Page() {
     }
   }, [previewOpen]);
 
-  // Auto-select first tour on load
+  // Auto-select the first tour ONCE, and only on desktop where the list and
+  // editor sit side by side. On mobile we deliberately land on the list so the
+  // user can pick a product — and so the editor's "back" button returns here
+  // instead of this effect immediately re-selecting and trapping them on the
+  // edit screen.
+  const didAutoSelectRef = useRef(false);
   useEffect(() => {
-    if (!selectedSlug && list.items.length > 0) {
+    if (didAutoSelectRef.current || selectedSlug || list.items.length === 0) return;
+    const isDesktop =
+      typeof window !== 'undefined' && window.matchMedia('(min-width: 1024px)').matches;
+    if (isDesktop) {
+      didAutoSelectRef.current = true;
       setSelectedSlug(list.items[0].slug);
     }
   }, [list.items, selectedSlug]);

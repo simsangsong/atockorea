@@ -1324,6 +1324,24 @@
             "body": "AI concierge 24/7. When AI hits its limit, a Korean-speaking team takes over (9 AM–9 PM KST)."
           }
         },
+        "aiAgent": {
+          "eyebrow": "Your AI travel agent",
+          "title": "Not a chatbot —",
+          "titleAccent": "a real travel agent",
+          "subtitle": "It recommends tours, quotes prices, looks up your booking, and brings in a human when you need one. Ask anything, in your language.",
+          "cap": {
+            "answer": "Answers anything",
+            "recommend": "Recommends tours",
+            "quote": "Instant quotes",
+            "details": "Takes your details",
+            "lookup": "Looks up bookings",
+            "human": "Connects a human"
+          },
+          "sampleLabel": "Example",
+          "sampleUser": "4 of us, 2 days in Busan with kids — what fits?",
+          "sampleAgent": "I'd pair Gamcheon Culture Village with a Haeundae day by private car. Want a quote, or shall I hold a date?",
+          "cta": "Start chatting"
+        },
         "chooseStyle": {
           "eyebrow": "HOW YOU LIKE TO TRAVEL",
           "title": "Pick your pace. We'll handle the rest.",
@@ -1364,6 +1382,7 @@
           "recommendCardTitle": "Not sure which to pick?",
           "recommendCardDesc": "Answer a few quick questions — we’ll recommend your day.",
           "recommendCardCta": "Get a recommendation",
+          "askAgentCta": "Or ask the AI agent now",
           "builderCardTitle": "Build your own day",
           "builderCardDesc": "Pick your hours and customize the route on the map, stop by stop.",
           "builderCardCta": "Open the builder",
@@ -1442,6 +1461,7 @@
           "reviewCardStarsAria": "{rating} out of 5 stars"
         },
         "finalCtaBlock": {
+          "askAgent": "Or ask the AI agent",
           "eyebrow": "READY WHEN YOU ARE",
           "title": "Your Korea day, picked in 30 seconds.",
           "subtitle": "Hand-picked operators. Real human support. Direct booking.",
@@ -2531,7 +2551,13 @@
       "loadIntoCart": "Apply this day",
       "previewHint": "Tap any stop to see details →",
       "noMatchFallback": "Try broader interests or a different region.",
-      "getAnother": "Get another suggestion"
+      "getAnother": "Get another suggestion",
+      "triggerTitle": "Plan my day with AI",
+      "triggerSub": "Tap and tell us what you're after",
+      "dialogTitle": "Plan your day with AI",
+      "dialogGuide": "Type anything — places you'd love to see, the vibe, your pace. Not sure where to start? Tap an example below.",
+      "examplesLabel": "Or start from an example",
+      "dialogClose": "Close"
     },
     "timeline": {
       "emptyHeadline": "Build your day, stop by stop",

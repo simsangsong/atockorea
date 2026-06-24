@@ -261,7 +261,12 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey, plac
   // we don't punch a `100vh - 7rem` hole into the home compositions.
   const mapColumnClass = isHome
     ? "-mx-4 mb-4 md:mx-0 lg:mb-0 lg:min-w-0 lg:flex-1 lg:self-start"
-    : "sticky top-16 z-20 -mx-4 mb-4 md:mx-0 lg:top-20 lg:z-10 lg:mb-0 lg:min-w-0 lg:flex-1 lg:self-start";
+    // Page placement: no longer full-bleed (`-mx-4`) on mobile — the map is
+    // inset with the section padding so it reads as a framed card with
+    // rounded corners rather than a crude edge-to-edge tile band (user
+    // 2026-06-23). `mb-5` leaves clear breathing room before the below-map
+    // trip card (was mb-3 — too tight, user 2026-06-23 #3).
+    : "sticky top-16 z-20 mb-5 lg:top-20 lg:z-10 lg:mb-0 lg:min-w-0 lg:flex-1 lg:self-start";
   // Phase 15 — premium map frame. Replaces the plain `border border-white/80`
   // with a mint glow ring + layered outer shadow + inset white highlight
   // that matches the builder's other floating cards (LivePriceCard,
@@ -272,11 +277,19 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey, plac
   // map renderer when a Map ID is set (inline `styles` is ignored).
   const mapInnerClass = isHome
     ? "relative h-[42vh] min-h-[280px] overflow-hidden bg-white/85 ring-1 ring-emerald-100/40 shadow-[0_2px_8px_rgba(15,23,42,0.04),0_24px_56px_-22px_rgba(15,23,42,0.24),inset_0_1px_0_rgba(255,255,255,0.9)] backdrop-blur md:rounded-2xl lg:h-[560px]"
-    : "relative h-[40vh] min-h-[260px] overflow-hidden bg-white/85 ring-1 ring-emerald-100/40 shadow-[0_2px_10px_rgba(15,23,42,0.05),0_28px_64px_-22px_rgba(15,23,42,0.26),inset_0_1px_0_rgba(255,255,255,0.92)] backdrop-blur md:rounded-2xl lg:h-[calc(100vh-7rem)]";
+    // Page placement: rounded on ALL breakpoints (was md:rounded-2xl only, so
+    // mobile rendered square + full-bleed = crude). Framed card look — crisp
+    // hairline ring over the mint glow + a deeper layered drop shadow +
+    // inset top highlight (user 2026-06-23 "make the map border nicer").
+    : "relative h-[40vh] min-h-[260px] overflow-hidden rounded-2xl bg-white/85 ring-1 ring-slate-900/[0.06] shadow-[0_4px_14px_rgba(15,23,42,0.06),0_30px_66px_-26px_rgba(15,23,42,0.34),inset_0_1px_0_rgba(255,255,255,0.95)] backdrop-blur lg:h-[calc(100vh-7rem)]";
 
   return (
     <ActiveStopProvider>
-      <PlannerTopRail region={region} placement={placement} />
+      {/* Desktop trip bar above the map. On the page placement the mobile
+          summary trigger is split out and rendered BELOW the map (see the
+          `slot="mobile"` instance inside the band) so it reads as a prominent
+          "edit your trip" card rather than a thin strip above the canvas. */}
+      <PlannerTopRail region={region} placement={placement} slot={isHome ? "all" : "bar"} />
       {/* Two-column hero band — sticky map (left) + interaction rail (right).
           The rail holds only the surfaces that benefit from sticky proximity
           to the map: AI matcher + cart actions. The full POI catalog grid
@@ -326,7 +339,7 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey, plac
                   edges so the route pins in the centre are never dimmed. */}
               <div
                 aria-hidden
-                className="pointer-events-none absolute inset-0 z-10 md:rounded-2xl"
+                className="pointer-events-none absolute inset-0 z-10 rounded-2xl"
                 style={{
                   background:
                     "radial-gradient(120% 78% at 50% 0%, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0) 24%), radial-gradient(135% 120% at 50% 118%, rgba(15,23,42,0.16) 0%, rgba(15,23,42,0) 46%)",
@@ -336,6 +349,12 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey, plac
               />
             </div>
           </div>
+
+          {/* Mobile-only trip summary card — sits directly below the map on the
+              page placement (md:hidden). Tapping opens the full edit sheet. */}
+          {!isHome ? (
+            <PlannerTopRail region={region} placement={placement} slot="mobile" />
+          ) : null}
 
           {/* Right rail (lg+) — AI matcher + result timeline. On <lg the rail
               falls to normal flow below the sticky-top map. Phase 3 replaced

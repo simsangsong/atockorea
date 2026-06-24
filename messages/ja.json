@@ -1185,6 +1185,24 @@
             "body": "AIコンシェルジュは24時間。AIで対応しきれないときは、韓国語チームが引き継ぎます（9:00〜21:00 KST）。"
           }
         },
+        "aiAgent": {
+          "eyebrow": "AI旅行エージェント",
+          "title": "チャットボットではなく、",
+          "titleAccent": "本物の旅行エージェント",
+          "subtitle": "ツアーを提案し、見積もりを出し、予約を照会し、必要なら担当者にもおつなぎします。何でも、あなたの言語でどうぞ。",
+          "cap": {
+            "answer": "何でも回答",
+            "recommend": "ツアー提案",
+            "quote": "即時見積もり",
+            "details": "情報を収集",
+            "lookup": "予約を照会",
+            "human": "担当者に接続"
+          },
+          "sampleLabel": "例",
+          "sampleUser": "4人、子ども連れで釜山2日 — おすすめは?",
+          "sampleAgent": "甘川文化村と海雲台のコースをプライベートカーでまとめます。お見積もりか、日程の確保はいかがですか?",
+          "cta": "今すぐ相談"
+        },
         "chooseStyle": {
           "eyebrow": "どんな旅にしますか",
           "title": "ペースを選んでください。あとはお任せください。",
@@ -1225,6 +1243,7 @@
           "recommendCardTitle": "どれが合うか迷ったら？",
           "recommendCardDesc": "簡単な質問に答えるだけで、ぴったりの一日をご提案します。",
           "recommendCardCta": "おすすめを見る",
+          "askAgentCta": "または今すぐAIエージェントに質問",
           "builderCardTitle": "自分だけの一日を作る",
           "builderCardDesc": "時間を選び、地図でルートを一カ所ずつカスタマイズ。",
           "builderCardCta": "ビルダーを開く",
@@ -1303,6 +1322,7 @@
           "reviewCardStarsAria": "5点満点中 {rating}"
         },
         "finalCtaBlock": {
+          "askAgent": "またはAIエージェントに質問",
           "eyebrow": "準備ができたら",
           "title": "あなたの韓国一日ツアー、30秒で見つかります。",
           "subtitle": "厳選した運営会社 · 本物の人のサポート · 直接予約まで。",
@@ -2531,7 +2551,13 @@
       "loadIntoCart": "この旅程を使う",
       "previewHint": "各立ち寄り先をタップして詳細を見る →",
       "noMatchFallback": "より広い興味で試すか、別の地域を選択してください。",
-      "getAnother": "別の提案を見る"
+      "getAnother": "別の提案を見る",
+      "triggerTitle": "AIで1日を計画",
+      "triggerSub": "タップして希望を教えてください",
+      "dialogTitle": "AIで1日を計画",
+      "dialogGuide": "行きたい場所、雰囲気、ペース…何でも自由に入力してください。迷ったら下の例をタップ。",
+      "examplesLabel": "または例から始める",
+      "dialogClose": "閉じる"
     },
     "timeline": {
       "emptyHeadline": "一か所ずつ、あなたの一日を組み立てましょう",

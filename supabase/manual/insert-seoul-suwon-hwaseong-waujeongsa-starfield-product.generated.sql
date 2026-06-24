@@ -31,7 +31,7 @@ INSERT INTO public.tours (
   'UNESCO fortress, mountain temple, and viral library—Korea''s past, spirit, and present in one Seoul day-trip.',
   'A small-group day-trip from Seoul covering three contrasting sides of Korea: the UNESCO-listed Suwon Hwaseong Fortress (18th-century military architecture), the photogenic Starfield Suwon Library (contemporary cultural icon), and Waujeongsa Temple in Yongin (giant outdoor Buddha and stone bell). Strong heritage value with included transport and admission.',
   'UNESCO fortress, mountain temple, and viral library—Korea''s past, spirit, and present in one Seoul day-trip.',
-  48.60,
+  51,
   NULL,
   'USD',
   'person',

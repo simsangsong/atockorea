@@ -1185,6 +1185,24 @@
             "body": "Concierge IA 24/7. Cuando la IA no llega, un equipo en coreano toma el relevo (9:00–21:00 KST)."
           }
         },
+        "aiAgent": {
+          "eyebrow": "Tu agente de viajes IA",
+          "title": "No es un chatbot,",
+          "titleAccent": "es un agente de viajes",
+          "subtitle": "Recomienda tours, cotiza precios, consulta tu reserva y te conecta con una persona cuando hace falta. Pregunta lo que sea, en tu idioma.",
+          "cap": {
+            "answer": "Responde todo",
+            "recommend": "Recomienda tours",
+            "quote": "Cotiza al instante",
+            "details": "Toma tus datos",
+            "lookup": "Consulta reservas",
+            "human": "Conecta con humano"
+          },
+          "sampleLabel": "Ejemplo",
+          "sampleUser": "Somos 4, 2 días en Busan con niños — ¿qué nos recomiendas?",
+          "sampleAgent": "Combinaría el Pueblo Cultural de Gamcheon con un día en Haeundae en coche privado. ¿Te doy una cotización o reservo una fecha?",
+          "cta": "Empezar a chatear"
+        },
         "chooseStyle": {
           "eyebrow": "CÓMO TE GUSTA VIAJAR",
           "title": "Elige tu ritmo. Nosotros nos encargamos del resto.",
@@ -1225,6 +1243,7 @@
           "recommendCardTitle": "¿No sabes cuál elegir?",
           "recommendCardDesc": "Responde unas preguntas y te recomendamos tu día.",
           "recommendCardCta": "Obtener recomendación",
+          "askAgentCta": "O pregunta al agente IA ahora",
           "builderCardTitle": "Diseña tu propio día",
           "builderCardDesc": "Elige tus horas y personaliza la ruta en el mapa, parada a parada.",
           "builderCardCta": "Abrir el creador",
@@ -1303,6 +1322,7 @@
           "reviewCardStarsAria": "{rating} de 5 estrellas"
         },
         "finalCtaBlock": {
+          "askAgent": "O pregunta al agente IA",
           "eyebrow": "CUANDO ESTÉS LISTO",
           "title": "Tu día en Corea, elegido en 30 segundos.",
           "subtitle": "Operadores seleccionados · Soporte humano real · Reserva directa.",
@@ -2531,7 +2551,13 @@
       "loadIntoCart": "Aplicar este día",
       "previewHint": "Toca cualquier parada para ver detalles →",
       "noMatchFallback": "Intenta con intereses más amplios o una región diferente.",
-      "getAnother": "Ver otra opción"
+      "getAnother": "Ver otra opción",
+      "triggerTitle": "Planea tu día con IA",
+      "triggerSub": "Toca y dinos qué buscas",
+      "dialogTitle": "Planea tu día con IA",
+      "dialogGuide": "Escribe lo que sea — lugares que quieras ver, el ambiente, tu ritmo. ¿No sabes por dónde empezar? Toca un ejemplo abajo.",
+      "examplesLabel": "O empieza con un ejemplo",
+      "dialogClose": "Cerrar"
     },
     "timeline": {
       "emptyHeadline": "Arma tu día, parada por parada",
