@@ -71,7 +71,23 @@ export default function ForAgentsPage() {
               /api/agent/v1/tours
             </a>
           </li>
+          <li>
+            <strong>MCP server (Streamable HTTP):</strong>{" "}
+            <Code>{`${base}/api/agent/mcp`}</Code>
+          </li>
         </ul>
+      </section>
+
+      <section className="mt-10">
+        <h2 className="text-xl font-semibold text-neutral-900">MCP (for assistants that speak it)</h2>
+        <p className="mt-3 leading-relaxed text-neutral-600">
+          Connect an MCP client to <Code>/api/agent/mcp</Code> (Model Context
+          Protocol over Streamable HTTP). Tools: <Code>search_tours</Code>,{" "}
+          <Code>get_tour</Code>, <Code>quote_price</Code>, and{" "}
+          <Code>create_booking</Code>. Same guarantees as the REST channel —
+          signed prices, and <Code>create_booking</Code> returns a hosted
+          checkout URL the traveller pays. No card is charged by the agent.
+        </p>
       </section>
 
       <section className="mt-10">

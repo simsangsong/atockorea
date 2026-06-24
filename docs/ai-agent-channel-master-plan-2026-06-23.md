@@ -70,19 +70,58 @@ POST /api/agent/v1/book    { quote_token, contact? }   -> { checkout_url }   (hu
 
 ---
 
-## Not yet built (future phases)
+## Phase 2 — MCP server ✅ (shipped 2026-06-23)
 
-- **Phase 2 — MCP server** (`app/api/mcp/route.ts`, Streamable HTTP): tools
-  `search_tours`, `get_tour`, `check_availability`, `quote_price`, `create_booking`.
-  The real "AI-native channel" — Claude/agents call tools directly. `@anthropic-ai/sdk`
-  already in deps. `/.well-known` discovery.
-- **Phase 3 — Agent-safe reservation records:** idempotency keys, real pending-booking
-  rows from the agent path (needs inventory integration), rate limiting, optional
-  API-key tiers, standardized error codes.
-- **Phase 4 — Agentic-commerce standards:** Stripe Agent Toolkit / OpenAI ACP /
-  Google AP2 adapters via `/.well-known` (delegated payment — later, higher risk).
-- **Structured-data expansion:** `ItemList` JSON-LD on `/tours/list`,
+- `app/api/agent/mcp/route.ts` — Streamable HTTP, stateless JSON-RPC 2.0 MCP
+  server (no SDK dependency). Implements `initialize`, `tools/list`,
+  `tools/call`, `ping`, notifications; `GET` advertises capabilities; CORS-open.
+  Tools: `search_tools` → **`search_tours`**, `get_tour`, `quote_price`,
+  `create_booking` — reusing the same catalog/quote/checkout logic as REST.
+- `lib/agent/checkoutUrl.ts` — shared checkout-handoff URL builder (REST + MCP
+  single-sourced; `book` route refactored onto it).
+- Discovery: MCP URL added to `/llms.txt`, `/for-agents`, and OpenAPI
+  `x-agent-channel.mcp`.
+
+## Phase 3 — Agent-safe reservations + hardening ✅ (shipped 2026-06-23)
+
+- `supabase/pending-db-apply/0001_agent_reservations.sql` — **isolated**
+  `agent_reservations` table (decoupled from bookings/inventory; service-role
+  only, RLS on). **Not applied** — staged for review per instruction.
+- `lib/agent/reservation.ts` — best-effort persistence with idempotency-key
+  replay; **degrades gracefully** if the table doesn't exist yet, so the booking
+  handoff never breaks.
+- `lib/agent/rateLimit.ts` — in-memory fixed-window limiter with API-key tiers
+  (`AGENT_API_KEYS` env, `x-api-key` header → higher limit). Per-instance
+  courtesy throttle; documented as such.
+- Wired into REST `quote` + `book` and the MCP endpoint. `book` / `create_booking`
+  now accept an `Idempotency-Key` (header or body/arg) and return
+  `reservation_id` + `idempotent_replay`.
+
+## Phase 4 — Agent discovery manifests ✅ (shipped 2026-06-23)
+
+- `app/.well-known/agent.json/route.ts` — channel manifest (payment model,
+  endpoints, MCP, auth, pricing).
+- `app/.well-known/ai-plugin.json/route.ts` — plugin-style manifest pointing at
+  the OpenAPI contract, with a model-facing "never charge a card" instruction.
+- Cross-linked from `/llms.txt` and OpenAPI `x-agent-channel.well_known`.
+- **Note:** no real delegated-payment standard (Stripe Agent Toolkit / OpenAI
+  ACP / Google AP2) is wired — those mean the agent charges, which conflicts with
+  D1 (human pays). Left as an explicit future decision, not silently adopted.
+
+### Env to set in production (additions)
+- `AGENT_API_KEYS` — optional. Comma-separated `label:key` pairs to grant
+  higher rate limits to trusted agents.
+
+## Still open (future)
+
+- Global (cross-instance) rate limiting via Upstash/Redis — current limiter is
+  per-instance.
+- Apply `0001_agent_reservations.sql`, then optionally an admin view of leads.
+- Structured-data expansion: `ItemList` JSON-LD on `/tours/list`,
   `BreadcrumbList` on detail pages.
+- Real availability check in the agent channel (today pricing assumes default
+  capacity; inventory lives in the origin-locked pipeline).
+- Delegated payment (agent charges) — only if/when the business accepts the risk.
 
 ---
 

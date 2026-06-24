@@ -30,6 +30,8 @@ export function GET() {
 - [Tour catalogue (JSON)](${base}/api/agent/v1/tours): list every bookable tour.
 - Quote: \`POST ${base}/api/agent/v1/quote\` with \`{ slug, date, guests }\` → signed quote_token.
 - Book: \`POST ${base}/api/agent/v1/book\` with \`{ quote_token, contact? }\` → hosted checkout_url for the human to pay.
+- MCP server (Model Context Protocol, Streamable HTTP): \`${base}/api/agent/mcp\` — tools: search_tours, get_tour, quote_price, create_booking.
+- Discovery manifests: [\`/.well-known/agent.json\`](${base}/.well-known/agent.json), [\`/.well-known/ai-plugin.json\`](${base}/.well-known/ai-plugin.json).
 
 ## Site
 

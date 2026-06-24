@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getAgentCatalogItem, agentSiteUrl } from "@/lib/agent/catalog";
 import { signQuote, AGENT_QUOTE_TTL_SECONDS } from "@/lib/agent/quoteToken";
+import { rateLimit, rateLimitHeaders } from "@/lib/agent/rateLimit";
 
 /**
  * POST /api/agent/v1/quote — issue a signed, time-boxed price quote.
@@ -24,6 +25,14 @@ function isYmd(s: string): boolean {
 }
 
 export async function POST(req: NextRequest) {
+  const rl = rateLimit(req);
+  if (!rl.ok) {
+    return NextResponse.json(
+      { object: "error", error: "rate_limited", detail: `Retry in ${rl.retryAfterSeconds}s.` },
+      { status: 429, headers: { ...CORS, ...rateLimitHeaders(rl) } },
+    );
+  }
+
   let body: { slug?: unknown; date?: unknown; guests?: unknown };
   try {
     body = await req.json();

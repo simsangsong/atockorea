@@ -112,6 +112,16 @@ export function GET() {
       auth: "none required for read/quote; bookings hand off to hosted checkout",
       llms_txt: `${base}/llms.txt`,
       docs: `${base}/for-agents`,
+      well_known: {
+        agent: `${base}/.well-known/agent.json`,
+        ai_plugin: `${base}/.well-known/ai-plugin.json`,
+      },
+      mcp: {
+        url: `${base}/api/agent/mcp`,
+        transport: "streamable-http",
+        protocol: "Model Context Protocol",
+        tools: ["search_tours", "get_tour", "quote_price", "create_booking"],
+      },
     },
   };
 
