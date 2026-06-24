@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { validateFile, validateFiles, productImageOptions, galleryImageOptions } from '@/lib/file-upload';
 import { getAuthUser } from '@/lib/auth';
+import { canDeleteUploadObject, isAllowedUploadBucket } from '@/lib/upload-auth';
 
 // Ensure Node.js runtime for sharp
 export const runtime = 'nodejs';
@@ -251,6 +252,23 @@ export async function DELETE(req: NextRequest) {
       return NextResponse.json(
         { error: 'Authentication required' },
         { status: 401 }
+      );
+    }
+
+    // PA-2 / N17: constrain deletes to known buckets and the caller's own
+    // namespace (admins may manage shared tour assets). Without this, any
+    // authenticated user could remove arbitrary objects via the service-role
+    // client (IDOR).
+    if (!isAllowedUploadBucket(bucket)) {
+      return NextResponse.json(
+        { error: 'Invalid bucket' },
+        { status: 400 }
+      );
+    }
+    if (!canDeleteUploadObject({ path, userId: user.id, role: user.role })) {
+      return NextResponse.json(
+        { error: 'You do not have permission to delete this file' },
+        { status: 403 }
       );
     }
 

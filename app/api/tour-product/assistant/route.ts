@@ -884,6 +884,15 @@ export async function POST(req: NextRequest) {
     // Q3 — customer confirmed booking. Need an email to create the booking.
     if (draft.readyToBook && !debugNoSideEffects) {
       if (!draft.contactEmail) return respond(quoteEmailPrompt(quoteLocale));
+      // CB-5: dedicated low-rate throttle on the unauthenticated booking write so
+      // the quote flow can't be scripted to spray arbitrary-email PENDING
+      // bookings. The 20/min general chat limit is far too loose for a DB write.
+      {
+        const bookIp = bestEffortIp(req);
+        const bookKey = bookIp ? `ip:${bookIp}` : `sess:${session.token}`;
+        const bookGate = allowRequest("assistant_book", bookKey, { perMinute: 2, perHour: 8 });
+        if (!bookGate.allowed) return respond(quoteReply);
+      }
       const bookSb = makeServiceRoleClient();
       const result = bookSb
         ? await createQuoteBooking(bookSb, draft, quoteLocale)

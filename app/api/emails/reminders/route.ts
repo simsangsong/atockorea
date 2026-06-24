@@ -1,9 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { sendBookingReminderEmail } from '@/lib/email';
+import { checkCronAuth } from '@/lib/cron-auth';
 import type { TourRelation, UserProfileRelation, PickupPointRelation } from '@/lib/db-relations';
-
-const CRON_SECRET = process.env.CRON_SECRET || process.env.VERCEL_CRON_SECRET;
 
 /**
  * POST /api/emails/reminders
@@ -12,18 +11,17 @@ const CRON_SECRET = process.env.CRON_SECRET || process.env.VERCEL_CRON_SECRET;
  */
 export async function POST(req: NextRequest) {
   try {
-    if (!CRON_SECRET) {
+    const auth = checkCronAuth({
+      authorization: req.headers.get('authorization'),
+      xCronSecret: req.headers.get('x-cron-secret'),
+    });
+    if (auth === 'unconfigured') {
       return NextResponse.json(
         { error: 'Cron endpoint not configured' },
         { status: 503 }
       );
     }
-
-    const authHeader = req.headers.get('authorization');
-    const cronHeader = req.headers.get('x-cron-secret');
-    const token = authHeader?.startsWith('Bearer ') ? authHeader.slice(7) : cronHeader;
-
-    if (token !== CRON_SECRET) {
+    if (auth !== 'authorized') {
       return NextResponse.json(
         { error: 'Unauthorized' },
         { status: 401 }
@@ -164,12 +162,14 @@ export async function POST(req: NextRequest) {
 
 /**
  * GET /api/emails/reminders
- * Test endpoint to manually trigger reminder emails
+ *
+ * Vercel Cron invokes this endpoint via GET with an
+ * `Authorization: Bearer <CRON_SECRET>` header. Auth is enforced by the
+ * delegated POST handler (checkCronAuth): an unauthenticated GET is rejected
+ * with 401, so this is NOT an open trigger.
  */
 export async function GET(req: NextRequest) {
-  // In production, you might want to add authentication here
-  const response = await POST(req);
-  return response;
+  return POST(req);
 }
 
 

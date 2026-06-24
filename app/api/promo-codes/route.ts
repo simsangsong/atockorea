@@ -1,11 +1,19 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
+import { requireAdmin, adminAuthJsonResponse, AdminAuthFailure } from '@/lib/auth';
 
 /**
  * GET /api/promo-codes
- * Get promo codes (admin only) or validate a specific code
+ * List/inspect promo codes — admin only. Public checkout validation lives at
+ * POST /api/promo-codes/validate (returns only the minimal discount fields).
  */
 export async function GET(req: NextRequest) {
+  try {
+    await requireAdmin(req);
+  } catch (err) {
+    if (err instanceof AdminAuthFailure) return adminAuthJsonResponse(err);
+    throw err;
+  }
   try {
     const supabase = createServerClient();
     const { searchParams } = new URL(req.url);
@@ -61,7 +69,7 @@ export async function GET(req: NextRequest) {
       });
     }
 
-    // Otherwise, get all promo codes (admin only - add auth check if needed)
+    // Otherwise, get all promo codes (admin-gated above)
     let query = supabase
       .from('promo_codes')
       .select('*')
@@ -96,6 +104,12 @@ export async function GET(req: NextRequest) {
  * Create a new promo code (admin only)
  */
 export async function POST(req: NextRequest) {
+  try {
+    await requireAdmin(req);
+  } catch (err) {
+    if (err instanceof AdminAuthFailure) return adminAuthJsonResponse(err);
+    throw err;
+  }
   try {
     const supabase = createServerClient();
     const body = await req.json();

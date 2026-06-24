@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
+import { requireAdmin, adminAuthJsonResponse, AdminAuthFailure } from '@/lib/auth';
 
 /**
  * PUT /api/inventory/[id]
@@ -9,6 +10,12 @@ export async function PUT(
   req: NextRequest,
   { params }: { params: Promise<{ id: string }> }
 ) {
+  try {
+    await requireAdmin(req);
+  } catch (err) {
+    if (err instanceof AdminAuthFailure) return adminAuthJsonResponse(err);
+    throw err;
+  }
   try {
     const { id: inventoryId } = await params;
     const supabase = createServerClient();
@@ -76,6 +83,12 @@ export async function GET(
   req: NextRequest,
   { params }: { params: Promise<{ id: string }> }
 ) {
+  try {
+    await requireAdmin(req);
+  } catch (err) {
+    if (err instanceof AdminAuthFailure) return adminAuthJsonResponse(err);
+    throw err;
+  }
   try {
     const { id: inventoryId } = await params;
     const supabase = createServerClient();

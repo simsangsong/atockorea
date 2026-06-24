@@ -4,7 +4,8 @@ import { createServerClient } from '@/lib/supabase';
 /**
  * POST /api/auth/create-profile
  * 회원가입 직후 user_profiles 행 생성. 서버(service role)에서 insert 하므로 RLS 영향 없음.
- * body: { userId, full_name, accessToken?, phone?, birth_year?, nationality? }
+ * body: { userId, full_name, accessToken, phone?, birth_year?, nationality? }
+ * accessToken은 필수이며 userId 본인 토큰이어야 합니다(P2).
  *
  * DB: `birth_year`, `nationality`, `role` 등은 supabase/migrations 아래 해당 마이그레이션이
  * 프로덕션에 적용되어 있어야 합니다. 기본 schema.sql만 있으면 insert 시 컬럼 누락 분기가 동작합니다.
@@ -26,16 +27,24 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    // P2: accessToken is REQUIRED and must belong to `userId`. Previously the
+    // ownership check only ran when a token was supplied, so omitting it allowed
+    // an unauthenticated service-role insert/overwrite of another user's profile.
+    if (!accessToken || typeof accessToken !== 'string') {
+      return NextResponse.json(
+        { error: 'Authentication required' },
+        { status: 401 }
+      );
+    }
+
     const supabase = createServerClient();
 
-    if (accessToken && typeof accessToken === 'string') {
-      const { data: { user }, error } = await supabase.auth.getUser(accessToken);
-      if (error || !user || user.id !== userId) {
-        return NextResponse.json(
-          { error: 'Invalid or mismatched token' },
-          { status: 401 }
-        );
-      }
+    const { data: { user }, error: tokenError } = await supabase.auth.getUser(accessToken);
+    if (tokenError || !user || user.id !== userId) {
+      return NextResponse.json(
+        { error: 'Invalid or mismatched token' },
+        { status: 401 }
+      );
     }
 
     const basePayload: Record<string, unknown> = {
