@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 import { createServerClient } from '@/lib/supabase';
 import { requireAdmin, AdminAuthFailure, adminAuthJsonResponse } from '@/lib/auth';
+import { noShowCaptureAmount } from '@/lib/payments/no-show-capture';
 
 export const dynamic = 'force-dynamic';
 
@@ -160,10 +161,26 @@ export async function POST(
         );
       }
 
+      // B-1: for a no-show, capture only the no-show fee, not the entire hold.
+      // Omitting amount_to_capture makes Stripe capture the full authorization,
+      // which over-charges whenever the fee is smaller than the hold.
+      const captureParams: Stripe.PaymentIntentCaptureParams = {
+        metadata: { ...pi.metadata, settle_reason: reason },
+      };
+      const amountToCapture = noShowCaptureAmount({
+        reason,
+        holdCurrency: pi.currency,
+        noShowFeeUsdCents: booking.no_show_fee_usd_cents as number | null,
+        authorizedAmountMinor: pi.amount,
+      });
+      if (amountToCapture !== undefined) captureParams.amount_to_capture = amountToCapture;
+
       let captured: Stripe.PaymentIntent;
       try {
-        captured = await stripe.paymentIntents.capture(piId, {
-          metadata: { ...pi.metadata, settle_reason: reason },
+        // Idempotency key guards against double-submit / webhook races
+        // re-capturing the same hold (a PI can only be captured once anyway).
+        captured = await stripe.paymentIntents.capture(piId, captureParams, {
+          idempotencyKey: `settle:capture:${piId}`,
         });
       } catch (err) {
         return NextResponse.json(
