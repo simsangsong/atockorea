@@ -147,14 +147,29 @@ export async function POST(req: NextRequest) {
           update.status = 'completed';
         }
 
-        const { error: updateError } = await supabase
+        // W-1: never revive a cancelled booking or capture an already-released
+        // hold. A late/duplicate succeeded event (e.g. arriving after the
+        // booking was cancelled and the hold released) must not flip the row
+        // back to paid/captured. Legit captures (pending/confirmed/completed,
+        // pi auth_pending/authorized/captured) still pass.
+        const { data: capturedRows, error: updateError } = await supabase
           .from('bookings')
           .update(update)
-          .eq('id', bookingId);
+          .eq('id', bookingId)
+          .neq('status', 'cancelled')
+          .neq('payment_intent_status', 'canceled')
+          .select('id');
 
         if (updateError) {
           console.error(`[webhook] capture sync failed for booking ${bookingId}:`, updateError);
           throw updateError;
+        }
+
+        if (!capturedRows || capturedRows.length === 0) {
+          console.log(
+            `[webhook] succeeded for booking ${bookingId} ignored (cancelled or hold released — not revived)`,
+          );
+          break;
         }
 
         console.log(`Booking ${bookingId} card charge captured: ${pi.amount_received} ${pi.currency}`);
@@ -340,6 +355,7 @@ export async function POST(req: NextRequest) {
             .eq('id', bookingId)
             .single();
           if (existing?.payment_status !== 'paid') {
+            // W-1 (same revive class): don't resurrect a cancelled booking.
             await supabase
               .from('bookings')
               .update({
@@ -347,7 +363,8 @@ export async function POST(req: NextRequest) {
                 status: 'confirmed',
                 updated_at: new Date().toISOString(),
               })
-              .eq('id', bookingId);
+              .eq('id', bookingId)
+              .neq('status', 'cancelled');
           }
         }
         break;
