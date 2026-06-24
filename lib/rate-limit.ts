@@ -83,3 +83,11 @@ export const createMerchantRateLimit = rateLimit({
   maxRequests: 10, // 10 merchant creations per hour
 });
 
+// P4: /api/auth/check-email is an unauthenticated email-existence oracle (signup
+// duplicate check). It must stay public, so throttle per-IP to blunt account
+// enumeration.
+export const emailCheckRateLimit = rateLimit({
+  windowMs: 60 * 1000, // 1 minute
+  maxRequests: 15, // 15 lookups per minute per IP
+});
+

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
+import { emailCheckRateLimit } from '@/lib/rate-limit';
 
 /**
  * POST /api/auth/check-email
@@ -7,6 +8,10 @@ import { createServerClient } from '@/lib/supabase';
  * body: { email: string }
  */
 export async function POST(req: NextRequest) {
+  // P4: per-IP throttle to blunt account enumeration via this oracle.
+  const limited = emailCheckRateLimit(req);
+  if (limited) return limited;
+
   try {
     const body = await req.json().catch(() => ({}));
     const email = typeof body?.email === 'string' ? body.email.trim().toLowerCase() : '';
