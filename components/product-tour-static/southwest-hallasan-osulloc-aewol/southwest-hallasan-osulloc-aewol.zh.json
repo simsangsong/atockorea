@@ -32,7 +32,7 @@
     ],
     "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
     "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
-    "priceLabel": "每人 US$52",
+    "priceLabel": "",
     "shortCardDescription": "一条均衡的济州西南一日路线，串联汉拿山1100高地湿地、火山海岸线、天帝渊瀑布、雪绿茶茶园、涯月咖啡街与梨湖泰乌日落。",
     "tags": [
       "small_group",
@@ -46,9 +46,9 @@
   "headlineLine1": "济州西南",
   "headlineLine2": "汉拿山·雪绿茶·涯月·梨湖泰乌",
   "price": {
-    "amountLabel": "52",
+    "amountLabel": "49",
     "originalPriceUsd": null,
-    "salePriceUsd": 52,
+    "salePriceUsd": 49,
     "discountPercent": null,
     "currency": "USD",
     "per": "person"
@@ -1467,16 +1467,16 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id 在运行时从 Supabase / 环境变量中解析；不属于静态 JSONB 的一部分。",
     "price": {
-      "amountLabel": "52",
+      "amountLabel": "49",
       "originalPriceUsd": null,
-      "salePriceUsd": 52,
+      "salePriceUsd": 49,
       "discountPercent": null,
       "currency": "USD",
       "per": "person"
     }
   },
   "matching_profile": {
-    "product_type": "small_group",
+    "product_type": "bus",
     "route_type": "fixed_route",
     "region_type": "jeju_southwest",
     "region_tags": [

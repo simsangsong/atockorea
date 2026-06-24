@@ -47,10 +47,10 @@
   "headlineLine1": "Costa desde crucero en Jeju",
   "headlineLine2": "Tour en autocar",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "59",
     "currency": "USD",
     "per": "person",
-    "salePriceUsd": null,
+    "salePriceUsd": 59,
     "originalPriceUsd": null,
     "discountPercent": null
   },
@@ -1769,10 +1769,10 @@
   "sticky_booking_bar": {
     "note": "Seleccione su puerto de crucero, fecha de viaje y tamaño del grupo para verificar disponibilidad y completar su reserva.",
     "price": {
-      "amountLabel": "",
+      "amountLabel": "59",
       "currency": "USD",
       "per": "person",
-      "salePriceUsd": null,
+      "salePriceUsd": 59,
       "originalPriceUsd": null,
       "discountPercent": null
     }
@@ -1820,7 +1820,7 @@
     "profile_version": 6,
     "is_active": true,
     "product_id": "jeju-cruise-shore-excursion-bus-tour",
-    "product_type": "small_group_fixed_itinerary",
+    "product_type": "bus",
     "route_type": "cruise_shore_excursion_pair_route_variants",
     "destination_region": "jeju",
     "region_type": "island_full",

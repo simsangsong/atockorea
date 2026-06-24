@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, Headphones, Send, Sparkles, ThumbsDown, ThumbsUp, X } from "lucide-react";
 
 import { cn } from "@/lib/utils";
+import { parseSseBuffer } from "@/lib/chatbot/clientSse";
 
 function ChatBotAvatar({ className }: { className?: string }) {
   return (
@@ -425,8 +426,81 @@ export function TourProductAiAssistantWidget({
             tourProductSlug: storageKey,
             messages: trimChatHistory(next),
             pageContext: pageContext(),
+            stream: true,
           }),
         });
+
+        // Content negotiation (D-T2-1): the server streams SSE only for a
+        // free-form model answer. Deterministic gates, fallbacks, and older
+        // servers reply with JSON — fall through to the buffered path below.
+        const contentType = res.headers.get("content-type") || "";
+        if (res.ok && contentType.includes("text/event-stream") && res.body) {
+          const reader = res.body.getReader();
+          const decoder = new TextDecoder();
+          const lastUserQuestion =
+            [...next].reverse().find((m) => m.role === "user")?.content ?? "";
+          // Rebuild the tail each update so deltas grow a single bubble rather
+          // than appending many.
+          const renderAssistant = (content: string, extra?: Partial<ChatMessage>) =>
+            setMessages(() => [...next, { role: "assistant", content, origin: "ai", ...extra }]);
+
+          let buffer = "";
+          let streamed = "";
+          let started = false;
+          let settled = false;
+          try {
+            for (;;) {
+              const { done, value } = await reader.read();
+              if (done) break;
+              buffer += decoder.decode(value, { stream: true });
+              const { events, rest } = parseSseBuffer(buffer);
+              buffer = rest;
+              for (const ev of events) {
+                if (ev.event === "delta") {
+                  const text = (JSON.parse(ev.data) as { text?: string }).text ?? "";
+                  if (!text) continue;
+                  streamed += text;
+                  // First token: drop the typing indicator, show the bubble.
+                  if (!started) {
+                    started = true;
+                    setLoading(false);
+                  }
+                  renderAssistant(streamed);
+                } else if (ev.event === "done") {
+                  settled = true;
+                  // done.reply is authoritative (D-T2-4): snap the bubble to it.
+                  const payload = JSON.parse(ev.data) as AssistantResponse;
+                  renderAssistant(payload.reply ?? streamed, {
+                    checkoutUrl: payload.checkout_url ?? undefined,
+                  });
+                  setHandoffOffer(payload.handoff_offered ? { question: lastUserQuestion } : null);
+                  if (payload.ticket_id && payload.escalated) {
+                    setActiveTicketId(payload.ticket_id);
+                    setLiveStatus("open");
+                  }
+                } else if (ev.event === "error") {
+                  settled = true;
+                  setHandoffOffer(null);
+                  renderAssistant(labels.requestFailed("assistant_failed"), { origin: "system" });
+                }
+              }
+            }
+          } finally {
+            reader.releaseLock();
+          }
+
+          // Stream ended with neither done nor error and nothing rendered
+          // (dropped connection): surface a network error.
+          if (!settled && !started) {
+            setHandoffOffer(null);
+            setMessages((prev) => [
+              ...prev,
+              { role: "assistant", content: labels.networkError, origin: "system" },
+            ]);
+          }
+          return;
+        }
+
         const data = (await res.json()) as AssistantResponse;
         if (!res.ok) {
           const err = data.message || data.error || "Request failed";

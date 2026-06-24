@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { toast } from 'sonner';
+import type { LucideIcon } from 'lucide-react';
 import {
   ExternalLink,
   Save,
@@ -14,6 +15,11 @@ import {
   Globe,
   Hash,
   ArrowLeft,
+  Image as ImageIcon,
+  FileText,
+  Route,
+  HelpCircle,
+  Search,
 } from 'lucide-react';
 import { ALL_LOCALES, LOCALE_FLAGS, LOCALE_LABELS } from '../_hooks/types';
 import type { Locale, ProductPageRow } from '../_hooks/types';
@@ -36,6 +42,17 @@ type Props = {
   previewOpen: boolean;
   onBackToList: () => void;
 };
+
+/** Mobile editor is split into thumb-navigable sections instead of one long
+ *  scroll. Desktop ignores this and shows every section stacked. */
+type SectionId = 'media' | 'content' | 'itinerary' | 'faq' | 'seo';
+const EDITOR_SECTIONS: { id: SectionId; label: string; icon: LucideIcon }[] = [
+  { id: 'media', label: '미디어', icon: ImageIcon },
+  { id: 'content', label: '기본 정보', icon: FileText },
+  { id: 'itinerary', label: '일정', icon: Route },
+  { id: 'faq', label: 'FAQ', icon: HelpCircle },
+  { id: 'seo', label: 'SEO', icon: Search },
+];
 
 const buildSavePatch = (source: ProductPageRow): Partial<ProductPageRow> => ({
   title: source.title,
@@ -77,6 +94,7 @@ export function ProductEditorPane({
 }: Props) {
   const [draft, setDraft] = useState<ProductPageRow | null>(row);
   const [saving, setSaving] = useState(false);
+  const [activeSection, setActiveSection] = useState<SectionId>('media');
   const saveQueueRef = useRef<Promise<void>>(Promise.resolve());
   const latestSaveIdRef = useRef(0);
   const lastPersistedSignatureRef = useRef(row ? serializeSavePatch(row) : '');
@@ -85,6 +103,13 @@ export function ProductEditorPane({
     lastPersistedSignatureRef.current = row ? serializeSavePatch(row) : '';
     setDraft(row);
   }, [row]);
+
+  // Reset the mobile section tab to the first one whenever a different product
+  // is opened, so each product starts at its media section rather than wherever
+  // the previous edit left off.
+  useEffect(() => {
+    setActiveSection('media');
+  }, [slug]);
 
   const dirty = (() => {
     if (!draft || !row) return false;
@@ -369,17 +394,8 @@ export function ProductEditorPane({
 
   return (
     <section className="flex flex-col flex-1 min-w-0 bg-slate-50">
-      {/* Sticky header — slug + locale + status + actions */}
-      <div className="sticky top-0 z-10 bg-white border-b border-slate-200 px-5 py-3 flex items-center gap-3 flex-wrap">
-        <button
-          type="button"
-          onClick={onBackToList}
-          className="lg:hidden p-1.5 rounded-md text-slate-600 hover:bg-slate-100"
-          title="목록으로"
-        >
-          <ArrowLeft className="size-4" />
-        </button>
-
+      {/* Desktop toolbar — slug + locale + status + actions */}
+      <div className="hidden lg:flex sticky top-0 z-10 bg-white border-b border-slate-200 px-5 py-3 items-center gap-3 flex-wrap">
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 text-xs text-slate-500">
             <Hash className="size-3" />
@@ -390,10 +406,8 @@ export function ProductEditorPane({
           </h1>
         </div>
 
-        {/* Locale switcher */}
         <LocaleSwitcher value={locale} onChange={onLocaleChange} />
 
-        {/* Published toggle */}
         {draft && (
           <button
             type="button"
@@ -416,11 +430,10 @@ export function ProductEditorPane({
           </button>
         )}
 
-        {/* Preview toggle */}
         <button
           type="button"
           onClick={onTogglePreview}
-          className={`hidden lg:inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium rounded-md border transition-colors ${
+          className={`inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium rounded-md border transition-colors ${
             previewOpen
               ? 'bg-blue-50 text-blue-700 border-blue-200'
               : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50'
@@ -430,7 +443,6 @@ export function ProductEditorPane({
           <Sparkles className="size-3.5" /> 미리보기
         </button>
 
-        {/* View on site */}
         {row && (
           <a
             href={`/tour-product/${slug}${locale !== 'en' ? `?locale=${locale}` : ''}`}
@@ -443,7 +455,6 @@ export function ProductEditorPane({
           </a>
         )}
 
-        {/* Save */}
         <button
           type="button"
           onClick={onSave}
@@ -454,17 +465,101 @@ export function ProductEditorPane({
               : 'bg-slate-100 text-slate-400 cursor-not-allowed'
           }`}
         >
-          {saving ? (
-            <Loader2 className="size-3.5 animate-spin" />
-          ) : (
-            <Save className="size-3.5" />
-          )}
+          {saving ? <Loader2 className="size-3.5 animate-spin" /> : <Save className="size-3.5" />}
           {saving ? '저장 중...' : dirty ? '저장' : '저장됨'}
         </button>
       </div>
 
+      {/* Mobile editor chrome — app bar + meta strip + section tabs */}
+      <div className="lg:hidden sticky top-0 z-10 border-b border-slate-200 bg-white/90 backdrop-blur">
+        {/* App bar */}
+        <div className="flex h-14 items-center gap-2 px-3">
+          <button
+            type="button"
+            onClick={onBackToList}
+            className="-ml-1 inline-flex h-9 items-center gap-1 rounded-lg px-2 text-sm font-medium text-slate-600 active:bg-slate-100"
+          >
+            <ArrowLeft className="size-4" />
+            목록
+          </button>
+
+          <div className="min-w-0 flex-1 text-center">
+            <p className="truncate text-sm font-semibold text-slate-900">{row?.title || slug}</p>
+            <p className="truncate font-mono text-[10px] text-slate-400">{slug}</p>
+          </div>
+
+          <button
+            type="button"
+            onClick={onSave}
+            disabled={!dirty || saving}
+            className={`inline-flex h-9 items-center gap-1.5 rounded-lg px-3.5 text-sm font-semibold transition-colors ${
+              dirty && !saving
+                ? 'bg-blue-600 text-white shadow-sm active:bg-blue-700'
+                : saving
+                  ? 'bg-blue-600/70 text-white'
+                  : 'bg-slate-100 text-slate-400'
+            }`}
+          >
+            {saving ? <Loader2 className="size-4 animate-spin" /> : <Save className="size-4" />}
+            {saving ? '저장' : dirty ? '저장' : '완료'}
+          </button>
+        </div>
+
+        {/* Meta strip — locale + publish + live */}
+        <div className="-mx-px flex items-center gap-2 overflow-x-auto px-3 pb-2.5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <LocaleSwitcher value={locale} onChange={onLocaleChange} />
+          {draft && (
+            <button
+              type="button"
+              onClick={() => setDraft({ ...draft, is_published: !draft.is_published })}
+              className={`inline-flex flex-shrink-0 items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium border transition-colors ${
+                draft.is_published
+                  ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
+                  : 'bg-slate-100 text-slate-600 border-slate-200'
+              }`}
+            >
+              {draft.is_published ? <Eye className="size-3.5" /> : <EyeOff className="size-3.5" />}
+              {draft.is_published ? '게시 중' : '비공개'}
+            </button>
+          )}
+          {row && (
+            <a
+              href={`/tour-product/${slug}${locale !== 'en' ? `?locale=${locale}` : ''}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex flex-shrink-0 items-center gap-1.5 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-700"
+            >
+              <ExternalLink className="size-3.5" /> 라이브
+            </a>
+          )}
+        </div>
+
+        {/* Section tabs */}
+        <div className="flex items-center gap-1.5 overflow-x-auto px-3 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          {EDITOR_SECTIONS.map((s) => {
+            const SIcon = s.icon;
+            const active = activeSection === s.id;
+            return (
+              <button
+                key={s.id}
+                type="button"
+                onClick={() => setActiveSection(s.id)}
+                className={`inline-flex flex-shrink-0 items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold transition-colors ${
+                  active
+                    ? 'bg-slate-900 text-white shadow-sm'
+                    : 'bg-slate-100 text-slate-500 active:bg-slate-200'
+                }`}
+              >
+                <SIcon className="size-3.5" />
+                {s.label}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
       {/* Body */}
-      <div className="flex-1 overflow-y-auto px-5 py-5">
+      <div className="flex-1 overflow-y-auto px-4 py-4 lg:px-5 lg:py-5">
         {fallbackLocale && (
           <div className="mb-4 px-3 py-2 rounded-md border border-amber-200 bg-amber-50 text-amber-800 text-xs flex items-center gap-2">
             <AlertTriangle className="size-3.5 flex-shrink-0" />
@@ -492,18 +587,27 @@ export function ProductEditorPane({
         {draft && (
           <div className="space-y-4 max-w-3xl">
             {/* Media Manager (Phase 2-A2) */}
-            <MediaSection state={media} onChange={onMediaChange} />
+            <div className={`${activeSection === 'media' ? 'block' : 'hidden'} lg:block`}>
+              <MediaSection state={media} onChange={onMediaChange} />
+            </div>
 
             {/* Hero text (Phase 2-A3) */}
-            <HeroSection state={hero} onChange={onHeroChange} />
+            <div className={`${activeSection === 'content' ? 'block' : 'hidden'} lg:block`}>
+              <HeroSection state={hero} onChange={onHeroChange} />
+            </div>
 
             {/* Itinerary stops (Phase 2-A3) */}
-            <ItinerarySection stops={itinerary} onChange={onItineraryChange} />
+            <div className={`${activeSection === 'itinerary' ? 'block' : 'hidden'} lg:block`}>
+              <ItinerarySection stops={itinerary} onChange={onItineraryChange} />
+            </div>
 
             {/* FAQ (Phase 2-A3) */}
-            <FAQSection items={faqs} onChange={onFAQChange} />
+            <div className={`${activeSection === 'faq' ? 'block' : 'hidden'} lg:block`}>
+              <FAQSection items={faqs} onChange={onFAQChange} />
+            </div>
 
             {/* Basic info form */}
+            <div className={`${activeSection === 'content' ? 'block' : 'hidden'} space-y-4 lg:block`}>
             <Card title="기본 정보" subtitle="카드/페이지 상단 표시 정보">
               <Field label="제목 (Title)">
                 <input
@@ -521,7 +625,7 @@ export function ProductEditorPane({
                   className="w-full px-2.5 py-1.5 text-sm rounded-md border border-slate-200 focus:border-blue-400 focus:ring-1 focus:ring-blue-200 outline-none resize-y"
                 />
               </Field>
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 <Field label="헤드라인 1">
                   <input
                     type="text"
@@ -539,7 +643,7 @@ export function ProductEditorPane({
                   />
                 </Field>
               </div>
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 <Field label="지역 (Region)">
                   <input
                     type="text"
@@ -568,8 +672,10 @@ export function ProductEditorPane({
                 />
               </Field>
             </Card>
+            </div>
 
             {/* SEO */}
+            <div className={`${activeSection === 'seo' ? 'block' : 'hidden'} lg:block`}>
             <Card title="SEO" subtitle="검색 엔진 / 소셜 카드용 메타 정보">
               <Field
                 label="SEO 제목 (page title)"
@@ -594,7 +700,9 @@ export function ProductEditorPane({
                 />
               </Field>
             </Card>
+            </div>
 
+            <div className="hidden space-y-4 lg:block">
             <ComingSoonCard
               icon={<Sparkles className="size-4" />}
               title="Autosave + Dirty-state 가드 + 키보드 단축키"
@@ -607,6 +715,7 @@ export function ProductEditorPane({
               body="Google Maps 기반 픽업 포인트 추가/편집/삭제. v1의 PickupPointSelector 통합."
               eta="Phase 2-A5"
             />
+            </div>
           </div>
         )}
 

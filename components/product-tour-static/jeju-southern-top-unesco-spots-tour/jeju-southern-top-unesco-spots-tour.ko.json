@@ -52,10 +52,10 @@
   "headlineLine1": "제주 남부 서귀포 시그니처",
   "headlineLine2": "당일 투어",
   "price": {
-    "amountLabel": "",
-    "originalPriceUsd": null,
-    "salePriceUsd": null,
-    "discountPercent": null,
+    "amountLabel": "49",
+    "originalPriceUsd": 69,
+    "salePriceUsd": 49,
+    "discountPercent": 29,
     "currency": "USD",
     "per": "person"
   },
@@ -1155,10 +1155,10 @@
   "sticky_booking_bar": {
     "note": "날짜와 인원을 선택하여 실시간 예약 가능 여부를 확인하고 예약을 완료하세요.",
     "price": {
-      "amountLabel": "",
-      "originalPriceUsd": null,
-      "salePriceUsd": null,
-      "discountPercent": null,
+      "amountLabel": "49",
+      "originalPriceUsd": 69,
+      "salePriceUsd": 49,
+      "discountPercent": 29,
       "currency": "USD",
       "per": "person"
     }
@@ -1247,7 +1247,7 @@
     "profile_version": 7,
     "is_active": true,
     "product_id": "jeju-southern-top-unesco-spots-tour",
-    "product_type": "small_group",
+    "product_type": "bus",
     "route_type": "fixed_route",
     "destination_region": "jeju",
     "region_type": "jeju_south",

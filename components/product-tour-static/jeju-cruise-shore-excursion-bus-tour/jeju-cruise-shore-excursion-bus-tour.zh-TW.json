@@ -47,10 +47,10 @@
   "headlineLine1": "濟州郵輪岸上觀光",
   "headlineLine2": "旅遊巴之旅",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "59",
     "currency": "USD",
     "per": "person",
-    "salePriceUsd": null,
+    "salePriceUsd": 59,
     "originalPriceUsd": null,
     "discountPercent": null
   },
@@ -1769,10 +1769,10 @@
   "sticky_booking_bar": {
     "note": "請選擇郵輪港口、出發日期及人數，以查詢是否有空位並完成預訂。",
     "price": {
-      "amountLabel": "",
+      "amountLabel": "59",
       "currency": "USD",
       "per": "person",
-      "salePriceUsd": null,
+      "salePriceUsd": 59,
       "originalPriceUsd": null,
       "discountPercent": null
     }
@@ -1820,7 +1820,7 @@
     "profile_version": 6,
     "is_active": true,
     "product_id": "jeju-cruise-shore-excursion-bus-tour",
-    "product_type": "small_group_fixed_itinerary",
+    "product_type": "bus",
     "route_type": "cruise_shore_excursion_pair_route_variants",
     "destination_region": "jeju",
     "region_type": "island_full",
