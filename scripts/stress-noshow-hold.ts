@@ -198,7 +198,9 @@ async function phaseA() {
   if (r3.status === 401) ok('cron: missing secret → 401');
   else bad(`cron: missing secret → expected 401, got ${r3.status}`);
 
-  const r4 = await fetch(`${APP_URL}/api/cron/recapture-holds?secret=${encodeURIComponent(CRON_SECRET)}`);
+  const r4 = await fetch(`${APP_URL}/api/cron/recapture-holds`, {
+    headers: { Authorization: `Bearer ${CRON_SECRET}` },
+  });
   if (r4.status === 200) {
     const body = await r4.json();
     if (typeof body.scanned === 'number') ok(`cron: with secret → 200 + summary { scanned: ${body.scanned} }`);
@@ -339,7 +341,9 @@ async function phaseD(siBookingId: string | undefined) {
   await supabase.from('bookings').update({ tour_date: newDate }).eq('id', siBookingId);
   ok(`moved tour_date forward to ${newDate} (within cron window)`);
 
-  const r = await fetch(`${APP_URL}/api/cron/recapture-holds?secret=${encodeURIComponent(CRON_SECRET)}`);
+  const r = await fetch(`${APP_URL}/api/cron/recapture-holds`, {
+    headers: { Authorization: `Bearer ${CRON_SECRET}` },
+  });
   if (r.status !== 200) {
     bad(`cron returned ${r.status}`);
     return;
