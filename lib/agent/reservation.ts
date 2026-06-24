@@ -1,7 +1,8 @@
 /**
  * Best-effort persistence for agent-channel reservation leads.
  *
- * Writes to `public.agent_reservations` (see supabase/pending-db-apply/). The
+ * Writes to `public.agent_reservations` (see
+ * supabase/pending-db-apply/2026-06-24-08-agent-reservations.sql). The
  * table is decoupled from the live bookings pipeline — a row here is just "a
  * traveller is about to pay at hosted checkout", keyed by an idempotency key so
  * a retrying agent gets the same handoff back.

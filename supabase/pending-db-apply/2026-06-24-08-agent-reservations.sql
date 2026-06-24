@@ -1,5 +1,5 @@
 -- ============================================================================
--- AI Agent Channel — agent_reservations (Phase 3)
+-- 2026-06-24-08 — agent_reservations (AI Agent Channel, Phase 3)
 -- ============================================================================
 -- Isolated table for reservation leads created via the agent channel
 -- (/api/agent/v1/book and the MCP create_booking tool).
@@ -12,10 +12,12 @@
 -- Writes are service-role only (the agent API uses the service client). RLS is
 -- enabled with NO anon/auth policies → denied by default to public clients.
 --
--- STATUS: pending — review, then apply via Supabase migration / SQL editor.
+-- Idempotent (CREATE … IF NOT EXISTS) and transactional — safe to re-run.
 -- The agent `book` path persists best-effort and degrades gracefully until
 -- this table exists, so applying it is safe to do at any time.
 -- ============================================================================
+
+begin;
 
 create table if not exists public.agent_reservations (
   id                   uuid primary key default gen_random_uuid(),
@@ -46,3 +48,13 @@ alter table public.agent_reservations enable row level security;
 
 comment on table public.agent_reservations is
   'Reservation leads from the AI agent channel. Decoupled from bookings/inventory; payment happens at hosted checkout. Service-role only.';
+
+commit;
+
+-- ── Verification ────────────────────────────────────────────────────────────
+-- Expect: table present, rowsecurity = true.
+select
+  (to_regclass('public.agent_reservations') is not null) as table_exists,
+  relrowsecurity as rls_enabled
+from pg_class
+where oid = 'public.agent_reservations'::regclass;

@@ -84,9 +84,10 @@ POST /api/agent/v1/book    { quote_token, contact? }   -> { checkout_url }   (hu
 
 ## Phase 3 — Agent-safe reservations + hardening ✅ (shipped 2026-06-23)
 
-- `supabase/pending-db-apply/0001_agent_reservations.sql` — **isolated**
+- `supabase/pending-db-apply/2026-06-24-08-agent-reservations.sql` — **isolated**
   `agent_reservations` table (decoupled from bookings/inventory; service-role
-  only, RLS on). **Not applied** — staged for review per instruction.
+  only, RLS on). **Not applied** — staged in the repo's `pending-db-apply`
+  convention (filename + README manifest row) per instruction.
 - `lib/agent/reservation.ts` — best-effort persistence with idempotency-key
   replay; **degrades gracefully** if the table doesn't exist yet, so the booking
   handoff never breaks.
