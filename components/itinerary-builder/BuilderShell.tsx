@@ -264,8 +264,9 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey, plac
     // Page placement: no longer full-bleed (`-mx-4`) on mobile — the map is
     // inset with the section padding so it reads as a framed card with
     // rounded corners rather than a crude edge-to-edge tile band (user
-    // 2026-06-23). `mb-3` leaves a small gap before the below-map trip card.
-    : "sticky top-16 z-20 mb-3 lg:top-20 lg:z-10 lg:mb-0 lg:min-w-0 lg:flex-1 lg:self-start";
+    // 2026-06-23). `mb-5` leaves clear breathing room before the below-map
+    // trip card (was mb-3 — too tight, user 2026-06-23 #3).
+    : "sticky top-16 z-20 mb-5 lg:top-20 lg:z-10 lg:mb-0 lg:min-w-0 lg:flex-1 lg:self-start";
   // Phase 15 — premium map frame. Replaces the plain `border border-white/80`
   // with a mint glow ring + layered outer shadow + inset white highlight
   // that matches the builder's other floating cards (LivePriceCard,
