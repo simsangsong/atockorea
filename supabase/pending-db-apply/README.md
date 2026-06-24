@@ -11,7 +11,10 @@ live consumer Supabase database (`tour_product_pages`, `match_tours`, `tours`,
 > (the matcher now reads `match_tours`); the recommender was synced separately via
 > `scripts/import-match-v18.mjs --single <slug>` for the slugs whose SQL did not
 > write `match_tours`. Default `tour_product_offers` amounts were reconciled to
-> each tour's new price. Nothing is pending.
+> each tour's new price.
+>
+> **⏳ 2026-06-24 (later) — one new file pending:**
+> `2026-06-24-13-tour-cancellation-policy-backfill.sql` (append-only, idempotent).
 
 ## Why this folder exists
 
@@ -59,6 +62,7 @@ order number for that day, then a short description. Append a manifest row.
 
 | `southwest-hallasan-osulloc-aewol-product.generated.sql` | ✅ applied 2026-06-24 | **Southwest Jeju (Hallasan/O'Sulloc/Aewol/Iho Tewoo)** full refresh, price **US$52**. Upserts `tours`, `tour_product_pages` ×6, default `tour_product_offers` (5200 minor, reconciled post-apply). `tour_matching_profiles` block skipped (table dropped); recommender synced via `import-match-v18 --single southwest-hallasan-osulloc-aewol`. (Was not in the original manifest.) |
 | `2026-06-24-12-chatbot-chat-memory-rolling-session-memory.sql` | ✅ applied 2026-06-24 | **Chatbot Track 3.2:** create **`public.chat_memory`** — one PII-excluded 1-2 sentence rolling memory per identity (logged-in `user_id` / anonymous `session_token`), partial unique indexes, RLS on (service-role only). **Already applied live via MCP** (migration `20260624033518`); idempotent (`create … if not exists`), kept for batch/rebuild completeness. Standalone, no dependency. |
+| `2026-06-24-13-tour-cancellation-policy-backfill.sql` | ⏳ pending | **AI-readability:** add the standard cancellation accordion item to `tour_product_pages.detail_payload` for the **15 tours** whose authored bundle lacked one, across **6 locales** (90 rows). **APPEND-ONLY + idempotent** — appends only when no `cancellation` item exists; never rewrites the rest of `detail_payload` (no full-refresh, no regression). Mirrors the static-bundle backfill committed alongside; feeds the `Offer.cancellationPolicy` JSON-LD. Standalone. |
 
 ## Notes
 
