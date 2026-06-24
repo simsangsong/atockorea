@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { ChevronDown, MapPin, Ship, Car, ShieldAlert, X } from "lucide-react";
+import { ChevronDown, MapPin, Ship, Car, ShieldAlert, X, SlidersHorizontal } from "lucide-react";
 import { useI18n, useTranslations } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import type { RegionSlug } from "@/lib/itinerary-builder/regions";
@@ -30,6 +30,19 @@ interface Props {
    *    not yet pass the prop.
    */
   placement?: "page" | "home";
+  /**
+   * Which parts of the rail to render (user polish 2026-06-23). The single
+   * component owns the desktop bar + the mobile summary trigger + the sheet,
+   * but the page placement now wants the desktop bar ABOVE the map and the
+   * mobile summary chip BELOW the map (so it reads as a prominent "edit your
+   * trip" control rather than a thin strip squeezed above the canvas).
+   *  - "all"    (default): bar + mobile trigger + sheet (home embed keeps this).
+   *  - "bar"    : desktop bar only (mounted above the map).
+   *  - "mobile" : mobile trigger + sheet only (mounted below the map).
+   * Both `bar` and `mobile` instances read the same URL state, so they stay
+   * in sync without shared local state.
+   */
+  slot?: "all" | "bar" | "mobile";
 }
 
 const GUIDE_LANGS: { code: string; label: string }[] = [
@@ -95,7 +108,7 @@ function readPort(sp: URLSearchParams | null): CruisePort {
  *  - cruise:  region + lang + hours (4-12) + ship + date + party + (Jeju port)
  *  - dmz:     lang + date + party (region forced to Seoul, no duration)
  */
-export default function PlannerTopRail({ region, placement = "page" }: Props) {
+export default function PlannerTopRail({ region, placement = "page", slot = "all" }: Props) {
   const t = useTranslations("itineraryBuilder.planner");
   const tIntake = useTranslations("itineraryBuilder.intake");
   const { locale } = useI18n();
@@ -242,11 +255,13 @@ export default function PlannerTopRail({ region, placement = "page" }: Props) {
     return (
       <div
         className={cn(
-          inSheet ? "space-y-4 p-5" : "flex flex-wrap items-end gap-3 px-4 py-3 md:px-6 lg:px-8",
+          inSheet
+            ? "grid grid-cols-2 gap-x-3 gap-y-4 p-5"
+            : "flex flex-wrap items-end gap-3 px-4 py-3 md:px-6 lg:px-8",
         )}
       >
         {/* Track */}
-        <Field label={t("track")} inSheet={inSheet}>
+        <Field label={t("track")} inSheet={inSheet} span="full">
           <div className="flex flex-wrap gap-1.5">
             {TRACK_OPTIONS.map(({ value, Icon }) => {
               const active = track === value;
@@ -258,7 +273,7 @@ export default function PlannerTopRail({ region, placement = "page" }: Props) {
                   className={chipClass(active)}
                   aria-pressed={active}
                 >
-                  <Icon className="h-3.5 w-3.5" aria-hidden />
+                  <Icon className="h-3 w-3" aria-hidden />
                   {tIntake(`track${value.charAt(0).toUpperCase() + value.slice(1)}Label`)}
                 </button>
               );
@@ -268,7 +283,7 @@ export default function PlannerTopRail({ region, placement = "page" }: Props) {
 
         {/* Region (hidden for DMZ — forced to Seoul) */}
         {!isDmz ? (
-          <Field label={t("region")} inSheet={inSheet}>
+          <Field label={t("region")} inSheet={inSheet} span="full">
             <div className="flex flex-wrap gap-1.5">
               {(["busan", "jeju", "seoul"] as RegionSlug[]).map((r) => {
                 const active = region === r;
@@ -280,7 +295,7 @@ export default function PlannerTopRail({ region, placement = "page" }: Props) {
                     className={chipClass(active)}
                     aria-pressed={active}
                   >
-                    <MapPin className="h-3.5 w-3.5" aria-hidden />
+                    <MapPin className="h-3 w-3" aria-hidden />
                     <span className="capitalize">{r}</span>
                   </button>
                 );
@@ -289,9 +304,10 @@ export default function PlannerTopRail({ region, placement = "page" }: Props) {
           </Field>
         ) : null}
 
-        {/* Date (required) */}
+        {/* Date (required) — half-width in the sheet (the calendar opens as an
+            absolute popover, so a narrow trigger column is fine). */}
         <Field label={`${t("date")} *`} inSheet={inSheet}>
-          <div className="min-w-[180px]">
+          <div className={inSheet ? "w-full" : "min-w-[180px]"}>
             <IntakeDateField
               id="planner-date"
               value={date}
@@ -315,13 +331,13 @@ export default function PlannerTopRail({ region, placement = "page" }: Props) {
             inputMode="numeric"
             value={party}
             onChange={(e) => patch({ party: e.target.value })}
-            className={cn(FIELD_INPUT_CLASS, "w-20 tabular-nums")}
+            className={cn(FIELD_INPUT_CLASS, "tabular-nums", inSheet ? "w-full" : "w-20")}
           />
         </Field>
 
         {/* Guide language */}
         <Field label={t("lang")} inSheet={inSheet}>
-          <div className="min-w-[140px]">
+          <div className={inSheet ? "w-full" : "min-w-[140px]"}>
             <SelectDropdown
               id="planner-lang"
               value={lang}
@@ -338,7 +354,7 @@ export default function PlannerTopRail({ region, placement = "page" }: Props) {
             label={isCruise ? t("hours") : t("duration")}
             inSheet={inSheet}
           >
-            <div className="min-w-[100px]">
+            <div className={inSheet ? "w-full" : "min-w-[100px]"}>
               <SelectDropdown
                 id="planner-rail-hours"
                 value={isCruise ? hours : duration}
@@ -354,20 +370,20 @@ export default function PlannerTopRail({ region, placement = "page" }: Props) {
 
         {/* Cruise ship name (optional) */}
         {isCruise ? (
-          <Field label={t("ship")} inSheet={inSheet}>
+          <Field label={t("ship")} inSheet={inSheet} span="full">
             <input
               type="text"
               value={ship}
               onChange={(e) => patch({ ship: e.target.value || null })}
               placeholder="MS Westerdam…"
-              className={cn(FIELD_INPUT_CLASS, "w-44 font-normal")}
+              className={cn(FIELD_INPUT_CLASS, "font-normal", inSheet ? "w-full" : "w-44")}
             />
           </Field>
         ) : null}
 
         {/* Jeju hotel pickup (land tours only) */}
         {isJejuLand ? (
-          <Field label={t("pickup")} inSheet={inSheet}>
+          <Field label={t("pickup")} inSheet={inSheet} span="full">
             <div className="flex flex-col gap-1.5">
               {/* Phase D.2 — search your hotel; the zone is auto-detected. */}
               <HotelZoneAutocomplete
@@ -387,8 +403,8 @@ export default function PlannerTopRail({ region, placement = "page" }: Props) {
 
         {/* Cruise port (Jeju cruise — Gangjeong adds a surcharge) */}
         {isJejuCruise ? (
-          <Field label={t("port")} inSheet={inSheet}>
-            <div className="min-w-[160px]">
+          <Field label={t("port")} inSheet={inSheet} span="full">
+            <div className={inSheet ? "w-full" : "min-w-[160px]"}>
               <SelectDropdown
                 id="planner-port"
                 value={port}
@@ -414,45 +430,67 @@ export default function PlannerTopRail({ region, placement = "page" }: Props) {
   const desktopBarClass = isHome
     ? "hidden rounded-card bg-white/95 shadow-[0_2px_8px_rgba(15,23,42,0.04),0_22px_50px_-20px_rgba(15,23,42,0.20)] ring-1 ring-emerald-100/40 md:block"
     : "sticky top-16 z-30 hidden border-b border-slate-200/80 bg-white/95 backdrop-blur-md md:block";
+  // On the page placement the mobile trigger now lives BELOW the map as a
+  // prominent, tappable "edit your trip" card (user 2026-06-23) — no longer a
+  // thin sticky strip above the canvas. On the home embed it keeps the
+  // existing in-flow rounded card.
   const mobileTriggerWrapClass = isHome
     ? "rounded-card bg-white/95 shadow-[0_2px_8px_rgba(15,23,42,0.04),0_22px_50px_-20px_rgba(15,23,42,0.20)] ring-1 ring-emerald-100/40 md:hidden"
-    : "sticky top-16 z-30 border-b border-slate-200/80 bg-white/95 backdrop-blur-md md:hidden";
+    // Page placement: no extra padding — the wrapper inherits the band's px-4
+    // so the card aligns flush with the map above it. mb-4 spaces it from the
+    // result rail below.
+    : "mb-4 md:hidden";
+
+  const showBar = slot !== "mobile";
+  const showMobile = slot !== "bar";
 
   return (
     <>
       {/* Desktop bar — full expanded controls on md+ */}
-      <div className={desktopBarClass}>
-        {renderForm(false)}
-      </div>
+      {showBar ? <div className={desktopBarClass}>{renderForm(false)}</div> : null}
 
       {/* Mobile trigger — on "home" placement a labeled "Edit trip" button;
-          on legacy "page" placement a compact summary chip. Both tap to
-          open the sheet with the full controls. */}
-      <div className={mobileTriggerWrapClass}>
-        <button
-          type="button"
-          onClick={() => setSheetOpen(true)}
-          className="flex w-full items-center justify-between gap-3 px-4 py-3 text-left"
-          aria-expanded={sheetOpen}
-        >
-          {isHome ? (
-            <span className="flex min-w-0 flex-1 flex-col gap-0.5">
-              <span className="text-eyebrow text-slate-500">{t("editTrip")}</span>
-              <span className="truncate text-caption font-semibold text-slate-800">
-                {summary}
+          on the page placement a prominent below-map "edit your trip" card.
+          Both tap to open the sheet with the full controls. */}
+      {showMobile ? (
+        <div className={mobileTriggerWrapClass}>
+          <button
+            type="button"
+            onClick={() => setSheetOpen(true)}
+            className={
+              isHome
+                ? "flex w-full items-center justify-between gap-3 px-4 py-3 text-left"
+                : "flex w-full items-center justify-between gap-3 rounded-2xl bg-white px-3.5 py-3 text-left shadow-[0_2px_8px_rgba(15,23,42,0.05),0_18px_40px_-24px_rgba(15,23,42,0.26)] ring-1 ring-slate-200/80 transition-transform duration-150 ease-out active:scale-[0.99]"
+            }
+            aria-expanded={sheetOpen}
+          >
+            {isHome ? (
+              <span className="flex min-w-0 flex-1 flex-col gap-0.5">
+                <span className="text-eyebrow text-slate-500">{t("editTrip")}</span>
+                <span className="truncate text-caption font-semibold text-slate-800">
+                  {summary}
+                </span>
               </span>
-            </span>
-          ) : (
-            <span className="min-w-0 flex-1 truncate text-caption font-semibold text-slate-700">
-              {summary}
-            </span>
-          )}
-          <ChevronDown className="h-4 w-4 flex-shrink-0 text-slate-500" aria-hidden />
-        </button>
-      </div>
+            ) : (
+              <span className="flex min-w-0 flex-1 items-center gap-3">
+                <span className="grid h-9 w-9 flex-shrink-0 place-items-center rounded-xl bg-slate-900 text-white">
+                  <SlidersHorizontal className="h-4 w-4" aria-hidden />
+                </span>
+                <span className="flex min-w-0 flex-col">
+                  <span className="text-eyebrow text-slate-500">{t("editTrip")}</span>
+                  <span className="truncate text-caption font-bold text-slate-900">
+                    {summary}
+                  </span>
+                </span>
+              </span>
+            )}
+            <ChevronDown className="h-5 w-5 flex-shrink-0 text-slate-400" aria-hidden />
+          </button>
+        </div>
+      ) : null}
 
       {/* Mobile sheet — full controls */}
-      {sheetOpen ? (
+      {showMobile && sheetOpen ? (
         <div className="fixed inset-0 z-50 md:hidden" role="dialog" aria-modal="true">
           <div
             className="absolute inset-0 bg-slate-900/55 backdrop-blur-sm"
@@ -491,14 +529,24 @@ export default function PlannerTopRail({ region, placement = "page" }: Props) {
 function Field({
   label,
   inSheet,
+  span = "half",
   children,
 }: {
   label: string;
   inSheet: boolean;
+  /** Sheet grid placement — "half" = one column, "full" = both. Ignored on
+   *  the desktop bar (which is a flex-wrap, not a grid). */
+  span?: "half" | "full";
   children: React.ReactNode;
 }) {
   return (
-    <div className={inSheet ? "block" : "flex min-w-0 flex-col gap-1"}>
+    <div
+      className={
+        inSheet
+          ? cn("flex min-w-0 flex-col gap-1.5", span === "full" ? "col-span-2" : "col-span-1")
+          : "flex min-w-0 flex-col gap-1"
+      }
+    >
       <span className="text-micro font-semibold uppercase tracking-wider text-slate-500">
         {label}
       </span>
@@ -509,9 +557,12 @@ function Field({
 
 function chipClass(active: boolean): string {
   return cn(
+    // Compact pill: text-micro + tight padding/icon so the selector reads as
+    // the same compact chip family as the catalog category filter (was
+    // text-caption + h-3.5 icons, which read oversized — user 2026-06-23).
     // whitespace-nowrap: long locale labels (e.g. KR "개인 차량 / 육로 여행")
     // must never break mid-phrase inside the pill — the row wraps instead.
-    "inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border px-2.5 py-1 text-caption font-semibold transition-colors duration-150 ease-out",
+    "inline-flex items-center gap-1 whitespace-nowrap rounded-full border px-2.5 py-1 text-micro font-semibold transition-colors duration-150 ease-out",
     active
       ? "border-slate-900 bg-slate-900 text-white"
       : "border-slate-200 bg-slate-50 text-slate-700 hover:border-slate-300 hover:bg-slate-100",
