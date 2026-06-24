@@ -48,6 +48,8 @@ order number for that day, then a short description. Append a manifest row.
 | `2026-06-24-10-agent-channel-events.sql` | ⏳ pending | **AI Agent Channel (Phase 5):** create **`public.agent_channel_events`** — append-only telemetry for the agent funnel (`quote_issued`, `booking_handoff`, `availability_checked`, `mcp_tool_call`, …). No raw IP stored (bot User-Agent only); RLS enabled (service-role only). Agent endpoints log best-effort and degrade gracefully until applied. Standalone. |
 | `2026-06-24-11-agent-reservations-updated-at.sql` | ⏳ pending | **AI Agent Channel:** BEFORE UPDATE trigger so `agent_reservations.updated_at` refreshes on status changes. Dedicated trigger fn (no global clobber). **Depends on file 08.** |
 
+| `2026-06-24-12-chatbot-chat-memory-rolling-session-memory.sql` | ✅ applied 2026-06-24 | **Chatbot Track 3.2:** create **`public.chat_memory`** — one PII-excluded 1-2 sentence rolling memory per identity (logged-in `user_id` / anonymous `session_token`), partial unique indexes, RLS on (service-role only). **Already applied live via MCP** (migration `20260624033518`); idempotent (`create … if not exists`), kept for batch/rebuild completeness. Standalone, no dependency. |
+
 ## Notes
 
 - `match_tours` is the source the matcher reads (`lib/tour-match-v2/fetch-tours.ts`).
