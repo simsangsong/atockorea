@@ -121,18 +121,18 @@ POST /api/agent/v1/book    { quote_token, contact? }   -> { checkout_url }   (hu
   `available | sold_out | unknown`; never holds inventory or charges.
 - `app/api/agent/v1/tours/[slug]/availability/route.ts` — `GET …?date=` + the
   MCP **`check_availability`** tool.
-- `lib/agent/events.ts` + `supabase/pending-db-apply/2026-06-24-09-agent-channel-events.sql`
+- `lib/agent/events.ts` + `supabase/pending-db-apply/2026-06-24-10-agent-channel-events.sql`
   — best-effort telemetry (`quote_issued`, `booking_handoff`,
   `availability_checked`, `mcp_tool_call`). Degrades gracefully until applied.
   No raw IP stored.
-- `supabase/pending-db-apply/2026-06-24-10-agent-reservations-updated-at.sql` —
+- `supabase/pending-db-apply/2026-06-24-11-agent-reservations-updated-at.sql` —
   `updated_at` trigger for the reservations table.
 - Surfaced in OpenAPI, llms.txt, `/.well-known/agent.json`, `/for-agents`.
 
 ### Staged SQL awaiting a connected session (apply in filename order)
 - `2026-06-24-08-agent-reservations.sql`
-- `2026-06-24-09-agent-channel-events.sql`
-- `2026-06-24-10-agent-reservations-updated-at.sql` (after 08)
+- `2026-06-24-10-agent-channel-events.sql`
+- `2026-06-24-11-agent-reservations-updated-at.sql` (after 08)
 
 ## Still open (future)
 

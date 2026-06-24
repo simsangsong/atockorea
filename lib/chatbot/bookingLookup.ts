@@ -188,6 +188,53 @@ export async function verifyAndFetchBooking(
 }
 
 /**
+ * Track 3 — find a logged-in user's most recent booking by user_id or by the
+ * email on their account (covers guest bookings made with that email), WITHOUT
+ * asking for a reference. Same whitelist as verifyAndFetchBooking, so nothing
+ * sensitive leaks. Returns the most recent match, or null.
+ */
+export async function findBookingForUser(
+  sb: SupabaseClient,
+  user: { id?: string | null; email?: string | null },
+): Promise<SafeBookingView | null> {
+  const email = user.email && EMAIL_RE.test(normalizeEmail(user.email)) ? normalizeEmail(user.email) : null;
+  const userId = user.id ?? null;
+  if (!userId && !email) return null;
+
+  // Prefer the email match (most bookings are guest rows keyed by email), then
+  // fall back to the account user_id. `.ilike` with no wildcards = case-insensitive exact.
+  let row: Record<string, unknown> | null = null;
+  if (email) {
+    const { data } = await sb
+      .from("bookings")
+      .select(SAFE_BOOKING_COLUMNS)
+      .ilike("contact_email", email)
+      .order("created_at", { ascending: false })
+      .limit(1)
+      .maybeSingle();
+    row = (data as Record<string, unknown> | null) ?? null;
+  }
+  if (!row && userId) {
+    const { data } = await sb
+      .from("bookings")
+      .select(SAFE_BOOKING_COLUMNS)
+      .eq("user_id", userId)
+      .order("created_at", { ascending: false })
+      .limit(1)
+      .maybeSingle();
+    row = (data as Record<string, unknown> | null) ?? null;
+  }
+  if (!row) return null;
+
+  let tourName: string | null = null;
+  if (typeof row.tour_id === "string") {
+    const { data: tour } = await sb.from("tours").select("title").eq("id", row.tour_id).maybeSingle();
+    tourName = (tour as { title?: string } | null)?.title ?? null;
+  }
+  return mapBookingRowToSafeView(row, tourName);
+}
+
+/**
  * Render the verified booking as a labelled fact block for the model. The model
  * phrases the answer in the user's language; these facts constrain it. English
  * labels are fine — the model translates the surrounding prose.

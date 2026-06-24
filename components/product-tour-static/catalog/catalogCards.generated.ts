@@ -569,8 +569,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
     "jeju-southern-top-unesco-spots-tour": {
       "catalog_card": {
         "slug": "jeju-southern-top-unesco-spots-tour",
-        "title": "Jeju South UNESCO Day Tour",
-        "subtitle": "South Jeju UNESCO loop — Hallasan trail, waterfalls, Jusangjeolli columnar cliff.",
+        "title": "Jeju Southern (Seogwipo) Signature Day Tour",
+        "subtitle": "South Jeju Seogwipo coastal loop — Jeongbang Falls, Oedolgae Olle Trail, Yakcheonsa Temple, Hallasan.",
         "region": "Southern Jeju",
         "duration": "9 hours",
         "stopsCount": 8,
@@ -580,14 +580,14 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Small group",
           "Jeju",
           "South Jeju",
-          "UNESCO",
+          "Seogwipo",
           "Value priced",
           "No shopping"
         ],
-        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "priceLabel": "From US$59 per person (was $69, 14% off)",
-        "shortCardDescription": "A small-group day tour through southern Jeju's signature stops — the Eoseungsaengak Trail along Hallasan (UNESCO biosphere), Camellia Hill garden, the three-tier Cheonjeyeon Waterfall, the hexagonal Jusangjeolli Cliff, and the O'sulloc Tea Museum. Four pickup points across Jeju City and the airport, certified English/Chinese-speaking guide, all admissions included, no shopping pressure."
+        "heroImage": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+        "thumbnail": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+        "priceLabel": "",
+        "shortCardDescription": "A small-group day tour through southern Jeju's signature Seogwipo stops — Jeongbang Falls, Asia's only waterfall that drops directly into the sea, the Oedolgae rock pinnacle with a coastal walk on Olle Route 7, East Asia's largest temple Yakcheonsa, the O'sulloc Tea Museum, and the Hallasan Eoseungsaengak Trail. Four pickup points across Jeju City and the airport, certified English/Chinese-speaking guide, free admission at almost every stop except Jeongbang Falls, no shopping pressure."
       },
       "price": {
         "amountLabel": "59"
@@ -905,24 +905,24 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
     "southwest-hallasan-osulloc-aewol": {
       "catalog_card": {
         "slug": "southwest-hallasan-osulloc-aewol",
-        "title": "Jeju Southwest: Hallasan, O'Sulloc & Aewol",
-        "subtitle": "A short Hallasan walk, volcanic cliffs, a waterfall trail, tea fields, and a relaxed Aewol finish.",
+        "title": "Southwest Jeju: Hallasan, O'Sulloc, Aewol & Iho Tewoo",
+        "subtitle": "The 1100 Highland wetland boardwalk, volcanic cliffs, a waterfall trail, tea fields, and an Aewol–Iho Tewoo sunset finish",
         "region": "Jeju Southwest",
-        "duration": "8 hours",
-        "stopsCount": 6,
+        "duration": "9 hours",
+        "stopsCount": 7,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
           "Great for First-Time Jeju Visitors",
           "Jeju Southwest"
         ],
-        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "priceLabel": "From US$59 per person (was $69, 14% off)",
-        "shortCardDescription": "A well-balanced Jeju southwest route linking a short Hallasan walk, volcanic coastline, Cheonjeyeon Waterfall, O’Sulloc tea fields, and Aewol Cafe Street."
+        "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "priceLabel": "US$52 / person",
+        "shortCardDescription": "A well-balanced Jeju southwest day route linking the Hallasan 1100 Highland wetland, volcanic coastline, Cheonjeyeon Waterfall, O'Sulloc tea fields, Aewol Cafe Street, and the Iho Tewoo sunset."
       },
       "price": {
-        "amountLabel": "59"
+        "amountLabel": "52"
       }
     }
   },
@@ -1431,8 +1431,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
     "jeju-southern-top-unesco-spots-tour": {
       "catalog_card": {
         "slug": "jeju-southern-top-unesco-spots-tour",
-        "title": "제주 남부 유네스코 당일 투어",
-        "subtitle": "제주 남부 유네스코 순환 코스 — 한라산 트레일, 폭포, 주상절리 절벽.",
+        "title": "제주 남부 서귀포 시그니처 당일 투어",
+        "subtitle": "제주 남부 서귀포 해안 코스 — 정방폭포, 외돌개 올레길, 약천사, 한라산.",
         "region": "제주 남부",
         "duration": "9시간",
         "stopsCount": 8,
@@ -1442,14 +1442,14 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "소그룹",
           "제주",
           "제주 남부",
-          "UNESCO",
+          "서귀포",
           "합리적인 가격",
           "쇼핑 없음"
         ],
-        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+        "heroImage": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+        "thumbnail": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
         "priceLabel": "",
-        "shortCardDescription": "제주 남부의 대표 명소를 소그룹으로 둘러보는 당일 투어 — 한라산 어승생악 트레일 (유네스코 생물권보전지역), 카멜리아힐 가든, 3단 폭포 천제연, 육각형 주상절리, 그리고 오설록 티 뮤지엄. 제주시 전역 및 공항 포함 총 4곳의 픽업 포인트 운영, 공인 영어·중국어 가이드 동반, 입장료 전체 포함, 쇼핑 강요 없음. 648개의 리뷰에서 4.9/5를 기록한, 제주 입문 투어 중 가장 많은 리뷰를 보유한 투어입니다."
+        "shortCardDescription": "제주 남부 서귀포의 대표 명소를 소그룹으로 둘러보는 당일 투어 — 아시아에서 유일하게 바다로 직접 떨어지는 정방폭포, 외돌개 기암과 올레 7코스 해안 산책, 동아시아 최대 사찰 약천사, 오설록 티 뮤지엄, 그리고 한라산 어승생악 탐방로. 제주시 전역 및 공항 포함 4곳의 픽업 포인트, 공인 영어·중국어 가이드 동반, 정방폭포 외 거의 전 코스 무료 입장, 쇼핑 강요 없음."
       },
       "price": {
         "amountLabel": ""
@@ -1767,24 +1767,24 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
     "southwest-hallasan-osulloc-aewol": {
       "catalog_card": {
         "slug": "southwest-hallasan-osulloc-aewol",
-        "title": "제주 서남부: 한라산·오설록·애월",
-        "subtitle": "짧은 한라산 트레킹, 화산 절벽, 폭포 트레일, 차밭, 그리고 여유로운 애월 마무리",
+        "title": "제주 서남부: 한라산·오설록·애월·이호테우",
+        "subtitle": "1100고지 습지 데크길, 화산 절벽, 폭포 트레일, 차밭, 그리고 애월·이호테우 일몰 마무리",
         "region": "제주 서남부",
-        "duration": "8시간",
-        "stopsCount": 6,
+        "duration": "9시간",
+        "stopsCount": 7,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
           "제주 첫 방문자에게 적합",
           "제주 서남부"
         ],
-        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "priceLabel": "1인 US$59 (정가 $69, 14% 할인)",
-        "shortCardDescription": "짧은 한라산 트레킹, 화산 해안선, 천제연 폭포, 오설록 차밭, 애월 카페거리를 연결하는 균형 잡힌 제주 서남부 코스"
+        "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "priceLabel": "1인 US$52",
+        "shortCardDescription": "한라산 1100고지 습지, 화산 해안선, 천제연 폭포, 오설록 차밭, 애월 카페거리, 이호테우 일몰을 잇는 균형 잡힌 제주 서남부 하루 코스."
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "52"
       }
     }
   },
@@ -2293,8 +2293,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
     "jeju-southern-top-unesco-spots-tour": {
       "catalog_card": {
         "slug": "jeju-southern-top-unesco-spots-tour",
-        "title": "济州南部联合国教科文组织一日游",
-        "subtitle": "济州南部联合国教科文组织环线——汉拿山步道、瀑布、柱状节理带。",
+        "title": "济州南部西归浦招牌一日游",
+        "subtitle": "济州南部西归浦海岸线——正房瀑布、外突岩偶来路线、药泉寺、汉拿山。",
         "region": "济州南部",
         "duration": "9小时",
         "stopsCount": 8,
@@ -2304,14 +2304,14 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "小团出行",
           "济州",
           "济州南部",
-          "UNESCO",
+          "西归浦",
           "价格实惠",
           "无购物"
         ],
-        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+        "heroImage": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+        "thumbnail": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
         "priceLabel": "",
-        "shortCardDescription": "畅游济州南部标志性景点的小团一日游——途经汉拿山御乘生岳步道（联合国教科文组织生物圈保护区）、山茶花之丘花园、三层天帝渊瀑布、六边形柱状节理带以及雪绿茶博物馆。提供济州市区及机场四处上车地点，配备持证英语/中文导游，含全部景点门票，无购物压力。济州入门级游览中评价最多的产品，648条评价综合评分高达4.9/5。"
+        "shortCardDescription": "畅游济州南部西归浦标志性景点的小团一日游——亚洲唯一直落入海的正房瀑布、外突岩奇岩与偶来7号路线海岸漫步、东亚最大寺院药泉寺、雪绿茶博物馆，以及汉拿山御乘生岳步道。提供济州市区及机场四处上车地点，配备持证英语/中文导游，除正房瀑布外几乎全程免费入场，无购物压力。"
       },
       "price": {
         "amountLabel": ""
@@ -2629,24 +2629,24 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
     "southwest-hallasan-osulloc-aewol": {
       "catalog_card": {
         "slug": "southwest-hallasan-osulloc-aewol",
-        "title": "济州西南：汉拿山·Osulloc·涯月",
-        "subtitle": "短途汉拿山徒步、火山悬崖、瀑布小径、茶田，以悠闲的涯月之旅收尾。",
+        "title": "济州西南：汉拿山·雪绿茶·涯月·梨湖泰乌",
+        "subtitle": "1100高地湿地栈道、火山悬崖、瀑布小径、茶园，以及涯月·梨湖泰乌日落收尾",
         "region": "济州岛西南部",
-        "duration": "8小时",
-        "stopsCount": 6,
+        "duration": "9小时",
+        "stopsCount": 7,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
-          "非常适合初次游览济州岛的旅客",
-          "济州岛西南部"
+          "适合初次造访济州的旅客",
+          "济州西南部"
         ],
-        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "priceLabel": "每人 US$59（原价$69，14% 优惠）",
-        "shortCardDescription": "一条均衡的济州岛西南部路线，串联短途汉拿山徒步、火山海岸线、天帝渊瀑布、雪绿茶茶园及涯月咖啡街。"
+        "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "priceLabel": "每人 US$52",
+        "shortCardDescription": "一条均衡的济州西南一日路线，串联汉拿山1100高地湿地、火山海岸线、天帝渊瀑布、雪绿茶茶园、涯月咖啡街与梨湖泰乌日落。"
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "52"
       }
     }
   },
@@ -3155,8 +3155,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
     "jeju-southern-top-unesco-spots-tour": {
       "catalog_card": {
         "slug": "jeju-southern-top-unesco-spots-tour",
-        "title": "濟州南部UNESCO一日遊",
-        "subtitle": "濟州南部UNESCO環線——漢拏山步道、瀑布、柱狀節理帶。",
+        "title": "濟州南部西歸浦招牌一日遊",
+        "subtitle": "濟州南部西歸浦海岸路線——正房瀑布、外突岩偶來步道、藥泉寺、漢拏山。",
         "region": "濟州南部",
         "duration": "9小時",
         "stopsCount": 8,
@@ -3166,14 +3166,14 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "小團出發",
           "濟州",
           "濟州南部",
-          "UNESCO",
+          "西歸浦",
           "價格實惠",
           "無購物"
         ],
-        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+        "heroImage": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+        "thumbnail": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
         "priceLabel": "",
-        "shortCardDescription": "小團一日遊，深度遊覽濟州南部經典景點——漢拏山御乘生岳步道（UNESCO生物圈保護區）、山茶花丘花園、三層天帝淵瀑布、六角柱狀節理帶，以及雪綠茶博物館。濟州市及機場設有四個接送地點，持證英語／中文導遊全程陪同，含全部門票，絕無購物壓力。濟州入門級行程中評價最多，"
+        "shortCardDescription": "小團一日遊，深度遊覽濟州南部西歸浦的經典景點——亞洲唯一直落入海的正房瀑布、外突岩奇岩與偶來7號路線海岸漫步、東亞最大寺院藥泉寺、雪綠茶博物館（Osulloc），以及漢拏山御乘生岳步道。濟州市全區及機場設有四個接送地點，持證英語・中文導遊全程陪同，除正房瀑布外幾乎全程免費入場，絕無購物壓力。"
       },
       "price": {
         "amountLabel": ""
@@ -3491,24 +3491,24 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
     "southwest-hallasan-osulloc-aewol": {
       "catalog_card": {
         "slug": "southwest-hallasan-osulloc-aewol",
-        "title": "濟州西南：漢拿山·Osulloc·涯月",
-        "subtitle": "短程漢拿山健行、火山懸崖、瀑布步道、茶園，以悠閒的涯月作為完美收尾。",
+        "title": "濟州西南部：漢拿山·O'Sulloc·涯月·梨湖泰烏",
+        "subtitle": "1100高地濕地棧道、火山懸崖、瀑布步道、茶園，以涯月與梨湖泰烏日落作為收尾",
         "region": "濟州西南部",
-        "duration": "8小時",
-        "stopsCount": 6,
+        "duration": "9小時",
+        "stopsCount": 7,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
-          "非常適合初次造訪濟州的旅客",
+          "適合初次造訪濟州的旅客",
           "濟州西南部"
         ],
-        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "priceLabel": "每人 US$59（原價$69，14% 優惠）",
-        "shortCardDescription": "行程均衡的濟州西南路線，串聯短程漢拿山健行、火山海岸線、天帝淵瀑布、雪綠茶園與涯月咖啡街。"
+        "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "priceLabel": "每人 US$52",
+        "shortCardDescription": "串聯漢拿山1100高地濕地、火山海岸線、天帝淵瀑布、O'Sulloc茶園、涯月咖啡街與梨湖泰烏日落的均衡濟州西南部一日行程。"
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "52"
       }
     }
   },
@@ -4014,8 +4014,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
     "jeju-southern-top-unesco-spots-tour": {
       "catalog_card": {
         "slug": "jeju-southern-top-unesco-spots-tour",
-        "title": "Excursión de un día UNESCO sur de Jeju",
-        "subtitle": "Circuito UNESCO sur de Jeju — Sendero Hallasan, cascadas, Acantilado columnar Jusangjeolli.",
+        "title": "Excursión de un día emblemática por el sur de Jeju (Seogwipo)",
+        "subtitle": "Circuito costero del sur de Jeju (Seogwipo) — Cascada Jeongbang, Sendero Olle de Oedolgae, Templo Yakcheonsa, Hallasan.",
         "region": "Sur de Jeju",
         "duration": "9 horas",
         "stopsCount": 8,
@@ -4025,14 +4025,14 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Grupo reducido",
           "Jeju",
           "Sur de Jeju",
-          "UNESCO",
+          "Seogwipo",
           "Precio accesible",
           "Sin compras"
         ],
-        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+        "heroImage": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+        "thumbnail": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
         "priceLabel": "",
-        "shortCardDescription": "Una excursión de un día en grupo reducido por los puntos emblemáticos del sur de Jeju: el Sendero Eoseungsaengak en Hallasan (biosfera UNESCO), el jardín Camellia Hill, la Cascada Cheonjeyeon de tres niveles, el Acantilado hexagonal Jusangjeolli y el Museo del Té O'sulloc. Cuatro puntos de recogida en Jeju City y el aeropuerto, guía certificado en inglés y chino, todas las entradas incluidas, sin presión de compras. El tour de Jeju de nivel inicial con más reseñas: 4,9/5 en 648 valoraciones."
+        "shortCardDescription": "Una excursión de un día en grupo reducido por los principales puntos emblemáticos del sur de Jeju (Seogwipo): la Cascada Jeongbang, la única de Asia que cae directamente al mar, la roca Oedolgae y el paseo costero del Sendero Olle Ruta 7, el Templo Yakcheonsa (el mayor de Asia Oriental), el Museo del Té Osulloc y el Sendero Eoseungsaengak del Hallasan. Cuatro puntos de recogida en toda la Ciudad de Jeju y el aeropuerto, guía certificado en inglés y chino, entrada gratuita en casi todas las paradas salvo la Cascada Jeongbang, sin presión de compras."
       },
       "price": {
         "amountLabel": ""
@@ -4350,24 +4350,24 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
     "southwest-hallasan-osulloc-aewol": {
       "catalog_card": {
         "slug": "southwest-hallasan-osulloc-aewol",
-        "title": "Jeju Suroeste: Hallasan y Aewol",
-        "subtitle": "Un corto paseo por Hallasan, acantilados volcánicos, un sendero hasta una cascada, campos de té y un relajado final en Aewol.",
+        "title": "Suroeste de Jeju: Hallasan, O'Sulloc, Aewol e Iho Tewoo",
+        "subtitle": "Pasarela del humedal de las Tierras Altas 1100, acantilados volcánicos, sendero a la cascada, campos de té y un final al atardecer en Aewol e Iho Tewoo",
         "region": "Suroeste de Jeju",
-        "duration": "8 horas",
-        "stopsCount": 6,
+        "duration": "9 horas",
+        "stopsCount": 7,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
           "Ideal para visitantes de Jeju por primera vez",
           "Suroeste de Jeju"
         ],
-        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "priceLabel": "Desde US$59 por persona (antes $69, 14% descuento)",
-        "shortCardDescription": "Una ruta equilibrada por el suroeste de Jeju que combina un corto paseo por Hallasan, la costa volcánica, la Cascada Cheonjeyeon, los campos de té O'Sulloc y la Calle de Cafeterías de Aewol."
+        "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "priceLabel": "US$52 / persona",
+        "shortCardDescription": "Una ruta equilibrada de un día por el suroeste de Jeju que enlaza el humedal de las Tierras Altas 1100 de Hallasan, la costa volcánica, la Cascada Cheonjeyeon, los campos de té O'Sulloc, la calle de cafeterías de Aewol y el atardecer en Iho Tewoo."
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "52"
       }
     }
   },
@@ -4874,8 +4874,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
     "jeju-southern-top-unesco-spots-tour": {
       "catalog_card": {
         "slug": "jeju-southern-top-unesco-spots-tour",
-        "title": "済州南部ユネスコ日帰りツアー",
-        "subtitle": "済州南部ユネスコ周遊 — 漢拏山登山道、瀑布、柱状節理帯。",
+        "title": "済州南部ソギポ シグネチャー日帰りツアー",
+        "subtitle": "済州南部ソギポ海岸コース — 正房瀑布、外突き岩のオルレ道、薬泉寺、漢拏山。",
         "region": "済州南部",
         "duration": "9時間",
         "stopsCount": 8,
@@ -4885,14 +4885,14 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "少人数グループ",
           "済州",
           "済州南部",
-          "UNESCO",
+          "ソギポ",
           "お手頃価格",
           "買い物なし"
         ],
-        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+        "heroImage": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+        "thumbnail": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
         "priceLabel": "",
-        "shortCardDescription": "済州南部の定番スポットを巡る少人数日帰りツアー。漢拏山（ユネスコ生物圏保護区）のオソングセンアク登山道、カメリアヒルガーデン、三段からなる天帝淵瀑布、六角形の柱状節理帯、そしてオスルロック緑茶博物館を訪れます。済州市内と空港の4か所で送迎可能。英語・中国語認定ガイド付き、全入場料込み、買い物の押し売りなし。648件のレビューで4.9/5という、最もレビュー数の多い入門レベルの済州ツアーです。"
+        "shortCardDescription": "済州南部ソギポの定番スポットを少人数で巡る日帰りツアー — アジアで唯一海へ直接落ちる正房瀑布、外突き岩の奇岩とオルレ7コースの海岸散策、東アジア最大の寺院・薬泉寺、オソルロックティーミュージアム、そして漢拏山御乗生岳の登山道。済州市内全域と空港を含む4か所のピックアップポイント、英語・中国語の認定ガイド同行、正房瀑布以外はほぼ全コース入場無料、買い物の押し売りなし。"
       },
       "price": {
         "amountLabel": ""
@@ -5210,24 +5210,24 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
     "southwest-hallasan-osulloc-aewol": {
       "catalog_card": {
         "slug": "southwest-hallasan-osulloc-aewol",
-        "title": "済州南西部：漢拏山・O'sulloc・涯月",
-        "subtitle": "漢拏山の軽ハイキング、火山性断崖、滝のトレイル、茶畑、そしてのんびりとした涯月でのフィナーレ。",
+        "title": "済州島南西部：漢拏山・オソルロク・愛月・梨湖テウ",
+        "subtitle": "1100高地湿地のデッキ歩道、火山性断崖、滝のトレイル、茶畑、そして愛月・梨湖テウの夕日でのフィナーレ",
         "region": "済州島南西部",
-        "duration": "8時間",
-        "stopsCount": 6,
+        "duration": "9時間",
+        "stopsCount": 7,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
           "済州島初訪問者に最適",
           "済州島南西部"
         ],
-        "heroImage": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "thumbnail": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "priceLabel": "1名様 US$59（定価$69、14%オフ）",
-        "shortCardDescription": "漢拏山の軽ハイキング、火山性海岸線、天帝淵瀑布、オスルロクの茶畑、涯月カフェストリートをつなぐ、バランスの取れた済州島南西部ルート。"
+        "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+        "priceLabel": "1名様 US$52",
+        "shortCardDescription": "漢拏山1100高地の湿地、火山性海岸線、天帝淵滝、オソルロクの茶畑、愛月カフェ通り、梨湖テウの夕日をつなぐ、バランスの取れた済州島南西部の1日コース。"
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "52"
       }
     }
   }

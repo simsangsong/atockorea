@@ -2,7 +2,7 @@
  * Best-effort telemetry for the agent channel.
  *
  * Writes to `public.agent_channel_events` (see
- * supabase/pending-db-apply/2026-06-24-09-agent-channel-events.sql) so we can
+ * supabase/pending-db-apply/2026-06-24-10-agent-channel-events.sql) so we can
  * measure who discovers us and how the quote → booking funnel performs.
  *
  * Never throws and never blocks the caller's result: if the table is absent

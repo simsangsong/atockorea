@@ -4,6 +4,7 @@ import {
   hasBothCredentials,
   isBookingWriteRequest,
   verifyAndFetchBooking,
+  findBookingForUser,
   mapBookingRowToSafeView,
   buildVerifiedBookingContext,
 } from "@/lib/chatbot/bookingLookup";
@@ -157,6 +158,86 @@ describe("verifyAndFetchBooking", () => {
       },
     } as unknown as SupabaseClient;
     const view = await verifyAndFetchBooking(sb, { reference: "NOT-A-REF", email: EMAIL });
+    expect(view).toBeNull();
+  });
+});
+
+// Mock for findBookingForUser: records which filter column was used and returns
+// the row only when the filter value matches. Supports .ilike + .eq → .order →
+// .limit → .maybeSingle.
+function mockSbForUser(
+  row: Record<string, unknown> | null,
+  match: { emailValue?: string; userIdValue?: string },
+  spy?: { columns: string[] },
+): SupabaseClient {
+  const chain = (col: string, val: string) => {
+    spy?.columns.push(col);
+    const hit =
+      (col === "contact_email" && val === match.emailValue) ||
+      (col === "user_id" && val === match.userIdValue);
+    return {
+      order: () => ({
+        limit: () => ({
+          maybeSingle: async () => ({ data: hit ? row : null, error: null }),
+        }),
+      }),
+    };
+  };
+  return {
+    from(table: string) {
+      if (table === "bookings") {
+        return {
+          select: () => ({
+            ilike: (c: string, v: string) => chain(c, v),
+            eq: (c: string, v: string) => chain(c, v),
+          }),
+        };
+      }
+      if (table === "tours") {
+        return {
+          select: () => ({
+            eq: () => ({ maybeSingle: async () => ({ data: { title: "Jeju Tour" }, error: null }) }),
+          }),
+        };
+      }
+      throw new Error(`unexpected table ${table}`);
+    },
+  } as unknown as SupabaseClient;
+}
+
+describe("findBookingForUser", () => {
+  it("finds the booking by account email (case-insensitive exact)", async () => {
+    const view = await findBookingForUser(mockSbForUser(bookingRow, { emailValue: EMAIL }), {
+      id: "user-1",
+      email: "Traveler@Example.com",
+    });
+    expect(view).not.toBeNull();
+    expect(view!.status).toBe("confirmed");
+  });
+
+  it("falls back to user_id when no email match", async () => {
+    const spy = { columns: [] as string[] };
+    const view = await findBookingForUser(
+      mockSbForUser(bookingRow, { userIdValue: "user-1" }, spy),
+      { id: "user-1", email: "nomatch@example.com" },
+    );
+    expect(view).not.toBeNull();
+    // Tried email first, then user_id.
+    expect(spy.columns).toEqual(["contact_email", "user_id"]);
+  });
+
+  it("returns null when neither id nor a valid email is provided", async () => {
+    const sb = {
+      from() {
+        throw new Error("should not query");
+      },
+    } as unknown as SupabaseClient;
+    expect(await findBookingForUser(sb, { id: null, email: null })).toBeNull();
+    expect(await findBookingForUser(sb, { id: null, email: "not-an-email" })).toBeNull();
+  });
+
+  it("returns null when the user has no bookings", async () => {
+    const view = await findBookingForUser(mockSbForUser(null, {}), { id: "user-x", email: EMAIL });
     expect(view).toBeNull();
   });
 });

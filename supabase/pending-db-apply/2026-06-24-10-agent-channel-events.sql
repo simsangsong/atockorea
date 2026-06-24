@@ -1,5 +1,5 @@
 -- ============================================================================
--- 2026-06-24-09 — agent_channel_events (AI Agent Channel, Phase 5)
+-- 2026-06-24-10 — agent_channel_events (AI Agent Channel, Phase 5)
 -- ============================================================================
 -- Observability for the AI agent channel: which assistants discover us, which
 -- tours they look at, and how the quote → booking-handoff funnel performs. This

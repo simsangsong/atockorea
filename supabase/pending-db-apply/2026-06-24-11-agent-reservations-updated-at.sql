@@ -1,5 +1,5 @@
 -- ============================================================================
--- 2026-06-24-10 — agent_reservations.updated_at trigger (AI Agent Channel)
+-- 2026-06-24-11 — agent_reservations.updated_at trigger (AI Agent Channel)
 -- ============================================================================
 -- The agent_reservations table (file 08) has an `updated_at` column that is set
 -- on insert but never refreshed. This adds a BEFORE UPDATE trigger so any later
