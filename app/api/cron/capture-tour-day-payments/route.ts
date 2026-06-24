@@ -25,9 +25,11 @@ const getStripe = () => {
 function isAuthorized(req: NextRequest): boolean {
   const expected = process.env.CRON_SECRET;
   if (!expected) return false;
+  // Only the Authorization header is accepted — no `?secret=` query fallback
+  // (W-3: query strings leak via logs/Referer and would let anyone trigger
+  // off-session charges). Vercel Cron sets `Authorization: Bearer ${CRON_SECRET}`.
   const header = req.headers.get('authorization') ?? '';
-  if (header === `Bearer ${expected}`) return true;
-  return req.nextUrl.searchParams.get('secret') === expected;
+  return header === `Bearer ${expected}`;
 }
 
 function nowInKst(): Date {

@@ -20,8 +20,9 @@ import { createServerClient } from '@/lib/supabase';
  * is flagged `payment_intent_status='failed'`. Future iterations should
  * email the customer with a re-confirmation link.
  *
- * Auth: Vercel Cron sets `Authorization: Bearer ${CRON_SECRET}`. We accept
- * that or a shared `?secret=` query for one-off manual triggers.
+ * Auth: Vercel Cron sets `Authorization: Bearer ${CRON_SECRET}`. Only that
+ * header is accepted — no `?secret=` query fallback (W-3: query strings leak via
+ * logs/Referer and would let anyone trigger off-session charges).
  */
 
 const REAUTH_WINDOW_DAYS = 6; // Run when tour is ≤ 6 days away (one buffer day below Stripe's 7-day cap)
@@ -38,9 +39,7 @@ function isAuthorized(req: NextRequest): boolean {
   const expected = process.env.CRON_SECRET;
   if (!expected) return false;
   const header = req.headers.get('authorization') ?? '';
-  if (header === `Bearer ${expected}`) return true;
-  const querySecret = req.nextUrl.searchParams.get('secret');
-  return querySecret === expected;
+  return header === `Bearer ${expected}`;
 }
 
 function ymdUtc(d: Date): string {
