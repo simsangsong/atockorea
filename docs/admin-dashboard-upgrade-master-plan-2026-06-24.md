@@ -620,3 +620,42 @@ CREATE UNIQUE INDEX IF NOT EXISTS idx_product_funnel_daily_unique ON public.anal
 1. 순서: (a) quote_drafts/attribution ALTER/audit 무관 additive → 언제든. (b) `anonymize_old_analytics`·`analytics_health_snapshot` RPC 신설은 cron 의존이라 **우선**. (c) product-funnel matview는 slug 이벤트 표준화 배포 후 데이터 쌓이면 의미.
 2. 백필: 과거 bookings 귀속(utm/anonymous_id)은 **소급 불가**(당시 미수집) — 신규 건부터. quote_drafts도 신규부터.
 3. 오픈: `CONVERSION_EVENT_NAMES`에 builder 이벤트 추가 여부; unified_inquiries 대량 시 matview 전환 임계; product_impression 노출 정의(viewport 진입 기준).
+
+---
+
+# §L. 세션 인수인계 (다음 세션이 100% 이어받기 위한 단일 요약)
+
+## L-0. 한 줄 상태
+어드민 대시보드 전면 개편 **플랜 수립·검증 단계**. **코드는 아직 한 줄도 안 고침**(사용자 지시: 진단·플랜만). 산출물 = 이 문서 1개. 브랜치 `claude/admin-dashboard-upgrade-yvb88c`.
+
+## L-1. 지금까지 (Phase 0~0.7 ✅, §A·§C 참조)
+- **0 진단**(§D 기능·§E 신규기능·§F 통계·§G 세무/정산·§H UI/UX·§J 오픈입력): 5개 도메인 병렬 코드감사 + 미국 세법 리서치.
+- **0.5 검증**(§K): 전 주장 코드 재대조 → C1~C12 정정(과장/오인용 수정, §D 본문 반영), N1~N10 신규결함, R1~R4 위험.
+- **0.6 UI 감사**(§K-6): 토큰+`components/ui/*` 16개가 존재하나 어드민 100% 미사용 → §H "신규 도입→채택"으로 정정. 현재값→토큰 매핑표.
+- **0.7 기능 설계**(§K-7): quote_drafts·빌더 이벤트+funnel·귀속FK+익명화정합·audit 헬퍼·unified_inquiries 뷰·상품 funnel matview **구체 DDL**(마이그레이션 대조 완료).
+
+## L-2. 다음 할 일 (우선순위)
+1. **③ §G 정산/세무 데이터모델 + 마이그레이션 브리지 상세** ← 다음 착수 지점.
+   - DDL: `tours.cost_price`+`cost_currency`; `bookings`에 merchant_cost·operational_fee·fx_rate_to_usd·usd_amount·stripe_charge_id·stripe_balance_txn_id·stripe_fee·revenue_treatment(gross/net)·place_of_performance·us_source; `settlements`에 currency.
+   - **R1 우회 전략 설계**: `settlement_bookings`는 `UNIQUE(booking_id)`+`NOT EXISTS` 가드로 이미 정산된 건 재정산 불가 → 과거(10%)/신규(원가기준) 회계기준 공존 브리지(컬럼 의미 유지 vs 신규 컬럼, 기간 straddle).
+   - **R2**: `create_merchant_settlement` 시그니처 변경은 `app/api/settlements/route.ts`(현 3-arg)와 동일 배포.
+   - **R3**: FX 백필은 Stripe balance-txn `exchange_rate` 기준 best-effort(offline 수금건 불가).
+   - 자동 서류(§G-4)는 §J #2(소유구조)·CPA SIGN-OFF(§G-5) 게이트 후.
+2. **④ 라이브 DB 대조**: 현재 MCP가 **타 프로젝트(Kursoflow, ref thgyev...)** 연결 → atockorea(ref `cghyvbwmijqpahnoduyv`) 검증 불가(K-0). 사용자가 Supabase MCP 토큰을 atockorea 조직으로 교체해야 N1 실배포·`payments` 테이블 존재 등 확정 가능.
+3. 이후: Phase 1(기능 안정화 — §D BLOCKER + N1/N2) → 2(디자인 토큰) → 3(UI 개편) → 4(데이터) → 5(통계) → 6(세무) → 7(신규기능) → 8(검증).
+
+## L-3. 절대 잊지 말 컨텍스트 / 함정
+- **코드 수정 착수 전 사용자 승인 필수** (지금까지 "플랜만"). 착수 시 Phase 1부터.
+- **§J 오픈입력**: 등록 주=Wyoming ✅확정 / 소유구조(외국인?)·수익인식(gross·net, CPA판정)·tenant 한국수행·미국인 계약자·머천트 원가소스 = 미정.
+- **세무는 절대 자율 제출 금지** — 데이터·초안 워크시트까지만, CPA/세무변호사 SIGN-OFF 게이트(§G-5).
+- **방법론**: 병렬 감사는 Agent(general-purpose) 사용. ⚠️ **에이전트에게 "하위 에이전트 spawn 금지 + 최종 메시지로 직접 반환" 명시** — 안 하면 손자 에이전트가 부모에게 전달 못 해 결과 유실됨(이번 세션 교훈).
+- 모든 file:line 주장은 코드 직접 대조로 검증됨(§K). 새 주장도 동일 기준 유지.
+- 작업 후 항상 `git add` → commit(Co-Authored-By/Claude-Session 푸터) → `git push -u origin claude/admin-dashboard-upgrade-yvb88c`.
+
+## L-4. 핵심 사실 압축 (재조사 불필요)
+- 토큰·`components/ui/*`(16) + `components/admin/*`(2: BookingStatusBadge·ImageUploader) 존재, 어드민 미사용.
+- 정산 모델이 flat 10%만 — 원가/운영수수료/FX 미포착(=핵심 결함). settle 라우트 자체는 Stripe서 금액 읽고 멱등(견고).
+- 자체 analytics 엔진에 집계 수학 버그 다수(§D-15: visitors distinct 합산·funnel 세션한정·retention left-censor·experiments filter 폐기).
+- N1: cron이 호출하는 `anonymize_old_analytics`·`analytics_health_snapshot` RPC가 마이그레이션에 없음.
+- 이벤트 인제스트: `event_name` free-form, payload 평면 스칼라 → 신규 이벤트 등록 불필요.
+- 분석 진짜 화면은 `/admin/analytics/product/*`(모던), nav의 `/admin/analytics`는 placeholder(폐기 대상).
