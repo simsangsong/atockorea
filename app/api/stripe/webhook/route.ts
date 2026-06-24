@@ -377,6 +377,43 @@ export async function POST(req: NextRequest) {
         break;
       }
 
+      case 'charge.refunded': {
+        // W5.7: reconcile booking when a charge is refunded — whether via the
+        // admin refund route or out-of-band in the Stripe dashboard. Matched by
+        // payment_intent_id; idempotent (re-fires set the same fields).
+        const charge = event.data.object as Stripe.Charge;
+        const piId =
+          typeof charge.payment_intent === 'string'
+            ? charge.payment_intent
+            : charge.payment_intent?.id;
+        if (!piId) break;
+
+        const capturedMinor = charge.amount_captured ?? charge.amount ?? 0;
+        const refundedMinor = charge.amount_refunded ?? 0;
+        const isFull = charge.refunded === true || (capturedMinor > 0 && refundedMinor >= capturedMinor);
+
+        const refundUpdate: Record<string, unknown> = {
+          payment_status: isFull ? 'refunded' : 'partially_refunded',
+          refund_amount: refundedMinor / 100,
+          refund_processed: isFull,
+          updated_at: new Date().toISOString(),
+        };
+        if (isFull) refundUpdate.payment_intent_status = 'refunded';
+
+        const { error: refundSyncError } = await supabase
+          .from('bookings')
+          .update(refundUpdate)
+          .eq('payment_intent_id', piId);
+
+        if (refundSyncError) {
+          console.error(`[webhook] charge.refunded sync failed for pi ${piId}:`, refundSyncError);
+          throw refundSyncError;
+        }
+
+        console.log(`[webhook] charge.refunded synced pi=${piId} refunded=${refundedMinor} full=${isFull}`);
+        break;
+      }
+
       default:
         console.log(`Unhandled event type: ${event.type}`);
     }
