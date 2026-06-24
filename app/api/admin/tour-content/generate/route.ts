@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { requireAdmin } from '@/lib/auth';
 import { generateCoursePayload, generateSpeechMp3 } from '@/lib/openai-server';
+import { validateLocalePayloads } from '@/lib/admin/content-generate-guard';
 
 export const dynamic = 'force-dynamic';
 
@@ -50,17 +51,14 @@ export async function POST(req: NextRequest) {
     };
 
     const localePayloads = body.localePayloads;
-    if (!localePayloads || typeof localePayloads !== 'object' || Array.isArray(localePayloads)) {
-      return NextResponse.json(
-        { error: 'localePayloads must be an object keyed by locale' },
-        { status: 400 },
-      );
+    // AR-1: cap locale count, allowlist locale keys, and limit payload size so a
+    // single request can't fan out into an unbounded OpenAI/TTS bill.
+    const validation = validateLocalePayloads(localePayloads);
+    if (!validation.ok) {
+      return NextResponse.json({ error: validation.error }, { status: 400 });
     }
-
-    const requestedLocales = Object.keys(localePayloads);
-    if (requestedLocales.length === 0) {
-      return NextResponse.json({ error: 'At least one locale payload is required' }, { status: 400 });
-    }
+    const requestedLocales = validation.locales;
+    const payloads = localePayloads as LocalePayloadMap;
 
     const audioLocales = requestedLocales.filter((locale) => AUDIO_LOCALES.has(locale));
     const textOnlyLocales = requestedLocales.filter((locale) => !AUDIO_LOCALES.has(locale));
@@ -87,14 +85,14 @@ export async function POST(req: NextRequest) {
     const audioAssets: unknown[] = [];
 
     for (const locale of requestedLocales) {
-      const generated = await generateCoursePayload(locale, localePayloads[locale]);
+      const generated = await generateCoursePayload(locale, payloads[locale]);
       const { data: courseRow, error: courseError } = await supabase
         .from('tour_generated_courses')
         .insert({
           job_id: job.id,
           tour_id: body.tourId ?? null,
           locale,
-          source_payload: localePayloads[locale] as Record<string, unknown>,
+          source_payload: payloads[locale] as Record<string, unknown>,
           generated_course: generated.course,
           description_presets: generated.description_presets,
         })
