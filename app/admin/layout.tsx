@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { Toaster } from 'sonner';
 import type { LucideIcon } from 'lucide-react';
 import {
   BarChart3,
@@ -482,6 +483,10 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           더보기
         </button>
       </nav>
+
+      {/* W1.2: admin toast host. top-center clears the bottom nav; richColors gives
+          success/error styling. Admin actions use sonner toasts going forward. */}
+      <Toaster position="top-center" richColors closeButton />
     </div>
   );
 }
