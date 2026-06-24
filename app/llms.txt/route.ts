@@ -28,9 +28,10 @@ export function GET() {
 - [Agent API (OpenAPI 3.1)](${base}/api/agent/openapi.json): the machine contract for the agent channel.
 - [Agent developer guide](${base}/for-agents): how to discover, quote, and book.
 - [Tour catalogue (JSON)](${base}/api/agent/v1/tours): list every bookable tour.
+- Availability: \`GET ${base}/api/agent/v1/tours/{slug}/availability?date=YYYY-MM-DD\` → best-effort open/sold-out.
 - Quote: \`POST ${base}/api/agent/v1/quote\` with \`{ slug, date, guests }\` → signed quote_token.
 - Book: \`POST ${base}/api/agent/v1/book\` with \`{ quote_token, contact? }\` → hosted checkout_url for the human to pay.
-- MCP server (Model Context Protocol, Streamable HTTP): \`${base}/api/agent/mcp\` — tools: search_tours, get_tour, quote_price, create_booking.
+- MCP server (Model Context Protocol, Streamable HTTP): \`${base}/api/agent/mcp\` — tools: search_tours, get_tour, check_availability, quote_price, create_booking.
 - Discovery manifests: [\`/.well-known/agent.json\`](${base}/.well-known/agent.json), [\`/.well-known/ai-plugin.json\`](${base}/.well-known/ai-plugin.json).
 
 ## Site

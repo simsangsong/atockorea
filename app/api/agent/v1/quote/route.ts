@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { getAgentCatalogItem, agentSiteUrl } from "@/lib/agent/catalog";
 import { signQuote, AGENT_QUOTE_TTL_SECONDS } from "@/lib/agent/quoteToken";
 import { rateLimit, rateLimitHeaders } from "@/lib/agent/rateLimit";
+import { logAgentEvent, userAgentOf } from "@/lib/agent/events";
 
 /**
  * POST /api/agent/v1/quote — issue a signed, time-boxed price quote.
@@ -97,6 +98,17 @@ export async function POST(req: NextRequest) {
     guests,
     unitPriceUsd,
     estimatedTotalUsd,
+  });
+
+  void logAgentEvent({
+    eventType: "quote_issued",
+    channel: "rest",
+    slug: item.slug,
+    tourDate: date,
+    guests,
+    apiKeyLabel: rl.apiKeyLabel,
+    userAgent: userAgentOf(req),
+    props: { estimated_total_usd: estimatedTotalUsd },
   });
 
   return NextResponse.json(
