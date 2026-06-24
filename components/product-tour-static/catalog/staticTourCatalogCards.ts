@@ -70,7 +70,7 @@ const SLUG_OVERRIDES: Record<string, SlugOverride> = {
   "jeju-eastern-unesco-spots-day-tour": { listPriceUsd: 59, compareAtPriceUsd: 69, maxGroupSize: 8 },
   "jeju-hydrangea-festival-tour-east-route": { listPriceUsd: 59, compareAtPriceUsd: 69, maxGroupSize: 8 },
   "jeju-hydrangea-festival-tour-southwest-route": { listPriceUsd: 59, compareAtPriceUsd: 69, maxGroupSize: 8 },
-  "jeju-southern-top-unesco-spots-tour": { listPriceUsd: 59, compareAtPriceUsd: 69, maxGroupSize: 8 },
+  "jeju-southern-top-unesco-spots-tour": { listPriceUsd: 49, compareAtPriceUsd: 59, maxGroupSize: 8 },
   "jeju-west-south-full-day-authentic-tour": { listPriceUsd: 59, compareAtPriceUsd: 69, maxGroupSize: 8 },
   "jeju-winter-southwest-tangerine-snow-camellia-tour": { listPriceUsd: 59, compareAtPriceUsd: 69, maxGroupSize: 8 },
   "pocheon-sanjeong-lake-herb-island-art-valley": { listPriceUsd: 49, compareAtPriceUsd: 62, maxGroupSize: 8 },
