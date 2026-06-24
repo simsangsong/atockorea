@@ -55,6 +55,8 @@
 | 2026-06-24 | 세무 자동화는 **"데이터·초안 워크시트 생성"까지만**, 자동 제출 금지 | §G. 책임은 withholding agent에게 1차 귀속(IRC §1461). CPA 승인 게이트 |
 | 2026-06-24 | 1099-K 임계값은 **$20,000 / 200건** 기준으로 설계 (OBBBA 2025로 $600 단계안 폐기) | IRS OBBBA FAQ. $5k/$2.5k/$600 phase-in은 무효 |
 | 2026-06-24 | 한국 tenant 지급액은 **기본 foreign-source = 무원천징수·무 1042-S** 로 설계하되 **W-8BEN-E 수집 + sourcing 메모 보관 의무화** | IRC §861/§862 용역 수행지 기준 + 한미조세조약. 방어 문서 필수 |
+| 2026-06-24 | **등록 주 = Wyoming(와이오밍) 확정** (사용자 확인) | 주 소득세·franchise tax 없음. 연차보고 license tax = max($60, WY자산×0.0002)뿐. 주 신고 캘린더 단순화 |
+| 2026-06-24 | LLC가 **외국인 소유면 Form 5472 + pro-forma 1120 연 신고 의무** 자동 추적 대상에 포함 | 미신고 건당 $25,000 벌금. 소유구조 확인 후 §G-4 서류에 편입 (SIGN-OFF 필요) |
 | 2026-06-24 | 모든 어드민 mutation 라우트에 **audit_logs 기록 헬퍼 의무 적용** | 현재 audit_logs는 2곳만 기록. 에이전트 활동기록 요구사항 충족 |
 | 2026-06-24 | 모든 기록 화면(예약·문의·대화·결제·감사)은 **날짜+카테고리 그룹 + 접기/펼치기 + 서버 필터/검색/페이지네이션** 표준 패턴 | 사용자 요구: "날짜별·카테고리별로 보기/조작 쉽게" |
 | 2026-06-24 | 상단 nav "데이터 분석"을 **자체 analytics 엔진(`/analytics/product/*`)** 으로 연결, 레거시 placeholder 페이지 폐기 | 강력한 엔진이 메뉴에 노출 안 됨(IA 결함) |
@@ -263,7 +265,8 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 3. **외국(한국 tenant) 지급 — 1042/1042-S·W-8BEN-E·sourcing (SIGN-OFF 필수)** — 용역은 **수행지 기준 소득원천**(IRC §861/§862). 한국 수행 투어 = **foreign-source → 일반적으로 30% 원천징수·1042-S 대상 아님**. 한미조세조약상 PE 없으면 사업소득은 한국 과세. **단, 포지션 방어를 위해 tenant별 W-8BEN-E 수집 + sourcing 메모 보관 필수.** [IRS Pub 515, NRA withholding, W-8BEN-E instr, 한미조약]
 4. **1099-NEC/MISC** — 미국인 수취인 대상. W-8 보유 외국 tenant는 제외. ATOC가 **미국 거주 가이드/제휴자에게 연 $600↑** 지급 시 1099-NEC 필요. [Pub 515]
 5. **Sales/occupancy/amusement tax · nexus (주별, SIGN-OFF 필수)** — Wayfair 경제적 nexus 통상 $100k 또는 200건(대형주 $500k). 투어/여행 용역 과세 여부는 **주별 상이**(다수 주는 용역 비과세, 일부 admission/amusement 과세). 마켓플레이스 facilitator 규정. [Sales Tax Institute, Avalara]
-6. **주 LLC franchise/income tax (등록 주 = 필수 입력)** — DE: 연 $300(6/1, 연차보고 없음). CA: 연 $800 최소 + gross-receipts 수수료($250k↑). 소득세·apportionment는 등록/영업 주에 의존. [DE Div. of Corps, CA LLC guide]
+6. **주 LLC franchise/income tax — 등록 주 = Wyoming 확정** — Wyoming은 **주 소득세(개인·법인) 없음, franchise tax 없음.** 연 의무는 **annual report license tax = max($60, WY 소재 자산 × 0.0002)** + 설립 기념월 1일 마감뿐. Sales/use tax는 주 4%(지역 합산 최대 8%), **경제적 nexus = 직전/당해 연도 WY向 총매출 $100,000 초과**(200건 임계는 2024-07-01 폐지). 투어/여행 용역 과세 여부 및 마켓플레이스 facilitator 적용은 **여전히 CPA 판정 필요**. [Wyoming SOS, Sales Tax Institute, Avalara]
+   - **⚠️ 외국인 소유 시 연방 추가 의무 (소유구조 확인 필요):** ATOC Korea LLC가 비미국인(한국 개인/법인) 소유의 single-member/disregarded LLC면 **Form 5472 + pro-forma 1120 연 신고 의무**, 미신고 시 **건당 $25,000 벌금**. 주가 무세(Wyoming)라도 이 연방 정보신고는 별개로 발생. → §G-4 서류에 편입. [O&G Tax Foreign-Owned WY LLC FAQ 2026]
 7. **기록 보존** — 일반 3년, 고용세 4년, 25%↑ 누락 6년, 무신고/사기 무기한. W-8 통상 3년. → 거래별 불변 레코드 + 보존 클래스. [IRS recordkeeping]
 8. **벌칙 리스크** — 원천징수 오류 시 **withholding agent 1차 책임**(IRC §1461; §1463도 이자·벌금은 면제 안 함). 1099 오류 §6721/§6722 + 24% backup withholding. agent/principal 오분류 시 총수입·과세표준·nexus 임계 연쇄 오류.
 
@@ -274,7 +277,8 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 - **외국 수취인 sourcing 원장 + 1042-S export stub**: US-source로 표시된 지급만 1042-S 처리(기대값: 비어 있음 = 방어 기록).
 - **1099-NEC 후보 리포트**: 미국인 수취인 연 $600↑만, W-8 외국 tenant 명시 제외.
 - **Nexus 모니터 + 주별 징수액 리포트**: 12개월 롤링 매출·건수 vs 주별 임계 알림.
-- **주 신고 캘린더 + franchise tax 추정기**: 등록 주 기준(DE/CA…). **주 확정 전 미완.**
+- **Wyoming 신고 캘린더**: annual report(설립 기념월 1일) license tax 알림 = max($60, WY자산×0.0002). 주 소득세·franchise 없음 → 캘린더 단순.
+- **Form 5472 + pro-forma 1120 트래커**(외국인 소유 시): 연 신고 마감 알림 + 보고대상 거래(reportable transactions) 집계. 건당 $25k 벌금 방지.
 - **연간 세무기록 아카이브 export**(불변, ≥7년): 거래 원장 + Stripe 대사 + W-8 세트 + 정산 명세.
 
 ## G-5. 필수 전문가 SIGN-OFF (자동 서류 신뢰 전 게이트)
@@ -318,12 +322,13 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 ---
 
 # §J. 오픈 입력 (사용자/전문가 확인 필요 — Phase 4·6 블로커)
-1. **ATOC Korea LLC 등록 주(州) 및 영업 주** — §G-3.5/3.6, 주 신고 캘린더·franchise·sales tax 전제. **확인 전 §G-4 일부 미완.**
-2. **CPA의 수익인식 정책(상품군별 gross/net)** — §G-3.1 게이트. 자동 수익요약의 기준.
-3. **모든 tenant 투어가 한국에서 수행됨 확인** — §G-3.3 sourcing 앵커.
-4. **미국 거주 계약자/제휴자에게 연 $600↑ 지급 여부** — §G-3.4(1099-NEC) on/off.
-5. **머천트별 실원가(원가) 소스** — 기존 예약 백필 방법(계약서 단가표 등).
-6. **어드민 디자인 방향성** — 어드민 전용 중립 톤 vs customer amber 계승 정도.
+1. ✅ **등록 주 = Wyoming 확정**(2026-06-24). 주 소득세·franchise 없음 → §G-3.6/G-4 반영 완료. (sales tax 투어 과세 여부만 CPA 잔여.)
+2. 🔲 **소유구조 = 외국인(한국) 소유 여부 확인** — 외국인 소유면 **Form 5472 + pro-forma 1120**(건당 $25k 벌금) 추적 필요. §G-3.6/G-4.
+3. ⚠️ **수익인식 정책(상품군별 gross/net) — "임의 선택"이 아니라 CPA 사실판정** — §G-3.1 게이트. 아래 설명 참조. ATOC가 가격/할인 재량·전액 수금·차지백 리스크·예약계약을 가지면 회계상 **principal(gross)** 쪽으로 기움(자체 프라이빗투어는 거의 확실히 principal). 대리판매 tenant 상품은 "통제권이 진짜 tenant에 있는가"에 따라 agent(net) 가능. **gross/net은 보고 총수입을 ~10× 좌우**(sales tax 과세표준·nexus 임계·1099-K 대사에 연쇄)하므로 CPA가 상품군별로 확정해야 함. → 시스템은 양쪽(gross/net) 뷰를 모두 산출하도록 설계(§G-4)하여 CPA가 포지션만 고르면 되게 함.
+4. 🔲 **모든 tenant 투어가 한국에서 수행됨 확인** — §G-3.3 sourcing 앵커.
+5. 🔲 **미국 거주 계약자/제휴자에게 연 $600↑ 지급 여부** — §G-3.4(1099-NEC) on/off.
+6. 🔲 **머천트별 실원가(원가) 소스** — 기존 예약 백필 방법(계약서 단가표 등).
+7. 🔲 **어드민 디자인 방향성** — 어드민 전용 중립 톤 vs customer amber 계승 정도.
 
 ---
 
