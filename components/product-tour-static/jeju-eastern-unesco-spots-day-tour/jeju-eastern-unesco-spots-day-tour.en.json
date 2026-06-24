@@ -21,7 +21,7 @@
   "catalog_card": {
     "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
     "title": "Jeju East UNESCO Day Tour",
-    "priceLabel": "From US$47 per person (was $59, 20% off) · ≈₩72,000",
+    "priceLabel": "",
     "shortCardDescription": "Loop eastern Jeju's UNESCO sights in a 9-hour small group. Includes Hamdeok Seoubong Beach, Seongeup Folk Village (UNESCO folk heritage), Seongsan Ilchulbong and Manjanggul — two UNESCO World Natural Heritage sites inscribed together in 2007 — plus a haenyeo diving performance (Haenyeo Museum if canceled). All admissions included, certified English/Chinese-speaking guide.",
     "tags": [
       "Small group",
@@ -51,10 +51,10 @@
   "headlineLine1": "Jeju East UNESCO",
   "headlineLine2": "Day Tour",
   "price": {
-    "amountLabel": "47",
+    "amountLabel": "49",
     "originalPriceUsd": 59,
-    "salePriceUsd": 47,
-    "discountPercent": 20,
+    "salePriceUsd": 49,
+    "discountPercent": 17,
     "currency": "USD",
     "per": "person"
   },
@@ -1400,10 +1400,10 @@
   "sticky_booking_bar": {
     "note": "Select your date and group size to check live availability and complete your booking.",
     "price": {
-      "amountLabel": "47",
+      "amountLabel": "49",
       "originalPriceUsd": 59,
-      "salePriceUsd": 47,
-      "discountPercent": 20,
+      "salePriceUsd": 49,
+      "discountPercent": 17,
       "currency": "USD",
       "per": "person"
     }
@@ -1492,7 +1492,7 @@
     "profile_version": 7,
     "is_active": true,
     "product_id": "jeju-eastern-unesco-spots-day-tour",
-    "product_type": "small_group",
+    "product_type": "bus",
     "route_type": "fixed_route",
     "destination_region": "jeju",
     "region_type": "jeju_east",

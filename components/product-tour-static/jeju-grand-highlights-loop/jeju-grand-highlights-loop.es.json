@@ -35,7 +35,7 @@
     ],
     "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
     "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
-    "priceLabel": "Desde US$100 por persona (antes $112, 11% de descuento)",
+    "priceLabel": "",
     "shortCardDescription": "Una ruta intensa por toda la isla que enlaza tres sitios del Patrimonio Mundial de la UNESCO —Hallasan, Seongsan Ilchulbong y el tubo de lava de Manjanggul— con un espectáculo en vivo de buceo libre de las haenyeo, los acantilados columnares de Jusangjeolli y la cascada Jeongbang que cae al océano. Los atractivos emblemáticos de Jeju, concentrados en un solo día.",
     "tags": [
       "Grupo pequeño",
@@ -49,13 +49,12 @@
   "headlineLine1": "Jeju Completo",
   "headlineLine2": "Hitos del Día",
   "price": {
-    "amountLabel": "100",
+    "amountLabel": "88",
     "originalPriceUsd": 112,
-    "salePriceUsd": 100,
-    "discountPercent": 11,
+    "salePriceUsd": 88,
+    "discountPercent": 21,
     "currency": "USD",
-    "per": "person",
-    "priceNote": "Tour bilingüe en grupo reducido por toda la isla (≈ ₩138,000 por persona). Venta directa de AtoC Korea; 11% de descuento aplicado sobre la tarifa base del operador."
+    "per": "person"
   },
   "hero": {
     "imageUrl": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
@@ -1287,13 +1286,12 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id se resuelve en tiempo de ejecución desde Supabase / env; no forma parte del JSONB estático.",
     "price": {
-      "amountLabel": "100",
+      "amountLabel": "88",
       "originalPriceUsd": 112,
-      "salePriceUsd": 100,
-      "discountPercent": 11,
+      "salePriceUsd": 88,
+      "discountPercent": 21,
       "currency": "USD",
-      "per": "person",
-      "priceNote": "Tour bilingüe en grupo reducido por toda la isla (≈ ₩138,000 por persona). Venta directa de AtoC Korea; 11% de descuento aplicado sobre la tarifa base del operador."
+      "per": "person"
     }
   },
   "matching_profile": {

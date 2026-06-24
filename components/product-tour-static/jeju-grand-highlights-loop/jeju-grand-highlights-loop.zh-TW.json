@@ -35,7 +35,7 @@
     ],
     "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
     "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
-    "priceLabel": "每人 US$100 起（原價 $112，現省 11%）",
+    "priceLabel": "",
     "shortCardDescription": "一條高強度的全島路線，串聯三處聯合國教科文組織世界遺產——漢拏山、城山日出峰與萬丈窟熔岩洞——並結合現場海女自由潛水表演、柱狀節理海崖，以及直落入海的正房瀑布。濟州的代表性精華，濃縮於一日之內。",
     "tags": [
       "小團體",
@@ -49,13 +49,12 @@
   "headlineLine1": "濟州全島精華一日遊",
   "headlineLine2": "一日遊",
   "price": {
-    "amountLabel": "100",
+    "amountLabel": "88",
     "originalPriceUsd": 112,
-    "salePriceUsd": 100,
-    "discountPercent": 11,
+    "salePriceUsd": 88,
+    "discountPercent": 21,
     "currency": "USD",
-    "per": "person",
-    "priceNote": "小團體雙語全島之旅（每人約 ₩138,000）。AtoC Korea 直營銷售；相較營運商基礎價已套用 11% 折扣。"
+    "per": "person"
   },
   "hero": {
     "imageUrl": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
@@ -1287,13 +1286,12 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id 於執行時從 Supabase／環境變數解析；不屬於靜態 JSONB 的一部分。",
     "price": {
-      "amountLabel": "100",
+      "amountLabel": "88",
       "originalPriceUsd": 112,
-      "salePriceUsd": 100,
-      "discountPercent": 11,
+      "salePriceUsd": 88,
+      "discountPercent": 21,
       "currency": "USD",
-      "per": "person",
-      "priceNote": "小團體雙語全島之旅（每人約 ₩138,000）。AtoC Korea 直營銷售；相較營運商基礎價已套用 11% 折扣。"
+      "per": "person"
     }
   },
   "matching_profile": {

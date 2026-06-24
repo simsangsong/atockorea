@@ -34,7 +34,7 @@
     ],
     "heroImage": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
     "thumbnail": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
-    "priceLabel": "1名様 US$79（定価$85、7%オフ）",
+    "priceLabel": "",
     "shortCardDescription": "寄港地に合わせてルートが変わる少人数グループ制クルーズ寄港地観光です。済州港（北部）発は城山日出峰を経由する東海岸ユネスコルート、江汀港（南部）発は漢拏山1100高地＋南海岸の地質スポット＋オルレ市場を巡るルートをご案内します。どちらもクルーズターミナルへ余裕を持って帰港します。",
     "tags": [
       "cruise_excursion",
@@ -47,12 +47,12 @@
   "headlineLine1": "済州クルーズ寄港地・少人数ツアー",
   "headlineLine2": "ツアー",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "72",
     "currency": "USD",
     "per": "person",
-    "salePriceUsd": null,
-    "originalPriceUsd": null,
-    "discountPercent": null
+    "salePriceUsd": 72,
+    "originalPriceUsd": 85,
+    "discountPercent": 15
   },
   "hero": {
     "imageUrl": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
@@ -1770,12 +1770,12 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_idはSupabase／環境変数から実行時に解決されます。静的JSONBには含まれません。user_portは予約時にクルーズ旅程から解決されます。",
     "price": {
-      "amountLabel": "79",
+      "amountLabel": "72",
       "currency": "USD",
       "per": "person",
-      "salePriceUsd": 79,
+      "salePriceUsd": 72,
       "originalPriceUsd": 85,
-      "discountPercent": 7
+      "discountPercent": 15
     }
   },
   "matching_profile": {

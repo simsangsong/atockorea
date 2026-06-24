@@ -35,7 +35,7 @@
     ],
     "heroImage": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
     "thumbnail": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
-    "priceLabel": "From US$52 per person (was $59, 12% off)",
+    "priceLabel": "",
     "shortCardDescription": "A bus tour (large coach) cruise shore excursion that adapts the route to your cruise port. Jeju Port (north) runs an east-coast UNESCO route via Seongsan Ilchulbong; Gangjeong Port (south) runs a Hallasan 1100 + south-coast geology + Olle Market route. Both return to the cruise terminal with comfortable buffer.",
     "tags": [
       "Cruise excursion",
@@ -47,12 +47,12 @@
   "headlineLine1": "Jeju Cruise Shore",
   "headlineLine2": "Coach Tour",
   "price": {
-    "amountLabel": "52",
+    "amountLabel": "59",
     "currency": "USD",
     "per": "person",
-    "salePriceUsd": 52,
-    "originalPriceUsd": 59,
-    "discountPercent": 12
+    "salePriceUsd": 59,
+    "originalPriceUsd": null,
+    "discountPercent": null
   },
   "hero": {
     "imageUrl": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
@@ -1770,12 +1770,12 @@
   "sticky_booking_bar": {
     "note": "Select your cruise port, travel date, and group size to check availability and complete your booking.",
     "price": {
-      "amountLabel": "52",
+      "amountLabel": "59",
       "currency": "USD",
       "per": "person",
-      "salePriceUsd": 52,
-      "originalPriceUsd": 59,
-      "discountPercent": 12
+      "salePriceUsd": 59,
+      "originalPriceUsd": null,
+      "discountPercent": null
     }
   },
   "pickup_dropoff": {
@@ -1821,7 +1821,7 @@
     "profile_version": 6,
     "is_active": true,
     "product_id": "jeju-cruise-shore-excursion-bus-tour",
-    "product_type": "small_group_fixed_itinerary",
+    "product_type": "bus",
     "route_type": "cruise_shore_excursion_pair_route_variants",
     "destination_region": "jeju",
     "region_type": "island_full",

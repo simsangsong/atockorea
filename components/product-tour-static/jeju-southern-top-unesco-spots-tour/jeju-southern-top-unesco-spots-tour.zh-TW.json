@@ -52,10 +52,10 @@
   "headlineLine1": "濟州南部西歸浦招牌",
   "headlineLine2": "一日遊",
   "price": {
-    "amountLabel": "",
-    "originalPriceUsd": null,
-    "salePriceUsd": null,
-    "discountPercent": null,
+    "amountLabel": "49",
+    "originalPriceUsd": 69,
+    "salePriceUsd": 49,
+    "discountPercent": 29,
     "currency": "USD",
     "per": "person"
   },
@@ -1155,10 +1155,10 @@
   "sticky_booking_bar": {
     "note": "請選擇日期及人數，即時確認名額並完成預訂。",
     "price": {
-      "amountLabel": "",
-      "originalPriceUsd": null,
-      "salePriceUsd": null,
-      "discountPercent": null,
+      "amountLabel": "49",
+      "originalPriceUsd": 69,
+      "salePriceUsd": 49,
+      "discountPercent": 29,
       "currency": "USD",
       "per": "person"
     }
@@ -1247,7 +1247,7 @@
     "profile_version": 7,
     "is_active": true,
     "product_id": "jeju-southern-top-unesco-spots-tour",
-    "product_type": "small_group",
+    "product_type": "bus",
     "route_type": "fixed_route",
     "destination_region": "jeju",
     "region_type": "jeju_south",
