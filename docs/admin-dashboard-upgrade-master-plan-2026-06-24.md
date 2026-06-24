@@ -32,8 +32,9 @@
 | 0.8 | Codex 플랜 리뷰 통합 (§M) — 인접범위 전체스택 감사 | ✅ 완료 | 3 감사 에이전트 file:line 검증. N11~N26 신규(공개 보안 BLOCKER 4 + MAJOR 다수) + 정정 로그(REFUTED 2: RAG·reviews버킷 / IMPRECISE 6). 별도 doc 생성 거부(단일 SoT). 공개 보안 트랙 분리 권고 |
 | 0.9 | 라이브 DB 대조 (§N) — K-0 해소 | ✅ 완료 | atockorea MCP 라이브 연결. **마이그레이션 드리프트(repo≠live, BLOCKER급 거버넌스)** 발견. N1 REFUTED→드리프트 재분류. **N27(anon-exec PII 익명화 RPC, BLOCKER)**·N28~N32 + perf 62/62/134. §G-6 DDL 충돌0·F1~F3/R1 라이브 확정. D-14·notifications·payments부재 확정 |
 | 0.10 | 플랜 완전화 감사 v3 (§O~§R) | ✅ 완료 | 3 감사 에이전트(완전성갭/신규결함·업그레이드/DDL어드버서리얼). **N33(site_settings 부재 BLOCKER)·B-1(노쇼 전액청구 돈버그 BLOCKER)·B-2/B-3/M-4/M-6/M-7/M-8**. §G-6 DDL 정정 12델타(C#3 FOR UPDATE는 라이브 probe로 REFUTED). 횡단 워크스트림 WS-A~J. 업그레이드 U-1~U-10(§P). 준비사양(§Q: N27 SQL·정합 런북·Phase1 턴키). **실행 WBS(§R) PR 단위 티켓화** |
-| 0.11 | 섹션별 딥 리뷰 + 모바일/UX (§S) | ✅ 완료 | 8 에이전트(페이지군6+모바일전담+UX전담). **모바일 판정: 부분 사용가능**(셸 OK, 29p중 12p 반응형0). 신규 결함 S-F1~F16(S-F1 stats OOM·**S-F2 Math.random 비번**·S-F3 audit actor·S-F4/F5 에디터 데이터손상 BLOCKER급). UX 시스템 S-U1~U11(ConfirmDialog/Sonner 기존자산 미사용·URL필터·nav IA). REFUTED 2(SortableImageCard 케이싱·"전부 데스크톱"). **진단 종료점** |
-| 1 | 기능 안정화 (BLOCKER/MAJOR 버그 수정) | ⏳ 대기 | §D + §O.2 + §S.2. BLOCKER: N23·N27·**N33·B-1·S-F1·S-F2**. 선행 게이트 R0 + R2.0(모바일 기반). 티켓=§R-1 |
+| 0.11 | 섹션별 딥 리뷰 + 모바일/UX (§S) | ✅ 완료 | 8 에이전트(페이지군6+모바일전담+UX전담). **모바일 판정: 부분 사용가능**(셸 OK, 29p중 12p 반응형0). 신규 결함 S-F1~F16(S-F1 stats OOM·**S-F2 Math.random 비번**·S-F3 audit actor·S-F4/F5 에디터 데이터손상 BLOCKER급). UX 시스템 S-U1~U11(ConfirmDialog/Sonner 기존자산 미사용·URL필터·nav IA). REFUTED 2(SortableImageCard 케이싱·"전부 데스크톱") |
+| 0.12 | 최종 전수 검수 — 미검수 영역 (§T) | ✅ 완료 | 7 에이전트(미진단 어드민라우트·Stripe머니패스·인증RBAC·챗봇·공개API·lib·고객UI) + 라이브 DB/RLS/storage 스윕. 🔴🔴 **P1 라이브확정 권한상승**(고객→admin RLS WITH CHECK 부재). W1-15(머니패스: 환불라우트 부재·webhook 상태가드·cron secret URL)·CB1-15(예약 enumeration·CORS*)·PA(reminders GET·upload DELETE)·CK1-3(카트 세금/프로모)·LIB(이메일XSS·FX폴백)·N34. **굿뉴스: requireAdmin 견고·service-role 번들유출0·웹훅서명O. 진단(Phase 0) 종결** |
+| 1 | 기능 안정화 (BLOCKER/MAJOR 버그 수정) | ⏳ 대기 | §D + §O.2 + §S.2 + §T. 선행 게이트 R0 + R2.0. 티켓=§R-1. **🔒 R9.0 P1(권한상승)이 전 항목 최우선** |
 | 2 | 디자인 시스템 통합 (토큰·팔레트·타이포·i18n) | ⏳ 대기 | §H.1. 모든 페이지 개편의 선행 조건 |
 | 3 | 페이지별 UI/UX 개편 | ⏳ 대기 | §H.2~. Phase 2 토큰 위에서 한 페이지씩 |
 | 4 | 데이터 모델 확장 (정산 원가/수수료·귀속·감사로그·견적 이탈) | ⏳ 대기 | §E·§F·§G. 마이그레이션 + 백필 |
@@ -44,7 +45,7 @@
 
 상태 마커: ⏳ 대기 / 🔄 진행 중 / ⏸ 보류 / ✅ 완료 / ❌ 중단
 
-**현재 활성 Phase: Phase 0~0.10(진단·검증·UI감사·기능설계·§G정산설계·Codex통합·라이브DB대조·완전화감사) 모두 완료 — 코드는 미수정. 실행은 §R WBS(PR단위 티켓) 기준. 다음 액션 = 사용자 결정(§J #11~13 + #2/#6/#8~10) → 선행 게이트 R0(R0.1 N27 REVOKE·R0.2 마이그레이션 정합·R0.3 미진단 라우트) → Phase 1(§R-1). Phase 1 BLOCKER = §D 6건 + N2·N23·N27·N33·B-1(돈). 🔒 공개 보안 트랙(N11/N13/N14/N16/N27 + N28~N30)은 §R-9 별도 PR. ⚠️ R0.2(repo≠live 정합)는 Phase 4 하드 선행. 준비사양은 §Q(N27 SQL·정합 런북·Phase1 턴키) — 승인 시 즉시 실행.**
+**현재 활성 Phase: Phase 0~0.12(진단 전 단계: 검증·UI/모바일·§G정산·Codex·라이브DB·완전화·미검수영역) 완료 — 진단 종결, 코드 미수정. 실행은 §R WBS 기준. 🔴🔴 최우선 = 🔒R9.0 P1(라이브 확정 고객→admin 권한상승, RLS WITH CHECK 1줄). 다음 액션 = 사용자 결정(§J #11~14 + #2/#6/#8~10) → R0(N27 REVOKE·마이그레이션 정합·미진단라우트)+R2.0(모바일 기반) → Phase 1(§R-1). 🔒 보안 트랙(§R-9)이 P1·P2·W-3·CB-1/2·PA-1/2 등으로 대폭 확장(라이브 즉시 리스크 → 어드민 Phase와 병행/선행 권고). 💴 머니패스 무결성 트랙(§T.10) 신설 — W-10 환불경로는 §G 정산 선행. ⚠️ R0.2(repo≠live 정합)는 Phase 4 하드 선행. 준비사양 §Q — 승인 시 즉시 실행.**
 
 > 실행 순서 원칙: **Phase 1(기능 안정화) → 2(디자인 토큰) → 3(UI 개편)** 은 사용자 체감 라인. **Phase 4(데이터) → 5(통계) → 6(세무)** 는 데이터 라인으로 병행 가능. Phase 6은 §J 세무 SIGN-OFF가 없으면 시작 금지.
 
@@ -89,7 +90,8 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 | 2026-06-24 | Phase 0.8 — §M Codex 리뷰 통합. 3 감사 에이전트(공개커머스/보안인프라/데이터RAG성능) file:line 검증. N11~N26 + R5/R6 REFUTED + P1~P3. 별도 deep-audit doc 생성 거부(단일 SoT). 공개 보안 트랙 분리 | (this) | Codex 21주장 중 REFUTED 2(RAG 완전연결·reviews=폴더)·IMPRECISE 6 — 무검증 인용 차단 |
 | 2026-06-24 | Phase 0.9 — §N 라이브 DB 대조(atockorea MCP). 마이그레이션 드리프트(repo 32 vs live 48, ~9만 일치)·N1 REFUTED→드리프트·N27 anon-exec PII RPC(BLOCKER)·N28~N32·perf 62/62/134. §G-6 DDL 라이브 충돌0, F1~F3/R1 라이브 확정 | (this) | K-0 해소. pending-db-apply 수동 워크플로가 드리프트 원인. payments/notifications 라이브 부재 확정 |
 | 2026-06-24 | Phase 0.10 — §O~§R 플랜 완전화. 3 감사 에이전트 + 라이브 검증. N33(site_settings 부재)·B-1(노쇼 돈버그)·B-2/B-3/M-4/M-6/M-7/M-8 신규. §G-6 DDL 12델타 정정(C#3 FOR UPDATE는 probe로 REFUTED). 횡단 WS-A~J·업그레이드 U-1~10·준비사양(N27 SQL/정합 런북/Phase1 턴키)·실행 WBS(§R) | (this) | unified_inquiries 컬럼 라이브 검증·E-5 재고UI 보류(availability unlimited 충돌)·N1/D-15 stale 정정 |
-| 2026-06-24 | Phase 0.11 — §S 섹션별 딥리뷰 + 모바일/UX. 8 에이전트. 모바일 정량판정(29p중 12p 반응형0·최악 support/match-pois/sessions/retention). 신규 S-F1~F16(stats OOM·Math.random 비번·audit actor·에디터 데이터손상)·S-U1~U11(ConfirmDialog/Sonner 기존자산·URL필터·nav IA). 모바일 패턴 카탈로그→R2.0 기반 티켓 | (this) | REFUTED: SortableImageCard 케이싱·"전부 데스크톱전용"(셸은 모바일 인지). 진단 종료점 — Phase 1 착수 권고 |
+| 2026-06-24 | Phase 0.11 — §S 섹션별 딥리뷰 + 모바일/UX. 8 에이전트. 모바일 정량판정(29p중 12p 반응형0·최악 support/match-pois/sessions/retention). 신규 S-F1~F16(stats OOM·Math.random 비번·audit actor·에디터 데이터손상)·S-U1~U11(ConfirmDialog/Sonner 기존자산·URL필터·nav IA). 모바일 패턴 카탈로그→R2.0 기반 티켓 | (this) | REFUTED: SortableImageCard 케이싱·"전부 데스크톱전용"(셸은 모바일 인지) |
+| 2026-06-24 | Phase 0.12 — §T 최종 전수검수(미검수영역). 7 에이전트(미진단어드민라우트·Stripe머니패스·인증RBAC·챗봇·공개API·lib·고객UI)+라이브 DB/RLS/storage 스윕. 🔴🔴 P1 라이브확정 권한상승(고객→admin). W1-15·CB1-15·PA·AR·LIB·CK1-3·N34. 보안트랙 대폭확장+머니패스 무결성 트랙 신설 | (this) | 굿뉴스 확정: requireAdmin 서버DB검증·service-role 번들유출0·웹훅서명O·머니cron fail-closed·pricing 수학 깨끗. **진단(Phase 0) 종결** |
 
 ---
 
@@ -522,6 +524,7 @@ GRANT EXECUTE ON FUNCTION public.create_merchant_settlement(uuid,date,date,text,
 11. 🔲 **공개 보안 트랙 착수 승인**(§M.4/§N.3) — N11/N13/N14/N16/**N27**(라이브 확정 BLOCKER) 등 어드민과 별개의 즉시 라이브 리스크를 별도 PR로 우선 패치할지 / 어드민 Phase 1과 병행할지. **N27은 REVOKE 한 줄로 즉시 차단 가능.**
 12. 🔲 **마이그레이션 정합(§N.1) 착수 승인** — repo `migrations/`가 라이브와 크게 갈림(pending-db-apply 수동 워크플로). `db pull` baseline + 정식화 + CI drift 체크. **Phase 4 정산 마이그레이션의 안전 배포 선행 조건.**
 13. 🔲 **RLS-no-policy 13개 테이블 의도 확인**(§N.3 N31) — service_role 전용 의도면 정상, user-readable 의도면 정책 누락.
+14. 🔴🔲 **P1 권한상승 즉시 패치 승인(§T.1, 라이브 확정)** — `user_profiles` UPDATE/INSERT RLS에 role `WITH CHECK` 추가. **전 항목 최우선**(고객이 직접 admin 자기승격 가능). 마이그레이션 1줄. 다른 결정과 무관하게 **지금 바로** 권고.
 
 ---
 
@@ -1205,6 +1208,102 @@ GRANT  EXECUTE ON FUNCTION public.analytics_health_snapshot()               TO s
 
 ---
 
+# §T. 최종 전수 심층 검수 — 미검수 영역 (Phase 0.12 — 2026-06-24)
+
+> 사용자 지시("에이전트 전수 파견, 지금까지 검수 안 한 부분 완전 재검수, 마지막"). 7 코드 에이전트(미진단 어드민 라우트·Stripe 머니패스·인증/RBAC·챗봇/에이전트·공개 API·공유 lib·고객 머니패스 UI) + **세션 라이브 DB/RLS/storage 스윕(직접)**. 검증 가능한 주장은 라이브 확정(예: **P1 권한상승 — 라이브 CONFIRMED**). **이로써 진단(Phase 0) 종결** — 남은 건 사용자 승인 후 구현(§R).
+
+## T.0 메타 — 가장 중대한 발견 + 굿뉴스
+- 🔴🔴 **최중대(라이브 확정): P1 — 임의 고객이 관리자로 자기승격 가능**(RLS `WITH CHECK` 부재). 전 엔진먼트 통틀어 가장 시급. 마이그레이션 1줄로 차단.
+- **굿뉴스(검증된 견고함):** ① `requireAdmin`은 **서버 DB 검증**(JWT 클레임 신뢰 아님) — 견고. ② **service-role 키 클라이언트 번들 유출 없음**(39개 `.tsx` 확인). ③ Stripe 웹훅 **서명검증 O**. ④ 머니 cron(recapture/capture-tour-day)은 **fail-closed**(analytics cron만 fail-open=N23). ⑤ pricing 정수 KRW 누적·반올림 **수학 깨끗**(float drift 없음). ⑥ 예약조회 anti-enumeration **설계 자체는 건전**(단 RL 저장소가 문제=CB-2).
+
+## T.1 🔴 권한상승 — P1 (라이브 CONFIRMED, 최우선)
+| ID | 심각도 | 결함 (라이브 검증) | 증거 |
+|---|---|---|---|
+| **P1** | 🔴🔒 **CRITICAL** | `user_profiles` UPDATE 정책 `"Users can update own profile"`의 **`with_check = NULL`**(role 컬럼 미가드) + role CHECK가 `'admin'` 허용 + `authenticated` UPDATE grant=true → **임의 인증 고객이 자기 JWT로 `PATCH /rest/v1/user_profiles?id=eq.<uid>` `{"role":"admin"}` 직접 호출 → 관리자 자기승격**(Next.js 레이어 완전 우회). INSERT 정책도 role 미가드(자기삽입 admin 가능). | 라이브 `pg_policies`: UPDATE with_check=null; CHECK `role = ANY('customer','merchant','admin')`; `has_table_privilege('authenticated',...,'UPDATE')=true` |
+| **P1-fix** | — | `ALTER POLICY` UPDATE에 `WITH CHECK (auth.uid()=id AND role = (SELECT role FROM user_profiles WHERE id=auth.uid()))` 또는 role을 user-writable에서 제거 + admin-only SECURITY DEFINER RPC로 역할변경. INSERT도 동일 가드. **🔒 보안 트랙 R9.0 최우선.** | — |
+
+## T.2 인증/세션/RBAC (P2~P11)
+| ID | 심각도 | 결함 | 증거 |
+|---|---|---|---|
+| **P2** | 🔴🔒 | `create-profile`가 `accessToken` 없으면 **무인증 service-role INSERT**(caller `userId`) → 임의 UUID 프로필 생성(기본 customer라 폭발반경 제한). | `auth/create-profile/route.ts:41-65` |
+| **P3** | 🟠🔒 | 어드민 UI 보호가 **클라이언트 JS 전용** — middleware가 `/admin/*`에 `NextResponse.next()`(auth 0). SSR 콘텐츠가 직접 fetch/curl에 무방비(개별 API는 requireAdmin로 보호되나 페이지 게이트 부재). | `middleware.ts:253-275`·`layout.tsx:117-263` |
+| **P4** | 🟠🔒 | `check-email`이 **무인증 service-role 사용자 enumeration**(이메일 가입여부 oracle), rate-limit 0. | `auth/check-email/route.ts:9-58` |
+| **P5** | 🟠🔒 | `merchant/login`이 service-role로 `signInWithPassword` + **전체 session(refresh_token) JSON 응답 반환**(httpOnly 쿠키 아님 → JS 탈취 가능). | `auth/merchant/login/route.ts:26-90` |
+| **P6** | 🟠🔒 | `change-password`가 `persistSession:false` anon 클라로 `updateUser` → 세션 미전달 시 **비번 미변경인데 success 반환** 가능. | `auth/change-password/route.ts:35-54` |
+| P8 | 🟡🔒 | 머천트 create 응답에 평문 임시비번(D-4 재확인, "remove in production" 주석). P9: verification code가 비-prod 응답에 노출. P10: `createServiceRoleClient` alias(우발 RLS 우회 위험). P11: delete-user race. | 각 라우트 |
+
+## T.3 Stripe 머니패스 (W1~W15)
+| ID | 심각도 | 결함 | 증거 |
+|---|---|---|---|
+| **W-1** | 🔴 | `payment_intent.succeeded` 핸들러가 상태가드 없이 `paid/captured` 덮어씀 → **취소/노쇼 예약을 paid로 되살림**. | `stripe/webhook/route.ts:131-162` |
+| **W-3** | 🔴🔒 | `recapture-holds`·`capture-tour-day-payments` cron이 **`?secret=`를 URL로 수용** → 로그/Referer 유출 시 누구나 오프세션 청구 트리거. | `cron/recapture-holds/route.ts:37-44` |
+| **W-10** | 🟠 | **환불 라우트 부재** + `charge.refunded` 핸들러 부재 → 캡처 후 환불은 Stripe 대시보드 수동만, DB 영구 `paid` → **정산 대사 붕괴**(§G·O.3 C8 직결). | grep `stripe.refunds.create`=0 |
+| **W-9** | 🟠 | capture-tour-day가 `booking_date OR tour_date` 매칭 → **예약 시점(투어 30일 전) 조기 청구** 가능. | `capture-tour-day-payments/route.ts:84` |
+| **W-2/W-6** | 🔴/🟠 | settle↔webhook 경쟁(락/멱등키 없음, W-2); recapture가 DB write 실패 시 **중복 PI 생성**(이중 hold/이중 청구, W-6). | settle+webhook; recapture `:131-238` |
+| W-5/W-8/W-11/W-12 | 🟠 | 캡처 웹훅 멱등키 없음→`paid_at` 손상(W-5); 고객취소가 SI/PI 미취소(카드 vault 잔류, W-8); `async_payment_failed`가 로그만→ghost confirmed(W-11); stale `authorized`로 재시도 차단(W-12). | webhook/checkout |
+
+## T.4 챗봇/에이전트 파이프라인 (CB1~CB15)
+| ID | 심각도 | 결함 | 증거 |
+|---|---|---|---|
+| **CB-2** | 🔴🔒 | 예약조회 lockout·일반 RL이 **인메모리 Map**(서버리스 인스턴스 간 미공유) → 람다 분산으로 **예약 enumeration/LLM비용 무제한**. 예약조회 PII 가드의 핵심 방어 무력화. | `lib/chatbot/bookingLookupRateLimit.ts`·`requestRateLimit.ts` |
+| **CB-1** | 🔴🔒 | `/api/agent/v1/quote`·`/api/agent/mcp`에 **CORS `*`**(HMAC 토큰·agent_reservations write 머니인접) → CSRF. | `agent/v1/quote:23`·`agent/mcp:33` |
+| **CB-3** | 🟠🔒 | `debugNoSideEffects` 플래그가 `NODE_ENV` 게이트 → 프리뷰/스테이징서 로깅·예약생성·핸드오프 우회. | `assistant/route.ts:642,885` |
+| **CB-5** | 🟠 | `createQuoteBooking`이 **무인증 service-role로 bookings write** → 임의 이메일 PENDING 예약 양산. | `lib/chatbot/quoteFlow.ts:259-306` |
+| CB-6/12/15 | 🟠/🟡 | 메모리 요약 프롬프트 인젝션 영속(CB-6); 피드백 위조 쿠키 표 조작(CB-12); MCP 배치 무제한 DB 고갈(CB-15); RAG chunk raw 인젝션(CB-10). | 각 |
+
+## T.5 공개/고객 API (PA — 신규 다수)
+| ID | 심각도 | 결함 | 증거 |
+|---|---|---|---|
+| **PA-1** | 🔴🔒 | `emails/reminders` **GET이 CRON_SECRET 없이 POST 위임** → 누구나 대량 리마인더 메일 발송. | `emails/reminders/route.ts:169-173` |
+| **PA-2** | 🔴🔒 | `upload` **DELETE 소유권 검사 0** → 인증유저가 임의 path/bucket 파일 삭제(N17 강화 확정). | `upload/route.ts:234-281` |
+| **PA-3** | 🟠🔒 | `tour-rooms/[bookingId]/messages` **`senderRole` 클라 제어** → 고객이 `system` 역할 메시지 위조. | `tour-rooms/.../messages:151-163` |
+| **PA-4** | 🟠🔒 | tour-rooms `spot-events`/`events`(SSE)가 **게스트 이메일 스프레이**(bookingId+이메일 추측, lockout 0) → 예약 enumeration. | `spot-events:116-125`·`events:69-79` |
+| **PA-5** | 🟠🔒 | `itinerary/match`·`tour-product/match-explanation` **무인증·무 rate-limit AI**(비용) + match-explanation은 **client `parsed_query` → 프롬프트 인젝션**. | `itinerary/match:49`·`match-explanation:36-57` |
+| **PA-6** | 🟠🔒 | `contact`·`send-verification-code` **rate-limit 0**(스팸/이메일 폭탄); reviews `is_visible:true` 강제(모더레이션 우회); reactions GET이 `user_id` 노출; guest 예약이 **결제 전 재고 차감**(DoS); receipt 토큰 `?token=` 쿼리. | 각 라우트 |
+
+## T.6 미진단 어드민 라우트 (AR — 10개 전부 requireAdmin 보유)
+| ID | 심각도 | 결함 | 증거 |
+|---|---|---|---|
+| **AR-1** | 🟠 | `tour-content/generate` **로케일/페이로드/rate 캡 0** → OpenAI+TTS 비용 드레인; `sourcePayload` 프롬프트 인젝션; 공개버킷 자동생성. | `tour-content/generate/route.ts:60-90` |
+| **AR-2** | 🟠🔒 | `email-diag`의 **`supabase_otp` 모드가 임의 이메일 OTP 발송**(스팸/쿼터) + 시크릿 설정여부 노출. | `email-diag/route.ts:113-127` |
+| **AR-3** | 🟠 | `tours` 픽업포인트 insert 실패 무음(201 success)·**비원자 delete+insert 교체**(insert 실패 시 픽업 전손실). | `tours/route.ts:104-123,299-325` |
+| **AR-4** | 🟡 | **N33 site_settings 부재로 3개 write 라우트 하드 500**: `homepage-product-card-images PUT`·`settings PUT`·`cms/section-images PUT`(GET은 안전 degrade). bus-detail 날짜 무검증. | mapping |
+
+## T.7 공유 lib (LIB1~LIB8)
+| ID | 심각도 | 결함 | 증거 |
+|---|---|---|---|
+| **LIB-1** | 🟠🔒 | `sendBookingCancellationEmail` 외 3개 구 이메일 템플릿이 **사용자 문자열 escape 없이 raw HTML 삽입** → 트랜잭션 이메일 XSS(신규 confirmation만 escapeHtml). | `lib/email.ts:539-592,686-695` |
+| **LIB-3** | 🟠 | **FX 폴백 1480 하드코딩 ~7% 오차** → FX API 다운 시 서버권위 예약가 stale, Stripe 틀린 USD 청구(클라+서버 동일폴백→mismatch 가드 미발화); 30분 쿨다운 창 전체 영향. | `lib/exchange/usdBasedRates.server.ts:29,91` |
+| **LIB-2** | 🟡 | DMZ 7-9인 차량등급 오류(`solati` vs PAX_TIERS `van`). LIB-5: notifications 무음실패 무알림(N25). LIB-6: PAYMENT_STATUS 라벨 한국어 유실. isPeakSeason 교차연도 취약. | 각 |
+| **LIB-good** | ✅ | service-role 키 클라 번들 유출 **없음**(검증) — `import 'server-only'` 가드만 권장. 포맷/반올림 깨끗. | `lib/supabase.ts`·`lib/format/*` |
+
+## T.8 고객 머니패스 UI (CK1~CK16)
+| ID | 심각도 | 결함 | 증거 |
+|---|---|---|---|
+| **CK-1** | 🔴 | 카트가 **유령 10% 세금 표시·합산**(`subtotal*0.1`)인데 체크아웃/서버는 미적용 → **표시 $110, 청구 $100**. | `cart/page.tsx:335-336` |
+| **CK-2** | 🔴 | 프로모 검증이 **GET인데 라우트는 POST만** → 항상 405 → **프로모 할인 영구 미적용**(Codex "쿠폰 깨짐" 확정). | `cart/page.tsx:262` vs `promo-codes/validate:8` |
+| **CK-3** | 🔴 | 프로모가 작동해도 `/api/bookings`가 프로모 무인지 → **PRICE_MISMATCH 400 → 예약 실패**. | `cart:276-287`·`bookings:299` |
+| **CK-9** | 🟠 | 빌더 체크아웃이 `booking.currency` null/stale 시 기본 `'usd'` → **800000 KRW를 $8000로 Stripe 청구** 위험(N3 case 결함과 결합). | `itinerary-builder/checkout:152`·`stripe/checkout:120` |
+| **CK-6/7** | 🟠 | stripe/checkout 더블서밋 경쟁(auth_pending 창, CK-6); 예약이 Stripe 셋업 전 생성→Stripe 실패 시 **고아 PENDING + 복구 UI 없음**(CK-7). | checkout |
+| **CK-mob** | 🟠 | **모바일서 결제 버튼 비-sticky**(폼 아래로 밀려 화면 밖); 체크아웃 입력 **15px → iOS 줌**; QuoteModal 입력 14px 줌; 카트 alert/confirm; aria-required 부재. | `checkout:653`·`mypage-ui.ts:143`·`QuoteModal:169` |
+
+## T.9 DB/RLS/storage 라이브 스윕 (직접)
+| ID | 결과 |
+|---|---|
+| ✅ | **RLS 비활성 테이블 0** (75개 전부 RLS on). N31(13개 no-policy)는 service-role 전용 → 의도 확인만(§J #13). |
+| ✅ | anon 실행가능 함수 대량이나 **대부분 pgvector/pg_trgm 확장연산자+트리거**(무해). 위험 SECURITY DEFINER는 **N27 그대로**(신규 없음). matcher/RAG 함수는 SECURITY INVOKER(RLS 적용, 의도된 공개). |
+| **N34** | 🟡🔒 storage 버킷 4개 전부 public; **`email-assets`·`product-images`는 size/MIME 제한 없음**; INSERT 정책 `"Auth Upload"` role=public → 라우트 우회 직접 업로드 여지(N30/N17과 함께 보안트랙). |
+| ✅ | anon 읽기 매트뷰 = `analytics_sessions_daily`·`analytics_events_daily`(**N29 재확인**). |
+
+## T.10 §R WBS 반영 (트랙 확장)
+- **🔒 보안 트랙(R9) 대폭 확장 — 신규 R9.0 최우선 = P1 RLS WITH CHECK(라이브 확정 권한상승)**. 이어 P2(create-profile)·PA-1(reminders GET)·PA-2(upload DELETE)·W-3(cron secret URL)·CB-1(CORS)·CB-2(durable RL)·W-1(webhook 상태가드). 그 뒤 P3~P11·PA-3~6·AR-2·CB-3~15·N34·LIB-1(이메일 XSS).
+- **신규 💴 머니패스 무결성 트랙:** W-1·W-2·W-6·W-9·W-10(환불 라우트+`charge.refunded`)·LIB-3(FX 폴백)·CK-1(세금)·CK-2/3(프로모)·CK-9(통화). **§G 정산은 W-10 환불경로 없이는 대사 불가** → §G-6에 환불 핸들러 선행 추가.
+- **고객 체크아웃 UX/모바일:** CK-mob(sticky 버튼·iOS줌·alert) → R3 고객측(어드민과 별개) 또는 별도 트랙.
+- **공통 인프라:** durable rate-limit(Upstash/KV)는 CB-2·PA-5/6·P4의 공통 의존 → 단일 기반 작업(§Q에 준비사양 추가 대상).
+- **관측성(WS-A) 격상:** notifications 무음실패(LIB-5)·이메일 드롭·FX 폴백·결제 불일치 = 무알림 다발 → 구조화 로그+알림 1순위.
+
+---
+
 # §L. 세션 인수인계 (다음 세션이 100% 이어받기 위한 단일 요약)
 
 ## L-0. 한 줄 상태
@@ -1219,6 +1318,7 @@ GRANT  EXECUTE ON FUNCTION public.analytics_health_snapshot()               TO s
 - **0.8 Codex 통합**(§M): 3 감사 에이전트 file:line 검증 → 공개 보안 BLOCKER 4(N11 inventory·N13 promo·N14 checkout IDOR·N16 confirm-email IDOR) + MAJOR 다수 + ⚙️어드민(N23 cron fail-open·N24 webhook·N25 notifications드리프트·N26 overfetch). **REFUTED 2**(R5 RAG 완전연결·R6 reviews=폴더), IMPRECISE 6. 별도 doc 생성 거부.
 - **0.9 라이브 DB 대조**(§N): atockorea MCP 라이브 연결(K-0 해소). **마이그레이션 드리프트(repo 32 vs live 48, ~9만 일치 — pending-db-apply 수동 워크플로)** = BLOCKER급 거버넌스. N1 REFUTED(라이브 실재)→드리프트 재분류. **N27**(anon/PUBLIC이 REST로 비가역 PII 익명화 RPC 호출, BLOCKER)·N28(contact_inquiries permissive insert)·N29(matview API 노출)·N30~N32. §G-6 DDL 라이브 충돌0·F1~F3(통화혼입 ACTIVE: krw+usd 실데이터)·R1(UNIQUE) 라이브 확정. payments/notifications 라이브 부재 확정. perf 62 rls_initplan/62 multi-policy/134 unused-index.
 - **0.10 완전화 감사**(§O~§R): 3 감사 에이전트 + 라이브 검증. **N33**(site_settings 어떤 스키마에도 부재 → D-11 설정·D-8 CMS·홈카드 영속 전부 무력, BLOCKER)·**B-1**(노쇼가 위약금 아닌 전액 청구, 돈 BLOCKER)·B-2(layout onAuthStateChange 없음)·B-3(상태 state machine 없음)·M-4(투어 DELETE 예약무시)·M-6(KST 타임존)·M-7(형제로케일 덮어쓰기)·M-8(layout 프로필 자동생성). §G-6 DDL **12 정정 델타**(O.3) — C#3 FOR UPDATE는 라이브 probe로 **REFUTED**(구문 유효). 누락 횡단 워크스트림 WS-A~J(관측성·테스트·롤백·rate-limit·i18n·a11y·perf·DR·RBAC·시크릿). 업그레이드 U-1~U-10(§P). 준비사양 §Q(N27 SQL·정합 런북·Phase1 턴키). **실행 WBS §R**(PR단위 티켓 R0~R9).
+- **0.12 최종 전수검수**(§T): 7 에이전트(미진단어드민라우트·Stripe머니패스·인증RBAC·챗봇·공개API·lib·고객UI) + 라이브 DB/RLS/storage 스윕. 🔴🔴 **P1 라이브확정: 고객→admin 권한상승**(`user_profiles` UPDATE/INSERT RLS에 role WITH CHECK 부재 → PostgREST 직접 PATCH로 자기승격). W1-15 머니패스(**환불 라우트 부재 W-10**·webhook 상태가드 W-1·cron secret URL W-3·캡처 조기청구 W-9)·CB1-15(**예약 enumeration: 인메모리 RL CB-2**·CORS* CB-1·무인증 챗봇예약 CB-5)·PA(reminders GET 메일발송·upload DELETE IDOR)·CK1-3(카트 유령세금·프로모 GET/POST 깨짐)·LIB-1(이메일XSS)·LIB-3(FX폴백 7%)·N34(storage). **굿뉴스: requireAdmin 서버DB검증·service-role 번들유출0·웹훅서명O·머니cron fail-closed·pricing 수학 깨끗.** 보안트랙 R9 대폭확장 + 💴머니패스 무결성 트랙 신설. **진단(Phase 0) 종결.**
 - **0.11 섹션별 딥리뷰 + 모바일/UX**(§S): 8 에이전트. **모바일 부분 사용가능**(셸은 햄버거+드로어+하단탭으로 모바일 인지 — "전부 데스크톱전용" REFUTED / 그러나 29p중 12p 반응형0, 최악 support·match-pois·sessions·retention). 신규 기능결함 **S-F1**(stats 매출 OOM)·**S-F2**(머천트 비번 `Math.random()` 비-CSPRNG)·**S-F3**(audit actor=관리자 아닌 신규머천트)·S-F4/F5(에디터 교차상품/로케일 데이터손상)·F6~F16. UX 시스템 **S-U1**(ConfirmDialog·Sonner 기존자산 미사용→27+ alert/confirm)·S-U2(URL필터 영속0)·S-U3(재fetch 스피너교체)·S-U4(날짜포맷/getStatusColor 중복)·S-U5(support·qa-review nav 부재 IA)·S-U6~U11. 모바일 패턴 카탈로그(iOS줌·터치44px·micro텍스트·테이블폴백) → **R2.0 기반 티켓** 신설, R3 페이지 DoD에 모바일패리티 필수화. **진단 종료점 — Phase 1 착수 권고.**
 
 ## L-2. 다음 할 일 (우선순위)
