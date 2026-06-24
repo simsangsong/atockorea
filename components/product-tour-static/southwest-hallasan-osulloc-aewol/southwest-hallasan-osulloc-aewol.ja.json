@@ -32,7 +32,7 @@
     ],
     "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
     "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
-    "priceLabel": "1名様 US$52",
+    "priceLabel": "",
     "shortCardDescription": "漢拏山1100高地の湿地、火山性海岸線、天帝淵滝、オソルロクの茶畑、愛月カフェ通り、梨湖テウの夕日をつなぐ、バランスの取れた済州島南西部の1日コース。",
     "tags": [
       "small_group",
@@ -46,9 +46,9 @@
   "headlineLine1": "済州南西部",
   "headlineLine2": "漢拏山・オソルロク・愛月・梨湖テウ",
   "price": {
-    "amountLabel": "52",
+    "amountLabel": "49",
     "originalPriceUsd": null,
-    "salePriceUsd": 52,
+    "salePriceUsd": 49,
     "discountPercent": null,
     "currency": "USD",
     "per": "person"
@@ -1467,16 +1467,16 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_idはSupabase／環境変数から実行時に解決されます。静的JSONBの一部ではありません。",
     "price": {
-      "amountLabel": "52",
+      "amountLabel": "49",
       "originalPriceUsd": null,
-      "salePriceUsd": 52,
+      "salePriceUsd": 49,
       "discountPercent": null,
       "currency": "USD",
       "per": "person"
     }
   },
   "matching_profile": {
-    "product_type": "small_group",
+    "product_type": "bus",
     "route_type": "fixed_route",
     "region_type": "jeju_southwest",
     "region_tags": [

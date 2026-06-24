@@ -35,7 +35,7 @@
     ],
     "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
     "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
-    "priceLabel": "每人 US$100 起（原价 $112，立减 11%）",
+    "priceLabel": "",
     "shortCardDescription": "一条高强度的全岛线路，串联三处联合国教科文组织世界遗产——汉拿山、城山日出峰与万丈窟熔岩洞，并融入海女徒手潜水现场表演、柱状节理海崖以及直泻入海的正房瀑布。济州的标志性精华，浓缩于一日之内。",
     "tags": [
       "小团",
@@ -49,13 +49,12 @@
   "headlineLine1": "济州全岛精华一日游",
   "headlineLine2": "一日游",
   "price": {
-    "amountLabel": "100",
+    "amountLabel": "88",
     "originalPriceUsd": 112,
-    "salePriceUsd": 100,
-    "discountPercent": 11,
+    "salePriceUsd": 88,
+    "discountPercent": 21,
     "currency": "USD",
-    "per": "person",
-    "priceNote": "小团双语全岛游（约每人 ₩138,000）。AtoC Korea 直营销售；较运营商基准价立减 11%。"
+    "per": "person"
   },
   "hero": {
     "imageUrl": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
@@ -1287,13 +1286,12 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id 在运行时从 Supabase / 环境变量中解析；不属于静态 JSONB 的一部分。",
     "price": {
-      "amountLabel": "100",
+      "amountLabel": "88",
       "originalPriceUsd": 112,
-      "salePriceUsd": 100,
-      "discountPercent": 11,
+      "salePriceUsd": 88,
+      "discountPercent": 21,
       "currency": "USD",
-      "per": "person",
-      "priceNote": "小团双语全岛游（约每人 ₩138,000）。AtoC Korea 直营销售；较运营商基准价立减 11%。"
+      "per": "person"
     }
   },
   "matching_profile": {

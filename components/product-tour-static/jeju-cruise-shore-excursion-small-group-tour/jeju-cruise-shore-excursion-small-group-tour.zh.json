@@ -34,7 +34,7 @@
     ],
     "heroImage": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
     "thumbnail": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
-    "priceLabel": "每人 US$79（原价$85，7% 优惠）",
+    "priceLabel": "",
     "shortCardDescription": "根据邮轮靠港口灵活调整路线的小团靠港游。济州港（北部）走东海岸UNESCO路线，途经城山日出峰；江汀港（南部）走汉拿山1100高地＋南海岸地质奇观＋偶来市场路线。两条线路均留有充裕时间返回邮轮码头。",
     "tags": [
       "cruise_excursion",
@@ -47,12 +47,12 @@
   "headlineLine1": "济州邮轮岸上 小团游",
   "headlineLine2": "一日游",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "72",
     "currency": "USD",
     "per": "person",
-    "salePriceUsd": null,
-    "originalPriceUsd": null,
-    "discountPercent": null
+    "salePriceUsd": 72,
+    "originalPriceUsd": 85,
+    "discountPercent": 15
   },
   "hero": {
     "imageUrl": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
@@ -1770,12 +1770,12 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id 在运行时从 Supabase / 环境变量解析，不属于静态 JSONB 的一部分。user_port 在预订时从邮轮行程中解析。",
     "price": {
-      "amountLabel": "79",
+      "amountLabel": "72",
       "currency": "USD",
       "per": "person",
-      "salePriceUsd": 79,
+      "salePriceUsd": 72,
       "originalPriceUsd": 85,
-      "discountPercent": 7
+      "discountPercent": 15
     }
   },
   "matching_profile": {
