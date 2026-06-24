@@ -25,6 +25,7 @@ export async function GET() {
         { name: "searchTours", description: "Search the tour catalogue." },
         { name: "getTour", description: "Get one tour's details + booking URL." },
         { name: "getQuote", description: "Authoritative custom private-tour price (KRW)." },
+        { name: "createBookingHold", description: "Create a pending booking + payment hold (human confirms payment)." },
       ],
       documentation: `${origin}/llms.txt`,
     },

@@ -24,9 +24,11 @@ small-group guided day tours and custom itineraries.
 ## Allowed actions
 
 - Read the catalogue: ${origin}/feed/tours.json
-- Use the MCP server tools (read-only): searchTours, getTour, getQuote — ${origin}/api/mcp
+- Use the MCP server tools: searchTours, getTour, getQuote, createBookingHold — ${origin}/api/mcp
 - Get an authoritative custom-tour quote: getQuote (KRW, itemized).
-- Create a pending booking with a payment hold: POST ${origin}/api/itinerary/book
+- Create a pending booking with a payment hold: createBookingHold (MCP) or
+  POST ${origin}/api/itinerary/book. This creates a HOLD only — a human
+  confirms the actual payment at the returned checkout URL.
 
 ## Boundaries (please respect)
 

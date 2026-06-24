@@ -9,16 +9,19 @@ import {
 } from "@/lib/quote-engine/pricing-policy";
 
 /**
- * POST /api/mcp — Model Context Protocol server (read-only, stateless).
+ * POST /api/mcp — Model Context Protocol server (stateless).
  *
- * A dependency-free JSON-RPC 2.0 endpoint over HTTP that exposes three tools
+ * A dependency-free JSON-RPC 2.0 endpoint over HTTP that exposes four tools
  * AI agents can call to transact with AtoC Korea:
- *   - searchTours: find catalogue tours
- *   - getTour:     full details + booking URL for one tour
- *   - getQuote:    authoritative custom private-tour price (KRW, itemized)
+ *   - searchTours:       find catalogue tours
+ *   - getTour:           full details + booking URL for one tour
+ *   - getQuote:          authoritative custom private-tour price (KRW, itemized)
+ *   - createBookingHold: create a PENDING booking + Stripe payment hold
  *
- * Write actions (booking) are intentionally NOT exposed here — agents create a
- * pending hold via POST /api/itinerary/book and a human confirms payment.
+ * createBookingHold deliberately stops at a hold — it never charges a card.
+ * It reuses POST /api/itinerary/book (server-authoritative price recompute,
+ * out-of-scope gate, DB write) and returns a checkout URL where a HUMAN
+ * confirms payment. There is no agent auto-charge path by design.
  *
  * Discovery: /.well-known/mcp/server-card.json, advertised in /llms.txt.
  */
@@ -82,6 +85,33 @@ const TOOLS = [
         cruisePort: { type: "string", enum: ["gangjeong", "jeju_port"] },
       },
       required: ["region", "pax"],
+    },
+  },
+  {
+    name: "createBookingHold",
+    description:
+      "Create a PENDING custom-tour booking with a payment hold (no charge). The server " +
+      "recomputes the price and rejects mismatches/out-of-scope requests. Returns a checkout " +
+      "URL where a HUMAN confirms payment — agents never auto-charge a card.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        region: { type: "string", enum: ["busan", "jeju", "seoul"] },
+        track: { type: "string", enum: ["private", "cruise", "dmz"] },
+        guideLanguage: { type: "string", description: "en, ko, zh, zh-TW, ja, es." },
+        durationHours: { type: "integer", minimum: 1 },
+        pax: { type: "integer", minimum: 1 },
+        requestedDate: { type: "string", description: "Tour date YYYY-MM-DD." },
+        contactName: { type: "string" },
+        contactEmail: { type: "string", description: "Required — booking confirmation goes here." },
+        contactPhone: { type: "string" },
+        notes: { type: "string" },
+        poiKeys: { type: "array", items: { type: "string" }, description: "Optional itinerary stops; empty = guide-curated." },
+        jejuPickupZone: { type: "string", enum: ["city", "out_west", "out_east", "out_south"] },
+        cruisePort: { type: "string", enum: ["gangjeong", "jeju_port"] },
+        clientQuotedTotal: { type: "integer", description: "Optional KRW price check; mismatch > ₩1 is rejected (409)." },
+      },
+      required: ["region", "pax", "requestedDate", "contactEmail"],
     },
   },
 ] as const;
@@ -193,7 +223,89 @@ function toolGetQuote(args: Record<string, unknown>): ToolResult {
   };
 }
 
-function dispatchTool(name: string, args: Record<string, unknown>): ToolResult {
+async function toolCreateBookingHold(
+  args: Record<string, unknown>,
+  baseUrl: string,
+): Promise<ToolResult> {
+  const body: Record<string, unknown> = {
+    region: args.region,
+    track: typeof args.track === "string" ? args.track : "private",
+    guide_language: typeof args.guideLanguage === "string" ? args.guideLanguage : "en",
+    duration_hours: clampInt(args.durationHours, 8, 1, 24),
+    party_size: clampInt(args.pax, 1, 1, 60),
+    requested_date: typeof args.requestedDate === "string" ? args.requestedDate : args.date,
+    contact_name: typeof args.contactName === "string" ? args.contactName : undefined,
+    contact_email: typeof args.contactEmail === "string" ? args.contactEmail : undefined,
+    contact_phone: typeof args.contactPhone === "string" ? args.contactPhone : undefined,
+    notes: typeof args.notes === "string" ? args.notes : undefined,
+    poi_keys: Array.isArray(args.poiKeys) ? args.poiKeys : undefined,
+    jeju_pickup_zone: isJejuZone(args.jejuPickupZone) ? args.jejuPickupZone : undefined,
+    cruise_port: args.cruisePort === "gangjeong" || args.cruisePort === "jeju_port" ? args.cruisePort : undefined,
+    client_quoted_total: typeof args.clientQuotedTotal === "number" ? args.clientQuotedTotal : undefined,
+    source_url: `${baseUrl}/api/mcp`,
+  };
+
+  let res: Response;
+  let data: Record<string, unknown>;
+  try {
+    res = await fetch(new URL("/api/itinerary/book", baseUrl), {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(body),
+    });
+    data = (await res.json().catch(() => ({}))) as Record<string, unknown>;
+  } catch (e) {
+    return {
+      text: `Could not reach the booking service: ${e instanceof Error ? e.message : "unknown"}`,
+      structured: { ok: false, error: "booking_unreachable" },
+    };
+  }
+
+  if (res.ok && data.ok) {
+    const bookingId = String(data.booking_id ?? "");
+    const total = Number(data.total_krw ?? 0);
+    const checkoutUrl = `${baseUrl}/itinerary-builder/checkout?bookingId=${bookingId}`;
+    return {
+      text:
+        `Pending booking created (hold, not charged). Total ₩${total.toLocaleString("en-US")}.\n` +
+        `A human must confirm payment here: ${checkoutUrl}\n` +
+        `Booking id: ${bookingId}. Do not auto-charge — hand this URL to the traveller.`,
+      structured: {
+        ok: true,
+        status: "pending_payment_confirmation",
+        bookingId,
+        totalKrw: total,
+        currency: "krw",
+        breakdown: data.breakdown,
+        checkoutUrl,
+      },
+    };
+  }
+
+  // Map the documented failure modes to clear agent guidance.
+  if (res.status === 409) {
+    return {
+      text: `Price changed since the quote: server total ₩${Number(data.server_total ?? 0).toLocaleString("en-US")}. Re-fetch getQuote and retry.`,
+      structured: { ok: false, error: "price_changed", serverTotalKrw: data.server_total },
+    };
+  }
+  if (res.status === 422) {
+    return {
+      text: `Out of auto-bookable scope (${Array.isArray(data.violations) ? data.violations.join(", ") : "unknown"}). Route the traveller to ${baseUrl}/contact.`,
+      structured: { ok: false, error: "out_of_scope", violations: data.violations, contactUrl: `${baseUrl}/contact` },
+    };
+  }
+  return {
+    text: `Could not create hold: ${String(data.error ?? `HTTP ${res.status}`)}`,
+    structured: { ok: false, error: data.error ?? `http_${res.status}` },
+  };
+}
+
+async function dispatchTool(
+  name: string,
+  args: Record<string, unknown>,
+  baseUrl: string,
+): Promise<ToolResult> {
   switch (name) {
     case "searchTours":
       return toolSearchTours(args);
@@ -201,6 +313,8 @@ function dispatchTool(name: string, args: Record<string, unknown>): ToolResult {
       return toolGetTour(args);
     case "getQuote":
       return toolGetQuote(args);
+    case "createBookingHold":
+      return toolCreateBookingHold(args, baseUrl);
     default:
       throw new Error(`Unknown tool: ${name}`);
   }
@@ -222,7 +336,7 @@ function rpcError(id: string | number | null, code: number, message: string) {
   return { jsonrpc: "2.0", id, error: { code, message } };
 }
 
-function handleRpc(req: RpcRequest): object | null {
+async function handleRpc(req: RpcRequest, baseUrl: string): Promise<object | null> {
   const id = req.id ?? null;
   const method = req.method ?? "";
 
@@ -248,7 +362,7 @@ function handleRpc(req: RpcRequest): object | null {
       const name = String(req.params?.name ?? "");
       const args = (req.params?.arguments as Record<string, unknown>) ?? {};
       try {
-        const out = dispatchTool(name, args);
+        const out = await dispatchTool(name, args, baseUrl);
         return rpcResult(id, {
           content: [{ type: "text", text: out.text }],
           structuredContent: out.structured,
@@ -273,12 +387,15 @@ export async function POST(request: Request) {
     return Response.json(rpcError(null, -32700, "Parse error"), { status: 400, headers: CORS });
   }
 
+  const baseUrl = new URL(request.url).origin;
+
   if (Array.isArray(payload)) {
-    const responses = payload.map((r) => handleRpc(r as RpcRequest)).filter((r): r is object => r !== null);
+    const settled = await Promise.all(payload.map((r) => handleRpc(r as RpcRequest, baseUrl)));
+    const responses = settled.filter((r): r is object => r !== null);
     return Response.json(responses, { headers: CORS });
   }
 
-  const response = handleRpc(payload as RpcRequest);
+  const response = await handleRpc(payload as RpcRequest, baseUrl);
   if (response === null) {
     return new Response(null, { status: 202, headers: CORS });
   }

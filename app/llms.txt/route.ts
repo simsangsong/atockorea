@@ -47,20 +47,23 @@ Prefer the structured endpoints below over scraping HTML.
 - Agent rules & policies: ${origin}/agents.md
 - Sitemap: ${origin}/sitemap.xml
 
-## What you can do programmatically (read-only MCP tools)
+## What you can do programmatically (MCP tools)
 
 - searchTours(query, region?) — find tours in the fixed catalogue.
 - getTour(slug) — full details + booking URL for one tour.
 - getQuote(region, track, durationHours, pax, guideLanguage, date?, ...) —
   authoritative custom private-tour price in KRW, itemized. This is the real
   pricing engine, not an estimate.
+- createBookingHold(region, pax, requestedDate, contactEmail, ...) — create a
+  PENDING booking + payment hold and get a checkout URL. Never charges a card.
 
 ## How booking works (human-confirmed payment)
 
 1. Discover a tour (catalogue) or design a custom itinerary.
 2. Price it: getQuote (custom) or the listed 'from' price (catalogue).
-3. Create a pending booking + Stripe payment hold: POST ${origin}/api/itinerary/book
-   (server recomputes the price; mismatches are rejected — quotes cannot be spoofed).
+3. Create a pending booking + Stripe payment hold: createBookingHold (MCP) or
+   POST ${origin}/api/itinerary/book (server recomputes the price; mismatches
+   are rejected — quotes cannot be spoofed). Returns a checkout URL.
 4. Final payment is confirmed by a human via Stripe checkout. Agents create the
    hold; people authorize the charge. We do not auto-charge cards from an agent.
 
