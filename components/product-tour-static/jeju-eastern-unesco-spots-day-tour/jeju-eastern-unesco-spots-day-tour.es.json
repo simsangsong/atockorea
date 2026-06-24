@@ -6,23 +6,23 @@
   "product_id": "jeju-eastern-unesco-spots-day-tour",
   "seo": {
     "pageTitle": "Tour Jeju Este: UNESCO, Cueva de Lava y Haenyeo | AtoC Korea",
-    "metaDescription": "Tour de un día en Jeju Este en grupo pequeño: playa Hamdeok, Aldea Seongeup (Patrimonio UNESCO), Cueva Micheon, Seongsan Ilchulbong (UNESCO) y Museo Haenyeo. 9 horas, todas las entradas incluidas. Guía en inglés.",
+    "metaDescription": "Bucle por el este de Jeju en grupo pequeño de 9 horas: playa Hamdeok, Aldea Folclórica de Seongeup (patrimonio folclórico UNESCO), Seongsan Ilchulbong (UNESCO) y Manjanggul (UNESCO) — los dos sitios del Patrimonio Natural Mundial —, y espectáculo de buceo de las haenyeo. Todas las entradas incluidas.",
     "primaryKeywords": [
-      "tour Jeju Este",
-      "Seongsan Ilchulbong tour",
-      "excursión Jeju UNESCO",
-      "tour Aldea Seongeup",
-      "Jeju grupo pequeño"
+      "tour UNESCO este de Jeju",
+      "tour Seongsan Ilchulbong",
+      "tour Manjanggul",
+      "espectáculo de buceo de las haenyeo",
+      "tour de un día Ilchulbong Jeju"
     ],
     "ogImage": "https://www.atockorea.com/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
     "title": "Tour Jeju Este: UNESCO, Lava y Haenyeo | AtoC",
-    "description": "Excursión de un día en Jeju Este: Playa Hamdeok → Aldea Seongeup (UNESCO) → Cueva Micheon → Seongsan Ilchulbong (UNESCO) → Museo Haenyeo. Grupo pequeño, 9 horas, entradas incluidas."
+    "description": "Tour de un día en grupo pequeño de 9 horas por el este de Jeju: playa Hamdeok → Aldea Folclórica de Seongeup → almuerzo → Seongsan Ilchulbong (UNESCO) → espectáculo de buceo de las haenyeo → Manjanggul (UNESCO). Todas las entradas incluidas, guía certificado."
   },
   "catalog_card": {
     "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
     "title": "Jeju Este: UNESCO Día",
-    "priceLabel": "Desde US$59 por persona (antes $69, 14% descuento)",
-    "shortCardDescription": "Excursión de un día en grupo pequeño por el este de Jeju cubriendo los hitos UNESCO y los puntos representativos en un único recorrido de 9 horas: Playa Hamdeok Seoubong, Aldea Folclórica Seongeup, Cueva Micheon en Ilchul Land, Seongsan Ilchulbong (Pico del Amanecer, Patrimonio Natural UNESCO) y el Museo Haenyeo. Todas las entradas incluidas, guía certificado.",
+    "priceLabel": "US$47 por persona (precio normal $59, 20% de descuento) · aprox. 72.000 won",
+    "shortCardDescription": "Recorre los lugares UNESCO del este de Jeju en un bucle en grupo pequeño de 9 horas. Incluye la playa Hamdeok Seoubong, la Aldea Folclórica de Seongeup (patrimonio folclórico UNESCO), Seongsan Ilchulbong y Manjanggul — los dos sitios del Patrimonio Natural Mundial de la UNESCO inscritos juntos en 2007 — y el espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela). Todas las entradas incluidas, guía certificado en inglés y chino.",
     "tags": [
       "grupo reducido",
       "jeju",
@@ -34,7 +34,7 @@
     "rating": 0,
     "reviewCount": 0,
     "slug": "jeju-eastern-unesco-lugares-day-tour",
-    "subtitle": "El tour de Jeju Este con más reseñas — todas las entradas incluidas.",
+    "subtitle": "Minibús de grupo pequeño, guía en inglés y chino — recorre en un bucle por el este de 9 horas la playa Hamdeok, la Aldea Folclórica de Seongeup, Seongsan Ilchulbong (UNESCO), el espectáculo de buceo de las haenyeo y Manjanggul (UNESCO).",
     "region": "Jeju Este",
     "duration": "9 horas",
     "stopsCount": 8,
@@ -50,10 +50,10 @@
   "headlineLine1": "Jeju Este",
   "headlineLine2": "UNESCO Día",
   "price": {
-    "amountLabel": "",
-    "originalPriceUsd": null,
-    "salePriceUsd": null,
-    "discountPercent": null,
+    "amountLabel": "47",
+    "originalPriceUsd": 59,
+    "salePriceUsd": 47,
+    "discountPercent": 20,
     "currency": "USD",
     "per": "person"
   },
@@ -140,224 +140,192 @@
       "type": "photo",
       "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
       "location": "Playa Hamdeok Seoubong",
-      "alt": "Playa Hamdeok Seoubong — gallery image 1",
-      "caption": "Playa Hamdeok Seoubong — photo 1"
+      "caption": "Playa Hamdeok Seoubong — photo 1",
+      "alt": "Playa Hamdeok Seoubong — gallery image 1"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
-      "location": "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
-      "alt": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — gallery image 1",
-      "caption": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — photo 1"
+      "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
+      "location": "Playa Hamdeok Seoubong",
+      "caption": "Playa Hamdeok Seoubong — photo 2",
+      "alt": "Playa Hamdeok Seoubong — gallery image 2"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
-      "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
-      "alt": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — gallery image 1",
-      "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 1"
+      "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
+      "location": "Playa Hamdeok Seoubong",
+      "caption": "Playa Hamdeok Seoubong — photo 3",
+      "alt": "Playa Hamdeok Seoubong — gallery image 3"
     },
     {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
-      "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
-      "alt": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — gallery image 1",
-      "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 1"
+      "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
+      "location": "Playa Hamdeok Seoubong",
+      "caption": "Playa Hamdeok Seoubong — photo 4",
+      "alt": "Playa Hamdeok Seoubong — gallery image 4"
     },
     {
       "id": 5,
       "type": "photo",
-      "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-16.webp",
-      "location": "Museo Haenyeo (buceadoras de Jeju)",
-      "alt": "Museo Haenyeo (buceadoras de Jeju) — gallery image 1",
-      "caption": "Museo Haenyeo (buceadoras de Jeju) — photo 1"
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+      "location": "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
+      "caption": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — photo 1",
+      "alt": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — gallery image 1"
     },
     {
       "id": 6,
       "type": "photo",
-      "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
-      "location": "Playa Hamdeok Seoubong",
-      "alt": "Playa Hamdeok Seoubong — gallery image 2",
-      "caption": "Playa Hamdeok Seoubong — photo 2"
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+      "location": "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
+      "caption": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — photo 2",
+      "alt": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — gallery image 2"
     },
     {
       "id": 7,
       "type": "photo",
-      "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
-      "location": "Playa Hamdeok Seoubong",
-      "alt": "Playa Hamdeok Seoubong — gallery image 3",
-      "caption": "Playa Hamdeok Seoubong — photo 3"
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+      "location": "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
+      "caption": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — photo 3",
+      "alt": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — gallery image 3"
     },
     {
       "id": 8,
       "type": "photo",
-      "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
-      "location": "Playa Hamdeok Seoubong",
-      "alt": "Playa Hamdeok Seoubong — gallery image 4",
-      "caption": "Playa Hamdeok Seoubong — photo 4"
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+      "location": "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
+      "caption": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — photo 4",
+      "alt": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — gallery image 4"
     },
     {
       "id": 9,
       "type": "photo",
-      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
       "location": "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
-      "alt": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — gallery image 2",
-      "caption": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — photo 2"
+      "caption": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — photo 6",
+      "alt": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — gallery image 6"
     },
     {
       "id": 10,
       "type": "photo",
-      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
-      "location": "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
-      "alt": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — gallery image 3",
-      "caption": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — photo 3"
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+      "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
+      "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 1",
+      "alt": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — gallery image 1"
     },
     {
       "id": 11,
       "type": "photo",
-      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
-      "location": "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
-      "alt": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — gallery image 4",
-      "caption": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — photo 4"
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+      "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
+      "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 2",
+      "alt": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — gallery image 2"
     },
     {
       "id": 12,
       "type": "photo",
-      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
-      "location": "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
-      "alt": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — gallery image 6",
-      "caption": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — photo 6"
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+      "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
+      "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 3",
+      "alt": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — gallery image 3"
     },
     {
       "id": 13,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
-      "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
-      "alt": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — gallery image 2",
-      "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 2"
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+      "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
+      "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 4",
+      "alt": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — gallery image 4"
     },
     {
       "id": 14,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
-      "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
-      "alt": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — gallery image 3",
-      "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 3"
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+      "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
+      "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 5",
+      "alt": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — gallery image 5"
     },
     {
       "id": 15,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
-      "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
-      "alt": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — gallery image 4",
-      "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 4"
+      "src": "/images/tours/seongsan-ilchulbong/photo-006.webp",
+      "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
+      "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 6",
+      "alt": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — gallery image 6"
     },
     {
       "id": 16,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
-      "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
-      "alt": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — gallery image 5",
-      "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 5"
+      "src": "/images/tours/seongsan-ilchulbong/seongsan-haenyeo-show-ai.webp",
+      "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
+      "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 12",
+      "alt": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — gallery image 12"
     },
     {
       "id": 17,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
-      "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
-      "alt": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — gallery image 6",
-      "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 6"
+      "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-16.webp",
+      "location": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo)",
+      "caption": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo) — photo 1",
+      "alt": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo) — gallery image 1"
     },
     {
       "id": 18,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
-      "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
-      "alt": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — gallery image 7",
-      "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 7"
+      "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-17.webp",
+      "location": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo)",
+      "caption": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo) — photo 2",
+      "alt": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo) — gallery image 2"
     },
     {
       "id": 19,
       "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
-      "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
-      "alt": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — gallery image 2",
-      "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 2"
+      "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-18.webp",
+      "location": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo)",
+      "caption": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo) — photo 3",
+      "alt": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo) — gallery image 3"
     },
     {
       "id": 20,
       "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
-      "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
-      "alt": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — gallery image 3",
-      "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 3"
+      "src": "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-diving-ai.webp",
+      "location": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo)",
+      "caption": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo) — photo 4",
+      "alt": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo) — gallery image 4"
     },
     {
       "id": 21,
       "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
-      "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
-      "alt": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — gallery image 4",
-      "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 4"
+      "src": "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-silhouette-ai.webp",
+      "location": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo)",
+      "caption": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo) — photo 5",
+      "alt": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo) — gallery image 5"
     },
     {
       "id": 22,
       "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
-      "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
-      "alt": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — gallery image 5",
-      "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 5"
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+      "location": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava)",
+      "caption": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — photo 1",
+      "alt": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — gallery image 1"
     },
     {
       "id": 23,
       "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/photo-006.webp",
-      "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
-      "alt": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — gallery image 6",
-      "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 6"
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+      "location": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava)",
+      "caption": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — photo 2",
+      "alt": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — gallery image 2"
     },
     {
       "id": 24,
       "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/seongsan-haenyeo-show-ai.webp",
-      "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
-      "alt": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — gallery image 12",
-      "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 12"
-    },
-    {
-      "id": 25,
-      "type": "photo",
-      "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-17.webp",
-      "location": "Museo Haenyeo (buceadoras de Jeju)",
-      "alt": "Museo Haenyeo (buceadoras de Jeju) — gallery image 2",
-      "caption": "Museo Haenyeo (buceadoras de Jeju) — photo 2"
-    },
-    {
-      "id": 26,
-      "type": "photo",
-      "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-18.webp",
-      "location": "Museo Haenyeo (buceadoras de Jeju)",
-      "alt": "Museo Haenyeo (buceadoras de Jeju) — gallery image 3",
-      "caption": "Museo Haenyeo (buceadoras de Jeju) — photo 3"
-    },
-    {
-      "id": 27,
-      "type": "photo",
-      "src": "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-diving-ai.webp",
-      "location": "Museo Haenyeo (buceadoras de Jeju)",
-      "alt": "Museo Haenyeo (buceadoras de Jeju) — gallery image 7",
-      "caption": "Museo Haenyeo (buceadoras de Jeju) — photo 7"
-    },
-    {
-      "id": 28,
-      "type": "photo",
-      "src": "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-silhouette-ai.webp",
-      "location": "Museo Haenyeo (buceadoras de Jeju)",
-      "alt": "Museo Haenyeo (buceadoras de Jeju) — gallery image 8",
-      "caption": "Museo Haenyeo (buceadoras de Jeju) — photo 8"
+      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+      "location": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava)",
+      "caption": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — photo 3",
+      "alt": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — gallery image 3"
     }
   ],
   "itineraryStops": [
@@ -413,7 +381,7 @@
         "Fotografía en la orilla o café — ~15 min",
         "Tiempo libre / reagrupamiento — ~5 min"
       ],
-      "whyOnRoute": "**Esmeralda matinal y primer calentamiento de la ruta de las hortensias.** Hamdeok es la primera parada por tres motivos deliberados de la ruta este. (1) **Sincronía de marea y luz**: la llegada a las 09:30 atrapa la ventana de marea baja matinal (la franja esmeralda-turquesa más fotogénica antes de que el oleaje y los reflejos de mediodía aplanen el contraste); esta es *la* foto distintiva de la costa este de Jeju, y obtenerla antes de la oleada de autocares de las 10:30 supone una victoria tangible para el huésped. (2) **Anclaje geográfico para el arco hacia el este**: Hamdeok se sitúa a unos 14 km al este de Jeju City por la Ruta 1132 — la primera chincheta natural en el corredor costero que define el día. Saltársela obligaría a comenzar con un trayecto de autopista de 50 min hacia Seongeup (visualmente plano) o a abrir con un jardín de hortensias (privando al día de variedad rítmica). (3) **Contrapunto a la ruta de hortensias**: la arena blanca y el agua esmeralda de Hamdeok aportan el único anclaje paisajístico **no floral** del día —cualquier otra parada sustancial está codificada como hortensia o como patrimonio—, así que el papel de Hamdeok es dar amplitud visual antes de la inmersión floral.",
+      "whyOnRoute": "**La primera parada matinal que abre con el mar.** Justo después de las recogidas en 4 puntos de Ciudad de Jeju, el día comienza en la playa Hamdeok Seoubong, a unos 40 minutos en coche. Tras disfrutar tranquilamente del mar color esmeralda, la arena blanca y el patrimonio peatonal de la Ruta Olle 19, el recorrido enlaza con el interior de Seongeup y con Seongsan y Manjanggul, en el extremo este. Al ser muy temprano por la mañana, resulta relativamente tranquila incluso en la temporada alta de verano.",
       "_poi_meta": {
         "poi_key": "hamdeok_seoubong_beach",
         "kb_version": "1.19",
@@ -523,7 +491,7 @@
         "Callejuelas Olle + fotografía — ~10 min",
         "Tiempo libre — ~5 min"
       ],
-      "whyOnRoute": "Seongeup aporta la capa histórica del día: Patrimonio Intangible UNESCO (en tramitación), arquitectura joseonesa y vida cotidiana tradicional, antes de las paradas volcánicas de la tarde.",
+      "whyOnRoute": "**El único patrimonio interior de la época Joseon de la jornada y su punto de inflexión geográfico.** Situada en el camino del litoral de Hamdeok hacia Seongsan (interior de Pyoseon), convierte un simple tiempo de conducción en una parada con significado. Los muros de piedra y las casas con tejado de paja de esta aldea de patrimonio folclórico nacional, junto a los árboles centenarios de 600 años, añaden un 'paseo cultural pausado' que contrasta con el patrimonio volcánico y de las haenyeo de la tarde, y equilibran el día para que no transcurra solo como una peregrinación a lugares fotogénicos.",
       "_poi_meta": {
         "poi_key": "seongeup_folk_village",
         "kb_version": "1.19",
@@ -634,174 +602,10 @@
     {
       "number": 4,
       "time": "≈ 12:20",
-      "duration": "75 min",
-      "name": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
-      "category": "Tubo de lava — Parque Natural Ilchul Land, Seongsan",
-      "description": "**Ilchul Land (일출랜드)** es un **parque temático natural de 400.000 m²** situado en Seongsan, inaugurado en **2002** y construido alrededor del tubo de lava **Cueva Micheon (미천굴)** — una **cueva de 1.700 m de longitud total** con un **tramo nivelado artificialmente de 365 m abierto al público** (recorrido de unos 25 minutos). \n\nLa cueva forma parte del **sistema de tubos de lava de Jeju que comparte linaje geológico con la Cueva Manjanggul** —el tubo de lava inscrito como Patrimonio Natural Mundial de la UNESCO— y **funciona como alternativa operativa cuando Manjanggul cierra por mantenimiento de conservación o por meteorología (tifones, heladas)**. \n\nMientras Manjanggul preserva su suelo natural irregular como experiencia geológica auténtica, la pasarela nivelada de Micheon hace que la cueva sea **accesible para visitantes mayores, familias con cochecitos y huéspedes con movilidad reducida** —una elección de ingeniería deliberada que amplía la experiencia del tubo de lava a públicos que no podrían recorrer Manjanggul. \n\nEl interior está iluminado con una **iluminación decorativa de siete colores (oro, plata, bronce, rojo, negro, azul, blanco)** que resalta las formaciones —controvertida entre los puristas, pero práctica para la fotografía turística no especializada. Fuera de la cueva, el parque se extiende por el **Parque Subyeon, una aldea tradicional de Jeju reconstruida, el Jardín de Bonsáis de Flores Silvestres, el Invernadero de Cactus, la Calle de Esculturas y un Café de Baño de Pies (spa aromático para pies)**, lo que convierte este espacio en la **única atracción de Jeju con sala de oración musulmana en sus instalaciones** (una inversión deliberada en accesibilidad). \n\nLocalización de rodaje: **'Running Man' (런닝맨, SBS), episodio 89 (temática de Alicia en el País de las Maravillas, 2012)**. Entrada: **Adulto ₩12.000 / Joven ₩9.000 / Niño ₩7.000**. \n\nLa proporción interior/exterior es de **30 % cubierto (cueva + invernadero) / 70 % al aire libre (recinto del parque)**, dato relevante para planificar con flexibilidad ante el clima.",
-      "image": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
-      "highlights": [
-        "**1.700 m totales** de tubo de lava; **365 m de tramo abierto** (~25 min de recorrido)",
-        "**Alternativa UNESCO a Manjanggul** — mismo sistema de tubos de lava; abre cuando Manjanggul cierra",
-        "**Suelo nivelado artificialmente** — accesible para mayores, cochecitos y huéspedes con movilidad reducida",
-        "**Iluminación decorativa de siete colores** — oro/plata/bronce/rojo/negro/azul/blanco",
-        "**400.000 m² de recinto** — bonsáis, cactus, esculturas, aldea tradicional, café con baño de pies",
-        "**Única atracción de Jeju con sala de oración musulmana** — accesibilidad deliberada",
-        "**'Running Man' Ep. 89** rodado aquí (2012, tema de Alicia en el País de las Maravillas)",
-        "Entrada **₩12.000 adulto / ₩9.000 joven / ₩7.000 niño**",
-        "**30 % cubierto / 70 % al aire libre** — combinación flexible ante el clima"
-      ],
-      "timeUsed": [
-        "Aparcamiento + entrada + acceso — ~5 min",
-        "Recorrido por la Cueva Micheon (365 m / ~25 min) — ~30 min",
-        "Parque Subyeon + calle de esculturas — ~20 min",
-        "Jardín de bonsái/cactus + baño de pies (opcional) — ~15 min",
-        "Reagrupamiento — ~5 min"
-      ],
-      "whyOnRoute": "**Punto de anclaje del tubo de lava antes del almuerzo**, planteado explícitamente como el capítulo **'adyacente a propiedad UNESCO'** dentro del tema UNESCO de la jornada. Donde el tour hermano centrado en la naturaleza utiliza Ilchulland como parada flexible a media tarde, esta ruta UNESCO la sitúa más temprano en el día para mantener el **arco narrativo 'UNESCO + patrimonio'** bien tejido: Hamdeok (Olle Trail 19, patrimonio de senderismo casi-UNESCO) → Seongeup (Patrimonio Cultural Folclórico Importante) → **Cueva Micheon de Ilchulland (sistema de tubos de lava de Manjanggul, misma propiedad UNESCO que la propia Manjanggul)** → Seongsan por la tarde (triple UNESCO) → cierre en el Museo de las Haenyeo (Patrimonio Inmaterial UNESCO 2016). La ubicación previa al almuerzo también garantiza una temperatura agradable en la cueva (las cuevas se mantienen a 13–15 °C todo el año, frescas en verano y suaves en invierno) antes de los tramos al aire libre más cálidos del día.",
-      "_poi_meta": {
-        "poi_key": "ilchulland_micheon_cave",
-        "kb_version": "1.19",
-        "verified_date": "2026-04-29",
-        "sources": [
-          "Ilchul Land official site (ilchulland.com)",
-          "VisitJeju — Ilchul Land Micheon Cave",
-          "Korea Cave Research Institute — Manjanggul lava-tube system documentation",
-          "SBS Variety Archive — Running Man Episode 89 (2012)",
-          "Jeju Tourism Organization — accessibility-friendly attraction registry"
-        ]
-      },
-      "convenience": {
-        "restroom": "Disponible en la entrada del parque Ilchul Land",
-        "parking": "Aparcamiento gratuito en Ilchul Land"
-      },
-      "smartNotes": {
-        "photo": "Tramo iluminado de la cueva y jardín botánico circundante; verifique qué zonas fotográficas están incluidas con la entrada vigente de Ilchul Land",
-        "facilities": "Servicios del parque Ilchul Land (cafetería, tienda de regalos, aseos)",
-        "tip": "Esta es la alternativa estándar a Manjanggul cuando el tubo de lava público se cierra por inspección de seguridad. Confirme que el acceso a la sección de cueva de Ilchul Land está incluido en el ticket de su grupo."
-      },
-      "visitBasics": {
-        "hours": "Según el horario del parque Ilchul Land — consulte con el operador",
-        "closed": "Según el calendario del parque Ilchul Land — consulte con el operador",
-        "admission": "Incluida en la entrada del parque Ilchul Land — verifique las tarifas con el operador",
-        "walking": "Moderada: descenso por escaleras hacia la cueva, ≈ 12 °C todo el año; suelo volcánico irregular dentro del tramo de cueva"
-      },
-      "images": [
-        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
-        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
-        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
-        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
-        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
-        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
-        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp"
-      ],
-      "imageCredits": [
-        {
-          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
-          "source": "atoc-korea"
-        }
-      ],
-      "galleryItems": [
-        {
-          "id": 1,
-          "type": "photo",
-          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
-          "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
-          "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 1",
-          "alt": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — gallery image 1"
-        },
-        {
-          "id": 2,
-          "type": "photo",
-          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
-          "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
-          "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 2",
-          "alt": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — gallery image 2"
-        },
-        {
-          "id": 3,
-          "type": "photo",
-          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
-          "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
-          "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 3",
-          "alt": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — gallery image 3"
-        },
-        {
-          "id": 4,
-          "type": "photo",
-          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
-          "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
-          "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 4",
-          "alt": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — gallery image 4"
-        },
-        {
-          "id": 5,
-          "type": "photo",
-          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
-          "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
-          "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 5",
-          "alt": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — gallery image 5"
-        },
-        {
-          "id": 6,
-          "type": "photo",
-          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
-          "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
-          "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 6",
-          "alt": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — gallery image 6"
-        },
-        {
-          "id": 7,
-          "type": "photo",
-          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
-          "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
-          "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 7",
-          "alt": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — gallery image 7"
-        }
-      ]
-    },
-    {
-      "number": 5,
-      "time": "≈ 13:35",
       "duration": "60 min",
       "name": "Almuerzo (restaurante local de Jeju)",
       "category": "Pausa para comer — Zona del puerto de Seongsan-eup",
-      "description": "**Pausa de 60 minutos** entre Ilchul Land y Seongsan Ilchulbong en el cinturón de restaurantes junto al puerto de Seongsan-eup, que recibe descargas diarias de pescado fresco. Rotación habitual: **mulhoe** en verano; **haemul jeongsik** en el resto de estaciones. Precio orientativo: ≈ ₩15.000 por persona. \n\nEl guía recomienda el restaurante del día y ayuda con restricciones alimentarias. **Almuerzo no incluido — pago directo.**",
+      "description": "Es una pausa para comer de unos 60 minutos entre la Aldea Folclórica de Seongeup y Seongsan Ilchulbong. En los restaurantes cercanos al puerto de Seongsan-eup se pueden descubrir platos típicos del este de Jeju como el cerdo negro, el jeonbok ttukbaegi (cazuela de abulón) y el pez sable. El coste del almuerzo no está incluido (unos ₩15.000).",
       "image": null,
       "highlights": [
         "**Mulhoe** — sopa fría de pescado crudo, especialidad del este de Jeju en verano",
@@ -813,14 +617,14 @@
         "Almuerzo — ~45 min",
         "Vuelta al autobús — ~5 min"
       ],
-      "whyOnRoute": "Pausa estratégica entre la cueva y Seongsan: recargar energías antes de la ascensión al cráter, que requiere mayor esfuerzo físico.",
+      "whyOnRoute": "**Una recarga justo antes del núcleo UNESCO de la jornada.** En un restaurante local del camino de Seongeup a Seongsan se almuerza con platos típicos del este de Jeju como cerdo negro, jeonbok ttukbaegi y marisco de temporada (coste del almuerzo aparte). Es el momento de reponer fuerzas antes de entrar en la tarde más activa — el ascenso de Seongsan, el espectáculo de buceo de las haenyeo y Manjanggul.",
       "smartNotes": {},
       "convenience": {},
       "visitBasics": {}
     },
     {
-      "number": 6,
-      "time": "≈ 14:45",
+      "number": 5,
+      "time": "≈ 13:50",
       "duration": "90 min",
       "name": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
       "category": "Patrimonio Natural UNESCO (2007) — Cono hidrovolcánico de 5.000 años",
@@ -839,7 +643,7 @@
         "Vistas panorámicas + fotografía — ~15 min",
         "Bajada + vuelta al autobús — ~15 min"
       ],
-      "whyOnRoute": "La parada central del día: Seongsan Ilchulbong es el hito más representativo e internacionalmente reconocido de Jeju. La subida al cráter (opcional) compensa con creces el esfuerzo.",
+      "whyOnRoute": "**El primero de los dos sitios del Patrimonio Natural Mundial de la jornada.** Tras el almuerzo se sube a Seongsan Ilchulbong (ascenso opcional de unos 30 min ida y vuelta) para contemplar el cono de toba que emergió de una erupción submarina hace unos 5.000 años. Justo después del ascenso se enlaza con el espectáculo de buceo de las haenyeo que se celebra en el mar de la misma zona, y a continuación se cierra con el tubo de lava de Manjanggul, el mismo bien inscrito en 2007, completando en un solo día la narrativa de la 'isla volcánica y los tubos de lava'.",
       "_poi_meta": {
         "poi_key": "seongsan_ilchulbong",
         "kb_version": "1.19",
@@ -971,57 +775,56 @@
       "liveStatusWidget": "haenyeo"
     },
     {
-      "number": 7,
-      "time": "≈ 16:30",
-      "duration": "45 min",
-      "name": "Museo Haenyeo (buceadoras de Jeju)",
-      "category": "Patrimonio Cultural Inmaterial UNESCO 2016 — La cultura de las haenyeo de Jeju",
-      "description": "**El Museo Haenyeo de Jeju (제주 해녀 박물관)** es el ancla institucional de la **'Cultura de las Haenyeo (mujeres buceadoras) de Jeju'** — inscrita como **Patrimonio Cultural Inmaterial de la Humanidad por la UNESCO en 2016**. Situado en **Gujwa-eup**, el museo se enclava en el corazón de las aldeas costeras del este de Jeju con mayor actividad haenyeo. \n\nEl primer registro escrito de las buceadoras de Jeju data de **1629**, en **'Descripción de los rasgos naturales de Jeju' y 'Obras reunidas de Guchang' de Lee Geon (이건)**, donde se las llamaba **'Jamnyeo (潛女, mujeres que se sumergen)'** — aunque la tradición oral sostiene que la práctica del buceo es muy anterior, posiblemente **previa a la era Joseon en varios siglos**. \n\nEl museo documenta la práctica distintiva de las haenyeo en **3 salas de exposición**: **(1) Vida cotidiana + equipo** — utillaje tradicional de buceo (trajes de algodón previos al neopreno, calabazas-flotador *tewak*, arpón de mano *bitchang*, redes lastradas), utensilios domésticos y la **transmisión maternal del oficio** (las madres entrenan a sus hijas desde los 6–7 años); **(2) Práctica del buceo + categorización** — las haenyeo se clasifican formalmente como **Hagun (júnior, en formación), Junggun (medio nivel), Sanggun (sénior, que guía al resto)**, con la profundidad y la apnea como criterios; las sénior bucean a **10 m con una apnea única de 60 segundos**, trabajando **~7 horas al día durante ~90 días al año**; **(3) Comunidad + futuro** — cooperativas de aldea, cantos rituales, la **población menguante (menos de 4.000 activas hoy, en su mayoría mayores de 70)** y los esfuerzos de conservación. \n\nJardín escultórico al aire libre y barco pesquero réplica en el patio de entrada. Entrada: **Adulto ₩1.100 / Joven ₩500 / GRATIS para menores de 7 y mayores de 65**. Horario: **09:00–18:00**, **cerrado los martes y en Año Nuevo Lunar / Chuseok**. Proporción de espacio interior ~80% — sólido plan B en días de lluvia.",
-      "image": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-16.webp",
+      "number": 6,
+      "time": "≈ 15:10",
+      "duration": "50 min",
+      "name": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo)",
+      "category": "Patrimonio Cultural Inmaterial de la Humanidad de la UNESCO — cultura de las haenyeo de Jeju (2016) en directo",
+      "description": "La **cultura de las haenyeo de Jeju** es un patrimonio vivo inscrito en el **Patrimonio Cultural Inmaterial de la Humanidad de la UNESCO en 2016**. En este tour no se contempla una exposición de museo, sino un **auténtico espectáculo de buceo de las haenyeo que se desarrolla en el mar al pie de Seongsan Ilchulbong**. **Haenyeo (mujeres buceadoras) en activo y de edad avanzada**, que han hecho del mar su lugar de trabajo toda la vida, se sumergen sin equipo de oxígeno apoyándose en una *tewak* (boya), y se puede escuchar de cerca el característico silbido del sumbisori que exhalan al terminar la inmersión. \n\nEl espectáculo se celebra normalmente **dos veces al día (hacia las 13:30 y las 15:00)**, según el estado del mar y el tiempo, y **la entrada es gratuita**. Las haenyeo se clasifican según su profundidad y capacidad de inmersión en **hagun, junggun y sanggun**, y las sanggun descienden **más de 10 m con una sola respiración**. Hoy quedan **menos de 4.000 haenyeo en activo, la mayoría mayores de 70 años**, por lo que cada escena de buceo presenciada en directo es el registro de un patrimonio que se desvanece. \n\n**Los días en que el espectáculo se cancela por la meteorología o el oleaje**, se sustituye por el **Museo de las Haenyeo de Jeju**, en Hado-ri (Gujwa-eup) — adulto ₩1.100, alrededor del 80 % en interior, 3 salas de exposición —, dando continuidad en interior y en profundidad al mismo patrimonio inmaterial de la UNESCO.",
+      "image": "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-diving-ai.webp",
       "highlights": [
-        "**Patrimonio Cultural Inmaterial de la Humanidad UNESCO (2016)** — ancla institucional",
-        "**Primer registro escrito en 1629** — 'Descripción de Jeju' / 'Guchang' de Lee Geon (consignadas como 'Jamnyeo')",
-        "**3 salas de exposición** — Vida cotidiana, Práctica del buceo + categorización, Comunidad + futuro",
-        "Las **Sanggun** sénior bucean a **10 m con apnea de 60 segundos**, ~7 h/día × ~90 días/año",
-        "Sistema de rangos **Hagun / Junggun / Sanggun** según profundidad y apnea",
-        "**Linaje materno** — las madres entrenan a sus hijas desde los 6–7 años",
-        "**Menos de 4.000 haenyeo activas hoy** — en su mayoría mayores de 70; población decreciente",
-        "Entrada **₩1.100 adulto / ₩500 joven / GRATIS para menores de 7 y mayores de 65**",
-        "Horario **09:00–18:00**, **cerrado los martes y en festivos lunares**; ~80% interior (apto para días de lluvia)"
+        "**Patrimonio Cultural Inmaterial de la Humanidad de la UNESCO (2016)** no en un museo, sino en un **espectáculo de buceo en directo**",
+        "Observación del buceo real de haenyeo en activo en **el mar al pie de Seongsan Ilchulbong**",
+        "Sin botella de oxígeno, solo con una *tewak* — las sanggun se sumergen **más de 10 m con una sola respiración**",
+        "Escucha directa del característico **sumbisori** al terminar la inmersión",
+        "Espectáculo normalmente **2 veces al día (hacia las 13:30 y las 15:00)**, **entrada gratuita**, según el tiempo y el estado del mar",
+        "**Menos de 4.000 haenyeo en activo, la mayoría mayores de 70 años** — un patrimonio que se desvanece",
+        "**Si se cancela el espectáculo, sustitución por el Museo de las Haenyeo** (adulto ₩1.100, 80 % en interior, 3 salas de exposición)",
+        "A **5 min a pie o en coche** de Seongsan Ilchulbong — conexión natural sin pérdida de recorrido"
       ],
       "timeUsed": [
-        "Aparcamiento + entrada — ~5 min",
-        "Salas de exposición principal (vídeos + artefactos haenyeo) — ~30 min",
-        "Área exterior + zona portuaria — ~15 min",
-        "Vuelta al autobús — ~5 min"
+        "Desplazamiento de Seongsan Ilchulbong al lugar del espectáculo — unos 5 min",
+        "Indicaciones del espectáculo + acomodarse — unos 5 min",
+        "Observación del espectáculo de buceo de las haenyeo — unos 30 min",
+        "Fotografía + preguntas — unos 5 min",
+        "Reagrupamiento + margen de desplazamiento — unos 5 min"
       ],
-      "whyOnRoute": "**Cierre con patrimonio inmaterial UNESCO** — y clímax narrativo del día. Tras los estratos naturales y de historia colonial de la mañana (Hamdeok), el legado administrativo Joseon (Seongeup), la adyacencia UNESCO de los tubos de lava (Ilchulland) y el clímax geológico Triple UNESCO (Seongsan), el Museo Haenyeo **completa el arco UNESCO del día** con su condición de Patrimonio Cultural Inmaterial UNESCO (2016). Geográficamente está a **15 minutos en autocar de Seongsan**, una secuencia natural — quienes presenciaron a las 14:00 la demostración haenyeo en Seongsan ahora conocen toda la profundidad histórica y cultural en clave museística. La proporción interior de **~80%** lo convierte en el plan B antilluvia más sólido del día y en una pausa de interior bienvenida tras la subida a Seongsan. Frente al **Museo de la Aldea Folclórica de Jeju (recreación temática, ₩12.000)** o al **Museo Nacional de Jeju (centro de la ciudad, fuera de ruta)**, el Museo Haenyeo es **₩1.100, en ruta y de categoría UNESCO** — el mayor rendimiento para el hilo UNESCO del día.",
+      "whyOnRoute": "**El clímax en el que el patrimonio inmaterial de la UNESCO se conoce no como 'exposición', sino 'sobre el terreno'.** Justo después de terminar el ascenso y la visita de Seongsan Ilchulbong, se enlaza de forma natural con el espectáculo de buceo de las haenyeo que se celebra en el mar de la misma zona (5 min de desplazamiento). Ver, con los mismos ojos con que se ha contemplado la geología volcánica del cono de toba (Patrimonio Natural Mundial), el patrimonio inmaterial (2016) de las haenyeo que han vivido en ese mar completa la narrativa de 'volcán + personas' propia de la ruta este. El espectáculo es gratuito y suele celebrarse por la tarde, encajando bien con el recorrido. **No obstante, puede cancelarse según el mar y el tiempo**, y en esos días se sustituye por la visita en interior del Museo de las Haenyeo de Hado-ri, **garantizando la experiencia del patrimonio de las haenyeo haga el tiempo que haga**.",
       "_poi_meta": {
         "poi_key": "jeju_haenyeo_museum",
-        "kb_version": "1.19",
+        "kb_version": "1.29",
         "verified_date": "2026-04-29",
         "sources": [
           "UNESCO Intangible Cultural Heritage — Culture of Jeju Haenyeo (2016 inscription)",
           "Jeju Haenyeo Museum official site (haenyeo.go.kr)",
-          "VisitJeju — Haenyeo Museum",
-          "Korea Maritime History Society — Jamnyeo records (1629 onward)",
+          "VisitJeju — Seongsan Haenyeo diving performance",
           "Jeju Special Self-Governing Province — haenyeo population census records"
         ]
       },
       "convenience": {
-        "restroom": "Varios aseos",
-        "parking": "Aparcamiento gratuito disponible"
+        "restroom": "Cerca del lugar del espectáculo / varios dentro del museo",
+        "parking": "Aparcamiento gratuito tanto en el lugar del espectáculo como en el museo"
       },
       "smartNotes": {
-        "photo": "Parque escultórico al aire libre con figuras de haenyeo; recreación de la vida submarina tradicional",
-        "facilities": "Café, tienda de regalos y exposiciones en inglés",
-        "tip": "Combine con un espectáculo real de haenyeo (Seongsan o Udo) para una experiencia cultural completa"
+        "photo": "Resultan emblemáticas la silueta de la haenyeo que emerge apoyada en la tewak y las tomas marinas con Seongsan Ilchulbong de fondo.",
+        "facilities": "Aseos y aparcamiento cerca del lugar del espectáculo / en caso de cancelación, cafetería, tienda de regalos e información en inglés del Museo de las Haenyeo",
+        "tip": "La hora del espectáculo varía según el estado del mar de cada día, por lo que el guía lo informa sobre el terreno. Se recomienda protegerse del sol con gorra y gafas de sol."
       },
       "visitBasics": {
-        "hours": "09:00–18:00 (último acceso 17:00)",
-        "closed": "Lunes, 1 de enero, Seollal, Chuseok",
-        "admission": "Adulto 1.100 KRW / Adolescente 800 KRW / Niño 500 KRW",
-        "walking": "Fácil — museo moderno con ascensores"
+        "hours": "Espectáculo normalmente 13:30 · 15:00 (variable según el mar y el tiempo del día) / Museo de las Haenyeo 09:00–18:00 (última entrada 17:00)",
+        "closed": "Espectáculo: cancelado en caso de meteorología u oleaje / Museo: cerrado los lunes, el 1 de enero, en Año Nuevo Lunar y Chuseok",
+        "admission": "Espectáculo de buceo gratuito / en caso de sustitución, Museo de las Haenyeo adulto 1.100 won · joven 800 won · niño 500 won",
+        "walking": "Fácil — observación desde la costa; en caso de sustitución, interior del museo con ascensor"
       },
       "images": [
         "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-16.webp",
@@ -1057,47 +860,146 @@
           "id": 1,
           "type": "photo",
           "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-16.webp",
-          "location": "Museo Haenyeo (buceadoras de Jeju)",
-          "caption": "Museo Haenyeo (buceadoras de Jeju) — photo 1",
-          "alt": "Museo Haenyeo (buceadoras de Jeju) — gallery image 1"
+          "location": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo)",
+          "caption": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo) — photo 1",
+          "alt": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo) — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
           "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-17.webp",
-          "location": "Museo Haenyeo (buceadoras de Jeju)",
-          "caption": "Museo Haenyeo (buceadoras de Jeju) — photo 2",
-          "alt": "Museo Haenyeo (buceadoras de Jeju) — gallery image 2"
+          "location": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo)",
+          "caption": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo) — photo 2",
+          "alt": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo) — gallery image 2"
         },
         {
           "id": 3,
           "type": "photo",
           "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-18.webp",
-          "location": "Museo Haenyeo (buceadoras de Jeju)",
-          "caption": "Museo Haenyeo (buceadoras de Jeju) — photo 3",
-          "alt": "Museo Haenyeo (buceadoras de Jeju) — gallery image 3"
+          "location": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo)",
+          "caption": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo) — photo 3",
+          "alt": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo) — gallery image 3"
         },
         {
           "id": 4,
           "type": "photo",
           "src": "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-diving-ai.webp",
-          "location": "Museo Haenyeo (buceadoras de Jeju)",
-          "caption": "Museo Haenyeo (buceadoras de Jeju) — photo 7",
-          "alt": "Museo Haenyeo (buceadoras de Jeju) — gallery image 7"
+          "location": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo)",
+          "caption": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo) — photo 4",
+          "alt": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo) — gallery image 4"
         },
         {
           "id": 5,
           "type": "photo",
           "src": "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-silhouette-ai.webp",
-          "location": "Museo Haenyeo (buceadoras de Jeju)",
-          "caption": "Museo Haenyeo (buceadoras de Jeju) — photo 8",
-          "alt": "Museo Haenyeo (buceadoras de Jeju) — gallery image 8"
+          "location": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo)",
+          "caption": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo) — photo 5",
+          "alt": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo) — gallery image 5"
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "time": "≈ 16:30",
+      "duration": "55 min",
+      "name": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava)",
+      "category": "Patrimonio Natural Mundial de la UNESCO — sistema de tubos de lava de Geomunoreum (inscrito en 2007)",
+      "description": "La **Cueva de lava Manjanggul (Manjanggul Lava Tube)** es un tubo de lava formado por la **lava que brotó hace unos 8.000 años del Geomunoreum, un cono parásito del Hallasan**, y en **2007 fue inscrita en el Patrimonio Natural Mundial de la UNESCO junto a Seongsan Ilchulbong y el Hallasan bajo el nombre de 'Isla volcánica y tubos de lava de Jeju'**. Pertenece al **mismo bien inscrito de forma unitaria** que Seongsan Ilchulbong, de modo que este tour reúne **dos sitios del Patrimonio Natural Mundial** en un solo día. \n\nCon una longitud total de unos **7,4 km** (13–15 km si se incluyen los tramos conectados), es uno de los mayores tubos de lava del mundo, y su galería principal alcanza **18 m de ancho y 23–25 m de alto**. De las tres entradas creadas por el derrumbe del techo, **solo se abre al público el tramo de aproximadamente 1 km de la segunda entrada**, en un recorrido de **ida y vuelta de unos 30–45 min** por el mismo camino. Al final del tramo abierto se encuentra **la columna de lava más grande del mundo, de 7,6 m de altura**, el punto fotográfico emblemático de Manjanggul. \n\nEl interior de la cueva se mantiene a **11–13 °C todo el año**, fresco en verano y templado en invierno, pero el suelo es oscuro y algo húmedo, por lo que se recomiendan **una chaqueta y calzado antideslizante**. También está designada como **monumento natural nacional**. La entrada cuesta **₩4.000 por adulto (grupos ₩3.000) / ₩2.000 jóvenes y niños**, con horario de **09:00–18:00 (última entrada 17:10)** y cierre el primer miércoles de cada mes.",
+      "image": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+      "highlights": [
+        "**Patrimonio Natural Mundial de la UNESCO 2007** — inscrita como 'Isla volcánica y tubos de lava de Jeju' junto a Seongsan Ilchulbong",
+        "**Dos sitios del Patrimonio Natural Mundial en un día** — Seongsan Ilchulbong + Manjanggul",
+        "Longitud total de unos **7,4 km**, tramo abierto de aproximadamente **1 km** (ida y vuelta de unos 30–45 min)",
+        "Al final del tramo abierto, **la columna de lava más grande del mundo, de 7,6 m de altura**",
+        "Galería principal de **18 m de ancho · 23–25 m de alto** — uno de los mayores tubos de lava del mundo",
+        "**Sistema de tubos de lava de Geomunoreum** — formado hace unos 8.000 años, monumento natural nacional",
+        "Interior a **11–13 °C todo el año** — refugio veraniego, chaqueta recomendada",
+        "Entrada **₩4.000 adulto / ₩2.000 jóvenes y niños**, horario **09:00–18:00 (última entrada 17:10)**"
+      ],
+      "timeUsed": [
+        "Aparcamiento + taquilla + entrada — unos 5 min",
+        "Descenso por la segunda entrada + acceso a la cueva — unos 5 min",
+        "Ida y vuelta del tramo abierto de 1 km (hasta la columna de lava) — unos 30 min",
+        "Explicación de la formación del tubo de lava en el centro de visitantes — unos 10 min",
+        "Reagrupamiento + margen de desplazamiento — unos 5 min"
+      ],
+      "whyOnRoute": "**El segundo sitio del Patrimonio Natural Mundial de la UNESCO de la jornada y su gran final natural.** Tras Seongsan Ilchulbong (cono de toba con triple designación UNESCO) y el espectáculo de buceo de las haenyeo (patrimonio inmaterial), Manjanggul, situada en Gimnyeong, queda de forma natural en el trayecto de regreso de Seongsan a Ciudad de Jeju. Al pertenecer al **mismo bien inscrito de forma unitaria en 2007** que Seongsan Ilchulbong, combinar ambos sitios en un día completa la narrativa UNESCO de la 'isla volcánica y los tubos de lava'. Su ubicación a última hora de la tarde **evita el calor del mediodía y las aglomeraciones de grupos**, y crea un cierre placentero del día en **la fresca cueva a 11–13 °C todo el año** tras la jornada al aire libre. Si Manjanggul cerrara por mantenimiento o meteorología, se sustituye por la **cueva Micheon de Ilchul Land**, del mismo sistema de tubos de lava, para mantener la experiencia de la cueva.",
+      "_poi_meta": {
+        "poi_key": "manjanggul_lava_tube",
+        "kb_version": "1.29",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "visitjeju.net (Visit Jeju official)",
+          "english.visitkorea.or.kr",
+          "jeju.go.kr/geopark",
+          "UNESCO Jeju Volcanic Island and Lava Tubes (whc.unesco.org)",
+          "Wikipedia Manjanggul (Dec 2025)"
+        ]
+      },
+      "convenience": {
+        "restroom": "Aseos en el centro de visitantes de la entrada",
+        "parking": "Aparcamiento gratuito en la entrada"
+      },
+      "smartNotes": {
+        "photo": "La toma emblemática es **la columna de lava más grande del mundo, de 7,6 m de altura**, al final del tramo abierto, y las fotos en perspectiva hacia la larga galería de 18 m de ancho y 23 m de alto resultan también impactantes por su escala.",
+        "facilities": "En el centro de visitantes junto al aparcamiento de la entrada se explica el proceso de formación del tubo de lava — se recomiendan 10 min de visita antes de entrar. No hay tienda dentro de la cueva.",
+        "tip": "Lleve una chaqueta incluso en verano (interior a 11–13 °C). El suelo es húmedo y oscuro, así que es mejor un calzado antideslizante. Puede cerrarse por mantenimiento, así que confirme de antemano si abre el día de su visita."
+      },
+      "visitBasics": {
+        "hours": "09:00–18:00 (última entrada 17:10)",
+        "closed": "Primer miércoles de cada mes / cierre temporal en caso de lluvias intensas",
+        "admission": "4.000 won adulto (grupos 3.000 won) / 2.000 won jóvenes y niños (grupos 1.500 won)",
+        "walking": "Moderada — ida y vuelta llana de 1 km, descenso por escaleras en la entrada de la cueva, suelo algo irregular y húmedo"
+      },
+      "images": [
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+          "location": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava)",
+          "caption": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — photo 1",
+          "alt": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+          "location": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava)",
+          "caption": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — photo 2",
+          "alt": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+          "location": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava)",
+          "caption": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — photo 3",
+          "alt": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — gallery image 3"
         }
       ]
     },
     {
       "number": 8,
-      "time": "≈ 17:30",
+      "time": "≈ 17:45",
       "duration": "30 min",
       "name": "Regreso (2 puntos + Mercado Dongmun)",
       "category": "Regreso — Ciudad de Jeju con parada opcional en Mercado Dongmun",
@@ -1138,11 +1040,6 @@
       "theme": "Aldea tradicional"
     },
     {
-      "name": "Cueva Micheon en Ilchul Land",
-      "type": "primary",
-      "theme": "Cave"
-    },
-    {
       "name": "Almuerzo",
       "type": "meal",
       "theme": "Comida"
@@ -1153,9 +1050,14 @@
       "theme": "UNESCO Volcano"
     },
     {
-      "name": "Museo Haenyeo",
+      "name": "Espectáculo de buceo de las haenyeo",
       "type": "primary",
-      "theme": "Culture"
+      "theme": "Patrimonio inmaterial de las haenyeo"
+    },
+    {
+      "name": "Manjanggul (UNESCO)",
+      "type": "primary",
+      "theme": "Tubo de lava UNESCO"
     },
     {
       "name": "Bajada Jeju City",
@@ -1165,34 +1067,34 @@
   ],
   "routePhases": [
     {
-      "phase": "Recogida y apertura costera",
-      "duration": "≈ 1 hora",
-      "description": "Recogidas escalonadas por Ciudad de Jeju (08:30-09:05) y desplazamiento hacia la Playa Hamdeok (apertura costera, ~60 min)."
+      "phase": "Recogida y salida hacia la costa",
+      "duration": "aprox. 1 hora",
+      "description": "Recogida en 4 puntos de Ciudad de Jeju (08:30–09:05) y desplazamiento a la playa Hamdeok Seoubong."
     },
     {
-      "phase": "Costa a patrimonio interior",
-      "duration": "≈ 3 horas",
-      "description": "Playa Hamdeok + Seoubong (60 min) → Aldea Seongeup (60 min) → Cueva Micheon en Ilchul Land (75 min)."
+      "phase": "De la costa al patrimonio cultural del interior",
+      "duration": "aprox. 2 horas",
+      "description": "Playa Hamdeok Seoubong (60 min) → Aldea Folclórica de Seongeup (patrimonio folclórico nacional de la época Joseon, 60 min)."
     },
     {
       "phase": "Almuerzo",
-      "duration": "≈ 1 hora",
-      "description": "Restaurante local cerca de Pyoseon — cerdo negro, abulón, sopa de pescado crudo según temporada."
+      "duration": "aprox. 1 hora",
+      "description": "Restaurante local cerca de Seongsan — cerdo negro, jeonbok ttukbaegi, marisco de temporada. Coste del almuerzo aparte."
     },
     {
       "phase": "Núcleo UNESCO",
-      "duration": "≈ 2 horas",
-      "description": "Seongsan Ilchulbong (60 min, subida al borde del cráter opcional) + Museo Haenyeo (55 min)."
+      "duration": "aprox. 3 horas",
+      "description": "Seongsan Ilchulbong (ascenso opcional) → espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela) → tubo de lava de Manjanggul (Patrimonio Natural Mundial de la UNESCO)."
     },
     {
       "phase": "Regreso",
-      "duration": "≈ 2 horas",
-      "description": "Hado-ri → Ciudad de Jeju (~50 min) + parada opcional en Mercado Dongmun y regreso a los puntos de recogida."
+      "duration": "aprox. 1 hora",
+      "description": "Gimnyeong → desplazamiento a Ciudad de Jeju + bajada en 2 puntos y en el mercado Dongmun."
     }
   ],
   "routeShapeIntro": {
     "title": "El recorrido del día",
-    "subtitle": "Un ruta circular compacto por el este de Jeju — desde los hoteles de Ciudad de Jeju hacia el este por la costa norte hasta Hamdeok, después al interior hasta Seongeup, luego la cueva de lava en Seongsan, el ascenso al cráter de Seongsan Ilchulbong y el Museo Haenyeo al nordeste, con regreso hacia el oeste por la misma ruta. Recomendado para maximizar el tiempo en las atracciones con los desplazamientos mínimos necesarios."
+    "subtitle": "Es un bucle por el este de Jeju que, desde el extremo oriental, enlaza en un solo día los dos sitios del Patrimonio Natural Mundial de la UNESCO de la isla — Seongsan Ilchulbong (cono de toba) y Manjanggul (tubo de lava), ambos inscritos en 2007 como el mismo bien. A ello suma el espectáculo de buceo de las haenyeo, patrimonio inmaterial de la UNESCO. Con un recorrido eficiente se evitan las aglomeraciones en los principales lugares."
   },
   "whyTourWorks": {
     "bestFor": [
@@ -1215,20 +1117,20 @@
         "iconColor": "text-sky-600",
         "items": [
           {
-            "label": "Ambos Patrimonios UNESCO (natural + cultural) en un día",
-            "detail": "La mayoría de tours del este de Jeju incluyen Seongsan Ilchulbong pero omiten el Museo Haenyeo. Este tour combina los tres reconocimientos UNESCO de la isla (natural, intangible cultural + Seongeup como candidatura en proceso) en 9 horas."
+            "label": "2 sitios del Patrimonio Natural Mundial de la UNESCO + patrimonio inmaterial en un día",
+            "detail": "Seongsan Ilchulbong y Manjanggul son sitios del Patrimonio Natural Mundial inscritos juntos en 2007 como 'Isla volcánica y tubos de lava de Jeju'. A ello se suma el espectáculo de buceo de las haenyeo, patrimonio cultural inmaterial de la humanidad de 2016, para ver tres capas de patrimonio UNESCO en un solo día."
           },
           {
-            "label": "Alternativa a Manjanggul gestionada sin fricciones",
-            "detail": "La Cueva Manjanggul (el tubo de lava más famoso y largo de Jeju) está actualmente cerrada. La mayoría de tours omiten la experiencia de cueva o la mencionan sin ofrecer sustituto real. Este tour incluye la Cueva Micheon como alternativa operativa de calidad."
+            "label": "El verdadero Manjanggul — ya no una alternativa, sino el tubo de lava UNESCO original",
+            "detail": "En periodos de cierre anteriores se sustituía por la cueva Micheon, pero ahora se visita directamente Manjanggul, uno de los mayores tubos de lava del mundo y hogar de la columna de lava más grande del mundo, de 7,6 m de altura."
           },
           {
-            "label": "El tamaño del grupo importa en los lugares patrimoniales",
-            "detail": "Un minibús de hasta 14 personas permite acceder a los callejones estrechos de Seongeup y a las salas del Museo Haenyeo sin las aglomeraciones de los tours en autocar grande."
+            "label": "Todas las entradas incluidas — el valor de esta franja de precio",
+            "detail": "Seongsan Ilchulbong ₩5.000 + Manjanggul ₩4.000 (Seongeup gratis, espectáculo de buceo de las haenyeo gratis) — los dos sitios del Patrimonio Natural Mundial se incluyen por solo ₩9.000 de entrada."
           },
           {
-            "label": "Seongsan Ilchulbong es ascenso opcional",
-            "detail": "La subida de 30 minutos al cráter tiene algunos tramos empinados (~180 escalones), pero el camino de la base es plano. El 80% de los visitantes opta por la subida y la valora como el punto culminante del día."
+            "label": "Seongsan Ilchulbong es de ascenso opcional",
+            "detail": "El ascenso al borde del cráter, de unos 30 min ida y vuelta, tiene pendiente y no es apto para todo el mundo. También existe un paseo costero con vistas similares y sin escaleras, así que puede elegirse según la forma física."
           }
         ]
       }
@@ -1257,13 +1159,16 @@
     {
       "id": "walking",
       "title": "Caminata y terreno",
-      "preview": "Moderado.",
+      "preview": "Dificultad media.",
       "content": [
-        "Moderado. Playa Hamdeok: arena plana. Seongeup: caminos de tierra y muros de piedra. Cueva Micheon: escaleras de bajada al tubo (~20 peldaños) y suelo de roca basáltica.",
-        "Seongsan Ilchulbong: ~180 escalones hasta el borde del cráter (20-25 min, OPCIONAL). El sendero de la base es plano.",
-        "Museo Haenyeo: pavimento plano.",
-        "Distancia total a pie: aprox. 4-5 km.",
-        "Recomendado: calzado cómodo cerrado."
+        "Dificultad media.",
+        "La playa Hamdeok es de arena llana.",
+        "La Aldea Folclórica de Seongeup tiene caminos de tierra y muros de piedra.",
+        "El ascenso al borde del cráter de Seongsan Ilchulbong son unos 30 min de escaleras de piedra empinadas (se puede saltar).",
+        "El espectáculo de buceo de las haenyeo se observa desde una costa llana.",
+        "Manjanggul es una ida y vuelta llana de aproximadamente 1 km, con escaleras en la entrada de la cueva y suelo algo irregular y húmedo en el interior (11–13 °C todo el año, chaqueta recomendada).",
+        "Calzado cerrado que proteja los dedos imprescindible.",
+        "Total a pie de unos 4–5 km."
       ]
     },
     {
@@ -1278,12 +1183,13 @@
     },
     {
       "id": "cave",
-      "title": "Nota sobre la cueva (estado del Manjanggul)",
-      "preview": "El tubo de lava Manjanggul está cerrado por reparaciones de seguridad (reapertura no programada).",
+      "title": "Información sobre la cueva (Manjanggul)",
+      "preview": "Manjanggul es un tubo de lava del Patrimonio Natural Mundial de la UNESCO incluido en el recorrido.",
       "content": [
-        "La Cueva Manjanggul está actualmente cerrada por obras de seguridad (sin fecha de reapertura prevista).",
-        "La Cueva Micheon en Ilchul Land es la alternativa estándar y permite una visita de tubo de lava completa.",
-        "Si Manjanggul reabriera durante su visita, el operador puede realizar el cambio."
+        "Manjanggul es un tubo de lava del Patrimonio Natural Mundial de la UNESCO inscrito en 2007 e incluido en este recorrido.",
+        "Ida y vuelta del tramo abierto de aproximadamente 1 km (unos 30–45 min), al final la columna de lava más grande del mundo, de 7,6 m de altura.",
+        "El interior es fresco a 11–13 °C todo el año, así que se recomienda una chaqueta.",
+        "Si cierra por mantenimiento o meteorología, puede sustituirse por un tubo de lava cercano (la cueva Micheon de Ilchul Land) — confírmelo al reservar."
       ]
     },
     {
@@ -1363,7 +1269,7 @@
       "description": "Itinerario ajustado a medida, no un circuito genérico",
       "iconBg": "bg-sky-50/80",
       "iconColor": "text-sky-600",
-      "body": "Todas las entradas incluidas en el precio: Seongsan Ilchulbong (₩5.000), Aldea Seongeup (gratuita), Ilchul Land + Cueva Micheon (₩12.000), Museo Haenyeo (₩1.100). Sin sorpresas en destino."
+      "body": "Todas las entradas incluidas en la tarifa del tour: Seongsan Ilchulbong (₩5.000), Manjanggul (₩4.000), Aldea Folclórica de Seongeup (gratis), espectáculo de buceo de las haenyeo (gratis) — no hay nada que pagar aparte sobre el terreno."
     },
     {
       "icon": "users",
@@ -1371,7 +1277,7 @@
       "description": "Tamaño adecuado para la ruta",
       "iconBg": "bg-amber-50/80",
       "iconColor": "text-amber-600",
-      "body": "Minibús de grupo pequeño (máx. ~14 personas) que permite recorrer los callejones de Seongeup y las salas del Museo Haenyeo de forma íntima y sin aglomeraciones."
+      "body": "En un minibús de grupo pequeño (máx. 14 personas) se recorren con calma los callejones de Seongeup, el tubo de lava de Manjanggul y el espectáculo de buceo de las haenyeo."
     }
   ],
   "bookingSupportSteps": [
@@ -1415,58 +1321,28 @@
   "staticQuestions": [
     {
       "id": "q1",
-      "question": "¿Voy a ver buceadoras haenyeo en acción?",
-      "answer": "El Museo Haenyeo cuenta con vídeos de inmersiones reales. A veces hay demostraciones en el puerto adyacente, pero no están garantizadas. El guía le informará si hay demostración ese día."
+      "question": "¿Se puede ver realmente el espectáculo de buceo de las haenyeo?",
+      "answer": "Sí. El recorrido incluye la observación del espectáculo de buceo de las haenyeo que se celebra en el mar cercano a Seongsan Ilchulbong (normalmente por la tarde, gratuito). Puede cancelarse según el estado del mar y el tiempo, y en caso de cancelación se sustituye por la visita en interior del Museo de las Haenyeo de Hado-ri, garantizando la experiencia del patrimonio de las haenyeo."
     },
     {
       "id": "q2",
-      "question": "¿Puedo omitir la subida al cráter de Seongsan?",
-      "answer": "Sí. El sendero de la base ofrece ángulos fotográficos similares sin escalones. Los 90 minutos de la parada permiten tanto la subida completa como quedarse abajo."
+      "question": "¿Se puede saltar el ascenso al cráter de Seongsan Ilchulbong?",
+      "answer": "Sí. Existe un paseo costero que permite disfrutar de ángulos fotográficos similares sin escaleras. El ascenso al cráter (unos 0,8 km ida y vuelta, unos 30 min) es opcional y puede decidirse según la forma física."
     },
     {
       "id": "q3",
-      "question": "¿En qué se diferencia del tour del sur de Jeju?",
-      "answer": "Mismo operador. El tour del sur recorre el sendero del Hallasan, Camellia Hill, Cascadas Cheonjeyeon, Acantilado Jusangjeolli y O'sulloc — enfocado en el volcán y la costa sur. Ningún POI se repite: puede hacer ambos tours en días consecutivos."
+      "question": "¿Cuál es la diferencia con el tour UNESCO del sur de Jeju?",
+      "answer": "Son tours de la misma agencia. El tour del sur incluye los oreum del Hallasan, Camellia Hill, la cascada Cheonjeyeon, las columnas basálticas (Jusangjeolli) y los campos de té de O'sulloc. El tour del este se centra en Seongsan Ilchulbong, la Aldea Folclórica de Seongeup, Manjanggul y el espectáculo de buceo de las haenyeo."
     },
     {
       "id": "q4",
-      "question": "¿Qué pasa si el Manjanggul reabre durante mi visita?",
-      "answer": "Si la Cueva Manjanggul (el tubo de lava más famoso y largo) reabre, el operador puede sustituir Micheon Cave. El Manjanggul pertenece al Patrimonio Natural UNESCO y es 4× más largo que Micheon. La confirmación del día antes le indicará cuál cueva visitar."
+      "question": "¿Qué ocurre los días en que Manjanggul cierra?",
+      "answer": "Manjanggul es un tubo de lava del Patrimonio Natural Mundial de la UNESCO incluido en el recorrido. No obstante, los días en que cierra por mantenimiento o meteorología (lluvias intensas, etc.), se sustituye por una cueva cercana del mismo sistema de tubos de lava, como la cueva Micheon de Ilchul Land, para mantener la experiencia de la cueva."
     },
     {
       "id": "q5",
-      "question": "¿El almuerzo está incluido?",
-      "answer": "No. El almuerzo es por su cuenta (~₩15.000). El guía recomienda un restaurante local del este de Jeju y ayuda con los menús y restricciones alimentarias."
-    },
-    {
-      "id": "q6",
-      "question": "¿Por qué la Puerta 1 del aeropuerto y no la Puerta 3?",
-      "answer": "El tour del este usa la Puerta 1 del Aeropuerto de Jeju (Planta 1, Llegadas Nacionales) porque la ruta hacia la costa este sale directamente desde allí. El tour del sur usa la Puerta 3. Si no está seguro, busque el letrero de AtoC Korea."
-    },
-    {
-      "id": "first-time",
-      "question": "¿Es una buena opción para quienes visitan el este de Jeju por primera vez?",
-      "answer": "Sí — cubre las paradas más características de la zona en un único día equilibrado. El circuito es el tour del este de Jeju con más reseñas."
-    },
-    {
-      "id": "walking",
-      "question": "¿Es difícil la caminata?",
-      "answer": "Un día activo con varias paradas que requieren caminar. La sección más exigente es la subida opcional al borde del cráter de Seongsan (~180 escalones). El resto de paradas son llanas o con caminos suaves."
-    },
-    {
-      "id": "family",
-      "question": "¿Este tour es adecuado para familias?",
-      "answer": "Sí, para familias cuyos hijos puedan aguantar un día completo de movimiento continuo. A partir de 10 años es la edad recomendada para disfrutar del ritmo completo."
-    },
-    {
-      "id": "seniors",
-      "question": "¿Pueden participar personas mayores cómodamente?",
-      "answer": "Recomendado para mayores activos que se manejen bien con escaleras y terreno irregular. La subida a Seongsan es opcional — quien prefiera puede esperar abajo."
-    },
-    {
-      "id": "children",
-      "question": "¿Cuál es la edad mínima recomendada?",
-      "answer": "A partir de 10 años aproximadamente. Los niños cómodos con el ritmo de un día completo y las indicaciones de caminata encajan bien."
+      "question": "¿Está incluido el almuerzo?",
+      "answer": "No está incluido. El coste del almuerzo es aparte (unos ₩15.000) y el guía recomienda restaurantes locales de calidad."
     }
   ],
   "guestReviews": [],
@@ -1505,10 +1381,10 @@
   "sticky_booking_bar": {
     "note": "La disponibilidad se confirma en el paso de pago.",
     "price": {
-      "amountLabel": "59",
-      "originalPriceUsd": 69,
-      "salePriceUsd": 59,
-      "discountPercent": 14,
+      "amountLabel": "47",
+      "originalPriceUsd": 59,
+      "salePriceUsd": 47,
+      "discountPercent": 20,
       "currency": "USD",
       "per": "person"
     }
@@ -1594,7 +1470,7 @@
     ]
   },
   "matching_profile": {
-    "profile_version": 6,
+    "profile_version": 7,
     "is_active": true,
     "product_id": "jeju-eastern-unesco-lugares-day-tour",
     "product_type": "small_group",
@@ -1619,9 +1495,9 @@
     "poi_tags": [
       "hamdeok_beach",
       "seongeup_folk_village",
-      "micheon_cave",
       "seongsan_ilchulbong",
-      "jeju_haenyeo_museum"
+      "jeju_haenyeo_museum",
+      "manjanggul_cave"
     ],
     "pace_level": 0.6,
     "walking_level": 0.65,
@@ -1699,9 +1575,9 @@
     "vehicle_type_legacy": "mini_coach",
     "anchor_poi_keys": [
       "seongsan_ilchulbong",
+      "manjanggul_lava_tube",
       "seongeup_folk_village",
       "jeju_haenyeo_museum",
-      "micheon_cave",
       "hamdeok_beach"
     ],
     "profile_format": "small_group_fixed_itinerary",
@@ -1747,7 +1623,7 @@
     "wwii_history_fit": 1,
     "japanese_colonial_history_fit": 1,
     "kamikaze_shelter_history_fit": 1,
-    "museum_anchor_fit": 1,
+    "museum_anchor_fit": 0.85,
     "indoor_museum_fit": 1,
     "rainy_day_friendly_fit": 1,
     "indoor_anchor_fit": 0.85,
@@ -1799,10 +1675,10 @@
     "late_finish_fit": 0.7,
     "full_day_fit": 1,
     "half_day_fit": 0.05,
-    "value_priced_fit": 0.95,
-    "budget_traveler_fit": 0.95,
-    "free_admission_anchor_count": 2,
-    "total_admission_krw_per_adult": 18100,
+    "value_priced_fit": 1,
+    "budget_traveler_fit": 1,
+    "free_admission_anchor_count": 3,
+    "total_admission_krw_per_adult": 9000,
     "off_beaten_path_fit": 0.6,
     "crowd_avoidance_fit": 0.55,
     "tourist_circuit_fit": 0.95,
@@ -1842,26 +1718,31 @@
     "us_market_fit": 0.85,
     "europe_market_fit": 0.85,
     "australia_market_fit": 0.85,
-    "japan_market_fit": 0.85
+    "japan_market_fit": 0.85,
+    "lava_tube_unesco_fit": 1,
+    "unesco_world_heritage_site_count": 2,
+    "twin_world_heritage_volcanic_fit": 1,
+    "haenyeo_diving_performance_fit": 1
   },
   "matching_metadata": {
     "primary_themes": [
       "jeju",
       "east_jeju",
       "unesco_focused",
-      "haenyeo_culture",
       "world_heritage",
+      "lava_tube",
+      "haenyeo_culture",
       "intangible_heritage",
       "joseon_heritage"
     ],
     "secondary_themes": [
       "top_3_beach",
       "wwii_colonial_history",
-      "lava_tube",
-      "feng_shui_walled_town",
       "tuff_cone",
+      "feng_shui_walled_town",
       "olle_trail",
-      "k_drama_filming"
+      "k_drama_filming",
+      "haenyeo_diving_performance"
     ],
     "best_for": [
       "first_time_jeju",
@@ -1883,34 +1764,34 @@
     "anchor_pois": [
       "Hamdeok Seoubong Beach",
       "Seongeup Folk Village",
-      "Ilchul Land (Micheon Cave)",
       "Seongsan Ilchulbong",
-      "Jeju Haenyeo Museum"
+      "Haenyeo Diving Performance (Haenyeo Museum fallback)",
+      "Manjanggul Lava Tube"
     ],
     "anchor_poi_keys": [
       "hamdeok_seoubong_beach",
       "seongeup_folk_village",
-      "ilchulland_micheon_cave",
       "seongsan_ilchulbong",
-      "jeju_haenyeo_museum"
+      "jeju_haenyeo_museum",
+      "manjanggul_lava_tube"
     ],
     "reviews_attribution": null,
-    "unesco_fit_note": "unesco_fit=5 = 1 WHS (Seongsan Ilchulbong, inscribed 2007) + 1 Intangible Cultural Heritage of Humanity (Culture of Jeju Haenyeo, inscribed 2016, accessed via the Haenyeo Museum stop). Seongeup Folk Village is Korea's national folk heritage — NOT UNESCO — and does not contribute to this score.",
+    "unesco_fit_note": "unesco_fit=5 = 2 World Heritage Sites (Seongsan Ilchulbong AND Manjanggul Lava Tube — both inscribed 2007 under 'Jeju Volcanic Island and Lava Tubes') + 1 Intangible Cultural Heritage of Humanity (Culture of Jeju Haenyeo, inscribed 2016, experienced live via the haenyeo diving performance with the Haenyeo Museum as the weather/sea fallback). Seongeup Folk Village is Korea's national folk heritage — NOT UNESCO — and does not contribute to this score.",
     "_internal_competing_products_note": "Comp set (internal only): Southern UNESCO sister product, same operator, $43/pax small-group rate as ceiling reference.",
     "competing_products": [
       "east-signature-nature-core",
       "jeju-grand-highlights-loop",
       "jeju-southern-top-unesco-lugares-tour"
     ],
-    "audit_summary": "East Jeju UNESCO-focused loop covering 5 distinct UNESCO heritage layers in one day: Olle Trail walking heritage (Hamdeok Course 19), Important Folklore Cultural Heritage (Seongeup Folk Village 1423 founding), Manjanggul-system lava tube (Ilchulland — UNESCO-property adjacent), Triple UNESCO Surtseyan tuff cone (Seongsan Ilchulbong), and UNESCO Intangible Cultural Heritage of Humanity (Jeju Haenyeo Museum, 2016 inscription). UNESCO-anchored counterpart to the signature-nature sister tour, which emphasizes Seolmundae Halmang mythology + Tadao Ando architecture instead.",
+    "audit_summary": "East Jeju UNESCO-anchored loop carrying TWO World Heritage Sites from the same 2007 'Jeju Volcanic Island and Lava Tubes' inscription in a single day — Seongsan Ilchulbong (Surtseyan tuff cone) and Manjanggul Lava Tube (world's tallest lava column, 7.6 m) — plus UNESCO Intangible Cultural Heritage of Humanity experienced live as a haenyeo free-diving performance beside Seongsan (Haenyeo Museum fallback when the sea show is cancelled), the Important Folklore Cultural Heritage of Seongeup Folk Village (1423 founding), and Olle Trail Course 19 walking heritage at Hamdeok. UNESCO-anchored counterpart to the signature-nature sister tour, which emphasizes Seolmundae Halmang mythology + Tadao Ando architecture instead.",
     "score_rationale": {
       "high_scores": {
-        "unesco_focused_tour_fit=1.0": "5 explicit UNESCO heritage layers in one day — densest UNESCO concentration in catalog",
-        "haenyeo_culture_fit=1.0": "UNESCO Intangible 2016 — full museum context + Seongsan demonstration in same day",
-        "rainy_day_friendly_fit=1.0": "3 indoor fallback anchors (Seongeup hanok + Ilchulland cave + Haenyeo Museum 80% indoor)",
-        "value_priced_fit=0.95": "Total ₩18,100 admission per adult for 5 UNESCO-grade anchors = catalog-leading UNESCO value",
-        "feminist_history_fit=0.95": "Haenyeo Museum is the catalog's strongest women's-labor heritage anchor",
-        "wwii_history_fit=1.0": "Hamdeok tunnels + Seongsan 18 caves both visible in day's narrative arc"
+        "unesco_focused_tour_fit=1.0": "Two genuine World Heritage Sites (Seongsan + Manjanggul, 2007) plus a live Intangible Cultural Heritage performance in one day — densest UNESCO concentration in the catalog",
+        "world_natural_heritage_fit=1.0": "Twin lava-tube/tuff-cone World Heritage Sites from the same 2007 inscription visited the same afternoon",
+        "haenyeo_culture_fit=1.0": "UNESCO Intangible 2016 — seen live as a haenyeo diving performance beside Seongsan, with the Haenyeo Museum as fallback",
+        "value_priced_fit=1.0": "Total ₩9,000 admission per adult (Seongsan ₩5,000 + Manjanggul ₩4,000; haenyeo performance free) for two World Heritage Sites = catalog-leading UNESCO value",
+        "rainy_day_friendly_fit=0.9": "Indoor fallback anchors (Seongeup hanok + Manjanggul cave + Haenyeo Museum) keep the day resilient; the open-air haenyeo show is the one weather-dependent element and falls back to the indoor museum",
+        "wwii_history_fit=1.0": "Hamdeok tunnels + Seongsan 18 caves both visible in the day's narrative arc"
       },
       "low_scores": {
         "private_tour_fit=0.05": "Format is small-group fixed itinerary only",
@@ -1918,7 +1799,7 @@
         "language_japanese_fit=0.55": "WWII/colonial-history framing slightly sensitive for Japanese guests — guide trained for context"
       }
     },
-    "differentiation_vs_signature_nature_sister": "Same Seongsan + Seongeup + Ilchulland anchors, but **UNESCO-anchored framing** (Hamdeok Olle 19 + Haenyeo Museum UNESCO Intangible 2016) vs. sister's **mythology + architecture framing** (Jeju Stone Park Seolmundae + Seopjikoji Tadao Ando). This tour = 5 UNESCO heritage layers + strongest rain-friendly anchor count + best ₩-per-UNESCO-anchor value; sister = mythology + Pulitzer architecture + 4 K-drama filming sites. Pair complementarily for guests with 2 days on Jeju.",
+    "differentiation_vs_signature_nature_sister": "Shares the Seongsan + Seongeup anchors but swaps the sister's mythology/architecture framing for a UNESCO-heritage spine: Hamdeok Olle 19 + TWO 2007 World Heritage Sites (Seongsan tuff cone + Manjanggul lava tube) + live UNESCO Intangible haenyeo performance (2016). This tour = twin World Heritage Sites + strongest rain-resilient anchor count + best ₩-per-UNESCO-anchor value; sister = mythology + Pulitzer architecture + 4 K-drama filming sites. Pair complementarily for guests with 2 days on Jeju.",
     "seasonal_window": {
       "best_months": [
         "April",
@@ -1941,7 +1822,7 @@
         "August (Hamdeok summer peak)"
       ]
     },
-    "kb_anchor_version": "1.19"
+    "kb_anchor_version": "1.29"
   },
   "page_sections": [
     {
@@ -2006,34 +1887,40 @@
       "props": {
         "glanceItems": [
           {
-            "icon": "clock",
-            "label": "Duración",
-            "value": "≈ 9 horas (recogida desde las 08:30)"
+            "icon": "camera",
+            "label": "Valor fotográfico",
+            "value": "Alto",
+            "level": 5
           },
           {
-            "icon": "users",
-            "label": "Grupo",
-            "value": "Grupo pequeño, minibús con guía de habla inglesa/chino"
-          },
-          {
-            "icon": "map-pin",
-            "label": "Punto de encuentro",
-            "value": "Ocean Suites 08:30 / Aeropuerto / Ayuntamiento / Dongmun"
-          },
-          {
-            "icon": "star",
-            "label": "Valoración",
-            "value": "4,9/5 con 1.148 reseñas"
+            "icon": "mountain",
+            "label": "Paisaje",
+            "value": "Alto",
+            "level": 5
           },
           {
             "icon": "footprints",
-            "label": "A pie",
-            "value": "Moderado — Seongsan Ilchulbong tiene escaleras (opcional)"
+            "label": "Caminata",
+            "value": "Moderado",
+            "level": 3
           },
           {
-            "icon": "ticket",
-            "label": "Incluido",
-            "value": "Vehículo, guía certificado, todas las entradas"
+            "icon": "cloud-rain",
+            "label": "Apto para lluvia",
+            "value": "Moderado",
+            "level": 3
+          },
+          {
+            "icon": "users",
+            "label": "Apto para familias",
+            "value": "Bueno",
+            "level": 4
+          },
+          {
+            "icon": "gauge",
+            "label": "Ritmo",
+            "value": "Equilibrado",
+            "level": 4
           }
         ]
       }
@@ -2048,10 +1935,193 @@
             "id": 1,
             "type": "photo",
             "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
-            "alt": "Imagen de Playa Hamdeok Seoubong — entre las tres mejores playas de Jeju",
-            "caption": "Playa Hamdeok Seoubong — entre las tres mejores playas de Jeju",
-            "location": "Hamdeok-ri, Jocheon-eup, Jeju",
-            "atmosphere": "Apertura costera: arena blanca y aguas esmeralda"
+            "location": "Playa Hamdeok Seoubong",
+            "caption": "Playa Hamdeok Seoubong — photo 1",
+            "alt": "Playa Hamdeok Seoubong — gallery image 1"
+          },
+          {
+            "id": 2,
+            "type": "photo",
+            "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
+            "location": "Playa Hamdeok Seoubong",
+            "caption": "Playa Hamdeok Seoubong — photo 2",
+            "alt": "Playa Hamdeok Seoubong — gallery image 2"
+          },
+          {
+            "id": 3,
+            "type": "photo",
+            "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
+            "location": "Playa Hamdeok Seoubong",
+            "caption": "Playa Hamdeok Seoubong — photo 3",
+            "alt": "Playa Hamdeok Seoubong — gallery image 3"
+          },
+          {
+            "id": 4,
+            "type": "photo",
+            "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
+            "location": "Playa Hamdeok Seoubong",
+            "caption": "Playa Hamdeok Seoubong — photo 4",
+            "alt": "Playa Hamdeok Seoubong — gallery image 4"
+          },
+          {
+            "id": 5,
+            "type": "photo",
+            "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+            "location": "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
+            "caption": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — photo 1",
+            "alt": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — gallery image 1"
+          },
+          {
+            "id": 6,
+            "type": "photo",
+            "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+            "location": "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
+            "caption": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — photo 2",
+            "alt": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — gallery image 2"
+          },
+          {
+            "id": 7,
+            "type": "photo",
+            "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+            "location": "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
+            "caption": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — photo 3",
+            "alt": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — gallery image 3"
+          },
+          {
+            "id": 8,
+            "type": "photo",
+            "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+            "location": "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
+            "caption": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — photo 4",
+            "alt": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — gallery image 4"
+          },
+          {
+            "id": 9,
+            "type": "photo",
+            "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+            "location": "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
+            "caption": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — photo 6",
+            "alt": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — gallery image 6"
+          },
+          {
+            "id": 10,
+            "type": "photo",
+            "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+            "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
+            "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 1",
+            "alt": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — gallery image 1"
+          },
+          {
+            "id": 11,
+            "type": "photo",
+            "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+            "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
+            "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 2",
+            "alt": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — gallery image 2"
+          },
+          {
+            "id": 12,
+            "type": "photo",
+            "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+            "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
+            "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 3",
+            "alt": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — gallery image 3"
+          },
+          {
+            "id": 13,
+            "type": "photo",
+            "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+            "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
+            "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 4",
+            "alt": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — gallery image 4"
+          },
+          {
+            "id": 14,
+            "type": "photo",
+            "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+            "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
+            "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 5",
+            "alt": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — gallery image 5"
+          },
+          {
+            "id": 15,
+            "type": "photo",
+            "src": "/images/tours/seongsan-ilchulbong/photo-006.webp",
+            "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
+            "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 6",
+            "alt": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — gallery image 6"
+          },
+          {
+            "id": 16,
+            "type": "photo",
+            "src": "/images/tours/seongsan-ilchulbong/seongsan-haenyeo-show-ai.webp",
+            "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
+            "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 12",
+            "alt": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — gallery image 12"
+          },
+          {
+            "id": 17,
+            "type": "photo",
+            "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-16.webp",
+            "location": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo)",
+            "caption": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo) — photo 1",
+            "alt": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo) — gallery image 1"
+          },
+          {
+            "id": 18,
+            "type": "photo",
+            "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-17.webp",
+            "location": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo)",
+            "caption": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo) — photo 2",
+            "alt": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo) — gallery image 2"
+          },
+          {
+            "id": 19,
+            "type": "photo",
+            "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-18.webp",
+            "location": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo)",
+            "caption": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo) — photo 3",
+            "alt": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo) — gallery image 3"
+          },
+          {
+            "id": 20,
+            "type": "photo",
+            "src": "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-diving-ai.webp",
+            "location": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo)",
+            "caption": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo) — photo 4",
+            "alt": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo) — gallery image 4"
+          },
+          {
+            "id": 21,
+            "type": "photo",
+            "src": "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-silhouette-ai.webp",
+            "location": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo)",
+            "caption": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo) — photo 5",
+            "alt": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo) — gallery image 5"
+          },
+          {
+            "id": 22,
+            "type": "photo",
+            "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+            "location": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava)",
+            "caption": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — photo 1",
+            "alt": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — gallery image 1"
+          },
+          {
+            "id": 23,
+            "type": "photo",
+            "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+            "location": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava)",
+            "caption": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — photo 2",
+            "alt": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — gallery image 2"
+          },
+          {
+            "id": 24,
+            "type": "photo",
+            "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+            "location": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava)",
+            "caption": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — photo 3",
+            "alt": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — gallery image 3"
           }
         ]
       }
@@ -2068,8 +2138,8 @@
             "duration": "30 min",
             "name": "Recogida (4 puntos en Ciudad de Jeju)",
             "category": "Salida — 4 puntos de recogida en Ciudad de Jeju",
-            "description": "La recogida se concentra en cuatro puntos centrales de Ciudad de Jeju para evitar desplazamientos innecesarios por la mañana: **Aeropuerto Internacional de Jeju** para huéspedes con llegadas ese mismo día u hoteles cerca del aeropuerto; **Ayuntamiento de Jeju**, zona de hoteles de Yongdong/Nohyeon/casco antiguo; **Hagwi-dong**, punto más occidental antes de partir hacia el este; **Mercado Tradicional Dongmun**, zona de hoteles de la costa este de Ciudad de Jeju. Orden de recogida: Hagwi → Aeropuerto → Ayuntamiento → Dongmun → Ruta 1132 en dirección este hacia Hamdeok. Minibús de **grupo pequeño (máx. aprox. 14 personas)** con guía de habla inglesa. Se reparte **tarjeta de itinerario bilingüe** en la primera parada.",
-            "image": "",
+            "description": "La recogida se concentra en cuatro puntos centrales de Ciudad de Jeju para evitar desplazamientos innecesarios por la mañana: **Aeropuerto Internacional de Jeju** para huéspedes con llegadas ese mismo día u hoteles cerca del aeropuerto; **Ayuntamiento de Jeju**, zona de hoteles de Yongdong/Nohyeon/casco antiguo; **Hagwi-dong**, punto más occidental antes de partir hacia el este; **Mercado Tradicional Dongmun**, zona de hoteles de la costa este de Ciudad de Jeju. \n\nOrden de recogida: Hagwi → Aeropuerto → Ayuntamiento → Dongmun → Ruta 1132 en dirección este hacia Hamdeok. Minibús de **grupo pequeño (máx. aprox. 14 personas)** con guía de habla inglesa. Se reparte **tarjeta de itinerario bilingüe** en la primera parada.",
+            "image": null,
             "highlights": [
               "**4 puntos de recogida** en Ciudad de Jeju — Aeropuerto, Ayuntamiento, Hagwi, Dongmun",
               "Minibús de grupo pequeño (máx. aprox. 14 personas), guía certificado en inglés",
@@ -2082,7 +2152,11 @@
               "Recogida Dongmun ~09:30 — 5 min",
               "Ruta 1132 este hacia Hamdeok — ~30 min"
             ],
-            "whyOnRoute": "Cuatro puntos de recogida cubren la mayoría de zonas hoteleras de Ciudad de Jeju. El recorrido en dirección este es lineal, sin desvíos, hacia Hamdeok."
+            "whyOnRoute": "Cuatro puntos de recogida cubren la mayoría de zonas hoteleras de Ciudad de Jeju. El recorrido en dirección este es lineal, sin desvíos, hacia Hamdeok.",
+            "smartNotes": {},
+            "convenience": {},
+            "visitBasics": {},
+            "_role": "pickup"
           },
           {
             "number": 2,
@@ -2090,13 +2164,18 @@
             "duration": "60 min",
             "name": "Playa Hamdeok Seoubong",
             "category": "Una de las tres mejores playas de Jeju — Aguas turquesa y colina Seoubong",
-            "description": "**Playa Hamdeok Seoubong** figura sistemáticamente entre **las tres mejores playas de Jeju**, definida por el contraste entre la **arena blanca coralina** (~500 m de franja principal, 3 calas unidas con ~900 m en total) y las **aguas esmeralda turquesa** de menos de 1 metro de profundidad en la zona de baño. Al noreste, la colina **Seoubong** ofrece senderos panorámicos con vistas al pueblo pesquero de Hamdeok y al mar del Este. La colina alberga también **túneles de la II Guerra Mundial** excavados por las tropas japonesas en 1945 (hoy visibles desde el exterior). Temporada de baño: julio-agosto. Fuera de temporada, la playa es recomendado para pasear y fotografiar. **Entrada gratuita.**",
+            "description": "**La Playa Hamdeok Seoubong (함덕 서우봉 해변)** se sitúa de forma constante entre las **3 mejores playas de Jeju**, definida por el contraste entre su **arena blanca (~500 m de tramo principal y 3 calas conectadas que suman ~900 m)** y el **cono volcánico parásito Seoubong (서우봉, 'cono que parece la cabeza de una vaca')** que se eleva directamente desde el extremo este. \n\nEl característico **color verde esmeralda-turquesa** del agua proviene del fondo marino arenoso de coral poco profundo, que refleja la luz a través del océano transparente — un contraste de aire mediterráneo (raro en Corea) que convirtió Hamdeok en uno de los destinos de playa más fotografiados del país a nivel doméstico. \n\nLa playa puede absorber hasta **50.000 visitantes diarios** en plena temporada estival, pero las visitas en primavera y otoño suelen estar despobladas. \n\n**El Pico Seoubong** (escalable en ~1 hora hasta la cima) luce **laderas amarillas de canola en primavera (marzo–abril)** y ofrece una **vista panorámica al este hasta la zona del tubo de lava de Manjanggul**. \n\n**Capa histórica**: los acantilados marinos justo al oeste de Seoubong albergan **túneles del Ejército Imperial Japonés excavados durante la ocupación colonial de la Segunda Guerra Mundial** —refugios para botes suicidas kamikaze y depósitos de munición, similares a las 18 cuevas del Pico Seongsan Ilchulbong. \n\nLos túneles son de acceso público (con paneles que explican el contexto histórico). La playa es el **tramo central del Sendero Olle de Jeju, ruta 19 (조천 → 김녕)**, marcado con las cintas azules y naranjas características del trail. \n\nEl **Café Delmoondo (델문도 카페)** ancla el paseo marítimo: amplias terrazas, vistas al mar, popular para Instagram y paradas informales. **Entrada GRATUITA**; la playa está **a 20 km / ~40 min en coche del Aeropuerto Internacional de Jeju** por la Ruta 1132.",
             "image": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
             "highlights": [
-              "**Top 3 playas de Jeju** — agua esmeralda turquesa + arena blanca coralina",
-              "**Colina Seoubong (111 m)** con senderos panorámicos y vistas al mar",
-              "Túneles de la II Guerra Mundial (exteriores visibles)",
-              "**Entrada gratuita**; temporada de baño julio-agosto"
+              "**Top 3 de playas de Jeju** — agua esmeralda-turquesa + arena blanca de coral",
+              "**500 m de playa principal** + 3 calas conectadas (~900 m de longitud total)",
+              "**Cono volcánico Seoubong** — ascenso de ~1 hora; laderas amarillas de canola en marzo–abril",
+              "**Túneles del Ejército Imperial Japonés (Segunda Guerra Mundial)** en los acantilados adyacentes — refugios para botes suicidas kamikaze",
+              "**Sendero Olle, ruta 19 (조천 → 김녕)** — cintas azul y naranja como marcadores",
+              "**Café Delmoondo** — amplias terrazas, paseo marítimo, parada distintiva",
+              "Hasta **50.000 visitantes diarios en pleno verano**; despoblada en primavera y otoño",
+              "**Entrada GRATUITA**; 20 km / ~40 min del Aeropuerto Internacional de Jeju",
+              "Contraste cromático de aire mediterráneo — raro en la península coreana"
             ],
             "timeUsed": [
               "Llegada en autobús + aparcamiento — ~5 min",
@@ -2105,7 +2184,7 @@
               "Fotografía en la orilla o café — ~15 min",
               "Tiempo libre / reagrupamiento — ~5 min"
             ],
-            "whyOnRoute": "Apertura costera ideal: Hamdeok es la playa más accesible desde Ciudad de Jeju antes de internarse hacia las paradas del UNESCO en el este.",
+            "whyOnRoute": "**La primera parada matinal que abre con el mar.** Justo después de las recogidas en 4 puntos de Ciudad de Jeju, el día comienza en la playa Hamdeok Seoubong, a unos 40 minutos en coche. Tras disfrutar tranquilamente del mar color esmeralda, la arena blanca y el patrimonio peatonal de la Ruta Olle 19, el recorrido enlaza con el interior de Seongeup y con Seongsan y Manjanggul, en el extremo este. Al ser muy temprano por la mañana, resulta relativamente tranquila incluso en la temporada alta de verano.",
             "_poi_meta": {
               "poi_key": "hamdeok_seoubong_beach",
               "kb_version": "1.19",
@@ -2118,6 +2197,21 @@
                 "Jocheon-eup local cultural office — Seoubong oreum trail records"
               ]
             },
+            "convenience": {
+              "restroom": "Aseos públicos y duchas en la playa",
+              "parking": "Aparcamiento público (de pago en verano)"
+            },
+            "smartNotes": {
+              "photo": "El atardecer con la silueta de Seoubong es la toma clásica; las panorámicas tipo aéreas desde la cima de Seoubong muestran la curva de arena blanca",
+              "facilities": "Varias cafeterías a lo largo del paseo marítimo; tiendas de conveniencia cercanas",
+              "tip": "Menos concurrida que Hyeopjae o Gimnyeong; la zona del Café Delmoondo, en el lado este, es popular al atardecer"
+            },
+            "visitBasics": {
+              "hours": "Abierta 24 horas (la playa); temporada de baño gestionada con socorristas en julio–agosto",
+              "closed": "Abierta todo el año",
+              "admission": "Gratuita",
+              "walking": "Fácil — la playa es de arena llana; el ascenso al Seoubong es moderado (escalones)"
+            },
             "images": [
               "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
               "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
@@ -2125,38 +2219,6 @@
               "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp"
             ],
             "imageCredits": [
-              {
-                "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
-                "source": "atoc-korea"
-              },
               {
                 "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
                 "source": "atoc-korea"
@@ -2215,7 +2277,7 @@
             "duration": "60 min",
             "name": "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
             "category": "Ciudad amurallada joseonesa viva — fundada en 1423 por el rey Sejong",
-            "description": "**Aldea Folclórica Seongeup** es una **ciudad amurallada del período Joseon fundada en 1423** durante el reinado del rey Sejong como Jeong-eui-hyeon, una de las tres sedes administrativas de Jeju. Es el único núcleo urbano amurallado de la época Joseon que se conserva intacto con residentes viviendo actualmente en él — un auténtico 'museo vivo'. Dentro del recinto: **murallas de piedra**, **casas con tejado de paja**, **olmeres de 700-1.000 años** (monumento natural), **puentes de piedra tradicionales** y una **destilería de licor de mijo** con degustación gratuita. Los guías locales explican la arquitectura defensiva y la leyenda del fundador. **Entrada gratuita.**",
+            "description": "**Aldea Folclórica Seongeup** es una **ciudad amurallada del período Joseon fundada en 1423** durante el reinado del rey Sejong como Jeong-eui-hyeon, una de las tres sedes administrativas de Jeju. Es el único núcleo urbano amurallado de la época Joseon que se conserva intacto con residentes viviendo actualmente en él — un auténtico 'museo vivo'. \n\nDentro del recinto: **murallas de piedra**, **casas con tejado de paja**, **olmeres de 700-1.000 años** (monumento natural), **puentes de piedra tradicionales** y una **destilería de licor de mijo** con degustación gratuita. \n\nLos guías locales explican la arquitectura defensiva y la leyenda del fundador. **Entrada gratuita.**",
             "image": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
             "highlights": [
               "**Fundada en 1423** por el rey Sejong — sede administrativa hasta **1914 (~500 años)**",
@@ -2232,7 +2294,7 @@
               "Callejuelas Olle + fotografía — ~10 min",
               "Tiempo libre — ~5 min"
             ],
-            "whyOnRoute": "Seongeup aporta la capa histórica del día: Patrimonio Intangible UNESCO (en tramitación), arquitectura joseonesa y vida cotidiana tradicional, antes de las paradas volcánicas de la tarde.",
+            "whyOnRoute": "**El único patrimonio interior de la época Joseon de la jornada y su punto de inflexión geográfico.** Situada en el camino del litoral de Hamdeok hacia Seongsan (interior de Pyoseon), convierte un simple tiempo de conducción en una parada con significado. Los muros de piedra y las casas con tejado de paja de esta aldea de patrimonio folclórico nacional, junto a los árboles centenarios de 600 años, añaden un 'paseo cultural pausado' que contrasta con el patrimonio volcánico y de las haenyeo de la tarde, y equilibran el día para que no transcurra solo como una peregrinación a lugares fotogénicos.",
             "_poi_meta": {
               "poi_key": "seongeup_folk_village",
               "kb_version": "1.19",
@@ -2244,6 +2306,21 @@
                 "MBC Drama Archive — Dae Jang Geum (2003–2004) filming locations",
                 "Jeju Folklore Society — Omegisul brewing tradition documentation"
               ]
+            },
+            "smartNotes": {
+              "photo": "Stone walls (dolhareubang grandfathers), thatched-roof houses with smoke holes, and traditional doors are iconic Jeju shots",
+              "facilities": "Visitor information center at entrance; English maps available",
+              "tip": "Hire a free volunteer guide at the entrance for cultural context; respect that residents actually live here — don't enter homes uninvited"
+            },
+            "convenience": {
+              "restroom": "Public restrooms at village entrance",
+              "parking": "Free parking near entrance"
+            },
+            "visitBasics": {
+              "hours": "Open 24 hours (outdoor village); shops typically 09:00–17:00",
+              "closed": "Open year-round",
+              "admission": "Free for general village; some private homes charge for guided visits",
+              "walking": "Easy — flat dirt and stone paths through the village"
             },
             "images": [
               "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
@@ -2279,38 +2356,6 @@
               },
               {
                 "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2360,212 +2405,11 @@
           {
             "number": 4,
             "time": "≈ 12:20",
-            "duration": "75 min",
-            "name": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
-            "category": "Tubo de lava — Parque Natural Ilchul Land, Seongsan",
-            "description": "**Ilchul Land** es un **parque temático natural de 400.000 m²** en Seongsan, abierto en 2002, construido en torno al **tubo de lava Micheon** — con **1.700 m de longitud total** y una **sección abierta al público de 365 m** (recorrido de ~25 minutos). El suelo de piedra negra, los techos bajos de basalto y la temperatura constante de unos 18°C crean una atmósfera subterránea única, con vestigios de flujos de lava aún visibles en las paredes. Además de la cueva, el parque incluye el **Parque Subyeon** con calles de esculturas, jardines de bonsái y cactus, y una zona de baño de pies. Nota: La **Cueva Manjanggul** (Patrimonio Natural UNESCO, más famosa y larga) se encuentra actualmente cerrada por obras de mantenimiento; Micheon Cave es la alternativa estándar operativa. Si Manjanggul reabriera durante su visita, el operador podría hacer el cambio. **Entradas incluidas en el tour.**",
-            "image": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
-            "highlights": [
-              "Tubo de lava **de 1.700 m en total**; sección visitable de **365 m** (~25 min a pie)",
-              "Interior a ~18°C constantes con basalto negro volcánico",
-              "Alternativa operativa mientras **Manjanggul está cerrada** (sin fecha de reapertura)",
-              "Parque Subyeon con esculturas + jardín de bonsái + bño de pies",
-              "**Entradas incluidas en el tour**"
-            ],
-            "timeUsed": [
-              "Aparcamiento + entrada + acceso — ~5 min",
-              "Recorrido por la Cueva Micheon (365 m / ~25 min) — ~30 min",
-              "Parque Subyeon + calle de esculturas — ~20 min",
-              "Jardín de bonsái/cactus + baño de pies (opcional) — ~15 min",
-              "Reagrupamiento — ~5 min"
-            ],
-            "whyOnRoute": "La cueva aporta la experiencia volcánica subterránea al día: un contraste fresco y oscuro antes de la ascensión al cráter de Seongsan Ilchulbong.",
-            "_poi_meta": {
-              "poi_key": "ilchulland_micheon_cave",
-              "kb_version": "1.19",
-              "verified_date": "2026-04-29",
-              "sources": [
-                "Ilchul Land official site (ilchulland.com)",
-                "VisitJeju — Ilchul Land Micheon Cave",
-                "Korea Cave Research Institute — Manjanggul lava-tube system documentation",
-                "SBS Variety Archive — Running Man Episode 89 (2012)",
-                "Jeju Tourism Organization — accessibility-friendly attraction registry"
-              ]
-            },
-            "images": [
-              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
-              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
-              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
-              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
-              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
-              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
-              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp"
-            ],
-            "imageCredits": [
-              {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
-                "source": "atoc-korea"
-              }
-            ],
-            "galleryItems": [
-              {
-                "id": 1,
-                "type": "photo",
-                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
-                "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
-                "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 1",
-                "alt": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — gallery image 1"
-              },
-              {
-                "id": 2,
-                "type": "photo",
-                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-19.webp",
-                "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
-                "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 2",
-                "alt": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — gallery image 2"
-              },
-              {
-                "id": 3,
-                "type": "photo",
-                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-25.webp",
-                "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
-                "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 3",
-                "alt": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — gallery image 3"
-              },
-              {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-46-57.webp",
-                "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
-                "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 4",
-                "alt": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
-                "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
-                "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 5",
-                "alt": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
-                "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
-                "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 6",
-                "alt": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — gallery image 6"
-              },
-              {
-                "id": 7,
-                "type": "photo",
-                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
-                "location": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul)",
-                "caption": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — photo 7",
-                "alt": "Cueva Micheon en Ilchul Land (alternativa al Manjanggul) — gallery image 7"
-              }
-            ]
-          },
-          {
-            "number": 5,
-            "time": "≈ 13:35",
             "duration": "60 min",
             "name": "Almuerzo (restaurante local de Jeju)",
             "category": "Pausa para comer — Zona del puerto de Seongsan-eup",
-            "description": "**Pausa de 60 minutos** entre Ilchul Land y Seongsan Ilchulbong en el cinturón de restaurantes junto al puerto de Seongsan-eup, que recibe descargas diarias de pescado fresco. Rotación habitual: **mulhoe** en verano; **haemul jeongsik** en el resto de estaciones. Precio orientativo: ≈ ₩15.000 por persona. El guía recomienda el restaurante del día y ayuda con restricciones alimentarias. **Almuerzo no incluido — pago directo.**",
-            "image": "",
+            "description": "Es una pausa para comer de unos 60 minutos entre la Aldea Folclórica de Seongeup y Seongsan Ilchulbong. En los restaurantes cercanos al puerto de Seongsan-eup se pueden descubrir platos típicos del este de Jeju como el cerdo negro, el jeonbok ttukbaegi (cazuela de abulón) y el pez sable. El coste del almuerzo no está incluido (unos ₩15.000).",
+            "image": null,
             "highlights": [
               "**Mulhoe** — sopa fría de pescado crudo, especialidad del este de Jeju en verano",
               "**Haemul jeongsik** — menú completo de marisco fresco",
@@ -2576,15 +2420,18 @@
               "Almuerzo — ~45 min",
               "Vuelta al autobús — ~5 min"
             ],
-            "whyOnRoute": "Pausa estratégica entre la cueva y Seongsan: recargar energías antes de la ascensión al cráter, que requiere mayor esfuerzo físico."
+            "whyOnRoute": "**Una recarga justo antes del núcleo UNESCO de la jornada.** En un restaurante local del camino de Seongeup a Seongsan se almuerza con platos típicos del este de Jeju como cerdo negro, jeonbok ttukbaegi y marisco de temporada (coste del almuerzo aparte). Es el momento de reponer fuerzas antes de entrar en la tarde más activa — el ascenso de Seongsan, el espectáculo de buceo de las haenyeo y Manjanggul.",
+            "smartNotes": {},
+            "convenience": {},
+            "visitBasics": {}
           },
           {
-            "number": 6,
-            "time": "≈ 14:45",
+            "number": 5,
+            "time": "≈ 13:50",
             "duration": "90 min",
             "name": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
             "category": "Patrimonio Natural UNESCO (2007) — Cono hidrovolcánico de 5.000 años",
-            "description": "**Seongsan Ilchulbong** es un **cono volcánico hidrovolcánico de tipo surtseyan de 5.000 años** — una rara formación geológica creada cuando una erupción de basalto submarino perforó la superficie marina, la lava se enfrió y fragmentó rápidamente al contacto con el agua, formando las características **99 agujas de roca** y un **cráter de 600 m de diámetro** sin el perfil en chimenea típico de los volcanes terrestres. Inscrito como **Patrimonio Natural UNESCO en 2007** (junto a los tubos de lava de Geomunoreum), también forma parte de la **Reserva de la Biosfera UNESCO** y el **Geoparque Global UNESCO** — triple designación única en Corea. La subida al borde del cráter (~180 escalones, ~20-25 min de ascenso) ofrece **vistas panorámicas al Mar del Este, el pueblo de Seongsan y la isla Udo**. Desde las 9:00 h, el sendero del cráter está abierto al público (cierra los primeros lunes de cada mes, política de rotación medioambiental). **Entrada: ₩5.000 adultos** (incluida en el tour).",
+            "description": "**Seongsan Ilchulbong** es un **cono volcánico hidrovolcánico de tipo surtseyan de 5.000 años** — una rara formación geológica creada cuando una erupción de basalto submarino perforó la superficie marina, la lava se enfrió y fragmentó rápidamente al contacto con el agua, formando las características **99 agujas de roca** y un **cráter de 600 m de diámetro** sin el perfil en chimenea típico de los volcanes terrestres. \n\nInscrito como **Patrimonio Natural UNESCO en 2007** (junto a los tubos de lava de Geomunoreum), también forma parte de la **Reserva de la Biosfera UNESCO** y el **Geoparque Global UNESCO** — triple designación única en Corea. \n\nLa subida al borde del cráter (~180 escalones, ~20-25 min de ascenso) ofrece **vistas panorámicas al Mar del Este, el pueblo de Seongsan y la isla Udo**. \n\nDesde las 9:00 h, el sendero del cráter está abierto al público (cierra los primeros lunes de cada mes, política de rotación medioambiental). **Entrada: ₩5.000 adultos** (incluida en el tour).",
             "image": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
             "highlights": [
               "**Triple designación UNESCO**: Patrimonio Natural (2007) + Reserva de la Biosfera + Geoparque Global",
@@ -2599,7 +2446,7 @@
               "Vistas panorámicas + fotografía — ~15 min",
               "Bajada + vuelta al autobús — ~15 min"
             ],
-            "whyOnRoute": "La parada central del día: Seongsan Ilchulbong es el hito más representativo e internacionalmente reconocido de Jeju. La subida al cráter (opcional) compensa con creces el esfuerzo.",
+            "whyOnRoute": "**El primero de los dos sitios del Patrimonio Natural Mundial de la jornada.** Tras el almuerzo se sube a Seongsan Ilchulbong (ascenso opcional de unos 30 min ida y vuelta) para contemplar el cono de toba que emergió de una erupción submarina hace unos 5.000 años. Justo después del ascenso se enlaza con el espectáculo de buceo de las haenyeo que se celebra en el mar de la misma zona, y a continuación se cierra con el tubo de lava de Manjanggul, el mismo bien inscrito en 2007, completando en un solo día la narrativa de la 'isla volcánica y los tubos de lava'.",
             "_poi_meta": {
               "poi_key": "seongsan_ilchulbong",
               "kb_version": "1.19",
@@ -2611,6 +2458,21 @@
                 "Seongsan Ilchulbong official site (seongsan.kr) — April 2025 admission update",
                 "Jeju Haenyeo Museum — UNESCO Intangible 2016 inscription record"
               ]
+            },
+            "smartNotes": {
+              "photo": "Summit view of Hallasan to the west and Udo island to the north on clear days; haenyeo black-sand beach view from descending path",
+              "facilities": "Café (Fritz Coffee 1.3km away has best exterior views of the peak); ferry to Udo Island from Seongsan Port (1.5km/15 min walk)",
+              "tip": "All stairs but well-maintained — manageable in casual clothes; family-friendly with rest stops; sunrise visits popular but crowds gather pre-dawn"
+            },
+            "convenience": {
+              "restroom": "Available at entrance and base",
+              "parking": "Large free parking lot"
+            },
+            "visitBasics": {
+              "hours": "Mar–Apr & Sep–Oct: 05:00–19:00; May–Aug: 04:30–20:00; Nov–Feb: 06:00–18:00 (last ticketing 1 hour before closing)",
+              "closed": "Open year-round (weather closures possible)",
+              "admission": "Adult 5,000 KRW / Youth & Child 2,500 KRW (VisitKorea reference)",
+              "walking": "Moderate — 20–30 min steady stair climb (≈ 600 stairs); benches every few minutes for rest"
             },
             "images": [
               "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
@@ -2643,47 +2505,7 @@
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
-                "source": "atoc-korea"
-              },
-              {
                 "url": "/images/tours/seongsan-ilchulbong/photo-006.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
                 "source": "atoc-korea"
               },
               {
@@ -2741,52 +2563,71 @@
                 "type": "photo",
                 "src": "/images/tours/seongsan-ilchulbong/photo-006.webp",
                 "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
-                "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 11",
-                "alt": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — gallery image 11"
+                "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 6",
+                "alt": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — gallery image 6"
               },
               {
                 "id": 7,
                 "type": "photo",
                 "src": "/images/tours/seongsan-ilchulbong/seongsan-haenyeo-show-ai.webp",
                 "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
-                "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 17",
-                "alt": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — gallery image 17"
+                "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 12",
+                "alt": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — gallery image 12"
               }
-            ]
+            ],
+            "liveStatusWidget": "haenyeo"
           },
           {
-            "number": 7,
-            "time": "≈ 16:30",
-            "duration": "45 min",
-            "name": "Museo Haenyeo (buceadoras de Jeju)",
-            "category": "Patrimonio Cultural Inmaterial UNESCO 2016 — La cultura de las haenyeo de Jeju",
-            "description": "**Museo Haenyeo de Jeju** es el referente institucional para la **'Cultura de las Haenyeo de Jeju (mujeres buceadoras)'** — inscrita como **Patrimonio Cultural Inmaterial de la Humanidad UNESCO en 2016**. Situado en Hado-ri, al norte de Jeju, el museo documenta más de **4.500 años de tradición de buceo libre** sin equipo de respiración: las haenyeo llegan a profundidades de **10-20 metros** durante hasta **2 minutos** sumergidas, recolectando abulón, erizo de mar, pepino de mar y pulpo. En la actualidad quedan unas **3.500 haenyeo activas**, con una media de edad de más de 65 años. El museo incluye salas de exposición permanente sobre técnicas, vestimenta, supersticiones marítimas y canciones de las haenyeo, además de vídeos de inmersiones reales. Las demostraciones de buceo en vivo a veces tienen lugar en el puerto adyacente (variable, no garantizado). **Entrada ₩1.100 adultos** (incluida en el tour).",
-            "image": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-16.webp",
+            "number": 6,
+            "time": "≈ 15:10",
+            "duration": "50 min",
+            "name": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo)",
+            "category": "Patrimonio Cultural Inmaterial de la Humanidad de la UNESCO — cultura de las haenyeo de Jeju (2016) en directo",
+            "description": "La **cultura de las haenyeo de Jeju** es un patrimonio vivo inscrito en el **Patrimonio Cultural Inmaterial de la Humanidad de la UNESCO en 2016**. En este tour no se contempla una exposición de museo, sino un **auténtico espectáculo de buceo de las haenyeo que se desarrolla en el mar al pie de Seongsan Ilchulbong**. **Haenyeo (mujeres buceadoras) en activo y de edad avanzada**, que han hecho del mar su lugar de trabajo toda la vida, se sumergen sin equipo de oxígeno apoyándose en una *tewak* (boya), y se puede escuchar de cerca el característico silbido del sumbisori que exhalan al terminar la inmersión. \n\nEl espectáculo se celebra normalmente **dos veces al día (hacia las 13:30 y las 15:00)**, según el estado del mar y el tiempo, y **la entrada es gratuita**. Las haenyeo se clasifican según su profundidad y capacidad de inmersión en **hagun, junggun y sanggun**, y las sanggun descienden **más de 10 m con una sola respiración**. Hoy quedan **menos de 4.000 haenyeo en activo, la mayoría mayores de 70 años**, por lo que cada escena de buceo presenciada en directo es el registro de un patrimonio que se desvanece. \n\n**Los días en que el espectáculo se cancela por la meteorología o el oleaje**, se sustituye por el **Museo de las Haenyeo de Jeju**, en Hado-ri (Gujwa-eup) — adulto ₩1.100, alrededor del 80 % en interior, 3 salas de exposición —, dando continuidad en interior y en profundidad al mismo patrimonio inmaterial de la UNESCO.",
+            "image": "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-diving-ai.webp",
             "highlights": [
-              "**Patrimonio Cultural Inmaterial UNESCO 2016** — 4.500 años de buceo libre sin equipo",
-              "~3.500 haenyeo activas hoy en día, con edad media de más de 65 años",
-              "Salas permanentes sobre técnicas, ropa, supersticiones y canciones haenyeo",
-              "Demostraciones de buceo en vivo en el puerto adyacente (variable, no garantizado)",
-              "**Entrada ₩1.100** (incluida en el tour)"
+              "**Patrimonio Cultural Inmaterial de la Humanidad de la UNESCO (2016)** no en un museo, sino en un **espectáculo de buceo en directo**",
+              "Observación del buceo real de haenyeo en activo en **el mar al pie de Seongsan Ilchulbong**",
+              "Sin botella de oxígeno, solo con una *tewak* — las sanggun se sumergen **más de 10 m con una sola respiración**",
+              "Escucha directa del característico **sumbisori** al terminar la inmersión",
+              "Espectáculo normalmente **2 veces al día (hacia las 13:30 y las 15:00)**, **entrada gratuita**, según el tiempo y el estado del mar",
+              "**Menos de 4.000 haenyeo en activo, la mayoría mayores de 70 años** — un patrimonio que se desvanece",
+              "**Si se cancela el espectáculo, sustitución por el Museo de las Haenyeo** (adulto ₩1.100, 80 % en interior, 3 salas de exposición)",
+              "A **5 min a pie o en coche** de Seongsan Ilchulbong — conexión natural sin pérdida de recorrido"
             ],
             "timeUsed": [
-              "Aparcamiento + entrada — ~5 min",
-              "Salas de exposición principal (vídeos + artefactos haenyeo) — ~30 min",
-              "Área exterior + zona portuaria — ~15 min",
-              "Vuelta al autobús — ~5 min"
+              "Desplazamiento de Seongsan Ilchulbong al lugar del espectáculo — unos 5 min",
+              "Indicaciones del espectáculo + acomodarse — unos 5 min",
+              "Observación del espectáculo de buceo de las haenyeo — unos 30 min",
+              "Fotografía + preguntas — unos 5 min",
+              "Reagrupamiento + margen de desplazamiento — unos 5 min"
             ],
-            "whyOnRoute": "El Museo Haenyeo cierra el círculo cultural del día: UNESCO natural (Seongsan) + UNESCO intangible (haenyeo) + Joseon histórico (Seongeup) en un único recorrido.",
+            "whyOnRoute": "**El clímax en el que el patrimonio inmaterial de la UNESCO se conoce no como 'exposición', sino 'sobre el terreno'.** Justo después de terminar el ascenso y la visita de Seongsan Ilchulbong, se enlaza de forma natural con el espectáculo de buceo de las haenyeo que se celebra en el mar de la misma zona (5 min de desplazamiento). Ver, con los mismos ojos con que se ha contemplado la geología volcánica del cono de toba (Patrimonio Natural Mundial), el patrimonio inmaterial (2016) de las haenyeo que han vivido en ese mar completa la narrativa de 'volcán + personas' propia de la ruta este. El espectáculo es gratuito y suele celebrarse por la tarde, encajando bien con el recorrido. **No obstante, puede cancelarse según el mar y el tiempo**, y en esos días se sustituye por la visita en interior del Museo de las Haenyeo de Hado-ri, **garantizando la experiencia del patrimonio de las haenyeo haga el tiempo que haga**.",
             "_poi_meta": {
               "poi_key": "jeju_haenyeo_museum",
-              "kb_version": "1.19",
+              "kb_version": "1.29",
               "verified_date": "2026-04-29",
               "sources": [
                 "UNESCO Intangible Cultural Heritage — Culture of Jeju Haenyeo (2016 inscription)",
                 "Jeju Haenyeo Museum official site (haenyeo.go.kr)",
-                "VisitJeju — Haenyeo Museum",
-                "Korea Maritime History Society — Jamnyeo records (1629 onward)",
+                "VisitJeju — Seongsan Haenyeo diving performance",
                 "Jeju Special Self-Governing Province — haenyeo population census records"
               ]
+            },
+            "convenience": {
+              "restroom": "Cerca del lugar del espectáculo / varios dentro del museo",
+              "parking": "Aparcamiento gratuito tanto en el lugar del espectáculo como en el museo"
+            },
+            "smartNotes": {
+              "photo": "Resultan emblemáticas la silueta de la haenyeo que emerge apoyada en la tewak y las tomas marinas con Seongsan Ilchulbong de fondo.",
+              "facilities": "Aseos y aparcamiento cerca del lugar del espectáculo / en caso de cancelación, cafetería, tienda de regalos e información en inglés del Museo de las Haenyeo",
+              "tip": "La hora del espectáculo varía según el estado del mar de cada día, por lo que el guía lo informa sobre el terreno. Se recomienda protegerse del sol con gorra y gafas de sol."
+            },
+            "visitBasics": {
+              "hours": "Espectáculo normalmente 13:30 · 15:00 (variable según el mar y el tiempo del día) / Museo de las Haenyeo 09:00–18:00 (última entrada 17:00)",
+              "closed": "Espectáculo: cancelado en caso de meteorología u oleaje / Museo: cerrado los lunes, el 1 de enero, en Año Nuevo Lunar y Chuseok",
+              "admission": "Espectáculo de buceo gratuito / en caso de sustitución, Museo de las Haenyeo adulto 1.100 won · joven 800 won · niño 500 won",
+              "walking": "Fácil — observación desde la costa; en caso de sustitución, interior del museo con ascensor"
             },
             "images": [
               "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-16.webp",
@@ -2796,30 +2637,6 @@
               "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-silhouette-ai.webp"
             ],
             "imageCredits": [
-              {
-                "url": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-16.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-17.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-18.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-16.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-17.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-18.webp",
-                "source": "atoc-korea"
-              },
               {
                 "url": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-16.webp",
                 "source": "atoc-korea"
@@ -2846,52 +2663,151 @@
                 "id": 1,
                 "type": "photo",
                 "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-16.webp",
-                "location": "Museo Haenyeo (buceadoras de Jeju)",
-                "caption": "Museo Haenyeo (buceadoras de Jeju) — photo 1",
-                "alt": "Museo Haenyeo (buceadoras de Jeju) — gallery image 1"
+                "location": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo)",
+                "caption": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo) — photo 1",
+                "alt": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo) — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
                 "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-17.webp",
-                "location": "Museo Haenyeo (buceadoras de Jeju)",
-                "caption": "Museo Haenyeo (buceadoras de Jeju) — photo 2",
-                "alt": "Museo Haenyeo (buceadoras de Jeju) — gallery image 2"
+                "location": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo)",
+                "caption": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo) — photo 2",
+                "alt": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo) — gallery image 2"
               },
               {
                 "id": 3,
                 "type": "photo",
                 "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-18.webp",
-                "location": "Museo Haenyeo (buceadoras de Jeju)",
-                "caption": "Museo Haenyeo (buceadoras de Jeju) — photo 3",
-                "alt": "Museo Haenyeo (buceadoras de Jeju) — gallery image 3"
+                "location": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo)",
+                "caption": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo) — photo 3",
+                "alt": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo) — gallery image 3"
               },
               {
                 "id": 4,
                 "type": "photo",
                 "src": "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-diving-ai.webp",
-                "location": "Museo Haenyeo (buceadoras de Jeju)",
-                "caption": "Museo Haenyeo (buceadoras de Jeju) — photo 10",
-                "alt": "Museo Haenyeo (buceadoras de Jeju) — gallery image 10"
+                "location": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo)",
+                "caption": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo) — photo 4",
+                "alt": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo) — gallery image 4"
               },
               {
                 "id": 5,
                 "type": "photo",
                 "src": "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-silhouette-ai.webp",
-                "location": "Museo Haenyeo (buceadoras de Jeju)",
-                "caption": "Museo Haenyeo (buceadoras de Jeju) — photo 11",
-                "alt": "Museo Haenyeo (buceadoras de Jeju) — gallery image 11"
+                "location": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo)",
+                "caption": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo) — photo 5",
+                "alt": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo) — gallery image 5"
+              }
+            ]
+          },
+          {
+            "number": 7,
+            "time": "≈ 16:30",
+            "duration": "55 min",
+            "name": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava)",
+            "category": "Patrimonio Natural Mundial de la UNESCO — sistema de tubos de lava de Geomunoreum (inscrito en 2007)",
+            "description": "La **Cueva de lava Manjanggul (Manjanggul Lava Tube)** es un tubo de lava formado por la **lava que brotó hace unos 8.000 años del Geomunoreum, un cono parásito del Hallasan**, y en **2007 fue inscrita en el Patrimonio Natural Mundial de la UNESCO junto a Seongsan Ilchulbong y el Hallasan bajo el nombre de 'Isla volcánica y tubos de lava de Jeju'**. Pertenece al **mismo bien inscrito de forma unitaria** que Seongsan Ilchulbong, de modo que este tour reúne **dos sitios del Patrimonio Natural Mundial** en un solo día. \n\nCon una longitud total de unos **7,4 km** (13–15 km si se incluyen los tramos conectados), es uno de los mayores tubos de lava del mundo, y su galería principal alcanza **18 m de ancho y 23–25 m de alto**. De las tres entradas creadas por el derrumbe del techo, **solo se abre al público el tramo de aproximadamente 1 km de la segunda entrada**, en un recorrido de **ida y vuelta de unos 30–45 min** por el mismo camino. Al final del tramo abierto se encuentra **la columna de lava más grande del mundo, de 7,6 m de altura**, el punto fotográfico emblemático de Manjanggul. \n\nEl interior de la cueva se mantiene a **11–13 °C todo el año**, fresco en verano y templado en invierno, pero el suelo es oscuro y algo húmedo, por lo que se recomiendan **una chaqueta y calzado antideslizante**. También está designada como **monumento natural nacional**. La entrada cuesta **₩4.000 por adulto (grupos ₩3.000) / ₩2.000 jóvenes y niños**, con horario de **09:00–18:00 (última entrada 17:10)** y cierre el primer miércoles de cada mes.",
+            "image": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+            "highlights": [
+              "**Patrimonio Natural Mundial de la UNESCO 2007** — inscrita como 'Isla volcánica y tubos de lava de Jeju' junto a Seongsan Ilchulbong",
+              "**Dos sitios del Patrimonio Natural Mundial en un día** — Seongsan Ilchulbong + Manjanggul",
+              "Longitud total de unos **7,4 km**, tramo abierto de aproximadamente **1 km** (ida y vuelta de unos 30–45 min)",
+              "Al final del tramo abierto, **la columna de lava más grande del mundo, de 7,6 m de altura**",
+              "Galería principal de **18 m de ancho · 23–25 m de alto** — uno de los mayores tubos de lava del mundo",
+              "**Sistema de tubos de lava de Geomunoreum** — formado hace unos 8.000 años, monumento natural nacional",
+              "Interior a **11–13 °C todo el año** — refugio veraniego, chaqueta recomendada",
+              "Entrada **₩4.000 adulto / ₩2.000 jóvenes y niños**, horario **09:00–18:00 (última entrada 17:10)**"
+            ],
+            "timeUsed": [
+              "Aparcamiento + taquilla + entrada — unos 5 min",
+              "Descenso por la segunda entrada + acceso a la cueva — unos 5 min",
+              "Ida y vuelta del tramo abierto de 1 km (hasta la columna de lava) — unos 30 min",
+              "Explicación de la formación del tubo de lava en el centro de visitantes — unos 10 min",
+              "Reagrupamiento + margen de desplazamiento — unos 5 min"
+            ],
+            "whyOnRoute": "**El segundo sitio del Patrimonio Natural Mundial de la UNESCO de la jornada y su gran final natural.** Tras Seongsan Ilchulbong (cono de toba con triple designación UNESCO) y el espectáculo de buceo de las haenyeo (patrimonio inmaterial), Manjanggul, situada en Gimnyeong, queda de forma natural en el trayecto de regreso de Seongsan a Ciudad de Jeju. Al pertenecer al **mismo bien inscrito de forma unitaria en 2007** que Seongsan Ilchulbong, combinar ambos sitios en un día completa la narrativa UNESCO de la 'isla volcánica y los tubos de lava'. Su ubicación a última hora de la tarde **evita el calor del mediodía y las aglomeraciones de grupos**, y crea un cierre placentero del día en **la fresca cueva a 11–13 °C todo el año** tras la jornada al aire libre. Si Manjanggul cerrara por mantenimiento o meteorología, se sustituye por la **cueva Micheon de Ilchul Land**, del mismo sistema de tubos de lava, para mantener la experiencia de la cueva.",
+            "_poi_meta": {
+              "poi_key": "manjanggul_lava_tube",
+              "kb_version": "1.29",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "visitjeju.net (Visit Jeju official)",
+                "english.visitkorea.or.kr",
+                "jeju.go.kr/geopark",
+                "UNESCO Jeju Volcanic Island and Lava Tubes (whc.unesco.org)",
+                "Wikipedia Manjanggul (Dec 2025)"
+              ]
+            },
+            "convenience": {
+              "restroom": "Aseos en el centro de visitantes de la entrada",
+              "parking": "Aparcamiento gratuito en la entrada"
+            },
+            "smartNotes": {
+              "photo": "La toma emblemática es **la columna de lava más grande del mundo, de 7,6 m de altura**, al final del tramo abierto, y las fotos en perspectiva hacia la larga galería de 18 m de ancho y 23 m de alto resultan también impactantes por su escala.",
+              "facilities": "En el centro de visitantes junto al aparcamiento de la entrada se explica el proceso de formación del tubo de lava — se recomiendan 10 min de visita antes de entrar. No hay tienda dentro de la cueva.",
+              "tip": "Lleve una chaqueta incluso en verano (interior a 11–13 °C). El suelo es húmedo y oscuro, así que es mejor un calzado antideslizante. Puede cerrarse por mantenimiento, así que confirme de antemano si abre el día de su visita."
+            },
+            "visitBasics": {
+              "hours": "09:00–18:00 (última entrada 17:10)",
+              "closed": "Primer miércoles de cada mes / cierre temporal en caso de lluvias intensas",
+              "admission": "4.000 won adulto (grupos 3.000 won) / 2.000 won jóvenes y niños (grupos 1.500 won)",
+              "walking": "Moderada — ida y vuelta llana de 1 km, descenso por escaleras en la entrada de la cueva, suelo algo irregular y húmedo"
+            },
+            "images": [
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+                "location": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava)",
+                "caption": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — photo 1",
+                "alt": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+                "location": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava)",
+                "caption": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — photo 2",
+                "alt": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+                "location": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava)",
+                "caption": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — photo 3",
+                "alt": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — gallery image 3"
               }
             ]
           },
           {
             "number": 8,
-            "time": "≈ 17:30",
+            "time": "≈ 17:45",
             "duration": "30 min",
             "name": "Regreso (2 puntos + Mercado Dongmun)",
             "category": "Regreso — Ciudad de Jeju con parada opcional en Mercado Dongmun",
-            "description": "**El regreso invierte el orden de las recogidas de la mañana**, con parada opcional en el Mercado Dongmun al final del día: **Mercado Tradicional Dongmun** se encuentra a ~25 min en autobús desde el Museo Haenyeo y ofrece el mercado nocturno más popular de Jeju, con puestos de comida hasta las 23:00 h aproximadamente. Especialidades del mercado: halabong (mandarinas de Jeju), galletas de gambas (saeu-pang), tteok (pasteles de arroz) y zumos de cítricos. Los huéspedes que prefieran volver directamente al hotel o al aeropuerto son dejados en sus puntos de recogida habituales. Hora estimada de llegada al aeropuerto: **18:00-18:30 h** según el tráfico.",
-            "image": "",
+            "description": "**El regreso invierte el orden de las recogidas de la mañana**, con parada opcional en el Mercado Dongmun al final del día: **Mercado Tradicional Dongmun** se encuentra a ~25 min en autobús desde el Museo Haenyeo y ofrece el mercado nocturno más popular de Jeju, con puestos de comida hasta las 23:00 h aproximadamente. \n\nEspecialidades del mercado: halabong (mandarinas de Jeju), galletas de gambas (saeu-pang), tteok (pasteles de arroz) y zumos de cítricos. Los huéspedes que prefieran volver directamente al hotel o al aeropuerto son dejados en sus puntos de recogida habituales. Hora estimada de llegada al aeropuerto: **18:00-18:30 h** según el tráfico.",
+            "image": null,
             "highlights": [
               "Regreso a Ciudad de Jeju con parada opcional en **Mercado Tradicional Dongmun**",
               "Dongmun: mercado nocturno con puestos de comida hasta las 23:00 h",
@@ -2903,7 +2819,11 @@
               "Parada opcional en Mercado Dongmun — ~30 min (opcional)",
               "Regreso a los puntos de recogida (Ayuntamiento / Aeropuerto) — ~15 min"
             ],
-            "whyOnRoute": "El Mercado Dongmun es la parada de cierre perfecta: prueba de productos locales de Jeju antes del vuelo o la cena."
+            "whyOnRoute": "El Mercado Dongmun es la parada de cierre perfecta: prueba de productos locales de Jeju antes del vuelo o la cena.",
+            "smartNotes": {},
+            "convenience": {},
+            "visitBasics": {},
+            "_role": "dropoff"
           }
         ]
       }
@@ -2930,11 +2850,6 @@
             "theme": "Aldea tradicional"
           },
           {
-            "name": "Cueva Micheon en Ilchul Land",
-            "type": "primary",
-            "theme": "Cave"
-          },
-          {
             "name": "Almuerzo",
             "type": "meal",
             "theme": "Comida"
@@ -2945,9 +2860,14 @@
             "theme": "UNESCO Volcano"
           },
           {
-            "name": "Museo Haenyeo",
+            "name": "Espectáculo de buceo de las haenyeo",
             "type": "primary",
-            "theme": "Culture"
+            "theme": "Patrimonio inmaterial de las haenyeo"
+          },
+          {
+            "name": "Manjanggul (UNESCO)",
+            "type": "primary",
+            "theme": "Tubo de lava UNESCO"
           },
           {
             "name": "Bajada Jeju City",
@@ -2957,34 +2877,34 @@
         ],
         "routePhases": [
           {
-            "phase": "Recogida y apertura costera",
-            "duration": "≈ 1 hora",
-            "description": "Recogidas escalonadas por Ciudad de Jeju (08:30-09:05) y desplazamiento hacia la Playa Hamdeok (apertura costera, ~60 min)."
+            "phase": "Recogida y salida hacia la costa",
+            "duration": "aprox. 1 hora",
+            "description": "Recogida en 4 puntos de Ciudad de Jeju (08:30–09:05) y desplazamiento a la playa Hamdeok Seoubong."
           },
           {
-            "phase": "Costa a patrimonio interior",
-            "duration": "≈ 3 horas",
-            "description": "Playa Hamdeok + Seoubong (60 min) → Aldea Seongeup (60 min) → Cueva Micheon en Ilchul Land (75 min)."
+            "phase": "De la costa al patrimonio cultural del interior",
+            "duration": "aprox. 2 horas",
+            "description": "Playa Hamdeok Seoubong (60 min) → Aldea Folclórica de Seongeup (patrimonio folclórico nacional de la época Joseon, 60 min)."
           },
           {
             "phase": "Almuerzo",
-            "duration": "≈ 1 hora",
-            "description": "Restaurante local cerca de Pyoseon — cerdo negro, abulón, sopa de pescado crudo según temporada."
+            "duration": "aprox. 1 hora",
+            "description": "Restaurante local cerca de Seongsan — cerdo negro, jeonbok ttukbaegi, marisco de temporada. Coste del almuerzo aparte."
           },
           {
             "phase": "Núcleo UNESCO",
-            "duration": "≈ 2 horas",
-            "description": "Seongsan Ilchulbong (60 min, subida al borde del cráter opcional) + Museo Haenyeo (55 min)."
+            "duration": "aprox. 3 horas",
+            "description": "Seongsan Ilchulbong (ascenso opcional) → espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela) → tubo de lava de Manjanggul (Patrimonio Natural Mundial de la UNESCO)."
           },
           {
             "phase": "Regreso",
-            "duration": "≈ 2 horas",
-            "description": "Hado-ri → Ciudad de Jeju (~50 min) + parada opcional en Mercado Dongmun y regreso a los puntos de recogida."
+            "duration": "aprox. 1 hora",
+            "description": "Gimnyeong → desplazamiento a Ciudad de Jeju + bajada en 2 puntos y en el mercado Dongmun."
           }
         ],
         "routeShapeIntro": {
           "title": "El recorrido del día",
-          "subtitle": "Un ruta circular compacto por el este de Jeju — desde los hoteles de Ciudad de Jeju hacia el este por la costa norte hasta Hamdeok, después al interior hasta Seongeup, luego la cueva de lava en Seongsan, el ascenso al cráter de Seongsan Ilchulbong y el Museo Haenyeo al nordeste, con regreso hacia el oeste por la misma ruta. Recomendado para maximizar el tiempo en las atracciones con los desplazamientos mínimos necesarios."
+          "subtitle": "Es un bucle por el este de Jeju que, desde el extremo oriental, enlaza en un solo día los dos sitios del Patrimonio Natural Mundial de la UNESCO de la isla — Seongsan Ilchulbong (cono de toba) y Manjanggul (tubo de lava), ambos inscritos en 2007 como el mismo bien. A ello suma el espectáculo de buceo de las haenyeo, patrimonio inmaterial de la UNESCO. Con un recorrido eficiente se evitan las aglomeraciones en los principales lugares."
         }
       }
     },
@@ -3014,20 +2934,20 @@
               "iconColor": "text-sky-600",
               "items": [
                 {
-                  "label": "Ambos Patrimonios UNESCO (natural + cultural) en un día",
-                  "detail": "La mayoría de tours del este de Jeju incluyen Seongsan Ilchulbong pero omiten el Museo Haenyeo. Este tour combina los tres reconocimientos UNESCO de la isla (natural, intangible cultural + Seongeup como candidatura en proceso) en 9 horas."
+                  "label": "2 sitios del Patrimonio Natural Mundial de la UNESCO + patrimonio inmaterial en un día",
+                  "detail": "Seongsan Ilchulbong y Manjanggul son sitios del Patrimonio Natural Mundial inscritos juntos en 2007 como 'Isla volcánica y tubos de lava de Jeju'. A ello se suma el espectáculo de buceo de las haenyeo, patrimonio cultural inmaterial de la humanidad de 2016, para ver tres capas de patrimonio UNESCO en un solo día."
                 },
                 {
-                  "label": "Alternativa a Manjanggul gestionada sin fricciones",
-                  "detail": "La Cueva Manjanggul (el tubo de lava más famoso y largo de Jeju) está actualmente cerrada. La mayoría de tours omiten la experiencia de cueva o la mencionan sin ofrecer sustituto real. Este tour incluye la Cueva Micheon como alternativa operativa de calidad."
+                  "label": "El verdadero Manjanggul — ya no una alternativa, sino el tubo de lava UNESCO original",
+                  "detail": "En periodos de cierre anteriores se sustituía por la cueva Micheon, pero ahora se visita directamente Manjanggul, uno de los mayores tubos de lava del mundo y hogar de la columna de lava más grande del mundo, de 7,6 m de altura."
                 },
                 {
-                  "label": "El tamaño del grupo importa en los lugares patrimoniales",
-                  "detail": "Un minibús de hasta 14 personas permite acceder a los callejones estrechos de Seongeup y a las salas del Museo Haenyeo sin las aglomeraciones de los tours en autocar grande."
+                  "label": "Todas las entradas incluidas — el valor de esta franja de precio",
+                  "detail": "Seongsan Ilchulbong ₩5.000 + Manjanggul ₩4.000 (Seongeup gratis, espectáculo de buceo de las haenyeo gratis) — los dos sitios del Patrimonio Natural Mundial se incluyen por solo ₩9.000 de entrada."
                 },
                 {
-                  "label": "Seongsan Ilchulbong es ascenso opcional",
-                  "detail": "La subida de 30 minutos al cráter tiene algunos tramos empinados (~180 escalones), pero el camino de la base es plano. El 80% de los visitantes opta por la subida y la valora como el punto culminante del día."
+                  "label": "Seongsan Ilchulbong es de ascenso opcional",
+                  "detail": "El ascenso al borde del cráter, de unos 30 min ida y vuelta, tiene pendiente y no es apto para todo el mundo. También existe un paseo costero con vistas similares y sin escaleras, así que puede elegirse según la forma física."
                 }
               ]
             }
@@ -3063,13 +2983,16 @@
           {
             "id": "walking",
             "title": "Caminata y terreno",
-            "preview": "Moderado.",
+            "preview": "Dificultad media.",
             "content": [
-              "Moderado. Playa Hamdeok: arena plana. Seongeup: caminos de tierra y muros de piedra. Cueva Micheon: escaleras de bajada al tubo (~20 peldaños) y suelo de roca basáltica.",
-              "Seongsan Ilchulbong: ~180 escalones hasta el borde del cráter (20-25 min, OPCIONAL). El sendero de la base es plano.",
-              "Museo Haenyeo: pavimento plano.",
-              "Distancia total a pie: aprox. 4-5 km.",
-              "Recomendado: calzado cómodo cerrado."
+              "Dificultad media.",
+              "La playa Hamdeok es de arena llana.",
+              "La Aldea Folclórica de Seongeup tiene caminos de tierra y muros de piedra.",
+              "El ascenso al borde del cráter de Seongsan Ilchulbong son unos 30 min de escaleras de piedra empinadas (se puede saltar).",
+              "El espectáculo de buceo de las haenyeo se observa desde una costa llana.",
+              "Manjanggul es una ida y vuelta llana de aproximadamente 1 km, con escaleras en la entrada de la cueva y suelo algo irregular y húmedo en el interior (11–13 °C todo el año, chaqueta recomendada).",
+              "Calzado cerrado que proteja los dedos imprescindible.",
+              "Total a pie de unos 4–5 km."
             ]
           },
           {
@@ -3084,12 +3007,13 @@
           },
           {
             "id": "cave",
-            "title": "Nota sobre la cueva (estado del Manjanggul)",
-            "preview": "El tubo de lava Manjanggul está cerrado por reparaciones de seguridad (reapertura no programada).",
+            "title": "Información sobre la cueva (Manjanggul)",
+            "preview": "Manjanggul es un tubo de lava del Patrimonio Natural Mundial de la UNESCO incluido en el recorrido.",
             "content": [
-              "La Cueva Manjanggul está actualmente cerrada por obras de seguridad (sin fecha de reapertura prevista).",
-              "La Cueva Micheon en Ilchul Land es la alternativa estándar y permite una visita de tubo de lava completa.",
-              "Si Manjanggul reabriera durante su visita, el operador puede realizar el cambio."
+              "Manjanggul es un tubo de lava del Patrimonio Natural Mundial de la UNESCO inscrito en 2007 e incluido en este recorrido.",
+              "Ida y vuelta del tramo abierto de aproximadamente 1 km (unos 30–45 min), al final la columna de lava más grande del mundo, de 7,6 m de altura.",
+              "El interior es fresco a 11–13 °C todo el año, así que se recomienda una chaqueta.",
+              "Si cierra por mantenimiento o meteorología, puede sustituirse por un tubo de lava cercano (la cueva Micheon de Ilchul Land) — confírmelo al reservar."
             ]
           },
           {
@@ -3176,7 +3100,7 @@
             "description": "Itinerario ajustado a medida, no un circuito genérico",
             "iconBg": "bg-sky-50/80",
             "iconColor": "text-sky-600",
-            "body": "Todas las entradas incluidas en el precio: Seongsan Ilchulbong (₩5.000), Aldea Seongeup (gratuita), Ilchul Land + Cueva Micheon (₩12.000), Museo Haenyeo (₩1.100). Sin sorpresas en destino."
+            "body": "Todas las entradas incluidas en la tarifa del tour: Seongsan Ilchulbong (₩5.000), Manjanggul (₩4.000), Aldea Folclórica de Seongeup (gratis), espectáculo de buceo de las haenyeo (gratis) — no hay nada que pagar aparte sobre el terreno."
           },
           {
             "icon": "users",
@@ -3184,7 +3108,7 @@
             "description": "Tamaño adecuado para la ruta",
             "iconBg": "bg-amber-50/80",
             "iconColor": "text-amber-600",
-            "body": "Minibús de grupo pequeño (máx. ~14 personas) que permite recorrer los callejones de Seongeup y las salas del Museo Haenyeo de forma íntima y sin aglomeraciones."
+            "body": "En un minibús de grupo pequeño (máx. 14 personas) se recorren con calma los callejones de Seongeup, el tubo de lava de Manjanggul y el espectáculo de buceo de las haenyeo."
           }
         ],
         "bookingSupportSteps": [
@@ -3235,58 +3159,28 @@
         "staticQuestions": [
           {
             "id": "q1",
-            "question": "¿Voy a ver buceadoras haenyeo en acción?",
-            "answer": "El Museo Haenyeo cuenta con vídeos de inmersiones reales. A veces hay demostraciones en el puerto adyacente, pero no están garantizadas. El guía le informará si hay demostración ese día."
+            "question": "¿Se puede ver realmente el espectáculo de buceo de las haenyeo?",
+            "answer": "Sí. El recorrido incluye la observación del espectáculo de buceo de las haenyeo que se celebra en el mar cercano a Seongsan Ilchulbong (normalmente por la tarde, gratuito). Puede cancelarse según el estado del mar y el tiempo, y en caso de cancelación se sustituye por la visita en interior del Museo de las Haenyeo de Hado-ri, garantizando la experiencia del patrimonio de las haenyeo."
           },
           {
             "id": "q2",
-            "question": "¿Puedo omitir la subida al cráter de Seongsan?",
-            "answer": "Sí. El sendero de la base ofrece ángulos fotográficos similares sin escalones. Los 90 minutos de la parada permiten tanto la subida completa como quedarse abajo."
+            "question": "¿Se puede saltar el ascenso al cráter de Seongsan Ilchulbong?",
+            "answer": "Sí. Existe un paseo costero que permite disfrutar de ángulos fotográficos similares sin escaleras. El ascenso al cráter (unos 0,8 km ida y vuelta, unos 30 min) es opcional y puede decidirse según la forma física."
           },
           {
             "id": "q3",
-            "question": "¿En qué se diferencia del tour del sur de Jeju?",
-            "answer": "Mismo operador. El tour del sur recorre el sendero del Hallasan, Camellia Hill, Cascadas Cheonjeyeon, Acantilado Jusangjeolli y O'sulloc — enfocado en el volcán y la costa sur. Ningún POI se repite: puede hacer ambos tours en días consecutivos."
+            "question": "¿Cuál es la diferencia con el tour UNESCO del sur de Jeju?",
+            "answer": "Son tours de la misma agencia. El tour del sur incluye los oreum del Hallasan, Camellia Hill, la cascada Cheonjeyeon, las columnas basálticas (Jusangjeolli) y los campos de té de O'sulloc. El tour del este se centra en Seongsan Ilchulbong, la Aldea Folclórica de Seongeup, Manjanggul y el espectáculo de buceo de las haenyeo."
           },
           {
             "id": "q4",
-            "question": "¿Qué pasa si el Manjanggul reabre durante mi visita?",
-            "answer": "Si la Cueva Manjanggul (el tubo de lava más famoso y largo) reabre, el operador puede sustituir Micheon Cave. El Manjanggul pertenece al Patrimonio Natural UNESCO y es 4× más largo que Micheon. La confirmación del día antes le indicará cuál cueva visitar."
+            "question": "¿Qué ocurre los días en que Manjanggul cierra?",
+            "answer": "Manjanggul es un tubo de lava del Patrimonio Natural Mundial de la UNESCO incluido en el recorrido. No obstante, los días en que cierra por mantenimiento o meteorología (lluvias intensas, etc.), se sustituye por una cueva cercana del mismo sistema de tubos de lava, como la cueva Micheon de Ilchul Land, para mantener la experiencia de la cueva."
           },
           {
             "id": "q5",
-            "question": "¿El almuerzo está incluido?",
-            "answer": "No. El almuerzo es por su cuenta (~₩15.000). El guía recomienda un restaurante local del este de Jeju y ayuda con los menús y restricciones alimentarias."
-          },
-          {
-            "id": "q6",
-            "question": "¿Por qué la Puerta 1 del aeropuerto y no la Puerta 3?",
-            "answer": "El tour del este usa la Puerta 1 del Aeropuerto de Jeju (Planta 1, Llegadas Nacionales) porque la ruta hacia la costa este sale directamente desde allí. El tour del sur usa la Puerta 3. Si no está seguro, busque el letrero de AtoC Korea."
-          },
-          {
-            "id": "first-time",
-            "question": "¿Es una buena opción para quienes visitan el este de Jeju por primera vez?",
-            "answer": "Sí — cubre las paradas más características de la zona en un único día equilibrado. El circuito es el tour del este de Jeju con más reseñas."
-          },
-          {
-            "id": "walking",
-            "question": "¿Es difícil la caminata?",
-            "answer": "Un día activo con varias paradas que requieren caminar. La sección más exigente es la subida opcional al borde del cráter de Seongsan (~180 escalones). El resto de paradas son llanas o con caminos suaves."
-          },
-          {
-            "id": "family",
-            "question": "¿Este tour es adecuado para familias?",
-            "answer": "Sí, para familias cuyos hijos puedan aguantar un día completo de movimiento continuo. A partir de 10 años es la edad recomendada para disfrutar del ritmo completo."
-          },
-          {
-            "id": "seniors",
-            "question": "¿Pueden participar personas mayores cómodamente?",
-            "answer": "Recomendado para mayores activos que se manejen bien con escaleras y terreno irregular. La subida a Seongsan es opcional — quien prefiera puede esperar abajo."
-          },
-          {
-            "id": "children",
-            "question": "¿Cuál es la edad mínima recomendada?",
-            "answer": "A partir de 10 años aproximadamente. Los niños cómodos con el ritmo de un día completo y las indicaciones de caminata encajan bien."
+            "question": "¿Está incluido el almuerzo?",
+            "answer": "No está incluido. El coste del almuerzo es aparte (unos ₩15.000) y el guía recomienda restaurantes locales de calidad."
           }
         ]
       }
@@ -3339,12 +3233,12 @@
       "props": {
         "note": "La disponibilidad se confirma en el paso de pago.",
         "price": {
-          "amountLabel": "",
+          "amountLabel": "47",
+          "originalPriceUsd": 59,
+          "salePriceUsd": 47,
+          "discountPercent": 20,
           "currency": "USD",
-          "per": "persona",
-          "priceSource": "direct_rate",
-          "priceNote": "El precio del grupo reducido aún no está confirmado en la ficha. El producto hermano (UNESCO Sur, mismo operador) cuesta 43 USD por persona; este tour del Este es comparable. Una vez confirmado, el precio directo de AtoC Korea aplica un 10% de descuento fijo.",
-          "discountPercent": 10
+          "per": "person"
         }
       }
     }
