@@ -71,6 +71,9 @@ export type TourDesktopBookingCardProps = Pick<EastSignatureNatureCoreDetailView
    * to [1, MAX_GUESTS]; absent → DEFAULT_GUESTS as before.
    */
   initialGuests?: number;
+  /** Deep-link seeding — `?date=`/`?language=` from the URL pre-fill the card. */
+  seedDateYmd?: string;
+  seedLanguage?: PreferredLanguage;
 };
 
 /**
@@ -85,6 +88,8 @@ export function TourDesktopBookingCard({
   sectionUi,
   pricingTiers,
   initialGuests,
+  seedDateYmd,
+  seedLanguage,
 }: TourDesktopBookingCardProps) {
   const portCtaPrefix = sectionUi?.portSelectorCtaPrefix ?? "Docking at";
   const router = useRouter();
@@ -92,12 +97,12 @@ export function TourDesktopBookingCard({
   const t = useTranslations();
   const [busy, setBusy] = useState(false);
   const seededGuests = initialGuests != null ? clampGuests(initialGuests) : DEFAULT_GUESTS;
-  const [dateYmd, setDateYmd] = useState(initialDateYmd);
+  const [dateYmd, setDateYmd] = useState(() => seedDateYmd ?? initialDateYmd());
   const [guestCount, setGuestCount] = useState(seededGuests);
   const [guestEditValue, setGuestEditValue] = useState(String(seededGuests));
   const [guestFieldEditing, setGuestFieldEditing] = useState(false);
   const guestFieldEditingRef = useRef(false);
-  const [preferredLanguage, setPreferredLanguage] = useState<PreferredLanguage>("en");
+  const [preferredLanguage, setPreferredLanguage] = useState<PreferredLanguage>(seedLanguage ?? "en");
   const [availability, setAvailability] = useState<AvailabilityState>({ status: "idle" });
   /** Selected duration key for pricingTiers (charter/private products only). */
   const [selectedDuration, setSelectedDuration] = useState<string | null>(

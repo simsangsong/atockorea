@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { buildTourProductViewModelFromFullPageJson } from "@/components/product-tour-static/_shared/buildTourProductViewModelFromJson";
+import { coerceSeedDateYmd, coerceSeedLanguage } from "@/components/product-tour-static/_shared/bookingShared";
 import {
   getStaticTourProductFullPageJson,
   isStaticTourProductBundleRegistered,
@@ -20,7 +21,15 @@ import { resolveTourProductDbLocale } from "@/lib/tour-product/resolveTourProduc
 import { isTourSlugBlockedFromConsumerSurfaces } from "@/lib/tour-consumer-visibility";
 
 type RouteParams = { slug: string };
-type RouteSearchParams = { locale?: string | string[]; party?: string | string[] };
+type RouteSearchParams = {
+  locale?: string | string[];
+  party?: string | string[];
+  // Deep-link seeding (AI agents / shared links): pre-fill the booking card.
+  date?: string | string[];
+  guests?: string | string[];
+  language?: string | string[];
+  lang?: string | string[];
+};
 
 /**
  * U9 carry-through — parse the upstream `?party=` group size (home stepper →
@@ -95,7 +104,12 @@ export default async function RegisteredTourProductPage({
   const slug = await resolveRegisteredSlug(params);
   const sp = (await searchParams) ?? {};
   const locale = await resolveTourProductDbLocale(sp.locale);
-  const initialGuests = parsePartyParam(sp.party);
+  // `?party=` (legacy carry-through) and `?guests=` (agent deep-link) both seed
+  // the group size; `?date=` and `?language=` pre-fill the booking card so a URL
+  // an AI agent constructs lands the traveller ready to confirm.
+  const initialGuests = parsePartyParam(sp.party ?? sp.guests);
+  const seedDateYmd = coerceSeedDateYmd(sp.date);
+  const seedLanguage = coerceSeedLanguage(sp.language ?? sp.lang);
 
   // Resolution order: Supabase locale → static JSON locale → Supabase EN fallback.
   // Falling through to the static JSON for the requested locale before trying
@@ -193,6 +207,8 @@ export default async function RegisteredTourProductPage({
         recommendations={recommendations}
         locale={locale}
         initialGuests={initialGuests}
+        seedDateYmd={seedDateYmd}
+        seedLanguage={seedLanguage}
       />
     </>
   );

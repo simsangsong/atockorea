@@ -4,6 +4,7 @@ import { Headphones, ShieldCheck, Zap } from "lucide-react";
 
 import type { TourProductDetailViewModel } from "./tourProductFullPageJsonTypes";
 import type { TourProductCheckoutContext } from "@/lib/tour-product/eastSignatureCheckoutContext";
+import type { PreferredLanguage } from "@/components/product-tour-static/_shared/bookingShared";
 import {
   TourAtAGlance,
   TourAtmosphereGallery,
@@ -54,6 +55,13 @@ export type TourProductDetailClientProps = {
    * visitor is not re-asked for a party size they already chose.
    */
   initialGuests?: number;
+  /**
+   * Deep-link seeding (AI agents / shared links) — `?date=` and `?language=`
+   * pre-fill the booking cards so a constructed URL lands the traveller ready to
+   * confirm. Validated upstream in the page; absent → cards keep their defaults.
+   */
+  seedDateYmd?: string;
+  seedLanguage?: PreferredLanguage;
 };
 
 /**
@@ -64,7 +72,7 @@ export type TourProductDetailClientProps = {
  * `app/tour-product/[slug]/page.tsx`; existing East / Jeju pages continue to
  * render through their slug-specific clients until migrated.
  */
-export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, recommendations, locale = "en", initialGuests }: TourProductDetailClientProps) {
+export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, recommendations, locale = "en", initialGuests, seedDateYmd, seedLanguage }: TourProductDetailClientProps) {
   const vm = viewModel;
   const t = useTranslations();
   const hasRouteVariants = Array.isArray(vm.routeVariants) && vm.routeVariants.length > 0;
@@ -323,6 +331,8 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
               sectionUi={vm.sectionUi}
               pricingTiers={vm.pricingTiers}
               initialGuests={initialGuests}
+              seedDateYmd={seedDateYmd}
+              seedLanguage={seedLanguage}
             />
           </div>
         </aside>
@@ -337,6 +347,8 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
           sectionUi={vm.sectionUi}
           pricingTiers={vm.pricingTiers}
           initialGuests={initialGuests}
+          seedDateYmd={seedDateYmd}
+          seedLanguage={seedLanguage}
         />
       </div>
 
