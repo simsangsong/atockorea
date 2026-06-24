@@ -56,6 +56,35 @@ export function initialDateYmd(): string {
   return addDaysToYmd(todayYmdLocal(), DEFAULT_LEAD_DAYS);
 }
 
+/**
+ * Deep-link seeding — validate a `?date=YYYY-MM-DD` query param so an AI agent
+ * (or a shared link) can pre-fill the booking card. Returns `undefined` for
+ * malformed or past dates so the card keeps its default lead-time date.
+ */
+export function coerceSeedDateYmd(raw: string | string[] | undefined | null): string | undefined {
+  const v = Array.isArray(raw) ? raw[0] : raw;
+  if (!v || !/^\d{4}-\d{2}-\d{2}$/.test(v)) return undefined;
+  if (Number.isNaN(new Date(`${v}T00:00:00`).getTime())) return undefined;
+  return v >= todayYmdLocal() ? v : undefined;
+}
+
+/**
+ * Deep-link seeding — map a `?language=` query param onto the booking card's
+ * guide-language toggle. Only en/zh/ko have a dedicated toggle; other locales
+ * (ja/es) fall through to `undefined` so the card keeps its default.
+ */
+export function coerceSeedLanguage(
+  raw: string | string[] | undefined | null,
+): PreferredLanguage | undefined {
+  const v = Array.isArray(raw) ? raw[0] : raw;
+  if (!v) return undefined;
+  const s = v.trim().toLowerCase();
+  if (s === "ko" || s === "kr" || s === "korean") return "ko";
+  if (s.startsWith("zh") || s === "cn" || s === "chinese") return "zh";
+  if (s === "en" || s === "english") return "en";
+  return undefined;
+}
+
 export function ymdToNoonIso(ymd: string): string {
   const [y, m, d] = ymd.split("-").map(Number);
   return new Date(y, m - 1, d, 12, 0, 0, 0).toISOString();
