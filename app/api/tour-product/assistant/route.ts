@@ -39,10 +39,10 @@ import {
   isMemoryRelevantIntent,
 } from "@/lib/chatbot/sessionMemory";
 import {
-  checkBookingLookupAllowed,
-  recordBookingLookupAttempt,
-  recordBookingLookupFailure,
-  recordBookingLookupSuccess,
+  checkBookingLookupAllowedDurable,
+  recordBookingLookupAttemptDurable,
+  recordBookingLookupFailureDurable,
+  recordBookingLookupSuccessDurable,
 } from "@/lib/chatbot/bookingLookupRateLimit";
 import {
   extractQuoteDraft,
@@ -53,7 +53,7 @@ import {
   quoteEmailPrompt,
   checkoutReadyReply,
 } from "@/lib/chatbot/quoteFlow";
-import { allowRequest } from "@/lib/chatbot/requestRateLimit";
+import { allowRequestDurable } from "@/lib/chatbot/requestRateLimit";
 import { retrieveKnowledge, buildRagContextText } from "@/lib/rag/retrieve";
 import {
   recommendToursViaMatcher,
@@ -585,7 +585,7 @@ export async function POST(req: NextRequest) {
   {
     const ip = bestEffortIp(req);
     const rlKey = ip ? `ip:${ip}` : `sess:${getOrCreateSessionToken(req).token}`;
-    const gate = allowRequest("assistant", rlKey, { perMinute: 20, perHour: 200 });
+    const gate = await allowRequestDurable("assistant", rlKey, { perMinute: 20, perHour: 200 });
     if (!gate.allowed) {
       return NextResponse.json(
         { error: "rate_limited" },
@@ -764,7 +764,7 @@ export async function POST(req: NextRequest) {
       // back to the session token only when no IP is available.
       const lookupIp = bestEffortIp(req);
       const rlKey = lookupIp ? `ip:${lookupIp}` : `sess:${session.token}`;
-      const gate = checkBookingLookupAllowed(rlKey);
+      const gate = await checkBookingLookupAllowedDurable(rlKey);
       if (!gate.allowed) {
         return applySessionCookie(
           NextResponse.json({
@@ -779,7 +779,7 @@ export async function POST(req: NextRequest) {
           session,
         );
       }
-      recordBookingLookupAttempt(rlKey);
+      await recordBookingLookupAttemptDurable(rlKey);
 
       const lookupSb = makeServiceRoleClient();
       let bookingView: Awaited<ReturnType<typeof verifyAndFetchBooking>> = null;
@@ -793,7 +793,7 @@ export async function POST(req: NextRequest) {
 
       if (!bookingView) {
         // Identical message regardless of which field was wrong (anti-enumeration).
-        recordBookingLookupFailure(rlKey);
+        await recordBookingLookupFailureDurable(rlKey);
         return applySessionCookie(
           NextResponse.json({
             reply: bookingNotFoundReply(bookingLocale),
@@ -810,7 +810,7 @@ export async function POST(req: NextRequest) {
       // Verified — clear failures and let the model answer from the booking facts
       // (read-only). A write request still falls through but forces a handoff
       // offer at the end so we never imply we changed anything.
-      recordBookingLookupSuccess(rlKey);
+      await recordBookingLookupSuccessDurable(rlKey);
       verifiedBookingContext = buildVerifiedBookingContext(bookingView);
     }
   }
@@ -890,7 +890,7 @@ export async function POST(req: NextRequest) {
       {
         const bookIp = bestEffortIp(req);
         const bookKey = bookIp ? `ip:${bookIp}` : `sess:${session.token}`;
-        const bookGate = allowRequest("assistant_book", bookKey, { perMinute: 2, perHour: 8 });
+        const bookGate = await allowRequestDurable("assistant_book", bookKey, { perMinute: 2, perHour: 8 });
         if (!bookGate.allowed) return respond(quoteReply);
       }
       const bookSb = makeServiceRoleClient();
