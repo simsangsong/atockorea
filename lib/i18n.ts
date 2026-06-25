@@ -114,95 +114,83 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   }, [locale]);
 
   useEffect(() => {
-    // Load saved locale from localStorage or user settings
-    const loadLocale = async () => {
-      try {
-        // Check if we're on the client side
-        if (typeof window === 'undefined') {
-          setLocaleState(defaultLocale);
-          setLoading(false);
-          return;
-        }
-
-        // Try to get from localStorage first
-        const savedLocale = localStorage.getItem('locale') as Locale;
-        if (savedLocale && locales.includes(savedLocale)) {
-          if (!userOverrideRef.current) setLocaleState(savedLocale);
-          setLoading(false);
-          return;
-        }
-
-        // Try to get from user settings if logged in (dynamic import to avoid server bundle)
-        try {
-          const { supabase } = await import('./supabase');
-          if (userOverrideRef.current) { setLoading(false); return; }
-          if (supabase) {
-            const { data: { session } } = await supabase.auth.getSession();
-            if (userOverrideRef.current) { setLoading(false); return; }
-            if (session) {
-              const { data: profile } = await supabase
-                .from('user_profiles')
-                .select('language_preference')
-                .eq('id', session.user.id)
-                .single();
-              if (userOverrideRef.current) { setLoading(false); return; }
-
-              if (profile?.language_preference && locales.includes(profile.language_preference as Locale)) {
-                const userLocale = profile.language_preference as Locale;
-                setLocaleState(userLocale);
-                if (typeof window !== 'undefined') {
-                  localStorage.setItem('locale', userLocale);
-                }
-                setLoading(false);
-                return;
-              }
-            }
-          }
-        } catch (_) {
-          // Supabase not available or not configured; continue with localStorage/browser locale
-        }
-
-        // Use browser language (only on client side)
-        if (typeof window === 'undefined') {
-          setLocaleState(defaultLocale);
-          setLoading(false);
-          return;
-        }
-        if (userOverrideRef.current) { setLoading(false); return; }
-
-        const browserLang = navigator.language;
-        const langCode = browserLang.split('-')[0];
-        const fullLang = browserLang.toLowerCase();
-
-        // Check for specific locales
-        if (fullLang.startsWith('zh-tw') || fullLang.startsWith('zh-hant')) {
-          setLocaleState('zh-TW');
-        } else if (langCode === 'ko') {
-          setLocaleState('ko');
-        } else if (langCode === 'zh') {
-          setLocaleState('zh');
-        } else if (langCode === 'es') {
-          setLocaleState('es');
-        } else if (langCode === 'ja') {
-          setLocaleState('ja');
-        } else {
-          setLocaleState(defaultLocale);
-        }
-      } catch (error) {
-        console.error('Error loading locale:', error);
-        setLocaleState(defaultLocale);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    // Only load locale on client side
-    if (typeof window !== 'undefined') {
-      loadLocale();
-    } else {
-      // Server-side: use default locale immediately
+    // Server-side: keep the default; the client effect below picks the real one.
+    if (typeof window === 'undefined') {
       setLoading(false);
+      return;
     }
+
+    // 1) Saved explicit preference wins — instant, no network and no supabase chunk.
+    try {
+      const savedLocale = localStorage.getItem('locale') as Locale | null;
+      if (savedLocale && locales.includes(savedLocale)) {
+        if (!userOverrideRef.current) setLocaleState(savedLocale);
+        setLoading(false);
+        return;
+      }
+    } catch {
+      // localStorage unavailable — fall through to browser detection.
+    }
+
+    // 2) New visitor: derive the locale from the browser language SYNCHRONOUSLY so
+    //    first paint is already localized. Previously this was gated behind loading
+    //    the supabase-js chunk + getSession() just to detect language, delaying the
+    //    correct locale for every first-time visitor.
+    const detectBrowserLocale = (): Locale => {
+      const full = navigator.language.toLowerCase();
+      const code = full.split('-')[0];
+      if (full.startsWith('zh-tw') || full.startsWith('zh-hant')) return 'zh-TW';
+      if (code === 'ko') return 'ko';
+      if (code === 'zh') return 'zh';
+      if (code === 'es') return 'es';
+      if (code === 'ja') return 'ja';
+      return defaultLocale;
+    };
+    if (!userOverrideRef.current) setLocaleState(detectBrowserLocale());
+    setLoading(false);
+
+    // 3) Logged-in users: enrich from their saved profile preference in the
+    //    background. Never blocks first paint, bounded by a 2s timeout, and yields
+    //    to an explicit user choice made in the meantime (userOverrideRef).
+    let cancelled = false;
+    const withTimeout = <T,>(p: PromiseLike<T>, ms: number): Promise<T | null> =>
+      Promise.race([
+        Promise.resolve(p),
+        new Promise<null>((resolve) => setTimeout(() => resolve(null), ms)),
+      ]);
+    (async () => {
+      try {
+        const { supabase } = await import('./supabase');
+        if (cancelled || userOverrideRef.current || !supabase) return;
+        const sessionRes = await withTimeout(supabase.auth.getSession(), 2000);
+        const session = sessionRes?.data?.session;
+        if (cancelled || userOverrideRef.current || !session) return;
+        const profileRes = await withTimeout(
+          supabase
+            .from('user_profiles')
+            .select('language_preference')
+            .eq('id', session.user.id)
+            .single(),
+          2000
+        );
+        if (cancelled || userOverrideRef.current) return;
+        const pref = profileRes?.data?.language_preference as Locale | undefined;
+        if (pref && locales.includes(pref)) {
+          setLocaleState(pref);
+          try {
+            localStorage.setItem('locale', pref);
+          } catch {
+            /* ignore */
+          }
+        }
+      } catch {
+        // Supabase unavailable/unconfigured — browser locale already applied.
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   // Stable reference: prevents downstream useEffect deps (e.g. LocaleHomeClient) from
