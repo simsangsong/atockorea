@@ -12,12 +12,15 @@ export function StatCard({
   value,
   sublabel,
   icon,
+  chart,
   className,
 }: {
   label: ReactNode;
   value: ReactNode;
   sublabel?: ReactNode;
   icon?: ReactNode;
+  /** Optional full-width visual (e.g. <Sparkline/>) rendered below the value (§8.4). */
+  chart?: ReactNode;
   className?: string;
 }) {
   return (
@@ -33,6 +36,7 @@ export function StatCard({
       </div>
       <div className="mt-2 text-2xl font-bold tabular-nums text-slate-900">{value}</div>
       {sublabel ? <div className="mt-1 text-xs text-slate-500">{sublabel}</div> : null}
+      {chart ? <div className="mt-3">{chart}</div> : null}
     </div>
   );
 }
