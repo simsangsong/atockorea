@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useState, useEffect, useCallback, useMemo } from 'react';
+import React, { createContext, useContext, useState, useEffect, useCallback, useMemo, useRef } from 'react';
 
 /** Supported display currencies (world major). List/checkout amounts are stored and passed as USD (major units). */
 export type CurrencyCode =
@@ -98,6 +98,11 @@ export function CurrencyProvider({ children }: { children: React.ReactNode }) {
     }
   }, []);
 
+  // Wall-clock of the last successful fetch, so the visibility refresh below can
+  // tell whether the cached rate is stale without re-binding listeners on every
+  // rate update.
+  const lastFetchRef = useRef(0);
+
   const fetchRate = useCallback(async () => {
     setIsLoading(true);
     setError(null);
@@ -114,23 +119,34 @@ export function CurrencyProvider({ children }: { children: React.ReactNode }) {
       setRates({ USD: 1, KRW: DEFAULT_KRW_RATE });
       setRateUpdatedAt(new Date().toISOString());
     } finally {
+      lastFetchRef.current = Date.now();
       setIsLoading(false);
     }
   }, []);
 
+  // One-time on mount: restore the stored preference + fetch rates once. Both run
+  // post-paint (useEffect), so neither blocks hydration. The response is now
+  // CDN/browser cached, so this initial fetch is near-free after the first hit.
   useEffect(() => {
     loadStored();
-  }, [loadStored]);
-
-  useEffect(() => {
     fetchRate();
-  }, [fetchRate]);
+  }, [loadStored, fetchRate]);
 
+  // Refresh only when the tab regains focus AND the rate is stale (>10 min) —
+  // replaces a perpetual setInterval that fired every 10 min per open tab forever
+  // (wasteful on idle/background tabs; intra-session rates barely move).
   useEffect(() => {
-    const id = window.setInterval(() => {
-      fetchRate();
-    }, 10 * 60 * 1000);
-    return () => window.clearInterval(id);
+    const STALE_MS = 10 * 60 * 1000;
+    const refreshIfStale = () => {
+      if (document.visibilityState !== 'visible') return;
+      if (Date.now() - lastFetchRef.current > STALE_MS) fetchRate();
+    };
+    document.addEventListener('visibilitychange', refreshIfStale);
+    window.addEventListener('focus', refreshIfStale);
+    return () => {
+      document.removeEventListener('visibilitychange', refreshIfStale);
+      window.removeEventListener('focus', refreshIfStale);
+    };
   }, [fetchRate]);
 
   const setCurrency = useCallback((c: CurrencyCode) => {
