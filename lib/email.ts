@@ -1,5 +1,12 @@
+// Defense-in-depth (LIB-good): this module instantiates the Resend client with
+// RESEND_API_KEY at import time and is only ever pulled in by API routes (all
+// importers live under app/api/**). The `server-only` guard makes any
+// accidental import from a Client Component a hard build error, so the email
+// secret can never end up in a browser bundle.
+import 'server-only';
 import { Resend } from 'resend';
 import { buildReminderEmailHtml } from './email-templates/reminder';
+import { paymentStatusLabel } from './email/payment-status-label';
 
 const resendApiKey = process.env.RESEND_API_KEY;
 const fromEmail = process.env.RESEND_FROM_EMAIL || 'AtoCKorea <support@atockorea.com>';
@@ -71,16 +78,6 @@ export async function sendEmail({
 /**
  * Booking confirmation email
  */
-/** 결제상태 표시 라벨 (Payment status labels) */
-const PAYMENT_STATUS_LABELS: Record<string, string> = {
-  pending: '결제대기 (Payment Pending)',
-  authorized: '카드 등록 완료 — 투어 당일 한국시간 오전 10시 자동 청구 (Card on file — automatically charged at 10:00 AM KST on tour day)',
-  paid: '결제 완료 (Payment Completed)',
-  failed: '결제실패 (Payment Failed)',
-  refunded: '환불됨 (Refunded)',
-};
-PAYMENT_STATUS_LABELS.authorized = 'Card registered';
-
 /** Parameters for booking confirmation email (exported for type safety across dynamic imports) */
 export interface SendBookingConfirmationEmailParams {
   to: string;
@@ -198,7 +195,7 @@ export async function sendBookingConfirmationEmail(params: SendBookingConfirmati
     tourId,
   } = params;
   const paymentStatus = params.paymentStatus ?? 'pending';
-  const paymentStatusLabel = PAYMENT_STATUS_LABELS[paymentStatus] ?? PAYMENT_STATUS_LABELS.pending;
+  const paymentStatusLabelText = paymentStatusLabel(paymentStatus);
   const displayBookingId = shortBookingId(bookingId);
   const baseUrl = getEmailBaseUrl();
   const logoUrl = getEmailLogoUrl(baseUrl);
@@ -218,7 +215,7 @@ export async function sendBookingConfirmationEmail(params: SendBookingConfirmati
   const safeTourTitle = escapeHtml(tourTitle);
   const safePickupPoint = pickupPoint ? escapeHtml(pickupPoint) : null;
   const safePaymentMethod = escapeHtml(paymentMethod === 'stripe' ? 'Stripe card authorization' : paymentMethod);
-  const safePaymentStatus = escapeHtml(paymentStatusLabel);
+  const safePaymentStatus = escapeHtml(paymentStatusLabelText);
   const safeHeroAlt = escapeHtml(tourTitle);
   const totalAmount = formatUsdAmount(totalPrice);
   const paymentNote =
