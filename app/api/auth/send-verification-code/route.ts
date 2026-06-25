@@ -1,12 +1,27 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import crypto from 'crypto';
+import { requestGate, clientIpKey } from '@/lib/durable-rate-limit';
 
 /**
  * POST /api/auth/send-verification-code
  * 发送自定义验证码邮件
  */
 export async function POST(req: NextRequest) {
+  // PA-6: sends a verification email — throttle per-IP to blunt mail-bomb abuse.
+  const gate = await requestGate({
+    namespace: 'send_verification',
+    key: clientIpKey(req.headers),
+    perMinute: 3,
+    perHour: 10,
+  });
+  if (!gate.allowed) {
+    return NextResponse.json(
+      { error: 'rate_limited' },
+      { status: 429, headers: { 'Retry-After': String(Math.ceil(gate.retryAfterMs / 1000)) } },
+    );
+  }
+
   try {
     const { email } = await req.json();
 

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { checkOrigin } from '@/lib/origin-check';
+import { requestGate, clientIpKey } from '@/lib/durable-rate-limit';
 
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
@@ -12,6 +13,20 @@ export const runtime = 'nodejs';
 export async function POST(req: NextRequest) {
   const originBlock = checkOrigin(req);
   if (originBlock) return originBlock;
+
+  // PA-6: contact form sends email — throttle per-IP to blunt spam / mail-bomb abuse.
+  const gate = await requestGate({
+    namespace: 'contact',
+    key: clientIpKey(req.headers),
+    perMinute: 3,
+    perHour: 10,
+  });
+  if (!gate.allowed) {
+    return NextResponse.json(
+      { error: 'rate_limited' },
+      { status: 429, headers: { 'Retry-After': String(Math.ceil(gate.retryAfterMs / 1000)) } },
+    );
+  }
 
   try {
     const body = await req.json();
