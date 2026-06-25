@@ -3,9 +3,14 @@
 import { useState, useEffect, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { toast } from 'sonner';
+import { Search, X, Download, ShoppingCart } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import { BookingStatusBadge } from '@/components/admin/BookingStatusBadge';
+import { Skeleton } from '@/components/admin/Skeleton';
+import { useUrlFilters } from '@/lib/admin/useUrlFilters';
 import { formatBookingPrice, type BookingCurrency } from '@/lib/format/currency';
+import { cn } from '@/lib/utils';
 
 interface Booking {
   id: string;
@@ -14,7 +19,7 @@ interface Booking {
   number_of_guests?: number;
   number_of_people?: number;
   total_price?: number;
-  final_price: number;
+  final_price: number | null;
   /** Phase 10.6 — present for all rows after the bookings.currency column
    *  default 'usd' was added; KRW for itinerary_builder rows. */
   currency?: BookingCurrency;
@@ -44,28 +49,37 @@ interface Booking {
   } | null;
 }
 
-type OrderBy = 'created_at' | 'tour_date' | 'booking_date';
-type OrderDir = 'asc' | 'desc';
+const SOURCE_CHIPS = [
+  { value: '', label: '전체' },
+  { value: 'tour_product', label: '투어 상품' },
+  { value: 'itinerary_builder', label: '커스텀 일정' },
+] as const;
+
+const FILTER_DEFAULTS = {
+  status: '',
+  source: '',
+  orderBy: 'created_at',
+  order: 'desc',
+};
 
 export default function OrdersPage() {
   const router = useRouter();
+  const { filters, setFilter } = useUrlFilters(FILTER_DEFAULTS);
   const [bookings, setBookings] = useState<Booking[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [statusFilter, setStatusFilter] = useState('');
-  /** Phase 10.6 — source filter chip: '' (all) | 'tour_product' | 'itinerary_builder'. */
-  const [sourceFilter, setSourceFilter] = useState<'' | 'tour_product' | 'itinerary_builder'>('');
-  const [orderBy, setOrderBy] = useState<OrderBy>('created_at');
-  const [orderDir, setOrderDir] = useState<OrderDir>('desc');
+  const [search, setSearch] = useState('');
   const [exporting, setExporting] = useState(false);
 
   useEffect(() => {
     fetchBookings();
-  }, [statusFilter, sourceFilter, orderBy, orderDir]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filters.status, filters.source, filters.orderBy, filters.order]);
 
   const fetchBookings = async () => {
     try {
       setLoading(true);
+      setError(null);
       const { data: { session } } = await supabase?.auth.getSession() || { data: { session: null } };
 
       if (!session) {
@@ -74,10 +88,10 @@ export default function OrdersPage() {
       }
 
       const params = new URLSearchParams();
-      if (statusFilter) params.set('status', statusFilter);
-      if (sourceFilter) params.set('source', sourceFilter);
-      params.set('orderBy', orderBy);
-      params.set('order', orderDir);
+      if (filters.status) params.set('status', filters.status);
+      if (filters.source) params.set('source', filters.source);
+      params.set('orderBy', filters.orderBy);
+      params.set('order', filters.order);
       const response = await fetch(`/api/admin/orders?${params.toString()}`, {
         headers: { Authorization: `Bearer ${session.access_token}` },
         credentials: 'include',
@@ -85,18 +99,19 @@ export default function OrdersPage() {
 
       if (!response.ok) {
         if (response.status === 403) {
-          alert('Admin access required');
+          toast.error('관리자 권한이 필요합니다');
           router.push('/');
           return;
         }
-        throw new Error('Failed to fetch orders');
+        throw new Error('주문을 불러오지 못했습니다');
       }
 
       const data = await response.json();
       setBookings(data.orders || []);
-    } catch (err: any) {
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : '알 수 없는 오류';
       console.error('Error fetching orders:', err);
-      setError(err.message);
+      setError(message);
     } finally {
       setLoading(false);
     }
@@ -118,50 +133,71 @@ export default function OrdersPage() {
     return raw ? new Date(raw).toISOString().slice(0, 10) : 'no-date';
   };
 
+  // Client-side search over the loaded set (tour, customer, email, phone, id, ref).
+  const filtered = useMemo(() => {
+    const q = search.trim().toLowerCase();
+    if (!q) return bookings;
+    return bookings.filter((b) =>
+      [
+        b.tours?.title,
+        b.user_profiles?.full_name,
+        b.contact_name,
+        b.user_profiles?.email,
+        b.contact_email,
+        b.contact_phone,
+        b.id,
+        b.booking_reference,
+      ]
+        .filter(Boolean)
+        .join(' ')
+        .toLowerCase()
+        .includes(q),
+    );
+  }, [bookings, search]);
+
   const groupedByDate = useMemo(() => {
     const map = new Map<string, Booking[]>();
-    bookings.forEach((b) => {
+    filtered.forEach((b) => {
       const key = dateKey(b);
       if (!map.has(key)) map.set(key, []);
       map.get(key)!.push(b);
     });
     const keys = Array.from(map.keys()).sort((a, b) =>
-      orderDir === 'desc' ? b.localeCompare(a) : a.localeCompare(b),
+      filters.order === 'desc' ? b.localeCompare(a) : a.localeCompare(b),
     );
     return keys.map((key) => ({ date: key, items: map.get(key)! }));
-  }, [bookings, orderDir]);
+  }, [filtered, filters.order]);
+
+  const fmtAmount = (b: Booking) =>
+    b.final_price != null
+      ? formatBookingPrice(parseFloat(String(b.final_price)), b.currency ?? 'usd')
+      : '—';
 
   const exportToExcel = () => {
     setExporting(true);
     try {
       const BOM = '\uFEFF';
       const headers = [
-        'Order ID',
-        'Created At',
-        'Tour Date',
-        'Tour',
-        'Customer',
-        'Email',
-        'Phone',
-        'Guests',
-        'Pickup',
-        'Address',
-        'Amount',
-        'Status',
-        'Payment Status',
+        'Order ID', 'Created At', 'Tour Date', 'Tour', 'Source', 'Customer',
+        'Email', 'Phone', 'Guests', 'Pickup', 'Address', 'Amount', 'Currency',
+        'Status', 'Payment Status',
       ];
-      const rows = bookings.map((b) => [
+      const rows = filtered.map((b) => [
         b.id,
         b.created_at ? formatDate(b.created_at) : '',
         b.tour_date || '',
-        b.tours?.title || '',
+        b.source === 'itinerary_builder' ? 'Custom itinerary' : (b.tours?.title || ''),
+        b.source || 'tour_product',
         b.user_profiles?.full_name || b.contact_name || 'Guest',
         b.user_profiles?.email || b.contact_email || '',
         b.contact_phone || '',
         String(b.number_of_guests ?? b.number_of_people ?? 1),
         b.pickup_points?.name || '',
         b.pickup_points?.address || '',
-        String(b.final_price ?? ''),
+        // D-2 — keep the raw amount but pair it with an explicit Currency column
+        // so KRW 340000 and USD 52.00 are no longer ambiguous in the export.
+        b.final_price != null ? String(b.final_price) : '',
+        (b.currency ?? 'usd').toUpperCase(),
         b.status,
         b.payment_status || '',
       ]);
@@ -180,264 +216,271 @@ export default function OrdersPage() {
     }
   };
 
-  if (loading) {
-    return (
-      <div className="space-y-6">
-        <div className="text-center py-12">
-          <div className="animate-spin rounded-full h-10 w-10 border-2 border-indigo-600 border-t-transparent mx-auto mb-3"></div>
-          <p className="text-sm text-gray-600">Loading orders...</p>
-        </div>
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className="space-y-6">
-        <div className="bg-red-50 border border-red-200 rounded-lg p-5">
-          <p className="text-sm text-red-800 font-medium">Error: {error}</p>
-          <button
-            onClick={fetchBookings}
-            className="mt-3 px-4 py-2 text-sm bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
-          >
-            Retry
-          </button>
-        </div>
-      </div>
-    );
-  }
+  const selectClass =
+    'min-h-11 min-w-0 flex-shrink-0 rounded-lg border border-admin-border bg-admin-surface px-3 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-500';
 
   return (
-    <div className="space-y-5">
-      <div className="flex flex-wrap items-center justify-between gap-4">
-        <div>
-          <h1 className="text-2xl font-bold text-gray-900">Order Management</h1>
-          <p className="text-sm text-gray-600 mt-1">View and manage all bookings ({bookings.length})</p>
+    <div>
+      {/* Sticky filter bar (§8.2) — search + chips stay pinned below the global
+          header so filters never scroll out of reach on a long list. */}
+      <div className="sticky top-0 z-10 -mx-4 -mt-4 border-b border-admin-border bg-admin-surface/95 px-4 pb-3 pt-4 backdrop-blur md:-mx-5 md:-mt-5 md:px-5">
+        <div className="relative">
+          <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-slate-400" />
+          <input
+            type="search"
+            inputMode="search"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder="투어·고객·이메일·주문번호 검색"
+            className="min-h-11 w-full rounded-lg border border-admin-border bg-admin-surface pl-9 pr-9 text-base text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          {search && (
+            <button
+              type="button"
+              aria-label="검색 지우기"
+              onClick={() => setSearch('')}
+              className="absolute right-2 top-1/2 flex size-7 -translate-y-1/2 items-center justify-center rounded-full text-slate-400 hover:bg-slate-100"
+            >
+              <X className="size-4" />
+            </button>
+          )}
         </div>
-        <button
-          type="button"
-          onClick={exportToExcel}
-          disabled={exporting || bookings.length === 0}
-          className="px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-lg hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed"
-        >
-          {exporting ? 'Exporting...' : 'Export CSV'}
-        </button>
-      </div>
 
-      <div className="bg-white rounded-lg border border-gray-200/60 shadow-sm p-4 flex flex-wrap items-center gap-3 md:gap-4">
-        {/* Phase 10.6 — source filter chips (All / Tour product / Itinerary builder).
-            Chip style mirrors the landing-card pill tone so the admin surface
-            doesn't drift visually from the customer-facing planner.
-            On mobile the chips scroll horizontally instead of wrapping. */}
-        <div className="-mx-1 flex w-full items-center gap-1.5 overflow-x-auto px-1 pb-1 md:mx-0 md:w-auto md:overflow-visible md:px-0 md:pb-0">
-          {[
-            { value: '' as const, label: 'All' },
-            { value: 'tour_product' as const, label: 'Tour product' },
-            { value: 'itinerary_builder' as const, label: '📋 Custom itinerary' },
-          ].map((opt) => {
-            const active = sourceFilter === opt.value;
+        <div className="mt-2.5 flex items-center gap-2 overflow-x-auto pb-0.5 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          {SOURCE_CHIPS.map((opt) => {
+            const active = filters.source === opt.value;
             return (
               <button
                 key={opt.value || 'all'}
                 type="button"
-                onClick={() => setSourceFilter(opt.value)}
-                className={`inline-flex flex-shrink-0 items-center rounded-full px-3 py-1.5 text-xs font-semibold transition-all ${
+                onClick={() => setFilter('source', opt.value)}
+                className={cn(
+                  'inline-flex min-h-9 flex-shrink-0 items-center rounded-full px-3 text-xs font-semibold transition-all',
                   active
                     ? 'bg-slate-900 text-white shadow-sm'
-                    : 'bg-slate-50 text-slate-700 ring-1 ring-slate-200 hover:bg-slate-100'
-                }`}
+                    : 'bg-slate-50 text-slate-700 ring-1 ring-slate-200 hover:bg-slate-100',
+                )}
               >
                 {opt.label}
               </button>
             );
           })}
+          <span className="mx-1 h-5 w-px flex-shrink-0 bg-slate-200" />
+          <select
+            value={filters.status}
+            onChange={(e) => setFilter('status', e.target.value)}
+            className={selectClass}
+            aria-label="상태 필터"
+          >
+            <option value="">전체 상태</option>
+            <option value="pending">대기</option>
+            <option value="confirmed">확정</option>
+            <option value="completed">완료</option>
+            <option value="cancelled">취소</option>
+            <option value="no_show">노쇼</option>
+          </select>
+          <select
+            value={filters.orderBy}
+            onChange={(e) => setFilter('orderBy', e.target.value)}
+            className={selectClass}
+            aria-label="정렬 기준"
+          >
+            <option value="created_at">생성일</option>
+            <option value="tour_date">투어일</option>
+            <option value="booking_date">예약일</option>
+          </select>
+          <select
+            value={filters.order}
+            onChange={(e) => setFilter('order', e.target.value)}
+            className={selectClass}
+            aria-label="정렬 방향"
+          >
+            <option value="desc">최신순</option>
+            <option value="asc">오래된순</option>
+          </select>
         </div>
-        <select
-          value={statusFilter}
-          onChange={(e) => setStatusFilter(e.target.value)}
-          className="min-w-0 flex-1 px-4 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 md:flex-none"
-        >
-          <option value="">All statuses</option>
-          <option value="pending">Pending</option>
-          <option value="confirmed">Confirmed</option>
-          <option value="completed">Completed</option>
-          <option value="cancelled">Cancelled</option>
-          <option value="no_show">No-show</option>
-        </select>
-        <span className="hidden text-sm text-gray-500 md:inline">Sort</span>
-        <select
-          value={orderBy}
-          onChange={(e) => setOrderBy(e.target.value as OrderBy)}
-          className="min-w-0 flex-1 px-4 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 md:flex-none"
-        >
-          <option value="created_at">Created at</option>
-          <option value="tour_date">Tour date</option>
-          <option value="booking_date">Booking date</option>
-        </select>
-        <select
-          value={orderDir}
-          onChange={(e) => setOrderDir(e.target.value as OrderDir)}
-          className="min-w-0 flex-1 px-4 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 md:flex-none"
-        >
-          <option value="desc">Newest first</option>
-          <option value="asc">Oldest first</option>
-        </select>
       </div>
 
-      <div className="space-y-8">
-        {groupedByDate.length === 0 ? (
-          <div className="bg-white rounded-lg border border-gray-200/60 shadow-sm p-8 text-center text-gray-500">
-            No orders found {statusFilter && `(status: ${statusFilter})`}
+      <div className="pt-4">
+        {/* Results meta + export */}
+        <div className="mb-4 flex items-center justify-between gap-3">
+          <p className="text-sm text-slate-500">
+            {loading ? '불러오는 중…' : (
+              <>
+                총 <span className="font-semibold tabular-nums text-slate-900">{filtered.length}</span>건
+                {search && bookings.length !== filtered.length ? ` (전체 ${bookings.length})` : ''}
+              </>
+            )}
+          </p>
+          <button
+            type="button"
+            onClick={exportToExcel}
+            disabled={exporting || filtered.length === 0}
+            className="inline-flex min-h-11 items-center gap-1.5 rounded-lg bg-slate-100 px-3.5 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-200 disabled:cursor-not-allowed disabled:opacity-50"
+          >
+            <Download className="size-4" /> {exporting ? '내보내는 중…' : 'CSV'}
+          </button>
+        </div>
+
+        {loading ? (
+          <div className="space-y-2.5">
+            {Array.from({ length: 6 }).map((_, i) => (
+              <Skeleton key={i} className="h-20 w-full rounded-design-md" />
+            ))}
+          </div>
+        ) : error ? (
+          <div className="max-w-xl rounded-design-md border border-red-200 bg-red-50 p-5">
+            <p className="text-sm font-medium text-red-800">오류: {error}</p>
+            <button
+              onClick={fetchBookings}
+              className="mt-3 min-h-11 rounded-lg bg-red-600 px-4 text-sm font-medium text-white transition-colors hover:bg-red-700"
+            >
+              다시 시도
+            </button>
+          </div>
+        ) : groupedByDate.length === 0 ? (
+          <div className="rounded-design-md border border-admin-border bg-admin-surface p-8 text-center text-slate-500 shadow-admin-card">
+            {search ? `'${search}'에 대한 주문이 없습니다` : '주문이 없습니다'}
+            {filters.status && ` (상태: ${filters.status})`}
           </div>
         ) : (
-          groupedByDate.map(({ date, items }) => (
-            <div key={date}>
-              <h2 className="text-lg font-semibold text-gray-900 mb-3">
-                {date === 'no-date'
-                  ? 'No date'
-                  : new Date(date + 'T12:00:00').toLocaleDateString('ko-KR', {
-                      year: 'numeric',
-                      month: 'long',
-                      day: 'numeric',
-                    })}
-                <span className="ml-2 text-sm font-normal text-gray-500">({items.length})</span>
-              </h2>
-              {/* Desktop: full table. Hidden on mobile where 9 columns can't fit. */}
-              <div className="hidden md:block bg-white rounded-lg border border-gray-200/60 shadow-sm overflow-hidden">
-                <div className="overflow-x-auto">
-                  <table className="w-full">
-                    <thead className="bg-gray-50 border-b border-gray-200">
-                      <tr>
-                        <th className="px-5 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Order ID</th>
-                        <th className="px-5 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Tour</th>
-                        <th className="px-5 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Customer</th>
-                        <th className="px-5 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Date</th>
-                        <th className="px-5 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Guests</th>
-                        <th className="px-5 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Pickup</th>
-                        <th className="px-5 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Amount</th>
-                        <th className="px-5 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Status</th>
-                        <th className="px-5 py-3 text-right text-xs font-semibold text-gray-600 uppercase tracking-wider">Action</th>
-                      </tr>
-                    </thead>
-                    <tbody className="bg-white divide-y divide-gray-200">
-                      {items.map((booking) => (
-                        <tr key={booking.id} className="hover:bg-gray-50/50 transition-colors">
-                          <td className="px-5 py-4 whitespace-nowrap text-xs font-mono text-gray-500">{booking.id.substring(0, 8)}...</td>
-                          <td className="px-5 py-4">
-                            {booking.source === 'itinerary_builder' ? (
-                              <div className="flex flex-col gap-0.5">
-                                <span className="inline-flex w-fit items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold text-emerald-800 ring-1 ring-emerald-200">
-                                  📋 Custom itinerary
-                                </span>
-                                <div className="text-xs text-gray-500">
-                                  {(booking as any).itinerary?.region ?? '—'} ·{' '}
-                                  {(booking as any).itinerary?.track ?? '—'}
-                                </div>
-                              </div>
-                            ) : (
-                              <div className="text-sm font-medium text-gray-900">{booking.tours?.title || 'Tour'}</div>
-                            )}
-                          </td>
-                          <td className="px-5 py-4">
-                            <div className="text-sm text-gray-900">{booking.user_profiles?.full_name || booking.contact_name || 'Guest'}</div>
-                            <div className="text-xs text-gray-500">{booking.user_profiles?.email || booking.contact_email || 'N/A'}</div>
-                          </td>
-                          <td className="px-5 py-4 whitespace-nowrap text-sm text-gray-500">
-                            {formatDate(booking.tour_date || booking.created_at)}
-                          </td>
-                          <td className="px-5 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                            {booking.number_of_guests ?? booking.number_of_people ?? 1}
-                          </td>
-                          <td className="px-5 py-4">
-                            {booking.pickup_points ? (
-                              <div className="text-xs">
-                                <div className="font-medium text-gray-900">{booking.pickup_points.name}</div>
-                                <div className="text-gray-500 mt-0.5">{booking.pickup_points.address}</div>
-                              </div>
-                            ) : (
-                              <span className="text-xs text-gray-400">Not selected</span>
-                            )}
-                          </td>
-                          <td className="px-5 py-4 whitespace-nowrap">
-                            {/* Phase 10.6 — currency-aware formatting. KRW
-                                bookings (itinerary_builder) render as ₩340,000,
-                                USD bookings (tour_product legacy) as $52.00. */}
-                            <div className="text-sm font-semibold text-gray-900">
-                              {formatBookingPrice(
-                                parseFloat(String(booking.final_price)),
-                                booking.currency ?? 'usd',
+          <div className="space-y-8">
+            {groupedByDate.map(({ date, items }) => (
+              <div key={date}>
+                <h2 className="mb-3 text-base font-semibold text-slate-900">
+                  {date === 'no-date'
+                    ? '날짜 없음'
+                    : new Date(date + 'T12:00:00').toLocaleDateString('ko-KR', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric',
+                      })}
+                  <span className="ml-2 text-sm font-normal text-slate-500">({items.length})</span>
+                </h2>
+
+                {/* Desktop: full table. Hidden on mobile where 9 columns can't fit. */}
+                <div className="hidden overflow-hidden rounded-design-md border border-admin-border bg-admin-surface shadow-admin-card md:block">
+                  <div className="overflow-x-auto">
+                    <table className="w-full">
+                      <thead className="border-b border-admin-border bg-slate-50">
+                        <tr>
+                          {['주문 ID', '투어', '고객', '날짜', '인원', '픽업', '금액', '상태', ''].map((h, i) => (
+                            <th
+                              key={i}
+                              className={cn(
+                                'px-5 py-3 text-xs font-semibold uppercase tracking-wider text-slate-600',
+                                i === 8 ? 'text-right' : 'text-left',
                               )}
-                            </div>
-                          </td>
-                          <td className="px-5 py-4 whitespace-nowrap">
-                            <BookingStatusBadge status={booking.status} className="font-semibold" />
-                          </td>
-                          <td className="px-5 py-4 whitespace-nowrap text-right text-sm font-medium">
-                            <Link href={`/admin/orders/${booking.id}`} className="text-indigo-600 hover:text-indigo-700 font-medium">
-                              View
-                            </Link>
-                          </td>
+                            >
+                              {h}
+                            </th>
+                          ))}
                         </tr>
-                      ))}
-                    </tbody>
-                  </table>
+                      </thead>
+                      <tbody className="divide-y divide-admin-border">
+                        {items.map((booking) => (
+                          <tr key={booking.id} className="transition-colors hover:bg-admin-surface-hover">
+                            <td className="whitespace-nowrap px-5 py-4 font-mono text-xs text-slate-500">{booking.id.substring(0, 8)}…</td>
+                            <td className="px-5 py-4">
+                              {booking.source === 'itinerary_builder' ? (
+                                <span className="inline-flex w-fit items-center rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold text-emerald-800 ring-1 ring-emerald-200">
+                                  커스텀 일정
+                                </span>
+                              ) : (
+                                <div className="text-sm font-medium text-slate-900">{booking.tours?.title || '투어'}</div>
+                              )}
+                            </td>
+                            <td className="px-5 py-4">
+                              <div className="text-sm text-slate-900">{booking.user_profiles?.full_name || booking.contact_name || '게스트'}</div>
+                              <div className="text-xs text-slate-500">{booking.user_profiles?.email || booking.contact_email || 'N/A'}</div>
+                            </td>
+                            <td className="whitespace-nowrap px-5 py-4 text-sm text-slate-500">
+                              {formatDate(booking.tour_date || booking.created_at)}
+                            </td>
+                            <td className="whitespace-nowrap px-5 py-4 text-sm font-medium text-slate-900">
+                              {booking.number_of_guests ?? booking.number_of_people ?? 1}
+                            </td>
+                            <td className="px-5 py-4">
+                              {booking.pickup_points ? (
+                                <div className="text-xs">
+                                  <div className="font-medium text-slate-900">{booking.pickup_points.name}</div>
+                                  <div className="mt-0.5 text-slate-500">{booking.pickup_points.address}</div>
+                                </div>
+                              ) : (
+                                <span className="text-xs text-slate-400">미선택</span>
+                              )}
+                            </td>
+                            <td className="whitespace-nowrap px-5 py-4">
+                              <div className="text-sm font-semibold tabular-nums text-slate-900">{fmtAmount(booking)}</div>
+                            </td>
+                            <td className="whitespace-nowrap px-5 py-4">
+                              <BookingStatusBadge status={booking.status} className="font-semibold" />
+                            </td>
+                            <td className="whitespace-nowrap px-5 py-4 text-right text-sm font-medium">
+                              <Link href={`/admin/orders/${booking.id}`} className="font-medium text-blue-600 hover:text-blue-700">
+                                보기
+                              </Link>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                {/* Mobile: tap-through cards. */}
+                <div className="space-y-2.5 md:hidden">
+                  {items.map((booking) => (
+                    <Link
+                      key={booking.id}
+                      href={`/admin/orders/${booking.id}`}
+                      className="block rounded-design-md border border-admin-border bg-admin-surface p-4 shadow-admin-card transition-colors active:bg-admin-surface-hover"
+                    >
+                      <div className="flex items-start justify-between gap-3">
+                        <div className="min-w-0">
+                          {booking.source === 'itinerary_builder' ? (
+                            <span className="inline-flex w-fit items-center rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold text-emerald-800 ring-1 ring-emerald-200">
+                              커스텀 일정
+                            </span>
+                          ) : (
+                            <h3 className="truncate text-sm font-semibold text-slate-900">
+                              {booking.tours?.title || '투어'}
+                            </h3>
+                          )}
+                        </div>
+                        <BookingStatusBadge status={booking.status} className="flex-shrink-0 font-semibold" />
+                      </div>
+
+                      <div className="mt-2 flex items-center gap-1.5 text-sm text-slate-700">
+                        <span className="font-medium text-slate-900">
+                          {booking.user_profiles?.full_name || booking.contact_name || '게스트'}
+                        </span>
+                        <span className="text-slate-300">·</span>
+                        <span>{booking.number_of_guests ?? booking.number_of_people ?? 1}명</span>
+                      </div>
+
+                      <div className="mt-1 text-xs text-slate-500">
+                        {formatDate(booking.tour_date || booking.created_at)}
+                        {booking.pickup_points ? (
+                          <>
+                            <span className="mx-1 text-slate-300">·</span>
+                            {booking.pickup_points.name}
+                          </>
+                        ) : null}
+                      </div>
+
+                      <div className="mt-3 flex items-center justify-between border-t border-admin-border pt-3">
+                        <span className="text-base font-bold tabular-nums text-slate-900">{fmtAmount(booking)}</span>
+                        <span className="flex items-center gap-1 text-xs font-semibold text-blue-600">
+                          <ShoppingCart className="size-3.5" /> 상세 보기 →
+                        </span>
+                      </div>
+                    </Link>
+                  ))}
                 </div>
               </div>
-
-              {/* Mobile: tap-through cards. Surfaces status, who, when/where and
-                  amount in a scannable stack so a reservation reads at a glance
-                  on a narrow screen. */}
-              <div className="space-y-2.5 md:hidden">
-                {items.map((booking) => (
-                  <Link
-                    key={booking.id}
-                    href={`/admin/orders/${booking.id}`}
-                    className="block rounded-xl border border-gray-200/70 bg-white p-4 shadow-sm transition-colors active:bg-gray-50"
-                  >
-                    <div className="flex items-start justify-between gap-3">
-                      <div className="min-w-0">
-                        {booking.source === 'itinerary_builder' ? (
-                          <span className="inline-flex w-fit items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold text-emerald-800 ring-1 ring-emerald-200">
-                            📋 Custom itinerary
-                          </span>
-                        ) : (
-                          <h3 className="truncate text-sm font-semibold text-gray-900">
-                            {booking.tours?.title || 'Tour'}
-                          </h3>
-                        )}
-                      </div>
-                      <BookingStatusBadge status={booking.status} className="flex-shrink-0 font-semibold" />
-                    </div>
-
-                    <div className="mt-2 flex items-center gap-1.5 text-sm text-gray-700">
-                      <span className="font-medium text-gray-900">
-                        {booking.user_profiles?.full_name || booking.contact_name || 'Guest'}
-                      </span>
-                      <span className="text-gray-300">·</span>
-                      <span>{booking.number_of_guests ?? booking.number_of_people ?? 1}명</span>
-                    </div>
-
-                    <div className="mt-1 text-xs text-gray-500">
-                      {formatDate(booking.tour_date || booking.created_at)}
-                      {booking.pickup_points ? (
-                        <>
-                          <span className="mx-1 text-gray-300">·</span>
-                          {booking.pickup_points.name}
-                        </>
-                      ) : null}
-                    </div>
-
-                    <div className="mt-3 flex items-center justify-between border-t border-gray-100 pt-3">
-                      <span className="text-base font-bold text-gray-900">
-                        {formatBookingPrice(parseFloat(String(booking.final_price)), booking.currency ?? 'usd')}
-                      </span>
-                      <span className="text-xs font-semibold text-indigo-600">상세 보기 →</span>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          ))
+            ))}
+          </div>
         )}
       </div>
     </div>
