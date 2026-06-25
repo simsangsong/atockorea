@@ -2,8 +2,10 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
+import { toast } from 'sonner';
 import { supabase } from '@/lib/supabase';
 import ImageUploader from '@/components/admin/ImageUploader';
+import { Skeleton } from '@/components/admin/Skeleton';
 import { locales, localeLabels, type Locale } from '@/lib/locale';
 import {
   CMS_PAGE_BUNDLES,
@@ -63,7 +65,7 @@ export default function AdminCmsPage() {
       fetch('/api/admin/homepage-product-card-images', { headers: h, credentials: 'include' }),
     ]);
     if (cmsRes.status === 403) {
-      alert('관리자 권한이 필요합니다.');
+      toast.error('관리자 권한이 필요합니다.');
       router.push('/');
       return;
     }
@@ -305,20 +307,22 @@ export default function AdminCmsPage() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center min-h-[40vh] text-gray-600">
-        불러오는 중…
+      <div className="space-y-6">
+        <Skeleton className="h-7 w-48" />
+        <Skeleton className="h-40 w-full rounded-design-md" />
+        <Skeleton className="h-40 w-full rounded-design-md" />
+        <Skeleton className="h-64 w-full rounded-design-md" />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="space-y-6">
+    <div className="space-y-6">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">페이지 편집 (CMS)</h1>
-          <p className="text-gray-600 mt-2 max-w-3xl">
-            랜딩을 포함한 UI 문자열은 <code className="text-sm bg-gray-100 px-1 rounded">messages/*.json</code>·
-            <code className="text-sm bg-gray-100 px-1 rounded">messages/siteCopy/*.json</code> 기준과 DB 오버라이드를 합쳐
+          <h1 className="text-xl font-semibold text-slate-900">페이지 편집 (CMS)</h1>
+          <p className="text-slate-600 mt-2 max-w-3xl">
+            랜딩을 포함한 UI 문자열은 <code className="text-sm bg-slate-100 px-1 rounded">messages/*.json</code>·
+            <code className="text-sm bg-slate-100 px-1 rounded">messages/siteCopy/*.json</code> 기준과 DB 오버라이드를 합쳐
             표시합니다. <strong>히어로 대형 이미지·상품 카드 배경</strong>은 아래 첫 두 블록에서 URL 입력 또는 업로드로 바꿀 수 있고,
             문자열은 그 아래 JSON으로 추출·적용합니다.
           </p>
@@ -330,19 +334,19 @@ export default function AdminCmsPage() {
           </div>
         )}
 
-        <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 space-y-4">
-          <h2 className="text-xl font-semibold text-gray-900">랜딩 · 섹션 이미지</h2>
-          <p className="text-sm text-gray-600">
+        <section className="bg-admin-surface rounded-design-md shadow-admin-card border border-admin-border p-6 space-y-4">
+          <h2 className="text-xl font-semibold text-slate-900">랜딩 · 섹션 이미지</h2>
+          <p className="text-sm text-slate-600">
             히어로 하단 큰 비주얼 카드( JOIN TOUR / AI-PLANNED 등) 배경은 키{' '}
-            <code className="text-xs bg-gray-100 px-1 rounded">hero.feature</code>로 저장됩니다. URL은{' '}
-            <code className="text-xs bg-gray-100 px-1 rounded">/</code>로 시작하거나 http(s) 주소여야 합니다. 비우면 기본
+            <code className="text-xs bg-slate-100 px-1 rounded">hero.feature</code>로 저장됩니다. URL은{' '}
+            <code className="text-xs bg-slate-100 px-1 rounded">/</code>로 시작하거나 http(s) 주소여야 합니다. 비우면 기본
             이미지로 돌아갑니다.
           </p>
 
           {SECTION_KEYS.map(({ key, label }) => (
-            <div key={key} className="border border-gray-100 rounded-lg p-4 space-y-2">
-              <p className="text-sm font-medium text-gray-800">{label}</p>
-              <p className="text-xs text-gray-500">
+            <div key={key} className="border border-admin-border rounded-lg p-4 space-y-2">
+              <p className="text-sm font-medium text-slate-800">{label}</p>
+              <p className="text-xs text-slate-500">
                 기본값: {DEFAULT_CMS_SECTION_IMAGES[key] ?? '(없음)'}
               </p>
               <input
@@ -350,7 +354,7 @@ export default function AdminCmsPage() {
                 value={sectionUrls[key] ?? ''}
                 onChange={(e) => setSectionUrls((prev) => ({ ...prev, [key]: e.target.value }))}
                 placeholder="이미지 URL"
-                className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm"
+                className="w-full rounded-design-sm border border-slate-300 px-3 py-2 text-base min-h-11"
               />
               <ImageUploader
                 onUploadComplete={(urls) => void applyUploadedUrl(key, urls)}
@@ -365,28 +369,28 @@ export default function AdminCmsPage() {
             type="button"
             disabled={busy}
             onClick={saveSectionImages}
-            className="px-4 py-2 rounded-lg bg-emerald-600 text-white text-sm font-medium hover:bg-emerald-700 disabled:opacity-50"
+            className="px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 disabled:opacity-50"
           >
             섹션 이미지 저장
           </button>
         </section>
 
-        <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 space-y-4">
-          <h2 className="text-xl font-semibold text-gray-900">홈 — 상품 카드 배경 (Join / Private / Bus)</h2>
-          <p className="text-xs text-gray-500">
+        <section className="bg-admin-surface rounded-design-md shadow-admin-card border border-admin-border p-6 space-y-4">
+          <h2 className="text-xl font-semibold text-slate-900">홈 — 상품 카드 배경 (Join / Private / Bus)</h2>
+          <p className="text-xs text-slate-500">
             기본: join {DEFAULT_HOMEPAGE_PRODUCT_CARD_IMAGES.join.slice(0, 48)}…
           </p>
           <div className="grid gap-6 md:grid-cols-3">
             {(['join', 'private', 'bus'] as const).map((k) => (
-              <div key={k} className="space-y-2 rounded-lg border border-gray-100 p-3">
-                <label className="text-sm font-medium text-gray-700">
+              <div key={k} className="space-y-2 rounded-lg border border-admin-border p-3">
+                <label className="text-sm font-medium text-slate-700">
                   {k === 'join' ? '조인 투어' : k === 'private' ? '프라이빗' : '버스'} 카드
                 </label>
                 <input
                   type="text"
                   value={productCards[k]}
                   onChange={(e) => setProductCards((p) => ({ ...p, [k]: e.target.value }))}
-                  className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm"
+                  className="w-full rounded-design-sm border border-slate-300 px-3 py-2 text-base min-h-11"
                 />
                 <ImageUploader
                   onUploadComplete={(urls) => {
@@ -403,29 +407,29 @@ export default function AdminCmsPage() {
             type="button"
             disabled={busy}
             onClick={saveProductCards}
-            className="px-4 py-2 rounded-lg bg-indigo-600 text-white text-sm font-medium hover:bg-indigo-700 disabled:opacity-50"
+            className="px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 disabled:opacity-50"
           >
             카드 이미지 저장
           </button>
         </section>
 
-        <section className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 space-y-4">
-          <h2 className="text-xl font-semibold text-gray-900">문자열 JSON (추출 / 적용)</h2>
-            <ol className="list-decimal list-inside text-sm text-gray-600 space-y-1">
+        <section className="bg-admin-surface rounded-design-md shadow-admin-card border border-admin-border p-6 space-y-4">
+          <h2 className="text-xl font-semibold text-slate-900">문자열 JSON (추출 / 적용)</h2>
+            <ol className="list-decimal list-inside text-sm text-slate-600 space-y-1">
             <li>
               추출: 저장소 + DB 합본 JSON입니다. <strong>페이지</strong>에서 메인·마이페이지·약관 등으로 좁히면 해당 화면에 쓰는 키만 나옵니다. 영어 원본만 쓰려면 범위를 <strong>English</strong>로 하세요.
             </li>
-            <li>적용: 번역한 JSON을 입력창에 넣고, <strong>적용할 언어</strong>를 맞추면 <code className="text-xs bg-gray-100 px-1 rounded">messages.en</code>만 있어도 해당 언어로 저장됩니다.</li>
+            <li>적용: 번역한 JSON을 입력창에 넣고, <strong>적용할 언어</strong>를 맞추면 <code className="text-xs bg-slate-100 px-1 rounded">messages.en</code>만 있어도 해당 언어로 저장됩니다.</li>
             <li>이미지 URL은 전역이라, 문구만 바꿀 때는 「이미지 이번에 적용 안 함」을 켜세요.</li>
           </ol>
 
           <div className="flex flex-wrap items-end gap-3">
             <div>
-              <label className="block text-xs font-medium text-gray-500 mb-1">추출 범위 (언어)</label>
+              <label className="block text-xs font-medium text-slate-500 mb-1">추출 범위 (언어)</label>
               <select
                 value={exportLocale}
                 onChange={(e) => setExportLocale(e.target.value as Locale | 'all')}
-                className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+                className="rounded-lg border border-slate-300 px-3 py-2 text-sm"
               >
                 <option value="all">전체 언어</option>
                 {locales.map((loc) => (
@@ -436,11 +440,11 @@ export default function AdminCmsPage() {
               </select>
             </div>
             <div>
-              <label className="block text-xs font-medium text-gray-500 mb-1">페이지 (선택)</label>
+              <label className="block text-xs font-medium text-slate-500 mb-1">페이지 (선택)</label>
               <select
                 value={exportPageBundle}
                 onChange={(e) => setExportPageBundle((e.target.value || '') as '' | CmsPageBundleId)}
-                className="rounded-lg border border-gray-300 px-3 py-2 text-sm min-w-[14rem]"
+                className="rounded-lg border border-slate-300 px-3 py-2 text-sm min-w-[14rem]"
               >
                 <option value="">전체 (모든 키)</option>
                 {CMS_PAGE_BUNDLE_IDS.map((id) => (
@@ -470,7 +474,7 @@ export default function AdminCmsPage() {
 
           <div>
             <div className="flex items-center justify-between gap-2 mb-1">
-              <label className="text-sm font-medium text-gray-800">출력 (추출 결과 JSON)</label>
+              <label className="text-sm font-medium text-slate-800">출력 (추출 결과 JSON)</label>
               <div className="flex gap-2">
                 <button
                   type="button"
@@ -479,7 +483,7 @@ export default function AdminCmsPage() {
                     setImportJsonText(exportJsonText);
                     setStatus('출력 내용을 입력창으로 옮겼습니다. 수정 후 「입력 내용 적용」을 누르세요.');
                   }}
-                  className="text-xs text-gray-700 hover:underline disabled:opacity-40"
+                  className="text-xs text-slate-700 hover:underline disabled:opacity-40"
                 >
                   출력 → 입력
                 </button>
@@ -501,19 +505,19 @@ export default function AdminCmsPage() {
               onChange={(e) => setExportJsonText(e.target.value)}
               spellCheck={false}
               placeholder='위에서 「추출 → 출력창」을 누르면 여기에 표시됩니다.'
-              className="w-full min-h-[220px] rounded-lg border border-gray-300 px-3 py-2 font-mono text-xs leading-relaxed text-gray-900 bg-gray-50/80"
+              className="w-full min-h-[220px] rounded-lg border border-slate-300 px-3 py-2 font-mono text-xs leading-relaxed text-slate-900 bg-slate-50"
             />
           </div>
 
           <div>
             <div className="flex flex-wrap items-center justify-between gap-2 mb-1">
-              <label className="text-sm font-medium text-gray-800">입력 (적용할 JSON)</label>
+              <label className="text-sm font-medium text-slate-800">입력 (적용할 JSON)</label>
               <div className="flex flex-wrap gap-2">
                 <button
                   type="button"
                   disabled={busy}
                   onClick={() => fileImportRef.current?.click()}
-                  className="text-xs px-2 py-1 rounded border border-gray-300 text-gray-700 hover:bg-gray-50"
+                  className="text-xs px-2 py-1 rounded border border-slate-300 text-slate-700 hover:bg-admin-surface-hover"
                 >
                   파일에서 불러오기
                 </button>
@@ -534,17 +538,17 @@ export default function AdminCmsPage() {
                 </button>
               </div>
             </div>
-            <p className="text-xs text-gray-600 mb-2">
+            <p className="text-xs text-slate-600 mb-2">
               <strong>적용할 페이지</strong>와 <strong>적용할 언어</strong>를 맞추면, 그 화면에 해당하는 키만 반영하고
               영어 원본만 있는 JSON도 선택 언어로 저장할 수 있습니다. 추출할 때와 같은 페이지를 고르면 안전합니다.
             </p>
             <div className="flex flex-wrap items-end gap-4 mb-4">
               <div>
-                <label className="block text-xs font-medium text-gray-500 mb-0.5">적용할 페이지</label>
+                <label className="block text-xs font-medium text-slate-500 mb-0.5">적용할 페이지</label>
                 <select
                   value={applyImportPageBundle}
                   onChange={(e) => setApplyImportPageBundle((e.target.value || '') as '' | CmsPageBundleId)}
-                  className="rounded-lg border border-gray-300 px-2 py-1.5 text-sm min-w-[14rem]"
+                  className="rounded-lg border border-slate-300 px-2 py-1.5 text-sm min-w-[14rem]"
                 >
                   <option value="">전체 (JSON에 있는 키 그대로)</option>
                   {CMS_PAGE_BUNDLE_IDS.map((id) => (
@@ -555,11 +559,11 @@ export default function AdminCmsPage() {
                 </select>
               </div>
               <div>
-                <label className="block text-xs font-medium text-gray-500 mb-0.5">적용할 언어</label>
+                <label className="block text-xs font-medium text-slate-500 mb-0.5">적용할 언어</label>
                 <select
                   value={applyImportLocale}
                   onChange={(e) => setApplyImportLocale((e.target.value || '') as '' | Locale)}
-                  className="rounded-lg border border-gray-300 px-2 py-1.5 text-sm min-w-[11rem]"
+                  className="rounded-lg border border-slate-300 px-2 py-1.5 text-sm min-w-[11rem]"
                 >
                   <option value="">자동 (JSON 키 그대로)</option>
                   {locales.map((loc) => (
@@ -569,18 +573,18 @@ export default function AdminCmsPage() {
                   ))}
                 </select>
               </div>
-              <label className="inline-flex items-center gap-2 text-sm text-gray-700 cursor-pointer select-none pb-0.5">
+              <label className="inline-flex items-center gap-2 text-sm text-slate-700 cursor-pointer select-none pb-0.5">
                 <input
                   type="checkbox"
                   checked={skipSectionImagesImport}
                   onChange={(e) => setSkipSectionImagesImport(e.target.checked)}
-                  className="rounded border-gray-300"
+                  className="rounded border-slate-300"
                 />
                 이미지(sectionImages) 이번에 적용 안 함
               </label>
             </div>
-            <p className="text-xs text-gray-500 mb-2">
-              <strong>적용할 언어</strong>를 고르면 <code className="bg-gray-100 px-0.5 rounded">messages.en</code>만
+            <p className="text-xs text-slate-500 mb-2">
+              <strong>적용할 언어</strong>를 고르면 <code className="bg-slate-100 px-0.5 rounded">messages.en</code>만
               있어도 선택한 언어(예: 한국어)로 저장됩니다. <strong>적용할 페이지</strong>를 고르면 그 화면에
               허용된 messages/siteCopy 키만 적용하고, 메인이 아닌 번들은 이미지 병합을 생략합니다.
             </p>
@@ -589,11 +593,10 @@ export default function AdminCmsPage() {
               onChange={(e) => setImportJsonText(e.target.value)}
               spellCheck={false}
               placeholder="편집한 JSON을 붙여넣거나, 「파일에서 불러오기」로 채운 뒤 적용하세요."
-              className="w-full min-h-[220px] rounded-lg border border-gray-300 px-3 py-2 font-mono text-xs leading-relaxed text-gray-900"
+              className="w-full min-h-[220px] rounded-lg border border-slate-300 px-3 py-2 font-mono text-xs leading-relaxed text-slate-900"
             />
           </div>
         </section>
-      </div>
     </div>
   );
 }
