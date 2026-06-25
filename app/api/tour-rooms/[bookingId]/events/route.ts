@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { getAuthUser } from '@/lib/auth';
+import { requestGate, clientIpKey } from '@/lib/durable-rate-limit';
 
 export const dynamic = 'force-dynamic';
 
@@ -74,8 +75,27 @@ export async function GET(
     const isOwner = Boolean(user?.id && user.id === booking.user_id);
     const isAdmin = user?.role === 'admin';
     const isMerchantGuide = isMerchantGuideForBooking(user, booking);
+    const authedByRole = isOwner || isAdmin || isMerchantGuide;
 
-    if (!isOwner && !isAdmin && !isMerchantGuide && !guestMatches) {
+    // PA-4: the guest path authorizes by matching contact_email against a public
+    // bookingId, with no lockout — an attacker could spray emails to enumerate.
+    // Throttle the unauthenticated guest path per-IP (authed roles bypass).
+    if (!authedByRole) {
+      const gate = await requestGate({
+        namespace: 'tour_room_guest',
+        key: clientIpKey(req.headers),
+        perMinute: 15,
+        perHour: 60,
+      });
+      if (!gate.allowed) {
+        return NextResponse.json(
+          { error: 'rate_limited' },
+          { status: 429, headers: { 'Retry-After': String(Math.ceil(gate.retryAfterMs / 1000)) } },
+        );
+      }
+    }
+
+    if (!authedByRole && !guestMatches) {
       return NextResponse.json({ error: 'Access denied for this tour room' }, { status: 403 });
     }
 
