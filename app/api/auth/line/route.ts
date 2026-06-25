@@ -1,5 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
+import {
+  LINE_VERIFY_ENDPOINT,
+  LINE_OAUTH_STATE_COOKIE,
+  extractEmailFromVerifiedToken,
+  type LineVerifiedPayload,
+} from '@/lib/line-auth';
 
 /**
  * LINE OAuth 登录处理
@@ -40,17 +46,30 @@ export async function GET(req: NextRequest) {
 
   const redirectUri = getLineRedirectUri(req);
 
+  // N18: random per-request CSRF state, echoed back by LINE and verified on the
+  // callback against an httpOnly cookie. (Previously a static 'line_oauth_state'.)
+  const state = crypto.randomUUID();
+
   // LINE OAuth 授权 URL
   const authUrl = new URL('https://access.line.me/oauth2/v2.1/authorize');
   authUrl.searchParams.set('response_type', 'code');
   authUrl.searchParams.set('client_id', LINE_CHANNEL_ID);
   authUrl.searchParams.set('redirect_uri', redirectUri);
-  authUrl.searchParams.set('state', 'line_oauth_state'); // 可以添加随机字符串增强安全性
+  authUrl.searchParams.set('state', state);
   authUrl.searchParams.set('scope', 'profile openid email');
   authUrl.searchParams.set('bot_prompt', 'normal');
 
   // 重定向到 LINE 授权页面
-  return NextResponse.redirect(authUrl.toString());
+  const res = NextResponse.redirect(authUrl.toString());
+  // SameSite=Lax so the cookie is sent on the top-level OAuth redirect back to us.
+  res.cookies.set(LINE_OAUTH_STATE_COOKIE, state, {
+    httpOnly: true,
+    secure: true,
+    sameSite: 'lax',
+    path: '/',
+    maxAge: 600, // 10 minutes — long enough to complete the LINE consent screen
+  });
+  return res;
 }
 
 /**
@@ -117,20 +136,31 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // 3. 获取 ID token（如果可用）以获取邮箱
-    let email = null;
+    // 3. N18: verify the ID token via LINE's verify endpoint (validates the
+    //    signature, audience, and expiry server-side) instead of trusting a bare
+    //    base64 decode. The email seeds the Supabase account identity, so we only
+    //    trust it when the audience matches our channel. On any failure we fall
+    //    back to email=null (→ synthetic line_<userId>@line.local), exactly the
+    //    pre-verification behavior, so login is never broken by a verify hiccup.
+    let email: string | null = null;
     if (tokenData.id_token) {
       try {
-        // 解码 ID token（简化版，生产环境应使用 JWT 库验证）
-        const idTokenParts = tokenData.id_token.split('.');
-        if (idTokenParts.length === 3) {
-          const payload = JSON.parse(
-            Buffer.from(idTokenParts[1], 'base64').toString()
-          );
-          email = payload.email;
+        const verifyResp = await fetch(LINE_VERIFY_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams({
+            id_token: tokenData.id_token,
+            client_id: LINE_CHANNEL_ID,
+          }),
+        });
+        if (verifyResp.ok) {
+          const verified = (await verifyResp.json()) as LineVerifiedPayload;
+          email = extractEmailFromVerifiedToken(verified, LINE_CHANNEL_ID);
+        } else {
+          console.warn('[auth/line] id_token verification rejected:', verifyResp.status);
         }
       } catch (e) {
-        console.error('Failed to decode ID token:', e);
+        console.error('Failed to verify ID token:', e);
       }
     }
 

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 import { createSupabaseServerComponentClient } from '@/lib/supabase';
+import { LINE_OAUTH_STATE_COOKIE, statesMatch } from '@/lib/line-auth';
 
 /**
  * OAuth callback — server-side code-for-session exchange.
@@ -60,6 +61,15 @@ export async function GET(req: NextRequest): Promise<NextResponse> {
     if (!code) {
       return NextResponse.redirect(new URL('/signin?error=missing-code', req.url));
     }
+    // N18: CSRF — the `state` LINE echoes back must match the per-request state
+    // we stashed in an httpOnly cookie when starting the flow (GET /api/auth/line).
+    const returnedState = url.searchParams.get('state');
+    const expectedState = req.cookies.get(LINE_OAUTH_STATE_COOKIE)?.value ?? null;
+    if (!statesMatch(returnedState, expectedState)) {
+      const res = NextResponse.redirect(new URL('/signin?error=invalid-state', req.url));
+      res.cookies.delete(LINE_OAUTH_STATE_COOKIE);
+      return res;
+    }
     try {
       const res = await fetch(new URL('/api/auth/line', req.url), {
         method: 'POST',
@@ -68,7 +78,9 @@ export async function GET(req: NextRequest): Promise<NextResponse> {
       });
       const data = await res.json().catch(() => ({}));
       if (res.ok && typeof data?.magicLink === 'string' && data.magicLink) {
-        return NextResponse.redirect(data.magicLink);
+        const ok = NextResponse.redirect(data.magicLink);
+        ok.cookies.delete(LINE_OAUTH_STATE_COOKIE); // one-time use
+        return ok;
       }
       return NextResponse.redirect(
         new URL(`/signin?error=${encodeURIComponent(data?.error || 'line-auth-failed')}`, req.url),
