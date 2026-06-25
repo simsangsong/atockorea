@@ -26,6 +26,7 @@ import {
 } from 'lucide-react';
 import Logo from '@/components/Logo';
 import { supabase } from '@/lib/supabase';
+import { decideAdminGuard } from '@/lib/admin/admin-auth-guard';
 
 const ADMIN_SUPPORTED_LOCALES = ['en', 'ko', 'zh-CN', 'zh-TW', 'ja', 'es'];
 
@@ -128,6 +129,21 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     checkAuth();
   }, []);
 
+  // B-2: react to session changes live. checkAuth() only ran once on mount, so a
+  // session that expired (failed token refresh → SIGNED_OUT) used to surface
+  // only when an admin action failed. Subscribe so expiry bounces to signin
+  // immediately. (The initial INITIAL_SESSION event is handled by checkAuth.)
+  useEffect(() => {
+    if (!supabase) return;
+    const { data } = supabase.auth.onAuthStateChange((event) => {
+      if (event === 'SIGNED_OUT') {
+        setIsAuthenticated(false);
+        router.push('/signin?redirect=/admin');
+      }
+    });
+    return () => data.subscription.unsubscribe();
+  }, [router]);
+
   // Close the mobile drawer whenever the route changes so tapping a menu item
   // navigates and dismisses the overlay in one gesture.
   useEffect(() => {
@@ -210,46 +226,38 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       }
       const { data: profile, error: profileError } = profileResult;
 
-      if (profileError) {
-        const isJwtExpired = (profileError.message || '').toLowerCase().includes('jwt expired');
-        if (isJwtExpired) {
+      // M-8: the auth guard is read-only — it no longer auto-creates a profile
+      // on PGRST116 (that mutation re-created deliberately-deleted profiles and
+      // was pointless since a non-admin is redirected away regardless).
+      const decision = decideAdminGuard(profile, profileError);
+      switch (decision.kind) {
+        case 'jwt_expired':
           await supabase.auth.signOut();
           setIsAuthenticated(false);
           alert('로그인이 만료되었습니다. 다시 로그인해 주세요.');
           router.push('/signin?redirect=/admin');
           return;
-        }
-
-        if (profileError.code === 'PGRST116') {
-          const meta = session.user.user_metadata || {};
-          const displayName =
-            meta.name ||
-            meta.full_name ||
-            [meta.given_name, meta.family_name].filter(Boolean).join(' ').trim() ||
-            session.user.email?.split('@')[0] ||
-            'User';
-          await supabase
-            .from('user_profiles')
-            .insert({ id: session.user.id, full_name: displayName, role: 'customer' })
-            .select()
-            .single();
-          alert('프로필은 생성했지만 admin 권한이 없습니다.');
+        case 'no_profile':
+          setIsAuthenticated(false);
+          alert('프로필을 찾을 수 없거나 admin 권한이 없습니다.');
+          router.push('/');
+          return;
+        case 'query_failed':
+          alert(`프로필 조회 실패: ${decision.message}`);
           setIsAuthenticated(false);
           router.push('/');
           return;
-        }
-
-        alert(`프로필 조회 실패: ${profileError.message}`);
-        setIsAuthenticated(false);
-        router.push('/');
-        return;
-      }
-
-      if (!profile || profile.role !== 'admin') {
-        setIsAuthenticated(false);
-        alert(profile ? `관리자 권한이 필요합니다.\n\n현재 권한: ${profile.role}` : '프로필을 찾을 수 없습니다.');
-        router.push('/');
-        return;
+        case 'not_admin':
+          setIsAuthenticated(false);
+          alert(
+            decision.role
+              ? `관리자 권한이 필요합니다.\n\n현재 권한: ${decision.role}`
+              : '프로필을 찾을 수 없습니다.',
+          );
+          router.push('/');
+          return;
+        case 'ok':
+          break;
       }
 
       setUser(session.user);
