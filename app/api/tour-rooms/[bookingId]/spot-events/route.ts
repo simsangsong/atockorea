@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { getAuthUser } from '@/lib/auth';
 import { translateTextForLocales } from '@/lib/openai-server';
+import { requestGate, clientIpKey } from '@/lib/durable-rate-limit';
 
 export const dynamic = 'force-dynamic';
 
@@ -121,8 +122,26 @@ export async function POST(
     const isOwner = Boolean(user?.id && user.id === booking.user_id);
     const isAdmin = user?.role === 'admin';
     const isMerchantGuide = isMerchantGuideForBooking(user, booking);
+    const authedByRole = isOwner || isAdmin || isMerchantGuide;
 
-    if (!isOwner && !isAdmin && !isMerchantGuide && !guestMatches) {
+    // PA-4: throttle the unauthenticated guest email-match path per-IP to prevent
+    // enumeration spray against a public bookingId (authed roles bypass).
+    if (!authedByRole) {
+      const gate = await requestGate({
+        namespace: 'tour_room_guest',
+        key: clientIpKey(req.headers),
+        perMinute: 15,
+        perHour: 60,
+      });
+      if (!gate.allowed) {
+        return NextResponse.json(
+          { error: 'rate_limited' },
+          { status: 429, headers: { 'Retry-After': String(Math.ceil(gate.retryAfterMs / 1000)) } },
+        );
+      }
+    }
+
+    if (!authedByRole && !guestMatches) {
       return NextResponse.json({ error: 'Access denied for this tour room' }, { status: 403 });
     }
     if (eventType === 'meeting_notice_sent' && !isAdmin && !isMerchantGuide) {
