@@ -3,7 +3,12 @@
 import { useState, useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { toast } from 'sonner';
+import { ChevronLeft, BadgeCheck, ShieldCheck } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
+import { ConfirmSheet } from '@/components/admin/ConfirmSheet';
+import { Skeleton } from '@/components/admin/Skeleton';
+import { cn } from '@/lib/utils';
 
 interface Merchant {
   id: string;
@@ -38,338 +43,301 @@ interface Merchant {
   }>;
 }
 
+const STATUS_OPTIONS = [
+  { value: 'pending', label: '대기' },
+  { value: 'active', label: '운영중' },
+  { value: 'suspended', label: '중지' },
+  { value: 'inactive', label: '비활성' },
+] as const;
+
+function statusLabel(status: string): string {
+  return STATUS_OPTIONS.find((o) => o.value === status)?.label ?? status;
+}
+
+function statusPillClass(status: string): string {
+  switch (status) {
+    case 'active':
+      return 'bg-emerald-100 text-emerald-800';
+    case 'pending':
+      return 'bg-amber-100 text-amber-800';
+    case 'suspended':
+      return 'bg-red-100 text-red-800';
+    default:
+      return 'bg-slate-100 text-slate-700';
+  }
+}
+
+function Detail({ label, value }: { label: string; value: React.ReactNode }) {
+  return (
+    <div>
+      <dt className="mb-1 text-sm font-medium text-slate-500">{label}</dt>
+      <dd className="text-slate-900">{value}</dd>
+    </div>
+  );
+}
+
 export default function MerchantDetailPage() {
   const params = useParams();
   const router = useRouter();
   const merchantId = params?.id as string;
-  
+
   const [merchant, setMerchant] = useState<Merchant | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [updating, setUpdating] = useState(false);
+  const [pendingStatus, setPendingStatus] = useState<string | null>(null);
 
   useEffect(() => {
-    if (merchantId) {
-      fetchMerchant();
-    }
+    if (merchantId) fetchMerchant();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [merchantId]);
 
   const fetchMerchant = async () => {
     try {
       setLoading(true);
+      setError(null);
       const { data: { session } } = await supabase?.auth.getSession() || { data: { session: null } };
-      
+
       if (!session) {
         router.push('/signin?redirect=/admin/merchants');
         return;
       }
 
       const response = await fetch(`/api/admin/merchants/${merchantId}`, {
-        headers: {
-          'Authorization': `Bearer ${session.access_token}`,
-        },
+        headers: { Authorization: `Bearer ${session.access_token}` },
       });
 
       if (!response.ok) {
         if (response.status === 403) {
-          alert('Admin access required');
+          toast.error('관리자 권한이 필요합니다');
           router.push('/');
           return;
         }
-        throw new Error('Failed to fetch merchant');
+        throw new Error('업체 정보를 불러오지 못했습니다');
       }
 
       const data = await response.json();
       setMerchant(data.merchant);
-    } catch (err: any) {
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : '알 수 없는 오류';
       console.error('Error fetching merchant:', err);
-      setError(err.message);
+      setError(message);
     } finally {
       setLoading(false);
     }
   };
 
-  const handleStatusChange = async (newStatus: string) => {
-    if (!confirm(`Are you sure you want to change status to ${newStatus}?`)) {
-      return;
-    }
-
+  const patchMerchant = async (body: Record<string, unknown>): Promise<boolean> => {
+    setUpdating(true);
     try {
-      setUpdating(true);
       const { data: { session } } = await supabase?.auth.getSession() || { data: { session: null } };
-      
       if (!session) {
-        alert('Please sign in');
-        return;
+        toast.error('로그인이 필요합니다');
+        return false;
       }
-
       const response = await fetch(`/api/admin/merchants/${merchantId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${session.access_token}`,
+          Authorization: `Bearer ${session.access_token}`,
         },
-        body: JSON.stringify({ status: newStatus }),
+        body: JSON.stringify(body),
       });
-
       if (!response.ok) {
-        const data = await response.json();
-        throw new Error(data.error || 'Failed to update merchant');
+        const data = await response.json().catch(() => null);
+        throw new Error(data?.error || '업데이트하지 못했습니다');
       }
-
       const data = await response.json();
       setMerchant(data.merchant);
-      alert('Merchant status updated successfully');
-    } catch (err: any) {
+      return true;
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : '알 수 없는 오류';
       console.error('Error updating merchant:', err);
-      alert(`Failed to update merchant: ${err.message}`);
+      toast.error(message);
+      return false;
     } finally {
       setUpdating(false);
     }
   };
 
+  const confirmStatusChange = async () => {
+    if (!pendingStatus) return;
+    const ok = await patchMerchant({ status: pendingStatus });
+    if (ok) toast.success(`상태를 '${statusLabel(pendingStatus)}'(으)로 변경했습니다`);
+    setPendingStatus(null);
+  };
+
   const handleVerifyToggle = async () => {
-    const newVerified = !merchant?.is_verified;
-    
-    try {
-      setUpdating(true);
-      const { data: { session } } = await supabase?.auth.getSession() || { data: { session: null } };
-      
-      if (!session) {
-        alert('Please sign in');
-        return;
-      }
-
-      const response = await fetch(`/api/admin/merchants/${merchantId}`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${session.access_token}`,
-        },
-        body: JSON.stringify({ isVerified: newVerified }),
-      });
-
-      if (!response.ok) {
-        const data = await response.json();
-        throw new Error(data.error || 'Failed to update merchant');
-      }
-
-      const data = await response.json();
-      setMerchant(data.merchant);
-      alert(`Merchant ${newVerified ? 'verified' : 'unverified'} successfully`);
-    } catch (err: any) {
-      console.error('Error updating merchant:', err);
-      alert(`Failed to update merchant: ${err.message}`);
-    } finally {
-      setUpdating(false);
-    }
+    const next = !merchant?.is_verified;
+    const ok = await patchMerchant({ isVerified: next });
+    if (ok) toast.success(next ? '인증 처리했습니다' : '인증을 해제했습니다');
   };
 
   if (loading) {
     return (
       <div className="space-y-6">
-        <div className="text-center py-12">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600 mx-auto mb-4"></div>
-          <p className="text-gray-600">Loading merchant details...</p>
-        </div>
+        <Skeleton className="h-8 w-56" />
+        <Skeleton className="h-40 w-full rounded-design-md" />
+        <Skeleton className="h-28 w-full rounded-design-md" />
       </div>
     );
   }
 
   if (error || !merchant) {
     return (
-      <div className="space-y-6">
-        <div className="bg-red-50 border border-red-200 rounded-lg p-6">
-          <p className="text-red-800">Error: {error || 'Merchant not found'}</p>
-          <Link
-            href="/admin/merchants"
-            className="mt-4 inline-block px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700"
-          >
-            Back to Merchants
-          </Link>
-        </div>
+      <div className="rounded-design-md border border-red-200 bg-red-50 p-6">
+        <p className="text-sm font-medium text-red-800">오류: {error || '업체를 찾을 수 없습니다'}</p>
+        <Link
+          href="/admin/merchants"
+          className="mt-4 inline-flex min-h-11 items-center rounded-lg bg-red-600 px-4 text-sm font-medium text-white hover:bg-red-700"
+        >
+          업체 목록으로
+        </Link>
       </div>
     );
   }
 
-  const getStatusColor = (status: string) => {
-    switch (status) {
-      case 'active':
-        return 'bg-green-100 text-green-800';
-      case 'pending':
-        return 'bg-yellow-100 text-yellow-800';
-      case 'suspended':
-        return 'bg-red-100 text-red-800';
-      default:
-        return 'bg-gray-100 text-gray-800';
-    }
-  };
-
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
           <Link
             href="/admin/merchants"
-            className="text-indigo-600 hover:text-indigo-700 text-sm mb-2 inline-block"
+            className="mb-2 inline-flex items-center gap-1 text-sm text-blue-600 hover:text-blue-700"
           >
-            ← Back to Merchants
+            <ChevronLeft className="size-4" /> 업체 목록
           </Link>
-          <h1 className="text-3xl font-bold text-gray-900">{merchant.company_name}</h1>
-          <p className="text-gray-600 mt-2">Merchant Details</p>
+          <div className="flex items-center gap-2">
+            <h1 className="text-xl font-bold text-slate-900 md:text-2xl">{merchant.company_name}</h1>
+            {merchant.is_verified && <BadgeCheck className="size-5 text-blue-600" />}
+          </div>
+          <p className="mt-1 text-sm text-slate-500">업체 상세</p>
         </div>
-        <div className="flex gap-3">
+        <div className="flex flex-wrap items-center gap-2">
           <select
             value={merchant.status}
-            onChange={(e) => handleStatusChange(e.target.value)}
+            onChange={(e) => setPendingStatus(e.target.value)}
             disabled={updating}
-            className={`px-4 py-2 rounded-lg border-0 font-semibold ${getStatusColor(merchant.status)}`}
+            className={cn('min-h-11 rounded-lg border-0 px-3 text-sm font-semibold', statusPillClass(merchant.status))}
           >
-            <option value="pending">Pending</option>
-            <option value="active">Active</option>
-            <option value="suspended">Suspended</option>
-            <option value="inactive">Inactive</option>
+            {STATUS_OPTIONS.map((o) => (
+              <option key={o.value} value={o.value}>{o.label}</option>
+            ))}
           </select>
           <button
             onClick={handleVerifyToggle}
             disabled={updating}
-            className={`px-4 py-2 rounded-lg font-semibold transition-colors ${
+            className={cn(
+              'inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 text-sm font-semibold transition-colors disabled:opacity-50',
               merchant.is_verified
-                ? 'bg-green-100 text-green-800 hover:bg-green-200'
-                : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
-            }`}
+                ? 'bg-emerald-100 text-emerald-800 hover:bg-emerald-200'
+                : 'bg-slate-100 text-slate-700 hover:bg-slate-200',
+            )}
           >
-            {merchant.is_verified ? '✓ Verified' : 'Verify'}
+            <ShieldCheck className="size-4" />
+            {merchant.is_verified ? '인증됨' : '인증하기'}
           </button>
         </div>
       </div>
 
-      {/* Merchant Info */}
-      <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-        <h2 className="text-xl font-semibold text-gray-900 mb-4">Company Information</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Company Name</label>
-            <p className="text-gray-900">{merchant.company_name}</p>
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Business Registration</label>
-            <p className="text-gray-900">{merchant.business_registration_number || 'N/A'}</p>
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Contact Person</label>
-            <p className="text-gray-900">{merchant.contact_person}</p>
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Contact Email</label>
-            <p className="text-gray-900">{merchant.contact_email}</p>
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Contact Phone</label>
-            <p className="text-gray-900">{merchant.contact_phone}</p>
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Status</label>
-            <span className={`inline-block px-3 py-1 rounded-full text-sm font-semibold ${getStatusColor(merchant.status)}`}>
-              {merchant.status}
-            </span>
-          </div>
-        </div>
+      {/* Company info */}
+      <section className="rounded-design-md border border-admin-border bg-admin-surface p-5 shadow-admin-card">
+        <h2 className="mb-4 text-base font-semibold text-slate-900">회사 정보</h2>
+        <dl className="grid grid-cols-1 gap-5 md:grid-cols-2">
+          <Detail label="회사명" value={merchant.company_name} />
+          <Detail label="사업자등록번호" value={merchant.business_registration_number || 'N/A'} />
+          <Detail label="담당자" value={merchant.contact_person} />
+          <Detail label="이메일" value={merchant.contact_email} />
+          <Detail label="연락처" value={merchant.contact_phone} />
+          <Detail
+            label="상태"
+            value={
+              <span className={cn('inline-block rounded-full px-3 py-1 text-sm font-semibold', statusPillClass(merchant.status))}>
+                {statusLabel(merchant.status)}
+              </span>
+            }
+          />
+        </dl>
 
         {merchant.address_line1 && (
-          <div className="mt-6">
-            <label className="block text-sm font-medium text-gray-700 mb-1">Address</label>
-            <p className="text-gray-900">
+          <div className="mt-5">
+            <dt className="mb-1 text-sm font-medium text-slate-500">주소</dt>
+            <dd className="text-slate-900">
               {merchant.address_line1}
               {merchant.address_line2 && `, ${merchant.address_line2}`}
               {merchant.city && `, ${merchant.city}`}
               {merchant.province && `, ${merchant.province}`}
               {merchant.postal_code && ` ${merchant.postal_code}`}
               {`, ${merchant.country}`}
-            </p>
+            </dd>
           </div>
         )}
-      </div>
+      </section>
 
-      {/* User Account */}
+      {/* User account */}
       {merchant.user_profiles && (
-        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">User Account</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Name</label>
-              <p className="text-gray-900">{merchant.user_profiles.full_name || 'N/A'}</p>
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
-              <p className="text-gray-900">{merchant.user_profiles.email}</p>
-            </div>
-          </div>
-        </div>
+        <section className="rounded-design-md border border-admin-border bg-admin-surface p-5 shadow-admin-card">
+          <h2 className="mb-4 text-base font-semibold text-slate-900">로그인 계정</h2>
+          <dl className="grid grid-cols-1 gap-5 md:grid-cols-2">
+            <Detail label="이름" value={merchant.user_profiles.full_name || 'N/A'} />
+            <Detail label="이메일" value={merchant.user_profiles.email} />
+          </dl>
+        </section>
       )}
 
       {/* Tours */}
-      <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-        <div className="flex items-center justify-between mb-4">
-          <h2 className="text-xl font-semibold text-gray-900">Tours ({merchant.tours?.length || 0})</h2>
-        </div>
+      <section className="rounded-design-md border border-admin-border bg-admin-surface p-5 shadow-admin-card">
+        <h2 className="mb-4 text-base font-semibold text-slate-900">등록 투어 ({merchant.tours?.length || 0})</h2>
         {merchant.tours && merchant.tours.length > 0 ? (
           <div className="overflow-x-auto">
             <table className="w-full">
-              <thead className="bg-gray-50 border-b border-gray-200">
+              <thead className="border-b border-admin-border bg-slate-50">
                 <tr>
-                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Title</th>
-                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">City</th>
-                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Price</th>
-                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Status</th>
-                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Created</th>
+                  {['투어', '도시', '가격', '상태', '등록일'].map((h) => (
+                    <th key={h} className="px-4 py-3 text-left text-xs font-medium uppercase text-slate-500">{h}</th>
+                  ))}
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-200">
+              <tbody className="divide-y divide-admin-border">
                 {merchant.tours.map((tour) => (
-                  <tr key={tour.id} className="hover:bg-gray-50">
+                  <tr key={tour.id} className="hover:bg-admin-surface-hover">
                     <td className="px-4 py-3">
-                      <Link
-                        href={`/tour/${tour.id}`}
-                        className="text-indigo-600 hover:text-indigo-700 font-medium"
-                      >
+                      <Link href={`/tour/${tour.id}`} className="font-medium text-blue-600 hover:text-blue-700">
                         {tour.title}
                       </Link>
                     </td>
-                    <td className="px-4 py-3 text-sm text-gray-900">{tour.city}</td>
-                    <td className="px-4 py-3 text-sm text-gray-900">₩{parseFloat(tour.price.toString()).toLocaleString()}</td>
+                    <td className="px-4 py-3 text-sm text-slate-900">{tour.city}</td>
+                    <td className="px-4 py-3 text-sm tabular-nums text-slate-900">₩{parseFloat(String(tour.price)).toLocaleString()}</td>
                     <td className="px-4 py-3">
-                      <span className={`px-2 py-1 text-xs font-semibold rounded-full ${
-                        tour.is_active ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'
-                      }`}>
-                        {tour.is_active ? 'Active' : 'Inactive'}
+                      <span className={cn(
+                        'rounded-full px-2 py-1 text-xs font-semibold',
+                        tour.is_active ? 'bg-emerald-100 text-emerald-800' : 'bg-slate-100 text-slate-700',
+                      )}>
+                        {tour.is_active ? '활성' : '비활성'}
                       </span>
                     </td>
-                    <td className="px-4 py-3 text-sm text-gray-500">
-                      {new Date(tour.created_at).toLocaleDateString()}
-                    </td>
+                    <td className="px-4 py-3 text-sm text-slate-500">{new Date(tour.created_at).toLocaleDateString('ko-KR')}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
         ) : (
-          <p className="text-gray-500 text-center py-4">No tours found</p>
+          <p className="py-4 text-center text-slate-500">등록된 투어가 없습니다</p>
         )}
-      </div>
+      </section>
+
+      <ConfirmSheet
+        open={pendingStatus !== null}
+        onOpenChange={(open) => {
+          if (!open) setPendingStatus(null);
+        }}
+        title="상태 변경"
+        subtitle={pendingStatus ? `'${merchant.company_name}' 상태를 '${statusLabel(pendingStatus)}'(으)로 변경합니다.` : undefined}
+        confirmLabel="변경"
+        confirming={updating}
+        onConfirm={confirmStatusChange}
+      />
     </div>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
