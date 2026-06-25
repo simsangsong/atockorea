@@ -3,6 +3,7 @@
 import { useMemo, useState } from 'react';
 import { Search, RefreshCw, MapPin, AlertCircle, Pin, Plus, X } from 'lucide-react';
 import { REGION_CLUSTER } from '@/lib/itinerary-builder/regions';
+import { cn } from '@/lib/utils';
 import type { PoiListItem } from '../_hooks/types';
 
 type RegionFilter = 'all' | 'busan' | 'jeju' | 'other';
@@ -16,6 +17,8 @@ type Props = {
   onSelect: (poiKey: string) => void;
   onRefresh: () => void;
   onCreateNew: (poiKey: string) => void;
+  /** Responsive width + show/hide from the page (full-width mobile, w-80 desktop). */
+  className?: string;
 };
 
 const BUSAN_SET = new Set<string>(REGION_CLUSTER.busan);
@@ -43,6 +46,7 @@ export function PoiListPane({
   onSelect,
   onRefresh,
   onCreateNew,
+  className,
 }: Props) {
   const [query, setQuery] = useState('');
   const [regionFilter, setRegionFilter] = useState<RegionFilter>('all');
@@ -84,7 +88,7 @@ export function PoiListPane({
   };
 
   return (
-    <aside className="flex flex-col w-80 flex-shrink-0 bg-white border-r border-slate-200">
+    <aside className={cn('flex flex-col flex-shrink-0 bg-admin-surface border-r border-admin-border', className)}>
       <div className="px-4 pt-4 pb-3 border-b border-slate-100">
         <div className="flex items-center justify-between mb-3">
           <h2 className="text-sm font-bold text-slate-900">
