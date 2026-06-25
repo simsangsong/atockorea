@@ -16,23 +16,30 @@ import { PoiEditorPane } from './_components/PoiEditorPane';
 import { usePoiList } from './_hooks/usePoiList';
 import { usePoiRow } from './_hooks/usePoiRow';
 import type { PoiRow } from './_hooks/types';
+import { cn } from '@/lib/utils';
 
 export default function MatchPoisPage() {
   const list = usePoiList();
   const [selectedKey, setSelectedKey] = useState<string | null>(null);
   const row = usePoiRow(selectedKey);
 
-  // Auto-select the first POI once the list loads.
+  // Auto-select the first POI once the list loads — but only on desktop, where
+  // both panes are visible. On mobile the list is a full-screen pane, so we keep
+  // it shown until the operator taps a POI (avoids landing straight in the editor).
   useEffect(() => {
-    if (!selectedKey && list.items.length > 0) setSelectedKey(list.items[0].poi_key);
+    if (selectedKey || list.items.length === 0) return;
+    if (typeof window !== 'undefined' && window.matchMedia('(min-width: 1024px)').matches) {
+      setSelectedKey(list.items[0].poi_key);
+    }
   }, [list.items, selectedKey]);
 
   const onSaved = (_row: PoiRow, _created: boolean) => {
     void list.refresh();
   };
 
+  // Single-pane on mobile (list ⇄ editor), two-pane on lg+.
   return (
-    <div className="-m-6 h-[calc(100vh-3.5rem)] flex bg-slate-50">
+    <div className="-m-6 h-[calc(100vh-3.5rem)] flex bg-admin-bg">
       <PoiListPane
         items={list.items}
         loading={list.loading}
@@ -41,31 +48,34 @@ export default function MatchPoisPage() {
         onSelect={setSelectedKey}
         onRefresh={list.refresh}
         onCreateNew={setSelectedKey}
+        className={cn('w-full lg:w-80', selectedKey ? 'hidden lg:flex' : 'flex')}
       />
 
-      {!selectedKey ? (
-        <EmptyEditor />
-      ) : row.loading ? (
-        <EditorSkeleton />
-      ) : row.error ? (
-        <EditorError message={row.error} onRetry={row.refresh} />
-      ) : (
-        <PoiEditorPane
-          key={selectedKey}
-          poiKey={selectedKey}
-          initialRow={row.data}
-          isNew={row.notFound}
-          onSaved={onSaved}
-          onBackToList={() => setSelectedKey(null)}
-        />
-      )}
+      <div className={cn('flex-1 min-w-0', selectedKey ? 'flex' : 'hidden lg:flex')}>
+        {!selectedKey ? (
+          <EmptyEditor />
+        ) : row.loading ? (
+          <EditorSkeleton />
+        ) : row.error ? (
+          <EditorError message={row.error} onRetry={row.refresh} />
+        ) : (
+          <PoiEditorPane
+            key={selectedKey}
+            poiKey={selectedKey}
+            initialRow={row.data}
+            isNew={row.notFound}
+            onSaved={onSaved}
+            onBackToList={() => setSelectedKey(null)}
+          />
+        )}
+      </div>
     </div>
   );
 }
 
 function EmptyEditor() {
   return (
-    <section className="flex-1 flex flex-col items-center justify-center bg-slate-50 px-6">
+    <section className="flex-1 flex flex-col items-center justify-center bg-admin-bg px-6">
       <div className="w-16 h-16 mb-4 rounded-2xl bg-gradient-to-br from-emerald-500 to-sky-600 flex items-center justify-center shadow-lg">
         <MapPin className="size-8 text-white" />
       </div>
@@ -79,11 +89,11 @@ function EmptyEditor() {
 
 function EditorSkeleton() {
   return (
-    <section className="flex-1 bg-slate-50 px-5 py-5">
+    <section className="flex-1 bg-admin-bg px-5 py-5">
       <div className="space-y-3 max-w-3xl">
-        <div className="h-32 bg-white border border-slate-200 rounded-xl animate-pulse" />
-        <div className="h-48 bg-white border border-slate-200 rounded-xl animate-pulse" />
-        <div className="h-48 bg-white border border-slate-200 rounded-xl animate-pulse" />
+        <div className="h-32 bg-admin-surface border border-admin-border rounded-design-md animate-pulse" />
+        <div className="h-48 bg-admin-surface border border-admin-border rounded-design-md animate-pulse" />
+        <div className="h-48 bg-admin-surface border border-admin-border rounded-design-md animate-pulse" />
       </div>
     </section>
   );
@@ -91,7 +101,7 @@ function EditorSkeleton() {
 
 function EditorError({ message, onRetry }: { message: string; onRetry: () => void }) {
   return (
-    <section className="flex-1 flex flex-col items-center justify-center bg-slate-50 px-6 text-center">
+    <section className="flex-1 flex flex-col items-center justify-center bg-admin-bg px-6 text-center">
       <div className="w-12 h-12 mb-3 rounded-xl bg-rose-100 flex items-center justify-center">
         <AlertTriangle className="size-6 text-rose-600" />
       </div>
