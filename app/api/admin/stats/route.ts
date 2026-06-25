@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { requireAdmin } from '@/lib/auth';
 import { kstDayBounds } from '@/lib/admin/kst-day';
+import { buildRevenueTrend } from '@/lib/admin/revenue-trend';
 
 // Force dynamic rendering for API routes that use headers
 export const dynamic = 'force-dynamic';
@@ -54,6 +55,14 @@ export async function GET(req: NextRequest) {
       .select('*', { count: 'exact', head: true })
       .eq('status', 'pending');
 
+    // D-1: real "미처리 문의" count (was hardcoded 0 on the dashboard).
+    // contact_inquiries.status ∈ {new, in_progress, resolved, closed};
+    // "미처리" = brand-new, not yet triaged.
+    const { count: newContacts } = await supabase
+      .from('contact_inquiries')
+      .select('*', { count: 'exact', head: true })
+      .eq('status', 'new');
+
     /** Phase 10.6 — split revenue by currency. Pre-Phase-10 the dashboard
      *  hardcoded ₩ but legacy data is USD; after Phase 10.2 builder bookings
      *  land in KRW. Sum each currency separately so the dashboard renders
@@ -75,6 +84,18 @@ export async function GET(req: NextRequest) {
      *  Equals the USD bucket since legacy data is USD-only; new dashboards
      *  should read revenueByCurrency.{usd,krw} separately. */
     const totalRevenue = revenueByCurrency.usd;
+
+    /** §8.1 — 7-day paid-revenue trend for the dashboard sparkline. Fetch a
+     *  slightly wider UTC window (8 days) so the KST bucketing in
+     *  buildRevenueTrend has every row it needs for the last 7 KST days. */
+    const now = new Date();
+    const trendSince = new Date(now.getTime() - 8 * 24 * 60 * 60 * 1000).toISOString();
+    const { data: trendRows } = await supabase
+      .from('bookings')
+      .select('created_at, final_price, currency')
+      .eq('payment_status', 'paid')
+      .gte('created_at', trendSince);
+    const revenueTrend7d = buildRevenueTrend(trendRows ?? [], now, 7);
 
     // Get recent bookings (last 20 for better visibility)
     const { data: recentBookings, error: bookingsError } = await supabase
@@ -125,8 +146,10 @@ export async function GET(req: NextRequest) {
         totalOrders: totalOrders || 0,
         todayOrders: todayOrders || 0,
         pendingOrders: pendingOrders || 0,
+        newContacts: newContacts || 0,
         totalRevenue,
         revenueByCurrency,
+        revenueTrend7d,
       },
       recentBookings: recentBookings || [],
     });
