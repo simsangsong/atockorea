@@ -375,6 +375,21 @@ export async function middleware(request: NextRequest): Promise<NextResponse> {
   return response;
 }
 
+/**
+ * N21 (verify-and-document): `/api` is intentionally excluded from the matcher.
+ * The middleware only does locale/redirect routing + session-cookie refresh; it
+ * is NOT the authorization layer for the API. Every API route enforces its own
+ * server-side guard:
+ *   - all 44 `app/api/admin/*` routes are admin-gated — 43 via `requireAdmin`
+ *     and `/api/admin/contacts` via `withAuth` + a DB-backed `role === 'admin'`
+ *     check (audited 2026-06-25). Roles come from the `user_profiles` table via
+ *     a service-role lookup in `getAuthUser`, not from forgeable JWT metadata.
+ *   - public/customer routes carry their own auth / ownership / rate-limit
+ *     guards (see lib/auth, lib/rate-limit, the N14/N16/N19 etc. fixes).
+ * Routing this through Edge middleware instead would require a cookie-based
+ * session that the Bearer-token API clients don't reliably set — so the
+ * per-route guard remains the source of truth.
+ */
 export const config = {
   matcher: ['/((?!_next|api|.*\\..*).*)'],
 };
