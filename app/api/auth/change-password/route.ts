@@ -36,12 +36,15 @@ export async function POST(req: NextRequest) {
       auth: { persistSession: false, autoRefreshToken: false },
     });
 
-    const { error: signErr } = await anon.auth.signInWithPassword({
+    const { data: signData, error: signErr } = await anon.auth.signInWithPassword({
       email: user.email,
       password: currentPassword,
     });
 
-    if (signErr) {
+    // P6: a missing session here means the sign-in did not actually
+    // authenticate (e.g. social-only account) — without a session the
+    // subsequent updateUser is a no-op that must not report success.
+    if (signErr || !signData?.session) {
       return NextResponse.json(
         {
           error:
@@ -51,9 +54,12 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const { error: updErr } = await anon.auth.updateUser({ password: newPassword });
-    if (updErr) {
-      return NextResponse.json({ error: updErr.message }, { status: 400 });
+    const { data: updData, error: updErr } = await anon.auth.updateUser({ password: newPassword });
+    if (updErr || !updData?.user) {
+      return NextResponse.json(
+        { error: updErr?.message ?? 'Failed to update password' },
+        { status: 400 },
+      );
     }
 
     return NextResponse.json({ success: true });
