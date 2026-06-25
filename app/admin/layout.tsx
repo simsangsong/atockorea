@@ -13,6 +13,7 @@ import {
   CircleHelp,
   ClipboardList,
   ImageUp,
+  Inbox,
   LayoutDashboard,
   LogOut,
   Mail,
@@ -42,6 +43,7 @@ const adminMenuItems: AdminMenuItem[] = [
   { path: '/admin/merchants', label: '업체 관리', icon: Building2 },
   { path: '/admin/products', label: '상품 관리', icon: Package },
   { path: '/admin/orders', label: '주문 관리', icon: ClipboardList },
+  { path: '/admin/inbox', label: '수신함', icon: Inbox, badge: 'NEW' },
   { path: '/admin/contacts', label: '문의 관리', icon: MessageSquareText },
   { path: '/admin/emails', label: '받은 메일', icon: Mail },
   { path: '/admin/upload', label: '이미지 업로드', icon: ImageUp },
@@ -58,15 +60,15 @@ const adminMenuItems: AdminMenuItem[] = [
  * ("더보기") opens the full drawer. Paths are a subset of adminMenuItems so
  * the menu stays a single source of truth.
  */
-const mobileTabPaths = ['/admin', '/admin/orders', '/admin/merchants', '/admin/contacts'] as const;
+const mobileTabPaths = ['/admin', '/admin/orders', '/admin/inbox', '/admin/merchants'] as const;
 const mobileTabItems = mobileTabPaths.map(
   (path) => adminMenuItems.find((item) => item.path === path)!,
 );
 const mobileTabLabels: Record<string, string> = {
   '/admin': '대시보드',
   '/admin/orders': '주문',
+  '/admin/inbox': '수신함',
   '/admin/merchants': '업체',
-  '/admin/contacts': '문의',
 };
 
 const pathToBreadcrumb: Record<string, string> = {
@@ -75,6 +77,7 @@ const pathToBreadcrumb: Record<string, string> = {
   '/admin/merchants/create': '업체 추가',
   '/admin/products': '상품 관리',
   '/admin/orders': '주문 관리',
+  '/admin/inbox': '수신함',
   '/admin/contacts': '문의 관리',
   '/admin/emails': '받은 메일',
   '/admin/upload': '이미지 업로드',
