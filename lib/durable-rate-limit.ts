@@ -138,3 +138,77 @@ export function evaluatePostIncrementWindow(
   if (postIncrementCount > max) return { allowed: false, retryAfterMs: windowMs };
   return { allowed: true, retryAfterMs: 0 };
 }
+
+const MINUTE_MS = 60_000;
+const HOUR_MS = 60 * MINUTE_MS;
+
+/**
+ * Pure sliding-window evaluation used by the in-memory fallback. Given the prior
+ * hit timestamps, decide whether a new hit (at `now`) is allowed and return the
+ * timestamp list to persist (consuming a slot only when allowed).
+ */
+export function evaluateSlidingWindow(
+  timestamps: number[],
+  perMinute: number,
+  perHour: number,
+  now: number,
+): { decision: RateDecision; kept: number[] } {
+  const recent = timestamps.filter((t) => now - t < HOUR_MS);
+  const lastMinute = recent.filter((t) => now - t < MINUTE_MS).length;
+  if (lastMinute >= perMinute) return { decision: { allowed: false, retryAfterMs: MINUTE_MS }, kept: recent };
+  if (recent.length >= perHour) return { decision: { allowed: false, retryAfterMs: HOUR_MS }, kept: recent };
+  recent.push(now);
+  return { decision: { allowed: true, retryAfterMs: 0 }, kept: recent };
+}
+
+// In-memory fallback store for the generic requestGate (per-process).
+const memoryBuckets = new Map<string, number[]>();
+
+function memoryGate(fullKey: string, perMinute: number, perHour: number, now: number): RateDecision {
+  const ts = memoryBuckets.get(fullKey) ?? [];
+  const { decision, kept } = evaluateSlidingWindow(ts, perMinute, perHour, now);
+  memoryBuckets.set(fullKey, kept);
+  return decision;
+}
+
+/**
+ * Generic per-(namespace,key) request gate for non-chatbot routes (PA-4/5/6).
+ * Consumes a slot in a shared minute + hour counter via Upstash when configured;
+ * otherwise falls back to a per-process in-memory sliding window. Same fail-open
+ * contract as the chatbot variants — a Redis error degrades to in-memory rather
+ * than blocking the request.
+ */
+export async function requestGate(opts: {
+  namespace: string;
+  key: string;
+  perMinute: number;
+  perHour: number;
+}): Promise<RateDecision> {
+  const { namespace, key, perMinute, perHour } = opts;
+  if (isDurableRateLimitConfigured()) {
+    try {
+      const [minuteCount, hourCount] = await Promise.all([
+        durableIncrWindow(`rl:${namespace}:${key}:m`, 60),
+        durableIncrWindow(`rl:${namespace}:${key}:h`, 3600),
+      ]);
+      const minute = evaluatePostIncrementWindow(minuteCount, perMinute, MINUTE_MS);
+      if (!minute.allowed) return minute;
+      return evaluatePostIncrementWindow(hourCount, perHour, HOUR_MS);
+    } catch (err) {
+      console.warn('[durable-rate-limit] requestGate durable path failed; in-memory fallback:', err);
+    }
+  }
+  return memoryGate(`${namespace}:${key}`, perMinute, perHour, Date.now());
+}
+
+/** Derive a per-client rate-limit key from request headers (best-effort IP). */
+export function clientIpKey(headers: Headers): string {
+  const xff = headers.get('x-forwarded-for') || '';
+  const ip = xff.split(',')[0]?.trim() || headers.get('x-real-ip') || 'unknown';
+  return `ip:${ip}`;
+}
+
+/** Test helper — clears the generic in-memory gate store. */
+export function __resetRequestGateMemory(): void {
+  memoryBuckets.clear();
+}

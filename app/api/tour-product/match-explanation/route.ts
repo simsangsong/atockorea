@@ -17,6 +17,7 @@
 
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
+import { requestGate, clientIpKey } from "@/lib/durable-rate-limit";
 import { fetchMatchTours } from "@/lib/tour-match-v2/fetch-tours";
 import { explainTopMatch } from "@/lib/tour-match-v2/explainer-haiku";
 import type { ParsedQueryV2, ScoredMatchV2 } from "@/lib/tour-match-v2/types";
@@ -35,6 +36,19 @@ function makeSupabaseClient() {
 
 export async function POST(req: NextRequest) {
   const t0 = Date.now();
+  // PA-5: unauthenticated AI explainer (Gemini) — throttle per-IP to cap cost abuse.
+  const gate = await requestGate({
+    namespace: "match_explanation",
+    key: clientIpKey(req.headers),
+    perMinute: 10,
+    perHour: 60,
+  });
+  if (!gate.allowed) {
+    return NextResponse.json(
+      { error: "rate_limited" },
+      { status: 429, headers: { "Retry-After": String(Math.ceil(gate.retryAfterMs / 1000)) } },
+    );
+  }
   try {
     const body = await req.json();
     const text = typeof body.query === "string" ? body.query.trim() : "";

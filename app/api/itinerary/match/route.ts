@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { createServerClient } from "@/lib/supabase";
+import { requestGate, clientIpKey } from "@/lib/durable-rate-limit";
 import { parseQuery } from "@/lib/tour-match-v2/parser";
 import { ruleParse } from "@/lib/tour-match-v2/parser-rule";
 import type { ParsedQueryV2 } from "@/lib/tour-match-v2/types";
@@ -47,6 +48,20 @@ const DEFAULT_MAX_POIS = 7;
 const DEFAULT_MAX_HOURS = 8;
 
 export async function POST(request: Request) {
+  // PA-5: unauthenticated AI matcher (Gemini) — throttle per-IP to cap cost abuse.
+  const gate = await requestGate({
+    namespace: "itinerary_match",
+    key: clientIpKey(request.headers),
+    perMinute: 10,
+    perHour: 60,
+  });
+  if (!gate.allowed) {
+    return NextResponse.json(
+      { ok: false, error: "rate_limited" },
+      { status: 429, headers: { "Retry-After": String(Math.ceil(gate.retryAfterMs / 1000)) } },
+    );
+  }
+
   let body: MatchBody;
   try {
     body = (await request.json()) as MatchBody;

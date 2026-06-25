@@ -2,8 +2,12 @@ import {
   isDurableRateLimitConfigured,
   evaluatePriorAttemptWindows,
   evaluatePostIncrementWindow,
+  evaluateSlidingWindow,
   durableIncrWindow,
   durableReadWithTtl,
+  requestGate,
+  clientIpKey,
+  __resetRequestGateMemory,
 } from '@/lib/durable-rate-limit';
 
 const MINUTE = 60_000;
@@ -65,6 +69,65 @@ describe('evaluatePostIncrementWindow (consume then check)', () => {
       allowed: false,
       retryAfterMs: MINUTE,
     });
+  });
+});
+
+describe('evaluateSlidingWindow (in-memory fallback core)', () => {
+  it('allows then blocks within the minute window and consumes only when allowed', () => {
+    const now = 1_000_000;
+    const r1 = evaluateSlidingWindow([now, now, now], 3, 100, now); // already 3 in last minute
+    expect(r1.decision.allowed).toBe(false);
+    expect(r1.kept).toHaveLength(3); // not consumed when blocked
+    const r2 = evaluateSlidingWindow([now, now], 3, 100, now); // 2 so far → allowed
+    expect(r2.decision.allowed).toBe(true);
+    expect(r2.kept).toHaveLength(3); // consumed
+  });
+
+  it('drops timestamps older than an hour', () => {
+    const now = 5_000_000;
+    const old = now - 2 * 60 * 60 * 1000;
+    const r = evaluateSlidingWindow([old, old], 3, 5, now);
+    expect(r.decision.allowed).toBe(true);
+    expect(r.kept).toEqual([now]); // old ones pruned, new one added
+  });
+});
+
+describe('requestGate (unconfigured → in-memory)', () => {
+  const orig = { ...process.env };
+  beforeEach(() => {
+    delete process.env.UPSTASH_REDIS_REST_URL;
+    delete process.env.UPSTASH_REDIS_REST_TOKEN;
+    __resetRequestGateMemory();
+  });
+  afterAll(() => {
+    process.env.UPSTASH_REDIS_REST_URL = orig.UPSTASH_REDIS_REST_URL;
+    process.env.UPSTASH_REDIS_REST_TOKEN = orig.UPSTASH_REDIS_REST_TOKEN;
+  });
+
+  it('allows up to perMinute then blocks for that key', async () => {
+    const opts = { namespace: 'contact', key: 'ip:1.2.3.4', perMinute: 2, perHour: 100 };
+    expect((await requestGate(opts)).allowed).toBe(true);
+    expect((await requestGate(opts)).allowed).toBe(true);
+    const blocked = await requestGate(opts);
+    expect(blocked.allowed).toBe(false);
+    expect(blocked.retryAfterMs).toBeGreaterThan(0);
+  });
+
+  it('isolates different keys', async () => {
+    const base = { namespace: 'contact', perMinute: 1, perHour: 100 };
+    expect((await requestGate({ ...base, key: 'ip:a' })).allowed).toBe(true);
+    expect((await requestGate({ ...base, key: 'ip:a' })).allowed).toBe(false);
+    expect((await requestGate({ ...base, key: 'ip:b' })).allowed).toBe(true);
+  });
+});
+
+describe('clientIpKey', () => {
+  it('uses the first x-forwarded-for hop', () => {
+    expect(clientIpKey(new Headers({ 'x-forwarded-for': '9.9.9.9, 10.0.0.1' }))).toBe('ip:9.9.9.9');
+  });
+  it('falls back to x-real-ip then unknown', () => {
+    expect(clientIpKey(new Headers({ 'x-real-ip': '8.8.8.8' }))).toBe('ip:8.8.8.8');
+    expect(clientIpKey(new Headers())).toBe('ip:unknown');
   });
 });
 
