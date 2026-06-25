@@ -4,10 +4,10 @@
 
 **마스터 플랜(단일 기준):** `docs/admin-dashboard-upgrade-master-plan-2026-06-24.md`
 **모바일 설계 상세:** `docs/admin-premium-mobile-design-spec-2026-06-24.md`
-**다음 세션 실행 프롬프트:** `docs/NEXT-SESSION-EXECUTION-PROMPT.md` ← **구현 이어받으면 이걸 먼저**
-**개발 브랜치:** `claude/admin-dashboard-upgrade-yvb88c`
+**다음 세션 실행 프롬프트:** `docs/NEXT-SESSION-EXECUTION-PROMPT-2026-06-25-wave4.md` ← **구현 이어받으면 이걸 먼저**(Wave 4 페이지 개편 + 원격 Linux 환경 인수인계, 최신)
+**개발 브랜치:** 환경별 상이 — 원격 Linux(web) 세션은 `claude/next-session-execution-ysuww9`(매 스텝 main 머지), 플랜 표준은 `claude/admin-dashboard-upgrade-yvb88c`. 부트스트랩 문서의 §1 확인.
 
-**상태: 진단·플랜(Phase 0~0.13) 완료. 다음은 실제 구현 — §R 실행 WBS의 Wave 0부터.**
+**상태: 진단·플랜(Phase 0~0.13) 완료 → Wave 0/1/3/9 + D-15 + W5.7 머지. 현재 Wave 4(페이지별 프리미엄 모바일 개편) 진행 중 — 대시보드·주문목록·분석허브·챗봇분석·머천트(목록·생성·상세) 완료(PR #182~187). 다음 = 분석 엔진 페이지 §8.4.**
 
 이어받을 때 읽기 순서:
 - `docs/NEXT-SESSION-EXECUTION-PROMPT.md` (구현 부트스트랩)
