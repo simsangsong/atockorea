@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { buildTourProductViewModelFromFullPageJson } from "@/components/product-tour-static/_shared/buildTourProductViewModelFromJson";
-import { coerceSeedDateYmd, coerceSeedLanguage } from "@/components/product-tour-static/_shared/bookingShared";
+import { coerceSeedDateYmd, coerceSeedLanguage } from "@/components/product-tour-static/_shared/bookingSeedParams";
 import {
   getStaticTourProductFullPageJson,
   isStaticTourProductBundleRegistered,

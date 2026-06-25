@@ -57,33 +57,13 @@ export function initialDateYmd(): string {
 }
 
 /**
- * Deep-link seeding — validate a `?date=YYYY-MM-DD` query param so an AI agent
- * (or a shared link) can pre-fill the booking card. Returns `undefined` for
- * malformed or past dates so the card keeps its default lead-time date.
+ * Deep-link seed parsers (`?date=`, `?language=`) live in the server-safe
+ * `bookingSeedParams` module because the server component
+ * `app/tour-product/[slug]/page.tsx` calls them — invoking a `"use client"`
+ * export from the server throws at runtime. Re-exported here so this module's
+ * public API stays unchanged.
  */
-export function coerceSeedDateYmd(raw: string | string[] | undefined | null): string | undefined {
-  const v = Array.isArray(raw) ? raw[0] : raw;
-  if (!v || !/^\d{4}-\d{2}-\d{2}$/.test(v)) return undefined;
-  if (Number.isNaN(new Date(`${v}T00:00:00`).getTime())) return undefined;
-  return v >= todayYmdLocal() ? v : undefined;
-}
-
-/**
- * Deep-link seeding — map a `?language=` query param onto the booking card's
- * guide-language toggle. Only en/zh/ko have a dedicated toggle; other locales
- * (ja/es) fall through to `undefined` so the card keeps its default.
- */
-export function coerceSeedLanguage(
-  raw: string | string[] | undefined | null,
-): PreferredLanguage | undefined {
-  const v = Array.isArray(raw) ? raw[0] : raw;
-  if (!v) return undefined;
-  const s = v.trim().toLowerCase();
-  if (s === "ko" || s === "kr" || s === "korean") return "ko";
-  if (s.startsWith("zh") || s === "cn" || s === "chinese") return "zh";
-  if (s === "en" || s === "english") return "en";
-  return undefined;
-}
+export { coerceSeedDateYmd, coerceSeedLanguage } from "./bookingSeedParams";
 
 export function ymdToNoonIso(ymd: string): string {
   const [y, m, d] = ymd.split("-").map(Number);
