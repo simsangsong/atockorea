@@ -1,4 +1,3 @@
-import { cookies } from "next/headers";
 import { HomeMainBody } from "@/components/home/HomeMainBody";
 import { SitePageShell } from "@/src/components/layout/SitePageShell";
 import { FEATURED_PRODUCT_SLUGS } from "@/components/home/v2/sections";
@@ -31,13 +30,14 @@ export const metadata = generateSEOMetadata({
   tags: ["Korea tours", "Seoul tours", "Busan tours", "Jeju tours", "day tours", "travel Korea"],
 });
 
-const SUPPORTED_LOCALES = new Set(["en", "ko", "zh", "zh-TW", "ja", "es"]);
-
-function resolveLocaleFromCookie(value: string | undefined): string {
-  if (!value) return "en";
-  if (value === "zh-CN") return "zh";
-  return SUPPORTED_LOCALES.has(value) ? value : "en";
-}
+// ISR: `/` is always the English home — middleware redirects any non-`en`
+// visitor to `/{locale}` before this route renders — so we no longer read the
+// NEXT_LOCALE cookie (a dynamic API that forced per-request SSR). Removing it
+// lets `/` be statically generated + revalidated and served from the CDN edge,
+// which is the dominant TTFB win for far-from-origin visitors. Featured-rail
+// thumbnails refresh on the revalidate cycle (and on-demand admin edits surface
+// within it).
+export const revalidate = 600;
 
 async function loadFeaturedMediaBySlug(locale: string): Promise<TourProductCardMediaMap> {
   try {
@@ -56,9 +56,7 @@ async function loadFeaturedMediaBySlug(locale: string): Promise<TourProductCardM
 }
 
 export default async function HomePage() {
-  const cookieStore = await cookies();
-  const locale = resolveLocaleFromCookie(cookieStore.get("NEXT_LOCALE")?.value);
-  const featuredMediaBySlug = await loadFeaturedMediaBySlug(locale);
+  const featuredMediaBySlug = await loadFeaturedMediaBySlug("en");
 
   return (
     <SitePageShell>
