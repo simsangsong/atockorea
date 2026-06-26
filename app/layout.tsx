@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { cookies } from "next/headers";
 import { Inter } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
@@ -16,7 +15,6 @@ import { LocaleCurrencySync } from "@/components/LocaleCurrencySync";
 import { AnalyticsPageViewTracker } from "@/components/analytics/AnalyticsPageViewTracker";
 import { GlobalAiAssistant } from "@/components/GlobalAiAssistant";
 import { Toaster } from "@/components/ui/sonner";
-import { rootHtmlLangFromNextLocaleCookie } from "@/lib/rootHtmlLangFromCookie";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -39,8 +37,6 @@ export default async function RootLayout({
 }>) {
   const organizationStructuredData = generateStructuredData('Organization', {});
   const websiteStructuredData = generateStructuredData('WebSite', {});
-  const jar = await cookies();
-  const htmlLang = rootHtmlLangFromNextLocaleCookie(jar.get("NEXT_LOCALE")?.value);
   // Origin of the Supabase project — first fetch target on nearly every page, so warm
   // DNS + TLS during head parse to shave ~300ms off cold visits (C2).
   const supabaseOrigin = (() => {
@@ -52,7 +48,12 @@ export default async function RootLayout({
   })();
 
   return (
-    <html lang={htmlLang} className="font-sans" data-scroll-behavior="smooth" suppressHydrationWarning>
+    // Static `lang="en"` (no cookie read) so the whole site can be statically
+    // rendered / ISR'd and served from the CDN edge instead of a per-request
+    // dynamic SSR — the prior `cookies()` read here forced EVERY route dynamic,
+    // which dominated TTFB for far-from-origin (e.g. US) visitors. I18nProvider
+    // corrects documentElement.lang to the active locale on hydration (i18n.ts).
+    <html lang="en" className="font-sans" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
         {/* Preconnect to webfont CDNs so DNS + TLS finish before the stylesheet links resolve. */}
         <link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="" />
