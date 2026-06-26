@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import { Skeleton } from '@/components/admin/Skeleton';
 import { useUrlFilters } from '@/lib/admin/useUrlFilters';
+import { useRealtimeActivity } from '@/lib/admin/useRealtimeActivity';
 import { kstDayBounds } from '@/lib/admin/kst-day';
 import { INBOX_SOURCE_LABEL, type InboxItem, type InboxSource } from '@/lib/admin/inbox';
 import { cn } from '@/lib/utils';
@@ -88,6 +89,18 @@ export default function InboxPage() {
   const [error, setError] = useState<string | null>(null);
   const [selected, setSelected] = useState<InboxItem | null>(null);
   const [searchInput, setSearchInput] = useState(q);
+  const [refreshNonce, setRefreshNonce] = useState(0);
+  // U-1 inbox realtime: contact_inquiries + support_tickets are in the
+  // publication. received_emails is not (needs a separate DDL approval) so it
+  // isn't counted here yet.
+  const rtContact = useRealtimeActivity('contact_inquiries', { event: 'INSERT' });
+  const rtTicket = useRealtimeActivity('support_tickets', { event: 'INSERT' });
+  const newCount = rtContact.newCount + rtTicket.newCount;
+  const reloadInbox = () => {
+    rtContact.reset();
+    rtTicket.reset();
+    setRefreshNonce((n) => n + 1);
+  };
 
   // Debounce the search box into the URL filter.
   useEffect(() => {
@@ -134,7 +147,7 @@ export default function InboxPage() {
       .finally(() => {
         if (id === reqId.current) setLoading(false);
       });
-  }, [buildUrl]);
+  }, [buildUrl, refreshNonce]);
 
   const loadMore = async () => {
     if (!cursor || loadingMore) return;
@@ -201,6 +214,19 @@ export default function InboxPage() {
               );
             })}
           </div>
+          {newCount > 0 && (
+            <button
+              type="button"
+              onClick={reloadInbox}
+              className="inline-flex items-center gap-1.5 rounded-full bg-blue-50 px-2.5 py-1 text-xs font-semibold text-blue-700 ring-1 ring-blue-200 transition-colors hover:bg-blue-100"
+            >
+              <span className="relative flex size-1.5">
+                <span className="absolute inline-flex size-full animate-ping rounded-full bg-blue-500 opacity-75" />
+                <span className="relative inline-flex size-1.5 rounded-full bg-blue-600" />
+              </span>
+              새 항목 {newCount}건 · 불러오기
+            </button>
+          )}
           <button
             type="button"
             onClick={() => setFilter('status', status === 'unread' ? 'all' : 'unread')}
