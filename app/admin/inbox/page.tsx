@@ -90,15 +90,16 @@ export default function InboxPage() {
   const [selected, setSelected] = useState<InboxItem | null>(null);
   const [searchInput, setSearchInput] = useState(q);
   const [refreshNonce, setRefreshNonce] = useState(0);
-  // U-1 inbox realtime: contact_inquiries + support_tickets are in the
-  // publication. received_emails is not (needs a separate DDL approval) so it
-  // isn't counted here yet.
+  // U-1 inbox realtime: all three sources are in the supabase_realtime
+  // publication (contact_inquiries + support_tickets + received_emails).
   const rtContact = useRealtimeActivity('contact_inquiries', { event: 'INSERT' });
   const rtTicket = useRealtimeActivity('support_tickets', { event: 'INSERT' });
-  const newCount = rtContact.newCount + rtTicket.newCount;
+  const rtEmail = useRealtimeActivity('received_emails', { event: 'INSERT' });
+  const newCount = rtContact.newCount + rtTicket.newCount + rtEmail.newCount;
   const reloadInbox = () => {
     rtContact.reset();
     rtTicket.reset();
+    rtEmail.reset();
     setRefreshNonce((n) => n + 1);
   };
 
