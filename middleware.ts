@@ -356,6 +356,14 @@ function routeRequest(request: NextRequest): NextResponse {
     return NextResponse.next();
   }
 
+  // English home is canonical at `/`, never `/en`. Redirect here (clean 307) so
+  // the bare `/en` route never reaches app/[locale]/page.tsx — which only carries
+  // the ko/zh/ja/es bundles. (Previously the page itself did a client/redirect
+  // round-trip; routing belongs in middleware.)
+  if (matchedLocale === 'en' && pathname === '/en') {
+    return NextResponse.redirect(new URL('/', request.url), 307);
+  }
+
   // 4a. 경로가 정확히 /ko, /zh-CN 등이면 rewrite 하지 않고 app/[locale]/page.tsx 로 처리
   if (pathname === `/${matchedLocale}`) {
     return NextResponse.next();
