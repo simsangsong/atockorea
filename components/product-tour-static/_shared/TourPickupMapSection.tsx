@@ -1,23 +1,25 @@
 "use client";
 
-import { useCallback, useState } from "react";
-import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
+import { useEffect, useRef, useState } from "react";
+import dynamic from "next/dynamic";
 import { Building2, ChevronDown, Clock3, MapPin, Plane, ShoppingBag, Store, TrainFront } from "lucide-react";
 import { cn } from "@/lib/utils";
-import {
-  GOOGLE_MAPS_LOADER_ID,
-  GOOGLE_MAPS_LOADER_VERSION,
-  libraries as GOOGLE_MAPS_LIBRARIES,
-} from "@/lib/google-maps";
 import type { PickupDropoffPoint, PickupDropoffSection } from "./pickupDropoffTypes";
 import type { TourProductSectionUiV1 } from "@/lib/tour-product/tourProductSectionUi";
 
-const GOOGLE_MAPS_API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? "";
+const MapPlaceholder = () => (
+  <div className="flex h-[260px] items-center justify-center bg-slate-100">
+    <span className="text-sm text-slate-400">Loading map…</span>
+  </div>
+);
 
-const MAP_STYLE: google.maps.MapTypeStyle[] = [
-  { featureType: "poi", elementType: "labels", stylers: [{ visibility: "off" }] },
-  { featureType: "transit", elementType: "labels.icon", stylers: [{ visibility: "off" }] },
-];
+// The Maps SDK (~150KB) lives in TourPickupMapCanvas. dynamic(ssr:false) keeps that
+// chunk out of the tour-product page's initial JS; it loads only when the section
+// scrolls into view (mapInView gate below) — every visitor pays it otherwise (C1).
+const TourPickupMapCanvas = dynamic(
+  () => import("./TourPickupMapCanvas").then((m) => m.TourPickupMapCanvas),
+  { ssr: false, loading: () => <MapPlaceholder /> },
+);
 
 function pointIcon(type: string | undefined) {
   const t = (type ?? "").toLowerCase();
@@ -156,16 +158,31 @@ type TourPickupMapSectionProps = {
 export function TourPickupMapSection({ pickupDropoff, sectionUi }: TourPickupMapSectionProps) {
   const [selectedIdx, setSelectedIdx] = useState<number | null>(null);
   const [map, setMap] = useState<google.maps.Map | null>(null);
+  const [mapInView, setMapInView] = useState(false);
+  const mapWrapRef = useRef<HTMLDivElement | null>(null);
 
-  const { isLoaded } = useJsApiLoader({
-    id: GOOGLE_MAPS_LOADER_ID,
-    googleMapsApiKey: GOOGLE_MAPS_API_KEY,
-    libraries: GOOGLE_MAPS_LIBRARIES,
-    version: GOOGLE_MAPS_LOADER_VERSION,
-  });
-
-  const onMapLoad = useCallback((m: google.maps.Map) => setMap(m), []);
-  const onMapUnmount = useCallback(() => setMap(null), []);
+  // Only pull the Maps SDK once the map area approaches the viewport. rootMargin
+  // pre-warms it ~300px early so it's ready by the time the user reaches it.
+  useEffect(() => {
+    if (mapInView) return;
+    const el = mapWrapRef.current;
+    if (!el) return;
+    if (typeof IntersectionObserver === "undefined") {
+      setMapInView(true);
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setMapInView(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: "300px" },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [mapInView]);
 
   if (!pickupDropoff) return null;
   const points = pickupDropoff.departure ?? [];
@@ -196,49 +213,21 @@ export function TourPickupMapSection({ pickupDropoff, sectionUi }: TourPickupMap
       </div>
 
       {/* Map */}
-      <div className="overflow-hidden rounded-2xl shadow-[0_1px_2px_rgba(0,0,0,0.03),0_4px_12px_-2px_rgba(0,0,0,0.055)]">
-        {isLoaded ? (
-          <GoogleMap
-            mapContainerStyle={{ width: "100%", height: "260px" }}
+      <div
+        ref={mapWrapRef}
+        className="overflow-hidden rounded-2xl shadow-[0_1px_2px_rgba(0,0,0,0.03),0_4px_12px_-2px_rgba(0,0,0,0.055)]"
+      >
+        {mapInView ? (
+          <TourPickupMapCanvas
             center={center}
             zoom={zoom}
-            onLoad={onMapLoad}
-            onUnmount={onMapUnmount}
-            options={{
-              disableDefaultUI: true,
-              zoomControl: true,
-              streetViewControl: false,
-              mapTypeControl: false,
-              fullscreenControl: false,
-              styles: MAP_STYLE,
-            }}
-          >
-            {validPoints.map((p, i) => (
-              <Marker
-                key={`marker-${i}`}
-                position={{ lat: p.lat!, lng: p.lng! }}
-                label={{
-                  text: String(p.order),
-                  color: selectedIdx === i ? "#ffffff" : "#ffffff",
-                  fontSize: "12px",
-                  fontWeight: "bold",
-                }}
-                icon={{
-                  path: google.maps.SymbolPath.CIRCLE,
-                  scale: 14,
-                  fillColor: selectedIdx === i ? "#0ea5e9" : "#1e40af",
-                  fillOpacity: 1,
-                  strokeColor: "#ffffff",
-                  strokeWeight: 2,
-                }}
-                onClick={() => handlePointClick(i)}
-              />
-            ))}
-          </GoogleMap>
+            validPoints={validPoints}
+            selectedIdx={selectedIdx}
+            onPointClick={handlePointClick}
+            onMapChange={setMap}
+          />
         ) : (
-          <div className="flex h-[260px] items-center justify-center bg-slate-100">
-            <span className="text-sm text-slate-400">Loading map…</span>
-          </div>
+          <MapPlaceholder />
         )}
       </div>
 
