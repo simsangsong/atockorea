@@ -111,6 +111,15 @@ export default async function RegisteredTourProductPage({
   const seedDateYmd = coerceSeedDateYmd(sp.date);
   const seedLanguage = coerceSeedLanguage(sp.language ?? sp.lang);
 
+  // B3: the checkout context depends only on `slug`, so kick it off now and let it
+  // run concurrently with the (multi-step, DB round-trip) viewModel resolution
+  // below instead of awaiting it sequentially afterward. Errors degrade to null,
+  // matching the prior try/catch behavior.
+  const checkoutPromise = getTourProductCheckoutContext(slug).catch((e) => {
+    console.error("[RegisteredTourProductPage] checkout context unavailable", slug, e);
+    return null;
+  });
+
   // Resolution order: Supabase locale → static JSON locale → Supabase EN fallback.
   // Falling through to the static JSON for the requested locale before trying
   // Supabase EN keeps the localized bundle from being silently replaced by EN
@@ -171,12 +180,7 @@ export default async function RegisteredTourProductPage({
     // best-effort overlay; ignore errors
   }
 
-  let checkout: Awaited<ReturnType<typeof getTourProductCheckoutContext>> = null;
-  try {
-    checkout = await getTourProductCheckoutContext(slug);
-  } catch (e) {
-    console.error("[RegisteredTourProductPage] checkout context unavailable", slug, e);
-  }
+  const checkout = await checkoutPromise;
 
   const jsonLdScripts = tourProductJsonLdScripts(viewModel, slug);
 
