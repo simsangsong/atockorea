@@ -8,6 +8,7 @@ import { Search, X, Download, ShoppingCart } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import { BookingStatusBadge } from '@/components/admin/BookingStatusBadge';
 import { Skeleton } from '@/components/admin/Skeleton';
+import { SavedViews } from '@/components/admin/SavedViews';
 import { useUrlFilters } from '@/lib/admin/useUrlFilters';
 import { formatBookingPrice, type BookingCurrency } from '@/lib/format/currency';
 import { cn } from '@/lib/utils';
@@ -64,7 +65,9 @@ const FILTER_DEFAULTS = {
 
 export default function OrdersPage() {
   const router = useRouter();
-  const { filters, setFilter } = useUrlFilters(FILTER_DEFAULTS);
+  const { filters, setFilter, setFilters } = useUrlFilters(FILTER_DEFAULTS);
+  const filtersAreDefault =
+    JSON.stringify(filters) === JSON.stringify(FILTER_DEFAULTS);
   const [bookings, setBookings] = useState<Booking[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -298,6 +301,17 @@ export default function OrdersPage() {
             <option value="desc">최신순</option>
             <option value="asc">오래된순</option>
           </select>
+        </div>
+
+        {/* U-8 saved views — bookmark the current filter combination. Applying a
+            view resets every key (defaults overlaid by the view's filters). */}
+        <div className="mt-2.5">
+          <SavedViews
+            storageKey="admin:orders:saved-views"
+            currentFilters={filters}
+            isDefault={filtersAreDefault}
+            onApply={(viewFilters) => setFilters({ ...FILTER_DEFAULTS, ...viewFilters })}
+          />
         </div>
       </div>
 
