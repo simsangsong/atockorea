@@ -1,6 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { requireAdmin } from '@/lib/auth';
+import {
+  isBulkOrderStatus,
+  parseBulkOrderIds,
+  partitionBulkTransitions,
+} from '@/lib/admin/orders-bulk';
 
 export const dynamic = 'force-dynamic';
 
@@ -123,6 +128,73 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ error: 'Admin access required' }, { status: 403 });
     }
     console.error('GET /api/admin/orders error:', err);
+    return NextResponse.json(
+      { error: 'Internal server error', details: err.message },
+      { status: 500 }
+    );
+  }
+}
+
+/**
+ * PATCH /api/admin/orders — bulk status change (U-7). Body: { ids:string[], status }.
+ * Restricted to the two side-effect-free targets (confirmed / completed) — cancel
+ * (customer email + inventory) and no_show (settlement) are excluded. Each id is
+ * gated by the B-3 state machine; illegal transitions are skipped, not written.
+ * confirmed/completed have no money or outward side effects, so a single update
+ * query is correct.
+ */
+export async function PATCH(req: NextRequest) {
+  try {
+    await requireAdmin(req);
+    const supabase = createServerClient();
+    const body = await req.json().catch(() => null);
+
+    const status = body?.status;
+    if (typeof status !== 'string' || !isBulkOrderStatus(status)) {
+      return NextResponse.json(
+        { error: "Bulk status must be 'confirmed' or 'completed'." },
+        { status: 400 }
+      );
+    }
+
+    const { ids, error: idError } = parseBulkOrderIds(body?.ids);
+    if (idError) return NextResponse.json({ error: idError }, { status: 400 });
+
+    const { data: rows, error: fetchError } = await supabase
+      .from('bookings')
+      .select('id, status')
+      .in('id', ids);
+    if (fetchError) {
+      return NextResponse.json(
+        { error: 'Failed to load orders', details: fetchError.message },
+        { status: 500 }
+      );
+    }
+
+    const { valid, skipped } = partitionBulkTransitions(
+      (rows ?? []) as { id: string; status: string }[],
+      status
+    );
+
+    if (valid.length > 0) {
+      const { error: updateError } = await supabase
+        .from('bookings')
+        .update({ status })
+        .in('id', valid);
+      if (updateError) {
+        return NextResponse.json(
+          { error: 'Failed to update orders', details: updateError.message },
+          { status: 500 }
+        );
+      }
+    }
+
+    return NextResponse.json({ updated: valid.length, skipped: skipped.length });
+  } catch (err: any) {
+    if (err.message === 'Unauthorized' || err.message?.includes('Forbidden')) {
+      return NextResponse.json({ error: 'Admin access required' }, { status: 403 });
+    }
+    console.error('PATCH /api/admin/orders error:', err);
     return NextResponse.json(
       { error: 'Internal server error', details: err.message },
       { status: 500 }
