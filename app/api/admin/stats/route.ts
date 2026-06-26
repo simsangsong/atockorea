@@ -18,60 +18,87 @@ export async function GET(req: NextRequest) {
     
     const supabase = createServerClient();
 
-    // Get total merchants
-    const { count: totalMerchants } = await supabase
-      .from('merchants')
-      .select('*', { count: 'exact', head: true });
-
-    // Get active merchants
-    const { count: activeMerchants } = await supabase
-      .from('merchants')
-      .select('*', { count: 'exact', head: true })
-      .eq('status', 'active');
-
-    // Get total tours (products)
-    const { count: totalProducts } = await supabase
-      .from('tours')
-      .select('*', { count: 'exact', head: true })
-      .eq('is_active', true);
-
-    // Get total bookings (orders)
-    const { count: totalOrders } = await supabase
-      .from('bookings')
-      .select('*', { count: 'exact', head: true });
-
-    // Get today's bookings — M-6: use KST day bounds (was UTC, so KST 00:00–09:00
-    // counted the wrong day and showed "0 orders today").
+    // M-6: KST day bounds for "today" (was UTC, so KST 00:00–09:00 counted the
+    // wrong day and showed "0 orders today").
     const { startIso: todayStart, endIso: todayEnd } = kstDayBounds();
-    const { count: todayOrders } = await supabase
-      .from('bookings')
-      .select('*', { count: 'exact', head: true })
-      .gte('created_at', todayStart)
-      .lte('created_at', todayEnd);
+    /** §8.1 — 7-day paid-revenue trend window. Fetch a slightly wider UTC window
+     *  (8 days) so the KST bucketing in buildRevenueTrend has every row it needs
+     *  for the last 7 KST days. */
+    const now = new Date();
+    const trendSince = new Date(now.getTime() - 8 * 24 * 60 * 60 * 1000).toISOString();
 
-    // Pending bookings (for dashboard "Pending items")
-    const { count: pendingOrders } = await supabase
-      .from('bookings')
-      .select('*', { count: 'exact', head: true })
-      .eq('status', 'pending');
+    // All dashboard queries are independent — run them concurrently (B2). Previously
+    // ~10 sequential round-trips; at ~100ms each that was ~1s of serial latency.
+    const [
+      { count: totalMerchants },
+      { count: activeMerchants },
+      { count: totalProducts },
+      { count: totalOrders },
+      { count: todayOrders },
+      { count: pendingOrders },
+      // D-1: real "미처리 문의" count (was hardcoded 0). contact_inquiries.status ∈
+      // {new, in_progress, resolved, closed}; "미처리" = brand-new, not yet triaged.
+      { count: newContacts },
+      // Phase 10.6 — revenue rows split by currency (legacy USD vs KRW builder bookings).
+      { data: bookings },
+      // §8.1 — trend rows for the sparkline.
+      { data: trendRows },
+      // Recent bookings (last 20) for the activity table.
+      { data: recentBookings, error: bookingsError },
+    ] = await Promise.all([
+      supabase.from('merchants').select('*', { count: 'exact', head: true }),
+      supabase.from('merchants').select('*', { count: 'exact', head: true }).eq('status', 'active'),
+      supabase.from('tours').select('*', { count: 'exact', head: true }).eq('is_active', true),
+      supabase.from('bookings').select('*', { count: 'exact', head: true }),
+      supabase
+        .from('bookings')
+        .select('*', { count: 'exact', head: true })
+        .gte('created_at', todayStart)
+        .lte('created_at', todayEnd),
+      supabase.from('bookings').select('*', { count: 'exact', head: true }).eq('status', 'pending'),
+      supabase.from('contact_inquiries').select('*', { count: 'exact', head: true }).eq('status', 'new'),
+      supabase.from('bookings').select('final_price, payment_status, currency').eq('payment_status', 'paid'),
+      supabase
+        .from('bookings')
+        .select('created_at, final_price, currency')
+        .eq('payment_status', 'paid')
+        .gte('created_at', trendSince),
+      supabase
+        .from('bookings')
+        .select(`
+          id,
+          created_at,
+          booking_date,
+          tour_date,
+          number_of_guests,
+          number_of_people,
+          final_price,
+          currency,
+          source,
+          status,
+          payment_status,
+          pickup_point_id,
+          tours (
+            id,
+            title
+          ),
+          user_profiles (
+            id,
+            full_name,
+            email
+          ),
+          pickup_points (
+            id,
+            name,
+            address
+          )
+        `)
+        .order('created_at', { ascending: false })
+        .limit(20),
+    ]);
 
-    // D-1: real "미처리 문의" count (was hardcoded 0 on the dashboard).
-    // contact_inquiries.status ∈ {new, in_progress, resolved, closed};
-    // "미처리" = brand-new, not yet triaged.
-    const { count: newContacts } = await supabase
-      .from('contact_inquiries')
-      .select('*', { count: 'exact', head: true })
-      .eq('status', 'new');
-
-    /** Phase 10.6 — split revenue by currency. Pre-Phase-10 the dashboard
-     *  hardcoded ₩ but legacy data is USD; after Phase 10.2 builder bookings
-     *  land in KRW. Sum each currency separately so the dashboard renders
-     *  honest totals per currency instead of mixing them. */
-    const { data: bookings } = await supabase
-      .from('bookings')
-      .select('final_price, payment_status, currency')
-      .eq('payment_status', 'paid');
-
+    /** Phase 10.6 — sum each currency separately so the dashboard renders honest
+     *  totals per currency instead of mixing legacy USD with KRW. */
     const revenueByCurrency = (bookings ?? []).reduce(
       (acc, b) => {
         const ccy = (b as { currency?: string | null }).currency === 'krw' ? 'krw' : 'usd';
@@ -85,52 +112,9 @@ export async function GET(req: NextRequest) {
      *  should read revenueByCurrency.{usd,krw} separately. */
     const totalRevenue = revenueByCurrency.usd;
 
-    /** §8.1 — 7-day paid-revenue trend for the dashboard sparkline. Fetch a
-     *  slightly wider UTC window (8 days) so the KST bucketing in
-     *  buildRevenueTrend has every row it needs for the last 7 KST days. */
-    const now = new Date();
-    const trendSince = new Date(now.getTime() - 8 * 24 * 60 * 60 * 1000).toISOString();
-    const { data: trendRows } = await supabase
-      .from('bookings')
-      .select('created_at, final_price, currency')
-      .eq('payment_status', 'paid')
-      .gte('created_at', trendSince);
+    // §8.1 — 7-day paid-revenue trend for the dashboard sparkline.
     const revenueTrend7d = buildRevenueTrend(trendRows ?? [], now, 7);
 
-    // Get recent bookings (last 20 for better visibility)
-    const { data: recentBookings, error: bookingsError } = await supabase
-      .from('bookings')
-      .select(`
-        id,
-        created_at,
-        booking_date,
-        tour_date,
-        number_of_guests,
-        number_of_people,
-        final_price,
-        currency,
-        source,
-        status,
-        payment_status,
-        pickup_point_id,
-        tours (
-          id,
-          title
-        ),
-        user_profiles (
-          id,
-          full_name,
-          email
-        ),
-        pickup_points (
-          id,
-          name,
-          address
-        )
-      `)
-      .order('created_at', { ascending: false })
-      .limit(20);
-    
     if (bookingsError) {
       console.error('Error fetching recent bookings:', bookingsError.code, bookingsError.message);
       if (process.env.NODE_ENV !== 'production') {
