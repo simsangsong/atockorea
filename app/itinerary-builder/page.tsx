@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
+import { unstable_cache } from "next/cache";
 import { createServerClient } from "@/lib/supabase";
 import { SitePageShell } from "@/src/components/layout/SitePageShell";
 import {
@@ -27,9 +28,39 @@ import BuilderShell from "@/components/itinerary-builder/BuilderShell";
  *    ship / pickup / port / intent / autoRun) flow through unchanged.
  */
 
-export const revalidate = 300;
-
 const DEFAULT_REGION: RegionSlug = "busan";
+
+const POI_SELECT =
+  "poi_key, name_en, name_ko, names_other_locales, content_locales, region, category, default_image_url, default_stay_minutes, lat, lng, stop_role, is_attraction, is_operational, builder_profile_source, builder_profile_version, poi_meta, description, highlights, images, why_on_route, smart_notes, visit_basics, convenience";
+
+/**
+ * B5/K3: builder POI metadata changes rarely (admin POI editor / photo imports),
+ * but this query — big JSONB columns across a whole region cluster (~330KB–1.3MB
+ * for Jeju) — ran on *every* builder load. The page is dynamic (reads
+ * searchParams) and the supabase client bypasses Next's fetch cache, so the old
+ * `export const revalidate = 300` never actually cached it. Cache the read across
+ * requests with a 1h TTL + a `match_pois` tag so an admin POI mutation can
+ * `revalidateTag('match_pois')` for an instant refresh. createServerClient uses
+ * the service role (no cookies/session), so it's safe inside unstable_cache and
+ * returns the same public POI data for every visitor.
+ */
+const loadRegionBuilderPois = unstable_cache(
+  async (clusterRegions: string[], region: string): Promise<MatchPoiRow[]> => {
+    const supabase = createServerClient();
+    const { data, error } = await supabase
+      .from("match_pois")
+      .select(POI_SELECT)
+      .in("region", clusterRegions)
+      .not("name_en", "is", null)
+      .not("lat", "is", null);
+    if (error) {
+      throw new Error(`Failed to load POIs for ${region}: ${error.message}`);
+    }
+    return (data ?? []) as MatchPoiRow[];
+  },
+  ["itinerary-builder-region-pois"],
+  { revalidate: 3600, tags: ["match_pois"] },
+);
 
 export const metadata: Metadata = {
   title: "Build Your Custom Korea Itinerary | AtoC Korea",
@@ -70,20 +101,10 @@ export default async function ItineraryBuilderPage({
   const cluster = REGION_CLUSTER[region];
   const center = REGION_CENTER[region];
 
-  const supabase = createServerClient();
-  const { data, error } = await supabase
-    .from("match_pois")
-    .select(
-      "poi_key, name_en, name_ko, names_other_locales, content_locales, region, category, default_image_url, default_stay_minutes, lat, lng, stop_role, is_attraction, is_operational, builder_profile_source, builder_profile_version, poi_meta, description, highlights, images, why_on_route, smart_notes, visit_basics, convenience",
-    )
-    .in("region", cluster as unknown as string[])
-    .not("name_en", "is", null)
-    .not("lat", "is", null);
-
-  if (error) {
-    throw new Error(`Failed to load POIs for ${region}: ${error.message}`);
-  }
-  const pois = ((data ?? []) as MatchPoiRow[]).filter(
+  // Filtering (taxonomy + photo gate) stays outside the cache so taxonomy/code
+  // changes apply immediately; only the raw region query is cached.
+  const allPois = await loadRegionBuilderPois(cluster as unknown as string[], region);
+  const pois = allPois.filter(
     (p) =>
       (p.is_attraction === true || (p.is_attraction == null && isBuilderAttraction(p.poi_key))) &&
       // Phase A — hide POIs without a displayable photo from the builder.
