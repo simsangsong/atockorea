@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { toast } from 'sonner';
 import { supabase } from '@/lib/supabase';
 import { SavedViews } from '@/components/admin/SavedViews';
+import { Skeleton } from '@/components/admin/Skeleton';
 import { useUrlFilters } from '@/lib/admin/useUrlFilters';
 
 const FILTER_DEFAULTS = { status: 'all', is_read: 'all' };
@@ -208,18 +209,21 @@ export default function AdminContactsPage() {
       case 'resolved':
         return 'bg-green-100 text-green-800';
       case 'closed':
-        return 'bg-gray-100 text-gray-800';
+        return 'bg-slate-100 text-slate-800';
       default:
-        return 'bg-gray-100 text-gray-800';
+        return 'bg-slate-100 text-slate-800';
     }
   };
 
   if (loading) {
     return (
-      <div className="space-y-6">
-        <div className="text-center py-12">
-          <div className="animate-spin rounded-full h-10 w-10 border-2 border-indigo-600 border-t-transparent mx-auto mb-3"></div>
-          <p className="text-sm text-gray-600">Loading contact inquiries...</p>
+      <div className="space-y-4">
+        <Skeleton className="h-7 w-40 rounded-design-md" />
+        <Skeleton className="h-20 w-full rounded-design-md" />
+        <div className="space-y-2">
+          {Array.from({ length: 6 }).map((_, i) => (
+            <Skeleton key={i} className="h-16 w-full rounded-design-md" />
+          ))}
         </div>
       </div>
     );
@@ -228,8 +232,8 @@ export default function AdminContactsPage() {
   return (
     <div className="space-y-5">
       <div>
-        <h1 className="text-2xl font-bold text-gray-900">문의 관리</h1>
-        <p className="text-sm text-gray-600 mt-1">
+        <h1 className="text-xl font-semibold text-slate-900">문의 관리</h1>
+        <p className="text-sm text-slate-500 mt-1">
           사이트 Contact 폼 제출 건과 support@atockorea.com 으로 수신된 메일이 여기에 표시됩니다. Resend 수신 메일(MX) 및 웹훅이 설정되어 있어야 합니다.
         </p>
       </div>
@@ -304,30 +308,30 @@ export default function AdminContactsPage() {
           </div>
 
           {/* Inquiry List */}
-          <div className="bg-white rounded-lg border border-gray-200/60 shadow-sm">
-            <div className="divide-y divide-gray-200">
+          <div className="bg-admin-surface rounded-design-md border border-admin-border shadow-admin-card">
+            <div className="divide-y divide-admin-border">
               {inquiries.length > 0 ? (
                 inquiries.map((inquiry) => (
                   <button
                     key={inquiry.id}
                     onClick={() => handleInquiryClick(inquiry)}
-                    className={`w-full text-left p-4 hover:bg-gray-50 transition-colors ${
-                      selectedInquiry?.id === inquiry.id ? 'bg-indigo-50 border-l-4 border-indigo-500' : ''
+                    className={`w-full text-left p-4 hover:bg-admin-surface-hover transition-colors ${
+                      selectedInquiry?.id === inquiry.id ? 'bg-blue-50 border-l-4 border-blue-500' : ''
                     } ${!inquiry.is_read ? 'bg-blue-50/50' : ''}`}
                   >
                     <div className="flex items-start justify-between">
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 mb-1">
-                          <p className="text-sm font-semibold text-gray-900 truncate">
+                          <p className="text-sm font-semibold text-slate-900 truncate">
                             {inquiry.full_name}
                           </p>
                           {!inquiry.is_read && (
                             <span className="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0"></span>
                           )}
                         </div>
-                        <p className="text-xs text-gray-600 truncate mb-1">{inquiry.email}</p>
-                        <p className="text-sm text-gray-800 font-medium truncate">{inquiry.subject}</p>
-                        <p className="text-xs text-gray-500 mt-1">{formatDate(inquiry.created_at)}</p>
+                        <p className="text-xs text-slate-500 truncate mb-1">{inquiry.email}</p>
+                        <p className="text-sm text-slate-800 font-medium truncate">{inquiry.subject}</p>
+                        <p className="text-xs text-slate-500 mt-1">{formatDate(inquiry.created_at)}</p>
                       </div>
                       <span className={`px-2 py-1 text-xs font-semibold rounded-md flex-shrink-0 ml-2 ${getStatusColor(inquiry.status)}`}>
                         {inquiry.status}
@@ -336,7 +340,7 @@ export default function AdminContactsPage() {
                   </button>
                 ))
               ) : (
-                <div className="p-8 text-center text-sm text-gray-500">
+                <div className="p-8 text-center text-sm text-slate-500">
                   No contact inquiries found
                 </div>
               )}
@@ -344,22 +348,22 @@ export default function AdminContactsPage() {
 
             {/* Pagination */}
             {pagination.total_pages > 1 && (
-              <div className="p-4 border-t border-gray-200 flex items-center justify-between">
-                <p className="text-xs text-gray-600">
+              <div className="p-4 border-t border-admin-border flex items-center justify-between">
+                <p className="text-xs text-slate-500">
                   Page {pagination.page} of {pagination.total_pages} ({pagination.total} total)
                 </p>
                 <div className="flex gap-2">
                   <button
                     onClick={() => setPagination(prev => ({ ...prev, page: Math.max(1, prev.page - 1) }))}
                     disabled={pagination.page === 1}
-                    className="px-3 py-1.5 text-xs border border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="px-3 py-1.5 text-xs border border-admin-border rounded-lg hover:bg-admin-surface-hover disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     Previous
                   </button>
                   <button
                     onClick={() => setPagination(prev => ({ ...prev, page: Math.min(prev.total_pages, prev.page + 1) }))}
                     disabled={pagination.page === pagination.total_pages}
-                    className="px-3 py-1.5 text-xs border border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="px-3 py-1.5 text-xs border border-admin-border rounded-lg hover:bg-admin-surface-hover disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     Next
                   </button>
@@ -375,20 +379,20 @@ export default function AdminContactsPage() {
         <div
           className={`lg:col-span-1 ${
             selectedInquiry
-              ? 'fixed inset-x-0 bottom-0 top-[52px] z-50 overflow-y-auto bg-white p-4 shadow-2xl lg:static lg:inset-auto lg:z-auto lg:overflow-visible lg:bg-transparent lg:p-0 lg:shadow-none'
+              ? 'fixed inset-x-0 bottom-0 top-[52px] z-50 overflow-y-auto bg-admin-surface p-4 shadow-2xl lg:static lg:inset-auto lg:z-auto lg:overflow-visible lg:bg-transparent lg:p-0 lg:shadow-none'
               : 'hidden lg:block'
           }`}
         >
           {selectedInquiry ? (
-            <div className="bg-white lg:rounded-lg lg:border lg:border-gray-200/60 lg:p-5 lg:shadow-sm lg:sticky lg:top-5">
+            <div className="bg-admin-surface lg:rounded-design-md lg:border lg:border-admin-border lg:p-5 lg:shadow-admin-card lg:sticky lg:top-5">
               <div className="space-y-4">
                 <div>
                   <div className="mb-2 flex items-center justify-between">
-                    <h2 className="text-lg font-bold text-gray-900">Inquiry Details</h2>
+                    <h2 className="text-lg font-bold text-slate-900">Inquiry Details</h2>
                     <button
                       type="button"
                       onClick={() => setSelectedInquiry(null)}
-                      className="-mr-1 inline-flex items-center gap-1 rounded-lg px-2 py-1 text-sm font-medium text-gray-500 hover:bg-gray-100 lg:hidden"
+                      className="-mr-1 inline-flex items-center gap-1 rounded-lg px-2 py-1 text-sm font-medium text-slate-500 hover:bg-admin-surface-hover lg:hidden"
                     >
                       목록 ✕
                     </button>
@@ -400,7 +404,7 @@ export default function AdminContactsPage() {
                     <select
                       value={selectedInquiry.status}
                       onChange={(e) => handleUpdateStatus(selectedInquiry.id, e.target.value)}
-                      className="text-xs border border-gray-300 rounded px-2 py-1"
+                      className="text-xs border border-admin-border rounded px-2 py-1"
                     >
                       <option value="new">New</option>
                       <option value="in_progress">In Progress</option>
@@ -411,12 +415,12 @@ export default function AdminContactsPage() {
                 </div>
 
                 <div>
-                  <p className="text-xs font-semibold text-gray-700 mb-1">Name</p>
-                  <p className="text-sm text-gray-900">{selectedInquiry.full_name}</p>
+                  <p className="text-xs font-semibold text-slate-700 mb-1">Name</p>
+                  <p className="text-sm text-slate-900">{selectedInquiry.full_name}</p>
                 </div>
 
                 <div>
-                  <p className="text-xs font-semibold text-gray-700 mb-1">Email</p>
+                  <p className="text-xs font-semibold text-slate-700 mb-1">Email</p>
                   <a href={`mailto:${selectedInquiry.email}`} className="text-sm text-blue-600 hover:underline">
                     {selectedInquiry.email}
                   </a>
@@ -424,55 +428,55 @@ export default function AdminContactsPage() {
 
                 {selectedInquiry.phone_whatsapp && (
                   <div>
-                    <p className="text-xs font-semibold text-gray-700 mb-1">Phone/WhatsApp</p>
-                    <p className="text-sm text-gray-900">{selectedInquiry.phone_whatsapp}</p>
+                    <p className="text-xs font-semibold text-slate-700 mb-1">Phone/WhatsApp</p>
+                    <p className="text-sm text-slate-900">{selectedInquiry.phone_whatsapp}</p>
                   </div>
                 )}
 
                 {selectedInquiry.booking_reference && (
                   <div>
-                    <p className="text-xs font-semibold text-gray-700 mb-1">Booking Reference</p>
-                    <p className="text-sm text-gray-900 font-mono">{selectedInquiry.booking_reference}</p>
+                    <p className="text-xs font-semibold text-slate-700 mb-1">Booking Reference</p>
+                    <p className="text-sm text-slate-900 font-mono">{selectedInquiry.booking_reference}</p>
                   </div>
                 )}
 
                 {selectedInquiry.tour_date && (
                   <div>
-                    <p className="text-xs font-semibold text-gray-700 mb-1">Tour Date</p>
-                    <p className="text-sm text-gray-900">{new Date(selectedInquiry.tour_date).toLocaleDateString()}</p>
+                    <p className="text-xs font-semibold text-slate-700 mb-1">Tour Date</p>
+                    <p className="text-sm text-slate-900">{new Date(selectedInquiry.tour_date).toLocaleDateString()}</p>
                   </div>
                 )}
 
                 <div>
-                  <p className="text-xs font-semibold text-gray-700 mb-1">Subject</p>
-                  <p className="text-sm text-gray-900">{selectedInquiry.subject}</p>
+                  <p className="text-xs font-semibold text-slate-700 mb-1">Subject</p>
+                  <p className="text-sm text-slate-900">{selectedInquiry.subject}</p>
                 </div>
 
                 <div>
-                  <p className="text-xs font-semibold text-gray-700 mb-1">Message</p>
-                  <div className="text-sm text-gray-900 bg-gray-50 p-3 rounded-lg whitespace-pre-wrap max-h-60 overflow-y-auto">
+                  <p className="text-xs font-semibold text-slate-700 mb-1">Message</p>
+                  <div className="text-sm text-slate-900 bg-slate-50 p-3 rounded-lg whitespace-pre-wrap max-h-60 overflow-y-auto">
                     {selectedInquiry.message}
                   </div>
                 </div>
 
                 <div>
-                  <p className="text-xs font-semibold text-gray-700 mb-1">Submitted</p>
-                  <p className="text-xs text-gray-600">{formatDate(selectedInquiry.created_at)}</p>
+                  <p className="text-xs font-semibold text-slate-700 mb-1">Submitted</p>
+                  <p className="text-xs text-slate-500">{formatDate(selectedInquiry.created_at)}</p>
                 </div>
 
                 <div>
-                  <p className="text-xs font-semibold text-gray-700 mb-2">Admin Notes</p>
+                  <p className="text-xs font-semibold text-slate-700 mb-2">Admin Notes</p>
                   <textarea
                     value={adminNotes}
                     onChange={(e) => setAdminNotes(e.target.value)}
                     rows={4}
-                    className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 resize-none"
+                    className="w-full px-3 py-2 text-base border border-admin-border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
                     placeholder="Add notes about this inquiry..."
                   />
                   <button
                     onClick={handleSaveNotes}
                     disabled={updatingNotes}
-                    className="mt-2 w-full px-4 py-2 text-sm bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 disabled:bg-gray-400 disabled:cursor-not-allowed"
+                    className="mt-2 w-full min-h-11 px-4 py-2 text-sm font-semibold bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {updatingNotes ? 'Saving...' : 'Save Notes'}
                   </button>
@@ -480,8 +484,8 @@ export default function AdminContactsPage() {
               </div>
             </div>
           ) : (
-            <div className="bg-white rounded-lg border border-gray-200/60 shadow-sm p-8 text-center">
-              <p className="text-sm text-gray-500">Select an inquiry to view details</p>
+            <div className="bg-admin-surface rounded-design-md border border-admin-border shadow-admin-card p-8 text-center">
+              <p className="text-sm text-slate-500">Select an inquiry to view details</p>
             </div>
           )}
         </div>

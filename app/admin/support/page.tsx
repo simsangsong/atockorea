@@ -9,8 +9,10 @@
  */
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
+import { Check, RefreshCw } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import { SavedViews } from "@/components/admin/SavedViews";
+import { Skeleton } from "@/components/admin/Skeleton";
 import { useUrlFilters } from "@/lib/admin/useUrlFilters";
 
 const FILTER_DEFAULTS = { status: "" };
@@ -79,7 +81,7 @@ export default function SupportInboxPage() {
       </header>
 
       {error && (
-        <div className="mb-3 bg-red-50 border border-red-200 rounded-xl p-3 text-sm text-red-800">
+        <div className="mb-3 bg-red-50 border border-red-200 rounded-design-md p-3 text-sm text-red-800">
           {error}
         </div>
       )}
@@ -102,7 +104,7 @@ export default function SupportInboxPage() {
             aria-label="새로고침"
             className="inline-flex min-h-11 items-center rounded-lg border border-admin-border px-3 text-sm text-slate-600 transition-colors hover:bg-admin-surface-hover"
           >
-            ↻
+            <RefreshCw className="size-4" />
           </button>
         </div>
         {/* U-8 saved views — bookmark the status filter (S-U2 spread). */}
@@ -114,9 +116,13 @@ export default function SupportInboxPage() {
         />
       </div>
 
-      <div className="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden">
+      <div className="bg-admin-surface border border-admin-border rounded-design-md shadow-admin-card overflow-hidden">
         {loading ? (
-          <div className="text-sm text-slate-500 py-12 text-center">loading…</div>
+          <div className="space-y-2 p-4">
+            {Array.from({ length: 6 }).map((_, i) => (
+              <Skeleton key={i} className="h-9 w-full rounded-design-sm" />
+            ))}
+          </div>
         ) : tickets.length === 0 ? (
           <div className="text-sm text-slate-500 py-12 text-center">No tickets</div>
         ) : (
@@ -138,7 +144,7 @@ export default function SupportInboxPage() {
               {tickets.map((t) => (
                 <tr
                   key={t.id}
-                  className={`border-t border-slate-100 ${t.unread_for_admin ? "font-semibold" : ""}`}
+                  className={`border-t border-admin-border ${t.unread_for_admin ? "font-semibold" : ""}`}
                 >
                   <td className="px-3 py-2">
                     <Link href={`/admin/support/${t.id}`} className="text-blue-600 hover:underline">
@@ -150,7 +156,13 @@ export default function SupportInboxPage() {
                   <td className="px-3 py-2" title={t.tour_slug ?? ""}>{t.tour_slug ?? "—"}</td>
                   <td className="px-3 py-2">{t.page_title ?? "—"}</td>
                   <td className="px-3 py-2">{t.user_locale ?? "—"}</td>
-                  <td className="px-3 py-2">{t.telegram_notified ? "✓" : "—"}</td>
+                  <td className="px-3 py-2">
+                    {t.telegram_notified ? (
+                      <Check className="size-4 text-emerald-600" aria-label="알림됨" />
+                    ) : (
+                      "—"
+                    )}
+                  </td>
                   <td className="px-3 py-2 text-slate-500">
                     {new Date(t.updated_at).toLocaleString()}
                   </td>
