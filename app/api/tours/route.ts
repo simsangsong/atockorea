@@ -634,9 +634,14 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
 
     logger.info('Tours fetched successfully', { count: transformedTours.length });
 
-    // Response is public and cheap enough to keep very fresh. Admin product
-    // edits should surface on list cards quickly, while a short edge cache
-    // still absorbs bursty browse traffic.
+    // Public, anonymous tour data — keyed entirely by the request URL (locale +
+    // filters + sort), no cookies. The previous `no-store` recomputed the full
+    // pipeline (DB read + card media + booking counts + FX + transform) on every
+    // browse hit, contradicting this block's own stated intent of "a short edge
+    // cache absorbs bursty browse traffic". Give shared caches a 30s window so
+    // repeated identical browses are served from the edge, with SWR to refresh in
+    // the background; browsers still revalidate (max-age=0). Admin edits surface
+    // within ~30s — "quickly" enough for list cards.
     return NextResponse.json(
       {
         tours: transformedTours,
@@ -646,7 +651,7 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
       },
       {
         headers: {
-          'Cache-Control': 'no-store, max-age=0',
+          'Cache-Control': 'public, max-age=0, s-maxage=30, stale-while-revalidate=60',
         },
       }
     );
