@@ -19,6 +19,18 @@ import { CANONICAL_EAST_SIGNATURE_PRODUCT_PATH } from '@/lib/tour-consumer-visib
  * silently signed out mid-session. Doing it in middleware ensures every
  * page navigation keeps the session alive without client-side polling.
  */
+/**
+ * True when the request carries a Supabase auth session cookie. `@supabase/ssr`
+ * stores the session under `sb-<project-ref>-auth-token` (chunked as `.0`, `.1`
+ * when large). Anonymous visitors — the overwhelming majority of traffic on a
+ * public tour site — have none, so there is no token to validate or rotate.
+ */
+function hasSupabaseAuthCookie(request: NextRequest): boolean {
+  return request.cookies
+    .getAll()
+    .some((c) => c.name.startsWith('sb-') && c.name.includes('-auth-token'));
+}
+
 async function refreshSupabaseSession(request: NextRequest, response: NextResponse): Promise<void> {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const anon = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
@@ -371,7 +383,13 @@ function routeRequest(request: NextRequest): NextResponse {
  */
 export async function middleware(request: NextRequest): Promise<NextResponse> {
   const response = routeRequest(request);
-  await refreshSupabaseSession(request, response);
+  // Only pay for the auth-server roundtrip when there is actually a session to
+  // refresh. Anonymous traffic (no sb-*-auth-token cookie) skips it entirely —
+  // getUser() would return null anyway, so this is behavior-neutral and removes
+  // a blocking Supabase call from every public page navigation.
+  if (hasSupabaseAuthCookie(request)) {
+    await refreshSupabaseSession(request, response);
+  }
   return response;
 }
 
