@@ -10,6 +10,10 @@
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
+import { SavedViews } from "@/components/admin/SavedViews";
+import { useUrlFilters } from "@/lib/admin/useUrlFilters";
+
+const FILTER_DEFAULTS = { status: "" };
 
 type Ticket = {
   id: number;
@@ -40,7 +44,8 @@ async function api<T>(path: string): Promise<T> {
 export default function SupportInboxPage() {
   const [tickets, setTickets] = useState<Ticket[]>([]);
   const [counts, setCounts] = useState<{ open: number; unread: number }>({ open: 0, unread: 0 });
-  const [filter, setFilter] = useState<string>("");
+  const { filters, setFilter, setFilters } = useUrlFilters(FILTER_DEFAULTS);
+  const filtersAreDefault = filters.status === "";
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -48,7 +53,9 @@ export default function SupportInboxPage() {
     setLoading(true);
     setError(null);
     try {
-      const url = filter ? `/api/admin/support/tickets?status=${filter}` : "/api/admin/support/tickets";
+      const url = filters.status
+        ? `/api/admin/support/tickets?status=${encodeURIComponent(filters.status)}`
+        : "/api/admin/support/tickets";
       const r = await api<{ tickets: Ticket[]; counts: { open: number; unread: number } }>(url);
       setTickets(r.tickets);
       setCounts(r.counts);
@@ -57,7 +64,7 @@ export default function SupportInboxPage() {
     } finally {
       setLoading(false);
     }
-  }, [filter]);
+  }, [filters.status]);
 
   useEffect(() => { load(); }, [load]);
 
@@ -77,23 +84,34 @@ export default function SupportInboxPage() {
         </div>
       )}
 
-      <div className="mb-3 flex items-center gap-2">
-        <select
-          value={filter}
-          onChange={(e) => setFilter(e.target.value)}
-          className="px-3 py-1.5 rounded-lg border border-slate-200 text-sm"
-        >
-          <option value="">All</option>
-          {["open", "admin_reading", "awaiting_admin", "awaiting_user", "resolved", "closed"].map((s) => (
-            <option key={s} value={s}>{s}</option>
-          ))}
-        </select>
-        <button
-          onClick={load}
-          className="px-3 py-1.5 rounded-lg border border-slate-200 text-sm hover:bg-slate-50"
-        >
-          ↻
-        </button>
+      <div className="mb-3 flex flex-col gap-2">
+        <div className="flex items-center gap-2">
+          <select
+            value={filters.status}
+            onChange={(e) => setFilter("status", e.target.value)}
+            aria-label="상태 필터"
+            className="min-h-11 rounded-lg border border-admin-border bg-admin-surface px-3 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            <option value="">All</option>
+            {["open", "admin_reading", "awaiting_admin", "awaiting_user", "resolved", "closed"].map((s) => (
+              <option key={s} value={s}>{s}</option>
+            ))}
+          </select>
+          <button
+            onClick={load}
+            aria-label="새로고침"
+            className="inline-flex min-h-11 items-center rounded-lg border border-admin-border px-3 text-sm text-slate-600 transition-colors hover:bg-admin-surface-hover"
+          >
+            ↻
+          </button>
+        </div>
+        {/* U-8 saved views — bookmark the status filter (S-U2 spread). */}
+        <SavedViews
+          storageKey="admin:support:saved-views"
+          currentFilters={filters}
+          isDefault={filtersAreDefault}
+          onApply={(viewFilters) => setFilters({ ...FILTER_DEFAULTS, ...viewFilters })}
+        />
       </div>
 
       <div className="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden">

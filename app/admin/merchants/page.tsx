@@ -8,6 +8,8 @@ import { Building2, CheckCircle2, Eye, Plus, RefreshCw, Search, Trash2 } from 'l
 import { supabase } from '@/lib/supabase';
 import { ConfirmSheet } from '@/components/admin/ConfirmSheet';
 import { Skeleton } from '@/components/admin/Skeleton';
+import { SavedViews } from '@/components/admin/SavedViews';
+import { useUrlFilters } from '@/lib/admin/useUrlFilters';
 import { cn } from '@/lib/utils';
 
 interface Merchant {
@@ -32,6 +34,8 @@ const STATUS_OPTIONS = [
   { value: 'suspended', label: '중지' },
   { value: 'inactive', label: '비활성' },
 ] as const;
+
+const FILTER_DEFAULTS = { status: '' };
 
 /** ConfirmSheet-backed pending action — replaces window.confirm() for both the
  *  status change and the destructive delete. */
@@ -62,14 +66,15 @@ export default function MerchantsPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
-  const [statusFilter, setStatusFilter] = useState('');
+  const { filters, setFilter, setFilters } = useUrlFilters(FILTER_DEFAULTS);
+  const filtersAreDefault = filters.status === '';
   const [pending, setPending] = useState<PendingAction | null>(null);
   const [confirming, setConfirming] = useState(false);
 
   useEffect(() => {
     fetchMerchants();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [statusFilter]);
+  }, [filters.status]);
 
   const fetchMerchants = async () => {
     try {
@@ -83,7 +88,7 @@ export default function MerchantsPage() {
       }
 
       const params = new URLSearchParams();
-      if (statusFilter) params.append('status', statusFilter);
+      if (filters.status) params.append('status', filters.status);
       if (searchQuery) params.append('search', searchQuery);
 
       const response = await fetch(`/api/admin/merchants?${params.toString()}`, {
@@ -207,8 +212,8 @@ export default function MerchantsPage() {
           </div>
           <div className="flex gap-3">
             <select
-              value={statusFilter}
-              onChange={(e) => setStatusFilter(e.target.value)}
+              value={filters.status}
+              onChange={(e) => setFilter('status', e.target.value)}
               className="min-h-11 min-w-0 flex-1 rounded-lg border border-admin-border bg-admin-surface px-3 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-500 sm:flex-none"
             >
               <option value="">전체 상태</option>
@@ -224,6 +229,16 @@ export default function MerchantsPage() {
               검색
             </button>
           </div>
+        </div>
+
+        {/* U-8 saved views — bookmark the status filter (S-U2 spread). */}
+        <div className="mt-3">
+          <SavedViews
+            storageKey="admin:merchants:saved-views"
+            currentFilters={filters}
+            isDefault={filtersAreDefault}
+            onApply={(viewFilters) => setFilters({ ...FILTER_DEFAULTS, ...viewFilters })}
+          />
         </div>
       </div>
 
