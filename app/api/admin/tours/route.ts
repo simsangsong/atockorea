@@ -176,17 +176,16 @@ export async function GET(request: NextRequest) {
     let enriched = tours ?? [];
     if (enriched.length > 0) {
       const slugs = enriched.map((t: { slug: string }) => t.slug).filter(Boolean);
+      // E1: only product_type is read from matching_profile, so project just that
+      // JSONB key (->>'' returns text) instead of pulling the full — potentially
+      // large — matching_profile blob for every tour.
       const { data: profiles } = await supabase
         .from('match_tours')
-        .select('slug, matching_profile')
+        .select('slug, product_type:matching_profile->>product_type')
         .in('slug', slugs);
       const profileMap = new Map<string, string>();
       for (const p of profiles ?? []) {
-        const mp = p?.matching_profile;
-        const productType =
-          mp && typeof mp === 'object' && !Array.isArray(mp)
-            ? (mp as Record<string, unknown>).product_type
-            : null;
+        const productType = (p as { product_type?: unknown })?.product_type;
         if (p?.slug && typeof productType === 'string') {
           profileMap.set(p.slug, productType);
         }
