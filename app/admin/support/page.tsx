@@ -14,6 +14,7 @@ import { supabase } from "@/lib/supabase";
 import { SavedViews } from "@/components/admin/SavedViews";
 import { Skeleton } from "@/components/admin/Skeleton";
 import { useUrlFilters } from "@/lib/admin/useUrlFilters";
+import { useRealtimeActivity } from "@/lib/admin/useRealtimeActivity";
 
 const FILTER_DEFAULTS = { status: "" };
 
@@ -50,6 +51,8 @@ export default function SupportInboxPage() {
   const filtersAreDefault = filters.status === "";
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  // U-1 — new escalated tickets arriving after load (realtime).
+  const realtime = useRealtimeActivity("support_tickets", { event: "INSERT" });
 
   const load = useCallback(async () => {
     setLoading(true);
@@ -74,9 +77,27 @@ export default function SupportInboxPage() {
     <div className="max-w-6xl mx-auto">
       <header className="flex items-center justify-between mb-4">
         <h1 className="text-xl font-semibold text-slate-900">Support Inbox</h1>
-        <div className="text-sm text-slate-600">
-          open: <b>{counts.open}</b> · unread:{" "}
-          <b className={counts.unread > 0 ? "text-red-600" : "text-slate-600"}>{counts.unread}</b>
+        <div className="flex items-center gap-3">
+          {realtime.newCount > 0 && (
+            <button
+              type="button"
+              onClick={() => {
+                realtime.reset();
+                load();
+              }}
+              className="inline-flex items-center gap-1.5 rounded-full bg-blue-50 px-2.5 py-1 text-xs font-semibold text-blue-700 ring-1 ring-blue-200 transition-colors hover:bg-blue-100"
+            >
+              <span className="relative flex size-1.5">
+                <span className="absolute inline-flex size-full animate-ping rounded-full bg-blue-500 opacity-75" />
+                <span className="relative inline-flex size-1.5 rounded-full bg-blue-600" />
+              </span>
+              새 티켓 {realtime.newCount}건 · 불러오기
+            </button>
+          )}
+          <div className="text-sm text-slate-600">
+            open: <b>{counts.open}</b> · unread:{" "}
+            <b className={counts.unread > 0 ? "text-red-600" : "text-slate-600"}>{counts.unread}</b>
+          </div>
         </div>
       </header>
 

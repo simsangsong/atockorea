@@ -10,6 +10,7 @@ import { BookingStatusBadge } from '@/components/admin/BookingStatusBadge';
 import { Skeleton } from '@/components/admin/Skeleton';
 import { SavedViews } from '@/components/admin/SavedViews';
 import { useUrlFilters } from '@/lib/admin/useUrlFilters';
+import { useRealtimeActivity } from '@/lib/admin/useRealtimeActivity';
 import { formatBookingPrice, type BookingCurrency } from '@/lib/format/currency';
 import { cn } from '@/lib/utils';
 
@@ -68,6 +69,8 @@ export default function OrdersPage() {
   const { filters, setFilter, setFilters } = useUrlFilters(FILTER_DEFAULTS);
   const filtersAreDefault =
     JSON.stringify(filters) === JSON.stringify(FILTER_DEFAULTS);
+  // U-1 — count new bookings arriving after load (realtime, non-disruptive).
+  const realtime = useRealtimeActivity('bookings', { event: 'INSERT' });
   const [bookings, setBookings] = useState<Booking[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -318,14 +321,32 @@ export default function OrdersPage() {
       <div className="pt-4">
         {/* Results meta + export */}
         <div className="mb-4 flex items-center justify-between gap-3">
-          <p className="text-sm text-slate-500">
-            {loading ? '불러오는 중…' : (
-              <>
-                총 <span className="font-semibold tabular-nums text-slate-900">{filtered.length}</span>건
-                {search && bookings.length !== filtered.length ? ` (전체 ${bookings.length})` : ''}
-              </>
+          <div className="flex min-w-0 items-center gap-2">
+            <p className="text-sm text-slate-500">
+              {loading ? '불러오는 중…' : (
+                <>
+                  총 <span className="font-semibold tabular-nums text-slate-900">{filtered.length}</span>건
+                  {search && bookings.length !== filtered.length ? ` (전체 ${bookings.length})` : ''}
+                </>
+              )}
+            </p>
+            {realtime.newCount > 0 && (
+              <button
+                type="button"
+                onClick={() => {
+                  realtime.reset();
+                  fetchBookings();
+                }}
+                className="inline-flex flex-shrink-0 items-center gap-1.5 rounded-full bg-blue-50 px-2.5 py-1 text-xs font-semibold text-blue-700 ring-1 ring-blue-200 transition-colors hover:bg-blue-100"
+              >
+                <span className="relative flex size-1.5">
+                  <span className="absolute inline-flex size-full animate-ping rounded-full bg-blue-500 opacity-75" />
+                  <span className="relative inline-flex size-1.5 rounded-full bg-blue-600" />
+                </span>
+                새 주문 {realtime.newCount}건 · 불러오기
+              </button>
             )}
-          </p>
+          </div>
           <button
             type="button"
             onClick={exportToExcel}
