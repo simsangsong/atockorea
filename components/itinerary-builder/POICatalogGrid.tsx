@@ -1,5 +1,6 @@
 "use client";
 
+import { useMemo } from "react";
 import { motion } from "framer-motion";
 import { Plus, Check, Clock, ImageIcon } from "lucide-react";
 import {
@@ -56,15 +57,25 @@ export default function POICatalogGrid({ pois, cart, onAdd, onRemove, onFocus, o
   const t = useTranslations("itineraryBuilder.grid");
 
   // Map poi_key → 1-indexed cart position; null when not in cart.
-  const cartPosition = new Map(cart.map((k, i) => [k, i + 1]));
+  // D4: memoize so an unrelated parent re-render doesn't rebuild the map +
+  // re-sort the whole POI list (a new array ref on every render churned the
+  // framer-motion grid). Recomputes only when pois or cart actually change.
+  const cartPosition = useMemo(
+    () => new Map(cart.map((k, i) => [k, i + 1])),
+    [cart],
+  );
 
   // Show in-cart first (preserving cart order), then by name_en.
-  const ordered = [...pois].sort((a, b) => {
-    const ai = cartPosition.get(a.poi_key) ?? Infinity;
-    const bi = cartPosition.get(b.poi_key) ?? Infinity;
-    if (ai !== bi) return ai - bi;
-    return a.name_en.localeCompare(b.name_en);
-  });
+  const ordered = useMemo(
+    () =>
+      [...pois].sort((a, b) => {
+        const ai = cartPosition.get(a.poi_key) ?? Infinity;
+        const bi = cartPosition.get(b.poi_key) ?? Infinity;
+        if (ai !== bi) return ai - bi;
+        return a.name_en.localeCompare(b.name_en);
+      }),
+    [pois, cartPosition],
+  );
 
   return (
     <section className="relative overflow-hidden border-t border-slate-200/60 px-4 py-6 md:px-6 md:py-8">
