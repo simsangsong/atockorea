@@ -15,6 +15,13 @@ import type { ParsedQueryV2 } from "./types";
 const TAXONOMY = taxonomyJson as Record<string, any>;
 const HAIKU_MODEL = "claude-haiku-4-5";
 
+// Bound the parser so a slow/hung Haiku call can't stall the itinerary builder.
+// Without this the SDK uses a 10-minute timeout × 2 retries, so a single hang
+// could block the match request for minutes. On timeout/error the caller
+// (parseQuery "auto") falls back to the deterministic rule parser. 1.5s default
+// keeps p50 well under the 8s ceiling; env-overridable to retune without a deploy.
+const HAIKU_TIMEOUT_MS = Number(process.env.HAIKU_PARSE_TIMEOUT_MS) || 1500;
+
 const PARSED_QUERY_SCHEMA_DESCRIPTION = `{
   "raw_query": "<verbatim user input>",
   "raw_query_locale": "ko" | "en" | "zh-TW" | "zh-CN" | "ja",
@@ -188,7 +195,9 @@ export async function haikuParse(query: string): Promise<ParsedQueryV2> {
   if (!apiKey) {
     throw new Error("ANTHROPIC_API_KEY env var required for Haiku parser");
   }
-  const client = new Anthropic({ apiKey });
+  // maxRetries: 0 — a timeout must fail fast to the rule-parser fallback, not
+  // trigger more multi-second retries. timeout caps the single attempt.
+  const client = new Anthropic({ apiKey, maxRetries: 0, timeout: HAIKU_TIMEOUT_MS });
 
   const t0 = Date.now();
   const resp = await client.messages.create({
