@@ -15,8 +15,12 @@
 
 import { NextResponse } from "next/server";
 
-export const dynamic = "force-dynamic";
-export const revalidate = 0;
+// No segment cache config: the upstream Firebase reads use `cache: "no-store"`,
+// which already makes this route dynamic, so the prior `force-dynamic` +
+// `revalidate = 0` were redundant — and `revalidate = 0` directly contradicted
+// the 60s `Cache-Control` this handler sets on its own response. The response
+// header is now the single source of truth: a 60s shared-cache window (with SWR)
+// absorbs bursty status polling while keeping the live show status fresh.
 
 const STATUS_DB = "https://haenyeo-default-rtdb.asia-southeast1.firebasedatabase.app/status.json";
 const NOTICE_DB = "https://haenyeo-default-rtdb.asia-southeast1.firebasedatabase.app/notice.json";
