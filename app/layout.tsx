@@ -41,6 +41,15 @@ export default async function RootLayout({
   const websiteStructuredData = generateStructuredData('WebSite', {});
   const jar = await cookies();
   const htmlLang = rootHtmlLangFromNextLocaleCookie(jar.get("NEXT_LOCALE")?.value);
+  // Origin of the Supabase project — first fetch target on nearly every page, so warm
+  // DNS + TLS during head parse to shave ~300ms off cold visits (C2).
+  const supabaseOrigin = (() => {
+    try {
+      return new URL(process.env.NEXT_PUBLIC_SUPABASE_URL ?? "").origin || null;
+    } catch {
+      return null;
+    }
+  })();
 
   return (
     <html lang={htmlLang} className="font-sans" data-scroll-behavior="smooth" suppressHydrationWarning>
@@ -49,6 +58,10 @@ export default async function RootLayout({
         <link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="" />
         <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Supabase project origin — warms DNS + TLS before the first data fetch (C2). */}
+        {supabaseOrigin && (
+          <link rel="preconnect" href={supabaseOrigin} crossOrigin="anonymous" />
+        )}
         {/*
          * Pretendard (Korean) — moved out of globals.css @import to remove the CSS-level
          * waterfall. The CSS itself is ~3 KB and uses unicode-range to fetch woff2 only
