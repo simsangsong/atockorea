@@ -8,12 +8,13 @@ import { z } from "zod";
 import { requireAdmin, AdminAuthFailure, adminAuthJsonResponse } from "@/lib/auth";
 import { createServerClient } from "@/lib/supabase";
 import { syncQaPairToIndex } from "@/lib/rag/qa-index";
+import { QA_REVIEW_ACTIONS, resolveReviewStatus } from "@/lib/admin/qa-review";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 const patchBody = z.object({
-  action: z.enum(["true", "false", "needs_edit", "approve", "reject", "reset"]),
+  action: z.enum(QA_REVIEW_ACTIONS),
   answer: z.string().max(8000).optional(),
   question: z.string().max(2000).optional(),
   category: z.string().optional(),
@@ -42,16 +43,9 @@ export async function PATCH(req: NextRequest, { params }: RouteParams) {
       .maybeSingle();
     if (!existing) return NextResponse.json({ error: "not_found" }, { status: 404 });
 
-    const STATUS_MAP: Record<string, { review_status: string; is_active: boolean }> = {
-      true: { review_status: "approved", is_active: true },
-      false: { review_status: "rejected", is_active: false },
-      needs_edit: { review_status: "needs_edit", is_active: false },
-      approve: { review_status: "approved", is_active: true },
-      reject: { review_status: "rejected", is_active: false },
-      reset: { review_status: "draft", is_active: false },
-    };
+    const statusPatch = resolveReviewStatus(parsed.data.action);
     const update: Record<string, unknown> = {
-      ...STATUS_MAP[parsed.data.action],
+      ...statusPatch,
       reviewed_at: new Date().toISOString(),
       reviewed_by: adminUser.id,
     };
@@ -83,7 +77,7 @@ export async function PATCH(req: NextRequest, { params }: RouteParams) {
       console.error("[PATCH /api/admin/qa-pairs/[id]] RAG index sync error:", (indexErr as Error).message);
     }
 
-    return NextResponse.json({ ok: true, status: STATUS_MAP[parsed.data.action], indexed });
+    return NextResponse.json({ ok: true, status: statusPatch, indexed });
   } catch (e) {
     if (e instanceof AdminAuthFailure) return adminAuthJsonResponse(e);
     console.error("[PATCH /api/admin/qa-pairs/[id]] error:", e);

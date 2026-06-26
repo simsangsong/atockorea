@@ -11,6 +11,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { requireAdmin, AdminAuthFailure, adminAuthJsonResponse } from "@/lib/auth";
 import { createServerClient } from "@/lib/supabase";
+import { syncQaPairToIndex } from "@/lib/rag/qa-index";
+import { QA_REVIEW_ACTIONS, parseBulkIds, resolveReviewStatus } from "@/lib/admin/qa-review";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -70,6 +72,63 @@ const createBody = z.object({
   source_message_id: z.number().int().optional(),
   source_ticket_id: z.number().int().optional(),
 });
+
+const bulkBody = z.object({
+  ids: z.array(z.number()),
+  action: z.enum(QA_REVIEW_ACTIONS),
+});
+
+/**
+ * PATCH /api/admin/qa-pairs — bulk review (U-7). Body: { ids:number[], action }.
+ * One authoritative status update for every id, then a per-id RAG index sync
+ * (approve -> embed, otherwise remove). Index sync is non-fatal and sequential
+ * (avoids an embedding burst); the status update is the source of truth, so a
+ * later `rag:index` reconciles anything that fails here.
+ */
+export async function PATCH(req: NextRequest) {
+  try {
+    const adminUser = await requireAdmin(req);
+
+    const json = await req.json().catch(() => null);
+    const parsed = bulkBody.safeParse(json);
+    if (!parsed.success) return NextResponse.json({ error: "invalid_body" }, { status: 400 });
+
+    const { ids, error: idError } = parseBulkIds(parsed.data.ids);
+    if (idError) return NextResponse.json({ error: idError }, { status: 400 });
+
+    const sb = createServerClient();
+    const statusPatch = resolveReviewStatus(parsed.data.action);
+    const { error } = await sb
+      .from("qa_pairs")
+      .update({
+        ...statusPatch,
+        reviewed_at: new Date().toISOString(),
+        reviewed_by: adminUser.id,
+      })
+      .in("id", ids);
+    if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+
+    let indexed = 0;
+    let removed = 0;
+    let failed = 0;
+    for (const id of ids) {
+      try {
+        const result = await syncQaPairToIndex(sb, id);
+        if (result === "indexed") indexed += 1;
+        else removed += 1;
+      } catch (indexErr) {
+        failed += 1;
+        console.error("[PATCH /api/admin/qa-pairs] RAG index sync error:", (indexErr as Error).message);
+      }
+    }
+
+    return NextResponse.json({ ok: true, updated: ids.length, indexed, removed, failed });
+  } catch (e) {
+    if (e instanceof AdminAuthFailure) return adminAuthJsonResponse(e);
+    console.error("[PATCH /api/admin/qa-pairs] error:", e);
+    return NextResponse.json({ error: "internal_error" }, { status: 500 });
+  }
+}
 
 export async function POST(req: NextRequest) {
   try {
