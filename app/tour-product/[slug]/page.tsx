@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import ReactDOM from "react-dom";
 
 import { buildTourProductViewModelFromFullPageJson } from "@/components/product-tour-static/_shared/buildTourProductViewModelFromJson";
 import { coerceSeedDateYmd, coerceSeedLanguage } from "@/components/product-tour-static/_shared/bookingSeedParams";
@@ -181,6 +182,15 @@ export default async function RegisteredTourProductPage({
   }
 
   const checkout = await checkoutPromise;
+
+  // C4: the hero renders as a CSS background (parallax slides), which the browser
+  // can't discover until CSS parses — so it's a late LCP on the highest-traffic
+  // page. Preload the first slide (hero.imageUrl) at high priority so the fetch
+  // starts during HTML parse. Hint only; no layout/visual change.
+  const heroImageUrl = viewModel.hero?.imageUrl?.trim();
+  if (heroImageUrl) {
+    ReactDOM.preload(heroImageUrl, { as: "image", fetchPriority: "high" });
+  }
 
   const jsonLdScripts = tourProductJsonLdScripts(viewModel, slug);
 
