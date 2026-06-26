@@ -1,8 +1,4 @@
-'use client';
-
-import { useEffect } from 'react';
-import { useParams, useRouter } from 'next/navigation';
-import Link from 'next/link';
+import { notFound } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import BottomNav from '@/components/BottomNav';
@@ -19,45 +15,23 @@ function toI18nLocale(segment: string): 'ko' | 'zh' | 'zh-TW' | 'ja' | 'es' {
   return segment as 'ko' | 'zh' | 'ja' | 'es';
 }
 
-export default function LocaleHomePage() {
-  const params = useParams();
-  const router = useRouter();
-  const locale = params?.locale as string | undefined;
+/**
+ * A1: this page was `'use client'`, so /ko /ja /zh-CN /zh-TW /es each shipped the
+ * whole page module — plus its locale validation — as client JS. It's now a
+ * server component: validation runs on the server and the only client boundary
+ * is the thin LocaleHomeClient that syncs the i18n locale. Header, HomeMainBody,
+ * Footer, etc. stay client components and hydrate at their own boundaries exactly
+ * as before. The `/en → /` redirect now lives in middleware (a routing concern),
+ * so `en` never reaches here; a stray one falls through to notFound().
+ */
+export default async function LocaleHomePage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
 
-  useEffect(() => {
-    if (locale === 'en') {
-      router.replace('/');
-    }
-  }, [locale, router]);
-
-  if (!locale) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
-        <p className="text-gray-600">Loading...</p>
-      </div>
-    );
-  }
-
-  if (locale === 'en') {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
-        <p className="text-gray-500">Redirecting...</p>
-      </div>
-    );
-  }
-
-  if (!SUPPORTED_LOCALE_ROUTES.includes(locale)) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
-        <div className="text-center">
-          <p className="text-gray-600 mb-4">Locale not found</p>
-          <Link href="/" className="text-blue-600 hover:underline">
-            Go home
-          </Link>
-        </div>
-      </div>
-    );
-  }
+  if (!SUPPORTED_LOCALE_ROUTES.includes(locale)) notFound();
 
   const i18nLocale = toI18nLocale(locale);
 
