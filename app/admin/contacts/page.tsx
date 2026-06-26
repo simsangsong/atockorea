@@ -7,6 +7,7 @@ import { supabase } from '@/lib/supabase';
 import { SavedViews } from '@/components/admin/SavedViews';
 import { Skeleton } from '@/components/admin/Skeleton';
 import { useUrlFilters } from '@/lib/admin/useUrlFilters';
+import { useRealtimeActivity } from '@/lib/admin/useRealtimeActivity';
 
 const FILTER_DEFAULTS = { status: 'all', is_read: 'all' };
 
@@ -47,6 +48,8 @@ export default function AdminContactsPage() {
   // Reset to page 1 whenever a filter or the search term changes so we never
   // land on a now-empty page.
   const resetPage = () => setPagination((prev) => ({ ...prev, page: 1 }));
+  // U-1 — new contact inquiries arriving after load (realtime).
+  const realtime = useRealtimeActivity('contact_inquiries', { event: 'INSERT' });
 
   useEffect(() => {
     fetchInquiries();
@@ -232,7 +235,26 @@ export default function AdminContactsPage() {
   return (
     <div className="space-y-5">
       <div>
-        <h1 className="text-xl font-semibold text-slate-900">문의 관리</h1>
+        <div className="flex items-center gap-3">
+          <h1 className="text-xl font-semibold text-slate-900">문의 관리</h1>
+          {realtime.newCount > 0 && (
+            <button
+              type="button"
+              onClick={() => {
+                realtime.reset();
+                resetPage();
+                fetchInquiries();
+              }}
+              className="inline-flex items-center gap-1.5 rounded-full bg-blue-50 px-2.5 py-1 text-xs font-semibold text-blue-700 ring-1 ring-blue-200 transition-colors hover:bg-blue-100"
+            >
+              <span className="relative flex size-1.5">
+                <span className="absolute inline-flex size-full animate-ping rounded-full bg-blue-500 opacity-75" />
+                <span className="relative inline-flex size-1.5 rounded-full bg-blue-600" />
+              </span>
+              새 문의 {realtime.newCount}건 · 불러오기
+            </button>
+          )}
+        </div>
         <p className="text-sm text-slate-500 mt-1">
           사이트 Contact 폼 제출 건과 support@atockorea.com 으로 수신된 메일이 여기에 표시됩니다. Resend 수신 메일(MX) 및 웹훅이 설정되어 있어야 합니다.
         </p>
