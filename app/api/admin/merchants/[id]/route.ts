@@ -201,17 +201,18 @@ export async function DELETE(
       );
     }
 
-    // Get user_id before deletion
+    // Get user_id before soft-deleting
     const { data: merchant } = await supabase
       .from('merchants')
       .select('user_id')
       .eq('id', merchantId)
       .single();
 
-    // Delete merchant (cascade will handle related data)
+    // U-6: soft-delete (reversible). The row + related data are preserved so a
+    // restore can fully undo this; the merchant just disappears from the list.
     const { error } = await supabase
       .from('merchants')
-      .delete()
+      .update({ deleted_at: new Date().toISOString() })
       .eq('id', merchantId);
 
     if (error) {
@@ -222,7 +223,7 @@ export async function DELETE(
       );
     }
 
-    // Update user role back to customer
+    // Demote the linked user back to customer (restore re-promotes).
     if (merchant?.user_id) {
       await supabase
         .from('user_profiles')

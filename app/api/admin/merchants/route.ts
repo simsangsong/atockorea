@@ -22,6 +22,7 @@ export async function GET(req: NextRequest) {
     let query = supabase
       .from('merchants')
       .select('*')
+      .is('deleted_at', null) // U-6: hide soft-deleted merchants from the list
       .order('created_at', { ascending: false });
 
     if (status) {
