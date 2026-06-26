@@ -8,6 +8,7 @@ import { Search, X, Download, ShoppingCart } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import { BookingStatusBadge } from '@/components/admin/BookingStatusBadge';
 import { Skeleton } from '@/components/admin/Skeleton';
+import { ConfirmSheet } from '@/components/admin/ConfirmSheet';
 import { SavedViews } from '@/components/admin/SavedViews';
 import { useUrlFilters } from '@/lib/admin/useUrlFilters';
 import { useRealtimeActivity } from '@/lib/admin/useRealtimeActivity';
@@ -71,6 +72,10 @@ export default function OrdersPage() {
     JSON.stringify(filters) === JSON.stringify(FILTER_DEFAULTS);
   // U-1 — count new bookings arriving after load (realtime, non-disruptive).
   const realtime = useRealtimeActivity('bookings', { event: 'INSERT' });
+  // U-7 — bulk status change (confirmed / completed only; state-machine gated).
+  const [selected, setSelected] = useState<Set<string>>(new Set());
+  const [bulkPending, setBulkPending] = useState<'confirmed' | 'completed' | null>(null);
+  const [bulkBusy, setBulkBusy] = useState(false);
   const [bookings, setBookings] = useState<Booking[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -114,6 +119,7 @@ export default function OrdersPage() {
 
       const data = await response.json();
       setBookings(data.orders || []);
+      setSelected(new Set());
     } catch (err: unknown) {
       const message = err instanceof Error ? err.message : '알 수 없는 오류';
       console.error('Error fetching orders:', err);
@@ -178,6 +184,50 @@ export default function OrdersPage() {
     b.final_price != null
       ? formatBookingPrice(parseFloat(String(b.final_price)), b.currency ?? 'usd')
       : '—';
+
+  // U-7 bulk selection helpers (operate over the filtered set).
+  const allSelected = filtered.length > 0 && filtered.every((b) => selected.has(b.id));
+  const toggleAll = () =>
+    setSelected(allSelected ? new Set() : new Set(filtered.map((b) => b.id)));
+  const toggleSelect = (id: string) =>
+    setSelected((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+
+  const runBulk = async () => {
+    if (!bulkPending || selected.size === 0) return;
+    setBulkBusy(true);
+    try {
+      const { data: { session } } = (await supabase?.auth.getSession()) || { data: { session: null } };
+      if (!session) {
+        toast.error('로그인이 필요합니다');
+        return;
+      }
+      const res = await fetch('/api/admin/orders', {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${session.access_token}`,
+        },
+        credentials: 'include',
+        body: JSON.stringify({ ids: Array.from(selected), status: bulkPending }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || '일괄 변경에 실패했습니다');
+      const label = bulkPending === 'confirmed' ? '확정' : '완료';
+      toast.success(`${data.updated}건 ${label}${data.skipped ? ` (건너뜀 ${data.skipped})` : ''}`);
+      setBulkPending(null);
+      setSelected(new Set());
+      fetchBookings();
+    } catch (err: any) {
+      toast.error(err.message);
+    } finally {
+      setBulkBusy(false);
+    }
+  };
 
   const exportToExcel = () => {
     setExporting(true);
@@ -322,6 +372,18 @@ export default function OrdersPage() {
         {/* Results meta + export */}
         <div className="mb-4 flex items-center justify-between gap-3">
           <div className="flex min-w-0 items-center gap-2">
+            {!loading && filtered.length > 0 && (
+              <label className="flex flex-shrink-0 items-center gap-1.5 text-sm text-slate-600">
+                <input
+                  type="checkbox"
+                  checked={allSelected}
+                  onChange={toggleAll}
+                  aria-label="전체 선택"
+                  className="size-4 rounded border-admin-border"
+                />
+                전체
+              </label>
+            )}
             <p className="text-sm text-slate-500">
               {loading ? '불러오는 중…' : (
                 <>
@@ -399,6 +461,7 @@ export default function OrdersPage() {
                     <table className="w-full">
                       <thead className="border-b border-admin-border bg-slate-50">
                         <tr>
+                          <th className="w-px px-5 py-3" />
                           {['주문 ID', '투어', '고객', '날짜', '인원', '픽업', '금액', '상태', ''].map((h, i) => (
                             <th
                               key={i}
@@ -415,6 +478,15 @@ export default function OrdersPage() {
                       <tbody className="divide-y divide-admin-border">
                         {items.map((booking) => (
                           <tr key={booking.id} className="transition-colors hover:bg-admin-surface-hover">
+                            <td className="px-5 py-4">
+                              <input
+                                type="checkbox"
+                                checked={selected.has(booking.id)}
+                                onChange={() => toggleSelect(booking.id)}
+                                aria-label={`주문 ${booking.id.substring(0, 8)} 선택`}
+                                className="size-4 rounded border-admin-border"
+                              />
+                            </td>
                             <td className="whitespace-nowrap px-5 py-4 font-mono text-xs text-slate-500">{booking.id.substring(0, 8)}…</td>
                             <td className="px-5 py-4">
                               {booking.source === 'itinerary_builder' ? (
@@ -466,10 +538,17 @@ export default function OrdersPage() {
                 {/* Mobile: tap-through cards. */}
                 <div className="space-y-2.5 md:hidden">
                   {items.map((booking) => (
+                    <div key={booking.id} className="flex items-start gap-2">
+                      <input
+                        type="checkbox"
+                        checked={selected.has(booking.id)}
+                        onChange={() => toggleSelect(booking.id)}
+                        aria-label={`주문 ${booking.id.substring(0, 8)} 선택`}
+                        className="mt-4 size-4 flex-shrink-0 rounded border-admin-border"
+                      />
                     <Link
-                      key={booking.id}
                       href={`/admin/orders/${booking.id}`}
-                      className="block rounded-design-md border border-admin-border bg-admin-surface p-4 shadow-admin-card transition-colors active:bg-admin-surface-hover"
+                      className="block flex-1 rounded-design-md border border-admin-border bg-admin-surface p-4 shadow-admin-card transition-colors active:bg-admin-surface-hover"
                     >
                       <div className="flex items-start justify-between gap-3">
                         <div className="min-w-0">
@@ -511,6 +590,7 @@ export default function OrdersPage() {
                         </span>
                       </div>
                     </Link>
+                    </div>
                   ))}
                 </div>
               </div>
@@ -518,6 +598,46 @@ export default function OrdersPage() {
           </div>
         )}
       </div>
+
+      {/* U-7 — sticky bulk action bar. Sits above the fixed mobile bottom nav. */}
+      {selected.size > 0 && (
+        <div className="sticky bottom-16 z-20 mt-3 flex items-center justify-between gap-3 rounded-design-md border border-admin-border bg-admin-surface/95 px-4 py-3 shadow-admin-float backdrop-blur md:bottom-0">
+          <span className="text-sm font-medium text-slate-700">{selected.size}건 선택</span>
+          <div className="flex gap-2">
+            <button
+              type="button"
+              onClick={() => setBulkPending('confirmed')}
+              className="inline-flex min-h-11 items-center rounded-lg border border-admin-border px-4 text-sm font-semibold text-slate-700 hover:bg-admin-surface-hover"
+            >
+              확정
+            </button>
+            <button
+              type="button"
+              onClick={() => setBulkPending('completed')}
+              className="inline-flex min-h-11 items-center rounded-lg bg-blue-600 px-4 text-sm font-semibold text-white hover:bg-blue-700"
+            >
+              완료
+            </button>
+          </div>
+        </div>
+      )}
+
+      <ConfirmSheet
+        open={bulkPending !== null}
+        onOpenChange={(open) => {
+          if (!open) setBulkPending(null);
+        }}
+        title={bulkPending === 'confirmed' ? '일괄 확정' : '일괄 완료'}
+        subtitle={
+          bulkPending
+            ? `${selected.size}건을 '${bulkPending === 'confirmed' ? '확정' : '완료'}'로 변경합니다.`
+            : undefined
+        }
+        note="결제(카드 청구)에는 영향이 없습니다. 전환 불가한 건(취소·완료 등)은 자동으로 건너뜁니다."
+        confirmLabel={bulkPending === 'confirmed' ? '확정' : '완료'}
+        confirming={bulkBusy}
+        onConfirm={runBulk}
+      />
     </div>
   );
 }
