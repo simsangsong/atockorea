@@ -116,6 +116,28 @@ export default function MerchantsPage() {
     }
   };
 
+  const restoreMerchant = async (merchantId: string) => {
+    try {
+      const { data: { session } } = await supabase?.auth.getSession() || { data: { session: null } };
+      if (!session) {
+        toast.error('로그인이 필요합니다');
+        return;
+      }
+      const response = await fetch(`/api/admin/merchants/${merchantId}/restore`, {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${session.access_token}` },
+      });
+      if (!response.ok) {
+        const data = await response.json().catch(() => null);
+        throw new Error(data?.error || '복구하지 못했습니다');
+      }
+      toast.success('업체를 복구했습니다');
+      fetchMerchants();
+    } catch (err: unknown) {
+      toast.error(err instanceof Error ? err.message : '복구 실패');
+    }
+  };
+
   const runPending = async () => {
     if (!pending) return;
     setConfirming(true);
@@ -149,7 +171,13 @@ export default function MerchantsPage() {
           const data = await response.json().catch(() => null);
           throw new Error(data?.error || '업체를 삭제하지 못했습니다');
         }
-        toast.success('업체를 삭제했습니다');
+        // U-6: soft-deleted — offer an immediate undo (restore).
+        const restoreId = pending.merchant.id;
+        const restoreName = pending.merchant.company_name;
+        toast.success(`'${restoreName}' 업체를 삭제했습니다`, {
+          duration: 10000,
+          action: { label: '실행취소', onClick: () => restoreMerchant(restoreId) },
+        });
       }
 
       setPending(null);
@@ -425,7 +453,7 @@ export default function MerchantsPage() {
               ? `'${pending.merchant.company_name}' 상태를 '${statusLabel(pending.newStatus)}'(으)로 변경합니다.`
               : undefined
         }
-        note={pending?.kind === 'delete' ? '이 작업은 되돌릴 수 없습니다.' : undefined}
+        note={pending?.kind === 'delete' ? '삭제 후 안내 토스트에서 바로 실행취소할 수 있습니다.' : undefined}
         noteTone="danger"
         destructive={pending?.kind === 'delete'}
         confirmLabel={pending?.kind === 'delete' ? '삭제' : '변경'}
