@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import type { TourProductCardMediaMap } from "@/lib/tour-product/cardMediaTypes";
 
 const EMPTY_MEDIA: TourProductCardMediaMap = {};
@@ -38,14 +38,22 @@ export function useTourProductCardMedia(
   const normalizedSlugs = useMemo(() => normalizeSlugs(slugs), [slugs]);
   const slugKey = normalizedSlugs.join(",");
   const requestKey = `${locale}|${slugKey}`;
+  const seeded = initialMediaBySlug != null && Object.keys(initialMediaBySlug).length > 0;
   const [state, setState] = useState<MediaState | null>(() =>
-    initialMediaBySlug && Object.keys(initialMediaBySlug).length > 0
-      ? { key: requestKey, media: initialMediaBySlug }
-      : null,
+    seeded ? { key: requestKey, media: initialMediaBySlug as TourProductCardMediaMap } : null,
   );
+  // K1: the server pre-resolved media for this exact (slugs, locale) key via the
+  // SAME loader the API route uses, so the on-mount no-store fetch would return
+  // byte-identical data — skip it once. The guard is consumed so any later key
+  // change (scroll pagination / locale switch) still fetches fresh.
+  const skipKeyRef = useRef<string | null>(seeded ? requestKey : null);
 
   useEffect(() => {
     if (!slugKey) return;
+    if (skipKeyRef.current === requestKey) {
+      skipKeyRef.current = null;
+      return;
+    }
 
     const controller = new AbortController();
     const params = new URLSearchParams({
