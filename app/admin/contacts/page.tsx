@@ -2,7 +2,12 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { toast } from 'sonner';
 import { supabase } from '@/lib/supabase';
+import { SavedViews } from '@/components/admin/SavedViews';
+import { useUrlFilters } from '@/lib/admin/useUrlFilters';
+
+const FILTER_DEFAULTS = { status: 'all', is_read: 'all' };
 
 interface ContactInquiry {
   id: string;
@@ -26,11 +31,11 @@ export default function AdminContactsPage() {
   const [selectedInquiry, setSelectedInquiry] = useState<ContactInquiry | null>(null);
   const [adminNotes, setAdminNotes] = useState('');
   const [updatingNotes, setUpdatingNotes] = useState(false);
-  const [filters, setFilters] = useState({
-    status: 'all',
-    is_read: 'all',
-    search: '',
-  });
+  // status/is_read persist in the URL (S-U2); search stays local to avoid a
+  // history entry per keystroke (mirrors the orders list).
+  const { filters, setFilter, setFilters } = useUrlFilters(FILTER_DEFAULTS);
+  const filtersAreDefault = filters.status === 'all' && filters.is_read === 'all';
+  const [search, setSearch] = useState('');
   const [pagination, setPagination] = useState({
     page: 1,
     limit: 20,
@@ -38,9 +43,14 @@ export default function AdminContactsPage() {
     total_pages: 0,
   });
 
+  // Reset to page 1 whenever a filter or the search term changes so we never
+  // land on a now-empty page.
+  const resetPage = () => setPagination((prev) => ({ ...prev, page: 1 }));
+
   useEffect(() => {
     fetchInquiries();
-  }, [filters, pagination.page]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filters.status, filters.is_read, search, pagination.page]);
 
   const fetchInquiries = async () => {
     try {
@@ -57,7 +67,7 @@ export default function AdminContactsPage() {
         limit: pagination.limit.toString(),
         ...(filters.status !== 'all' && { status: filters.status }),
         ...(filters.is_read !== 'all' && { is_read: filters.is_read }),
-        ...(filters.search && { search: filters.search }),
+        ...(search && { search }),
       });
 
       const response = await fetch(`/api/admin/contacts?${params}`, {
@@ -68,7 +78,7 @@ export default function AdminContactsPage() {
 
       if (!response.ok) {
         if (response.status === 403) {
-          alert('Admin access required');
+          toast.error('관리자 권한이 필요합니다');
           router.push('/');
           return;
         }
@@ -168,11 +178,11 @@ export default function AdminContactsPage() {
           i.id === selectedInquiry.id ? { ...i, admin_notes: adminNotes } : i
         ));
         setSelectedInquiry(prev => prev ? { ...prev, admin_notes: adminNotes } : null);
-        alert('Notes saved successfully');
+        toast.success('메모를 저장했습니다');
       }
     } catch (error) {
       console.error('Error saving notes:', error);
-      alert('Failed to save notes');
+      toast.error('메모 저장에 실패했습니다');
     } finally {
       setUpdatingNotes(false);
     }
@@ -228,14 +238,17 @@ export default function AdminContactsPage() {
         {/* Inquiry List */}
         <div className="lg:col-span-2 space-y-4">
           {/* Filters */}
-          <div className="bg-white rounded-lg border border-gray-200/60 shadow-sm p-4">
+          <div className="bg-admin-surface rounded-design-md border border-admin-border shadow-admin-card p-4">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div>
-                <label className="block text-xs font-medium text-gray-700 mb-1.5">Status</label>
+                <label className="block text-xs font-medium text-slate-700 mb-1.5">Status</label>
                 <select
                   value={filters.status}
-                  onChange={(e) => setFilters(prev => ({ ...prev, status: e.target.value }))}
-                  className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                  onChange={(e) => {
+                    setFilter('status', e.target.value);
+                    resetPage();
+                  }}
+                  className="w-full min-h-11 px-3 py-2 text-base border border-admin-border bg-admin-surface rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 >
                   <option value="all">All Status</option>
                   <option value="new">New</option>
@@ -246,11 +259,14 @@ export default function AdminContactsPage() {
               </div>
 
               <div>
-                <label className="block text-xs font-medium text-gray-700 mb-1.5">Read Status</label>
+                <label className="block text-xs font-medium text-slate-700 mb-1.5">Read Status</label>
                 <select
                   value={filters.is_read}
-                  onChange={(e) => setFilters(prev => ({ ...prev, is_read: e.target.value }))}
-                  className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                  onChange={(e) => {
+                    setFilter('is_read', e.target.value);
+                    resetPage();
+                  }}
+                  className="w-full min-h-11 px-3 py-2 text-base border border-admin-border bg-admin-surface rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 >
                   <option value="all">All</option>
                   <option value="false">Unread</option>
@@ -259,15 +275,31 @@ export default function AdminContactsPage() {
               </div>
 
               <div>
-                <label className="block text-xs font-medium text-gray-700 mb-1.5">Search</label>
+                <label className="block text-xs font-medium text-slate-700 mb-1.5">Search</label>
                 <input
                   type="text"
                   placeholder="Search by name, email..."
-                  value={filters.search}
-                  onChange={(e) => setFilters(prev => ({ ...prev, search: e.target.value }))}
-                  className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                  value={search}
+                  onChange={(e) => {
+                    setSearch(e.target.value);
+                    resetPage();
+                  }}
+                  className="w-full min-h-11 px-3 py-2 text-base border border-admin-border bg-admin-surface rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
+            </div>
+
+            {/* U-8 saved views — bookmark status + read-status (S-U2 spread). */}
+            <div className="mt-3">
+              <SavedViews
+                storageKey="admin:contacts:saved-views"
+                currentFilters={filters}
+                isDefault={filtersAreDefault}
+                onApply={(viewFilters) => {
+                  setFilters({ ...FILTER_DEFAULTS, ...viewFilters });
+                  resetPage();
+                }}
+              />
             </div>
           </div>
 
