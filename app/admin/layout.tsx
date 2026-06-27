@@ -23,6 +23,7 @@ import {
   Package,
   Settings,
   Sparkles,
+  Star,
   X,
 } from 'lucide-react';
 import Logo from '@/components/Logo';
@@ -42,6 +43,7 @@ const adminMenuItems: AdminMenuItem[] = [
   { path: '/admin', label: '대시보드', icon: LayoutDashboard },
   { path: '/admin/merchants', label: '업체 관리', icon: Building2 },
   { path: '/admin/products', label: '상품 관리', icon: Package },
+  { path: '/admin/external-reviews', label: '외부 리뷰', icon: Star, badge: 'NEW' },
   { path: '/admin/orders', label: '주문 관리', icon: ClipboardList },
   { path: '/admin/inbox', label: '수신함', icon: Inbox, badge: 'NEW' },
   { path: '/admin/contacts', label: '문의 관리', icon: MessageSquareText },
@@ -76,6 +78,7 @@ const pathToBreadcrumb: Record<string, string> = {
   '/admin/merchants': '업체 관리',
   '/admin/merchants/create': '업체 추가',
   '/admin/products': '상품 관리',
+  '/admin/external-reviews': '외부 리뷰',
   '/admin/orders': '주문 관리',
   '/admin/inbox': '수신함',
   '/admin/contacts': '문의 관리',
