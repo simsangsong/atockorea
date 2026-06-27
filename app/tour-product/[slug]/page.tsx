@@ -18,6 +18,7 @@ import { tourProductJsonLdScripts } from "@/lib/seo/tourProductJsonLd";
 import { createAnonServerClient } from "@/lib/supabase";
 import { getTourProductCheckoutContext } from "@/lib/tour-product/eastSignatureCheckoutContext";
 import { loadTourProductViewModelBySlugFromSupabase } from "@/lib/tour-product/loadTourProductPage";
+import { loadTourExternalReviews } from "@/lib/tour-product/externalReviews";
 import { resolveTourProductDbLocale } from "@/lib/tour-product/resolveTourProductDbLocale";
 import { isTourSlugBlockedFromConsumerSurfaces } from "@/lib/tour-consumer-visibility";
 
@@ -121,6 +122,11 @@ export default async function RegisteredTourProductPage({
     return null;
   });
 
+  // Third-party platform review aggregates depend only on `slug` — kick off the
+  // (public-read) fetch concurrently with the view-model resolution. Errors
+  // degrade to [] inside the loader, so the block simply renders nothing.
+  const externalReviewsPromise = loadTourExternalReviews(slug);
+
   // Resolution order: Supabase locale → static JSON locale → Supabase EN fallback.
   // Falling through to the static JSON for the requested locale before trying
   // Supabase EN keeps the localized bundle from being silently replaced by EN
@@ -182,6 +188,7 @@ export default async function RegisteredTourProductPage({
   }
 
   const checkout = await checkoutPromise;
+  const externalReviews = await externalReviewsPromise;
 
   // C4: the hero renders as a CSS background (parallax slides), which the browser
   // can't discover until CSS parses — so it's a late LCP on the highest-traffic
@@ -223,6 +230,7 @@ export default async function RegisteredTourProductPage({
         initialGuests={initialGuests}
         seedDateYmd={seedDateYmd}
         seedLanguage={seedLanguage}
+        externalReviews={externalReviews}
       />
     </>
   );
