@@ -30,6 +30,8 @@ import { TourProductAiAssistantWidget } from "@/components/product-tour-static/_
 import { HaenyeoStatusButton } from "@/components/product-tour-static/_shared/HaenyeoStatusButton";
 import { PlatformCompareBlock } from "@/components/tour/PlatformCompareBlock";
 import { getTourCompareLinks } from "@/lib/tour/platform-compare-registry";
+import { TourExternalReviewsSection } from "@/components/product-tour-static/_shared/TourExternalReviewsSection";
+import type { ExternalReviewAggregate } from "@/lib/tour-product/externalReviews";
 import { pickAssistantQuickChipsFromViewModel } from "@/lib/tour-product/assistantQuickChips";
 import { useTranslations } from "@/lib/i18n";
 
@@ -62,6 +64,12 @@ export type TourProductDetailClientProps = {
    */
   seedDateYmd?: string;
   seedLanguage?: PreferredLanguage;
+  /**
+   * Third-party platform review aggregates (TripAdvisor / Viator / GetYourGuide
+   * / Klook) for this tour — rating + count + outbound link, attributed to the
+   * source. Empty/absent → the external-reviews block renders nothing.
+   */
+  externalReviews?: readonly ExternalReviewAggregate[];
 };
 
 /**
@@ -72,7 +80,7 @@ export type TourProductDetailClientProps = {
  * `app/tour-product/[slug]/page.tsx`; existing East / Jeju pages continue to
  * render through their slug-specific clients until migrated.
  */
-export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, recommendations, locale = "en", initialGuests, seedDateYmd, seedLanguage }: TourProductDetailClientProps) {
+export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, recommendations, locale = "en", initialGuests, seedDateYmd, seedLanguage, externalReviews }: TourProductDetailClientProps) {
   const vm = viewModel;
   const t = useTranslations();
   const hasRouteVariants = Array.isArray(vm.routeVariants) && vm.routeVariants.length > 0;
@@ -299,6 +307,20 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
             />
           </div>
         </section>
+
+        {/* Third-party platform review aggregates — same operator's listing on
+            global OTAs, attributed + outbound-linked. Aggregate-only (no review
+            prose copied, no competitor price). Renders nothing when unmapped. */}
+        {externalReviews && externalReviews.length > 0 ? (
+          <section id="external-reviews" className="mx-3 mt-4 lg:mx-0">
+            <div className="mx-auto max-w-2xl px-4 sm:px-5 py-5">
+              <TourExternalReviewsSection
+                aggregates={externalReviews}
+                tourProductSlug={tourProductSlug}
+              />
+            </div>
+          </section>
+        ) : null}
 
         {/* Price-compare widget — hidden 2026-05-20 (SHOW_PLATFORM_COMPARE=false).
             Previously: same tour on global OTA platforms, shown when the registry
