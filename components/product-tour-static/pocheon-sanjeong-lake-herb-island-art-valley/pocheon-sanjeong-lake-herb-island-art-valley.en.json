@@ -33,7 +33,7 @@
     ],
     "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
     "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
-    "priceLabel": "From US$49 per person (was $62, 21% off)",
+    "priceLabel": "",
     "shortCardDescription": "A relaxed seasonal day-trip from Seoul to Pocheon, the Gyeonggi countryside known for its lakes, herb gardens, and dramatic art-park landscapes. The route combines Sanjeong Lake's mountain-circled waters, Herb Island's Mediterranean-style gardens and evening lights, and Pocheon Art Valley's monorail-accessed quarry observatory. Less crowded than Nami Island and built around photo-led calm rather than landmark sprint.",
     "tags": [
       "nature__photo_trip",
@@ -44,10 +44,8 @@
   "headlineLine1": "Pocheon",
   "headlineLine2": "Lake, Herb Island & Art Valley",
   "price": {
-    "amountLabel": "49",
-    "originalPriceUsd": 62,
-    "salePriceUsd": 49,
-    "discountPercent": 21,
+    "amountLabel": "54",
+    "salePriceUsd": 54,
     "currency": "USD",
     "per": "person",
     "priceSource": "getyourguide_t1168134",
@@ -205,7 +203,7 @@
         "Korean musk deer / Korean goral occasionally sighted in surrounding mountains",
         "**Built precisely March 20, 1925** as agricultural irrigation reservoir (NamuWiki Korean records); now owned and managed by **Korea Rural Community Corporation**",
         "**Designated National Tourist Site in 1977** — early-managed status predating most Pocheon attractions; lake area 0.246 km² (73,800 pyeong) with maximum depth 23.5 m",
-        "**Sanjeong Lake Sledding Festival since 2010** (Trip.com confirmed): every winter the frozen lake becomes Korea's signature traditional-sledding venue with vintage Korean-style sleds and rubber-duck sleds"
+        "**Sanjeong Lake Sledding Festival since 2010**: every winter the frozen lake becomes Korea's signature traditional-sledding venue with vintage Korean-style sleds and rubber-duck sleds"
       ],
       "timeUsed": [
         "Arrival and brief orientation by driver-guide (~5 min)",
@@ -850,10 +848,8 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
     "price": {
-      "amountLabel": "49",
-      "originalPriceUsd": 62,
-      "salePriceUsd": 49,
-      "discountPercent": 21,
+      "amountLabel": "54",
+      "salePriceUsd": 54,
       "currency": "USD",
       "per": "person",
       "priceSource": "getyourguide_t1168134",

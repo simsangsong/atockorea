@@ -23,6 +23,7 @@ import {
   dispatchPlannerBuild,
   PLANNER_DEST_LABEL_KEY,
 } from "@/lib/home/planner-build-bridge";
+import { ITINERARY_BUILDER_ENABLED } from "@/lib/itinerary-builder/builder-visibility";
 
 /** Shell for idle + result cards — matches `home-premium` hero-match offer depth (group hover). */
 const bestMatchCardShellClassName =
@@ -420,11 +421,13 @@ export function BestMatchPreview() {
                       }),
                       onClick: handleCustomizeFromMatch,
                     }
-                  : {
-                      kind: "link",
-                      label: t("premium.v2.planner.modeBuild"),
-                      href: "/itinerary-builder",
-                    }
+                  : ITINERARY_BUILDER_ENABLED
+                    ? {
+                        kind: "link",
+                        label: t("premium.v2.planner.modeBuild"),
+                        href: "/itinerary-builder",
+                      }
+                    : undefined
               }
             />
 

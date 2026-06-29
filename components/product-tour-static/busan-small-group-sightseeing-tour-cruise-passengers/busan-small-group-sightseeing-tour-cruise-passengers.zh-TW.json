@@ -19,7 +19,7 @@
   "catalog_card": {
     "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
     "title": "釜山郵輪岸上小團遊",
-    "priceLabel": "每人 US$79（原價$85，7% 優惠）",
+    "priceLabel": "",
     "shortCardDescription": "從釜山郵輪碼頭出發的共乘廂型車一日遊，在9小時內走遍城市五大人氣景點：聯合國紀念公墓（韓戰歷史背景）、太宗臺海岸懸崖、當地釜山餐廳午餐、甘川文化村（彩繪山城聚落）、龍頭山公園（可選擇前往釜山塔觀景台）及札嘎其市場。接送時間依您所搭船隻的下船時間靈活調整。配備英語／中文認證導遊。",
     "tags": [
       "small_group",
@@ -46,12 +46,10 @@
   "headlineLine1": "釜山郵輪岸上小團遊",
   "headlineLine2": "一日遊",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "84",
     "currency": "USD",
     "per": "person",
-    "salePriceUsd": null,
-    "originalPriceUsd": null,
-    "discountPercent": null
+    "salePriceUsd": 84
   },
   "hero": {
     "imageUrl": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
@@ -1215,12 +1213,10 @@
   "sticky_booking_bar": {
     "note": "`checkout_tour_id` 於執行時期從 Supabase／環境變數動態解析；不屬於靜態 JSONB 的組成部分。",
     "price": {
-      "amountLabel": "79",
+      "amountLabel": "84",
       "currency": "USD",
       "per": "person",
-      "salePriceUsd": 79,
-      "originalPriceUsd": 85,
-      "discountPercent": 7
+      "salePriceUsd": 84
     }
   },
   "matching_profile": {

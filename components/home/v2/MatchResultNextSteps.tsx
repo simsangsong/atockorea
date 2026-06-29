@@ -61,7 +61,9 @@ export function MatchResultNextSteps({
   buildAction,
 }: {
   browseHref?: string;
-  buildAction: BuildAction;
+  // Optional: when the itinerary builder is hidden (Klook prep) and there's no
+  // bridge customize action, callers pass undefined → only the browse link shows.
+  buildAction?: BuildAction;
 }) {
   return (
     <section className="mt-4 border-t border-slate-200/70 pt-4 md:mt-5 md:pt-5">
@@ -75,7 +77,7 @@ export function MatchResultNextSteps({
           <ChevronRight className="h-4 w-4" aria-hidden />
         </Link>
 
-        {buildAction.kind === "button" ? (
+        {buildAction == null ? null : buildAction.kind === "button" ? (
           <button
             type="button"
             onClick={buildAction.onClick}

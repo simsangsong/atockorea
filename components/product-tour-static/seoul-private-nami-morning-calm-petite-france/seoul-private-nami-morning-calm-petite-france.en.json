@@ -33,7 +33,7 @@
     ],
     "heroImage": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
     "thumbnail": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
-    "priceLabel": "US$189 per person",
+    "priceLabel": "",
     "shortCardDescription": "A private day trip from Seoul covering Nami Island's tree-lined ferry experience, the Garden of Morning Calm's themed garden walks, and the colorful Le Petit Prince village of Petite France. Hotel pickup, private vehicle, and a relaxed pace make this the comfort-led version of a classic Gapyeong loop.",
     "tags": [
       "private_tour",
@@ -44,10 +44,10 @@
   "headlineLine1": "Seoul Private",
   "headlineLine2": "Nami, Morning Calm & Petite France",
   "price": {
-    "amountLabel": "189",
+    "amountLabel": "194",
     "currency": "USD",
     "per": "person",
-    "salePriceUsd": 189
+    "salePriceUsd": 194
   },
   "hero": {
     "imageUrl": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
@@ -958,10 +958,10 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
     "price": {
-      "amountLabel": "189",
+      "amountLabel": "194",
       "currency": "USD",
       "per": "person",
-      "salePriceUsd": 189
+      "salePriceUsd": 194
     }
   },
   "pickup_dropoff": {

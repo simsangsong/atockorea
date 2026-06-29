@@ -19,7 +19,7 @@
   "catalog_card": {
     "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
     "title": "釜山クルーズ寄港地・少人数ツアー",
-    "priceLabel": "1名様 US$79（定価$85、7%オフ）",
+    "priceLabel": "",
     "shortCardDescription": "釜山クルーズターミナル発の乗合バン日帰りツアーで、人気の5スポットを9時間で巡ります：国連記念公園（朝鮮戦争の歴史）、太宗台の海岸断崖、地元レストランでの昼食、甘川文化村（カラフルな丘の街）、龍頭山公園（釜山タワー展望台はオプション）、チャガルチ市場。お客様の船の下船時刻に合わせたピックアップ。英語・中国語対応の認定ガイド付き。",
     "tags": [
       "small_group",
@@ -46,12 +46,10 @@
   "headlineLine1": "釜山クルーズ寄港地・少人数ツアー",
   "headlineLine2": "ツアー",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "84",
     "currency": "USD",
     "per": "person",
-    "salePriceUsd": null,
-    "originalPriceUsd": null,
-    "discountPercent": null
+    "salePriceUsd": 84
   },
   "hero": {
     "imageUrl": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
@@ -1215,12 +1213,10 @@
   "sticky_booking_bar": {
     "note": "`checkout_tour_id` は実行時に Supabase / 環境変数から解決されます。静的 JSONB には含まれません。",
     "price": {
-      "amountLabel": "79",
+      "amountLabel": "84",
       "currency": "USD",
       "per": "person",
-      "salePriceUsd": 79,
-      "originalPriceUsd": 85,
-      "discountPercent": 7
+      "salePriceUsd": 84
     }
   },
   "matching_profile": {

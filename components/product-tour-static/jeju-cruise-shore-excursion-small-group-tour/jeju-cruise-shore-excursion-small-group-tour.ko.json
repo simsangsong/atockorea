@@ -47,12 +47,10 @@
   "headlineLine1": "제주 크루즈 기항지 소그룹 투어",
   "headlineLine2": "투어",
   "price": {
-    "amountLabel": "72",
+    "amountLabel": "77",
     "currency": "USD",
     "per": "person",
-    "salePriceUsd": 72,
-    "originalPriceUsd": 85,
-    "discountPercent": 15
+    "salePriceUsd": 77
   },
   "hero": {
     "imageUrl": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
@@ -1779,12 +1777,10 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id는 런타임 시 Supabase / 환경 변수에서 확인됩니다. 정적 JSONB의 일부가 아닙니다. user_port는 크루즈 일정에서 예약 시 확인됩니다.",
     "price": {
-      "amountLabel": "72",
+      "amountLabel": "77",
       "currency": "USD",
       "per": "person",
-      "salePriceUsd": 72,
-      "originalPriceUsd": 85,
-      "discountPercent": 15
+      "salePriceUsd": 77
     }
   },
   "matching_profile": {

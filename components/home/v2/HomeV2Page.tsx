@@ -44,7 +44,10 @@ export default function HomeV2Page({ featuredMediaBySlug }: HomeV2PageProps = {}
           {/* L2 (chatbot promo) — "Your Korea travel agent" band sits in the
               value-prop cluster, just before the Why pillars. */}
           <AiAgentBand />
-          <WhyAtockorea />
+          {/* TEMP-HIDDEN (2026-06-28): "Why we're different" pillars hidden during
+              GetYourGuide/Viator onboarding review — copy reads as competing with the
+              OTAs we're applying to. Re-enable after platform approval. */}
+          {/* <WhyAtockorea /> */}
           <ProcessOperational />
           <FinalCTA />
         </div>

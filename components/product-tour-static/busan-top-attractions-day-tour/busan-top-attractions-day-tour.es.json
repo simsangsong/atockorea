@@ -33,7 +33,7 @@
     ],
     "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
     "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
-    "priceLabel": "Desde US$29 por persona (antes $41, 29% descuento)",
+    "priceLabel": "",
     "shortCardDescription": "Tour de un día en grupo pequeño con 7 paradas que recorre el circuito clásico de Busan: el templo costero de Haedong Yonggungsa, Cheongsapo y el Parque Blue Line (Sky Capsule opcional), almuerzo local en Busan, Cementerio Memorial de la ONU, las laderas pintadas del Pueblo Cultural de Gamcheon y el Mercado de Pescado Jagalchi. Tres puntos de recogida en el centro de Busan; guía certificado de habla inglesa; minibús (≈12 personas máx.). La entrada a todos los sitios es gratuita; solo el almuerzo y las entradas opcionales se pagan el día del tour.",
     "tags": [
       "small_group",
@@ -46,12 +46,10 @@
   "headlineLine1": "Busan",
   "headlineLine2": "Imprescindibles del Día",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "34",
     "currency": "USD",
     "per": "person",
-    "salePriceUsd": null,
-    "originalPriceUsd": null,
-    "discountPercent": null
+    "salePriceUsd": 34
   },
   "hero": {
     "imageUrl": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
@@ -1711,12 +1709,10 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id se resuelve en tiempo de ejecución desde Supabase / env; no forma parte del JSONB estático.",
     "price": {
-      "amountLabel": "29",
+      "amountLabel": "34",
       "currency": "USD",
       "per": "person",
-      "salePriceUsd": 29,
-      "originalPriceUsd": 41,
-      "discountPercent": 29
+      "salePriceUsd": 34
     }
   },
   "matching_profile": {

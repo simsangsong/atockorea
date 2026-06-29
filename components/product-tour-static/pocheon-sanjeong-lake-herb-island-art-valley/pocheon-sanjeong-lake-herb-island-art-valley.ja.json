@@ -33,7 +33,7 @@
     ],
     "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
     "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
-    "priceLabel": "1名様 US$49（定価$62、21%オフ）",
+    "priceLabel": "",
     "shortCardDescription": "ソウルから京畿道の田舎・ポチョンへのゆったりとした季節の日帰り旅行。湖、ハーブガーデン、そしてドラマチックなアートパークの風景で知られるこの地を巡るルートは、山に囲まれた山井湖、地中海スタイルのガーデンと夜のイルミネーションが魅力のハーブアイランド、モノレールでアクセスするポチョン・アートバレーの採石場展望台を組み合わせています。南怡島より混雑が少なく、名所を駆け足で回るのではなく、写真撮影を中心とした落ち着いた旅を楽しめます。",
     "tags": [
       "nature__photo_trip",
@@ -44,10 +44,8 @@
   "headlineLine1": "抱川",
   "headlineLine2": "山正湖・ハーブ・アートバレー",
   "price": {
-    "amountLabel": "",
-    "originalPriceUsd": null,
-    "salePriceUsd": null,
-    "discountPercent": null,
+    "amountLabel": "54",
+    "salePriceUsd": 54,
     "currency": "USD",
     "per": "person",
     "priceSource": "getyourguide_t1168134",
@@ -850,10 +848,8 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_idはSupabase / envから実行時に解決されます。静的JSONBには含まれません。",
     "price": {
-      "amountLabel": "49",
-      "originalPriceUsd": 62,
-      "salePriceUsd": 49,
-      "discountPercent": 21,
+      "amountLabel": "54",
+      "salePriceUsd": 54,
       "currency": "USD",
       "per": "person",
       "priceSource": "getyourguide_t1168134",

@@ -44,10 +44,10 @@
   "headlineLine1": "首尔私人游",
   "headlineLine2": "南怡岛、晨静园与小法国",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "194",
     "currency": "USD",
     "per": "person",
-    "salePriceUsd": null
+    "salePriceUsd": 194
   },
   "hero": {
     "imageUrl": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
@@ -958,10 +958,10 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id 在运行时通过 Supabase / 环境变量解析，不属于静态 JSONB 的一部分。",
     "price": {
-      "amountLabel": "",
+      "amountLabel": "194",
       "currency": "USD",
       "per": "person",
-      "salePriceUsd": null
+      "salePriceUsd": 194
     }
   },
   "pickup_dropoff": {

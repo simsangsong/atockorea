@@ -10,6 +10,7 @@ import { CURRENCY_LIST, useCurrencyOptional, type CurrencyCode } from '@/lib/cur
 import { useTranslations, useCopy, useI18n } from '@/lib/i18n';
 import { SitePageShell } from '@/src/components/layout/SitePageShell';
 import { consumerTourDetailHref } from '@/lib/tour-consumer-visibility';
+import { ITINERARY_BUILDER_ENABLED } from '@/lib/itinerary-builder/builder-visibility';
 import { CatalogueHero } from '@/components/tours-list/CatalogueHero';
 import { CatalogueFooterStrip } from '@/components/tours-list/CatalogueFooterStrip';
 import { SortSegmented } from '@/components/tours-list/SortSegmented';
@@ -1214,8 +1215,8 @@ export default function ToursListClient({ initialMediaBySlug }: ToursListClientP
                     : undefined
                 }
                 onRemoveSuggested={suggestedFilterToRemove?.onRemove}
-                builderHref="/itinerary-builder"
-                builderCta={t('toursList.emptyBuilderCta')}
+                builderHref={ITINERARY_BUILDER_ENABLED ? '/itinerary-builder' : undefined}
+                builderCta={ITINERARY_BUILDER_ENABLED ? t('toursList.emptyBuilderCta') : undefined}
                 conciergeHref="/support"
                 conciergeCta={t('toursList.emptyConciergeCta')}
               />
@@ -1281,8 +1282,9 @@ export default function ToursListClient({ initialMediaBySlug }: ToursListClientP
                   );
                 })}
               </div>
-              {/* Conversion rescue band — only after 28+ cards browsed (B9). */}
-              {visibleCount >= 28 ? (
+              {/* Conversion rescue band — only after 28+ cards browsed (B9).
+                  Klook prep 2026-06-29: gated off (its CTA targets the hidden builder). */}
+              {ITINERARY_BUILDER_ENABLED && visibleCount >= 28 ? (
                 <ConversionRescueBand
                   eyebrow={t('toursList.insertCuratorEyebrow')}
                   title={t('toursList.rescueTitle')}

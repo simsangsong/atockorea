@@ -44,10 +44,10 @@
   "headlineLine1": "首爾私人包車",
   "headlineLine2": "包車遊覽（10小時）",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "184",
     "currency": "USD",
     "per": "vehicle",
-    "salePriceUsd": null
+    "salePriceUsd": 184
   },
   "hero": {
     "imageUrl": "/images/tours/seoul-private-charter/seoul-private-carnival-han-river-night.webp",
@@ -755,10 +755,10 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id 於執行階段從 Supabase／環境變數解析；不屬於靜態 JSONB 的一部分。",
     "price": {
-      "amountLabel": "",
+      "amountLabel": "184",
       "currency": "USD",
       "per": "vehicle",
-      "salePriceUsd": null
+      "salePriceUsd": 184
     }
   },
   "pickup_dropoff": {

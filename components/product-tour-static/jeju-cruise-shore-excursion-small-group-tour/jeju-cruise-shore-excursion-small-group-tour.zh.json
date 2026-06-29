@@ -47,12 +47,10 @@
   "headlineLine1": "济州邮轮岸上 小团游",
   "headlineLine2": "一日游",
   "price": {
-    "amountLabel": "72",
+    "amountLabel": "77",
     "currency": "USD",
     "per": "person",
-    "salePriceUsd": 72,
-    "originalPriceUsd": 85,
-    "discountPercent": 15
+    "salePriceUsd": 77
   },
   "hero": {
     "imageUrl": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
@@ -1779,12 +1777,10 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id 在运行时从 Supabase / 环境变量解析，不属于静态 JSONB 的一部分。user_port 在预订时从邮轮行程中解析。",
     "price": {
-      "amountLabel": "72",
+      "amountLabel": "77",
       "currency": "USD",
       "per": "person",
-      "salePriceUsd": 72,
-      "originalPriceUsd": 85,
-      "discountPercent": 15
+      "salePriceUsd": 77
     }
   },
   "matching_profile": {

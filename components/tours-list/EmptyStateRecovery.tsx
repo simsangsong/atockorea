@@ -18,8 +18,9 @@ interface EmptyStateRecoveryProps {
   /** Most-constraining filter — when present, action (a) is offered. */
   suggestRemoveLabel?: string;
   onRemoveSuggested?: () => void;
-  builderHref: string;
-  builderCta: string;
+  // Optional: omitted when the itinerary builder is hidden (Klook prep).
+  builderHref?: string;
+  builderCta?: string;
   conciergeHref: string;
   conciergeCta: string;
 }
@@ -53,14 +54,16 @@ export function EmptyStateRecovery({
           </button>
         ) : null}
 
-        {/* (b) Build a custom day. */}
-        <Link
-          href={builderHref}
-          className="inline-flex h-12 items-center justify-center gap-2 rounded-2xl border border-slate-200/80 bg-white px-5 text-[14px] font-semibold text-slate-800 transition hover:border-slate-300 hover:bg-slate-50"
-        >
-          {builderCta}
-          <span aria-hidden>→</span>
-        </Link>
+        {/* (b) Build a custom day — hidden when the builder is gated off. */}
+        {builderHref && builderCta ? (
+          <Link
+            href={builderHref}
+            className="inline-flex h-12 items-center justify-center gap-2 rounded-2xl border border-slate-200/80 bg-white px-5 text-[14px] font-semibold text-slate-800 transition hover:border-slate-300 hover:bg-slate-50"
+          >
+            {builderCta}
+            <span aria-hidden>→</span>
+          </Link>
+        ) : null}
 
         {/* (c) Concierge / human help. */}
         <Link

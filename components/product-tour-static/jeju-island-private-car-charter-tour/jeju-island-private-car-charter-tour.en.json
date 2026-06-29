@@ -34,7 +34,7 @@
     ],
     "heroImage": "/images/tours/jeju-private/jeju-private-thumbnail-carnival-coast.webp",
     "thumbnail": "/images/tours/jeju-private/jeju-private-thumbnail-carnival-coast.webp",
-    "priceLabel": "Per-vehicle pricing — confirm at booking",
+    "priceLabel": "",
     "shortCardDescription": "A 9-hour private car charter for Jeju with a licensed driver-guide. Three recommended routes (East, West, South) cover the island's most-loved sights, or build your own from UNESCO landmarks, K-drama spots, beaches, tea fields, and traditional markets. Hotel pickup is included anywhere on the island.",
     "tags": [
       "Private tour",
@@ -45,12 +45,10 @@
   "headlineLine1": "Jeju Private Car",
   "headlineLine2": "Charter Tour",
   "price": {
-    "amountLabel": "249",
+    "amountLabel": "254",
     "currency": "USD",
     "per": "vehicle",
-    "salePriceUsd": 249,
-    "originalPriceUsd": 249,
-    "discountPercent": 0
+    "salePriceUsd": 254
   },
   "hero": {
     "imageUrl": "/images/tours/jeju-private/jeju-private-thumbnail-carnival-coast.webp",
@@ -761,7 +759,7 @@
   "sticky_booking_bar": {
     "note": "Select your date and group size to check live availability and complete your booking.",
     "price": {
-      "amountLabel": "",
+      "amountLabel": "254",
       "currency": "USD",
       "per": "vehicle"
     }

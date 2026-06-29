@@ -33,7 +33,7 @@
     ],
     "heroImage": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
     "thumbnail": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
-    "priceLabel": "每人 US$59（原價$69，14% 優惠）",
+    "priceLabel": "",
     "shortCardDescription": "夏季限定濟州西南路線——翠綠海灘、繡球花節花園、UNESCO柱狀節理海岸、三層瀑布、繡球花隧道及茶田。",
     "tags": [
       "summer_only",
@@ -44,10 +44,8 @@
   "headlineLine1": "濟州繡球花節",
   "headlineLine2": "西南",
   "price": {
-    "amountLabel": "",
-    "originalPriceUsd": null,
-    "salePriceUsd": null,
-    "discountPercent": null,
+    "amountLabel": "64",
+    "salePriceUsd": 64,
     "currency": "USD",
     "per": "person"
   },
@@ -1301,10 +1299,8 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id 於執行時從 Supabase／環境變數解析；不屬於靜態 JSONB 的一部分。",
     "price": {
-      "amountLabel": "59",
-      "originalPriceUsd": 69,
-      "salePriceUsd": 59,
-      "discountPercent": 14,
+      "amountLabel": "64",
+      "salePriceUsd": 64,
       "currency": "USD",
       "per": "person"
     }

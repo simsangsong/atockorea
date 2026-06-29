@@ -44,10 +44,10 @@
   "headlineLine1": "ソウル貸切",
   "headlineLine2": "ナミ島、モーニングカーム＆プチフランス",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "194",
     "currency": "USD",
     "per": "person",
-    "salePriceUsd": null
+    "salePriceUsd": 194
   },
   "hero": {
     "imageUrl": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
@@ -958,10 +958,10 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id は Supabase / 環境変数から実行時に解決されます。静的 JSONB には含まれません。",
     "price": {
-      "amountLabel": "",
+      "amountLabel": "194",
       "currency": "USD",
       "per": "person",
-      "salePriceUsd": null
+      "salePriceUsd": 194
     }
   },
   "pickup_dropoff": {
