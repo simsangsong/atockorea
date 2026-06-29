@@ -44,12 +44,10 @@
   "headlineLine1": "Jeju",
   "headlineLine2": "Coche Privado",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "254",
     "currency": "USD",
     "per": "vehicle",
-    "salePriceUsd": null,
-    "originalPriceUsd": null,
-    "discountPercent": null
+    "salePriceUsd": 254
   },
   "hero": {
     "imageUrl": "/images/tours/jeju-private/jeju-private-thumbnail-carnival-coast.webp",
@@ -751,7 +749,7 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id se resuelve en tiempo de ejecución desde Supabase / entorno; no forma parte del JSONB estático.",
     "price": {
-      "amountLabel": "",
+      "amountLabel": "254",
       "currency": "USD",
       "per": "vehicle"
     }

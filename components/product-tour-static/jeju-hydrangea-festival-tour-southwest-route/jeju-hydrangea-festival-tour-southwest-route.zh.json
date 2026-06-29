@@ -33,7 +33,7 @@
     ],
     "heroImage": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
     "thumbnail": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
-    "priceLabel": "每人 US$59（原价$69，14% 优惠）",
+    "priceLabel": "",
     "shortCardDescription": "仅限夏季的济州岛西南路线——翠绿海滩、绣球花节花园、联合国教科文组织柱状节理带、三级瀑布、绣球花隧道及茶园。",
     "tags": [
       "summer_only",
@@ -44,10 +44,8 @@
   "headlineLine1": "济州绣球花节",
   "headlineLine2": "西南",
   "price": {
-    "amountLabel": "",
-    "originalPriceUsd": null,
-    "salePriceUsd": null,
-    "discountPercent": null,
+    "amountLabel": "64",
+    "salePriceUsd": 64,
     "currency": "USD",
     "per": "person"
   },
@@ -1301,10 +1299,8 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id在运行时从Supabase/环境变量中解析；不属于静态JSONB的一部分。",
     "price": {
-      "amountLabel": "59",
-      "originalPriceUsd": 69,
-      "salePriceUsd": 59,
-      "discountPercent": 14,
+      "amountLabel": "64",
+      "salePriceUsd": 64,
       "currency": "USD",
       "per": "person"
     }

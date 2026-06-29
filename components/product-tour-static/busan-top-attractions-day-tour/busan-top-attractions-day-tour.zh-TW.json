@@ -33,7 +33,7 @@
     ],
     "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
     "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
-    "priceLabel": "每人 US$29（原價$41，29% 優惠）",
+    "priceLabel": "",
     "shortCardDescription": "單日七站小團體遊，涵蓋釜山經典行程：海東龍宮寺海濱古剎、青沙浦及藍線公園（可選搭天空膠囊列車）、釜山在地午餐、聯合國紀念公墓、甘川文化村彩繪山城，以及札嘎其魚市場。設三個釜山市區接送地點；持證英語導遊帶領；迷您巴士（最多約12人）。所有景點入場免費，僅午餐及自選票券需當日自付。",
     "tags": [
       "small_group",
@@ -46,12 +46,10 @@
   "headlineLine1": "釜山精華景點一日遊",
   "headlineLine2": "一日遊",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "34",
     "currency": "USD",
     "per": "person",
-    "salePriceUsd": null,
-    "originalPriceUsd": null,
-    "discountPercent": null
+    "salePriceUsd": 34
   },
   "hero": {
     "imageUrl": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
@@ -1397,12 +1395,10 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id 於執行時從 Supabase／env 動態解析；不屬於靜態 JSONB 的一部分。",
     "price": {
-      "amountLabel": "29",
+      "amountLabel": "34",
       "currency": "USD",
       "per": "person",
-      "salePriceUsd": 29,
-      "originalPriceUsd": 41,
-      "discountPercent": 29
+      "salePriceUsd": 34
     }
   },
   "matching_profile": {

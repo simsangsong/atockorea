@@ -33,7 +33,7 @@
     ],
     "heroImage": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
     "thumbnail": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
-    "priceLabel": "Desde US$359 por vehículo (antes $379, 1–6 pax, 8h) · 7–12 pax 2× · 13+ pax 3×",
+    "priceLabel": "",
     "shortCardDescription": "Alquiler privado de auto de 8 horas para pasajeros de crucero en Busan con conductor-guía autorizado de habla inglesa. El itinerario predeterminado incluye el Cementerio Memorial de las Naciones Unidas, los acantilados de Taejongdae, la Aldea Cultural de Gamcheon, el Parque Yongdusan y el Mercado de Jagalchi. Totalmente personalizable. Recogida en la terminal de cruceros, la estación KTX o cualquier hotel céntrico de Busan; el regreso puntual al barco está garantizado.",
     "tags": [
       "private_tour",
@@ -45,12 +45,10 @@
   "headlineLine1": "Busan Crucero",
   "headlineLine2": "Coche Privado",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "364",
     "currency": "USD",
     "per": "vehicle",
-    "salePriceUsd": null,
-    "originalPriceUsd": null,
-    "discountPercent": null
+    "salePriceUsd": 364
   },
   "hero": {
     "imageUrl": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
@@ -1354,12 +1352,10 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id se resuelve en tiempo de ejecución desde Supabase / env; no forma parte del JSONB estático.",
     "price": {
-      "amountLabel": "359",
+      "amountLabel": "364",
       "currency": "USD",
       "per": "vehicle",
-      "salePriceUsd": 359,
-      "originalPriceUsd": 379,
-      "discountPercent": 5
+      "salePriceUsd": 364
     }
   },
   "pickup_dropoff": {

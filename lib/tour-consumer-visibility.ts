@@ -105,6 +105,32 @@ export const CONSUMER_BLOCKED_TOUR_SLUGS = new Set<string>([
   // All 11 Seoul-region day tours back online per product decision; DB is_active was
   // already true (the 2026-05-25 "Mirrors is_active=false" note was stale — the pause
   // was enforced by this blocklist + the landing-planner Seoul gate only).
+  //
+  // ── Klook onboarding prep 2026-06-29 ──────────────────────────────────────
+  // Catalog narrowed to exactly 12 active SKUs for the Klook listing. The 19
+  // slugs below are hidden from every consumer surface (chatbot catalog, home,
+  // sitemap, agent channel, matcher) AND set is_active=false / is_published=false
+  // in the AtoC DB (migration 20260629000000_klook_prep_activate_12_tours.sql).
+  // Reversible: remove a slug here + flip its DB flags back to re-list it.
+  "busan-cruise-shore-excursion-bus-tour",
+  "busan-outskirts-tongdosa-amethyst-yeongnam-day-tour",
+  "busan-plum-cherry-blossom-day-tour-to-yangsan-gyeongju",
+  "busan-spring-cherry-blossom-gyeongju-highlights-day-tour",
+  "from-busan-gyeongju-ancient-capital-day-tour",
+  "jeju-cherry-blossom-tour-east-route",
+  "jeju-cruise-shore-excursion-bus-tour",
+  "jeju-eastern-unesco-spots-day-tour",
+  "jeju-southern-top-unesco-spots-tour",
+  "jeju-winter-southwest-tangerine-snow-camellia-tour",
+  "southwest-hallasan-osulloc-aewol",
+  "from-incheon-seoul-day-tour-cruise-guests",
+  "seoul-dmz-private-3rd-tunnel-suspension-bridge",
+  "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip",
+  "seoul-seoraksan-nami-island-morning-calm-day-tour",
+  "seoul-seoraksan-national-park-sokcho-beach-day-trip",
+  "seoul-suwon-hwaseong-folk-village-starfield-library",
+  "seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library",
+  "seoul-suwon-hwaseong-waujeongsa-starfield",
 ]);
 
 function normalizeTourIdForBlocklist(id: string): string {

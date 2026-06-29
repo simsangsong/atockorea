@@ -24,6 +24,7 @@ import {
 import { useTranslations } from "@/lib/i18n";
 import { useCurrency } from "@/lib/currency";
 import { getFeaturedJoinTourProduct } from "@/lib/home/featured-join-tour-offer";
+import { ITINERARY_BUILDER_ENABLED } from "@/lib/itinerary-builder/builder-visibility";
 import { CHOOSE_STYLE_CARD_USD, privateVehicleUsd } from "@/lib/home/choose-style-card-usd";
 import { SnapScrollDots } from "@/components/home/v2/ui/SnapScrollDots";
 import { homeBtnInverse, homeBtnPrimary } from "@/lib/home/home-button-classes";
@@ -427,14 +428,17 @@ export function ChooseTravelStyle() {
               </Link>
             </V0ShadcnButton>
             {/* U4 — curated private list is the primary path; building a custom
-                day from scratch is the secondary "or…" option. */}
-            <Link
-              href={`/itinerary-builder?party=${party}`}
-              className="focus-ring mt-2.5 flex items-center justify-center gap-1 text-micro font-semibold text-slate-500 transition-colors duration-200 hover:text-slate-800"
-            >
-              {t("premium.v2.chooseStyle.privateBuildOwn")}
-              <ArrowRight className="h-3 w-3" />
-            </Link>
+                day from scratch is the secondary "or…" option.
+                Klook prep 2026-06-29: builder gated off → link hidden. */}
+            {ITINERARY_BUILDER_ENABLED && (
+              <Link
+                href={`/itinerary-builder?party=${party}`}
+                className="focus-ring mt-2.5 flex items-center justify-center gap-1 text-micro font-semibold text-slate-500 transition-colors duration-200 hover:text-slate-800"
+              >
+                {t("premium.v2.chooseStyle.privateBuildOwn")}
+                <ArrowRight className="h-3 w-3" />
+              </Link>
+            )}
           </motion.div>
 
           {/* Bus — white pod with subtle mint warm-light (matches Private card) */}
@@ -537,6 +541,8 @@ export function ChooseTravelStyle() {
             distinct merit. Emerald tone keeps it in the premium/private family
             and distinct from the amber matcher card below. Carries party so the
             builder opens pre-seeded. */}
+        {/* Klook prep 2026-06-29: dedicated builder card gated off site-wide. */}
+        {ITINERARY_BUILDER_ENABLED && (
         <motion.div variants={REVEAL_ITEM_VARIANTS} className="mt-5 md:mt-6">
           <Link
             href={`/itinerary-builder?party=${party}`}
@@ -560,6 +566,7 @@ export function ChooseTravelStyle() {
             </span>
           </Link>
         </motion.div>
+        )}
 
         {/* U3 — matcher "Get a recommendation" entry. A co-equal but secondary
             (outline) full-width card under the type cards, so the undecided

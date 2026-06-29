@@ -33,7 +33,7 @@
     ],
     "heroImage": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
     "thumbnail": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
-    "priceLabel": "1名様 US$59（定価$69、14%オフ）",
+    "priceLabel": "",
     "shortCardDescription": "夏季限定・済州島南西部ルート — エメラルドのビーチ、アジサイ祭りの庭園、ユネスコ世界遺産の柱状節理帯、三段の滝、アジサイのトンネル、そして茶畑。",
     "tags": [
       "summer_only",
@@ -44,10 +44,8 @@
   "headlineLine1": "済州アジサイ祭り・南西ルート",
   "headlineLine2": "ツアー",
   "price": {
-    "amountLabel": "",
-    "originalPriceUsd": null,
-    "salePriceUsd": null,
-    "discountPercent": null,
+    "amountLabel": "64",
+    "salePriceUsd": 64,
     "currency": "USD",
     "per": "person"
   },
@@ -1301,10 +1299,8 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_idは実行時にSupabase / 環境変数から解決されます。静的なJSONBには含まれません。",
     "price": {
-      "amountLabel": "59",
-      "originalPriceUsd": 69,
-      "salePriceUsd": 59,
-      "discountPercent": 14,
+      "amountLabel": "64",
+      "salePriceUsd": 64,
       "currency": "USD",
       "per": "person"
     }

@@ -33,7 +33,7 @@
     ],
     "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
     "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
-    "priceLabel": "1인 US$49 (정가 $62, 21% 할인)",
+    "priceLabel": "",
     "shortCardDescription": "호수, 허브 정원, 그리고 인상적인 아트파크 풍경으로 유명한 경기도 포천으로 떠나는 여유로운 계절 당일 여행. 산으로 둘러싸인 산정호수, 지중해풍 정원과 야간 조명이 매력적인 허브아일랜드, 모노레일로 오르는 포천 아트밸리 채석장 전망대를 차례로 둘러봅니다. 남이섬보다 한적하며, 명소를 빠르게 도는 것이 아닌 사진 중심의 여유로운 일정으로 구성되어 있습니다.",
     "tags": [
       "nature__photo_trip",
@@ -44,10 +44,8 @@
   "headlineLine1": "포천",
   "headlineLine2": "산정호수·허브아일랜드·아트밸리",
   "price": {
-    "amountLabel": "",
-    "originalPriceUsd": null,
-    "salePriceUsd": null,
-    "discountPercent": null,
+    "amountLabel": "54",
+    "salePriceUsd": 54,
     "currency": "USD",
     "per": "person",
     "priceSource": "getyourguide_t1168134",
@@ -850,10 +848,8 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id는 런타임 시 Supabase / env에서 결정되며, 정적 JSONB의 일부가 아닙니다.",
     "price": {
-      "amountLabel": "49",
-      "originalPriceUsd": 62,
-      "salePriceUsd": 49,
-      "discountPercent": 21,
+      "amountLabel": "54",
+      "salePriceUsd": 54,
       "currency": "USD",
       "per": "person",
       "priceSource": "getyourguide_t1168134",

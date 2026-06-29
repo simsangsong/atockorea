@@ -19,7 +19,7 @@
   "catalog_card": {
     "thumbnail": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
     "title": "仁川→ソウル・クルーズプライベートカー",
-    "priceLabel": "1台あたり US$419〜",
+    "priceLabel": "",
     "shortCardDescription": "船の出港時刻に合わせて組み立てる、8時間のプライベート専用車チャーター。固定スケジュールはありません。仁川クルーズターミナルのタラップでお出迎えし、英語対応のドライバーガイドが景福宮・北村韓屋村＋仁寺洞・お好みのランチ・Nソウルタワー・明洞または曹渓寺をご案内します。ドライバーガイドは出港時刻の60分前を交通渋滞バッファーとして確保するため、乗り遅れの心配はありません。",
     "tags": [
       "プライベート",
@@ -50,10 +50,10 @@
   "headlineLine1": "仁川→ソウル・クルーズプライベートカー",
   "headlineLine2": "ツアー",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "424",
     "currency": "USD",
     "per": "vehicle",
-    "salePriceUsd": null
+    "salePriceUsd": 424
   },
   "hero": {
     "imageUrl": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
@@ -1266,10 +1266,10 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id はSupabase／環境変数から実行時に解決されます。静的なJSONBには含まれません。",
     "price": {
-      "amountLabel": "419",
+      "amountLabel": "424",
       "currency": "USD",
       "per": "vehicle",
-      "salePriceUsd": 419
+      "salePriceUsd": 424
     }
   },
   "matching_profile": {

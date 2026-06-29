@@ -37,7 +37,6 @@ export function GET() {
 ## Site
 
 - [Tours](${base}/tours/list): browse all tours.
-- [Custom itinerary builder](${base}/itinerary-builder): build a private day plan.
 - [Sitemap](${base}/sitemap.xml)
 - [Contact](${base}/contact): contact@atockorea.com
 

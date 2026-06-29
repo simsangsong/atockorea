@@ -33,7 +33,7 @@
     ],
     "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
     "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
-    "priceLabel": "每人 US$49（原价$62，21% 优惠）",
+    "priceLabel": "",
     "shortCardDescription": "从首尔出发前往抱川的悠闲季节性一日游，京畿道乡村以湖泊、香草花园和壮观的艺术公园景观而闻名。行程涵盖群山环抱的山井湖、香草岛地中海风格的花园与夜间灯光，以及乘坐单轨列车可达的抱川艺术谷采石场观景台。比南怡岛人少，以摄影为主线，追求宁静而非打卡冲刺。",
     "tags": [
       "nature__photo_trip",
@@ -44,10 +44,8 @@
   "headlineLine1": "抱川",
   "headlineLine2": "山亭湖·香草岛·艺术谷",
   "price": {
-    "amountLabel": "",
-    "originalPriceUsd": null,
-    "salePriceUsd": null,
-    "discountPercent": null,
+    "amountLabel": "54",
+    "salePriceUsd": 54,
     "currency": "USD",
     "per": "person",
     "priceSource": "getyourguide_t1168134",
@@ -850,10 +848,8 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id 在运行时从 Supabase / env 解析，不属于静态 JSONB 的一部分。",
     "price": {
-      "amountLabel": "49",
-      "originalPriceUsd": 62,
-      "salePriceUsd": 49,
-      "discountPercent": 21,
+      "amountLabel": "54",
+      "salePriceUsd": 54,
       "currency": "USD",
       "per": "person",
       "priceSource": "getyourguide_t1168134",

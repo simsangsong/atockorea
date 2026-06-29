@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
 import { ChevronLeft } from "lucide-react";
+import { ITINERARY_BUILDER_ENABLED } from "@/lib/itinerary-builder/builder-visibility";
 import { SitePageShell } from "@/src/components/layout/SitePageShell";
 import { createServerClient } from "@/lib/supabase";
 import { quote, tierForLocale, jejuZone, type CruisePort, type JejuPickupZone, type PriceInput, type PricingTrack } from "@/lib/quote-engine/pricing-policy";
@@ -44,6 +45,8 @@ export default async function ItineraryBuilderCheckoutPage({
 }: {
   searchParams: Promise<{ bookingId?: string }>;
 }) {
+  // Klook prep 2026-06-29: builder hidden site-wide.
+  if (!ITINERARY_BUILDER_ENABLED) redirect("/tours/list");
   const sp = await searchParams;
   const bookingId = typeof sp.bookingId === "string" ? sp.bookingId.trim() : "";
   if (!bookingId) notFound();

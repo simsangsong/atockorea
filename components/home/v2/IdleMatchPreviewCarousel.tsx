@@ -22,7 +22,9 @@ import {
 const IDLE_PREVIEW_SLUGS = [
   "busan-top-attractions-day-tour",
   "jeju-grand-highlights-loop",
-  "southwest-hallasan-osulloc-aewol",
+  // Klook onboarding prep 2026-06-29: was southwest-hallasan-osulloc-aewol
+  // (now deactivated + consumer-blocked). Swapped for an active SKU.
+  "pocheon-sanjeong-lake-herb-island-art-valley",
 ] as const;
 
 const FADE_INTERVAL_MS = 5000;

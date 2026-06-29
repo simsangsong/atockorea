@@ -42,6 +42,13 @@ import { useTranslations } from "@/lib/i18n";
  */
 const SHOW_PLATFORM_COMPARE = false;
 
+/**
+ * Third-party OTA review aggregates (TripAdvisor/Viator/GYG/Klook) hidden for the
+ * Klook onboarding 2026-06-29 — the storefront surfaces no named OTA platforms
+ * during listing review. Flip back to `true` to restore (data + component intact).
+ */
+const SHOW_EXTERNAL_REVIEWS = false;
+
 export type TourProductDetailClientProps = {
   viewModel: TourProductDetailViewModel;
   checkout?: TourProductCheckoutContext | null;
@@ -311,7 +318,7 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
         {/* Third-party platform review aggregates — same operator's listing on
             global OTAs, attributed + outbound-linked. Aggregate-only (no review
             prose copied, no competitor price). Renders nothing when unmapped. */}
-        {externalReviews && externalReviews.length > 0 ? (
+        {SHOW_EXTERNAL_REVIEWS && externalReviews && externalReviews.length > 0 ? (
           <section id="external-reviews" className="mx-3 mt-4 lg:mx-0">
             <div className="mx-auto max-w-2xl px-4 sm:px-5 py-5">
               <TourExternalReviewsSection

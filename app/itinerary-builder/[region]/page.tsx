@@ -1,4 +1,5 @@
 import { permanentRedirect } from "next/navigation";
+import { ITINERARY_BUILDER_ENABLED } from "@/lib/itinerary-builder/builder-visibility";
 
 /**
  * Phase 13 D36 — `/itinerary-builder/[region]` collapses into
@@ -12,6 +13,8 @@ export default async function LegacyRegionPage({
   params: Promise<{ region: string }>;
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
+  // Klook prep 2026-06-29: builder hidden → legacy region URLs go to the catalog.
+  if (!ITINERARY_BUILDER_ENABLED) permanentRedirect("/tours/list");
   const [{ region }, sp] = await Promise.all([params, searchParams]);
   const qs = new URLSearchParams();
   qs.set("region", region);

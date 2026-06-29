@@ -33,7 +33,7 @@
     ],
     "heroImage": "/images/tours/seoul-private-charter/seoul-private-carnival-han-river-night.webp",
     "thumbnail": "/images/tours/seoul-private-charter/seoul-private-carnival-han-river-night.webp",
-    "priceLabel": "From US$179 per vehicle (1–6 pax · 4hr)",
+    "priceLabel": "",
     "shortCardDescription": "A premium 10-hour private car charter that lets you build your own Seoul-area day. Choose one of three recommended routes—Nami Island + Morning Calm + Petite France + Gangchon Railbike, DMZ + Paju Outlet, or Everland + Korean Folk Village—or send your own itinerary. Free hotel pickup is included for Seoul downtown stays.",
     "tags": [
       "private_tour",
@@ -44,10 +44,10 @@
   "headlineLine1": "Seoul Private Car",
   "headlineLine2": "Charter Tour (10HR)",
   "price": {
-    "amountLabel": "179",
+    "amountLabel": "184",
     "currency": "USD",
     "per": "vehicle",
-    "salePriceUsd": 179
+    "salePriceUsd": 184
   },
   "hero": {
     "imageUrl": "/images/tours/seoul-private-charter/seoul-private-carnival-han-river-night.webp",
@@ -755,10 +755,10 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
     "price": {
-      "amountLabel": "179",
+      "amountLabel": "184",
       "currency": "USD",
       "per": "vehicle",
-      "salePriceUsd": 179
+      "salePriceUsd": 184
     }
   },
   "pickup_dropoff": {

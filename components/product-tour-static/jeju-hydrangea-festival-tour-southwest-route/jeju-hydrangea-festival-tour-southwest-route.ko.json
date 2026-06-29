@@ -33,7 +33,7 @@
     ],
     "heroImage": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
     "thumbnail": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
-    "priceLabel": "1인 US$59 (정가 $69, 14% 할인)",
+    "priceLabel": "",
     "shortCardDescription": "여름 한정 제주 서부 코스 — 에메랄드빛 해변, 수국 축제 정원, 유네스코 주상절리, 3단 폭포, 수국 터널, 차밭.",
     "tags": [
       "summer_only",
@@ -44,10 +44,8 @@
   "headlineLine1": "제주 서남부 수국 축제 투어",
   "headlineLine2": "투어",
   "price": {
-    "amountLabel": "",
-    "originalPriceUsd": null,
-    "salePriceUsd": null,
-    "discountPercent": null,
+    "amountLabel": "64",
+    "salePriceUsd": 64,
     "currency": "USD",
     "per": "person"
   },
@@ -1301,10 +1299,8 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id는 런타임에 Supabase / 환경변수에서 확인됩니다. 정적 JSONB의 구성 요소가 아닙니다.",
     "price": {
-      "amountLabel": "59",
-      "originalPriceUsd": 69,
-      "salePriceUsd": 59,
-      "discountPercent": 14,
+      "amountLabel": "64",
+      "salePriceUsd": 64,
       "currency": "USD",
       "per": "person"
     }

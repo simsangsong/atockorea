@@ -47,12 +47,10 @@
   "headlineLine1": "Jeju Crucero",
   "headlineLine2": "Grupo Pequeño",
   "price": {
-    "amountLabel": "72",
+    "amountLabel": "77",
     "currency": "USD",
     "per": "person",
-    "salePriceUsd": 72,
-    "originalPriceUsd": 85,
-    "discountPercent": 15
+    "salePriceUsd": 77
   },
   "hero": {
     "imageUrl": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
@@ -1779,12 +1777,10 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id se resuelve en tiempo de ejecución desde Supabase / env; no forma parte del JSONB estático. user_port se resuelve en el momento de la reserva a partir del itinerario del crucero.",
     "price": {
-      "amountLabel": "72",
+      "amountLabel": "77",
       "currency": "USD",
       "per": "person",
-      "salePriceUsd": 72,
-      "originalPriceUsd": 85,
-      "discountPercent": 15
+      "salePriceUsd": 77
     }
   },
   "matching_profile": {

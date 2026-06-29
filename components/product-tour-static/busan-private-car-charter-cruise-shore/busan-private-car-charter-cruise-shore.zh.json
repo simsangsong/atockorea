@@ -33,7 +33,7 @@
     ],
     "heroImage": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
     "thumbnail": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
-    "priceLabel": "车辆1辆8小时 $359（原价 $379，1–6人）· 7–12人 2倍 · 13人以上 3倍",
+    "priceLabel": "",
     "shortCardDescription": "为釜山邮轮旅客提供的8小时私人包车服务，配备持牌英语司机导游。默认行程涵盖联合国纪念公墓、太宗台悬崖、甘川文化村、龙头山公园及扎嘎其市场，全程可定制。可在邮轮码头、KTX车站或釜山市区任意酒店接送，保证准时返回船上。",
     "tags": [
       "private_tour",
@@ -45,12 +45,10 @@
   "headlineLine1": "釜山邮轮岸上私人包车",
   "headlineLine2": "一日游",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "364",
     "currency": "USD",
     "per": "vehicle",
-    "salePriceUsd": null,
-    "originalPriceUsd": null,
-    "discountPercent": null
+    "salePriceUsd": 364
   },
   "hero": {
     "imageUrl": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
@@ -1015,12 +1013,10 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id 在运行时从 Supabase / env 中解析；不属于静态 JSONB 的一部分。",
     "price": {
-      "amountLabel": "359",
+      "amountLabel": "364",
       "currency": "USD",
       "per": "vehicle",
-      "salePriceUsd": 359,
-      "originalPriceUsd": 379,
-      "discountPercent": 5
+      "salePriceUsd": 364
     }
   },
   "pickup_dropoff": {

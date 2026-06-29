@@ -33,7 +33,7 @@
     ],
     "heroImage": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
     "thumbnail": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
-    "priceLabel": "車輛1輛8小時 $359（原價 $379，1–6人）· 7–12人 2倍 · 13人以上 3倍",
+    "priceLabel": "",
     "shortCardDescription": "專為釜山郵輪旅客提供的8小時私人包車服務，配備持牌英語司機導遊。預設行程涵蓋聯合國紀念公墓、太宗臺懸崖、甘川文化村、龍頭山公園及札嘎其市場。全程可客製化。可於郵輪碼頭、KTX車站或釜山市區任意飯店接送，保證準時返回郵輪。",
     "tags": [
       "private_tour",
@@ -45,12 +45,10 @@
   "headlineLine1": "釜山郵輪岸上私人包車",
   "headlineLine2": "一日遊",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "364",
     "currency": "USD",
     "per": "vehicle",
-    "salePriceUsd": null,
-    "originalPriceUsd": null,
-    "discountPercent": null
+    "salePriceUsd": 364
   },
   "hero": {
     "imageUrl": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
@@ -1015,12 +1013,10 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id 於執行時從 Supabase／環境變數解析，不屬於靜態 JSONB 的一部分。",
     "price": {
-      "amountLabel": "359",
+      "amountLabel": "364",
       "currency": "USD",
       "per": "vehicle",
-      "salePriceUsd": 359,
-      "originalPriceUsd": 379,
-      "discountPercent": 5
+      "salePriceUsd": 364
     }
   },
   "pickup_dropoff": {

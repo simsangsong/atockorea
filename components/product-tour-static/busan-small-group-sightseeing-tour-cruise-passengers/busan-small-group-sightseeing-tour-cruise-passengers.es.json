@@ -19,7 +19,7 @@
   "catalog_card": {
     "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
     "title": "Busan Crucero: Grupo Pequeño",
-    "priceLabel": "Desde US$79 por persona (antes $85, 7% descuento)",
+    "priceLabel": "",
     "shortCardDescription": "Tour de día en furgoneta compartida desde la terminal de cruceros de Busan que incluye las cinco paradas más solicitadas de la ciudad en una ventana de 9 horas: Cementerio Memorial de la ONU (contexto de la Guerra de Corea), acantilados costeros de Taejongdae, almuerzo en un restaurante local de Busan, Pueblo Cultural de Gamcheon (la ladera pintada), Parque Yongdusan con observatorio opcional en la Torre de Busan, y Mercado de Jagalchi. Recogida coordinada con el desembarco específico de su barco. Guía certificado con habla inglesa y china.",
     "tags": [
       "small_group",
@@ -46,12 +46,10 @@
   "headlineLine1": "Busan Crucero",
   "headlineLine2": "Grupo Pequeño",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "84",
     "currency": "USD",
     "per": "person",
-    "salePriceUsd": null,
-    "originalPriceUsd": null,
-    "discountPercent": null
+    "salePriceUsd": 84
   },
   "hero": {
     "imageUrl": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
@@ -1263,12 +1261,10 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id se resuelve en tiempo de ejecución desde Supabase / env; no forma parte del JSONB estático.",
     "price": {
-      "amountLabel": "79",
+      "amountLabel": "84",
       "currency": "USD",
       "per": "person",
-      "salePriceUsd": 79,
-      "originalPriceUsd": 85,
-      "discountPercent": 7
+      "salePriceUsd": 84
     }
   },
   "matching_profile": {

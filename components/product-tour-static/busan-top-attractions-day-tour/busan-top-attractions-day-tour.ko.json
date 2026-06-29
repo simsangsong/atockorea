@@ -33,7 +33,7 @@
     ],
     "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
     "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
-    "priceLabel": "1인 US$29 (정가 $41, 29% 할인)",
+    "priceLabel": "",
     "shortCardDescription": "해동 용궁사 해변 사원, 청사포 & 블루라인 파크(스카이 캡슐 선택 가능), 부산 현지 점심식사, UN 기념 공원, 감천문화마을 알록달록 산비탈, 자갈치 수산시장을 포함한 7개 코스 소그룹 당일 투어. 부산 중심부 3개 픽업 포인트 제공, 공인 영어 가이드 동행, 미니버스 운행(최대 약 12명). 모든 관광지 입장료 무료; 점심 및 선택 티켓만 현장 결제.",
     "tags": [
       "small_group",
@@ -46,12 +46,10 @@
   "headlineLine1": "부산 핵심 명소 일일 투어",
   "headlineLine2": "투어",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "34",
     "currency": "USD",
     "per": "person",
-    "salePriceUsd": null,
-    "originalPriceUsd": null,
-    "discountPercent": null
+    "salePriceUsd": 34
   },
   "hero": {
     "imageUrl": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
@@ -1711,12 +1709,10 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id는 런타임 시 Supabase / env에서 확인되며, 정적 JSONB의 일부가 아닙니다.",
     "price": {
-      "amountLabel": "29",
+      "amountLabel": "34",
       "currency": "USD",
       "per": "person",
-      "salePriceUsd": 29,
-      "originalPriceUsd": 41,
-      "discountPercent": 29
+      "salePriceUsd": 34
     }
   },
   "matching_profile": {

@@ -33,7 +33,7 @@
     ],
     "heroImage": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
     "thumbnail": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
-    "priceLabel": "Desde US$59 por persona (antes $69, 14% descuento)",
+    "priceLabel": "",
     "shortCardDescription": "Ruta exclusiva de verano por el suroeste de Jeju — playa esmeralda, jardines del festival de hortensias, acantilado columnar de la UNESCO, cascada de tres niveles, túnel de hortensias y campos de té.",
     "tags": [
       "summer_only",
@@ -44,10 +44,8 @@
   "headlineLine1": "Hortensias Jeju Suroeste",
   "headlineLine2": "Tour del Día",
   "price": {
-    "amountLabel": "",
-    "originalPriceUsd": null,
-    "salePriceUsd": null,
-    "discountPercent": null,
+    "amountLabel": "64",
+    "salePriceUsd": 64,
     "currency": "USD",
     "per": "person"
   },
@@ -1301,10 +1299,8 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id se resuelve en tiempo de ejecución desde Supabase / env; no forma parte del JSONB estático.",
     "price": {
-      "amountLabel": "59",
-      "originalPriceUsd": 69,
-      "salePriceUsd": 59,
-      "discountPercent": 14,
+      "amountLabel": "64",
+      "salePriceUsd": 64,
       "currency": "USD",
       "per": "person"
     }

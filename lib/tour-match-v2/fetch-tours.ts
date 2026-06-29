@@ -4,6 +4,7 @@
  */
 
 import type { SupabaseClient } from "@supabase/supabase-js";
+import { isTourSlugBlockedFromConsumerSurfaces } from "@/lib/tour-consumer-visibility";
 import type { MatchTourRow } from "./types";
 
 export async function fetchMatchTours(supabase: SupabaseClient, locale = "en"): Promise<MatchTourRow[]> {
@@ -22,5 +23,11 @@ export async function fetchMatchTours(supabase: SupabaseClient, locale = "en"): 
     console.error("[fetchMatchTours] error:", error.message);
     throw error;
   }
-  return (data ?? []) as unknown as MatchTourRow[];
+  // match_tours has no active flag, so deactivated/blocked SKUs would still be
+  // matched and recommended (home matcher + chatbot). Filter them out here using
+  // the same consumer blocklist the catalog/sitemap/agent surfaces use, so we
+  // hide rather than delete match_tours rows (reversible — un-blocklist to restore).
+  return ((data ?? []) as unknown as MatchTourRow[]).filter(
+    (row) => !isTourSlugBlockedFromConsumerSurfaces(row.slug)
+  );
 }

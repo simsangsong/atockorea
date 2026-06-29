@@ -20,7 +20,7 @@
   "catalog_card": {
     "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
     "title": "제주 동부 수국 축제 투어",
-    "priceLabel": "1인 US$59 (정가 $69, 14% 할인)",
+    "priceLabel": "",
     "shortCardDescription": "제주 동부 수국 시즌 한정(5월 말~7월 중순) 소그룹 투어. 함덕해변, 성읍민속마을(유네스코), 성산일출봉(유네스코), 일출랜드 수국 축제+미천굴, 휴애리 자연생활공원 수국 포함.",
     "tags": [
       "소그룹",
@@ -52,10 +52,8 @@
   "headlineLine1": "제주 동부 수국 축제 투어",
   "headlineLine2": "투어",
   "price": {
-    "amountLabel": "",
-    "originalPriceUsd": null,
-    "salePriceUsd": null,
-    "discountPercent": null,
+    "amountLabel": "64",
+    "salePriceUsd": 64,
     "currency": "USD",
     "per": "person"
   },
@@ -1516,10 +1514,8 @@
   "sticky_booking_bar": {
     "note": "결제 가능 여부는 예약 단계에서 확인됩니다.",
     "price": {
-      "amountLabel": "59",
-      "originalPriceUsd": 69,
-      "salePriceUsd": 59,
-      "discountPercent": 14,
+      "amountLabel": "64",
+      "salePriceUsd": 64,
       "currency": "USD",
       "per": "person"
     }

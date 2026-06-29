@@ -12,6 +12,7 @@ import {
 import type { MatchPoiRow } from "@/lib/itinerary-builder/types";
 import { isBuilderAttraction, hasBuilderPhoto } from "@/lib/itinerary-match-engine/poi-taxonomy";
 import BuilderShell from "@/components/itinerary-builder/BuilderShell";
+import { ITINERARY_BUILDER_ENABLED } from "@/lib/itinerary-builder/builder-visibility";
 
 /**
  * Phase 13 D36 — restored as a real page after Phase 11 had absorbed the
@@ -73,6 +74,8 @@ export default async function ItineraryBuilderPage({
 }: {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
+  // Klook prep 2026-06-29: builder hidden site-wide → send visitors to the catalog.
+  if (!ITINERARY_BUILDER_ENABLED) redirect("/tours/list");
   const sp = await searchParams;
 
   const requestedRegion = typeof sp.region === "string" ? sp.region : null;
