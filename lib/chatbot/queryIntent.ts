@@ -4,6 +4,7 @@ export type ChatbotIntent =
   | "tour_recommendation"
   | "tour_catalog"
   | "quote_request"
+  | "price_question"
   | "policy"
   | "booking_specific"
   | "company"
@@ -110,20 +111,33 @@ const TOUR_TERMS = [
   "旅行",
   "おすすめ",
   "旅游",
+  "一日游",
+  "一日遊",
   "行程",
   "推荐",
   "privado",
   "tour privado",
 ];
 
-// Price/quote signals — trigger the custom-quote funnel when paired with a
-// tour/region/private signal (see classifyChatbotQuery).
-const QUOTE_TERMS = [
-  "quote", "get a price", "price", "pricing", "cost", "how much", "how much is",
-  "견적", "가격", "얼마", "비용", "요금",
-  "見積", "見積もり", "料金", "いくら",
-  "报价", "報價", "价格", "價格", "多少钱", "多少錢", "费用", "費用",
-  "presupuesto", "precio", "cuánto", "cuanto", "cuesta",
+// W2.1 (C-3): quote vs price split. An EXPLICIT quote ask ("견적", "quote")
+// or a price question that itself carries a private/charter signal enters the
+// custom-quote funnel; a plain price question about listed tours ("How much is
+// the Pocheon tour?") must be ANSWERED WITH A NUMBER from the catalogue
+// instead of hijacked into private-tour slot collection.
+const EXPLICIT_QUOTE_TERMS = [
+  "quote", "quotation", "estimate for",
+  "견적",
+  "見積", "見積もり",
+  "报价", "報價",
+  "presupuesto", "cotización", "cotizacion",
+];
+
+const PRICE_TERMS = [
+  "price", "pricing", "cost", "how much",
+  "가격", "얼마", "비용", "요금",
+  "料金", "いくら",
+  "价格", "價格", "多少钱", "多少錢", "费用", "費用",
+  "precio", "cuánto", "cuanto", "cuesta",
 ];
 
 const PRIVATE_TOUR_TERMS = [
@@ -485,7 +499,9 @@ export function classifyChatbotQuery(message: string): ChatbotIntentResult {
   const regionScore = scoreAny(q, REGION_TERMS);
   const tourScore = scoreAny(q, TOUR_TERMS);
   const explicitRecommendation = hasAny(q, EXPLICIT_RECOMMENDATION_TERMS) && tourScore > 0;
-  const quoteScore = scoreAny(q, QUOTE_TERMS);
+  const explicitQuoteScore = scoreAny(q, EXPLICIT_QUOTE_TERMS);
+  const priceScore = scoreAny(q, PRICE_TERMS);
+  const quoteScore = explicitQuoteScore + priceScore;
   const privateScore = scoreAny(q, PRIVATE_TOUR_TERMS);
 
   const looksBookingSpecific =
@@ -493,14 +509,17 @@ export function classifyChatbotQuery(message: string): ChatbotIntentResult {
     (hasPersonalMarker || strongPersonalScore > 0) &&
     !(policyScore > 0 && !hasPersonalMarker);
 
-  // Custom private-tour quote funnel: an explicit price/quote ask paired with a
-  // private, tour, or region signal → slot-collect → quote gate (route).
+  // Custom private-tour quote funnel: an EXPLICIT quote ask ("견적"/"quote")
+  // paired with a private/tour/region signal, or a price ask that itself
+  // carries a private/charter signal (W2.1 narrowing — C-3: plain catalog
+  // price questions no longer land here).
   // Checked BEFORE booking_specific so a NEW-tour quote that mentions "픽업"
   // (pickup zone) isn't mistaken for an existing-booking pickup-time question.
   // A bare existing-booking question ("내 예약 픽업 시간?") has no quote/tour/
   // region cue, so it still falls through to booking_specific below.
   const looksQuoteRequest =
-    quoteScore > 0 && (privateScore > 0 || tourScore > 0 || regionScore > 0);
+    (explicitQuoteScore > 0 && (privateScore > 0 || tourScore > 0 || regionScore > 0)) ||
+    (priceScore > 0 && privateScore > 0);
   if (looksQuoteRequest) {
     reasons.push("custom_quote_request");
     return result("quote_request", 0.74 + quoteScore * 0.05 + privateScore * 0.03, reasons, {
@@ -541,6 +560,18 @@ export function classifyChatbotQuery(message: string): ChatbotIntentResult {
     reasons.push("poi_or_place_fact");
     return result("poi", 0.64 + poiScore * 0.05, reasons, {
       useTourCatalog: false,
+      useSiteKnowledge: true,
+      requiresHuman: false,
+    });
+  }
+
+  // W2.1 (C-3·C-12): listed-tour price question — route WITH the catalogue
+  // (which carries the USD list prices) so the answer states a number, instead
+  // of hijacking into the private-quote interrogation or dodging pricelessly.
+  if (priceScore > 0 && (tourScore > 0 || regionScore > 0)) {
+    reasons.push("listed_price_question");
+    return result("price_question", 0.7 + priceScore * 0.05, reasons, {
+      useTourCatalog: true,
       useSiteKnowledge: true,
       requiresHuman: false,
     });

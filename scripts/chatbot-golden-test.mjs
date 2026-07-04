@@ -168,7 +168,7 @@ const suites = {
         check("HTTP 200", r.status === 200),
         check("환불/24 언급", containsAny(r.json.reply, ["환불", "24"])),
         check("정보성 질문은 티켓 미생성 (C-20)", !r.json.escalated),
-      ], r, "W1.5.1");
+      ], r);
       if (r.json.ticket_id) artifacts.tickets.push(r.json.ticket_id);
     }
     {
@@ -195,7 +195,7 @@ const suites = {
     record("recommend", "jeju family recommendation", checks, r);
   },
 
-  // §E 가격: 가격 질문 응답에 숫자 필수 (C-12) — W2.1 착륙 전까지 expected-fail.
+  // §E 가격: 가격 질문 응답에 숫자 필수 (C-12) — W2.1 price_question 라우팅으로 상시 게이트.
   async price() {
     {
       const r = await postChat([{ role: "user", content: "How much is the Pocheon day tour per person?" }]);
@@ -203,14 +203,14 @@ const suites = {
         check("HTTP 200", r.status === 200),
         check("reply contains a number", hasDigits(r.json.reply)),
         check("not hijacked into private-quote interrogation (C-3)", !containsAny(r.json.reply, ["happy to price a private tour"])),
-      ], r, "W2.1");
+      ], r);
     }
     {
       const r = await postChat([{ role: "user", content: "제주 투어는 1인당 얼마인가요?" }]);
       record("price", "catalog price question has numbers (ko)", [
         check("HTTP 200", r.status === 200),
         check("숫자 포함", hasDigits(r.json.reply)),
-      ], r, "W2.1");
+      ], r);
     }
   },
 
