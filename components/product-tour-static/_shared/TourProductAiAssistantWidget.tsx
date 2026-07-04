@@ -175,6 +175,16 @@ const STORED_HISTORY_MAX = 80;
 
 type FeedbackLabels = { helpful: string; notHelpful: string; thanks: string; noted: string };
 
+// W3.5 — staged "thinking" copy: naming what the bot is doing (searching vs
+// writing) makes the identical wait feel roughly half as long.
+function stageLabels(lang: string): { searching: string; writing: string } {
+  if (lang.startsWith("ko")) return { searching: "관련 정보 검색 중…", writing: "답변 작성 중…" };
+  if (lang.startsWith("ja")) return { searching: "関連情報を検索中…", writing: "回答を作成中…" };
+  if (lang.startsWith("es")) return { searching: "Buscando información…", writing: "Escribiendo la respuesta…" };
+  if (lang.startsWith("zh")) return { searching: "正在搜索相关信息…", writing: "正在撰写回答…" };
+  return { searching: "Searching our info…", writing: "Writing your answer…" };
+}
+
 function feedbackLabels(lang: string): FeedbackLabels {
   if (lang.startsWith("ko"))
     return { helpful: "도움이 됐어요", notHelpful: "도움이 안 됐어요", thanks: "고마워요!", noted: "알려줘서 고마워요" };
@@ -352,6 +362,8 @@ export function TourProductAiAssistantWidget({
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
+  // W3.5 — which phase the pending assistant turn is in (null = generic dots).
+  const [loadingStage, setLoadingStage] = useState<"searching" | "writing" | null>(null);
   const [handoffOffer, setHandoffOffer] = useState<{ question: string } | null>(null);
   const [activeTicketId, setActiveTicketId] = useState<number | null>(() => readStoredTicketId(storageKey));
   const [liveStatus, setLiveStatus] = useState<string | null>(null);
@@ -484,6 +496,7 @@ export function TourProductAiAssistantWidget({
       };
 
       setLoading(true);
+      setLoadingStage("searching");
       try {
         kickWatchdog();
         const res = await fetch("/api/tour-product/assistant", {
@@ -498,6 +511,9 @@ export function TourProductAiAssistantWidget({
             stream: true,
           }),
         });
+
+        // Headers arrived → retrieval is done server-side; the model is writing.
+        setLoadingStage("writing");
 
         // Content negotiation (D-T2-1): the server streams SSE only for a
         // free-form model answer. Deterministic gates, fallbacks, and older
@@ -628,6 +644,7 @@ export function TourProductAiAssistantWidget({
         if (watchdog) window.clearTimeout(watchdog);
         if (abortRef.current === controller) abortRef.current = null;
         setLoading(false);
+        setLoadingStage(null);
       }
     },
     [labels, pageContext, scope, storageKey],
@@ -1060,6 +1077,11 @@ export function TourProductAiAssistantWidget({
               >
                 <div className="flex items-center gap-2 rounded-2xl rounded-bl-md border border-white/80 bg-white px-3 py-2 shadow-sm ring-1 ring-slate-200/60">
                   <TypingDots />
+                  {loadingStage && (
+                    <span className="text-[11px] font-medium text-slate-400" aria-live="polite">
+                      {stageLabels(uiLang)[loadingStage]}
+                    </span>
+                  )}
                 </div>
               </motion.div>
             )}

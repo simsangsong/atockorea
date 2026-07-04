@@ -382,6 +382,8 @@ export async function extractQuoteDraft(
   modelName: string,
   messages: { role: "user" | "assistant"; content: string }[],
   todayISO: string,
+  /** W3.3: model to retry with when `modelName` (e.g. flash-lite) fails. */
+  fallbackModelName?: string,
 ): Promise<QuoteDraft> {
   const convo = messages
     .slice(-12)
@@ -397,9 +399,9 @@ export async function extractQuoteDraft(
     "",
     convo,
   ].join("\n");
-  try {
-    const model = genAI.getGenerativeModel({
-      model: modelName,
+  const runExtraction = async (model: string): Promise<QuoteDraft> => {
+    const gen = genAI.getGenerativeModel({
+      model,
       // thinkingBudget: 0 is load-bearing (W2.0 root-cause fix): gemini-2.5
       // thinking tokens count against maxOutputTokens, so on longer
       // conversations the 400-token budget was consumed by thinking and the
@@ -414,14 +416,27 @@ export async function extractQuoteDraft(
         ...({ thinkingConfig: { thinkingBudget: 0 } } as Record<string, unknown>),
       },
     });
-    const res = await model.generateContent(prompt);
+    const res = await gen.generateContent(prompt);
     const text = res.response.text()?.trim() ?? "";
     const json = JSON.parse(text.startsWith("{") ? text : (text.match(/\{[\s\S]*\}/)?.[0] ?? "{}"));
     return sanitizeDraft(json, todayISO);
+  };
+  try {
+    return await runExtraction(modelName);
   } catch (err) {
-    // A silent empty draft here degrades the flow to "ask everything again" —
-    // log the cause so quota/parse failures are visible (C-2 lesson).
-    console.error("[quoteFlow] extractQuoteDraft failed:", (err as Error).message);
+    console.error(`[quoteFlow] extractQuoteDraft failed on ${modelName}:`, (err as Error).message);
+    // W3.3: the fast extraction model failing must never degrade the flow to
+    // "ask everything again" — retry once on the main model.
+    if (fallbackModelName && fallbackModelName !== modelName) {
+      try {
+        return await runExtraction(fallbackModelName);
+      } catch (fallbackErr) {
+        console.error(
+          `[quoteFlow] extractQuoteDraft fallback ${fallbackModelName} failed:`,
+          (fallbackErr as Error).message,
+        );
+      }
+    }
     return { ...EMPTY_DRAFT };
   }
 }

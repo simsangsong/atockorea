@@ -360,6 +360,58 @@ const suites = {
     }
   },
 
+  // §E W3.1 — streaming TTFT probe (Wave 3 target: first token < 2.5s p75).
+  // Reported as a number; hard-fails only past 10s so network variance never
+  // flakes the gate. Skips cleanly when the server answers buffered JSON
+  // (CHAT_STREAMING off).
+  async perf() {
+    const t0 = Date.now();
+    let ttftMs = null;
+    let totalMs = null;
+    let streamed = false;
+    try {
+      const res = await fetch(`${BASE}/api/tour-product/assistant`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          tourProductSlug: "__site__",
+          assistantScope: "site",
+          stream: true,
+          messages: [{ role: "user", content: "What is included in your private tours?" }],
+        }),
+      });
+      const contentType = res.headers.get("content-type") || "";
+      if (contentType.includes("text/event-stream") && res.body) {
+        streamed = true;
+        const reader = res.body.getReader();
+        const decoder = new TextDecoder();
+        let bufText = "";
+        for (;;) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          bufText += decoder.decode(value, { stream: true });
+          if (ttftMs === null && bufText.includes("event: delta")) ttftMs = Date.now() - t0;
+        }
+        totalMs = Date.now() - t0;
+      } else {
+        await res.json().catch(() => ({}));
+        totalMs = Date.now() - t0;
+      }
+    } catch {
+      /* recorded below as failure */
+    }
+    if (!streamed) {
+      record("perf", "streaming TTFT (skipped — server replied buffered JSON)", [
+        check("HTTP reachable", totalMs !== null),
+      ], { status: 200, json: { reply: `buffered total=${totalMs}ms` }, ms: totalMs });
+      return;
+    }
+    record("perf", `streaming TTFT ${ttftMs}ms (target <2500ms) / total ${totalMs}ms`, [
+      check("first token arrived", ttftMs !== null),
+      check("TTFT under 10s hard ceiling", ttftMs !== null && ttftMs < 10_000),
+    ], { status: 200, json: {}, ms: totalMs });
+  },
+
   // §E 핸드오프 (WRITES a ticket) — created then resolved in cleanup.
   async handoff() {
     const r = await postChat(
