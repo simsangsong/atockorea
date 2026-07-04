@@ -163,10 +163,15 @@ function localeFromRequest(req: NextRequest): TourProductPageLocale {
   return "en";
 }
 
-function inferLocaleFromText(text: string): TourProductPageLocale | null {
+function inferLocaleFromText(text: string, uiLocale?: TourProductPageLocale): TourProductPageLocale | null {
   if (/\p{Script=Hangul}/u.test(text)) return "ko";
   if (/[\p{Script=Hiragana}\p{Script=Katakana}]/u.test(text)) return "ja";
-  if (/\p{Script=Han}/u.test(text)) return "zh";
+  if (/\p{Script=Han}/u.test(text)) {
+    // W1.5.4 (C-26): kana-free Japanese is pure Han script — when the visitor
+    // is browsing the ja (or zh-TW) UI, trust that over the zh default.
+    if (uiLocale === "ja" || uiLocale === "zh-TW") return uiLocale;
+    return "zh";
+  }
   if (/[¿¡ñáéíóúü]/i.test(text)) return "es";
   return null;
 }
@@ -727,7 +732,7 @@ export async function POST(req: NextRequest) {
 
   if (directHandoffRequested) {
     if (debugNoSideEffects) {
-      const handoffLocale = inferLocaleFromText(parsed.data.handoffQuestion ?? latestUserMessage) ?? locale;
+      const handoffLocale = inferLocaleFromText(parsed.data.handoffQuestion ?? latestUserMessage, locale) ?? locale;
       return applySessionCookie(
         NextResponse.json({
           reply: humanHandoffAcknowledgement(handoffLocale, null),
@@ -759,7 +764,7 @@ export async function POST(req: NextRequest) {
         .find((m) => m.role === "user" && m.content !== latestUserMessage)
         ?.content ||
       latestUserMessage;
-    const handoffLocale = inferLocaleFromText(originalQuestion) ?? locale;
+    const handoffLocale = inferLocaleFromText(originalQuestion, locale) ?? locale;
 
     try {
       const ticketId = await createSupportTicketAndNotify(sb, ctx, {
@@ -795,7 +800,7 @@ export async function POST(req: NextRequest) {
   let verifiedBookingContext = "";
   let bookingWriteRequest = false;
   if (detectedIntent.intent === "booking_specific") {
-    const bookingLocale = inferLocaleFromText(latestUserMessage) ?? locale;
+    const bookingLocale = inferLocaleFromText(latestUserMessage, locale) ?? locale;
     // Credentials may arrive across separate turns (reference now, email next).
     const recentUserText = messages
       .filter((m) => m.role === "user")
@@ -901,7 +906,7 @@ export async function POST(req: NextRequest) {
   if (detectedIntent.intent === "legal" && isPrivacyRequestQuestion(latestUserMessage)) {
     return applySessionCookie(
       NextResponse.json({
-        reply: privacyRequestReply(inferLocaleFromText(latestUserMessage) ?? locale),
+        reply: privacyRequestReply(inferLocaleFromText(latestUserMessage, locale) ?? locale),
         ticket_id: null,
         escalated: false,
         escalation_reason: null,
@@ -942,7 +947,7 @@ export async function POST(req: NextRequest) {
       detectedIntent: detectedIntent.intent,
     });
   if (detectedIntent.intent === "quote_request" || quoteFlowSticky) {
-    const quoteLocale = inferLocaleFromText(latestUserMessage) ?? locale;
+    const quoteLocale = inferLocaleFromText(latestUserMessage, locale) ?? locale;
     const quoteModel = process.env.GEMINI_TOUR_PRODUCT_ASSISTANT_MODEL?.trim() || DEFAULT_GEMINI_MODEL;
     const todayISO = new Date().toISOString().slice(0, 10);
     const draft = await extractQuoteDraft(new GoogleGenerativeAI(key), quoteModel, messages, todayISO);
@@ -1020,7 +1025,7 @@ export async function POST(req: NextRequest) {
   if (last?.role !== "user") {
     return NextResponse.json({ error: "last_message_must_be_user" }, { status: 400 });
   }
-  const answerLocale = inferLocaleFromText(last.content) ?? locale;
+  const answerLocale = inferLocaleFromText(last.content, locale) ?? locale;
   const activeIntent = classifyChatbotQuery(last.content);
   const useTourCatalog = activeIntent.useTourCatalog || (!isSiteAssistant && activeIntent.intent === "tour_recommendation");
   const useSiteKnowledge = activeIntent.useSiteKnowledge;
