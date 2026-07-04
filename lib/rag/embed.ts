@@ -6,6 +6,8 @@
  * same pattern as lib/openai-server.ts.
  */
 
+import { getCachedQueryEmbedding, setCachedQueryEmbedding } from "@/lib/rag/embedCache";
+
 const OPENAI_API_BASE = "https://api.openai.com/v1";
 
 export const EMBEDDING_MODEL = "text-embedding-3-small";
@@ -76,9 +78,14 @@ export async function embedTexts(texts: string[]): Promise<number[][]> {
   return out;
 }
 
-/** Embed a single query string. */
+/** Embed a single query string — cached (W3.2): repeated questions (quick
+ *  chips, retries, common FAQ) skip the OpenAI round-trip entirely. */
 export async function embedQuery(text: string): Promise<number[]> {
-  const [vec] = await embedTexts([text]);
+  const prepared = prepareInput(text);
+  const cached = await getCachedQueryEmbedding(prepared);
+  if (cached) return cached;
+  const [vec] = await embedTexts([prepared]);
+  setCachedQueryEmbedding(prepared, vec);
   return vec;
 }
 
