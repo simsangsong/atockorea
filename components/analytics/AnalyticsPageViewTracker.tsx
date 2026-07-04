@@ -10,12 +10,11 @@
 // `analytics.pageView()`.
 
 import { useEffect, useRef } from "react";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { analytics } from "@/src/design/analytics";
 
 export function AnalyticsPageViewTracker() {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
   const previousKeyRef = useRef<string | null>(null);
 
   useEffect(() => {
@@ -29,9 +28,6 @@ export function AnalyticsPageViewTracker() {
     // double-fire. searchParams is read but not in deps.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
-
-  // Touch searchParams so React doesn't strip the hook call.
-  void searchParams;
 
   return null;
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Play, X } from "lucide-react";
 /* Sprint 4.7: stripRef + scrollStrip 폐기 (썸네일 strip 제거). ChevronLeft/Right는 lightbox nav arrows에서 계속 사용. */
@@ -168,14 +169,15 @@ export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmospher
                   className="group relative overflow-hidden rounded-lg cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-foreground/30"
                   style={{ gridColumn: tile.col, gridRow: tile.row }}
                 >
-                  <img
+                  <Image
                     src={item.src}
                     alt={item.alt ?? ""}
+                    fill
+                    sizes="(min-width: 1024px) 33vw, 50vw"
                     loading={i === 0 ? "eager" : "lazy"}
-                    decoding="async"
                     draggable={false}
                     onContextMenu={(e) => e.preventDefault()}
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.05] tour-photo-protected"
+                    className="object-cover transition-transform duration-700 group-hover:scale-[1.05] tour-photo-protected"
                     style={{
                       objectPosition: tile.objectPos,
                       /* Magazine editorial polish — Vogue subtle (사용자 요청 2026-05-19):
@@ -368,11 +370,13 @@ export function TourAtmosphereGallery({ galleryItems, sectionUi }: TourAtmospher
                     : "opacity-45 hover:opacity-75",
                 )}
               >
-                <img
+                <Image
                   src={item.src}
                   alt=""
+                  width={40}
+                  height={28}
+                  sizes="40px"
                   loading="lazy"
-                  decoding="async"
                   draggable={false}
                   onContextMenu={(e) => e.preventDefault()}
                   className="h-full w-full object-cover tour-photo-protected"

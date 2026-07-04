@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { useRouter, usePathname, useSearchParams } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import { Globe } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useI18n, Locale } from '@/lib/i18n';
@@ -52,7 +52,6 @@ export default function FloatingLanguageToggle() {
   const { locale, setLocale, localeNames } = useI18n();
   const router = useRouter();
   const pathname = usePathname();
-  const searchParams = useSearchParams();
   const [isOpen, setIsOpen] = useState(false);
   const [stickyCtaShown, setStickyCtaShown] = useState(false);
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -148,7 +147,10 @@ export default function FloatingLanguageToggle() {
       return;
     }
 
-    const search = searchParams?.toString();
+    // Click-time read (event handler, client-only) — the useSearchParams()
+    // hook here bailed every static page rendering this toggle out of
+    // prerendering (BAILOUT_TO_CLIENT_SIDE_RENDERING).
+    const search = window.location.search.replace(/^\?/, '');
     if (search) nextPath += `?${search}`;
     setTimeout(() => router.push(nextPath || '/'), 0);
   };

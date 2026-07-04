@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import ReactDOM from "react-dom";
 
 import { buildTourProductViewModelFromFullPageJson } from "@/components/product-tour-static/_shared/buildTourProductViewModelFromJson";
 import {
@@ -156,14 +155,10 @@ export async function TourProductPageBody({
   const checkout = await checkoutPromise;
   const externalReviews = await externalReviewsPromise;
 
-  // C4: the hero renders as a CSS background (parallax slides), which the browser
-  // can't discover until CSS parses — so it's a late LCP on the highest-traffic
-  // page. Preload the first slide (hero.imageUrl) at high priority so the fetch
-  // starts during HTML parse. Hint only; no layout/visual change.
-  const heroImageUrl = viewModel.hero?.imageUrl?.trim();
-  if (heroImageUrl) {
-    ReactDOM.preload(heroImageUrl, { as: "image", fetchPriority: "high" });
-  }
+  // C4 preload removed in T3: the hero is now a next/image with `priority`,
+  // which emits its own preload for the OPTIMIZED /_next/image URL — keeping
+  // the old raw-URL ReactDOM.preload would download the original (450~670KB)
+  // a second time alongside the ~80KB optimized variant.
 
   const jsonLdScripts = tourProductJsonLdScripts(viewModel, slug);
 
