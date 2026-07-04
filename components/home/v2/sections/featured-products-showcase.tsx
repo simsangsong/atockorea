@@ -26,10 +26,6 @@ import { cn } from "@/lib/utils";
 import { FEATURED_PRODUCT_SLUGS } from "./featured-product-slugs";
 const FEATURED_LIMIT = FEATURED_PRODUCT_SLUGS.length;
 
-type DestinationsApiResponse = {
-  total?: number;
-};
-
 type LiveFeaturedToursState = {
   locale: string;
   tours: TourCardViewModel[];
@@ -164,7 +160,6 @@ export function FeaturedProductsShowcase({
     [locale, initialMediaBySlug],
   );
 
-  const [totalCount, setTotalCount] = useState<number | null>(null);
   const [liveToursState, setLiveToursState] = useState<LiveFeaturedToursState | null>(null);
   const liveToursForLocale = liveToursState?.locale === locale ? liveToursState.tours : null;
   const tours = useMemo(
@@ -202,14 +197,6 @@ export function FeaturedProductsShowcase({
       .then((data) => {
         if (!data) return;
         setLiveToursState({ locale, tours: adaptToursListResponse(data) });
-      })
-      .catch(() => {});
-
-    fetch("/api/tours/destinations", { signal: controller.signal })
-      .then((r) => (r.ok ? (r.json() as Promise<DestinationsApiResponse>) : null))
-      .then((data) => {
-        if (!data || typeof data.total !== "number") return;
-        setTotalCount(data.total);
       })
       .catch(() => {});
 
@@ -281,9 +268,7 @@ export function FeaturedProductsShowcase({
             className={cn(homeBtnSecondary, "inline-flex w-auto items-center gap-2 px-6")}
           >
             <Link href={HOME_CTA_BROWSE_TOURS_HREF}>
-              {totalCount != null && totalCount > 0
-                ? t("premium.v2.featuredProducts.viewAllCtaParam", { count: totalCount })
-                : t("premium.v2.featuredProducts.viewAllCtaGeneric")}
+              {t("premium.v2.featuredProducts.viewAllCtaGeneric")}
               <ArrowRight className="h-4 w-4" />
             </Link>
           </V0ShadcnButton>

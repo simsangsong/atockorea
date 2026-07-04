@@ -1,6 +1,6 @@
 "use client";
 import { useMemo, useState } from "react";
-import { ExternalLink, Headphones, ShieldCheck, Zap } from "lucide-react";
+import { Headphones, ShieldCheck, Zap } from "lucide-react";
 
 import type { TourProductDetailViewModel } from "./tourProductFullPageJsonTypes";
 import type { TourProductCheckoutContext } from "@/lib/tour-product/eastSignatureCheckoutContext";
@@ -126,6 +126,7 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
             headlineLine2={vm.headlineLine2}
             hero={vm.hero}
             tourProductSlug={tourProductSlug}
+            viatorListingUrl={viatorListingUrl}
           />
 
           {/* Trust strip — converts on first scroll without overloading the hero */}
@@ -155,19 +156,6 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
         <section id="overview" className="mx-3 mt-5 lg:mx-0">
           <div className="mx-auto max-w-2xl px-4 sm:px-5 py-6">
             <TourAtAGlance glanceItems={vm.glanceItems} sectionUi={vm.sectionUi} />
-            {viatorListingUrl ? (
-              <div className="mt-4">
-                <a
-                  href={viatorListingUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-4 py-2 text-[13px] font-semibold text-foreground shadow-sm transition-colors hover:bg-slate-50"
-                >
-                  {t("tour.viewOnViator")}
-                  <ExternalLink className="h-3.5 w-3.5 text-muted-foreground" strokeWidth={2} />
-                </a>
-              </div>
-            ) : null}
           </div>
         </section>
 
