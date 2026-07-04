@@ -21,6 +21,13 @@ type Analytics = {
   escalationRate: number;
   deflectionRate: number | null;
   funnel: { bookings: number; confirmed: number; pending: number; valueKrw: number };
+  reliability?: {
+    assistantTurns24h: number;
+    errorTurns24h: number;
+    failureRate24h: number;
+    cost24hUsd: number;
+    costWindowUsd: number;
+  };
   feedback: { positive: number; negative: number; total: number; helpfulRate: number | null };
   qa: Record<string, number>;
   rag: { bySource: Record<string, number>; total: number; lastRefresh: string | null };
@@ -205,6 +212,38 @@ export default function ChatbotAnalyticsPage() {
           }
         />
       </div>
+
+      {/* W0.2c/W0.5 — reliability + LLM cost (spend-cap early warning) */}
+      {data.reliability && (
+        <div className="rounded-design-md border border-admin-border bg-admin-surface p-4 shadow-admin-card">
+          <h2 className="text-sm font-semibold text-slate-900">신뢰성 · LLM 비용</h2>
+          <p className="text-xs text-slate-500">
+            실패 턴은 <code className="rounded bg-slate-100 px-1">[error:코드]</code>로 기록 · 비용 급증 시 Gemini 지출캡(ai.studio/usage) 접근 여부를 확인하세요
+          </p>
+          <div className="mt-3 grid grid-cols-2 gap-2 text-center md:grid-cols-4">
+            <div>
+              <div className={cn("text-2xl font-bold tabular-nums", data.reliability.failureRate24h > 0.01 ? "text-rose-600" : "text-emerald-600")}>
+                {pct(data.reliability.failureRate24h)}
+              </div>
+              <div className="text-xs text-slate-500">실패율 (24h)</div>
+            </div>
+            <div>
+              <div className="text-2xl font-bold tabular-nums text-slate-900">
+                {data.reliability.errorTurns24h.toLocaleString()}<span className="text-sm font-medium text-slate-400">/{data.reliability.assistantTurns24h.toLocaleString()}</span>
+              </div>
+              <div className="text-xs text-slate-500">실패/전체 턴 (24h)</div>
+            </div>
+            <div>
+              <div className="text-2xl font-bold tabular-nums text-slate-900">${data.reliability.cost24hUsd.toFixed(3)}</div>
+              <div className="text-xs text-slate-500">LLM 비용 (24h)</div>
+            </div>
+            <div>
+              <div className="text-2xl font-bold tabular-nums text-slate-900">${data.reliability.costWindowUsd.toFixed(2)}</div>
+              <div className="text-xs text-slate-500">LLM 비용 ({data.window_days}일)</div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Chatbot quote → checkout funnel (bookings the bot created) */}
       <div className="rounded-design-md border border-admin-border bg-admin-surface p-4 shadow-admin-card">

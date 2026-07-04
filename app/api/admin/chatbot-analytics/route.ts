@@ -48,6 +48,29 @@ export async function GET(req: NextRequest) {
       count(sb, "support_tickets"),
     ]);
 
+    // W0.2c + W0.5 — reliability (failed turns are logged as '[error:<code>]'
+    // assistant rows) and LLM cost telemetry for spend-cap early warning.
+    const dayAgo = new Date(Date.now() - 86400_000).toISOString();
+    const [assistantTurns24h, errorTurns24h] = await Promise.all([
+      count(sb, "chat_messages", (q) => q.eq("role", "assistant").gte("created_at", dayAgo)),
+      count(sb, "chat_messages", (q) =>
+        q.eq("role", "assistant").like("content", "[error:%").gte("created_at", dayAgo),
+      ),
+    ]);
+    const { data: costRows } = await sb
+      .from("chat_messages")
+      .select("cost_usd, created_at")
+      .not("cost_usd", "is", null)
+      .gte("created_at", since)
+      .limit(10000);
+    let costWindowUsd = 0;
+    let cost24hUsd = 0;
+    for (const r of (costRows as Array<{ cost_usd: number | string; created_at: string }> | null) ?? []) {
+      const c = Number(r.cost_usd) || 0;
+      costWindowUsd += c;
+      if (r.created_at >= dayAgo) cost24hUsd += c;
+    }
+
     // Feedback.
     const [posFb, negFb] = await Promise.all([
       count(sb, "chat_feedback", (q) => q.eq("rating", 1)),
@@ -128,6 +151,13 @@ export async function GET(req: NextRequest) {
       // (Honest: not "resolution" — we lack a positive resolved signal.)
       deflectionRate: userMessages ? (userMessages - escalatedMessages) / userMessages : null,
       funnel,
+      reliability: {
+        assistantTurns24h,
+        errorTurns24h,
+        failureRate24h: assistantTurns24h ? errorTurns24h / assistantTurns24h : 0,
+        cost24hUsd,
+        costWindowUsd,
+      },
       feedback: { positive: posFb, negative: negFb, total: totalFb, helpfulRate: totalFb ? posFb / totalFb : null },
       qa: { ...qaCounts, active: qaActive },
       rag: { bySource: ragBySource, total: Object.values(ragBySource).reduce((a, b) => a + b, 0), lastRefresh: lastRow?.updated_at ?? null },

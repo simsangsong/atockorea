@@ -32,6 +32,9 @@ export type ChatTurn = {
   outputTokens?: number;
   costUsd?: number;
   elapsedMs?: number;
+  /** Deterministic intent from classifyChatbotQuery — fills the analytics
+   *  category distribution without a separate classification batch (W0.5). */
+  category?: string;
 };
 
 let warnedDefaultSalt = false;
@@ -141,6 +144,7 @@ export async function logChatTurn(
       output_tokens: turn.outputTokens ?? null,
       cost_usd: turn.costUsd ?? null,
       elapsed_ms: turn.elapsedMs ?? null,
+      category: turn.category ?? null,
     })
     .select("id")
     .single();
