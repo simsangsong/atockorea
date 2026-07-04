@@ -33,9 +33,11 @@ function pointTypeIcon(type: string | undefined): LucideIcon {
   return MapPin;
 }
 
-function inferReturnBand(notes: string[] | undefined): string | null {
+function inferReturnBand(notes: string[] | string | undefined): string | null {
   if (!notes?.length) return null;
-  const joined = notes.join(" ");
+  // Tolerate `notes` arriving as a single string (some cruise tour rows) —
+  // same latent SSR crash as PickupDropoffCards.inferReturnBand.
+  const joined = Array.isArray(notes) ? notes.join(" ") : String(notes);
   const match =
     joined.match(/around\s+([0-9]{1,2}:[0-9]{2}\s*[–-]\s*[0-9]{1,2}:[0-9]{2})/i) ?? null;
   return match?.[1] ?? null;

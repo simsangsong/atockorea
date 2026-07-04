@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import type { EastSignatureNatureCoreDetailViewModel } from "../eastSignatureNatureCoreDetailViewModel";
 
@@ -49,11 +50,13 @@ export function TourDayFlowSection({ routeFlowStops, routeShapeIntro, itineraryS
                         )}
                       >
                         {photoUrl ? (
-                          <img
+                          <Image
                             src={photoUrl}
                             alt=""
+                            width={48}
+                            height={48}
+                            sizes="48px"
                             loading="lazy"
-                            decoding="async"
                             draggable={false}
                             onContextMenu={(e) => e.preventDefault()}
                             className="h-full w-full object-cover tour-photo-protected"

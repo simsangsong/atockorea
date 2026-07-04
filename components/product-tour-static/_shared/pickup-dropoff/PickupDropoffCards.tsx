@@ -31,9 +31,13 @@ function formatTemplate(template: string, count: number): string {
   return template.replace("{count}", String(count));
 }
 
-function inferReturnBand(notes: string[] | undefined): string | null {
+function inferReturnBand(notes: string[] | string | undefined): string | null {
   if (!notes?.length) return null;
-  const joined = notes.join(" ");
+  // Some tour rows (e.g. jeju-cruise-shore-excursion-small-group-tour) carry
+  // `notes` as a single string instead of string[] — a latent crash that only
+  // surfaced once the page actually SSR'd (the useSearchParams CSR bailout
+  // used to swallow it at build time).
+  const joined = Array.isArray(notes) ? notes.join(" ") : String(notes);
   const match =
     joined.match(/Return usually runs around\s+([0-9]{1,2}:[0-9]{2}\s*[–-]\s*[0-9]{1,2}:[0-9]{2})/i) ??
     joined.match(/around\s+([0-9]{1,2}:[0-9]{2}\s*[–-]\s*[0-9]{1,2}:[0-9]{2})/i);

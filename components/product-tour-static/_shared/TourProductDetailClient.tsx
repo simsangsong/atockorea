@@ -26,7 +26,21 @@ import {
 } from "@/components/product-tour-static/east-signature-nature-core/tour-detail-sections";
 import { getPrivateSampleItineraryConfig } from "@/components/product-tour-static/_shared/privateSampleItinerary";
 import type { StaticTourProductRegistration } from "@/components/product-tour-static/catalog/staticTourCatalogCards";
-import { TourProductAiAssistantWidget } from "@/components/product-tour-static/_shared/TourProductAiAssistantWidget";
+import dynamic from "next/dynamic";
+
+/**
+ * T4 — the AI assistant widget is interaction-only chrome (floating chat
+ * button + drawer, no SEO content): load its chunk lazily with ssr:false so
+ * its SSE/localStorage/chat logic stays out of the initial bundle and
+ * hydration pass. It is position-fixed, so the deferred mount causes no CLS.
+ */
+const TourProductAiAssistantWidget = dynamic(
+  () =>
+    import("@/components/product-tour-static/_shared/TourProductAiAssistantWidget").then(
+      (m) => m.TourProductAiAssistantWidget,
+    ),
+  { ssr: false, loading: () => null },
+);
 import { HaenyeoStatusButton } from "@/components/product-tour-static/_shared/HaenyeoStatusButton";
 import { PlatformCompareBlock } from "@/components/tour/PlatformCompareBlock";
 import { getTourCompareLinks } from "@/lib/tour/platform-compare-registry";

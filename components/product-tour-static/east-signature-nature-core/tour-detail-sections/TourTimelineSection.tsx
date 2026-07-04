@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Clock, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { ItineraryStop } from "@/components/product-tour-static/_shared/tourProductDetailSectionTypes";
@@ -88,13 +89,15 @@ function StopCard({
                   className="tour-itinerary-preview-thumb relative flex-shrink-0 w-20 h-14 rounded-md overflow-hidden bg-slate-100 ring-1 ring-slate-900/5"
                   onContextMenu={(e) => e.preventDefault()}
                 >
-                  <img
+                  {/* next/image: the raw originals here are 450~670KB for an
+                      80×56 thumb — the optimizer serves a ~5KB variant. */}
+                  <Image
                     src={src}
                     alt=""
                     width={80}
                     height={56}
+                    sizes="80px"
                     loading="lazy"
-                    decoding="async"
                     draggable={false}
                     onContextMenu={(e) => e.preventDefault()}
                     className="w-full h-full object-cover tour-photo-grade tour-photo-protected"

@@ -1,10 +1,10 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import Image from "next/image";
 import { Clock, Compass, ExternalLink, Footprints, Heart, Share2, Star } from "lucide-react";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
-import { safeCssBackgroundUrl } from "@/lib/safe-image-url";
 import { useTranslations } from "@/lib/i18n";
 import { isInWishlistLocal, toggleWishlistLocal } from "@/lib/wishlist";
 import type { EastSignatureNatureCoreDetailViewModel } from "../eastSignatureNatureCoreDetailViewModel";
@@ -84,10 +84,20 @@ export function TourHeroSection({
   })();
   const [activeSlideIdx, setActiveSlideIdx] = useState(0);
   const [heroInView, setHeroInView] = useState(true);
+  // T3 (LCP) — only the first slide renders on the server / at first paint.
+  // The remaining slides mount 2.5s later (well before the first 6.5s
+  // rotation), so their image bytes never compete with the LCP image.
+  const [restMounted, setRestMounted] = useState(false);
   const heroImageRef = useRef<HTMLDivElement>(null);
   // Track the previous slide so its CSS class can pull it leftward as the new
   // slide enters from the right — gives the crossfade a real slide character.
   const prevSlideIdxRef = useRef(-1);
+
+  useEffect(() => {
+    if (slides.length <= 1) return;
+    const id = window.setTimeout(() => setRestMounted(true), 2500);
+    return () => window.clearTimeout(id);
+  }, [slides.length]);
 
   useEffect(() => {
     const el = heroImageRef.current;
@@ -127,24 +137,41 @@ export function TourHeroSection({
         ref={heroImageRef}
         className="relative h-[29vh] min-h-[214px] max-h-[294px] sm:h-[33vh] sm:min-h-[266px] sm:max-h-[360px] w-full overflow-hidden rounded-b-2xl shadow-hero"
       >
-        {slides.map((url, idx) => (
-          <div
-            key={`${url}-${idx}`}
-            aria-hidden={idx !== activeSlideIdx}
-            className={cn(
-              "tour-hero-slide",
-              idx === activeSlideIdx && "tour-hero-slide--active",
-              !heroInView && "tour-hero-slide--paused",
-              idx === prevSlideIdxRef.current && idx !== activeSlideIdx && "tour-hero-slide--prev",
-            )}
-            style={{
-              backgroundImage: safeCssBackgroundUrl(url),
-              backgroundPosition: hero.imagePosition,
-              /* Editorial polish (atmosphere gallery + drawer와 동일) — Vogue subtle filter. */
-              filter: "saturate(1.08) contrast(1.06) brightness(0.99)",
-            }}
-          />
-        ))}
+        {/* T3 (LCP) — slides are next/image instead of CSS background-image:
+            the browser preloads a viewport-sized optimized variant (~80KB)
+            instead of discovering the raw original (450~670KB) only after CSS
+            parses. Crossfade/Ken Burns animate on the wrapper (opacity +
+            transform), so the visual is unchanged. */}
+        {slides.map((url, idx) => {
+          if (idx > 0 && !restMounted) return null;
+          return (
+            <div
+              key={`${url}-${idx}`}
+              aria-hidden={idx !== activeSlideIdx}
+              className={cn(
+                "tour-hero-slide",
+                idx === activeSlideIdx && "tour-hero-slide--active",
+                !heroInView && "tour-hero-slide--paused",
+                idx === prevSlideIdxRef.current && idx !== activeSlideIdx && "tour-hero-slide--prev",
+              )}
+            >
+              <Image
+                src={url}
+                alt=""
+                fill
+                priority={idx === 0}
+                fetchPriority={idx === 0 ? "high" : undefined}
+                sizes="(min-width: 1024px) 60vw, 100vw"
+                className="object-cover"
+                style={{
+                  objectPosition: hero.imagePosition,
+                  /* Editorial polish (atmosphere gallery + drawer와 동일) — Vogue subtle filter. */
+                  filter: "saturate(1.08) contrast(1.06) brightness(0.99)",
+                }}
+              />
+            </div>
+          );
+        })}
 
         {/* S Tier #1 — Film grain noise (Kodak Portra 400 입자감, mix-blend overlay 0.15) */}
         <span
