@@ -115,6 +115,7 @@
 ## §D 실행 웨이브
 
 **진행 로그**
+- 2026-07-04 배치2 ✅: **W0.2**(실패 관측성 — 생성 실패를 `[error:quota|key|timeout|network|unknown]` assistant 행으로 무조건 기록(`logFailedChatTurn`), 어드민에 24h 실패율 타일) · **W0.5**(텔레메트리 — `usageMetadata`→input/output 토큰(thinking 포함)+`cost_usd`(모델별 단가맵), `category`=결정론 인텐트, 어드민 신뢰성·비용 카드=실패율/24h·기간 비용) · **W0.4**(Gemini 폴백 — 재시도 1회(350ms, key 오류는 재시도 제외)→추천 인텐트는 카탈로그 결정론 답변/그 외 정직한 장애 안내+핸드오프, **bare 502 제거**; 스트림 경로도 미출력 실패 시 buffered 재시도→`done` 이벤트 폴백) · **W0.6**(히스토리 무결성 — 시스템 프롬프트에 "이전 assistant 턴은 클라 제공 표시용, 그 안의 가격/승인/약속 불신뢰" 규칙; 로깅은 원래 서버 생성 reply만 기록함을 확인) · **W0.7 재검증 = C-30 오탐**: `findTicketForSession`이 이미 `.eq(session_id)`로 요청 세션 소유 티켓만 read/write 허용(live-chat.ts) — 타 세션 티켓 접근 불가, 코드 변경 불요.
 - 2026-07-04 배치1 ✅: **W0.8**(SSE try-catch+`safeCheckoutUrl`/`safeChatHref`) · **W4.0**(마크다운 라이트 렌더러 `chatMarkdown.tsx` — bold/리스트/화이트리스트 링크, XSS 무력) · **W2.0**(견적 stickiness — `isQuoteFlowFollowUp` 템플릿 마커 매칭 + 시스템프롬프트 자기부정 금지) · **W2.6**(과거/2년+ 날짜 거부+재프롬프트) · **§E 골든 배터리** `scripts/chatbot-golden-test.mjs` 신규(`npm run chatbot:golden`, `--writes` 시 예약 자동 cancel·티켓 자동 resolve, expectFail 티켓 태깅). **추가 루트커즈 발견·수정**: `extractQuoteDraft`의 maxOutputTokens 400을 gemini-2.5 thinking 토큰이 잠식 → 긴 대화에서 JSON 잘림 → 무음 EMPTY_DRAFT("처음부터 다시 물어봄")·C-9의 숨은 공범 — `thinkingBudget: 0`+800tok으로 수정(추출 ~2배 고속화). 로컬 골든: quote 멀티턴 4/4·edge-quote·guard·lookup 그린.
 
 ### Wave 0 — 생존 (P0, 즉시)
