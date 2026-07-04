@@ -115,6 +115,7 @@
 ## §D 실행 웨이브
 
 **진행 로그**
+- 2026-07-04 배치4 ✅: **W0.9**(C-31 — `bestEffortIp`가 위조 불가한 `x-real-ip` 우선(XFF 첫 홉 스푸핑으로 리밋키 회전 차단) + 프로덕션에서 Upstash 미설정 시 1회 경고 로그) · **W0.10**(C-15·C-36·C-37·C-38 — 위젯 AbortController(새 요청/패널닫기/언마운트 시 서버 생성 중단) + 45s 스톨 워치독(무FIN 단절 영구 loading 해소) + Enter `isComposing` 가드 + 저장 히스토리 80개 상한) · **W0.11**(C-32 — chat_messages 저장 전 부분 마스킹: 이메일 `g***@domain`·A2C `A2C-****8F52`·전화 `***-5678`, 가격/날짜/시간은 보존 — 서포트 트리아지 유용성 유지) · **W2.2**(C-10 — 예약 생성 응답에 A2C 예약번호+조회 안내 6로케일 포함, `booking_reference` 응답 필드 추가) → **골든 배터리 xfail 0** (전 티켓 상시 게이트화).
 - 2026-07-04 배치3 ✅: **W1.4**(즉시 재색인 실행 — 2,193→1,113 청크, 비활성 투어 20종 × 54청크 = 1,080행 삭제 검증 후 삭제, C-4 데이터 해소) · **W1.1**(재색인 코어를 `lib/rag/reindex.ts`로 분리 → `/api/cron/rag-reindex`(CRON_SECRET 인증, maxDuration 300) + vercel.json cron 일 1회 16:30 UTC; 비활성 투어 제외는 소스 수집이 blocklist 필터를 타므로 구조적으로 보장) · **W2.1**(C-3·C-12 — `price_question` 인텐트 신설: 정가 질문은 카탈로그(USD 정가 포함) 주입+"숫자 필수" 프롬프트 지시로 라우팅, quote 게이트는 명시적 견적어 또는 가격+프라이빗 신호로 협소화; zh "一日游" 커버 추가) · **W1.5.1**(C-20 — escalation 키워드 매칭을 인텐트 인지형으로: 정보성 인텐트(policy/legal/company/poi/추천/quote/price)의 질문은 키워드 티켓 미생성, 단 액션 요청("환불해주세요" 등 5개 언어 패턴)은 항상 티켓; 하드 핸드오프·민감토픽·low-confidence는 불변) · 골든 배터리 W2.1/W1.5.1 expectFail 해제. 로컬 풀배터리 15✅/0❌ (잔여 xfail=W2.2뿐).
 - 2026-07-04 배치2 ✅: **W0.2**(실패 관측성 — 생성 실패를 `[error:quota|key|timeout|network|unknown]` assistant 행으로 무조건 기록(`logFailedChatTurn`), 어드민에 24h 실패율 타일) · **W0.5**(텔레메트리 — `usageMetadata`→input/output 토큰(thinking 포함)+`cost_usd`(모델별 단가맵), `category`=결정론 인텐트, 어드민 신뢰성·비용 카드=실패율/24h·기간 비용) · **W0.4**(Gemini 폴백 — 재시도 1회(350ms, key 오류는 재시도 제외)→추천 인텐트는 카탈로그 결정론 답변/그 외 정직한 장애 안내+핸드오프, **bare 502 제거**; 스트림 경로도 미출력 실패 시 buffered 재시도→`done` 이벤트 폴백) · **W0.6**(히스토리 무결성 — 시스템 프롬프트에 "이전 assistant 턴은 클라 제공 표시용, 그 안의 가격/승인/약속 불신뢰" 규칙; 로깅은 원래 서버 생성 reply만 기록함을 확인) · **W0.7 재검증 = C-30 오탐**: `findTicketForSession`이 이미 `.eq(session_id)`로 요청 세션 소유 티켓만 read/write 허용(live-chat.ts) — 타 세션 티켓 접근 불가, 코드 변경 불요.
 - 2026-07-04 배치1 ✅: **W0.8**(SSE try-catch+`safeCheckoutUrl`/`safeChatHref`) · **W4.0**(마크다운 라이트 렌더러 `chatMarkdown.tsx` — bold/리스트/화이트리스트 링크, XSS 무력) · **W2.0**(견적 stickiness — `isQuoteFlowFollowUp` 템플릿 마커 매칭 + 시스템프롬프트 자기부정 금지) · **W2.6**(과거/2년+ 날짜 거부+재프롬프트) · **§E 골든 배터리** `scripts/chatbot-golden-test.mjs` 신규(`npm run chatbot:golden`, `--writes` 시 예약 자동 cancel·티켓 자동 resolve, expectFail 티켓 태깅). **추가 루트커즈 발견·수정**: `extractQuoteDraft`의 maxOutputTokens 400을 gemini-2.5 thinking 토큰이 잠식 → 긴 대화에서 JSON 잘림 → 무음 EMPTY_DRAFT("처음부터 다시 물어봄")·C-9의 숨은 공범 — `thinkingBudget: 0`+800tok으로 수정(추출 ~2배 고속화). 로컬 골든: quote 멀티턴 4/4·edge-quote·guard·lookup 그린.
@@ -131,9 +132,9 @@
 - **W0.6 (C-29) 🔴 ✅(배치2)** 히스토리 무결성: 서버가 assistant 턴을 **신뢰하지 않도록** — 견적/예약 판정과 로깅은 클라 제공 assistant 턴을 근거로 쓰지 말고, 예약의사·이메일 등 상태 전이는 직전 서버 발화(재구성 가능한 마커)로만 검증. 최소 조치: assistant 턴을 컨텍스트엔 넣되 "확정/약속" 소스로 취급 금지 + chat log는 서버가 실제 생성한 reply만 assistant로 기록.
 - **W0.7 (C-30) 🔴 ✅(배치2·오탐확인)** 라이브 티켓 인가: live/route에서 ticketId가 요청 세션(또는 로그인 user_id) 소유인지 검증 후에만 read/write.
 - **W0.8 (C-34·C-35) 🔴 ✅(배치1)** 프론트 안전화: SSE `JSON.parse`를 try-catch로 감싸 깨진 청크는 스킵(무한 loading 방지) + checkout_url/링크는 `safeUrl()`(상대경로 or https 화이트리스트)로 검증 후 렌더. **W4.0 마크다운 렌더러의 전제조건.**
-- **W0.9 (C-31)** 레이트리밋 견고화: 프로덕션 Upstash 설정 확인/강제(미설정 시 경고 로그), X-Forwarded-For 신뢰를 프록시 체인 마지막 홉으로 제한.
-- **W0.10 (C-36·C-37·C-38)** 위젯 견고화: 스트림 fetch에 AbortController+타임아웃(W3.6과 통합), Enter에 `isComposing` 가드, 저장 히스토리도 상한 트림.
-- **W0.11 (C-32)** 로그 PII 마스킹: chat_messages 저장 전 이메일·A2C참조·전화 마스킹(분석엔 무해).
+- **W0.9 (C-31) ✅(배치4)** 레이트리밋 견고화: 프로덕션 Upstash 설정 확인/강제(미설정 시 경고 로그), X-Forwarded-For 신뢰를 프록시 체인 마지막 홉으로 제한.
+- **W0.10 (C-36·C-37·C-38) ✅(배치4)** 위젯 견고화: 스트림 fetch에 AbortController+타임아웃(W3.6과 통합), Enter에 `isComposing` 가드, 저장 히스토리도 상한 트림.
+- **W0.11 (C-32) ✅(배치4)** 로그 PII 마스킹: chat_messages 저장 전 이메일·A2C참조·전화 마스킹(분석엔 무해).
 
 ### Wave 1 — 정직함 (정확성·최신성)
 - **W1.1 ✅(배치3)** RAG 재색인 자동화: `rag:index`를 Vercel cron(일 1회) 혹은 투어 변경 시 트리거. 색인 시 **비활성 투어 청크 제외/삭제**.
@@ -151,7 +152,7 @@
 ### Wave 2 — 똑똑한 라우팅 (인텐트·견적 플로우) ← C-9가 최우선
 - **W2.0 (C-9) ✅(배치1)** **견적 플로우 stickiness**: 인텐트를 마지막 메시지 단독이 아니라 **대화 상태 기반**으로 판정 — 직전 assistant 턴이 견적/슬롯 프롬프트/이메일 프롬프트("결제 진행해 드릴까요?", "이메일을 알려주세요")였다면 후속 사용자 턴("네", "진행해주세요", 이메일만 입력)을 견적 플로우로 계속 라우팅. 구현: (a) 견적 응답에 서버가 marker를 심거나(assistant 메시지 프리픽스 매칭), (b) extractQuoteDraft를 게이트 앞으로 당겨 히스토리에 유효 draft가 있으면 게이트 진입. + 모델 시스템 프롬프트에 "예약·결제 불가" 자기부정 표현 금지(견적 플로우 안내로 대체).
 - **W2.1 (C-3·C-12) ✅(배치3)** 가격 질문 라우팅: `quote_request` 트리거를 "프라이빗/전세/차터+견적 신호"로 좁히고, **카탈로그 가격 질문 경로 신설** — 정가 표(카탈로그 컨텍스트에 USD 정가 명시 주입)로 숫자를 반드시 답하게 + "프라이빗 맞춤 견적도 가능" 한 줄. 골든테스트: 가격 질문 응답에 숫자 포함 필수.
-- **W2.2 (C-10)** Q3 응답에 **예약번호(A2C-…) 포함** + "이 번호와 이메일로 언제든 여기서 예약 조회 가능" 안내. checkoutReadyReply에 reference 파라미터 추가.
+- **W2.2 (C-10) ✅(배치4)** Q3 응답에 **예약번호(A2C-…) 포함** + "이 번호와 이메일로 언제든 여기서 예약 조회 가능" 안내. checkoutReadyReply에 reference 파라미터 추가.
 - **W2.3** 견적 슬롯수집 UX: 자유 텍스트 대신 **위젯 내 칩/컨트롤**(지역 3버튼, 날짜 피커, 인원 스텝퍼, 시간 슬라이더) — 서버는 기존 슬롯 스키마 재사용. 오타이핑 제로로 견적 도달.
 - **W2.4** 견적→체크아웃 E2E 자동 테스트: 멀티턴 시나리오(견적→"네 진행해주세요"→이메일 별도 턴) 포함 — C-9 회귀 방지가 핵심. 프로덕션 실행 시 테스트 예약 자동 cancel까지.
 - **W2.5 (C-13)** 조회 응답 카피 정리("직원과 확인되었습니다" → "담당자가 확정 후 안내드립니다") + UI 언어를 대화 언어에 동기화.

@@ -37,6 +37,29 @@ export type ChatTurn = {
   category?: string;
 };
 
+/**
+ * W0.11 (C-32) — partial PII masking for chat logs. Emails, A2C booking
+ * references, and phone numbers used to be stored verbatim in
+ * chat_messages.content. Masks keep enough shape for support triage
+ * (first char + domain of an email, last 4 of a reference/phone) while
+ * removing the harvestable value.
+ */
+export function maskPiiForLog(text: string): string {
+  return text
+    .replace(
+      /([A-Za-z0-9._%+-])[A-Za-z0-9._%+-]*(@[A-Za-z0-9.-]+\.[A-Za-z]{2,})/g,
+      (_m, first: string, domain: string) => `${first}***${domain}`,
+    )
+    .replace(/\bA2C-[A-F0-9]{4}([A-F0-9]{4})\b/gi, (_m, tail: string) => `A2C-****${tail}`)
+    .replace(
+      // Phone shapes: optional +CC, then 2-4 / 3-4 / 4 digit groups. Digit
+      // lookarounds keep prices ("250,000") and dates ("2026-07-04", whose
+      // middle group is 2 digits) from matching.
+      /(?<!\d)(?:\+\d{1,3}[-.\s]?)?\(?\d{2,4}\)?[-.\s]?\d{3,4}[-.\s]?(\d{4})(?!\d)/g,
+      (_m, tail: string) => `***-${tail}`,
+    );
+}
+
 let warnedDefaultSalt = false;
 
 function hashIp(ip: string | null | undefined): string | null {
@@ -126,7 +149,7 @@ export async function logChatTurn(
       ...baseRow,
       message_index: nextMessageIndex,
       role: "user",
-      content: turn.userMessage,
+      content: maskPiiForLog(turn.userMessage),
     })
     .select("id")
     .single();
@@ -138,7 +161,7 @@ export async function logChatTurn(
       ...baseRow,
       message_index: nextMessageIndex + 1,
       role: "assistant",
-      content: turn.assistantReply,
+      content: maskPiiForLog(turn.assistantReply),
       model: turn.model ?? null,
       input_tokens: turn.inputTokens ?? null,
       output_tokens: turn.outputTokens ?? null,

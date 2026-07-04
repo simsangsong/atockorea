@@ -163,6 +163,15 @@ const TEASER_AUTO_HIDE_MS = 12_000;
 //   window.dispatchEvent(new CustomEvent("atc:open-assistant", { detail: { source } }))
 const OPEN_ASSISTANT_EVENT = "atc:open-assistant";
 const MSG_EASE = [0.22, 1, 0.36, 1] as const;
+// W0.10 (C-36): abort a stream that goes silent — a connection that dies
+// without FIN used to leave `reader.read()` pending forever, freezing the
+// widget in permanent loading. Long enough for slow first tokens (~7s) plus
+// the server-side finalize before `done`.
+const STREAM_STALL_TIMEOUT_MS = 45_000;
+// W0.10 (C-38): cap the PERSISTED history too — trimChatHistory only trims
+// what is sent, while sessionStorage grew without bound until a silent
+// QuotaExceeded dropped the whole conversation.
+const STORED_HISTORY_MAX = 80;
 
 type FeedbackLabels = { helpful: string; notHelpful: string; thanks: string; noted: string };
 
@@ -288,6 +297,7 @@ function readStoredMessages(storageKey: string): ChatMessage[] {
     if (!Array.isArray(parsed)) return [];
     return parsed
       .filter((m) => m && typeof m === "object" && typeof (m as ChatMessage).content === "string")
+      .slice(-STORED_HISTORY_MAX)
       .map((m) => ({
         role: (m as ChatMessage).role === "assistant" ? "assistant" : "user",
         content: (m as ChatMessage).content,
@@ -335,6 +345,10 @@ export function TourProductAiAssistantWidget({
   const listRef = useRef<HTMLDivElement>(null);
   const inputId = useId();
   const lastSupportMessageIdRef = useRef(0);
+  // W0.10 (C-15/C-36): the in-flight assistant request. Aborted when a new
+  // request starts, when the panel closes, and on unmount — the server stops
+  // generating (req.signal.aborted) instead of burning tokens for nobody.
+  const abortRef = useRef<AbortController | null>(null);
   const liveSupportActive = activeTicketId !== null && liveStatus !== "resolved" && liveStatus !== "closed";
   const title = productTitle?.trim() || labels.siteTitle;
 
@@ -345,6 +359,13 @@ export function TourProductAiAssistantWidget({
   useEffect(() => {
     setUiLang(inferClientLanguage());
   }, []);
+
+  // W0.10 — abort the in-flight stream when the panel closes or the widget
+  // unmounts; the visitor left, so stop the server-side generation too.
+  useEffect(() => {
+    if (!open) abortRef.current?.abort();
+  }, [open]);
+  useEffect(() => () => abortRef.current?.abort(), []);
 
   const dismissTeaser = useCallback(() => {
     setTeaserVisible(false);
@@ -433,11 +454,27 @@ export function TourProductAiAssistantWidget({
 
   const runAssistant = useCallback(
     async (next: ChatMessage[]) => {
+      // W0.10: one in-flight request at a time; a stalled stream self-aborts.
+      abortRef.current?.abort();
+      const controller = new AbortController();
+      abortRef.current = controller;
+      let timedOut = false;
+      let watchdog: number | null = null;
+      const kickWatchdog = () => {
+        if (watchdog) window.clearTimeout(watchdog);
+        watchdog = window.setTimeout(() => {
+          timedOut = true;
+          controller.abort();
+        }, STREAM_STALL_TIMEOUT_MS);
+      };
+
       setLoading(true);
       try {
+        kickWatchdog();
         const res = await fetch("/api/tour-product/assistant", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
+          signal: controller.signal,
           body: JSON.stringify({
             assistantScope: scope,
             tourProductSlug: storageKey,
@@ -468,6 +505,7 @@ export function TourProductAiAssistantWidget({
           try {
             for (;;) {
               const { done, value } = await reader.read();
+              kickWatchdog(); // any progress resets the stall timer
               if (done) break;
               buffer += decoder.decode(value, { stream: true });
               const { events, rest } = parseSseBuffer(buffer);
@@ -565,10 +603,15 @@ export function TourProductAiAssistantWidget({
             setLiveStatus("open");
           }
         }
-      } catch {
+      } catch (err) {
+        // User-initiated abort (panel closed / superseded request) is silent;
+        // a watchdog timeout surfaces the network-error bubble.
+        if ((err as Error)?.name === "AbortError" && !timedOut) return;
         setHandoffOffer(null);
         setMessages((prev) => [...prev, { role: "assistant", content: labels.networkError, origin: "system" }]);
       } finally {
+        if (watchdog) window.clearTimeout(watchdog);
+        if (abortRef.current === controller) abortRef.current = null;
         setLoading(false);
       }
     },
@@ -720,7 +763,10 @@ export function TourProductAiAssistantWidget({
 
   useEffect(() => {
     try {
-      window.sessionStorage.setItem(`${STORAGE_PREFIX}${storageKey}`, JSON.stringify(messages));
+      window.sessionStorage.setItem(
+        `${STORAGE_PREFIX}${storageKey}`,
+        JSON.stringify(messages.slice(-STORED_HISTORY_MAX)),
+      );
     } catch {
       // Ignore unavailable sessionStorage.
     }
@@ -1071,7 +1117,10 @@ export function TourProductAiAssistantWidget({
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => {
-                  if (e.key === "Enter" && !e.shiftKey) {
+                  // W0.10 (C-37): during Korean/Japanese IME composition Enter
+                  // commits the composition, not the message — sending here
+                  // used to fire half-composed text.
+                  if (e.key === "Enter" && !e.shiftKey && !e.nativeEvent.isComposing) {
                     e.preventDefault();
                     void send();
                   }

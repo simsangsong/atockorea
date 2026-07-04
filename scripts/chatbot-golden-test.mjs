@@ -241,8 +241,10 @@ const suites = {
     record("quote", "turn4: booking + checkout link", [
       check("HTTP 200", t4.status === 200),
       check("checkout_url returned", typeof t4.json.checkout_url === "string" && t4.json.checkout_url.includes("/itinerary-builder/checkout")),
+      // W2.2: masked variants (A2C-****8F52) count too — the customer sees the
+      // full reference in the reply; only the LOG is masked.
       check("reply includes A2C reference (C-10)", /A2C-[A-F0-9]{8}/i.test(t4.json.reply ?? "")),
-    ], t4, /A2C/.test(t4.json.reply ?? "") ? undefined : "W2.2");
+    ], t4);
     if (t4.json.checkout_url) artifacts.bookings.push(t4.json.checkout_url);
   },
 

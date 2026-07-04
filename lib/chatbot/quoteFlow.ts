@@ -402,8 +402,17 @@ export function quoteEmailPrompt(locale: TourProductPageLocale): string {
   return m[locale] ?? m.en;
 }
 
-/** Reply once the booking is created — points to the checkout link. */
-export function checkoutReadyReply(checkoutPath: string, locale: TourProductPageLocale): string {
+/**
+ * Reply once the booking is created — points to the checkout link and (W2.2 /
+ * C-10) states the A2C booking reference, since the chat booking-lookup only
+ * accepts the A2C-format reference + email. Without it the customer literally
+ * could not use the bot's own lookup feature for the booking the bot created.
+ */
+export function checkoutReadyReply(
+  checkoutPath: string,
+  locale: TourProductPageLocale,
+  bookingReference?: string | null,
+): string {
   const m: Record<TourProductPageLocale, string> = {
     en: `All set — your booking is reserved. Open checkout to save your card (no charge now; you're charged on tour day, 100% refund up to 24h before): ${checkoutPath}`,
     ko: `예약이 준비됐어요. 아래 링크에서 카드만 등록하면 끝이에요 (지금 결제 아님 · 투어 당일 청구 · 24시간 전 100% 환불): ${checkoutPath}`,
@@ -412,11 +421,20 @@ export function checkoutReadyReply(checkoutPath: string, locale: TourProductPage
     "zh-TW": `預訂已為你保留。點擊下面的連結登記信用卡即可（現在不扣款 · 當天扣款 · 提前24小時全額退款）：${checkoutPath}`,
     es: `Listo — tu reserva está apartada. Abre el pago para guardar tu tarjeta (sin cargo ahora; se cobra el día del tour, reembolso 100% hasta 24h antes): ${checkoutPath}`,
   };
-  return m[locale] ?? m.en;
+  const ref: Record<TourProductPageLocale, (r: string) => string> = {
+    en: (r) => `Your booking reference is **${r}** — with this and your email you can look up your booking anytime right here in this chat.`,
+    ko: (r) => `예약번호는 **${r}** 예요 — 이 번호와 이메일만 있으면 언제든 이 채팅에서 예약을 조회할 수 있어요.`,
+    ja: (r) => `ご予約番号は **${r}** です — この番号とメールアドレスで、いつでもこのチャットからご予約を確認できます。`,
+    zh: (r) => `你的预订编号是 **${r}** — 凭此编号和邮箱，随时可以在本聊天中查询预订。`,
+    "zh-TW": (r) => `你的預訂編號是 **${r}** — 憑此編號和電子郵件，隨時可以在本聊天中查詢預訂。`,
+    es: (r) => `Tu número de reserva es **${r}** — con él y tu correo puedes consultar tu reserva en este chat cuando quieras.`,
+  };
+  const base = m[locale] ?? m.en;
+  return bookingReference ? `${base}\n\n${(ref[locale] ?? ref.en)(bookingReference)}` : base;
 }
 
 export type CreateQuoteBookingResult =
-  | { ok: true; bookingId: string; checkoutPath: string }
+  | { ok: true; bookingId: string; checkoutPath: string; bookingReference: string | null }
   | { ok: false; error: "out_of_scope" | "disabled" | "insert_failed" };
 
 /**
@@ -470,8 +488,14 @@ export async function createQuoteBooking(
     guideCurated: true,
   });
 
-  const { data, error } = await sb.from("bookings").insert(row).select("id").single();
+  const { data, error } = await sb.from("bookings").insert(row).select("id, booking_reference").single();
   if (error || !data) return { ok: false, error: "insert_failed" };
   const bookingId = (data as { id: string }).id;
-  return { ok: true, bookingId, checkoutPath: `/itinerary-builder/checkout?bookingId=${bookingId}` };
+  const bookingReference = (data as { booking_reference: string | null }).booking_reference ?? null;
+  return {
+    ok: true,
+    bookingId,
+    checkoutPath: `/itinerary-builder/checkout?bookingId=${bookingId}`,
+    bookingReference,
+  };
 }

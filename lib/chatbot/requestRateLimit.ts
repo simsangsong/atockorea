@@ -71,11 +71,22 @@ export function __resetRequestRateLimit(): void {
  * falls back to the in-memory {@link allowRequest} — fail-open so a Redis outage
  * degrades the brake to per-instance rather than breaking the endpoint.
  */
+let warnedNoDurableInProd = false;
+
 export async function allowRequestDurable(
   namespace: string,
   key: string,
   cfg: RateConfig,
 ): Promise<RateResult> {
+  // W0.9 (C-31): in production the in-memory fallback is per-instance, so N
+  // serverless instances multiply every limit by N. Warn loudly (once per
+  // instance) so an unconfigured Upstash never goes unnoticed again.
+  if (!isDurableRateLimitConfigured() && process.env.NODE_ENV === "production" && !warnedNoDurableInProd) {
+    warnedNoDurableInProd = true;
+    console.warn(
+      "[requestRateLimit] UPSTASH_REDIS_REST_URL/TOKEN not configured in production — rate limits are per-instance only and can be fanned out across instances (C-31).",
+    );
+  }
   if (isDurableRateLimitConfigured()) {
     try {
       const minuteKey = `rl:${namespace}:${key}:m`;
