@@ -1,6 +1,6 @@
 "use client";
 import { useMemo, useState } from "react";
-import { Headphones, ShieldCheck, Zap } from "lucide-react";
+import { ExternalLink, Headphones, ShieldCheck, Zap } from "lucide-react";
 
 import type { TourProductDetailViewModel } from "./tourProductFullPageJsonTypes";
 import type { TourProductCheckoutContext } from "@/lib/tour-product/eastSignatureCheckoutContext";
@@ -48,6 +48,15 @@ const SHOW_PLATFORM_COMPARE = false;
  * during listing review. Flip back to `true` to restore (data + component intact).
  */
 const SHOW_EXTERNAL_REVIEWS = false;
+
+/**
+ * Per-tour outbound Viator listing — renders a "View on Viator" button in the
+ * overview section. Tours absent from this map render nothing.
+ */
+const VIATOR_LISTING_URL_BY_SLUG: Record<string, string> = {
+  "jeju-island-private-car-charter-tour":
+    "https://www.viator.com/tours/Jeju-Island/Jeju-Eastern-UNESCO-Day-Tour-Explore-Beaches-and-Heritage/d50286-5664240P2",
+};
 
 export type TourProductDetailClientProps = {
   viewModel: TourProductDetailViewModel;
@@ -107,6 +116,7 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
     () => getPrivateSampleItineraryConfig(tourProductSlug),
     [tourProductSlug],
   );
+  const viatorListingUrl = VIATOR_LISTING_URL_BY_SLUG[tourProductSlug];
   return (
     <div className="tour-product-v2-static-root min-h-screen bg-white">
       <div className="lg:mx-auto lg:grid lg:max-w-6xl lg:grid-cols-[minmax(0,1fr)_360px] lg:gap-8 lg:px-6">
@@ -145,6 +155,19 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
         <section id="overview" className="mx-3 mt-5 lg:mx-0">
           <div className="mx-auto max-w-2xl px-4 sm:px-5 py-6">
             <TourAtAGlance glanceItems={vm.glanceItems} sectionUi={vm.sectionUi} />
+            {viatorListingUrl ? (
+              <div className="mt-4">
+                <a
+                  href={viatorListingUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-4 py-2 text-[13px] font-semibold text-foreground shadow-sm transition-colors hover:bg-slate-50"
+                >
+                  {t("tour.viewOnViator")}
+                  <ExternalLink className="h-3.5 w-3.5 text-muted-foreground" strokeWidth={2} />
+                </a>
+              </div>
+            ) : null}
           </div>
         </section>
 
