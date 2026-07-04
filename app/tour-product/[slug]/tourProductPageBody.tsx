@@ -60,8 +60,11 @@ export function assertRegisteredConsumerSlug(slug: string): void {
   }
 }
 
-export function buildTourProductMetadata(slug: string, locale: TourProductPageLocale): Metadata {
-  const doc = getStaticTourProductFullPageJson(slug, locale);
+export async function buildTourProductMetadata(
+  slug: string,
+  locale: TourProductPageLocale,
+): Promise<Metadata> {
+  const doc = await getStaticTourProductFullPageJson(slug, locale);
   const seo = (doc?.seo ?? null) as { pageTitle?: string; metaDescription?: string } | null;
   return {
     title: seo?.pageTitle,
@@ -114,7 +117,7 @@ export async function TourProductPageBody({
   }
 
   if (!viewModel) {
-    const doc = getStaticTourProductFullPageJson(slug, locale);
+    const doc = await getStaticTourProductFullPageJson(slug, locale);
     if (doc) {
       viewModel = buildTourProductViewModelFromFullPageJson(doc, locale);
     }
@@ -136,7 +139,7 @@ export async function TourProductPageBody({
   // viewmodel. These are pass-through opt-in flags the Supabase tour row does
   // not carry (e.g. `liveStatusSection: "haenyeo"` on the Jeju east tour).
   try {
-    const staticDoc = getStaticTourProductFullPageJson(slug, locale);
+    const staticDoc = await getStaticTourProductFullPageJson(slug, locale);
     if (staticDoc) {
       const extensions: Array<keyof typeof staticDoc> = ["liveStatusSection", "pricingTiers", "price"];
       for (const k of extensions) {

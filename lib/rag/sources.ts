@@ -126,7 +126,7 @@ function splitTourSections(text: string): Array<{ title: string; body: string }>
   return sections;
 }
 
-function collectTourRecords(): KnowledgeRecord[] {
+async function collectTourRecords(): Promise<KnowledgeRecord[]> {
   const records: KnowledgeRecord[] = [];
   const slugs = Array.from(new Set(listStaticTourProducts("en").map((t) => t.slug)));
 
@@ -163,9 +163,9 @@ function collectTourRecords(): KnowledgeRecord[] {
       }
 
       // Deep chunks (itinerary, FAQ, at-a-glance) — only for natively localized bundles.
-      let doc: ReturnType<typeof getStaticTourProductFullPageJson> = null;
+      let doc: Awaited<ReturnType<typeof getStaticTourProductFullPageJson>> = null;
       try {
-        doc = getStaticTourProductFullPageJson(slug, locale);
+        doc = await getStaticTourProductFullPageJson(slug, locale);
       } catch {
         doc = null;
       }
@@ -196,6 +196,6 @@ function collectTourRecords(): KnowledgeRecord[] {
 }
 
 /** All non-Q&A knowledge records (site + policy + poi + tour products). */
-export function collectStaticKnowledgeRecords(): KnowledgeRecord[] {
-  return [...collectSiteRecords(), ...collectTourRecords()];
+export async function collectStaticKnowledgeRecords(): Promise<KnowledgeRecord[]> {
+  return [...collectSiteRecords(), ...(await collectTourRecords())];
 }
