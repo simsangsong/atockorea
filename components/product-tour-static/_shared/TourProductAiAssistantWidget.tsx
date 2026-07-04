@@ -52,6 +52,8 @@ type ChatMessage = {
   supportMessageId?: number;
   /** Quote funnel (Q3) — renders a "go to checkout" button under the message. */
   checkoutUrl?: string;
+  /** W4.2 — failure bubble that can re-run the last request. */
+  retriable?: boolean;
 };
 
 // Quote-funnel checkout CTA, keyed on the widget locale (avoids threading a
@@ -64,6 +66,34 @@ const CHECKOUT_CTA: Record<string, string> = {
   "zh-TW": "前往結帳 →",
   es: "Ir al pago →",
 };
+
+// W4.2 — retry CTA on failure bubbles.
+const RETRY_LABEL: Record<string, string> = {
+  ko: "다시 시도",
+  en: "Try again",
+  ja: "再試行",
+  zh: "重试",
+  "zh-TW": "重試",
+  es: "Reintentar",
+};
+
+// W4.8 — friendly 429 instead of the blunt generic error.
+function rateLimitMessage(lang: string, seconds: number): string {
+  if (lang.startsWith("ko")) return `질문이 많아 잠시 쉬어가요 — 약 ${seconds}초 후에 다시 물어봐 주세요.`;
+  if (lang.startsWith("ja")) return `ご質問が集中しています。約${seconds}秒後にもう一度お試しください。`;
+  if (lang.startsWith("zh")) return `提问有点多，稍作休息 — 约${seconds}秒后再试一次吧。`;
+  if (lang.startsWith("es")) return `Muchas preguntas seguidas — inténtalo de nuevo en unos ${seconds} segundos.`;
+  return `Lots of questions at once — please try again in about ${seconds} seconds.`;
+}
+
+// W4.8 — honest note once the sent window starts trimming (server cap = 24).
+function trimNotice(lang: string): string {
+  if (lang.startsWith("ko")) return "긴 대화예요 — 최근 대화 위주로 이해하고 있어요.";
+  if (lang.startsWith("ja")) return "長い会話のため、直近のやり取りを中心に理解しています。";
+  if (lang.startsWith("zh")) return "对话较长 — 我主要参考最近的内容来回答。";
+  if (lang.startsWith("es")) return "La conversación es larga: me baso sobre todo en los mensajes recientes.";
+  return "Long conversation — I'm working mainly from the most recent messages.";
+}
 
 // The server caps the history at 24 messages (zod). Trim to the most recent
 // window before sending so long conversations don't 400 and break the chat;
@@ -153,6 +183,10 @@ type UiLabels = {
 const SITE_ASSISTANT_SLUG = "__site__";
 const STORAGE_PREFIX = "tour-product-assistant:";
 const LIVE_TICKET_PREFIX = "tour-product-assistant-live-ticket:";
+// W4.7 (C-16): ONE conversation across the whole site. Storage used to be
+// keyed per tour slug, so walking from a tour page to home made the chat
+// look wiped. The page scope only changes what CONTEXT each turn gets.
+const GLOBAL_STORAGE_KEY = "__global__";
 // L1 — the teaser shows at most ONCE per session: the key is written the
 // moment it appears (not only on dismiss), so navigating to another page
 // doesn't re-trigger it. It also auto-hides after a few seconds if ignored.
@@ -342,6 +376,23 @@ function readStoredTicketId(storageKey: string): number | null {
   return Number.isSafeInteger(parsed) && parsed > 0 ? parsed : null;
 }
 
+/** W4.7 — read the global conversation, adopting any legacy per-page one. */
+function readStoredMessagesGlobal(apiSlug: string): ChatMessage[] {
+  const globalMsgs = readStoredMessages(GLOBAL_STORAGE_KEY);
+  if (globalMsgs.length > 0) return globalMsgs;
+  const legacy = readStoredMessages(apiSlug);
+  if (legacy.length > 0) return legacy; // re-persisted under the global key by the save effect
+  return apiSlug === SITE_ASSISTANT_SLUG ? [] : readStoredMessages(SITE_ASSISTANT_SLUG);
+}
+
+function readStoredTicketIdGlobal(apiSlug: string): number | null {
+  return (
+    readStoredTicketId(GLOBAL_STORAGE_KEY) ??
+    readStoredTicketId(apiSlug) ??
+    (apiSlug === SITE_ASSISTANT_SLUG ? null : readStoredTicketId(SITE_ASSISTANT_SLUG))
+  );
+}
+
 export function TourProductAiAssistantWidget({
   tourProductSlug,
   productTitle,
@@ -350,7 +401,9 @@ export function TourProductAiAssistantWidget({
   placement = "tour",
 }: TourProductAiAssistantWidgetProps) {
   const scope: AssistantScope = assistantScope ?? (tourProductSlug ? "tour" : "site");
-  const storageKey = tourProductSlug || SITE_ASSISTANT_SLUG;
+  // apiSlug drives the per-page CONTEXT sent to the server; storage is global (W4.7).
+  const apiSlug = tourProductSlug || SITE_ASSISTANT_SLUG;
+  const storageKey = GLOBAL_STORAGE_KEY;
   const [uiLang, setUiLang] = useState("en");
   const labels = useMemo(() => labelsFor(uiLang, scope), [scope, uiLang]);
   const fb = useMemo(() => feedbackLabels(uiLang), [uiLang]);
@@ -365,9 +418,9 @@ export function TourProductAiAssistantWidget({
   // W3.5 — which phase the pending assistant turn is in (null = generic dots).
   const [loadingStage, setLoadingStage] = useState<"searching" | "writing" | null>(null);
   const [handoffOffer, setHandoffOffer] = useState<{ question: string } | null>(null);
-  const [activeTicketId, setActiveTicketId] = useState<number | null>(() => readStoredTicketId(storageKey));
+  const [activeTicketId, setActiveTicketId] = useState<number | null>(() => readStoredTicketIdGlobal(apiSlug));
   const [liveStatus, setLiveStatus] = useState<string | null>(null);
-  const [messages, setMessages] = useState<ChatMessage[]>(() => readStoredMessages(storageKey));
+  const [messages, setMessages] = useState<ChatMessage[]>(() => readStoredMessagesGlobal(apiSlug));
   const [feedback, setFeedback] = useState<Record<number, 1 | -1>>({});
   const listRef = useRef<HTMLDivElement>(null);
   const inputId = useId();
@@ -376,6 +429,9 @@ export function TourProductAiAssistantWidget({
   // request starts, when the panel closes, and on unmount — the server stops
   // generating (req.signal.aborted) instead of burning tokens for nobody.
   const abortRef = useRef<AbortController | null>(null);
+  // W4.2 — the exact message list of the last assistant request, so a failure
+  // bubble can offer one-tap retry instead of forcing a retype.
+  const lastRequestRef = useRef<ChatMessage[] | null>(null);
   const liveSupportActive = activeTicketId !== null && liveStatus !== "resolved" && liveStatus !== "closed";
   const title = productTitle?.trim() || labels.siteTitle;
 
@@ -469,18 +525,19 @@ export function TourProductAiAssistantWidget({
           rating,
           answer,
           question,
-          tourProductSlug: storageKey,
+          tourProductSlug: apiSlug,
           pageUrl: typeof window !== "undefined" ? window.location.href.slice(0, 2000) : undefined,
         }),
       }).catch(() => {
         /* best-effort; keep the optimistic UI */
       });
     },
-    [feedback, messages, storageKey],
+    [feedback, messages, apiSlug],
   );
 
   const runAssistant = useCallback(
     async (next: ChatMessage[]) => {
+      lastRequestRef.current = next;
       // W0.10: one in-flight request at a time; a stalled stream self-aborts.
       abortRef.current?.abort();
       const controller = new AbortController();
@@ -505,7 +562,7 @@ export function TourProductAiAssistantWidget({
           signal: controller.signal,
           body: JSON.stringify({
             assistantScope: scope,
-            tourProductSlug: storageKey,
+            tourProductSlug: apiSlug,
             messages: trimChatHistory(next),
             pageContext: pageContext(),
             stream: true,
@@ -583,7 +640,7 @@ export function TourProductAiAssistantWidget({
                 } else if (ev.event === "error") {
                   settled = true;
                   setHandoffOffer(null);
-                  renderAssistant(labels.requestFailed("assistant_failed"), { origin: "system" });
+                  renderAssistant(labels.requestFailed("assistant_failed"), { origin: "system", retriable: true });
                 }
               }
             }
@@ -597,7 +654,7 @@ export function TourProductAiAssistantWidget({
             setHandoffOffer(null);
             setMessages((prev) => [
               ...prev,
-              { role: "assistant", content: labels.networkError, origin: "system" },
+              { role: "assistant", content: labels.networkError, origin: "system", retriable: true },
             ]);
           }
           return;
@@ -611,8 +668,14 @@ export function TourProductAiAssistantWidget({
             ...prev,
             {
               role: "assistant",
-              content: res.status === 503 ? labels.aiUnavailable : labels.requestFailed(err),
+              content:
+                res.status === 429
+                  ? rateLimitMessage(uiLang, Math.max(5, Number(res.headers.get("Retry-After")) || 30))
+                  : res.status === 503
+                    ? labels.aiUnavailable
+                    : labels.requestFailed(err),
               origin: "system",
+              retriable: res.status !== 503,
             },
           ]);
           return;
@@ -639,7 +702,10 @@ export function TourProductAiAssistantWidget({
         // a watchdog timeout surfaces the network-error bubble.
         if ((err as Error)?.name === "AbortError" && !timedOut) return;
         setHandoffOffer(null);
-        setMessages((prev) => [...prev, { role: "assistant", content: labels.networkError, origin: "system" }]);
+        setMessages((prev) => [
+          ...prev,
+          { role: "assistant", content: labels.networkError, origin: "system", retriable: true },
+        ]);
       } finally {
         if (watchdog) window.clearTimeout(watchdog);
         if (abortRef.current === controller) abortRef.current = null;
@@ -647,7 +713,7 @@ export function TourProductAiAssistantWidget({
         setLoadingStage(null);
       }
     },
-    [labels, pageContext, scope, storageKey],
+    [labels, pageContext, scope, apiSlug, uiLang],
   );
 
   const applyLiveSupportMessages = useCallback((incoming: LiveSupportMessage[]) => {
@@ -729,7 +795,7 @@ export function TourProductAiAssistantWidget({
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             assistantScope: scope,
-            tourProductSlug: storageKey,
+            tourProductSlug: apiSlug,
             messages: next,
             handoffRequested: true,
             handoffQuestion: latestUserQuestion,
@@ -761,7 +827,7 @@ export function TourProductAiAssistantWidget({
         setLoading(false);
       }
     },
-    [labels, liveSupportActive, loading, messages, pageContext, scope, storageKey],
+    [labels, liveSupportActive, loading, messages, pageContext, scope, apiSlug],
   );
 
   const send = useCallback(async () => {
@@ -1024,6 +1090,20 @@ export function TourProductAiAssistantWidget({
                         </span>
                       )}
                       <ChatMarkdown text={m.content} />
+                      {m.retriable && i === messages.length - 1 && !loading && lastRequestRef.current ? (
+                        <button
+                          type="button"
+                          onClick={() => {
+                            const request = lastRequestRef.current;
+                            if (!request) return;
+                            setMessages(request);
+                            void runAssistant(request);
+                          }}
+                          className="mt-2 inline-flex items-center gap-1 rounded-full border border-sky-900/25 bg-white px-3 py-1.5 text-[11px] font-semibold text-sky-900 transition hover:bg-sky-50"
+                        >
+                          {RETRY_LABEL[uiLang] ?? RETRY_LABEL.en}
+                        </button>
+                      ) : null}
                       {safeCheckoutUrl(m.checkoutUrl) ? (
                         <a
                           href={safeCheckoutUrl(m.checkoutUrl)!}
@@ -1181,7 +1261,11 @@ export function TourProductAiAssistantWidget({
               </button>
             </div>
             <p className="mt-1.5 text-center text-[10px] text-slate-500">
-              {liveSupportActive ? labels.liveNotice : labels.aiNotice}
+              {liveSupportActive
+                ? labels.liveNotice
+                : messages.length > 24
+                  ? trimNotice(uiLang)
+                  : labels.aiNotice}
             </p>
           </div>
         </motion.div>
