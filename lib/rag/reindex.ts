@@ -45,7 +45,7 @@ export async function reindexKnowledge(
   const dryRun = opts.dryRun === true;
 
   log("Collecting source records…");
-  const records = collectStaticKnowledgeRecords();
+  const records = await collectStaticKnowledgeRecords();
   const byKey = new Map<string, KnowledgeRecord & { content_hash: string }>();
   for (const r of records) {
     if (!r.content?.trim()) continue;

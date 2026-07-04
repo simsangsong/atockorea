@@ -695,9 +695,9 @@ export async function POST(req: NextRequest) {
   }
 
   const locale = localeFromRequest(req);
-  let doc = isSiteAssistant ? null : getStaticTourProductFullPageJson(tourProductSlug, locale);
+  let doc = isSiteAssistant ? null : await getStaticTourProductFullPageJson(tourProductSlug, locale);
   if (!doc && !isSiteAssistant && locale !== "en") {
-    doc = getStaticTourProductFullPageJson(tourProductSlug, "en");
+    doc = await getStaticTourProductFullPageJson(tourProductSlug, "en");
   }
   if (!doc && !isSiteAssistant) {
     return NextResponse.json({ error: "bundle_missing" }, { status: 500 });
