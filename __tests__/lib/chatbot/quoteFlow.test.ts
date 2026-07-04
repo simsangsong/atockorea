@@ -6,16 +6,17 @@ import {
   buildQuoteReply,
   createQuoteBooking,
   quoteEmailPrompt,
+  checkoutReadyReply,
   quoteFlowStageFromReply,
   isQuoteFlowFollowUp,
   type QuoteDraft,
 } from "@/lib/chatbot/quoteFlow";
 
-function mockSb(id = "bk-1"): SupabaseClient {
+function mockSb(id = "bk-1", reference = "A2C-TEST1234"): SupabaseClient {
   return {
     from: () => ({
       insert: () => ({
-        select: () => ({ single: async () => ({ data: { id }, error: null }) }),
+        select: () => ({ single: async () => ({ data: { id, booking_reference: reference }, error: null }) }),
       }),
     }),
   } as unknown as SupabaseClient;
@@ -268,12 +269,31 @@ describe("buildQuoteReply", () => {
   });
 });
 
+describe("checkoutReadyReply (W2.2 / C-10)", () => {
+  it("includes the booking reference and lookup hint when provided", () => {
+    const ko = checkoutReadyReply("/itinerary-builder/checkout?bookingId=x", "ko", "A2C-ABCD1234");
+    expect(ko).toContain("A2C-ABCD1234");
+    expect(ko).toContain("조회");
+    const en = checkoutReadyReply("/itinerary-builder/checkout?bookingId=x", "en", "A2C-ABCD1234");
+    expect(en).toContain("A2C-ABCD1234");
+  });
+
+  it("stays reference-free when none is available", () => {
+    expect(checkoutReadyReply("/checkout", "en")).not.toContain("A2C-");
+  });
+});
+
 describe("createQuoteBooking", () => {
   const ready: QuoteDraft = { ...base, region: "jeju", track: "private", requestedDate: "2026-07-03", party: 4, durationHours: 8, language: "ko", jejuPickupZone: "city", contactEmail: "a@b.com", readyToBook: true };
 
-  it("creates a booking and returns the checkout path", async () => {
-    const r = await createQuoteBooking(mockSb("bk-42"), ready, "ko");
-    expect(r).toEqual({ ok: true, bookingId: "bk-42", checkoutPath: "/itinerary-builder/checkout?bookingId=bk-42" });
+  it("creates a booking and returns the checkout path + A2C reference (W2.2)", async () => {
+    const r = await createQuoteBooking(mockSb("bk-42", "A2C-ABCD1234"), ready, "ko");
+    expect(r).toEqual({
+      ok: true,
+      bookingId: "bk-42",
+      checkoutPath: "/itinerary-builder/checkout?bookingId=bk-42",
+      bookingReference: "A2C-ABCD1234",
+    });
   });
 
   it("returns out_of_scope for oversized groups (no insert)", async () => {

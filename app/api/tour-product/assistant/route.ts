@@ -141,9 +141,13 @@ function getOrCreateSessionToken(req: NextRequest): { token: string; setCookie: 
 }
 
 function bestEffortIp(req: NextRequest): string | null {
+  // W0.9 (C-31): prefer x-real-ip — it is set by the platform proxy (Vercel)
+  // and cannot be forged by the client, unlike the first X-Forwarded-For hop
+  // (a spoofed XFF used to rotate the rate-limit key per request, defeating
+  // the booking-lookup enumeration brake).
   return (
+    req.headers.get("x-real-ip")?.trim() ??
     req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ??
-    req.headers.get("x-real-ip") ??
     null
   );
 }
@@ -993,9 +997,11 @@ export async function POST(req: NextRequest) {
         : ({ ok: false, error: "insert_failed" } as const);
       if (result.ok) {
         // Surface a structured checkout_url so the widget can render a button;
-        // the path is also in the reply text as a fallback.
-        return respond(checkoutReadyReply(result.checkoutPath, quoteLocale), {
+        // the path is also in the reply text as a fallback. The reply states
+        // the A2C reference (W2.2) so the customer can use the chat lookup.
+        return respond(checkoutReadyReply(result.checkoutPath, quoteLocale, result.bookingReference), {
           checkout_url: result.checkoutPath,
+          booking_reference: result.bookingReference,
         });
       }
       // disabled / insert_failed → fall back to the quote + a gentle retry.
