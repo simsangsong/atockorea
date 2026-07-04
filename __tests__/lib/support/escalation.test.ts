@@ -49,6 +49,39 @@ describe("W1.5.1 (C-20) — informational questions do not create keyword ticket
   });
 });
 
+// W1.5.2 (C-21): complaint tone escalates even without trigger keywords.
+describe("complaint tone detection", () => {
+  it("escalates keyword-free complaints as reason=complaint", async () => {
+    const cases = [
+      "서비스 정말 별로였어요",
+      "The tour was terrible, never again",
+      "답장이 없어요. 어떻게 된 거예요",
+      "太失望了",
+      "el servicio fue pésimo",
+    ];
+    for (const msg of cases) {
+      const d = await detectEscalation(mockSb([]), msg, "…", "ko", { intent: "unknown" });
+      expect(d.escalate).toBe(true);
+      expect(d.reason).toBe("complaint");
+    }
+  });
+
+  it("does not flag calm informational questions", async () => {
+    const d = await detectEscalation(mockSb([]), "픽업 시간대는 보통 어떻게 되나요?", "…", "ko", {
+      intent: "policy",
+    });
+    expect(d.escalate).toBe(false);
+  });
+
+  it("complaint beats the informational-intent gate", async () => {
+    const d = await detectEscalation(mockSb(KEYWORDS), "환불 정책도 최악이네요 정말 실망입니다", "…", "ko", {
+      intent: "policy",
+    });
+    expect(d.escalate).toBe(true);
+    expect(d.reason).toBe("complaint");
+  });
+});
+
 describe("isActionRequest", () => {
   it("matches real requests in ko/en/ja/zh/es", () => {
     expect(isActionRequest("환불해주세요")).toBe(true);
