@@ -46,6 +46,12 @@ export type QuoteDraft = {
   contactName: string | null;
   contactEmail: string | null;
   readyToBook: boolean;
+  /**
+   * W2.6 (C-18): why the extracted date was rejected. A past date used to
+   * flow straight into a real quote AND a bookable PENDING booking; now it is
+   * treated as missing and the slot prompt explains why.
+   */
+  dateIssue: "past" | "far_future" | null;
 };
 
 const EMPTY_DRAFT: QuoteDraft = {
@@ -60,15 +66,26 @@ const EMPTY_DRAFT: QuoteDraft = {
   contactName: null,
   contactEmail: null,
   readyToBook: false,
+  dateIssue: null,
 };
+
+/** Bookings are quotable up to ~2 years out; beyond that ops can't commit. */
+function farFutureCutoffISO(todayISO: string): string {
+  const year = Number(todayISO.slice(0, 4));
+  return Number.isFinite(year) ? `${year + 2}${todayISO.slice(4)}` : "9999-12-31";
+}
 
 const REGIONS = new Set(["busan", "jeju", "seoul"]);
 const TRACKS = new Set(["private", "cruise", "dmz"]);
 const PICKUP = new Set(["city", "out_west", "out_east", "out_south"]);
 const EMAIL_RE = /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/;
 
-/** Normalize + clamp a raw extracted draft into a typed QuoteDraft. */
-export function sanitizeDraft(raw: Record<string, unknown> | null): QuoteDraft {
+/**
+ * Normalize + clamp a raw extracted draft into a typed QuoteDraft.
+ * Pass `todayISO` to reject past dates (and >2y-out dates) as missing — the
+ * caller re-prompts with the reason (W2.6 / C-18).
+ */
+export function sanitizeDraft(raw: Record<string, unknown> | null, todayISO?: string): QuoteDraft {
   const d: QuoteDraft = { ...EMPTY_DRAFT };
   if (!raw) return d;
   const str = (v: unknown) => (typeof v === "string" && v.trim() ? v.trim() : null);
@@ -81,7 +98,15 @@ export function sanitizeDraft(raw: Record<string, unknown> | null): QuoteDraft {
   const track = str(raw.track)?.toLowerCase();
   if (track && TRACKS.has(track)) d.track = track as PricingTrack;
   const date = str(raw.requestedDate);
-  if (date && /^\d{4}-\d{2}-\d{2}$/.test(date)) d.requestedDate = date;
+  if (date && /^\d{4}-\d{2}-\d{2}$/.test(date)) {
+    if (todayISO && date < todayISO) {
+      d.dateIssue = "past";
+    } else if (todayISO && date > farFutureCutoffISO(todayISO)) {
+      d.dateIssue = "far_future";
+    } else {
+      d.requestedDate = date;
+    }
+  }
   const party = num(raw.party);
   if (party && party >= 1) d.party = Math.round(party);
   const hours = num(raw.durationHours);
@@ -113,8 +138,37 @@ export function missingQuoteSlots(d: QuoteDraft): string[] {
   return missing;
 }
 
+/**
+ * W2.6 — localized note explaining why the extracted date was rejected,
+ * prepended to the slot re-prompt so the customer knows what to fix.
+ */
+function dateIssueNote(issue: "past" | "far_future", locale: TourProductPageLocale): string {
+  const past: Record<TourProductPageLocale, string> = {
+    en: "That date has already passed.",
+    ko: "말씀하신 날짜는 이미 지난 날짜예요.",
+    ja: "その日付はすでに過ぎています。",
+    zh: "该日期已经过去了。",
+    "zh-TW": "該日期已經過去了。",
+    es: "Esa fecha ya pasó.",
+  };
+  const far: Record<TourProductPageLocale, string> = {
+    en: "That date is further out than we can confirm (about 2 years ahead).",
+    ko: "그 날짜는 아직 확정해 드리기 어려운 먼 미래예요(약 2년 이내만 가능).",
+    ja: "その日付は確定できる範囲（約2年先まで）を超えています。",
+    zh: "该日期超出了我们可确认的范围（约2年内）。",
+    "zh-TW": "該日期超出了我們可確認的範圍（約2年內）。",
+    es: "Esa fecha está más allá de lo que podemos confirmar (unos 2 años).",
+  };
+  const map = issue === "past" ? past : far;
+  return map[locale] ?? map.en;
+}
+
 /** Localized prompt asking only for the slots that are still missing. */
-export function quoteSlotPrompt(missing: string[], locale: TourProductPageLocale): string {
+export function quoteSlotPrompt(
+  missing: string[],
+  locale: TourProductPageLocale,
+  dateIssue?: "past" | "far_future" | null,
+): string {
   const labels: Record<TourProductPageLocale, Record<string, string>> = {
     en: { region: "destination (Busan / Jeju / Seoul)", date: "date", party: "number of people", duration: "hours (4–10)", pickup: "your Jeju hotel area (or downtown)" },
     ko: { region: "여행지(부산/제주/서울)", date: "날짜", party: "인원수", duration: "시간(4–10시간)", pickup: "제주 호텔 지역(또는 시내)" },
@@ -133,7 +187,108 @@ export function quoteSlotPrompt(missing: string[], locale: TourProductPageLocale
     "zh-TW": (x) => `我來為你估算私人包車價格。請告訴我：${x}？`,
     es: (x) => `Con gusto te doy un precio para un tour privado. ¿Me dices: ${x}?`,
   };
-  return (lead[locale] ?? lead.en)(items);
+  const prompt = (lead[locale] ?? lead.en)(items);
+  return dateIssue ? `${dateIssueNote(dateIssue, locale)} ${prompt}` : prompt;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// W2.0 (C-9) — quote-flow stickiness.
+//
+// The quote gate used to fire only on `classifyChatbotQuery(last message)`, so
+// a natural follow-up like "네 진행해주세요. 이메일은 x@y.com" (no quote
+// keywords) leaked to the general LLM path, where the model denied being able
+// to book at all. These helpers recognize that the PREVIOUS assistant turn was
+// a server-generated quote-flow prompt and keep the follow-up in the flow.
+//
+// The assistant reply is matched by template markers (every quote-flow reply is
+// deterministic server copy, so the markers are stable). A forged assistant
+// turn can at worst route a user into the quote flow — price/booking stay
+// server-recomputed, so there is no trust escalation here (C-29 note).
+// ─────────────────────────────────────────────────────────────────────────────
+
+export type QuoteFlowStage = "slots" | "confirm" | "email";
+
+const STAGE_MARKERS: Record<QuoteFlowStage, string[]> = {
+  slots: [
+    "Happy to price a private tour",
+    "프라이빗 투어 견적을 내드릴게요",
+    "プライベートツアーのお見積もりをします",
+    "我来为你估算私人包车价格",
+    "我來為你估算私人包車價格",
+    "Con gusto te doy un precio para un tour privado",
+  ],
+  confirm: [
+    "Estimated quote:",
+    "예상 견적:",
+    "お見積もり：",
+    "预估报价：",
+    "預估報價：",
+    "Precio estimado:",
+  ],
+  email: [
+    "What email should I put on the booking",
+    "예약에 사용할 이메일",
+    "ご予約に使うメールアドレス",
+    "预订使用的邮箱",
+    "預訂使用的電子郵件",
+    "Qué correo pongo en la reserva",
+  ],
+};
+
+/** Which quote-flow prompt (if any) a previous assistant reply was. */
+export function quoteFlowStageFromReply(reply: string): QuoteFlowStage | null {
+  if (!reply) return null;
+  for (const stage of ["email", "confirm", "slots"] as const) {
+    if (STAGE_MARKERS[stage].some((m) => reply.includes(m))) return stage;
+  }
+  return null;
+}
+
+/** Short agreement in any supported language ("네 진행해주세요", "yes book it"). */
+function looksLikeAffirmation(text: string): boolean {
+  const t = text.trim();
+  if (t.length > 160) return false;
+  // A trailing question mark means the user is ASKING something, not agreeing
+  // ("투어 진행 시간이 어떻게 되나요?") — never treat it as a confirmation.
+  if (/[?？]\s*$/.test(t)) return false;
+  return (
+    /(?:^|\b)(yes|yeah|yep|ok(?:ay)?|sure|go ahead|proceed|book it|let'?s book|sounds good|please book|confirm)(?:\b|[.!,]|$)/i.test(t) ||
+    /(진행|예약할게|예약해|예약 부탁|결제할게|결제해|좋아요|좋습니다|할게요|부탁드|^네[!.~\s]*$|^예[!.~\s]*$|^응[!.~\s]*$|^네네)/.test(t) ||
+    /(お願いします|進めて|予約します|それでお願い|^はい)/.test(t) ||
+    /(好的|可以|沒問題|没问题|就这个|就這個|进行|進行|预订吧|預訂吧|订吧|訂吧)/.test(t) ||
+    /(^sí\b|^si[,!\s]|vale|claro|adelante|de acuerdo|perfecto|resérvalo|reservar)/i.test(t)
+  );
+}
+
+/** Clear "no / not now" — lets the customer leave the flow gracefully. */
+function looksLikeDecline(text: string): boolean {
+  return /^(no\b|nope|not now|maybe later|아니요?|아뇨|괜찮아요|나중에|다음에|됐어요|やめておきます|いいえ|結構です|不用了?|不要|算了|no,?\s*gracias|ahora no)/i.test(
+    text.trim(),
+  );
+}
+
+/**
+ * Decide whether the latest user turn should STAY in the quote flow even
+ * though it carries no quote keywords of its own (C-9). Conservative: explicit
+ * human-handoff or own-booking questions always route out, declines route out,
+ * and long/questioning topic changes route out.
+ */
+export function isQuoteFlowFollowUp(input: {
+  latestUserMessage: string;
+  priorAssistantReply: string;
+  detectedIntent: string;
+}): boolean {
+  const stage = quoteFlowStageFromReply(input.priorAssistantReply);
+  if (!stage) return false;
+  if (input.detectedIntent === "support" || input.detectedIntent === "booking_specific") return false;
+  const msg = input.latestUserMessage.trim();
+  if (!msg || looksLikeDecline(msg)) return false;
+  if (EMAIL_RE.test(msg)) return true;
+  if (looksLikeAffirmation(msg)) return true;
+  // A short, non-question reply to a direct prompt is almost certainly the
+  // requested value ("제주요", "4명 8시간이요", "10월 3일").
+  if ((stage === "slots" || stage === "email") && msg.length <= 80 && !/[?？]/.test(msg)) return true;
+  return input.detectedIntent === "unknown";
 }
 
 /**
@@ -208,13 +363,28 @@ export async function extractQuoteDraft(
   try {
     const model = genAI.getGenerativeModel({
       model: modelName,
-      generationConfig: { temperature: 0, responseMimeType: "application/json", maxOutputTokens: 400 },
+      // thinkingBudget: 0 is load-bearing (W2.0 root-cause fix): gemini-2.5
+      // thinking tokens count against maxOutputTokens, so on longer
+      // conversations the 400-token budget was consumed by thinking and the
+      // JSON came back truncated → silent EMPTY_DRAFT → "ask everything
+      // again". Extraction is mechanical parsing; no thinking needed.
+      generationConfig: {
+        temperature: 0,
+        responseMimeType: "application/json",
+        maxOutputTokens: 800,
+        // Not yet in @google/generative-ai's GenerationConfig type; passed
+        // through to the API as-is.
+        ...({ thinkingConfig: { thinkingBudget: 0 } } as Record<string, unknown>),
+      },
     });
     const res = await model.generateContent(prompt);
     const text = res.response.text()?.trim() ?? "";
     const json = JSON.parse(text.startsWith("{") ? text : (text.match(/\{[\s\S]*\}/)?.[0] ?? "{}"));
-    return sanitizeDraft(json);
-  } catch {
+    return sanitizeDraft(json, todayISO);
+  } catch (err) {
+    // A silent empty draft here degrades the flow to "ask everything again" —
+    // log the cause so quota/parse failures are visible (C-2 lesson).
+    console.error("[quoteFlow] extractQuoteDraft failed:", (err as Error).message);
     return { ...EMPTY_DRAFT };
   }
 }

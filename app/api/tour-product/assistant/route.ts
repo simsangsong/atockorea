@@ -52,6 +52,7 @@ import {
   createQuoteBooking,
   quoteEmailPrompt,
   checkoutReadyReply,
+  isQuoteFlowFollowUp,
 } from "@/lib/chatbot/quoteFlow";
 import { allowRequestDurable } from "@/lib/chatbot/requestRateLimit";
 import { retrieveKnowledge, buildRagContextText } from "@/lib/rag/retrieve";
@@ -851,7 +852,22 @@ export async function POST(req: NextRequest) {
   // Quote funnel (Phase Q0–Q2): collect the private-tour quote inputs across
   // the conversation, then show a deterministic price. The model only extracts
   // slots; the missing-slot control flow + the price() stay deterministic.
-  if (detectedIntent.intent === "quote_request") {
+  //
+  // W2.0 (C-9): the gate is STICKY across turns — when the previous assistant
+  // turn was a quote-flow prompt ("Estimated quote: … Want me to set up
+  // checkout?"), natural follow-ups like "네 진행해주세요" or a bare email
+  // carry no quote keywords and used to leak to the general LLM path, where
+  // the model denied being able to book at all. isQuoteFlowFollowUp keeps
+  // those turns in the flow; support/booking-specific/decline turns still exit.
+  const priorAssistantReply = [...messages].reverse().find((m) => m.role === "assistant")?.content ?? "";
+  const quoteFlowSticky =
+    detectedIntent.intent !== "quote_request" &&
+    isQuoteFlowFollowUp({
+      latestUserMessage,
+      priorAssistantReply,
+      detectedIntent: detectedIntent.intent,
+    });
+  if (detectedIntent.intent === "quote_request" || quoteFlowSticky) {
     const quoteLocale = inferLocaleFromText(latestUserMessage) ?? locale;
     const quoteModel = process.env.GEMINI_TOUR_PRODUCT_ASSISTANT_MODEL?.trim() || DEFAULT_GEMINI_MODEL;
     const todayISO = new Date().toISOString().slice(0, 10);
@@ -861,7 +877,7 @@ export async function POST(req: NextRequest) {
     if (missing.length > 0) {
       return applySessionCookie(
         NextResponse.json({
-          reply: quoteSlotPrompt(missing, quoteLocale),
+          reply: quoteSlotPrompt(missing, quoteLocale, draft.dateIssue),
           ticket_id: null,
           escalated: false,
           escalation_reason: null,
@@ -1064,6 +1080,7 @@ export async function POST(req: NextRequest) {
     "When answering legal or policy questions, summarize the site policy plainly; do not give legal advice.",
     "If the verified context does not answer the user's question, say that clearly and ask whether to connect them to customer support inside this chat. Do not send the user to the contact page as the primary next step.",
     "If the user asks to contact support, talk to a person, or get a definitive answer from staff, say you can connect them in this chat.",
+    "BOOKING CAPABILITY: this chat CAN produce a real private-tour quote and a secure checkout link (booking is created only after the customer confirms; no payment happens in chat). NEVER say you are unable to make bookings, reservations, quotes, or payments. If the user wants to book a private tour or continue toward booking, ask for destination (Busan/Jeju/Seoul), date, group size, and hours — the quote system in this chat takes it from there.",
     verifiedBookingContext
       ? "The user's own booking has been verified (booking reference + email). Answer their booking question — pickup, tour time, status, payment status, refund progress, guests, amount — using ONLY the VERIFIED BOOKING facts below. Never reveal or mention payment-method, card, or internal IDs. For changes, cancellation, or refund PROCESSING, tell them our staff will handle it and offer support in this chat — never claim you have changed, cancelled, rescheduled, or refunded anything."
       : "For personal booking details such as exact pickup time, driver contact, payment status, booking changes, or booking-specific refund progress, staff must check the booking record; offer support inside this chat.",

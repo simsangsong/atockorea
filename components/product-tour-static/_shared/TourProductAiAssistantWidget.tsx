@@ -6,6 +6,7 @@ import { ArrowRight, Headphones, Send, Sparkles, ThumbsDown, ThumbsUp, X } from 
 
 import { cn } from "@/lib/utils";
 import { parseSseBuffer } from "@/lib/chatbot/clientSse";
+import { ChatMarkdown, safeCheckoutUrl } from "./chatMarkdown";
 
 function ChatBotAvatar({ className }: { className?: string }) {
   return (
@@ -472,8 +473,17 @@ export function TourProductAiAssistantWidget({
               const { events, rest } = parseSseBuffer(buffer);
               buffer = rest;
               for (const ev of events) {
+                // W0.8 (C-34): a single malformed SSE payload used to throw an
+                // uncaught SyntaxError here and freeze the widget in a
+                // permanent loading state. Broken chunks are skipped; a broken
+                // `done` falls back to the streamed buffer.
                 if (ev.event === "delta") {
-                  const text = (JSON.parse(ev.data) as { text?: string }).text ?? "";
+                  let text = "";
+                  try {
+                    text = (JSON.parse(ev.data) as { text?: string }).text ?? "";
+                  } catch {
+                    continue;
+                  }
                   if (!text) continue;
                   streamed += text;
                   // First token: drop the typing indicator, show the bubble.
@@ -483,11 +493,18 @@ export function TourProductAiAssistantWidget({
                   }
                   renderAssistant(streamed);
                 } else if (ev.event === "done") {
-                  settled = true;
                   // done.reply is authoritative (D-T2-4): snap the bubble to it.
-                  const payload = JSON.parse(ev.data) as AssistantResponse;
-                  renderAssistant(payload.reply ?? streamed, {
-                    checkoutUrl: payload.checkout_url ?? undefined,
+                  let payload: AssistantResponse = {};
+                  try {
+                    payload = JSON.parse(ev.data) as AssistantResponse;
+                  } catch {
+                    payload = {};
+                  }
+                  const finalText = payload.reply ?? streamed;
+                  if (!finalText) continue; // broken done + nothing streamed → dropped-connection guard below
+                  settled = true;
+                  renderAssistant(finalText, {
+                    checkoutUrl: safeCheckoutUrl(payload.checkout_url) ?? undefined,
                   });
                   setHandoffOffer(payload.handoff_offered ? { question: lastUserQuestion } : null);
                   if (payload.ticket_id && payload.escalated) {
@@ -534,7 +551,12 @@ export function TourProductAiAssistantWidget({
         if (data.reply) {
           setMessages([
             ...next,
-            { role: "assistant", content: data.reply, origin: "ai", checkoutUrl: data.checkout_url ?? undefined },
+            {
+              role: "assistant",
+              content: data.reply,
+              origin: "ai",
+              checkoutUrl: safeCheckoutUrl(data.checkout_url) ?? undefined,
+            },
           ]);
           const lastUserQuestion = [...next].reverse().find((m) => m.role === "user")?.content ?? "";
           setHandoffOffer(data.handoff_offered ? { question: lastUserQuestion } : null);
@@ -920,10 +942,10 @@ export function TourProductAiAssistantWidget({
                           {m.origin === "admin" ? labels.contactSupport : "Support"}
                         </span>
                       )}
-                      <span className="whitespace-pre-wrap break-words">{m.content}</span>
-                      {m.checkoutUrl ? (
+                      <ChatMarkdown text={m.content} />
+                      {safeCheckoutUrl(m.checkoutUrl) ? (
                         <a
-                          href={m.checkoutUrl}
+                          href={safeCheckoutUrl(m.checkoutUrl)!}
                           className="mt-2.5 flex w-full items-center justify-center gap-1.5 rounded-full bg-slate-900 px-4 py-2 text-[12.5px] font-bold text-white transition-colors hover:bg-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
                         >
                           {CHECKOUT_CTA[uiLang] ?? CHECKOUT_CTA.en}

@@ -46,6 +46,7 @@
     "rag:harvest": "node --env-file=.env.local --import tsx scripts/harvest-qa-candidates.ts",
     "rag:harvest:dry": "node --env-file=.env.local --import tsx scripts/harvest-qa-candidates.ts --dry-run",
     "rag:pressure": "node --env-file=.env.local --import tsx scripts/chatbot-pressure-test.ts",
+    "chatbot:golden": "node --env-file=.env.local scripts/chatbot-golden-test.mjs",
     "gen:southwest-tour-product-zh-TW-sql": "node scripts/gen-southwest-tour-product-zh-TW-sql.mjs",
     "gen:southwest-tour-product-zh-CN-sql": "node scripts/gen-southwest-tour-product-zh-CN-sql.mjs",
     "gen:southwest-tour-product-ko-sql": "node scripts/gen-southwest-tour-product-ko-sql.mjs",
