@@ -514,7 +514,8 @@ async function finalizeAssistantTurn(
           } else if (
             decision.reason === "user_requested_human" ||
             decision.reason === "sensitive_topic" ||
-            decision.reason === "keyword_match"
+            decision.reason === "keyword_match" ||
+            decision.reason === "complaint"
           ) {
             const summary = buildAdminSummary(userMessage, decision);
             const { data: ticket } = await sb
@@ -530,7 +531,11 @@ async function finalizeAssistantTurn(
                 initial_user_message: userMessage,
                 initial_summary: summary,
                 status: "open",
-                priority: decision.reason === "sensitive_topic" ? "high" : "normal",
+                // An angry customer is as urgent as a legal topic (W1.5.2).
+                priority:
+                  decision.reason === "sensitive_topic" || decision.reason === "complaint"
+                    ? "high"
+                    : "normal",
                 unread_for_admin: true,
               })
               .select("id")

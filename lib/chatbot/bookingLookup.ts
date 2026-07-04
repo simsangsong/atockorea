@@ -243,7 +243,11 @@ export function buildVerifiedBookingContext(view: SafeBookingView): string {
   const lines: string[] = [`Booking reference: ${view.bookingReference}`];
   if (view.tourName) lines.push(`Tour: ${view.tourName}`);
   if (view.tourDate) lines.push(`Tour date: ${view.tourDate}`);
-  lines.push(`Tour time: ${view.tourTime ?? "not set on the booking — confirmed by staff"}`);
+  // W2.5 (C-13): unambiguous FUTURE phrasing — "confirmed by staff" was being
+  // rendered by the model as the awkward past-tense "직원과 확인되었습니다".
+  lines.push(
+    `Tour time: ${view.tourTime ?? "not set yet — our staff will confirm the exact time and contact the customer before the tour"}`,
+  );
   if (view.guests != null) lines.push(`Guests: ${view.guests}`);
   lines.push(`Booking status: ${view.status}`);
   if (view.paymentStatus) lines.push(`Payment status: ${view.paymentStatus}`);
@@ -263,7 +267,9 @@ export function buildVerifiedBookingContext(view: SafeBookingView): string {
       : "Cancellation: not cancelled",
   );
   if (view.specialRequests) lines.push(`Special requests: ${view.specialRequests}`);
-  lines.push("Pickup: exact pickup time and place are confirmed by staff (not stored on this booking record).");
+  lines.push(
+    "Pickup: our staff will finalize the exact pickup time and place and send them to the customer before the tour (not stored on this booking record).",
+  );
   return lines.join("\n");
 }
 

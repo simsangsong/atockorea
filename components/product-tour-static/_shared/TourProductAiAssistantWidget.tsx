@@ -278,6 +278,21 @@ function inferClientLanguage(): string {
   return document.documentElement.lang || navigator.language || "en";
 }
 
+/**
+ * W2.5 (C-13): sync the widget UI language to the CONVERSATION language.
+ * The URL path only says which locale the page was opened in — a visitor on
+ * the /en site writing Korean used to get Korean answers inside English
+ * chrome (buttons, placeholders, checkout CTA). Positive script detection
+ * only: Latin-only text ("ok", emails) never flips the UI.
+ */
+function langFromMessage(text: string): string | null {
+  if (/\p{Script=Hangul}/u.test(text)) return "ko";
+  if (/[\p{Script=Hiragana}\p{Script=Katakana}]/u.test(text)) return "ja";
+  if (/\p{Script=Han}/u.test(text)) return "zh";
+  if (/[¿¡ñáéíóúü]/i.test(text)) return "es";
+  return null;
+}
+
 function TypingDots() {
   return (
     <div className="flex items-center gap-1 px-1 py-0.5" aria-label="Loading" role="status">
@@ -735,6 +750,9 @@ export function TourProductAiAssistantWidget({
   const send = useCallback(async () => {
     const text = input.trim();
     if (!text || loading) return;
+    // W2.5 — follow the conversation language (positive script hits only).
+    const msgLang = langFromMessage(text);
+    if (msgLang && !uiLang.startsWith(msgLang)) setUiLang(msgLang);
     setInput("");
     setHandoffOffer(null);
     const next: ChatMessage[] = [
@@ -747,7 +765,7 @@ export function TourProductAiAssistantWidget({
       return;
     }
     await runAssistant(next);
-  }, [input, liveSupportActive, loading, messages, runAssistant, sendLiveSupportMessage]);
+  }, [input, liveSupportActive, loading, messages, runAssistant, sendLiveSupportMessage, uiLang]);
 
   const sendPreset = useCallback(
     async (text: string) => {

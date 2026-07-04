@@ -14,6 +14,8 @@ import type { TourProductPageLocale } from "@/lib/tour-product/resolveTourProduc
 import {
   quote,
   tierForLocale,
+  MIN_TOUR_HOURS,
+  type CruisePort,
   type JejuPickupZone,
   type PricingRegion,
   type PricingTrack,
@@ -42,6 +44,8 @@ export type QuoteDraft = {
   durationHours: number | null;
   language: string | null; // locale code (en/ko/ja/zh/zh-TW/es)
   jejuPickupZone: JejuPickupZone | null;
+  /** W2.7 (C-19): Jeju cruise docking port — Gangjeong carries a surcharge. */
+  cruisePort: CruisePort | null;
   poiIntent: string | null; // free-text interests (for the matcher / guide)
   contactName: string | null;
   contactEmail: string | null;
@@ -62,6 +66,7 @@ const EMPTY_DRAFT: QuoteDraft = {
   durationHours: null,
   language: null,
   jejuPickupZone: null,
+  cruisePort: null,
   poiIntent: null,
   contactName: null,
   contactEmail: null,
@@ -78,7 +83,17 @@ function farFutureCutoffISO(todayISO: string): string {
 const REGIONS = new Set(["busan", "jeju", "seoul"]);
 const TRACKS = new Set(["private", "cruise", "dmz"]);
 const PICKUP = new Set(["city", "out_west", "out_east", "out_south"]);
+const CRUISE_PORTS = new Set(["gangjeong", "jeju_port"]);
+// Loose "an email appears somewhere" matcher (follow-up routing).
 const EMAIL_RE = /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/;
+// W2.10 (C-27): stricter shape for the email a BOOKING is created with —
+// labels can't start/end with dot/dash, and consecutive dots are rejected.
+const BOOKING_EMAIL_RE =
+  /^[A-Za-z0-9](?:[A-Za-z0-9._%+-]*[A-Za-z0-9_%+-])?@(?:[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?\.)+[A-Za-z]{2,}$/;
+
+function isValidBookingEmail(email: string): boolean {
+  return BOOKING_EMAIL_RE.test(email) && !email.includes("..");
+}
 
 /**
  * Normalize + clamp a raw extracted draft into a typed QuoteDraft.
@@ -114,10 +129,12 @@ export function sanitizeDraft(raw: Record<string, unknown> | null, todayISO?: st
   d.language = str(raw.language);
   const pickup = str(raw.jejuPickupZone)?.toLowerCase();
   if (pickup && PICKUP.has(pickup)) d.jejuPickupZone = pickup as JejuPickupZone;
+  const port = str(raw.cruisePort)?.toLowerCase();
+  if (port && CRUISE_PORTS.has(port)) d.cruisePort = port as CruisePort;
   d.poiIntent = str(raw.poiIntent);
   d.contactName = str(raw.contactName);
   const email = str(raw.contactEmail);
-  if (email && EMAIL_RE.test(email)) d.contactEmail = email.toLowerCase();
+  if (email && isValidBookingEmail(email)) d.contactEmail = email.toLowerCase();
   d.readyToBook = raw.readyToBook === true;
   return d;
 }
@@ -135,6 +152,9 @@ export function missingQuoteSlots(d: QuoteDraft): string[] {
   if (!d.durationHours) missing.push("duration");
   const track = d.track ?? "private";
   if (d.region === "jeju" && track !== "cruise" && !d.jejuPickupZone) missing.push("pickup");
+  // W2.7 (C-19): a Jeju cruise quote is wrong without the docking port —
+  // Gangjeong (Seogwipo) carries a +₩20k distance surcharge over Jeju Port.
+  if (d.region === "jeju" && track === "cruise" && !d.cruisePort) missing.push("cruise_port");
   return missing;
 }
 
@@ -170,12 +190,12 @@ export function quoteSlotPrompt(
   dateIssue?: "past" | "far_future" | null,
 ): string {
   const labels: Record<TourProductPageLocale, Record<string, string>> = {
-    en: { region: "destination (Busan / Jeju / Seoul)", date: "date", party: "number of people", duration: "hours (4–10)", pickup: "your Jeju hotel area (or downtown)" },
-    ko: { region: "여행지(부산/제주/서울)", date: "날짜", party: "인원수", duration: "시간(4–10시간)", pickup: "제주 호텔 지역(또는 시내)" },
-    ja: { region: "目的地（釜山/済州/ソウル）", date: "日付", party: "人数", duration: "時間（4〜10時間）", pickup: "済州のホテルエリア（または市内）" },
-    zh: { region: "目的地（釜山/济州/首尔）", date: "日期", party: "人数", duration: "时长（4–10小时）", pickup: "济州酒店区域（或市区）" },
-    "zh-TW": { region: "目的地（釜山/濟州/首爾）", date: "日期", party: "人數", duration: "時長（4–10小時）", pickup: "濟州飯店區域（或市區）" },
-    es: { region: "destino (Busan / Jeju / Seúl)", date: "fecha", party: "número de personas", duration: "horas (4–10)", pickup: "zona de tu hotel en Jeju (o centro)" },
+    en: { region: "destination (Busan / Jeju / Seoul)", date: "date", party: "number of people", duration: "hours (4–10)", pickup: "your Jeju hotel area (or downtown)", cruise_port: "docking port (Jeju Port or Gangjeong/Seogwipo)" },
+    ko: { region: "여행지(부산/제주/서울)", date: "날짜", party: "인원수", duration: "시간(4–10시간)", pickup: "제주 호텔 지역(또는 시내)", cruise_port: "기항 항구(제주항 또는 강정항)" },
+    ja: { region: "目的地（釜山/済州/ソウル）", date: "日付", party: "人数", duration: "時間（4〜10時間）", pickup: "済州のホテルエリア（または市内）", cruise_port: "寄港地（済州港または江汀港）" },
+    zh: { region: "目的地（釜山/济州/首尔）", date: "日期", party: "人数", duration: "时长（4–10小时）", pickup: "济州酒店区域（或市区）", cruise_port: "停靠港口（济州港或江汀港）" },
+    "zh-TW": { region: "目的地（釜山/濟州/首爾）", date: "日期", party: "人數", duration: "時長（4–10小時）", pickup: "濟州飯店區域（或市區）", cruise_port: "停靠港口（濟州港或江汀港）" },
+    es: { region: "destino (Busan / Jeju / Seúl)", date: "fecha", party: "número de personas", duration: "horas (4–10)", pickup: "zona de tu hotel en Jeju (o centro)", cruise_port: "puerto de atraque (Puerto de Jeju o Gangjeong/Seogwipo)" },
   };
   const L = labels[locale] ?? labels.en;
   const items = missing.map((m) => L[m] ?? m).join(", ");
@@ -303,14 +323,20 @@ export function buildQuoteReply(
   const region = d.region as PricingRegion;
   const track = d.track ?? "private";
   const language = d.language ?? locale;
+  // W2.8 (C-22): the engine silently clamps to the 4h minimum — say so, and
+  // show the hours that were actually priced instead of the requested ones.
+  const requestedHours = d.durationHours ?? 8;
+  const pricedHours = Math.max(MIN_TOUR_HOURS, Math.round(requestedHours));
+  const clampedUp = requestedHours < MIN_TOUR_HOURS;
   const price = quote({
     track,
     region,
     guideLanguageTier: tierForLocale(language),
-    durationHours: d.durationHours ?? 8,
+    durationHours: pricedHours,
     pax: d.party ?? 1,
     requestedDate: d.requestedDate,
     jejuPickupZone: region === "jeju" && track !== "cruise" ? d.jejuPickupZone ?? "city" : null,
+    cruisePort: track === "cruise" ? d.cruisePort : null,
   });
 
   if (!price.autoQuotable) {
@@ -327,14 +353,24 @@ export function buildQuoteReply(
 
   const amount = formatKrw(price.total, locale);
   const summary: Record<TourProductPageLocale, string> = {
-    en: `Estimated quote: ${amount} — ${d.durationHours}h private tour in ${region} for ${d.party}. Book now, pay on tour day, 100% refund up to 24h before. Want me to set up checkout?`,
-    ko: `예상 견적: ${amount} — ${region} ${d.durationHours}시간 프라이빗 투어, ${d.party}명. 예약 먼저, 결제는 투어 당일, 24시간 전 100% 환불. 결제 진행해 드릴까요?`,
-    ja: `お見積もり：${amount} — ${region}の${d.durationHours}時間プライベートツアー、${d.party}名。予約は今、支払いは当日、24時間前まで全額返金。決済に進みますか？`,
-    zh: `预估报价：${amount} — ${region}${d.durationHours}小时私人包车，${d.party}人。先预约，当天付款，提前24小时全额退款。要我帮你进入结账吗？`,
-    "zh-TW": `預估報價：${amount} — ${region}${d.durationHours}小時私人包車，${d.party}人。先預約，當天付款，提前24小時全額退款。要我幫你進入結帳嗎？`,
-    es: `Precio estimado: ${amount} — tour privado de ${d.durationHours}h en ${region} para ${d.party}. Reserva ahora, paga el día del tour, reembolso 100% hasta 24h antes. ¿Preparo el pago?`,
+    en: `Estimated quote: ${amount} — ${pricedHours}h private tour in ${region} for ${d.party}. Book now, pay on tour day, 100% refund up to 24h before. Want me to set up checkout?`,
+    ko: `예상 견적: ${amount} — ${region} ${pricedHours}시간 프라이빗 투어, ${d.party}명. 예약 먼저, 결제는 투어 당일, 24시간 전 100% 환불. 결제 진행해 드릴까요?`,
+    ja: `お見積もり：${amount} — ${region}の${pricedHours}時間プライベートツアー、${d.party}名。予約は今、支払いは当日、24時間前まで全額返金。決済に進みますか？`,
+    zh: `预估报价：${amount} — ${region}${pricedHours}小时私人包车，${d.party}人。先预约，当天付款，提前24小时全额退款。要我帮你进入结账吗？`,
+    "zh-TW": `預估報價：${amount} — ${region}${pricedHours}小時私人包車，${d.party}人。先預約，當天付款，提前24小時全額退款。要我幫你進入結帳嗎？`,
+    es: `Precio estimado: ${amount} — tour privado de ${pricedHours}h en ${region} para ${d.party}. Reserva ahora, paga el día del tour, reembolso 100% hasta 24h antes. ¿Preparo el pago?`,
   };
-  return { reply: summary[locale] ?? summary.en, autoQuotable: true, totalKrw: price.total };
+  const minNote: Record<TourProductPageLocale, string> = {
+    en: `Our private tours start at ${MIN_TOUR_HOURS} hours, so I priced ${MIN_TOUR_HOURS} hours.`,
+    ko: `프라이빗 투어는 최소 ${MIN_TOUR_HOURS}시간부터라 ${MIN_TOUR_HOURS}시간 기준으로 계산했어요.`,
+    ja: `プライベートツアーは最低${MIN_TOUR_HOURS}時間からのため、${MIN_TOUR_HOURS}時間で計算しました。`,
+    zh: `私人包车最少${MIN_TOUR_HOURS}小时起订，因此按${MIN_TOUR_HOURS}小时计算。`,
+    "zh-TW": `私人包車最少${MIN_TOUR_HOURS}小時起訂，因此按${MIN_TOUR_HOURS}小時計算。`,
+    es: `Nuestros tours privados empiezan en ${MIN_TOUR_HOURS} horas, así que calculé ${MIN_TOUR_HOURS} horas.`,
+  };
+  const base = summary[locale] ?? summary.en;
+  const reply = clampedUp ? `${minNote[locale] ?? minNote.en} ${base}` : base;
+  return { reply, autoQuotable: true, totalKrw: price.total };
 }
 
 /**
@@ -355,8 +391,9 @@ export async function extractQuoteDraft(
     "Extract private-tour quote details from this AtoC Korea conversation as JSON.",
     `Today is ${todayISO}. Resolve relative dates (e.g. "next Saturday") to yyyy-mm-dd. Use null for anything not stated.`,
     "Schema (all keys required, value or null):",
-    '{"region": "busan|jeju|seoul|null", "track": "private|cruise|dmz|null", "requestedDate": "yyyy-mm-dd|null", "party": number|null, "durationHours": number|null, "language": "en|ko|ja|zh|zh-TW|es|null", "jejuPickupZone": "city|out_west|out_east|out_south|null", "poiIntent": "free text of interests or null", "contactName": "string|null", "contactEmail": "string|null", "readyToBook": boolean}',
+    '{"region": "busan|jeju|seoul|null", "track": "private|cruise|dmz|null", "requestedDate": "yyyy-mm-dd|null", "party": number|null, "durationHours": number|null, "language": "en|ko|ja|zh|zh-TW|es|null", "jejuPickupZone": "city|out_west|out_east|out_south|null", "cruisePort": "jeju_port|gangjeong|null", "poiIntent": "free text of interests or null", "contactName": "string|null", "contactEmail": "string|null", "readyToBook": boolean}',
     "readyToBook is true only if the user explicitly agreed to book/pay.",
+    'cruisePort only for Jeju cruise stops: "jeju_port" (Jeju Port, north) or "gangjeong" (Gangjeong / Seogwipo naval port, south).',
     "",
     convo,
   ].join("\n");
@@ -458,14 +495,47 @@ export async function createQuoteBooking(
   const language = draft.language ?? locale;
   const tier = tierForLocale(language);
   const jejuPickupZone = region === "jeju" && track !== "cruise" ? draft.jejuPickupZone ?? "city" : null;
+  const cruisePort = track === "cruise" ? draft.cruisePort : null;
+  const pricedHours = Math.max(MIN_TOUR_HOURS, Math.round(draft.durationHours));
+
+  // W2.9 (C-23): double-submit guard — a confirm double-tap (or a retried
+  // turn) used to create two PENDING bookings. Reuse a recent identical one.
+  try {
+    const since = new Date(Date.now() - 30 * 60_000).toISOString();
+    const { data: existing } = await sb
+      .from("bookings")
+      .select("id, booking_reference")
+      .eq("contact_email", draft.contactEmail)
+      .eq("tour_date", draft.requestedDate)
+      .eq("status", "pending")
+      .filter("itinerary->>source_url", "eq", "chatbot")
+      .filter("itinerary->>region", "eq", region)
+      .gte("created_at", since)
+      .order("created_at", { ascending: false })
+      .limit(1)
+      .maybeSingle();
+    if (existing) {
+      const bookingId = (existing as { id: string }).id;
+      return {
+        ok: true,
+        bookingId,
+        checkoutPath: `/itinerary-builder/checkout?bookingId=${bookingId}`,
+        bookingReference: (existing as { booking_reference: string | null }).booking_reference ?? null,
+      };
+    }
+  } catch {
+    // Guard is best-effort; a lookup failure must not block a real booking.
+  }
+
   const price = quote({
     track,
     region,
     guideLanguageTier: tier,
-    durationHours: draft.durationHours,
+    durationHours: pricedHours,
     pax: draft.party,
     requestedDate: draft.requestedDate,
     jejuPickupZone,
+    cruisePort,
   });
   if (!price.autoQuotable) return { ok: false, error: "out_of_scope" };
 
@@ -473,11 +543,11 @@ export async function createQuoteBooking(
     poiKeys: [],
     region: region as RegionSlug,
     track,
-    durationHours: draft.durationHours,
+    durationHours: pricedHours,
     guideLanguage: language,
     guideLanguageTier: tier,
     jejuPickupZone,
-    cruisePort: null,
+    cruisePort,
     tourDate: draft.requestedDate,
     pax: draft.party,
     contact: { name: draft.contactName ?? "", email: draft.contactEmail, phone: null },

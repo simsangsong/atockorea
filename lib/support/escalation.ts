@@ -48,9 +48,29 @@ const SENSITIVE_TOPIC_PATTERNS = [
   /(?:소송|법적|변호사)/,
 ];
 
+// W1.5.2 (C-21) — complaint/anger tone. Keyword-DB escalation only fired on
+// literal trigger words like "환불", so "서비스 정말 별로였어요" (no keyword)
+// sailed past while the customer fumed. These patterns catch dissatisfaction,
+// anger, scam accusations, and gone-unanswered complaints in 5 languages.
+const COMPLAINT_PATTERNS = [
+  /(별로였|별로예요|별로네|실망|최악|화가\s*나|화나|짜증|불쾌|엉망|어이가\s*없|말이\s*돼|말이\s*안\s*되|사기\s*(?:꾼|아니|당한|치)|속았|따질)/,
+  /\b(terrible|awful|horrible|worst|disappointed|disappointing|unacceptable|ridiculous|furious|outrageous|scam|rip[-\s]?off|never\s+again|waste\s+of\s+money)\b/i,
+  /(ひどい|最悪|残念でした|失望しました|詐欺|ふざけ)/,
+  /(太差|很差|糟糕|太失望|气死|氣死|骗人|騙人|坑人|投诉|投訴)/,
+  /\b(p[ée]simo|decepcionado|decepcionante|estafa|indignante|una\s+verg[üu]enza)\b/i,
+  // Gone-unanswered complaints ("답장이 없어요", "no one replied").
+  /(답장이\s*없|연락이\s*없|응답이\s*없|아무도\s*답|no\s+(?:one|body)\s+(?:has\s+)?(?:replied|responded|answered)|no\s+response|no\s+reply|nadie\s+respond)/i,
+  // Rage punctuation.
+  /[!！]{3,}/,
+];
+
+export function looksLikeComplaint(message: string): boolean {
+  return COMPLAINT_PATTERNS.some((r) => r.test(message));
+}
+
 export type EscalationDecision = {
   escalate: boolean;
-  reason: "user_requested_human" | "sensitive_topic" | "low_confidence" | "keyword_match" | null;
+  reason: "user_requested_human" | "sensitive_topic" | "low_confidence" | "keyword_match" | "complaint" | null;
   matched_keyword?: string | null;
   category?: string | null;
 };
@@ -117,6 +137,12 @@ export async function detectEscalation(
     return { escalate: true, reason: "sensitive_topic", category: "legal" };
   }
 
+  // 2.5 — complaint / anger tone (W1.5.2). Checked before the informational
+  // gate on purpose: an angry customer escalates whatever the intent is.
+  if (looksLikeComplaint(um)) {
+    return { escalate: true, reason: "complaint", category: "complaint" };
+  }
+
   // 3. DB-curated escalation keywords.
   // W1.5.1: skipped for informational questions ("환불 정책이 뭐예요?" is a
   // policy QUESTION, not a refund REQUEST) unless the message is an explicit
@@ -167,6 +193,7 @@ export function buildAdminSummary(userMessage: string, decision: EscalationDecis
     sensitive_topic: "민감 토픽 (법적/소송)",
     low_confidence: "챗봇 답변 신뢰도 낮음",
     keyword_match: `키워드 매치${decision.matched_keyword ? `: "${decision.matched_keyword}"` : ""}`,
+    complaint: "컴플레인/불만 톤 감지",
   };
   return `[${reasonLabel[reason] ?? reason}] ${trimmed}`;
 }

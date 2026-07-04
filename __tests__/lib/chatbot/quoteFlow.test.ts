@@ -30,6 +30,7 @@ const base: QuoteDraft = {
   durationHours: null,
   language: null,
   jejuPickupZone: null,
+  cruisePort: null,
   poiIntent: null,
   contactName: null,
   contactEmail: null,
@@ -72,6 +73,20 @@ describe("sanitizeDraft", () => {
     expect(d.party).toBeNull();
     expect(d.jejuPickupZone).toBeNull();
     expect(d.contactEmail).toBeNull();
+  });
+
+  // W2.10 (C-27): malformed-but-loosely-matching emails are rejected.
+  it("rejects emails with consecutive dots or bad domain labels", () => {
+    expect(sanitizeDraft({ contactEmail: "user..name@example.com" }).contactEmail).toBeNull();
+    expect(sanitizeDraft({ contactEmail: "user@-example.com" }).contactEmail).toBeNull();
+    expect(sanitizeDraft({ contactEmail: ".user@example.com" }).contactEmail).toBeNull();
+    expect(sanitizeDraft({ contactEmail: "user.name+tag@example.co.kr" }).contactEmail).toBe("user.name+tag@example.co.kr");
+  });
+
+  // W2.7: cruise port extraction survives sanitize.
+  it("keeps a valid cruisePort and drops unknown ports", () => {
+    expect(sanitizeDraft({ cruisePort: "GANGJEONG" }).cruisePort).toBe("gangjeong");
+    expect(sanitizeDraft({ cruisePort: "busan_port" }).cruisePort).toBeNull();
   });
 });
 
@@ -235,10 +250,16 @@ describe("missingQuoteSlots", () => {
   });
 
   it("does not require pickup for cruise or non-Jeju", () => {
-    const cruise = { ...base, region: "jeju" as const, track: "cruise" as const, requestedDate: "2026-07-03", party: 4, durationHours: 8 };
+    const cruise = { ...base, region: "jeju" as const, track: "cruise" as const, requestedDate: "2026-07-03", party: 4, durationHours: 8, cruisePort: "jeju_port" as const };
     expect(missingQuoteSlots(cruise)).toEqual([]);
     const busan = { ...base, region: "busan" as const, requestedDate: "2026-07-03", party: 4, durationHours: 8 };
     expect(missingQuoteSlots(busan)).toEqual([]);
+  });
+
+  // W2.7 (C-19): a Jeju cruise quote without the docking port is wrong money.
+  it("requires the docking port for Jeju cruise quotes", () => {
+    const cruise = { ...base, region: "jeju" as const, track: "cruise" as const, requestedDate: "2026-07-03", party: 4, durationHours: 8 };
+    expect(missingQuoteSlots(cruise)).toEqual(["cruise_port"]);
   });
 });
 
@@ -266,6 +287,23 @@ describe("buildQuoteReply", () => {
     const r = buildQuoteReply(d, "en");
     expect(r.autoQuotable).toBe(false);
     expect(r.reply.toLowerCase()).toContain("coordinator");
+  });
+
+  // W2.7 (C-19): Gangjeong surcharge must reach the chat quote.
+  it("prices Gangjeong cruise higher than Jeju Port", () => {
+    const common: QuoteDraft = { ...base, region: "jeju", track: "cruise", requestedDate: "2026-07-03", party: 4, durationHours: 8, language: "en" };
+    const jejuPort = buildQuoteReply({ ...common, cruisePort: "jeju_port" }, "en");
+    const gangjeong = buildQuoteReply({ ...common, cruisePort: "gangjeong" }, "en");
+    expect(gangjeong.totalKrw).toBeGreaterThan(jejuPort.totalKrw);
+  });
+
+  // W2.8 (C-22): sub-minimum hours are clamped WITH an explanation.
+  it("announces the 4-hour minimum when fewer hours are requested", () => {
+    const d: QuoteDraft = { ...base, region: "busan", requestedDate: "2026-07-03", party: 2, durationHours: 2, language: "ko" };
+    const r = buildQuoteReply(d, "ko");
+    expect(r.reply).toContain("최소 4시간");
+    expect(r.reply).toContain("4시간 프라이빗");
+    expect(r.reply).not.toContain("2시간");
   });
 });
 
