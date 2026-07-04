@@ -106,14 +106,6 @@ const bodySchema = z.object({
   stream: z.boolean().optional(),
 });
 
-// A chat turn chains classify → RAG embedding → Gemini generation (and the
-// quote/matcher paths add more model calls), so slow turns run 10–20s+. Without
-// an explicit maxDuration Vercel kills the function at the platform default,
-// which surfaces to the visitor as a dead chatbot on exactly the heavier
-// questions. 60s covers the worst observed chain with headroom.
-export const runtime = "nodejs";
-export const maxDuration = 60;
-
 const SESSION_COOKIE = "atc_chat_sid";
 const SITE_ASSISTANT_SLUG = "__site__";
 
