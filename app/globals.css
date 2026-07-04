@@ -206,7 +206,7 @@
 body {
   /* Background: @layer base + body::before (pastel mesh); keep font stack here */
   color: var(--foreground);
-  font-family: "Pretendard", var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: "Pretendard Variable", "Pretendard", var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 /* Chinese Simplified — Noto Sans SC を先頭（Webfont で字形・メトリクス統一） */
@@ -234,7 +234,7 @@ body.lang-zh-TW {
 html[lang="ko"] body,
 body:lang(ko),
 body.lang-ko {
-  font-family: "Pretendard", var(--font-inter), "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "맑은 고딕", sans-serif;
+  font-family: "Pretendard Variable", "Pretendard", var(--font-inter), "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "맑은 고딕", sans-serif;
 }
 
 /* Japanese — 漢字含め Noto Sans JP でラテン混在を揃えやすい */
@@ -1125,7 +1125,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     --sidebar-border: oklch(0.922 0 0);
     --sidebar-ring: oklch(0.708 0 0);
     /* Next.js 14: Geist 미지원 → Pretendard(CDN) + 시스템 폰트 */
-    --font-sans: "Pretendard", ui-sans-serif, system-ui, sans-serif;
+    --font-sans: "Pretendard Variable", "Pretendard", ui-sans-serif, system-ui, sans-serif;
     /* Warm-cream top tint, mint mid (matches body::before) */
     --page-gradient-fallback: #f4f4f6;
 
@@ -1174,7 +1174,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     --sidebar-accent-foreground: oklch(0.985 0 0);
     --sidebar-border: oklch(1 0 0 / 10%);
     --sidebar-ring: oklch(0.556 0 0);
-    --font-sans: "Pretendard", ui-sans-serif, system-ui, sans-serif;
+    --font-sans: "Pretendard Variable", "Pretendard", ui-sans-serif, system-ui, sans-serif;
 
     /* ── Admin premium surface system (W1.1 / spec §2) — dark (navy-tinted) ── */
     --admin-bg: oklch(0.115 0.01 250);

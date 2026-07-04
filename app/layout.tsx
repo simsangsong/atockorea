@@ -14,6 +14,7 @@ import { DevChunkRecoveryCleanup } from "@/components/DevChunkRecoveryCleanup";
 import { LocaleCurrencySync } from "@/components/LocaleCurrencySync";
 import { AnalyticsPageViewTracker } from "@/components/analytics/AnalyticsPageViewTracker";
 import { GlobalAiAssistant } from "@/components/GlobalAiAssistant";
+import { DeferredCjkFontsCss } from "@/components/DeferredCjkFontsCss";
 import { Toaster } from "@/components/ui/sonner";
 
 const inter = Inter({
@@ -64,26 +65,25 @@ export default async function RootLayout({
           <link rel="preconnect" href={supabaseOrigin} crossOrigin="anonymous" />
         )}
         {/*
-         * Pretendard (Korean) — moved out of globals.css @import to remove the CSS-level
-         * waterfall. The CSS itself is ~3 KB and uses unicode-range to fetch woff2 only
-         * when matching glyphs are needed.
+         * Pretendard — the VARIABLE dynamic-subset build: CSS is ~13 KB gzipped and every
+         * @font-face carries a narrow unicode-range pointing at a small per-range woff2
+         * chunk, so an English page downloads only a few KB of font data. (The previous
+         * `static/pretendard.min.css` looked identical but its woff2 files were the FULL
+         * 750 KB-per-weight fonts — ~3.8 MB on every first visit, the dominant cost in
+         * the 2026-07-04 Lighthouse baseline.)
          */}
         <link
           rel="stylesheet"
-          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
         />
         {/*
-         * CJK full weights for ja / zh-CN / zh-TW. Google Fonts splits each language's
-         * woff2 by unicode-range, so a Korean visitor doesn't pay for Japanese glyphs.
-         *
-         * Noto Serif KR — Korean myeongjo (Source Han Serif KR equivalent) for premium
-         * magazine display surfaces (Catalogue hero etc.). Same unicode-range strategy
-         * means non-Korean visitors don't download it.
+         * Noto Sans JP/SC/TC + Noto Serif KR moved out of the render-blocking path:
+         * their combined css2 stylesheet is ~517 KB gzipped (thousands of @font-face
+         * blocks), which alone added seconds to FCP on 4G. DeferredCjkFontsCss injects
+         * the same stylesheet after first paint; until it loads, the system CJK
+         * fallbacks already listed in every font stack (PingFang / Meiryo / Malgun…)
+         * render the glyphs, so nothing shows tofu.
          */}
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+KR:wght@300;400;500;600;700;900&display=swap"
-        />
       </head>
       <body className={`${inter.variable} font-sans antialiased`}>
         <script
@@ -116,6 +116,7 @@ export default async function RootLayout({
           </ErrorBoundary>
         </Suspense>
         <Toaster position="top-center" closeButton richColors />
+        <DeferredCjkFontsCss />
         {/*
          * Vercel Speed Insights — RUM (real user monitoring) for FCP/LCP/TBT/CLS.
          * Already in package.json; mounting it here begins data collection on Vercel

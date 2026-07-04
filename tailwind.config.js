@@ -41,7 +41,7 @@ module.exports = {
     extend: {
       fontFamily: {
         // sans 기본을 Pretendard로 (globals.css CDN + font-sans 유틸)
-        sans: ['Pretendard', 'sans-serif'],
+        sans: ['Pretendard Variable', 'Pretendard', 'sans-serif'],
       },
       /**
        * Typography scale — prefer these tokens over arbitrary values

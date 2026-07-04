@@ -47,14 +47,14 @@
   color: var(--foreground);
   background-color: var(--background);
   /* TourDetailV2: sans는 Geist(원본) — 레이아웃에서 Inter 변수(--font-tour-v2-sans) 주입 + Pretendard 폴백 */
-  font-family: var(--font-tour-v2-sans), "Pretendard", var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-tour-v2-sans), "Pretendard Variable", "Pretendard", var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
 /* CJK·한글: next/font로 주입한 Noto 변수를 선두에 두고 시스템 폰트로 보조 */
 
 body.lang-ko .tour-product-v2-static-root,
 html[lang="ko"] .tour-product-v2-static-root {
-  font-family: var(--font-noto-kr), var(--font-noto-sc), "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "맑은 고딕", var(--font-tour-v2-sans), var(--font-inter), ui-sans-serif, sans-serif;
+  font-family: var(--font-noto-kr), var(--font-noto-sc), "Pretendard Variable", "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "맑은 고딕", var(--font-tour-v2-sans), var(--font-inter), ui-sans-serif, sans-serif;
   letter-spacing: normal;
   font-variant-east-asian: proportional-width;
 }
