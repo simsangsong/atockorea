@@ -90,21 +90,21 @@
   - **어드민 즉시 반영 보존**: `tour_product_pages`를 쓰는 모든 어드민 저장 경로(admin products v2 editor API, import 스크립트)에 `revalidatePath('/tour-product/'+slug)` 추가. 블록리스트/비활성화 변경 경로도 포함. ⚠ **`revalidateTag` 말고 `revalidatePath` 사용** — Next 16에서 revalidateTag가 2-인자('use cache' 프로파일) 시그니처로 바뀌어 legacy 태그 무효화 의미론이 불명확(2026-06-26 빌더 POI 캐시에서 같은 이유로 보류한 전례). ISR 페이지 무효화는 revalidatePath가 확실.
   - 검색파라미터 시딩(`?date=&guests=`)은 클라이언트에서만 소비되므로 ISR과 충돌 없음 — 단, 페이지가 searchParams를 서버에서 읽는 부분(파티 파싱)은 클라로 내리거나 `<Suspense>` 분리 필요. **구현 시 최우선 확인 지점.**
   - 기대: TTFB 0.5~2s → CDN 히트 ~100ms. 상세페이지 단일 수정 중 최대 효과.
-- [ ] **T2: 레지스트리 다이어트** (D-2)
-  - `getStaticTourProductFullPageJson`을 async로 바꾸고 `import()` 동적 로드(slug×locale 단위) — 서버리스 번들에서 ~5.5MB 제거, 콜드스타트 단축. T1로 콜드 빈도가 줄어도 assistant/RAG 경로가 여전히 이 파일을 물고 있으므로 가치 있음.
-  - 추천은 이미 슬림 카탈로그(`staticTourCatalogCards`)를 쓰는지 확인하고, 풀 레지스트리 의존이면 슬림 카탈로그로 교체.
+- [x] **T2: 레지스트리 다이어트** (D-2) — ✅ PR #248. 204개 정적 import → slug×locale lazy `import()`; `getStaticTourProductFullPageJson` async화(assistant route·RAG `collectTourRecords→reindexKnowledge` 체인 전파); 등록 체크는 슬러그 리스트로 sync 유지. page.js 서버 청크 18KB, JSON은 274개 지연 청크로 분리. 추천은 이미 슬림 카탈로그 사용 확인.
 
-### Wave 2 — 상세 LCP·hydration
-- [ ] **T3: 히어로 `<img>` 전환** (D-4) — 첫 슬라이드를 `next/image fill + priority`(또는 최소 `<img fetchPriority="high" srcset>`)로. Ken Burns/패럴럭스는 래퍼 transform으로 유지 — 비주얼 변화 0이 완료 조건.
-- [ ] **T4: below-fold 섹션 lazy 경계** (D-5) — 리뷰·FAQ·추천·AI어시스턴트 위젯을 `dynamic()`으로 분리(AI위젯은 `ssr:false` 가능). 히어로·앳어글랜스·부킹카드·타임라인 상단은 그대로.
-- [ ] **T5: RSC 페이로드 다이어트** (D-3) — G0 측정으로 HTML 실측 후: 라이트박스 풀사이즈 URL은 썸네일에서 유도(규칙 기반)하거나 lazy 섹션 데이터와 함께 분리. **additive-only 원칙: JSON 원본은 손대지 않고 viewModel 빌더에서만 프루닝.**
-- [ ] **T6: 갤러리·타임라인 `sizes`/srcset** (D-6) — Supabase render URL 파라미터 또는 next/image 전환.
+### Wave 2 — 상세 LCP·hydration — ✅ PR #249 (2026-07-04)
+- [x] **🔥 신규 발견·수리 (플랜에 없던 최대 항목): 사이트 전역 CSR bailout** — Suspense 경계 없는 `useSearchParams()` 3곳(AnalyticsPageViewTracker=루트 레이아웃·LanguageSwitcher=Header·FloatingLanguageToggle)이 **모든 정적 페이지를 통째로 `BAILOUT_TO_CLIENT_SIDE_RENDERING`** 시키고 있었음. 프로덕션 "정적" HTML이 빈 셸(홈 6KB)이었고 콘텐츠는 JS 전체 로드 후 페인트 — 홈 LCP 21s의 숨은 정체. force-dynamic 시절엔 무증상이라 발견 불가, T1 ISR 전환이 드러냄. 트래커=미사용 훅 삭제, 스위처=클릭 시 window.location.search. 홈 HTML 60KB 셸 → 199KB 콘텐츠 SSR.
+- [x] **T3: 히어로 next/image 전환** — fill+priority(1번), 보조 슬라이드 2.5s 지연 마운트, 원본 raw-URL preload 제거(최적화 URL preload로 대체). Ken Burns·그레인·비네트 래퍼 유지 — 실브라우저 픽셀 확인.
+- [x] **T4(경량): AI어시스턴트 위젯 `dynamic(ssr:false)`** — 리뷰·FAQ 등의 추가 lazy는 TBT 0~30ms 실측으로 불필요 판정(가치 없는 복잡도).
+- [ ] **T5: RSC 페이로드 다이어트** — 보류. 재측정 후 문서 크기가 여전히 지배적일 때만.
+- [x] **T6: 갤러리·타임라인 next/image** — 벤토 타일(fill+sizes)·라이트박스 스트립(40×28)·타임라인 썸네일(80×56)·데이플로우 원형(48px). 원본 450~670KB → 수 KB 변형.
+- [x] **(부수) 잠복 SSR 크래시 2건** — `inferReturnBand`가 `notes: string[]`만 가정, 크루즈 투어 행은 string → SSR 크래시(기존엔 bailout이 은폐). 두 사본 모두 방어 처리.
 
-### Wave 3 — 랜딩 마무리
-- [ ] **H1: choose-travel-style lazy** (L-1) — in-view `dynamic()` + 높이 예약 스켈레톤(CLS 0 조건).
-- [ ] **H2: featured rail 서버 시드** (L-2) — `/`가 ISR이므로 `page.tsx`에서 투어 데이터까지 시드 → 마운트 fetch 삭제. 갱신 주기는 revalidate 600이 이미 담보.
-- [ ] **H3: 히어로 2~5번 슬라이드 경량화** (L-3) — quality 75 + 실표시 해상도로 재인코딩, 목표 슬라이드당 ≤120KB.
-- [ ] **H4: 콜라주 이미지 가드** (L-5) — 랜딩에 붙이는 순간 next/image + WebP 원본만. PNG 2.8MB는 리포에서 제거 검토.
+### Wave 3 — 랜딩 마무리 — 재측정 결과로 **의도적 종결(스킵)**
+- [~] **H1 스킵**: choose-travel-style은 W1e-1 "primary action" 섹션(폴드 직하) + TBT 실측 0ms — lazy 분리는 리스크(상호작용 지연)>이득(JS는 병목 아님).
+- [~] **H2 스킵**: 미디어는 이미 서버 시드로 즉시 렌더, 마운트 fetch는 비블로킹 정제(+/api/tours 엣지캐시 30s). LCP 무관.
+- [~] **H3 불필요**: 홈 히어로는 이미 next/image — 실전송은 75~79KB 최적화 변형(raw 파일 크기 무관).
+- [!] **H4 가드 유지**: `jeju-main-thumbnail-collage.png` 2.8MB — 랜딩 투입 시 반드시 WebP+next/image. PNG 원본 리포 제거 검토.
 
 ### 보류 (이 트랙에서 제외)
 - F1 RLS initplan / F2 정책 통합 — 비로그인 랜딩·상세에는 영향 미미(anon 쿼리는 ISR 뒤로 숨음). 1차 플랜 보류 상태 유지.
