@@ -53,7 +53,7 @@ const TEST_EMAIL = `${RUN_TAG}@example.com`;
 async function postChat(messages, extra = {}) {
   const t0 = Date.now();
   let res, json;
-  try {
+  const fire = async () => {
     res = await fetch(`${BASE}/api/tour-product/assistant`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -66,6 +66,18 @@ async function postChat(messages, extra = {}) {
       }),
     });
     json = await res.json().catch(() => ({}));
+  };
+  try {
+    await fire();
+    // The battery itself can trip the 20/min IP throttle (it got faster than
+    // the window). A 429 here is the runner racing the limiter, not a chatbot
+    // defect — honor Retry-After once, then re-fire.
+    if (res.status === 429) {
+      const wait = Math.min(65, Math.max(5, Number(res.headers.get("Retry-After")) || 30));
+      console.log(`   (429 from the battery's own rate — waiting ${wait}s, retrying once)`);
+      await new Promise((r) => setTimeout(r, wait * 1000));
+      await fire();
+    }
   } catch (e) {
     return { status: 0, json: { error: String(e) }, ms: Date.now() - t0 };
   }
