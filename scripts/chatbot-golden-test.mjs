@@ -53,7 +53,7 @@ const TEST_EMAIL = `${RUN_TAG}@example.com`;
 async function postChat(messages, extra = {}) {
   const t0 = Date.now();
   let res, json;
-  try {
+  const fire = async () => {
     res = await fetch(`${BASE}/api/tour-product/assistant`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -66,6 +66,18 @@ async function postChat(messages, extra = {}) {
       }),
     });
     json = await res.json().catch(() => ({}));
+  };
+  try {
+    await fire();
+    // The battery itself can trip the 20/min IP throttle (it got faster than
+    // the window). A 429 here is the runner racing the limiter, not a chatbot
+    // defect — honor Retry-After once, then re-fire.
+    if (res.status === 429) {
+      const wait = Math.min(65, Math.max(5, Number(res.headers.get("Retry-After")) || 30));
+      console.log(`   (429 from the battery's own rate — waiting ${wait}s, retrying once)`);
+      await new Promise((r) => setTimeout(r, wait * 1000));
+      await fire();
+    }
   } catch (e) {
     return { status: 0, json: { error: String(e) }, ms: Date.now() - t0 };
   }
@@ -180,15 +192,29 @@ const suites = {
     }
   },
 
-  // §E 추천: 활성 상품만, URL 전부 200.
+  // §E 추천: 활성 상품만, 카드 스키마(W4.1) + URL 전부 200.
   async recommend() {
     const r = await postChat([{ role: "user", content: "Recommend a private tour in Jeju for a family with kids" }]);
     const urls = [...new Set((r.json.reply ?? "").match(/\/tour-product\/[a-z0-9-]+/g) ?? [])];
+    const cards = Array.isArray(r.json.cards) ? r.json.cards : [];
     const checks = [
       check("HTTP 200", r.status === 200),
-      check("recommends at least one product URL", urls.length > 0),
+      check("recommends products (cards or URLs)", cards.length > 0 || urls.length > 0),
+      check("rich cards returned (W4.1)", cards.length > 0),
+      check(
+        "cards schema valid (W4.1)",
+        cards.every(
+          (c) =>
+            typeof c.slug === "string" && c.slug &&
+            typeof c.title === "string" && c.title &&
+            typeof c.image_url === "string" && c.image_url &&
+            typeof c.price_from_usd === "number" &&
+            typeof c.href === "string" && c.href.startsWith("/tour-product/"),
+        ),
+      ),
     ];
-    for (const u of urls.slice(0, 5)) {
+    const liveTargets = [...new Set([...cards.map((c) => c.href), ...urls])].slice(0, 5);
+    for (const u of liveTargets) {
       const page = await fetch(`${BASE}${u}`, { method: "HEAD", redirect: "follow" }).catch(() => null);
       checks.push(check(`URL live: ${u}`, Boolean(page && page.status === 200)));
     }
@@ -216,36 +242,51 @@ const suites = {
 
   // §E 견적 멀티턴 (C-9 회귀 방지 핵심) — WRITES on the final turn.
   async quote() {
-    // Multiturn: slots missing → prompt → price → separate-turn agreement →
-    // email prompt → separate-turn email → booking + checkout URL.
+    // Multiturn: slots missing → prompt (+slot_request, W2.3) → price
+    // (+confirm chips, W4.3) → separate-turn agreement → email prompt →
+    // separate-turn email → email CONFIRM turn (W2.10) → booking + checkout.
     const turns = await conversation([
       "Can I get a quote for a private tour in Busan?",
       "October 10th 2026, 4 people, 8 hours",
       "네 진행해주세요",
       TEST_EMAIL,
+      "Yes, that's the right email",
     ]);
-    const [t1, t2, t3, t4] = turns;
+    const [t1, t2, t3, t4, t5] = turns;
     record("quote", "turn1: slot prompt", [
       check("HTTP 200", t1.status === 200),
       check("asks for missing slots", containsAny(t1.json.reply, ["date", "people", "hours", "날짜", "인원"])),
+      check(
+        "slot_request structure (W2.3)",
+        Array.isArray(t1.json.slot_request?.missing) &&
+          t1.json.slot_request.missing.length > 0 &&
+          typeof t1.json.slot_request.known === "object",
+      ),
     ], t1);
     record("quote", "turn2: deterministic price", [
       check("HTTP 200", t2.status === 200),
       check("shows a ₩ price", containsAny(t2.json.reply, ["₩", "KRW"]) && hasDigits(t2.json.reply)),
+      check("confirm chips returned (W4.3)", Array.isArray(t2.json.chips) && t2.json.chips.length > 0),
     ], t2);
     record("quote", "turn3: multiturn stickiness (C-9)", [
       check("HTTP 200", t3.status === 200),
       check("stays in quote flow (asks email or confirms)", containsAny(t3.json.reply, ["email", "이메일", "메일"])),
       check("no self-negation", !containsAny(t3.json.reply, ["i cannot", "unable to", "예약할 수 없", "예약을 못"])),
     ], t3);
-    record("quote", "turn4: booking + checkout link", [
+    record("quote", "turn4: email confirmation turn (W2.10)", [
       check("HTTP 200", t4.status === 200),
-      check("checkout_url returned", typeof t4.json.checkout_url === "string" && t4.json.checkout_url.includes("/itinerary-builder/checkout")),
+      check("asks to confirm the exact email", (t4.json.reply ?? "").includes(TEST_EMAIL)),
+      check("email_confirm field + chips", typeof t4.json.email_confirm === "string" && Array.isArray(t4.json.chips) && t4.json.chips.length > 0),
+      check("no booking created yet", !t4.json.checkout_url),
+    ], t4);
+    record("quote", "turn5: booking + checkout link", [
+      check("HTTP 200", t5.status === 200),
+      check("checkout_url returned", typeof t5.json.checkout_url === "string" && t5.json.checkout_url.includes("/itinerary-builder/checkout")),
       // W2.2: masked variants (A2C-****8F52) count too — the customer sees the
       // full reference in the reply; only the LOG is masked.
-      check("reply includes A2C reference (C-10)", /A2C-[A-F0-9]{8}/i.test(t4.json.reply ?? "")),
-    ], t4);
-    if (t4.json.checkout_url) artifacts.bookings.push(t4.json.checkout_url);
+      check("reply includes A2C reference (C-10)", /A2C-[A-F0-9]{8}/i.test(t5.json.reply ?? "")),
+    ], t5);
+    if (t5.json.checkout_url) artifacts.bookings.push(t5.json.checkout_url);
   },
 
   // §E 엣지 견적: 과거 날짜 거부 (C-18). No booking is ever created here.

@@ -226,7 +226,7 @@ export function quoteSlotPrompt(
 // server-recomputed, so there is no trust escalation here (C-29 note).
 // ─────────────────────────────────────────────────────────────────────────────
 
-export type QuoteFlowStage = "slots" | "confirm" | "email";
+export type QuoteFlowStage = "slots" | "confirm" | "email" | "email_confirm";
 
 const STAGE_MARKERS: Record<QuoteFlowStage, string[]> = {
   slots: [
@@ -253,12 +253,21 @@ const STAGE_MARKERS: Record<QuoteFlowStage, string[]> = {
     "預訂使用的電子郵件",
     "Qué correo pongo en la reserva",
   ],
+  // W2.10 — one-tap typo guard before the booking write.
+  email_confirm: [
+    "Is this the right email for your booking",
+    "이 이메일로 예약을 진행하면 될까요",
+    "このメールアドレスで予約を進めてよろしいですか",
+    "用这个邮箱进行预订可以吗",
+    "用這個電子郵件進行預訂可以嗎",
+    "Es el correo correcto para tu reserva",
+  ],
 };
 
 /** Which quote-flow prompt (if any) a previous assistant reply was. */
 export function quoteFlowStageFromReply(reply: string): QuoteFlowStage | null {
   if (!reply) return null;
-  for (const stage of ["email", "confirm", "slots"] as const) {
+  for (const stage of ["email_confirm", "email", "confirm", "slots"] as const) {
     if (STAGE_MARKERS[stage].some((m) => reply.includes(m))) return stage;
   }
   return null;
@@ -306,9 +315,63 @@ export function isQuoteFlowFollowUp(input: {
   if (EMAIL_RE.test(msg)) return true;
   if (looksLikeAffirmation(msg)) return true;
   // A short, non-question reply to a direct prompt is almost certainly the
-  // requested value ("제주요", "4명 8시간이요", "10월 3일").
-  if ((stage === "slots" || stage === "email") && msg.length <= 80 && !/[?？]/.test(msg)) return true;
+  // requested value ("제주요", "4명 8시간이요", "10월 3일") — or, for the
+  // email-confirm prompt, a chip tap ("다른 이메일로 할게요").
+  if (
+    (stage === "slots" || stage === "email" || stage === "email_confirm") &&
+    msg.length <= 80 &&
+    !/[?？]/.test(msg)
+  ) {
+    return true;
+  }
   return input.detectedIntent === "unknown";
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// W2.10 — email confirmation turn (typo guard on the extracted email).
+// ─────────────────────────────────────────────────────────────────────────────
+
+/** Ask the customer to confirm the email before the booking is created. */
+export function quoteEmailConfirmPrompt(email: string, locale: TourProductPageLocale): string {
+  const m: Record<TourProductPageLocale, string> = {
+    en: `Quick check — I have **${email}**. Is this the right email for your booking?`,
+    ko: `확인 한 번 할게요 — **${email}** 이 이메일로 예약을 진행하면 될까요?`,
+    ja: `確認です — **${email}**。このメールアドレスで予約を進めてよろしいですか？`,
+    zh: `确认一下 — **${email}**，用这个邮箱进行预订可以吗？`,
+    "zh-TW": `確認一下 — **${email}**，用這個電子郵件進行預訂可以嗎？`,
+    es: `Una comprobación — tengo **${email}**. ¿Es el correo correcto para tu reserva?`,
+  };
+  return m[locale] ?? m.en;
+}
+
+const EMAIL_EDIT_RE =
+  /(different|another|change|edit|wrong|not that|다른|다시 입력|바꾸|바꿀|수정|틀렸|아니에요|아닙니다|別の|変更|違います|间违|换一个|换个|另一个|換一個|另一個|otro|otra|cambiar|equivocado)/i;
+const EMAIL_CONFIRM_WORDS_RE =
+  /(맞아요|맞습니다|correct|that'?s right|right email|そうです|合っています|没错|沒錯|正确|正確|correcto)/i;
+
+/**
+ * Interpret the turn AFTER the email-confirm prompt. Edit intent is checked
+ * before affirmation on purpose: chips like "다른 이메일로 할게요" contain
+ * affirmation-shaped verbs and must still route to the edit path.
+ */
+export function emailConfirmOutcome(latestUserMessage: string): "confirmed" | "edit" | null {
+  const t = latestUserMessage.trim();
+  if (!t) return null;
+  if (EMAIL_EDIT_RE.test(t)) return "edit";
+  if (looksLikeAffirmation(t) || EMAIL_CONFIRM_WORDS_RE.test(t)) return "confirmed";
+  return null;
+}
+
+/**
+ * Deterministic override: when the customer just answered the email (or
+ * email-confirm) prompt with an address, THAT address wins over whatever the
+ * fuzzy extractor picked out of the older history.
+ */
+export function extractEmailFromText(text: string): string | null {
+  const m = text.match(EMAIL_RE);
+  if (!m) return null;
+  const email = m[0].toLowerCase();
+  return isValidBookingEmail(email) ? email : null;
 }
 
 /**

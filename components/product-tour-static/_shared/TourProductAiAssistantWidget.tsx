@@ -1,8 +1,9 @@
 "use client";
 
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
+import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowRight, Headphones, Send, Sparkles, ThumbsDown, ThumbsUp, X } from "lucide-react";
+import { ArrowRight, Headphones, Minus, Plus, Send, Sparkles, ThumbsDown, ThumbsUp, Users, X } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { parseSseBuffer } from "@/lib/chatbot/clientSse";
@@ -45,6 +46,35 @@ function ChatBotAvatar({ className }: { className?: string }) {
   );
 }
 
+// W4.1 — deterministic rich tour card payload (server-built from the static
+// catalogue registry; the model never invents these fields).
+type TourCard = {
+  slug: string;
+  title: string;
+  image_url: string;
+  duration: string;
+  rating: number;
+  review_count: number;
+  price_from_usd: number;
+  compare_at_usd: number | null;
+  href: string;
+};
+
+// W2.3 — structured quote-slot state; the widget renders tap controls for it.
+type SlotRequest = {
+  missing: string[];
+  known: {
+    region: string | null;
+    track: string | null;
+    date: string | null;
+    party: number | null;
+    duration_hours: number | null;
+    jeju_pickup_zone: string | null;
+    cruise_port: string | null;
+  };
+  date_issue?: string | null;
+};
+
 type ChatMessage = {
   role: "user" | "assistant";
   content: string;
@@ -54,6 +84,12 @@ type ChatMessage = {
   checkoutUrl?: string;
   /** W4.2 — failure bubble that can re-run the last request. */
   retriable?: boolean;
+  /** W4.1 — rich tour cards rendered under the reply text. */
+  cards?: TourCard[];
+  /** W4.3 — one-tap follow-up chips (rendered on the latest reply only). */
+  chips?: string[];
+  /** W2.3 — quote slot controls (rendered on the latest reply only). */
+  slotRequest?: SlotRequest;
 };
 
 // Quote-funnel checkout CTA, keyed on the widget locale (avoids threading a
@@ -65,6 +101,93 @@ const CHECKOUT_CTA: Record<string, string> = {
   zh: "前往结账 →",
   "zh-TW": "前往結帳 →",
   es: "Ir al pago →",
+};
+
+/** Normalize a ui language tag ("en-US", "zh-TW") onto the 6 label keys. */
+function langKey(lang: string): "en" | "ko" | "ja" | "zh" | "zh-TW" | "es" {
+  if (lang.startsWith("ko")) return "ko";
+  if (lang.startsWith("ja")) return "ja";
+  if (lang.startsWith("es")) return "es";
+  if (lang.startsWith("zh-TW")) return "zh-TW";
+  if (lang.startsWith("zh")) return "zh";
+  return "en";
+}
+
+// W4.1 — tour card strip labels.
+const VIEW_TOUR_CTA: Record<string, string> = {
+  ko: "투어 보기",
+  en: "View tour",
+  ja: "ツアーを見る",
+  zh: "查看行程",
+  "zh-TW": "查看行程",
+  es: "Ver tour",
+};
+const PRICE_FROM: Record<string, (n: number) => string> = {
+  ko: (n) => `$${n}부터`,
+  en: (n) => `From $${n}`,
+  ja: (n) => `$${n}〜`,
+  zh: (n) => `$${n}起`,
+  "zh-TW": (n) => `$${n}起`,
+  es: (n) => `Desde $${n}`,
+};
+
+// W2.3 — quote slot control labels. The composed submit message stays English
+// (deterministic tokens the server-side extractor maps 1:1 onto slot enums).
+type SlotUiLabels = {
+  region: string;
+  date: string;
+  party: string;
+  hours: string;
+  pickup: string;
+  port: string;
+  submit: string;
+  regions: readonly (readonly [string, string])[];
+  zones: readonly (readonly [string, string])[];
+  ports: readonly (readonly [string, string])[];
+};
+const SLOT_UI: Record<string, SlotUiLabels> = {
+  en: {
+    region: "Destination", date: "Date", party: "People", hours: "Hours",
+    pickup: "Jeju hotel area", port: "Docking port", submit: "Get my quote",
+    regions: [["jeju", "Jeju"], ["busan", "Busan"], ["seoul", "Seoul"]],
+    zones: [["city", "Downtown"], ["out_west", "West"], ["out_east", "East"], ["out_south", "South"]],
+    ports: [["jeju_port", "Jeju Port"], ["gangjeong", "Gangjeong"]],
+  },
+  ko: {
+    region: "여행지", date: "날짜", party: "인원", hours: "시간",
+    pickup: "제주 호텔 지역", port: "기항 항구", submit: "견적 받기",
+    regions: [["jeju", "제주"], ["busan", "부산"], ["seoul", "서울"]],
+    zones: [["city", "시내"], ["out_west", "서부"], ["out_east", "동부"], ["out_south", "남부"]],
+    ports: [["jeju_port", "제주항"], ["gangjeong", "강정항"]],
+  },
+  ja: {
+    region: "目的地", date: "日付", party: "人数", hours: "時間",
+    pickup: "済州ホテルエリア", port: "寄港地", submit: "見積もりを見る",
+    regions: [["jeju", "済州"], ["busan", "釜山"], ["seoul", "ソウル"]],
+    zones: [["city", "市内"], ["out_west", "西部"], ["out_east", "東部"], ["out_south", "南部"]],
+    ports: [["jeju_port", "済州港"], ["gangjeong", "江汀港"]],
+  },
+  zh: {
+    region: "目的地", date: "日期", party: "人数", hours: "时长",
+    pickup: "济州酒店区域", port: "停靠港口", submit: "获取报价",
+    regions: [["jeju", "济州"], ["busan", "釜山"], ["seoul", "首尔"]],
+    zones: [["city", "市区"], ["out_west", "西部"], ["out_east", "东部"], ["out_south", "南部"]],
+    ports: [["jeju_port", "济州港"], ["gangjeong", "江汀港"]],
+  },
+  "zh-TW": {
+    region: "目的地", date: "日期", party: "人數", hours: "時長",
+    pickup: "濟州飯店區域", port: "停靠港口", submit: "獲取報價",
+    regions: [["jeju", "濟州"], ["busan", "釜山"], ["seoul", "首爾"]],
+    zones: [["city", "市區"], ["out_west", "西部"], ["out_east", "東部"], ["out_south", "南部"]],
+    ports: [["jeju_port", "濟州港"], ["gangjeong", "江汀港"]],
+  },
+  es: {
+    region: "Destino", date: "Fecha", party: "Personas", hours: "Horas",
+    pickup: "Zona de hotel en Jeju", port: "Puerto", submit: "Ver mi precio",
+    regions: [["jeju", "Jeju"], ["busan", "Busan"], ["seoul", "Seúl"]],
+    zones: [["city", "Centro"], ["out_west", "Oeste"], ["out_east", "Este"], ["out_south", "Sur"]],
+    ports: [["jeju_port", "Puerto Jeju"], ["gangjeong", "Gangjeong"]],
+  },
 };
 
 // W4.2 — retry CTA on failure bubbles.
@@ -115,6 +238,10 @@ type AssistantResponse = {
   /** Quote funnel (Q3) — present when the bot created a booking; the widget
    *  renders a "go to checkout" button. */
   checkout_url?: string | null;
+  /** W4.1 / W4.3 / W2.3 — rich-UX extensions. */
+  cards?: TourCard[];
+  chips?: string[];
+  slot_request?: SlotRequest;
 };
 
 type LiveSupportMessage = {
@@ -347,6 +474,236 @@ function TypingDots() {
   );
 }
 
+/** W4.1 — horizontally-snapping rich tour cards under a recommendation. */
+function TourCardStrip({ cards, uiLang }: { cards: TourCard[]; uiLang: string }) {
+  const lk = langKey(uiLang);
+  const cta = VIEW_TOUR_CTA[lk] ?? VIEW_TOUR_CTA.en;
+  const priceFrom = PRICE_FROM[lk] ?? PRICE_FROM.en;
+  return (
+    <div className="-mx-1.5 mt-2.5 flex snap-x snap-mandatory gap-2.5 overflow-x-auto px-1.5 pb-1.5 pt-0.5">
+      {cards.map((card) => (
+        <a
+          key={card.slug}
+          href={card.href}
+          className="w-[11.5rem] shrink-0 snap-start overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:border-sky-900/35 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
+        >
+          <div className="relative h-24 w-full bg-slate-100">
+            <Image src={card.image_url} alt={card.title} fill sizes="184px" className="object-cover" />
+          </div>
+          <div className="px-3 pb-3 pt-2.5">
+            <p className="line-clamp-2 min-h-[2.1rem] text-[12px] font-bold leading-snug text-slate-950">
+              {card.title}
+            </p>
+            <p className="mt-1 text-[10.5px] text-slate-500">
+              {card.duration}
+              {card.rating > 0 ? (
+                <>
+                  {" "}· <span className="text-amber-500">★</span> {card.rating} ({card.review_count})
+                </>
+              ) : null}
+            </p>
+            {card.price_from_usd > 0 ? (
+              <p className="mt-1.5 text-[12.5px] font-bold text-slate-950">
+                {priceFrom(card.price_from_usd)}
+                {card.compare_at_usd ? (
+                  <span className="ml-1 text-[10px] font-medium text-slate-400 line-through">
+                    ${card.compare_at_usd}
+                  </span>
+                ) : null}
+              </p>
+            ) : null}
+            <span className="mt-2 flex items-center justify-center gap-1 rounded-full bg-sky-950 py-1.5 text-[11px] font-semibold text-white">
+              {cta}
+              <ArrowRight className="h-3 w-3" aria-hidden />
+            </span>
+          </div>
+        </a>
+      ))}
+    </div>
+  );
+}
+
+/**
+ * W2.3 — tap controls for the quote slot prompt: region buttons, native date
+ * picker, party stepper, hours slider (+ Jeju pickup zone / cruise port when
+ * relevant). Submit composes a short English summary message — deterministic
+ * tokens the server-side slot extractor maps 1:1 back onto the slot enums.
+ */
+function QuoteSlotControls({
+  req,
+  uiLang,
+  disabled,
+  onSubmit,
+}: {
+  req: SlotRequest;
+  uiLang: string;
+  disabled: boolean;
+  onSubmit: (text: string) => void;
+}) {
+  const L = SLOT_UI[langKey(uiLang)] ?? SLOT_UI.en;
+  const track = req.known.track ?? "private";
+  const [region, setRegion] = useState<string | null>(req.known.region);
+  const [date, setDate] = useState<string>(req.known.date ?? "");
+  const [party, setParty] = useState<number>(req.known.party ?? 2);
+  const [hours, setHours] = useState<number>(req.known.duration_hours ?? 8);
+  const [pickup, setPickup] = useState<string | null>(req.known.jeju_pickup_zone);
+  const [port, setPort] = useState<string | null>(req.known.cruise_port);
+
+  const needsPickup = region === "jeju" && track !== "cruise";
+  const needsPort = region === "jeju" && track === "cruise";
+  const ready = Boolean(
+    region && date && party >= 1 && hours >= 4 && (!needsPickup || pickup) && (!needsPort || port),
+  );
+
+  const now = new Date();
+  const pad = (n: number) => String(n).padStart(2, "0");
+  const minDate = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
+
+  const submit = () => {
+    if (!ready || !region) return;
+    const zoneToken: Record<string, string> = {
+      city: "downtown (city) pickup",
+      out_west: "hotel in west Jeju (out_west)",
+      out_east: "hotel in east Jeju (out_east)",
+      out_south: "hotel in south Jeju (out_south)",
+    };
+    const parts = [
+      region.charAt(0).toUpperCase() + region.slice(1),
+      date,
+      `${party} people`,
+      `${hours} hours`,
+    ];
+    if (needsPickup && pickup && zoneToken[pickup]) parts.push(zoneToken[pickup]);
+    if (needsPort && port) {
+      parts.push(port === "gangjeong" ? "cruise docking at Gangjeong port" : "cruise docking at Jeju Port");
+    }
+    onSubmit(parts.join(", "));
+  };
+
+  const optionClass = (selected: boolean) =>
+    cn(
+      "rounded-xl border px-2 py-2 text-[12px] font-semibold transition disabled:cursor-not-allowed disabled:opacity-45",
+      selected
+        ? "border-sky-950 bg-sky-950 text-white"
+        : "border-slate-200 bg-white text-slate-600 hover:border-sky-900/35 hover:bg-sky-50",
+    );
+
+  return (
+    <div className="mt-2.5 border-t border-slate-100 pt-2.5">
+      <p className="text-[10px] font-semibold uppercase tracking-wider text-slate-400">{L.region}</p>
+      <div className="mt-1 flex gap-1.5">
+        {L.regions.map(([value, label]) => (
+          <button
+            key={value}
+            type="button"
+            disabled={disabled}
+            onClick={() => setRegion(value)}
+            className={cn("flex-1", optionClass(region === value))}
+          >
+            {label}
+          </button>
+        ))}
+      </div>
+      <div className="mt-2 flex gap-2">
+        <input
+          type="date"
+          value={date}
+          min={minDate}
+          disabled={disabled}
+          onChange={(e) => setDate(e.target.value)}
+          aria-label={L.date}
+          className="min-w-0 flex-1 rounded-xl border border-slate-200 bg-white px-2.5 py-1.5 text-[12px] text-slate-950 outline-none transition focus:border-sky-900/40 disabled:opacity-45"
+        />
+        <div className="flex shrink-0 items-center gap-1 rounded-xl border border-slate-200 bg-white px-1.5 py-1">
+          <button
+            type="button"
+            disabled={disabled || party <= 1}
+            onClick={() => setParty((p) => Math.max(1, p - 1))}
+            aria-label={`${L.party} −`}
+            className="flex h-7 w-7 items-center justify-center rounded-lg bg-slate-50 text-slate-600 transition enabled:hover:bg-slate-100 disabled:opacity-35"
+          >
+            <Minus className="h-3.5 w-3.5" aria-hidden />
+          </button>
+          <span className="flex min-w-[2.4rem] items-center justify-center gap-1 text-[12px] font-semibold text-slate-950">
+            <Users className="h-3.5 w-3.5 text-slate-400" aria-hidden />
+            {party}
+          </span>
+          <button
+            type="button"
+            disabled={disabled || party >= 15}
+            onClick={() => setParty((p) => Math.min(15, p + 1))}
+            aria-label={`${L.party} +`}
+            className="flex h-7 w-7 items-center justify-center rounded-lg bg-slate-50 text-slate-600 transition enabled:hover:bg-slate-100 disabled:opacity-35"
+          >
+            <Plus className="h-3.5 w-3.5" aria-hidden />
+          </button>
+        </div>
+      </div>
+      <div className="mt-2.5 flex items-center gap-2.5">
+        <span className="shrink-0 text-[10px] font-semibold uppercase tracking-wider text-slate-400">
+          {L.hours}
+        </span>
+        <input
+          type="range"
+          min={4}
+          max={10}
+          step={1}
+          value={hours}
+          disabled={disabled}
+          onChange={(e) => setHours(Number(e.target.value))}
+          aria-label={L.hours}
+          className="h-1.5 min-w-0 flex-1 accent-sky-950"
+        />
+        <span className="w-7 shrink-0 text-right text-[12px] font-semibold text-slate-950">{hours}h</span>
+      </div>
+      {needsPickup ? (
+        <>
+          <p className="mt-2 text-[10px] font-semibold uppercase tracking-wider text-slate-400">{L.pickup}</p>
+          <div className="mt-1 grid grid-cols-4 gap-1.5">
+            {L.zones.map(([value, label]) => (
+              <button
+                key={value}
+                type="button"
+                disabled={disabled}
+                onClick={() => setPickup(value)}
+                className={optionClass(pickup === value)}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+        </>
+      ) : null}
+      {needsPort ? (
+        <>
+          <p className="mt-2 text-[10px] font-semibold uppercase tracking-wider text-slate-400">{L.port}</p>
+          <div className="mt-1 grid grid-cols-2 gap-1.5">
+            {L.ports.map(([value, label]) => (
+              <button
+                key={value}
+                type="button"
+                disabled={disabled}
+                onClick={() => setPort(value)}
+                className={optionClass(port === value)}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+        </>
+      ) : null}
+      <button
+        type="button"
+        disabled={disabled || !ready}
+        onClick={submit}
+        className="mt-2.5 w-full rounded-full bg-sky-950 py-2 text-[12px] font-bold text-white transition enabled:hover:bg-sky-900 disabled:opacity-40"
+      >
+        {L.submit}
+      </button>
+    </div>
+  );
+}
+
 function readStoredMessages(storageKey: string): ChatMessage[] {
   if (typeof window === "undefined") return [];
   try {
@@ -363,6 +720,13 @@ function readStoredMessages(storageKey: string): ChatMessage[] {
         origin: (m as ChatMessage).origin,
         supportMessageId:
           typeof (m as ChatMessage).supportMessageId === "number" ? (m as ChatMessage).supportMessageId : undefined,
+        // W4.1/W4.3/W2.3 — keep the rich-UX payloads across page navigations.
+        cards: Array.isArray((m as ChatMessage).cards) ? (m as ChatMessage).cards : undefined,
+        chips: Array.isArray((m as ChatMessage).chips) ? (m as ChatMessage).chips : undefined,
+        slotRequest:
+          (m as ChatMessage).slotRequest && typeof (m as ChatMessage).slotRequest === "object"
+            ? (m as ChatMessage).slotRequest
+            : undefined,
       }));
   } catch {
     return [];
@@ -631,6 +995,9 @@ export function TourProductAiAssistantWidget({
                   settled = true;
                   renderAssistant(finalText, {
                     checkoutUrl: safeCheckoutUrl(payload.checkout_url) ?? undefined,
+                    cards: payload.cards,
+                    chips: payload.chips,
+                    slotRequest: payload.slot_request,
                   });
                   setHandoffOffer(payload.handoff_offered ? { question: lastUserQuestion } : null);
                   if (payload.ticket_id && payload.escalated) {
@@ -688,6 +1055,9 @@ export function TourProductAiAssistantWidget({
               content: data.reply,
               origin: "ai",
               checkoutUrl: safeCheckoutUrl(data.checkout_url) ?? undefined,
+              cards: data.cards,
+              chips: data.chips,
+              slotRequest: data.slot_request,
             },
           ]);
           const lastUserQuestion = [...next].reverse().find((m) => m.role === "user")?.content ?? "";
@@ -940,6 +1310,12 @@ export function TourProductAiAssistantWidget({
   }, [open, messages, loading, handoffOffer, activeTicketId]);
 
   const chipsDisabled = loading || liveSupportActive;
+  // W4.3 — when the latest reply carries its own contextual chips or slot
+  // controls, the generic "Suggested" strip below would compete with them.
+  const lastMessage = messages[messages.length - 1];
+  const contextualUiActive =
+    lastMessage?.role === "assistant" &&
+    Boolean((lastMessage.chips?.length ?? 0) > 0 || lastMessage.slotRequest);
   const bottomClass =
     placement === "tour"
       ? "bottom-[calc(9.5rem+env(safe-area-inset-bottom,0px))] sm:bottom-[calc(7.5rem+env(safe-area-inset-bottom,0px))]"
@@ -1090,6 +1466,32 @@ export function TourProductAiAssistantWidget({
                         </span>
                       )}
                       <ChatMarkdown text={m.content} />
+                      {m.cards && m.cards.length > 0 ? (
+                        <TourCardStrip cards={m.cards} uiLang={uiLang} />
+                      ) : null}
+                      {m.slotRequest && i === messages.length - 1 && !liveSupportActive ? (
+                        <QuoteSlotControls
+                          req={m.slotRequest}
+                          uiLang={uiLang}
+                          disabled={loading}
+                          onSubmit={(t) => void sendPreset(t)}
+                        />
+                      ) : null}
+                      {m.chips && m.chips.length > 0 && i === messages.length - 1 && !loading && !liveSupportActive ? (
+                        <div className="mt-2.5 flex flex-wrap gap-1.5 border-t border-slate-100 pt-2">
+                          {m.chips.map((chip) => (
+                            <button
+                              key={chip}
+                              type="button"
+                              disabled={chipsDisabled}
+                              onClick={() => void sendPreset(chip)}
+                              className="max-w-full rounded-full border border-sky-900/20 bg-white px-3 py-1.5 text-left text-[11px] font-medium leading-snug text-sky-900 shadow-sm transition hover:border-sky-900/40 hover:bg-sky-50 disabled:cursor-not-allowed disabled:opacity-45"
+                            >
+                              {chip}
+                            </button>
+                          ))}
+                        </div>
+                      ) : null}
                       {m.retriable && i === messages.length - 1 && !loading && lastRequestRef.current ? (
                         <button
                           type="button"
@@ -1196,7 +1598,7 @@ export function TourProductAiAssistantWidget({
             )}
           </div>
 
-          {messages.length > 0 && quickChips.length > 0 && !liveSupportActive && (
+          {messages.length > 0 && quickChips.length > 0 && !liveSupportActive && !contextualUiActive && (
             <div className="shrink-0 border-t border-slate-200/70 bg-white/95 px-2.5 pb-1 pt-2">
               <div className="mb-1.5 flex items-center justify-between gap-2 px-1">
                 <p className="text-[9px] font-semibold uppercase tracking-wider text-slate-400">{labels.suggested}</p>

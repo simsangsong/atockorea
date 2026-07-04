@@ -347,3 +347,80 @@ describe("createQuoteBooking", () => {
     expect(r).toEqual({ ok: false, error: "disabled" });
   });
 });
+
+// ── W2.10 — email confirmation turn ─────────────────────────────────────────
+
+import {
+  quoteEmailConfirmPrompt,
+  emailConfirmOutcome,
+  extractEmailFromText,
+} from "@/lib/chatbot/quoteFlow";
+
+describe("quoteEmailConfirmPrompt / stage detection (W2.10)", () => {
+  it.each(["en", "ko", "ja", "zh", "zh-TW", "es"] as const)(
+    "prompt in %s carries the email and is detected as the email_confirm stage",
+    (locale) => {
+      const p = quoteEmailConfirmPrompt("mia.walker@example.com", locale);
+      expect(p).toContain("mia.walker@example.com");
+      expect(quoteFlowStageFromReply(p)).toBe("email_confirm");
+    },
+  );
+
+  it("email_confirm short chip replies stay in the quote flow", () => {
+    const prior = quoteEmailConfirmPrompt("a@b.com", "ko");
+    expect(
+      isQuoteFlowFollowUp({
+        latestUserMessage: "다른 이메일로 할게요",
+        priorAssistantReply: prior,
+        detectedIntent: "unknown",
+      }),
+    ).toBe(true);
+  });
+});
+
+describe("emailConfirmOutcome (W2.10)", () => {
+  it("confirms on affirmation and confirm-words in every widget chip language", () => {
+    for (const msg of [
+      "Yes, that's the right email",
+      "네, 맞아요",
+      "はい、合っています",
+      "对，没错",
+      "對，沒錯",
+      "Sí, es correcto",
+      "yes",
+    ]) {
+      expect(emailConfirmOutcome(msg)).toBe("confirmed");
+    }
+  });
+
+  it("routes edit intent to edit — checked BEFORE affirmation shapes", () => {
+    for (const msg of [
+      "Use a different email",
+      "다른 이메일로 할게요", // contains 할게요 (an affirmation verb) — edit must win
+      "別のメールにします",
+      "换一个邮箱",
+      "換一個電子郵件",
+      "Usar otro correo",
+      "actually that email is wrong",
+    ]) {
+      expect(emailConfirmOutcome(msg)).toBe("edit");
+    }
+  });
+
+  it("returns null on unrelated replies", () => {
+    expect(emailConfirmOutcome("What time does the tour start?")).toBeNull();
+    expect(emailConfirmOutcome("")).toBeNull();
+  });
+});
+
+describe("extractEmailFromText (W2.10 deterministic override)", () => {
+  it("pulls a valid booking email out of a sentence, lowercased", () => {
+    expect(extractEmailFromText("sure — use Mia.Walker@Example.com please")).toBe(
+      "mia.walker@example.com",
+    );
+  });
+  it("rejects malformed emails", () => {
+    expect(extractEmailFromText("user..name@example.com")).toBeNull();
+    expect(extractEmailFromText("no email here")).toBeNull();
+  });
+});
