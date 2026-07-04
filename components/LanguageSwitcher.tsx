@@ -81,24 +81,11 @@ export default function LanguageSwitcher({ premiumTourDetail = false }: Language
     ];
     document.cookie = cookieParts.join('; ');
 
-    /**
-     * `app/tour-product/[slug]` is root-only (no `app/[locale]/tour-product/...`).
-     * Do not `router.push` to `/${lang}/tour-product/...` — that fights middleware
-     * and can cause redirect churn. Cookie + RSC `refresh` only.
-     */
-    const pathOnly = pathname.split('?')[0];
-    const pathSegments = pathOnly.split('/').filter(Boolean);
-    const withoutLocalePrefix =
-      pathSegments[0] && routeLocales.includes(pathSegments[0] as RouteLocale)
-        ? '/' + pathSegments.slice(1).join('/')
-        : pathOnly;
-    if (/^\/tour-product\/[^/]+\/?$/.test(withoutLocalePrefix)) {
-      setTimeout(() => {
-        router.refresh();
-      }, 0);
-      return;
-    }
-
+    // T1: tour-product detail now has real localized routes
+    // (`app/[locale]/tour-product/[slug]`), so it goes through the same
+    // prefix-swap navigation as every other path. (The old cookie+refresh
+    // special case existed because the bare route was cookie-driven SSR —
+    // that would now just serve the cached EN ISR page.)
     const segments = pathname.split('/').filter(Boolean);
     const currentHasLocalePrefix =
       segments.length > 0 && routeLocales.includes(segments[0] as RouteLocale);

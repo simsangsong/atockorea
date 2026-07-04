@@ -292,16 +292,6 @@ function routeRequest(request: NextRequest): NextResponse {
   const eastCheckoutRedirect = redirectLegacyEastSignatureCheckoutPaths(request);
   if (eastCheckoutRedirect) return eastCheckoutRedirect;
 
-  // 1b. 정적 안내 페이지 + 플래그십 투어 상품 (locale 접두사 리다이렉트 대상에서 제외)
-  const isFlagshipTourProductPath =
-    pathname === CANONICAL_EAST_SIGNATURE_PRODUCT_PATH ||
-    pathname.startsWith(`${CANONICAL_EAST_SIGNATURE_PRODUCT_PATH}/`) ||
-    pathname === "/tour-product/jeju-grand-highlights-loop" ||
-    pathname.startsWith("/tour-product/jeju-grand-highlights-loop/");
-  if (isFlagshipTourProductPath) {
-    return NextResponse.next();
-  }
-
   // 1d. /product-slug → /tour/product-slug (single segment; not a locale or app route)
   const bareSeg = singlePathSegment(pathname);
   if (bareSeg && shouldTreatBareSegmentAsTourSlug(bareSeg)) {
@@ -331,10 +321,17 @@ function routeRequest(request: NextRequest): NextResponse {
     const cookieLocale = getLocaleFromCookie(request);
     const locale = cookieLocale ?? getLocale(request);
 
-    // `app/tour-product/[slug]` is only registered without a locale prefix. Consumer
-    // links and `consumerTourDetailHref` use `/tour-product/<slug>`. Do not 302 to
-    // `/ko/tour-product/...` here — that fights LanguageSwitcher and can loop redirects.
+    // T1 — the bare detail URL is the canonical ENGLISH ISR page and must not
+    // vary by cookie (that made it uncacheable). A visitor who explicitly chose
+    // a non-en locale (cookie only — Accept-Language alone keeps the EN
+    // default, matching the old resolveTourProductDbLocale precedence) is
+    // 307'd to the real localized route `app/[locale]/tour-product/[slug]`.
     if (/^\/tour-product\/[^/]+\/?$/.test(pathname)) {
+      if (cookieLocale && cookieLocale !== DEFAULT_LOCALE) {
+        const newUrl = new URL(request.url);
+        newUrl.pathname = `/${cookieLocale}${pathname}`;
+        return NextResponse.redirect(newUrl, 307);
+      }
       return NextResponse.next();
     }
 
@@ -371,6 +368,20 @@ function routeRequest(request: NextRequest): NextResponse {
 
   // 4b. /ko/tours, /ko/tour/123 등: rewrite (locale 제거 후 내부 경로로 전달)
   let pathWithoutLocale = pathname.replace(`/${matchedLocale}`, '') || '/';
+
+  // T1 — locale-prefixed tour-product detail is a REAL route
+  // (`app/[locale]/tour-product/[slug]`, its own ISR cache entry). Pass it
+  // through instead of the legacy rewrite-to-`?locale=` (which forced dynamic
+  // SSR). `/en/tour-product/x` redirects to the canonical bare path.
+  if (/^\/tour-product\/[^/]+\/?$/.test(pathWithoutLocale)) {
+    if (matchedLocale === 'en') {
+      const u = request.nextUrl.clone();
+      u.pathname = pathWithoutLocale;
+      return NextResponse.redirect(u, 307);
+    }
+    return NextResponse.next();
+  }
+
   const innerBare = singlePathSegment(pathWithoutLocale);
   if (innerBare && shouldTreatBareSegmentAsTourSlug(innerBare)) {
     pathWithoutLocale = `/tour/${innerBare}`;

@@ -25,12 +25,16 @@ export function ProductPreviewPane({ slug, locale, reloadKey, onClose }: Props) 
 
   const src = useMemo(() => {
     if (!slug) return '';
-    const base = `/tour-product/${slug}`;
+    // T1: locale is now part of the URL (real `app/[locale]/tour-product/[slug]`
+    // routes — `?locale=` is no longer read by the ISR page, and middleware
+    // would turn it into a cookie-set redirect). DB locale "zh" maps to the
+    // "zh-CN" URL prefix; EN is canonical at the bare path. Freshness after
+    // Save comes from the PATCH route's revalidatePath calls — `_v` just
+    // forces the iframe element itself to reload.
+    const urlLocale = locale === 'zh' ? 'zh-CN' : locale;
+    const base =
+      urlLocale === 'en' ? `/tour-product/${slug}` : `/${urlLocale}/tour-product/${slug}`;
     const params = new URLSearchParams();
-    // Always pass locale so the preview is deterministic regardless of the
-    // admin's own NEXT_LOCALE cookie (resolveTourProductDbLocale picks query
-    // before cookie).
-    params.set('locale', locale);
     // cache-bust + force-reload signal
     params.set('_v', String(reloadKey + localReload));
     return `${base}?${params.toString()}`;

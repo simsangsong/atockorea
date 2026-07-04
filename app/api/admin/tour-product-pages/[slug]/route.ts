@@ -354,11 +354,16 @@ export async function PATCH(
     }
 
     // Invalidate cached customer-facing pages so changes surface on the next
-    // visit. `force-dynamic` on the route handles SSR; this also nudges
-    // CDN/RSC cache layers above it.
+    // visit. T1: the detail routes are ISR (revalidate=3600) — these calls are
+    // what makes an admin save show up immediately instead of at TTL expiry,
+    // so every locale variant of the slug must be covered.
     try {
       revalidatePath(`/tour-product/${slug}`);
       revalidatePath('/tour-product/[slug]', 'page');
+      for (const urlLocale of ['ko', 'ja', 'es', 'zh-CN', 'zh-TW']) {
+        revalidatePath(`/${urlLocale}/tour-product/${slug}`);
+      }
+      revalidatePath('/[locale]/tour-product/[slug]', 'page');
       revalidatePath('/api/tours');
       revalidatePath('/api/tour-product-card-media');
       revalidatePath('/');
