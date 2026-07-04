@@ -60,6 +60,22 @@ describe("chatbot query intent routing", () => {
     expect(classifyChatbotQuery("제주 전세 투어 견적 부탁해요").intent).toBe("quote_request");
   });
 
+  // W1.5.3 (C-24): tourist FAQ that used to fall through to "unknown".
+  it("classifies airport/luggage/child/guide-language/weather FAQ as policy", () => {
+    expect(classifyChatbotQuery("Can you pick me up at the airport?").intent).toBe("policy");
+    expect(classifyChatbotQuery("캐리어 2개 있는데 짐 보관 되나요?").intent).toBe("policy");
+    expect(classifyChatbotQuery("Do you have an english speaking guide?").intent).toBe("policy");
+    expect(classifyChatbotQuery("비가 오면 투어는 어떻게 되나요?").intent).toBe("policy");
+  });
+
+  // W1.5.4 (C-25): ja/zh/es policy keywords (was ko/en only).
+  it("classifies ja/zh/es policy questions as policy", () => {
+    expect(classifyChatbotQuery("退款政策是什么?").intent).toBe("policy");
+    expect(classifyChatbotQuery("子供料金はありますか").intent).toBe("policy");
+    expect(classifyChatbotQuery("¿Cuál es la política de cancelación?").intent).toBe("policy");
+    expect(classifyChatbotQuery("キャンセル料はかかりますか").intent).toBe("policy");
+  });
+
   it("detects company/contact and explicit support requests", () => {
     expect(classifyChatbotQuery("\uD68C\uC0AC \uC8FC\uC18C\uC640 \uC5F0\uB77D\uCC98 \uC54C\uB824\uC918").intent).toBe("company");
     expect(classifyChatbotQuery("\uC0C1\uB2F4\uC6D0 \uC5F0\uACB0\uD574\uC918").intent).toBe("support");

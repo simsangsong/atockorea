@@ -262,6 +262,75 @@ const suites = {
     ], t2);
   },
 
+  // §E W1.2/W1.3 — stale-catalog blocking + price freshness.
+  // Ground truth = /api/agent/v1/tours (deterministic active catalog + USD prices).
+  async "catalog-freshness"() {
+    const cat = await fetch(`${BASE}/api/agent/v1/tours`).then((r) => r.json()).catch(() => null);
+    const tours = cat?.tours ?? [];
+    record("catalog-freshness", "agent catalog reachable", [
+      check("catalog lists active tours", tours.length > 0),
+    ], { status: tours.length ? 200 : 0, json: { reply: `total=${cat?.total}` }, ms: null });
+
+    // W1.2: deactivated tours must never appear in answers. This list is the
+    // 2026-06-29 Klook deactivation set verified during the W1.4 reindex.
+    const STALE_SLUGS = [
+      "busan-cruise-shore-excursion-bus-tour",
+      "busan-outskirts-tongdosa-amethyst-yeongnam-day-tour",
+      "busan-plum-cherry-blossom-day-tour-to-yangsan-gyeongju",
+      "busan-spring-cherry-blossom-gyeongju-highlights-day-tour",
+      "east-signature-nature-core",
+      "from-busan-gyeongju-ancient-capital-day-tour",
+      "from-incheon-seoul-day-tour-cruise-guests",
+      "jeju-cherry-blossom-tour-east-route",
+      "jeju-cruise-shore-excursion-bus-tour",
+      "jeju-eastern-unesco-spots-day-tour",
+      "jeju-southern-top-unesco-spots-tour",
+      "jeju-west-south-full-day-authentic-tour",
+      "jeju-winter-southwest-tangerine-snow-camellia-tour",
+      "seoul-dmz-private-3rd-tunnel-suspension-bridge",
+      "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip",
+      "seoul-seoraksan-nami-island-morning-calm-day-tour",
+      "seoul-suwon-hwaseong-folk-village-starfield-library",
+      "seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library",
+      "seoul-suwon-hwaseong-waujeongsa-starfield",
+      "southwest-hallasan-osulloc-aewol",
+    ];
+    const activeSlugs = new Set(tours.map((t) => t.slug));
+    record("catalog-freshness", "stale slugs absent from active catalog", [
+      check("no deactivated slug is active", STALE_SLUGS.every((s) => !activeSlugs.has(s))),
+    ], { status: 200, json: {}, ms: null });
+
+    // The C-4 reproduction: the bot used to recommend the deactivated DMZ tour.
+    const probes = [
+      "Is there a private DMZ tour from Seoul? What Seoul day tours do you have?",
+      "제주 크루즈 기항지 투어 있어요? 추천해줘",
+    ];
+    for (const q of probes) {
+      const r = await postChat([{ role: "user", content: q }]);
+      const hit = STALE_SLUGS.find((s) => (r.json.reply ?? "").includes(s));
+      record("catalog-freshness", `no stale tour in: "${q.slice(0, 30)}…"`, [
+        check("HTTP 200", r.status === 200),
+        check(`no deactivated slug in reply${hit ? ` (found ${hit})` : ""}`, !hit),
+      ], r);
+    }
+
+    // W1.3: price freshness — sample 3 SKUs (rotating by day) against the
+    // chatbot's answer. Full 12-SKU sweep would double battery runtime; three
+    // per run still catches a catalog-wide price drift within days.
+    const priced = tours.filter((t) => typeof t.price_usd === "number" && t.price_usd > 0);
+    const dayOffset = new Date().getUTCDate() % Math.max(1, priced.length);
+    const sample = [0, 1, 2].map((i) => priced[(dayOffset + i) % priced.length]).filter(Boolean);
+    console.log(`   (price sample: ${sample.map((t) => t.slug).join(", ")})`);
+    for (const t of sample) {
+      const r = await postChat([{ role: "user", content: `How much is the "${t.title}" tour?` }]);
+      const price = String(Math.round(t.price_usd));
+      record("catalog-freshness", `price fresh: ${t.slug} ($${price})`, [
+        check("HTTP 200", r.status === 200),
+        check(`reply contains current price ${price}`, (r.json.reply ?? "").includes(price)),
+      ], r);
+    }
+  },
+
   // §E 예약조회: 무효 자격증명 → 정중 거부, 500 없음.
   async lookup() {
     const r = await postChat([
