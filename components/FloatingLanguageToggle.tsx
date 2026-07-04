@@ -125,17 +125,9 @@ export default function FloatingLanguageToggle() {
     ];
     document.cookie = cookieParts.join('; ');
 
-    const pathOnly = pathname.split('?')[0];
-    const pathSegments = pathOnly.split('/').filter(Boolean);
-    const withoutLocalePrefix =
-      pathSegments[0] && routeLocales.includes(pathSegments[0] as RouteLocale)
-        ? '/' + pathSegments.slice(1).join('/')
-        : pathOnly;
-    if (/^\/tour-product\/[^/]+\/?$/.test(withoutLocalePrefix)) {
-      setTimeout(() => router.refresh(), 0);
-      return;
-    }
-
+    // T1: tour-product detail has real localized routes now — use the same
+    // prefix-swap navigation as every other path (refresh would just re-serve
+    // the cached EN ISR page).
     const segments = pathname.split('/').filter(Boolean);
     const currentHasLocalePrefix =
       segments.length > 0 && routeLocales.includes(segments[0] as RouteLocale);

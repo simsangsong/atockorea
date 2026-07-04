@@ -37,9 +37,16 @@ const FALLBACK_KRW_PER_USD = 1480;
 const FX_UPSTREAM_TIMEOUT_MS = 2000;
 function buildUpstreamFetchInit(): RequestInit {
   return {
-    cache: 'no-store',
+    // T1: `cache: 'no-store'` opted every page that awaits an FX rate during
+    // render (tour-product detail via checkout context) out of static/ISR
+    // rendering — the exact "Dynamic server usage" bailout Next logs at build.
+    // Freshness is already governed by this module's own CACHE_MS memory cache;
+    // letting Next's data cache hold the upstream response for an hour keeps
+    // callers ISR-eligible and changes nothing observable (rates are
+    // hourly-grade data — see B4 in the perf master plan).
+    next: { revalidate: 3600 },
     signal: AbortSignal.timeout(FX_UPSTREAM_TIMEOUT_MS),
-  };
+  } as RequestInit;
 }
 
 type Cached = { rates: Record<string, number>; updatedAt: string; isFallback?: boolean };

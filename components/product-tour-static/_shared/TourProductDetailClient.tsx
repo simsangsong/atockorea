@@ -1,5 +1,5 @@
 "use client";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Headphones, ShieldCheck, Zap } from "lucide-react";
 
 import type { TourProductDetailViewModel } from "./tourProductFullPageJsonTypes";
@@ -33,6 +33,11 @@ import { getTourCompareLinks } from "@/lib/tour/platform-compare-registry";
 import { TourExternalReviewsSection } from "@/components/product-tour-static/_shared/TourExternalReviewsSection";
 import type { ExternalReviewAggregate } from "@/lib/tour-product/externalReviews";
 import { pickAssistantQuickChipsFromViewModel } from "@/lib/tour-product/assistantQuickChips";
+import {
+  coerceSeedDateYmd,
+  coerceSeedGuests,
+  coerceSeedLanguage,
+} from "@/components/product-tour-static/_shared/bookingSeedParams";
 import { useTranslations } from "@/lib/i18n";
 
 /**
@@ -117,6 +122,31 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
     [tourProductSlug],
   );
   const viatorListingUrl = VIATOR_LISTING_URL_BY_SLUG[tourProductSlug];
+  // T1 — deep-link seeds (`?party=&guests=&date=&language=`) are parsed HERE
+  // instead of in the server page: reading `searchParams` server-side would opt
+  // the route out of ISR (per-request SSR again). The server HTML renders the
+  // cards with defaults; when a deep-link arrives, this effect fires right
+  // after hydration and the `key` below remounts the cards with the seeded
+  // initial state. Normal visits (no seed params) never remount. Server-passed
+  // props still win when present (admin preview / legacy callers).
+  const [urlSeeds, setUrlSeeds] = useState<{
+    guests?: number;
+    dateYmd?: string;
+    language?: PreferredLanguage;
+  } | null>(null);
+  useEffect(() => {
+    const sp = new URLSearchParams(window.location.search);
+    const guests = coerceSeedGuests(sp.get("party") ?? sp.get("guests"));
+    const dateYmd = coerceSeedDateYmd(sp.get("date"));
+    const language = coerceSeedLanguage(sp.get("language") ?? sp.get("lang"));
+    if (guests != null || dateYmd != null || language != null) {
+      setUrlSeeds({ guests, dateYmd, language });
+    }
+  }, []);
+  const effectiveGuests = initialGuests ?? urlSeeds?.guests;
+  const effectiveSeedDateYmd = seedDateYmd ?? urlSeeds?.dateYmd;
+  const effectiveSeedLanguage = seedLanguage ?? urlSeeds?.language;
+  const bookingSeedKey = urlSeeds ? "url-seeded" : "default";
   return (
     <div className="tour-product-v2-static-root min-h-screen bg-white">
       <div className="lg:mx-auto lg:grid lg:max-w-6xl lg:grid-cols-[minmax(0,1fr)_360px] lg:gap-8 lg:px-6">
@@ -365,14 +395,15 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
         <aside className="hidden lg:block">
           <div className="sticky top-20 py-8">
             <TourDesktopBookingCard
+              key={bookingSeedKey}
               price={vm.price}
               checkout={checkout}
               selectedPortLabel={selectedPortLabel}
               sectionUi={vm.sectionUi}
               pricingTiers={vm.pricingTiers}
-              initialGuests={initialGuests}
-              seedDateYmd={seedDateYmd}
-              seedLanguage={seedLanguage}
+              initialGuests={effectiveGuests}
+              seedDateYmd={effectiveSeedDateYmd}
+              seedLanguage={effectiveSeedLanguage}
             />
           </div>
         </aside>
@@ -381,14 +412,15 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
       {/* Mobile sticky CTA — hidden on lg+ where the right-rail card takes over */}
       <div className="lg:hidden">
         <TourStickyBookingBar
+          key={bookingSeedKey}
           price={vm.price}
           checkout={checkout}
           selectedPortLabel={selectedPortLabel}
           sectionUi={vm.sectionUi}
           pricingTiers={vm.pricingTiers}
-          initialGuests={initialGuests}
-          seedDateYmd={seedDateYmd}
-          seedLanguage={seedLanguage}
+          initialGuests={effectiveGuests}
+          seedDateYmd={effectiveSeedDateYmd}
+          seedLanguage={effectiveSeedLanguage}
         />
       </div>
 

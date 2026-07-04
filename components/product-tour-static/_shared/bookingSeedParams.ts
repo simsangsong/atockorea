@@ -34,6 +34,18 @@ export function coerceSeedDateYmd(raw: string | string[] | undefined | null): st
 }
 
 /**
+ * Deep-link seeding — parse `?party=` / `?guests=` (home stepper carry-through
+ * and agent deep-links) into a positive guest count. Returns undefined for
+ * missing/invalid input so the booking card keeps its default.
+ */
+export function coerceSeedGuests(raw: string | string[] | undefined | null): number | undefined {
+  const v = Array.isArray(raw) ? raw[0] : raw;
+  if (!v) return undefined;
+  const n = Number.parseInt(v, 10);
+  return Number.isFinite(n) && n > 0 ? n : undefined;
+}
+
+/**
  * Deep-link seeding — map a `?language=` query param onto the booking card's
  * guide-language toggle. Only en/zh/ko have a dedicated toggle; other locales
  * (ja/es) fall through to `undefined` so the card keeps its default.
