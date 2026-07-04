@@ -51,9 +51,19 @@ import {
   buildQuoteReply,
   createQuoteBooking,
   quoteEmailPrompt,
+  quoteEmailConfirmPrompt,
+  emailConfirmOutcome,
+  extractEmailFromText,
+  quoteFlowStageFromReply,
   checkoutReadyReply,
   isQuoteFlowFollowUp,
 } from "@/lib/chatbot/quoteFlow";
+import { buildTourCardsFromReply, type TourCardPayload } from "@/lib/chatbot/tourCards";
+import {
+  emailConfirmChips,
+  quoteConfirmChips,
+  followUpChipsForIntent,
+} from "@/lib/chatbot/followUpChips";
 import { allowRequestDurable } from "@/lib/chatbot/requestRateLimit";
 import { retrieveKnowledge, buildRagContextText } from "@/lib/rag/retrieve";
 import {
@@ -404,6 +414,10 @@ type FinalizeAssistantTurnResult = {
   escalated: boolean;
   escalation_reason: string | null;
   handoff_offered: boolean;
+  /** W4.1 — deterministic rich cards for catalogue products in the reply. */
+  cards: TourCardPayload[];
+  /** W4.3 — contextual one-tap follow-up chips. */
+  chips: string[];
 };
 
 async function finalizeAssistantTurn(
@@ -476,6 +490,20 @@ async function finalizeAssistantTurn(
         answerLocale,
       );
     }
+  }
+
+  // W4.1 — resolve any referenced catalogue products into rich cards and
+  // strip the raw URL text out of the bubble. Deterministic (registry-only):
+  // the model never invents a card, and unknown slugs keep their URL.
+  let cards: TourCardPayload[] = [];
+  try {
+    const built = buildTourCardsFromReply(replyText, answerLocale);
+    if (built.cards.length > 0) {
+      cards = built.cards;
+      replyText = built.cleanedReply;
+    }
+  } catch (cardErr) {
+    console.error("[tour-product/assistant] card build error:", (cardErr as Error).message);
   }
 
   let handoffOffered = forceHandoffOffer || assistantReplyShouldOfferHandoff(replyText);
@@ -599,6 +627,10 @@ async function finalizeAssistantTurn(
     escalated: ticketCreated !== null,
     escalation_reason: escalationReason,
     handoff_offered: handoffOffered && ticketCreated === null,
+    cards,
+    chips: followUpChipsForIntent(activeIntent.intent, answerLocale, {
+      hasCards: cards.length > 0,
+    }),
   };
 }
 
@@ -638,7 +670,7 @@ function generationFallbackReply(input: {
   matcherResult: MatcherResult | null;
   tourCatalogContext: string;
   answerLocale: TourProductPageLocale;
-}): string {
+}): { reply: string; cards: TourCardPayload[] } {
   const isRecommendation =
     input.intent.intent === "tour_recommendation" || input.intent.intent === "tour_catalog";
   if (isRecommendation) {
@@ -646,9 +678,18 @@ function generationFallbackReply(input: {
       (input.matcherResult?.status === "STRONG_MATCH"
         ? buildMatcherReply(input.matcherResult, input.answerLocale)
         : null) || buildCatalogueRecommendationReply(input.tourCatalogContext, input.answerLocale);
-    if (catalogue) return catalogue;
+    if (catalogue) {
+      // W4.1 — the degraded catalogue answer gets the same rich cards.
+      try {
+        const built = buildTourCardsFromReply(catalogue, input.answerLocale);
+        if (built.cards.length > 0) return { reply: built.cleanedReply, cards: built.cards };
+      } catch {
+        /* cards are best-effort on the degraded path */
+      }
+      return { reply: catalogue, cards: [] };
+    }
   }
-  return assistantOutageReply(input.answerLocale);
+  return { reply: assistantOutageReply(input.answerLocale), cards: [] };
 }
 
 export async function POST(req: NextRequest) {
@@ -966,6 +1007,14 @@ export async function POST(req: NextRequest) {
       quoteMainModel,
     );
     if (!draft.language) draft.language = quoteLocale;
+    // W2.10 — a direct answer to the email / email-confirm prompt wins over
+    // the fuzzy extraction (an older address in the history could otherwise
+    // shadow the correction the customer just typed).
+    const priorStage = quoteFlowStageFromReply(priorAssistantReply);
+    if (priorStage === "email" || priorStage === "email_confirm") {
+      const msgEmail = extractEmailFromText(latestUserMessage);
+      if (msgEmail) draft.contactEmail = msgEmail;
+    }
     const missing = missingQuoteSlots(draft);
     if (missing.length > 0) {
       return applySessionCookie(
@@ -975,6 +1024,22 @@ export async function POST(req: NextRequest) {
           escalated: false,
           escalation_reason: null,
           handoff_offered: false,
+          // W2.3 — structured slot state so the widget renders tap controls
+          // (region buttons / date picker / party stepper / hours slider)
+          // instead of making the visitor type everything.
+          slot_request: {
+            missing,
+            known: {
+              region: draft.region,
+              track: draft.track ?? "private",
+              date: draft.requestedDate,
+              party: draft.party,
+              duration_hours: draft.durationHours,
+              jeju_pickup_zone: draft.jejuPickupZone,
+              cruise_port: draft.cruisePort,
+            },
+            date_issue: draft.dateIssue,
+          },
           debug_intent: debugNoSideEffects ? detectedIntent : undefined,
         }),
         session,
@@ -1001,6 +1066,17 @@ export async function POST(req: NextRequest) {
     // Q3 — customer confirmed booking. Need an email to create the booking.
     if (draft.readyToBook && !debugNoSideEffects) {
       if (!draft.contactEmail) return respond(quoteEmailPrompt(quoteLocale));
+      // W2.10 — one confirmation turn on the extracted email before the
+      // booking write (typo guard). Chips make it a single tap.
+      const confirmOutcome =
+        priorStage === "email_confirm" ? emailConfirmOutcome(latestUserMessage) : null;
+      if (confirmOutcome !== "confirmed") {
+        if (confirmOutcome === "edit") return respond(quoteEmailPrompt(quoteLocale));
+        return respond(quoteEmailConfirmPrompt(draft.contactEmail, quoteLocale), {
+          email_confirm: draft.contactEmail,
+          chips: emailConfirmChips(quoteLocale),
+        });
+      }
       // CB-5: dedicated low-rate throttle on the unauthenticated booking write so
       // the quote flow can't be scripted to spray arbitrary-email PENDING
       // bookings. The 20/min general chat limit is far too loose for a DB write.
@@ -1027,8 +1103,9 @@ export async function POST(req: NextRequest) {
       return respond(quoteReply);
     }
 
-    // Quote shown; not yet booking (or debug mode) → ask to confirm.
-    return respond(quoteReply);
+    // Quote shown; not yet booking (or debug mode) → ask to confirm, with
+    // one-tap yes/no chips (W4.3).
+    return respond(quoteReply, { chips: quoteConfirmChips(quoteLocale) });
   }
 
   const productContext =
@@ -1344,7 +1421,8 @@ export async function POST(req: NextRequest) {
           });
 
           // done.reply is the authoritative text — the client snaps the bubble
-          // to it (D-T2-4), correcting any rare post-process override.
+          // to it (D-T2-4), correcting any rare post-process override (and,
+          // since W4.1, swapping streamed raw URLs for rich cards).
           controller.enqueue(
             sseEvent("done", {
               reply: finalized.reply,
@@ -1353,6 +1431,8 @@ export async function POST(req: NextRequest) {
               escalation_reason: finalized.escalation_reason,
               handoff_offered: finalized.handoff_offered,
               checkout_url: null,
+              cards: finalized.cards.length > 0 ? finalized.cards : undefined,
+              chips: finalized.chips.length > 0 ? finalized.chips : undefined,
             }),
           );
 
@@ -1422,6 +1502,8 @@ export async function POST(req: NextRequest) {
                     escalation_reason: finalized.escalation_reason,
                     handoff_offered: finalized.handoff_offered,
                     checkout_url: null,
+                    cards: finalized.cards.length > 0 ? finalized.cards : undefined,
+                    chips: finalized.chips.length > 0 ? finalized.chips : undefined,
                   }),
                 );
               } else {
@@ -1432,19 +1514,21 @@ export async function POST(req: NextRequest) {
                   elapsedMs: Date.now() - streamT0,
                   category: activeIntent.intent,
                 });
+                const fallback = generationFallbackReply({
+                  intent: activeIntent,
+                  matcherResult,
+                  tourCatalogContext,
+                  answerLocale,
+                });
                 controller.enqueue(
                   sseEvent("done", {
-                    reply: generationFallbackReply({
-                      intent: activeIntent,
-                      matcherResult,
-                      tourCatalogContext,
-                      answerLocale,
-                    }),
+                    reply: fallback.reply,
                     ticket_id: null,
                     escalated: false,
                     escalation_reason: `assistant_failed:${code}`,
                     handoff_offered: true,
                     checkout_url: null,
+                    cards: fallback.cards.length > 0 ? fallback.cards : undefined,
                   }),
                 );
               }
@@ -1537,18 +1621,20 @@ export async function POST(req: NextRequest) {
       elapsedMs: Date.now() - t0,
       category: activeIntent.intent,
     });
+    const fallback = generationFallbackReply({
+      intent: activeIntent,
+      matcherResult,
+      tourCatalogContext,
+      answerLocale,
+    });
     return applySessionCookie(
       NextResponse.json({
-        reply: generationFallbackReply({
-          intent: activeIntent,
-          matcherResult,
-          tourCatalogContext,
-          answerLocale,
-        }),
+        reply: fallback.reply,
         ticket_id: null,
         escalated: false,
         escalation_reason: `assistant_failed:${genFailure}`,
         handoff_offered: true,
+        cards: fallback.cards.length > 0 ? fallback.cards : undefined,
         debug_intent: debugNoSideEffects ? activeIntent : undefined,
       }),
       session,
@@ -1587,6 +1673,8 @@ export async function POST(req: NextRequest) {
     escalated: finalized.escalated,
     escalation_reason: finalized.escalation_reason,
     handoff_offered: finalized.handoff_offered,
+    cards: finalized.cards.length > 0 ? finalized.cards : undefined,
+    chips: finalized.chips.length > 0 ? finalized.chips : undefined,
     debug_intent: debugNoSideEffects ? activeIntent : undefined,
   });
   return applySessionCookie(resp, session);
