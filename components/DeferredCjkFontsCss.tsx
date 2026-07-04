@@ -23,20 +23,39 @@ export function DeferredCjkFontsCss() {
     if (document.querySelector(`link[href="${CJK_FONTS_CSS_HREF}"]`)) return;
 
     const inject = () => {
+      if (document.querySelector(`link[href="${CJK_FONTS_CSS_HREF}"]`)) return;
       const link = document.createElement("link");
       link.rel = "stylesheet";
       link.href = CJK_FONTS_CSS_HREF;
       document.head.appendChild(link);
     };
 
-    // Wait for idle so the 517 KB CSS never competes with LCP-critical
-    // resources; cap the wait so slow-but-busy devices still get the fonts.
-    if (typeof window.requestIdleCallback === "function") {
-      const id = window.requestIdleCallback(inject, { timeout: 3000 });
-      return () => window.cancelIdleCallback(id);
+    // F2b: gate on window `load` BEFORE waiting for idle. Post-hydration idle
+    // alone still fired inside the page-load window on slow connections, so
+    // the 517 KB CSS shared bandwidth with the LCP image (2026-07-04 4G
+    // Lighthouse: it remained the #1 byte source during load). After `load` +
+    // idle it can never compete with first paint; system CJK fallbacks cover
+    // the interim exactly as before.
+    let idleId: number | null = null;
+    let timeoutId: number | null = null;
+    const scheduleAfterLoad = () => {
+      if (typeof window.requestIdleCallback === "function") {
+        idleId = window.requestIdleCallback(inject, { timeout: 5000 });
+      } else {
+        timeoutId = window.setTimeout(inject, 1500);
+      }
+    };
+
+    if (document.readyState === "complete") {
+      scheduleAfterLoad();
+    } else {
+      window.addEventListener("load", scheduleAfterLoad, { once: true });
     }
-    const id = window.setTimeout(inject, 1500);
-    return () => window.clearTimeout(id);
+    return () => {
+      window.removeEventListener("load", scheduleAfterLoad);
+      if (idleId != null) window.cancelIdleCallback(idleId);
+      if (timeoutId != null) window.clearTimeout(timeoutId);
+    };
   }, []);
 
   return null;
