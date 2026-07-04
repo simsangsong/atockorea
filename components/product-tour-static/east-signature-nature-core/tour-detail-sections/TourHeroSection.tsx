@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { Clock, Compass, Footprints, Heart, Share2, Star } from "lucide-react";
+import { Clock, Compass, ExternalLink, Footprints, Heart, Share2, Star } from "lucide-react";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
 import { safeCssBackgroundUrl } from "@/lib/safe-image-url";
@@ -14,6 +14,8 @@ export type TourHeroSectionProps = Pick<
   "headlineLine1" | "headlineLine2" | "hero"
 > & {
   tourProductSlug: string;
+  /** Outbound Viator listing URL for this tour — renders a green "View on Viator" chip under the title. Absent → nothing renders. */
+  viatorListingUrl?: string;
 };
 
 const SCROLL_OFFSET_PX = 108;
@@ -30,6 +32,7 @@ export function TourHeroSection({
   headlineLine2,
   hero,
   tourProductSlug,
+  viatorListingUrl,
 }: TourHeroSectionProps) {
   const t = useTranslations();
   const showRating = (hero.meta.rating ?? 0) > 0;
@@ -234,6 +237,24 @@ export function TourHeroSection({
             {headlineLine2}
           </span>
         </h1>
+
+        {viatorListingUrl && (
+          <a
+            href={viatorListingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-2.5 inline-flex items-center gap-1 rounded-full bg-[#328538] px-2.5 py-1 text-[11px] font-semibold text-white shadow-[0_1px_6px_-2px_rgba(50,133,56,0.5)] transition-colors hover:bg-[#2b722f] active:scale-[0.98] sm:mt-3 sm:text-[11.5px]"
+          >
+            <span
+              aria-hidden
+              className="flex h-[14px] w-[14px] items-center justify-center rounded-full bg-white"
+            >
+              <span className="text-[10px] font-black italic leading-none text-[#328538]">V</span>
+            </span>
+            <span>{t("tour.viewOnViator")}</span>
+            <ExternalLink className="h-3 w-3 text-white/90" strokeWidth={2} />
+          </a>
+        )}
 
         {hero.pills.length > 0 && (
           <div className="mt-3.5 flex flex-wrap gap-1.5 sm:mt-4 sm:gap-2">
