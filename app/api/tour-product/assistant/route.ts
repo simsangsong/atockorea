@@ -492,8 +492,11 @@ async function finalizeAssistantTurn(
           category: activeIntent.intent,
         });
 
-        // Escalation detection
-        const decision = await detectEscalation(sb, userMessage, replyText, answerLocale);
+        // Escalation detection (intent-aware since W1.5.1 — informational
+        // policy questions no longer create keyword tickets).
+        const decision = await detectEscalation(sb, userMessage, replyText, answerLocale, {
+          intent: activeIntent.intent,
+        });
         if (decision.escalate) {
           escalationReason = decision.reason;
           if (decision.reason === "low_confidence") {
@@ -1137,6 +1140,9 @@ export async function POST(req: NextRequest) {
     "Context routing is deliberate. If TOUR CATALOGUE says it was intentionally omitted, do not compensate by recommending tours from memory.",
     "Do not pivot to tour recommendations unless the intent is tour_recommendation or tour_catalog, or unless the user explicitly asks for products, tours, itineraries, or recommendations.",
     "For policy, legal, company, booking-specific, POI, and unknown questions, answer the exact question first. Do not list tours unless the user asked for tours.",
+    activeIntent.intent === "price_question"
+      ? "PRICE QUESTION: the user is asking what a listed tour costs. Answer with the exact listed price number(s) and currency from the PRODUCT CONTEXT or TOUR CATALOGUE first (e.g. \"$60 per person\" or \"from $235\"). If several tours match, give each tour's price. NEVER answer a price question without a concrete number — vague replies like \"prices are calculated in dollars\" are forbidden. If the context truly lists no price for what was asked, say so and offer support. You may add ONE short sentence that a custom private-tour quote is also available in this chat."
+      : "",
     "For tour recommendations, recommend only listed tours that match the requested region, traveler profile, date/season, port, accessibility, or theme. Include the product URL from the context for each recommended tour. If there is no matching listed tour, say that clearly and offer to connect support in this chat.",
     "When the user states a constraint (wheelchair or full accessibility, relaxed or easy pace, elderly travelers, very young children, limited mobility), recommend only tours the context explicitly supports for that constraint. If a listed tour's context says it is less suitable for that need (not fully accessible, includes hiking, better for active travelers), do not present it as a match — recommend the private or flexible-route option instead, or say no listed tour clearly fits and offer support. Do not pad recommendations with tours the context does not support for the stated constraint.",
     "Answer the specific sub-topic asked. A child-seat or car-seat question must be answered from the child/car-seat policy, not the cancellation or refund policy.",

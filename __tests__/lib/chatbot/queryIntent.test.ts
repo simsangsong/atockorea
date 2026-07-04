@@ -40,6 +40,26 @@ describe("chatbot query intent routing", () => {
     expect(expanded).toContain("low mobility");
   });
 
+  // W2.1 (C-3·C-12): listed-price questions get the catalogue (with numbers),
+  // NOT the private-quote interrogation.
+  it("routes catalog price questions to price_question, not quote_request", () => {
+    const en = classifyChatbotQuery("How much is the Pocheon day tour per person?");
+    expect(en.intent).toBe("price_question");
+    expect(en.useTourCatalog).toBe(true);
+
+    const ko = classifyChatbotQuery("제주 투어는 1인당 얼마인가요?");
+    expect(ko.intent).toBe("price_question");
+
+    const zh = classifyChatbotQuery("浦川一日游多少钱?");
+    expect(zh.intent).toBe("price_question");
+  });
+
+  it("keeps explicit quote asks and private-price asks in the quote funnel", () => {
+    expect(classifyChatbotQuery("Can I get a quote for a private tour in Busan?").intent).toBe("quote_request");
+    expect(classifyChatbotQuery("부산 프라이빗 투어 4명이면 얼마예요?").intent).toBe("quote_request");
+    expect(classifyChatbotQuery("제주 전세 투어 견적 부탁해요").intent).toBe("quote_request");
+  });
+
   it("detects company/contact and explicit support requests", () => {
     expect(classifyChatbotQuery("\uD68C\uC0AC \uC8FC\uC18C\uC640 \uC5F0\uB77D\uCC98 \uC54C\uB824\uC918").intent).toBe("company");
     expect(classifyChatbotQuery("\uC0C1\uB2F4\uC6D0 \uC5F0\uACB0\uD574\uC918").intent).toBe("support");

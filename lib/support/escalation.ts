@@ -55,11 +55,51 @@ export type EscalationDecision = {
   category?: string | null;
 };
 
+// W1.5.1 (C-20): informational intents where a policy keyword ("환불",
+// "refund") appearing in the QUESTION is normal and must NOT create a ticket
+// ("환불 정책이 뭐예요?" generated real ops tickets #64/#66). booking_specific
+// and unknown stay OUT of this set so real personal-booking issues still
+// escalate on keywords.
+const INFORMATIONAL_INTENTS = new Set([
+  "policy",
+  "legal",
+  "company",
+  "poi",
+  "tour_recommendation",
+  "tour_catalog",
+  "quote_request",
+  "price_question",
+]);
+
+// An actual ACTION request ("환불해주세요", "cancel my booking") always keeps
+// keyword escalation live, whatever the classified intent.
+const ACTION_REQUEST_PATTERNS = [
+  /환불\s*(?:해\s*주|해줘|해달라|요청|원해|받고\s*싶|처리)/,
+  /취소\s*(?:해\s*주|해줘|해달라|하고\s*싶|요청|할게|부탁|처리)/,
+  /(?:refund|cancel)\s+(?:my|this|the|our)\b/i,
+  /\b(?:i\s+want|i'?d\s+like|i\s+need|please)\s+(?:a\s+)?(?:refund|cancellation|to\s+cancel)\b/i,
+  /\brefund\s+me\b/i,
+  /返金(?:して|をお願い|希望|お願い)/,
+  /キャンセル(?:して|をお願い|したい)/,
+  /退款|退钱|退錢/,
+  /取消(?:我的)?(?:预订|預訂|订单|訂單|预约|預約)/,
+  /(?:quiero|necesito|solicito)\s+(?:un\s+)?reembolso/i,
+  /cancelar\s+mi\b/i,
+];
+
+export function isActionRequest(message: string): boolean {
+  return ACTION_REQUEST_PATTERNS.some((r) => r.test(message));
+}
+
 export async function detectEscalation(
   sb: SupabaseClient,
   userMessage: string,
   assistantReply: string,
   locale: string,
+  opts: {
+    /** classifyChatbotQuery intent for this turn — gates keyword escalation. */
+    intent?: string;
+  } = {},
 ): Promise<EscalationDecision> {
   const um = userMessage ?? "";
   const ar = assistantReply ?? "";
@@ -77,27 +117,34 @@ export async function detectEscalation(
     return { escalate: true, reason: "sensitive_topic", category: "legal" };
   }
 
-  // 3. DB-curated escalation keywords
-  try {
-    const { data } = await sb
-      .from("escalation_keywords")
-      .select("keyword, category, locale")
-      .eq("enabled", true);
-    if (data && data.length) {
-      for (const row of data) {
-        if (row.locale && row.locale !== locale && row.locale !== "any") continue;
-        if (typeof row.keyword === "string" && um.toLowerCase().includes(row.keyword.toLowerCase())) {
-          return {
-            escalate: true,
-            reason: "keyword_match",
-            matched_keyword: row.keyword,
-            category: row.category ?? null,
-          };
+  // 3. DB-curated escalation keywords.
+  // W1.5.1: skipped for informational questions ("환불 정책이 뭐예요?" is a
+  // policy QUESTION, not a refund REQUEST) unless the message is an explicit
+  // action request. Intent+substring together, not substring alone (C-20).
+  const informationalTurn =
+    opts.intent !== undefined && INFORMATIONAL_INTENTS.has(opts.intent) && !isActionRequest(um);
+  if (!informationalTurn) {
+    try {
+      const { data } = await sb
+        .from("escalation_keywords")
+        .select("keyword, category, locale")
+        .eq("enabled", true);
+      if (data && data.length) {
+        for (const row of data) {
+          if (row.locale && row.locale !== locale && row.locale !== "any") continue;
+          if (typeof row.keyword === "string" && um.toLowerCase().includes(row.keyword.toLowerCase())) {
+            return {
+              escalate: true,
+              reason: "keyword_match",
+              matched_keyword: row.keyword,
+              category: row.category ?? null,
+            };
+          }
         }
       }
+    } catch {
+      // best-effort; never block the chat reply on escalation lookup failure
     }
-  } catch {
-    // best-effort; never block the chat reply on escalation lookup failure
   }
 
   // 4. Low-confidence assistant reply
