@@ -61,6 +61,7 @@ import {
   kstTodayISO,
 } from "@/lib/chatbot/quoteFlow";
 import { buildTourCardsFromReply, type TourCardPayload } from "@/lib/chatbot/tourCards";
+import { buildInstantAnswer } from "@/lib/chatbot/instantAnswers";
 import {
   emailConfirmChips,
   quoteConfirmChips,
@@ -1004,6 +1005,44 @@ export async function POST(req: NextRequest) {
       priorAssistantReply,
       detectedIntent: detectedIntent.intent,
     });
+
+  // Wave 6 — deterministic instant answers (haenyeo schedule / weather /
+  // availability). Low-stakes intents only: recommendation, policy, quote,
+  // and booking questions keep their richer existing paths, and an active
+  // quote flow is never interrupted.
+  if (
+    !verifiedBookingContext &&
+    !quoteFlowSticky &&
+    (detectedIntent.intent === "unknown" || detectedIntent.intent === "poi")
+  ) {
+    const instantLocale = inferLocaleFromText(latestUserMessage, locale) ?? locale;
+    try {
+      const instant = await buildInstantAnswer({
+        message: latestUserMessage,
+        locale: instantLocale,
+        tourSlug: isSiteAssistant ? null : tourProductSlug,
+        todayISO: kstTodayISO(),
+      });
+      if (instant) {
+        return applySessionCookie(
+          NextResponse.json({
+            reply: instant.reply,
+            ticket_id: null,
+            escalated: false,
+            escalation_reason: null,
+            handoff_offered: false,
+            chips: instant.chips.length > 0 ? instant.chips : undefined,
+            debug_intent: debugNoSideEffects ? detectedIntent : undefined,
+          }),
+          session,
+        );
+      }
+    } catch (instantErr) {
+      // Never let an instant-answer bug take down the normal path.
+      console.error("[tour-product/assistant] instant answer error:", (instantErr as Error).message);
+    }
+  }
+
   if (detectedIntent.intent === "quote_request" || quoteFlowSticky) {
     const quoteLocale = inferLocaleFromText(latestUserMessage, locale) ?? locale;
     // W3.3: slot extraction is mechanical parsing — the lite model is ~2x
@@ -1330,6 +1369,12 @@ export async function POST(req: NextRequest) {
       : "For personal booking details such as exact pickup time, driver contact, payment status, booking changes, or booking-specific refund progress, staff must check the booking record; offer support inside this chat.",
     memoryContext
       ? "TRAVELER MEMORY below is a soft recollection of this traveler's preferences from past chats. Use it to personalize (e.g. greet continuity, pre-fill likely region/party size) but ALWAYS defer to the current message, never assume it is still true if contradicted, and never treat it as a verified booking, price, or policy fact."
+      : "",
+    // W6.3 — returning traveler, first turn of a fresh conversation: open with
+    // ONE short continuity line ("Welcome back — still planning that Jeju trip
+    // for 4?") before answering. Soft phrasing only; never assert it as fact.
+    memoryContext && messages.length === 1
+      ? "This is a RETURNING traveler starting a new conversation. Begin your reply with ONE short, warm continuity sentence grounded in the TRAVELER MEMORY (phrased as a soft question or acknowledgement, e.g. \"Welcome back — still thinking about ...?\"), then answer their message."
       : "",
     memoryContext,
     verifiedBookingContext ? "\n--- VERIFIED BOOKING (this user's own; verified by reference + email) ---\n" : "",

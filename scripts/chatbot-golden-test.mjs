@@ -393,6 +393,36 @@ const suites = {
     }
   },
 
+  // §E Wave 6 — 결정론 즉답 (해녀쇼/가용성/날씨). LLM 무경유 경로.
+  async instant() {
+    {
+      const r = await postChat([{ role: "user", content: "What time is the haenyeo diving show at Seongsan?" }]);
+      record("instant", "haenyeo schedule states 14:00 once-daily (W6.7)", [
+        check("HTTP 200", r.status === 200),
+        check("contains 14:00", (r.json.reply ?? "").includes("14:00")),
+        check("chips returned", Array.isArray(r.json.chips) && r.json.chips.length > 0),
+      ], r);
+    }
+    {
+      const r = await postChat([{ role: "user", content: "Do you have availability on 2026-10-10?" }]);
+      record("instant", "availability instant answer (W6.1)", [
+        check("HTTP 200", r.status === 200),
+        check("echoes the date", (r.json.reply ?? "").includes("2026-10-10")),
+        check("on-demand framing", containsAny(r.json.reply, ["on-demand", "온디맨드"])),
+        check("quote chip present", Array.isArray(r.json.chips) && r.json.chips.length > 0),
+      ], r);
+    }
+    {
+      // Weather relies on Open-Meteo; on fetch failure the turn legitimately
+      // falls through to the model, so assertions stay lenient.
+      const r = await postChat([{ role: "user", content: "What's the weather in Jeju tomorrow?" }]);
+      record("instant", "weather answer mentions the region (W6.6)", [
+        check("HTTP 200", r.status === 200),
+        check("mentions Jeju + weather-ish content", containsAny(r.json.reply, ["jeju", "제주"]) && containsAny(r.json.reply, ["°C", "rain", "weather", "forecast", "날씨", "비"])),
+      ], r);
+    }
+  },
+
   // §E 예약조회: 무효 자격증명 → 정중 거부, 500 없음.
   async lookup() {
     const r = await postChat([
