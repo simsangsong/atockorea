@@ -294,6 +294,22 @@ const suites = {
     ], t5);
     if (t5.json.checkout_url) artifacts.bookings.push(t5.json.checkout_url);
 
+    // 2026-07-05 regression gate: the checkout URL must serve the ACTUAL
+    // checkout page. The 6/29 builder gate silently client-redirected it to
+    // /tours/list (HTTP was still 200, so a URL-string check missed a week
+    // of dead payment hand-offs).
+    if (typeof t5.json.checkout_url === "string") {
+      const page = await fetch(`${BASE}${t5.json.checkout_url}`, { redirect: "follow" }).catch(() => null);
+      const html = page ? await page.text().catch(() => "") : "";
+      const bounced = html.includes("NEXT_REDIRECT;replace;/tours");
+      const hasRef = /A2C-[A-F0-9]{8}/i.test(html);
+      record("quote", "checkout page actually renders (no builder-gate bounce)", [
+        check("HTTP 200", Boolean(page && page.status === 200)),
+        check("not client-redirected to /tours", !bounced),
+        check("shows the booking reference", hasRef),
+      ], { status: page?.status ?? 0, json: { reply: html.slice(0, 200) }, ms: null });
+    }
+
     // W6.4 — change-request intake on the booking just created (verified by
     // reference + email; files a ticket, never mutates the booking).
     const ref = (t5.json.reply ?? "").match(/A2C-[A-F0-9]{8}/i)?.[0];
