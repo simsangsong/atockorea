@@ -2,7 +2,8 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
+import { usePathnameWithoutLocale } from "@/lib/usePathnameWithoutLocale";
 import Logo from "./Logo";
 import { SearchIcon, UserIcon } from "./Icons";
 import LanguageSwitcher from "./LanguageSwitcher";
@@ -26,7 +27,10 @@ export type HeaderProps = {
 
 export default function Header({ premiumTourDetail = false }: HeaderProps) {
   const router = useRouter();
-  const pathname = usePathname();
+  // Locale-normalized: raw usePathname() is '/ko/tours' on rewrite pages while
+  // the SSR HTML was rendered as '/tours' — branching on the raw value made
+  // every localized page hydrate-mismatch (React #418) and re-render fully.
+  const pathname = usePathnameWithoutLocale();
   const t = useTranslations();
   const { currency, setCurrency } = useCurrency();
   const [isCurrencyOpen, setIsCurrencyOpen] = useState(false);

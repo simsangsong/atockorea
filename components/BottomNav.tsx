@@ -1,7 +1,7 @@
 "use client";
 
-import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { usePathnameWithoutLocale } from "@/lib/usePathnameWithoutLocale";
 import { motion, useReducedMotion } from "framer-motion";
 import { House, Compass, ShoppingBag, UserRound, type LucideIcon } from "lucide-react";
 import { useTranslations } from "@/lib/i18n";
@@ -29,7 +29,10 @@ const NAV_ITEMS: NavItem[] = [
 ];
 
 export default function BottomNav() {
-  const pathname = usePathname();
+  // Locale-normalized (see lib/usePathnameWithoutLocale): the active-tab
+  // branch must agree between the bare-path SSR HTML and the '/ko/...'
+  // browser URL or every localized page hydrate-mismatches (React #418).
+  const pathname = usePathnameWithoutLocale();
   const t = useTranslations();
   const reduce = useReducedMotion() === true;
 

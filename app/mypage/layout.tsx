@@ -2,7 +2,8 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { usePathname, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
+import { usePathnameWithoutLocale } from '@/lib/usePathnameWithoutLocale';
 import { useState, useEffect } from 'react';
 import { SitePageShell } from '@/src/components/layout/SitePageShell';
 import { useTranslations } from '@/lib/i18n';
@@ -85,7 +86,10 @@ function UserProfileCard({
 }
 
 function MyPageLayoutContent({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname();
+  // Locale-normalized: '/ko/mypage' must render identically to the '/mypage'
+  // prerender (isMyPageRoot / sidebar actives) or hydration mismatches -
+  // the measured React #418 that forced a full client re-render per visit.
+  const pathname = usePathnameWithoutLocale();
   const router = useRouter();
   const t = useTranslations();
   const { user, profile, refreshProfile } = useMyPageSession();
