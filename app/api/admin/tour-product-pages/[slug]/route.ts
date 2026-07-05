@@ -367,7 +367,13 @@ export async function PATCH(
       revalidatePath('/api/tours');
       revalidatePath('/api/tour-product-card-media');
       revalidatePath('/');
+      // Catalogue is ISR per locale too (bare = EN, /{locale}/tours/list for
+      // the rest) — thumbnail saves must surface on every variant immediately.
       revalidatePath('/tours/list');
+      for (const urlLocale of ['ko', 'ja', 'es', 'zh-CN', 'zh-TW']) {
+        revalidatePath(`/${urlLocale}/tours/list`);
+      }
+      revalidatePath('/[locale]/tours/list', 'page');
     } catch (e) {
       console.warn('[PATCH /api/admin/tour-product-pages] revalidate hint failed', e);
     }

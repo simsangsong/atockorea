@@ -638,10 +638,10 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
     // filters + sort), no cookies. The previous `no-store` recomputed the full
     // pipeline (DB read + card media + booking counts + FX + transform) on every
     // browse hit, contradicting this block's own stated intent of "a short edge
-    // cache absorbs bursty browse traffic". Give shared caches a 30s window so
-    // repeated identical browses are served from the edge, with SWR to refresh in
-    // the background; browsers still revalidate (max-age=0). Admin edits surface
-    // within ~30s — "quickly" enough for list cards.
+    // cache absorbs bursty browse traffic". B2 (2026-07-04): the earlier 30s
+    // window still left most browses on a MISS (2.5s measured); admin saves
+    // revalidate this path explicitly (tour-product-pages PATCH), so a 5-minute
+    // edge window + SWR is safe. Browsers still revalidate (max-age=0).
     return NextResponse.json(
       {
         tours: transformedTours,
@@ -651,7 +651,7 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
       },
       {
         headers: {
-          'Cache-Control': 'public, max-age=0, s-maxage=30, stale-while-revalidate=60',
+          'Cache-Control': 'public, max-age=0, s-maxage=300, stale-while-revalidate=600',
         },
       }
     );

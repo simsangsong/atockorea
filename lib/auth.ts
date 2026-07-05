@@ -40,7 +40,21 @@ export function adminAuthJsonResponse(e: AdminAuthFailure): NextResponse {
  *      removed ~125 lines of cookie wrangling that existed because the
  *      browser used to store the session in localStorage.
  */
-export async function getAuthUser(req: NextRequest): Promise<AuthUser | null> {
+export type GetAuthUserOptions = {
+  /**
+   * Skip the `user_profiles` role (+`merchants`) lookup and return
+   * `role: 'customer'` as a placeholder. For identity-only endpoints
+   * (mypage summary/extras) the lookup added 1–2 DB round trips per request
+   * that the handler never read. NEVER set this on a route that authorizes
+   * by role — use the default (full) lookup or requireAdmin instead.
+   */
+  skipRoleLookup?: boolean;
+};
+
+export async function getAuthUser(
+  req: NextRequest,
+  options?: GetAuthUserOptions,
+): Promise<AuthUser | null> {
   try {
     const adminSupabase = createServerClient(); // service-role: profile/merchant lookups
     let user: { id: string; email?: string | null } | null = null;
@@ -71,6 +85,14 @@ export async function getAuthUser(req: NextRequest): Promise<AuthUser | null> {
     }
 
     if (!user) return null;
+
+    if (options?.skipRoleLookup) {
+      return {
+        id: user.id,
+        email: user.email || '',
+        role: 'customer',
+      };
+    }
 
     const { data: profile } = await adminSupabase
       .from('user_profiles')

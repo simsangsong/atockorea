@@ -1,51 +1,20 @@
-import { cookies } from "next/headers";
-import { SLIM_CATALOG_SLUG_ORDER } from "@/components/product-tour-static/catalog/catalogCards.generated";
-import { createServerClient } from "@/lib/supabase";
-import { loadTourProductCardMediaBySlug } from "@/lib/tour-product/resolveTourProductCardMedia.server";
-import type { TourProductCardMediaMap } from "@/lib/tour-product/cardMediaTypes";
-import ToursListClient from "./ToursListClient";
+import { ToursListPageBody } from "./toursListPageBody";
 
 /**
- * Server wrapper for the catalogue page. Reads the locale cookie, pre-resolves
- * admin v2 thumbnails for every catalog slug, and hands the map to the client.
+ * Canonical ENGLISH catalogue page — a static ISR shell (same T1 pattern as
+ * `/tour-product/[slug]`). Visitors with a non-en `NEXT_LOCALE` cookie are
+ * 307'd by the middleware to `/{locale}/tours/list`, so this page never varies
+ * by cookie and stays CDN-cacheable (it used to read `cookies()`, which forced
+ * per-request dynamic SSR — every bottom-nav tap was a CDN MISS). Deep-link
+ * filters (`?destination=…`) are consumed client-side only (window.location
+ * parse in ToursListClient — NOT `useSearchParams()`, which would suspend the
+ * prerender into a fallback-only shell).
  *
- * Why split? `ToursListClient` is `'use client'` and uses the static catalog
- * to seed `<ShelvesContainer>` and the flat-grid view. Without an SSR
- * pre-fetch the first render shows the build-time static thumbnail and then
- * flips to the admin-saved image once the client effect resolves
- * (user-visible flash reported 2026-05-25).
- *
- * Supabase failure is swallowed — the client still re-fetches via
- * `/api/tour-product-card-media`, so the worst case degrades back to the
- * old flashing behaviour rather than blocking the page.
+ * Admin thumbnail saves revalidate this path immediately; the hourly TTL is
+ * just a safety net.
  */
-const SUPPORTED_LOCALES = new Set(["en", "ko", "zh", "zh-TW", "ja", "es"]);
+export const revalidate = 3600;
 
-function resolveLocaleFromCookie(value: string | undefined): string {
-  if (!value) return "en";
-  if (value === "zh-CN") return "zh";
-  return SUPPORTED_LOCALES.has(value) ? value : "en";
-}
-
-async function loadInitialMediaBySlug(locale: string): Promise<TourProductCardMediaMap> {
-  try {
-    const supabase = createServerClient();
-    return await loadTourProductCardMediaBySlug(
-      supabase,
-      SLIM_CATALOG_SLUG_ORDER as readonly string[],
-      locale,
-    );
-  } catch (e) {
-    if (process.env.NODE_ENV === "development") {
-      console.warn("[/tours/list] initial media prefetch failed:", (e as Error)?.message);
-    }
-    return {};
-  }
-}
-
-export default async function ToursListPage() {
-  const cookieStore = await cookies();
-  const locale = resolveLocaleFromCookie(cookieStore.get("NEXT_LOCALE")?.value);
-  const initialMediaBySlug = await loadInitialMediaBySlug(locale);
-  return <ToursListClient initialMediaBySlug={initialMediaBySlug} />;
+export default function ToursListPage() {
+  return <ToursListPageBody locale="en" />;
 }
