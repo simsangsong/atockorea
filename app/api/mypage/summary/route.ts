@@ -27,6 +27,24 @@ const BOOKING_SUMMARY_SELECT = `
   )
 `;
 
+/**
+ * Slim variant for the pending-review candidate scan: it only feeds
+ * `pendingReviews` (id/tour_id/dates/slug/title), and the review write-window
+ * is short — the previous 100-row × 3-way-join fetch was mostly discarded.
+ */
+const PENDING_REVIEW_CANDIDATE_SELECT = `
+  id,
+  tour_id,
+  tour_date,
+  booking_date,
+  status,
+  created_at,
+  tours (
+    slug,
+    title
+  )
+`;
+
 type BookingSummaryRow = {
   id: string;
   tour_id: string;
@@ -61,7 +79,9 @@ function getKstTodayYmd() {
 
 export async function GET(req: NextRequest) {
   try {
-    const user = await getAuthUser(req);
+    // Identity-only endpoint — every query below filters by user.id, so the
+    // role/merchant lookup inside getAuthUser was pure per-request overhead.
+    const user = await getAuthUser(req, { skipRoleLookup: true });
     if (!user) {
       return NextResponse.json({ error: 'Authentication required' }, { status: 401 });
     }
@@ -116,11 +136,11 @@ export async function GET(req: NextRequest) {
         .limit(5),
       supabase
         .from('bookings')
-        .select(BOOKING_SUMMARY_SELECT)
+        .select(PENDING_REVIEW_CANDIDATE_SELECT)
         .eq('user_id', user.id)
         .eq('status', 'completed')
         .order('tour_date', { ascending: false })
-        .limit(100),
+        .limit(25),
       supabase
         .from('reviews')
         .select('id, booking_id', { count: 'exact' })

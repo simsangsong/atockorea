@@ -2,7 +2,7 @@
 
 import React, { useMemo, useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import TourListCard from '@/components/tour/TourListCard';
 import { adaptToursListResponse } from '@/src/lib/adapters/tours-adapter';
 import type { TourCardViewModel } from '@/src/types/tours';
@@ -134,7 +134,22 @@ export default function ToursListClient({ initialMediaBySlug }: ToursListClientP
   const copy = useCopy();
   const currencyCtx = useCurrencyOptional();
   const router = useRouter();
-  const searchParams = useSearchParams();
+
+  // CSR-bailout guard (same class as the Wave-2 fix, 2026-07-04): this page is
+  // ISR'd, and a top-level `useSearchParams()` would suspend the static
+  // prerender so the cached HTML ships fallback-only. Filters are deep-link
+  // inputs, so parse `window.location.search` on mount + back/forward instead;
+  // `push()`/`resetFilters()` mirror their own URL writes into this state
+  // (router.replace does not fire popstate) so the URL→state sync effect below
+  // keeps firing exactly as it did with useSearchParams.
+  const [searchParams, setSearchParamsState] = useState(() => new URLSearchParams());
+  useEffect(() => {
+    const readLocationParams = () =>
+      setSearchParamsState(new URLSearchParams(window.location.search));
+    readLocationParams();
+    window.addEventListener('popstate', readLocationParams);
+    return () => window.removeEventListener('popstate', readLocationParams);
+  }, []);
 
   const currencyCode: CurrencyCode = (currencyCtx?.currency ?? 'USD') as CurrencyCode;
   const rates = currencyCtx?.rates ?? null;
@@ -152,6 +167,13 @@ export default function ToursListClient({ initialMediaBySlug }: ToursListClientP
 
   const [tours, setTours] = useState<TourCardViewModel[]>([]);
   const [loading, setLoading] = useState(true);
+  /**
+   * True once a grid fetch has settled (B1). The default entry skips the
+   * `/api/tours` fetch entirely (shelves don't use it), so `loading` alone no
+   * longer means "results are on the way" — this distinguishes "never fetched"
+   * (first filter activation → skeleton) from "fetched empty" (empty state).
+   */
+  const [hasFetchedResults, setHasFetchedResults] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [visibleCount, setVisibleCount] = useState(INITIAL_PAGE_SIZE);
 
@@ -236,22 +258,34 @@ export default function ToursListClient({ initialMediaBySlug }: ToursListClientP
   }, [searchInput]);
 
   // --- Destination master list (fetched once, independent of current filters) ----------
+  // B3: deferred to idle — the pill counts are filter-rail garnish, not initial
+  // content, so this shouldn't compete with hydration on the tab-tap critical path.
   useEffect(() => {
     let mounted = true;
-    fetch('/api/tours/destinations')
-      .then((res) => (res.ok ? res.json() : { destinations: [] }))
-      .then((data) => {
-        if (!mounted) return;
-        const list = Array.isArray(data?.destinations)
-          ? (data.destinations as DestinationOption[])
-          : [];
-        setDestinationOptions(list);
-      })
-      .catch(() => {
-        if (mounted) setDestinationOptions([]);
-      });
+    const load = () => {
+      if (!mounted) return;
+      fetch('/api/tours/destinations')
+        .then((res) => (res.ok ? res.json() : { destinations: [] }))
+        .then((data) => {
+          if (!mounted) return;
+          const list = Array.isArray(data?.destinations)
+            ? (data.destinations as DestinationOption[])
+            : [];
+          setDestinationOptions(list);
+        })
+        .catch(() => {
+          if (mounted) setDestinationOptions([]);
+        });
+    };
+    // Safari still lacks requestIdleCallback — feature-detect, don't assume.
+    const canIdle = typeof window.requestIdleCallback === 'function';
+    const idleId = canIdle
+      ? window.requestIdleCallback(load, { timeout: 2000 })
+      : window.setTimeout(load, 500);
     return () => {
       mounted = false;
+      if (canIdle) window.cancelIdleCallback(idleId);
+      else window.clearTimeout(idleId);
     };
   }, []);
 
@@ -275,6 +309,27 @@ export default function ToursListClient({ initialMediaBySlug }: ToursListClientP
 
   // --- Fetch tours (AbortController cancels stale requests) ----------------------------
   useEffect(() => {
+    // B1 (2026-07-04 perf): the default entry renders the curated shelves
+    // (static catalog + server-seeded admin media) and never shows the flat
+    // grid — fetching 500 tours + per-slug media there was invisible work that
+    // held `loading` for the whole `/api/tours` round trip (2.5s on a CDN
+    // MISS). Skip it; the first real filter/sort/search change fetches.
+    const isDefaultCatalogueEntry =
+      !debouncedSearch &&
+      destination === 'all' &&
+      tourType === 'all' &&
+      sortBy === 'popular' &&
+      !minPrice.trim() &&
+      !maxPrice.trim() &&
+      !features.trim();
+    if (isDefaultCatalogueEntry) {
+      abortRef.current?.abort();
+      abortRef.current = null;
+      setLoading(false);
+      setError(null);
+      return;
+    }
+
     abortRef.current?.abort();
     const controller = new AbortController();
     abortRef.current = controller;
@@ -319,6 +374,7 @@ export default function ToursListClient({ initialMediaBySlug }: ToursListClientP
       .finally(() => {
         if (controller.signal.aborted) return;
         setLoading(false);
+        setHasFetchedResults(true);
       });
 
     return () => {
@@ -372,14 +428,24 @@ export default function ToursListClient({ initialMediaBySlug }: ToursListClientP
       if (mx) p.set('maxPrice', mx);
       if (ft) p.set('features', ft);
       const next = p.toString();
-      return next ? `/tours/list?${next}` : '/tours/list';
+      // Stay on the current path — the page is served from both the bare EN
+      // route and `/{locale}/tours/list`; hardcoding the bare path would bounce
+      // localized visitors through the middleware locale 307 on every filter.
+      const basePath =
+        typeof window !== 'undefined' ? window.location.pathname : '/tours/list';
+      return next ? `${basePath}?${next}` : basePath;
     },
     [debouncedSearch, destination, tourType, sortBy, minPrice, maxPrice, features],
   );
 
   const push = useCallback(
     (overrides?: Parameters<typeof buildUrl>[0]) => {
-      router.replace(buildUrl(overrides));
+      const url = buildUrl(overrides);
+      router.replace(url);
+      // Mirror the write locally — several callers (e.g. type chips) rely on
+      // the URL→state sync effect instead of setting their own state.
+      const qIndex = url.indexOf('?');
+      setSearchParamsState(new URLSearchParams(qIndex >= 0 ? url.slice(qIndex + 1) : ''));
     },
     [router, buildUrl],
   );
@@ -395,7 +461,8 @@ export default function ToursListClient({ initialMediaBySlug }: ToursListClientP
     setMaxPrice('');
     setFeatures('');
     setShowPricePanel(false);
-    router.replace('/tours/list');
+    router.replace(typeof window !== 'undefined' ? window.location.pathname : '/tours/list');
+    setSearchParamsState(new URLSearchParams());
   }, [router]);
 
   // --- Price panel: outside click + ESC ------------------------------------------------
@@ -670,7 +737,10 @@ export default function ToursListClient({ initialMediaBySlug }: ToursListClientP
     `${active ? LIST_CHIP_ACTIVE_CLS : LIST_CHIP_INACTIVE_CLS} h-9 !min-h-0 !min-w-0 shrink-0`;
 
   const visibleTours = tours.slice(0, visibleCount);
-  const isInitialLoading = loading && tours.length === 0;
+  // `!hasFetchedResults` covers the debounce window after the first filter
+  // activation (B1: no eager default fetch) — without it the grid would flash
+  // the empty state for 300ms before the fetch even starts.
+  const isInitialLoading = (loading || !hasFetchedResults) && tours.length === 0;
   const isRefetching = loading && tours.length > 0;
 
   /**
@@ -1186,11 +1256,13 @@ export default function ToursListClient({ initialMediaBySlug }: ToursListClientP
             viewMode === 'editorial' ? 'max-w-[1320px]' : 'max-w-5xl'
           }`}
         >
-          {isInitialLoading ? (
-            <SkeletonGrid count={INITIAL_PAGE_SIZE} />
-          ) : !hasActiveFilters ? (
-            /* Phase 7 B33 — default entry = curated shelves; filter activation flips to the flat grid below. */
+          {!hasActiveFilters ? (
+            /* Phase 7 B33 — default entry = curated shelves; filter activation flips to
+               the flat grid below. Checked BEFORE the loading skeleton (B1): shelves
+               don't depend on the /api/tours fetch, so they must paint immediately. */
             <ShelvesContainer initialMediaBySlug={initialMediaBySlug} />
+          ) : isInitialLoading ? (
+            <SkeletonGrid count={INITIAL_PAGE_SIZE} />
           ) : error ? (
             <div className={`${panelClass} py-6`}>
               <p className="font-medium text-red-600">{error}</p>
@@ -1317,9 +1389,10 @@ export default function ToursListClient({ initialMediaBySlug }: ToursListClientP
         </section>
 
         {/* Catalogue editorial footer — closes the magazine bracket opened by
-            CatalogueHero. Only mounted once a populated catalogue is showing
+            CatalogueHero. Mounted under the shelves (default entry — B1 skips the
+            grid fetch there, so don't gate on `tours`) and under a populated grid
             (skip on initial load / error / empty state). */}
-        {!isInitialLoading && !error && tours.length > 0 ? (
+        {!hasActiveFilters || (!isInitialLoading && !error && tours.length > 0) ? (
           <CatalogueFooterStrip />
         ) : null}
       </main>

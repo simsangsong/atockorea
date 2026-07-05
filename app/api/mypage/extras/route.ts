@@ -69,7 +69,8 @@ function translatedString(
 
 export async function GET(req: NextRequest) {
   try {
-    const user = await getAuthUser(req);
+    // Identity-only endpoint — see summary/route.ts; role is never read here.
+    const user = await getAuthUser(req, { skipRoleLookup: true });
     if (!user) {
       return NextResponse.json({ error: 'Authentication required' }, { status: 401 });
     }

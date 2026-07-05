@@ -335,6 +335,19 @@ function routeRequest(request: NextRequest): NextResponse {
       return NextResponse.next();
     }
 
+    // Same T1 treatment for the catalogue: bare `/tours/list` is the canonical
+    // ENGLISH ISR page (cookie-varying it made every bottom-nav tap a CDN
+    // MISS). Explicit non-en choosers go to the real localized route
+    // `app/[locale]/tours/list`.
+    if (/^\/tours\/list\/?$/.test(pathname)) {
+      if (cookieLocale && cookieLocale !== DEFAULT_LOCALE) {
+        const newUrl = new URL(request.url);
+        newUrl.pathname = `/${cookieLocale}/tours/list`;
+        return NextResponse.redirect(newUrl, 307);
+      }
+      return NextResponse.next();
+    }
+
     if (locale !== DEFAULT_LOCALE) {
       const newUrl = new URL(request.url);
       newUrl.pathname = `/${locale}${pathname === '/' ? '' : pathname}`;
@@ -374,6 +387,18 @@ function routeRequest(request: NextRequest): NextResponse {
   // through instead of the legacy rewrite-to-`?locale=` (which forced dynamic
   // SSR). `/en/tour-product/x` redirects to the canonical bare path.
   if (/^\/tour-product\/[^/]+\/?$/.test(pathWithoutLocale)) {
+    if (matchedLocale === 'en') {
+      const u = request.nextUrl.clone();
+      u.pathname = pathWithoutLocale;
+      return NextResponse.redirect(u, 307);
+    }
+    return NextResponse.next();
+  }
+
+  // Locale-prefixed catalogue is a REAL route too (`app/[locale]/tours/list`,
+  // its own ISR cache entry) — pass through instead of the legacy
+  // rewrite-to-`?locale=` (which forced dynamic SSR).
+  if (/^\/tours\/list\/?$/.test(pathWithoutLocale)) {
     if (matchedLocale === 'en') {
       const u = request.nextUrl.clone();
       u.pathname = pathWithoutLocale;
