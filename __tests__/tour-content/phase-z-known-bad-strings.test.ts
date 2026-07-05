@@ -49,6 +49,15 @@ function readBundle(slug: string): string {
   return readFileSync(join(ROOT, slug, `${slug}.en.json`), "utf8");
 }
 
+const ALL_LOCALES = ["en", "ko", "ja", "zh", "zh-TW", "es"] as const;
+
+function localeBundlePaths(slug: string): Array<{ locale: string; path: string }> {
+  return ALL_LOCALES.map((locale) => ({
+    locale,
+    path: join(ROOT, slug, `${slug}.${locale}.json`),
+  })).filter(({ path }) => existsSync(path));
+}
+
 /**
  * Patterns that must NOT appear in ANY EN bundle. Each entry is
  * `[needle, description]`; `needle` is searched as a plain substring
@@ -181,6 +190,44 @@ describe("Phase Z — catalog known-bad strings sweep", () => {
     });
 
     it("reports zero regex offenders across all bundles", () => {
+      expect(offenders).toEqual([]);
+    });
+  });
+
+  describe("haenyeo stale twice-daily timing (must be 0 in EVERY locale bundle)", () => {
+    // The demo runs once daily at 14:00 (operator ground truth 2026-05-24).
+    // The literal needles above only cover EN bundles, and non-EN locales
+    // write the stale pair with separators the needles miss (13:30·15:00,
+    // 13:30・15:00, 13:30与15:00, "13:30 y las 15:00") — that gap let the
+    // stale fact resurface in all 6 locales of two Jeju bundles (fixed in
+    // PR #253). This sweep scans every locale file with a separator-agnostic
+    // regex, scoped to haenyeo context so a legitimate future 13:30–15:00
+    // time range elsewhere in an itinerary doesn't false-positive.
+    const STALE_PAIR = /13:30.{0,20}15:00/g;
+    const HAENYEO_CONTEXT = /haenyeo|해녀|海女|ヘニョ/i;
+    const CONTEXT_WINDOW = 500;
+
+    const offenders: Array<{ slug: string; locale: string; ctx: string }> = [];
+
+    beforeAll(() => {
+      for (const slug of ALL_SLUGS) {
+        for (const { locale, path } of localeBundlePaths(slug)) {
+          const raw = readFileSync(path, "utf8");
+          for (const m of raw.matchAll(STALE_PAIR)) {
+            const idx = m.index ?? 0;
+            const around = raw.slice(
+              Math.max(0, idx - CONTEXT_WINDOW),
+              idx + CONTEXT_WINDOW,
+            );
+            if (HAENYEO_CONTEXT.test(around)) {
+              offenders.push({ slug, locale, ctx: findContextLine(raw, idx) });
+            }
+          }
+        }
+      }
+    });
+
+    it("reports zero stale haenyeo timings across all locales", () => {
       expect(offenders).toEqual([]);
     });
   });
