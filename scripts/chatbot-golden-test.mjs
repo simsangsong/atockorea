@@ -293,6 +293,21 @@ const suites = {
       check("reply includes A2C reference (C-10)", /A2C-[A-F0-9]{8}/i.test(t5.json.reply ?? "")),
     ], t5);
     if (t5.json.checkout_url) artifacts.bookings.push(t5.json.checkout_url);
+
+    // W6.4 — change-request intake on the booking just created (verified by
+    // reference + email; files a ticket, never mutates the booking).
+    const ref = (t5.json.reply ?? "").match(/A2C-[A-F0-9]{8}/i)?.[0];
+    if (ref) {
+      const cr = await postChat([
+        { role: "user", content: `I need to change my booking to a different date. Reference ${ref}, email ${TEST_EMAIL}.` },
+      ]);
+      record("quote", "change-request intake files a ticket (W6.4)", [
+        check("HTTP 200", cr.status === 200),
+        check("ticket filed", typeof cr.json.ticket_id === "number"),
+        check("says nothing changed yet", containsAny(cr.json.reply, ["changed yet", "변경되지 않았"])),
+      ], cr);
+      if (cr.json.ticket_id) artifacts.tickets.push(cr.json.ticket_id);
+    }
   },
 
   // §E 엣지 견적: 과거 날짜 거부 (C-18). No booking is ever created here.
@@ -420,6 +435,21 @@ const suites = {
         check("HTTP 200", r.status === 200),
         check("mentions Jeju + weather-ish content", containsAny(r.json.reply, ["jeju", "제주"]) && containsAny(r.json.reply, ["°C", "rain", "weather", "forecast", "날씨", "비"])),
       ], r);
+    }
+    {
+      // W6.2 — deterministic two-tour comparison from the registry.
+      const cat = await fetch(`${BASE}/api/agent/v1/tours`).then((x) => x.json()).catch(() => null);
+      const [a, b] = cat?.tours ?? [];
+      if (a && b) {
+        const r = await postChat([
+          { role: "user", content: `What's the difference between the "${a.title}" and the "${b.title}"?` },
+        ]);
+        record("instant", "two-tour comparison with both cards (W6.2)", [
+          check("HTTP 200", r.status === 200),
+          check("mentions both tours", (r.json.reply ?? "").includes(a.title) && (r.json.reply ?? "").includes(b.title)),
+          check("exactly two cards", Array.isArray(r.json.cards) && r.json.cards.length === 2),
+        ], r);
+      }
     }
   },
 

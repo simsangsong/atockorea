@@ -62,6 +62,8 @@ import {
 } from "@/lib/chatbot/quoteFlow";
 import { buildTourCardsFromReply, type TourCardPayload } from "@/lib/chatbot/tourCards";
 import { buildInstantAnswer } from "@/lib/chatbot/instantAnswers";
+import { buildComparisonAnswer } from "@/lib/chatbot/tourCompare";
+import { bookingChangeReceivedReply } from "@/lib/chatbot/bookingChange";
 import {
   emailConfirmChips,
   quoteConfirmChips,
@@ -312,7 +314,7 @@ async function createSupportTicketAndNotify(
   input: {
     userMessage: string;
     assistantReply: string;
-    reason: "user_requested_human" | "sensitive_topic" | "keyword_match";
+    reason: "user_requested_human" | "sensitive_topic" | "keyword_match" | "booking_change_request";
     priority?: "normal" | "high";
     model?: string;
     elapsedMs?: number;
@@ -327,8 +329,10 @@ async function createSupportTicketAndNotify(
 
   const summary = buildAdminSummary(input.userMessage, {
     escalate: true,
-    reason: input.reason,
-    category: input.reason === "user_requested_human" ? "human_handoff" : null,
+    // buildAdminSummary's union predates W6.4 — map the change-request reason
+    // onto its closest bucket for the summary; the TICKET keeps the real one.
+    reason: input.reason === "booking_change_request" ? "keyword_match" : input.reason,
+    category: input.reason === "user_requested_human" ? "human_handoff" : "booking_change_request" === input.reason ? "booking_change" : null,
   });
 
   const { data: ticket } = await sb
@@ -962,6 +966,42 @@ export async function POST(req: NextRequest) {
     }
   }
 
+  // W6.4 (G-5) — verified customer asking to change/cancel/reschedule: file a
+  // structured change-request ticket on the spot (admin-approval gate — the
+  // bot never writes to the booking) and say clearly that nothing changed yet.
+  if (verifiedBookingContext && bookingWriteRequest && !debugNoSideEffects) {
+    const changeLocale = inferLocaleFromText(latestUserMessage, locale) ?? locale;
+    const changeSb = makeServiceRoleClient();
+    let changeTicketId: number | null = null;
+    if (changeSb) {
+      try {
+        changeTicketId = await createSupportTicketAndNotify(changeSb, ctx, {
+          userMessage: `[booking change request]\n${latestUserMessage}\n\n${verifiedBookingContext.slice(0, 1200)}`,
+          assistantReply: bookingChangeReceivedReply(changeLocale, null),
+          reason: "booking_change_request",
+          priority: "high",
+        });
+      } catch (changeErr) {
+        console.error("[tour-product/assistant] change-request ticket error:", (changeErr as Error).message);
+      }
+    }
+    // Ticket write failed → fall back to the old behavior (LLM + forced
+    // handoff offer) instead of claiming an intake that didn't happen.
+    if (changeTicketId !== null) {
+      return applySessionCookie(
+        NextResponse.json({
+          reply: bookingChangeReceivedReply(changeLocale, changeTicketId),
+          ticket_id: changeTicketId,
+          escalated: true,
+          escalation_reason: "booking_change_request",
+          handoff_offered: false,
+          debug_intent: debugNoSideEffects ? detectedIntent : undefined,
+        }),
+        session,
+      );
+    }
+  }
+
   if (detectedIntent.intent === "legal" && isPrivacyRequestQuestion(latestUserMessage)) {
     return applySessionCookie(
       NextResponse.json({
@@ -1006,14 +1046,46 @@ export async function POST(req: NextRequest) {
       detectedIntent: detectedIntent.intent,
     });
 
-  // Wave 6 — deterministic instant answers (haenyeo schedule / weather /
-  // availability). Low-stakes intents only: recommendation, policy, quote,
-  // and booking questions keep their richer existing paths, and an active
-  // quote flow is never interrupted.
+  // W6.2 — deterministic tour comparison: when the visitor names two
+  // catalogue products and asks the difference, answer from the registry
+  // (price/duration/stops/rating) with both cards. Fuzzy title matching —
+  // fewer than two confident hits falls through to the model.
   if (
     !verifiedBookingContext &&
     !quoteFlowSticky &&
-    (detectedIntent.intent === "unknown" || detectedIntent.intent === "poi")
+    detectedIntent.intent !== "quote_request" &&
+    detectedIntent.intent !== "booking_specific" &&
+    detectedIntent.intent !== "support"
+  ) {
+    const cmpLocale = inferLocaleFromText(latestUserMessage, locale) ?? locale;
+    const comparison = buildComparisonAnswer(latestUserMessage, cmpLocale);
+    if (comparison) {
+      return applySessionCookie(
+        NextResponse.json({
+          reply: comparison.reply,
+          ticket_id: null,
+          escalated: false,
+          escalation_reason: null,
+          handoff_offered: false,
+          cards: comparison.cards.length > 0 ? comparison.cards : undefined,
+          chips: comparison.chips.length > 0 ? comparison.chips : undefined,
+          debug_intent: debugNoSideEffects ? detectedIntent : undefined,
+        }),
+        session,
+      );
+    }
+  }
+
+  // Wave 6 — deterministic instant answers (haenyeo schedule / weather /
+  // availability). Per-kind intent policy lives in buildInstantAnswer (e.g.
+  // forecast questions often classify as policy/tour_catalog); an active
+  // quote flow or verified-booking conversation is never interrupted.
+  if (
+    !verifiedBookingContext &&
+    !quoteFlowSticky &&
+    detectedIntent.intent !== "quote_request" &&
+    detectedIntent.intent !== "booking_specific" &&
+    detectedIntent.intent !== "support"
   ) {
     const instantLocale = inferLocaleFromText(latestUserMessage, locale) ?? locale;
     try {
@@ -1022,6 +1094,7 @@ export async function POST(req: NextRequest) {
         locale: instantLocale,
         tourSlug: isSiteAssistant ? null : tourProductSlug,
         todayISO: kstTodayISO(),
+        intent: detectedIntent.intent,
       });
       if (instant) {
         return applySessionCookie(

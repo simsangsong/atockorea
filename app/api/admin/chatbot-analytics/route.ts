@@ -13,6 +13,7 @@
  */
 import { NextRequest, NextResponse } from "next/server";
 import { requireAdmin, AdminAuthFailure, adminAuthJsonResponse } from "@/lib/auth";
+import { computeResolutionRate } from "@/lib/admin/chatbot-resolution";
 import { createServerClient } from "@/lib/supabase";
 
 export const runtime = "nodejs";
@@ -150,6 +151,12 @@ export async function GET(req: NextRequest) {
       // Deflection = share of user turns answered WITHOUT a human handoff.
       // (Honest: not "resolution" — we lack a positive resolved signal.)
       deflectionRate: userMessages ? (userMessages - escalatedMessages) / userMessages : null,
+      // W6.5 — resolution proxy: turns that neither escalated nor drew a 👎.
+      resolutionRate: computeResolutionRate({
+        userMessages,
+        escalatedMessages,
+        negativeFeedback: negFb,
+      }),
       funnel,
       reliability: {
         assistantTurns24h,

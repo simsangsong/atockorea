@@ -20,6 +20,8 @@ type Analytics = {
   volume: { sessions: number; messages: number; userMessages: number; escalatedMessages: number; tickets: number };
   escalationRate: number;
   deflectionRate: number | null;
+  /** W6.5 — turns that neither escalated nor drew a 👎 (conservative proxy). */
+  resolutionRate?: number | null;
   funnel: { bookings: number; confirmed: number; pending: number; valueKrw: number };
   reliability?: {
     assistantTurns24h: number;
@@ -188,12 +190,18 @@ export default function ChatbotAnalyticsPage() {
       {header}
 
       {/* Volume + rates (escalation now surfaced alongside deflection) */}
-      <div className="grid grid-cols-2 gap-3 lg:grid-cols-5">
+      <div className="grid grid-cols-2 gap-3 lg:grid-cols-6">
         <StatCard label="세션" value={data.volume.sessions.toLocaleString()} />
         <StatCard
           label="사용자 질문"
           value={data.volume.userMessages.toLocaleString()}
           sublabel={`총 메시지 ${data.volume.messages.toLocaleString()}`}
+        />
+        {/* W6.5 — 해결률(보수적 프록시): 에스컬레이션도 👎도 없던 턴 비율 */}
+        <StatCard
+          label="해결률"
+          value={pct(data.resolutionRate ?? null)}
+          sublabel="에스컬레이션·👎 미발생 턴"
         />
         <StatCard
           label="에스컬레이션율"

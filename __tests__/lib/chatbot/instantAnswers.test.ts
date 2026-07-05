@@ -2,7 +2,7 @@ import { buildInstantAnswer } from "@/lib/chatbot/instantAnswers";
 
 const TODAY = "2026-07-05";
 
-const base = { locale: "en" as const, tourSlug: null, todayISO: TODAY };
+const base = { locale: "en" as const, tourSlug: null, todayISO: TODAY, intent: "unknown" };
 
 describe("W6.7 haenyeo instant answer", () => {
   it("answers the schedule deterministically with 14:00 (en/ko)", async () => {
@@ -112,5 +112,29 @@ describe("W6.6 weather instant answer", () => {
     });
     expect(r?.kind).toBe("weather");
     expect(r?.reply).toContain("DMZ");
+  });
+});
+
+describe("intent gating (post-batch12)", () => {
+  const realFetch = global.fetch;
+  afterEach(() => { global.fetch = realFetch; });
+
+  it("weather fires for policy-classified forecast questions without policy words", async () => {
+    global.fetch = jest.fn(async () => ({
+      ok: true,
+      json: async () => ({ daily: { time: ["2026-07-05", "2026-07-06"], weather_code: [1, 1], temperature_2m_max: [30, 30], temperature_2m_min: [24, 24], precipitation_probability_max: [10, 10] } }),
+    })) as unknown as typeof fetch;
+    const r = await buildInstantAnswer({ ...base, intent: "policy", message: "What's the weather in Jeju tomorrow?" });
+    expect(r?.kind).toBe("weather");
+  });
+
+  it("weather stays silent on rain-cancellation POLICY questions", async () => {
+    const r = await buildInstantAnswer({ ...base, intent: "policy", message: "If it rains in Jeju do I get a refund or can I cancel?" });
+    expect(r).toBeNull();
+  });
+
+  it("availability does not fire for recommendation-classified turns", async () => {
+    const r = await buildInstantAnswer({ ...base, intent: "tour_recommendation", message: "which tours are available?" });
+    expect(r).toBeNull();
   });
 });
