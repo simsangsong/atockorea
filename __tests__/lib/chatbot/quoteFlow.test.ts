@@ -424,3 +424,52 @@ describe("extractEmailFromText (W2.10 deterministic override)", () => {
     expect(extractEmailFromText("no email here")).toBeNull();
   });
 });
+
+// ── 2026-07-04 incident — deterministic relative dates ──────────────────────
+
+import { resolveRelativeDateToken, addDaysISO, kstTodayISO } from "@/lib/chatbot/quoteFlow";
+
+describe("resolveRelativeDateToken (07-04 incident)", () => {
+  const today = "2026-07-05";
+
+  it("resolves tomorrow in all supported languages", () => {
+    for (const msg of [
+      "quote for tomorrow please",
+      "내일로 견적 내주세요",
+      "明日でお願いします",
+      "明天可以吗",
+      "para mañana por favor",
+    ]) {
+      expect(resolveRelativeDateToken(msg, today)).toBe("2026-07-06");
+    }
+  });
+
+  it("day-after-tomorrow outranks the tomorrow substring", () => {
+    expect(resolveRelativeDateToken("the day after tomorrow works", today)).toBe("2026-07-07");
+    expect(resolveRelativeDateToken("모레로 해주세요", today)).toBe("2026-07-07");
+    expect(resolveRelativeDateToken("後天出发", today)).toBe("2026-07-07");
+  });
+
+  it("resolves today and crosses month boundaries", () => {
+    expect(resolveRelativeDateToken("오늘 가능해요?", today)).toBe("2026-07-05");
+    expect(addDaysISO("2026-07-31", 1)).toBe("2026-08-01");
+  });
+
+  it("returns null when no relative word is present", () => {
+    expect(resolveRelativeDateToken("October 10th please", today)).toBeNull();
+  });
+
+  it("kstTodayISO is a day ahead of UTC during the UTC evening", () => {
+    // 2026-07-04 20:00 UTC = 2026-07-05 05:00 KST
+    expect(kstTodayISO(Date.UTC(2026, 6, 4, 20, 0, 0))).toBe("2026-07-05");
+    expect(kstTodayISO(Date.UTC(2026, 6, 4, 10, 0, 0))).toBe("2026-07-04");
+  });
+});
+
+describe("buildQuoteReply states the tour date (07-04 incident visibility)", () => {
+  it("includes the requested date in the summary", () => {
+    const d: QuoteDraft = { ...base, region: "busan", requestedDate: "2026-10-10", party: 4, durationHours: 8, language: "en" };
+    expect(buildQuoteReply(d, "en").reply).toContain("2026-10-10");
+    expect(buildQuoteReply({ ...d, language: "ko" }, "ko").reply).toContain("2026-10-10");
+  });
+});

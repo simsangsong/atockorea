@@ -57,6 +57,8 @@ import {
   quoteFlowStageFromReply,
   checkoutReadyReply,
   isQuoteFlowFollowUp,
+  resolveRelativeDateToken,
+  kstTodayISO,
 } from "@/lib/chatbot/quoteFlow";
 import { buildTourCardsFromReply, type TourCardPayload } from "@/lib/chatbot/tourCards";
 import {
@@ -65,7 +67,8 @@ import {
   followUpChipsForIntent,
 } from "@/lib/chatbot/followUpChips";
 import { allowRequestDurable } from "@/lib/chatbot/requestRateLimit";
-import { retrieveKnowledge, buildRagContextText } from "@/lib/rag/retrieve";
+import { retrieveKnowledge, buildRagContextText, type RetrievedChunk } from "@/lib/rag/retrieve";
+import { buildAnswerSources, type AnswerSource } from "@/lib/chatbot/answerSources";
 import {
   recommendToursViaMatcher,
   buildMatcherContextText,
@@ -406,6 +409,8 @@ type FinalizeAssistantTurnInput = {
   genAI: GoogleGenerativeAI;
   /** W0.5 — token/cost telemetry from the generation call (null if unavailable). */
   usage?: ChatUsage | null;
+  /** W4.6 — grounding sources for the trust-badge row (RAG-injected chunks). */
+  ragSources?: AnswerSource[];
 };
 
 type FinalizeAssistantTurnResult = {
@@ -418,6 +423,8 @@ type FinalizeAssistantTurnResult = {
   cards: TourCardPayload[];
   /** W4.3 — contextual one-tap follow-up chips. */
   chips: string[];
+  /** W4.6 — grounding-source badges (empty when the answer wasn't RAG-backed). */
+  sources: AnswerSource[];
 };
 
 async function finalizeAssistantTurn(
@@ -471,6 +478,9 @@ async function finalizeAssistantTurn(
   // ──────────────────────────────────────────────────────────────────────
   let ticketCreated: number | null = null;
   let escalationReason: string | null = null;
+  // W4.6 — grounding badges travel with the reply; dropped when the reply is
+  // overridden below (a fallback/handoff message is NOT grounded in them).
+  let sources = input.ragSources ?? [];
   // A write request on a verified booking forces a support-handoff offer so we
   // never imply the change was done in-chat.
   let forceHandoffOffer = bookingWriteRequest;
@@ -480,6 +490,7 @@ async function finalizeAssistantTurn(
   if (!verifiedBookingContext && replyLooksMisrouted(activeIntent.intent, replyText)) {
     escalationReason = "low_confidence";
     forceHandoffOffer = true;
+    sources = [];
     if (activeIntent.intent === "policy") {
       replyText = policyFallbackReply(answerLocale);
     } else if (activeIntent.intent === "booking_specific") {
@@ -631,6 +642,7 @@ async function finalizeAssistantTurn(
     chips: followUpChipsForIntent(activeIntent.intent, answerLocale, {
       hasCards: cards.length > 0,
     }),
+    sources,
   };
 }
 
@@ -998,7 +1010,9 @@ export async function POST(req: NextRequest) {
     // faster and 3x cheaper. The main model is the automatic fallback.
     const quoteMainModel = process.env.GEMINI_TOUR_PRODUCT_ASSISTANT_MODEL?.trim() || DEFAULT_GEMINI_MODEL;
     const quoteModel = process.env.GEMINI_QUOTE_EXTRACT_MODEL?.trim() || "gemini-2.5-flash-lite";
-    const todayISO = new Date().toISOString().slice(0, 10);
+    // KST, not UTC — every UTC evening "today/tomorrow" was already a day
+    // behind for travellers planning Korea dates (part of the 07-04 incident).
+    const todayISO = kstTodayISO();
     const draft = await extractQuoteDraft(
       new GoogleGenerativeAI(key),
       quoteModel,
@@ -1007,6 +1021,27 @@ export async function POST(req: NextRequest) {
       quoteMainModel,
     );
     if (!draft.language) draft.language = quoteLocale;
+    // 07-04 incident: "tomorrow" in the latest turn must beat any stale
+    // explicit date the extractor picked out of older history — resolved
+    // deterministically server-side, in KST.
+    const relativeDate = resolveRelativeDateToken(latestUserMessage, todayISO);
+    if (relativeDate) {
+      draft.requestedDate = relativeDate;
+      draft.dateIssue = null;
+    } else if (!draft.requestedDate || draft.dateIssue === "past") {
+      // Multi-turn shape ("tomorrow" → next turn "4 people, 8 hours"): when
+      // extraction came back empty or past, the nearest relative-date word in
+      // recent user turns still wins. Never overrides a valid explicit date.
+      const recentUserTurns = messages.filter((m) => m.role === "user").slice(-4).reverse();
+      for (const m of recentUserTurns) {
+        const d = resolveRelativeDateToken(m.content, todayISO);
+        if (d) {
+          draft.requestedDate = d;
+          draft.dateIssue = null;
+          break;
+        }
+      }
+    }
     // W2.10 — a direct answer to the email / email-confirm prompt wins over
     // the fuzzy extraction (an older address in the history could otherwise
     // shadow the correction the customer just typed).
@@ -1097,6 +1132,8 @@ export async function POST(req: NextRequest) {
         return respond(checkoutReadyReply(result.checkoutPath, quoteLocale, result.bookingReference), {
           checkout_url: result.checkoutPath,
           booking_reference: result.bookingReference,
+          // W4.6 — fixed trust badge under the checkout hand-off.
+          quote_trust: true,
         });
       }
       // disabled / insert_failed → fall back to the quote + a gentle retry.
@@ -1104,8 +1141,8 @@ export async function POST(req: NextRequest) {
     }
 
     // Quote shown; not yet booking (or debug mode) → ask to confirm, with
-    // one-tap yes/no chips (W4.3).
-    return respond(quoteReply, { chips: quoteConfirmChips(quoteLocale) });
+    // one-tap yes/no chips (W4.3) and the fixed trust badge (W4.6).
+    return respond(quoteReply, { chips: quoteConfirmChips(quoteLocale), quote_trust: true });
   }
 
   const productContext =
@@ -1158,6 +1195,7 @@ export async function POST(req: NextRequest) {
   // Falls back to the legacy keyword builders (siteKnowledge + approved Q&A) on
   // any failure or when disabled (CHAT_RAG=0 / no OPENAI_API_KEY).
   let ragContext = "";
+  let ragChunks: RetrievedChunk[] = [];
   // On whenever an OpenAI key is present; set CHAT_RAG=0 as a kill switch to
   // instantly fall back to the legacy keyword builders.
   const ragEnabled = process.env.CHAT_RAG !== "0" && Boolean(process.env.OPENAI_API_KEY?.trim());
@@ -1193,6 +1231,7 @@ export async function POST(req: NextRequest) {
           limit: 8,
         });
         ragContext = buildRagContextText(chunks, { maxChars: 8000 });
+        ragChunks = chunks;
       } catch (ragErr) {
         console.error("[tour-product/assistant] RAG retrieval error:", (ragErr as Error).message);
       }
@@ -1235,6 +1274,9 @@ export async function POST(req: NextRequest) {
       console.error("[tour-product/assistant] approved QA lookup error:", (qaErr as Error).message);
     }
   }
+
+  // W4.6 — grounding badges for whatever chunks actually made it into context.
+  const ragSources = ragContext ? buildAnswerSources(ragChunks, answerLocale) : [];
 
   const knowledgeSections = ragContext
     ? [
@@ -1418,6 +1460,7 @@ export async function POST(req: NextRequest) {
             priorMemory,
             genAI,
             usage,
+            ragSources,
           });
 
           // done.reply is the authoritative text — the client snaps the bubble
@@ -1433,6 +1476,7 @@ export async function POST(req: NextRequest) {
               checkout_url: null,
               cards: finalized.cards.length > 0 ? finalized.cards : undefined,
               chips: finalized.chips.length > 0 ? finalized.chips : undefined,
+              sources: finalized.sources.length > 0 ? finalized.sources : undefined,
             }),
           );
 
@@ -1493,6 +1537,7 @@ export async function POST(req: NextRequest) {
                   memoryKey,
                   priorMemory,
                   genAI,
+                  ragSources,
                 });
                 controller.enqueue(
                   sseEvent("done", {
@@ -1504,6 +1549,7 @@ export async function POST(req: NextRequest) {
                     checkout_url: null,
                     cards: finalized.cards.length > 0 ? finalized.cards : undefined,
                     chips: finalized.chips.length > 0 ? finalized.chips : undefined,
+                    sources: finalized.sources.length > 0 ? finalized.sources : undefined,
                   }),
                 );
               } else {
@@ -1665,6 +1711,7 @@ export async function POST(req: NextRequest) {
     priorMemory,
     genAI,
     usage,
+    ragSources,
   });
 
   const resp = NextResponse.json({
@@ -1675,6 +1722,7 @@ export async function POST(req: NextRequest) {
     handoff_offered: finalized.handoff_offered,
     cards: finalized.cards.length > 0 ? finalized.cards : undefined,
     chips: finalized.chips.length > 0 ? finalized.chips : undefined,
+    sources: finalized.sources.length > 0 ? finalized.sources : undefined,
     debug_intent: debugNoSideEffects ? activeIntent : undefined,
   });
   return applySessionCookie(resp, session);

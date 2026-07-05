@@ -172,6 +172,10 @@ const suites = {
         check("HTTP 200", r.status === 200),
         check("mentions 24h / refund", containsAny(r.json.reply, ["24", "refund"])),
         check("no self-negation ('cannot book')", !containsAny(r.json.reply, ["i cannot book", "unable to book", "cannot make bookings"])),
+        check(
+          "grounding sources returned (W4.6)",
+          Array.isArray(r.json.sources) && r.json.sources.length > 0 && r.json.sources.every((s) => s.label),
+        ),
       ], r);
     }
     {
@@ -266,7 +270,9 @@ const suites = {
     record("quote", "turn2: deterministic price", [
       check("HTTP 200", t2.status === 200),
       check("shows a ₩ price", containsAny(t2.json.reply, ["₩", "KRW"]) && hasDigits(t2.json.reply)),
+      check("states the tour date (07-04 incident)", (t2.json.reply ?? "").includes("2026-10-10")),
       check("confirm chips returned (W4.3)", Array.isArray(t2.json.chips) && t2.json.chips.length > 0),
+      check("trust badge flag (W4.6)", t2.json.quote_trust === true),
     ], t2);
     record("quote", "turn3: multiturn stickiness (C-9)", [
       check("HTTP 200", t3.status === 200),
@@ -301,6 +307,21 @@ const suites = {
       check("no price offered for a past date", !(containsAny(t2.json.reply, ["₩"]) && containsAny(t2.json.reply, ["checkout", "결제", "예약"]) && !containsAny(t2.json.reply, ["passed", "지난", "past"]))),
       check("explains the date problem", containsAny(t2.json.reply, ["passed", "지난", "already", "date"])),
     ], t2);
+
+    // 07-04 incident regression: "tomorrow" must price for KST-tomorrow, never
+    // loop on a stale/past date pulled from history.
+    const kstTomorrow = new Date(Date.now() + (9 + 24) * 3600 * 1000).toISOString().slice(0, 10);
+    const relTurns = await conversation([
+      "Quote for a private Busan tour tomorrow please",
+      "4 people, 8 hours",
+    ]);
+    const r2 = relTurns[1];
+    record("edge-quote", `relative date "tomorrow" → ${kstTomorrow} (07-04 incident)`, [
+      check("HTTP 200", r2.status === 200),
+      check("prices instead of rejecting the date", containsAny(r2.json.reply, ["₩", "KRW"])),
+      check("not treated as a past date", !containsAny(r2.json.reply, ["passed", "지난", "already passed"])),
+      check(`quote states ${kstTomorrow}`, (r2.json.reply ?? "").includes(kstTomorrow)),
+    ], r2);
   },
 
   // §E W1.2/W1.3 — stale-catalog blocking + price freshness.

@@ -60,3 +60,16 @@ describe("isMemoryRelevantIntent", () => {
     (intent) => expect(isMemoryRelevantIntent(intent)).toBe(false),
   );
 });
+
+// C-33 — partial booking references must not survive the scrub.
+import { scrubPii as scrubPiiC33 } from "@/lib/chatbot/sessionMemory";
+
+describe("scrubPii partial references (C-33)", () => {
+  it("drops partial and spaced A2C references", () => {
+    expect(scrubPiiC33("ref A2C-12 noted")).toBe("ref noted");
+    expect(scrubPiiC33("ref A2C 9F52 noted")).toBe("ref noted");
+  });
+  it("keeps travel dates (intentional)", () => {
+    expect(scrubPiiC33("wants Jeju around Oct 12, party of 4")).toContain("Oct 12");
+  });
+});
