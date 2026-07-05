@@ -115,3 +115,20 @@
 - **`?party=`/필터 딥링크**: searchParams는 클라이언트에서만 소비 — ISR과 충돌 없음(T1 선례).
 - **mypage 인증 의미론 불변**: 게이트·리다이렉트·PII 노출 없음(정적 셸은 스켈레톤뿐).
 - **revalidateTag 금지** — revalidatePath만(Next 16, T1 결정).
+
+---
+
+## 5. 결과 — 출하 + 프로덕션 after-metrics (2026-07-05)
+
+**PR #256 머지 `8546bd90`.** 배포 삽화: 머지 시점에 Vercel 계정이 `DEPLOYMENT_DISABLED`(402, 결제 문제)여서 빌드가 스킵됨 — 결제 복구 후에도 **구버전이 서빙되고 있었음**(쿠키 307은 구 미들웨어도 하던 동작이라 신버전 증거가 아님 — 판별 기준은 `/tours/list`의 cache-control). 빈 커밋 `074b3a1f`로 재빌드 트리거하여 해결.
+
+| 경로 | Before (G0) | After (실측) |
+|------|-------------|--------------|
+| `/tours/list` | **MISS 매회** (no-store), TTFB 0.62~1.53s, 문서 0.85~2.08s, SSR 투어링크 **0**(CSR bailout 빈 셸) | **HIT**, TTFB **0.14~0.33s**, 문서 **0.21~0.38s**, SSR 투어링크 **22** (268KB 콘텐츠) |
+| `/ko/tours/list` | (쿠키 varying으로 캐시 불가) | on-demand ISR fill 1회(2.8s) 후 **HIT, TTFB 0.11s**, SSR 링크 22 |
+| 기본 진입 그리드 대기 | `/api/tours` MISS **+2.5s** (셸브가 이걸 기다림) | **0** — fetch 자체 스킵, 셸브 즉시 |
+| `/mypage` | HIT(이미 정적)·클라 API 왕복 과다 | HIT 유지 + API당 DB 1~2왕복 절감(C1)+슬림 쿼리(C2) |
+
+체감: Tours 탭 최악 ~4.5s → **CDN 히트 시 ~0.2~0.4s + 셸브 즉시 렌더**. 실브라우저 QA(필터 클릭·딥링크·로케일 경로 유지·mypage 랜딩 풀로드) 통과.
+
+**보류/후속**: C3(프로필 3중 조회)·C4(summary+extras 통합)·JWT 로컬검증·D1(카탈로그 275KB 클라번들) — Speed Insights 관찰 후 판단.
