@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { notFound, redirect } from "next/navigation";
+import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ChevronLeft } from "lucide-react";
-import { ITINERARY_BUILDER_ENABLED } from "@/lib/itinerary-builder/builder-visibility";
 import { SitePageShell } from "@/src/components/layout/SitePageShell";
 import { createServerClient } from "@/lib/supabase";
 import { quote, tierForLocale, jejuZone, type CruisePort, type JejuPickupZone, type PriceInput, type PricingTrack } from "@/lib/quote-engine/pricing-policy";
@@ -45,8 +44,12 @@ export default async function ItineraryBuilderCheckoutPage({
 }: {
   searchParams: Promise<{ bookingId?: string }>;
 }) {
-  // Klook prep 2026-06-29: builder hidden site-wide.
-  if (!ITINERARY_BUILDER_ENABLED) redirect("/tours/list");
+  // NOTE (2026-07-05): checkout is deliberately NOT gated on
+  // ITINERARY_BUILDER_ENABLED. The Klook-prep gate (6/29) accidentally locked
+  // this page too, silently killing the CHATBOT quote funnel's payment
+  // hand-off for a week (the bot's checkout link client-redirected to
+  // /tours/list). This page is a transactional endpoint reached only via a
+  // bookingId deep-link — it is not discoverable builder UI.
   const sp = await searchParams;
   const bookingId = typeof sp.bookingId === "string" ? sp.bookingId.trim() : "";
   if (!bookingId) notFound();

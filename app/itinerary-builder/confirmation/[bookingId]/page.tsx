@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { notFound, redirect } from "next/navigation";
+import { notFound } from "next/navigation";
 import Link from "next/link";
 import { CheckCircle2, Clock, MapPin, ShieldCheck, Wallet, ArrowRight } from "lucide-react";
-import { ITINERARY_BUILDER_ENABLED } from "@/lib/itinerary-builder/builder-visibility";
 import { SitePageShell } from "@/src/components/layout/SitePageShell";
 import { createServerClient } from "@/lib/supabase";
 import { homeBtnPrimary } from "@/lib/home/home-button-classes";
@@ -43,8 +42,10 @@ export default async function ItineraryBuilderConfirmationPage({
 }: {
   params: Promise<{ bookingId: string }>;
 }) {
-  // Klook prep 2026-06-29: builder hidden site-wide.
-  if (!ITINERARY_BUILDER_ENABLED) redirect("/tours/list");
+  // NOTE (2026-07-05): confirmation is deliberately NOT gated on
+  // ITINERARY_BUILDER_ENABLED — transactional endpoint for completed
+  // checkouts (incl. the chatbot funnel), not discoverable builder UI.
+  // The 6/29 gate here broke the post-payment page along with checkout.
   const { bookingId } = await params;
   if (!bookingId) notFound();
 
