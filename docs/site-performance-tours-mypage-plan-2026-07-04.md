@@ -131,4 +131,13 @@
 
 체감: Tours 탭 최악 ~4.5s → **CDN 히트 시 ~0.2~0.4s + 셸브 즉시 렌더**. 실브라우저 QA(필터 클릭·딥링크·로케일 경로 유지·mypage 랜딩 풀로드) 통과.
 
-**보류/후속**: C3(프로필 3중 조회)·C4(summary+extras 통합)·JWT 로컬검증·D1(카탈로그 275KB 클라번들) — Speed Insights 관찰 후 판단.
+**보류/후속**: C3(프로필 3중 조회)·C4(summary+extras 통합)·JWT 로컬검증 — Speed Insights 관찰 후 판단.
+
+### D1 출하 (2026-07-05, PR #259 `b9232774`)
+
+측정 게이트 통과 후 즉시 실행: 6로케일 통합 카탈로그 모듈(raw 230KB/gz 60KB)이 ShelvesContainer 경유로 `/tours/list` 초기 JS에 실려 있었음.
+- 빌드 스크립트가 `catalogCards.<locale>.generated.ts`(로케일당 ~42KB) + `catalogCards.slugs.generated.ts` 추가 산출(통합 모듈은 서버·홈용으로 유지).
+- `catalogRegistrationBuilder.ts`로 빌더+**SLUG_OVERRIDES**(가격 표면 — 복제 금지) 추출, 기존 `staticTourCatalogCards.ts`는 위임(동작 동일, 테스트 29/29).
+- `staticTourCatalogCards.lazy.ts`: EN 인라인 + 로케일별 명시적 dynamic import + `useSyncExternalStore` 훅. 비EN은 청크 도착까지 EN 카피(i18n 메시지와 동일한 폴백 의미론).
+- **홈 표면(매처·featured 등)은 의도적으로 무변경** — 통합 모듈 유지, Speed Insights가 정당화할 때 이관.
+- 프로덕션 검증: ja 카탈로그 마커가 배포 전 초기 JS에 존재 → 배포 후 **전체 부재**(초기 JS raw ~−190KB); ISR HIT·SSR 콘텐츠 22링크 유지; 실브라우저 ko 카드 카피 정상 로컬라이즈.
