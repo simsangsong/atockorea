@@ -54,6 +54,20 @@ const EMAIL_CONFIRM_CHIPS: ChipMap = {
   es: ["Sí, es correcto", "Usar otro correo"],
 };
 
+// W6.1/W6.6 — instant-answer follow-ups: straight to a quote or the catalogue.
+const AVAILABILITY_CHIPS: ChipMap = {
+  en: ["Get a private tour quote", "Which tours do you offer?"],
+  ko: ["프라이빗 투어 견적 받기", "어떤 투어가 있나요?"],
+  ja: ["プライベートツアーの見積もりが欲しい", "どんなツアーがありますか？"],
+  zh: ["我想要私人包车报价", "有哪些行程？"],
+  "zh-TW": ["我想要私人包車報價", "有哪些行程？"],
+  es: ["Quiero una cotización de tour privado", "¿Qué tours ofrecen?"],
+};
+
+export function availabilityChips(locale: TourProductPageLocale): string[] {
+  return AVAILABILITY_CHIPS[locale] ?? AVAILABILITY_CHIPS.en;
+}
+
 export function recommendationChips(locale: TourProductPageLocale): string[] {
   return RECOMMEND_CHIPS[locale] ?? RECOMMEND_CHIPS.en;
 }
