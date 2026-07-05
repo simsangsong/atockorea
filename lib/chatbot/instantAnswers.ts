@@ -181,16 +181,29 @@ function weatherReply(
 
 // ── entry point ──────────────────────────────────────────────────────────────
 
+/** Cancellation/refund/policy phrasing — those belong to the policy RAG path,
+ *  not the forecast, even when the message also mentions rain. */
+const POLICY_WORDS_RE =
+  /(cancel|refund|policy|취소|환불|정책|규정|キャンセル|返金|退款|退改|退订|退訂|cancelaci|reembolso|pol[ií]tica)/i;
+
+/** Which deterministic answers are allowed for a given deterministic intent.
+ *  Weather questions often classify as policy (rain-cancellation keywords) or
+ *  tour_catalog (region words) — the forecast may still answer those as long
+ *  as no cancellation/policy phrasing is present. */
+const LOW_STAKES_INTENTS = new Set(["unknown", "poi"]);
+const WEATHER_INTENTS = new Set(["unknown", "poi", "policy", "tour_catalog", "tour_recommendation"]);
+
 export async function buildInstantAnswer(input: {
   message: string;
   locale: L;
   tourSlug: string | null;
   todayISO: string; // KST
+  intent: string;
 }): Promise<InstantAnswer | null> {
-  const { message, locale, tourSlug, todayISO } = input;
+  const { message, locale, tourSlug, todayISO, intent } = input;
 
   // W6.7 — haenyeo schedule (most specific first).
-  if (HAENYEO_RE.test(message) && HAENYEO_DETAIL_RE.test(message)) {
+  if (LOW_STAKES_INTENTS.has(intent) && HAENYEO_RE.test(message) && HAENYEO_DETAIL_RE.test(message)) {
     return {
       kind: "haenyeo",
       reply: HAENYEO_REPLY[locale] ?? HAENYEO_REPLY.en,
@@ -199,7 +212,7 @@ export async function buildInstantAnswer(input: {
   }
 
   // W6.6 — weather (needs region context; otherwise let the model clarify).
-  if (WEATHER_RE.test(message)) {
+  if (WEATHER_INTENTS.has(intent) && WEATHER_RE.test(message) && !POLICY_WORDS_RE.test(message)) {
     const anchor = resolveWeatherAnchor(message, tourSlug);
     if (anchor) {
       const daily = await fetchDailyForecast(anchor);
@@ -232,7 +245,7 @@ export async function buildInstantAnswer(input: {
   }
 
   // W6.1 — availability (inventory is on-demand/unlimited by policy).
-  if (AVAILABILITY_RE.test(message)) {
+  if (LOW_STAKES_INTENTS.has(intent) && AVAILABILITY_RE.test(message)) {
     const date =
       resolveRelativeDateToken(message, todayISO) ??
       message.match(/\d{4}-\d{2}-\d{2}/)?.[0] ??

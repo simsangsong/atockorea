@@ -75,6 +75,26 @@ function stripCardedUrls(reply: string, carded: ReadonlySet<string>): string {
     .trim();
 }
 
+/** Card payload for one catalogue product (null when unknown/blocked). */
+export function tourCardForSlug(
+  slug: string,
+  locale: TourProductPageLocale,
+): TourCardPayload | null {
+  const p = getStaticTourProductBySlug(slug, locale);
+  if (!p) return null;
+  return {
+    slug: p.slug,
+    title: p.title,
+    image_url: p.thumbnail || p.heroImage,
+    duration: p.duration,
+    rating: p.rating,
+    review_count: p.reviewCount,
+    price_from_usd: p.listPriceUsd,
+    compare_at_usd: typeof p.compareAtPriceUsd === "number" ? p.compareAtPriceUsd : null,
+    href: hrefStaticTourProductDetail(p.slug),
+  };
+}
+
 /**
  * Build deterministic tour cards for every catalogue product referenced in
  * the reply (capped at MAX_TOUR_CARDS) and return the reply with those raw
@@ -89,20 +109,10 @@ export function buildTourCardsFromReply(
   const carded = new Set<string>();
   for (const slug of extractTourSlugs(reply)) {
     if (cards.length >= MAX_TOUR_CARDS) break;
-    const p = getStaticTourProductBySlug(slug, locale);
-    if (!p) continue; // unknown or consumer-blocked → leave the URL alone
+    const card = tourCardForSlug(slug, locale);
+    if (!card) continue; // unknown or consumer-blocked → leave the URL alone
     carded.add(slug);
-    cards.push({
-      slug: p.slug,
-      title: p.title,
-      image_url: p.thumbnail || p.heroImage,
-      duration: p.duration,
-      rating: p.rating,
-      review_count: p.reviewCount,
-      price_from_usd: p.listPriceUsd,
-      compare_at_usd: typeof p.compareAtPriceUsd === "number" ? p.compareAtPriceUsd : null,
-      href: hrefStaticTourProductDetail(p.slug),
-    });
+    cards.push(card);
   }
   if (cards.length === 0) return { cards, cleanedReply: reply };
   return { cards, cleanedReply: stripCardedUrls(reply, carded) };
