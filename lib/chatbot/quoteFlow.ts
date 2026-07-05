@@ -74,6 +74,44 @@ const EMPTY_DRAFT: QuoteDraft = {
   dateIssue: null,
 };
 
+// ─────────────────────────────────────────────────────────────────────────────
+// Deterministic relative-date resolution (2026-07-04 incident): the extractor
+// saw "tomorrow" in the latest turn but preferred an explicit stale date from
+// OLDER history (the sitewide-persistent conversation carried June dates), so
+// the quote kept resolving to a past date and re-prompting in a loop. A
+// relative-date word in the LATEST user message now wins, computed server-side
+// — the model never gets a vote on it.
+// ─────────────────────────────────────────────────────────────────────────────
+
+const RELATIVE_DATE_PATTERNS: readonly (readonly [RegExp, number])[] = [
+  [/(day\s+after\s+tomorrow|모레|明後日|后天|後天|pasado\s+ma[ñn]ana)/i, 2],
+  [/(tomorrow|내일|明日|明天|ma[ñn]ana)/i, 1],
+  [/(today|tonight|오늘|今日|今天|\bhoy\b)/i, 0],
+];
+
+export function addDaysISO(todayISO: string, days: number): string {
+  const d = new Date(`${todayISO}T00:00:00Z`);
+  if (Number.isNaN(d.getTime())) return todayISO;
+  d.setUTCDate(d.getUTCDate() + days);
+  return d.toISOString().slice(0, 10);
+}
+
+/** yyyy-mm-dd for a today/tomorrow/day-after word in `text`, else null. */
+export function resolveRelativeDateToken(text: string, todayISO: string): string | null {
+  for (const [re, days] of RELATIVE_DATE_PATTERNS) {
+    if (re.test(text)) return addDaysISO(todayISO, days);
+  }
+  return null;
+}
+
+/**
+ * Quote dates are KST business days. UTC's `toISOString()` is a day behind
+ * Korea every evening, which shifted "today/tomorrow" for the main audience.
+ */
+export function kstTodayISO(now: number = Date.now()): string {
+  return new Date(now + 9 * 3600 * 1000).toISOString().slice(0, 10);
+}
+
 /** Bookings are quotable up to ~2 years out; beyond that ops can't commit. */
 function farFutureCutoffISO(todayISO: string): string {
   const year = Number(todayISO.slice(0, 4));
@@ -415,13 +453,16 @@ export function buildQuoteReply(
   }
 
   const amount = formatKrw(price.total, locale);
+  // The tour date is stated in the quote on purpose (2026-07-04 incident): a
+  // wrongly-resolved date must be visible to the customer BEFORE they confirm.
+  const when = d.requestedDate ?? "";
   const summary: Record<TourProductPageLocale, string> = {
-    en: `Estimated quote: ${amount} — ${pricedHours}h private tour in ${region} for ${d.party}. Book now, pay on tour day, 100% refund up to 24h before. Want me to set up checkout?`,
-    ko: `예상 견적: ${amount} — ${region} ${pricedHours}시간 프라이빗 투어, ${d.party}명. 예약 먼저, 결제는 투어 당일, 24시간 전 100% 환불. 결제 진행해 드릴까요?`,
-    ja: `お見積もり：${amount} — ${region}の${pricedHours}時間プライベートツアー、${d.party}名。予約は今、支払いは当日、24時間前まで全額返金。決済に進みますか？`,
-    zh: `预估报价：${amount} — ${region}${pricedHours}小时私人包车，${d.party}人。先预约，当天付款，提前24小时全额退款。要我帮你进入结账吗？`,
-    "zh-TW": `預估報價：${amount} — ${region}${pricedHours}小時私人包車，${d.party}人。先預約，當天付款，提前24小時全額退款。要我幫你進入結帳嗎？`,
-    es: `Precio estimado: ${amount} — tour privado de ${pricedHours}h en ${region} para ${d.party}. Reserva ahora, paga el día del tour, reembolso 100% hasta 24h antes. ¿Preparo el pago?`,
+    en: `Estimated quote: ${amount} — ${pricedHours}h private tour in ${region} for ${d.party} on ${when}. Book now, pay on tour day, 100% refund up to 24h before. Want me to set up checkout?`,
+    ko: `예상 견적: ${amount} — ${region} ${pricedHours}시간 프라이빗 투어, ${d.party}명 · ${when}. 예약 먼저, 결제는 투어 당일, 24시간 전 100% 환불. 결제 진행해 드릴까요?`,
+    ja: `お見積もり：${amount} — ${region}の${pricedHours}時間プライベートツアー、${d.party}名（${when}）。予約は今、支払いは当日、24時間前まで全額返金。決済に進みますか？`,
+    zh: `预估报价：${amount} — ${region}${pricedHours}小时私人包车，${d.party}人（${when}）。先预约，当天付款，提前24小时全额退款。要我帮你进入结账吗？`,
+    "zh-TW": `預估報價：${amount} — ${region}${pricedHours}小時私人包車，${d.party}人（${when}）。先預約，當天付款，提前24小時全額退款。要我幫你進入結帳嗎？`,
+    es: `Precio estimado: ${amount} — tour privado de ${pricedHours}h en ${region} para ${d.party} el ${when}. Reserva ahora, paga el día del tour, reembolso 100% hasta 24h antes. ¿Preparo el pago?`,
   };
   const minNote: Record<TourProductPageLocale, string> = {
     en: `Our private tours start at ${MIN_TOUR_HOURS} hours, so I priced ${MIN_TOUR_HOURS} hours.`,
@@ -455,6 +496,7 @@ export async function extractQuoteDraft(
   const prompt = [
     "Extract private-tour quote details from this AtoC Korea conversation as JSON.",
     `Today is ${todayISO}. Resolve relative dates (e.g. "next Saturday") to yyyy-mm-dd. Use null for anything not stated.`,
+    "When values conflict across the conversation (dates, party size, region), the MOST RECENT user message always wins over older mentions.",
     "Schema (all keys required, value or null):",
     '{"region": "busan|jeju|seoul|null", "track": "private|cruise|dmz|null", "requestedDate": "yyyy-mm-dd|null", "party": number|null, "durationHours": number|null, "language": "en|ko|ja|zh|zh-TW|es|null", "jejuPickupZone": "city|out_west|out_east|out_south|null", "cruisePort": "jeju_port|gangjeong|null", "poiIntent": "free text of interests or null", "contactName": "string|null", "contactEmail": "string|null", "readyToBook": boolean}',
     "readyToBook is true only if the user explicitly agreed to book/pay.",

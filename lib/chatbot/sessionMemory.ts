@@ -39,11 +39,13 @@ export function isMemoryRelevantIntent(intent: string): boolean {
   return MEMORY_RELEVANT_INTENTS.has(intent);
 }
 
-/** Defensive PII scrub — runs on top of the model's own exclusion instruction. */
+/** Defensive PII scrub — runs on top of the model's own exclusion instruction.
+ *  NOTE: travel dates/seasons are intentionally KEPT — they are the memory's
+ *  whole point ("regions, party size, dates"). Only identity-shaped tokens go. */
 export function scrubPii(text: string): string {
   return text
     .replace(/\S+@\S+\.\S+/g, "")                         // emails
-    .replace(/\bA2C-[A-Z0-9]{6,}\b/gi, "")                // booking references
+    .replace(/\bA2C[-\s]?[A-Z0-9]{2,}\b/gi, "")           // booking refs, incl. partial (C-33)
     .replace(/[+]?\d[\d\s().\-]{7,}\d/g, "")              // phone-like runs
     .replace(/\b\d{6,}\b/g, "")                            // long digit runs (card/IDs)
     .replace(/\s{2,}/g, " ")

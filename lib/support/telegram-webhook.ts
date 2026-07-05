@@ -47,10 +47,28 @@ function escapeTelegramHtml(value: unknown): string {
     .replace(/>/g, "&gt;");
 }
 
-function buildMessage(p: TicketNotificationPayload): string {
+// C-33: Telegram rejects sendMessage text over 4096 chars with a 400 — and we
+// only logged it, so an oversized customer message (HTML-escaping can triple
+// "&"-heavy text) silently dropped the admin notification. Rebuild with a
+// smaller content budget until the FINAL message fits.
+const TELEGRAM_TEXT_LIMIT = 4096;
+
+export function fitTelegramMessage(build: (contentMax: number) => string, initialMax: number): string {
+  let max = initialMax;
+  for (let i = 0; i < 4; i++) {
+    const msg = build(max);
+    if (msg.length <= TELEGRAM_TEXT_LIMIT) return msg;
+    // Content is trimmed BEFORE escaping, so cutting raw chars removes at
+    // least as many escaped chars — overflow plus a margin always converges.
+    max = Math.max(80, max - (msg.length - TELEGRAM_TEXT_LIMIT) - 64);
+  }
+  return build(80).slice(0, TELEGRAM_TEXT_LIMIT);
+}
+
+export function buildMessage(p: TicketNotificationPayload, contentMax = 500): string {
   const trimmed =
-    p.initialUserMessage.length > 500
-      ? `${p.initialUserMessage.slice(0, 497)}...`
+    p.initialUserMessage.length > contentMax
+      ? `${p.initialUserMessage.slice(0, Math.max(0, contentMax - 3))}...`
       : p.initialUserMessage;
 
   const lines = [
@@ -77,8 +95,9 @@ function buildMessage(p: TicketNotificationPayload): string {
   return lines.join("\n");
 }
 
-function buildLiveChatMessage(p: LiveChatTelegramPayload): string {
-  const trimmed = p.content.length > 1500 ? `${p.content.slice(0, 1497)}...` : p.content;
+export function buildLiveChatMessage(p: LiveChatTelegramPayload, contentMax = 1500): string {
+  const trimmed =
+    p.content.length > contentMax ? `${p.content.slice(0, Math.max(0, contentMax - 3))}...` : p.content;
   const lines = [
     `<b>Customer live chat #${escapeTelegramHtml(p.ticketId)}</b>`,
     "",
@@ -113,7 +132,7 @@ export async function notifyTelegramNewTicket(
 
   const body = {
     chat_id: chatId,
-    text: buildMessage(payload),
+    text: fitTelegramMessage((max) => buildMessage(payload, max), 500),
     parse_mode: "HTML",
     disable_web_page_preview: true,
   };
@@ -174,7 +193,7 @@ export async function notifyTelegramLiveChatMessage(
 
   const body = {
     chat_id: chatId,
-    text: buildLiveChatMessage(payload),
+    text: fitTelegramMessage((max) => buildLiveChatMessage(payload, max), 1500),
     parse_mode: "HTML",
     disable_web_page_preview: true,
   };

@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowRight, Headphones, Minus, Plus, Send, Sparkles, ThumbsDown, ThumbsUp, Users, X } from "lucide-react";
+import { ArrowRight, Headphones, Minus, Plus, Send, ShieldCheck, Sparkles, ThumbsDown, ThumbsUp, Users, X } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { parseSseBuffer } from "@/lib/chatbot/clientSse";
@@ -75,6 +75,14 @@ type SlotRequest = {
   date_issue?: string | null;
 };
 
+// W4.6 — grounding-source badge (server-built from the RAG chunks actually
+// injected into the prompt; labels/links are deterministic, never the model).
+type AnswerSource = {
+  type: string;
+  label: string;
+  href: string | null;
+};
+
 type ChatMessage = {
   role: "user" | "assistant";
   content: string;
@@ -90,6 +98,10 @@ type ChatMessage = {
   chips?: string[];
   /** W2.3 — quote slot controls (rendered on the latest reply only). */
   slotRequest?: SlotRequest;
+  /** W4.6 — grounding-source badges under the reply. */
+  sources?: AnswerSource[];
+  /** W4.6 — fixed "no charge now · 24h refund" trust badge (quote turns). */
+  quoteTrust?: boolean;
 };
 
 // Quote-funnel checkout CTA, keyed on the widget locale (avoids threading a
@@ -111,6 +123,40 @@ function langKey(lang: string): "en" | "ko" | "ja" | "zh" | "zh-TW" | "es" {
   if (lang.startsWith("zh-TW")) return "zh-TW";
   if (lang.startsWith("zh")) return "zh";
   return "en";
+}
+
+// W4.6 — fixed trust line under quote / checkout turns.
+const TRUST_LINE: Record<string, string> = {
+  ko: "지금 결제되지 않아요 · 투어 당일 청구 · 24시간 전까지 100% 환불",
+  en: "No charge now · Card is charged on tour day · 100% refund up to 24h before",
+  ja: "今は課金されません · 当日課金 · 24時間前まで全額返金",
+  zh: "现在不扣款 · 当天扣款 · 提前24小时全额退款",
+  "zh-TW": "現在不扣款 · 當天扣款 · 提前24小時全額退款",
+  es: "Sin cargo ahora · Se cobra el día del tour · Reembolso 100% hasta 24h antes",
+};
+
+// W4.6 — label prefixing the grounding-source badges.
+const SOURCES_LABEL: Record<string, string> = {
+  ko: "근거",
+  en: "Based on",
+  ja: "根拠",
+  zh: "依据",
+  "zh-TW": "依據",
+  es: "Fuentes",
+};
+
+// W5.3 — optional one-tap reasons after a thumbs-down. Keys are the stable
+// analytics values sent to /assistant/feedback `reason`.
+function negativeReasons(lang: string): readonly (readonly [string, string])[] {
+  if (lang.startsWith("ko"))
+    return [["inaccurate", "정보가 부정확해요"], ["unanswered", "질문에 답이 없어요"], ["confusing", "이해하기 어려워요"]];
+  if (lang.startsWith("ja"))
+    return [["inaccurate", "情報が不正確"], ["unanswered", "質問に答えていない"], ["confusing", "わかりにくい"]];
+  if (lang.startsWith("es"))
+    return [["inaccurate", "Información inexacta"], ["unanswered", "No respondió mi pregunta"], ["confusing", "Difícil de entender"]];
+  if (lang.startsWith("zh"))
+    return [["inaccurate", "信息不准确"], ["unanswered", "没有回答我的问题"], ["confusing", "难以理解"]];
+  return [["inaccurate", "Not accurate"], ["unanswered", "Didn't answer my question"], ["confusing", "Hard to understand"]];
 }
 
 // W4.1 — tour card strip labels.
@@ -238,10 +284,12 @@ type AssistantResponse = {
   /** Quote funnel (Q3) — present when the bot created a booking; the widget
    *  renders a "go to checkout" button. */
   checkout_url?: string | null;
-  /** W4.1 / W4.3 / W2.3 — rich-UX extensions. */
+  /** W4.1 / W4.3 / W2.3 / W4.6 — rich-UX extensions. */
   cards?: TourCard[];
   chips?: string[];
   slot_request?: SlotRequest;
+  sources?: AnswerSource[];
+  quote_trust?: boolean;
 };
 
 type LiveSupportMessage = {
@@ -334,7 +382,15 @@ const STREAM_STALL_TIMEOUT_MS = 45_000;
 // QuotaExceeded dropped the whole conversation.
 const STORED_HISTORY_MAX = 80;
 
-type FeedbackLabels = { helpful: string; notHelpful: string; thanks: string; noted: string };
+type FeedbackLabels = {
+  helpful: string;
+  notHelpful: string;
+  thanks: string;
+  noted: string;
+  ask: string;
+  whyNot: string;
+  skip: string;
+};
 
 // W3.5 — staged "thinking" copy: naming what the bot is doing (searching vs
 // writing) makes the identical wait feel roughly half as long.
@@ -348,14 +404,14 @@ function stageLabels(lang: string): { searching: string; writing: string } {
 
 function feedbackLabels(lang: string): FeedbackLabels {
   if (lang.startsWith("ko"))
-    return { helpful: "도움이 됐어요", notHelpful: "도움이 안 됐어요", thanks: "고마워요!", noted: "알려줘서 고마워요" };
+    return { helpful: "도움이 됐어요", notHelpful: "도움이 안 됐어요", thanks: "고마워요!", noted: "알려줘서 고마워요", ask: "도움이 됐나요?", whyNot: "어떤 점이 아쉬웠나요?", skip: "건너뛰기" };
   if (lang.startsWith("ja"))
-    return { helpful: "役に立った", notHelpful: "役に立たなかった", thanks: "ありがとうございます！", noted: "フィードバックに感謝します" };
+    return { helpful: "役に立った", notHelpful: "役に立たなかった", thanks: "ありがとうございます！", noted: "フィードバックに感謝します", ask: "役に立ちましたか？", whyNot: "どこが問題でしたか？", skip: "スキップ" };
   if (lang.startsWith("es"))
-    return { helpful: "Útil", notHelpful: "No fue útil", thanks: "¡Gracias!", noted: "Gracias por tu comentario" };
+    return { helpful: "Útil", notHelpful: "No fue útil", thanks: "¡Gracias!", noted: "Gracias por tu comentario", ask: "¿Te ayudó?", whyNot: "¿Qué falló?", skip: "Omitir" };
   if (lang.startsWith("zh"))
-    return { helpful: "有帮助", notHelpful: "没帮助", thanks: "谢谢！", noted: "感谢反馈" };
-  return { helpful: "Helpful", notHelpful: "Not helpful", thanks: "Thanks!", noted: "Thanks for the feedback" };
+    return { helpful: "有帮助", notHelpful: "没帮助", thanks: "谢谢！", noted: "感谢反馈", ask: "有帮助吗？", whyNot: "哪里不满意？", skip: "跳过" };
+  return { helpful: "Helpful", notHelpful: "Not helpful", thanks: "Thanks!", noted: "Thanks for the feedback", ask: "Was this helpful?", whyNot: "What went wrong?", skip: "Skip" };
 }
 
 function labelsFor(lang: string, scope: AssistantScope): UiLabels {
@@ -590,7 +646,7 @@ function QuoteSlotControls({
 
   return (
     <div className="mt-2.5 border-t border-slate-100 pt-2.5">
-      <p className="text-[10px] font-semibold uppercase tracking-wider text-slate-400">{L.region}</p>
+      <p className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">{L.region}</p>
       <div className="mt-1 flex gap-1.5">
         {L.regions.map(([value, label]) => (
           <button
@@ -640,7 +696,7 @@ function QuoteSlotControls({
         </div>
       </div>
       <div className="mt-2.5 flex items-center gap-2.5">
-        <span className="shrink-0 text-[10px] font-semibold uppercase tracking-wider text-slate-400">
+        <span className="shrink-0 text-[10px] font-semibold uppercase tracking-wider text-slate-500">
           {L.hours}
         </span>
         <input
@@ -658,7 +714,7 @@ function QuoteSlotControls({
       </div>
       {needsPickup ? (
         <>
-          <p className="mt-2 text-[10px] font-semibold uppercase tracking-wider text-slate-400">{L.pickup}</p>
+          <p className="mt-2 text-[10px] font-semibold uppercase tracking-wider text-slate-500">{L.pickup}</p>
           <div className="mt-1 grid grid-cols-4 gap-1.5">
             {L.zones.map(([value, label]) => (
               <button
@@ -676,7 +732,7 @@ function QuoteSlotControls({
       ) : null}
       {needsPort ? (
         <>
-          <p className="mt-2 text-[10px] font-semibold uppercase tracking-wider text-slate-400">{L.port}</p>
+          <p className="mt-2 text-[10px] font-semibold uppercase tracking-wider text-slate-500">{L.port}</p>
           <div className="mt-1 grid grid-cols-2 gap-1.5">
             {L.ports.map(([value, label]) => (
               <button
@@ -727,6 +783,8 @@ function readStoredMessages(storageKey: string): ChatMessage[] {
           (m as ChatMessage).slotRequest && typeof (m as ChatMessage).slotRequest === "object"
             ? (m as ChatMessage).slotRequest
             : undefined,
+        sources: Array.isArray((m as ChatMessage).sources) ? (m as ChatMessage).sources : undefined,
+        quoteTrust: (m as ChatMessage).quoteTrust === true || undefined,
       }));
   } catch {
     return [];
@@ -787,6 +845,9 @@ export function TourProductAiAssistantWidget({
   const [messages, setMessages] = useState<ChatMessage[]>(() => readStoredMessagesGlobal(apiSlug));
   const [feedback, setFeedback] = useState<Record<number, 1 | -1>>({});
   const listRef = useRef<HTMLDivElement>(null);
+  // W4.5 — the dialog element itself takes initial focus on open (keyboard
+  // users can Tab from there; no virtual-keyboard popup on mobile).
+  const panelRef = useRef<HTMLDivElement>(null);
   const inputId = useId();
   const lastSupportMessageIdRef = useRef(0);
   // W0.10 (C-15/C-36): the in-flight assistant request. Aborted when a new
@@ -811,6 +872,12 @@ export function TourProductAiAssistantWidget({
   // unmounts; the visitor left, so stop the server-side generation too.
   useEffect(() => {
     if (!open) abortRef.current?.abort();
+  }, [open]);
+  // W4.5 — move focus into the dialog when it opens (after the entry motion).
+  useEffect(() => {
+    if (!open) return;
+    const id = window.setTimeout(() => panelRef.current?.focus(), 260);
+    return () => window.clearTimeout(id);
   }, [open]);
   useEffect(() => () => abortRef.current?.abort(), []);
 
@@ -875,13 +942,14 @@ export function TourProductAiAssistantWidget({
     [],
   );
 
-  const sendFeedback = useCallback(
-    (index: number, rating: 1 | -1) => {
-      if (feedback[index]) return; // one vote per message
+  // W5.3 — message index awaiting an optional thumbs-down reason chip.
+  const [pendingReasonIdx, setPendingReasonIdx] = useState<number | null>(null);
+
+  const postFeedback = useCallback(
+    (index: number, rating: 1 | -1, reason?: string) => {
       const answer = messages[index]?.content ?? "";
       if (!answer) return;
       const question = index > 0 && messages[index - 1]?.role === "user" ? messages[index - 1].content : undefined;
-      setFeedback((prev) => ({ ...prev, [index]: rating }));
       void fetch("/api/tour-product/assistant/feedback", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -889,6 +957,7 @@ export function TourProductAiAssistantWidget({
           rating,
           answer,
           question,
+          reason,
           tourProductSlug: apiSlug,
           pageUrl: typeof window !== "undefined" ? window.location.href.slice(0, 2000) : undefined,
         }),
@@ -896,7 +965,30 @@ export function TourProductAiAssistantWidget({
         /* best-effort; keep the optimistic UI */
       });
     },
-    [feedback, messages, apiSlug],
+    [messages, apiSlug],
+  );
+
+  const sendFeedback = useCallback(
+    (index: number, rating: 1 | -1) => {
+      if (feedback[index]) return; // one vote per message
+      setFeedback((prev) => ({ ...prev, [index]: rating }));
+      if (rating === 1) {
+        postFeedback(index, 1);
+        return;
+      }
+      // W5.3 — hold the 👎 POST until the (optional) reason chip, so the row
+      // lands once WITH its reason. Skipping still records the bare rating.
+      setPendingReasonIdx(index);
+    },
+    [feedback, postFeedback],
+  );
+
+  const submitNegativeReason = useCallback(
+    (index: number, reason: string | null) => {
+      setPendingReasonIdx((prev) => (prev === index ? null : prev));
+      postFeedback(index, -1, reason ?? undefined);
+    },
+    [postFeedback],
   );
 
   const runAssistant = useCallback(
@@ -998,6 +1090,8 @@ export function TourProductAiAssistantWidget({
                     cards: payload.cards,
                     chips: payload.chips,
                     slotRequest: payload.slot_request,
+                    sources: payload.sources,
+                    quoteTrust: payload.quote_trust,
                   });
                   setHandoffOffer(payload.handoff_offered ? { question: lastUserQuestion } : null);
                   if (payload.ticket_id && payload.escalated) {
@@ -1058,6 +1152,8 @@ export function TourProductAiAssistantWidget({
               cards: data.cards,
               chips: data.chips,
               slotRequest: data.slot_request,
+              sources: data.sources,
+              quoteTrust: data.quote_trust,
             },
           ]);
           const lastUserQuestion = [...next].reverse().find((m) => m.role === "user")?.content ?? "";
@@ -1203,6 +1299,8 @@ export function TourProductAiAssistantWidget({
   const send = useCallback(async () => {
     const text = input.trim();
     if (!text || loading) return;
+    // W5.3 — moving on without picking a 👎 reason still records the rating.
+    if (pendingReasonIdx !== null) submitNegativeReason(pendingReasonIdx, null);
     // W2.5 — follow the conversation language (positive script hits only).
     const msgLang = langFromMessage(text);
     if (msgLang && !uiLang.startsWith(msgLang)) setUiLang(msgLang);
@@ -1218,18 +1316,19 @@ export function TourProductAiAssistantWidget({
       return;
     }
     await runAssistant(next);
-  }, [input, liveSupportActive, loading, messages, runAssistant, sendLiveSupportMessage, uiLang]);
+  }, [input, liveSupportActive, loading, messages, pendingReasonIdx, runAssistant, sendLiveSupportMessage, submitNegativeReason, uiLang]);
 
   const sendPreset = useCallback(
     async (text: string) => {
       const preset = text.trim();
       if (!preset || loading || liveSupportActive) return;
+      if (pendingReasonIdx !== null) submitNegativeReason(pendingReasonIdx, null);
       setHandoffOffer(null);
       const next: ChatMessage[] = [...messages, { role: "user", content: preset }];
       setMessages(next);
       await runAssistant(next);
     },
-    [liveSupportActive, loading, messages, runAssistant],
+    [liveSupportActive, loading, messages, pendingReasonIdx, runAssistant, submitNegativeReason],
   );
 
   useEffect(() => {
@@ -1355,9 +1454,36 @@ export function TourProductAiAssistantWidget({
             y: 6,
             transition: { duration: 0.16, ease: MSG_EASE },
           }}
-          className="pointer-events-auto mb-3 flex max-h-[min(78vh,36rem)] w-[min(100vw-1.5rem,26rem)] origin-bottom-right flex-col overflow-hidden rounded-3xl border border-slate-200/90 bg-white shadow-[0_24px_64px_-12px_rgba(26,35,50,0.22),0_0_0_1px_rgba(26,35,50,0.05)]"
+          // W4.4 — dvh keeps the panel fully visible when the mobile keyboard
+          // resizes the visual viewport (vh stays stale on iOS/Android).
+          className="pointer-events-auto mb-3 flex max-h-[min(78vh,36rem)] w-[min(100vw-1.5rem,26rem)] origin-bottom-right flex-col overflow-hidden rounded-3xl border border-slate-200/90 bg-white shadow-[0_24px_64px_-12px_rgba(26,35,50,0.22),0_0_0_1px_rgba(26,35,50,0.05)] supports-[height:1dvh]:max-h-[min(78dvh,36rem)]"
           role="dialog"
+          aria-modal="true"
           aria-label={labels.title}
+          tabIndex={-1}
+          ref={panelRef}
+          // W4.5 — keyboard support: Escape closes, Tab stays inside the panel.
+          onKeyDown={(e) => {
+            if (e.key === "Escape") {
+              e.stopPropagation();
+              setOpen(false);
+              return;
+            }
+            if (e.key !== "Tab") return;
+            const focusables = e.currentTarget.querySelectorAll<HTMLElement>(
+              'button:not([disabled]), a[href], input:not([disabled]), [tabindex]:not([tabindex="-1"])',
+            );
+            if (focusables.length === 0) return;
+            const first = focusables[0];
+            const last = focusables[focusables.length - 1];
+            if (e.shiftKey && document.activeElement === first) {
+              e.preventDefault();
+              last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+              e.preventDefault();
+              first.focus();
+            }
+          }}
         >
           <div className="relative shrink-0 border-b border-sky-900/10 bg-gradient-to-r from-sky-50 via-white to-amber-50 px-4 pb-3.5 pt-3.5">
             <div className="absolute right-2 top-2">
@@ -1397,6 +1523,10 @@ export function TourProductAiAssistantWidget({
 
           <div
             ref={listRef}
+            // W4.5 — role="log": screen readers announce appended messages
+            // without re-reading the whole thread.
+            role="log"
+            aria-live="polite"
             className="min-h-0 flex-1 space-y-3 overflow-y-auto bg-gradient-to-b from-slate-50 to-white px-3.5 py-3.5 [scrollbar-gutter:stable]"
           >
             {messages.length === 0 && (
@@ -1416,7 +1546,7 @@ export function TourProductAiAssistantWidget({
                 )}
                 {quickChips.length > 0 && !liveSupportActive && (
                   <div className="mt-3 flex flex-col gap-2">
-                    <span className="text-[10px] font-semibold uppercase tracking-wider text-slate-400">
+                    <span className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">
                       {labels.popular}
                     </span>
                     <div className="flex flex-wrap gap-2">
@@ -1466,6 +1596,12 @@ export function TourProductAiAssistantWidget({
                         </span>
                       )}
                       <ChatMarkdown text={m.content} />
+                      {m.quoteTrust ? (
+                        <p className="mt-2 flex items-start gap-1.5 rounded-xl bg-emerald-50 px-2.5 py-1.5 text-[10.5px] font-medium leading-snug text-emerald-800 ring-1 ring-emerald-200/70">
+                          <ShieldCheck className="mt-0.5 h-3.5 w-3.5 shrink-0" aria-hidden />
+                          {TRUST_LINE[langKey(uiLang)] ?? TRUST_LINE.en}
+                        </p>
+                      ) : null}
                       {m.cards && m.cards.length > 0 ? (
                         <TourCardStrip cards={m.cards} uiLang={uiLang} />
                       ) : null}
@@ -1514,14 +1650,65 @@ export function TourProductAiAssistantWidget({
                           {CHECKOUT_CTA[uiLang] ?? CHECKOUT_CTA.en}
                         </a>
                       ) : null}
+                      {m.sources && m.sources.length > 0 ? (
+                        <div className="mt-2 flex flex-wrap items-center gap-1.5">
+                          <span className="text-[9.5px] font-semibold uppercase tracking-wider text-slate-500">
+                            {SOURCES_LABEL[langKey(uiLang)] ?? SOURCES_LABEL.en}
+                          </span>
+                          {m.sources.map((s) =>
+                            s.href ? (
+                              <a
+                                key={`${s.type}-${s.label}`}
+                                href={s.href}
+                                className="rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-medium text-slate-600 transition hover:bg-sky-50 hover:text-sky-900"
+                              >
+                                {s.label}
+                              </a>
+                            ) : (
+                              <span
+                                key={`${s.type}-${s.label}`}
+                                className="rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-medium text-slate-600"
+                              >
+                                {s.label}
+                              </span>
+                            ),
+                          )}
+                        </div>
+                      ) : null}
                       {(!m.origin || m.origin === "ai") && (
-                        <div className="mt-1.5 flex items-center gap-1.5 border-t border-slate-100 pt-1.5">
+                        <div className="mt-1.5 border-t border-slate-100 pt-1.5">
                           {feedback[i] ? (
-                            <span className="text-[10px] font-medium text-slate-400">
-                              {feedback[i] === 1 ? fb.thanks : fb.noted}
-                            </span>
+                            pendingReasonIdx === i ? (
+                              <div className="flex flex-wrap items-center gap-1.5">
+                                <span className="text-[10px] font-medium text-slate-500">{fb.whyNot}</span>
+                                {negativeReasons(uiLang).map(([key, label]) => (
+                                  <button
+                                    key={key}
+                                    type="button"
+                                    onClick={() => submitNegativeReason(i, key)}
+                                    className="rounded-full border border-slate-200 bg-white px-2 py-0.5 text-[10px] font-medium text-slate-600 transition hover:border-rose-200 hover:bg-rose-50 hover:text-rose-700"
+                                  >
+                                    {label}
+                                  </button>
+                                ))}
+                                <button
+                                  type="button"
+                                  onClick={() => submitNegativeReason(i, null)}
+                                  className="rounded-full px-2 py-0.5 text-[10px] font-medium text-slate-400 transition hover:text-slate-600"
+                                >
+                                  {fb.skip}
+                                </button>
+                              </div>
+                            ) : (
+                              <span className="text-[10px] font-medium text-slate-500">
+                                {feedback[i] === 1 ? fb.thanks : fb.noted}
+                              </span>
+                            )
                           ) : (
-                            <>
+                            <div className="flex items-center gap-1.5">
+                              {i === messages.length - 1 && !loading ? (
+                                <span className="text-[10px] font-medium text-slate-500">{fb.ask}</span>
+                              ) : null}
                               <button
                                 type="button"
                                 aria-label={fb.helpful}
@@ -1540,7 +1727,7 @@ export function TourProductAiAssistantWidget({
                               >
                                 <ThumbsDown className="h-3.5 w-3.5" />
                               </button>
-                            </>
+                            </div>
                           )}
                         </div>
                       )}
@@ -1601,7 +1788,7 @@ export function TourProductAiAssistantWidget({
           {messages.length > 0 && quickChips.length > 0 && !liveSupportActive && !contextualUiActive && (
             <div className="shrink-0 border-t border-slate-200/70 bg-white/95 px-2.5 pb-1 pt-2">
               <div className="mb-1.5 flex items-center justify-between gap-2 px-1">
-                <p className="text-[9px] font-semibold uppercase tracking-wider text-slate-400">{labels.suggested}</p>
+                <p className="text-[9px] font-semibold uppercase tracking-wider text-slate-500">{labels.suggested}</p>
                 <button
                   type="button"
                   disabled={loading}
@@ -1646,6 +1833,13 @@ export function TourProductAiAssistantWidget({
                     e.preventDefault();
                     void send();
                   }
+                }}
+                // W4.4 — when the mobile keyboard opens, keep the newest
+                // messages visible above the input.
+                onFocus={() => {
+                  window.setTimeout(() => {
+                    if (listRef.current) listRef.current.scrollTop = listRef.current.scrollHeight;
+                  }, 300);
                 }}
                 placeholder={liveSupportActive ? labels.supportMessagePlaceholder : labels.questionPlaceholder}
                 className="min-h-10 min-w-0 flex-1 border-0 bg-transparent py-1.5 text-[13px] text-slate-950 outline-none ring-0 placeholder:text-slate-400"
