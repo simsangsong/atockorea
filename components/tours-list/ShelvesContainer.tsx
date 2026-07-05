@@ -13,7 +13,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { useI18n } from "@/lib/i18n";
-import { listStaticTourProducts } from "@/components/product-tour-static/catalog/staticTourCatalogCards";
+import { useStaticTourProductsLazy } from "@/components/product-tour-static/catalog/staticTourCatalogCards.lazy";
 import { getShelvesForDate } from "@/lib/tours-shelves";
 import { useTourProductCardMedia } from "@/hooks/useTourProductCardMedia";
 import type { TourProductCardMediaMap } from "@/lib/tour-product/cardMediaTypes";
@@ -62,10 +62,14 @@ export function ShelvesContainer({ now, initialMediaBySlug }: ShelvesContainerPr
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const shelves = useMemo(() => {
-    const tours = listStaticTourProducts(locale);
-    return getShelvesForDate(renderDate, tours);
-  }, [renderDate, locale]);
+  // D1: EN ships inline; the active locale's catalog chunk lazy-loads and
+  // `tours` updates when it lands (EN copy in the meantime — same fallback
+  // the i18n message strings already use).
+  const tours = useStaticTourProductsLazy(locale);
+  const shelves = useMemo(
+    () => getShelvesForDate(renderDate, tours),
+    [renderDate, tours],
+  );
   const shelfSlugs = useMemo(
     () => Array.from(new Set(shelves.flatMap((shelf) => shelf.tours.map((tour) => tour.slug)))),
     [shelves],

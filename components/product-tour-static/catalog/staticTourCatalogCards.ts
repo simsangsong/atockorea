@@ -12,34 +12,26 @@
  * API parity: this module re-exports `StaticTourProductRegistration` +
  * `getStaticTourProductBySlug` + `listStaticTourProducts` so existing
  * callers can migrate by changing only the import path.
+ *
+ * ⚠ Client-bundle note (D1, 2026-07-05): importing this module pulls ALL SIX
+ * locales (~60KB gz) into the chunk. That's fine on the server and tolerable
+ * where it's already shipped (home), but new client surfaces should prefer
+ * `staticTourCatalogCards.lazy.ts` (EN inline + active locale lazy-loaded).
+ * The registration builder + SLUG_OVERRIDES live in
+ * `catalogRegistrationBuilder.ts` — shared by both paths, never duplicated.
  */
 
 import type { TourProductPageLocale as Locale } from "@/lib/tour-product/resolveTourProductDbLocale";
-import { isTourSlugBlockedFromConsumerSurfaces } from "@/lib/tour-consumer-visibility";
 import {
   SLIM_CATALOG_PAGES_BY_LOCALE,
   SLIM_CATALOG_SLUG_ORDER,
-  type SlimCatalogPage,
 } from "./catalogCards.generated";
+import {
+  buildCatalogRegistrations,
+  type StaticTourProductRegistration,
+} from "./catalogRegistrationBuilder";
 
-export type StaticTourProductRegistration = {
-  slug: string;
-  title: string;
-  subtitle: string;
-  region: string;
-  duration: string;
-  stopsCount: number;
-  rating: number;
-  reviewCount: number;
-  badges: readonly string[];
-  heroImage: string;
-  thumbnail: string;
-  priceLabel: string;
-  shortCardDescription: string;
-  listPriceUsd: number;
-  compareAtPriceUsd?: number;
-  maxGroupSize?: number;
-};
+export type { StaticTourProductRegistration };
 
 export const STATIC_TOUR_PRODUCT_DETAIL_PREFIX = "/tour-product" as const;
 
@@ -47,113 +39,23 @@ export function hrefStaticTourProductDetail(slug: string): string {
   return `${STATIC_TOUR_PRODUCT_DETAIL_PREFIX}/${slug}`;
 }
 
-/** Locale-invariant per-slug overrides — kept in sync with the heavy registry. */
-type SlugOverride = {
-  listPriceUsd?: number;
-  compareAtPriceUsd?: number;
-  maxGroupSize?: number;
-};
+const EN_MAP = SLIM_CATALOG_PAGES_BY_LOCALE.en ?? {};
 
-const SLUG_OVERRIDES: Record<string, SlugOverride> = {
-  "east-signature-nature-core": { listPriceUsd: 59, compareAtPriceUsd: 69, maxGroupSize: 8 },
-  "jeju-grand-highlights-loop": { listPriceUsd: 93, maxGroupSize: 8 },
-  "southwest-hallasan-osulloc-aewol": { listPriceUsd: 49, maxGroupSize: 8 },
-  "busan-gyeongju-unesco-legacy-tour-national-museum": { listPriceUsd: 39, compareAtPriceUsd: 50, maxGroupSize: 8 },
-  // Klook prep 2026-06-29: +$5 sale price, discount REMOVE (compareAtPriceUsd dropped).
-  "busan-small-group-sightseeing-tour-cruise-passengers": { listPriceUsd: 84, maxGroupSize: 8 },
-  "busan-top-attractions-day-tour": { listPriceUsd: 34, maxGroupSize: 12 },
-  "from-busan-gyeongju-ancient-capital-day-tour": { listPriceUsd: 39, compareAtPriceUsd: 50, maxGroupSize: 8 },
-  "from-incheon-seoul-day-tour-cruise-guests": { listPriceUsd: 69, compareAtPriceUsd: 76, maxGroupSize: 8 },
-  "incheon-seoul-private-car-shore-excursion-cruise": { listPriceUsd: 424, maxGroupSize: 12 },
-  "jeju-cherry-blossom-tour-east-route": { listPriceUsd: 59, compareAtPriceUsd: 69, maxGroupSize: 8 },
-  "jeju-cruise-shore-excursion-bus-tour": { listPriceUsd: 59 },
-  "jeju-cruise-shore-excursion-small-group-tour": { listPriceUsd: 77, maxGroupSize: 8 },
-  "jeju-eastern-unesco-spots-day-tour": { listPriceUsd: 49, compareAtPriceUsd: 59, maxGroupSize: 8 },
-  "jeju-hydrangea-festival-tour-east-route": { listPriceUsd: 64, maxGroupSize: 8 },
-  "jeju-hydrangea-festival-tour-southwest-route": { listPriceUsd: 64, maxGroupSize: 8 },
-  "jeju-southern-top-unesco-spots-tour": { listPriceUsd: 49, compareAtPriceUsd: 69, maxGroupSize: 8 },
-  "jeju-west-south-full-day-authentic-tour": { listPriceUsd: 59, compareAtPriceUsd: 69, maxGroupSize: 8 },
-  "jeju-winter-southwest-tangerine-snow-camellia-tour": { listPriceUsd: 59, compareAtPriceUsd: 69, maxGroupSize: 8 },
-  "pocheon-sanjeong-lake-herb-island-art-valley": { listPriceUsd: 54, maxGroupSize: 8 },
-  "seoul-dmz-private-3rd-tunnel-suspension-bridge": { listPriceUsd: 419, maxGroupSize: 15 },
-  "seoul-private-nami-morning-calm-petite-france": { listPriceUsd: 194 },
-  "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip": { listPriceUsd: 53, compareAtPriceUsd: 58, maxGroupSize: 8 },
-  "seoul-seoraksan-nami-island-morning-calm-day-tour": { listPriceUsd: 71, maxGroupSize: 8 },
-  "seoul-seoraksan-national-park-sokcho-beach-day-trip": { listPriceUsd: 49, compareAtPriceUsd: 57, maxGroupSize: 8 },
-  "seoul-suburbs-private-chartered-car-10hr": { listPriceUsd: 184, maxGroupSize: 13 },
-  "seoul-suwon-hwaseong-folk-village-starfield-library": { listPriceUsd: 60, compareAtPriceUsd: 66, maxGroupSize: 8 },
-  "seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library": { listPriceUsd: 53, compareAtPriceUsd: 59, maxGroupSize: 8 },
-  "seoul-suwon-hwaseong-waujeongsa-starfield": { listPriceUsd: 51, compareAtPriceUsd: 54, maxGroupSize: 8 },
-};
-
-function parseListPriceUsd(page: SlimCatalogPage | undefined): number {
-  if (!page) return 0;
-  const amountLabel = page.price?.amountLabel ?? "";
-  if (amountLabel) {
-    const n = Number(amountLabel.replace(/[^0-9.]/g, ""));
-    if (Number.isFinite(n) && n > 0) return Math.round(n);
-  }
-  const priceLabel = page.catalog_card.priceLabel ?? "";
-  const m = priceLabel.match(/(\d+(?:\.\d+)?)/);
-  if (m) {
-    const n = Number(m[1]);
-    if (Number.isFinite(n) && n > 0) return Math.round(n);
-  }
-  return 0;
-}
-
-function buildRegistration(slug: string, locale: Locale): StaticTourProductRegistration | null {
-  const enMap = SLIM_CATALOG_PAGES_BY_LOCALE.en ?? {};
-  const localeMap = SLIM_CATALOG_PAGES_BY_LOCALE[locale] ?? enMap;
-  const localePage = localeMap[slug] ?? enMap[slug];
-  if (!localePage) return null;
-  const cc = localePage.catalog_card;
-  const override = SLUG_OVERRIDES[slug] ?? {};
-  return {
-    slug: cc.slug,
-    title: cc.title,
-    subtitle: cc.subtitle,
-    region: cc.region,
-    duration: cc.duration,
-    stopsCount: cc.stopsCount,
-    rating: cc.rating,
-    reviewCount: cc.reviewCount,
-    badges: cc.badges,
-    heroImage: cc.heroImage,
-    thumbnail: cc.thumbnail,
-    priceLabel: cc.priceLabel,
-    shortCardDescription: cc.shortCardDescription,
-    listPriceUsd: override.listPriceUsd ?? parseListPriceUsd(enMap[slug]),
-    compareAtPriceUsd: override.compareAtPriceUsd,
-    maxGroupSize: override.maxGroupSize,
-  };
+function buildLocale(locale: string): readonly StaticTourProductRegistration[] {
+  return buildCatalogRegistrations(
+    SLIM_CATALOG_SLUG_ORDER,
+    SLIM_CATALOG_PAGES_BY_LOCALE[locale] ?? EN_MAP,
+    EN_MAP,
+  );
 }
 
 const PER_LOCALE_PRODUCTS: Record<Locale, readonly StaticTourProductRegistration[]> = {
-  en: SLIM_CATALOG_SLUG_ORDER.map((s) => buildRegistration(s, "en")).filter(
-    (r): r is StaticTourProductRegistration =>
-      r !== null && !isTourSlugBlockedFromConsumerSurfaces(r.slug),
-  ),
-  ko: SLIM_CATALOG_SLUG_ORDER.map((s) => buildRegistration(s, "ko")).filter(
-    (r): r is StaticTourProductRegistration =>
-      r !== null && !isTourSlugBlockedFromConsumerSurfaces(r.slug),
-  ),
-  zh: SLIM_CATALOG_SLUG_ORDER.map((s) => buildRegistration(s, "zh")).filter(
-    (r): r is StaticTourProductRegistration =>
-      r !== null && !isTourSlugBlockedFromConsumerSurfaces(r.slug),
-  ),
-  "zh-TW": SLIM_CATALOG_SLUG_ORDER.map((s) => buildRegistration(s, "zh-TW")).filter(
-    (r): r is StaticTourProductRegistration =>
-      r !== null && !isTourSlugBlockedFromConsumerSurfaces(r.slug),
-  ),
-  es: SLIM_CATALOG_SLUG_ORDER.map((s) => buildRegistration(s, "es")).filter(
-    (r): r is StaticTourProductRegistration =>
-      r !== null && !isTourSlugBlockedFromConsumerSurfaces(r.slug),
-  ),
-  ja: SLIM_CATALOG_SLUG_ORDER.map((s) => buildRegistration(s, "ja")).filter(
-    (r): r is StaticTourProductRegistration =>
-      r !== null && !isTourSlugBlockedFromConsumerSurfaces(r.slug),
-  ),
+  en: buildLocale("en"),
+  ko: buildLocale("ko"),
+  zh: buildLocale("zh"),
+  "zh-TW": buildLocale("zh-TW"),
+  es: buildLocale("es"),
+  ja: buildLocale("ja"),
 };
 
 export const STATIC_TOUR_PRODUCTS: readonly StaticTourProductRegistration[] = PER_LOCALE_PRODUCTS.en;
