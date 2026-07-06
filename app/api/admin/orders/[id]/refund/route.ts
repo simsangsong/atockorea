@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 import { createServerClient } from '@/lib/supabase';
 import { requireAdmin, AdminAuthFailure, adminAuthJsonResponse } from '@/lib/auth';
-import { resolveRefundAmount, toStripeRefundReason, type RefundAmountError } from '@/lib/payments/refund';
+import { resolveRefundAmount, toStripeRefundReason, minorToMajor, type RefundAmountError } from '@/lib/payments/refund';
 
 export const dynamic = 'force-dynamic';
 
@@ -160,7 +160,8 @@ export async function POST(
     const totalRefundedMinor = alreadyRefundedMinor + resolved.amountMinor;
     const update: Record<string, unknown> = {
       payment_status: resolved.isFullRefund ? 'refunded' : 'partially_refunded',
-      refund_amount: totalRefundedMinor / 100,
+      // KRW is zero-decimal — `/100` under-recorded refunds 100× (deep-audit).
+      refund_amount: minorToMajor(totalRefundedMinor, refund.currency ?? booking.currency),
       refund_processed: resolved.isFullRefund,
       updated_at: nowIso,
     };

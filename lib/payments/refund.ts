@@ -56,6 +56,24 @@ export function resolveRefundAmount(opts: {
   };
 }
 
+// Stripe zero-decimal currencies: the smallest currency unit IS the major unit
+// (₩1000 is 1000 minor units, not 100000). Dividing these by 100 for the DB
+// `refund_amount` column under-records a KRW refund 100× (deep-audit
+// 2026-07-05: ₩340,000 was stored as 3400 and shown to the customer as such).
+const ZERO_DECIMAL_CURRENCIES = new Set([
+  'bif', 'clp', 'djf', 'gnf', 'jpy', 'kmf', 'krw', 'mga', 'pyg', 'rwf',
+  'ugx', 'vnd', 'vuv', 'xaf', 'xof', 'xpf',
+]);
+
+export function isZeroDecimalCurrency(currency: string | null | undefined): boolean {
+  return ZERO_DECIMAL_CURRENCIES.has((currency ?? '').toLowerCase());
+}
+
+/** Convert a Stripe MINOR amount to the major unit stored in the DB column. */
+export function minorToMajor(amountMinor: number, currency: string | null | undefined): number {
+  return isZeroDecimalCurrency(currency) ? Math.round(amountMinor) : Math.round(amountMinor) / 100;
+}
+
 const STRIPE_REFUND_REASONS = new Set(['duplicate', 'fraudulent', 'requested_by_customer']);
 
 /** Narrow an arbitrary admin reason to a Stripe-accepted refund reason, else undefined. */

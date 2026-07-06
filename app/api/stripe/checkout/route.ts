@@ -138,6 +138,29 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Booking already authorized' }, { status: 400 });
     }
 
+    // Deep-audit 2026-07-05: a stale/deep-linked checkout URL must not register
+    // a card on a booking that is no longer chargeable. Previously only the
+    // pi-status was checked, so a CANCELLED (or completed/no-show/refunded)
+    // booking could create a fresh intent and the webhook would revive it.
+    const bookingStatus = (booking as { status?: string | null }).status ?? '';
+    if (['cancelled', 'completed', 'no_show', 'refunded', 'expired'].includes(bookingStatus)) {
+      return NextResponse.json(
+        { error: 'This booking can no longer be checked out. Please start a new booking.' },
+        { status: 409 },
+      );
+    }
+    // A tour date in the past can never be held/captured (the tour-day capture
+    // cron only matches today's date), so refuse rather than place a dead hold.
+    {
+      const td = (booking as { tour_date?: string | null }).tour_date;
+      if (td && daysUntil(td) < 0) {
+        return NextResponse.json(
+          { error: 'This tour date has already passed. Please start a new booking.' },
+          { status: 409 },
+        );
+      }
+    }
+
     const finalPrice = Number(booking.final_price);
     if (!Number.isFinite(finalPrice) || finalPrice <= 0) {
       return NextResponse.json({ error: 'Booking has no valid price' }, { status: 400 });

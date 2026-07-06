@@ -77,13 +77,22 @@ export default async function ItineraryBuilderConfirmationPage({
    * `pending`. Showing a green ✓ Confirmed during that window misleads
    * the customer and the email "is on its way" line lies (the webhook
    * sends the email).
+   *
+   * Deep-audit 2026-07-05: `setup_pending_hold` was WRONGLY treated as
+   * confirmed. The checkout route writes that pi-status the moment the page
+   * mounts (before the card is even entered — /api/stripe/checkout Path B),
+   * so a customer who opened checkout and left saw a false "Confirmed / email
+   * on its way". Path B's real confirmation signal is the setup_intent
+   * webhook flipping `status` to 'confirmed' — so we gate on that, not the
+   * mount-time pi-status. A cancelled booking (hold released → pi 'canceled')
+   * therefore also correctly shows "processing", never "confirmed".
    */
   const paymentStatus = (booking.payment_intent_status as string | null) ?? null;
   const isAuthorized =
-    paymentStatus === "authorized" ||
-    paymentStatus === "captured" ||
-    paymentStatus === "setup_pending_hold" ||
-    booking.status === "confirmed";
+    booking.status !== "cancelled" &&
+    (paymentStatus === "authorized" ||
+      paymentStatus === "captured" ||
+      booking.status === "confirmed");
 
   // Stop strip — fetch POI names for the cart sequence.
   let stops: { poi_key: string; name: string; image: string | null }[] = [];

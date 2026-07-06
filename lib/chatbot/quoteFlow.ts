@@ -628,8 +628,15 @@ export async function createQuoteBooking(
       .eq("contact_email", draft.contactEmail)
       .eq("tour_date", draft.requestedDate)
       .eq("status", "pending")
+      // Deep-audit 2026-07-05: the dedupe key omitted party/hours/track, so a
+      // customer who re-quoted the SAME date with a corrected group size got
+      // the OLD booking id back ("reserved") and checked out on the wrong
+      // total. Match the priced inputs too so only a true double-submit reuses.
+      .eq("number_of_guests", draft.party)
       .filter("itinerary->>source_url", "eq", "chatbot")
       .filter("itinerary->>region", "eq", region)
+      .filter("itinerary->>track", "eq", track)
+      .filter("itinerary->>duration_hours", "eq", String(pricedHours))
       .gte("created_at", since)
       .order("created_at", { ascending: false })
       .limit(1)
