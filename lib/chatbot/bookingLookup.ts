@@ -57,7 +57,16 @@ const WRITE_INTENT_PATTERNS: RegExp[] = [
   /\b(?:cancelar|reembolso|reembolsar|cambiar|modificar|reprogramar)\s+(?:mi|la|el)\s+(?:reserva|reservaci[oó]n|tour|fecha|pedido)\b/i,
 ];
 
+// Deep-audit 2026-07-05: a STATUS question that happens to contain a change
+// verb ("did you cancel my booking yet?", "취소됐어?") is a READ, not a change
+// request — it must reach the read-only booking answer, never file a
+// high-priority change ticket. Gate on interrogative shape + a status cue.
+const STATUS_QUESTION_RE =
+  /(did\s+you|have\s+you|has\s+(?:it|my|the)|is\s+(?:it|my|the)|are\s+(?:you|they)|when\s+will|already|status\s+of|됐(?:어|나|는지|습니까|어요)|되었|처리\s*(?:됐|되|중)|하셨|完了|できました|好了吗|好了嗎|完成了)/i;
+
 export function isBookingWriteRequest(text: string): boolean {
+  const t = text.trim();
+  if (/[?？]\s*$/.test(t) && STATUS_QUESTION_RE.test(t)) return false;
   return WRITE_INTENT_PATTERNS.some((re) => re.test(text));
 }
 

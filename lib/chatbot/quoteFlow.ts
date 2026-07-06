@@ -323,7 +323,11 @@ function looksLikeAffirmation(text: string): boolean {
     /(진행|예약할게|예약해|예약 부탁|결제할게|결제해|좋아요|좋습니다|할게요|부탁드|^네[!.~\s]*$|^예[!.~\s]*$|^응[!.~\s]*$|^네네)/.test(t) ||
     /(お願いします|進めて|予約します|それでお願い|^はい)/.test(t) ||
     /(好的|可以|沒問題|没问题|就这个|就這個|进行|進行|预订吧|預訂吧|订吧|訂吧)/.test(t) ||
-    /(^sí\b|^si[,!\s]|vale|claro|adelante|de acuerdo|perfecto|resérvalo|reservar)/i.test(t)
+    // Deep-audit 2026-07-05: `^sí\b` was DEAD — the "í" isn't a word char so the
+    // `\b` after it can never hold, and a bare "Sí" (the natural Spanish yes)
+    // failed, re-looping the email-confirm prompt forever. Match "sí"/"si" at
+    // the start when not glued to another letter (excludes "sin", "sígueme").
+    /(^s[íi](?![a-zñáéíóú])|vale|claro|adelante|de acuerdo|perfecto|resérvalo|reservar)/i.test(t)
   );
 }
 
@@ -349,7 +353,12 @@ export function isQuoteFlowFollowUp(input: {
   if (!stage) return false;
   if (input.detectedIntent === "support" || input.detectedIntent === "booking_specific") return false;
   const msg = input.latestUserMessage.trim();
-  if (!msg || looksLikeDecline(msg)) return false;
+  if (!msg) return false;
+  // Deep-audit 2026-07-05: a plain "no" at the EMAIL-CONFIRM prompt ("Is this
+  // the right email?") means "wrong email", not "leave the flow" — keep it
+  // sticky so emailConfirmOutcome can route it to the email re-prompt. Decline
+  // still exits at every other stage (the quote-confirm "no" = not now).
+  if (looksLikeDecline(msg) && stage !== "email_confirm") return false;
   if (EMAIL_RE.test(msg)) return true;
   if (looksLikeAffirmation(msg)) return true;
   // A short, non-question reply to a direct prompt is almost certainly the
@@ -382,10 +391,18 @@ export function quoteEmailConfirmPrompt(email: string, locale: TourProductPageLo
   return m[locale] ?? m.en;
 }
 
+// Deep-audit 2026-07-05: word boundaries on the Latin alternatives. Without
+// them "credit card email" matched \bedit and "nosotros" matched otro, both
+// wrongly routing a CONFIRMATION into the edit path. "incorrect"/"incorrecto"
+// are added here explicitly so they resolve to edit (and, since edit is
+// checked first, never fall through to the CONFIRM regex's "correct").
 const EMAIL_EDIT_RE =
-  /(different|another|change|edit|wrong|not that|다른|다시 입력|바꾸|바꿀|수정|틀렸|아니에요|아닙니다|別の|変更|違います|间违|换一个|换个|另一个|換一個|另一個|otro|otra|cambiar|equivocado)/i;
+  /(\b(?:different|another|change|edit|wrong|incorrect|not that|otro|otra|cambiar|equivocado|incorrecto)\b|다른|다시 입력|바꾸|바꿀|수정|틀렸|아니에요|아닙니다|別の|変更|違います|间违|换一个|换个|另一个|換一個|另一個)/i;
+// `\bcorrect\b` / `\bcorrecto\b` do NOT match inside "incorrect"/"incorrecto"
+// (the preceding "n" is a word char, so there's no boundary) — the boundary
+// is what fixes the "that's incorrect" → confirmed misfire.
 const EMAIL_CONFIRM_WORDS_RE =
-  /(맞아요|맞습니다|correct|that'?s right|right email|そうです|合っています|没错|沒錯|正确|正確|correcto)/i;
+  /(맞아요|맞습니다|\bcorrect\b|that'?s right|right email|そうです|合っています|没错|沒錯|正确|正確|\bcorrecto\b)/i;
 
 /**
  * Interpret the turn AFTER the email-confirm prompt. Edit intent is checked
@@ -395,9 +412,23 @@ const EMAIL_CONFIRM_WORDS_RE =
 export function emailConfirmOutcome(latestUserMessage: string): "confirmed" | "edit" | null {
   const t = latestUserMessage.trim();
   if (!t) return null;
-  if (EMAIL_EDIT_RE.test(t)) return "edit";
+  // Edit intent (incl. a plain "no" = wrong email) is checked BEFORE
+  // affirmation so an edit phrase that also contains a yes-shaped verb
+  // ("다른 이메일로 할게요") still routes to edit.
+  if (EMAIL_EDIT_RE.test(t) || looksLikeDecline(t)) return "edit";
   if (looksLikeAffirmation(t) || EMAIL_CONFIRM_WORDS_RE.test(t)) return "confirmed";
   return null;
+}
+
+// R2 (deep-audit 2026-07-05): does this turn look like a PRICING-slot change
+// (party / hours / date / region) rather than an email answer or a yes/no?
+// Used to catch "actually make it 6 people" during the email stage so the
+// customer re-confirms the new total.
+const QUOTE_SLOT_CHANGE_RE =
+  /\b\d+\s*(?:people|persons?|pax|guests?|hours?|hrs?|days?)\b|\d+\s*(?:명|인|시간|일)|(?:busan|jeju|seoul|부산|제주|서울|釜山|済州|首[尔爾]|ソウル)/i;
+
+export function mentionsQuoteSlotChange(text: string): boolean {
+  return QUOTE_SLOT_CHANGE_RE.test(text);
 }
 
 /**

@@ -59,6 +59,7 @@ import {
   isQuoteFlowFollowUp,
   resolveRelativeDateToken,
   kstTodayISO,
+  mentionsQuoteSlotChange,
 } from "@/lib/chatbot/quoteFlow";
 import { buildTourCardsFromReply, type TourCardPayload } from "@/lib/chatbot/tourCards";
 import { buildInstantAnswer } from "@/lib/chatbot/instantAnswers";
@@ -971,6 +972,28 @@ export async function POST(req: NextRequest) {
   // bot never writes to the booking) and say clearly that nothing changed yet.
   if (verifiedBookingContext && bookingWriteRequest && !debugNoSideEffects) {
     const changeLocale = inferLocaleFromText(latestUserMessage, locale) ?? locale;
+    // R1 (deep-audit 2026-07-05): dedupe/throttle change-request tickets per
+    // session so a chatty verified customer (or a re-send of the same request)
+    // can't spawn one high-priority ticket + Telegram ping every turn. A truly
+    // distinct follow-up is still allowed up to the hourly cap; beyond that we
+    // acknowledge without a duplicate ticket (staff already has the first one).
+    const crGate = await allowRequestDurable("booking_change_req", `sess:${session.token}`, {
+      perMinute: 1,
+      perHour: 3,
+    });
+    if (!crGate.allowed) {
+      return applySessionCookie(
+        NextResponse.json({
+          reply: bookingChangeReceivedReply(changeLocale, null),
+          ticket_id: null,
+          escalated: false,
+          escalation_reason: "booking_change_request_throttled",
+          handoff_offered: false,
+          debug_intent: debugNoSideEffects ? detectedIntent : undefined,
+        }),
+        session,
+      );
+    }
     const changeSb = makeServiceRoleClient();
     let changeTicketId: number | null = null;
     if (changeSb) {
@@ -1133,31 +1156,36 @@ export async function POST(req: NextRequest) {
       quoteMainModel,
     );
     if (!draft.language) draft.language = quoteLocale;
-    // 07-04 incident: "tomorrow" in the latest turn must beat any stale
-    // explicit date the extractor picked out of older history — resolved
-    // deterministically server-side, in KST.
-    const relativeDate = resolveRelativeDateToken(latestUserMessage, todayISO);
-    if (relativeDate) {
-      draft.requestedDate = relativeDate;
-      draft.dateIssue = null;
-    } else if (!draft.requestedDate || draft.dateIssue === "past") {
-      // Multi-turn shape ("tomorrow" → next turn "4 people, 8 hours"): when
-      // extraction came back empty or past, the nearest relative-date word in
-      // recent user turns still wins. Never overrides a valid explicit date.
-      const recentUserTurns = messages.filter((m) => m.role === "user").slice(-4).reverse();
-      for (const m of recentUserTurns) {
-        const d = resolveRelativeDateToken(m.content, todayISO);
-        if (d) {
-          draft.requestedDate = d;
-          draft.dateIssue = null;
-          break;
+    const priorStage = quoteFlowStageFromReply(priorAssistantReply);
+    // Deep-audit 2026-07-05: only re-resolve a relative date while still
+    // COLLECTING slots. After the quote is shown the date is locked, so a
+    // confirmation like "yes, let's book it today" or Spanish "por la mañana"
+    // (=morning, not tomorrow) must not silently move it. The 07-04 "tomorrow"
+    // incident fix stays fully in force for the collection phase.
+    const collectingSlots = priorStage === null || priorStage === "slots";
+    if (collectingSlots) {
+      const relativeDate = resolveRelativeDateToken(latestUserMessage, todayISO);
+      if (relativeDate) {
+        draft.requestedDate = relativeDate;
+        draft.dateIssue = null;
+      } else if (!draft.requestedDate || draft.dateIssue === "past") {
+        // Multi-turn shape ("tomorrow" → next turn "4 people, 8 hours"): when
+        // extraction came back empty or past, the nearest relative-date word in
+        // recent user turns still wins. Never overrides a valid explicit date.
+        const recentUserTurns = messages.filter((m) => m.role === "user").slice(-4).reverse();
+        for (const m of recentUserTurns) {
+          const d = resolveRelativeDateToken(m.content, todayISO);
+          if (d) {
+            draft.requestedDate = d;
+            draft.dateIssue = null;
+            break;
+          }
         }
       }
     }
     // W2.10 — a direct answer to the email / email-confirm prompt wins over
     // the fuzzy extraction (an older address in the history could otherwise
     // shadow the correction the customer just typed).
-    const priorStage = quoteFlowStageFromReply(priorAssistantReply);
     if (priorStage === "email" || priorStage === "email_confirm") {
       const msgEmail = extractEmailFromText(latestUserMessage);
       if (msgEmail) draft.contactEmail = msgEmail;
@@ -1209,6 +1237,21 @@ export async function POST(req: NextRequest) {
 
     // Oversized / out-of-scope → hand off (buildQuoteReply already worded it).
     if (!autoQuotable) return respond(quoteReply);
+
+    // R2 (deep-audit 2026-07-05): if the customer changed a PRICING slot
+    // (party/hours/date/region) while we were at the email / email-confirm
+    // stage — "actually make it 6 people" — the quote just rebuilt with the
+    // new total, but the confirmation the customer gave was for the OLD one.
+    // Re-show the (new) quote so they confirm the price they'll actually pay,
+    // instead of silently booking a total they never saw.
+    if (
+      (priorStage === "email" || priorStage === "email_confirm") &&
+      !extractEmailFromText(latestUserMessage) &&
+      emailConfirmOutcome(latestUserMessage) === null &&
+      mentionsQuoteSlotChange(latestUserMessage)
+    ) {
+      return respond(quoteReply, { chips: quoteConfirmChips(quoteLocale), quote_trust: true });
+    }
 
     // Q3 — customer confirmed booking. Need an email to create the booking.
     if (draft.readyToBook && !debugNoSideEffects) {
