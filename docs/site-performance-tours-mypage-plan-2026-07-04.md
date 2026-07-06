@@ -161,3 +161,12 @@
 - 검증: 빌드 그린·`/[locale]` **● SSG**(이전 ƒ 동적); 로컬 prod `/ko` **HIT·s-maxage=600·TTFB 6ms**(이전 MISS/no-store)·`/ja`·`/es`도 HIT; SSR 콘텐츠 `/`와 동일(34 hero); 렌더 정상; 테스트 신규실패 0. ⚠ QA한계: 헤드리스 창 백그라운드로 한국어 flip 육안 미관측 → 구/신 SSR 동일 + LocaleHomeClient 무변경으로 갈음.
 - ⚠ **초기 JS 501KB gz/32청크**는 별개 관찰(홈 공통) — `three`/`gsap` 오탐 확인(framer-motion만), Speed Insights 후 판단.
 - **프로덕션 확인 (2026-07-05, ~180s)**: 5개 로케일 홈 전부 `X-Vercel-Cache: MISS`+`no-store` → **`X-Nextjs-Prerender: 1`+`PRERENDER`/`HIT`**. `/ko` 웜 TTFB ~0.3s(cold run 0.09~0.54s), SSR 콘텐츠 34 hero(`/`와 동일). `/ja`·`/zh-CN`·`/zh-TW`·`/es` 모두 PRERENDER 확인.
+
+### 🔴🔴 서버리스 함수 리전 (2026-07-06, PR #271 `c1640059`) — "마이페이지 느림"의 진짜 원인 + 전 동적 API 공통
+
+사용자 정정: "메인 페이지"는 **마이페이지** 오지칭이었음. 재진단:
+- **실측(한국·로그인)**: `/api/mypage/summary` **1.6~2.4s**, `/api/mypage/extras` **1.8s**. 셸은 캐시 HIT라 병목=이 API들. (C1/C2 다이어트로도 안 잡힌 이유.)
+- **근본 원인 = 리전 불일치**: `X-Vercel-Id: icn1::iad1`(요청은 서울 엣지, **함수는 미국동부 iad1 실행**) + Supabase DB IP `2406:da12::/32`=**AWS ap-northeast-2 서울** + 사용자 한국. 매 인증 요청이 `한국→서울엣지→미국동부함수→서울DB(태평양)→미국동부→한국`, auth.getUser+병렬쿼리9개 각각 태평양 왕복.
+- **수정 = `vercel.json` `"regions":["icn1"]` 한 줄**: 함수를 DB·사용자와 같은 서울에. 함수↔DB 왕복(다중쿼리 엔드포인트 지배 비용) ~180ms→수ms. 정적/ISR은 엣지 서빙이라 무영향, 국제 방문자도 DB왕복 다회 이득으로 순이득.
+- **✅ 프로덕션 검증(~180s)**: `x-vercel-id` iad1→**icn1::icn1**; `/api/tours`(같은 서울 DB 치는 공개 동적 API) 한국 실측 **2.49s→0.48s 웜(5배)** — mypage summary/extras는 같은 서울 함수·DB라 동일 개선. ⚠ 인증 직접 실측은 프로덕션 브라우저 탭 프리즈(백그라운드 스로틀)로 막혀 /api/tours 프록시로 갈음. ⚠ **콜드스타트 잔존**: 리전 무관하게 첫 히트 ~2s(서버리스 부팅) 후 웜 빠름 — 필요시 함수 워밍 별도 트랙.
+- **진단 교훈**: 동적 API 느리면 **`x-vercel-id`(함수 리전)와 DB 리전(server IP→AWS 대역)부터 대조**. 코드 최적화 전에 인프라 지오그래피 확인 — 이번엔 코드가 아니라 함수가 지구 반대편에서 돌던 게 원인.
