@@ -160,3 +160,4 @@
 - **동작 무변경**: i18n은 계속 클라측(`LocaleHomeClient` 하이드레이션 시 setLocale) — 프리렌더 HTML=영어 기본값→하이드레이션 후 로케일 전환. 구 `/ko`·신 `/ko` **둘 다 SSR 영어**로 확인(회귀 없음), 서버/클라 동일 SitePageShell 트리라 mismatch 구조적 불가.
 - 검증: 빌드 그린·`/[locale]` **● SSG**(이전 ƒ 동적); 로컬 prod `/ko` **HIT·s-maxage=600·TTFB 6ms**(이전 MISS/no-store)·`/ja`·`/es`도 HIT; SSR 콘텐츠 `/`와 동일(34 hero); 렌더 정상; 테스트 신규실패 0. ⚠ QA한계: 헤드리스 창 백그라운드로 한국어 flip 육안 미관측 → 구/신 SSR 동일 + LocaleHomeClient 무변경으로 갈음.
 - ⚠ **초기 JS 501KB gz/32청크**는 별개 관찰(홈 공통) — `three`/`gsap` 오탐 확인(framer-motion만), Speed Insights 후 판단.
+- **프로덕션 확인 (2026-07-05, ~180s)**: 5개 로케일 홈 전부 `X-Vercel-Cache: MISS`+`no-store` → **`X-Nextjs-Prerender: 1`+`PRERENDER`/`HIT`**. `/ko` 웜 TTFB ~0.3s(cold run 0.09~0.54s), SSR 콘텐츠 34 hero(`/`와 동일). `/ja`·`/zh-CN`·`/zh-TW`·`/es` 모두 PRERENDER 확인.
