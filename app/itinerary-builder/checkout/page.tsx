@@ -67,6 +67,15 @@ export default async function ItineraryBuilderCheckoutPage({
     notFound();
   }
 
+  // Deep-audit 2026-07-05: a stale checkout deep-link for a no-longer-chargeable
+  // booking should not render the card form (the API also 409s, but bounce the
+  // page early so the customer isn't shown a dead form). `pending` and
+  // `confirmed` both stay — confirmed lets a customer re-open before capture.
+  const bookingStatus = (booking as { status?: string | null }).status ?? "";
+  if (["cancelled", "completed", "no_show", "refunded", "expired"].includes(bookingStatus)) {
+    redirect("/tours/list");
+  }
+
   const itinerary = (booking.itinerary as ItineraryPayload | null) ?? {};
   const region: RegionSlug = (itinerary.region as RegionSlug) ?? "busan";
   const track: PricingTrack = (itinerary.track as PricingTrack) ?? "private";

@@ -83,7 +83,12 @@ export async function GET(req: NextRequest) {
     .eq('payment_status', 'authorized')
     .eq('payment_intent_status', 'authorized')
     .not('payment_intent_id', 'is', null)
-    .or(`tour_date.eq.${targetDate},booking_date.eq.${targetDate}`);
+    // Deep-audit 2026-07-05: builder/chatbot bookings store booking_date as
+    // the CREATION date (legacy tour-product rows store it equal to
+    // tour_date), so the plain booking_date leg captured same-day-created
+    // short-lead bookings DAYS EARLY — "charged on tour day" violated. The
+    // booking_date leg now applies to legacy sources only.
+    .or(`tour_date.eq.${targetDate},and(booking_date.eq.${targetDate},source.neq.itinerary_builder)`);
 
   if (error) {
     console.error('[capture-tour-day-payments] query error:', error);

@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 import { createServerClient } from '@/lib/supabase';
 import { headers } from 'next/headers';
+import { minorToMajor } from '@/lib/payments/refund';
 
 const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET || '';
 
@@ -91,6 +92,14 @@ export async function POST(req: NextRequest) {
           // Already captured — don't downgrade.
           break;
         }
+        // W-1 (deep-audit 2026-07-05): never revive a cancelled booking. A late
+        // auth event on a released hold (staff cancelled, customer reopened a
+        // stale checkout link) must not flip the row back to confirmed — the
+        // `succeeded` handler already had this guard; the auth handler did not.
+        if (existing?.status === 'cancelled') {
+          console.log(`[webhook] amount_capturable_updated for cancelled booking ${bookingId} ignored`);
+          break;
+        }
 
         const expiresAt = new Date(Date.now() + 7 * 86400000).toISOString();
 
@@ -107,6 +116,7 @@ export async function POST(req: NextRequest) {
           })
           .eq('id', bookingId)
           .neq('payment_intent_status', 'captured')
+          .neq('status', 'cancelled')
           .select()
           .single();
 
@@ -249,6 +259,8 @@ export async function POST(req: NextRequest) {
           .eq('id', bookingId)
           .neq('payment_intent_status', 'authorized')
           .neq('payment_intent_status', 'captured')
+          // W-1 (deep-audit 2026-07-05): don't revive a cancelled booking.
+          .neq('status', 'cancelled')
           .select()
           .single();
 
@@ -394,7 +406,8 @@ export async function POST(req: NextRequest) {
 
         const refundUpdate: Record<string, unknown> = {
           payment_status: isFull ? 'refunded' : 'partially_refunded',
-          refund_amount: refundedMinor / 100,
+          // KRW is zero-decimal — `/100` under-recorded refunds 100× (deep-audit).
+          refund_amount: minorToMajor(refundedMinor, charge.currency),
           refund_processed: isFull,
           updated_at: new Date().toISOString(),
         };

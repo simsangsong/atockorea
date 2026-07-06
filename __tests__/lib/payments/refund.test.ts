@@ -1,4 +1,4 @@
-import { resolveRefundAmount, toStripeRefundReason } from '@/lib/payments/refund';
+import { resolveRefundAmount, toStripeRefundReason, isZeroDecimalCurrency, minorToMajor } from '@/lib/payments/refund';
 
 describe('resolveRefundAmount', () => {
   it('refunds the full captured amount by default', () => {
@@ -71,5 +71,29 @@ describe('toStripeRefundReason', () => {
     expect(toStripeRefundReason('')).toBeUndefined();
     expect(toStripeRefundReason(null)).toBeUndefined();
     expect(toStripeRefundReason(undefined)).toBeUndefined();
+  });
+});
+
+// Deep-audit 2026-07-05: KRW is zero-decimal; the old `refundedMinor / 100`
+// under-recorded a ₩340,000 refund as 3400.
+describe('minorToMajor / isZeroDecimalCurrency', () => {
+  it('keeps zero-decimal currencies (KRW, JPY) 1:1', () => {
+    expect(isZeroDecimalCurrency('krw')).toBe(true);
+    expect(isZeroDecimalCurrency('KRW')).toBe(true);
+    expect(isZeroDecimalCurrency('jpy')).toBe(true);
+    expect(minorToMajor(340000, 'krw')).toBe(340000);
+    expect(minorToMajor(340000, 'KRW')).toBe(340000);
+  });
+
+  it('divides two-decimal currencies (USD) by 100', () => {
+    expect(isZeroDecimalCurrency('usd')).toBe(false);
+    expect(minorToMajor(10000, 'usd')).toBe(100);
+    expect(minorToMajor(2599, 'usd')).toBe(25.99);
+  });
+
+  it('defaults unknown/empty currency to two-decimal (safe legacy behaviour)', () => {
+    expect(isZeroDecimalCurrency(null)).toBe(false);
+    expect(isZeroDecimalCurrency(undefined)).toBe(false);
+    expect(minorToMajor(10000, null)).toBe(100);
   });
 });
