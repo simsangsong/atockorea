@@ -151,3 +151,12 @@
 - ⚠ **구현 중 버그 → 수정**: 첫 시도에서 `useCallback([session, t])` + `useEffect([status, fetchCartItems])`로 짰다가 **무한 refetch 루프**(라이브 200회+ 관측). 원인 = `useTranslations()`의 `t`가 매 렌더 새 참조(tours-list가 이미 문서화한 함정). 에러 라벨을 primitive로 추출 + `status` 게이트 제거 후 mypage식 `getAccessToken()` await로 재작성 → deps 전부 값-안정.
 - 검증: 빌드 그린; `/cart` 정적 ISR HIT(웜 TTFB 5ms); `/api/cart` 미인증 401·쿠키세션 200(skipRoleLookup 정상); 루프 0회(수정 후); 테스트 회귀 0(카트 테스트 파일 부재, 실패 스위트는 브랜치 베이스 동일). ⚠ QA 한계: 헤드리스 브라우저 창이 백그라운드+사용자 포커스 거부로 **visible-tab 해피패스 렌더는 미관측** — 대신 API 200 직접 확인 + 루프 by-construction 증명 + mypage 검증패턴 재사용으로 갈음.
 - **프로덕션 확인 (2026-07-05)**: PR #267 빌드에 편승해 배포(카트 청크 `e812112a`→`2577d114`, ~105s). `/cart` 정적 HIT·TTFB 0.31~0.37s; 카트 청크에 `getAccessToken` 마커 존재(CT-3 라이브)·`guestCartItems` 게스트 경로 보존; `/api/cart` 프로덕션 401 가드 정상. ⚠ 배포 삽화 재현: 머지 직후 15분간 구버전 서빙(청크 미변경) → 타 세션 #267 머지가 빌드 재트리거하여 함께 배포됨(빈 커밋 불필요).
+
+### 로케일 홈 ISR (2026-07-05, PR #270 `15ea46e3`) — 🔴 사용자 "메인 아직도 느림"의 진짜 원인
+
+사용자 리포트: "메인 페이지가 아직도 되게 느린데??". **진단이 밝힌 근본 원인**: 한국어 쿠키 방문자는 `/` → **`/ko` 307 리다이렉트**되는데, `app/[locale]/page.tsx`엔 `revalidate`/`generateStaticParams`가 없어 **5개 로케일 홈 전부 미캐시 동적 SSR**(`X-Vercel-Cache: MISS`·`no-store`)였음. Phase 2 + 이번 세션 홈 최적화(ISR·폰트·LCP)가 **전부 `/`(영어)만** 대상 → 비영어 사용자가 실제 받는 홈은 미최적화 상태. (CSR bailout은 `/`에도 있으나 `/`는 캐시되어 빠르므로 부차적.)
+- 서버·이미지는 이미 건강(`/` 웜 TTFB 0.35s·ISR HIT, 히어로 모바일 64KB) — 병목은 **로케일 홈 미캐시**.
+- **수정**: `app/[locale]/page.tsx`를 `app/page.tsx`와 동일 구조로 — `revalidate=600` + `generateStaticParams`(5 로케일) + `SitePageShell` + 로케일별 `featuredMediaBySlug` 시드. tours/list T1 패턴.
+- **동작 무변경**: i18n은 계속 클라측(`LocaleHomeClient` 하이드레이션 시 setLocale) — 프리렌더 HTML=영어 기본값→하이드레이션 후 로케일 전환. 구 `/ko`·신 `/ko` **둘 다 SSR 영어**로 확인(회귀 없음), 서버/클라 동일 SitePageShell 트리라 mismatch 구조적 불가.
+- 검증: 빌드 그린·`/[locale]` **● SSG**(이전 ƒ 동적); 로컬 prod `/ko` **HIT·s-maxage=600·TTFB 6ms**(이전 MISS/no-store)·`/ja`·`/es`도 HIT; SSR 콘텐츠 `/`와 동일(34 hero); 렌더 정상; 테스트 신규실패 0. ⚠ QA한계: 헤드리스 창 백그라운드로 한국어 flip 육안 미관측 → 구/신 SSR 동일 + LocaleHomeClient 무변경으로 갈음.
+- ⚠ **초기 JS 501KB gz/32청크**는 별개 관찰(홈 공통) — `three`/`gsap` 오탐 확인(framer-motion만), Speed Insights 후 판단.
