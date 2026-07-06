@@ -141,3 +141,12 @@
 - `staticTourCatalogCards.lazy.ts`: EN 인라인 + 로케일별 명시적 dynamic import + `useSyncExternalStore` 훅. 비EN은 청크 도착까지 EN 카피(i18n 메시지와 동일한 폴백 의미론).
 - **홈 표면(매처·featured 등)은 의도적으로 무변경** — 통합 모듈 유지, Speed Insights가 정당화할 때 이관.
 - 프로덕션 검증: ja 카탈로그 마커가 배포 전 초기 JS에 존재 → 배포 후 **전체 부재**(초기 JS raw ~−190KB); ISR HIT·SSR 콘텐츠 22링크 유지; 실브라우저 ko 카드 카피 정상 로컬라이즈.
+
+### 카트 탭 (2026-07-05, PR #266 `e3aecdac`)
+
+사용자 후속 리포트: "카트 진입이 아직 느리다". mypage/tours와 동일 클래스 3종:
+- **CT-1**: `app/cart/page.tsx`의 무시되는 `force-dynamic` 제거(클라 컴포넌트라 이미 정적 ○ 셸) + `app/cart/loading.tsx` 추가(dead-tap 제거).
+- **CT-2**: `/api/cart` GET/POST/DELETE → `getAuthUser(req, { skipRoleLookup: true })`. 카트는 user.id 스코프·role 미사용 → 요청당 DB 1~2왕복 절감. (`[id]` PUT/DELETE는 이미 `getUser`만 써서 무변경.)
+- **CT-3**: 마운트 시 새 `supabase.auth.getSession()` → 공유 `useSession().getAccessToken()`(웜 토큰 재사용, 콜드 부트스트랩 6s 타임아웃 회피). 뮤테이션 핸들러도 동일. /mypage 랜딩 패턴.
+- ⚠ **구현 중 버그 → 수정**: 첫 시도에서 `useCallback([session, t])` + `useEffect([status, fetchCartItems])`로 짰다가 **무한 refetch 루프**(라이브 200회+ 관측). 원인 = `useTranslations()`의 `t`가 매 렌더 새 참조(tours-list가 이미 문서화한 함정). 에러 라벨을 primitive로 추출 + `status` 게이트 제거 후 mypage식 `getAccessToken()` await로 재작성 → deps 전부 값-안정.
+- 검증: 빌드 그린; `/cart` 정적 ISR HIT(웜 TTFB 5ms); `/api/cart` 미인증 401·쿠키세션 200(skipRoleLookup 정상); 루프 0회(수정 후); 테스트 회귀 0(카트 테스트 파일 부재, 실패 스위트는 브랜치 베이스 동일). ⚠ QA 한계: 헤드리스 브라우저 창이 백그라운드+사용자 포커스 거부로 **visible-tab 해피패스 렌더는 미관측** — 대신 API 200 직접 확인 + 루프 by-construction 증명 + mypage 검증패턴 재사용으로 갈음.
