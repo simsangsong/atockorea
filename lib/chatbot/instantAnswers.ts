@@ -191,7 +191,12 @@ const POLICY_WORDS_RE =
  *  tour_catalog (region words) — the forecast may still answer those as long
  *  as no cancellation/policy phrasing is present. */
 const LOW_STAKES_INTENTS = new Set(["unknown", "poi"]);
-const WEATHER_INTENTS = new Set(["unknown", "poi", "policy", "tour_catalog", "tour_recommendation"]);
+// Deep-audit 2026-07-05: dropped tour_recommendation/tour_catalog. "Which tour
+// is best in rainy weather in Jeju?" is a RECOMMENDATION (matcher/RAG), not a
+// forecast request — leaving those intents in let the weather answer hijack it.
+// policy stays so "제주 날씨 어때?" (often classified policy via rain-cancel
+// keywords) still gets a forecast when there's no actual cancellation phrasing.
+const WEATHER_INTENTS = new Set(["unknown", "poi", "policy"]);
 
 export async function buildInstantAnswer(input: {
   message: string;

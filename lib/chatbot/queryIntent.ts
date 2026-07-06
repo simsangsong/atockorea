@@ -613,9 +613,19 @@ export function classifyChatbotQuery(message: string): ChatbotIntentResult {
   // (pickup zone) isn't mistaken for an existing-booking pickup-time question.
   // A bare existing-booking question ("내 예약 픽업 시간?") has no quote/tour/
   // region cue, so it still falls through to booking_specific below.
+  // Deep-audit 2026-07-05: a listed-tour NAME can itself carry the private
+  // signal ("Jeju Island Private Car Charter Tour"), so "how much is the …
+  // charter tour?" was hijacked into the quote interrogation instead of
+  // answering the $254 list price. Require an explicit quote word OR a genuine
+  // quote-slot cue (date / party / hours) before a price+private message
+  // counts as a custom-quote request; otherwise it's a listed-price question.
+  const hasQuoteSlotSignal =
+    /\b\d+\s*(?:people|persons?|pax|guests?|hours?|hrs?)\b|\d+\s*(?:명|인|시간)|\d{4}-\d{2}-\d{2}|\b(?:tomorrow|next\s+week)\b|내일|다음\s*주/i.test(
+      q,
+    );
   const looksQuoteRequest =
     (explicitQuoteScore > 0 && (privateScore > 0 || tourScore > 0 || regionScore > 0)) ||
-    (priceScore > 0 && privateScore > 0);
+    (priceScore > 0 && privateScore > 0 && (explicitQuoteScore > 0 || hasQuoteSlotSignal));
   if (looksQuoteRequest) {
     reasons.push("custom_quote_request");
     return result("quote_request", 0.74 + quoteScore * 0.05 + privateScore * 0.03, reasons, {
