@@ -1,5 +1,6 @@
 {
   "buildCommand": "rm -rf .next && npm run build",
+  "regions": ["icn1"],
   "crons": [
     {
       "path": "/api/emails/reminders",
