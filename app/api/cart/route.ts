@@ -14,7 +14,9 @@ import { getAuthUser } from '@/lib/auth';
  */
 export async function GET(req: NextRequest) {
   try {
-    const user = await getAuthUser(req);
+    // Cart is scoped by user.id and never reads role — skip the role/merchant
+    // lookup (1–2 DB round trips) that getAuthUser does by default.
+    const user = await getAuthUser(req, { skipRoleLookup: true });
     if (!user) {
       return NextResponse.json(
         { error: 'Authentication required' },
@@ -75,7 +77,7 @@ export async function GET(req: NextRequest) {
  */
 export async function POST(req: NextRequest) {
   try {
-    const user = await getAuthUser(req);
+    const user = await getAuthUser(req, { skipRoleLookup: true });
     if (!user) {
       return NextResponse.json(
         { error: 'Authentication required' },
@@ -239,7 +241,7 @@ export async function POST(req: NextRequest) {
  */
 export async function DELETE(req: NextRequest) {
   try {
-    const user = await getAuthUser(req);
+    const user = await getAuthUser(req, { skipRoleLookup: true });
     if (!user) {
       return NextResponse.json(
         { error: 'Authentication required' },

@@ -1,15 +1,12 @@
 'use client';
 
-// Force dynamic rendering to avoid I18nProvider issues during static generation
-export const dynamic = 'force-dynamic';
-
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { SitePageShell } from '@/src/components/layout/SitePageShell';
 import { TrashIcon, HeartIcon, CalendarDateIcon, MapIcon, ClockIcon } from '@/components/Icons';
-import { supabase } from '@/lib/supabase';
+import { useSession } from '@/lib/auth-session';
 import { useTranslations } from '@/lib/i18n';
 import { consumerTourDetailHref } from '@/lib/tour-consumer-visibility';
 import { cn } from '@/lib/utils';
@@ -53,6 +50,12 @@ interface CartItem {
 export default function CartPage() {
   const router = useRouter();
   const t = useTranslations();
+  // Shared app-wide session (one subscription, bootstrapped at the root layout).
+  // `getAccessToken()` returns the already-warm token synchronously from the
+  // shared ref, or awaits the one-shot bootstrap — instead of a fresh
+  // per-page `supabase.auth.getSession()` on the entry critical path. Same
+  // pattern the /mypage landing uses.
+  const { session, getAccessToken } = useSession();
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -61,20 +64,23 @@ export default function CartPage() {
   const [promoDiscount, setPromoDiscount] = useState(0);
   const [validatingPromo, setValidatingPromo] = useState(false);
 
-  useEffect(() => {
-    fetchCartItems();
-  }, []);
+  // `useTranslations()` returns a fresh function reference every render, so
+  // including `t` in the fetch callback's deps caused an infinite refetch loop
+  // (setLoading → re-render → new `t` → new callback → effect re-fires). Pull
+  // the one label used inside out as a primitive (stable by value) — same guard
+  // the tours-list fetch effect uses.
+  const somethingWentWrongLabel = t('errors.somethingWentWrong');
 
-  const fetchCartItems = async () => {
+  const fetchCartItems = useCallback(async () => {
     try {
       setLoading(true);
       setError(null);
 
-      const { data: { session } } = await supabase?.auth.getSession() || { data: { session: null } };
+      const token = await getAccessToken();
 
       // Guest mode — no session: read cart from sessionStorage (browser-local).
       // Items added while signed-out are persisted client-side and merged at sign-in.
-      if (!session) {
+      if (!token) {
         try {
           const local = sessionStorage.getItem('guestCartItems');
           if (local) {
@@ -90,7 +96,7 @@ export default function CartPage() {
 
       const response = await fetch('/api/cart', {
         headers: {
-          'Authorization': `Bearer ${session.access_token}`,
+          'Authorization': `Bearer ${token}`,
         },
       });
 
@@ -107,7 +113,7 @@ export default function CartPage() {
           setLoading(false);
           return;
         }
-        throw new Error(t('errors.somethingWentWrong'));
+        throw new Error(somethingWentWrongLabel);
       }
 
       const data = await response.json();
@@ -137,11 +143,21 @@ export default function CartPage() {
       setCartItems(transformedItems);
     } catch (err: any) {
       console.error('Error fetching cart:', err);
-      setError(err.message || t('errors.somethingWentWrong'));
+      setError(err.message || somethingWentWrongLabel);
     } finally {
       setLoading(false);
     }
-  };
+    // `getAccessToken` is a stable ref from the provider; `session?.user?.id`
+    // (a primitive) re-runs the fetch when the signed-in user changes;
+    // `somethingWentWrongLabel` is a stable string. NONE is a fresh reference
+    // per render — critical, since including the raw `t` function here caused
+    // an infinite refetch loop (setLoading → re-render → new `t` → new callback
+    // → effect re-fires). Same guard as the tours-list fetch effect.
+  }, [getAccessToken, session?.user?.id, somethingWentWrongLabel]);
+
+  useEffect(() => {
+    void fetchCartItems();
+  }, [fetchCartItems]);
 
   const handleQuantityChange = async (id: string, newQuantity: number) => {
     if (newQuantity < 1) {
@@ -150,9 +166,9 @@ export default function CartPage() {
     }
 
     try {
-      const { data: { session } } = await supabase?.auth.getSession() || { data: { session: null } };
-      
-      if (!session) {
+      const token = await getAccessToken();
+
+      if (!token) {
         alert(t('errors.unauthorized'));
         return;
       }
@@ -161,7 +177,7 @@ export default function CartPage() {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${session.access_token}`,
+          'Authorization': `Bearer ${token}`,
         },
         body: JSON.stringify({
           numberOfGuests: newQuantity,
@@ -189,9 +205,9 @@ export default function CartPage() {
     }
 
     try {
-      const { data: { session } } = await supabase?.auth.getSession() || { data: { session: null } };
-      
-      if (!session) {
+      const token = await getAccessToken();
+
+      if (!token) {
         alert(t('errors.unauthorized'));
         return;
       }
@@ -199,7 +215,7 @@ export default function CartPage() {
       const response = await fetch(`/api/cart/${id}`, {
         method: 'DELETE',
         headers: {
-          'Authorization': `Bearer ${session.access_token}`,
+          'Authorization': `Bearer ${token}`,
         },
       });
 
@@ -218,9 +234,9 @@ export default function CartPage() {
 
   const handleMoveToWishlist = async (item: CartItem) => {
     try {
-      const { data: { session } } = await supabase?.auth.getSession() || { data: { session: null } };
-      
-      if (!session) {
+      const token = await getAccessToken();
+
+      if (!token) {
         alert(t('errors.unauthorized'));
         return;
       }
@@ -230,7 +246,7 @@ export default function CartPage() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${session.access_token}`,
+          'Authorization': `Bearer ${token}`,
         },
         body: JSON.stringify({
           tourId: item.tourId,
