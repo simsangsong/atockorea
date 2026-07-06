@@ -768,6 +768,31 @@ function QuoteSlotControls({
   );
 }
 
+/** Deep-audit 2026-07-05 — restore-time shape guards (see readStoredMessages). */
+function sanitizeRestoredCards(raw: unknown): TourCard[] | undefined {
+  if (!Array.isArray(raw)) return undefined;
+  const clean = raw.filter(
+    (c): c is TourCard =>
+      Boolean(c) &&
+      typeof c === "object" &&
+      typeof (c as TourCard).slug === "string" &&
+      typeof (c as TourCard).title === "string" &&
+      typeof (c as TourCard).href === "string" &&
+      typeof (c as TourCard).image_url === "string" &&
+      // image_url must be a same-origin path or an https URL — next/image throws
+      // at render for anything else, which would crash the whole widget.
+      (/^\/(?!\/)/.test((c as TourCard).image_url) || /^https:\/\//i.test((c as TourCard).image_url)),
+  );
+  return clean.length > 0 ? clean : undefined;
+}
+
+function sanitizeRestoredSlotRequest(raw: unknown): SlotRequest | undefined {
+  if (!raw || typeof raw !== "object" || Array.isArray(raw)) return undefined;
+  const known = (raw as SlotRequest).known;
+  if (!known || typeof known !== "object" || Array.isArray(known)) return undefined;
+  return raw as SlotRequest;
+}
+
 function readStoredMessages(storageKey: string): ChatMessage[] {
   if (typeof window === "undefined") return [];
   try {
@@ -790,13 +815,22 @@ function readStoredMessages(storageKey: string): ChatMessage[] {
         // through safeCheckoutUrl on the way back in.
         checkoutUrl: safeCheckoutUrl((m as ChatMessage).checkoutUrl) ?? undefined,
         // W4.1/W4.3/W2.3 — keep the rich-UX payloads across page navigations.
-        cards: Array.isArray((m as ChatMessage).cards) ? (m as ChatMessage).cards : undefined,
-        chips: Array.isArray((m as ChatMessage).chips) ? (m as ChatMessage).chips : undefined,
-        slotRequest:
-          (m as ChatMessage).slotRequest && typeof (m as ChatMessage).slotRequest === "object"
-            ? (m as ChatMessage).slotRequest
-            : undefined,
-        sources: Array.isArray((m as ChatMessage).sources) ? (m as ChatMessage).sources : undefined,
+        // Deep-audit 2026-07-05: SHAPE-validate on restore. A malformed
+        // persisted entry (schema drift across a mid-session deploy, or
+        // tampering) used to reach QuoteSlotControls (req.known.track) or
+        // TourCardStrip (<Image src>) and throw at render — and since the same
+        // storage is re-read on every page, the widget then crashed everywhere
+        // until sessionStorage was cleared. Drop bad entries instead.
+        cards: sanitizeRestoredCards((m as ChatMessage).cards),
+        chips: Array.isArray((m as ChatMessage).chips)
+          ? (m as ChatMessage).chips!.filter((c): c is string => typeof c === "string")
+          : undefined,
+        slotRequest: sanitizeRestoredSlotRequest((m as ChatMessage).slotRequest),
+        sources: Array.isArray((m as ChatMessage).sources)
+          ? (m as ChatMessage).sources!.filter(
+              (s): s is AnswerSource => Boolean(s) && typeof s === "object" && typeof s.label === "string",
+            )
+          : undefined,
         quoteTrust: (m as ChatMessage).quoteTrust === true || undefined,
       }));
   } catch {

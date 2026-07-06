@@ -52,11 +52,15 @@ export function matchToursInText(
   };
   for (const p of listStaticTourProducts("en")) consider(p);
   if (locale !== "en") for (const p of listStaticTourProducts(locale)) consider(p);
-  return Array.from(scored.values())
+  const ranked = Array.from(scored.values())
     .filter((s) => s.score >= 2)
-    .sort((a, b) => b.score - a.score)
-    .slice(0, 2)
-    .map((s) => s.p);
+    .sort((a, b) => b.score - a.score);
+  // Deep-audit 2026-07-05: ambiguous tie. When a 3rd tour ties the 2nd's
+  // score we can't tell WHICH two the customer meant — e.g. 5 "cruise shore"
+  // tours all score 2 on {cruise,shore} (region words are STOP_TOKENS), so
+  // the old top-2 slice compared an arbitrary pair. Fall through to the model.
+  if (ranked.length > 2 && ranked[2].score === ranked[1].score) return [];
+  return ranked.slice(0, 2).map((s) => s.p);
 }
 
 function truncate(text: string, max: number): string {

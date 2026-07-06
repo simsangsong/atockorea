@@ -137,4 +137,17 @@ describe("intent gating (post-batch12)", () => {
     const r = await buildInstantAnswer({ ...base, intent: "tour_recommendation", message: "which tours are available?" });
     expect(r).toBeNull();
   });
+
+  it("weather does NOT hijack a rain-mentioning recommendation (deep-audit)", async () => {
+    global.fetch = jest.fn(async () => ({
+      ok: true,
+      json: async () => ({ daily: { time: ["2026-07-05"], weather_code: [61], temperature_2m_max: [24], temperature_2m_min: [20], precipitation_probability_max: [80] } }),
+    })) as unknown as typeof fetch;
+    const r = await buildInstantAnswer({
+      ...base,
+      intent: "tour_recommendation",
+      message: "Which tour is best in rainy weather in Jeju?",
+    });
+    expect(r).toBeNull(); // recommendation path handles it, not the forecast
+  });
 });

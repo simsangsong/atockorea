@@ -60,6 +60,18 @@ describe("chatbot query intent routing", () => {
     expect(classifyChatbotQuery("제주 전세 투어 견적 부탁해요").intent).toBe("quote_request");
   });
 
+  // Deep-audit 2026-07-05: a listed tour whose NAME contains "private/charter"
+  // must still answer its list price, not be hijacked into the quote funnel.
+  it("answers a listed private/charter tour's price question (not quote)", () => {
+    const en = classifyChatbotQuery('How much is the "Jeju Island Private Car Charter Tour" tour?');
+    expect(en.intent).toBe("price_question");
+    expect(en.useTourCatalog).toBe(true);
+    // but the same product WITH quote slots is a real custom quote
+    expect(
+      classifyChatbotQuery("Private Jeju charter for 4 people tomorrow, how much?").intent,
+    ).toBe("quote_request");
+  });
+
   // W1.5.3 (C-24): tourist FAQ that used to fall through to "unknown".
   it("classifies airport/luggage/child/guide-language/weather FAQ as policy", () => {
     expect(classifyChatbotQuery("Can you pick me up at the airport?").intent).toBe("policy");

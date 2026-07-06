@@ -528,7 +528,13 @@ async function finalizeAssistantTurn(
     replyText = ensureHandoffPrompt(replyText, answerLocale);
   }
 
-  if (process.env.TOUR_MATCH_AUDIT_LOG === "1" || process.env.CHAT_AUDIT_LOG === "1") {
+  // Deep-audit 2026-07-05: this block used to be gated on TOUR_MATCH_AUDIT_LOG
+  // / CHAT_AUDIT_LOG, which silently coupled angry-customer / sensitive-topic
+  // ticketing to an audit-log env flag — flip the flag off and complaint
+  // escalation (W1.5.2) dies with zero code change, invisibly. Chat volume is
+  // tiny and W0.2/W0.5 already log failures + cost unconditionally, so the
+  // successful-turn log + escalation now always runs too.
+  {
     const sb = makeServiceRoleClient();
     if (sb) {
       try {

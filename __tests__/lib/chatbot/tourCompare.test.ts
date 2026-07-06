@@ -42,6 +42,28 @@ describe("W6.2 tour comparison", () => {
   });
 });
 
+describe("W6.2 ambiguous-tie fall-through (deep-audit 2026-07-05)", () => {
+  it("does not compare an arbitrary pair when 3+ tours tie the score", () => {
+    // Several "cruise shore" tours all score 2 on {cruise, shore}; region
+    // words are STOP_TOKENS so they don't break the tie → must fall through.
+    const msg = "What's the difference between the Jeju cruise shore tour and the Busan cruise shore tour?";
+    const matched = matchToursInText(msg, "en");
+    expect(matched.length).toBeLessThan(2);
+    expect(buildComparisonAnswer(msg, "en")).toBeNull();
+  });
+
+  it("still compares two clearly-distinct tours", () => {
+    const distinct = products.filter(
+      (p) => !/cruise|shore/i.test(p.title) && p.title.split(/\s+/).length >= 3,
+    );
+    if (distinct.length >= 2) {
+      const msg = `difference between ${distinct[0].title} and ${distinct[1].title}?`;
+      const matched = matchToursInText(msg, "en");
+      expect(matched.map((m) => m.slug).sort()).toEqual([distinct[0].slug, distinct[1].slug].sort());
+    }
+  });
+});
+
 describe("W6.5 computeResolutionRate", () => {
   it("computes the conservative proxy and clamps at zero", () => {
     expect(computeResolutionRate({ userMessages: 100, escalatedMessages: 6, negativeFeedback: 4 })).toBe(0.9);
