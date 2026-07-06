@@ -7,7 +7,7 @@ import { ArrowRight, Headphones, Minus, Plus, Send, ShieldCheck, Sparkles, Thumb
 
 import { cn } from "@/lib/utils";
 import { parseSseBuffer } from "@/lib/chatbot/clientSse";
-import { ChatMarkdown, safeCheckoutUrl } from "./chatMarkdown";
+import { ChatMarkdown, safeCheckoutUrl, safeChatHref } from "./chatMarkdown";
 
 function ChatBotAvatar({ className }: { className?: string }) {
   return (
@@ -537,10 +537,17 @@ function TourCardStrip({ cards, uiLang }: { cards: TourCard[]; uiLang: string })
   const priceFrom = PRICE_FROM[lk] ?? PRICE_FROM.en;
   return (
     <div className="-mx-1.5 mt-2.5 flex snap-x snap-mandatory gap-2.5 overflow-x-auto px-1.5 pb-1.5 pt-0.5">
-      {cards.map((card) => (
+      {cards.map((card) => {
+        // Deep-audit 2026-07-05: validate href at render (defence-in-depth vs a
+        // tampered sessionStorage entry) — the same guard the checkout button
+        // gets. An unsafe/unknown href drops the card rather than link to it.
+        const safe = safeChatHref(card.href);
+        if (!safe) return null;
+        return (
         <a
           key={card.slug}
-          href={card.href}
+          href={safe.href}
+          {...(safe.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
           className="w-[11.5rem] shrink-0 snap-start overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:border-sky-900/35 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
         >
           <div className="relative h-24 w-full bg-slate-100">
@@ -574,7 +581,8 @@ function TourCardStrip({ cards, uiLang }: { cards: TourCard[]; uiLang: string })
             </span>
           </div>
         </a>
-      ))}
+        );
+      })}
     </div>
   );
 }
@@ -776,6 +784,11 @@ function readStoredMessages(storageKey: string): ChatMessage[] {
         origin: (m as ChatMessage).origin,
         supportMessageId:
           typeof (m as ChatMessage).supportMessageId === "number" ? (m as ChatMessage).supportMessageId : undefined,
+        // Deep-audit 2026-07-05: checkoutUrl was dropped on restore, so after
+        // any navigation the "Go to checkout →" button vanished (the trust
+        // badge stayed) — a dead end on the highest-value turn. Re-validated
+        // through safeCheckoutUrl on the way back in.
+        checkoutUrl: safeCheckoutUrl((m as ChatMessage).checkoutUrl) ?? undefined,
         // W4.1/W4.3/W2.3 — keep the rich-UX payloads across page navigations.
         cards: Array.isArray((m as ChatMessage).cards) ? (m as ChatMessage).cards : undefined,
         chips: Array.isArray((m as ChatMessage).chips) ? (m as ChatMessage).chips : undefined,
@@ -1655,11 +1668,16 @@ export function TourProductAiAssistantWidget({
                           <span className="text-[9.5px] font-semibold uppercase tracking-wider text-slate-500">
                             {SOURCES_LABEL[langKey(uiLang)] ?? SOURCES_LABEL.en}
                           </span>
-                          {m.sources.map((s) =>
-                            s.href ? (
+                          {m.sources.map((s) => {
+                            // Deep-audit 2026-07-05: validate at render too, not
+                            // just server-side, so a tampered persisted source
+                            // can't become a javascript: link.
+                            const safe = safeChatHref(s.href);
+                            return safe ? (
                               <a
                                 key={`${s.type}-${s.label}`}
-                                href={s.href}
+                                href={safe.href}
+                                {...(safe.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                                 className="rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-medium text-slate-600 transition hover:bg-sky-50 hover:text-sky-900"
                               >
                                 {s.label}
@@ -1671,8 +1689,8 @@ export function TourProductAiAssistantWidget({
                               >
                                 {s.label}
                               </span>
-                            ),
-                          )}
+                            );
+                          })}
                         </div>
                       ) : null}
                       {(!m.origin || m.origin === "ai") && (

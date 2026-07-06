@@ -473,3 +473,65 @@ describe("buildQuoteReply states the tour date (07-04 incident visibility)", () 
     expect(buildQuoteReply({ ...d, language: "ko" }, "ko").reply).toContain("2026-10-10");
   });
 });
+
+// ── Deep-audit 2026-07-05 — regex boundary + flow-hole regressions ──────────
+
+import {
+  isQuoteFlowFollowUp as isFollowUp2,
+  mentionsQuoteSlotChange,
+} from "@/lib/chatbot/quoteFlow";
+
+describe("emailConfirmOutcome — deep-audit boundary fixes", () => {
+  it('does NOT read "incorrect" as confirmed (routes to edit)', () => {
+    expect(emailConfirmOutcome("That's incorrect")).toBe("edit");
+    expect(emailConfirmOutcome("Hmm, that email is incorrect")).toBe("edit");
+    expect(emailConfirmOutcome("Es incorrecto")).toBe("edit");
+  });
+
+  it('does NOT read "credit card email" or "nosotros" as edit', () => {
+    // "credit" contains \bedit? no — but the old un-anchored /edit/ matched it.
+    expect(emailConfirmOutcome("yes, that's my credit card email")).toBe("confirmed");
+    expect(emailConfirmOutcome("Sí, es correcto, la reserva es para nosotros")).toBe("confirmed");
+  });
+
+  it('accepts a bare Spanish "Sí" / "Si" as confirmed', () => {
+    expect(emailConfirmOutcome("Sí")).toBe("confirmed");
+    expect(emailConfirmOutcome("Sí.")).toBe("confirmed");
+    expect(emailConfirmOutcome("Si")).toBe("confirmed");
+  });
+
+  it('treats a plain "no" / "아니요" at the confirm prompt as edit (wrong email)', () => {
+    expect(emailConfirmOutcome("no")).toBe("edit");
+    expect(emailConfirmOutcome("아니요")).toBe("edit");
+  });
+});
+
+describe('isQuoteFlowFollowUp — "no" stays sticky only at email_confirm', () => {
+  const emailConfirmPrior = quoteEmailConfirmPrompt("a@b.com", "en");
+  const confirmPrior = "Estimated quote: ₩500,000 — 8h private tour in busan for 4 on 2026-10-10. Want me to set up checkout?";
+
+  it("keeps a plain no at the email-confirm stage in the flow", () => {
+    expect(
+      isFollowUp2({ latestUserMessage: "no", priorAssistantReply: emailConfirmPrior, detectedIntent: "unknown" }),
+    ).toBe(true);
+  });
+  it("still exits the flow on no at the quote-confirm stage", () => {
+    expect(
+      isFollowUp2({ latestUserMessage: "no", priorAssistantReply: confirmPrior, detectedIntent: "unknown" }),
+    ).toBe(false);
+  });
+});
+
+describe("mentionsQuoteSlotChange (R2)", () => {
+  it("detects party / hours / date / region changes", () => {
+    expect(mentionsQuoteSlotChange("actually make it 6 people")).toBe(true);
+    expect(mentionsQuoteSlotChange("8 hours instead")).toBe(true);
+    expect(mentionsQuoteSlotChange("제주로 바꿔주세요")).toBe(true);
+    expect(mentionsQuoteSlotChange("6명이요")).toBe(true);
+  });
+  it("does not fire on a plain confirmation or an email", () => {
+    expect(mentionsQuoteSlotChange("yes that's right")).toBe(false);
+    expect(mentionsQuoteSlotChange("네 맞아요")).toBe(false);
+    expect(mentionsQuoteSlotChange("mia.walker@example.com")).toBe(false);
+  });
+});

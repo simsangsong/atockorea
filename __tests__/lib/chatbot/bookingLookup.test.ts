@@ -109,8 +109,21 @@ describe("isBookingWriteRequest", () => {
     "내 픽업 시간 언제야?",
     "what time is my tour?",
     "予約状況を確認したい",
+    // Deep-audit 2026-07-05: change-verb STATUS questions must stay reads so
+    // they don't file a high-priority change ticket every turn.
+    "did you cancel my booking yet?",
+    "have you cancelled my reservation?",
+    "취소됐어?",
+    "예약 취소 처리 됐나요?",
   ])("does NOT flag a status question: %s", (text) => {
     expect(isBookingWriteRequest(text)).toBe(false);
+  });
+
+  it("still flags a genuine change request (polite question form included)", () => {
+    // "did you cancel" (past) is a status read; "can you cancel" (a request)
+    // stays a write even with a trailing "?".
+    expect(isBookingWriteRequest("can you cancel my booking?")).toBe(true);
+    expect(isBookingWriteRequest("please cancel my booking")).toBe(true);
   });
 });
 
