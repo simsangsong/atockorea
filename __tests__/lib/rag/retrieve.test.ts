@@ -97,7 +97,16 @@ describe("buildRagContextText", () => {
 
   it("respects the maxChars budget", () => {
     const big = chunk({ content: "x".repeat(5000) });
+    const text = buildRagContextText([big], { maxChars: 200 });
+    expect(text).toBe("");
+  });
+
+  it("skips an over-budget chunk but still fills the budget with smaller ones (rag-05)", () => {
+    // Pressure-test rag-05: a huge first chunk must NOT drop the remaining
+    // smaller, still-relevant chunks (the old `break` did exactly that).
+    const big = chunk({ content: "x".repeat(5000) });
     const text = buildRagContextText([big, chunk({ id: 2, title: "Second" })], { maxChars: 200 });
-    expect(text).not.toContain("Second");
+    expect(text).not.toContain("xxxxx"); // the over-budget chunk is skipped
+    expect(text).toContain("### Second"); // the small chunk still makes it in
   });
 });
