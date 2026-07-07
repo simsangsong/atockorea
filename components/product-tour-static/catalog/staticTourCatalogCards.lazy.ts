@@ -27,6 +27,17 @@ import {
   type StaticTourProductRegistration,
 } from "./catalogRegistrationBuilder";
 
+export type { StaticTourProductRegistration };
+
+/**
+ * Pure detail-URL builder (no catalog data), re-exposed here so client home
+ * surfaces can drop the heavy `staticTourCatalogCards` import entirely — that
+ * module statically pulls the combined 6-locale catalog.
+ */
+export function hrefStaticTourProductDetail(slug: string): string {
+  return `/tour-product/${slug}`;
+}
+
 type PagesMap = Record<string, SlimCatalogPage>;
 
 const loadedPages: Partial<Record<Locale, PagesMap>> = { en: EN_PAGES };

@@ -16,9 +16,9 @@ import { SnapScrollDots } from "@/components/home/v2/ui/SnapScrollDots";
 import { homeBtnSecondary } from "@/lib/home/home-button-classes";
 import { analytics } from "@/src/design/analytics";
 import {
-  listStaticTourProducts,
+  useStaticTourProductsLazy,
   type StaticTourProductRegistration,
-} from "@/components/product-tour-static/catalog/staticTourCatalogCards";
+} from "@/components/product-tour-static/catalog/staticTourCatalogCards.lazy";
 import type { TourProductPageLocale } from "@/lib/tour-product/resolveTourProductDbLocale";
 import type { TourProductCardMediaMap } from "@/lib/tour-product/cardMediaTypes";
 import { cn } from "@/lib/utils";
@@ -78,13 +78,10 @@ function productToCard(product: StaticTourProductRegistration): TourCardViewMode
 }
 
 function buildStaticFeaturedTours(
-  locale: string,
+  products: readonly StaticTourProductRegistration[],
   mediaBySlug?: TourProductCardMediaMap,
 ): TourCardViewModel[] {
-  const productLocale = isTourProductLocale(locale) ? locale : "en";
-  const bySlug = new Map(
-    listStaticTourProducts(productLocale).map((product) => [product.slug, product]),
-  );
+  const bySlug = new Map(products.map((product) => [product.slug, product]));
 
   return FEATURED_PRODUCT_SLUGS
     .map((slug) => bySlug.get(slug))
@@ -155,9 +152,15 @@ export function FeaturedProductsShowcase({
   const { locale } = useI18n();
   const currencyCtx = useCurrencyOptional();
   const scrollRef = useRef<HTMLDivElement>(null);
+  // Lazy catalog: EN inline + the active locale's chunk on demand, so the home
+  // initial bundle no longer ships all 6 locales (D1 pattern). SSR + first
+  // client render both build from EN (no hydration mismatch); the localized
+  // copy lands after the locale chunk resolves.
+  const productLocale = isTourProductLocale(locale) ? locale : "en";
+  const featuredProducts = useStaticTourProductsLazy(productLocale);
   const fallbackTours = useMemo(
-    () => buildStaticFeaturedTours(locale, initialMediaBySlug),
-    [locale, initialMediaBySlug],
+    () => buildStaticFeaturedTours(featuredProducts, initialMediaBySlug),
+    [featuredProducts, initialMediaBySlug],
   );
 
   const [liveToursState, setLiveToursState] = useState<LiveFeaturedToursState | null>(null);
