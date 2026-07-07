@@ -46,6 +46,15 @@ export function scrubPii(text: string): string {
   return text
     .replace(/\S+@\S+\.\S+/g, "")                         // emails
     .replace(/\bA2C[-\s]?[A-Z0-9]{2,}\b/gi, "")           // booking refs, incl. partial (C-33)
+    // mem-01 (pressure-test): defensively strip names introduced explicitly.
+    // Only name-introducer contexts are stripped, so place names (Jeju, DMZ,
+    // Busan) — which never follow "my name is" — are preserved. Backstop on top
+    // of the model's own name-exclusion instruction.
+    .replace(
+      /\b(?:my name is|my name'?s|i am|i'?m|this is|call me|name is)\s+[A-Za-z][\w'-]*(?:\s+[A-Z][\w'-]*){0,2}/gi,
+      "",
+    )
+    .replace(/(?:제\s*)?이름은\s*[가-힣]{2,4}\s*(?:입니다|이에요|예요|이라고|라고)/g, "") // 제 이름은 X입니다
     .replace(/[+]?\d[\d\s().\-]{7,}\d/g, "")              // phone-like runs
     .replace(/\b\d{6,}\b/g, "")                            // long digit runs (card/IDs)
     .replace(/\s{2,}/g, " ")
@@ -94,7 +103,7 @@ const SUMMARIZER_SYSTEM = [
   "You maintain a tiny rolling memory of a traveler for a Korea private-tour assistant.",
   "Given the PRIOR MEMORY (may be empty) and the LATEST EXCHANGE, output an UPDATED memory.",
   "Capture only DURABLE, useful preferences and intent: regions/places of interest, party size, travel dates or season, preferred language, budget sensitivity, accessibility or mobility needs, pace, tour type (private/cruise/group), and clear likes/dislikes.",
-  "STRICTLY EXCLUDE personally identifying info: no names, emails, phone numbers, booking references, addresses, or card/payment data.",
+  "STRICTLY EXCLUDE personally identifying info: no names, emails, phone numbers, booking references, addresses, or card/payment data. Even if the traveler states their name ('my name is …', '제 이름은 …'), NEVER write it into the memory — refer to them only as 'the traveler'.",
   "Merge — keep still-relevant prior facts, add new ones, drop anything contradicted by the latest exchange.",
   "Max 2 short sentences, under 300 characters, plain text, no preamble.",
   "If there is nothing durable to remember, output the prior memory unchanged (or empty if it was empty).",

@@ -141,7 +141,10 @@ export function buildRagContextText(
     const cite = chunk.url ? `Source: ${chunk.url}` : `Source: ${chunk.source_type}`;
     const body = chunk.content.length > 1200 ? `${chunk.content.slice(0, 1199).trim()}…` : chunk.content;
     const block = [`### ${chunk.title ?? chunk.source_id}`, cite, body].join("\n");
-    if (used + block.length > maxChars) break;
+    // rag-05 (pressure-test): skip an over-budget chunk instead of `break` —
+    // breaking on the first overflow dropped ALL remaining (often smaller,
+    // still-relevant) chunks. Continue so the budget gets filled.
+    if (used + block.length > maxChars) continue;
     blocks.push(block);
     used += block.length;
   }

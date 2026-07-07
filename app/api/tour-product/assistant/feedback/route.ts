@@ -9,7 +9,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { z } from "zod";
 
-import { allowRequest } from "@/lib/chatbot/requestRateLimit";
+import { allowRequestDurable } from "@/lib/chatbot/requestRateLimit";
 
 export const runtime = "nodejs";
 
@@ -52,7 +52,12 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: false, error: "missing_chat_session" }, { status: 401 });
   }
   const ip = bestEffortIp(req);
-  const gate = allowRequest("feedback", ip ? `ip:${ip}` : `sess:${sessionToken}`, { perMinute: 12, perHour: 100 });
+  // fb-02 (pressure-test): durable (Upstash-backed) limiter so the throttle
+  // holds across serverless instances instead of per-instance in-memory only.
+  const gate = await allowRequestDurable("feedback", ip ? `ip:${ip}` : `sess:${sessionToken}`, {
+    perMinute: 12,
+    perHour: 100,
+  });
   if (!gate.allowed) {
     return NextResponse.json(
       { ok: false, error: "rate_limited" },

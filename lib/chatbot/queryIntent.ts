@@ -30,14 +30,46 @@ function normalize(value: string): string {
     .trim();
 }
 
+// T1 (pressure-test 2026-07-07): boundary-aware substring match. Plain
+// `q.includes(term)` false-fired on substrings with no word boundary: "card" in
+// "postcard", "fee" in "coffee", "tour" in "detour", "human" in "humane",
+// "phone" in "headphones", "market" in "supermarket". We require a word boundary
+// on any ASCII-alphanumeric EDGE of the term. CJK edges keep pure-substring
+// behavior so legitimate space-less Korean compounds still match
+// ("제주도"→"제주", "전액환불"→"환불", "투어를"→"투어"). The Korean single-syllable
+// false-positive ("내 " inside "시내") is handled separately in
+// classifyChatbotQuery with a Hangul-aware lookbehind.
+const ASCII_WORD_RE = /[a-z0-9]/;
+
+function isAsciiWordChar(ch: string): boolean {
+  return ch !== "" && ASCII_WORD_RE.test(ch);
+}
+
+function termMatches(q: string, normalizedTerm: string): boolean {
+  const t = normalizedTerm;
+  if (!t) return false;
+  const gateStart = isAsciiWordChar(t[0]);
+  const gateEnd = isAsciiWordChar(t[t.length - 1]);
+  if (!gateStart && !gateEnd) return q.includes(t);
+  let from = 0;
+  for (;;) {
+    const idx = q.indexOf(t, from);
+    if (idx < 0) return false;
+    const beforeOk = !gateStart || !isAsciiWordChar(q[idx - 1] ?? "");
+    const afterOk = !gateEnd || !isAsciiWordChar(q[idx + t.length] ?? "");
+    if (beforeOk && afterOk) return true;
+    from = idx + 1;
+  }
+}
+
 function hasAny(value: string, terms: readonly string[]): boolean {
   const q = normalize(value);
-  return terms.some((term) => q.includes(normalize(term)));
+  return terms.some((term) => termMatches(q, normalize(term)));
 }
 
 function scoreAny(value: string, terms: readonly string[]): number {
   const q = normalize(value);
-  return terms.reduce((score, term) => score + (q.includes(normalize(term)) ? 1 : 0), 0);
+  return terms.reduce((score, term) => score + (termMatches(q, normalize(term)) ? 1 : 0), 0);
 }
 
 const REGION_TERMS = [
@@ -320,6 +352,11 @@ const POLICY_TERMS = [
   "tarifa de niños",
   "precio para niños",
   "asiento infantil",
+  "silla de bebé",
+  "sillita",
+  "sillita de bebé",
+  "silla para niños",
+  "silla infantil",
   "idioma del guía",
   "guía en inglés",
   "si llueve",
@@ -333,8 +370,11 @@ const LEGAL_TERMS = [
   "dispute",
   "dsa",
   "privacy",
-  "cookie",
-  "terms",
+  "cookie policy",
+  "terms of service",
+  "terms of use",
+  "terms and conditions",
+  "terms & conditions",
   "privacy officer",
   "data deletion",
   "delete my data",
@@ -406,7 +446,6 @@ const PERSONAL_BOOKING_TERMS = [
   "내 영수증",
   "내 주문",
   "내 쿠폰",
-  "내 투어",
   "내 호텔",
   "호텔을 바꿨",
   "예약 날짜",
@@ -436,8 +475,6 @@ const PERSONAL_MARKER_TERMS = [
   "can you check",
   "can you change",
   "can you update",
-  "내 ",
-  "제 ",
   "저의",
   "나의",
   "확인해줘",
@@ -459,6 +496,11 @@ const COMPANY_TERMS = [
   "support email",
   "who are you",
   "operator",
+  "operates",
+  "operated by",
+  "run by",
+  "who runs",
+  "who operates",
   "provider",
   "intermediary",
   "located",
@@ -483,7 +525,9 @@ const COMPANY_TERMS = [
 
 const POI_TERMS = [
   "opening hours",
-  "hours",
+  "operating hours",
+  "business hours",
+  "hours of operation",
   "admission",
   "ticket",
   "parking",
@@ -543,7 +587,11 @@ const POI_TERMS = [
 
 const SUPPORT_TERMS = [
   "human",
-  "agent",
+  "human agent",
+  "live agent",
+  "support agent",
+  "talk to an agent",
+  "speak to an agent",
   "representative",
   "customer support",
   "customer service",
@@ -598,7 +646,11 @@ export function classifyChatbotQuery(message: string): ChatbotIntentResult {
   const legalScore = scoreAny(q, LEGAL_TERMS);
   const strongPersonalScore = scoreAny(q, STRONG_PERSONAL_BOOKING_TERMS);
   const personalScore = scoreAny(q, PERSONAL_BOOKING_TERMS);
-  const hasPersonalMarker = hasAny(q, PERSONAL_MARKER_TERMS);
+  // T1 (pressure-test): Korean 1st-person markers must sit on a word boundary —
+  // a plain "내 " substring matched inside "시내" (downtown), misrouting
+  // "부산 시내 투어 요금" to booking_specific. Require 내/제 not be preceded by Hangul.
+  const hasPersonalMarker =
+    hasAny(q, PERSONAL_MARKER_TERMS) || /(?:^|[^가-힣])[내제]\s/.test(q);
   const companyScore = scoreAny(q, COMPANY_TERMS);
   const poiScore = scoreAny(q, POI_TERMS);
   const regionScore = scoreAny(q, REGION_TERMS);
@@ -609,10 +661,17 @@ export function classifyChatbotQuery(message: string): ChatbotIntentResult {
   const quoteScore = explicitQuoteScore + priceScore;
   const privateScore = scoreAny(q, PRIVATE_TOUR_TERMS);
 
+  // T1 (pressure-test): an explicit "not my booking" negation ("내 예약 말고",
+  // "not my reservation") must NOT gate the visitor behind identity verification.
+  const negatesOwnBooking =
+    /(?:내|제)\s*(?:예약|주문|투어|호텔|카드|결제)\s*말고|not my (?:booking|reservation|tour|card)\b|no es mi reserva/.test(
+      q,
+    );
   const looksBookingSpecific =
     personalScore > 0 &&
     (hasPersonalMarker || strongPersonalScore > 0) &&
-    !(policyScore > 0 && !hasPersonalMarker);
+    !(policyScore > 0 && !hasPersonalMarker) &&
+    !negatesOwnBooking;
 
   // Custom private-tour quote funnel: an EXPLICIT quote ask ("견적"/"quote")
   // paired with a private/tour/region signal, or a price ask that itself
@@ -797,7 +856,23 @@ export function replyLooksMisrouted(intent: ChatbotIntent, reply: string): boole
     return tourHeavy && !hasAny(r, ["refund", "cancel", "policy", "환불", "취소", "정책", "24"]);
   }
   if (intent === "booking_specific" || intent === "company" || intent === "legal" || intent === "poi") {
-    return tourHeavy && !hasAny(r, ["support", "contact", "담당자", "고객", "legal", "privacy", "개인정보", "입장", "주차"]);
+    // rag-01 (pressure-test): a correct POI/company/legal answer that merely
+    // MENTIONS a tour ("Seongsan opens at 07:00 … included in our Jeju day
+    // tour") used to be clobbered by the generic handoff, because the safe-token
+    // guard only listed Korean 입장/주차 + English support words — not English/
+    // JA/ZH/ES POI vocabulary. Only treat it as misrouted when the reply
+    // actually PUSHES products (links /tour-product/) AND fails to address the
+    // asked topic.
+    const onTopic = hasAny(r, [
+      "support", "contact", "담당자", "고객", "legal", "privacy", "개인정보",
+      // POI / place facts across locales
+      "입장", "주차", "admission", "ticket", "hours", "open", "opening", "parking",
+      "restroom", "entrance", "료금", "料金", "時間", "営業", "開館", "入場", "开放", "營業",
+      "horario", "entrada", "abierto",
+      // company / contact facts
+      "email", "@atockorea", "address", "operates", "operator", "주소", "이메일",
+    ]);
+    return tourHeavy && /\/tour-product\//.test(r) && !onTopic;
   }
   return false;
 }

@@ -10,6 +10,7 @@ import {
   markTicketAfterUserMessage,
 } from "@/lib/support/live-chat";
 import { notifyTelegramLiveChatMessage } from "@/lib/support/telegram-webhook";
+import { allowRequestDurable } from "@/lib/chatbot/requestRateLimit";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -91,6 +92,17 @@ export async function POST(req: NextRequest) {
   const sessionToken = sessionTokenFromRequest(req);
   if (!sessionToken) {
     return NextResponse.json({ error: "missing_chat_session" }, { status: 401 });
+  }
+
+  // live-01 (pressure-test): throttle live-support sends. This endpoint had NO
+  // rate limit, so a session could spam messages that each fire a Telegram ping
+  // to staff.
+  const rl = await allowRequestDurable("live_send", `sess:${sessionToken}`, { perMinute: 10, perHour: 120 });
+  if (!rl.allowed) {
+    return NextResponse.json(
+      { error: "rate_limited" },
+      { status: 429, headers: { "Retry-After": String(Math.ceil(rl.retryAfterMs / 1000)) } },
+    );
   }
 
   const json = await req.json().catch(() => null);

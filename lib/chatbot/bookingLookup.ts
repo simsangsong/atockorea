@@ -46,6 +46,10 @@ const WRITE_INTENT_PATTERNS: RegExp[] = [
   /\b(?:please\s+)?(?:cancel|refund|reschedule|change|modify|move|amend)\s+(?:my|the|this|our)\s+(?:booking|reservation|tour|order|trip|date|time)\b/i,
   /\bi\s+(?:want|need|would like|'d like|wanna)\s+to\s+(?:cancel|refund|reschedule|change|modify|move)\b/i,
   /\bcancel\s+(?:my|the|this)\s+(?:booking|reservation|tour|order)\b/i,
+  // booking-02 (pressure-test): common capability-framed change requests
+  // ("can you cancel my booking", "could I change my reservation"). The
+  // interrogative status-question guard below still exempts "did you cancel …?".
+  /\b(?:can|could|would)\s+(?:i|you|we)\s+(?:please\s+)?(?:cancel|refund|reschedule|change|modify|move)\s+(?:my|the|this|our|it)\b/i,
   // Korean — action requests (취소/환불/변경 + 하고싶/해주세요/해줘 …)
   /(?:취소|환불|변경|수정|날짜\s*변경|일정\s*변경|예약\s*변경)\s*(?:하고\s*싶|해\s*주세요|해줘|부탁|하려|할게요|할\s*수\s*있)/,
   /(?:예약|투어|일정|날짜)\s*(?:을|를)?\s*(?:취소|변경|바꾸|수정|환불)\s*(?:하|해|할)/,

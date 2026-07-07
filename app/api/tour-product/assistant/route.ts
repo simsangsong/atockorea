@@ -128,7 +128,8 @@ const bodySchema = z.object({
   /**
    * Opt into SSE token streaming for the free-form model answer (Track 2).
    * Deterministic gates still return buffered JSON; the server only streams
-   * when this is true AND CHAT_STREAMING !== "0" (D-T2-1, D-T2-5).
+   * when this is true AND CHAT_STREAMING === "1" (default OFF — see the
+   * wantStream gate below) and not in debug mode (D-T2-1, D-T2-5).
    */
   stream: z.boolean().optional(),
 });
@@ -234,40 +235,71 @@ function buildCatalogueRecommendationReply(context: string, locale: TourProductP
     .slice(0, 3);
   if (entries.length === 0) return null;
 
-  if (locale === "ko") {
-    return [
-      "조건에 가장 맞는 공개 상품은 아래예요.",
-      ...entries.map((entry, index) =>
-        [
-          `${index + 1}. ${entry.title}`,
-          entry.region ? `지역: ${entry.region}` : "",
-          entry.duration ? `소요 시간: ${entry.duration}` : "",
-          entry.price ? `가격: ${entry.price}` : "",
-          entry.summary ? truncateSentence(entry.summary, 180) : "",
-          entry.url,
-        ]
-          .filter(Boolean)
-          .join(" · "),
-      ),
-      "정확한 이동 난이도나 동행자 상황에 맞춘 선택이 필요하면 이 채팅에서 담당자에게 바로 연결해 드릴 수 있어요.",
-    ].join("\n");
-  }
-
+  // i18n-05 (pressure-test): this deterministic recommendation fallback used to
+  // reply in English for ja/zh/zh-TW/es visitors. Localize all six.
+  const L: Record<
+    TourProductPageLocale,
+    { lead: string; region: string; duration: string; price: string; foot: string }
+  > = {
+    en: {
+      lead: "These listed AtoC Korea tours best match your request:",
+      region: "Region",
+      duration: "Duration",
+      price: "Price",
+      foot: "If you need a staff-confirmed fit for mobility, timing, or pickup details, I can connect you with support in this chat.",
+    },
+    ko: {
+      lead: "조건에 가장 맞는 공개 상품은 아래예요.",
+      region: "지역",
+      duration: "소요 시간",
+      price: "가격",
+      foot: "정확한 이동 난이도나 동행자 상황에 맞춘 선택이 필요하면 이 채팅에서 담당자에게 바로 연결해 드릴 수 있어요.",
+    },
+    ja: {
+      lead: "ご希望に最も合う公開ツアーはこちらです。",
+      region: "エリア",
+      duration: "所要時間",
+      price: "料金",
+      foot: "移動の負担や同行者に合わせた確認が必要でしたら、このチャットで担当者におつなぎします。",
+    },
+    zh: {
+      lead: "最符合你需求的公开行程如下：",
+      region: "地区",
+      duration: "时长",
+      price: "价格",
+      foot: "如果需要就体力、时间或接送细节做人工确认，我可以在此聊天中帮你联系客服。",
+    },
+    "zh-TW": {
+      lead: "最符合你需求的公開行程如下：",
+      region: "地區",
+      duration: "時長",
+      price: "價格",
+      foot: "如果需要就體力、時間或接送細節做人工確認，我可以在此聊天中幫你聯絡客服。",
+    },
+    es: {
+      lead: "Estos tours publicados de AtoC Korea son los que mejor encajan con tu solicitud:",
+      region: "Región",
+      duration: "Duración",
+      price: "Precio",
+      foot: "Si necesitas una confirmación del equipo sobre movilidad, horarios o recogida, puedo conectarte con soporte en este chat.",
+    },
+  };
+  const t = L[locale] ?? L.en;
   return [
-    "These listed AtoC Korea tours best match your request:",
+    t.lead,
     ...entries.map((entry, index) =>
       [
         `${index + 1}. ${entry.title}`,
-        entry.region ? `Region: ${entry.region}` : "",
-        entry.duration ? `Duration: ${entry.duration}` : "",
-        entry.price ? `Price: ${entry.price}` : "",
+        entry.region ? `${t.region}: ${entry.region}` : "",
+        entry.duration ? `${t.duration}: ${entry.duration}` : "",
+        entry.price ? `${t.price}: ${entry.price}` : "",
         entry.summary ? truncateSentence(entry.summary, 180) : "",
         entry.url,
       ]
         .filter(Boolean)
         .join(" · "),
     ),
-    "If you need a staff-confirmed fit for mobility, timing, or pickup details, I can connect you with support in this chat.",
+    t.foot,
   ].join("\n");
 }
 
@@ -569,52 +601,79 @@ async function finalizeAssistantTurn(
             decision.reason === "complaint"
           ) {
             const summary = buildAdminSummary(userMessage, decision);
-            const { data: ticket } = await sb
+            const isUrgent = decision.reason === "sensitive_topic" || decision.reason === "complaint";
+            // Pressure-test esc-02: dedupe. A chatty complaint/keyword
+            // conversation used to file one ticket + Telegram ping PER TURN. If
+            // this session already has an unresolved ticket, reuse it (link the
+            // message, raise priority if this turn is more urgent) instead of
+            // spawning a duplicate and re-paging the admin on every turn.
+            const { data: existingOpen } = await sb
               .from("support_tickets")
-              .insert({
-                session_id: log.sessionId,
-                trigger_message_id: log.assistantMessageId,
-                user_locale: locale,
-                tour_slug: isSiteAssistant ? null : tourProductSlug,
-                page_url: pageContext?.url ?? null,
-                page_title: pageContext?.title ?? null,
-                escalation_reason: decision.reason,
-                initial_user_message: userMessage,
-                initial_summary: summary,
-                status: "open",
-                // An angry customer is as urgent as a legal topic (W1.5.2).
-                priority:
-                  decision.reason === "sensitive_topic" || decision.reason === "complaint"
-                    ? "high"
-                    : "normal",
-                unread_for_admin: true,
-              })
-              .select("id")
-              .single();
+              .select("id, priority")
+              .eq("session_id", log.sessionId)
+              .not("status", "in", "(resolved,closed)")
+              .order("id", { ascending: false })
+              .limit(1)
+              .maybeSingle();
 
-            if (ticket) {
-              ticketCreated = ticket.id as number;
+            if (existingOpen) {
+              ticketCreated = existingOpen.id as number;
               handoffOffered = false;
-              // Mark the triggering chat message as escalated and link to ticket
               await sb
                 .from("chat_messages")
-                .update({
-                  escalated: true,
-                  escalation_reason: decision.reason,
-                  ticket_id: ticketCreated,
-                })
+                .update({ escalated: true, escalation_reason: decision.reason, ticket_id: ticketCreated })
                 .eq("id", log.assistantMessageId);
+              if (isUrgent && existingOpen.priority !== "high") {
+                await sb
+                  .from("support_tickets")
+                  .update({ priority: "high", unread_for_admin: true })
+                  .eq("id", ticketCreated);
+              }
+            } else {
+              const { data: ticket } = await sb
+                .from("support_tickets")
+                .insert({
+                  session_id: log.sessionId,
+                  trigger_message_id: log.assistantMessageId,
+                  user_locale: locale,
+                  tour_slug: isSiteAssistant ? null : tourProductSlug,
+                  page_url: pageContext?.url ?? null,
+                  page_title: pageContext?.title ?? null,
+                  escalation_reason: decision.reason,
+                  initial_user_message: userMessage,
+                  initial_summary: summary,
+                  status: "open",
+                  // An angry customer is as urgent as a legal topic (W1.5.2).
+                  priority: isUrgent ? "high" : "normal",
+                  unread_for_admin: true,
+                })
+                .select("id")
+                .single();
 
-              // Fire Telegram notification (no-op if env missing)
-              await notifyTelegramNewTicket(sb, {
-                ticketId: ticketCreated,
-                reason: decision.reason,
-                initialUserMessage: userMessage,
-                tourSlug: isSiteAssistant ? null : tourProductSlug,
-                pageUrl: pageContext?.url ?? null,
-                pageTitle: pageContext?.title ?? null,
-                userLocale: locale,
-              });
+              if (ticket) {
+                ticketCreated = ticket.id as number;
+                handoffOffered = false;
+                // Mark the triggering chat message as escalated and link to ticket
+                await sb
+                  .from("chat_messages")
+                  .update({
+                    escalated: true,
+                    escalation_reason: decision.reason,
+                    ticket_id: ticketCreated,
+                  })
+                  .eq("id", log.assistantMessageId);
+
+                // Fire Telegram notification (no-op if env missing)
+                await notifyTelegramNewTicket(sb, {
+                  ticketId: ticketCreated,
+                  reason: decision.reason,
+                  initialUserMessage: userMessage,
+                  tourSlug: isSiteAssistant ? null : tourProductSlug,
+                  pageUrl: pageContext?.url ?? null,
+                  pageTitle: pageContext?.title ?? null,
+                  userLocale: locale,
+                });
+              }
             }
           }
         }
@@ -1297,8 +1356,19 @@ export async function POST(req: NextRequest) {
           quote_trust: true,
         });
       }
-      // disabled / insert_failed → fall back to the quote + a gentle retry.
-      return respond(quoteReply);
+      // quote-02 (pressure-test): a failed booking write (insert error or the
+      // kill switch) used to silently re-show the SAME quote, trapping the
+      // customer in a "yes → same quote → yes" loop with no error and no human
+      // path. Tell them plainly and force a support hand-off.
+      const bookingFailed: Record<TourProductPageLocale, string> = {
+        en: "I couldn't finalize the reservation just now. Let me connect you with our team in this chat to complete your booking.",
+        ko: "지금 예약을 최종 처리하지 못했어요. 이 채팅에서 담당자에게 연결해 예약을 마무리해 드릴게요.",
+        ja: "ただ今ご予約を確定できませんでした。このチャットで担当者におつなぎし、ご予約を完了いたします。",
+        zh: "刚才未能完成预订。我在此聊天中为你联系客服来完成预订。",
+        "zh-TW": "剛才未能完成預訂。我在此聊天中為你聯絡客服來完成預訂。",
+        es: "No pude finalizar la reserva en este momento. Te conecto con nuestro equipo en este chat para completarla.",
+      };
+      return respond(bookingFailed[quoteLocale] ?? bookingFailed.en, { handoff_offered: true });
     }
 
     // Quote shown; not yet booking (or debug mode) → ask to confirm, with
@@ -1388,7 +1458,13 @@ export async function POST(req: NextRequest) {
         const chunks = await retrieveKnowledge(qaSb, {
           query: last.content,
           locale: answerLocale,
-          sourceTypes: ["poi", "tour_product", "site", "policy", "qa"],
+          // rag-03 (pressure-test): for intents that deliberately omit the tour
+          // catalogue (policy/legal/company/poi/booking), don't let semantic
+          // retrieval smuggle tour_product chunks back in and re-trigger tour
+          // recommendations the routing intended to suppress.
+          sourceTypes: useTourCatalog
+            ? ["poi", "tour_product", "site", "policy", "qa"]
+            : ["poi", "site", "policy", "qa"],
           limit: 8,
         });
         ragContext = buildRagContextText(chunks, { maxChars: 8000 });
@@ -1421,15 +1497,20 @@ export async function POST(req: NextRequest) {
 
   // Legacy fallback context (also used to complement RAG misses) — depends on
   // the RAG result, so it stays sequential (it's a rare, cheap path).
+  // rag-02 (pressure-test): always pull curated approved admin Q&A. It used to
+  // be fetched ONLY when RAG returned nothing (`!ragContext`), so a single
+  // non-QA RAG chunk silently dropped the human-curated answers. When RAG is
+  // present this is a smaller supplement appended alongside it; when RAG is
+  // empty it stays the primary keyword fallback.
   let learnedQaContext = "";
-  if (!ragContext && qaSb) {
+  if (qaSb) {
     try {
       learnedQaContext = await buildApprovedQaContextText(qaSb, {
         locale: answerLocale,
         query: last.content,
         tourSlug: isSiteAssistant ? null : tourProductSlug,
-        limit: 5,
-        maxChars: 3500,
+        limit: ragContext ? 3 : 5,
+        maxChars: ragContext ? 2000 : 3500,
       });
     } catch (qaErr) {
       console.error("[tour-product/assistant] approved QA lookup error:", (qaErr as Error).message);
@@ -1443,6 +1524,9 @@ export async function POST(req: NextRequest) {
     ? [
         "\n--- VERIFIED KNOWLEDGE (semantic search over POI, tours, policies, site, and approved Q&A) ---\n",
         ragContext,
+        ...(learnedQaContext
+          ? ["\n--- APPROVED ADMIN Q&A (human-curated; use when it directly matches) ---\n", learnedQaContext]
+          : []),
       ]
     : [
         "\n--- APPROVED ADMIN Q&A ---\n",
@@ -1489,13 +1573,20 @@ export async function POST(req: NextRequest) {
     verifiedBookingContext
       ? "The user's own booking has been verified (booking reference + email). Answer their booking question — pickup, tour time, status, payment status, refund progress, guests, amount — using ONLY the VERIFIED BOOKING facts below. Never reveal or mention payment-method, card, or internal IDs. For changes, cancellation, or refund PROCESSING, tell them our staff will handle it and offer support in this chat — never claim you have changed, cancelled, rescheduled, or refunded anything."
       : "For personal booking details such as exact pickup time, driver contact, payment status, booking changes, or booking-specific refund progress, staff must check the booking record; offer support inside this chat.",
+    // mem-02 (pressure-test): an anonymous session is keyed by a 30-day cookie
+    // that is shared on a family/public device, so proactively announcing the
+    // remembered preferences discloses the PREVIOUS visitor's plans (and maybe
+    // name) to the NEXT one. Authenticated identities may be greeted with
+    // continuity; anonymous memory is used only to silently pre-fill.
     memoryContext
-      ? "TRAVELER MEMORY below is a soft recollection of this traveler's preferences from past chats. Use it to personalize (e.g. greet continuity, pre-fill likely region/party size) but ALWAYS defer to the current message, never assume it is still true if contradicted, and never treat it as a verified booking, price, or policy fact."
+      ? authUser?.id
+        ? "TRAVELER MEMORY below is a soft recollection of this traveler's preferences from past chats. Use it to personalize (e.g. greet continuity, pre-fill likely region/party size) but ALWAYS defer to the current message, never assume it is still true if contradicted, and never treat it as a verified booking, price, or policy fact."
+        : "TRAVELER MEMORY below is a soft recollection of preferences from earlier chats on THIS DEVICE (the visitor is not signed in, so the browser may be shared). Use it ONLY to silently pre-fill a likely region or party size when it is consistent with the current message. Do NOT greet with, mention, or reveal any remembered detail, and never say 'welcome back' — another person may be using this browser. Always defer to the current message."
       : "",
     // W6.3 — returning traveler, first turn of a fresh conversation: open with
-    // ONE short continuity line ("Welcome back — still planning that Jeju trip
-    // for 4?") before answering. Soft phrasing only; never assert it as fact.
-    memoryContext && messages.length === 1
+    // ONE short continuity line. mem-02: authenticated identities only — never
+    // proactively surface memory to an anonymous (possibly shared-device) visitor.
+    memoryContext && messages.length === 1 && authUser?.id
       ? "This is a RETURNING traveler starting a new conversation. Begin your reply with ONE short, warm continuity sentence grounded in the TRAVELER MEMORY (phrased as a soft question or acknowledgement, e.g. \"Welcome back — still thinking about ...?\"), then answer their message."
       : "",
     memoryContext,

@@ -154,6 +154,8 @@ function negativeReasons(lang: string): readonly (readonly [string, string])[] {
     return [["inaccurate", "情報が不正確"], ["unanswered", "質問に答えていない"], ["confusing", "わかりにくい"]];
   if (lang.startsWith("es"))
     return [["inaccurate", "Información inexacta"], ["unanswered", "No respondió mi pregunta"], ["confusing", "Difícil de entender"]];
+  if (lang.startsWith("zh-TW"))
+    return [["inaccurate", "資訊不準確"], ["unanswered", "沒有回答我的問題"], ["confusing", "難以理解"]];
   if (lang.startsWith("zh"))
     return [["inaccurate", "信息不准确"], ["unanswered", "没有回答我的问题"], ["confusing", "难以理解"]];
   return [["inaccurate", "Not accurate"], ["unanswered", "Didn't answer my question"], ["confusing", "Hard to understand"]];
@@ -250,6 +252,7 @@ const RETRY_LABEL: Record<string, string> = {
 function rateLimitMessage(lang: string, seconds: number): string {
   if (lang.startsWith("ko")) return `질문이 많아 잠시 쉬어가요 — 약 ${seconds}초 후에 다시 물어봐 주세요.`;
   if (lang.startsWith("ja")) return `ご質問が集中しています。約${seconds}秒後にもう一度お試しください。`;
+  if (lang.startsWith("zh-TW")) return `提問有點多，稍作休息 — 約${seconds}秒後再試一次吧。`;
   if (lang.startsWith("zh")) return `提问有点多，稍作休息 — 约${seconds}秒后再试一次吧。`;
   if (lang.startsWith("es")) return `Muchas preguntas seguidas — inténtalo de nuevo en unos ${seconds} segundos.`;
   return `Lots of questions at once — please try again in about ${seconds} seconds.`;
@@ -259,6 +262,7 @@ function rateLimitMessage(lang: string, seconds: number): string {
 function trimNotice(lang: string): string {
   if (lang.startsWith("ko")) return "긴 대화예요 — 최근 대화 위주로 이해하고 있어요.";
   if (lang.startsWith("ja")) return "長い会話のため、直近のやり取りを中心に理解しています。";
+  if (lang.startsWith("zh-TW")) return "對話較長 — 我主要參考最近的內容來回答。";
   if (lang.startsWith("zh")) return "对话较长 — 我主要参考最近的内容来回答。";
   if (lang.startsWith("es")) return "La conversación es larga: me baso sobre todo en los mensajes recientes.";
   return "Long conversation — I'm working mainly from the most recent messages.";
@@ -398,6 +402,7 @@ function stageLabels(lang: string): { searching: string; writing: string } {
   if (lang.startsWith("ko")) return { searching: "관련 정보 검색 중…", writing: "답변 작성 중…" };
   if (lang.startsWith("ja")) return { searching: "関連情報を検索中…", writing: "回答を作成中…" };
   if (lang.startsWith("es")) return { searching: "Buscando información…", writing: "Escribiendo la respuesta…" };
+  if (lang.startsWith("zh-TW")) return { searching: "正在搜尋相關資訊…", writing: "正在撰寫回答…" };
   if (lang.startsWith("zh")) return { searching: "正在搜索相关信息…", writing: "正在撰写回答…" };
   return { searching: "Searching our info…", writing: "Writing your answer…" };
 }
@@ -409,6 +414,8 @@ function feedbackLabels(lang: string): FeedbackLabels {
     return { helpful: "役に立った", notHelpful: "役に立たなかった", thanks: "ありがとうございます！", noted: "フィードバックに感謝します", ask: "役に立ちましたか？", whyNot: "どこが問題でしたか？", skip: "スキップ" };
   if (lang.startsWith("es"))
     return { helpful: "Útil", notHelpful: "No fue útil", thanks: "¡Gracias!", noted: "Gracias por tu comentario", ask: "¿Te ayudó?", whyNot: "¿Qué falló?", skip: "Omitir" };
+  if (lang.startsWith("zh-TW"))
+    return { helpful: "有幫助", notHelpful: "沒幫助", thanks: "謝謝！", noted: "感謝回饋", ask: "有幫助嗎？", whyNot: "哪裡不滿意？", skip: "跳過" };
   if (lang.startsWith("zh"))
     return { helpful: "有帮助", notHelpful: "没帮助", thanks: "谢谢！", noted: "感谢反馈", ask: "有帮助吗？", whyNot: "哪里不满意？", skip: "跳过" };
   return { helpful: "Helpful", notHelpful: "Not helpful", thanks: "Thanks!", noted: "Thanks for the feedback", ask: "Was this helpful?", whyNot: "What went wrong?", skip: "Skip" };
@@ -451,6 +458,168 @@ function labelsFor(lang: string, scope: AssistantScope): UiLabels {
       teaserTitle: "AI 여행 에이전트",
       teaserBody: "투어 추천 · 견적 · 예약 조회 — 물어보세요",
       teaserCta: "대화 시작",
+    };
+  }
+
+  // i18n-01 (pressure-test): the widget UI used to fall back to English for
+  // ja/zh/zh-TW/es visitors (only ko + en existed). Full localizations below.
+  if (lang.startsWith("ja")) {
+    return {
+      badge: "Help center",
+      title: scope === "site" ? "AtoC マスターアシスタント" : "このツアーについて質問",
+      siteTitle: "AtoC Korea サイト全体サポート",
+      introTitle: "どのようにお手伝いできますか？",
+      introBody:
+        scope === "site"
+          ? "ツアー全般、返金・キャンセル、会社情報、韓国の観光地について、サイトの情報からお答えします。確定が難しい場合はすぐに担当者へおつなぎできます。"
+          : "この商品ページとサイトポリシーに基づいてお答えします。回答が曖昧な場合はすぐに担当者へおつなぎできます。",
+      popular: "よくある質問",
+      suggested: "おすすめの質問",
+      contactSupport: "担当者につなぐ",
+      contactPromptTitle: "担当者におつなぎしましょうか？",
+      connectNow: "はい、つないでください",
+      notNow: "いいえ",
+      close: "閉じる",
+      send: "送信",
+      message: "メッセージ",
+      activeSupport: "担当者に接続中",
+      supportMessagePlaceholder: "担当者へのメッセージ",
+      questionPlaceholder: "質問を入力してください",
+      aiNotice: "AIの回答には誤りがある場合があります。ご予約前に詳細をもう一度ご確認ください。",
+      liveNotice: "担当者と対応中です。入力したメッセージはTelegramに転送されます。",
+      aiUnavailable: "現在AIチャットの設定が完了していません。「担当者につなぐ」からお問い合わせください。",
+      requestFailed: (error) => `処理中に問題が発生しました（${error}）。しばらくしてからもう一度お試しください。`,
+      networkError: "ネットワークエラーが発生しました。接続を確認してもう一度お試しください。",
+      liveSendFailed: (error) => `担当者へメッセージを送信できませんでした（${error}）。しばらくしてからもう一度お試しください。`,
+      handoffFailed: (error) => `担当者への接続を受け付けられませんでした（${error}）。しばらくしてからもう一度お試しください。`,
+      handoffNetworkError: "ネットワークエラーで担当者への接続を受け付けられませんでした。接続を確認してもう一度お試しください。",
+      handoffRequest: "担当者につないでください。",
+      directSupportQuestion: "お客様がチャットから担当者への接続をリクエストしました。",
+      defaultQuickChips: ["どんなツアーがありますか？", "返金ポリシーを知りたいです", "済州／釜山／ソウルのツアーを教えて"],
+      teaserTitle: "AI旅行エージェント",
+      teaserBody: "ツアー提案・見積もり・予約確認 — お気軽に",
+      teaserCta: "チャットを始める",
+    };
+  }
+
+  if (lang.startsWith("zh-TW")) {
+    return {
+      badge: "Help center",
+      title: scope === "site" ? "AtoC 智慧助手" : "諮詢這個行程",
+      siteTitle: "AtoC Korea 全站客服",
+      introTitle: "有什麼可以幫您？",
+      introBody:
+        scope === "site"
+          ? "關於全部行程、退款/取消、公司資訊和韓國景點，我會根據網站資訊作答。若無法確定，可立即為您轉接客服。"
+          : "我會根據此產品頁面和網站政策作答。若回答不明確，可立即為您轉接客服。",
+      popular: "常見問題",
+      suggested: "推薦問題",
+      contactSupport: "聯絡客服",
+      contactPromptTitle: "需要我幫您轉接人工客服嗎？",
+      connectNow: "好的，幫我轉接",
+      notNow: "暫時不用",
+      close: "關閉",
+      send: "傳送",
+      message: "訊息",
+      activeSupport: "已接入人工客服",
+      supportMessagePlaceholder: "傳送給客服的訊息",
+      questionPlaceholder: "輸入您的問題",
+      aiNotice: "AI 可能會出錯，預訂前請再次確認頁面上的詳細資訊。",
+      liveNotice: "正在人工客服中。您輸入的訊息會轉發到 Telegram。",
+      aiUnavailable: "AI 聊天尚未設定完成。請點擊「聯絡客服」與我們聯繫。",
+      requestFailed: (error) => `處理時出現問題（${error}）。請稍後再試。`,
+      networkError: "網路錯誤。請檢查網路後重試。",
+      liveSendFailed: (error) => `未能將訊息傳送給客服（${error}）。請稍後再試。`,
+      handoffFailed: (error) => `未能受理客服轉接（${error}）。請稍後再試。`,
+      handoffNetworkError: "網路錯誤，未能受理客服轉接。請檢查網路後重試。",
+      handoffRequest: "請幫我轉接人工客服。",
+      directSupportQuestion: "客戶在聊天中請求轉接人工客服。",
+      defaultQuickChips: ["你們有哪些行程？", "退款政策是怎樣的？", "推薦首爾/釜山/濟州的行程"],
+      teaserTitle: "AI 旅行助手",
+      teaserBody: "行程推薦 · 報價 · 預訂查詢 — 儘管問",
+      teaserCta: "開始對話",
+    };
+  }
+
+  if (lang.startsWith("zh")) {
+    return {
+      badge: "Help center",
+      title: scope === "site" ? "AtoC 智能助手" : "咨询这个行程",
+      siteTitle: "AtoC Korea 全站客服",
+      introTitle: "有什么可以帮您？",
+      introBody:
+        scope === "site"
+          ? "关于全部行程、退款/取消、公司信息和韩国景点，我会根据网站信息作答。若无法确定，可立即为您转接客服。"
+          : "我会根据此产品页面和网站政策作答。若回答不明确，可立即为您转接客服。",
+      popular: "常见问题",
+      suggested: "推荐问题",
+      contactSupport: "联系客服",
+      contactPromptTitle: "需要我帮您转接人工客服吗？",
+      connectNow: "好的，帮我转接",
+      notNow: "暂时不用",
+      close: "关闭",
+      send: "发送",
+      message: "消息",
+      activeSupport: "已接入人工客服",
+      supportMessagePlaceholder: "发送给客服的消息",
+      questionPlaceholder: "输入您的问题",
+      aiNotice: "AI 可能会出错，预订前请再次确认页面上的详细信息。",
+      liveNotice: "正在人工客服中。您输入的消息会转发到 Telegram。",
+      aiUnavailable: "AI 聊天尚未配置完成。请点击“联系客服”与我们联系。",
+      requestFailed: (error) => `处理时出现问题（${error}）。请稍后再试。`,
+      networkError: "网络错误。请检查网络后重试。",
+      liveSendFailed: (error) => `未能将消息发送给客服（${error}）。请稍后再试。`,
+      handoffFailed: (error) => `未能受理客服转接（${error}）。请稍后再试。`,
+      handoffNetworkError: "网络错误，未能受理客服转接。请检查网络后重试。",
+      handoffRequest: "请帮我转接人工客服。",
+      directSupportQuestion: "客户在聊天中请求转接人工客服。",
+      defaultQuickChips: ["你们有哪些行程？", "退款政策是怎样的？", "推荐首尔/釜山/济州的行程"],
+      teaserTitle: "AI 旅行助手",
+      teaserBody: "行程推荐 · 报价 · 预订查询 — 尽管问",
+      teaserCta: "开始对话",
+    };
+  }
+
+  if (lang.startsWith("es")) {
+    return {
+      badge: "Help center",
+      title: scope === "site" ? "Asistente principal de AtoC" : "Pregunta sobre este tour",
+      siteTitle: "Soporte de todo el sitio de AtoC Korea",
+      introTitle: "¿Cómo podemos ayudarte?",
+      introBody:
+        scope === "site"
+          ? "Pregunta sobre tours, reembolsos/cancelaciones, datos de la empresa y lugares de Corea. Si la respuesta necesita confirmación del equipo, podemos conectarte aquí."
+          : "Respondo según esta página de producto y las políticas del sitio. Si la respuesta no es clara, podemos conectarte con el equipo aquí.",
+      popular: "Preguntas frecuentes",
+      suggested: "Sugeridas",
+      contactSupport: "Contactar soporte",
+      contactPromptTitle: "¿Quieres que te conecte con atención al cliente?",
+      connectNow: "Sí, conéctame",
+      notNow: "Ahora no",
+      close: "Cerrar",
+      send: "Enviar",
+      message: "Mensaje",
+      activeSupport: "Soporte humano conectado",
+      supportMessagePlaceholder: "Mensaje para soporte",
+      questionPlaceholder: "Escribe tu pregunta",
+      aiNotice: "La IA puede equivocarse. Confirma los detalles de la página antes de reservar.",
+      liveNotice: "Soporte humano activo. Tus mensajes se reenvían a Telegram.",
+      aiUnavailable: "El asistente de IA aún no está configurado. Usa Contactar soporte para hablar con el equipo.",
+      requestFailed: (error) => `Algo salió mal (${error}). Inténtalo de nuevo.`,
+      networkError: "Error de red. Comprueba tu conexión e inténtalo de nuevo.",
+      liveSendFailed: (error) => `No se pudo enviar tu mensaje a soporte (${error}). Inténtalo de nuevo.`,
+      handoffFailed: (error) => `No se pudo crear la solicitud de soporte (${error}). Inténtalo de nuevo.`,
+      handoffNetworkError: "Error de red. No se pudo crear la solicitud de soporte. Inténtalo de nuevo.",
+      handoffRequest: "Conéctame con atención al cliente, por favor.",
+      directSupportQuestion: "El cliente solicitó soporte desde el chat.",
+      defaultQuickChips: [
+        "¿Qué tours ofrecen?",
+        "¿Cuál es la política de reembolso?",
+        "Recomiéndame un tour para Seúl, Busan o Jeju",
+      ],
+      teaserTitle: "Tu agente de viajes en Corea",
+      teaserBody: "Tours · presupuestos · consulta de reservas — pregunta lo que sea",
+      teaserCta: "Empezar a chatear",
     };
   }
 
@@ -512,10 +681,17 @@ function inferClientLanguage(): string {
  * chrome (buttons, placeholders, checkout CTA). Positive script detection
  * only: Latin-only text ("ok", emails) never flips the UI.
  */
-function langFromMessage(text: string): string | null {
+function langFromMessage(text: string, uiLang: string): string | null {
   if (/\p{Script=Hangul}/u.test(text)) return "ko";
   if (/[\p{Script=Hiragana}\p{Script=Katakana}]/u.test(text)) return "ja";
-  if (/\p{Script=Han}/u.test(text)) return "zh";
+  if (/\p{Script=Han}/u.test(text)) {
+    // i18n-02 (pressure-test): kana-free Japanese and Traditional Chinese are
+    // pure Han script. A ja (or zh-TW) visitor typing "料金"/"週末" used to flip
+    // the ENTIRE UI to Simplified Chinese mid-conversation. Trust the current UI
+    // locale for Han-only text when it is already ja / zh-TW; else default zh.
+    if (uiLang.startsWith("ja") || uiLang === "zh-TW") return uiLang;
+    return "zh";
+  }
   if (/[¿¡ñáéíóúü]/i.test(text)) return "es";
   return null;
 }
@@ -1184,9 +1360,13 @@ export function TourProductAiAssistantWidget({
             reader.releaseLock();
           }
 
-          // Stream ended with neither done nor error and nothing rendered
-          // (dropped connection): surface a network error.
-          if (!settled && !started) {
+          // Stream ended without a `done`/`error` event (dropped connection,
+          // function killed at maxDuration, instance recycled). Pressure-test
+          // sse-01: this must fire even when tokens already started — a partial
+          // answer left as-is reads as a COMPLETE answer. Append a retriable
+          // network bubble after the partial so the visitor knows it was cut off
+          // and can retry, instead of trusting a silently truncated reply.
+          if (!settled) {
             setHandoffOffer(null);
             setMessages((prev) => [
               ...prev,
@@ -1387,8 +1567,8 @@ export function TourProductAiAssistantWidget({
     // W5.3 — moving on without picking a 👎 reason still records the rating.
     if (pendingReasonIdx !== null) submitNegativeReason(pendingReasonIdx, null);
     // W2.5 — follow the conversation language (positive script hits only).
-    const msgLang = langFromMessage(text);
-    if (msgLang && !uiLang.startsWith(msgLang)) setUiLang(msgLang);
+    const msgLang = langFromMessage(text, uiLang);
+    if (msgLang && msgLang !== uiLang && !uiLang.startsWith(msgLang)) setUiLang(msgLang);
     setInput("");
     setHandoffOffer(null);
     const next: ChatMessage[] = [

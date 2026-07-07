@@ -43,9 +43,16 @@ const LOW_CONFIDENCE_PATTERNS_EN = [
   /\bI\s*don'?t\s+have\s+(?:that|the)\s+information\b/i,
 ];
 
+// Pressure-test esc-03: bare 소송/법적/변호사 matched informational legal
+// questions ("법적 고지사항 어디서 봐요?", "법적으로 문제 없나요?") and filed a
+// HIGH-priority 'legal' ticket + Telegram ping. Require an actual threat
+// phrasing, not the topic word alone. A real threat ("소송하겠습니다") still fires.
 const SENSITIVE_TOPIC_PATTERNS = [
-  /\b(?:lawsuit|sue|attorney|legal\s+action)\b/i,
-  /(?:소송|법적|변호사)/,
+  /\b(?:lawsuit|sue|sued|suing|attorney|legal\s+action|take\s+legal|small\s+claims)\b/i,
+  /소송\s*(?:제기|하겠|할\s*거|걸|준비|갈\s*거|간다|들어)/,
+  /법적\s*(?:조치|대응|책임|절차|으로\s*(?:해결|처리|가|대응))/,
+  /변호사\s*(?:선임|통해|와|랑|한테|를\s*통)/,
+  /고소\s*(?:하겠|할\s*거|접수|한다|장)/,
 ];
 
 // W1.5.2 (C-21) — complaint/anger tone. Keyword-DB escalation only fired on
@@ -60,8 +67,10 @@ const COMPLAINT_PATTERNS = [
   /\b(p[ée]simo|decepcionado|decepcionante|estafa|indignante|una\s+verg[üu]enza)\b/i,
   // Gone-unanswered complaints ("답장이 없어요", "no one replied").
   /(답장이\s*없|연락이\s*없|응답이\s*없|아무도\s*답|no\s+(?:one|body)\s+(?:has\s+)?(?:replied|responded|answered)|no\s+response|no\s+reply|nadie\s+respond)/i,
-  // Rage punctuation.
-  /[!！]{3,}/,
+  // Pressure-test esc-01: dropped the standalone /[!！]{3,}/ rage-punctuation
+  // pattern — it escalated every enthusiastic message ("amazing!!!", "기대돼요!!!")
+  // to a HIGH-priority ticket + Telegram ping. Genuine anger is still caught by
+  // the lexical complaint patterns above.
 ];
 
 export function looksLikeComplaint(message: string): boolean {
