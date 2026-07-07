@@ -17,6 +17,7 @@
 | `/mypage` 랜딩 API 다이어트(C1/C2) + 카트(PR #266) | — |
 | 카탈로그 로케일 분할(D1, PR #259) | 초기 JS −190KB |
 | **🔴 함수 리전 서울(icn1) 고정 (PR #271)** | **모든 동적 API 태평양 왕복 제거 — `/api/tours` 2.49s→0.48s(5배)** |
+| **✅ Tier 1 전부 (PR #272 `25c12b5f`, 2026-07-07)** | skipRoleLookup(6라우트 −1~2 DB왕복) + 엣지캐시 헤더 6개(home-summary·card-media·tours/[id]·builder pois·reviews공개·agent avail) + mypage 7서브라우트 force-dynamic 제거(전부 Static) + 챗봇 dynamic(ssr:false)(−15KB gz) + loading.tsx 10개. 빌드/tsc 그린·jest 신규fail 0·로컬 prod 헤더 실측 |
 
 **핵심 인사이트**: 페이지 **셸은 사이트 전반 이미 건강**하다(모든 주요 경로 PRERENDER, TTFB 0.09~0.58s). 남은 병목은 **① 인증 클라이언트 데이터 로딩(API 왕복) ② 초기 JS 번들 ③ DB RLS ④ 체크아웃/빌더 특화 경로**다.
 
@@ -29,7 +30,9 @@
 
 ---
 
-## 1. Tier 1 — 최대 레버리지·저위험·즉시 출하 (헤더/한 줄/기계적)
+## 1. Tier 1 — 최대 레버리지·저위험·즉시 출하 (헤더/한 줄/기계적) — ✅ 전부 출하 (PR #272 `25c12b5f`, 2026-07-07)
+
+> 상태: T1-A~E 전부 머지. 프로덕션 배포 후 `X-Vercel-Cache` 반복히트 실측 + Speed Insights 관찰. **다음 착수 = Tier 2 번들** (§2, 브랜치 `perf/tier2-bundle`). 아래는 착수 당시 실행 명세(기록 보존).
 
 ### T1-A. `skipRoleLookup` 확산 — 인증 API에서 불필요한 role 조회 제거
 `getAuthUser(req)`는 매 호출 `user_profiles` role SELECT(+merchant면 1개 더)를 직렬로 함. identity만 쓰는 라우트는 `{ skipRoleLookup: true }`로:
