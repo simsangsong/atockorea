@@ -45,7 +45,10 @@ export function humanHandoffPrompt(locale: TourProductPageLocale): string {
   if (locale === "ja") {
     return "確認済みのサイト情報だけでは断定できません。担当者につなぎましょうか？";
   }
-  if (locale === "zh" || locale === "zh-TW") {
+  if (locale === "zh-TW") {
+    return "僅憑已驗證的網站資訊還無法確認。要我幫你聯絡人工客服嗎？";
+  }
+  if (locale === "zh") {
     return "仅凭已验证的网站信息还无法确认。要我帮你联系人工客服吗？";
   }
   if (locale === "es") {
@@ -75,7 +78,10 @@ export function humanHandoffAcknowledgement(locale: TourProductPageLocale, ticke
   if (locale === "ja") {
     return `お問い合わせを担当者に送信しました${ticket}。できるだけ早くチャットで返信します。`;
   }
-  if (locale === "zh" || locale === "zh-TW") {
+  if (locale === "zh-TW") {
+    return `你的諮詢已傳送給人工客服${ticket}。我們會盡快在聊天中回覆。`;
+  }
+  if (locale === "zh") {
     return `你的咨询已发送给人工客服${ticket}。我们会尽快在聊天中回复。`;
   }
   if (locale === "es") {
@@ -87,7 +93,8 @@ export function humanHandoffAcknowledgement(locale: TourProductPageLocale, ticke
 export function handoffRequestText(locale: TourProductPageLocale): string {
   if (locale === "ko") return "담당자에게 연결해 주세요.";
   if (locale === "ja") return "担当者につないでください。";
-  if (locale === "zh" || locale === "zh-TW") return "请帮我联系人工客服。";
+  if (locale === "zh-TW") return "請幫我聯絡人工客服。";
+  if (locale === "zh") return "请帮我联系人工客服。";
   if (locale === "es") return "Si, conectame con atencion al cliente.";
   return "Yes, please connect me with customer support.";
 }

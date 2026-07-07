@@ -235,40 +235,71 @@ function buildCatalogueRecommendationReply(context: string, locale: TourProductP
     .slice(0, 3);
   if (entries.length === 0) return null;
 
-  if (locale === "ko") {
-    return [
-      "조건에 가장 맞는 공개 상품은 아래예요.",
-      ...entries.map((entry, index) =>
-        [
-          `${index + 1}. ${entry.title}`,
-          entry.region ? `지역: ${entry.region}` : "",
-          entry.duration ? `소요 시간: ${entry.duration}` : "",
-          entry.price ? `가격: ${entry.price}` : "",
-          entry.summary ? truncateSentence(entry.summary, 180) : "",
-          entry.url,
-        ]
-          .filter(Boolean)
-          .join(" · "),
-      ),
-      "정확한 이동 난이도나 동행자 상황에 맞춘 선택이 필요하면 이 채팅에서 담당자에게 바로 연결해 드릴 수 있어요.",
-    ].join("\n");
-  }
-
+  // i18n-05 (pressure-test): this deterministic recommendation fallback used to
+  // reply in English for ja/zh/zh-TW/es visitors. Localize all six.
+  const L: Record<
+    TourProductPageLocale,
+    { lead: string; region: string; duration: string; price: string; foot: string }
+  > = {
+    en: {
+      lead: "These listed AtoC Korea tours best match your request:",
+      region: "Region",
+      duration: "Duration",
+      price: "Price",
+      foot: "If you need a staff-confirmed fit for mobility, timing, or pickup details, I can connect you with support in this chat.",
+    },
+    ko: {
+      lead: "조건에 가장 맞는 공개 상품은 아래예요.",
+      region: "지역",
+      duration: "소요 시간",
+      price: "가격",
+      foot: "정확한 이동 난이도나 동행자 상황에 맞춘 선택이 필요하면 이 채팅에서 담당자에게 바로 연결해 드릴 수 있어요.",
+    },
+    ja: {
+      lead: "ご希望に最も合う公開ツアーはこちらです。",
+      region: "エリア",
+      duration: "所要時間",
+      price: "料金",
+      foot: "移動の負担や同行者に合わせた確認が必要でしたら、このチャットで担当者におつなぎします。",
+    },
+    zh: {
+      lead: "最符合你需求的公开行程如下：",
+      region: "地区",
+      duration: "时长",
+      price: "价格",
+      foot: "如果需要就体力、时间或接送细节做人工确认，我可以在此聊天中帮你联系客服。",
+    },
+    "zh-TW": {
+      lead: "最符合你需求的公開行程如下：",
+      region: "地區",
+      duration: "時長",
+      price: "價格",
+      foot: "如果需要就體力、時間或接送細節做人工確認，我可以在此聊天中幫你聯絡客服。",
+    },
+    es: {
+      lead: "Estos tours publicados de AtoC Korea son los que mejor encajan con tu solicitud:",
+      region: "Región",
+      duration: "Duración",
+      price: "Precio",
+      foot: "Si necesitas una confirmación del equipo sobre movilidad, horarios o recogida, puedo conectarte con soporte en este chat.",
+    },
+  };
+  const t = L[locale] ?? L.en;
   return [
-    "These listed AtoC Korea tours best match your request:",
+    t.lead,
     ...entries.map((entry, index) =>
       [
         `${index + 1}. ${entry.title}`,
-        entry.region ? `Region: ${entry.region}` : "",
-        entry.duration ? `Duration: ${entry.duration}` : "",
-        entry.price ? `Price: ${entry.price}` : "",
+        entry.region ? `${t.region}: ${entry.region}` : "",
+        entry.duration ? `${t.duration}: ${entry.duration}` : "",
+        entry.price ? `${t.price}: ${entry.price}` : "",
         entry.summary ? truncateSentence(entry.summary, 180) : "",
         entry.url,
       ]
         .filter(Boolean)
         .join(" · "),
     ),
-    "If you need a staff-confirmed fit for mobility, timing, or pickup details, I can connect you with support in this chat.",
+    t.foot,
   ].join("\n");
 }
 
