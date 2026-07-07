@@ -7,8 +7,8 @@ import { useReducedMotion } from "framer-motion";
 import { useI18n, useTranslations } from "@/lib/i18n";
 import {
   hrefStaticTourProductDetail,
-  listStaticTourProducts,
-} from "@/components/product-tour-static/catalog/staticTourCatalogCards";
+  useStaticTourProductsLazy,
+} from "@/components/product-tour-static/catalog/staticTourCatalogCards.lazy";
 import { analytics } from "@/src/design/analytics";
 import { cn } from "@/lib/utils";
 import {
@@ -45,12 +45,14 @@ export function IdleMatchPreviewCarousel() {
   const { locale } = useI18n();
   const reduceMotion = useReducedMotion();
 
+  // Lazy catalog (EN inline + active locale chunk on demand) so the idle
+  // preview no longer drags all 6 locales into the home initial bundle.
+  const products = useStaticTourProductsLazy(locale);
   const cards = useMemo(() => {
-    const list = listStaticTourProducts(locale);
     return IDLE_PREVIEW_SLUGS
-      .map((slug) => list.find((p) => p.slug === slug))
+      .map((slug) => products.find((p) => p.slug === slug))
       .filter((p): p is NonNullable<typeof p> => Boolean(p));
-  }, [locale]);
+  }, [products]);
   const cardMediaBySlug = useTourProductCardMedia(IDLE_PREVIEW_SLUGS, locale);
 
   const [activeIndex, setActiveIndex] = useState(0);
