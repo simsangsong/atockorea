@@ -18,6 +18,9 @@
 | 카탈로그 로케일 분할(D1, PR #259) | 초기 JS −190KB |
 | **🔴 함수 리전 서울(icn1) 고정 (PR #271)** | **모든 동적 API 태평양 왕복 제거 — `/api/tours` 2.49s→0.48s(5배)** |
 | **✅ Tier 1 전부 (PR #272 `25c12b5f`, 2026-07-07)** | skipRoleLookup(6라우트 −1~2 DB왕복) + 엣지캐시 헤더 6개(home-summary·card-media·tours/[id]·builder pois·reviews공개·agent avail) + mypage 7서브라우트 force-dynamic 제거(전부 Static) + 챗봇 dynamic(ssr:false)(−15KB gz) + loading.tsx 10개. 빌드/tsc 그린·jest 신규fail 0·로컬 prod 헤더 실측 |
+| **✅ Tier 2 번들 (PR #275, 2026-07-07)** | framer-motion을 글로벌 셸(BottomNav·FloatingLangToggle)에서 제거→**콘텐츠 페이지(mypage/cart/checkout/auth/legal) framer 0**(99KB raw 청크 부재 실측) + Header supabase lazy(55KB gz 크리티컬패스 이탈) + 빌더 코드분할(Quote/POIDetail/Grid `dynamic(ssr:false)`). 적대적 리뷰 1 medium(로그아웃 재진입 가드) 수정. **T2-A(홈 카탈로그)는 별도 PR로 분리**(4소비처 전환 필요) |
+| **✅ Tier 4 체크아웃 (PR #277, 2026-07-07)** | 투어 체크아웃 공유 useSession(5-6s auth 행 제거, 루프세이프) + booking POST 병렬화(tour+auth+FX·inventory+bookings 2 Promise.all, title/merchant 재조회 제거, **가용성 DB에러 fail-CLOSED** 가드=리뷰 blocker) + Stripe `dynamic(ssr:false)` + 빌더 체크아웃 중복 match_pois 쿼리 제거. 적대적 리뷰 1 blocker 수정 |
+| **✅ Tier 5 self-fetch (PR #278, 2026-07-07)** | match-explanation이 전체 match_tours 대신 `fetchMatchTourBySlug` 단일행. **RLS 마이그(131) 스킵**(service-role 우회로 런타임 무영향) |
 
 **핵심 인사이트**: 페이지 **셸은 사이트 전반 이미 건강**하다(모든 주요 경로 PRERENDER, TTFB 0.09~0.58s). 남은 병목은 **① 인증 클라이언트 데이터 로딩(API 왕복) ② 초기 JS 번들 ③ DB RLS ④ 체크아웃/빌더 특화 경로**다.
 
@@ -72,7 +75,9 @@
 
 ---
 
-## 2. Tier 2 — 초기 JS 번들 다이어트 (홈 ~485KB gz → 목표 ~300KB)
+## 2. Tier 2 — 초기 JS 번들 다이어트 (홈 ~485KB gz → 목표 ~300KB) — ✅ T2-B/C/D 출하 (PR #275); ⬜ T2-A 잔여
+
+> T2-B(framer→CSS)·T2-C(Header supabase lazy)·T2-D(빌더 코드분할) 머지. **T2-A(FeaturedShowcase·IdleMatchPreview 카탈로그 eager import)만 잔여** — 홈 초기 번들에서 카탈로그를 빼려면 정적 소비처 4곳(featured·idle·MatcherMorphing·best-match) 전부 전환 필요(2곳만 하면 이득 0). shape-보존 없이 프리셋만 바꾸면 안 됨. 별도 PR + 빌드 번들그래프 delta 검증.
 
 ### T2-A. FeaturedProductsShowcase·IdleMatchPreviewCarousel의 전체 카탈로그 정적 import 제거 — 홈 −70KB gz
 `featured-products-showcase.tsx:21` + `IdleMatchPreviewCarousel.tsx`가 전체 `staticTourCatalogCards`(224KB raw/70KB gz, 청크 `802-*`)를 동기 import → `HomeV2MatchProvider`의 lazy import 규율을 무력화. 이 둘은 ~8개 featured 슬러그 카드 데이터만 필요.
@@ -97,7 +102,9 @@
 
 ---
 
-## 3. Tier 3 — 빌더 데이터 페이로드 (빌더 Jeju −250~290KB 전송)
+## 3. Tier 3 — 빌더 데이터 페이로드 (빌더 Jeju −250~290KB 전송) — ⛔ 보류(빌더 사이트 전역 숨김)
+
+> **`ITINERARY_BUILDER_ENABLED=false`** (`lib/itinerary-builder/builder-visibility.ts`, Klook 심사) → `/itinerary-builder*`는 `/tours/list`로 리다이렉트, 홈/리스트 빌더 CTA 미렌더, pois/match API 무호출. **Tier 3 전 표면이 죽은 표면 = 제로 유저 임팩트** → 빌더 재활성화 시까지 보류. ⚠ 착수 시 주의: T3-A는 에이전트 제안(`content_locales->>'ko'`)이 **틀림** — 클라 `localizePoiRow`가 `poi.content_locales[locale]`을 읽으므로 shape 보존 `jsonb_build_object('ko', content_locales->'ko')` 필수 + unstable_cache 키/API에 locale 추가 + 6로케일 QA. T3-B는 grid/modal만(마커·infowindow는 imperative createRoot라 next/image 부적합). T3-C 프리셋 LLM 스킵도 매처 죽어 무의미.
 
 ### T3-A. `content_locales` 6로케일 과다직렬화 제거 (CRITICAL)
 `itinerary-builder/page.tsx`가 `match_pois`의 `content_locales`(6로케일 전체 사본)를 SSR prop으로 전송 후 5/6 폐기. 실측: Jeju 315KB(중 content_locales 153KB), busan 145KB.
@@ -113,7 +120,9 @@
 
 ---
 
-## 4. Tier 4 — 체크아웃/예약 핫패스 (전환 직결)
+## 4. Tier 4 — 체크아웃/예약 핫패스 (전환 직결) — ✅ 출하 (PR #277)
+
+> T4-A(공유 useSession)·T4-B(booking POST 병렬화 + fail-CLOSED 가용성 가드)·T4-C(a)(Stripe lazy)·T4-C(c)(빌더 체크아웃 중복쿼리) 머지. **T4-C(b) cart→checkout projection 보류**(공유 `/api/tours/[id]` transform 결합 취약·이득 작음), T4-C(e) stripe.customers.list는 이미 최적(customer_id 캐시).
 
 ### T4-A. 투어 체크아웃 공유 `useSession()` 전환 (CRITICAL — 카트와 동일 안티패턴)
 `app/tour/[id]/checkout/page.tsx:133,234`가 원시 `supabase.auth.getSession()` 3회 → 공유 `useSession().getAccessToken()`. `auth-session.tsx` 도크블록이 이게 과거 5-6s 행의 원인이라 명시. 결제 버튼 크리티컬 패스에 있음.
@@ -130,7 +139,9 @@
 
 ---
 
-## 5. Tier 5 — DB / 데이터레이어 (별도 트랙, 마이그레이션)
+## 5. Tier 5 — DB / 데이터레이어 (별도 트랙, 마이그레이션) — ✅ T5-C 라이브분만 출하 (PR #278); ⛔ 마이그레이션 보류
+
+> **핵심 판정: RLS 마이그(T5-A 63 + T5-B 68 = 131건)는 앱 런타임 제로영향** — `createUserSupabaseClient`(RLS-on)는 정의만 있고 **어떤 라우트도 미사용**(`grep` 확증); 앱 전 DB접근이 service-role(`createServerClient`)로 RLS 우회. RLS-enforced는 브라우저 직접 단일행 user_profiles 읽기뿐(auth.uid() per-row 재평가 무의미). → 순수 위생, 스케일 게이트까지 보류. T5-C 중 **match-explanation만 라이브·실이득**으로 출하(PR #278). availability POST loopback은 **호출자 없음(죽음)**, unused_index(152)=쓰기증폭만, pooler(D)=인프라 → 전부 보류.
 
 ### T5-A. RLS `auth_rls_initplan` 63건 재작성 — 유저 스코프 쿼리 가속
 정책이 `auth.uid()`를 **행마다** 재평가 → `(select auth.uid())`로 감싸 쿼리당 1회. 핫 유저테이블: **reviews·bookings·cart_items·wishlist·review_reactions·user_settings·promo_code_usage**.
@@ -152,7 +163,9 @@ bookings/cart 쓰기 약간 가속. 저우선. 실제 미사용 재확인 후 DR
 
 ---
 
-## 6. Tier 6 — 사용자 조치 게이트 (선행 필요)
+## 6. Tier 6 — 사용자 조치 게이트 (선행 필요) — 🔴 여전히 사용자 게이트 대기 (미착수, 도입 금지)
+
+> **사용자 조치 필요**: Supabase Dashboard → JWT Keys → 비대칭 ES256 키 마이그레이션+로테이트. 그 전에는 `getClaims()` 로컬검증이 no-op이고 인증을 깨뜨릴 수 있어 **절대 도입 금지**. 사용자가 완료 확인해주면 착수(§6-A). 다음 세션은 사용자에게 이 마이그레이션 여부부터 물을 것.
 
 ### T6-A. 🔴 JWT 로컬 검증 (최대 per-request 절감, but 막힘)
 `getAuthUser`가 매 인증 요청 GoTrue `auth.getUser(token)` **네트워크 호출**(~72개 라우트). 로컬 JWKS 검증(`getClaims`)으로 대체하면 요청당 왕복 1회 제거(서울내부 ~30-120ms).
