@@ -18,7 +18,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { requestGate, clientIpKey } from "@/lib/durable-rate-limit";
-import { fetchMatchTours } from "@/lib/tour-match-v2/fetch-tours";
+import { fetchMatchTourBySlug } from "@/lib/tour-match-v2/fetch-tours";
 import { explainTopMatch } from "@/lib/tour-match-v2/explainer-haiku";
 import type { ParsedQueryV2, ScoredMatchV2 } from "@/lib/tour-match-v2/types";
 
@@ -72,8 +72,10 @@ export async function POST(req: NextRequest) {
     }
 
     const supabase = makeSupabaseClient();
-    const tourRows = await fetchMatchTours(supabase, "en");
-    const winnerRow = tourRows.find((r) => r.slug === winnerSlug);
+    // Trust model unchanged: we re-fetch the winner from match_tours by slug
+    // (single row now, not the whole table) so the client can't describe a fake
+    // tour, and blocked SKUs still resolve to 404.
+    const winnerRow = await fetchMatchTourBySlug(supabase, winnerSlug, "en");
     if (!winnerRow) {
       return NextResponse.json(
         { error: "Winner slug not found in match_tours" },
