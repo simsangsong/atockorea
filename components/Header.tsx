@@ -9,7 +9,6 @@ import { SearchIcon, UserIcon } from "./Icons";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useTranslations } from "@/lib/i18n";
 import { useCurrency, CURRENCY_LIST, type CurrencyCode } from "@/lib/currency";
-import { supabase } from "@/lib/supabase";
 import { useSession } from "@/lib/auth-session";
 import { cn } from "@/lib/utils";
 
@@ -38,6 +37,7 @@ export default function Header({ premiumTourDetail = false }: HeaderProps) {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [user, setUser] = useState<UserProfile | null>(null);
+  const [signingOut, setSigningOut] = useState(false);
 
   // Read the session from the global provider in app/layout.tsx — see
   // lib/auth-session.tsx for why this replaced the local getSession +
@@ -61,11 +61,15 @@ export default function Header({ premiumTourDetail = false }: HeaderProps) {
       setUser(null);
       return;
     }
-    if (!supabase) return;
 
     let cancelled = false;
     (async () => {
-      const { data: profile, error } = await supabase!
+      // Lazy-load the auth SDK so it stays off the critical path (55KB gz);
+      // the global SessionProvider already resolved auth state without it.
+      const { supabase } = await import('@/lib/supabase');
+      if (cancelled || !supabase) return;
+
+      const { data: profile, error } = await supabase
         .from('user_profiles')
         .select('id, full_name, avatar_url, role')
         .eq('id', authUserId)
@@ -80,7 +84,7 @@ export default function Header({ premiumTourDetail = false }: HeaderProps) {
       // No profile row yet — create one. Fall back to whatever the auth
       // metadata gave us so the avatar / display name don't reset to "User".
       const meta = (authUserMeta as Record<string, unknown> | null) ?? {};
-      const { data: created } = await supabase!
+      const { data: created } = await supabase
         .from('user_profiles')
         .insert({
           id: authUserId,
@@ -395,14 +399,25 @@ export default function Header({ premiumTourDetail = false }: HeaderProps) {
                     )}
                     <div className="border-t border-gray-200 my-1" />
                     <button
+                      disabled={signingOut}
                       onClick={async () => {
-                        if (supabase) {
-                          await supabase.auth.signOut();
-                          setUser(null);
-                          router.push('/');
+                        // Re-entrancy guard: the async chunk import widens the
+                        // window before signOut fires, so a double-click could
+                        // otherwise dispatch two parallel signOut() calls.
+                        if (signingOut) return;
+                        setSigningOut(true);
+                        try {
+                          const { supabase } = await import('@/lib/supabase');
+                          if (supabase) {
+                            await supabase.auth.signOut();
+                            setUser(null);
+                            router.push('/');
+                          }
+                        } finally {
+                          setSigningOut(false);
                         }
                       }}
-                      className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                      className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 disabled:opacity-60"
                     >
                       {t('nav.signout') || 'Sign Out'}
                     </button>

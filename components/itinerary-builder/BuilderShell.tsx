@@ -18,17 +18,23 @@ import {
   type JejuPickupZone,
   type PricingTrack,
 } from "@/lib/quote-engine/pricing-policy";
+import dynamic from "next/dynamic";
 import POICatalogMap from "./POICatalogMap";
 import ResultTimeline from "./ResultTimeline";
-import QuoteModal from "./QuoteModal";
-import POICatalogGrid from "./POICatalogGrid";
-import POIDetailModal from "./POIDetailModal";
 import PlannerTopRail from "./PlannerTopRail";
 import LivePriceCard from "./LivePriceCard";
 import CategoryFilterBar, { poiGroup } from "./CategoryFilterBar";
 import AIRecommendPanel from "./AIRecommendPanel";
 import { tourCluster, cartAddDecision, cartHasJejuEastMix } from "@/lib/itinerary-builder/clusters";
 import type { PoiCategoryGroup } from "@/lib/itinerary-match-engine/poi-taxonomy";
+
+// Interaction/placement-gated (each renders null until a user action), so they
+// carry framer-motion off the initial builder chunk and load on demand.
+// QuoteModal + POIDetailModal open on click; POICatalogGrid renders only on
+// the standalone /itinerary-builder page (not the home embed).
+const QuoteModal = dynamic(() => import("./QuoteModal"), { ssr: false });
+const POIDetailModal = dynamic(() => import("./POIDetailModal"), { ssr: false });
+const POICatalogGrid = dynamic(() => import("./POICatalogGrid"), { ssr: false });
 
 interface Props {
   region: RegionSlug;

@@ -3,13 +3,13 @@
 import { useState, useRef, useEffect } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import { Globe } from 'lucide-react';
-import { AnimatePresence, motion } from 'framer-motion';
 import { useI18n, Locale } from '@/lib/i18n';
 import { cn } from '@/lib/utils';
 
 // Same easing as the chatbot panel (TourProductAiAssistantWidget MSG_EASE)
-// so site-wide popovers share a single motion identity.
-const LANG_TOGGLE_EASE = [0.22, 1, 0.36, 1] as const;
+// so site-wide popovers share a single motion identity. Expressed as a CSS
+// cubic-bezier below (framer-motion removed from the global shell).
+const LANG_TOGGLE_EASE_CSS = 'cubic-bezier(0.22,1,0.36,1)';
 
 const localeShortLabels: Record<Locale, string> = {
   en: 'EN',
@@ -54,6 +54,12 @@ export default function FloatingLanguageToggle() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [stickyCtaShown, setStickyCtaShown] = useState(false);
+  // Mount-gate that reproduces framer's AnimatePresence enter/exit without the
+  // library: `menuMounted` keeps the menu in the DOM through its exit
+  // transition (a11y: menu items leave the tab order when closed), `menuVisible`
+  // drives the enter/exit CSS classes.
+  const [menuMounted, setMenuMounted] = useState(false);
+  const [menuVisible, setMenuVisible] = useState(false);
   const wrapRef = useRef<HTMLDivElement>(null);
   const locales: Locale[] = ['en', 'ko', 'zh', 'zh-TW', 'es', 'ja'];
 
@@ -67,6 +73,29 @@ export default function FloatingLanguageToggle() {
     };
     document.addEventListener('mousedown', handler);
     return () => document.removeEventListener('mousedown', handler);
+  }, [isOpen]);
+
+  // Drive the enter/exit animation. Open → mount now, then next frame flip to
+  // visible (enter transition). Close → flip to hidden (exit transition), then
+  // unmount after it finishes (160ms > the 140ms exit duration).
+  useEffect(() => {
+    if (isOpen) {
+      setMenuMounted(true);
+      // Double rAF so the menu paints once in its hidden state before flipping
+      // to visible — a single frame can be coalesced with the mount commit,
+      // skipping the enter transition.
+      let raf2 = 0;
+      const raf1 = requestAnimationFrame(() => {
+        raf2 = requestAnimationFrame(() => setMenuVisible(true));
+      });
+      return () => {
+        cancelAnimationFrame(raf1);
+        cancelAnimationFrame(raf2);
+      };
+    }
+    setMenuVisible(false);
+    const timer = setTimeout(() => setMenuMounted(false), 160);
+    return () => clearTimeout(timer);
   }, [isOpen]);
 
   // Match StickyHomeCta's gating (heroOut && !footerIn) so the two never overlap.
@@ -176,34 +205,27 @@ export default function FloatingLanguageToggle() {
       )}
       aria-hidden={hidden ? 'true' : undefined}
     >
-      <AnimatePresence mode="wait">
-      {isOpen && (
-        <motion.div
-          key="lang-menu"
+      {menuMounted && (
+        <div
           role="menu"
           aria-label="Select language"
-          // Emerges from the toggle's top-right corner so the menu looks
-          // like it grows out of the pill. Same scale + slide + fade
-          // grammar the global chatbot panel uses (PR #42) for site-wide
-          // motion consistency.
-          initial={{ opacity: 0, scale: 0.94, y: 6 }}
-          animate={{
-            opacity: 1,
-            scale: 1,
-            y: 0,
-            transition: { duration: 0.2, ease: LANG_TOGGLE_EASE },
-          }}
-          exit={{
-            opacity: 0,
-            scale: 0.96,
-            y: 4,
-            transition: { duration: 0.14, ease: LANG_TOGGLE_EASE },
-          }}
+          // Emerges from the toggle's top-right corner so the menu looks like it
+          // grows out of the pill. Same scale + slide + fade grammar the global
+          // chatbot panel uses (PR #42), now via CSS transition (menuVisible)
+          // instead of framer-motion, for site-wide motion consistency.
+          //
           // Solid white (no alpha, no backdrop-blur) — translucent panels read
           // as gray over dark hero photos and washed out the menu text. Strong
           // drop shadow + 1px border keep the premium feel without depending
           // on background blur.
-          className="absolute bottom-full right-0 mb-2 w-44 origin-bottom-right overflow-hidden rounded-2xl border border-slate-200 bg-white py-1.5 shadow-[0_22px_44px_-12px_rgba(15,23,42,0.42),0_6px_14px_-4px_rgba(15,23,42,0.18),0_0_0_1px_rgba(15,23,42,0.04)]"
+          style={{ transitionTimingFunction: LANG_TOGGLE_EASE_CSS }}
+          className={cn(
+            'absolute bottom-full right-0 mb-2 w-44 origin-bottom-right overflow-hidden rounded-2xl border border-slate-200 bg-white py-1.5 shadow-[0_22px_44px_-12px_rgba(15,23,42,0.42),0_6px_14px_-4px_rgba(15,23,42,0.18),0_0_0_1px_rgba(15,23,42,0.04)]',
+            'transition-[opacity,transform] motion-reduce:transition-none',
+            menuVisible
+              ? 'opacity-100 scale-100 translate-y-0 duration-200'
+              : 'pointer-events-none opacity-0 scale-[0.96] translate-y-1 duration-150',
+          )}
         >
           {locales.map((loc) => (
             <button
@@ -231,9 +253,8 @@ export default function FloatingLanguageToggle() {
               )}
             </button>
           ))}
-        </motion.div>
+        </div>
       )}
-      </AnimatePresence>
       <button
         type="button"
         onClick={() => setIsOpen((o) => !o)}
