@@ -569,52 +569,79 @@ async function finalizeAssistantTurn(
             decision.reason === "complaint"
           ) {
             const summary = buildAdminSummary(userMessage, decision);
-            const { data: ticket } = await sb
+            const isUrgent = decision.reason === "sensitive_topic" || decision.reason === "complaint";
+            // Pressure-test esc-02: dedupe. A chatty complaint/keyword
+            // conversation used to file one ticket + Telegram ping PER TURN. If
+            // this session already has an unresolved ticket, reuse it (link the
+            // message, raise priority if this turn is more urgent) instead of
+            // spawning a duplicate and re-paging the admin on every turn.
+            const { data: existingOpen } = await sb
               .from("support_tickets")
-              .insert({
-                session_id: log.sessionId,
-                trigger_message_id: log.assistantMessageId,
-                user_locale: locale,
-                tour_slug: isSiteAssistant ? null : tourProductSlug,
-                page_url: pageContext?.url ?? null,
-                page_title: pageContext?.title ?? null,
-                escalation_reason: decision.reason,
-                initial_user_message: userMessage,
-                initial_summary: summary,
-                status: "open",
-                // An angry customer is as urgent as a legal topic (W1.5.2).
-                priority:
-                  decision.reason === "sensitive_topic" || decision.reason === "complaint"
-                    ? "high"
-                    : "normal",
-                unread_for_admin: true,
-              })
-              .select("id")
-              .single();
+              .select("id, priority")
+              .eq("session_id", log.sessionId)
+              .not("status", "in", "(resolved,closed)")
+              .order("id", { ascending: false })
+              .limit(1)
+              .maybeSingle();
 
-            if (ticket) {
-              ticketCreated = ticket.id as number;
+            if (existingOpen) {
+              ticketCreated = existingOpen.id as number;
               handoffOffered = false;
-              // Mark the triggering chat message as escalated and link to ticket
               await sb
                 .from("chat_messages")
-                .update({
-                  escalated: true,
-                  escalation_reason: decision.reason,
-                  ticket_id: ticketCreated,
-                })
+                .update({ escalated: true, escalation_reason: decision.reason, ticket_id: ticketCreated })
                 .eq("id", log.assistantMessageId);
+              if (isUrgent && existingOpen.priority !== "high") {
+                await sb
+                  .from("support_tickets")
+                  .update({ priority: "high", unread_for_admin: true })
+                  .eq("id", ticketCreated);
+              }
+            } else {
+              const { data: ticket } = await sb
+                .from("support_tickets")
+                .insert({
+                  session_id: log.sessionId,
+                  trigger_message_id: log.assistantMessageId,
+                  user_locale: locale,
+                  tour_slug: isSiteAssistant ? null : tourProductSlug,
+                  page_url: pageContext?.url ?? null,
+                  page_title: pageContext?.title ?? null,
+                  escalation_reason: decision.reason,
+                  initial_user_message: userMessage,
+                  initial_summary: summary,
+                  status: "open",
+                  // An angry customer is as urgent as a legal topic (W1.5.2).
+                  priority: isUrgent ? "high" : "normal",
+                  unread_for_admin: true,
+                })
+                .select("id")
+                .single();
 
-              // Fire Telegram notification (no-op if env missing)
-              await notifyTelegramNewTicket(sb, {
-                ticketId: ticketCreated,
-                reason: decision.reason,
-                initialUserMessage: userMessage,
-                tourSlug: isSiteAssistant ? null : tourProductSlug,
-                pageUrl: pageContext?.url ?? null,
-                pageTitle: pageContext?.title ?? null,
-                userLocale: locale,
-              });
+              if (ticket) {
+                ticketCreated = ticket.id as number;
+                handoffOffered = false;
+                // Mark the triggering chat message as escalated and link to ticket
+                await sb
+                  .from("chat_messages")
+                  .update({
+                    escalated: true,
+                    escalation_reason: decision.reason,
+                    ticket_id: ticketCreated,
+                  })
+                  .eq("id", log.assistantMessageId);
+
+                // Fire Telegram notification (no-op if env missing)
+                await notifyTelegramNewTicket(sb, {
+                  ticketId: ticketCreated,
+                  reason: decision.reason,
+                  initialUserMessage: userMessage,
+                  tourSlug: isSiteAssistant ? null : tourProductSlug,
+                  pageUrl: pageContext?.url ?? null,
+                  pageTitle: pageContext?.title ?? null,
+                  userLocale: locale,
+                });
+              }
             }
           }
         }
