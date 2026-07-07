@@ -85,6 +85,9 @@ export default async function ItineraryBuilderCheckoutPage({
   // raw final_price scalar).
   let poiRegions: string[] = [];
   let jejuPoiZones: ReturnType<typeof jejuZone>[] | undefined;
+  // POI thumbs for the side-panel summary — derived from the SAME query below
+  // (the row set already carries name/image), so match_pois is read only once.
+  let poiThumbs: { poi_key: string; name: string; image: string | null }[] = [];
   if (itinerary.poi_keys && itinerary.poi_keys.length > 0) {
     const { data: poiRows } = await supabase
       .from("match_pois")
@@ -98,6 +101,14 @@ export default async function ItineraryBuilderCheckoutPage({
         p ? jejuZone(Number(p.lat), Number(p.lng)) : ("city" as ReturnType<typeof jejuZone>),
       );
     }
+    poiThumbs = itinerary.poi_keys.map((k) => {
+      const row = byKey.get(k);
+      return {
+        poi_key: k,
+        name: (row?.name_ko as string) ?? (row?.name_en as string) ?? k,
+        image: (row?.default_image_url as string) ?? null,
+      };
+    });
   }
 
   const priceInput: PriceInput = {
@@ -113,24 +124,6 @@ export default async function ItineraryBuilderCheckoutPage({
     jejuPoiZones,
   };
   const price = quote(priceInput);
-
-  // POI thumbs for the side-panel summary (re-fetched lightly).
-  let poiThumbs: { poi_key: string; name: string; image: string | null }[] = [];
-  if (itinerary.poi_keys && itinerary.poi_keys.length > 0) {
-    const { data: poiRows } = await supabase
-      .from("match_pois")
-      .select("poi_key, name_en, name_ko, default_image_url")
-      .in("poi_key", itinerary.poi_keys);
-    const byKey = new Map((poiRows ?? []).map((r) => [r.poi_key as string, r]));
-    poiThumbs = itinerary.poi_keys.map((k) => {
-      const row = byKey.get(k);
-      return {
-        poi_key: k,
-        name: (row?.name_ko as string) ?? (row?.name_en as string) ?? k,
-        image: (row?.default_image_url as string) ?? null,
-      };
-    });
-  }
 
   return (
     <SitePageShell>

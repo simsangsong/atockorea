@@ -154,27 +154,32 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Get tour to fetch merchant_id and price info
-    const { data: tour, error: tourError } = await supabase
-      .from('tours')
-      .select('id, merchant_id, price, original_price, price_currency, price_type')
-      .eq('id', tourId)
-      .single();
+    // Resolve the tour row, auth identity, and FX rate in parallel — all three
+    // are independent, so this collapses three serial round-trips into one.
+    // `title` is folded into the select so the notification below never
+    // re-fetches the tour just for its title.
+    const authHeader = req.headers.get('authorization');
+    const bearerToken = authHeader?.startsWith('Bearer ') ? authHeader.substring(7) : null;
 
+    const [tourResult, authResult, krwPerUsd] = await Promise.all([
+      supabase
+        .from('tours')
+        .select('id, merchant_id, price, original_price, price_currency, price_type, title')
+        .eq('id', tourId)
+        .single(),
+      bearerToken ? supabase.auth.getUser(bearerToken) : Promise.resolve(null),
+      getKrwPerUsd(),
+    ]);
+
+    const { data: tour, error: tourError } = tourResult;
     if (tourError || !tour) {
       return ErrorResponses.notFound('Tour');
     }
 
-    // Try to get user from auth (optional - guest bookings allowed with full guest info)
-    const authHeader = req.headers.get('authorization');
+    // Auth is optional — guest bookings are allowed with full guest info.
     let userId: string | null = null;
-
-    if (authHeader?.startsWith('Bearer ')) {
-      const token = authHeader.substring(7);
-      const { data: { user }, error } = await supabase.auth.getUser(token);
-      if (!error && user) {
-        userId = user.id;
-      }
+    if (authResult && !authResult.error && authResult.data?.user) {
+      userId = authResult.data.user.id;
     }
 
     // When customerInfo is provided, validate format (name length, email format, phone digits). Reduces spam and invalid orders.
@@ -215,22 +220,42 @@ export async function POST(req: NextRequest) {
     // Check availability before creating booking
     const dateStr = bookingDate.split('T')[0]; // Extract date part if ISO string
     
-    // Check inventory and existing bookings
-    const { data: inventory } = await supabase
-      .from('product_inventory')
-      .select('*')
-      .eq('tour_id', tourId)
-      .eq('tour_date', dateStr)
-      .eq('is_available', true)
-      .single();
-
-    // Get existing bookings for the date
-    const { data: existingBookings } = await supabase
-      .from('bookings')
-      .select('number_of_guests')
-      .eq('tour_id', tourId)
-      .eq('booking_date', dateStr)
-      .in('status', [...ACTIVE_BOOKING_STATUSES]);
+    // Inventory + existing-bookings are independent reads → fetch in parallel.
+    const [inventoryRes, existingRes] = await Promise.all([
+      supabase
+        .from('product_inventory')
+        .select('*')
+        .eq('tour_id', tourId)
+        .eq('tour_date', dateStr)
+        .eq('is_available', true)
+        .single(),
+      supabase
+        .from('bookings')
+        .select('number_of_guests')
+        .eq('tour_id', tourId)
+        .eq('booking_date', dateStr)
+        .in('status', [...ACTIVE_BOOKING_STATUSES]),
+    ]);
+    // Fail CLOSED on a genuine DB error (timeout / pool exhaustion). PGRST116
+    // ("no rows" from .single()) is the EXPECTED empty-inventory case for
+    // on-demand tours → fall through to default capacity below. Any other error
+    // must not be silently read as unlimited availability (would overbook).
+    if (inventoryRes.error && inventoryRes.error.code !== 'PGRST116') {
+      console.error('Inventory lookup failed:', inventoryRes.error.code, inventoryRes.error.message);
+      return NextResponse.json(
+        { error: 'Availability check failed — please try again', code: 'AVAILABILITY_CHECK_FAILED' },
+        { status: 503 }
+      );
+    }
+    if (existingRes.error) {
+      console.error('Existing-bookings lookup failed:', existingRes.error.code, existingRes.error.message);
+      return NextResponse.json(
+        { error: 'Availability check failed — please try again', code: 'AVAILABILITY_CHECK_FAILED' },
+        { status: 503 }
+      );
+    }
+    const inventory = inventoryRes.data;
+    const existingBookings = existingRes.data;
 
     // Calculate available spots
     const bookedGuests = existingBookings?.reduce((sum, b) => sum + (b.number_of_guests || 1), 0) || 0;
@@ -273,7 +298,7 @@ export async function POST(req: NextRequest) {
     // Server-authoritative pricing: USD unit + total computed from the tours row.
     // Client `finalPrice` is verified against the server total within $0.01; we never store
     // or charge a client-supplied amount. See lib/tour-list-price-usd.server.ts.
-    const krwPerUsd = await getKrwPerUsd();
+    // `krwPerUsd` was resolved above in the opening Promise.all.
     const { priceUsd: listUnitUsd } = tourListPricesToUsdSync(
       {
         price: tour.price,
@@ -399,26 +424,20 @@ export async function POST(req: NextRequest) {
             updated_at: new Date().toISOString(),
           })
           .eq('id', inventory.id);
-      } else {
-        // Create inventory record if it doesn't exist (shouldn't happen, but handle gracefully)
-        const { data: tourForMerchant } = await supabase
-          .from('tours')
-          .select('merchant_id')
-          .eq('id', tourId)
-          .single();
-
-        if (tourForMerchant?.merchant_id) {
-          await supabase
-            .from('product_inventory')
-            .insert({
-              tour_id: tourId,
-              merchant_id: tourForMerchant.merchant_id,
-              tour_date: dateStr,
-              available_spots: Math.max(0, availableSpots - numberOfGuests),
-              max_capacity: 50, // Default capacity
-              is_available: true,
-            });
-        }
+      } else if (tour.merchant_id) {
+        // Create inventory record if it doesn't exist (shouldn't happen, but
+        // handle gracefully). merchant_id is reused from the tour row already
+        // fetched above — no extra round-trip.
+        await supabase
+          .from('product_inventory')
+          .insert({
+            tour_id: tourId,
+            merchant_id: tour.merchant_id,
+            tour_date: dateStr,
+            available_spots: Math.max(0, availableSpots - numberOfGuests),
+            max_capacity: 50, // Default capacity
+            is_available: true,
+          });
       }
     } catch (inventoryError) {
       // Log error but don't fail the booking
@@ -428,19 +447,12 @@ export async function POST(req: NextRequest) {
     // Confirmation email: only sent from the Stripe webhook/payment confirmation flow.
     // Do not send here on booking create — 결제 완료 시에만 확인 메일 발송.
 
-    // Create notification for booking creation
+    // Create notification for booking creation. Tour title is reused from the
+    // opening fetch — no re-query.
     if (userId) {
       try {
-        const { data: tourData } = await supabase
-          .from('tours')
-          .select('title')
-          .eq('id', tourId)
-          .single();
-
-        if (tourData) {
-          const { notifyBookingCreated } = await import('@/lib/notifications');
-          await notifyBookingCreated(booking.id, userId, tourData.title);
-        }
+        const { notifyBookingCreated } = await import('@/lib/notifications');
+        await notifyBookingCreated(booking.id, userId, tour.title);
       } catch (notificationError) {
         console.error('Error creating notification:', notificationError);
         // Don't fail the booking if notification fails
