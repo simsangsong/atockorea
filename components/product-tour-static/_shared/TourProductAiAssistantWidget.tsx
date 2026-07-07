@@ -512,10 +512,17 @@ function inferClientLanguage(): string {
  * chrome (buttons, placeholders, checkout CTA). Positive script detection
  * only: Latin-only text ("ok", emails) never flips the UI.
  */
-function langFromMessage(text: string): string | null {
+function langFromMessage(text: string, uiLang: string): string | null {
   if (/\p{Script=Hangul}/u.test(text)) return "ko";
   if (/[\p{Script=Hiragana}\p{Script=Katakana}]/u.test(text)) return "ja";
-  if (/\p{Script=Han}/u.test(text)) return "zh";
+  if (/\p{Script=Han}/u.test(text)) {
+    // i18n-02 (pressure-test): kana-free Japanese and Traditional Chinese are
+    // pure Han script. A ja (or zh-TW) visitor typing "料金"/"週末" used to flip
+    // the ENTIRE UI to Simplified Chinese mid-conversation. Trust the current UI
+    // locale for Han-only text when it is already ja / zh-TW; else default zh.
+    if (uiLang.startsWith("ja") || uiLang === "zh-TW") return uiLang;
+    return "zh";
+  }
   if (/[¿¡ñáéíóúü]/i.test(text)) return "es";
   return null;
 }
@@ -1391,8 +1398,8 @@ export function TourProductAiAssistantWidget({
     // W5.3 — moving on without picking a 👎 reason still records the rating.
     if (pendingReasonIdx !== null) submitNegativeReason(pendingReasonIdx, null);
     // W2.5 — follow the conversation language (positive script hits only).
-    const msgLang = langFromMessage(text);
-    if (msgLang && !uiLang.startsWith(msgLang)) setUiLang(msgLang);
+    const msgLang = langFromMessage(text, uiLang);
+    if (msgLang && msgLang !== uiLang && !uiLang.startsWith(msgLang)) setUiLang(msgLang);
     setInput("");
     setHandoffOffer(null);
     const next: ChatMessage[] = [

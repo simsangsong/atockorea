@@ -856,7 +856,23 @@ export function replyLooksMisrouted(intent: ChatbotIntent, reply: string): boole
     return tourHeavy && !hasAny(r, ["refund", "cancel", "policy", "환불", "취소", "정책", "24"]);
   }
   if (intent === "booking_specific" || intent === "company" || intent === "legal" || intent === "poi") {
-    return tourHeavy && !hasAny(r, ["support", "contact", "담당자", "고객", "legal", "privacy", "개인정보", "입장", "주차"]);
+    // rag-01 (pressure-test): a correct POI/company/legal answer that merely
+    // MENTIONS a tour ("Seongsan opens at 07:00 … included in our Jeju day
+    // tour") used to be clobbered by the generic handoff, because the safe-token
+    // guard only listed Korean 입장/주차 + English support words — not English/
+    // JA/ZH/ES POI vocabulary. Only treat it as misrouted when the reply
+    // actually PUSHES products (links /tour-product/) AND fails to address the
+    // asked topic.
+    const onTopic = hasAny(r, [
+      "support", "contact", "담당자", "고객", "legal", "privacy", "개인정보",
+      // POI / place facts across locales
+      "입장", "주차", "admission", "ticket", "hours", "open", "opening", "parking",
+      "restroom", "entrance", "료금", "料金", "時間", "営業", "開館", "入場", "开放", "營業",
+      "horario", "entrada", "abierto",
+      // company / contact facts
+      "email", "@atockorea", "address", "operates", "operator", "주소", "이메일",
+    ]);
+    return tourHeavy && /\/tour-product\//.test(r) && !onTopic;
   }
   return false;
 }

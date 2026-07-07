@@ -128,7 +128,8 @@ const bodySchema = z.object({
   /**
    * Opt into SSE token streaming for the free-form model answer (Track 2).
    * Deterministic gates still return buffered JSON; the server only streams
-   * when this is true AND CHAT_STREAMING !== "0" (D-T2-1, D-T2-5).
+   * when this is true AND CHAT_STREAMING === "1" (default OFF — see the
+   * wantStream gate below) and not in debug mode (D-T2-1, D-T2-5).
    */
   stream: z.boolean().optional(),
 });
@@ -1324,8 +1325,19 @@ export async function POST(req: NextRequest) {
           quote_trust: true,
         });
       }
-      // disabled / insert_failed → fall back to the quote + a gentle retry.
-      return respond(quoteReply);
+      // quote-02 (pressure-test): a failed booking write (insert error or the
+      // kill switch) used to silently re-show the SAME quote, trapping the
+      // customer in a "yes → same quote → yes" loop with no error and no human
+      // path. Tell them plainly and force a support hand-off.
+      const bookingFailed: Record<TourProductPageLocale, string> = {
+        en: "I couldn't finalize the reservation just now. Let me connect you with our team in this chat to complete your booking.",
+        ko: "지금 예약을 최종 처리하지 못했어요. 이 채팅에서 담당자에게 연결해 예약을 마무리해 드릴게요.",
+        ja: "ただ今ご予約を確定できませんでした。このチャットで担当者におつなぎし、ご予約を完了いたします。",
+        zh: "刚才未能完成预订。我在此聊天中为你联系客服来完成预订。",
+        "zh-TW": "剛才未能完成預訂。我在此聊天中為你聯絡客服來完成預訂。",
+        es: "No pude finalizar la reserva en este momento. Te conecto con nuestro equipo en este chat para completarla.",
+      };
+      return respond(bookingFailed[quoteLocale] ?? bookingFailed.en, { handoff_offered: true });
     }
 
     // Quote shown; not yet booking (or debug mode) → ask to confirm, with
@@ -1415,7 +1427,13 @@ export async function POST(req: NextRequest) {
         const chunks = await retrieveKnowledge(qaSb, {
           query: last.content,
           locale: answerLocale,
-          sourceTypes: ["poi", "tour_product", "site", "policy", "qa"],
+          // rag-03 (pressure-test): for intents that deliberately omit the tour
+          // catalogue (policy/legal/company/poi/booking), don't let semantic
+          // retrieval smuggle tour_product chunks back in and re-trigger tour
+          // recommendations the routing intended to suppress.
+          sourceTypes: useTourCatalog
+            ? ["poi", "tour_product", "site", "policy", "qa"]
+            : ["poi", "site", "policy", "qa"],
           limit: 8,
         });
         ragContext = buildRagContextText(chunks, { maxChars: 8000 });
@@ -1448,15 +1466,20 @@ export async function POST(req: NextRequest) {
 
   // Legacy fallback context (also used to complement RAG misses) — depends on
   // the RAG result, so it stays sequential (it's a rare, cheap path).
+  // rag-02 (pressure-test): always pull curated approved admin Q&A. It used to
+  // be fetched ONLY when RAG returned nothing (`!ragContext`), so a single
+  // non-QA RAG chunk silently dropped the human-curated answers. When RAG is
+  // present this is a smaller supplement appended alongside it; when RAG is
+  // empty it stays the primary keyword fallback.
   let learnedQaContext = "";
-  if (!ragContext && qaSb) {
+  if (qaSb) {
     try {
       learnedQaContext = await buildApprovedQaContextText(qaSb, {
         locale: answerLocale,
         query: last.content,
         tourSlug: isSiteAssistant ? null : tourProductSlug,
-        limit: 5,
-        maxChars: 3500,
+        limit: ragContext ? 3 : 5,
+        maxChars: ragContext ? 2000 : 3500,
       });
     } catch (qaErr) {
       console.error("[tour-product/assistant] approved QA lookup error:", (qaErr as Error).message);
@@ -1470,6 +1493,9 @@ export async function POST(req: NextRequest) {
     ? [
         "\n--- VERIFIED KNOWLEDGE (semantic search over POI, tours, policies, site, and approved Q&A) ---\n",
         ragContext,
+        ...(learnedQaContext
+          ? ["\n--- APPROVED ADMIN Q&A (human-curated; use when it directly matches) ---\n", learnedQaContext]
+          : []),
       ]
     : [
         "\n--- APPROVED ADMIN Q&A ---\n",

@@ -36,6 +36,18 @@ function formatKrw(amount: number, locale: string): string {
   }
 }
 
+// i18n-06 (pressure-test): the quote summary used to inline the raw English
+// region enum ("jeju"/"busan"/"seoul") into localized sentences. Localize it.
+const REGION_LABEL: Record<string, Record<TourProductPageLocale, string>> = {
+  busan: { en: "Busan", ko: "부산", ja: "釜山", zh: "釜山", "zh-TW": "釜山", es: "Busan" },
+  jeju: { en: "Jeju", ko: "제주", ja: "済州", zh: "济州", "zh-TW": "濟州", es: "Jeju" },
+  seoul: { en: "Seoul", ko: "서울", ja: "ソウル", zh: "首尔", "zh-TW": "首爾", es: "Seúl" },
+};
+export function localizedRegion(region: string, locale: TourProductPageLocale): string {
+  const r = region.toLowerCase();
+  return REGION_LABEL[r]?.[locale] ?? r.charAt(0).toUpperCase() + r.slice(1);
+}
+
 export type QuoteDraft = {
   region: PricingRegion | null;
   track: PricingTrack | null;
@@ -161,7 +173,9 @@ export function sanitizeDraft(raw: Record<string, unknown> | null, todayISO?: st
     }
   }
   const party = num(raw.party);
-  if (party && party >= 1) d.party = Math.round(party);
+  // quote-06 (pressure-test): floor, don't round. Math.round turned a fractional
+  // 4.5 into 5 — quoting/booking MORE guests (and a higher pax tier) than asked.
+  if (party && party >= 1) d.party = Math.floor(party);
   const hours = num(raw.durationHours);
   if (hours && hours > 0) d.durationHours = Math.round(hours);
   d.language = str(raw.language);
@@ -484,16 +498,17 @@ export function buildQuoteReply(
   }
 
   const amount = formatKrw(price.total, locale);
+  const regionLabel = localizedRegion(region, locale);
   // The tour date is stated in the quote on purpose (2026-07-04 incident): a
   // wrongly-resolved date must be visible to the customer BEFORE they confirm.
   const when = d.requestedDate ?? "";
   const summary: Record<TourProductPageLocale, string> = {
-    en: `Estimated quote: ${amount} — ${pricedHours}h private tour in ${region} for ${d.party} on ${when}. Book now, pay on tour day, 100% refund up to 24h before. Want me to set up checkout?`,
-    ko: `예상 견적: ${amount} — ${region} ${pricedHours}시간 프라이빗 투어, ${d.party}명 · ${when}. 예약 먼저, 결제는 투어 당일, 24시간 전 100% 환불. 결제 진행해 드릴까요?`,
-    ja: `お見積もり：${amount} — ${region}の${pricedHours}時間プライベートツアー、${d.party}名（${when}）。予約は今、支払いは当日、24時間前まで全額返金。決済に進みますか？`,
-    zh: `预估报价：${amount} — ${region}${pricedHours}小时私人包车，${d.party}人（${when}）。先预约，当天付款，提前24小时全额退款。要我帮你进入结账吗？`,
-    "zh-TW": `預估報價：${amount} — ${region}${pricedHours}小時私人包車，${d.party}人（${when}）。先預約，當天付款，提前24小時全額退款。要我幫你進入結帳嗎？`,
-    es: `Precio estimado: ${amount} — tour privado de ${pricedHours}h en ${region} para ${d.party} el ${when}. Reserva ahora, paga el día del tour, reembolso 100% hasta 24h antes. ¿Preparo el pago?`,
+    en: `Estimated quote: ${amount} — ${pricedHours}h private tour in ${regionLabel} for ${d.party} on ${when}. Book now, pay on tour day, 100% refund up to 24h before. Want me to set up checkout?`,
+    ko: `예상 견적: ${amount} — ${regionLabel} ${pricedHours}시간 프라이빗 투어, ${d.party}명 · ${when}. 예약 먼저, 결제는 투어 당일, 24시간 전 100% 환불. 결제 진행해 드릴까요?`,
+    ja: `お見積もり：${amount} — ${regionLabel}の${pricedHours}時間プライベートツアー、${d.party}名（${when}）。予約は今、支払いは当日、24時間前まで全額返金。決済に進みますか？`,
+    zh: `预估报价：${amount} — ${regionLabel}${pricedHours}小时私人包车，${d.party}人（${when}）。先预约，当天付款，提前24小时全额退款。要我帮你进入结账吗？`,
+    "zh-TW": `預估報價：${amount} — ${regionLabel}${pricedHours}小時私人包車，${d.party}人（${when}）。先預約，當天付款，提前24小時全額退款。要我幫你進入結帳嗎？`,
+    es: `Precio estimado: ${amount} — tour privado de ${pricedHours}h en ${regionLabel} para ${d.party} el ${when}. Reserva ahora, paga el día del tour, reembolso 100% hasta 24h antes. ¿Preparo el pago?`,
   };
   const minNote: Record<TourProductPageLocale, string> = {
     en: `Our private tours start at ${MIN_TOUR_HOURS} hours, so I priced ${MIN_TOUR_HOURS} hours.`,
@@ -653,7 +668,7 @@ export async function createQuoteBooking(
   // turn) used to create two PENDING bookings. Reuse a recent identical one.
   try {
     const since = new Date(Date.now() - 30 * 60_000).toISOString();
-    const { data: existing } = await sb
+    let dedupeQuery = sb
       .from("bookings")
       .select("id, booking_reference")
       .eq("contact_email", draft.contactEmail)
@@ -668,6 +683,13 @@ export async function createQuoteBooking(
       .filter("itinerary->>region", "eq", region)
       .filter("itinerary->>track", "eq", track)
       .filter("itinerary->>duration_hours", "eq", String(pricedHours))
+      // quote-03 (pressure-test): language tier / Jeju pickup zone / cruise port
+      // ALSO drive the price, so a corrected re-quote that changes only one of
+      // them must NOT reuse the old (differently-priced) booking.
+      .filter("itinerary->>guide_language_tier", "eq", tier);
+    if (jejuPickupZone) dedupeQuery = dedupeQuery.filter("itinerary->>jeju_pickup_zone", "eq", jejuPickupZone);
+    if (cruisePort) dedupeQuery = dedupeQuery.filter("itinerary->>cruise_port", "eq", cruisePort);
+    const { data: existing } = await dedupeQuery
       .gte("created_at", since)
       .order("created_at", { ascending: false })
       .limit(1)
