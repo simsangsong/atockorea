@@ -1184,9 +1184,13 @@ export function TourProductAiAssistantWidget({
             reader.releaseLock();
           }
 
-          // Stream ended with neither done nor error and nothing rendered
-          // (dropped connection): surface a network error.
-          if (!settled && !started) {
+          // Stream ended without a `done`/`error` event (dropped connection,
+          // function killed at maxDuration, instance recycled). Pressure-test
+          // sse-01: this must fire even when tokens already started — a partial
+          // answer left as-is reads as a COMPLETE answer. Append a retriable
+          // network bubble after the partial so the visitor knows it was cut off
+          // and can retry, instead of trusting a silently truncated reply.
+          if (!settled) {
             setHandoffOffer(null);
             setMessages((prev) => [
               ...prev,

@@ -1516,13 +1516,20 @@ export async function POST(req: NextRequest) {
     verifiedBookingContext
       ? "The user's own booking has been verified (booking reference + email). Answer their booking question — pickup, tour time, status, payment status, refund progress, guests, amount — using ONLY the VERIFIED BOOKING facts below. Never reveal or mention payment-method, card, or internal IDs. For changes, cancellation, or refund PROCESSING, tell them our staff will handle it and offer support in this chat — never claim you have changed, cancelled, rescheduled, or refunded anything."
       : "For personal booking details such as exact pickup time, driver contact, payment status, booking changes, or booking-specific refund progress, staff must check the booking record; offer support inside this chat.",
+    // mem-02 (pressure-test): an anonymous session is keyed by a 30-day cookie
+    // that is shared on a family/public device, so proactively announcing the
+    // remembered preferences discloses the PREVIOUS visitor's plans (and maybe
+    // name) to the NEXT one. Authenticated identities may be greeted with
+    // continuity; anonymous memory is used only to silently pre-fill.
     memoryContext
-      ? "TRAVELER MEMORY below is a soft recollection of this traveler's preferences from past chats. Use it to personalize (e.g. greet continuity, pre-fill likely region/party size) but ALWAYS defer to the current message, never assume it is still true if contradicted, and never treat it as a verified booking, price, or policy fact."
+      ? authUser?.id
+        ? "TRAVELER MEMORY below is a soft recollection of this traveler's preferences from past chats. Use it to personalize (e.g. greet continuity, pre-fill likely region/party size) but ALWAYS defer to the current message, never assume it is still true if contradicted, and never treat it as a verified booking, price, or policy fact."
+        : "TRAVELER MEMORY below is a soft recollection of preferences from earlier chats on THIS DEVICE (the visitor is not signed in, so the browser may be shared). Use it ONLY to silently pre-fill a likely region or party size when it is consistent with the current message. Do NOT greet with, mention, or reveal any remembered detail, and never say 'welcome back' — another person may be using this browser. Always defer to the current message."
       : "",
     // W6.3 — returning traveler, first turn of a fresh conversation: open with
-    // ONE short continuity line ("Welcome back — still planning that Jeju trip
-    // for 4?") before answering. Soft phrasing only; never assert it as fact.
-    memoryContext && messages.length === 1
+    // ONE short continuity line. mem-02: authenticated identities only — never
+    // proactively surface memory to an anonymous (possibly shared-device) visitor.
+    memoryContext && messages.length === 1 && authUser?.id
       ? "This is a RETURNING traveler starting a new conversation. Begin your reply with ONE short, warm continuity sentence grounded in the TRAVELER MEMORY (phrased as a soft question or acknowledgement, e.g. \"Welcome back — still thinking about ...?\"), then answer their message."
       : "",
     memoryContext,
