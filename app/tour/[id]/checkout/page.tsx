@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import dynamic from 'next/dynamic';
 import { useParams, useRouter } from 'next/navigation';
 import { toast } from 'sonner';
 import Header from '@/components/Header';
@@ -8,11 +9,11 @@ import Footer from '@/components/Footer';
 import BottomNav from '@/components/BottomNav';
 import { useTranslations, useCopy } from '@/lib/i18n';
 import { supabase } from '@/lib/supabase';
+import { useSession } from '@/lib/auth-session';
 import { useCurrencyOptional } from '@/lib/currency';
 import { BookingTimelineSection } from '@/components/tour/BookingTimelineSection';
 import { analytics } from '@/src/design/analytics';
 import { CheckoutChatAppSelect } from '@/components/checkout/CheckoutChatAppSelect';
-import { NoShowHoldCardForm } from '@/components/checkout/NoShowHoldCardForm';
 import {
   AUTH_FIELD_LABEL,
   AUTH_INPUT,
@@ -23,6 +24,14 @@ import {
   mypagePageCard,
 } from '@/lib/mypage-ui';
 import { cn } from '@/lib/utils';
+
+// The Stripe card form only mounts after the user starts payment (a client
+// secret + publishable key arrive), so its Stripe React SDK is loaded lazily
+// instead of sitting in the checkout page's initial bundle.
+const NoShowHoldCardForm = dynamic(
+  () => import('@/components/checkout/NoShowHoldCardForm').then((m) => m.NoShowHoldCardForm),
+  { ssr: false },
+);
 
 interface BookingData {
   tourId: number;
@@ -74,6 +83,10 @@ export default function CheckoutPage() {
   const router = useRouter();
   const t = useTranslations();
   const copy = useCopy();
+  // Shared session from the global provider (lib/auth-session) — replaces raw
+  // `supabase.auth.getSession()` on the payment critical path, which the
+  // provider dock-block documents as the cause of past 5–6s auth hangs.
+  const { session, getAccessToken } = useSession();
   const currencyCtx = useCurrencyOptional();
   const [bookingData, setBookingData] = useState<BookingData | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
@@ -125,17 +138,22 @@ export default function CheckoutPage() {
     }
   }, [params.id, router]);
 
-  // 로그인 시 회원 정보(이름, 이메일, 전화번호) 자동 입력
+  // 로그인 시 회원 정보(이름, 이메일, 전화번호) 자동 입력.
+  // Reads the warm `session.user` from the global provider instead of a fresh
+  // getSession() round-trip. Deps are value-stable (bookingData reference is
+  // set once; session?.user?.id is a primitive) — no `t()` in deps, so this
+  // can't hit the useTranslations() refetch loop (PR #266).
   useEffect(() => {
-    if (!supabase || !bookingData) return;
+    const authUser = session?.user;
+    if (!bookingData || !authUser) return;
+    const name = (authUser.user_metadata?.full_name as string) || '';
+    const email = authUser.email || '';
+    if (!name && !email) return;
     let mounted = true;
     (async () => {
-      const { data: { session } } = await supabase.auth.getSession();
-      if (!mounted || !session?.user) return;
-      const name = (session.user.user_metadata?.full_name as string) || '';
-      const email = session.user.email || '';
-      if (!name && !email) return;
-      const { data: profile } = await supabase.from('user_profiles').select('full_name, phone').eq('id', session.user.id).single();
+      const profile = supabase
+        ? (await supabase.from('user_profiles').select('full_name, phone').eq('id', authUser.id).single()).data
+        : null;
       if (!mounted) return;
       setCustomerInfo((prev) => ({
         ...prev,
@@ -145,7 +163,7 @@ export default function CheckoutPage() {
       }));
     })();
     return () => { mounted = false; };
-  }, [bookingData]);
+  }, [bookingData, session?.user?.id]);
 
   const validateForm = (): boolean => {
     const newErrors: Partial<Record<keyof CustomerInfo, string>> = {};
@@ -231,9 +249,11 @@ export default function CheckoutPage() {
       };
 
       const headers: Record<string, string> = { 'Content-Type': 'application/json' };
-      const { data: { session } } = await supabase?.auth.getSession() ?? { data: { session: null } };
-      if (session?.access_token) {
-        headers['Authorization'] = `Bearer ${session.access_token}`;
+      // Warm token from the shared provider (cached ref, or one bootstrap on
+      // cold-miss) instead of a raw getSession() on the payment critical path.
+      const token = await getAccessToken();
+      if (token) {
+        headers['Authorization'] = `Bearer ${token}`;
       }
 
       const bookingResponse = await fetch('/api/bookings', {

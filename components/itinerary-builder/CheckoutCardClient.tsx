@@ -1,8 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 import { AlertCircle, Loader2, ShieldCheck, Wallet } from "lucide-react";
-import { NoShowHoldCardForm } from "@/components/checkout/NoShowHoldCardForm";
+
+// Stripe card form mounts only once the authorization session (client secret)
+// is fetched, so load its Stripe React SDK lazily rather than up-front.
+const NoShowHoldCardForm = dynamic(
+  () => import("@/components/checkout/NoShowHoldCardForm").then((m) => m.NoShowHoldCardForm),
+  { ssr: false },
+);
 
 interface Props {
   bookingId: string;
