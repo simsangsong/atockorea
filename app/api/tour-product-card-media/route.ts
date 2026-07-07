@@ -2,8 +2,10 @@ import { NextRequest, NextResponse } from "next/server";
 import { createServerClient } from "@/lib/supabase";
 import { loadTourProductCardMediaBySlug } from "@/lib/tour-product/resolveTourProductCardMedia.server";
 
-export const dynamic = "force-dynamic";
-export const revalidate = 0;
+// Card media (URLs admins change rarely) is keyed by ?slugs=&locale= in the URL,
+// so the Vercel CDN can cache each variant. Mirrors sibling
+// `homepage-product-card-images` (s-maxage=600 + SWR). No per-user state.
+const CARD_MEDIA_CACHE = "public, s-maxage=600, stale-while-revalidate=3600";
 
 function parseSlugs(value: string | null): string[] {
   if (!value) return [];
@@ -34,7 +36,7 @@ export async function GET(req: NextRequest) {
     const bySlug = await loadTourProductCardMediaBySlug(supabase, slugs, locale);
     return NextResponse.json(
       { media: Object.values(bySlug), bySlug },
-      { headers: { "Cache-Control": "no-store, max-age=0" } },
+      { headers: { "Cache-Control": CARD_MEDIA_CACHE } },
     );
   } catch (error) {
     console.error("[GET /api/tour-product-card-media]", error);

@@ -6,9 +6,10 @@ import { withErrorHandler, AppError, ErrorResponses } from '@/lib/error-handler'
 import { createServerLogger } from '@/lib/logger';
 import { isTourBlockedFromConsumerSurfaces, isTourIdBlockedFromConsumerSurfaces } from '@/lib/tour-consumer-visibility';
 
-// Force dynamic rendering to ensure fresh data
-export const dynamic = 'force-dynamic';
-export const revalidate = 0;
+// Public single-tour GET is edge-cacheable per URL (see GET response header,
+// mirrors `/api/tours`). Admin PATCH/DELETE below are mutations — inherently
+// dynamic — so no module-level `force-dynamic` is needed.
+const TOUR_GET_CACHE = 'public, max-age=0, s-maxage=300, stale-while-revalidate=600';
 
 const SUPPORTED_LOCALES = ['en', 'ko', 'zh', 'zh-CN', 'zh-TW', 'es', 'ja'] as const;
 type SupportedLocale = typeof SUPPORTED_LOCALES[number];
@@ -305,7 +306,10 @@ export const GET = withErrorHandler(async (
           : null,
     };
 
-    return NextResponse.json({ tour: transformedTour });
+    return NextResponse.json(
+      { tour: transformedTour },
+      { headers: { 'Cache-Control': TOUR_GET_CACHE } },
+    );
 });
 
 /**

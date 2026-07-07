@@ -17,8 +17,11 @@ import { isBuilderAttraction, hasBuilderPhoto } from "@/lib/itinerary-match-engi
  * `app/itinerary-builder/page.tsx` exactly (pre-Phase-11 SSR path) so the
  * rendered builder is identical whether POIs arrived via SSR (`?region=`
  * deep-link) or via this endpoint (cold visit + interaction).
+ *
+ * POIs are region-scoped public content that changes rarely, so the response
+ * is edge-cacheable per `?region=` (see GET header). No per-user state.
  */
-export const dynamic = "force-dynamic";
+const POIS_CACHE = "public, s-maxage=600, stale-while-revalidate=3600";
 
 export async function GET(req: NextRequest) {
   const region = req.nextUrl.searchParams.get("region");
@@ -38,7 +41,8 @@ export async function GET(req: NextRequest) {
     )
     .in("region", cluster as unknown as string[])
     .not("name_en", "is", null)
-    .not("lat", "is", null);
+    .not("lat", "is", null)
+    .limit(500);
 
   if (error) {
     return NextResponse.json(
@@ -55,5 +59,8 @@ export async function GET(req: NextRequest) {
       hasBuilderPhoto(p),
   );
 
-  return NextResponse.json({ ok: true, region, pois });
+  return NextResponse.json(
+    { ok: true, region, pois },
+    { headers: { "Cache-Control": POIS_CACHE } },
+  );
 }

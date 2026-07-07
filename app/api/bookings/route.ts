@@ -22,7 +22,7 @@ import {
  */
 export async function GET(req: NextRequest) {
   try {
-    const user = await getAuthUser(req);
+    const user = await getAuthUser(req, { skipRoleLookup: true });
     if (!user) {
       return ErrorResponses.unauthorized('Authentication required');
     }

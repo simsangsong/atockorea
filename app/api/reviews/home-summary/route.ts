@@ -69,7 +69,11 @@ export async function GET() {
       reviews,
       hasPublicReviews: stats.count > 0,
     };
-    return NextResponse.json(payload);
+    return NextResponse.json(payload, {
+      headers: {
+        "Cache-Control": "public, s-maxage=300, stale-while-revalidate=1800",
+      },
+    });
   } catch (e) {
     console.error("[GET /api/reviews/home-summary]", e);
     return NextResponse.json({ error: "Failed to load review summary" }, { status: 500 });

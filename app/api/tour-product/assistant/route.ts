@@ -774,7 +774,7 @@ export async function POST(req: NextRequest) {
   // reference. Never throws — anonymous chat must keep working.
   let authUser: Awaited<ReturnType<typeof getAuthUser>> = null;
   try {
-    authUser = await getAuthUser(req);
+    authUser = await getAuthUser(req, { skipRoleLookup: true });
   } catch (authErr) {
     console.error("[tour-product/assistant] auth lookup error:", (authErr as Error).message);
   }

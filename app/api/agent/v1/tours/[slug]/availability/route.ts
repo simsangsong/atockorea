@@ -71,7 +71,13 @@ export async function GET(
 
   return NextResponse.json(
     { object: "availability", provider: "AtoC Korea", ...availability },
-    { headers },
+    {
+      headers: {
+        ...headers,
+        // Read-only, per slug+date in the URL — short edge cache smooths repeat checks.
+        "Cache-Control": "public, s-maxage=30, stale-while-revalidate=60",
+      },
+    },
   );
 }
 
