@@ -904,6 +904,11 @@ export function TourProductAiAssistantWidget({
   // W4.2 — the exact message list of the last assistant request, so a failure
   // bubble can offer one-tap retry instead of forcing a retype.
   const lastRequestRef = useRef<ChatMessage[] | null>(null);
+  // W4 (deep-audit) — flush a pending 👎 (rating captured, reason not chosen)
+  // when the conversation moves on. Declared up here so the panel-close and
+  // unmount effects below can call it; the actual body is assigned after
+  // pendingReasonIdx / submitNegativeReason exist so it captures the latest.
+  const flushPendingFeedbackRef = useRef<() => void>(() => {});
   const liveSupportActive = activeTicketId !== null && liveStatus !== "resolved" && liveStatus !== "closed";
   const title = productTitle?.trim() || labels.siteTitle;
 
@@ -917,8 +922,12 @@ export function TourProductAiAssistantWidget({
 
   // W0.10 — abort the in-flight stream when the panel closes or the widget
   // unmounts; the visitor left, so stop the server-side generation too.
+  // W4 — closing the panel is an "abandon" too: flush a pending 👎 first.
   useEffect(() => {
-    if (!open) abortRef.current?.abort();
+    if (!open) {
+      flushPendingFeedbackRef.current();
+      abortRef.current?.abort();
+    }
   }, [open]);
   // W4.5 — move focus into the dialog when it opens (after the entry motion).
   useEffect(() => {
@@ -926,7 +935,13 @@ export function TourProductAiAssistantWidget({
     const id = window.setTimeout(() => panelRef.current?.focus(), 260);
     return () => window.clearTimeout(id);
   }, [open]);
-  useEffect(() => () => abortRef.current?.abort(), []);
+  useEffect(
+    () => () => {
+      flushPendingFeedbackRef.current(); // W4 — flush a pending 👎 on unmount
+      abortRef.current?.abort();
+    },
+    [],
+  );
 
   const dismissTeaser = useCallback(() => {
     setTeaserVisible(false);
@@ -1037,6 +1052,17 @@ export function TourProductAiAssistantWidget({
     },
     [postFeedback],
   );
+
+  // Assign the flush body now that pendingReasonIdx / submitNegativeReason
+  // exist (the ref itself is declared up top so the close/unmount effects can
+  // reach it). Reassigned every render so it always sees the latest pending
+  // index — send / sendPreset / Contact-support call it directly.
+  flushPendingFeedbackRef.current = () => {
+    if (pendingReasonIdx !== null) submitNegativeReason(pendingReasonIdx, null);
+  };
+  useEffect(() => {
+    if (!open) flushPendingFeedbackRef.current();
+  }, [open]);
 
   const runAssistant = useCallback(
     async (next: ChatMessage[]) => {
@@ -1221,9 +1247,17 @@ export function TourProductAiAssistantWidget({
         ]);
       } finally {
         if (watchdog) window.clearTimeout(watchdog);
-        if (abortRef.current === controller) abortRef.current = null;
-        setLoading(false);
-        setLoadingStage(null);
+        // Deep-audit 2026-07-05: only the CURRENT request may clear the loading
+        // state. A superseded request (its stream aborted when the user fired a
+        // second message) used to run this unconditionally and turn the spinner
+        // off while request #2 was still streaming — no typing indicator, send
+        // button live, disabled controls re-enabled. Guard all three on
+        // "am I still the active request?".
+        if (abortRef.current === controller) {
+          abortRef.current = null;
+          setLoading(false);
+          setLoadingStage(null);
+        }
       }
     },
     [labels, pageContext, scope, apiSlug, uiLang],
@@ -1292,6 +1326,8 @@ export function TourProductAiAssistantWidget({
   const requestHumanSupport = useCallback(
     async (question?: string) => {
       if (loading || liveSupportActive) return;
+      // Flush a pending 👎 before the conversation pivots to live support.
+      if (pendingReasonIdx !== null) submitNegativeReason(pendingReasonIdx, null);
       const latestUserQuestion =
         question?.trim() ||
         [...messages].reverse().find((m) => m.role === "user" && m.content.trim())?.content ||
@@ -1340,7 +1376,7 @@ export function TourProductAiAssistantWidget({
         setLoading(false);
       }
     },
-    [labels, liveSupportActive, loading, messages, pageContext, scope, apiSlug],
+    [labels, liveSupportActive, loading, messages, pageContext, scope, apiSlug, pendingReasonIdx, submitNegativeReason],
   );
 
   const send = useCallback(async () => {
@@ -1523,10 +1559,16 @@ export function TourProductAiAssistantWidget({
             if (focusables.length === 0) return;
             const first = focusables[0];
             const last = focusables[focusables.length - 1];
-            if (e.shiftKey && document.activeElement === first) {
+            // Deep-audit 2026-07-05: also trap when focus is on the panel
+            // itself (tabIndex=-1, the initial focus target) or otherwise
+            // outside the focusable set — previously Shift+Tab from the panel
+            // leaked focus to the page behind the aria-modal dialog.
+            const active = document.activeElement;
+            const inList = Array.prototype.indexOf.call(focusables, active) >= 0;
+            if (e.shiftKey && (active === first || !inList)) {
               e.preventDefault();
               last.focus();
-            } else if (!e.shiftKey && document.activeElement === last) {
+            } else if (!e.shiftKey && (active === last || !inList)) {
               e.preventDefault();
               first.focus();
             }
@@ -1618,7 +1660,13 @@ export function TourProductAiAssistantWidget({
               {messages.map((m, i) =>
                 m.role === "user" ? (
                   <motion.div
-                    key={`u-${i}-${m.content.slice(0, 64)}`}
+                    // Deep-audit 2026-07-05 (W10): key on the append-only index
+                    // ONLY. Keying on content made the streaming assistant
+                    // bubble remount on every delta — replaying the entry
+                    // motion (flicker) and re-announcing a fresh node inside
+                    // the role="log" region on each token. Messages are only
+                    // ever appended, so the index is stable.
+                    key={`u-${i}`}
                     className="flex justify-end pl-6"
                     initial={{ opacity: 0, y: 14, filter: "blur(2px)" }}
                     animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -1630,7 +1678,7 @@ export function TourProductAiAssistantWidget({
                   </motion.div>
                 ) : (
                   <motion.div
-                    key={`a-${i}-${m.content.slice(0, 64)}`}
+                    key={`a-${i}`} // W10 — stable index key (see user branch above)
                     className="flex justify-start pr-2"
                     initial={{ opacity: 0, y: 16, filter: "blur(3px)" }}
                     animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -1686,7 +1734,7 @@ export function TourProductAiAssistantWidget({
                           }}
                           className="mt-2 inline-flex items-center gap-1 rounded-full border border-sky-900/25 bg-white px-3 py-1.5 text-[11px] font-semibold text-sky-900 transition hover:bg-sky-50"
                         >
-                          {RETRY_LABEL[uiLang] ?? RETRY_LABEL.en}
+                          {RETRY_LABEL[langKey(uiLang)] ?? RETRY_LABEL.en}
                         </button>
                       ) : null}
                       {safeCheckoutUrl(m.checkoutUrl) ? (
@@ -1694,7 +1742,7 @@ export function TourProductAiAssistantWidget({
                           href={safeCheckoutUrl(m.checkoutUrl)!}
                           className="mt-2.5 flex w-full items-center justify-center gap-1.5 rounded-full bg-slate-900 px-4 py-2 text-[12.5px] font-bold text-white transition-colors hover:bg-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
                         >
-                          {CHECKOUT_CTA[uiLang] ?? CHECKOUT_CTA.en}
+                          {CHECKOUT_CTA[langKey(uiLang)] ?? CHECKOUT_CTA.en}
                         </a>
                       ) : null}
                       {m.sources && m.sources.length > 0 ? (
@@ -1799,7 +1847,10 @@ export function TourProductAiAssistantWidget({
                 <div className="flex items-center gap-2 rounded-2xl rounded-bl-md border border-white/80 bg-white px-3 py-2 shadow-sm ring-1 ring-slate-200/60">
                   <TypingDots />
                   {loadingStage && (
-                    <span className="text-[11px] font-medium text-slate-400" aria-live="polite">
+                    // Deep-audit 2026-07-05: no own aria-live — this sits inside
+                    // the role="log" aria-live container, so a nested live
+                    // region double-announced "Searching…→Writing…".
+                    <span className="text-[11px] font-medium text-slate-400">
                       {stageLabels(uiLang)[loadingStage]}
                     </span>
                   )}

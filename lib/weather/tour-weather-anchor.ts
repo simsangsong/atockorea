@@ -77,10 +77,56 @@ export function resolveTourWeatherAnchorBySlug(
   return TOUR_WEATHER_ANCHORS[slug] ?? WEATHER_ANCHOR_EAST_SEONGSAN
 }
 
-/** locale에 맞는 areaLabel 선택. */
+// Deep-audit 2026-07-05 (L7): ja/zh/zh-TW forecasts used to inline the English
+// areaLabel ("Jejuの天気…"). Translate the place/direction tokens so CJK
+// replies read natively. Unknown tokens (e.g. DMZ) fall back to the original
+// word, so a newly-added anchor degrades gracefully rather than breaking.
+// es keeps the roman spelling by convention (Spanish speakers read "Jeju").
+const AREA_TOKENS: Record<"ja" | "zh" | "zh-TW", Record<string, string>> = {
+  ja: {
+    Jeju: "済州", Seoul: "ソウル", Busan: "釜山", Gyeongju: "慶州", Suwon: "水原",
+    Pocheon: "抱川", Seongsan: "城山", Hallim: "翰林", Jungmun: "中文", Seogwipo: "西帰浦",
+    Nami: "南怡島", Gapyeong: "加平", Paju: "坡州", Seoraksan: "雪岳山", Gangwon: "江原",
+    Sokcho: "束草", Yangyang: "襄陽", Yongin: "龍仁", Yangsan: "梁山", Tongdosa: "通度寺",
+    Yeongnam: "嶺南", East: "東部", West: "西部", Southwest: "南西部", South: "南部",
+    Island: "", region: "",
+  },
+  zh: {
+    Jeju: "济州", Seoul: "首尔", Busan: "釜山", Gyeongju: "庆州", Suwon: "水原",
+    Pocheon: "抱川", Seongsan: "城山", Hallim: "翰林", Jungmun: "中文", Seogwipo: "西归浦",
+    Nami: "南怡岛", Gapyeong: "加平", Paju: "坡州", Seoraksan: "雪岳山", Gangwon: "江原",
+    Sokcho: "束草", Yangyang: "襄阳", Yongin: "龙仁", Yangsan: "梁山", Tongdosa: "通度寺",
+    Yeongnam: "岭南", East: "东部", West: "西部", Southwest: "西南部", South: "南部",
+    Island: "岛", region: "地区",
+  },
+  "zh-TW": {
+    Jeju: "濟州", Seoul: "首爾", Busan: "釜山", Gyeongju: "慶州", Suwon: "水原",
+    Pocheon: "抱川", Seongsan: "城山", Hallim: "翰林", Jungmun: "中文", Seogwipo: "西歸浦",
+    Nami: "南怡島", Gapyeong: "加平", Paju: "坡州", Seoraksan: "雪岳山", Gangwon: "江原",
+    Sokcho: "束草", Yangyang: "襄陽", Yongin: "龍仁", Yangsan: "梁山", Tongdosa: "通度寺",
+    Yeongnam: "嶺南", East: "東部", West: "西部", Southwest: "西南部", South: "南部",
+    Island: "島", region: "地區",
+  },
+}
+
+/** locale에 맞는 areaLabel 선택 (CJK는 지명 토큰 현지화, L7). */
 export function localizedAreaLabel(
   anchor: TourWeatherAnchor,
   locale: string,
 ): string {
-  return locale === "ko" ? anchor.areaLabelKo : anchor.areaLabel
+  if (locale === "ko") return anchor.areaLabelKo
+  const tokens = AREA_TOKENS[locale as "ja" | "zh" | "zh-TW"]
+  if (!tokens) return anchor.areaLabel // en, es
+  const translated = anchor.areaLabel
+    .split(" · ")
+    .map((seg) =>
+      seg
+        .split(/\s+/)
+        .map((w) => tokens[w] ?? w)
+        .filter(Boolean)
+        .join(""),
+    )
+    .filter(Boolean)
+    .join(" · ")
+  return translated || anchor.areaLabel
 }

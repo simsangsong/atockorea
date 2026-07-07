@@ -214,6 +214,15 @@ const POLICY_TERMS = [
   "미포함",
   "포함되지",
   "날씨",
+  // Deep-audit 2026-07-05: ja/zh/es weather words were missing, so
+  // "済州の明日の天気は？" / "济州明天天气怎么样？" fell to tour_catalog and the
+  // W6.6 forecast instant answer never fired for those locales.
+  "天気",
+  "天气",
+  "天氣",
+  "clima",
+  "pronóstico",
+  "el tiempo",
   "보상",
   "코스가 바뀌",
   "예약 변경 수수료",
