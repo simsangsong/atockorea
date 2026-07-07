@@ -21,6 +21,8 @@
 | **✅ Tier 2 번들 (PR #275, 2026-07-07)** | framer-motion을 글로벌 셸(BottomNav·FloatingLangToggle)에서 제거→**콘텐츠 페이지(mypage/cart/checkout/auth/legal) framer 0**(99KB raw 청크 부재 실측) + Header supabase lazy(55KB gz 크리티컬패스 이탈) + 빌더 코드분할(Quote/POIDetail/Grid `dynamic(ssr:false)`). 적대적 리뷰 1 medium(로그아웃 재진입 가드) 수정. **T2-A(홈 카탈로그)는 별도 PR로 분리**(4소비처 전환 필요) |
 | **✅ Tier 4 체크아웃 (PR #277, 2026-07-07)** | 투어 체크아웃 공유 useSession(5-6s auth 행 제거, 루프세이프) + booking POST 병렬화(tour+auth+FX·inventory+bookings 2 Promise.all, title/merchant 재조회 제거, **가용성 DB에러 fail-CLOSED** 가드=리뷰 blocker) + Stripe `dynamic(ssr:false)` + 빌더 체크아웃 중복 match_pois 쿼리 제거. 적대적 리뷰 1 blocker 수정 |
 | **✅ Tier 5 self-fetch (PR #278, 2026-07-07)** | match-explanation이 전체 match_tours 대신 `fetchMatchTourBySlug` 단일행. **RLS 마이그(131) 스킵**(service-role 우회로 런타임 무영향) |
+| **✅ Tier 6-A JWT 로컬검증 (PR #282, 2026-07-07)** | 사용자 ES256 로테이트 후 `getAuthUser`가 `getClaims()` 로컬 JWKS 검증(getUser 폴백)→~72 인증엔드포인트 GoTrue 왕복 제거. 킬스위치 `JWT_LOCAL_VERIFY=0`, admin 강제 remote. 보안리뷰 0 findings |
+| **✅ T2-A 홈 카탈로그 (PR #283, 2026-07-07)** | featured+idle 레일이 lazy 카탈로그(EN인라인+로케일청크)→**홈 초기 JS 1615→1432KB(−183KB raw/~−58KB gz)**, 802 통합카탈로그 청크 초기번들서 제거. before/after 실측 |
 
 **핵심 인사이트**: 페이지 **셸은 사이트 전반 이미 건강**하다(모든 주요 경로 PRERENDER, TTFB 0.09~0.58s). 남은 병목은 **① 인증 클라이언트 데이터 로딩(API 왕복) ② 초기 JS 번들 ③ DB RLS ④ 체크아웃/빌더 특화 경로**다.
 
@@ -75,9 +77,9 @@
 
 ---
 
-## 2. Tier 2 — 초기 JS 번들 다이어트 (홈 ~485KB gz → 목표 ~300KB) — ✅ T2-B/C/D 출하 (PR #275); ⬜ T2-A 잔여
+## 2. Tier 2 — 초기 JS 번들 다이어트 (홈 ~485KB gz → 목표 ~300KB) — ✅ 전부 출하 (T2-B/C/D PR #275, T2-A PR #283)
 
-> T2-B(framer→CSS)·T2-C(Header supabase lazy)·T2-D(빌더 코드분할) 머지. **T2-A(FeaturedShowcase·IdleMatchPreview 카탈로그 eager import)만 잔여** — 홈 초기 번들에서 카탈로그를 빼려면 정적 소비처 4곳(featured·idle·MatcherMorphing·best-match) 전부 전환 필요(2곳만 하면 이득 0). shape-보존 없이 프리셋만 바꾸면 안 됨. 별도 PR + 빌드 번들그래프 delta 검증.
+> T2-B(framer→CSS)·T2-C(Header supabase lazy)·T2-D(빌더 코드분할) PR #275. **T2-A(featured+idle lazy 카탈로그) PR #283으로 완료** — 정적 소비처는 featured+idle 2곳뿐이었음(best-match·MatcherMorphing은 이미 `dynamic()` 뒤라 초기번들 무관; 메모리 "4곳"은 과다). `useStaticTourProductsLazy`(D1 패턴)로 전환, 홈 초기 JS **1615→1432KB(−183KB raw)** 실측, 802 통합카탈로그 청크 제거.
 
 ### T2-A. FeaturedProductsShowcase·IdleMatchPreviewCarousel의 전체 카탈로그 정적 import 제거 — 홈 −70KB gz
 `featured-products-showcase.tsx:21` + `IdleMatchPreviewCarousel.tsx`가 전체 `staticTourCatalogCards`(224KB raw/70KB gz, 청크 `802-*`)를 동기 import → `HomeV2MatchProvider`의 lazy import 규율을 무력화. 이 둘은 ~8개 featured 슬러그 카드 데이터만 필요.
@@ -163,9 +165,9 @@ bookings/cart 쓰기 약간 가속. 저우선. 실제 미사용 재확인 후 DR
 
 ---
 
-## 6. Tier 6 — 사용자 조치 게이트 (선행 필요) — 🔴 여전히 사용자 게이트 대기 (미착수, 도입 금지)
+## 6. Tier 6 — 사용자 조치 게이트 (선행 필요) — ✅ 게이트 해소 + 출하 (PR #282, 2026-07-07)
 
-> **사용자 조치 필요**: Supabase Dashboard → JWT Keys → 비대칭 ES256 키 마이그레이션+로테이트. 그 전에는 `getClaims()` 로컬검증이 no-op이고 인증을 깨뜨릴 수 있어 **절대 도입 금지**. 사용자가 완료 확인해주면 착수(§6-A). 다음 세션은 사용자에게 이 마이그레이션 여부부터 물을 것.
+> **사용자가 ES256 비대칭 서명키로 로테이트 완료**(2026-07-07): STANDBY ECC(P-256)→CURRENT, 레거시 HS256→"Previously used". JWKS 발견 엔드포인트가 EC/ES256 공개키(kid `3f3cb44a…`) 서빙 실측. `getAuthUser`가 `getClaims()` 로컬검증(getUser 폴백)으로 전환(PR #282). 킬스위치 `JWT_LOCAL_VERIFY=0`, `requireAdmin` 강제 remote(즉시 revocation), 보안리뷰 0 findings. ⚠ **레거시 HS256 시크릿 revoke 금지**(앱 anon 키 의존). 선택 강화: 액세스 TTL 3600→1800s(Dashboard→Auth→Sessions, revocation 창 축소).
 
 ### T6-A. 🔴 JWT 로컬 검증 (최대 per-request 절감, but 막힘)
 `getAuthUser`가 매 인증 요청 GoTrue `auth.getUser(token)` **네트워크 호출**(~72개 라우트). 로컬 JWKS 검증(`getClaims`)으로 대체하면 요청당 왕복 1회 제거(서울내부 ~30-120ms).
