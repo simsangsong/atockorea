@@ -49,7 +49,56 @@ export type GetAuthUserOptions = {
    * by role — use the default (full) lookup or requireAdmin instead.
    */
   skipRoleLookup?: boolean;
+  /**
+   * Force network token verification (`auth.getUser`) instead of the local
+   * JWKS `getClaims` fast path. Local verification cannot detect a token
+   * revoked before its `exp` (e.g. a sign-out mid-session), so privileged
+   * callers that need immediate revocation (admin refund/settle/delete-user)
+   * set this. `requireAdmin` sets it automatically.
+   */
+  forceRemoteVerify?: boolean;
 };
+
+/**
+ * Local-JWKS verification switch. Default ON now that the project signs access
+ * tokens with an asymmetric ES256 key (rotated 2026-07-07): `getClaims()`
+ * verifies the JWT locally via WebCrypto (no GoTrue round-trip), and for any
+ * legacy HS256 token still in flight it transparently falls back to a network
+ * check. Kill switch: set `JWT_LOCAL_VERIFY=0` to force the old `getUser` path
+ * everywhere (instant revert without a redeploy of code).
+ */
+const LOCAL_JWT_VERIFY = process.env.JWT_LOCAL_VERIFY !== '0';
+
+type MinimalIdentity = { id: string; email?: string | null };
+
+/** Narrow a getClaims() payload to the identity we need. */
+function identityFromClaims(claims: Record<string, unknown> | null | undefined): MinimalIdentity | null {
+  const sub = claims?.sub;
+  if (typeof sub !== 'string' || !sub) return null;
+  const email = typeof claims?.email === 'string' ? claims.email : null;
+  return { id: sub, email };
+}
+
+/**
+ * Resolve identity from a Bearer token. Local JWKS verify (fast) with a network
+ * `getUser` fallback on any miss/error; `remote` forces the network path.
+ */
+async function identityFromBearer(
+  client: ReturnType<typeof createServerClient>,
+  token: string,
+  remote: boolean,
+): Promise<MinimalIdentity | null> {
+  if (LOCAL_JWT_VERIFY && !remote) {
+    try {
+      const { data } = await client.auth.getClaims(token);
+      const id = identityFromClaims(data?.claims as Record<string, unknown> | undefined);
+      if (id) return id;
+    } catch { /* fall through to network verification */ }
+  }
+  const { data, error } = await client.auth.getUser(token);
+  if (!error && data?.user) return { id: data.user.id, email: data.user.email };
+  return null;
+}
 
 export async function getAuthUser(
   req: NextRequest,
@@ -57,13 +106,12 @@ export async function getAuthUser(
 ): Promise<AuthUser | null> {
   try {
     const adminSupabase = createServerClient(); // service-role: profile/merchant lookups
-    let user: { id: string; email?: string | null } | null = null;
+    const remote = options?.forceRemoteVerify === true;
+    let user: MinimalIdentity | null = null;
 
     const authHeader = req.headers.get('authorization');
     if (authHeader?.startsWith('Bearer ')) {
-      const token = authHeader.substring(7);
-      const { data, error } = await adminSupabase.auth.getUser(token);
-      if (!error && data?.user) user = data.user;
+      user = await identityFromBearer(adminSupabase, authHeader.substring(7), remote);
     }
 
     if (!user) {
@@ -75,8 +123,18 @@ export async function getAuthUser(
             try { cookieStore.set(name, value, options); } catch { /* response cookies not writable in this context */ }
           },
         });
-        const { data } = await ssrSupabase.auth.getUser();
-        if (data?.user) user = data.user;
+        // Cookie path: local JWKS verify of the session's access token, else
+        // the network getUser (which also refreshes a near-expired session).
+        if (LOCAL_JWT_VERIFY && !remote) {
+          try {
+            const { data } = await ssrSupabase.auth.getClaims();
+            user = identityFromClaims(data?.claims as Record<string, unknown> | undefined);
+          } catch { /* fall through */ }
+        }
+        if (!user) {
+          const { data } = await ssrSupabase.auth.getUser();
+          if (data?.user) user = { id: data.user.id, email: data.user.email };
+        }
       } catch (e) {
         if (process.env.NODE_ENV === 'development') {
           console.warn('[getAuthUser] ssr cookie read failed:', (e as Error)?.message);
@@ -197,7 +255,9 @@ export async function requireRole(
  * Require admin role (throws {@link AdminAuthFailure} for consistent JSON error handling on admin APIs).
  */
 export async function requireAdmin(req: NextRequest): Promise<AuthUser> {
-  const user = await getAuthUser(req);
+  // Admin actions (refund/settle/delete-user/…) need immediate revocation, so
+  // verify the token against GoTrue rather than the local JWKS fast path.
+  const user = await getAuthUser(req, { forceRemoteVerify: true });
   if (!user) {
     throw new AdminAuthFailure(401, 'Unauthorized', 'UNAUTHORIZED');
   }
