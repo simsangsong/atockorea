@@ -1,4 +1,5 @@
 import { buildInstantAnswer } from "@/lib/chatbot/instantAnswers";
+import { classifyChatbotQuery } from "@/lib/chatbot/queryIntent";
 
 const TODAY = "2026-07-05";
 
@@ -79,6 +80,53 @@ describe("W6.6 weather instant answer", () => {
     expect(r?.reply).toContain("2026-07-06");
     expect(r?.reply).toContain("°C");
     expect(r?.reply).toContain("Jeju");
+  });
+
+  it("L7: localizes the condition + rain label (no English mixed into ja/zh/es)", async () => {
+    // weather_code 3 = Overcast, rain 40% → localized per locale.
+    mockForecast(16);
+    const ja = await buildInstantAnswer({ ...base, locale: "ja", message: "済州の明日の天気は？" });
+    expect(ja?.kind).toBe("weather");
+    expect(ja?.reply).toContain("曇り");
+    expect(ja?.reply).toContain("降水確率");
+    expect(ja?.reply).not.toContain("Overcast");
+    expect(ja?.reply).not.toMatch(/\brain\b/);
+
+    const zh = await buildInstantAnswer({ ...base, locale: "zh", message: "济州明天天气怎么样？" });
+    expect(zh?.reply).toContain("阴天");
+    expect(zh?.reply).toContain("降水概率");
+  });
+
+  it("L7 regression: the REAL classified intent for ja/zh/es weather still reaches the forecast", async () => {
+    // The old unit tests injected intent:'unknown', so they missed that live
+    // classification routed "済州の明日の天気は？" to tour_catalog (not in
+    // WEATHER_INTENTS) — ja/zh/es users silently got no forecast. Drive the
+    // instant answer with the ACTUAL classifier so a re-break fails here.
+    for (const [locale, message, condition] of [
+      ["ja", "済州の明日の天気は？", "曇り"],
+      ["zh", "济州明天天气怎么样？", "阴天"],
+      ["es", "¿Qué clima habrá en Jeju mañana?", "Nublado"],
+    ] as const) {
+      mockForecast(16);
+      const intent = classifyChatbotQuery(message).intent;
+      const r = await buildInstantAnswer({ ...base, locale, intent, message });
+      expect({ locale, kind: r?.kind }).toEqual({ locale, kind: "weather" });
+      expect(r?.reply).toContain(condition);
+    }
+  });
+
+  it("R4 guard: 'which tour is best in rainy weather' is a recommendation, not a forecast", async () => {
+    mockForecast(16);
+    // Even on a tour page (anchor exists) and even though it classifies as
+    // policy, the recommendation phrasing must keep it out of the forecast.
+    const intent = classifyChatbotQuery("Which tour is best in rainy weather in Jeju?").intent;
+    const r = await buildInstantAnswer({
+      ...base,
+      tourSlug: "jeju-island-private-car-charter-tour",
+      intent,
+      message: "Which tour is best in rainy weather in Jeju?",
+    });
+    expect(r).toBeNull();
   });
 
   it("is honest beyond the 16-day window", async () => {

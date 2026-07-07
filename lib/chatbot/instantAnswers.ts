@@ -19,7 +19,58 @@ import {
   TOUR_WEATHER_ANCHORS,
   type TourWeatherAnchor,
 } from "@/lib/weather/tour-weather-anchor";
-import { wmoWeatherLabel } from "@/lib/weather/open-meteo";
+// L7 (deep-audit 2026-07-05): localized WMO condition labels. The shared
+// wmoWeatherLabel (lib/weather/open-meteo) is English-only — it feeds the
+// English UI weather strip; the chatbot answer
+// needs the visitor's language, so the forecast line no longer mixes an
+// English "Overcast, rain 40%" into a Japanese/Chinese/Spanish reply.
+type WeatherKey =
+  | "clear" | "mostly_clear" | "partly_cloudy" | "overcast" | "fog" | "drizzle"
+  | "rain" | "snow" | "rain_showers" | "snow_showers" | "thunderstorm" | "mixed";
+
+function weatherKeyForCode(code: number): WeatherKey {
+  if (code === 0) return "clear";
+  if (code === 1) return "mostly_clear";
+  if (code === 2) return "partly_cloudy";
+  if (code === 3) return "overcast";
+  if (code === 45 || code === 48) return "fog";
+  if (code >= 51 && code <= 57) return "drizzle";
+  if (code >= 61 && code <= 67) return "rain";
+  if (code >= 71 && code <= 77) return "snow";
+  if (code >= 80 && code <= 82) return "rain_showers";
+  if (code === 85 || code === 86) return "snow_showers";
+  if (code >= 95) return "thunderstorm";
+  return "mixed";
+}
+
+const WEATHER_LABELS: Record<WeatherKey, Record<TourProductPageLocale, string>> = {
+  clear: { en: "Clear", ko: "맑음", ja: "晴れ", zh: "晴", "zh-TW": "晴", es: "Despejado" },
+  mostly_clear: { en: "Mostly clear", ko: "대체로 맑음", ja: "概ね晴れ", zh: "大致晴朗", "zh-TW": "大致晴朗", es: "Mayormente despejado" },
+  partly_cloudy: { en: "Partly cloudy", ko: "부분적으로 흐림", ja: "晴れ時々曇り", zh: "局部多云", "zh-TW": "局部多雲", es: "Parcialmente nublado" },
+  overcast: { en: "Overcast", ko: "흐림", ja: "曇り", zh: "阴天", "zh-TW": "陰天", es: "Nublado" },
+  fog: { en: "Foggy", ko: "안개", ja: "霧", zh: "有雾", "zh-TW": "有霧", es: "Niebla" },
+  drizzle: { en: "Drizzle", ko: "이슬비", ja: "霧雨", zh: "毛毛雨", "zh-TW": "毛毛雨", es: "Llovizna" },
+  rain: { en: "Rain", ko: "비", ja: "雨", zh: "雨", "zh-TW": "雨", es: "Lluvia" },
+  snow: { en: "Snow", ko: "눈", ja: "雪", zh: "雪", "zh-TW": "雪", es: "Nieve" },
+  rain_showers: { en: "Rain showers", ko: "소나기", ja: "にわか雨", zh: "阵雨", "zh-TW": "陣雨", es: "Chubascos" },
+  snow_showers: { en: "Snow showers", ko: "소낙눈", ja: "にわか雪", zh: "阵雪", "zh-TW": "陣雪", es: "Chubascos de nieve" },
+  thunderstorm: { en: "Thunderstorm", ko: "뇌우", ja: "雷雨", zh: "雷暴", "zh-TW": "雷暴", es: "Tormenta" },
+  mixed: { en: "Mixed conditions", ko: "변덕스러운 날씨", ja: "変わりやすい天気", zh: "多变天气", "zh-TW": "多變天氣", es: "Variable" },
+};
+
+function localizedWeatherLabel(code: number, locale: TourProductPageLocale): string {
+  const row = WEATHER_LABELS[weatherKeyForCode(code)];
+  return row[locale] ?? row.en;
+}
+
+const RAIN_LABEL: Record<TourProductPageLocale, (p: number) => string> = {
+  en: (p) => ` · rain ${p}%`,
+  ko: (p) => ` · 강수확률 ${p}%`,
+  ja: (p) => ` · 降水確率 ${p}%`,
+  zh: (p) => ` · 降水概率 ${p}%`,
+  "zh-TW": (p) => ` · 降水機率 ${p}%`,
+  es: (p) => ` · lluvia ${p}%`,
+};
 import { resolveRelativeDateToken } from "@/lib/chatbot/quoteFlow";
 import { availabilityChips, recommendationChips } from "@/lib/chatbot/followUpChips";
 
@@ -128,13 +179,9 @@ function forecastLine(daily: DailyForecast, idx: number, locale: L): string | nu
   if (!date || typeof code !== "number" || typeof max !== "number" || typeof min !== "number") {
     return null;
   }
-  const label = wmoWeatherLabel(code);
+  const label = localizedWeatherLabel(code, locale);
   const rainPart =
-    typeof rain === "number"
-      ? locale === "ko"
-        ? ` · 강수확률 ${Math.round(rain)}%`
-        : ` · rain ${Math.round(rain)}%`
-      : "";
+    typeof rain === "number" ? (RAIN_LABEL[locale] ?? RAIN_LABEL.en)(Math.round(rain)) : "";
   return `**${date}**: ${label}, ${Math.round(min)}–${Math.round(max)}°C${rainPart}`;
 }
 
@@ -186,6 +233,13 @@ function weatherReply(
 const POLICY_WORDS_RE =
   /(cancel|refund|policy|취소|환불|정책|규정|キャンセル|返金|退款|退改|退订|退訂|cancelaci|reembolso|pol[ií]tica)/i;
 
+/** Recommendation phrasing — "which tour is best in rainy weather?" is a
+ *  RECOMMENDATION, not a forecast request. Deep-audit 2026-07-05: with ja/zh/es
+ *  weather words now routed to `policy`, this message-level guard keeps such
+ *  asks out of the forecast even on a tour page (where a slug anchor exists). */
+const RECO_WORDS_RE =
+  /(which|what)\s+tour|best\s+tour|recommend|suggest\b|어떤\s*투어|투어\s*추천|추천.*투어|おすすめ|どのツアー|推荐|推薦|哪个|哪個|qu[eé]\s+tour|mejor\s+tour|recomien/i;
+
 /** Which deterministic answers are allowed for a given deterministic intent.
  *  Weather questions often classify as policy (rain-cancellation keywords) or
  *  tour_catalog (region words) — the forecast may still answer those as long
@@ -217,7 +271,12 @@ export async function buildInstantAnswer(input: {
   }
 
   // W6.6 — weather (needs region context; otherwise let the model clarify).
-  if (WEATHER_INTENTS.has(intent) && WEATHER_RE.test(message) && !POLICY_WORDS_RE.test(message)) {
+  if (
+    WEATHER_INTENTS.has(intent) &&
+    WEATHER_RE.test(message) &&
+    !POLICY_WORDS_RE.test(message) &&
+    !RECO_WORDS_RE.test(message)
+  ) {
     const anchor = resolveWeatherAnchor(message, tourSlug);
     if (anchor) {
       const daily = await fetchDailyForecast(anchor);

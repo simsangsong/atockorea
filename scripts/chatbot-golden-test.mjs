@@ -453,6 +453,18 @@ const suites = {
       ], r);
     }
     {
+      // L7 (deep-audit): ja weather used to classify as tour_catalog and skip
+      // the forecast entirely. This case would have caught it live. On an
+      // Open-Meteo fetch failure it may fall to the model, so keep it lenient —
+      // but require the reply to at least be in Japanese, never English weather.
+      const r = await postChat([{ role: "user", content: "済州の明日の天気は？" }]);
+      record("instant", "ja weather reaches the forecast (L7)", [
+        check("HTTP 200", r.status === 200),
+        check("no bare English 'Overcast'/'Clear' leaked", !containsAny(r.json.reply, ["Overcast", "Mostly clear", "Rain showers"])),
+        check("Japanese content present", /[぀-ヿ一-鿿]/.test(r.json.reply ?? "")),
+      ], r);
+    }
+    {
       // W6.2 — deterministic two-tour comparison from the registry.
       const cat = await fetch(`${BASE}/api/agent/v1/tours`).then((x) => x.json()).catch(() => null);
       const [a, b] = cat?.tours ?? [];
