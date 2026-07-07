@@ -646,7 +646,9 @@ function QuoteSlotControls({
 
   const optionClass = (selected: boolean) =>
     cn(
-      "rounded-xl border px-2 py-2 text-[12px] font-semibold transition disabled:cursor-not-allowed disabled:opacity-45",
+      // text-center + leading-tight so a longer label (e.g. en "Downtown")
+      // stays inside the pill and wraps cleanly instead of overflowing.
+      "min-w-0 break-keep rounded-xl border px-2 py-2 text-center text-[12px] font-semibold leading-tight transition disabled:cursor-not-allowed disabled:opacity-45",
       selected
         ? "border-sky-950 bg-sky-950 text-white"
         : "border-slate-200 bg-white text-slate-600 hover:border-sky-900/35 hover:bg-sky-50",
@@ -723,7 +725,7 @@ function QuoteSlotControls({
       {needsPickup ? (
         <>
           <p className="mt-2 text-[10px] font-semibold uppercase tracking-wider text-slate-500">{L.pickup}</p>
-          <div className="mt-1 grid grid-cols-4 gap-1.5">
+          <div className="mt-1 grid grid-cols-2 gap-1.5">
             {L.zones.map(([value, label]) => (
               <button
                 key={value}
@@ -1709,14 +1711,28 @@ export function TourProductAiAssistantWidget({
                         />
                       ) : null}
                       {m.chips && m.chips.length > 0 && i === messages.length - 1 && !loading && !liveSupportActive ? (
-                        <div className="mt-2.5 flex flex-wrap gap-1.5 border-t border-slate-100 pt-2">
+                        // A 2-option turn (yes/no confirm, email confirm) reads as
+                        // an equal-width binary choice — a 2-col grid keeps both
+                        // pills the same size and on one row even when a label is
+                        // long (e.g. "Yes, that's the right email"), instead of
+                        // wrapping into a lopsided vertical stack. 3+ suggestions
+                        // still flow as wrapping chips.
+                        <div
+                          className={cn(
+                            "mt-2.5 gap-1.5 border-t border-slate-100 pt-2",
+                            m.chips.length === 2 ? "grid grid-cols-2" : "flex flex-wrap",
+                          )}
+                        >
                           {m.chips.map((chip) => (
                             <button
                               key={chip}
                               type="button"
                               disabled={chipsDisabled}
                               onClick={() => void sendPreset(chip)}
-                              className="max-w-full rounded-full border border-sky-900/20 bg-white px-3 py-1.5 text-left text-[11px] font-medium leading-snug text-sky-900 shadow-sm transition hover:border-sky-900/40 hover:bg-sky-50 disabled:cursor-not-allowed disabled:opacity-45"
+                              className={cn(
+                                "rounded-full border border-sky-900/20 bg-white px-3 py-1.5 text-[11px] font-medium leading-snug text-sky-900 shadow-sm transition hover:border-sky-900/40 hover:bg-sky-50 disabled:cursor-not-allowed disabled:opacity-45",
+                                m.chips!.length === 2 ? "min-w-0 text-center" : "max-w-full text-left",
+                              )}
                             >
                               {chip}
                             </button>
