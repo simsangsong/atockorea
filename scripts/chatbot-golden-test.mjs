@@ -458,10 +458,14 @@ const suites = {
       // Open-Meteo fetch failure it may fall to the model, so keep it lenient —
       // but require the reply to at least be in Japanese, never English weather.
       const r = await postChat([{ role: "user", content: "済州の明日の天気は？" }]);
+      // Strict: a real forecast carries °C or a JA weather-condition word. This
+      // deliberately FAILS a fall-through (the model's generic "understand"
+      // reply, often in the wrong locale) so the L7 fix can't silently regress.
+      // Open-Meteo fetch works on prod (see the en case), so ja must forecast too.
       record("instant", "ja weather reaches the forecast (L7)", [
         check("HTTP 200", r.status === 200),
         check("no bare English 'Overcast'/'Clear' leaked", !containsAny(r.json.reply, ["Overcast", "Mostly clear", "Rain showers"])),
-        check("Japanese content present", /[぀-ヿ一-鿿]/.test(r.json.reply ?? "")),
+        check("real forecast (°C or ja condition), not a fall-through", containsAny(r.json.reply, ["°C", "見通し", "降水", "曇り", "晴れ", "雨", "雪"])),
       ], r);
     }
     {
