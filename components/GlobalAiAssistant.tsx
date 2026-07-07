@@ -1,8 +1,18 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import dynamic from "next/dynamic";
 
-import { TourProductAiAssistantWidget } from "@/components/product-tour-static/_shared/TourProductAiAssistantWidget";
+// The widget (~2k LOC) only ever renders a closed FAB until the visitor opens
+// it, so SSR is pointless. Loading it lazily keeps its ~15KB gz off every
+// page's first-load bundle; the idle teaser (6s) covers the lazy fetch.
+const TourProductAiAssistantWidget = dynamic(
+  () =>
+    import("@/components/product-tour-static/_shared/TourProductAiAssistantWidget").then(
+      (m) => m.TourProductAiAssistantWidget,
+    ),
+  { ssr: false, loading: () => null },
+);
 
 const HIDDEN_ROUTE_PREFIXES = [
   "/admin",

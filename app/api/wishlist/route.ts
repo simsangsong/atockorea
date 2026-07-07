@@ -14,7 +14,7 @@ function errorMessage(error: unknown): string {
  */
 export async function GET(req: NextRequest) {
   try {
-    const user = await getAuthUser(req);
+    const user = await getAuthUser(req, { skipRoleLookup: true });
     if (!user) {
       return NextResponse.json(
         { error: 'Authentication required' },
@@ -73,7 +73,7 @@ export async function GET(req: NextRequest) {
  */
 export async function POST(req: NextRequest) {
   try {
-    const user = await getAuthUser(req);
+    const user = await getAuthUser(req, { skipRoleLookup: true });
     if (!user) {
       return NextResponse.json(
         { error: 'Authentication required' },
@@ -181,7 +181,7 @@ export async function POST(req: NextRequest) {
  */
 export async function DELETE(req: NextRequest) {
   try {
-    const user = await getAuthUser(req);
+    const user = await getAuthUser(req, { skipRoleLookup: true });
     if (!user) {
       return NextResponse.json(
         { error: 'Authentication required' },

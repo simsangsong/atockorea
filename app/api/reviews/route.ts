@@ -27,7 +27,7 @@ export async function GET(req: NextRequest) {
     // If client asks for a specific user's reviews, require auth and only allow own id
     let filterUserId: string | null = null;
     if (requestedUserId) {
-      const user = await getAuthUser(req);
+      const user = await getAuthUser(req, { skipRoleLookup: true });
       if (!user || user.id !== requestedUserId) {
         return NextResponse.json(
           { error: 'Authentication required to filter by user' },
@@ -98,7 +98,15 @@ export async function GET(req: NextRequest) {
       return { ...r, ...attach };
     });
 
-    return NextResponse.json({ reviews: sanitized });
+    // Public tour/all reviews are edge-cacheable per URL; the authenticated
+    // own-list branch (filterUserId set) stays private + uncached.
+    const cacheControl = filterUserId
+      ? 'private, no-store'
+      : 'public, s-maxage=120, stale-while-revalidate=600';
+    return NextResponse.json(
+      { reviews: sanitized },
+      { headers: { 'Cache-Control': cacheControl } },
+    );
   } catch (error: any) {
     console.error('Unexpected error:', error);
     return NextResponse.json(
