@@ -497,6 +497,20 @@
         "subtitle": "Tours mejor valorados elegidos para ti",
         "empty": "Aún no hay recomendaciones"
       }
+    },
+    "coupons": {
+      "tabTitle": "Mis cupones",
+      "available": "Disponible",
+      "autoApplied": "Se aplica al pagar",
+      "inUse": "En uso",
+      "inUseNote": "Aplicado a una reserva en curso",
+      "used": "Usado",
+      "usedOn": "Usado el {date}",
+      "expired": "Vencido",
+      "expiredOn": "Venció el {date}",
+      "expiringSoon": "Vence pronto · {n} días",
+      "empty": "Aún no tienes cupones",
+      "browseCta": "Ver tours"
     }
   },
   "admin": {
@@ -2604,5 +2618,27 @@
     "backButton": {
       "label": "Atrás"
     }
+  },
+  "welcomeCoupon": {
+    "headline": "10% en tu primer tour",
+    "sub": "Regístrate y ahorra en tu primera reserva. Tours curados por personas.",
+    "emailPlaceholder": "Tu correo",
+    "cta": "Obtener mi 10%",
+    "dismiss": "Ahora no",
+    "otpTitle": "Revisa tu correo",
+    "otpSub": "Enviamos un código de 6 dígitos a {email}.",
+    "codePlaceholder": "Código de 6 dígitos",
+    "verifyCta": "Verificar y canjear",
+    "resendCta": "Reenviar código",
+    "resendCountdown": "Reenviar en {s}s",
+    "successTitle": "Tu 10% está listo",
+    "successSub": "Se aplica automáticamente al pagar.",
+    "successCta": "Seguir explorando",
+    "alreadyMember": "Este correo ya tiene una cuenta.",
+    "signInCta": "Iniciar sesión",
+    "errorEmailInvalid": "Introduce un correo válido.",
+    "errorSendFailed": "No se pudo enviar el código. Inténtalo de nuevo.",
+    "errorInvalidCode": "El código no coincide. Inténtalo de nuevo.",
+    "appliedBadge": "Descuento de bienvenida aplicado"
   }
 }

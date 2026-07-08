@@ -497,6 +497,20 @@
         "subtitle": "精选高分行程，特别为你",
         "empty": "暂无推荐"
       }
+    },
+    "coupons": {
+      "tabTitle": "我的优惠券",
+      "available": "可使用",
+      "autoApplied": "结账时自动应用",
+      "inUse": "使用中",
+      "inUseNote": "已应用于进行中的预订",
+      "used": "已使用",
+      "usedOn": "{date} 使用",
+      "expired": "已过期",
+      "expiredOn": "{date} 过期",
+      "expiringSoon": "即将到期 · 剩 {n} 天",
+      "empty": "目前没有优惠券",
+      "browseCta": "探索行程"
     }
   },
   "admin": {
@@ -2604,5 +2618,27 @@
     "backButton": {
       "label": "返回"
     }
+  },
+  "welcomeCoupon": {
+    "headline": "首次韩国行程 9 折",
+    "sub": "注册即享首次预订优惠。真人策划、全球验证的行程。",
+    "emailPlaceholder": "电子邮件",
+    "cta": "领取 9 折优惠",
+    "dismiss": "暂时不用",
+    "otpTitle": "请查收邮件",
+    "otpSub": "我们已向 {email} 发送 6 位验证码。",
+    "codePlaceholder": "6 位验证码",
+    "verifyCta": "验证并领取",
+    "resendCta": "重新发送",
+    "resendCountdown": "{s} 秒后可重发",
+    "successTitle": "您的 9 折优惠已就绪",
+    "successSub": "结账时自动生效。",
+    "successCta": "继续浏览",
+    "alreadyMember": "该邮箱已注册。",
+    "signInCta": "登录",
+    "errorEmailInvalid": "请输入有效的电子邮件。",
+    "errorSendFailed": "验证码发送失败，请重试。",
+    "errorInvalidCode": "验证码不正确，请重试。",
+    "appliedBadge": "已应用新会员折扣"
   }
 }

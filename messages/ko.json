@@ -497,6 +497,20 @@
         "subtitle": "평점 높은 투어를 먼저 보여드려요",
         "empty": "지금은 추천할 투어가 없어요"
       }
+    },
+    "coupons": {
+      "tabTitle": "내 쿠폰",
+      "available": "사용 가능",
+      "autoApplied": "결제 시 자동 적용",
+      "inUse": "사용 중",
+      "inUseNote": "진행 중인 예약에 적용됨",
+      "used": "사용 완료",
+      "usedOn": "{date} 사용",
+      "expired": "만료됨",
+      "expiredOn": "{date} 만료",
+      "expiringSoon": "곧 만료 · D-{n}",
+      "empty": "아직 쿠폰이 없어요",
+      "browseCta": "투어 둘러보기"
     }
   },
   "admin": {
@@ -2604,5 +2618,27 @@
     "backButton": {
       "label": "뒤로"
     }
+  },
+  "welcomeCoupon": {
+    "headline": "첫 한국 투어 10% 할인",
+    "sub": "가입하고 첫 예약을 더 저렴하게. 사람이 큐레이션하고 전 세계가 검증한 투어.",
+    "emailPlaceholder": "이메일",
+    "cta": "10% 할인 받기",
+    "dismiss": "다음에 할게요",
+    "otpTitle": "메일함을 확인해 주세요",
+    "otpSub": "{email}로 6자리 인증번호를 보냈어요.",
+    "codePlaceholder": "6자리 인증번호",
+    "verifyCta": "인증하고 받기",
+    "resendCta": "재전송",
+    "resendCountdown": "{s}초 후 재전송",
+    "successTitle": "10% 할인이 준비됐어요",
+    "successSub": "결제 시 자동 적용됩니다.",
+    "successCta": "계속 둘러보기",
+    "alreadyMember": "이미 가입된 이메일이에요.",
+    "signInCta": "로그인",
+    "errorEmailInvalid": "올바른 이메일을 입력해 주세요.",
+    "errorSendFailed": "인증번호 발송에 실패했어요. 다시 시도해 주세요.",
+    "errorInvalidCode": "인증번호가 일치하지 않아요. 다시 시도해 주세요.",
+    "appliedBadge": "웰컴 할인 적용됨"
   }
 }

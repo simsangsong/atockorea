@@ -1,11 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { emailCheckRateLimit } from '@/lib/rate-limit';
+import { isDisposableEmail } from '@/lib/coupons/disposable-domains';
 
 /**
  * POST /api/auth/check-email
  * 가입 전 이메일 중복 검사. 이미 auth.users에 있으면 { exists: true } 반환.
- * body: { email: string }
+ * body: { email: string, blockDisposable?: boolean }
+ * `blockDisposable` — welcome-coupon popup path only (§9 abuse defense):
+ * rejects throwaway domains server-side without changing regular signup.
  */
 export async function POST(req: NextRequest) {
   // P4: per-IP throttle to blunt account enumeration via this oracle.
@@ -19,6 +22,13 @@ export async function POST(req: NextRequest) {
     if (!email) {
       return NextResponse.json(
         { error: 'Email is required', exists: false },
+        { status: 400 }
+      );
+    }
+
+    if (body?.blockDisposable === true && isDisposableEmail(email)) {
+      return NextResponse.json(
+        { error: 'Disposable email addresses are not supported', exists: false, disposable: true },
         { status: 400 }
       );
     }

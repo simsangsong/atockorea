@@ -497,6 +497,20 @@
         "subtitle": "あなたに合わせて選んだ高評価ツアー",
         "empty": "まだおすすめはありません"
       }
+    },
+    "coupons": {
+      "tabTitle": "クーポン",
+      "available": "利用可能",
+      "autoApplied": "お会計時に自動適用",
+      "inUse": "使用中",
+      "inUseNote": "進行中の予約に適用済み",
+      "used": "使用済み",
+      "usedOn": "{date} 使用",
+      "expired": "期限切れ",
+      "expiredOn": "{date} 期限切れ",
+      "expiringSoon": "まもなく期限切れ · 残り{n}日",
+      "empty": "クーポンはまだありません",
+      "browseCta": "ツアーを見る"
     }
   },
   "admin": {
@@ -2604,5 +2618,27 @@
     "backButton": {
       "label": "戻る"
     }
+  },
+  "welcomeCoupon": {
+    "headline": "初回ツアーが10%OFF",
+    "sub": "会員登録で初回予約がお得に。人の手で厳選、世界が検証したツアー。",
+    "emailPlaceholder": "メールアドレス",
+    "cta": "10%OFFを受け取る",
+    "dismiss": "あとで",
+    "otpTitle": "メールをご確認ください",
+    "otpSub": "{email} に6桁の認証コードを送信しました。",
+    "codePlaceholder": "6桁のコード",
+    "verifyCta": "認証して受け取る",
+    "resendCta": "再送信",
+    "resendCountdown": "{s}秒後に再送信できます",
+    "successTitle": "10%OFFの準備完了",
+    "successSub": "お会計時に自動適用されます。",
+    "successCta": "ツアーを見る",
+    "alreadyMember": "このメールアドレスは登録済みです。",
+    "signInCta": "ログイン",
+    "errorEmailInvalid": "有効なメールアドレスを入力してください。",
+    "errorSendFailed": "コードを送信できませんでした。もう一度お試しください。",
+    "errorInvalidCode": "コードが一致しません。もう一度お試しください。",
+    "appliedBadge": "ウェルカム割引適用中"
   }
 }

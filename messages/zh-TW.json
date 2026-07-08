@@ -497,6 +497,20 @@
         "subtitle": "精選高分行程，特別為你",
         "empty": "暫無推薦"
       }
+    },
+    "coupons": {
+      "tabTitle": "我的優惠券",
+      "available": "可使用",
+      "autoApplied": "結帳時自動套用",
+      "inUse": "使用中",
+      "inUseNote": "已套用於進行中的預訂",
+      "used": "已使用",
+      "usedOn": "{date} 使用",
+      "expired": "已過期",
+      "expiredOn": "{date} 過期",
+      "expiringSoon": "即將到期 · 剩 {n} 天",
+      "empty": "目前沒有優惠券",
+      "browseCta": "探索行程"
     }
   },
   "admin": {
@@ -2604,5 +2618,27 @@
     "backButton": {
       "label": "返回"
     }
+  },
+  "welcomeCoupon": {
+    "headline": "首次韓國行程 9 折",
+    "sub": "註冊即享首次預訂優惠。真人策劃、全球驗證的行程。",
+    "emailPlaceholder": "電子郵件",
+    "cta": "領取 9 折優惠",
+    "dismiss": "暫時不用",
+    "otpTitle": "請查收電子郵件",
+    "otpSub": "我們已將 6 位數驗證碼寄至 {email}。",
+    "codePlaceholder": "6 位數驗證碼",
+    "verifyCta": "驗證並領取",
+    "resendCta": "重新寄送",
+    "resendCountdown": "{s} 秒後可重寄",
+    "successTitle": "您的 9 折優惠已就緒",
+    "successSub": "結帳時自動套用。",
+    "successCta": "繼續探索",
+    "alreadyMember": "此電子郵件已註冊。",
+    "signInCta": "登入",
+    "errorEmailInvalid": "請輸入有效的電子郵件。",
+    "errorSendFailed": "驗證碼寄送失敗，請再試一次。",
+    "errorInvalidCode": "驗證碼不正確，請再試一次。",
+    "appliedBadge": "已套用新會員優惠"
   }
 }

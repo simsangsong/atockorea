@@ -16,6 +16,7 @@ import {
   SettingsIcon,
   LogoutIcon,
   MapIcon,
+  TicketIcon,
 } from '@/components/Icons';
 import { MyPageAuthGate } from '@/components/mypage/MyPageAuthGate';
 import { ConfirmDialog } from '@/components/mypage/ConfirmDialog';
@@ -108,6 +109,7 @@ function MyPageLayoutContent({ children }: { children: React.ReactNode }) {
     { id: 'history', label: t('mypage.history'), icon: HistoryIcon, path: '/mypage/history' },
     { id: 'reviews', label: t('mypage.reviewsLabel'), icon: StarIcon, path: '/mypage/reviews' },
     { id: 'wishlist', label: t('mypage.wishlist'), icon: HeartIcon, path: '/mypage/wishlist' },
+    { id: 'coupons', label: t('mypage.coupons.tabTitle'), icon: TicketIcon, path: '/mypage/coupons' },
     { id: 'settings', label: t('mypage.settingsLabel'), icon: SettingsIcon, path: '/mypage/settings' },
   ];
 
