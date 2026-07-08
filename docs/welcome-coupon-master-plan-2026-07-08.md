@@ -10,7 +10,9 @@
 - **Supabase 대상 검증 완료**: `cghyvbwmijqpahnoduyv` (AtoC). Kursoflow 아님.
 - **브랜치/워크트리**: `worktree-welcome-coupon` @ `.claude/worktrees/welcome-coupon` (main 기준).
 - 라이브 규모: auth.users 12명(확인 10명), bookings 42건 — 마이그레이션 리스크 낮음.
-- **진행 상태**: Phase 0 완료 → Phase 1 착수.
+- **진행 상태 (2026-07-08)**: Phase 0~4 완료. DB 마이그레이션 2건 라이브 적용(`welcome_coupon_grants_core`, `welcome_coupon_trigger_fn_revoke_exec`) + 트리거 검증 + 어드바이저 신규 이슈 0. 유닛 27개(`__tests__/lib/coupons/*`) + 라이브 스모크 15체크(`scripts/coupon-live-smoke.ts`) 그린. jest 전체: 기존 실패 5스위트(베이스 main에서 재현 확인, 본 트랙 무관) 외 전부 그린.
+- **런치 스위치**: `WELCOME10.is_active` = false 시딩 → 머지·배포 후 `update promo_codes set is_active=true where code='WELCOME10'`. 팝업은 `lib/welcome-coupon/config.ts`의 `WELCOME_POPUP_ENABLED`.
+- **사용자 액션 잔여**: Stripe Radar 활성 확인, Klook 계약 parity 조항 확인, (선택) 기존 확인유저 10명 백필 여부.
 
 ---
 
