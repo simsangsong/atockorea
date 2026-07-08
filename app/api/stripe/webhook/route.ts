@@ -3,6 +3,7 @@ import Stripe from 'stripe';
 import { createServerClient } from '@/lib/supabase';
 import { headers } from 'next/headers';
 import { minorToMajor } from '@/lib/payments/refund';
+import { redeemCouponForBooking } from '@/lib/coupons/settlement';
 
 const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET || '';
 
@@ -181,6 +182,11 @@ export async function POST(req: NextRequest) {
           );
           break;
         }
+
+        /** Welcome coupon: money collected → the coupon is consumed for good.
+         *  (PI cancel during checkout retries does NOT release the coupon —
+         *  release follows the BOOKING lifecycle, not the PI's.) */
+        await redeemCouponForBooking(supabase, bookingId);
 
         console.log(`Booking ${bookingId} card charge captured: ${pi.amount_received} ${pi.currency}`);
         break;

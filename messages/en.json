@@ -497,6 +497,20 @@
         "subtitle": "Top-rated tours picked for you",
         "empty": "No recommendations yet"
       }
+    },
+    "coupons": {
+      "tabTitle": "My Coupons",
+      "available": "Available",
+      "autoApplied": "Applies automatically at checkout",
+      "inUse": "In use",
+      "inUseNote": "Applied to a booking in progress",
+      "used": "Used",
+      "usedOn": "Used {date}",
+      "expired": "Expired",
+      "expiredOn": "Expired {date}",
+      "expiringSoon": "Expiring soon · {n}d left",
+      "empty": "No coupons yet",
+      "browseCta": "Browse tours"
     }
   },
   "admin": {
@@ -2604,5 +2618,27 @@
     "backButton": {
       "label": "Back"
     }
+  },
+  "welcomeCoupon": {
+    "headline": "10% off your first Korea tour",
+    "sub": "Sign up and save on your first booking. Human-curated tours, verified worldwide.",
+    "emailPlaceholder": "Your email",
+    "cta": "Get my 10% off",
+    "dismiss": "No thanks",
+    "otpTitle": "Check your inbox",
+    "otpSub": "We sent a 6-digit code to {email}.",
+    "codePlaceholder": "6-digit code",
+    "verifyCta": "Verify & claim",
+    "resendCta": "Resend code",
+    "resendCountdown": "Resend in {s}s",
+    "successTitle": "Your 10% is ready",
+    "successSub": "It applies automatically at checkout.",
+    "successCta": "Keep exploring",
+    "alreadyMember": "This email already has an account.",
+    "signInCta": "Sign in",
+    "errorEmailInvalid": "Please enter a valid email.",
+    "errorSendFailed": "Couldn't send the code. Please try again.",
+    "errorInvalidCode": "That code didn't match. Please try again.",
+    "appliedBadge": "Welcome discount applied"
   }
 }

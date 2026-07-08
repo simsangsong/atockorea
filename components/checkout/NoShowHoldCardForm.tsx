@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { Elements, PaymentElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import { loadStripe, type Stripe as StripeJS } from '@stripe/stripe-js';
 import { toast } from 'sonner';
-import { ShieldCheck, Wallet } from 'lucide-react';
+import { BadgePercent, ShieldCheck, Wallet } from 'lucide-react';
 import { useTranslations } from '@/lib/i18n';
 import { cn } from '@/lib/utils';
 
@@ -48,6 +48,13 @@ export type NoShowHoldCardFormProps = {
   amountMinor?: number;
   /** @deprecated Use `currency:'usd' + amountMinor` instead. Kept for one PR cycle. */
   amountUsdCents?: number;
+  /** Welcome-coupon badge (§6.6): confirms the discount is inside the authorized
+   *  amount — the last-mile trust signal before the card is confirmed. */
+  couponApplied?: {
+    code?: string | null;
+    discountMinor: number;
+    subtotalMinor: number;
+  } | null;
 };
 
 /**
@@ -226,6 +233,19 @@ function CardFormInner(props: NoShowHoldCardFormProps) {
       aria-busy={submitting}
       aria-live="polite"
     >
+      {/* Welcome-coupon badge (§6.6) — quiet confirmation, not a sale shout */}
+      {props.couponApplied && props.couponApplied.discountMinor > 0 && (
+        <div className="flex items-center justify-between gap-2 rounded-lg border border-stone-200 bg-stone-50 px-3 py-2">
+          <span className="flex items-center gap-1.5 text-[12px] font-semibold text-stone-700">
+            <BadgePercent className="h-3.5 w-3.5" strokeWidth={2.25} aria-hidden />
+            {tt('welcomeCoupon.appliedBadge', 'Welcome discount applied')}
+          </span>
+          <span className="text-[12px] font-semibold tabular-nums text-stone-900">
+            −{formatHoldAmount(currency, props.couponApplied.discountMinor)}
+          </span>
+        </div>
+      )}
+
       {/* Reassurance row — color + weight only, no italic */}
       <div className="flex flex-wrap items-center gap-x-3 gap-y-1 rounded-lg bg-emerald-50/60 px-3 py-2">
         <span className="flex items-center gap-1.5 text-[12px] font-semibold text-emerald-700">

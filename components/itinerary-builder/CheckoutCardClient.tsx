@@ -28,6 +28,7 @@ interface PaymentSession {
   leadDays: number;
   currency: "krw" | "usd";
   amountMinor: number;
+  couponApplied: { code?: string | null; discountMinor: number; subtotalMinor: number } | null;
 }
 
 /**
@@ -85,6 +86,7 @@ export default function CheckoutCardClient({
           currency: (data.currency as "krw" | "usd") ?? currency,
           amountMinor:
             typeof data.amountMinor === "number" ? data.amountMinor : amountMinor,
+          couponApplied: data.couponApplied ?? null,
         });
         setLoading(false);
       } catch (e) {
@@ -147,6 +149,7 @@ export default function CheckoutCardClient({
         amountMinor={session.amountMinor}
         leadDays={session.leadDays}
         returnUrl={returnUrl}
+        couponApplied={session.couponApplied}
       />
     </div>
   );

@@ -5,6 +5,7 @@ import {
   isValidAdminStatus,
   isAllowedStatusTransition,
 } from '@/lib/admin/booking-status-transition';
+import { releaseCouponForBooking } from '@/lib/coupons/settlement';
 
 export const dynamic = 'force-dynamic';
 
@@ -163,6 +164,9 @@ export async function PUT(
 
     // On cancel: restore inventory and send cancellation email (same logic as public PUT)
     if (body.status === 'cancelled' && existing.status !== 'cancelled') {
+      /** Welcome coupon: admin cancellation restores the coupon (idempotent). */
+      await releaseCouponForBooking(supabase, id, 'admin_cancelled');
+
       // Phase 10.6d — builder bookings have NULL tour_id, no inventory row
       // to restore. Skip the inventory branch loudly so the (legitimate)
       // skip doesn't read like a silent bug.

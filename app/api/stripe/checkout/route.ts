@@ -2,6 +2,10 @@ import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 import { createServerClient } from '@/lib/supabase';
 import { verifyCheckoutOwnership } from '@/lib/checkout-auth';
+import {
+  getPendingCouponRedemption,
+  attachPaymentIntentToCouponRedemption,
+} from '@/lib/coupons/settlement';
 
 /**
  * Card-on-file checkout — authorizes now and collects automatically on tour day.
@@ -246,6 +250,26 @@ export async function POST(req: NextRequest) {
     if (booking.tour_id != null) baseMetadata.tour_id = String(booking.tour_id);
     if ((booking as { source?: string }).source) baseMetadata.source = String((booking as { source?: string }).source);
 
+    /** Welcome coupon: the discount is already baked into `final_price` at
+     *  booking creation — here we only mirror it into PI metadata (audit trail)
+     *  and remember the PI id on the redemption ledger row. */
+    const couponRedemption = await getPendingCouponRedemption(supabase, bookingId);
+    if (couponRedemption) {
+      baseMetadata.promo_code = couponRedemption.code ?? '';
+      baseMetadata.coupon_grant_id = couponRedemption.grant_id;
+      baseMetadata.coupon_discount_minor = String(couponRedemption.discount_minor);
+    }
+
+    /** Checkout-summary badge data (§6.6): confirms the welcome discount is
+     *  actually inside the authorized amount. Amounts are Stripe minor units. */
+    const couponApplied = couponRedemption
+      ? {
+          code: couponRedemption.code,
+          discountMinor: couponRedemption.discount_minor,
+          subtotalMinor: couponRedemption.subtotal_minor,
+        }
+      : null;
+
     /** Description differs slightly for builder bookings (no parent tour title). */
     const intentDescription = booking.tour_id
       ? `Tour-day auto charge authorization: ${tourTitle} (booking ${bookingId})`
@@ -270,6 +294,10 @@ export async function POST(req: NextRequest) {
       });
 
       const expiresAt = new Date(Date.now() + HOLD_WINDOW_DAYS * MS_PER_DAY).toISOString();
+
+      if (couponRedemption) {
+        await attachPaymentIntentToCouponRedemption(supabase, bookingId, paymentIntent.id);
+      }
 
       await supabase
         .from('bookings')
@@ -302,6 +330,7 @@ export async function POST(req: NextRequest) {
         /** @deprecated USD-only callers — use `currency` + `amountMinor`. */
         amountUsdCents: currency === 'usd' ? amountMinor : undefined,
         leadDays: lead,
+        couponApplied,
       });
     }
 
@@ -341,6 +370,7 @@ export async function POST(req: NextRequest) {
       /** @deprecated USD-only callers — use `currency` + `amountMinor`. */
       amountUsdCents: currency === 'usd' ? amountMinor : undefined,
       leadDays: lead,
+      couponApplied,
     });
   } catch (error: unknown) {
     console.error('Stripe checkout error:', error);

@@ -15,6 +15,12 @@ import {
   tourListPricesToUsdSync,
   mapNestedTourRowsToUsd,
 } from '@/lib/tour-list-price-usd.server';
+import {
+  claimCouponForBooking,
+  attachCouponClaimToBooking,
+  revertCouponClaim,
+  type ClaimedCoupon,
+} from '@/lib/coupons/grants';
 
 /**
  * GET /api/bookings
@@ -333,6 +339,20 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    // Welcome coupon (logged-in only — OTA parity keeps the discount invisible
+    // pre-auth). The PRICE_MISMATCH check above ran against the PUBLIC list
+    // total the client displayed; the coupon then reduces the server-side
+    // final_price so the Stripe hold (derived from final_price) is discounted.
+    // Fails open to full price on any coupon error.
+    let couponClaim: ClaimedCoupon | null = null;
+    if (userId) {
+      couponClaim = await claimCouponForBooking(supabase, {
+        userId,
+        currency: 'usd',
+        subtotalMajor: totalPrice,
+      });
+    }
+
     const bookingData: any = {
       tour_id: tourIdStr,
       merchant_id: tour.merchant_id || null,
@@ -342,11 +362,15 @@ export async function POST(req: NextRequest) {
       number_of_guests: guestsCount,
       unit_price: unitPrice,
       total_price: totalPrice,
-      final_price: totalPrice, // Server-authoritative; never client-supplied
+      final_price: couponClaim ? couponClaim.breakdown.finalMajor : totalPrice, // Server-authoritative; never client-supplied
       payment_method: paymentMethod || 'pending',
       payment_status: 'pending',
       status: 'pending',
     };
+    if (couponClaim) {
+      bookingData.discount_amount = couponClaim.breakdown.discountMajor;
+      bookingData.promo_code = couponClaim.code;
+    }
     
     if (process.env.NODE_ENV !== 'production') {
       console.log('Prepared booking data:', bookingData);
@@ -402,10 +426,39 @@ export async function POST(req: NextRequest) {
       if (process.env.NODE_ENV !== 'production') {
         console.error('Booking data that failed:', JSON.stringify(bookingData, null, 2));
       }
+      // The claimed coupon must not stay locked to a booking that never existed.
+      if (couponClaim) {
+        await revertCouponClaim(supabase, couponClaim.grantId);
+      }
       return NextResponse.json(
         { error: 'Failed to create booking', code: bookingError.code },
         { status: 500 }
       );
+    }
+
+    // Bind the claimed coupon to the booking (redemption ledger row). If the
+    // ledger write fails, strip the discount so money state stays consistent.
+    if (couponClaim && userId) {
+      const attached = await attachCouponClaimToBooking(supabase, couponClaim, {
+        bookingId: booking.id,
+        userId,
+      });
+      if (!attached) {
+        await revertCouponClaim(supabase, couponClaim.grantId);
+        const { data: stripped } = await supabase
+          .from('bookings')
+          .update({
+            final_price: totalPrice,
+            discount_amount: 0,
+            promo_code: null,
+            updated_at: new Date().toISOString(),
+          })
+          .eq('id', booking.id)
+          .select()
+          .single();
+        if (stripped) Object.assign(booking, stripped);
+        couponClaim = null;
+      }
     }
 
     if (process.env.NODE_ENV !== 'production') {
@@ -463,6 +516,16 @@ export async function POST(req: NextRequest) {
       {
         booking,
         message: 'Booking created successfully',
+        ...(couponClaim
+          ? {
+              coupon: {
+                code: couponClaim.code,
+                discountAmount: couponClaim.breakdown.discountMajor,
+                finalPrice: couponClaim.breakdown.finalMajor,
+                currency: couponClaim.breakdown.currency,
+              },
+            }
+          : {}),
       },
       { status: 201 }
     );

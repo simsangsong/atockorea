@@ -1,6 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 import { createServerClient } from '@/lib/supabase';
+import {
+  getPendingCouponRedemption,
+  attachPaymentIntentToCouponRedemption,
+  sweepAbandonedCouponLocks,
+} from '@/lib/coupons/settlement';
 
 /**
  * GET /api/cron/recapture-holds
@@ -202,6 +207,16 @@ export async function GET(req: NextRequest) {
     if (booking.tour_id != null) piMetadata.tour_id = String(booking.tour_id);
     if (isBuilder) piMetadata.source = 'itinerary_builder';
 
+    /** Welcome coupon: the discount is already inside final_price /
+     *  no_show_fee_usd_cents (both snapshotted post-discount) — mirror it into
+     *  PI metadata and remember the PI id on the redemption ledger row. */
+    const couponRedemption = await getPendingCouponRedemption(supabase, booking.id);
+    if (couponRedemption) {
+      piMetadata.promo_code = couponRedemption.code ?? '';
+      piMetadata.coupon_grant_id = couponRedemption.grant_id;
+      piMetadata.coupon_discount_minor = String(couponRedemption.discount_minor);
+    }
+
     try {
       const pi = await stripe.paymentIntents.create({
         amount: amountMinor,
@@ -219,6 +234,10 @@ export async function GET(req: NextRequest) {
       });
 
       const expiresAt = new Date(Date.now() + HOLD_VALIDITY_DAYS * MS_PER_DAY).toISOString();
+
+      if (couponRedemption) {
+        await attachPaymentIntentToCouponRedemption(supabase, booking.id, pi.id);
+      }
 
       await supabase
         .from('bookings')
@@ -269,5 +288,9 @@ export async function GET(req: NextRequest) {
     }
   }
 
-  return NextResponse.json({ ok: true, ...summary });
+  /** Welcome coupon housekeeping: restore coupons locked to bookings that were
+   *  abandoned before checkout (>24h old, still pending/pending) or died. */
+  const couponSweep = await sweepAbandonedCouponLocks(supabase);
+
+  return NextResponse.json({ ok: true, ...summary, couponSweep });
 }

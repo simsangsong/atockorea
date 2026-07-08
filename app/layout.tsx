@@ -14,6 +14,7 @@ import { DevChunkRecoveryCleanup } from "@/components/DevChunkRecoveryCleanup";
 import { LocaleCurrencySync } from "@/components/LocaleCurrencySync";
 import { AnalyticsPageViewTracker } from "@/components/analytics/AnalyticsPageViewTracker";
 import { GlobalAiAssistant } from "@/components/GlobalAiAssistant";
+import WelcomeCouponPopupLazy from "@/components/welcome/WelcomeCouponPopupLazy";
 import { DeferredCjkFontsCss } from "@/components/DeferredCjkFontsCss";
 import { Toaster } from "@/components/ui/sonner";
 
@@ -110,6 +111,7 @@ export default async function RootLayout({
                     {children}
                   </div>
                   <GlobalAiAssistant />
+                  <WelcomeCouponPopupLazy />
                 </SessionProvider>
               </CurrencyProvider>
             </I18nProvider>
