@@ -11,6 +11,14 @@ import {
 } from "@/lib/quote-engine/pricing-policy";
 import { createBuilderBooking } from "@/lib/booking/createBuilderBooking";
 import { trackEvent } from "@/src/design/analytics";
+import { getAuthUser } from "@/lib/auth";
+import type { NextRequest } from "next/server";
+import {
+  claimCouponForBooking,
+  attachCouponClaimToBooking,
+  revertCouponClaim,
+  type ClaimedCoupon,
+} from "@/lib/coupons/grants";
 
 /**
  * POST /api/itinerary/book — itinerary-builder booking endpoint (Phase 10.5).
@@ -276,6 +284,22 @@ export async function POST(request: Request) {
     );
   }
 
+  // ── Welcome coupon (logged-in only; guests book at full price — D5) ─────
+  // The price-mismatch defense above ran against the PUBLIC quote total the
+  // client displayed; the coupon then reduces final_price server-side so the
+  // Stripe hold (derived from final_price) is discounted. Fails open.
+  const authUser = await getAuthUser(request as NextRequest, { skipRoleLookup: true }).catch(
+    () => null,
+  );
+  let couponClaim: ClaimedCoupon | null = null;
+  if (authUser) {
+    couponClaim = await claimCouponForBooking(supabase, {
+      userId: authUser.id,
+      currency: "krw",
+      subtotalMajor: price.total,
+    });
+  }
+
   // ── Build the row payload via the shared helper (D11/D12/D17/D25) ───────
   const row = createBuilderBooking({
     poiKeys,
@@ -294,16 +318,27 @@ export async function POST(request: Request) {
     sourceUrl,
     price,
     guideCurated,
+    userId: authUser?.id ?? null,
   });
+
+  const insertRow: Record<string, unknown> = { ...row };
+  if (couponClaim) {
+    insertRow.final_price = couponClaim.breakdown.finalMajor;
+    insertRow.discount_amount = couponClaim.breakdown.discountMajor;
+    insertRow.promo_code = couponClaim.code;
+  }
 
   const { data: inserted, error: insertError } = await supabase
     .from("bookings")
-    .insert(row)
+    .insert(insertRow)
     .select("id")
     .single();
 
   if (insertError || !inserted) {
     console.error("[/api/itinerary/book] insert failed", insertError);
+    if (couponClaim) {
+      await revertCouponClaim(supabase, couponClaim.grantId);
+    }
     return NextResponse.json(
       { ok: false, error: "insert_failed", details: insertError?.message ?? null },
       { status: 500 },
@@ -311,6 +346,28 @@ export async function POST(request: Request) {
   }
 
   const bookingId = inserted.id as string;
+
+  // Bind the claimed coupon to the booking (redemption ledger row). If the
+  // ledger write fails, strip the discount so money state stays consistent.
+  if (couponClaim && authUser) {
+    const attached = await attachCouponClaimToBooking(supabase, couponClaim, {
+      bookingId,
+      userId: authUser.id,
+    });
+    if (!attached) {
+      await revertCouponClaim(supabase, couponClaim.grantId);
+      await supabase
+        .from("bookings")
+        .update({
+          final_price: row.final_price,
+          discount_amount: 0,
+          promo_code: null,
+          updated_at: new Date().toISOString(),
+        })
+        .eq("id", bookingId);
+      couponClaim = null;
+    }
+  }
 
   trackEvent("itinerary_builder_booking_submitted", {
     bookingId,
@@ -329,6 +386,15 @@ export async function POST(request: Request) {
     total_krw: price.total,
     currency: "krw",
     breakdown: price.lines,
+    ...(couponClaim
+      ? {
+          coupon: {
+            code: couponClaim.code,
+            discount_krw: couponClaim.breakdown.discountMajor,
+            final_total_krw: couponClaim.breakdown.finalMajor,
+          },
+        }
+      : {}),
   });
 }
 

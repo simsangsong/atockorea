@@ -106,6 +106,7 @@ export default function CheckoutPage() {
     bookingId: string;
     amountUsdCents: number;
     leadDays: number;
+    couponApplied: { code?: string | null; discountMinor: number; subtotalMinor: number } | null;
   } | null>(null);
 
   useEffect(() => {
@@ -307,6 +308,7 @@ export default function CheckoutPage() {
             bookingId: paymentData.bookingId ?? bookingResult.booking.id,
             amountUsdCents: paymentData.amountUsdCents ?? Math.round(paymentAmount * 100),
             leadDays: paymentData.leadDays ?? 0,
+            couponApplied: paymentData.couponApplied ?? null,
           });
           setIsProcessing(false);
           /** Smooth-scroll to the card form which now appears below the customer info. */
@@ -591,6 +593,7 @@ export default function CheckoutPage() {
                       currency="usd"
                       amountMinor={paymentSession.amountUsdCents}
                       leadDays={paymentSession.leadDays}
+                      couponApplied={paymentSession.couponApplied}
                       returnUrl={`${typeof window !== 'undefined' ? window.location.origin : ''}/tour/${params.id}/confirmation?booking_id=${encodeURIComponent(paymentSession.bookingId)}`}
                     />
                   </div>

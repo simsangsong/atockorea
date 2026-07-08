@@ -3,6 +3,7 @@ import Stripe from 'stripe';
 import { createServerClient } from '@/lib/supabase';
 import { requireAdmin, AdminAuthFailure, adminAuthJsonResponse } from '@/lib/auth';
 import { noShowCaptureAmount } from '@/lib/payments/no-show-capture';
+import { redeemCouponForBooking, releaseCouponForBooking } from '@/lib/coupons/settlement';
 
 export const dynamic = 'force-dynamic';
 
@@ -143,6 +144,7 @@ export async function POST(
             { status: 500 },
           );
         }
+        await redeemCouponForBooking(supabase, id); // idempotent — no-op when already settled
         return NextResponse.json({
           ok: true,
           alreadyDone: true,
@@ -211,6 +213,9 @@ export async function POST(
           { status: 500 },
         );
       }
+
+      /** Welcome coupon: capture consumes the coupon (webhook re-fires this idempotently). */
+      await redeemCouponForBooking(supabase, id);
 
       return NextResponse.json({
         ok: true,
@@ -310,6 +315,14 @@ export async function POST(
         { error: 'Hold action completed, but booking update failed.', details: releaseUpdateError.message },
         { status: 500 },
       );
+    }
+
+    /** Welcome coupon: offline collection = discounted price was paid → consumed;
+     *  a plain release = booking died → restore the coupon to the customer. */
+    if (collectedOffline) {
+      await redeemCouponForBooking(supabase, id);
+    } else {
+      await releaseCouponForBooking(supabase, id, `admin_settle_release_${reason}`);
     }
 
     return NextResponse.json({

@@ -34,6 +34,17 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    // Grant-based coupons (welcome coupon etc.) are issued per-user and apply
+    // automatically at booking creation — they are NOT enter-a-code codes.
+    // Refusing them here keeps the legacy cart path from double-applying or
+    // leaking login-gated discounts to anonymous callers (OTA parity).
+    if (promoCode.requires_login || promoCode.auto_grant_on_email_confirm) {
+      return NextResponse.json(
+        { error: 'Invalid promo code', valid: false },
+        { status: 404 }
+      );
+    }
+
     // Validate dates
     const now = new Date();
     const validFrom = promoCode.valid_from ? new Date(promoCode.valid_from) : null;

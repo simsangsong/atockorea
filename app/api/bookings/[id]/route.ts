@@ -6,6 +6,7 @@ import {
   bookingCancelBlockedReason,
   canCancelBookingByPolicy,
 } from '@/lib/booking-cancel-policy';
+import { releaseCouponForBooking } from '@/lib/coupons/settlement';
 
 const BOOKING_DETAIL_SELECT = `
   *,
@@ -315,6 +316,10 @@ export async function PUT(
 
     // Update inventory if booking was cancelled
     if (currentBooking && body.status === 'cancelled' && currentBooking.status !== 'cancelled') {
+      /** Welcome coupon: cancellation restores the coupon to the customer
+       *  (restore-by-default — see lib/coupons/settlement.ts). Idempotent. */
+      await releaseCouponForBooking(supabase, bookingId, 'customer_cancelled');
+
       try {
         const rawDate = currentBooking.booking_date;
         const dateStr = rawDate != null ? String(rawDate).split('T')[0] : null;
