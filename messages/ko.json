@@ -2621,9 +2621,9 @@
   },
   "welcomeCoupon": {
     "headline": "첫 한국 투어 10% 할인",
-    "sub": "가입하고 첫 예약을 더 저렴하게. 사람이 큐레이션하고 전 세계가 검증한 투어.",
+    "sub": "이메일 인증 한 번이면 즉시 발급됩니다. 사람이 큐레이션하고 전 세계가 검증한 투어.",
     "emailPlaceholder": "이메일",
-    "cta": "10% 할인 받기",
+    "cta": "10% 쿠폰 받기",
     "dismiss": "다음에 할게요",
     "otpTitle": "메일함을 확인해 주세요",
     "otpSub": "{email}로 6자리 인증번호를 보냈어요.",
@@ -2639,6 +2639,9 @@
     "errorEmailInvalid": "올바른 이메일을 입력해 주세요.",
     "errorSendFailed": "인증번호 발송에 실패했어요. 다시 시도해 주세요.",
     "errorInvalidCode": "인증번호가 일치하지 않아요. 다시 시도해 주세요.",
-    "appliedBadge": "웰컴 할인 적용됨"
+    "appliedBadge": "웰컴 할인 적용됨",
+    "chipAutoApply": "코드 입력 없이 자동 적용",
+    "chipValidity": "발급 후 30일",
+    "finePrint": "첫 예약 1회 · 결제 시 자동 차감"
   }
 }

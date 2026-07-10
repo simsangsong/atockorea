@@ -1434,3 +1434,24 @@ footer.at-footer-premium-handoff > div > [data-footer-section='legal'] p {
 @media (prefers-reduced-motion: reduce) {
   .hero-kenburns { animation: none; }
 }
+
+/* Welcome-coupon popup: the floating AI-assistant FAB (z-65) sits above the
+ * popup sheet overlay and was covering the email field on mobile — hide it
+ * while the popup is open. */
+body[data-welcome-popup] [data-tour-assistant-root] {
+  visibility: hidden;
+}
+
+/* Welcome-coupon success step: the vermilion stamp "lands" on the ticket. */
+@keyframes wc-stamp-land {
+  0% { transform: scale(1.7) rotate(18deg); opacity: 0; }
+  60% { transform: scale(0.94) rotate(7deg); opacity: 1; }
+  100% { transform: scale(1) rotate(8deg); opacity: 1; }
+}
+.wc-stamp-in {
+  animation: wc-stamp-land 0.45s cubic-bezier(0.2, 0.8, 0.3, 1.1) both;
+  transform: rotate(8deg);
+}
+@media (prefers-reduced-motion: reduce) {
+  .wc-stamp-in { animation: none; }
+}

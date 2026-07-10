@@ -2621,7 +2621,7 @@
   },
   "welcomeCoupon": {
     "headline": "10% off your first Korea tour",
-    "sub": "Sign up and save on your first booking. Human-curated tours, verified worldwide.",
+    "sub": "One email verification and it lands instantly. Human-curated tours, verified worldwide.",
     "emailPlaceholder": "Your email",
     "cta": "Get my 10% off",
     "dismiss": "No thanks",
@@ -2639,6 +2639,9 @@
     "errorEmailInvalid": "Please enter a valid email.",
     "errorSendFailed": "Couldn't send the code. Please try again.",
     "errorInvalidCode": "That code didn't match. Please try again.",
-    "appliedBadge": "Welcome discount applied"
+    "appliedBadge": "Welcome discount applied",
+    "chipAutoApply": "No code needed — auto-applied",
+    "chipValidity": "Valid 30 days",
+    "finePrint": "First booking only · Deducted automatically at checkout"
   }
 }

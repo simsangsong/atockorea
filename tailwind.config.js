@@ -6,6 +6,7 @@ const COMPONENT_SUBDIRS = [
   'app-shell',
   'auth',
   'charts',
+  'checkout',
   'Detailpage',
   'home',
   'itinerary',
@@ -23,6 +24,7 @@ const COMPONENT_SUBDIRS = [
   'tour-detail-template',
   'tour-detail',
   'ui',
+  'welcome',
 ];
 
 module.exports = {
