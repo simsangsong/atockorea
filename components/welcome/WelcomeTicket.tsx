@@ -36,14 +36,14 @@ export function WelcomeTicket({
       />
 
       {/* main section */}
-      <div className="flex-1 py-4 pl-6 pr-2">
+      <div className="flex-1 py-3 pl-5 pr-2">
         <p className="text-[9.5px] font-semibold uppercase tracking-[0.22em] text-stone-400">
           First booking
         </p>
         <p className="mt-0.5 flex items-baseline leading-none">
           <span
             className="font-serif italic text-[#1c1917]"
-            style={{ fontSize: 50, letterSpacing: '-0.02em' }}
+            style={{ fontSize: 40, letterSpacing: '-0.02em' }}
           >
             {figure}
           </span>
@@ -56,7 +56,7 @@ export function WelcomeTicket({
       </div>
 
       {/* stub */}
-      <div className="flex w-[76px] flex-col items-center justify-center gap-1.5 border-l-2 border-dashed border-stone-300 py-2.5">
+      <div className="flex w-[68px] flex-col items-center justify-center gap-1.5 border-l-2 border-dashed border-stone-300 py-2.5">
         <span
           className={
             stamped

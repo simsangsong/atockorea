@@ -14,7 +14,9 @@
  * "환영" stamp) carrying the oversized serif offer figure ("10%" / "9折"
  * for zh locales), script "Welcome" wordmark, sparse sparkles, friction-killer
  * chips ("no code — auto-applied", "valid 30 days"). Zero photography — the
- * previous photo band clashed with page heroes.
+ * previous photo band clashed with page heroes. Both breakpoints render a
+ * CENTERED dialog (mobile dropped the bottom sheet on user request,
+ * 2026-07-11) — desktop two-pane 560px, mobile single-column ≤330px.
  *
  * Triggers (§6.3): first of 5s delay OR 30% scroll; desktop adds exit-intent.
  * Suppression: logged-in session / snoozed <7d / already claimed / once per
@@ -44,7 +46,6 @@ import {
   WELCOME_TRIGGER_SCROLL_RATIO,
 } from '@/lib/welcome-coupon/config';
 import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
-import { Sheet, SheetContent, SheetTitle } from '@/components/ui/sheet';
 import { WelcomeTicket, WelcomeSparkles } from './WelcomeTicket';
 
 type Step = 'email' | 'code' | 'success';
@@ -320,7 +321,7 @@ export default function WelcomeCouponPopup() {
         onKeyDown={(e) => e.key === 'Enter' && !busy && handleSendCode()}
         placeholder={t('emailPlaceholder')}
         aria-label={t('emailPlaceholder')}
-        className="h-12 w-full rounded-xl border border-stone-200 bg-white px-4 text-[14px] text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-amber-500/70 focus:ring-2 focus:ring-amber-500/40"
+        className="h-11 w-full rounded-xl border border-stone-200 sm:h-12 bg-white px-4 text-[14px] text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-amber-500/70 focus:ring-2 focus:ring-amber-500/40"
       />
       {alreadyMember ? (
         <p className="text-[12px] text-stone-500">
@@ -338,7 +339,7 @@ export default function WelcomeCouponPopup() {
         type="button"
         onClick={handleSendCode}
         disabled={busy}
-        className="group flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-amber-500 text-[14px] font-bold text-stone-900 transition hover:bg-amber-400 disabled:opacity-60"
+        className="group flex h-11 w-full sm:h-12 items-center justify-center gap-2 rounded-xl bg-amber-500 text-[14px] font-bold text-stone-900 transition hover:bg-amber-400 disabled:opacity-60"
       >
         {busy && <Loader2 className="h-4 w-4 animate-spin" aria-hidden />}
         {t('cta')}
@@ -379,7 +380,7 @@ export default function WelcomeCouponPopup() {
         onKeyDown={(e) => e.key === 'Enter' && !busy && handleVerify()}
         placeholder={t('codePlaceholder')}
         aria-label={t('codePlaceholder')}
-        className="h-12 w-full rounded-xl border border-stone-200 bg-white px-4 text-center text-[20px] tracking-[0.4em] text-stone-900 outline-none transition placeholder:text-[13px] placeholder:tracking-normal placeholder:text-stone-400 focus:border-amber-500/70 focus:ring-2 focus:ring-amber-500/40"
+        className="h-11 w-full rounded-xl border border-stone-200 sm:h-12 bg-white px-4 text-center text-[20px] tracking-[0.4em] text-stone-900 outline-none transition placeholder:text-[13px] placeholder:tracking-normal placeholder:text-stone-400 focus:border-amber-500/70 focus:ring-2 focus:ring-amber-500/40"
       />
       {error && (
         <p role="alert" className="text-[12px] text-rose-600">
@@ -390,7 +391,7 @@ export default function WelcomeCouponPopup() {
         type="button"
         onClick={handleVerify}
         disabled={busy || code.length < 6}
-        className="flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-amber-500 text-[14px] font-bold text-stone-900 transition hover:bg-amber-400 disabled:opacity-60"
+        className="flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-amber-500 sm:h-12 text-[14px] font-bold text-stone-900 transition hover:bg-amber-400 disabled:opacity-60"
       >
         {busy && <Loader2 className="h-4 w-4 animate-spin" aria-hidden />}
         {t('verifyCta')}
@@ -413,7 +414,7 @@ export default function WelcomeCouponPopup() {
       <button
         type="button"
         onClick={() => setOpen(false)}
-        className="flex h-12 w-full items-center justify-center rounded-xl bg-amber-500 text-[14px] font-bold text-stone-900 transition hover:bg-amber-400"
+        className="flex h-11 w-full items-center justify-center rounded-xl bg-amber-500 sm:h-12 text-[14px] font-bold text-stone-900 transition hover:bg-amber-400"
       >
         {t('successCta')}
       </button>
@@ -429,18 +430,22 @@ export default function WelcomeCouponPopup() {
       <Dialog open={open} onOpenChange={handleOpenChange}>
         <DialogContent
           showCloseButton={false}
-          className="z-[70] w-full max-w-[calc(100vw-2rem)] gap-0 overflow-hidden rounded-3xl border-0 bg-[#faf7f1] p-0 shadow-2xl sm:max-w-[620px]"
+          className="z-[70] w-full max-w-[calc(100vw-2rem)] gap-0 overflow-hidden rounded-3xl border-0 bg-[#faf7f1] p-0 shadow-2xl sm:max-w-[560px]"
           aria-describedby={undefined}
         >
           <DialogTitle className="sr-only">{t('headline')}</DialogTitle>
           {closeButton}
-          <div className="grid sm:grid-cols-[280px_1fr]">
-            <div className="relative flex flex-col justify-center gap-5 border-r border-stone-900/[0.07] px-6 py-8">
+          <div className="grid sm:grid-cols-[264px_1fr]">
+            <div className="relative flex flex-col justify-center gap-4 border-r border-stone-900/[0.07] px-5 py-7">
               <WelcomeSparkles className="pointer-events-none absolute left-0 top-2 w-full" />
-              {wordmark(30)}
-              <WelcomeTicket figure={figure} showOffSuffix={!isZh} stamped={step === 'success'} />
+              {wordmark(26)}
+              <WelcomeTicket
+                figure={figure}
+                showOffSuffix={!isZh}
+                stamped={step === 'success'}
+              />
             </div>
-            <div className="flex flex-col justify-center gap-4 px-8 py-9">
+            <div className="flex flex-col justify-center gap-3.5 px-6 py-7">
               {step === 'email' && (
                 <div className="space-y-1.5">
                   <h3 className="break-keep text-[19px] font-bold leading-snug tracking-tight text-[#1c1917]">
@@ -459,25 +464,28 @@ export default function WelcomeCouponPopup() {
   }
 
   return (
-    <Sheet open={open} onOpenChange={handleOpenChange}>
-      <SheetContent
-        side="bottom"
+    <Dialog open={open} onOpenChange={handleOpenChange}>
+      <DialogContent
         showCloseButton={false}
-        className="z-[70] gap-0 overflow-hidden rounded-t-3xl border-0 bg-[#faf7f1] p-0"
+        className="z-[70] w-full max-w-[min(330px,calc(100vw-2.5rem))] gap-0 overflow-hidden rounded-3xl border-0 bg-[#faf7f1] p-0 shadow-2xl"
         aria-describedby={undefined}
       >
-        <SheetTitle className="sr-only">{t('headline')}</SheetTitle>
+        <DialogTitle className="sr-only">{t('headline')}</DialogTitle>
         {closeButton}
-        <div className="relative px-6 pb-6 pt-8">
+        <div className="relative px-5 pb-5 pt-7">
           {/* pr-14 keeps the right-side sparkle out from under the close button */}
-          <WelcomeSparkles className="pointer-events-none absolute left-0 top-2 w-full pr-14" />
-          <div className="space-y-5">
-            {wordmark(34)}
+          <WelcomeSparkles className="pointer-events-none absolute left-0 top-1.5 w-full pr-14" />
+          <div className="space-y-4">
+            {wordmark(24)}
             <div className="px-1">
-              <WelcomeTicket figure={figure} showOffSuffix={!isZh} stamped={step === 'success'} />
+              <WelcomeTicket
+                figure={figure}
+                showOffSuffix={!isZh}
+                stamped={step === 'success'}
+              />
             </div>
             {step === 'email' && (
-              <p className="break-keep px-2 text-center text-[12.5px] leading-relaxed text-stone-500">
+              <p className="break-keep px-1 text-center text-[12px] leading-relaxed text-stone-500">
                 {t('sub')}
               </p>
             )}
@@ -485,7 +493,7 @@ export default function WelcomeCouponPopup() {
             <div>{stepBody}</div>
           </div>
         </div>
-      </SheetContent>
-    </Sheet>
+      </DialogContent>
+    </Dialog>
   );
 }
