@@ -8,9 +8,10 @@
  * page uses (`signInWithOtp` shouldCreateUser → `verifyOtp type:'email'`), and
  * on confirmation the DB trigger issues the WELCOME10 grant automatically.
  *
- * Visual language (v2, user-approved mockup 2026-07-10): dark ink canvas +
- * amber accents, an ivory TICKET object (notches + perforation + vermilion
- * 낙관 "환영" stamp) carrying the oversized serif offer figure ("10%" / "9折"
+ * Visual language (v3, light-tone pass 2026-07-10 on user request — the v2
+ * dark ink canvas read too heavy): warm ivory canvas (#faf7f1) + amber
+ * accents, a white TICKET object (notches + perforation + vermilion 낙관
+ * "환영" stamp) carrying the oversized serif offer figure ("10%" / "9折"
  * for zh locales), script "Welcome" wordmark, sparse sparkles, friction-killer
  * chips ("no code — auto-applied", "valid 30 days"). Zero photography — the
  * previous photo band clashed with page heroes.
@@ -275,7 +276,7 @@ export default function WelcomeCouponPopup() {
       type="button"
       onClick={dismissExplicitly}
       aria-label={t('dismiss')}
-      className="absolute right-3 top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-stone-400 transition hover:bg-white/20 hover:text-white"
+      className="absolute right-3 top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-stone-900/[0.06] text-stone-500 transition hover:bg-stone-900/[0.12] hover:text-stone-800"
     >
       <X className="h-4 w-4" strokeWidth={2.5} aria-hidden />
     </button>
@@ -284,12 +285,12 @@ export default function WelcomeCouponPopup() {
   const wordmark = (size: number) => (
     <div className="text-center">
       <p
-        className="italic leading-none text-[#faf7f1]"
+        className="italic leading-none text-[#1c1917]"
         style={{ fontFamily: SERIF, fontSize: size }}
       >
         Welcome
       </p>
-      <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.32em] text-amber-500">
+      <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.32em] text-amber-600">
         AtoC Korea
       </p>
     </div>
@@ -297,12 +298,12 @@ export default function WelcomeCouponPopup() {
 
   const chips = (
     <div className="flex flex-wrap justify-center gap-2">
-      <span className="inline-flex items-center gap-1.5 rounded-full bg-white/[0.07] px-3 py-1.5 text-[11px] text-stone-300">
-        <Check className="h-3 w-3 text-amber-500" strokeWidth={2.5} aria-hidden />
+      <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-[11px] text-stone-600 ring-1 ring-stone-200/80">
+        <Check className="h-3 w-3 text-amber-600" strokeWidth={2.5} aria-hidden />
         {t('chipAutoApply')}
       </span>
-      <span className="inline-flex items-center gap-1.5 rounded-full bg-white/[0.07] px-3 py-1.5 text-[11px] text-stone-300">
-        <Clock className="h-3 w-3 text-amber-500" strokeWidth={2.5} aria-hidden />
+      <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-[11px] text-stone-600 ring-1 ring-stone-200/80">
+        <Clock className="h-3 w-3 text-amber-600" strokeWidth={2.5} aria-hidden />
         {t('chipValidity')}
       </span>
     </div>
@@ -319,17 +320,17 @@ export default function WelcomeCouponPopup() {
         onKeyDown={(e) => e.key === 'Enter' && !busy && handleSendCode()}
         placeholder={t('emailPlaceholder')}
         aria-label={t('emailPlaceholder')}
-        className="h-12 w-full rounded-xl border-0 bg-white px-4 text-[14px] text-stone-900 outline-none transition placeholder:text-stone-400 focus:ring-2 focus:ring-amber-500/70"
+        className="h-12 w-full rounded-xl border border-stone-200 bg-white px-4 text-[14px] text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-amber-500/70 focus:ring-2 focus:ring-amber-500/40"
       />
       {alreadyMember ? (
-        <p className="text-[12px] text-stone-400">
+        <p className="text-[12px] text-stone-500">
           {t('alreadyMember')}{' '}
-          <a href="/signin" className="font-semibold text-amber-400 underline underline-offset-2">
+          <a href="/signin" className="font-semibold text-amber-700 underline underline-offset-2">
             {t('signInCta')}
           </a>
         </p>
       ) : error ? (
-        <p role="alert" className="text-[12px] text-rose-400">
+        <p role="alert" className="text-[12px] text-rose-600">
           {error}
         </p>
       ) : null}
@@ -352,7 +353,7 @@ export default function WelcomeCouponPopup() {
       <button
         type="button"
         onClick={dismissExplicitly}
-        className="w-full py-0.5 text-center text-[12px] text-stone-500 underline-offset-3 transition hover:text-stone-300 hover:underline"
+        className="w-full py-0.5 text-center text-[12px] text-stone-500 underline-offset-3 transition hover:text-stone-700 hover:underline"
       >
         {t('dismiss')}
       </button>
@@ -363,8 +364,8 @@ export default function WelcomeCouponPopup() {
   const codeForm = (
     <div className="space-y-2.5">
       <div className="space-y-1 text-center sm:text-left">
-        <h3 className="text-[16px] font-bold text-[#faf7f1]">{t('otpTitle')}</h3>
-        <p className="text-[12px] leading-relaxed text-stone-400">
+        <h3 className="text-[16px] font-bold text-[#1c1917]">{t('otpTitle')}</h3>
+        <p className="text-[12px] leading-relaxed text-stone-500">
           {t('otpSub', { email: email.trim() })}
         </p>
       </div>
@@ -378,10 +379,10 @@ export default function WelcomeCouponPopup() {
         onKeyDown={(e) => e.key === 'Enter' && !busy && handleVerify()}
         placeholder={t('codePlaceholder')}
         aria-label={t('codePlaceholder')}
-        className="h-12 w-full rounded-xl border-0 bg-white px-4 text-center text-[20px] tracking-[0.4em] text-stone-900 outline-none transition placeholder:text-[13px] placeholder:tracking-normal placeholder:text-stone-400 focus:ring-2 focus:ring-amber-500/70"
+        className="h-12 w-full rounded-xl border border-stone-200 bg-white px-4 text-center text-[20px] tracking-[0.4em] text-stone-900 outline-none transition placeholder:text-[13px] placeholder:tracking-normal placeholder:text-stone-400 focus:border-amber-500/70 focus:ring-2 focus:ring-amber-500/40"
       />
       {error && (
-        <p role="alert" className="text-[12px] text-rose-400">
+        <p role="alert" className="text-[12px] text-rose-600">
           {error}
         </p>
       )}
@@ -398,7 +399,7 @@ export default function WelcomeCouponPopup() {
         type="button"
         onClick={() => countdown === 0 && !busy && handleSendCode()}
         disabled={countdown > 0 || busy}
-        className="w-full py-0.5 text-center text-[12px] text-stone-500 underline-offset-3 transition hover:text-stone-300 hover:underline disabled:opacity-60 disabled:hover:no-underline"
+        className="w-full py-0.5 text-center text-[12px] text-stone-500 underline-offset-3 transition hover:text-stone-700 hover:underline disabled:opacity-60 disabled:hover:no-underline"
       >
         {countdown > 0 ? t('resendCountdown', { s: countdown }) : t('resendCta')}
       </button>
@@ -407,8 +408,8 @@ export default function WelcomeCouponPopup() {
 
   const successBody = (
     <div className="space-y-3 text-center">
-      <h3 className="text-[18px] font-bold text-[#faf7f1]">{t('successTitle')}</h3>
-      <p className="text-[13px] leading-relaxed text-stone-400">{t('successSub')}</p>
+      <h3 className="text-[18px] font-bold text-[#1c1917]">{t('successTitle')}</h3>
+      <p className="text-[13px] leading-relaxed text-stone-500">{t('successSub')}</p>
       <button
         type="button"
         onClick={() => setOpen(false)}
@@ -428,13 +429,13 @@ export default function WelcomeCouponPopup() {
       <Dialog open={open} onOpenChange={handleOpenChange}>
         <DialogContent
           showCloseButton={false}
-          className="z-[70] w-full max-w-[calc(100vw-2rem)] gap-0 overflow-hidden rounded-3xl border-0 bg-[#17171d] p-0 shadow-2xl sm:max-w-[620px]"
+          className="z-[70] w-full max-w-[calc(100vw-2rem)] gap-0 overflow-hidden rounded-3xl border-0 bg-[#faf7f1] p-0 shadow-2xl sm:max-w-[620px]"
           aria-describedby={undefined}
         >
           <DialogTitle className="sr-only">{t('headline')}</DialogTitle>
           {closeButton}
           <div className="grid sm:grid-cols-[280px_1fr]">
-            <div className="relative flex flex-col justify-center gap-5 border-r border-white/[0.08] px-6 py-8">
+            <div className="relative flex flex-col justify-center gap-5 border-r border-stone-900/[0.07] px-6 py-8">
               <WelcomeSparkles className="pointer-events-none absolute left-0 top-2 w-full" />
               {wordmark(30)}
               <WelcomeTicket figure={figure} showOffSuffix={!isZh} stamped={step === 'success'} />
@@ -442,10 +443,10 @@ export default function WelcomeCouponPopup() {
             <div className="flex flex-col justify-center gap-4 px-8 py-9">
               {step === 'email' && (
                 <div className="space-y-1.5">
-                  <h3 className="break-keep text-[19px] font-bold leading-snug tracking-tight text-[#faf7f1]">
+                  <h3 className="break-keep text-[19px] font-bold leading-snug tracking-tight text-[#1c1917]">
                     {t('headline')}
                   </h3>
-                  <p className="break-keep text-[13px] leading-relaxed text-stone-400">{t('sub')}</p>
+                  <p className="break-keep text-[13px] leading-relaxed text-stone-500">{t('sub')}</p>
                 </div>
               )}
               {step === 'email' && chips}
@@ -462,7 +463,7 @@ export default function WelcomeCouponPopup() {
       <SheetContent
         side="bottom"
         showCloseButton={false}
-        className="z-[70] gap-0 overflow-hidden rounded-t-3xl border-0 bg-[#17171d] p-0"
+        className="z-[70] gap-0 overflow-hidden rounded-t-3xl border-0 bg-[#faf7f1] p-0"
         aria-describedby={undefined}
       >
         <SheetTitle className="sr-only">{t('headline')}</SheetTitle>
@@ -476,7 +477,7 @@ export default function WelcomeCouponPopup() {
               <WelcomeTicket figure={figure} showOffSuffix={!isZh} stamped={step === 'success'} />
             </div>
             {step === 'email' && (
-              <p className="break-keep px-2 text-center text-[12.5px] leading-relaxed text-stone-400">
+              <p className="break-keep px-2 text-center text-[12.5px] leading-relaxed text-stone-500">
                 {t('sub')}
               </p>
             )}
