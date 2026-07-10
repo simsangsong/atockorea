@@ -1,12 +1,13 @@
 /**
- * The ticket object at the heart of the welcome-coupon popup — ivory coupon
+ * The ticket object at the heart of the welcome-coupon popup — white coupon
  * card with side notches, a perforation line, and a 낙관-style vermilion
  * "환영" stamp on the stub (the Korean-identity detail). Pure CSS/JSX, zero
  * image bytes. `stamped` switches the stub stamp to the oversized landed
  * stamp used on the success step (animated via .wc-stamp-in in globals.css).
  */
 
-const INK = '#17171d';
+/** Must match the popup sheet background — the notches read as punched-out holes. */
+const SHEET = '#faf7f1';
 
 export function WelcomeTicket({
   figure,
@@ -21,17 +22,17 @@ export function WelcomeTicket({
 }) {
   return (
     <div
-      className="relative flex -rotate-2 rounded-2xl bg-[#faf7f1] shadow-[0_14px_30px_-14px_rgba(0,0,0,0.7)]"
+      className="relative flex -rotate-2 rounded-2xl bg-white shadow-[0_14px_28px_-16px_rgba(28,25,23,0.35)] ring-1 ring-stone-200/90"
       aria-hidden
     >
-      {/* side notches — punched out with the sheet's ink color */}
+      {/* side notches — punched out with the sheet's ivory color */}
       <span
-        className="absolute -left-[9px] top-1/2 h-[18px] w-[18px] -translate-y-1/2 rounded-full"
-        style={{ backgroundColor: INK }}
+        className="absolute -left-[9px] top-1/2 h-[18px] w-[18px] -translate-y-1/2 rounded-full ring-1 ring-inset ring-stone-200/90"
+        style={{ backgroundColor: SHEET }}
       />
       <span
-        className="absolute -right-[9px] top-1/2 h-[18px] w-[18px] -translate-y-1/2 rounded-full"
-        style={{ backgroundColor: INK }}
+        className="absolute -right-[9px] top-1/2 h-[18px] w-[18px] -translate-y-1/2 rounded-full ring-1 ring-inset ring-stone-200/90"
+        style={{ backgroundColor: SHEET }}
       />
 
       {/* main section */}
@@ -85,13 +86,13 @@ export function WelcomeSparkles({ className = '' }: { className?: string }) {
       />
       <path
         d="M312 30 l1.8 3.8 4 0.6 -2.9 2.8 0.7 4 -3.6 -1.9 -3.6 1.9 0.7 -4 -2.9 -2.8 4 -0.6 Z"
-        fill="#e7e5e4"
-        opacity="0.45"
+        fill="#d6d3d1"
+        opacity="0.55"
         transform="scale(0.7) translate(126 8)"
       />
-      <circle cx="298" cy="14" r="1.6" fill="#e7e5e4" opacity="0.6" />
+      <circle cx="298" cy="14" r="1.6" fill="#d6d3d1" opacity="0.7" />
       <circle cx="262" cy="8" r="1.1" fill="#f5a623" opacity="0.7" />
-      <circle cx="62" cy="8" r="1.2" fill="#e7e5e4" opacity="0.5" />
+      <circle cx="62" cy="8" r="1.2" fill="#d6d3d1" opacity="0.6" />
       <circle cx="120" cy="48" r="1" fill="#f5a623" opacity="0.5" />
     </svg>
   );
