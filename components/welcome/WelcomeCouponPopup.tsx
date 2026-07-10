@@ -433,7 +433,7 @@ export default function WelcomeCouponPopup() {
         >
           <DialogTitle className="sr-only">{t('headline')}</DialogTitle>
           {closeButton}
-          <div className="grid sm:grid-cols-[260px_1fr]">
+          <div className="grid sm:grid-cols-[280px_1fr]">
             <div className="relative flex flex-col justify-center gap-5 border-r border-white/[0.08] px-6 py-8">
               <WelcomeSparkles className="pointer-events-none absolute left-0 top-2 w-full" />
               {wordmark(30)}
@@ -442,10 +442,10 @@ export default function WelcomeCouponPopup() {
             <div className="flex flex-col justify-center gap-4 px-8 py-9">
               {step === 'email' && (
                 <div className="space-y-1.5">
-                  <h3 className="text-[19px] font-bold leading-snug tracking-tight text-[#faf7f1]">
+                  <h3 className="break-keep text-[19px] font-bold leading-snug tracking-tight text-[#faf7f1]">
                     {t('headline')}
                   </h3>
-                  <p className="text-[13px] leading-relaxed text-stone-400">{t('sub')}</p>
+                  <p className="break-keep text-[13px] leading-relaxed text-stone-400">{t('sub')}</p>
                 </div>
               )}
               {step === 'email' && chips}
@@ -468,12 +468,18 @@ export default function WelcomeCouponPopup() {
         <SheetTitle className="sr-only">{t('headline')}</SheetTitle>
         {closeButton}
         <div className="relative px-6 pb-6 pt-8">
-          <WelcomeSparkles className="pointer-events-none absolute left-0 top-2 w-full" />
+          {/* pr-14 keeps the right-side sparkle out from under the close button */}
+          <WelcomeSparkles className="pointer-events-none absolute left-0 top-2 w-full pr-14" />
           <div className="space-y-5">
             {wordmark(34)}
             <div className="px-1">
               <WelcomeTicket figure={figure} showOffSuffix={!isZh} stamped={step === 'success'} />
             </div>
+            {step === 'email' && (
+              <p className="break-keep px-2 text-center text-[12.5px] leading-relaxed text-stone-400">
+                {t('sub')}
+              </p>
+            )}
             {step === 'email' && chips}
             <div>{stepBody}</div>
           </div>

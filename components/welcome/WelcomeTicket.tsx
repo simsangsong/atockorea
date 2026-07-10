@@ -65,7 +65,7 @@ export function WelcomeTicket({
         >
           <span className="text-[12px] font-semibold tracking-tight text-[#faf7f1]">환영</span>
         </span>
-        <span className="max-w-full truncate px-0.5 text-[8px] font-medium tracking-[0.08em] text-stone-400">
+        <span className="max-w-full truncate px-1 text-[8px] font-medium tracking-[0.05em] text-stone-400">
           WELCOME10
         </span>
       </div>
