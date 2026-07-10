@@ -8,21 +8,28 @@
  * page uses (`signInWithOtp` shouldCreateUser → `verifyOtp type:'email'`), and
  * on confirmation the DB trigger issues the WELCOME10 grant automatically.
  *
- * Triggers (§6.3): first of 5s delay OR 30% scroll; desktop adds exit-intent.
- * Suppression: logged-in session / dismissed <7d / already claimed / once per
- * browser session. Desktop = centered dialog (image left), mobile = bottom
- * sheet (image band top) — never a full-screen interstitial.
+ * Visual language (v2, user-approved mockup 2026-07-10): dark ink canvas +
+ * amber accents, an ivory TICKET object (notches + perforation + vermilion
+ * 낙관 "환영" stamp) carrying the oversized serif offer figure ("10%" / "9折"
+ * for zh locales), script "Welcome" wordmark, sparse sparkles, friction-killer
+ * chips ("no code — auto-applied", "valid 30 days"). Zero photography — the
+ * previous photo band clashed with page heroes.
  *
- * Parity guard (§8): copy is a member benefit frame only — no OTA price
- * comparison, and no price surface anywhere in this component.
+ * Triggers (§6.3): first of 5s delay OR 30% scroll; desktop adds exit-intent.
+ * Suppression: logged-in session / snoozed <7d / already claimed / once per
+ * browser session. Dismissal semantics: ONLY an explicit dismiss (X or
+ * "No thanks") starts the 7-day snooze — backdrop/Escape closes for the
+ * current session only, so an accidental stray click can't bury the offer.
+ *
+ * Parity guard (§8): member-benefit framing only — no OTA price comparison,
+ * no public-price surface anywhere in this component.
  */
 
 import { useCallback, useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
-import { Loader2, MailCheck, TicketPercent } from 'lucide-react';
+import { ArrowRight, Check, Clock, Loader2, X } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import { useSession } from '@/lib/auth-session';
-import { useTranslations } from '@/lib/i18n';
+import { useI18n, useTranslations } from '@/lib/i18n';
 import { useMediaQuery } from '@/components/home/v2/use-media-query';
 import { trackEvent } from '@/src/design/analytics';
 import { isDisposableEmail } from '@/lib/coupons/disposable-domains';
@@ -37,10 +44,12 @@ import {
 } from '@/lib/welcome-coupon/config';
 import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
 import { Sheet, SheetContent, SheetTitle } from '@/components/ui/sheet';
+import { WelcomeTicket, WelcomeSparkles } from './WelcomeTicket';
 
 type Step = 'email' | 'code' | 'success';
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const SERIF = "Georgia, 'Times New Roman', serif";
 
 function suppressedByStorage(): boolean {
   try {
@@ -63,6 +72,7 @@ function suppressedByStorage(): boolean {
 export default function WelcomeCouponPopup() {
   const { status, session } = useSession();
   const t = useTranslations('welcomeCoupon');
+  const { locale } = useI18n();
   const isDesktop = useMediaQuery('(min-width: 640px)');
 
   const [open, setOpen] = useState(false);
@@ -74,6 +84,10 @@ export default function WelcomeCouponPopup() {
   const [busy, setBusy] = useState(false);
   const [countdown, setCountdown] = useState(0);
   const firedRef = useRef(false);
+
+  /** zh idiom: 10% off = 9折 (§6.5 localization note). */
+  const isZh = locale === 'zh' || locale === 'zh-TW';
+  const figure = isZh ? '9折' : '10%';
 
   /* ── triggers (armed only while eligible) ──────────────────────────────── */
   const fire = useCallback(() => {
@@ -124,12 +138,29 @@ export default function WelcomeCouponPopup() {
     return () => window.clearTimeout(timer);
   }, [countdown]);
 
-  /* ── open/close ────────────────────────────────────────────────────────── */
-  const handleOpenChange = (next: boolean) => {
-    if (next) {
-      setOpen(true);
-      return;
+  /** Hide the floating AI-assistant FAB (z-65) while the popup is open — it
+   *  was overlapping the email field on mobile (user report, 2026-07-08). */
+  useEffect(() => {
+    if (open) {
+      document.body.setAttribute('data-welcome-popup', 'open');
+    } else {
+      document.body.removeAttribute('data-welcome-popup');
     }
+    return () => document.body.removeAttribute('data-welcome-popup');
+  }, [open]);
+
+  /* ── open/close ────────────────────────────────────────────────────────── */
+
+  /** Backdrop / Escape: close for THIS SESSION only (no 7-day snooze). */
+  const handleOpenChange = (next: boolean) => {
+    setOpen(next);
+    if (!next && step !== 'success') {
+      trackEvent('welcome_popup_dismissed', { step, explicit: false });
+    }
+  };
+
+  /** Explicit X / "No thanks": start the 7-day snooze. */
+  const dismissExplicitly = () => {
     setOpen(false);
     if (step !== 'success') {
       try {
@@ -137,7 +168,7 @@ export default function WelcomeCouponPopup() {
       } catch {
         /* ignore */
       }
-      trackEvent('welcome_popup_dismissed', { step });
+      trackEvent('welcome_popup_dismissed', { step, explicit: true });
     }
   };
 
@@ -164,7 +195,12 @@ export default function WelcomeCouponPopup() {
       const checkData = (await checkRes.json().catch(() => ({}))) as {
         exists?: boolean;
         checkFailed?: boolean;
+        disposable?: boolean;
       };
+      if (checkData.disposable === true) {
+        setError(t('errorEmailInvalid'));
+        return;
+      }
       if (!checkRes.ok || checkData.checkFailed === true) {
         setError(t('errorSendFailed'));
         return;
@@ -232,150 +268,189 @@ export default function WelcomeCouponPopup() {
 
   if (!WELCOME_POPUP_ENABLED) return null;
 
-  /* ── shared form body (dialog + sheet render the same steps) ───────────── */
-  const formSection = (
-    <div className="flex flex-1 flex-col justify-center gap-4 bg-stone-50 p-6 sm:p-8">
-      {step === 'email' && (
-        <>
-          <div className="space-y-2">
-            <p className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-stone-500">
-              <TicketPercent className="h-3.5 w-3.5" aria-hidden />
-              AtoC Korea
-            </p>
-            <h2 className="font-serif text-[22px] leading-snug text-stone-900">{t('headline')}</h2>
-            <p className="text-[13px] leading-relaxed text-stone-600">{t('sub')}</p>
-          </div>
-          <div className="space-y-2">
-            <input
-              type="email"
-              inputMode="email"
-              autoComplete="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              onKeyDown={(e) => e.key === 'Enter' && !busy && handleSendCode()}
-              placeholder={t('emailPlaceholder')}
-              aria-label={t('emailPlaceholder')}
-              className="h-11 w-full rounded-xl border border-stone-300 bg-white px-3.5 text-[14px] text-stone-900 outline-none transition focus:border-stone-500 focus:ring-2 focus:ring-stone-300/60"
-            />
-            {alreadyMember ? (
-              <p className="text-[12px] text-stone-600">
-                {t('alreadyMember')}{' '}
-                <a href="/signin" className="font-semibold text-stone-900 underline underline-offset-2">
-                  {t('signInCta')}
-                </a>
-              </p>
-            ) : error ? (
-              <p role="alert" className="text-[12px] text-rose-600">
-                {error}
-              </p>
-            ) : null}
-            <button
-              type="button"
-              onClick={handleSendCode}
-              disabled={busy}
-              className="flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-stone-900 text-[14px] font-semibold text-white transition hover:bg-stone-800 disabled:opacity-60"
-            >
-              {busy && <Loader2 className="h-4 w-4 animate-spin" aria-hidden />}
-              {t('cta')}
-            </button>
-            <button
-              type="button"
-              onClick={() => handleOpenChange(false)}
-              className="w-full py-1 text-center text-[12px] text-stone-500 underline-offset-2 hover:underline"
-            >
-              {t('dismiss')}
-            </button>
-          </div>
-        </>
-      )}
+  /* ── shared pieces ─────────────────────────────────────────────────────── */
 
-      {step === 'code' && (
-        <>
-          <div className="space-y-2">
-            <h2 className="font-serif text-[20px] leading-snug text-stone-900">{t('otpTitle')}</h2>
-            <p className="text-[13px] leading-relaxed text-stone-600">
-              {t('otpSub', { email: email.trim() })}
-            </p>
-          </div>
-          <div className="space-y-2">
-            <input
-              type="text"
-              inputMode="numeric"
-              autoComplete="one-time-code"
-              maxLength={6}
-              value={code}
-              onChange={(e) => setCode(e.target.value.replace(/\D/g, ''))}
-              onKeyDown={(e) => e.key === 'Enter' && !busy && handleVerify()}
-              placeholder={t('codePlaceholder')}
-              aria-label={t('codePlaceholder')}
-              className="h-11 w-full rounded-xl border border-stone-300 bg-white px-3.5 text-center text-[18px] tracking-[0.4em] text-stone-900 outline-none transition focus:border-stone-500 focus:ring-2 focus:ring-stone-300/60"
-            />
-            {error && (
-              <p role="alert" className="text-[12px] text-rose-600">
-                {error}
-              </p>
-            )}
-            <button
-              type="button"
-              onClick={handleVerify}
-              disabled={busy || code.length < 6}
-              className="flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-stone-900 text-[14px] font-semibold text-white transition hover:bg-stone-800 disabled:opacity-60"
-            >
-              {busy && <Loader2 className="h-4 w-4 animate-spin" aria-hidden />}
-              {t('verifyCta')}
-            </button>
-            <button
-              type="button"
-              onClick={() => countdown === 0 && !busy && handleSendCode()}
-              disabled={countdown > 0 || busy}
-              className="w-full py-1 text-center text-[12px] text-stone-500 underline-offset-2 hover:underline disabled:opacity-60 disabled:hover:no-underline"
-            >
-              {countdown > 0 ? t('resendCountdown', { s: countdown }) : t('resendCta')}
-            </button>
-          </div>
-        </>
-      )}
+  const closeButton = (
+    <button
+      type="button"
+      onClick={dismissExplicitly}
+      aria-label={t('dismiss')}
+      className="absolute right-3 top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-stone-400 transition hover:bg-white/20 hover:text-white"
+    >
+      <X className="h-4 w-4" strokeWidth={2.5} aria-hidden />
+    </button>
+  );
 
-      {step === 'success' && (
-        <div className="flex flex-col items-center gap-3 py-4 text-center">
-          <span className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
-            <MailCheck className="h-6 w-6" aria-hidden />
-          </span>
-          <h2 className="font-serif text-[20px] leading-snug text-stone-900">{t('successTitle')}</h2>
-          <p className="text-[13px] leading-relaxed text-stone-600">{t('successSub')}</p>
-          <button
-            type="button"
-            onClick={() => setOpen(false)}
-            className="mt-1 h-11 w-full rounded-xl bg-stone-900 text-[14px] font-semibold text-white transition hover:bg-stone-800"
-          >
-            {t('successCta')}
-          </button>
-        </div>
-      )}
+  const wordmark = (size: number) => (
+    <div className="text-center">
+      <p
+        className="italic leading-none text-[#faf7f1]"
+        style={{ fontFamily: SERIF, fontSize: size }}
+      >
+        Welcome
+      </p>
+      <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.32em] text-amber-500">
+        AtoC Korea
+      </p>
     </div>
   );
+
+  const chips = (
+    <div className="flex flex-wrap justify-center gap-2">
+      <span className="inline-flex items-center gap-1.5 rounded-full bg-white/[0.07] px-3 py-1.5 text-[11px] text-stone-300">
+        <Check className="h-3 w-3 text-amber-500" strokeWidth={2.5} aria-hidden />
+        {t('chipAutoApply')}
+      </span>
+      <span className="inline-flex items-center gap-1.5 rounded-full bg-white/[0.07] px-3 py-1.5 text-[11px] text-stone-300">
+        <Clock className="h-3 w-3 text-amber-500" strokeWidth={2.5} aria-hidden />
+        {t('chipValidity')}
+      </span>
+    </div>
+  );
+
+  const emailForm = (
+    <div className="space-y-2.5">
+      <input
+        type="email"
+        inputMode="email"
+        autoComplete="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        onKeyDown={(e) => e.key === 'Enter' && !busy && handleSendCode()}
+        placeholder={t('emailPlaceholder')}
+        aria-label={t('emailPlaceholder')}
+        className="h-12 w-full rounded-xl border-0 bg-white px-4 text-[14px] text-stone-900 outline-none transition placeholder:text-stone-400 focus:ring-2 focus:ring-amber-500/70"
+      />
+      {alreadyMember ? (
+        <p className="text-[12px] text-stone-400">
+          {t('alreadyMember')}{' '}
+          <a href="/signin" className="font-semibold text-amber-400 underline underline-offset-2">
+            {t('signInCta')}
+          </a>
+        </p>
+      ) : error ? (
+        <p role="alert" className="text-[12px] text-rose-400">
+          {error}
+        </p>
+      ) : null}
+      <button
+        type="button"
+        onClick={handleSendCode}
+        disabled={busy}
+        className="group flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-amber-500 text-[14px] font-bold text-stone-900 transition hover:bg-amber-400 disabled:opacity-60"
+      >
+        {busy && <Loader2 className="h-4 w-4 animate-spin" aria-hidden />}
+        {t('cta')}
+        {!busy && (
+          <ArrowRight
+            className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+            strokeWidth={2.5}
+            aria-hidden
+          />
+        )}
+      </button>
+      <button
+        type="button"
+        onClick={dismissExplicitly}
+        className="w-full py-0.5 text-center text-[12px] text-stone-500 underline-offset-3 transition hover:text-stone-300 hover:underline"
+      >
+        {t('dismiss')}
+      </button>
+      <p className="text-center text-[10px] leading-relaxed text-stone-500">{t('finePrint')}</p>
+    </div>
+  );
+
+  const codeForm = (
+    <div className="space-y-2.5">
+      <div className="space-y-1 text-center sm:text-left">
+        <h3 className="text-[16px] font-bold text-[#faf7f1]">{t('otpTitle')}</h3>
+        <p className="text-[12px] leading-relaxed text-stone-400">
+          {t('otpSub', { email: email.trim() })}
+        </p>
+      </div>
+      <input
+        type="text"
+        inputMode="numeric"
+        autoComplete="one-time-code"
+        maxLength={6}
+        value={code}
+        onChange={(e) => setCode(e.target.value.replace(/\D/g, ''))}
+        onKeyDown={(e) => e.key === 'Enter' && !busy && handleVerify()}
+        placeholder={t('codePlaceholder')}
+        aria-label={t('codePlaceholder')}
+        className="h-12 w-full rounded-xl border-0 bg-white px-4 text-center text-[20px] tracking-[0.4em] text-stone-900 outline-none transition placeholder:text-[13px] placeholder:tracking-normal placeholder:text-stone-400 focus:ring-2 focus:ring-amber-500/70"
+      />
+      {error && (
+        <p role="alert" className="text-[12px] text-rose-400">
+          {error}
+        </p>
+      )}
+      <button
+        type="button"
+        onClick={handleVerify}
+        disabled={busy || code.length < 6}
+        className="flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-amber-500 text-[14px] font-bold text-stone-900 transition hover:bg-amber-400 disabled:opacity-60"
+      >
+        {busy && <Loader2 className="h-4 w-4 animate-spin" aria-hidden />}
+        {t('verifyCta')}
+      </button>
+      <button
+        type="button"
+        onClick={() => countdown === 0 && !busy && handleSendCode()}
+        disabled={countdown > 0 || busy}
+        className="w-full py-0.5 text-center text-[12px] text-stone-500 underline-offset-3 transition hover:text-stone-300 hover:underline disabled:opacity-60 disabled:hover:no-underline"
+      >
+        {countdown > 0 ? t('resendCountdown', { s: countdown }) : t('resendCta')}
+      </button>
+    </div>
+  );
+
+  const successBody = (
+    <div className="space-y-3 text-center">
+      <h3 className="text-[18px] font-bold text-[#faf7f1]">{t('successTitle')}</h3>
+      <p className="text-[13px] leading-relaxed text-stone-400">{t('successSub')}</p>
+      <button
+        type="button"
+        onClick={() => setOpen(false)}
+        className="flex h-12 w-full items-center justify-center rounded-xl bg-amber-500 text-[14px] font-bold text-stone-900 transition hover:bg-amber-400"
+      >
+        {t('successCta')}
+      </button>
+    </div>
+  );
+
+  const stepBody = step === 'email' ? emailForm : step === 'code' ? codeForm : successBody;
+
+  /* ── layouts ───────────────────────────────────────────────────────────── */
 
   if (isDesktop) {
     return (
       <Dialog open={open} onOpenChange={handleOpenChange}>
         <DialogContent
-          className="w-[560px] max-w-[calc(100vw-2rem)] overflow-hidden rounded-2xl border-stone-200 p-0"
+          showCloseButton={false}
+          className="z-[70] w-full max-w-[calc(100vw-2rem)] gap-0 overflow-hidden rounded-3xl border-0 bg-[#17171d] p-0 shadow-2xl sm:max-w-[620px]"
           aria-describedby={undefined}
         >
           <DialogTitle className="sr-only">{t('headline')}</DialogTitle>
-          <div className="grid sm:grid-cols-[220px_1fr]">
-            {step !== 'success' && (
-              <div className="relative hidden sm:block">
-                <Image
-                  src="/images/home/hero/01-gyeongbokgung-sunset.webp"
-                  alt=""
-                  fill
-                  sizes="220px"
-                  className="object-cover"
-                />
-              </div>
-            )}
-            {formSection}
+          {closeButton}
+          <div className="grid sm:grid-cols-[260px_1fr]">
+            <div className="relative flex flex-col justify-center gap-5 border-r border-white/[0.08] px-6 py-8">
+              <WelcomeSparkles className="pointer-events-none absolute left-0 top-2 w-full" />
+              {wordmark(30)}
+              <WelcomeTicket figure={figure} showOffSuffix={!isZh} stamped={step === 'success'} />
+            </div>
+            <div className="flex flex-col justify-center gap-4 px-8 py-9">
+              {step === 'email' && (
+                <div className="space-y-1.5">
+                  <h3 className="text-[19px] font-bold leading-snug tracking-tight text-[#faf7f1]">
+                    {t('headline')}
+                  </h3>
+                  <p className="text-[13px] leading-relaxed text-stone-400">{t('sub')}</p>
+                </div>
+              )}
+              {step === 'email' && chips}
+              {stepBody}
+            </div>
           </div>
         </DialogContent>
       </Dialog>
@@ -386,22 +461,23 @@ export default function WelcomeCouponPopup() {
     <Sheet open={open} onOpenChange={handleOpenChange}>
       <SheetContent
         side="bottom"
-        className="gap-0 overflow-hidden rounded-t-2xl border-stone-200 p-0"
+        showCloseButton={false}
+        className="z-[70] gap-0 overflow-hidden rounded-t-3xl border-0 bg-[#17171d] p-0"
         aria-describedby={undefined}
       >
         <SheetTitle className="sr-only">{t('headline')}</SheetTitle>
-        {step !== 'success' && (
-          <div className="relative h-28 w-full">
-            <Image
-              src="/images/home/hero/01-gyeongbokgung-sunset.webp"
-              alt=""
-              fill
-              sizes="100vw"
-              className="object-cover"
-            />
+        {closeButton}
+        <div className="relative px-6 pb-6 pt-8">
+          <WelcomeSparkles className="pointer-events-none absolute left-0 top-2 w-full" />
+          <div className="space-y-5">
+            {wordmark(34)}
+            <div className="px-1">
+              <WelcomeTicket figure={figure} showOffSuffix={!isZh} stamped={step === 'success'} />
+            </div>
+            {step === 'email' && chips}
+            <div>{stepBody}</div>
           </div>
-        )}
-        {formSection}
+        </div>
       </SheetContent>
     </Sheet>
   );

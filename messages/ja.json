@@ -2621,7 +2621,7 @@
   },
   "welcomeCoupon": {
     "headline": "初回ツアーが10%OFF",
-    "sub": "会員登録で初回予約がお得に。人の手で厳選、世界が検証したツアー。",
+    "sub": "メール認証1回で即時発行。人の手で厳選、世界が検証したツアー。",
     "emailPlaceholder": "メールアドレス",
     "cta": "10%OFFを受け取る",
     "dismiss": "あとで",
@@ -2639,6 +2639,9 @@
     "errorEmailInvalid": "有効なメールアドレスを入力してください。",
     "errorSendFailed": "コードを送信できませんでした。もう一度お試しください。",
     "errorInvalidCode": "コードが一致しません。もう一度お試しください。",
-    "appliedBadge": "ウェルカム割引適用中"
+    "appliedBadge": "ウェルカム割引適用中",
+    "chipAutoApply": "コード入力不要・自動適用",
+    "chipValidity": "発行後30日間有効",
+    "finePrint": "初回予約1回限り・お会計時に自動割引"
   }
 }

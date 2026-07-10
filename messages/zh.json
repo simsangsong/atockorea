@@ -2621,7 +2621,7 @@
   },
   "welcomeCoupon": {
     "headline": "首次韩国行程 9 折",
-    "sub": "注册即享首次预订优惠。真人策划、全球验证的行程。",
+    "sub": "只需验证一次邮箱，立即到账。真人策划、全球验证的行程。",
     "emailPlaceholder": "电子邮件",
     "cta": "领取 9 折优惠",
     "dismiss": "暂时不用",
@@ -2639,6 +2639,9 @@
     "errorEmailInvalid": "请输入有效的电子邮件。",
     "errorSendFailed": "验证码发送失败，请重试。",
     "errorInvalidCode": "验证码不正确，请重试。",
-    "appliedBadge": "已应用新会员折扣"
+    "appliedBadge": "已应用新会员折扣",
+    "chipAutoApply": "无需输入代码，自动应用",
+    "chipValidity": "领取后 30 天有效",
+    "finePrint": "仅限首次预订 · 结账时自动抵扣"
   }
 }

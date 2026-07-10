@@ -2621,7 +2621,7 @@
   },
   "welcomeCoupon": {
     "headline": "首次韓國行程 9 折",
-    "sub": "註冊即享首次預訂優惠。真人策劃、全球驗證的行程。",
+    "sub": "只需驗證一次電子郵件，立即到帳。真人策劃、全球驗證的行程。",
     "emailPlaceholder": "電子郵件",
     "cta": "領取 9 折優惠",
     "dismiss": "暫時不用",
@@ -2639,6 +2639,9 @@
     "errorEmailInvalid": "請輸入有效的電子郵件。",
     "errorSendFailed": "驗證碼寄送失敗，請再試一次。",
     "errorInvalidCode": "驗證碼不正確，請再試一次。",
-    "appliedBadge": "已套用新會員優惠"
+    "appliedBadge": "已套用新會員優惠",
+    "chipAutoApply": "無需輸入代碼，自動套用",
+    "chipValidity": "領取後 30 天有效",
+    "finePrint": "僅限首次預訂 · 結帳時自動折抵"
   }
 }

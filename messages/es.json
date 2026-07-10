@@ -2621,7 +2621,7 @@
   },
   "welcomeCoupon": {
     "headline": "10% en tu primer tour",
-    "sub": "Regístrate y ahorra en tu primera reserva. Tours curados por personas.",
+    "sub": "Verifica tu correo una vez y lo recibes al instante. Tours curados por personas.",
     "emailPlaceholder": "Tu correo",
     "cta": "Obtener mi 10%",
     "dismiss": "Ahora no",
@@ -2639,6 +2639,9 @@
     "errorEmailInvalid": "Introduce un correo válido.",
     "errorSendFailed": "No se pudo enviar el código. Inténtalo de nuevo.",
     "errorInvalidCode": "El código no coincide. Inténtalo de nuevo.",
-    "appliedBadge": "Descuento de bienvenida aplicado"
+    "appliedBadge": "Descuento de bienvenida aplicado",
+    "chipAutoApply": "Sin código — se aplica solo",
+    "chipValidity": "Válido 30 días",
+    "finePrint": "Solo primera reserva · Se descuenta al pagar"
   }
 }
