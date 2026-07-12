@@ -19,12 +19,14 @@
  * 560px, mobile single-column ≤330px.
  *
  * Triggers (§6.3): first of 5s delay OR 30% scroll; desktop adds exit-intent.
- * Suppression: logged-in session / snoozed <7d / already claimed / once per
- * browser session. QA override: `?welcome=1` opens immediately and bypasses
- * every suppression (incl. login) without burning the session key or emitting
- * funnel events. Dismissal semantics: ONLY an explicit dismiss (X or
- * "No thanks") starts the 7-day snooze — backdrop/Escape closes for the
- * current session only, so an accidental stray click can't bury the offer.
+ * Suppression (user decision 2026-07-12): logged-in session / already claimed
+ * / "don't show again today" opt-in checkbox. Nothing else — with the box
+ * unchecked the popup re-arms on EVERY full page load (the once-per-session
+ * key and the 7-day dismissal snooze were dropped on user request). The
+ * checkbox applies to every close path (X, "No thanks", backdrop, Escape)
+ * and stores today's LOCAL date, so the popup stays quiet until midnight.
+ * QA override: `?welcome=1` opens immediately and bypasses every suppression
+ * (incl. login) without emitting funnel events.
  * Non-explicit dismissals are ignored for the first 800ms after opening: the
  * scroll trigger fires MID-GESTURE on touch devices, and the tap already in
  * flight would otherwise land on the backdrop and close the dialog before it
@@ -44,10 +46,8 @@ import { trackEvent } from '@/src/design/analytics';
 import { isDisposableEmail } from '@/lib/coupons/disposable-domains';
 import {
   WELCOME_POPUP_ENABLED,
-  WELCOME_DISMISS_SNOOZE_DAYS,
-  WELCOME_DISMISSED_AT_KEY,
   WELCOME_CLAIMED_KEY,
-  WELCOME_SESSION_SHOWN_KEY,
+  WELCOME_HIDE_TODAY_KEY,
   WELCOME_TRIGGER_DELAY_MS,
   WELCOME_TRIGGER_SCROLL_RATIO,
 } from '@/lib/welcome-coupon/config';
@@ -59,18 +59,16 @@ type Step = 'email' | 'code' | 'success';
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const SERIF = "Georgia, 'Times New Roman', serif";
 
+/** Local calendar day — "hide today" means the visitor's today, not UTC's. */
+function localDayKey(): string {
+  const d = new Date();
+  return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
+}
+
 function suppressedByStorage(): boolean {
   try {
     if (localStorage.getItem(WELCOME_CLAIMED_KEY)) return true;
-    if (sessionStorage.getItem(WELCOME_SESSION_SHOWN_KEY)) return true;
-    const dismissedAt = Number(localStorage.getItem(WELCOME_DISMISSED_AT_KEY));
-    if (
-      Number.isFinite(dismissedAt) &&
-      dismissedAt > 0 &&
-      Date.now() - dismissedAt < WELCOME_DISMISS_SNOOZE_DAYS * 86400000
-    ) {
-      return true;
-    }
+    if (localStorage.getItem(WELCOME_HIDE_TODAY_KEY) === localDayKey()) return true;
   } catch {
     /* storage unavailable (private mode) — fail open, popup may show */
   }
@@ -91,8 +89,11 @@ export default function WelcomeCouponPopup() {
   const [alreadyMember, setAlreadyMember] = useState(false);
   const [busy, setBusy] = useState(false);
   const [countdown, setCountdown] = useState(0);
+  const [hideToday, setHideToday] = useState(false);
   const firedRef = useRef(false);
   const openedAtRef = useRef(0);
+  /** True when the open came from ?welcome=1 — QA sessions stay out of the funnel. */
+  const qaOpenedRef = useRef(false);
 
   /** zh idiom: 10% off = 9折 (§6.5 localization note). */
   const isZh = locale === 'zh' || locale === 'zh-TW';
@@ -101,12 +102,11 @@ export default function WelcomeCouponPopup() {
   /* ── triggers (armed only while eligible) ──────────────────────────────── */
   const fire = useCallback(() => {
     if (firedRef.current) return;
+    // Re-check at fire time: an armed timer/listener in ANOTHER tab (or a
+    // suspended one) can execute after the visitor opted out or claimed
+    // there — localStorage is shared, the armed closure is not.
+    if (suppressedByStorage()) return;
     firedRef.current = true;
-    try {
-      sessionStorage.setItem(WELCOME_SESSION_SHOWN_KEY, '1');
-    } catch {
-      /* ignore */
-    }
     openedAtRef.current = Date.now();
     setOpen(true);
     trackEvent('welcome_popup_shown', {});
@@ -120,6 +120,7 @@ export default function WelcomeCouponPopup() {
       try {
         if (new URLSearchParams(window.location.search).get('welcome') === '1') {
           firedRef.current = true;
+          qaOpenedRef.current = true;
           openedAtRef.current = Date.now();
           setOpen(true);
           return;
@@ -175,26 +176,37 @@ export default function WelcomeCouponPopup() {
 
   /* ── open/close ────────────────────────────────────────────────────────── */
 
-  /** Backdrop / Escape: close for THIS SESSION only (no 7-day snooze). */
+  /** Every close path honors the "don't show again today" checkbox. */
+  const persistHideToday = () => {
+    if (!hideToday) return;
+    try {
+      localStorage.setItem(WELCOME_HIDE_TODAY_KEY, localDayKey());
+    } catch {
+      /* ignore */
+    }
+  };
+
+  /** Backdrop / Escape. Without the checkbox, no suppression — re-arms next load. */
   const handleOpenChange = (next: boolean) => {
     // In-flight touch guard — see header comment (mobile instant-dismiss).
     if (!next && Date.now() - openedAtRef.current < 800) return;
     setOpen(next);
     if (!next && step !== 'success') {
-      trackEvent('welcome_popup_dismissed', { step, explicit: false });
+      persistHideToday();
+      if (!qaOpenedRef.current) {
+        trackEvent('welcome_popup_dismissed', { step, explicit: false, hideToday });
+      }
     }
   };
 
-  /** Explicit X / "No thanks": start the 7-day snooze. */
+  /** Explicit X / "No thanks". */
   const dismissExplicitly = () => {
     setOpen(false);
     if (step !== 'success') {
-      try {
-        localStorage.setItem(WELCOME_DISMISSED_AT_KEY, String(Date.now()));
-      } catch {
-        /* ignore */
+      persistHideToday();
+      if (!qaOpenedRef.current) {
+        trackEvent('welcome_popup_dismissed', { step, explicit: true, hideToday });
       }
-      trackEvent('welcome_popup_dismissed', { step, explicit: true });
     }
   };
 
@@ -378,10 +390,19 @@ export default function WelcomeCouponPopup() {
       <button
         type="button"
         onClick={dismissExplicitly}
-        className="w-full py-0.5 text-center text-[12px] text-stone-500 underline-offset-3 transition hover:text-stone-700 hover:underline"
+        className="w-full py-1.5 text-center text-[12px] text-stone-500 underline-offset-3 transition hover:text-stone-700 hover:underline"
       >
         {t('dismiss')}
       </button>
+      <label className="flex cursor-pointer select-none items-center justify-center gap-1.5 py-1.5 text-[12px] text-stone-600 transition hover:text-stone-800">
+        <input
+          type="checkbox"
+          checked={hideToday}
+          onChange={(e) => setHideToday(e.target.checked)}
+          className="h-4 w-4 accent-sky-600"
+        />
+        {t('hideToday')}
+      </label>
       <p className="text-center text-[10px] leading-relaxed text-stone-500">{t('finePrint')}</p>
     </div>
   );
