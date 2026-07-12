@@ -7,7 +7,7 @@
  */
 
 /** Must match the popup sheet background — the notches read as punched-out holes. */
-const SHEET = '#faf7f1';
+const SHEET = '#eef6fc';
 
 export function WelcomeTicket({
   figure,
@@ -25,7 +25,7 @@ export function WelcomeTicket({
       className="relative flex -rotate-2 rounded-2xl bg-white shadow-[0_14px_28px_-16px_rgba(28,25,23,0.35)] ring-1 ring-stone-200/90"
       aria-hidden
     >
-      {/* side notches — punched out with the sheet's ivory color */}
+      {/* side notches — punched out with the sheet's pale-sky color */}
       <span
         className="absolute -left-[9px] top-1/2 h-[18px] w-[18px] -translate-y-1/2 rounded-full ring-1 ring-inset ring-stone-200/90"
         style={{ backgroundColor: SHEET }}
@@ -48,7 +48,7 @@ export function WelcomeTicket({
             {figure}
           </span>
           {showOffSuffix && (
-            <span className="ml-1.5 text-[13px] font-semibold uppercase tracking-[0.24em] text-amber-700">
+            <span className="ml-1.5 text-[13px] font-semibold uppercase tracking-[0.24em] text-sky-700">
               off
             </span>
           )}
@@ -64,7 +64,7 @@ export function WelcomeTicket({
               : 'flex h-10 w-10 rotate-6 items-center justify-center rounded-full bg-[#c2410c]'
           }
         >
-          <span className="text-[12px] font-semibold tracking-tight text-[#faf7f1]">환영</span>
+          <span className="text-[12px] font-semibold tracking-tight text-white">환영</span>
         </span>
         <span className="max-w-full truncate px-1 text-[8px] font-medium tracking-[0.05em] text-stone-400">
           WELCOME10
@@ -74,13 +74,13 @@ export function WelcomeTicket({
   );
 }
 
-/** Sparse amber/ivory sparkles scattered around the popup header. */
+/** Sparse sky/stone sparkles scattered around the popup header. */
 export function WelcomeSparkles({ className = '' }: { className?: string }) {
   return (
     <svg viewBox="0 0 340 60" className={className} aria-hidden>
       <path
         d="M28 14 l2.4 5 5.2 0.8 -3.8 3.7 0.9 5.2 -4.7 -2.5 -4.7 2.5 0.9 -5.2 -3.8 -3.7 5.2 -0.8 Z"
-        fill="#f5a623"
+        fill="#38bdf8"
         opacity="0.9"
         transform="scale(0.6) translate(14 6)"
       />
@@ -91,9 +91,9 @@ export function WelcomeSparkles({ className = '' }: { className?: string }) {
         transform="scale(0.7) translate(126 8)"
       />
       <circle cx="298" cy="14" r="1.6" fill="#d6d3d1" opacity="0.7" />
-      <circle cx="262" cy="8" r="1.1" fill="#f5a623" opacity="0.7" />
+      <circle cx="262" cy="8" r="1.1" fill="#38bdf8" opacity="0.7" />
       <circle cx="62" cy="8" r="1.2" fill="#d6d3d1" opacity="0.6" />
-      <circle cx="120" cy="48" r="1" fill="#f5a623" opacity="0.5" />
+      <circle cx="120" cy="48" r="1" fill="#38bdf8" opacity="0.5" />
     </svg>
   );
 }

@@ -8,21 +8,27 @@
  * page uses (`signInWithOtp` shouldCreateUser → `verifyOtp type:'email'`), and
  * on confirmation the DB trigger issues the WELCOME10 grant automatically.
  *
- * Visual language (v3, light-tone pass 2026-07-10 on user request — the v2
- * dark ink canvas read too heavy): warm ivory canvas (#faf7f1) + amber
- * accents, a white TICKET object (notches + perforation + vermilion 낙관
- * "환영" stamp) carrying the oversized serif offer figure ("10%" / "9折"
- * for zh locales), script "Welcome" wordmark, sparse sparkles, friction-killer
- * chips ("no code — auto-applied", "valid 30 days"). Zero photography — the
- * previous photo band clashed with page heroes. Both breakpoints render a
- * CENTERED dialog (mobile dropped the bottom sheet on user request,
- * 2026-07-11) — desktop two-pane 560px, mobile single-column ≤330px.
+ * Visual language (v4, sky-tone pass 2026-07-12 on user request — amber
+ * accents dropped): pale sky canvas (#eef6fc) + sky accents, a white TICKET
+ * object (notches + perforation + vermilion 낙관 "환영" stamp) carrying the
+ * oversized serif offer figure ("10%" / "9折" for zh locales), script
+ * "Welcome" wordmark, sparse sparkles, friction-killer chips ("no code —
+ * auto-applied", "valid 30 days"). Zero photography — the previous photo band
+ * clashed with page heroes. Both breakpoints render a CENTERED dialog (mobile
+ * dropped the bottom sheet on user request, 2026-07-11) — desktop two-pane
+ * 560px, mobile single-column ≤330px.
  *
  * Triggers (§6.3): first of 5s delay OR 30% scroll; desktop adds exit-intent.
  * Suppression: logged-in session / snoozed <7d / already claimed / once per
- * browser session. Dismissal semantics: ONLY an explicit dismiss (X or
+ * browser session. QA override: `?welcome=1` opens immediately and bypasses
+ * every suppression (incl. login) without burning the session key or emitting
+ * funnel events. Dismissal semantics: ONLY an explicit dismiss (X or
  * "No thanks") starts the 7-day snooze — backdrop/Escape closes for the
  * current session only, so an accidental stray click can't bury the offer.
+ * Non-explicit dismissals are ignored for the first 800ms after opening: the
+ * scroll trigger fires MID-GESTURE on touch devices, and the tap already in
+ * flight would otherwise land on the backdrop and close the dialog before it
+ * ever paints (mobile "popup never opens" report, 2026-07-12).
  *
  * Parity guard (§8): member-benefit framing only — no OTA price comparison,
  * no public-price surface anywhere in this component.
@@ -86,6 +92,7 @@ export default function WelcomeCouponPopup() {
   const [busy, setBusy] = useState(false);
   const [countdown, setCountdown] = useState(0);
   const firedRef = useRef(false);
+  const openedAtRef = useRef(0);
 
   /** zh idiom: 10% off = 9折 (§6.5 localization note). */
   const isZh = locale === 'zh' || locale === 'zh-TW';
@@ -100,12 +107,27 @@ export default function WelcomeCouponPopup() {
     } catch {
       /* ignore */
     }
+    openedAtRef.current = Date.now();
     setOpen(true);
     trackEvent('welcome_popup_shown', {});
   }, []);
 
   useEffect(() => {
     if (!WELCOME_POPUP_ENABLED) return;
+    // QA override — see header comment. Checked before the auth/suppression
+    // gates so it works on a logged-in or previously-claimed device.
+    if (!firedRef.current) {
+      try {
+        if (new URLSearchParams(window.location.search).get('welcome') === '1') {
+          firedRef.current = true;
+          openedAtRef.current = Date.now();
+          setOpen(true);
+          return;
+        }
+      } catch {
+        /* ignore */
+      }
+    }
     if (status !== 'ready' || session) return; // wait for auth; never for members
     if (firedRef.current || suppressedByStorage()) return;
 
@@ -155,6 +177,8 @@ export default function WelcomeCouponPopup() {
 
   /** Backdrop / Escape: close for THIS SESSION only (no 7-day snooze). */
   const handleOpenChange = (next: boolean) => {
+    // In-flight touch guard — see header comment (mobile instant-dismiss).
+    if (!next && Date.now() - openedAtRef.current < 800) return;
     setOpen(next);
     if (!next && step !== 'success') {
       trackEvent('welcome_popup_dismissed', { step, explicit: false });
@@ -291,7 +315,7 @@ export default function WelcomeCouponPopup() {
       >
         Welcome
       </p>
-      <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.32em] text-amber-600">
+      <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.32em] text-sky-700">
         AtoC Korea
       </p>
     </div>
@@ -300,11 +324,11 @@ export default function WelcomeCouponPopup() {
   const chips = (
     <div className="flex flex-wrap justify-center gap-2">
       <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-[11px] text-stone-600 ring-1 ring-stone-200/80">
-        <Check className="h-3 w-3 text-amber-600" strokeWidth={2.5} aria-hidden />
+        <Check className="h-3 w-3 text-sky-600" strokeWidth={2.5} aria-hidden />
         {t('chipAutoApply')}
       </span>
       <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-[11px] text-stone-600 ring-1 ring-stone-200/80">
-        <Clock className="h-3 w-3 text-amber-600" strokeWidth={2.5} aria-hidden />
+        <Clock className="h-3 w-3 text-sky-600" strokeWidth={2.5} aria-hidden />
         {t('chipValidity')}
       </span>
     </div>
@@ -321,12 +345,12 @@ export default function WelcomeCouponPopup() {
         onKeyDown={(e) => e.key === 'Enter' && !busy && handleSendCode()}
         placeholder={t('emailPlaceholder')}
         aria-label={t('emailPlaceholder')}
-        className="h-11 w-full rounded-xl border border-stone-200 sm:h-12 bg-white px-4 text-[14px] text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-amber-500/70 focus:ring-2 focus:ring-amber-500/40"
+        className="h-11 w-full rounded-xl border border-stone-200 sm:h-12 bg-white px-4 text-[14px] text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-sky-500/70 focus:ring-2 focus:ring-sky-500/40"
       />
       {alreadyMember ? (
         <p className="text-[12px] text-stone-500">
           {t('alreadyMember')}{' '}
-          <a href="/signin" className="font-semibold text-amber-700 underline underline-offset-2">
+          <a href="/signin" className="font-semibold text-sky-700 underline underline-offset-2">
             {t('signInCta')}
           </a>
         </p>
@@ -339,7 +363,7 @@ export default function WelcomeCouponPopup() {
         type="button"
         onClick={handleSendCode}
         disabled={busy}
-        className="group flex h-11 w-full sm:h-12 items-center justify-center gap-2 rounded-xl bg-amber-500 text-[14px] font-bold text-stone-900 transition hover:bg-amber-400 disabled:opacity-60"
+        className="group flex h-11 w-full sm:h-12 items-center justify-center gap-2 rounded-xl bg-sky-600 text-[14px] font-bold text-white transition hover:bg-sky-500 disabled:opacity-60"
       >
         {busy && <Loader2 className="h-4 w-4 animate-spin" aria-hidden />}
         {t('cta')}
@@ -380,7 +404,7 @@ export default function WelcomeCouponPopup() {
         onKeyDown={(e) => e.key === 'Enter' && !busy && handleVerify()}
         placeholder={t('codePlaceholder')}
         aria-label={t('codePlaceholder')}
-        className="h-11 w-full rounded-xl border border-stone-200 sm:h-12 bg-white px-4 text-center text-[20px] tracking-[0.4em] text-stone-900 outline-none transition placeholder:text-[13px] placeholder:tracking-normal placeholder:text-stone-400 focus:border-amber-500/70 focus:ring-2 focus:ring-amber-500/40"
+        className="h-11 w-full rounded-xl border border-stone-200 sm:h-12 bg-white px-4 text-center text-[20px] tracking-[0.4em] text-stone-900 outline-none transition placeholder:text-[13px] placeholder:tracking-normal placeholder:text-stone-400 focus:border-sky-500/70 focus:ring-2 focus:ring-sky-500/40"
       />
       {error && (
         <p role="alert" className="text-[12px] text-rose-600">
@@ -391,7 +415,7 @@ export default function WelcomeCouponPopup() {
         type="button"
         onClick={handleVerify}
         disabled={busy || code.length < 6}
-        className="flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-amber-500 sm:h-12 text-[14px] font-bold text-stone-900 transition hover:bg-amber-400 disabled:opacity-60"
+        className="flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-sky-600 sm:h-12 text-[14px] font-bold text-white transition hover:bg-sky-500 disabled:opacity-60"
       >
         {busy && <Loader2 className="h-4 w-4 animate-spin" aria-hidden />}
         {t('verifyCta')}
@@ -414,7 +438,7 @@ export default function WelcomeCouponPopup() {
       <button
         type="button"
         onClick={() => setOpen(false)}
-        className="flex h-11 w-full items-center justify-center rounded-xl bg-amber-500 sm:h-12 text-[14px] font-bold text-stone-900 transition hover:bg-amber-400"
+        className="flex h-11 w-full items-center justify-center rounded-xl bg-sky-600 sm:h-12 text-[14px] font-bold text-white transition hover:bg-sky-500"
       >
         {t('successCta')}
       </button>
@@ -430,7 +454,7 @@ export default function WelcomeCouponPopup() {
       <Dialog open={open} onOpenChange={handleOpenChange}>
         <DialogContent
           showCloseButton={false}
-          className="z-[70] w-full max-w-[calc(100vw-2rem)] gap-0 overflow-hidden rounded-3xl border-0 bg-[#faf7f1] p-0 shadow-2xl sm:max-w-[560px]"
+          className="z-[70] w-full max-w-[calc(100vw-2rem)] gap-0 overflow-hidden rounded-3xl border-0 bg-[#eef6fc] p-0 shadow-2xl sm:max-w-[560px]"
           aria-describedby={undefined}
         >
           <DialogTitle className="sr-only">{t('headline')}</DialogTitle>
@@ -467,7 +491,7 @@ export default function WelcomeCouponPopup() {
     <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogContent
         showCloseButton={false}
-        className="z-[70] w-full max-w-[min(330px,calc(100vw-2.5rem))] gap-0 overflow-hidden rounded-3xl border-0 bg-[#faf7f1] p-0 shadow-2xl"
+        className="z-[70] w-full max-w-[min(330px,calc(100vw-2.5rem))] gap-0 overflow-hidden rounded-3xl border-0 bg-[#eef6fc] p-0 shadow-2xl"
         aria-describedby={undefined}
       >
         <DialogTitle className="sr-only">{t('headline')}</DialogTitle>
