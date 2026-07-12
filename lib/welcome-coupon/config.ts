@@ -24,6 +24,6 @@ export const WELCOME_HIDE_TODAY_KEY = 'atoc_welcome_hide_today';
 /** localStorage — set once the visitor completed the OTP and got the grant. */
 export const WELCOME_CLAIMED_KEY = 'atoc_welcome_claimed';
 
-/** Trigger tuning (§6.3): first of 5s delay OR 30% scroll; desktop adds exit-intent. */
-export const WELCOME_TRIGGER_DELAY_MS = 5000;
-export const WELCOME_TRIGGER_SCROLL_RATIO = 0.3;
+/** Trigger tuning (§6.3, retuned 2026-07-12): first of 3s delay OR 10% scroll; desktop adds exit-intent. */
+export const WELCOME_TRIGGER_DELAY_MS = 3000;
+export const WELCOME_TRIGGER_SCROLL_RATIO = 0.1;

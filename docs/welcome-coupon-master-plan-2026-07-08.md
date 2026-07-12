@@ -145,7 +145,7 @@ create table coupon_redemptions (
 
 ## §F. 팝업 (스펙 §6 유지 + 어댑테이션)
 
-- 트리거: 5s OR 스크롤 30% 선도착, 데스크톱 exit-intent 추가. ~~세션당 1회(`sessionStorage`)~~ **개정(2026-07-12 사용자 결정): 매 페이지 로드마다 재장전.**
+- 트리거: ~~5s OR 스크롤 30%~~ **3s OR 스크롤 10%(2026-07-12 재튜닝)** 선도착, 데스크톱 exit-intent 추가. ~~세션당 1회(`sessionStorage`)~~ **개정(2026-07-12 사용자 결정): 매 페이지 로드마다 재장전.**
 - 억제 **(2026-07-12 개정)**: `useSession()` 세션 존재 / `atoc_welcome_claimed`(발급 완료) / **"오늘 하루 보지 않기" 체크 후 닫기 = `atoc_welcome_hide_today`(로컬 날짜, 자정까지)** / `status==='checking'` 동안 대기. ~~7일 스누즈(`atoc_welcome_dismissed_at`)·세션당 1회 키~~ 폐기 — 체크 안 하면 매 접속마다 표시. 체크박스는 모든 닫기 경로(X·"다음에"·백드롭·ESC)에 적용. QA 오버라이드 `?welcome=1`(로그인·억제 전부 우회, 퍼널 이벤트 미발생). 열림 후 800ms 내 비명시적 닫힘 무시(모바일 제스처 가드).
 - UI: 데스크톱 `Dialog`(중앙 카드 480px, 이미지 좌+폼 우), 모바일 `Sheet side="bottom"`. quiet-luxury 톤(§6.1 그대로), 기존 투어 무드컷 재사용. *(이후 개정: v2 티켓 → v3 라이트 → PR #290 중앙 컴팩트 → PR #291 스카이 리톤 — 최신 비주얼은 컴포넌트 헤더 주석 참조.)*
 - OTP: 이메일 → `POST` 없이 클라이언트 `signInWithOtp`(가입 페이지와 동일; check-email 사전 중복확인 재사용) → 6자리 코드 → `verifyOtp` → 성공 화면("결제 시 자동 적용") → 세션 갱신은 SessionProvider가 처리.
