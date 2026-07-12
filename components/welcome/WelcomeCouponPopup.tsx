@@ -18,7 +18,8 @@
  * dropped the bottom sheet on user request, 2026-07-11) — desktop two-pane
  * 560px, mobile single-column ≤330px.
  *
- * Triggers (§6.3): first of 5s delay OR 30% scroll; desktop adds exit-intent.
+ * Triggers (§6.3, retuned 2026-07-12): first of 3s delay OR 10% scroll;
+ * desktop adds exit-intent.
  * Suppression (user decision 2026-07-12): logged-in session / already claimed
  * / "don't show again today" opt-in checkbox. Nothing else — with the box
  * unchecked the popup re-arms on EVERY full page load (the once-per-session
