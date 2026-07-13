@@ -165,6 +165,22 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
   const effectiveSeedDateYmd = seedDateYmd ?? urlSeeds?.dateYmd;
   const effectiveSeedLanguage = seedLanguage ?? urlSeeds?.language;
   const bookingSeedKey = urlSeeds ? "url-seeded" : "default";
+  // W2.6 — reviews cold-start: zero reviews hides the section + Reviews tab
+  // together, except when the write deep link (#reviews-write / ?write=1)
+  // brings a guest here to leave the first review.
+  const hasGuestReviews =
+    (vm.reviewsSummary?.totalReviews ?? 0) > 0 && (vm.guestReviews?.length ?? 0) > 0;
+  const [writeDeepLink, setWriteDeepLink] = useState(false);
+  useEffect(() => {
+    const sp = new URLSearchParams(window.location.search);
+    if (window.location.hash === "#reviews-write" || sp.get("write") === "1") {
+      setWriteDeepLink(true);
+    }
+  }, []);
+  const showReviewsSection = hasGuestReviews || writeDeepLink;
+  const subnavItems = hasGuestReviews
+    ? vm.subnavItems
+    : vm.subnavItems.filter((item) => item.id !== "reviews");
   // W1.4 — single rate-card sheet (§F-8 grammar ②). Fixed price entry points:
   // sticky bar / booking card / the At-a-Glance button below (surface rule §B).
   const [ratesSheetOpen, setRatesSheetOpen] = useState(false);
@@ -225,7 +241,7 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
             </div>
           </div>
 
-          <TourTabsNav subnavItems={vm.subnavItems} />
+          <TourTabsNav subnavItems={subnavItems} />
 
         <section id="overview" className="mx-3 mt-5 lg:mx-0">
           <div className="mx-auto max-w-2xl px-4 sm:px-5 py-6">
@@ -268,7 +284,7 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
 
         <section
           id="itinerary"
-          className="mx-3 mt-4 lg:mx-0"
+          className="mx-3 mt-4 scroll-mt-24 lg:mx-0"
         >
           <div className="mx-auto max-w-2xl px-4 sm:px-5 pt-6 pb-3 space-y-7">
             <TourDayFlowSection
@@ -304,7 +320,7 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
         ) : null}
 
         {vm.pickup_dropoff ? (
-          <section id="pickup-dropoff" className="mx-3 mt-4 lg:mx-0">
+          <section id="pickup-dropoff" className="mx-3 mt-4 scroll-mt-24 lg:mx-0">
             <div className="mx-auto max-w-2xl px-4 sm:px-5 py-5">
               <TourPickupDropoffSection
                 pickup_dropoff={vm.pickup_dropoff}
@@ -357,15 +373,21 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
           </div>
         </section>
 
-        <section id="reviews" className="mx-3 mt-4 lg:mx-0">
-          <div className="mx-auto max-w-2xl px-4 sm:px-5 py-5">
-            <TourReviewsSection
-              guestReviews={vm.guestReviews}
-              reviewsSummary={vm.reviewsSummary}
-              sectionUi={vm.sectionUi}
-            />
-          </div>
-        </section>
+        {/* W2.6 — with zero reviews the section AND the Reviews tab are hidden
+            together; the `#reviews-write` / `?write=1` deep link (review
+            collection loop, W4.3) still renders the write-review block so the
+            cold-start path never dead-ends. */}
+        {showReviewsSection ? (
+          <section id="reviews" className="mx-3 mt-4 scroll-mt-24 lg:mx-0">
+            <div className="mx-auto max-w-2xl px-4 sm:px-5 py-5">
+              <TourReviewsSection
+                guestReviews={vm.guestReviews}
+                reviewsSummary={vm.reviewsSummary}
+                sectionUi={vm.sectionUi}
+              />
+            </div>
+          </section>
+        ) : null}
 
         {/* Third-party platform review aggregates — same operator's listing on
             global OTAs, attributed + outbound-linked. Aggregate-only (no review

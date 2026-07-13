@@ -133,6 +133,10 @@ export type TourProductSectionUiV1 = {
   guestsCountTemplate?: string;
   /** `{count}` placeholder — singular variant ("1 guest"). */
   guestsCountSingularTemplate?: string;
+  /** W2.2 — timeline summary nodes + canonical pickup section jump loop. */
+  pickupPortCardTitle?: string;
+  pickupViewMapLabel?: string;
+  pickupBackToItineraryLabel?: string;
 };
 
 export const DEFAULT_TOUR_PRODUCT_SECTION_UI_EN: TourProductSectionUiV1 = {
@@ -224,6 +228,9 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_EN: TourProductSectionUiV1 = {
   ratesYourSelectionLabel: "Your selection",
   guestsCountTemplate: "{count} guests",
   guestsCountSingularTemplate: "{count} guest",
+  pickupPortCardTitle: "Port pickup",
+  pickupViewMapLabel: "Details & map",
+  pickupBackToItineraryLabel: "Back to itinerary",
 };
 
 /** 정적 번들 한국어 — DB `detail_payload.sectionUi` 없을 때 Jeju 등에서 사용 */
@@ -323,6 +330,9 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_KO: TourProductSectionUiV1 = {
   ratesYourSelectionLabel: "현재 선택",
   guestsCountTemplate: "{count}명",
   guestsCountSingularTemplate: "{count}명",
+  pickupPortCardTitle: "항구 픽업",
+  pickupViewMapLabel: "상세·지도 보기",
+  pickupBackToItineraryLabel: "일정으로 돌아가기",
 };
 
 /** 정적 번들 日本語 */
@@ -422,6 +432,9 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_JA: TourProductSectionUiV1 = {
   ratesYourSelectionLabel: "現在の選択",
   guestsCountTemplate: "{count}名",
   guestsCountSingularTemplate: "{count}名",
+  pickupPortCardTitle: "港でのお迎え",
+  pickupViewMapLabel: "詳細・地図を見る",
+  pickupBackToItineraryLabel: "行程に戻る",
 };
 
 /** 简体中文 UI */
@@ -519,6 +532,9 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_ZH: TourProductSectionUiV1 = {
   ratesYourSelectionLabel: "当前选择",
   guestsCountTemplate: "{count}人",
   guestsCountSingularTemplate: "{count}人",
+  pickupPortCardTitle: "港口接送",
+  pickupViewMapLabel: "查看详情和地图",
+  pickupBackToItineraryLabel: "返回行程",
 };
 
 /** 繁體中文 UI */
@@ -616,6 +632,9 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_ZH_TW: TourProductSectionUiV1 = {
   ratesYourSelectionLabel: "目前選擇",
   guestsCountTemplate: "{count}人",
   guestsCountSingularTemplate: "{count}人",
+  pickupPortCardTitle: "港口接送",
+  pickupViewMapLabel: "查看詳情和地圖",
+  pickupBackToItineraryLabel: "返回行程",
 };
 
 /** UI en español */
@@ -715,6 +734,9 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_ES: TourProductSectionUiV1 = {
   ratesYourSelectionLabel: "Tu selección",
   guestsCountTemplate: "{count} personas",
   guestsCountSingularTemplate: "{count} persona",
+  pickupPortCardTitle: "Recogida en el puerto",
+  pickupViewMapLabel: "Detalles y mapa",
+  pickupBackToItineraryLabel: "Volver al itinerario",
 };
 
 function pickSectionUiKeys(raw: unknown): Partial<TourProductSectionUiV1> {
