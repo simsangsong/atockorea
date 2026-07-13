@@ -25,6 +25,9 @@ import {
   TourTimelineSection,
 } from "@/components/product-tour-static/east-signature-nature-core/tour-detail-sections";
 import { getPrivateSampleItineraryConfig } from "@/components/product-tour-static/_shared/privateSampleItinerary";
+import { TourRatesSheet } from "@/components/product-tour-static/_shared/TourRatesSheet";
+import { parseListUnitUsd } from "@/components/product-tour-static/_shared/bookingShared";
+import { useCurrencyOptional } from "@/lib/currency";
 import type { StaticTourProductRegistration } from "@/components/product-tour-static/catalog/staticTourCatalogCards";
 import dynamic from "next/dynamic";
 
@@ -161,6 +164,32 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
   const effectiveSeedDateYmd = seedDateYmd ?? urlSeeds?.dateYmd;
   const effectiveSeedLanguage = seedLanguage ?? urlSeeds?.language;
   const bookingSeedKey = urlSeeds ? "url-seeded" : "default";
+  // W1.4 — single rate-card sheet (§F-8 grammar ②). Fixed price entry points:
+  // sticky bar / booking card / the At-a-Glance button below (surface rule §B).
+  const [ratesSheetOpen, setRatesSheetOpen] = useState(false);
+  const hasRatesSheet = Boolean(vm.pricingTiers && vm.pricingTiers.tiers.length > 0);
+  const currencyCtx = useCurrencyOptional();
+  const fromPriceLabel = useMemo(() => {
+    // Tiered products anchor "From" on the matrix minimum so all three fixed
+    // price entry points quote the same floor as the booking surfaces.
+    let usd: number | null = null;
+    if (vm.pricingTiers && vm.pricingTiers.tiers.length > 0) {
+      for (const tier of vm.pricingTiers.tiers) {
+        for (const d of vm.pricingTiers.durations) {
+          const v = tier.prices[d];
+          if (typeof v === "number" && v > 0 && (usd == null || v < usd)) usd = v;
+        }
+      }
+    }
+    if (usd == null) usd = parseListUnitUsd(vm.price);
+    if (usd == null || usd <= 0) return null;
+    if (currencyCtx) return currencyCtx.formatPrice(usd);
+    return new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+      maximumFractionDigits: 0,
+    }).format(usd);
+  }, [vm.price, vm.pricingTiers, currencyCtx]);
   return (
     <div className="tour-product-v2-static-root min-h-screen bg-white">
       <div className="lg:mx-auto lg:grid lg:max-w-6xl lg:grid-cols-[minmax(0,1fr)_360px] lg:gap-8 lg:px-6">
@@ -200,60 +229,24 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
         <section id="overview" className="mx-3 mt-5 lg:mx-0">
           <div className="mx-auto max-w-2xl px-4 sm:px-5 py-6">
             <TourAtAGlance glanceItems={vm.glanceItems} sectionUi={vm.sectionUi} />
+            {hasRatesSheet ? (
+              <button
+                type="button"
+                onClick={() => setRatesSheetOpen(true)}
+                className="mt-3 flex w-full items-center justify-between gap-3 rounded-2xl border border-slate-200/70 bg-white px-4 py-3 text-left shadow-[0_1px_2px_rgba(0,0,0,0.03),0_4px_12px_-2px_rgba(0,0,0,0.055)] transition hover:border-slate-300"
+              >
+                <span className="text-[13.5px] font-semibold tabular-nums text-foreground">
+                  {fromPriceLabel
+                    ? (vm.sectionUi.ratesFromTemplate ?? "From {price}").replace("{price}", fromPriceLabel)
+                    : (vm.sectionUi.ratesSheetTitle ?? "Rate card")}
+                </span>
+                <span className="text-[12px] font-medium text-muted-foreground">
+                  {vm.sectionUi.ratesViewFullLabel ?? "View full rate card"} ›
+                </span>
+              </button>
+            ) : null}
           </div>
         </section>
-
-        {vm.pricingTiers && vm.pricingTiers.tiers.length > 0 ? (
-          <section id="pricing" className="mx-3 mt-4 lg:mx-0">
-            <div className="mx-auto max-w-2xl px-4 sm:px-5 py-5">
-              <div className="rounded-2xl border border-slate-200/70 bg-white p-4 shadow-[var(--home-shadow-neutral-card)]">
-                <div className="mb-2 flex items-baseline justify-between gap-3">
-                  <h3 className="text-base font-bold tracking-tight text-foreground">Pricing</h3>
-                  <span className="text-[11px] uppercase tracking-wide text-muted-foreground">
-                    Per {vm.pricingTiers.unit}
-                  </span>
-                </div>
-                <div className="overflow-hidden rounded-xl border border-slate-200/70">
-                  <table className="w-full text-[13px]">
-                    <thead className="bg-slate-100/70 text-[10.5px] uppercase tracking-wide text-muted-foreground">
-                      <tr>
-                        <th className="px-3 py-2 text-left font-semibold">Group size</th>
-                        {vm.pricingTiers.durations.map((d) => (
-                          <th key={d} className="px-3 py-2 text-right font-semibold">
-                            {vm.pricingTiers!.durations.length === 1 ? "Price" : d}
-                          </th>
-                        ))}
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {vm.pricingTiers.tiers.map((tr) => (
-                        <tr key={tr.paxLabel} className="border-t border-slate-100">
-                          <td className="px-3 py-2 font-medium text-foreground">{tr.paxLabel}</td>
-                          {vm.pricingTiers!.durations.map((d) => {
-                            const v = tr.prices[d];
-                            return (
-                              <td key={d} className="px-3 py-2 text-right tabular-nums text-foreground">
-                                {typeof v === "number" ? `$${v}` : "—"}
-                              </td>
-                            );
-                          })}
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-                {vm.pricingTiers.extraPerPaxAbove ? (
-                  <p className="mt-2 text-[11.5px] text-muted-foreground">
-                    {vm.pricingTiers.extraPerPaxAbove.anchorPax + 1}+ pax: +${vm.pricingTiers.extraPerPaxAbove.perPaxAdd} per extra guest
-                  </p>
-                ) : null}
-                <p className="mt-2 text-[11.5px] text-muted-foreground">
-                  Tap &quot;Check Availability&quot; to pick guests and confirm the live total.
-                </p>
-              </div>
-            </div>
-          </section>
-        ) : null}
 
         <section className="mx-3 mt-4 lg:mx-0">
           <div className="mx-auto max-w-2xl px-4 sm:px-5 py-5">
@@ -418,6 +411,7 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
               initialGuests={effectiveGuests}
               seedDateYmd={effectiveSeedDateYmd}
               seedLanguage={effectiveSeedLanguage}
+              onOpenRatesSheet={hasRatesSheet ? () => setRatesSheetOpen(true) : undefined}
             />
           </div>
         </aside>
@@ -437,6 +431,15 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
           seedLanguage={effectiveSeedLanguage}
         />
       </div>
+
+      {hasRatesSheet && vm.pricingTiers ? (
+        <TourRatesSheet
+          open={ratesSheetOpen}
+          onClose={() => setRatesSheetOpen(false)}
+          pricingTiers={vm.pricingTiers}
+          sectionUi={vm.sectionUi}
+        />
+      ) : null}
 
       <TourProductAiAssistantWidget
         tourProductSlug={tourProductSlug}
