@@ -56,6 +56,7 @@ import {
   coerceSeedLanguage,
 } from "@/components/product-tour-static/_shared/bookingSeedParams";
 import { useTranslations } from "@/lib/i18n";
+import { trackEvent } from "@/src/design/analytics";
 
 /**
  * Platform price-compare widget hidden per user direction 2026-05-20 — the site
@@ -232,7 +233,10 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
             {hasRatesSheet ? (
               <button
                 type="button"
-                onClick={() => setRatesSheetOpen(true)}
+                onClick={() => {
+                  setRatesSheetOpen(true);
+                  trackEvent("pd_rates_sheet_open", { slug: tourProductSlug, source: "at_a_glance" });
+                }}
                 className="mt-3 flex w-full items-center justify-between gap-3 rounded-2xl border border-slate-200/70 bg-white px-4 py-3 text-left shadow-[0_1px_2px_rgba(0,0,0,0.03),0_4px_12px_-2px_rgba(0,0,0,0.055)] transition hover:border-slate-300"
               >
                 <span className="text-[13.5px] font-semibold tabular-nums text-foreground">
@@ -411,7 +415,14 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
               initialGuests={effectiveGuests}
               seedDateYmd={effectiveSeedDateYmd}
               seedLanguage={effectiveSeedLanguage}
-              onOpenRatesSheet={hasRatesSheet ? () => setRatesSheetOpen(true) : undefined}
+              onOpenRatesSheet={
+                hasRatesSheet
+                  ? () => {
+                      setRatesSheetOpen(true);
+                      trackEvent("pd_rates_sheet_open", { slug: tourProductSlug, source: "booking_card" });
+                    }
+                  : undefined
+              }
             />
           </div>
         </aside>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Check, ChevronDown } from "lucide-react";
 import type { TourProductCheckoutContext } from "@/lib/tour-product/eastSignatureCheckoutContext";
@@ -101,6 +101,85 @@ export function buildBookingPayload(
     preferredLanguage,
     totalPrice,
   };
+}
+
+/**
+ * W1.6 — month-cached availability-range lookup for the booking calendars.
+ *
+ * Semantics (on-demand inventory model): empty inventory = available; only
+ * explicit blackouts (API `available:false`) dim a day. When every loaded day
+ * is available the calendar renders exactly as before — no dots, no scarcity
+ * UI. Fetches run per visible month with an in-flight AbortController; any
+ * failure falls back to the current behaviour (all days selectable).
+ */
+export function useAvailabilityRange(tourId: string | undefined, enabled: boolean) {
+  const [unavailableYmd, setUnavailableYmd] = useState<Record<string, true>>({});
+  const loadedMonthsRef = useRef<Set<string>>(new Set());
+  const abortRef = useRef<AbortController | null>(null);
+
+  const loadMonth = useCallback(
+    (monthDate: Date) => {
+      if (!tourId) return;
+      const key = `${monthDate.getFullYear()}-${monthDate.getMonth()}`;
+      if (loadedMonthsRef.current.has(key)) return;
+      loadedMonthsRef.current.add(key);
+      const start = new Date(monthDate.getFullYear(), monthDate.getMonth(), 1);
+      const end = new Date(monthDate.getFullYear(), monthDate.getMonth() + 1, 0);
+      const ctrl = new AbortController();
+      abortRef.current = ctrl;
+      void (async () => {
+        try {
+          const res = await fetch(
+            `/api/tours/${tourId}/availability/range?startDate=${ymdFromLocalDate(start)}&endDate=${ymdFromLocalDate(end)}`,
+            { signal: ctrl.signal },
+          );
+          if (!res.ok) {
+            loadedMonthsRef.current.delete(key);
+            return;
+          }
+          const data = (await res.json()) as {
+            availability?: Record<string, { available?: boolean }>;
+          };
+          const blocked: string[] = [];
+          for (const [d, v] of Object.entries(data.availability ?? {})) {
+            if (v && v.available === false) blocked.push(d);
+          }
+          if (blocked.length > 0) {
+            setUnavailableYmd((prev) => {
+              const next = { ...prev };
+              for (const d of blocked) next[d] = true;
+              return next;
+            });
+          }
+        } catch {
+          loadedMonthsRef.current.delete(key);
+        }
+      })();
+    },
+    [tourId],
+  );
+
+  // First load waits for idle time after the calendar becomes relevant so it
+  // never competes with hydration or the drawer-open animation.
+  useEffect(() => {
+    if (!enabled || !tourId) return;
+    const kick = () => loadMonth(new Date());
+    if (typeof window.requestIdleCallback === "function") {
+      const id = window.requestIdleCallback(kick, { timeout: 2000 });
+      return () => window.cancelIdleCallback(id);
+    }
+    const t = window.setTimeout(kick, 50);
+    return () => window.clearTimeout(t);
+  }, [enabled, tourId, loadMonth]);
+
+  useEffect(() => () => abortRef.current?.abort(), []);
+
+  const isYmdUnavailable = useCallback(
+    (ymd: string) => unavailableYmd[ymd] === true,
+    [unavailableYmd],
+  );
+
+  return { isYmdUnavailable, loadMonth };
 }
 
 /** Static VM price → USD (DB/checkout contract). */
