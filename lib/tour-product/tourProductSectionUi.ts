@@ -116,6 +116,23 @@ export type TourProductSectionUiV1 = {
    * active. Never paired with a per-person conversion (pricing surface rule).
    */
   priceGroupRateLabel?: string;
+  /** Rate-card sheet (single rates surface, §F-8 grammar ②). */
+  ratesSheetTitle?: string;
+  ratesGroupSizeLabel?: string;
+  ratesPriceLabel?: string;
+  /** `{unit}` placeholder — e.g. "Per vehicle". */
+  ratesPerUnitTemplate?: string;
+  /** `{pax}` and `{amount}` placeholders. */
+  ratesExtraPaxTemplate?: string;
+  ratesAvailabilityNote?: string;
+  /** `{price}` placeholder — the fixed "From" entry-point label. */
+  ratesFromTemplate?: string;
+  ratesViewFullLabel?: string;
+  ratesYourSelectionLabel?: string;
+  /** `{count}` placeholder — bare party-size phrase ("2 guests"). */
+  guestsCountTemplate?: string;
+  /** `{count}` placeholder — singular variant ("1 guest"). */
+  guestsCountSingularTemplate?: string;
 };
 
 export const DEFAULT_TOUR_PRODUCT_SECTION_UI_EN: TourProductSectionUiV1 = {
@@ -196,6 +213,17 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_EN: TourProductSectionUiV1 = {
   pickupMapDirectionsLabel: "View on Google Maps",
   priceTotalForGuestsTemplate: "Total for {count} guests",
   priceGroupRateLabel: "Group rate",
+  ratesSheetTitle: "Rate card",
+  ratesGroupSizeLabel: "Group size",
+  ratesPriceLabel: "Price",
+  ratesPerUnitTemplate: "Per {unit}",
+  ratesExtraPaxTemplate: "{pax}+ guests: +${amount} per extra guest",
+  ratesAvailabilityNote: "Pick a date and group size to confirm the live total.",
+  ratesFromTemplate: "From {price}",
+  ratesViewFullLabel: "View full rate card",
+  ratesYourSelectionLabel: "Your selection",
+  guestsCountTemplate: "{count} guests",
+  guestsCountSingularTemplate: "{count} guest",
 };
 
 /** 정적 번들 한국어 — DB `detail_payload.sectionUi` 없을 때 Jeju 등에서 사용 */
@@ -284,6 +312,17 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_KO: TourProductSectionUiV1 = {
   pickupMapDirectionsLabel: "Google Maps에서 보기",
   priceTotalForGuestsTemplate: "{count}명 합계",
   priceGroupRateLabel: "그룹 요금",
+  ratesSheetTitle: "요금표",
+  ratesGroupSizeLabel: "인원",
+  ratesPriceLabel: "요금",
+  ratesPerUnitTemplate: "{unit} 기준",
+  ratesExtraPaxTemplate: "{pax}명 이상: 1명당 +${amount}",
+  ratesAvailabilityNote: "날짜와 인원을 선택하면 실시간 총액을 확인할 수 있어요.",
+  ratesFromTemplate: "최저 {price}",
+  ratesViewFullLabel: "전체 요금표 보기",
+  ratesYourSelectionLabel: "현재 선택",
+  guestsCountTemplate: "{count}명",
+  guestsCountSingularTemplate: "{count}명",
 };
 
 /** 정적 번들 日本語 */
@@ -372,6 +411,17 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_JA: TourProductSectionUiV1 = {
   pickupMapDirectionsLabel: "Google Mapsで見る",
   priceTotalForGuestsTemplate: "{count}名様の合計",
   priceGroupRateLabel: "グループ料金",
+  ratesSheetTitle: "料金表",
+  ratesGroupSizeLabel: "人数",
+  ratesPriceLabel: "料金",
+  ratesPerUnitTemplate: "{unit}あたり",
+  ratesExtraPaxTemplate: "{pax}名以上: 1名につき+${amount}",
+  ratesAvailabilityNote: "日付と人数を選ぶと、リアルタイムの合計を確認できます。",
+  ratesFromTemplate: "最低 {price}",
+  ratesViewFullLabel: "料金表をすべて見る",
+  ratesYourSelectionLabel: "現在の選択",
+  guestsCountTemplate: "{count}名",
+  guestsCountSingularTemplate: "{count}名",
 };
 
 /** 简体中文 UI */
@@ -458,6 +508,17 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_ZH: TourProductSectionUiV1 = {
   pickupMapDirectionsLabel: "在Google Maps中查看",
   priceTotalForGuestsTemplate: "{count}人总价",
   priceGroupRateLabel: "包团价",
+  ratesSheetTitle: "价目表",
+  ratesGroupSizeLabel: "人数",
+  ratesPriceLabel: "价格",
+  ratesPerUnitTemplate: "每{unit}",
+  ratesExtraPaxTemplate: "{pax}人及以上：每加1人 +${amount}",
+  ratesAvailabilityNote: "选择日期和人数即可查看实时总价。",
+  ratesFromTemplate: "{price}起",
+  ratesViewFullLabel: "查看完整价目表",
+  ratesYourSelectionLabel: "当前选择",
+  guestsCountTemplate: "{count}人",
+  guestsCountSingularTemplate: "{count}人",
 };
 
 /** 繁體中文 UI */
@@ -544,6 +605,17 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_ZH_TW: TourProductSectionUiV1 = {
   pickupMapDirectionsLabel: "在Google Maps中查看",
   priceTotalForGuestsTemplate: "{count}人總價",
   priceGroupRateLabel: "包團價",
+  ratesSheetTitle: "價目表",
+  ratesGroupSizeLabel: "人數",
+  ratesPriceLabel: "價格",
+  ratesPerUnitTemplate: "每{unit}",
+  ratesExtraPaxTemplate: "{pax}人及以上：每加1人 +${amount}",
+  ratesAvailabilityNote: "選擇日期和人數即可查看即時總價。",
+  ratesFromTemplate: "{price}起",
+  ratesViewFullLabel: "查看完整價目表",
+  ratesYourSelectionLabel: "目前選擇",
+  guestsCountTemplate: "{count}人",
+  guestsCountSingularTemplate: "{count}人",
 };
 
 /** UI en español */
@@ -632,6 +704,17 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_ES: TourProductSectionUiV1 = {
   pickupMapDirectionsLabel: "Ver en Google Maps",
   priceTotalForGuestsTemplate: "Total para {count} personas",
   priceGroupRateLabel: "Tarifa por grupo",
+  ratesSheetTitle: "Tarifas",
+  ratesGroupSizeLabel: "Tamaño del grupo",
+  ratesPriceLabel: "Precio",
+  ratesPerUnitTemplate: "Por {unit}",
+  ratesExtraPaxTemplate: "{pax}+ personas: +${amount} por persona extra",
+  ratesAvailabilityNote: "Elige fecha y tamaño del grupo para confirmar el total en vivo.",
+  ratesFromTemplate: "Desde {price}",
+  ratesViewFullLabel: "Ver todas las tarifas",
+  ratesYourSelectionLabel: "Tu selección",
+  guestsCountTemplate: "{count} personas",
+  guestsCountSingularTemplate: "{count} persona",
 };
 
 function pickSectionUiKeys(raw: unknown): Partial<TourProductSectionUiV1> {

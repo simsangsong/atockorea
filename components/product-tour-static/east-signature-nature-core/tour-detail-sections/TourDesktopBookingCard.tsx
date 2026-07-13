@@ -74,6 +74,8 @@ export type TourDesktopBookingCardProps = Pick<EastSignatureNatureCoreDetailView
   /** Deep-link seeding — `?date=`/`?language=` from the URL pre-fill the card. */
   seedDateYmd?: string;
   seedLanguage?: PreferredLanguage;
+  /** Opens the single rate-card sheet (W1.5 — matrix moved out of the card). */
+  onOpenRatesSheet?: () => void;
 };
 
 /**
@@ -90,6 +92,7 @@ export function TourDesktopBookingCard({
   initialGuests,
   seedDateYmd,
   seedLanguage,
+  onOpenRatesSheet,
 }: TourDesktopBookingCardProps) {
   const portCtaPrefix = sectionUi?.portSelectorCtaPrefix ?? "Docking at";
   const router = useRouter();
@@ -404,55 +407,32 @@ export function TourDesktopBookingCard({
               </div>
             </div>
           )}
-          {/* Matrix scrolls horizontally so all duration columns stay reachable. */}
-          <div className="overflow-x-auto rounded-xl border border-slate-200/70 bg-white scrollbar-none">
-            <table className="w-full min-w-max text-[12px]">
-              <thead className="bg-slate-100/70 text-[10.5px] uppercase tracking-wide text-muted-foreground">
-                <tr>
-                  <th className="px-2.5 py-1.5 text-left font-semibold">Group size</th>
-                  {pricingTiers.durations.map((d) => (
-                    <th key={d} className="px-2.5 py-1.5 text-right font-semibold">
-                      {pricingTiers.durations.length === 1 ? "Price" : d}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {pricingTiers.tiers.map((tr) => {
-                  const isMatchedPax = guestCount >= tr.paxMin && guestCount <= tr.paxMax;
-                  return (
-                    <tr key={tr.paxLabel} className={isMatchedPax ? "bg-amber-50/70" : ""}>
-                      <td className="px-2.5 py-1.5 font-medium text-foreground">
-                        {tr.paxLabel}
-                      </td>
-                      {pricingTiers.durations.map((d) => {
-                        const v = tr.prices[d];
-                        const isMatched = isMatchedPax && d === selectedDuration;
-                        return (
-                          <td
-                            key={d}
-                            className={`px-2.5 py-1.5 text-right tabular-nums ${
-                              isMatched ? "font-bold text-foreground" : "text-foreground"
-                            }`}
-                          >
-                            {typeof v === "number" ? `$${v}` : "—"}
-                          </td>
-                        );
-                      })}
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
+          {/* Current-selection summary — the full matrix lives in the single
+              rates sheet (price SoT, §F-8 grammar ②). */}
+          <div className="flex items-center justify-between gap-2 rounded-xl border border-slate-200/70 bg-white px-3 py-2">
+            <div className="min-w-0">
+              <span className="block text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
+                {sectionUi?.ratesYourSelectionLabel ?? "Your selection"}
+              </span>
+              <p className="truncate text-[13px] font-semibold tabular-nums text-foreground">
+                {(guestCount === 1
+                  ? (sectionUi?.guestsCountSingularTemplate ?? "{count} guest")
+                  : (sectionUi?.guestsCountTemplate ?? "{count} guests")
+                ).replace("{count}", String(guestCount))}
+                {selectedDuration ? ` · ${selectedDuration}` : ""}
+                {ctaUnitFormatted ? ` — ${ctaUnitFormatted}` : ""}
+              </p>
+            </div>
+            {onOpenRatesSheet ? (
+              <button
+                type="button"
+                onClick={onOpenRatesSheet}
+                className="shrink-0 rounded-full px-2.5 py-1 text-[11.5px] font-semibold text-foreground underline decoration-slate-300 underline-offset-4 transition hover:decoration-foreground"
+              >
+                {sectionUi?.ratesViewFullLabel ?? "View full rate card"}
+              </button>
+            ) : null}
           </div>
-          {pricingTiers.extraPerPaxAbove ? (
-            <p className="mt-2 text-[10.5px] text-muted-foreground">
-              {pricingTiers.extraPerPaxAbove.anchorPax + 1}+ pax: +${pricingTiers.extraPerPaxAbove.perPaxAdd} per extra guest
-            </p>
-          ) : null}
-          <p className="mt-2 text-[10.5px] text-muted-foreground">
-            Per {pricingTiers.unit} · price updates with the guest count below
-          </p>
         </div>
       )}
 
