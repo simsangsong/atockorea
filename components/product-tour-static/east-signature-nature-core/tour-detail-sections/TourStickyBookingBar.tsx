@@ -328,8 +328,10 @@ export function TourStickyBookingBar({ price, checkout, selectedPortLabel, secti
     void goToCheckout();
   };
 
+  /** G-2 — CTA accent = amber (home v2 accent anchor, plan §G recommendation).
+   *  Flip to brand blue by swapping the two amber utilities here + card CTA. */
   const btnClass =
-    "inline-flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-semibold transition-all outline-none focus-visible:border focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 bg-foreground text-white hover:bg-foreground/90 shadow-md sm:shadow-lg sm:hover:shadow-xl";
+    "inline-flex shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-semibold transition-all outline-none focus-visible:border focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 bg-amber-700 text-white hover:bg-amber-800 shadow-md sm:shadow-lg sm:hover:shadow-xl";
 
   const spacerClass = drawerOpen
     ? "h-[calc(20rem+env(safe-area-inset-bottom,0px))] sm:h-[min(68vh,26rem)]"
@@ -499,7 +501,7 @@ export function TourStickyBookingBar({ price, checkout, selectedPortLabel, secti
                             aria-pressed={selectedDuration === d}
                             className={`shrink-0 rounded-full px-3 py-1 text-xs font-semibold ring-1 transition-colors ${
                               selectedDuration === d
-                                ? "bg-foreground text-white ring-foreground"
+                                ? "bg-amber-700 text-white ring-amber-700"
                                 : "bg-white text-muted-foreground ring-slate-200 hover:text-foreground"
                             }`}
                           >
