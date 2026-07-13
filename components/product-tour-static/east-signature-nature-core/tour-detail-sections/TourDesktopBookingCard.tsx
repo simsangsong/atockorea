@@ -414,7 +414,7 @@ export function TourDesktopBookingCard({
                     aria-pressed={selectedDuration === d}
                     className={`shrink-0 rounded-full px-3 py-1 text-xs font-semibold ring-1 transition-colors ${
                       selectedDuration === d
-                        ? "bg-foreground text-white ring-foreground"
+                        ? "bg-amber-700 text-white ring-amber-700"
                         : "bg-white text-muted-foreground ring-slate-200 hover:text-foreground"
                     }`}
                   >
@@ -558,7 +558,7 @@ export function TourDesktopBookingCard({
         onClick={goToCheckout}
         disabled={ctaDisabled}
         title={!canBook ? "Tour checkout is not linked yet (missing tours row or env)." : undefined}
-        className="inline-flex h-11 w-full shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-xl bg-foreground text-[15px] font-semibold text-white shadow-md transition-all outline-none hover:bg-foreground/90 hover:shadow-lg focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50"
+        className="inline-flex h-11 w-full shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-xl bg-amber-700 text-[15px] font-semibold text-white shadow-md transition-all outline-none hover:bg-amber-800 hover:shadow-lg focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50"
       >
         {ctaLabel}
       </button>
