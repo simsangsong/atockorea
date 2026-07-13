@@ -106,6 +106,16 @@ export type TourProductSectionUiV1 = {
   /** Included / Not-included group labels in the Included section. */
   includedLabel?: string;
   notIncludedLabel?: string;
+  /**
+   * Party-aware price labels (booking bar/card). `{count}` placeholder.
+   * Tiered (per-person) products: eyebrow/total line for parties >1.
+   */
+  priceTotalForGuestsTemplate?: string;
+  /**
+   * Flat-rate (per-group) products: eyebrow shown while the live tier quote is
+   * active. Never paired with a per-person conversion (pricing surface rule).
+   */
+  priceGroupRateLabel?: string;
 };
 
 export const DEFAULT_TOUR_PRODUCT_SECTION_UI_EN: TourProductSectionUiV1 = {
@@ -184,6 +194,8 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_EN: TourProductSectionUiV1 = {
   pickupMapTitle: "Pickup locations",
   pickupMapSubtitle: "Tap a stop on the map or a card below for directions and photos.",
   pickupMapDirectionsLabel: "View on Google Maps",
+  priceTotalForGuestsTemplate: "Total for {count} guests",
+  priceGroupRateLabel: "Group rate",
 };
 
 /** 정적 번들 한국어 — DB `detail_payload.sectionUi` 없을 때 Jeju 등에서 사용 */
@@ -270,6 +282,8 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_KO: TourProductSectionUiV1 = {
   pickupMapTitle: "픽업 위치",
   pickupMapSubtitle: "지도에서 또는 아래 카드를 탭하면 길찾기와 사진을 볼 수 있습니다.",
   pickupMapDirectionsLabel: "Google Maps에서 보기",
+  priceTotalForGuestsTemplate: "{count}명 합계",
+  priceGroupRateLabel: "그룹 요금",
 };
 
 /** 정적 번들 日本語 */
@@ -356,6 +370,8 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_JA: TourProductSectionUiV1 = {
   pickupMapTitle: "乗車場所",
   pickupMapSubtitle: "地図またはカードをタップして経路と写真をご確認ください。",
   pickupMapDirectionsLabel: "Google Mapsで見る",
+  priceTotalForGuestsTemplate: "{count}名様の合計",
+  priceGroupRateLabel: "グループ料金",
 };
 
 /** 简体中文 UI */
@@ -440,6 +456,8 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_ZH: TourProductSectionUiV1 = {
   pickupMapTitle: "接送地点",
   pickupMapSubtitle: "在地图或下方卡片上点击，可查看路线和照片。",
   pickupMapDirectionsLabel: "在Google Maps中查看",
+  priceTotalForGuestsTemplate: "{count}人总价",
+  priceGroupRateLabel: "包团价",
 };
 
 /** 繁體中文 UI */
@@ -524,6 +542,8 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_ZH_TW: TourProductSectionUiV1 = {
   pickupMapTitle: "接送地點",
   pickupMapSubtitle: "在地圖或下方卡片上點擊，可查看路線和照片。",
   pickupMapDirectionsLabel: "在Google Maps中查看",
+  priceTotalForGuestsTemplate: "{count}人總價",
+  priceGroupRateLabel: "包團價",
 };
 
 /** UI en español */
@@ -610,6 +630,8 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_ES: TourProductSectionUiV1 = {
   pickupMapTitle: "Puntos de recogida",
   pickupMapSubtitle: "Toca un punto en el mapa o una tarjeta para ver la ruta y fotos.",
   pickupMapDirectionsLabel: "Ver en Google Maps",
+  priceTotalForGuestsTemplate: "Total para {count} personas",
+  priceGroupRateLabel: "Tarifa por grupo",
 };
 
 function pickSectionUiKeys(raw: unknown): Partial<TourProductSectionUiV1> {

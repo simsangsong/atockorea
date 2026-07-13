@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import dynamic from "next/dynamic";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useDragControls } from "framer-motion";
 import { enUS } from "date-fns/locale/en-US";
 
 /** See TourDesktopBookingCard for the rationale on deferring react-datepicker. */
@@ -98,6 +98,9 @@ export function TourStickyBookingBar({ price, checkout, selectedPortLabel, secti
   const [selectedDuration, setSelectedDuration] = useState<string | null>(
     pricingTiers && pricingTiers.durations.length > 0 ? pricingTiers.durations[0]! : null,
   );
+  /** Swipe-down dismiss (W1.7) — drag starts only from the grab handle so the
+   *  drawer's inner scroll area keeps native touch scrolling. */
+  const drawerDragControls = useDragControls();
 
   /** Match the active tier by guestCount; scale linearly via extraPerPaxAbove when overflow. */
   const tierPriceUsd = useMemo(() => {
@@ -230,6 +233,21 @@ export function TourStickyBookingBar({ price, checkout, selectedPortLabel, secti
         ? "vehicle"
         : price.per;
 
+  /**
+   * Party-aware price eyebrow (W1.3). Tiered per-person products headline the
+   * party total ("Total for N guests"); flat-rate charter products label the
+   * live tier quote ("Group rate · 6h") with no per-person conversion —
+   * pricing surface rule. Everything else keeps the "From" floor label.
+   */
+  const groupRateActive = tierPriceUsd != null && checkout?.priceType !== "person";
+  const groupRateEyebrow = `${sectionUi?.priceGroupRateLabel ?? "Group rate"}${
+    pricingTiers && pricingTiers.durations.length > 1 && selectedDuration ? ` · ${selectedDuration}` : ""
+  }`;
+  const partyTotalEyebrow = (sectionUi?.priceTotalForGuestsTemplate ?? "Total for {count} guests").replace(
+    "{count}",
+    String(guestCount),
+  );
+
   const estimatedTotalFormatted =
     estimatedTotal != null && currencyCtx
       ? currencyCtx.formatPrice(estimatedTotal)
@@ -347,8 +365,23 @@ export function TourStickyBookingBar({ price, checkout, selectedPortLabel, secti
               animate={{ maxHeight: 520, opacity: 1 }}
               exit={{ maxHeight: 0, opacity: 0 }}
               transition={{ duration: 0.28, ease: drawerEase }}
+              drag="y"
+              dragListener={false}
+              dragControls={drawerDragControls}
+              dragConstraints={{ top: 0, bottom: 0 }}
+              dragElastic={{ top: 0, bottom: 0.6 }}
+              onDragEnd={(_, info) => {
+                if (info.offset.y > 72 || info.velocity.y > 600) setDrawerOpen(false);
+              }}
               className="tour-booking-drawer-panel pointer-events-auto overflow-hidden border-t border-border/90 shadow-[0_-16px_48px_rgba(26,35,50,0.14)] backdrop-blur-md"
             >
+              <div
+                className="flex cursor-grab touch-none items-center justify-center pb-0.5 pt-2 active:cursor-grabbing"
+                onPointerDown={(e) => drawerDragControls.start(e)}
+                aria-hidden
+              >
+                <span className="h-1 w-9 rounded-full bg-slate-300/90" />
+              </div>
               <div className="mx-auto flex max-h-[min(62vh,520px)] w-full max-w-3xl flex-col overflow-hidden">
                 <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-3 py-2.5 sm:px-5">
                   <div className="mb-2 flex items-start justify-between gap-2">
@@ -529,10 +562,12 @@ export function TourStickyBookingBar({ price, checkout, selectedPortLabel, secti
                   <span className="truncate">{selectedPortLabel}</span>
                 </p>
               ) : null}
-              <p className="text-[10px] font-medium tracking-wide text-muted-foreground">
+              <p className="truncate text-[10px] font-medium tracking-wide text-muted-foreground">
                 {estimatedTotalFormatted && checkout?.priceType === "person" && guestCount > 1
-                  ? `Total · ${guestCount} guests`
-                  : "From"}
+                  ? partyTotalEyebrow
+                  : groupRateActive
+                    ? groupRateEyebrow
+                    : "From"}
               </p>
               {showOriginalPrice && ctaOriginalFormatted ? (
                 <div className="mb-0.5 flex items-center gap-1.5 leading-none">

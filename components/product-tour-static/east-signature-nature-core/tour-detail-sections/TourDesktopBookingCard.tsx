@@ -245,6 +245,20 @@ export function TourDesktopBookingCard({
         ? "vehicle"
         : price.per;
 
+  /**
+   * Party-aware price eyebrow (W1.3) — mirrors TourStickyBookingBar. Flat-rate
+   * charter quotes are labelled "Group rate · 6h" (no per-person conversion);
+   * per-person parties >1 get "Total for N guests" on the total line.
+   */
+  const groupRateActive = tierPriceUsd != null && checkout?.priceType !== "person";
+  const groupRateEyebrow = `${sectionUi?.priceGroupRateLabel ?? "Group rate"}${
+    pricingTiers && pricingTiers.durations.length > 1 && selectedDuration ? ` · ${selectedDuration}` : ""
+  }`;
+  const partyTotalLabel = (sectionUi?.priceTotalForGuestsTemplate ?? "Total for {count} guests").replace(
+    "{count}",
+    String(guestCount),
+  );
+
   const estimatedTotalFormatted =
     estimatedTotal != null && currencyCtx
       ? currencyCtx.formatPrice(estimatedTotal)
@@ -329,7 +343,7 @@ export function TourDesktopBookingCard({
           </p>
         ) : null}
         <p className="text-[10.5px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
-          {t("tour.stickyPriceFrom")}
+          {groupRateActive ? groupRateEyebrow : t("tour.stickyPriceFrom")}
         </p>
         {showOriginalPrice && ctaOriginalFormatted ? (
           <div className="mt-0.5 flex items-center gap-2">
@@ -356,9 +370,9 @@ export function TourDesktopBookingCard({
         ) : null}
         {estimatedTotal != null && checkout?.priceType === "person" && estimatedTotalFormatted && guestCount > 1 && (
           <p className="mt-0.5 text-[12px] text-muted-foreground tabular-nums">
+            {partyTotalLabel}
+            {": "}
             <span className="font-semibold text-foreground">{estimatedTotalFormatted}</span>
-            {" · "}
-            {guestCount} guests
           </p>
         )}
       </div>
