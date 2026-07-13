@@ -35,6 +35,7 @@ import {
   Wallet,
 } from "lucide-react";
 import { toast } from "sonner";
+import { trackEvent } from "@/src/design/analytics";
 import type { EastSignatureNatureCoreDetailViewModel } from "../eastSignatureNatureCoreDetailViewModel";
 import type { TourProductCheckoutContext } from "@/lib/tour-product/eastSignatureCheckoutContext";
 import type { TourProductSectionUiV1 } from "@/lib/tour-product/tourProductSectionUi";
@@ -53,6 +54,7 @@ import {
   initialDateYmd,
   parseListUnitUsd,
   todayYmdLocal,
+  useAvailabilityRange,
   ymdFromLocalDate,
   ymdToLocalDate,
 } from "@/components/product-tour-static/_shared/bookingShared";
@@ -111,6 +113,19 @@ export function TourDesktopBookingCard({
   const [selectedDuration, setSelectedDuration] = useState<string | null>(
     pricingTiers && pricingTiers.durations.length > 0 ? pricingTiers.durations[0]! : null,
   );
+  /** W1.6 — the right-rail calendar is visible on lg+ only; the card is still
+   *  MOUNTED (CSS-hidden) on mobile, so gate the blackout fetch on the lg
+   *  breakpoint or every mobile pageview would pay a wasted range request.
+   *  On lg+ it starts post-hydration on idle; month-cached, silent fallback. */
+  const [railVisible, setRailVisible] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1024px)");
+    const update = () => setRailVisible(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+  const { isYmdUnavailable, loadMonth } = useAvailabilityRange(checkout?.tourId, railVisible);
 
   /**
    * For private/charter products with `pricingTiers`, resolve the matched tier
@@ -178,6 +193,7 @@ export function TourDesktopBookingCard({
             spots: typeof data.availableSpots === "number" ? data.availableSpots : null,
             priceUsd: typeof data.price === "number" && data.price > 0 ? data.price : null,
           });
+          trackEvent("pd_availability_ok", { tourId: checkout.tourId, surface: "card" });
         }
       } catch {
         if (!cancelled) setAvailability({ status: "idle" });
@@ -285,6 +301,7 @@ export function TourDesktopBookingCard({
     }
     setBusy(true);
     try {
+      trackEvent("pd_cta_click", { tourId: checkout.tourId, surface: "card" });
       const payload = buildBookingPayload(checkout, dateYmd, guestCount, preferredLanguage);
       sessionStorage.setItem("bookingData", JSON.stringify(payload));
       router.push(consumerTourCheckoutHref(checkout.tourId));
@@ -441,13 +458,18 @@ export function TourDesktopBookingCard({
         <DatePicker
           selected={selectedDate}
           onChange={(d) => {
-            if (d) setDateYmd(ymdFromLocalDate(d));
+            if (d) {
+              setDateYmd(ymdFromLocalDate(d));
+              trackEvent("pd_date_set", { tourId: checkout?.tourId ?? null, surface: "card" });
+            }
           }}
           minDate={minDateObj}
           inline
           monthsShown={1}
           calendarClassName="premium-booking-datepicker"
           locale={datePickerLocale}
+          filterDate={(date) => !isYmdUnavailable(ymdFromLocalDate(date))}
+          onMonthChange={loadMonth}
           dayClassName={(date) => (isSameDay(date, selectedDate) ? "premium-cal-day-selected-exact" : "")}
         />
       </div>

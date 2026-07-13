@@ -29,6 +29,7 @@ import {
   X,
 } from "lucide-react";
 import { toast } from "sonner";
+import { trackEvent } from "@/src/design/analytics";
 import type { EastSignatureNatureCoreDetailViewModel } from "../eastSignatureNatureCoreDetailViewModel";
 import type { TourProductCheckoutContext } from "@/lib/tour-product/eastSignatureCheckoutContext";
 import type { TourProductSectionUiV1 } from "@/lib/tour-product/tourProductSectionUi";
@@ -48,6 +49,7 @@ import {
   initialDateYmd,
   parseListUnitUsd,
   todayYmdLocal,
+  useAvailabilityRange,
   ymdFromLocalDate,
   ymdToLocalDate,
 } from "@/components/product-tour-static/_shared/bookingShared";
@@ -101,6 +103,9 @@ export function TourStickyBookingBar({ price, checkout, selectedPortLabel, secti
   /** Swipe-down dismiss (W1.7) — drag starts only from the grab handle so the
    *  drawer's inner scroll area keeps native touch scrolling. */
   const drawerDragControls = useDragControls();
+  /** W1.6 — explicit blackouts dim in the calendar; fetch starts on first
+   *  drawer open (idle), month-cached, silent fallback on failure. */
+  const { isYmdUnavailable, loadMonth } = useAvailabilityRange(checkout?.tourId, drawerOpen);
 
   /** Match the active tier by guestCount; scale linearly via extraPerPaxAbove when overflow. */
   const tierPriceUsd = useMemo(() => {
@@ -163,6 +168,7 @@ export function TourStickyBookingBar({ price, checkout, selectedPortLabel, secti
             spots: typeof data.availableSpots === "number" ? data.availableSpots : null,
             priceUsd: typeof data.price === "number" && data.price > 0 ? data.price : null,
           });
+          trackEvent("pd_availability_ok", { tourId: checkout.tourId, surface: "sticky" });
         }
       } catch {
         if (!cancelled) setAvailability({ status: "idle" });
@@ -271,6 +277,7 @@ export function TourStickyBookingBar({ price, checkout, selectedPortLabel, secti
     }
     setBusy(true);
     try {
+      trackEvent("pd_cta_click", { tourId: checkout.tourId, surface: "sticky" });
       const payload = buildBookingPayload(checkout, dateYmd, guestCount, preferredLanguage);
       sessionStorage.setItem("bookingData", JSON.stringify(payload));
       router.push(consumerTourCheckoutHref(checkout.tourId));
@@ -315,6 +322,7 @@ export function TourStickyBookingBar({ price, checkout, selectedPortLabel, secti
     if (!canBook || busy) return;
     if (!drawerOpen) {
       setDrawerOpen(true);
+      trackEvent("pd_drawer_open", { tourId: checkout?.tourId ?? null });
       return;
     }
     void goToCheckout();
@@ -458,13 +466,18 @@ export function TourStickyBookingBar({ price, checkout, selectedPortLabel, secti
                     <DatePicker
                       selected={selectedDate}
                       onChange={(d) => {
-                        if (d) setDateYmd(ymdFromLocalDate(d));
+                        if (d) {
+                          setDateYmd(ymdFromLocalDate(d));
+                          trackEvent("pd_date_set", { tourId: checkout?.tourId ?? null, surface: "sticky" });
+                        }
                       }}
                       minDate={minDateObj}
                       inline
                       monthsShown={1}
                       calendarClassName="premium-booking-datepicker"
                       locale={datePickerLocale}
+                      filterDate={(date) => !isYmdUnavailable(ymdFromLocalDate(date))}
+                      onMonthChange={loadMonth}
                       dayClassName={(date) =>
                         isSameDay(date, selectedDate) ? "premium-cal-day-selected-exact" : ""
                       }

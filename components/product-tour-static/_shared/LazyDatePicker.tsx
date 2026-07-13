@@ -31,6 +31,9 @@ export type LazyDatePickerProps = {
   calendarClassName?: string;
   locale?: unknown;
   dayClassName?: (date: Date) => string;
+  /** W1.6 — availability-range integration (blackout dim + month-cached fetch). */
+  filterDate?: (date: Date) => boolean;
+  onMonthChange?: (date: Date) => void;
 };
 
 const LazyDatePicker = DatePicker as unknown as ComponentType<LazyDatePickerProps>;
