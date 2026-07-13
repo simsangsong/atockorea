@@ -5,6 +5,8 @@
 리뷰: `docs/tour-product-detail-ui-ux-audit-review-2026-05-17.md` (Codex 의견)
 대상 페이지: `app/tour-product/[slug]/page.tsx`
 
+> **2026-07-12 확장**: 실행 로드맵은 `docs/tour-product-detail-highend-leap-master-plan-2026-07-12.md` (하이엔드 도약 플랜)로 확장됨. 이 문서의 §B 바인딩·§6 가드레일은 그대로 유효하며, Sprint 1~4 티켓은 그 플랜의 Wave 1/2/4에 흡수되어 실행된다.
+
 ---
 
 ## §A 상태 대시보드
@@ -35,6 +37,9 @@
 | 2026-05-17 | §6.1 — 토큰 enforcement: ESLint warn + PR template + single source of truth | dead token 방지 가드 |
 | 2026-05-17 | §6.3 — 다국어 5종 LCP 회귀 가드 (CTA/Hero overlay PR) | 일/한자 폭 vs 영문 mismatch |
 | 2026-05-17 | §6.8 — Scroll freeze 가드: 새 motion 추가 금지, backdrop blur stack 금지, IntersectionObserver layout read 금지 | 사용자 보고 freeze 재발 방지 |
+| 2026-07-13 | **§B-P2 — 컴팩트 최우선 (사용자 직접 지시)**: 정보과밀·나열 과다·첫눈 피로 레이아웃 금지. §2.3의 "아코디언 해제→first-fold 정보량 +60%"는 **노출 극대화가 아니라 3-tier 계층으로 재해석** — 확신 정보(포함/불포함·Fit 전량·FAQ 상위)는 클릭 0회 노출 사수, 참조 정보(픽업 전체 리스트·요금 매트릭스·Route logic)만 접기. 섹션 17→12 병합 | 사용자 지시 2026-07-13. 실행 상세 = 하이엔드 도약 플랜 v2 §F/§I |
+| 2026-07-13 | **§B-P3 — 흑백/단색화 금지 (사용자 직접 지시)**: §2.1 색 다이어트는 유지하되 집행 형태 수정 — "웜 아이보리 지면+잉크+앰버 주 액센트+에디토리얼 존(화보·이슈넘버 코퍼/로즈) 예외+시맨틱 2색+사진이 크로마 주공급원". 잉크+단일액센트 3-hue 구조 기각. CTA·활성상태 무채색 금지(토큰 차단), no-gray-only-section 체크리스트 | 사용자 지시 2026-07-13. §2.1의 "CTA=bg-primary #2e5c8a"는 앰버 계열로 변경 게이트 대기(도약 플랜 §G-2) |
+| 2026-07-13 | **§B-P4 — 색 시스템 최종형 "Rich but Harmonized" (사용자 2차 보강 지시)**: §B-P3의 "앰버 주 액센트" 집행형과 **§2.1의 "17→5 강제"를 함께 폐기** — "색채가 좀 섞여도 괜찮다, 흑백·단색만 지양"이 최종 지시. hue 수 감축 목표 삭제(6색 At-a-Glance·4계절 4색·5색 서포트 유지), 대신 조화 규율 4개(큐레이션 팔레트 토큰·틴트 3단 공식·효과 스택 ≤1·의미 고정)를 강제. 상세 = 도약 플랜 v2 §F-6 | 사용자 지시 2026-07-13. §2.1 색상 다이어트 바인딩은 이 행으로 대체됨 |
 | 2026-05-18 | **§B-P1 — Premium feel은 항상 위로만, 절대 downgrade 금지** | User 직접 지시 2026-05-18. **모든 권고/실행은 "more premium" 방향이어야 함. 절제(restraint)는 premium의 표현이지 cheap의 표현이 아님 — 단순화·통일·flat 변경도 Apple/Airbnb/Hermès 같은 글로벌 premium 수준에서 합리화 가능해야 적용. "단순해졌다 = 가난해졌다"로 읽히면 거부.** 회색 단색 권고가 premium-cheaper 회색이 아닌 premium-disciplined slate-900인지 매 변경마다 자체 검증. 색을 빼는 변경은 그 자리에 *더 정확한 시각 가중치* (typography hierarchy / spacing / photo size / shadow tier)가 들어가야 함. |
 
 ## §C 변경 로그
@@ -46,6 +51,9 @@
 | 2026-05-23 | **별도 트랙 개시 — 픽업/드롭오프/날씨 데이터 정합성**: `docs/pickup-dropoff-weather-data-correctness-plan-2026-05-23.md` | — | User 보고(픽업/드롭오프 "중구난방"). 비주얼 Sprint와 별개의 데이터+i18n 버그 수정 트랙: 지도 핀 좌표, "Hotel pickup"→"N pickup points", 타임라인 드롭오프 중복, 날씨 앵커→대표명소, 하드코딩 영어 6로케일. Sprint 1-4 비주얼 작업과 충돌 없음(데이터/카피 레이어). |
 | 2026-06-22 | **프라이빗 차터 시간선택(4~10h) + 인원×시간 실시간 가격 — pricingTiers 데이터 채움 + 선택기 스크롤화 (사용자 "프라이빗 투어들에 시간 선택 스크롤 + 인원수·duration 실시간 가격 CTA 옆 반영", "4·5·6·7·8·9·10 다 넣어")** | (이번 commit) | 예약 카드의 duration 선택기+`tierPriceUsd`(인원 tier×시간) 실시간 가격 메커니즘은 이미 존재(Sprint 1) — 차량 차터 프라이빗 중 4개만 `pricingTiers` 보유, **jeju 차터엔 없었음**. `scripts/apply-private-pricing-tiers.mjs`로 **엔진(`pricing-policy.ts`) 도출 매트릭스**를 4개 차터(jeju 추가 + seoul-suburbs·busan·incheon realign)×6 로케일=24 JSON에 주입: durations **4·5·6·7·8·9·10h**(매 시간), tier 세단(1–6)/밴(7–9)/솔라티(10–13), 가격=(ENGLISH_BASE[h]+surcharge)÷1480. diff=pricingTiers 블록만(컨텐츠 무손상; jeju는 순수 +57). 선택기 UI: segmented→**가로 스크롤 pill 행**(7개), 매트릭스 wrapper `overflow-hidden`→`overflow-x-auto`(8열 클립 방지) — 데스크톱+Sticky 양쪽. **DMZ 제외**(엔진 track=dmz=인원 고정가·시간 무관 → 매트릭스 부적합, 별도 처리 필요) + **Nami 제외**(1인당 유지, 사용자 지시). 검증: 24 JSON parse / tsc 0 / lint 0(잔여 6 pre-existing) / build green. ⚠ 라이브 QA + DMZ 후속. |
 
+| 2026-07-13 | **도약 플랜 v2 개정** — 사용자 디렉티브 4개조(컴팩트·전환최우선·정보과밀 금지·흑백화 금지) 반영. 디자인 4렌즈×저지 3심 멀티에이전트 재설계. §B-P2/P3 신설(위) | — | v2가 실행 SoT |
+| 2026-07-12 | **하이엔드 도약 마스터 플랜 v1 작성** — `docs/tour-product-detail-highend-leap-master-plan-2026-07-12.md`. 이 문서의 §B 바인딩 전부 승계, Sprint 1~4는 그 플랜의 Wave 1/2/4에 1:1 흡수(완료 시 양쪽 기록). 신규 scope = 소셜프루프(W3)·초월기능(W5)·측정(W6) | — | 실사 에이전트 3종 + 라이브 페이지 확인 기반 |
+| 2026-07-12 | **사실 수정 (2026-07-12 실사)**: ① Sprint 1~4 미착수 재확인 — 유일 완료는 갤러리 gutter cream→white + gap 2px + 라이트박스 bg-black/80 (Sprint 4 일부 선반영, 썸네일 strip도 제거됨) ② `TourBookingSupportSection.tsx:47-49`에 "5색 유지 — mint 단일화 거부" 주석 존재 → §2.1 색상 다이어트와 충돌, 신규 플랜 §G-2 사용자 게이트로 이관 ③ 신규 17번째 섹션 `TourPrivateSampleItinerarySection` 추가됨(copper 다수) — 색상 다이어트 대상에 포함 ④ pricingTiers 매트릭스가 본문+데스크톱 카드 2회 중복 렌더로 가격 중복 악화 | — | 세부는 신규 플랜 §E |
 | 2026-06-24 | **프라이빗 차터 샘플 일정 — Seoul config 샘플 교체 (사용자 "서울 포천, 서울시내, 수원화성 샘플로")** | (이번 commit) | `privateSampleItinerary.ts`의 `seoulConfig()` 샘플을 **포천 / 서울 시내 / 수원화성** 3종으로 교체(기존 서울시내+서울근교 2종 대체). seoul-suburbs + incheon-seoul 프라이빗 차터 양쪽에 적용(공유 config). 스톱은 빈 placeholder 5개씩(import 나중에), 픽업/드롭오프 호텔 디폴트, 불포함(주차·톨·입장·식사) + 외곽 경기 +₩50,000 surcharge 규칙은 기존 유지(포천=외곽 경기로 규칙과 정합). **중복 작업 정리**: 별도 세션에서 같은 기능을 JSON `sampleItineraries` + `TourSampleItinerarySection`으로 병행 구현(branch `claude/private-tour-sample-itinerary-lv0d73`)했으나, main에 이미 config 기반 구현이 머지되어 있어 **중복 구현은 폐기**하고 main 아키텍처에 샘플만 반영. main은 코드-config 방식이라 **DB SQL 불필요**(detail_payload 변경 없음). |
 
 ## §D 보류 / parked
