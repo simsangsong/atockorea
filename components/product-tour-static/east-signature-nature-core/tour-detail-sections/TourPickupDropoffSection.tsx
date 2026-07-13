@@ -124,13 +124,29 @@ export function TourPickupDropoffSection({
 
   return (
     <div className="space-y-5">
-      <div>
-        <h2 className="text-lg font-semibold tracking-tight text-foreground">
-          {sectionUi.pickupDropoffTitle ?? "Pickup & Drop-off"}
-        </h2>
-        <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
-          {sectionUi.pickupDropoffSubtitle ?? "Pickup included. Tap any location for details."}
-        </p>
+      <div className="flex items-start justify-between gap-3">
+        <div>
+          <h2 className="text-lg font-semibold tracking-tight text-foreground">
+            {sectionUi.pickupDropoffTitle ?? "Pickup & Drop-off"}
+          </h2>
+          <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
+            {sectionUi.pickupDropoffSubtitle ?? "Pickup included. Tap any location for details."}
+          </p>
+        </div>
+        {/* W2.2 — return leg of the timeline summary-node jump loop */}
+        <a
+          href="#itinerary"
+          onClick={(e) => {
+            const target = document.getElementById("itinerary");
+            if (target) {
+              e.preventDefault();
+              target.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+          }}
+          className="mt-0.5 shrink-0 whitespace-nowrap text-[11.5px] font-medium text-muted-foreground underline decoration-slate-300 underline-offset-4 transition hover:text-foreground hover:decoration-foreground"
+        >
+          ↑ {sectionUi.pickupBackToItineraryLabel ?? "Back to itinerary"}
+        </a>
       </div>
 
       {/* Unified pickup + drop-off card */}

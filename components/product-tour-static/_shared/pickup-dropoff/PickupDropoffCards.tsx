@@ -1,30 +1,18 @@
 "use client";
 
-import { useMemo, useState } from "react";
-import {
-  Building2,
-  ChevronDown,
-  Clock3,
-  MapPin,
-  Plane,
-  ShoppingBag,
-  Store,
-  TrainFront,
-} from "lucide-react";
+import { useMemo } from "react";
+import { ChevronRight, MapPin } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import type { TourProductSectionUiV1 } from "@/lib/tour-product/tourProductSectionUi";
-import type { PickupDropoffPoint, PickupDropoffSection } from "@/components/product-tour-static/_shared/pickupDropoffTypes";
+import type {
+  PickupDropoffPoint,
+  PickupDropoffSection,
+} from "@/components/product-tour-static/_shared/pickupDropoffTypes";
 
 type PickupDropoffCardsProps = {
   pickupDropoff?: PickupDropoffSection;
   sectionUi: TourProductSectionUiV1;
-};
-
-type PointAccordionProps = {
-  point: PickupDropoffPoint;
-  expandedOrder: number | null;
-  setExpandedOrder: (order: number | null) => void;
 };
 
 function formatTemplate(template: string, count: number): string {
@@ -33,10 +21,8 @@ function formatTemplate(template: string, count: number): string {
 
 function inferReturnBand(notes: string[] | string | undefined): string | null {
   if (!notes?.length) return null;
-  // Some tour rows (e.g. jeju-cruise-shore-excursion-small-group-tour) carry
-  // `notes` as a single string instead of string[] — a latent crash that only
-  // surfaced once the page actually SSR'd (the useSearchParams CSR bailout
-  // used to swallow it at build time).
+  // Some tour rows historically carry `notes` as a single string instead of
+  // string[] — a latent crash that only surfaced once the page actually SSR'd.
   const joined = Array.isArray(notes) ? notes.join(" ") : String(notes);
   const match =
     joined.match(/Return usually runs around\s+([0-9]{1,2}:[0-9]{2}\s*[–-]\s*[0-9]{1,2}:[0-9]{2})/i) ??
@@ -44,76 +30,70 @@ function inferReturnBand(notes: string[] | string | undefined): string | null {
   return match?.[1] ?? null;
 }
 
-function pointTypeIcon(type: string | undefined) {
-  const t = (type ?? "").toLowerCase();
-  if (t === "hotel") return Building2;
-  if (t === "airport") return Plane;
-  if (t === "shopping") return ShoppingBag;
-  if (t === "market") return Store;
-  if (t === "station") return TrainFront;
-  return MapPin;
-}
-
-function PointAccordion({ point, expandedOrder, setExpandedOrder }: PointAccordionProps) {
-  const isExpanded = expandedOrder === point.order;
-  const Icon = pointTypeIcon(point.type);
-
-  return (
-    <div className="rounded-lg border border-border/70 bg-white">
-      <button
-        type="button"
-        onClick={() => setExpandedOrder(isExpanded ? null : point.order)}
-        className="flex w-full items-center justify-between gap-3 px-3.5 py-2.5 text-left"
-      >
-        <div className="min-w-0">
-          <div className="flex items-center gap-2 text-xs text-muted-foreground">
-            {point.time ? <span className="font-semibold text-foreground">{point.time}</span> : null}
-            {point.time ? <span className="text-border">·</span> : null}
-            <span className="truncate">{point.name}</span>
-          </div>
-        </div>
-        <span
-          className={cn(
-            "flex h-6 w-6 items-center justify-center rounded-full bg-muted/60 transition-transform",
-            isExpanded ? "rotate-180 bg-primary/10" : "",
-          )}
-        >
-          <ChevronDown className={cn("h-3.5 w-3.5", isExpanded ? "text-primary" : "text-muted-foreground")} />
-        </span>
-      </button>
-
-      <div className={cn("grid transition-all duration-200", isExpanded ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}>
-        <div className="overflow-hidden">
-          <div className="border-t border-border/70 px-3.5 py-3 text-xs text-muted-foreground">
-            <div className="flex items-start gap-2.5">
-              <Icon className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-primary" />
-              <div className="space-y-1">
-                <p className="text-foreground">{point.name}</p>
-                {point.note ? <p>{point.note}</p> : null}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+/**
+ * W2.2 — the timeline ends carry SUMMARY NODES ONLY. The full pickup /
+ * drop-off listings live once, in the canonical Pickup & Map section
+ * (#pickup-dropoff); these nodes jump there (§F-8 grammar ④, single-source
+ * rule §F-1). This also retires the accordion-in-accordion the old expandable
+ * cards had (§F-4: nesting depth 0).
+ *
+ * The tiny map thumb reuses the EXACT static-map URL the pickup section
+ * loads, so the browser cache serves it — no additional network request.
+ */
+function buildSummaryMapThumbUrl(
+  pickupPoints: PickupDropoffPoint[],
+  dropoffPoints: PickupDropoffPoint[],
+): string | null {
+  const allPoints = [...pickupPoints, ...dropoffPoints];
+  if (!allPoints.some((p) => p.lat && p.lng)) return null;
+  const parts: string[] = [
+    "size=600x280",
+    "scale=2",
+    "maptype=roadmap",
+    "style=feature:poi%7Cvisibility:off",
+    "style=feature:transit%7Cvisibility:off",
+    "style=feature:road.arterial%7Celement:labels.icon%7Cvisibility:off",
+  ];
+  pickupPoints.forEach((p) => {
+    if (p.lat && p.lng) {
+      const label = String(p.order).slice(0, 1);
+      parts.push(`markers=color:0xC8956C%7Clabel:${label}%7C${p.lat},${p.lng}`);
+    }
+  });
+  const pickupCoords = new Set(
+    pickupPoints.filter((p) => p.lat && p.lng).map((p) => `${p.lat},${p.lng}`),
   );
+  dropoffPoints.forEach((p) => {
+    if (p.lat && p.lng && !pickupCoords.has(`${p.lat},${p.lng}`)) {
+      parts.push(`markers=color:0x334155%7Clabel:R%7C${p.lat},${p.lng}`);
+    }
+  });
+  return `/api/maps/static?${parts.join("&")}`;
 }
 
-function PickupCard({
-  pickupPoints,
-  sectionUi,
-  isExpanded,
-  onToggle,
-}: {
-  pickupPoints: PickupDropoffPoint[];
-  sectionUi: TourProductSectionUiV1;
-  isExpanded: boolean;
-  onToggle: () => void;
-}) {
-  const [expandedOrder, setExpandedOrder] = useState<number | null>(null);
+function jumpToPickupSection(e: React.MouseEvent<HTMLAnchorElement>) {
+  const target = document.getElementById("pickup-dropoff");
+  if (target) {
+    e.preventDefault();
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
+
+export function PickupOnlyCards({ pickupDropoff, sectionUi }: PickupDropoffCardsProps) {
+  const pickupPoints = pickupDropoff?.departure ?? [];
+  const dropoffPoints = pickupDropoff?.return ?? [];
+  const mapThumb = useMemo(
+    () => buildSummaryMapThumbUrl(pickupPoints, dropoffPoints),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [pickupDropoff],
+  );
+  if (!pickupDropoff || pickupPoints.length === 0) return null;
+
   const first = pickupPoints[0];
-  const last = pickupPoints[pickupPoints.length - 1];
-  const range = first?.time && last?.time ? `${first.time} – ${last.time}` : first?.time ?? "";
+  const isPort = (first?.type ?? "").toLowerCase() === "port";
+  const title = isPort
+    ? (sectionUi.pickupPortCardTitle ?? "Port pickup")
+    : (sectionUi.pickupCardTitle ?? "Pickup");
 
   return (
     <div className="relative pl-12">
@@ -122,66 +102,50 @@ function PickupCard({
         <MapPin className="h-4.5 w-4.5" />
       </div>
       <div className="pb-5">
-        <button
-          type="button"
-          onClick={onToggle}
-          className={cn(
-            "w-full rounded-xl border border-border bg-white p-4 text-left transition-all duration-200",
-            isExpanded ? "rounded-b-none border-b-transparent shadow-none" : "shadow-premium hover:shadow-premium-elevated",
-          )}
+        <a
+          href="#pickup-dropoff"
+          onClick={jumpToPickupSection}
+          className="flex w-full items-center gap-3 rounded-xl border border-border bg-white p-3 text-left shadow-premium transition-all duration-200 hover:shadow-premium-elevated sm:p-4"
         >
-          <div className="flex items-start justify-between gap-3">
-            <div className="min-w-0 flex-1">
-              <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                <span className="font-semibold text-foreground">{range}</span>
-                <span className="text-border">·</span>
-                <span>{formatTemplate(sectionUi.pickupPointsTemplate ?? "{count} pickup points", pickupPoints.length)}</span>
-              </div>
-              <h3 className="mt-2 text-base font-semibold tracking-tight text-foreground">{sectionUi.pickupCardTitle ?? "Pickup"}</h3>
-            </div>
-            <div className={cn("mt-1 rounded-full p-1.5 transition-all duration-200", isExpanded ? "rotate-180 bg-primary/10" : "bg-muted/60")}>
-              <ChevronDown className={cn("h-4 w-4", isExpanded ? "text-primary" : "text-muted-foreground")} />
-            </div>
-          </div>
-        </button>
-
-        <div className={cn("grid transition-all duration-300 ease-out", isExpanded ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}>
-          <div className="overflow-hidden">
-            <div className="rounded-b-xl border border-t-0 border-border bg-white p-4 shadow-premium">
-              <div className="space-y-2.5">
-                {pickupPoints.map((point) => (
-                  <PointAccordion
-                    key={`pickup-${point.order}-${point.name}`}
-                    point={point}
-                    expandedOrder={expandedOrder}
-                    setExpandedOrder={setExpandedOrder}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
+          {mapThumb ? (
+            <span className="relative h-12 w-16 flex-shrink-0 overflow-hidden rounded-lg bg-slate-100 ring-1 ring-slate-900/5">
+              {/* eslint-disable-next-line @next/next/no-img-element -- same static-map URL the pickup section loads; served from cache */}
+              <img
+                src={mapThumb}
+                alt=""
+                width={64}
+                height={48}
+                loading="lazy"
+                decoding="async"
+                className="h-full w-full object-cover"
+              />
+            </span>
+          ) : null}
+          <span className="min-w-0 flex-1">
+            <span className="flex items-center gap-2 text-xs text-muted-foreground">
+              {first?.time ? <span className="font-semibold text-foreground">{first.time}</span> : null}
+              {first?.time ? <span className="text-border">·</span> : null}
+              <span className="truncate">
+                {formatTemplate(sectionUi.pickupPointsTemplate ?? "{count} pickup points", pickupPoints.length)}
+              </span>
+            </span>
+            <span className="mt-1 block text-base font-semibold tracking-tight text-foreground">{title}</span>
+            <span className="mt-0.5 block text-[11px] font-medium text-muted-foreground underline decoration-slate-300 underline-offset-4">
+              {sectionUi.pickupViewMapLabel ?? "Details & map"}
+            </span>
+          </span>
+          <ChevronRight className="h-4 w-4 flex-shrink-0 text-slate-400" aria-hidden />
+        </a>
       </div>
     </div>
   );
 }
 
-function DropoffCard({
-  dropoffPoints,
-  notes,
-  sectionUi,
-  isExpanded,
-  onToggle,
-}: {
-  dropoffPoints: PickupDropoffPoint[];
-  notes?: string[];
-  sectionUi: TourProductSectionUiV1;
-  isExpanded: boolean;
-  onToggle: () => void;
-}) {
-  const [expandedOrder, setExpandedOrder] = useState<number | null>(null);
-  const lastPoint = dropoffPoints[dropoffPoints.length - 1];
-  const returnBand = useMemo(() => inferReturnBand(notes), [notes]);
+export function DropoffOnlyCard({ pickupDropoff, sectionUi }: PickupDropoffCardsProps) {
+  if (!pickupDropoff) return null;
+  const dropoffPoints = pickupDropoff.return ?? [];
+  if (dropoffPoints.length === 0) return null;
+  const returnBand = inferReturnBand(pickupDropoff.notes);
 
   return (
     <div className="relative pl-12">
@@ -189,121 +153,31 @@ function DropoffCard({
         <MapPin className="h-4.5 w-4.5" />
       </div>
       <div className="pb-1">
-        <button
-          type="button"
-          onClick={onToggle}
+        <a
+          href="#pickup-dropoff"
+          onClick={jumpToPickupSection}
           className={cn(
-            "w-full rounded-xl border border-[#1D2A3D] bg-[#111D31] p-4 text-left transition-all duration-200",
-            isExpanded ? "rounded-b-none shadow-none" : "shadow-premium",
+            "flex w-full items-center gap-3 rounded-xl border border-[#1D2A3D] bg-[#111D31] p-3 text-left shadow-premium transition-all duration-200 sm:p-4",
+            "hover:border-[#2A3A52]",
           )}
         >
-          <div className="flex items-start justify-between gap-3">
-            <div className="min-w-0 flex-1">
-              <div className="flex items-center gap-2 text-xs text-white/70">
-                <span className="font-semibold text-white">~{returnBand ?? "17:30"}</span>
-                <span>·</span>
-                <span>{sectionUi.dropoffApproxLabel ?? "approx."}</span>
-              </div>
-              <h3 className="mt-2 text-base font-semibold tracking-tight text-white">{sectionUi.dropoffCardTitle ?? "Drop-off"}</h3>
-              <span className="mt-2 inline-block rounded-md bg-white/10 px-2.5 py-0.5 text-[10px] font-medium text-white/75">
-                {formatTemplate(sectionUi.dropoffLocationsTemplate ?? "{count} drop-off locations", dropoffPoints.length)}
-              </span>
-            </div>
-            <div className={cn("mt-1 rounded-full p-1.5 transition-all duration-200", isExpanded ? "rotate-180 bg-white/20" : "bg-white/10")}>
-              <ChevronDown className="h-4 w-4 text-white/90" />
-            </div>
-          </div>
-        </button>
-
-        <div className={cn("grid transition-all duration-300 ease-out", isExpanded ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}>
-          <div className="overflow-hidden">
-            <div className="rounded-b-xl border border-t-0 border-[#1D2A3D] bg-[#111D31] p-4 shadow-premium">
-              <div className="space-y-2.5">
-                {dropoffPoints.map((point) => (
-                  <div key={`dropoff-${point.order}-${point.name}`} className="rounded-lg border border-white/15 bg-white/5">
-                    <button
-                      type="button"
-                      onClick={() => setExpandedOrder(expandedOrder === point.order ? null : point.order)}
-                      className="flex w-full items-center justify-between gap-3 px-3.5 py-2.5 text-left"
-                    >
-                      <div className="min-w-0">
-                        <div className="flex items-center gap-2 text-xs text-white/75">
-                          <span className="truncate">{point.name}</span>
-                        </div>
-                      </div>
-                      <span
-                        className={cn(
-                          "flex h-6 w-6 items-center justify-center rounded-full bg-white/10 transition-transform",
-                          expandedOrder === point.order ? "rotate-180 bg-white/20" : "",
-                        )}
-                      >
-                        <ChevronDown className="h-3.5 w-3.5 text-white/90" />
-                      </span>
-                    </button>
-                    <div
-                      className={cn(
-                        "grid transition-all duration-200",
-                        expandedOrder === point.order ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
-                      )}
-                    >
-                      <div className="overflow-hidden">
-                        <div className="border-t border-white/15 px-3.5 py-3 text-xs text-white/75">
-                          <div className="flex items-start gap-2.5">
-                            <Clock3 className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-white/85" />
-                            <div className="space-y-1">
-                              <p className="text-white/95">{point.name}</p>
-                              {point.note ? <p>{point.note}</p> : null}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-4 border-t border-white/15 pt-3 text-sm text-white/70">
-                {sectionUi.dropoffReturnNote ?? "Return to pickup points available on request"}
-              </div>
-            </div>
-          </div>
-        </div>
+          <span className="min-w-0 flex-1">
+            <span className="flex items-center gap-2 text-xs text-white/70">
+              <span className="font-semibold text-white">~{returnBand ?? "17:30"}</span>
+              <span>·</span>
+              <span>{sectionUi.dropoffApproxLabel ?? "approx."}</span>
+            </span>
+            <span className="mt-1 block text-base font-semibold tracking-tight text-white">
+              {sectionUi.dropoffCardTitle ?? "Drop-off"}
+            </span>
+            <span className="mt-1 inline-block rounded-md bg-white/10 px-2.5 py-0.5 text-[10px] font-medium text-white/75">
+              {formatTemplate(sectionUi.dropoffLocationsTemplate ?? "{count} drop-off locations", dropoffPoints.length)}
+            </span>
+          </span>
+          <ChevronRight className="h-4 w-4 flex-shrink-0 text-white/60" aria-hidden />
+        </a>
       </div>
     </div>
-  );
-}
-
-export function PickupOnlyCards({ pickupDropoff, sectionUi }: PickupDropoffCardsProps) {
-  const [pickupExpanded, setPickupExpanded] = useState(false);
-
-  if (!pickupDropoff) return null;
-  const pickupPoints = pickupDropoff.departure ?? [];
-  if (pickupPoints.length === 0) return null;
-
-  return (
-    <PickupCard
-      pickupPoints={pickupPoints}
-      sectionUi={sectionUi}
-      isExpanded={pickupExpanded}
-      onToggle={() => setPickupExpanded((v) => !v)}
-    />
-  );
-}
-
-export function DropoffOnlyCard({ pickupDropoff, sectionUi }: PickupDropoffCardsProps) {
-  const [dropoffExpanded, setDropoffExpanded] = useState(false);
-
-  if (!pickupDropoff) return null;
-  const dropoffPoints = pickupDropoff.return ?? [];
-  if (dropoffPoints.length === 0) return null;
-
-  return (
-    <DropoffCard
-      dropoffPoints={dropoffPoints}
-      notes={pickupDropoff.notes}
-      sectionUi={sectionUi}
-      isExpanded={dropoffExpanded}
-      onToggle={() => setDropoffExpanded((v) => !v)}
-    />
   );
 }
 
