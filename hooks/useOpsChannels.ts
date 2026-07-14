@@ -87,7 +87,15 @@ export interface UseOpsChannels {
   ingestMessages: (roomId: string, messages: RoomMessage[]) => void;
 }
 
-export function useOpsChannels(channels: OpsChannelDescriptor[]): UseOpsChannels {
+export interface UseOpsChannelsOptions {
+  /**
+   * Fired on a room lifecycle broadcast (status change → the topic HMAC
+   * rotates, §R-23): the caller should refetch the channel directory.
+   */
+  onRoomEvent?: () => void;
+}
+
+export function useOpsChannels(channels: OpsChannelDescriptor[], options?: UseOpsChannelsOptions): UseOpsChannels {
   const [streams, setStreams] = useState<Record<string, OpsRoomStream>>({});
   const [connection, setConnection] = useState<OpsConnection>('connecting');
   // Read cursors are plain state seeded from localStorage per room; bumping
@@ -98,8 +106,10 @@ export function useOpsChannels(channels: OpsChannelDescriptor[]): UseOpsChannels
   // with a fresh array identity.
   const topicsKey = channels.map((channel) => channel.topic).sort().join('|');
   const channelsRef = useRef(channels);
+  const onRoomEventRef = useRef(options?.onRoomEvent);
   useEffect(() => {
     channelsRef.current = channels;
+    onRoomEventRef.current = options?.onRoomEvent;
   });
 
   const updateStream = useCallback((roomId: string, update: (stream: OpsRoomStream) => OpsRoomStream) => {
@@ -149,6 +159,9 @@ export function useOpsChannels(channels: OpsChannelDescriptor[]): UseOpsChannels
             locations: applyLocationFrame(stream.locations, location),
           }));
         }
+      });
+      channel.on('broadcast', { event: 'room' }, () => {
+        onRoomEventRef.current?.();
       });
       channel.on('broadcast', { event: 'caption' }, (frame) => {
         const caption = (frame.payload as { caption?: RoomCaption })?.caption;

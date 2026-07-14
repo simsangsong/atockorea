@@ -29,7 +29,6 @@ import {
 import Logo from '@/components/Logo';
 import { supabase } from '@/lib/supabase';
 import { decideAdminGuard } from '@/lib/admin/admin-auth-guard';
-import { useStandaloneDisplayMode } from '@/hooks/useStandaloneDisplayMode';
 
 const ADMIN_SUPPORTED_LOCALES = ['en', 'ko', 'zh-CN', 'zh-TW', 'ja', 'es'];
 
@@ -126,7 +125,6 @@ function getBreadcrumbs(pathname: string): { path: string; label: string }[] {
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const router = useRouter();
-  const isStandalone = useStandaloneDisplayMode();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [user, setUser] = useState<any>(null);
@@ -312,12 +310,13 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
   const adminPathname = normalizeAdminPathname(pathname);
 
-  // W1.4: when the ops center runs as an installed PWA (display-mode:
-  // standalone), it owns its chrome — no admin sidebar/header/tab bar. Auth
-  // above still gates it; regular browser visits keep the full admin shell.
-  if (isStandalone && adminPathname.startsWith('/admin/tour-ops')) {
+  // W1.4/W3.1: the ops center owns its chrome — no admin sidebar/header/tab
+  // bar in either display mode (its fixed bottom tab bar would collide with
+  // the admin mobile tab bar). Auth above still gates it; the ops settings
+  // tab links back to the admin dashboard.
+  if (adminPathname.startsWith('/admin/tour-ops')) {
     return (
-      <div className="admin-root min-h-screen bg-admin-bg text-slate-900">
+      <div className="admin-root min-h-screen">
         {children}
         <Toaster position="top-center" richColors closeButton />
       </div>
