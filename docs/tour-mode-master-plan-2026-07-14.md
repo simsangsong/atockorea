@@ -2,7 +2,7 @@
 
 **작성일:** 2026-07-14
 **브랜치:** `claude/tour-mode-dev-iaa0b8`
-**상태:** Wave T0 **전체 완료(T0.3 라이브 적용 2026-07-14)** + **Wave T1 사실상 완료**(T1.11 ⑧ QR·취소 revoke만 T5.1 동반 잔여) + **Wave T2 음성 9/9 코드 완료**(실기기 확인 항목은 §I-4에 문서화, 파일럿 전 수행). T0~T2 게이트 도달 — 다음 = **플래그 OFF 상태로 PR 갱신 → Wave T3(위치·지도)**. 구현 커밋은 세션 브랜치 `claude/tour-mode-iql6ho`(플랜 문서 브랜치를 머지해 진행).
+**상태:** Wave T0~T2 **완료 + PR #307 머지(`ee886a73`, 플래그 OFF)** → **Wave T3 위치·지도 7/7 코드 완료(465a1fe6)**. 실기기 확인 항목은 §I-4(파일럿 전 수행). 다음 = **Wave T4(지오펜스 자동 풀 설명·비전 Q&A)** → T5(초대·발송). T1.11 ⑧ QR·취소 revoke는 T5.1 동반. 구현 커밋은 세션 브랜치 `claude/tour-mode-iql6ho`(플랜 문서 브랜치를 머지해 진행).
 **단일 기준 문서:** 이 파일. 투어모드 관련 모든 작업은 이 문서의 웨이브·티켓 번호를 기준으로 진행/보고한다.
 
 ---
@@ -286,13 +286,13 @@ hooks/
 - **T2.9** TTS 케이퍼빌리티 래더(§O-2) — `voiceschanged` 대기 + 로케일 음성 존재 검증 → 서버 TTS 폴백 자동 전환 → 오디오 불가 시 배지 강등, `tts_capable` 보고 + 가이드 공지 선생성 — AC: voices 빈 배열 기기 시뮬레이션에서 서버 폴백 재생, 룸 내 캐시 공유(생성 1회) 검증. ✅ 완료(df44bba0+ee8b5f4a) — voices 빈 배열/타로케일 음성/synth 부재 → server 티어(유닛), 캐시 히트 생성 0회(유닛), tts_capable 백그라운드 join 보고, 가이드 공지 선생성(tts_capable=false 참가자 로케일만, 실패 무해).
 
 ### Wave T3 — 위치공유 · 지도 【7티켓】
-- **T3.1** `location` API — 서버 경유 rebroadcast + 30s 스냅샷 upsert + 레이트리밋 — AC: 위조 participant_id 403.
-- **T3.2** `useGeoWatcher` — watchPosition, accuracy>100m 폐기, 이동<10m 스킵, 포그라운드 전용 명시 — AC: geo.ts 순수함수만 사용.
-- **T3.3** `RoomMap` — 한 지도에 전원 표시: 가이드(버스 아이콘)·손님(이니셜 점)·스팟(번호 핀)·시설·픽업/집합지 마커, 팔로우 모드(가이드 따라가기) + **"가이드에게 가기" 버튼**: 내 위치↔가이드 실시간 거리·방향 표시 + Google Maps 도보 안내 딥링크(§H P2 #5를 v1로 승격) — AC: 마커 20개 60fps, 가이드 위치 갱신 시 거리 실시간 반영.
-- **T3.4** 위치공유 토글 + 동의 문구 + 권한거부 UX(설정 안내 딥링크) — AC: 거부 후 재요청 루프 없음.
-- **T3.5** `PresenceBar` (Realtime Presence: join/leave/last_seen) — AC: 탭 종료 30초 내 오프라인 표시.
-- **T3.6** Wake Lock API(지원 기기) + "화면 켜두세요" 배너 — AC: 미지원 브라우저 무해.
-- **T3.7** 픽업 임박 보드 — 투어 아침(픽업 시작~버스 출발) 룸 상단에 "내 픽업: N번째 정차 · 약 X분" 표시. 가이드(버스) 위치 × 같은 tour_id+date 픽업포인트 `pickup_time` 순번으로 계산(v1은 직선거리 기반 추정 — Directions API 미사용, 비용 0) + 버스 실시간 지도 링크. 손님 버튼 "도착했어요 / 조금 늦어요" → `metadata.kind='pickup_status'` 메시지로 가이드 콘솔 집계 — AC: 가이드 위치공유 OFF 시 보드 자동 숨김 + 픽업 시간 정적 안내로 강등, 픽업 완료 순차 갱신.
+- **T3.1** `location` API — 서버 경유 rebroadcast + 30s 스냅샷 upsert + 레이트리밋 — AC: 위조 participant_id 403. ✅ 완료(465a1fe6) — 신원은 룸세션에서만 파생(바디 participant_id 무시, 테스트 고정), 토큰 액터도 403(조인 전 발행 불가). 6/min 참가자 게이트, DELETE=공유중지(행 삭제+플래그+제거 브로드캐스트).
+- **T3.2** `useGeoWatcher` — watchPosition, accuracy>100m 폐기, 이동<10m 스킵, 포그라운드 전용 명시 — AC: geo.ts 순수함수만 사용. ✅ 완료(465a1fe6) — 발행 판정은 shouldPublishPing(15s 간격) 순수함수, hidden 탭 일시정지, 권한거부=터미널 상태.
+- **T3.3** `RoomMap` — 한 지도에 전원 표시: 가이드(버스 아이콘)·손님(이니셜 점)·스팟(번호 핀)·시설·픽업/집합지 마커, 팔로우 모드(가이드 따라가기) + **"가이드에게 가기" 버튼**: 내 위치↔가이드 실시간 거리·방향 표시 + Google Maps 도보 안내 딥링크(§H P2 #5를 v1로 승격) — AC: 마커 20개 60fps, 가이드 위치 갱신 시 거리 실시간 반영. ✅ 완료(465a1fe6) — 검증된 TourPickupMapCanvas 패턴(@react-google-maps/api quarterly 고정, Polyline 미사용) + dynamic ssr:false(§O-1 ② 탭 진입 lazy). 채널 훅이 location 브로드캐스트를 applyLocationFrame(순서역전 프레임 폐기)으로 병합 → 거리·방향 실시간. 60fps 실측은 §I-4 실기기에서.
+- **T3.4** 위치공유 토글 + 동의 문구 + 권한거부 UX(설정 안내 딥링크) — AC: 거부 후 재요청 루프 없음. ✅ 완료(465a1fe6) — LocationShareCard(기본 OFF=K-4, 5로케일 동의 문구, denied=스위치 비활성+설정 안내, 재요청 루프 없음 테스트).
+- **T3.5** `PresenceBar` (Realtime Presence: join/leave/last_seen) — AC: 탭 종료 30초 내 오프라인 표시. ✅ 완료(465a1fe6) — 채널 presence track/sync, 가이드 우선 정렬 칩, 오프라인 타임아웃은 Realtime presence 기본(~30s)에 위임.
+- **T3.6** Wake Lock API(지원 기기) + "화면 켜두세요" 배너 — AC: 미지원 브라우저 무해. ✅ 완료(465a1fe6) — acquireWakeLock(visible 복귀 재획득, 전 경로 no-throw), 공유 중에만 유지, 미지원 시 안내 문구.
+- **T3.7** 픽업 임박 보드 — 투어 아침(픽업 시작~버스 출발) 룸 상단에 "내 픽업: N번째 정차 · 약 X분" 표시. 가이드(버스) 위치 × 같은 tour_id+date 픽업포인트 `pickup_time` 순번으로 계산(v1은 직선거리 기반 추정 — Directions API 미사용, 비용 0) + 버스 실시간 지도 링크. 손님 버튼 "도착했어요 / 조금 늦어요" → `metadata.kind='pickup_status'` 메시지로 가이드 콘솔 집계 — AC: 가이드 위치공유 OFF 시 보드 자동 숨김 + 픽업 시간 정적 안내로 강등, 픽업 완료 순차 갱신. ✅ 완료(465a1fe6) — 스냅샷에 pickup_sequence(투어일 전체 정차 pickup_time 순) 추가, pickupBoardState 순수함수(오늘만·내 픽업+45분 후 자동 숨김·가이드 미공유=정적 강등), 도착/지각 버튼은 기존 퀵답장 프리셋 재사용(LLM 0회, preset_key로 집계 가능). '픽업 완료 순차 갱신'은 가이드 콘솔(T6)에서 이어감.
 
 ### Wave T4 — 지오펜스 자동 풀 설명 · 비전 Q&A 【7티켓】
 - **T4.1** `scripts/extract-tour-stop-content.ts` — 정적 스톱 배열 → `data/tour-stop-content/{slug}.json` — AC: 파일럿 투어 1개 무손실 추출.
