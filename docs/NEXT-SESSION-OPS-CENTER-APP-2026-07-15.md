@@ -54,33 +54,33 @@
 ## 4. 실행 WBS
 
 ### W1 — PWA 셸 【4】
-- **W1.1** 아이콘 파이프라인: 메인 dir의 emblem PNG 커밋 + 192/512 maskable 파생 + apple-touch-icon — AC: Lighthouse PWA 설치 가능.
-- **W1.2** `app/tour-mode/manifest.ts` + 최소 SW + 설치 프롬프트 배너(iOS는 공유→홈화면 안내 시트, 5로케일) — AC: Android/iOS 홈 아이콘 설치 확인 항목 문서화.
-- **W1.3** `app/admin/tour-ops/manifest.ts` + SW — AC: 관제만 단독 설치(스코프 밖 이동 시 브라우저로).
-- **W1.4** standalone 감지(`display-mode: standalone`) 시 앱 크롬(뒤로가기 헤더 등) 활성 — AC: 브라우저 열람은 기존과 동일.
+- **W1.1** ✅ 완료(`32f5e6c5`) 아이콘 파이프라인: 메인 dir의 emblem PNG 커밋 + 192/512 maskable 파생 + apple-touch-icon — AC: Lighthouse PWA 설치 가능.
+- **W1.2** ✅ 완료(`b97fa708` — manifest.ts 컨벤션은 앱 루트 전용이라 route handler `app/tour-mode/manifest.webmanifest/route.ts`+layout metadata.manifest로 구현) `app/tour-mode/manifest.ts` + 최소 SW + 설치 프롬프트 배너(iOS는 공유→홈화면 안내 시트, 5로케일) — AC: Android/iOS 홈 아이콘 설치 확인 항목 문서화.
+- **W1.3** ✅ 완료(`0f5c4c22` — 동일하게 route handler) `app/admin/tour-ops/manifest.ts` + SW — AC: 관제만 단독 설치(스코프 밖 이동 시 브라우저로).
+- **W1.4** ✅ 완료(`0736f0c3` — hooks/useStandaloneDisplayMode + admin layout 관제 standalone 크롬 분기) standalone 감지(`display-mode: standalone`) 시 앱 크롬(뒤로가기 헤더 등) 활성 — AC: 브라우저 열람은 기존과 동일.
 
 ### W2 — 관제 실시간 코어 【3】
-- **W2.1** `GET /api/admin/tour-ops/channels` (requireAdmin, 날짜별 {roomId,bookingId,topic,status}) — AC: 비어드민 403, 토픽이 join 발급값과 일치(유닛).
-- **W2.2** `useOpsChannels(topics)` — 멀티토픽 구독, 룸별 메시지/위치/자막 머지(기존 applyLocationFrame·mergeRoomMessages 재사용), 미읽음 카운터(룸별 마지막 열람 커서 localStorage) — AC: 2룸 동시 수신 유닛(채널 목).
-- **W2.3** 기존 20s 폴은 재연결 백업으로 강등(visible+연결끊김 시만) — AC: 정상 연결 시 폴 0회.
+- **W2.1** ✅ 완료(`7c390ead`) `GET /api/admin/tour-ops/channels` (requireAdmin, 날짜별 {roomId,bookingId,topic,status}) — AC: 비어드민 403, 토픽이 join 발급값과 일치(유닛).
+- **W2.2** ✅ 완료(`7c390ead`+`c6c641a7`) `useOpsChannels(topics)` — 멀티토픽 구독, 룸별 메시지/위치/자막 머지(기존 applyLocationFrame·mergeRoomMessages 재사용), 미읽음 카운터(룸별 마지막 열람 커서 localStorage) — AC: 2룸 동시 수신 유닛(채널 목).
+- **W2.3** ✅ 완료(`d68f9377` — OpsApp에서 구현: visible+비realtime시만 20s 폴, pg-changes 동일 강등, 5분 드리프트 리프레시, room 이벤트→디렉터리 재조회) 기존 20s 폴은 재연결 백업으로 강등(visible+연결끊김 시만) — AC: 정상 연결 시 폴 0회.
 
 ### W3 — 관제센터 앱 UI 개편 【5】
-- **W3.1** 앱 셸: 하단 탭(대시보드/지도/SOS/설정)+다크 테마+safe-area — AC: 모바일 기기폭 360px에서 가로 스크롤 0.
-- **W3.2** 대시보드 탭: 투어별 그룹핑(투어 카드 → 룸 리스트), 라이브 배지·미읽음·탑승 집계 — AC: 룸 30개 렌더 성능(윈도잉).
-- **W3.3** 룸 드로어(대화창 진입): 실시간 피드(W2 스트림)+관제 컴포저+퀵답장 프리셋+참가자·위치 요약 — AC: 발신→피드 반영 지연 체감 0(옵티미스틱).
-- **W3.4** 지도 탭: 전체 투어 참가자/가이드 마커 통합 지도(RoomMapCanvas 확장, 룸 색상=roomHue 재사용), 마커 탭→룸 드로어 — AC: 멀티룸 마커 충돌 없음.
-- **W3.5** 설정 탭: 날짜 선택·사운드 on/off·(W6 후) 푸시 토글 — AC: 설정 영속.
+- **W3.1** ✅ 완료(`d68f9377`) 앱 셸: 하단 탭(대시보드/지도/SOS/설정)+다크 테마+safe-area — AC: 모바일 기기폭 360px에서 가로 스크롤 0.
+- **W3.2** ✅ 완료(`d68f9377` — 윈도잉은 content-visibility:auto) 대시보드 탭: 투어별 그룹핑(투어 카드 → 룸 리스트), 라이브 배지·미읽음·탑승 집계 — AC: 룸 30개 렌더 성능(윈도잉).
+- **W3.3** ✅ 완료(`d68f9377`) 룸 드로어(대화창 진입): 실시간 피드(W2 스트림)+관제 컴포저+퀵답장 프리셋+참가자·위치 요약 — AC: 발신→피드 반영 지연 체감 0(옵티미스틱).
+- **W3.4** ✅ 완료(`d68f9377` — OpsMapCanvas 신설, roomHue 마커) 지도 탭: 전체 투어 참가자/가이드 마커 통합 지도(RoomMapCanvas 확장, 룸 색상=roomHue 재사용), 마커 탭→룸 드로어 — AC: 멀티룸 마커 충돌 없음.
+- **W3.5** ✅ 완료(`d68f9377`) 설정 탭: 날짜 선택·사운드 on/off·(W6 후) 푸시 토글 — AC: 설정 영속.
 - ⚠ 어드민 셸 규칙(프리미엄 모바일, `docs/admin-premium-mobile-design-spec-2026-06-24.md`) 준수 — 단 이 페이지는 standalone 앱이므로 어드민 사이드바 없이 자체 셸 허용(관제 v1도 이미 그렇게 함).
 
 ### W4 — SOS·소통 즉시성 【3】
-- **W4.1** SOS 수신 강화: 핀+사운드(기존)+파비콘/타이틀 점멸+진동+SOS 탭 뱃지, SOS 카드에 원탭 액션(룸 열기·위치 열기·전화 tel:) — AC: SOS→가시화 3초 내(Broadcast 직수신이라 충족).
-- **W4.2** "고객이 소통 원함" 시그널: 고객 메시지 중 관제 지정 키워드/need_help 프리셋/무응답 5분 등을 **어텐션 큐**로 표면화(대시보드 상단) — AC: 규칙 유닛.
-- **W4.3** 고객측: SOS 전송 후 "관제와 연결됨" 상태 표시 + 관제 응답 시 하이라이트 — AC: 5로케일.
+- **W4.1** ✅ 완료(`18099b43`) SOS 수신 강화: 핀+사운드(기존)+파비콘/타이틀 점멸+진동+SOS 탭 뱃지, SOS 카드에 원탭 액션(룸 열기·위치 열기·전화 tel:) — AC: SOS→가시화 3초 내(Broadcast 직수신이라 충족).
+- **W4.2** ✅ 완료(`18099b43` — lib/tour-ops/attention.ts, 유닛 7) "고객이 소통 원함" 시그널: 고객 메시지 중 관제 지정 키워드/need_help 프리셋/무응답 5분 등을 **어텐션 큐**로 표면화(대시보드 상단) — AC: 규칙 유닛.
+- **W4.3** ✅ 완료(`18099b43`) 고객측: SOS 전송 후 "관제와 연결됨" 상태 표시 + 관제 응답 시 하이라이트 — AC: 5로케일.
 
 ### W5 — 고객/가이드 룸 앱화 폴리시 【3】
-- **W5.1** 룸/콘솔 standalone 폴리시: 설치 배너(투어 D-1 룸 진입 시 1회), 스플래시(theme/배경), 전환 애니메이션 통일 — AC: 설치 후 재진입이 룸 URL로 직행(start_url 쿼리 유지 전략: localStorage 마지막 룸).
-- **W5.2** 이메일 초대(T5.2)에 "홈 화면에 추가" 안내 한 줄 추가 — AC: 5로케일.
-- **W5.3** 가이드 콘솔 별도 설치 여부 결정 반영 — 기본값: 같은 tour-mode 앱 내.
+- **W5.1** ✅ 완료(`24e7ed62` — 배너 D-1~당일·예약당 1회, 마지막 룸 localStorage→entry 직행; 스플래시는 매니페스트 theme/bg로 충족, 전환 애니메이션 통일은 기존 룸 트랜지션 유지로 종결) 룸/콘솔 standalone 폴리시: 설치 배너(투어 D-1 룸 진입 시 1회), 스플래시(theme/배경), 전환 애니메이션 통일 — AC: 설치 후 재진입이 룸 URL로 직행(start_url 쿼리 유지 전략: localStorage 마지막 룸).
+- **W5.2** ✅ 완료(`24e7ed62`) 이메일 초대(T5.2)에 "홈 화면에 추가" 안내 한 줄 추가 — AC: 5로케일.
+- **W5.3** ✅ 완료(결정: 같은 tour-mode 앱 내, 별도 설치 없음) 가이드 콘솔 별도 설치 여부 결정 반영 — 기본값: 같은 tour-mode 앱 내.
 
 ### W6 — Web Push (사용자 결정 게이트 🔒) 【3】
 - **W6.1** VAPID 키 발급+`push_subscriptions` 테이블(additive DDL, 승인 후 적용)+구독 API — AC: advisors 0.
@@ -88,8 +88,8 @@
 - **W6.3** 고객측 push는 범위 밖(백로그) — 관제·가이드만.
 
 ### W7 — 검증 【2】
-- **W7.1** E2E 확장: 관제 시나리오(SOS 발생→관제 피드 표시→관제 응답→고객 수신) — 기존 playwright 인프라 재사용 — AC: 그린.
-- **W7.2** 실기기 체크리스트에 PWA 항목 추가(설치·standalone 인증 유지·iOS 사파리 A2HS) — §I-4에 편입.
+- **W7.1** ✅ 완료(`e4ba02d6` — e2e/tour-ops-sos.spec.ts, 그린 13.8s; 관제측은 임시 admin 유저+bearer로 API 검증, 관제 UI는 컴포넌트 테스트 4개가 커버) E2E 확장: 관제 시나리오(SOS 발생→관제 피드 표시→관제 응답→고객 수신) — 기존 playwright 인프라 재사용 — AC: 그린.
+- **W7.2** ✅ 완료(`76856dff` — 마스터플랜 §I-4에 PWA·관제 앱 항목 편입) 실기기 체크리스트에 PWA 항목 추가(설치·standalone 인증 유지·iOS 사파리 A2HS) — §I-4에 편입.
 
 ## 5. `TOUR_ROOM_TOKEN_SECRET` 런칭 절차 (T8.2 선행 — 이번 세션과 무관하게 사용자가 바로 실행 가능)
 

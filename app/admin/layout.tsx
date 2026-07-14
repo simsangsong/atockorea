@@ -296,7 +296,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           <h2 className="text-lg font-semibold text-slate-950 mb-1">Admin access</h2>
           <p className="text-sm text-slate-500 mb-6">관리자 계정으로 로그인해 주세요.</p>
           <Link
-            href="/signin?redirect=/admin"
+            /* W1.4 (§3-D): return to the exact admin page after sign-in so the
+               installed ops app lands back on /admin/tour-ops, not the dashboard. */
+            href={`/signin?redirect=${encodeURIComponent(normalizeAdminPathname(pathname))}`}
             className="inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700 transition-colors"
           >
             Sign In
@@ -307,6 +309,20 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   }
 
   const adminPathname = normalizeAdminPathname(pathname);
+
+  // W1.4/W3.1: the ops center owns its chrome — no admin sidebar/header/tab
+  // bar in either display mode (its fixed bottom tab bar would collide with
+  // the admin mobile tab bar). Auth above still gates it; the ops settings
+  // tab links back to the admin dashboard.
+  if (adminPathname.startsWith('/admin/tour-ops')) {
+    return (
+      <div className="admin-root min-h-screen">
+        {children}
+        <Toaster position="top-center" richColors closeButton />
+      </div>
+    );
+  }
+
   const breadcrumbs = getBreadcrumbs(adminPathname);
   const bestMatch = adminMenuItems
     .filter((m) => adminPathname === m.path || (m.path !== '/admin' && adminPathname.startsWith(`${m.path}/`)))

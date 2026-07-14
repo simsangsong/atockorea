@@ -393,6 +393,10 @@ hooks/
    - **iOS Safari:** ① 🎤 버튼 노출(MediaRecorder mp4/aac 협상 — `pickRecorderMimeType`이 `audio/mp4` 선택 확인) ② 녹음→STT→확인 플로우 왕복 ③ 무음 스위치 ON 상태에서 서버 TTS(HTML5 Audio)가 미디어 볼륨으로 재생 ④ 첫 제스처 프라이밍 후 AudioButton 재생, 프라이밍 전 자동재생 차단 시 🔇 배지 강등 ⑤ 인앱 웹뷰(카톡/인스타)에서 voices 빈 배열 → 서버 TTS 폴백 ⑥ Web Speech 미지원 기기의 가이드 자막 = Tier B 청크 업로드 확인.
    - **Android Chrome:** ① webm/opus 녹음 ② Web Speech API 가이드 자막(Tier A — 오디오 업로드 0) ③ 언어팩 미설치 로케일에서 speechSynthesis 폴백(서버 TTS) ④ 60초 녹음 상한 자동 종료 ⑤ 백그라운드 전환 중 수신 → 복귀 시 자동낭독 미발화(visible 가드).
    - **공통:** 마이크 권한 거부 → 안내 문구(에러 다이얼로그 금지), 저품질 발화(속삭임/소음)에서 확인 단계 강제, VAD가 무음 구간을 업로드하지 않는지(개발자도구 네트워크에서 chunk 개수 = 발화 횟수).
+   **PWA·관제 앱(ops-app 트랙 W1~W5, W7.2) — 파일럿 전 실기기 확인:**
+   - **Android Chrome:** ① D-1/당일 룸 진입 시 설치 배너 1회 노출 → 설치 → 홈 아이콘(마스커블 원형 엠블럼) 확인 ② standalone 실행 시 주소창 없음·상태바 theme #111827 ③ 관제 `/admin/tour-ops`도 **별도 앱**으로 설치(이름 "AtoC 관제센터", 다크 #0f172a) — 스코프 밖(/admin 타 페이지) 이동 시 브라우저로 빠지는지 ④ 설치된 관제 앱 재실행 시 로그인 세션 유지(supabase localStorage, §3-D) ⑤ SOS 수신: 사운드+진동+SOS 탭 뱃지.
+   - **iOS Safari:** ① 공유→"홈 화면에 추가" 안내 시트(5로케일) → 아이콘·이름 확인 ② standalone 세션 유지 — 미로그인 진입 시 signin 후 원래 페이지 복귀 ③ 파비콘/타이틀 점멸은 iOS 한계로 미동작 인지(사운드가 커버) ④ safe-area(노치·홈바) — 관제 하단 탭바/룸 컴포저 겹침 없음.
+   - **공통:** ① 설치 앱 재진입(start_url /tour-mode)이 마지막 룸으로 직행 ② SW가 API/HTML을 캐시하지 않는지(오프라인 = 앱 셸 자산만, 룸은 네트워크 필수) ③ Lighthouse PWA installable 통과(룸·관제 각각) ④ 초대 이메일의 홈 화면 추가 팁 문구 렌더(5로케일 다크모드 포함).
 5. **부하 리뷰:** 룸 30개 × 10명 접속 시 Realtime 채널 수·API rps·번역 호출량 계산서 첨부(T8.1).
 6. **보안:** RLS advisors 0경고, anon 정책 부재 확인, 토큰 시크릿 env 체크, PA-4 회귀.
 

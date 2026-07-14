@@ -35,7 +35,7 @@ export async function GET(req: NextRequest) {
 
     const [{ data: bookings }, { data: tours }, { data: participants }, { data: messages }] = await Promise.all([
       bookingIds.length
-        ? supabase.from('bookings').select('id, contact_name, number_of_guests, preferred_language, status').in('id', bookingIds)
+        ? supabase.from('bookings').select('id, contact_name, contact_phone, number_of_guests, preferred_language, status').in('id', bookingIds)
         : Promise.resolve({ data: [] }),
       supabase.from('tours').select('id, title, city'),
       roomIds.length
@@ -71,6 +71,10 @@ export async function GET(req: NextRequest) {
         message_count: roomMessages.length,
         last_message: roomMessages[0] ?? null,
         sos: sos ?? null,
+        // W3.2 — boarding tally, same signal the guide overview uses (T6.4).
+        onboard_ack: roomMessages.some(
+          (message) => (message.metadata as { kind?: string } | null)?.kind === 'onboard_ack',
+        ),
       };
     });
 

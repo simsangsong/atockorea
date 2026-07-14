@@ -14,7 +14,7 @@ import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
 const COPY: Record<
   RoomLocale,
-  { button: string; confirmTitle: string; consent: string; note: string; send: string; cancel: string; sent: string; failed: string }
+  { button: string; confirmTitle: string; consent: string; note: string; send: string; cancel: string; sent: string; connected: string; failed: string }
 > = {
   en: {
     button: 'SOS — I need urgent help',
@@ -24,6 +24,7 @@ const COPY: Record<
     send: 'Send SOS',
     cancel: 'Cancel',
     sent: 'SOS sent — your guide and our team have been alerted. Stay where you are if safe.',
+    connected: 'Connected to our ops team — replies from AtoC Korea are highlighted in the chat.',
     failed: 'Could not send — call 112/1330 above, or try again.',
   },
   ko: {
@@ -34,6 +35,7 @@ const COPY: Record<
     send: 'SOS 보내기',
     cancel: '취소',
     sent: 'SOS 전송 완료 — 가이드와 운영팀에 알렸어요. 안전하다면 그 자리에서 기다려 주세요.',
+    connected: '관제팀과 연결됨 — AtoC Korea의 응답이 채팅에 강조 표시돼요.',
     failed: '전송하지 못했어요 — 위의 112/1330으로 전화하거나 다시 시도해 주세요.',
   },
   ja: {
@@ -44,6 +46,7 @@ const COPY: Record<
     send: 'SOSを送る',
     cancel: 'キャンセル',
     sent: 'SOS送信済み — ガイドと運営チームに通知しました。安全ならその場でお待ちください。',
+    connected: '運営チームと接続中 — AtoC Koreaからの返信はチャットで強調表示されます。',
     failed: '送信できませんでした — 上の112/1330に電話するか、再試行してください。',
   },
   es: {
@@ -54,6 +57,7 @@ const COPY: Record<
     send: 'Enviar SOS',
     cancel: 'Cancelar',
     sent: 'SOS enviado — tu guía y nuestro equipo han sido alertados. Quédate donde estás si es seguro.',
+    connected: 'Conectado con nuestro equipo — las respuestas de AtoC Korea se resaltan en el chat.',
     failed: 'No se pudo enviar — llama al 112/1330 de arriba o inténtalo de nuevo.',
   },
   zh: {
@@ -64,6 +68,7 @@ const COPY: Record<
     send: '发送SOS',
     cancel: '取消',
     sent: 'SOS已发送 — 已通知导游和运营团队。如安全请原地等待。',
+    connected: '已连接运营团队 — AtoC Korea的回复会在聊天中高亮显示。',
     failed: '发送失败 — 请拨打上方112/1330，或重试。',
   },
 };
@@ -83,10 +88,13 @@ export default function SosButton({
   bookingId,
   roomSession,
   locale,
+  onSent,
 }: {
   bookingId: string;
   roomSession: string;
   locale: RoomLocale;
+  /** W4.3 — fired once on a delivered SOS with its ISO timestamp. */
+  onSent?: (sentAt: string) => void;
 }) {
   const [state, setState] = useState<'idle' | 'confirm' | 'sending' | 'sent' | 'failed'>('idle');
   const [note, setNote] = useState('');
@@ -103,6 +111,7 @@ export default function SosButton({
       });
       if (!res.ok) throw new Error(String(res.status));
       setState('sent');
+      onSent?.(new Date().toISOString());
     } catch {
       setState('failed');
     }
@@ -110,9 +119,16 @@ export default function SosButton({
 
   if (state === 'sent') {
     return (
-      <p className="rounded-xl bg-emerald-50 px-3 py-2.5 text-[12px] font-medium leading-relaxed text-emerald-800 dark:bg-emerald-950 dark:text-emerald-200" data-testid="sos-sent">
-        ✅ {copy.sent}
-      </p>
+      <div className="rounded-xl bg-emerald-50 px-3 py-2.5 dark:bg-emerald-950" data-testid="sos-sent">
+        <p className="text-[12px] font-medium leading-relaxed text-emerald-800 dark:text-emerald-200">✅ {copy.sent}</p>
+        <p className="mt-1.5 flex items-center gap-1.5 text-[12px] font-semibold text-emerald-700 dark:text-emerald-300" data-testid="sos-connected">
+          <span className="relative flex size-2">
+            <span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+            <span className="relative inline-flex size-2 rounded-full bg-emerald-500" />
+          </span>
+          {copy.connected}
+        </p>
+      </div>
     );
   }
 

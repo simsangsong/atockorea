@@ -13,6 +13,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { detectEntryLocale, ENTRY_COPY } from '@/components/tour-mode/entryCopy';
+import { isStandaloneDisplayMode } from '@/hooks/useStandaloneDisplayMode';
 
 interface TourModeBooking {
   id: string;
@@ -36,6 +37,22 @@ export default function TourModeEntry() {
   const [guestName, setGuestName] = useState('');
   const [guestError, setGuestError] = useState<string | null>(null);
   const [guestBusy, setGuestBusy] = useState(false);
+
+  // W5.1 — the installed PWA's start_url is /tour-mode; jump straight back
+  // into the last room (its stored room session makes rejoin seamless, and
+  // the room's own error state links back here if it no longer opens).
+  useEffect(() => {
+    const jump = () => {
+      if (!isStandaloneDisplayMode()) return;
+      try {
+        const lastRoom = window.localStorage.getItem('tour_mode_last_room');
+        if (lastRoom) router.replace(`/tour-mode/room/${encodeURIComponent(lastRoom)}`);
+      } catch {
+        /* stay on the entry list */
+      }
+    };
+    jump();
+  }, [router]);
 
   useEffect(() => {
     let cancelled = false;

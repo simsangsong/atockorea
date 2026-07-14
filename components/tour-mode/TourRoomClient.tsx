@@ -28,6 +28,7 @@ import PickupBoard from '@/components/tour-mode/PickupBoard';
 import RoomMapTab from '@/components/tour-mode/map/RoomMapTab';
 import RoomShell from '@/components/tour-mode/RoomShell';
 import SosButton from '@/components/tour-mode/SosButton';
+import InstallBanner from '@/components/tour-mode/InstallBanner';
 import { detectEntryLocale, ENTRY_COPY } from '@/components/tour-mode/entryCopy';
 import { GUEST_CREDS_STORAGE_PREFIX } from '@/components/tour-mode/TourModeEntry';
 import SettingsTab from '@/components/tour-mode/SettingsTab';
@@ -196,6 +197,43 @@ function TourRoomLive({
   const messagesRef = useRef(messages);
   messagesRef.current = messages;
 
+  // W5.1 — remember this room so the installed PWA's start_url (/tour-mode)
+  // can jump straight back in; the stored room session makes rejoin seamless.
+  useEffect(() => {
+    try {
+      window.localStorage.setItem('tour_mode_last_room', bookingId);
+    } catch {
+      /* entry list still works */
+    }
+  }, [bookingId]);
+
+  // W4.3 — SOS→ops linkage: once an SOS is delivered, admin replies get the
+  // highlight (ChatFeed) and the SOS card shows "connected". sessionStorage
+  // keeps it across a mid-tour reload.
+  const sosSentKey = `tour_mode_sos_sent:${bookingId}`;
+  const [sosSentAt, setSosSentAt] = useState<string | null>(null);
+  useEffect(() => {
+    const restore = () => {
+      try {
+        setSosSentAt(window.sessionStorage.getItem(sosSentKey));
+      } catch {
+        /* highlight just starts from the next SOS */
+      }
+    };
+    restore();
+  }, [sosSentKey]);
+  const handleSosSent = useCallback(
+    (at: string) => {
+      setSosSentAt(at);
+      try {
+        window.sessionStorage.setItem(sosSentKey, at);
+      } catch {
+        /* non-persistent highlight is still correct for this session */
+      }
+    },
+    [sosSentKey],
+  );
+
   // T2.4: any first gesture in the room unlocks audio for later playback.
   useEffect(() => {
     const unlock = () => primeAudio();
@@ -332,7 +370,7 @@ function TourRoomLive({
       }
       sos={
         viewerRole === 'customer' && !readOnly ? (
-          <SosButton bookingId={bookingId} roomSession={data.session} locale={locale} />
+          <SosButton bookingId={bookingId} roomSession={data.session} locale={locale} onSent={handleSosSent} />
         ) : null
       }
       map={
@@ -397,7 +435,12 @@ function TourRoomLive({
             viewerRole={viewerRole}
             textScale={settings.textScale}
             tts={{ bookingId, roomSession: data.session }}
+            opsHighlightAfter={viewerRole === 'customer' ? sosSentAt : null}
           />
+          {/* W5.1 — pin-to-home-screen nudge, D-1 through tour day, once per booking. */}
+          {viewerRole === 'customer' && !readOnly && (
+            <InstallBanner tourDate={snapshot.booking?.tour_date ?? null} bookingId={bookingId} />
+          )}
           {failedCount > 0 && (
             <button
               type="button"
