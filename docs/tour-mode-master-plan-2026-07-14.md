@@ -2,7 +2,7 @@
 
 **작성일:** 2026-07-14
 **브랜치:** `claude/tour-mode-dev-iaa0b8`
-**상태:** Wave T0~T2 **완료 + PR #307 머지(`ee886a73`, 플래그 OFF)** → **Wave T3 위치·지도 7/7 코드 완료(465a1fe6)**. 실기기 확인 항목은 §I-4(파일럿 전 수행). 다음 = **Wave T4(지오펜스 자동 풀 설명·비전 Q&A)** → T5(초대·발송). T1.11 ⑧ QR·취소 revoke는 T5.1 동반. 구현 커밋은 세션 브랜치 `claude/tour-mode-iql6ho`(플랜 문서 브랜치를 머지해 진행).
+**상태:** Wave T0~T2 완료+PR #307 머지(플래그 OFF) → **Wave T3 완료(465a1fe6)** → **Wave T4 완료(fc80cbfa — 파일럿 스팟 5개 라이브 시딩, 좌표 검수는 사람 게이트: `docs/tour-mode-pilot-spot-checklist-2026-07-14.md`)**. 다음 = **Wave T5(발송·이메일, T5.1부터 — T1.11 ⑧ QR·취소 revoke 동반)**. 실기기 확인 §I-4. 구현 커밋은 세션 브랜치 `claude/tour-mode-iql6ho`.
 **단일 기준 문서:** 이 파일. 투어모드 관련 모든 작업은 이 문서의 웨이브·티켓 번호를 기준으로 진행/보고한다.
 
 ---
@@ -295,13 +295,13 @@ hooks/
 - **T3.7** 픽업 임박 보드 — 투어 아침(픽업 시작~버스 출발) 룸 상단에 "내 픽업: N번째 정차 · 약 X분" 표시. 가이드(버스) 위치 × 같은 tour_id+date 픽업포인트 `pickup_time` 순번으로 계산(v1은 직선거리 기반 추정 — Directions API 미사용, 비용 0) + 버스 실시간 지도 링크. 손님 버튼 "도착했어요 / 조금 늦어요" → `metadata.kind='pickup_status'` 메시지로 가이드 콘솔 집계 — AC: 가이드 위치공유 OFF 시 보드 자동 숨김 + 픽업 시간 정적 안내로 강등, 픽업 완료 순차 갱신. ✅ 완료(465a1fe6) — 스냅샷에 pickup_sequence(투어일 전체 정차 pickup_time 순) 추가, pickupBoardState 순수함수(오늘만·내 픽업+45분 후 자동 숨김·가이드 미공유=정적 강등), 도착/지각 버튼은 기존 퀵답장 프리셋 재사용(LLM 0회, preset_key로 집계 가능). '픽업 완료 순차 갱신'은 가이드 콘솔(T6)에서 이어감.
 
 ### Wave T4 — 지오펜스 자동 풀 설명 · 비전 Q&A 【7티켓】
-- **T4.1** `scripts/extract-tour-stop-content.ts` — 정적 스톱 배열 → `data/tour-stop-content/{slug}.json` — AC: 파일럿 투어 1개 무손실 추출.
-- **T4.2** 어드민 스팟 편집 확장(`/admin/products` 내 기존 tour-mode 편집 화면): content jsonb 에디터 + poi_key 셀렉터 + 추출 JSON 가져오기 — AC: 저장 후 스냅샷 API에 반영.
-- **T4.3** spot-events 확장: 도착 metadata에 로케일 해석 content 동봉 + Broadcast + **도착/공지 템플릿 문구의 런타임 LLM 번역 제거(§M-2 ① 사전번역 상수로 대체)** — AC: content 없으면 poi_key 폴백, 그것도 없으면 기존 단문(3층 폴백 테스트), 도착 이벤트 처리 중 LLM 호출 0회.
-- **T4.4** `useGeoWatcher` 지오펜스 — 진입 반경 trigger_radius_m / 이탈 exit_radius_m 히스테리시스 + 60초 dwell 최소 — AC: GPS 지터 시뮬레이션(모의 좌표 시퀀스)에서 이벤트 1회.
-- **T4.5** `SpotArrivalCard` — 풀 설명 카드(이미지·하이라이트·visitBasics·convenience·smartNotes) + TTS/사전 audio_url 재생 — AC: 드로어와 시각 일관.
-- **T4.6** 파일럿 투어 스팟 데이터 시딩(스팟 좌표+반경+content, 어드민 검수) — AC: 실좌표 검증 체크리스트.
-- **T4.7** "이게 뭐예요?" 사진 질문 — Composer 카메라/앨범 첨부 → Storage `tour-room-photos/` 업로드 → `POST /api/tour-rooms/[bookingId]/vision-ask` → §M-1 라우터 비전 1콜(Gemini Flash-Lite 이미지 입력)로 손님 로케일 답변 게시. 기본 "나만 보기"(룸 공유 토글), 레이트리밋 participant당 10회/일, 위치 컨텍스트(현재 스팟명) 프롬프트 주입 — AC: 음식·간판·문화재 3케이스 수동 검증, 예산 가드 연동. *메뉴판 번역(§H P2 #11)은 이 라우트에 프리셋 프롬프트만 추가.*
+- **T4.1** `scripts/extract-tour-stop-content.ts` — 정적 스톱 배열 → `data/tour-stop-content/{slug}.json` — AC: 파일럿 투어 1개 무손실 추출. ✅ 완료(fc80cbfa) — 파일럿=busan-top-attractions-day-tour(K-5의 부산 시그니처, POI KB 커버리지 최다), 7스톱×6로케일 무손실(`data/tour-stop-content/`).
+- **T4.2** 어드민 스팟 편집 확장(`/admin/products` 내 기존 tour-mode 편집 화면): content jsonb 에디터 + poi_key 셀렉터 + 추출 JSON 가져오기 — AC: 저장 후 스냅샷 API에 반영. ✅ 완료(fc80cbfa) — **설계 조정:** /admin/products 내부가 아닌 독립 페이지 `/admin/tour-mode-spots`(모놀리스 리스크 회피; 링크 연결은 후속). PUT /api/admin/tours/[id]/tour-mode(검증+교차투어 가드), poi_key 셀렉터(KB 83키), 로케일별 content JSON 에디터.
+- **T4.3** spot-events 확장: 도착 metadata에 로케일 해석 content 동봉 + Broadcast + **도착/공지 템플릿 문구의 런타임 LLM 번역 제거(§M-2 ① 사전번역 상수로 대체)** — AC: content 없으면 poi_key 폴백, 그것도 없으면 기존 단문(3층 폴백 테스트), 도착 이벤트 처리 중 LLM 호출 0회. ✅ 완료(fc80cbfa) — `lib/tour-room/spotContent.ts`(사전번역 5로케일 템플릿+3층 리졸버, 유닛 고정), spot-events가 Broadcast도 수행(기존엔 미방송).
+- **T4.4** `useGeoWatcher` 지오펜스 — 진입 반경 trigger_radius_m / 이탈 exit_radius_m 히스테리시스 + 60초 dwell 최소 — AC: GPS 지터 시뮬레이션(모의 좌표 시퀀스)에서 이벤트 1회. ✅ 완료(fc80cbfa) — `lib/tour-room/spotWatcher.ts`(§O-8 최근접 판정+120s 쿨다운은 지연-발화로 유실 방지)+`useSpotGeofence`, 지터 시퀀스 1회 발화 유닛.
+- **T4.5** `SpotArrivalCard` — 풀 설명 카드(이미지·하이라이트·visitBasics·convenience·smartNotes) + TTS/사전 audio_url 재생 — AC: 드로어와 시각 일관. ✅ 완료(fc80cbfa) — SpotArrivalCard(이미지·하이라이트·visitBasics·convenience·smartNotes·펼치기·사전 audio_url 재생), content 없으면 단문 버블 강등.
+- **T4.6** 파일럿 투어 스팟 데이터 시딩(스팟 좌표+반경+content, 어드민 검수) — AC: 실좌표 검증 체크리스트. ✅ 시딩 완료(fc80cbfa, 라이브) — 5스팟(match_pois 좌표+반경 150~200m+6로케일 content+poi_key). **사람 검수 대기:** `docs/tour-mode-pilot-spot-checklist-2026-07-14.md`.
+- **T4.7** "이게 뭐예요?" 사진 질문 — Composer 카메라/앨범 첨부 → Storage `tour-room-photos/` 업로드 → `POST /api/tour-rooms/[bookingId]/vision-ask` → §M-1 라우터 비전 1콜(Gemini Flash-Lite 이미지 입력)로 손님 로케일 답변 게시. 기본 "나만 보기"(룸 공유 토글), 레이트리밋 participant당 10회/일, 위치 컨텍스트(현재 스팟명) 프롬프트 주입 — AC: 음식·간판·문화재 3케이스 수동 검증, 예산 가드 연동. *메뉴판 번역(§H P2 #11)은 이 라우트에 프리셋 프롬프트만 추가.* ✅ 완료(fc80cbfa) — 나만보기 기본/방 공유 토글, 3/min·10/day 참가자 게이트(과금 전 검사), 최근 도착 스팟명 컨텍스트 주입, 메뉴 프리셋 포함. 음식·간판·문화재 3케이스 수동 검증은 §I-4 실기기에서.
 
 ### Wave T5 — 발송(디스패치) · 이메일 【4티켓】
 - **T5.1** `dispatch` API — 손님 토큰(booking별) + 가이드 토큰(tour-date별 1개, §O-3) 생성+invites 기록, 가이드 메일에 QR 동봉 — AC: 재발송 시 기존 토큰 revoke, 예약 취소 훅 연동(§O-1 ⑧).
