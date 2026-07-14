@@ -196,6 +196,33 @@ function TourRoomLive({
   const messagesRef = useRef(messages);
   messagesRef.current = messages;
 
+  // W4.3 — SOS→ops linkage: once an SOS is delivered, admin replies get the
+  // highlight (ChatFeed) and the SOS card shows "connected". sessionStorage
+  // keeps it across a mid-tour reload.
+  const sosSentKey = `tour_mode_sos_sent:${bookingId}`;
+  const [sosSentAt, setSosSentAt] = useState<string | null>(null);
+  useEffect(() => {
+    const restore = () => {
+      try {
+        setSosSentAt(window.sessionStorage.getItem(sosSentKey));
+      } catch {
+        /* highlight just starts from the next SOS */
+      }
+    };
+    restore();
+  }, [sosSentKey]);
+  const handleSosSent = useCallback(
+    (at: string) => {
+      setSosSentAt(at);
+      try {
+        window.sessionStorage.setItem(sosSentKey, at);
+      } catch {
+        /* non-persistent highlight is still correct for this session */
+      }
+    },
+    [sosSentKey],
+  );
+
   // T2.4: any first gesture in the room unlocks audio for later playback.
   useEffect(() => {
     const unlock = () => primeAudio();
@@ -332,7 +359,7 @@ function TourRoomLive({
       }
       sos={
         viewerRole === 'customer' && !readOnly ? (
-          <SosButton bookingId={bookingId} roomSession={data.session} locale={locale} />
+          <SosButton bookingId={bookingId} roomSession={data.session} locale={locale} onSent={handleSosSent} />
         ) : null
       }
       map={
@@ -397,6 +424,7 @@ function TourRoomLive({
             viewerRole={viewerRole}
             textScale={settings.textScale}
             tts={{ bookingId, roomSession: data.session }}
+            opsHighlightAfter={viewerRole === 'customer' ? sosSentAt : null}
           />
           {failedCount > 0 && (
             <button

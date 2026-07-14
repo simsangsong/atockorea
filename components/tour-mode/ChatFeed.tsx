@@ -63,6 +63,7 @@ export default function ChatFeed({
   viewerRole = 'customer',
   textScale = 'normal',
   tts,
+  opsHighlightAfter = null,
 }: {
   messages: RoomMessage[];
   viewerLocale: RoomLocale;
@@ -72,6 +73,9 @@ export default function ChatFeed({
   textScale?: 'normal' | 'large';
   /** T2.4 — when set, incoming bubbles get a listen button (TTS ladder). */
   tts?: { bookingId: string; roomSession: string } | null;
+  /** W4.3 — after an SOS, admin replies newer than this ISO time get the
+   *  "ops responded" highlight so the traveller spots them instantly. */
+  opsHighlightAfter?: string | null;
 }) {
   const bubbleText = textScale === 'large' ? 'text-[17px]' : 'text-[14px]';
   const systemText = textScale === 'large' ? 'text-[14px]' : 'text-[12px]';
@@ -152,6 +156,12 @@ export default function ChatFeed({
         const translatable = Boolean(translated && translated !== message.source_text);
         const showingOriginal = originals.has(message.id);
         const roleLabel = !mine ? ROLE_LABEL[viewerLocale][message.sender_role] : null;
+        // W4.3 — an admin reply after the traveller's SOS gets the highlight.
+        const opsHighlighted =
+          Boolean(opsHighlightAfter) &&
+          !mine &&
+          message.sender_role === 'admin' &&
+          message.created_at > opsHighlightAfter!;
         // T2.4: listen button on delivered incoming bubbles only (optimistic
         // local sends have no server row for the TTS cache to key on).
         const listenable = Boolean(tts) && !mine && !message._local && !message.id.startsWith('local-');
@@ -159,14 +169,25 @@ export default function ChatFeed({
         return (
           <div key={message.id} className={mine ? 'flex justify-end' : 'flex justify-start'}>
             <div className="max-w-[85%]">
-              {roleLabel && <div className="mb-0.5 px-1 text-[11px] font-medium text-gray-500 dark:text-gray-400">{roleLabel}</div>}
+              {roleLabel && (
+                <div
+                  className={`mb-0.5 flex items-center gap-1 px-1 text-[11px] font-medium ${
+                    opsHighlighted ? 'text-emerald-600 dark:text-emerald-400' : 'text-gray-500 dark:text-gray-400'
+                  }`}
+                >
+                  {opsHighlighted && <span className="size-1.5 rounded-full bg-emerald-500" data-testid="ops-reply-dot" />}
+                  {roleLabel}
+                </div>
+              )}
               <button
                 type="button"
                 onClick={translatable ? () => toggleOriginal(message.id) : undefined}
                 className={`w-full rounded-2xl px-3.5 py-2.5 text-left leading-relaxed shadow-sm ${bubbleText} ${
                   mine
                     ? 'bg-amber-500 text-white'
-                    : 'bg-white text-gray-900 ring-1 ring-gray-100 dark:bg-gray-900 dark:text-gray-100 dark:ring-gray-800'
+                    : opsHighlighted
+                      ? 'bg-emerald-50 text-gray-900 ring-2 ring-emerald-300 dark:bg-emerald-950 dark:text-gray-100 dark:ring-emerald-700'
+                      : 'bg-white text-gray-900 ring-1 ring-gray-100 dark:bg-gray-900 dark:text-gray-100 dark:ring-gray-800'
                 } ${message._local === 'sending' ? 'opacity-60' : ''} ${
                   message._local === 'failed' ? 'ring-2 ring-red-300' : ''
                 }`}

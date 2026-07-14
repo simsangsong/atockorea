@@ -110,3 +110,35 @@ describe('EmergencyCard', () => {
     expect(helpline).toHaveAttribute('href', 'tel:1330');
   });
 });
+
+describe('ChatFeed ops highlight (W4.3)', () => {
+  const adminReply: RoomMessage = {
+    id: 'a1',
+    sender_role: 'admin',
+    source_text: 'We are on our way to you.',
+    created_at: '2026-07-14T06:00:00Z',
+  };
+
+  it('highlights admin replies newer than the SOS timestamp', () => {
+    render(
+      <ChatFeed
+        messages={[GUIDE_MESSAGE, adminReply]}
+        viewerLocale="en"
+        opsHighlightAfter="2026-07-14T05:30:00Z"
+      />,
+    );
+    expect(screen.getByTestId('ops-reply-dot')).toBeInTheDocument();
+    expect(screen.getByText('We are on our way to you.').closest('button')!.className).toContain('ring-emerald-300');
+    // Guide message (older, non-admin) stays unhighlighted.
+    expect(screen.getByText(GUIDE_MESSAGE.translations!.en).closest('button')!.className).not.toContain(
+      'ring-emerald-300',
+    );
+  });
+
+  it('does not highlight without an SOS or for pre-SOS admin messages', () => {
+    const { rerender } = render(<ChatFeed messages={[adminReply]} viewerLocale="en" />);
+    expect(screen.queryByTestId('ops-reply-dot')).toBeNull();
+    rerender(<ChatFeed messages={[adminReply]} viewerLocale="en" opsHighlightAfter="2026-07-14T07:00:00Z" />);
+    expect(screen.queryByTestId('ops-reply-dot')).toBeNull();
+  });
+});

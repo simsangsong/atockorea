@@ -11,7 +11,14 @@
 import { useMemo } from 'react';
 import type { OpsRoomStream } from '@/hooks/useOpsChannels';
 import { roomHue } from '@/components/tour-mode/guide/GuideConsole';
+import type { AttentionItem, AttentionReason } from '@/lib/tour-ops/attention';
 import { isRecent, kstTimeLabel, senderLabel, type OpsRoom, type SosInfo } from '@/components/tour-ops/opsShared';
+
+const ATTENTION_LABELS: Record<AttentionReason, string> = {
+  need_help: '🙋 도움 요청',
+  keyword: '⚠️ 키워드 감지',
+  unanswered: '⏳ 5분 무응답',
+};
 
 interface TourGroup {
   key: string;
@@ -28,6 +35,7 @@ export default function OpsDashboardTab({
   streams,
   unread,
   sosRooms,
+  attention = [],
   onOpenRoom,
 }: {
   rooms: OpsRoom[];
@@ -35,8 +43,10 @@ export default function OpsDashboardTab({
   streams: Record<string, OpsRoomStream>;
   unread: Record<string, number>;
   sosRooms: Map<string, SosInfo>;
+  attention?: AttentionItem[];
   onOpenRoom: (roomId: string) => void;
 }) {
+  const roomById = useMemo(() => new Map(rooms.map((room) => [room.id, room])), [rooms]);
   const groups = useMemo<TourGroup[]>(() => {
     const byTour = new Map<string, TourGroup>();
     for (const room of rooms) {
@@ -78,6 +88,36 @@ export default function OpsDashboardTab({
 
   return (
     <div className="space-y-4 pb-4">
+      {attention.length > 0 && (
+        <section data-testid="ops-attention-queue">
+          <h2 className="px-1 pb-1.5 text-[13px] font-semibold text-amber-300">응대 필요 {attention.length}</h2>
+          <div className="space-y-2">
+            {attention.map((item) => {
+              const room = roomById.get(item.roomId);
+              return (
+                <button
+                  key={`${item.roomId}-${item.reason}`}
+                  type="button"
+                  onClick={() => onOpenRoom(item.roomId)}
+                  className="block w-full rounded-2xl border border-amber-500/40 bg-amber-950/30 px-4 py-3 text-left"
+                >
+                  <p className="flex items-center gap-2 text-[13px] font-semibold text-amber-200">
+                    <span className="shrink-0 rounded-full bg-amber-500/20 px-2 py-0.5 text-[10px] font-bold">
+                      {ATTENTION_LABELS[item.reason]}
+                    </span>
+                    <span className="truncate">{room?.booking?.contact_name ?? '게스트'}</span>
+                    <span className="ml-auto shrink-0 text-[10px] font-normal text-amber-400/70">
+                      {kstTimeLabel(item.created_at)}
+                    </span>
+                  </p>
+                  {item.excerpt && <p className="mt-1 truncate text-[12px] text-amber-100/80">{item.excerpt}</p>}
+                </button>
+              );
+            })}
+          </div>
+        </section>
+      )}
+
       {groups.map((group) => (
         <section key={group.key}>
           <div className="flex items-baseline justify-between gap-2 px-1 pb-1.5">

@@ -23,6 +23,8 @@ import { LayoutDashboard, Map as MapIcon, Settings, Siren } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import { kstToday } from '@/lib/tour-room/time';
 import { useOpsChannels, type OpsChannelDescriptor } from '@/hooks/useOpsChannels';
+import { computeAttention } from '@/lib/tour-ops/attention';
+import { startSosAlarmVisuals, stopSosAlarmVisuals, vibrateSos } from '@/lib/tour-ops/alerts';
 import { getOpsToken, playSosSound, type OpsRoom, type SosInfo, type SosMetadata } from '@/components/tour-ops/opsShared';
 import OpsDashboardTab from '@/components/tour-ops/OpsDashboardTab';
 import OpsMapTab from '@/components/tour-ops/OpsMapTab';
@@ -171,8 +173,11 @@ export default function OpsApp() {
     return map;
   }, [rooms, streams]);
 
-  // New SOS → sound (once per room per session). W4.1 layers blink/vibrate here.
+  // W4.1 — new SOS → sound + vibration (once per room per session), plus
+  // title/favicon blink until ops acknowledges (opens the room or the SOS tab).
   const sosSeenRef = useRef<Set<string>>(new Set());
+  const sosHandledRef = useRef<Set<string>>(new Set());
+  const [handledVersion, setHandledVersion] = useState(0);
   const soundOnRef = useRef(soundOn);
   useEffect(() => {
     soundOnRef.current = soundOn;
@@ -182,15 +187,60 @@ export default function OpsApp() {
       if (sosSeenRef.current.has(roomId)) continue;
       sosSeenRef.current.add(roomId);
       if (soundOnRef.current) playSosSound();
+      vibrateSos();
     }
   }, [sosRooms]);
+  useEffect(() => {
+    const unhandled = [...sosRooms.keys()].some((roomId) => !sosHandledRef.current.has(roomId));
+    if (unhandled) startSosAlarmVisuals();
+    else stopSosAlarmVisuals();
+  }, [sosRooms, handledVersion]);
+  useEffect(() => stopSosAlarmVisuals, []);
+
+  const acknowledgeSos = useCallback(
+    (roomIds: Iterable<string>) => {
+      let changed = false;
+      for (const roomId of roomIds) {
+        if (!sosHandledRef.current.has(roomId)) {
+          sosHandledRef.current.add(roomId);
+          changed = true;
+        }
+      }
+      if (changed) setHandledVersion((version) => version + 1);
+    },
+    [],
+  );
 
   const openRoom = useCallback(
     (roomId: string) => {
       setOpenRoomId(roomId);
       markRead(roomId);
+      if (sosRooms.has(roomId)) acknowledgeSos([roomId]);
     },
-    [markRead],
+    [markRead, sosRooms, acknowledgeSos],
+  );
+
+  const selectTab = useCallback(
+    (next: OpsTab) => {
+      setTab(next);
+      if (next === 'sos') acknowledgeSos(sosRooms.keys());
+    },
+    [acknowledgeSos, sosRooms],
+  );
+
+  // W4.2 — the attention queue: non-SOS "customer wants to talk" signals.
+  const attention = useMemo(
+    () =>
+      computeAttention(
+        rooms.map((room) => ({
+          roomId: room.id,
+          hasSos: sosRooms.has(room.id),
+          messages: streams[room.id]?.messages ?? [],
+          lastMessage: room.last_message,
+        })),
+        Date.now(),
+      ),
+    [rooms, streams, sosRooms],
   );
 
   const openRoomObject = openRoomId ? rooms.find((room) => room.id === openRoomId) ?? null : null;
@@ -242,6 +292,7 @@ export default function OpsApp() {
             streams={streams}
             unread={unread}
             sosRooms={sosRooms}
+            attention={attention}
             onOpenRoom={openRoom}
           />
         )}
@@ -279,7 +330,7 @@ export default function OpsApp() {
             <button
               key={key}
               type="button"
-              onClick={() => setTab(key)}
+              onClick={() => selectTab(key)}
               aria-current={active ? 'page' : undefined}
               className={`relative flex h-[64px] flex-1 flex-col items-center justify-center gap-0.5 text-[10px] font-medium transition-colors ${
                 active ? 'text-white' : 'text-slate-500'
