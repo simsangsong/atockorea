@@ -26,6 +26,7 @@ import {
 } from "@/components/product-tour-static/east-signature-nature-core/tour-detail-sections";
 import { getPrivateSampleItineraryConfig } from "@/components/product-tour-static/_shared/privateSampleItinerary";
 import { TourRatesSheet } from "@/components/product-tour-static/_shared/TourRatesSheet";
+import { SegmentedToggle } from "@/components/product-tour-static/_shared/SegmentedToggle";
 import { parseListUnitUsd } from "@/components/product-tour-static/_shared/bookingShared";
 import { useCurrencyOptional } from "@/lib/currency";
 import type { StaticTourProductRegistration } from "@/components/product-tour-static/catalog/staticTourCatalogCards";
@@ -165,6 +166,8 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
   const effectiveSeedDateYmd = seedDateYmd ?? urlSeeds?.dateYmd;
   const effectiveSeedLanguage = seedLanguage ?? urlSeeds?.language;
   const bookingSeedKey = urlSeeds ? "url-seeded" : "default";
+  // W2.4 — Standard|Sample itinerary view (charter products only).
+  const [itineraryView, setItineraryView] = useState<"standard" | "sample">("standard");
   // W2.6 — reviews cold-start: zero reviews hides the section + Reviews tab
   // together, except when the write deep link (#reviews-write / ?write=1)
   // brings a guest here to leave the first review.
@@ -219,25 +222,26 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
             viatorListingUrl={viatorListingUrl}
           />
 
-          {/* Trust strip — converts on first scroll without overloading the hero */}
-          <div className="border-b border-border/60 bg-white">
-            <div className="mx-auto max-w-2xl px-4 sm:px-5 py-2.5 lg:max-w-2xl">
-              <div className="flex items-center gap-x-4 overflow-x-auto whitespace-nowrap scrollbar-hide">
-                <span className="flex items-center gap-1.5 text-[11.5px] font-medium text-foreground">
-                  <ShieldCheck className="h-3.5 w-3.5 flex-shrink-0 text-emerald-600" strokeWidth={2} />
-                  {t("tour.freeCancellation")}
-                </span>
-                <span aria-hidden className="h-3 w-px flex-shrink-0 bg-border" />
-                <span className="flex items-center gap-1.5 text-[11.5px] font-medium text-foreground">
-                  <Zap className="h-3.5 w-3.5 flex-shrink-0 text-amber-500" strokeWidth={2} />
-                  {t("tour.instantConfirmation")}
-                </span>
-                <span aria-hidden className="h-3 w-px flex-shrink-0 bg-border" />
-                <span className="flex items-center gap-1.5 text-[11.5px] font-medium text-foreground">
-                  <Headphones className="h-3.5 w-3.5 flex-shrink-0 text-primary" strokeWidth={2} />
-                  {t("tour.customerSupport")}
-                </span>
-              </div>
+          {/* W2.1 — trust strip absorbed into a hero microline (§I #1): the old
+              bordered standalone section is gone; one unboxed deep-tone line
+              rides directly under the hero. Booking surfaces keep their own
+              single reassurance line (§F-1: trust copy appears exactly twice). */}
+          <div className="mx-auto max-w-2xl px-4 pb-1 pt-2 sm:px-5">
+            <div className="flex items-center gap-x-3.5 overflow-x-auto whitespace-nowrap scrollbar-hide">
+              <span className="flex items-center gap-1.5 text-[11.5px] font-semibold text-emerald-800">
+                <ShieldCheck className="h-3.5 w-3.5 flex-shrink-0 text-emerald-600" strokeWidth={2.25} />
+                {t("tour.freeCancellation")}
+              </span>
+              <span aria-hidden className="h-1 w-1 flex-shrink-0 rounded-full bg-slate-300" />
+              <span className="flex items-center gap-1.5 text-[11.5px] font-semibold text-amber-800">
+                <Zap className="h-3.5 w-3.5 flex-shrink-0 text-amber-600" strokeWidth={2.25} />
+                {t("tour.instantConfirmation")}
+              </span>
+              <span aria-hidden className="h-1 w-1 flex-shrink-0 rounded-full bg-slate-300" />
+              <span className="flex items-center gap-1.5 text-[11.5px] font-semibold text-sky-900">
+                <Headphones className="h-3.5 w-3.5 flex-shrink-0 text-primary" strokeWidth={2.25} />
+                {t("tour.customerSupport")}
+              </span>
             </div>
           </div>
 
@@ -286,38 +290,55 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
           id="itinerary"
           className="mx-3 mt-4 scroll-mt-24 lg:mx-0"
         >
-          <div className="mx-auto max-w-2xl px-4 sm:px-5 pt-6 pb-3 space-y-7">
-            <TourDayFlowSection
-              routeFlowStops={vm.routeFlowStops}
-              routePhases={vm.routePhases}
-              routeShapeIntro={vm.routeShapeIntro}
-              sectionUi={vm.sectionUi}
-              itineraryStops={vm.itineraryStops}
-            />
+          {/* W2.4 — charter products switch Standard|Sample inside the
+              itinerary section via THE shared segmented toggle (§F-8 ③).
+              Both views stay mounted (hidden attr) so the locale copy
+              survives the DOM round-trip check. The `sample-itinerary` id
+              keeps old deep links landing here (W2.7 anchor compat). */}
+          {privateSampleItinerary ? (
+            <div id="sample-itinerary" className="mx-auto max-w-2xl scroll-mt-24 px-4 pt-6 sm:px-5">
+              <SegmentedToggle
+                ariaLabel="Itinerary view"
+                value={itineraryView}
+                onChange={setItineraryView}
+                options={[
+                  { value: "standard", label: vm.sectionUi.itineraryStandardLabel ?? "Standard route" },
+                  { value: "sample", label: vm.sectionUi.itinerarySampleLabel ?? "Sample itineraries" },
+                ]}
+              />
+            </div>
+          ) : null}
+          <div hidden={itineraryView !== "standard"}>
+            <div className="mx-auto max-w-2xl px-4 sm:px-5 pt-6 pb-3 space-y-7">
+              <TourDayFlowSection
+                routeFlowStops={vm.routeFlowStops}
+                routePhases={vm.routePhases}
+                routeShapeIntro={vm.routeShapeIntro}
+                sectionUi={vm.sectionUi}
+                itineraryStops={vm.itineraryStops}
+              />
+            </div>
+            <div className="mx-auto max-w-2xl px-4 sm:px-5 pt-2 pb-4">
+              <TourTimelineSection
+                itineraryStops={vm.itineraryStops}
+                sectionUi={vm.sectionUi}
+                pickup_dropoff={vm.pickup_dropoff}
+                routeVariants={vm.routeVariants}
+                selectedPortIndex={selectedPortIndex}
+                onPortChange={setSelectedPortIndex}
+                locale={locale}
+              />
+            </div>
           </div>
-          <div className="mx-auto max-w-2xl px-4 sm:px-5 pt-2 pb-4">
-            <TourTimelineSection
-              itineraryStops={vm.itineraryStops}
-              sectionUi={vm.sectionUi}
-              pickup_dropoff={vm.pickup_dropoff}
-              routeVariants={vm.routeVariants}
-              selectedPortIndex={selectedPortIndex}
-              onPortChange={setSelectedPortIndex}
-              locale={locale}
-            />
-          </div>
-        </section>
-
-        {privateSampleItinerary ? (
-          <section id="sample-itinerary" className="mx-3 mt-4 lg:mx-0">
-            <div className="mx-auto max-w-2xl px-4 sm:px-5 py-5">
+          {privateSampleItinerary ? (
+            <div hidden={itineraryView !== "sample"} className="mx-auto max-w-2xl px-4 sm:px-5 pt-4 pb-4">
               <TourPrivateSampleItinerarySection
                 config={privateSampleItinerary}
                 locale={locale}
               />
             </div>
-          </section>
-        ) : null}
+          ) : null}
+        </section>
 
         {vm.pickup_dropoff ? (
           <section id="pickup-dropoff" className="mx-3 mt-4 scroll-mt-24 lg:mx-0">

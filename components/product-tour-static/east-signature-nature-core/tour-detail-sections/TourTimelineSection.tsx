@@ -49,7 +49,7 @@ function StopCard({
   };
 
   return (
-    <div className="relative -ml-2 pl-9">
+    <div id={`tour-stop-${stop.number}`} className="relative -ml-2 scroll-mt-32 pl-9">
       {stop.number < totalStops && (
         <div className="absolute left-[16px] top-[48px] bottom-0 w-px bg-gradient-to-b from-slate-200/40 to-transparent" />
       )}

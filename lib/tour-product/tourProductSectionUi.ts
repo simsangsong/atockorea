@@ -137,6 +137,9 @@ export type TourProductSectionUiV1 = {
   pickupPortCardTitle?: string;
   pickupViewMapLabel?: string;
   pickupBackToItineraryLabel?: string;
+  /** W2.4 — itinerary Standard|Sample segmented toggle (charter products). */
+  itineraryStandardLabel?: string;
+  itinerarySampleLabel?: string;
 };
 
 export const DEFAULT_TOUR_PRODUCT_SECTION_UI_EN: TourProductSectionUiV1 = {
@@ -231,6 +234,8 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_EN: TourProductSectionUiV1 = {
   pickupPortCardTitle: "Port pickup",
   pickupViewMapLabel: "Details & map",
   pickupBackToItineraryLabel: "Back to itinerary",
+  itineraryStandardLabel: "Standard route",
+  itinerarySampleLabel: "Sample itineraries",
 };
 
 /** 정적 번들 한국어 — DB `detail_payload.sectionUi` 없을 때 Jeju 등에서 사용 */
@@ -333,6 +338,8 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_KO: TourProductSectionUiV1 = {
   pickupPortCardTitle: "항구 픽업",
   pickupViewMapLabel: "상세·지도 보기",
   pickupBackToItineraryLabel: "일정으로 돌아가기",
+  itineraryStandardLabel: "기본 일정",
+  itinerarySampleLabel: "샘플 일정",
 };
 
 /** 정적 번들 日本語 */
@@ -435,6 +442,8 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_JA: TourProductSectionUiV1 = {
   pickupPortCardTitle: "港でのお迎え",
   pickupViewMapLabel: "詳細・地図を見る",
   pickupBackToItineraryLabel: "行程に戻る",
+  itineraryStandardLabel: "基本ルート",
+  itinerarySampleLabel: "サンプル行程",
 };
 
 /** 简体中文 UI */
@@ -535,6 +544,8 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_ZH: TourProductSectionUiV1 = {
   pickupPortCardTitle: "港口接送",
   pickupViewMapLabel: "查看详情和地图",
   pickupBackToItineraryLabel: "返回行程",
+  itineraryStandardLabel: "标准路线",
+  itinerarySampleLabel: "示例行程",
 };
 
 /** 繁體中文 UI */
@@ -635,6 +646,8 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_ZH_TW: TourProductSectionUiV1 = {
   pickupPortCardTitle: "港口接送",
   pickupViewMapLabel: "查看詳情和地圖",
   pickupBackToItineraryLabel: "返回行程",
+  itineraryStandardLabel: "標準路線",
+  itinerarySampleLabel: "示例行程",
 };
 
 /** UI en español */
@@ -737,6 +750,8 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_ES: TourProductSectionUiV1 = {
   pickupPortCardTitle: "Recogida en el puerto",
   pickupViewMapLabel: "Detalles y mapa",
   pickupBackToItineraryLabel: "Volver al itinerario",
+  itineraryStandardLabel: "Ruta estándar",
+  itinerarySampleLabel: "Itinerarios de ejemplo",
 };
 
 function pickSectionUiKeys(raw: unknown): Partial<TourProductSectionUiV1> {
