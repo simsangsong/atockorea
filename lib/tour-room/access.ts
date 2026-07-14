@@ -230,8 +230,10 @@ export async function resolveRoomActor(
     // (login, guest match) may still legitimately authenticate the request.
   }
 
-  // 3. Room session issued by the join API.
-  const sessionHeader = req.headers.get('x-tour-room-auth');
+  // 3. Room session issued by the join API. EventSource (SSE fallback) cannot
+  // set headers, so the signed session is also accepted as the `rs` query
+  // param — short-lived, same-origin, never shown in the address bar.
+  const sessionHeader = req.headers.get('x-tour-room-auth') ?? req.nextUrl?.searchParams?.get('rs');
   if (sessionHeader) {
     const session = verifyRoomSession(sessionHeader);
     if (session && session.bookingId === booking.id) {
