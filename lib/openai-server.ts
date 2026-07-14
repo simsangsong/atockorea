@@ -1,24 +1,7 @@
 import { transcribeAudioWithFallback, type SttResult } from './stt-router';
+import { translateTextViaRouter } from './ai/router';
 
 const OPENAI_API_BASE = 'https://api.openai.com/v1';
-
-const translationJsonFormat = {
-  type: 'json_schema',
-  name: 'translation_result',
-  schema: {
-    type: 'object',
-    additionalProperties: false,
-    properties: {
-      source_locale: { type: 'string' },
-      translations: {
-        type: 'object',
-        additionalProperties: { type: 'string' },
-      },
-    },
-    required: ['source_locale', 'translations'],
-  },
-  strict: false,
-};
 
 const courseJsonFormat = {
   type: 'json_schema',
@@ -52,50 +35,18 @@ export async function transcribeAudioFile(file: File, options?: { prompt?: strin
   return transcribeAudioWithFallback(file, options);
 }
 
+/**
+ * Translation now runs through the multi-provider router (lib/ai/router.ts,
+ * T0.9 / §M-1): Gemini Flash-Lite first when configured, OpenAI as the final
+ * fallback, with the tour_translation_cache memory consulted before any LLM
+ * call. Same contract as before: resolves with { source_locale, translations },
+ * throws when every provider failed.
+ */
 export async function translateTextForLocales(
   text: string,
   targetLocales: string[],
 ): Promise<TranslationResult> {
-  const uniqueTargets = [...new Set(targetLocales.filter(Boolean))];
-  if (uniqueTargets.length === 0) {
-    return { source_locale: 'und', translations: {} };
-  }
-
-  const res = await fetch(`${OPENAI_API_BASE}/responses`, {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${getOpenAIKey()}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      model: process.env.OPENAI_TEXT_MODEL || 'gpt-5-mini',
-      input: [
-        {
-          role: 'system',
-          content:
-            'Detect the source language. Translate the user text into each requested locale. Preserve names, times, pickup points, prices, and URLs. Return only valid JSON.',
-        },
-        {
-          role: 'user',
-          content: JSON.stringify({ text, target_locales: uniqueTargets }),
-        },
-      ],
-      text: { format: translationJsonFormat },
-    }),
-  });
-
-  if (!res.ok) {
-    const message = await res.text();
-    throw new Error(`OpenAI translation failed: ${message}`);
-  }
-
-  const data = (await res.json()) as { output_text?: string; output?: unknown };
-  const raw = data.output_text || extractResponseText(data);
-  const parsed = JSON.parse(raw) as Partial<TranslationResult>;
-  return {
-    source_locale: parsed.source_locale || 'und',
-    translations: parsed.translations || {},
-  };
+  return translateTextViaRouter(text, targetLocales);
 }
 
 export async function generateSpeechMp3(text: string, locale: string): Promise<ArrayBuffer> {

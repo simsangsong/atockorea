@@ -75,3 +75,8 @@ atoc-data-pipeline/lod/etl_error_log.txt
 atoc-data-pipeline/lod/etl_skipped_lines.log
 atoc-data-pipeline/output/
 /nul
+
+# playwright (T1.9 e2e)
+/test-results/
+/playwright-report/
+/e2e/.fixtures.json

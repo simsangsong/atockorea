@@ -97,6 +97,7 @@ const RESERVED_ROOT_SEGMENTS = new Set([
   'test-admin',
   'tours',
   'tour',
+  'tour-mode',
   'tour-preview',
   'tour-product',
 ]);
@@ -283,6 +284,14 @@ function routeRequest(request: NextRequest): NextResponse {
   }
 
   if (pathname === '/admin' || pathname.startsWith('/admin/')) {
+    return NextResponse.next();
+  }
+
+  // Tour Mode is locale-neutral and login-free by design (§O-1 ① direct-link
+  // entry): invite links must reach the room with zero redirects, no locale
+  // prefixing, and no auth gating. UI language comes from the participant's
+  // room locale, not the URL.
+  if (pathname === '/tour-mode' || pathname.startsWith('/tour-mode/')) {
     return NextResponse.next();
   }
 

@@ -16,6 +16,8 @@ const customJestConfig = {
     '**/__tests__/**/*.[jt]s?(x)',
     '**/?(*.)+(spec|test).[jt]s?(x)',
   ],
+  // Playwright specs (T1.9) run via `npm run e2e`, not jest.
+  testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/e2e/'],
   collectCoverageFrom: [
     'lib/**/*.{js,jsx,ts,tsx}',
     'app/api/**/*.{js,jsx,ts,tsx}',
