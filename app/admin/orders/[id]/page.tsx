@@ -101,6 +101,7 @@ export default function OrderDetailPage() {
   const [error, setError] = useState<string | null>(null);
   const [updating, setUpdating] = useState(false);
   const [settling, setSettling] = useState(false);
+  const [dispatchingRoom, setDispatchingRoom] = useState(false);
   // W4.1 — money/state confirmation sheet (replaces window.confirm).
   const [sheet, setSheet] = useState<MoneySheet | null>(null);
   const [sheetBusy, setSheetBusy] = useState(false);
@@ -231,6 +232,43 @@ export default function OrderDetailPage() {
       toast.error(`실패: ${err.message}`);
     } finally {
       setSettling(false);
+    }
+  };
+
+  // T5.3 — (re)dispatch the Tour Mode room links for this booking.
+  const handleDispatchRoom = async () => {
+    if (!booking) return;
+    try {
+      setDispatchingRoom(true);
+      if (!supabase) {
+        toast.error('Supabase client not initialized');
+        return;
+      }
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session) {
+        toast.error('로그인이 필요합니다');
+        return;
+      }
+      const response = await fetch(`/api/admin/orders/${orderId}/dispatch-room`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${session.access_token}`,
+        },
+        credentials: 'include',
+        body: JSON.stringify({}),
+      });
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error || '발송 실패');
+      const parts = [
+        data.customer?.sent ? `손님 ✓ (${data.customer.email})` : `손님 ✗ ${data.customer?.error ?? ''}`,
+        data.guide?.sent ? `가이드 ✓ (${data.guide.email})` : `가이드 ✗ ${data.guide?.error ?? ''}`,
+      ];
+      toast.success(`투어룸 발송 완료 — ${parts.join(' · ')}${data.revokedCount ? ` · 이전 링크 ${data.revokedCount}건 폐기` : ''}`);
+    } catch (err: any) {
+      toast.error(`투어룸 발송 실패: ${err.message}`);
+    } finally {
+      setDispatchingRoom(false);
     }
   };
 
@@ -832,6 +870,35 @@ export default function OrderDetailPage() {
             >
               <CreditCard className="h-4 w-4" />
               카드 청구
+            </button>
+          </div>
+        </div>
+      )}
+
+      {booking && booking.status !== 'cancelled' && (
+        <div className="rounded-xl border border-slate-200 bg-white p-4">
+          <div className="flex items-center justify-between gap-3">
+            <div className="min-w-0">
+              <div className="text-xs font-medium text-slate-500">투어모드 (실시간 투어룸)</div>
+              <div className="mt-0.5 text-sm text-slate-700">
+                손님·가이드에게 입장 링크를 이메일로 보냅니다. 재발송하면 이전 링크는 즉시 폐기돼요.
+              </div>
+            </div>
+            <button
+              type="button"
+              onClick={() =>
+                setSheet({
+                  title: '투어룸 링크 발송',
+                  note: '손님(예약 이메일)과 가이드(머천트 이메일)에게 투어룸 입장 링크를 보냅니다. 재발송 시 이전 링크는 폐기됩니다.',
+                  noteTone: 'neutral',
+                  confirmLabel: '발송',
+                  run: handleDispatchRoom,
+                })
+              }
+              disabled={dispatchingRoom}
+              className="inline-flex min-h-11 flex-shrink-0 items-center gap-1.5 rounded-lg bg-slate-900 px-4 text-sm font-semibold text-white hover:bg-slate-800 disabled:opacity-50"
+            >
+              🧭 투어룸 발송
             </button>
           </div>
         </div>

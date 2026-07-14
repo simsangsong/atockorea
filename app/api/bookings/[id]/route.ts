@@ -7,6 +7,7 @@ import {
   canCancelBookingByPolicy,
 } from '@/lib/booking-cancel-policy';
 import { releaseCouponForBooking } from '@/lib/coupons/settlement';
+import { revokeRoomForCancelledBooking } from '@/lib/tour-room/dispatch';
 
 const BOOKING_DETAIL_SELECT = `
   *,
@@ -319,6 +320,9 @@ export async function PUT(
       /** Welcome coupon: cancellation restores the coupon to the customer
        *  (restore-by-default — see lib/coupons/settlement.ts). Idempotent. */
       await releaseCouponForBooking(supabase, bookingId, 'customer_cancelled');
+
+      // SS4O-1 (8) — Tour Mode: kill the room links and close the room.
+      await revokeRoomForCancelledBooking(supabase, bookingId);
 
       try {
         const rawDate = currentBooking.booking_date;

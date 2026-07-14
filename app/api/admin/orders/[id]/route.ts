@@ -6,6 +6,7 @@ import {
   isAllowedStatusTransition,
 } from '@/lib/admin/booking-status-transition';
 import { releaseCouponForBooking } from '@/lib/coupons/settlement';
+import { revokeRoomForCancelledBooking } from '@/lib/tour-room/dispatch';
 
 export const dynamic = 'force-dynamic';
 
@@ -166,6 +167,9 @@ export async function PUT(
     if (body.status === 'cancelled' && existing.status !== 'cancelled') {
       /** Welcome coupon: admin cancellation restores the coupon (idempotent). */
       await releaseCouponForBooking(supabase, id, 'admin_cancelled');
+
+      // SS4O-1 (8) — Tour Mode: kill the room links and close the room.
+      await revokeRoomForCancelledBooking(supabase, id);
 
       // Phase 10.6d — builder bookings have NULL tour_id, no inventory row
       // to restore. Skip the inventory branch loudly so the (legitimate)
