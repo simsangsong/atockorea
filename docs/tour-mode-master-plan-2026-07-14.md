@@ -2,7 +2,7 @@
 
 **작성일:** 2026-07-14
 **브랜치:** `claude/tour-mode-dev-iaa0b8`
-**상태:** Wave T0~T2 완료+PR #307 머지(플래그 OFF) → **Wave T3 완료(465a1fe6)** → **Wave T4 완료(fc80cbfa — 파일럿 스팟 5개 라이브 시딩, 좌표 검수는 사람 게이트: `docs/tour-mode-pilot-spot-checklist-2026-07-14.md`)**. 다음 = **Wave T5(발송·이메일, T5.1부터 — T1.11 ⑧ QR·취소 revoke 동반)**. 실기기 확인 §I-4. 구현 커밋은 세션 브랜치 `claude/tour-mode-iql6ho`.
+**상태:** Wave T0~T2 완료+PR #307 머지(플래그 OFF) → **T3 완료(465a1fe6) → T4 완료(fc80cbfa, 파일럿 스팟 검수 대기) → T5 완료(44c3bc1c — T1.11 ⑧ 포함)**. §R 게이트상 다음 = **내부 리허설(§I 실기기) → Wave T6(가이드 콘솔·팬아웃) → T7 → T8 파일럿**. 구현 커밋은 세션 브랜치 `claude/tour-mode-iql6ho`.
 **단일 기준 문서:** 이 파일. 투어모드 관련 모든 작업은 이 문서의 웨이브·티켓 번호를 기준으로 진행/보고한다.
 
 ---
@@ -304,10 +304,10 @@ hooks/
 - **T4.7** "이게 뭐예요?" 사진 질문 — Composer 카메라/앨범 첨부 → Storage `tour-room-photos/` 업로드 → `POST /api/tour-rooms/[bookingId]/vision-ask` → §M-1 라우터 비전 1콜(Gemini Flash-Lite 이미지 입력)로 손님 로케일 답변 게시. 기본 "나만 보기"(룸 공유 토글), 레이트리밋 participant당 10회/일, 위치 컨텍스트(현재 스팟명) 프롬프트 주입 — AC: 음식·간판·문화재 3케이스 수동 검증, 예산 가드 연동. *메뉴판 번역(§H P2 #11)은 이 라우트에 프리셋 프롬프트만 추가.* ✅ 완료(fc80cbfa) — 나만보기 기본/방 공유 토글, 3/min·10/day 참가자 게이트(과금 전 검사), 최근 도착 스팟명 컨텍스트 주입, 메뉴 프리셋 포함. 음식·간판·문화재 3케이스 수동 검증은 §I-4 실기기에서.
 
 ### Wave T5 — 발송(디스패치) · 이메일 【4티켓】
-- **T5.1** `dispatch` API — 손님 토큰(booking별) + 가이드 토큰(tour-date별 1개, §O-3) 생성+invites 기록, 가이드 메일에 QR 동봉 — AC: 재발송 시 기존 토큰 revoke, 예약 취소 훅 연동(§O-1 ⑧).
-- **T5.2** 이메일 템플릿 2종(손님: 투어 전날 룸 링크+사용법 / 가이드: 콘솔 링크) `lib/email-templates/` — AC: 5로케일, 다크모드 클라이언트 렌더 확인.
-- **T5.3** 어드민 주문 상세에 "투어룸 발송" 액션(기존 `/admin/orders` 확장) — AC: 발송 이력 표시.
-- **T5.4** (자동화) 투어 D-1 18:00 KST 자동 발송 잡 — 기존 `sendBookingReminderEmail` 스케줄 경로에 편승 — AC: 중복 발송 방지(invites 존재 체크).
+- **T5.1** `dispatch` API — 손님 토큰(booking별) + 가이드 토큰(tour-date별 1개, §O-3) 생성+invites 기록, 가이드 메일에 QR 동봉 — AC: 재발송 시 기존 토큰 revoke, 예약 취소 훅 연동(§O-1 ⑧). ✅ 완료(44c3bc1c) — `lib/tour-room/dispatch.ts`(스코프별 revoke-선행 재발송, 해시만 기록, QR은 스토리지 호스팅 PNG — Gmail이 data URI 차단), 취소 훅은 어드민 주문·고객 취소 두 경로 모두. T1.11 ⑧도 이로써 완료. 가이드 링크는 T6 콘솔 전까지 해당 예약 룸 경유.
+- **T5.2** 이메일 템플릿 2종(손님: 투어 전날 룸 링크+사용법 / 가이드: 콘솔 링크) `lib/email-templates/` — AC: 5로케일, 다크모드 클라이언트 렌더 확인. ✅ 완료(44c3bc1c) — 손님 5로케일+가이드 ko/en 이중언어, color-scheme 메타+전체 인라인 스타일. 실클라이언트 다크모드 렌더 확인은 §I-4 실기기 체크에 편입.
+- **T5.3** 어드민 주문 상세에 "투어룸 발송" 액션(기존 `/admin/orders` 확장) — AC: 발송 이력 표시. ✅ 완료(44c3bc1c) — 주문 상세 카드+확인 시트, POST(플래그 OFF 시 force 필요·취소예약 거부)/GET(invites 이력) `/api/admin/orders/[id]/dispatch-room`.
+- **T5.4** (자동화) 투어 D-1 18:00 KST 자동 발송 잡 — 기존 `sendBookingReminderEmail` 스케줄 경로에 편승 — AC: 중복 발송 방지(invites 존재 체크). ✅ 완료(44c3bc1c) — 리마인더 크론 호출에 부가 실행(KST 내일 tour_date·confirmed·활성 invite 없는 예약만), 플래그 OFF면 전체 no-op. ⚠발견: 기존 리마인더 루프는 booking_date(생성일) 필터라 영구 no-op인 죽은 크론 — 아웃바운드 메일 재활성화라 사용자 승인 후 별도 수정(태스크 칩 발행).
 
 ### Wave T6 — 가이드 콘솔 · 팬아웃 【5티켓】
 - **T6.1** `broadcast` API (tour_id+date 전 룸 팬아웃, 트랜잭션 실패 시 부분성공 보고) — AC: 룸 10개 팬아웃 통합테스트.
