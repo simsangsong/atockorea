@@ -378,7 +378,15 @@ export function TourDesktopBookingCard({
           </div>
         ) : null}
         <p className="mt-1 flex items-baseline gap-1.5 tabular-nums">
-          <span className="text-3xl font-bold tracking-tight text-foreground">
+          {/* W5.2 — editorial serif numerals (family already loaded by the
+              gallery — zero new font requests); upright, never italic. */}
+          <span
+            className="text-3xl font-bold tracking-tight text-foreground [font-variant-numeric:tabular-nums]"
+            style={{
+              fontFamily:
+                "var(--font-tour-v2-serif), 'Bodoni Moda', 'Bodoni 72', Didot, 'Times New Roman', serif",
+            }}
+          >
             {ctaUnitFormatted ?? `${price.amountLabel}${price.currency ? " " + price.currency : ""}`}
           </span>
           <span className="text-sm font-medium text-muted-foreground">/ {perUnitLabel}</span>

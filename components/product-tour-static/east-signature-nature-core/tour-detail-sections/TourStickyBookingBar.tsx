@@ -596,7 +596,13 @@ export function TourStickyBookingBar({ price, checkout, selectedPortLabel, secti
                   )}
                 </div>
               ) : null}
-              <p className="text-lg font-semibold text-foreground tabular-nums sm:text-2xl">
+              <p
+                className="text-lg font-semibold text-foreground tabular-nums sm:text-2xl [font-variant-numeric:tabular-nums]"
+                style={{
+                  fontFamily:
+                    "var(--font-tour-v2-serif), 'Bodoni Moda', 'Bodoni 72', Didot, 'Times New Roman', serif",
+                }}
+              >
                 {estimatedTotalFormatted && checkout?.priceType === "person" && guestCount > 1 ? (
                   <>
                     <span>{estimatedTotalFormatted}</span>

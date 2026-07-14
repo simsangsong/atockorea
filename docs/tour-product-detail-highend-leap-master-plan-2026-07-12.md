@@ -25,8 +25,8 @@
 | W2 | IA 컴프레션 (17→상시12) | ✅ (W2.1~2.7) | 2026-07-14 | 2026-07-14 | PR #299~#301 |
 | W3 | 컬러 하모나이징 & 타이포 | ✅ 핵심 (W3.1~3.5; 3.6/3.7 보류→§D) | 2026-07-14 | 2026-07-14 | (W3 PR) |
 | W4 | 소셜프루프 & 신뢰 | 🔶 W4.4 완료 · W4.1/4.2/4.3은 G-1/G-3 실수치·발신 검증 필요로 보류 | 2026-07-14 | — | PR #301 |
-| W5 | 에디토리얼 시그니처 | ⏳ | — | — | — |
-| W6 | 측정 & 가드 CI화 (병행) | ⏳ | — | — | — |
+| W5 | 에디토리얼 시그니처 | ✅ 핵심 (W5.1/5.2; 5.3~5.5 보류→§D) | 2026-07-14 | 2026-07-14 | (W5 PR) |
+| W6 | 측정 & 가드 CI화 (병행) | ✅ 스크립트+ESLint 가드 (GH Actions는 §D) | 2026-07-14 | 2026-07-14 | (W5 PR) |
 
 **다음 착수 지점**: 세션 시작 → §G G-1~G-4를 사용자에게 일괄 질의(비차단 — 응답 대기하며 진행) → **W0.1 베이스라인 → W1.1부터 즉시 착수**. 게이트 의존은 티켓 단위로만: W1.2←G-2, W4.1/W4.2←G-1, W4.3←G-3. 나머지 전 티켓은 게이트 무관.
 
@@ -62,6 +62,9 @@
 | 2026-07-14 | **W1.3 파티 인지형 가격 라벨(타입 분기)** — sectionUi 옵셔널 키 2종 신설(6로케일 번들 동시 채움): `priceTotalForGuestsTemplate`("Total for {count} guests"/"{count}명 합계"), `priceGroupRateLabel`("Group rate"/"그룹 요금"). Sticky+Desktop 공통: 티어(인당) 파티>1 → "Total for N guests" 아이브로우, 정액(pricingTiers, priceType≠person) → **"Group rate · {duration}"**(인당 환산 병기 0 — 가격 표면 규칙). QA: 공유 3인 "Total for 3 guests" / 차터 4h→8h 라이브 갱신·per-person 부재 / 크루즈·나미 "From" 유지 / es "Tarifa por grupo · 4h" 오버플로 없음 | (W1.3 PR) | P-MED |
 | 2026-07-14 | **W1.7 드로어 drag handle + swipe-down dismiss** — useDragControls(핸들에서만 드래그 시작, 내부 스크롤 보존), offset>72px 또는 velocity>600 시 dismiss, 4슬러그 확인. 빌드: JS union gz **+0.5KB**(493.1→493.6, 한도 5KB), ISR 유지. 요소 대차대조표: +1(grab handle) | PR #295 (main cf94fcb4, 프로드 배포 success) | P-LOW |
 | 2026-07-14 | **W2.2 픽업 요약 노드 + 점프 루프** — 타임라인 양끝의 확장형 픽업/드롭 카드(중첩 아코디언 §F-4 위반 상태였음)를 **비확장 요약 노드**로 교체: 지도 썸네일(픽업 섹션과 동일 static-map URL 재사용 = 캐시 히트, 요청 순증 0)+첫 픽업 시각+"N개 지점"+"상세·지도 보기" → #pickup-dropoff 점프(§F-8 ④). 도착점 "↑ 일정으로 돌아가기" 리턴 링크 + #itinerary/#pickup-dropoff/#reviews `scroll-mt-24`. 신규 키 3종(port 타이틀 포함)×6로케일. QA: 점프 착지 ±130px 내, 리턴 정상, 노드 텍스트 "08:30 · 4 pickup points" | (W2.2 PR) | P-MED. 전체 리스트는 캐노니컬 픽업 섹션 1곳(§F-1) — DOM 라운드트립 충족 |
+| 2026-07-14 | **W5.1 Live from Korea 스트립(P-HIGH)** — 신설 `_shared/TourLiveStrip.tsx`(#live, 갤러리 직하): 라이브 도트(jade)+오늘 날씨(아이콘·기온·지역·상태)+KST 타임스탬프(마운트 후 세팅 — 하이드레이션 미스매치 0), 해녀 상품은 상태 버튼 흡수(구7 독립 섹션 소멸). **공유 forecast 캐시**(`_shared/useForecast.ts` 모듈 프라미스 캐시) — Practical과 요청 공유, 실측: 페이지당 forecast 2회 = 기존과 동일(i18n geo 플립 en→ko 재페치, 기존 effect도 동일 동작) → **순증 0**. min-h 56px 고정(CLS 0), 폴링 0, 가격 0. 상시 섹션 10→11(캡 12). Lighthouse ×3 median LCP 12,543(+73ms — 게이트 +300ms 통과), CLS 0.017 | (W5 PR) | P-HIGH 통과 |
+| 2026-07-14 | **W5.2 Rate Card 타이포** — 예약카드·스티키바 가격 숫자에 에디토리얼 세리프(--font-tour-v2-serif Bodoni 스택, **화보 기로드 패밀리 재사용 = 신규 폰트 요청 0**, 업라이트-이탤릭 금지) + `font-variant-numeric: tabular-nums` 명시(스왑 시프트 방지). 가용성 도트 캘린더는 W1.6과 동일 소스 기충족 | (W5 PR) | P-HIGH 통과(동일 측정) |
+| 2026-07-14 | **W6 측정·가드** — `scripts/structure-snapshot-tour-product.mjs` 신설(4슬러그 톱레벨 섹션 캡 14 —check, 현재 전부 11) + `perf-budget-tour-product.mjs --check`(베이스라인+15KB) + W3.1 ESLint 디렉토리 가드 상시화. GH Actions는 시크릿 부재로 §D 보류 — Vercel 빌드+로컬 게이트 2종이 현행 집행 | (W5 PR) | 섹션 17+→**11** (§H 목표 12 초과 달성) |
 | 2026-07-14 | **W3.1~3.5 컬러 하모나이징(핵심)** — ① `--tpc-*` 큐레이션 팔레트 신설(`tour-product-v2-scope.css`, OKLCH 수치 밴드: full C.11-.13/L.60-.63 · deep C.08-.09/L.42-.45 · wash 7%): jade/amber/orange/rose/sapphire/amethyst/indigo + `--tpc-star`(평점 전용) — **hue 수 유지, 채도·명도만 통일**. ② 색-의미 매핑표 `docs/tour-product-color-mapping.md` 커밋(그린 충돌 = positive/live 의미 통합으로 해소, 액션 톤·시맨틱·에디토리얼 copper는 별도 시스템 명시). ③ **판정 grep 0** (동번들 raw 400/500/600 44→0) + eslint no-restricted-syntax 디렉토리 가드. ④ W3.2 히어로: pill 효과 3중(gradient+ring+shadow+blur)→gradient+헤어라인 1중, rose 토큰화, 데스크탑 max-h **lg 420**. ⑤ W3.3 AtAGlance 6도트 웜 앵커 비대칭 재배열(jade→amber→orange→rose→amethyst→sapphire), 셀 wash 0 유지. ⑥ W3.4 Included/Fit wash 틴트 공식 통일(에이전트 스윕). ⑦ W3.5 시즌 4색 유지 세그먼트 1카드(현재 시즌 기본, SegmentedToggle 재사용, 비활성 hidden 상주=라운드트립) + 픽업 copper 그라데이션 캐리어→플랫 copper(지도 마커·아이콘 불변). 빌드 494.9KB gz·grep 0·에러 0. 양방향 자체 체크: 색 뺀 곳 0(hue 전수 보존), 캔디 0(전 hue 동일 밴드) | (W3 PR) | W3.6/3.7은 §D 보류 |
 | 2026-07-14 | **W2.5 서포트 슬림 스텝라인 + W4.4 직영 신뢰 카드** — 폐기=레이아웃만(박스 카드+접이 아코디언+3열 trust 그리드+데스크탑 가로 카드 행): 6스텝 전부 timing/title/detail 카피·스텝별 고유색(emerald/amber/indigo/orange/sky/rose) 보존, 기본 펼침(클릭 0회). trust 아이템 3종 카피는 W4.4 "Operated by AtoC Korea" 카드(신규 섹션 아님, #faq 내)로 이동 — 같은 PR이라 카피 공백 0. 독립 섹션 1개 소멸(#faq로 병합). `operatedByTitle` 키×6로케일. QA: 6스텝 아이브로우·3 trust 행·카드 타이틀 확인. 스크롤 높이 9,003→**8,609px**(W2 누적 −4.4%; 나머지는 W3/W5 몫) | (W2.5 PR) | P-MED · 섹션 −1 |
 | 2026-07-14 | **W2.7 앵커 재매핑** — 각 병합 PR에 분산 완료: 서브나브 앵커(id) 전부 불변, 구 `#sample-itinerary` 딥링크는 토글 래퍼로 착지, `#pricing`은 서브나브 미참조 확인 후 소멸, 점프 대상 3종 scroll-mt-24 | (분산) | P-LOW |
@@ -88,6 +91,9 @@
 | W3.6 공유 섹션 헤더 컴포넌트 / W3.7 타입 6단계·radius 토큰 | 구조 통일 요소 — W3 핵심(색 조화) 대비 리스크/효익 낮아 보류. 헤더 구조는 이미 사실상 1문법(h2+subtitle) | 다음 비주얼 슬라이스 |
 | W4.1/4.2 외부 집계 ON + 평점 노출 | G-1: 외부 플랫폼 실수치 검증을 자율 세션에서 날조 없이 확정 불가(★ 날조 금지 바인딩) — 오너 확인 필요 | G-1 회신 시 |
 | W4.3 리뷰 수집 D+1 메일 | G-3: 고객 대상 외부 발신 자동화 — 자율 활성화 부적절, 오너 승인 필요 | G-3 회신 시 |
+| W5.3 스톱 드로어 헤더 완전 통일 / W5.5 스톱카드 픽셀 폴리시 | 1,310 LOC 드로어 구조 수정 — 리스크 대비 효익 낮음. 요금표 시트·부킹 드로어는 이미 동일 문법 | 다음 비주얼 슬라이스 |
+| W5.4 풀블리드 포토 브레이크 | 스크롤 높이 +300KB·+수백px — 컴팩트 KPI와 정면 충돌. 스크롤 -35% 달성 후 재검토 | 스크롤 KPI 달성 후 |
+| W6 GitHub Actions CI | 리포에 CI 인프라 0 + 빌드에 Vercel/Supabase 시크릿 필요 — 자율 도입 시 전 PR 블로킹 리스크. 스크립트 2종(`perf-budget`·`structure-snapshot` --check)은 커밋 완료, 로컬/Vercel 게이트로 가동 | 오너가 GH 시크릿 설정 시 |
 
 ---
 

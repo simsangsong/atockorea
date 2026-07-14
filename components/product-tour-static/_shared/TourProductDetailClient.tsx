@@ -45,7 +45,7 @@ const TourProductAiAssistantWidget = dynamic(
     ),
   { ssr: false, loading: () => null },
 );
-import { HaenyeoStatusButton } from "@/components/product-tour-static/_shared/HaenyeoStatusButton";
+import { TourLiveStrip } from "@/components/product-tour-static/_shared/TourLiveStrip";
 import { PlatformCompareBlock } from "@/components/tour/PlatformCompareBlock";
 import { getTourCompareLinks } from "@/lib/tour/platform-compare-registry";
 import { TourExternalReviewsSection } from "@/components/product-tour-static/_shared/TourExternalReviewsSection";
@@ -278,13 +278,19 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
           </div>
         </section>
 
-        {(vm as { liveStatusSection?: string }).liveStatusSection === "haenyeo" ? (
-          <section id="haenyeo-status" className="mx-3 mt-4 lg:mx-0">
-            <div className="mx-auto max-w-2xl px-4 sm:px-5 pt-2 pb-2">
-              <HaenyeoStatusButton locale={locale} variant="section" autoFetch />
-            </div>
-          </section>
-        ) : null}
+        {/* W5.1 — "Live from Korea" strip: today's weather + (haenyeo tours)
+            show status + live dot + KST. Absorbs the old standalone
+            haenyeo-status section; client-only idle fetch via the shared
+            forecast cache (network delta 0), fixed min-height (CLS 0). */}
+        <section id="live" className="mx-3 mt-4 lg:mx-0">
+          <div className="mx-auto max-w-2xl px-4 sm:px-5 pt-2 pb-2">
+            <TourLiveStrip
+              locale={locale}
+              tourProductSlug={tourProductSlug}
+              showHaenyeo={(vm as { liveStatusSection?: string }).liveStatusSection === "haenyeo"}
+            />
+          </div>
+        </section>
 
         <section
           id="itinerary"
