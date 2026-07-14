@@ -19,6 +19,8 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import ChatFeed from '@/components/tour-mode/ChatFeed';
 import Composer from '@/components/tour-mode/Composer';
+import EndedCard from '@/components/tour-mode/EndedCard';
+import LobbyCard from '@/components/tour-mode/LobbyCard';
 import RoomShell from '@/components/tour-mode/RoomShell';
 import { detectEntryLocale, ENTRY_COPY } from '@/components/tour-mode/entryCopy';
 import { GUEST_CREDS_STORAGE_PREFIX } from '@/components/tour-mode/TourModeEntry';
@@ -127,7 +129,13 @@ function TourRoomLive({
   const systemDark = useMediaQuery('(prefers-color-scheme: dark)');
   const theme = settings.theme === 'system' ? (systemDark ? 'dark' : 'light') : settings.theme;
   const snapshot = data.snapshot as {
-    booking?: { tours?: { title?: string; city?: string } | null; tour_date?: string | null } | null;
+    booking?: {
+      tours?: { title?: string; city?: string } | null;
+      tour_date?: string | null;
+      tour_time?: string | null;
+      booking_reference?: string | null;
+      pickup_points?: unknown;
+    } | null;
     messages?: RoomMessage[];
     schedule?: Array<Record<string, unknown>>;
   };
@@ -154,6 +162,15 @@ function TourRoomLive({
       settings={<SettingsTab locale={locale} onLocaleChange={onLocaleChange} />}
       chat={
         <>
+          {data.lifecycle === 'lobby' && (
+            <LobbyCard
+              locale={locale}
+              tourDate={snapshot.booking?.tour_date ?? null}
+              tourTime={snapshot.booking?.tour_time ?? null}
+              pickupPoints={snapshot.booking?.pickup_points}
+            />
+          )}
+          {readOnly && <EndedCard locale={locale} bookingReference={snapshot.booking?.booking_reference} />}
           <ChatFeed messages={messages} viewerLocale={locale} viewerRole={viewerRole} textScale={settings.textScale} />
           {failedCount > 0 && (
             <button

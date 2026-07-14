@@ -40,6 +40,15 @@ export function kstEndOfDayMs(tourDate: string): number {
   return kstStartOfDayMs(tourDate) + 24 * 60 * 60 * 1000 - 1;
 }
 
+/**
+ * Whole KST calendar days from `nowMs` until the tour date (0 = today,
+ * 1 = tomorrow). Used by the lobby D-day countdown (§O-1 ⑥); never negative.
+ */
+export function kstDaysUntil(tourDate: string, nowMs = Date.now()): number {
+  const days = Math.ceil((kstStartOfDayMs(tourDate) - nowMs) / (24 * 60 * 60 * 1000));
+  return Math.max(0, days);
+}
+
 export type RoomLifecycle = 'lobby' | 'live' | 'ended';
 
 /**
