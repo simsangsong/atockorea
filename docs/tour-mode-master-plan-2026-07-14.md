@@ -2,7 +2,7 @@
 
 **작성일:** 2026-07-14
 **브랜치:** `claude/tour-mode-dev-iaa0b8`
-**상태:** Wave T0 완료 + T1.1~T1.7, T1.10 완료. **T0.3 사용자 승인됨 — 단, 이 원격 세션의 Supabase MCP가 타 프로젝트(Kursoflow)에 연결되어 있어 적용 불가. atockorea 라이브 DB가 연결된 세션에서 supabase/migrations/20260714090000·20260714091000 두 파일을 apply_migration으로 적용 + get_advisors 재실행 필요.** 다음 코드 작업 = **T1.9(E2E — playwright 인프라 신설 필요)** → T1.11 잔여(로비 뷰) → Wave T2. 구현 커밋은 세션 브랜치 `claude/tour-mode-iql6ho`(플랜 문서 브랜치를 머지해 진행).
+**상태:** Wave T0 **전체 완료(T0.3 라이브 적용 2026-07-14 완료)** + T1.1~T1.8, T1.10, T1.12 완료 / T1.11 부분. 다음 코드 작업 = **T1.9(E2E — playwright 인프라 신설 필요)** → T1.11 잔여(로비 뷰) → Wave T2. 구현 커밋은 세션 브랜치 `claude/tour-mode-iql6ho`(플랜 문서 브랜치를 머지해 진행).
 **단일 기준 문서:** 이 파일. 투어모드 관련 모든 작업은 이 문서의 웨이브·티켓 번호를 기준으로 진행/보고한다.
 
 ---
@@ -252,7 +252,7 @@ hooks/
 ### Wave T0 — 기반 공사 (마이그레이션·공용 lib) 【9티켓】
 - **T0.1** M-1~M-5 마이그레이션 작성(`supabase/migrations/`) — AC: 로컬 SQL 린트 통과, 전부 IF NOT EXISTS/additive. ✅ 완료(b855675) — invites는 §O-3 가이드 tour-date 스코프와 §C 스케치의 불일치를 CHECK 제약(customer=booking_id / guide=tour_id+tour_date)으로 정합화. tour_translation_cache(§M-2 ④)도 이 마이그레이션에 포함.
 - **T0.2** M-6 RLS·publication 마이그레이션 — AC: anon 정책 0개 유지 확인 주석 포함. ✅ 완료(b855675)
-- **T0.3** 라이브 적용(`mcp apply_migration`, 사용자 승인 후) + `get_advisors` 재실행 — AC: 신규 advisor 경고 0.
+- **T0.3** 라이브 적용(`mcp apply_migration`, 사용자 승인 후) + `get_advisors` 재실행 — AC: 신규 advisor 경고 0. ✅ 완료(2026-07-14 라이브 적용) — 20260714090000·091000 순서 적용, security 어드바이저 신규 경고 0. performance는 `tour_room_invites.created_by` FK 커버링 인덱스 INFO 1건 → `20260714150000_tour_room_invites_created_by_idx.sql`로 즉시 해소(라이브 적용 완료). `multiple_permissive_policies` WARN 2건(participants/locations SELECT: admin+merchant 정책 공존)은 레포 전반 기존 수용 패턴(동일 lint 70건)과 동일한 의도적 설계라 유지. `unused_index` INFO는 미런칭 신규 인덱스로 예상된 상태.
 - **T0.4** `lib/tour-room/token.ts` — sign/verify/revoke-check, 손님(booking)·가이드(tour-date) 2종 스코프(§O-3), exp=투어일+24h, 시크릿 듀얼 검증(§O-13) — AC: 유닛테스트(만료·변조·역할·스코프·로테이션) 통과. ✅ 완료(821f0c5)
 - **T0.5** `lib/tour-room/access.ts` — `resolveRoomActor(req, bookingId)` 단일 인가 함수 + 룸세션 서명 발급/검증 — AC: admin/owner/merchant/토큰/게스트 5경로 유닛테스트. ✅ 완료(bb6097a)
 - **T0.6** `lib/tour-room/geo.ts` — haversine·히스테리시스·accuracy필터 순수함수 — AC: 경계값 테스트(반경±1m, 정확도 100m). ✅ 완료(e79c827)
