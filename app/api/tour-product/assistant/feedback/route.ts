@@ -16,7 +16,10 @@ export const runtime = "nodejs";
 const SESSION_COOKIE = "atc_chat_sid";
 
 function bestEffortIp(req: NextRequest): string | null {
-  return req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? req.headers.get("x-real-ip") ?? null;
+  // x-real-ip first — the platform sets it, while x-forwarded-for is
+  // client-appendable and would let a caller rotate throttle keys
+  // (mirrors the assistant route's ordering; audit 2026-07-14 B4).
+  return req.headers.get("x-real-ip") ?? req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? null;
 }
 
 const bodySchema = z.object({
@@ -81,7 +84,19 @@ export async function POST(req: NextRequest) {
 
   const { rating, answer, question, reason, tourProductSlug, pageUrl } = parsed.data;
 
-  const { error } = await sb.from("chat_feedback").insert({
+  // fb-01 — one vote per (session, answer): a repeat vote UPDATES the existing
+  // row instead of inserting, so replaying the endpoint can't inflate
+  // harvest/coverage analytics. (App-level check; the select→insert race can
+  // yield at most one duplicate, not unbounded rows.)
+  const { data: existing } = await sb
+    .from("chat_feedback")
+    .select("id")
+    .eq("session_token", sessionToken)
+    .eq("answer", answer)
+    .limit(1)
+    .maybeSingle();
+
+  const row = {
     session_token: sessionToken,
     tour_slug: tourProductSlug && tourProductSlug !== "__site__" ? tourProductSlug : null,
     locale: inferLocale(question || answer),
@@ -90,9 +105,12 @@ export async function POST(req: NextRequest) {
     answer,
     reason: reason ?? null,
     page_url: pageUrl ?? null,
-  });
+  };
+  const { error } = existing
+    ? await sb.from("chat_feedback").update(row).eq("id", existing.id)
+    : await sb.from("chat_feedback").insert(row);
   if (error) {
-    console.error("[assistant/feedback] insert error:", error.message);
+    console.error("[assistant/feedback] write error:", error.message);
     return NextResponse.json({ ok: false }, { status: 500 });
   }
   return NextResponse.json({ ok: true });

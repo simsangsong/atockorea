@@ -7,6 +7,7 @@ export { AiAgentBand } from "./ai-agent-band";
 export { WhyAtockorea } from "./why-atockorea";
 export { ProcessOperational } from "./process-operational";
 export { FinalCTA } from "./final-cta";
-export { ItineraryBuilderEntry } from "./itinerary-builder-entry";
-// Phase 13 D36 — HomeBuilderSection unmounted. File kept for git history;
-// no live import. Cleanup pass to delete the file is parked.
+// Phase 13 D36 — HomeBuilderSection unmounted; 2026-07-14 audit C1 also
+// dropped the ItineraryBuilderEntry barrel export (builder flag off, no live
+// mount) so the dormant builder no longer rides in the home client bundle.
+// Both FILES are kept for the builder's return — re-add exports then.
