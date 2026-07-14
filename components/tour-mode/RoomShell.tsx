@@ -64,6 +64,7 @@ export default function RoomShell({
   chat,
   settings,
   banner,
+  map,
   theme = 'light',
 }: {
   title: string;
@@ -78,6 +79,8 @@ export default function RoomShell({
   settings: ReactNode;
   /** T2.8 — live caption banner, pinned above the tabs on every tab. */
   banner?: ReactNode;
+  /** T3.3 — map tab content; the "coming soon" placeholder shows when absent. */
+  map?: ReactNode;
   /** Resolved theme — 'system' is resolved by the caller before this prop. */
   theme?: 'light' | 'dark';
 }) {
@@ -126,11 +129,12 @@ export default function RoomShell({
 
         <div className="mt-3 flex min-h-0 flex-1 flex-col">
           {tab === 'chat' && chat}
-          {tab === 'map' && (
-            <div className="flex flex-1 items-center justify-center text-[13px] text-gray-400 dark:text-gray-500">
-              🗺 {MAP_SOON[locale]}
-            </div>
-          )}
+          {tab === 'map' &&
+            (map ?? (
+              <div className="flex flex-1 items-center justify-center text-[13px] text-gray-400 dark:text-gray-500">
+                🗺 {MAP_SOON[locale]}
+              </div>
+            ))}
           {tab === 'schedule' && (
             <ol className="space-y-2 overflow-y-auto">
               {schedule.length === 0 && <p className="pt-10 text-center text-[13px] text-gray-400 dark:text-gray-500">—</p>}

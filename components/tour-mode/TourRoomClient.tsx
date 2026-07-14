@@ -22,7 +22,9 @@ import ChatFeed from '@/components/tour-mode/ChatFeed';
 import Composer from '@/components/tour-mode/Composer';
 import EndedCard from '@/components/tour-mode/EndedCard';
 import GuideCaptionBar from '@/components/tour-mode/GuideCaptionBar';
-import LobbyCard from '@/components/tour-mode/LobbyCard';
+import LobbyCard, { firstPickup } from '@/components/tour-mode/LobbyCard';
+import PickupBoard from '@/components/tour-mode/PickupBoard';
+import RoomMapTab from '@/components/tour-mode/map/RoomMapTab';
 import RoomShell from '@/components/tour-mode/RoomShell';
 import { detectEntryLocale, ENTRY_COPY } from '@/components/tour-mode/entryCopy';
 import { GUEST_CREDS_STORAGE_PREFIX } from '@/components/tour-mode/TourModeEntry';
@@ -33,7 +35,9 @@ import { useTourRoomSettings } from '@/hooks/useTourRoomSettings';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { extensionForMime } from '@/lib/tour-room/recorder';
 import { detectTtsTier, primeAudio, speakWithDevice } from '@/lib/tour-room/tts';
-import type { RoomLocale } from '@/lib/tour-room/snapshot';
+import { pickupBoardState } from '@/lib/tour-room/pickup';
+import type { RoomLocale, PickupSequenceStop } from '@/lib/tour-room/snapshot';
+import type { RoomLocation } from '@/hooks/useTourRoomChannel';
 import type { VoiceTranscribeResult } from '@/components/tour-mode/Composer';
 
 function consumeGuestCreds(bookingId: string): { contactEmail?: string; contactName?: string } | null {
@@ -142,19 +146,43 @@ function TourRoomLive({
       pickup_points?: unknown;
     } | null;
     messages?: RoomMessage[];
+    locations?: RoomLocation[];
+    tour_guide_spots?: Array<{ id: string; title?: string | null; latitude?: number | null; longitude?: number | null }>;
+    tour_facilities?: Array<{ name?: string | null; lat?: number | null; lng?: number | null }>;
+    pickup_sequence?: PickupSequenceStop[];
     schedule?: Array<Record<string, unknown>>;
   };
-  const { messages, connection, sendText, sendPreset, retryFailed, failedCount, latestCaption } =
+  const { messages, connection, sendText, sendPreset, retryFailed, failedCount, latestCaption, locations, presence } =
     useTourRoomChannel({
       bookingId,
       channelTopic: data.channel.topic,
       roomSession: data.session,
       initialMessages: snapshot.messages ?? [],
+      initialLocations: snapshot.locations ?? [],
+      presence: {
+        participantId: data.participant.id,
+        role: data.participant.role,
+        displayName: data.participant.display_name,
+      },
     });
 
   const viewerRole = data.participant.role;
   const readOnly = data.lifecycle === 'ended';
   const schedule = Array.isArray(snapshot.schedule) ? snapshot.schedule : [];
+  const myPickup = firstPickup(snapshot.booking?.pickup_points);
+  const guideLocation = Object.values(locations).find((l) => l.role === 'guide') ?? null;
+  // T3.7 — pickup-morning board (customers only; hides itself off-morning).
+  const pickup =
+    viewerRole === 'customer' && data.lifecycle === 'live'
+      ? pickupBoardState({
+          tourDate: snapshot.booking?.tour_date,
+          myBookingId: bookingId,
+          pickupSequence: snapshot.pickup_sequence ?? [],
+          guidePosition: guideLocation
+            ? { latitude: guideLocation.latitude, longitude: guideLocation.longitude }
+            : null,
+        })
+      : null;
 
   // T2.4: any first gesture in the room unlocks audio for later playback.
   useEffect(() => {
@@ -240,11 +268,32 @@ function TourRoomLive({
       schedule={schedule}
       theme={theme}
       banner={viewerRole !== 'guide' ? <CaptionBanner caption={latestCaption} locale={locale} /> : null}
+      map={
+        <RoomMapTab
+          bookingId={bookingId}
+          roomSession={data.session}
+          locale={locale}
+          myParticipantId={data.participant.id}
+          locations={locations}
+          presence={presence}
+          spots={(snapshot.tour_guide_spots ?? []).map((spot) => ({
+            id: spot.id,
+            title: spot.title ?? null,
+            latitude: spot.latitude ?? null,
+            longitude: spot.longitude ?? null,
+          }))}
+          facilities={snapshot.tour_facilities ?? []}
+          pickup={myPickup}
+        />
+      }
       settings={<SettingsTab locale={locale} onLocaleChange={onLocaleChange} />}
       chat={
         <>
           {viewerRole === 'guide' && !readOnly && (
             <GuideCaptionBar bookingId={bookingId} roomSession={data.session} locale={locale} />
+          )}
+          {pickup && (
+            <PickupBoard state={pickup} locale={locale} onSendPreset={(preset) => void sendPreset(preset, locale)} />
           )}
           {data.lifecycle === 'lobby' && (
             <LobbyCard

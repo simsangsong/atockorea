@@ -49,6 +49,24 @@ export function haversineM(a: LatLng, b: LatLng): number {
   return 2 * EARTH_RADIUS_M * Math.asin(Math.min(1, Math.sqrt(h)));
 }
 
+/** Initial great-circle bearing from `a` to `b`, degrees clockwise from north [0, 360). */
+export function bearingDeg(a: LatLng, b: LatLng): number {
+  const φ1 = toRad(a.latitude);
+  const φ2 = toRad(b.latitude);
+  const Δλ = toRad(b.longitude - a.longitude);
+  const y = Math.sin(Δλ) * Math.cos(φ2);
+  const x = Math.cos(φ1) * Math.sin(φ2) - Math.sin(φ1) * Math.cos(φ2) * Math.cos(Δλ);
+  return ((Math.atan2(y, x) * 180) / Math.PI + 360) % 360;
+}
+
+/** Effective city-bus speed for the T3.7 straight-line ETA (no Directions API). */
+const PICKUP_ETA_SPEED_MPS = 5.5; // ≈ 20 km/h with stops
+
+/** Rough minutes for the bus to cover `distanceM` (T3.7, ≥1). */
+export function pickupEtaMinutes(distanceM: number): number {
+  return Math.max(1, Math.round(distanceM / PICKUP_ETA_SPEED_MPS / 60));
+}
+
 /** True when the sample is precise enough to act on. */
 export function isAccurateEnough(sample: Pick<GeoSample, 'accuracyM'>, maxAccuracyM = MAX_ACCURACY_M): boolean {
   const accuracy = sample.accuracyM;

@@ -1,0 +1,132 @@
+'use client';
+
+/**
+ * T3.2–T3.6 — the map tab: everyone on one map.
+ *
+ * Owns the sharing toggle (opt-in, K-4 default OFF), the foreground geo
+ * watcher, the screen wake lock while sharing (T3.6), follow-the-guide mode,
+ * and the find-the-guide card. The Maps SDK loads only when this tab mounts
+ * (§O-1 ② — dynamic ssr:false canvas).
+ */
+
+import { useEffect, useRef, useState } from 'react';
+import dynamicImport from 'next/dynamic';
+import FindGuideCard from '@/components/tour-mode/map/FindGuideCard';
+import LocationShareCard from '@/components/tour-mode/map/LocationShareCard';
+import PresenceBar from '@/components/tour-mode/PresenceBar';
+import { useGeoWatcher } from '@/hooks/useGeoWatcher';
+import { acquireWakeLock, type WakeLockHandle } from '@/lib/tour-room/wakeLock';
+import type { RoomLocation, RoomPresence } from '@/hooks/useTourRoomChannel';
+import type { RoomLocale } from '@/lib/tour-room/snapshot';
+import type { MapSpot, MapPoint } from '@/components/tour-mode/map/RoomMapCanvas';
+
+const RoomMapCanvas = dynamicImport(() => import('@/components/tour-mode/map/RoomMapCanvas'), {
+  ssr: false,
+  loading: () => (
+    <div className="flex h-full min-h-[300px] items-center justify-center rounded-2xl bg-gray-100 dark:bg-gray-800">
+      <span className="text-[13px] text-gray-400">Loading map…</span>
+    </div>
+  ),
+});
+
+const FOLLOW_LABEL: Record<RoomLocale, string> = {
+  en: 'Follow guide',
+  ko: '가이드 따라가기',
+  ja: 'ガイドを追跡',
+  es: 'Seguir al guía',
+  zh: '跟随导游',
+};
+
+export default function RoomMapTab({
+  bookingId,
+  roomSession,
+  locale,
+  myParticipantId,
+  locations,
+  presence,
+  spots,
+  facilities,
+  pickup,
+}: {
+  bookingId: string;
+  roomSession: string;
+  locale: RoomLocale;
+  myParticipantId: string | null;
+  locations: Record<string, RoomLocation>;
+  presence: RoomPresence[];
+  spots: MapSpot[];
+  facilities: MapPoint[];
+  pickup: MapPoint | null;
+}) {
+  const [sharing, setSharing] = useState(false);
+  const [followGuide, setFollowGuide] = useState(false);
+  const { status, lastPosition, stopSharing } = useGeoWatcher({
+    bookingId,
+    roomSession,
+    enabled: sharing,
+  });
+
+  // T3.6 — hold a screen wake lock while actively sharing.
+  const wakeLockRef = useRef<WakeLockHandle | null>(null);
+  useEffect(() => {
+    if (sharing) {
+      void acquireWakeLock().then((handle) => {
+        wakeLockRef.current = handle;
+      });
+    }
+    return () => {
+      void wakeLockRef.current?.release();
+      wakeLockRef.current = null;
+    };
+  }, [sharing]);
+
+  const guideLocation =
+    Object.values(locations).find((location) => location.role === 'guide') ?? null;
+
+  const onToggle = (next: boolean) => {
+    setSharing(next);
+    if (!next) void stopSharing();
+  };
+
+  return (
+    <div className="flex min-h-0 flex-1 flex-col gap-2">
+      <PresenceBar presence={presence} locale={locale} myParticipantId={myParticipantId} />
+      <LocationShareCard locale={locale} enabled={sharing} status={status} onToggle={onToggle} />
+
+      <div className="relative min-h-0 flex-1">
+        <RoomMapCanvas
+          locations={locations}
+          myParticipantId={myParticipantId}
+          spots={spots}
+          facilities={facilities}
+          pickup={pickup}
+          followGuide={followGuide}
+        />
+        {guideLocation && (
+          <button
+            type="button"
+            onClick={() => setFollowGuide((v) => !v)}
+            aria-pressed={followGuide}
+            className={`absolute right-2 top-2 rounded-xl px-3 py-2 text-[12px] font-semibold shadow ${
+              followGuide ? 'bg-gray-900 text-white' : 'bg-white text-gray-700 ring-1 ring-gray-200'
+            }`}
+            data-testid="follow-guide-toggle"
+          >
+            🚌 {FOLLOW_LABEL[locale]}
+          </button>
+        )}
+      </div>
+
+      <FindGuideCard
+        me={
+          lastPosition ??
+          (myParticipantId && locations[myParticipantId]
+            ? { latitude: locations[myParticipantId].latitude, longitude: locations[myParticipantId].longitude }
+            : null)
+        }
+        guide={guideLocation ? { latitude: guideLocation.latitude, longitude: guideLocation.longitude } : null}
+        locale={locale}
+      />
+    </div>
+  );
+}
