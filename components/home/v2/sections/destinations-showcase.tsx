@@ -53,7 +53,9 @@ export function DestinationsShowcase() {
   const reveal = useRevealContainerProps();
 
   return (
-    <section className="relative overflow-hidden px-4 md:px-6 section-py-md bg-white">
+    // 2026-07-14 owner: compact pass — section-py-md → sm pairs with the
+    // smaller 4:3 destination cards.
+    <section className="relative overflow-hidden px-4 md:px-6 section-py-sm bg-white">
       <motion.div {...reveal} className="relative mx-auto max-w-6xl">
         <motion.div variants={REVEAL_ITEM_VARIANTS} className="mb-8 text-center md:mb-11">
           <p className="mb-3 text-eyebrow md:mb-4">
@@ -77,7 +79,7 @@ export function DestinationsShowcase() {
               <motion.div
                 key={dest.id}
                 variants={REVEAL_ITEM_VARIANTS}
-                className="w-[60vw] flex-shrink-0 snap-start md:w-auto"
+                className="w-[46vw] flex-shrink-0 snap-start md:w-auto"
               >
                 <DestinationCard
                   name={t(dest.nameKey)}
