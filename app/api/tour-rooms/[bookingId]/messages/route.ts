@@ -4,6 +4,7 @@ import { transcribeAudioFile, translateTextForLocales, type TranslationResult } 
 import { ensureRoom, resolveRoomActor, type RoomActor, type RoomBooking } from '@/lib/tour-room/access';
 import { broadcastToRoom } from '@/lib/tour-room/realtime';
 import { getParticipantLocales } from '@/lib/tour-room/snapshot';
+import { getQuickReplyPreset } from '@/lib/tour-room/quickReplies';
 
 export const dynamic = 'force-dynamic';
 
@@ -80,6 +81,7 @@ export async function POST(
     let targetLocalesRaw: unknown = null;
     let audioFile: File | null = null;
     let sttPrompt = '';
+    let presetKey: string | null = null;
     let messageMetadata: Record<string, unknown> = {};
 
     const contentType = req.headers.get('content-type') ?? '';
@@ -98,6 +100,7 @@ export async function POST(
     } else {
       const body = await req.json().catch(() => ({}));
       text = typeof body.text === 'string' ? body.text.trim() : '';
+      presetKey = typeof body.presetKey === 'string' ? body.presetKey : null;
       targetLocalesRaw = body.targetLocales;
       guestEmail = String(body.contactEmail || '');
       guestName = String(body.contactName || '');
@@ -141,6 +144,19 @@ export async function POST(
       };
     }
 
+    // T1.7 (§M-2 ②): quick-reply presets are pre-translated constants — the
+    // client sends only the key, the server owns the content, and no LLM call
+    // is made. Works even when every AI provider is down.
+    let preset = null;
+    if (presetKey) {
+      preset = getQuickReplyPreset(presetKey);
+      if (!preset) {
+        return NextResponse.json({ error: 'Unknown quick-reply preset' }, { status: 400 });
+      }
+      text = preset.text.en;
+      messageMetadata = { ...messageMetadata, kind: 'quick_reply', preset_key: preset.key };
+    }
+
     if (!text) {
       return NextResponse.json({ error: 'text or audio transcription is required' }, { status: 400 });
     }
@@ -148,12 +164,16 @@ export async function POST(
     // R-6 (T1.3): a translation failure must never block the message — post
     // the original immediately and mark it pending for async repair.
     let translation: TranslationResult;
-    try {
-      translation = await translateTextForLocales(text, targetLocales);
-    } catch (translationError) {
-      console.warn('tour-room message translation failed, publishing original first:', translationError);
-      translation = { source_locale: 'und', translations: {} };
-      messageMetadata = { ...messageMetadata, translation_status: 'pending' };
+    if (preset) {
+      translation = { source_locale: 'en', translations: { ...preset.text } };
+    } else {
+      try {
+        translation = await translateTextForLocales(text, targetLocales);
+      } catch (translationError) {
+        console.warn('tour-room message translation failed, publishing original first:', translationError);
+        translation = { source_locale: 'und', translations: {} };
+        messageMetadata = { ...messageMetadata, translation_status: 'pending' };
+      }
     }
 
     const { data: message, error } = await supabase

@@ -254,6 +254,27 @@ describe('POST /api/tour-rooms/[bookingId]/messages', () => {
     expect(broadcastToRoomMock).toHaveBeenCalled();
   });
 
+  it('T1.7/§M-2 ②: quick-reply presets insert pre-translated content with zero LLM calls', async () => {
+    getAuthUserMock.mockResolvedValue({ id: 'user-owner', role: 'customer' });
+    const db = fakeDb();
+    createServerClientMock.mockReturnValue(db);
+    const res = await messagesPOST(fakeReq({ json: { presetKey: 'where_bus' } }), routeParams());
+    expect(res.status).toBe(201);
+    expect(translateMock).not.toHaveBeenCalled();
+    expect(db.inserted.tour_room_messages[0]).toMatchObject({
+      source_text: 'Where is the bus?',
+      source_locale: 'en',
+      translations: expect.objectContaining({ ko: '버스가 어디에 있나요?', ja: 'バスはどこですか？' }),
+      metadata: expect.objectContaining({ kind: 'quick_reply', preset_key: 'where_bus' }),
+    });
+  });
+
+  it('400s an unknown preset key', async () => {
+    getAuthUserMock.mockResolvedValue({ id: 'user-owner', role: 'customer' });
+    const res = await messagesPOST(fakeReq({ json: { presetKey: 'bogus' } }), routeParams());
+    expect(res.status).toBe(400);
+  });
+
   it('T1.3/D-1: broadcasts the committed message to the room channel', async () => {
     getAuthUserMock.mockResolvedValue({ id: 'user-owner', role: 'customer' });
     const res = await messagesPOST(fakeReq({ json: { text: 'hello' } }), routeParams());

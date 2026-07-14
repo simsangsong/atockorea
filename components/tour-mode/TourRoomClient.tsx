@@ -15,8 +15,11 @@
  * SSE fallback → visibility resync, T1.5).
  */
 
-import { useEffect, useMemo, useRef, useState, type FormEvent } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
+import ChatFeed from '@/components/tour-mode/ChatFeed';
+import Composer from '@/components/tour-mode/Composer';
+import RoomShell from '@/components/tour-mode/RoomShell';
 import { detectEntryLocale, ENTRY_COPY } from '@/components/tour-mode/entryCopy';
 import { GUEST_CREDS_STORAGE_PREFIX } from '@/components/tour-mode/TourModeEntry';
 import { useTourRoomSession, type TourRoomJoinResult } from '@/hooks/useTourRoomSession';
@@ -45,19 +48,6 @@ function scrubTokenFromUrl(): void {
     /* noop */
   }
 }
-
-const LIFECYCLE_BADGE: Record<string, { label: string; className: string }> = {
-  lobby: { label: 'D-day soon', className: 'bg-sky-100 text-sky-700' },
-  live: { label: 'LIVE', className: 'bg-emerald-100 text-emerald-700' },
-  ended: { label: 'Ended', className: 'bg-gray-200 text-gray-600' },
-};
-
-const CONNECTION_DOT: Record<string, string> = {
-  connecting: 'bg-gray-300',
-  realtime: 'bg-emerald-500',
-  sse: 'bg-amber-400',
-  offline: 'bg-red-400',
-};
 
 export default function TourRoomClient({ bookingId }: { bookingId: string }) {
   const copy = useMemo(() => ENTRY_COPY[detectEntryLocale()], []);
@@ -123,100 +113,48 @@ function TourRoomLive({
   const snapshot = data.snapshot as {
     booking?: { tours?: { title?: string; city?: string } | null; tour_date?: string | null } | null;
     messages?: RoomMessage[];
+    schedule?: Array<Record<string, unknown>>;
   };
-  const { messages, connection, sendText, retryFailed, failedCount } = useTourRoomChannel({
+  const { messages, connection, sendText, sendPreset, retryFailed, failedCount } = useTourRoomChannel({
     bookingId,
     channelTopic: data.channel.topic,
     roomSession: data.session,
     initialMessages: snapshot.messages ?? [],
   });
 
-  const [draft, setDraft] = useState('');
-  const feedRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    feedRef.current?.scrollTo({ top: feedRef.current.scrollHeight });
-  }, [messages.length]);
-
-  const tourTitle = snapshot.booking?.tours?.title ?? 'Your tour';
-  const badge = LIFECYCLE_BADGE[data.lifecycle] ?? LIFECYCLE_BADGE.live;
+  const viewerRole = data.participant.role;
   const readOnly = data.lifecycle === 'ended';
-
-  const onSubmit = (event: FormEvent) => {
-    event.preventDefault();
-    const text = draft.trim();
-    if (!text) return;
-    setDraft('');
-    void sendText(text);
-  };
+  const schedule = Array.isArray(snapshot.schedule) ? snapshot.schedule : [];
 
   return (
-    <div className="mx-auto flex h-dvh w-full max-w-md flex-col px-4 pb-4 pt-6">
-      <header className="flex items-center justify-between">
-        <div className="min-w-0">
-          <h1 className="truncate text-[17px] font-semibold text-gray-900">{tourTitle}</h1>
-          <p className="mt-0.5 text-[12px] text-gray-500">
-            {[snapshot.booking?.tour_date, snapshot.booking?.tours?.city].filter(Boolean).join(' · ')}
-          </p>
-        </div>
-        <div className="flex items-center gap-2">
-          <span className={`h-2 w-2 rounded-full ${CONNECTION_DOT[connection]}`} title={connection} />
-          <span className={`rounded-full px-2.5 py-1 text-[11px] font-semibold ${badge.className}`}>
-            {badge.label}
-          </span>
-        </div>
-      </header>
-
-      <div ref={feedRef} className="mt-4 flex-1 space-y-2 overflow-y-auto pb-2">
-        {messages.length === 0 && <p className="pt-10 text-center text-[13px] text-gray-400">—</p>}
-        {messages.map((message) => {
-          const translated = message.translations?.[locale];
-          const mine = message.sender_role === 'customer';
-          return (
-            <div
-              key={message.id}
-              className={`max-w-[85%] rounded-2xl px-3.5 py-2.5 text-[14px] leading-relaxed shadow-sm ${
-                mine
-                  ? 'ml-auto bg-amber-500 text-white'
-                  : message.sender_role === 'system'
-                    ? 'mx-auto bg-gray-100 text-gray-600'
-                    : 'bg-white text-gray-900 ring-1 ring-gray-100'
-              } ${message._local === 'sending' ? 'opacity-60' : ''} ${message._local === 'failed' ? 'ring-2 ring-red-300' : ''}`}
+    <RoomShell
+      title={snapshot.booking?.tours?.title ?? 'Your tour'}
+      subtitle={[snapshot.booking?.tour_date, snapshot.booking?.tours?.city].filter(Boolean).join(' · ')}
+      lifecycle={data.lifecycle}
+      connection={connection}
+      locale={locale}
+      schedule={schedule}
+      chat={
+        <>
+          <ChatFeed messages={messages} viewerLocale={locale} viewerRole={viewerRole} />
+          {failedCount > 0 && (
+            <button
+              type="button"
+              onClick={() => void retryFailed()}
+              className="mb-2 w-full rounded-xl bg-red-50 py-2 text-[12px] font-medium text-red-600"
             >
-              {translated || message.source_text}
-            </div>
-          );
-        })}
-      </div>
-
-      {failedCount > 0 && (
-        <button
-          type="button"
-          onClick={() => void retryFailed()}
-          className="mb-2 w-full rounded-xl bg-red-50 py-2 text-[12px] font-medium text-red-600"
-        >
-          ↻ {failedCount}
-        </button>
-      )}
-
-      {!readOnly && (
-        <form onSubmit={onSubmit} className="flex items-end gap-2">
-          <input
-            value={draft}
-            onChange={(e) => setDraft(e.target.value)}
-            maxLength={2000}
-            className="min-w-0 flex-1 rounded-2xl border border-gray-200 bg-white px-4 py-3 text-[14px] focus:border-amber-400 focus:outline-none"
-          />
-          <button
-            type="submit"
-            disabled={!draft.trim()}
-            className="rounded-2xl bg-amber-500 px-4 py-3 text-[14px] font-semibold text-white disabled:opacity-40"
-            aria-label="send"
-          >
-            ➤
-          </button>
-        </form>
-      )}
-    </div>
+              ↻ {failedCount}
+            </button>
+          )}
+          {!readOnly && (
+            <Composer
+              locale={locale}
+              onSendText={(text) => void sendText(text)}
+              onSendPreset={(preset) => void sendPreset(preset, locale)}
+            />
+          )}
+        </>
+      }
+    />
   );
 }

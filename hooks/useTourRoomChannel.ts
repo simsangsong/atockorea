@@ -24,6 +24,8 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { supabase } from '@/lib/supabase';
+import type { QuickReplyPreset } from '@/lib/tour-room/quickReplies';
+import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
 export interface RoomMessage {
   id: string;
@@ -65,16 +67,22 @@ export function latestCursor(messages: RoomMessage[]): string | null {
 
 const unsentKey = (bookingId: string) => `tour_mode_unsent:${bookingId}`;
 
-function readUnsentQueue(bookingId: string): string[] {
+/** A queued outbound send: free text or a quick-reply preset key (§M-2 ②). */
+export type QueuedSend = { text?: string; presetKey?: string };
+
+function readUnsentQueue(bookingId: string): QueuedSend[] {
   try {
     const raw = window.localStorage.getItem(unsentKey(bookingId));
-    return raw ? (JSON.parse(raw) as string[]) : [];
+    if (!raw) return [];
+    const parsed = JSON.parse(raw) as Array<string | QueuedSend>;
+    // Backward-compat: early builds queued plain strings.
+    return parsed.map((entry) => (typeof entry === 'string' ? { text: entry } : entry));
   } catch {
     return [];
   }
 }
 
-function writeUnsentQueue(bookingId: string, queue: string[]): void {
+function writeUnsentQueue(bookingId: string, queue: QueuedSend[]): void {
   try {
     if (queue.length === 0) window.localStorage.removeItem(unsentKey(bookingId));
     else window.localStorage.setItem(unsentKey(bookingId), JSON.stringify(queue));
@@ -97,6 +105,8 @@ export interface UseTourRoomChannel {
   connection: RoomConnection;
   /** Send a text message (optimistic; queues on failure). */
   sendText: (text: string) => Promise<boolean>;
+  /** Send a pre-translated quick reply — zero server-side LLM calls (§M-2 ②). */
+  sendPreset: (preset: QuickReplyPreset, viewerLocale: RoomLocale) => Promise<boolean>;
   /** Re-send everything in the failed/unsent queue. */
   retryFailed: () => Promise<void>;
   failedCount: number;
@@ -195,15 +205,15 @@ export function useTourRoomChannel(options: UseTourRoomChannelOptions): UseTourR
   }, [addMessages, bookingId, roomSession]);
 
   // --- sending ---------------------------------------------------------------
-  const postText = useCallback(
-    async (text: string): Promise<RoomMessage | null> => {
+  const postSend = useCallback(
+    async (payload: QueuedSend): Promise<RoomMessage | null> => {
       const res = await fetch(`/api/tour-rooms/${encodeURIComponent(bookingId)}/messages`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           ...(roomSession ? { 'x-tour-room-auth': roomSession } : {}),
         },
-        body: JSON.stringify({ text }),
+        body: JSON.stringify(payload),
       });
       if (!res.ok) return null;
       const json = (await res.json()) as { message?: RoomMessage };
@@ -212,38 +222,59 @@ export function useTourRoomChannel(options: UseTourRoomChannelOptions): UseTourR
     [bookingId, roomSession],
   );
 
-  const sendText = useCallback(
-    async (text: string): Promise<boolean> => {
-      const trimmed = text.trim();
-      if (!trimmed) return false;
-      const optimisticId = `local-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
-      const optimistic: RoomMessage = {
-        id: optimisticId,
-        sender_role: 'customer',
-        source_text: trimmed,
-        created_at: new Date().toISOString(),
-        _local: 'sending',
-      };
+  const sendOptimistic = useCallback(
+    async (payload: QueuedSend, optimistic: RoomMessage): Promise<boolean> => {
       setMessages((prev) => mergeRoomMessages(prev, [optimistic]));
       try {
-        const delivered = await postText(trimmed);
+        const delivered = await postSend(payload);
         if (delivered) {
-          setMessages((prev) => mergeRoomMessages(prev.filter((m) => m.id !== optimisticId), [delivered]));
+          setMessages((prev) => mergeRoomMessages(prev.filter((m) => m.id !== optimistic.id), [delivered]));
           return true;
         }
         throw new Error('send_failed');
       } catch {
         setMessages((prev) =>
-          prev.map((m) => (m.id === optimisticId ? { ...m, _local: 'failed' as const } : m)),
+          prev.map((m) => (m.id === optimistic.id ? { ...m, _local: 'failed' as const } : m)),
         );
         const queue = readUnsentQueue(bookingId);
-        queue.push(trimmed);
+        queue.push(payload);
         writeUnsentQueue(bookingId, queue);
         setFailedCount(queue.length);
         return false;
       }
     },
-    [bookingId, postText],
+    [bookingId, postSend],
+  );
+
+  const makeOptimistic = (sourceText: string, extra?: Partial<RoomMessage>): RoomMessage => ({
+    id: `local-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+    sender_role: 'customer',
+    source_text: sourceText,
+    created_at: new Date().toISOString(),
+    _local: 'sending',
+    ...extra,
+  });
+
+  const sendText = useCallback(
+    async (text: string): Promise<boolean> => {
+      const trimmed = text.trim();
+      if (!trimmed) return false;
+      return sendOptimistic({ text: trimmed }, makeOptimistic(trimmed));
+    },
+    [sendOptimistic],
+  );
+
+  const sendPreset = useCallback(
+    async (preset: QuickReplyPreset, viewerLocale: RoomLocale): Promise<boolean> => {
+      return sendOptimistic(
+        { presetKey: preset.key },
+        makeOptimistic(preset.text[viewerLocale] ?? preset.text.en, {
+          translations: { ...preset.text },
+          metadata: { kind: 'quick_reply', preset_key: preset.key },
+        }),
+      );
+    },
+    [sendOptimistic],
   );
 
   const retryFailed = useCallback(async () => {
@@ -252,7 +283,7 @@ export function useTourRoomChannel(options: UseTourRoomChannelOptions): UseTourR
     try {
       let queue = readUnsentQueue(bookingId);
       while (queue.length > 0) {
-        const delivered = await postText(queue[0]);
+        const delivered = await postSend(queue[0]);
         if (!delivered) break; // still failing — keep the rest queued
         addMessages([delivered]);
         queue = queue.slice(1);
@@ -265,10 +296,10 @@ export function useTourRoomChannel(options: UseTourRoomChannelOptions): UseTourR
     } finally {
       sendingRef.current = false;
     }
-  }, [addMessages, bookingId, postText]);
+  }, [addMessages, bookingId, postSend]);
 
   return useMemo(
-    () => ({ messages, connection, sendText, retryFailed, failedCount }),
-    [messages, connection, sendText, retryFailed, failedCount],
+    () => ({ messages, connection, sendText, sendPreset, retryFailed, failedCount }),
+    [messages, connection, sendText, sendPreset, retryFailed, failedCount],
   );
 }
