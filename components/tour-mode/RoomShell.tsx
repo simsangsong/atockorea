@@ -63,6 +63,7 @@ export default function RoomShell({
   schedule,
   chat,
   settings,
+  banner,
   theme = 'light',
 }: {
   title: string;
@@ -75,6 +76,8 @@ export default function RoomShell({
   chat: ReactNode;
   /** Settings tab content (T1.12), supplied by the page. */
   settings: ReactNode;
+  /** T2.8 — live caption banner, pinned above the tabs on every tab. */
+  banner?: ReactNode;
   /** Resolved theme — 'system' is resolved by the caller before this prop. */
   theme?: 'light' | 'dark';
 }) {
@@ -99,6 +102,8 @@ export default function RoomShell({
         <div className="mt-3">
           <EmergencyCard locale={locale} />
         </div>
+
+        {banner && <div className="mt-2">{banner}</div>}
 
         <nav className="mt-3 flex gap-1 rounded-2xl bg-gray-100 p-1 dark:bg-gray-800" role="tablist">
           {(['chat', 'map', 'schedule', 'settings'] as const).map((key) => (

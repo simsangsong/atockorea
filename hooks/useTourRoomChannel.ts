@@ -43,6 +43,17 @@ export interface RoomMessage {
 
 export type RoomConnection = 'connecting' | 'realtime' | 'sse' | 'offline';
 
+/** T2.8 — ephemeral live-interpretation caption (Broadcast-only, no DB row). */
+export interface RoomCaption {
+  id: string;
+  seq: number;
+  sender_role: string;
+  source_text: string;
+  source_locale?: string | null;
+  translations?: Record<string, string>;
+  created_at: string;
+}
+
 /** Pure merge: dedupe by id (server wins over optimistic), sort by created_at. */
 export function mergeRoomMessages(existing: RoomMessage[], incoming: RoomMessage[]): RoomMessage[] {
   if (incoming.length === 0) return existing;
@@ -110,6 +121,12 @@ export interface UseTourRoomChannel {
   /** Re-send everything in the failed/unsent queue. */
   retryFailed: () => Promise<void>;
   failedCount: number;
+  /**
+   * T2.8 — the newest live caption (realtime transport only; captions are
+   * ephemeral by design, missed ones are simply gone). Highest seq wins so a
+   * late-delivered older frame never overwrites the current sentence.
+   */
+  latestCaption: RoomCaption | null;
 }
 
 export function useTourRoomChannel(options: UseTourRoomChannelOptions): UseTourRoomChannel {
@@ -117,6 +134,7 @@ export function useTourRoomChannel(options: UseTourRoomChannelOptions): UseTourR
   const [messages, setMessages] = useState<RoomMessage[]>(options.initialMessages ?? []);
   const [connection, setConnection] = useState<RoomConnection>('connecting');
   const [failedCount, setFailedCount] = useState(0);
+  const [latestCaption, setLatestCaption] = useState<RoomCaption | null>(null);
 
   const cursorRef = useRef<string | null>(latestCursor(options.initialMessages ?? []));
   const sseRef = useRef<EventSource | null>(null);
@@ -164,6 +182,12 @@ export function useTourRoomChannel(options: UseTourRoomChannelOptions): UseTourR
     channel.on('broadcast', { event: 'message' }, (frame) => {
       const message = (frame.payload as { message?: RoomMessage })?.message;
       if (message) addMessages([message]);
+    });
+    channel.on('broadcast', { event: 'caption' }, (frame) => {
+      const caption = (frame.payload as { caption?: RoomCaption })?.caption;
+      if (caption) {
+        setLatestCaption((prev) => (prev && prev.seq > caption.seq ? prev : caption));
+      }
     });
     channel.subscribe((status) => {
       if (status === 'SUBSCRIBED') {
@@ -299,7 +323,7 @@ export function useTourRoomChannel(options: UseTourRoomChannelOptions): UseTourR
   }, [addMessages, bookingId, postSend]);
 
   return useMemo(
-    () => ({ messages, connection, sendText, sendPreset, retryFailed, failedCount }),
-    [messages, connection, sendText, sendPreset, retryFailed, failedCount],
+    () => ({ messages, connection, sendText, sendPreset, retryFailed, failedCount, latestCaption }),
+    [messages, connection, sendText, sendPreset, retryFailed, failedCount, latestCaption],
   );
 }

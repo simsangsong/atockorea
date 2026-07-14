@@ -15,21 +15,26 @@
  * SSE fallback → visibility resync, T1.5).
  */
 
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
+import CaptionBanner from '@/components/tour-mode/CaptionBanner';
 import ChatFeed from '@/components/tour-mode/ChatFeed';
 import Composer from '@/components/tour-mode/Composer';
 import EndedCard from '@/components/tour-mode/EndedCard';
+import GuideCaptionBar from '@/components/tour-mode/GuideCaptionBar';
 import LobbyCard from '@/components/tour-mode/LobbyCard';
 import RoomShell from '@/components/tour-mode/RoomShell';
 import { detectEntryLocale, ENTRY_COPY } from '@/components/tour-mode/entryCopy';
 import { GUEST_CREDS_STORAGE_PREFIX } from '@/components/tour-mode/TourModeEntry';
 import SettingsTab from '@/components/tour-mode/SettingsTab';
-import { useTourRoomSession, type TourRoomJoinResult } from '@/hooks/useTourRoomSession';
+import { useTourRoomSession, getOrCreateDeviceKey, type TourRoomJoinResult } from '@/hooks/useTourRoomSession';
 import { useTourRoomChannel, type RoomMessage } from '@/hooks/useTourRoomChannel';
 import { useTourRoomSettings } from '@/hooks/useTourRoomSettings';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
+import { extensionForMime } from '@/lib/tour-room/recorder';
+import { detectTtsTier, primeAudio, speakWithDevice } from '@/lib/tour-room/tts';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
+import type { VoiceTranscribeResult } from '@/components/tour-mode/Composer';
 
 function consumeGuestCreds(bookingId: string): { contactEmail?: string; contactName?: string } | null {
   try {
@@ -139,16 +144,91 @@ function TourRoomLive({
     messages?: RoomMessage[];
     schedule?: Array<Record<string, unknown>>;
   };
-  const { messages, connection, sendText, sendPreset, retryFailed, failedCount } = useTourRoomChannel({
-    bookingId,
-    channelTopic: data.channel.topic,
-    roomSession: data.session,
-    initialMessages: snapshot.messages ?? [],
-  });
+  const { messages, connection, sendText, sendPreset, retryFailed, failedCount, latestCaption } =
+    useTourRoomChannel({
+      bookingId,
+      channelTopic: data.channel.topic,
+      roomSession: data.session,
+      initialMessages: snapshot.messages ?? [],
+    });
 
   const viewerRole = data.participant.role;
   const readOnly = data.lifecycle === 'ended';
   const schedule = Array.isArray(snapshot.schedule) ? snapshot.schedule : [];
+
+  // T2.4: any first gesture in the room unlocks audio for later playback.
+  useEffect(() => {
+    const unlock = () => primeAudio();
+    document.addEventListener('pointerdown', unlock, { once: true });
+    return () => document.removeEventListener('pointerdown', unlock);
+  }, []);
+
+  // T2.2 — transcribe-only upload; the transcript comes back into the
+  // Composer for confirmation (or auto-sends per the settings contract).
+  const transcribeVoice = useCallback(
+    async (blob: Blob, mimeType: string): Promise<VoiceTranscribeResult | null> => {
+      try {
+        const form = new FormData();
+        form.append('audio', new File([blob], `voice.${extensionForMime(mimeType)}`, { type: mimeType }));
+        const res = await fetch(`/api/tour-rooms/${encodeURIComponent(bookingId)}/stt`, {
+          method: 'POST',
+          headers: { 'x-tour-room-auth': data.session },
+          body: form,
+        });
+        if (!res.ok) return null;
+        const json = (await res.json()) as { text?: string; needsConfirmation?: boolean };
+        return { text: json.text ?? '', needsConfirmation: json.needsConfirmation !== false };
+      } catch {
+        return null;
+      }
+    },
+    [bookingId, data.session],
+  );
+
+  // T2.9 — report the device's TTS capability once per entry (background,
+  // via the join upsert; no UI state churn).
+  useEffect(() => {
+    let cancelled = false;
+    void detectTtsTier(locale).then((tier) => {
+      if (cancelled) return;
+      const deviceKey = getOrCreateDeviceKey();
+      if (!deviceKey) return;
+      void fetch(`/api/tour-rooms/${encodeURIComponent(bookingId)}/join`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'x-tour-room-auth': data.session },
+        body: JSON.stringify({ deviceKey, locale, ttsCapable: tier === 'device' }),
+      }).catch(() => undefined);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [bookingId, data.session, locale]);
+
+  // T2.5 — optional auto-read of incoming guide notices (device TTS only,
+  // never the paid path; silent when the tab is hidden).
+  const spokenIdsRef = useRef<Set<string> | null>(null);
+  useEffect(() => {
+    if (spokenIdsRef.current === null) {
+      // First render: everything already in the feed predates this visit.
+      spokenIdsRef.current = new Set(messages.map((m) => m.id));
+      return;
+    }
+    const seen = spokenIdsRef.current;
+    for (const message of messages) {
+      if (seen.has(message.id)) continue;
+      seen.add(message.id);
+      if (
+        settings.autoRead &&
+        message.sender_role === 'guide' &&
+        viewerRole !== 'guide' &&
+        !message._local &&
+        document.visibilityState === 'visible'
+      ) {
+        const text = message.translations?.[locale] || message.source_text;
+        void speakWithDevice(text, locale);
+      }
+    }
+  }, [messages, settings.autoRead, viewerRole, locale]);
 
   return (
     <RoomShell
@@ -159,9 +239,13 @@ function TourRoomLive({
       locale={locale}
       schedule={schedule}
       theme={theme}
+      banner={viewerRole !== 'guide' ? <CaptionBanner caption={latestCaption} locale={locale} /> : null}
       settings={<SettingsTab locale={locale} onLocaleChange={onLocaleChange} />}
       chat={
         <>
+          {viewerRole === 'guide' && !readOnly && (
+            <GuideCaptionBar bookingId={bookingId} roomSession={data.session} locale={locale} />
+          )}
           {data.lifecycle === 'lobby' && (
             <LobbyCard
               locale={locale}
@@ -171,7 +255,13 @@ function TourRoomLive({
             />
           )}
           {readOnly && <EndedCard locale={locale} bookingReference={snapshot.booking?.booking_reference} />}
-          <ChatFeed messages={messages} viewerLocale={locale} viewerRole={viewerRole} textScale={settings.textScale} />
+          <ChatFeed
+            messages={messages}
+            viewerLocale={locale}
+            viewerRole={viewerRole}
+            textScale={settings.textScale}
+            tts={{ bookingId, roomSession: data.session }}
+          />
           {failedCount > 0 && (
             <button
               type="button"
@@ -186,6 +276,7 @@ function TourRoomLive({
               locale={locale}
               onSendText={(text) => void sendText(text)}
               onSendPreset={(preset) => void sendPreset(preset, locale)}
+              transcribeVoice={transcribeVoice}
             />
           )}
         </>

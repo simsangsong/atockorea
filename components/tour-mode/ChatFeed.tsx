@@ -14,6 +14,7 @@
  */
 
 import { useCallback, useEffect, useRef, useState } from 'react';
+import AudioButton from '@/components/tour-mode/AudioButton';
 import type { RoomMessage } from '@/hooks/useTourRoomChannel';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
@@ -59,6 +60,7 @@ export default function ChatFeed({
   viewerLocale,
   viewerRole = 'customer',
   textScale = 'normal',
+  tts,
 }: {
   messages: RoomMessage[];
   viewerLocale: RoomLocale;
@@ -66,6 +68,8 @@ export default function ChatFeed({
   viewerRole?: string;
   /** T1.12 settings: 'large' bumps bubble text for senior travellers. */
   textScale?: 'normal' | 'large';
+  /** T2.4 — when set, incoming bubbles get a listen button (TTS ladder). */
+  tts?: { bookingId: string; roomSession: string } | null;
 }) {
   const bubbleText = textScale === 'large' ? 'text-[17px]' : 'text-[14px]';
   const systemText = textScale === 'large' ? 'text-[14px]' : 'text-[12px]';
@@ -130,6 +134,9 @@ export default function ChatFeed({
         const translatable = Boolean(translated && translated !== message.source_text);
         const showingOriginal = originals.has(message.id);
         const roleLabel = !mine ? ROLE_LABEL[viewerLocale][message.sender_role] : null;
+        // T2.4: listen button on delivered incoming bubbles only (optimistic
+        // local sends have no server row for the TTS cache to key on).
+        const listenable = Boolean(tts) && !mine && !message._local && !message.id.startsWith('local-');
 
         return (
           <div key={message.id} className={mine ? 'flex justify-end' : 'flex justify-start'}>
@@ -153,6 +160,15 @@ export default function ChatFeed({
                   </span>
                 )}
               </button>
+              {listenable && tts && (
+                <AudioButton
+                  text={displayText(message, viewerLocale, showingOriginal)}
+                  bookingId={tts.bookingId}
+                  messageId={message.id}
+                  locale={viewerLocale}
+                  roomSession={tts.roomSession}
+                />
+              )}
             </div>
           </div>
         );
