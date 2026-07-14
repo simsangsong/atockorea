@@ -21,6 +21,7 @@ const CUSTOMER_COPY: Record<
     cta: string;
     how: [string, string, string];
     keep: string;
+    homescreen: string;
   }
 > = {
   en: {
@@ -35,6 +36,7 @@ const CUSTOMER_COPY: Record<
       'On tour morning, the room shows your pickup and the bus on a map.',
     ],
     keep: 'Keep this email — the same link works all day on tour day.',
+    homescreen: 'Tip: after opening the room, add it to your home screen (share → "Add to Home Screen") for one-tap access on tour day.',
   },
   ko: {
     subject: (tour) => `투어룸이 준비됐어요 — ${tour}`,
@@ -48,6 +50,7 @@ const CUSTOMER_COPY: Record<
       '투어 아침에는 픽업 안내와 버스 위치를 지도로 볼 수 있어요.',
     ],
     keep: '이 메일을 보관해 주세요 — 투어 당일 하루 종일 같은 링크로 입장할 수 있어요.',
+    homescreen: '팁: 룸을 연 뒤 홈 화면에 추가(공유 → "홈 화면에 추가")하면 투어 당일 한 번의 탭으로 들어올 수 있어요.',
   },
   ja: {
     subject: (tour) => `ツアールームのご案内 — ${tour}`,
@@ -61,6 +64,7 @@ const CUSTOMER_COPY: Record<
       'ツアー当日の朝は、お迎え案内とバスの位置を地図で確認できます。',
     ],
     keep: 'このメールは保管してください — 当日は同じリンクで何度でも入室できます。',
+    homescreen: 'ヒント：ルームを開いたら、ホーム画面に追加（共有 →「ホーム画面に追加」）すると当日ワンタップで入室できます。',
   },
   es: {
     subject: (tour) => `Tu sala de tour está lista — ${tour}`,
@@ -74,6 +78,7 @@ const CUSTOMER_COPY: Record<
       'La mañana del tour verás tu recogida y el bus en el mapa.',
     ],
     keep: 'Guarda este correo — el mismo enlace funciona todo el día del tour.',
+    homescreen: 'Consejo: tras abrir la sala, añádela a tu pantalla de inicio (compartir → "Añadir a pantalla de inicio") para entrar con un toque el día del tour.',
   },
   zh: {
     subject: (tour) => `您的旅行房间已就绪 — ${tour}`,
@@ -83,6 +88,7 @@ const CUSTOMER_COPY: Record<
     cta: '打开我的旅行房间',
     how: ['点击按钮即可进入房间。', '您发送的消息会自动翻译给导游。', '旅行当天早上可在地图上查看接送安排和大巴位置。'],
     keep: '请保留此邮件 — 旅行当天同一链接可随时进入。',
+    homescreen: '小贴士：打开房间后，将其添加到主屏幕（分享 → "添加到主屏幕"），旅行当天一键进入。',
   },
 };
 
@@ -138,7 +144,8 @@ export function buildCustomerRoomInviteHtml(params: {
     <ol style="margin:0 0 14px;padding-left:20px;color:#4b5563;font-size:13px;line-height:1.8;">
       ${copy.how.map((line) => `<li>${line}</li>`).join('')}
     </ol>
-    <p style="margin:0;color:#9ca3af;font-size:12px;">${copy.keep}</p>
+    <p style="margin:0 0 6px;color:#9ca3af;font-size:12px;">${copy.keep}</p>
+    <p style="margin:0;color:#9ca3af;font-size:12px;">${copy.homescreen}</p>
   </div>
 </div>`);
 

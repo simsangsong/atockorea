@@ -15,8 +15,10 @@ import type { RoomLocale } from '@/lib/tour-room/snapshot';
 import { detectEntryLocale } from '@/components/tour-mode/entryCopy';
 import { isInAppWebview } from '@/components/tour-mode/WebviewEscapeBanner';
 import { isStandaloneDisplayMode } from '@/hooks/useStandaloneDisplayMode';
+import { kstDaysUntil } from '@/lib/tour-room/time';
 
 const DISMISS_KEY = 'atoc-tour-mode-a2hs-dismissed';
+const shownKey = (bookingId: string) => `tour_mode_a2hs_shown:${bookingId}`;
 
 type BeforeInstallPromptEvent = Event & {
   prompt: () => Promise<void>;
@@ -65,7 +67,15 @@ function isIosSafari(ua: string): boolean {
   return /iPhone|iPad|iPod/i.test(ua) && /Safari/i.test(ua) && !/CriOS|FxiOS|EdgiOS/i.test(ua);
 }
 
-export default function InstallBanner() {
+export default function InstallBanner({
+  tourDate = null,
+  bookingId = null,
+}: {
+  /** W5.1 — when set, the banner only appears from D-1 through tour day. */
+  tourDate?: string | null;
+  /** W5.1 — when set, the banner shows at most once per booking. */
+  bookingId?: string | null;
+} = {}) {
   const [mode, setMode] = useState<'hidden' | 'android' | 'ios'>('hidden');
   const [locale, setLocale] = useState<RoomLocale>('en');
   const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
@@ -74,19 +84,31 @@ export default function InstallBanner() {
     // Deferred to post-hydration on purpose (same shape as
     // WebviewEscapeBanner): install eligibility is a client-only fact.
     if (isStandaloneDisplayMode()) return;
-    let dismissed = false;
+    // W5.1 gating: pin-to-home-screen matters right before/on tour day, not
+    // when the invite lands a week early.
+    if (tourDate) {
+      const days = kstDaysUntil(tourDate);
+      if (days > 1 || days < 0) return;
+    }
     try {
-      dismissed = window.localStorage.getItem(DISMISS_KEY) === '1';
+      if (window.localStorage.getItem(DISMISS_KEY) === '1') return;
+      if (bookingId && window.localStorage.getItem(shownKey(bookingId)) === '1') return;
     } catch {
       /* storage blocked — treat as not dismissed */
     }
-    if (dismissed) return;
     const ua = navigator.userAgent || '';
     if (isInAppWebview(ua)) return;
 
     const show = (nextMode: 'android' | 'ios') => {
       setLocale(detectEntryLocale());
       setMode(nextMode);
+      if (bookingId) {
+        try {
+          window.localStorage.setItem(shownKey(bookingId), '1');
+        } catch {
+          /* once-only just won't persist */
+        }
+      }
     };
 
     const onBeforeInstallPrompt = (event: Event) => {
@@ -101,7 +123,7 @@ export default function InstallBanner() {
     };
     applyIos();
     return () => window.removeEventListener('beforeinstallprompt', onBeforeInstallPrompt);
-  }, []);
+  }, [tourDate, bookingId]);
 
   if (mode === 'hidden') return null;
   const copy = COPY[locale];

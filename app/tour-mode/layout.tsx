@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from 'next';
 import WebviewEscapeBanner from '@/components/tour-mode/WebviewEscapeBanner';
-import InstallBanner from '@/components/tour-mode/InstallBanner';
 import PwaRegistrar from '@/components/pwa/PwaRegistrar';
 
 /**
@@ -39,7 +38,6 @@ export default function TourModeLayout({ children }: { children: React.ReactNode
       <PwaRegistrar swPath="/sw-tour-mode.js" scope="/tour-mode" />
       <WebviewEscapeBanner />
       {children}
-      <InstallBanner />
     </main>
   );
 }
