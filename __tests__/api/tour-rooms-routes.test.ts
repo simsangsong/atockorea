@@ -28,11 +28,15 @@ jest.mock('@/lib/openai-server', () => ({
   translateTextForLocales: jest.fn(),
   transcribeAudioFile: jest.fn(),
 }));
+jest.mock('@/lib/tour-room/realtime', () => ({
+  broadcastToRoom: jest.fn(async () => ({ ok: true })),
+}));
 
 const getAuthUserMock = getAuthUser as jest.Mock;
 const createServerClientMock = createServerClient as jest.Mock;
 const requestGateMock = requestGate as jest.Mock;
 const translateMock = translateTextForLocales as jest.Mock;
+const broadcastToRoomMock = jest.requireMock('@/lib/tour-room/realtime').broadcastToRoom as jest.Mock;
 
 const BOOKING = {
   id: 'booking-1',
@@ -63,6 +67,7 @@ interface DbConfig {
   spot?: typeof SPOT | null;
   existingSpotEvent?: Record<string, unknown> | null;
   messages?: Array<Record<string, unknown>>;
+  participants?: Array<Record<string, unknown>>;
 }
 
 /** Chainable fake supabase covering every query the three routes issue. */
@@ -86,6 +91,7 @@ function fakeDb(config: DbConfig = {}) {
           return { data: config.existingSpotEvent ?? null, error: null };
         }
         if (table === 'tour_room_messages') return { data: config.messages ?? [], error: null };
+        if (table === 'tour_room_participants') return { data: config.participants ?? [], error: null };
         return { data: null, error: null };
       };
       const selfReturning = [
@@ -222,6 +228,41 @@ describe('POST /api/tour-rooms/[bookingId]/messages', () => {
     getAuthUserMock.mockResolvedValue({ id: 'user-owner', role: 'customer' });
     const res = await messagesPOST(fakeReq({ json: { text: '   ' } }), routeParams());
     expect(res.status).toBe(400);
+  });
+
+  it('T1.3/D-8: targets only the locales of the participants actually in the room', async () => {
+    getAuthUserMock.mockResolvedValue({ id: 'user-owner', role: 'customer' });
+    const db = fakeDb({ participants: [{ locale: 'ko' }, { locale: 'ja' }, { locale: 'ko' }] });
+    createServerClientMock.mockReturnValue(db);
+    const res = await messagesPOST(fakeReq({ json: { text: 'where is the bus?' } }), routeParams());
+    expect(res.status).toBe(201);
+    expect(translateMock).toHaveBeenCalledWith('where is the bus?', ['ko', 'ja']);
+  });
+
+  it('T1.3/R-6: still 201s with the original text when translation fails (pending status)', async () => {
+    getAuthUserMock.mockResolvedValue({ id: 'user-owner', role: 'customer' });
+    translateMock.mockRejectedValue(new Error('all providers down'));
+    const db = fakeDb();
+    createServerClientMock.mockReturnValue(db);
+    const res = await messagesPOST(fakeReq({ json: { text: 'urgent: meet now' } }), routeParams());
+    expect(res.status).toBe(201);
+    expect(db.inserted.tour_room_messages[0]).toMatchObject({
+      source_text: 'urgent: meet now',
+      translations: {},
+      metadata: { translation_status: 'pending' },
+    });
+    expect(broadcastToRoomMock).toHaveBeenCalled();
+  });
+
+  it('T1.3/D-1: broadcasts the committed message to the room channel', async () => {
+    getAuthUserMock.mockResolvedValue({ id: 'user-owner', role: 'customer' });
+    const res = await messagesPOST(fakeReq({ json: { text: 'hello' } }), routeParams());
+    expect(res.status).toBe(201);
+    expect(broadcastToRoomMock).toHaveBeenCalledWith(
+      expect.objectContaining({ id: 'room-1' }),
+      'message',
+      expect.objectContaining({ message: expect.objectContaining({ source_text: 'hello' }) }),
+    );
   });
 });
 

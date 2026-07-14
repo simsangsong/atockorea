@@ -1,7 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
-import { transcribeAudioFile, translateTextForLocales } from '@/lib/openai-server';
+import { transcribeAudioFile, translateTextForLocales, type TranslationResult } from '@/lib/openai-server';
 import { ensureRoom, resolveRoomActor, type RoomActor, type RoomBooking } from '@/lib/tour-room/access';
+import { broadcastToRoom } from '@/lib/tour-room/realtime';
+import { getParticipantLocales } from '@/lib/tour-room/snapshot';
 
 export const dynamic = 'force-dynamic';
 
@@ -114,7 +116,16 @@ export async function POST(
     }
     const { booking, actor, authUserId } = resolved;
     const senderRole = senderRoleFor(actor);
-    const targetLocales = parseLocales(targetLocalesRaw, defaultTargetLocalesFor(senderRole, booking));
+    const room = await ensureRoom(supabase, booking as RoomBooking);
+
+    // D-8 (T1.3): default translation targets are the locales actually present
+    // in the room; explicit client targetLocales and the legacy defaults
+    // (guide → customer's preferred language, else all 5) remain the fallback.
+    const participantLocales = await getParticipantLocales(supabase, room.id);
+    const targetLocales = parseLocales(
+      targetLocalesRaw,
+      participantLocales.length > 0 ? participantLocales : defaultTargetLocalesFor(senderRole, booking),
+    );
 
     if (audioFile) {
       const transcribed = await transcribeAudioFile(audioFile, { prompt: sttPrompt });
@@ -134,8 +145,17 @@ export async function POST(
       return NextResponse.json({ error: 'text or audio transcription is required' }, { status: 400 });
     }
 
-    const room = await ensureRoom(supabase, booking as RoomBooking);
-    const translation = await translateTextForLocales(text, targetLocales);
+    // R-6 (T1.3): a translation failure must never block the message — post
+    // the original immediately and mark it pending for async repair.
+    let translation: TranslationResult;
+    try {
+      translation = await translateTextForLocales(text, targetLocales);
+    } catch (translationError) {
+      console.warn('tour-room message translation failed, publishing original first:', translationError);
+      translation = { source_locale: 'und', translations: {} };
+      messageMetadata = { ...messageMetadata, translation_status: 'pending' };
+    }
+
     const { data: message, error } = await supabase
       .from('tour_room_messages')
       .insert({
@@ -154,6 +174,10 @@ export async function POST(
       .single();
 
     if (error) throw error;
+
+    // D-1/§O-7: push the committed row to the room channel; best-effort by
+    // design — clients recover any gap via the after-cursor resync.
+    await broadcastToRoom(room, 'message', { message });
 
     return NextResponse.json({ room, message }, { status: 201 });
   } catch (error) {
