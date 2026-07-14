@@ -88,7 +88,14 @@ export function HomeV2MatchProvider({ children }: { children: ReactNode }) {
     [matchedAdminImageUrl, matchedJoinImageUrl, baseJoinImageUrl],
   );
 
+  /** Race guard (audit 2026-07-14 B3) — each match run takes a fresh id; any
+   *  response or explanation merge from a superseded run is dropped, so a
+   *  slow earlier request can never overwrite a newer result (or attach its
+   *  explanation to a different match after a reset). */
+  const matchRunIdRef = useRef(0);
+
   const resetMatchToIdle = useCallback(() => {
+    matchRunIdRef.current += 1;
     clearHomepageMatchTimeouts(timeoutsRef);
     setPhase("idle");
     setLoadingStep(0);
@@ -104,6 +111,7 @@ export function HomeV2MatchProvider({ children }: { children: ReactNode }) {
     pinnedDestination?: string | null,
   ) => {
     analytics.homeCtaClick({ source: "hero_planner_match" });
+    const runId = ++matchRunIdRef.current;
     setMatchError(null);
     setMatchResult(null);
     setMatchedJoinImageUrl(null);
@@ -137,6 +145,7 @@ export function HomeV2MatchProvider({ children }: { children: ReactNode }) {
       if (!res.ok) {
         throw new Error(data.error ?? "Match request failed");
       }
+      if (runId !== matchRunIdRef.current) return null; // superseded run
       clearHomepageMatchTimeouts(timeoutsRef);
       stepTimers.forEach(clearTimeout);
       setMatchResult(data);
@@ -164,6 +173,7 @@ export function HomeV2MatchProvider({ children }: { children: ReactNode }) {
           .then((j: { explanation?: string | null } | null) => {
             const explanation = j?.explanation?.trim();
             if (!explanation) return;
+            if (runId !== matchRunIdRef.current) return; // superseded run
             setMatchResult((prev) =>
               prev ? { ...prev, matchExplanation: explanation } : prev,
             );
@@ -174,8 +184,9 @@ export function HomeV2MatchProvider({ children }: { children: ReactNode }) {
       }
       return data;
     } catch (e) {
-      clearHomepageMatchTimeouts(timeoutsRef);
       stepTimers.forEach(clearTimeout);
+      if (runId !== matchRunIdRef.current) return null; // superseded run
+      clearHomepageMatchTimeouts(timeoutsRef);
       const msg = e instanceof Error ? e.message : "Match failed";
       setMatchError(msg);
       setPhase("idle");

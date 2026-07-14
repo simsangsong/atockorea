@@ -13,6 +13,7 @@
  */
 
 import { NextRequest, NextResponse } from "next/server";
+import { requestGate, clientIpKey } from "@/lib/durable-rate-limit";
 import { createClient } from "@supabase/supabase-js";
 import { parseQuery } from "@/lib/tour-match-v2/parser";
 import { matchTours } from "@/lib/tour-match-v2/matcher";
@@ -54,6 +55,20 @@ const PINNED_DESTINATION_TO_REGIONS: Record<string, string[]> = {
 
 export async function POST(req: NextRequest) {
   const t0 = Date.now();
+  // Unauthenticated AI parse (Haiku) — throttle per-IP to cap cost abuse,
+  // mirroring the sibling match-explanation gate (audit 2026-07-14 B1).
+  const gate = await requestGate({
+    namespace: "match",
+    key: clientIpKey(req.headers),
+    perMinute: 10,
+    perHour: 60,
+  });
+  if (!gate.allowed) {
+    return NextResponse.json(
+      { error: "rate_limited" },
+      { status: 429, headers: { "Retry-After": String(Math.ceil(gate.retryAfterMs / 1000)) } },
+    );
+  }
   try {
     const body = await req.json();
     const text = typeof body.text === "string" ? body.text.trim() : "";
@@ -164,7 +179,7 @@ export async function POST(req: NextRequest) {
             parser_cost_usd: cost,
             parse_elapsed_ms: parseMs,
             match_elapsed_ms: matchMs,
-            user_session_id: req.cookies.get("atc_session")?.value ?? null,
+            user_session_id: req.cookies.get("atc_chat_sid")?.value ?? null,
             user_locale: locale,
           })
           .then(({ error }) => {
