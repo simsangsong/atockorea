@@ -36,7 +36,8 @@ export type SpotEventKind =
   | 'meeting_notice_timed'
   | 'free_time'
   | 'free_time_cancelled'
-  | 'onboard_ack';
+  | 'onboard_ack'
+  | 'sos';
 
 /** {spot}/{time}/{point} interpolate verbatim. */
 const TEMPLATES: Record<SpotEventKind, Record<RoomLocale, string>> = {
@@ -95,6 +96,13 @@ const TEMPLATES: Record<SpotEventKind, Record<RoomLocale, string>> = {
     ja: 'バスに乗りました。🚌',
     es: 'Ya estoy en el bus. 🚌',
     zh: '我已上车。🚌',
+  },
+  sos: {
+    en: '🆘 EMERGENCY — I need help right now. Please contact me immediately.',
+    ko: '🆘 긴급 — 지금 도움이 필요해요. 즉시 연락 부탁드립니다.',
+    ja: '🆘 緊急 — 今すぐ助けが必要です。至急ご連絡ください。',
+    es: '🆘 EMERGENCIA — Necesito ayuda ahora mismo. Contáctenme de inmediato.',
+    zh: '🆘 紧急 — 我现在需要帮助，请立即联系我。',
   },
 };
 

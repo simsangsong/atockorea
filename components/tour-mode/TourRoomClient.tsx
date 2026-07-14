@@ -27,6 +27,7 @@ import LobbyCard, { firstPickup } from '@/components/tour-mode/LobbyCard';
 import PickupBoard from '@/components/tour-mode/PickupBoard';
 import RoomMapTab from '@/components/tour-mode/map/RoomMapTab';
 import RoomShell from '@/components/tour-mode/RoomShell';
+import SosButton from '@/components/tour-mode/SosButton';
 import { detectEntryLocale, ENTRY_COPY } from '@/components/tour-mode/entryCopy';
 import { GUEST_CREDS_STORAGE_PREFIX } from '@/components/tour-mode/TourModeEntry';
 import SettingsTab from '@/components/tour-mode/SettingsTab';
@@ -328,6 +329,11 @@ function TourRoomLive({
           <NoticeBanner messages={messages} tourDate={snapshot.booking?.tour_date} locale={locale} />
           {viewerRole !== 'guide' && <CaptionBanner caption={latestCaption} locale={locale} />}
         </>
+      }
+      sos={
+        viewerRole === 'customer' && !readOnly ? (
+          <SosButton bookingId={bookingId} roomSession={data.session} locale={locale} />
+        ) : null
       }
       map={
         <RoomMapTab
