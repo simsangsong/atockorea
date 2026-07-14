@@ -2,7 +2,7 @@
 
 **작성일:** 2026-07-14
 **브랜치:** `claude/tour-mode-dev-iaa0b8`
-**상태:** Wave T0 **전체 완료(T0.3 라이브 적용 2026-07-14)** + **Wave T1 사실상 완료**(T1.11 ⑧ QR·취소 revoke만 T5.1 동반 잔여) + **Wave T2 음성 9/9 코드 완료**(실기기 확인 항목은 §I-4에 문서화, 파일럿 전 수행). T0~T2 게이트 도달 — 다음 = **플래그 OFF 상태로 PR 갱신 → Wave T3(위치·지도)**. 구현 커밋은 세션 브랜치 `claude/tour-mode-iql6ho`(플랜 문서 브랜치를 머지해 진행).
+**상태:** Wave T0~T2 완료+PR #307 머지(플래그 OFF) → **T3 완료(465a1fe6) → T4 완료(fc80cbfa, 파일럿 스팟 검수 대기) → T5 완료(44c3bc1c — T1.11 ⑧ 포함)**. §R 게이트상 다음 = **내부 리허설(§I 실기기) → Wave T6(가이드 콘솔·팬아웃) → T7 → T8 파일럿**. 구현 커밋은 세션 브랜치 `claude/tour-mode-iql6ho`.
 **단일 기준 문서:** 이 파일. 투어모드 관련 모든 작업은 이 문서의 웨이브·티켓 번호를 기준으로 진행/보고한다.
 
 ---
@@ -286,28 +286,28 @@ hooks/
 - **T2.9** TTS 케이퍼빌리티 래더(§O-2) — `voiceschanged` 대기 + 로케일 음성 존재 검증 → 서버 TTS 폴백 자동 전환 → 오디오 불가 시 배지 강등, `tts_capable` 보고 + 가이드 공지 선생성 — AC: voices 빈 배열 기기 시뮬레이션에서 서버 폴백 재생, 룸 내 캐시 공유(생성 1회) 검증. ✅ 완료(df44bba0+ee8b5f4a) — voices 빈 배열/타로케일 음성/synth 부재 → server 티어(유닛), 캐시 히트 생성 0회(유닛), tts_capable 백그라운드 join 보고, 가이드 공지 선생성(tts_capable=false 참가자 로케일만, 실패 무해).
 
 ### Wave T3 — 위치공유 · 지도 【7티켓】
-- **T3.1** `location` API — 서버 경유 rebroadcast + 30s 스냅샷 upsert + 레이트리밋 — AC: 위조 participant_id 403.
-- **T3.2** `useGeoWatcher` — watchPosition, accuracy>100m 폐기, 이동<10m 스킵, 포그라운드 전용 명시 — AC: geo.ts 순수함수만 사용.
-- **T3.3** `RoomMap` — 한 지도에 전원 표시: 가이드(버스 아이콘)·손님(이니셜 점)·스팟(번호 핀)·시설·픽업/집합지 마커, 팔로우 모드(가이드 따라가기) + **"가이드에게 가기" 버튼**: 내 위치↔가이드 실시간 거리·방향 표시 + Google Maps 도보 안내 딥링크(§H P2 #5를 v1로 승격) — AC: 마커 20개 60fps, 가이드 위치 갱신 시 거리 실시간 반영.
-- **T3.4** 위치공유 토글 + 동의 문구 + 권한거부 UX(설정 안내 딥링크) — AC: 거부 후 재요청 루프 없음.
-- **T3.5** `PresenceBar` (Realtime Presence: join/leave/last_seen) — AC: 탭 종료 30초 내 오프라인 표시.
-- **T3.6** Wake Lock API(지원 기기) + "화면 켜두세요" 배너 — AC: 미지원 브라우저 무해.
-- **T3.7** 픽업 임박 보드 — 투어 아침(픽업 시작~버스 출발) 룸 상단에 "내 픽업: N번째 정차 · 약 X분" 표시. 가이드(버스) 위치 × 같은 tour_id+date 픽업포인트 `pickup_time` 순번으로 계산(v1은 직선거리 기반 추정 — Directions API 미사용, 비용 0) + 버스 실시간 지도 링크. 손님 버튼 "도착했어요 / 조금 늦어요" → `metadata.kind='pickup_status'` 메시지로 가이드 콘솔 집계 — AC: 가이드 위치공유 OFF 시 보드 자동 숨김 + 픽업 시간 정적 안내로 강등, 픽업 완료 순차 갱신.
+- **T3.1** `location` API — 서버 경유 rebroadcast + 30s 스냅샷 upsert + 레이트리밋 — AC: 위조 participant_id 403. ✅ 완료(465a1fe6) — 신원은 룸세션에서만 파생(바디 participant_id 무시, 테스트 고정), 토큰 액터도 403(조인 전 발행 불가). 6/min 참가자 게이트, DELETE=공유중지(행 삭제+플래그+제거 브로드캐스트).
+- **T3.2** `useGeoWatcher` — watchPosition, accuracy>100m 폐기, 이동<10m 스킵, 포그라운드 전용 명시 — AC: geo.ts 순수함수만 사용. ✅ 완료(465a1fe6) — 발행 판정은 shouldPublishPing(15s 간격) 순수함수, hidden 탭 일시정지, 권한거부=터미널 상태.
+- **T3.3** `RoomMap` — 한 지도에 전원 표시: 가이드(버스 아이콘)·손님(이니셜 점)·스팟(번호 핀)·시설·픽업/집합지 마커, 팔로우 모드(가이드 따라가기) + **"가이드에게 가기" 버튼**: 내 위치↔가이드 실시간 거리·방향 표시 + Google Maps 도보 안내 딥링크(§H P2 #5를 v1로 승격) — AC: 마커 20개 60fps, 가이드 위치 갱신 시 거리 실시간 반영. ✅ 완료(465a1fe6) — 검증된 TourPickupMapCanvas 패턴(@react-google-maps/api quarterly 고정, Polyline 미사용) + dynamic ssr:false(§O-1 ② 탭 진입 lazy). 채널 훅이 location 브로드캐스트를 applyLocationFrame(순서역전 프레임 폐기)으로 병합 → 거리·방향 실시간. 60fps 실측은 §I-4 실기기에서.
+- **T3.4** 위치공유 토글 + 동의 문구 + 권한거부 UX(설정 안내 딥링크) — AC: 거부 후 재요청 루프 없음. ✅ 완료(465a1fe6) — LocationShareCard(기본 OFF=K-4, 5로케일 동의 문구, denied=스위치 비활성+설정 안내, 재요청 루프 없음 테스트).
+- **T3.5** `PresenceBar` (Realtime Presence: join/leave/last_seen) — AC: 탭 종료 30초 내 오프라인 표시. ✅ 완료(465a1fe6) — 채널 presence track/sync, 가이드 우선 정렬 칩, 오프라인 타임아웃은 Realtime presence 기본(~30s)에 위임.
+- **T3.6** Wake Lock API(지원 기기) + "화면 켜두세요" 배너 — AC: 미지원 브라우저 무해. ✅ 완료(465a1fe6) — acquireWakeLock(visible 복귀 재획득, 전 경로 no-throw), 공유 중에만 유지, 미지원 시 안내 문구.
+- **T3.7** 픽업 임박 보드 — 투어 아침(픽업 시작~버스 출발) 룸 상단에 "내 픽업: N번째 정차 · 약 X분" 표시. 가이드(버스) 위치 × 같은 tour_id+date 픽업포인트 `pickup_time` 순번으로 계산(v1은 직선거리 기반 추정 — Directions API 미사용, 비용 0) + 버스 실시간 지도 링크. 손님 버튼 "도착했어요 / 조금 늦어요" → `metadata.kind='pickup_status'` 메시지로 가이드 콘솔 집계 — AC: 가이드 위치공유 OFF 시 보드 자동 숨김 + 픽업 시간 정적 안내로 강등, 픽업 완료 순차 갱신. ✅ 완료(465a1fe6) — 스냅샷에 pickup_sequence(투어일 전체 정차 pickup_time 순) 추가, pickupBoardState 순수함수(오늘만·내 픽업+45분 후 자동 숨김·가이드 미공유=정적 강등), 도착/지각 버튼은 기존 퀵답장 프리셋 재사용(LLM 0회, preset_key로 집계 가능). '픽업 완료 순차 갱신'은 가이드 콘솔(T6)에서 이어감.
 
 ### Wave T4 — 지오펜스 자동 풀 설명 · 비전 Q&A 【7티켓】
-- **T4.1** `scripts/extract-tour-stop-content.ts` — 정적 스톱 배열 → `data/tour-stop-content/{slug}.json` — AC: 파일럿 투어 1개 무손실 추출.
-- **T4.2** 어드민 스팟 편집 확장(`/admin/products` 내 기존 tour-mode 편집 화면): content jsonb 에디터 + poi_key 셀렉터 + 추출 JSON 가져오기 — AC: 저장 후 스냅샷 API에 반영.
-- **T4.3** spot-events 확장: 도착 metadata에 로케일 해석 content 동봉 + Broadcast + **도착/공지 템플릿 문구의 런타임 LLM 번역 제거(§M-2 ① 사전번역 상수로 대체)** — AC: content 없으면 poi_key 폴백, 그것도 없으면 기존 단문(3층 폴백 테스트), 도착 이벤트 처리 중 LLM 호출 0회.
-- **T4.4** `useGeoWatcher` 지오펜스 — 진입 반경 trigger_radius_m / 이탈 exit_radius_m 히스테리시스 + 60초 dwell 최소 — AC: GPS 지터 시뮬레이션(모의 좌표 시퀀스)에서 이벤트 1회.
-- **T4.5** `SpotArrivalCard` — 풀 설명 카드(이미지·하이라이트·visitBasics·convenience·smartNotes) + TTS/사전 audio_url 재생 — AC: 드로어와 시각 일관.
-- **T4.6** 파일럿 투어 스팟 데이터 시딩(스팟 좌표+반경+content, 어드민 검수) — AC: 실좌표 검증 체크리스트.
-- **T4.7** "이게 뭐예요?" 사진 질문 — Composer 카메라/앨범 첨부 → Storage `tour-room-photos/` 업로드 → `POST /api/tour-rooms/[bookingId]/vision-ask` → §M-1 라우터 비전 1콜(Gemini Flash-Lite 이미지 입력)로 손님 로케일 답변 게시. 기본 "나만 보기"(룸 공유 토글), 레이트리밋 participant당 10회/일, 위치 컨텍스트(현재 스팟명) 프롬프트 주입 — AC: 음식·간판·문화재 3케이스 수동 검증, 예산 가드 연동. *메뉴판 번역(§H P2 #11)은 이 라우트에 프리셋 프롬프트만 추가.*
+- **T4.1** `scripts/extract-tour-stop-content.ts` — 정적 스톱 배열 → `data/tour-stop-content/{slug}.json` — AC: 파일럿 투어 1개 무손실 추출. ✅ 완료(fc80cbfa) — 파일럿=busan-top-attractions-day-tour(K-5의 부산 시그니처, POI KB 커버리지 최다), 7스톱×6로케일 무손실(`data/tour-stop-content/`).
+- **T4.2** 어드민 스팟 편집 확장(`/admin/products` 내 기존 tour-mode 편집 화면): content jsonb 에디터 + poi_key 셀렉터 + 추출 JSON 가져오기 — AC: 저장 후 스냅샷 API에 반영. ✅ 완료(fc80cbfa) — **설계 조정:** /admin/products 내부가 아닌 독립 페이지 `/admin/tour-mode-spots`(모놀리스 리스크 회피; 링크 연결은 후속). PUT /api/admin/tours/[id]/tour-mode(검증+교차투어 가드), poi_key 셀렉터(KB 83키), 로케일별 content JSON 에디터.
+- **T4.3** spot-events 확장: 도착 metadata에 로케일 해석 content 동봉 + Broadcast + **도착/공지 템플릿 문구의 런타임 LLM 번역 제거(§M-2 ① 사전번역 상수로 대체)** — AC: content 없으면 poi_key 폴백, 그것도 없으면 기존 단문(3층 폴백 테스트), 도착 이벤트 처리 중 LLM 호출 0회. ✅ 완료(fc80cbfa) — `lib/tour-room/spotContent.ts`(사전번역 5로케일 템플릿+3층 리졸버, 유닛 고정), spot-events가 Broadcast도 수행(기존엔 미방송).
+- **T4.4** `useGeoWatcher` 지오펜스 — 진입 반경 trigger_radius_m / 이탈 exit_radius_m 히스테리시스 + 60초 dwell 최소 — AC: GPS 지터 시뮬레이션(모의 좌표 시퀀스)에서 이벤트 1회. ✅ 완료(fc80cbfa) — `lib/tour-room/spotWatcher.ts`(§O-8 최근접 판정+120s 쿨다운은 지연-발화로 유실 방지)+`useSpotGeofence`, 지터 시퀀스 1회 발화 유닛.
+- **T4.5** `SpotArrivalCard` — 풀 설명 카드(이미지·하이라이트·visitBasics·convenience·smartNotes) + TTS/사전 audio_url 재생 — AC: 드로어와 시각 일관. ✅ 완료(fc80cbfa) — SpotArrivalCard(이미지·하이라이트·visitBasics·convenience·smartNotes·펼치기·사전 audio_url 재생), content 없으면 단문 버블 강등.
+- **T4.6** 파일럿 투어 스팟 데이터 시딩(스팟 좌표+반경+content, 어드민 검수) — AC: 실좌표 검증 체크리스트. ✅ 시딩 완료(fc80cbfa, 라이브) — 5스팟(match_pois 좌표+반경 150~200m+6로케일 content+poi_key). **사람 검수 대기:** `docs/tour-mode-pilot-spot-checklist-2026-07-14.md`.
+- **T4.7** "이게 뭐예요?" 사진 질문 — Composer 카메라/앨범 첨부 → Storage `tour-room-photos/` 업로드 → `POST /api/tour-rooms/[bookingId]/vision-ask` → §M-1 라우터 비전 1콜(Gemini Flash-Lite 이미지 입력)로 손님 로케일 답변 게시. 기본 "나만 보기"(룸 공유 토글), 레이트리밋 participant당 10회/일, 위치 컨텍스트(현재 스팟명) 프롬프트 주입 — AC: 음식·간판·문화재 3케이스 수동 검증, 예산 가드 연동. *메뉴판 번역(§H P2 #11)은 이 라우트에 프리셋 프롬프트만 추가.* ✅ 완료(fc80cbfa) — 나만보기 기본/방 공유 토글, 3/min·10/day 참가자 게이트(과금 전 검사), 최근 도착 스팟명 컨텍스트 주입, 메뉴 프리셋 포함. 음식·간판·문화재 3케이스 수동 검증은 §I-4 실기기에서.
 
 ### Wave T5 — 발송(디스패치) · 이메일 【4티켓】
-- **T5.1** `dispatch` API — 손님 토큰(booking별) + 가이드 토큰(tour-date별 1개, §O-3) 생성+invites 기록, 가이드 메일에 QR 동봉 — AC: 재발송 시 기존 토큰 revoke, 예약 취소 훅 연동(§O-1 ⑧).
-- **T5.2** 이메일 템플릿 2종(손님: 투어 전날 룸 링크+사용법 / 가이드: 콘솔 링크) `lib/email-templates/` — AC: 5로케일, 다크모드 클라이언트 렌더 확인.
-- **T5.3** 어드민 주문 상세에 "투어룸 발송" 액션(기존 `/admin/orders` 확장) — AC: 발송 이력 표시.
-- **T5.4** (자동화) 투어 D-1 18:00 KST 자동 발송 잡 — 기존 `sendBookingReminderEmail` 스케줄 경로에 편승 — AC: 중복 발송 방지(invites 존재 체크).
+- **T5.1** `dispatch` API — 손님 토큰(booking별) + 가이드 토큰(tour-date별 1개, §O-3) 생성+invites 기록, 가이드 메일에 QR 동봉 — AC: 재발송 시 기존 토큰 revoke, 예약 취소 훅 연동(§O-1 ⑧). ✅ 완료(44c3bc1c) — `lib/tour-room/dispatch.ts`(스코프별 revoke-선행 재발송, 해시만 기록, QR은 스토리지 호스팅 PNG — Gmail이 data URI 차단), 취소 훅은 어드민 주문·고객 취소 두 경로 모두. T1.11 ⑧도 이로써 완료. 가이드 링크는 T6 콘솔 전까지 해당 예약 룸 경유.
+- **T5.2** 이메일 템플릿 2종(손님: 투어 전날 룸 링크+사용법 / 가이드: 콘솔 링크) `lib/email-templates/` — AC: 5로케일, 다크모드 클라이언트 렌더 확인. ✅ 완료(44c3bc1c) — 손님 5로케일+가이드 ko/en 이중언어, color-scheme 메타+전체 인라인 스타일. 실클라이언트 다크모드 렌더 확인은 §I-4 실기기 체크에 편입.
+- **T5.3** 어드민 주문 상세에 "투어룸 발송" 액션(기존 `/admin/orders` 확장) — AC: 발송 이력 표시. ✅ 완료(44c3bc1c) — 주문 상세 카드+확인 시트, POST(플래그 OFF 시 force 필요·취소예약 거부)/GET(invites 이력) `/api/admin/orders/[id]/dispatch-room`.
+- **T5.4** (자동화) 투어 D-1 18:00 KST 자동 발송 잡 — 기존 `sendBookingReminderEmail` 스케줄 경로에 편승 — AC: 중복 발송 방지(invites 존재 체크). ✅ 완료(44c3bc1c) — 리마인더 크론 호출에 부가 실행(KST 내일 tour_date·confirmed·활성 invite 없는 예약만), 플래그 OFF면 전체 no-op. ⚠발견: 기존 리마인더 루프는 booking_date(생성일) 필터라 영구 no-op인 죽은 크론 — 아웃바운드 메일 재활성화라 사용자 승인 후 별도 수정(태스크 칩 발행).
 
 ### Wave T6 — 가이드 콘솔 · 팬아웃 【5티켓】
 - **T6.1** `broadcast` API (tour_id+date 전 룸 팬아웃, 트랜잭션 실패 시 부분성공 보고) — AC: 룸 10개 팬아웃 통합테스트.

@@ -54,6 +54,46 @@ export interface RoomCaption {
   created_at: string;
 }
 
+/** T3.1 — a participant's live position (server-relayed broadcast). */
+export interface RoomLocation {
+  participant_id: string;
+  role?: string;
+  display_name?: string;
+  latitude: number;
+  longitude: number;
+  accuracy_m?: number | null;
+  heading?: number | null;
+  speed_mps?: number | null;
+  recorded_at: string;
+  removed?: boolean;
+}
+
+/** Pure: apply one location frame to the by-participant map (T3.1/T3.3). */
+export function applyLocationFrame(
+  existing: Record<string, RoomLocation>,
+  frame: Partial<RoomLocation> & { participant_id: string },
+): Record<string, RoomLocation> {
+  if (frame.removed) {
+    if (!(frame.participant_id in existing)) return existing;
+    const next = { ...existing };
+    delete next[frame.participant_id];
+    return next;
+  }
+  if (typeof frame.latitude !== 'number' || typeof frame.longitude !== 'number') return existing;
+  const current = existing[frame.participant_id];
+  // Out-of-order frames: keep the newer recorded_at.
+  if (current && frame.recorded_at && current.recorded_at > frame.recorded_at) return existing;
+  return { ...existing, [frame.participant_id]: frame as RoomLocation };
+}
+
+/** T3.5 — one presence entry per online device. */
+export interface RoomPresence {
+  participantId: string;
+  role: string;
+  displayName: string;
+  onlineAt: string;
+}
+
 /** Pure merge: dedupe by id (server wins over optimistic), sort by created_at. */
 export function mergeRoomMessages(existing: RoomMessage[], incoming: RoomMessage[]): RoomMessage[] {
   if (incoming.length === 0) return existing;
@@ -109,6 +149,10 @@ export interface UseTourRoomChannelOptions {
   /** Signed room session from /join — REST resync header + SSE `rs` query. */
   roomSession: string | null;
   initialMessages?: RoomMessage[];
+  /** T3.3 — last-known positions from the join snapshot (rows keyed below). */
+  initialLocations?: RoomLocation[];
+  /** T3.5 — when set, this device is tracked on the channel's presence. */
+  presence?: { participantId: string; role: string; displayName: string } | null;
 }
 
 export interface UseTourRoomChannel {
@@ -127,6 +171,10 @@ export interface UseTourRoomChannel {
    * late-delivered older frame never overwrites the current sentence.
    */
   latestCaption: RoomCaption | null;
+  /** T3.3 — live positions by participant id (snapshot-seeded). */
+  locations: Record<string, RoomLocation>;
+  /** T3.5 — devices currently on the channel (empty until presence syncs). */
+  presence: RoomPresence[];
 }
 
 export function useTourRoomChannel(options: UseTourRoomChannelOptions): UseTourRoomChannel {
@@ -135,6 +183,18 @@ export function useTourRoomChannel(options: UseTourRoomChannelOptions): UseTourR
   const [connection, setConnection] = useState<RoomConnection>('connecting');
   const [failedCount, setFailedCount] = useState(0);
   const [latestCaption, setLatestCaption] = useState<RoomCaption | null>(null);
+  const [locations, setLocations] = useState<Record<string, RoomLocation>>(() => {
+    const seeded: Record<string, RoomLocation> = {};
+    for (const row of options.initialLocations ?? []) {
+      if (row?.participant_id) seeded[row.participant_id] = row;
+    }
+    return seeded;
+  });
+  const [presence, setPresence] = useState<RoomPresence[]>([]);
+  // Presence identity is fixed for the life of a join — a ref keeps callers
+  // free to pass an inline object without re-subscribing the channel.
+  const presenceIdentityRef = useRef(options.presence ?? null);
+  presenceIdentityRef.current = options.presence ?? null;
 
   const cursorRef = useRef<string | null>(latestCursor(options.initialMessages ?? []));
   const sseRef = useRef<EventSource | null>(null);
@@ -178,7 +238,14 @@ export function useTourRoomChannel(options: UseTourRoomChannelOptions): UseTourR
       return;
     }
     const client = supabase;
-    const channel = client.channel(channelTopic, { config: { broadcast: { self: true } } });
+    const channel = client.channel(channelTopic, {
+      config: {
+        broadcast: { self: true },
+        ...(presenceIdentityRef.current
+          ? { presence: { key: presenceIdentityRef.current.participantId } }
+          : {}),
+      },
+    });
     channel.on('broadcast', { event: 'message' }, (frame) => {
       const message = (frame.payload as { message?: RoomMessage })?.message;
       if (message) addMessages([message]);
@@ -189,9 +256,35 @@ export function useTourRoomChannel(options: UseTourRoomChannelOptions): UseTourR
         setLatestCaption((prev) => (prev && prev.seq > caption.seq ? prev : caption));
       }
     });
+    channel.on('broadcast', { event: 'location' }, (frame) => {
+      const location = (frame.payload as { location?: RoomLocation })?.location;
+      if (location?.participant_id) {
+        setLocations((prev) => applyLocationFrame(prev, location));
+      }
+    });
+    const presenceIdentity = presenceIdentityRef.current;
+    if (presenceIdentity) {
+      channel.on('presence', { event: 'sync' }, () => {
+        const state = channel.presenceState<{ role?: string; display_name?: string; online_at?: string }>();
+        const entries: RoomPresence[] = Object.entries(state).map(([key, metas]) => ({
+          participantId: key,
+          role: metas[0]?.role ?? 'customer',
+          displayName: metas[0]?.display_name ?? '',
+          onlineAt: metas[0]?.online_at ?? '',
+        }));
+        setPresence(entries);
+      });
+    }
     channel.subscribe((status) => {
       if (status === 'SUBSCRIBED') {
         setConnection('realtime');
+        if (presenceIdentity) {
+          void channel.track({
+            role: presenceIdentity.role,
+            display_name: presenceIdentity.displayName,
+            online_at: new Date().toISOString(),
+          });
+        }
         if (sseRef.current) {
           sseRef.current.close(); // realtime recovered — drop the fallback
           sseRef.current = null;
@@ -323,7 +416,7 @@ export function useTourRoomChannel(options: UseTourRoomChannelOptions): UseTourR
   }, [addMessages, bookingId, postSend]);
 
   return useMemo(
-    () => ({ messages, connection, sendText, sendPreset, retryFailed, failedCount, latestCaption }),
-    [messages, connection, sendText, sendPreset, retryFailed, failedCount, latestCaption],
+    () => ({ messages, connection, sendText, sendPreset, retryFailed, failedCount, latestCaption, locations, presence }),
+    [messages, connection, sendText, sendPreset, retryFailed, failedCount, latestCaption, locations, presence],
   );
 }

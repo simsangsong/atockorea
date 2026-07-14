@@ -13,9 +13,11 @@
 import { kstDaysUntil } from '@/lib/tour-room/time';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
-interface PickupPoint {
+export interface PickupPoint {
   name?: string | null;
   address?: string | null;
+  lat?: number | null;
+  lng?: number | null;
   pickup_time?: string | null;
 }
 
@@ -66,7 +68,8 @@ const COPY: Record<
   },
 };
 
-function firstPickup(pickupPoints: unknown): PickupPoint | null {
+/** Booking→pickup joins come back as an object or a 1-element array. */
+export function firstPickup(pickupPoints: unknown): PickupPoint | null {
   if (!pickupPoints) return null;
   const point = Array.isArray(pickupPoints) ? pickupPoints[0] : pickupPoints;
   if (!point || typeof point !== 'object') return null;

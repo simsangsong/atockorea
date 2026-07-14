@@ -15,7 +15,9 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 import AudioButton from '@/components/tour-mode/AudioButton';
+import SpotArrivalCard from '@/components/tour-mode/SpotArrivalCard';
 import type { RoomMessage } from '@/hooks/useTourRoomChannel';
+import type { SpotArrivalContent } from '@/lib/tour-room/spotContent';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
 const WINDOW = 60;
@@ -118,6 +120,22 @@ export default function ChatFeed({
       {messages.length === 0 && <p className="pt-10 text-center text-[13px] text-gray-400">—</p>}
 
       {visible.map((message) => {
+        // T4.5 — geofence arrivals with resolved content render as the rich
+        // briefing card; content-less arrivals fall through to the plain
+        // system bubble (3-tier degradation, T4.3).
+        const arrivalContent =
+          message.metadata?.kind === 'spot_arrival' ? (message.metadata.content as SpotArrivalContent | undefined) : undefined;
+        if (arrivalContent && Object.keys(arrivalContent).length > 0) {
+          return (
+            <SpotArrivalCard
+              key={message.id}
+              content={arrivalContent}
+              messageText={displayText(message, viewerLocale, originals.has(message.id))}
+              audioUrl={(message.metadata?.audio_url as string | null | undefined) ?? null}
+              locale={viewerLocale}
+            />
+          );
+        }
         if (isSystemKind(message)) {
           return (
             <div

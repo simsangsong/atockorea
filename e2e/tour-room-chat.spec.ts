@@ -24,7 +24,7 @@ async function openRoom(page: Page, bookingId: string, token: string): Promise<v
 }
 
 async function sendText(page: Page, text: string): Promise<void> {
-  await page.locator('form input').fill(text);
+  await page.getByRole('textbox').fill(text);
   await page.getByRole('button', { name: 'send' }).click();
 }
 

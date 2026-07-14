@@ -68,6 +68,8 @@ export interface RoomSnapshot {
   tour_guide_spots: Array<Record<string, unknown>>;
   tour_facilities: Array<Record<string, unknown>>;
   bus_detail: Record<string, unknown> | null;
+  /** T3.7 — pickup_time-ordered stops for the whole tour day. */
+  pickup_sequence: PickupSequenceStop[];
   schedule: unknown;
 }
 
@@ -82,7 +84,7 @@ export async function buildRoomSnapshot(
 ): Promise<RoomSnapshot> {
   const tourId = booking.tour_id;
 
-  const [bookingRes, messagesRes, participantsRes, locationsRes, spotsRes, facilitiesRes, busRes] =
+  const [bookingRes, messagesRes, participantsRes, locationsRes, spotsRes, facilitiesRes, busRes, pickupSeqRes] =
     await Promise.all([
       supabase
         .from('bookings')
@@ -115,6 +117,15 @@ export async function buildRoomSnapshot(
             .eq('tour_date', booking.tour_date)
             .maybeSingle()
         : Promise.resolve({ data: null, error: null }),
+      // T3.7 — every pickup stop for this tour day (all bookings), so the
+      // board can place "my pickup" in the bus's stop order.
+      tourId && booking.tour_date
+        ? supabase
+            .from('bookings')
+            .select('id, pickup_points ( id, name, lat, lng, pickup_time )')
+            .eq('tour_id', tourId)
+            .eq('tour_date', booking.tour_date)
+        : Promise.resolve({ data: [], error: null }),
     ]);
 
   // The snapshot is a read bundle: any individual failure degrades to an
@@ -145,6 +156,47 @@ export async function buildRoomSnapshot(
     tour_guide_spots: (spotsRes?.data ?? []) as Array<Record<string, unknown>>,
     tour_facilities: (facilitiesRes?.data ?? []) as Array<Record<string, unknown>>,
     bus_detail: (busRes?.data ?? null) as Record<string, unknown> | null,
+    pickup_sequence: buildPickupSequence(
+      (pickupSeqRes?.data ?? []) as Array<{ id: string; pickup_points: unknown }>,
+    ),
     schedule: (tour as { schedule?: unknown } | null)?.schedule ?? [],
   };
+}
+
+export interface PickupSequenceStop {
+  booking_id: string;
+  pickup_point_id: string | null;
+  name: string | null;
+  lat: number | null;
+  lng: number | null;
+  pickup_time: string | null;
+}
+
+/**
+ * T3.7 — flatten the tour-day bookings' pickup joins into one pickup_time-
+ * ordered stop list (nulls last). Pure; exported for tests.
+ */
+export function buildPickupSequence(
+  rows: Array<{ id: string; pickup_points: unknown }> | unknown,
+): PickupSequenceStop[] {
+  const stops: PickupSequenceStop[] = [];
+  if (!Array.isArray(rows)) return stops; // degraded snapshot section (read bundle contract)
+  for (const row of rows as Array<{ id: string; pickup_points: unknown }>) {
+    const point = Array.isArray(row.pickup_points) ? row.pickup_points[0] : row.pickup_points;
+    if (!point || typeof point !== 'object') continue;
+    const p = point as { id?: string; name?: string; lat?: number; lng?: number; pickup_time?: string };
+    stops.push({
+      booking_id: row.id,
+      pickup_point_id: p.id ?? null,
+      name: p.name ?? null,
+      lat: typeof p.lat === 'number' ? p.lat : null,
+      lng: typeof p.lng === 'number' ? p.lng : null,
+      pickup_time: p.pickup_time ?? null,
+    });
+  }
+  return stops.sort((a, b) => {
+    if (!a.pickup_time) return 1;
+    if (!b.pickup_time) return -1;
+    return a.pickup_time < b.pickup_time ? -1 : a.pickup_time > b.pickup_time ? 1 : 0;
+  });
 }
