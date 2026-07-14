@@ -13,7 +13,7 @@
 DB 테이블 9개, API 라우트 6개, STT(폴백 체인)·다국어 번역(TTT)·TTS 서버 함수가 모두 동작 상태다.
 **없는 것**은 (1) 손님/가이드가 실제로 보는 투어룸 화면, (2) 실시간 위치공유, (3) 토큰 기반 룸 초대 링크,
 (4) 지오펜스 → 관광지 풀 설명 자동 게시, (5) 관제센터(admin) 콘솔, (6) 확장 가능한 실시간 전송 계층이다.
-즉 **"밑바닥부터"가 아니라 "골격 위에 살 붙이기"** 프로젝트이며, 아래 9개 웨이브(T0~T8) / 57개 나노 티켓으로 오류 없이 완성한다.
+즉 **"밑바닥부터"가 아니라 "골격 위에 살 붙이기"** 프로젝트이며, 아래 9개 웨이브(T0~T8) / 58개 나노 티켓으로 오류 없이 완성한다.
 최종 리뷰(§O)에서 확정: 투어룸 링크는 **로그인·사이트 경유 없이 1클릭 다이렉트 입장**(§O-1), 기기 TTS 미지원 시 **3단 폴백 래더**(§O-2).
 AI 비용은 §M 저비용 모델 전략(Gemini Flash-Lite/DeepSeek 중심 + 기기 내장 TTS + 템플릿 사전번역)으로 **투어 1건당 $0.1 미만**을 목표로 한다. 실시간 통역 방식은 §N.
 
@@ -227,7 +227,7 @@ app/tour-mode/room/[bookingId]/page.tsx    ← 룸 (?rt= 토큰 소비)
 app/tour-mode/guide/page.tsx               ← 가이드 콘솔 (투어일 통합 피드, 가이드 토큰 필수)
 app/admin/tour-ops/page.tsx                ← 관제센터
 components/tour-mode/
-  RoomShell.tsx            ← 탭: [채팅] [지도] [오늘 일정] / 헤더: 투어명·D-day·집합 카운트다운
+  RoomShell.tsx            ← 탭: [채팅] [지도] [오늘 일정] [설정] / 헤더: 투어명·D-day·집합 카운트다운
   ChatFeed.tsx             ← 메시지 목록, 뷰어 로케일 번역 우선 표시(원문 토글), 시스템/도착/공지 카드 분기
   SpotArrivalCard.tsx      ← 지오펜스 풀 설명 카드 (TourStopDetailDrawer 콘텐츠 축약 재사용) + 오디오 버튼
   Composer.tsx             ← 텍스트 입력 + 푸시투토크 녹음(MediaRecorder) + 퀵답장 프리셋
@@ -245,7 +245,7 @@ hooks/
 
 ---
 
-## §F. 실행 WBS — 웨이브 · 나노 티켓 (총 57)
+## §F. 실행 WBS — 웨이브 · 나노 티켓 (총 58)
 
 > 표기: `[티켓] 작업 — 산출물 — 완료 기준(AC)`. 웨이브 내 티켓은 위→아래 순서 의존. 각 웨이브 종료 시 커밋+푸시.
 
@@ -260,7 +260,7 @@ hooks/
 - **T0.8** 기존 3개 라우트(messages/events/spot-events)를 access.ts로 리팩터(동작 불변) + `tour-mode/bookings`의 UTC→KST 수정 — AC: 기존 요청 계약 무변경(회귀 테스트). ✅ 완료(7016f4a) — 회귀 19케이스. 부수 개선: messages POST가 STT 호출 전에 인가(비인가자 STT 비용 소진 차단, 응답 계약 동일).
 - **T0.9** `lib/ai/router.ts` 프로바이더 라우터(§M-1) — OpenAI 호환 chat-completions 클라이언트에 base_url/model/key를 env로 주입(Gemini/DeepSeek/OpenAI 3사 스위칭), `translateTextForLocales`를 라우터 경유로 교체 + 번역 메모리 캐시(§M-2 ④) — AC: env만 바꿔 3사 전환 유닛테스트, 캐시 히트 시 LLM 호출 0. ✅ 완료(ab7fd8b) — 타임아웃은 caption 3s/기타 8s 기본(TOUR_AI_*_TIMEOUT_MS로 조정). 스킵 휴리스틱(§M-2 ⑤)도 함께 구현.
 
-### Wave T1 — 입장·룸 셸·텍스트 채팅 【11티켓】
+### Wave T1 — 입장·룸 셸·텍스트 채팅 【12티켓】
 - **T1.1** `POST join` API — 참가자 upsert + 스냅샷 — AC: 5개 인가 경로 통합테스트. ✅ 완료(7d0cf0a)
 - **T1.2** `GET snapshot` API — AC: 1왕복으로 룸 초기화 데이터 완결. ✅ 완료(7d0cf0a)
 - **T1.3** messages POST 확장: 룸세션 인가 + D-8 로케일 타게팅 + insert 후 Broadcast + 번역실패 시 원문 선게시(`translations={}` + `metadata.translation_status='pending'`) — AC: 번역 API 강제 실패 시에도 201. ✅ 완료(7d0cf0a)
@@ -272,13 +272,14 @@ hooks/
 - **T1.9** E2E: 브라우저 컨텍스트 2개(가이드 토큰/손님)로 왕복 채팅 — AC: playwright 통과.
 - **T1.10** 긴급 정보 카드 — 119·1330(관광공사 24h 통역 핫라인)·주요 대사관·관제센터 연락처를 룸 헤더 접이식 카드로 고정, `tel:` 딥링크, 5로케일 문구(정적 상수 — LLM 0회) — AC: 오프라인에서도 표시(스냅샷에 포함), 원탭 발신. ✅ 완료(4a7e3af) — 상수를 클라 번들에 포함해 오프라인 표시, 운영센터 번호는 NEXT_PUBLIC_TOUR_OPS_PHONE env. 대사관 목록은 T8.1에서 확정.
 - **T1.11** 다이렉트 진입 하드닝(§O-1 전 항목) — middleware 화이트리스트, standalone 경량 레이아웃, `replaceState` 토큰 위생, localStorage 재입장, 인앱 웹뷰 탈출 배너, 로비/진행/종료 3상태, dispatch QR, 취소 revoke 훅 — AC: §O-1 ①~⑧ 각각 시나리오 테스트, 비로그인 시크릿 창에서 링크 1클릭 입장. 🟡 부분 완료(53a98d7) — ①②③④⑤⑦ 구현·테스트 완료, ⑥은 라이프사이클 배지+ended 읽기전용까지(로비 전용 뷰 잔여), ⑧ QR·취소 revoke는 T5.1과 함께.
+- **T1.12** [사용자 결정 2026-07-14 추가] 룸 설정 탭 — RoomShell 4번째 탭. 기기 단위 설정(localStorage + useSyncExternalStore 공유): ① 내 언어(5로케일 — 변경 시 재join으로 participant.locale 서버 동기화 → D-8 번역 타깃 반영) ② 화면 모드 라이트/다크/자동(prefers-color-scheme, 룸 스코프 .dark 클래스) ③ "보내기 전 음성 텍스트 확인" 토글(기본 ON — T2.2가 소비) ④ "가이드 공지 소리로 읽기" 토글(기본 OFF — T2.5가 소비) ⑤ 글자 크기 보통/크게(§E 시니어 배려) — AC: 설정 영속(재방문 유지), 다크모드 즉시 전환, 언어 변경 시 이후 메시지 번역 타깃 변경. ✅ 완료(7daefb6)
 
 ### Wave T2 — 음성 (STT 발신 · TTS 수신 · 실시간 통역) 【9티켓】
 - **T2.1** `Composer` 푸시투토크 — MediaRecorder(webm/opus, iOS는 mp4/aac 분기), 최대 60초, 파형 표시 — AC: iOS Safari·Android Chrome 실기 확인 항목 문서화.
-- **T2.2** 음성 발신 플로우 — 기존 multipart POST 그대로, 업로드 중 진행 표시, STT 품질 낮음(`metadata.stt.quality`) 시 "인식 결과 확인" 인라인 편집 — AC: 오탐 시 사용자가 수정 후 발신 가능.
+- **T2.2** 음성 발신 플로우 — **[사용자 결정 2026-07-14] 발송 전 STT 텍스트 확인이 기본**: 녹음 종료 → 신규 `POST /api/tour-rooms/[bookingId]/stt`(음성→텍스트만, 메시지 미생성) → 인식 텍스트를 Composer에 채워 사용자가 확인·수정 후 일반 텍스트 경로로 발송. 설정 탭 "보내기 전 음성 텍스트 확인"(기본 ON, T1.12)을 끄면 기존 multipart 즉시발송 경로 사용 — 단 저품질(`metadata.stt.quality`)이면 설정과 무관하게 항상 확인 단계 강제. 업로드 중 진행 표시 — AC: 확인 단계에서 수정 후 발송, 설정 토글 반영, 저품질 강제 확인.
 - **T2.3** M-5 캐시 + `GET tts` API — AC: 동일 메시지·로케일 2회 요청 시 생성 1회(로그 검증).
 - **T2.4** `AudioButton` + 오디오 프라이밍(첫 사용자 제스처에서 무음 재생으로 unlock) — AC: iOS 자동재생 차단 상황에서 안내 토스트.
-- **T2.5** 수신 자동 낭독 모드(옵션, 가이드 공지만) — 기기 내장 `speechSynthesis` 사용(서버 TTS 0회) — AC: 기본 OFF, 화면 꺼짐 시 미동작 명시.
+- **T2.5** 수신 자동 낭독 모드(옵션, 가이드 공지만) — 기기 내장 `speechSynthesis` 사용(서버 TTS 0회), **on/off는 T1.12 설정 탭의 "가이드 공지 소리로 읽기" 토글**(스위치 UI는 T1.12에서 선구현됨) — AC: 기본 OFF, 화면 꺼짐 시 미동작 명시.
 - **T2.6** 가이드 자막 방송 — 클라이언트 발화 청크화: WebAudio 에너지 기반 VAD(라이브러리 무추가)로 3~8초 발화 단위 분할 → webm/opus 업로드, Tier A(Web Speech API 지원 기기)는 온디바이스 STT 텍스트만 전송 — AC: 무음 구간 업로드 0, iOS(오디오 청크)/Android(Web Speech) 분기 동작.
 - **T2.7** `POST /api/tour-rooms/[bookingId]/captions` — Tier A: 텍스트 → 번역 1콜 / Tier B: 오디오 청크 → Gemini Flash-Lite 멀티모달 1콜(전사+번역 동시, §N) → Broadcast로 자막 push(기본 DB 미저장, "기록 남기기" 토글 시만 메시지로 저장) — AC: 청크 종료→자막 표시 p95 ≤ 2.5s, 프로바이더 장애 시 기존 stt-router+번역 폴백.
 - **T2.8** 손님측 자막 UI — 룸 상단 라이브 자막 배너(뷰어 로케일) + 원문 토글 + 자동 낭독 옵션 — AC: 자막 유실 시(재연결) 마지막 문장부터 재개, 5로케일 렌더.
