@@ -140,6 +140,8 @@ export type TourProductSectionUiV1 = {
   /** W2.4 — itinerary Standard|Sample segmented toggle (charter products). */
   itineraryStandardLabel?: string;
   itinerarySampleLabel?: string;
+  /** W4.4 — direct-operation trust card title. */
+  operatedByTitle?: string;
 };
 
 export const DEFAULT_TOUR_PRODUCT_SECTION_UI_EN: TourProductSectionUiV1 = {
@@ -235,6 +237,7 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_EN: TourProductSectionUiV1 = {
   pickupViewMapLabel: "Details & map",
   pickupBackToItineraryLabel: "Back to itinerary",
   itineraryStandardLabel: "Standard route",
+  operatedByTitle: "Operated by AtoC Korea",
   itinerarySampleLabel: "Sample itineraries",
 };
 
@@ -339,6 +342,7 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_KO: TourProductSectionUiV1 = {
   pickupViewMapLabel: "상세·지도 보기",
   pickupBackToItineraryLabel: "일정으로 돌아가기",
   itineraryStandardLabel: "기본 일정",
+  operatedByTitle: "AtoC Korea 직영 운영",
   itinerarySampleLabel: "샘플 일정",
 };
 
@@ -443,6 +447,7 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_JA: TourProductSectionUiV1 = {
   pickupViewMapLabel: "詳細・地図を見る",
   pickupBackToItineraryLabel: "行程に戻る",
   itineraryStandardLabel: "基本ルート",
+  operatedByTitle: "AtoC Korea直営運営",
   itinerarySampleLabel: "サンプル行程",
 };
 
@@ -545,6 +550,7 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_ZH: TourProductSectionUiV1 = {
   pickupViewMapLabel: "查看详情和地图",
   pickupBackToItineraryLabel: "返回行程",
   itineraryStandardLabel: "标准路线",
+  operatedByTitle: "AtoC Korea直营运营",
   itinerarySampleLabel: "示例行程",
 };
 
@@ -647,6 +653,7 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_ZH_TW: TourProductSectionUiV1 = {
   pickupViewMapLabel: "查看詳情和地圖",
   pickupBackToItineraryLabel: "返回行程",
   itineraryStandardLabel: "標準路線",
+  operatedByTitle: "AtoC Korea直營運營",
   itinerarySampleLabel: "示例行程",
 };
 
@@ -751,6 +758,7 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_ES: TourProductSectionUiV1 = {
   pickupViewMapLabel: "Detalles y mapa",
   pickupBackToItineraryLabel: "Volver al itinerario",
   itineraryStandardLabel: "Ruta estándar",
+  operatedByTitle: "Operado por AtoC Korea",
   itinerarySampleLabel: "Itinerarios de ejemplo",
 };
 
