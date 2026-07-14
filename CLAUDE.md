@@ -5,7 +5,7 @@
 **마스터 플랜(단일 기준):** `docs/tour-mode-master-plan-2026-07-14.md` (§A~§O, 9웨이브/57티켓)
 **부트스트랩:** `docs/NEXT-SESSION-EXECUTION-PROMPT-2026-07-14-tour-mode.md` ← **투어모드 이어받으면 이걸 먼저**
 **개발 브랜치:** `claude/tour-mode-iql6ho` (플랜 문서 브랜치 `claude/tour-mode-dev-iaa0b8`를 머지해 구현 진행)
-**상태:** Wave T0 완료 + Wave T1 진행 중(T1.1~T1.8·T1.10·T1.12 완료 — join/snapshot API, 로케일 타게팅, 진입/룸 페이지, Realtime 채널 훅, RoomShell 4탭(채팅·지도·일정·설정), 퀵답장, 긴급카드, 웹뷰배너, 다크모드+설정탭. 테스트 165개. 플랜 58티켓으로 개정(음성 발송 전 확인 기본 ON=T2.2, 설정탭=T1.12)). **T0.3은 승인됐으나 이 원격 세션 Supabase MCP가 타 프로젝트(Kursoflow)라 적용 불가 — atockorea DB 연결된 세션에서 20260714090000·20260714091000 적용+get_advisors 필요.** 다음 = T1.9(E2E) → T1.11 잔여 → Wave T2.
+**상태:** Wave T0 완료 + Wave T1 진행 중(T1.1~T1.8·T1.10·T1.12 완료 — join/snapshot API, 로케일 타게팅, 진입/룸 페이지, Realtime 채널 훅, RoomShell 4탭(채팅·지도·일정·설정), 퀵답장, 긴급카드, 웹뷰배너, 다크모드+설정탭. 테스트 164개. 플랜 58티켓으로 개정(음성 발송 전 확인 기본 ON=T2.2, 설정탭=T1.12)). **T0.3은 승인됐으나 이 원격 세션 Supabase MCP가 타 프로젝트(Kursoflow)라 적용 불가 — atockorea DB 연결된 세션에서 20260714090000·20260714091000 적용+get_advisors 필요.** 다음 = T1.9(E2E) → T1.11 잔여 → Wave T2.
 
 ## 진행 중인 대규모 작업: 어드민 대시보드 전면 개편
 
