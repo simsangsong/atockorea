@@ -58,12 +58,17 @@ export default function ChatFeed({
   messages,
   viewerLocale,
   viewerRole = 'customer',
+  textScale = 'normal',
 }: {
   messages: RoomMessage[];
   viewerLocale: RoomLocale;
   /** Bubbles from this role right-align as "mine". */
   viewerRole?: string;
+  /** T1.12 settings: 'large' bumps bubble text for senior travellers. */
+  textScale?: 'normal' | 'large';
 }) {
+  const bubbleText = textScale === 'large' ? 'text-[17px]' : 'text-[14px]';
+  const systemText = textScale === 'large' ? 'text-[14px]' : 'text-[12px]';
   const [windowSize, setWindowSize] = useState(WINDOW);
   const [originals, setOriginals] = useState<Set<string>>(new Set());
   const feedRef = useRef<HTMLDivElement | null>(null);
@@ -100,7 +105,7 @@ export default function ChatFeed({
         <button
           type="button"
           onClick={() => setWindowSize((s) => s + WINDOW)}
-          className="mx-auto block rounded-full bg-gray-100 px-4 py-1.5 text-[12px] text-gray-600"
+          className="mx-auto block rounded-full bg-gray-100 px-4 py-1.5 text-[12px] text-gray-600 dark:bg-gray-800 dark:text-gray-300"
         >
           {EARLIER_LABEL[viewerLocale]} (+{hiddenCount})
         </button>
@@ -113,7 +118,7 @@ export default function ChatFeed({
           return (
             <div
               key={message.id}
-              className="mx-auto max-w-[90%] rounded-xl bg-gray-100 px-3.5 py-2 text-center text-[12px] leading-relaxed text-gray-600"
+              className={`mx-auto max-w-[90%] rounded-xl bg-gray-100 px-3.5 py-2 text-center leading-relaxed text-gray-600 dark:bg-gray-800 dark:text-gray-300 ${systemText}`}
             >
               {displayText(message, viewerLocale, originals.has(message.id))}
             </div>
@@ -129,12 +134,14 @@ export default function ChatFeed({
         return (
           <div key={message.id} className={mine ? 'flex justify-end' : 'flex justify-start'}>
             <div className="max-w-[85%]">
-              {roleLabel && <div className="mb-0.5 px-1 text-[11px] font-medium text-gray-500">{roleLabel}</div>}
+              {roleLabel && <div className="mb-0.5 px-1 text-[11px] font-medium text-gray-500 dark:text-gray-400">{roleLabel}</div>}
               <button
                 type="button"
                 onClick={translatable ? () => toggleOriginal(message.id) : undefined}
-                className={`w-full rounded-2xl px-3.5 py-2.5 text-left text-[14px] leading-relaxed shadow-sm ${
-                  mine ? 'bg-amber-500 text-white' : 'bg-white text-gray-900 ring-1 ring-gray-100'
+                className={`w-full rounded-2xl px-3.5 py-2.5 text-left leading-relaxed shadow-sm ${bubbleText} ${
+                  mine
+                    ? 'bg-amber-500 text-white'
+                    : 'bg-white text-gray-900 ring-1 ring-gray-100 dark:bg-gray-900 dark:text-gray-100 dark:ring-gray-800'
                 } ${message._local === 'sending' ? 'opacity-60' : ''} ${
                   message._local === 'failed' ? 'ring-2 ring-red-300' : ''
                 }`}

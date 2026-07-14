@@ -61,7 +61,7 @@ export default function Composer({
             key={preset.key}
             type="button"
             onClick={() => tapPreset(preset)}
-            className="shrink-0 rounded-full bg-white px-3 py-1.5 text-[12px] text-gray-700 shadow-sm ring-1 ring-gray-100 active:bg-amber-50"
+            className="shrink-0 rounded-full bg-white px-3 py-1.5 text-[12px] text-gray-700 shadow-sm ring-1 ring-gray-100 active:bg-amber-50 dark:bg-gray-900 dark:text-gray-300 dark:ring-gray-800"
           >
             {preset.emoji} {preset.text[locale]}
           </button>
@@ -72,7 +72,7 @@ export default function Composer({
           value={draft}
           onChange={(e) => setDraft(e.target.value)}
           maxLength={2000}
-          className="min-w-0 flex-1 rounded-2xl border border-gray-200 bg-white px-4 py-3 text-[14px] focus:border-amber-400 focus:outline-none"
+          className="min-w-0 flex-1 rounded-2xl border border-gray-200 bg-white px-4 py-3 text-[14px] focus:border-amber-400 focus:outline-none dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100"
         />
         <button
           type="submit"

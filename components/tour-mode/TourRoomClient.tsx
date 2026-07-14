@@ -22,8 +22,11 @@ import Composer from '@/components/tour-mode/Composer';
 import RoomShell from '@/components/tour-mode/RoomShell';
 import { detectEntryLocale, ENTRY_COPY } from '@/components/tour-mode/entryCopy';
 import { GUEST_CREDS_STORAGE_PREFIX } from '@/components/tour-mode/TourModeEntry';
+import SettingsTab from '@/components/tour-mode/SettingsTab';
 import { useTourRoomSession, type TourRoomJoinResult } from '@/hooks/useTourRoomSession';
 import { useTourRoomChannel, type RoomMessage } from '@/hooks/useTourRoomChannel';
+import { useTourRoomSettings } from '@/hooks/useTourRoomSettings';
+import { useMediaQuery } from '@/hooks/useMediaQuery';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
 function consumeGuestCreds(bookingId: string): { contactEmail?: string; contactName?: string } | null {
@@ -53,7 +56,15 @@ export default function TourRoomClient({ bookingId }: { bookingId: string }) {
   const copy = useMemo(() => ENTRY_COPY[detectEntryLocale()], []);
   const { state, join } = useTourRoomSession(bookingId);
   const attempted = useRef(false);
-  const [locale] = useState<RoomLocale>(() => detectEntryLocale());
+  const [locale, setLocale] = useState<RoomLocale>(() => detectEntryLocale());
+
+  // T1.12: language switch re-joins so the participant row (and with it the
+  // room's translation targeting, D-8) follows the new locale.
+  const changeLocale = (next: RoomLocale) => {
+    if (next === locale) return;
+    setLocale(next);
+    void join({ locale: next });
+  };
 
   useEffect(() => {
     if (attempted.current) return;
@@ -98,18 +109,23 @@ export default function TourRoomClient({ bookingId }: { bookingId: string }) {
     );
   }
 
-  return <TourRoomLive bookingId={bookingId} data={state.data} locale={locale} />;
+  return <TourRoomLive bookingId={bookingId} data={state.data} locale={locale} onLocaleChange={changeLocale} />;
 }
 
 function TourRoomLive({
   bookingId,
   data,
   locale,
+  onLocaleChange,
 }: {
   bookingId: string;
   data: TourRoomJoinResult;
   locale: RoomLocale;
+  onLocaleChange: (locale: RoomLocale) => void;
 }) {
+  const { settings } = useTourRoomSettings();
+  const systemDark = useMediaQuery('(prefers-color-scheme: dark)');
+  const theme = settings.theme === 'system' ? (systemDark ? 'dark' : 'light') : settings.theme;
   const snapshot = data.snapshot as {
     booking?: { tours?: { title?: string; city?: string } | null; tour_date?: string | null } | null;
     messages?: RoomMessage[];
@@ -134,9 +150,11 @@ function TourRoomLive({
       connection={connection}
       locale={locale}
       schedule={schedule}
+      theme={theme}
+      settings={<SettingsTab locale={locale} onLocaleChange={onLocaleChange} />}
       chat={
         <>
-          <ChatFeed messages={messages} viewerLocale={locale} viewerRole={viewerRole} />
+          <ChatFeed messages={messages} viewerLocale={locale} viewerRole={viewerRole} textScale={settings.textScale} />
           {failedCount > 0 && (
             <button
               type="button"

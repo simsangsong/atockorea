@@ -23,6 +23,7 @@ const COMPONENT_SUBDIRS = [
   'tours',
   'tour-detail-template',
   'tour-detail',
+  'tour-mode',
   'ui',
   'welcome',
 ];

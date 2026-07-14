@@ -14,7 +14,7 @@ export default function EmergencyCard({ locale }: { locale: RoomLocale }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="rounded-2xl bg-white shadow-sm ring-1 ring-gray-100">
+    <div className="rounded-2xl bg-white shadow-sm ring-1 ring-gray-100 dark:bg-gray-900 dark:ring-gray-800">
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
@@ -29,13 +29,13 @@ export default function EmergencyCard({ locale }: { locale: RoomLocale }) {
           {EMERGENCY_CONTACTS.map((contact) => (
             <li key={contact.key} className="text-[13px] leading-snug">
               {contact.tel ? (
-                <a href={`tel:${contact.tel}`} className="font-medium text-gray-900 underline decoration-gray-300">
+                <a href={`tel:${contact.tel}`} className="font-medium text-gray-900 underline decoration-gray-300 dark:text-gray-100 dark:decoration-gray-600">
                   {contact.label[locale]}
                 </a>
               ) : (
-                <span className="font-medium text-gray-900">{contact.label[locale]}</span>
+                <span className="font-medium text-gray-900 dark:text-gray-100">{contact.label[locale]}</span>
               )}
-              {contact.note && <div className="mt-0.5 text-[11px] text-gray-500">{contact.note[locale]}</div>}
+              {contact.note && <div className="mt-0.5 text-[11px] text-gray-500 dark:text-gray-400">{contact.note[locale]}</div>}
             </li>
           ))}
         </ul>
