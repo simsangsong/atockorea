@@ -2,7 +2,7 @@
 
 **작성일:** 2026-07-14
 **브랜치:** `claude/tour-mode-dev-iaa0b8`
-**상태:** Wave T0 구현 완료(T0.3 라이브 적용만 사용자 승인 대기). 다음 = **T0.3 승인 → Wave T1**. 구현 커밋은 세션 브랜치 `claude/tour-mode-iql6ho`(플랜 문서 브랜치를 머지해 진행).
+**상태:** Wave T0 완료 + Wave T1 백엔드(T1.1~T1.3) 완료. T0.3 라이브 적용은 사용자 승인 대기. 다음 = **T1.4~(프론트엔드)**. 구현 커밋은 세션 브랜치 `claude/tour-mode-iql6ho`(플랜 문서 브랜치를 머지해 진행).
 **단일 기준 문서:** 이 파일. 투어모드 관련 모든 작업은 이 문서의 웨이브·티켓 번호를 기준으로 진행/보고한다.
 
 ---
@@ -261,9 +261,9 @@ hooks/
 - **T0.9** `lib/ai/router.ts` 프로바이더 라우터(§M-1) — OpenAI 호환 chat-completions 클라이언트에 base_url/model/key를 env로 주입(Gemini/DeepSeek/OpenAI 3사 스위칭), `translateTextForLocales`를 라우터 경유로 교체 + 번역 메모리 캐시(§M-2 ④) — AC: env만 바꿔 3사 전환 유닛테스트, 캐시 히트 시 LLM 호출 0. ✅ 완료(ab7fd8b) — 타임아웃은 caption 3s/기타 8s 기본(TOUR_AI_*_TIMEOUT_MS로 조정). 스킵 휴리스틱(§M-2 ⑤)도 함께 구현.
 
 ### Wave T1 — 입장·룸 셸·텍스트 채팅 【11티켓】
-- **T1.1** `POST join` API — 참가자 upsert + 스냅샷 — AC: 5개 인가 경로 통합테스트.
-- **T1.2** `GET snapshot` API — AC: 1왕복으로 룸 초기화 데이터 완결.
-- **T1.3** messages POST 확장: 룸세션 인가 + D-8 로케일 타게팅 + insert 후 Broadcast + 번역실패 시 원문 선게시(`translations={}` + `metadata.translation_status='pending'`) — AC: 번역 API 강제 실패 시에도 201.
+- **T1.1** `POST join` API — 참가자 upsert + 스냅샷 — AC: 5개 인가 경로 통합테스트. ✅ 완료(7d0cf0a)
+- **T1.2** `GET snapshot` API — AC: 1왕복으로 룸 초기화 데이터 완결. ✅ 완료(7d0cf0a)
+- **T1.3** messages POST 확장: 룸세션 인가 + D-8 로케일 타게팅 + insert 후 Broadcast + 번역실패 시 원문 선게시(`translations={}` + `metadata.translation_status='pending'`) — AC: 번역 API 강제 실패 시에도 201. ✅ 완료(7d0cf0a)
 - **T1.4** `useTourRoomSession` + `/tour-mode` 진입 페이지(회원 리스트/토큰/게스트 3트랙) — AC: 플래그 OFF 시 안내만.
 - **T1.5** `useTourRoomChannel` — Realtime 구독, 끊김 감지 → SSE 강등, 재연결 시 `after` 커서로 갭 메움, 발신 실패 큐(localStorage) — AC: 네트워크 차단→복구 시 메시지 무손실 수동 시나리오.
 - **T1.6** `RoomShell` + `ChatFeed` — 뷰어 로케일 우선 표시 + 원문 토글, 가상 스크롤(200+ 메시지) — AC: 5로케일 렌더 스냅샷.
