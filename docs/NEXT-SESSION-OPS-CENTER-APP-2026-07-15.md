@@ -54,10 +54,10 @@
 ## 4. 실행 WBS
 
 ### W1 — PWA 셸 【4】
-- **W1.1** 아이콘 파이프라인: 메인 dir의 emblem PNG 커밋 + 192/512 maskable 파생 + apple-touch-icon — AC: Lighthouse PWA 설치 가능.
-- **W1.2** `app/tour-mode/manifest.ts` + 최소 SW + 설치 프롬프트 배너(iOS는 공유→홈화면 안내 시트, 5로케일) — AC: Android/iOS 홈 아이콘 설치 확인 항목 문서화.
-- **W1.3** `app/admin/tour-ops/manifest.ts` + SW — AC: 관제만 단독 설치(스코프 밖 이동 시 브라우저로).
-- **W1.4** standalone 감지(`display-mode: standalone`) 시 앱 크롬(뒤로가기 헤더 등) 활성 — AC: 브라우저 열람은 기존과 동일.
+- **W1.1** ✅ 완료(`32f5e6c5`) 아이콘 파이프라인: 메인 dir의 emblem PNG 커밋 + 192/512 maskable 파생 + apple-touch-icon — AC: Lighthouse PWA 설치 가능.
+- **W1.2** ✅ 완료(`b97fa708` — manifest.ts 컨벤션은 앱 루트 전용이라 route handler `app/tour-mode/manifest.webmanifest/route.ts`+layout metadata.manifest로 구현) `app/tour-mode/manifest.ts` + 최소 SW + 설치 프롬프트 배너(iOS는 공유→홈화면 안내 시트, 5로케일) — AC: Android/iOS 홈 아이콘 설치 확인 항목 문서화.
+- **W1.3** ✅ 완료(`0f5c4c22` — 동일하게 route handler) `app/admin/tour-ops/manifest.ts` + SW — AC: 관제만 단독 설치(스코프 밖 이동 시 브라우저로).
+- **W1.4** ✅ 완료(`0736f0c3` — hooks/useStandaloneDisplayMode + admin layout 관제 standalone 크롬 분기) standalone 감지(`display-mode: standalone`) 시 앱 크롬(뒤로가기 헤더 등) 활성 — AC: 브라우저 열람은 기존과 동일.
 
 ### W2 — 관제 실시간 코어 【3】
 - **W2.1** `GET /api/admin/tour-ops/channels` (requireAdmin, 날짜별 {roomId,bookingId,topic,status}) — AC: 비어드민 403, 토픽이 join 발급값과 일치(유닛).
