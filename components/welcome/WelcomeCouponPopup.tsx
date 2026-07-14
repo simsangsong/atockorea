@@ -76,6 +76,20 @@ function suppressedByStorage(): boolean {
   return false;
 }
 
+/**
+ * Operational surfaces where marketing chrome must never appear — a traveller
+ * inside a live tour room (§O-1 ② standalone shell) is not a conversion
+ * target. Checked at fire time too: a timer armed on a marketing page can
+ * outlive a client-side navigation into one of these routes.
+ */
+function onOperationalRoute(): boolean {
+  try {
+    return /^\/(?:[a-z]{2}(?:-[A-Z]{2})?\/)?tour-mode(?:\/|$)/.test(window.location.pathname);
+  } catch {
+    return false;
+  }
+}
+
 export default function WelcomeCouponPopup() {
   const { status, session } = useSession();
   const t = useTranslations('welcomeCoupon');
@@ -106,7 +120,7 @@ export default function WelcomeCouponPopup() {
     // Re-check at fire time: an armed timer/listener in ANOTHER tab (or a
     // suspended one) can execute after the visitor opted out or claimed
     // there — localStorage is shared, the armed closure is not.
-    if (suppressedByStorage()) return;
+    if (suppressedByStorage() || onOperationalRoute()) return;
     firedRef.current = true;
     openedAtRef.current = Date.now();
     setOpen(true);
@@ -131,7 +145,7 @@ export default function WelcomeCouponPopup() {
       }
     }
     if (status !== 'ready' || session) return; // wait for auth; never for members
-    if (firedRef.current || suppressedByStorage()) return;
+    if (firedRef.current || suppressedByStorage() || onOperationalRoute()) return;
 
     const timer = window.setTimeout(fire, WELCOME_TRIGGER_DELAY_MS);
 
