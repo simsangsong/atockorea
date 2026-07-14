@@ -83,7 +83,7 @@
 - **W5.3** ✅ 완료(결정: 같은 tour-mode 앱 내, 별도 설치 없음) 가이드 콘솔 별도 설치 여부 결정 반영 — 기본값: 같은 tour-mode 앱 내.
 
 ### W6 — Web Push (사용자 결정 게이트 🔒) 【3】
-- **W6.1** ✅ 완료 — DDL `supabase/migrations/20260715120000_push_subscriptions.sql` 라이브 적용(RLS on·정책 0=service-role 전용, advisors 신규 WARN 0), VAPID dev 키 .env.local, 구독 API `POST/DELETE /api/admin/tour-ops/push-subscriptions`(requireAdmin, endpoint upsert). **프로덕션 VAPID 키는 사용자 액션**: `node -e "console.log(JSON.stringify(require('web-push').generateVAPIDKeys()))"` → Vercel env `NEXT_PUBLIC_WEB_PUSH_VAPID_PUBLIC_KEY`/`WEB_PUSH_VAPID_PRIVATE_KEY`/`WEB_PUSH_CONTACT=mailto:support@atockorea.com` → 재배포.
+- **W6.1** ✅ 완료 — DDL `supabase/migrations/20260715120000_push_subscriptions.sql` 라이브 적용(RLS on·정책 0=service-role 전용, advisors 신규 WARN 0), VAPID dev 키 .env.local, 구독 API `POST/DELETE /api/admin/tour-ops/push-subscriptions`(requireAdmin, endpoint upsert). **프로덕션 VAPID 키 설정 완료(2026-07-15)**: 프로덕션 전용 키쌍 생성(로컬 백업 `.env.vapid-production.local`, git 제외) → Vercel atockorea 프로젝트 env 3종(`NEXT_PUBLIC_WEB_PUSH_VAPID_PUBLIC_KEY`/`WEB_PUSH_VAPID_PRIVATE_KEY`(Sensitive)/`WEB_PUSH_CONTACT`, Production+Preview) 등록 → 프로덕션 Redeploy 트리거까지 완료. 남은 확인 = 실기기에서 관제 설정탭 푸시 토글 ON→잠금 상태 SOS 수신(§I-4).
 - **W6.2** ✅ 완료 — `lib/tour-ops/push.ts`(sendOpsPush: 죽은 구독 404/410 자동 정리, env 미설정 시 무해 no-op), 트리거=SOS 라우트+need_help 퀵답장(어텐션 큐의 서버 가시 시그널), `sw-tour-ops.js` push/notificationclick 핸들러(클릭→관제 포커스/열기), 설정 탭 푸시 토글. 유닛 8. "앱 미실행 수신" 실기기 확인은 §I-4 체크리스트로.
 - **W6.3** ✅ 결정 반영 — v1은 관제(admin)만(가이드 콘솔은 토큰 인증이라 user_id 부재 → role 컬럼만 예약, 백로그). 고객측 push 범위 밖 유지.
 
