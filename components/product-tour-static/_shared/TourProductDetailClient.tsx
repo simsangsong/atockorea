@@ -228,17 +228,17 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
               single reassurance line (§F-1: trust copy appears exactly twice). */}
           <div className="mx-auto max-w-2xl px-4 pb-1 pt-2 sm:px-5">
             <div className="flex items-center gap-x-3.5 overflow-x-auto whitespace-nowrap scrollbar-hide">
-              <span className="flex items-center gap-1.5 text-[11.5px] font-semibold text-emerald-800">
-                <ShieldCheck className="h-3.5 w-3.5 flex-shrink-0 text-emerald-600" strokeWidth={2.25} />
+              <span className="flex items-center gap-1.5 text-[11.5px] font-semibold text-[color:var(--tpc-jade-deep)]">
+                <ShieldCheck className="h-3.5 w-3.5 flex-shrink-0 text-[color:var(--tpc-jade-full)]" strokeWidth={2.25} />
                 {t("tour.freeCancellation")}
               </span>
               <span aria-hidden className="h-1 w-1 flex-shrink-0 rounded-full bg-slate-300" />
-              <span className="flex items-center gap-1.5 text-[11.5px] font-semibold text-amber-800">
-                <Zap className="h-3.5 w-3.5 flex-shrink-0 text-amber-600" strokeWidth={2.25} />
+              <span className="flex items-center gap-1.5 text-[11.5px] font-semibold text-[color:var(--tpc-amber-deep)]">
+                <Zap className="h-3.5 w-3.5 flex-shrink-0 text-[color:var(--tpc-amber-full)]" strokeWidth={2.25} />
                 {t("tour.instantConfirmation")}
               </span>
               <span aria-hidden className="h-1 w-1 flex-shrink-0 rounded-full bg-slate-300" />
-              <span className="flex items-center gap-1.5 text-[11.5px] font-semibold text-sky-900">
+              <span className="flex items-center gap-1.5 text-[11.5px] font-semibold text-[color:var(--tpc-sapphire-deep)]">
                 <Headphones className="h-3.5 w-3.5 flex-shrink-0 text-primary" strokeWidth={2.25} />
                 {t("tour.customerSupport")}
               </span>

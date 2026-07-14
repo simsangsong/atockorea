@@ -38,6 +38,41 @@
   --autumn-gold: #f6f6f8;
   --winter-mist: #f5f6f9;
 
+  /*
+   * W3.1 — curated decorative palette (master plan §F-6 "Rich but Harmonized").
+   * One numeric band across all hues, calibrated from the home-v2 amber
+   * anchor: full tone (icons/dots, small areas) C≈0.11–0.13 / L≈0.60–0.63 ·
+   * deep tone (text) C≈0.08–0.09 / L≈0.42–0.45 · wash = 7% of the full tone
+   * over white. Hue COUNT is preserved — only saturation/lightness unify.
+   * Meanings are fixed in docs/tour-product-color-mapping.md; decorative
+   * color must reference these tokens, never raw tailwind 400/500/600.
+   * (Semantic success/danger states and editorial copper are separate
+   * systems, intentionally NOT remapped.)
+   */
+  --tpc-jade-full: oklch(0.62 0.12 163);
+  --tpc-jade-deep: oklch(0.43 0.08 163);
+  --tpc-jade-wash: color-mix(in oklab, oklch(0.62 0.12 163) 7%, white);
+  --tpc-amber-full: oklch(0.63 0.13 70);
+  --tpc-amber-deep: oklch(0.45 0.09 70);
+  --tpc-amber-wash: color-mix(in oklab, oklch(0.63 0.13 70) 7%, white);
+  --tpc-orange-full: oklch(0.63 0.13 50);
+  --tpc-orange-deep: oklch(0.44 0.09 50);
+  --tpc-orange-wash: color-mix(in oklab, oklch(0.63 0.13 50) 7%, white);
+  --tpc-rose-full: oklch(0.62 0.13 18);
+  --tpc-rose-deep: oklch(0.43 0.09 18);
+  --tpc-rose-wash: color-mix(in oklab, oklch(0.62 0.13 18) 7%, white);
+  --tpc-sapphire-full: oklch(0.6 0.11 245);
+  --tpc-sapphire-deep: oklch(0.42 0.08 245);
+  --tpc-sapphire-wash: color-mix(in oklab, oklch(0.6 0.11 245) 7%, white);
+  --tpc-amethyst-full: oklch(0.61 0.11 300);
+  --tpc-amethyst-deep: oklch(0.43 0.08 300);
+  --tpc-amethyst-wash: color-mix(in oklab, oklch(0.61 0.11 300) 7%, white);
+  --tpc-indigo-full: oklch(0.6 0.11 275);
+  --tpc-indigo-deep: oklch(0.42 0.08 275);
+  --tpc-indigo-wash: color-mix(in oklab, oklch(0.6 0.11 275) 7%, white);
+  /* rating stars — fixed meaning (review score), slightly brighter full tone */
+  --tpc-star: oklch(0.72 0.13 78);
+
   --shadow-subtle: 0 1px 2px rgba(26, 35, 50, 0.02);
   --shadow-card: 0 1px 3px rgba(26, 35, 50, 0.03), 0 4px 16px rgba(26, 35, 50, 0.025);
   --shadow-elevated: 0 4px 20px rgba(26, 35, 50, 0.06), 0 1px 4px rgba(26, 35, 50, 0.03);

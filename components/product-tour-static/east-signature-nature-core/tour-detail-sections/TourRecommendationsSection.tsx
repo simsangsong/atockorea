@@ -131,7 +131,7 @@ export function TourRecommendationsSection({ recommendations, sectionUi }: TourR
 
                 <div className="mt-3.5 flex items-center justify-between gap-2">
                   <div className="flex items-center gap-1.5">
-                    <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" strokeWidth={0} />
+                    <Star className="h-3.5 w-3.5 fill-[color:var(--tpc-star)] text-[color:var(--tpc-star)]" strokeWidth={0} />
                     <span className="text-[13px] font-semibold text-foreground tabular-nums">{rec.rating}</span>
                     <span className="text-[11px] text-muted-foreground tabular-nums">({rec.reviewCount})</span>
                   </div>

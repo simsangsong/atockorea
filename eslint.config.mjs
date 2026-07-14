@@ -47,6 +47,33 @@ const eslintConfig = defineConfig([
       ],
     },
   },
+  /**
+   * W3.1 (tour-detail high-end plan §F-6) — the detail page's decorative
+   * colors are the curated `--tpc-*` tokens in tour-product-v2-scope.css.
+   * Raw tailwind 400/500/600 primaries and new inline hex are blocked inside
+   * the section bundle; semantic pills use 50/700 steps and the action CTA
+   * uses amber-700/800, which this pattern deliberately does not match.
+   * Mapping table: docs/tour-product-color-mapping.md
+   */
+  {
+    files: ["components/product-tour-static/east-signature-nature-core/**/*.{ts,tsx}"],
+    rules: {
+      "no-restricted-syntax": [
+        "error",
+        {
+          selector:
+            "Literal[value=/(emerald|rose|violet|sky|orange|amber|teal|indigo)-(400|500|600)/]",
+          message:
+            "Raw primary tailwind color in the tour-detail bundle. Use the curated --tpc-* tokens (docs/tour-product-color-mapping.md).",
+        },
+        {
+          selector: "TemplateElement[value.raw=/(emerald|rose|violet|sky|orange|amber|teal|indigo)-(400|500|600)/]",
+          message:
+            "Raw primary tailwind color in the tour-detail bundle. Use the curated --tpc-* tokens (docs/tour-product-color-mapping.md).",
+        },
+      ],
+    },
+  },
 ]);
 
 export default eslintConfig;

@@ -22,9 +22,9 @@
 |---|---|---|---|---|---|
 | W0 | 성능 베이스라인 + 환경 셋업 | ✅ | 2026-07-14 | 2026-07-14 | PR #294 |
 | W1 | 컨버전 코어 | ✅ (W1.1~1.8 전체) | 2026-07-14 | 2026-07-14 | PR #294~#298 |
-| W2 | IA 컴프레션 (17→상시12) | ⏳ | — | — | — |
-| W3 | 컬러 하모나이징 & 타이포 | ⏳ | — | — | — |
-| W4 | 소셜프루프 & 신뢰 | ⏳ 🔶G-1/G-3 | — | — | — |
+| W2 | IA 컴프레션 (17→상시12) | ✅ (W2.1~2.7) | 2026-07-14 | 2026-07-14 | PR #299~#301 |
+| W3 | 컬러 하모나이징 & 타이포 | ✅ 핵심 (W3.1~3.5; 3.6/3.7 보류→§D) | 2026-07-14 | 2026-07-14 | (W3 PR) |
+| W4 | 소셜프루프 & 신뢰 | 🔶 W4.4 완료 · W4.1/4.2/4.3은 G-1/G-3 실수치·발신 검증 필요로 보류 | 2026-07-14 | — | PR #301 |
 | W5 | 에디토리얼 시그니처 | ⏳ | — | — | — |
 | W6 | 측정 & 가드 CI화 (병행) | ⏳ | — | — | — |
 
@@ -62,6 +62,7 @@
 | 2026-07-14 | **W1.3 파티 인지형 가격 라벨(타입 분기)** — sectionUi 옵셔널 키 2종 신설(6로케일 번들 동시 채움): `priceTotalForGuestsTemplate`("Total for {count} guests"/"{count}명 합계"), `priceGroupRateLabel`("Group rate"/"그룹 요금"). Sticky+Desktop 공통: 티어(인당) 파티>1 → "Total for N guests" 아이브로우, 정액(pricingTiers, priceType≠person) → **"Group rate · {duration}"**(인당 환산 병기 0 — 가격 표면 규칙). QA: 공유 3인 "Total for 3 guests" / 차터 4h→8h 라이브 갱신·per-person 부재 / 크루즈·나미 "From" 유지 / es "Tarifa por grupo · 4h" 오버플로 없음 | (W1.3 PR) | P-MED |
 | 2026-07-14 | **W1.7 드로어 drag handle + swipe-down dismiss** — useDragControls(핸들에서만 드래그 시작, 내부 스크롤 보존), offset>72px 또는 velocity>600 시 dismiss, 4슬러그 확인. 빌드: JS union gz **+0.5KB**(493.1→493.6, 한도 5KB), ISR 유지. 요소 대차대조표: +1(grab handle) | PR #295 (main cf94fcb4, 프로드 배포 success) | P-LOW |
 | 2026-07-14 | **W2.2 픽업 요약 노드 + 점프 루프** — 타임라인 양끝의 확장형 픽업/드롭 카드(중첩 아코디언 §F-4 위반 상태였음)를 **비확장 요약 노드**로 교체: 지도 썸네일(픽업 섹션과 동일 static-map URL 재사용 = 캐시 히트, 요청 순증 0)+첫 픽업 시각+"N개 지점"+"상세·지도 보기" → #pickup-dropoff 점프(§F-8 ④). 도착점 "↑ 일정으로 돌아가기" 리턴 링크 + #itinerary/#pickup-dropoff/#reviews `scroll-mt-24`. 신규 키 3종(port 타이틀 포함)×6로케일. QA: 점프 착지 ±130px 내, 리턴 정상, 노드 텍스트 "08:30 · 4 pickup points" | (W2.2 PR) | P-MED. 전체 리스트는 캐노니컬 픽업 섹션 1곳(§F-1) — DOM 라운드트립 충족 |
+| 2026-07-14 | **W3.1~3.5 컬러 하모나이징(핵심)** — ① `--tpc-*` 큐레이션 팔레트 신설(`tour-product-v2-scope.css`, OKLCH 수치 밴드: full C.11-.13/L.60-.63 · deep C.08-.09/L.42-.45 · wash 7%): jade/amber/orange/rose/sapphire/amethyst/indigo + `--tpc-star`(평점 전용) — **hue 수 유지, 채도·명도만 통일**. ② 색-의미 매핑표 `docs/tour-product-color-mapping.md` 커밋(그린 충돌 = positive/live 의미 통합으로 해소, 액션 톤·시맨틱·에디토리얼 copper는 별도 시스템 명시). ③ **판정 grep 0** (동번들 raw 400/500/600 44→0) + eslint no-restricted-syntax 디렉토리 가드. ④ W3.2 히어로: pill 효과 3중(gradient+ring+shadow+blur)→gradient+헤어라인 1중, rose 토큰화, 데스크탑 max-h **lg 420**. ⑤ W3.3 AtAGlance 6도트 웜 앵커 비대칭 재배열(jade→amber→orange→rose→amethyst→sapphire), 셀 wash 0 유지. ⑥ W3.4 Included/Fit wash 틴트 공식 통일(에이전트 스윕). ⑦ W3.5 시즌 4색 유지 세그먼트 1카드(현재 시즌 기본, SegmentedToggle 재사용, 비활성 hidden 상주=라운드트립) + 픽업 copper 그라데이션 캐리어→플랫 copper(지도 마커·아이콘 불변). 빌드 494.9KB gz·grep 0·에러 0. 양방향 자체 체크: 색 뺀 곳 0(hue 전수 보존), 캔디 0(전 hue 동일 밴드) | (W3 PR) | W3.6/3.7은 §D 보류 |
 | 2026-07-14 | **W2.5 서포트 슬림 스텝라인 + W4.4 직영 신뢰 카드** — 폐기=레이아웃만(박스 카드+접이 아코디언+3열 trust 그리드+데스크탑 가로 카드 행): 6스텝 전부 timing/title/detail 카피·스텝별 고유색(emerald/amber/indigo/orange/sky/rose) 보존, 기본 펼침(클릭 0회). trust 아이템 3종 카피는 W4.4 "Operated by AtoC Korea" 카드(신규 섹션 아님, #faq 내)로 이동 — 같은 PR이라 카피 공백 0. 독립 섹션 1개 소멸(#faq로 병합). `operatedByTitle` 키×6로케일. QA: 6스텝 아이브로우·3 trust 행·카드 타이틀 확인. 스크롤 높이 9,003→**8,609px**(W2 누적 −4.4%; 나머지는 W3/W5 몫) | (W2.5 PR) | P-MED · 섹션 −1 |
 | 2026-07-14 | **W2.7 앵커 재매핑** — 각 병합 PR에 분산 완료: 서브나브 앵커(id) 전부 불변, 구 `#sample-itinerary` 딥링크는 토글 래퍼로 착지, `#pricing`은 서브나브 미참조 확인 후 소멸, 점프 대상 3종 scroll-mt-24 | (분산) | P-LOW |
 | 2026-07-14 | **W2.1 트러스트 스트립 → 히어로 마이크로라인** — 독립 보더 섹션 제거, 히어로 직하 1줄(체크·딥 톤 emerald-800/amber-800/sky-900 + 컬러 아이콘 — 회색 fine-print 아님). 예약 표면(카드·드로어)의 기존 reassurance 1줄과 합쳐 신뢰 문구 정확히 2회(§F-1). 기존 t() 키 재사용, 신규 번역 0. 목업 게이트: before/after 오너 발송 + 자체 헌법 체크 후 진행(오너 전체 자율 완성 지시) | (W2.1 PR) | P-MED · 섹션 −1 |
@@ -84,6 +85,9 @@
 | 폴리오 면수 인덱스(04/12)·러닝 폴리오 | 조건부 섹션으로 투어별 총 면수 가변 → 고정 넘버링 성립 불가 | 구조 안정화 후 |
 | Live 스트립 "오늘 가격" | 가격 표면 규칙(진입점 3곳 고정)과 충돌 — 스트립은 날씨+운영 라이브 신호 전용 | — |
 | 인터랙티브 지도 / 다크모드 / 가격비교 위젯 / Q&A | v1 유지 | — |
+| W3.6 공유 섹션 헤더 컴포넌트 / W3.7 타입 6단계·radius 토큰 | 구조 통일 요소 — W3 핵심(색 조화) 대비 리스크/효익 낮아 보류. 헤더 구조는 이미 사실상 1문법(h2+subtitle) | 다음 비주얼 슬라이스 |
+| W4.1/4.2 외부 집계 ON + 평점 노출 | G-1: 외부 플랫폼 실수치 검증을 자율 세션에서 날조 없이 확정 불가(★ 날조 금지 바인딩) — 오너 확인 필요 | G-1 회신 시 |
+| W4.3 리뷰 수집 D+1 메일 | G-3: 고객 대상 외부 발신 자동화 — 자율 활성화 부적절, 오너 승인 필요 | G-3 회신 시 |
 
 ---
 

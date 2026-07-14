@@ -3,13 +3,19 @@ import type { EastSignatureNatureCoreDetailViewModel } from "../eastSignatureNat
 
 const MAX_LEVEL = 5;
 
+/*
+ * W3.3 — six hues preserved with FIXED per-row assignment, retuned onto the
+ * curated --tpc-* band (§F-6). Warm-anchored asymmetric order (not a
+ * color-wheel rainbow): jade / amber / orange / rose / amethyst / sapphire.
+ * Cells stay warm-ivory — color lives only in these small dots.
+ */
 const ROW_ACCENT_COLORS = [
-  "bg-emerald-500",
-  "bg-amber-500",
-  "bg-orange-500",
-  "bg-rose-500",
-  "bg-violet-500",
-  "bg-sky-500",
+  "bg-[color:var(--tpc-jade-full)]",
+  "bg-[color:var(--tpc-amber-full)]",
+  "bg-[color:var(--tpc-orange-full)]",
+  "bg-[color:var(--tpc-rose-full)]",
+  "bg-[color:var(--tpc-amethyst-full)]",
+  "bg-[color:var(--tpc-sapphire-full)]",
 ];
 
 function clampLevel(level: number | undefined): number {

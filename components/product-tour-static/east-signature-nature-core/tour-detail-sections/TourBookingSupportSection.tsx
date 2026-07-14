@@ -35,11 +35,11 @@ const DEFAULT_TRUST_ICON = CheckCircle;
 /** Per-icon accent — the 5-hue assignment survives W2.5 (§B: only the grid
  *  LAYOUT was retired; step/trust hues are preserved). */
 const TRUST_ICON_COLORS: Record<string, string> = {
-  "check-circle": "text-emerald-600",
-  route: "text-sky-600",
-  users: "text-amber-600",
-  "clock-3": "text-orange-600",
-  mountain: "text-rose-600",
+  "check-circle": "text-[color:var(--tpc-jade-full)]",
+  route: "text-[color:var(--tpc-sapphire-full)]",
+  users: "text-[color:var(--tpc-amber-full)]",
+  "clock-3": "text-[color:var(--tpc-orange-full)]",
+  mountain: "text-[color:var(--tpc-rose-full)]",
 };
 
 type LucideIcon = ComponentType<{ className?: string; strokeWidth?: number }>;
@@ -59,60 +59,60 @@ function pickStepTheme(timing: string, title: string, fallbackIndex: number): St
   if (/confirm|confirmación|확인|예약\s?완료|予約.*完了|预订.*确认|預訂.*確認|after\s?booking/.test(t))
     return {
       Icon: MailCheck,
-      ringBg: "bg-emerald-50/80 ring-emerald-100",
-      iconColor: "text-emerald-600/80",
-      spineFrom: "from-emerald-200/45",
-      eyebrow: "text-emerald-700/85",
+      ringBg: "bg-[color:var(--tpc-jade-wash)] ring-slate-900/[0.06]",
+      iconColor: "text-[color:var(--tpc-jade-full)]",
+      spineFrom: "from-[var(--tpc-jade-wash)]",
+      eyebrow: "text-[color:var(--tpc-jade-deep)]",
     };
   if (/12\s?hour|reminder|recordatori|리마인|事前|提前\s?12|前\s?12|pre[-\s]?depart/.test(t))
     return {
       Icon: BellRing,
-      ringBg: "bg-amber-50/80 ring-amber-100",
-      iconColor: "text-amber-600/80",
-      spineFrom: "from-amber-200/40",
-      eyebrow: "text-amber-700/85",
+      ringBg: "bg-[color:var(--tpc-amber-wash)] ring-slate-900/[0.06]",
+      iconColor: "text-[color:var(--tpc-amber-full)]",
+      spineFrom: "from-[var(--tpc-amber-wash)]",
+      eyebrow: "text-[color:var(--tpc-amber-deep)]",
     };
   if (/night|noche|前夜|前夕|夜|밤|전날|hours?\s?before|final\s?pickup/.test(t))
     return {
       Icon: Moon,
-      ringBg: "bg-indigo-50/80 ring-indigo-100",
-      iconColor: "text-indigo-600/80",
-      spineFrom: "from-indigo-200/40",
-      eyebrow: "text-indigo-700/85",
+      ringBg: "bg-[color:var(--tpc-indigo-wash)] ring-slate-900/[0.06]",
+      iconColor: "text-[color:var(--tpc-indigo-full)]",
+      spineFrom: "from-[var(--tpc-indigo-wash)]",
+      eyebrow: "text-[color:var(--tpc-indigo-deep)]",
     };
   if (/morning|day[-\s]?of|出発|当日|當日|아침|당일|mañana|departure/.test(t))
     return {
       Icon: Sunrise,
-      ringBg: "bg-orange-50/80 ring-orange-100",
-      iconColor: "text-orange-600/80",
-      spineFrom: "from-orange-200/40",
-      eyebrow: "text-orange-700/85",
+      ringBg: "bg-[color:var(--tpc-orange-wash)] ring-slate-900/[0.06]",
+      iconColor: "text-[color:var(--tpc-orange-full)]",
+      spineFrom: "from-[var(--tpc-orange-wash)]",
+      eyebrow: "text-[color:var(--tpc-orange-deep)]",
     };
   if (/during|stop[-\s]?by|en\s?ruta|途中|沿途|투어\s?중|in[-\s]?tour|on[-\s]?route|guidance/.test(t))
     return {
       Icon: Compass,
-      ringBg: "bg-sky-50/80 ring-sky-100",
-      iconColor: "text-sky-600/80",
-      spineFrom: "from-sky-200/40",
-      eyebrow: "text-sky-700/85",
+      ringBg: "bg-[color:var(--tpc-sapphire-wash)] ring-slate-900/[0.06]",
+      iconColor: "text-[color:var(--tpc-sapphire-full)]",
+      spineFrom: "from-[var(--tpc-sapphire-wash)]",
+      eyebrow: "text-[color:var(--tpc-sapphire-deep)]",
     };
   if (/after.*tour|post[-\s]?tour|follow[-\s]?up|마친\s?후|完了後|完成後|结束后|posterior|seguimiento/.test(t))
     return {
       Icon: Sparkles,
-      ringBg: "bg-rose-50/80 ring-rose-100",
-      iconColor: "text-rose-600/80",
-      spineFrom: "from-rose-200/40",
-      eyebrow: "text-rose-700/85",
+      ringBg: "bg-[color:var(--tpc-rose-wash)] ring-slate-900/[0.06]",
+      iconColor: "text-[color:var(--tpc-rose-full)]",
+      spineFrom: "from-[var(--tpc-rose-wash)]",
+      eyebrow: "text-[color:var(--tpc-rose-deep)]",
     };
 
   // Generic fallback by position
   const fallbacks: StepTheme[] = [
-    { Icon: MailCheck, ringBg: "bg-emerald-50/80 ring-emerald-100", iconColor: "text-emerald-600/80", spineFrom: "from-emerald-200/45", eyebrow: "text-emerald-700/85" },
-    { Icon: BellRing, ringBg: "bg-amber-50/80 ring-amber-100", iconColor: "text-amber-600/80", spineFrom: "from-amber-200/40", eyebrow: "text-amber-700/85" },
-    { Icon: Moon, ringBg: "bg-indigo-50/80 ring-indigo-100", iconColor: "text-indigo-600/80", spineFrom: "from-indigo-200/40", eyebrow: "text-indigo-700/85" },
-    { Icon: Sunrise, ringBg: "bg-orange-50/80 ring-orange-100", iconColor: "text-orange-600/80", spineFrom: "from-orange-200/40", eyebrow: "text-orange-700/85" },
-    { Icon: Compass, ringBg: "bg-sky-50/80 ring-sky-100", iconColor: "text-sky-600/80", spineFrom: "from-sky-200/40", eyebrow: "text-sky-700/85" },
-    { Icon: Sparkles, ringBg: "bg-rose-50/80 ring-rose-100", iconColor: "text-rose-600/80", spineFrom: "from-rose-200/40", eyebrow: "text-rose-700/85" },
+    { Icon: MailCheck, ringBg: "bg-[color:var(--tpc-jade-wash)] ring-slate-900/[0.06]", iconColor: "text-[color:var(--tpc-jade-full)]", spineFrom: "from-[var(--tpc-jade-wash)]", eyebrow: "text-[color:var(--tpc-jade-deep)]" },
+    { Icon: BellRing, ringBg: "bg-[color:var(--tpc-amber-wash)] ring-slate-900/[0.06]", iconColor: "text-[color:var(--tpc-amber-full)]", spineFrom: "from-[var(--tpc-amber-wash)]", eyebrow: "text-[color:var(--tpc-amber-deep)]" },
+    { Icon: Moon, ringBg: "bg-[color:var(--tpc-indigo-wash)] ring-slate-900/[0.06]", iconColor: "text-[color:var(--tpc-indigo-full)]", spineFrom: "from-[var(--tpc-indigo-wash)]", eyebrow: "text-[color:var(--tpc-indigo-deep)]" },
+    { Icon: Sunrise, ringBg: "bg-[color:var(--tpc-orange-wash)] ring-slate-900/[0.06]", iconColor: "text-[color:var(--tpc-orange-full)]", spineFrom: "from-[var(--tpc-orange-wash)]", eyebrow: "text-[color:var(--tpc-orange-deep)]" },
+    { Icon: Compass, ringBg: "bg-[color:var(--tpc-sapphire-wash)] ring-slate-900/[0.06]", iconColor: "text-[color:var(--tpc-sapphire-full)]", spineFrom: "from-[var(--tpc-sapphire-wash)]", eyebrow: "text-[color:var(--tpc-sapphire-deep)]" },
+    { Icon: Sparkles, ringBg: "bg-[color:var(--tpc-rose-wash)] ring-slate-900/[0.06]", iconColor: "text-[color:var(--tpc-rose-full)]", spineFrom: "from-[var(--tpc-rose-wash)]", eyebrow: "text-[color:var(--tpc-rose-deep)]" },
   ];
   return fallbacks[fallbackIndex % fallbacks.length] ?? fallbacks[0];
 }
@@ -182,7 +182,7 @@ export function TourBookingSupportSection({ bookingTrustItems, bookingSupportSte
       {trustItems.length > 0 ? (
         <div className="rounded-2xl border border-border/70 bg-white p-4 shadow-[0_1px_2px_rgba(0,0,0,0.03),0_4px_12px_-2px_rgba(0,0,0,0.055)]">
           <div className="flex items-center gap-2">
-            <ShieldCheck className="h-4 w-4 text-emerald-600" strokeWidth={2} aria-hidden />
+            <ShieldCheck className="h-4 w-4 text-[color:var(--tpc-jade-full)]" strokeWidth={2} aria-hidden />
             <h3 className="text-[13.5px] font-semibold tracking-tight text-foreground">
               {sectionUi.operatedByTitle ?? "Operated by AtoC Korea"}
             </h3>
