@@ -57,22 +57,13 @@ export interface TourRoom {
 /**
  * Minimal shape of the Supabase client this module needs — keeps unit tests
  * free of the real client while routes pass createServerClient() directly.
+ * The builder return type is deliberately `any`: SupabaseClient's generic
+ * query builders don't structurally match a narrowed interface. Runtime usage
+ * here is limited to select/eq/single/maybeSingle and upsert/select/single.
  */
 export interface RoomDbClient {
-  from(table: string): {
-    select(columns: string): {
-      eq(column: string, value: unknown): {
-        single(): Promise<{ data: unknown; error: unknown }>;
-        maybeSingle(): Promise<{ data: unknown; error: unknown }>;
-      };
-    };
-    upsert(
-      values: Record<string, unknown>,
-      options: { onConflict: string },
-    ): {
-      select(): { single(): Promise<{ data: unknown; error: unknown }> };
-    };
-  };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  from(table: string): any;
 }
 
 export type RoomActor =
@@ -89,7 +80,13 @@ export type RoomActor =
   | { kind: 'guest'; role: 'customer' };
 
 export type ResolveRoomActorResult =
-  | { ok: true; booking: RoomBooking; actor: RoomActor }
+  | {
+      ok: true;
+      booking: RoomBooking;
+      actor: RoomActor;
+      /** Supabase auth user id when the request carried a login session (any path). */
+      authUserId: string | null;
+    }
   | { ok: false; status: number; error: string; retryAfterMs?: number };
 
 export interface ResolveRoomActorOptions {
@@ -210,10 +207,11 @@ export async function resolveRoomActor(
   if (!booking) return { ok: false, status: 404, error: 'Booking not found' };
 
   const user = await getAuthUser(req);
+  const authUserId = user?.id ?? null;
 
   // 1. Admin.
   if (user?.role === 'admin') {
-    return { ok: true, booking, actor: { kind: 'admin', role: 'admin', userId: user.id } };
+    return { ok: true, booking, actor: { kind: 'admin', role: 'admin', userId: user.id }, authUserId };
   }
 
   // 2. Signed invite token (scope + revocation checked).
@@ -225,6 +223,7 @@ export async function resolveRoomActor(
         ok: true,
         booking,
         actor: { kind: 'token', role: payload.role, tokenPayload: payload, displayName: payload.displayName },
+        authUserId,
       };
     }
     // An invalid/revoked/mismatched token falls through — weaker credentials
@@ -240,13 +239,14 @@ export async function resolveRoomActor(
         ok: true,
         booking,
         actor: { kind: 'session', role: session.role, sessionPayload: session, displayName: session.displayName },
+        authUserId,
       };
     }
   }
 
   // 4. Logged-in booking owner.
   if (user?.id && user.id === booking.user_id) {
-    return { ok: true, booking, actor: { kind: 'owner', role: 'customer', userId: user.id } };
+    return { ok: true, booking, actor: { kind: 'owner', role: 'customer', userId: user.id }, authUserId };
   }
 
   // 5. Merchant guide (merchant account owning this booking).
@@ -255,6 +255,7 @@ export async function resolveRoomActor(
       ok: true,
       booking,
       actor: { kind: 'merchant-guide', role: 'guide', userId: user!.id, merchantId: user!.merchantId! },
+      authUserId,
     };
   }
 
@@ -266,7 +267,7 @@ export async function resolveRoomActor(
     }
   }
   if (matchesGuestCredentials(booking, options.guestEmail, options.guestName)) {
-    return { ok: true, booking, actor: { kind: 'guest', role: 'customer' } };
+    return { ok: true, booking, actor: { kind: 'guest', role: 'customer' }, authUserId };
   }
 
   return { ok: false, status: 403, error: 'Access denied for this tour room' };

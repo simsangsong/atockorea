@@ -1,15 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { getAuthUser } from '@/lib/auth';
+import { kstToday } from '@/lib/tour-room/time';
 
 export const dynamic = 'force-dynamic';
-
-function todayYmd(): string {
-  const now = new Date();
-  return `${now.getUTCFullYear()}-${String(now.getUTCMonth() + 1).padStart(2, '0')}-${String(
-    now.getUTCDate(),
-  ).padStart(2, '0')}`;
-}
 
 export async function GET(req: NextRequest) {
   try {
@@ -30,7 +24,9 @@ export async function GET(req: NextRequest) {
       )
       .eq('user_id', user.id)
       .eq('status', 'confirmed')
-      .gte('tour_date', todayYmd())
+      // KST-anchored "today" — the UTC version hid today's tour between
+      // 00:00 and 09:00 KST (live defect R-7, master plan §B D-9).
+      .gte('tour_date', kstToday())
       .order('tour_date', { ascending: true });
 
     if (error) {

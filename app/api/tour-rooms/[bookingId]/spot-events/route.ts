@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
-import { getAuthUser } from '@/lib/auth';
 import { translateTextForLocales } from '@/lib/openai-server';
 import { requestGate, clientIpKey } from '@/lib/durable-rate-limit';
+import { ensureRoom, resolveRoomActor } from '@/lib/tour-room/access';
 
 export const dynamic = 'force-dynamic';
 
@@ -10,10 +10,6 @@ const DEFAULT_TARGET_LOCALES = ['en', 'ko', 'zh', 'ja', 'es'];
 const DEFAULT_ARRIVAL_RADIUS_M = 3000;
 
 type SpotEventType = 'arrived' | 'audio_played' | 'meeting_notice_sent';
-
-function normalized(value: string | null | undefined): string {
-  return (value ?? '').trim().toLowerCase();
-}
 
 function numberOrNull(value: unknown): number | null {
   if (value === null || value === undefined || value === '') return null;
@@ -27,47 +23,6 @@ function parseLocales(value: unknown): string[] {
     return [...new Set(value.split(',').map((v) => v.trim()).filter(Boolean))];
   }
   return DEFAULT_TARGET_LOCALES;
-}
-
-async function getBookingForRoom(
-  supabase: ReturnType<typeof createServerClient>,
-  bookingId: string,
-) {
-  const { data, error } = await supabase
-    .from('bookings')
-    .select('id, user_id, tour_id, merchant_id, tour_date, contact_name, contact_email, preferred_language')
-    .eq('id', bookingId)
-    .single();
-  if (error || !data) return null;
-  return data;
-}
-
-async function ensureRoom(
-  supabase: ReturnType<typeof createServerClient>,
-  booking: { id: string; tour_id?: string | null; tour_date?: string | null },
-) {
-  const { data, error } = await supabase
-    .from('tour_rooms')
-    .upsert(
-      {
-        booking_id: booking.id,
-        tour_id: booking.tour_id ?? null,
-        tour_date: booking.tour_date ?? null,
-        updated_at: new Date().toISOString(),
-      },
-      { onConflict: 'booking_id' },
-    )
-    .select()
-    .single();
-  if (error) throw error;
-  return data;
-}
-
-function isMerchantGuideForBooking(
-  user: Awaited<ReturnType<typeof getAuthUser>>,
-  booking: { merchant_id?: string | null },
-): boolean {
-  return Boolean(user?.role === 'merchant' && user.merchantId && booking.merchant_id === user.merchantId);
 }
 
 function sourceTextForEvent(
@@ -99,7 +54,6 @@ export async function POST(
   try {
     const { bookingId } = await params;
     const supabase = createServerClient();
-    const user = await getAuthUser(req);
     const body = await req.json().catch(() => ({}));
     const eventType = String(body.eventType || body.event_type || '') as SpotEventType;
     const spotId = String(body.spotId || body.spot_id || '');
@@ -111,40 +65,34 @@ export async function POST(
       return NextResponse.json({ error: 'spotId is required' }, { status: 400 });
     }
 
-    const booking = await getBookingForRoom(supabase, bookingId);
-    if (!booking) return NextResponse.json({ error: 'Booking not found' }, { status: 404 });
-
-    const guestEmail = String(body.contactEmail || '');
-    const guestName = String(body.contactName || '');
-    const guestMatches =
-      normalized(booking.contact_email) === normalized(guestEmail) &&
-      (!guestName || normalized(booking.contact_name) === normalized(guestName));
-    const isOwner = Boolean(user?.id && user.id === booking.user_id);
-    const isAdmin = user?.role === 'admin';
-    const isMerchantGuide = isMerchantGuideForBooking(user, booking);
-    const authedByRole = isOwner || isAdmin || isMerchantGuide;
-
-    // PA-4: throttle the unauthenticated guest email-match path per-IP to prevent
-    // enumeration spray against a public bookingId (authed roles bypass).
-    if (!authedByRole) {
-      const gate = await requestGate({
-        namespace: 'tour_room_guest',
-        key: clientIpKey(req.headers),
-        perMinute: 15,
-        perHour: 60,
-      });
-      if (!gate.allowed) {
+    // PA-4: guest email-match path stays throttled per-IP (gate fires only when
+    // no stronger credential authenticated the request — pre-refactor ordering).
+    const resolved = await resolveRoomActor(req, bookingId, {
+      supabase,
+      guestEmail: String(body.contactEmail || ''),
+      guestName: String(body.contactName || ''),
+      guestGate: () =>
+        requestGate({
+          namespace: 'tour_room_guest',
+          key: clientIpKey(req.headers),
+          perMinute: 15,
+          perHour: 60,
+        }),
+    });
+    if (!resolved.ok) {
+      if (resolved.status === 429) {
         return NextResponse.json(
           { error: 'rate_limited' },
-          { status: 429, headers: { 'Retry-After': String(Math.ceil(gate.retryAfterMs / 1000)) } },
+          { status: 429, headers: { 'Retry-After': String(Math.ceil((resolved.retryAfterMs ?? 0) / 1000)) } },
         );
       }
+      return NextResponse.json({ error: resolved.error }, { status: resolved.status });
     }
+    const { booking, actor, authUserId } = resolved;
 
-    if (!authedByRole && !guestMatches) {
-      return NextResponse.json({ error: 'Access denied for this tour room' }, { status: 403 });
-    }
-    if (eventType === 'meeting_notice_sent' && !isAdmin && !isMerchantGuide) {
+    // Meeting notices are guide/admin only. Guide-role actors now include the
+    // tour-date invite token (§O-3), not just merchant accounts.
+    if (eventType === 'meeting_notice_sent' && actor.role !== 'admin' && actor.role !== 'guide') {
       return NextResponse.json({ error: 'Only guides can send meeting time notices' }, { status: 403 });
     }
 
@@ -205,7 +153,7 @@ export async function POST(
       .insert({
         room_id: room.id,
         booking_id: booking.id,
-        sender_user_id: user?.id ?? null,
+        sender_user_id: authUserId,
         sender_role: eventType === 'meeting_notice_sent' ? 'guide' : 'system',
         input_kind: 'text',
         source_text: sourceText,
@@ -226,7 +174,7 @@ export async function POST(
         spot_id: spot.id,
         message_id: message.id,
         event_type: eventType,
-        triggered_by_user_id: user?.id ?? null,
+        triggered_by_user_id: authUserId,
         distance_m: distanceM === null ? null : Math.round(distanceM),
         current_latitude: numberOrNull(body.currentLatitude ?? body.current_latitude),
         current_longitude: numberOrNull(body.currentLongitude ?? body.current_longitude),
