@@ -18,7 +18,7 @@
 | O-10 Realtime 쿼터 | ✅ 산정표 §2 | |
 | O-11 SSE 서버리스 한계 | ✅ | events 라우트 기존 구현(55s 주기+after 커서) |
 | O-12 일일 AI 예산 가드 | 🟡 부분 | 경로별 레이트리밋(§3)으로 상한 확보; µ$ 가중 적산 카운터는 §H 이월(파일럿 메트릭 후 튜닝) |
-| O-13 시크릿 로테이션 | ✅ | 듀얼 검증 + ⚠런칭 전 `TOUR_ROOM_TOKEN_SECRET` env 설정 필수(현재 미설정 = dev fallback) |
+| O-13 시크릿 로테이션 | ✅ | 듀얼 검증. `TOUR_ROOM_TOKEN_SECRET` 프로덕션 설정·검증 완료(2026-07-15) |
 | O-14 LLM 세이프티 거부 | ✅ | 라우터 데모션 + 원문 게시(R-6) 캡션/메시지 모두 테스트 |
 
 ## 2. Realtime 동시접속 산정표 (§O-10)
@@ -54,7 +54,7 @@ security: **투어모드 신규 경고 0** — 목록 전부 기존 베이스라
 
 ## 5. 런칭 전 env 체크리스트 (T8.2 착수 조건)
 
-- [ ] `TOUR_ROOM_TOKEN_SECRET` 프로덕션 설정(현재 dev fallback — 설정 시 기존 시크릿을 `_PREV`로)
+- [x] `TOUR_ROOM_TOKEN_SECRET` 프로덕션 설정 — **✅ 2026-07-15 완료·검증됨**(dev 토큰 403 거부 / 신규 시크릿 토큰 201 통과, 라이브 프로브). 향후 교체 시 이전 값을 `_PREV`로.
 - [ ] `NEXT_PUBLIC_TOUR_MODE_V1=1` (파일럿 시점에)
 - [ ] `NEXT_PUBLIC_TOUR_OPS_PHONE` 운영센터 번호
 - [ ] `ADMIN_BOOKING_NOTIFICATION_EMAILS` SOS 수신자 확인
