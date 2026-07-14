@@ -5,6 +5,7 @@ import { ChevronDown, CloudSun, CloudRain, Check, X, Flower2, Sun, Leaf, Snowfla
 import { useI18n } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import { SegmentedToggle } from "@/components/product-tour-static/_shared/SegmentedToggle";
+import { useForecast } from "@/components/product-tour-static/_shared/useForecast";
 
 /**
  * °C / °F pill toggle rendered below the two live-weather cards. Stays inside
@@ -204,7 +205,9 @@ export function TourPracticalDetails({
 }: TourPracticalDetailsProps) {
   const { locale } = useI18n();
   const [expandedItems, setExpandedItems] = useState<string[]>([]);
-  const [liveForecast, setLiveForecast] = useState<ForecastApiPayload | null>(null);
+  /** W5.1 — shared page-wide forecast cache (one request per pageview, split
+   *  with the Live strip). */
+  const liveForecast = useForecast(locale, tourProductSlug, useLiveWeather);
   const [tempUnit, setTempUnit] = useTempUnit();
 
   /**
@@ -235,28 +238,8 @@ export function TourPracticalDetails({
   );
   const effectiveSeasonIdx = seasonIdx ?? defaultSeasonIdx;
 
-  useEffect(() => {
-    if (!useLiveWeather) return;
-    let cancelled = false;
-    (async () => {
-      try {
-        const qs = new URLSearchParams({ locale });
-        if (tourProductSlug) qs.set("slug", tourProductSlug);
-        const res = await fetch(`/api/weather/forecast?${qs.toString()}`, {
-          cache: "no-store",
-        });
-        if (!res.ok || cancelled) return;
-        const data = (await res.json()) as ForecastApiPayload & { error?: string };
-        if (cancelled || data.error || !data?.current || !data?.days?.length) return;
-        setLiveForecast(data);
-      } catch {
-        /* keep static strip */
-      }
-    })();
-    return () => {
-      cancelled = true;
-    };
-  }, [useLiveWeather, locale, tourProductSlug]);
+  // (W5.1) the forecast fetch above replaced the previous inline effect —
+  // the shared cache keeps the page at exactly one forecast request.
 
   const toggleItem = (id: string) => {
     setExpandedItems((prev) => (prev.includes(id) ? prev.filter((i) => i !== id) : [...prev, id]));
