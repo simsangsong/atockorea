@@ -3,11 +3,9 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import type { EastSignatureNatureCoreDetailViewModel } from "../eastSignatureNatureCoreDetailViewModel";
+import { SCROLL_OFFSET_PX, observeSpyTarget } from "@/components/product-tour-static/_shared/sectionScrollSpy";
 
 export type TourTabsNavProps = Pick<EastSignatureNatureCoreDetailViewModel, "subnavItems">;
-
-/** Approx. header + this nav bar height for scroll-spy and scroll-to-section */
-const SCROLL_OFFSET_PX = 108;
 
 export function TourTabsNav({ subnavItems }: TourTabsNavProps) {
   const [activeSection, setActiveSection] = useState("overview");
@@ -58,22 +56,11 @@ export function TourTabsNav({ subnavItems }: TourTabsNavProps) {
       .filter((el): el is HTMLElement => el !== null);
     if (sectionEls.length === 0) return;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        }
-      },
-      {
-        rootMargin: `-${SCROLL_OFFSET_PX}px 0px -75% 0px`,
-        threshold: 0,
-      },
-    );
-
-    sectionEls.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
+    // W2.3 — subscriptions go through the page-wide shared observer
+    // (sectionScrollSpy) so the DayFlow scrubber can spy stops without a
+    // second IntersectionObserver instance.
+    const unsubs = sectionEls.map((el) => observeSpyTarget(el, (t) => setActiveSection(t.id)));
+    return () => unsubs.forEach((u) => u());
     /* subnavItems omitted on purpose: stable `subnavScrollSpyKey` avoids re-binding the observer
        when the parent passes a new array reference each render. */
     // eslint-disable-next-line react-hooks/exhaustive-deps
