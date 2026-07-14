@@ -2,7 +2,7 @@
 
 **작성일:** 2026-07-14
 **브랜치:** `claude/tour-mode-dev-iaa0b8`
-**상태:** Wave T0 완료 + T1.1~T1.7, T1.10 완료. **T0.3 사용자 승인됨 — 단, 이 원격 세션의 Supabase MCP가 타 프로젝트(Kursoflow)에 연결되어 있어 적용 불가. atockorea 라이브 DB가 연결된 세션에서 supabase/migrations/20260714090000·20260714091000 두 파일을 apply_migration으로 적용 + get_advisors 재실행 필요.** 다음 코드 작업 = T1.8(i18n 키) → T1.9(E2E) → T1.11(다이렉트 진입 하드닝). 구현 커밋은 세션 브랜치 `claude/tour-mode-iql6ho`(플랜 문서 브랜치를 머지해 진행).
+**상태:** Wave T0 완료 + T1.1~T1.7, T1.10 완료. **T0.3 사용자 승인됨 — 단, 이 원격 세션의 Supabase MCP가 타 프로젝트(Kursoflow)에 연결되어 있어 적용 불가. atockorea 라이브 DB가 연결된 세션에서 supabase/migrations/20260714090000·20260714091000 두 파일을 apply_migration으로 적용 + get_advisors 재실행 필요.** 다음 코드 작업 = **T1.9(E2E — playwright 인프라 신설 필요)** → T1.11 잔여(로비 뷰) → Wave T2. 구현 커밋은 세션 브랜치 `claude/tour-mode-iql6ho`(플랜 문서 브랜치를 머지해 진행).
 **단일 기준 문서:** 이 파일. 투어모드 관련 모든 작업은 이 문서의 웨이브·티켓 번호를 기준으로 진행/보고한다.
 
 ---
@@ -268,10 +268,10 @@ hooks/
 - **T1.5** `useTourRoomChannel` — Realtime 구독, 끊김 감지 → SSE 강등, 재연결 시 `after` 커서로 갭 메움, 발신 실패 큐(localStorage) — AC: 네트워크 차단→복구 시 메시지 무손실 수동 시나리오. ✅ 완료(f855b63 — 수동 시나리오는 훅 주석에 문서화, E2E는 T1.9에서)
 - **T1.6** `RoomShell` + `ChatFeed` — 뷰어 로케일 우선 표시 + 원문 토글, 가상 스크롤(200+ 메시지) — AC: 5로케일 렌더 스냅샷. ✅ 완료(4a7e3af) — 가상 스크롤은 윈도잉(최근 60 + 이전 보기)으로 구현, 5로케일 렌더 테스트.
 - **T1.7** `Composer` 텍스트 + 퀵답장 프리셋 8종(사전 번역 상수 → 번역 API 0회) — AC: 연타 시 낙관적 UI + 중복 발신 방지. ✅ 완료(4a7e3af) — presetKey 서버 경로로 번역 상수 서버 소유, 쿨다운 연타 가드.
-- **T1.8** i18n `tourMode.*` 5로케일 키 일괄 추가 — AC: 키 누락 lint 0.
+- **T1.8** i18n `tourMode.*` 5로케일 키 일괄 추가 — AC: 키 누락 lint 0. ✅ 완료(53a98d7) — 6개 사이트 로케일 파일 + 패리티 테스트. 독립형 /tour-mode 페이지는 설계상(§O-1 ②) 번들 상수 사용.
 - **T1.9** E2E: 브라우저 컨텍스트 2개(가이드 토큰/손님)로 왕복 채팅 — AC: playwright 통과.
 - **T1.10** 긴급 정보 카드 — 119·1330(관광공사 24h 통역 핫라인)·주요 대사관·관제센터 연락처를 룸 헤더 접이식 카드로 고정, `tel:` 딥링크, 5로케일 문구(정적 상수 — LLM 0회) — AC: 오프라인에서도 표시(스냅샷에 포함), 원탭 발신. ✅ 완료(4a7e3af) — 상수를 클라 번들에 포함해 오프라인 표시, 운영센터 번호는 NEXT_PUBLIC_TOUR_OPS_PHONE env. 대사관 목록은 T8.1에서 확정.
-- **T1.11** 다이렉트 진입 하드닝(§O-1 전 항목) — middleware 화이트리스트, standalone 경량 레이아웃, `replaceState` 토큰 위생, localStorage 재입장, 인앱 웹뷰 탈출 배너, 로비/진행/종료 3상태, dispatch QR, 취소 revoke 훅 — AC: §O-1 ①~⑧ 각각 시나리오 테스트, 비로그인 시크릿 창에서 링크 1클릭 입장.
+- **T1.11** 다이렉트 진입 하드닝(§O-1 전 항목) — middleware 화이트리스트, standalone 경량 레이아웃, `replaceState` 토큰 위생, localStorage 재입장, 인앱 웹뷰 탈출 배너, 로비/진행/종료 3상태, dispatch QR, 취소 revoke 훅 — AC: §O-1 ①~⑧ 각각 시나리오 테스트, 비로그인 시크릿 창에서 링크 1클릭 입장. 🟡 부분 완료(53a98d7) — ①②③④⑤⑦ 구현·테스트 완료, ⑥은 라이프사이클 배지+ended 읽기전용까지(로비 전용 뷰 잔여), ⑧ QR·취소 revoke는 T5.1과 함께.
 
 ### Wave T2 — 음성 (STT 발신 · TTS 수신 · 실시간 통역) 【9티켓】
 - **T2.1** `Composer` 푸시투토크 — MediaRecorder(webm/opus, iOS는 mp4/aac 분기), 최대 60초, 파형 표시 — AC: iOS Safari·Android Chrome 실기 확인 항목 문서화.
