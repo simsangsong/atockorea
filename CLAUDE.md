@@ -4,8 +4,8 @@
 
 **마스터 플랜(단일 기준):** `docs/tour-mode-master-plan-2026-07-14.md` (§A~§O, 9웨이브/57티켓)
 **부트스트랩:** `docs/NEXT-SESSION-EXECUTION-PROMPT-2026-07-14-tour-mode.md` ← **투어모드 이어받으면 이걸 먼저**
-**개발 브랜치:** `claude/tour-mode-dev-iaa0b8`
-**상태:** 플랜 완결 + PR 오픈. 다음 = **Wave T0.1**(마이그레이션 작성). 라이브 DDL(T0.3)은 사용자 승인 후에만.
+**개발 브랜치:** `claude/tour-mode-iql6ho` (플랜 문서 브랜치 `claude/tour-mode-dev-iaa0b8`를 머지해 구현 진행)
+**상태:** Wave T0 구현 완료(마이그레이션 파일 M-1~M-6, token/access/geo/time/realtime 라이브러리, 라우트 리팩터+KST 수정, AI 라우터 — 테스트 109개). **T0.3 라이브 DDL만 사용자 승인 대기.** 다음 = T0.3 승인 → Wave T1.
 
 ## 진행 중인 대규모 작업: 어드민 대시보드 전면 개편
 

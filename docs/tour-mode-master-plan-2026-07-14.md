@@ -2,7 +2,7 @@
 
 **작성일:** 2026-07-14
 **브랜치:** `claude/tour-mode-dev-iaa0b8`
-**상태:** 플랜 확정 대기 (§K 오픈 퀘스천 사용자 결정 후 Wave T0 착수)
+**상태:** Wave T0 구현 완료(T0.3 라이브 적용만 사용자 승인 대기). 다음 = **T0.3 승인 → Wave T1**. 구현 커밋은 세션 브랜치 `claude/tour-mode-iql6ho`(플랜 문서 브랜치를 머지해 진행).
 **단일 기준 문서:** 이 파일. 투어모드 관련 모든 작업은 이 문서의 웨이브·티켓 번호를 기준으로 진행/보고한다.
 
 ---
@@ -250,15 +250,15 @@ hooks/
 > 표기: `[티켓] 작업 — 산출물 — 완료 기준(AC)`. 웨이브 내 티켓은 위→아래 순서 의존. 각 웨이브 종료 시 커밋+푸시.
 
 ### Wave T0 — 기반 공사 (마이그레이션·공용 lib) 【9티켓】
-- **T0.1** M-1~M-5 마이그레이션 작성(`supabase/migrations/`) — AC: 로컬 SQL 린트 통과, 전부 IF NOT EXISTS/additive.
-- **T0.2** M-6 RLS·publication 마이그레이션 — AC: anon 정책 0개 유지 확인 주석 포함.
+- **T0.1** M-1~M-5 마이그레이션 작성(`supabase/migrations/`) — AC: 로컬 SQL 린트 통과, 전부 IF NOT EXISTS/additive. ✅ 완료(b855675) — invites는 §O-3 가이드 tour-date 스코프와 §C 스케치의 불일치를 CHECK 제약(customer=booking_id / guide=tour_id+tour_date)으로 정합화. tour_translation_cache(§M-2 ④)도 이 마이그레이션에 포함.
+- **T0.2** M-6 RLS·publication 마이그레이션 — AC: anon 정책 0개 유지 확인 주석 포함. ✅ 완료(b855675)
 - **T0.3** 라이브 적용(`mcp apply_migration`, 사용자 승인 후) + `get_advisors` 재실행 — AC: 신규 advisor 경고 0.
-- **T0.4** `lib/tour-room/token.ts` — sign/verify/revoke-check, 손님(booking)·가이드(tour-date) 2종 스코프(§O-3), exp=투어일+24h, 시크릿 듀얼 검증(§O-13) — AC: 유닛테스트(만료·변조·역할·스코프·로테이션) 통과.
-- **T0.5** `lib/tour-room/access.ts` — `resolveRoomActor(req, bookingId)` 단일 인가 함수 + 룸세션 서명 발급/검증 — AC: admin/owner/merchant/토큰/게스트 5경로 유닛테스트.
-- **T0.6** `lib/tour-room/geo.ts` — haversine·히스테리시스·accuracy필터 순수함수 — AC: 경계값 테스트(반경±1m, 정확도 100m).
-- **T0.7** `lib/tour-room/realtime.ts` + `time.ts` — AC: broadcast 헬퍼 타입 안전, kstToday 테스트.
-- **T0.8** 기존 3개 라우트(messages/events/spot-events)를 access.ts로 리팩터(동작 불변) + `tour-mode/bookings`의 UTC→KST 수정 — AC: 기존 요청 계약 무변경(회귀 테스트).
-- **T0.9** `lib/ai/router.ts` 프로바이더 라우터(§M-1) — OpenAI 호환 chat-completions 클라이언트에 base_url/model/key를 env로 주입(Gemini/DeepSeek/OpenAI 3사 스위칭), `translateTextForLocales`를 라우터 경유로 교체 + 번역 메모리 캐시(§M-2 ④) — AC: env만 바꿔 3사 전환 유닛테스트, 캐시 히트 시 LLM 호출 0.
+- **T0.4** `lib/tour-room/token.ts` — sign/verify/revoke-check, 손님(booking)·가이드(tour-date) 2종 스코프(§O-3), exp=투어일+24h, 시크릿 듀얼 검증(§O-13) — AC: 유닛테스트(만료·변조·역할·스코프·로테이션) 통과. ✅ 완료(821f0c5)
+- **T0.5** `lib/tour-room/access.ts` — `resolveRoomActor(req, bookingId)` 단일 인가 함수 + 룸세션 서명 발급/검증 — AC: admin/owner/merchant/토큰/게스트 5경로 유닛테스트. ✅ 완료(bb6097a)
+- **T0.6** `lib/tour-room/geo.ts` — haversine·히스테리시스·accuracy필터 순수함수 — AC: 경계값 테스트(반경±1m, 정확도 100m). ✅ 완료(e79c827)
+- **T0.7** `lib/tour-room/realtime.ts` + `time.ts` — AC: broadcast 헬퍼 타입 안전, kstToday 테스트. ✅ 완료(b9bee71)
+- **T0.8** 기존 3개 라우트(messages/events/spot-events)를 access.ts로 리팩터(동작 불변) + `tour-mode/bookings`의 UTC→KST 수정 — AC: 기존 요청 계약 무변경(회귀 테스트). ✅ 완료(7016f4a) — 회귀 19케이스. 부수 개선: messages POST가 STT 호출 전에 인가(비인가자 STT 비용 소진 차단, 응답 계약 동일).
+- **T0.9** `lib/ai/router.ts` 프로바이더 라우터(§M-1) — OpenAI 호환 chat-completions 클라이언트에 base_url/model/key를 env로 주입(Gemini/DeepSeek/OpenAI 3사 스위칭), `translateTextForLocales`를 라우터 경유로 교체 + 번역 메모리 캐시(§M-2 ④) — AC: env만 바꿔 3사 전환 유닛테스트, 캐시 히트 시 LLM 호출 0. ✅ 완료(ab7fd8b) — 타임아웃은 caption 3s/기타 8s 기본(TOUR_AI_*_TIMEOUT_MS로 조정). 스킵 휴리스틱(§M-2 ⑤)도 함께 구현.
 
 ### Wave T1 — 입장·룸 셸·텍스트 채팅 【11티켓】
 - **T1.1** `POST join` API — 참가자 upsert + 스냅샷 — AC: 5개 인가 경로 통합테스트.
