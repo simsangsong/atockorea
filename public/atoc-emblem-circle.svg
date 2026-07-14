@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" fill="none" role="img" aria-label="AtoC Korea — Your Korea, Direct from Locals">
+  <defs>
+    <!-- Dark navy body, subtle top-left light to bottom-right depth -->
+    <linearGradient id="emBody" x1="120" y1="80" x2="500" y2="540" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#26324a"/>
+      <stop offset="45%" stop-color="#161e2c"/>
+      <stop offset="100%" stop-color="#0c121b"/>
+    </linearGradient>
+    <!-- Soft sheen across the upper face -->
+    <radialGradient id="emSheen" cx="38%" cy="28%" r="75%" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.10"/>
+      <stop offset="45%" stop-color="#ffffff" stop-opacity="0.02"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Brushed-silver stroke for the brand mark -->
+    <linearGradient id="emMark" x1="235" y1="165" x2="365" y2="295" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="55%" stop-color="#e4e9ef"/>
+      <stop offset="100%" stop-color="#b9c3cf"/>
+    </linearGradient>
+    <!-- Bronze hairline ring -->
+    <linearGradient id="emRing" x1="120" y1="120" x2="480" y2="480" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#c9b07a"/>
+      <stop offset="50%" stop-color="#8c7647"/>
+      <stop offset="100%" stop-color="#c9b07a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Disc -->
+  <circle cx="300" cy="300" r="288" fill="url(#emBody)"/>
+  <circle cx="300" cy="300" r="288" fill="url(#emSheen)"/>
+  <!-- Bronze hairline ring -->
+  <circle cx="300" cy="300" r="262" fill="none" stroke="url(#emRing)" stroke-width="1.4" stroke-opacity="0.75"/>
+
+  <!-- Brand mark: rounded square + upward caret -->
+  <g>
+    <rect x="231" y="181" width="138" height="138" rx="38" fill="none" stroke="url(#emMark)" stroke-width="6.5"/>
+    <path d="M262 281 L300 225 L338 281" fill="none" stroke="url(#emMark)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Wordmark: AtoC (bright) + Korea (muted), serif -->
+  <text x="300" y="430" text-anchor="middle" font-family="Georgia, 'Times New Roman', 'Noto Serif', serif" font-size="74" font-weight="600">
+    <tspan fill="#eef2f6">AtoC</tspan><tspan fill="#9aabbf"> Korea</tspan>
+  </text>
+</svg>
