@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
-import { requestGate, clientIpKey } from '@/lib/durable-rate-limit';
-import { generateSpeechMp3 } from '@/lib/openai-server';
+import { requestGate } from '@/lib/durable-rate-limit';
 import { ensureRoom, resolveRoomActor } from '@/lib/tour-room/access';
+import { ensureRoomTts, TTS_BUCKET, type TtsStorageClient } from '@/lib/tour-room/tts-server';
 import { normalizeRoomLocale } from '@/lib/tour-room/snapshot';
 
 export const dynamic = 'force-dynamic';
@@ -23,9 +23,6 @@ export const dynamic = 'force-dynamic';
  * header-less consumers work too. The generation path (cache miss) is
  * rate-limited; cache hits are not.
  */
-
-const TTS_BUCKET = process.env.SUPABASE_TOUR_AUDIO_BUCKET || 'tour-audio';
-const MAX_TTS_TEXT_CHARS = 1200;
 
 export async function GET(
   req: NextRequest,
@@ -84,30 +81,11 @@ export async function GET(
       return NextResponse.json({ error: 'Message not found in this room' }, { status: 404 });
     }
 
-    const translations = (message.translations ?? {}) as Record<string, string>;
-    const text = (translations[locale] || message.source_text || '').trim().slice(0, MAX_TTS_TEXT_CHARS);
-    if (!text) {
+    const url = await ensureRoomTts(supabase as unknown as TtsStorageClient, room.id, message, locale);
+    if (!url) {
       return NextResponse.json({ error: 'Message has no speakable text' }, { status: 422 });
     }
-
-    const audio = await generateSpeechMp3(text, locale);
-    const storagePath = `tour-room-tts/${room.id}/${messageId}-${locale}.mp3`;
-    const { error: uploadError } = await supabase.storage
-      .from(TTS_BUCKET)
-      .upload(storagePath, Buffer.from(audio), { contentType: 'audio/mpeg', upsert: true });
-    if (uploadError) throw uploadError;
-
-    // Upsert — a concurrent request may have raced us; (message_id, locale)
-    // is UNIQUE and both writers uploaded identical content to the same path.
-    await supabase
-      .from('tour_room_tts_cache')
-      .upsert(
-        { message_id: messageId, locale, storage_path: storagePath },
-        { onConflict: 'message_id,locale' },
-      );
-
-    const { data: pub } = supabase.storage.from(TTS_BUCKET).getPublicUrl(storagePath);
-    return NextResponse.json({ url: pub.publicUrl, cached: false, durationMs: null });
+    return NextResponse.json({ url, cached: false, durationMs: null });
   } catch (error) {
     console.error('GET /api/tour-rooms/[bookingId]/tts error:', error);
     return NextResponse.json(

@@ -5,6 +5,7 @@ import { ensureRoom, resolveRoomActor, type RoomActor, type RoomBooking } from '
 import { broadcastToRoom } from '@/lib/tour-room/realtime';
 import { getParticipantLocales } from '@/lib/tour-room/snapshot';
 import { getQuickReplyPreset } from '@/lib/tour-room/quickReplies';
+import { pregenerateGuideNoticeTts, type TtsStorageClient } from '@/lib/tour-room/tts-server';
 
 export const dynamic = 'force-dynamic';
 
@@ -198,6 +199,15 @@ export async function POST(
     // D-1/§O-7: push the committed row to the room channel; best-effort by
     // design — clients recover any gap via the after-cursor resync.
     await broadcastToRoom(room, 'message', { message });
+
+    // §O-2 (T2.9): pre-generate TTS for participants whose devices reported
+    // tts_capable=false, so their first listen has no generation latency.
+    // Fire-and-forget — on-demand /tts remains the safety net.
+    if (senderRole === 'guide' || senderRole === 'admin') {
+      void pregenerateGuideNoticeTts(supabase as unknown as TtsStorageClient, room.id, message).catch(
+        () => undefined,
+      );
+    }
 
     return NextResponse.json({ room, message }, { status: 201 });
   } catch (error) {
