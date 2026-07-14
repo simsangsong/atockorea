@@ -5,6 +5,7 @@ import { sendEmail } from '@/lib/email';
 import { ensureRoom, resolveRoomActor } from '@/lib/tour-room/access';
 import { broadcastToRoom } from '@/lib/tour-room/realtime';
 import { renderSpotEventTranslations } from '@/lib/tour-room/spotContent';
+import { sendOpsPush } from '@/lib/tour-ops/push';
 
 export const dynamic = 'force-dynamic';
 
@@ -97,6 +98,13 @@ export async function POST(
 ${note ? `<p>Note: ${note}</p>` : ''}
 ${mapsLink ? `<p>One-shot location: <a href="${mapsLink}">${mapsLink}</a></p>` : '<p>No location attached.</p>'}
 <p>Ops console: ${(process.env.NEXT_PUBLIC_APP_URL || 'https://atockorea.com').replace(/\/$/, '')}/admin/tour-ops</p>`,
+    }).catch(() => undefined);
+
+    // W6.2 — Web Push to ops subscribers (closed-app coverage); best-effort.
+    void sendOpsPush({
+      title: `🆘 SOS — ${actor.displayName}`,
+      body: note || (hasLocation ? '위치 포함 SOS 발생' : '위치 없는 SOS 발생'),
+      tag: `sos-${room.id}`,
     }).catch(() => undefined);
 
     return NextResponse.json({ ok: true, message }, { status: 201 });
