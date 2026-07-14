@@ -49,8 +49,8 @@
   "headlineLine1": "濟州全島精華一日遊",
   "headlineLine2": "一日遊",
   "price": {
-    "amountLabel": "93",
-    "salePriceUsd": 93,
+    "amountLabel": "80",
+    "salePriceUsd": 80,
     "currency": "USD",
     "per": "person"
   },
@@ -1293,8 +1293,8 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id 於執行時從 Supabase／環境變數解析；不屬於靜態 JSONB 的一部分。",
     "price": {
-      "amountLabel": "93",
-      "salePriceUsd": 93,
+      "amountLabel": "80",
+      "salePriceUsd": 80,
       "currency": "USD",
       "per": "person"
     }
