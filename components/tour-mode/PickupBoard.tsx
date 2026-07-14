@@ -63,14 +63,27 @@ const COPY: Record<
 
 const PICKUP_PRESET_KEYS = ['arrived', 'running_late'] as const;
 
+const ONBOARD_COPY: Record<RoomLocale, { button: string; done: string }> = {
+  en: { button: "🚌 I'm on the bus", done: '🚌 On board ✓' },
+  ko: { button: '🚌 탑승했어요', done: '🚌 탑승 완료 ✓' },
+  ja: { button: '🚌 乗車しました', done: '🚌 乗車済み ✓' },
+  es: { button: '🚌 Ya estoy en el bus', done: '🚌 A bordo ✓' },
+  zh: { button: '🚌 我已上车', done: '🚌 已上车 ✓' },
+};
+
 export default function PickupBoard({
   state,
   locale,
   onSendPreset,
+  onboardAcked = false,
+  onOnboardAck,
 }: {
   state: PickupBoardState;
   locale: RoomLocale;
   onSendPreset: (preset: QuickReplyPreset) => void;
+  /** T6.4 — headcount ack; button hides once acknowledged. */
+  onboardAcked?: boolean;
+  onOnboardAck?: () => void;
 }) {
   if (!state.visible || !state.myStop) return null;
   const copy = COPY[locale];
@@ -112,6 +125,24 @@ export default function PickupBoard({
             {preset.emoji} {preset.text[locale]}
           </button>
         ))}
+        {onOnboardAck &&
+          (onboardAcked ? (
+            <span
+              className="flex-1 rounded-xl bg-emerald-500 py-2 text-center text-[12px] font-semibold text-white"
+              data-testid="onboard-done"
+            >
+              {ONBOARD_COPY[locale].done}
+            </span>
+          ) : (
+            <button
+              type="button"
+              onClick={onOnboardAck}
+              className="flex-1 rounded-xl bg-white py-2 text-[12px] font-medium text-emerald-700 shadow-sm ring-1 ring-emerald-200 active:bg-emerald-50 dark:bg-gray-900 dark:text-emerald-300 dark:ring-emerald-900"
+              data-testid="onboard-ack"
+            >
+              {ONBOARD_COPY[locale].button}
+            </button>
+          ))}
       </div>
       {state.mode === 'live' && (
         <p className="mt-1.5 text-[11px] text-gray-400">{copy.mapHint}</p>

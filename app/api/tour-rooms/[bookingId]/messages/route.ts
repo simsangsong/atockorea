@@ -5,6 +5,7 @@ import { ensureRoom, resolveRoomActor, type RoomActor, type RoomBooking } from '
 import { broadcastToRoom } from '@/lib/tour-room/realtime';
 import { getParticipantLocales } from '@/lib/tour-room/snapshot';
 import { getQuickReplyPreset } from '@/lib/tour-room/quickReplies';
+import { renderSpotEventTranslations } from '@/lib/tour-room/spotContent';
 import { pregenerateGuideNoticeTts, type TtsStorageClient } from '@/lib/tour-room/tts-server';
 
 export const dynamic = 'force-dynamic';
@@ -83,6 +84,7 @@ export async function POST(
     let audioFile: File | null = null;
     let sttPrompt = '';
     let presetKey: string | null = null;
+    let ackKind: string | null = null;
     let messageMetadata: Record<string, unknown> = {};
 
     const contentType = req.headers.get('content-type') ?? '';
@@ -102,6 +104,7 @@ export async function POST(
       const body = await req.json().catch(() => ({}));
       text = typeof body.text === 'string' ? body.text.trim() : '';
       presetKey = typeof body.presetKey === 'string' ? body.presetKey : null;
+      ackKind = typeof body.ackKind === 'string' ? body.ackKind : null;
       targetLocalesRaw = body.targetLocales;
       guestEmail = String(body.contactEmail || '');
       guestName = String(body.contactName || '');
@@ -145,6 +148,16 @@ export async function POST(
       };
     }
 
+    // T6.4 — onboard headcount ack: zero-LLM template, tallied by the guide
+    // console via metadata.kind (schema unchanged, AC).
+    let pretranslated: TranslationResult | null = null;
+    if (ackKind === 'onboard') {
+      const bundle = renderSpotEventTranslations('onboard_ack', {});
+      text = bundle.source_text;
+      messageMetadata = { ...messageMetadata, kind: 'onboard_ack' };
+      pretranslated = { source_locale: bundle.source_locale, translations: bundle.translations };
+    }
+
     // T1.7 (§M-2 ②): quick-reply presets are pre-translated constants — the
     // client sends only the key, the server owns the content, and no LLM call
     // is made. Works even when every AI provider is down.
@@ -167,6 +180,8 @@ export async function POST(
     let translation: TranslationResult;
     if (preset) {
       translation = { source_locale: 'en', translations: { ...preset.text } };
+    } else if (pretranslated) {
+      translation = pretranslated;
     } else {
       try {
         translation = await translateTextForLocales(text, targetLocales);

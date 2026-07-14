@@ -28,7 +28,16 @@ export interface SpotArrivalContent {
   smartNotes?: { photo?: string; facilities?: string; tip?: string };
 }
 
-export type SpotEventKind = 'arrived' | 'arrived_audio' | 'audio_played' | 'meeting_notice' | 'meeting_notice_timed';
+export type SpotEventKind =
+  | 'arrived'
+  | 'arrived_audio'
+  | 'audio_played'
+  | 'meeting_notice'
+  | 'meeting_notice_timed'
+  | 'free_time'
+  | 'free_time_cancelled'
+  | 'onboard_ack'
+  | 'sos';
 
 /** {spot}/{time}/{point} interpolate verbatim. */
 const TEMPLATES: Record<SpotEventKind, Record<RoomLocale, string>> = {
@@ -66,6 +75,34 @@ const TEMPLATES: Record<SpotEventKind, Record<RoomLocale, string>> = {
     ja: '集合時間は{time}です。{point}にお集まりください。',
     es: 'La hora de reunión es {time}. Por favor, reúnanse en {point}.',
     zh: '集合时间为{time}。请在{point}集合。',
+  },
+  free_time: {
+    en: 'Free time until {time} — please be back at {point} by then.',
+    ko: '{time}까지 자유시간이에요 — 시간에 맞춰 {point}(으)로 돌아와 주세요.',
+    ja: '{time}まで自由時間です — 時間までに{point}へお戻りください。',
+    es: 'Tiempo libre hasta las {time} — vuelve a {point} para entonces.',
+    zh: '自由活动至{time} — 请届时回到{point}。',
+  },
+  free_time_cancelled: {
+    en: 'Free time has ended — please gather at {point} now.',
+    ko: '자유시간이 종료됐어요 — 지금 {point}(으)로 모여주세요.',
+    ja: '自由時間は終了しました — 今すぐ{point}にお集まりください。',
+    es: 'El tiempo libre ha terminado — reúnanse en {point} ahora.',
+    zh: '自由活动结束 — 请立即在{point}集合。',
+  },
+  onboard_ack: {
+    en: "I'm on the bus. 🚌",
+    ko: '버스에 탑승했어요. 🚌',
+    ja: 'バスに乗りました。🚌',
+    es: 'Ya estoy en el bus. 🚌',
+    zh: '我已上车。🚌',
+  },
+  sos: {
+    en: '🆘 EMERGENCY — I need help right now. Please contact me immediately.',
+    ko: '🆘 긴급 — 지금 도움이 필요해요. 즉시 연락 부탁드립니다.',
+    ja: '🆘 緊急 — 今すぐ助けが必要です。至急ご連絡ください。',
+    es: '🆘 EMERGENCIA — Necesito ayuda ahora mismo. Contáctenme de inmediato.',
+    zh: '🆘 紧急 — 我现在需要帮助，请立即联系我。',
   },
 };
 

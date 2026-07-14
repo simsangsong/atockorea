@@ -6,11 +6,18 @@
  * one-tap tel: links). 5-locale copy, zero LLM (§M-2 ①).
  */
 
-import { useState } from 'react';
+import { useState, type ReactNode } from 'react';
 import { EMERGENCY_CONTACTS, EMERGENCY_TITLE } from '@/lib/tour-room/emergency';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
-export default function EmergencyCard({ locale }: { locale: RoomLocale }) {
+export default function EmergencyCard({
+  locale,
+  sos,
+}: {
+  locale: RoomLocale;
+  /** T7.3 — the SOS control renders inside the expanded card. */
+  sos?: ReactNode;
+}) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -24,6 +31,7 @@ export default function EmergencyCard({ locale }: { locale: RoomLocale }) {
         <span className="text-[13px] font-semibold text-red-600">🆘 {EMERGENCY_TITLE[locale]}</span>
         <span className="text-[12px] text-gray-400">{open ? '▲' : '▼'}</span>
       </button>
+      {open && sos && <div className="px-4 pb-2">{sos}</div>}
       {open && (
         <ul className="space-y-2 px-4 pb-3">
           {EMERGENCY_CONTACTS.map((contact) => (

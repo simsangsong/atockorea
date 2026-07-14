@@ -65,6 +65,7 @@ export default function RoomShell({
   settings,
   banner,
   map,
+  sos,
   theme = 'light',
 }: {
   title: string;
@@ -81,6 +82,8 @@ export default function RoomShell({
   banner?: ReactNode;
   /** T3.3 — map tab content; the "coming soon" placeholder shows when absent. */
   map?: ReactNode;
+  /** T7.3 — the SOS control inside the emergency card. */
+  sos?: ReactNode;
   /** Resolved theme — 'system' is resolved by the caller before this prop. */
   theme?: 'light' | 'dark';
 }) {
@@ -103,7 +106,7 @@ export default function RoomShell({
         </header>
 
         <div className="mt-3">
-          <EmergencyCard locale={locale} />
+          <EmergencyCard locale={locale} sos={sos} />
         </div>
 
         {banner && <div className="mt-2">{banner}</div>}
