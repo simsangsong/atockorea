@@ -49,8 +49,8 @@
   "headlineLine1": "Jeju Completo",
   "headlineLine2": "Hitos del Día",
   "price": {
-    "amountLabel": "93",
-    "salePriceUsd": 93,
+    "amountLabel": "80",
+    "salePriceUsd": 80,
     "currency": "USD",
     "per": "person"
   },
@@ -1293,8 +1293,8 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id se resuelve en tiempo de ejecución desde Supabase / env; no forma parte del JSONB estático.",
     "price": {
-      "amountLabel": "93",
-      "salePriceUsd": 93,
+      "amountLabel": "80",
+      "salePriceUsd": 80,
       "currency": "USD",
       "per": "person"
     }
