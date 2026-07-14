@@ -13,11 +13,12 @@
 // already uses, so the result UI is consistent. The sheet adds: handle
 // bar, drag-to-dismiss, escape key, backdrop tap, focus trap entry.
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useHomeV2Match } from "@/components/home/v2/HomeV2MatchProvider";
 import { useMediaQuery } from "@/components/home/v2/use-media-query";
+import { useTranslations } from "@/lib/i18n";
 import { getExperimentVariantAsync } from "@/src/design/analytics";
 
 const BestMatchPreview = dynamic(
@@ -31,6 +32,9 @@ const BestMatchPreview = dynamic(
 export function MatcherBottomSheet() {
   const { phase, resetMatchToIdle } = useHomeV2Match();
   const reduceMotion = useReducedMotion();
+  const t = useTranslations("home");
+  const sheetRef = useRef<HTMLDivElement>(null);
+  const restoreFocusRef = useRef<HTMLElement | null>(null);
 
   const [variant, setVariant] = useState<string | null>(null);
   const isMobile = useMediaQuery("(max-width: 767px)");
@@ -77,6 +81,19 @@ export function MatcherBottomSheet() {
 
   const open = variant === "B" && isMobile && phase !== "idle";
 
+  // Focus management (audit 2026-07-14 B6) — move focus into the dialog on
+  // open and restore it to the invoker on close, honoring the aria-modal
+  // contract this sheet declares.
+  useEffect(() => {
+    if (open) {
+      restoreFocusRef.current = (document.activeElement as HTMLElement) ?? null;
+      sheetRef.current?.focus();
+      return;
+    }
+    restoreFocusRef.current?.focus?.();
+    restoreFocusRef.current = null;
+  }, [open]);
+
   return (
     <AnimatePresence>
       {open ? (
@@ -93,9 +110,11 @@ export function MatcherBottomSheet() {
           />
           <motion.div
             key="sheet"
+            ref={sheetRef}
+            tabIndex={-1}
             role="dialog"
             aria-modal="true"
-            aria-label="매처 결과 시트"
+            aria-label={t("premium.v2.matcherSheet.sheetLabel")}
             className="fixed inset-x-0 bottom-0 z-50 flex max-h-[80vh] min-h-[40vh] flex-col rounded-t-3xl bg-white shadow-2xl"
             style={{ height: "70vh" }}
             initial={reduceMotion ? { y: 0 } : { y: "100%" }}
@@ -118,7 +137,7 @@ export function MatcherBottomSheet() {
             <div className="flex flex-col items-center pt-3 pb-1">
               <div className="h-1.5 w-12 rounded-full bg-slate-300" aria-hidden />
               <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-400">
-                아래로 당겨 닫기
+                {t("premium.v2.matcherSheet.pullToClose")}
               </p>
             </div>
             <div className="flex-1 overflow-y-auto overscroll-contain">

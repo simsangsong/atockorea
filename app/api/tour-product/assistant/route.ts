@@ -1,5 +1,5 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse, after } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { z } from "zod";
@@ -684,15 +684,17 @@ async function finalizeAssistantTurn(
   }
 
   // Roll the cross-session memory forward (Track 3.2). Only for intents that
-  // carry durable preferences, and never in debug mode. Best-effort and awaited
-  // (serverless can't reliably finish background work after the response).
+  // carry durable preferences, and never in debug mode. Runs via after() so
+  // the second Gemini call (summary) never blocks the user-facing reply —
+  // Vercel keeps after() work alive post-response (audit 2026-07-14 B5;
+  // previously awaited on the critical path).
   if (
     memoryEnabled &&
     qaSb &&
     !debugNoSideEffects &&
     isMemoryRelevantIntent(activeIntent.intent)
   ) {
-    await updateSessionMemory(qaSb, {
+    after(() => updateSessionMemory(qaSb, {
       key: memoryKey,
       priorSummary: priorMemory?.summary ?? null,
       turnCount: priorMemory?.turnCount ?? 0,
@@ -700,7 +702,9 @@ async function finalizeAssistantTurn(
       assistantReply: replyText,
       genAI,
       modelName,
-    });
+    }).catch((e: unknown) => {
+      console.error("[tour-product/assistant] memory roll-forward error:", (e as Error)?.message);
+    }));
   }
 
   return {

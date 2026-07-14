@@ -45,7 +45,7 @@ const TourProductAiAssistantWidget = dynamic(
     ),
   { ssr: false, loading: () => null },
 );
-import { HaenyeoStatusButton } from "@/components/product-tour-static/_shared/HaenyeoStatusButton";
+import { TourLiveStrip } from "@/components/product-tour-static/_shared/TourLiveStrip";
 import { PlatformCompareBlock } from "@/components/tour/PlatformCompareBlock";
 import { getTourCompareLinks } from "@/lib/tour/platform-compare-registry";
 import { TourExternalReviewsSection } from "@/components/product-tour-static/_shared/TourExternalReviewsSection";
@@ -228,17 +228,17 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
               single reassurance line (§F-1: trust copy appears exactly twice). */}
           <div className="mx-auto max-w-2xl px-4 pb-1 pt-2 sm:px-5">
             <div className="flex items-center gap-x-3.5 overflow-x-auto whitespace-nowrap scrollbar-hide">
-              <span className="flex items-center gap-1.5 text-[11.5px] font-semibold text-emerald-800">
-                <ShieldCheck className="h-3.5 w-3.5 flex-shrink-0 text-emerald-600" strokeWidth={2.25} />
+              <span className="flex items-center gap-1.5 text-[11.5px] font-semibold text-[color:var(--tpc-jade-deep)]">
+                <ShieldCheck className="h-3.5 w-3.5 flex-shrink-0 text-[color:var(--tpc-jade-full)]" strokeWidth={2.25} />
                 {t("tour.freeCancellation")}
               </span>
               <span aria-hidden className="h-1 w-1 flex-shrink-0 rounded-full bg-slate-300" />
-              <span className="flex items-center gap-1.5 text-[11.5px] font-semibold text-amber-800">
-                <Zap className="h-3.5 w-3.5 flex-shrink-0 text-amber-600" strokeWidth={2.25} />
+              <span className="flex items-center gap-1.5 text-[11.5px] font-semibold text-[color:var(--tpc-amber-deep)]">
+                <Zap className="h-3.5 w-3.5 flex-shrink-0 text-[color:var(--tpc-amber-full)]" strokeWidth={2.25} />
                 {t("tour.instantConfirmation")}
               </span>
               <span aria-hidden className="h-1 w-1 flex-shrink-0 rounded-full bg-slate-300" />
-              <span className="flex items-center gap-1.5 text-[11.5px] font-semibold text-sky-900">
+              <span className="flex items-center gap-1.5 text-[11.5px] font-semibold text-[color:var(--tpc-sapphire-deep)]">
                 <Headphones className="h-3.5 w-3.5 flex-shrink-0 text-primary" strokeWidth={2.25} />
                 {t("tour.customerSupport")}
               </span>
@@ -278,13 +278,19 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
           </div>
         </section>
 
-        {(vm as { liveStatusSection?: string }).liveStatusSection === "haenyeo" ? (
-          <section id="haenyeo-status" className="mx-3 mt-4 lg:mx-0">
-            <div className="mx-auto max-w-2xl px-4 sm:px-5 pt-2 pb-2">
-              <HaenyeoStatusButton locale={locale} variant="section" autoFetch />
-            </div>
-          </section>
-        ) : null}
+        {/* W5.1 — "Live from Korea" strip: today's weather + (haenyeo tours)
+            show status + live dot + KST. Absorbs the old standalone
+            haenyeo-status section; client-only idle fetch via the shared
+            forecast cache (network delta 0), fixed min-height (CLS 0). */}
+        <section id="live" className="mx-3 mt-4 lg:mx-0">
+          <div className="mx-auto max-w-2xl px-4 sm:px-5 pt-2 pb-2">
+            <TourLiveStrip
+              locale={locale}
+              tourProductSlug={tourProductSlug}
+              showHaenyeo={(vm as { liveStatusSection?: string }).liveStatusSection === "haenyeo"}
+            />
+          </div>
+        </section>
 
         <section
           id="itinerary"

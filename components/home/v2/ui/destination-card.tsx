@@ -46,14 +46,17 @@ export function DestinationCard({
     <Link
       href={href}
       onClick={onClick}
-      className="group relative block aspect-[4/5] overflow-hidden rounded-card shadow-2 transition-[box-shadow,transform] duration-300 ease-out hover:-translate-y-0.5 hover:shadow-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/35 motion-reduce:transition-shadow motion-reduce:hover:translate-y-0"
+      /* 2026-07-14 owner: destination cards were too big — the 4:5 portrait
+         "cover" ratio is compacted to 4:3 landscape. The editorial treatment
+         (film grain / vignette / serif title) is preserved deliberately. */
+      className="group relative block aspect-[4/3] overflow-hidden rounded-card shadow-2 transition-[box-shadow,transform] duration-300 ease-out hover:-translate-y-0.5 hover:shadow-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/35 motion-reduce:transition-shadow motion-reduce:hover:translate-y-0"
     >
       <div className="absolute inset-0">
         <Image
           src={imageSrc}
           alt={imageAlt}
           fill
-          sizes="(max-width: 768px) 60vw, 33vw"
+          sizes="(max-width: 768px) 46vw, 33vw"
           className="object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.04] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
           style={{ filter: "saturate(1.14) contrast(1.10) brightness(0.98)" }}
         />
@@ -99,7 +102,7 @@ export function DestinationCard({
 
       <div className="absolute inset-x-0 bottom-0 px-4 pb-4 md:px-5 md:pb-5">
         <h3
-          className="font-magazine-serif-ko text-[1.75rem] font-light leading-[0.95] tracking-[0.02em] text-white md:text-[2.1rem]"
+          className="font-magazine-serif-ko text-[1.35rem] font-light leading-[0.95] tracking-[0.02em] text-white md:text-[1.7rem]"
           style={{ textShadow: "0 3px 28px rgba(0,0,0,0.55), 0 1px 4px rgba(0,0,0,0.6)" }}
         >
           {name}

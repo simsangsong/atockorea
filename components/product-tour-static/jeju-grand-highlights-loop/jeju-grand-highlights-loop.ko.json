@@ -49,8 +49,8 @@
   "headlineLine1": "제주 그랜드 하이라이트 일일 투어",
   "headlineLine2": "투어",
   "price": {
-    "amountLabel": "93",
-    "salePriceUsd": 93,
+    "amountLabel": "80",
+    "salePriceUsd": 80,
     "currency": "USD",
     "per": "person"
   },
@@ -1293,8 +1293,8 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id는 런타임 시 Supabase / 환경 변수에서 확인되며, 정적 JSONB의 일부가 아닙니다.",
     "price": {
-      "amountLabel": "93",
-      "salePriceUsd": 93,
+      "amountLabel": "80",
+      "salePriceUsd": 80,
       "currency": "USD",
       "per": "person"
     }

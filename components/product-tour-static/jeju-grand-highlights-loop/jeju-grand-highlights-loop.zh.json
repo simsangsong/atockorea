@@ -49,8 +49,8 @@
   "headlineLine1": "济州全岛精华一日游",
   "headlineLine2": "一日游",
   "price": {
-    "amountLabel": "93",
-    "salePriceUsd": 93,
+    "amountLabel": "80",
+    "salePriceUsd": 80,
     "currency": "USD",
     "per": "person"
   },
@@ -1293,8 +1293,8 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id 在运行时从 Supabase / 环境变量中解析；不属于静态 JSONB 的一部分。",
     "price": {
-      "amountLabel": "93",
-      "salePriceUsd": 93,
+      "amountLabel": "80",
+      "salePriceUsd": 80,
       "currency": "USD",
       "per": "person"
     }
