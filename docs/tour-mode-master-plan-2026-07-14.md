@@ -13,7 +13,8 @@
 DB 테이블 9개, API 라우트 6개, STT(폴백 체인)·다국어 번역(TTT)·TTS 서버 함수가 모두 동작 상태다.
 **없는 것**은 (1) 손님/가이드가 실제로 보는 투어룸 화면, (2) 실시간 위치공유, (3) 토큰 기반 룸 초대 링크,
 (4) 지오펜스 → 관광지 풀 설명 자동 게시, (5) 관제센터(admin) 콘솔, (6) 확장 가능한 실시간 전송 계층이다.
-즉 **"밑바닥부터"가 아니라 "골격 위에 살 붙이기"** 프로젝트이며, 아래 8개 웨이브 / 47개 나노 티켓으로 오류 없이 완성한다.
+즉 **"밑바닥부터"가 아니라 "골격 위에 살 붙이기"** 프로젝트이며, 아래 8개 웨이브 / 51개 나노 티켓으로 오류 없이 완성한다.
+AI 비용은 §M 저비용 모델 전략(Gemini Flash-Lite/DeepSeek 중심 + 기기 내장 TTS + 템플릿 사전번역)으로 **투어 1건당 $0.1 미만**을 목표로 한다. 실시간 통역 방식은 §N.
 
 ---
 
@@ -101,8 +102,9 @@ DB 테이블 9개, API 라우트 6개, STT(폴백 체인)·다국어 번역(TTT)
   3. `content`가 비면 `poi_key`로 POI KB(visitBasics/convenience/smartNotes)를 폴백, 그것도 없으면 기존 `description` 단문.
 - 도착 시 룸에 `metadata.kind='spot_arrival'` 시스템 메시지(이미 존재) + **룸 UI가 이 메시지를 풀 설명 카드(드로어 축약판)로 렌더** + "오디오 가이드 듣기" 버튼(TTS 또는 사전 생성 audio_url).
 
-### D-6. TTS: 온디맨드 + Storage 캐시
-- `GET /api/tour-rooms/[bookingId]/tts?messageId=&locale=` → (1) `tour_audio_assets`류 캐시 테이블 조회 → 있으면 Storage 서명 URL 302 → 없으면 `generateSpeechMp3` 호출 → Supabase Storage `tour-room-audio/` 업로드 → 캐시 기록 → URL 반환.
+### D-6. TTS: 기기 내장 speechSynthesis(기본, $0) + 서버 TTS는 캐시 전용 (§M-3 참조)
+- **1차: 브라우저 `speechSynthesis`(Web Speech API)** — 온디바이스, 무료, 5개 로케일 음성 모두 iOS/Android 기본 탑재. 일반 메시지 낭독은 전부 이걸로 처리(서버 호출 0).
+- **2차(서버 TTS, 캐시 전용):** 스팟 오디오 가이드·가이드 공지 등 "품질이 중요한 고정 콘텐츠"만 `GET /api/tour-rooms/[bookingId]/tts?messageId=&locale=` → 캐시 테이블 조회 → 있으면 Storage 서명 URL 302 → 없으면 생성 → Supabase Storage `tour-room-audio/` 업로드 → 캐시 기록 → URL 반환.
 - 같은 메시지·로케일 재생성 0회 보장(비용 통제). 메시지 1,000자 초과분은 TTS 생략(§G R-18).
 
 ### D-7. 관제센터: `/admin/tour-ops` (기존 어드민 셸에 탑재)
@@ -110,8 +112,9 @@ DB 테이블 9개, API 라우트 6개, STT(폴백 체인)·다국어 번역(TTT)
 - SOS: 손님이 룸에서 SOS 버튼 → `metadata.kind='sos'` 메시지 + 관제 목록 최상단 고정 + (v1.1) 어드민 이메일/푸시.
 - admin 실시간 수신은 `useRealtimeActivity` 패턴 재사용(tour_room_messages를 realtime publication에 추가, admin은 authenticated이므로 admin-read RLS 정책으로 Postgres-Changes 구독 가능).
 
-### D-8. 번역 대상 로케일: "참가자 실제 로케일"로 축소
+### D-8. 번역 대상 로케일: "참가자 실제 로케일"로 축소 + 저비용 프로바이더 라우팅(§M)
 - 현재 기본 5로케일 전체 번역 → 비용·지연 낭비. `tour_room_participants`에 참가자별 locale 저장, 발신 시 **룸의 실제 참가자 로케일 합집합**만 번역. 참가자 1명(en)이면 1로케일만. 실패 시 원문 즉시 게시 + 번역 비동기 재시도(§G R-6).
+- 번역 모델은 §M-1의 프로바이더 라우터(Gemini 2.5 Flash-Lite 기본)를 사용 — 기존 gpt-5-mini 고정 호출을 대체한다.
 
 ### D-9. 시간대: 모든 "오늘/룸 활성" 판정은 Asia/Seoul 고정
 - 기존 `todayYmd()`가 UTC 기준 — 한국 투어는 KST 00:00~09:00 사이에 "오늘 투어"가 안 보이는 라이브 결함. `lib/tour-room/time.ts`의 `kstToday()`로 교체(투어모드 신규 코드 + 기존 `tour-mode/bookings` 라우트 수정).
@@ -238,11 +241,11 @@ hooks/
 
 ---
 
-## §F. 실행 WBS — 웨이브 · 나노 티켓 (총 47)
+## §F. 실행 WBS — 웨이브 · 나노 티켓 (총 51)
 
 > 표기: `[티켓] 작업 — 산출물 — 완료 기준(AC)`. 웨이브 내 티켓은 위→아래 순서 의존. 각 웨이브 종료 시 커밋+푸시.
 
-### Wave T0 — 기반 공사 (마이그레이션·공용 lib) 【8티켓】
+### Wave T0 — 기반 공사 (마이그레이션·공용 lib) 【9티켓】
 - **T0.1** M-1~M-5 마이그레이션 작성(`supabase/migrations/`) — AC: 로컬 SQL 린트 통과, 전부 IF NOT EXISTS/additive.
 - **T0.2** M-6 RLS·publication 마이그레이션 — AC: anon 정책 0개 유지 확인 주석 포함.
 - **T0.3** 라이브 적용(`mcp apply_migration`, 사용자 승인 후) + `get_advisors` 재실행 — AC: 신규 advisor 경고 0.
@@ -251,6 +254,7 @@ hooks/
 - **T0.6** `lib/tour-room/geo.ts` — haversine·히스테리시스·accuracy필터 순수함수 — AC: 경계값 테스트(반경±1m, 정확도 100m).
 - **T0.7** `lib/tour-room/realtime.ts` + `time.ts` — AC: broadcast 헬퍼 타입 안전, kstToday 테스트.
 - **T0.8** 기존 3개 라우트(messages/events/spot-events)를 access.ts로 리팩터(동작 불변) + `tour-mode/bookings`의 UTC→KST 수정 — AC: 기존 요청 계약 무변경(회귀 테스트).
+- **T0.9** `lib/ai/router.ts` 프로바이더 라우터(§M-1) — OpenAI 호환 chat-completions 클라이언트에 base_url/model/key를 env로 주입(Gemini/DeepSeek/OpenAI 3사 스위칭), `translateTextForLocales`를 라우터 경유로 교체 + 번역 메모리 캐시(§M-2 ④) — AC: env만 바꿔 3사 전환 유닛테스트, 캐시 히트 시 LLM 호출 0.
 
 ### Wave T1 — 입장·룸 셸·텍스트 채팅 【9티켓】
 - **T1.1** `POST join` API — 참가자 upsert + 스냅샷 — AC: 5개 인가 경로 통합테스트.
@@ -263,12 +267,15 @@ hooks/
 - **T1.8** i18n `tourMode.*` 5로케일 키 일괄 추가 — AC: 키 누락 lint 0.
 - **T1.9** E2E: 브라우저 컨텍스트 2개(가이드 토큰/손님)로 왕복 채팅 — AC: playwright 통과.
 
-### Wave T2 — 음성 (STT 발신 · TTS 수신) 【5티켓】
+### Wave T2 — 음성 (STT 발신 · TTS 수신 · 실시간 통역) 【8티켓】
 - **T2.1** `Composer` 푸시투토크 — MediaRecorder(webm/opus, iOS는 mp4/aac 분기), 최대 60초, 파형 표시 — AC: iOS Safari·Android Chrome 실기 확인 항목 문서화.
 - **T2.2** 음성 발신 플로우 — 기존 multipart POST 그대로, 업로드 중 진행 표시, STT 품질 낮음(`metadata.stt.quality`) 시 "인식 결과 확인" 인라인 편집 — AC: 오탐 시 사용자가 수정 후 발신 가능.
 - **T2.3** M-5 캐시 + `GET tts` API — AC: 동일 메시지·로케일 2회 요청 시 생성 1회(로그 검증).
 - **T2.4** `AudioButton` + 오디오 프라이밍(첫 사용자 제스처에서 무음 재생으로 unlock) — AC: iOS 자동재생 차단 상황에서 안내 토스트.
-- **T2.5** 수신 자동 낭독 모드(옵션, 가이드 공지만) — AC: 기본 OFF, 화면 꺼짐 시 미동작 명시.
+- **T2.5** 수신 자동 낭독 모드(옵션, 가이드 공지만) — 기기 내장 `speechSynthesis` 사용(서버 TTS 0회) — AC: 기본 OFF, 화면 꺼짐 시 미동작 명시.
+- **T2.6** 가이드 자막 방송 — 클라이언트 발화 청크화: WebAudio 에너지 기반 VAD(라이브러리 무추가)로 3~8초 발화 단위 분할 → webm/opus 업로드, Tier A(Web Speech API 지원 기기)는 온디바이스 STT 텍스트만 전송 — AC: 무음 구간 업로드 0, iOS(오디오 청크)/Android(Web Speech) 분기 동작.
+- **T2.7** `POST /api/tour-rooms/[bookingId]/captions` — Tier A: 텍스트 → 번역 1콜 / Tier B: 오디오 청크 → Gemini Flash-Lite 멀티모달 1콜(전사+번역 동시, §N) → Broadcast로 자막 push(기본 DB 미저장, "기록 남기기" 토글 시만 메시지로 저장) — AC: 청크 종료→자막 표시 p95 ≤ 2.5s, 프로바이더 장애 시 기존 stt-router+번역 폴백.
+- **T2.8** 손님측 자막 UI — 룸 상단 라이브 자막 배너(뷰어 로케일) + 원문 토글 + `speechSynthesis` 자동 낭독 옵션 — AC: 자막 유실 시(재연결) 마지막 문장부터 재개, 5로케일 렌더.
 
 ### Wave T3 — 위치공유 · 지도 【6티켓】
 - **T3.1** `location` API — 서버 경유 rebroadcast + 30s 스냅샷 upsert + 레이트리밋 — AC: 위조 participant_id 403.
@@ -281,7 +288,7 @@ hooks/
 ### Wave T4 — 지오펜스 자동 풀 설명 【6티켓】
 - **T4.1** `scripts/extract-tour-stop-content.ts` — 정적 스톱 배열 → `data/tour-stop-content/{slug}.json` — AC: 파일럿 투어 1개 무손실 추출.
 - **T4.2** 어드민 스팟 편집 확장(`/admin/products` 내 기존 tour-mode 편집 화면): content jsonb 에디터 + poi_key 셀렉터 + 추출 JSON 가져오기 — AC: 저장 후 스냅샷 API에 반영.
-- **T4.3** spot-events 확장: 도착 metadata에 로케일 해석 content 동봉 + Broadcast — AC: content 없으면 poi_key 폴백, 그것도 없으면 기존 단문(3층 폴백 테스트).
+- **T4.3** spot-events 확장: 도착 metadata에 로케일 해석 content 동봉 + Broadcast + **도착/공지 템플릿 문구의 런타임 LLM 번역 제거(§M-2 ① 사전번역 상수로 대체)** — AC: content 없으면 poi_key 폴백, 그것도 없으면 기존 단문(3층 폴백 테스트), 도착 이벤트 처리 중 LLM 호출 0회.
 - **T4.4** `useGeoWatcher` 지오펜스 — 진입 반경 trigger_radius_m / 이탈 exit_radius_m 히스테리시스 + 60초 dwell 최소 — AC: GPS 지터 시뮬레이션(모의 좌표 시퀀스)에서 이벤트 1회.
 - **T4.5** `SpotArrivalCard` — 풀 설명 카드(이미지·하이라이트·visitBasics·convenience·smartNotes) + TTS/사전 audio_url 재생 — AC: 드로어와 시각 일관.
 - **T4.6** 파일럿 투어 스팟 데이터 시딩(스팟 좌표+반경+content, 어드민 검수) — AC: 실좌표 검증 체크리스트.
@@ -371,10 +378,71 @@ hooks/
 
 ## §J. 롤아웃 · 운영
 
-- 플래그 `NEXT_PUBLIC_TOUR_MODE_V1` + env `TOUR_ROOM_TOKEN_SECRET`(신규, 프로덕션 필수 — quoteToken처럼 dev 폴백 두되 프로덕션 미설정 시 기동 경고).
+- 플래그 `NEXT_PUBLIC_TOUR_MODE_V1` + env `TOUR_ROOM_TOKEN_SECRET`(신규, 프로덕션 필수 — quoteToken처럼 dev 폴백 두되 프로덕션 미설정 시 기동 경고) + `GEMINI_API_KEY`/`DEEPSEEK_API_KEY` 및 `TOUR_AI_*` 라우팅 env(§M-1).
 - 순서: T0~T2 머지(플래그 OFF) → T3~T5 머지 → 내부 리허설(실기기) → T6~T7 → 파일럿 투어 1개 실전 → 전체 오픈.
 - 메트릭: 룸 입장률(발송 대비), 메시지/룸, STT 실패율, 번역 p95, TTS 캐시 히트율, SOS 건수, OpenAI 일비용.
 - 비용 가드: 번역·TTS 호출 일일 상한 env(`TOUR_ROOM_DAILY_AI_BUDGET`), 초과 시 원문 게시 모드 강등.
+
+## §M. 저비용 모델 전략 — "토큰 최소, 저렴 모델 우선" (2026-07 단가 실측 기준)
+
+### M-1. 프로바이더 라우터 (`lib/ai/router.ts`, T0.9)
+Gemini·DeepSeek 모두 **OpenAI 호환 chat-completions 엔드포인트**를 제공하므로, 코드 경로 1개에 env로 base_url/model/key만 주입해 3사를 스위칭한다. 프로바이더별 신규 SDK 추가 없음.
+
+| 용도 | 1순위 | 2순위(폴백/배치) | 최후 폴백 | env |
+|---|---|---|---|---|
+| 채팅 번역(TTT) | **Gemini 2.5 Flash-Lite** ($0.10/M in, $0.40/M out) | DeepSeek v4-flash ($0.14/M in, $0.28/M out, 캐시히트 $0.0028/M) | gpt-5-mini(현행) | `TOUR_AI_TRANSLATE_*` |
+| 실시간 통역(오디오→전사+번역 1콜) | **Gemini 2.5 Flash-Lite 멀티모달** (오디오 in $0.30/M ≈ **분당 $0.0006**) | 기존 stt-router($0.006/min) + 번역 | — | `TOUR_AI_CAPTION_*` |
+| 손님 음성 메시지 STT | Gemini Flash-Lite 오디오(위와 동일, 전사+번역 동시) | 기존 stt-router 폴백 체인 | — | 동일 |
+| 배치 생성(스팟 콘텐츠·오디오 스크립트, 비실시간) | **DeepSeek v4-flash**(최저가, 캐시 활용) | Gemini Flash-Lite | — | `TOUR_AI_BATCH_*` |
+| TTS | **기기 내장 speechSynthesis($0)** | 서버 TTS는 고정 콘텐츠 캐시 전용(D-6) | — | — |
+
+- **DeepSeek 사용 경계(중요):** DeepSeek는 데이터가 중국 리전 서버로 전송된다. **고객 채팅(PII 포함 가능) 번역에는 쓰지 않고**, 비PII 배치 생성(스팟 설명·오디오 스크립트) 전용으로 제한한다. 고객 대화 경로 기본은 Gemini.
+- **모델명 주의:** `deepseek-chat` 레거시 명칭은 2026-07-24 폐기 예정 — env 기본값을 `deepseek-v4-flash`로 명시.
+- 라우터는 1순위 실패(429/5xx/타임아웃 3s) 시 2순위로 자동 강등, 강등 이벤트 로그.
+
+### M-2. 토큰 자체를 안 쓰는 6가지 장치 (모델 교체보다 절감 폭이 큼)
+1. **템플릿 사전번역** — 스팟 도착·집합공지·시스템 문구는 문장이 고정 템플릿인데 **현행 코드는 도착할 때마다 LLM 번역을 호출**한다(spot-events). 5로케일 사전 번역을 스팟 `content`/상수에 저장하고 런타임 LLM 호출을 **0회**로(T4.3에 반영).
+2. **퀵답장 프리셋** — 8종 사전 번역 상수, 런타임 번역 0(T1.7 기존 계획).
+3. **참가자 로케일만 번역** — 5로케일 → 실참가 로케일 합집합(D-8 기존 계획). 통상 1~2로케일.
+4. **번역 메모리** — `tour_translation_cache(source_hash, locale, translated)` 테이블. 같은 문장 재번역 0(반복 인사·짧은 문구 히트율 높음). DeepSeek 사용 시 프리픽스 캐시($0.0028/M)와 이중 절감.
+5. **스킵 휴리스틱** — 이모지·숫자만·2자 이하·소스=타깃 로케일 동일 메시지는 번역 호출 생략.
+6. **프롬프트 다이어트** — 번역 시스템 프롬프트 ~40토큰으로 축소(현행 유지 수준), max_output_tokens 캡.
+
+### M-3. TTS 0원 원칙
+- 일반 메시지·자막 낭독 = 브라우저 `speechSynthesis`(온디바이스, 무료, en/ko/ja/es/zh 음성 기본 탑재).
+- 서버 TTS는 "스팟 오디오 가이드·가이드 공지" 등 재사용되는 고정 콘텐츠만 **1회 생성 후 영구 캐시**(D-6). 스팟 가이드는 투어당 1회 생성이므로 한계비용 → 0.
+
+### M-4. 예상 비용 (파일럿 규모: 1투어/일, 손님 20명, 룸 8개)
+| 항목 | 산식 | 비용/투어일 |
+|---|---|---|
+| 채팅 번역 | 룸 8개 × 50msg × (in 60tok + out 2로케일 120tok) | ≈ $0.01 |
+| 실시간 통역 Tier B | 실발화 60min = 115k 오디오tok × $0.30/M + 출력 60k tok × $0.40/M | ≈ $0.06 |
+| 실시간 통역 Tier A(Web Speech 기기) | STT $0 + 번역 텍스트만 | ≈ $0.02 |
+| 손님 음성 메시지 | 40건 × 15초 | ≈ $0.01 |
+| TTS | 기기 내장 + 캐시 | ≈ $0 |
+| **합계** | | **≈ $0.05~0.08/투어일** (월 30투어 ≈ $2) |
+- 가드: `TOUR_ROOM_DAILY_AI_BUDGET`(§J 기존) — 초과 시 번역 원문 게시 모드·자막 Tier A 강제.
+
+## §N. 실시간 통역 설계 — 어떤 방식·어떤 API로 하나
+
+### N-1. 세 가지 통역 경로 (전부 같은 라우터 §M-1 사용)
+1. **채팅 메시지 통역(비동기)** — 기존 파이프라인 유지, 모델만 Gemini Flash-Lite로 교체. 텍스트 발신 → 1콜 → 참가자 로케일 번역 jsonb 저장 → Broadcast.
+2. **가이드 자막 방송(준실시간, 신규 — T2.6~T2.8)** — 가이드가 말하면 손님 화면에 각자 언어 자막이 흐르는 모드:
+   - **Tier A (STT 무료):** 가이드 기기가 Web Speech API 지원(Android Chrome 우수, iOS 14.5+ 온디바이스)이면 **브라우저가 STT를 공짜로 수행** → 확정 문장 텍스트만 서버 전송 → Gemini 번역 1콜 → Broadcast. 오디오 업로드 자체가 없어 데이터·비용 최소.
+   - **Tier B (범용):** WebAudio 에너지 VAD로 발화 3~8초 청크 분할(무음 제거) → opus 업로드 → **Gemini 2.5 Flash-Lite 멀티모달 1콜에 "전사 + N로케일 번역" 동시 요청**(JSON 출력) → Broadcast. STT와 번역을 한 호출로 합쳐 비용·지연 절반.
+   - 손님 측: 뷰어 로케일 자막 배너 + 원하면 `speechSynthesis`가 자막을 음성으로 낭독(음성→음성 통역 완성, 추가 비용 $0).
+   - 자막은 기본 **DB 미저장·휘발**(토큰·스토리지 절약), 가이드가 "기록" 토글 시만 메시지로 영속화.
+3. **음성 메시지 통역(왕복)** — 손님 푸시투토크 → Tier B와 동일한 1콜(전사+번역) → 메시지 저장. 기존 stt-router는 폴백으로 유지.
+
+### N-2. 명시적으로 채택하지 않는 것
+- **OpenAI Realtime API / Gemini Live API(상시 스트리밍 세션):** 분당 과금이 청크 방식의 수십 배 + 상시 WebSocket 세션 유지가 서버리스와 상충. 투어 자막 용도에는 문장 단위 준실시간(지연 1.5~2.5s)이면 충분.
+- **전용 MT API(Google Translate $20/M자, DeepL $25/M자):** 짧은 채팅에서는 LLM 토큰 과금이 문자당 과금보다 오히려 저렴하고 문맥·경어 처리도 우수 → 불채택.
+- **전용 스트리밍 STT(Deepgram 등):** 품질은 좋으나 별도 벤더 계약 추가 + Tier A/B 조합 대비 이점 없음 → 불채택.
+
+### N-3. 품질·안정 장치
+- 청크 경계 단어 잘림: VAD가 무음 400ms를 문장 경계로 판정 + 직전 청크 마지막 1초 오버랩 전송(중복 전사는 서버에서 dedupe).
+- 고유명사(지명·집합장소·시간) 보존: 번역 프롬프트에 기존 규칙("Preserve names, times, pickup points…") 유지 + 스팟명 사전을 시스템 프롬프트에 주입(투어당 고정 → DeepSeek/Gemini 프리픽스 캐시 히트).
+- 지연 계측: 청크 업로드→자막 Broadcast까지 서버 타이밍 로그, p95 2.5s 초과 시 청크 길이 자동 축소.
 
 ## §K. 오픈 퀘스천 (사용자 결정 필요 — 기본값으로 진행 가능)
 
