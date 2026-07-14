@@ -83,9 +83,9 @@
 - **W5.3** ✅ 완료(결정: 같은 tour-mode 앱 내, 별도 설치 없음) 가이드 콘솔 별도 설치 여부 결정 반영 — 기본값: 같은 tour-mode 앱 내.
 
 ### W6 — Web Push (사용자 결정 게이트 🔒) 【3】
-- **W6.1** VAPID 키 발급+`push_subscriptions` 테이블(additive DDL, 승인 후 적용)+구독 API — AC: advisors 0.
-- **W6.2** SOS/어텐션 발생 시 관제 구독자에게 push(서버: web-push 라이브러리) — AC: 앱 미실행 상태 수신.
-- **W6.3** 고객측 push는 범위 밖(백로그) — 관제·가이드만.
+- **W6.1** ✅ 완료 — DDL `supabase/migrations/20260715120000_push_subscriptions.sql` 라이브 적용(RLS on·정책 0=service-role 전용, advisors 신규 WARN 0), VAPID dev 키 .env.local, 구독 API `POST/DELETE /api/admin/tour-ops/push-subscriptions`(requireAdmin, endpoint upsert). **프로덕션 VAPID 키는 사용자 액션**: `node -e "console.log(JSON.stringify(require('web-push').generateVAPIDKeys()))"` → Vercel env `NEXT_PUBLIC_WEB_PUSH_VAPID_PUBLIC_KEY`/`WEB_PUSH_VAPID_PRIVATE_KEY`/`WEB_PUSH_CONTACT=mailto:support@atockorea.com` → 재배포.
+- **W6.2** ✅ 완료 — `lib/tour-ops/push.ts`(sendOpsPush: 죽은 구독 404/410 자동 정리, env 미설정 시 무해 no-op), 트리거=SOS 라우트+need_help 퀵답장(어텐션 큐의 서버 가시 시그널), `sw-tour-ops.js` push/notificationclick 핸들러(클릭→관제 포커스/열기), 설정 탭 푸시 토글. 유닛 8. "앱 미실행 수신" 실기기 확인은 §I-4 체크리스트로.
+- **W6.3** ✅ 결정 반영 — v1은 관제(admin)만(가이드 콘솔은 토큰 인증이라 user_id 부재 → role 컬럼만 예약, 백로그). 고객측 push 범위 밖 유지.
 
 ### W7 — 검증 【2】
 - **W7.1** ✅ 완료(`e4ba02d6` — e2e/tour-ops-sos.spec.ts, 그린 13.8s; 관제측은 임시 admin 유저+bearer로 API 검증, 관제 UI는 컴포넌트 테스트 4개가 커버) E2E 확장: 관제 시나리오(SOS 발생→관제 피드 표시→관제 응답→고객 수신) — 기존 playwright 인프라 재사용 — AC: 그린.

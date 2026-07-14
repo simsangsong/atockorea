@@ -7,6 +7,7 @@ import { getParticipantLocales } from '@/lib/tour-room/snapshot';
 import { getQuickReplyPreset } from '@/lib/tour-room/quickReplies';
 import { renderSpotEventTranslations } from '@/lib/tour-room/spotContent';
 import { pregenerateGuideNoticeTts, type TtsStorageClient } from '@/lib/tour-room/tts-server';
+import { sendOpsPush } from '@/lib/tour-ops/push';
 
 export const dynamic = 'force-dynamic';
 
@@ -222,6 +223,18 @@ export async function POST(
       void pregenerateGuideNoticeTts(supabase as unknown as TtsStorageClient, room.id, message).catch(
         () => undefined,
       );
+    }
+
+    // W6.2 — a customer's need_help quick reply pings ops subscribers even
+    // with the console closed (the attention queue covers the open console).
+    if (senderRole === 'customer' && presetKey === 'need_help') {
+      const senderName =
+        ('displayName' in actor ? actor.displayName : null) || booking.contact_name || '게스트';
+      void sendOpsPush({
+        title: `🙋 도움 요청 — ${senderName}`,
+        body: text,
+        tag: `need-help-${room.id}`,
+      }).catch(() => undefined);
     }
 
     return NextResponse.json({ room, message }, { status: 201 });

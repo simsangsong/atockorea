@@ -3,11 +3,133 @@
 /**
  * W3.5 — settings tab: monitoring date, SOS sound toggle (persisted by the
  * shell), connection readout, and the escape hatch back to the full admin.
- * The Web Push toggle lands here after the W6 gate.
+ * W6 — Web Push toggle: subscribes this device so SOS/도움요청 alerts arrive
+ * even when the console is closed. Needs the registered SW (production) and
+ * notification permission; every failure path surfaces a toast instead of a
+ * silent dead toggle.
  */
 
 import Link from 'next/link';
+import { useCallback, useEffect, useState } from 'react';
+import { toast } from 'sonner';
 import type { OpsConnection } from '@/hooks/useOpsChannels';
+import { getOpsToken } from '@/components/tour-ops/opsShared';
+
+function urlBase64ToUint8Array(base64: string): Uint8Array {
+  const padding = '='.repeat((4 - (base64.length % 4)) % 4);
+  const normalized = (base64 + padding).replace(/-/g, '+').replace(/_/g, '/');
+  const raw = window.atob(normalized);
+  const out = new Uint8Array(raw.length);
+  for (let i = 0; i < raw.length; i += 1) out[i] = raw.charCodeAt(i);
+  return out;
+}
+
+function PushToggleSection() {
+  const [state, setState] = useState<'unsupported' | 'off' | 'on' | 'busy'>('off');
+
+  useEffect(() => {
+    const probe = async () => {
+      if (!('serviceWorker' in navigator) || !('PushManager' in window) || !('Notification' in window)) {
+        setState('unsupported');
+        return;
+      }
+      try {
+        const registration = await navigator.serviceWorker.getRegistration('/admin/tour-ops');
+        const subscription = await registration?.pushManager.getSubscription();
+        setState(subscription ? 'on' : 'off');
+      } catch {
+        setState('off');
+      }
+    };
+    void probe();
+  }, []);
+
+  const enable = useCallback(async () => {
+    setState('busy');
+    try {
+      const publicKey = process.env.NEXT_PUBLIC_WEB_PUSH_VAPID_PUBLIC_KEY;
+      if (!publicKey) throw new Error('푸시 키가 설정되지 않았습니다 (VAPID env).');
+      const permission = await Notification.requestPermission();
+      if (permission !== 'granted') throw new Error('알림 권한이 거부되었습니다.');
+      const registration = await navigator.serviceWorker.getRegistration('/admin/tour-ops');
+      if (!registration) throw new Error('서비스워커가 없습니다 — 프로덕션 설치 후 사용 가능합니다.');
+      const subscription = await registration.pushManager.subscribe({
+        userVisibleOnly: true,
+        applicationServerKey: urlBase64ToUint8Array(publicKey) as BufferSource,
+      });
+      const token = await getOpsToken();
+      const res = await fetch('/api/admin/tour-ops/push-subscriptions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+        credentials: 'include',
+        body: JSON.stringify({ subscription: subscription.toJSON() }),
+      });
+      if (!res.ok) throw new Error((await res.json()).error || '구독 등록 실패');
+      setState('on');
+      toast.success('푸시 알림이 켜졌어요 — 앱을 닫아도 SOS가 울립니다.');
+    } catch (error) {
+      setState('off');
+      toast.error(error instanceof Error ? error.message : '푸시 구독 실패');
+    }
+  }, []);
+
+  const disable = useCallback(async () => {
+    setState('busy');
+    try {
+      const registration = await navigator.serviceWorker.getRegistration('/admin/tour-ops');
+      const subscription = await registration?.pushManager.getSubscription();
+      if (subscription) {
+        const endpoint = subscription.endpoint;
+        await subscription.unsubscribe();
+        const token = await getOpsToken();
+        await fetch('/api/admin/tour-ops/push-subscriptions', {
+          method: 'DELETE',
+          headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+          credentials: 'include',
+          body: JSON.stringify({ endpoint }),
+        });
+      }
+      setState('off');
+    } catch {
+      setState('off');
+    }
+  }, []);
+
+  if (state === 'unsupported') {
+    return (
+      <section className="rounded-2xl border border-white/10 bg-slate-900 p-4">
+        <h2 className="text-[13px] font-semibold text-slate-300">푸시 알림</h2>
+        <p className="mt-1 text-[12px] text-slate-500">이 브라우저는 Web Push를 지원하지 않습니다.</p>
+      </section>
+    );
+  }
+  const on = state === 'on';
+  return (
+    <section className="flex items-center justify-between rounded-2xl border border-white/10 bg-slate-900 p-4">
+      <div>
+        <h2 className="text-[13px] font-semibold text-slate-300">푸시 알림 (W6)</h2>
+        <p className="mt-0.5 text-[11px] text-slate-500">앱을 닫아도 SOS·도움요청을 이 기기로 알립니다.</p>
+      </div>
+      <button
+        type="button"
+        role="switch"
+        aria-checked={on}
+        aria-label="푸시 알림"
+        disabled={state === 'busy'}
+        onClick={() => void (on ? disable() : enable())}
+        className={`relative h-7 w-12 shrink-0 rounded-full transition-colors disabled:opacity-50 ${
+          on ? 'bg-emerald-500' : 'bg-slate-700'
+        }`}
+      >
+        <span
+          className={`absolute top-0.5 size-6 rounded-full bg-white transition-transform ${
+            on ? 'translate-x-5' : 'translate-x-0.5'
+          }`}
+        />
+      </button>
+    </section>
+  );
+}
 
 const CONNECTION_LABELS: Record<OpsConnection, string> = {
   realtime: '실시간 연결됨 (폴링 0회)',
@@ -61,6 +183,8 @@ export default function OpsSettingsTab({
           />
         </button>
       </section>
+
+      <PushToggleSection />
 
       <section className="rounded-2xl border border-white/10 bg-slate-900 p-4">
         <h2 className="text-[13px] font-semibold text-slate-300">연결 상태</h2>

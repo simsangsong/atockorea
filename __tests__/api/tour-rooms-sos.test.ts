@@ -12,6 +12,7 @@ import { createServerClient } from '@/lib/supabase';
 import { requestGate } from '@/lib/durable-rate-limit';
 import { sendEmail } from '@/lib/email';
 import { signRoomSession } from '@/lib/tour-room/access';
+import { sendOpsPush } from '@/lib/tour-ops/push';
 
 jest.mock('@/lib/auth', () => ({ getAuthUser: jest.fn(), requireAdmin: jest.fn() }));
 jest.mock('@/lib/supabase', () => ({ createServerClient: jest.fn() }));
@@ -22,6 +23,9 @@ jest.mock('@/lib/durable-rate-limit', () => ({
 jest.mock('@/lib/email', () => ({ sendEmail: jest.fn(async () => ({ success: true })) }));
 jest.mock('@/lib/tour-room/realtime', () => ({
   broadcastToRoom: jest.fn(async () => ({ ok: true })),
+}));
+jest.mock('@/lib/tour-ops/push', () => ({
+  sendOpsPush: jest.fn(async () => ({ sent: 0, pruned: 0 })),
 }));
 
 const getAuthUserMock = getAuthUser as jest.Mock;
@@ -138,6 +142,10 @@ describe('POST /api/tour-rooms/[bookingId]/sos (T7.3)', () => {
     const mail = sendEmailMock.mock.calls[0][0];
     expect(mail.subject).toContain('SOS');
     expect(mail.html).toContain('maps.google.com/?q=35.18,129.22');
+    // W6.2 — ops Web Push fired alongside the mail.
+    const push = (sendOpsPush as jest.Mock).mock.calls[0][0];
+    expect(push.title).toContain('SOS');
+    expect(push.body).toContain('lost near the temple');
   });
 
   it('a location-less SOS still goes out (denied permission path)', async () => {
