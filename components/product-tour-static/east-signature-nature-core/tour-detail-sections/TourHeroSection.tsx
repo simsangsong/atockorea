@@ -135,7 +135,7 @@ export function TourHeroSection({
       {/* Hero image — clean, no overlaid text. Save/share float top-right. */}
       <div
         ref={heroImageRef}
-        className="relative h-[29vh] min-h-[214px] max-h-[294px] sm:h-[33vh] sm:min-h-[266px] sm:max-h-[360px] w-full overflow-hidden rounded-b-2xl shadow-hero"
+        className="relative h-[29vh] min-h-[214px] max-h-[294px] sm:h-[33vh] sm:min-h-[266px] sm:max-h-[360px] lg:max-h-[420px] w-full overflow-hidden rounded-b-2xl shadow-hero"
       >
         {/* T3 (LCP) — slides are next/image instead of CSS background-image:
             the browser preloads a viewport-sized optimized variant (~80KB)
@@ -221,7 +221,7 @@ export function TourHeroSection({
             className="flex h-9 w-9 items-center justify-center rounded-full border border-white/30 bg-white/10 backdrop-blur-md transition-all hover:bg-white/20 active:scale-95"
           >
             <Heart
-              className={cn("h-4 w-4 transition-colors", saved ? "fill-rose-500 text-rose-500" : "text-white")}
+              className={cn("h-4 w-4 transition-colors", saved ? "fill-[color:var(--tpc-rose-full)] text-[color:var(--tpc-rose-full)]" : "text-white")}
               strokeWidth={saved ? 0 : 1.8}
             />
           </button>
@@ -248,9 +248,9 @@ export function TourHeroSection({
 
         {hero.meta.region && (
           <div className="flex items-center gap-2.5 mb-3 sm:mb-3.5">
-            <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-rose-400/85" />
+            <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-[color:var(--tpc-rose-full)]" />
             <span aria-hidden className="h-px w-5 bg-gradient-to-r from-rose-300/60 via-rose-300/30 to-transparent sm:w-7" />
-            <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-rose-600/85 sm:text-[10.5px]">
+            <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[color:var(--tpc-rose-deep)] sm:text-[10.5px]">
               {hero.meta.region}
             </span>
           </div>
@@ -288,7 +288,7 @@ export function TourHeroSection({
             {hero.pills.slice(0, 3).map((pill) => (
               <span
                 key={pill}
-                className="inline-flex items-center rounded-full bg-gradient-to-br from-white via-rose-50/60 to-white px-3 py-1 text-[11px] font-semibold tracking-[0.005em] text-foreground/90 ring-1 ring-rose-300/70 shadow-[0_1px_2px_rgba(244,63,94,0.08),0_4px_10px_-4px_rgba(244,63,94,0.18)] backdrop-blur-sm transition-all duration-200 hover:ring-rose-400/80 hover:shadow-[0_2px_4px_rgba(244,63,94,0.12),0_6px_14px_-4px_rgba(244,63,94,0.24)] sm:px-3.5 sm:py-1.5 sm:text-[11.5px]"
+                className="inline-flex items-center rounded-full bg-gradient-to-br from-white via-rose-50/60 to-white px-3 py-1 text-[11px] font-semibold tracking-[0.005em] text-foreground/90 ring-1 ring-rose-200/60 transition-colors duration-200 sm:px-3.5 sm:py-1.5 sm:text-[11.5px]"
               >
                 {pill}
               </span>
@@ -298,12 +298,12 @@ export function TourHeroSection({
 
         <div className="mt-2.5 flex flex-wrap items-center gap-x-4 gap-y-1.5 border-t border-rose-200/45 pt-2.5 sm:mt-3 sm:gap-x-5 sm:pt-3">
           <div className="flex items-center gap-1.5 text-[12.5px] text-foreground/85 sm:text-[13px]">
-            <Clock className="h-3.5 w-3.5 text-rose-500/80" strokeWidth={1.8} />
+            <Clock className="h-3.5 w-3.5 text-[color:var(--tpc-rose-full)]" strokeWidth={1.8} />
             <span className="font-medium tabular-nums">{hero.meta.duration}</span>
           </div>
           <span aria-hidden className="h-3 w-px bg-rose-200/60" />
           <div className="flex items-center gap-1.5 text-[12.5px] text-foreground/85 sm:text-[13px]">
-            <Footprints className="h-3.5 w-3.5 text-rose-500/80" strokeWidth={1.8} />
+            <Footprints className="h-3.5 w-3.5 text-[color:var(--tpc-rose-full)]" strokeWidth={1.8} />
             <span className="tabular-nums">{hero.meta.stops}</span>
           </div>
           {showRating && (

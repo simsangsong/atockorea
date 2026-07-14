@@ -184,7 +184,7 @@ export function TourPickupDropoffSection({
                 <span
                   className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full text-white shadow-[0_4px_12px_-4px_rgba(200,149,108,0.50)]"
                   style={{
-                    background: "linear-gradient(135deg, #d4a37e 0%, #c8956c 50%, #a67751 100%)",
+                    background: "#c8956c",
                   }}
                 >
                   <Bus className="h-4 w-4" strokeWidth={1.9} />
@@ -222,7 +222,7 @@ export function TourPickupDropoffSection({
                         className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full text-[11px] font-bold tabular-nums text-white shadow-[0_3px_10px_-3px_rgba(200,149,108,0.45)]"
                         style={{
                           background:
-                            "linear-gradient(135deg, #d4a37e 0%, #c8956c 50%, #a67751 100%)",
+                            "#c8956c",
                         }}
                       >
                         {point.order}

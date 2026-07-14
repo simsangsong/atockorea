@@ -4,6 +4,7 @@ import { Fragment, useEffect, useState } from "react";
 import { ChevronDown, CloudSun, CloudRain, Check, X, Flower2, Sun, Leaf, Snowflake } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
+import { SegmentedToggle } from "@/components/product-tour-static/_shared/SegmentedToggle";
 
 /**
  * °C / °F pill toggle rendered below the two live-weather cards. Stays inside
@@ -28,7 +29,7 @@ function TempUnitToggle({
     <div
       role="group"
       aria-label={locale === "ko" ? "온도 단위" : "Temperature unit"}
-      className="inline-flex rounded-full bg-white/85 p-0.5 ring-1 ring-amber-100/70 shadow-[0_1px_2px_rgba(26,35,50,0.04)]"
+      className="inline-flex rounded-full bg-white/85 p-0.5 ring-1 ring-slate-900/[0.06] shadow-[0_1px_2px_rgba(26,35,50,0.04)]"
     >
       {units.map((u) => {
         const active = u === unit;
@@ -133,28 +134,28 @@ type SeasonTheme = {
 
 const SEASON_THEMES: Record<string, SeasonTheme> = {
   flower: {
-    card: "bg-gradient-to-br from-rose-50 via-white to-rose-100/50",
-    ring: "ring-rose-100/70",
-    iconRing: "bg-gradient-to-br from-rose-100 to-rose-200/60 ring-rose-200/60",
-    iconColor: "text-rose-500",
+    card: "bg-[color:var(--tpc-rose-wash)]",
+    ring: "ring-slate-900/[0.06]",
+    iconRing: "bg-[color:var(--tpc-rose-wash)] ring-slate-900/[0.06]",
+    iconColor: "text-[color:var(--tpc-rose-full)]",
   },
   sun: {
-    card: "bg-gradient-to-br from-amber-50 via-white to-amber-100/50",
-    ring: "ring-amber-100/70",
-    iconRing: "bg-gradient-to-br from-amber-100 to-amber-200/70 ring-amber-200/60",
-    iconColor: "text-amber-500",
+    card: "bg-[color:var(--tpc-amber-wash)]",
+    ring: "ring-slate-900/[0.06]",
+    iconRing: "bg-[color:var(--tpc-amber-wash)] ring-slate-900/[0.06]",
+    iconColor: "text-[color:var(--tpc-amber-full)]",
   },
   leaf: {
-    card: "bg-gradient-to-br from-orange-50 via-white to-orange-100/50",
-    ring: "ring-orange-100/70",
-    iconRing: "bg-gradient-to-br from-orange-100 to-orange-200/60 ring-orange-200/60",
-    iconColor: "text-orange-500",
+    card: "bg-[color:var(--tpc-orange-wash)]",
+    ring: "ring-slate-900/[0.06]",
+    iconRing: "bg-[color:var(--tpc-orange-wash)] ring-slate-900/[0.06]",
+    iconColor: "text-[color:var(--tpc-orange-full)]",
   },
   snow: {
-    card: "bg-gradient-to-br from-sky-50 via-white to-sky-100/50",
-    ring: "ring-sky-100/70",
-    iconRing: "bg-gradient-to-br from-sky-100 to-sky-200/60 ring-sky-200/60",
-    iconColor: "text-sky-500",
+    card: "bg-[color:var(--tpc-sapphire-wash)]",
+    ring: "ring-slate-900/[0.06]",
+    iconRing: "bg-[color:var(--tpc-sapphire-wash)] ring-slate-900/[0.06]",
+    iconColor: "text-[color:var(--tpc-sapphire-full)]",
   },
 };
 
@@ -205,6 +206,34 @@ export function TourPracticalDetails({
   const [expandedItems, setExpandedItems] = useState<string[]>([]);
   const [liveForecast, setLiveForecast] = useState<ForecastApiPayload | null>(null);
   const [tempUnit, setTempUnit] = useTempUnit();
+
+  /**
+   * W3.5 — seasons render as one card behind the shared segmented toggle,
+   * defaulting to the season that contains today (KST). `seasonIdx` is null
+   * until the visitor picks; the computed default keeps SSG HTML and client
+   * hydration aligned except across a month boundary inside a stale ISR hour
+   * (harmless).
+   */
+  const seasonMeta = (seasonalVariations ?? []).map((season, idx) => {
+    const seasonAny = season as {
+      name?: string;
+      season?: string;
+      icon?: string;
+      tag?: string;
+      description: string;
+    };
+    const displayName = seasonAny.name ?? seasonAny.season ?? `Season ${idx + 1}`;
+    const { theme, Icon } = resolveSeason(displayName, seasonAny.icon);
+    return { displayName, tag: seasonAny.tag, description: seasonAny.description, theme, Icon };
+  });
+  const [seasonIdx, setSeasonIdx] = useState<number | null>(null);
+  const month = new Date().getMonth() + 1;
+  const currentKind = month >= 3 && month <= 5 ? "flower" : month >= 6 && month <= 8 ? "sun" : month >= 9 && month <= 11 ? "leaf" : "snow";
+  const defaultSeasonIdx = Math.max(
+    0,
+    seasonMeta.findIndex((s) => s.theme === SEASON_THEMES[currentKind]),
+  );
+  const effectiveSeasonIdx = seasonIdx ?? defaultSeasonIdx;
 
   useEffect(() => {
     if (!useLiveWeather) return;
@@ -269,13 +298,13 @@ export function TourPracticalDetails({
   /** API 응답 전·실패 시 기존 정적 카드와 동일: 좌 CloudSun, 우 CloudRain */
   const isTodayRain = !!(liveForecast && cur != null && isWmoPrecipitationCode(cur.weatherCode));
   const TodayIcon = isTodayRain ? CloudRain : CloudSun;
-  const todayIconClass = isTodayRain ? "text-sky-500" : "text-amber-500";
+  const todayIconClass = isTodayRain ? "text-[color:var(--tpc-sapphire-full)]" : "text-[color:var(--tpc-amber-full)]";
 
   const isTomorrowRain = !liveForecast || !tomorrowDay
     ? true
     : isWmoPrecipitationCode(tomorrowDay.weatherCode);
   const TomorrowIcon = isTomorrowRain ? CloudRain : CloudSun;
-  const tomorrowIconClass = isTomorrowRain ? "text-sky-500" : "text-amber-500";
+  const tomorrowIconClass = isTomorrowRain ? "text-[color:var(--tpc-sapphire-full)]" : "text-[color:var(--tpc-amber-full)]";
 
   return (
     <div className="space-y-7">
@@ -288,7 +317,7 @@ export function TourPracticalDetails({
         className={cn(
           "relative overflow-hidden rounded-2xl p-4 ring-1",
           "bg-gradient-to-br from-[#fcf9f4] via-[#fefcf8] to-[#f8f4ec]",
-          "ring-amber-100/40",
+          "ring-slate-900/[0.06]",
           "shadow-[0_2px_4px_rgba(26,35,50,0.05),0_6px_14px_-4px_rgba(26,35,50,0.08),0_22px_44px_-18px_rgba(26,35,50,0.20),0_12px_24px_-12px_rgba(26,35,50,0.12)]",
         )}
       >
@@ -301,8 +330,8 @@ export function TourPracticalDetails({
             className={cn(
               "relative flex items-center gap-3 overflow-hidden rounded-xl px-3.5 py-3 ring-1",
               isTodayRain
-                ? "bg-gradient-to-br from-sky-50 via-white to-sky-100/55 ring-sky-100/70 shadow-[0_1px_2px_rgba(26,35,50,0.04),0_10px_24px_-14px_rgba(14,165,233,0.28)]"
-                : "bg-gradient-to-br from-amber-50 via-white to-amber-100/55 ring-amber-100/70 shadow-[0_1px_2px_rgba(26,35,50,0.04),0_10px_24px_-14px_rgba(245,158,11,0.28)]",
+                ? "bg-[color:var(--tpc-sapphire-wash)] ring-slate-900/[0.06] shadow-[0_1px_2px_rgba(26,35,50,0.04),0_10px_24px_-14px_rgba(14,165,233,0.28)]"
+                : "bg-[color:var(--tpc-amber-wash)] ring-slate-900/[0.06] shadow-[0_1px_2px_rgba(26,35,50,0.04),0_10px_24px_-14px_rgba(245,158,11,0.28)]",
             )}
           >
             <span aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-white/65 to-transparent" />
@@ -310,8 +339,8 @@ export function TourPracticalDetails({
               className={cn(
                 "relative flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full ring-1",
                 isTodayRain
-                  ? "bg-gradient-to-br from-sky-100 to-sky-200/70 ring-sky-200/70"
-                  : "bg-gradient-to-br from-amber-100 to-amber-200/70 ring-amber-200/70",
+                  ? "bg-[color:var(--tpc-sapphire-wash)] ring-slate-900/[0.06]"
+                  : "bg-[color:var(--tpc-amber-wash)] ring-slate-900/[0.06]",
               )}
             >
               <TodayIcon className={cn("h-5 w-5", todayIconClass)} strokeWidth={1.7} />
@@ -325,8 +354,8 @@ export function TourPracticalDetails({
             className={cn(
               "relative flex items-center gap-3 overflow-hidden rounded-xl px-3.5 py-3 ring-1",
               isTomorrowRain
-                ? "bg-gradient-to-br from-sky-50 via-white to-sky-100/55 ring-sky-100/70 shadow-[0_1px_2px_rgba(26,35,50,0.04),0_10px_24px_-14px_rgba(14,165,233,0.28)]"
-                : "bg-gradient-to-br from-amber-50 via-white to-amber-100/55 ring-amber-100/70 shadow-[0_1px_2px_rgba(26,35,50,0.04),0_10px_24px_-14px_rgba(245,158,11,0.28)]",
+                ? "bg-[color:var(--tpc-sapphire-wash)] ring-slate-900/[0.06] shadow-[0_1px_2px_rgba(26,35,50,0.04),0_10px_24px_-14px_rgba(14,165,233,0.28)]"
+                : "bg-[color:var(--tpc-amber-wash)] ring-slate-900/[0.06] shadow-[0_1px_2px_rgba(26,35,50,0.04),0_10px_24px_-14px_rgba(245,158,11,0.28)]",
             )}
           >
             <span aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-white/65 to-transparent" />
@@ -334,8 +363,8 @@ export function TourPracticalDetails({
               className={cn(
                 "relative flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full ring-1",
                 isTomorrowRain
-                  ? "bg-gradient-to-br from-sky-100 to-sky-200/70 ring-sky-200/70"
-                  : "bg-gradient-to-br from-amber-100 to-amber-200/70 ring-amber-200/70",
+                  ? "bg-[color:var(--tpc-sapphire-wash)] ring-slate-900/[0.06]"
+                  : "bg-[color:var(--tpc-amber-wash)] ring-slate-900/[0.06]",
               )}
             >
               <TomorrowIcon className={cn("h-5 w-5", tomorrowIconClass)} strokeWidth={1.7} />
@@ -356,65 +385,48 @@ export function TourPracticalDetails({
           <h3 className="text-sm font-semibold text-foreground">{sectionUi.seasonalTitle}</h3>
           <p className="text-xs text-muted-foreground mt-1 leading-relaxed">{sectionUi.seasonalSubtitle}</p>
         </div>
-        <div
-          role="region"
-          aria-roledescription="carousel"
-          aria-label={sectionUi.seasonalTitle}
-          className="-mx-5 px-5"
-        >
-          {/* 사용자 보고 (2026-05-19 모바일): touch-pan-x가 y축 swipe를 차단해 vertical scroll이 이 carousel에서 멈춤.
-              제거 → browser default touch-action: auto. horizontal swipe = carousel scroll, vertical swipe = page scroll
-              (browser가 dominant axis 자동 판단). Apple Photos / Klook carousel 표준 동작. */}
-          <div className="flex gap-2.5 overflow-x-auto overscroll-x-contain scrollbar-hide scroll-smooth snap-x snap-mandatory pb-1.5 [-webkit-overflow-scrolling:touch]">
-            {seasonalVariations.map((season, idx) => {
-              // schema_version=1: { name, icon, tag, bgClass, iconColor, description }
-              // schema_version=7: { season, description } (icon/tag/bgClass dropped)
-              const seasonAny = season as {
-                name?: string;
-                season?: string;
-                icon?: string;
-                tag?: string;
-                bgClass?: string;
-                iconColor?: string;
-                description: string;
-              };
-              const displayName = seasonAny.name ?? seasonAny.season ?? `Season ${idx + 1}`;
-              const { theme, Icon } = resolveSeason(displayName, seasonAny.icon);
-              return (
-                <div
-                  key={displayName}
-                  className={cn(
-                    "group relative shrink-0 snap-start overflow-hidden rounded-xl p-4 ring-1 transition-all duration-300",
-                    "shadow-[0_1px_2px_rgba(0,0,0,0.04),0_4px_14px_-4px_rgba(0,0,0,0.07)]",
-                    "hover:-translate-y-[1px] hover:shadow-[0_2px_6px_rgba(0,0,0,0.06),0_8px_20px_-4px_rgba(0,0,0,0.10)]",
-                    "w-[min(280px,calc(100vw-3.5rem))] sm:w-[min(280px,calc(100%-1rem))]",
-                    theme.card,
-                    theme.ring,
-                  )}
-                >
-                  <span aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-white/65 to-transparent" />
-                  <div className="relative flex items-start justify-between mb-2.5">
-                    <div
-                      className={cn(
-                        "flex h-7 w-7 items-center justify-center rounded-full ring-1 transition-transform duration-300 group-hover:scale-[1.06]",
-                        theme.iconRing,
-                      )}
-                    >
-                      <Icon className={cn("h-3.5 w-3.5", theme.iconColor)} strokeWidth={1.7} />
-                    </div>
-                    {seasonAny.tag ? (
-                      <span className="text-[9px] font-medium text-muted-foreground bg-white/85 px-1.5 py-0.5 rounded-md ring-1 ring-border/40">
-                        {seasonAny.tag}
-                      </span>
-                    ) : null}
+        {/* W3.5 — the 4-card carousel becomes ONE card behind the shared
+            segmented toggle (§F-8 ③), defaulting to the current season. All 4
+            season hues survive (each card keeps its wash + icon tone) and the
+            inactive seasons stay mounted (hidden) for the DOM round-trip. */}
+        <div role="region" aria-label={sectionUi.seasonalTitle}>
+          {seasonMeta.length > 1 ? (
+            <SegmentedToggle
+              ariaLabel={sectionUi.seasonalTitle}
+              value={String(effectiveSeasonIdx)}
+              onChange={(v) => setSeasonIdx(Number(v))}
+              options={seasonMeta.map((s, idx) => ({ value: String(idx), label: s.displayName }))}
+              className="mb-3"
+            />
+          ) : null}
+          {seasonMeta.map((s, idx) => {
+            const { theme, Icon } = s;
+            return (
+              <div
+                key={s.displayName}
+                hidden={idx !== effectiveSeasonIdx}
+                className={cn(
+                  "relative overflow-hidden rounded-xl p-4 ring-1",
+                  "shadow-[0_1px_2px_rgba(0,0,0,0.04),0_4px_14px_-4px_rgba(0,0,0,0.07)]",
+                  theme.card,
+                  theme.ring,
+                )}
+              >
+                <div className="relative mb-2.5 flex items-start justify-between">
+                  <div className={cn("flex h-7 w-7 items-center justify-center rounded-full ring-1", theme.iconRing)}>
+                    <Icon className={cn("h-3.5 w-3.5", theme.iconColor)} strokeWidth={1.7} />
                   </div>
-                  <h4 className="relative text-[14px] font-semibold tracking-tight text-foreground">{displayName}</h4>
-                  <p className="relative mt-1 text-[11.5px] text-muted-foreground leading-relaxed">{seasonAny.description}</p>
+                  {s.tag ? (
+                    <span className="rounded-md bg-white/85 px-1.5 py-0.5 text-[9px] font-medium text-muted-foreground ring-1 ring-border/40">
+                      {s.tag}
+                    </span>
+                  ) : null}
                 </div>
-              );
-            })}
-            <div className="shrink-0 w-2 sm:w-0" aria-hidden />
-          </div>
+                <h4 className="relative text-[14px] font-semibold tracking-tight text-foreground">{s.displayName}</h4>
+                <p className="relative mt-1 text-[11.5px] leading-relaxed text-muted-foreground">{s.description}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
 
@@ -473,7 +485,7 @@ export function TourPracticalDetails({
                             >
                               {isIncluded ? (
                                 <>
-                                  <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-emerald-500" />
+                                  <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-[color:var(--tpc-jade-full)]" />
                                   <span className="text-slate-700">{rawLine}</span>
                                 </>
                               ) : (
