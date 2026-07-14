@@ -22,6 +22,7 @@ import ChatFeed from '@/components/tour-mode/ChatFeed';
 import Composer from '@/components/tour-mode/Composer';
 import EndedCard from '@/components/tour-mode/EndedCard';
 import GuideCaptionBar from '@/components/tour-mode/GuideCaptionBar';
+import NoticeBanner from '@/components/tour-mode/NoticeBanner';
 import LobbyCard, { firstPickup } from '@/components/tour-mode/LobbyCard';
 import PickupBoard from '@/components/tour-mode/PickupBoard';
 import RoomMapTab from '@/components/tour-mode/map/RoomMapTab';
@@ -223,6 +224,20 @@ function TourRoomLive({
     [bookingId, data.session],
   );
 
+  // T6.4 — one-tap onboard headcount ack (zero-LLM server template).
+  const onboardAcked = messages.some((m) => m.metadata?.kind === 'onboard_ack' && m.sender_role === 'customer');
+  const sendOnboardAck = useCallback(async () => {
+    try {
+      await fetch(`/api/tour-rooms/${encodeURIComponent(bookingId)}/messages`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'x-tour-room-auth': data.session },
+        body: JSON.stringify({ ackKind: 'onboard' }),
+      });
+    } catch {
+      /* the button stays; user can retap */
+    }
+  }, [bookingId, data.session]);
+
   // T4.7 — photo questions; the latest geofence arrival is the location
   // context injected into the vision prompt.
   const visionAsk = useCallback(
@@ -308,7 +323,12 @@ function TourRoomLive({
       locale={locale}
       schedule={schedule}
       theme={theme}
-      banner={viewerRole !== 'guide' ? <CaptionBanner caption={latestCaption} locale={locale} /> : null}
+      banner={
+        <>
+          <NoticeBanner messages={messages} tourDate={snapshot.booking?.tour_date} locale={locale} />
+          {viewerRole !== 'guide' && <CaptionBanner caption={latestCaption} locale={locale} />}
+        </>
+      }
       map={
         <RoomMapTab
           bookingId={bookingId}
@@ -348,7 +368,13 @@ function TourRoomLive({
             <GuideCaptionBar bookingId={bookingId} roomSession={data.session} locale={locale} />
           )}
           {pickup && (
-            <PickupBoard state={pickup} locale={locale} onSendPreset={(preset) => void sendPreset(preset, locale)} />
+            <PickupBoard
+              state={pickup}
+              locale={locale}
+              onSendPreset={(preset) => void sendPreset(preset, locale)}
+              onboardAcked={onboardAcked}
+              onOnboardAck={() => void sendOnboardAck()}
+            />
           )}
           {data.lifecycle === 'lobby' && (
             <LobbyCard
