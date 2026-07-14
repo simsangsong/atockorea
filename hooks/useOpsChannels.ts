@@ -98,7 +98,9 @@ export function useOpsChannels(channels: OpsChannelDescriptor[]): UseOpsChannels
   // with a fresh array identity.
   const topicsKey = channels.map((channel) => channel.topic).sort().join('|');
   const channelsRef = useRef(channels);
-  channelsRef.current = channels;
+  useEffect(() => {
+    channelsRef.current = channels;
+  });
 
   const updateStream = useCallback((roomId: string, update: (stream: OpsRoomStream) => OpsRoomStream) => {
     setStreams((prev) => ({ ...prev, [roomId]: update(prev[roomId] ?? EMPTY_STREAM) }));
@@ -174,7 +176,9 @@ export function useOpsChannels(channels: OpsChannelDescriptor[]): UseOpsChannels
   }, [topicsKey, ingestMessages, updateStream]);
 
   const streamsRef = useRef(streams);
-  streamsRef.current = streams;
+  useEffect(() => {
+    streamsRef.current = streams;
+  });
 
   const markRead = useCallback((roomId: string) => {
     const messages = streamsRef.current[roomId]?.messages ?? [];
