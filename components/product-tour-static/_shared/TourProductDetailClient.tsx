@@ -378,18 +378,17 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
           </div>
         </section>
 
-        <section className="mx-3 mt-4 lg:mx-0">
-          <div className="mx-auto max-w-2xl px-4 sm:px-5 py-5">
+        {/* W2.5 — FAQ & After-you-book merged section: slim support stepline
+            (+ W4.4 operated-by trust card) rides above the FAQ list. */}
+        <section id="faq" className="mx-3 mt-4 scroll-mt-24 lg:mx-0">
+          <div className="mx-auto max-w-2xl px-4 sm:px-5 pt-5 pb-2">
             <TourBookingSupportSection
               bookingTrustItems={vm.bookingTrustItems}
               bookingSupportSteps={vm.bookingSupportSteps}
               sectionUi={vm.sectionUi}
             />
           </div>
-        </section>
-
-        <section id="faq" className="mx-3 mt-4 lg:mx-0">
-          <div className="mx-auto max-w-2xl px-4 sm:px-5 py-5">
+          <div className="mx-auto max-w-2xl px-4 sm:px-5 pt-3 pb-5">
             <TourFaqSection staticQuestions={vm.staticQuestions} sectionUi={vm.sectionUi} />
           </div>
         </section>

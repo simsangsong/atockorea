@@ -1,20 +1,16 @@
 "use client";
 
-import { useState, type ComponentType } from "react";
+import { type ComponentType } from "react";
 import {
-  AlarmClock,
-  ArrowRight,
   BellRing,
   CheckCircle,
-  ChevronDown,
   Clock3,
   Compass,
-  Heart,
   MailCheck,
-  MapPin,
   Moon,
   Mountain,
   Route,
+  ShieldCheck,
   Sparkles,
   Sunrise,
   Users,
@@ -36,56 +32,14 @@ const TRUST_ICONS = {
 
 const DEFAULT_TRUST_ICON = CheckCircle;
 
-type TrustTheme = {
-  card: string;
-  ring: string;
-  iconRing: string;
-  iconColor: string;
-};
-
-/*
- * Trust card theme — keyed by icon. 5색 (emerald/sky/amber/orange/rose) 유지,
- * 사용자 피드백 반영하여 alpha 살짝 낮춰 soften (이전 라이브 대비 색 다양성 ↑ but 채도 ↓).
- * 마스터플랜 §B-P8 (mint 단일 + 메탈/sci-fi)은 거부 — 카테고리(여행) 본질에 안 맞음.
- */
-const TRUST_THEMES: Record<string, TrustTheme> = {
-  "check-circle": {
-    card: "bg-gradient-to-br from-emerald-50/80 via-white to-emerald-100/35",
-    ring: "ring-emerald-100/55",
-    iconRing: "bg-gradient-to-br from-emerald-100/85 to-emerald-200/45 ring-emerald-200/50",
-    iconColor: "text-emerald-600",
-  },
-  route: {
-    card: "bg-gradient-to-br from-sky-50/80 via-white to-sky-100/35",
-    ring: "ring-sky-100/55",
-    iconRing: "bg-gradient-to-br from-sky-100/85 to-sky-200/45 ring-sky-200/50",
-    iconColor: "text-sky-600",
-  },
-  users: {
-    card: "bg-gradient-to-br from-amber-50/80 via-white to-amber-100/35",
-    ring: "ring-amber-100/55",
-    iconRing: "bg-gradient-to-br from-amber-100/85 to-amber-200/50 ring-amber-200/50",
-    iconColor: "text-amber-600",
-  },
-  "clock-3": {
-    card: "bg-gradient-to-br from-orange-50/80 via-white to-orange-100/35",
-    ring: "ring-orange-100/55",
-    iconRing: "bg-gradient-to-br from-orange-100/85 to-orange-200/45 ring-orange-200/50",
-    iconColor: "text-orange-600",
-  },
-  mountain: {
-    card: "bg-gradient-to-br from-rose-50/80 via-white to-rose-100/35",
-    ring: "ring-rose-100/55",
-    iconRing: "bg-gradient-to-br from-rose-100/85 to-rose-200/45 ring-rose-200/50",
-    iconColor: "text-rose-600",
-  },
-};
-
-const TRUST_THEME_FALLBACK: TrustTheme = {
-  card: "bg-gradient-to-br from-slate-50/80 via-white to-slate-100/30",
-  ring: "ring-border/50",
-  iconRing: "bg-gradient-to-br from-slate-100/85 to-slate-200/45 ring-border/55",
-  iconColor: "text-slate-600",
+/** Per-icon accent — the 5-hue assignment survives W2.5 (§B: only the grid
+ *  LAYOUT was retired; step/trust hues are preserved). */
+const TRUST_ICON_COLORS: Record<string, string> = {
+  "check-circle": "text-emerald-600",
+  route: "text-sky-600",
+  users: "text-amber-600",
+  "clock-3": "text-orange-600",
+  mountain: "text-rose-600",
 };
 
 type LucideIcon = ComponentType<{ className?: string; strokeWidth?: number }>;
@@ -168,144 +122,83 @@ export type TourBookingSupportSectionProps = Pick<
   "bookingTrustItems" | "bookingSupportSteps" | "sectionUi"
 >;
 
+/**
+ * W2.5 — the old boxed accordion + 3-col trust grid + desktop card row are
+ * retired (LAYOUT only): every step keeps its count, copy (timing/title/
+ * detail) and per-phase hue on a single slim stepline, open by default —
+ * zero clicks to read (§F-3 conviction tier).
+ *
+ * W4.4 — the trust-item copy moves into the "Operated by AtoC Korea" card
+ * below the stepline (not a new top-level section).
+ */
 export function TourBookingSupportSection({ bookingTrustItems, bookingSupportSteps, sectionUi }: TourBookingSupportSectionProps) {
-  /** Flow is core content; open by default so travelers see the sequence without an extra click. */
-  const [showTimeline, setShowTimeline] = useState(true);
   const trustItems = bookingTrustItems ?? [];
   const supportSteps = bookingSupportSteps ?? [];
   const hasSupportSteps = supportSteps.length > 0;
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-5">
       <div>
         <h2 className="text-lg font-semibold text-foreground tracking-tight">{sectionUi.bookingSupportTitle}</h2>
-        <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">{sectionUi.bookingSupportSubtitle}</p>
-      </div>
-
-      <div className="grid grid-cols-3 gap-2">
-        {trustItems.map((item) => {
-          const Icon = TRUST_ICONS[item.icon as keyof typeof TRUST_ICONS] ?? DEFAULT_TRUST_ICON;
-          const theme = TRUST_THEMES[item.icon as keyof typeof TRUST_THEMES] ?? TRUST_THEME_FALLBACK;
-          return (
-            <div
-              key={item.title}
-              className={cn(
-                "group relative overflow-hidden rounded-xl p-3 ring-1 transition-all duration-300",
-                "shadow-[0_1px_2px_rgba(0,0,0,0.04),0_4px_14px_-4px_rgba(0,0,0,0.07)]",
-                "hover:-translate-y-[1px] hover:shadow-[0_2px_6px_rgba(0,0,0,0.06),0_8px_20px_-4px_rgba(0,0,0,0.10)]",
-                theme.card,
-                theme.ring,
-              )}
-            >
-              <span aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-white/65 to-transparent" />
-              <div
-                className={cn(
-                  "relative mb-2 flex h-7 w-7 items-center justify-center rounded-full ring-1 transition-transform duration-300 group-hover:scale-[1.06]",
-                  theme.iconRing,
-                )}
-              >
-                <Icon className={cn("h-3.5 w-3.5", theme.iconColor)} strokeWidth={1.8} />
-              </div>
-              <h3 className="relative text-[12px] font-semibold tracking-tight text-foreground leading-snug">{item.title}</h3>
-            </div>
-          );
-        })}
+        <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed max-w-prose">{sectionUi.bookingAfterSubtitle}</p>
       </div>
 
       {hasSupportSteps ? (
-        <div className="card-premium overflow-hidden">
-          <button
-            type="button"
-            onClick={() => setShowTimeline(!showTimeline)}
-            className="w-full flex items-center justify-between p-5 text-left hover:bg-muted/20 transition-colors"
-          >
-            <div>
-              <h3 className="text-sm font-semibold text-foreground">{sectionUi.bookingAfterTitle}</h3>
-              <p className="text-xs text-muted-foreground mt-0.5 max-w-prose">{sectionUi.bookingAfterSubtitle}</p>
-            </div>
-            <div
-              className={cn(
-                "flex-shrink-0 p-1.5 rounded-full transition-all duration-200",
-                showTimeline ? "bg-primary/10 rotate-180" : "bg-muted/60",
-              )}
-            >
-              <ChevronDown
-                className={cn("h-4 w-4 transition-colors", showTimeline ? "text-primary" : "text-muted-foreground")}
-              />
-            </div>
-          </button>
-
-          <div className={cn("grid transition-all duration-300 ease-out", showTimeline ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}>
-            <div className="overflow-hidden">
-              <div className="border-t border-border/60 p-5 md:p-6">
-                {/* Mobile: vertical flowchart with phase-icon spine */}
-                <div className="md:hidden">
-                  {supportSteps.map((step, i) => {
-                    const theme = pickStepTheme(step.timing ?? "", step.title ?? "", i);
-                    const StepIcon = theme.Icon;
-                    return (
-                      <div key={`m-${i}-${step.title}`} className="flex items-stretch gap-3">
-                        <div className="flex w-7 flex-shrink-0 flex-col items-center pt-[3px]">
-                          <div
-                            className={cn(
-                              "flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full ring-1",
-                              theme.ringBg,
-                            )}
-                          >
-                            <StepIcon className={cn("h-3 w-3", theme.iconColor)} strokeWidth={1.7} />
-                          </div>
-                          {i < supportSteps.length - 1 ? (
-                            <div className={cn("min-h-[0.5rem] flex-1 w-px self-center bg-gradient-to-b to-border/25", theme.spineFrom)} />
-                          ) : null}
-                        </div>
-                        <div className={cn("min-w-0 flex-1", i < supportSteps.length - 1 ? "pb-4" : "pb-0")}>
-                          <p className={cn("text-[9.5px] font-semibold uppercase tracking-[0.14em]", theme.eyebrow)}>{step.timing}</p>
-                          <p className="text-[14px] font-semibold text-foreground mt-0.5 leading-snug tracking-tight">{step.title}</p>
-                          <p className="text-[12px] text-muted-foreground mt-1 leading-snug line-clamp-2">{step.detail}</p>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-
-                {/* md+: left-to-right flow; scroll when many steps */}
-                <div className="hidden md:block overflow-x-auto pb-0.5 [-webkit-overflow-scrolling:touch]">
-                  <div className="flex min-w-0 items-stretch gap-2 md:min-w-min lg:gap-3">
-                    {supportSteps.map((step, i) => {
-                      const theme = pickStepTheme(step.timing ?? "", step.title ?? "", i);
-                      const StepIcon = theme.Icon;
-                      return (
-                        <div key={`d-${i}-${step.title}`} className="flex min-w-0 items-stretch">
-                          <div className="flex w-[min(100%,17.5rem)] min-w-[12rem] sm:min-w-[13rem] flex-col rounded-xl border border-border/50 bg-gradient-to-b from-background via-background to-muted/15 p-4 shadow-[0_1px_2px_rgba(26,35,50,0.04),0_8px_22px_-12px_rgba(26,35,50,0.14)]">
-                            <div className="mb-2 flex items-start gap-2">
-                              <span
-                                className={cn(
-                                  "flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full ring-1",
-                                  theme.ringBg,
-                                )}
-                              >
-                                <StepIcon className={cn("h-3 w-3", theme.iconColor)} strokeWidth={1.7} />
-                              </span>
-                              <p className={cn("min-w-0 flex-1 text-[9.5px] font-semibold uppercase leading-tight tracking-[0.14em] pt-[5px]", theme.eyebrow)}>
-                                {step.timing}
-                              </p>
-                            </div>
-                            <p className="text-[14px] font-semibold text-foreground leading-snug tracking-tight">{step.title}</p>
-                            <p className="mt-1.5 text-[12px] text-muted-foreground leading-snug line-clamp-2">{step.detail}</p>
-                          </div>
-                          {i < supportSteps.length - 1 ? (
-                            <div className="flex w-5 flex-shrink-0 items-center justify-center self-center text-muted-foreground/40 sm:w-6">
-                              <ArrowRight className="h-4 w-4" aria-hidden />
-                            </div>
-                          ) : null}
-                        </div>
-                      );
-                    })}
+        <div className="max-w-prose">
+          {supportSteps.map((step, i) => {
+            const theme = pickStepTheme(step.timing ?? "", step.title ?? "", i);
+            const StepIcon = theme.Icon;
+            return (
+              <div key={`${i}-${step.title}`} className="flex items-stretch gap-3">
+                <div className="flex w-6 flex-shrink-0 flex-col items-center pt-[2px]">
+                  <div
+                    className={cn(
+                      "flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full ring-1",
+                      theme.ringBg,
+                    )}
+                  >
+                    <StepIcon className={cn("h-3 w-3", theme.iconColor)} strokeWidth={1.7} />
                   </div>
+                  {i < supportSteps.length - 1 ? (
+                    <div className={cn("min-h-[0.5rem] w-px flex-1 self-center bg-gradient-to-b to-border/25", theme.spineFrom)} />
+                  ) : null}
+                </div>
+                <div className={cn("min-w-0 flex-1", i < supportSteps.length - 1 ? "pb-3.5" : "pb-0")}>
+                  <p className="leading-snug">
+                    <span className={cn("text-[9.5px] font-semibold uppercase tracking-[0.14em]", theme.eyebrow)}>{step.timing}</span>
+                  </p>
+                  <p className="mt-0.5 text-[13.5px] font-semibold leading-snug tracking-tight text-foreground">{step.title}</p>
+                  <p className="mt-0.5 text-[12px] leading-snug text-muted-foreground">{step.detail}</p>
                 </div>
               </div>
-            </div>
+            );
+          })}
+        </div>
+      ) : (
+        <p className="text-[12px] leading-relaxed text-muted-foreground">{sectionUi.bookingSupportEmptyHint}</p>
+      )}
+
+      {/* W4.4 — direct-operation trust card (absorbs the old trust-grid copy). */}
+      {trustItems.length > 0 ? (
+        <div className="rounded-2xl border border-border/70 bg-white p-4 shadow-[0_1px_2px_rgba(0,0,0,0.03),0_4px_12px_-2px_rgba(0,0,0,0.055)]">
+          <div className="flex items-center gap-2">
+            <ShieldCheck className="h-4 w-4 text-emerald-600" strokeWidth={2} aria-hidden />
+            <h3 className="text-[13.5px] font-semibold tracking-tight text-foreground">
+              {sectionUi.operatedByTitle ?? "Operated by AtoC Korea"}
+            </h3>
           </div>
+          <ul className="mt-2.5 space-y-1.5">
+            {trustItems.map((item) => {
+              const Icon = TRUST_ICONS[item.icon as keyof typeof TRUST_ICONS] ?? DEFAULT_TRUST_ICON;
+              const color = TRUST_ICON_COLORS[item.icon ?? ""] ?? "text-slate-600";
+              return (
+                <li key={item.title} className="flex items-center gap-2 text-[12.5px] font-medium text-foreground">
+                  <Icon className={cn("h-3.5 w-3.5 flex-shrink-0", color)} strokeWidth={1.9} aria-hidden />
+                  {item.title}
+                </li>
+              );
+            })}
+          </ul>
         </div>
       ) : null}
     </div>
