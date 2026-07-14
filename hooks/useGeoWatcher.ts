@@ -31,8 +31,12 @@ export function useGeoWatcher(options: {
   bookingId: string;
   roomSession: string;
   enabled: boolean;
+  /** T4.4 — every accepted raw sample (before publish throttling). */
+  onSample?: (sample: GeoSample) => void;
 }): UseGeoWatcher {
   const { bookingId, roomSession, enabled } = options;
+  const onSampleRef = useRef(options.onSample);
+  onSampleRef.current = options.onSample;
   const [status, setStatus] = useState<GeoWatcherStatus>('idle');
   const [lastPosition, setLastPosition] = useState<UseGeoWatcher['lastPosition']>(null);
   const publishedRef = useRef<{ publishedAtMs: number; position: LatLng } | null>(null);
@@ -90,6 +94,7 @@ export function useGeoWatcher(options: {
           heading: sample.heading,
           speedMps: sample.speedMps,
         });
+        onSampleRef.current?.(sample);
         publish(sample);
       },
       (error) => {

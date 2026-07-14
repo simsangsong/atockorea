@@ -1,8 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
-import { translateTextForLocales } from '@/lib/openai-server';
 import { requestGate, clientIpKey } from '@/lib/durable-rate-limit';
 import { ensureRoom, resolveRoomActor } from '@/lib/tour-room/access';
+import { broadcastToRoom } from '@/lib/tour-room/realtime';
+import { normalizeRoomLocale } from '@/lib/tour-room/snapshot';
+import {
+  renderSpotEventTranslations,
+  resolveSpotContent,
+  type SpotEventKind,
+} from '@/lib/tour-room/spotContent';
 
 export const dynamic = 'force-dynamic';
 
@@ -25,26 +31,21 @@ function parseLocales(value: unknown): string[] {
   return DEFAULT_TARGET_LOCALES;
 }
 
-function sourceTextForEvent(
+/** T4.3 (§M-2 ①): pick the pre-translated template — LLM calls: zero. */
+function templateKindForEvent(
   eventType: SpotEventType,
-  spot: { title: string; audio_url?: string | null },
+  spot: { audio_url?: string | null },
   payload: Record<string, unknown>,
-): string {
+): { kind: SpotEventKind; params: { spot?: string; time?: string; point?: string } } {
   if (eventType === 'meeting_notice_sent') {
-    const meetingTime = String(payload.meetingTime || '').trim();
-    const meetingPoint = String(payload.meetingPoint || 'the drop-off point').trim();
-    return meetingTime
-      ? `Meeting time is ${meetingTime}. Please gather at ${meetingPoint}.`
-      : `Please gather at ${meetingPoint}.`;
+    const time = String(payload.meetingTime || '').trim();
+    const point = String(payload.meetingPoint || 'the drop-off point').trim();
+    return time
+      ? { kind: 'meeting_notice_timed', params: { time, point } }
+      : { kind: 'meeting_notice', params: { point } };
   }
-
-  if (eventType === 'audio_played') {
-    return `Audio guide started for ${spot.title}.`;
-  }
-
-  return spot.audio_url
-    ? `You have arrived near ${spot.title}. Tap the audio guide button to play the guide.`
-    : `You have arrived near ${spot.title}.`;
+  if (eventType === 'audio_played') return { kind: 'audio_played', params: {} };
+  return { kind: spot.audio_url ? 'arrived_audio' : 'arrived', params: {} };
 }
 
 export async function POST(
@@ -98,7 +99,7 @@ export async function POST(
 
     const { data: spot, error: spotError } = await supabase
       .from('tour_guide_spots')
-      .select('id, tour_id, title, description, audio_url, latitude, longitude, trigger_radius_m')
+      .select('id, tour_id, title, description, audio_url, latitude, longitude, trigger_radius_m, content, poi_key')
       .eq('id', spotId)
       .single();
     if (spotError || !spot) {
@@ -125,8 +126,19 @@ export async function POST(
       meetingPoint: body.meetingPoint ?? (payload as Record<string, unknown>).meetingPoint,
     };
     const targetLocales = parseLocales(body.targetLocales || booking.preferred_language || DEFAULT_TARGET_LOCALES);
-    const sourceText = sourceTextForEvent(eventType, spot, eventPayload as Record<string, unknown>);
-    const translation = await translateTextForLocales(sourceText, targetLocales);
+
+    // T4.3 (§M-2 ①): pre-translated template constants + spot-name
+    // interpolation — this handler performs zero LLM calls.
+    const template = templateKindForEvent(eventType, spot, eventPayload as Record<string, unknown>);
+    const translation = renderSpotEventTranslations(template.kind, { spot: spot.title, ...template.params });
+    const sourceText = translation.source_text;
+
+    // D-5: locale-resolved rich content rides the arrival metadata
+    // (curated content jsonb → poi_kb fact sheet → none, 3-tier).
+    const viewerLocale = normalizeRoomLocale(body.locale, normalizeRoomLocale(booking.preferred_language));
+    const resolved_content =
+      eventType === 'arrived' ? resolveSpotContent(spot, viewerLocale) : { content: null, tier: 'none' as const };
+
     const metadata = {
       kind: eventType === 'arrived' ? 'spot_arrival' : eventType,
       spot_id: spot.id,
@@ -134,6 +146,9 @@ export async function POST(
       audio_url: spot.audio_url,
       distance_m: distanceM,
       arrival_radius_m: arrivalRadiusM,
+      ...(resolved_content.content
+        ? { content: resolved_content.content, content_tier: resolved_content.tier }
+        : {}),
       ...eventPayload,
     };
 
@@ -183,6 +198,10 @@ export async function POST(
       .select()
       .single();
     if (eventError) throw eventError;
+
+    // T4.3: the committed row rides the room channel like any message
+    // (best-effort; the after-cursor resync recovers gaps, §O-6).
+    await broadcastToRoom(room, 'message', { message });
 
     return NextResponse.json({ room, message, event }, { status: 201 });
   } catch (error) {

@@ -15,7 +15,9 @@ import FindGuideCard from '@/components/tour-mode/map/FindGuideCard';
 import LocationShareCard from '@/components/tour-mode/map/LocationShareCard';
 import PresenceBar from '@/components/tour-mode/PresenceBar';
 import { useGeoWatcher } from '@/hooks/useGeoWatcher';
+import { useSpotGeofence } from '@/hooks/useSpotGeofence';
 import { acquireWakeLock, type WakeLockHandle } from '@/lib/tour-room/wakeLock';
+import type { WatchableSpot } from '@/lib/tour-room/spotWatcher';
 import type { RoomLocation, RoomPresence } from '@/hooks/useTourRoomChannel';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 import type { MapSpot, MapPoint } from '@/components/tour-mode/map/RoomMapCanvas';
@@ -47,6 +49,7 @@ export default function RoomMapTab({
   spots,
   facilities,
   pickup,
+  geofenceSpots,
 }: {
   bookingId: string;
   roomSession: string;
@@ -57,13 +60,23 @@ export default function RoomMapTab({
   spots: MapSpot[];
   facilities: MapPoint[];
   pickup: MapPoint | null;
+  /** T4.4 — spots with radii; arrivals auto-post while sharing is on. */
+  geofenceSpots?: WatchableSpot[];
 }) {
   const [sharing, setSharing] = useState(false);
   const [followGuide, setFollowGuide] = useState(false);
+  const { onSample } = useSpotGeofence({
+    bookingId,
+    roomSession,
+    spots: geofenceSpots ?? [],
+    locale,
+    enabled: sharing && (geofenceSpots?.length ?? 0) > 0,
+  });
   const { status, lastPosition, stopSharing } = useGeoWatcher({
     bookingId,
     roomSession,
     enabled: sharing,
+    onSample,
   });
 
   // T3.6 — hold a screen wake lock while actively sharing.

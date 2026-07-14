@@ -89,11 +89,31 @@ export interface VoiceTranscribeResult {
   needsConfirmation: boolean;
 }
 
+/** T4.7 — photo-question hook provided by the room client. */
+export interface VisionAsk {
+  ask: (
+    file: File,
+    options: { question: string; share: boolean },
+  ) => Promise<{ answer: string; shared: boolean } | null>;
+}
+
+const VISION_COPY: Record<
+  RoomLocale,
+  { placeholder: string; private_: string; share: string; ask: string; asking: string; failed: string; close: string }
+> = {
+  en: { placeholder: 'Ask about this photo (optional)', private_: 'Only me', share: 'Share with room', ask: 'Ask', asking: 'Looking…', failed: 'Could not analyze — try again.', close: 'Close' },
+  ko: { placeholder: '사진에 대해 물어보세요 (선택)', private_: '나만 보기', share: '방에 공유', ask: '질문하기', asking: '살펴보는 중…', failed: '분석하지 못했어요 — 다시 시도해 주세요.', close: '닫기' },
+  ja: { placeholder: '写真について質問（任意）', private_: '自分だけ', share: 'ルームに共有', ask: '質問する', asking: '確認中…', failed: '分析できませんでした — もう一度お試しください。', close: '閉じる' },
+  es: { placeholder: 'Pregunta sobre la foto (opcional)', private_: 'Solo yo', share: 'Compartir', ask: 'Preguntar', asking: 'Analizando…', failed: 'No se pudo analizar — inténtalo de nuevo.', close: 'Cerrar' },
+  zh: { placeholder: '关于这张照片的问题（可选）', private_: '仅自己可见', share: '分享到房间', ask: '提问', asking: '识别中…', failed: '无法识别 — 请重试。', close: '关闭' },
+};
+
 export default function Composer({
   locale,
   onSendText,
   onSendPreset,
   transcribeVoice,
+  vision,
   disabled = false,
 }: {
   locale: RoomLocale;
@@ -101,6 +121,8 @@ export default function Composer({
   onSendPreset: (preset: QuickReplyPreset) => void;
   /** T2.2 — provided by the room client; absent = voice input hidden. */
   transcribeVoice?: (blob: Blob, mimeType: string) => Promise<VoiceTranscribeResult | null>;
+  /** T4.7 — photo questions; absent = camera button hidden. */
+  vision?: VisionAsk;
   disabled?: boolean;
 }) {
   const [draft, setDraft] = useState('');
@@ -113,6 +135,50 @@ export default function Composer({
   const recordingRef = useRef<ActiveRecording | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
   const { settings } = useTourRoomSettings();
+
+  // T4.7 — photo question panel state.
+  const [visionFile, setVisionFile] = useState<File | null>(null);
+  const [visionPreview, setVisionPreview] = useState<string | null>(null);
+  const [visionQuestion, setVisionQuestion] = useState('');
+  const [visionShare, setVisionShare] = useState(false);
+  const [visionState, setVisionState] = useState<'idle' | 'asking' | 'answered' | 'failed'>('idle');
+  const [visionAnswer, setVisionAnswer] = useState('');
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
+
+  const closeVision = () => {
+    if (visionPreview) URL.revokeObjectURL(visionPreview);
+    setVisionFile(null);
+    setVisionPreview(null);
+    setVisionQuestion('');
+    setVisionAnswer('');
+    setVisionState('idle');
+  };
+
+  const onPickImage = (file: File | null) => {
+    if (!file) return;
+    primeAudio();
+    if (visionPreview) URL.revokeObjectURL(visionPreview);
+    setVisionFile(file);
+    setVisionPreview(URL.createObjectURL(file));
+    setVisionAnswer('');
+    setVisionState('idle');
+  };
+
+  const askVision = async () => {
+    if (!vision || !visionFile) return;
+    setVisionState('asking');
+    const result = await vision.ask(visionFile, { question: visionQuestion.trim(), share: visionShare });
+    if (!result) {
+      setVisionState('failed');
+      return;
+    }
+    if (result.shared) {
+      closeVision(); // the answer arrives in the feed via broadcast
+      return;
+    }
+    setVisionAnswer(result.answer);
+    setVisionState('answered');
+  };
 
   const [voiceSupported, setVoiceSupported] = useState(false);
   useEffect(() => {
@@ -208,6 +274,62 @@ export default function Composer({
         ))}
       </div>
 
+      {visionFile && vision && (
+        <div className="mb-1.5 rounded-2xl bg-white p-3 shadow-sm ring-1 ring-gray-100 dark:bg-gray-900 dark:ring-gray-800" data-testid="vision-panel">
+          <div className="flex gap-2.5">
+            {visionPreview && (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={visionPreview} alt="" className="h-16 w-16 shrink-0 rounded-xl object-cover" />
+            )}
+            <div className="min-w-0 flex-1">
+              {visionState === 'answered' ? (
+                <p className="max-h-40 overflow-y-auto text-[13px] leading-relaxed text-gray-800 dark:text-gray-100" data-testid="vision-answer">
+                  {visionAnswer}
+                </p>
+              ) : (
+                <>
+                  <input
+                    value={visionQuestion}
+                    onChange={(e) => setVisionQuestion(e.target.value)}
+                    maxLength={300}
+                    placeholder={VISION_COPY[locale].placeholder}
+                    className="w-full rounded-xl border border-gray-200 bg-white px-3 py-2 text-[13px] focus:border-amber-400 focus:outline-none dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100"
+                  />
+                  <label className="mt-1.5 flex items-center gap-1.5 text-[11px] text-gray-500 dark:text-gray-400">
+                    <input
+                      type="checkbox"
+                      checked={visionShare}
+                      onChange={(e) => setVisionShare(e.target.checked)}
+                      className="accent-amber-500"
+                    />
+                    {visionShare ? VISION_COPY[locale].share : VISION_COPY[locale].private_}
+                  </label>
+                </>
+              )}
+              {visionState === 'failed' && (
+                <p className="mt-1 text-[12px] text-red-600 dark:text-red-400">{VISION_COPY[locale].failed}</p>
+              )}
+            </div>
+          </div>
+          <div className="mt-2 flex justify-end gap-2">
+            <button type="button" onClick={closeVision} className="rounded-xl px-3 py-1.5 text-[12px] font-medium text-gray-500 dark:text-gray-400">
+              {VISION_COPY[locale].close}
+            </button>
+            {visionState !== 'answered' && (
+              <button
+                type="button"
+                onClick={() => void askVision()}
+                disabled={visionState === 'asking'}
+                className="rounded-xl bg-amber-500 px-3.5 py-1.5 text-[12px] font-semibold text-white disabled:opacity-50"
+                data-testid="vision-ask-button"
+              >
+                {visionState === 'asking' ? VISION_COPY[locale].asking : `🔍 ${VISION_COPY[locale].ask}`}
+              </button>
+            )}
+          </div>
+        </div>
+      )}
+
       {voiceNote && (
         <p className="mb-1.5 rounded-xl bg-red-50 px-3 py-2 text-[12px] text-red-600 dark:bg-red-950 dark:text-red-300" data-testid="voice-note">
           {voiceNote}
@@ -271,6 +393,31 @@ export default function Composer({
             maxLength={2000}
             className="min-w-0 flex-1 rounded-2xl border border-gray-200 bg-white px-4 py-3 text-[14px] focus:border-amber-400 focus:outline-none dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100"
           />
+          {vision && !draft.trim() && (
+            <>
+              <input
+                ref={fileInputRef}
+                type="file"
+                accept="image/*"
+                capture="environment"
+                className="hidden"
+                onChange={(e) => {
+                  onPickImage(e.target.files?.[0] ?? null);
+                  e.target.value = '';
+                }}
+                data-testid="vision-file-input"
+              />
+              <button
+                type="button"
+                onClick={() => fileInputRef.current?.click()}
+                aria-label="ask about a photo"
+                className="rounded-2xl bg-white px-4 py-3 text-[16px] shadow-sm ring-1 ring-gray-200 active:bg-amber-50 dark:bg-gray-900 dark:ring-gray-700"
+                data-testid="camera-button"
+              >
+                📷
+              </button>
+            </>
+          )}
           {voiceSupported && !draft.trim() && (
             <button
               type="button"

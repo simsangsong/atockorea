@@ -147,7 +147,14 @@ function TourRoomLive({
     } | null;
     messages?: RoomMessage[];
     locations?: RoomLocation[];
-    tour_guide_spots?: Array<{ id: string; title?: string | null; latitude?: number | null; longitude?: number | null }>;
+    tour_guide_spots?: Array<{
+      id: string;
+      title?: string | null;
+      latitude?: number | null;
+      longitude?: number | null;
+      trigger_radius_m?: number | null;
+      exit_radius_m?: number | null;
+    }>;
     tour_facilities?: Array<{ name?: string | null; lat?: number | null; lng?: number | null }>;
     pickup_sequence?: PickupSequenceStop[];
     schedule?: Array<Record<string, unknown>>;
@@ -184,6 +191,9 @@ function TourRoomLive({
         })
       : null;
 
+  const messagesRef = useRef(messages);
+  messagesRef.current = messages;
+
   // T2.4: any first gesture in the room unlocks audio for later playback.
   useEffect(() => {
     const unlock = () => primeAudio();
@@ -211,6 +221,37 @@ function TourRoomLive({
       }
     },
     [bookingId, data.session],
+  );
+
+  // T4.7 — photo questions; the latest geofence arrival is the location
+  // context injected into the vision prompt.
+  const visionAsk = useCallback(
+    async (file: File, options: { question: string; share: boolean }) => {
+      try {
+        const lastArrival = [...messagesRef.current]
+          .reverse()
+          .find((m) => m.metadata?.kind === 'spot_arrival');
+        const form = new FormData();
+        form.append('image', file);
+        form.append('locale', locale);
+        form.append('question', options.question);
+        form.append('share', String(options.share));
+        if (lastArrival?.metadata?.spot_title) {
+          form.append('context', String(lastArrival.metadata.spot_title));
+        }
+        const res = await fetch(`/api/tour-rooms/${encodeURIComponent(bookingId)}/vision-ask`, {
+          method: 'POST',
+          headers: { 'x-tour-room-auth': data.session },
+          body: form,
+        });
+        if (!res.ok) return null;
+        const json = (await res.json()) as { answer?: string; shared?: boolean };
+        return json.answer ? { answer: json.answer, shared: Boolean(json.shared) } : null;
+      } catch {
+        return null;
+      }
+    },
+    [bookingId, data.session, locale],
   );
 
   // T2.9 — report the device's TTS capability once per entry (background,
@@ -284,6 +325,20 @@ function TourRoomLive({
           }))}
           facilities={snapshot.tour_facilities ?? []}
           pickup={myPickup}
+          geofenceSpots={(snapshot.tour_guide_spots ?? [])
+            .filter(
+              (spot) =>
+                typeof spot.latitude === 'number' &&
+                typeof spot.longitude === 'number' &&
+                typeof spot.trigger_radius_m === 'number',
+            )
+            .map((spot) => ({
+              id: spot.id,
+              latitude: spot.latitude!,
+              longitude: spot.longitude!,
+              trigger_radius_m: spot.trigger_radius_m!,
+              exit_radius_m: spot.exit_radius_m ?? null,
+            }))}
         />
       }
       settings={<SettingsTab locale={locale} onLocaleChange={onLocaleChange} />}
@@ -326,6 +381,7 @@ function TourRoomLive({
               onSendText={(text) => void sendText(text)}
               onSendPreset={(preset) => void sendPreset(preset, locale)}
               transcribeVoice={transcribeVoice}
+              vision={{ ask: visionAsk }}
             />
           )}
         </>
