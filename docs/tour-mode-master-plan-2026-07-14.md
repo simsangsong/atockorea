@@ -2,7 +2,7 @@
 
 **작성일:** 2026-07-14
 **브랜치:** `claude/tour-mode-dev-iaa0b8`
-**상태:** Wave T0 **전체 완료(T0.3 라이브 적용 2026-07-14 완료)** + **Wave T1 사실상 완료** — T1.1~T1.10, T1.12 완료 / T1.11은 ⑧(QR·취소 revoke, T5.1과 함께)만 잔여. 다음 코드 작업 = **Wave T2(음성 — 개정된 T2.2 확인 필수)**. 구현 커밋은 세션 브랜치 `claude/tour-mode-iql6ho`(플랜 문서 브랜치를 머지해 진행).
+**상태:** Wave T0 **전체 완료(T0.3 라이브 적용 2026-07-14)** + **Wave T1 사실상 완료**(T1.11 ⑧ QR·취소 revoke만 T5.1 동반 잔여) + **Wave T2 음성 9/9 코드 완료**(실기기 확인 항목은 §I-4에 문서화, 파일럿 전 수행). T0~T2 게이트 도달 — 다음 = **플래그 OFF 상태로 PR 갱신 → Wave T3(위치·지도)**. 구현 커밋은 세션 브랜치 `claude/tour-mode-iql6ho`(플랜 문서 브랜치를 머지해 진행).
 **단일 기준 문서:** 이 파일. 투어모드 관련 모든 작업은 이 문서의 웨이브·티켓 번호를 기준으로 진행/보고한다.
 
 ---
@@ -275,15 +275,15 @@ hooks/
 - **T1.12** [사용자 결정 2026-07-14 추가] 룸 설정 탭 — RoomShell 4번째 탭. 기기 단위 설정(localStorage + useSyncExternalStore 공유): ① 내 언어(5로케일 — 변경 시 재join으로 participant.locale 서버 동기화 → D-8 번역 타깃 반영) ② 화면 모드 라이트/다크/자동(prefers-color-scheme, 룸 스코프 .dark 클래스) ③ "보내기 전 음성 텍스트 확인" 토글(기본 ON — T2.2가 소비) ④ "가이드 공지 소리로 읽기" 토글(기본 OFF — T2.5가 소비) ⑤ 글자 크기 보통/크게(§E 시니어 배려) — AC: 설정 영속(재방문 유지), 다크모드 즉시 전환, 언어 변경 시 이후 메시지 번역 타깃 변경. ✅ 완료(7daefb6)
 
 ### Wave T2 — 음성 (STT 발신 · TTS 수신 · 실시간 통역) 【9티켓】
-- **T2.1** `Composer` 푸시투토크 — MediaRecorder(webm/opus, iOS는 mp4/aac 분기), 최대 60초, 파형 표시 — AC: iOS Safari·Android Chrome 실기 확인 항목 문서화.
-- **T2.2** 음성 발신 플로우 — **[사용자 결정 2026-07-14] 발송 전 STT 텍스트 확인이 기본**: 녹음 종료 → 신규 `POST /api/tour-rooms/[bookingId]/stt`(음성→텍스트만, 메시지 미생성) → 인식 텍스트를 Composer에 채워 사용자가 확인·수정 후 일반 텍스트 경로로 발송. 설정 탭 "보내기 전 음성 텍스트 확인"(기본 ON, T1.12)을 끄면 기존 multipart 즉시발송 경로 사용 — 단 저품질(`metadata.stt.quality`)이면 설정과 무관하게 항상 확인 단계 강제. 업로드 중 진행 표시 — AC: 확인 단계에서 수정 후 발송, 설정 토글 반영, 저품질 강제 확인.
-- **T2.3** M-5 캐시 + `GET tts` API — AC: 동일 메시지·로케일 2회 요청 시 생성 1회(로그 검증).
-- **T2.4** `AudioButton` + 오디오 프라이밍(첫 사용자 제스처에서 무음 재생으로 unlock) — AC: iOS 자동재생 차단 상황에서 안내 토스트.
-- **T2.5** 수신 자동 낭독 모드(옵션, 가이드 공지만) — 기기 내장 `speechSynthesis` 사용(서버 TTS 0회), **on/off는 T1.12 설정 탭의 "가이드 공지 소리로 읽기" 토글**(스위치 UI는 T1.12에서 선구현됨) — AC: 기본 OFF, 화면 꺼짐 시 미동작 명시.
-- **T2.6** 가이드 자막 방송 — 클라이언트 발화 청크화: WebAudio 에너지 기반 VAD(라이브러리 무추가)로 3~8초 발화 단위 분할 → webm/opus 업로드, Tier A(Web Speech API 지원 기기)는 온디바이스 STT 텍스트만 전송 — AC: 무음 구간 업로드 0, iOS(오디오 청크)/Android(Web Speech) 분기 동작.
-- **T2.7** `POST /api/tour-rooms/[bookingId]/captions` — Tier A: 텍스트 → 번역 1콜 / Tier B: 오디오 청크 → Gemini Flash-Lite 멀티모달 1콜(전사+번역 동시, §N) → Broadcast로 자막 push(기본 DB 미저장, "기록 남기기" 토글 시만 메시지로 저장) — AC: 청크 종료→자막 표시 p95 ≤ 2.5s, 프로바이더 장애 시 기존 stt-router+번역 폴백.
-- **T2.8** 손님측 자막 UI — 룸 상단 라이브 자막 배너(뷰어 로케일) + 원문 토글 + 자동 낭독 옵션 — AC: 자막 유실 시(재연결) 마지막 문장부터 재개, 5로케일 렌더.
-- **T2.9** TTS 케이퍼빌리티 래더(§O-2) — `voiceschanged` 대기 + 로케일 음성 존재 검증 → 서버 TTS 폴백 자동 전환 → 오디오 불가 시 배지 강등, `tts_capable` 보고 + 가이드 공지 선생성 — AC: voices 빈 배열 기기 시뮬레이션에서 서버 폴백 재생, 룸 내 캐시 공유(생성 1회) 검증.
+- **T2.1** `Composer` 푸시투토크 — MediaRecorder(webm/opus, iOS는 mp4/aac 분기), 최대 60초, 파형 표시 — AC: iOS Safari·Android Chrome 실기 확인 항목 문서화. ✅ 완료(df44bba0) — `lib/tour-room/recorder.ts`(코덱 협상+60s 상한+WebAudio 레벨미터), 녹음 바(펄스·타이머·레벨바·취소/완료). 실기 확인 항목은 §I-4에 문서화. O-9: 미지원 기기는 🎤 미노출.
+- **T2.2** 음성 발신 플로우 — **[사용자 결정 2026-07-14] 발송 전 STT 텍스트 확인이 기본**: 녹음 종료 → 신규 `POST /api/tour-rooms/[bookingId]/stt`(음성→텍스트만, 메시지 미생성) → 인식 텍스트를 Composer에 채워 사용자가 확인·수정 후 일반 텍스트 경로로 발송. 설정 탭 "보내기 전 음성 텍스트 확인"(기본 ON, T1.12)을 끄면 기존 multipart 즉시발송 경로 사용 — 단 저품질(`metadata.stt.quality`)이면 설정과 무관하게 항상 확인 단계 강제. 업로드 중 진행 표시 — AC: 확인 단계에서 수정 후 발송, 설정 토글 반영, 저품질 강제 확인. ✅ 완료(5298db9d+df44bba0) — **설계 조정:** 토글 OFF도 multipart 즉시발송 대신 `/stt`→깨끗하면 자동 텍스트발송으로 단일화(저품질 강제확인이 서버 판정 `needsConfirmation`으로 항상 성립, 파이프라인 1개). AC 3건 모두 유닛으로 고정.
+- **T2.3** M-5 캐시 + `GET tts` API — AC: 동일 메시지·로케일 2회 요청 시 생성 1회(로그 검증). ✅ 완료(5298db9d, 헬퍼 추출 ee8b5f4a) — 캐시 히트=생성 0회+게이트 미소모(테스트), `lib/tour-room/tts-server.ts` ensureRoomTts(레이스 세이프 upsert), 버킷 `tour-audio`.
+- **T2.4** `AudioButton` + 오디오 프라이밍(첫 사용자 제스처에서 무음 재생으로 unlock) — AC: iOS 자동재생 차단 상황에서 안내 토스트. ✅ 완료(df44bba0) — 수신 버블에 🔊(래더 경유), 룸 첫 pointerdown+버튼 탭에서 프라이밍, 전면 실패 시 🔇 배지 강등(토스트 대신 인라인 배지 — 실기 확인은 §I-4).
+- **T2.5** 수신 자동 낭독 모드(옵션, 가이드 공지만) — 기기 내장 `speechSynthesis` 사용(서버 TTS 0회), **on/off는 T1.12 설정 탭의 "가이드 공지 소리로 읽기" 토글**(스위치 UI는 T1.12에서 선구현됨) — AC: 기본 OFF, 화면 꺼짐 시 미동작 명시. ✅ 완료(df44bba0) — 신규 가이드 메시지만(입장 전 백로그 제외), visible 탭 가드, 자막도 같은 토글로 자동낭독.
+- **T2.6** 가이드 자막 방송 — 클라이언트 발화 청크화: WebAudio 에너지 기반 VAD(라이브러리 무추가)로 3~8초 발화 단위 분할 → webm/opus 업로드, Tier A(Web Speech API 지원 기기)는 온디바이스 STT 텍스트만 전송 — AC: 무음 구간 업로드 0, iOS(오디오 청크)/Android(Web Speech) 분기 동작. ✅ 완료(df44bba0) — `lib/tour-room/captionCapture.ts`(순수 VAD 세그먼터: 무음 400ms 경계·700ms 최소·8s 상한, 유닛 고정)+`GuideCaptionBar`(시작/중지·레벨·기록 토글). 실기 분기 확인은 §I-4.
+- **T2.7** `POST /api/tour-rooms/[bookingId]/captions` — Tier A: 텍스트 → 번역 1콜 / Tier B: 오디오 청크 → Gemini Flash-Lite 멀티모달 1콜(전사+번역 동시, §N) → Broadcast로 자막 push(기본 DB 미저장, "기록 남기기" 토글 시만 메시지로 저장) — AC: 청크 종료→자막 표시 p95 ≤ 2.5s, 프로바이더 장애 시 기존 stt-router+번역 폴백. ✅ 완료(5298db9d) — 폴백 래더+O-14(번역 전실패→원문 방송) 테스트 고정, 청크별 지연 로그(`[captions] … ms=`)로 p95 감시. p95 실측은 파일럿(T8)에서.
+- **T2.8** 손님측 자막 UI — 룸 상단 라이브 자막 배너(뷰어 로케일) + 원문 토글 + 자동 낭독 옵션 — AC: 자막 유실 시(재연결) 마지막 문장부터 재개, 5로케일 렌더. ✅ 완료(df44bba0) — `CaptionBanner`(탭 상단 고정, 8s 페이드, seq 최고값 우선이라 재연결 후 다음 문장부터 자연 재개; 자막은 설계상 휘발). 자동낭독 1회/seq 유닛 고정.
+- **T2.9** TTS 케이퍼빌리티 래더(§O-2) — `voiceschanged` 대기 + 로케일 음성 존재 검증 → 서버 TTS 폴백 자동 전환 → 오디오 불가 시 배지 강등, `tts_capable` 보고 + 가이드 공지 선생성 — AC: voices 빈 배열 기기 시뮬레이션에서 서버 폴백 재생, 룸 내 캐시 공유(생성 1회) 검증. ✅ 완료(df44bba0+ee8b5f4a) — voices 빈 배열/타로케일 음성/synth 부재 → server 티어(유닛), 캐시 히트 생성 0회(유닛), tts_capable 백그라운드 join 보고, 가이드 공지 선생성(tts_capable=false 참가자 로케일만, 실패 무해).
 
 ### Wave T3 — 위치공유 · 지도 【7티켓】
 - **T3.1** `location` API — 서버 경유 rebroadcast + 30s 스냅샷 upsert + 레이트리밋 — AC: 위조 participant_id 403.
@@ -389,6 +389,10 @@ hooks/
 2. **통합(API):** join/messages/location/spot-events/broadcast/dispatch — 인가 매트릭스 표 그대로 케이스화(admin/owner/merchant/guide토큰/customer토큰/게스트매칭/무권한 7행 × 엔드포인트).
 3. **E2E(playwright, 사전 설치 Chromium):** 컨텍스트 2개(가이드/손님) 왕복 채팅, 모의 좌표 시퀀스(`context.setGeolocation`)로 지오펜스 도착 카드, Realtime 차단 시 SSE 강등.
 4. **실기기 체크리스트(문서화, 파일럿 전 필수):** iOS Safari(녹음·자동재생·wake lock), Android Chrome, 저속망(3G 스로틀), 화면잠금 복귀.
+   **음성(Wave T2) 상세 — T2.1 AC의 실기기 확인 항목:**
+   - **iOS Safari:** ① 🎤 버튼 노출(MediaRecorder mp4/aac 협상 — `pickRecorderMimeType`이 `audio/mp4` 선택 확인) ② 녹음→STT→확인 플로우 왕복 ③ 무음 스위치 ON 상태에서 서버 TTS(HTML5 Audio)가 미디어 볼륨으로 재생 ④ 첫 제스처 프라이밍 후 AudioButton 재생, 프라이밍 전 자동재생 차단 시 🔇 배지 강등 ⑤ 인앱 웹뷰(카톡/인스타)에서 voices 빈 배열 → 서버 TTS 폴백 ⑥ Web Speech 미지원 기기의 가이드 자막 = Tier B 청크 업로드 확인.
+   - **Android Chrome:** ① webm/opus 녹음 ② Web Speech API 가이드 자막(Tier A — 오디오 업로드 0) ③ 언어팩 미설치 로케일에서 speechSynthesis 폴백(서버 TTS) ④ 60초 녹음 상한 자동 종료 ⑤ 백그라운드 전환 중 수신 → 복귀 시 자동낭독 미발화(visible 가드).
+   - **공통:** 마이크 권한 거부 → 안내 문구(에러 다이얼로그 금지), 저품질 발화(속삭임/소음)에서 확인 단계 강제, VAD가 무음 구간을 업로드하지 않는지(개발자도구 네트워크에서 chunk 개수 = 발화 횟수).
 5. **부하 리뷰:** 룸 30개 × 10명 접속 시 Realtime 채널 수·API rps·번역 호출량 계산서 첨부(T8.1).
 6. **보안:** RLS advisors 0경고, anon 정책 부재 확인, 토큰 시크릿 env 체크, PA-4 회귀.
 
