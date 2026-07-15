@@ -10,6 +10,7 @@
  */
 
 import { useState } from 'react';
+import { IconDone, IconEmergency } from '@/components/tour-mode/icons';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
 const COPY: Record<
@@ -127,9 +128,12 @@ export default function SosButton({
 
   if (state === 'sent') {
     return (
-      <div className="rounded-xl bg-emerald-50 px-3 py-2.5 dark:bg-emerald-950" data-testid="sos-sent">
-        <p className="text-[12px] font-medium leading-relaxed text-emerald-800 dark:text-emerald-200">✅ {copy.sent}</p>
-        <p className="mt-1.5 flex items-center gap-1.5 text-[12px] font-semibold text-emerald-700 dark:text-emerald-300" data-testid="sos-connected">
+      <div className="rounded-xl bg-[var(--tr-safe-soft)] px-3 py-2.5" data-testid="sos-sent">
+        <p className="tr-label flex items-start gap-1.5 font-medium leading-relaxed text-[var(--tr-safe)]">
+          <IconDone size={14} className="mt-0.5 shrink-0" aria-hidden />
+          {copy.sent}
+        </p>
+        <p className="tr-label mt-1.5 flex items-center gap-1.5 font-semibold text-[var(--tr-safe)]" data-testid="sos-connected">
           <span className="relative flex size-2">
             <span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-75" />
             <span className="relative inline-flex size-2 rounded-full bg-emerald-500" />
@@ -142,23 +146,25 @@ export default function SosButton({
 
   if (state === 'confirm' || state === 'sending' || state === 'failed') {
     return (
-      <div className="rounded-xl bg-red-50 p-3 ring-1 ring-red-200 dark:bg-red-950 dark:ring-red-900" data-testid="sos-confirm">
-        <p className="text-[13px] font-semibold text-red-800 dark:text-red-200">{copy.confirmTitle}</p>
-        <p className="mt-1 text-[12px] leading-relaxed text-red-700 dark:text-red-300">{copy.consent}</p>
+      <div className="rounded-xl bg-[var(--tr-danger-soft)] p-3" data-testid="sos-confirm">
+        <p className="tr-card-text font-semibold text-[var(--tr-danger)]">{copy.confirmTitle}</p>
+        <p className="tr-label mt-1 leading-relaxed text-[var(--tr-ink-2)]">{copy.consent}</p>
         <input
           value={note}
           onChange={(e) => setNote(e.target.value)}
           maxLength={300}
           placeholder={copy.note}
-          className="mt-2 w-full rounded-lg border border-red-200 bg-white px-3 py-2 text-[13px] dark:border-red-800 dark:bg-gray-900 dark:text-gray-100"
+          className="tr-card-text mt-2 w-full rounded-xl bg-[var(--tr-surface)] px-3 py-2.5 text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)] focus:outline-none focus:ring-2 focus:ring-[var(--tr-danger)]"
         />
-        {state === 'failed' && <p className="mt-1.5 text-[12px] font-medium text-red-700 dark:text-red-300">{copy.failed}</p>}
-        <div className="mt-2 flex gap-2">
+        {state === 'failed' && (
+          <p className="tr-label mt-1.5 font-medium text-[var(--tr-danger)]">{copy.failed}</p>
+        )}
+        <div className="mt-2.5 flex gap-2">
           <button
             type="button"
             onClick={() => setState('idle')}
             disabled={state === 'sending'}
-            className="flex-1 rounded-xl bg-white py-2.5 text-[13px] font-medium text-gray-600 ring-1 ring-gray-200 dark:bg-gray-900 dark:text-gray-300 dark:ring-gray-700"
+            className="tr-card-text min-h-[44px] flex-1 rounded-full bg-[var(--tr-surface)] font-medium text-[var(--tr-ink-2)]"
           >
             {copy.cancel}
           </button>
@@ -166,10 +172,17 @@ export default function SosButton({
             type="button"
             onClick={() => void send()}
             disabled={state === 'sending'}
-            className="flex-1 rounded-xl bg-red-600 py-2.5 text-[13px] font-bold text-white disabled:opacity-60"
+            className="tr-card-text flex min-h-[44px] flex-1 items-center justify-center gap-1.5 rounded-full bg-[var(--tr-danger)] font-bold text-white disabled:opacity-60"
             data-testid="sos-send"
           >
-            {state === 'sending' ? '…' : `🆘 ${copy.send}`}
+            {state === 'sending' ? (
+              <span className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" aria-hidden />
+            ) : (
+              <>
+                <IconEmergency size={15} aria-hidden />
+                {copy.send}
+              </>
+            )}
           </button>
         </div>
       </div>
@@ -180,10 +193,11 @@ export default function SosButton({
     <button
       type="button"
       onClick={() => setState('confirm')}
-      className="w-full rounded-xl bg-red-600 py-2.5 text-[13px] font-bold text-white active:bg-red-700"
+      className="tr-card-text flex min-h-[48px] w-full items-center justify-center gap-2 rounded-full bg-[var(--tr-danger)] font-bold text-white active:opacity-90"
       data-testid="sos-button"
     >
-      🆘 {copy.button}
+      <IconEmergency size={17} aria-hidden />
+      {copy.button}
     </button>
   );
 }

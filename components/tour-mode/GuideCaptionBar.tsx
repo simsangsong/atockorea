@@ -16,6 +16,7 @@ import {
   type CaptionCapture,
 } from '@/lib/tour-room/captionCapture';
 import { extensionForMime } from '@/lib/tour-room/recorder';
+import { IconMic } from '@/components/tour-mode/icons';
 import { TTS_LANG } from '@/lib/tour-room/tts';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
@@ -108,41 +109,41 @@ export default function GuideCaptionBar({
 
   if (!supported) return null;
 
+  // U5.5 — guide control keeps the cinematic ink pill in both themes,
+  // matching the traveller-side caption banner.
   return (
     <div className="mb-2" data-testid="guide-caption-bar">
       {note && (
-        <p className="mb-1.5 rounded-xl bg-red-50 px-3 py-2 text-[12px] text-red-600 dark:bg-red-950 dark:text-red-300">{note}</p>
+        <p className="tr-label mb-1.5 rounded-xl bg-[var(--tr-danger-soft)] px-3 py-2 text-[var(--tr-danger)]">{note}</p>
       )}
       {state === 'idle' ? (
         <button
           type="button"
           onClick={() => void start()}
-          className="w-full rounded-2xl bg-gray-900 py-2.5 text-[13px] font-semibold text-white dark:bg-gray-100 dark:text-gray-900"
+          className="tr-card-text flex min-h-[44px] w-full items-center justify-center gap-2 rounded-[var(--tr-radius-card)] bg-[#12151a] font-semibold text-white"
           data-testid="caption-start"
         >
-          🎙 {copy.start}
+          <IconMic size={16} aria-hidden />
+          {copy.start}
         </button>
       ) : (
-        <div className="flex items-center gap-3 rounded-2xl bg-gray-900 px-4 py-2.5 text-white dark:bg-gray-100 dark:text-gray-900">
+        <div className="flex min-h-[44px] items-center gap-3 rounded-[var(--tr-radius-card)] bg-[#12151a] px-4 py-2 text-white">
           <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400" />
-          <span className="text-[13px] font-semibold">{copy.live}</span>
-          <span
-            className="h-2 flex-1 overflow-hidden rounded-full bg-white/20 dark:bg-black/10"
-            aria-hidden
-          >
+          <span className="tr-card-text font-semibold">{copy.live}</span>
+          <span className="h-2 flex-1 overflow-hidden rounded-full bg-white/20" aria-hidden>
             <span
               className="block h-full rounded-full bg-emerald-400 transition-all duration-100"
               style={{ width: `${Math.max(4, level * 100)}%` }}
             />
           </span>
-          <label className="flex shrink-0 items-center gap-1.5 text-[11px] opacity-90">
+          <label className="tr-meta flex shrink-0 items-center gap-1.5 opacity-90">
             <input type="checkbox" checked={record} onChange={(e) => setRecord(e.target.checked)} className="accent-emerald-400" />
             {copy.record}
           </label>
           <button
             type="button"
             onClick={stop}
-            className="rounded-xl bg-white/15 px-3 py-1.5 text-[12px] font-semibold dark:bg-black/10"
+            className="tr-label min-h-[36px] rounded-full bg-white/15 px-3 font-semibold"
             data-testid="caption-stop"
           >
             {copy.stop}

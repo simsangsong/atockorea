@@ -7,6 +7,7 @@
  * action. Static 5-locale constants, zero LLM calls.
  */
 
+import { IconEnded, IconMail } from '@/components/tour-mode/icons';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
 const SUPPORT_EMAIL = 'support@atockorea.com';
@@ -60,19 +61,20 @@ export default function EndedCard({
   );
 
   return (
-    <div
-      data-testid="ended-card"
-      className="mb-2 rounded-2xl bg-white px-4 py-4 text-center shadow-sm ring-1 ring-gray-100 dark:bg-gray-900 dark:ring-gray-800"
-    >
-      <p className="text-[15px] font-semibold text-gray-900 dark:text-gray-50">🏁 {copy.title}</p>
-      <p className="mt-1 text-[13px] leading-relaxed text-gray-500 dark:text-gray-400">{copy.body}</p>
-      <div className="mt-3 rounded-xl bg-amber-50 px-3 py-3 dark:bg-amber-950">
-        <p className="text-[12px] font-medium text-amber-900 dark:text-amber-200">{copy.lostTitle}</p>
+    <div data-testid="ended-card" className="tr-card mb-2 px-4 py-4 text-center">
+      <p className="tr-title flex items-center justify-center gap-1.5 text-[var(--tr-ink)]">
+        <IconEnded size={16} className="text-[var(--tr-ink-3)]" aria-hidden />
+        {copy.title}
+      </p>
+      <p className="tr-card-text mt-1 text-[var(--tr-ink-2)]">{copy.body}</p>
+      <div className="mt-3 rounded-xl bg-[var(--tr-surface-2)] px-3 py-3">
+        <p className="tr-label font-medium text-[var(--tr-ink-2)]">{copy.lostTitle}</p>
         <a
           href={`mailto:${SUPPORT_EMAIL}?subject=${subject}`}
-          className="mt-2 inline-block rounded-xl bg-amber-500 px-4 py-2 text-[13px] font-semibold text-white"
+          className="tr-label mt-2 inline-flex min-h-[40px] items-center gap-1.5 rounded-full bg-[var(--tr-accent)] px-4 font-semibold text-[var(--tr-bubble-me-ink)]"
         >
-          ✉️ {copy.lostAction}
+          <IconMail size={14} aria-hidden />
+          {copy.lostAction}
         </a>
       </div>
     </div>

@@ -1,15 +1,30 @@
 'use client';
 
 /**
- * T4.5 — rich arrival card: when the geofence fires, the room shows the full
- * spot briefing (image · highlights · visit basics · convenience · smart
- * notes) resolved server-side into the message metadata (T4.3 3-tier), plus
- * the pre-recorded audio guide when the spot has one. Visually consistent
- * with the tour-product stop drawer, compressed for a chat column.
+ * T4.5 → U5.1 — rich arrival card: when the geofence fires, the room shows
+ * the full spot briefing (image · highlights · visit basics · convenience ·
+ * smart notes) resolved server-side into the message metadata (T4.3 3-tier),
+ * plus the pre-recorded audio guide when the spot has one. Flat card recipe
+ * (§H), lucide row icons (U-D3).
  */
 
 import { useRef, useState } from 'react';
 import { primeAudio } from '@/lib/tour-room/tts';
+import {
+  IconAdmission,
+  IconArrived,
+  IconClosedDay,
+  IconFacility,
+  IconHighlight,
+  IconHours,
+  IconParking,
+  IconPause,
+  IconPhotoNote,
+  IconPlay,
+  IconRestroom,
+  IconTip,
+  IconWalking,
+} from '@/components/tour-mode/icons';
 import type { SpotArrivalContent } from '@/lib/tour-room/spotContent';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
@@ -21,16 +36,16 @@ const COPY: Record<RoomLocale, { arrived: string; more: string; less: string; au
   zh: { arrived: '已到达', more: '查看详情', less: '收起', audio: '播放语音导览' },
 };
 
-const BASIC_ROWS: Array<{ icon: string; pick: (c: SpotArrivalContent) => string | undefined }> = [
-  { icon: '🕐', pick: (c) => c.visitBasics?.hours },
-  { icon: '🚫', pick: (c) => c.visitBasics?.closed },
-  { icon: '🎟️', pick: (c) => c.visitBasics?.admission },
-  { icon: '🚶', pick: (c) => c.visitBasics?.walking },
-  { icon: '🚻', pick: (c) => c.convenience?.restroom },
-  { icon: '🅿️', pick: (c) => c.convenience?.parking },
-  { icon: '📸', pick: (c) => c.smartNotes?.photo },
-  { icon: '🏪', pick: (c) => c.smartNotes?.facilities },
-  { icon: '💡', pick: (c) => c.smartNotes?.tip },
+const BASIC_ROWS: Array<{ Icon: typeof IconHours; pick: (c: SpotArrivalContent) => string | undefined }> = [
+  { Icon: IconHours, pick: (c) => c.visitBasics?.hours },
+  { Icon: IconClosedDay, pick: (c) => c.visitBasics?.closed },
+  { Icon: IconAdmission, pick: (c) => c.visitBasics?.admission },
+  { Icon: IconWalking, pick: (c) => c.visitBasics?.walking },
+  { Icon: IconRestroom, pick: (c) => c.convenience?.restroom },
+  { Icon: IconParking, pick: (c) => c.convenience?.parking },
+  { Icon: IconPhotoNote, pick: (c) => c.smartNotes?.photo },
+  { Icon: IconFacility, pick: (c) => c.smartNotes?.facilities },
+  { Icon: IconTip, pick: (c) => c.smartNotes?.tip },
 ];
 
 export default function SpotArrivalCard({
@@ -50,8 +65,8 @@ export default function SpotArrivalCard({
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const copy = COPY[locale];
 
-  const rows = BASIC_ROWS.map((row) => ({ icon: row.icon, text: row.pick(content) })).filter(
-    (row): row is { icon: string; text: string } => Boolean(row.text),
+  const rows = BASIC_ROWS.map((row) => ({ Icon: row.Icon, text: row.pick(content) })).filter(
+    (row): row is { Icon: typeof IconHours; text: string } => Boolean(row.text),
   );
   const visibleRows = expanded ? rows : rows.slice(0, 3);
   const highlights = (content.highlights ?? []).slice(0, expanded ? 6 : 2);
@@ -72,23 +87,21 @@ export default function SpotArrivalCard({
   };
 
   return (
-    <div
-      className="mx-auto w-full max-w-[95%] overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-amber-100 dark:bg-gray-900 dark:ring-amber-900"
-      data-testid="spot-arrival-card"
-    >
+    <div className="tr-card mx-auto w-full max-w-[95%] overflow-hidden" data-testid="spot-arrival-card">
       {content.image && (
         // eslint-disable-next-line @next/next/no-img-element
         <img src={content.image} alt={content.name ?? ''} className="h-32 w-full object-cover" loading="lazy" />
       )}
       <div className="px-4 py-3">
-        <p className="text-[11px] font-semibold uppercase tracking-wide text-amber-600 dark:text-amber-400">
-          📍 {copy.arrived}
+        <p className="tr-meta flex items-center gap-1 font-semibold uppercase tracking-wide text-[var(--tr-accent-deep)]">
+          <IconArrived size={12} strokeWidth={2.5} aria-hidden />
+          {copy.arrived}
         </p>
-        <p className="mt-0.5 text-[15px] font-semibold text-gray-900 dark:text-gray-50">{content.name}</p>
-        <p className="mt-1 text-[12px] leading-relaxed text-gray-500 dark:text-gray-400">{messageText}</p>
+        <p className="tr-title mt-0.5 text-[var(--tr-ink)]">{content.name}</p>
+        <p className="tr-label mt-1 leading-relaxed text-[var(--tr-ink-2)]">{messageText}</p>
 
         {content.description && expanded && (
-          <p className="mt-2 text-[13px] leading-relaxed text-gray-700 dark:text-gray-200">{content.description}</p>
+          <p className="tr-card-text mt-2 text-[var(--tr-ink)]">{content.description}</p>
         )}
 
         {highlights.length > 0 && (
@@ -96,41 +109,43 @@ export default function SpotArrivalCard({
             {highlights.map((highlight, index) => (
               <span
                 key={index}
-                className="rounded-full bg-amber-50 px-2.5 py-1 text-[11px] font-medium text-amber-800 dark:bg-amber-950 dark:text-amber-200"
+                className="tr-meta flex items-center gap-1 rounded-full bg-[var(--tr-accent-soft)] px-2.5 py-1 font-medium text-[var(--tr-accent-deep)]"
               >
-                ✨ {highlight}
+                <IconHighlight size={11} aria-hidden />
+                {highlight}
               </span>
             ))}
           </div>
         )}
 
         {visibleRows.length > 0 && (
-          <ul className="mt-2 space-y-1">
+          <ul className="mt-2.5 space-y-1.5">
             {visibleRows.map((row, index) => (
-              <li key={index} className="flex gap-2 text-[12px] leading-relaxed text-gray-600 dark:text-gray-300">
-                <span className="shrink-0">{row.icon}</span>
+              <li key={index} className="tr-label flex gap-2 leading-relaxed text-[var(--tr-ink-2)]">
+                <row.Icon size={15} strokeWidth={2} className="mt-0.5 shrink-0 text-[var(--tr-ink-3)]" aria-hidden />
                 <span>{row.text}</span>
               </li>
             ))}
           </ul>
         )}
 
-        <div className="mt-2.5 flex items-center gap-2">
+        <div className="mt-3 flex items-center gap-2">
           {audioUrl && (
             <button
               type="button"
               onClick={toggleAudio}
-              className="rounded-xl bg-amber-500 px-3.5 py-2 text-[12px] font-semibold text-white"
+              className="tr-label flex min-h-[40px] items-center gap-1.5 rounded-full bg-[var(--tr-accent)] px-4 font-semibold text-[var(--tr-bubble-me-ink)]"
               data-testid="spot-audio-button"
             >
-              {playing ? '⏸' : '▶'} {copy.audio}
+              {playing ? <IconPause size={14} aria-hidden /> : <IconPlay size={14} aria-hidden />}
+              {copy.audio}
             </button>
           )}
           {(rows.length > 3 || content.description || (content.highlights ?? []).length > 2) && (
             <button
               type="button"
               onClick={() => setExpanded((v) => !v)}
-              className="rounded-xl px-3 py-2 text-[12px] font-medium text-gray-500 dark:text-gray-400"
+              className="tr-label min-h-[40px] rounded-full px-3 font-medium text-[var(--tr-ink-2)]"
               data-testid="spot-expand-toggle"
             >
               {expanded ? copy.less : copy.more}

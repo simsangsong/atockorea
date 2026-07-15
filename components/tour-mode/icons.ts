@@ -38,6 +38,10 @@ export {
   User as IconTraveller,
 
   // Cards & banners
+  Clock as IconHours,
+  Toilet as IconRestroom,
+  VolumeX as IconMuted,
+  Mail as IconMail,
   MapPin as IconArrived,
   Sparkles as IconHighlight,
   Megaphone as IconMeeting,
@@ -56,7 +60,7 @@ export {
   Ticket as IconAdmission,
   Footprints as IconWalking,
   Ban as IconClosedDay,
-  ParkingSquare as IconParking,
+  SquareParking as IconParking,
   Store as IconFacility,
   Lightbulb as IconTip,
   ImageIcon as IconPhotoNote,

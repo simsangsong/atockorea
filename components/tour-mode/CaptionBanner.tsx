@@ -11,6 +11,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { speakWithDevice } from '@/lib/tour-room/tts';
+import { IconCaption, IconOriginal, IconTranslated } from '@/components/tour-mode/icons';
 import { useTourRoomSettings } from '@/hooks/useTourRoomSettings';
 import type { RoomCaption } from '@/hooks/useTourRoomChannel';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
@@ -58,20 +59,26 @@ export default function CaptionBanner({
   const text = showOriginal || !translated ? caption.source_text : translated;
   const toggleable = Boolean(translated && translated !== caption.source_text);
 
+  // U5.5 — the caption keeps its cinematic dark pill in both themes (live
+  // subtitles read best on ink), tokenized type + lucide affordances.
   return (
     <button
       type="button"
       data-testid="caption-banner"
       onClick={toggleable ? () => setShowOriginal((v) => !v) : undefined}
-      className="mb-2 w-full rounded-2xl bg-gray-900/95 px-4 py-3 text-left shadow-lg backdrop-blur dark:bg-black/80"
+      className="mb-2 w-full rounded-[var(--tr-radius-card)] bg-[#12151a]/95 px-4 py-3 text-left backdrop-blur"
+      style={{ boxShadow: 'var(--tr-shadow-overlay)' }}
     >
-      <span className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wide text-emerald-400">
+      <span className="tr-meta flex items-center gap-1.5 font-semibold uppercase tracking-wide text-emerald-400">
+        <IconCaption size={12} aria-hidden />
         <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
         {LIVE_LABEL[locale]}
       </span>
-      <span className="mt-1 block text-[15px] leading-relaxed text-white">{text}</span>
+      <span className="tr-body mt-1 block leading-relaxed text-white">{text}</span>
       {toggleable && (
-        <span className="mt-0.5 block text-[10px] text-gray-400">{showOriginal ? '↩' : '🌐'}</span>
+        <span className="mt-1 block text-white/50" aria-hidden>
+          {showOriginal ? <IconOriginal size={12} /> : <IconTranslated size={12} />}
+        </span>
       )}
     </button>
   );
