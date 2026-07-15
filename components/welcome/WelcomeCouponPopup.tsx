@@ -84,7 +84,13 @@ function suppressedByStorage(): boolean {
  */
 function onOperationalRoute(): boolean {
   try {
-    return /^\/(?:[a-z]{2}(?:-[A-Z]{2})?\/)?tour-mode(?:\/|$)/.test(window.location.pathname);
+    const pathname = window.location.pathname;
+    // Live tour rooms (§O-1 ② standalone shell) …
+    if (/^\/(?:[a-z]{2}(?:-[A-Z]{2})?\/)?tour-mode(?:\/|$)/.test(pathname)) return true;
+    // … and every admin surface (incl. the standalone ops console) — a staff
+    // console is never a conversion target.
+    if (/^\/(?:[a-z]{2}(?:-[A-Z]{2})?\/)?admin(?:\/|$)/.test(pathname)) return true;
+    return false;
   } catch {
     return false;
   }
