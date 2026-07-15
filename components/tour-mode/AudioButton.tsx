@@ -12,6 +12,7 @@
 
 import { useState } from 'react';
 import { primeAudio, speakMessage } from '@/lib/tour-room/tts';
+import { IconListen, IconMuted } from '@/components/tour-mode/icons';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
 export default function AudioButton({
@@ -31,8 +32,12 @@ export default function AudioButton({
 
   if (state === 'unavailable') {
     return (
-      <span className="mt-0.5 inline-block px-1 text-[11px] text-gray-400" title="voice unavailable" data-testid="tts-unavailable">
-        🔇
+      <span
+        className="mt-0.5 inline-block px-1 text-[var(--tr-ink-3)]"
+        title="voice unavailable"
+        data-testid="tts-unavailable"
+      >
+        <IconMuted size={13} aria-hidden />
       </span>
     );
   }
@@ -50,9 +55,13 @@ export default function AudioButton({
           setState(tier === 'none' ? 'unavailable' : 'idle');
         });
       }}
-      className="mt-0.5 inline-flex items-center gap-1 rounded-full px-1.5 py-0.5 text-[12px] text-gray-400 active:text-amber-600 disabled:opacity-50 dark:text-gray-500"
+      className="mt-1 inline-flex min-h-[28px] items-center gap-1 rounded-full px-1.5 py-0.5 text-[var(--tr-ink-3)] active:text-[var(--tr-accent-deep)] disabled:opacity-50"
     >
-      {state === 'busy' ? '…' : '🔊'}
+      {state === 'busy' ? (
+        <span className="h-3 w-3 animate-spin rounded-full border-2 border-[var(--tr-accent)] border-t-transparent" aria-hidden />
+      ) : (
+        <IconListen size={14} aria-hidden />
+      )}
     </button>
   );
 }

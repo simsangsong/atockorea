@@ -128,10 +128,13 @@ describe('ChatFeed ops highlight (W4.3)', () => {
       />,
     );
     expect(screen.getByTestId('ops-reply-dot')).toBeInTheDocument();
-    expect(screen.getByText('We are on our way to you.').closest('button')!.className).toContain('ring-emerald-300');
+    expect(screen.getByText('We are on our way to you.').closest('button')!).toHaveAttribute(
+      'data-ops-highlight',
+      'true',
+    );
     // Guide message (older, non-admin) stays unhighlighted.
-    expect(screen.getByText(GUIDE_MESSAGE.translations!.en).closest('button')!.className).not.toContain(
-      'ring-emerald-300',
+    expect(screen.getByText(GUIDE_MESSAGE.translations!.en).closest('button')!).not.toHaveAttribute(
+      'data-ops-highlight',
     );
   });
 

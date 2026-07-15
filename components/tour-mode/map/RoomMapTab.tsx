@@ -12,6 +12,7 @@
 import { useEffect, useRef, useState } from 'react';
 import dynamicImport from 'next/dynamic';
 import FindGuideCard from '@/components/tour-mode/map/FindGuideCard';
+import { IconFollow } from '@/components/tour-mode/icons';
 import LocationShareCard from '@/components/tour-mode/map/LocationShareCard';
 import PresenceBar from '@/components/tour-mode/PresenceBar';
 import { useGeoWatcher } from '@/hooks/useGeoWatcher';
@@ -25,8 +26,8 @@ import type { MapSpot, MapPoint } from '@/components/tour-mode/map/RoomMapCanvas
 const RoomMapCanvas = dynamicImport(() => import('@/components/tour-mode/map/RoomMapCanvas'), {
   ssr: false,
   loading: () => (
-    <div className="flex h-full min-h-[300px] items-center justify-center rounded-2xl bg-gray-100 dark:bg-gray-800">
-      <span className="text-[13px] text-gray-400">Loading map…</span>
+    <div className="tr-skeleton flex h-full min-h-[300px] items-center justify-center rounded-[var(--tr-radius-card)]">
+      <span className="tr-card-text text-[var(--tr-ink-3)]">Loading map…</span>
     </div>
   ),
 });
@@ -120,12 +121,14 @@ export default function RoomMapTab({
             type="button"
             onClick={() => setFollowGuide((v) => !v)}
             aria-pressed={followGuide}
-            className={`absolute right-2 top-2 rounded-xl px-3 py-2 text-[12px] font-semibold shadow ${
-              followGuide ? 'bg-gray-900 text-white' : 'bg-white text-gray-700 ring-1 ring-gray-200'
+            className={`tr-label absolute right-2 top-2 flex min-h-[40px] items-center gap-1.5 rounded-full px-3.5 font-semibold ${
+              followGuide ? 'bg-[#12151a] text-white' : 'bg-[var(--tr-surface)] text-[var(--tr-ink)]'
             }`}
+            style={{ boxShadow: 'var(--tr-shadow-overlay)' }}
             data-testid="follow-guide-toggle"
           >
-            🚌 {FOLLOW_LABEL[locale]}
+            <IconFollow size={14} aria-hidden />
+            {FOLLOW_LABEL[locale]}
           </button>
         )}
       </div>

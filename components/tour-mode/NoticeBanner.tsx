@@ -9,6 +9,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { activeNotice, formatRemaining, formatTargetTime } from '@/lib/tour-room/notices';
+import { IconFreeTime, IconMeeting } from '@/components/tour-mode/icons';
 import { speakWithDevice } from '@/lib/tour-room/tts';
 import { useTourRoomSettings } from '@/hooks/useTourRoomSettings';
 import type { RoomMessage } from '@/hooks/useTourRoomChannel';
@@ -116,32 +117,35 @@ export default function NoticeBanner({
   const urgent = notice.warn5 || (notice.remainingMs !== null && notice.remainingMs === 0);
   const title = notice.kind === 'free_time_timer' ? copy.freeTime : copy.meeting;
 
+  // U5.4 — a floating overlay pill (rendered in the shell's overlay zone):
+  // flat surface + one accent; when urgent only the countdown capsule pulses,
+  // not the whole banner.
   return (
     <div
       data-testid="notice-banner"
-      className={`mb-2 flex items-center gap-3 rounded-2xl px-4 py-3 shadow-sm ring-1 ${
-        urgent
-          ? 'animate-pulse bg-red-50 ring-red-200 dark:bg-red-950 dark:ring-red-900'
-          : 'bg-amber-50 ring-amber-200 dark:bg-amber-950 dark:ring-amber-900'
-      }`}
+      className="mb-2 flex items-center gap-3 rounded-[var(--tr-radius-card)] bg-[var(--tr-surface)] px-4 py-2.5"
+      style={{ boxShadow: 'var(--tr-shadow-overlay)' }}
     >
-      <span className="text-[20px]" aria-hidden>
-        {notice.kind === 'free_time_timer' ? '⏳' : '📣'}
+      <span
+        className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full ${
+          urgent ? 'bg-[var(--tr-danger-soft)] text-[var(--tr-danger)]' : 'bg-[var(--tr-accent-soft)] text-[var(--tr-accent-deep)]'
+        }`}
+        aria-hidden
+      >
+        {notice.kind === 'free_time_timer' ? <IconFreeTime size={17} /> : <IconMeeting size={17} />}
       </span>
       <div className="min-w-0 flex-1">
-        <p className={`text-[13px] font-semibold ${urgent ? 'text-red-800 dark:text-red-200' : 'text-amber-900 dark:text-amber-100'}`}>
+        <p className={`tr-card-text font-semibold ${urgent ? 'text-[var(--tr-danger)]' : 'text-[var(--tr-ink)]'}`}>
           {title}
           {notice.targetMs !== null && ` · ${copy.backBy(formatTargetTime(notice.targetMs, locale))}`}
         </p>
-        {notice.point && (
-          <p className="truncate text-[12px] text-gray-600 dark:text-gray-300">📍 {copy.at(notice.point)}</p>
-        )}
+        {notice.point && <p className="tr-label truncate text-[var(--tr-ink-2)]">{copy.at(notice.point)}</p>}
       </div>
       {notice.remainingMs !== null && (
         <span
           data-testid="notice-countdown"
-          className={`shrink-0 rounded-xl px-3 py-1.5 text-[16px] font-bold tabular-nums ${
-            urgent ? 'bg-red-500 text-white' : 'bg-amber-500 text-white'
+          className={`shrink-0 rounded-full px-3 py-1.5 text-[16px] font-bold tabular-nums text-white ${
+            urgent ? 'animate-pulse bg-[var(--tr-danger)]' : 'bg-[var(--tr-accent)]'
           }`}
         >
           {notice.remainingMs === 0 ? copy.now : formatRemaining(notice.remainingMs)}

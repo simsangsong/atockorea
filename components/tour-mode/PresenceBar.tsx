@@ -7,6 +7,7 @@
  * of a closed tab — no polling, no server writes.
  */
 
+import Avatar from '@/components/tour-mode/Avatar';
 import type { RoomPresence } from '@/hooks/useTourRoomChannel';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
@@ -17,10 +18,6 @@ const ONLINE_LABEL: Record<RoomLocale, (n: number) => string> = {
   es: (n) => `${n} en línea`,
   zh: (n) => `${n}人在线`,
 };
-
-function initialOf(name: string): string {
-  return (name.trim()[0] ?? '?').toUpperCase();
-}
 
 export default function PresenceBar({
   presence,
@@ -38,8 +35,8 @@ export default function PresenceBar({
   });
 
   return (
-    <div className="flex items-center gap-2 overflow-x-auto rounded-2xl bg-white px-3 py-2 shadow-sm ring-1 ring-gray-100 dark:bg-gray-900 dark:ring-gray-800" data-testid="presence-bar">
-      <span className="flex shrink-0 items-center gap-1 text-[11px] font-medium text-emerald-600 dark:text-emerald-400">
+    <div className="tr-card flex items-center gap-2 overflow-x-auto px-3 py-2" data-testid="presence-bar">
+      <span className="tr-meta flex shrink-0 items-center gap-1 font-medium text-[var(--tr-safe)]">
         <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
         {ONLINE_LABEL[locale](presence.length)}
       </span>
@@ -48,19 +45,15 @@ export default function PresenceBar({
           <span
             key={entry.participantId}
             title={entry.displayName}
-            className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[10px] font-bold ${
-              entry.role === 'guide'
-                ? 'bg-amber-500 text-white'
-                : entry.participantId === myParticipantId
-                  ? 'bg-emerald-100 text-emerald-700 ring-1 ring-emerald-300 dark:bg-emerald-900 dark:text-emerald-200'
-                  : 'bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-300'
+            className={`rounded-full ${
+              entry.participantId === myParticipantId ? 'ring-2 ring-[var(--tr-safe)] ring-offset-1' : ''
             }`}
           >
-            {entry.role === 'guide' ? '🚩' : initialOf(entry.displayName)}
+            <Avatar role={entry.role} name={entry.displayName} size={24} />
           </span>
         ))}
         {ordered.length > 12 && (
-          <span className="text-[10px] text-gray-400">+{ordered.length - 12}</span>
+          <span className="tr-meta text-[var(--tr-ink-3)]">+{ordered.length - 12}</span>
         )}
       </div>
     </div>

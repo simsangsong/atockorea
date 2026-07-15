@@ -15,6 +15,7 @@ import type { RoomLocale } from '@/lib/tour-room/snapshot';
 import { detectEntryLocale } from '@/components/tour-mode/entryCopy';
 import { isInAppWebview } from '@/components/tour-mode/WebviewEscapeBanner';
 import { isStandaloneDisplayMode } from '@/hooks/useStandaloneDisplayMode';
+import { IconInstall } from '@/components/tour-mode/icons';
 import { kstStartOfDayMs, kstEndOfDayMs } from '@/lib/tour-room/time';
 
 const DISMISS_KEY = 'atoc-tour-mode-a2hs-dismissed';
@@ -160,15 +161,15 @@ export default function InstallBanner({
     <div
       role="dialog"
       aria-label={copy.title}
-      className="fixed inset-x-3 z-40 rounded-2xl border border-gray-200 bg-white p-4 shadow-lg dark:border-gray-700 dark:bg-gray-900"
-      style={{ bottom: 'calc(env(safe-area-inset-bottom, 0px) + 12px)' }}
+      className="fixed inset-x-3 z-40 mx-auto max-w-2xl rounded-[var(--tr-radius-card)] bg-[var(--tr-surface)] p-4"
+      style={{ bottom: 'calc(env(safe-area-inset-bottom, 0px) + 12px)', boxShadow: 'var(--tr-shadow-overlay)' }}
     >
       <div className="flex items-start gap-3">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/pwa/icon-192.png" alt="" width={40} height={40} className="mt-0.5 shrink-0 rounded-xl" />
         <div className="min-w-0 flex-1">
-          <p className="text-[14px] font-semibold text-gray-900 dark:text-gray-50">{copy.title}</p>
-          <p className="mt-0.5 text-[12px] leading-snug text-gray-600 dark:text-gray-300">
+          <p className="tr-title text-[var(--tr-ink)]">{copy.title}</p>
+          <p className="tr-label mt-0.5 leading-snug text-[var(--tr-ink-2)]">
             {mode === 'ios' ? copy.iosGuide : copy.body}
           </p>
           <div className="mt-2.5 flex items-center gap-3">
@@ -176,15 +177,16 @@ export default function InstallBanner({
               <button
                 type="button"
                 onClick={install}
-                className="min-h-[44px] rounded-xl bg-gray-900 px-4 text-[13px] font-semibold text-white dark:bg-gray-50 dark:text-gray-900"
+                className="tr-card-text flex min-h-[44px] items-center gap-1.5 rounded-full bg-[var(--tr-accent)] px-4 font-semibold text-[var(--tr-bubble-me-ink)]"
               >
+                <IconInstall size={15} aria-hidden />
                 {copy.install}
               </button>
             )}
             <button
               type="button"
               onClick={dismiss}
-              className="min-h-[44px] px-2 text-[13px] text-gray-500 underline dark:text-gray-400"
+              className="tr-card-text min-h-[44px] px-2 text-[var(--tr-ink-3)]"
             >
               {copy.dismiss}
             </button>

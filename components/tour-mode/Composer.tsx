@@ -1,11 +1,12 @@
 'use client';
 
 /**
- * T1.7 + T2.1/T2.2 — message composer.
+ * T1.7 + T2.1/T2.2 → U4 — message composer, messenger grammar (plan §G):
+ * a docked surface bar with an auto-growing pill textarea, inline camera /
+ * mic icon buttons that yield to a circular send button once a draft exists
+ * (Telegram morph), quick-reply chips riding the canvas above the bar.
  *
- * Text + quick-reply preset chips (pre-translated, zero LLM — §M-2 ②), plus
- * push-to-talk voice input:
- *
+ * Voice flow (unchanged logic):
  *   record (≤60s, level animation) → POST /stt (transcribe only) → the
  *   transcript lands HERE in the input for review → sent via the normal
  *   text path.
@@ -16,7 +17,7 @@
  * review. Devices without MediaRecorder simply never see the mic (O-9).
  */
 
-import { useCallback, useEffect, useRef, useState, type FormEvent } from 'react';
+import { useCallback, useEffect, useRef, useState, type FormEvent, type KeyboardEvent } from 'react';
 import { QUICK_REPLY_PRESETS, type QuickReplyPreset } from '@/lib/tour-room/quickReplies';
 import {
   isVoiceRecordingSupported,
@@ -26,6 +27,13 @@ import {
 } from '@/lib/tour-room/recorder';
 import { primeAudio } from '@/lib/tour-room/tts';
 import { useTourRoomSettings } from '@/hooks/useTourRoomSettings';
+import {
+  IconAsk,
+  IconCamera,
+  IconDone,
+  IconMic,
+  IconSend,
+} from '@/components/tour-mode/icons';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
 const PRESET_COOLDOWN_MS = 1500;
@@ -37,6 +45,14 @@ function shouldFirePreset(cooldowns: Map<string, number>, key: string, nowMs: nu
   cooldowns.set(key, nowMs);
   return true;
 }
+
+const PLACEHOLDER: Record<RoomLocale, string> = {
+  en: 'Message',
+  ko: '메시지 보내기',
+  ja: 'メッセージを入力',
+  es: 'Mensaje',
+  zh: '发送消息',
+};
 
 const VOICE_COPY: Record<
   RoomLocale,
@@ -108,6 +124,8 @@ const VISION_COPY: Record<
   zh: { placeholder: '关于这张照片的问题（可选）', private_: '仅自己可见', share: '分享到房间', ask: '提问', asking: '识别中…', failed: '无法识别 — 请重试。', close: '关闭' },
 };
 
+const MAX_TEXTAREA_PX = 128; // ~5 lines of tr-body
+
 export default function Composer({
   locale,
   onSendText,
@@ -133,7 +151,7 @@ export default function Composer({
   const [confirmHint, setConfirmHint] = useState(false);
   const cooldowns = useRef<Map<string, number>>(new Map());
   const recordingRef = useRef<ActiveRecording | null>(null);
-  const inputRef = useRef<HTMLInputElement | null>(null);
+  const inputRef = useRef<HTMLTextAreaElement | null>(null);
   const { settings } = useTourRoomSettings();
 
   // T4.7 — photo question panel state.
@@ -198,13 +216,35 @@ export default function Composer({
     [onSendPreset],
   );
 
-  const onSubmit = (event: FormEvent) => {
-    event.preventDefault();
+  // U4.1 — auto-grow the pill up to ~5 lines, then scroll inside.
+  const autosize = useCallback(() => {
+    const el = inputRef.current;
+    if (!el) return;
+    el.style.height = 'auto';
+    el.style.height = `${Math.min(el.scrollHeight, MAX_TEXTAREA_PX)}px`;
+  }, []);
+
+  const submitDraft = () => {
     const text = draft.trim();
     if (!text) return;
     setDraft('');
     setConfirmHint(false);
+    if (inputRef.current) inputRef.current.style.height = 'auto';
     onSendText(text);
+  };
+
+  const onSubmit = (event: FormEvent) => {
+    event.preventDefault();
+    submitDraft();
+  };
+
+  // Desktop convention: Enter sends, Shift+Enter breaks the line. Mobile
+  // keyboards emit newline through onChange and never hit this branch.
+  const onKeyDown = (event: KeyboardEvent<HTMLTextAreaElement>) => {
+    if (event.key === 'Enter' && !event.shiftKey) {
+      event.preventDefault();
+      submitDraft();
+    }
   };
 
   const finishClip = useCallback(
@@ -258,16 +298,18 @@ export default function Composer({
   const seconds = Math.floor(elapsedMs / 1000);
   const timer = `0:${String(seconds % 60).padStart(2, '0')} / 1:00`;
   const nearCeiling = elapsedMs > MAX_RECORDING_MS - 10_000;
+  const hasDraft = Boolean(draft.trim());
 
   return (
-    <div>
-      <div className="-mx-4 mb-2 flex gap-1.5 overflow-x-auto px-4 pb-1" data-testid="quick-replies">
+    <div className="-mx-3">
+      {/* Quick replies ride the canvas just above the docked bar. */}
+      <div className="mb-1.5 flex gap-1.5 overflow-x-auto px-3 pb-1" data-testid="quick-replies">
         {QUICK_REPLY_PRESETS.map((preset) => (
           <button
             key={preset.key}
             type="button"
             onClick={() => tapPreset(preset)}
-            className="shrink-0 rounded-full bg-white px-3 py-1.5 text-[12px] text-gray-700 shadow-sm ring-1 ring-gray-100 active:bg-amber-50 dark:bg-gray-900 dark:text-gray-300 dark:ring-gray-800"
+            className="tr-label shrink-0 rounded-full bg-[var(--tr-surface)] px-3.5 py-2 text-[var(--tr-ink-2)] transition-transform active:scale-95"
           >
             {preset.emoji} {preset.text[locale]}
           </button>
@@ -275,7 +317,7 @@ export default function Composer({
       </div>
 
       {visionFile && vision && (
-        <div className="mb-1.5 rounded-2xl bg-white p-3 shadow-sm ring-1 ring-gray-100 dark:bg-gray-900 dark:ring-gray-800" data-testid="vision-panel">
+        <div className="tr-card mx-3 mb-1.5 p-3" data-testid="vision-panel">
           <div className="flex gap-2.5">
             {visionPreview && (
               // eslint-disable-next-line @next/next/no-img-element
@@ -283,7 +325,7 @@ export default function Composer({
             )}
             <div className="min-w-0 flex-1">
               {visionState === 'answered' ? (
-                <p className="max-h-40 overflow-y-auto text-[13px] leading-relaxed text-gray-800 dark:text-gray-100" data-testid="vision-answer">
+                <p className="tr-card-text max-h-40 overflow-y-auto text-[var(--tr-ink)]" data-testid="vision-answer">
                   {visionAnswer}
                 </p>
               ) : (
@@ -293,26 +335,30 @@ export default function Composer({
                     onChange={(e) => setVisionQuestion(e.target.value)}
                     maxLength={300}
                     placeholder={VISION_COPY[locale].placeholder}
-                    className="w-full rounded-xl border border-gray-200 bg-white px-3 py-2 text-[13px] focus:border-amber-400 focus:outline-none dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100"
+                    className="tr-card-text w-full rounded-xl bg-[var(--tr-surface-2)] px-3 py-2 text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)] focus:outline-none focus:ring-2 focus:ring-[var(--tr-accent)]"
                   />
-                  <label className="mt-1.5 flex items-center gap-1.5 text-[11px] text-gray-500 dark:text-gray-400">
+                  <label className="tr-meta mt-2 flex items-center gap-1.5 text-[var(--tr-ink-2)]">
                     <input
                       type="checkbox"
                       checked={visionShare}
                       onChange={(e) => setVisionShare(e.target.checked)}
-                      className="accent-amber-500"
+                      className="h-4 w-4 accent-[var(--tr-accent)]"
                     />
                     {visionShare ? VISION_COPY[locale].share : VISION_COPY[locale].private_}
                   </label>
                 </>
               )}
               {visionState === 'failed' && (
-                <p className="mt-1 text-[12px] text-red-600 dark:text-red-400">{VISION_COPY[locale].failed}</p>
+                <p className="tr-label mt-1 text-[var(--tr-danger)]">{VISION_COPY[locale].failed}</p>
               )}
             </div>
           </div>
           <div className="mt-2 flex justify-end gap-2">
-            <button type="button" onClick={closeVision} className="rounded-xl px-3 py-1.5 text-[12px] font-medium text-gray-500 dark:text-gray-400">
+            <button
+              type="button"
+              onClick={closeVision}
+              className="tr-label min-h-[40px] rounded-full px-4 font-medium text-[var(--tr-ink-2)]"
+            >
               {VISION_COPY[locale].close}
             </button>
             {visionState !== 'answered' && (
@@ -320,10 +366,11 @@ export default function Composer({
                 type="button"
                 onClick={() => void askVision()}
                 disabled={visionState === 'asking'}
-                className="rounded-xl bg-amber-500 px-3.5 py-1.5 text-[12px] font-semibold text-white disabled:opacity-50"
+                className="tr-label flex min-h-[40px] items-center gap-1.5 rounded-full bg-[var(--tr-accent)] px-4 font-semibold text-[var(--tr-bubble-me-ink)] disabled:opacity-50"
                 data-testid="vision-ask-button"
               >
-                {visionState === 'asking' ? VISION_COPY[locale].asking : `🔍 ${VISION_COPY[locale].ask}`}
+                <IconAsk size={14} aria-hidden />
+                {visionState === 'asking' ? VISION_COPY[locale].asking : VISION_COPY[locale].ask}
               </button>
             )}
           </div>
@@ -331,114 +378,139 @@ export default function Composer({
       )}
 
       {voiceNote && (
-        <p className="mb-1.5 rounded-xl bg-red-50 px-3 py-2 text-[12px] text-red-600 dark:bg-red-950 dark:text-red-300" data-testid="voice-note">
+        <p
+          className="tr-label mx-3 mb-1.5 rounded-xl bg-[var(--tr-danger-soft)] px-3 py-2 text-[var(--tr-danger)]"
+          data-testid="voice-note"
+        >
           {voiceNote}
         </p>
       )}
-      {confirmHint && draft.trim() && (
-        <p className="mb-1.5 rounded-xl bg-amber-50 px-3 py-2 text-[12px] font-medium text-amber-800 dark:bg-amber-950 dark:text-amber-200" data-testid="voice-confirm-hint">
-          ✅ {copy.confirmHint}
+      {confirmHint && hasDraft && (
+        <p
+          className="tr-label mx-3 mb-1.5 rounded-xl bg-[var(--tr-accent-soft)] px-3 py-2 font-medium text-[var(--tr-accent-deep)]"
+          data-testid="voice-confirm-hint"
+        >
+          {copy.confirmHint}
         </p>
       )}
 
-      {voiceState === 'recording' ? (
-        <div className="flex items-center gap-3 rounded-2xl border border-red-200 bg-red-50 px-4 py-3 dark:border-red-900 dark:bg-red-950" data-testid="recording-bar">
-          <span className="h-2.5 w-2.5 animate-pulse rounded-full bg-red-500" />
-          <span className={`text-[13px] font-semibold tabular-nums ${nearCeiling ? 'text-red-600' : 'text-gray-700 dark:text-gray-200'}`}>
-            {timer}
-          </span>
-          <div className="flex h-6 flex-1 items-center gap-0.5" aria-hidden>
-            {Array.from({ length: 16 }, (_, i) => (
-              <span
-                key={i}
-                className="w-1 rounded-full bg-red-400 transition-all duration-75"
-                style={{ height: `${Math.max(15, Math.min(100, level * 100 * (0.6 + 0.4 * Math.sin(i * 1.7 + level * 8))))}%` }}
-              />
-            ))}
-          </div>
-          <button
-            type="button"
-            onClick={() => {
-              recordingRef.current?.cancel();
-              recordingRef.current = null;
-              setVoiceState('idle');
-            }}
-            className="rounded-xl px-3 py-2 text-[13px] font-medium text-gray-500 dark:text-gray-400"
-          >
-            {copy.cancel}
-          </button>
-          <button
-            type="button"
-            onClick={() => recordingRef.current?.stop()}
-            className="rounded-xl bg-red-500 px-4 py-2 text-[13px] font-semibold text-white"
-            data-testid="recording-done"
-          >
-            {copy.done}
-          </button>
-        </div>
-      ) : voiceState === 'transcribing' ? (
-        <div className="flex items-center gap-2.5 rounded-2xl border border-gray-200 bg-white px-4 py-3.5 dark:border-gray-700 dark:bg-gray-900" data-testid="transcribing-bar">
-          <span className="h-4 w-4 animate-spin rounded-full border-2 border-amber-500 border-t-transparent" />
-          <span className="text-[13px] text-gray-600 dark:text-gray-300">{copy.transcribing}</span>
-        </div>
-      ) : (
-        <form onSubmit={onSubmit} className="flex items-end gap-2">
-          <input
-            ref={inputRef}
-            value={draft}
-            onChange={(e) => {
-              setDraft(e.target.value);
-              if (!e.target.value) setConfirmHint(false);
-            }}
-            maxLength={2000}
-            className="min-w-0 flex-1 rounded-2xl border border-gray-200 bg-white px-4 py-3 text-[14px] focus:border-amber-400 focus:outline-none dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100"
-          />
-          {vision && !draft.trim() && (
-            <>
-              <input
-                ref={fileInputRef}
-                type="file"
-                accept="image/*"
-                capture="environment"
-                className="hidden"
-                onChange={(e) => {
-                  onPickImage(e.target.files?.[0] ?? null);
-                  e.target.value = '';
-                }}
-                data-testid="vision-file-input"
-              />
-              <button
-                type="button"
-                onClick={() => fileInputRef.current?.click()}
-                aria-label="ask about a photo"
-                className="rounded-2xl bg-white px-4 py-3 text-[16px] shadow-sm ring-1 ring-gray-200 active:bg-amber-50 dark:bg-gray-900 dark:ring-gray-700"
-                data-testid="camera-button"
-              >
-                📷
-              </button>
-            </>
-          )}
-          {voiceSupported && !draft.trim() && (
+      {/* Docked bar — full-bleed surface with a hairline, like every messenger. */}
+      <div className="tr-hairline-t bg-[var(--tr-surface)] px-3 py-2">
+        {voiceState === 'recording' ? (
+          <div className="flex items-center gap-3 rounded-[var(--tr-radius-input)] bg-[var(--tr-danger-soft)] px-4 py-2.5" data-testid="recording-bar">
+            <span className="h-2.5 w-2.5 animate-pulse rounded-full bg-[var(--tr-danger)]" />
+            <span
+              className={`tr-label font-semibold tabular-nums ${
+                nearCeiling ? 'text-[var(--tr-danger)]' : 'text-[var(--tr-ink)]'
+              }`}
+            >
+              {timer}
+            </span>
+            <div className="flex h-6 flex-1 items-center gap-0.5" aria-hidden>
+              {Array.from({ length: 16 }, (_, i) => (
+                <span
+                  key={i}
+                  className="w-1 rounded-full bg-[var(--tr-danger)] opacity-80 transition-all duration-75"
+                  style={{ height: `${Math.max(15, Math.min(100, level * 100 * (0.6 + 0.4 * Math.sin(i * 1.7 + level * 8))))}%` }}
+                />
+              ))}
+            </div>
             <button
               type="button"
-              onClick={() => void startRecording()}
-              aria-label="record voice message"
-              className="rounded-2xl bg-white px-4 py-3 text-[16px] shadow-sm ring-1 ring-gray-200 active:bg-amber-50 dark:bg-gray-900 dark:ring-gray-700"
-              data-testid="mic-button"
+              onClick={() => {
+                recordingRef.current?.cancel();
+                recordingRef.current = null;
+                setVoiceState('idle');
+              }}
+              className="tr-label min-h-[40px] rounded-full px-3 font-medium text-[var(--tr-ink-2)]"
             >
-              🎤
+              {copy.cancel}
             </button>
-          )}
-          <button
-            type="submit"
-            disabled={!draft.trim()}
-            className="rounded-2xl bg-amber-500 px-4 py-3 text-[14px] font-semibold text-white disabled:opacity-40"
-            aria-label="send"
+            <button
+              type="button"
+              onClick={() => recordingRef.current?.stop()}
+              className="tr-label flex min-h-[40px] items-center gap-1 rounded-full bg-[var(--tr-danger)] px-4 font-semibold text-white"
+              data-testid="recording-done"
+            >
+              <IconDone size={14} aria-hidden />
+              {copy.done}
+            </button>
+          </div>
+        ) : voiceState === 'transcribing' ? (
+          <div
+            className="flex items-center gap-2.5 rounded-[var(--tr-radius-input)] bg-[var(--tr-surface-2)] px-4 py-3"
+            data-testid="transcribing-bar"
           >
-            ➤
-          </button>
-        </form>
-      )}
+            <span className="h-4 w-4 animate-spin rounded-full border-2 border-[var(--tr-accent)] border-t-transparent" />
+            <span className="tr-card-text text-[var(--tr-ink-2)]">{copy.transcribing}</span>
+          </div>
+        ) : (
+          <form onSubmit={onSubmit} className="flex items-end gap-1.5">
+            {vision && !hasDraft && (
+              <>
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  accept="image/*"
+                  capture="environment"
+                  className="hidden"
+                  onChange={(e) => {
+                    onPickImage(e.target.files?.[0] ?? null);
+                    e.target.value = '';
+                  }}
+                  data-testid="vision-file-input"
+                />
+                <button
+                  type="button"
+                  onClick={() => fileInputRef.current?.click()}
+                  aria-label="ask about a photo"
+                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-[var(--tr-ink-2)] active:bg-[var(--tr-bubble-system)]"
+                  data-testid="camera-button"
+                >
+                  <IconCamera size={22} strokeWidth={2} />
+                </button>
+              </>
+            )}
+            <textarea
+              ref={inputRef}
+              value={draft}
+              rows={1}
+              onChange={(e) => {
+                setDraft(e.target.value);
+                if (!e.target.value) setConfirmHint(false);
+                autosize();
+              }}
+              onKeyDown={onKeyDown}
+              maxLength={2000}
+              placeholder={PLACEHOLDER[locale]}
+              enterKeyHint="send"
+              className={`tr-body min-w-0 flex-1 resize-none rounded-[var(--tr-radius-input)] bg-[var(--tr-surface-2)] px-4 py-2.5 text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)] focus:outline-none ${
+                confirmHint && hasDraft ? 'ring-2 ring-[var(--tr-accent)]' : ''
+              }`}
+            />
+            {voiceSupported && !hasDraft && (
+              <button
+                type="button"
+                onClick={() => void startRecording()}
+                aria-label="record voice message"
+                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-[var(--tr-ink-2)] active:bg-[var(--tr-bubble-system)]"
+                data-testid="mic-button"
+              >
+                <IconMic size={22} strokeWidth={2} />
+              </button>
+            )}
+            {hasDraft && (
+              <button
+                type="submit"
+                aria-label="send"
+                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)] transition-transform active:scale-95"
+              >
+                <IconSend size={20} strokeWidth={2.5} />
+              </button>
+            )}
+          </form>
+        )}
+      </div>
     </div>
   );
 }

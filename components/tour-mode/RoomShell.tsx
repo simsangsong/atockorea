@@ -1,17 +1,32 @@
 'use client';
 
 /**
- * T1.6/T1.12 — room shell: header (tour name · date · lifecycle badge ·
- * connection dot) + emergency card (T1.10) + tabs [chat | map | schedule |
- * settings]. The map tab activates with T3.3.
+ * T1.6/T1.12 → U1 — room shell, reassembled in messenger grammar (plan §E):
+ *
+ *   ┌ slim 52px header — title · LIVE badge · degraded-connection hint ·
+ *   │                     emergency icon → bottom sheet (SOS + contacts)
+ *   ├ full-bleed tab panels on the chat canvas; notice/caption banners
+ *   │ float in an overlay zone (zero layout shift)
+ *   └ bottom tab bar (safe-area, unread dot, hidden while typing)
  *
  * Theme (T1.12): class-based Tailwind dark mode scoped to the room — the
  * resolved theme wraps the shell in a `.dark` ancestor, so `dark:` variants
- * apply without touching the site-wide <html> class.
+ * and the `.dark .tr-root` token layer apply without touching <html>.
  */
 
-import { useState, type ReactNode } from 'react';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
 import EmergencyCard from '@/components/tour-mode/EmergencyCard';
+import Sheet from '@/components/tour-mode/Sheet';
+import { useKeyboardOpen } from '@/components/tour-mode/useKeyboardOpen';
+import {
+  IconEmergency,
+  IconTabChat,
+  IconTabMap,
+  IconTabSchedule,
+  IconTabSettings,
+  IconPickup,
+} from '@/components/tour-mode/icons';
+import { EMERGENCY_TITLE } from '@/lib/tour-room/emergency';
 import type { RoomConnection } from '@/hooks/useTourRoomChannel';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
@@ -31,17 +46,26 @@ const MAP_SOON: Record<RoomLocale, string> = {
   zh: '实时地图即将上线。',
 };
 
-const LIFECYCLE_BADGE: Record<string, { label: string; className: string }> = {
-  lobby: { label: 'D-day soon', className: 'bg-sky-100 text-sky-700' },
-  live: { label: 'LIVE', className: 'bg-emerald-100 text-emerald-700' },
-  ended: { label: 'Ended', className: 'bg-gray-200 text-gray-600' },
+const CONNECTION_HINT: Record<RoomLocale, { reconnecting: string; offline: string }> = {
+  en: { reconnecting: 'Reconnecting…', offline: 'Offline — retrying' },
+  ko: { reconnecting: '다시 연결하는 중…', offline: '오프라인 — 재시도 중' },
+  ja: { reconnecting: '再接続中…', offline: 'オフライン — 再試行中' },
+  es: { reconnecting: 'Reconectando…', offline: 'Sin conexión — reintentando' },
+  zh: { reconnecting: '重新连接中…', offline: '离线 — 重试中' },
 };
 
-const CONNECTION_DOT: Record<RoomConnection, string> = {
-  connecting: 'bg-gray-300',
-  realtime: 'bg-emerald-500',
-  sse: 'bg-amber-400',
-  offline: 'bg-red-400',
+const CLOSE_LABEL: Record<RoomLocale, string> = {
+  en: 'Close',
+  ko: '닫기',
+  ja: '閉じる',
+  es: 'Cerrar',
+  zh: '关闭',
+};
+
+const LIFECYCLE_BADGE: Record<string, { label: string; className: string }> = {
+  lobby: { label: 'D-day soon', className: 'bg-[var(--tr-accent-soft)] text-[var(--tr-accent-deep)]' },
+  live: { label: 'LIVE', className: 'bg-[var(--tr-safe-soft)] text-[var(--tr-safe)]' },
+  ended: { label: 'Ended', className: 'bg-[var(--tr-bubble-system)] text-[var(--tr-ink-2)]' },
 };
 
 export type RoomTab = 'chat' | 'map' | 'schedule' | 'settings';
@@ -52,6 +76,38 @@ interface ScheduleItem {
   title?: string;
   name?: string;
   [key: string]: unknown;
+}
+
+const TABS: Array<{ key: RoomTab; Icon: typeof IconTabChat }> = [
+  { key: 'chat', Icon: IconTabChat },
+  { key: 'map', Icon: IconTabMap },
+  { key: 'schedule', Icon: IconTabSchedule },
+  { key: 'settings', Icon: IconTabSettings },
+];
+
+/**
+ * U6.1 — index of the schedule item currently underway: the last stop whose
+ * HH:MM start is at or before the KST wall clock (live rooms only).
+ */
+function currentScheduleIndex(schedule: ScheduleItem[], lifecycle: string, nowMs: number): number {
+  if (lifecycle !== 'live') return -1;
+  let nowHm: string;
+  try {
+    nowHm = new Intl.DateTimeFormat('en-GB', {
+      timeZone: 'Asia/Seoul',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false,
+    }).format(new Date(nowMs));
+  } catch {
+    return -1;
+  }
+  let current = -1;
+  schedule.forEach((item, index) => {
+    const start = String(item.time ?? '').slice(0, 5);
+    if (/^\d{2}:\d{2}$/.test(start) && start <= nowHm) current = index;
+  });
+  return current;
 }
 
 export default function RoomShell({
@@ -67,6 +123,7 @@ export default function RoomShell({
   map,
   sos,
   theme = 'light',
+  chatActivityKey,
 }: {
   title: string;
   subtitle?: string;
@@ -78,86 +135,224 @@ export default function RoomShell({
   chat: ReactNode;
   /** Settings tab content (T1.12), supplied by the page. */
   settings: ReactNode;
-  /** T2.8 — live caption banner, pinned above the tabs on every tab. */
+  /** T2.8 — live caption / notice banners, floating over every tab. */
   banner?: ReactNode;
   /** T3.3 — map tab content; the "coming soon" placeholder shows when absent. */
   map?: ReactNode;
-  /** T7.3 — the SOS control inside the emergency card. */
+  /** T7.3 — the SOS control inside the emergency sheet. */
   sos?: ReactNode;
   /** Resolved theme — 'system' is resolved by the caller before this prop. */
   theme?: 'light' | 'dark';
+  /** U1.2 — bumps on chat activity; while on another tab it lights the unread dot. */
+  chatActivityKey?: number;
 }) {
   const [tab, setTab] = useState<RoomTab>('chat');
+  const [emergencyOpen, setEmergencyOpen] = useState(false);
+  const [chatUnread, setChatUnread] = useState(false);
+  const keyboardOpen = useKeyboardOpen();
   const badge = LIFECYCLE_BADGE[lifecycle] ?? LIFECYCLE_BADGE.live;
   const labels = TAB_LABEL[locale];
+  const currentIndex = currentScheduleIndex(schedule, lifecycle, Date.now());
+
+  // Unread dot: chat activity while another tab is up.
+  const tabRef = useRef(tab);
+  tabRef.current = tab;
+  const activityRef = useRef(chatActivityKey);
+  useEffect(() => {
+    if (chatActivityKey === activityRef.current) return;
+    activityRef.current = chatActivityKey;
+    if (tabRef.current !== 'chat') setChatUnread(true);
+  }, [chatActivityKey]);
+
+  const selectTab = (next: RoomTab) => {
+    setTab(next);
+    if (next === 'chat') setChatUnread(false);
+  };
+
+  const degraded = connection === 'offline' || connection === 'connecting';
+  const connectionHint =
+    connection === 'offline'
+      ? CONNECTION_HINT[locale].offline
+      : connection === 'connecting'
+        ? CONNECTION_HINT[locale].reconnecting
+        : null;
 
   return (
     <div className={theme === 'dark' ? 'dark' : ''}>
-      <div className="mx-auto flex h-dvh w-full max-w-md flex-col bg-[#faf9f6] px-4 pb-4 pt-5 dark:bg-gray-950">
-        <header className="flex items-center justify-between">
-          <div className="min-w-0">
-            <h1 className="truncate text-[17px] font-semibold text-gray-900 dark:text-gray-50">{title}</h1>
-            {subtitle && <p className="mt-0.5 truncate text-[12px] text-gray-500 dark:text-gray-400">{subtitle}</p>}
+      <div
+        className="tr-root mx-auto flex h-dvh w-full flex-col bg-[var(--tr-canvas)]"
+        data-locale={locale}
+        lang={locale}
+      >
+        {/* ---- Slim header ------------------------------------------- */}
+        <header
+          className="tr-safe-top tr-hairline-b z-30 flex shrink-0 items-center gap-2 bg-[var(--tr-surface)] px-4"
+          style={{ minHeight: 'var(--tr-header-h)' }}
+        >
+          <div className="min-w-0 flex-1 py-1.5">
+            <div className="flex items-center gap-2">
+              <h1 className="tr-title truncate text-[var(--tr-ink)]">{title}</h1>
+              <span
+                className={`tr-meta shrink-0 rounded-full px-2 py-0.5 font-semibold ${badge.className}`}
+                data-testid="lifecycle-badge"
+              >
+                {badge.label}
+              </span>
+            </div>
+            {degraded && connectionHint ? (
+              <p className="tr-meta mt-0.5 flex items-center gap-1.5 truncate font-medium text-[var(--tr-accent-deep)]">
+                <span
+                  className={`h-1.5 w-1.5 rounded-full ${
+                    connection === 'offline' ? 'bg-[var(--tr-danger)]' : 'animate-pulse bg-[var(--tr-accent)]'
+                  }`}
+                />
+                {connectionHint}
+              </p>
+            ) : (
+              subtitle && <p className="tr-meta mt-0.5 truncate text-[var(--tr-ink-3)]">{subtitle}</p>
+            )}
           </div>
-          <div className="flex shrink-0 items-center gap-2 pl-2">
-            <span className={`h-2 w-2 rounded-full ${CONNECTION_DOT[connection]}`} title={connection} />
-            <span className={`rounded-full px-2.5 py-1 text-[11px] font-semibold ${badge.className}`}>{badge.label}</span>
-          </div>
+          <button
+            type="button"
+            onClick={() => setEmergencyOpen(true)}
+            aria-label={EMERGENCY_TITLE[locale]}
+            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-[var(--tr-danger)] active:bg-[var(--tr-danger-soft)]"
+            data-testid="emergency-open"
+          >
+            <IconEmergency size={22} strokeWidth={2} />
+          </button>
         </header>
 
-        <div className="mt-3">
-          <EmergencyCard locale={locale} sos={sos} />
-        </div>
-
-        {banner && <div className="mt-2">{banner}</div>}
-
-        <nav className="mt-3 flex gap-1 rounded-2xl bg-gray-100 p-1 dark:bg-gray-800" role="tablist">
-          {(['chat', 'map', 'schedule', 'settings'] as const).map((key) => (
-            <button
-              key={key}
-              type="button"
-              role="tab"
-              aria-selected={tab === key}
-              onClick={() => setTab(key)}
-              className={`flex-1 rounded-xl py-2 text-[12px] font-medium transition ${
-                tab === key
-                  ? 'bg-white text-gray-900 shadow-sm dark:bg-gray-600 dark:text-gray-50'
-                  : 'text-gray-500 dark:text-gray-400'
-              }`}
-            >
-              {labels[key]}
-            </button>
-          ))}
-        </nav>
-
-        <div className="mt-3 flex min-h-0 flex-1 flex-col">
-          {tab === 'chat' && chat}
-          {tab === 'map' &&
-            (map ?? (
-              <div className="flex flex-1 items-center justify-center text-[13px] text-gray-400 dark:text-gray-500">
-                🗺 {MAP_SOON[locale]}
-              </div>
-            ))}
-          {tab === 'schedule' && (
-            <ol className="space-y-2 overflow-y-auto">
-              {schedule.length === 0 && <p className="pt-10 text-center text-[13px] text-gray-400 dark:text-gray-500">—</p>}
-              {schedule.map((item, index) => (
-                <li
-                  key={index}
-                  className="rounded-2xl bg-white px-4 py-3 shadow-sm ring-1 ring-gray-100 dark:bg-gray-900 dark:ring-gray-800"
-                >
-                  <div className="text-[13px] font-medium text-gray-900 dark:text-gray-100">
-                    {String(item.title ?? item.name ?? '')}
-                  </div>
-                  <div className="mt-0.5 text-[12px] text-gray-500 dark:text-gray-400">
-                    {[item.time, item.departure_time ? `🚌 ${item.departure_time}` : null].filter(Boolean).join(' · ')}
-                  </div>
-                </li>
-              ))}
-            </ol>
+        {/* ---- Tab panels + floating banner zone --------------------- */}
+        <div className="relative flex min-h-0 flex-1 flex-col">
+          {banner && (
+            <div className="pointer-events-none absolute inset-x-0 top-0 z-20 mx-auto w-full max-w-2xl px-3 pt-2 [&>*]:pointer-events-auto">
+              {banner}
+            </div>
           )}
-          {tab === 'settings' && settings}
+
+          <div className="mx-auto flex min-h-0 w-full max-w-2xl flex-1 flex-col">
+            {tab === 'chat' && chat}
+            {tab === 'map' && (
+              <div className="flex min-h-0 flex-1 flex-col px-3 py-2">
+                {map ?? (
+                  <div className="tr-card-text flex flex-1 items-center justify-center gap-2 text-[var(--tr-ink-3)]">
+                    <IconTabMap size={16} aria-hidden />
+                    {MAP_SOON[locale]}
+                  </div>
+                )}
+              </div>
+            )}
+            {tab === 'schedule' && (
+              <ol className="overflow-y-auto px-4 py-4">
+                {schedule.length === 0 && (
+                  <p className="tr-card-text pt-10 text-center text-[var(--tr-ink-3)]">—</p>
+                )}
+                {schedule.map((item, index) => {
+                  const active = index === currentIndex;
+                  return (
+                    <li key={index} className="relative flex gap-3">
+                      <div
+                        className={`tr-meta w-11 shrink-0 pt-1 text-right tabular-nums ${
+                          active ? 'font-bold text-[var(--tr-accent-deep)]' : 'text-[var(--tr-ink-3)]'
+                        }`}
+                      >
+                        {item.time ? String(item.time).slice(0, 5) : ''}
+                      </div>
+                      <div className="flex flex-col items-center">
+                        <span
+                          className={`mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full ${
+                            active
+                              ? 'bg-[var(--tr-accent)] ring-4 ring-[var(--tr-accent-soft)]'
+                              : index < (currentIndex === -1 ? -1 : currentIndex)
+                                ? 'bg-[var(--tr-ink-3)]'
+                                : 'bg-[var(--tr-bubble-system)]'
+                          }`}
+                        />
+                        {index < schedule.length - 1 && (
+                          <span className="w-px flex-1 bg-[var(--tr-hairline)]" aria-hidden />
+                        )}
+                      </div>
+                      <div className={`min-w-0 flex-1 ${index < schedule.length - 1 ? 'pb-6' : ''}`}>
+                        <div
+                          className={`tr-card-text ${
+                            active ? 'font-semibold text-[var(--tr-ink)]' : 'font-medium text-[var(--tr-ink)]'
+                          }`}
+                        >
+                          {String(item.title ?? item.name ?? '')}
+                        </div>
+                        {item.departure_time && (
+                          <div className="tr-meta mt-0.5 flex items-center gap-1 text-[var(--tr-ink-2)]">
+                            <IconPickup size={12} aria-hidden />
+                            {String(item.departure_time)}
+                          </div>
+                        )}
+                      </div>
+                    </li>
+                  );
+                })}
+              </ol>
+            )}
+            {tab === 'settings' && <div className="min-h-0 flex-1 overflow-y-auto px-3 py-3">{settings}</div>}
+          </div>
         </div>
+
+        {/* ---- Bottom tab bar ---------------------------------------- */}
+        {!keyboardOpen && (
+          <nav
+            className="tr-safe-bottom tr-hairline-t z-30 shrink-0 bg-[var(--tr-surface)]"
+            role="tablist"
+            data-testid="room-tabbar"
+          >
+            <div className="mx-auto flex w-full max-w-2xl items-stretch" style={{ minHeight: 'var(--tr-tabbar-h)' }}>
+              {TABS.map(({ key, Icon }) => {
+                const active = tab === key;
+                return (
+                  <button
+                    key={key}
+                    type="button"
+                    role="tab"
+                    aria-selected={active}
+                    onClick={() => selectTab(key)}
+                    className={`relative flex min-h-[44px] flex-1 flex-col items-center justify-center gap-0.5 pb-1 pt-1.5 transition-colors ${
+                      active ? 'text-[var(--tr-accent-deep)]' : 'text-[var(--tr-ink-3)]'
+                    }`}
+                  >
+                    <span
+                      className={`relative flex h-7 w-12 items-center justify-center rounded-full transition-colors ${
+                        active ? 'bg-[var(--tr-accent-soft)]' : ''
+                      }`}
+                    >
+                      <Icon size={21} strokeWidth={active ? 2.25 : 2} aria-hidden />
+                      {key === 'chat' && chatUnread && (
+                        <span
+                          className="absolute right-1 top-0 h-2 w-2 rounded-full bg-[var(--tr-danger)]"
+                          data-testid="chat-unread-dot"
+                        />
+                      )}
+                    </span>
+                    <span className="text-[10px] font-medium leading-none">{labels[key]}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </nav>
+        )}
+
+        {/* ---- Emergency sheet --------------------------------------- */}
+        <Sheet
+          open={emergencyOpen}
+          onClose={() => setEmergencyOpen(false)}
+          closeLabel={CLOSE_LABEL[locale]}
+          title={
+            <span className="flex items-center gap-2 text-[var(--tr-danger)]">
+              <IconEmergency size={18} aria-hidden />
+              {EMERGENCY_TITLE[locale]}
+            </span>
+          }
+        >
+          <EmergencyCard locale={locale} sos={sos} showTitle={false} />
+        </Sheet>
       </div>
     </div>
   );

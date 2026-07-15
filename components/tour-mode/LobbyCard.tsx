@@ -11,6 +11,7 @@
  */
 
 import { kstDaysUntil } from '@/lib/tour-room/time';
+import { IconDate, IconPickup } from '@/components/tour-mode/icons';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
 export interface PickupPoint {
@@ -93,45 +94,46 @@ export default function LobbyCard({
   const time = tourTime ? String(tourTime).slice(0, 5) : null;
 
   return (
-    <div
-      data-testid="lobby-card"
-      className="mb-2 rounded-2xl bg-gradient-to-br from-sky-50 to-white px-4 py-4 shadow-sm ring-1 ring-sky-100 dark:from-sky-950 dark:to-gray-900 dark:ring-sky-900"
-    >
+    <div data-testid="lobby-card" className="tr-card mb-2 px-4 py-4">
       <div className="flex items-center justify-between gap-3">
-        <p className="text-[15px] font-semibold text-gray-900 dark:text-gray-50">✨ {copy.title}</p>
+        <p className="tr-title text-[var(--tr-ink)]">{copy.title}</p>
         {days !== null && (
-          <span className="shrink-0 rounded-full bg-sky-500 px-3 py-1 text-[13px] font-bold text-white">
+          <span className="tr-label shrink-0 rounded-full bg-[var(--tr-accent)] px-3 py-1 font-bold text-[var(--tr-bubble-me-ink)]">
             {copy.dday(days)}
           </span>
         )}
       </div>
 
       {tourDate && (
-        <p className="mt-2 text-[13px] text-gray-600 dark:text-gray-300">
-          📅 {copy.meetOn} <span className="font-semibold text-gray-900 dark:text-gray-100">{tourDate}</span>
-          {time && <span className="font-semibold text-gray-900 dark:text-gray-100"> · {time}</span>}
+        <p className="tr-card-text mt-2 flex items-center gap-1.5 text-[var(--tr-ink-2)]">
+          <IconDate size={14} className="shrink-0 text-[var(--tr-ink-3)]" aria-hidden />
+          {copy.meetOn} <span className="font-semibold text-[var(--tr-ink)]">{tourDate}</span>
+          {time && <span className="font-semibold text-[var(--tr-ink)]">· {time}</span>}
         </p>
       )}
 
       {pickup && (pickup.name || pickup.address) && (
-        <div className="mt-2 rounded-xl bg-white px-3 py-2.5 ring-1 ring-gray-100 dark:bg-gray-900 dark:ring-gray-800">
-          <p className="text-[12px] font-semibold text-gray-500 dark:text-gray-400">🚌 {copy.pickupTitle}</p>
+        <div className="mt-2.5 rounded-xl bg-[var(--tr-surface-2)] px-3 py-2.5">
+          <p className="tr-meta flex items-center gap-1 font-semibold uppercase tracking-wide text-[var(--tr-ink-3)]">
+            <IconPickup size={12} aria-hidden />
+            {copy.pickupTitle}
+          </p>
           {pickup.name && (
-            <p className="mt-0.5 text-[13px] font-medium text-gray-900 dark:text-gray-100">
+            <p className="tr-card-text mt-0.5 font-medium text-[var(--tr-ink)]">
               {pickup.name}
               {pickup.pickup_time && (
-                <span className="font-semibold text-amber-600 dark:text-amber-400">
+                <span className="font-semibold text-[var(--tr-accent-deep)]">
                   {' '}
                   · {String(pickup.pickup_time).slice(0, 5)}
                 </span>
               )}
             </p>
           )}
-          {pickup.address && <p className="mt-0.5 text-[12px] text-gray-500 dark:text-gray-400">{pickup.address}</p>}
+          {pickup.address && <p className="tr-label mt-0.5 text-[var(--tr-ink-2)]">{pickup.address}</p>}
         </div>
       )}
 
-      <p className="mt-2.5 text-[12px] leading-relaxed text-gray-500 dark:text-gray-400">{copy.chatHint}</p>
+      <p className="tr-label mt-2.5 leading-relaxed text-[var(--tr-ink-2)]">{copy.chatHint}</p>
     </div>
   );
 }

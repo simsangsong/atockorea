@@ -9,6 +9,7 @@
 
 import type { GeoWatcherStatus } from '@/hooks/useGeoWatcher';
 import { isWakeLockSupported } from '@/lib/tour-room/wakeLock';
+import { IconMyLocation } from '@/components/tour-mode/icons';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
 const COPY: Record<
@@ -74,39 +75,42 @@ export default function LocationShareCard({
   const live = enabled && status === 'watching';
 
   return (
-    <div className="rounded-2xl bg-white px-4 py-3 shadow-sm ring-1 ring-gray-100 dark:bg-gray-900 dark:ring-gray-800" data-testid="location-share-card">
+    <div className="tr-card px-4 py-3" data-testid="location-share-card">
       <div className="flex items-center justify-between gap-3">
-        <p className="text-[14px] font-semibold text-gray-900 dark:text-gray-50">📍 {copy.title}</p>
+        <p className="tr-title flex items-center gap-1.5 text-[var(--tr-ink)]">
+          <IconMyLocation size={16} className="text-[var(--tr-safe)]" aria-hidden />
+          {copy.title}
+        </p>
         <button
           type="button"
           role="switch"
           aria-checked={enabled}
           disabled={denied || unsupported}
           onClick={() => onToggle(!enabled)}
-          className={`relative h-7 w-12 shrink-0 rounded-full transition-colors disabled:opacity-40 ${
-            enabled ? 'bg-emerald-500' : 'bg-gray-200 dark:bg-gray-700'
+          className={`relative h-8 w-[52px] shrink-0 rounded-full transition-colors disabled:opacity-40 ${
+            enabled ? 'bg-[var(--tr-safe)]' : 'bg-[var(--tr-bubble-system)]'
           }`}
           data-testid="location-toggle"
         >
           <span
-            className={`absolute top-0.5 h-6 w-6 rounded-full bg-white shadow transition-all ${
-              enabled ? 'left-[22px]' : 'left-0.5'
+            className={`absolute top-1 h-6 w-6 rounded-full bg-white shadow transition-all ${
+              enabled ? 'left-[24px]' : 'left-1'
             }`}
           />
         </button>
       </div>
       {denied ? (
-        <p className="mt-1.5 text-[12px] leading-relaxed text-red-600 dark:text-red-400">{copy.denied}</p>
+        <p className="tr-label mt-1.5 leading-relaxed text-[var(--tr-danger)]">{copy.denied}</p>
       ) : unsupported ? (
-        <p className="mt-1.5 text-[12px] leading-relaxed text-gray-500 dark:text-gray-400">{copy.unsupported}</p>
+        <p className="tr-label mt-1.5 leading-relaxed text-[var(--tr-ink-2)]">{copy.unsupported}</p>
       ) : live ? (
-        <p className="mt-1.5 text-[12px] leading-relaxed text-emerald-600 dark:text-emerald-400">
+        <p className="tr-label mt-1.5 leading-relaxed text-[var(--tr-safe)]">
           <span className="mr-1 inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-500 align-middle" />
           {copy.sharing}
-          {!isWakeLockSupported() && <span className="block text-gray-500 dark:text-gray-400">{copy.keepOn}</span>}
+          {!isWakeLockSupported() && <span className="block text-[var(--tr-ink-2)]">{copy.keepOn}</span>}
         </p>
       ) : (
-        <p className="mt-1.5 text-[12px] leading-relaxed text-gray-500 dark:text-gray-400">{copy.consent}</p>
+        <p className="tr-label mt-1.5 leading-relaxed text-[var(--tr-ink-2)]">{copy.consent}</p>
       )}
     </div>
   );

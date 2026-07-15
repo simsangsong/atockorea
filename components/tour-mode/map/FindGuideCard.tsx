@@ -7,6 +7,7 @@
  */
 
 import { bearingDeg, haversineM, type LatLng } from '@/lib/tour-room/geo';
+import { IconFollow, IconGuide, IconWalking } from '@/components/tour-mode/icons';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
 const COPY: Record<RoomLocale, { title: string; away: (d: string) => string; walk: string }> = {
@@ -45,25 +46,37 @@ export default function FindGuideCard({
   const arrow = arrowForBearing(bearingDeg(me, guide));
   const mapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${guide.latitude},${guide.longitude}&travelmode=walking`;
 
+  const bearing = bearingDeg(me, guide);
+
   return (
     <div
-      className="flex items-center gap-3 rounded-2xl bg-gray-900 px-4 py-3 text-white shadow-lg dark:bg-gray-100 dark:text-gray-900"
+      className="flex items-center gap-3 rounded-[var(--tr-radius-card)] bg-[#12151a] px-4 py-3 text-white"
+      style={{ boxShadow: 'var(--tr-shadow-overlay)' }}
       data-testid="find-guide-card"
     >
-      <span className="text-[22px]" aria-hidden>
-        {arrow}
+      <span
+        className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/10"
+        style={{ transform: `rotate(${Math.round(bearing)}deg)` }}
+        aria-hidden
+        title={arrow}
+      >
+        <IconFollow size={18} strokeWidth={2.25} className="-rotate-45" />
       </span>
       <div className="min-w-0 flex-1">
-        <p className="text-[13px] font-semibold">🚩 {copy.title}</p>
-        <p className="text-[12px] opacity-80">{copy.away(formatDistance(distance))}</p>
+        <p className="tr-card-text flex items-center gap-1.5 font-semibold">
+          <IconGuide size={14} className="text-[var(--tr-accent)]" aria-hidden />
+          {copy.title}
+        </p>
+        <p className="tr-label opacity-80">{copy.away(formatDistance(distance))}</p>
       </div>
       <a
         href={mapsUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="shrink-0 rounded-xl bg-emerald-500 px-3.5 py-2 text-[12px] font-semibold text-white"
+        className="tr-label flex min-h-[40px] shrink-0 items-center gap-1.5 rounded-full bg-[var(--tr-safe)] px-3.5 font-semibold text-white"
       >
-        🚶 {copy.walk}
+        <IconWalking size={14} aria-hidden />
+        {copy.walk}
       </a>
     </div>
   );

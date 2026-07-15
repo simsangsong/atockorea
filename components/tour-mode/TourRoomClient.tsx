@@ -31,6 +31,16 @@ import SosButton from '@/components/tour-mode/SosButton';
 import InstallBanner from '@/components/tour-mode/InstallBanner';
 import { detectEntryLocale, ENTRY_COPY } from '@/components/tour-mode/entryCopy';
 import { GUEST_CREDS_STORAGE_PREFIX } from '@/components/tour-mode/TourModeEntry';
+import { IconLost, IconRetry } from '@/components/tour-mode/icons';
+
+/** U2.6 — bulk resend pill under the feed (per-message state is on the bubble). */
+const RETRY_COPY: Record<RoomLocale, (n: number) => string> = {
+  en: (n) => `${n} failed — tap to resend`,
+  ko: (n) => `${n}개 전송 실패 — 다시 보내기`,
+  ja: (n) => `${n}件送信失敗 — 再送する`,
+  es: (n) => `${n} sin enviar — reintentar`,
+  zh: (n) => `${n}条发送失败 — 点击重发`,
+};
 import SettingsTab from '@/components/tour-mode/SettingsTab';
 import { useTourRoomSession, getOrCreateDeviceKey, type TourRoomJoinResult } from '@/hooks/useTourRoomSession';
 import { useTourRoomChannel, type RoomMessage } from '@/hooks/useTourRoomChannel';
@@ -99,9 +109,28 @@ export default function TourRoomClient({ bookingId }: { bookingId: string }) {
   }, [bookingId, join, locale]);
 
   if (state.status === 'idle' || state.status === 'joining') {
+    // U1.7 — a room-shaped skeleton (header + bubble ghosts) instead of a
+    // bare loading line, so the join round-trip feels like the room arriving.
     return (
-      <div className="flex min-h-dvh items-center justify-center">
-        <p className="text-[14px] text-gray-500">{copy.loading}</p>
+      <div className="tr-root mx-auto flex h-dvh w-full flex-col bg-[var(--tr-canvas)]" aria-busy="true">
+        <div
+          className="tr-hairline-b flex shrink-0 items-center gap-3 bg-[var(--tr-surface)] px-4"
+          style={{ minHeight: '52px' }}
+        >
+          <div className="tr-skeleton h-4 w-36 rounded-full" />
+          <span className="sr-only">{copy.loading}</span>
+        </div>
+        <div className="mx-auto flex w-full max-w-2xl flex-1 flex-col gap-3 px-4 pt-6">
+          <div className="flex items-end gap-2">
+            <div className="tr-skeleton h-9 w-9 rounded-full" />
+            <div className="tr-skeleton h-12 w-52 rounded-[18px]" />
+          </div>
+          <div className="tr-skeleton h-9 w-40 self-end rounded-[18px]" />
+          <div className="flex items-end gap-2">
+            <div className="tr-skeleton h-9 w-9 rounded-full" />
+            <div className="tr-skeleton h-16 w-60 rounded-[18px]" />
+          </div>
+        </div>
       </div>
     );
   }
@@ -119,14 +148,16 @@ export default function TourRoomClient({ bookingId }: { bookingId: string }) {
       }
     }
     return (
-      <div className="mx-auto flex min-h-dvh w-full max-w-md flex-col items-center justify-center px-6 text-center">
-        <div className="text-[32px]">🧭</div>
-        <p className="mt-4 text-[14px] leading-relaxed text-gray-700">
+      <div className="tr-root mx-auto flex h-dvh w-full flex-col items-center justify-center bg-[var(--tr-canvas)] px-6 text-center">
+        <span className="flex h-16 w-16 items-center justify-center rounded-full bg-[var(--tr-surface)] text-[var(--tr-ink-3)]">
+          <IconLost size={28} strokeWidth={1.75} aria-hidden />
+        </span>
+        <p className="tr-card-text mt-5 max-w-xs leading-relaxed text-[var(--tr-ink-2)]">
           {state.httpStatus === 404 ? copy.errorNotFound : copy.errorGeneric}
         </p>
         <Link
           href="/tour-mode?nojump=1"
-          className="mt-6 rounded-xl bg-amber-500 px-5 py-2.5 text-[13px] font-semibold text-white"
+          className="tr-label mt-6 flex min-h-[44px] items-center rounded-full bg-[var(--tr-accent)] px-6 font-semibold text-white"
         >
           {copy.title}
         </Link>
@@ -373,6 +404,7 @@ function TourRoomLive({
       locale={locale}
       schedule={schedule}
       theme={theme}
+      chatActivityKey={messages.length}
       banner={
         <>
           <NoticeBanner messages={messages} tourDate={snapshot.booking?.tour_date} locale={locale} />
@@ -424,7 +456,7 @@ function TourRoomLive({
       }
       settings={<SettingsTab locale={locale} onLocaleChange={onLocaleChange} />}
       chat={
-        <>
+        <div className="flex min-h-0 flex-1 flex-col px-3 pt-2">
           {viewerRole === 'guide' && !readOnly && (
             <GuideCaptionBar bookingId={bookingId} roomSession={data.session} locale={locale} />
           )}
@@ -462,9 +494,11 @@ function TourRoomLive({
             <button
               type="button"
               onClick={() => void retryFailed()}
-              className="mb-2 w-full rounded-xl bg-red-50 py-2 text-[12px] font-medium text-red-600"
+              className="tr-label mb-2 flex min-h-[40px] w-full items-center justify-center gap-1.5 rounded-full bg-[var(--tr-danger-soft)] font-medium text-[var(--tr-danger)]"
+              data-testid="retry-failed"
             >
-              ↻ {failedCount}
+              <IconRetry size={14} aria-hidden />
+              {RETRY_COPY[locale](failedCount)}
             </button>
           )}
           {!readOnly && (
@@ -476,7 +510,7 @@ function TourRoomLive({
               vision={{ ask: visionAsk }}
             />
           )}
-        </>
+        </div>
       }
     />
   );

@@ -11,6 +11,7 @@
  */
 
 import { QUICK_REPLY_PRESETS, type QuickReplyPreset } from '@/lib/tour-room/quickReplies';
+import { IconPickup } from '@/components/tour-mode/icons';
 import type { PickupBoardState } from '@/lib/tour-room/pickup';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
@@ -64,11 +65,11 @@ const COPY: Record<
 const PICKUP_PRESET_KEYS = ['arrived', 'running_late'] as const;
 
 const ONBOARD_COPY: Record<RoomLocale, { button: string; done: string }> = {
-  en: { button: "🚌 I'm on the bus", done: '🚌 On board ✓' },
-  ko: { button: '🚌 탑승했어요', done: '🚌 탑승 완료 ✓' },
-  ja: { button: '🚌 乗車しました', done: '🚌 乗車済み ✓' },
-  es: { button: '🚌 Ya estoy en el bus', done: '🚌 A bordo ✓' },
-  zh: { button: '🚌 我已上车', done: '🚌 已上车 ✓' },
+  en: { button: "I'm on the bus", done: 'On board ✓' },
+  ko: { button: '탑승했어요', done: '탑승 완료 ✓' },
+  ja: { button: '乗車しました', done: '乗車済み ✓' },
+  es: { button: 'Ya estoy en el bus', done: 'A bordo ✓' },
+  zh: { button: '我已上车', done: '已上车 ✓' },
 };
 
 export default function PickupBoard({
@@ -93,23 +94,26 @@ export default function PickupBoard({
   const time = state.myStop.pickup_time ? state.myStop.pickup_time.slice(0, 5) : null;
 
   return (
-    <div
-      className="mb-2 rounded-2xl bg-gradient-to-br from-emerald-50 to-white px-4 py-3.5 shadow-sm ring-1 ring-emerald-100 dark:from-emerald-950 dark:to-gray-900 dark:ring-emerald-900"
-      data-testid="pickup-board"
-    >
+    <div className="tr-card mb-2 px-4 py-3.5" data-testid="pickup-board">
       <div className="flex items-center justify-between gap-2">
-        <p className="text-[14px] font-semibold text-gray-900 dark:text-gray-50">🚌 {copy.title}</p>
+        <p className="tr-title flex items-center gap-1.5 text-[var(--tr-ink)]">
+          <IconPickup size={16} className="text-[var(--tr-safe)]" aria-hidden />
+          {copy.title}
+        </p>
         {state.mode === 'live' && state.etaMinutes !== null && (
-          <span className="shrink-0 rounded-full bg-emerald-500 px-2.5 py-1 text-[12px] font-bold text-white" data-testid="pickup-eta">
+          <span
+            className="tr-label shrink-0 rounded-full bg-[var(--tr-safe)] px-2.5 py-1 font-bold text-white"
+            data-testid="pickup-eta"
+          >
             ~{state.etaMinutes}′
           </span>
         )}
       </div>
 
       {state.rank !== null && (
-        <p className="mt-1 text-[13px] text-gray-700 dark:text-gray-200">{copy.stop(state.rank, state.totalStops)}</p>
+        <p className="tr-card-text mt-1 text-[var(--tr-ink)]">{copy.stop(state.rank, state.totalStops)}</p>
       )}
-      <p className="mt-0.5 text-[12px] text-gray-500 dark:text-gray-400">
+      <p className="tr-label mt-0.5 text-[var(--tr-ink-2)]">
         {state.mode === 'live' && state.etaMinutes !== null ? copy.eta(state.etaMinutes) : `${copy.scheduled}${time ? ` · ${time}` : ''}`}
         {state.myStop.name ? ` · ${state.myStop.name}` : ''}
       </p>
@@ -120,7 +124,7 @@ export default function PickupBoard({
             key={preset.key}
             type="button"
             onClick={() => onSendPreset(preset)}
-            className="flex-1 rounded-xl bg-white py-2 text-[12px] font-medium text-gray-700 shadow-sm ring-1 ring-gray-100 active:bg-emerald-50 dark:bg-gray-900 dark:text-gray-200 dark:ring-gray-800"
+            className="tr-label min-h-[44px] flex-1 rounded-xl bg-[var(--tr-surface-2)] px-2 font-medium text-[var(--tr-ink)] transition-transform active:scale-[0.98]"
           >
             {preset.emoji} {preset.text[locale]}
           </button>
@@ -128,7 +132,7 @@ export default function PickupBoard({
         {onOnboardAck &&
           (onboardAcked ? (
             <span
-              className="flex-1 rounded-xl bg-emerald-500 py-2 text-center text-[12px] font-semibold text-white"
+              className="tr-label flex min-h-[44px] flex-1 items-center justify-center rounded-xl bg-[var(--tr-safe)] px-2 text-center font-semibold text-white"
               data-testid="onboard-done"
             >
               {ONBOARD_COPY[locale].done}
@@ -137,16 +141,14 @@ export default function PickupBoard({
             <button
               type="button"
               onClick={onOnboardAck}
-              className="flex-1 rounded-xl bg-white py-2 text-[12px] font-medium text-emerald-700 shadow-sm ring-1 ring-emerald-200 active:bg-emerald-50 dark:bg-gray-900 dark:text-emerald-300 dark:ring-emerald-900"
+              className="tr-label min-h-[44px] flex-1 rounded-xl bg-[var(--tr-safe-soft)] px-2 font-semibold text-[var(--tr-safe)] transition-transform active:scale-[0.98]"
               data-testid="onboard-ack"
             >
               {ONBOARD_COPY[locale].button}
             </button>
           ))}
       </div>
-      {state.mode === 'live' && (
-        <p className="mt-1.5 text-[11px] text-gray-400">{copy.mapHint}</p>
-      )}
+      {state.mode === 'live' && <p className="tr-meta mt-1.5 text-[var(--tr-ink-3)]">{copy.mapHint}</p>}
     </div>
   );
 }
