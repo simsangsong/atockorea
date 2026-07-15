@@ -5,12 +5,12 @@
 **마스터 플랜(단일 기준):** `docs/tour-room-ui-redesign-master-plan-2026-07-15.md` (§A 진단 → §C 바인딩 결정 U-D1~12 → §K WBS 8웨이브/46티켓)
 **상태:** Wave U0~U8 전체 구현 완료 + main 머지 완료(2026-07-15). 토큰 시스템·메신저 레이아웃·버블 시스템·컴포저·카드 리스킨·탭 개편 배포, 테스트 228개 green. **단, U-D2(카카오 옐로 버블)는 아래 v2에서 개정됨 — 이 문서의 색 토큰 표는 더 이상 유효하지 않고 구조 결정(레이아웃·그룹핑·꼬리·FAB 등)만 유효.**
 
-## 진행 중: 투어룸 AI 컨시어지 + UI/UX 엘레강스 리파인 v2
+## 완료: 투어룸 AI 컨시어지 + UI/UX 엘레강스 리파인 v2 (V0~V6 전부)
 
 **마스터 플랜(단일 기준):** `docs/tour-room-concierge-uiux-v2-master-plan-2026-07-15.md` (§A 라이브 시뮬 진단 → §B 외부 전략메모 채택맵 → §C 색 개정(U-D2→U2-D1) → §D AI 컨시어지 Tier0/1/2 → §G WBS)
 **부트스트랩:** `docs/NEXT-SESSION-CONCIERGE-UIUX-V2-2026-07-16.md` ← **이 트랙 이어받으면 이걸 먼저**(잔여 V1·V4·V5·V6 티켓 상세 + 자산 인벤토리 + gotcha)
 **개발 브랜치:** `claude/tour-mode-uiux-concierge-p7k2vm` (워크트리 `C:\Users\sangsong\atockorea-tourmode-uiux`, node_modules는 `atockorea-tourmode`에서 정션)
-**상태:** Wave V0+V2+V3 완료·main 머지(PR #317 `23e54f5c`, 2026-07-16). ① V0: 전역 챗봇 위젯 `/tour-mode` 누수 수정 + 카카오 옐로→아이보리·앤틱브라스 팔레트(SOS 레드 유지) ② V2: 스마트 가이드 시트(헤더 스파클 버튼) — 퀵칩 4종+5로케일 키워드 Tier 0 즉답, 82-POI KB(restroom 80/83)·일정·자유시간 타이머에서 네트워크 0회로 응답 ③ V3: `/concierge` 엔드포인트(라우터 purpose `concierge`, gemini→openai) + 하드코딩 가드레일 4종(응급→SOS/운영요청→피드 에스컬레이션 캡슐+관제 어텐션/맛집 거절) + `logChatTurn`으로 기존 `rag:harvest` 플라이휠 편승 + 3중 예산(`TOUR_ROOM_CONCIERGE_DAILY_CAP`). 신규 테스트 65, 투어 스위트 348 green, 라이브 시딩 시뮬 실구동 검증(Tier1 Gemini 실응답·에스컬레이션 피드 캡슐 확인, 콘솔 에러 0). **다음 = V1(색 적용 감사: 카드류 에메랄드→파인 잔여 확인) → V4(투어종료 타임라인+리뷰쿠폰) → V5(카피 정직성: "AI concierge 24/7" 교정) → V6(QA 게이트).** 시뮬 재현: `sim-tour-day.ts`→`sim-populate.ts`→`sim-concierge-screens.mjs`.
+**상태:** Wave V0~V6 **전부 완료**(V0+V2+V3는 PR #317 `23e54f5c` main 머지; V1·V4·V5·V6은 브랜치 `claude/tour-mode-uiux-concierge-p7k2vm`에 커밋 — **PR/머지 대기**). ① V0: 전역 챗봇 위젯 `/tour-mode` 누수 수정 + 카카오 옐로→아이보리·앤틱브라스 팔레트(SOS 레드 유지) ② V1(`19f2bc58`): PresenceBar·LocationShareCard·SosButton "connected" 잔여 emerald 점→`--tr-safe`(SOS 레드 무변경) ③ V2: 스마트 가이드 시트, 퀵칩 4종+5로케일 키워드 Tier 0(네트워크 0회) ④ V3: `/concierge` 엔드포인트+가드레일 4종+피드 에스컬레이션+관제 어텐션+`rag:harvest` 플라이휠+3중 예산 ⑤ V4(`fc7f3f89`): Travel Timeline(spot_arrival+vision_answer 재집계, 신규 스키마·LLM 0) 시트 + `POST /timeline-coupon`(멱등 `coupon_grants`, 정직 폴백) + `TIMELINE10` 프로모 런치게이트 + "리뷰 남기기"는 쿠폰과 분리(AI 초안 없음) ⑥ V5(`beb6d7a1`): "AI concierge 24/7" 문장 내부 모순 교정 5로케일 ⑦ V6: §J QA 체크리스트 통과. 투어 스위트 307 green, tsc 0, 라이트/다크×en/ko 시뮬 실구동 검증(콘솔 에러 0). ⚠ 전체 `npm test`의 5스위트 실패는 사전존재 환경 이슈(Node/undici, 이 트랙 무관). **남은 것: (a) 브랜치 PR·머지 (b) 사람 게이트 — `TIMELINE10` 활성화(is_active=true)+할인율 결정, 마이그레이션 라이브 적용.** 시뮬 재현: `sim-tour-day.ts`→`sim-populate.ts`→`sim-concierge-screens.mjs`/`sim-timeline-screens.mjs`.
 
 ## 완료: 투어모드(Tour Mode) 개발 — 실시간 투어룸 (코드 트랙 종결)
 
