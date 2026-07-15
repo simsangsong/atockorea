@@ -19,6 +19,7 @@ const HIDDEN_ROUTE_PREFIXES = [
   "/api",
   "/mockup",
   "/tour-product",
+  "/tour-mode",
 ];
 
 const LOCALE_SEGMENTS = new Set(["ko", "ja", "es", "zh-CN", "zh-TW"]);

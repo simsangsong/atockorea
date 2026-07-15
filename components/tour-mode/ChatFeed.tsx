@@ -389,7 +389,7 @@ export default function ChatFeed({
         >
           <IconScrollDown size={20} />
           {awayCount > 0 && (
-            <span className="absolute -top-1.5 min-w-[18px] rounded-full bg-[var(--tr-accent)] px-1 py-0.5 text-center text-[10px] font-bold leading-none text-white">
+            <span className="absolute -top-1.5 min-w-[18px] rounded-full bg-[var(--tr-accent)] px-1 py-0.5 text-center text-[10px] font-bold leading-none text-[var(--tr-bubble-me-ink)]">
               {awayCount > 99 ? '99+' : awayCount}
             </span>
           )}

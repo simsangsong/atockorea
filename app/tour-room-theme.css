@@ -1,29 +1,34 @@
 /**
- * Tour Room design tokens (U0.1 — docs/tour-room-ui-redesign-master-plan-2026-07-15.md §D).
+ * Tour Room design tokens (U2-D1 — docs/tour-room-concierge-uiux-v2-master-plan-2026-07-15.md §C,
+ * revising U0.1/U-D2 from docs/tour-room-ui-redesign-master-plan-2026-07-15.md §D).
  *
  * Scoped to `.tr-root` so nothing leaks into the marketing site. Dark mode
  * keys off the room-scoped `.dark` ancestor that RoomShell already renders
  * (class-based Tailwind dark mode, T1.12).
  *
  * Binding decisions this file encodes:
- *  - U-D2  my bubble = warm yellow + ink text in BOTH themes (Kakao grammar);
- *          amber-500-on-white text combos are banned inside the room.
+ *  - U2-D1 my bubble = pale parchment + ink text in BOTH themes (ivory/antique-
+ *          brass, matching the site's own premium tone) — replaces U-D2's
+ *          saturated Kakao-yellow, which read as a cheap messenger clone.
  *  - U-D6  the typography scale below is the only text sizing allowed in
  *          tour-room components — no new arbitrary px values.
  *  - U-D9  dark mode is a 3-layer system (canvas / surface / bubble), not a
  *          wholesale gray-* swap.
+ *  - §H exception: --tr-danger stays saturated red in both themes on purpose
+ *          (SOS/emergency is the one place "loud" is correct) — do not mute it.
  */
 
 .tr-root {
   /* Canvas & surfaces */
-  --tr-canvas: #efebe3;
+  --tr-canvas: #f7f4ec;
   --tr-surface: #ffffff;
   --tr-surface-2: #f6f4ef;
   --tr-hairline: rgba(26, 29, 33, 0.08);
 
   /* Bubbles */
-  --tr-bubble-me: #fbe471;
-  --tr-bubble-me-ink: #201c0a;
+  --tr-bubble-me: #f1e6cc;
+  --tr-bubble-me-ink: #2a2620;
+  --tr-bubble-me-accent: #9c7a3c;
   --tr-bubble-in: #ffffff;
   --tr-bubble-in-ink: #1a1d21;
   --tr-bubble-system: rgba(23, 27, 32, 0.06);
@@ -34,12 +39,12 @@
   --tr-ink-2: #565d66;
   --tr-ink-3: #6e767f;
 
-  /* Role colors (U-D7: amber = action, emerald = connection/safety, red = emergency) */
-  --tr-accent: #f59e0b;
-  --tr-accent-deep: #b45309;
-  --tr-accent-soft: #fef3c7;
-  --tr-safe: #059669;
-  --tr-safe-soft: #d1fae5;
+  /* Role colors (U-D7: brass = action, pine = connection/safety, red = emergency) */
+  --tr-accent: #9c7a3c;
+  --tr-accent-deep: #6b5426;
+  --tr-accent-soft: #ede1c4;
+  --tr-safe: #3f6b58;
+  --tr-safe-soft: #dce9e2;
   --tr-danger: #dc2626;
   --tr-danger-soft: #fee2e2;
 
@@ -56,14 +61,15 @@
 }
 
 .dark .tr-root {
-  --tr-canvas: #0d1013;
-  --tr-surface: #171b20;
-  --tr-surface-2: #1f242b;
+  --tr-canvas: #15130e;
+  --tr-surface: #1d1b15;
+  --tr-surface-2: #24211a;
   --tr-hairline: rgba(232, 234, 237, 0.09);
 
-  --tr-bubble-me: #f5de6a;
-  --tr-bubble-me-ink: #201c0a;
-  --tr-bubble-in: #1f242b;
+  --tr-bubble-me: #2a2620;
+  --tr-bubble-me-ink: #f1e6cc;
+  --tr-bubble-me-accent: #c9a24d;
+  --tr-bubble-in: #24211a;
   --tr-bubble-in-ink: #e8eaed;
   --tr-bubble-system: rgba(232, 234, 237, 0.08);
   --tr-bubble-system-ink: #a6adb6;
@@ -72,11 +78,11 @@
   --tr-ink-2: #a6adb6;
   --tr-ink-3: #7d858f;
 
-  --tr-accent: #f59e0b;
-  --tr-accent-deep: #fbbf24;
-  --tr-accent-soft: rgba(245, 158, 11, 0.16);
-  --tr-safe: #34d399;
-  --tr-safe-soft: rgba(5, 150, 105, 0.2);
+  --tr-accent: #c9a24d;
+  --tr-accent-deep: #e2c179;
+  --tr-accent-soft: rgba(201, 162, 77, 0.16);
+  --tr-safe: #5f9c85;
+  --tr-safe-soft: rgba(63, 107, 88, 0.22);
   --tr-danger: #f87171;
   --tr-danger-soft: rgba(220, 38, 38, 0.22);
 

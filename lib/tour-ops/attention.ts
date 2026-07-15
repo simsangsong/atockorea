@@ -3,11 +3,13 @@
  * wants to talk" moments without an SOS. Three signals, in priority order:
  *
  *   1. need_help — the customer sent the need_help quick-reply preset;
- *   2. keyword   — a customer message contains a distress keyword
+ *   2. concierge — the Smart Guide escalated a question it must not answer
+ *                  (ops requests: refunds, schedule changes — V3.3);
+ *   3. keyword   — a customer message contains a distress keyword
  *                  (word-boundary match for Latin words — the chatbot's
  *                  includes() token-boundary bug is the cautionary tale —
  *                  substring match for CJK where \b doesn't exist);
- *   3. unanswered — the room's last message is from the customer and nobody
+ *   4. unanswered — the room's last message is from the customer and nobody
  *                  (guide/admin) has replied for 5+ minutes.
  *
  * SOS rooms are excluded: they own a louder surface already.
@@ -15,7 +17,7 @@
 
 import type { RoomMessage } from '@/hooks/useTourRoomChannel';
 
-export type AttentionReason = 'need_help' | 'keyword' | 'unanswered';
+export type AttentionReason = 'need_help' | 'concierge' | 'keyword' | 'unanswered';
 
 export interface AttentionItem {
   roomId: string;
@@ -60,7 +62,7 @@ function isNeedHelpPreset(message: RoomMessage): boolean {
   return metadata?.kind === 'quick_reply' && metadata?.preset_key === 'need_help';
 }
 
-const PRIORITY: Record<AttentionReason, number> = { need_help: 0, keyword: 1, unanswered: 2 };
+const PRIORITY: Record<AttentionReason, number> = { need_help: 0, concierge: 1, keyword: 2, unanswered: 3 };
 
 export function computeAttention(rooms: RoomAttentionInput[], nowMs: number): AttentionItem[] {
   const items: AttentionItem[] = [];
@@ -91,8 +93,14 @@ export function computeAttention(rooms: RoomAttentionInput[], nowMs: number): At
       // Messages are created_at-ascending, so once one is past the window every
       // earlier one is too — stop scanning.
       if (Number.isFinite(age) && age > ATTENTION_WINDOW_MS) break;
-      if (message.sender_role !== 'customer') continue;
       if (!Number.isFinite(age) || age < 0) continue;
+      // V3.3 — Smart Guide escalations are system rows, checked before the
+      // customer filter below.
+      if (message.sender_role === 'system' && message.metadata?.kind === 'concierge_escalation') {
+        consider({ roomId: room.roomId, reason: 'concierge', excerpt: message.source_text, created_at: message.created_at });
+        continue;
+      }
+      if (message.sender_role !== 'customer') continue;
       if (isNeedHelpPreset(message)) {
         consider({ roomId: room.roomId, reason: 'need_help', excerpt: message.source_text, created_at: message.created_at });
       } else if (matchesAttentionKeyword(message.source_text)) {
