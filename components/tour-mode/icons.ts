@@ -76,4 +76,9 @@ export {
   // Smart Guide concierge (V2.2)
   Sparkles as IconConcierge,
   SendHorizontal as IconConciergeSend,
+
+  // Travel timeline + review reward (V4)
+  Route as IconJourney,
+  Star as IconReview,
+  Gift as IconReward,
 } from 'lucide-react';
