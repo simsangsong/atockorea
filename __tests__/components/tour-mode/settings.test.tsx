@@ -102,6 +102,6 @@ describe('ChatFeed text scale (T1.12)', () => {
 
   it('bumps bubble text when textScale=large', () => {
     render(<ChatFeed messages={[message]} viewerLocale="en" textScale="large" />);
-    expect(screen.getByText('hello there').closest('button')).toHaveClass('text-[17px]');
+    expect(screen.getByText('hello there').closest('button')).toHaveClass('tr-body-lg');
   });
 });

@@ -31,7 +31,16 @@ import SosButton from '@/components/tour-mode/SosButton';
 import InstallBanner from '@/components/tour-mode/InstallBanner';
 import { detectEntryLocale, ENTRY_COPY } from '@/components/tour-mode/entryCopy';
 import { GUEST_CREDS_STORAGE_PREFIX } from '@/components/tour-mode/TourModeEntry';
-import { IconLost } from '@/components/tour-mode/icons';
+import { IconLost, IconRetry } from '@/components/tour-mode/icons';
+
+/** U2.6 — bulk resend pill under the feed (per-message state is on the bubble). */
+const RETRY_COPY: Record<RoomLocale, (n: number) => string> = {
+  en: (n) => `${n} failed — tap to resend`,
+  ko: (n) => `${n}개 전송 실패 — 다시 보내기`,
+  ja: (n) => `${n}件送信失敗 — 再送する`,
+  es: (n) => `${n} sin enviar — reintentar`,
+  zh: (n) => `${n}条发送失败 — 点击重发`,
+};
 import SettingsTab from '@/components/tour-mode/SettingsTab';
 import { useTourRoomSession, getOrCreateDeviceKey, type TourRoomJoinResult } from '@/hooks/useTourRoomSession';
 import { useTourRoomChannel, type RoomMessage } from '@/hooks/useTourRoomChannel';
@@ -485,9 +494,11 @@ function TourRoomLive({
             <button
               type="button"
               onClick={() => void retryFailed()}
-              className="mb-2 w-full rounded-xl bg-red-50 py-2 text-[12px] font-medium text-red-600"
+              className="tr-label mb-2 flex min-h-[40px] w-full items-center justify-center gap-1.5 rounded-full bg-[var(--tr-danger-soft)] font-medium text-[var(--tr-danger)]"
+              data-testid="retry-failed"
             >
-              ↻ {failedCount}
+              <IconRetry size={14} aria-hidden />
+              {RETRY_COPY[locale](failedCount)}
             </button>
           )}
           {!readOnly && (
