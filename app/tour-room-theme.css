@@ -1,0 +1,199 @@
+/**
+ * Tour Room design tokens (U0.1 — docs/tour-room-ui-redesign-master-plan-2026-07-15.md §D).
+ *
+ * Scoped to `.tr-root` so nothing leaks into the marketing site. Dark mode
+ * keys off the room-scoped `.dark` ancestor that RoomShell already renders
+ * (class-based Tailwind dark mode, T1.12).
+ *
+ * Binding decisions this file encodes:
+ *  - U-D2  my bubble = warm yellow + ink text in BOTH themes (Kakao grammar);
+ *          amber-500-on-white text combos are banned inside the room.
+ *  - U-D6  the typography scale below is the only text sizing allowed in
+ *          tour-room components — no new arbitrary px values.
+ *  - U-D9  dark mode is a 3-layer system (canvas / surface / bubble), not a
+ *          wholesale gray-* swap.
+ */
+
+.tr-root {
+  /* Canvas & surfaces */
+  --tr-canvas: #efebe3;
+  --tr-surface: #ffffff;
+  --tr-surface-2: #f6f4ef;
+  --tr-hairline: rgba(26, 29, 33, 0.08);
+
+  /* Bubbles */
+  --tr-bubble-me: #fbe471;
+  --tr-bubble-me-ink: #201c0a;
+  --tr-bubble-in: #ffffff;
+  --tr-bubble-in-ink: #1a1d21;
+  --tr-bubble-system: rgba(23, 27, 32, 0.06);
+  --tr-bubble-system-ink: #565d66;
+
+  /* Text */
+  --tr-ink: #1a1d21;
+  --tr-ink-2: #565d66;
+  --tr-ink-3: #8a919b;
+
+  /* Role colors (U-D7: amber = action, emerald = connection/safety, red = emergency) */
+  --tr-accent: #f59e0b;
+  --tr-accent-deep: #b45309;
+  --tr-accent-soft: #fef3c7;
+  --tr-safe: #059669;
+  --tr-safe-soft: #d1fae5;
+  --tr-danger: #dc2626;
+  --tr-danger-soft: #fee2e2;
+
+  /* Geometry */
+  --tr-radius-bubble: 18px;
+  --tr-radius-tail: 4px;
+  --tr-radius-card: 20px;
+  --tr-radius-input: 22px;
+  --tr-header-h: 52px;
+  --tr-tabbar-h: 56px;
+
+  /* Overlay elevation (feed elements stay flat) */
+  --tr-shadow-overlay: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.dark .tr-root {
+  --tr-canvas: #0d1013;
+  --tr-surface: #171b20;
+  --tr-surface-2: #1f242b;
+  --tr-hairline: rgba(232, 234, 237, 0.09);
+
+  --tr-bubble-me: #f5de6a;
+  --tr-bubble-me-ink: #201c0a;
+  --tr-bubble-in: #1f242b;
+  --tr-bubble-in-ink: #e8eaed;
+  --tr-bubble-system: rgba(232, 234, 237, 0.08);
+  --tr-bubble-system-ink: #a6adb6;
+
+  --tr-ink: #e8eaed;
+  --tr-ink-2: #a6adb6;
+  --tr-ink-3: #6e757e;
+
+  --tr-accent: #f59e0b;
+  --tr-accent-deep: #fbbf24;
+  --tr-accent-soft: rgba(245, 158, 11, 0.16);
+  --tr-safe: #34d399;
+  --tr-safe-soft: rgba(5, 150, 105, 0.2);
+  --tr-danger: #f87171;
+  --tr-danger-soft: rgba(220, 38, 38, 0.22);
+
+  --tr-shadow-overlay: 0 4px 16px rgba(0, 0, 0, 0.45);
+}
+
+/* ---- Typography scale (U-D6) ---------------------------------------- */
+
+.tr-body {
+  font-size: 15px;
+  line-height: 1.45;
+}
+.tr-body-lg {
+  font-size: 18px;
+  line-height: 1.45;
+}
+.tr-name {
+  font-size: 13px;
+  line-height: 1.3;
+  font-weight: 600;
+}
+.tr-meta {
+  font-size: 11px;
+  line-height: 1.3;
+}
+.tr-title {
+  font-size: 15px;
+  line-height: 1.35;
+  font-weight: 600;
+}
+.tr-card-text {
+  font-size: 13px;
+  line-height: 1.5;
+}
+.tr-label {
+  font-size: 12px;
+  line-height: 1.35;
+  font-weight: 500;
+}
+
+/* CJK needs a touch more leading to breathe (§J). RoomShell stamps the
+ * active room locale on the root as data-locale. */
+.tr-root[data-locale='ja'] .tr-body,
+.tr-root[data-locale='zh'] .tr-body,
+.tr-root[data-locale='ja'] .tr-body-lg,
+.tr-root[data-locale='zh'] .tr-body-lg,
+.tr-root[data-locale='ja'] .tr-card-text,
+.tr-root[data-locale='zh'] .tr-card-text {
+  line-height: 1.55;
+}
+
+/* ---- Shared primitives ----------------------------------------------- */
+
+/* Centered capsule pill: date separators, system messages, "earlier" loader. */
+.tr-pill {
+  background: var(--tr-bubble-system);
+  color: var(--tr-bubble-system-ink);
+  border-radius: 9999px;
+}
+
+/* Flat card recipe (§H): surface + radius, no ring/shadow/gradient. */
+.tr-card {
+  background: var(--tr-surface);
+  border-radius: var(--tr-radius-card);
+}
+
+/* Hairline separators instead of ring-1 boxes. */
+.tr-hairline-t {
+  border-top: 1px solid var(--tr-hairline);
+}
+.tr-hairline-b {
+  border-bottom: 1px solid var(--tr-hairline);
+}
+
+/* Safe-area helpers for the docked composer / bottom tab bar. */
+.tr-safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.tr-safe-top {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+/* Bubble entrance (U-D8): transform/opacity only, disabled on reduced motion. */
+@keyframes tr-bubble-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.tr-anim-bubble-in {
+  animation: tr-bubble-in 140ms ease-out;
+}
+
+/* Skeleton shimmer for the room loading state (U1.7). */
+@keyframes tr-shimmer {
+  from {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.55;
+  }
+}
+.tr-skeleton {
+  background: var(--tr-bubble-system);
+  animation: tr-shimmer 1.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tr-anim-bubble-in,
+  .tr-skeleton {
+    animation: none;
+  }
+}
