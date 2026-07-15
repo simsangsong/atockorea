@@ -6,12 +6,11 @@
 **개발 브랜치:** `claude/atockorea-tourroom-ui-redesign-m96qmw`
 **상태:** Wave U0~U8 전체 구현 완료 + main 머지 완료(2026-07-15). 토큰 시스템·메신저 레이아웃·버블 시스템·컴포저·카드 리스킨·탭 개편 배포. 투어룸 테스트 228개 green(신규 17개 포함), 기능·API·lib 로직 변경 0건. 잔여 파킹 항목은 플랜 §L 참조(지도 마커 아이콘화·탭 크로스페이드·읽음표시 백로그). 다음 세션은 새 대화로 시작 — 이 문서와 마스터플랜이 인계 자료.
 
-## 진행 중: 투어모드(Tour Mode) 개발 — 실시간 투어룸
+## 완료: 투어모드(Tour Mode) 개발 — 실시간 투어룸 (코드 트랙 종결)
 
-**마스터 플랜(단일 기준):** `docs/tour-mode-master-plan-2026-07-14.md` (§A~§O, 9웨이브/57티켓)
-**부트스트랩:** `docs/NEXT-SESSION-EXECUTION-PROMPT-2026-07-14-tour-mode.md` ← **투어모드 이어받으면 이걸 먼저**
-**개발 브랜치:** `claude/tour-mode-iql6ho` (플랜 문서 브랜치 `claude/tour-mode-dev-iaa0b8`를 머지해 구현 진행)
-**상태:** Wave T0 완료 + Wave T1 진행 중(T1.1~T1.8·T1.10·T1.12 완료 — join/snapshot API, 로케일 타게팅, 진입/룸 페이지, Realtime 채널 훅, RoomShell 4탭(채팅·지도·일정·설정), 퀵답장, 긴급카드, 웹뷰배너, 다크모드+설정탭. 테스트 164개. 플랜 58티켓으로 개정(음성 발송 전 확인 기본 ON=T2.2, 설정탭=T1.12)). **T0.3은 승인됐으나 이 원격 세션 Supabase MCP가 타 프로젝트(Kursoflow)라 적용 불가 — atockorea DB 연결된 세션에서 20260714090000·20260714091000 적용+get_advisors 필요.** 다음 = T1.9(E2E) → T1.11 잔여 → Wave T2.
+**마스터 플랜(단일 기준):** `docs/tour-mode-master-plan-2026-07-14.md` (§A~§O, T0~T8.1 전부 ✅)
+**후속 트랙:** `docs/NEXT-SESSION-OPS-CENTER-APP-2026-07-15.md` — 관제센터 앱화/PWA W1~W7 전부 ✅(PR #312~#316)
+**상태:** 기능 코드 트랙(T0~T8.1) + 관제 PWA 트랙(W1~W7) 전부 main 머지 완료, 플래그 `NEXT_PUBLIC_TOUR_MODE_V1` OFF. 테스트 290+ green, tsc 0, advisors 신규 0(2026-07-15 재확인). **남은 건 전부 사람 게이트(코드 작업 없음):** ① §I-4 실기기 리허설(iOS Safari/Android Chrome — 녹음·TTS·PWA 설치·SOS 수신) ② 파일럿 스팟 좌표 검수(`docs/tour-mode-pilot-spot-checklist-2026-07-14.md`) ③ T8.2 런칭: 남은 env 체크(`docs/tour-mode-hardening-T8-2026-07-15.md` §5 — 플래그 ON 시점 결정, `NEXT_PUBLIC_TOUR_OPS_PHONE`, SOS 수신 이메일, 파일럿 메트릭 쿼리 등록). `TOUR_ROOM_TOKEN_SECRET`·VAPID·cron은 이미 설정 확인됨. 다음 세션은 사람이 위 3게이트를 통과시킨 뒤 파일럿 오픈으로 재개.
 
 ## 진행 중인 대규모 작업: 어드민 대시보드 전면 개편
 
