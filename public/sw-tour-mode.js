@@ -7,14 +7,18 @@
  * Requests outside the precache list fall through to the network untouched.
  */
 
+// Bump the version whenever SHELL_ASSETS bytes change (icons etc.) — cache-
+// first serving can't otherwise pick up a same-path asset update.
 const CACHE_NAME = 'atoc-tour-mode-shell-v1';
+// The manifest is intentionally NOT precached (install metadata must not be
+// pinned cache-first, or a redeploy changing it stays invisible to installed
+// clients). Its own HTTP cache-control (1h) is enough.
 const SHELL_ASSETS = [
   '/pwa/icon-192.png',
   '/pwa/icon-512.png',
   '/pwa/maskable-192.png',
   '/pwa/maskable-512.png',
   '/pwa/apple-touch-icon.png',
-  '/tour-mode/manifest.webmanifest',
 ];
 
 self.addEventListener('install', (event) => {

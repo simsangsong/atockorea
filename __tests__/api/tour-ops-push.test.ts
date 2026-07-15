@@ -62,7 +62,7 @@ function fakeDb(rows: Array<Record<string, unknown>> = []): { client: unknown; c
 }
 
 const SUBSCRIPTION = {
-  subscription: { endpoint: 'https://push.example/abc', keys: { p256dh: 'k1', auth: 'a1' } },
+  subscription: { endpoint: 'https://fcm.googleapis.com/fcm/send/abc', keys: { p256dh: 'k1', auth: 'a1' } },
 };
 
 beforeEach(() => {
@@ -85,6 +85,17 @@ describe('push-subscriptions API (W6.1)', () => {
     expect(res.status).toBe(400);
   });
 
+  it('400s an endpoint outside the push-service allow-list (stored-SSRF guard)', async () => {
+    requireAdminMock.mockResolvedValue({ id: 'admin-1' });
+    createServerClientMock.mockReturnValue(fakeDb().client);
+    for (const endpoint of ['http://169.254.169.254/latest', 'https://evil.example/x', 'http://fcm.googleapis.com/x']) {
+      const res = await subscribePOST(
+        fakeReq({ json: { subscription: { endpoint, keys: { p256dh: 'k', auth: 'a' } } } }),
+      );
+      expect(res.status).toBe(400);
+    }
+  });
+
   it('upserts by endpoint with the admin identity', async () => {
     requireAdminMock.mockResolvedValue({ id: 'admin-1' });
     const { client, calls } = fakeDb();
@@ -94,7 +105,7 @@ describe('push-subscriptions API (W6.1)', () => {
     expect(calls.upserts[0]).toMatchObject({
       user_id: 'admin-1',
       role: 'admin',
-      endpoint: 'https://push.example/abc',
+      endpoint: 'https://fcm.googleapis.com/fcm/send/abc',
       p256dh: 'k1',
       auth: 'a1',
       user_agent: 'test-ua',
@@ -105,16 +116,16 @@ describe('push-subscriptions API (W6.1)', () => {
     requireAdminMock.mockResolvedValue({ id: 'admin-1' });
     const { client, calls } = fakeDb();
     createServerClientMock.mockReturnValue(client);
-    const res = await subscribeDELETE(fakeReq({ json: { endpoint: 'https://push.example/abc' } }));
+    const res = await subscribeDELETE(fakeReq({ json: { endpoint: 'https://fcm.googleapis.com/fcm/send/abc' } }));
     expect(res.status).toBe(200);
-    expect(calls.deletes[0]).toEqual({ column: 'endpoint', value: 'https://push.example/abc' });
+    expect(calls.deletes[0]).toEqual({ column: 'endpoint', value: 'https://fcm.googleapis.com/fcm/send/abc' });
   });
 });
 
 describe('sendOpsPush (W6.2)', () => {
   const ROWS = [
-    { id: 's1', endpoint: 'https://push.example/1', p256dh: 'k', auth: 'a' },
-    { id: 's2', endpoint: 'https://push.example/2', p256dh: 'k', auth: 'a' },
+    { id: 's1', endpoint: 'https://fcm.googleapis.com/fcm/send/1', p256dh: 'k', auth: 'a' },
+    { id: 's2', endpoint: 'https://fcm.googleapis.com/fcm/send/2', p256dh: 'k', auth: 'a' },
   ];
 
   it('no-ops silently when VAPID env is missing', async () => {

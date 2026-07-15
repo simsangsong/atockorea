@@ -128,6 +128,48 @@ describe('useOpsChannels (W2.2)', () => {
     });
     expect(result.current.connection).toBe('degraded');
   });
+
+  it('caps live history per room (memory/perf) while keeping the newest', () => {
+    const { result } = renderHook(() => useOpsChannels(DESCRIPTORS));
+    act(() => {
+      const batch = Array.from({ length: 250 }, (_, i) =>
+        msg(`m${i}`, `2099-07-20T${String(1 + Math.floor(i / 60)).padStart(2, '0')}:${String(i % 60).padStart(2, '0')}:00Z`),
+      );
+      result.current.ingestMessages('room-1', batch);
+    });
+    const kept = result.current.streams['room-1'].messages;
+    expect(kept.length).toBe(200);
+    expect(kept[kept.length - 1].id).toBe('m249'); // newest survives the cap
+  });
+
+  it('exposes liveSos incrementally and survives the message cap', () => {
+    const { result } = renderHook(() => useOpsChannels(DESCRIPTORS));
+    act(() => {
+      fakeChannels.get('tour-room:room-1:aaaa1111')!.emit('message', {
+        message: msg('sos1', '2099-07-20T01:00:00Z', { metadata: { kind: 'sos', note: 'help' } }),
+      });
+    });
+    expect(result.current.liveSos['room-1'].metadata).toMatchObject({ kind: 'sos', note: 'help' });
+    // Flood past the cap — the SOS snapshot is kept out-of-band, not dropped.
+    act(() => {
+      const batch = Array.from({ length: 250 }, (_, i) => msg(`f${i}`, `2099-07-20T03:${String(i % 60).padStart(2, '0')}:00Z`));
+      result.current.ingestMessages('room-1', batch);
+    });
+    expect(result.current.liveSos['room-1']).toBeTruthy();
+  });
+
+  it('prunes streams for rooms no longer in the channel set (date change)', () => {
+    const { result, rerender } = renderHook(({ ch }) => useOpsChannels(ch), {
+      initialProps: { ch: DESCRIPTORS },
+    });
+    act(() => {
+      fakeChannels.get('tour-room:room-1:aaaa1111')!.emit('message', { message: msg('m1', '2099-07-20T01:00:00Z') });
+    });
+    expect(result.current.streams['room-1']).toBeTruthy();
+    // Switch to a different date's rooms — the old room's stream must drop.
+    rerender({ ch: [{ roomId: 'room-9', bookingId: 'booking-9', topic: 'tour-room:room-9:cccc3333', status: 'active' }] });
+    expect(result.current.streams['room-1']).toBeUndefined();
+  });
 });
 
 describe('countUnread (W2.2)', () => {

@@ -7,7 +7,7 @@ import {
   signRoomSession,
   type RoomActor,
 } from '@/lib/tour-room/access';
-import { roomChannelTopic } from '@/lib/tour-room/realtime';
+import { roomChannelTopic, broadcastToRoom } from '@/lib/tour-room/realtime';
 import { roomShouldBeClosed } from '@/lib/tour-room/time';
 import { buildRoomSnapshot, normalizeRoomLocale } from '@/lib/tour-room/snapshot';
 
@@ -81,6 +81,10 @@ export async function POST(
     // R-19: a room whose tour day + grace window has passed flips to closed
     // on the next join; the channel topic derivation rotates with it (R-23).
     if (room.status === 'active' && roomShouldBeClosed(booking.tour_date)) {
+      // Announce the rotation on the OLD (active) topic first so any ops
+      // console still subscribed there refetches the directory and re-subs to
+      // the new topic (otherwise it stays on a now-silent channel).
+      await broadcastToRoom({ id: room.id, status: 'active' }, 'room', { reason: 'status_rotated' });
       const { data: closedRoom } = await supabase
         .from('tour_rooms')
         .update({ status: 'closed', updated_at: new Date().toISOString() })

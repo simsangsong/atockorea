@@ -12,7 +12,14 @@ import { useMemo } from 'react';
 import type { OpsRoomStream } from '@/hooks/useOpsChannels';
 import { roomHue } from '@/components/tour-mode/guide/GuideConsole';
 import type { AttentionItem, AttentionReason } from '@/lib/tour-ops/attention';
-import { isRecent, kstTimeLabel, senderLabel, type OpsRoom, type SosInfo } from '@/components/tour-ops/opsShared';
+import {
+  isRecent,
+  kstTimeLabel,
+  opsReadableText,
+  senderLabel,
+  type OpsRoom,
+  type SosInfo,
+} from '@/components/tour-ops/opsShared';
 
 const ATTENTION_LABELS: Record<AttentionReason, string> = {
   need_help: '🙋 도움 요청',
@@ -32,6 +39,8 @@ interface TourGroup {
 export default function OpsDashboardTab({
   rooms,
   loading,
+  loadError = false,
+  onRetry,
   streams,
   unread,
   sosRooms,
@@ -40,6 +49,8 @@ export default function OpsDashboardTab({
 }: {
   rooms: OpsRoom[];
   loading: boolean;
+  loadError?: boolean;
+  onRetry?: () => void;
   streams: Record<string, OpsRoomStream>;
   unread: Record<string, number>;
   sosRooms: Map<string, SosInfo>;
@@ -60,6 +71,14 @@ export default function OpsDashboardTab({
       if (room.onboard_ack) group.boarded += 1;
       group.guests += room.booking?.number_of_guests ?? 1;
     }
+    // Effective recency = newer of the aggregate row and the live stream tail
+    // (a room active only over the socket must still sort to the top).
+    const latestAt = (room: OpsRoom): string => {
+      const liveMessages = streams[room.id]?.messages;
+      const liveAt = liveMessages && liveMessages.length > 0 ? liveMessages[liveMessages.length - 1].created_at : '';
+      const aggAt = room.last_message?.created_at ?? '';
+      return liveAt > aggAt ? liveAt : aggAt;
+    };
     const list = [...byTour.values()];
     // SOS rooms pin to the top of their group; SOS groups pin to the top of the list.
     for (const group of list) {
@@ -67,7 +86,9 @@ export default function OpsDashboardTab({
         const aSos = sosRooms.has(a.id) ? 1 : 0;
         const bSos = sosRooms.has(b.id) ? 1 : 0;
         if (aSos !== bSos) return bSos - aSos;
-        return (b.last_message?.created_at ?? '') < (a.last_message?.created_at ?? '') ? -1 : 1;
+        const at = latestAt(a);
+        const bt = latestAt(b);
+        return at === bt ? 0 : at < bt ? 1 : -1;
       });
     }
     list.sort((a, b) => {
@@ -77,10 +98,29 @@ export default function OpsDashboardTab({
       return a.title.localeCompare(b.title, 'ko');
     });
     return list;
-  }, [rooms, sosRooms]);
+  }, [rooms, sosRooms, streams]);
 
   if (loading && rooms.length === 0) {
     return <p className="mt-12 text-center text-sm text-slate-500">불러오는 중…</p>;
+  }
+  // Distinguish a genuine "no rooms today" from a fetch failure — the latter
+  // must never read as "no tours" on the SOS-monitoring surface.
+  if (loadError && rooms.length === 0) {
+    return (
+      <div className="mt-12 text-center">
+        <p className="text-sm font-medium text-slate-300">불러오기에 실패했어요</p>
+        <p className="mt-1 text-[12px] text-slate-500">네트워크를 확인한 뒤 다시 시도해 주세요.</p>
+        {onRetry && (
+          <button
+            type="button"
+            onClick={onRetry}
+            className="mt-3 min-h-[44px] rounded-xl bg-slate-800 px-5 text-[13px] font-semibold text-slate-100"
+          >
+            다시 시도
+          </button>
+        )}
+      </div>
+    );
   }
   if (rooms.length === 0) {
     return <p className="mt-12 text-center text-sm text-slate-500">이 날짜에 활성 룸이 없습니다.</p>;
@@ -136,8 +176,12 @@ export default function OpsDashboardTab({
               const stream = streams[room.id];
               const liveMessages = stream?.messages ?? [];
               const lastLive = liveMessages.length > 0 ? liveMessages[liveMessages.length - 1] : null;
-              const lastText = lastLive?.source_text ?? room.last_message?.source_text ?? '메시지 없음';
-              const lastAt = lastLive?.created_at ?? room.last_message?.created_at;
+              // Prefer whichever is actually newer, and show ko translation.
+              const aggAt = room.last_message?.created_at ?? '';
+              const useLive = lastLive != null && (lastLive.created_at ?? '') >= aggAt;
+              const lastSource = useLive ? lastLive : room.last_message;
+              const lastText = opsReadableText(lastSource) || '메시지 없음';
+              const lastAt = useLive ? lastLive!.created_at : room.last_message?.created_at;
               const isLive = isRecent(lastAt) || Object.keys(stream?.locations ?? {}).length > 0;
               const unreadCount = unread[room.id] ?? 0;
               const hue = roomHue(room.booking_id);
@@ -177,7 +221,7 @@ export default function OpsDashboardTab({
                         {room.onboard_ack && <span className="shrink-0 text-[10px]">🚌</span>}
                       </p>
                       <p className="mt-0.5 truncate text-[12px] text-slate-400">
-                        <span className="text-slate-500">{senderLabel(lastLive?.sender_role ?? room.last_message?.sender_role)}</span>{' '}
+                        <span className="text-slate-400">{senderLabel(lastSource?.sender_role)}</span>{' '}
                         {lastText}
                       </p>
                     </div>

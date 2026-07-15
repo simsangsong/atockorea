@@ -21,6 +21,30 @@ interface SubscriptionBody {
   };
 }
 
+// Known Web Push service hosts. The stored endpoint is later POSTed to by the
+// server (web-push), so an unvalidated URL is a stored-SSRF vector — restrict
+// to https on a real push provider before persisting.
+const PUSH_HOST_SUFFIXES = [
+  'push.services.mozilla.com',
+  'fcm.googleapis.com',
+  'android.googleapis.com',
+  'push.apple.com', // *.push.apple.com
+  'notify.windows.com', // *.notify.windows.com
+  'notify.live.net',
+];
+
+function isAllowedPushEndpoint(endpoint: string): boolean {
+  try {
+    const url = new URL(endpoint);
+    if (url.protocol !== 'https:') return false;
+    return PUSH_HOST_SUFFIXES.some(
+      (suffix) => url.hostname === suffix || url.hostname.endsWith(`.${suffix}`),
+    );
+  } catch {
+    return false;
+  }
+}
+
 export async function POST(req: NextRequest) {
   try {
     const admin = await requireAdmin(req);
@@ -30,6 +54,9 @@ export async function POST(req: NextRequest) {
     const auth = body.subscription?.keys?.auth;
     if (!endpoint || !p256dh || !auth) {
       return NextResponse.json({ error: 'Invalid subscription' }, { status: 400 });
+    }
+    if (!isAllowedPushEndpoint(endpoint)) {
+      return NextResponse.json({ error: 'Unsupported push endpoint' }, { status: 400 });
     }
 
     const supabase = createServerClient();
