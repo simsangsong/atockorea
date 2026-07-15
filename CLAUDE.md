@@ -9,7 +9,7 @@
 
 **마스터 플랜(단일 기준):** `docs/tour-room-concierge-uiux-v2-master-plan-2026-07-15.md` (§A 라이브 시뮬 진단 → §B 외부 전략메모 채택맵 → §C 색 개정(U-D2→U2-D1) → §D AI 컨시어지 Tier0/1/2 → §G WBS)
 **개발 브랜치:** `claude/tour-mode-uiux-concierge-p7k2vm` (워크트리 `C:\Users\sangsong\atockorea-tourmode-uiux`, node_modules는 `atockorea-tourmode`에서 정션)
-**상태:** Wave V0 완료 — ① `GlobalAiAssistant`가 `/tour-mode`를 격리 목록에서 빠뜨려 사이트 전역 챗봇 위젯이 투어룸(긴급연락처 시트)에 누수되던 버그 수정(`8a215289`, 라이브 시딩+Playwright로 확인) ② 카카오 옐로 버블 → 아이보리+앤틱브라스 팔레트로 토큰 전면 교체(`eb0fa338`, SOS 레드는 의도적으로 유지) — 라이트/다크 둘 다 실제 렌더 스크린샷으로 검증, 기존 228개 테스트 green. **다음 = Wave V1(색 적용 감사) → V2/V3(AI 컨시어지 Tier0/1/2 신규 빌드 — 82-POI DB를 실제로 응답에 쓰는 핵심 기능, 현재 전무) → V4(타임라인+리뷰쿠폰) → V5(카피 정직성).** 컨시어지는 신규 엔드포인트 `/api/tour-rooms/[bookingId]/concierge` 1개 + 기존 AI 라우터/RAG 하베스트 파이프라인 재사용, 신규 인프라 없음.
+**상태:** Wave V0+V2+V3 완료·main 머지(PR #317 `23e54f5c`, 2026-07-16). ① V0: 전역 챗봇 위젯 `/tour-mode` 누수 수정 + 카카오 옐로→아이보리·앤틱브라스 팔레트(SOS 레드 유지) ② V2: 스마트 가이드 시트(헤더 스파클 버튼) — 퀵칩 4종+5로케일 키워드 Tier 0 즉답, 82-POI KB(restroom 80/83)·일정·자유시간 타이머에서 네트워크 0회로 응답 ③ V3: `/concierge` 엔드포인트(라우터 purpose `concierge`, gemini→openai) + 하드코딩 가드레일 4종(응급→SOS/운영요청→피드 에스컬레이션 캡슐+관제 어텐션/맛집 거절) + `logChatTurn`으로 기존 `rag:harvest` 플라이휠 편승 + 3중 예산(`TOUR_ROOM_CONCIERGE_DAILY_CAP`). 신규 테스트 65, 투어 스위트 348 green, 라이브 시딩 시뮬 실구동 검증(Tier1 Gemini 실응답·에스컬레이션 피드 캡슐 확인, 콘솔 에러 0). **다음 = V1(색 적용 감사: 카드류 에메랄드→파인 잔여 확인) → V4(투어종료 타임라인+리뷰쿠폰) → V5(카피 정직성: "AI concierge 24/7" 교정) → V6(QA 게이트).** 시뮬 재현: `sim-tour-day.ts`→`sim-populate.ts`→`sim-concierge-screens.mjs`.
 
 ## 완료: 투어모드(Tour Mode) 개발 — 실시간 투어룸 (코드 트랙 종결)
 
