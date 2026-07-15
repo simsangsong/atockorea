@@ -1,5 +1,11 @@
 # CLAUDE.md — 프로젝트 메모리
 
+## 진행 중: 투어룸 UI/UX 글로벌 리디자인 (프레젠테이션 전용)
+
+**마스터 플랜(단일 기준):** `docs/tour-room-ui-redesign-master-plan-2026-07-15.md` (§A 진단 → §C 바인딩 결정 U-D1~12 → §K WBS 8웨이브/46티켓)
+**개발 브랜치:** `claude/atockorea-tourroom-ui-redesign-m96qmw`
+**상태:** 플랜 작성 완료(2026-07-15) — 사용자 승인 후 Wave U0(토큰·유틸)부터. **기능·API·lib 로직 변경 금지(§M 가드레일), testid 계약 보존, 테스트 164개 green 유지.**
+
 ## 진행 중: 투어모드(Tour Mode) 개발 — 실시간 투어룸
 
 **마스터 플랜(단일 기준):** `docs/tour-mode-master-plan-2026-07-14.md` (§A~§O, 9웨이브/57티켓)
