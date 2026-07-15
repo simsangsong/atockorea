@@ -53,6 +53,8 @@
 
 ## 4. 실행 WBS
 
+> **감사 하드닝 라운드(2026-07-15, `de8d22fd`)**: W1~W7 전 기능을 라이브 시딩 모의(scripts/sim-tour-day.ts)로 실구동 검증 + 4차원 심층 감사(정합성·보안·성능·UX/i18n) 후 결함 일괄 수정. 주요: ①2차 SOS 재알람(roomId+ts 키), ②설치 PWA 죽은룸 리다이렉트 루프 차단(?nojump=1), ③미전송 큐 재구독 자동 flush, ④룸당 메시지 200캡→O(n) 파생 상수화, ⑤지도 강제 리센터 제거, ⑥관제 수신측 ko 번역 표시, ⑦SOS 이메일 HTML 이스케이프·need_help 푸시 레이트리밋·푸시 endpoint allow-list(SSRF)·SW same-origin. 잔여 후속=tour-room API 에러 detail 누출 정리(태스크 발행). 프로덕션 서버 스모크 콘솔 0에러.
+
 ### W1 — PWA 셸 【4】
 - **W1.1** ✅ 완료(`32f5e6c5`) 아이콘 파이프라인: 메인 dir의 emblem PNG 커밋 + 192/512 maskable 파생 + apple-touch-icon — AC: Lighthouse PWA 설치 가능.
 - **W1.2** ✅ 완료(`b97fa708` — manifest.ts 컨벤션은 앱 루트 전용이라 route handler `app/tour-mode/manifest.webmanifest/route.ts`+layout metadata.manifest로 구현) `app/tour-mode/manifest.ts` + 최소 SW + 설치 프롬프트 배너(iOS는 공유→홈화면 안내 시트, 5로케일) — AC: Android/iOS 홈 아이콘 설치 확인 항목 문서화.
