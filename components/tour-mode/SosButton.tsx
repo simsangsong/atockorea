@@ -89,14 +89,19 @@ export default function SosButton({
   roomSession,
   locale,
   onSent,
+  alreadySentAt,
 }: {
   bookingId: string;
   roomSession: string;
   locale: RoomLocale;
-  /** W4.3 — fired once on a delivered SOS with its ISO timestamp. */
+  /** W4.3 — fired once on a delivered SOS with the SERVER timestamp (skew-proof). */
   onSent?: (sentAt: string) => void;
+  /** W4.3 — when a prior SOS was sent this session, mount straight into 'sent'. */
+  alreadySentAt?: string | null;
 }) {
-  const [state, setState] = useState<'idle' | 'confirm' | 'sending' | 'sent' | 'failed'>('idle');
+  const [state, setState] = useState<'idle' | 'confirm' | 'sending' | 'sent' | 'failed'>(
+    alreadySentAt ? 'sent' : 'idle',
+  );
   const [note, setNote] = useState('');
   const copy = COPY[locale];
 
@@ -110,8 +115,11 @@ export default function SosButton({
         body: JSON.stringify({ ...location, note: note.trim() || undefined }),
       });
       if (!res.ok) throw new Error(String(res.status));
+      // Use the server's message timestamp so the ops-reply highlight can't be
+      // thrown off by a fast/slow device clock.
+      const json = (await res.json().catch(() => ({}))) as { message?: { created_at?: string } };
       setState('sent');
-      onSent?.(new Date().toISOString());
+      onSent?.(json.message?.created_at || new Date().toISOString());
     } catch {
       setState('failed');
     }

@@ -6,14 +6,19 @@
  * realtime dashboard — a cached response is worse than an error).
  */
 
+// Bump the version whenever SHELL_ASSETS bytes change (icons etc.) — cache-
+// first serving can't otherwise pick up a same-path asset update.
 const CACHE_NAME = 'atoc-tour-ops-shell-v1';
+// The manifest is intentionally NOT precached: install metadata (name/icons/
+// start_url) must not be pinned in a cache-first store, or a redeploy that
+// changes it would be invisible to already-installed clients. Its own HTTP
+// cache-control (1h) is enough.
 const SHELL_ASSETS = [
   '/pwa/icon-192.png',
   '/pwa/icon-512.png',
   '/pwa/maskable-192.png',
   '/pwa/maskable-512.png',
   '/pwa/apple-touch-icon.png',
-  '/admin/tour-ops/manifest.webmanifest',
 ];
 
 self.addEventListener('install', (event) => {
@@ -63,7 +68,15 @@ self.addEventListener('push', (event) => {
 
 self.addEventListener('notificationclick', (event) => {
   event.notification.close();
-  const url = (event.notification.data && event.notification.data.url) || '/admin/tour-ops';
+  // Same-origin only: never let a push payload's url open an external site.
+  let url = '/admin/tour-ops';
+  try {
+    const raw = (event.notification.data && event.notification.data.url) || '/admin/tour-ops';
+    const dest = new URL(raw, self.location.origin);
+    if (dest.origin === self.location.origin) url = dest.pathname + dest.search;
+  } catch (e) {
+    /* keep the default */
+  }
   event.waitUntil(
     self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then((clients) => {
       for (const client of clients) {

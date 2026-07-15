@@ -107,6 +107,17 @@ export default function TourRoomClient({ bookingId }: { bookingId: string }) {
   }
 
   if (state.status === 'error') {
+    // Drop the stored last-room so an installed PWA doesn't bounce straight
+    // back here, and send the entry list a ?nojump=1 to break the loop.
+    if (typeof window !== 'undefined') {
+      try {
+        if (window.localStorage.getItem('tour_mode_last_room') === bookingId) {
+          window.localStorage.removeItem('tour_mode_last_room');
+        }
+      } catch {
+        /* noop */
+      }
+    }
     return (
       <div className="mx-auto flex min-h-dvh w-full max-w-md flex-col items-center justify-center px-6 text-center">
         <div className="text-[32px]">🧭</div>
@@ -114,7 +125,7 @@ export default function TourRoomClient({ bookingId }: { bookingId: string }) {
           {state.httpStatus === 404 ? copy.errorNotFound : copy.errorGeneric}
         </p>
         <Link
-          href="/tour-mode"
+          href="/tour-mode?nojump=1"
           className="mt-6 rounded-xl bg-amber-500 px-5 py-2.5 text-[13px] font-semibold text-white"
         >
           {copy.title}
@@ -370,7 +381,13 @@ function TourRoomLive({
       }
       sos={
         viewerRole === 'customer' && !readOnly ? (
-          <SosButton bookingId={bookingId} roomSession={data.session} locale={locale} onSent={handleSosSent} />
+          <SosButton
+            bookingId={bookingId}
+            roomSession={data.session}
+            locale={locale}
+            onSent={handleSosSent}
+            alreadySentAt={sosSentAt}
+          />
         ) : null
       }
       map={

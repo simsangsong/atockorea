@@ -45,6 +45,15 @@ export default function TourModeEntry() {
     const jump = () => {
       if (!isStandaloneDisplayMode()) return;
       try {
+        // The room's error page sends the user back here with ?nojump=1 after a
+        // dead/expired room — honoring it prevents an infinite redirect loop
+        // (entry → dead room → error → entry → …) that would lock the installed
+        // app out of the booking list.
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('nojump') === '1') {
+          window.localStorage.removeItem('tour_mode_last_room');
+          return;
+        }
         const lastRoom = window.localStorage.getItem('tour_mode_last_room');
         if (lastRoom) router.replace(`/tour-mode/room/${encodeURIComponent(lastRoom)}`);
       } catch {

@@ -19,7 +19,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { toast } from 'sonner';
-import { LayoutDashboard, Map as MapIcon, Settings, Siren } from 'lucide-react';
+import { LayoutDashboard, Map as MapIcon, RefreshCw, Settings, Siren } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import { kstToday } from '@/lib/tour-room/time';
 import { useOpsChannels, type OpsChannelDescriptor } from '@/hooks/useOpsChannels';
@@ -54,7 +54,13 @@ export default function OpsApp() {
   const [openRoomId, setOpenRoomId] = useState<string | null>(null);
   const [soundOn, setSoundOn] = useState(true);
 
+  const [loadError, setLoadError] = useState(false);
+  // Monotonic request id: a stale response from the previous date (fired by a
+  // timer/poll before the date flip) must never overwrite the newer one.
+  const loadSeqRef = useRef(0);
+
   const loadAll = useCallback(async () => {
+    const seq = ++loadSeqRef.current;
     try {
       const token = await getOpsToken();
       const init: RequestInit = {
@@ -68,9 +74,11 @@ export default function OpsApp() {
       ]);
       const roomsJson = await roomsRes.json();
       if (!roomsRes.ok) throw new Error(roomsJson.error || '불러오기 실패');
+      if (seq !== loadSeqRef.current) return; // superseded by a newer load
       setRooms(roomsJson.rooms as OpsRoom[]);
+      setLoadError(false);
       const channelsJson = await channelsRes.json();
-      if (channelsRes.ok) {
+      if (channelsRes.ok && seq === loadSeqRef.current) {
         setChannels(
           (channelsJson.channels as ChannelRow[]).map((row) => ({
             roomId: row.room_id,
@@ -81,13 +89,15 @@ export default function OpsApp() {
         );
       }
     } catch (error) {
+      if (seq !== loadSeqRef.current) return;
+      setLoadError(true);
       toast.error(error instanceof Error ? error.message : '불러오기 실패');
     } finally {
-      setLoading(false);
+      if (seq === loadSeqRef.current) setLoading(false);
     }
   }, [date]);
 
-  const { streams, connection, unread, markRead, ingestMessages } = useOpsChannels(channels, {
+  const { streams, connection, unread, liveSos, markRead, ingestMessages } = useOpsChannels(channels, {
     onRoomEvent: () => void loadAll(),
   });
 
@@ -95,6 +105,28 @@ export default function OpsApp() {
   useEffect(() => {
     connectionRef.current = connection;
   });
+
+  // Gap-fill: fold each room's aggregate last_message into the live stream so
+  // messages that arrived while the socket was down (recovered only by the
+  // backup poll) still count toward unread / attention / the card preview —
+  // dedupe by id makes this a no-op when the stream already has it.
+  useEffect(() => {
+    for (const room of rooms) {
+      const last = room.last_message;
+      if (last?.id && last.created_at) {
+        ingestMessages(room.id, [
+          {
+            id: last.id,
+            sender_role: last.sender_role ?? 'system',
+            source_text: last.source_text ?? '',
+            created_at: last.created_at,
+            translations: last.translations ?? undefined,
+            metadata: last.metadata ?? undefined,
+          },
+        ]);
+      }
+    }
+  }, [rooms, ingestMessages]);
 
   // Initial load + date change.
   useEffect(() => {
@@ -155,26 +187,33 @@ export default function OpsApp() {
     }
   }, []);
 
-  // Active SOS per room: aggregate row ∪ live broadcast (live wins — newer).
+  // Active SOS per room: aggregate row ∪ live broadcast (newer wins). liveSos
+  // is tracked incrementally by the hook, so this no longer scans history.
   const sosRooms = useMemo(() => {
     const map = new Map<string, SosInfo>();
     for (const room of rooms) {
       if (room.sos?.metadata) map.set(room.id, { metadata: room.sos.metadata, created_at: room.sos.created_at });
     }
-    for (const [roomId, stream] of Object.entries(streams)) {
-      for (let i = stream.messages.length - 1; i >= 0; i -= 1) {
-        const message = stream.messages[i];
-        if ((message.metadata as { kind?: string } | undefined)?.kind === 'sos') {
-          map.set(roomId, { metadata: message.metadata as SosMetadata, created_at: message.created_at });
-          break;
-        }
+    for (const [roomId, sos] of Object.entries(liveSos)) {
+      const existing = map.get(roomId);
+      if (!existing || (sos.created_at ?? '') > (existing.created_at ?? '')) {
+        map.set(roomId, { metadata: sos.metadata as SosMetadata, created_at: sos.created_at });
       }
     }
     return map;
-  }, [rooms, streams]);
+  }, [rooms, liveSos]);
 
-  // W4.1 — new SOS → sound + vibration (once per room per session), plus
-  // title/favicon blink until ops acknowledges (opens the room or the SOS tab).
+  // A distinct SOS is keyed by room + its timestamp, so a SECOND SOS in the
+  // same room later in the day re-fires sound/vibration/blink (the first one's
+  // acknowledgement must not silence a fresh emergency).
+  const sosKeys = useMemo(() => {
+    const keys: string[] = [];
+    for (const [roomId, sos] of sosRooms) keys.push(`${roomId}:${sos.created_at ?? ''}`);
+    return keys;
+  }, [sosRooms]);
+
+  // W4.1 — new SOS → sound + vibration (once per SOS), plus title/favicon
+  // blink until ops acknowledges (opens the room or the SOS tab).
   const sosSeenRef = useRef<Set<string>>(new Set());
   const sosHandledRef = useRef<Set<string>>(new Set());
   const [handledVersion, setHandledVersion] = useState(0);
@@ -183,26 +222,26 @@ export default function OpsApp() {
     soundOnRef.current = soundOn;
   });
   useEffect(() => {
-    for (const roomId of sosRooms.keys()) {
-      if (sosSeenRef.current.has(roomId)) continue;
-      sosSeenRef.current.add(roomId);
+    for (const key of sosKeys) {
+      if (sosSeenRef.current.has(key)) continue;
+      sosSeenRef.current.add(key);
       if (soundOnRef.current) playSosSound();
       vibrateSos();
     }
-  }, [sosRooms]);
+  }, [sosKeys]);
   useEffect(() => {
-    const unhandled = [...sosRooms.keys()].some((roomId) => !sosHandledRef.current.has(roomId));
+    const unhandled = sosKeys.some((key) => !sosHandledRef.current.has(key));
     if (unhandled) startSosAlarmVisuals();
     else stopSosAlarmVisuals();
-  }, [sosRooms, handledVersion]);
+  }, [sosKeys, handledVersion]);
   useEffect(() => stopSosAlarmVisuals, []);
 
   const acknowledgeSos = useCallback(
-    (roomIds: Iterable<string>) => {
+    (keys: Iterable<string>) => {
       let changed = false;
-      for (const roomId of roomIds) {
-        if (!sosHandledRef.current.has(roomId)) {
-          sosHandledRef.current.add(roomId);
+      for (const key of keys) {
+        if (!sosHandledRef.current.has(key)) {
+          sosHandledRef.current.add(key);
           changed = true;
         }
       }
@@ -211,24 +250,40 @@ export default function OpsApp() {
     [],
   );
 
+  // The SOS key(s) for a given room (usually one — the newest).
+  const sosKeysForRoom = useCallback(
+    (roomId: string) => {
+      const sos = sosRooms.get(roomId);
+      return sos ? [`${roomId}:${sos.created_at ?? ''}`] : [];
+    },
+    [sosRooms],
+  );
+
   const openRoom = useCallback(
     (roomId: string) => {
       setOpenRoomId(roomId);
       markRead(roomId);
-      if (sosRooms.has(roomId)) acknowledgeSos([roomId]);
+      acknowledgeSos(sosKeysForRoom(roomId));
     },
-    [markRead, sosRooms, acknowledgeSos],
+    [markRead, acknowledgeSos, sosKeysForRoom],
   );
 
   const selectTab = useCallback(
     (next: OpsTab) => {
       setTab(next);
-      if (next === 'sos') acknowledgeSos(sosRooms.keys());
+      if (next === 'sos') acknowledgeSos(sosKeys);
     },
-    [acknowledgeSos, sosRooms],
+    [acknowledgeSos, sosKeys],
   );
 
   // W4.2 — the attention queue: non-SOS "customer wants to talk" signals.
+  // A slow ticking clock re-evaluates the 5-minute "unanswered" rule even when
+  // no new message arrives (otherwise a quiet room's signal never appears).
+  const [nowTick, setNowTick] = useState(() => 0);
+  useEffect(() => {
+    const timer = setInterval(() => setNowTick((n) => n + 1), 45_000);
+    return () => clearInterval(timer);
+  }, []);
   const attention = useMemo(
     () =>
       computeAttention(
@@ -240,7 +295,8 @@ export default function OpsApp() {
         })),
         Date.now(),
       ),
-    [rooms, streams, sosRooms],
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- nowTick intentionally re-evaluates the time-based rule
+    [rooms, streams, sosRooms, nowTick],
   );
 
   const openRoomObject = openRoomId ? rooms.find((room) => room.id === openRoomId) ?? null : null;
@@ -264,23 +320,37 @@ export default function OpsApp() {
         style={{ paddingTop: 'env(safe-area-inset-top, 0px)' }}
       >
         <div className="flex min-h-[52px] items-center justify-between gap-2 px-4">
-          <div className="flex min-w-0 items-center gap-2">
+          <div className="flex min-w-0 items-center gap-1.5">
             <h1 className="text-[15px] font-bold tracking-tight">투어 관제센터</h1>
-            <span
-              className={`size-2 shrink-0 rounded-full ${
-                connection === 'realtime'
-                  ? 'bg-emerald-400'
-                  : connection === 'connecting'
-                    ? 'bg-slate-500'
-                    : 'bg-amber-400 animate-pulse'
-              }`}
-              title={connection === 'realtime' ? '실시간 연결됨' : connection === 'connecting' ? '연결 중' : '백업 폴링'}
-            />
+            {/* Connection state with a visible label (a bare dot's tooltip
+                never shows on touch — the primary ops device). */}
+            <span className="flex shrink-0 items-center gap-1 text-[10px] font-medium text-slate-400">
+              <span
+                className={`size-2 rounded-full ${
+                  connection === 'realtime'
+                    ? 'bg-emerald-400'
+                    : connection === 'connecting'
+                      ? 'bg-slate-500'
+                      : 'bg-amber-400 animate-pulse'
+                }`}
+              />
+              {connection === 'realtime' ? '실시간' : connection === 'connecting' ? '연결 중' : '백업'}
+            </span>
           </div>
-          <p className="shrink-0 text-[12px] text-slate-400">
-            {date} · 룸 {rooms.length}
-            {sosCount > 0 && <span className="ml-1.5 font-semibold text-red-400">🆘 {sosCount}</span>}
-          </p>
+          <div className="flex shrink-0 items-center gap-2">
+            <p className="text-[12px] text-slate-400">
+              {date} · 룸 {rooms.length}
+              {sosCount > 0 && <span className="ml-1.5 font-semibold text-red-400">🆘 {sosCount}</span>}
+            </p>
+            <button
+              type="button"
+              onClick={() => void loadAll()}
+              aria-label="새로고침"
+              className="flex size-8 items-center justify-center rounded-lg text-slate-400 active:bg-white/10"
+            >
+              <RefreshCw className={`size-4 ${loading ? 'animate-spin' : ''}`} />
+            </button>
+          </div>
         </div>
       </header>
 
@@ -289,6 +359,8 @@ export default function OpsApp() {
           <OpsDashboardTab
             rooms={rooms}
             loading={loading}
+            loadError={loadError}
+            onRetry={() => void loadAll()}
             streams={streams}
             unread={unread}
             sosRooms={sosRooms}

@@ -79,10 +79,20 @@ export function computeAttention(rooms: RoomAttentionInput[], nowMs: number): At
       }
     };
 
-    for (const message of room.messages) {
-      if (message._local || message.sender_role !== 'customer') continue;
+    // Walk newest→oldest so we can stop once past the 2-hour window (messages
+    // are created_at-ordered). Also captures the newest non-local message for
+    // the unanswered check without a second reverse()-copy pass.
+    let streamLast: RoomMessage | null = null;
+    for (let i = room.messages.length - 1; i >= 0; i -= 1) {
+      const message = room.messages[i];
+      if (message._local) continue;
+      if (!streamLast) streamLast = message;
       const age = nowMs - Date.parse(message.created_at);
-      if (!Number.isFinite(age) || age < 0 || age > ATTENTION_WINDOW_MS) continue;
+      // Messages are created_at-ascending, so once one is past the window every
+      // earlier one is too — stop scanning.
+      if (Number.isFinite(age) && age > ATTENTION_WINDOW_MS) break;
+      if (message.sender_role !== 'customer') continue;
+      if (!Number.isFinite(age) || age < 0) continue;
       if (isNeedHelpPreset(message)) {
         consider({ roomId: room.roomId, reason: 'need_help', excerpt: message.source_text, created_at: message.created_at });
       } else if (matchesAttentionKeyword(message.source_text)) {
@@ -92,7 +102,6 @@ export function computeAttention(rooms: RoomAttentionInput[], nowMs: number): At
 
     // Unanswered: judge by the true latest message — live stream tail wins
     // over the aggregate row (which may be stale between drift refreshes).
-    const streamLast = [...room.messages].reverse().find((message) => !message._local) ?? null;
     const last =
       streamLast && (!room.lastMessage?.created_at || streamLast.created_at >= room.lastMessage.created_at)
         ? { sender_role: streamLast.sender_role, source_text: streamLast.source_text, created_at: streamLast.created_at }

@@ -33,18 +33,21 @@ export async function GET(req: NextRequest) {
     const roomIds = (rooms ?? []).map((room) => room.id);
     const bookingIds = (rooms ?? []).map((room) => room.booking_id);
 
+    const tourIds = [...new Set((rooms ?? []).map((room) => room.tour_id).filter(Boolean))] as string[];
     const [{ data: bookings }, { data: tours }, { data: participants }, { data: messages }] = await Promise.all([
       bookingIds.length
         ? supabase.from('bookings').select('id, contact_name, contact_phone, number_of_guests, preferred_language, status').in('id', bookingIds)
         : Promise.resolve({ data: [] }),
-      supabase.from('tours').select('id, title, city'),
+      tourIds.length
+        ? supabase.from('tours').select('id, title, city').in('id', tourIds)
+        : Promise.resolve({ data: [] }),
       roomIds.length
         ? supabase.from('tour_room_participants').select('room_id, role, display_name, locale, last_seen_at').in('room_id', roomIds)
         : Promise.resolve({ data: [] }),
       roomIds.length
         ? supabase
             .from('tour_room_messages')
-            .select('id, room_id, sender_role, source_text, metadata, created_at')
+            .select('id, room_id, sender_role, source_text, translations, metadata, created_at')
             .in('room_id', roomIds)
             .order('created_at', { ascending: false })
             .limit(300)
@@ -96,9 +99,6 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ error: 'Admin access required' }, { status: 403 });
     }
     console.error('GET /api/admin/tour-ops/rooms error:', error);
-    return NextResponse.json(
-      { error: 'Internal server error', details: error instanceof Error ? error.message : String(error) },
-      { status: 500 },
-    );
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

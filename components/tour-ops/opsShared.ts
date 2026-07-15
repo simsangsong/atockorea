@@ -42,7 +42,14 @@ export interface OpsRoom {
   tour: { id?: string; title: string; city?: string | null } | null;
   participants: OpsParticipant[];
   message_count: number;
-  last_message: { source_text?: string; sender_role?: string; created_at?: string } | null;
+  last_message: {
+    id?: string;
+    source_text?: string;
+    sender_role?: string;
+    created_at?: string;
+    translations?: Record<string, string> | null;
+    metadata?: Record<string, unknown> | null;
+  } | null;
   sos: { metadata?: SosMetadata; created_at?: string } | null;
   onboard_ack?: boolean;
 }
@@ -93,6 +100,20 @@ export const SENDER_LABELS: Record<string, string> = {
 
 export function senderLabel(role: string | undefined): string {
   return SENDER_LABELS[role ?? ''] ?? '시스템';
+}
+
+/**
+ * The Korean-facing text an ops agent should read: the ko translation when the
+ * message carries one, else the original. A JA/ES customer's message would
+ * otherwise reach the Korean console untranslated (W3 sends are translated, so
+ * receipts must be too).
+ */
+export function opsReadableText(message: {
+  source_text?: string;
+  translations?: Record<string, string> | null;
+} | null | undefined): string {
+  if (!message) return '';
+  return message.translations?.ko || message.source_text || '';
 }
 
 /** "HH:MM" in KST for feed timestamps. */

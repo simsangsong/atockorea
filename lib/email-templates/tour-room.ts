@@ -12,6 +12,16 @@
 
 export type InviteLocale = 'en' | 'ko' | 'ja' | 'es' | 'zh';
 
+/** Escape user-controlled values before interpolating into email HTML. */
+export function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 const CUSTOMER_COPY: Record<
   InviteLocale,
   {

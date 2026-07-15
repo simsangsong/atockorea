@@ -8,7 +8,7 @@
  * dynamic-import split so the Maps SDK stays out of the initial bundle).
  */
 
-import { useCallback, useMemo, useRef } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
 import {
   GOOGLE_MAPS_LOADER_ID,
@@ -47,6 +47,9 @@ export default function OpsMapCanvas({
   });
   const mapRef = useRef<google.maps.Map | null>(null);
   const fittedRef = useRef(false);
+  // Stable identity: passed to GoogleMap once and never changed, so the SDK's
+  // reference-compare never re-issues setCenter — the operator's pan/zoom holds.
+  const [initialCenter] = useState(() => ({ lat: 37.5665, lng: 126.978 }));
 
   const allPoints = useMemo(() => {
     const pts: Array<{ lat: number; lng: number }> = [];
@@ -56,21 +59,32 @@ export default function OpsMapCanvas({
     return pts;
   }, [rooms]);
 
+  // Fit to the current markers once real positions exist. This is the ONLY
+  // programmatic camera move — `center` is never passed as a controlled prop,
+  // so the operator's pan/zoom is never yanked back on the next location frame.
+  const fitToPoints = useCallback((map: google.maps.Map, points: Array<{ lat: number; lng: number }>) => {
+    if (points.length === 0 || fittedRef.current) return;
+    fittedRef.current = true;
+    const bounds = new google.maps.LatLngBounds();
+    points.forEach((point) => bounds.extend(point));
+    map.fitBounds(bounds, 48);
+  }, []);
+
   const onLoad = useCallback(
     (map: google.maps.Map) => {
       mapRef.current = map;
-      if (allPoints.length > 0 && !fittedRef.current) {
-        fittedRef.current = true;
-        const bounds = new google.maps.LatLngBounds();
-        allPoints.forEach((point) => bounds.extend(point));
-        map.fitBounds(bounds, 48);
-      }
+      fitToPoints(map, allPoints);
     },
-    [allPoints],
+    [allPoints, fitToPoints],
   );
   const onUnmount = useCallback(() => {
     mapRef.current = null;
   }, []);
+
+  // First positions arriving after load still trigger exactly one fit.
+  useEffect(() => {
+    if (mapRef.current) fitToPoints(mapRef.current, allPoints);
+  }, [allPoints, fitToPoints]);
 
   if (!isLoaded) {
     return (
@@ -80,12 +94,11 @@ export default function OpsMapCanvas({
     );
   }
 
-  const center = allPoints[0] ?? { lat: 37.5665, lng: 126.978 };
-
   return (
     <GoogleMap
       mapContainerStyle={{ width: '100%', height: '100%', minHeight: '300px', borderRadius: '16px' }}
-      center={center}
+      // Stable center ref → the SDK sets it once and never yanks the camera back.
+      center={initialCenter}
       zoom={12}
       onLoad={onLoad}
       onUnmount={onUnmount}

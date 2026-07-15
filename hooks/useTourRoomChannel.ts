@@ -181,7 +181,13 @@ export function useTourRoomChannel(options: UseTourRoomChannelOptions): UseTourR
   const { bookingId, channelTopic, roomSession } = options;
   const [messages, setMessages] = useState<RoomMessage[]>(options.initialMessages ?? []);
   const [connection, setConnection] = useState<RoomConnection>('connecting');
-  const [failedCount, setFailedCount] = useState(0);
+  // Seed from the persisted unsent queue so the retry affordance survives a
+  // reload / locale-switch remount (otherwise a failed send is stranded until
+  // the next failure re-reveals the button).
+  const [failedCount, setFailedCount] = useState(() => {
+    if (typeof window === 'undefined') return 0;
+    return readUnsentQueue(bookingId).length;
+  });
   const [latestCaption, setLatestCaption] = useState<RoomCaption | null>(null);
   const [locations, setLocations] = useState<Record<string, RoomLocation>>(() => {
     const seeded: Record<string, RoomLocation> = {};
@@ -199,6 +205,9 @@ export function useTourRoomChannel(options: UseTourRoomChannelOptions): UseTourR
   const cursorRef = useRef<string | null>(latestCursor(options.initialMessages ?? []));
   const sseRef = useRef<EventSource | null>(null);
   const sendingRef = useRef(false);
+  // Lets the subscribe callback flush the unsent queue without depending on
+  // retryFailed (declared below) — avoids a re-subscribe on every render.
+  const retryRef = useRef<() => void>(() => {});
 
   const addMessages = useCallback((incoming: RoomMessage[]) => {
     setMessages((prev) => {
@@ -289,6 +298,7 @@ export function useTourRoomChannel(options: UseTourRoomChannelOptions): UseTourR
           sseRef.current.close(); // realtime recovered — drop the fallback
           sseRef.current = null;
         }
+        retryRef.current(); // flush any messages that failed while offline
       } else if (status === 'CHANNEL_ERROR' || status === 'TIMED_OUT' || status === 'CLOSED') {
         startSse(); // R-3: degrade rather than go silent
       }
@@ -414,6 +424,13 @@ export function useTourRoomChannel(options: UseTourRoomChannelOptions): UseTourR
       sendingRef.current = false;
     }
   }, [addMessages, bookingId, postSend]);
+
+  // Keep the ref pointing at the latest retryFailed for the subscribe callback.
+  useEffect(() => {
+    retryRef.current = () => {
+      void retryFailed();
+    };
+  }, [retryFailed]);
 
   return useMemo(
     () => ({ messages, connection, sendText, sendPreset, retryFailed, failedCount, latestCaption, locations, presence }),

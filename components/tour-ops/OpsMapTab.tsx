@@ -61,7 +61,7 @@ export default function OpsMapTab({
             key={room.roomId}
             type="button"
             onClick={() => onSelectRoom(room.roomId)}
-            className="flex h-9 items-center gap-1.5 rounded-full border border-white/10 bg-slate-900 px-3 text-[12px] text-slate-300"
+            className="flex h-11 items-center gap-1.5 rounded-full border border-white/10 bg-slate-900 px-3.5 text-[12px] text-slate-300"
           >
             <span
               className="size-2.5 rounded-full"

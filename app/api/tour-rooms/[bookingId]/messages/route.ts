@@ -8,6 +8,7 @@ import { getQuickReplyPreset } from '@/lib/tour-room/quickReplies';
 import { renderSpotEventTranslations } from '@/lib/tour-room/spotContent';
 import { pregenerateGuideNoticeTts, type TtsStorageClient } from '@/lib/tour-room/tts-server';
 import { sendOpsPush } from '@/lib/tour-ops/push';
+import { requestGate } from '@/lib/durable-rate-limit';
 
 export const dynamic = 'force-dynamic';
 
@@ -227,14 +228,23 @@ export async function POST(
 
     // W6.2 — a customer's need_help quick reply pings ops subscribers even
     // with the console closed (the attention queue covers the open console).
+    // Gated per room so a looped preset can't flood the ops push channel.
     if (senderRole === 'customer' && presetKey === 'need_help') {
-      const senderName =
-        ('displayName' in actor ? actor.displayName : null) || booking.contact_name || '게스트';
-      void sendOpsPush({
-        title: `🙋 도움 요청 — ${senderName}`,
-        body: text,
-        tag: `need-help-${room.id}`,
-      }).catch(() => undefined);
+      const pushGate = await requestGate({
+        namespace: 'tour_ops_need_help_push',
+        key: `room:${room.id}`,
+        perMinute: 3,
+        perHour: 20,
+      });
+      if (pushGate.allowed) {
+        const senderName =
+          ('displayName' in actor ? actor.displayName : null) || booking.contact_name || '게스트';
+        void sendOpsPush({
+          title: `🙋 도움 요청 — ${senderName}`,
+          body: text,
+          tag: `need-help-${room.id}`,
+        }).catch(() => undefined);
+      }
     }
 
     return NextResponse.json({ room, message }, { status: 201 });

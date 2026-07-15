@@ -6,6 +6,7 @@ import { ensureRoom, resolveRoomActor } from '@/lib/tour-room/access';
 import { broadcastToRoom } from '@/lib/tour-room/realtime';
 import { renderSpotEventTranslations } from '@/lib/tour-room/spotContent';
 import { sendOpsPush } from '@/lib/tour-ops/push';
+import { escapeHtml } from '@/lib/email-templates/tour-room';
 
 export const dynamic = 'force-dynamic';
 
@@ -90,12 +91,16 @@ export async function POST(
     await broadcastToRoom(room, 'message', { message });
 
     // Ops notification mail — best-effort, never blocks the SOS itself.
+    // Traveller-controlled values (displayName, note) are HTML-escaped so a
+    // crafted note can't inject a link/beacon into the ops team's inbox.
     const mapsLink = hasLocation ? `https://maps.google.com/?q=${latitude},${longitude}` : null;
+    const safeName = escapeHtml(actor.displayName);
+    const safeNote = note ? escapeHtml(note) : '';
     void sendEmail({
       to: adminRecipients(),
       subject: `🆘 SOS — ${actor.displayName} (booking ${booking.id.slice(0, 8)})`,
-      html: `<p><b>${actor.displayName}</b> triggered SOS in tour room <code>${booking.id}</code> (${booking.tour_date ?? ''}).</p>
-${note ? `<p>Note: ${note}</p>` : ''}
+      html: `<p><b>${safeName}</b> triggered SOS in tour room <code>${escapeHtml(booking.id)}</code> (${escapeHtml(booking.tour_date ?? '')}).</p>
+${safeNote ? `<p>Note: ${safeNote}</p>` : ''}
 ${mapsLink ? `<p>One-shot location: <a href="${mapsLink}">${mapsLink}</a></p>` : '<p>No location attached.</p>'}
 <p>Ops console: ${(process.env.NEXT_PUBLIC_APP_URL || 'https://atockorea.com').replace(/\/$/, '')}/admin/tour-ops</p>`,
     }).catch(() => undefined);

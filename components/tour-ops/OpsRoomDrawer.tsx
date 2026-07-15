@@ -18,6 +18,7 @@ import { QUICK_REPLY_PRESETS } from '@/lib/tour-room/quickReplies';
 import {
   getOpsToken,
   kstTimeLabel,
+  opsReadableText,
   senderLabel,
   type OpsRoom,
   type SosInfo,
@@ -90,6 +91,15 @@ export default function OpsRoomDrawer({
     // eslint-disable-next-line react-hooks/exhaustive-deps -- scroll/cursor track feed growth only
   }, [feedLength]);
 
+  // Escape closes the drawer (a11y — the only other close path is the backdrop).
+  useEffect(() => {
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') onClose();
+    };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [onClose]);
+
   const send = useCallback(
     async (payload: { text?: string; presetKey?: string }, display: string) => {
       const localId = `local-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
@@ -131,7 +141,9 @@ export default function OpsRoomDrawer({
     if (!text || sending) return;
     setDraft('');
     const ok = await send({ text }, text);
-    if (!ok) setDraft(text); // hand the failed text back for retry
+    // Restore the failed text for retry, but never clobber what the agent has
+    // already started typing in the meantime.
+    if (!ok) setDraft((current) => current || text);
   }, [draft, sending, send]);
 
   const locations = Object.values(stream?.locations ?? {});
@@ -139,7 +151,7 @@ export default function OpsRoomDrawer({
   const phone = room.booking?.contact_phone ?? null;
 
   return (
-    <div className="fixed inset-0 z-50 flex flex-col justify-end" role="dialog" aria-label="룸 대화">
+    <div className="fixed inset-0 z-50 flex flex-col justify-end" role="dialog" aria-modal="true" aria-label="룸 대화">
       <button type="button" aria-label="닫기" onClick={onClose} className="absolute inset-0 bg-black/60" />
       <div
         className="relative flex max-h-[88dvh] flex-col rounded-t-3xl border-t border-white/10 bg-slate-900"
@@ -192,7 +204,7 @@ export default function OpsRoomDrawer({
             </span>
             {typeof sos.metadata.latitude === 'number' && (
               <a
-                className="flex h-9 shrink-0 items-center gap-1 rounded-lg bg-red-500/20 px-2.5 font-semibold text-red-100"
+                className="flex h-11 shrink-0 items-center gap-1 rounded-lg bg-red-500/20 px-3 font-semibold text-red-100"
                 href={`https://maps.google.com/?q=${sos.metadata.latitude},${sos.metadata.longitude}`}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -221,12 +233,15 @@ export default function OpsRoomDrawer({
                   }`}
                 >
                   {!mine && (
-                    <p className="mb-0.5 text-[10px] font-semibold text-slate-400">
+                    <p className="mb-0.5 text-[10px] font-semibold text-slate-300">
                       {senderLabel(message.sender_role)}
                     </p>
                   )}
-                  <p className="whitespace-pre-wrap break-words">{message.source_text}</p>
-                  <p className={`mt-0.5 text-right text-[9px] ${mine ? 'text-blue-200' : 'text-slate-500'}`}>
+                  {/* Ops reads the ko translation; admin's own sends have none. */}
+                  <p className="whitespace-pre-wrap break-words">
+                    {mine ? message.source_text : opsReadableText(message)}
+                  </p>
+                  <p className={`mt-0.5 text-right text-[10px] ${mine ? 'text-blue-100' : 'text-slate-400'}`}>
                     {message._local ? '전송 중…' : kstTimeLabel(message.created_at)}
                   </p>
                 </div>
@@ -243,7 +258,7 @@ export default function OpsRoomDrawer({
                 type="button"
                 disabled={sending}
                 onClick={() => void send({ presetKey: preset.key }, preset.text.ko)}
-                className="flex h-9 shrink-0 items-center gap-1 rounded-full border border-white/10 bg-slate-800 px-3 text-[12px] text-slate-200 disabled:opacity-40"
+                className="flex h-11 shrink-0 items-center gap-1 rounded-full border border-white/10 bg-slate-800 px-3.5 text-[12px] text-slate-200 disabled:opacity-40"
               >
                 <span>{preset.emoji}</span>
                 {preset.text.ko}

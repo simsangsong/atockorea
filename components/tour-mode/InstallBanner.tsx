@@ -15,7 +15,7 @@ import type { RoomLocale } from '@/lib/tour-room/snapshot';
 import { detectEntryLocale } from '@/components/tour-mode/entryCopy';
 import { isInAppWebview } from '@/components/tour-mode/WebviewEscapeBanner';
 import { isStandaloneDisplayMode } from '@/hooks/useStandaloneDisplayMode';
-import { kstDaysUntil } from '@/lib/tour-room/time';
+import { kstStartOfDayMs, kstEndOfDayMs } from '@/lib/tour-room/time';
 
 const DISMISS_KEY = 'atoc-tour-mode-a2hs-dismissed';
 const shownKey = (bookingId: string) => `tour_mode_a2hs_shown:${bookingId}`;
@@ -84,11 +84,19 @@ export default function InstallBanner({
     // Deferred to post-hydration on purpose (same shape as
     // WebviewEscapeBanner): install eligibility is a client-only fact.
     if (isStandaloneDisplayMode()) return;
-    // W5.1 gating: pin-to-home-screen matters right before/on tour day, not
-    // when the invite lands a week early.
+    // W5.1 gating: pin-to-home-screen matters from D-1 through the end of tour
+    // day — not a week early, and not after the tour is over. (kstDaysUntil
+    // clamps at 0, so it can't detect "already past"; use a signed window.)
     if (tourDate) {
-      const days = kstDaysUntil(tourDate);
-      if (days > 1 || days < 0) return;
+      try {
+        const now = Date.now();
+        const startMs = kstStartOfDayMs(tourDate);
+        const endMs = kstEndOfDayMs(tourDate);
+        const oneDayMs = 24 * 60 * 60 * 1000;
+        if (now < startMs - oneDayMs || now > endMs) return;
+      } catch {
+        return; // malformed date → don't show
+      }
     }
     try {
       if (window.localStorage.getItem(DISMISS_KEY) === '1') return;
