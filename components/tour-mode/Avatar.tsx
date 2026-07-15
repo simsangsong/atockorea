@@ -29,7 +29,7 @@ export default function Avatar({
   if (role === 'guide') {
     return (
       <span
-        className="flex shrink-0 items-center justify-center rounded-full bg-[var(--tr-accent)] text-white"
+        className="flex shrink-0 items-center justify-center rounded-full bg-[var(--tr-ink)] text-[var(--tr-bubble-me)]"
         style={common}
         data-testid="avatar-guide"
         aria-hidden
