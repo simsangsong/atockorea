@@ -147,14 +147,14 @@ export default function GuideConsole() {
 
   if (!token) {
     return (
-      <div className="flex min-h-dvh items-center justify-center px-6 text-center">
+      <div className="tr-root flex min-h-dvh items-center justify-center bg-[var(--tr-canvas)] px-6 text-center">
         <p className="text-[14px] text-gray-500">가이드 링크(이메일의 버튼)로 접속해 주세요.</p>
       </div>
     );
   }
   if (!overview) {
     return (
-      <div className="flex min-h-dvh items-center justify-center">
+      <div className="tr-root flex min-h-dvh items-center justify-center bg-[var(--tr-canvas)]">
         <p className="text-[14px] text-gray-500">{error ? '접근할 수 없어요 — 링크를 다시 확인해 주세요.' : '불러오는 중…'}</p>
       </div>
     );
@@ -163,7 +163,7 @@ export default function GuideConsole() {
   const notReturned = overview.rooms.filter((room) => !room.onboard_ack);
 
   return (
-    <div className="mx-auto min-h-dvh w-full max-w-md px-4 pb-8 pt-5" data-testid="guide-console">
+    <div className="tr-root mx-auto min-h-dvh w-full max-w-md bg-[var(--tr-canvas)] px-4 pb-8 pt-5" data-testid="guide-console">
       <header className="flex items-start justify-between gap-2">
         <div className="min-w-0">
           <p className="text-[11px] font-semibold uppercase tracking-wide text-amber-600">가이드 콘솔</p>
@@ -188,8 +188,8 @@ export default function GuideConsole() {
       {error && <p className="mt-2 rounded-xl bg-red-50 px-3 py-2 text-[12px] text-red-600">{error}</p>}
 
       {/* 전체 공지 */}
-      <section className="mt-4 rounded-2xl bg-white p-3.5 shadow-sm ring-1 ring-gray-100">
-        <p className="text-[12px] font-semibold text-gray-500">📢 전체 공지 (모든 손님, 자동 번역)</p>
+      <section className="tr-card mt-4 p-3.5">
+        <p className="text-[12px] font-semibold text-gray-500">전체 공지 (모든 손님, 자동 번역)</p>
         <form
           className="mt-2 flex gap-2"
           onSubmit={(e) => {
@@ -205,12 +205,12 @@ export default function GuideConsole() {
             onChange={(e) => setDraft(e.target.value)}
             maxLength={2000}
             placeholder="예: 10분 뒤 출발합니다"
-            className="min-w-0 flex-1 rounded-xl border border-gray-200 px-3 py-2.5 text-[14px] focus:border-amber-400 focus:outline-none"
+            className="tr-body min-w-0 flex-1 rounded-xl bg-[var(--tr-surface-2)] px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-[var(--tr-accent)]"
           />
           <button
             type="submit"
             disabled={!draft.trim() || busy === 'text'}
-            className="rounded-xl bg-amber-500 px-4 py-2.5 text-[13px] font-semibold text-white disabled:opacity-40"
+            className="tr-card-text min-h-[44px] rounded-full bg-[var(--tr-accent)] px-4 font-semibold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
             data-testid="fanout-send"
           >
             보내기
@@ -219,8 +219,8 @@ export default function GuideConsole() {
       </section>
 
       {/* 집합 공지 */}
-      <section className="mt-3 rounded-2xl bg-white p-3.5 shadow-sm ring-1 ring-gray-100">
-        <p className="text-[12px] font-semibold text-gray-500">📣 집합 공지 (손님 화면에 카운트다운)</p>
+      <section className="tr-card mt-3 p-3.5">
+        <p className="text-[12px] font-semibold text-gray-500">집합 공지 (손님 화면에 카운트다운)</p>
         <div className="mt-2 flex gap-2">
           <input
             type="time"
@@ -248,8 +248,8 @@ export default function GuideConsole() {
       </section>
 
       {/* 자유시간 타이머 */}
-      <section className="mt-3 rounded-2xl bg-white p-3.5 shadow-sm ring-1 ring-gray-100">
-        <p className="text-[12px] font-semibold text-gray-500">⏳ 자유시간 (10분·5분 전 자동 알림)</p>
+      <section className="tr-card mt-3 p-3.5">
+        <p className="text-[12px] font-semibold text-gray-500">자유시간 (10분·5분 전 자동 알림)</p>
         <input
           value={freePoint}
           onChange={(e) => setFreePoint(e.target.value)}
@@ -281,7 +281,7 @@ export default function GuideConsole() {
         </div>
         {notReturned.length > 0 && overview.lifecycle === 'live' && (
           <p className="mt-2 text-[12px] text-gray-500">
-            🚌 미탑승: {notReturned.map((room) => room.contact_name ?? '게스트').join(', ')}
+            미탑승: {notReturned.map((room) => room.contact_name ?? '게스트').join(', ')}
           </p>
         )}
       </section>
@@ -292,7 +292,7 @@ export default function GuideConsole() {
           <a
             key={room.booking_id}
             href={`/tour-mode/room/${room.booking_id}?rt=${encodeURIComponent(tokenRef.current ?? '')}`}
-            className="flex items-center gap-3 rounded-2xl bg-white px-3.5 py-3 shadow-sm ring-1 ring-gray-100"
+            className="tr-card flex items-center gap-3 px-3.5 py-3"
             data-testid="room-card"
           >
             <span
@@ -307,7 +307,7 @@ export default function GuideConsole() {
                 <span className="text-[11px] font-normal text-gray-400">
                   {room.number_of_guests ?? 1}명 · {room.preferred_language ?? 'en'}
                 </span>
-                {room.onboard_ack && <span title="탑승 확인">🚌✓</span>}
+                {room.onboard_ack && <span title="탑승 확인" className="text-emerald-600">✓</span>}
               </span>
               <span className="block truncate text-[12px] text-gray-500">
                 {room.last_message?.source_text ?? (room.pickup?.name ? `픽업: ${room.pickup.name}` : '아직 메시지 없음')}
@@ -326,7 +326,7 @@ export default function GuideConsole() {
             {overview.feed.map((message) => {
               const tag = roomLabel.get(message.room_id);
               return (
-                <div key={message.id} className="flex items-start gap-2 rounded-xl bg-white px-3 py-2 ring-1 ring-gray-100">
+                <div key={message.id} className="tr-card flex items-start gap-2 px-3 py-2">
                   <span
                     className="mt-0.5 h-2.5 w-2.5 shrink-0 rounded-full"
                     style={{ backgroundColor: tag ? `hsl(${tag.hue} 65% 55%)` : '#d1d5db' }}

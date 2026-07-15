@@ -300,7 +300,19 @@
 
 | 웨이브 | 상태 | 비고 |
 |---|---|---|
-| U0~U8 | ⬜ 미착수 | 플랜 승인 대기 (2026-07-15 작성) |
+| U0 파운데이션 | ✅ 완료 (2026-07-15) | 토큰 css·icons.ts·messageGroups·timeFormat·avatarColor·Avatar·Sheet + 신규 테스트 17개 |
+| U1 셸·레이아웃 | ✅ 완료 | 슬림 헤더·하단 탭바(미읽음 도트·키보드 숨김)·긴급 시트·배너 오버레이 존·스켈레톤·에러 리스킨 |
+| U2/U3 버블·피드 UX | ✅ 완료 | 그룹핑·아바타·타임스탬프·날짜필·시스템 캡슐·전송상태·FAB·안읽음 구분선·진입 모션·빈 상태 |
+| U4 컴포저 | ✅ 완료 | 자동성장 textarea·mic↔send 모핑·도킹 바·녹음/전사 바·비전 패널·퀵답장 리스킨 |
+| U5 카드·배너 | ✅ 완료 | SpotArrival·Lobby·Pickup·Notice·Caption·GuideCaptionBar·Ended·Install·SOS·AudioButton |
+| U6 탭·엔트리 | ✅ 완료 | 오늘 타임라인(KST 현재 스팟 하이라이트)·지도 카드·설정 그룹 리스트·엔트리·PresenceBar |
+| U7/U8 감사·QA | ✅ 완료 | ink-3 대비 강화, GuideConsole·ComingSoon 라이트 스킨, 투어룸 테스트 228개 green |
+
+**파킹(범위 밖 잔여):**
+- `RoomMapCanvas` 지도 마커 이모지(🚌/🅿) — 지도 콘텐츠 글리프로 잔류. 커스텀 마커 아이콘화는 지도 로직 파일 수정이 필요해 §M-1 가드레일상 보류.
+- 탭 전환 크로스페이드(U-D8 일부) — 탭 패널이 조건부 마운트(지도 SDK 지연 로드 §O-1 ②)라 AnimatePresence 도입 시 마운트 계약이 바뀜. 보류.
+- 읽음표시·타이핑 인디케이터·리액션 = U-D12대로 기능 백로그(서버 이벤트 필요).
+- 전 리포 기준 실패 테스트 7개(logger·error-handler·api/tours·test-utils)는 **main에서도 동일 실패** — 본 리디자인과 무관(환경 이슈).
 
 ## §M. 가드레일 — 기능 회귀 방지
 

@@ -29,10 +29,10 @@
   --tr-bubble-system: rgba(23, 27, 32, 0.06);
   --tr-bubble-system-ink: #565d66;
 
-  /* Text */
+  /* Text (ink-3 is meta-only — timestamps, counters; never body copy) */
   --tr-ink: #1a1d21;
   --tr-ink-2: #565d66;
-  --tr-ink-3: #8a919b;
+  --tr-ink-3: #6e767f;
 
   /* Role colors (U-D7: amber = action, emerald = connection/safety, red = emergency) */
   --tr-accent: #f59e0b;
@@ -70,7 +70,7 @@
 
   --tr-ink: #e8eaed;
   --tr-ink-2: #a6adb6;
-  --tr-ink-3: #6e757e;
+  --tr-ink-3: #7d858f;
 
   --tr-accent: #f59e0b;
   --tr-accent-deep: #fbbf24;

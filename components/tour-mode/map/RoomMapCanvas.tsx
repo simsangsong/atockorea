@@ -112,8 +112,8 @@ export default function RoomMapCanvas({
 
   if (!isLoaded) {
     return (
-      <div className="flex h-full min-h-[300px] items-center justify-center rounded-2xl bg-gray-100 dark:bg-gray-800">
-        <span className="text-[13px] text-gray-400">Loading map…</span>
+      <div className="tr-skeleton flex h-full min-h-[300px] items-center justify-center rounded-[var(--tr-radius-card)]">
+        <span className="tr-card-text text-[var(--tr-ink-3)]">Loading map…</span>
       </div>
     );
   }
