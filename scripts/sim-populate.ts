@@ -44,6 +44,16 @@ async function main() {
   await insertMsg(room1, fx.booking1, { sender_role: 'guide', input_kind: 'text', source_text: '곧 도착합니다. 5분만 기다려 주세요.', source_locale: 'ko', translations: { en: "Arriving soon. Please wait 5 minutes." }, created_at: t(20) });
   await insertMsg(room1, fx.booking1, { sender_role: 'customer', input_kind: 'text', source_text: "We're on board, thank you!", source_locale: 'en', translations: { ko: '탑승했어요, 감사합니다!' }, metadata: { kind: 'onboard_ack' }, created_at: t(8) });
 
+  // Room 1: geofence arrivals + shared photos so the Travel Timeline (V4) has
+  // a complete recap to render (2 stops + 1 photo = eligible for the reward).
+  // Tiny data-URI images render offline in the sim browser.
+  const px = (hex: string) =>
+    `data:image/svg+xml;utf8,${encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><rect width='120' height='120' fill='${hex}'/></svg>`)}`;
+  await insertMsg(room1, fx.booking1, { sender_role: 'system', input_kind: 'text', source_text: 'Arrived near Jusangjeolli Cliffs', source_locale: 'en', translations: { ko: '주상절리 근처에 도착했어요' }, metadata: { kind: 'spot_arrival', spot_title: 'Jusangjeolli Cliffs', content: { convenience: { restroom: 'By the observation deck entrance' } } }, created_at: t(18) });
+  await insertMsg(room1, fx.booking1, { sender_role: 'system', input_kind: 'text', source_text: 'A photo from the cliff deck', source_locale: 'en', translations: {}, metadata: { kind: 'vision_answer', image_url: px('#3f6b58'), asked_by_role: 'customer' }, created_at: t(16) });
+  await insertMsg(room1, fx.booking1, { sender_role: 'system', input_kind: 'text', source_text: 'Arrived near Osulloc Tea Museum', source_locale: 'en', translations: { ko: '오설록 근처에 도착했어요' }, metadata: { kind: 'spot_arrival', spot_title: 'Osulloc Tea Museum' }, created_at: t(10) });
+  await insertMsg(room1, fx.booking1, { sender_role: 'system', input_kind: 'text', source_text: 'Matcha field selfie', source_locale: 'en', translations: {}, metadata: { kind: 'vision_answer', image_url: px('#9c7a3c'), asked_by_role: 'customer' }, created_at: t(9) });
+
   // Room 2 (JA): a help request keyword + an SOS with location + note
   await insertMsg(room2, fx.booking2, { sender_role: 'customer', input_kind: 'text', source_text: 'すみません、道に迷いました。助けてください。', source_locale: 'ja', translations: { ko: '죄송해요, 길을 잃었어요. 도와주세요.' }, metadata: { kind: 'quick_reply', preset_key: 'need_help' }, created_at: t(6) });
   await insertMsg(room2, fx.booking2, { sender_role: 'customer', input_kind: 'text', source_text: '緊急 — 今すぐ助けが必要です。', source_locale: 'ja', translations: { ko: '긴급 — 지금 도움이 필요해요.' }, metadata: { kind: 'sos', sender_name: 'Sim Yuki', note: 'temple gate, feeling unwell', latitude: 35.1795, longitude: 129.0756, location_one_shot: true }, created_at: t(3) });

@@ -105,7 +105,7 @@ export default function LocationShareCard({
         <p className="tr-label mt-1.5 leading-relaxed text-[var(--tr-ink-2)]">{copy.unsupported}</p>
       ) : live ? (
         <p className="tr-label mt-1.5 leading-relaxed text-[var(--tr-safe)]">
-          <span className="mr-1 inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-500 align-middle" />
+          <span className="mr-1 inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-[var(--tr-safe)] align-middle" />
           {copy.sharing}
           {!isWakeLockSupported() && <span className="block text-[var(--tr-ink-2)]">{copy.keepOn}</span>}
         </p>

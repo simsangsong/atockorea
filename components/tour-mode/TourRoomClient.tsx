@@ -21,6 +21,7 @@ import CaptionBanner from '@/components/tour-mode/CaptionBanner';
 import ChatFeed from '@/components/tour-mode/ChatFeed';
 import Composer from '@/components/tour-mode/Composer';
 import EndedCard from '@/components/tour-mode/EndedCard';
+import TravelTimelineEntry from '@/components/tour-mode/TravelTimeline';
 import GuideCaptionBar from '@/components/tour-mode/GuideCaptionBar';
 import NoticeBanner from '@/components/tour-mode/NoticeBanner';
 import LobbyCard, { firstPickup } from '@/components/tour-mode/LobbyCard';
@@ -491,6 +492,16 @@ function TourRoomLive({
             />
           )}
           {readOnly && <EndedCard locale={locale} bookingReference={snapshot.booking?.booking_reference} />}
+          {viewerRole === 'customer' && (
+            <TravelTimelineEntry
+              locale={locale}
+              messages={messages}
+              bookingId={bookingId}
+              roomSession={data.session}
+              tourSlug={(snapshot.booking?.tours as { slug?: string } | null | undefined)?.slug ?? null}
+              variant={readOnly ? 'ended' : 'live'}
+            />
+          )}
           <ChatFeed
             messages={messages}
             viewerLocale={locale}

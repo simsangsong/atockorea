@@ -135,8 +135,8 @@ export default function SosButton({
         </p>
         <p className="tr-label mt-1.5 flex items-center gap-1.5 font-semibold text-[var(--tr-safe)]" data-testid="sos-connected">
           <span className="relative flex size-2">
-            <span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-            <span className="relative inline-flex size-2 rounded-full bg-emerald-500" />
+            <span className="absolute inline-flex size-full animate-ping rounded-full bg-[var(--tr-safe)] opacity-75" />
+            <span className="relative inline-flex size-2 rounded-full bg-[var(--tr-safe)]" />
           </span>
           {copy.connected}
         </p>

@@ -37,7 +37,7 @@ export default function PresenceBar({
   return (
     <div className="tr-card flex items-center gap-2 overflow-x-auto px-3 py-2" data-testid="presence-bar">
       <span className="tr-meta flex shrink-0 items-center gap-1 font-medium text-[var(--tr-safe)]">
-        <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+        <span className="h-1.5 w-1.5 rounded-full bg-[var(--tr-safe)]" />
         {ONLINE_LABEL[locale](presence.length)}
       </span>
       <div className="flex items-center gap-1">

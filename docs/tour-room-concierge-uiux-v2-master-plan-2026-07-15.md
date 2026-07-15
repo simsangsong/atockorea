@@ -219,12 +219,29 @@ U0~U8 리디자인은 **구조**(엣지투엣지 피드·슬림헤더·하단탭
 | 웨이브 | 상태 | 비고 |
 |---|---|---|
 | V0 버그+색 토큰 | ✅ 완료 | V0.1(`8a215289`)+V0.2 토큰 교체, 라이브 스크린샷으로 검증 |
-| V1 색 적용 감사 | ⬜ 대기 | |
+| V1 색 적용 감사 | ✅ 완료 (2026-07-16) | `19f2bc58` — PresenceBar·LocationShareCard·SosButton "connected" 잔여 emerald 점 → `--tr-safe`. SOS 레드(`--tr-danger`) 무변경(§H-2). CaptionBanner 다크 필·WebviewEscapeBanner·가이드 콘솔은 문서화된 예외로 유지. 컴포넌트 테스트 109 green |
 | V2 컨시어지 Tier0 | ✅ 완료 (2026-07-16) | concierge.ts 순수코어+ConciergePanel 시트, 칩·키워드 Tier0 = 네트워크 0회. 라이브 시딩 시뮬로 전 플로우 실구동 검증(스크린샷 6장, 콘솔 에러 0) |
 | V3 컨시어지 Tier1/2 | ✅ 완료 (2026-07-16) | /concierge 엔드포인트+가드레일 4종+피드 에스컬레이션+관제 어텐션+RAG 플라이휠+3중 예산. Tier1 라이브 LLM 응답 실확인(Gemini). 신규 테스트 65개(42+10+13), 전체 tour 스위트 348 green, tsc 0 |
-| V4 타임라인+쿠폰 | ⬜ 대기 | |
-| V5 카피 정직성 | ⬜ 대기 | |
-| V6 QA 게이트 | ⬜ 대기 | 시뮬 재현: `sim-tour-day.ts`→`sim-populate.ts`→`sim-concierge-screens.mjs`(SIM_OUT 지정) |
+| V4 타임라인+쿠폰 | ✅ 완료 (2026-07-16) | `fc7f3f89` — `lib/tour-room/timeline.ts` 순수 재집계(spot_arrival+vision_answer, 신규 스키마 0, LLM 0) + `TravelTimeline.tsx` 시트(스팟·사진·리워드·리뷰 CTA 분리, AI 초안 없음) + `POST /timeline-coupon`(서버 완성 재판정→멱등 `coupon_grants`, 정직 폴백 login_required/not_available) + `TIMELINE10` 프로모 런치게이트(is_active=false, WELCOME10 패턴). 라이트/다크×en/ko 시뮬 실구동 검증(스팟·사진 그리드·claim=login_required 정직 응답, 콘솔 에러 0). 신규 테스트 14개, tour 스위트 307 green, tsc 0 |
+| V5 카피 정직성 | ✅ 완료 (2026-07-16) | `beb6d7a1` — "AI concierge 24/7"(문장 내부 모순: 24/7 vs 사람 9–9) → "AI는 언제든 즉답 + 한국어 팀 9–9 KST" 5로케일 교정. V5.2: 투어룸 내부는 이미 "Smart Guide"(전면 AI 카피 없음, 확인). 사이트 전체 리브랜딩은 스코프 밖(landing-page-uiux) |
+| V6 QA 게이트 | ✅ 완료 (2026-07-16) | §J 체크리스트 통과(아래). 시뮬 재현: `sim-tour-day.ts`→`sim-populate.ts`→`sim-concierge-screens.mjs`/`sim-timeline-screens.mjs`(SIM_OUT 지정). ⚠ 전체 `npm test`의 5스위트(logger·error-handler·api/tours·assistant-streaming·test-utils)는 **사전존재 환경 실패**(`Response.json is not a function` 등 Node/undici 폴리필, 이 트랙 무관) |
+
+## §J. V6 QA 체크리스트 (게이트 결과)
+
+| 항목 | 결과 | 근거 |
+|---|---|---|
+| 색 대비(AA) | ✅ | 버블 파치먼트(#F1E6CC)+잉크(#2A2620) ~11:1(§C). 신규 타임라인은 전부 토큰 경유(`--tr-ink`/`--tr-ink-2`/`--tr-accent-deep`), 하드코딩 색 0 |
+| SOS 레드 무변경(§H-2) | ✅ | V1에서 `--tr-danger` 미변경. SosButton의 emerald는 "connected"(연결) 신호라 파인으로 이동 — danger 레드와 무관 |
+| 44px 터치 타깃 | ✅ | 타임라인 엔트리(py-3)·리뷰 CTA(min-h-44)·claim(min-h-40, 기존 컨시어지 칩과 동일 규격) |
+| reduced-motion | ✅ | 타임라인은 신규 애니메이션 0. 시트는 기존 `Sheet`(framer `useReducedMotion`) 재사용 |
+| 5로케일 카피 | ✅ | `TIMELINE_COPY` en/ko/ja/es/zh, 컴포넌트 테스트가 전 로케일 렌더 검증 |
+| 라이트/다크 렌더 | ✅ | en/light·ko/dark 시뮬 실캡처 — 양 테마에서 브라스 액센트·파인 핀·웜블랙 캔버스 정상, 콘솔 에러 0 |
+| U0~U8 구조 불변(§H-1) | ✅ | RoomShell 레이아웃·탭바·FAB 무변경. 타임라인은 자기완결 시트(기존 `Sheet` 프리미티브)로 피드에 삽입 |
+| 기존 시그니처 불변(§H-3) | ✅ | `lib/tour-room/*`는 신규 함수만 추가(timeline.ts). snapshot select에 `slug` 필드 additive 추가(타입 변경 없음) |
+| 테스트/타입 | ✅ | tour 스위트 307 green(+14), tsc 0. 전체 npm test의 5스위트 실패는 사전존재 환경 이슈(§I 비고) |
+| 리뷰 대가성 회피(§B) | ✅ | 쿠폰=타임라인 완성(스팟+사진), "리뷰 남기기"는 쿠폰과 분리·상시 노출. AI 리뷰 초안 없음 |
+
+**남은 사람 게이트:** ① `TIMELINE10` 프로모 활성화(`is_active=true`) + 할인율·만료 최종 결정(현재 10%/60일, 런치 게이트) ② 마이그레이션 `20260716000000_tour_timeline_reward_coupon.sql` 라이브 적용 여부 결정(웰컴 쿠폰과 동일 테이블). 활성화 전까지 엔드포인트는 `not_available`로 정직 응답, 쿠폰 미발급.
 
 ## §K. 스코프 밖 (참고만, 코드 작업 아님)
 
