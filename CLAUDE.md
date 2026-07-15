@@ -1,10 +1,15 @@
 # CLAUDE.md — 프로젝트 메모리
 
-## 진행 중: 투어룸 UI/UX 글로벌 리디자인 (프레젠테이션 전용)
+## 완료: 투어룸 UI/UX 글로벌 리디자인 v1 (프레젠테이션 전용, U0~U8)
 
 **마스터 플랜(단일 기준):** `docs/tour-room-ui-redesign-master-plan-2026-07-15.md` (§A 진단 → §C 바인딩 결정 U-D1~12 → §K WBS 8웨이브/46티켓)
-**개발 브랜치:** `claude/atockorea-tourroom-ui-redesign-m96qmw`
-**상태:** Wave U0~U8 전체 구현 완료 + main 머지 완료(2026-07-15). 토큰 시스템·메신저 레이아웃·버블 시스템·컴포저·카드 리스킨·탭 개편 배포. 투어룸 테스트 228개 green(신규 17개 포함), 기능·API·lib 로직 변경 0건. 잔여 파킹 항목은 플랜 §L 참조(지도 마커 아이콘화·탭 크로스페이드·읽음표시 백로그). 다음 세션은 새 대화로 시작 — 이 문서와 마스터플랜이 인계 자료.
+**상태:** Wave U0~U8 전체 구현 완료 + main 머지 완료(2026-07-15). 토큰 시스템·메신저 레이아웃·버블 시스템·컴포저·카드 리스킨·탭 개편 배포, 테스트 228개 green. **단, U-D2(카카오 옐로 버블)는 아래 v2에서 개정됨 — 이 문서의 색 토큰 표는 더 이상 유효하지 않고 구조 결정(레이아웃·그룹핑·꼬리·FAB 등)만 유효.**
+
+## 진행 중: 투어룸 AI 컨시어지 + UI/UX 엘레강스 리파인 v2
+
+**마스터 플랜(단일 기준):** `docs/tour-room-concierge-uiux-v2-master-plan-2026-07-15.md` (§A 라이브 시뮬 진단 → §B 외부 전략메모 채택맵 → §C 색 개정(U-D2→U2-D1) → §D AI 컨시어지 Tier0/1/2 → §G WBS)
+**개발 브랜치:** `claude/tour-mode-uiux-concierge-p7k2vm` (워크트리 `C:\Users\sangsong\atockorea-tourmode-uiux`, node_modules는 `atockorea-tourmode`에서 정션)
+**상태:** Wave V0 완료 — ① `GlobalAiAssistant`가 `/tour-mode`를 격리 목록에서 빠뜨려 사이트 전역 챗봇 위젯이 투어룸(긴급연락처 시트)에 누수되던 버그 수정(`8a215289`, 라이브 시딩+Playwright로 확인) ② 카카오 옐로 버블 → 아이보리+앤틱브라스 팔레트로 토큰 전면 교체(`eb0fa338`, SOS 레드는 의도적으로 유지) — 라이트/다크 둘 다 실제 렌더 스크린샷으로 검증, 기존 228개 테스트 green. **다음 = Wave V1(색 적용 감사) → V2/V3(AI 컨시어지 Tier0/1/2 신규 빌드 — 82-POI DB를 실제로 응답에 쓰는 핵심 기능, 현재 전무) → V4(타임라인+리뷰쿠폰) → V5(카피 정직성).** 컨시어지는 신규 엔드포인트 `/api/tour-rooms/[bookingId]/concierge` 1개 + 기존 AI 라우터/RAG 하베스트 파이프라인 재사용, 신규 인프라 없음.
 
 ## 완료: 투어모드(Tour Mode) 개발 — 실시간 투어룸 (코드 트랙 종결)
 
