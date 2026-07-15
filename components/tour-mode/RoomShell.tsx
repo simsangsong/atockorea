@@ -19,6 +19,7 @@ import EmergencyCard from '@/components/tour-mode/EmergencyCard';
 import Sheet from '@/components/tour-mode/Sheet';
 import { useKeyboardOpen } from '@/components/tour-mode/useKeyboardOpen';
 import {
+  IconConcierge,
   IconEmergency,
   IconTabChat,
   IconTabMap,
@@ -27,6 +28,7 @@ import {
   IconPickup,
 } from '@/components/tour-mode/icons';
 import { EMERGENCY_TITLE } from '@/lib/tour-room/emergency';
+import { CONCIERGE_COPY } from '@/lib/tour-room/concierge';
 import type { RoomConnection } from '@/hooks/useTourRoomChannel';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
@@ -122,6 +124,7 @@ export default function RoomShell({
   banner,
   map,
   sos,
+  concierge,
   theme = 'light',
   chatActivityKey,
 }: {
@@ -141,6 +144,8 @@ export default function RoomShell({
   map?: ReactNode;
   /** T7.3 — the SOS control inside the emergency sheet. */
   sos?: ReactNode;
+  /** V2.2 — Smart Guide panel; the header sparkle button shows when present. */
+  concierge?: ReactNode;
   /** Resolved theme — 'system' is resolved by the caller before this prop. */
   theme?: 'light' | 'dark';
   /** U1.2 — bumps on chat activity; while on another tab it lights the unread dot. */
@@ -148,6 +153,7 @@ export default function RoomShell({
 }) {
   const [tab, setTab] = useState<RoomTab>('chat');
   const [emergencyOpen, setEmergencyOpen] = useState(false);
+  const [conciergeOpen, setConciergeOpen] = useState(false);
   const [chatUnread, setChatUnread] = useState(false);
   const keyboardOpen = useKeyboardOpen();
   const badge = LIFECYCLE_BADGE[lifecycle] ?? LIFECYCLE_BADGE.live;
@@ -212,6 +218,17 @@ export default function RoomShell({
               subtitle && <p className="tr-meta mt-0.5 truncate text-[var(--tr-ink-3)]">{subtitle}</p>
             )}
           </div>
+          {concierge && (
+            <button
+              type="button"
+              onClick={() => setConciergeOpen(true)}
+              aria-label={CONCIERGE_COPY[locale].title}
+              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-[var(--tr-accent-deep)] active:bg-[var(--tr-accent-soft)]"
+              data-testid="concierge-open"
+            >
+              <IconConcierge size={21} strokeWidth={2} />
+            </button>
+          )}
           <button
             type="button"
             onClick={() => setEmergencyOpen(true)}
@@ -353,6 +370,23 @@ export default function RoomShell({
         >
           <EmergencyCard locale={locale} sos={sos} showTitle={false} />
         </Sheet>
+
+        {/* ---- Smart Guide sheet (V2.2) ------------------------------- */}
+        {concierge && (
+          <Sheet
+            open={conciergeOpen}
+            onClose={() => setConciergeOpen(false)}
+            closeLabel={CLOSE_LABEL[locale]}
+            title={
+              <span className="flex items-center gap-2 text-[var(--tr-accent-deep)]">
+                <IconConcierge size={18} aria-hidden />
+                {CONCIERGE_COPY[locale].title}
+              </span>
+            }
+          >
+            {concierge}
+          </Sheet>
+        )}
       </div>
     </div>
   );

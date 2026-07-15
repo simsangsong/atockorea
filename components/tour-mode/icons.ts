@@ -72,4 +72,8 @@ export {
   Zap as IconQuickReply,
   Timer as IconEta,
   Users as IconPresence,
+
+  // Smart Guide concierge (V2.2)
+  Sparkles as IconConcierge,
+  SendHorizontal as IconConciergeSend,
 } from 'lucide-react';

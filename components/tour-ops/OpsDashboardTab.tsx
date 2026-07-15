@@ -23,6 +23,7 @@ import {
 
 const ATTENTION_LABELS: Record<AttentionReason, string> = {
   need_help: '🙋 도움 요청',
+  concierge: '🤝 AI 에스컬레이션',
   keyword: '⚠️ 키워드 감지',
   unanswered: '⏳ 5분 무응답',
 };

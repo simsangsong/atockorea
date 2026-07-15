@@ -1,0 +1,252 @@
+import { NextRequest, NextResponse } from 'next/server';
+import { createServerClient } from '@/lib/supabase';
+import { requestGate, clientIpKey, durableIncrWindow } from '@/lib/durable-rate-limit';
+import { chatCompletion } from '@/lib/ai/router';
+import { ensureRoom, resolveRoomActor } from '@/lib/tour-room/access';
+import { broadcastToRoom } from '@/lib/tour-room/realtime';
+import { normalizeRoomLocale, type RoomLocale } from '@/lib/tour-room/snapshot';
+import {
+  answerTier0,
+  classifyConciergeGuardrail,
+  latestArrivalContext,
+  matchConciergeIntent,
+  renderConciergeAnswer,
+  renderConciergeTranslations,
+  type ScheduleItemLike,
+  type Tier0Context,
+} from '@/lib/tour-room/concierge';
+import { activeNotice } from '@/lib/tour-room/notices';
+import { logChatTurn } from '@/lib/support/chat-logger';
+import type { RoomMessage } from '@/hooks/useTourRoomChannel';
+
+export const dynamic = 'force-dynamic';
+
+/**
+ * V3.1 — the Smart Guide concierge endpoint (concierge-uiux-v2 plan §D).
+ *
+ * Tier ladder, in order, cheapest first:
+ *   guardrails (§D-3, hardcoded — LLM never sees emergency/ops/venue asks)
+ *   → Tier 0 keyword re-check against server-assembled room context (0 LLM)
+ *   → Tier 1 LLM through the §M-1 router ('concierge' purpose, no DeepSeek).
+ *
+ * Ops-request escalations post a system message into the room feed so the
+ * guide and ops console both see the handoff (V3.3). Tier 1 turns are logged
+ * to chat_sessions/chat_messages so the existing weekly RAG harvest picks
+ * them up (V3.4 flywheel — no new tables).
+ */
+
+const MAX_QUESTION_CHARS = 500;
+/** Recent feed window for context (latest arrival + active notice live here). */
+const CONTEXT_MESSAGE_LIMIT = 40;
+
+/** V3.5 — global daily LLM-call cap (fail-open: a counter outage never blocks). */
+async function tier1BudgetExhausted(): Promise<boolean> {
+  const cap = Number(process.env.TOUR_ROOM_CONCIERGE_DAILY_CAP ?? 300);
+  if (!Number.isFinite(cap) || cap <= 0) return false;
+  try {
+    const count = await durableIncrWindow('tour_room_concierge:daily_llm', 24 * 60 * 60);
+    return count > cap;
+  } catch {
+    return false;
+  }
+}
+
+const LOCALE_NAME: Record<string, string> = {
+  en: 'English',
+  ko: 'Korean',
+  ja: 'Japanese',
+  es: 'Spanish',
+  zh: 'Simplified Chinese',
+};
+
+function contextSummary(ctx: Tier0Context, tour: { title?: string; city?: string } | null, tourDate: string | null): string {
+  const lines: string[] = [];
+  if (tour?.title) lines.push(`Tour: ${tour.title}${tour.city ? ` (${tour.city})` : ''}${tourDate ? `, ${tourDate}` : ''}`);
+  if (ctx.spotTitle) lines.push(`Current spot: ${ctx.spotTitle}`);
+  const c = ctx.content;
+  if (c?.description) lines.push(`About this spot: ${c.description.slice(0, 300)}`);
+  if (c?.visitBasics) lines.push(`Visit basics: ${JSON.stringify(c.visitBasics)}`);
+  if (c?.convenience) lines.push(`Facilities: ${JSON.stringify(c.convenience)}`);
+  if (c?.smartNotes) lines.push(`Tips: ${JSON.stringify(c.smartNotes)}`);
+  if (ctx.schedule.length > 0) {
+    const items = ctx.schedule
+      .map((item) => `${String(item.time ?? '').slice(0, 5)} ${String(item.title ?? item.name ?? '').trim()}`.trim())
+      .filter(Boolean)
+      .slice(0, 20);
+    lines.push(`Today's schedule: ${items.join(' / ')}`);
+  }
+  return lines.join('\n');
+}
+
+function systemPrompt(locale: RoomLocale): string {
+  const language = LOCALE_NAME[locale] ?? 'English';
+  // Belt-and-braces: the hardcoded guardrails above are the real gate; the
+  // prompt just keeps borderline phrasings honest (§H-4).
+  return [
+    `You are the "Smart Guide" assistant inside a live Korea day-tour chat room. Answer the traveller's question in ${language} only, in at most 4 short sentences, using ONLY the tour context provided.`,
+    'Never promise schedule changes, refunds, cancellations, or discounts — say a human guide or the operations team must handle those.',
+    'Never recommend specific restaurants, cafés, or shops. If asked, say the guide knows trustworthy local picks.',
+    'If the question is unrelated to this tour or Korea travel basics (etiquette, weather, transit near the tour), say you can only help with today’s tour.',
+    'If you do not know, say so and point to the guide — never invent facts.',
+  ].join(' ');
+}
+
+export async function POST(
+  req: NextRequest,
+  { params }: { params: Promise<{ bookingId: string }> },
+) {
+  try {
+    const { bookingId } = await params;
+    const supabase = createServerClient();
+
+    const body = (await req.json().catch(() => ({}))) as { question?: unknown; locale?: unknown };
+    const question = typeof body.question === 'string' ? body.question.trim().slice(0, MAX_QUESTION_CHARS) : '';
+    if (!question) {
+      return NextResponse.json({ error: 'question is required' }, { status: 400 });
+    }
+
+    const resolved = await resolveRoomActor(req, bookingId, { supabase });
+    if (!resolved.ok) {
+      return NextResponse.json({ error: resolved.error }, { status: resolved.status });
+    }
+    const { booking, actor } = resolved;
+    const locale = normalizeRoomLocale(body.locale, normalizeRoomLocale(booking.preferred_language));
+
+    // Rate limits before any work (vision-ask pattern).
+    const gateKey =
+      actor.kind === 'session' ? `participant:${actor.sessionPayload.participantId}` : clientIpKey(req.headers);
+    const [participantGate, roomGate] = await Promise.all([
+      requestGate({ namespace: 'tour_room_concierge', key: gateKey, perMinute: 3, perHour: 15 }),
+      requestGate({ namespace: 'tour_room_concierge_room', key: `booking:${booking.id}`, perMinute: 6, perHour: 40 }),
+    ]);
+    if (!participantGate.allowed || !roomGate.allowed) {
+      const retryAfterMs = Math.max(participantGate.retryAfterMs ?? 0, roomGate.retryAfterMs ?? 0);
+      return NextResponse.json(
+        { error: 'rate_limited' },
+        { status: 429, headers: { 'Retry-After': String(Math.ceil(retryAfterMs / 1000)) } },
+      );
+    }
+
+    const room = await ensureRoom(supabase, booking);
+    const logTurn = (reply: string, category: string) =>
+      logChatTurn(
+        supabase,
+        {
+          sessionToken: `tour-room:${room.id}`,
+          userLocale: locale,
+          tourSlug: null,
+        },
+        { userMessage: question, assistantReply: reply, category },
+      ).catch(() => undefined);
+
+    // ---- §D-3 guardrails (hardcoded, before the LLM ever runs) ----------
+    const guardrail = classifyConciergeGuardrail(question);
+
+    if (guardrail === 'emergency') {
+      const text = renderConciergeAnswer('emergency', locale);
+      await logTurn(text, 'tour_room_concierge_emergency');
+      return NextResponse.json({ kind: 'emergency', text }, { status: 201 });
+    }
+
+    if (guardrail === 'ops_request') {
+      // V3.3 — surface the handoff where humans already look: the room feed
+      // (guide console + ops console both consume it).
+      const askerName =
+        ('displayName' in actor ? actor.displayName : null) || booking.contact_name || 'Guest';
+      const bundle = renderConciergeTranslations('escalation_feed', { q: `${askerName}: "${question}"` });
+      const { data: message } = await supabase
+        .from('tour_room_messages')
+        .insert({
+          room_id: room.id,
+          booking_id: booking.id,
+          sender_role: 'system',
+          input_kind: 'text',
+          source_text: bundle.source_text,
+          source_locale: bundle.source_locale,
+          translations: bundle.translations,
+          target_locales: Object.keys(bundle.translations),
+          metadata: { kind: 'concierge_escalation', question, asked_by_role: actor.role },
+        })
+        .select()
+        .single();
+      if (message) await broadcastToRoom(room, 'message', { message });
+
+      const text = renderConciergeAnswer('escalated_ack', locale);
+      await logTurn(text, 'tour_room_concierge_escalated');
+      return NextResponse.json({ kind: 'escalated', text }, { status: 201 });
+    }
+
+    if (guardrail === 'venue_recommendation') {
+      const text = renderConciergeAnswer('venue_refusal', locale);
+      await logTurn(text, 'tour_room_concierge_refused');
+      return NextResponse.json({ kind: 'refused_venue', text }, { status: 201 });
+    }
+
+    // ---- Tier 0 re-check with server-assembled context ------------------
+    const [{ data: bookingRow }, { data: recentMessages }] = await Promise.all([
+      supabase
+        .from('bookings')
+        .select('id, tour_date, tours ( title, city, schedule )')
+        .eq('id', booking.id)
+        .maybeSingle(),
+      supabase
+        .from('tour_room_messages')
+        .select('id, metadata, created_at')
+        .eq('room_id', room.id)
+        .order('created_at', { ascending: false })
+        .limit(CONTEXT_MESSAGE_LIMIT),
+    ]);
+
+    const tourRaw = (bookingRow as { tours?: unknown } | null)?.tours;
+    const tour = (Array.isArray(tourRaw) ? tourRaw[0] : tourRaw) as
+      | { title?: string; city?: string; schedule?: unknown }
+      | null;
+    const schedule = (Array.isArray(tour?.schedule) ? tour?.schedule : []) as ScheduleItemLike[];
+    const feed = ((recentMessages ?? []) as unknown as RoomMessage[]).reverse();
+
+    const nowMs = Date.now();
+    const arrival = latestArrivalContext(feed);
+    const notice = activeNotice(feed, booking.tour_date, nowMs);
+    const ctx: Tier0Context = {
+      spotTitle: arrival.spotTitle,
+      content: arrival.content,
+      schedule,
+      freeTime:
+        notice && !notice.cancelled && notice.remainingMs !== null
+          ? { remainingMs: notice.remainingMs, point: notice.point }
+          : null,
+      nowMs,
+    };
+
+    const intent = matchConciergeIntent(question);
+    if (intent) {
+      const answer = answerTier0(intent, ctx, locale);
+      await logTurn(answer.text, 'tour_room_concierge_tier0');
+      return NextResponse.json({ kind: 'tier0', text: answer.text }, { status: 201 });
+    }
+
+    // ---- Tier 1 — LLM (budget-gated, V3.5) ------------------------------
+    if (await tier1BudgetExhausted()) {
+      const text = renderConciergeAnswer('budget_exhausted', locale);
+      return NextResponse.json({ kind: 'budget_exhausted', text }, { status: 201 });
+    }
+
+    const completion = await chatCompletion(
+      'concierge',
+      [
+        { role: 'system', content: systemPrompt(locale) },
+        {
+          role: 'user',
+          content: `${contextSummary(ctx, tour, booking.tour_date)}\n\nTraveller's question: ${question}`,
+        },
+      ],
+      { maxOutputTokens: 400, temperature: 0.3 },
+    );
+    const text = completion.content.trim();
+    await logTurn(text, 'tour_room_concierge_tier1');
+    return NextResponse.json({ kind: 'tier1', text, provider: completion.provider }, { status: 201 });
+  } catch (error) {
+    console.error('POST /api/tour-rooms/[bookingId]/concierge error:', error);
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
+  }
+}

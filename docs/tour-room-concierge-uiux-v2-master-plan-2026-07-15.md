@@ -178,17 +178,17 @@ U0~U8 리디자인은 **구조**(엣지투엣지 피드·슬림헤더·하단탭
 - V1.3 SOS·긴급시트는 **변경 없음**(§H-예외) 재확인 — 실수로 뮤트되지 않았는지 스크린샷 대조
 
 ### Wave V2 — 컨시어지 Tier 0 【4】
-- V2.1 Tier 0 매칭 유틸(`lib/tour-room/concierge.ts`) — 퀵칩 3종(화장실·포토스팟·다음일정) 순수함수 + 테스트
-- V2.2 Composer/ChatFeed에 Tier 0 즉답을 "시스템 응답" 버블로 렌더(신규 메시지 종류, LLM 호출 없음)
-- V2.3 자유입력 키워드 매칭(화장실/화장실이 어디/toilet/restroom 등 5로케일 키워드 세트) → Tier 0 우선 시도, 실패 시 Tier 1로 폴백
-- V2.4 유닛: 82-POI 중 화장실 필드 존재하는 샘플 다국어 매칭 회귀
+- V2.1 ✅ Tier 0 매칭 유틸(`lib/tour-room/concierge.ts`) — 퀵칩 4종(화장실·포토스팟·다음일정·남은시간) 순수함수, 5로케일 사전번역 템플릿, `notices.ts activeNotice`/`spotContent` 재사용 + 테스트 42개
+- V2.2 ✅ **설계 조정:** 피드 버블 대신 **헤더 스파클 버튼 → 바텀시트 패널**(`ConciergePanel.tsx`, Sheet 재사용) — 룸 피드는 사람 채널로 보존(vision-ask "나만 보기" 선례), Q&A는 세션 로컬 스레드. 칩·Tier0 답변은 네트워크 0회
+- V2.3 ✅ 자유입력 키워드 매칭(5로케일, Latin \b·CJK substring — attention.ts 패턴) → 로컬 가드레일(응급·맛집)→로컬 Tier 0→서버 폴백 순
+- V2.4 ✅ 82-POI KB 회귀(gamcheon 등 restroom 필드 80/83 커버 확인, 전 로케일)
 
 ### Wave V3 — 컨시어지 Tier 1/2 【5】
-- V3.1 `POST /api/tour-rooms/[bookingId]/concierge` 엔드포인트(인가 재사용, 컨텍스트 조립)
-- V3.2 가드레일 4종(§D-3) 하드코딩 + 회귀 테스트(운영약속/응급/맛집/스코프밖)
-- V3.3 Tier 2 에스컬레이션 UX(가이드 콘솔에 "AI가 못 답한 질문" 하이라이트)
-- V3.4 룸 QA를 기존 RAG 하베스트 파이프라인에 적재(§D-4, 신규 테이블 없음)
-- V3.5 비용 가드 연동(`TOUR_ROOM_DAILY_AI_BUDGET` 기존 env 재사용)
+- V3.1 ✅ `POST /api/tour-rooms/[bookingId]/concierge` — `resolveRoomActor` 인가 재사용, 서버 컨텍스트(최근 도착 스팟 content+schedule+activeNotice) 조립, 라우터 신규 purpose `'concierge'`(gemini→openai, PII라 deepseek 제외)
+- V3.2 ✅ 가드레일 4종 하드코딩(응급→SOS 안내 / 운영요청→에스컬레이션 / 맛집→거절 / 스코프밖→시스템 프롬프트+belt-and-braces) + API 테스트 10개
+- V3.3 ✅ 에스컬레이션 = 룸 피드 시스템 캡슐(`metadata.kind='concierge_escalation'`, 5로케일 사전번역+질문 원문) + Broadcast → 가이드 콘솔·관제 자동 표시. 관제 어텐션 큐에 `'concierge'` reason 추가(need_help 다음 우선순위)
+- V3.4 ✅ Tier1/Tier0/에스컬레이션 턴을 `logChatTurn`으로 `chat_sessions`/`chat_messages`에 적재(sessionToken=`tour-room:{roomId}`, category=`tour_room_concierge_*`) — 기존 주간 `rag:harvest` 크론이 그대로 수확(신규 테이블 0)
+- V3.5 ✅ 예산 3중: participant 3/min·15/h + room 6/min·40/h(`requestGate`) + 전역 일일 LLM 캡 `TOUR_ROOM_CONCIERGE_DAILY_CAP`(기본 300, `durableIncrWindow`, 장애 시 fail-open). Tier 0·가드레일은 캡과 무관하게 항상 동작
 
 ### Wave V4 — Travel Timeline + 리뷰 쿠폰 【4】
 - V4.1 투어 종료 요약 페이지(기존 이벤트 재집계, 사진 포함)
@@ -220,11 +220,11 @@ U0~U8 리디자인은 **구조**(엣지투엣지 피드·슬림헤더·하단탭
 |---|---|---|
 | V0 버그+색 토큰 | ✅ 완료 | V0.1(`8a215289`)+V0.2 토큰 교체, 라이브 스크린샷으로 검증 |
 | V1 색 적용 감사 | ⬜ 대기 | |
-| V2 컨시어지 Tier0 | ⬜ 대기 | |
-| V3 컨시어지 Tier1/2 | ⬜ 대기 | |
+| V2 컨시어지 Tier0 | ✅ 완료 (2026-07-16) | concierge.ts 순수코어+ConciergePanel 시트, 칩·키워드 Tier0 = 네트워크 0회. 라이브 시딩 시뮬로 전 플로우 실구동 검증(스크린샷 6장, 콘솔 에러 0) |
+| V3 컨시어지 Tier1/2 | ✅ 완료 (2026-07-16) | /concierge 엔드포인트+가드레일 4종+피드 에스컬레이션+관제 어텐션+RAG 플라이휠+3중 예산. Tier1 라이브 LLM 응답 실확인(Gemini). 신규 테스트 65개(42+10+13), 전체 tour 스위트 348 green, tsc 0 |
 | V4 타임라인+쿠폰 | ⬜ 대기 | |
 | V5 카피 정직성 | ⬜ 대기 | |
-| V6 QA 게이트 | ⬜ 대기 | |
+| V6 QA 게이트 | ⬜ 대기 | 시뮬 재현: `sim-tour-day.ts`→`sim-populate.ts`→`sim-concierge-screens.mjs`(SIM_OUT 지정) |
 
 ## §K. 스코프 밖 (참고만, 코드 작업 아님)
 

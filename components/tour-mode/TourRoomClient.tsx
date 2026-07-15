@@ -28,6 +28,7 @@ import PickupBoard from '@/components/tour-mode/PickupBoard';
 import RoomMapTab from '@/components/tour-mode/map/RoomMapTab';
 import RoomShell from '@/components/tour-mode/RoomShell';
 import SosButton from '@/components/tour-mode/SosButton';
+import ConciergePanel from '@/components/tour-mode/ConciergePanel';
 import InstallBanner from '@/components/tour-mode/InstallBanner';
 import { detectEntryLocale, ENTRY_COPY } from '@/components/tour-mode/entryCopy';
 import { GUEST_CREDS_STORAGE_PREFIX } from '@/components/tour-mode/TourModeEntry';
@@ -419,6 +420,18 @@ function TourRoomLive({
             locale={locale}
             onSent={handleSosSent}
             alreadySentAt={sosSentAt}
+          />
+        ) : null
+      }
+      concierge={
+        viewerRole === 'customer' && !readOnly ? (
+          <ConciergePanel
+            bookingId={bookingId}
+            roomSession={data.session}
+            locale={locale}
+            schedule={schedule}
+            messages={messages}
+            tourDate={snapshot.booking?.tour_date ?? null}
           />
         ) : null
       }

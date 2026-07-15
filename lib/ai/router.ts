@@ -26,7 +26,7 @@
 import { createHash } from 'node:crypto';
 
 export type AiProvider = 'gemini' | 'deepseek' | 'openai';
-export type AiPurpose = 'translate' | 'caption' | 'batch' | 'vision';
+export type AiPurpose = 'translate' | 'caption' | 'batch' | 'vision' | 'concierge';
 
 interface ProviderDef {
   baseUrl: string;
@@ -59,6 +59,8 @@ const DEFAULT_LADDERS: Record<AiPurpose, AiProvider[]> = {
   caption: ['gemini', 'openai'],
   vision: ['gemini', 'openai'],
   batch: ['deepseek', 'gemini', 'openai'],
+  // Customer free text (like translate/vision, may carry PII) — no DeepSeek.
+  concierge: ['gemini', 'openai'],
 };
 
 export interface ResolvedProvider {
