@@ -85,6 +85,31 @@ const TABS: Array<{ key: RoomTab; Icon: typeof IconTabChat }> = [
   { key: 'settings', Icon: IconTabSettings },
 ];
 
+/**
+ * U6.1 — index of the schedule item currently underway: the last stop whose
+ * HH:MM start is at or before the KST wall clock (live rooms only).
+ */
+function currentScheduleIndex(schedule: ScheduleItem[], lifecycle: string, nowMs: number): number {
+  if (lifecycle !== 'live') return -1;
+  let nowHm: string;
+  try {
+    nowHm = new Intl.DateTimeFormat('en-GB', {
+      timeZone: 'Asia/Seoul',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false,
+    }).format(new Date(nowMs));
+  } catch {
+    return -1;
+  }
+  let current = -1;
+  schedule.forEach((item, index) => {
+    const start = String(item.time ?? '').slice(0, 5);
+    if (/^\d{2}:\d{2}$/.test(start) && start <= nowHm) current = index;
+  });
+  return current;
+}
+
 export default function RoomShell({
   title,
   subtitle,
@@ -127,6 +152,7 @@ export default function RoomShell({
   const keyboardOpen = useKeyboardOpen();
   const badge = LIFECYCLE_BADGE[lifecycle] ?? LIFECYCLE_BADGE.live;
   const labels = TAB_LABEL[locale];
+  const currentIndex = currentScheduleIndex(schedule, lifecycle, Date.now());
 
   // Unread dot: chat activity while another tab is up.
   const tabRef = useRef(tab);
@@ -218,28 +244,53 @@ export default function RoomShell({
               </div>
             )}
             {tab === 'schedule' && (
-              <ol className="space-y-2 overflow-y-auto px-3 py-3">
+              <ol className="overflow-y-auto px-4 py-4">
                 {schedule.length === 0 && (
                   <p className="tr-card-text pt-10 text-center text-[var(--tr-ink-3)]">—</p>
                 )}
-                {schedule.map((item, index) => (
-                  <li key={index} className="tr-card px-4 py-3">
-                    <div className="tr-card-text font-medium text-[var(--tr-ink)]">
-                      {String(item.title ?? item.name ?? '')}
-                    </div>
-                    {(item.time || item.departure_time) && (
-                      <div className="tr-meta mt-0.5 flex items-center gap-1.5 text-[var(--tr-ink-2)]">
-                        {item.time && <span>{String(item.time)}</span>}
-                        {item.departure_time && (
-                          <span className="flex items-center gap-1">
-                            <IconPickup size={12} aria-hidden />
-                            {String(item.departure_time)}
-                          </span>
+                {schedule.map((item, index) => {
+                  const active = index === currentIndex;
+                  return (
+                    <li key={index} className="relative flex gap-3">
+                      <div
+                        className={`tr-meta w-11 shrink-0 pt-1 text-right tabular-nums ${
+                          active ? 'font-bold text-[var(--tr-accent-deep)]' : 'text-[var(--tr-ink-3)]'
+                        }`}
+                      >
+                        {item.time ? String(item.time).slice(0, 5) : ''}
+                      </div>
+                      <div className="flex flex-col items-center">
+                        <span
+                          className={`mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full ${
+                            active
+                              ? 'bg-[var(--tr-accent)] ring-4 ring-[var(--tr-accent-soft)]'
+                              : index < (currentIndex === -1 ? -1 : currentIndex)
+                                ? 'bg-[var(--tr-ink-3)]'
+                                : 'bg-[var(--tr-bubble-system)]'
+                          }`}
+                        />
+                        {index < schedule.length - 1 && (
+                          <span className="w-px flex-1 bg-[var(--tr-hairline)]" aria-hidden />
                         )}
                       </div>
-                    )}
-                  </li>
-                ))}
+                      <div className={`min-w-0 flex-1 ${index < schedule.length - 1 ? 'pb-6' : ''}`}>
+                        <div
+                          className={`tr-card-text ${
+                            active ? 'font-semibold text-[var(--tr-ink)]' : 'font-medium text-[var(--tr-ink)]'
+                          }`}
+                        >
+                          {String(item.title ?? item.name ?? '')}
+                        </div>
+                        {item.departure_time && (
+                          <div className="tr-meta mt-0.5 flex items-center gap-1 text-[var(--tr-ink-2)]">
+                            <IconPickup size={12} aria-hidden />
+                            {String(item.departure_time)}
+                          </div>
+                        )}
+                      </div>
+                    </li>
+                  );
+                })}
               </ol>
             )}
             {tab === 'settings' && <div className="min-h-0 flex-1 overflow-y-auto px-3 py-3">{settings}</div>}

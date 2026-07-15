@@ -9,9 +9,17 @@
  * to the server participant row so translation targeting follows, D-8).
  */
 
+import type { ReactNode } from 'react';
 import { QUICK_REPLY_PRESETS } from '@/lib/tour-room/quickReplies';
 import { ROOM_LOCALES, type RoomLocale } from '@/lib/tour-room/snapshot';
 import { useTourRoomSettings } from '@/hooks/useTourRoomSettings';
+import {
+  IconLanguage,
+  IconTextSize,
+  IconThemeDark,
+  IconThemeLight,
+  IconThemeSystem,
+} from '@/components/tour-mode/icons';
 
 const LOCALE_NAME: Record<RoomLocale, string> = {
   en: 'English',
@@ -117,10 +125,12 @@ function Toggle({ checked, onChange, label }: { checked: boolean; onChange: (v: 
       aria-checked={checked}
       aria-label={label}
       onClick={() => onChange(!checked)}
-      className={`relative h-7 w-12 shrink-0 rounded-full transition ${checked ? 'bg-amber-500' : 'bg-gray-300 dark:bg-gray-600'}`}
+      className={`relative h-8 w-[52px] shrink-0 rounded-full transition ${
+        checked ? 'bg-[var(--tr-accent)]' : 'bg-[var(--tr-bubble-system)]'
+      }`}
     >
       <span
-        className={`absolute top-0.5 h-6 w-6 rounded-full bg-white shadow transition-all ${checked ? 'left-[22px]' : 'left-0.5'}`}
+        className={`absolute top-1 h-6 w-6 rounded-full bg-white shadow transition-all ${checked ? 'left-[24px]' : 'left-1'}`}
       />
     </button>
   );
@@ -132,21 +142,21 @@ function SegmentedControl<T extends string>({
   onChange,
 }: {
   value: T;
-  options: Array<{ value: T; label: string }>;
+  options: Array<{ value: T; label: ReactNode }>;
   onChange: (value: T) => void;
 }) {
   return (
-    <div className="flex gap-1 rounded-xl bg-gray-100 p-1 dark:bg-gray-800">
+    <div className="flex gap-1 rounded-xl bg-[var(--tr-bubble-system)] p-1">
       {options.map((option) => (
         <button
           key={option.value}
           type="button"
           onClick={() => onChange(option.value)}
           aria-pressed={value === option.value}
-          className={`flex-1 rounded-lg py-1.5 text-[12px] font-medium transition ${
+          className={`tr-label flex min-h-[36px] flex-1 items-center justify-center gap-1 rounded-lg font-medium transition ${
             value === option.value
-              ? 'bg-white text-gray-900 shadow-sm dark:bg-gray-600 dark:text-gray-50'
-              : 'text-gray-500 dark:text-gray-400'
+              ? 'bg-[var(--tr-surface)] text-[var(--tr-ink)] shadow-sm'
+              : 'text-[var(--tr-ink-2)]'
           }`}
         >
           {option.label}
@@ -167,21 +177,26 @@ export default function SettingsTab({
   const { settings, update } = useTourRoomSettings();
   const copy = COPY[locale];
 
+  // U6.3 — grouped-list settings (iOS grammar): flat groups with hairline
+  // dividers on the room surface, 44px rows, one accent (amber = action).
   return (
-    <div className="space-y-4 overflow-y-auto pb-4" data-testid="settings-tab">
-      <section className="rounded-2xl bg-white p-4 shadow-sm ring-1 ring-gray-100 dark:bg-gray-900 dark:ring-gray-800">
-        <h3 className="text-[13px] font-semibold text-gray-900 dark:text-gray-100">{copy.language}</h3>
-        <div className="mt-2 grid grid-cols-3 gap-1.5">
+    <div className="space-y-4 pb-4" data-testid="settings-tab">
+      <section className="tr-card p-4">
+        <h3 className="tr-card-text flex items-center gap-1.5 font-semibold text-[var(--tr-ink)]">
+          <IconLanguage size={15} className="text-[var(--tr-ink-3)]" aria-hidden />
+          {copy.language}
+        </h3>
+        <div className="mt-2.5 grid grid-cols-3 gap-1.5">
           {ROOM_LOCALES.map((code) => (
             <button
               key={code}
               type="button"
               onClick={() => onLocaleChange(code)}
               aria-pressed={locale === code}
-              className={`rounded-xl px-2 py-2 text-[13px] transition ${
+              className={`tr-card-text min-h-[44px] rounded-xl px-2 transition ${
                 locale === code
-                  ? 'bg-amber-500 font-semibold text-white'
-                  : 'bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300'
+                  ? 'bg-[var(--tr-accent)] font-semibold text-[var(--tr-bubble-me-ink)]'
+                  : 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]'
               }`}
             >
               {LOCALE_NAME[code]}
@@ -190,26 +205,43 @@ export default function SettingsTab({
         </div>
       </section>
 
-      <section className="rounded-2xl bg-white p-4 shadow-sm ring-1 ring-gray-100 dark:bg-gray-900 dark:ring-gray-800">
-        <h3 className="text-[13px] font-semibold text-gray-900 dark:text-gray-100">{copy.theme}</h3>
-        <div className="mt-2">
+      <section className="tr-card p-4">
+        <h3 className="tr-card-text flex items-center gap-1.5 font-semibold text-[var(--tr-ink)]">
+          <IconThemeSystem size={15} className="text-[var(--tr-ink-3)]" aria-hidden />
+          {copy.theme}
+        </h3>
+        <div className="mt-2.5">
           <SegmentedControl
             value={settings.theme}
             onChange={(theme) => update({ theme })}
             options={[
-              { value: 'light', label: `☀️ ${copy.themeLight}` },
-              { value: 'dark', label: `🌙 ${copy.themeDark}` },
+              {
+                value: 'light',
+                label: (
+                  <>
+                    <IconThemeLight size={13} aria-hidden /> {copy.themeLight}
+                  </>
+                ),
+              },
+              {
+                value: 'dark',
+                label: (
+                  <>
+                    <IconThemeDark size={13} aria-hidden /> {copy.themeDark}
+                  </>
+                ),
+              },
               { value: 'system', label: copy.themeSystem },
             ]}
           />
         </div>
       </section>
 
-      <section className="space-y-4 rounded-2xl bg-white p-4 shadow-sm ring-1 ring-gray-100 dark:bg-gray-900 dark:ring-gray-800">
-        <div className="flex items-start justify-between gap-3">
+      <section className="tr-card divide-y divide-[var(--tr-hairline)] px-4">
+        <div className="flex items-start justify-between gap-3 py-3.5">
           <div>
-            <h3 className="text-[13px] font-semibold text-gray-900 dark:text-gray-100">{copy.voiceConfirm}</h3>
-            <p className="mt-0.5 text-[11px] leading-snug text-gray-500 dark:text-gray-400">{copy.voiceConfirmHint}</p>
+            <h3 className="tr-card-text font-semibold text-[var(--tr-ink)]">{copy.voiceConfirm}</h3>
+            <p className="tr-meta mt-0.5 leading-snug text-[var(--tr-ink-2)]">{copy.voiceConfirmHint}</p>
           </div>
           <Toggle
             checked={settings.voiceConfirm}
@@ -218,18 +250,21 @@ export default function SettingsTab({
           />
         </div>
 
-        <div className="flex items-start justify-between gap-3">
+        <div className="flex items-start justify-between gap-3 py-3.5">
           <div>
-            <h3 className="text-[13px] font-semibold text-gray-900 dark:text-gray-100">{copy.autoRead}</h3>
-            <p className="mt-0.5 text-[11px] leading-snug text-gray-500 dark:text-gray-400">{copy.autoReadHint}</p>
+            <h3 className="tr-card-text font-semibold text-[var(--tr-ink)]">{copy.autoRead}</h3>
+            <p className="tr-meta mt-0.5 leading-snug text-[var(--tr-ink-2)]">{copy.autoReadHint}</p>
           </div>
           <Toggle checked={settings.autoRead} onChange={(autoRead) => update({ autoRead })} label={copy.autoRead} />
         </div>
       </section>
 
-      <section className="rounded-2xl bg-white p-4 shadow-sm ring-1 ring-gray-100 dark:bg-gray-900 dark:ring-gray-800">
-        <h3 className="text-[13px] font-semibold text-gray-900 dark:text-gray-100">{copy.textSize}</h3>
-        <div className="mt-2">
+      <section className="tr-card p-4">
+        <h3 className="tr-card-text flex items-center gap-1.5 font-semibold text-[var(--tr-ink)]">
+          <IconTextSize size={15} className="text-[var(--tr-ink-3)]" aria-hidden />
+          {copy.textSize}
+        </h3>
+        <div className="mt-2.5">
           <SegmentedControl
             value={settings.textScale}
             onChange={(textScale) => update({ textScale })}
@@ -242,12 +277,12 @@ export default function SettingsTab({
       </section>
 
       {/* Quick replies always send in every language — shown here as a reminder of what a tap sends. */}
-      <section className="rounded-2xl bg-white p-4 shadow-sm ring-1 ring-gray-100 dark:bg-gray-900 dark:ring-gray-800">
+      <section className="tr-card p-4">
         <div className="flex flex-wrap gap-1.5">
           {QUICK_REPLY_PRESETS.map((preset) => (
             <span
               key={preset.key}
-              className="rounded-full bg-gray-100 px-2.5 py-1 text-[11px] text-gray-500 dark:bg-gray-800 dark:text-gray-400"
+              className="tr-meta rounded-full bg-[var(--tr-surface-2)] px-2.5 py-1 text-[var(--tr-ink-2)]"
             >
               {preset.emoji} {preset.text[locale]}
             </span>
