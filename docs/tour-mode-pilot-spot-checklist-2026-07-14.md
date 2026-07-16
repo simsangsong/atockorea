@@ -18,3 +18,21 @@
 **미시딩 스톱:** #1 픽업(픽업 보드가 담당), #4 점심(식당 유동적) — 지오펜스 없음(의도).
 
 **검수 후 할 일:** 이 문서 체크 → 문제 스팟은 어드민에서 좌표/반경 수정 → §I 내부 리허설(실기기)에서 도착 카드 1회 발화 확인.
+
+---
+
+## 추가 시딩: Jeju Grand Highlights Loop (2026-07-16)
+
+**투어:** `jeju-grand-highlights-loop`, tour_id `6d4741e0-5181-47df-8e10-98d714896c26`
+**시딩:** 2026-07-16 `scripts/seed-tour-guide-spots.ts` — 콘텐츠 = `data/tour-stop-content/jeju-grand-highlights-loop.json`(6로케일, 해녀공연 스톱의 `alternate`(공연 취소 시 해녀박물관) 포함).
+
+| # | 스팟 | 좌표 | 반경 | 확인 포인트 | 검수 |
+|---|---|---|---|---|---|
+| 1 | Hallasan 1100 Altitude Wetland | [33.3577959, 126.4624949](https://maps.google.com/?q=33.3577959,126.4624949) | 250m | 1100고지 휴게소+습지 탐방로 입구 기준 (⚠ match_pois 원좌표가 한라산 정상으로 잘못돼 있어 검증 좌표로 교정함 — triple.guide 대조) | ☐ |
+| 2 | Daepo Jusangjeolli Cliff | [33.2367938, 126.4254867](https://maps.google.com/?q=33.2367938,126.4254867) | 200m | 매표소→전망대 도보 구간 포함되는지 | ☐ |
+| 3 | Jeongbang Waterfall | [33.2448567, 126.5715794](https://maps.google.com/?q=33.2448567,126.5715794) | 150m | 매표소 기준. 폭포는 계단 아래 — 주차장이 반경 밖이면 좌표 이동 필요 | ☐ |
+| 4 | Seongsan Haenyeo Show (우뭇개해안) | [33.4628, 126.9387](https://maps.google.com/?q=33.4628,126.9387) | 120m | 해녀의집/공연장 코브 기준 (poi_key는 콘텐츠 폴백용 jeju_haenyeo_museum이지만 좌표는 공연장 현장 — OSM 대조). 성산일출봉 펜스(300m)와 겹치지 않는지 | ☐ |
+| 5 | Seongsan Ilchulbong | [33.458056, 126.9425](https://maps.google.com/?q=33.458056,126.9425) | 300m | 반경 300m가 매표소 광장까지 닿는지 (좌표는 봉우리 쪽이라 넉넉히 잡음) | ☐ |
+| 6 | Manjanggul Lava Tube | [33.528333, 126.771389](https://maps.google.com/?q=33.528333,126.771389) | 200m | 주차장→동굴 입구 기준 | ☐ |
+
+**미시딩 스톱:** 점심(서귀포, 식당 유동적) — 지오펜스 없음(의도, 부산 파일럿과 동일 규칙).

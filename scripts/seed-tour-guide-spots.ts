@@ -15,8 +15,14 @@ import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { createClient } from '@supabase/supabase-js';
 
-/** stop number in the extraction bundle → geofence spec. */
-const SPOT_SPECS: Record<string, Array<{ stopNumber: number; poiKey: string; triggerRadiusM: number }>> = {
+/** stop number in the extraction bundle → geofence spec. `coords` overrides the
+ *  match_pois lookup for stops whose poi_key points at a content-fallback POI
+ *  that is NOT the physical venue (e.g. the haenyeo show cove borrows the
+ *  Haenyeo Museum's fact sheet, but the museum sits ~8 km away in Hado). */
+const SPOT_SPECS: Record<
+  string,
+  Array<{ stopNumber: number; poiKey: string; triggerRadiusM: number; coords?: { lat: number; lng: number } }>
+> = {
   'busan-top-attractions-day-tour': [
     { stopNumber: 2, poiKey: 'haedong_yonggungsa', triggerRadiusM: 150 },
     { stopNumber: 3, poiKey: 'cheongsapo_blue_line_park', triggerRadiusM: 200 },
@@ -24,6 +30,23 @@ const SPOT_SPECS: Record<string, Array<{ stopNumber: number; poiKey: string; tri
     { stopNumber: 6, poiKey: 'gamcheon_culture_village', triggerRadiusM: 200 },
     { stopNumber: 7, poiKey: 'jagalchi_market', triggerRadiusM: 150 },
     // stops 1 (pickup) & 4 (lunch) have no fixed venue — no geofence.
+  ],
+  'jeju-grand-highlights-loop': [
+    { stopNumber: 1, poiKey: 'hallasan_1100_wetland', triggerRadiusM: 250 },
+    { stopNumber: 2, poiKey: 'daepo_jusangjeolli_cliff', triggerRadiusM: 200 },
+    { stopNumber: 3, poiKey: 'jeongbang_falls', triggerRadiusM: 150 },
+    // stop 4 (lunch) has no fixed venue — no geofence.
+    // Show venue = Umutgae cove at the foot of Ilchulbong (OSM way 453467040,
+    // "Haenyeo's dining place"), NOT the museum the poi_key falls back to.
+    {
+      stopNumber: 5,
+      poiKey: 'jeju_haenyeo_museum',
+      triggerRadiusM: 120,
+      coords: { lat: 33.4628, lng: 126.9387 },
+    },
+    // 300 m so the fence reaches the ticket-gate plaza, not just the cone.
+    { stopNumber: 6, poiKey: 'seongsan_ilchulbong', triggerRadiusM: 300 },
+    { stopNumber: 7, poiKey: 'manjanggul_lava_tube', triggerRadiusM: 200 },
   ],
 };
 
@@ -69,18 +92,22 @@ async function main(): Promise<void> {
   for (const [index, spec] of specs.entries()) {
     const stop = bundle.stops.find((s) => s.number === spec.stopNumber);
     if (!stop) throw new Error(`Bundle has no stop #${spec.stopNumber}`);
-    const { data: poi } = await supabase
-      .from('match_pois')
-      .select('lat, lng')
-      .eq('poi_key', spec.poiKey)
-      .single();
-    if (!poi?.lat || !poi?.lng) throw new Error(`match_pois has no coordinates for ${spec.poiKey}`);
+    let coords = spec.coords ?? null;
+    if (!coords) {
+      const { data: poi } = await supabase
+        .from('match_pois')
+        .select('lat, lng')
+        .eq('poi_key', spec.poiKey)
+        .single();
+      if (!poi?.lat || !poi?.lng) throw new Error(`match_pois has no coordinates for ${spec.poiKey}`);
+      coords = { lat: Number(poi.lat), lng: Number(poi.lng) };
+    }
     rows.push({
       tour_id: page.tour_id,
       title: stop.name,
       description: (stop.content.en as { description?: string } | undefined)?.description ?? null,
-      latitude: Number(poi.lat),
-      longitude: Number(poi.lng),
+      latitude: coords.lat,
+      longitude: coords.lng,
       trigger_radius_m: spec.triggerRadiusM,
       sort_order: index + 1,
       poi_key: spec.poiKey,

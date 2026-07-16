@@ -15,6 +15,7 @@ import {
   Lightbulb,
   Maximize2,
   MapPin,
+  Repeat2,
   Sparkles,
   Ticket,
   X,
@@ -59,6 +60,8 @@ export type TourStopDrawerStop = {
   timeUsed?: readonly string[] | string;
   /** When set to "haenyeo", renders a live-status check button (haenyeoshow.com) in the drawer. */
   liveStatusWidget?: "haenyeo" | string;
+  /** Cancellation/weather alternate venue (e.g. show cancelled → Haenyeo Museum). */
+  alternate?: { label?: string; name: string; note?: string };
 };
 
 const drawerEase = [0.16, 1, 0.3, 1] as const;
@@ -868,6 +871,22 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
                 {/* Live status widget — currently only haenyeo show (Seongsan Ilchulbong) */}
                 {stop.liveStatusWidget === "haenyeo" && (
                   <HaenyeoStatusButton locale={locale} />
+                )}
+
+                {/* Cancellation / weather alternate venue */}
+                {stop.alternate?.name && (
+                  <div className="flex items-start gap-3 rounded-xl border border-border/60 bg-muted/40 px-4 py-3.5">
+                    <Repeat2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-muted-foreground" strokeWidth={2} />
+                    <p className="min-w-0 flex-1 text-[13px] leading-relaxed text-foreground">
+                      {stop.alternate.label && (
+                        <span className="font-medium text-muted-foreground">{stop.alternate.label}: </span>
+                      )}
+                      <span className="font-semibold">{stop.alternate.name}</span>
+                      {stop.alternate.note && (
+                        <span className="text-muted-foreground"> — {stop.alternate.note}</span>
+                      )}
+                    </p>
+                  </div>
                 )}
 
                 {/* Why on route — clamped to 3 lines for long copy, "Read more" reveals full */}

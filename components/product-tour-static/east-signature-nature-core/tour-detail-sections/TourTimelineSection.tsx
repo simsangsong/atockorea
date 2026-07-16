@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Clock, ChevronRight } from "lucide-react";
+import { Clock, ChevronRight, Repeat2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { ItineraryStop } from "@/components/product-tour-static/_shared/tourProductDetailSectionTypes";
 import type { EastSignatureNatureCoreDetailViewModel } from "../eastSignatureNatureCoreDetailViewModel";
@@ -132,6 +132,20 @@ function StopCard({
                     </span>
                   )}
                 </div>
+                {/* Cancellation / weather alternate venue — kept as a quiet strip so it
+                    informs without competing with the primary stop. */}
+                {stop.alternate?.name && (
+                  <div className="mt-2 flex items-start gap-1.5 rounded-lg bg-slate-50 px-2.5 py-2 ring-1 ring-slate-200/70">
+                    <Repeat2 className="mt-px h-3.5 w-3.5 flex-shrink-0 text-slate-400" strokeWidth={2} />
+                    <p className="text-[11px] leading-snug text-slate-500">
+                      {stop.alternate.label && (
+                        <span className="font-medium text-slate-600">{stop.alternate.label}: </span>
+                      )}
+                      <span className="font-semibold text-slate-700">{stop.alternate.name}</span>
+                      {stop.alternate.note && <span> — {stop.alternate.note}</span>}
+                    </p>
+                  </div>
+                )}
               </div>
               <ChevronRight className="h-4 w-4 mt-0.5 flex-shrink-0 text-slate-400 group-hover:text-slate-600 transition-colors" />
             </div>

@@ -60,6 +60,17 @@ export type ItineraryStopSmartNotes = {
   tip?: string;
 };
 
+/** Weather/operational fallback venue shown when the primary stop can't run
+ *  (e.g. the haenyeo show is cancelled by sea conditions → Haenyeo Museum). */
+export type ItineraryStopAlternate = {
+  /** Condition label, e.g. "If the show is cancelled". */
+  label?: string;
+  /** Alternate venue name. */
+  name: string;
+  /** One-line note on what the alternate offers. */
+  note?: string;
+};
+
 export type ItineraryStopPoiMeta = {
   poi_key?: string;
   verified?: boolean;
@@ -86,6 +97,8 @@ export type ItineraryStop = {
   visitBasics?: ItineraryStopVisitBasics;
   convenience?: ItineraryStopConvenience;
   smartNotes?: ItineraryStopSmartNotes;
+  /** Cancellation/weather alternate venue — rendered as a visible strip on the stop card. */
+  alternate?: ItineraryStopAlternate;
   /** v17 batch: per-stop POI verification metadata. Renderer ignores. */
   _poi_meta?: ItineraryStopPoiMeta;
   /**
