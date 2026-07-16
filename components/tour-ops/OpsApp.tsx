@@ -19,24 +19,27 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { toast } from 'sonner';
-import { LayoutDashboard, Map as MapIcon, RefreshCw, Settings, Siren } from 'lucide-react';
+import { Home, LayoutDashboard, Map as MapIcon, RefreshCw, Settings, Siren } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import { kstToday } from '@/lib/tour-room/time';
 import { useOpsChannels, type OpsChannelDescriptor } from '@/hooks/useOpsChannels';
 import { computeAttention } from '@/lib/tour-ops/attention';
 import { startSosAlarmVisuals, stopSosAlarmVisuals, vibrateSos } from '@/lib/tour-ops/alerts';
 import { getOpsToken, playSosSound, type OpsRoom, type SosInfo, type SosMetadata } from '@/components/tour-ops/opsShared';
+import OpsHomeTab from '@/components/tour-ops/OpsHomeTab';
 import OpsDashboardTab from '@/components/tour-ops/OpsDashboardTab';
 import OpsMapTab from '@/components/tour-ops/OpsMapTab';
 import OpsSosTab from '@/components/tour-ops/OpsSosTab';
 import OpsSettingsTab from '@/components/tour-ops/OpsSettingsTab';
 import OpsRoomDrawer from '@/components/tour-ops/OpsRoomDrawer';
+import OpsRoomManager from '@/components/tour-ops/OpsRoomManager';
+import OpsInboxView from '@/components/tour-ops/OpsInboxView';
 
 const BACKUP_POLL_MS = 20_000;
 const DRIFT_REFRESH_MS = 5 * 60_000;
 const SOUND_KEY = 'tour_ops_sound';
 
-export type OpsTab = 'dashboard' | 'map' | 'sos' | 'settings';
+export type OpsTab = 'home' | 'dashboard' | 'map' | 'sos' | 'settings';
 
 interface ChannelRow {
   room_id: string;
@@ -50,9 +53,13 @@ export default function OpsApp() {
   const [rooms, setRooms] = useState<OpsRoom[]>([]);
   const [channels, setChannels] = useState<OpsChannelDescriptor[]>([]);
   const [loading, setLoading] = useState(true);
-  const [tab, setTab] = useState<OpsTab>('dashboard');
+  const [tab, setTab] = useState<OpsTab>('home');
   const [openRoomId, setOpenRoomId] = useState<string | null>(null);
   const [soundOn, setSoundOn] = useState(true);
+  // Hub sheets (룸·링크 관리 / 메시지 모아보기) ride over every tab like the
+  // room drawer does.
+  const [managerOpen, setManagerOpen] = useState(false);
+  const [inboxOpen, setInboxOpen] = useState(false);
 
   const [loadError, setLoadError] = useState(false);
   // Monotonic request id: a stale response from the previous date (fired by a
@@ -304,6 +311,7 @@ export default function OpsApp() {
   const unreadTotal = useMemo(() => Object.values(unread).reduce((sum, n) => sum + n, 0), [unread]);
 
   const tabs: Array<{ key: OpsTab; label: string; icon: typeof LayoutDashboard; badge?: number }> = [
+    { key: 'home', label: '홈', icon: Home },
     { key: 'dashboard', label: '대시보드', icon: LayoutDashboard, badge: unreadTotal },
     { key: 'map', label: '지도', icon: MapIcon },
     { key: 'sos', label: 'SOS', icon: Siren, badge: sosCount },
@@ -355,6 +363,17 @@ export default function OpsApp() {
       </header>
 
       <main className="mx-auto w-full max-w-2xl px-3 pt-3">
+        {tab === 'home' && (
+          <OpsHomeTab
+            rooms={rooms}
+            sosRooms={sosRooms}
+            attention={attention}
+            unreadTotal={unreadTotal}
+            onNavigate={selectTab}
+            onOpenManager={() => setManagerOpen(true)}
+            onOpenInbox={() => setInboxOpen(true)}
+          />
+        )}
         {tab === 'dashboard' && (
           <OpsDashboardTab
             rooms={rooms}
@@ -380,6 +399,23 @@ export default function OpsApp() {
           />
         )}
       </main>
+
+      {managerOpen && (
+        <OpsRoomManager
+          date={date}
+          onClose={() => setManagerOpen(false)}
+          onOpenRoom={openRoom}
+          onRoomsChanged={() => void loadAll()}
+        />
+      )}
+      {inboxOpen && (
+        <OpsInboxView
+          rooms={rooms}
+          streams={streams}
+          onClose={() => setInboxOpen(false)}
+          onOpenRoom={openRoom}
+        />
+      )}
 
       {openRoomObject && (
         <OpsRoomDrawer
