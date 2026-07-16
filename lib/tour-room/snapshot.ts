@@ -9,6 +9,7 @@
  */
 
 import type { RoomBooking, RoomDbClient, TourRoom } from '@/lib/tour-room/access';
+import { resolveDaySchedule, type DayPlanRow, type ScheduleSource } from '@/lib/tour-room/dayPlan';
 import { roomLifecycle, type RoomLifecycle } from '@/lib/tour-room/time';
 
 /** Locales the room UI + translation targeting understand (D-8). */
@@ -71,6 +72,10 @@ export interface RoomSnapshot {
   /** T3.7 — pickup_time-ordered stops for the whole tour day. */
   pickup_sequence: PickupSequenceStop[];
   schedule: unknown;
+  /** W0.2 — which stage of the day-schedule resolver produced `schedule`. */
+  schedule_source: ScheduleSource;
+  /** W0.2 — the active private-mode day plan, when one owns the schedule. */
+  day_plan: DayPlanRow | null;
 }
 
 /** Participant columns safe to share with the whole room (no device_key/user_id). */
@@ -89,7 +94,7 @@ export async function buildRoomSnapshot(
       supabase
         .from('bookings')
         .select(
-          `id, booking_reference, tour_date, tour_time, number_of_guests, contact_name,
+          `id, booking_reference, tour_date, tour_time, number_of_guests, contact_name, itinerary,
            tours ( id, slug, title, city, image_url, schedule ),
            pickup_points ( id, name, address, lat, lng, pickup_time )`,
         )
@@ -130,10 +135,21 @@ export async function buildRoomSnapshot(
 
   // The snapshot is a read bundle: any individual failure degrades to an
   // empty section rather than failing the whole cold start.
-  const bookingRow = (bookingRes?.data ?? null) as RoomSnapshot['booking'] & { tours?: unknown } | null;
+  const bookingRow = (bookingRes?.data ?? null) as
+    | (RoomSnapshot['booking'] & { tours?: unknown; itinerary?: unknown })
+    | null;
   const tour = bookingRow && Array.isArray(bookingRow.tours) ? bookingRow.tours[0] : bookingRow?.tours ?? null;
 
   const messages = ((messagesRes?.data ?? []) as Array<Record<string, unknown>>).reverse();
+
+  // W0.2 — the 4-stage resolver chain (§C-4). With no day plan and no
+  // itinerary poi_keys this returns tour.schedule ?? [] exactly as before.
+  const resolvedSchedule = await resolveDaySchedule(supabase, {
+    bookingId: booking.id,
+    tourDate: booking.tour_date,
+    itinerary: bookingRow?.itinerary ?? null,
+    tourSchedule: (tour as { schedule?: unknown } | null)?.schedule,
+  });
 
   return {
     room,
@@ -159,7 +175,12 @@ export async function buildRoomSnapshot(
     pickup_sequence: buildPickupSequence(
       (pickupSeqRes?.data ?? []) as Array<{ id: string; pickup_points: unknown }>,
     ),
-    schedule: (tour as { schedule?: unknown } | null)?.schedule ?? [],
+    schedule:
+      resolvedSchedule.source === 'tour_schedule' || resolvedSchedule.source === 'none'
+        ? ((tour as { schedule?: unknown } | null)?.schedule ?? [])
+        : resolvedSchedule.schedule,
+    schedule_source: resolvedSchedule.source,
+    day_plan: resolvedSchedule.dayPlan,
   };
 }
 
