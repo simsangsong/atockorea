@@ -15,6 +15,7 @@ import {
   type ScheduleItemLike,
   type Tier0Context,
 } from '@/lib/tour-room/concierge';
+import { resolveDaySchedule } from '@/lib/tour-room/dayPlan';
 import { activeNotice } from '@/lib/tour-room/notices';
 import { roomLifecycle, type RoomLifecycle } from '@/lib/tour-room/time';
 import { retrieveKnowledge, buildRagContextText } from '@/lib/rag/retrieve';
@@ -226,7 +227,7 @@ export async function POST(
     const [{ data: bookingRow }, { data: recentMessages }] = await Promise.all([
       supabase
         .from('bookings')
-        .select('id, tour_date, tours ( title, city, schedule )')
+        .select('id, tour_date, itinerary, tours ( title, city, schedule )')
         .eq('id', booking.id)
         .maybeSingle(),
       supabase
@@ -241,7 +242,15 @@ export async function POST(
     const tour = (Array.isArray(tourRaw) ? tourRaw[0] : tourRaw) as
       | { title?: string; city?: string; schedule?: unknown }
       | null;
-    const schedule = (Array.isArray(tour?.schedule) ? tour?.schedule : []) as ScheduleItemLike[];
+    // W0.2 — schedule comes from the 4-stage resolver chain (§C-4), so Tier0
+    // "next stop" answers follow the private-mode day plan when one is live.
+    const resolvedSchedule = await resolveDaySchedule(supabase, {
+      bookingId: booking.id,
+      tourDate: booking.tour_date,
+      itinerary: (bookingRow as { itinerary?: unknown } | null)?.itinerary ?? null,
+      tourSchedule: tour?.schedule,
+    });
+    const schedule: ScheduleItemLike[] = resolvedSchedule.schedule;
     const feed = ((recentMessages ?? []) as unknown as RoomMessage[]).reverse();
 
     const nowMs = Date.now();

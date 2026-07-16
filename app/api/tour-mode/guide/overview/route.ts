@@ -57,7 +57,7 @@ export async function GET(req: NextRequest) {
     const roomByBooking = new Map((rooms ?? []).map((room) => [room.booking_id, room]));
     const roomIds = (rooms ?? []).map((room) => room.id);
 
-    const [{ data: participants }, { data: messages }] = await Promise.all([
+    const [{ data: participants }, { data: messages }, { data: dayPlans }] = await Promise.all([
       roomIds.length
         ? supabase
             .from('tour_room_participants')
@@ -72,7 +72,19 @@ export async function GET(req: NextRequest) {
             .order('created_at', { ascending: false })
             .limit(60)
         : Promise.resolve({ data: [] }),
+      // W0.2 — private-mode day plans for the day (all statuses: the guide
+      // console is where guest_draft plans get reviewed and confirmed in W1).
+      bookingIds.length
+        ? supabase
+            .from('tour_day_plans')
+            .select('id, booking_id, status, version, stops, updated_at')
+            .in('booking_id', bookingIds)
+            .eq('tour_date', tourDate)
+        : Promise.resolve({ data: [] }),
     ]);
+    const dayPlanByBooking = new Map(
+      ((dayPlans ?? []) as Array<{ booking_id: string }>).map((plan) => [plan.booking_id, plan]),
+    );
 
     const byRoom = new Map<string, Array<Record<string, unknown>>>();
     for (const message of messages ?? []) {
@@ -85,9 +97,21 @@ export async function GET(req: NextRequest) {
       const room = roomByBooking.get(booking.id) ?? null;
       const roomMessages = room ? byRoom.get(room.id) ?? [] : [];
       const pickup = Array.isArray(booking.pickup_points) ? booking.pickup_points[0] : booking.pickup_points;
+      const dayPlan = dayPlanByBooking.get(booking.id) as
+        | { id: string; status: string; version: number; stops: unknown; updated_at: string }
+        | undefined;
       return {
         booking_id: booking.id,
         room_id: room?.id ?? null,
+        day_plan: dayPlan
+          ? {
+              id: dayPlan.id,
+              status: dayPlan.status,
+              version: dayPlan.version,
+              stops_count: Array.isArray(dayPlan.stops) ? dayPlan.stops.length : 0,
+              updated_at: dayPlan.updated_at,
+            }
+          : null,
         contact_name: booking.contact_name,
         number_of_guests: booking.number_of_guests,
         preferred_language: booking.preferred_language,
