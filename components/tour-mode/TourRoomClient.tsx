@@ -35,6 +35,27 @@ import { detectEntryLocale, ENTRY_COPY } from '@/components/tour-mode/entryCopy'
 import { GUEST_CREDS_STORAGE_PREFIX } from '@/components/tour-mode/TourModeEntry';
 import { IconLost, IconRetry } from '@/components/tour-mode/icons';
 
+/**
+ * The viewer's language for a room defaults to the language the guest booked
+ * in (booking.preferred_language, resolved server-side at /join), NOT the
+ * device locale — an English booking must not render in Korean just because
+ * the phone is Korean. detectEntryLocale() is only a provisional value for the
+ * pre-join skeleton; a guest can still override it in Settings, which we
+ * persist here so their choice survives a reload / re-entry.
+ */
+const ROOM_LOCALE_VALUES = ['en', 'ko', 'ja', 'es', 'zh'] as const;
+const localeOverrideKey = (bookingId: string) => `tour_mode_locale:${bookingId}`;
+
+function readLocaleOverride(bookingId: string): RoomLocale | null {
+  if (typeof window === 'undefined') return null;
+  try {
+    const v = window.localStorage.getItem(localeOverrideKey(bookingId));
+    return (ROOM_LOCALE_VALUES as readonly string[]).includes(v ?? '') ? (v as RoomLocale) : null;
+  } catch {
+    return null;
+  }
+}
+
 /** U2.6 — bulk resend pill under the feed (per-message state is on the bubble). */
 const RETRY_COPY: Record<RoomLocale, (n: number) => string> = {
   en: (n) => `${n} failed — tap to resend`,
@@ -82,13 +103,22 @@ export default function TourRoomClient({ bookingId }: { bookingId: string }) {
   const copy = useMemo(() => ENTRY_COPY[detectEntryLocale()], []);
   const { state, join } = useTourRoomSession(bookingId);
   const attempted = useRef(false);
-  const [locale, setLocale] = useState<RoomLocale>(() => detectEntryLocale());
+  // Provisional locale for the pre-join skeleton: a saved override wins,
+  // otherwise the device locale — but once /join resolves we adopt the
+  // booking's language (below) unless the guest has explicitly overridden.
+  const [locale, setLocale] = useState<RoomLocale>(() => readLocaleOverride(bookingId) ?? detectEntryLocale());
 
   // T1.12: language switch re-joins so the participant row (and with it the
-  // room's translation targeting, D-8) follows the new locale.
+  // room's translation targeting, D-8) follows the new locale — and we persist
+  // it as an explicit override so it survives reloads and re-entry.
   const changeLocale = (next: RoomLocale) => {
     if (next === locale) return;
     setLocale(next);
+    try {
+      window.localStorage.setItem(localeOverrideKey(bookingId), next);
+    } catch {
+      /* the in-memory switch still applies for this session */
+    }
     void join({ locale: next });
   };
 
@@ -99,14 +129,24 @@ export default function TourRoomClient({ bookingId }: { bookingId: string }) {
     const url = new URL(window.location.href);
     const token = url.searchParams.get('rt');
     const guest = consumeGuestCreds(bookingId);
+    const override = readLocaleOverride(bookingId);
 
     void join({
       token: token || undefined,
       contactEmail: guest?.contactEmail,
       contactName: guest?.contactName,
-      locale,
+      // No explicit override → let the server default to booking.preferred_language
+      // instead of forcing the device locale onto an English/Japanese/etc guest.
+      locale: override ?? undefined,
     }).then((result) => {
-      if (result) scrubTokenFromUrl();
+      if (!result) return;
+      scrubTokenFromUrl();
+      if (!override) {
+        const resolved = result.participant?.locale;
+        if (resolved && (ROOM_LOCALE_VALUES as readonly string[]).includes(resolved)) {
+          setLocale(resolved as RoomLocale);
+        }
+      }
     });
   }, [bookingId, join, locale]);
 
