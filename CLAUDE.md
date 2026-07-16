@@ -5,6 +5,10 @@
 **마스터 플랜(단일 기준):** `docs/tour-room-ui-redesign-master-plan-2026-07-15.md` (§A 진단 → §C 바인딩 결정 U-D1~12 → §K WBS 8웨이브/46티켓)
 **상태:** Wave U0~U8 전체 구현 완료 + main 머지 완료(2026-07-15). 토큰 시스템·메신저 레이아웃·버블 시스템·컴포저·카드 리스킨·탭 개편 배포, 테스트 228개 green. **단, U-D2(카카오 옐로 버블)는 아래 v2에서 개정됨 — 이 문서의 색 토큰 표는 더 이상 유효하지 않고 구조 결정(레이아웃·그룹핑·꼬리·FAB 등)만 유효.**
 
+## 진행 중: 스마트 가이드 프라이빗 모드 (W0 완료)
+
+**마스터 플랜(단일 기준):** `docs/smart-guide-private-mode-master-plan-v2-2026-07-16.md` — v1 초안을 2026-07-16 코드 전수 감사로 검증·완성한 SoT. 8-프리미티브(PIN/TIMER/SIGNAL/MUTATE/LEDGER/CARD/ESCALATE/BRIDGE) 조합으로 79+1 시나리오 해결. §A 코드 리얼리티 감사(재사용✅/확장🔶/부재❌) → §B 바인딩 결정 P-D1~14(오픈퀘스천 4개 확정: POI 이원 유지·**정산=당일 가이드 현금 직불(사용자 확정 2026-07-16, LEDGER는 기록·투명성 장치, Stripe 미개입)**·드라이버=신규 scope+차량PIN·다일=tour_date 키만) → §I WBS W0~W5(MVP=W0→W3). **상태: W0 완료·main 머지(PR #323, 2026-07-16)** — ① 스키마 4테이블(tour_day_plans·tour_room_events(subject_key 부분유니크=ESCALATE idempotency)·tour_room_pins·tour_room_extras) + 역할 확장(driver·is_lead·customer push) 라이브 적용(advisors 신규 0) ② `lib/tour-room/dayPlan.ts` 4단 리졸버 → 소비처 3곳(snapshot·컨시어지 ctx·guide overview) 교체, 레거시 예약 byte-identical 회귀 게이트 통과 ③ `lib/tour-room/events.ts`(23505→inserted:false 레이스 계약). 신규 테스트 22 green. **개발 브랜치/워크트리:** `claude/smart-guide-private-w0` 계열, `C:\Users\sangsong\atockorea-private`(node_modules는 메인에서 정션 — web-push·qrcode·playwright 미설치로 해당 스위트 4개 로컬 실패는 기존 환경 이슈). **다음 = W1(/plan 3탭: course_templates 변환+시딩, 니즈 체크리스트, 픽업핀, 실행가능성 v1, draft→confirm)** → W2(가이드 라이브 콘솔) → W3(드라이버 뷰) = MVP. **주의: §O-8 수동 도착 트리거·손님 웹푸시 구독 UI·네이버/카카오 딥링크는 여전히 미구현(W2~W4 티켓), WhatsApp/LINE 미러는 안티스코프.** 잔여 사람 결정 = §L 4건(연장 단가·open_hours 정형화·poi_kb 필드 확장·파일럿 대상).
+
 ## 완료: 투어룸 AI 컨시어지 + UI/UX 엘레강스 리파인 v2 (V0~V6 전부)
 
 **마스터 플랜(단일 기준):** `docs/tour-room-concierge-uiux-v2-master-plan-2026-07-15.md` (§A 라이브 시뮬 진단 → §B 외부 전략메모 채택맵 → §C 색 개정(U-D2→U2-D1) → §D AI 컨시어지 Tier0/1/2 → §G WBS)
