@@ -8,15 +8,16 @@
  * page uses (`signInWithOtp` shouldCreateUser → `verifyOtp type:'email'`), and
  * on confirmation the DB trigger issues the WELCOME10 grant automatically.
  *
- * Visual language (v4, sky-tone pass 2026-07-12 on user request — amber
- * accents dropped): pale sky canvas (#eef6fc) + sky accents, a white TICKET
- * object (notches + perforation + vermilion 낙관 "환영" stamp) carrying the
- * oversized serif offer figure ("10%" / "9折" for zh locales), script
- * "Welcome" wordmark, sparse sparkles, friction-killer chips ("no code —
- * auto-applied", "valid 30 days"). Zero photography — the previous photo band
- * clashed with page heroes. Both breakpoints render a CENTERED dialog (mobile
- * dropped the bottom sheet on user request, 2026-07-11) — desktop two-pane
- * 560px, mobile single-column ≤330px.
+ * Visual language (v5, compact-editorial pass 2026-07-16 on user request —
+ * "high-end, ~30% of a phone screen, no startling pop"): one warm-ivory
+ * invitation card (#fbf9f4) led by typography — caps eyebrow, oversized
+ * serif italic offer figure ("10%" / "9折" for zh locales), a single
+ * headline line — with an ink CTA and ONE tiny vermilion 낙관 "환영" seal
+ * as the Korean-identity detail. The v4 ticket object, sparkles, chips and
+ * the desktop two-pane grid are gone; both breakpoints share one centered
+ * single-column card (mobile ≤312px, desktop ≤352px). Entrance/exit is the
+ * slow wc-pop-in/out pair in globals.css (650ms settle / 300ms exit) — the
+ * shared dialog's 100ms zoom read as an abrupt "tick".
  *
  * Triggers (§6.3, retuned 2026-07-12): first of 3s delay OR 10% scroll;
  * desktop adds exit-intent.
@@ -38,11 +39,11 @@
  */
 
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { ArrowRight, Check, Clock, Loader2, X } from 'lucide-react';
+import Link from 'next/link';
+import { ArrowRight, Loader2, X } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import { useSession } from '@/lib/auth-session';
 import { useI18n, useTranslations } from '@/lib/i18n';
-import { useMediaQuery } from '@/components/home/v2/use-media-query';
 import { trackEvent } from '@/src/design/analytics';
 import { isDisposableEmail } from '@/lib/coupons/disposable-domains';
 import {
@@ -53,12 +54,15 @@ import {
   WELCOME_TRIGGER_SCROLL_RATIO,
 } from '@/lib/welcome-coupon/config';
 import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
-import { WelcomeTicket, WelcomeSparkles } from './WelcomeTicket';
 
 type Step = 'email' | 'code' | 'success';
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const SERIF = "Georgia, 'Times New Roman', serif";
+/** Antique brass — the site's single premium accent (tour-detail tone). */
+const BRASS = '#9C7A3C';
+const INK = '#1c1917';
+const VERMILION = '#c2410c';
 
 /** Local calendar day — "hide today" means the visitor's today, not UTC's. */
 function localDayKey(): string {
@@ -100,8 +104,6 @@ export default function WelcomeCouponPopup() {
   const { status, session } = useSession();
   const t = useTranslations('welcomeCoupon');
   const { locale } = useI18n();
-  const isDesktop = useMediaQuery('(min-width: 640px)');
-
   const [open, setOpen] = useState(false);
   const [step, setStep] = useState<Step>('email');
   const [email, setEmail] = useState('');
@@ -185,15 +187,18 @@ export default function WelcomeCouponPopup() {
   }, [countdown]);
 
   /** Hide the floating AI-assistant FAB (z-65) while the popup is open — it
-   *  was overlapping the email field on mobile (user report, 2026-07-08). */
+   *  was overlapping the email field on mobile (user report, 2026-07-08).
+   *  Removal is delayed past the 300ms exit animation so the deepened veil
+   *  (globals.css keys off this attribute) doesn't snap thin mid-exit. */
   useEffect(() => {
     if (open) {
       document.body.setAttribute('data-welcome-popup', 'open');
-    } else {
-      document.body.removeAttribute('data-welcome-popup');
+      return;
     }
-    return () => document.body.removeAttribute('data-welcome-popup');
+    const timer = window.setTimeout(() => document.body.removeAttribute('data-welcome-popup'), 400);
+    return () => window.clearTimeout(timer);
   }, [open]);
+  useEffect(() => () => document.body.removeAttribute('data-welcome-popup'), []);
 
   /* ── open/close ────────────────────────────────────────────────────────── */
 
@@ -334,41 +339,58 @@ export default function WelcomeCouponPopup() {
       type="button"
       onClick={dismissExplicitly}
       aria-label={t('dismiss')}
-      className="absolute right-3 top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-stone-900/[0.06] text-stone-500 transition hover:bg-stone-900/[0.12] hover:text-stone-800"
+      className="absolute right-3.5 top-3.5 z-10 flex h-7 w-7 items-center justify-center rounded-full text-stone-400 transition hover:bg-stone-900/[0.05] hover:text-stone-700"
     >
-      <X className="h-4 w-4" strokeWidth={2.5} aria-hidden />
+      <X className="h-[15px] w-[15px]" strokeWidth={2} aria-hidden />
     </button>
   );
 
-  const wordmark = (size: number) => (
-    <div className="text-center">
-      <p
-        className="italic leading-none text-[#1c1917]"
-        style={{ fontFamily: SERIF, fontSize: size }}
-      >
-        Welcome
-      </p>
-      <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.32em] text-sky-700">
+  /** The one Korean-identity detail — a small 낙관 seal; lands big on success. */
+  const seal = (size: number, landed = false) => (
+    <span
+      className={`${landed ? 'wc-stamp-in' : '-rotate-6'} flex items-center justify-center rounded-full`}
+      style={{ width: size, height: size, backgroundColor: VERMILION }}
+      aria-hidden
+    >
+      <span className="font-semibold text-white" style={{ fontSize: size * 0.34, letterSpacing: '-0.02em' }}>
+        환영
+      </span>
+    </span>
+  );
+
+  // The serif figure IS the headline — the old h3 repeated "10% off" in
+  // words and cost a line; the sr-only DialogTitle keeps the a11y name.
+  const masthead = (
+    <div className="space-y-1.5 text-center">
+      <p className="text-[9px] font-semibold uppercase tracking-[0.34em]" style={{ color: BRASS }}>
         AtoC Korea
       </p>
+      <p className="flex items-baseline justify-center leading-none" style={{ color: INK }}>
+        <span className="italic" style={{ fontFamily: SERIF, fontSize: 44, letterSpacing: '-0.02em' }}>
+          {figure}
+        </span>
+        {!isZh && (
+          <span className="ml-2 text-[11px] font-semibold uppercase tracking-[0.3em]" style={{ color: BRASS }}>
+            off
+          </span>
+        )}
+      </p>
     </div>
   );
 
-  const chips = (
-    <div className="flex flex-wrap justify-center gap-2">
-      <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-[11px] text-stone-600 ring-1 ring-stone-200/80">
-        <Check className="h-3 w-3 text-sky-600" strokeWidth={2.5} aria-hidden />
-        {t('chipAutoApply')}
-      </span>
-      <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-[11px] text-stone-600 ring-1 ring-stone-200/80">
-        <Clock className="h-3 w-3 text-sky-600" strokeWidth={2.5} aria-hidden />
-        {t('chipValidity')}
-      </span>
-    </div>
+  const finePrintLine = (
+    <p className="break-keep text-center text-[9.5px] leading-relaxed text-stone-400">
+      {t('finePrint')}
+    </p>
   );
+
+  const inputClass =
+    'h-10 w-full rounded-full border border-stone-200/90 bg-white px-5 text-[13.5px] text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-[#9C7A3C]/50 focus:ring-2 focus:ring-[#9C7A3C]/25';
+  const ctaClass =
+    'group flex h-10 w-full items-center justify-center gap-1.5 rounded-full text-[13px] font-semibold tracking-wide text-white transition hover:opacity-90 disabled:opacity-60';
 
   const emailForm = (
-    <div className="space-y-2.5">
+    <div className="space-y-2">
       <input
         type="email"
         inputMode="email"
@@ -378,17 +400,17 @@ export default function WelcomeCouponPopup() {
         onKeyDown={(e) => e.key === 'Enter' && !busy && handleSendCode()}
         placeholder={t('emailPlaceholder')}
         aria-label={t('emailPlaceholder')}
-        className="h-11 w-full rounded-xl border border-stone-200 sm:h-12 bg-white px-4 text-[14px] text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-sky-500/70 focus:ring-2 focus:ring-sky-500/40"
+        className={inputClass}
       />
       {alreadyMember ? (
-        <p className="text-[12px] text-stone-500">
+        <p className="text-center text-[11px] text-stone-500">
           {t('alreadyMember')}{' '}
-          <a href="/signin" className="font-semibold text-sky-700 underline underline-offset-2">
+          <Link href="/signin" className="font-semibold underline underline-offset-2" style={{ color: BRASS }}>
             {t('signInCta')}
-          </a>
+          </Link>
         </p>
       ) : error ? (
-        <p role="alert" className="text-[12px] text-rose-600">
+        <p role="alert" className="text-center text-[11px] text-rose-600">
           {error}
         </p>
       ) : null}
@@ -396,43 +418,49 @@ export default function WelcomeCouponPopup() {
         type="button"
         onClick={handleSendCode}
         disabled={busy}
-        className="group flex h-11 w-full sm:h-12 items-center justify-center gap-2 rounded-xl bg-sky-600 text-[14px] font-bold text-white transition hover:bg-sky-500 disabled:opacity-60"
+        className={ctaClass}
+        style={{ backgroundColor: INK }}
       >
         {busy && <Loader2 className="h-4 w-4 animate-spin" aria-hidden />}
         {t('cta')}
         {!busy && (
           <ArrowRight
-            className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
-            strokeWidth={2.5}
+            className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5"
+            strokeWidth={2.25}
             aria-hidden
           />
         )}
       </button>
-      <button
-        type="button"
-        onClick={dismissExplicitly}
-        className="w-full py-1.5 text-center text-[12px] text-stone-500 underline-offset-3 transition hover:text-stone-700 hover:underline"
-      >
-        {t('dismiss')}
-      </button>
-      <label className="flex cursor-pointer select-none items-center justify-center gap-1.5 py-1.5 text-[12px] text-stone-600 transition hover:text-stone-800">
-        <input
-          type="checkbox"
-          checked={hideToday}
-          onChange={(e) => setHideToday(e.target.checked)}
-          className="h-4 w-4 accent-sky-600"
-        />
-        {t('hideToday')}
-      </label>
-      <p className="text-center text-[10px] leading-relaxed text-stone-500">{t('finePrint')}</p>
+      <div className="flex items-center justify-center gap-2.5 pt-0.5 text-[11px] text-stone-400">
+        <button
+          type="button"
+          onClick={dismissExplicitly}
+          className="underline-offset-2 transition hover:text-stone-600 hover:underline"
+        >
+          {t('dismiss')}
+        </button>
+        <span aria-hidden>·</span>
+        <label className="flex cursor-pointer select-none items-center gap-1.5 transition hover:text-stone-600">
+          <input
+            type="checkbox"
+            checked={hideToday}
+            onChange={(e) => setHideToday(e.target.checked)}
+            className="h-3.5 w-3.5 accent-stone-600"
+          />
+          {t('hideToday')}
+        </label>
+      </div>
+      {finePrintLine}
     </div>
   );
 
   const codeForm = (
-    <div className="space-y-2.5">
-      <div className="space-y-1 text-center sm:text-left">
-        <h3 className="text-[16px] font-bold text-[#1c1917]">{t('otpTitle')}</h3>
-        <p className="text-[12px] leading-relaxed text-stone-500">
+    <div className="space-y-2">
+      <div className="space-y-1 text-center">
+        <h3 className="text-[14.5px] font-semibold" style={{ color: INK }}>
+          {t('otpTitle')}
+        </h3>
+        <p className="break-all text-[11px] leading-relaxed text-stone-500">
           {t('otpSub', { email: email.trim() })}
         </p>
       </div>
@@ -446,10 +474,10 @@ export default function WelcomeCouponPopup() {
         onKeyDown={(e) => e.key === 'Enter' && !busy && handleVerify()}
         placeholder={t('codePlaceholder')}
         aria-label={t('codePlaceholder')}
-        className="h-11 w-full rounded-xl border border-stone-200 sm:h-12 bg-white px-4 text-center text-[20px] tracking-[0.4em] text-stone-900 outline-none transition placeholder:text-[13px] placeholder:tracking-normal placeholder:text-stone-400 focus:border-sky-500/70 focus:ring-2 focus:ring-sky-500/40"
+        className="h-10 w-full rounded-full border border-stone-200/90 bg-white px-4 text-center text-[19px] tracking-[0.4em] text-stone-900 outline-none transition placeholder:text-[12px] placeholder:tracking-normal placeholder:text-stone-400 focus:border-[#9C7A3C]/50 focus:ring-2 focus:ring-[#9C7A3C]/25"
       />
       {error && (
-        <p role="alert" className="text-[12px] text-rose-600">
+        <p role="alert" className="text-center text-[11px] text-rose-600">
           {error}
         </p>
       )}
@@ -457,7 +485,8 @@ export default function WelcomeCouponPopup() {
         type="button"
         onClick={handleVerify}
         disabled={busy || code.length < 6}
-        className="flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-sky-600 sm:h-12 text-[14px] font-bold text-white transition hover:bg-sky-500 disabled:opacity-60"
+        className={ctaClass}
+        style={{ backgroundColor: INK }}
       >
         {busy && <Loader2 className="h-4 w-4 animate-spin" aria-hidden />}
         {t('verifyCta')}
@@ -466,7 +495,7 @@ export default function WelcomeCouponPopup() {
         type="button"
         onClick={() => countdown === 0 && !busy && handleSendCode()}
         disabled={countdown > 0 || busy}
-        className="w-full py-0.5 text-center text-[12px] text-stone-500 underline-offset-3 transition hover:text-stone-700 hover:underline disabled:opacity-60 disabled:hover:no-underline"
+        className="w-full py-0.5 text-center text-[11px] text-stone-400 underline-offset-2 transition hover:text-stone-600 hover:underline disabled:opacity-60 disabled:hover:no-underline"
       >
         {countdown > 0 ? t('resendCountdown', { s: countdown }) : t('resendCta')}
       </button>
@@ -475,88 +504,38 @@ export default function WelcomeCouponPopup() {
 
   const successBody = (
     <div className="space-y-3 text-center">
-      <h3 className="text-[18px] font-bold text-[#1c1917]">{t('successTitle')}</h3>
-      <p className="text-[13px] leading-relaxed text-stone-500">{t('successSub')}</p>
-      <button
-        type="button"
-        onClick={() => setOpen(false)}
-        className="flex h-11 w-full items-center justify-center rounded-xl bg-sky-600 sm:h-12 text-[14px] font-bold text-white transition hover:bg-sky-500"
-      >
+      <div className="flex justify-center pt-1">{seal(52, true)}</div>
+      <div className="space-y-1">
+        <h3 className="text-[16px] font-semibold" style={{ color: INK }}>
+          {t('successTitle')}
+        </h3>
+        <p className="break-keep text-[11.5px] leading-relaxed text-stone-500">{t('successSub')}</p>
+      </div>
+      <button type="button" onClick={() => setOpen(false)} className={ctaClass} style={{ backgroundColor: INK }}>
         {t('successCta')}
       </button>
     </div>
   );
 
-  const stepBody = step === 'email' ? emailForm : step === 'code' ? codeForm : successBody;
-
-  /* ── layouts ───────────────────────────────────────────────────────────── */
-
-  if (isDesktop) {
-    return (
-      <Dialog open={open} onOpenChange={handleOpenChange}>
-        <DialogContent
-          showCloseButton={false}
-          className="z-[70] w-full max-w-[calc(100vw-2rem)] gap-0 overflow-hidden rounded-3xl border-0 bg-[#eef6fc] p-0 shadow-2xl sm:max-w-[560px]"
-          aria-describedby={undefined}
-        >
-          <DialogTitle className="sr-only">{t('headline')}</DialogTitle>
-          {closeButton}
-          <div className="grid sm:grid-cols-[264px_1fr]">
-            <div className="relative flex flex-col justify-center gap-4 border-r border-stone-900/[0.07] px-5 py-7">
-              <WelcomeSparkles className="pointer-events-none absolute left-0 top-2 w-full" />
-              {wordmark(26)}
-              <WelcomeTicket
-                figure={figure}
-                showOffSuffix={!isZh}
-                stamped={step === 'success'}
-              />
-            </div>
-            <div className="flex flex-col justify-center gap-3.5 px-6 py-7">
-              {step === 'email' && (
-                <div className="space-y-1.5">
-                  <h3 className="break-keep text-[19px] font-bold leading-snug tracking-tight text-[#1c1917]">
-                    {t('headline')}
-                  </h3>
-                  <p className="break-keep text-[13px] leading-relaxed text-stone-500">{t('sub')}</p>
-                </div>
-              )}
-              {step === 'email' && chips}
-              {stepBody}
-            </div>
-          </div>
-        </DialogContent>
-      </Dialog>
-    );
-  }
+  /* ── layout — one compact invitation card for both breakpoints ─────────── */
 
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogContent
         showCloseButton={false}
-        className="z-[70] w-full max-w-[min(330px,calc(100vw-2.5rem))] gap-0 overflow-hidden rounded-3xl border-0 bg-[#eef6fc] p-0 shadow-2xl"
+        className="wc-dialog z-[70] w-full max-w-[min(312px,calc(100vw-3rem))] gap-0 overflow-hidden rounded-[24px] border-0 bg-[#fbf9f4] p-0 ring-1 ring-stone-900/[0.05] sm:max-w-[352px]"
+        style={{ boxShadow: '0 32px 80px -24px rgba(28, 25, 23, 0.45)' }}
         aria-describedby={undefined}
       >
         <DialogTitle className="sr-only">{t('headline')}</DialogTitle>
         {closeButton}
-        <div className="relative px-5 pb-5 pt-7">
-          {/* pr-14 keeps the right-side sparkle out from under the close button */}
-          <WelcomeSparkles className="pointer-events-none absolute left-0 top-1.5 w-full pr-14" />
-          <div className="space-y-4">
-            {wordmark(24)}
-            <div className="px-1">
-              <WelcomeTicket
-                figure={figure}
-                showOffSuffix={!isZh}
-                stamped={step === 'success'}
-              />
-            </div>
-            {step === 'email' && (
-              <p className="break-keep px-1 text-center text-[12px] leading-relaxed text-stone-500">
-                {t('sub')}
-              </p>
-            )}
-            {step === 'email' && chips}
-            <div>{stepBody}</div>
+        <div className="relative px-6 pb-4 pt-5 sm:px-8 sm:pb-5 sm:pt-6">
+          {step !== 'success' && (
+            <span className="absolute left-4 top-4 opacity-90 sm:left-5 sm:top-5">{seal(26)}</span>
+          )}
+          <div className="space-y-3">
+            {step !== 'success' && masthead}
+            {step === 'email' ? emailForm : step === 'code' ? codeForm : successBody}
           </div>
         </div>
       </DialogContent>

@@ -1455,3 +1455,37 @@ body[data-welcome-popup] [data-tour-assistant-root] {
 @media (prefers-reduced-motion: reduce) {
   .wc-stamp-in { animation: none; }
 }
+
+/* Welcome popup v5 — slow, soft entrance/exit (the shared dialog's 100ms
+ * zoom read as a startling "tick"; user request 2026-07-16). The keyframes
+ * carry the -50%/-50% centering because Tailwind v3 translate utilities
+ * live on the same transform property these frames override. Unlayered CSS
+ * outranks the utility animation classes on the shared DialogContent. */
+@keyframes wc-pop-in {
+  from { opacity: 0; transform: translate(-50%, calc(-50% + 22px)) scale(0.96); }
+  to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+@keyframes wc-pop-out {
+  from { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  to { opacity: 0; transform: translate(-50%, calc(-50% + 12px)) scale(0.98); }
+}
+.wc-dialog[data-open] {
+  animation: wc-pop-in 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.wc-dialog[data-closed] {
+  animation: wc-pop-out 0.3s cubic-bezier(0.4, 0, 1, 1) both;
+}
+/* Deeper, softly blurred veil while the invitation is up (body attribute is
+ * kept through the exit animation by the popup's delayed-removal effect). */
+body[data-welcome-popup] [data-slot='dialog-overlay'] {
+  background: rgba(26, 21, 12, 0.34);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  animation-duration: 0.6s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .wc-dialog[data-open],
+  .wc-dialog[data-closed] {
+    animation-duration: 0.01s;
+  }
+}
