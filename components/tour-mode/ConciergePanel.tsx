@@ -28,6 +28,7 @@ import {
   type Tier0Context,
 } from '@/lib/tour-room/concierge';
 import { activeNotice } from '@/lib/tour-room/notices';
+import { roomLifecycle } from '@/lib/tour-room/time';
 import { IconConcierge, IconConciergeSend } from '@/components/tour-mode/icons';
 import type { RoomMessage } from '@/hooks/useTourRoomChannel';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
@@ -73,6 +74,7 @@ export default function ConciergePanel({
           ? { remainingMs: notice.remainingMs, point: notice.point }
           : null,
       nowMs,
+      lifecycle: roomLifecycle(tourDate, nowMs),
     };
   }, [messages, schedule, tourDate]);
 

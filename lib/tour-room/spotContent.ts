@@ -26,6 +26,8 @@ export interface SpotArrivalContent {
   visitBasics?: { hours?: string; closed?: string; admission?: string; walking?: string };
   convenience?: { restroom?: string; parking?: string };
   smartNotes?: { photo?: string; facilities?: string; tip?: string };
+  /** Cancellation/weather alternate venue (mirrors ItineraryStop.alternate). */
+  alternate?: { label?: string; name: string; note?: string };
 }
 
 export type SpotEventKind =
