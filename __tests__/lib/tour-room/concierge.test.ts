@@ -160,6 +160,40 @@ describe('Tier 0 answers (V2.1)', () => {
   });
 });
 
+describe('lobby lifecycle (pre-tour joins must not get wrong-day answers)', () => {
+  // 20:00 KST the evening BEFORE the tour — the clock-only comparison used to
+  // report "today's stops are done" here.
+  const EVE_8PM_KST = Date.UTC(2099, 6, 19, 11, 0);
+
+  it('next_stop in the lobby announces the first stop, not "done"', () => {
+    const answer = answerTier0('next_stop', ctx({ schedule: SCHEDULE, nowMs: EVE_8PM_KST, lifecycle: 'lobby' }), 'en');
+    expect(answer.answered).toBe(true);
+    expect(answer.text).toContain('Hotel pickup');
+    expect(answer.text).toContain('09:00');
+    expect(answer.text).not.toMatch(/done/i);
+  });
+
+  it('time_left in the lobby points at the Today tab instead of a dead timer', () => {
+    const answer = answerTier0('time_left', ctx({ schedule: SCHEDULE, nowMs: EVE_8PM_KST, lifecycle: 'lobby' }), 'ko');
+    expect(answer.answered).toBe(true);
+    expect(answer.text).toContain('오늘 일정');
+  });
+
+  it('an active guide notice still outranks the lobby fallback', () => {
+    const answer = answerTier0(
+      'time_left',
+      ctx({ lifecycle: 'lobby', freeTime: { remainingMs: 10 * 60_000, point: 'Lobby' } }),
+      'en',
+    );
+    expect(answer.text).toContain('10');
+  });
+
+  it('omitted lifecycle keeps the live behaviour (back-compat)', () => {
+    const answer = answerTier0('next_stop', ctx({ schedule: SCHEDULE }), 'en');
+    expect(answer.text).toContain('Gamcheon Culture Village');
+  });
+});
+
 describe('82-POI KB integration (V2.4 — restroom fields flow to Tier 0)', () => {
   it('a poi_kb-resolved spot answers the restroom intent in every locale', () => {
     // haeundae_beach is a stable KB key with convenience data; fall back to
@@ -240,6 +274,15 @@ describe('template locale parity (U-D copy discipline)', () => {
       const text = renderConciergeAnswer('time_left_next', locale, { minutes: 12, title: 'Lunch', time: '13:00' });
       expect(text).not.toMatch(/\{[a-z]+\}/);
       expect(text).toContain('12');
+    }
+  });
+
+  it('lobby templates fill every locale with no leftover placeholders', () => {
+    for (const locale of ROOM_LOCALES) {
+      const nextStop = renderConciergeAnswer('next_stop_lobby', locale, { title: 'Hotel pickup', time: '09:00' });
+      expect(nextStop).toContain('09:00');
+      expect(nextStop).not.toMatch(/\{[a-z]+\}/);
+      expect(renderConciergeAnswer('time_lobby', locale)).toBeTruthy();
     }
   });
 });

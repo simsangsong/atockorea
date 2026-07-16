@@ -25,6 +25,7 @@
 
 import { ROOM_LOCALES, type RoomLocale } from '@/lib/tour-room/snapshot';
 import type { SpotArrivalContent } from '@/lib/tour-room/spotContent';
+import type { RoomLifecycle } from '@/lib/tour-room/time';
 
 // ---------------------------------------------------------------------------
 // Intents & guardrails
@@ -205,6 +206,8 @@ type AnswerKind =
   | 'photo_info'
   | 'photo_none'
   | 'next_stop_info'
+  | 'next_stop_lobby'
+  | 'time_lobby'
   | 'schedule_done'
   | 'schedule_none'
   | 'time_left_free'
@@ -252,6 +255,20 @@ const ANSWERS: Record<AnswerKind, Record<RoomLocale, string>> = {
     ja: '次の予定: {title} ({time})',
     es: 'Siguiente: {title} ({time})',
     zh: '下一站：{title}（{time}）',
+  },
+  next_stop_lobby: {
+    en: 'The tour hasn’t started yet — first stop: {title} ({time}). Pickup details are on the Today tab.',
+    ko: '아직 투어 시작 전이에요 — 첫 일정: {title} ({time}). 픽업 정보는 "오늘 일정" 탭에서 확인하세요.',
+    ja: 'ツアーはまだ始まっていません — 最初の予定: {title}（{time}）。集合情報は「本日」タブでご確認ください。',
+    es: 'El tour aún no ha comenzado — primera parada: {title} ({time}). Los detalles de recogida están en la pestaña Hoy.',
+    zh: '行程尚未开始 — 第一站：{title}（{time}）。接送信息请查看"今日"标签。',
+  },
+  time_lobby: {
+    en: '⏳ It isn’t the tour day yet — no timer is running. Pickup time and place are on the Today tab.',
+    ko: '⏳ 아직 투어 당일이 아니에요 — 진행 중인 타이머가 없어요. 픽업 시간·장소는 "오늘 일정" 탭에 있어요.',
+    ja: '⏳ まだツアー当日ではありません — 進行中のタイマーはありません。集合時間・場所は「本日」タブにあります。',
+    es: '⏳ Aún no es el día del tour — no hay temporizador activo. La hora y el punto de recogida están en la pestaña Hoy.',
+    zh: '⏳ 还没到行程当天 — 当前没有倒计时。集合时间和地点请查看"今日"标签。',
   },
   schedule_done: {
     en: 'Today’s scheduled stops are done — enjoy the rest of the day!',
@@ -395,6 +412,13 @@ export interface Tier0Context {
    */
   freeTime: { remainingMs: number; point: string | null } | null;
   nowMs: number;
+  /**
+   * Room lifecycle (lib/tour-room/time.ts roomLifecycle). Before the tour day
+   * ('lobby') the clock-only schedule comparison lies — e.g. joining the
+   * evening before at 20:00 would report "today's stops are done". Omitted =
+   * 'live' (legacy callers/tests).
+   */
+  lifecycle?: RoomLifecycle;
 }
 
 export interface Tier0Answer {
@@ -461,6 +485,16 @@ export function answerTier0(intent: ConciergeIntent, ctx: Tier0Context, locale: 
       if (ctx.schedule.length === 0) {
         return { text: renderConciergeAnswer('schedule_none', locale), answered: false };
       }
+      if ((ctx.lifecycle ?? 'live') === 'lobby') {
+        const first = ctx.schedule[0];
+        return {
+          text: renderConciergeAnswer('next_stop_lobby', locale, {
+            title: scheduleTitle(first),
+            time: String(first.time ?? '').slice(0, 5),
+          }),
+          answered: true,
+        };
+      }
       const next = nextScheduleItem(ctx.schedule, ctx.nowMs);
       if (!next) {
         return { text: renderConciergeAnswer('schedule_done', locale), answered: true };
@@ -475,6 +509,9 @@ export function answerTier0(intent: ConciergeIntent, ctx: Tier0Context, locale: 
         const minutes = Math.max(0, Math.round(ctx.freeTime.remainingMs / 60_000));
         const point = ctx.freeTime.point ? ` · ${ctx.freeTime.point}` : '';
         return { text: renderConciergeAnswer('time_left_free', locale, { minutes, point }), answered: true };
+      }
+      if ((ctx.lifecycle ?? 'live') === 'lobby') {
+        return { text: renderConciergeAnswer('time_lobby', locale), answered: true };
       }
       const next = nextScheduleItem(ctx.schedule, ctx.nowMs);
       if (next) {
