@@ -9,6 +9,7 @@
  */
 
 import type { RoomBooking, RoomDbClient, TourRoom } from '@/lib/tour-room/access';
+import { mergeTranslationTargets } from '@/lib/tour-room/chatLocale';
 import { resolveDaySchedule, type DayPlanRow, type ScheduleSource } from '@/lib/tour-room/dayPlan';
 import { roomLifecycle, type RoomLifecycle } from '@/lib/tour-room/time';
 
@@ -45,6 +46,29 @@ export async function getParticipantLocales(
       .map((row) => normalizeRoomLocale(row.locale))
       .filter(Boolean);
     return [...new Set(locales)];
+  } catch {
+    return [];
+  }
+}
+
+/**
+ * Language-agnostic chat targets (2026-07-18): the folded room locales PLUS
+ * every raw detected chat_locale in the room, so a driver's Korean reply
+ * fans out as a bubble in whatever language each guest actually writes.
+ * Empty on failure/pre-join — callers keep their defaults.
+ */
+export async function getRoomTranslationTargets(
+  supabase: RoomDbClient,
+  roomId: string,
+): Promise<string[]> {
+  try {
+    const { data } = await supabase
+      .from('tour_room_participants')
+      .select('locale, chat_locale')
+      .eq('room_id', roomId);
+    const rows = (data ?? []) as Array<{ locale?: string | null; chat_locale?: string | null }>;
+    const roomLocales = [...new Set(rows.map((row) => normalizeRoomLocale(row.locale)).filter(Boolean))];
+    return mergeTranslationTargets(roomLocales, rows.map((row) => row.chat_locale));
   } catch {
     return [];
   }

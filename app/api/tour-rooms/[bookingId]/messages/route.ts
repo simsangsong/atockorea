@@ -3,7 +3,8 @@ import { createServerClient } from '@/lib/supabase';
 import { transcribeAudioFile, translateTextForLocales, type TranslationResult } from '@/lib/openai-server';
 import { ensureRoom, resolveRoomActor, type RoomActor, type RoomBooking } from '@/lib/tour-room/access';
 import { broadcastToRoom } from '@/lib/tour-room/realtime';
-import { getParticipantLocales } from '@/lib/tour-room/snapshot';
+import { getRoomTranslationTargets } from '@/lib/tour-room/snapshot';
+import { normalizeChatLocale } from '@/lib/tour-room/chatLocale';
 import { getQuickReplyPreset } from '@/lib/tour-room/quickReplies';
 import { renderSpotEventTranslations } from '@/lib/tour-room/spotContent';
 import { pregenerateGuideNoticeTts, type TtsStorageClient } from '@/lib/tour-room/tts-server';
@@ -127,10 +128,12 @@ export async function POST(
     const senderRole = senderRoleFor(actor);
     const room = await ensureRoom(supabase, booking as RoomBooking);
 
-    // D-8 (T1.3): default translation targets are the locales actually present
-    // in the room; explicit client targetLocales and the legacy defaults
-    // (guide → customer's preferred language, else all 5) remain the fallback.
-    const participantLocales = await getParticipantLocales(supabase, room.id);
+    // D-8 (T1.3) + language-agnostic bridge (2026-07-18): default translation
+    // targets are the room's folded locales PLUS every raw chat language a
+    // guest has written in — a driver's Korean reply comes back as a bubble
+    // in whatever language the guest actually typed. Explicit client
+    // targetLocales and the legacy defaults remain the fallback.
+    const participantLocales = await getRoomTranslationTargets(supabase, room.id);
     const targetLocales = parseLocales(
       targetLocalesRaw,
       participantLocales.length > 0 ? participantLocales : defaultTargetLocalesFor(senderRole, booking),
@@ -216,6 +219,21 @@ export async function POST(
     // D-1/§O-7: push the committed row to the room channel; best-effort by
     // design — clients recover any gap via the after-cursor resync.
     await broadcastToRoom(room, 'message', { message });
+
+    // Language-agnostic bridge: remember what language this guest actually
+    // writes in (detected by the translation router), so the NEXT fan-out —
+    // e.g. the driver's Korean voice reply — targets it too. Plain chat only:
+    // presets/acks carry fixed-locale text and say nothing about the guest.
+    if (senderRole === 'customer' && actor.kind === 'session' && !preset && !ackKind) {
+      const detected = normalizeChatLocale(translation.source_locale);
+      if (detected) {
+        void supabase
+          .from('tour_room_participants')
+          .update({ chat_locale: detected, updated_at: new Date().toISOString() })
+          .eq('id', actor.sessionPayload.participantId)
+          .then(() => undefined, () => undefined);
+      }
+    }
 
     // §O-2 (T2.9): pre-generate TTS for participants whose devices reported
     // tts_capable=false, so their first listen has no generation latency.

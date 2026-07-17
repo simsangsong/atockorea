@@ -70,6 +70,7 @@ const RETRY_COPY: Record<RoomLocale, (n: number) => string> = {
 };
 import SettingsTab from '@/components/tour-mode/SettingsTab';
 import { useTourRoomSession, getOrCreateDeviceKey, type TourRoomJoinResult } from '@/hooks/useTourRoomSession';
+import { deriveChatLocale } from '@/lib/tour-room/chatLocale';
 import { useTourRoomChannel, type RoomMessage } from '@/hooks/useTourRoomChannel';
 import { useTourRoomSettings } from '@/hooks/useTourRoomSettings';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
@@ -271,6 +272,14 @@ function TourRoomLive({
   const viewerRole = data.participant.role;
   const readOnly = data.lifecycle === 'ended';
   const schedule = Array.isArray(snapshot.schedule) ? snapshot.schedule : [];
+
+  // Language-agnostic bridge: the language this party actually chats in —
+  // derived from the newest plain customer message (server-detected), seeded
+  // by the participant row. Drives bubble display preference for customers.
+  const chatLocale = useMemo(
+    () => deriveChatLocale(messages, (data.participant as { chat_locale?: unknown } | undefined)?.chat_locale),
+    [messages, data.participant],
+  );
   const myPickup = firstPickup(snapshot.booking?.pickup_points);
   const guideLocation = Object.values(locations).find((l) => l.role === 'guide') ?? null;
   // T3.7 — pickup-morning board (customers only; hides itself off-morning).
@@ -588,6 +597,7 @@ function TourRoomLive({
             textScale={settings.textScale}
             tts={{ bookingId, roomSession: data.session }}
             opsHighlightAfter={viewerRole === 'customer' ? sosSentAt : null}
+            preferredLocale={viewerRole === 'customer' ? chatLocale : null}
             onExtraConfirm={
               viewerRole === 'customer' && !readOnly
                 ? async (extraId) => {
