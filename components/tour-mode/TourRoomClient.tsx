@@ -24,6 +24,7 @@ import EndedCard from '@/components/tour-mode/EndedCard';
 import TravelTimelineEntry from '@/components/tour-mode/TravelTimeline';
 import GuideCaptionBar from '@/components/tour-mode/GuideCaptionBar';
 import NoticeBanner from '@/components/tour-mode/NoticeBanner';
+import QuickSignalBar from '@/components/tour-mode/QuickSignalBar';
 import LobbyCard, { firstPickup } from '@/components/tour-mode/LobbyCard';
 import PickupBoard from '@/components/tour-mode/PickupBoard';
 import RoomMapTab from '@/components/tour-mode/map/RoomMapTab';
@@ -556,6 +557,22 @@ function TourRoomLive({
             textScale={settings.textScale}
             tts={{ bookingId, roomSession: data.session }}
             opsHighlightAfter={viewerRole === 'customer' ? sosSentAt : null}
+            onExtraConfirm={
+              viewerRole === 'customer' && !readOnly
+                ? async (extraId) => {
+                    try {
+                      const res = await fetch(`/api/tour-rooms/${encodeURIComponent(bookingId)}/extras`, {
+                        method: 'PATCH',
+                        headers: { 'Content-Type': 'application/json', 'x-tour-room-auth': data.session },
+                        body: JSON.stringify({ extraId, action: 'confirm' }),
+                      });
+                      return res.ok;
+                    } catch {
+                      return false;
+                    }
+                  }
+                : undefined
+            }
           />
           {/* W5.1 — pin-to-home-screen nudge, D-1 through tour day, once per booking. */}
           {viewerRole === 'customer' && !readOnly && (
@@ -571,6 +588,9 @@ function TourRoomLive({
               <IconRetry size={14} aria-hidden />
               {RETRY_COPY[locale](failedCount)}
             </button>
+          )}
+          {viewerRole === 'customer' && !readOnly && data.lifecycle === 'live' && (
+            <QuickSignalBar bookingId={bookingId} roomSession={data.session} locale={locale} />
           )}
           {!readOnly && (
             <Composer

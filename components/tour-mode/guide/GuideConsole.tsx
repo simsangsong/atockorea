@@ -14,6 +14,7 @@
  */
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import GuideLedgerPanel from '@/components/tour-mode/guide/GuideLedgerPanel';
 import GuidePlanPanel from '@/components/tour-mode/guide/GuidePlanPanel';
 import { kstToday } from '@/lib/tour-room/time';
 
@@ -74,6 +75,7 @@ export default function GuideConsole() {
   const [freePoint, setFreePoint] = useState('');
   const [busy, setBusy] = useState<string | null>(null);
   const [openPlanBookingId, setOpenPlanBookingId] = useState<string | null>(null);
+  const [openLedgerBookingId, setOpenLedgerBookingId] = useState<string | null>(null);
   const tokenRef = useRef<string | null>(null);
 
   useEffect(() => {
@@ -336,6 +338,16 @@ export default function GuideConsole() {
               >
                 일정{openPlanBookingId === room.booking_id ? ' ▴' : ' ▾'}
               </button>
+              <button
+                type="button"
+                onClick={() =>
+                  setOpenLedgerBookingId((prev) => (prev === room.booking_id ? null : room.booking_id))
+                }
+                className="shrink-0 rounded-xl bg-gray-100 px-2.5 py-2 text-[12px] font-semibold text-gray-600"
+                data-testid="ledger-toggle"
+              >
+                정산{openLedgerBookingId === room.booking_id ? ' ▴' : ' ▾'}
+              </button>
             </div>
             {openPlanBookingId === room.booking_id && tokenRef.current && (
               <GuidePlanPanel
@@ -343,6 +355,9 @@ export default function GuideConsole() {
                 token={tokenRef.current}
                 onChanged={() => void load()}
               />
+            )}
+            {openLedgerBookingId === room.booking_id && tokenRef.current && (
+              <GuideLedgerPanel bookingId={room.booking_id} token={tokenRef.current} />
             )}
           </div>
         ))}

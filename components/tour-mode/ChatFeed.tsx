@@ -20,6 +20,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import AudioButton from '@/components/tour-mode/AudioButton';
 import Avatar from '@/components/tour-mode/Avatar';
+import ExtraLedgerCard, { type ExtraLedgerMeta } from '@/components/tour-mode/ExtraLedgerCard';
 import SpotArrivalCard from '@/components/tour-mode/SpotArrivalCard';
 import {
   IconOpsBadge,
@@ -84,6 +85,7 @@ export default function ChatFeed({
   textScale = 'normal',
   tts,
   opsHighlightAfter = null,
+  onExtraConfirm,
 }: {
   messages: RoomMessage[];
   viewerLocale: RoomLocale;
@@ -96,6 +98,8 @@ export default function ChatFeed({
   /** W4.3 — after an SOS, admin replies newer than this ISO time get the
    *  "ops responded" highlight so the traveller spots them instantly. */
   opsHighlightAfter?: string | null;
+  /** W2.4 — customer one-tap confirm on a logged extras capsule (LEDGER). */
+  onExtraConfirm?: (extraId: string) => Promise<boolean>;
 }) {
   const bubbleText = textScale === 'large' ? 'tr-body-lg' : 'tr-body';
   const systemText = textScale === 'large' ? 'tr-card-text' : 'tr-label';
@@ -145,6 +149,17 @@ export default function ChatFeed({
   const hiddenCount = messages.length - visible.length;
   const items: FeedItem[] = useMemo(() => buildFeedItems(visible, viewerRole), [visible, viewerRole]);
   const todayKey = kstToday();
+
+  // W2.4 — every LEDGER transition drops a fresh capsule; only the newest
+  // capsule per extra carries the live state (and the confirm button).
+  const latestExtraCapsule = useMemo(() => {
+    const map = new Map<string, string>();
+    for (const m of messages) {
+      const meta = m.metadata as { kind?: string; extra_id?: string } | null;
+      if (meta?.kind === 'extra_ledger' && typeof meta.extra_id === 'string') map.set(meta.extra_id, m.id);
+    }
+    return map;
+  }, [messages]);
 
   const onScroll = useCallback(() => {
     const el = feedRef.current;
@@ -230,6 +245,20 @@ export default function ChatFeed({
               : undefined;
 
           const body = (() => {
+            if (message.metadata?.kind === 'extra_ledger') {
+              const meta = message.metadata as ExtraLedgerMeta;
+              const newest = meta.extra_id ? latestExtraCapsule.get(meta.extra_id) === message.id : false;
+              return (
+                <div className={animClass}>
+                  <ExtraLedgerCard
+                    meta={meta}
+                    locale={viewerLocale}
+                    canConfirm={Boolean(newest && meta.status === 'logged' && viewerRole === 'customer' && onExtraConfirm)}
+                    onConfirm={onExtraConfirm}
+                  />
+                </div>
+              );
+            }
             if (arrivalContent && Object.keys(arrivalContent).length > 0) {
               return (
                 <div className={`mt-2 ${animClass}`}>
