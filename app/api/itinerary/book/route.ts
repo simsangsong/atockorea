@@ -347,6 +347,58 @@ export async function POST(request: Request) {
 
   const bookingId = inserted.id as string;
 
+  // Admin alert — "예약 들어오면 무조건" (2026-07-18): builder bookings alert
+  // on creation too. Fire-and-forget; the payment-stage alerts follow from
+  // the Stripe webhook as before.
+  void (async () => {
+    try {
+      const { sendAdminBookingAlert } = await import('@/lib/email-templates/admin-booking-alert');
+      await sendAdminBookingAlert({
+        stage: 'created',
+        bookingId,
+        tourTitle: `커스텀 ${String(region).toUpperCase()} 일정 (빌더)`,
+        tourDate: requestedDate,
+        numberOfGuests: partySize,
+        totalPrice:
+          typeof insertRow.final_price === 'number'
+            ? insertRow.final_price
+            : typeof (row as { final_price?: unknown }).final_price === 'number'
+              ? ((row as { final_price: number }).final_price)
+              : null,
+        currency: 'KRW',
+        customerName: contactName,
+        customerEmail: contactEmail,
+        customerPhone: contactPhone,
+        preferredLanguage: locale,
+        source: 'itinerary-builder',
+      });
+    } catch (alertError) {
+      console.error('Admin new-booking alert (builder) failed:', alertError);
+    }
+    try {
+      const { notifyTelegramBookingConfirmed } = await import('@/lib/booking-telegram');
+      await notifyTelegramBookingConfirmed(supabase, {
+        bookingId,
+        tourTitle: `Custom ${String(region)} itinerary (builder)`,
+        bookingDate: requestedDate,
+        numberOfGuests: partySize,
+        totalPrice:
+          typeof insertRow.final_price === 'number'
+            ? insertRow.final_price
+            : typeof (row as { final_price?: unknown }).final_price === 'number'
+              ? ((row as { final_price: number }).final_price)
+              : 0,
+        paymentMethod: 'stripe',
+        paymentStatus: 'pending',
+        customerName: contactName,
+        customerEmail: contactEmail,
+        customerPhone: contactPhone,
+      });
+    } catch (telegramError) {
+      console.error('Telegram new-booking alert (builder) failed:', telegramError);
+    }
+  })();
+
   // Bind the claimed coupon to the booking (redemption ledger row). If the
   // ledger write fails, strip the discount so money state stays consistent.
   if (couponClaim && authUser) {

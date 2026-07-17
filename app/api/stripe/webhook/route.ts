@@ -711,12 +711,26 @@ async function notifyBookingAdminChannels(
   },
 ) {
   try {
-    const { sendBookingAdminNotificationEmail } = await import('@/lib/email');
-    const adminEmailResult = await sendBookingAdminNotificationEmail(payload);
-    if (!adminEmailResult.success) {
-      console.error('Admin booking notification email failed:', adminEmailResult.error);
-    } else {
-      console.log(`Admin booking notification email sent: ${adminEmailResult.messageId}`);
+    // 2026-07-18 — premium stage-aware alert template (admin-booking-alert):
+    // authorized = card hold landed, paid = captured. Creation-stage alerts
+    // fire from the booking-create routes themselves.
+    const { sendAdminBookingAlert } = await import('@/lib/email-templates/admin-booking-alert');
+    const result = await sendAdminBookingAlert({
+      stage: payload.paymentStatus === 'paid' ? 'paid' : 'authorized',
+      bookingId: payload.bookingId,
+      bookingReference: payload.bookingReference,
+      tourTitle: payload.tourTitle,
+      bookingDate: payload.bookingDate,
+      numberOfGuests: payload.numberOfGuests,
+      totalPrice: payload.totalPrice,
+      currency: 'KRW',
+      pickupPoint: payload.pickupPoint,
+      customerName: payload.customerName,
+      customerEmail: payload.customerEmail,
+      customerPhone: payload.customerPhone,
+    });
+    if (result.sent === 0) {
+      console.error('Admin booking alert: no recipients delivered');
     }
   } catch (error) {
     console.error('Admin booking notification email failed:', error);

@@ -500,6 +500,50 @@ export async function POST(req: NextRequest) {
     // Confirmation email: only sent from the Stripe webhook/payment confirmation flow.
     // Do not send here on booking create — 결제 완료 시에만 확인 메일 발송.
 
+    // Admin alert — "예약 들어오면 무조건" (2026-07-18): fires on CREATION so
+    // pending/abandoned checkouts surface as leads too (payment-stage alerts
+    // still follow from the Stripe webhook). Fire-and-forget on both rails.
+    void (async () => {
+      try {
+        const { sendAdminBookingAlert } = await import('@/lib/email-templates/admin-booking-alert');
+        await sendAdminBookingAlert({
+          stage: 'created',
+          bookingId: booking.id,
+          bookingReference: (booking as { booking_reference?: string | null }).booking_reference ?? null,
+          tourTitle: tour.title ?? 'Booking',
+          tourDate: (booking as { tour_date?: string | null }).tour_date ?? null,
+          bookingDate: (booking as { booking_date?: string | null }).booking_date ?? null,
+          numberOfGuests: booking.number_of_guests ?? null,
+          totalPrice: booking.final_price != null ? parseFloat(String(booking.final_price)) : null,
+          currency: (booking as { price_currency?: string | null }).price_currency ?? 'KRW',
+          customerName: (booking as { contact_name?: string | null }).contact_name ?? null,
+          customerEmail: (booking as { contact_email?: string | null }).contact_email ?? null,
+          customerPhone: (booking as { contact_phone?: string | null }).contact_phone ?? null,
+          preferredLanguage: (booking as { preferred_language?: string | null }).preferred_language ?? null,
+        });
+      } catch (alertError) {
+        console.error('Admin new-booking alert failed:', alertError);
+      }
+      try {
+        const { notifyTelegramBookingConfirmed } = await import('@/lib/booking-telegram');
+        await notifyTelegramBookingConfirmed(supabase, {
+          bookingId: booking.id,
+          bookingReference: (booking as { booking_reference?: string | null }).booking_reference ?? null,
+          tourTitle: tour.title ?? 'Booking',
+          bookingDate: (booking as { booking_date?: string }).booking_date ?? '',
+          numberOfGuests: booking.number_of_guests ?? 1,
+          totalPrice: booking.final_price != null ? parseFloat(String(booking.final_price)) : 0,
+          paymentMethod: 'stripe',
+          paymentStatus: 'pending',
+          customerName: (booking as { contact_name?: string | null }).contact_name ?? null,
+          customerEmail: (booking as { contact_email?: string | null }).contact_email ?? null,
+          customerPhone: (booking as { contact_phone?: string | null }).contact_phone ?? null,
+        });
+      } catch (telegramError) {
+        console.error('Telegram new-booking alert failed:', telegramError);
+      }
+    })();
+
     // Create notification for booking creation. Tour title is reused from the
     // opening fetch — no re-query.
     if (userId) {
