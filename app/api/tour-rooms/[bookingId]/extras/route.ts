@@ -7,12 +7,14 @@ import {
   EXTRA_ACTIONS,
   EXTRA_KINDS,
   renderExtraCapsule,
+  renderSettlementSummary,
   type ExtraAction,
   type ExtraKind,
   type ExtraStatus,
 } from '@/lib/tour-room/ledger';
 import { recordRoomEvent } from '@/lib/tour-room/events';
 import { broadcastToRoom } from '@/lib/tour-room/realtime';
+import { inPostTourWindow, roomLifecycle } from '@/lib/tour-room/time';
 
 export const dynamic = 'force-dynamic';
 
@@ -120,6 +122,7 @@ export async function POST(
       kind?: unknown;
     };
 
+    const summary = (body as { summary?: unknown }).summary === true;
     const item = typeof body.item === 'string' ? body.item.trim().slice(0, 120) : '';
     const amountRaw = typeof body.amount_krw === 'string' ? Number(body.amount_krw) : body.amount_krw;
     const amount =
@@ -129,7 +132,7 @@ export async function POST(
     const kind = (EXTRA_KINDS as readonly string[]).includes(body.kind as string)
       ? (body.kind as ExtraKind)
       : 'other';
-    if (!item || !Number.isFinite(amount) || amount <= 0 || amount > 10_000_000) {
+    if (!summary && (!item || !Number.isFinite(amount) || amount <= 0 || amount > 10_000_000)) {
       return NextResponse.json(
         { error: 'item and amount_krw (1..10,000,000) are required' },
         { status: 400 },
@@ -156,6 +159,48 @@ export async function POST(
     }
 
     const room = await ensureRoom(supabase, booking);
+
+    // G4 — the end-of-day settlement summary capsule (+ G7 ATM hint).
+    if (summary) {
+      const { data: rows } = await supabase
+        .from('tour_room_extras')
+        .select('id, item, amount_krw, status')
+        .eq('room_id', room.id)
+        .order('created_at', { ascending: true });
+      const active = ((rows ?? []) as Array<{ item: string; amount_krw: number; status: string }>).filter(
+        (row) => row.status !== 'voided',
+      );
+      if (active.length === 0) {
+        return NextResponse.json({ error: 'No expenses to summarize' }, { status: 400 });
+      }
+      const total = active.reduce((sum, row) => sum + row.amount_krw, 0);
+      const bundle = renderSettlementSummary(active, total);
+      const { data: message } = await supabase
+        .from('tour_room_messages')
+        .insert({
+          room_id: room.id,
+          booking_id: booking.id,
+          sender_role: 'system',
+          input_kind: 'text',
+          source_text: bundle.source_text,
+          source_locale: bundle.source_locale,
+          translations: bundle.translations,
+          target_locales: Object.keys(bundle.translations),
+          metadata: { kind: 'settlement_summary', total_krw: total, count: active.length },
+        })
+        .select()
+        .single();
+      if (message) await broadcastToRoom(room, 'message', { message });
+      await recordRoomEvent(supabase, {
+        roomId: room.id,
+        bookingId: booking.id,
+        type: 'settlement_summary',
+        actorRole: actor.role,
+        payload: { total_krw: total, count: active.length },
+      }).catch(() => undefined);
+      return NextResponse.json({ message, total_krw: total }, { status: 201 });
+    }
+
     const { data: extra, error: extraError } = await supabase
       .from('tour_room_extras')
       .insert({
@@ -210,6 +255,12 @@ export async function PATCH(
       return NextResponse.json({ error: resolved.error }, { status: resolved.status });
     }
     const { booking, actor } = resolved;
+
+    // P-D12 — settlement transitions stay possible through the post_tour
+    // window (tour-day end +48h), then the ledger freezes.
+    if (roomLifecycle(booking.tour_date) === 'ended' && !inPostTourWindow(booking.tour_date)) {
+      return NextResponse.json({ error: 'post_tour_window_closed' }, { status: 403 });
+    }
 
     const gate = await requestGate({
       namespace: 'tour_room_extras',

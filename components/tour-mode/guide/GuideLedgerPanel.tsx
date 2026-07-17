@@ -208,6 +208,25 @@ export default function GuideLedgerPanel({
         </button>
       </form>
 
+      {extras !== null && extras.some((e) => e.status !== 'voided') && (
+        <button
+          type="button"
+          disabled={busy !== null}
+          onClick={() => {
+            setBusy('summary');
+            void api({ method: 'POST' }, { summary: true })
+              .then((res) => {
+                if (!res.ok) setError('요약 발송에 실패했어요.');
+              })
+              .finally(() => setBusy(null));
+          }}
+          className="mt-2 w-full rounded-xl bg-amber-100 py-2 text-[13px] font-semibold text-amber-800 disabled:opacity-50"
+          data-testid="settlement-summary"
+        >
+          {busy === 'summary' ? '발송 중…' : '🧾 정산 요약 발송 (손님 채팅으로)'}
+        </button>
+      )}
+
       {error && <p className="mt-2 rounded-xl bg-red-50 px-3 py-2 text-[12px] text-red-600">{error}</p>}
     </div>
   );

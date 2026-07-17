@@ -57,6 +57,27 @@ export function renderExtraCapsule(status: ExtraStatus, item: string, amountKrw:
   return { source_locale: 'en', source_text: translations.en, translations };
 }
 
+/**
+ * G4/G7 — the end-of-day settlement summary capsule: item lines + total +
+ * "cash to your guide" + the global-card ATM hint (convenience-store ATMs
+ * accept foreign cards). Fired by the guide from the ledger panel.
+ */
+export function renderSettlementSummary(
+  rows: Array<{ item: string; amount_krw: number }>,
+  totalKrw: number,
+): Bundle {
+  const lines = rows.slice(0, 6).map((r) => `${r.item} ${formatKrw(r.amount_krw)}`).join(' · ');
+  const total = formatKrw(totalKrw);
+  const translations = {
+    en: `🧾 Today's expenses: ${lines} — total ${total}. Please settle in cash with your guide. Need cash? Convenience-store ATMs (GS25/CU) take global cards.`,
+    ko: `🧾 오늘의 지출: ${lines} — 합계 ${total}. 가이드에게 현금으로 정산해 주세요. 현금이 필요하면 편의점 ATM(GS25/CU)에서 해외 카드 출금이 가능해요.`,
+    ja: `🧾 本日の支出: ${lines} — 合計 ${total}。ガイドへ現金でご精算ください。現金が必要な場合はコンビニATM(GS25/CU)で海外カードが使えます。`,
+    es: `🧾 Gastos de hoy: ${lines} — total ${total}. Liquida en efectivo con tu guía. ¿Necesitas efectivo? Los cajeros de tiendas (GS25/CU) aceptan tarjetas internacionales.`,
+    zh: `🧾 今日支出:${lines} — 合计 ${total}。请与导游现金结算。需要现金?便利店ATM(GS25/CU)支持国际卡取现。`,
+  };
+  return { source_locale: 'en', source_text: translations.en, translations };
+}
+
 /** Which transition may which role perform? (G1/G2 flow, §C-3 extra machine) */
 export function allowedExtraTransition(
   action: ExtraAction,

@@ -186,6 +186,7 @@ export async function dispatchRoomInvites(
     });
     const locale = normalizeRoomLocale(booking.preferred_language) as InviteLocale;
     const roomUrl = `${base}/tour-mode/room/${booking.id}?rt=${encodeURIComponent(token)}`;
+    const planUrl = `${base}/tour-mode/plan/${booking.id}?rt=${encodeURIComponent(token)}`;
     const mail = buildCustomerRoomInviteHtml({
       locale,
       customerName: booking.contact_name || 'Traveller',
@@ -195,6 +196,7 @@ export async function dispatchRoomInvites(
       pickupName,
       pickupTime,
       roomUrl,
+      planUrl,
     });
     const sent = await sendEmail({ to: booking.contact_email, subject: mail.subject, html: mail.html });
     customer.sent = sent.success;

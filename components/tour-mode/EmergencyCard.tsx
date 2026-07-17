@@ -50,6 +50,21 @@ export default function EmergencyCard({
                   {contact.note && <span className="tr-meta block text-[var(--tr-ink-2)]">{contact.note[locale]}</span>}
                 </span>
               </a>
+            ) : contact.href ? (
+              <a
+                href={contact.href}
+                target="_blank"
+                rel="noreferrer"
+                className="flex min-h-[44px] items-center gap-3 rounded-xl px-1 py-2 active:bg-[var(--tr-bubble-system)]"
+              >
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[var(--tr-bubble-system)] text-[var(--tr-ink-2)]">
+                  <IconEmergency size={16} aria-hidden />
+                </span>
+                <span className="min-w-0">
+                  <span className="tr-card-text block font-medium text-[var(--tr-ink)]">{contact.label[locale]}</span>
+                  {contact.note && <span className="tr-meta block text-[var(--tr-ink-2)]">{contact.note[locale]}</span>}
+                </span>
+              </a>
             ) : (
               <div className="flex min-h-[44px] items-center gap-3 px-1 py-2">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[var(--tr-bubble-system)] text-[var(--tr-ink-3)]">

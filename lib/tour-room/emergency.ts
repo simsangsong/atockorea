@@ -12,6 +12,8 @@ export interface EmergencyContact {
   key: string;
   /** Dialable number (tel: target). Empty string = informational row. */
   tel: string;
+  /** W4.3/H1 — non-phone rows: a maps deep link (nearest ER / pharmacy). */
+  href?: string;
   label: Record<RoomLocale, string>;
   note?: Record<RoomLocale, string>;
 }
@@ -56,6 +58,32 @@ export const EMERGENCY_CONTACTS: readonly EmergencyContact[] = [
       ja: '1330 — 韓国旅行ホットライン（24時間・通訳）',
       es: '1330 — Línea de ayuda turística de Corea (24h, intérpretes)',
       zh: '1330 — 韩国旅游咨询热线（24小时，含翻译）',
+    },
+  },
+  {
+    // H1 — nearest emergency room via a maps search deep link (the phone's
+    // location centers the search; works with zero API calls).
+    key: 'nearest_er',
+    tel: '',
+    href: 'https://www.google.com/maps/search/emergency+room',
+    label: {
+      en: 'Nearest emergency room (map)',
+      ko: '가까운 응급실 찾기 (지도)',
+      ja: '最寄りの救急外来を探す（地図）',
+      es: 'Urgencias más cercanas (mapa)',
+      zh: '查找最近的急诊室(地图)',
+    },
+  },
+  {
+    key: 'nearest_pharmacy',
+    tel: '',
+    href: 'https://www.google.com/maps/search/pharmacy',
+    label: {
+      en: 'Nearest pharmacy (map)',
+      ko: '가까운 약국 찾기 (지도)',
+      ja: '最寄りの薬局を探す（地図）',
+      es: 'Farmacia más cercana (mapa)',
+      zh: '查找最近的药店(地图)',
     },
   },
   {

@@ -59,3 +59,20 @@ describe('lib/tour-room/time', () => {
     });
   });
 });
+
+describe('inPostTourWindow (P-D12, W4.4)', () => {
+  const { inPostTourWindow, kstEndOfDayMs, POST_TOUR_WINDOW_MS } = jest.requireActual('@/lib/tour-room/time');
+  const date = '2026-08-10';
+  const dayEnd = kstEndOfDayMs(date);
+
+  it('opens after tour-day end and closes at +48h', () => {
+    expect(inPostTourWindow(date, dayEnd - 1000)).toBe(false); // still tour day
+    expect(inPostTourWindow(date, dayEnd + 1000)).toBe(true); // grace overlap
+    expect(inPostTourWindow(date, dayEnd + POST_TOUR_WINDOW_MS - 1000)).toBe(true);
+    expect(inPostTourWindow(date, dayEnd + POST_TOUR_WINDOW_MS + 1000)).toBe(false);
+  });
+
+  it('is false without a tour date', () => {
+    expect(inPostTourWindow(null, dayEnd)).toBe(false);
+  });
+});

@@ -227,6 +227,7 @@ function TourRoomLive({
   const systemDark = useMediaQuery('(prefers-color-scheme: dark)');
   const theme = settings.theme === 'system' ? (systemDark ? 'dark' : 'light') : settings.theme;
   const snapshot = data.snapshot as {
+    bus_detail?: { payload?: unknown } | null;
     booking?: {
       tours?: { title?: string; city?: string } | null;
       tour_date?: string | null;
@@ -541,6 +542,7 @@ function TourRoomLive({
               tourDate={snapshot.booking?.tour_date ?? null}
               tourTime={snapshot.booking?.tour_time ?? null}
               pickupPoints={snapshot.booking?.pickup_points}
+              busPayload={(snapshot.bus_detail as { payload?: unknown } | null | undefined)?.payload}
             />
           )}
           {readOnly && <EndedCard locale={locale} bookingReference={snapshot.booking?.booking_reference} />}
