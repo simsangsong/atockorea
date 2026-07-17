@@ -222,17 +222,19 @@ export function buildBookingConfirmationEmailHtml(params: SendBookingConfirmatio
     ? `${baseUrl}/mypage/reviews/write?tourId=${encodeURIComponent(tourId)}&bookingId=${encodeURIComponent(bookingId)}&tour=${encodeURIComponent(tourTitle)}`
     : `${baseUrl}/mypage/reviews`;
 
+  // Compact single-line date ("Monday, Aug 17, 2026") — the long-month form
+  // wraps inside the summary card on narrow mail clients.
   const formattedDate = new Date(bookingDate).toLocaleDateString('en-US', {
     weekday: 'long',
     year: 'numeric',
-    month: 'long',
+    month: 'short',
     day: 'numeric',
   });
 
   const safeCustomerName = escapeHtml(customerName || 'Guest');
   const safeTourTitle = escapeHtml(tourTitle);
   const safePickupPoint = pickupPoint ? escapeHtml(pickupPoint) : null;
-  const safePaymentMethod = escapeHtml(paymentMethod === 'stripe' ? 'Stripe card authorization' : paymentMethod);
+  const safePaymentMethod = escapeHtml(paymentMethod === 'stripe' ? 'Card (Stripe)' : paymentMethod);
   const safePaymentStatus = escapeHtml(paymentStatusLabelText);
   const safeHeroAlt = escapeHtml(tourTitle);
   const totalAmount = formatUsdAmount(totalPrice);
@@ -263,9 +265,12 @@ export function buildBookingConfirmationEmailHtml(params: SendBookingConfirmatio
   .serif { font-family:Georgia,'Times New Roman',serif; }
   .muted { color:#6b7280; }
   @media only screen and (max-width: 680px) {
-    .outer-pad { padding:14px!important; }
+    .outer-pad { padding:10px!important; }
     .card { width:100%!important; border-radius:12px!important; }
-    .px { padding-left:22px!important; padding-right:22px!important; }
+    .px { padding-left:18px!important; padding-right:18px!important; }
+    .hd { padding-left:18px!important; padding-right:18px!important; }
+    .h1 { font-size:22px!important; line-height:29px!important; }
+    .sum-pad { padding:18px 16px 16px!important; }
     .stack { display:block!important; width:100%!important; }
     .stack-gap { padding-top:12px!important; }
     .hero-img { height:auto!important; }
@@ -281,7 +286,7 @@ export function buildBookingConfirmationEmailHtml(params: SendBookingConfirmatio
 
               <!-- ink header -->
               <tr>
-                <td style="background:#181511;padding:26px 36px 24px;">
+                <td class="hd" style="background:#181511;padding:26px 36px 24px;">
                   <table role="presentation" width="100%">
                     <tr>
                       <td class="stack" style="vertical-align:middle;">
@@ -303,8 +308,8 @@ export function buildBookingConfirmationEmailHtml(params: SendBookingConfirmatio
                     </tr>
                   </table>
                   <div style="margin-top:22px;height:1px;background:rgba(201,167,92,.28);"></div>
-                  <h1 class="serif" style="margin:20px 0 0;color:#ffffff;font-size:27px;line-height:35px;font-weight:600;letter-spacing:0.005em;">Your Korea tour is confirmed.</h1>
-                  <p style="margin:10px 0 2px;color:#a8a29e;font-size:14px;line-height:22px;">Reservation ${escapeHtml(displayBookingId)} &nbsp;·&nbsp; ${escapeHtml(formattedDate)}</p>
+                  <h1 class="serif h1" style="margin:20px 0 0;color:#ffffff;font-size:27px;line-height:35px;font-weight:600;letter-spacing:0.005em;">Your Korea tour is confirmed.</h1>
+                  <p style="margin:10px 0 2px;color:#a8a29e;font-size:13px;line-height:20px;white-space:nowrap;">Reservation ${escapeHtml(displayBookingId)}</p>
                 </td>
               </tr>
 
@@ -321,7 +326,7 @@ export function buildBookingConfirmationEmailHtml(params: SendBookingConfirmatio
               <tr>
                 <td class="px" style="padding-top:28px;padding-bottom:6px;">
                   <p style="margin:0;color:#44403c;font-size:15px;line-height:24px;">Dear ${safeCustomerName},</p>
-                  <p style="margin:10px 0 0;color:#57534e;font-size:14.5px;line-height:23px;">Your reservation is secured — thank you for choosing us. Our team will take care of every detail so you can simply arrive ready to enjoy the day.</p>
+                  <p style="margin:10px 0 0;color:#57534e;font-size:14.5px;line-height:23px;">Your reservation is secured — we will take care of every detail. Simply arrive ready to enjoy the day.</p>
                 </td>
               </tr>
 
@@ -330,7 +335,7 @@ export function buildBookingConfirmationEmailHtml(params: SendBookingConfirmatio
                 <td class="px" style="padding-top:20px;padding-bottom:6px;">
                   <table role="presentation" width="100%" style="background:#fbfaf6;border:1px solid #ece5d6;border-radius:14px;">
                     <tr>
-                      <td style="padding:22px 24px 20px;">
+                      <td class="sum-pad" style="padding:22px 24px 20px;">
                         <table role="presentation" width="100%">
                           <tr>
                             <td style="padding-bottom:12px;">
@@ -343,7 +348,12 @@ export function buildBookingConfirmationEmailHtml(params: SendBookingConfirmatio
                           ${confirmationRow('Guests', escapeHtml(String(numberOfGuests)))}
                           ${safePickupPoint ? confirmationRow('Pickup', safePickupPoint) : ''}
                           ${confirmationRow('Payment', safePaymentMethod)}
-                          ${confirmationRow('Status', safePaymentStatus)}
+                          <tr>
+                            <td colspan="2" style="padding:9px 0 2px;">
+                              <div style="color:#8a8578;font-size:12px;line-height:18px;letter-spacing:0.04em;">Status</div>
+                              <div style="margin-top:3px;color:#57534e;font-size:13px;line-height:19px;">${safePaymentStatus}</div>
+                            </td>
+                          </tr>
                         </table>
                         <div style="margin-top:14px;height:1px;background:#e5dcc8;"></div>
                         <table role="presentation" width="100%" style="margin-top:12px;">
@@ -386,7 +396,7 @@ export function buildBookingConfirmationEmailHtml(params: SendBookingConfirmatio
                     </tr>
                     <tr>
                       <td class="serif" style="width:30px;color:#b08d3e;font-size:19px;line-height:24px;font-weight:600;vertical-align:top;padding:9px 0 0;">3</td>
-                      <td style="color:#44403c;font-size:14px;line-height:22px;padding:9px 0 0;">For questions, email <a href="mailto:support@atockorea.com" style="color:#1c1917;font-weight:700;text-decoration:underline;text-underline-offset:2px;">support@atockorea.com</a> or use the chatbot on our website — our human support team can contact you directly whenever needed.</td>
+                      <td style="color:#44403c;font-size:14px;line-height:22px;padding:9px 0 0;">Questions? Email <a href="mailto:support@atockorea.com" style="color:#1c1917;font-weight:700;text-decoration:underline;text-underline-offset:2px;">support@atockorea.com</a> or use our website chatbot.</td>
                     </tr>
                   </table>
                 </td>
@@ -396,7 +406,7 @@ export function buildBookingConfirmationEmailHtml(params: SendBookingConfirmatio
               <tr>
                 <td class="px" style="padding-top:26px;padding-bottom:30px;">
                   <a href="${baseUrl}/mypage/mybookings" class="button">View my booking</a>
-                  <p style="margin:14px 0 0;color:#8a8578;font-size:12px;line-height:19px;text-align:center;">After the tour, we would love to hear about your day — <a href="${reviewWriteUrl}" style="color:#57534e;font-weight:700;text-decoration:underline;text-underline-offset:2px;">write a review</a>.</p>
+                  <p style="margin:14px 0 0;color:#8a8578;font-size:12px;line-height:19px;text-align:center;">After the tour — <a href="${reviewWriteUrl}" style="color:#57534e;font-weight:700;text-decoration:underline;text-underline-offset:2px;">write a review</a>.</p>
                 </td>
               </tr>
 

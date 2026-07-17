@@ -27,7 +27,7 @@ describe('buildBookingConfirmationEmailHtml', () => {
     expect(html).toContain('ATK-D8E12B1D');
     expect(html).toContain('Nicoletta Airoldi');
     expect(html).toContain('$144.00');
-    expect(html).toContain('Monday, August 17, 2026');
+    expect(html).toContain('Monday, Aug 17, 2026');
     expect(html).toContain('/mypage/mybookings');
     expect(html).toContain('/mypage/reviews/write?tourId=');
     expect(html).toContain(base.tourImageUrl);
