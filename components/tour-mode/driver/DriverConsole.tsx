@@ -83,6 +83,16 @@ function itemTitle(item: DriverScheduleItem): string {
   return String(item.title ?? item.name ?? '').trim() || '(이름 없음)';
 }
 
+/** Now + N minutes as an HH:MM KST wall-clock string. */
+function kstPlusMinutes(minutes: number): string {
+  return new Intl.DateTimeFormat('en-GB', {
+    timeZone: 'Asia/Seoul',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false,
+  }).format(new Date(Date.now() + minutes * 60 * 1000));
+}
+
 function koText(message: RoomMessage): string {
   return message.translations?.ko?.trim() || message.source_text;
 }
@@ -276,7 +286,7 @@ function BridgeScreen({
   const [countdown, setCountdown] = useState(0);
   const [sending, setSending] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
-  const [sheet, setSheet] = useState<'none' | 'delay' | 'arrive'>('none');
+  const [sheet, setSheet] = useState<'none' | 'delay' | 'arrive' | 'return'>('none');
   const playedRef = useRef<Set<string>>(new Set(initialMessages.map((message) => message.id)));
   const audioQueueRef = useRef<string[]>([]);
   const playingRef = useRef(false);
@@ -540,10 +550,11 @@ function BridgeScreen({
       </div>
 
       {/* one-tap actions */}
-      <div className="grid grid-cols-4 gap-2 px-4 pb-6">
+      <div className="grid grid-cols-5 gap-2 px-4 pb-6">
         <ActionButton label="지연" emoji="⏱" onClick={() => setSheet('delay')} />
         <ActionButton label="주차핀" emoji="🅿️" onClick={dropParkingPin} />
         <ActionButton label="도착" emoji="📍" onClick={() => setSheet('arrive')} />
+        <ActionButton label="복귀시간" emoji="⏰" onClick={() => setSheet('return')} />
         <ActionButton
           label="차량문제"
           emoji="⚠️"
@@ -573,6 +584,39 @@ function BridgeScreen({
               </button>
             ))}
           </div>
+        </Sheet>
+      ) : null}
+
+      {sheet === 'return' ? (
+        <Sheet onClose={() => setSheet('none')} title="몇 시까지 차로 돌아올까요?">
+          <div className="grid grid-cols-2 gap-3">
+            {[30, 45, 60, 90].map((minutes) => {
+              const time = kstPlusMinutes(minutes);
+              return (
+                <button
+                  key={minutes}
+                  type="button"
+                  onClick={() => {
+                    setSheet('none');
+                    void signal({ type: 'return_time', time }, `${time} 복귀 안내 완료 ✓`);
+                  }}
+                  className="rounded-2xl bg-neutral-700 py-5 text-xl font-bold text-white"
+                >
+                  +{minutes}분 <span className="text-emerald-400">({time})</span>
+                </button>
+              );
+            })}
+          </div>
+          <button
+            type="button"
+            onClick={() => {
+              setSheet('none');
+              void signal({ type: 'return_time', cancel: true }, '복귀 타이머 해제 ✓');
+            }}
+            className="mt-3 w-full rounded-2xl bg-neutral-800 py-4 text-lg font-semibold text-neutral-300"
+          >
+            타이머 해제
+          </button>
         </Sheet>
       ) : null}
 
