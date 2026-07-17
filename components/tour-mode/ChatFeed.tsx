@@ -72,8 +72,18 @@ const ROLE_LABEL: Record<RoomLocale, Record<string, string>> = {
   zh: { guide: '导游', admin: 'AtoC Korea', driver: '司机' },
 };
 
-function displayText(message: RoomMessage, locale: RoomLocale, showOriginal: boolean): string {
-  const translated = message.translations?.[locale];
+function displayText(
+  message: RoomMessage,
+  locale: RoomLocale,
+  showOriginal: boolean,
+  preferredLocale?: string | null,
+): string {
+  // Language-agnostic bridge: a guest who writes French reads driver/guide
+  // bubbles in French when that translation exists; fixed-locale capsules
+  // (POI cards, notices, signals) fall through to the folded room locale.
+  const translated =
+    (preferredLocale ? message.translations?.[preferredLocale] : undefined) ??
+    message.translations?.[locale];
   if (!translated || showOriginal) return message.source_text;
   return translated;
 }
@@ -86,6 +96,7 @@ export default function ChatFeed({
   tts,
   opsHighlightAfter = null,
   onExtraConfirm,
+  preferredLocale = null,
 }: {
   messages: RoomMessage[];
   viewerLocale: RoomLocale;
@@ -100,6 +111,9 @@ export default function ChatFeed({
   opsHighlightAfter?: string | null;
   /** W2.4 — customer one-tap confirm on a logged extras capsule (LEDGER). */
   onExtraConfirm?: (extraId: string) => Promise<boolean>;
+  /** Language-agnostic bridge: the viewer's detected chat language ('fr' …) —
+   *  preferred over the folded room locale when a translation exists. */
+  preferredLocale?: string | null;
 }) {
   const bubbleText = textScale === 'large' ? 'tr-body-lg' : 'tr-body';
   const systemText = textScale === 'large' ? 'tr-card-text' : 'tr-label';
@@ -264,7 +278,7 @@ export default function ChatFeed({
                 <div className={`mt-2 ${animClass}`}>
                   <SpotArrivalCard
                     content={arrivalContent}
-                    messageText={displayText(message, viewerLocale, originals.has(message.id))}
+                    messageText={displayText(message, viewerLocale, originals.has(message.id), preferredLocale)}
                     audioUrl={(message.metadata?.audio_url as string | null | undefined) ?? null}
                     locale={viewerLocale}
                     contentTier={(message.metadata?.content_tier as string | null | undefined) ?? null}
@@ -276,13 +290,15 @@ export default function ChatFeed({
               return (
                 <div className={`my-2 flex justify-center ${animClass}`}>
                   <div className={`tr-pill max-w-[88%] px-4 py-1.5 text-center leading-relaxed ${systemText}`}>
-                    {displayText(message, viewerLocale, originals.has(message.id))}
+                    {displayText(message, viewerLocale, originals.has(message.id), preferredLocale)}
                   </div>
                 </div>
               );
             }
 
-            const translated = message.translations?.[viewerLocale];
+            const translated =
+              (preferredLocale ? message.translations?.[preferredLocale] : undefined) ??
+              message.translations?.[viewerLocale];
             const translatable = Boolean(translated && translated !== message.source_text);
             const showingOriginal = originals.has(message.id);
             const roleLabel = !mine ? ROLE_LABEL[viewerLocale][message.sender_role] : null;
@@ -339,7 +355,7 @@ export default function ChatFeed({
                   failed ? 'opacity-60 outline outline-1 outline-[var(--tr-danger)]' : ''
                 }`}
               >
-                {displayText(message, viewerLocale, showingOriginal)}
+                {displayText(message, viewerLocale, showingOriginal, preferredLocale)}
               </button>
             );
 
@@ -380,7 +396,7 @@ export default function ChatFeed({
                   </div>
                   {listenable && tts && (
                     <AudioButton
-                      text={displayText(message, viewerLocale, showingOriginal)}
+                      text={displayText(message, viewerLocale, showingOriginal, preferredLocale)}
                       bookingId={tts.bookingId}
                       messageId={message.id}
                       locale={viewerLocale}
