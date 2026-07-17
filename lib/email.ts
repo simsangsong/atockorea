@@ -180,7 +180,25 @@ function emailBrandLockup(logoUrl: string): string {
   `;
 }
 
-export async function sendBookingConfirmationEmail(params: SendBookingConfirmationEmailParams) {
+/** Two-column summary row for the guest confirmation email (label left, value right). */
+function confirmationRow(label: string, value: string): string {
+  return `
+    <tr>
+      <td style="padding:8px 0;color:#8a8578;font-size:12px;line-height:18px;letter-spacing:0.04em;white-space:nowrap;vertical-align:top;">${escapeHtml(label)}</td>
+      <td align="right" style="padding:8px 0 8px 18px;color:#1c1917;font-size:14px;line-height:20px;font-weight:600;overflow-wrap:break-word;">${value}</td>
+    </tr>
+  `;
+}
+
+/**
+ * Build the guest confirmation email (subject + html) — exported separately from
+ * the sender so tests and previews can render without dispatching (same pattern
+ * as buildAdminBookingAlertHtml).
+ */
+export function buildBookingConfirmationEmailHtml(params: SendBookingConfirmationEmailParams): {
+  subject: string;
+  html: string;
+} {
   const {
     to,
     bookingId,
@@ -231,22 +249,25 @@ export async function sendBookingConfirmationEmail(params: SendBookingConfirmati
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="color-scheme" content="light">
       <style>
-  body { margin:0; padding:0; background:#f5f3ee; color:#111827; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; }
+  body { margin:0; padding:0; background:#f4f1e9; color:#1c1917; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; }
   table { border-collapse:collapse; }
   img { border:0; outline:none; text-decoration:none; display:block; }
-  a { color:#111827; }
+  a { color:#1c1917; }
   .preheader { display:none!important; visibility:hidden; opacity:0; color:transparent; height:0; width:0; overflow:hidden; mso-hide:all; }
-  .shell { width:100%; background:#f5f3ee; }
-  .card { width:640px; max-width:640px; background:#ffffff; border:1px solid #e7e0d4; border-radius:14px; overflow:hidden; }
-  .px { padding-left:34px; padding-right:34px; }
-  .button { display:inline-block; background:#111827; color:#ffffff!important; text-decoration:none; border-radius:8px; padding:13px 18px; font-weight:700; font-size:14px; line-height:18px; }
+  .shell { width:100%; background:#f4f1e9; }
+  .card { width:640px; max-width:640px; background:#ffffff; border:1px solid #e7e0d4; border-radius:18px; overflow:hidden; box-shadow:0 1px 2px rgba(28,25,23,.05); }
+  .px { padding-left:36px; padding-right:36px; }
+  .button { display:block; text-align:center; background:#b08d3e; color:#ffffff!important; text-decoration:none; border-radius:12px; padding:15px 18px; font-weight:700; font-size:15px; line-height:20px; letter-spacing:0.01em; }
+  .serif { font-family:Georgia,'Times New Roman',serif; }
   .muted { color:#6b7280; }
   @media only screen and (max-width: 680px) {
     .outer-pad { padding:14px!important; }
-    .card { width:100%!important; border-radius:10px!important; }
-    .px { padding-left:20px!important; padding-right:20px!important; }
+    .card { width:100%!important; border-radius:12px!important; }
+    .px { padding-left:22px!important; padding-right:22px!important; }
     .stack { display:block!important; width:100%!important; }
+    .stack-gap { padding-top:12px!important; }
     .hero-img { height:auto!important; }
   }
       </style>
@@ -255,86 +276,140 @@ export async function sendBookingConfirmationEmail(params: SendBookingConfirmati
       <div class="preheader">Your AtoC Korea reservation is confirmed for ${safeTourTitle}.</div>
       <table role="presentation" class="shell" width="100%" cellpadding="0" cellspacing="0">
         <tr>
-          <td align="center" class="outer-pad" style="padding:28px 16px;">
+          <td align="center" class="outer-pad" style="padding:32px 16px;">
             <table role="presentation" class="card" cellpadding="0" cellspacing="0">
+
+              <!-- ink header -->
               <tr>
-                <td class="px" style="padding-top:26px;padding-bottom:18px;">
+                <td style="background:#181511;padding:26px 36px 24px;">
                   <table role="presentation" width="100%">
                     <tr>
                       <td class="stack" style="vertical-align:middle;">
-                        ${emailBrandLockup(logoUrl)}
+                        <table role="presentation" cellpadding="0" cellspacing="0">
+                          <tr>
+                            <td style="vertical-align:middle;width:40px;">
+                              <img src="${escapeHtml(logoUrl)}" width="38" height="38" alt="AtoC Korea" style="width:38px;height:38px;border-radius:9px;">
+                            </td>
+                            <td style="vertical-align:middle;padding-left:11px;">
+                              <div style="color:#ffffff;font-size:17px;line-height:19px;font-weight:700;">AtoC <span style="color:#c9c3b6;font-weight:400;">Korea</span></div>
+                              <div style="margin-top:3px;color:#c9a75c;font-size:10px;line-height:12px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;">Reservation Desk</div>
+                            </td>
+                          </tr>
+                        </table>
                       </td>
-                      <td class="stack" align="right" style="vertical-align:middle;">
-                        <span style="display:inline-block;border:1px solid #d9d1c2;border-radius:999px;padding:6px 10px;color:#7a5d2c;background:#fbf8f1;font-size:11px;line-height:14px;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;">Confirmed</span>
+                      <td class="stack stack-gap" align="right" style="vertical-align:middle;">
+                        <span style="display:inline-block;border:1px solid rgba(201,167,92,.55);border-radius:999px;padding:7px 14px;color:#c9a75c;background:rgba(201,167,92,.08);font-size:11px;line-height:13px;font-weight:800;text-transform:uppercase;letter-spacing:0.14em;">Confirmed</span>
                       </td>
                     </tr>
                   </table>
+                  <div style="margin-top:22px;height:1px;background:rgba(201,167,92,.28);"></div>
+                  <h1 class="serif" style="margin:20px 0 0;color:#ffffff;font-size:27px;line-height:35px;font-weight:600;letter-spacing:0.005em;">Your Korea tour is confirmed.</h1>
+                  <p style="margin:10px 0 2px;color:#a8a29e;font-size:14px;line-height:22px;">Reservation ${escapeHtml(displayBookingId)} &nbsp;·&nbsp; ${escapeHtml(formattedDate)}</p>
                 </td>
               </tr>
-              <tr>
-                <td class="px" style="padding-top:2px;padding-bottom:22px;">
-                  <h1 style="margin:0;color:#111827;font-size:28px;line-height:34px;font-weight:750;letter-spacing:0;">Your Korea tour is confirmed.</h1>
-                  <p style="margin:12px 0 0;color:#4b5563;font-size:15px;line-height:23px;">Dear ${safeCustomerName}, your reservation is secured. We will take care of the details so you can simply arrive ready to enjoy the day.</p>
-                </td>
-              </tr>
+
               ${emailTourImageUrl ? `
+              <!-- hero -->
               <tr>
-                <td style="padding:0 18px 8px;">
-                  <img src="${emailTourImageUrl}" alt="${safeHeroAlt}" class="hero-img" style="width:100%;height:208px;object-fit:cover;border-radius:12px;">
+                <td style="padding:0;line-height:0;">
+                  <img src="${emailTourImageUrl}" alt="${safeHeroAlt}" class="hero-img" style="width:100%;height:232px;object-fit:cover;">
                 </td>
               </tr>
               ` : ''}
+
+              <!-- greeting -->
               <tr>
-                <td class="px" style="padding-top:20px;padding-bottom:8px;">
-                  <table role="presentation" width="100%" style="background:#fbfaf7;border:1px solid #ebe7df;border-radius:12px;">
+                <td class="px" style="padding-top:28px;padding-bottom:6px;">
+                  <p style="margin:0;color:#44403c;font-size:15px;line-height:24px;">Dear ${safeCustomerName},</p>
+                  <p style="margin:10px 0 0;color:#57534e;font-size:14.5px;line-height:23px;">Your reservation is secured — thank you for choosing us. Our team will take care of every detail so you can simply arrive ready to enjoy the day.</p>
+                </td>
+              </tr>
+
+              <!-- booking summary -->
+              <tr>
+                <td class="px" style="padding-top:20px;padding-bottom:6px;">
+                  <table role="presentation" width="100%" style="background:#fbfaf6;border:1px solid #ece5d6;border-radius:14px;">
                     <tr>
-                      <td style="padding:20px 22px 8px;">
-                        <p style="margin:0 0 8px;color:#7b746b;font-size:12px;line-height:16px;font-weight:800;text-transform:uppercase;letter-spacing:0.12em;">Booking summary</p>
+                      <td style="padding:22px 24px 20px;">
                         <table role="presentation" width="100%">
-                          ${emailDetailRow('Booking ID', escapeHtml(displayBookingId))}
-                          ${emailDetailRow('Tour', safeTourTitle)}
-                          ${emailDetailRow('Date', escapeHtml(formattedDate))}
-                          ${emailDetailRow('Guests', escapeHtml(numberOfGuests))}
-                          ${safePickupPoint ? emailDetailRow('Pickup', safePickupPoint) : ''}
-                          ${emailDetailRow('Payment', safePaymentMethod)}
-                          ${emailDetailRow('Status', safePaymentStatus)}
-                          ${emailDetailRow('Total', escapeHtml(totalAmount), { emphasize: true })}
+                          <tr>
+                            <td style="padding-bottom:12px;">
+                              <span class="serif" style="color:#1c1917;font-size:16px;line-height:22px;font-weight:600;">${safeTourTitle}</span>
+                            </td>
+                          </tr>
                         </table>
-                        <p style="margin:14px 0 8px;color:#6b7280;font-size:12px;line-height:18px;">${escapeHtml(paymentNote)}</p>
+                        <table role="presentation" width="100%" style="border-collapse:collapse;">
+                          ${confirmationRow('Date', escapeHtml(formattedDate))}
+                          ${confirmationRow('Guests', escapeHtml(String(numberOfGuests)))}
+                          ${safePickupPoint ? confirmationRow('Pickup', safePickupPoint) : ''}
+                          ${confirmationRow('Payment', safePaymentMethod)}
+                          ${confirmationRow('Status', safePaymentStatus)}
+                        </table>
+                        <div style="margin-top:14px;height:1px;background:#e5dcc8;"></div>
+                        <table role="presentation" width="100%" style="margin-top:12px;">
+                          <tr>
+                            <td style="color:#8a8578;font-size:11px;line-height:14px;font-weight:800;text-transform:uppercase;letter-spacing:0.14em;vertical-align:bottom;">Total</td>
+                            <td align="right" class="serif" style="color:#181511;font-size:24px;line-height:28px;font-weight:600;">${escapeHtml(totalAmount)}</td>
+                          </tr>
+                        </table>
                       </td>
                     </tr>
                   </table>
                 </td>
               </tr>
+
+              <!-- payment note -->
               <tr>
-                <td class="px" style="padding-top:16px;padding-bottom:8px;">
+                <td class="px" style="padding-top:14px;padding-bottom:4px;">
                   <table role="presentation" width="100%">
                     <tr>
-                      <td style="padding:0 0 10px;color:#111827;font-size:15px;line-height:22px;font-weight:750;">Before your tour</td>
-                    </tr>
-                    <tr>
-                      <td style="padding:0;color:#4b5563;font-size:14px;line-height:22px;">
-                        <span style="color:#111827;font-weight:700;">1.</span> A reminder email arrives 24 hours before departure.<br>
-                        <span style="color:#111827;font-weight:700;">2.</span> Please arrive at the pickup point 10 minutes early.<br>
-                        <span style="color:#111827;font-weight:700;">3.</span> For questions, email <a href="mailto:support@atockorea.com" style="color:#111827;font-weight:700;text-decoration:underline;">support@atockorea.com</a> or use the chatbot on our website. If needed, our human support team can contact you directly.
+                      <td style="border-left:3px solid #c9a75c;background:#faf7ef;border-radius:0 12px 12px 0;padding:14px 18px;">
+                        <p style="margin:0;color:#57534e;font-size:13px;line-height:20px;">${escapeHtml(paymentNote)}</p>
                       </td>
                     </tr>
                   </table>
                 </td>
               </tr>
+
+              <!-- before your tour -->
               <tr>
-                <td class="px" style="padding-top:18px;padding-bottom:28px;">
-                  <a href="${baseUrl}/mypage/mybookings" class="button">View booking</a>
-                  <p style="margin:14px 0 0;color:#6b7280;font-size:12px;line-height:18px;">After the tour, you can share your experience here: <a href="${reviewWriteUrl}" style="color:#111827;font-weight:700;text-decoration:underline;">write a review</a>.</p>
+                <td class="px" style="padding-top:26px;padding-bottom:4px;">
+                  <p style="margin:0 0 14px;color:#8a8578;font-size:11px;line-height:14px;font-weight:800;text-transform:uppercase;letter-spacing:0.16em;">Before your tour</p>
+                  <table role="presentation" width="100%" style="border-collapse:collapse;">
+                    <tr>
+                      <td class="serif" style="width:30px;color:#b08d3e;font-size:19px;line-height:24px;font-weight:600;vertical-align:top;padding:7px 0;">1</td>
+                      <td style="color:#44403c;font-size:14px;line-height:22px;padding:7px 0;border-bottom:1px solid #f0ece1;">A reminder email arrives 24 hours before departure.</td>
+                    </tr>
+                    <tr>
+                      <td class="serif" style="width:30px;color:#b08d3e;font-size:19px;line-height:24px;font-weight:600;vertical-align:top;padding:9px 0 7px;">2</td>
+                      <td style="color:#44403c;font-size:14px;line-height:22px;padding:9px 0 7px;border-bottom:1px solid #f0ece1;">Please arrive at the pickup point 10 minutes early.</td>
+                    </tr>
+                    <tr>
+                      <td class="serif" style="width:30px;color:#b08d3e;font-size:19px;line-height:24px;font-weight:600;vertical-align:top;padding:9px 0 0;">3</td>
+                      <td style="color:#44403c;font-size:14px;line-height:22px;padding:9px 0 0;">For questions, email <a href="mailto:support@atockorea.com" style="color:#1c1917;font-weight:700;text-decoration:underline;text-underline-offset:2px;">support@atockorea.com</a> or use the chatbot on our website — our human support team can contact you directly whenever needed.</td>
+                    </tr>
+                  </table>
                 </td>
               </tr>
+
+              <!-- CTA -->
               <tr>
-                <td style="padding:18px 34px 24px;background:#111827;color:#d1d5db;">
-                  <p style="margin:0;color:#ffffff;font-size:13px;line-height:20px;font-weight:700;">AtoC Korea</p>
-                  <p style="margin:4px 0 0;color:#aeb6c2;font-size:12px;line-height:18px;">Curated Korea tours, direct local support.</p>
-                  <p style="margin:12px 0 0;color:#7f8997;font-size:11px;line-height:16px;">© 2026 AtoC Korea LLC. This confirmation was sent to ${escapeHtml(to)}.</p>
+                <td class="px" style="padding-top:26px;padding-bottom:30px;">
+                  <a href="${baseUrl}/mypage/mybookings" class="button">View my booking</a>
+                  <p style="margin:14px 0 0;color:#8a8578;font-size:12px;line-height:19px;text-align:center;">After the tour, we would love to hear about your day — <a href="${reviewWriteUrl}" style="color:#57534e;font-weight:700;text-decoration:underline;text-underline-offset:2px;">write a review</a>.</p>
                 </td>
               </tr>
+
+              <!-- footer -->
+              <tr>
+                <td style="padding:22px 36px 24px;background:#181511;">
+                  <p class="serif" style="margin:0;color:#ffffff;font-size:15px;line-height:21px;font-weight:600;">AtoC Korea</p>
+                  <p style="margin:5px 0 0;color:#a8a29e;font-size:12px;line-height:18px;">Curated Korea tours, direct local support.</p>
+                  <div style="margin:14px 0;height:1px;background:rgba(201,167,92,.22);"></div>
+                  <p style="margin:0;color:#78716c;font-size:11px;line-height:17px;">© 2026 AtoC Korea LLC · This confirmation was sent to ${escapeHtml(to)}.</p>
+                </td>
+              </tr>
+
             </table>
           </td>
         </tr>
@@ -343,11 +418,12 @@ export async function sendBookingConfirmationEmail(params: SendBookingConfirmati
     </html>
   `;
 
-  return sendEmail({
-    to,
-    subject: `Booking Confirmed: ${tourTitle}`,
-    html,
-  });
+  return { subject: `Booking Confirmed: ${tourTitle}`, html };
+}
+
+export async function sendBookingConfirmationEmail(params: SendBookingConfirmationEmailParams) {
+  const { subject, html } = buildBookingConfirmationEmailHtml(params);
+  return sendEmail({ to: params.to, subject, html });
 }
 
 export async function sendBookingAdminNotificationEmail({
