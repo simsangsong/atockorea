@@ -32,7 +32,7 @@ function defaultTargetLocalesFor(
 }
 
 /** PA-3: sender role is server-authoritative, derived from the resolved actor. */
-function senderRoleFor(actor: RoomActor): 'customer' | 'guide' | 'admin' {
+function senderRoleFor(actor: RoomActor): 'customer' | 'guide' | 'admin' | 'driver' {
   return actor.role;
 }
 
@@ -220,7 +220,7 @@ export async function POST(
     // §O-2 (T2.9): pre-generate TTS for participants whose devices reported
     // tts_capable=false, so their first listen has no generation latency.
     // Fire-and-forget — on-demand /tts remains the safety net.
-    if (senderRole === 'guide' || senderRole === 'admin') {
+    if (senderRole === 'guide' || senderRole === 'admin' || senderRole === 'driver') {
       void pregenerateGuideNoticeTts(supabase as unknown as TtsStorageClient, room.id, message).catch(
         () => undefined,
       );

@@ -68,10 +68,10 @@ export interface RoomDbClient {
 
 export type RoomActor =
   | { kind: 'admin'; role: 'admin'; userId: string }
-  | { kind: 'token'; role: 'customer' | 'guide'; tokenPayload: RoomTokenPayload; displayName: string }
+  | { kind: 'token'; role: 'customer' | 'guide' | 'driver'; tokenPayload: RoomTokenPayload; displayName: string }
   | {
       kind: 'session';
-      role: 'customer' | 'guide' | 'admin';
+      role: 'customer' | 'guide' | 'admin' | 'driver';
       sessionPayload: RoomSessionPayload;
       displayName: string;
     }
@@ -287,7 +287,7 @@ export interface RoomSessionPayload {
   roomId: string;
   bookingId: string;
   participantId: string;
-  role: 'customer' | 'guide' | 'admin';
+  role: 'customer' | 'guide' | 'admin' | 'driver';
   displayName: string;
   iat: number;
   exp: number;

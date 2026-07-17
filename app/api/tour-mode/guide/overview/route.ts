@@ -26,7 +26,9 @@ export async function GET(req: NextRequest) {
     let tourDate: string | null = null;
     const token = req.nextUrl.searchParams.get('rt') ?? req.headers.get('x-tour-room-token');
     const payload = token ? verifyRoomToken(token) : null;
-    if (payload?.scope === 'tour-date') {
+    if (payload?.scope === 'tour-date' && payload.role === 'guide') {
+      // P-D15: driver tokens share the scope but get the PII-minimal
+      // /api/tour-mode/driver/overview instead.
       tourId = payload.tourId;
       tourDate = payload.tourDate;
     } else {

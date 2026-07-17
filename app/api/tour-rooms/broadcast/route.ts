@@ -48,7 +48,9 @@ export async function POST(req: NextRequest) {
         req.nextUrl.searchParams.get('rt') ??
         req.headers.get('x-tour-room-token');
       const payload = token ? verifyRoomToken(token) : null;
-      if (payload?.scope === 'tour-date' && payload.tourId === tourId && payload.tourDate === tourDate) {
+      // P-D15: driver tokens share the tour-date scope but are NOT fan-out
+      // senders — the driver bridge speaks per-room via the messages route.
+      if (payload?.scope === 'tour-date' && payload.role === 'guide' && payload.tourId === tourId && payload.tourDate === tourDate) {
         senderRole = 'guide';
         senderName = payload.displayName;
       }

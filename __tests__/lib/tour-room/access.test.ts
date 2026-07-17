@@ -18,12 +18,16 @@ import { getAuthUser } from '@/lib/auth';
 jest.mock('@/lib/auth', () => ({ getAuthUser: jest.fn() }));
 const getAuthUserMock = getAuthUser as jest.Mock;
 
+// Fixture date must stay in the future — room tokens expire at tour-day-end
+// KST + 24h, so a hardcoded date rots the suite the day after it passes.
+const FIXTURE_TOUR_DATE = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10);
+
 const BOOKING: RoomBooking = {
   id: 'booking-1',
   user_id: 'user-owner',
   tour_id: 'tour-1',
   merchant_id: 'merchant-1',
-  tour_date: '2026-07-15',
+  tour_date: FIXTURE_TOUR_DATE,
   contact_name: 'Alex Kim',
   contact_email: 'alex@example.com',
   contact_phone: null,
@@ -144,8 +148,8 @@ describe('lib/tour-room/access', () => {
     });
 
     it.each([
-      ['another booking', signCustomerRoomToken({ bookingId: 'other', displayName: 'X', tourDate: '2026-07-15' })],
-      ['another tour', signGuideRoomToken({ tourId: 'other-tour', tourDate: '2026-07-15', displayName: 'X' })],
+      ['another booking', signCustomerRoomToken({ bookingId: 'other', displayName: 'X', tourDate: FIXTURE_TOUR_DATE })],
+      ['another tour', signGuideRoomToken({ tourId: 'other-tour', tourDate: FIXTURE_TOUR_DATE, displayName: 'X' })],
       ['another date', signGuideRoomToken({ tourId: 'tour-1', tourDate: '2026-07-16', displayName: 'X' })],
     ])('rejects a token scoped to %s', async (_label, signed) => {
       const result = await resolveRoomActor(fakeReq(), BOOKING.id, {
@@ -320,7 +324,7 @@ describe('lib/tour-room/access', () => {
 
   describe('pure helpers', () => {
     it('tokenMatchesBooking requires tour_id AND tour_date for guide scope', () => {
-      const guide = signGuideRoomToken({ tourId: 'tour-1', tourDate: '2026-07-15', displayName: 'G' }).payload;
+      const guide = signGuideRoomToken({ tourId: 'tour-1', tourDate: FIXTURE_TOUR_DATE, displayName: 'G' }).payload;
       expect(tokenMatchesBooking(guide, BOOKING)).toBe(true);
       expect(tokenMatchesBooking(guide, { ...BOOKING, tour_id: null })).toBe(false);
       expect(tokenMatchesBooking(guide, { ...BOOKING, tour_date: null })).toBe(false);
