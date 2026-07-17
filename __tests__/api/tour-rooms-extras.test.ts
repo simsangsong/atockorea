@@ -10,6 +10,7 @@ import { getAuthUser } from '@/lib/auth';
 import { createServerClient } from '@/lib/supabase';
 import { requestGate } from '@/lib/durable-rate-limit';
 import { signRoomSession } from '@/lib/tour-room/access';
+import { kstToday } from '@/lib/tour-room/time';
 
 jest.mock('@/lib/auth', () => ({ getAuthUser: jest.fn() }));
 jest.mock('@/lib/supabase', () => ({ createServerClient: jest.fn() }));
@@ -29,7 +30,8 @@ const BOOKING = {
   user_id: 'user-owner',
   tour_id: 'tour-1',
   merchant_id: 'merchant-1',
-  tour_date: '2026-07-14',
+  // Dynamic — the P-D12 post_tour gate reads the real clock (no date rot).
+  tour_date: kstToday(),
   contact_name: 'Alex Kim',
   contact_email: 'alex@example.com',
   contact_phone: null,
@@ -180,6 +182,45 @@ describe('extras API', () => {
       routeParams(),
     );
     expect(missing.status).toBe(404);
+  });
+
+  it('settlement summary capsule lists items + total + ATM hint (G4/G7)', async () => {
+    const db = fakeDb({ extra: { id: 'e-1', item: 'Taxi', amount_krw: 20000, status: 'confirmed' } });
+    createServerClientMock.mockReturnValue(db);
+    const res = await extrasPOST(
+      fakeReq({ headers: { 'x-tour-room-auth': session('guide') }, json: { summary: true } }),
+      routeParams(),
+    );
+    expect(res.status).toBe(201);
+    const capsule = db.inserts.tour_room_messages[0];
+    expect(capsule.metadata).toMatchObject({ kind: 'settlement_summary', total_krw: 20000, count: 1 });
+    expect((capsule.translations as Record<string, string>).ko).toContain('합계 ₩20,000');
+    expect((capsule.translations as Record<string, string>).ko).toContain('ATM');
+  });
+
+  it('freezes the ledger after the post_tour window (P-D12)', async () => {
+    // Dynamic past date (5 days ago) — always > tour-day end + 48h.
+    const oldDate = new Date(Date.now() - 5 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10);
+    const db = fakeDb({ extra: { id: 'e-1', item: 'Taxi', amount_krw: 20000, status: 'logged' } });
+    const oldBookingDb = {
+      ...db,
+      from(table: string) {
+        const chain = db.from(table);
+        if (table === 'bookings') {
+          const resolve = async () => ({ data: { ...BOOKING, tour_date: oldDate }, error: null });
+          chain.single = jest.fn(resolve);
+          chain.maybeSingle = jest.fn(resolve);
+        }
+        return chain;
+      },
+    };
+    createServerClientMock.mockReturnValue(oldBookingDb);
+    const res = await extrasPATCH(
+      fakeReq({ headers: { 'x-tour-room-auth': session('guide') }, json: { extraId: 'e-1', action: 'settle' } }),
+      routeParams(),
+    );
+    expect(res.status).toBe(403);
+    expect(await res.json()).toMatchObject({ error: 'post_tour_window_closed' });
   });
 
   it('GET sums unsettled amounts', async () => {

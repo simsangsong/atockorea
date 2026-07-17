@@ -54,3 +54,19 @@ describe('QuickSignalBar (SIGNAL, W2.4)', () => {
     expect(screen.getByTestId('signal-lost')).toBeInTheDocument();
   });
 });
+
+describe('vehicleLineFromPayload (W4.3/B1)', () => {
+  const { vehicleLineFromPayload } = jest.requireActual('@/components/tour-mode/LobbyCard');
+
+  it('joins model/color/plate/driver from historical payload key spellings', () => {
+    expect(
+      vehicleLineFromPayload({ vehicle_model: 'Hyundai Solati', color: 'Black', plate_number: '12가 3456', driver_name: 'Mr. Kim' }),
+    ).toBe('Hyundai Solati · Black · 12가 3456 · Mr. Kim');
+    expect(vehicleLineFromPayload({ vehicle: '77버 7777' })).toBe('77버 7777');
+  });
+
+  it('returns null for empty/invalid payloads', () => {
+    expect(vehicleLineFromPayload(null)).toBeNull();
+    expect(vehicleLineFromPayload({ irrelevant: 1 })).toBeNull();
+  });
+});

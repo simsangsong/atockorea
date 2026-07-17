@@ -32,6 +32,9 @@ const CUSTOMER_COPY: Record<
     how: [string, string, string];
     keep: string;
     homescreen: string;
+    planTitle: string;
+    planBody: string;
+    planCta: string;
   }
 > = {
   en: {
@@ -47,6 +50,10 @@ const CUSTOMER_COPY: Record<
     ],
     keep: 'Keep this email — the same link works all day on tour day.',
     homescreen: 'Tip: after opening the room, add it to your home screen (share → "Add to Home Screen") for one-tap access on tour day.',
+    planTitle: 'Plan tomorrow your way',
+    planBody:
+      'Pick the places you dream of (or start from a recommended course) and your guide will confirm the route tonight. Takes 3 minutes — or leave it to your guide.',
+    planCta: 'Build my day plan',
   },
   ko: {
     subject: (tour) => `투어룸이 준비됐어요 — ${tour}`,
@@ -61,6 +68,10 @@ const CUSTOMER_COPY: Record<
     ],
     keep: '이 메일을 보관해 주세요 — 투어 당일 하루 종일 같은 링크로 입장할 수 있어요.',
     homescreen: '팁: 룸을 연 뒤 홈 화면에 추가(공유 → "홈 화면에 추가")하면 투어 당일 한 번의 탭으로 들어올 수 있어요.',
+    planTitle: '내일 하루, 원하는 대로',
+    planBody:
+      '가고 싶은 곳을 직접 담거나 추천 코스로 시작해 보세요 — 가이드가 오늘 밤 동선을 확정해 드려요. 3분이면 충분하고, 가이드에게 맡겨도 좋아요.',
+    planCta: '나의 일정 만들기',
   },
   ja: {
     subject: (tour) => `ツアールームのご案内 — ${tour}`,
@@ -75,6 +86,10 @@ const CUSTOMER_COPY: Record<
     ],
     keep: 'このメールは保管してください — 当日は同じリンクで何度でも入室できます。',
     homescreen: 'ヒント：ルームを開いたら、ホーム画面に追加（共有 →「ホーム画面に追加」）すると当日ワンタップで入室できます。',
+    planTitle: '明日の一日を、お好みで',
+    planBody:
+      '行きたい場所を選ぶか、おすすめコースから始めてください — 今夜ガイドがルートを確定します。3分で完了、ガイドにお任せもOKです。',
+    planCta: 'プランを作る',
   },
   es: {
     subject: (tour) => `Tu sala de tour está lista — ${tour}`,
@@ -89,6 +104,10 @@ const CUSTOMER_COPY: Record<
     ],
     keep: 'Guarda este correo — el mismo enlace funciona todo el día del tour.',
     homescreen: 'Consejo: tras abrir la sala, añádela a tu pantalla de inicio (compartir → "Añadir a pantalla de inicio") para entrar con un toque el día del tour.',
+    planTitle: 'Planea tu día a tu manera',
+    planBody:
+      'Elige los lugares que sueñas (o parte de una ruta recomendada) y tu guía confirmará el recorrido esta noche. Toma 3 minutos, o déjalo en manos del guía.',
+    planCta: 'Crear mi plan del día',
   },
   zh: {
     subject: (tour) => `您的旅行房间已就绪 — ${tour}`,
@@ -99,6 +118,9 @@ const CUSTOMER_COPY: Record<
     how: ['点击按钮即可进入房间。', '您发送的消息会自动翻译给导游。', '旅行当天早上可在地图上查看接送安排和大巴位置。'],
     keep: '请保留此邮件 — 旅行当天同一链接可随时进入。',
     homescreen: '小贴士：打开房间后，将其添加到主屏幕（分享 → "添加到主屏幕"），旅行当天一键进入。',
+    planTitle: '按您的心意规划明天',
+    planBody: '选择您向往的地点(或从推荐路线开始)，导游今晚就会确定行程。只需3分钟，也可以完全交给导游。',
+    planCta: '创建我的行程',
   },
 };
 
@@ -123,6 +145,8 @@ export function buildCustomerRoomInviteHtml(params: {
   pickupName?: string | null;
   pickupTime?: string | null;
   roomUrl: string;
+  /** W1/A1 — private-mode D-1 pre-selection link (same token as roomUrl). */
+  planUrl?: string | null;
 }): { subject: string; html: string } {
   const copy = CUSTOMER_COPY[params.locale] ?? CUSTOMER_COPY.en;
   const meta = [
@@ -154,6 +178,15 @@ export function buildCustomerRoomInviteHtml(params: {
     <ol style="margin:0 0 14px;padding-left:20px;color:#4b5563;font-size:13px;line-height:1.8;">
       ${copy.how.map((line) => `<li>${line}</li>`).join('')}
     </ol>
+    ${
+      params.planUrl
+        ? `<div style="margin:0 0 16px;padding:14px 16px;background:#faf7ef;border:1px solid #eadfc8;border-radius:12px;">
+      <p style="margin:0 0 4px;color:#92700c;font-size:13px;font-weight:700;">${copy.planTitle}</p>
+      <p style="margin:0 0 10px;color:#4b5563;font-size:13px;line-height:1.6;">${copy.planBody}</p>
+      <a href="${params.planUrl}" style="color:#92700c;font-size:13px;font-weight:700;text-decoration:underline;">${copy.planCta} →</a>
+    </div>`
+        : ''
+    }
     <p style="margin:0 0 6px;color:#9ca3af;font-size:12px;">${copy.keep}</p>
     <p style="margin:0;color:#9ca3af;font-size:12px;">${copy.homescreen}</p>
   </div>

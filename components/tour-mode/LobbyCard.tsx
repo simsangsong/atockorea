@@ -29,6 +29,7 @@ const COPY: Record<
     title: string;
     meetOn: string;
     pickupTitle: string;
+    vehicleTitle: string;
     chatHint: string;
   }
 > = {
@@ -37,6 +38,7 @@ const COPY: Record<
     title: 'Your tour room is ready',
     meetOn: 'We meet on',
     pickupTitle: 'Pickup',
+    vehicleTitle: 'Your vehicle',
     chatHint: 'Messages from your guide will arrive here. Questions? Ask below anytime.',
   },
   ko: {
@@ -44,6 +46,7 @@ const COPY: Record<
     title: '투어룸이 준비됐어요',
     meetOn: '만나는 날',
     pickupTitle: '픽업',
+    vehicleTitle: '이용 차량',
     chatHint: '가이드의 안내 메시지가 여기에 도착해요. 궁금한 점은 지금 남겨도 좋아요.',
   },
   ja: {
@@ -51,6 +54,7 @@ const COPY: Record<
     title: 'ツアールームの準備ができました',
     meetOn: '集合日',
     pickupTitle: 'お迎え',
+    vehicleTitle: 'ご利用の車両',
     chatHint: 'ガイドからのご案内はここに届きます。ご質問はいつでもどうぞ。',
   },
   es: {
@@ -58,6 +62,7 @@ const COPY: Record<
     title: 'Tu sala de tour está lista',
     meetOn: 'Nos vemos el',
     pickupTitle: 'Recogida',
+    vehicleTitle: 'Tu vehículo',
     chatHint: 'Los mensajes de tu guía llegarán aquí. ¿Preguntas? Escríbenos abajo.',
   },
   zh: {
@@ -65,9 +70,33 @@ const COPY: Record<
     title: '您的旅行房间已就绪',
     meetOn: '集合日期',
     pickupTitle: '接送',
+    vehicleTitle: '乘坐车辆',
     chatHint: '导游的通知会显示在这里。有问题随时在下方留言。',
   },
 };
+
+/**
+ * W4.3/B1 — a display line from the loosely-shaped tour_bus_details payload
+ * (ops have used several key spellings over time; show what exists).
+ */
+export function vehicleLineFromPayload(payload: unknown): string | null {
+  if (!payload || typeof payload !== 'object') return null;
+  const record = payload as Record<string, unknown>;
+  const pick = (keys: string[]) => {
+    for (const key of keys) {
+      const value = record[key];
+      if (typeof value === 'string' && value.trim()) return value.trim();
+    }
+    return null;
+  };
+  const parts = [
+    pick(['vehicle_model', 'model', 'bus_model', 'car_model']),
+    pick(['color', 'vehicle_color']),
+    pick(['vehicle', 'vehicle_number', 'vehicleNumber', 'plate', 'plate_number', 'bus_number']),
+    pick(['driver_name', 'driver']),
+  ].filter(Boolean);
+  return parts.length > 0 ? parts.join(' · ') : null;
+}
 
 /** Booking→pickup joins come back as an object or a 1-element array. */
 export function firstPickup(pickupPoints: unknown): PickupPoint | null {
@@ -82,14 +111,18 @@ export default function LobbyCard({
   tourDate,
   tourTime,
   pickupPoints,
+  busPayload,
 }: {
   locale: RoomLocale;
   tourDate: string | null;
   tourTime?: string | null;
   pickupPoints?: unknown;
+  /** W4.3/B1 — tour_bus_details payload for the vehicle line. */
+  busPayload?: unknown;
 }) {
   const copy = COPY[locale];
   const pickup = firstPickup(pickupPoints);
+  const vehicleLine = vehicleLineFromPayload(busPayload);
   const days = tourDate ? kstDaysUntil(tourDate) : null;
   const time = tourTime ? String(tourTime).slice(0, 5) : null;
 
@@ -130,6 +163,13 @@ export default function LobbyCard({
             </p>
           )}
           {pickup.address && <p className="tr-label mt-0.5 text-[var(--tr-ink-2)]">{pickup.address}</p>}
+        </div>
+      )}
+
+      {vehicleLine && (
+        <div className="mt-2.5 rounded-xl bg-[var(--tr-surface-2)] px-3 py-2.5" data-testid="vehicle-line">
+          <p className="tr-meta font-semibold uppercase tracking-wide text-[var(--tr-ink-3)]">🚐 {copy.vehicleTitle}</p>
+          <p className="tr-card-text mt-0.5 font-medium text-[var(--tr-ink)]">{vehicleLine}</p>
         </div>
       )}
 

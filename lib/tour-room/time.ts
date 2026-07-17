@@ -70,3 +70,19 @@ export function roomLifecycle(tourDate: string | null | undefined, nowMs = Date.
 export function roomShouldBeClosed(tourDate: string | null | undefined, nowMs = Date.now()): boolean {
   return roomLifecycle(tourDate, nowMs) === 'ended';
 }
+
+/** P-D12 — the post-tour action window: tour-day end + 48h. */
+export const POST_TOUR_WINDOW_MS = 48 * 60 * 60 * 1000;
+
+/**
+ * W4.4 / P-D12 — the `post_tour` sub-window: after the tour day ends and for
+ * 48h, three actions stay allowed on an otherwise winding-down room (lost
+ * item, settlement confirm, review). NOT a chat re-open — the room's
+ * lifecycle rules are untouched; routes for those three actions consult this
+ * check on top of them.
+ */
+export function inPostTourWindow(tourDate: string | null | undefined, nowMs = Date.now()): boolean {
+  if (!tourDate) return false;
+  const dayEnd = kstEndOfDayMs(tourDate);
+  return nowMs > dayEnd && nowMs <= dayEnd + POST_TOUR_WINDOW_MS;
+}
