@@ -24,6 +24,8 @@ import EndedCard from '@/components/tour-mode/EndedCard';
 import TravelTimelineEntry from '@/components/tour-mode/TravelTimeline';
 import GuideCaptionBar from '@/components/tour-mode/GuideCaptionBar';
 import NoticeBanner from '@/components/tour-mode/NoticeBanner';
+import OfflineInfoCard from '@/components/tour-mode/OfflineInfoCard';
+import PushOptInBanner from '@/components/tour-mode/PushOptInBanner';
 import QuickSignalBar from '@/components/tour-mode/QuickSignalBar';
 import SecondaryCardBanner from '@/components/tour-mode/SecondaryCardBanner';
 import LobbyCard, { firstPickup } from '@/components/tour-mode/LobbyCard';
@@ -452,6 +454,18 @@ function TourRoomLive({
       chatActivityKey={messages.length}
       banner={
         <>
+          {viewerRole === 'customer' && (
+            <OfflineInfoCard
+              bookingId={bookingId}
+              locale={locale}
+              tourDate={snapshot.booking?.tour_date}
+              messages={messages}
+              schedule={(schedule ?? []) as Array<Record<string, unknown>>}
+            />
+          )}
+          {viewerRole === 'customer' && !readOnly && (
+            <PushOptInBanner bookingId={bookingId} roomSession={data.session} locale={locale} />
+          )}
           <NoticeBanner
             messages={messages}
             tourDate={snapshot.booking?.tour_date}
@@ -545,7 +559,15 @@ function TourRoomLive({
               busPayload={(snapshot.bus_detail as { payload?: unknown } | null | undefined)?.payload}
             />
           )}
-          {readOnly && <EndedCard locale={locale} bookingReference={snapshot.booking?.booking_reference} />}
+          {readOnly && (
+            <EndedCard
+              locale={locale}
+              bookingReference={snapshot.booking?.booking_reference}
+              bookingId={bookingId}
+              roomSession={viewerRole === 'customer' ? data.session : null}
+              tourDate={snapshot.booking?.tour_date ?? null}
+            />
+          )}
           {viewerRole === 'customer' && (
             <TravelTimelineEntry
               locale={locale}

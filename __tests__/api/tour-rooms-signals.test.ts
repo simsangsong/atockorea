@@ -19,6 +19,9 @@ jest.mock('@/lib/durable-rate-limit', () => ({
 }));
 jest.mock('@/lib/tour-room/events', () => ({ recordRoomEvent: jest.fn(async () => ({ inserted: true, event: null })) }));
 jest.mock('@/lib/tour-room/realtime', () => ({ broadcastToRoom: jest.fn(async () => ({ ok: true })) }));
+jest.mock('@/lib/tour-room/guestPush', () => ({ sendGuestRoomPush: jest.fn(async () => ({ sent: 0, pruned: 0 })) }));
+jest.mock('@/lib/email', () => ({ sendEmail: jest.fn(async () => ({ success: true })) }));
+jest.mock('@/lib/tour-ops/push', () => ({ sendOpsPush: jest.fn(async () => ({ sent: 0, pruned: 0 })), isGonePushStatus: jest.fn(() => false) }));
 
 const getAuthUserMock = getAuthUser as jest.Mock;
 const createServerClientMock = createServerClient as jest.Mock;
@@ -32,7 +35,7 @@ const BOOKING = {
   user_id: 'user-owner',
   tour_id: 'tour-1',
   merchant_id: 'merchant-1',
-  tour_date: '2026-07-14',
+  tour_date: new Date(FIXED_NOW_MS).toISOString().slice(0, 10),
   contact_name: 'Alex Kim',
   contact_email: 'alex@example.com',
   contact_phone: null,
@@ -164,5 +167,25 @@ describe('POST /api/tour-rooms/[bookingId]/signals', () => {
       routeParams(),
     );
     expect(badType.status).toBe(400);
+  });
+
+  it('lost_item works in the post_tour window, freezes after 48h (I3/P-D12)', async () => {
+    const db = fakeDb();
+    createServerClientMock.mockReturnValue(db);
+    const live = await signalsPOST(
+      fakeReq({ headers: { 'x-tour-room-auth': session('customer') }, json: { type: 'lost_item' } }),
+      routeParams(),
+    );
+    expect(live.status).toBe(201);
+    expect(db.inserts.tour_room_messages[0].metadata).toMatchObject({ kind: 'guest_lost_item' });
+
+    // 5 days after the tour: past end + 48h -> frozen
+    (Date.now as jest.Mock).mockReturnValue(FIXED_NOW_MS + 5 * 24 * 60 * 60 * 1000);
+    const frozen = await signalsPOST(
+      fakeReq({ headers: { 'x-tour-room-auth': session('customer') }, json: { type: 'lost_item' } }),
+      routeParams(),
+    );
+    expect(frozen.status).toBe(403);
+    expect(await frozen.json()).toMatchObject({ error: 'post_tour_window_closed' });
   });
 });

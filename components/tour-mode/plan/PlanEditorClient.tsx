@@ -25,6 +25,7 @@ import {
   GOOGLE_MAPS_LOADER_VERSION,
   libraries as GOOGLE_MAPS_LIBRARIES,
 } from '@/lib/google-maps';
+import { koreanAllergyCardLines } from '@/lib/tour-room/allergyCard';
 import { formatMinutes, haversineKm, totalDriveMinutes, type LatLng } from '@/lib/itinerary-builder/distance';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 import { useTourRoomSession } from '@/hooks/useTourRoomSession';
@@ -167,6 +168,8 @@ interface PlanCopy {
   delegateDesc: string;
   delegateCta: string;
   backToRoom: string;
+  allergyCardTitle: string;
+  allergyCardHint: string;
 }
 
 const COPY: Record<RoomLocale, PlanCopy> = {
@@ -240,6 +243,8 @@ const COPY: Record<RoomLocale, PlanCopy> = {
       'Your guide plans the best route for your date, weather, and crowd levels. You can still share wishes below — they’ll be woven in.',
     delegateCta: 'Leave it to the guide',
     backToRoom: 'Open the tour room',
+    allergyCardTitle: '🍽️ Restaurant card (Korean)',
+    allergyCardHint: 'Show this to restaurant staff — it explains your dietary needs in Korean.',
   },
   ko: {
     title: '오늘의 일정 만들기',
@@ -310,6 +315,8 @@ const COPY: Record<RoomLocale, PlanCopy> = {
       '투어일의 날씨·혼잡도·동선을 고려해 가이드가 최적 코스를 준비해요. 아래에 바라는 점을 남기면 반영돼요.',
     delegateCta: '가이드에게 맡기기',
     backToRoom: '투어룸 열기',
+    allergyCardTitle: '🍽️ 식당용 카드 (한국어)',
+    allergyCardHint: '식당 직원에게 보여주세요 — 식이 정보를 한국어로 설명해요.',
   },
   ja: {
     title: 'ツアーの一日をプランする',
@@ -379,6 +386,8 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     delegateDesc: '天気・混雑・動線を考慮して最適なコースをご用意します。ご希望は下に残せば反映されます。',
     delegateCta: 'ガイドに任せる',
     backToRoom: 'ツアールームを開く',
+    allergyCardTitle: '🍽️ レストラン用カード(韓国語)',
+    allergyCardHint: 'お店のスタッフに見せてください — 食事制限を韓国語で説明します。',
   },
   zh: {
     title: '规划您的旅行日',
@@ -448,6 +457,8 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     delegateDesc: '导游会结合天气、人流和路线为您准备最佳行程。在下方留下心愿即可被采纳。',
     delegateCta: '交给导游',
     backToRoom: '打开旅行房间',
+    allergyCardTitle: '🍽️ 餐厅出示卡(韩语)',
+    allergyCardHint: '出示给餐厅工作人员——用韩语说明您的饮食要求。',
   },
   es: {
     title: 'Planea tu día de tour',
@@ -519,6 +530,8 @@ const COPY: Record<RoomLocale, PlanCopy> = {
       'Tu guía prepara la mejor ruta según fecha, clima y multitudes. Comparte tus deseos abajo y los tendrá en cuenta.',
     delegateCta: 'Dejarlo al guía',
     backToRoom: 'Abrir la sala del tour',
+    allergyCardTitle: '🍽️ Tarjeta para restaurantes (coreano)',
+    allergyCardHint: 'Muéstrala al personal del restaurante: explica tu dieta en coreano.',
   },
 };
 
@@ -1464,6 +1477,32 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
             />
           </section>
         )}
+
+        {/* W4.3 / F1 — the Korean restaurant card, derived live from needs. */}
+        {(() => {
+          const lines = koreanAllergyCardLines(needsPayload(needs));
+          if (!lines) return null;
+          return (
+            <section className="tr-card mt-6 px-4 py-4" data-testid="allergy-card">
+              <h2 className="tr-body font-bold text-[var(--tr-ink)]">{copy.allergyCardTitle}</h2>
+              <p className="tr-meta mt-0.5 text-[var(--tr-ink-3)]">{copy.allergyCardHint}</p>
+              <div className="mt-3 rounded-xl border-2 border-[var(--tr-accent)] bg-[var(--tr-surface)] px-4 py-4">
+                {lines.map((line, i) => (
+                  <p
+                    key={i}
+                    className={
+                      i === 0
+                        ? 'text-[16px] font-bold leading-relaxed text-[var(--tr-ink)]'
+                        : 'mt-1.5 text-[17px] font-semibold leading-relaxed text-[var(--tr-ink)]'
+                    }
+                  >
+                    {line}
+                  </p>
+                ))}
+              </div>
+            </section>
+          );
+        })()}
       </div>
 
       {/* sticky submit bar */}

@@ -11,6 +11,11 @@ import {
 } from '@/lib/tour-room/guestSignals';
 import { recordRoomEvent } from '@/lib/tour-room/events';
 import { broadcastToRoom } from '@/lib/tour-room/realtime';
+import { sendGuestRoomPush } from '@/lib/tour-room/guestPush';
+import { normalizeRoomLocale } from '@/lib/tour-room/snapshot';
+import { sendEmail } from '@/lib/email';
+import { sendOpsPush } from '@/lib/tour-ops/push';
+import { inPostTourWindow, roomLifecycle } from '@/lib/tour-room/time';
 
 export const dynamic = 'force-dynamic';
 
@@ -77,6 +82,15 @@ export async function POST(
       );
     }
 
+    // W5.2 / I3 — lost-item reports are a post_tour-window action (P-D12):
+    // valid on the tour day AND for 48h after; other signals are live-day.
+    if (type === 'lost_item') {
+      const lifecycle = roomLifecycle(booking.tour_date);
+      if (lifecycle === 'ended' && !inPostTourWindow(booking.tour_date)) {
+        return NextResponse.json({ error: 'post_tour_window_closed' }, { status: 403 });
+      }
+    }
+
     const room = await ensureRoom(supabase, booking);
     const displayName =
       actor.kind === 'token' || actor.kind === 'session'
@@ -119,6 +133,24 @@ export async function POST(
         .select()
         .single();
       if (message) await broadcastToRoom(room, 'message', { message });
+
+      // W4.1 / E2 ladder fallbacks — push to opted-in devices, and the email
+      // rail for guests who never opted in. Both fire-and-forget, once per
+      // notice (this branch only runs on the first UNIQUE insert).
+      void sendGuestRoomPush(supabase, booking, {
+        translations: bundle.translations,
+        tag: `overdue-${room.id}`,
+      }).catch(() => undefined);
+      if (booking.contact_email) {
+        const locale = normalizeRoomLocale(booking.preferred_language);
+        const line = bundle.translations[locale] ?? bundle.translations.en;
+        void sendEmail({
+          to: booking.contact_email,
+          subject: line.slice(0, 120),
+          html: `<p style="font-family:sans-serif;font-size:15px;line-height:1.6;">${line}</p>
+<p style="font-family:sans-serif;font-size:13px;color:#6b7280;">AtoC Korea · <a href="${(process.env.NEXT_PUBLIC_SITE_URL || 'https://atockorea.com').replace(/\/$/, '')}/tour-mode/room/${booking.id}">Tour room</a></p>`,
+        }).catch(() => undefined);
+      }
       return NextResponse.json({ message: message ?? null }, { status: 201 });
     }
 
@@ -176,6 +208,24 @@ export async function POST(
     if (messageError) throw messageError;
 
     await broadcastToRoom(room, 'message', { message });
+
+    // I3 — lost items also ping the ops consoles (the driver/guide may have
+    // already left the room surface for the day).
+    if (type === 'lost_item') {
+      void sendOpsPush({
+        title: '🧳 분실물 신고',
+        body: `booking ${booking.id.slice(0, 8)} — 손님이 분실물을 신고했어요 (차량 확인 요청).`,
+        tag: `lost-item-${room.id}`,
+      }).catch(() => undefined);
+      void sendOpsPush(
+        {
+          title: '🧳 분실물 신고',
+          body: `booking ${booking.id.slice(0, 8)} — 손님이 분실물을 신고했어요 (차량 확인 요청).`,
+          tag: `lost-item-${room.id}`,
+        },
+        { role: 'guide' },
+      ).catch(() => undefined);
+    }
 
     await recordRoomEvent(supabase, {
       roomId: room.id,
