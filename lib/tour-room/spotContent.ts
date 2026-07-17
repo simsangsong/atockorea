@@ -148,6 +148,11 @@ interface PoiKbEntry {
   [key: string]: unknown;
 }
 
+/** P-D16 — does the static 82-POI KB cover this key? (generation skips these) */
+export function hasPoiKbEntry(poiKey: string | null | undefined): boolean {
+  return poiKbEntry(poiKey) !== null;
+}
+
 function poiKbEntry(poiKey: string | null | undefined): PoiKbEntry | null {
   if (!poiKey) return null;
   const entry = (poiKnowledgeBase as Record<string, unknown>)[poiKey];

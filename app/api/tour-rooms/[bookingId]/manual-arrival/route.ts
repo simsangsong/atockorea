@@ -3,6 +3,11 @@ import { createServerClient } from '@/lib/supabase';
 import { requestGate } from '@/lib/durable-rate-limit';
 import { ensureRoom, resolveRoomActor } from '@/lib/tour-room/access';
 import { recordRoomEvent } from '@/lib/tour-room/events';
+import {
+  generateSpotContent,
+  getGeneratedSpotContent,
+  refCandidatesFor,
+} from '@/lib/tour-room/generatedContent';
 import { humanizePoiKey } from '@/lib/tour-room/dayPlan';
 import { broadcastToRoom } from '@/lib/tour-room/realtime';
 import { normalizeRoomLocale } from '@/lib/tour-room/snapshot';
@@ -101,10 +106,16 @@ export async function POST(
       spot: spot.title,
     });
     const viewerLocale = normalizeRoomLocale(body.locale, normalizeRoomLocale(booking.preferred_language));
-    const content = resolveSpotContent(
-      { title: spot.title, content: spot.content, poi_key: spot.poi_key },
-      viewerLocale,
-    );
+    let content: { content: import('@/lib/tour-room/spotContent').SpotArrivalContent | null; tier: string } =
+      resolveSpotContent({ title: spot.title, content: spot.content, poi_key: spot.poi_key }, viewerLocale);
+
+    // P-D16 — the 'generated' tier sits between poi_kb and the honest null:
+    // a booking-scoped, critic-verified mini-guide from the auto pipeline.
+    const refs = refCandidatesFor({ poi_key: spot.poi_key, title: spot.title });
+    if (!content.content) {
+      const generated = await getGeneratedSpotContent(supabase, booking.id, refs, viewerLocale);
+      if (generated) content = { content: generated.content, tier: 'generated' };
+    }
 
     const room = await ensureRoom(supabase, booking);
     const { data: message, error: messageError } = await supabase
@@ -144,6 +155,53 @@ export async function POST(
       actorRole: actor.role,
       payload: { poi_key: spot.poi_key, title: spot.title, content_tier: content.tier },
     }).catch(() => undefined);
+
+    // P-D16 on-demand path: no content anywhere → generate now (async) and
+    // post a follow-up card when ready. The template message above already
+    // answered honestly; this upgrades the moment, never blocks it.
+    if (!content.content) {
+      const spotTitle = spot.title;
+      const spotPoiKey = spot.poi_key;
+      void (async () => {
+        try {
+          const generatedRow = await generateSpotContent(supabase, {
+            bookingId: booking.id,
+            title: spotTitle,
+            poiKey: spotPoiKey,
+            locales: [viewerLocale],
+          });
+          if (!generatedRow) return;
+          const followup = await getGeneratedSpotContent(supabase, booking.id, refs, viewerLocale);
+          if (!followup) return;
+          const { data: followupMessage } = await supabase
+            .from('tour_room_messages')
+            .insert({
+              room_id: room.id,
+              booking_id: booking.id,
+              sender_role: 'system',
+              input_kind: 'text',
+              source_text: translation.source_text,
+              source_locale: translation.source_locale,
+              translations: translation.translations,
+              target_locales: Object.keys(translation.translations),
+              metadata: {
+                kind: 'spot_arrival',
+                spot_id: null,
+                spot_title: spotTitle,
+                manual: true,
+                generated_followup: true,
+                content: followup.content,
+                content_tier: 'generated',
+              },
+            })
+            .select()
+            .single();
+          if (followupMessage) await broadcastToRoom(room, 'message', { message: followupMessage });
+        } catch (generationError) {
+          console.warn('manual-arrival on-demand generation failed:', generationError);
+        }
+      })();
+    }
 
     return NextResponse.json({ message, content_tier: content.tier }, { status: 201 });
   } catch (error) {

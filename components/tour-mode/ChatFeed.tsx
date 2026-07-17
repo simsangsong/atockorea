@@ -238,6 +238,7 @@ export default function ChatFeed({
                     messageText={displayText(message, viewerLocale, originals.has(message.id))}
                     audioUrl={(message.metadata?.audio_url as string | null | undefined) ?? null}
                     locale={viewerLocale}
+                    contentTier={(message.metadata?.content_tier as string | null | undefined) ?? null}
                   />
                 </div>
               );

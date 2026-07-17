@@ -28,12 +28,12 @@ import {
 import type { SpotArrivalContent } from '@/lib/tour-room/spotContent';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
-const COPY: Record<RoomLocale, { arrived: string; more: string; less: string; audio: string }> = {
-  en: { arrived: 'You’ve arrived', more: 'More details', less: 'Show less', audio: 'Play audio guide' },
-  ko: { arrived: '도착했어요', more: '자세히 보기', less: '접기', audio: '오디오 가이드 듣기' },
-  ja: { arrived: '到着しました', more: '詳しく見る', less: '閉じる', audio: '音声ガイドを再生' },
-  es: { arrived: 'Has llegado', more: 'Ver más', less: 'Ver menos', audio: 'Reproducir audioguía' },
-  zh: { arrived: '已到达', more: '查看详情', less: '收起', audio: '播放语音导览' },
+const COPY: Record<RoomLocale, { arrived: string; more: string; less: string; audio: string; aiBadge: string }> = {
+  en: { arrived: 'You’ve arrived', more: 'More details', less: 'Show less', audio: 'Play audio guide', aiBadge: 'AI-generated guide — verify details locally' },
+  ko: { arrived: '도착했어요', more: '자세히 보기', less: '접기', audio: '오디오 가이드 듣기', aiBadge: 'AI 생성 안내 — 세부 정보는 현장에서 확인하세요' },
+  ja: { arrived: '到着しました', more: '詳しく見る', less: '閉じる', audio: '音声ガイドを再生', aiBadge: 'AI生成ガイド — 詳細は現地でご確認ください' },
+  es: { arrived: 'Has llegado', more: 'Ver más', less: 'Ver menos', audio: 'Reproducir audioguía', aiBadge: 'Guía generada por IA — verifica los detalles en el lugar' },
+  zh: { arrived: '已到达', more: '查看详情', less: '收起', audio: '播放语音导览', aiBadge: 'AI生成指南 — 详情请以现场为准' },
 };
 
 const BASIC_ROWS: Array<{ Icon: typeof IconHours; pick: (c: SpotArrivalContent) => string | undefined }> = [
@@ -53,12 +53,15 @@ export default function SpotArrivalCard({
   messageText,
   audioUrl,
   locale,
+  contentTier,
 }: {
   content: SpotArrivalContent;
   /** The translated template line ("You have arrived near …"). */
   messageText: string;
   audioUrl?: string | null;
   locale: RoomLocale;
+  /** P-D16 — 'generated' shows the AI-provenance badge (honesty rule). */
+  contentTier?: string | null;
 }) {
   const [expanded, setExpanded] = useState(false);
   const [playing, setPlaying] = useState(false);
@@ -99,6 +102,11 @@ export default function SpotArrivalCard({
         </p>
         <p className="tr-title mt-0.5 text-[var(--tr-ink)]">{content.name}</p>
         <p className="tr-label mt-1 leading-relaxed text-[var(--tr-ink-2)]">{messageText}</p>
+        {contentTier === 'generated' && (
+          <p className="tr-meta mt-1 text-[var(--tr-ink-3)]" data-testid="spot-ai-badge">
+            ✨ {copy.aiBadge}
+          </p>
+        )}
 
         {content.description && expanded && (
           <p className="tr-card-text mt-2 text-[var(--tr-ink)]">{content.description}</p>
