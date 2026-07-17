@@ -14,6 +14,7 @@
  */
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import GuidePlanPanel from '@/components/tour-mode/guide/GuidePlanPanel';
 import { kstToday } from '@/lib/tour-room/time';
 
 const GUIDE_TOKEN_KEY = 'tour_mode_guide_token';
@@ -22,6 +23,7 @@ const POLL_MS = 15_000;
 interface OverviewRoom {
   booking_id: string;
   room_id: string | null;
+  day_plan: { id: string; status: string; version: number; stops_count: number; updated_at: string } | null;
   contact_name: string | null;
   number_of_guests: number | null;
   preferred_language: string | null;
@@ -71,6 +73,7 @@ export default function GuideConsole() {
   const [meetPoint, setMeetPoint] = useState('');
   const [freePoint, setFreePoint] = useState('');
   const [busy, setBusy] = useState<string | null>(null);
+  const [openPlanBookingId, setOpenPlanBookingId] = useState<string | null>(null);
   const tokenRef = useRef<string | null>(null);
 
   useEffect(() => {
@@ -289,32 +292,59 @@ export default function GuideConsole() {
       {/* 룸 카드 */}
       <section className="mt-4 space-y-2">
         {overview.rooms.map((room) => (
-          <a
-            key={room.booking_id}
-            href={`/tour-mode/room/${room.booking_id}?rt=${encodeURIComponent(tokenRef.current ?? '')}`}
-            className="tr-card flex items-center gap-3 px-3.5 py-3"
-            data-testid="room-card"
-          >
-            <span
-              className="h-9 w-9 shrink-0 rounded-full text-center text-[15px] font-bold leading-9 text-white"
-              style={{ backgroundColor: `hsl(${roomHue(room.booking_id)} 65% 55%)` }}
-            >
-              {(room.contact_name ?? 'G').trim()[0]?.toUpperCase()}
-            </span>
-            <span className="min-w-0 flex-1">
-              <span className="flex items-center gap-1.5 text-[14px] font-semibold text-gray-900">
-                {room.contact_name ?? '게스트'}
-                <span className="text-[11px] font-normal text-gray-400">
-                  {room.number_of_guests ?? 1}명 · {room.preferred_language ?? 'en'}
+          <div key={room.booking_id} className="tr-card px-3.5 py-3" data-testid="room-card">
+            <div className="flex items-center gap-3">
+              <a
+                href={`/tour-mode/room/${room.booking_id}?rt=${encodeURIComponent(tokenRef.current ?? '')}`}
+                className="flex min-w-0 flex-1 items-center gap-3"
+              >
+                <span
+                  className="h-9 w-9 shrink-0 rounded-full text-center text-[15px] font-bold leading-9 text-white"
+                  style={{ backgroundColor: `hsl(${roomHue(room.booking_id)} 65% 55%)` }}
+                >
+                  {(room.contact_name ?? 'G').trim()[0]?.toUpperCase()}
                 </span>
-                {room.onboard_ack && <span title="탑승 확인" className="text-emerald-600">✓</span>}
-              </span>
-              <span className="block truncate text-[12px] text-gray-500">
-                {room.last_message?.source_text ?? (room.pickup?.name ? `픽업: ${room.pickup.name}` : '아직 메시지 없음')}
-              </span>
-            </span>
-            <span className="shrink-0 text-gray-300">›</span>
-          </a>
+                <span className="min-w-0 flex-1">
+                  <span className="flex items-center gap-1.5 text-[14px] font-semibold text-gray-900">
+                    {room.contact_name ?? '게스트'}
+                    <span className="text-[11px] font-normal text-gray-400">
+                      {room.number_of_guests ?? 1}명 · {room.preferred_language ?? 'en'}
+                    </span>
+                    {room.onboard_ack && <span title="탑승 확인" className="text-emerald-600">✓</span>}
+                    {room.day_plan?.status === 'guest_draft' && (
+                      <span className="rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-bold text-amber-800">
+                        초안 검토
+                      </span>
+                    )}
+                  </span>
+                  <span className="block truncate text-[12px] text-gray-500">
+                    {room.last_message?.source_text ?? (room.pickup?.name ? `픽업: ${room.pickup.name}` : '아직 메시지 없음')}
+                  </span>
+                </span>
+              </a>
+              <button
+                type="button"
+                onClick={() =>
+                  setOpenPlanBookingId((prev) => (prev === room.booking_id ? null : room.booking_id))
+                }
+                className={`shrink-0 rounded-xl px-2.5 py-2 text-[12px] font-semibold ${
+                  room.day_plan?.status === 'guest_draft'
+                    ? 'bg-amber-100 text-amber-800'
+                    : 'bg-gray-100 text-gray-600'
+                }`}
+                data-testid="plan-toggle"
+              >
+                일정{openPlanBookingId === room.booking_id ? ' ▴' : ' ▾'}
+              </button>
+            </div>
+            {openPlanBookingId === room.booking_id && tokenRef.current && (
+              <GuidePlanPanel
+                bookingId={room.booking_id}
+                token={tokenRef.current}
+                onChanged={() => void load()}
+              />
+            )}
+          </div>
         ))}
       </section>
 
