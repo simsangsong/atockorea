@@ -216,6 +216,26 @@ describe('lib/tour-room/access', () => {
       });
     });
 
+    it('accepts a driver room session (W3 console follow-up calls)', async () => {
+      const { session } = signRoomSession({
+        roomId: 'room-1',
+        bookingId: BOOKING.id,
+        participantId: 'p-drv',
+        role: 'driver',
+        displayName: '기사님',
+      });
+      expect(verifyRoomSession(session)).toMatchObject({ role: 'driver' });
+      const result = await resolveRoomActor(
+        fakeReq({ headers: { 'x-tour-room-auth': session } }),
+        BOOKING.id,
+        { supabase: fakeDb() },
+      );
+      expect(result).toMatchObject({
+        ok: true,
+        actor: { kind: 'session', role: 'driver' },
+      });
+    });
+
     it('rejects a session minted for a different booking', async () => {
       const { session } = signRoomSession({
         roomId: 'room-2',
