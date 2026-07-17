@@ -7,6 +7,7 @@ import {
   signRoomSession,
   type RoomActor,
 } from '@/lib/tour-room/access';
+import { checkDriverPin } from '@/lib/tour-room/driver';
 import { roomChannelTopic, broadcastToRoom } from '@/lib/tour-room/realtime';
 import { roomShouldBeClosed } from '@/lib/tour-room/time';
 import { buildRoomSnapshot, normalizeRoomLocale } from '@/lib/tour-room/snapshot';
@@ -75,6 +76,19 @@ export async function POST(
       return NextResponse.json({ error: resolved.error }, { status: resolved.status });
     }
     const { booking, actor, authUserId } = resolved;
+
+    // P-D3 (W3) — drivers pass a vehicle-plate PIN on top of the signed link.
+    // Token-authenticated joins only: an existing driver room session already
+    // proved the PIN once.
+    if (actor.role === 'driver' && actor.kind === 'token') {
+      const pinCheck = await checkDriverPin(supabase, booking.tour_id, booking.tour_date, body.pin);
+      if (pinCheck.required && !pinCheck.ok) {
+        return NextResponse.json(
+          { error: typeof body.pin === 'string' && body.pin ? 'pin_mismatch' : 'pin_required' },
+          { status: 403 },
+        );
+      }
+    }
 
     let room = await ensureRoom(supabase, booking);
 

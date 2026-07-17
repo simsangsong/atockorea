@@ -51,7 +51,19 @@ export interface GuideRoomTokenPayload {
   exp: number;
 }
 
-export type RoomTokenPayload = CustomerRoomTokenPayload | GuideRoomTokenPayload;
+/** P-D15 (private mode W3) — the driver's tour-date key, like the guide's. */
+export interface DriverRoomTokenPayload {
+  scope: 'tour-date';
+  role: 'driver';
+  tourId: string;
+  /** YYYY-MM-DD (KST tour day). */
+  tourDate: string;
+  displayName: string;
+  iat: number;
+  exp: number;
+}
+
+export type RoomTokenPayload = CustomerRoomTokenPayload | GuideRoomTokenPayload | DriverRoomTokenPayload;
 
 function primarySecret(): string {
   const secret = process.env.TOUR_ROOM_TOKEN_SECRET;
@@ -129,6 +141,24 @@ export function signGuideRoomToken(input: {
   return { token: encode(payload), payload };
 }
 
+export function signDriverRoomToken(input: {
+  tourId: string;
+  tourDate: string;
+  displayName?: string;
+}): { token: string; payload: DriverRoomTokenPayload } {
+  const iat = Math.floor(Date.now() / 1000);
+  const payload: DriverRoomTokenPayload = {
+    scope: 'tour-date',
+    role: 'driver',
+    tourId: input.tourId,
+    tourDate: input.tourDate,
+    displayName: input.displayName?.trim() || 'Driver',
+    iat,
+    exp: roomTokenExpiryForTourDate(input.tourDate),
+  };
+  return { token: encode(payload), payload };
+}
+
 function encode(payload: RoomTokenPayload): string {
   const body = Buffer.from(JSON.stringify(payload)).toString('base64url');
   return `${body}.${sign(body, primarySecret())}`;
@@ -168,6 +198,17 @@ function isGuidePayload(payload: Record<string, unknown>): payload is GuideRoomT
   );
 }
 
+function isDriverPayload(payload: Record<string, unknown>): payload is DriverRoomTokenPayload & Record<string, unknown> {
+  return (
+    payload.scope === 'tour-date' &&
+    payload.role === 'driver' &&
+    typeof payload.tourId === 'string' &&
+    payload.tourId.length > 0 &&
+    typeof payload.tourDate === 'string' &&
+    isValidYmd(payload.tourDate)
+  );
+}
+
 /**
  * Verify a room token: signature (current or previous secret), shape, and
  * expiry. Returns the payload or null. Revocation (tour_room_invites) is a
@@ -194,6 +235,7 @@ export function verifyRoomToken(token: unknown): RoomTokenPayload | null {
 
   if (isCustomerPayload(payload)) return payload;
   if (isGuidePayload(payload)) return payload;
+  if (isDriverPayload(payload)) return payload;
   return null;
 }
 

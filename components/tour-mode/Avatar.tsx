@@ -39,6 +39,19 @@ export default function Avatar({
     );
   }
 
+  if (role === 'driver') {
+    return (
+      <span
+        className="flex shrink-0 items-center justify-center rounded-full bg-[var(--tr-ink-2,var(--tr-ink))] text-[var(--tr-surface)]"
+        style={common}
+        data-testid="avatar-driver"
+        aria-hidden
+      >
+        <IconGuide size={iconSize} strokeWidth={2.25} />
+      </span>
+    );
+  }
+
   if (role === 'admin') {
     return (
       <span

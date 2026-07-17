@@ -64,11 +64,11 @@ const UNREAD_LABEL: Record<RoomLocale, string> = {
 };
 
 const ROLE_LABEL: Record<RoomLocale, Record<string, string>> = {
-  en: { guide: 'Guide', admin: 'AtoC Korea' },
-  ko: { guide: '가이드', admin: 'AtoC Korea' },
-  ja: { guide: 'ガイド', admin: 'AtoC Korea' },
-  es: { guide: 'Guía', admin: 'AtoC Korea' },
-  zh: { guide: '导游', admin: 'AtoC Korea' },
+  en: { guide: 'Guide', admin: 'AtoC Korea', driver: 'Driver' },
+  ko: { guide: '가이드', admin: 'AtoC Korea', driver: '기사님' },
+  ja: { guide: 'ガイド', admin: 'AtoC Korea', driver: 'ドライバー' },
+  es: { guide: 'Guía', admin: 'AtoC Korea', driver: 'Conductor' },
+  zh: { guide: '导游', admin: 'AtoC Korea', driver: '司机' },
 };
 
 function displayText(message: RoomMessage, locale: RoomLocale, showOriginal: boolean): string {

@@ -38,19 +38,22 @@ const requestGateMock = requestGate as jest.Mock;
 const translateMock = translateTextForLocales as jest.Mock;
 const broadcastToRoomMock = jest.requireMock('@/lib/tour-room/realtime').broadcastToRoom as jest.Mock;
 
+// Fixture date must stay in the future - room tokens expire at tour-day-end KST + 24h.
+const FIXTURE_TOUR_DATE = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10);
+
 const BOOKING = {
   id: 'booking-1',
   user_id: 'user-owner',
   tour_id: 'tour-1',
   merchant_id: 'merchant-1',
-  tour_date: '2026-07-15',
+  tour_date: FIXTURE_TOUR_DATE,
   contact_name: 'Alex Kim',
   contact_email: 'alex@example.com',
   contact_phone: null,
   preferred_language: 'ja',
 };
 
-const ROOM = { id: 'room-1', booking_id: 'booking-1', tour_id: 'tour-1', tour_date: '2026-07-15', status: 'active' };
+const ROOM = { id: 'room-1', booking_id: 'booking-1', tour_id: 'tour-1', tour_date: FIXTURE_TOUR_DATE, status: 'active' };
 const SPOT = {
   id: 'spot-1',
   tour_id: 'tour-1',
@@ -174,7 +177,7 @@ describe('GET /api/tour-rooms/[bookingId]/messages', () => {
     const { token } = signCustomerRoomToken({
       bookingId: 'booking-1',
       displayName: 'Alex',
-      tourDate: '2026-07-15',
+      tourDate: FIXTURE_TOUR_DATE,
     });
     const res = await messagesGET(fakeReq({ query: { rt: token } }), routeParams());
     expect(res.status).toBe(200);
