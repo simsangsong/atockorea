@@ -62,6 +62,10 @@ const PLAN_DELEGATED: Record<string, string> = {
 
 const MAX_STOPS = 20;
 
+/** §C-3 stop state machine values a client may write (skipped feeds MUTATE). */
+const STOP_STATUSES = ['pending', 'en_route', 'arrived', 'free_time', 'regrouped', 'done', 'skipped'] as const;
+const SKIP_REASONS = ['closed', 'weather', 'crowd', 'guest_request', 'time'] as const;
+
 function clampCoord(value: unknown, limit: number): number | null {
   const n = typeof value === 'number' ? value : Number(value);
   return Number.isFinite(n) && Math.abs(n) <= limit && n !== 0 ? n : null;
@@ -91,7 +95,12 @@ function sanitizeStops(raw: unknown): DayPlanStop[] | null {
       stop_type: typeof stop.stop_type === 'string' ? stop.stop_type.slice(0, 20) : 'sight',
       arrival_planned: time && /^\d{2}:\d{2}$/.test(time) ? time : null,
       duration_min: typeof stop.duration_min === 'number' ? Math.max(0, Math.min(600, stop.duration_min)) : null,
-      status: 'pending',
+      status: (STOP_STATUSES as readonly string[]).includes(stop.status as string)
+        ? (stop.status as string)
+        : 'pending',
+      ...(stop.status === 'skipped' && (SKIP_REASONS as readonly string[]).includes(stop.skip_reason as string)
+        ? { skip_reason: stop.skip_reason as string }
+        : {}),
       ...(lat !== null && lng !== null ? { lat, lng } : {}),
       memo_guide: typeof stop.memo_guide === 'string' ? stop.memo_guide.slice(0, 500) : undefined,
       memo_guest: typeof stop.memo_guest === 'string' ? stop.memo_guest.slice(0, 500) : undefined,

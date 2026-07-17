@@ -295,6 +295,35 @@ describe('PUT /api/tour-rooms/[bookingId]/plan — guide plane (unchanged)', () 
     const res = await planPUT(fakeReq({ json: { stops: STOPS } }), routeParams());
     expect(res.status).toBe(403);
   });
+
+  it('persists skipped status + reason on a MUTATE write (W2.2)', async () => {
+    const db = fakeDb({ plan: { id: 'plan-1', status: 'guide_confirmed', stops: [], version: 2 } });
+    createServerClientMock.mockReturnValue(db);
+    const res = await planPUT(
+      fakeReq({
+        headers: { 'x-tour-room-auth': guideSession() },
+        json: {
+          stops: [
+            { title: 'Kept Stop', duration_min: 60, status: 'arrived' },
+            { title: 'Closed Stop', duration_min: 60, status: 'skipped', skip_reason: 'closed' },
+            { title: 'Junk Status', duration_min: 60, status: 'hacked', skip_reason: 'nope' },
+          ],
+        },
+      }),
+      routeParams(),
+    );
+    expect(res.status).toBe(200);
+    const stops = db.upserts.tour_day_plans[0].stops as Array<Record<string, unknown>>;
+    expect(stops[0].status).toBe('arrived');
+    expect(stops[1]).toMatchObject({ status: 'skipped', skip_reason: 'closed' });
+    expect(stops[2].status).toBe('pending');
+    expect(stops[2].skip_reason).toBeUndefined();
+    // editing a confirmed plan keeps it confirmed (MUTATE, not a demotion)
+    expect(db.upserts.tour_day_plans[0].status).toBe('guide_confirmed');
+    // skipped stops leave the served schedule
+    const body = await res.json();
+    expect(body.schedule.map((s: { title: string }) => s.title)).toEqual(['Kept Stop', 'Junk Status']);
+  });
 });
 
 describe('GET /api/tour-rooms/[bookingId]/plan — viewer meta', () => {
