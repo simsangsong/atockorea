@@ -164,7 +164,10 @@ export default function TourRoomClient({ bookingId }: { bookingId: string }) {
           style={{ minHeight: '52px' }}
         >
           <div className="tr-skeleton h-4 w-36 rounded-full" />
-          <span className="sr-only">{copy.loading}</span>
+          {/* Client may legitimately detect a non-en device locale here. */}
+          <span className="sr-only" suppressHydrationWarning>
+            {copy.loading}
+          </span>
         </div>
         <div className="mx-auto flex w-full max-w-2xl flex-1 flex-col gap-3 px-4 pt-6">
           <div className="flex items-end gap-2">
