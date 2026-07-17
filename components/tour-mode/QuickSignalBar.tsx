@@ -123,7 +123,7 @@ export default function QuickSignalBar({
             type="button"
             disabled={busy !== null}
             onClick={() => void fire(type)}
-            className="tr-label shrink-0 rounded-full border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-1.5 font-medium text-[var(--tr-ink-2)] disabled:opacity-50"
+            className="tr-label shrink-0 rounded-full bg-[var(--tr-accent-soft)] px-3 py-1.5 font-semibold text-[var(--tr-accent-deep)] disabled:opacity-50"
             data-testid={`signal-${type}`}
           >
             {busy === type ? '…' : label}

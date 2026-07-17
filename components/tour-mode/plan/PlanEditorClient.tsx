@@ -550,7 +550,9 @@ const REGION_BOUNDS: Record<string, { north: number; south: number; west: number
 };
 
 function detectLocale(): RoomLocale {
-  if (typeof navigator === 'undefined') return 'en';
+  // Server always 'en' (Node ≥21 exposes the SERVER's navigator.language —
+  // trusting it breaks hydration for non-en devices); client detects for real.
+  if (typeof window === 'undefined' || typeof navigator === 'undefined') return 'en';
   const base = (navigator.language || 'en').toLowerCase().split('-')[0];
   return (ROOM_LOCALE_VALUES as readonly string[]).includes(base) ? (base as RoomLocale) : 'en';
 }
@@ -983,7 +985,10 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
           <div className="tr-skeleton h-10 w-full rounded-xl" />
           <div className="tr-skeleton h-28 w-full rounded-[var(--tr-radius-card)]" />
           <div className="tr-skeleton h-28 w-full rounded-[var(--tr-radius-card)]" />
-          <span className="sr-only">{copy.loading}</span>
+          {/* Client may legitimately detect a non-en device locale here. */}
+          <span className="sr-only" suppressHydrationWarning>
+            {copy.loading}
+          </span>
         </div>
       </div>
     );
@@ -1121,17 +1126,21 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                 <div className="mt-2 flex max-h-72 flex-col gap-1.5 overflow-y-auto pr-1">
                   {filteredPois.map(({ poi, name, added }) => (
                     <div key={poi.poi_key} className="tr-card flex items-center gap-3 px-3 py-2">
-                      {poi.default_image_url ? (
-                        // eslint-disable-next-line @next/next/no-img-element
-                        <img
-                          src={poi.default_image_url}
-                          alt=""
-                          loading="lazy"
-                          className="h-10 w-10 shrink-0 rounded-lg object-cover"
-                        />
-                      ) : (
-                        <div className="h-10 w-10 shrink-0 rounded-lg bg-[var(--tr-surface-2)]" />
-                      )}
+                      <div className="h-10 w-10 shrink-0 overflow-hidden rounded-lg bg-[var(--tr-surface-2)]">
+                        {poi.default_image_url && (
+                          // eslint-disable-next-line @next/next/no-img-element
+                          <img
+                            src={poi.default_image_url}
+                            alt=""
+                            loading="lazy"
+                            className="h-full w-full object-cover"
+                            // Dead asset URLs degrade to the plain swatch, not a broken-image glyph.
+                            onError={(e) => {
+                              e.currentTarget.style.display = 'none';
+                            }}
+                          />
+                        )}
+                      </div>
                       <div className="min-w-0 flex-1">
                         <p className="tr-card-text truncate font-medium text-[var(--tr-ink)]">{name}</p>
                         <p className="tr-meta text-[var(--tr-ink-3)]">

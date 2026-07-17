@@ -311,7 +311,7 @@ export default function GuidePlanPanel({
               <div className="flex items-center gap-2">
                 <span className="w-5 shrink-0 text-center text-[12px] font-bold text-gray-400">{index + 1}</span>
                 <div className="min-w-0 flex-1">
-                  <p className={`truncate text-[13px] font-semibold ${skipped ? 'text-gray-400 line-through' : 'text-gray-900'}`}>
+                  <p className={`line-clamp-2 text-[13px] font-semibold leading-snug ${skipped ? 'text-gray-400 line-through' : 'text-gray-900'}`}>
                     {stopTitle(stop)}
                     {newStopIds.has(id) && (
                       <span className="ml-1.5 rounded bg-amber-100 px-1.5 py-0.5 text-[10px] font-bold text-amber-800">신규</span>

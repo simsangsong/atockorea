@@ -121,6 +121,11 @@ export const ENTRY_COPY: Record<RoomLocale, EntryCopy> = {
 
 /** Best-effort UI locale for the standalone tour-mode pages (client only). */
 export function detectEntryLocale(): RoomLocale {
+  // SSR determinism: Node ≥21 exposes a global `navigator` whose language is
+  // the SERVER's locale — letting it leak into server render hydration-
+  // mismatches every guest whose device locale differs (QA: full-tree
+  // regeneration on iPhone/Safari). Server always says 'en'.
+  if (typeof window === 'undefined') return 'en';
   if (typeof document !== 'undefined') {
     const cookie = document.cookie.match(/(?:^|;\s*)NEXT_LOCALE=([^;]+)/)?.[1];
     const fromCookie = normalize(cookie);
