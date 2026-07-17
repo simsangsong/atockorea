@@ -134,6 +134,41 @@ export async function POST(
       .single();
     if (participantError) throw participantError;
 
+    // P-D13 — lead guest: the first customer participant becomes the sole
+    // /plan draft editor; the logged-in booking owner takes lead over on join.
+    // Best-effort — a failure here never blocks entry.
+    if (actor.role === 'customer' && !participant.is_lead) {
+      try {
+        const isOwner = actor.kind === 'owner' || (authUserId !== null && authUserId === booking.user_id);
+        const { data: leadRows } = await supabase
+          .from('tour_room_participants')
+          .select('id')
+          .eq('room_id', room.id)
+          .eq('role', 'customer')
+          .eq('is_lead', true)
+          .limit(1);
+        const hasLead = Array.isArray(leadRows) && leadRows.length > 0;
+        if (!hasLead || isOwner) {
+          if (hasLead && isOwner) {
+            await supabase
+              .from('tour_room_participants')
+              .update({ is_lead: false, updated_at: new Date().toISOString() })
+              .eq('room_id', room.id)
+              .eq('is_lead', true);
+          }
+          const { data: promoted } = await supabase
+            .from('tour_room_participants')
+            .update({ is_lead: true, updated_at: new Date().toISOString() })
+            .eq('id', participant.id)
+            .select()
+            .single();
+          if (promoted) participant.is_lead = promoted.is_lead;
+        }
+      } catch {
+        // lead flag is a nicety at join time — /plan re-checks it server-side
+      }
+    }
+
     const { session } = signRoomSession({
       roomId: room.id,
       bookingId: booking.id,

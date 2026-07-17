@@ -340,6 +340,6 @@ export function verifyRoomSession(session: unknown): RoomSessionPayload | null {
   if (payload?.v !== 1) return null;
   if (typeof payload.exp !== 'number' || payload.exp < Math.floor(Date.now() / 1000)) return null;
   if (!payload.roomId || !payload.bookingId || !payload.participantId) return null;
-  if (!['customer', 'guide', 'admin'].includes(payload.role)) return null;
+  if (!['customer', 'guide', 'admin', 'driver'].includes(payload.role)) return null;
   return payload;
 }
