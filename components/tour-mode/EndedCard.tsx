@@ -7,58 +7,90 @@
  * action. Static 5-locale constants, zero LLM calls.
  */
 
+import { useState } from 'react';
 import { IconEnded, IconMail } from '@/components/tour-mode/icons';
+import { inPostTourWindow } from '@/lib/tour-room/time';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
 const SUPPORT_EMAIL = 'support@atockorea.com';
 
 const COPY: Record<
   RoomLocale,
-  { title: string; body: string; lostTitle: string; lostAction: string }
+  { title: string; body: string; lostTitle: string; lostAction: string; lostSent: string }
 > = {
   en: {
     title: 'This tour has ended',
     body: 'Thank you for travelling with us! The chat is now read-only.',
     lostTitle: 'Left something behind?',
     lostAction: 'Report a lost item',
+    lostSent: 'Reported — the driver and guide will check the vehicle. ✓',
   },
   ko: {
     title: '투어가 종료되었습니다',
     body: '함께해 주셔서 감사합니다! 채팅은 읽기 전용으로 전환되었어요.',
     lostTitle: '두고 내린 물건이 있나요?',
     lostAction: '분실물 신고하기',
+    lostSent: '신고됐어요 — 기사님·가이드가 차량을 확인할 거예요. ✓',
   },
   ja: {
     title: 'ツアーは終了しました',
     body: 'ご参加ありがとうございました！チャットは閲覧のみ可能です。',
     lostTitle: 'お忘れ物はありませんか？',
     lostAction: '忘れ物を報告する',
+    lostSent: '報告しました — ドライバーとガイドが車内を確認します。✓',
   },
   es: {
     title: 'Este tour ha terminado',
     body: '¡Gracias por viajar con nosotros! El chat es ahora de solo lectura.',
     lostTitle: '¿Olvidaste algo?',
     lostAction: 'Reportar objeto perdido',
+    lostSent: 'Reportado: el conductor y el guía revisarán el vehículo. ✓',
   },
   zh: {
     title: '本次旅行已结束',
     body: '感谢您的参与！聊天现已转为只读。',
     lostTitle: '有物品遗落吗？',
     lostAction: '申报失物',
+    lostSent: '已申报——司机和导游会检查车辆。✓',
   },
 };
 
 export default function EndedCard({
   locale,
   bookingReference,
+  bookingId,
+  roomSession,
+  tourDate,
 }: {
   locale: RoomLocale;
   bookingReference?: string | null;
+  /** W5.2/I3 — with a session inside the post_tour window (P-D12), the
+   *  report is a one-tap in-room signal; otherwise the mailto fallback. */
+  bookingId?: string;
+  roomSession?: string | null;
+  tourDate?: string | null;
 }) {
   const copy = COPY[locale];
+  const [state, setState] = useState<'idle' | 'busy' | 'sent'>('idle');
   const subject = encodeURIComponent(
     `Lost item — ${bookingReference ? `booking ${bookingReference}` : 'tour room'}`,
   );
+  const canSignal = Boolean(bookingId && roomSession && tourDate && inPostTourWindow(tourDate));
+
+  const report = async () => {
+    if (!bookingId || !roomSession) return;
+    setState('busy');
+    try {
+      const res = await fetch(`/api/tour-rooms/${encodeURIComponent(bookingId)}/signals`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'x-tour-room-auth': roomSession },
+        body: JSON.stringify({ type: 'lost_item' }),
+      });
+      setState(res.ok ? 'sent' : 'idle');
+    } catch {
+      setState('idle');
+    }
+  };
 
   return (
     <div data-testid="ended-card" className="tr-card mb-2 px-4 py-4 text-center">
@@ -69,13 +101,29 @@ export default function EndedCard({
       <p className="tr-card-text mt-1 text-[var(--tr-ink-2)]">{copy.body}</p>
       <div className="mt-3 rounded-xl bg-[var(--tr-surface-2)] px-3 py-3">
         <p className="tr-label font-medium text-[var(--tr-ink-2)]">{copy.lostTitle}</p>
-        <a
-          href={`mailto:${SUPPORT_EMAIL}?subject=${subject}`}
-          className="tr-label mt-2 inline-flex min-h-[40px] items-center gap-1.5 rounded-full bg-[var(--tr-accent)] px-4 font-semibold text-[var(--tr-bubble-me-ink)]"
-        >
-          <IconMail size={14} aria-hidden />
-          {copy.lostAction}
-        </a>
+        {state === 'sent' ? (
+          <p className="tr-label mt-2 font-semibold text-[var(--tr-safe)]" data-testid="lost-item-sent">
+            {copy.lostSent}
+          </p>
+        ) : canSignal ? (
+          <button
+            type="button"
+            disabled={state === 'busy'}
+            onClick={() => void report()}
+            className="tr-label mt-2 inline-flex min-h-[40px] items-center gap-1.5 rounded-full bg-[var(--tr-accent)] px-4 font-semibold text-[var(--tr-bubble-me-ink)] disabled:opacity-50"
+            data-testid="lost-item-signal"
+          >
+            🧳 {copy.lostAction}
+          </button>
+        ) : (
+          <a
+            href={`mailto:${SUPPORT_EMAIL}?subject=${subject}`}
+            className="tr-label mt-2 inline-flex min-h-[40px] items-center gap-1.5 rounded-full bg-[var(--tr-accent)] px-4 font-semibold text-[var(--tr-bubble-me-ink)]"
+          >
+            <IconMail size={14} aria-hidden />
+            {copy.lostAction}
+          </a>
+        )}
       </div>
     </div>
   );

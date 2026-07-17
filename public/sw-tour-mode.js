@@ -63,3 +63,45 @@ self.addEventListener('fetch', (event) => {
     ),
   );
 });
+
+// W4.1 / P-D7 — guest Web Push (rally + delay only; opt-in from the room).
+// Clicking focuses an existing tour-mode tab or opens the room fresh.
+self.addEventListener('push', (event) => {
+  let data = { title: 'AtoC Korea', body: '', url: '/tour-mode', tag: undefined };
+  try {
+    data = { ...data, ...event.data.json() };
+  } catch {
+    /* non-JSON payload — show the defaults */
+  }
+  event.waitUntil(
+    self.registration.showNotification(data.title, {
+      body: data.body,
+      tag: data.tag,
+      icon: '/pwa/icon-192.png',
+      badge: '/pwa/maskable-192.png',
+      vibrate: [200, 100, 200],
+      data: { url: data.url },
+    }),
+  );
+});
+
+self.addEventListener('notificationclick', (event) => {
+  event.notification.close();
+  // Same-origin only: never let a push payload's url open an external site.
+  let url = '/tour-mode';
+  try {
+    const raw = (event.notification.data && event.notification.data.url) || '/tour-mode';
+    const dest = new URL(raw, self.location.origin);
+    if (dest.origin === self.location.origin) url = dest.pathname + dest.search;
+  } catch (e) {
+    /* keep the default */
+  }
+  event.waitUntil(
+    self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then((clients) => {
+      for (const client of clients) {
+        if (client.url.includes('/tour-mode') && 'focus' in client) return client.focus();
+      }
+      return self.clients.openWindow(url);
+    }),
+  );
+});

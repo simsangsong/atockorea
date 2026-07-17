@@ -27,6 +27,7 @@ const COPY: Record<
     waiting: string;
     contact: string;
     call: string;
+    screenshot: string;
   }
 > = {
   en: {
@@ -39,6 +40,7 @@ const COPY: Record<
     waiting: 'The party is waiting — please head to the meeting point.',
     contact: 'Can’t make it? Contact your guide now.',
     call: 'Call',
+    screenshot: 'Tip: screenshot this — it works with no signal.',
   },
   ko: {
     meeting: '집합 시간',
@@ -50,6 +52,7 @@ const COPY: Record<
     waiting: '일행이 기다리고 있어요 — 집합 장소로 와주세요.',
     contact: '어려우면 지금 가이드에게 연락해 주세요.',
     call: '전화',
+    screenshot: '팁: 이 화면을 스크린샷해 두면 신호가 없어도 볼 수 있어요.',
   },
   ja: {
     meeting: '集合時間',
@@ -61,6 +64,7 @@ const COPY: Record<
     waiting: '皆さまお待ちです — 集合場所へお越しください。',
     contact: '難しい場合は今すぐガイドへご連絡ください。',
     call: '電話',
+    screenshot: 'ヒント: この画面をスクショしておくと圏外でも確認できます。',
   },
   es: {
     meeting: 'Hora de reunión',
@@ -72,6 +76,7 @@ const COPY: Record<
     waiting: 'El grupo está esperando; ve al punto de encuentro.',
     contact: '¿No puedes llegar? Contacta a tu guía ahora.',
     call: 'Llamar',
+    screenshot: 'Consejo: haz captura — funciona sin señal.',
   },
   zh: {
     meeting: '集合时间',
@@ -83,6 +88,7 @@ const COPY: Record<
     waiting: '同行者正在等待——请前往集合地点。',
     contact: '赶不到?请立即联系导游。',
     call: '致电',
+    screenshot: '提示: 截图保存此画面——无信号也能查看。',
   },
 };
 
@@ -188,6 +194,12 @@ export default function NoticeBanner({
           {notice.targetMs !== null && ` · ${copy.backBy(formatTargetTime(notice.targetMs, locale))}`}
         </p>
         {notice.point && <p className="tr-label truncate text-[var(--tr-ink-2)]">{copy.at(notice.point)}</p>}
+        {stage === 'set' && (
+          // W4.2 / E5 — dead-battery / no-signal insurance while there's time.
+          <p data-testid="screenshot-hint" className="tr-meta mt-0.5 text-[var(--tr-ink-3)]">
+            {copy.screenshot}
+          </p>
+        )}
         {(stage === 'overdue' || stage === 'contact') && (
           <p data-testid="rally-stage-line" className="tr-label mt-0.5 font-semibold text-[var(--tr-danger)]">
             {stage === 'overdue' ? copy.waiting : copy.contact}

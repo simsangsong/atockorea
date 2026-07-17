@@ -5,6 +5,7 @@ import { getAuthUser } from '@/lib/auth';
 import { verifyRoomToken } from '@/lib/tour-room/token';
 import { translateTextForLocales } from '@/lib/openai-server';
 import { broadcastToRoom } from '@/lib/tour-room/realtime';
+import { sendGuestRoomPush } from '@/lib/tour-room/guestPush';
 import { getQuickReplyPreset } from '@/lib/tour-room/quickReplies';
 import { renderSpotEventTranslations } from '@/lib/tour-room/spotContent';
 import { pregenerateGuideNoticeTts, type TtsStorageClient } from '@/lib/tour-room/tts-server';
@@ -207,6 +208,14 @@ export async function POST(req: NextRequest) {
         void pregenerateGuideNoticeTts(supabase as unknown as TtsStorageClient, room.id, message).catch(
           () => undefined,
         );
+        // W4.1 / P-D7 — the two critical kinds also ring opted-in guest
+        // devices (rally target / free-time return). Fire-and-forget.
+        if (notice && (notice.kind === 'meeting_notice' || notice.kind === 'free_time_timer') && !notice.cancelled) {
+          void sendGuestRoomPush(supabase, booking, {
+            translations,
+            tag: `rally-${room.id}`,
+          }).catch(() => undefined);
+        }
         results.push({ bookingId: booking.id, ok: true });
       } catch (roomFailure) {
         results.push({

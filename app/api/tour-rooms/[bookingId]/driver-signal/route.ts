@@ -12,6 +12,7 @@ import { recordRoomEvent } from '@/lib/tour-room/events';
 import { broadcastToRoom } from '@/lib/tour-room/realtime';
 import { renderSpotEventTranslations } from '@/lib/tour-room/spotContent';
 import { sendOpsPush } from '@/lib/tour-ops/push';
+import { sendGuestRoomPush } from '@/lib/tour-room/guestPush';
 
 export const dynamic = 'force-dynamic';
 
@@ -185,6 +186,14 @@ export async function POST(
     if (messageError) throw messageError;
 
     await broadcastToRoom(room, 'message', { message });
+
+    // W4.1 / P-D7 — delay + return-time also ring opted-in guest devices.
+    if (type === 'delay' || (type === 'return_time' && body.cancel !== true)) {
+      void sendGuestRoomPush(supabase, booking, {
+        translations: bundle.translations,
+        tag: `${type}-${room.id}`,
+      }).catch(() => undefined);
+    }
 
     await recordRoomEvent(supabase, {
       roomId: room.id,
