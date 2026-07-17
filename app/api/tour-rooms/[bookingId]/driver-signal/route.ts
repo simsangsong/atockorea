@@ -10,6 +10,7 @@ import {
 } from '@/lib/tour-room/driverSignals';
 import { recordRoomEvent } from '@/lib/tour-room/events';
 import { broadcastToRoom } from '@/lib/tour-room/realtime';
+import { renderSpotEventTranslations } from '@/lib/tour-room/spotContent';
 import { sendOpsPush } from '@/lib/tour-ops/push';
 
 export const dynamic = 'force-dynamic';
@@ -25,9 +26,20 @@ export const dynamic = 'force-dynamic';
  * coords also write a one-shot tour_room_pins row (PIN primitive — an
  * explicit action snapshot, never a tracking stream). vehicle_issue
  * additionally pings ops push subscribers.
+ *
+ * 'return_time' (E1/E8 for solo drivers) posts the same free_time_timer
+ * metadata the guide console's timer uses, so the guests' countdown banner
+ * and the concierge's time-left Tier0 answer light up unchanged. Pass
+ * cancel:true to clear it.
  */
 
-const SIGNAL_TYPES: DriverSignalType[] = ['delay', 'parking_pin', 'vehicle_arrived', 'vehicle_issue'];
+const SIGNAL_TYPES: Array<DriverSignalType | 'return_time'> = [
+  'delay',
+  'parking_pin',
+  'vehicle_arrived',
+  'vehicle_issue',
+  'return_time',
+];
 
 function numberOrNull(value: unknown): number | null {
   const n = typeof value === 'string' ? Number(value) : value;
@@ -46,9 +58,14 @@ export async function POST(
       minutes?: unknown;
       lat?: unknown;
       lng?: unknown;
+      time?: unknown;
+      point?: unknown;
+      cancel?: unknown;
     };
 
-    const type = SIGNAL_TYPES.includes(body.type as DriverSignalType) ? (body.type as DriverSignalType) : null;
+    const type = SIGNAL_TYPES.includes(body.type as DriverSignalType | 'return_time')
+      ? (body.type as DriverSignalType | 'return_time')
+      : null;
     if (!type) {
       return NextResponse.json({ error: `type must be one of: ${SIGNAL_TYPES.join(', ')}` }, { status: 400 });
     }
@@ -115,10 +132,39 @@ export async function POST(
       pinId = (pin as { id?: string } | null)?.id ?? null;
     }
 
-    const bundle = renderDriverSignal(type, {
-      minutes: minutes ?? undefined,
-      mapsUrl: withPin ? googleMapsPinUrl(lat!, lng!) : undefined,
-    });
+    // return_time reuses the guide timer's exact metadata contract so the
+    // existing NoticeBanner countdown + Tier0 time-left answers just work.
+    let bundle: { source_locale: string; source_text: string; translations: Record<string, string> };
+    let metadata: Record<string, unknown>;
+    if (type === 'return_time') {
+      const cancel = body.cancel === true;
+      const time = typeof body.time === 'string' ? body.time.trim() : '';
+      const point = (typeof body.point === 'string' ? body.point.trim().slice(0, 120) : '') || 'the vehicle';
+      if (!cancel && !/^\d{2}:\d{2}$/.test(time)) {
+        return NextResponse.json({ error: 'time (HH:MM, KST) is required for return_time' }, { status: 400 });
+      }
+      bundle = cancel
+        ? renderSpotEventTranslations('free_time_cancelled', { point })
+        : renderSpotEventTranslations('free_time', { time, point });
+      metadata = {
+        kind: 'free_time_timer',
+        ...(cancel ? { cancelled: true } : { until_time: time }),
+        meeting_point: point,
+        sent_by_role: actor.role,
+      };
+    } else {
+      bundle = renderDriverSignal(type, {
+        minutes: minutes ?? undefined,
+        mapsUrl: withPin ? googleMapsPinUrl(lat!, lng!) : undefined,
+      });
+      metadata = {
+        kind: `driver_${type}`,
+        signal_type: type,
+        minutes,
+        ...(withPin ? { lat, lng, pin_id: pinId } : {}),
+        sent_by_role: actor.role,
+      };
+    }
 
     const { data: message, error: messageError } = await supabase
       .from('tour_room_messages')
@@ -132,13 +178,7 @@ export async function POST(
         source_locale: bundle.source_locale,
         translations: bundle.translations,
         target_locales: Object.keys(bundle.translations),
-        metadata: {
-          kind: `driver_${type}`,
-          signal_type: type,
-          minutes,
-          ...(withPin ? { lat, lng, pin_id: pinId } : {}),
-          sent_by_role: actor.role,
-        },
+        metadata,
       })
       .select()
       .single();
