@@ -449,7 +449,14 @@ function TourRoomLive({
       chatActivityKey={messages.length}
       banner={
         <>
-          <NoticeBanner messages={messages} tourDate={snapshot.booking?.tour_date} locale={locale} />
+          <NoticeBanner
+            messages={messages}
+            tourDate={snapshot.booking?.tour_date}
+            locale={locale}
+            bookingId={bookingId}
+            roomSession={data.session}
+            canSignal={viewerRole === 'customer' && !readOnly}
+          />
           {viewerRole !== 'guide' && <CaptionBanner caption={latestCaption} locale={locale} />}
         </>
       }

@@ -8,7 +8,7 @@
  */
 
 import { useEffect, useRef, useState } from 'react';
-import { activeNotice, formatRemaining, formatTargetTime } from '@/lib/tour-room/notices';
+import { activeNotice, formatRemaining, formatTargetTime, rallyStage } from '@/lib/tour-room/notices';
 import { IconFreeTime, IconMeeting } from '@/components/tour-mode/icons';
 import { speakWithDevice } from '@/lib/tour-room/tts';
 import { useTourRoomSettings } from '@/hooks/useTourRoomSettings';
@@ -17,7 +17,17 @@ import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
 const COPY: Record<
   RoomLocale,
-  { meeting: string; freeTime: string; backBy: (t: string) => string; at: (p: string) => string; now: string; warn: (m: number) => string }
+  {
+    meeting: string;
+    freeTime: string;
+    backBy: (t: string) => string;
+    at: (p: string) => string;
+    now: string;
+    warn: (m: number) => string;
+    waiting: string;
+    contact: string;
+    call: string;
+  }
 > = {
   en: {
     meeting: 'Meeting time',
@@ -26,6 +36,9 @@ const COPY: Record<
     at: (p) => `at ${p}`,
     now: 'Please gather now',
     warn: (m) => `${m} minutes left — please head back to the meeting point.`,
+    waiting: 'The party is waiting — please head to the meeting point.',
+    contact: 'Can’t make it? Contact your guide now.',
+    call: 'Call',
   },
   ko: {
     meeting: '집합 시간',
@@ -34,6 +47,9 @@ const COPY: Record<
     at: (p) => `${p}에서`,
     now: '지금 모여주세요',
     warn: (m) => `${m}분 남았어요 — 집합 장소로 이동해 주세요.`,
+    waiting: '일행이 기다리고 있어요 — 집합 장소로 와주세요.',
+    contact: '어려우면 지금 가이드에게 연락해 주세요.',
+    call: '전화',
   },
   ja: {
     meeting: '集合時間',
@@ -42,6 +58,9 @@ const COPY: Record<
     at: (p) => `${p}にて`,
     now: '今すぐお集まりください',
     warn: (m) => `残り${m}分です — 集合場所へお戻りください。`,
+    waiting: '皆さまお待ちです — 集合場所へお越しください。',
+    contact: '難しい場合は今すぐガイドへご連絡ください。',
+    call: '電話',
   },
   es: {
     meeting: 'Hora de reunión',
@@ -50,6 +69,9 @@ const COPY: Record<
     at: (p) => `en ${p}`,
     now: 'Reúnanse ahora, por favor',
     warn: (m) => `Quedan ${m} minutos — vuelve al punto de encuentro.`,
+    waiting: 'El grupo está esperando; ve al punto de encuentro.',
+    contact: '¿No puedes llegar? Contacta a tu guía ahora.',
+    call: 'Llamar',
   },
   zh: {
     meeting: '集合时间',
@@ -58,6 +80,9 @@ const COPY: Record<
     at: (p) => `地点：${p}`,
     now: '请现在集合',
     warn: (m) => `还剩${m}分钟 — 请返回集合地点。`,
+    waiting: '同行者正在等待——请前往集合地点。',
+    contact: '赶不到?请立即联系导游。',
+    call: '致电',
   },
 };
 
@@ -65,10 +90,17 @@ export default function NoticeBanner({
   messages,
   tourDate,
   locale,
+  bookingId,
+  roomSession,
+  canSignal = false,
 }: {
   messages: RoomMessage[];
   tourDate: string | null | undefined;
   locale: RoomLocale;
+  /** With a session, the banner fires the E2 overdue signal (W2.3, P-D6). */
+  bookingId?: string;
+  roomSession?: string | null;
+  canSignal?: boolean;
 }) {
   const [nowMs, setNowMs] = useState(() => Date.now());
   const { settings } = useTourRoomSettings();
@@ -77,6 +109,7 @@ export default function NoticeBanner({
     warned10: false,
     warned5: false,
   });
+  const overdueFiredRef = useRef<string | null>(null);
 
   useEffect(() => {
     const timer = setInterval(() => setNowMs(Date.now()), 1_000);
@@ -85,6 +118,21 @@ export default function NoticeBanner({
 
   const notice = activeNotice(messages, tourDate, nowMs);
   const copy = COPY[locale];
+  const stage = rallyStage(notice, nowMs);
+
+  // W2.3 / P-D6 — the T+5 crossing fires exactly one room-wide event: every
+  // customer client attempts it, the server's UNIQUE(subject_key) dedupes.
+  useEffect(() => {
+    if (!canSignal || !bookingId || !roomSession || !notice || notice.cancelled) return;
+    if (stage !== 'overdue' && stage !== 'contact') return;
+    if (overdueFiredRef.current === notice.messageId) return;
+    overdueFiredRef.current = notice.messageId;
+    void fetch(`/api/tour-rooms/${encodeURIComponent(bookingId)}/signals`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'x-tour-room-auth': roomSession },
+      body: JSON.stringify({ type: 'rally_overdue', noticeId: notice.messageId }),
+    }).catch(() => undefined);
+  }, [canSignal, bookingId, roomSession, notice, stage]);
 
   // 10/5-minute warnings — once each per notice (T6.5).
   useEffect(() => {
@@ -140,6 +188,19 @@ export default function NoticeBanner({
           {notice.targetMs !== null && ` · ${copy.backBy(formatTargetTime(notice.targetMs, locale))}`}
         </p>
         {notice.point && <p className="tr-label truncate text-[var(--tr-ink-2)]">{copy.at(notice.point)}</p>}
+        {(stage === 'overdue' || stage === 'contact') && (
+          <p data-testid="rally-stage-line" className="tr-label mt-0.5 font-semibold text-[var(--tr-danger)]">
+            {stage === 'overdue' ? copy.waiting : copy.contact}
+            {stage === 'contact' && process.env.NEXT_PUBLIC_TOUR_OPS_PHONE && (
+              <a
+                href={`tel:${process.env.NEXT_PUBLIC_TOUR_OPS_PHONE}`}
+                className="ml-2 rounded-full bg-[var(--tr-danger)] px-2.5 py-0.5 font-bold text-white"
+              >
+                {copy.call}
+              </a>
+            )}
+          </p>
+        )}
       </div>
       {notice.remainingMs !== null && (
         <span
