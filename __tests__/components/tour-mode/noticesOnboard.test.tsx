@@ -5,7 +5,7 @@
 import { act, fireEvent, render, screen } from '@testing-library/react';
 import NoticeBanner from '@/components/tour-mode/NoticeBanner';
 import PickupBoard from '@/components/tour-mode/PickupBoard';
-import { activeNotice, formatRemaining, formatTargetTime } from '@/lib/tour-room/notices';
+import { activeNotice, formatRemaining, formatTargetTime, rallyStage } from '@/lib/tour-room/notices';
 import { kstToday, kstStartOfDayMs } from '@/lib/tour-room/time';
 import { __resetTourRoomSettingsForTests } from '@/hooks/useTourRoomSettings';
 import type { RoomMessage } from '@/hooks/useTourRoomChannel';
@@ -118,5 +118,42 @@ describe('PickupBoard onboard ack (T6.4)', () => {
     );
     expect(screen.getByTestId('onboard-done')).toHaveTextContent('탑승 완료');
     expect(screen.queryByTestId('onboard-ack')).not.toBeInTheDocument();
+  });
+});
+
+describe('rallyStage — W2.3 ESCALATE ladder (P-D6, time-derived)', () => {
+  const target = dayStart + 16 * 60 * 60 * 1000; // 16:00 KST
+  const messages = [
+    message({ kind: 'free_time_timer', until_time: '16:00', meeting_point: 'Gate 2' }, dayStart + 15 * 60 * 60 * 1000),
+  ];
+  const stageAt = (offsetMin: number) =>
+    rallyStage(activeNotice(messages, today, target + offsetMin * 60 * 1000), target + offsetMin * 60 * 1000);
+
+  it('walks set → remind → due → overdue → contact on wall-clock offsets', () => {
+    expect(stageAt(-30)).toBe('set');
+    expect(stageAt(-9)).toBe('remind');
+    expect(stageAt(0)).toBe('due');
+    expect(stageAt(4)).toBe('due');
+    expect(stageAt(7)).toBe('overdue');
+    expect(stageAt(12)).toBe('contact');
+    // past expiry activeNotice returns null → ladder over
+    expect(stageAt(20)).toBeNull();
+  });
+
+  it('returns null for cancelled or untimed notices', () => {
+    const cancelled = activeNotice(
+      [message({ kind: 'free_time_timer', cancelled: true }, target)],
+      today,
+      target + 60_000,
+    );
+    expect(rallyStage(cancelled, target + 60_000)).toBeNull();
+    expect(rallyStage(null)).toBeNull();
+  });
+
+  it('NoticeBanner shows the waiting line at overdue (no signal without a session)', () => {
+    jest.spyOn(Date, 'now').mockReturnValue(target + 7 * 60 * 1000);
+    render(<NoticeBanner messages={messages} tourDate={today} locale="ko" />);
+    expect(screen.getByTestId('rally-stage-line')).toHaveTextContent('일행이 기다리고 있어요');
+    (Date.now as jest.Mock).mockRestore();
   });
 });

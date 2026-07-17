@@ -84,6 +84,25 @@ export function activeNotice(
   return null;
 }
 
+/**
+ * W2.3 / P-D6 — the rally ESCALATE ladder as a pure time-derived function
+ * (§C-3): set → remind(T-10) → due(T0..T+5) → overdue(T+5..T+10) →
+ * contact(T+10..expiry). No cron, no stored stage — clients derive the stage
+ * every tick and fire idempotent events only when a threshold is crossed
+ * (the server's UNIQUE(room, subject_key, type) dedupes the fan-out).
+ */
+export type RallyStage = 'set' | 'remind' | 'due' | 'overdue' | 'contact';
+
+export function rallyStage(notice: NoticeState | null, nowMs = Date.now()): RallyStage | null {
+  if (!notice || notice.cancelled || notice.targetMs === null) return null;
+  const past = nowMs - notice.targetMs;
+  if (past < -10 * 60 * 1000) return 'set';
+  if (past < 0) return 'remind';
+  if (past <= 5 * 60 * 1000) return 'due';
+  if (past <= 10 * 60 * 1000) return 'overdue';
+  return 'contact';
+}
+
 /** "12:34" countdown text; "0:59" under a minute; "00:00" when due. */
 export function formatRemaining(remainingMs: number): string {
   const totalSeconds = Math.max(0, Math.floor(remainingMs / 1000));
