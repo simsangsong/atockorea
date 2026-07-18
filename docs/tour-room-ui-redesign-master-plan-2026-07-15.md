@@ -325,3 +325,12 @@
 ## §N. 완료 기준 (DoD)
 
 - "스크린샷을 카카오톡·텔레그램 옆에 놓았을 때 같은 급으로 보인다" — 구체적으로: 타임스탬프·날짜 구분·아바타·그룹핑·꼬리·FAB·하단 네비·도킹 컴포저가 전부 존재하고, UI 크롬에 이모지 0개, 임의 px 0개(토큰만), AA 대비 전수 통과, 164+ 테스트 green, 5로케일×2테마 깨짐 0건.
+
+## §O. 개정 v1.1 — 홈 대시보드 탭 (2026-07-18, 사용자 승인)
+
+**개정 결정 (U-D 바인딩 추가): U-D13 홈 랜딩.** "들어가면 대화창"이라는 사용자 피드백에 따라, 손님(customer) 뷰는 메신저 그라운드에서 **홈+메신저 하이브리드**로 개정한다. 가이드/드라이버는 기존 채팅-퍼스트 유지.
+
+- 하단 탭 5개(홈|채팅|지도|오늘 일정|설정), 손님은 **홈 랜딩** (RoomShell `home` render prop 존재 시에만 — 부재 시 기존 4탭 채팅 랜딩 그대로).
+- 홈 구성: 라이프사이클 상태 카드(lobby=LobbyCard 재사용 / live=지금·다음 스톱+차량 라인 / ended=기록 안내) → 채팅 프리뷰 로우(최신 버블+unread 에코) → 기능 그리드 3열(스마트 가이드·채팅·오늘 일정·지도·집합픽업·빠른신호(live)·일정짜기(lobby)·여행기록·리뷰(ended)·긴급) → "더 많은 기능" 시트.
+- **신규 기능 0 — 입구 재배치만**: 그리드 타일은 전부 기존 표면(셸 시트·탭·TravelTimelineSheet(분리 export)·QuickSignalBar·LobbyCard·/plan 링크)을 연다.
+- 파일: `HomeTab.tsx` 신규, `RoomShell.tsx`(RoomTab+'home', RoomShellHomeApi, currentScheduleIndex export), `TravelTimeline.tsx`(TravelTimelineSheet 분리), `icons.ts`(+House/MoreHorizontal/PencilLine). §M 가드레일(로직 파일 무수정·testid 보존) 준수.

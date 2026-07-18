@@ -249,6 +249,48 @@ function TimelineBody({
 }
 
 /**
+ * H2 — the timeline sheet as a controlled surface, so entries other than the
+ * feed card (the home dashboard tile) can open the same recap.
+ */
+export function TravelTimelineSheet({
+  open,
+  onClose,
+  locale,
+  messages,
+  bookingId,
+  roomSession,
+  tourSlug,
+}: {
+  open: boolean;
+  onClose: () => void;
+  locale: RoomLocale;
+  messages: RoomMessage[];
+  bookingId: string;
+  roomSession: string;
+  tourSlug?: string | null;
+}) {
+  const data = useMemo(() => buildTravelTimeline(messages), [messages]);
+  const copy = TIMELINE_COPY[locale];
+  const reviewHref = tourSlug ? `/tour-product/${tourSlug}#reviews` : '/mypage';
+
+  return (
+    <Sheet
+      open={open}
+      onClose={onClose}
+      closeLabel={CLOSE_LABEL[locale]}
+      title={
+        <span className="flex items-center gap-2 text-[var(--tr-accent-deep)]">
+          <IconJourney size={18} aria-hidden />
+          {copy.title}
+        </span>
+      }
+    >
+      <TimelineBody data={data} copy={copy} bookingId={bookingId} roomSession={roomSession} reviewHref={reviewHref} />
+    </Sheet>
+  );
+}
+
+/**
  * Feed entry: a compact card that opens the timeline sheet. Renders whenever
  * the tour has ended (so the recap is always reachable from the ended view)
  * or, mid-tour, once there is any content to show.
@@ -275,8 +317,6 @@ export default function TravelTimelineEntry({
   const hasContent = data.stopCount > 0 || data.photoCount > 0;
   if (variant !== 'ended' && !hasContent) return null;
 
-  const reviewHref = tourSlug ? `/tour-product/${tourSlug}#reviews` : '/mypage';
-
   return (
     <>
       <button
@@ -295,25 +335,15 @@ export default function TravelTimelineEntry({
         <IconChevronRight size={18} className="shrink-0 text-[var(--tr-ink-3)]" aria-hidden />
       </button>
 
-      <Sheet
+      <TravelTimelineSheet
         open={open}
         onClose={() => setOpen(false)}
-        closeLabel={CLOSE_LABEL[locale]}
-        title={
-          <span className="flex items-center gap-2 text-[var(--tr-accent-deep)]">
-            <IconJourney size={18} aria-hidden />
-            {copy.title}
-          </span>
-        }
-      >
-        <TimelineBody
-          data={data}
-          copy={copy}
-          bookingId={bookingId}
-          roomSession={roomSession}
-          reviewHref={reviewHref}
-        />
-      </Sheet>
+        locale={locale}
+        messages={messages}
+        bookingId={bookingId}
+        roomSession={roomSession}
+        tourSlug={tourSlug}
+      />
     </>
   );
 }
