@@ -1,29 +1,40 @@
 'use client';
 
 /**
- * W3 (P-D15) — the driver console: the Korean-only solo driver's whole app.
+ * W3 (P-D15) — the driver console: the Korean-only solo driver's whole app,
+ * from prep → run → done in one dark cockpit.
  *
- * Design rules (plan §E, P-D15):
+ * Design rules (plan §E/§7, P-D15):
  *   - While driving the driver LISTENS and TAPS ONCE — no reading, no typing.
- *   - Voice send is hands-free: one tap records, one tap stops, a 3s
- *     cancel window, then the clip goes straight through the messages route
- *     (STT → translate → guests see a bubble in their own language).
+ *   - Voice send is hands-free: one tap records, one tap stops, a 3s cancel
+ *     window, then STT → translate → guests see a bubble in their language.
  *   - Incoming guest messages auto-play as Korean TTS.
- *   - Everything else is a one-tap signal: delay / parking pin / arrival
- *     announce (fires the guests' locale content card) / vehicle issue.
+ *   - Everything else is a one-tap signal.
+ *   - The screen stays awake (Wake Lock) so navigation never sleeps.
+ *   - Dark cockpit, big taps; brand colour only on the nav-app buttons.
  *
- * KO-only UI by decision P-D10; traveller-facing copy is template-translated
+ * Phase-aware top card: pickup (준비/lobby) → next stop (진행/live) → a wrap-up
+ * screen (완료/ended). KO-only UI (P-D10); traveller copy is template-translated
  * server-side.
  */
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useTourRoomChannel, type RoomMessage } from '@/hooks/useTourRoomChannel';
 import { startVoiceRecording, type ActiveRecording } from '@/lib/tour-room/recorder';
-import { googleDirectionsUrl, kakaoNaviUrl, kakaoWebRouteUrl, tmapUrl } from '@/lib/tour-room/nav-links';
+import {
+  googleDirectionsUrl,
+  kakaoNaviUrl,
+  kakaoWebRouteUrl,
+  naverCarUrl,
+  naverWebUrl,
+  tmapUrl,
+  type NavDestination,
+} from '@/lib/tour-room/nav-links';
 
 const TOKEN_KEY = 'tour_mode_driver_token';
 const DEVICE_KEY = 'tour_mode_driver_device_key';
 const CANCEL_WINDOW_MS = 3000;
+const OPS_PHONE = process.env.NEXT_PUBLIC_TOUR_OPS_PHONE ?? '';
 
 interface DriverScheduleItem {
   time?: string;
@@ -95,6 +106,49 @@ function kstPlusMinutes(minutes: number): string {
 
 function koText(message: RoomMessage): string {
   return message.translations?.ko?.trim() || message.source_text;
+}
+
+function destFrom(item: DriverScheduleItem | null): NavDestination | null {
+  if (item && typeof item.lat === 'number' && typeof item.lng === 'number') {
+    return { lat: item.lat, lng: item.lng, name: itemTitle(item) };
+  }
+  return null;
+}
+
+/** Keep the screen awake while the cockpit is up (re-acquires on tab return). */
+type WakeLockSentinelLike = { release: () => Promise<void> };
+function useWakeLock(active: boolean) {
+  useEffect(() => {
+    if (!active) return undefined;
+    const nav = navigator as Navigator & {
+      wakeLock?: { request: (type: 'screen') => Promise<WakeLockSentinelLike> };
+    };
+    if (!nav.wakeLock) return undefined;
+    let sentinel: WakeLockSentinelLike | null = null;
+    let cancelled = false;
+    const acquire = () => {
+      nav.wakeLock
+        ?.request('screen')
+        .then((s) => {
+          if (cancelled) {
+            void s.release().catch(() => undefined);
+            return;
+          }
+          sentinel = s;
+        })
+        .catch(() => undefined);
+    };
+    acquire();
+    const onVisible = () => {
+      if (document.visibilityState === 'visible') acquire();
+    };
+    document.addEventListener('visibilitychange', onVisible);
+    return () => {
+      cancelled = true;
+      document.removeEventListener('visibilitychange', onVisible);
+      void sentinel?.release?.().catch(() => undefined);
+    };
+  }, [active]);
 }
 
 export default function DriverConsole() {
@@ -195,6 +249,11 @@ export default function DriverConsole() {
   if (error && !overview) return <Screen><Note>{error}</Note></Screen>;
   if (!overview || !room) return <Screen><Note>불러오는 중…</Note></Screen>;
 
+  // 완료(ended): a calm wrap-up — no join / audio needed.
+  if (overview.lifecycle === 'ended') {
+    return <EndScreen overview={overview} room={room} />;
+  }
+
   if (pinNeeded && !joined) {
     return (
       <Screen>
@@ -213,7 +272,7 @@ export default function DriverConsole() {
             type="button"
             disabled={pin.length !== 4 || joining}
             onClick={() => void join(pin)}
-            className="w-full max-w-xs rounded-2xl bg-emerald-500 py-5 text-2xl font-bold text-black disabled:opacity-40"
+            className="w-full max-w-xs rounded-2xl bg-neutral-100 py-5 text-2xl font-bold text-neutral-950 disabled:opacity-40"
           >
             확인
           </button>
@@ -229,11 +288,19 @@ export default function DriverConsole() {
       <Screen>
         <div className="flex flex-1 flex-col items-center justify-center gap-4 px-8 text-center">
           <p className="text-3xl font-bold text-white">{overview.tour.title}</p>
-          <p className="text-xl text-neutral-300">{overview.tour_date} · 손님 {room.number_of_guests ?? '-'}명</p>
+          <p className="text-xl text-neutral-300">
+            {overview.tour_date} · 손님 {room.number_of_guests ?? '-'}명
+          </p>
+          {room.pickup?.name ? (
+            <p className="text-lg text-neutral-400">
+              픽업 {room.pickup.pickup_time ? `${room.pickup.pickup_time} · ` : ''}
+              {room.pickup.name}
+            </p>
+          ) : null}
           <button
             type="button"
             onClick={() => setAudioUnlocked(true)}
-            className="mt-6 w-full max-w-sm rounded-3xl bg-emerald-500 py-8 text-3xl font-bold text-black"
+            className="mt-6 w-full max-w-sm rounded-3xl bg-neutral-100 py-8 text-3xl font-bold text-neutral-950"
             data-testid="driver-start"
           >
             🚐 운행 시작
@@ -273,6 +340,7 @@ function BridgeScreen({
   channelTopic: string | null;
   initialMessages: RoomMessage[];
 }) {
+  useWakeLock(true);
   const { messages, connection } = useTourRoomChannel({
     bookingId,
     channelTopic,
@@ -286,7 +354,7 @@ function BridgeScreen({
   const [countdown, setCountdown] = useState(0);
   const [sending, setSending] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
-  const [sheet, setSheet] = useState<'none' | 'delay' | 'arrive' | 'return'>('none');
+  const [sheet, setSheet] = useState<'none' | 'delay' | 'schedule' | 'return'>('none');
   const playedRef = useRef<Set<string>>(new Set(initialMessages.map((message) => message.id)));
   const audioQueueRef = useRef<string[]>([]);
   const playingRef = useRef(false);
@@ -436,6 +504,22 @@ function BridgeScreen({
     );
   }, [signal, say]);
 
+  // 차량 도착 (vehicle_arrived) — pickup or after free time. Adds a GPS pin when
+  // available; still sends the "차량 도착" card without it.
+  const announceVehicleArrived = useCallback(() => {
+    const fire = (coords?: { lat: number; lng: number }) =>
+      void signal({ type: 'vehicle_arrived', ...(coords ?? {}) }, '차량 도착 안내 완료 ✓');
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => fire({ lat: position.coords.latitude, lng: position.coords.longitude }),
+        () => fire(),
+        { enableHighAccuracy: true, timeout: 6000 },
+      );
+    } else {
+      fire();
+    }
+  }, [signal]);
+
   const announceArrival = useCallback(
     async (item: DriverScheduleItem) => {
       setSheet('none');
@@ -453,7 +537,7 @@ function BridgeScreen({
     [bookingId, session, say],
   );
 
-  // ── next stop + nav links ──────────────────────────────────────────────
+  // ── phase-aware destination (준비=픽업, 진행=다음 스톱) ───────────────────
   const nextStop = useMemo(() => {
     const now = new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Seoul', hour: '2-digit', minute: '2-digit', hour12: false }).format(new Date());
     return (
@@ -462,30 +546,46 @@ function BridgeScreen({
       null
     );
   }, [room.schedule]);
-  const navDest = nextStop && typeof nextStop.lat === 'number' && typeof nextStop.lng === 'number'
-    ? { lat: nextStop.lat, lng: nextStop.lng, name: itemTitle(nextStop) }
-    : null;
+
+  const pickupDest: NavDestination | null =
+    room.pickup && typeof room.pickup.lat === 'number' && typeof room.pickup.lng === 'number'
+      ? { lat: room.pickup.lat, lng: room.pickup.lng, name: room.pickup.name ?? '픽업 장소' }
+      : null;
+
+  const isPrep = overview.lifecycle === 'lobby';
+  const destLabel = isPrep && room.pickup ? '픽업' : '다음';
+  const destTitle = isPrep && room.pickup
+    ? `${room.pickup.pickup_time ? `${room.pickup.pickup_time} ` : ''}${room.pickup.name ?? '픽업 장소'}`
+    : nextStop
+      ? `${nextStop.time ? `${nextStop.time} ` : ''}${itemTitle(nextStop)}`
+      : '오늘 일정 없음';
+  const navDest = isPrep && pickupDest ? pickupDest : destFrom(nextStop);
 
   const recent = messages.slice(-6);
 
   return (
     <Screen>
-      {/* header: next destination + nav */}
-      <div className="border-b border-neutral-800 px-4 py-3">
-        <p className="truncate text-sm text-neutral-400">
+      {/* header: title · connection · wake · ops call */}
+      <div className="flex items-center gap-2 border-b border-neutral-800 px-4 py-2.5">
+        <p className="min-w-0 flex-1 truncate text-sm text-neutral-400">
           {overview.tour.title} · {connection === 'realtime' || connection === 'sse' ? '연결됨' : '연결 중…'}
         </p>
-        <div className="mt-1 flex items-center justify-between gap-3">
-          <p className="min-w-0 truncate text-xl font-bold text-white">
-            {nextStop ? `다음: ${nextStop.time ? `${nextStop.time} ` : ''}${itemTitle(nextStop)}` : '오늘 일정 없음'}
-          </p>
-          {navDest ? (
-            <span className="flex shrink-0 gap-2">
-              <a href={kakaoNaviUrl(navDest)} onClick={() => { window.setTimeout(() => window.open(kakaoWebRouteUrl(navDest), '_blank'), 1200); }} className="rounded-xl bg-yellow-400 px-3 py-2 text-sm font-bold text-black">카카오내비</a>
-              <a href={tmapUrl(navDest)} className="rounded-xl bg-sky-500 px-3 py-2 text-sm font-bold text-black">티맵</a>
-            </span>
-          ) : null}
-        </div>
+        {OPS_PHONE ? (
+          <a
+            href={`tel:${OPS_PHONE}`}
+            className="flex h-9 items-center gap-1 rounded-full bg-neutral-800 px-3 text-sm font-bold text-white"
+            data-testid="driver-ops-call"
+          >
+            📞 운영팀
+          </a>
+        ) : null}
+      </div>
+
+      {/* phase-aware destination + nav */}
+      <div className="border-b border-neutral-800 px-4 py-3">
+        <p className="text-xs font-bold uppercase tracking-wide text-neutral-500">{destLabel}</p>
+        <p className="mt-0.5 truncate text-xl font-bold text-white">{destTitle}</p>
+        {navDest ? <NavRow dest={navDest} /> : null}
       </div>
 
       {/* bubbles */}
@@ -495,11 +595,11 @@ function BridgeScreen({
           const system = message.sender_role === 'system' || message.sender_role === 'admin';
           return (
             <div key={message.id} className={mine ? 'self-end' : 'self-start'}>
-              {!mine && !system ? <p className="mb-1 text-sm font-semibold text-emerald-400">손님</p> : null}
+              {!mine && !system ? <p className="mb-1 text-sm font-semibold text-neutral-400">손님</p> : null}
               <div
                 className={
                   mine
-                    ? 'max-w-[85vw] rounded-3xl rounded-br-md bg-emerald-600 px-5 py-4 text-xl font-medium text-white'
+                    ? 'max-w-[85vw] rounded-3xl rounded-br-md bg-neutral-100 px-5 py-4 text-xl font-medium text-neutral-900'
                     : system
                       ? 'max-w-[85vw] rounded-2xl bg-neutral-800 px-4 py-3 text-base text-neutral-300'
                       : 'max-w-[85vw] rounded-3xl rounded-bl-md bg-neutral-700 px-5 py-4 text-2xl font-semibold text-white'
@@ -540,7 +640,7 @@ function BridgeScreen({
           onClick={() => void toggleRecord()}
           disabled={sending || Boolean(pendingClip)}
           className={`w-full rounded-3xl py-8 text-3xl font-bold transition-colors disabled:opacity-50 ${
-            recording ? 'bg-red-500 text-white' : 'bg-emerald-500 text-black'
+            recording ? 'bg-red-500 text-white' : 'bg-neutral-100 text-neutral-950'
           }`}
           style={recording ? { boxShadow: `0 0 0 ${Math.round(4 + level * 26)}px rgba(239,68,68,0.25)` } : undefined}
           data-testid="driver-mic"
@@ -550,11 +650,12 @@ function BridgeScreen({
       </div>
 
       {/* one-tap actions */}
-      <div className="grid grid-cols-5 gap-2 px-4 pb-6">
+      <div className="grid grid-cols-3 gap-2 px-4 pb-6">
+        <ActionButton label="타세요" emoji="🚐" onClick={announceVehicleArrived} />
         <ActionButton label="지연" emoji="⏱" onClick={() => setSheet('delay')} />
-        <ActionButton label="주차핀" emoji="🅿️" onClick={dropParkingPin} />
-        <ActionButton label="도착" emoji="📍" onClick={() => setSheet('arrive')} />
         <ActionButton label="복귀시간" emoji="⏰" onClick={() => setSheet('return')} />
+        <ActionButton label="일정·도착" emoji="🗺" onClick={() => setSheet('schedule')} />
+        <ActionButton label="주차핀" emoji="🅿️" onClick={dropParkingPin} />
         <ActionButton
           label="차량문제"
           emoji="⚠️"
@@ -602,7 +703,7 @@ function BridgeScreen({
                   }}
                   className="rounded-2xl bg-neutral-700 py-5 text-xl font-bold text-white"
                 >
-                  +{minutes}분 <span className="text-emerald-400">({time})</span>
+                  +{minutes}분 <span className="text-neutral-400">({time})</span>
                 </button>
               );
             })}
@@ -620,24 +721,121 @@ function BridgeScreen({
         </Sheet>
       ) : null}
 
-      {sheet === 'arrive' ? (
-        <Sheet onClose={() => setSheet('none')} title="어디에 도착했나요?">
-          <div className="flex max-h-[50vh] flex-col gap-2 overflow-y-auto">
+      {sheet === 'schedule' ? (
+        <Sheet onClose={() => setSheet('none')} title="오늘 일정 · 도착 안내">
+          <div className="flex max-h-[55vh] flex-col gap-2 overflow-y-auto">
             {room.schedule.length === 0 ? <p className="text-lg text-neutral-400">등록된 일정이 없어요.</p> : null}
-            {room.schedule.map((item, index) => (
-              <button
-                key={`${item.poi_key ?? item.title ?? index}`}
-                type="button"
-                onClick={() => void announceArrival(item)}
-                className="rounded-2xl bg-neutral-700 px-4 py-4 text-left text-xl font-semibold text-white"
-              >
-                {item.time ? `${item.time} · ` : ''}{itemTitle(item)}
-              </button>
-            ))}
+            {room.schedule.map((item, index) => {
+              const dest = destFrom(item);
+              return (
+                <div key={`${item.poi_key ?? item.title ?? index}`} className="rounded-2xl bg-neutral-800 px-4 py-3">
+                  <p className="text-lg font-semibold text-white">
+                    {item.time ? `${item.time} · ` : ''}{itemTitle(item)}
+                  </p>
+                  <div className="mt-2 flex gap-2">
+                    {dest ? (
+                      <a
+                        href={kakaoNaviUrl(dest)}
+                        onClick={() => {
+                          window.setTimeout(() => window.open(kakaoWebRouteUrl(dest), '_blank'), 1200);
+                        }}
+                        className="flex-1 rounded-xl bg-[#FEE500] py-3 text-center text-base font-bold text-black"
+                      >
+                        내비
+                      </a>
+                    ) : null}
+                    <button
+                      type="button"
+                      onClick={() => void announceArrival(item)}
+                      className="flex-1 rounded-xl bg-neutral-100 py-3 text-base font-bold text-neutral-950"
+                    >
+                      도착 안내
+                    </button>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </Sheet>
       ) : null}
     </Screen>
+  );
+}
+
+// ───────────────────────────────────────────────────────────────────────────
+
+function EndScreen({ overview, room }: { overview: DriverOverview; room: DriverRoom }) {
+  return (
+    <Screen>
+      <div className="flex flex-1 flex-col gap-5 overflow-y-auto px-6 py-8">
+        <div className="text-center">
+          <p className="text-3xl font-bold text-white">오늘 투어 종료</p>
+          <p className="mt-2 text-lg text-neutral-400">
+            {overview.tour.title} · {overview.tour_date}
+          </p>
+          <p className="mt-1 text-base text-neutral-500">수고하셨어요 🙌</p>
+        </div>
+
+        {room.schedule.length > 0 ? (
+          <div className="rounded-3xl bg-neutral-900 px-5 py-4">
+            <p className="text-sm font-bold uppercase tracking-wide text-neutral-500">오늘 방문</p>
+            <ul className="mt-2 space-y-1.5">
+              {room.schedule.map((item, index) => (
+                <li key={`${item.poi_key ?? item.title ?? index}`} className="text-lg text-neutral-200">
+                  {item.time ? `${item.time} · ` : ''}{itemTitle(item)}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
+
+        {OPS_PHONE ? (
+          <a
+            href={`tel:${OPS_PHONE}`}
+            className="rounded-2xl bg-neutral-800 py-4 text-center text-xl font-bold text-white"
+            data-testid="driver-ops-call"
+          >
+            📞 운영팀에 전화
+          </a>
+        ) : null}
+      </div>
+    </Screen>
+  );
+}
+
+function NavRow({ dest }: { dest: NavDestination }) {
+  return (
+    <div className="mt-2 grid grid-cols-4 gap-1.5">
+      <a
+        href={kakaoNaviUrl(dest)}
+        onClick={() => {
+          window.setTimeout(() => window.open(kakaoWebRouteUrl(dest), '_blank'), 1200);
+        }}
+        className="rounded-xl bg-[#FEE500] py-2.5 text-center text-sm font-bold text-black"
+      >
+        카카오
+      </a>
+      <a href={tmapUrl(dest)} className="rounded-xl bg-[#0f5bd6] py-2.5 text-center text-sm font-bold text-white">
+        티맵
+      </a>
+      <a
+        href={naverCarUrl(dest)}
+        onClick={() => {
+          window.setTimeout(() => window.open(naverWebUrl(dest), '_blank'), 1200);
+        }}
+        className="rounded-xl bg-[#03C75A] py-2.5 text-center text-sm font-bold text-white"
+      >
+        네이버
+      </a>
+      <a
+        href={googleDirectionsUrl(dest, 'driving')}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="rounded-xl bg-neutral-700 py-2.5 text-center text-sm font-bold text-white"
+      >
+        구글
+      </a>
+    </div>
   );
 }
 
