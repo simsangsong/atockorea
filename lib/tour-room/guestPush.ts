@@ -1,14 +1,13 @@
 /**
- * W4.1 / P-D7 — Web Push to a booking's guest devices (role 'customer',
- * booking-scoped rows in push_subscriptions).
+ * W4.1 / P-D7 — Web Push to a booking's devices.
  *
- * Guests opt in from the room for exactly two critical kinds: rally
- * (meeting/free-time target) and delay. Everything else stays in-app —
- * push restraint is the feature.
+ * Guests (role 'customer') opt in for exactly two critical kinds: rally
+ * (meeting/free-time target) and delay. Drivers (role 'driver') opt in for
+ * one: a guest sent a message while the driver is out in a nav app — push
+ * restraint is the feature.
  *
  * Same contract as sendOpsPush: fire-and-forget, VAPID env missing → silent
- * no-op, dead subscriptions (404/410) pruned inline. The body is localized
- * to the booking's preferred room locale from the capsule's translations.
+ * no-op, dead subscriptions (404/410) pruned inline.
  */
 
 import webpush from 'web-push';
@@ -24,6 +23,8 @@ const TITLE: Record<string, string> = {
   zh: 'AtoC Korea — 我的行程',
 };
 
+const DRIVER_TITLE = '🚐 손님 메시지';
+
 interface SubscriptionRow {
   id: string;
   endpoint: string;
@@ -37,6 +38,57 @@ function vapidConfigured(): boolean {
   );
 }
 
+function setVapid(): void {
+  webpush.setVapidDetails(
+    process.env.WEB_PUSH_CONTACT || 'mailto:support@atockorea.com',
+    process.env.NEXT_PUBLIC_WEB_PUSH_VAPID_PUBLIC_KEY!,
+    process.env.WEB_PUSH_VAPID_PRIVATE_KEY!,
+  );
+}
+
+/** Deliver one JSON payload to a set of subscription rows; prune dead ones. */
+async function deliver(
+  supabase: RoomDbClient,
+  rows: SubscriptionRow[],
+  payload: string,
+): Promise<{ sent: number; pruned: number }> {
+  let sent = 0;
+  const dead: string[] = [];
+  await Promise.all(
+    rows.map(async (row) => {
+      try {
+        await webpush.sendNotification(
+          { endpoint: row.endpoint, keys: { p256dh: row.p256dh, auth: row.auth } },
+          payload,
+          { TTL: 600, urgency: 'high' },
+        );
+        sent += 1;
+      } catch (err) {
+        const statusCode = (err as { statusCode?: number }).statusCode;
+        if (isGonePushStatus(statusCode)) dead.push(row.id);
+        else console.warn('[tour-room] push failed:', statusCode ?? err);
+      }
+    }),
+  );
+  if (dead.length > 0) {
+    await supabase.from('push_subscriptions').delete().in('id', dead);
+  }
+  return { sent, pruned: dead.length };
+}
+
+async function fetchSubscriptions(
+  supabase: RoomDbClient,
+  role: 'customer' | 'driver',
+  bookingId: string,
+): Promise<SubscriptionRow[]> {
+  const { data } = await supabase
+    .from('push_subscriptions')
+    .select('id, endpoint, p256dh, auth')
+    .eq('role', role)
+    .eq('booking_id', bookingId);
+  return (data as SubscriptionRow[]) ?? [];
+}
+
 export async function sendGuestRoomPush(
   supabase: RoomDbClient,
   booking: { id: string; preferred_language?: string | null },
@@ -44,50 +96,47 @@ export async function sendGuestRoomPush(
 ): Promise<{ sent: number; pruned: number }> {
   if (!vapidConfigured()) return { sent: 0, pruned: 0 };
   try {
-    const { data: rows } = await supabase
-      .from('push_subscriptions')
-      .select('id, endpoint, p256dh, auth')
-      .eq('role', 'customer')
-      .eq('booking_id', booking.id);
-    if (!rows?.length) return { sent: 0, pruned: 0 };
-
-    webpush.setVapidDetails(
-      process.env.WEB_PUSH_CONTACT || 'mailto:support@atockorea.com',
-      process.env.NEXT_PUBLIC_WEB_PUSH_VAPID_PUBLIC_KEY!,
-      process.env.WEB_PUSH_VAPID_PRIVATE_KEY!,
-    );
+    const rows = await fetchSubscriptions(supabase, 'customer', booking.id);
+    if (!rows.length) return { sent: 0, pruned: 0 };
+    setVapid();
     const locale = normalizeRoomLocale(booking.preferred_language);
-    const body = JSON.stringify({
+    const payload = JSON.stringify({
       title: TITLE[locale] ?? TITLE.en,
       body: input.translations[locale] ?? input.translations.en ?? '',
       url: `/tour-mode/room/${booking.id}`,
       tag: input.tag,
     });
-
-    let sent = 0;
-    const dead: string[] = [];
-    await Promise.all(
-      (rows as SubscriptionRow[]).map(async (row) => {
-        try {
-          await webpush.sendNotification(
-            { endpoint: row.endpoint, keys: { p256dh: row.p256dh, auth: row.auth } },
-            body,
-            { TTL: 600, urgency: 'high' },
-          );
-          sent += 1;
-        } catch (err) {
-          const statusCode = (err as { statusCode?: number }).statusCode;
-          if (isGonePushStatus(statusCode)) dead.push(row.id);
-          else console.warn('[tour-room] guest push failed:', statusCode ?? err);
-        }
-      }),
-    );
-    if (dead.length > 0) {
-      await supabase.from('push_subscriptions').delete().in('id', dead);
-    }
-    return { sent, pruned: dead.length };
+    return await deliver(supabase, rows, payload);
   } catch (error) {
     console.warn('[tour-room] guest push error:', error);
+    return { sent: 0, pruned: 0 };
+  }
+}
+
+/**
+ * Ring the driver's device when a guest message lands (they may be out in a
+ * nav app). Body stays generic — the message content is not put on the lock
+ * screen; tapping opens the console where the Korean TTS plays.
+ */
+export async function sendDriverRoomPush(
+  supabase: RoomDbClient,
+  bookingId: string,
+  input: { body: string; tag?: string },
+): Promise<{ sent: number; pruned: number }> {
+  if (!vapidConfigured()) return { sent: 0, pruned: 0 };
+  try {
+    const rows = await fetchSubscriptions(supabase, 'driver', bookingId);
+    if (!rows.length) return { sent: 0, pruned: 0 };
+    setVapid();
+    const payload = JSON.stringify({
+      title: DRIVER_TITLE,
+      body: input.body,
+      url: `/tour-mode/driver`,
+      tag: input.tag,
+    });
+    return await deliver(supabase, rows, payload);
+  } catch (error) {
+    console.warn('[tour-room] driver push error:', error);
     return { sent: 0, pruned: 0 };
   }
 }

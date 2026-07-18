@@ -9,6 +9,7 @@ import { getQuickReplyPreset } from '@/lib/tour-room/quickReplies';
 import { renderSpotEventTranslations } from '@/lib/tour-room/spotContent';
 import { pregenerateGuideNoticeTts, type TtsStorageClient } from '@/lib/tour-room/tts-server';
 import { sendOpsPush } from '@/lib/tour-ops/push';
+import { sendDriverRoomPush } from '@/lib/tour-room/guestPush';
 import { requestGate } from '@/lib/durable-rate-limit';
 
 export const dynamic = 'force-dynamic';
@@ -232,6 +233,25 @@ export async function POST(
           .update({ chat_locale: detected, updated_at: new Date().toISOString() })
           .eq('id', actor.sessionPayload.participantId)
           .then(() => undefined, () => undefined);
+      }
+    }
+
+    // Driver background alert (P-D7): a guest message rings the driver's device
+    // when they're out in a nav app. Generic body (no message content on the
+    // lock screen); tapping opens the console where the Korean TTS plays. Acks
+    // (headcount confirmations) don't warrant a ping.
+    if (senderRole === 'customer' && !ackKind) {
+      const driverGate = await requestGate({
+        namespace: 'tour_room_driver_msg_push',
+        key: `room:${room.id}`,
+        perMinute: 6,
+        perHour: 60,
+      });
+      if (driverGate.allowed) {
+        void sendDriverRoomPush(supabase, booking.id, {
+          body: '손님이 메시지를 보냈어요. 탭하여 확인하세요.',
+          tag: `guest-msg-${room.id}`,
+        }).catch(() => undefined);
       }
     }
 

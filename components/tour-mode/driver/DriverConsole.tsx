@@ -35,6 +35,15 @@ const TOKEN_KEY = 'tour_mode_driver_token';
 const DEVICE_KEY = 'tour_mode_driver_device_key';
 const CANCEL_WINDOW_MS = 3000;
 const OPS_PHONE = process.env.NEXT_PUBLIC_TOUR_OPS_PHONE ?? '';
+const VAPID_PUBLIC = process.env.NEXT_PUBLIC_WEB_PUSH_VAPID_PUBLIC_KEY ?? '';
+
+/** Driver expense kinds (tour_room_extras.kind); parking is the common one. */
+const EXPENSE_KINDS: Array<{ value: string; label: string }> = [
+  { value: 'parking', label: '주차' },
+  { value: 'advance', label: '대납' },
+  { value: 'extension', label: '연장' },
+  { value: 'other', label: '기타' },
+];
 
 interface DriverScheduleItem {
   time?: string;
@@ -113,6 +122,25 @@ function destFrom(item: DriverScheduleItem | null): NavDestination | null {
     return { lat: item.lat, lng: item.lng, name: itemTitle(item) };
   }
   return null;
+}
+
+function urlBase64ToUint8Array(base64String: string): Uint8Array {
+  const padding = '='.repeat((4 - (base64String.length % 4)) % 4);
+  const base64 = (base64String + padding).replace(/-/g, '+').replace(/_/g, '/');
+  const raw = window.atob(base64);
+  const output = new Uint8Array(raw.length);
+  for (let i = 0; i < raw.length; i += 1) output[i] = raw.charCodeAt(i);
+  return output;
+}
+
+function pushSupported(): boolean {
+  return (
+    typeof window !== 'undefined' &&
+    'serviceWorker' in navigator &&
+    'PushManager' in window &&
+    'Notification' in window &&
+    Boolean(VAPID_PUBLIC)
+  );
 }
 
 /** Keep the screen awake while the cockpit is up (re-acquires on tab return). */
@@ -354,7 +382,12 @@ function BridgeScreen({
   const [countdown, setCountdown] = useState(0);
   const [sending, setSending] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
-  const [sheet, setSheet] = useState<'none' | 'delay' | 'schedule' | 'return'>('none');
+  const [sheet, setSheet] = useState<'none' | 'delay' | 'schedule' | 'return' | 'expense'>('none');
+  const [pushOn, setPushOn] = useState(false);
+  const [expItem, setExpItem] = useState('');
+  const [expAmount, setExpAmount] = useState('');
+  const [expKind, setExpKind] = useState('parking');
+  const [expBusy, setExpBusy] = useState(false);
   const playedRef = useRef<Set<string>>(new Set(initialMessages.map((message) => message.id)));
   const audioQueueRef = useRef<string[]>([]);
   const playingRef = useRef(false);
@@ -537,6 +570,59 @@ function BridgeScreen({
     [bookingId, session, say],
   );
 
+  // ── background push (hear guests while out in a nav app) ────────────────
+  const enablePush = useCallback(async () => {
+    if (!pushSupported()) return;
+    try {
+      const permission = await Notification.requestPermission();
+      if (permission !== 'granted') return;
+      const registration = await navigator.serviceWorker.ready;
+      const subscription = await registration.pushManager.subscribe({
+        userVisibleOnly: true,
+        applicationServerKey: urlBase64ToUint8Array(VAPID_PUBLIC).buffer as ArrayBuffer,
+      });
+      const res = await fetch(`/api/tour-rooms/${bookingId}/push-subscribe`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'x-tour-room-auth': session },
+        body: JSON.stringify({ subscription: subscription.toJSON() }),
+      });
+      if (res.ok) setPushOn(true);
+    } catch {
+      /* stays off; the button remains for a retry */
+    }
+  }, [bookingId, session]);
+
+  // Silent re-subscribe when permission was already granted on this device.
+  useEffect(() => {
+    if (pushSupported() && Notification.permission === 'granted') void enablePush();
+  }, [enablePush]);
+
+  // ── expense log (parking etc.) → the same ledger the guide settles ──────
+  const logExpense = useCallback(async () => {
+    const amountKrw = Number.parseInt(expAmount.replace(/[^0-9]/g, ''), 10);
+    if (!expItem.trim() || !Number.isFinite(amountKrw) || amountKrw <= 0) return;
+    setExpBusy(true);
+    try {
+      const res = await fetch(`/api/tour-rooms/${bookingId}/extras`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'x-tour-room-auth': session },
+        body: JSON.stringify({ item: expItem.trim(), amount_krw: amountKrw, kind: expKind }),
+      });
+      if (res.ok) {
+        setExpItem('');
+        setExpAmount('');
+        setSheet('none');
+        say('지출 기록됨 ✓ (정산에 반영)');
+      } else {
+        say('기록 실패 — 다시 시도해 주세요');
+      }
+    } catch {
+      say('네트워크 오류');
+    } finally {
+      setExpBusy(false);
+    }
+  }, [bookingId, session, expItem, expAmount, expKind, say]);
+
   // ── phase-aware destination (준비=픽업, 진행=다음 스톱) ───────────────────
   const nextStop = useMemo(() => {
     const now = new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Seoul', hour: '2-digit', minute: '2-digit', hour12: false }).format(new Date());
@@ -570,6 +656,19 @@ function BridgeScreen({
         <p className="min-w-0 flex-1 truncate text-sm text-neutral-400">
           {overview.tour.title} · {connection === 'realtime' || connection === 'sse' ? '연결됨' : '연결 중…'}
         </p>
+        {pushSupported() ? (
+          <button
+            type="button"
+            onClick={() => void enablePush()}
+            disabled={pushOn}
+            className={`flex h-9 items-center gap-1 rounded-full px-3 text-sm font-bold ${
+              pushOn ? 'bg-neutral-800 text-neutral-400' : 'bg-neutral-100 text-neutral-950'
+            }`}
+            data-testid="driver-push-toggle"
+          >
+            {pushOn ? '🔔 켜짐' : '🔔 알림'}
+          </button>
+        ) : null}
         {OPS_PHONE ? (
           <a
             href={`tel:${OPS_PHONE}`}
@@ -650,7 +749,7 @@ function BridgeScreen({
       </div>
 
       {/* one-tap actions */}
-      <div className="grid grid-cols-3 gap-2 px-4 pb-6">
+      <div className="grid grid-cols-3 gap-2 px-4 pb-2.5">
         <ActionButton label="타세요" emoji="🚐" onClick={announceVehicleArrived} />
         <ActionButton label="지연" emoji="⏱" onClick={() => setSheet('delay')} />
         <ActionButton label="복귀시간" emoji="⏰" onClick={() => setSheet('return')} />
@@ -665,6 +764,18 @@ function BridgeScreen({
             }
           }}
         />
+      </div>
+
+      {/* expense log (secondary, deliberate) */}
+      <div className="px-4 pb-6">
+        <button
+          type="button"
+          onClick={() => setSheet('expense')}
+          className="w-full rounded-2xl bg-neutral-800 py-3 text-lg font-bold text-neutral-200"
+          data-testid="driver-action-expense"
+        >
+          💰 지출 기록 (주차비 등)
+        </button>
       </div>
 
       {/* sheets */}
@@ -755,6 +866,50 @@ function BridgeScreen({
                 </div>
               );
             })}
+          </div>
+        </Sheet>
+      ) : null}
+
+      {sheet === 'expense' ? (
+        <Sheet onClose={() => setSheet('none')} title="지출 기록 (정산 반영)">
+          <div className="flex flex-col gap-3">
+            <div className="grid grid-cols-4 gap-2">
+              {EXPENSE_KINDS.map((kind) => (
+                <button
+                  key={kind.value}
+                  type="button"
+                  onClick={() => setExpKind(kind.value)}
+                  className={`rounded-xl py-3 text-base font-bold ${
+                    expKind === kind.value ? 'bg-neutral-100 text-neutral-950' : 'bg-neutral-700 text-white'
+                  }`}
+                >
+                  {kind.label}
+                </button>
+              ))}
+            </div>
+            <input
+              value={expItem}
+              onChange={(event) => setExpItem(event.target.value)}
+              maxLength={120}
+              placeholder="항목 (예: 성산 주차장)"
+              className="rounded-2xl border border-neutral-700 bg-neutral-900 px-4 py-4 text-xl text-white placeholder:text-neutral-500"
+            />
+            <input
+              value={expAmount}
+              onChange={(event) => setExpAmount(event.target.value)}
+              inputMode="numeric"
+              placeholder="금액 (₩)"
+              className="rounded-2xl border border-neutral-700 bg-neutral-900 px-4 py-4 text-xl text-white placeholder:text-neutral-500"
+            />
+            <button
+              type="button"
+              disabled={expBusy || !expItem.trim() || !expAmount.trim()}
+              onClick={() => void logExpense()}
+              className="rounded-2xl bg-neutral-100 py-4 text-xl font-bold text-neutral-950 disabled:opacity-40"
+              data-testid="driver-expense-log"
+            >
+              {expBusy ? '기록 중…' : '기록'}
+            </button>
           </div>
         </Sheet>
       ) : null}
