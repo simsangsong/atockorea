@@ -13,6 +13,13 @@ export {
   MoreHorizontal as IconMore,
   PencilLine as IconPlanEdit,
   MessageCircle as IconTabChat,
+
+  // Home dashboard tiles (H2.1 — launcher glyphs, one per grid slot)
+  MessagesSquare as IconTileChat,
+  CalendarClock as IconTileSchedule,
+  MapPinned as IconTileMap,
+  BusFront as IconTilePickup,
+  Siren as IconTileSos,
   Map as IconTabMap,
   CalendarDays as IconTabSchedule,
   Settings as IconTabSettings,

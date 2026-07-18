@@ -58,6 +58,18 @@
 
   /* Overlay elevation (feed elements stay flat) */
   --tr-shadow-overlay: 0 4px 16px rgba(0, 0, 0, 0.12);
+
+  /* Home dashboard (H2.1 reskin) — the launcher gets its own cool mint-gray
+   * canvas and "tech" gradient icon chips; the chat canvas keeps the ivory
+   * tone. Chips are the ONE gradient exception to the §H flat-card rule:
+   * launcher grammar, not feed grammar. */
+  --tr-home-canvas: #eceff0;
+  --tr-home-tile: #ffffff;
+  --tr-tile-shadow: 0 1px 2px rgba(14, 22, 20, 0.04), 0 6px 16px rgba(14, 22, 20, 0.07);
+  --tr-chip-ink: #eef7f3;
+  --tr-chip-grad: linear-gradient(135deg, #34524c 0%, #16292b 100%);
+  --tr-chip-grad-accent: linear-gradient(135deg, #2fa78c 0%, #1c5b50 100%);
+  --tr-chip-grad-danger: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
 }
 
 .dark .tr-root {
@@ -87,6 +99,14 @@
   --tr-danger-soft: rgba(220, 38, 38, 0.22);
 
   --tr-shadow-overlay: 0 4px 16px rgba(0, 0, 0, 0.45);
+
+  --tr-home-canvas: #121716;
+  --tr-home-tile: #1b211f;
+  --tr-tile-shadow: 0 1px 2px rgba(0, 0, 0, 0.28), 0 6px 16px rgba(0, 0, 0, 0.32);
+  --tr-chip-ink: #ddf1e8;
+  --tr-chip-grad: linear-gradient(135deg, #3a5a52 0%, #1a2e2c 100%);
+  --tr-chip-grad-accent: linear-gradient(135deg, #3cbd9c 0%, #1e6a5c 100%);
+  --tr-chip-grad-danger: linear-gradient(135deg, #ef6b6b 0%, #b91c1c 100%);
 }
 
 /* ---- Typography scale (U-D6) ---------------------------------------- */
@@ -147,6 +167,14 @@
 .tr-card {
   background: var(--tr-surface);
   border-radius: var(--tr-radius-card);
+}
+
+/* Home dashboard card (H2.1): cool tile surface + soft elevation. The one
+ * shadowed card family in the room — launcher grammar, not feed grammar. */
+.tr-home-card {
+  background: var(--tr-home-tile);
+  border-radius: var(--tr-radius-card);
+  box-shadow: var(--tr-tile-shadow);
 }
 
 /* Hairline separators instead of ring-1 boxes. */

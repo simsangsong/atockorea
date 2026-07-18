@@ -28,7 +28,6 @@ import { buildTravelTimeline } from '@/lib/tour-room/timeline';
 import {
   IconChevronRight,
   IconConcierge,
-  IconEmergency,
   IconJourney,
   IconMore,
   IconPickup,
@@ -36,9 +35,12 @@ import {
   IconQuickReply,
   IconReview,
   IconTabChat,
-  IconTabMap,
-  IconTabSchedule,
   IconTabSettings,
+  IconTileChat,
+  IconTileMap,
+  IconTilePickup,
+  IconTileSchedule,
+  IconTileSos,
 } from '@/components/tour-mode/icons';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 import type { RoomMessage } from '@/hooks/useTourRoomChannel';
@@ -318,10 +320,10 @@ export default function HomeTab({
     });
   }
   tiles.push(
-    { key: 'chat', label: copy.tiles.chat, Icon: IconTabChat, onPress: () => api.selectTab('chat'), dot: api.chatUnread },
-    { key: 'schedule', label: copy.tiles.schedule, Icon: IconTabSchedule, onPress: () => api.selectTab('schedule') },
-    { key: 'map', label: copy.tiles.map, Icon: IconTabMap, onPress: () => api.selectTab('map') },
-    { key: 'pickup', label: copy.tiles.pickup, Icon: IconPickup, onPress: () => setSheet('pickup') },
+    { key: 'chat', label: copy.tiles.chat, Icon: IconTileChat, onPress: () => api.selectTab('chat'), dot: api.chatUnread },
+    { key: 'schedule', label: copy.tiles.schedule, Icon: IconTileSchedule, onPress: () => api.selectTab('schedule') },
+    { key: 'map', label: copy.tiles.map, Icon: IconTileMap, onPress: () => api.selectTab('map') },
+    { key: 'pickup', label: copy.tiles.pickup, Icon: IconTilePickup, onPress: () => setSheet('pickup') },
   );
   if (lifecycle === 'lobby') {
     tiles.push({
@@ -340,18 +342,19 @@ export default function HomeTab({
   if (lifecycle === 'ended') {
     tiles.push({ key: 'review', label: copy.tiles.review, Icon: IconReview, href: reviewHref });
   }
-  tiles.push({ key: 'sos', label: copy.tiles.sos, Icon: IconEmergency, tone: 'danger', onPress: api.openEmergency });
+  tiles.push({ key: 'sos', label: copy.tiles.sos, Icon: IconTileSos, tone: 'danger', onPress: api.openEmergency });
 
   const tileClass =
-    'tr-card flex min-h-[84px] flex-col items-center justify-center gap-1.5 px-2 py-3 text-center active:scale-[0.98]';
+    'tr-home-card flex min-h-[86px] flex-col items-center justify-center gap-1.5 px-2 py-3 text-center active:scale-[0.98]';
 
+  // H2.1 — "tech" squircle chips: gradient fill + light ink, per-tone gradients.
   const iconWrapClass = (tone?: 'accent' | 'danger') =>
-    `relative flex h-10 w-10 items-center justify-center rounded-full ${
+    `relative flex h-11 w-11 items-center justify-center rounded-[15px] text-[var(--tr-chip-ink)] ${
       tone === 'danger'
-        ? 'bg-[var(--tr-danger-soft)] text-[var(--tr-danger)]'
+        ? '[background:var(--tr-chip-grad-danger)]'
         : tone === 'accent'
-          ? 'bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]'
-          : 'bg-[var(--tr-accent-soft)] text-[var(--tr-accent-deep)]'
+          ? '[background:var(--tr-chip-grad-accent)]'
+          : '[background:var(--tr-chip-grad)]'
     }`;
 
   const tileInner = (tile: Tile) => (
@@ -382,12 +385,12 @@ export default function HomeTab({
         />
       )}
       {lifecycle === 'live' && (
-        <div className="tr-card mb-2 px-4 py-4" data-testid="home-status-live">
+        <div className="tr-home-card mb-2 px-4 py-4" data-testid="home-status-live">
           {nowStop || nextStop ? (
             <div className="flex flex-col gap-1.5">
               {nowStop && (
                 <p className="tr-card-text flex items-baseline gap-2 text-[var(--tr-ink)]">
-                  <span className="tr-meta shrink-0 whitespace-nowrap rounded-full bg-[var(--tr-accent-soft)] px-2 py-0.5 text-center font-bold text-[var(--tr-accent-deep)]">
+                  <span className="tr-meta shrink-0 whitespace-nowrap rounded-full bg-[var(--tr-safe-soft)] px-2 py-0.5 text-center font-bold text-[var(--tr-safe)]">
                     {copy.now}
                   </span>
                   <span className="min-w-0 flex-1 truncate font-semibold">{nowStop}</span>
@@ -395,7 +398,7 @@ export default function HomeTab({
               )}
               {nextStop && (
                 <p className="tr-card-text flex items-baseline gap-2 text-[var(--tr-ink-2)]">
-                  <span className="tr-meta shrink-0 whitespace-nowrap rounded-full bg-[var(--tr-surface-2)] px-2 py-0.5 text-center font-semibold text-[var(--tr-ink-3)]">
+                  <span className="tr-meta shrink-0 whitespace-nowrap rounded-full bg-[var(--tr-bubble-system)] px-2 py-0.5 text-center font-semibold text-[var(--tr-ink-3)]">
                     {nowStop ? copy.next : copy.first}
                   </span>
                   <span className="min-w-0 flex-1 truncate">{nextStop}</span>
@@ -414,7 +417,7 @@ export default function HomeTab({
         </div>
       )}
       {lifecycle === 'ended' && (
-        <div className="tr-card mb-2 px-4 py-4" data-testid="home-status-ended">
+        <div className="tr-home-card mb-2 px-4 py-4" data-testid="home-status-ended">
           <p className="tr-title text-[var(--tr-ink)]">{copy.endedTitle}</p>
           <p className="tr-card-text mt-1 text-[var(--tr-ink-2)]">{copy.endedBody}</p>
         </div>
@@ -425,10 +428,10 @@ export default function HomeTab({
         type="button"
         onClick={() => api.selectTab('chat')}
         data-testid="home-chat-preview"
-        className="tr-card mb-2 flex w-full items-center gap-3 px-4 py-3 text-left"
+        className="tr-home-card mb-2 flex w-full items-center gap-3 px-4 py-3 text-left"
       >
-        <span className="relative flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[var(--tr-accent-soft)] text-[var(--tr-accent-deep)]">
-          <IconTabChat size={18} aria-hidden />
+        <span className="relative flex h-9 w-9 shrink-0 items-center justify-center rounded-[13px] text-[var(--tr-chip-ink)] [background:var(--tr-chip-grad)]">
+          <IconTileChat size={17} aria-hidden />
           {api.chatUnread && (
             <span className="absolute -right-0.5 -top-0.5 h-2.5 w-2.5 rounded-full bg-[var(--tr-danger)]" />
           )}
