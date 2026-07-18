@@ -6,6 +6,9 @@
  * the guest confirm land, and mark cash received ([수취 완료] → settled).
  * Voiding stays possible until settled. Unsettled total on top — the
  * end-of-day cash conversation is one glance.
+ *
+ * Colours are the shared tr-plan-root tokens (inherited from the console) so
+ * the panel reads as the same product as the guest planner.
  */
 
 import { useCallback, useEffect, useState } from 'react';
@@ -110,35 +113,38 @@ export default function GuideLedgerPanel({
   };
 
   return (
-    <div className="mt-2 rounded-2xl border border-gray-200 bg-white p-3" data-testid="guide-ledger-panel">
+    <div
+      className="mt-2.5 rounded-2xl border border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] p-3"
+      data-testid="guide-ledger-panel"
+    >
       <div className="flex items-center justify-between">
-        <p className="text-[12px] font-semibold text-gray-500">정산 (당일 현금 직불 · 기록용)</p>
+        <p className="tr-label font-semibold text-[var(--tr-ink-2)]">정산 (당일 현금 직불 · 기록용)</p>
         {unsettled > 0 && (
-          <span className="rounded-full bg-amber-100 px-2 py-0.5 text-[11px] font-bold text-amber-800">
+          <span className="tr-meta rounded-full bg-[var(--tr-accent)] px-2 py-0.5 font-bold text-[var(--tr-bubble-me-ink)]">
             미수취 {formatKrw(unsettled)}
           </span>
         )}
       </div>
 
       {extras === null ? (
-        <p className="mt-2 text-[12px] text-gray-400">불러오는 중…</p>
+        <p className="tr-meta mt-2 text-[var(--tr-ink-3)]">불러오는 중…</p>
       ) : extras.length === 0 ? (
-        <p className="mt-2 text-[12px] text-gray-400">기록된 지출이 없어요.</p>
+        <p className="tr-meta mt-2 text-[var(--tr-ink-3)]">기록된 지출이 없어요.</p>
       ) : (
         <ul className="mt-2 space-y-1.5">
           {extras.map((extra) => (
             <li
               key={extra.id}
-              className={`flex items-center gap-2 rounded-xl border border-gray-100 px-2.5 py-2 ${
+              className={`flex items-center gap-2 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2.5 py-2 ${
                 extra.status === 'voided' ? 'opacity-50' : ''
               }`}
             >
               <div className="min-w-0 flex-1">
-                <p className={`text-[13px] font-semibold text-gray-900 ${extra.status === 'voided' ? 'line-through' : ''}`}>
+                <p className={`tr-card-text font-semibold text-[var(--tr-ink)] ${extra.status === 'voided' ? 'line-through' : ''}`}>
                   {extra.item}
-                  <span className="ml-1.5 font-bold text-amber-700">{formatKrw(extra.amount_krw)}</span>
+                  <span className="ml-1.5 font-bold text-[var(--tr-accent-deep)]">{formatKrw(extra.amount_krw)}</span>
                 </p>
-                <p className="text-[11px] text-gray-400">
+                <p className="tr-meta text-[var(--tr-ink-3)]">
                   {KIND_LABELS[extra.kind] ?? extra.kind} · {STATUS_LABELS[extra.status] ?? extra.status}
                 </p>
               </div>
@@ -148,7 +154,7 @@ export default function GuideLedgerPanel({
                     type="button"
                     disabled={busy !== null}
                     onClick={() => void transition(extra.id, 'settle')}
-                    className="shrink-0 rounded-lg bg-emerald-600 px-2.5 py-1.5 text-[12px] font-semibold text-white disabled:opacity-50"
+                    className="tr-label shrink-0 rounded-lg bg-[var(--tr-accent)] px-2.5 py-1.5 font-semibold text-[var(--tr-bubble-me-ink)] disabled:opacity-50"
                     data-testid="extra-settle"
                   >
                     수취 완료
@@ -157,7 +163,7 @@ export default function GuideLedgerPanel({
                     type="button"
                     disabled={busy !== null}
                     onClick={() => void transition(extra.id, 'void')}
-                    className="shrink-0 rounded-lg bg-gray-100 px-2 py-1.5 text-[12px] font-semibold text-gray-500 disabled:opacity-50"
+                    className="tr-label shrink-0 rounded-lg bg-[var(--tr-surface-2)] px-2 py-1.5 font-semibold text-[var(--tr-ink-2)] disabled:opacity-50"
                   >
                     취소
                   </button>
@@ -178,7 +184,7 @@ export default function GuideLedgerPanel({
         <select
           value={kind}
           onChange={(e) => setKind(e.target.value)}
-          className="shrink-0 rounded-xl border border-gray-200 px-2 py-2 text-[12px]"
+          className="tr-label shrink-0 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 py-2 text-[var(--tr-ink)]"
         >
           {Object.entries(KIND_LABELS).map(([value, label]) => (
             <option key={value} value={value}>{label}</option>
@@ -189,19 +195,19 @@ export default function GuideLedgerPanel({
           onChange={(e) => setItem(e.target.value)}
           maxLength={120}
           placeholder="항목 (예: 입장권 4매)"
-          className="min-w-0 flex-1 rounded-xl border border-gray-200 px-2.5 py-2 text-[13px]"
+          className="tr-card-text min-w-0 flex-1 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2.5 py-2 text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)] focus:border-[var(--tr-accent)] focus:outline-none"
         />
         <input
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
           inputMode="numeric"
           placeholder="₩"
-          className="w-24 shrink-0 rounded-xl border border-gray-200 px-2.5 py-2 text-[13px]"
+          className="tr-card-text w-24 shrink-0 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2.5 py-2 text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)] focus:border-[var(--tr-accent)] focus:outline-none"
         />
         <button
           type="submit"
           disabled={busy === 'log' || !item.trim() || !amount.trim()}
-          className="shrink-0 rounded-xl bg-gray-900 px-3 py-2 text-[13px] font-semibold text-white disabled:opacity-40"
+          className="tr-label shrink-0 rounded-xl bg-[var(--tr-accent)] px-3 py-2 font-semibold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
           data-testid="extra-log"
         >
           기록
@@ -220,14 +226,18 @@ export default function GuideLedgerPanel({
               })
               .finally(() => setBusy(null));
           }}
-          className="mt-2 w-full rounded-xl bg-amber-100 py-2 text-[13px] font-semibold text-amber-800 disabled:opacity-50"
+          className="tr-label mt-2 w-full rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] py-2 font-semibold text-[var(--tr-ink)] disabled:opacity-50"
           data-testid="settlement-summary"
         >
           {busy === 'summary' ? '발송 중…' : '🧾 정산 요약 발송 (손님 채팅으로)'}
         </button>
       )}
 
-      {error && <p className="mt-2 rounded-xl bg-red-50 px-3 py-2 text-[12px] text-red-600">{error}</p>}
+      {error && (
+        <p className="tr-label mt-2 rounded-xl border border-[var(--tr-danger-soft)] bg-[var(--tr-surface)] px-3 py-2 text-[var(--tr-danger)]">
+          {error}
+        </p>
+      )}
     </div>
   );
 }
