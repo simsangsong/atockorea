@@ -269,7 +269,7 @@ export default function RoomShell({
         {/* ---- Tab panels + floating banner zone --------------------- */}
         <div
           className={`relative flex min-h-0 flex-1 flex-col ${
-            tab === 'home' ? 'bg-[var(--tr-home-canvas)]' : ''
+            tab === 'home' ? '[background:var(--tr-home-canvas)]' : ''
           }`}
         >
           {banner && (
@@ -372,12 +372,12 @@ export default function RoomShell({
                     aria-selected={active}
                     onClick={() => selectTab(key)}
                     className={`relative flex min-h-[44px] flex-1 flex-col items-center justify-center gap-0.5 pb-1 pt-1.5 transition-colors ${
-                      active ? 'text-[var(--tr-accent-deep)]' : 'text-[var(--tr-ink-3)]'
+                      active ? 'text-[var(--tr-safe)]' : 'text-[var(--tr-ink-3)]'
                     }`}
                   >
                     <span
                       className={`relative flex h-7 w-12 items-center justify-center rounded-full transition-colors ${
-                        active ? 'bg-[var(--tr-accent-soft)]' : ''
+                        active ? 'bg-[var(--tr-safe-soft)]' : ''
                       }`}
                     >
                       <Icon size={21} strokeWidth={active ? 2.25 : 2} aria-hidden />
