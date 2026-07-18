@@ -1,25 +1,49 @@
 'use client';
 
 /**
- * T6.2–T6.5 — the guide console.
+ * T6.2–T6.5 — the guide console (`/tour-mode/guide?rt=<tour-date token>`).
  *
- * One screen for a tour day: every booking's room as a color-tagged card
- * (guests, onboard ack, last message), a merged recent feed, and three send
- * tools — free-text fan-out, meeting notice (time+place), free-time timer
- * (quick 30/45/60 or custom, cancel/extend). Data refreshes on a 15s poll;
- * sends go through the fan-out API (T6.1) with the tour-date token.
+ * A guide runs one tour DAY across many guest rooms, so this is a dispatcher:
+ *   - a hero header with the day's status,
+ *   - "손님" — one rich card per booking with the guest's identity, needs, the
+ *     plan/onboard state, and explicit entrances: [채팅] opens that guest's
+ *     room (the same customer-grade RoomShell, so the guide talks to the guest
+ *     in the exact UI the guest sees), [일정] the plan-review panel, [정산] the
+ *     cash ledger,
+ *   - "전체 안내" — broadcast, meeting notice (countdown), free-time timer,
+ *   - a merged recent feed.
  *
- * Korean-first UI: AtoC guides operate in Korean; traveller-facing content
- * stays template-translated server-side.
+ * Design: shares the guest planner's `tr-plan-root` system (grey surfaces, ink
+ * CTAs, bordered cards, one type scale) so the guide and customer surfaces read
+ * as one product. Korean-first UI; traveller-facing content stays
+ * template-translated server-side. Data refreshes on a 15s poll.
  */
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import {
+  CalendarClock,
+  Check,
+  ChevronDown,
+  ChevronUp,
+  Inbox,
+  MapPin,
+  Megaphone,
+  MessageCircle,
+  RefreshCw,
+  Send,
+  Timer,
+  Users,
+  Wallet,
+} from 'lucide-react';
 import GuideLedgerPanel from '@/components/tour-mode/guide/GuideLedgerPanel';
 import GuidePlanPanel from '@/components/tour-mode/guide/GuidePlanPanel';
 import { kstToday } from '@/lib/tour-room/time';
 
 const GUIDE_TOKEN_KEY = 'tour_mode_guide_token';
 const POLL_MS = 15_000;
+
+/** One-tap Korean dispatch lines (auto-translated per guest server-side). */
+const BROADCAST_PRESETS = ['곧 출발합니다', '5분 뒤 출발합니다', '잠시 후 집합입니다', '여기서 잠시 쉬어갑니다'];
 
 interface OverviewRoom {
   booking_id: string;
@@ -65,6 +89,21 @@ function readToken(): string | null {
   }
 }
 
+function planBadge(status: string | undefined): { label: string; tone: 'review' | 'confirmed' } | null {
+  if (status === 'guest_submitted') return { label: '제출 검토', tone: 'review' };
+  if (status === 'guest_draft') return { label: '초안 검토', tone: 'review' };
+  if (status === 'guide_confirmed' || status === 'live' || status === 'done') return { label: '일정 확정', tone: 'confirmed' };
+  return null;
+}
+
+/** Float rooms that need the guide (a guest message to answer, a plan to review) to the top. */
+function attentionScore(room: OverviewRoom): number {
+  let score = 0;
+  if (room.last_message?.sender_role === 'customer') score += 2;
+  if (room.day_plan?.status === 'guest_submitted' || room.day_plan?.status === 'guest_draft') score += 1;
+  return score;
+}
+
 export default function GuideConsole() {
   const [token, setToken] = useState<string | null>(null);
   const [overview, setOverview] = useState<Overview | null>(null);
@@ -74,6 +113,7 @@ export default function GuideConsole() {
   const [meetPoint, setMeetPoint] = useState('');
   const [freePoint, setFreePoint] = useState('');
   const [busy, setBusy] = useState<string | null>(null);
+  const [refreshing, setRefreshing] = useState(false);
   const [openPlanBookingId, setOpenPlanBookingId] = useState<string | null>(null);
   const [openLedgerBookingId, setOpenLedgerBookingId] = useState<string | null>(null);
   const tokenRef = useRef<string | null>(null);
@@ -152,233 +192,361 @@ export default function GuideConsole() {
 
   if (!token) {
     return (
-      <div className="tr-root flex min-h-dvh items-center justify-center bg-[var(--tr-canvas)] px-6 text-center">
-        <p className="text-[14px] text-gray-500">가이드 링크(이메일의 버튼)로 접속해 주세요.</p>
+      <div className="tr-root tr-plan-root flex min-h-dvh items-center justify-center bg-[var(--tr-canvas)] px-6 text-center">
+        <p className="tr-card-text text-[var(--tr-ink-2)]">가이드 링크(이메일의 버튼)로 접속해 주세요.</p>
       </div>
     );
   }
   if (!overview) {
     return (
-      <div className="tr-root flex min-h-dvh items-center justify-center bg-[var(--tr-canvas)]">
-        <p className="text-[14px] text-gray-500">{error ? '접근할 수 없어요 — 링크를 다시 확인해 주세요.' : '불러오는 중…'}</p>
+      <div className="tr-root tr-plan-root flex min-h-dvh items-center justify-center bg-[var(--tr-canvas)] px-6 text-center">
+        <p className="tr-card-text text-[var(--tr-ink-2)]">
+          {error ? '접근할 수 없어요 — 링크를 다시 확인해 주세요.' : '불러오는 중…'}
+        </p>
       </div>
     );
   }
 
   const notReturned = overview.rooms.filter((room) => !room.onboard_ack);
+  const rooms = [...overview.rooms].sort((a, b) => attentionScore(b) - attentionScore(a));
+  const replyCount = overview.rooms.filter((room) => room.last_message?.sender_role === 'customer').length;
+  const reviewCount = overview.rooms.filter(
+    (room) => room.day_plan?.status === 'guest_draft' || room.day_plan?.status === 'guest_submitted',
+  ).length;
+  const roomHref = (bookingId: string) =>
+    `/tour-mode/room/${bookingId}?rt=${encodeURIComponent(tokenRef.current ?? '')}`;
 
   return (
-    <div className="tr-root mx-auto min-h-dvh w-full max-w-md bg-[var(--tr-canvas)] px-4 pb-8 pt-5" data-testid="guide-console">
-      <header className="flex items-start justify-between gap-2">
-        <div className="min-w-0">
-          <p className="text-[11px] font-semibold uppercase tracking-wide text-amber-600">가이드 콘솔</p>
-          <h1 className="truncate text-[17px] font-bold text-gray-900">{overview.tour.title}</h1>
-          <p className="text-[12px] text-gray-500">
-            {overview.tour_date} · 예약 {overview.rooms.length}건 · 탑승 {onboardCount}/{overview.rooms.length}
-          </p>
+    <div
+      className="tr-root tr-plan-root mx-auto min-h-dvh w-full max-w-xl bg-[var(--tr-canvas)] px-4 pb-10 pt-4"
+      data-testid="guide-console"
+    >
+      {/* hero */}
+      <header className="tr-plan-hero">
+        <div className="flex items-start justify-between gap-3">
+          <div className="min-w-0">
+            <p className="tr-meta font-bold uppercase tracking-wide text-[var(--tr-plan-hero-muted)]">가이드 콘솔</p>
+            <h1 className="mt-1 truncate text-[20px] font-bold leading-tight text-[var(--tr-plan-hero-ink)]">
+              {overview.tour.title}
+            </h1>
+          </div>
+          <div className="flex shrink-0 items-center gap-1.5">
+            <button
+              type="button"
+              onClick={() => {
+                setRefreshing(true);
+                void load().finally(() => setRefreshing(false));
+              }}
+              aria-label="새로고침"
+              className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-[var(--tr-plan-hero-ink)] active:scale-95"
+            >
+              <RefreshCw size={15} className={refreshing ? 'animate-spin' : ''} aria-hidden />
+            </button>
+            <span
+              className={`tr-meta rounded-full px-2.5 py-1 font-bold ${
+                overview.lifecycle === 'live'
+                  ? 'bg-white/20 text-[var(--tr-plan-hero-ink)]'
+                  : 'bg-white/10 text-[var(--tr-plan-hero-muted)]'
+              }`}
+            >
+              {overview.lifecycle === 'live' ? 'LIVE' : overview.lifecycle === 'lobby' ? '대기' : '종료'}
+            </span>
+          </div>
         </div>
-        <span
-          className={`shrink-0 rounded-full px-2.5 py-1 text-[11px] font-semibold ${
-            overview.lifecycle === 'live'
-              ? 'bg-emerald-100 text-emerald-700'
-              : overview.lifecycle === 'lobby'
-                ? 'bg-sky-100 text-sky-700'
-                : 'bg-gray-200 text-gray-600'
-          }`}
-        >
-          {overview.lifecycle === 'live' ? 'LIVE' : overview.lifecycle === 'lobby' ? '대기' : '종료'}
-        </span>
+        <div className="mt-3 flex flex-wrap gap-1.5">
+          <span className="tr-meta inline-flex items-center gap-1 rounded-full bg-white/10 px-2.5 py-1 font-semibold text-[var(--tr-plan-hero-ink)]">
+            <CalendarClock size={13} aria-hidden />
+            {overview.tour_date}
+          </span>
+          <span className="tr-meta inline-flex items-center gap-1 rounded-full bg-white/10 px-2.5 py-1 font-semibold text-[var(--tr-plan-hero-ink)]">
+            <Users size={13} aria-hidden />
+            예약 {overview.rooms.length}
+          </span>
+          <span className="tr-meta inline-flex items-center gap-1 rounded-full bg-white/10 px-2.5 py-1 font-semibold text-[var(--tr-plan-hero-ink)]">
+            <Check size={13} aria-hidden />
+            탑승 {onboardCount}/{overview.rooms.length}
+          </span>
+          {replyCount > 0 && (
+            <span className="tr-meta inline-flex items-center gap-1 rounded-full bg-white/20 px-2.5 py-1 font-bold text-[var(--tr-plan-hero-ink)]">
+              <MessageCircle size={13} aria-hidden />
+              답장 {replyCount}
+            </span>
+          )}
+          {reviewCount > 0 && (
+            <span className="tr-meta inline-flex items-center gap-1 rounded-full bg-white/20 px-2.5 py-1 font-bold text-[var(--tr-plan-hero-ink)]">
+              <CalendarClock size={13} aria-hidden />
+              검토 {reviewCount}
+            </span>
+          )}
+        </div>
       </header>
 
-      {error && <p className="mt-2 rounded-xl bg-red-50 px-3 py-2 text-[12px] text-red-600">{error}</p>}
+      {error && (
+        <p className="tr-label mt-3 rounded-xl border border-[var(--tr-danger-soft)] bg-[var(--tr-surface)] px-3 py-2 font-medium text-[var(--tr-danger)]">
+          {error}
+        </p>
+      )}
 
-      {/* 전체 공지 */}
-      <section className="tr-card mt-4 p-3.5">
-        <p className="text-[12px] font-semibold text-gray-500">전체 공지 (모든 손님, 자동 번역)</p>
-        <form
-          className="mt-2 flex gap-2"
-          onSubmit={(e) => {
-            e.preventDefault();
-            const text = draft.trim();
-            if (!text) return;
-            setDraft('');
-            void send({ text }, 'text');
-          }}
-        >
-          <input
-            value={draft}
-            onChange={(e) => setDraft(e.target.value)}
-            maxLength={2000}
-            placeholder="예: 10분 뒤 출발합니다"
-            className="tr-body min-w-0 flex-1 rounded-xl bg-[var(--tr-surface-2)] px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-[var(--tr-accent)]"
-          />
-          <button
-            type="submit"
-            disabled={!draft.trim() || busy === 'text'}
-            className="tr-card-text min-h-[44px] rounded-full bg-[var(--tr-accent)] px-4 font-semibold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
-            data-testid="fanout-send"
-          >
-            보내기
-          </button>
-        </form>
-      </section>
+      {/* 손님 (rooms) — the guide's core surface */}
+      <section className="mt-5">
+        <h2 className="tr-label px-1 font-bold uppercase tracking-wide text-[var(--tr-ink-3)]">
+          손님 · {overview.rooms.length}
+        </h2>
+        {overview.rooms.length === 0 && (
+          <div className="tr-card mt-2 flex flex-col items-center gap-2 px-4 py-8 text-center">
+            <Inbox size={26} className="text-[var(--tr-ink-3)]" aria-hidden />
+            <p className="tr-card-text text-[var(--tr-ink-2)]">오늘은 배정된 예약이 없어요.</p>
+          </div>
+        )}
+        <div className="mt-2 space-y-2.5">
+          {rooms.map((room) => {
+            const badge = planBadge(room.day_plan?.status);
+            const awaitingReply = room.last_message?.sender_role === 'customer';
+            const planOpen = openPlanBookingId === room.booking_id;
+            const ledgerOpen = openLedgerBookingId === room.booking_id;
+            return (
+              <article key={room.booking_id} className="tr-card tr-plan-course-card px-3.5 py-3" data-testid="room-card">
+                <div className="flex items-start gap-3">
+                  <span
+                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl text-[15px] font-bold text-white"
+                    style={{ backgroundColor: `hsl(${roomHue(room.booking_id)} 55% 52%)` }}
+                    aria-hidden
+                  >
+                    {(room.contact_name ?? 'G').trim()[0]?.toUpperCase()}
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <div className="flex flex-wrap items-center gap-1.5">
+                      <p className="tr-card-text font-bold text-[var(--tr-ink)]">{room.contact_name ?? '게스트'}</p>
+                      <span className="tr-meta text-[var(--tr-ink-3)]">
+                        {room.number_of_guests ?? 1}명 · {room.preferred_language ?? 'en'}
+                      </span>
+                      {room.onboard_ack && (
+                        <span className="inline-flex items-center gap-0.5 text-[var(--tr-safe)]" title="탑승 확인">
+                          <Check size={13} aria-hidden />
+                        </span>
+                      )}
+                      {badge && (
+                        <span
+                          className={`tr-meta rounded-full px-2 py-0.5 font-bold ${
+                            badge.tone === 'review'
+                              ? 'bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]'
+                              : 'bg-[var(--tr-accent-soft)] text-[var(--tr-ink-2)]'
+                          }`}
+                        >
+                          {badge.label}
+                        </span>
+                      )}
+                      {awaitingReply && (
+                        <span className="tr-meta rounded-full bg-[var(--tr-danger-soft)] px-2 py-0.5 font-bold text-[var(--tr-danger)]">
+                          답장 필요
+                        </span>
+                      )}
+                    </div>
+                    {room.pickup?.name && (
+                      <p className="tr-meta mt-0.5 flex items-center gap-1 text-[var(--tr-ink-2)]">
+                        <MapPin size={12} className="shrink-0" aria-hidden />
+                        <span className="truncate">
+                          {room.pickup.pickup_time ? `${room.pickup.pickup_time} · ` : ''}
+                          {room.pickup.name}
+                        </span>
+                      </p>
+                    )}
+                    <p className="tr-meta mt-0.5 line-clamp-1 text-[var(--tr-ink-3)]">
+                      {room.last_message?.source_text ?? '아직 메시지 없음'}
+                    </p>
+                  </div>
+                </div>
 
-      {/* 집합 공지 */}
-      <section className="tr-card mt-3 p-3.5">
-        <p className="text-[12px] font-semibold text-gray-500">집합 공지 (손님 화면에 카운트다운)</p>
-        <div className="mt-2 flex gap-2">
-          <input
-            type="time"
-            value={meetTime}
-            onChange={(e) => setMeetTime(e.target.value)}
-            className="w-28 rounded-xl border border-gray-200 px-2 py-2.5 text-[14px]"
-          />
-          <input
-            value={meetPoint}
-            onChange={(e) => setMeetPoint(e.target.value)}
-            maxLength={120}
-            placeholder="집합 장소 (예: 주차장 2번 게이트)"
-            className="min-w-0 flex-1 rounded-xl border border-gray-200 px-3 py-2.5 text-[14px]"
-          />
-          <button
-            type="button"
-            disabled={!meetPoint.trim() || busy === 'meet'}
-            onClick={() => void send({ notice: { kind: 'meeting_notice', time: meetTime, point: meetPoint.trim() } }, 'meet')}
-            className="shrink-0 rounded-xl bg-gray-900 px-3.5 py-2.5 text-[13px] font-semibold text-white disabled:opacity-40"
-            data-testid="meeting-send"
-          >
-            공지
-          </button>
+                {/* entrances */}
+                <div className="mt-3 flex items-center gap-1.5">
+                  <a
+                    href={roomHref(room.booking_id)}
+                    className="tr-label flex min-h-[42px] flex-1 items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-accent)] px-3 font-bold text-[var(--tr-bubble-me-ink)] active:scale-[0.99]"
+                    data-testid="room-chat"
+                  >
+                    <MessageCircle size={15} aria-hidden />
+                    채팅
+                  </a>
+                  <button
+                    type="button"
+                    onClick={() => setOpenPlanBookingId((prev) => (prev === room.booking_id ? null : room.booking_id))}
+                    className={`tr-label flex min-h-[42px] items-center justify-center gap-1 rounded-xl px-3 font-bold ${
+                      badge?.tone === 'review'
+                        ? 'bg-[var(--tr-accent-soft)] text-[var(--tr-accent-deep)] ring-1 ring-[var(--tr-hairline)]'
+                        : 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]'
+                    }`}
+                    data-testid="plan-toggle"
+                  >
+                    <CalendarClock size={15} aria-hidden />
+                    일정
+                    {planOpen ? <ChevronUp size={13} aria-hidden /> : <ChevronDown size={13} aria-hidden />}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setOpenLedgerBookingId((prev) => (prev === room.booking_id ? null : room.booking_id))}
+                    className="tr-label flex min-h-[42px] items-center justify-center gap-1 rounded-xl bg-[var(--tr-surface-2)] px-3 font-bold text-[var(--tr-ink-2)]"
+                    data-testid="ledger-toggle"
+                  >
+                    <Wallet size={15} aria-hidden />
+                    정산
+                    {ledgerOpen ? <ChevronUp size={13} aria-hidden /> : <ChevronDown size={13} aria-hidden />}
+                  </button>
+                </div>
+
+                {planOpen && tokenRef.current && (
+                  <GuidePlanPanel bookingId={room.booking_id} token={tokenRef.current} onChanged={() => void load()} />
+                )}
+                {ledgerOpen && tokenRef.current && (
+                  <GuideLedgerPanel bookingId={room.booking_id} token={tokenRef.current} />
+                )}
+              </article>
+            );
+          })}
         </div>
       </section>
 
-      {/* 자유시간 타이머 */}
-      <section className="tr-card mt-3 p-3.5">
-        <p className="text-[12px] font-semibold text-gray-500">자유시간 (10분·5분 전 자동 알림)</p>
-        <input
-          value={freePoint}
-          onChange={(e) => setFreePoint(e.target.value)}
-          maxLength={120}
-          placeholder="복귀 장소"
-          className="mt-2 w-full rounded-xl border border-gray-200 px-3 py-2.5 text-[14px]"
-        />
-        <div className="mt-2 flex gap-1.5">
-          {[30, 45, 60].map((minutes) => (
+      {/* 전체 안내 (day-wide tools) */}
+      <section className="mt-6">
+        <h2 className="tr-label px-1 font-bold uppercase tracking-wide text-[var(--tr-ink-3)]">전체 안내</h2>
+
+        {/* broadcast */}
+        <div className="tr-card mt-2 px-3.5 py-3.5">
+          <p className="tr-label flex items-center gap-1.5 font-semibold text-[var(--tr-ink-2)]">
+            <Megaphone size={14} aria-hidden />
+            전체 공지 (모든 손님, 자동 번역)
+          </p>
+          <form
+            className="mt-2 flex gap-2"
+            onSubmit={(e) => {
+              e.preventDefault();
+              const text = draft.trim();
+              if (!text) return;
+              setDraft('');
+              void send({ text }, 'text');
+            }}
+          >
+            <input
+              value={draft}
+              onChange={(e) => setDraft(e.target.value)}
+              maxLength={2000}
+              placeholder="예: 10분 뒤 출발합니다"
+              className="tr-card-text min-w-0 flex-1 rounded-[var(--tr-radius-input)] border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2.5 text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)] focus:border-[var(--tr-accent)] focus:outline-none"
+            />
             <button
-              key={minutes}
+              type="submit"
+              disabled={!draft.trim() || busy === 'text'}
+              className="tr-label flex min-h-[46px] shrink-0 items-center gap-1.5 rounded-full bg-[var(--tr-accent)] px-4 font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
+              data-testid="fanout-send"
+            >
+              <Send size={15} aria-hidden />
+              보내기
+            </button>
+          </form>
+          <div className="mt-2 flex flex-wrap gap-1.5">
+            {BROADCAST_PRESETS.map((phrase) => (
+              <button
+                key={phrase}
+                type="button"
+                onClick={() => setDraft(phrase)}
+                className="tr-meta rounded-full border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2.5 py-1 font-medium text-[var(--tr-ink-2)] active:scale-95"
+              >
+                {phrase}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* meeting notice */}
+        <div className="tr-card mt-2.5 px-3.5 py-3.5">
+          <p className="tr-label flex items-center gap-1.5 font-semibold text-[var(--tr-ink-2)]">
+            <MapPin size={14} aria-hidden />
+            집합 공지 (손님 화면에 카운트다운)
+          </p>
+          <div className="mt-2 flex gap-2">
+            <input
+              type="time"
+              value={meetTime}
+              onChange={(e) => setMeetTime(e.target.value)}
+              className="tr-card-text w-28 shrink-0 rounded-[var(--tr-radius-input)] border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 py-2.5 text-[var(--tr-ink)]"
+            />
+            <input
+              value={meetPoint}
+              onChange={(e) => setMeetPoint(e.target.value)}
+              maxLength={120}
+              placeholder="집합 장소 (예: 주차장 2번 게이트)"
+              className="tr-card-text min-w-0 flex-1 rounded-[var(--tr-radius-input)] border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2.5 text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)] focus:border-[var(--tr-accent)] focus:outline-none"
+            />
+            <button
+              type="button"
+              disabled={!meetPoint.trim() || busy === 'meet'}
+              onClick={() => void send({ notice: { kind: 'meeting_notice', time: meetTime, point: meetPoint.trim() } }, 'meet')}
+              className="tr-label shrink-0 rounded-[var(--tr-radius-input)] bg-[var(--tr-accent)] px-3.5 py-2.5 font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
+              data-testid="meeting-send"
+            >
+              공지
+            </button>
+          </div>
+        </div>
+
+        {/* free-time timer */}
+        <div className="tr-card mt-2.5 px-3.5 py-3.5">
+          <p className="tr-label flex items-center gap-1.5 font-semibold text-[var(--tr-ink-2)]">
+            <Timer size={14} aria-hidden />
+            자유시간 (10분·5분 전 자동 알림)
+          </p>
+          <input
+            value={freePoint}
+            onChange={(e) => setFreePoint(e.target.value)}
+            maxLength={120}
+            placeholder="복귀 장소"
+            className="tr-card-text mt-2 w-full rounded-[var(--tr-radius-input)] border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2.5 text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)] focus:border-[var(--tr-accent)] focus:outline-none"
+          />
+          <div className="mt-2 flex gap-1.5">
+            {[30, 45, 60].map((minutes) => (
+              <button
+                key={minutes}
+                type="button"
+                disabled={busy === 'free'}
+                onClick={() => void startFreeTime(minutes)}
+                className="tr-label flex-1 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] py-2.5 font-bold text-[var(--tr-ink)] disabled:opacity-40"
+              >
+                {minutes}분
+              </button>
+            ))}
+            <button
               type="button"
               disabled={busy === 'free'}
-              onClick={() => void startFreeTime(minutes)}
-              className="flex-1 rounded-xl bg-amber-50 py-2.5 text-[13px] font-semibold text-amber-800 ring-1 ring-amber-200 disabled:opacity-40"
+              onClick={() => void send({ notice: { kind: 'free_time_timer', cancelled: true, point: freePoint } }, 'free')}
+              className="tr-label flex-1 rounded-xl border border-[var(--tr-danger-soft)] bg-[var(--tr-surface)] py-2.5 font-bold text-[var(--tr-danger)] disabled:opacity-40"
+              data-testid="free-time-cancel"
             >
-              {minutes}분
+              종료
             </button>
-          ))}
-          <button
-            type="button"
-            disabled={busy === 'free'}
-            onClick={() => void send({ notice: { kind: 'free_time_timer', cancelled: true, point: freePoint } }, 'free')}
-            className="flex-1 rounded-xl bg-red-50 py-2.5 text-[13px] font-semibold text-red-700 ring-1 ring-red-200 disabled:opacity-40"
-            data-testid="free-time-cancel"
-          >
-            종료
-          </button>
-        </div>
-        {notReturned.length > 0 && overview.lifecycle === 'live' && (
-          <p className="mt-2 text-[12px] text-gray-500">
-            미탑승: {notReturned.map((room) => room.contact_name ?? '게스트').join(', ')}
-          </p>
-        )}
-      </section>
-
-      {/* 룸 카드 */}
-      <section className="mt-4 space-y-2">
-        {overview.rooms.map((room) => (
-          <div key={room.booking_id} className="tr-card px-3.5 py-3" data-testid="room-card">
-            <div className="flex items-center gap-3">
-              <a
-                href={`/tour-mode/room/${room.booking_id}?rt=${encodeURIComponent(tokenRef.current ?? '')}`}
-                className="flex min-w-0 flex-1 items-center gap-3"
-              >
-                <span
-                  className="h-9 w-9 shrink-0 rounded-full text-center text-[15px] font-bold leading-9 text-white"
-                  style={{ backgroundColor: `hsl(${roomHue(room.booking_id)} 65% 55%)` }}
-                >
-                  {(room.contact_name ?? 'G').trim()[0]?.toUpperCase()}
-                </span>
-                <span className="min-w-0 flex-1">
-                  <span className="flex items-center gap-1.5 text-[14px] font-semibold text-gray-900">
-                    {room.contact_name ?? '게스트'}
-                    <span className="text-[11px] font-normal text-gray-400">
-                      {room.number_of_guests ?? 1}명 · {room.preferred_language ?? 'en'}
-                    </span>
-                    {room.onboard_ack && <span title="탑승 확인" className="text-emerald-600">✓</span>}
-                    {(room.day_plan?.status === 'guest_draft' || room.day_plan?.status === 'guest_submitted') && (
-                      <span className="rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-bold text-amber-800">
-                        {room.day_plan?.status === 'guest_submitted' ? '제출 검토' : '초안 검토'}
-                      </span>
-                    )}
-                  </span>
-                  <span className="block truncate text-[12px] text-gray-500">
-                    {room.last_message?.source_text ?? (room.pickup?.name ? `픽업: ${room.pickup.name}` : '아직 메시지 없음')}
-                  </span>
-                </span>
-              </a>
-              <button
-                type="button"
-                onClick={() =>
-                  setOpenPlanBookingId((prev) => (prev === room.booking_id ? null : room.booking_id))
-                }
-                className={`shrink-0 rounded-xl px-2.5 py-2 text-[12px] font-semibold ${
-                  room.day_plan?.status === 'guest_draft' || room.day_plan?.status === 'guest_submitted'
-                    ? 'bg-amber-100 text-amber-800'
-                    : 'bg-gray-100 text-gray-600'
-                }`}
-                data-testid="plan-toggle"
-              >
-                일정{openPlanBookingId === room.booking_id ? ' ▴' : ' ▾'}
-              </button>
-              <button
-                type="button"
-                onClick={() =>
-                  setOpenLedgerBookingId((prev) => (prev === room.booking_id ? null : room.booking_id))
-                }
-                className="shrink-0 rounded-xl bg-gray-100 px-2.5 py-2 text-[12px] font-semibold text-gray-600"
-                data-testid="ledger-toggle"
-              >
-                정산{openLedgerBookingId === room.booking_id ? ' ▴' : ' ▾'}
-              </button>
-            </div>
-            {openPlanBookingId === room.booking_id && tokenRef.current && (
-              <GuidePlanPanel
-                bookingId={room.booking_id}
-                token={tokenRef.current}
-                onChanged={() => void load()}
-              />
-            )}
-            {openLedgerBookingId === room.booking_id && tokenRef.current && (
-              <GuideLedgerPanel bookingId={room.booking_id} token={tokenRef.current} />
-            )}
           </div>
-        ))}
+          {notReturned.length > 0 && overview.lifecycle === 'live' && (
+            <p className="tr-meta mt-2 text-[var(--tr-ink-3)]">
+              미탑승: {notReturned.map((room) => room.contact_name ?? '게스트').join(', ')}
+            </p>
+          )}
+        </div>
       </section>
 
-      {/* 통합 피드 */}
+      {/* recent feed */}
       {overview.feed.length > 0 && (
-        <section className="mt-4">
-          <p className="text-[12px] font-semibold text-gray-500">최근 메시지</p>
+        <section className="mt-6">
+          <h2 className="tr-label px-1 font-bold uppercase tracking-wide text-[var(--tr-ink-3)]">최근 메시지</h2>
           <div className="mt-2 space-y-1.5">
             {overview.feed.map((message) => {
               const tag = roomLabel.get(message.room_id);
               return (
                 <div key={message.id} className="tr-card flex items-start gap-2 px-3 py-2">
                   <span
-                    className="mt-0.5 h-2.5 w-2.5 shrink-0 rounded-full"
-                    style={{ backgroundColor: tag ? `hsl(${tag.hue} 65% 55%)` : '#d1d5db' }}
+                    className="mt-1 h-2.5 w-2.5 shrink-0 rounded-full"
+                    style={{ backgroundColor: tag ? `hsl(${tag.hue} 55% 52%)` : 'var(--tr-ink-3)' }}
                     title={tag?.name}
                   />
-                  <p className="min-w-0 flex-1 text-[12px] leading-relaxed text-gray-700">
-                    <span className="font-semibold">{tag?.name ?? '룸'}</span>
+                  <p className="tr-meta min-w-0 flex-1 leading-relaxed text-[var(--tr-ink-2)]">
+                    <span className="font-bold text-[var(--tr-ink)]">{tag?.name ?? '룸'}</span>
                     {message.sender_role === 'guide' || message.sender_role === 'admin' ? ' (나/운영)' : ''} ·{' '}
                     {message.source_text}
                   </p>
@@ -389,7 +557,7 @@ export default function GuideConsole() {
         </section>
       )}
 
-      <p className="mt-6 text-center text-[11px] text-gray-400">
+      <p className="tr-meta mt-6 text-center text-[var(--tr-ink-3)]">
         {kstToday() === overview.tour_date ? '오늘 투어' : overview.tour_date} · 15초마다 자동 새로고침
       </p>
     </div>
