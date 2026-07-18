@@ -870,6 +870,19 @@ button, a {
   from { opacity: 0; transform: translateY(6px) scale(0.97); }
   to   { opacity: 1; transform: translateY(0) scale(1); }
 }
+/* The expanded invisible indicator below is ONLY safe if the input itself is
+   the positioned ancestor — otherwise `inset: 0` anchors to the nearest
+   positioned parent (e.g. the ops room-manager's `fixed inset-0` sheet) and
+   the invisible calendar trigger covers the ENTIRE page: every click anywhere
+   hit-tests to the date input ("어디를 클릭해도 달력", 2026-07-18 ops report;
+   reproduced live in Chrome 150 — elementFromPoint returned the INPUT at all
+   coordinates until `position: relative` was injected. Note getComputedStyle
+   on this UA-shadow pseudo reports unstyled defaults there, so verify with
+   hit-testing, not computed styles). Scope the absolute to the input: */
+input[type="date"],
+input[type="time"] {
+  position: relative;
+}
 input[type="date"]::-webkit-calendar-picker-indicator,
 input[type="time"]::-webkit-calendar-picker-indicator {
   cursor: pointer;
