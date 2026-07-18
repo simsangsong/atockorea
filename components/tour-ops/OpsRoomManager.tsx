@@ -20,6 +20,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { toast } from 'sonner';
 import { Copy, Loader2, Mail, Moon, Plus, QrCode, RefreshCw, Sun, X } from 'lucide-react';
 import { getOpsToken } from '@/components/tour-ops/opsShared';
+import { useOpsTheme, type OpsTheme } from '@/components/tour-ops/opsTheme';
 
 interface ManagedBooking {
   id: string;
@@ -48,9 +49,6 @@ interface MintedLink {
 }
 
 type LinkRole = 'customer' | 'guide' | 'driver';
-type OpsTheme = 'light' | 'dark';
-
-const THEME_KEY = 'tour_ops_room_theme';
 
 const CHANNEL_BADGES: Record<string, { label: string; cls: string }> = {
   gyg: { label: 'GYG', cls: 'bg-orange-500/15 text-orange-500' },
@@ -132,14 +130,8 @@ export default function OpsRoomManager({
   onRoomsChanged: () => void;
 }) {
   const [viewDate, setViewDate] = useState(date);
-  const [theme, setTheme] = useState<OpsTheme>(() => {
-    try {
-      if (typeof window === 'undefined') return 'light';
-      return window.localStorage.getItem(THEME_KEY) === 'dark' ? 'dark' : 'light';
-    } catch {
-      return 'light';
-    }
-  });
+  // Shared with the whole 관제센터 (OpsApp shell) — one switch everywhere.
+  const [theme, toggleTheme] = useOpsTheme();
   const [bookings, setBookings] = useState<ManagedBooking[]>([]);
   const [loading, setLoading] = useState(true);
   const [busy, setBusy] = useState<string | null>(null); // `${bookingId}:${action}`
@@ -148,16 +140,6 @@ export default function OpsRoomManager({
   const [createOpen, setCreateOpen] = useState(false);
 
   const T = palette(theme);
-
-  const toggleTheme = () => {
-    const next: OpsTheme = theme === 'dark' ? 'light' : 'dark';
-    setTheme(next);
-    try {
-      window.localStorage.setItem(THEME_KEY, next);
-    } catch {
-      /* in-memory only */
-    }
-  };
 
   const load = useCallback(async () => {
     setLoading(true);
@@ -266,9 +248,10 @@ export default function OpsRoomManager({
   return (
     <div className={`fixed inset-0 z-50 flex flex-col ${T.root}`} data-testid="ops-room-manager">
       <header
-        className={`flex min-h-[52px] items-center justify-between border-b px-4 ${T.headerBorder}`}
+        className={`border-b px-4 ${T.headerBorder}`}
         style={{ paddingTop: 'env(safe-area-inset-top, 0px)' }}
       >
+        <div className="mx-auto flex min-h-[52px] w-full max-w-3xl items-center justify-between">
         <div>
           <h2 className="text-[15px] font-bold">룸 · 링크 관리</h2>
           <p className={`text-[11px] ${T.sub}`}>{viewDate} · 예약 {bookings.length}건</p>
@@ -300,15 +283,20 @@ export default function OpsRoomManager({
             <X className="size-5" />
           </button>
         </div>
+        </div>
       </header>
 
-      {/* date navigation + create — always visible, empty day included */}
-      <div className={`flex items-center gap-2 border-b px-4 py-2.5 ${T.headerBorder}`}>
+      {/* date navigation + create — always visible, empty day included.
+          The date input is deliberately COMPACT (not flex-1): a full-width
+          native date input turned the whole bar into a calendar trigger on
+          desktop (2026-07-18 report). */}
+      <div className={`border-b px-4 py-2.5 ${T.headerBorder}`}>
+      <div className="mx-auto flex w-full max-w-3xl items-center gap-2">
         <button
           type="button"
           onClick={() => setViewDate((d) => shiftDate(d, -1))}
           aria-label="이전 날짜"
-          className={`flex h-9 w-9 items-center justify-center rounded-lg text-[15px] font-bold ${T.secondaryBtn}`}
+          className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-[15px] font-bold ${T.secondaryBtn}`}
         >
           ◀
         </button>
@@ -316,17 +304,18 @@ export default function OpsRoomManager({
           type="date"
           value={viewDate}
           onChange={(e) => e.target.value && setViewDate(e.target.value)}
-          className={`h-9 min-w-0 flex-1 rounded-lg border px-2 text-center text-[13px] font-semibold ${T.input}`}
+          className={`h-9 w-40 shrink-0 rounded-lg border px-2 text-center text-[13px] font-semibold ${T.input}`}
           data-testid="date-input"
         />
         <button
           type="button"
           onClick={() => setViewDate((d) => shiftDate(d, 1))}
           aria-label="다음 날짜"
-          className={`flex h-9 w-9 items-center justify-center rounded-lg text-[15px] font-bold ${T.secondaryBtn}`}
+          className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-[15px] font-bold ${T.secondaryBtn}`}
         >
           ▶
         </button>
+        <div className="min-w-0 flex-1" />
         <button
           type="button"
           onClick={() => setCreateOpen(true)}
@@ -336,8 +325,10 @@ export default function OpsRoomManager({
           <Plus className="size-4" /> 예약 만들기
         </button>
       </div>
+      </div>
 
       <div className="flex-1 overflow-y-auto px-3 py-3 pb-8">
+      <div className="mx-auto w-full max-w-3xl">
         {loading && bookings.length === 0 ? (
           <p className={`mt-16 text-center text-[13px] ${T.sub}`}>불러오는 중…</p>
         ) : bookings.length === 0 ? (
@@ -484,6 +475,7 @@ export default function OpsRoomManager({
             </section>
           ))
         )}
+      </div>
       </div>
 
       {qrOpen && (

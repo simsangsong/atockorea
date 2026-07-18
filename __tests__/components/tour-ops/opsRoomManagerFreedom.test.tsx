@@ -37,7 +37,7 @@ describe('OpsRoomManager (Ops Freedom)', () => {
     expect(root.className).toContain('bg-slate-50');
     fireEvent.click(screen.getByTestId('theme-toggle'));
     expect(root.className).toContain('bg-slate-950');
-    expect(window.localStorage.getItem('tour_ops_room_theme')).toBe('dark');
+    expect(window.localStorage.getItem('tour_ops_theme')).toBe('dark');
   });
 
   it('empty day still offers date nav + manual booking creation', async () => {
