@@ -3,14 +3,14 @@ import QRCode from 'qrcode';
 import { createServerClient } from '@/lib/supabase';
 import { requireAdmin } from '@/lib/auth';
 import { ensureRoom, type RoomDbClient } from '@/lib/tour-room/access';
-import { hashToken, signCustomerRoomToken, signGuideRoomToken } from '@/lib/tour-room/token';
+import { hashToken, signCustomerRoomToken, signDriverRoomToken, signGuideRoomToken } from '@/lib/tour-room/token';
 
 export const dynamic = 'force-dynamic';
 
 /**
  * Ops-dashboard link minting (copy/QR, no email).
  *
- * POST /api/admin/tour-ops/links { bookingId, role: 'customer' | 'guide' }
+ * POST /api/admin/tour-ops/links { bookingId, role: 'customer' | 'guide' | 'driver' }
  * Mints a fresh invite token for the booking (customer scope) or its
  * tour-date (guide scope), records it in the invites ledger with
  * sent_via='ops-link', ensures the room row exists, and returns the join URL
@@ -31,9 +31,10 @@ export async function POST(req: NextRequest) {
     const supabase = createServerClient();
     const body = (await req.json().catch(() => ({}))) as { bookingId?: string; role?: string };
     const bookingId = typeof body.bookingId === 'string' ? body.bookingId : '';
-    const role = body.role === 'guide' ? 'guide' : body.role === 'customer' ? 'customer' : null;
+    const role =
+      body.role === 'guide' || body.role === 'customer' || body.role === 'driver' ? body.role : null;
     if (!bookingId || !role) {
-      return NextResponse.json({ error: 'bookingId and role (customer|guide) required' }, { status: 400 });
+      return NextResponse.json({ error: 'bookingId and role (customer|guide|driver) required' }, { status: 400 });
     }
 
     const { data: booking } = await supabase
@@ -73,18 +74,19 @@ export async function POST(req: NextRequest) {
       ledger.sent_to = booking.contact_email ?? null;
     } else {
       if (!booking.tour_id) {
-        return NextResponse.json({ error: 'Booking has no tour — cannot mint a guide link' }, { status: 409 });
+        return NextResponse.json({ error: 'Booking has no tour — cannot mint this link' }, { status: 409 });
       }
-      const minted = signGuideRoomToken({
-        tourId: booking.tour_id,
-        tourDate: booking.tour_date,
-        displayName: 'Guide',
-      });
+      // guide and driver share the tour-date scope; the driver token opens the
+      // KO console and passes the vehicle-plate PIN gate (P-D3).
+      const minted =
+        role === 'driver'
+          ? signDriverRoomToken({ tourId: booking.tour_id, tourDate: booking.tour_date, displayName: '기사님' })
+          : signGuideRoomToken({ tourId: booking.tour_id, tourDate: booking.tour_date, displayName: 'Guide' });
       token = minted.token;
       expiresAt = new Date(minted.payload.exp * 1000).toISOString();
       ledger.tour_id = booking.tour_id;
       ledger.tour_date = booking.tour_date;
-      ledger.display_name = 'Guide';
+      ledger.display_name = role === 'driver' ? '기사님' : 'Guide';
     }
     ledger.token_hash = hashToken(token);
     ledger.expires_at = expiresAt;
@@ -92,7 +94,12 @@ export async function POST(req: NextRequest) {
     const { error: ledgerError } = await supabase.from('tour_room_invites').insert(ledger);
     if (ledgerError) throw ledgerError;
 
-    const url = `${appUrl()}/tour-mode/room/${booking.id}?rt=${encodeURIComponent(token)}`;
+    const url =
+      role === 'driver'
+        ? `${appUrl()}/tour-mode/driver?rt=${encodeURIComponent(token)}`
+        : role === 'guide'
+          ? `${appUrl()}/tour-mode/guide?rt=${encodeURIComponent(token)}`
+          : `${appUrl()}/tour-mode/room/${booking.id}?rt=${encodeURIComponent(token)}`;
     let qrDataUrl: string | null = null;
     try {
       qrDataUrl = await QRCode.toDataURL(url, { width: 360, margin: 1 });

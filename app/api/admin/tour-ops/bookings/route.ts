@@ -27,7 +27,7 @@ export async function GET(req: NextRequest) {
     const { data: bookings, error } = await supabase
       .from('bookings')
       .select(
-        'id, tour_id, merchant_id, tour_date, tour_time, contact_name, contact_email, contact_phone, number_of_guests, preferred_language, status',
+        'id, tour_id, merchant_id, tour_date, tour_time, contact_name, contact_email, contact_phone, number_of_guests, preferred_language, status, source',
       )
       .eq('tour_date', date)
       .neq('status', 'cancelled');
