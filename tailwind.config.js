@@ -24,6 +24,9 @@ const COMPONENT_SUBDIRS = [
   'tour-detail-template',
   'tour-detail',
   'tour-mode',
+  // 관제센터 — 2026-07-18까지 누락돼 tour-ops 고유 클래스가 통째로 미생성
+  // (다크 타일 제목 실종·룸매니저 반쪽 스타일의 진짜 원인)
+  'tour-ops',
   'ui',
   'welcome',
 ];

@@ -19,10 +19,11 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { toast } from 'sonner';
-import { Home, LayoutDashboard, Map as MapIcon, RefreshCw, Settings, Siren } from 'lucide-react';
+import { Home, LayoutDashboard, Map as MapIcon, Moon, RefreshCw, Settings, Siren, Sun } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import { kstToday } from '@/lib/tour-room/time';
 import { useOpsChannels, type OpsChannelDescriptor } from '@/hooks/useOpsChannels';
+import { useOpsTheme } from '@/components/tour-ops/opsTheme';
 import { computeAttention } from '@/lib/tour-ops/attention';
 import { startSosAlarmVisuals, stopSosAlarmVisuals, vibrateSos } from '@/lib/tour-ops/alerts';
 import { getOpsToken, playSosSound, type OpsRoom, type SosInfo, type SosMetadata } from '@/components/tour-ops/opsShared';
@@ -59,6 +60,8 @@ export default function OpsApp() {
   // Hub sheets (룸·링크 관리 / 메시지 모아보기) ride over every tab like the
   // room drawer does.
   const [managerOpen, setManagerOpen] = useState(false);
+  // Ops-wide light/dark (사용자 요청 2026-07-18) — .ops-light remaps every tab.
+  const [opsTheme, toggleOpsTheme] = useOpsTheme();
   const [inboxOpen, setInboxOpen] = useState(false);
 
   const [loadError, setLoadError] = useState(false);
@@ -320,7 +323,7 @@ export default function OpsApp() {
 
   return (
     <div
-      className="ops-app min-h-dvh bg-slate-950 text-slate-100"
+      className={`ops-app min-h-dvh bg-slate-950 text-slate-100 ${opsTheme === 'light' ? 'ops-light' : ''}`}
       style={{ paddingBottom: 'calc(72px + env(safe-area-inset-bottom, 0px))' }}
     >
       <header
@@ -350,6 +353,15 @@ export default function OpsApp() {
               {date} · 룸 {rooms.length}
               {sosCount > 0 && <span className="ml-1.5 font-semibold text-red-400">🆘 {sosCount}</span>}
             </p>
+            <button
+              type="button"
+              onClick={toggleOpsTheme}
+              aria-label={opsTheme === 'dark' ? '라이트 모드' : '다크 모드'}
+              className="flex size-8 items-center justify-center rounded-lg text-slate-400 active:bg-white/10"
+              data-testid="ops-theme-toggle"
+            >
+              {opsTheme === 'dark' ? <Sun className="size-4" /> : <Moon className="size-4" />}
+            </button>
             <button
               type="button"
               onClick={() => void loadAll()}
