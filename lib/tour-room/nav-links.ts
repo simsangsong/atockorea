@@ -25,6 +25,11 @@ export function naverWalkUrl(dest: NavDestination): string {
   return `nmap://route/walk?dlat=${dest.lat}&dlng=${dest.lng}&dname=${encodedName(dest, 'Destination')}&appname=atockorea.com`;
 }
 
+/** Naver Map app — car route to the destination (driver-facing). */
+export function naverCarUrl(dest: NavDestination): string {
+  return `nmap://route/car?dlat=${dest.lat}&dlng=${dest.lng}&dname=${encodedName(dest, '목적지')}&appname=atockorea.com`;
+}
+
 /** Naver Map web fallback (place view centred on the destination). */
 export function naverWebUrl(dest: NavDestination): string {
   return `https://map.naver.com/p?c=${dest.lng},${dest.lat},17,0,0,0,dh&title=${encodedName(dest, 'Destination')}`;
