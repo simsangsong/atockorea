@@ -180,24 +180,6 @@ interface PlanCopy {
   saving: string;
   saved: string;
   saveError: string;
-  saveRateLimited?: string;
-  templatesLoading?: string;
-  templatesEmpty?: string;
-  templatesError?: string;
-  placesLoading?: string;
-  placesEmpty?: string;
-  placesError?: string;
-  googleError?: string;
-  previewCourse?: string;
-  previewTitle?: string;
-  previewTotal?: string;
-  previewDriving?: string;
-  previewWalking?: string;
-  previewMeals?: string;
-  previewAccessibility?: string;
-  previewSeason?: string;
-  previewFlexible?: string;
-  previewClose?: string;
   submit: string;
   submitting: string;
   delegateTitle: string;
@@ -704,25 +686,122 @@ function stopsPayload(stops: EditorStop[]): Array<Record<string, unknown>> {
   }));
 }
 
-const PLAN_STATUS_COPY = {
-  saveRateLimited: 'Too many quick saves. Please wait a moment, then try again.',
-  templatesLoading: 'Loading recommended courses...',
-  templatesEmpty: 'No recommended courses are ready for this region yet.',
-  templatesError: 'Recommended courses could not be loaded.',
-  placesLoading: 'Loading places...',
-  placesEmpty: 'No places match this search.',
-  placesError: 'Places could not be loaded. You can still search Google Maps.',
-  googleError: 'Google Maps search is unavailable right now.',
-  previewCourse: 'Preview course',
-  previewTitle: 'Course preview',
-  previewTotal: 'Total',
-  previewDriving: 'Driving',
-  previewWalking: 'Walking',
-  previewMeals: 'Meals',
-  previewAccessibility: 'Accessibility',
-  previewSeason: 'Season',
-  previewFlexible: 'Guide confirms',
-  previewClose: 'Close course preview',
+/**
+ * Status + course-preview strings the PlanCopy blocks above don't carry.
+ * Kept as its own 5-locale table (P-D10) — the previous single-locale English
+ * fallback shipped "Preview course / Total / Driving / Loading…" untranslated
+ * to every non-English guest.
+ */
+interface PlanStatusCopy {
+  saveRateLimited: string;
+  templatesLoading: string;
+  templatesEmpty: string;
+  templatesError: string;
+  placesLoading: string;
+  placesEmpty: string;
+  placesError: string;
+  googleError: string;
+  previewCourse: string;
+  previewTitle: string;
+  previewStops: string;
+  previewTotal: string;
+  previewDriving: string;
+  previewClose: string;
+  replaceApply: string;
+  cancel: string;
+}
+
+const PLAN_STATUS_COPY: Record<RoomLocale, PlanStatusCopy> = {
+  en: {
+    saveRateLimited: 'Too many quick saves. Please wait a moment, then try again.',
+    templatesLoading: 'Loading recommended courses…',
+    templatesEmpty: 'No recommended courses are ready for this region yet.',
+    templatesError: 'Recommended courses could not be loaded.',
+    placesLoading: 'Loading places…',
+    placesEmpty: 'No places match this search.',
+    placesError: 'Places could not be loaded. You can still search Google Maps.',
+    googleError: 'Google Maps search is unavailable right now.',
+    previewCourse: 'Preview course',
+    previewTitle: 'Course preview',
+    previewStops: 'Stops',
+    previewTotal: 'Total',
+    previewDriving: 'Driving',
+    previewClose: 'Close course preview',
+    replaceApply: 'Replace',
+    cancel: 'Cancel',
+  },
+  ko: {
+    saveRateLimited: '저장이 너무 잦아요. 잠시 후 다시 시도해 주세요.',
+    templatesLoading: '추천 코스를 불러오는 중…',
+    templatesEmpty: '아직 이 지역의 추천 코스가 준비되지 않았어요.',
+    templatesError: '추천 코스를 불러오지 못했어요.',
+    placesLoading: '장소를 불러오는 중…',
+    placesEmpty: '검색과 일치하는 장소가 없어요.',
+    placesError: '장소를 불러오지 못했어요. Google 지도 검색은 계속 쓸 수 있어요.',
+    googleError: '지금은 Google 지도 검색을 사용할 수 없어요.',
+    previewCourse: '코스 미리보기',
+    previewTitle: '코스 미리보기',
+    previewStops: '장소',
+    previewTotal: '총 시간',
+    previewDriving: '이동',
+    previewClose: '코스 미리보기 닫기',
+    replaceApply: '대체',
+    cancel: '취소',
+  },
+  ja: {
+    saveRateLimited: '保存が頻繁すぎます。少し待ってから再試行してください。',
+    templatesLoading: 'おすすめコースを読み込み中…',
+    templatesEmpty: 'この地域のおすすめコースはまだありません。',
+    templatesError: 'おすすめコースを読み込めませんでした。',
+    placesLoading: 'スポットを読み込み中…',
+    placesEmpty: '検索に一致するスポットがありません。',
+    placesError: 'スポットを読み込めませんでした。Google マップ検索は引き続き使えます。',
+    googleError: '現在、Google マップ検索は利用できません。',
+    previewCourse: 'コースを見る',
+    previewTitle: 'コースプレビュー',
+    previewStops: 'スポット',
+    previewTotal: '合計',
+    previewDriving: '移動',
+    previewClose: 'コースプレビューを閉じる',
+    replaceApply: '置き換える',
+    cancel: 'キャンセル',
+  },
+  zh: {
+    saveRateLimited: '保存太频繁了。请稍候再试。',
+    templatesLoading: '正在加载推荐路线…',
+    templatesEmpty: '该地区暂无推荐路线。',
+    templatesError: '无法加载推荐路线。',
+    placesLoading: '正在加载景点…',
+    placesEmpty: '没有匹配的景点。',
+    placesError: '无法加载景点。您仍可使用 Google 地图搜索。',
+    googleError: '当前无法使用 Google 地图搜索。',
+    previewCourse: '预览路线',
+    previewTitle: '路线预览',
+    previewStops: '景点',
+    previewTotal: '总计',
+    previewDriving: '车程',
+    previewClose: '关闭路线预览',
+    replaceApply: '替换',
+    cancel: '取消',
+  },
+  es: {
+    saveRateLimited: 'Demasiados guardados seguidos. Espera un momento e inténtalo de nuevo.',
+    templatesLoading: 'Cargando rutas recomendadas…',
+    templatesEmpty: 'Aún no hay rutas recomendadas para esta zona.',
+    templatesError: 'No se pudieron cargar las rutas recomendadas.',
+    placesLoading: 'Cargando lugares…',
+    placesEmpty: 'No hay lugares que coincidan.',
+    placesError: 'No se pudieron cargar los lugares. Aún puedes buscar en Google Maps.',
+    googleError: 'La búsqueda de Google Maps no está disponible ahora.',
+    previewCourse: 'Ver la ruta',
+    previewTitle: 'Vista previa de la ruta',
+    previewStops: 'Paradas',
+    previewTotal: 'Total',
+    previewDriving: 'Trayecto',
+    previewClose: 'Cerrar la vista previa',
+    replaceApply: 'Reemplazar',
+    cancel: 'Cancelar',
+  },
 };
 
 // ---------------------------------------------------------------------------
@@ -754,16 +833,10 @@ function GooglePlaceSearch({
     version: GOOGLE_MAPS_LOADER_VERSION,
   });
 
-  if (loadError) {
-    return (
-      <p className="tr-label rounded-xl border border-[var(--tr-danger-soft)] bg-[var(--tr-surface)] px-3 py-2 text-[var(--tr-danger)]">
-        {errorLabel}
-      </p>
-    );
-  }
-
+  // NOTE: every hook must run before any conditional return (rules-of-hooks) —
+  // the loadError branch below sits *after* this effect, not between the hooks.
   useEffect(() => {
-    if (!isLoaded || !inputRef.current) return undefined;
+    if (loadError || !isLoaded || !inputRef.current) return undefined;
     const places = (window as Window & { google?: typeof google }).google?.maps?.places;
     if (!places) return undefined;
     const bounds = region ? REGION_BOUNDS[region] : undefined;
@@ -779,7 +852,15 @@ function GooglePlaceSearch({
       if (inputRef.current) inputRef.current.value = '';
     });
     return () => listener.remove();
-  }, [isLoaded, region]);
+  }, [isLoaded, loadError, region]);
+
+  if (loadError) {
+    return (
+      <p className="tr-label rounded-xl border border-[var(--tr-danger-soft)] bg-[var(--tr-surface)] px-3 py-2 text-[var(--tr-danger)]">
+        {errorLabel}
+      </p>
+    );
+  }
 
   return (
     <input
@@ -817,26 +898,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
   const attempted = useRef(false);
   const [locale, setLocale] = useState<RoomLocale>(() => detectLocale());
   const copy = COPY[locale];
-  const ui = {
-    saveRateLimited: copy.saveRateLimited ?? PLAN_STATUS_COPY.saveRateLimited,
-    templatesLoading: copy.templatesLoading ?? PLAN_STATUS_COPY.templatesLoading,
-    templatesEmpty: copy.templatesEmpty ?? PLAN_STATUS_COPY.templatesEmpty,
-    templatesError: copy.templatesError ?? PLAN_STATUS_COPY.templatesError,
-    placesLoading: copy.placesLoading ?? PLAN_STATUS_COPY.placesLoading,
-    placesEmpty: copy.placesEmpty ?? PLAN_STATUS_COPY.placesEmpty,
-    placesError: copy.placesError ?? PLAN_STATUS_COPY.placesError,
-    googleError: copy.googleError ?? PLAN_STATUS_COPY.googleError,
-    previewCourse: copy.previewCourse ?? PLAN_STATUS_COPY.previewCourse,
-    previewTitle: copy.previewTitle ?? PLAN_STATUS_COPY.previewTitle,
-    previewTotal: copy.previewTotal ?? PLAN_STATUS_COPY.previewTotal,
-    previewDriving: copy.previewDriving ?? PLAN_STATUS_COPY.previewDriving,
-    previewWalking: copy.previewWalking ?? PLAN_STATUS_COPY.previewWalking,
-    previewMeals: copy.previewMeals ?? PLAN_STATUS_COPY.previewMeals,
-    previewAccessibility: copy.previewAccessibility ?? PLAN_STATUS_COPY.previewAccessibility,
-    previewSeason: copy.previewSeason ?? PLAN_STATUS_COPY.previewSeason,
-    previewFlexible: copy.previewFlexible ?? PLAN_STATUS_COPY.previewFlexible,
-    previewClose: copy.previewClose ?? PLAN_STATUS_COPY.previewClose,
-  };
+  const ui = PLAN_STATUS_COPY[locale];
 
   const [plan, setPlan] = useState<PlanResponse | null>(null);
   const [templates, setTemplates] = useState<CourseTemplate[]>([]);
@@ -854,6 +916,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
   const [poiQuery, setPoiQuery] = useState('');
   const [googleOpen, setGoogleOpen] = useState(false);
   const [previewTemplate, setPreviewTemplate] = useState<CourseTemplate | null>(null);
+  const [replaceArmed, setReplaceArmed] = useState(false);
   const [submitBusy, setSubmitBusy] = useState(false);
   const hydrated = useRef(false);
   const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -1008,12 +1071,44 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
     }, 2500);
   }, [save]);
 
-  useEffect(
-    () => () => {
-      if (saveTimer.current) clearTimeout(saveTimer.current);
-    },
-    [],
-  );
+  // Best-effort flush of a pending debounced draft before the tab is
+  // backgrounded, closed, or the planner is left (SPA nav) — otherwise a fast
+  // "edit → leave" silently drops up to 2.5s of changes. keepalive lets the
+  // request outlive the page. No-op when nothing is pending.
+  const flushPending = useCallback(() => {
+    if (!saveTimer.current) return;
+    clearTimeout(saveTimer.current);
+    saveTimer.current = null;
+    if (!plan?.viewer.can_edit || !roomSession) return;
+    const draft = latestDraft.current;
+    try {
+      void fetch(`/api/tour-rooms/${encodeURIComponent(bookingId)}/plan`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json', 'x-tour-room-auth': roomSession },
+        body: JSON.stringify({
+          needs: needsPayload(draft.needs),
+          stops: stopsPayload(draft.stops),
+          ...(draft.stopsChanged ? { stops_changed: true } : {}),
+        }),
+        keepalive: true,
+      });
+    } catch {
+      /* best effort — the next explicit save still catches it */
+    }
+  }, [bookingId, roomSession, plan?.viewer.can_edit]);
+
+  useEffect(() => {
+    const onVisibility = () => {
+      if (document.visibilityState === 'hidden') flushPending();
+    };
+    window.addEventListener('pagehide', flushPending);
+    document.addEventListener('visibilitychange', onVisibility);
+    return () => {
+      window.removeEventListener('pagehide', flushPending);
+      document.removeEventListener('visibilitychange', onVisibility);
+      flushPending();
+    };
+  }, [flushPending]);
 
   // ── mutations ─────────────────────────────────────────────────────────────
   const mutateStops = useCallback(
@@ -1091,8 +1186,9 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
     ]);
   };
 
+  // App-style confirm lives in the preview sheet footer (setReplaceArmed) — no
+  // jarring browser confirm() dialog (master plan §5.3).
   const applyTemplate = (template: CourseTemplate) => {
-    if (stops.length > 0 && !window.confirm(copy.replaceConfirm)) return false;
     const nextStops = toEditorStops(template.stops, locale);
     const draft = { stops: nextStops, needs: latestDraft.current.needs, stopsChanged: true };
     if (outcome === 'delegated') setOutcome(null);
@@ -1100,7 +1196,11 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
     setWarnings([]);
     setTab('pick');
     scheduleAutosave(draft);
-    return true;
+  };
+
+  const closePreview = () => {
+    setPreviewTemplate(null);
+    setReplaceArmed(false);
   };
 
   const submitPlan = async () => {
@@ -1830,7 +1930,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
             type="button"
             aria-label={ui.previewClose}
             className="absolute inset-0 cursor-default"
-            onClick={() => setPreviewTemplate(null)}
+            onClick={closePreview}
           />
           <section className="relative max-h-[86dvh] w-full max-w-xl overflow-y-auto rounded-t-[28px] border border-[var(--tr-hairline)] bg-[var(--tr-surface)] shadow-[var(--tr-shadow-overlay)]">
             <div className="sticky top-0 z-10 border-b border-[var(--tr-hairline)] bg-[var(--tr-surface)]/95 px-4 py-3 backdrop-blur">
@@ -1847,7 +1947,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                 <button
                   type="button"
                   aria-label={ui.previewClose}
-                  onClick={() => setPreviewTemplate(null)}
+                  onClick={closePreview}
                   className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]"
                 >
                   <X size={17} aria-hidden />
@@ -1856,14 +1956,16 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
             </div>
 
             <div className="px-4 pb-4 pt-3">
-              <div className="grid grid-cols-2 gap-2">
+              <div className="grid grid-cols-3 gap-2">
                 {[
-                  [ui.previewTotal, previewTemplate.total_hours ? copy.courseHours(previewTemplate.total_hours) : formatMinutes(previewStayMin + previewDriveMin)],
-                  [ui.previewDriving, previewDriveMin > 0 ? formatMinutes(previewDriveMin) : ui.previewFlexible],
-                  [ui.previewWalking, ui.previewFlexible],
-                  [ui.previewMeals, ui.previewFlexible],
-                  [ui.previewAccessibility, needs.wheelchair || needs.stroller ? copy.needsTitle : ui.previewFlexible],
-                  [ui.previewSeason, plan.tour.date ?? ui.previewFlexible],
+                  [ui.previewStops, String(previewStops.length)],
+                  [
+                    ui.previewTotal,
+                    previewTemplate.total_hours
+                      ? copy.courseHours(previewTemplate.total_hours)
+                      : formatMinutes(previewStayMin + previewDriveMin),
+                  ],
+                  [ui.previewDriving, previewDriveMin > 0 ? formatMinutes(previewDriveMin) : '—'],
                 ].map(([label, value]) => (
                   <div key={label} className="rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] px-3 py-2">
                     <p className="tr-meta font-bold uppercase tracking-wide text-[var(--tr-ink-3)]">{label}</p>
@@ -1914,16 +2016,47 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
             </div>
 
             <div className="tr-safe-bottom sticky bottom-0 z-20 border-t border-[var(--tr-hairline)] bg-[var(--tr-surface)]/95 px-4 py-3 backdrop-blur">
-              <button
-                type="button"
-                onClick={() => {
-                  if (applyTemplate(previewTemplate)) setPreviewTemplate(null);
-                }}
-                className="tr-body flex min-h-[50px] w-full items-center justify-center gap-2 rounded-2xl bg-[var(--tr-accent)] px-4 font-bold text-[var(--tr-bubble-me-ink)] shadow-[var(--tr-plan-shadow-button)]"
-              >
-                <CheckCircle2 size={17} aria-hidden />
-                {copy.useCourse}
-              </button>
+              {stops.length > 0 && replaceArmed ? (
+                <div>
+                  <p className="tr-label text-center font-medium text-[var(--tr-ink-2)]">{copy.replaceConfirm}</p>
+                  <div className="mt-2 flex gap-2">
+                    <button
+                      type="button"
+                      onClick={() => setReplaceArmed(false)}
+                      className="tr-body flex min-h-[50px] flex-1 items-center justify-center rounded-2xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-4 font-bold text-[var(--tr-ink-2)]"
+                    >
+                      {ui.cancel}
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        applyTemplate(previewTemplate);
+                        closePreview();
+                      }}
+                      className="tr-body flex min-h-[50px] flex-1 items-center justify-center gap-2 rounded-2xl bg-[var(--tr-accent)] px-4 font-bold text-[var(--tr-bubble-me-ink)] shadow-[var(--tr-plan-shadow-button)]"
+                    >
+                      <CheckCircle2 size={17} aria-hidden />
+                      {ui.replaceApply}
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => {
+                    if (stops.length > 0) {
+                      setReplaceArmed(true);
+                    } else {
+                      applyTemplate(previewTemplate);
+                      closePreview();
+                    }
+                  }}
+                  className="tr-body flex min-h-[50px] w-full items-center justify-center gap-2 rounded-2xl bg-[var(--tr-accent)] px-4 font-bold text-[var(--tr-bubble-me-ink)] shadow-[var(--tr-plan-shadow-button)]"
+                >
+                  <CheckCircle2 size={17} aria-hidden />
+                  {copy.useCourse}
+                </button>
+              )}
             </div>
           </section>
         </div>

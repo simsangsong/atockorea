@@ -29,6 +29,7 @@ import PushOptInBanner from '@/components/tour-mode/PushOptInBanner';
 import QuickSignalBar from '@/components/tour-mode/QuickSignalBar';
 import SecondaryCardBanner from '@/components/tour-mode/SecondaryCardBanner';
 import HomeTab from '@/components/tour-mode/HomeTab';
+import PlanNudgeModal from '@/components/tour-mode/PlanNudgeModal';
 import LobbyCard, { firstPickup } from '@/components/tour-mode/LobbyCard';
 import PickupBoard from '@/components/tour-mode/PickupBoard';
 import RoomMapTab from '@/components/tour-mode/map/RoomMapTab';
@@ -456,7 +457,13 @@ function TourRoomLive({
   }, [messages, settings.autoRead, viewerRole, locale]);
 
   return (
-    <RoomShell
+    <>
+      {/* Pre-tour planner nudge — most guests miss the email's secondary plan
+          link, so the day plan never gets set. Lead guest, lobby only. */}
+      {viewerRole === 'customer' && !readOnly && data.lifecycle === 'lobby' && (
+        <PlanNudgeModal bookingId={bookingId} roomSession={data.session} locale={locale} theme={theme} />
+      )}
+      <RoomShell
       title={snapshot.booking?.tours?.title ?? 'Your tour'}
       subtitle={[snapshot.booking?.tour_date, snapshot.booking?.tours?.city].filter(Boolean).join(' · ')}
       lifecycle={data.lifecycle}
@@ -667,6 +674,7 @@ function TourRoomLive({
           )}
         </div>
       }
-    />
+      />
+    </>
   );
 }

@@ -12,6 +12,7 @@
  */
 
 import { useEffect, useState } from 'react';
+import { AlertTriangle, ExternalLink, X } from 'lucide-react';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 import { detectEntryLocale } from '@/components/tour-mode/entryCopy';
 
@@ -90,26 +91,32 @@ export default function WebviewEscapeBanner() {
   };
 
   return (
-    <div className="sticky top-0 z-50 border-b border-amber-200 bg-amber-50 px-4 py-2.5">
-      <p className="text-[12px] leading-snug text-amber-900">{copy.message}</p>
-      <div className="mt-1.5 flex items-center gap-3">
+    <div className="sticky top-0 z-50 border-b border-amber-200/70 bg-white/95 px-3 py-2 shadow-sm backdrop-blur">
+      <div className="mx-auto flex max-w-xl items-center gap-2">
+        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-800">
+          <AlertTriangle size={15} aria-hidden />
+        </span>
+        <p className="min-w-0 flex-1 text-[12px] font-medium leading-snug text-amber-950">{copy.message}</p>
         {isAndroid ? (
           <button
             type="button"
             onClick={openInChrome}
-            className="rounded-lg bg-amber-500 px-3 py-1.5 text-[12px] font-semibold text-white"
+            className="inline-flex min-h-10 shrink-0 items-center gap-1.5 rounded-full bg-[#1f5f53] px-3 text-[12px] font-bold text-white"
           >
+            <ExternalLink size={14} aria-hidden />
             {copy.android}
           </button>
         ) : (
-          <span className="text-[11px] text-amber-800">{copy.ios}</span>
+          <span className="max-w-[45%] text-[11px] font-medium leading-snug text-amber-800">{copy.ios}</span>
         )}
         <button
           type="button"
           onClick={() => setVisible(false)}
-          className="ml-auto text-[11px] text-amber-700 underline"
+          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-amber-800 hover:bg-amber-100"
+          aria-label={copy.dismiss}
+          title={copy.dismiss}
         >
-          {copy.dismiss}
+          <X size={16} aria-hidden />
         </button>
       </div>
     </div>
