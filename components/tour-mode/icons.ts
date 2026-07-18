@@ -9,6 +9,9 @@
 
 export {
   // Shell & navigation
+  House as IconTabHome,
+  MoreHorizontal as IconMore,
+  PencilLine as IconPlanEdit,
   MessageCircle as IconTabChat,
   Map as IconTabMap,
   CalendarDays as IconTabSchedule,

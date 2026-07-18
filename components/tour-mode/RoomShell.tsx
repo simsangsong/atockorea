@@ -22,6 +22,7 @@ import {
   IconConcierge,
   IconEmergency,
   IconTabChat,
+  IconTabHome,
   IconTabMap,
   IconTabSchedule,
   IconTabSettings,
@@ -32,12 +33,15 @@ import { CONCIERGE_COPY } from '@/lib/tour-room/concierge';
 import type { RoomConnection } from '@/hooks/useTourRoomChannel';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
-const TAB_LABEL: Record<RoomLocale, { chat: string; map: string; schedule: string; settings: string }> = {
-  en: { chat: 'Chat', map: 'Map', schedule: 'Today', settings: 'Settings' },
-  ko: { chat: '채팅', map: '지도', schedule: '오늘 일정', settings: '설정' },
-  ja: { chat: 'チャット', map: '地図', schedule: '本日', settings: '設定' },
-  es: { chat: 'Chat', map: 'Mapa', schedule: 'Hoy', settings: 'Ajustes' },
-  zh: { chat: '聊天', map: '地图', schedule: '今日', settings: '设置' },
+const TAB_LABEL: Record<
+  RoomLocale,
+  { home: string; chat: string; map: string; schedule: string; settings: string }
+> = {
+  en: { home: 'Home', chat: 'Chat', map: 'Map', schedule: 'Today', settings: 'Settings' },
+  ko: { home: '홈', chat: '채팅', map: '지도', schedule: '오늘 일정', settings: '설정' },
+  ja: { home: 'ホーム', chat: 'チャット', map: '地図', schedule: '本日', settings: '設定' },
+  es: { home: 'Inicio', chat: 'Chat', map: 'Mapa', schedule: 'Hoy', settings: 'Ajustes' },
+  zh: { home: '首页', chat: '聊天', map: '地图', schedule: '今日', settings: '设置' },
 };
 
 const MAP_SOON: Record<RoomLocale, string> = {
@@ -70,7 +74,19 @@ const LIFECYCLE_BADGE: Record<string, { label: string; className: string }> = {
   ended: { label: 'Ended', className: 'bg-[var(--tr-bubble-system)] text-[var(--tr-ink-2)]' },
 };
 
-export type RoomTab = 'chat' | 'map' | 'schedule' | 'settings';
+export type RoomTab = 'home' | 'chat' | 'map' | 'schedule' | 'settings';
+
+/**
+ * H1 — what the home dashboard can drive on the shell: tab switches and the
+ * two shell-owned sheets (Smart Guide, emergency). `chatUnread` mirrors the
+ * tab-bar dot so the home chat-preview row can echo it.
+ */
+export interface RoomShellHomeApi {
+  selectTab: (tab: RoomTab) => void;
+  openConcierge: () => void;
+  openEmergency: () => void;
+  chatUnread: boolean;
+}
 
 interface ScheduleItem {
   time?: string;
@@ -80,18 +96,21 @@ interface ScheduleItem {
   [key: string]: unknown;
 }
 
-const TABS: Array<{ key: RoomTab; Icon: typeof IconTabChat }> = [
+const BASE_TABS: Array<{ key: RoomTab; Icon: typeof IconTabChat }> = [
   { key: 'chat', Icon: IconTabChat },
   { key: 'map', Icon: IconTabMap },
   { key: 'schedule', Icon: IconTabSchedule },
   { key: 'settings', Icon: IconTabSettings },
 ];
 
+const HOME_TABS: Array<{ key: RoomTab; Icon: typeof IconTabChat }> = [{ key: 'home', Icon: IconTabHome }, ...BASE_TABS];
+
 /**
  * U6.1 — index of the schedule item currently underway: the last stop whose
  * HH:MM start is at or before the KST wall clock (live rooms only).
+ * Exported for the home dashboard's now/next card (H2).
  */
-function currentScheduleIndex(schedule: ScheduleItem[], lifecycle: string, nowMs: number): number {
+export function currentScheduleIndex(schedule: ScheduleItem[], lifecycle: string, nowMs: number): number {
   if (lifecycle !== 'live') return -1;
   let nowHm: string;
   try {
@@ -125,6 +144,7 @@ export default function RoomShell({
   map,
   sos,
   concierge,
+  home,
   theme = 'light',
   chatActivityKey,
 }: {
@@ -146,12 +166,18 @@ export default function RoomShell({
   sos?: ReactNode;
   /** V2.2 — Smart Guide panel; the header sparkle button shows when present. */
   concierge?: ReactNode;
+  /**
+   * H1 — home dashboard render prop. When present the shell gains a 5th
+   * "Home" tab, lands on it, and hands the dashboard the shell API (tab
+   * switches + sheet openers). Absent → the classic chat-first 4-tab shell.
+   */
+  home?: (api: RoomShellHomeApi) => ReactNode;
   /** Resolved theme — 'system' is resolved by the caller before this prop. */
   theme?: 'light' | 'dark';
   /** U1.2 — bumps on chat activity; while on another tab it lights the unread dot. */
   chatActivityKey?: number;
 }) {
-  const [tab, setTab] = useState<RoomTab>('chat');
+  const [tab, setTab] = useState<RoomTab>(home ? 'home' : 'chat');
   const [emergencyOpen, setEmergencyOpen] = useState(false);
   const [conciergeOpen, setConciergeOpen] = useState(false);
   const [chatUnread, setChatUnread] = useState(false);
@@ -249,6 +275,16 @@ export default function RoomShell({
           )}
 
           <div className="mx-auto flex min-h-0 w-full max-w-2xl flex-1 flex-col">
+            {tab === 'home' && home && (
+              <div className="min-h-0 flex-1 overflow-y-auto px-3 py-3" data-testid="home-panel">
+                {home({
+                  selectTab,
+                  openConcierge: () => setConciergeOpen(true),
+                  openEmergency: () => setEmergencyOpen(true),
+                  chatUnread,
+                })}
+              </div>
+            )}
             {tab === 'chat' && chat}
             {tab === 'map' && (
               <div className="flex min-h-0 flex-1 flex-col px-3 py-2">
@@ -322,7 +358,7 @@ export default function RoomShell({
             data-testid="room-tabbar"
           >
             <div className="mx-auto flex w-full max-w-2xl items-stretch" style={{ minHeight: 'var(--tr-tabbar-h)' }}>
-              {TABS.map(({ key, Icon }) => {
+              {(home ? HOME_TABS : BASE_TABS).map(({ key, Icon }) => {
                 const active = tab === key;
                 return (
                   <button

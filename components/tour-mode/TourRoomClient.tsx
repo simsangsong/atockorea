@@ -28,6 +28,7 @@ import OfflineInfoCard from '@/components/tour-mode/OfflineInfoCard';
 import PushOptInBanner from '@/components/tour-mode/PushOptInBanner';
 import QuickSignalBar from '@/components/tour-mode/QuickSignalBar';
 import SecondaryCardBanner from '@/components/tour-mode/SecondaryCardBanner';
+import HomeTab from '@/components/tour-mode/HomeTab';
 import LobbyCard, { firstPickup } from '@/components/tour-mode/LobbyCard';
 import PickupBoard from '@/components/tour-mode/PickupBoard';
 import RoomMapTab from '@/components/tour-mode/map/RoomMapTab';
@@ -514,6 +515,28 @@ function TourRoomLive({
             tourDate={snapshot.booking?.tour_date ?? null}
           />
         ) : null
+      }
+      home={
+        viewerRole === 'customer'
+          ? (api) => (
+              <HomeTab
+                api={api}
+                locale={locale}
+                lifecycle={data.lifecycle}
+                bookingId={bookingId}
+                roomSession={data.session}
+                messages={messages}
+                schedule={schedule}
+                tourDate={snapshot.booking?.tour_date ?? null}
+                tourTime={snapshot.booking?.tour_time ?? null}
+                pickupPoints={snapshot.booking?.pickup_points}
+                busPayload={(snapshot.bus_detail as { payload?: unknown } | null | undefined)?.payload}
+                tourSlug={(snapshot.booking?.tours as { slug?: string } | null | undefined)?.slug ?? null}
+                canSignal={!readOnly && data.lifecycle === 'live'}
+                showConcierge={!readOnly}
+              />
+            )
+          : undefined
       }
       map={
         <RoomMapTab
