@@ -347,14 +347,10 @@ export default function HomeTab({
   const tileClass =
     'tr-home-card flex min-h-[86px] flex-col items-center justify-center gap-1.5 px-2 py-3 text-center active:scale-[0.98]';
 
-  // H2.1 — "tech" squircle chips: gradient fill + light ink, per-tone gradients.
+  // H2.1 — "tech" squircle chips (gradient + gloss, .tr-chip in the theme CSS).
   const iconWrapClass = (tone?: 'accent' | 'danger') =>
-    `relative flex h-11 w-11 items-center justify-center rounded-[15px] text-[var(--tr-chip-ink)] ${
-      tone === 'danger'
-        ? '[background:var(--tr-chip-grad-danger)]'
-        : tone === 'accent'
-          ? '[background:var(--tr-chip-grad-accent)]'
-          : '[background:var(--tr-chip-grad)]'
+    `tr-chip relative flex h-11 w-11 items-center justify-center ${
+      tone === 'danger' ? 'tr-chip--danger' : tone === 'accent' ? 'tr-chip--accent' : 'tr-chip--base'
     }`;
 
   const tileInner = (tile: Tile) => (
@@ -430,7 +426,7 @@ export default function HomeTab({
         data-testid="home-chat-preview"
         className="tr-home-card mb-2 flex w-full items-center gap-3 px-4 py-3 text-left"
       >
-        <span className="relative flex h-9 w-9 shrink-0 items-center justify-center rounded-[13px] text-[var(--tr-chip-ink)] [background:var(--tr-chip-grad)]">
+        <span className="tr-chip tr-chip--base relative flex h-9 w-9 shrink-0 items-center justify-center !rounded-[13px]">
           <IconTileChat size={17} aria-hidden />
           {api.chatUnread && (
             <span className="absolute -right-0.5 -top-0.5 h-2.5 w-2.5 rounded-full bg-[var(--tr-danger)]" />
