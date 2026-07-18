@@ -11,9 +11,16 @@
  *   - short-lived room-session signatures issued by the join API and sent as
  *     the `x-tour-room-auth` header on subsequent requests.
  *
- * Server authorization priority (§B D-2):
- *   admin > valid invite token > room session > booking owner
+ * Server authorization priority (§B D-2, revised 2026-07-18):
+ *   valid invite token > admin > room session > booking owner
  *         > merchant guide > guest email match.
+ *
+ * An explicit invite token outranks the admin cookie on purpose: clicking a
+ * guest/guide/driver link means "enter as that link's role" — otherwise a
+ * logged-in admin can never preview the guest experience (the home dashboard,
+ * customer banners) in their own browser. This is a privilege DOWNGRADE for
+ * admins, never an escalation; with no token in the request, admins resolve
+ * exactly as before.
  *
  * The guest path stays rate-limited (PA-4): callers pass `guestGate`, which is
  * invoked only when no stronger credential authenticated the request — same
@@ -209,12 +216,9 @@ export async function resolveRoomActor(
   const user = await getAuthUser(req);
   const authUserId = user?.id ?? null;
 
-  // 1. Admin.
-  if (user?.role === 'admin') {
-    return { ok: true, booking, actor: { kind: 'admin', role: 'admin', userId: user.id }, authUserId };
-  }
-
-  // 2. Signed invite token (scope + revocation checked).
+  // 1. Signed invite token (scope + revocation checked). Checked before the
+  // admin cookie so an explicit link always enters as the link's role
+  // (view-as; see module doc) — a downgrade for admins, never an escalation.
   const token = extractToken(req, options.token);
   if (token) {
     const payload = verifyRoomToken(token);
@@ -227,7 +231,12 @@ export async function resolveRoomActor(
       };
     }
     // An invalid/revoked/mismatched token falls through — weaker credentials
-    // (login, guest match) may still legitimately authenticate the request.
+    // (admin/login/guest match) may still legitimately authenticate the request.
+  }
+
+  // 2. Admin.
+  if (user?.role === 'admin') {
+    return { ok: true, booking, actor: { kind: 'admin', role: 'admin', userId: user.id }, authUserId };
   }
 
   // 3. Room session issued by the join API. EventSource (SSE fallback) cannot

@@ -110,15 +110,36 @@ describe('lib/tour-room/access', () => {
     expect(result).toMatchObject({ ok: false, status: 404 });
   });
 
-  describe('path 1 — admin', () => {
-    it('authenticates admins regardless of other credentials', async () => {
+  describe('path 2 — admin', () => {
+    it('authenticates admins when no invite token is presented', async () => {
       getAuthUserMock.mockResolvedValue({ id: 'admin-1', role: 'admin' });
       const result = await resolveRoomActor(fakeReq(), BOOKING.id, { supabase: fakeDb() });
       expect(result).toMatchObject({ ok: true, actor: { kind: 'admin', role: 'admin' } });
     });
+
+    it('a valid customer token outranks the admin cookie (view-as, 2026-07-18 revision)', async () => {
+      getAuthUserMock.mockResolvedValue({ id: 'admin-1', role: 'admin' });
+      const { token } = signCustomerRoomToken({
+        bookingId: BOOKING.id,
+        displayName: 'Alex',
+        tourDate: BOOKING.tour_date!,
+      });
+      const result = await resolveRoomActor(fakeReq({ query: { rt: token } }), BOOKING.id, {
+        supabase: fakeDb(),
+      });
+      expect(result).toMatchObject({ ok: true, actor: { kind: 'token', role: 'customer' } });
+    });
+
+    it('an invalid token still falls back to the admin cookie', async () => {
+      getAuthUserMock.mockResolvedValue({ id: 'admin-1', role: 'admin' });
+      const result = await resolveRoomActor(fakeReq({ query: { rt: 'garbage.token' } }), BOOKING.id, {
+        supabase: fakeDb(),
+      });
+      expect(result).toMatchObject({ ok: true, actor: { kind: 'admin', role: 'admin' } });
+    });
   });
 
-  describe('path 2 — invite token', () => {
+  describe('path 1 — invite token', () => {
     it('accepts a valid customer token for its own booking (?rt= query)', async () => {
       const { token } = signCustomerRoomToken({
         bookingId: BOOKING.id,
