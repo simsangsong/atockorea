@@ -267,7 +267,11 @@ export default function RoomShell({
         </header>
 
         {/* ---- Tab panels + floating banner zone --------------------- */}
-        <div className="relative flex min-h-0 flex-1 flex-col">
+        <div
+          className={`relative flex min-h-0 flex-1 flex-col ${
+            tab === 'home' ? 'bg-[var(--tr-home-canvas)]' : ''
+          }`}
+        >
           {banner && (
             <div className="pointer-events-none absolute inset-x-0 top-0 z-20 mx-auto w-full max-w-2xl px-3 pt-2 [&>*]:pointer-events-auto">
               {banner}
