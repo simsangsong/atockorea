@@ -21,6 +21,24 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useJsApiLoader } from '@react-google-maps/api';
 import {
+  AlertTriangle,
+  CheckCircle2,
+  ChevronDown,
+  ChevronUp,
+  Clock3,
+  Map as MapIcon,
+  MapPin,
+  Plus,
+  Route,
+  Search,
+  Send,
+  Sparkles,
+  Trash2,
+  UserRound,
+  UtensilsCrossed,
+  X,
+} from 'lucide-react';
+import {
   GOOGLE_MAPS_LOADER_ID,
   GOOGLE_MAPS_LOADER_VERSION,
   libraries as GOOGLE_MAPS_LIBRARIES,
@@ -162,6 +180,24 @@ interface PlanCopy {
   saving: string;
   saved: string;
   saveError: string;
+  saveRateLimited?: string;
+  templatesLoading?: string;
+  templatesEmpty?: string;
+  templatesError?: string;
+  placesLoading?: string;
+  placesEmpty?: string;
+  placesError?: string;
+  googleError?: string;
+  previewCourse?: string;
+  previewTitle?: string;
+  previewTotal?: string;
+  previewDriving?: string;
+  previewWalking?: string;
+  previewMeals?: string;
+  previewAccessibility?: string;
+  previewSeason?: string;
+  previewFlexible?: string;
+  previewClose?: string;
   submit: string;
   submitting: string;
   delegateTitle: string;
@@ -185,7 +221,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     delegatedNote: 'You’ve left the course to your guide. Tell us any wishes in the tour room chat!',
     tabCourses: 'Courses',
     tabPick: 'Pick places',
-    tabDelegate: 'Leave it to the guide',
+    tabDelegate: 'Guide picks',
     useCourse: 'Start with this course',
     courseStops: (n) => `${n} stops`,
     courseHours: (h) => `~${h}h`,
@@ -668,6 +704,27 @@ function stopsPayload(stops: EditorStop[]): Array<Record<string, unknown>> {
   }));
 }
 
+const PLAN_STATUS_COPY = {
+  saveRateLimited: 'Too many quick saves. Please wait a moment, then try again.',
+  templatesLoading: 'Loading recommended courses...',
+  templatesEmpty: 'No recommended courses are ready for this region yet.',
+  templatesError: 'Recommended courses could not be loaded.',
+  placesLoading: 'Loading places...',
+  placesEmpty: 'No places match this search.',
+  placesError: 'Places could not be loaded. You can still search Google Maps.',
+  googleError: 'Google Maps search is unavailable right now.',
+  previewCourse: 'Preview course',
+  previewTitle: 'Course preview',
+  previewTotal: 'Total',
+  previewDriving: 'Driving',
+  previewWalking: 'Walking',
+  previewMeals: 'Meals',
+  previewAccessibility: 'Accessibility',
+  previewSeason: 'Season',
+  previewFlexible: 'Guide confirms',
+  previewClose: 'Close course preview',
+};
+
 // ---------------------------------------------------------------------------
 // Google Places fallback search (tab ② — lazy: mounts only when expanded)
 // ---------------------------------------------------------------------------
@@ -676,11 +733,13 @@ function GooglePlaceSearch({
   region,
   placeholder,
   loadingLabel,
+  errorLabel,
   onPick,
 }: {
   region: string | null;
   placeholder: string;
   loadingLabel: string;
+  errorLabel: string;
   onPick: (pick: { place_id: string; name: string; lat: number; lng: number }) => void;
 }) {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -688,12 +747,20 @@ function GooglePlaceSearch({
   useEffect(() => {
     onPickRef.current = onPick;
   });
-  const { isLoaded } = useJsApiLoader({
+  const { isLoaded, loadError } = useJsApiLoader({
     id: GOOGLE_MAPS_LOADER_ID,
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? '',
     libraries: GOOGLE_MAPS_LIBRARIES,
     version: GOOGLE_MAPS_LOADER_VERSION,
   });
+
+  if (loadError) {
+    return (
+      <p className="tr-label rounded-xl border border-[var(--tr-danger-soft)] bg-[var(--tr-surface)] px-3 py-2 text-[var(--tr-danger)]">
+        {errorLabel}
+      </p>
+    );
+  }
 
   useEffect(() => {
     if (!isLoaded || !inputRef.current) return undefined;
@@ -730,17 +797,52 @@ function GooglePlaceSearch({
 // ---------------------------------------------------------------------------
 
 type EditorTab = 'courses' | 'pick' | 'delegate';
-type SaveState = 'idle' | 'dirty' | 'saving' | 'saved' | 'error';
+type LoadState = 'idle' | 'loading' | 'ready' | 'error';
+type SaveState = 'idle' | 'dirty' | 'saving' | 'saved' | 'error' | 'rate_limited';
+type SaveExtra = { submit?: boolean };
+interface DraftSnapshot {
+  stops: EditorStop[];
+  needs: NeedsState;
+  stopsChanged?: boolean;
+}
+
+interface PlanSaveResponse {
+  day_plan?: PlanResponse['day_plan'];
+  feasibility?: { warnings?: FeasibilityWarning[] };
+  error?: string;
+}
 
 export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
   const { state, join, roomSession } = useTourRoomSession(bookingId);
   const attempted = useRef(false);
   const [locale, setLocale] = useState<RoomLocale>(() => detectLocale());
   const copy = COPY[locale];
+  const ui = {
+    saveRateLimited: copy.saveRateLimited ?? PLAN_STATUS_COPY.saveRateLimited,
+    templatesLoading: copy.templatesLoading ?? PLAN_STATUS_COPY.templatesLoading,
+    templatesEmpty: copy.templatesEmpty ?? PLAN_STATUS_COPY.templatesEmpty,
+    templatesError: copy.templatesError ?? PLAN_STATUS_COPY.templatesError,
+    placesLoading: copy.placesLoading ?? PLAN_STATUS_COPY.placesLoading,
+    placesEmpty: copy.placesEmpty ?? PLAN_STATUS_COPY.placesEmpty,
+    placesError: copy.placesError ?? PLAN_STATUS_COPY.placesError,
+    googleError: copy.googleError ?? PLAN_STATUS_COPY.googleError,
+    previewCourse: copy.previewCourse ?? PLAN_STATUS_COPY.previewCourse,
+    previewTitle: copy.previewTitle ?? PLAN_STATUS_COPY.previewTitle,
+    previewTotal: copy.previewTotal ?? PLAN_STATUS_COPY.previewTotal,
+    previewDriving: copy.previewDriving ?? PLAN_STATUS_COPY.previewDriving,
+    previewWalking: copy.previewWalking ?? PLAN_STATUS_COPY.previewWalking,
+    previewMeals: copy.previewMeals ?? PLAN_STATUS_COPY.previewMeals,
+    previewAccessibility: copy.previewAccessibility ?? PLAN_STATUS_COPY.previewAccessibility,
+    previewSeason: copy.previewSeason ?? PLAN_STATUS_COPY.previewSeason,
+    previewFlexible: copy.previewFlexible ?? PLAN_STATUS_COPY.previewFlexible,
+    previewClose: copy.previewClose ?? PLAN_STATUS_COPY.previewClose,
+  };
 
   const [plan, setPlan] = useState<PlanResponse | null>(null);
   const [templates, setTemplates] = useState<CourseTemplate[]>([]);
   const [pois, setPois] = useState<PickerPoi[]>([]);
+  const [templatesState, setTemplatesState] = useState<LoadState>('idle');
+  const [poisState, setPoisState] = useState<LoadState>('idle');
   const [loadError, setLoadError] = useState(false);
 
   const [tab, setTab] = useState<EditorTab>('courses');
@@ -751,8 +853,16 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
   const [outcome, setOutcome] = useState<'submitted' | 'delegated' | null>(null);
   const [poiQuery, setPoiQuery] = useState('');
   const [googleOpen, setGoogleOpen] = useState(false);
+  const [previewTemplate, setPreviewTemplate] = useState<CourseTemplate | null>(null);
+  const [submitBusy, setSubmitBusy] = useState(false);
   const hydrated = useRef(false);
   const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const latestDraft = useRef<DraftSnapshot>({ stops: [], needs });
+  const submittingRef = useRef(false);
+
+  useEffect(() => {
+    latestDraft.current = { stops, needs, stopsChanged: latestDraft.current.stopsChanged };
+  }, [stops, needs]);
 
   // ── boot: join with ?rt=, scrub, adopt booking locale ─────────────────────
   useEffect(() => {
@@ -789,6 +899,8 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
     hydrated.current = true;
     void (async () => {
       try {
+        setTemplatesState('loading');
+        setPoisState('loading');
         const [planRes, templatesRes] = await Promise.all([
           authedFetch('/plan'),
           authedFetch('/plan/templates'),
@@ -798,24 +910,42 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
           return;
         }
         const planBody = (await planRes.json()) as PlanResponse;
+        const loadedStops = toEditorStops(planBody.day_plan?.stops as Array<Record<string, unknown>>, locale);
+        const loadedNeeds = toNeedsState(planBody.day_plan?.needs);
+        latestDraft.current = { stops: loadedStops, needs: loadedNeeds };
         setPlan(planBody);
-        setStops(toEditorStops(planBody.day_plan?.stops as Array<Record<string, unknown>>, locale));
-        setNeeds(toNeedsState(planBody.day_plan?.needs));
+        setStops(loadedStops);
+        setNeeds(loadedNeeds);
         setWarnings(planBody.day_plan?.feasibility?.warnings ?? []);
-        if (planBody.tour.guide_curated) setOutcome('delegated');
+        if (planBody.day_plan?.status === 'guest_submitted') {
+          setOutcome('submitted');
+        } else if (planBody.tour.guide_curated) {
+          setOutcome('delegated');
+        } else {
+          setOutcome(null);
+        }
         if ((planBody.day_plan?.stops?.length ?? 0) > 0) setTab('pick');
 
         if (templatesRes.ok) {
           const body = (await templatesRes.json()) as { region: string | null; templates: CourseTemplate[] };
           setTemplates(body.templates ?? []);
+          setTemplatesState('ready');
           if (body.region) {
-            void fetch(`/api/itinerary-builder/pois?region=${body.region}`)
-              .then((res) => (res.ok ? res.json() : null))
-              .then((poisBody: { pois?: PickerPoi[] } | null) => {
-                if (poisBody?.pois) setPois(poisBody.pois);
-              })
-              .catch(() => undefined);
+            try {
+              const poisRes = await fetch(`/api/itinerary-builder/pois?region=${body.region}`);
+              if (!poisRes.ok) throw new Error(`pois_${poisRes.status}`);
+              const poisBody = (await poisRes.json()) as { pois?: PickerPoi[] };
+              setPois(poisBody.pois ?? []);
+              setPoisState('ready');
+            } catch {
+              setPoisState('error');
+            }
+          } else {
+            setPoisState('ready');
           }
+        } else {
+          setTemplatesState('error');
+          setPoisState('ready');
         }
       } catch {
         setLoadError(true);
@@ -823,25 +953,42 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
     })();
   }, [state.status, roomSession, authedFetch, locale]);
 
-  const canEdit = Boolean(plan?.viewer.can_edit) && outcome !== 'submitted';
   const planStatus = plan?.day_plan?.status ?? null;
-  const isConfirmed = planStatus !== null && planStatus !== 'guest_draft';
+  const isSubmitted = outcome === 'submitted' || planStatus === 'guest_submitted';
+  const canEdit = Boolean(plan?.viewer.can_edit) && !isSubmitted;
+  const isConfirmed = planStatus !== null && planStatus !== 'guest_draft' && planStatus !== 'guest_submitted';
 
   // ── save (A2 auto-save, debounced) ────────────────────────────────────────
+  const applySaveResponse = useCallback((data: PlanSaveResponse) => {
+    if (data.day_plan) {
+      setPlan((prev) => (prev ? { ...prev, day_plan: data.day_plan ?? prev.day_plan } : prev));
+    }
+    const nextWarnings = data.feasibility?.warnings ?? data.day_plan?.feasibility?.warnings;
+    if (nextWarnings) setWarnings(nextWarnings);
+    if (data.day_plan?.status === 'guest_submitted') setOutcome('submitted');
+  }, []);
+
   const save = useCallback(
-    async (extra?: { submit?: boolean; delegate?: boolean }) => {
+    async (draft: DraftSnapshot, extra?: SaveExtra) => {
       if (!plan?.viewer.can_edit) return null;
       setSaveState('saving');
       try {
-        const body: Record<string, unknown> = { needs: needsPayload(needs), ...extra };
-        if (stops.length > 0) body.stops = stopsPayload(stops);
+        const body: Record<string, unknown> = {
+          needs: needsPayload(draft.needs),
+          stops: stopsPayload(draft.stops),
+          ...(draft.stopsChanged ? { stops_changed: true } : {}),
+          ...extra,
+        };
         const res = await authedFetch('/plan', { method: 'PUT', body: JSON.stringify(body) });
+        const data = (await res.json().catch(() => ({}))) as PlanSaveResponse;
         if (!res.ok) {
-          setSaveState('error');
+          setSaveState(res.status === 429 ? 'rate_limited' : 'error');
           return null;
         }
-        const data = (await res.json()) as { feasibility?: { warnings?: FeasibilityWarning[] } };
-        if (data.feasibility?.warnings) setWarnings(data.feasibility.warnings);
+        applySaveResponse(data);
+        if (draft.stopsChanged) {
+          latestDraft.current = { ...latestDraft.current, stopsChanged: false };
+        }
         setSaveState('saved');
         return data;
       } catch {
@@ -849,14 +996,15 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
         return null;
       }
     },
-    [authedFetch, needs, plan, stops],
+    [applySaveResponse, authedFetch, plan?.viewer.can_edit],
   );
 
-  const scheduleAutosave = useCallback(() => {
+  const scheduleAutosave = useCallback((draft: DraftSnapshot) => {
+    latestDraft.current = draft;
     setSaveState('dirty');
     if (saveTimer.current) clearTimeout(saveTimer.current);
     saveTimer.current = setTimeout(() => {
-      void save();
+      void save(draft);
     }, 2500);
   }, [save]);
 
@@ -868,14 +1016,36 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
   );
 
   // ── mutations ─────────────────────────────────────────────────────────────
-  const mutateStops = (updater: (prev: EditorStop[]) => EditorStop[]) => {
-    setStops(updater);
-    scheduleAutosave();
-  };
-  const mutateNeeds = (patch: Partial<NeedsState>) => {
-    setNeeds((prev) => ({ ...prev, ...patch }));
-    scheduleAutosave();
-  };
+  const mutateStops = useCallback(
+    (updater: (prev: EditorStop[]) => EditorStop[]) => {
+      if (outcome === 'delegated') setOutcome(null);
+      setStops((prev) => {
+        const next = updater(prev);
+        const draft = { stops: next, needs: latestDraft.current.needs, stopsChanged: true };
+        latestDraft.current = draft;
+        scheduleAutosave(draft);
+        return next;
+      });
+    },
+    [outcome, scheduleAutosave],
+  );
+
+  const mutateNeeds = useCallback(
+    (patch: Partial<NeedsState>) => {
+      setNeeds((prev) => {
+        const next = { ...prev, ...patch };
+        const draft = {
+          stops: latestDraft.current.stops,
+          needs: next,
+          stopsChanged: latestDraft.current.stopsChanged,
+        };
+        latestDraft.current = draft;
+        scheduleAutosave(draft);
+        return next;
+      });
+    },
+    [scheduleAutosave],
+  );
 
   const addPoiStop = (poi: PickerPoi) => {
     mutateStops((prev) => [
@@ -922,17 +1092,29 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
   };
 
   const applyTemplate = (template: CourseTemplate) => {
-    if (stops.length > 0 && !window.confirm(copy.replaceConfirm)) return;
-    setStops(toEditorStops(template.stops, locale));
+    if (stops.length > 0 && !window.confirm(copy.replaceConfirm)) return false;
+    const nextStops = toEditorStops(template.stops, locale);
+    const draft = { stops: nextStops, needs: latestDraft.current.needs, stopsChanged: true };
+    if (outcome === 'delegated') setOutcome(null);
+    setStops(nextStops);
     setWarnings([]);
     setTab('pick');
-    scheduleAutosave();
+    scheduleAutosave(draft);
+    return true;
   };
 
   const submitPlan = async () => {
+    if (submittingRef.current) return;
+    submittingRef.current = true;
+    setSubmitBusy(true);
     if (saveTimer.current) clearTimeout(saveTimer.current);
-    const result = await save({ submit: true });
-    if (result) setOutcome('submitted');
+    try {
+      const result = await save(latestDraft.current, { submit: true });
+      if (result) setOutcome('submitted');
+    } finally {
+      submittingRef.current = false;
+      setSubmitBusy(false);
+    }
   };
 
   const delegatePlan = async () => {
@@ -941,13 +1123,15 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
     try {
       const res = await authedFetch('/plan', {
         method: 'PUT',
-        body: JSON.stringify({ delegate: true, needs: needsPayload(needs) }),
+        body: JSON.stringify({ delegate: true, needs: needsPayload(latestDraft.current.needs) }),
       });
+      const data = (await res.json().catch(() => ({}))) as PlanSaveResponse;
       if (res.ok) {
+        applySaveResponse(data);
         setOutcome('delegated');
         setSaveState('saved');
       } else {
-        setSaveState('error');
+        setSaveState(res.status === 429 ? 'rate_limited' : 'error');
       }
     } catch {
       setSaveState('error');
@@ -975,6 +1159,22 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
         (poi.name_ko ?? '').includes(poiQuery.trim()),
     );
   }, [pois, poiQuery, stops, locale]);
+
+  const poiByKey = useMemo(() => new Map(pois.map((poi) => [poi.poi_key, poi])), [pois]);
+  const previewStops = useMemo(
+    () => (previewTemplate ? toEditorStops(previewTemplate.stops, locale) : []),
+    [locale, previewTemplate],
+  );
+  const previewDriveMin = useMemo(() => {
+    const points = previewStops
+      .filter((s) => typeof s.lat === 'number' && typeof s.lng === 'number')
+      .map((s) => ({ lat: s.lat as number, lng: s.lng as number }));
+    return totalDriveMinutes(points);
+  }, [previewStops]);
+  const previewStayMin = useMemo(
+    () => previewStops.reduce((sum, stop) => sum + (stop.duration_min ?? 60), 0),
+    [previewStops],
+  );
 
   // ── render ────────────────────────────────────────────────────────────────
   if (state.status === 'idle' || state.status === 'joining' || (state.status === 'joined' && !plan && !loadError)) {
@@ -1005,23 +1205,42 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
   }
 
   const roomHref = `/tour-mode/room/${encodeURIComponent(bookingId)}`;
+  const tabItems: Array<[EditorTab, string, typeof Route]> = [
+    ['courses', copy.tabCourses, Route],
+    ['pick', copy.tabPick, MapPin],
+    ['delegate', copy.tabDelegate, Sparkles],
+  ];
 
   return (
-    <div className="tr-root mx-auto min-h-dvh w-full bg-[var(--tr-canvas)] pb-28">
-      <div className="mx-auto w-full max-w-2xl px-4 pt-6">
+    <div className="tr-root tr-plan-root mx-auto min-h-dvh w-full bg-[var(--tr-canvas)] pb-32" data-locale={locale}>
+      <div className="mx-auto w-full max-w-xl px-4 pt-4">
         {/* header */}
-        <header>
-          <h1 className="tr-title text-[var(--tr-ink)]">{copy.title}</h1>
-          <p className="tr-label mt-1 text-[var(--tr-ink-2)]">
+        <header className="tr-plan-hero">
+          <div className="flex items-start justify-between gap-4">
+            <div className="min-w-0">
+              <p className="tr-meta font-bold uppercase text-[var(--tr-plan-hero-muted)]">Smart guide planner</p>
+              <h1 className="mt-1 text-[24px] font-bold leading-tight text-[var(--tr-plan-hero-ink)]">{copy.title}</h1>
+            </div>
+            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-white/10 text-[var(--tr-plan-hero-ink)]">
+              <MapIcon size={21} aria-hidden />
+            </span>
+          </div>
+          <div className="mt-4 flex flex-wrap gap-2">
             {plan.tour.date && (
-              <>
-                {copy.tourDay} <span className="font-semibold text-[var(--tr-ink)]">{plan.tour.date}</span>
-                {plan.tour.total_hours ? ` · ${copy.courseHours(plan.tour.total_hours)}` : ''}
-                {' · '}
-              </>
+              <span className="tr-label inline-flex min-h-9 items-center gap-1.5 rounded-full bg-white/10 px-3 font-semibold text-[var(--tr-plan-hero-ink)]">
+                <Clock3 size={14} aria-hidden />
+                {copy.tourDay} {plan.tour.date}
+              </span>
             )}
-            {copy.kstNote}
-          </p>
+            {plan.tour.total_hours && (
+              <span className="tr-label inline-flex min-h-9 items-center rounded-full bg-white/10 px-3 font-semibold text-[var(--tr-plan-hero-ink)]">
+                {copy.courseHours(plan.tour.total_hours)}
+              </span>
+            )}
+            <span className="tr-label inline-flex min-h-9 items-center rounded-full bg-white/10 px-3 text-[var(--tr-plan-hero-muted)]">
+              {copy.kstNote}
+            </span>
+          </div>
         </header>
 
         {/* status banners */}
@@ -1046,6 +1265,11 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
             <p className="tr-card-text text-[var(--tr-ink)]">{copy.confirmedNote}</p>
           </div>
         )}
+        {saveState === 'rate_limited' && (
+          <div className="tr-card mt-4 border border-[var(--tr-danger-soft)] px-4 py-3" role="status">
+            <p className="tr-card-text font-medium text-[var(--tr-danger)]">{ui.saveRateLimited}</p>
+          </div>
+        )}
         {!plan.viewer.can_edit && !isConfirmed && !plan.viewer.is_lead && (
           <div className="tr-card mt-4 px-4 py-3">
             <p className="tr-card-text text-[var(--tr-ink-2)]">{copy.memberReadOnly}</p>
@@ -1055,25 +1279,21 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
         {/* tabs */}
         {canEdit && !isConfirmed && (
           <>
-            <div role="tablist" className="mt-5 flex gap-1 rounded-xl bg-[var(--tr-surface-2)] p-1">
-              {(
-                [
-                  ['courses', copy.tabCourses],
-                  ['pick', copy.tabPick],
-                  ['delegate', copy.tabDelegate],
-                ] as Array<[EditorTab, string]>
-              ).map(([key, label]) => (
+            <div role="tablist" className="mt-5 grid grid-cols-3 gap-1 rounded-2xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] p-1 shadow-[var(--tr-plan-shadow-soft)]">
+              {tabItems.map(([key, label, Icon]) => (
                 <button
                   key={key}
+                  type="button"
                   role="tab"
                   aria-selected={tab === key}
                   onClick={() => setTab(key)}
-                  className={`tr-label flex-1 rounded-lg px-2 py-2 font-semibold transition-colors ${
+                  className={`tr-label flex min-h-[46px] items-center justify-center gap-1.5 rounded-xl px-2 text-center font-bold transition ${
                     tab === key
-                      ? 'bg-[var(--tr-surface)] text-[var(--tr-ink)] shadow-sm'
-                      : 'text-[var(--tr-ink-2)]'
+                      ? 'bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)] shadow-[var(--tr-plan-shadow-button)]'
+                      : 'text-[var(--tr-ink-2)] hover:bg-[var(--tr-surface-2)]'
                   }`}
                 >
+                  <Icon size={14} strokeWidth={2.3} aria-hidden />
                   {label}
                 </button>
               ))}
@@ -1081,8 +1301,23 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
 
             {/* tab ① courses */}
             {tab === 'courses' && (
-              <div className="mt-3 flex flex-col gap-2.5">
-                {templates.map((template) => {
+              <div className="mt-3 flex flex-col gap-3">
+                {templatesState === 'loading' && (
+                  <div className="tr-card px-4 py-4" role="status">
+                    <p className="tr-card-text font-medium text-[var(--tr-ink-2)]">{ui.templatesLoading}</p>
+                  </div>
+                )}
+                {templatesState === 'error' && (
+                  <div className="tr-card border border-[var(--tr-danger-soft)] px-4 py-4" role="status">
+                    <p className="tr-card-text font-medium text-[var(--tr-danger)]">{ui.templatesError}</p>
+                  </div>
+                )}
+                {templatesState === 'ready' && templates.length === 0 && (
+                  <div className="tr-card px-4 py-4" role="status">
+                    <p className="tr-card-text font-medium text-[var(--tr-ink-2)]">{ui.templatesEmpty}</p>
+                  </div>
+                )}
+                {templates.map((template, index) => {
                   const title =
                     template.title_i18n?.[locale] || template.title_i18n?.en || Object.values(template.title_i18n ?? {})[0] || '';
                   const preview = toEditorStops(template.stops, locale)
@@ -1090,24 +1325,46 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                     .map((s) => s.title)
                     .join(' · ');
                   return (
-                    <div key={template.id} className="tr-card px-4 py-3">
-                      <div className="flex items-start justify-between gap-3">
-                        <div className="min-w-0">
-                          <p className="tr-card-text font-semibold text-[var(--tr-ink)]">{title}</p>
-                          <p className="tr-label mt-0.5 truncate text-[var(--tr-ink-2)]">{preview}</p>
-                          <p className="tr-meta mt-1 text-[var(--tr-ink-3)]">
-                            {copy.courseStops(template.stops?.length ?? 0)}
-                            {template.total_hours ? ` · ${copy.courseHours(template.total_hours)}` : ''}
-                          </p>
+                    <article key={template.id} className="tr-card tr-plan-course-card px-4 py-4">
+                      <div className="flex items-start gap-3">
+                        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[var(--tr-accent-soft)] text-[var(--tr-accent-deep)]">
+                          <Route size={19} aria-hidden />
+                        </span>
+                        <div className="min-w-0 flex-1">
+                          <div className="flex items-center gap-2">
+                            <span className="tr-meta rounded-full bg-[var(--tr-surface-2)] px-2 py-0.5 font-bold text-[var(--tr-ink-3)]">
+                              #{index + 1}
+                            </span>
+                            <span className="tr-meta font-semibold uppercase text-[var(--tr-accent-deep)]">{copy.tabCourses}</span>
+                          </div>
+                          <h2 className="mt-1 text-[16px] font-bold leading-snug text-[var(--tr-ink)]">{title}</h2>
+                          {preview && (
+                            <p className="tr-label tr-plan-line-clamp-2 mt-1.5 leading-relaxed text-[var(--tr-ink-2)]">
+                              {preview}
+                            </p>
+                          )}
                         </div>
-                        <button
-                          onClick={() => applyTemplate(template)}
-                          className="tr-label shrink-0 rounded-full bg-[var(--tr-accent)] px-3.5 py-1.5 font-bold text-[var(--tr-bubble-me-ink)]"
-                        >
-                          {copy.useCourse}
-                        </button>
                       </div>
-                    </div>
+                      <div className="mt-3 flex flex-wrap items-center gap-2">
+                        <span className="tr-label inline-flex min-h-8 items-center rounded-full bg-[var(--tr-surface-2)] px-3 text-[var(--tr-ink-2)]">
+                          {copy.courseStops(template.stops?.length ?? 0)}
+                        </span>
+                        {template.total_hours && (
+                          <span className="tr-label inline-flex min-h-8 items-center gap-1 rounded-full bg-[var(--tr-surface-2)] px-3 text-[var(--tr-ink-2)]">
+                            <Clock3 size={13} aria-hidden />
+                            {copy.courseHours(template.total_hours)}
+                          </span>
+                        )}
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => setPreviewTemplate(template)}
+                        className="tr-body mt-3 flex min-h-[46px] w-full items-center justify-center gap-2 rounded-2xl bg-[var(--tr-accent)] px-4 font-bold text-[var(--tr-bubble-me-ink)] shadow-[var(--tr-plan-shadow-button)] transition active:scale-[0.99]"
+                      >
+                        <Search size={17} aria-hidden />
+                        {ui.previewCourse}
+                      </button>
+                    </article>
                   );
                 })}
               </div>
@@ -1116,17 +1373,39 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
             {/* tab ② pick */}
             {tab === 'pick' && (
               <div className="mt-3">
-                <input
-                  type="search"
-                  value={poiQuery}
-                  onChange={(e) => setPoiQuery(e.target.value)}
-                  placeholder={copy.searchPlaceholder}
-                  className="tr-card-text w-full rounded-[var(--tr-radius-input)] border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2 text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)] focus:border-[var(--tr-accent)] focus:outline-none"
-                />
+                <div className="relative">
+                  <Search
+                    size={17}
+                    className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[var(--tr-ink-3)]"
+                    aria-hidden
+                  />
+                  <input
+                    type="search"
+                    value={poiQuery}
+                    onChange={(e) => setPoiQuery(e.target.value)}
+                    placeholder={copy.searchPlaceholder}
+                    className="tr-card-text w-full rounded-[var(--tr-radius-input)] border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-10 py-3 text-[var(--tr-ink)] shadow-[var(--tr-plan-shadow-soft)] placeholder:text-[var(--tr-ink-3)] focus:border-[var(--tr-accent)] focus:outline-none"
+                  />
+                </div>
+                {poisState === 'loading' && (
+                  <div className="tr-card mt-2 px-4 py-3" role="status">
+                    <p className="tr-card-text font-medium text-[var(--tr-ink-2)]">{ui.placesLoading}</p>
+                  </div>
+                )}
+                {poisState === 'error' && (
+                  <div className="tr-card mt-2 border border-[var(--tr-danger-soft)] px-4 py-3" role="status">
+                    <p className="tr-card-text font-medium text-[var(--tr-danger)]">{ui.placesError}</p>
+                  </div>
+                )}
+                {poisState === 'ready' && filteredPois.length === 0 && (
+                  <div className="tr-card mt-2 px-4 py-3" role="status">
+                    <p className="tr-card-text font-medium text-[var(--tr-ink-2)]">{ui.placesEmpty}</p>
+                  </div>
+                )}
                 <div className="mt-2 flex max-h-72 flex-col gap-1.5 overflow-y-auto pr-1">
                   {filteredPois.map(({ poi, name, added }) => (
-                    <div key={poi.poi_key} className="tr-card flex items-center gap-3 px-3 py-2">
-                      <div className="h-10 w-10 shrink-0 overflow-hidden rounded-lg bg-[var(--tr-surface-2)]">
+                    <div key={poi.poi_key} className="tr-card flex items-center gap-3 px-3 py-3">
+                      <div className="h-12 w-12 shrink-0 overflow-hidden rounded-2xl bg-[var(--tr-surface-2)]">
                         {poi.default_image_url && (
                           // eslint-disable-next-line @next/next/no-img-element
                           <img
@@ -1149,14 +1428,16 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                         </p>
                       </div>
                       <button
+                        type="button"
                         onClick={() => addPoiStop(poi)}
                         disabled={added}
-                        className={`tr-label shrink-0 rounded-full px-3 py-1.5 font-bold ${
+                        className={`tr-label inline-flex min-h-10 shrink-0 items-center gap-1 rounded-full px-3 font-bold ${
                           added
                             ? 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-3)]'
                             : 'bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]'
                         }`}
                       >
+                        {added ? <CheckCircle2 size={14} aria-hidden /> : <Plus size={14} aria-hidden />}
                         {added ? copy.added : copy.add}
                       </button>
                     </div>
@@ -1164,9 +1445,11 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                 </div>
 
                 <button
+                  type="button"
                   onClick={() => setGoogleOpen((v) => !v)}
-                  className="tr-label mt-3 font-semibold text-[var(--tr-accent-deep)] underline"
+                  className="tr-label mt-3 inline-flex min-h-10 items-center gap-1.5 rounded-full bg-[var(--tr-accent-soft)] px-3 font-bold text-[var(--tr-accent-deep)]"
                 >
+                  <MapPin size={14} aria-hidden />
                   {copy.googleToggle}
                 </button>
                 {googleOpen && (
@@ -1175,6 +1458,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                       region={plan.tour.region}
                       placeholder={copy.googlePlaceholder}
                       loadingLabel={copy.googleLoading}
+                      errorLabel={ui.googleError}
                       onPick={addGooglePick}
                     />
                   </div>
@@ -1184,13 +1468,18 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
 
             {/* tab ③ delegate */}
             {tab === 'delegate' && (
-              <div className="tr-card mt-3 px-4 py-4">
-                <p className="tr-card-text font-semibold text-[var(--tr-ink)]">{copy.delegateTitle}</p>
-                <p className="tr-label mt-1.5 leading-relaxed text-[var(--tr-ink-2)]">{copy.delegateDesc}</p>
+              <div className="tr-card mt-3 px-4 py-5">
+                <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[var(--tr-accent-soft)] text-[var(--tr-accent-deep)]">
+                  <Sparkles size={20} aria-hidden />
+                </span>
+                <p className="mt-3 text-[17px] font-bold leading-snug text-[var(--tr-ink)]">{copy.delegateTitle}</p>
+                <p className="tr-card-text mt-1.5 leading-relaxed text-[var(--tr-ink-2)]">{copy.delegateDesc}</p>
                 <button
+                  type="button"
                   onClick={() => void delegatePlan()}
-                  className="tr-body mt-3 w-full rounded-xl bg-[var(--tr-accent)] px-4 py-2.5 font-bold text-[var(--tr-bubble-me-ink)]"
+                  className="tr-body mt-4 flex min-h-[48px] w-full items-center justify-center gap-2 rounded-2xl bg-[var(--tr-accent)] px-4 font-bold text-[var(--tr-bubble-me-ink)] shadow-[var(--tr-plan-shadow-button)]"
                 >
+                  <Sparkles size={17} aria-hidden />
                   {copy.delegateCta}
                 </button>
               </div>
@@ -1201,10 +1490,17 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
         {/* the day (shared stop editor / read-only list) */}
         {(stops.length > 0 || canEdit) && tab !== 'delegate' && (
           <section className="mt-6">
-            <div className="flex items-baseline justify-between">
-              <h2 className="tr-body font-bold text-[var(--tr-ink)]">{copy.yourDay}</h2>
+            <div className="flex items-center justify-between gap-3">
+              <h2 className="tr-body flex items-center gap-2 font-bold text-[var(--tr-ink)]">
+                <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[var(--tr-accent-soft)] text-[var(--tr-accent-deep)]">
+                  <Route size={16} aria-hidden />
+                </span>
+                {copy.yourDay}
+              </h2>
               {stops.length > 0 && (
-                <span className="tr-meta text-[var(--tr-ink-3)]">{copy.estimated(formatMinutes(totalEstimateMin))}</span>
+                <span className="tr-meta rounded-full bg-[var(--tr-surface)] px-3 py-1.5 font-semibold text-[var(--tr-ink-3)] shadow-[var(--tr-plan-shadow-soft)]">
+                  {copy.estimated(formatMinutes(totalEstimateMin))}
+                </span>
               )}
             </div>
 
@@ -1215,9 +1511,9 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                 {stops.map((stop, index) => {
                   const stopWarnings = warnings.filter((w) => w.stop_id === stop.id);
                   return (
-                    <li key={stop.id} className="tr-card px-3.5 py-3">
+                    <li key={stop.id} className="tr-card px-3.5 py-3.5">
                       <div className="flex items-start gap-2.5">
-                        <span className="tr-label mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[var(--tr-surface-2)] font-bold text-[var(--tr-ink-2)]">
+                        <span className="tr-label mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-[var(--tr-accent-soft)] font-bold text-[var(--tr-accent-deep)]">
                           {index + 1}
                         </span>
                         <div className="min-w-0 flex-1">
@@ -1241,7 +1537,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                                       prev.map((s) => (s.id === stop.id ? { ...s, arrival_planned: e.target.value || null } : s)),
                                     )
                                   }
-                                  className="tr-label rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 py-1 text-[var(--tr-ink)]"
+                                  className="tr-label min-h-9 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2.5 text-[var(--tr-ink)]"
                                 />
                               </label>
                               <label className="tr-meta flex items-center gap-1 text-[var(--tr-ink-3)]">
@@ -1255,7 +1551,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                                       ),
                                     )
                                   }
-                                  className="tr-label rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 py-1 text-[var(--tr-ink)]"
+                                  className="tr-label min-h-9 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2.5 text-[var(--tr-ink)]"
                                 >
                                   {DURATION_OPTIONS.map((min) => (
                                     <option key={min} value={min}>
@@ -1282,12 +1578,12 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                               }
                               placeholder={copy.memoPlaceholder}
                               maxLength={500}
-                              className="tr-label mt-2 w-full rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 py-1.5 text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)] focus:border-[var(--tr-accent)] focus:outline-none"
+                              className="tr-label mt-2 w-full rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2 text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)] focus:border-[var(--tr-accent)] focus:outline-none"
                             />
                           )}
                           {stopWarnings.map((w) => (
-                            <p key={w.code} className="tr-meta mt-1.5 font-medium text-[var(--tr-danger)]">
-                              ⚠{' '}
+                            <p key={w.code} className="tr-meta mt-1.5 flex items-center gap-1 font-semibold text-[var(--tr-danger)]">
+                              <AlertTriangle size={13} aria-hidden />
                               {w.code === 'closed'
                                 ? copy.warnClosed(w.title ?? stop.title)
                                 : copy.warnOutOfRegion(w.title ?? stop.title)}
@@ -1297,6 +1593,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                         {canEdit && (
                           <div className="flex shrink-0 flex-col items-center gap-1">
                             <button
+                              type="button"
                               aria-label={copy.moveUp}
                               disabled={index === 0}
                               onClick={() =>
@@ -1306,11 +1603,12 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                                   return next;
                                 })
                               }
-                              className="tr-label h-7 w-7 rounded-lg bg-[var(--tr-surface-2)] font-bold text-[var(--tr-ink-2)] disabled:opacity-40"
+                              className="flex h-9 w-9 items-center justify-center rounded-xl bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)] transition active:scale-95 disabled:opacity-40"
                             >
-                              ↑
+                              <ChevronUp size={17} aria-hidden />
                             </button>
                             <button
+                              type="button"
                               aria-label={copy.moveDown}
                               disabled={index === stops.length - 1}
                               onClick={() =>
@@ -1320,16 +1618,17 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                                   return next;
                                 })
                               }
-                              className="tr-label h-7 w-7 rounded-lg bg-[var(--tr-surface-2)] font-bold text-[var(--tr-ink-2)] disabled:opacity-40"
+                              className="flex h-9 w-9 items-center justify-center rounded-xl bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)] transition active:scale-95 disabled:opacity-40"
                             >
-                              ↓
+                              <ChevronDown size={17} aria-hidden />
                             </button>
                             <button
+                              type="button"
                               aria-label={copy.removeStop}
                               onClick={() => mutateStops((prev) => prev.filter((s) => s.id !== stop.id))}
-                              className="tr-label h-7 w-7 rounded-lg bg-[var(--tr-surface-2)] font-bold text-[var(--tr-danger)]"
+                              className="flex h-9 w-9 items-center justify-center rounded-xl bg-[var(--tr-danger-soft)] text-[var(--tr-danger)] transition active:scale-95"
                             >
-                              ✕
+                              <Trash2 size={16} aria-hidden />
                             </button>
                           </div>
                         )}
@@ -1362,7 +1661,12 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
         {/* needs (A10) */}
         {canEdit && !isConfirmed && (
           <section className="tr-card mt-6 px-4 py-4">
-            <h2 className="tr-body font-bold text-[var(--tr-ink)]">{copy.needsTitle}</h2>
+            <h2 className="tr-body flex items-center gap-2 font-bold text-[var(--tr-ink)]">
+              <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[var(--tr-accent-soft)] text-[var(--tr-accent-deep)]">
+                <UserRound size={16} aria-hidden />
+              </span>
+              {copy.needsTitle}
+            </h2>
             <p className="tr-meta mt-0.5 text-[var(--tr-ink-3)]">{copy.needsHint}</p>
 
             <div className="mt-3 flex flex-wrap gap-3">
@@ -1374,7 +1678,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                   max={40}
                   value={needs.adults}
                   onChange={(e) => mutateNeeds({ adults: Math.max(0, Number.parseInt(e.target.value, 10) || 0) })}
-                  className="tr-label w-16 rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 py-1 text-[var(--tr-ink)]"
+                  className="tr-label min-h-9 w-16 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 text-[var(--tr-ink)]"
                 />
               </label>
               <label className="tr-label flex items-center gap-2 text-[var(--tr-ink-2)]">
@@ -1385,7 +1689,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                   max={40}
                   value={needs.children}
                   onChange={(e) => mutateNeeds({ children: Math.max(0, Number.parseInt(e.target.value, 10) || 0) })}
-                  className="tr-label w-16 rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 py-1 text-[var(--tr-ink)]"
+                  className="tr-label min-h-9 w-16 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 text-[var(--tr-ink)]"
                 />
               </label>
               {needs.children > 0 && (
@@ -1396,7 +1700,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                     value={needs.child_ages}
                     onChange={(e) => mutateNeeds({ child_ages: e.target.value })}
                     placeholder={copy.childAgesPlaceholder}
-                    className="tr-label w-24 rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 py-1 text-[var(--tr-ink)]"
+                    className="tr-label min-h-9 w-24 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 text-[var(--tr-ink)]"
                   />
                 </label>
               )}
@@ -1411,10 +1715,11 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                 ] as Array<['stroller' | 'wheelchair' | 'luggage', string]>
               ).map(([key, label]) => (
                 <button
+                  type="button"
                   key={key}
                   onClick={() => mutateNeeds({ [key]: !needs[key] } as Partial<NeedsState>)}
                   aria-pressed={needs[key]}
-                  className={`tr-label rounded-full border px-3 py-1.5 font-medium ${
+                  className={`tr-label min-h-10 rounded-full border px-3 font-medium ${
                     needs[key]
                       ? 'border-[var(--tr-accent)] bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]'
                       : 'border-[var(--tr-hairline)] bg-[var(--tr-surface)] text-[var(--tr-ink-2)]'
@@ -1425,12 +1730,16 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
               ))}
             </div>
 
-            <p className="tr-meta mt-3 font-semibold uppercase tracking-wide text-[var(--tr-ink-3)]">{copy.dietaryTitle}</p>
+            <p className="tr-meta mt-3 flex items-center gap-1.5 font-semibold uppercase text-[var(--tr-ink-3)]">
+              <UtensilsCrossed size={13} aria-hidden />
+              {copy.dietaryTitle}
+            </p>
             <div className="mt-1.5 flex flex-wrap gap-2">
               {Object.entries(copy.dietary).map(([key, label]) => {
                 const active = needs.dietary.includes(key);
                 return (
                   <button
+                    type="button"
                     key={key}
                     onClick={() =>
                       mutateNeeds({
@@ -1438,7 +1747,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                       })
                     }
                     aria-pressed={active}
-                    className={`tr-label rounded-full border px-3 py-1.5 font-medium ${
+                    className={`tr-label min-h-10 rounded-full border px-3 font-medium ${
                       active
                         ? 'border-[var(--tr-accent)] bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]'
                         : 'border-[var(--tr-hairline)] bg-[var(--tr-surface)] text-[var(--tr-ink-2)]'
@@ -1455,17 +1764,18 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
               onChange={(e) => mutateNeeds({ allergy_note: e.target.value })}
               placeholder={copy.allergyPlaceholder}
               maxLength={300}
-              className="tr-label mt-2 w-full rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 py-1.5 text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)] focus:border-[var(--tr-accent)] focus:outline-none"
+              className="tr-label mt-2 w-full rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2 text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)] focus:border-[var(--tr-accent)] focus:outline-none"
             />
 
             <p className="tr-meta mt-3 font-semibold uppercase tracking-wide text-[var(--tr-ink-3)]">{copy.paceTitle}</p>
             <div className="mt-1.5 flex gap-2">
               {(Object.entries(copy.pace) as Array<['relaxed' | 'standard' | 'packed', string]>).map(([key, label]) => (
                 <button
+                  type="button"
                   key={key}
                   onClick={() => mutateNeeds({ pace: key })}
                   aria-pressed={needs.pace === key}
-                  className={`tr-label flex-1 rounded-full border px-3 py-1.5 font-medium ${
+                  className={`tr-label min-h-10 flex-1 rounded-full border px-3 font-medium ${
                     needs.pace === key
                       ? 'border-[var(--tr-accent)] bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]'
                       : 'border-[var(--tr-hairline)] bg-[var(--tr-surface)] text-[var(--tr-ink-2)]'
@@ -1482,7 +1792,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
               placeholder={copy.notePlaceholder}
               maxLength={500}
               rows={2}
-              className="tr-label mt-3 w-full rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 py-1.5 text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)] focus:border-[var(--tr-accent)] focus:outline-none"
+              className="tr-label mt-3 w-full rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2 text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)] focus:border-[var(--tr-accent)] focus:outline-none"
             />
           </section>
         )}
@@ -1514,21 +1824,129 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
         })()}
       </div>
 
+      {previewTemplate && (
+        <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/35 px-0" role="dialog" aria-modal="true">
+          <button
+            type="button"
+            aria-label={ui.previewClose}
+            className="absolute inset-0 cursor-default"
+            onClick={() => setPreviewTemplate(null)}
+          />
+          <section className="relative max-h-[86dvh] w-full max-w-xl overflow-y-auto rounded-t-[28px] border border-[var(--tr-hairline)] bg-[var(--tr-surface)] shadow-[var(--tr-shadow-overlay)]">
+            <div className="sticky top-0 z-10 border-b border-[var(--tr-hairline)] bg-[var(--tr-surface)]/95 px-4 py-3 backdrop-blur">
+              <div className="flex items-start justify-between gap-3">
+                <div className="min-w-0">
+                  <p className="tr-meta font-bold uppercase tracking-wide text-[var(--tr-accent-deep)]">{ui.previewTitle}</p>
+                  <h2 className="mt-0.5 text-[18px] font-bold leading-snug text-[var(--tr-ink)]">
+                    {previewTemplate.title_i18n?.[locale] ||
+                      previewTemplate.title_i18n?.en ||
+                      Object.values(previewTemplate.title_i18n ?? {})[0] ||
+                      copy.tabCourses}
+                  </h2>
+                </div>
+                <button
+                  type="button"
+                  aria-label={ui.previewClose}
+                  onClick={() => setPreviewTemplate(null)}
+                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]"
+                >
+                  <X size={17} aria-hidden />
+                </button>
+              </div>
+            </div>
+
+            <div className="px-4 pb-4 pt-3">
+              <div className="grid grid-cols-2 gap-2">
+                {[
+                  [ui.previewTotal, previewTemplate.total_hours ? copy.courseHours(previewTemplate.total_hours) : formatMinutes(previewStayMin + previewDriveMin)],
+                  [ui.previewDriving, previewDriveMin > 0 ? formatMinutes(previewDriveMin) : ui.previewFlexible],
+                  [ui.previewWalking, ui.previewFlexible],
+                  [ui.previewMeals, ui.previewFlexible],
+                  [ui.previewAccessibility, needs.wheelchair || needs.stroller ? copy.needsTitle : ui.previewFlexible],
+                  [ui.previewSeason, plan.tour.date ?? ui.previewFlexible],
+                ].map(([label, value]) => (
+                  <div key={label} className="rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] px-3 py-2">
+                    <p className="tr-meta font-bold uppercase tracking-wide text-[var(--tr-ink-3)]">{label}</p>
+                    <p className="tr-label mt-0.5 truncate font-semibold text-[var(--tr-ink)]">{value}</p>
+                  </div>
+                ))}
+              </div>
+
+              <ol className="mt-4 flex flex-col gap-2">
+                {previewStops.map((stop, index) => {
+                  const imageUrl = stop.poi_key ? poiByKey.get(stop.poi_key)?.default_image_url : null;
+                  return (
+                    <li key={stop.id} className="flex gap-3 rounded-2xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] p-3">
+                      <div className="h-16 w-16 shrink-0 overflow-hidden rounded-xl bg-[var(--tr-surface-2)]">
+                        {imageUrl ? (
+                          // eslint-disable-next-line @next/next/no-img-element
+                          <img
+                            src={imageUrl}
+                            alt=""
+                            loading="lazy"
+                            className="h-full w-full object-cover"
+                            onError={(e) => {
+                              e.currentTarget.style.display = 'none';
+                            }}
+                          />
+                        ) : (
+                          <span className="flex h-full w-full items-center justify-center text-[var(--tr-ink-3)]">
+                            <MapPin size={18} aria-hidden />
+                          </span>
+                        )}
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <div className="flex items-center gap-2">
+                          <span className="tr-meta flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[var(--tr-accent-soft)] font-bold text-[var(--tr-accent-deep)]">
+                            {index + 1}
+                          </span>
+                          <p className="tr-card-text truncate font-bold text-[var(--tr-ink)]">{stop.title}</p>
+                        </div>
+                        <p className="tr-meta mt-1 text-[var(--tr-ink-3)]">
+                          {stop.duration_min ? copy.minutes(stop.duration_min) : copy.minutes(60)}
+                          {stop.stop_type ? ` · ${stop.stop_type}` : ''}
+                        </p>
+                      </div>
+                    </li>
+                  );
+                })}
+              </ol>
+            </div>
+
+            <div className="tr-safe-bottom sticky bottom-0 z-20 border-t border-[var(--tr-hairline)] bg-[var(--tr-surface)]/95 px-4 py-3 backdrop-blur">
+              <button
+                type="button"
+                onClick={() => {
+                  if (applyTemplate(previewTemplate)) setPreviewTemplate(null);
+                }}
+                className="tr-body flex min-h-[50px] w-full items-center justify-center gap-2 rounded-2xl bg-[var(--tr-accent)] px-4 font-bold text-[var(--tr-bubble-me-ink)] shadow-[var(--tr-plan-shadow-button)]"
+              >
+                <CheckCircle2 size={17} aria-hidden />
+                {copy.useCourse}
+              </button>
+            </div>
+          </section>
+        </div>
+      )}
+
       {/* sticky submit bar */}
-      {canEdit && !isConfirmed && tab !== 'delegate' && (
-        <div className="fixed inset-x-0 bottom-0 border-t border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-4 py-3">
-          <div className="mx-auto flex w-full max-w-2xl items-center gap-3">
-            <span className="tr-meta min-w-0 flex-1 truncate text-[var(--tr-ink-3)]" aria-live="polite">
+      {canEdit && !isConfirmed && tab !== 'delegate' && stops.length > 0 && (
+        <div className="fixed inset-x-0 bottom-0 border-t border-[var(--tr-hairline)] bg-[var(--tr-surface)]/95 px-4 py-3 backdrop-blur">
+          <div className="mx-auto flex w-full max-w-xl items-center gap-3">
+            <span className="tr-label min-w-0 flex-1 truncate font-semibold text-[var(--tr-ink-3)]" aria-live="polite">
               {saveState === 'saving' && copy.saving}
               {saveState === 'saved' && copy.saved}
               {saveState === 'error' && copy.saveError}
+              {saveState === 'rate_limited' && ui.saveRateLimited}
             </span>
             <button
+              type="button"
               onClick={() => void submitPlan()}
-              disabled={stops.length === 0 || saveState === 'saving'}
-              className="tr-body shrink-0 rounded-xl bg-[var(--tr-accent)] px-5 py-2.5 font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-50"
+              disabled={stops.length === 0 || saveState === 'saving' || submitBusy}
+              className="tr-body flex min-h-[48px] shrink-0 items-center justify-center gap-2 rounded-2xl bg-[var(--tr-accent)] px-5 font-bold text-[var(--tr-bubble-me-ink)] shadow-[var(--tr-plan-shadow-button)] disabled:opacity-50"
             >
-              {saveState === 'saving' ? copy.submitting : copy.submit}
+              <Send size={17} aria-hidden />
+              {saveState === 'saving' || submitBusy ? copy.submitting : copy.submit}
             </button>
           </div>
         </div>

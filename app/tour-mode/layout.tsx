@@ -30,12 +30,12 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 1,
   viewportFit: 'cover',
-  themeColor: '#111827',
+  themeColor: '#f3f4f2',
 };
 
 export default function TourModeLayout({ children }: { children: React.ReactNode }) {
   return (
-    <main className="min-h-dvh bg-[#faf9f6]">
+    <main className="min-h-dvh bg-[#f3f4f2]">
       <PwaRegistrar swPath="/sw-tour-mode.js" scope="/tour-mode" />
       <WebviewEscapeBanner />
       {children}

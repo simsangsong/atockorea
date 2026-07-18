@@ -313,9 +313,9 @@ export default function GuideConsole() {
                       {room.number_of_guests ?? 1}명 · {room.preferred_language ?? 'en'}
                     </span>
                     {room.onboard_ack && <span title="탑승 확인" className="text-emerald-600">✓</span>}
-                    {room.day_plan?.status === 'guest_draft' && (
+                    {(room.day_plan?.status === 'guest_draft' || room.day_plan?.status === 'guest_submitted') && (
                       <span className="rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-bold text-amber-800">
-                        초안 검토
+                        {room.day_plan?.status === 'guest_submitted' ? '제출 검토' : '초안 검토'}
                       </span>
                     )}
                   </span>
@@ -330,7 +330,7 @@ export default function GuideConsole() {
                   setOpenPlanBookingId((prev) => (prev === room.booking_id ? null : room.booking_id))
                 }
                 className={`shrink-0 rounded-xl px-2.5 py-2 text-[12px] font-semibold ${
-                  room.day_plan?.status === 'guest_draft'
+                  room.day_plan?.status === 'guest_draft' || room.day_plan?.status === 'guest_submitted'
                     ? 'bg-amber-100 text-amber-800'
                     : 'bg-gray-100 text-gray-600'
                 }`}

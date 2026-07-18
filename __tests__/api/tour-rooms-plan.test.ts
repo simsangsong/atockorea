@@ -50,6 +50,7 @@ const BOOKING = {
 interface DbConfig {
   plan?: Record<string, unknown> | null;
   isLead?: boolean;
+  itinerary?: unknown;
   pois?: Array<{ poi_key: string; lat: number | null; lng: number | null; name_en: string | null }>;
 }
 
@@ -65,7 +66,9 @@ function fakeDb(config: DbConfig = {}) {
     from(table: string) {
       let sawStatusFilter = false;
       const resolveSelect = async () => {
-        if (table === 'bookings') return { data: { ...BOOKING }, error: null };
+        if (table === 'bookings') {
+          return { data: { ...BOOKING, itinerary: config.itinerary ?? BOOKING.itinerary }, error: null };
+        }
         if (table === 'tours') return { data: { city: 'Jeju', duration: '9 hours' }, error: null };
         if (table === 'tour_room_participants') {
           return { data: { is_lead: config.isLead ?? false }, error: null };
@@ -214,7 +217,24 @@ describe('PUT /api/tour-rooms/[bookingId]/plan — lead guest (P-D13)', () => {
     );
   });
 
-  it('submit fans out the plan_submitted capsule and stays guest_draft', async () => {
+  it('persists empty stops when the lead deletes the last draft stop', async () => {
+    const db = fakeDb({ isLead: true, plan: { id: 'plan-1', status: 'guest_draft', stops: STOPS, version: 1 } });
+    createServerClientMock.mockReturnValue(db);
+    const res = await planPUT(
+      fakeReq({
+        headers: { 'x-tour-room-auth': customerSession() },
+        json: { stops: [], needs: { adults: 2 } },
+      }),
+      routeParams(),
+    );
+    expect(res.status).toBe(200);
+    expect(db.upserts.tour_day_plans[0]).toMatchObject({
+      stops: [],
+      status: 'guest_draft',
+    });
+  });
+
+  it('submit fans out the plan_submitted capsule and moves to guest_submitted', async () => {
     const db = fakeDb({ isLead: true });
     createServerClientMock.mockReturnValue(db);
     const res = await planPUT(
@@ -225,13 +245,34 @@ describe('PUT /api/tour-rooms/[bookingId]/plan — lead guest (P-D13)', () => {
       routeParams(),
     );
     expect(res.status).toBe(200);
-    expect(db.upserts.tour_day_plans[0].status).toBe('guest_draft');
+    expect(db.upserts.tour_day_plans[0].status).toBe('guest_submitted');
     expect(db.inserts.tour_room_messages).toHaveLength(1);
     expect(db.inserts.tour_room_messages[0].metadata).toMatchObject({ kind: 'plan_submitted' });
     expect(recordRoomEventMock).toHaveBeenCalledWith(
       expect.anything(),
       expect.objectContaining({ type: 'plan_submitted' }),
     );
+  });
+
+  it('treats repeated submit on guest_submitted as idempotent', async () => {
+    const db = fakeDb({
+      isLead: true,
+      plan: { id: 'plan-1', status: 'guest_submitted', stops: STOPS, version: 2, feasibility: { warnings: [] } },
+    });
+    createServerClientMock.mockReturnValue(db);
+    const res = await planPUT(
+      fakeReq({
+        headers: { 'x-tour-room-auth': customerSession() },
+        json: { submit: true },
+      }),
+      routeParams(),
+    );
+    expect(res.status).toBe(200);
+    expect(db.upserts.tour_day_plans).toBeUndefined();
+    expect(db.inserts.tour_room_messages).toBeUndefined();
+    expect(recordRoomEventMock).not.toHaveBeenCalled();
+    const body = await res.json();
+    expect(body.day_plan).toMatchObject({ status: 'guest_submitted', version: 2 });
   });
 
   it('delegate marks itinerary.guide_curated and drops the delegated capsule', async () => {
@@ -244,6 +285,22 @@ describe('PUT /api/tour-rooms/[bookingId]/plan — lead guest (P-D13)', () => {
     expect(res.status).toBe(200);
     expect(db.updates.bookings?.[0]).toMatchObject({ itinerary: { guide_curated: true } });
     expect(db.inserts.tour_room_messages[0].metadata).toMatchObject({ kind: 'plan_delegated' });
+  });
+
+  it('direct stop writes clear a prior delegated guide_curated flag', async () => {
+    const db = fakeDb({ isLead: true, itinerary: { guide_curated: true, poi_keys: [] } });
+    createServerClientMock.mockReturnValue(db);
+    const res = await planPUT(
+      fakeReq({
+        headers: { 'x-tour-room-auth': customerSession() },
+        json: { stops: STOPS, stops_changed: true },
+      }),
+      routeParams(),
+    );
+    expect(res.status).toBe(200);
+    expect(db.updates.bookings?.[0]).toMatchObject({
+      itinerary: { guide_curated: false, poi_keys: [] },
+    });
   });
 
   it('blocks guest confirm with 403 guide_confirms', async () => {
@@ -266,6 +323,22 @@ describe('PUT /api/tour-rooms/[bookingId]/plan — lead guest (P-D13)', () => {
     );
     expect(res.status).toBe(409);
     expect(await res.json()).toMatchObject({ error: 'plan_locked' });
+  });
+
+  it('returns retry metadata when plan writes are rate-limited', async () => {
+    requestGateMock.mockResolvedValueOnce({ allowed: false, retryAfterMs: 45_000 });
+    const db = fakeDb({ isLead: true });
+    createServerClientMock.mockReturnValue(db);
+    const res = await planPUT(
+      fakeReq({
+        headers: { 'x-tour-room-auth': customerSession() },
+        json: { stops: STOPS },
+      }),
+      routeParams(),
+    );
+    expect(res.status).toBe(429);
+    expect(await res.json()).toMatchObject({ error: 'rate_limited', retry_after_ms: 45_000 });
+    expect(db.upserts.tour_day_plans).toBeUndefined();
   });
 });
 

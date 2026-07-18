@@ -61,6 +61,7 @@ const PLAN_DELEGATED: Record<string, string> = {
 };
 
 const MAX_STOPS = 20;
+const REVIEW_DAY_PLAN_STATUSES = ['guest_submitted', ...ACTIVE_DAY_PLAN_STATUSES] as const;
 
 /** §C-3 stop state machine values a client may write (skipped feeds MUTATE). */
 const STOP_STATUSES = ['pending', 'en_route', 'arrived', 'free_time', 'regrouped', 'done', 'skipped'] as const;
@@ -72,7 +73,8 @@ function clampCoord(value: unknown, limit: number): number | null {
 }
 
 function sanitizeStops(raw: unknown): DayPlanStop[] | null {
-  if (!Array.isArray(raw) || raw.length === 0 || raw.length > MAX_STOPS) return null;
+  if (!Array.isArray(raw) || raw.length > MAX_STOPS) return null;
+  if (raw.length === 0) return [];
   const stops: DayPlanStop[] = [];
   for (let index = 0; index < raw.length; index += 1) {
     const item = raw[index];
@@ -223,6 +225,29 @@ async function isLeadGuest(supabase: RoomDbClient, actor: RoomActor): Promise<bo
   }
 }
 
+async function setGuideCuratedFlag(supabase: RoomDbClient, bookingId: string, guideCurated: boolean): Promise<void> {
+  try {
+    const { data: bookingRow } = await supabase
+      .from('bookings')
+      .select('itinerary')
+      .eq('id', bookingId)
+      .maybeSingle();
+    const rawItinerary = (bookingRow as { itinerary?: unknown } | null)?.itinerary;
+    if ((!rawItinerary || typeof rawItinerary !== 'object' || Array.isArray(rawItinerary)) && !guideCurated) return;
+    const itinerary =
+      rawItinerary && typeof rawItinerary === 'object' && !Array.isArray(rawItinerary)
+        ? (rawItinerary as Record<string, unknown>)
+        : {};
+    if (itinerary.guide_curated === guideCurated) return;
+    await supabase
+      .from('bookings')
+      .update({ itinerary: { ...itinerary, guide_curated: guideCurated } })
+      .eq('id', bookingId);
+  } catch (flagError) {
+    console.warn('plan guide_curated flag write failed:', flagError);
+  }
+}
+
 export async function GET(
   req: NextRequest,
   { params }: { params: Promise<{ bookingId: string }> },
@@ -310,6 +335,7 @@ export async function PUT(
       confirm?: unknown;
       submit?: unknown;
       delegate?: unknown;
+      stops_changed?: unknown;
     };
 
     const resolved = await resolveRoomActor(req, bookingId, { supabase });
@@ -342,13 +368,16 @@ export async function PUT(
       perHour: 60,
     });
     if (!gate.allowed) {
-      return NextResponse.json({ error: 'rate_limited' }, { status: 429 });
+      return NextResponse.json(
+        { error: 'rate_limited', retry_after_ms: gate.retryAfterMs ?? 0 },
+        { status: 429 },
+      );
     }
 
     const stops = body.stops !== undefined ? sanitizeStops(body.stops) : undefined;
     if (body.stops !== undefined && stops === null) {
       return NextResponse.json(
-        { error: `stops must be 1–${MAX_STOPS} items, each with a title or poi_key` },
+        { error: `stops must be 0-${MAX_STOPS} items, each with a title or poi_key` },
         { status: 400 },
       );
     }
@@ -361,6 +390,21 @@ export async function PUT(
       .eq('tour_date', booking.tour_date)
       .maybeSingle();
     const existingStatus = (existing as { status?: string } | null)?.status ?? null;
+
+    // Re-clicks and retried submits must not create duplicate feed capsules.
+    if (!isStaff && submit && existingStatus === 'guest_submitted') {
+      const existingStops = ((existing as { stops?: DayPlanStop[] } | null)?.stops ?? []) as DayPlanStop[];
+      return NextResponse.json(
+        {
+          day_plan: existing,
+          schedule: dayPlanStopsToSchedule(existingStops),
+          ...((existing as { feasibility?: FeasibilityResult } | null)?.feasibility
+            ? { feasibility: (existing as { feasibility: FeasibilityResult }).feasibility }
+            : {}),
+        },
+        { status: 200 },
+      );
+    }
 
     // A8 — once the guide confirmed, guests request changes instead of editing.
     if (!isStaff && existingStatus !== null && existingStatus !== 'guest_draft') {
@@ -390,9 +434,11 @@ export async function PUT(
 
     const nextStatus = confirm
       ? 'guide_confirmed'
-      : isStaff &&
+      : submit
+        ? 'guest_submitted'
+        : isStaff &&
           existingStatus &&
-          (ACTIVE_DAY_PLAN_STATUSES as readonly string[]).includes(existingStatus)
+          (REVIEW_DAY_PLAN_STATUSES as readonly string[]).includes(existingStatus)
         ? existingStatus // a guide editing a confirmed plan keeps it live (MUTATE)
         : 'guest_draft';
 
@@ -416,25 +462,13 @@ export async function PUT(
       .single();
     if (planError) throw planError;
 
-    // Tab ③ — "leave it to the guide": additive guide_curated flag on
-    // bookings.itinerary (§G), so the lobby + guide console can phrase it.
     if (delegate) {
-      try {
-        const { data: bookingRow } = await supabase
-          .from('bookings')
-          .select('itinerary')
-          .eq('id', booking.id)
-          .maybeSingle();
-        const itinerary = ((bookingRow as { itinerary?: unknown } | null)?.itinerary ?? {}) as Record<string, unknown>;
-        if (itinerary && typeof itinerary === 'object' && !Array.isArray(itinerary)) {
-          await supabase
-            .from('bookings')
-            .update({ itinerary: { ...itinerary, guide_curated: true } })
-            .eq('id', booking.id);
-        }
-      } catch (delegateError) {
-        console.warn('plan delegate flag write failed:', delegateError);
-      }
+      // Tab ③ — "leave it to the guide": additive guide_curated flag on
+      // bookings.itinerary (§G), so the lobby + guide console can phrase it.
+      await setGuideCuratedFlag(supabase, booking.id, true);
+    } else if (body.stops_changed === true) {
+      // Any direct course/custom selection supersedes "guide curated".
+      await setGuideCuratedFlag(supabase, booking.id, false);
     }
 
     const room = await ensureRoom(supabase, booking);

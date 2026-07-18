@@ -42,7 +42,7 @@ export interface DayPlanRow {
   booking_id: string;
   room_id: string | null;
   tour_date: string;
-  status: 'guest_draft' | 'guide_confirmed' | 'live' | 'done';
+  status: 'guest_draft' | 'guest_submitted' | 'guide_confirmed' | 'live' | 'done';
   stops: DayPlanStop[];
   needs: Record<string, unknown> | null;
   feasibility: Record<string, unknown> | null;
