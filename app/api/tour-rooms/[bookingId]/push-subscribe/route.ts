@@ -9,9 +9,10 @@ export const dynamic = 'force-dynamic';
  * W4.1 / P-D7 — guest Web Push subscribe/unsubscribe for a booking.
  *
  * POST { subscription: { endpoint, keys: { p256dh, auth } } } → upsert a
- * role='customer' row scoped to this booking (delete-then-insert on the
- * endpoint capability URL). POST { unsubscribe: true, endpoint } removes it.
- * Customers only — ops/guide devices subscribe through their own console.
+ * booking-scoped row for the caller's role (delete-then-insert on the endpoint
+ * capability URL). POST { unsubscribe: true, endpoint } removes it.
+ * Customers (rally/delay pings) and drivers (guest-message alerts while in a
+ * nav app) subscribe here; ops/guide devices subscribe through their console.
  */
 export async function POST(
   req: NextRequest,
@@ -31,8 +32,8 @@ export async function POST(
       return NextResponse.json({ error: resolved.error }, { status: resolved.status });
     }
     const { booking, actor, authUserId } = resolved;
-    if (actor.role !== 'customer') {
-      return NextResponse.json({ error: 'Customers only' }, { status: 403 });
+    if (actor.role !== 'customer' && actor.role !== 'driver') {
+      return NextResponse.json({ error: 'Customers or drivers only' }, { status: 403 });
     }
 
     const gate = await requestGate({
@@ -63,7 +64,7 @@ export async function POST(
     // The endpoint is the device identity — re-subscribing replaces the row.
     await supabase.from('push_subscriptions').delete().eq('endpoint', endpoint);
     const { error } = await supabase.from('push_subscriptions').insert({
-      role: 'customer',
+      role: actor.role,
       booking_id: booking.id,
       user_id: authUserId,
       endpoint,
