@@ -7,9 +7,8 @@
  * (class-based Tailwind dark mode, T1.12).
  *
  * Binding decisions this file encodes:
- *  - U2-D1 my bubble = pale parchment + ink text in BOTH themes (ivory/antique-
- *          brass, matching the site's own premium tone) — replaces U-D2's
- *          saturated Kakao-yellow, which read as a cheap messenger clone.
+ *  - U2-D1 my bubble = neutral ink + clean surface text in BOTH themes,
+ *          replacing saturated chat-app colors with a restrained concierge tone.
  *  - U-D6  the typography scale below is the only text sizing allowed in
  *          tour-room components — no new arbitrary px values.
  *  - U-D9  dark mode is a 3-layer system (canvas / surface / bubble), not a
@@ -20,16 +19,16 @@
 
 .tr-root {
   /* Canvas & surfaces */
-  --tr-canvas: #f7f4ec;
-  --tr-surface: #ffffff;
-  --tr-surface-2: #f6f4ef;
-  --tr-hairline: rgba(26, 29, 33, 0.08);
+  --tr-canvas: #f3f4f2;
+  --tr-surface: #fcfcfb;
+  --tr-surface-2: #ecefee;
+  --tr-hairline: rgba(37, 42, 44, 0.08);
 
   /* Bubbles */
-  --tr-bubble-me: #f1e6cc;
-  --tr-bubble-me-ink: #2a2620;
-  --tr-bubble-me-accent: #9c7a3c;
-  --tr-bubble-in: #ffffff;
+  --tr-bubble-me: #252a2c;
+  --tr-bubble-me-ink: #fcfcfb;
+  --tr-bubble-me-accent: #252a2c;
+  --tr-bubble-in: #fcfcfb;
   --tr-bubble-in-ink: #1a1d21;
   --tr-bubble-system: rgba(23, 27, 32, 0.06);
   --tr-bubble-system-ink: #565d66;
@@ -39,10 +38,10 @@
   --tr-ink-2: #565d66;
   --tr-ink-3: #6e767f;
 
-  /* Role colors (U-D7: brass = action, pine = connection/safety, red = emergency) */
-  --tr-accent: #9c7a3c;
-  --tr-accent-deep: #6b5426;
-  --tr-accent-soft: #ede1c4;
+  /* Role colors: neutral ink for primary actions, pale grey for soft states. */
+  --tr-accent: #252a2c;
+  --tr-accent-deep: #111315;
+  --tr-accent-soft: #ecefee;
   --tr-safe: #3f6b58;
   --tr-safe-soft: #dce9e2;
   --tr-danger: #dc2626;
@@ -67,14 +66,14 @@
    * soft mint gradient (not a flat gray), cards get a cool hairline + a
    * lifted two-layer shadow, and chips are mid-teal with a gloss highlight
    * instead of near-black blobs. */
-  --tr-home-canvas: linear-gradient(180deg, #f0f5f1 0%, #e7edea 100%);
-  --tr-home-tile: #ffffff;
-  --tr-home-card-line: rgba(21, 40, 36, 0.05);
-  --tr-tile-shadow: 0 1px 2px rgba(15, 28, 25, 0.03), 0 10px 26px rgba(15, 28, 25, 0.07);
-  --tr-chip-ink: #f0faf5;
-  --tr-chip-shadow: rgba(18, 40, 36, 0.28);
-  --tr-chip-grad: linear-gradient(140deg, #3d6b60 0%, #22443f 100%);
-  --tr-chip-grad-accent: linear-gradient(140deg, #2fae90 0%, #1a6355 100%);
+  --tr-home-canvas: #f3f4f2;
+  --tr-home-tile: #fcfcfb;
+  --tr-home-card-line: rgba(37, 42, 44, 0.06);
+  --tr-tile-shadow: 0 1px 2px rgba(37, 42, 44, 0.03), 0 10px 26px rgba(37, 42, 44, 0.07);
+  --tr-chip-ink: #fcfcfb;
+  --tr-chip-shadow: rgba(37, 42, 44, 0.2);
+  --tr-chip-grad: linear-gradient(140deg, #3a4144 0%, #181c1e 100%);
+  --tr-chip-grad-accent: linear-gradient(140deg, #667985 0%, #252a2c 100%);
   --tr-chip-grad-danger: linear-gradient(140deg, #ef4d4d 0%, #b91c1c 100%);
 }
 
@@ -84,9 +83,9 @@
   --tr-surface-2: #24211a;
   --tr-hairline: rgba(232, 234, 237, 0.09);
 
-  --tr-bubble-me: #2a2620;
-  --tr-bubble-me-ink: #f1e6cc;
-  --tr-bubble-me-accent: #c9a24d;
+  --tr-bubble-me: #f4f5f2;
+  --tr-bubble-me-ink: #151818;
+  --tr-bubble-me-accent: #f4f5f2;
   --tr-bubble-in: #24211a;
   --tr-bubble-in-ink: #e8eaed;
   --tr-bubble-system: rgba(232, 234, 237, 0.08);
@@ -96,9 +95,9 @@
   --tr-ink-2: #a6adb6;
   --tr-ink-3: #7d858f;
 
-  --tr-accent: #c9a24d;
-  --tr-accent-deep: #e2c179;
-  --tr-accent-soft: rgba(201, 162, 77, 0.16);
+  --tr-accent: #f4f5f2;
+  --tr-accent-deep: #ffffff;
+  --tr-accent-soft: rgba(244, 245, 242, 0.12);
   --tr-safe: #5f9c85;
   --tr-safe-soft: rgba(63, 107, 88, 0.22);
   --tr-danger: #f87171;
@@ -112,8 +111,8 @@
   --tr-tile-shadow: 0 1px 2px rgba(0, 0, 0, 0.28), 0 6px 16px rgba(0, 0, 0, 0.32);
   --tr-chip-ink: #ddf1e8;
   --tr-chip-shadow: rgba(0, 0, 0, 0.4);
-  --tr-chip-grad: linear-gradient(135deg, #3a5a52 0%, #1a2e2c 100%);
-  --tr-chip-grad-accent: linear-gradient(135deg, #3cbd9c 0%, #1e6a5c 100%);
+  --tr-chip-grad: linear-gradient(135deg, #434b4e 0%, #202526 100%);
+  --tr-chip-grad-accent: linear-gradient(135deg, #91a3aa 0%, #31393c 100%);
   --tr-chip-grad-danger: linear-gradient(135deg, #ef6b6b 0%, #b91c1c 100%);
 }
 
@@ -175,6 +174,89 @@
 .tr-card {
   background: var(--tr-surface);
   border-radius: var(--tr-radius-card);
+}
+
+/* Plan picker (/tour-mode/plan): cool grey surfaces and crisp black CTA contrast.
+ * Scoped so the live room keeps its existing bubble grammar. */
+.tr-plan-root {
+  --tr-canvas: #f3f4f2;
+  --tr-surface: #fcfcfb;
+  --tr-surface-2: #ecefee;
+  --tr-hairline: rgba(37, 42, 44, 0.08);
+  --tr-ink: #252a2c;
+  --tr-ink-2: #626b6f;
+  --tr-ink-3: #7b8589;
+  --tr-accent: #252a2c;
+  --tr-accent-deep: #111315;
+  --tr-accent-soft: #ecefee;
+  --tr-safe: #667985;
+  --tr-danger: #b55252;
+  --tr-danger-soft: rgba(181, 82, 82, 0.14);
+  --tr-bubble-me-ink: #fcfcfb;
+  --tr-radius-card: 18px;
+  --tr-radius-input: 16px;
+  --tr-plan-hero: #252a2c;
+  --tr-plan-hero-ink: #fcfcfb;
+  --tr-plan-hero-muted: #c9d0d2;
+  --tr-plan-secondary: #7f8a90;
+  --tr-plan-shadow-soft: 0 1px 2px rgba(37, 42, 44, 0.04), 0 8px 24px rgba(37, 42, 44, 0.06);
+  --tr-plan-shadow-card: 0 1px 2px rgba(37, 42, 44, 0.04), 0 14px 34px rgba(37, 42, 44, 0.08);
+  --tr-plan-shadow-button: 0 8px 20px rgba(78, 96, 107, 0.2);
+}
+
+.dark .tr-plan-root {
+  --tr-canvas: #151818;
+  --tr-surface: #1d2020;
+  --tr-surface-2: #252929;
+  --tr-hairline: rgba(244, 245, 242, 0.1);
+  --tr-ink: #f4f5f2;
+  --tr-ink-2: #b9c0c2;
+  --tr-ink-3: #899295;
+  --tr-accent: #f4f5f2;
+  --tr-accent-deep: #ffffff;
+  --tr-accent-soft: rgba(145, 163, 170, 0.16);
+  --tr-safe: #91a3aa;
+  --tr-danger: #d27a7a;
+  --tr-danger-soft: rgba(210, 122, 122, 0.18);
+  --tr-bubble-me-ink: #151818;
+  --tr-plan-hero: #101313;
+  --tr-plan-hero-ink: #f4f5f2;
+  --tr-plan-hero-muted: #a9b4b7;
+  --tr-plan-secondary: #b9c0c2;
+  --tr-plan-shadow-soft: none;
+  --tr-plan-shadow-card: none;
+  --tr-plan-shadow-button: none;
+}
+
+.tr-plan-root .tr-card {
+  border: 1px solid var(--tr-hairline);
+  box-shadow: var(--tr-plan-shadow-card);
+}
+
+.tr-plan-hero {
+  background: var(--tr-plan-hero);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+  box-shadow: var(--tr-plan-shadow-card);
+  padding: 18px;
+}
+
+.tr-plan-course-card {
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    border-color 160ms ease;
+}
+
+.tr-plan-course-card:active {
+  transform: scale(0.995);
+}
+
+.tr-plan-line-clamp-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 
 /* Home dashboard card (H2.1): cool tile surface + hairline + soft elevation.

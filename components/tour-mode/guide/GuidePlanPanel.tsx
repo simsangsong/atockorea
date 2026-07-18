@@ -163,8 +163,8 @@ export default function GuidePlanPanel({
   }, [api]);
 
   const planStatus = data?.day_plan?.status ?? null;
-  const hasDraft = planStatus === 'guest_draft';
-  const isActive = planStatus !== null && planStatus !== 'guest_draft';
+  const hasDraft = planStatus === 'guest_draft' || planStatus === 'guest_submitted';
+  const isActive = planStatus === 'guide_confirmed' || planStatus === 'live' || planStatus === 'done';
 
   const newStopIds = useMemo(
     () => (hasDraft && data ? markNewStops(stops, data.schedule as never) : new Set<string>()),
