@@ -28,6 +28,8 @@ import { startVoiceRecording } from '@/lib/tour-room/recorder';
 import { isDeviceSttSupported, startDeviceStt } from '@/lib/tour-room/deviceStt';
 import MicPrime from '@/components/tour-mode/MicPrime';
 import OperatorAssist from '@/components/tour-mode/guide/OperatorAssist';
+import LocationPreview from '@/components/tour-mode/LocationPreview';
+import { parseLocationMessage } from '@/lib/tour-room/locationMessage';
 import {
   AlarmClock,
   Bell,
@@ -601,20 +603,29 @@ export default function Cockpit({
         {recent.map((message) => {
           const mine = message.sender_role === 'driver' || message.sender_role === 'guide';
           const system = message.sender_role === 'system' || message.sender_role === 'admin';
+          const text = koText(message);
+          // A location message (…q=lat,lng) becomes an inline map preview.
+          const loc = parseLocationMessage(text);
           return (
             <div key={message.id} className={mine ? 'self-end' : 'self-start'}>
               {!mine && !system ? <p className="mb-1 text-sm font-semibold text-[var(--tr-ink-2)]">손님</p> : null}
-              <div
-                className={
-                  mine
-                    ? 'max-w-[85vw] rounded-3xl rounded-br-md bg-[var(--tr-bubble-me)] px-5 py-4 text-xl font-medium text-[var(--tr-bubble-me-ink)]'
-                    : system
-                      ? 'max-w-[85vw] rounded-2xl bg-[var(--tr-surface-2)] px-4 py-3 text-base text-[var(--tr-ink-2)]'
-                      : 'max-w-[85vw] rounded-3xl rounded-bl-md bg-[var(--tr-surface-2)] px-5 py-4 text-2xl font-semibold text-[var(--tr-ink)]'
-                }
-              >
-                {koText(message)}
-              </div>
+              {loc ? (
+                <div className="max-w-[85vw]">
+                  <LocationPreview lat={loc.lat} lng={loc.lng} label={loc.label} url={loc.url} />
+                </div>
+              ) : (
+                <div
+                  className={
+                    mine
+                      ? 'max-w-[85vw] rounded-3xl rounded-br-md bg-[var(--tr-bubble-me)] px-5 py-4 text-xl font-medium text-[var(--tr-bubble-me-ink)]'
+                      : system
+                        ? 'max-w-[85vw] rounded-2xl bg-[var(--tr-surface-2)] px-4 py-3 text-base text-[var(--tr-ink-2)]'
+                        : 'max-w-[85vw] rounded-3xl rounded-bl-md bg-[var(--tr-surface-2)] px-5 py-4 text-2xl font-semibold text-[var(--tr-ink)]'
+                  }
+                >
+                  {text}
+                </div>
+              )}
             </div>
           );
         })}

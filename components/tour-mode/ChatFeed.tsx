@@ -23,7 +23,9 @@ import Avatar from '@/components/tour-mode/Avatar';
 import ExtraLedgerCard, { type ExtraLedgerMeta } from '@/components/tour-mode/ExtraLedgerCard';
 import SpotArrivalCard from '@/components/tour-mode/SpotArrivalCard';
 import Lightbox from '@/components/tour-mode/Lightbox';
+import LocationPreview from '@/components/tour-mode/LocationPreview';
 import ReplyPreview from '@/components/tour-mode/ReplyPreview';
+import { parseLocationMessage } from '@/lib/tour-room/locationMessage';
 import Sheet from '@/components/tour-mode/Sheet';
 import {
   IconCopy,
@@ -484,6 +486,9 @@ export default function ChatFeed({
             const isImage = message.input_kind === 'image' && typeof attachment?.url === 'string';
             const isFile = message.input_kind === 'file' && typeof attachment?.url === 'string';
             const caption = displayText(message, viewerLocale, showingOriginal, preferredLocale);
+            // A driver/system location message (…q=lat,lng) renders as an inline
+            // map preview instead of a raw URL.
+            const loc = !isImage && !isFile ? parseLocationMessage(caption) : null;
 
             const textBubble = (
               <button
@@ -544,6 +549,8 @@ export default function ChatFeed({
                 </span>
                 <IconInstall size={16} aria-hidden />
               </a>
+            ) : loc ? (
+              <LocationPreview lat={loc.lat} lng={loc.lng} label={loc.label} url={loc.url} />
             ) : (
               textBubble
             );
