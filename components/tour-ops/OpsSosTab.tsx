@@ -24,8 +24,8 @@ export default function OpsSosTab({
     return (
       <div className="mt-16 text-center">
         <p className="text-3xl">🟢</p>
-        <p className="mt-2 text-sm font-medium text-slate-300">활성 SOS가 없습니다</p>
-        <p className="mt-1 text-[12px] text-slate-500">SOS 발생 시 이 탭에 즉시 표시되고 사운드가 울립니다.</p>
+        <p className="mt-2 text-sm font-medium text-[var(--tr-ink)]">활성 SOS가 없습니다</p>
+        <p className="mt-1 text-[12px] text-[var(--tr-ink-3)]">SOS 발생 시 이 탭에 즉시 표시되고 사운드가 울립니다.</p>
       </div>
     );
   }
