@@ -105,6 +105,21 @@ export function pinLabel(pin: FacilityPin, locale: RoomLocale): string {
   );
 }
 
+/**
+ * Guest-facing label (F-D3 A안). Auto-collected restroom names are Korean
+ * (e.g. "천지연폭포 공중화장실") — useless to a foreign guest, who just needs
+ * "there's a restroom, X away". So for restrooms without a curated per-locale
+ * name we show the localized kind label ("Restroom" / "トイレ" / …). Photo spots
+ * are always curated with their own name, so they keep it. The raw Korean name
+ * still lives in `name` for the admin editor (pinLabel).
+ */
+export function guestPinLabel(pin: FacilityPin, locale: RoomLocale): string {
+  const curated = pin.nameI18n?.[locale]?.trim();
+  if (curated) return curated;
+  if (pin.kind === 'restroom') return KIND_DEFAULT_LABEL.restroom[locale];
+  return pin.name?.trim() || KIND_DEFAULT_LABEL[pin.kind][locale];
+}
+
 /** Native-maps directions target for tapping a pin's row. */
 export function pinDirectionsUrl(pin: FacilityPin): string {
   return `https://www.google.com/maps/dir/?api=1&destination=${pin.lat.toFixed(6)},${pin.lng.toFixed(6)}`;

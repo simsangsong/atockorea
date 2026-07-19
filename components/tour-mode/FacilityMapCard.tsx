@@ -15,7 +15,7 @@ import { MapPin, Navigation, Toilet, Camera } from 'lucide-react';
 import {
   facilityStaticMapPath,
   pinDirectionsUrl,
-  pinLabel,
+  guestPinLabel,
   type FacilityPin,
 } from '@/lib/tour-room/facilityPins';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
@@ -78,7 +78,7 @@ export default function FacilityMapCard({
                 <Icon size={15} className="shrink-0 text-[var(--tr-ink-3)]" aria-hidden />
               )}
               <span className="tr-card-text min-w-0 flex-1 truncate text-[var(--tr-ink)]">
-                {pinLabel(pin, locale)}
+                {guestPinLabel(pin, locale)}
               </span>
               <Navigation size={14} className="shrink-0 text-[var(--tr-accent-deep)]" aria-hidden />
             </a>
