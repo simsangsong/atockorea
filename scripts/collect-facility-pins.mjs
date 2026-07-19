@@ -27,8 +27,7 @@ import { createClient } from '@supabase/supabase-js';
 
 const KIND = 'restroom';
 const MAX_PER_POI = 3;
-const MAX_RADIUS_M = 350; // rankby=distance can return far hits; cap them
-const PLACES_DELAY_MS = 150; // gentle pacing for the Places QPS
+const PLACES_DELAY_MS = 150; // gentle pacing for the provider QPS
 // Korean keyword lands far better than the (unsupported) legacy `type=toilet`.
 const KEYWORD = '화장실';
 
@@ -40,6 +39,7 @@ const DRY = process.argv.includes('--dry');
 const REGION = arg('region');
 const LIMIT = arg('limit') ? Number(arg('limit')) : null;
 const PROVIDER = arg('provider', 'google'); // 'google' (Places API New) | 'kakao' (Local keyword)
+const MAX_RADIUS_M = arg('radius') ? Number(arg('radius')) : 350; // search + cap radius (m)
 
 function haversineM(aLat, aLng, bLat, bLng) {
   const R = 6371000;
