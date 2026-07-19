@@ -29,6 +29,7 @@ import {
   IconCopy,
   IconFile,
   IconInstall,
+  IconMore,
   IconOpsBadge,
   IconOriginal,
   IconReply,
@@ -442,6 +443,17 @@ export default function ChatFeed({
                   mine ? 'items-end' : 'items-start'
                 }`}
               >
+                {(onReply || onReact) && !message._local && (
+                  <button
+                    type="button"
+                    onClick={() => setActionMsg(message)}
+                    aria-label="message actions"
+                    className="flex h-6 w-6 items-center justify-center rounded-full text-[var(--tr-ink-3)] active:bg-[var(--tr-bubble-system)]"
+                    data-testid="msg-actions"
+                  >
+                    <IconMore size={15} aria-hidden />
+                  </button>
+                )}
                 {readMark && (
                   <span className="font-semibold text-[var(--tr-safe)]" data-testid="read-mark">
                     {READ_LABEL[viewerLocale]}
