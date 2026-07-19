@@ -15,6 +15,7 @@
 
 import { useCallback, useEffect, useMemo, useRef } from 'react';
 import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
+import { Crosshair, Maximize2 } from 'lucide-react';
 import {
   GOOGLE_MAPS_LOADER_ID,
   GOOGLE_MAPS_LOADER_VERSION,
@@ -110,6 +111,40 @@ export default function RoomMapCanvas({
     }
   }, [followGuide, guide]);
 
+  // One-tap "recenter to me": prefer my shared marker, else ask the device
+  // (works even when location sharing is off — the common case).
+  const recenterToMe = useCallback(() => {
+    const map = mapRef.current;
+    if (!map) return;
+    const mine = myParticipantId ? locations[myParticipantId] : null;
+    if (mine) {
+      map.panTo({ lat: mine.latitude, lng: mine.longitude });
+      map.setZoom(16);
+      return;
+    }
+    if (typeof navigator !== 'undefined' && navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          map.panTo({ lat: pos.coords.latitude, lng: pos.coords.longitude });
+          map.setZoom(16);
+        },
+        () => {
+          /* denied/unavailable — the button just no-ops */
+        },
+        { enableHighAccuracy: true, timeout: 8000 },
+      );
+    }
+  }, [locations, myParticipantId]);
+
+  // Re-fit the map to everyone + every stop (undo an accidental zoom-out).
+  const fitAll = useCallback(() => {
+    const map = mapRef.current;
+    if (!map || allPoints.length === 0) return;
+    const bounds = new google.maps.LatLngBounds();
+    allPoints.forEach((p) => bounds.extend(p));
+    map.fitBounds(bounds, 48);
+  }, [allPoints]);
+
   if (!isLoaded) {
     return (
       <div className="tr-skeleton flex h-full min-h-[300px] items-center justify-center rounded-[var(--tr-radius-card)]">
@@ -123,22 +158,47 @@ export default function RoomMapCanvas({
     : allPoints[0] ?? { lat: 37.5665, lng: 126.978 };
 
   return (
-    <GoogleMap
-      mapContainerStyle={{ width: '100%', height: '100%', minHeight: '300px', borderRadius: '16px' }}
-      center={center}
-      zoom={14}
-      onLoad={onLoad}
-      onUnmount={onUnmount}
-      options={{
-        disableDefaultUI: true,
-        zoomControl: true,
-        streetViewControl: false,
-        mapTypeControl: false,
-        fullscreenControl: false,
-        clickableIcons: false,
-        styles: MAP_STYLE,
-      }}
-    >
+    <div className="relative h-full w-full">
+      {/* Map option controls — recenter to me + fit everyone (bottom-left, clear
+          of the native zoom control on the right). */}
+      <div className="absolute bottom-3 left-3 z-10 flex flex-col gap-2">
+        <button
+          type="button"
+          onClick={recenterToMe}
+          aria-label="내 위치로"
+          className="flex h-11 w-11 items-center justify-center rounded-full bg-[var(--tr-surface)] text-[var(--tr-accent-deep)] active:scale-95"
+          style={{ boxShadow: 'var(--tr-shadow-overlay)' }}
+          data-testid="map-recenter-me"
+        >
+          <Crosshair size={20} strokeWidth={2} aria-hidden />
+        </button>
+        <button
+          type="button"
+          onClick={fitAll}
+          aria-label="전체 보기"
+          className="flex h-11 w-11 items-center justify-center rounded-full bg-[var(--tr-surface)] text-[var(--tr-ink-2)] active:scale-95"
+          style={{ boxShadow: 'var(--tr-shadow-overlay)' }}
+          data-testid="map-fit-all"
+        >
+          <Maximize2 size={18} strokeWidth={2} aria-hidden />
+        </button>
+      </div>
+      <GoogleMap
+        mapContainerStyle={{ width: '100%', height: '100%', minHeight: '300px', borderRadius: 'var(--tr-radius-card)' }}
+        center={center}
+        zoom={14}
+        onLoad={onLoad}
+        onUnmount={onUnmount}
+        options={{
+          disableDefaultUI: true,
+          zoomControl: true,
+          streetViewControl: false,
+          mapTypeControl: false,
+          fullscreenControl: false,
+          clickableIcons: false,
+          styles: MAP_STYLE,
+        }}
+      >
       {/* numbered spot pins */}
       {spots.map((spot, index) =>
         typeof spot.latitude === 'number' && typeof spot.longitude === 'number' ? (
@@ -226,6 +286,7 @@ export default function RoomMapCanvas({
           />
         );
       })}
-    </GoogleMap>
+      </GoogleMap>
+    </div>
   );
 }

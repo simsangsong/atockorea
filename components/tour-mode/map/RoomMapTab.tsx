@@ -107,7 +107,12 @@ export default function RoomMapTab({
       <PresenceBar presence={presence} locale={locale} myParticipantId={myParticipantId} />
       <LocationShareCard locale={locale} enabled={sharing} status={status} onToggle={onToggle} />
 
-      <div className="relative min-h-0 flex-1">
+      {/* Framed map card — a hairline + soft shadow so the map reads as a
+          contained surface, not a raw full-bleed embed. */}
+      <div
+        className="relative min-h-0 flex-1 overflow-hidden rounded-[var(--tr-radius-card)] border border-[var(--tr-hairline)]"
+        style={{ boxShadow: 'var(--tr-shadow-overlay)' }}
+      >
         <RoomMapCanvas
           locations={locations}
           myParticipantId={myParticipantId}

@@ -15,6 +15,8 @@
  */
 
 import { useEffect, useRef, useState, type ReactNode } from 'react';
+import Link from 'next/link';
+import { ChevronLeft } from 'lucide-react';
 import EmergencyCard from '@/components/tour-mode/EmergencyCard';
 import Sheet from '@/components/tour-mode/Sheet';
 import { useKeyboardOpen } from '@/components/tour-mode/useKeyboardOpen';
@@ -160,6 +162,7 @@ export default function RoomShell({
   theme = 'light',
   chatActivityKey,
   initialTab,
+  backHref,
 }: {
   title: string;
   subtitle?: string;
@@ -192,6 +195,9 @@ export default function RoomShell({
   chatActivityKey?: number;
   /** Phase 3 — deep-link: land on this tab instead of the default. */
   initialTab?: RoomTab;
+  /** Optional in-app back target (e.g. guide → console, guest → tour-mode home).
+   *  Renders a back chevron so phone users aren't stuck exiting the whole app. */
+  backHref?: string;
 }) {
   const [tab, setTab] = useState<RoomTab>(initialTab ?? (home ? 'home' : 'chat'));
   const [emergencyOpen, setEmergencyOpen] = useState(false);
@@ -282,6 +288,16 @@ export default function RoomShell({
           className="tr-safe-top tr-hairline-b z-30 flex shrink-0 items-center gap-2 bg-[var(--tr-surface)] px-4"
           style={{ minHeight: 'var(--tr-header-h)' }}
         >
+          {backHref && (
+            <Link
+              href={backHref}
+              aria-label="뒤로"
+              className="-ml-1.5 flex h-11 w-9 shrink-0 items-center justify-center rounded-full text-[var(--tr-ink-2)] active:bg-[var(--tr-surface-2)]"
+              data-testid="room-back"
+            >
+              <ChevronLeft size={24} strokeWidth={2.25} aria-hidden />
+            </Link>
+          )}
           <div className="min-w-0 flex-1 py-1.5">
             <div className="flex items-center gap-2">
               <h1 className="tr-title truncate text-[var(--tr-ink)]">{title}</h1>
