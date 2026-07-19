@@ -6,6 +6,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import ConciergeEntryRow from '@/components/tour-mode/ConciergeEntryRow';
 import ConciergeInlineAnswer from '@/components/tour-mode/ConciergeInlineAnswer';
+import OperatorAssist from '@/components/tour-mode/guide/OperatorAssist';
 import RoomShell from '@/components/tour-mode/RoomShell';
 import { CONCIERGE_COPY } from '@/lib/tour-room/concierge';
 
@@ -37,6 +38,15 @@ describe('ConciergeInlineAnswer (C)', () => {
     expect(onOpen).toHaveBeenCalledTimes(1);
     fireEvent.click(screen.getByTestId('concierge-inline-dismiss'));
     expect(onDismiss).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('OperatorAssist (B)', () => {
+  it('renders the staff intro, suggestions and the ask input', () => {
+    render(<OperatorAssist bookingId="bk-1" token="tok" />);
+    expect(screen.getByTestId('operator-assist')).toHaveTextContent('손님에게 답하거나');
+    expect(screen.getByTestId('operator-assist-suggestions')).toBeInTheDocument();
+    expect(screen.getByTestId('operator-assist-input')).toBeInTheDocument();
   });
 });
 

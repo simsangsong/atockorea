@@ -255,3 +255,33 @@ describe('POST /api/tour-rooms/[bookingId]/concierge', () => {
     expect(json.kind).toBe('tier1');
   });
 });
+
+describe('B — operator mode (guide / driver)', () => {
+  const guideSession = () =>
+    signRoomSession({ roomId: 'room-1', bookingId: 'booking-1', participantId: 'g-1', role: 'guide', displayName: 'Guide' })
+      .session;
+  const askAsGuide = (question: string) =>
+    conciergePOST(
+      fakeReq({ headers: { 'x-tour-room-auth': guideSession() }, json: { question, locale: 'ko' } }),
+      routeParams(),
+    );
+
+  it('a guide ops question is answered inline, never escalated to the room feed', async () => {
+    const db = fakeDb();
+    createServerClientMock.mockReturnValue(db);
+    const res = await askAsGuide('can I get a refund for this guest?');
+    const json = await res.json();
+    // Customer would 'escalate'; the operator IS the handoff, so it answers.
+    expect(json.kind).toBe('tier1');
+    expect(db.inserted).toHaveLength(0);
+    expect(broadcastMock).not.toHaveBeenCalled();
+  });
+
+  it('uses the operator (staff-framed) system prompt, not the guest persona', async () => {
+    const res = await askAsGuide('draft a message telling guests we leave in 10 minutes');
+    await res.json();
+    expect(chatCompletionMock).toHaveBeenCalledTimes(1);
+    const [, messages] = chatCompletionMock.mock.calls[0];
+    expect(messages[0].content).toContain('GUIDE/DRIVER');
+  });
+});
