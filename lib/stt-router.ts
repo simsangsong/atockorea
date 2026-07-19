@@ -99,6 +99,18 @@ function fallbackReasons(data: VerboseTranscription, quality: SttQuality): strin
   return reasons;
 }
 
+/**
+ * Only whisper-family models return `verbose_json` (segments, logprobs,
+ * no_speech_prob) — the router's quality heuristics depend on those fields.
+ * OpenAI's gpt-4o(-mini)-transcribe models REJECT verbose_json with a 400
+ * ("Use 'json' or 'text' instead"), so we must downgrade the format for them
+ * or the whole transcription (and, when this is the fallback, the message
+ * send) fails. Groq's whisper-large-v3* and OpenAI's whisper-1 support it.
+ */
+function supportsVerboseJson(model: string): boolean {
+  return /whisper/i.test(model);
+}
+
 async function transcribeWithProvider(file: File, provider: SttProvider, prompt?: string): Promise<{
   model: string;
   data: VerboseTranscription;
@@ -107,10 +119,10 @@ async function transcribeWithProvider(file: File, provider: SttProvider, prompt?
   const model =
     provider === 'groq'
       ? process.env.GROQ_STT_MODEL || 'whisper-large-v3-turbo'
-      : process.env.OPENAI_TRANSCRIBE_MODEL || 'gpt-4o-mini-transcribe';
+      : process.env.OPENAI_TRANSCRIBE_MODEL || 'whisper-1';
   body.append('model', model);
   body.append('file', file);
-  body.append('response_format', 'verbose_json');
+  body.append('response_format', supportsVerboseJson(model) ? 'verbose_json' : 'json');
   if (prompt) body.append('prompt', prompt.slice(0, 900));
 
   const baseUrl = provider === 'groq' ? GROQ_API_BASE : OPENAI_API_BASE;
