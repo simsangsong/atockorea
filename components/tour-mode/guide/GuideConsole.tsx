@@ -33,6 +33,7 @@ import {
   Mic,
   RefreshCw,
   Send,
+  Sparkles,
   Square,
   Timer,
   Users,
@@ -41,6 +42,7 @@ import {
 } from 'lucide-react';
 import GuideLedgerPanel from '@/components/tour-mode/guide/GuideLedgerPanel';
 import GuidePlanPanel from '@/components/tour-mode/guide/GuidePlanPanel';
+import OperatorAssist from '@/components/tour-mode/guide/OperatorAssist';
 import MicPrime from '@/components/tour-mode/MicPrime';
 import Sheet from '@/components/tour-mode/Sheet';
 import Cockpit, { type CockpitLifecycle, type CockpitRoom } from '@/components/tour-mode/cockpit/Cockpit';
@@ -176,6 +178,8 @@ export default function GuideConsole() {
   const [refreshing, setRefreshing] = useState(false);
   const [openPlanBookingId, setOpenPlanBookingId] = useState<string | null>(null);
   const [openLedgerBookingId, setOpenLedgerBookingId] = useState<string | null>(null);
+  // B — per-room operator AI assist (staff-facing Smart Guide).
+  const [openAssistBookingId, setOpenAssistBookingId] = useState<string | null>(null);
   // P4 redesign: day-wide tools collapse behind one section with a segment.
   const [dayToolsOpen, setDayToolsOpen] = useState(false);
   const [daySeg, setDaySeg] = useState<'broadcast' | 'meeting' | 'free'>('broadcast');
@@ -592,6 +596,15 @@ export default function GuideConsole() {
                     <Wallet size={15} aria-hidden />
                     정산
                   </button>
+                  <button
+                    type="button"
+                    onClick={() => setOpenAssistBookingId(room.booking_id)}
+                    className="tr-label flex min-h-[42px] items-center justify-center gap-1 rounded-xl bg-[var(--tr-surface-2)] px-3 font-bold text-[var(--tr-ink-2)]"
+                    data-testid="assist-toggle"
+                  >
+                    <Sparkles size={15} aria-hidden />
+                    AI
+                  </button>
                 </div>
 
                 {/* drive mode — enter the shared dark cockpit for this room */}
@@ -888,6 +901,11 @@ export default function GuideConsole() {
       {openLedgerBookingId && tokenRef.current && (
         <Sheet open onClose={() => setOpenLedgerBookingId(null)} closeLabel="닫기" title="정산">
           <GuideLedgerPanel bookingId={openLedgerBookingId} token={tokenRef.current} />
+        </Sheet>
+      )}
+      {openAssistBookingId && tokenRef.current && (
+        <Sheet open onClose={() => setOpenAssistBookingId(null)} closeLabel="닫기" title="AI 도우미">
+          <OperatorAssist bookingId={openAssistBookingId} token={tokenRef.current} />
         </Sheet>
       )}
     </div>

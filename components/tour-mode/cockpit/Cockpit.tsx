@@ -27,6 +27,7 @@ import { useTourRoomChannel, type RoomMessage } from '@/hooks/useTourRoomChannel
 import { startVoiceRecording } from '@/lib/tour-room/recorder';
 import { isDeviceSttSupported, startDeviceStt } from '@/lib/tour-room/deviceStt';
 import MicPrime from '@/components/tour-mode/MicPrime';
+import OperatorAssist from '@/components/tour-mode/guide/OperatorAssist';
 import {
   googleDirectionsUrl,
   kakaoNaviUrl,
@@ -199,7 +200,7 @@ export default function Cockpit({
   const [textDraft, setTextDraft] = useState('');
   const [textSending, setTextSending] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
-  const [sheet, setSheet] = useState<'none' | 'delay' | 'schedule' | 'return' | 'expense'>('none');
+  const [sheet, setSheet] = useState<'none' | 'delay' | 'schedule' | 'return' | 'expense' | 'assist'>('none');
   const [pushOn, setPushOn] = useState(false);
   const [expItem, setExpItem] = useState('');
   const [expAmount, setExpAmount] = useState('');
@@ -742,6 +743,7 @@ export default function Cockpit({
             }
           }}
         />
+        <ActionButton label="AI 도우미" emoji="✨" onClick={() => setSheet('assist')} />
       </div>
 
       {/* expense log (secondary, deliberate) */}
@@ -757,6 +759,15 @@ export default function Cockpit({
       </div>
 
       {/* sheets */}
+      {sheet === 'assist' ? (
+        <Sheet onClose={() => setSheet('none')} title="AI 도우미">
+          {/* .dark so OperatorAssist's tr-* tokens match the cockpit's dark sheet. */}
+          <div className="dark">
+            <OperatorAssist bookingId={bookingId} roomSession={session} />
+          </div>
+        </Sheet>
+      ) : null}
+
       {sheet === 'delay' ? (
         <Sheet onClose={() => setSheet('none')} title="몇 분 늦나요?">
           <div className="grid grid-cols-3 gap-3">
