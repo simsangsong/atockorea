@@ -47,6 +47,9 @@ import { koreanAllergyCardLines } from '@/lib/tour-room/allergyCard';
 import { formatMinutes, haversineKm, totalDriveMinutes, type LatLng } from '@/lib/itinerary-builder/distance';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 import { useTourRoomSession } from '@/hooks/useTourRoomSession';
+import PlanTourItinerary from '@/components/tour-mode/plan/PlanTourItinerary';
+import type { ItineraryStop } from '@/components/product-tour-static/_shared/tourProductDetailSectionTypes';
+import { MAX_PLAN_STOPS, tourStopToEditorStop } from '@/lib/tour-room/planTourStops';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -709,6 +712,12 @@ interface PlanStatusCopy {
   previewClose: string;
   replaceApply: string;
   cancel: string;
+  tourItinTitle: string;
+  tourItinSub: string;
+  tourItinApplyAll: string;
+  tourItinAdd: string;
+  tourItinAdded: string;
+  tourItinDetails: string;
 }
 
 const PLAN_STATUS_COPY: Record<RoomLocale, PlanStatusCopy> = {
@@ -729,6 +738,12 @@ const PLAN_STATUS_COPY: Record<RoomLocale, PlanStatusCopy> = {
     previewClose: 'Close course preview',
     replaceApply: 'Replace',
     cancel: 'Cancel',
+    tourItinTitle: 'This tour’s itinerary',
+    tourItinSub: 'The route your guide runs. Add stops to your wish-list, or start from the whole course.',
+    tourItinApplyAll: 'Start from this itinerary',
+    tourItinAdd: 'Add',
+    tourItinAdded: 'Added',
+    tourItinDetails: 'Details',
   },
   ko: {
     saveRateLimited: '저장이 너무 잦아요. 잠시 후 다시 시도해 주세요.',
@@ -747,6 +762,12 @@ const PLAN_STATUS_COPY: Record<RoomLocale, PlanStatusCopy> = {
     previewClose: '코스 미리보기 닫기',
     replaceApply: '대체',
     cancel: '취소',
+    tourItinTitle: '이 투어의 일정',
+    tourItinSub: '가이드가 안내하는 코스예요. 원하는 곳을 담거나, 이 일정으로 바로 시작해 보세요.',
+    tourItinApplyAll: '이 일정으로 시작하기',
+    tourItinAdd: '담기',
+    tourItinAdded: '담김',
+    tourItinDetails: '자세히',
   },
   ja: {
     saveRateLimited: '保存が頻繁すぎます。少し待ってから再試行してください。',
@@ -765,6 +786,12 @@ const PLAN_STATUS_COPY: Record<RoomLocale, PlanStatusCopy> = {
     previewClose: 'コースプレビューを閉じる',
     replaceApply: '置き換える',
     cancel: 'キャンセル',
+    tourItinTitle: 'このツアーの行程',
+    tourItinSub: 'ガイドが案内するコースです。気になるスポットを追加するか、この行程から始めましょう。',
+    tourItinApplyAll: 'この行程で始める',
+    tourItinAdd: '追加',
+    tourItinAdded: '追加済み',
+    tourItinDetails: '詳細',
   },
   zh: {
     saveRateLimited: '保存太频繁了。请稍候再试。',
@@ -783,6 +810,12 @@ const PLAN_STATUS_COPY: Record<RoomLocale, PlanStatusCopy> = {
     previewClose: '关闭路线预览',
     replaceApply: '替换',
     cancel: '取消',
+    tourItinTitle: '本次行程路线',
+    tourItinSub: '导游将带您走的路线。可添加想去的景点，或直接以此行程开始。',
+    tourItinApplyAll: '以此行程开始',
+    tourItinAdd: '添加',
+    tourItinAdded: '已添加',
+    tourItinDetails: '详情',
   },
   es: {
     saveRateLimited: 'Demasiados guardados seguidos. Espera un momento e inténtalo de nuevo.',
@@ -801,6 +834,12 @@ const PLAN_STATUS_COPY: Record<RoomLocale, PlanStatusCopy> = {
     previewClose: 'Cerrar la vista previa',
     replaceApply: 'Reemplazar',
     cancel: 'Cancelar',
+    tourItinTitle: 'El itinerario de este tour',
+    tourItinSub: 'La ruta que sigue tu guía. Añade paradas a tu lista o empieza con todo el itinerario.',
+    tourItinApplyAll: 'Empezar con este itinerario',
+    tourItinAdd: 'Añadir',
+    tourItinAdded: 'Añadido',
+    tourItinDetails: 'Detalles',
   },
 };
 
@@ -917,6 +956,9 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
   const [googleOpen, setGoogleOpen] = useState(false);
   const [previewTemplate, setPreviewTemplate] = useState<CourseTemplate | null>(null);
   const [replaceArmed, setReplaceArmed] = useState(false);
+  // §G tab ① — the BOOKED tour's own itinerary (rich stop cards + shared drawer).
+  const [tourStops, setTourStops] = useState<ItineraryStop[]>([]);
+  const [tourTitle, setTourTitle] = useState<string | null>(null);
   const [submitBusy, setSubmitBusy] = useState(false);
   const hydrated = useRef(false);
   const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -1009,6 +1051,19 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
         } else {
           setTemplatesState('error');
           setPoisState('ready');
+        }
+
+        // §G tab ① — the booked tour's own itinerary (best-effort: an absent
+        // detail page or a load failure just leaves the generic templates).
+        try {
+          const itinRes = await authedFetch(`/tour-itinerary?locale=${locale}`);
+          if (itinRes.ok) {
+            const itinBody = (await itinRes.json()) as { stops?: ItineraryStop[]; tourTitle?: string | null };
+            setTourStops(Array.isArray(itinBody.stops) ? itinBody.stops : []);
+            setTourTitle(itinBody.tourTitle ?? null);
+          }
+        } catch {
+          /* templates remain the fallback */
         }
       } catch {
         setLoadError(true);
@@ -1196,6 +1251,29 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
     setWarnings([]);
     setTab('pick');
     scheduleAutosave(draft);
+  };
+
+  // §G tab ① — adopt the whole booked-tour itinerary as the wish-list plan.
+  const applyTourItinerary = () => {
+    const nextStops = tourStops
+      .map((s, i) => tourStopToEditorStop(s, s._poi_meta?.poi_key ? poiByKey.get(s._poi_meta.poi_key) : undefined, i))
+      .slice(0, MAX_PLAN_STOPS);
+    const draft = { stops: nextStops, needs: latestDraft.current.needs, stopsChanged: true };
+    if (outcome === 'delegated') setOutcome(null);
+    setStops(nextStops);
+    setWarnings([]);
+    setTab('pick');
+    scheduleAutosave(draft);
+  };
+
+  // …or add a single itinerary stop (deduped by poi_key, capped at MAX_PLAN_STOPS).
+  const addTourStop = (stop: ItineraryStop) => {
+    const poi = stop._poi_meta?.poi_key ? poiByKey.get(stop._poi_meta.poi_key) : undefined;
+    mutateStops((prev) => {
+      if (stop._poi_meta?.poi_key && prev.some((s) => s.poi_key === stop._poi_meta?.poi_key)) return prev;
+      if (prev.length >= MAX_PLAN_STOPS) return prev;
+      return [...prev, tourStopToEditorStop(stop, poi, prev.length)];
+    });
   };
 
   const closePreview = () => {
@@ -1402,6 +1480,24 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
             {/* tab ① courses */}
             {tab === 'courses' && (
               <div className="mt-3 flex flex-col gap-3">
+                <PlanTourItinerary
+                  stops={tourStops}
+                  locale={locale}
+                  tourTitle={tourTitle}
+                  canEdit
+                  addedKeys={new Set(stops.map((s) => s.poi_key).filter(Boolean) as string[])}
+                  labels={{
+                    sectionTitle: ui.tourItinTitle,
+                    sectionSub: ui.tourItinSub,
+                    applyAll: ui.tourItinApplyAll,
+                    add: ui.tourItinAdd,
+                    added: ui.tourItinAdded,
+                    details: ui.tourItinDetails,
+                    stopsCount: copy.courseStops,
+                  }}
+                  onApplyAll={applyTourItinerary}
+                  onAddStop={addTourStop}
+                />
                 {templatesState === 'loading' && (
                   <div className="tr-card px-4 py-4" role="status">
                     <p className="tr-card-text font-medium text-[var(--tr-ink-2)]">{ui.templatesLoading}</p>
