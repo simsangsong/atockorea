@@ -7,14 +7,18 @@ import { verifyRoomToken } from '@/lib/tour-room/token';
 export const dynamic = 'force-dynamic';
 
 /**
- * W3 (P-D15) — the driver console's PII-minimal data bundle for one tour day.
+ * W3 (P-D15) — the cockpit's PII-minimal data bundle for one tour day.
  *
- * GET /api/tour-mode/driver/overview?rt=<driver token>
+ * GET /api/tour-mode/driver/overview?rt=<driver OR guide token>
  *
  * Unlike the guide overview this returns NO contact names, languages, or
- * message excerpts — only what a driver needs: per-booking room handles,
- * guest counts, pickup stop (name/time/coords), and the resolver-chain day
- * schedule enriched with match_pois coords for the nav deep links (W3.2).
+ * message excerpts — only what the driving operator needs: per-booking room
+ * handles, guest counts, pickup stop (name/time/coords), and the resolver-chain
+ * day schedule enriched with match_pois coords for the nav deep links (W3.2).
+ *
+ * Phase 2 (unified cockpit): a guide who drives today enters the same dark
+ * cockpit, so a guide tour-date token is accepted too — the guide already sees
+ * richer data via its own overview, so this exposes nothing new to them.
  */
 
 export async function GET(req: NextRequest) {
@@ -23,8 +27,8 @@ export async function GET(req: NextRequest) {
 
     const token = req.nextUrl.searchParams.get('rt') ?? req.headers.get('x-tour-room-token');
     const payload = token ? verifyRoomToken(token) : null;
-    if (payload?.scope !== 'tour-date' || payload.role !== 'driver') {
-      return NextResponse.json({ error: 'A driver tour-date token is required' }, { status: 403 });
+    if (payload?.scope !== 'tour-date' || (payload.role !== 'driver' && payload.role !== 'guide')) {
+      return NextResponse.json({ error: 'A driver or guide tour-date token is required' }, { status: 403 });
     }
     const { tourId, tourDate } = payload;
 

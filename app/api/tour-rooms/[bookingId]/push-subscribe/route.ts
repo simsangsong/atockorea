@@ -11,8 +11,10 @@ export const dynamic = 'force-dynamic';
  * POST { subscription: { endpoint, keys: { p256dh, auth } } } → upsert a
  * booking-scoped row for the caller's role (delete-then-insert on the endpoint
  * capability URL). POST { unsubscribe: true, endpoint } removes it.
- * Customers (rally/delay pings) and drivers (guest-message alerts while in a
- * nav app) subscribe here; ops/guide devices subscribe through their console.
+ * Customers (rally/delay pings) and the driving operator (guest-message alerts
+ * while in a nav app) subscribe here — that operator is a pure driver OR a
+ * guide who is driving today (Phase 2 unified cockpit). Ops devices subscribe
+ * through the ops console.
  */
 export async function POST(
   req: NextRequest,
@@ -32,8 +34,8 @@ export async function POST(
       return NextResponse.json({ error: resolved.error }, { status: resolved.status });
     }
     const { booking, actor, authUserId } = resolved;
-    if (actor.role !== 'customer' && actor.role !== 'driver') {
-      return NextResponse.json({ error: 'Customers or drivers only' }, { status: 403 });
+    if (actor.role !== 'customer' && actor.role !== 'driver' && actor.role !== 'guide') {
+      return NextResponse.json({ error: 'Customers, drivers, or guides only' }, { status: 403 });
     }
 
     const gate = await requestGate({
