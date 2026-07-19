@@ -24,7 +24,8 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useTourRoomChannel, type RoomMessage } from '@/hooks/useTourRoomChannel';
-import { startVoiceRecording, type ActiveRecording } from '@/lib/tour-room/recorder';
+import { startVoiceRecording } from '@/lib/tour-room/recorder';
+import { isDeviceSttSupported, startDeviceStt } from '@/lib/tour-room/deviceStt';
 import MicPrime from '@/components/tour-mode/MicPrime';
 import {
   googleDirectionsUrl,
@@ -36,9 +37,17 @@ import {
   type NavDestination,
 } from '@/lib/tour-room/nav-links';
 
-const CANCEL_WINDOW_MS = 3000;
+/** Undo-send window after a clip/utterance finishes — a calm hold, not a
+ *  3·2·1 countdown. The progress line fills over exactly this long. */
+const UNDO_WINDOW_MS = 2400;
 export const OPS_PHONE = process.env.NEXT_PUBLIC_TOUR_OPS_PHONE ?? '';
 const VAPID_PUBLIC = process.env.NEXT_PUBLIC_WEB_PUSH_VAPID_PUBLIC_KEY ?? '';
+
+/** What a finished voice capture will send: recognized text (device STT) or an
+ *  audio clip to transcribe server-side (fallback). */
+type PendingVoice =
+  | { kind: 'text'; text: string }
+  | { kind: 'audio'; blob: Blob; mimeType: string };
 
 export type CockpitLifecycle = 'lobby' | 'live' | 'ended';
 
@@ -178,11 +187,15 @@ export default function Cockpit({
     initialMessages,
   });
 
-  const [recording, setRecording] = useState<ActiveRecording | null>(null);
+  // Voice is a small phase machine: idle → recording → pending (undo window) →
+  // sending → idle. Device STT (Web Speech) is preferred; audio upload is the
+  // fallback. `recMode` picks which the current capture is.
+  const [phase, setPhase] = useState<'idle' | 'recording' | 'pending' | 'sending'>('idle');
+  const [recMode, setRecMode] = useState<'device' | 'audio'>('audio');
   const [level, setLevel] = useState(0);
-  const [pendingClip, setPendingClip] = useState<{ blob: Blob; mimeType: string } | null>(null);
-  const [countdown, setCountdown] = useState(0);
-  const [sending, setSending] = useState(false);
+  const [interim, setInterim] = useState('');
+  const [pending, setPending] = useState<PendingVoice | null>(null);
+  const voiceRef = useRef<{ stop(): void; cancel(): void } | null>(null);
   const [textDraft, setTextDraft] = useState('');
   const [textSending, setTextSending] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
@@ -265,72 +278,112 @@ export default function Cockpit({
   }, [bookingId, session, textDraft, textSending, say]);
 
   // ── hands-free voice send ──────────────────────────────────────────────
-  const sendClip = useCallback(
-    async (clip: { blob: Blob; mimeType: string }) => {
-      setSending(true);
+  // One poster for both payloads: device-recognized text or an audio clip the
+  // server transcribes. Both land as the operator's message → translated → fanned out.
+  const sendVoice = useCallback(
+    async (payload: PendingVoice) => {
+      setPhase('sending');
       try {
-        const form = new FormData();
-        const ext = clip.mimeType.includes('mp4') ? 'm4a' : 'webm';
-        form.append('audio', new File([clip.blob], `driver.${ext}`, { type: clip.mimeType }));
-        const res = await fetch(`/api/tour-rooms/${bookingId}/messages`, {
-          method: 'POST',
-          headers: { 'x-tour-room-auth': session },
-          body: form,
-        });
-        if (!res.ok) say('전송 실패 — 다시 말해 주세요');
-        else say('전송 완료 ✓');
+        let res: Response;
+        if (payload.kind === 'text') {
+          res = await fetch(`/api/tour-rooms/${bookingId}/messages`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'x-tour-room-auth': session },
+            body: JSON.stringify({ text: payload.text }),
+          });
+        } else {
+          const form = new FormData();
+          const ext = payload.mimeType.includes('mp4') ? 'm4a' : 'webm';
+          form.append('audio', new File([payload.blob], `driver.${ext}`, { type: payload.mimeType }));
+          res = await fetch(`/api/tour-rooms/${bookingId}/messages`, {
+            method: 'POST',
+            headers: { 'x-tour-room-auth': session },
+            body: form,
+          });
+        }
+        say(res.ok ? '전송 완료 ✓' : '전송 실패 — 다시 말해 주세요');
       } catch {
         say('네트워크 오류 — 다시 말해 주세요');
       } finally {
-        setSending(false);
+        setPending(null);
+        setInterim('');
+        setPhase('idle');
       }
     },
     [bookingId, session, say],
   );
 
-  // 3s cancel window after the clip finishes.
+  // Undo-send window: a calm hold before the message goes (no numeric countdown).
   useEffect(() => {
-    if (!pendingClip) return;
-    setCountdown(CANCEL_WINDOW_MS / 1000);
-    const startedAt = Date.now();
-    const interval = window.setInterval(() => {
-      const left = CANCEL_WINDOW_MS - (Date.now() - startedAt);
-      setCountdown(Math.max(0, Math.ceil(left / 1000)));
-      if (left <= 0) {
-        window.clearInterval(interval);
-        const clip = pendingClip;
-        setPendingClip(null);
-        void sendClip(clip);
-      }
-    }, 200);
-    return () => window.clearInterval(interval);
-  }, [pendingClip, sendClip]);
+    if (phase !== 'pending' || !pending) return;
+    const payload = pending;
+    const timer = window.setTimeout(() => void sendVoice(payload), UNDO_WINDOW_MS);
+    return () => window.clearTimeout(timer);
+  }, [phase, pending, sendVoice]);
 
-  const toggleRecord = useCallback(async () => {
-    if (recording) {
-      recording.stop();
-      return;
-    }
-    if (pendingClip || sending) return;
-    try {
-      const handle = await startVoiceRecording({
-        onLevel: setLevel,
-        onFinish: (clip) => {
-          setRecording(null);
-          setLevel(0);
-          if (clip && clip.blob.size > 0) setPendingClip({ blob: clip.blob, mimeType: clip.mimeType });
-        },
-        onError: () => {
-          setRecording(null);
-          setLevel(0);
-          say('녹음 오류 — 다시 시도해 주세요');
+  const cancelPending = useCallback(() => {
+    setPending(null);
+    setInterim('');
+    setPhase('idle');
+  }, []);
+
+  // Start capturing: prefer device STT (free, instant text), else record audio
+  // for server transcription. Same tap stops it.
+  const startRecording = useCallback(() => {
+    setInterim('');
+    if (isDeviceSttSupported()) {
+      setRecMode('device');
+      setPhase('recording');
+      voiceRef.current = startDeviceStt({
+        lang: 'ko-KR',
+        onPartial: (text) => setInterim(text),
+        onFinal: (text) => {
+          voiceRef.current = null;
+          if (text) {
+            setPending({ kind: 'text', text });
+            setPhase('pending');
+          } else {
+            setPhase('idle');
+            say('다시 말해 주세요');
+          }
         },
       });
-      setRecording(handle);
-    } catch {
-      say('마이크 권한을 허용해 주세요');
+    } else {
+      setRecMode('audio');
+      setLevel(0);
+      setPhase('recording');
+      startVoiceRecording({
+        onLevel: setLevel,
+        onFinish: (clip) => {
+          voiceRef.current = null;
+          setLevel(0);
+          if (clip && clip.blob.size > 0) {
+            setPending({ kind: 'audio', blob: clip.blob, mimeType: clip.mimeType });
+            setPhase('pending');
+          } else {
+            setPhase('idle');
+          }
+        },
+        onError: () => {
+          voiceRef.current = null;
+          setLevel(0);
+          setPhase('idle');
+          say('녹음 오류 — 다시 시도해 주세요');
+        },
+      })
+        .then((handle) => {
+          voiceRef.current = handle;
+        })
+        .catch(() => {
+          setPhase('idle');
+          say('마이크 권한을 허용해 주세요');
+        });
     }
-  }, [recording, pendingClip, sending, say]);
+  }, [say]);
+
+  const stopRecording = useCallback(() => {
+    voiceRef.current?.stop();
+  }, []);
 
   // ── one-tap signals ────────────────────────────────────────────────────
   const signal = useCallback(
@@ -555,73 +608,123 @@ export default function Cockpit({
         </div>
       ) : null}
 
-      {/* pending clip cancel window */}
-      {pendingClip ? (
-        <div className="flex items-center justify-between gap-3 border-t border-neutral-800 bg-neutral-900 px-5 py-4">
-          <p className="text-xl font-bold text-white">전송 중… {countdown}</p>
-          <button
-            type="button"
-            onClick={() => setPendingClip(null)}
-            className="rounded-2xl bg-red-500 px-6 py-3 text-xl font-bold text-white"
-            data-testid="driver-cancel-send"
-          >
-            취소
-          </button>
-        </div>
-      ) : null}
+      {/* premium voice-input animations (listening bars, undo fill, send shimmer) */}
+      <style>{`
+        @keyframes cockpit-bar { 0% { height: 22%; } 100% { height: 100%; } }
+        .cockpit-bar { animation: cockpit-bar 620ms ease-in-out infinite alternate; }
+        @keyframes cockpit-fill { from { width: 0%; } to { width: 100%; } }
+        .cockpit-fill { animation: cockpit-fill ${UNDO_WINDOW_MS}ms linear forwards; }
+        @keyframes cockpit-shimmer { 0%, 100% { opacity: .45; } 50% { opacity: 1; } }
+        .cockpit-shimmer { animation: cockpit-shimmer 1150ms ease-in-out infinite; }
+      `}</style>
 
-      {/* typed send — always available (webview fallback / quiet typing) */}
-      <div className="px-4 pt-2">
-        <form
-          onSubmit={(event) => {
-            event.preventDefault();
-            void sendText();
-          }}
-          className="flex items-end gap-2"
-        >
-          <textarea
-            value={textDraft}
-            onChange={(event) => setTextDraft(event.target.value)}
-            rows={1}
-            maxLength={2000}
-            placeholder="타이핑해서 보내기"
-            enterKeyHint="send"
-            onKeyDown={(event) => {
-              if (event.key === 'Enter' && !event.shiftKey) {
+      {/* input dock — idle: type + mic; else elegant recording/undo/sending states */}
+      {phase === 'idle' ? (
+        <>
+          {/* typed send — always available (webview fallback / quiet typing) */}
+          <div className="px-4 pt-2">
+            <form
+              onSubmit={(event) => {
                 event.preventDefault();
                 void sendText();
-              }
-            }}
-            className="min-w-0 flex-1 resize-none rounded-2xl border border-neutral-700 bg-neutral-900 px-4 py-3 text-lg text-white placeholder:text-neutral-500 focus:border-neutral-500 focus:outline-none"
-            data-testid="driver-text-input"
-          />
-          <button
-            type="submit"
-            disabled={!textDraft.trim() || textSending}
-            className="shrink-0 rounded-2xl bg-neutral-100 px-5 py-3 text-lg font-bold text-neutral-950 disabled:opacity-40"
-            data-testid="driver-text-send"
+              }}
+              className="flex items-end gap-2"
+            >
+              <textarea
+                value={textDraft}
+                onChange={(event) => setTextDraft(event.target.value)}
+                rows={1}
+                maxLength={2000}
+                placeholder="타이핑해서 보내기"
+                enterKeyHint="send"
+                onKeyDown={(event) => {
+                  if (event.key === 'Enter' && !event.shiftKey) {
+                    event.preventDefault();
+                    void sendText();
+                  }
+                }}
+                className="min-w-0 flex-1 resize-none rounded-2xl border border-neutral-700 bg-neutral-900 px-4 py-3 text-lg text-white placeholder:text-neutral-500 focus:border-neutral-500 focus:outline-none"
+                data-testid="driver-text-input"
+              />
+              <button
+                type="submit"
+                disabled={!textDraft.trim() || textSending}
+                className="shrink-0 rounded-2xl bg-neutral-100 px-5 py-3 text-lg font-bold text-neutral-950 disabled:opacity-40"
+                data-testid="driver-text-send"
+              >
+                {textSending ? '…' : '보내기'}
+              </button>
+            </form>
+          </div>
+          <div className="px-4 pb-3 pt-2">
+            <MicPrime variant="dark" locale="ko" className="mb-2" />
+            <button
+              type="button"
+              onClick={startRecording}
+              className="w-full rounded-3xl bg-neutral-100 py-8 text-3xl font-bold text-neutral-950 transition-transform active:scale-[0.99]"
+              data-testid="driver-mic"
+            >
+              🎤 눌러서 말하기
+            </button>
+          </div>
+        </>
+      ) : phase === 'recording' ? (
+        <div className="px-4 pb-3 pt-2">
+          <div
+            className="mb-2 flex min-h-[56px] items-center gap-3 rounded-2xl bg-neutral-900 px-4 py-3"
+            data-testid="cockpit-listening"
           >
-            {textSending ? '…' : '보내기'}
+            <span className="flex h-6 items-end gap-0.5" aria-hidden>
+              {[0, 1, 2, 3, 4].map((i) => (
+                <span
+                  key={i}
+                  className={recMode === 'device' ? 'cockpit-bar w-1 rounded-full bg-red-400' : 'w-1 rounded-full bg-red-400'}
+                  style={
+                    recMode === 'device'
+                      ? { animationDelay: `${i * 110}ms` }
+                      : { height: `${Math.max(22, Math.min(100, 22 + level * 130))}%`, transition: 'height 90ms linear' }
+                  }
+                />
+              ))}
+            </span>
+            <p className="min-w-0 flex-1 truncate text-lg text-neutral-100">
+              {recMode === 'device' ? interim || '듣는 중…' : '녹음 중…'}
+            </p>
+          </div>
+          <button
+            type="button"
+            onClick={stopRecording}
+            className="w-full rounded-3xl bg-red-500 py-8 text-3xl font-bold text-white transition-transform active:scale-[0.99]"
+            data-testid="driver-mic"
+          >
+            ■ 말 끝났어요
           </button>
-        </form>
-      </div>
-
-      {/* mic */}
-      <div className="px-4 pb-3 pt-2">
-        <MicPrime variant="dark" locale="ko" className="mb-2" />
-        <button
-          type="button"
-          onClick={() => void toggleRecord()}
-          disabled={sending || Boolean(pendingClip)}
-          className={`w-full rounded-3xl py-8 text-3xl font-bold transition-colors disabled:opacity-50 ${
-            recording ? 'bg-red-500 text-white' : 'bg-neutral-100 text-neutral-950'
-          }`}
-          style={recording ? { boxShadow: `0 0 0 ${Math.round(4 + level * 26)}px rgba(239,68,68,0.25)` } : undefined}
-          data-testid="driver-mic"
-        >
-          {sending ? '전송 중…' : recording ? '■ 말 끝났어요' : '🎤 눌러서 말하기'}
-        </button>
-      </div>
+        </div>
+      ) : phase === 'pending' ? (
+        <div className="px-4 pb-3 pt-2">
+          {pending?.kind === 'text' ? (
+            <p className="mb-2 line-clamp-2 text-center text-xl font-medium text-neutral-100">“{pending.text}”</p>
+          ) : null}
+          <button
+            type="button"
+            onClick={cancelPending}
+            className="relative w-full overflow-hidden rounded-3xl bg-neutral-800 py-8 transition-transform active:scale-[0.99]"
+            data-testid="cockpit-undo-send"
+          >
+            <span aria-hidden className="cockpit-fill absolute bottom-0 left-0 h-1.5 rounded-full bg-white/80" />
+            <span className="relative text-2xl font-bold text-neutral-200">탭하여 취소</span>
+          </button>
+        </div>
+      ) : (
+        <div className="px-4 pb-3 pt-2">
+          <div
+            className="cockpit-shimmer w-full rounded-3xl bg-neutral-800 py-8 text-center text-2xl font-bold text-neutral-300"
+            data-testid="cockpit-sending"
+          >
+            전송 중…
+          </div>
+        </div>
+      )}
 
       {/* one-tap actions */}
       <div className="grid grid-cols-3 gap-2 px-4 pb-2.5">
