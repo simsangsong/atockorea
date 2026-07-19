@@ -7,6 +7,34 @@ import { broadcastToRoom } from '@/lib/tour-room/realtime';
 export const dynamic = 'force-dynamic';
 
 /**
+ * GET — cold-load the room's reactions so a reload/rejoin restores them
+ * (live changes arrive via the 'reaction' broadcast). Returns raw rows; the
+ * client aggregates + marks its own.
+ */
+export async function GET(
+  req: NextRequest,
+  { params }: { params: Promise<{ bookingId: string }> },
+) {
+  try {
+    const { bookingId } = await params;
+    const supabase = createServerClient();
+    const resolved = await resolveRoomActor(req, bookingId, { supabase });
+    if (!resolved.ok) {
+      return NextResponse.json({ error: resolved.error }, { status: resolved.status });
+    }
+    const room = await ensureRoom(supabase, resolved.booking);
+    const { data } = await supabase
+      .from('tour_room_message_reactions')
+      .select('message_id, emoji, participant_id')
+      .eq('room_id', room.id);
+    return NextResponse.json({ reactions: data ?? [] });
+  } catch (error) {
+    console.error('GET /api/tour-rooms/[bookingId]/reactions error:', error);
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
+  }
+}
+
+/**
  * Emoji reactions (Kakao-grade chat, Phase 1).
  *
  * POST /api/tour-rooms/[bookingId]/reactions { messageId, emoji }
