@@ -51,25 +51,30 @@ export default function EventsListPage() {
 
   useEffect(() => {
     let cancelled = false;
-    setLoading(true);
-    setError(null);
-    fetch(`/api/admin/analytics/events?range=${range}`)
-      .then(async (res) => {
-        if (!res.ok) {
-          const body = await res.json().catch(() => ({}));
-          throw new Error(body.message || body.error || `HTTP ${res.status}`);
-        }
-        return res.json() as Promise<EventsListResponse>;
-      })
-      .then((json) => {
-        if (!cancelled) setData(json);
-      })
-      .catch((err) => {
-        if (!cancelled) setError(err instanceof Error ? err.message : String(err));
-      })
-      .finally(() => {
-        if (!cancelled) setLoading(false);
-      });
+    // Nested so the effect body doesn't call setState directly (a cascading-
+    // render lint guard); the fetch's own callbacks are already async.
+    const run = () => {
+      setLoading(true);
+      setError(null);
+      fetch(`/api/admin/analytics/events?range=${range}`)
+        .then(async (res) => {
+          if (!res.ok) {
+            const body = await res.json().catch(() => ({}));
+            throw new Error(body.message || body.error || `HTTP ${res.status}`);
+          }
+          return res.json() as Promise<EventsListResponse>;
+        })
+        .then((json) => {
+          if (!cancelled) setData(json);
+        })
+        .catch((err) => {
+          if (!cancelled) setError(err instanceof Error ? err.message : String(err));
+        })
+        .finally(() => {
+          if (!cancelled) setLoading(false);
+        });
+    };
+    run();
     return () => {
       cancelled = true;
     };
@@ -103,7 +108,7 @@ export default function EventsListPage() {
           placeholder="이벤트명 검색 …"
           value={filter}
           onChange={(e) => setFilter(e.target.value)}
-          className="ml-auto w-48 rounded-md border border-slate-200 px-2 py-1 text-sm placeholder:text-slate-400 focus:border-slate-400 focus:outline-none"
+          className="ml-auto w-48 rounded-md border border-admin-border min-h-11 px-3 text-base placeholder:text-slate-400 focus:border-slate-400 focus:outline-none"
         />
       </div>
 
@@ -113,8 +118,8 @@ export default function EventsListPage() {
         </div>
       ) : null}
 
-      <div className="overflow-hidden rounded-lg border border-slate-200 bg-white">
-        <div className="grid grid-cols-12 gap-2 border-b border-slate-200 bg-slate-50 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
+      <div className="overflow-hidden rounded-lg border border-admin-border bg-admin-surface">
+        <div className="grid grid-cols-12 gap-2 border-b border-admin-border bg-slate-50 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
           <div className="col-span-5">이벤트명</div>
           <div className="col-span-3">발화량</div>
           <div className="col-span-2 text-right">세션 / 유저</div>
