@@ -290,7 +290,7 @@ export default function OrderDetailPage() {
       <div className="space-y-6">
         <div className="text-center py-12">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-          <p className="text-slate-500">Loading order details...</p>
+          <p className="text-slate-500">주문 정보를 불러오는 중…</p>
         </div>
       </div>
     );
@@ -300,12 +300,12 @@ export default function OrderDetailPage() {
     return (
       <div className="space-y-6">
         <div className="bg-red-50 border border-red-200 rounded-lg p-5">
-          <p className="text-red-800">Error: {error || 'Order not found'}</p>
+          <p className="text-red-800">오류: {error || '주문을 찾을 수 없습니다'}</p>
           <Link
             href="/admin/orders"
             className="mt-4 inline-block px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700"
           >
-            Back to Orders
+            주문 목록으로
           </Link>
         </div>
       </div>
@@ -368,9 +368,9 @@ export default function OrderDetailPage() {
             href="/admin/orders"
             className="text-blue-600 hover:text-blue-700 mb-2 inline-block"
           >
-            ← Back to Orders
+            ← 주문 목록으로
           </Link>
-          <h1 className="text-xl font-bold text-slate-900">Order Details</h1>
+          <h1 className="text-xl font-bold text-slate-900">주문 상세</h1>
           <p className="text-slate-500 mt-2">Order ID: {booking.id.substring(0, 8)}...</p>
         </div>
         <div className="flex gap-3">
@@ -391,10 +391,10 @@ export default function OrderDetailPage() {
             disabled={updating}
             className={`px-4 py-2 rounded-lg border-0 font-semibold ${getStatusColor(booking.status)}`}
           >
-            <option value="pending">Pending</option>
-            <option value="confirmed">Confirmed</option>
-            <option value="completed">Completed</option>
-            <option value="cancelled">Cancelled</option>
+            <option value="pending">대기</option>
+            <option value="confirmed">확정</option>
+            <option value="completed">완료</option>
+            <option value="cancelled">취소</option>
             <option value="no_show">No-show</option>
           </select>
         </div>
@@ -403,31 +403,31 @@ export default function OrderDetailPage() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Order Information */}
         <div className="bg-admin-surface rounded-design-md shadow-admin-card border border-admin-border p-5">
-          <h2 className="text-base font-semibold text-slate-900 mb-4">Order Information</h2>
+          <h2 className="text-base font-semibold text-slate-900 mb-4">주문 정보</h2>
           <div className="space-y-3">
             <div className="flex justify-between">
-              <span className="text-slate-500">Order ID:</span>
+              <span className="text-slate-500">주문 ID:</span>
               <span className="font-mono text-sm text-slate-900">{booking.id}</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-slate-500">Status:</span>
+              <span className="text-slate-500">상태:</span>
               <span className={`px-2 py-1 text-xs font-semibold rounded-full ${getStatusColor(booking.status)}`}>
                 {booking.status}
               </span>
             </div>
             <div className="flex justify-between">
-              <span className="text-slate-500">Payment Status:</span>
+              <span className="text-slate-500">결제 상태:</span>
               <span className="text-slate-900">{booking.payment_status || 'N/A'}</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-slate-500">Created:</span>
+              <span className="text-slate-500">생성일:</span>
               <span className="text-slate-900">
                 {new Date(booking.created_at).toLocaleString()}
               </span>
             </div>
             {booking.cancelled_at && (
               <div className="flex justify-between">
-                <span className="text-slate-500">Cancelled:</span>
+                <span className="text-slate-500">취소일:</span>
                 <span className="text-slate-900">
                   {new Date(booking.cancelled_at).toLocaleString()}
                 </span>
@@ -442,7 +442,7 @@ export default function OrderDetailPage() {
         {booking.source === 'itinerary_builder' ? (
           <div className="bg-admin-surface rounded-design-md shadow-admin-card border border-admin-border p-5">
             <div className="flex items-start justify-between gap-3 mb-4">
-              <h2 className="text-base font-semibold text-slate-900">Custom Itinerary</h2>
+              <h2 className="text-base font-semibold text-slate-900">맞춤 일정</h2>
               <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-0.5 text-xs font-semibold text-emerald-800 ring-1 ring-emerald-200">
                 <ClipboardList className="h-3 w-3" />
                 Builder
@@ -450,42 +450,42 @@ export default function OrderDetailPage() {
             </div>
             <div className="space-y-3">
               <div className="flex justify-between">
-                <span className="text-slate-500">Region:</span>
+                <span className="text-slate-500">지역:</span>
                 <span className="text-slate-900 capitalize">{booking.itinerary?.region ?? '—'}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-slate-500">Track:</span>
+                <span className="text-slate-500">트랙:</span>
                 <span className="text-slate-900 capitalize">{booking.itinerary?.track ?? '—'}</span>
               </div>
               {booking.itinerary?.duration_hours != null ? (
                 <div className="flex justify-between">
-                  <span className="text-slate-500">Duration:</span>
+                  <span className="text-slate-500">소요 시간:</span>
                   <span className="text-slate-900">
                     {booking.itinerary.duration_hours > 0
                       ? `${booking.itinerary.duration_hours}h`
-                      : 'Fixed product'}
+                      : '고정 상품'}
                   </span>
                 </div>
               ) : null}
               <div className="flex justify-between">
-                <span className="text-slate-500">Guide language:</span>
+                <span className="text-slate-500">가이드 언어:</span>
                 <span className="text-slate-900">{booking.itinerary?.guide_language ?? '—'}</span>
               </div>
               {booking.itinerary?.vehicle ? (
                 <div className="flex justify-between">
-                  <span className="text-slate-500">Vehicle:</span>
+                  <span className="text-slate-500">차량:</span>
                   <span className="text-slate-900 capitalize">{booking.itinerary.vehicle}</span>
                 </div>
               ) : null}
               <div className="flex justify-between">
-                <span className="text-slate-500">Tour Date:</span>
+                <span className="text-slate-500">투어 날짜:</span>
                 <span className="text-slate-900">
                   {new Date(booking.tour_date).toLocaleDateString()}
                 </span>
               </div>
               {booking.itinerary?.poi_keys && booking.itinerary.poi_keys.length > 0 ? (
                 <div>
-                  <span className="text-slate-500 block mb-2">Stops ({booking.itinerary.poi_keys.length}):</span>
+                  <span className="text-slate-500 block mb-2">장소 ({booking.itinerary.poi_keys.length}):</span>
                   <ol className="space-y-1 rounded-lg bg-slate-50 p-3">
                     {booking.itinerary.poi_keys.map((k, i) => (
                       <li key={k} className="flex items-center gap-2 text-sm">
@@ -502,10 +502,10 @@ export default function OrderDetailPage() {
           </div>
         ) : (
           <div className="bg-admin-surface rounded-design-md shadow-admin-card border border-admin-border p-5">
-            <h2 className="text-base font-semibold text-slate-900 mb-4">Tour Information</h2>
+            <h2 className="text-base font-semibold text-slate-900 mb-4">투어 정보</h2>
             <div className="space-y-3">
               <div>
-                <span className="text-slate-500">Tour:</span>
+                <span className="text-slate-500">투어:</span>
                 <Link
                   href={`/tour/${booking.tours?.slug}`}
                   target="_blank"
@@ -515,24 +515,24 @@ export default function OrderDetailPage() {
                 </Link>
               </div>
               <div className="flex justify-between">
-                <span className="text-slate-500">City:</span>
+                <span className="text-slate-500">도시:</span>
                 <span className="text-slate-900">{booking.tours?.city || 'N/A'}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-slate-500">Tour Date:</span>
+                <span className="text-slate-500">투어 날짜:</span>
                 <span className="text-slate-900">
                   {new Date(booking.tour_date).toLocaleDateString()}
                 </span>
               </div>
               {booking.tour_time && (
                 <div className="flex justify-between">
-                  <span className="text-slate-500">Tour Time:</span>
+                  <span className="text-slate-500">투어 시간:</span>
                   <span className="text-slate-900">{booking.tour_time}</span>
                 </div>
               )}
               {booking.pickup_points && (
                 <div>
-                  <span className="text-slate-500">Pickup Point:</span>
+                  <span className="text-slate-500">픽업 장소:</span>
                   <div className="mt-1 text-sm text-slate-900">
                     <div className="font-medium">{booking.pickup_points.name}</div>
                     <div className="text-slate-500">{booking.pickup_points.address}</div>
@@ -545,22 +545,22 @@ export default function OrderDetailPage() {
 
         {/* Customer Information */}
         <div className="bg-admin-surface rounded-design-md shadow-admin-card border border-admin-border p-5">
-          <h2 className="text-base font-semibold text-slate-900 mb-4">Customer Information</h2>
+          <h2 className="text-base font-semibold text-slate-900 mb-4">고객 정보</h2>
           <div className="space-y-3">
             <div className="flex justify-between">
-              <span className="text-slate-500">Name:</span>
+              <span className="text-slate-500">이름:</span>
               <span className="text-slate-900">
                 {booking.user_profiles?.full_name || booking.contact_name || 'N/A'}
               </span>
             </div>
             <div className="flex justify-between">
-              <span className="text-slate-500">Email:</span>
+              <span className="text-slate-500">이메일:</span>
               <span className="text-slate-900">
                 {booking.user_profiles?.email || booking.contact_email || 'N/A'}
               </span>
             </div>
             <div className="flex justify-between">
-              <span className="text-slate-500">Phone:</span>
+              <span className="text-slate-500">전화:</span>
               <span className="text-slate-900">
                 {booking.user_profiles?.phone || booking.contact_phone || 'N/A'}
               </span>
@@ -575,13 +575,13 @@ export default function OrderDetailPage() {
                   <>
                     {chatApp && (
                       <div className="flex justify-between">
-                        <span className="text-slate-500">Chat App:</span>
+                        <span className="text-slate-500">채팅 앱:</span>
                         <span className="text-slate-900 capitalize">{String(chatApp)}</span>
                       </div>
                     )}
                     {chatContact && (
                       <div className="flex justify-between">
-                        <span className="text-slate-500">Chat Contact:</span>
+                        <span className="text-slate-500">채팅 연락처:</span>
                         <span className="text-slate-900">{String(chatContact)}</span>
                       </div>
                     )}
@@ -596,28 +596,28 @@ export default function OrderDetailPage() {
 
         {/* Pricing Information */}
         <div className="bg-admin-surface rounded-design-md shadow-admin-card border border-admin-border p-5">
-          <h2 className="text-base font-semibold text-slate-900 mb-4">Pricing</h2>
+          <h2 className="text-base font-semibold text-slate-900 mb-4">요금</h2>
           <div className="space-y-3">
             <div className="flex justify-between">
-              <span className="text-slate-500">Number of People:</span>
+              <span className="text-slate-500">인원:</span>
               <span className="text-slate-900">{booking.number_of_people ?? booking.number_of_guests ?? '—'}</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-slate-500">Unit Price:</span>
+              <span className="text-slate-500">단가:</span>
               <span className="text-slate-900">{formatBookingPrice(booking.unit_price, booking.currency)}</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-slate-500">Total Price:</span>
+              <span className="text-slate-500">총 금액:</span>
               <span className="text-slate-900">{formatBookingPrice(booking.total_price, booking.currency)}</span>
             </div>
             {booking.discount_amount > 0 && (
               <div className="flex justify-between text-red-600">
-                <span>Discount:</span>
+                <span>할인:</span>
                 <span>-{formatBookingPrice(booking.discount_amount, booking.currency)}</span>
               </div>
             )}
             <div className="flex justify-between pt-3 border-t border-admin-border">
-              <span className="text-lg font-semibold text-slate-900">Final Price:</span>
+              <span className="text-lg font-semibold text-slate-900">최종 금액:</span>
               <span className="text-lg font-bold text-blue-600">
                 {formatBookingPrice(booking.final_price, booking.currency)}
               </span>
@@ -628,25 +628,25 @@ export default function OrderDetailPage() {
 
       {/* Payment / Settlement — capture the held card or release the hold */}
       <div className="bg-admin-surface rounded-design-md shadow-admin-card border border-admin-border p-5">
-        <h2 className="text-base font-semibold text-slate-900 mb-4">Payment / Settlement</h2>
+        <h2 className="text-base font-semibold text-slate-900 mb-4">결제 / 정산</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-3">
             <div className="flex justify-between">
-              <span className="text-slate-500">Hold Status:</span>
+              <span className="text-slate-500">홀드 상태:</span>
               <span
                 className={`px-2 py-1 text-xs font-semibold rounded-full ${getPiStatusColor(
                   booking.payment_intent_status,
                 )}`}
               >
-                {booking.payment_intent_status || 'no hold'}
+                {booking.payment_intent_status || 'hold 없음'}
               </span>
             </div>
             <div className="flex justify-between">
-              <span className="text-slate-500">Payment Status:</span>
+              <span className="text-slate-500">결제 상태:</span>
               <span className="text-slate-900">{booking.payment_status || 'N/A'}</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-slate-500">Hold Amount:</span>
+              <span className="text-slate-500">홀드 금액:</span>
               {/* Phase 10.6 — currency-aware: KRW builder bookings have
                   no_show_fee_usd_cents=NULL (intentionally — final_price is the
                   canonical hold amount). holdAmountLabel falls back to
@@ -655,18 +655,18 @@ export default function OrderDetailPage() {
               <span className="text-slate-900 tabular-nums">{holdAmountLabel}</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-slate-500">Card Collection:</span>
+              <span className="text-slate-500">카드 수집:</span>
               <span className="text-slate-900">
                 {booking.card_collection_method || '—'}
               </span>
             </div>
             <div className="flex justify-between">
-              <span className="text-slate-500">Payment Method:</span>
+              <span className="text-slate-500">결제 수단:</span>
               <span className="text-slate-900">{booking.payment_method || '—'}</span>
             </div>
             {booking.authorization_expires_at && (
               <div className="flex justify-between">
-                <span className="text-slate-500">Hold Expires:</span>
+                <span className="text-slate-500">홀드 만료:</span>
                 <span
                   className={
                     holdExpired
@@ -678,16 +678,16 @@ export default function OrderDetailPage() {
                 >
                   {new Date(booking.authorization_expires_at).toLocaleString()}
                   {holdExpired
-                    ? ' (EXPIRED)'
+                    ? ' (만료됨)'
                     : holdExpiringSoon
-                      ? ` (${holdHoursLeft}h left)`
+                      ? ` (${holdHoursLeft}h 남음)`
                       : ''}
                 </span>
               </div>
             )}
             {booking.paid_at && (
               <div className="flex justify-between">
-                <span className="text-slate-500">Payment Date:</span>
+                <span className="text-slate-500">결제일:</span>
                 <span className="text-slate-900">
                   {new Date(booking.paid_at).toLocaleString()}
                 </span>
@@ -700,8 +700,8 @@ export default function OrderDetailPage() {
               <>
                 {holdExpired && (
                   <p className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-lg p-3">
-                    This hold has passed its expiry — capture may be rejected by
-                    Stripe. If so, collect payment another way.
+                    이 hold는 만료 시간이 지났습니다 — Stripe에서 청구가 거부될 수
+                    있어요. 그럴 경우 다른 방법으로 수금하세요.
                   </p>
                 )}
                 <button
@@ -718,7 +718,7 @@ export default function OrderDetailPage() {
                   disabled={settling}
                   className="w-full min-h-11 px-4 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 disabled:opacity-50"
                 >
-                  카드로 청구 (투어 완료) · Charge card — tour completed
+                  카드로 청구 (투어 완료)
                 </button>
                 <button
                   onClick={() =>
@@ -735,7 +735,7 @@ export default function OrderDetailPage() {
                   disabled={settling}
                   className="w-full min-h-11 px-4 py-3 bg-admin-surface border border-admin-border text-slate-700 rounded-lg font-semibold hover:bg-admin-surface-hover disabled:opacity-50"
                 >
-                  현장 수금 완료 → hold 해제 · Collected offline — release hold
+                  현장 수금 완료 → hold 해제
                 </button>
                 <button
                   onClick={() =>
@@ -752,7 +752,7 @@ export default function OrderDetailPage() {
                   disabled={settling}
                   className="w-full min-h-11 px-4 py-3 bg-red-600 text-white rounded-lg font-semibold hover:bg-red-700 disabled:opacity-50"
                 >
-                  노쇼 수동 청구 · No-show — manual charge
+                  노쇼 수동 청구
                 </button>
               </>
             )}
@@ -760,9 +760,8 @@ export default function OrderDetailPage() {
             {booking.payment_intent_status === 'setup_pending_hold' && (
               <>
                 <p className="text-sm text-slate-700 bg-slate-50 border border-admin-border rounded-lg p-3">
-                  Card is on file. The tour-day authorization is placed automatically
-                  about 6 days before the tour, then charged automatically at 10:00 AM
-                  Korea time on the tour date.
+                  카드가 등록되어 있습니다. 투어 약 6일 전에 자동으로 승인(hold)이
+                  잡히고, 투어 당일 한국시간 오전 10:00에 자동으로 청구됩니다.
                 </p>
                 <button
                   onClick={() =>
@@ -778,29 +777,28 @@ export default function OrderDetailPage() {
                   disabled={settling}
                   className="w-full min-h-11 px-4 py-3 bg-admin-surface border border-admin-border text-slate-700 rounded-lg font-semibold hover:bg-admin-surface-hover disabled:opacity-50"
                 >
-                  현장 수금 완료 → 카드 해제 · Collected offline — release card
+                  현장 수금 완료 → 카드 해제
                 </button>
               </>
             )}
 
             {booking.payment_intent_status === 'auth_pending' && (
               <p className="text-sm text-amber-700 bg-amber-50 border border-amber-200 rounded-lg p-3">
-                Waiting for the customer to confirm their card. No action available
-                yet.
+                손님의 카드 확인을 기다리는 중입니다. 아직 가능한 작업이 없어요.
               </p>
             )}
 
             {booking.payment_intent_status === 'captured' && (
               <p className="text-sm text-green-700 bg-green-50 border border-green-200 rounded-lg p-3">
-                Card charged — payment collected. Nothing more to do.
+                카드 청구 완료 — 결제가 수금되었습니다. 추가 작업이 없어요.
               </p>
             )}
 
             {booking.payment_intent_status === 'canceled' && (
               <p className="text-sm text-slate-700 bg-slate-50 border border-admin-border rounded-lg p-3">
-                Hold released — the card was not charged
+                Hold 해제됨 — 카드는 청구되지 않았습니다
                 {booking.payment_status === 'paid'
-                  ? ' (booking marked paid offline).'
+                  ? ' (현장 수금으로 표시됨).'
                   : '.'}
               </p>
             )}
@@ -809,14 +807,14 @@ export default function OrderDetailPage() {
               booking.payment_intent_status === 'expired') && (
               <p className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-lg p-3">
                 {booking.payment_intent_status === 'expired'
-                  ? 'The hold expired before it was captured. Collect payment another way.'
-                  : 'Card authorization failed. The customer needs to re-confirm their card, or collect payment another way.'}
+                  ? '청구 전에 hold가 만료됐습니다. 다른 방법으로 수금하세요.'
+                  : '카드 승인에 실패했습니다. 손님이 카드를 다시 확인하거나, 다른 방법으로 수금해야 해요.'}
               </p>
             )}
 
             {!booking.payment_intent_status && (
               <p className="text-sm text-slate-700 bg-slate-50 border border-admin-border rounded-lg p-3">
-                No Stripe hold on this booking.
+                이 예약에는 Stripe hold가 없습니다.
               </p>
             )}
           </div>
@@ -825,7 +823,7 @@ export default function OrderDetailPage() {
 
       {booking.cancellation_reason && (
         <div className="bg-red-50 border border-red-200 rounded-xl p-5">
-          <h3 className="text-lg font-semibold text-red-900 mb-2">Cancellation Reason</h3>
+          <h3 className="text-lg font-semibold text-red-900 mb-2">취소 사유</h3>
           <p className="text-red-800">{booking.cancellation_reason}</p>
         </div>
       )}
@@ -876,7 +874,7 @@ export default function OrderDetailPage() {
       )}
 
       {booking && booking.status !== 'cancelled' && (
-        <div className="rounded-xl border border-slate-200 bg-white p-4">
+        <div className="rounded-xl border border-admin-border bg-admin-surface p-4">
           <div className="flex items-center justify-between gap-3">
             <div className="min-w-0">
               <div className="text-xs font-medium text-slate-500">투어모드 (실시간 투어룸)</div>
