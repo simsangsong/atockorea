@@ -3,18 +3,25 @@
  * W3 — auto-collect restroom pins for attractions (facility-pins track).
  * Plan: docs/tour-room-facility-pins-master-plan-2026-07-19.md §F-2.
  *
- * For each is_attraction POI (optionally filtered to a pilot region), query
- * Google Places Nearby Search for nearby public restrooms and upsert the
- * closest few into poi_facility_pins as source='places_auto', is_verified=false.
- * A human then reviews/corrects them in /admin/facility-pins (which promotes
- * them to verified). Idempotent: existing place_ids are skipped, so re-runs add
- * only genuinely new restrooms and never clobber human corrections.
+ * For each is_attraction POI (optionally filtered to a pilot region), query a
+ * map provider for nearby public restrooms and insert the closest few into
+ * poi_facility_pins as source='places_auto', is_verified=false. A human then
+ * reviews/corrects them in /admin/facility-pins (which promotes them to
+ * verified). Idempotent: existing place_ids are skipped, so re-runs add only
+ * genuinely new restrooms and never clobber human corrections.
  *
- * ⚠️ Korea's Places "toilet" coverage is uneven — treat the output as a review
- * queue, not ground truth (that's why is_verified starts false).
+ * Providers (--provider=):
+ *   google (default) — Places API (New) searchText + includedType=public_bathroom.
+ *                      High precision, but sparse recall for Korean restrooms.
+ *   kakao            — Kakao Local keyword search. Far denser Korean coverage;
+ *                      needs KAKAO_REST_API_KEY. ⚠️ ToS gate: showing Kakao POI
+ *                      data on a non-Kakao (Google) map may breach Kakao's terms.
+ *
+ * ⚠️ Coverage is uneven either way — treat the output as a review queue, not
+ * ground truth (that's why is_verified starts false).
  *
  * Usage:
- *   node --env-file=.env.local scripts/collect-facility-pins.mjs [--region=Jeju] [--limit=20] [--dry]
+ *   node --env-file=.env.local scripts/collect-facility-pins.mjs [--provider=kakao] [--region=jeju] [--limit=20] [--dry]
  */
 import { createClient } from '@supabase/supabase-js';
 
@@ -32,6 +39,7 @@ function arg(name, fallback = null) {
 const DRY = process.argv.includes('--dry');
 const REGION = arg('region');
 const LIMIT = arg('limit') ? Number(arg('limit')) : null;
+const PROVIDER = arg('provider', 'google'); // 'google' (Places API New) | 'kakao' (Local keyword)
 
 function haversineM(aLat, aLng, bLat, bLng) {
   const R = 6371000;
@@ -84,15 +92,60 @@ async function nearbyRestrooms(lat, lng, apiKey) {
     .filter((r) => typeof r.lat === 'number' && typeof r.lng === 'number' && r.place_id);
 }
 
+// Kakao Local — keyword search. Korea's map data has far denser public-restroom
+// coverage than Google here. Coordinates come back as WGS84 x(lng)/y(lat), so
+// they plot on the same Google Static map with no conversion.
+// ⚠️ ToS: displaying Kakao-sourced POI data on a non-Kakao map may breach Kakao's
+// terms — that's a human/legal gate (this provider is opt-in via --provider=kakao).
+async function kakaoRestrooms(lat, lng, restKey) {
+  const url =
+    `https://dapi.kakao.com/v2/local/search/keyword.json?query=${encodeURIComponent(KEYWORD)}` +
+    `&y=${lat}&x=${lng}&radius=${MAX_RADIUS_M}&sort=distance&size=15`;
+  const res = await fetch(url, { headers: { Authorization: `KakaoAK ${restKey}` } });
+  if (!res.ok) {
+    const body = await res.text().catch(() => '');
+    console.warn(`  Kakao ${res.status}: ${body.slice(0, 140)}`);
+    return [];
+  }
+  const json = await res.json();
+  return (json.documents || [])
+    // Keep only places actually named 화장실 (drops cafés/shops that merely rank
+    // for the keyword) — the review pass in /admin/facility-pins catches the rest.
+    .filter((d) => String(d.place_name || '').includes('화장실'))
+    .map((d) => ({
+      place_id: `kakao:${d.id}`, // namespaced so it never collides with a Google place id
+      name: d.place_name,
+      lat: Number(d.y),
+      lng: Number(d.x),
+    }))
+    .filter((r) => Number.isFinite(r.lat) && Number.isFinite(r.lng) && r.place_id);
+}
+
+/** Provider dispatch. */
+function findRestrooms(lat, lng, keys) {
+  return PROVIDER === 'kakao'
+    ? kakaoRestrooms(lat, lng, keys.kakao)
+    : nearbyRestrooms(lat, lng, keys.google);
+}
+
 async function main() {
   const url = process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
-  const apiKey =
-    process.env.GOOGLE_MAPS_SERVER_API_KEY ||
-    process.env.GOOGLE_MAPS_API_KEY ||
-    process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
   if (!url || !key) throw new Error('Missing SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY');
-  if (!apiKey) throw new Error('Missing GOOGLE_MAPS_SERVER_API_KEY / GOOGLE_MAPS_API_KEY');
+
+  const keys = {
+    google:
+      process.env.GOOGLE_MAPS_SERVER_API_KEY ||
+      process.env.GOOGLE_MAPS_API_KEY ||
+      process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
+    kakao: process.env.KAKAO_REST_API_KEY,
+  };
+  if (PROVIDER === 'kakao' && !keys.kakao) {
+    throw new Error('Missing KAKAO_REST_API_KEY (get a REST key at developers.kakao.com)');
+  }
+  if (PROVIDER === 'google' && !keys.google) {
+    throw new Error('Missing GOOGLE_MAPS_SERVER_API_KEY / GOOGLE_MAPS_API_KEY');
+  }
   const sb = createClient(url, key, { auth: { persistSession: false } });
 
   let q = sb
@@ -109,7 +162,7 @@ async function main() {
   const targets = LIMIT ? pois.slice(0, LIMIT) : pois;
   console.log(
     `Collecting restrooms for ${targets.length} attraction(s)` +
-      `${REGION ? ` in ${REGION}` : ''}${DRY ? ' [DRY RUN]' : ''}\n`,
+      `${REGION ? ` in ${REGION}` : ''} via ${PROVIDER}${DRY ? ' [DRY RUN]' : ''}\n`,
   );
 
   let inserted = 0;
@@ -117,7 +170,7 @@ async function main() {
   for (const poi of targets) {
     const pLat = Number(poi.lat);
     const pLng = Number(poi.lng);
-    const candidates = await nearbyRestrooms(pLat, pLng, apiKey);
+    const candidates = await findRestrooms(pLat, pLng, keys);
     await sleep(PLACES_DELAY_MS);
 
     const near = candidates
