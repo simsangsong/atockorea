@@ -258,20 +258,39 @@ function TourRoomLive({
     pickup_sequence?: PickupSequenceStop[];
     schedule?: Array<Record<string, unknown>>;
   };
-  const { messages, connection, sendText, sendPreset, retryFailed, failedCount, latestCaption, locations, presence, reactions, react } =
-    useTourRoomChannel({
-      bookingId,
-      channelTopic: data.channel.topic,
-      roomSession: data.session,
-      initialMessages: snapshot.messages ?? [],
-      initialLocations: snapshot.locations ?? [],
-      myParticipantId: data.participant.id,
-      presence: {
-        participantId: data.participant.id,
-        role: data.participant.role,
-        displayName: data.participant.display_name,
-      },
-    });
+  const {
+    messages,
+    connection,
+    sendText,
+    sendPreset,
+    retryFailed,
+    failedCount,
+    latestCaption,
+    locations,
+    presence,
+    reactions,
+    react,
+    othersLastReadAt,
+    markRead,
+    typingUsers,
+    sendTyping,
+  } = useTourRoomChannel({
+    bookingId,
+    channelTopic: data.channel.topic,
+    roomSession: data.session,
+    initialMessages: snapshot.messages ?? [],
+    initialLocations: snapshot.locations ?? [],
+    myParticipantId: data.participant.id,
+    initialParticipants: ((snapshot as { participants?: unknown[] }).participants ?? []) as Array<{
+      id?: string;
+      last_read_at?: string | null;
+    }>,
+    presence: {
+      participantId: data.participant.id,
+      role: data.participant.role,
+      displayName: data.participant.display_name,
+    },
+  });
 
   const viewerRole = data.participant.role;
   const readOnly = data.lifecycle === 'ended';
@@ -311,6 +330,16 @@ function TourRoomLive({
   const [replyTo, setReplyTo] = useState<RoomMessage | null>(null);
   const replyOpts = () =>
     replyTo ? { replyToId: replyTo.id, replySnapshot: buildReplySnapshot(replyTo) } : undefined;
+
+  // Read receipts (Phase 2d): advance my cursor when a new incoming message
+  // arrives and the room is on-screen (the room IS the chat). markRead throttles.
+  useEffect(() => {
+    if (readOnly) return;
+    const last = messages[messages.length - 1];
+    if (!last || last._local || last.sender_role === viewerRole) return;
+    if (typeof document !== 'undefined' && document.visibilityState !== 'visible') return;
+    markRead();
+  }, [messages, viewerRole, readOnly, markRead]);
 
   // W5.1 — remember this room so the installed PWA's start_url (/tour-mode)
   // can jump straight back in; the stored room session makes rejoin seamless.
@@ -665,6 +694,8 @@ function TourRoomLive({
             onReply={!readOnly ? (m) => setReplyTo(m) : undefined}
             reactions={reactions}
             onReact={!readOnly ? (id, emoji) => void react(id, emoji) : undefined}
+            lastReadByOthersAt={othersLastReadAt}
+            typingUsers={typingUsers}
             onExtraConfirm={
               viewerRole === 'customer' && !readOnly
                 ? async (extraId) => {
@@ -720,6 +751,7 @@ function TourRoomLive({
               }}
               replyTo={replyTo ? buildReplySnapshot(replyTo) : null}
               onCancelReply={() => setReplyTo(null)}
+              onTyping={sendTyping}
             />
           )}
         </div>

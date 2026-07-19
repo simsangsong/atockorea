@@ -215,6 +215,8 @@ export interface UseTourRoomChannelOptions {
   presence?: { participantId: string; role: string; displayName: string } | null;
   /** Phase 2c — this device's participant id, to mark its own reactions. */
   myParticipantId?: string | null;
+  /** Phase 2d — seed read cursors from the join snapshot's participants. */
+  initialParticipants?: Array<{ id?: string; last_read_at?: string | null }>;
 }
 
 export interface UseTourRoomChannel {
@@ -242,6 +244,14 @@ export interface UseTourRoomChannel {
   reactions: Record<string, ReactionAgg[]>;
   /** Toggle the viewer's emoji reaction on a message (server broadcasts back). */
   react: (messageId: string, emoji: string) => Promise<void>;
+  /** Phase 2d — newest read timestamp among OTHER participants (read receipts). */
+  othersLastReadAt: string | null;
+  /** Advance this device's read cursor (call when the feed is viewed). */
+  markRead: () => void;
+  /** Phase 2d — other participants currently typing (self-clearing). */
+  typingUsers: Array<{ role: string; displayName: string }>;
+  /** Broadcast a typing ping (throttled internally). */
+  sendTyping: () => void;
 }
 
 export function useTourRoomChannel(options: UseTourRoomChannelOptions): UseTourRoomChannel {
@@ -265,6 +275,17 @@ export function useTourRoomChannel(options: UseTourRoomChannelOptions): UseTourR
   });
   const [presence, setPresence] = useState<RoomPresence[]>([]);
   const [reactionsRaw, setReactionsRaw] = useState<Record<string, ReactionEntry[]>>({});
+  // Read cursors of OTHER participants (Phase 2d), seeded from the snapshot.
+  const [readCursors, setReadCursors] = useState<Record<string, string>>(() => {
+    const seed: Record<string, string> = {};
+    for (const p of options.initialParticipants ?? []) {
+      if (p.id && p.id !== options.myParticipantId && p.last_read_at) seed[p.id] = p.last_read_at;
+    }
+    return seed;
+  });
+  const [typingUsers, setTypingUsers] = useState<Record<string, { role: string; displayName: string }>>({});
+  const typingTimersRef = useRef<Record<string, ReturnType<typeof setTimeout>>>({});
+  const lastTypingSentRef = useRef(0);
   // Presence identity is fixed for the life of a join — a ref keeps callers
   // free to pass an inline object without re-subscribing the channel.
   const presenceIdentityRef = useRef(options.presence ?? null);
@@ -354,6 +375,27 @@ export function useTourRoomChannel(options: UseTourRoomChannelOptions): UseTourR
         );
       }
     });
+    channel.on('broadcast', { event: 'read' }, (frame) => {
+      const p = frame.payload as { participant_id?: string; at?: string } | undefined;
+      if (p?.participant_id && p.at && p.participant_id !== myParticipantId) {
+        setReadCursors((prev) => (prev[p.participant_id!] && prev[p.participant_id!] >= p.at! ? prev : { ...prev, [p.participant_id!]: p.at! }));
+      }
+    });
+    channel.on('broadcast', { event: 'typing' }, (frame) => {
+      const p = frame.payload as { participant_id?: string | null; role?: string; display_name?: string | null } | undefined;
+      const pid = p?.participant_id;
+      if (!pid || pid === myParticipantId) return;
+      setTypingUsers((prev) => ({ ...prev, [pid]: { role: p?.role ?? 'customer', displayName: p?.display_name ?? '' } }));
+      clearTimeout(typingTimersRef.current[pid]);
+      typingTimersRef.current[pid] = setTimeout(() => {
+        setTypingUsers((prev) => {
+          if (!(pid in prev)) return prev;
+          const next = { ...prev };
+          delete next[pid];
+          return next;
+        });
+      }, 3500);
+    });
     const presenceIdentity = presenceIdentityRef.current;
     if (presenceIdentity) {
       channel.on('presence', { event: 'sync' }, () => {
@@ -392,7 +434,7 @@ export function useTourRoomChannel(options: UseTourRoomChannelOptions): UseTourR
       sseRef.current?.close();
       sseRef.current = null;
     };
-  }, [addMessages, channelTopic, startSse]);
+  }, [addMessages, channelTopic, startSse, myParticipantId]);
 
   // --- transport 3: visibility resync (§O-6) --------------------------------
   useEffect(() => {
@@ -581,8 +623,60 @@ export function useTourRoomChannel(options: UseTourRoomChannelOptions): UseTourR
     return out;
   }, [reactionsRaw, myParticipantId]);
 
+  // Read receipts (Phase 2d): advance my cursor (throttled), track others'.
+  const lastMarkReadRef = useRef(0);
+  const markRead = useCallback(() => {
+    if (!roomSession) return;
+    const now = Date.now();
+    if (now - lastMarkReadRef.current < 3000) return;
+    lastMarkReadRef.current = now;
+    void fetch(`/api/tour-rooms/${encodeURIComponent(bookingId)}/read`, {
+      method: 'POST',
+      headers: { 'x-tour-room-auth': roomSession },
+    }).catch(() => undefined);
+  }, [bookingId, roomSession]);
+
+  const othersLastReadAt = useMemo(() => {
+    let max: string | null = null;
+    for (const at of Object.values(readCursors)) if (!max || at > max) max = at;
+    return max;
+  }, [readCursors]);
+
+  // Typing (Phase 2d): throttled ping out; self-clearing list in.
+  const sendTyping = useCallback(() => {
+    if (!roomSession) return;
+    const now = Date.now();
+    if (now - lastTypingSentRef.current < 2500) return;
+    lastTypingSentRef.current = now;
+    void fetch(`/api/tour-rooms/${encodeURIComponent(bookingId)}/typing`, {
+      method: 'POST',
+      headers: { 'x-tour-room-auth': roomSession },
+    }).catch(() => undefined);
+  }, [bookingId, roomSession]);
+
+  const typingList = useMemo(
+    () => Object.values(typingUsers).map((t) => ({ role: t.role, displayName: t.displayName })),
+    [typingUsers],
+  );
+
   return useMemo(
-    () => ({ messages, connection, sendText, sendPreset, retryFailed, failedCount, latestCaption, locations, presence, reactions, react }),
-    [messages, connection, sendText, sendPreset, retryFailed, failedCount, latestCaption, locations, presence, reactions, react],
+    () => ({
+      messages,
+      connection,
+      sendText,
+      sendPreset,
+      retryFailed,
+      failedCount,
+      latestCaption,
+      locations,
+      presence,
+      reactions,
+      react,
+      othersLastReadAt,
+      markRead,
+      typingUsers: typingList,
+      sendTyping,
+    }),
+    [messages, connection, sendText, sendPreset, retryFailed, failedCount, latestCaption, locations, presence, reactions, react, othersLastReadAt, markRead, typingList, sendTyping],
   );
 }
