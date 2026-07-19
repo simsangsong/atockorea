@@ -16,7 +16,7 @@
  * All copy is static 5-locale, zero LLM, renders from the join snapshot.
  */
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import LobbyCard from '@/components/tour-mode/LobbyCard';
 import { vehicleLineFromPayload } from '@/components/tour-mode/LobbyCard';
@@ -294,6 +294,13 @@ export default function HomeTab({
 }) {
   const copy = COPY[locale];
   const [sheet, setSheet] = useState<HomeSheet>(null);
+  // Now marker advances on a 1-min tick, kept out of render so it stays pure
+  // (Date.now() in render is impure/unstable) — mirrors RoomShell.
+  const [nowMs, setNowMs] = useState(() => Date.now());
+  useEffect(() => {
+    const id = window.setInterval(() => setNowMs(Date.now()), 60_000);
+    return () => window.clearInterval(id);
+  }, []);
 
   const timelineData = useMemo(() => buildTravelTimeline(messages), [messages]);
   const hasTimeline = timelineData.stopCount > 0 || timelineData.photoCount > 0;
@@ -301,7 +308,7 @@ export default function HomeTab({
   const reviewHref = tourSlug ? `/tour-product/${tourSlug}#reviews` : '/mypage';
 
   // Live now/next — same KST wall-clock derivation as the schedule tab.
-  const currentIndex = currentScheduleIndex(schedule, lifecycle, Date.now());
+  const currentIndex = currentScheduleIndex(schedule, lifecycle, nowMs);
   const nowStop = currentIndex >= 0 ? stopLabel(schedule[currentIndex]) : null;
   const nextStop =
     currentIndex >= 0 ? stopLabel(schedule[currentIndex + 1]) : stopLabel(schedule[0]);
@@ -345,7 +352,7 @@ export default function HomeTab({
   tiles.push({ key: 'sos', label: copy.tiles.sos, Icon: IconTileSos, tone: 'danger', onPress: api.openEmergency });
 
   const tileClass =
-    'tr-home-card flex min-h-[86px] flex-col items-center justify-center gap-1.5 px-2 py-3 text-center active:scale-[0.98]';
+    'tr-home-card flex min-h-[76px] flex-col items-center justify-center gap-1.5 px-2 py-2.5 text-center transition-transform active:scale-[0.98]';
 
   // H2.1 — "tech" squircle chips (gradient + gloss, .tr-chip in the theme CSS).
   const iconWrapClass = (tone?: 'accent' | 'danger') =>
@@ -381,7 +388,7 @@ export default function HomeTab({
         />
       )}
       {lifecycle === 'live' && (
-        <div className="tr-home-card mb-2 px-4 py-4" data-testid="home-status-live">
+        <div className="tr-home-card mb-2 px-4 py-3.5" data-testid="home-status-live">
           {nowStop || nextStop ? (
             <div className="flex flex-col gap-1.5">
               {nowStop && (
@@ -449,7 +456,7 @@ export default function HomeTab({
       </button>
 
       {/* ---- Feature grid ------------------------------------------- */}
-      <div className="grid grid-cols-3 gap-2" data-testid="home-grid">
+      <div className="grid grid-cols-3 gap-1.5" data-testid="home-grid">
         {tiles.map((tile) =>
           tile.href ? (
             <Link key={tile.key} href={tile.href} data-testid={`home-tile-${tile.key}`} className={tileClass}>
