@@ -13,7 +13,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import dynamic from 'next/dynamic';
-import { MapPin, Search, Trash2, RotateCcw, Camera, Toilet, Check, Plus } from 'lucide-react';
+import { MapPin, Search, Trash2, RotateCcw, Camera, Toilet, Check, Plus, ArrowLeft } from 'lucide-react';
 import { getAdminAccessToken } from '@/app/admin/match-pois/_hooks/usePoiRow';
 import type { EditorPin } from './_components/PinMap';
 
@@ -178,8 +178,13 @@ export default function FacilityPinsPage() {
 
   return (
     <div className="-m-6 flex h-[calc(100vh-3.5rem)] bg-admin-bg">
-      {/* POI list */}
-      <aside className="flex w-full flex-col border-r border-admin-border bg-admin-surface lg:w-80">
+      {/* POI list — single-pane on mobile (hidden once a POI is picked), always
+          shown on lg+. */}
+      <aside
+        className={`w-full flex-col border-r border-admin-border bg-admin-surface lg:flex lg:w-80 ${
+          selected ? 'hidden' : 'flex'
+        }`}
+      >
         <div className="border-b border-admin-border p-3">
           <h1 className="mb-2 flex items-center gap-2 text-sm font-semibold text-slate-900">
             <MapPin className="size-4 text-emerald-600" /> 편의시설 핀 편집
@@ -226,8 +231,8 @@ export default function FacilityPinsPage() {
         </div>
       </aside>
 
-      {/* Editor */}
-      <main className="hidden min-w-0 flex-1 flex-col lg:flex">
+      {/* Editor — shown on mobile only once a POI is selected. */}
+      <main className={`min-w-0 flex-1 flex-col lg:flex ${selected ? 'flex' : 'hidden lg:flex'}`}>
         {!selected ? (
           <div className="flex flex-1 flex-col items-center justify-center px-6 text-center">
             <MapPin className="mb-3 size-10 text-slate-300" />
@@ -237,7 +242,15 @@ export default function FacilityPinsPage() {
           <div className="flex min-h-0 flex-1 flex-col">
             {/* header + add-kind toggle */}
             <div className="flex items-center justify-between gap-3 border-b border-admin-border bg-admin-surface px-4 py-3">
-              <div className="min-w-0">
+              <button
+                type="button"
+                onClick={() => setSelected(null)}
+                aria-label="목록으로"
+                className="-ml-1 flex size-8 shrink-0 items-center justify-center rounded-md text-slate-500 hover:bg-slate-100 lg:hidden"
+              >
+                <ArrowLeft className="size-5" />
+              </button>
+              <div className="min-w-0 flex-1">
                 <h2 className="truncate text-sm font-semibold text-slate-900">{poiName(selected)}</h2>
                 <p className="text-xs text-slate-500">
                   활성 핀 {activeCount}개 · 중심 {Number(selected.lat).toFixed(4)}, {Number(selected.lng).toFixed(4)}
