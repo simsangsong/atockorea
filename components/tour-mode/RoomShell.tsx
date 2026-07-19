@@ -288,10 +288,11 @@ export default function RoomShell({
             tab === 'home' ? '[background:var(--tr-home-canvas)]' : ''
           }`}
         >
+          {/* In-flow (not an overlay) so a notice/parking banner never covers the
+              Settings language picker or other tab content — it pushes content
+              down instead of floating over it. */}
           {banner && (
-            <div className="pointer-events-none absolute inset-x-0 top-0 z-20 mx-auto w-full max-w-2xl px-3 pt-2 [&>*]:pointer-events-auto">
-              {banner}
-            </div>
+            <div className="z-20 mx-auto w-full max-w-2xl shrink-0 px-3 pt-2">{banner}</div>
           )}
 
           <div className="mx-auto flex min-h-0 w-full max-w-2xl flex-1 flex-col">
