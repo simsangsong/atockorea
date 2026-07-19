@@ -105,6 +105,23 @@ describe('RoomShell settings tab + theme', () => {
     expect(screen.getByText('settings-content')).toBeInTheDocument();
   });
 
+  it('back steps through tab history instead of exiting (no backHref)', () => {
+    render(<RoomShell {...shellProps} />); // lands on chat; no backHref
+    // No back button at the root — it never dumps a customer to the entry gate.
+    expect(screen.queryByTestId('room-back')).not.toBeInTheDocument();
+    // chat → map → settings
+    fireEvent.click(screen.getByRole('tab', { name: '지도' }));
+    fireEvent.click(screen.getByRole('tab', { name: '설정' }));
+    expect(screen.getByText('settings-content')).toBeInTheDocument();
+    // back → map, back → chat (one step per click)
+    fireEvent.click(screen.getByTestId('room-back'));
+    expect(screen.getByRole('tab', { name: '지도', selected: true })).toBeInTheDocument();
+    fireEvent.click(screen.getByTestId('room-back'));
+    expect(screen.getByText('chat-content')).toBeInTheDocument();
+    // back at root → button gone again
+    expect(screen.queryByTestId('room-back')).not.toBeInTheDocument();
+  });
+
   it('wraps the shell in a .dark ancestor only when theme=dark', () => {
     const { container, rerender } = render(<RoomShell {...shellProps} theme="dark" />);
     expect(container.firstChild).toHaveClass('dark');

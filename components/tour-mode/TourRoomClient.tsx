@@ -671,7 +671,8 @@ function TourRoomLive({
           ? '/tour-mode/guide'
           : viewerRole === 'driver'
             ? '/tour-mode/driver'
-            : '/tour-mode?nojump=1'
+            : undefined /* customers have no "up" — back only steps tabs, never
+                           dumps to the booking gate or exits the app */
       }
       banner={
         <>
