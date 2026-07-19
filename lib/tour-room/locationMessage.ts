@@ -32,18 +32,23 @@ export function parseLocationMessage(text: string | null | undefined): ParsedLoc
 }
 
 /**
- * Google Static Maps thumbnail for an inline preview. Uses the same public key
- * as the JS SDK; needs the "Maps Static API" enabled on the Cloud project —
- * callers render an onError fallback for when it isn't.
+ * Static Maps thumbnail for an inline preview — routed through our server proxy
+ * (`/api/maps/static`) so the API key stays server-side and browser referrer
+ * restrictions don't block the image. The proxy sanitizes params + rate-limits.
  */
 export function staticMapUrl(
   lat: number,
   lng: number,
   opts: { width?: number; height?: number; zoom?: number } = {},
 ): string {
-  const key = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? '';
   const { width = 320, height = 150, zoom = 16 } = opts;
   const center = `${lat.toFixed(6)},${lng.toFixed(6)}`;
-  const marker = `color:0xdc2626%7C${center}`;
-  return `https://maps.googleapis.com/maps/api/staticmap?center=${center}&zoom=${zoom}&size=${width}x${height}&scale=2&markers=${marker}&key=${key}`;
+  const params = new URLSearchParams({
+    center,
+    zoom: String(zoom),
+    size: `${width}x${height}`,
+    scale: '2',
+    markers: `color:0xdc2626|${center}`,
+  });
+  return `/api/maps/static?${params.toString()}`;
 }
