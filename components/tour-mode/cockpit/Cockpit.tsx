@@ -29,6 +29,20 @@ import { isDeviceSttSupported, startDeviceStt } from '@/lib/tour-room/deviceStt'
 import MicPrime from '@/components/tour-mode/MicPrime';
 import OperatorAssist from '@/components/tour-mode/guide/OperatorAssist';
 import {
+  AlarmClock,
+  Bell,
+  BusFront,
+  ChevronLeft,
+  Map as MapIcon,
+  Phone,
+  Sparkles,
+  SquareParking,
+  Timer,
+  TriangleAlert,
+  Wallet,
+  type LucideIcon,
+} from 'lucide-react';
+import {
   googleDirectionsUrl,
   kakaoNaviUrl,
   kakaoWebRouteUrl,
@@ -542,7 +556,8 @@ export default function Cockpit({
             className="flex h-9 shrink-0 items-center gap-1 rounded-full bg-neutral-800 pl-2 pr-3 text-sm font-bold text-white"
             data-testid="cockpit-exit"
           >
-            ◀ 대시보드
+            <ChevronLeft size={16} strokeWidth={2.25} aria-hidden />
+            대시보드
           </button>
         ) : null}
         <p className="min-w-0 flex-1 truncate text-sm text-neutral-400">
@@ -558,7 +573,8 @@ export default function Cockpit({
             }`}
             data-testid="driver-push-toggle"
           >
-            {pushOn ? '🔔 켜짐' : '🔔 알림'}
+            <Bell size={15} strokeWidth={2.25} aria-hidden />
+            {pushOn ? '켜짐' : '알림'}
           </button>
         ) : null}
         {OPS_PHONE ? (
@@ -567,7 +583,8 @@ export default function Cockpit({
             className="flex h-9 items-center gap-1 rounded-full bg-neutral-800 px-3 text-sm font-bold text-white"
             data-testid="driver-ops-call"
           >
-            📞 운영팀
+            <Phone size={15} strokeWidth={2.25} aria-hidden />
+            운영팀
           </a>
         ) : null}
       </div>
@@ -729,21 +746,21 @@ export default function Cockpit({
 
       {/* one-tap actions */}
       <div className="grid grid-cols-3 gap-1.5 px-4 pb-1.5">
-        <ActionButton label="타세요" emoji="🚐" onClick={announceVehicleArrived} />
-        <ActionButton label="지연" emoji="⏱" onClick={() => setSheet('delay')} />
-        <ActionButton label="복귀시간" emoji="⏰" onClick={() => setSheet('return')} />
-        <ActionButton label="일정·도착" emoji="🗺" onClick={() => setSheet('schedule')} />
-        <ActionButton label="주차핀" emoji="🅿️" onClick={dropParkingPin} />
+        <ActionButton label="타세요" Icon={BusFront} onClick={announceVehicleArrived} />
+        <ActionButton label="지연" Icon={Timer} onClick={() => setSheet('delay')} />
+        <ActionButton label="복귀시간" Icon={AlarmClock} onClick={() => setSheet('return')} />
+        <ActionButton label="일정·도착" Icon={MapIcon} onClick={() => setSheet('schedule')} />
+        <ActionButton label="주차핀" Icon={SquareParking} onClick={dropParkingPin} />
         <ActionButton
           label="차량문제"
-          emoji="⚠️"
+          Icon={TriangleAlert}
           onClick={() => {
             if (window.confirm('차량 문제를 손님과 운영팀에 알릴까요?')) {
               void signal({ type: 'vehicle_issue' }, '운영팀에 알렸어요 ✓');
             }
           }}
         />
-        <ActionButton label="AI 도우미" emoji="✨" onClick={() => setSheet('assist')} />
+        <ActionButton label="AI 도우미" Icon={Sparkles} onClick={() => setSheet('assist')} />
       </div>
 
       {/* expense log (secondary, deliberate) */}
@@ -751,10 +768,11 @@ export default function Cockpit({
         <button
           type="button"
           onClick={() => setSheet('expense')}
-          className="w-full rounded-2xl bg-neutral-800 py-2.5 text-base font-bold text-neutral-200"
+          className="flex w-full items-center justify-center gap-2 rounded-2xl bg-neutral-800 py-2.5 text-base font-bold text-neutral-200 transition-transform active:scale-[0.99]"
           data-testid="driver-action-expense"
         >
-          💰 지출 기록 (주차비 등)
+          <Wallet size={17} strokeWidth={2} aria-hidden />
+          지출 기록 (주차비 등)
         </button>
       </div>
 
@@ -960,15 +978,15 @@ export function Note({ children }: { children: React.ReactNode }) {
   );
 }
 
-function ActionButton({ label, emoji, onClick }: { label: string; emoji: string; onClick: () => void }) {
+function ActionButton({ label, Icon, onClick }: { label: string; Icon: LucideIcon; onClick: () => void }) {
   return (
     <button
       type="button"
       onClick={onClick}
-      className="flex flex-col items-center gap-0.5 rounded-2xl bg-neutral-800 py-2.5 text-white"
+      className="flex min-h-[64px] flex-col items-center justify-center gap-1 rounded-2xl bg-neutral-800 py-2.5 text-white transition-transform active:scale-[0.97]"
       data-testid={`driver-action-${label}`}
     >
-      <span className="text-xl">{emoji}</span>
+      <Icon size={22} strokeWidth={2} aria-hidden />
       <span className="text-sm font-bold">{label}</span>
     </button>
   );
