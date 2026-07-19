@@ -119,7 +119,7 @@ export default function OpsHomeTab({
       {/* Vitals */}
       <div className="grid grid-cols-5 gap-1.5" data-testid="ops-home-stats">
         {stats.map(({ label, value, tone }) => (
-          <div key={label} className="rounded-xl bg-white/5 px-1 py-2.5 text-center">
+          <div key={label} className="rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-1 py-2.5 text-center">
             <p
               className={`text-[17px] font-bold tabular-nums ${
                 tone === 'red' && value
@@ -128,12 +128,12 @@ export default function OpsHomeTab({
                     ? 'text-amber-300'
                     : tone === 'emerald' && value
                       ? 'text-emerald-400'
-                      : 'text-slate-100'
+                      : 'text-[var(--tr-ink)]'
               }`}
             >
               {value}
             </p>
-            <p className="mt-0.5 text-[10px] text-slate-500">{label}</p>
+            <p className="mt-0.5 text-[10px] text-[var(--tr-ink-3)]">{label}</p>
           </div>
         ))}
       </div>
@@ -158,8 +158,8 @@ export default function OpsHomeTab({
           const body = (
             <>
               <span className="relative inline-flex">
-                <span className="flex size-9 items-center justify-center rounded-xl bg-white/10">
-                  <Icon className="size-[18px] text-slate-200" />
+                <span className="flex size-9 items-center justify-center rounded-xl bg-[var(--tr-surface-2)]">
+                  <Icon className="size-[18px] text-[var(--tr-ink-2)]" />
                 </span>
                 {badge ? (
                   <span
@@ -169,12 +169,12 @@ export default function OpsHomeTab({
                   </span>
                 ) : null}
               </span>
-              <span className="mt-2.5 block text-[13px] font-semibold text-slate-100">{title}</span>
-              <span className="mt-0.5 block text-[11px] leading-snug text-slate-500">{desc}</span>
+              <span className="mt-2.5 block text-[13px] font-semibold text-[var(--tr-ink)]">{title}</span>
+              <span className="mt-0.5 block text-[11px] leading-snug text-[var(--tr-ink-3)]">{desc}</span>
             </>
           );
           const className =
-            'block min-h-[104px] rounded-2xl border border-white/10 bg-white/5 p-3.5 text-left transition-colors active:bg-white/10';
+            'block min-h-[104px] rounded-2xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] p-3.5 text-left transition-colors active:bg-[var(--tr-surface-2)]';
           return href ? (
             <a key={key} href={href} className={className}>
               {body}

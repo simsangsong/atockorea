@@ -102,20 +102,20 @@ export default function OpsDashboardTab({
   }, [rooms, sosRooms, streams]);
 
   if (loading && rooms.length === 0) {
-    return <p className="mt-12 text-center text-sm text-slate-500">불러오는 중…</p>;
+    return <p className="mt-12 text-center text-sm text-[var(--tr-ink-3)]">불러오는 중…</p>;
   }
   // Distinguish a genuine "no rooms today" from a fetch failure — the latter
   // must never read as "no tours" on the SOS-monitoring surface.
   if (loadError && rooms.length === 0) {
     return (
       <div className="mt-12 text-center">
-        <p className="text-sm font-medium text-slate-300">불러오기에 실패했어요</p>
-        <p className="mt-1 text-[12px] text-slate-500">네트워크를 확인한 뒤 다시 시도해 주세요.</p>
+        <p className="text-sm font-medium text-[var(--tr-ink)]">불러오기에 실패했어요</p>
+        <p className="mt-1 text-[12px] text-[var(--tr-ink-3)]">네트워크를 확인한 뒤 다시 시도해 주세요.</p>
         {onRetry && (
           <button
             type="button"
             onClick={onRetry}
-            className="mt-3 min-h-[44px] rounded-xl bg-slate-800 px-5 text-[13px] font-semibold text-slate-100"
+            className="mt-3 min-h-[44px] rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] px-5 text-[13px] font-semibold text-[var(--tr-ink)]"
           >
             다시 시도
           </button>
@@ -124,7 +124,7 @@ export default function OpsDashboardTab({
     );
   }
   if (rooms.length === 0) {
-    return <p className="mt-12 text-center text-sm text-slate-500">이 날짜에 활성 룸이 없습니다.</p>;
+    return <p className="mt-12 text-center text-sm text-[var(--tr-ink-3)]">이 날짜에 활성 룸이 없습니다.</p>;
   }
 
   return (
@@ -162,11 +162,11 @@ export default function OpsDashboardTab({
       {groups.map((group) => (
         <section key={group.key}>
           <div className="flex items-baseline justify-between gap-2 px-1 pb-1.5">
-            <h2 className="min-w-0 truncate text-[13px] font-semibold text-slate-300">
+            <h2 className="min-w-0 truncate text-[13px] font-semibold text-[var(--tr-ink-2)]">
               {group.title}
-              {group.city ? <span className="ml-1 font-normal text-slate-500">· {group.city}</span> : null}
+              {group.city ? <span className="ml-1 font-normal text-[var(--tr-ink-3)]">· {group.city}</span> : null}
             </h2>
-            <span className="shrink-0 text-[11px] text-slate-500">
+            <span className="shrink-0 text-[11px] text-[var(--tr-ink-3)]">
               룸 {group.rooms.length} · 탑승 {group.boarded}/{group.rooms.length} · {group.guests}명
             </span>
           </div>
@@ -196,7 +196,7 @@ export default function OpsDashboardTab({
                   className={`block w-full rounded-2xl border text-left transition-colors ${
                     sos
                       ? 'border-red-500/60 bg-red-950/40 ring-1 ring-red-500/40'
-                      : 'border-white/10 bg-slate-900 active:bg-slate-800'
+                      : 'border-[var(--tr-hairline)] bg-[var(--tr-surface)] active:bg-[var(--tr-surface-2)]'
                   }`}
                   style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto 84px' }}
                 >
@@ -208,9 +208,9 @@ export default function OpsDashboardTab({
                       {sos ? '🆘' : (room.booking?.contact_name ?? 'G').trim().charAt(0).toUpperCase()}
                     </span>
                     <div className="min-w-0 flex-1">
-                      <p className="flex items-center gap-1.5 text-[14px] font-semibold text-slate-100">
+                      <p className="flex items-center gap-1.5 text-[14px] font-semibold text-[var(--tr-ink)]">
                         <span className="truncate">{room.booking?.contact_name ?? '게스트'}</span>
-                        <span className="shrink-0 font-normal text-slate-500">
+                        <span className="shrink-0 font-normal text-[var(--tr-ink-3)]">
                           {room.booking?.number_of_guests ?? 1}명 · {room.booking?.preferred_language ?? 'en'}
                         </span>
                         {isLive && (
@@ -221,13 +221,13 @@ export default function OpsDashboardTab({
                         )}
                         {room.onboard_ack && <span className="shrink-0 text-[10px]">🚌</span>}
                       </p>
-                      <p className="mt-0.5 truncate text-[12px] text-slate-400">
-                        <span className="text-slate-400">{senderLabel(lastSource?.sender_role)}</span>{' '}
+                      <p className="mt-0.5 truncate text-[12px] text-[var(--tr-ink-2)]">
+                        <span className="text-[var(--tr-ink-2)]">{senderLabel(lastSource?.sender_role)}</span>{' '}
                         {lastText}
                       </p>
                     </div>
                     <div className="flex shrink-0 flex-col items-end gap-1">
-                      <span className="text-[10px] text-slate-500">{kstTimeLabel(lastAt)}</span>
+                      <span className="text-[10px] text-[var(--tr-ink-3)]">{kstTimeLabel(lastAt)}</span>
                       {unreadCount > 0 && (
                         <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-blue-500 px-1.5 text-[10px] font-bold text-white">
                           {unreadCount > 99 ? '99+' : unreadCount}

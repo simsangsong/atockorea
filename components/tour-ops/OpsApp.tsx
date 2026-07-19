@@ -323,11 +323,15 @@ export default function OpsApp() {
 
   return (
     <div
-      className={`ops-app min-h-dvh bg-slate-950 text-slate-100 ${opsTheme === 'light' ? 'ops-light' : ''}`}
+      /* W1.2 — tr-* token engine on the ops shell. Single root carries both
+         `.tr-root` and the theme class: `.dark` (→ .tr-root.dark dark vars) or
+         `.ops-light` (kept so not-yet-migrated tabs' raw-slate utilities still
+         flip to light via the globals.css override during the migration). */
+      className={`ops-app tr-root min-h-dvh bg-[var(--tr-canvas)] text-[var(--tr-ink)] ${opsTheme === 'dark' ? 'dark' : 'ops-light'}`}
       style={{ paddingBottom: 'calc(72px + env(safe-area-inset-bottom, 0px))' }}
     >
       <header
-        className="sticky top-0 z-30 border-b border-white/10 bg-slate-950/90 backdrop-blur"
+        className="sticky top-0 z-30 border-b border-[var(--tr-hairline)] bg-[var(--tr-surface)] backdrop-blur"
         style={{ paddingTop: 'env(safe-area-inset-top, 0px)' }}
       >
         <div className="flex min-h-[52px] items-center justify-between gap-2 px-4">
@@ -335,7 +339,7 @@ export default function OpsApp() {
             <h1 className="text-[15px] font-bold tracking-tight">투어 관제센터</h1>
             {/* Connection state with a visible label (a bare dot's tooltip
                 never shows on touch — the primary ops device). */}
-            <span className="flex shrink-0 items-center gap-1 text-[10px] font-medium text-slate-400">
+            <span className="flex shrink-0 items-center gap-1 text-[10px] font-medium text-[var(--tr-ink-3)]">
               <span
                 className={`size-2 rounded-full ${
                   connection === 'realtime'
@@ -349,15 +353,15 @@ export default function OpsApp() {
             </span>
           </div>
           <div className="flex shrink-0 items-center gap-2">
-            <p className="text-[12px] text-slate-400">
+            <p className="text-[12px] text-[var(--tr-ink-3)]">
               {date} · 룸 {rooms.length}
-              {sosCount > 0 && <span className="ml-1.5 font-semibold text-red-400">🆘 {sosCount}</span>}
+              {sosCount > 0 && <span className="ml-1.5 font-semibold text-[var(--tr-danger)]">🆘 {sosCount}</span>}
             </p>
             <button
               type="button"
               onClick={toggleOpsTheme}
               aria-label={opsTheme === 'dark' ? '라이트 모드' : '다크 모드'}
-              className="flex size-11 items-center justify-center rounded-lg text-slate-400 active:bg-white/10"
+              className="flex size-11 items-center justify-center rounded-lg text-[var(--tr-ink-2)] active:bg-[var(--tr-surface-2)]"
               data-testid="ops-theme-toggle"
             >
               {opsTheme === 'dark' ? <Sun className="size-4" /> : <Moon className="size-4" />}
@@ -366,7 +370,7 @@ export default function OpsApp() {
               type="button"
               onClick={() => void loadAll()}
               aria-label="새로고침"
-              className="flex size-11 items-center justify-center rounded-lg text-slate-400 active:bg-white/10"
+              className="flex size-11 items-center justify-center rounded-lg text-[var(--tr-ink-2)] active:bg-[var(--tr-surface-2)]"
             >
               <RefreshCw className={`size-4 ${loading ? 'animate-spin' : ''}`} />
             </button>
@@ -441,7 +445,7 @@ export default function OpsApp() {
       )}
 
       <nav
-        className="fixed inset-x-0 bottom-0 z-40 flex items-stretch border-t border-white/10 bg-slate-950/95 backdrop-blur"
+        className="fixed inset-x-0 bottom-0 z-40 flex items-stretch border-t border-[var(--tr-hairline)] bg-[var(--tr-surface)] backdrop-blur"
         style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
       >
         {tabs.map(({ key, label, icon: Icon, badge }) => {
@@ -453,11 +457,11 @@ export default function OpsApp() {
               onClick={() => selectTab(key)}
               aria-current={active ? 'page' : undefined}
               className={`relative flex h-[64px] flex-1 flex-col items-center justify-center gap-0.5 text-[10px] font-medium transition-colors ${
-                active ? 'text-white' : 'text-slate-500'
+                active ? 'text-[var(--tr-ink)]' : 'text-[var(--tr-ink-3)]'
               }`}
             >
               <span className="relative">
-                <Icon className={`size-5 ${key === 'sos' && badge ? 'text-red-400' : ''}`} />
+                <Icon className={`size-5 ${key === 'sos' && badge ? 'text-[var(--tr-danger)]' : ''}`} />
                 {badge ? (
                   <span
                     className={`absolute -right-2.5 -top-1.5 flex h-4 min-w-4 items-center justify-center rounded-full px-1 text-[9px] font-bold text-white ${
