@@ -125,17 +125,18 @@ export function pinLabel(pin: FacilityPin, locale: RoomLocale): string {
 }
 
 /**
- * Guest-facing label (F-D3 A안). Auto-collected restroom names are Korean
- * (e.g. "천지연폭포 공중화장실") — useless to a foreign guest, who just needs
- * "there's a restroom, X away". So for restrooms without a curated per-locale
- * name we show the localized kind label ("Restroom" / "トイレ" / …). Photo spots
- * are always curated with their own name, so they keep it. The raw Korean name
- * still lives in `name` for the admin editor (pinLabel).
+ * Guest-facing label (F-D3 A안). A guest at a restroom just needs "there's a
+ * restroom, X away" — the specific name (auto-collected "천지연폭포 공중화장실",
+ * or even a curated one) is noise. So restrooms ALWAYS show the localized kind
+ * label ("Restroom" / "トイレ" / …), never a detailed name (user policy
+ * 2026-07-20). Photo spots and restaurants keep their own name (that's the
+ * point — "Crater rim viewpoint", a restaurant's name). The raw restroom name
+ * still lives in `name` as the admin's verification reference (pinLabel).
  */
 export function guestPinLabel(pin: FacilityPin, locale: RoomLocale): string {
+  if (pin.kind === 'restroom') return KIND_DEFAULT_LABEL.restroom[locale];
   const curated = pin.nameI18n?.[locale]?.trim();
   if (curated) return curated;
-  if (pin.kind === 'restroom') return KIND_DEFAULT_LABEL.restroom[locale];
   return pin.name?.trim() || KIND_DEFAULT_LABEL[pin.kind][locale];
 }
 
