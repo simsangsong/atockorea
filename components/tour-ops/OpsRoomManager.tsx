@@ -173,7 +173,7 @@ export default function OpsRoomManager({
         const link: MintedLink = { url: json.url, qr_data_url: json.qr_data_url ?? null };
         setLinks((prev) => ({ ...prev, [key]: link }));
         const copied = await copyText(link.url);
-        const roleLabel = role === 'customer' ? '손님' : role === 'guide' ? '가이드' : '기사';
+        const roleLabel = role === 'customer' ? '손님' : role === 'guide' ? '운영자' : '별도 기사';
         toast.success(copied ? `${roleLabel} 링크를 복사했습니다` : '링크 발급됨 — QR 버튼으로 확인하세요');
         onRoomsChanged();
         void load();
@@ -395,7 +395,7 @@ export default function OpsRoomManager({
                             )}
                             {booking.invite.guide_active && (
                               <span className={`rounded-full px-2 py-0.5 text-[10px] font-medium ${T.badgeGuide}`}>
-                                가이드 링크 발급됨
+                                운영자 링크 발급됨
                               </span>
                             )}
                           </p>
@@ -452,19 +452,19 @@ export default function OpsRoomManager({
                           T={T}
                         />
                         <LinkAction
-                          label="가이드 링크"
+                          label="운영자 링크 (가이드·운전)"
                           minted={guideLink}
                           busy={busy === `${booking.id}:guide`}
                           onMint={() => void mintLink(booking, 'guide')}
-                          onQr={() => guideLink && setQrOpen({ title: `${title} — 가이드 링크`, link: guideLink, role: 'guide' })}
+                          onQr={() => guideLink && setQrOpen({ title: `${title} — 운영자 링크`, link: guideLink, role: 'guide' })}
                           T={T}
                         />
                         <LinkAction
-                          label="기사 링크"
+                          label="별도 기사 (PIN)"
                           minted={driverLink}
                           busy={busy === `${booking.id}:driver`}
                           onMint={() => void mintLink(booking, 'driver')}
-                          onQr={() => driverLink && setQrOpen({ title: `${title} — 기사 링크`, link: driverLink, role: 'driver' })}
+                          onQr={() => driverLink && setQrOpen({ title: `${title} — 별도 기사 링크`, link: driverLink, role: 'driver' })}
                           T={T}
                         />
                       </div>

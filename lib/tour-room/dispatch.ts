@@ -242,9 +242,11 @@ export async function dispatchRoomInvites(
         expires_at: new Date(payload.exp * 1000).toISOString(),
         created_by: options?.createdBy ?? null,
       });
-      // The guide console (T6) will live at /tour-mode/guide; until then the
-      // tour-date token opens any of the day's rooms — link the first one.
-      const guideUrl = `${base}/tour-mode/room/${booking.id}?rt=${encodeURIComponent(token)}`;
+      // The unified operator console (dispatch across the day's rooms + per-room
+      // drive mode) lives at /tour-mode/guide; the tour-date token opens the
+      // whole day there. This is the ONE operator link — a separate hired driver
+      // gets a distinct PIN link only when needed (ops dashboard).
+      const guideUrl = `${base}/tour-mode/guide?rt=${encodeURIComponent(token)}`;
       let roomCount = 1;
       try {
         const { data: siblings } = await supabase

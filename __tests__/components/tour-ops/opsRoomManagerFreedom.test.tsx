@@ -75,7 +75,8 @@ describe('OpsRoomManager (Ops Freedom)', () => {
     await act(async () => {
       render(<OpsRoomManager date="2026-09-12" onClose={noop} onOpenRoom={noop} onRoomsChanged={noop} />);
     });
-    expect(screen.getByText('기사 링크')).toBeInTheDocument();
+    expect(screen.getByText('별도 기사 (PIN)')).toBeInTheDocument();
+    expect(screen.getByText('운영자 링크 (가이드·운전)')).toBeInTheDocument();
     expect(screen.getByText('GYG')).toBeInTheDocument();
     expect(screen.getByText('룸 만들기 + 링크')).toBeInTheDocument();
   });
