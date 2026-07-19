@@ -83,9 +83,9 @@ export default function OpsInboxView({
   const rows = useMemo(() => buildInboxRows(rooms, streams, filter), [rooms, streams, filter]);
 
   return (
-    <div className="fixed inset-0 z-50 flex flex-col bg-slate-950 text-slate-100" data-testid="ops-inbox">
+    <div className="fixed inset-0 z-50 flex flex-col bg-[var(--tr-canvas)] text-[var(--tr-ink)]" data-testid="ops-inbox">
       <header
-        className="border-b border-white/10 px-4 pb-2"
+        className="border-b border-[var(--tr-hairline)] px-4 pb-2"
         style={{ paddingTop: 'calc(env(safe-area-inset-top, 0px) + 8px)' }}
       >
         <div className="flex min-h-[40px] items-center justify-between">
@@ -94,7 +94,7 @@ export default function OpsInboxView({
             type="button"
             onClick={onClose}
             aria-label="닫기"
-            className="flex size-10 items-center justify-center rounded-lg text-slate-400 active:bg-white/10"
+            className="flex size-10 items-center justify-center rounded-lg text-[var(--tr-ink-2)] active:bg-[var(--tr-surface-2)]"
           >
             <X className="size-5" />
           </button>
@@ -112,7 +112,9 @@ export default function OpsInboxView({
               onClick={() => setFilter(key)}
               aria-pressed={filter === key}
               className={`h-8 rounded-full px-3.5 text-[12px] font-semibold ${
-                filter === key ? 'bg-white text-slate-950' : 'bg-white/10 text-slate-300'
+                filter === key
+                  ? 'bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]'
+                  : 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]'
               }`}
             >
               {label}
@@ -123,7 +125,7 @@ export default function OpsInboxView({
 
       <div className="flex-1 overflow-y-auto px-3 py-2 pb-8">
         {rows.length === 0 ? (
-          <p className="mt-16 text-center text-[13px] text-slate-500">
+          <p className="mt-16 text-center text-[13px] text-[var(--tr-ink-3)]">
             {filter === 'customer' ? '오늘 손님 메시지가 아직 없습니다.' : '오늘 메시지가 아직 없습니다.'}
           </p>
         ) : (
@@ -133,30 +135,30 @@ export default function OpsInboxView({
                 <button
                   type="button"
                   onClick={() => onOpenRoom(row.roomId)}
-                  className="w-full rounded-xl border border-white/5 bg-white/5 px-3 py-2.5 text-left active:bg-white/10"
+                  className="w-full rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2.5 text-left active:bg-[var(--tr-surface-2)]"
                 >
                   <p className="flex items-baseline justify-between gap-2">
-                    <span className="min-w-0 truncate text-[12px] font-semibold text-slate-300">
+                    <span className="min-w-0 truncate text-[12px] font-semibold text-[var(--tr-ink-2)]">
                       <span
                         className={
                           row.senderRole === 'customer'
                             ? 'text-emerald-300'
                             : row.senderRole === 'guide'
                               ? 'text-violet-300'
-                              : 'text-slate-400'
+                              : 'text-[var(--tr-ink-2)]'
                         }
                       >
                         {senderLabel(row.senderRole)}
                       </span>
                       {' · '}
                       {row.guestName}
-                      {row.tourTitle && <span className="font-normal text-slate-500"> · {row.tourTitle}</span>}
+                      {row.tourTitle && <span className="font-normal text-[var(--tr-ink-3)]"> · {row.tourTitle}</span>}
                     </span>
-                    <span className="shrink-0 text-[10px] tabular-nums text-slate-500">
+                    <span className="shrink-0 text-[10px] tabular-nums text-[var(--tr-ink-3)]">
                       {kstTimeLabel(row.createdAt)}
                     </span>
                   </p>
-                  <p className="mt-1 line-clamp-2 text-[13px] leading-snug text-slate-100">{row.text}</p>
+                  <p className="mt-1 line-clamp-2 text-[13px] leading-snug text-[var(--tr-ink)]">{row.text}</p>
                 </button>
               </li>
             ))}

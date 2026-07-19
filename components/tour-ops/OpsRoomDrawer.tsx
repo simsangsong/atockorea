@@ -154,18 +154,18 @@ export default function OpsRoomDrawer({
     <div className="fixed inset-0 z-50 flex flex-col justify-end" role="dialog" aria-modal="true" aria-label="룸 대화">
       <button type="button" aria-label="닫기" onClick={onClose} className="absolute inset-0 bg-black/60" />
       <div
-        className="relative flex max-h-[88dvh] flex-col rounded-t-3xl border-t border-white/10 bg-slate-900"
+        className="relative flex max-h-[88dvh] flex-col rounded-t-3xl border-t border-[var(--tr-hairline)] bg-[var(--tr-surface)]"
         style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
       >
-        <header className="flex items-center gap-3 border-b border-white/10 px-4 py-3">
+        <header className="flex items-center gap-3 border-b border-[var(--tr-hairline)] px-4 py-3">
           <div className="min-w-0 flex-1">
-            <p className="truncate text-[15px] font-bold text-slate-100">
+            <p className="truncate text-[15px] font-bold text-[var(--tr-ink)]">
               {room.booking?.contact_name ?? '게스트'}
-              <span className="ml-1.5 font-normal text-slate-500">
+              <span className="ml-1.5 font-normal text-[var(--tr-ink-3)]">
                 {room.booking?.number_of_guests ?? 1}명 · {room.booking?.preferred_language ?? 'en'}
               </span>
             </p>
-            <p className="truncate text-[12px] text-slate-400">
+            <p className="truncate text-[12px] text-[var(--tr-ink-2)]">
               {room.tour?.title ?? ''} · 입장 {joined.length}명
               {locations.length > 0 && ` · 위치공유 ${locations.length}`}
             </p>
@@ -173,7 +173,7 @@ export default function OpsRoomDrawer({
           {phone && (
             <a
               href={`tel:${phone}`}
-              className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-slate-800 text-slate-200"
+              className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]"
               aria-label="전화 걸기"
             >
               <Phone className="size-4" />
@@ -181,14 +181,14 @@ export default function OpsRoomDrawer({
           )}
           <a
             href={`/admin/orders/${room.booking_id}`}
-            className="flex h-11 shrink-0 items-center rounded-xl bg-slate-800 px-3 text-[12px] font-medium text-slate-200"
+            className="flex h-11 shrink-0 items-center rounded-xl bg-[var(--tr-surface-2)] px-3 text-[12px] font-medium text-[var(--tr-ink-2)]"
           >
             주문
           </a>
           <button
             type="button"
             onClick={onClose}
-            className="flex size-11 shrink-0 items-center justify-center rounded-xl text-slate-400"
+            className="flex size-11 shrink-0 items-center justify-center rounded-xl text-[var(--tr-ink-2)]"
             aria-label="닫기"
           >
             <X className="size-5" />
@@ -217,8 +217,8 @@ export default function OpsRoomDrawer({
         )}
 
         <div ref={feedRef} className="min-h-[200px] flex-1 space-y-2 overflow-y-auto px-4 py-3">
-          {backlogLoading && feed.length === 0 && <p className="text-center text-[12px] text-slate-500">피드를 불러오는 중…</p>}
-          {!backlogLoading && feed.length === 0 && <p className="text-center text-[12px] text-slate-500">아직 메시지가 없습니다.</p>}
+          {backlogLoading && feed.length === 0 && <p className="text-center text-[12px] text-[var(--tr-ink-3)]">피드를 불러오는 중…</p>}
+          {!backlogLoading && feed.length === 0 && <p className="text-center text-[12px] text-[var(--tr-ink-3)]">아직 메시지가 없습니다.</p>}
           {feed.map((message) => {
             const mine = message.sender_role === 'admin';
             return (
@@ -229,11 +229,11 @@ export default function OpsRoomDrawer({
                       ? `bg-blue-600 text-white ${message._local ? 'opacity-60' : ''}`
                       : message.sender_role === 'guide'
                         ? 'bg-amber-500/15 text-amber-100'
-                        : 'bg-slate-800 text-slate-100'
+                        : 'bg-[var(--tr-surface-2)] text-[var(--tr-ink)]'
                   }`}
                 >
                   {!mine && (
-                    <p className="mb-0.5 text-[10px] font-semibold text-slate-300">
+                    <p className="mb-0.5 text-[10px] font-semibold text-[var(--tr-ink-2)]">
                       {senderLabel(message.sender_role)}
                     </p>
                   )}
@@ -241,7 +241,7 @@ export default function OpsRoomDrawer({
                   <p className="whitespace-pre-wrap break-words">
                     {mine ? message.source_text : opsReadableText(message)}
                   </p>
-                  <p className={`mt-0.5 text-right text-[10px] ${mine ? 'text-blue-100' : 'text-slate-400'}`}>
+                  <p className={`mt-0.5 text-right text-[10px] ${mine ? 'text-blue-100' : 'text-[var(--tr-ink-3)]'}`}>
                     {message._local ? '전송 중…' : kstTimeLabel(message.created_at)}
                   </p>
                 </div>
@@ -250,7 +250,7 @@ export default function OpsRoomDrawer({
           })}
         </div>
 
-        <div className="border-t border-white/10 px-3 pt-2">
+        <div className="border-t border-[var(--tr-hairline)] px-3 pt-2">
           <div className="flex gap-1.5 overflow-x-auto pb-2" style={{ scrollbarWidth: 'none' }}>
             {QUICK_REPLY_PRESETS.map((preset) => (
               <button
@@ -258,7 +258,7 @@ export default function OpsRoomDrawer({
                 type="button"
                 disabled={sending}
                 onClick={() => void send({ presetKey: preset.key }, preset.text.ko)}
-                className="flex h-11 shrink-0 items-center gap-1 rounded-full border border-white/10 bg-slate-800 px-3.5 text-[12px] text-slate-200 disabled:opacity-40"
+                className="flex h-11 shrink-0 items-center gap-1 rounded-full border border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] px-3.5 text-[12px] text-[var(--tr-ink-2)] disabled:opacity-40"
               >
                 <span>{preset.emoji}</span>
                 {preset.text.ko}
@@ -277,7 +277,7 @@ export default function OpsRoomDrawer({
               onChange={(event) => setDraft(event.target.value)}
               maxLength={2000}
               placeholder="관제 메시지 (자동 번역되어 전달)"
-              className="h-11 min-w-0 flex-1 rounded-xl border border-white/10 bg-slate-800 px-3 text-[14px] text-slate-100 placeholder:text-slate-500"
+              className="h-11 min-w-0 flex-1 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] px-3 text-[14px] text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)]"
             />
             <button
               type="submit"
