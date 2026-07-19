@@ -410,20 +410,31 @@ export default function RoomShell({
                           <span className="w-px flex-1 bg-[var(--tr-hairline)]" aria-hidden />
                         )}
                       </div>
-                      <div className={`min-w-0 flex-1 ${index < schedule.length - 1 ? 'pb-6' : ''}`}>
+                      <div className={`min-w-0 flex-1 ${index < schedule.length - 1 ? 'pb-4' : ''}`}>
+                        {/* W2.4 — the current stop lifts into an accent card so
+                            "now" is unmistakable; -mx/px cancels so text stays
+                            aligned with the rest of the timeline. */}
                         <div
-                          className={`tr-card-text ${
-                            active ? 'font-semibold text-[var(--tr-ink)]' : 'font-medium text-[var(--tr-ink)]'
-                          }`}
+                          className={
+                            active
+                              ? '-mx-2 rounded-xl bg-[var(--tr-accent-soft)] px-2 py-1.5 shadow-[var(--tr-tile-shadow)]'
+                              : ''
+                          }
                         >
-                          {String(item.title ?? item.name ?? '')}
-                        </div>
-                        {item.departure_time && (
-                          <div className="tr-meta mt-0.5 flex items-center gap-1 text-[var(--tr-ink-2)]">
-                            <IconPickup size={12} aria-hidden />
-                            {String(item.departure_time)}
+                          <div
+                            className={`tr-card-text ${
+                              active ? 'font-semibold text-[var(--tr-accent-deep)]' : 'font-medium text-[var(--tr-ink)]'
+                            }`}
+                          >
+                            {String(item.title ?? item.name ?? '')}
                           </div>
-                        )}
+                          {item.departure_time && (
+                            <div className="tr-meta mt-0.5 flex items-center gap-1 text-[var(--tr-ink-2)]">
+                              <IconPickup size={12} aria-hidden />
+                              {String(item.departure_time)}
+                            </div>
+                          )}
+                        </div>
                       </div>
                     </li>
                   );
