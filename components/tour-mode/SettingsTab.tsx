@@ -32,6 +32,8 @@ const LOCALE_NAME: Record<RoomLocale, string> = {
 
 interface SettingsCopy {
   language: string;
+  appLanguage: string;
+  appLanguageHint: string;
   chatLanguage: string;
   chatLanguageHint: string;
   chatAuto: string;
@@ -50,7 +52,9 @@ interface SettingsCopy {
 
 const COPY: Record<RoomLocale, SettingsCopy> = {
   en: {
-    language: 'My language',
+    language: 'Language',
+    appLanguage: 'App language',
+    appLanguageHint: 'Screen text and notices.',
     chatLanguage: 'Chat language',
     chatLanguageHint: 'Guide and driver messages are shown in this language.',
     chatAuto: 'Auto (match my typing)',
@@ -67,7 +71,9 @@ const COPY: Record<RoomLocale, SettingsCopy> = {
     textLarge: 'Large',
   },
   ko: {
-    language: '내 언어',
+    language: '언어',
+    appLanguage: '앱 언어',
+    appLanguageHint: '화면과 안내 문구에 쓰는 언어',
     chatLanguage: '채팅 언어',
     chatLanguageHint: '가이드·기사 메시지를 이 언어로 보여줍니다.',
     chatAuto: '자동 (내가 쓰는 언어)',
@@ -85,6 +91,8 @@ const COPY: Record<RoomLocale, SettingsCopy> = {
   },
   ja: {
     language: '言語',
+    appLanguage: 'アプリの言語',
+    appLanguageHint: '画面や案内に使う言語',
     chatLanguage: 'チャット言語',
     chatLanguageHint: 'ガイド・ドライバーのメッセージをこの言語で表示します。',
     chatAuto: '自動（入力に合わせる）',
@@ -101,7 +109,9 @@ const COPY: Record<RoomLocale, SettingsCopy> = {
     textLarge: '大きい',
   },
   es: {
-    language: 'Mi idioma',
+    language: 'Idioma',
+    appLanguage: 'Idioma de la app',
+    appLanguageHint: 'Pantallas y avisos.',
     chatLanguage: 'Idioma del chat',
     chatLanguageHint: 'Los mensajes del guía y del conductor se muestran en este idioma.',
     chatAuto: 'Automático (según lo que escribo)',
@@ -118,7 +128,9 @@ const COPY: Record<RoomLocale, SettingsCopy> = {
     textLarge: 'Grande',
   },
   zh: {
-    language: '我的语言',
+    language: '语言',
+    appLanguage: '应用语言',
+    appLanguageHint: '界面和通知语言',
     chatLanguage: '聊天语言',
     chatLanguageHint: '导游和司机的消息将以此语言显示。',
     chatAuto: '自动（按我的输入）',
@@ -207,52 +219,57 @@ export default function SettingsTab({
   // dividers on the room surface, 44px rows, one accent (amber = action).
   return (
     <div className="space-y-4 pb-4" data-testid="settings-tab">
+      {/* One "Language" card with two clearly-labelled sub-controls so the app
+          language (chrome, 5 locales) and the chat language (translation target,
+          any language) don't read as two competing top-level settings. */}
       <section className="tr-card p-4">
         <h3 className="tr-card-text flex items-center gap-1.5 font-semibold text-[var(--tr-ink)]">
           <IconLanguage size={15} className="text-[var(--tr-ink-3)]" aria-hidden />
           {copy.language}
         </h3>
-        <div className="mt-2.5 grid grid-cols-3 gap-1.5">
-          {ROOM_LOCALES.map((code) => (
-            <button
-              key={code}
-              type="button"
-              onClick={() => onLocaleChange(code)}
-              aria-pressed={locale === code}
-              className={`tr-card-text min-h-[44px] rounded-xl px-2 transition ${
-                locale === code
-                  ? 'bg-[var(--tr-accent)] font-semibold text-[var(--tr-bubble-me-ink)]'
-                  : 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]'
-              }`}
-            >
-              {LOCALE_NAME[code]}
-            </button>
-          ))}
-        </div>
-      </section>
 
-      {onChatLocaleChange && (
-        <section className="tr-card p-4" data-testid="chat-language-section">
-          <h3 className="tr-card-text flex items-center gap-1.5 font-semibold text-[var(--tr-ink)]">
-            <IconLanguage size={15} className="text-[var(--tr-ink-3)]" aria-hidden />
-            {copy.chatLanguage}
-          </h3>
-          <p className="tr-meta mt-0.5 leading-snug text-[var(--tr-ink-2)]">{copy.chatLanguageHint}</p>
-          <select
-            value={chatLocale ?? ''}
-            onChange={(e) => onChatLocaleChange(e.target.value)}
-            className="tr-card-text mt-2.5 min-h-[44px] w-full rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] px-3 text-[var(--tr-ink)] focus:border-[var(--tr-accent)] focus:outline-none"
-            data-testid="chat-language-select"
-          >
-            <option value="">{copy.chatAuto}</option>
-            {CHAT_LANGUAGES.map((lang) => (
-              <option key={lang.code} value={lang.code}>
-                {lang.name}
-              </option>
+        <div className="mt-3">
+          <p className="tr-label font-semibold text-[var(--tr-ink)]">{copy.appLanguage}</p>
+          <p className="tr-meta mt-0.5 leading-snug text-[var(--tr-ink-3)]">{copy.appLanguageHint}</p>
+          <div className="mt-2 grid grid-cols-3 gap-1.5">
+            {ROOM_LOCALES.map((code) => (
+              <button
+                key={code}
+                type="button"
+                onClick={() => onLocaleChange(code)}
+                aria-pressed={locale === code}
+                className={`tr-card-text min-h-[44px] rounded-xl px-2 transition ${
+                  locale === code
+                    ? 'bg-[var(--tr-accent)] font-semibold text-[var(--tr-bubble-me-ink)]'
+                    : 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]'
+                }`}
+              >
+                {LOCALE_NAME[code]}
+              </button>
             ))}
-          </select>
-        </section>
-      )}
+          </div>
+        </div>
+
+        {onChatLocaleChange && (
+          <div className="mt-4 border-t border-[var(--tr-hairline)] pt-3" data-testid="chat-language-section">
+            <p className="tr-label font-semibold text-[var(--tr-ink)]">{copy.chatLanguage}</p>
+            <p className="tr-meta mt-0.5 leading-snug text-[var(--tr-ink-3)]">{copy.chatLanguageHint}</p>
+            <select
+              value={chatLocale ?? ''}
+              onChange={(e) => onChatLocaleChange(e.target.value)}
+              className="tr-card-text mt-2 min-h-[44px] w-full rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] px-3 text-[var(--tr-ink)] focus:border-[var(--tr-accent)] focus:outline-none"
+              data-testid="chat-language-select"
+            >
+              <option value="">{copy.chatAuto}</option>
+              {CHAT_LANGUAGES.map((lang) => (
+                <option key={lang.code} value={lang.code}>
+                  {lang.name}
+                </option>
+              ))}
+            </select>
+          </div>
+        )}
+      </section>
 
       <section className="tr-card p-4">
         <h3 className="tr-card-text flex items-center gap-1.5 font-semibold text-[var(--tr-ink)]">
