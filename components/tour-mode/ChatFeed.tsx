@@ -147,6 +147,7 @@ export default function ChatFeed({
   onReact,
   lastReadByOthersAt = null,
   typingUsers = [],
+  focusMessageId = null,
 }: {
   messages: RoomMessage[];
   viewerLocale: RoomLocale;
@@ -174,6 +175,8 @@ export default function ChatFeed({
   lastReadByOthersAt?: string | null;
   /** Phase 2d — others currently typing. */
   typingUsers?: Array<{ role: string; displayName: string }>;
+  /** Phase 3 — deep-link: scroll to + flash this message once it's in the feed. */
+  focusMessageId?: string | null;
 }) {
   const bubbleText = textScale === 'large' ? 'tr-body-lg' : 'tr-body';
   const systemText = textScale === 'large' ? 'tr-card-text' : 'tr-label';
@@ -291,6 +294,17 @@ export default function ChatFeed({
     setShowFab(false);
     setAwayCount(0);
   }, []);
+
+  // Phase 3 — deep-link focus: once the target message is in the feed, scroll
+  // to it and flash it (guide console "tap a message → open the chat there").
+  const focusedRef = useRef<string | null>(null);
+  useEffect(() => {
+    if (!focusMessageId || focusedRef.current === focusMessageId) return;
+    if (!messages.some((m) => m.id === focusMessageId)) return;
+    focusedRef.current = focusMessageId;
+    const raf = window.requestAnimationFrame(() => jumpToMessage(focusMessageId));
+    return () => window.cancelAnimationFrame(raf);
+  }, [focusMessageId, messages, jumpToMessage]);
 
   const prevCountRef = useRef(messages.length);
   useEffect(() => {

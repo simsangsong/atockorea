@@ -147,6 +147,7 @@ export default function RoomShell({
   home,
   theme = 'light',
   chatActivityKey,
+  initialTab,
 }: {
   title: string;
   subtitle?: string;
@@ -176,24 +177,39 @@ export default function RoomShell({
   theme?: 'light' | 'dark';
   /** U1.2 — bumps on chat activity; while on another tab it lights the unread dot. */
   chatActivityKey?: number;
+  /** Phase 3 — deep-link: land on this tab instead of the default. */
+  initialTab?: RoomTab;
 }) {
-  const [tab, setTab] = useState<RoomTab>(home ? 'home' : 'chat');
+  const [tab, setTab] = useState<RoomTab>(initialTab ?? (home ? 'home' : 'chat'));
   const [emergencyOpen, setEmergencyOpen] = useState(false);
   const [conciergeOpen, setConciergeOpen] = useState(false);
   const [chatUnread, setChatUnread] = useState(false);
   const keyboardOpen = useKeyboardOpen();
   const badge = LIFECYCLE_BADGE[lifecycle] ?? LIFECYCLE_BADGE.live;
   const labels = TAB_LABEL[locale];
-  const currentIndex = currentScheduleIndex(schedule, lifecycle, Date.now());
+  // The "now" marker on the schedule advances on a 1-min tick (kept out of
+  // render so it stays pure — Date.now() in render is impure/unstable).
+  const [nowMs, setNowMs] = useState(() => Date.now());
+  useEffect(() => {
+    const id = window.setInterval(() => setNowMs(Date.now()), 60_000);
+    return () => window.clearInterval(id);
+  }, []);
+  const currentIndex = currentScheduleIndex(schedule, lifecycle, nowMs);
 
-  // Unread dot: chat activity while another tab is up.
+  // Unread dot: chat activity while another tab is up. Refs update in effects,
+  // not during render (they're only read in the activity effect below).
   const tabRef = useRef(tab);
-  tabRef.current = tab;
+  useEffect(() => {
+    tabRef.current = tab;
+  }, [tab]);
   const activityRef = useRef(chatActivityKey);
   useEffect(() => {
-    if (chatActivityKey === activityRef.current) return;
-    activityRef.current = chatActivityKey;
-    if (tabRef.current !== 'chat') setChatUnread(true);
+    const onActivity = () => {
+      if (chatActivityKey === activityRef.current) return;
+      activityRef.current = chatActivityKey;
+      if (tabRef.current !== 'chat') setChatUnread(true);
+    };
+    onActivity();
   }, [chatActivityKey]);
 
   const selectTab = (next: RoomTab) => {

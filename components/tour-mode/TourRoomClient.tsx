@@ -107,6 +107,26 @@ function scrubTokenFromUrl(): void {
   }
 }
 
+/**
+ * Phase 3 — read (and scrub) a `?message=<id>&reply=1` deep link, e.g. the
+ * guide console's "tap a message → open the chat there, ready to quote it".
+ */
+function readDeepLink(): { focusMessageId: string | null; reply: boolean } {
+  try {
+    const url = new URL(window.location.href);
+    const focusMessageId = url.searchParams.get('message');
+    const reply = url.searchParams.get('reply') === '1';
+    if (focusMessageId || url.searchParams.has('reply')) {
+      url.searchParams.delete('message');
+      url.searchParams.delete('reply');
+      window.history.replaceState(window.history.state, '', url.toString());
+    }
+    return { focusMessageId, reply };
+  } catch {
+    return { focusMessageId: null, reply: false };
+  }
+}
+
 export default function TourRoomClient({ bookingId }: { bookingId: string }) {
   const copy = useMemo(() => ENTRY_COPY[detectEntryLocale()], []);
   const { state, join } = useTourRoomSession(bookingId);
@@ -341,6 +361,24 @@ function TourRoomLive({
     markRead();
   }, [messages, viewerRole, readOnly, markRead]);
 
+  // Phase 3 — deep link (?message=&reply=1). TourRoomLive is client-only (renders
+  // after join), so a lazy read is hydration-safe.
+  const [deepLink] = useState(readDeepLink);
+  const replyPrefilledRef = useRef(false);
+  useEffect(() => {
+    // Nested so it isn't a bare effect-body setState; runs once when the target
+    // message is present.
+    const prefill = () => {
+      if (replyPrefilledRef.current || readOnly || !deepLink.reply || !deepLink.focusMessageId) return;
+      const target = messages.find((m) => m.id === deepLink.focusMessageId);
+      if (target) {
+        replyPrefilledRef.current = true;
+        setReplyTo(target);
+      }
+    };
+    prefill();
+  }, [deepLink, messages, readOnly]);
+
   // W5.1 — remember this room so the installed PWA's start_url (/tour-mode)
   // can jump straight back in; the stored room session makes rejoin seamless.
   useEffect(() => {
@@ -535,6 +573,7 @@ function TourRoomLive({
       schedule={schedule}
       theme={theme}
       chatActivityKey={messages.length}
+      initialTab={deepLink.focusMessageId ? 'chat' : undefined}
       banner={
         <>
           {viewerRole === 'customer' && (
@@ -696,6 +735,7 @@ function TourRoomLive({
             onReact={!readOnly ? (id, emoji) => void react(id, emoji) : undefined}
             lastReadByOthersAt={othersLastReadAt}
             typingUsers={typingUsers}
+            focusMessageId={deepLink.focusMessageId}
             onExtraConfirm={
               viewerRole === 'customer' && !readOnly
                 ? async (extraId) => {
