@@ -9,6 +9,13 @@
   - **F-D3** 핀 표시 v1 = **이름 라벨 + Static 멀티마커 지도** (사진 썸네일 핀 = Phase 2 인터랙티브).
   - **F-D4** 다음 단계 = **이 플랜 문서 승인 후 구현 착수.**
 
+> **구현 상태(2026-07-19, 브랜치 `claude/tour-facility-pins`, main 미머지):** W0~W3 코드 전부 완료.
+> - ✅ **W0** `32d2484d` — 스키마 라이브 적용 + `facilityPins.ts` lib (10테스트)
+> - ✅ **W1** `73ad07ed`+`302a55bd` — CRUD API + `/admin/facility-pins` 편집기 (F-D10, 12테스트)
+> - ✅ **W2** `20e16259` — 도착 메타 pins 주입 + `answerTier0` mapCard + `FacilityMapCard` (concierge 145테스트)
+> - ✅ **W3** `43d5f432` — `scripts/collect-facility-pins.mjs` 화장실 자동수집 (`npm run facility:collect[:dry]`)
+> - **잔여 = 사람 게이트(§H):** ① Places 과금·활성화 확인 후 자동수집 실행 ② 파일럿 관광지 포토스팟 큐레이션 ③ 편집기·손님 지도카드 비주얼 QA(admin 로그인/시드 룸) ④ 플래그 결정 ⑤ 브랜치 PR·머지. tsc 0.
+
 ---
 
 ## §A. 코드 리얼리티 감사 (재사용 ✅ / 확장 🔶 / 부재 ❌)
