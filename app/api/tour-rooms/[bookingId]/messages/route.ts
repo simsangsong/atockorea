@@ -11,6 +11,8 @@ import { pregenerateGuideNoticeTts, type TtsStorageClient } from '@/lib/tour-roo
 import { sendOpsPush } from '@/lib/tour-ops/push';
 import { sendDriverRoomPush } from '@/lib/tour-room/guestPush';
 import { requestGate } from '@/lib/durable-rate-limit';
+import { classifyAttachment, uploadAttachment, type StorageClientLike } from '@/lib/tour-room/attachments';
+import { buildReplySnapshot, type RepliableMessage } from '@/lib/tour-room/reply';
 
 export const dynamic = 'force-dynamic';
 
@@ -81,26 +83,36 @@ export async function POST(
     const supabase = createServerClient();
 
     let text = '';
-    let inputKind: 'text' | 'audio' = 'text';
+    let inputKind: 'text' | 'audio' | 'image' | 'file' = 'text';
     let guestEmail = '';
     let guestName = '';
     let targetLocalesRaw: unknown = null;
     let audioFile: File | null = null;
+    let attachmentFile: File | null = null;
     let sttPrompt = '';
     let presetKey: string | null = null;
     let ackKind: string | null = null;
+    let replyToId: string | null = null;
     let messageMetadata: Record<string, unknown> = {};
 
     const contentType = req.headers.get('content-type') ?? '';
     if (contentType.includes('multipart/form-data')) {
       const form = await req.formData();
       const audio = form.get('audio');
-      if (!(audio instanceof File)) {
-        return NextResponse.json({ error: 'audio file is required' }, { status: 400 });
+      const attachment = form.get('attachment');
+      if (attachment instanceof File) {
+        // Kakao-grade photo/file attachment — an optional caption rides along
+        // and is translated like any text.
+        attachmentFile = attachment;
+        text = String(form.get('caption') || '').trim();
+      } else if (audio instanceof File) {
+        audioFile = audio;
+        sttPrompt = String(form.get('sttPrompt') || '');
+        inputKind = 'audio';
+      } else {
+        return NextResponse.json({ error: 'audio or attachment file is required' }, { status: 400 });
       }
-      audioFile = audio;
-      sttPrompt = String(form.get('sttPrompt') || '');
-      inputKind = 'audio';
+      replyToId = typeof form.get('replyToId') === 'string' ? String(form.get('replyToId')) : null;
       targetLocalesRaw = form.get('targetLocales');
       guestEmail = String(form.get('contactEmail') || '');
       guestName = String(form.get('contactName') || '');
@@ -109,6 +121,7 @@ export async function POST(
       text = typeof body.text === 'string' ? body.text.trim() : '';
       presetKey = typeof body.presetKey === 'string' ? body.presetKey : null;
       ackKind = typeof body.ackKind === 'string' ? body.ackKind : null;
+      replyToId = typeof body.replyToId === 'string' ? body.replyToId : null;
       targetLocalesRaw = body.targetLocales;
       guestEmail = String(body.contactEmail || '');
       guestName = String(body.contactName || '');
@@ -140,10 +153,66 @@ export async function POST(
       participantLocales.length > 0 ? participantLocales : defaultTargetLocalesFor(senderRole, booking),
     );
 
+    // Kakao-grade attachment: validate → rate-gate → upload → carry the
+    // attachment metadata. The optional caption stays in `text` (translated below).
+    if (attachmentFile) {
+      const classified = classifyAttachment({
+        type: attachmentFile.type,
+        size: attachmentFile.size,
+        name: attachmentFile.name,
+      });
+      if ('error' in classified) {
+        return NextResponse.json({ error: classified.error }, { status: 400 });
+      }
+      const attachGate = await requestGate({
+        namespace: 'tour_room_attachment',
+        key: actor.kind === 'session' ? `participant:${actor.sessionPayload.participantId}` : `booking:${booking.id}`,
+        perMinute: 6,
+        perHour: 60,
+      });
+      if (!attachGate.allowed) {
+        return NextResponse.json(
+          { error: 'rate_limited' },
+          { status: 429, headers: { 'Retry-After': String(Math.ceil((attachGate.retryAfterMs ?? 0) / 1000)) } },
+        );
+      }
+      try {
+        const bytes = Buffer.from(await attachmentFile.arrayBuffer());
+        const attachmentMeta = await uploadAttachment(
+          supabase as unknown as StorageClientLike,
+          room.id,
+          { bytes, type: attachmentFile.type, name: attachmentFile.name, size: attachmentFile.size },
+          classified.ext,
+        );
+        inputKind = classified.kind;
+        messageMetadata = { ...messageMetadata, kind: `attachment_${classified.kind}`, attachment: attachmentMeta };
+      } catch (uploadError) {
+        console.error('tour-room attachment upload failed:', uploadError);
+        return NextResponse.json({ error: 'attachment upload failed' }, { status: 502 });
+      }
+    }
+
+    // Reply/quote: build the snapshot from the REAL original row (anti-forgery),
+    // scoped to this room. Missing/foreign originals are silently ignored.
+    let replyToMessageId: string | null = null;
+    if (replyToId) {
+      const { data: original } = await supabase
+        .from('tour_room_messages')
+        .select('id, room_id, sender_role, input_kind, source_text, metadata')
+        .eq('id', replyToId)
+        .eq('room_id', room.id)
+        .maybeSingle();
+      if (original) {
+        replyToMessageId = (original as { id: string }).id;
+        messageMetadata = { ...messageMetadata, reply_to: buildReplySnapshot(original as RepliableMessage) };
+      }
+    }
+
     if (audioFile) {
       const transcribed = await transcribeAudioFile(audioFile, { prompt: sttPrompt });
       text = transcribed.text;
       messageMetadata = {
+        ...messageMetadata,
         stt: {
           provider: transcribed.provider,
           model: transcribed.model,
@@ -177,8 +246,8 @@ export async function POST(
       messageMetadata = { ...messageMetadata, kind: 'quick_reply', preset_key: preset.key };
     }
 
-    if (!text) {
-      return NextResponse.json({ error: 'text or audio transcription is required' }, { status: 400 });
+    if (!text && !attachmentFile) {
+      return NextResponse.json({ error: 'text, audio, or attachment is required' }, { status: 400 });
     }
 
     // R-6 (T1.3): a translation failure must never block the message — post
@@ -188,6 +257,9 @@ export async function POST(
       translation = { source_locale: 'en', translations: { ...preset.text } };
     } else if (pretranslated) {
       translation = pretranslated;
+    } else if (!text) {
+      // A caption-less attachment has nothing to translate.
+      translation = { source_locale: 'und', translations: {} };
     } else {
       try {
         translation = await translateTextForLocales(text, targetLocales);
@@ -210,6 +282,7 @@ export async function POST(
         source_locale: translation.source_locale,
         translations: translation.translations,
         target_locales: targetLocales,
+        reply_to_message_id: replyToMessageId,
         metadata: messageMetadata,
       })
       .select()

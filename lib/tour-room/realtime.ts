@@ -20,7 +20,10 @@ export type RoomBroadcastEvent =
   | 'caption'        // live interpretation caption (ephemeral, T2.7)
   | 'location'       // participant location ping rebroadcast (T3.1)
   | 'participant'    // participant joined / updated
-  | 'room';          // room status change (closed, etc.)
+  | 'room'           // room status change (closed, etc.)
+  | 'reaction'       // Kakao-grade: emoji reaction added/removed on a message
+  | 'read'           // read-cursor advanced by a participant (read receipts)
+  | 'typing';        // ephemeral typing ping (not persisted)
 
 function channelSigningSecret(): string {
   return (
