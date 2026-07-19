@@ -7,6 +7,7 @@ import {
   selectFacilityPins,
   facilityStaticMapPath,
   pinLabel,
+  guestPinLabel,
   pinDirectionsUrl,
   FACILITY_PIN_CAP,
   type FacilityPin,
@@ -105,6 +106,29 @@ describe('pinLabel', () => {
     expect(pinLabel(pin({ kind: 'photo', name: null }), 'en')).toBe('Photo spot');
   });
 });
+
+describe('guestPinLabel (A안 — foreign-guest display)', () => {
+  it('shows a localized generic label for a Korean-named restroom', () => {
+    const pin = pin_({ kind: 'restroom', name: '천지연폭포 공중화장실' });
+    expect(guestPinLabel(pin, 'en')).toBe('Restroom');
+    expect(guestPinLabel(pin, 'ja')).toBe('トイレ');
+    expect(guestPinLabel(pin, 'zh')).toBe('洗手间');
+  });
+
+  it('honors a curated per-locale name when present', () => {
+    const pin = pin_({ kind: 'restroom', name: '천지연폭포 공중화장실', nameI18n: { en: 'Falls Restroom' } });
+    expect(guestPinLabel(pin, 'en')).toBe('Falls Restroom');
+    expect(guestPinLabel(pin, 'ja')).toBe('トイレ'); // no ja override → generic
+  });
+
+  it('keeps the given name for photo spots', () => {
+    expect(guestPinLabel(pin_({ kind: 'photo', name: 'Crater rim view' }), 'en')).toBe('Crater rim view');
+  });
+});
+
+function pin_(overrides: Partial<FacilityPin>): FacilityPin {
+  return { kind: 'restroom', lat: 33.5, lng: 126.5, name: null, ...overrides };
+}
 
 describe('pinDirectionsUrl', () => {
   it('builds a native directions link to the pin', () => {
