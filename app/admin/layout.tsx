@@ -26,6 +26,7 @@ import {
   Settings,
   Sparkles,
   Star,
+  Toilet,
   X,
 } from 'lucide-react';
 import Logo from '@/components/Logo';
@@ -55,6 +56,7 @@ const adminMenuItems: AdminMenuItem[] = [
   { path: '/admin/upload', label: '이미지 업로드', icon: ImageUp },
   { path: '/admin/cms', label: '콘텐츠 CMS', icon: Sparkles },
   { path: '/admin/match-pois', label: '매칭 POI 관리', icon: MapPin, badge: 'NEW' },
+  { path: '/admin/facility-pins', label: '편의시설 핀', icon: Toilet, badge: 'NEW' },
   { path: '/admin/analytics', label: '데이터 분석', icon: BarChart3 },
   { path: '/admin/chatbot-analytics', label: '챗봇 분석', icon: Bot, badge: 'NEW' },
   { path: '/admin/settings', label: '시스템 설정', icon: Settings },

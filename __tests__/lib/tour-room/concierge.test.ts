@@ -247,11 +247,76 @@ describe('context extraction', () => {
   });
 });
 
+describe('facility map card (W2 — scoped restroom/photo pins)', () => {
+  const restroomPins = [
+    { kind: 'restroom' as const, lat: 33.45, lng: 126.56, name: '정문 화장실', distanceM: 40 },
+    { kind: 'restroom' as const, lat: 33.451, lng: 126.561, name: null, distanceM: 120 },
+  ];
+
+  it('attaches a restroom map card when the arrival spot has pins', () => {
+    const answer = answerTier0('restroom', ctx({ spotTitle: '성산일출봉', facilityPins: restroomPins }), 'ko');
+    expect(answer.answered).toBe(true);
+    expect(answer.mapCard?.kind).toBe('restroom');
+    expect(answer.mapCard?.pins).toHaveLength(2);
+  });
+
+  it('attaches a photo map card for the photo intent', () => {
+    const photoPins = [{ kind: 'photo' as const, lat: 33.46, lng: 126.94, name: '분화구 뷰' }];
+    const answer = answerTier0('photo_spot', ctx({ spotTitle: '성산', facilityPins: photoPins }), 'en');
+    expect(answer.mapCard?.kind).toBe('photo');
+    expect(answer.mapCard?.pins).toHaveLength(1);
+  });
+
+  it('does not leak the other kind (restroom intent ignores photo pins)', () => {
+    const answer = answerTier0(
+      'restroom',
+      ctx({ spotTitle: 'X', facilityPins: [{ kind: 'photo' as const, lat: 33.4, lng: 126.5, name: null }] }),
+      'en',
+    );
+    expect(answer.mapCard).toBeUndefined();
+    expect(answer.answered).toBe(false); // no restroom pins, no text info → honest fallback
+  });
+
+  it('falls back to text with no map card when there are no pins (F-D8 no regression)', () => {
+    const answer = answerTier0(
+      'restroom',
+      ctx({ spotTitle: 'Temple', content: { convenience: { restroom: 'Near the gate' } } }),
+      'en',
+    );
+    expect(answer.mapCard).toBeUndefined();
+    expect(answer.text).toContain('Near the gate');
+  });
+
+  it('latestArrivalContext extracts poi_key and facility_pins from metadata', () => {
+    const result = latestArrivalContext([
+      {
+        metadata: {
+          kind: 'spot_arrival',
+          spot_title: 'Seongsan',
+          poi_key: 'seongsan_ilchulbong',
+          facility_pins: restroomPins,
+        },
+      },
+    ]);
+    expect(result.poiKey).toBe('seongsan_ilchulbong');
+    expect(result.facilityPins).toHaveLength(2);
+  });
+});
+
 describe('inlineConciergeAnswer (C — chat auto-answer gate)', () => {
   it('answers a Tier-0 info question typed into chat', () => {
-    const text = inlineConciergeAnswer('what time is the next stop?', ctx({ schedule: SCHEDULE }), 'en');
-    expect(text).toBeTruthy();
-    expect(text).toContain('Gamcheon Culture Village');
+    const answer = inlineConciergeAnswer('what time is the next stop?', ctx({ schedule: SCHEDULE }), 'en');
+    expect(answer).toBeTruthy();
+    expect(answer?.text).toContain('Gamcheon Culture Village');
+  });
+
+  it('carries the map card through the inline gate (restroom → pins)', () => {
+    const answer = inlineConciergeAnswer(
+      'where is the restroom?',
+      ctx({ spotTitle: '성산', facilityPins: [{ kind: 'restroom', lat: 33.45, lng: 126.56, name: 'A' }] }),
+      'en',
+    );
+    expect(answer?.mapCard?.kind).toBe('restroom');
   });
 
   it('stays silent on chit-chat (no intent → null → guide answers)', () => {

@@ -427,6 +427,7 @@ function TourRoomLive({
     const ctx: Tier0Context = {
       spotTitle: arrival.spotTitle,
       content: arrival.content,
+      facilityPins: arrival.facilityPins,
       schedule: schedule as ScheduleItemLike[],
       freeTime:
         notice && !notice.cancelled && notice.remainingMs !== null
@@ -440,7 +441,7 @@ function TourRoomLive({
     const answer = inlineConciergeAnswer(text, ctx, locale);
     if (!answer) return;
     inlineAnswerSeq.current += 1;
-    setInlineAnswer({ id: inlineAnswerSeq.current, question: text, text: answer });
+    setInlineAnswer({ id: inlineAnswerSeq.current, question: text, text: answer.text, mapCard: answer.mapCard });
   };
 
   // Read receipts (Phase 2d): advance my cursor when a new incoming message

@@ -10,14 +10,17 @@
  * stays a human channel and the guide's own reply is never talked over.
  */
 
-import { CONCIERGE_COPY } from '@/lib/tour-room/concierge';
+import { CONCIERGE_COPY, type ConciergeMapCard } from '@/lib/tour-room/concierge';
 import { IconConcierge } from '@/components/tour-mode/icons';
+import FacilityMapCard from '@/components/tour-mode/FacilityMapCard';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
 export interface InlineConciergeAnswer {
   id: number;
   question: string;
   text: string;
+  /** W2 — optional scoped restroom/photo map card. */
+  mapCard?: ConciergeMapCard;
 }
 
 const MORE_LABEL: Record<RoomLocale, string> = {
@@ -64,6 +67,9 @@ export default function ConciergeInlineAnswer({
         <div className="min-w-0 flex-1">
           <p className="tr-meta font-semibold text-[var(--tr-accent-deep)]">{copy.aiLabel}</p>
           <p className="tr-card-text mt-1 whitespace-pre-line leading-relaxed text-[var(--tr-ink)]">{answer.text}</p>
+          {answer.mapCard && (
+            <FacilityMapCard kind={answer.mapCard.kind} pins={answer.mapCard.pins} locale={locale} />
+          )}
           <div className="mt-2 flex items-center gap-3">
             <button
               type="button"

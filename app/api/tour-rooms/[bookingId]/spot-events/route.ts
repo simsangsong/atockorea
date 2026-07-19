@@ -9,6 +9,7 @@ import {
   resolveSpotContent,
   type SpotEventKind,
 } from '@/lib/tour-room/spotContent';
+import { fetchArrivalFacilityPins } from '@/lib/tour-room/facilityPins.server';
 
 export const dynamic = 'force-dynamic';
 
@@ -139,16 +140,23 @@ export async function POST(
     const resolved_content =
       eventType === 'arrived' ? resolveSpotContent(spot, viewerLocale) : { content: null, tier: 'none' as const };
 
+    // W2.1 — the current spot's restroom/photo pins ride the arrival metadata
+    // so the guest's Tier0 answer can attach a scoped map card with zero network.
+    const facilityPins =
+      eventType === 'arrived' ? await fetchArrivalFacilityPins(supabase, spot.poi_key) : [];
+
     const metadata = {
       kind: eventType === 'arrived' ? 'spot_arrival' : eventType,
       spot_id: spot.id,
       spot_title: spot.title,
+      poi_key: spot.poi_key,
       audio_url: spot.audio_url,
       distance_m: distanceM,
       arrival_radius_m: arrivalRadiusM,
       ...(resolved_content.content
         ? { content: resolved_content.content, content_tier: resolved_content.tier }
         : {}),
+      ...(facilityPins.length ? { facility_pins: facilityPins } : {}),
       ...eventPayload,
     };
 

@@ -30,6 +30,8 @@ import {
 import { activeNotice } from '@/lib/tour-room/notices';
 import { roomLifecycle } from '@/lib/tour-room/time';
 import { IconConcierge, IconConciergeSend } from '@/components/tour-mode/icons';
+import FacilityMapCard from '@/components/tour-mode/FacilityMapCard';
+import type { ConciergeMapCard } from '@/lib/tour-room/concierge';
 import type { RoomMessage } from '@/hooks/useTourRoomChannel';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
@@ -37,6 +39,7 @@ interface ThreadEntry {
   id: number;
   role: 'user' | 'assistant';
   text: string;
+  mapCard?: ConciergeMapCard;
 }
 
 export default function ConciergePanel({
@@ -68,6 +71,7 @@ export default function ConciergePanel({
     return {
       spotTitle: arrival.spotTitle,
       content: arrival.content,
+      facilityPins: arrival.facilityPins,
       schedule,
       freeTime:
         notice && !notice.cancelled && notice.remainingMs !== null
@@ -82,12 +86,12 @@ export default function ConciergePanel({
     threadRef.current?.scrollTo?.({ top: threadRef.current.scrollHeight });
   }, [thread, busy]);
 
-  const push = (role: ThreadEntry['role'], text: string) => {
+  const push = (role: ThreadEntry['role'], text: string, mapCard?: ConciergeMapCard) => {
     // Snapshot the id now — the updater runs later, and a batched user+
     // assistant pair would otherwise both read the final counter value.
     idRef.current += 1;
     const id = idRef.current;
-    setThread((prev) => [...prev, { id, role, text }]);
+    setThread((prev) => [...prev, { id, role, text, mapCard }]);
   };
 
   const askServer = async (question: string) => {
@@ -110,7 +114,8 @@ export default function ConciergePanel({
   const askChip = (intent: (typeof CONCIERGE_CHIPS)[number]['intent'], label: string) => {
     if (busy) return;
     push('user', label);
-    push('assistant', answerTier0(intent, { ...ctx, nowMs: Date.now() }, locale).text);
+    const answer = answerTier0(intent, { ...ctx, nowMs: Date.now() }, locale);
+    push('assistant', answer.text, answer.mapCard);
   };
 
   const submit = () => {
@@ -137,7 +142,8 @@ export default function ConciergePanel({
 
     const intent = matchConciergeIntent(question);
     if (intent) {
-      push('assistant', answerTier0(intent, { ...ctx, nowMs: Date.now() }, locale).text);
+      const answer = answerTier0(intent, { ...ctx, nowMs: Date.now() }, locale);
+      push('assistant', answer.text, answer.mapCard);
       return;
     }
     void askServer(question);
@@ -182,8 +188,13 @@ export default function ConciergePanel({
                 >
                   <IconConcierge size={13} strokeWidth={2.25} />
                 </span>
-                <div className="tr-card-text whitespace-pre-line rounded-[var(--tr-radius-bubble)] bg-[var(--tr-surface)] px-3.5 py-2 leading-relaxed text-[var(--tr-ink)]">
-                  {entry.text}
+                <div className="min-w-0 flex-1">
+                  <div className="tr-card-text inline-block whitespace-pre-line rounded-[var(--tr-radius-bubble)] bg-[var(--tr-surface)] px-3.5 py-2 leading-relaxed text-[var(--tr-ink)]">
+                    {entry.text}
+                  </div>
+                  {entry.mapCard && (
+                    <FacilityMapCard kind={entry.mapCard.kind} pins={entry.mapCard.pins} locale={locale} />
+                  )}
                 </div>
               </div>
             ),
