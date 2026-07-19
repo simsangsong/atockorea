@@ -344,9 +344,10 @@ export default function GuideConsole() {
     [overview],
   );
   const roomLabel = useMemo(() => {
-    const map = new Map<string, { name: string; hue: number }>();
+    const map = new Map<string, { name: string; hue: number; bookingId: string }>();
     for (const room of overview?.rooms ?? []) {
-      if (room.room_id) map.set(room.room_id, { name: room.contact_name ?? '게스트', hue: roomHue(room.booking_id) });
+      if (room.room_id)
+        map.set(room.room_id, { name: room.contact_name ?? '게스트', hue: roomHue(room.booking_id), bookingId: room.booking_id });
     }
     return map;
   }, [overview]);
@@ -796,8 +797,21 @@ export default function GuideConsole() {
           <div className="mt-2 space-y-1.5">
             {overview.feed.map((message) => {
               const tag = roomLabel.get(message.room_id);
+              // Phase 3 — tap a message → open that guest's chat scrolled to it,
+              // ready to quote (customer messages prime a reply).
+              const deepLink = tag
+                ? `${roomHref(tag.bookingId)}&message=${encodeURIComponent(message.id)}${
+                    message.sender_role === 'customer' ? '&reply=1' : ''
+                  }`
+                : null;
+              const Row = deepLink ? 'a' : 'div';
               return (
-                <div key={message.id} className="tr-card flex items-start gap-2 px-3 py-2">
+                <Row
+                  key={message.id}
+                  {...(deepLink ? { href: deepLink } : {})}
+                  className="tr-card flex items-start gap-2 px-3 py-2 active:scale-[0.99]"
+                  data-testid="feed-message"
+                >
                   <span
                     className="mt-1 h-2.5 w-2.5 shrink-0 rounded-full"
                     style={{ backgroundColor: tag ? `hsl(${tag.hue} 55% 52%)` : 'var(--tr-ink-3)' }}
@@ -808,7 +822,7 @@ export default function GuideConsole() {
                     {message.sender_role === 'guide' || message.sender_role === 'admin' ? ' (나/운영)' : ''} ·{' '}
                     {message.source_text}
                   </p>
-                </div>
+                </Row>
               );
             })}
           </div>
