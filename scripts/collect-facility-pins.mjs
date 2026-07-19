@@ -46,22 +46,40 @@ function haversineM(aLat, aLng, bLat, bLng) {
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
+// Places API (New) Text Search — the legacy nearbysearch is disabled on this
+// GCP project. Text search with a location bias is robust and needs no special
+// "toilet" type (which the legacy API lacked anyway).
 async function nearbyRestrooms(lat, lng, apiKey) {
-  const url =
-    `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${lng}` +
-    `&rankby=distance&keyword=${encodeURIComponent(KEYWORD)}&language=ko&key=${apiKey}`;
-  const res = await fetch(url);
+  const res = await fetch('https://places.googleapis.com/v1/places:searchText', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Goog-Api-Key': apiKey,
+      'X-Goog-FieldMask': 'places.id,places.displayName,places.location',
+    },
+    body: JSON.stringify({
+      textQuery: KEYWORD,
+      // Constrain to actual restroom places (New Places API type) — cuts the
+      // text-search false positives (restaurants/cafés that merely mention 화장실).
+      includedType: 'public_bathroom',
+      languageCode: 'ko',
+      maxResultCount: 10,
+      locationBias: {
+        circle: { center: { latitude: lat, longitude: lng }, radius: MAX_RADIUS_M },
+      },
+    }),
+  });
   const json = await res.json();
-  if (json.status !== 'OK' && json.status !== 'ZERO_RESULTS') {
-    console.warn(`  Places status=${json.status} ${json.error_message || ''}`);
+  if (json.error) {
+    console.warn(`  Places(New) ${json.error.status || res.status}: ${json.error.message || ''}`);
     return [];
   }
-  return (json.results || [])
-    .map((r) => ({
-      place_id: r.place_id,
-      name: r.name,
-      lat: r.geometry?.location?.lat,
-      lng: r.geometry?.location?.lng,
+  return (json.places || [])
+    .map((p) => ({
+      place_id: p.id,
+      name: p.displayName?.text || '화장실',
+      lat: p.location?.latitude,
+      lng: p.location?.longitude,
     }))
     .filter((r) => typeof r.lat === 'number' && typeof r.lng === 'number' && r.place_id);
 }
