@@ -36,6 +36,7 @@ import RoomMapTab from '@/components/tour-mode/map/RoomMapTab';
 import RoomShell from '@/components/tour-mode/RoomShell';
 import SosButton from '@/components/tour-mode/SosButton';
 import ConciergePanel from '@/components/tour-mode/ConciergePanel';
+import ConciergeEntryRow from '@/components/tour-mode/ConciergeEntryRow';
 import InstallBanner from '@/components/tour-mode/InstallBanner';
 import { detectEntryLocale, ENTRY_COPY } from '@/components/tour-mode/entryCopy';
 import { GUEST_CREDS_STORAGE_PREFIX } from '@/components/tour-mode/TourModeEntry';
@@ -738,7 +739,7 @@ function TourRoomLive({
             : {})}
         />
       }
-      chat={
+      chat={(chatApi) => (
         <div className="flex min-h-0 flex-1 flex-col px-3 pt-2">
           {viewerRole === 'guide' && !readOnly && (
             <GuideCaptionBar bookingId={bookingId} roomSession={data.session} locale={locale} />
@@ -829,6 +830,9 @@ function TourRoomLive({
           {viewerRole === 'customer' && !readOnly && data.lifecycle === 'live' && (
             <QuickSignalBar bookingId={bookingId} roomSession={data.session} locale={locale} />
           )}
+          {viewerRole === 'customer' && !readOnly && (
+            <ConciergeEntryRow locale={locale} onOpen={chatApi.openConcierge} />
+          )}
           {!readOnly && (
             <Composer
               locale={locale}
@@ -853,7 +857,7 @@ function TourRoomLive({
             />
           )}
         </div>
-      }
+      )}
       />
     </>
   );
