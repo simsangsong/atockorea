@@ -31,11 +31,17 @@ export {
 
   // Composer
   Plus as IconAttach,
+  Paperclip as IconPaperclip,
+  FileText as IconFile,
   Mic as IconMic,
   Camera as IconCamera,
   ArrowUp as IconSend,
   Check as IconDone,
   Search as IconAsk,
+  SmilePlus as IconReact,
+  CornerUpLeft as IconReply,
+  Copy as IconCopy,
+  Trash2 as IconTrash,
 
   // Bubbles & meta
   Globe as IconTranslated,
