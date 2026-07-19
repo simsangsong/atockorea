@@ -149,7 +149,7 @@ export default function CreateMerchantPage() {
         >
           <ChevronLeft className="size-4" /> 업체 목록
         </Link>
-        <h1 className="text-xl font-bold text-slate-900 md:text-2xl">새 업체 등록</h1>
+        <h1 className="text-xl font-bold text-slate-900">새 업체 등록</h1>
         <p className="mt-1 text-sm text-slate-500">새 여행사 계정을 생성합니다. 로그인 정보는 담당자 이메일로 발송됩니다.</p>
       </div>
 
