@@ -4,7 +4,7 @@ import { transcribeAudioFile, translateTextForLocales, type TranslationResult } 
 import { ensureRoom, resolveRoomActor, type RoomActor, type RoomBooking } from '@/lib/tour-room/access';
 import { broadcastToRoom } from '@/lib/tour-room/realtime';
 import { getRoomTranslationTargets } from '@/lib/tour-room/snapshot';
-import { normalizeChatLocale } from '@/lib/tour-room/chatLocale';
+import { normalizeChatLocale, MAX_TRANSLATION_TARGETS } from '@/lib/tour-room/chatLocale';
 import { getQuickReplyPreset } from '@/lib/tour-room/quickReplies';
 import { renderSpotEventTranslations } from '@/lib/tour-room/spotContent';
 import { pregenerateGuideNoticeTts, type TtsStorageClient } from '@/lib/tour-room/tts-server';
@@ -26,13 +26,20 @@ function parseLocales(value: unknown, fallback = DEFAULT_TARGET_LOCALES): string
   return fallback;
 }
 
-function defaultTargetLocalesFor(
-  senderRole: string,
-  booking: { preferred_language?: string | null },
-): string[] {
-  const customerPreferred = booking.preferred_language?.trim();
-  if (senderRole === 'guide' && customerPreferred) return [customerPreferred];
-  return DEFAULT_TARGET_LOCALES;
+/**
+ * Translation targets when the client didn't pass an explicit list.
+ *
+ * A GUEST message targets whoever's present (D-8 cost optimization — the
+ * operator is always in the room). An OPERATOR message (guide/driver/admin)
+ * must always cover the 5 room UI languages, so a guest who JOINS AFTER it was
+ * sent still gets a translated bubble instead of the raw Korean — plus any
+ * arbitrary chat languages guests have written in (chat_locale).
+ */
+function fallbackTargetLocales(senderRole: string, participantLocales: string[]): string[] {
+  if (senderRole === 'customer') {
+    return participantLocales.length > 0 ? participantLocales : DEFAULT_TARGET_LOCALES;
+  }
+  return [...new Set([...DEFAULT_TARGET_LOCALES, ...participantLocales])].slice(0, MAX_TRANSLATION_TARGETS);
 }
 
 /** PA-3: sender role is server-authoritative, derived from the resolved actor. */
@@ -148,10 +155,7 @@ export async function POST(
     // in whatever language the guest actually typed. Explicit client
     // targetLocales and the legacy defaults remain the fallback.
     const participantLocales = await getRoomTranslationTargets(supabase, room.id);
-    const targetLocales = parseLocales(
-      targetLocalesRaw,
-      participantLocales.length > 0 ? participantLocales : defaultTargetLocalesFor(senderRole, booking),
-    );
+    const targetLocales = parseLocales(targetLocalesRaw, fallbackTargetLocales(senderRole, participantLocales));
 
     // Kakao-grade attachment: validate → rate-gate → upload → carry the
     // attachment metadata. The optional caption stays in `text` (translated below).

@@ -217,14 +217,16 @@ describe('POST /api/tour-rooms/[bookingId]/messages', () => {
     expect(translateMock).toHaveBeenCalledWith('hi', ['en', 'ko', 'zh', 'ja', 'es']);
   });
 
-  it("merchant guide messages default to the customer's preferred language", async () => {
+  it('operator (guide) messages always cover the 5 room UI languages (late-join safe)', async () => {
+    // A guest who joins AFTER the message must still get a translated bubble,
+    // so operator messages target all 5 defaults, not just who's present.
     getAuthUserMock.mockResolvedValue({ id: 'user-m', role: 'merchant', merchantId: 'merchant-1' });
     const db = fakeDb();
     createServerClientMock.mockReturnValue(db);
     const res = await messagesPOST(fakeReq({ json: { text: 'meet at 3' } }), routeParams());
     expect(res.status).toBe(201);
     expect(db.inserted.tour_room_messages[0]).toMatchObject({ sender_role: 'guide' });
-    expect(translateMock).toHaveBeenCalledWith('meet at 3', ['ja']);
+    expect(translateMock).toHaveBeenCalledWith('meet at 3', ['en', 'ko', 'zh', 'ja', 'es']);
   });
 
   it('400s empty text', async () => {
