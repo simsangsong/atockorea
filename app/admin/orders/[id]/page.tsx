@@ -299,7 +299,7 @@ export default function OrderDetailPage() {
   if (error || !booking) {
     return (
       <div className="space-y-6">
-        <div className="bg-red-50 border border-red-200 rounded-lg p-6">
+        <div className="bg-red-50 border border-red-200 rounded-lg p-5">
           <p className="text-red-800">Error: {error || 'Order not found'}</p>
           <Link
             href="/admin/orders"
@@ -370,7 +370,7 @@ export default function OrderDetailPage() {
           >
             ← Back to Orders
           </Link>
-          <h1 className="text-3xl font-bold text-slate-900">Order Details</h1>
+          <h1 className="text-xl font-bold text-slate-900">Order Details</h1>
           <p className="text-slate-500 mt-2">Order ID: {booking.id.substring(0, 8)}...</p>
         </div>
         <div className="flex gap-3">
@@ -402,8 +402,8 @@ export default function OrderDetailPage() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Order Information */}
-        <div className="bg-admin-surface rounded-design-md shadow-admin-card border border-admin-border p-6">
-          <h2 className="text-xl font-semibold text-slate-900 mb-4">Order Information</h2>
+        <div className="bg-admin-surface rounded-design-md shadow-admin-card border border-admin-border p-5">
+          <h2 className="text-base font-semibold text-slate-900 mb-4">Order Information</h2>
           <div className="space-y-3">
             <div className="flex justify-between">
               <span className="text-slate-500">Order ID:</span>
@@ -440,10 +440,10 @@ export default function OrderDetailPage() {
             section when source==='itinerary_builder'. Same card chrome so
             the admin layout stays consistent. */}
         {booking.source === 'itinerary_builder' ? (
-          <div className="bg-admin-surface rounded-design-md shadow-admin-card border border-admin-border p-6">
+          <div className="bg-admin-surface rounded-design-md shadow-admin-card border border-admin-border p-5">
             <div className="flex items-start justify-between gap-3 mb-4">
-              <h2 className="text-xl font-semibold text-slate-900">Custom Itinerary</h2>
-              <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-0.5 text-[11px] font-semibold text-emerald-800 ring-1 ring-emerald-200">
+              <h2 className="text-base font-semibold text-slate-900">Custom Itinerary</h2>
+              <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-0.5 text-xs font-semibold text-emerald-800 ring-1 ring-emerald-200">
                 <ClipboardList className="h-3 w-3" />
                 Builder
               </span>
@@ -489,7 +489,7 @@ export default function OrderDetailPage() {
                   <ol className="space-y-1 rounded-lg bg-slate-50 p-3">
                     {booking.itinerary.poi_keys.map((k, i) => (
                       <li key={k} className="flex items-center gap-2 text-sm">
-                        <span className="inline-flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-white text-[10px] font-semibold tabular-nums text-slate-700 ring-1 ring-slate-200">
+                        <span className="inline-flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-white text-xs font-semibold tabular-nums text-slate-700 ring-1 ring-slate-200">
                           {String(i + 1).padStart(2, '0')}
                         </span>
                         <span className="text-slate-700">{k}</span>
@@ -501,8 +501,8 @@ export default function OrderDetailPage() {
             </div>
           </div>
         ) : (
-          <div className="bg-admin-surface rounded-design-md shadow-admin-card border border-admin-border p-6">
-            <h2 className="text-xl font-semibold text-slate-900 mb-4">Tour Information</h2>
+          <div className="bg-admin-surface rounded-design-md shadow-admin-card border border-admin-border p-5">
+            <h2 className="text-base font-semibold text-slate-900 mb-4">Tour Information</h2>
             <div className="space-y-3">
               <div>
                 <span className="text-slate-500">Tour:</span>
@@ -544,8 +544,8 @@ export default function OrderDetailPage() {
         )}
 
         {/* Customer Information */}
-        <div className="bg-admin-surface rounded-design-md shadow-admin-card border border-admin-border p-6">
-          <h2 className="text-xl font-semibold text-slate-900 mb-4">Customer Information</h2>
+        <div className="bg-admin-surface rounded-design-md shadow-admin-card border border-admin-border p-5">
+          <h2 className="text-base font-semibold text-slate-900 mb-4">Customer Information</h2>
           <div className="space-y-3">
             <div className="flex justify-between">
               <span className="text-slate-500">Name:</span>
@@ -595,8 +595,8 @@ export default function OrderDetailPage() {
         </div>
 
         {/* Pricing Information */}
-        <div className="bg-admin-surface rounded-design-md shadow-admin-card border border-admin-border p-6">
-          <h2 className="text-xl font-semibold text-slate-900 mb-4">Pricing</h2>
+        <div className="bg-admin-surface rounded-design-md shadow-admin-card border border-admin-border p-5">
+          <h2 className="text-base font-semibold text-slate-900 mb-4">Pricing</h2>
           <div className="space-y-3">
             <div className="flex justify-between">
               <span className="text-slate-500">Number of People:</span>
@@ -627,8 +627,8 @@ export default function OrderDetailPage() {
       </div>
 
       {/* Payment / Settlement — capture the held card or release the hold */}
-      <div className="bg-admin-surface rounded-design-md shadow-admin-card border border-admin-border p-6">
-        <h2 className="text-xl font-semibold text-slate-900 mb-4">Payment / Settlement</h2>
+      <div className="bg-admin-surface rounded-design-md shadow-admin-card border border-admin-border p-5">
+        <h2 className="text-base font-semibold text-slate-900 mb-4">Payment / Settlement</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-3">
             <div className="flex justify-between">
@@ -824,7 +824,7 @@ export default function OrderDetailPage() {
       </div>
 
       {booking.cancellation_reason && (
-        <div className="bg-red-50 border border-red-200 rounded-xl p-6">
+        <div className="bg-red-50 border border-red-200 rounded-xl p-5">
           <h3 className="text-lg font-semibold text-red-900 mb-2">Cancellation Reason</h3>
           <p className="text-red-800">{booking.cancellation_reason}</p>
         </div>
@@ -840,11 +840,11 @@ export default function OrderDetailPage() {
               <div className="flex items-center gap-2">
                 <span className="text-xs font-medium text-slate-500">카드 hold</span>
                 {holdExpired ? (
-                  <span className="rounded-full bg-red-100 px-2 py-0.5 text-[11px] font-semibold text-red-700">
+                  <span className="rounded-full bg-red-100 px-2 py-0.5 text-xs font-semibold text-red-700">
                     만료됨
                   </span>
                 ) : holdExpiringSoon ? (
-                  <span className="rounded-full bg-amber-100 px-2 py-0.5 text-[11px] font-semibold text-amber-800">
+                  <span className="rounded-full bg-amber-100 px-2 py-0.5 text-xs font-semibold text-amber-800">
                     {holdHoursLeft}h 남음
                   </span>
                 ) : null}
