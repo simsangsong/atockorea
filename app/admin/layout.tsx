@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Toaster } from 'sonner';
 import type { LucideIcon } from 'lucide-react';
 import {
@@ -30,7 +30,7 @@ import {
   X,
 } from 'lucide-react';
 import Logo from '@/components/Logo';
-import { AdminCommandPalette } from '@/components/admin/AdminCommandPalette';
+import { AdminCommandPalette, type CmdkDataResult } from '@/components/admin/AdminCommandPalette';
 import { supabase } from '@/lib/supabase';
 import { decideAdminGuard } from '@/lib/admin/admin-auth-guard';
 
@@ -282,6 +282,54 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       setIsLoading(false);
     }
   };
+
+  /**
+   * W4.4: authed data search for the ⌘K palette. Stable identity (useCallback,
+   * no deps) so the palette's debounce effect doesn't refire each layout render.
+   * Read-only lookup; failures degrade to no data results (nav search still works).
+   */
+  const searchAdminData = useCallback(async (q: string): Promise<CmdkDataResult[]> => {
+    if (!supabase) return [];
+    const {
+      data: { session },
+    } = await supabase.auth.getSession();
+    if (!session) return [];
+
+    const res = await fetch(`/api/admin/search?q=${encodeURIComponent(q)}`, {
+      headers: { Authorization: `Bearer ${session.access_token}` },
+    });
+    if (!res.ok) return [];
+    type OrderHit = {
+      id: string;
+      booking_reference?: string | null;
+      contact_name?: string | null;
+      tour_date?: string | null;
+    };
+    type MerchantHit = {
+      id: string;
+      company_name?: string | null;
+      contact_person?: string | null;
+      status?: string | null;
+    };
+    const json = (await res.json().catch(() => null)) as
+      | { orders?: OrderHit[]; merchants?: MerchantHit[] }
+      | null;
+    if (!json) return [];
+
+    const orders: CmdkDataResult[] = (json.orders ?? []).map((o) => ({
+      group: 'order' as const,
+      path: `/admin/orders/${o.id}`,
+      label: o.booking_reference || o.contact_name || '주문',
+      sublabel: [o.contact_name, o.tour_date].filter(Boolean).join(' · ') || undefined,
+    }));
+    const merchants: CmdkDataResult[] = (json.merchants ?? []).map((m) => ({
+      group: 'merchant' as const,
+      path: `/admin/merchants/${m.id}`,
+      label: m.company_name || '업체',
+      sublabel: [m.contact_person, m.status].filter(Boolean).join(' · ') || undefined,
+    }));
+    return [...orders, ...merchants];
+  }, []);
 
   if (isLoading) {
     return (
@@ -535,8 +583,11 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           success/error styling. Admin actions use sonner toasts going forward. */}
       <Toaster position="top-center" richColors closeButton />
 
-      {/* ⌘K command palette (spec §3.1) — nav routes as commands. */}
-      <AdminCommandPalette items={adminMenuItems.map((m) => ({ path: m.path, label: m.label }))} />
+      {/* ⌘K command palette (spec §3.1) — nav routes + W4.4 data search (orders/업체). */}
+      <AdminCommandPalette
+        items={adminMenuItems.map((m) => ({ path: m.path, label: m.label }))}
+        onSearch={searchAdminData}
+      />
     </div>
   );
 }
