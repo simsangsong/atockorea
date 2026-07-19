@@ -42,6 +42,7 @@ import {
 import GuideLedgerPanel from '@/components/tour-mode/guide/GuideLedgerPanel';
 import GuidePlanPanel from '@/components/tour-mode/guide/GuidePlanPanel';
 import MicPrime from '@/components/tour-mode/MicPrime';
+import Sheet from '@/components/tour-mode/Sheet';
 import Cockpit, { type CockpitLifecycle, type CockpitRoom } from '@/components/tour-mode/cockpit/Cockpit';
 import { kstToday } from '@/lib/tour-room/time';
 import { primeAudio } from '@/lib/tour-room/tts';
@@ -91,6 +92,13 @@ interface DriveState {
 /** One-tap Korean dispatch lines (auto-translated per guest server-side). */
 const BROADCAST_PRESETS = ['곧 출발합니다', '5분 뒤 출발합니다', '잠시 후 집합입니다', '여기서 잠시 쉬어갑니다'];
 
+/** P4 — the collapsed day-tools segment control. */
+const DAY_SEGMENTS = [
+  { key: 'broadcast' as const, label: '공지', Icon: Megaphone },
+  { key: 'meeting' as const, label: '집합', Icon: MapPin },
+  { key: 'free' as const, label: '자유시간', Icon: Timer },
+];
+
 interface OverviewRoom {
   booking_id: string;
   room_id: string | null;
@@ -101,7 +109,7 @@ interface OverviewRoom {
   pickup: { name?: string; pickup_time?: string } | null;
   participants: Array<{ role: string; display_name: string; last_seen_at: string | null }>;
   onboard_ack: boolean;
-  last_message: { source_text?: string; sender_role?: string; created_at?: string } | null;
+  last_message: { source_text?: string; sender_role?: string; created_at?: string; translations?: Record<string, string> } | null;
 }
 
 interface Overview {
@@ -109,7 +117,13 @@ interface Overview {
   tour_date: string;
   lifecycle: 'lobby' | 'live' | 'ended';
   rooms: OverviewRoom[];
-  feed: Array<{ id: string; room_id: string; sender_role: string; source_text: string; created_at: string; metadata?: Record<string, unknown> }>;
+  feed: Array<{ id: string; room_id: string; sender_role: string; source_text: string; created_at: string; metadata?: Record<string, unknown>; translations?: Record<string, string> }>;
+}
+
+/** Korean-first preview for the guide (falls back to the original text). */
+export function koPreview(m: { source_text?: string; translations?: Record<string, string> } | null | undefined): string {
+  if (!m) return '아직 메시지 없음';
+  return m.translations?.ko?.trim() || m.source_text || '아직 메시지 없음';
 }
 
 /** Stable pastel hue per room for the color tags (T6.2). */
@@ -162,6 +176,9 @@ export default function GuideConsole() {
   const [refreshing, setRefreshing] = useState(false);
   const [openPlanBookingId, setOpenPlanBookingId] = useState<string | null>(null);
   const [openLedgerBookingId, setOpenLedgerBookingId] = useState<string | null>(null);
+  // P4 redesign: day-wide tools collapse behind one section with a segment.
+  const [dayToolsOpen, setDayToolsOpen] = useState(false);
+  const [daySeg, setDaySeg] = useState<'broadcast' | 'meeting' | 'free'>('broadcast');
   const tokenRef = useRef<string | null>(null);
 
   useEffect(() => {
@@ -490,8 +507,6 @@ export default function GuideConsole() {
           {rooms.map((room) => {
             const badge = planBadge(room.day_plan?.status);
             const awaitingReply = room.last_message?.sender_role === 'customer';
-            const planOpen = openPlanBookingId === room.booking_id;
-            const ledgerOpen = openLedgerBookingId === room.booking_id;
             return (
               <article key={room.booking_id} className="tr-card tr-plan-course-card px-3.5 py-3" data-testid="room-card">
                 <div className="flex items-start gap-3">
@@ -540,7 +555,7 @@ export default function GuideConsole() {
                       </p>
                     )}
                     <p className="tr-meta mt-0.5 line-clamp-1 text-[var(--tr-ink-3)]">
-                      {room.last_message?.source_text ?? '아직 메시지 없음'}
+                      {koPreview(room.last_message)}
                     </p>
                   </div>
                 </div>
@@ -557,7 +572,7 @@ export default function GuideConsole() {
                   </a>
                   <button
                     type="button"
-                    onClick={() => setOpenPlanBookingId((prev) => (prev === room.booking_id ? null : room.booking_id))}
+                    onClick={() => setOpenPlanBookingId(room.booking_id)}
                     className={`tr-label flex min-h-[42px] items-center justify-center gap-1 rounded-xl px-3 font-bold ${
                       badge?.tone === 'review'
                         ? 'bg-[var(--tr-accent-soft)] text-[var(--tr-accent-deep)] ring-1 ring-[var(--tr-hairline)]'
@@ -567,17 +582,15 @@ export default function GuideConsole() {
                   >
                     <CalendarClock size={15} aria-hidden />
                     일정
-                    {planOpen ? <ChevronUp size={13} aria-hidden /> : <ChevronDown size={13} aria-hidden />}
                   </button>
                   <button
                     type="button"
-                    onClick={() => setOpenLedgerBookingId((prev) => (prev === room.booking_id ? null : room.booking_id))}
+                    onClick={() => setOpenLedgerBookingId(room.booking_id)}
                     className="tr-label flex min-h-[42px] items-center justify-center gap-1 rounded-xl bg-[var(--tr-surface-2)] px-3 font-bold text-[var(--tr-ink-2)]"
                     data-testid="ledger-toggle"
                   >
                     <Wallet size={15} aria-hidden />
                     정산
-                    {ledgerOpen ? <ChevronUp size={13} aria-hidden /> : <ChevronDown size={13} aria-hidden />}
                   </button>
                 </div>
 
@@ -592,25 +605,49 @@ export default function GuideConsole() {
                   <Car size={15} aria-hidden />
                   {driveBusy === room.booking_id ? '여는 중…' : '운전 모드'}
                 </button>
-
-                {planOpen && tokenRef.current && (
-                  <GuidePlanPanel bookingId={room.booking_id} token={tokenRef.current} onChanged={() => void load()} />
-                )}
-                {ledgerOpen && tokenRef.current && (
-                  <GuideLedgerPanel bookingId={room.booking_id} token={tokenRef.current} />
-                )}
               </article>
             );
           })}
         </div>
       </section>
 
-      {/* 전체 안내 (day-wide tools) */}
+      {/* 전체 안내 (day-wide tools) — collapsible, segmented (P4) */}
       <section className="mt-6">
-        <h2 className="tr-label px-1 font-bold uppercase tracking-wide text-[var(--tr-ink-3)]">전체 안내</h2>
+        <button
+          type="button"
+          onClick={() => setDayToolsOpen((v) => !v)}
+          className="flex w-full items-center justify-between px-1 py-1"
+          data-testid="daytools-toggle"
+        >
+          <span className="tr-label font-bold uppercase tracking-wide text-[var(--tr-ink-3)]">전체 안내</span>
+          {dayToolsOpen ? (
+            <ChevronUp size={16} className="text-[var(--tr-ink-3)]" aria-hidden />
+          ) : (
+            <ChevronDown size={16} className="text-[var(--tr-ink-3)]" aria-hidden />
+          )}
+        </button>
 
-        {/* broadcast */}
-        <div className="tr-card mt-2 px-3.5 py-3.5">
+        {dayToolsOpen && (
+          <div className="mt-2">
+            <div className="flex gap-1 rounded-full bg-[var(--tr-surface-2)] p-1">
+              {DAY_SEGMENTS.map(({ key, label, Icon }) => (
+                <button
+                  key={key}
+                  type="button"
+                  onClick={() => setDaySeg(key)}
+                  className={`tr-label flex flex-1 items-center justify-center gap-1 rounded-full py-1.5 font-bold ${
+                    daySeg === key ? 'bg-[var(--tr-surface)] text-[var(--tr-ink)] shadow-sm' : 'text-[var(--tr-ink-3)]'
+                  }`}
+                  data-testid={`dayseg-${key}`}
+                >
+                  <Icon size={13} aria-hidden />
+                  {label}
+                </button>
+              ))}
+            </div>
+
+            {daySeg === 'broadcast' && (
+        <div className="tr-card mt-2.5 px-3.5 py-3.5">
           <p className="tr-label flex items-center gap-1.5 font-semibold text-[var(--tr-ink-2)]">
             <Megaphone size={14} aria-hidden />
             전체 공지 (모든 손님, 자동 번역)
@@ -714,8 +751,9 @@ export default function GuideConsole() {
             ))}
           </div>
         </div>
+            )}
 
-        {/* meeting notice */}
+            {daySeg === 'meeting' && (
         <div className="tr-card mt-2.5 px-3.5 py-3.5">
           <p className="tr-label flex items-center gap-1.5 font-semibold text-[var(--tr-ink-2)]">
             <MapPin size={14} aria-hidden />
@@ -746,8 +784,9 @@ export default function GuideConsole() {
             </button>
           </div>
         </div>
+            )}
 
-        {/* free-time timer */}
+            {daySeg === 'free' && (
         <div className="tr-card mt-2.5 px-3.5 py-3.5">
           <p className="tr-label flex items-center gap-1.5 font-semibold text-[var(--tr-ink-2)]">
             <Timer size={14} aria-hidden />
@@ -788,6 +827,9 @@ export default function GuideConsole() {
             </p>
           )}
         </div>
+            )}
+          </div>
+        )}
       </section>
 
       {/* recent feed */}
@@ -820,7 +862,7 @@ export default function GuideConsole() {
                   <p className="tr-meta min-w-0 flex-1 leading-relaxed text-[var(--tr-ink-2)]">
                     <span className="font-bold text-[var(--tr-ink)]">{tag?.name ?? '룸'}</span>
                     {message.sender_role === 'guide' || message.sender_role === 'admin' ? ' (나/운영)' : ''} ·{' '}
-                    {message.source_text}
+                    {koPreview(message)}
                   </p>
                 </Row>
               );
@@ -832,6 +874,22 @@ export default function GuideConsole() {
       <p className="tr-meta mt-6 text-center text-[var(--tr-ink-3)]">
         {kstToday() === overview.tour_date ? '오늘 투어' : overview.tour_date} · 15초마다 자동 새로고침
       </p>
+
+      {/* P4 — plan / ledger open in a sheet instead of expanding inline. */}
+      {openPlanBookingId && tokenRef.current && (
+        <Sheet open onClose={() => setOpenPlanBookingId(null)} closeLabel="닫기" title="일정 검토·확정">
+          <GuidePlanPanel
+            bookingId={openPlanBookingId}
+            token={tokenRef.current}
+            onChanged={() => void load()}
+          />
+        </Sheet>
+      )}
+      {openLedgerBookingId && tokenRef.current && (
+        <Sheet open onClose={() => setOpenLedgerBookingId(null)} closeLabel="닫기" title="정산">
+          <GuideLedgerPanel bookingId={openLedgerBookingId} token={tokenRef.current} />
+        </Sheet>
+      )}
     </div>
   );
 }
