@@ -119,7 +119,8 @@ export default function EventsListPage() {
       ) : null}
 
       <div className="overflow-hidden rounded-lg border border-admin-border bg-admin-surface">
-        <div className="grid grid-cols-12 gap-2 border-b border-admin-border bg-slate-50 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
+        {/* Column header — desktop only; mobile rows are self-labelled cards. */}
+        <div className="hidden grid-cols-12 gap-2 border-b border-admin-border bg-slate-50 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-slate-500 md:grid">
           <div className="col-span-5">이벤트명</div>
           <div className="col-span-3">발화량</div>
           <div className="col-span-2 text-right">세션 / 유저</div>
@@ -139,29 +140,30 @@ export default function EventsListPage() {
                 <Link
                   key={ev.event_name}
                   href={`/admin/analytics/product/events/${encodeURIComponent(ev.event_name)}?range=${range}`}
-                  className="grid grid-cols-12 items-center gap-2 px-4 py-3 transition-colors hover:bg-slate-50"
+                  className="flex flex-col gap-2 px-4 py-3 transition-colors hover:bg-slate-50 md:grid md:grid-cols-12 md:items-center md:gap-2"
                 >
-                  <div className="col-span-5 truncate font-mono text-sm text-slate-800">
+                  <div className="truncate font-mono text-sm text-slate-800 md:col-span-5">
                     {ev.event_name}
                   </div>
-                  <div className="col-span-3 flex items-center gap-2">
+                  <div className="flex items-center gap-2 md:col-span-3">
                     <div className="flex-1">
                       <div className="h-2 rounded-full bg-slate-100">
-                        <div
-                          className="h-2 rounded-full bg-slate-700"
-                          style={{ width: `${pct}%` }}
-                        />
+                        <div className="h-2 rounded-full bg-slate-700" style={{ width: `${pct}%` }} />
                       </div>
                     </div>
-                    <span className="w-16 text-right text-sm font-semibold text-slate-900">
+                    <span className="w-16 text-right text-sm font-semibold tabular-nums text-slate-900">
                       {formatNumber(ev.event_count)}
                     </span>
                   </div>
-                  <div className="col-span-2 text-right text-xs text-slate-500">
-                    {formatNumber(ev.session_count)} / {formatNumber(ev.user_count)}
+                  <div className="flex justify-between text-xs tabular-nums text-slate-500 md:col-span-2 md:block md:text-right">
+                    <span className="text-slate-400 md:hidden">세션 / 유저</span>
+                    <span>
+                      {formatNumber(ev.session_count)} / {formatNumber(ev.user_count)}
+                    </span>
                   </div>
-                  <div className="col-span-2 text-right text-xs text-slate-500">
-                    {relativeTime(ev.last_seen)}
+                  <div className="flex justify-between text-xs text-slate-500 md:col-span-2 md:block md:text-right">
+                    <span className="text-slate-400 md:hidden">마지막 발화</span>
+                    <span>{relativeTime(ev.last_seen)}</span>
                   </div>
                 </Link>
               );
