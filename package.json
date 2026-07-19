@@ -53,6 +53,8 @@
     "facility:collect:dry": "node --env-file=.env.local scripts/collect-facility-pins.mjs --dry",
     "facility:collect:kakao": "node --env-file=.env.local scripts/collect-facility-pins.mjs --provider=kakao",
     "facility:collect:kakao:dry": "node --env-file=.env.local scripts/collect-facility-pins.mjs --provider=kakao --dry",
+    "facility:collect:restaurants": "node --env-file=.env.local scripts/collect-facility-pins.mjs --kind=restaurant",
+    "facility:collect:restaurants:dry": "node --env-file=.env.local scripts/collect-facility-pins.mjs --kind=restaurant --dry",
     "gen:southwest-tour-product-zh-TW-sql": "node scripts/gen-southwest-tour-product-zh-TW-sql.mjs",
     "gen:southwest-tour-product-zh-CN-sql": "node scripts/gen-southwest-tour-product-zh-CN-sql.mjs",
     "gen:southwest-tour-product-ko-sql": "node scripts/gen-southwest-tour-product-ko-sql.mjs",

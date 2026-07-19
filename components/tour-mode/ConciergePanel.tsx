@@ -124,6 +124,16 @@ export default function ConciergePanel({
     setInput('');
     push('user', question);
 
+    // Food asks resolve to this spot's curated, rating-ranked picks (map card)
+    // when we have them, else the honest venue refusal — checked before the
+    // venue guardrail so a data-backed answer wins over the blanket refusal.
+    const intentEarly = matchConciergeIntent(question);
+    if (intentEarly === 'restaurant') {
+      const answer = answerTier0('restaurant', { ...ctx, nowMs: Date.now() }, locale);
+      push('assistant', answer.text, answer.mapCard);
+      return;
+    }
+
     // Local guardrails that need no server side effect answer instantly;
     // ops requests must reach the server (it posts the escalation message).
     const guardrail = classifyConciergeGuardrail(question);

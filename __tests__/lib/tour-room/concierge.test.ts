@@ -287,6 +287,39 @@ describe('facility map card (W2 — scoped restroom/photo pins)', () => {
     expect(answer.text).toContain('Near the gate');
   });
 
+  const restaurantPins = [
+    { kind: 'restaurant' as const, lat: 37.57, lng: 126.98, name: 'Tosokchon', rating: 4.2, reviewCount: 11974 },
+    { kind: 'restaurant' as const, lat: 37.571, lng: 126.981, name: 'Hwangsaengga', rating: 4.9, reviewCount: 300 },
+  ];
+
+  it('classifies food asks as the restaurant intent', () => {
+    expect(matchConciergeIntent('맛집 추천해줘')).toBe('restaurant');
+    expect(matchConciergeIntent('where should we eat?')).toBe('restaurant');
+    expect(matchConciergeIntent('good restaurant nearby')).toBe('restaurant');
+  });
+
+  it('serves a rating-ranked restaurant card when the spot has picks', () => {
+    const answer = answerTier0('restaurant', ctx({ spotTitle: '경복궁', facilityPins: restaurantPins }), 'ko');
+    expect(answer.answered).toBe(true);
+    expect(answer.mapCard?.kind).toBe('restaurant');
+    // rating × log(reviews): Tosokchon (4.2·11974) outranks Hwangsaengga (4.9·300).
+    expect(answer.mapCard?.pins[0].name).toBe('Tosokchon');
+  });
+
+  it('falls back to the venue refusal when a spot has no curated picks (§D-3)', () => {
+    const answer = answerTier0('restaurant', ctx({ spotTitle: 'X', facilityPins: [] }), 'en');
+    expect(answer.mapCard).toBeUndefined();
+    expect(answer.answered).toBe(false);
+    expect(answer.text).toContain('recommend restaurants');
+  });
+
+  it('inline: restaurant ask serves a card with pins, stays silent without', () => {
+    expect(inlineConciergeAnswer('맛집?', ctx({ spotTitle: '경복궁', facilityPins: restaurantPins }), 'ko')?.mapCard?.kind).toBe(
+      'restaurant',
+    );
+    expect(inlineConciergeAnswer('맛집?', ctx({ facilityPins: [] }), 'ko')).toBeNull();
+  });
+
   it('latestArrivalContext extracts poi_key and facility_pins from metadata', () => {
     const result = latestArrivalContext([
       {

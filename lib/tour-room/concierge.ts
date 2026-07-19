@@ -32,7 +32,7 @@ import { selectFacilityPins, type FacilityKind, type FacilityPin } from '@/lib/t
 // Intents & guardrails
 // ---------------------------------------------------------------------------
 
-export type ConciergeIntent = 'restroom' | 'photo_spot' | 'next_stop' | 'time_left';
+export type ConciergeIntent = 'restroom' | 'photo_spot' | 'next_stop' | 'time_left' | 'restaurant';
 
 export type ConciergeGuardrail = 'emergency' | 'ops_request' | 'venue_recommendation';
 
@@ -49,6 +49,10 @@ const INTENT_KEYWORDS: Record<ConciergeIntent, KeywordSet> = {
   photo_spot: {
     latin: ['photo', 'picture', 'selfie', 'foto', 'instagram'],
     cjk: ['포토', '사진', '셀카', '写真', 'フォト', '撮影', '拍照', '照片', '打卡', '自拍'],
+  },
+  restaurant: {
+    latin: ['restaurant', 'where to eat', 'where should we eat', 'good food', 'best food', 'good restaurant', 'hungry', 'lunch spot', 'dinner spot', 'donde comer', 'dónde comer', 'buen restaurante', 'restaurante'],
+    cjk: ['맛집', '식당', '음식점', '먹을 곳', '먹을만한', '밥집', '뭐 먹', '뭐먹', 'レストラン', '美味しい店', 'おすすめの店', 'ご飯', '食事', '餐厅', '饭店', '好吃的', '美食'],
   },
   next_stop: {
     latin: ['next stop', 'next place', 'where next', 'what next', 'siguiente parada', 'proxima parada', 'próxima parada', 'adonde vamos', 'adónde vamos'],
@@ -118,7 +122,7 @@ export function matchConciergeIntent(text: string): ConciergeIntent | null {
   if (!text) return null;
   // next_stop / time_left before the broader single-word intents so
   // "what time do we leave for the next stop" resolves to the schedule.
-  for (const intent of ['time_left', 'next_stop', 'restroom', 'photo_spot'] as const) {
+  for (const intent of ['time_left', 'next_stop', 'restroom', 'photo_spot', 'restaurant'] as const) {
     if (matchesSet(text, INTENT_KEYWORDS[intent], INTENT_LATIN_RE[intent])) return intent;
   }
   return null;
@@ -136,6 +140,10 @@ export const CONCIERGE_CHIPS: ReadonlyArray<{ intent: ConciergeIntent; label: Re
   {
     intent: 'photo_spot',
     label: { en: 'Photo spot', ko: '포토스팟', ja: '写真スポット', es: 'Mejor foto', zh: '拍照点' },
+  },
+  {
+    intent: 'restaurant',
+    label: { en: 'Food nearby', ko: '맛집', ja: '近くの店', es: 'Comer cerca', zh: '附近餐厅' },
   },
   {
     intent: 'next_stop',
@@ -229,6 +237,7 @@ type AnswerKind =
   | 'photo_info'
   | 'photo_map'
   | 'photo_none'
+  | 'restaurant_map'
   | 'next_stop_info'
   | 'next_stop_lobby'
   | 'time_lobby'
@@ -279,6 +288,13 @@ const ANSWERS: Record<AnswerKind, Record<RoomLocale, string>> = {
     ja: '📸 {spot} — 写真スポット{count}か所です。ピンをタップで道案内。',
     es: '📸 {spot} — {count} punto(s) de foto. Toca un pin para llegar.',
     zh: '📸 {spot} — 已标记{count}处拍照点。点击图钉查看路线。',
+  },
+  restaurant_map: {
+    en: '🍽️ {spot} — {count} top-rated restaurant(s) nearby (by rating & reviews). Tap for directions.',
+    ko: '🍽️ {spot} — 근처 평점 높은 맛집 {count}곳이에요 (평점·리뷰순). 핀을 누르면 길안내가 열려요.',
+    ja: '🍽️ {spot} — 近くの高評価レストラン{count}軒です（評価・口コミ順）。ピンで道案内。',
+    es: '🍽️ {spot} — {count} restaurante(s) mejor valorados cerca (por reseñas). Toca para llegar.',
+    zh: '🍽️ {spot} — 附近{count}家高分餐厅（按评分·评论）。点击查看路线。',
   },
   photo_none: {
     en: 'No photo tips saved for this spot yet — ask your guide for the best angle!',
@@ -553,6 +569,19 @@ export function answerTier0(intent: ConciergeIntent, ctx: Tier0Context, locale: 
       }
       return { text: renderConciergeAnswer('photo_none', locale), answered: false };
     }
+    case 'restaurant': {
+      const pins = selectFacilityPins(ctx.facilityPins ?? [], 'restaurant');
+      if (pins.length > 0) {
+        return {
+          text: renderConciergeAnswer('restaurant_map', locale, { spot: ctx.spotTitle ?? '', count: pins.length }),
+          answered: true,
+          mapCard: { kind: 'restaurant', pins },
+        };
+      }
+      // No curated rating-backed picks for this spot → the honest venue refusal
+      // (we never recommend food from LLM memory — §D-3).
+      return { text: renderConciergeAnswer('venue_refusal', locale), answered: false };
+    }
     case 'next_stop': {
       if (ctx.schedule.length === 0) {
         return { text: renderConciergeAnswer('schedule_none', locale), answered: false };
@@ -615,8 +644,16 @@ export function answerTier0(intent: ConciergeIntent, ctx: Tier0Context, locale: 
  * chit-chat, so it never talks over the guide in the shared feed.
  */
 export function inlineConciergeAnswer(text: string, ctx: Tier0Context, locale: RoomLocale): Tier0Answer | null {
-  if (classifyConciergeGuardrail(text)) return null;
   const intent = matchConciergeIntent(text);
+  // Food asks: serve this spot's curated, rating-ranked picks if we have them;
+  // otherwise stay silent (fall through to the venue guardrail → no auto-answer,
+  // the guide handles it). This is what lets us recommend restaurants at all
+  // without violating §D-3 (never from LLM memory — only vetted data).
+  if (intent === 'restaurant') {
+    const answer = answerTier0('restaurant', ctx, locale);
+    return answer.mapCard ? answer : null;
+  }
+  if (classifyConciergeGuardrail(text)) return null;
   if (!intent) return null;
   return answerTier0(intent, ctx, locale);
 }

@@ -45,6 +45,15 @@ describe('selectFacilityPins', () => {
     ]);
   });
 
+  it('ranks restaurants by rating × log(reviews), not distance', () => {
+    const pins = [
+      pin({ kind: 'restaurant', name: 'far-popular', distanceM: 900, rating: 4.2, reviewCount: 12000 }),
+      pin({ kind: 'restaurant', name: 'near-niche', distanceM: 20, rating: 4.9, reviewCount: 40 }),
+    ];
+    // Distance would put near-niche first; rating score puts far-popular first.
+    expect(selectFacilityPins(pins, 'restaurant').map((p) => p.name)).toEqual(['far-popular', 'near-niche']);
+  });
+
   it('caps at FACILITY_PIN_CAP by default', () => {
     const pins = Array.from({ length: 6 }, (_, i) => pin({ name: `R${i}`, distanceM: i }));
     expect(selectFacilityPins(pins, 'restroom')).toHaveLength(FACILITY_PIN_CAP);
