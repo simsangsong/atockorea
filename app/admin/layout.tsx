@@ -22,12 +22,14 @@ import {
   MessageSquareText,
   Package,
   RadioTower,
+  Search,
   Settings,
   Sparkles,
   Star,
   X,
 } from 'lucide-react';
 import Logo from '@/components/Logo';
+import { AdminCommandPalette } from '@/components/admin/AdminCommandPalette';
 import { supabase } from '@/lib/supabase';
 import { decideAdminGuard } from '@/lib/admin/admin-auth-guard';
 
@@ -434,6 +436,17 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           </div>
 
           <div className="flex flex-shrink-0 items-center gap-1.5 md:gap-2.5">
+            {/* ⌘K global search (spec §3.1) */}
+            <button
+              type="button"
+              onClick={() => window.dispatchEvent(new Event('admin-cmdk-open'))}
+              className="inline-flex h-8 items-center gap-1.5 rounded-lg border border-slate-200 px-2 text-xs font-medium text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-800 md:px-2.5"
+              aria-label="검색 (Ctrl+K)"
+            >
+              <Search className="size-4" />
+              <span className="hidden md:inline">검색</span>
+              <kbd className="hidden rounded bg-slate-100 px-1 text-xs text-slate-400 md:inline">⌘K</kbd>
+            </button>
             <a
               href="mailto:support@atockorea.com"
               className="inline-flex h-8 items-center gap-1.5 rounded-lg px-2 text-xs font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-950 transition-colors md:px-2.5"
@@ -519,6 +532,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       {/* W1.2: admin toast host. top-center clears the bottom nav; richColors gives
           success/error styling. Admin actions use sonner toasts going forward. */}
       <Toaster position="top-center" richColors closeButton />
+
+      {/* ⌘K command palette (spec §3.1) — nav routes as commands. */}
+      <AdminCommandPalette items={adminMenuItems.map((m) => ({ path: m.path, label: m.label }))} />
     </div>
   );
 }
