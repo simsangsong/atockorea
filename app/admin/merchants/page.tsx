@@ -203,7 +203,7 @@ export default function MerchantsPage() {
       <div>
         <div className="flex items-center gap-2">
           <Building2 className="size-6 text-blue-600" />
-          <h1 className="text-xl font-bold text-slate-900 md:text-2xl">업체 관리</h1>
+          <h1 className="text-xl font-bold text-slate-900">업체 관리</h1>
         </div>
         <p className="mt-2 text-sm text-slate-500 md:text-base">등록된 여행사 계정과 운영 상태를 관리합니다.</p>
       </div>

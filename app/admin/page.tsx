@@ -150,11 +150,11 @@ export default function AdminDashboard() {
     return (
       <div className="space-y-6">
         <Skeleton className="h-6 w-40" />
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-2 gap-4">
           <StatCardSkeleton />
           <StatCardSkeleton />
         </div>
-        <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
           <StatCardSkeleton />
           <StatCardSkeleton />
           <StatCardSkeleton />
@@ -185,7 +185,7 @@ export default function AdminDashboard() {
           counts get an amber accent to pull the eye. */}
       <section>
         <h2 className="mb-3 text-sm font-medium text-slate-500">처리 대기</h2>
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-2 gap-4">
           {actionQueue.map((item) => {
             const active = item.value > 0;
             const Icon = item.icon;
@@ -194,7 +194,7 @@ export default function AdminDashboard() {
                 key={item.title}
                 href={item.link}
                 className={cn(
-                  'flex items-center gap-3 rounded-design-md border bg-admin-surface p-4 shadow-admin-card transition-all hover:shadow-md',
+                  'flex items-center gap-4 rounded-design-md border bg-admin-surface p-4 shadow-admin-card transition-all hover:shadow-md',
                   active ? 'border-amber-300/80' : 'border-admin-border',
                 )}
               >
@@ -227,7 +227,7 @@ export default function AdminDashboard() {
       {/* Key metrics */}
       <section>
         <h2 className="mb-3 text-sm font-medium text-slate-500">주요 지표</h2>
-        <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
           <Link href="/admin/merchants" className="block">
             <StatCard
               label="전체 업체"
@@ -263,7 +263,7 @@ export default function AdminDashboard() {
               <span className="text-xs font-semibold uppercase tracking-wide text-slate-500">총 매출</span>
               <span className="text-[11px] text-slate-400">최근 7일</span>
             </div>
-            <div className="mt-2 flex items-end justify-between gap-3">
+            <div className="mt-2 flex items-end justify-between gap-4">
               <div className="min-w-0">
                 <p className="text-2xl font-bold tabular-nums text-slate-900">
                   ${usdRevenue.toLocaleString('en-US', { maximumFractionDigits: 0 })}
@@ -285,7 +285,7 @@ export default function AdminDashboard() {
       {/* Quick Actions */}
       <section className="rounded-design-md border border-admin-border bg-admin-surface p-5 shadow-admin-card">
         <h2 className="mb-3.5 text-base font-semibold text-slate-900">빠른 작업</h2>
-        <div className="grid grid-cols-1 gap-3 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           <Link
             href="/admin/merchants/create"
             className="flex min-h-11 items-center gap-2.5 rounded-lg bg-blue-50 px-4 text-sm font-medium text-blue-700 transition-colors hover:bg-blue-100"
@@ -325,7 +325,7 @@ export default function AdminDashboard() {
                 <Link
                   key={booking.id}
                   href={`/admin/orders/${booking.id}`}
-                  className="flex items-center gap-3 rounded-lg border border-transparent p-3 transition-colors hover:bg-admin-surface-hover"
+                  className="flex items-center gap-4 rounded-lg border border-transparent p-3 transition-colors hover:bg-admin-surface-hover"
                 >
                   <div className="flex size-9 flex-shrink-0 items-center justify-center rounded-lg bg-blue-100 text-blue-600">
                     <ShoppingCart className="size-4" strokeWidth={1.75} />

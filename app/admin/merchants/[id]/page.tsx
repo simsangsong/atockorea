@@ -208,7 +208,7 @@ export default function MerchantDetailPage() {
             <ChevronLeft className="size-4" /> 업체 목록
           </Link>
           <div className="flex items-center gap-2">
-            <h1 className="text-xl font-bold text-slate-900 md:text-2xl">{merchant.company_name}</h1>
+            <h1 className="text-xl font-bold text-slate-900">{merchant.company_name}</h1>
             {merchant.is_verified && <BadgeCheck className="size-5 text-blue-600" />}
           </div>
           <p className="mt-1 text-sm text-slate-500">업체 상세</p>

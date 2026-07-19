@@ -342,7 +342,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       ) : null}
 
       <aside
-        className={`fixed inset-y-0 left-0 z-50 flex w-[264px] max-w-[82vw] flex-col bg-[#111827] text-white shadow-2xl transition-transform duration-300 ease-out md:z-40 md:w-[216px] md:max-w-none md:translate-x-0 md:shadow-xl md:transition-none ${
+        className={`fixed inset-y-0 left-0 z-50 flex w-[264px] max-w-[82vw] flex-col bg-[#111827] text-white shadow-admin-float transition-transform duration-300 ease-out md:z-40 md:w-[216px] md:max-w-none md:translate-x-0 md:shadow-xl md:transition-none ${
           mobileNavOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
@@ -381,7 +381,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                 <span className="min-w-0 flex-1 truncate">{item.label}</span>
                 {item.badge ? (
                   <span
-                    className={`rounded px-1.5 py-0.5 text-[9px] font-bold leading-none ${
+                    className={`rounded px-1.5 py-0.5 text-xs font-bold leading-none ${
                       isActive ? 'bg-blue-100 text-blue-700' : 'bg-blue-500/90 text-white'
                     }`}
                   >
