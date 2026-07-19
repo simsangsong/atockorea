@@ -1,5 +1,6 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 import type { EastSignatureNatureCoreDetailViewModel } from "@/components/product-tour-static/east-signature-nature-core/eastSignatureNatureCoreDetailViewModel";
+import type { ItineraryStop } from "@/components/product-tour-static/_shared/tourProductDetailSectionTypes";
 import type { Database } from "@/lib/supabase";
 import type { TourProductDetailPayloadV1 } from "@/lib/tour-product/detailPayloadV1";
 import { assembleTourProductReviews } from "@/lib/tour-product/assembleTourProductReviews";
@@ -294,4 +295,24 @@ export async function loadTourProductViewModelBySlugFromSupabase(
   }
 
   return vm;
+}
+
+/**
+ * Lean itinerary loader for the tour-mode D-1 planner ("이 투어 추천 일정",
+ * plan §G tab ①). Returns just the ordered itinerary stops for a slug — no
+ * reviews assemble and no flagship-completeness gate (which would reject a tour
+ * whose OTHER sections are incomplete even when its itinerary is fine). Falls
+ * back to the English page when the requested locale has no row. Empty array =
+ * no rich itinerary (the planner then shows the generic course templates).
+ */
+export async function loadTourItineraryStopsBySlug(
+  supabase: Sb,
+  slug: string,
+  locale = "en",
+): Promise<ItineraryStop[]> {
+  const page =
+    (await fetchTourProductPageRow(supabase, slug, locale)) ??
+    (locale === "en" ? null : await fetchTourProductPageRow(supabase, slug, "en"));
+  if (!page) return [];
+  return [...(parsePayload(page.detail_payload)?.itineraryStops ?? [])];
 }
