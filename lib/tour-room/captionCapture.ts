@@ -15,6 +15,7 @@
  */
 
 import { pickRecorderMimeType } from '@/lib/tour-room/recorder';
+import { deviceSttUsable } from '@/lib/tour-room/deviceStt';
 
 // ---------------------------------------------------------------------------
 // Pure VAD segmenter (§N-3: 400ms silence = sentence boundary, 3–8s chunks).
@@ -106,7 +107,13 @@ function speechRecognitionCtor(): SpeechRecognitionCtor | null {
 export type CaptionTier = 'web-speech' | 'chunked-audio' | 'unsupported';
 
 export function detectCaptionTier(): CaptionTier {
-  if (speechRecognitionCtor()) return 'web-speech';
+  // Web Speech is preferred ONLY where it actually works. Samsung Internet
+  // exposes webkitSpeechRecognition but never produces results (the recognizer
+  // spins silently — "broadcasting" with nothing delivered), and in-app webviews
+  // can't run it. Those UAs must fall back to the chunked-audio tier (server STT)
+  // instead of picking the broken recognizer. Reuses the deviceStt UA gate.
+  const ua = typeof navigator !== 'undefined' ? navigator.userAgent || '' : '';
+  if (deviceSttUsable(Boolean(speechRecognitionCtor()), ua)) return 'web-speech';
   if (
     typeof MediaRecorder !== 'undefined' &&
     Boolean(navigator.mediaDevices?.getUserMedia) &&
