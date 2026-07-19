@@ -7,6 +7,7 @@
 import '@/test-utils/restoreWebPrimitives';
 import { GET, POST } from '@/app/api/admin/facility-pins/route';
 import { PATCH, DELETE } from '@/app/api/admin/facility-pins/[id]/route';
+import { GET as reviewGET } from '@/app/api/admin/facility-pins/review/route';
 import { requireAdmin, AdminAuthFailure } from '@/lib/auth';
 import { createServerClient } from '@/lib/supabase';
 
@@ -51,6 +52,7 @@ function fakeDb(opts: { listData?: unknown[]; rowData?: unknown; error?: unknown
       chain.select = jest.fn(() => chain);
       chain.eq = jest.fn(() => chain);
       chain.order = jest.fn(() => chain);
+      chain.limit = jest.fn(() => chain);
       chain.single = jest.fn(single);
       chain.then = (res: (v: unknown) => unknown, rej?: (e: unknown) => unknown) =>
         Promise.resolve({ data: dbError ? null : listData, error: dbError }).then(res, rej);
@@ -166,6 +168,31 @@ describe('PATCH /api/admin/facility-pins/[id]', () => {
     createServerClientMock.mockReturnValue(db);
     await PATCH(req({ body: { name: 'x', is_verified: false } }), ctx('p1'));
     expect((db.ops.updated as Record<string, unknown>).is_verified).toBe(false);
+  });
+});
+
+describe('GET /api/admin/facility-pins/review', () => {
+  it('requires admin', async () => {
+    requireAdminMock.mockRejectedValue(new AdminAuthFailure(401, 'no', 'AUTH'));
+    expect((await reviewGET(req())).status).toBe(401);
+  });
+
+  it('returns the unverified queue with per-kind counts', async () => {
+    createServerClientMock.mockReturnValue(
+      fakeDb({
+        listData: [
+          { id: 'a', poi_key: 'gyeongbokgung', kind: 'restaurant' },
+          { id: 'b', poi_key: 'gyeongbokgung', kind: 'restaurant' },
+          { id: 'c', poi_key: 'gyeongbokgung', kind: 'restroom' },
+          { id: 'd', poi_key: 'bukchon', kind: 'photo' },
+        ],
+      }),
+    );
+    const res = await reviewGET(req());
+    expect(res.status).toBe(200);
+    const json = await res.json();
+    expect(json.data).toHaveLength(4);
+    expect(json.counts).toEqual({ restaurant: 2, restroom: 1, photo: 1, total: 4 });
   });
 });
 
