@@ -635,10 +635,10 @@ export default function ChatFeed({
                       key={r.emoji}
                       type="button"
                       onClick={() => onReact?.(message.id, r.emoji)}
-                      className={`tr-meta flex items-center gap-0.5 rounded-full px-2 py-0.5 tabular-nums ${
+                      className={`tr-meta flex items-center gap-0.5 rounded-full px-2 py-0.5 tabular-nums transition-transform active:scale-95 ${
                         r.mine
                           ? 'bg-[var(--tr-accent-soft)] text-[var(--tr-accent-deep)] ring-1 ring-[var(--tr-accent)]'
-                          : 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]'
+                          : 'border border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]'
                       }`}
                     >
                       <span>{r.emoji}</span>
