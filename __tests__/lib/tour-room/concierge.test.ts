@@ -7,6 +7,7 @@
 import {
   answerTier0,
   classifyConciergeGuardrail,
+  inlineConciergeAnswer,
   latestArrivalContext,
   matchConciergeIntent,
   renderConciergeAnswer,
@@ -243,6 +244,25 @@ describe('context extraction', () => {
     const result = latestArrivalContext([{ metadata: { kind: 'spot_arrival', spot_title: 'Spot', content: {} } }]);
     expect(result.spotTitle).toBe('Spot');
     expect(result.content).toBeNull();
+  });
+});
+
+describe('inlineConciergeAnswer (C — chat auto-answer gate)', () => {
+  it('answers a Tier-0 info question typed into chat', () => {
+    const text = inlineConciergeAnswer('what time is the next stop?', ctx({ schedule: SCHEDULE }), 'en');
+    expect(text).toBeTruthy();
+    expect(text).toContain('Gamcheon Culture Village');
+  });
+
+  it('stays silent on chit-chat (no intent → null → guide answers)', () => {
+    expect(inlineConciergeAnswer('안녕하세요 반가워요', ctx(), 'ko')).toBeNull();
+    expect(inlineConciergeAnswer('thanks so much!', ctx(), 'en')).toBeNull();
+  });
+
+  it('never auto-answers guardrailed asks (emergency / ops / venue → route to a human)', () => {
+    expect(inlineConciergeAnswer('someone is injured, call an ambulance', ctx(), 'en')).toBeNull();
+    expect(inlineConciergeAnswer('please change my pickup time', ctx({ schedule: SCHEDULE }), 'en')).toBeNull();
+    expect(inlineConciergeAnswer('recommend a good restaurant nearby', ctx(), 'en')).toBeNull();
   });
 });
 

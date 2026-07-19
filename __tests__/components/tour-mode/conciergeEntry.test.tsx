@@ -5,6 +5,7 @@
  */
 import { fireEvent, render, screen } from '@testing-library/react';
 import ConciergeEntryRow from '@/components/tour-mode/ConciergeEntryRow';
+import ConciergeInlineAnswer from '@/components/tour-mode/ConciergeInlineAnswer';
 import RoomShell from '@/components/tour-mode/RoomShell';
 import { CONCIERGE_COPY } from '@/lib/tour-room/concierge';
 
@@ -19,6 +20,23 @@ describe('ConciergeEntryRow', () => {
     expect(screen.getByTestId('concierge-entry-row')).toHaveTextContent(CONCIERGE_COPY.ko.entryRow);
     fireEvent.click(screen.getByTestId('concierge-entry-row'));
     expect(onOpen).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('ConciergeInlineAnswer (C)', () => {
+  const answer = { id: 1, question: '화장실 어디?', text: '가장 가까운 화장실은 정문 옆에 있어요.' };
+
+  it('shows the AI label + answer and wires open / dismiss', () => {
+    const onOpen = jest.fn();
+    const onDismiss = jest.fn();
+    render(<ConciergeInlineAnswer answer={answer} locale="ko" onOpen={onOpen} onDismiss={onDismiss} />);
+    const banner = screen.getByTestId('concierge-inline-answer');
+    expect(banner).toHaveTextContent(CONCIERGE_COPY.ko.aiLabel);
+    expect(banner).toHaveTextContent(answer.text);
+    fireEvent.click(screen.getByTestId('concierge-inline-more'));
+    expect(onOpen).toHaveBeenCalledTimes(1);
+    fireEvent.click(screen.getByTestId('concierge-inline-dismiss'));
+    expect(onDismiss).toHaveBeenCalledTimes(1);
   });
 });
 
