@@ -357,7 +357,7 @@ export default function OpsApp() {
               type="button"
               onClick={toggleOpsTheme}
               aria-label={opsTheme === 'dark' ? '라이트 모드' : '다크 모드'}
-              className="flex size-8 items-center justify-center rounded-lg text-slate-400 active:bg-white/10"
+              className="flex size-11 items-center justify-center rounded-lg text-slate-400 active:bg-white/10"
               data-testid="ops-theme-toggle"
             >
               {opsTheme === 'dark' ? <Sun className="size-4" /> : <Moon className="size-4" />}
@@ -366,7 +366,7 @@ export default function OpsApp() {
               type="button"
               onClick={() => void loadAll()}
               aria-label="새로고침"
-              className="flex size-8 items-center justify-center rounded-lg text-slate-400 active:bg-white/10"
+              className="flex size-11 items-center justify-center rounded-lg text-slate-400 active:bg-white/10"
             >
               <RefreshCw className={`size-4 ${loading ? 'animate-spin' : ''}`} />
             </button>

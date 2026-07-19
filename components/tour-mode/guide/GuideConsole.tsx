@@ -568,7 +568,7 @@ export default function GuideConsole() {
                 <div className="mt-3 flex items-center gap-1.5">
                   <a
                     href={roomHref(room.booking_id)}
-                    className="tr-label flex min-h-[42px] flex-1 items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-accent)] px-3 font-bold text-[var(--tr-bubble-me-ink)] active:scale-[0.99]"
+                    className="tr-label flex min-h-[44px] flex-1 items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-accent)] px-3 font-bold text-[var(--tr-bubble-me-ink)] active:scale-[0.99]"
                     data-testid="room-chat"
                   >
                     <MessageCircle size={15} aria-hidden />
@@ -577,7 +577,7 @@ export default function GuideConsole() {
                   <button
                     type="button"
                     onClick={() => setOpenPlanBookingId(room.booking_id)}
-                    className={`tr-label flex min-h-[42px] items-center justify-center gap-1 rounded-xl px-3 font-bold ${
+                    className={`tr-label flex min-h-[44px] items-center justify-center gap-1 rounded-xl px-3 font-bold ${
                       badge?.tone === 'review'
                         ? 'bg-[var(--tr-accent-soft)] text-[var(--tr-accent-deep)] ring-1 ring-[var(--tr-hairline)]'
                         : 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]'
@@ -590,7 +590,7 @@ export default function GuideConsole() {
                   <button
                     type="button"
                     onClick={() => setOpenLedgerBookingId(room.booking_id)}
-                    className="tr-label flex min-h-[42px] items-center justify-center gap-1 rounded-xl bg-[var(--tr-surface-2)] px-3 font-bold text-[var(--tr-ink-2)]"
+                    className="tr-label flex min-h-[44px] items-center justify-center gap-1 rounded-xl bg-[var(--tr-surface-2)] px-3 font-bold text-[var(--tr-ink-2)]"
                     data-testid="ledger-toggle"
                   >
                     <Wallet size={15} aria-hidden />
@@ -599,7 +599,7 @@ export default function GuideConsole() {
                   <button
                     type="button"
                     onClick={() => setOpenAssistBookingId(room.booking_id)}
-                    className="tr-label flex min-h-[42px] items-center justify-center gap-1 rounded-xl bg-[var(--tr-surface-2)] px-3 font-bold text-[var(--tr-ink-2)]"
+                    className="tr-label flex min-h-[44px] items-center justify-center gap-1 rounded-xl bg-[var(--tr-surface-2)] px-3 font-bold text-[var(--tr-ink-2)]"
                     data-testid="assist-toggle"
                   >
                     <Sparkles size={15} aria-hidden />
@@ -612,7 +612,7 @@ export default function GuideConsole() {
                   type="button"
                   onClick={() => void enterDrive(room.booking_id)}
                   disabled={driveBusy === room.booking_id}
-                  className="tr-label mt-1.5 flex min-h-[42px] w-full items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-ink)] px-3 font-bold text-[var(--tr-canvas)] active:scale-[0.99] disabled:opacity-50"
+                  className="tr-label mt-1.5 flex min-h-[44px] w-full items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-ink)] px-3 font-bold text-[var(--tr-canvas)] active:scale-[0.99] disabled:opacity-50"
                   data-testid="room-drive"
                 >
                   <Car size={15} aria-hidden />
