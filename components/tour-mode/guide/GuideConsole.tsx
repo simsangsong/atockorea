@@ -454,27 +454,33 @@ export default function GuideConsole() {
             </span>
           </div>
         </div>
-        <div className="mt-3 flex flex-wrap gap-1.5">
-          <span className="tr-meta inline-flex items-center gap-1 rounded-full bg-white/10 px-2.5 py-1 font-semibold text-[var(--tr-plan-hero-ink)]">
-            <CalendarClock size={13} aria-hidden />
-            {overview.tour_date}
-          </span>
-          <span className="tr-meta inline-flex items-center gap-1 rounded-full bg-white/10 px-2.5 py-1 font-semibold text-[var(--tr-plan-hero-ink)]">
-            <Users size={13} aria-hidden />
-            예약 {overview.rooms.length}
-          </span>
-          <span className="tr-meta inline-flex items-center gap-1 rounded-full bg-white/10 px-2.5 py-1 font-semibold text-[var(--tr-plan-hero-ink)]">
-            <Check size={13} aria-hidden />
-            탑승 {onboardCount}/{overview.rooms.length}
-          </span>
+        {/* W3.2 — base stats as one hairline-divided strip (denser, one unit);
+            reply/review stay separate attention badges. */}
+        <div className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1.5">
+          <div className="tr-meta inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 font-semibold text-[var(--tr-plan-hero-ink)]">
+            <span className="inline-flex items-center gap-1 tabular-nums">
+              <CalendarClock size={13} aria-hidden />
+              {overview.tour_date}
+            </span>
+            <span className="h-3 w-px bg-white/20" aria-hidden />
+            <span className="inline-flex items-center gap-1 tabular-nums">
+              <Users size={13} aria-hidden />
+              예약 {overview.rooms.length}
+            </span>
+            <span className="h-3 w-px bg-white/20" aria-hidden />
+            <span className="inline-flex items-center gap-1 tabular-nums">
+              <Check size={13} aria-hidden />
+              탑승 {onboardCount}/{overview.rooms.length}
+            </span>
+          </div>
           {replyCount > 0 && (
-            <span className="tr-meta inline-flex items-center gap-1 rounded-full bg-white/20 px-2.5 py-1 font-bold text-[var(--tr-plan-hero-ink)]">
+            <span className="tr-meta inline-flex items-center gap-1 rounded-full bg-white/20 px-2.5 py-1 font-bold tabular-nums text-[var(--tr-plan-hero-ink)]">
               <MessageCircle size={13} aria-hidden />
               답장 {replyCount}
             </span>
           )}
           {reviewCount > 0 && (
-            <span className="tr-meta inline-flex items-center gap-1 rounded-full bg-white/20 px-2.5 py-1 font-bold text-[var(--tr-plan-hero-ink)]">
+            <span className="tr-meta inline-flex items-center gap-1 rounded-full bg-white/20 px-2.5 py-1 font-bold tabular-nums text-[var(--tr-plan-hero-ink)]">
               <CalendarClock size={13} aria-hidden />
               검토 {reviewCount}
             </span>
