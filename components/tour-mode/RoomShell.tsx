@@ -451,13 +451,13 @@ export default function RoomShell({
                     role="tab"
                     aria-selected={active}
                     onClick={() => selectTab(key)}
-                    className={`relative flex min-h-[44px] flex-1 flex-col items-center justify-center gap-0.5 pb-1 pt-1.5 transition-colors ${
+                    className={`relative flex min-h-[44px] flex-1 flex-col items-center justify-center gap-0.5 pb-1 pt-1.5 transition-transform active:scale-95 ${
                       active ? 'text-[var(--tr-safe)]' : 'text-[var(--tr-ink-3)]'
                     }`}
                   >
                     <span
-                      className={`relative flex h-7 w-12 items-center justify-center rounded-full transition-colors ${
-                        active ? 'bg-[var(--tr-safe-soft)]' : ''
+                      className={`relative flex h-7 w-12 items-center justify-center rounded-full transition-all duration-200 ${
+                        active ? 'scale-100 bg-[var(--tr-safe-soft)]' : 'scale-90'
                       }`}
                     >
                       <Icon size={21} strokeWidth={active ? 2.25 : 2} aria-hidden />
