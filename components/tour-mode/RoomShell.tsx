@@ -15,7 +15,7 @@
  */
 
 import { useEffect, useRef, useState, type ReactNode } from 'react';
-import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { ChevronLeft } from 'lucide-react';
 import EmergencyCard from '@/components/tour-mode/EmergencyCard';
 import Sheet from '@/components/tour-mode/Sheet';
@@ -199,7 +199,11 @@ export default function RoomShell({
    *  Renders a back chevron so phone users aren't stuck exiting the whole app. */
   backHref?: string;
 }) {
+  const router = useRouter();
   const [tab, setTab] = useState<RoomTab>(initialTab ?? (home ? 'home' : 'chat'));
+  // Back-stack of visited tabs so "back" steps one screen at a time (chat→map,
+  // back→chat) instead of leaving the room / dumping to the booking gate.
+  const [tabStack, setTabStack] = useState<RoomTab[]>([]);
   const [emergencyOpen, setEmergencyOpen] = useState(false);
   const [conciergeOpen, setConciergeOpen] = useState(false);
   // A1 — first-visit pulse on the concierge button. Defaults to no pulse to
@@ -264,9 +268,63 @@ export default function RoomShell({
   }, [chatActivityKey]);
 
   const selectTab = (next: RoomTab) => {
+    if (next !== tab) setTabStack((stack) => [...stack, tab]);
     setTab(next);
     if (next === 'chat') setChatUnread(false);
   };
+
+  // Unified back step, shared by the header chevron and the hardware/browser
+  // back button (via the popstate trap below). Returns whether it stayed inside
+  // the room or wants to exit to backHref. One click = one step:
+  //   open sheet → close it → pop a tab → (root) exit to console / stay.
+  const goBack = (): 'stayed' | 'exit' | 'noop' => {
+    if (conciergeOpen) {
+      setConciergeOpen(false);
+      return 'stayed';
+    }
+    if (emergencyOpen) {
+      setEmergencyOpen(false);
+      return 'stayed';
+    }
+    if (tabStack.length > 0) {
+      const prev = tabStack[tabStack.length - 1];
+      setTabStack((stack) => stack.slice(0, -1));
+      setTab(prev);
+      if (prev === 'chat') setChatUnread(false);
+      return 'stayed';
+    }
+    return backHref ? 'exit' : 'noop';
+  };
+
+  // Latest-closure ref so the popstate listener (registered once) always calls
+  // the current goBack without re-subscribing every render.
+  const goBackRef = useRef(goBack);
+  useEffect(() => {
+    goBackRef.current = goBack;
+  });
+
+  const handleBack = () => {
+    if (goBack() === 'exit' && backHref) router.push(backHref);
+  };
+
+  // Trap the hardware/browser back button: a sentinel history entry means a
+  // back press fires popstate (which we consume with an in-room step) instead
+  // of leaving the PWA. Only exits to backHref when nothing is left to pop.
+  useEffect(() => {
+    window.history.pushState({ tourRoomGuard: true }, '');
+    const onPop = () => {
+      const result = goBackRef.current();
+      if (result === 'exit' && backHref) {
+        router.push(backHref);
+      } else {
+        // stayed (sheet/tab) or customer-at-root: re-arm the sentinel so the
+        // next back press is trapped too, never exiting to the browser.
+        window.history.pushState({ tourRoomGuard: true }, '');
+      }
+    };
+    window.addEventListener('popstate', onPop);
+    return () => window.removeEventListener('popstate', onPop);
+  }, [backHref, router]);
 
   const degraded = connection === 'offline' || connection === 'connecting';
   const connectionHint =
@@ -288,15 +346,16 @@ export default function RoomShell({
           className="tr-safe-top tr-hairline-b z-30 flex shrink-0 items-center gap-2 bg-[var(--tr-surface)] px-4"
           style={{ minHeight: 'var(--tr-header-h)' }}
         >
-          {backHref && (
-            <Link
-              href={backHref}
+          {(backHref || tabStack.length > 0) && (
+            <button
+              type="button"
+              onClick={handleBack}
               aria-label="뒤로"
               className="-ml-1.5 flex h-11 w-9 shrink-0 items-center justify-center rounded-full text-[var(--tr-ink-2)] active:bg-[var(--tr-surface-2)]"
               data-testid="room-back"
             >
               <ChevronLeft size={24} strokeWidth={2.25} aria-hidden />
-            </Link>
+            </button>
           )}
           <div className="min-w-0 flex-1 py-1.5">
             <div className="flex items-center gap-2">
