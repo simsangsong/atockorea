@@ -528,7 +528,7 @@ export default function Cockpit({
       : '오늘 일정 없음';
   const navDest = isPrep && pickupDest ? pickupDest : destFrom(nextStop);
 
-  const recent = messages.slice(-6);
+  const recent = messages.slice(-8);
 
   return (
     <Screen>
@@ -572,14 +572,14 @@ export default function Cockpit({
       </div>
 
       {/* phase-aware destination + nav */}
-      <div className="border-b border-neutral-800 px-4 py-3">
+      <div className="border-b border-neutral-800 px-4 py-2">
         <p className="text-xs font-bold uppercase tracking-wide text-neutral-500">{destLabel}</p>
-        <p className="mt-0.5 truncate text-xl font-bold text-white">{destTitle}</p>
+        <p className="mt-0.5 truncate text-lg font-bold text-white">{destTitle}</p>
         {navDest ? <NavRow dest={navDest} /> : null}
       </div>
 
       {/* bubbles */}
-      <div className="flex flex-1 flex-col justify-end gap-3 overflow-y-auto px-4 py-4" data-testid="driver-feed">
+      <div className="flex flex-1 flex-col justify-end gap-2.5 overflow-y-auto px-4 py-3" data-testid="driver-feed">
         {recent.map((message) => {
           const mine = message.sender_role === 'driver' || message.sender_role === 'guide';
           const system = message.sender_role === 'system' || message.sender_role === 'admin';
@@ -622,7 +622,7 @@ export default function Cockpit({
       {phase === 'idle' ? (
         <>
           {/* typed send — always available (webview fallback / quiet typing) */}
-          <div className="px-4 pt-2">
+          <div className="px-4 pt-1.5">
             <form
               onSubmit={(event) => {
                 event.preventDefault();
@@ -643,25 +643,25 @@ export default function Cockpit({
                     void sendText();
                   }
                 }}
-                className="min-w-0 flex-1 resize-none rounded-2xl border border-neutral-700 bg-neutral-900 px-4 py-3 text-lg text-white placeholder:text-neutral-500 focus:border-neutral-500 focus:outline-none"
+                className="min-w-0 flex-1 resize-none rounded-2xl border border-neutral-700 bg-neutral-900 px-4 py-2.5 text-base text-white placeholder:text-neutral-500 focus:border-neutral-500 focus:outline-none"
                 data-testid="driver-text-input"
               />
               <button
                 type="submit"
                 disabled={!textDraft.trim() || textSending}
-                className="shrink-0 rounded-2xl bg-neutral-100 px-5 py-3 text-lg font-bold text-neutral-950 disabled:opacity-40"
+                className="shrink-0 rounded-2xl bg-neutral-100 px-5 py-2.5 text-base font-bold text-neutral-950 disabled:opacity-40"
                 data-testid="driver-text-send"
               >
                 {textSending ? '…' : '보내기'}
               </button>
             </form>
           </div>
-          <div className="px-4 pb-3 pt-2">
-            <MicPrime variant="dark" locale="ko" className="mb-2" />
+          <div className="px-4 pb-2 pt-1.5">
+            <MicPrime variant="dark" locale="ko" className="mb-1.5" />
             <button
               type="button"
               onClick={startRecording}
-              className="w-full rounded-3xl bg-neutral-100 py-8 text-3xl font-bold text-neutral-950 transition-transform active:scale-[0.99]"
+              className="w-full rounded-3xl bg-neutral-100 py-4 text-2xl font-bold text-neutral-950 transition-transform active:scale-[0.99]"
               data-testid="driver-mic"
             >
               🎤 눌러서 말하기
@@ -669,7 +669,7 @@ export default function Cockpit({
           </div>
         </>
       ) : phase === 'recording' ? (
-        <div className="px-4 pb-3 pt-2">
+        <div className="px-4 pb-2 pt-1.5">
           <div
             className="mb-2 flex min-h-[56px] items-center gap-3 rounded-2xl bg-neutral-900 px-4 py-3"
             data-testid="cockpit-listening"
@@ -694,31 +694,31 @@ export default function Cockpit({
           <button
             type="button"
             onClick={stopRecording}
-            className="w-full rounded-3xl bg-red-500 py-8 text-3xl font-bold text-white transition-transform active:scale-[0.99]"
+            className="w-full rounded-3xl bg-red-500 py-4 text-2xl font-bold text-white transition-transform active:scale-[0.99]"
             data-testid="driver-mic"
           >
             ■ 말 끝났어요
           </button>
         </div>
       ) : phase === 'pending' ? (
-        <div className="px-4 pb-3 pt-2">
+        <div className="px-4 pb-2 pt-1.5">
           {pending?.kind === 'text' ? (
             <p className="mb-2 line-clamp-2 text-center text-xl font-medium text-neutral-100">“{pending.text}”</p>
           ) : null}
           <button
             type="button"
             onClick={cancelPending}
-            className="relative w-full overflow-hidden rounded-3xl bg-neutral-800 py-8 transition-transform active:scale-[0.99]"
+            className="relative w-full overflow-hidden rounded-3xl bg-neutral-800 py-4 transition-transform active:scale-[0.99]"
             data-testid="cockpit-undo-send"
           >
             <span aria-hidden className="cockpit-fill absolute bottom-0 left-0 h-1.5 rounded-full bg-white/80" />
-            <span className="relative text-2xl font-bold text-neutral-200">탭하여 취소</span>
+            <span className="relative text-xl font-bold text-neutral-200">탭하여 취소</span>
           </button>
         </div>
       ) : (
-        <div className="px-4 pb-3 pt-2">
+        <div className="px-4 pb-2 pt-1.5">
           <div
-            className="cockpit-shimmer w-full rounded-3xl bg-neutral-800 py-8 text-center text-2xl font-bold text-neutral-300"
+            className="cockpit-shimmer w-full rounded-3xl bg-neutral-800 py-4 text-center text-xl font-bold text-neutral-300"
             data-testid="cockpit-sending"
           >
             전송 중…
@@ -727,7 +727,7 @@ export default function Cockpit({
       )}
 
       {/* one-tap actions */}
-      <div className="grid grid-cols-3 gap-2 px-4 pb-2.5">
+      <div className="grid grid-cols-3 gap-1.5 px-4 pb-1.5">
         <ActionButton label="타세요" emoji="🚐" onClick={announceVehicleArrived} />
         <ActionButton label="지연" emoji="⏱" onClick={() => setSheet('delay')} />
         <ActionButton label="복귀시간" emoji="⏰" onClick={() => setSheet('return')} />
@@ -745,11 +745,11 @@ export default function Cockpit({
       </div>
 
       {/* expense log (secondary, deliberate) */}
-      <div className="px-4 pb-6">
+      <div className="px-4 pb-3">
         <button
           type="button"
           onClick={() => setSheet('expense')}
-          className="w-full rounded-2xl bg-neutral-800 py-3 text-lg font-bold text-neutral-200"
+          className="w-full rounded-2xl bg-neutral-800 py-2.5 text-base font-bold text-neutral-200"
           data-testid="driver-action-expense"
         >
           💰 지출 기록 (주차비 등)
@@ -954,11 +954,11 @@ function ActionButton({ label, emoji, onClick }: { label: string; emoji: string;
     <button
       type="button"
       onClick={onClick}
-      className="flex flex-col items-center gap-1 rounded-2xl bg-neutral-800 py-4 text-white"
+      className="flex flex-col items-center gap-0.5 rounded-2xl bg-neutral-800 py-2.5 text-white"
       data-testid={`driver-action-${label}`}
     >
-      <span className="text-2xl">{emoji}</span>
-      <span className="text-base font-bold">{label}</span>
+      <span className="text-xl">{emoji}</span>
+      <span className="text-sm font-bold">{label}</span>
     </button>
   );
 }
