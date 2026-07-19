@@ -65,6 +65,15 @@ describe('ChatFeed reply', () => {
     fireEvent.contextMenu(container.querySelector('[data-msg-id="m2"]')!);
     expect(screen.queryByTestId('action-reply')).not.toBeInTheDocument();
   });
+
+  it('exposes an always-visible action button (a11y / iOS where long-press does not fire)', () => {
+    const onReply = jest.fn();
+    render(<ChatFeed messages={[origin, reply]} viewerLocale="en" viewerRole="customer" onReply={onReply} />);
+    const buttons = screen.getAllByTestId('msg-actions');
+    expect(buttons.length).toBeGreaterThan(0);
+    fireEvent.click(buttons[buttons.length - 1]); // the reply bubble's actions
+    expect(screen.getByTestId('action-reply')).toBeInTheDocument();
+  });
 });
 
 describe('Composer reply bar', () => {
