@@ -11,6 +11,7 @@ import { checkDriverPin } from '@/lib/tour-room/driver';
 import { roomChannelTopic, broadcastToRoom } from '@/lib/tour-room/realtime';
 import { roomShouldBeClosed } from '@/lib/tour-room/time';
 import { buildRoomSnapshot, normalizeRoomLocale } from '@/lib/tour-room/snapshot';
+import { normalizeChatLocale } from '@/lib/tour-room/chatLocale';
 
 export const dynamic = 'force-dynamic';
 
@@ -111,6 +112,11 @@ export async function POST(
     const displayName = displayNameFor(actor, String(body.displayName || ''), booking.contact_name);
     const locale = normalizeRoomLocale(body.locale, normalizeRoomLocale(booking.preferred_language));
     const ttsCapable = typeof body.ttsCapable === 'boolean' ? body.ttsCapable : null;
+    // Explicit chat-translation language (any LLM-supported language). Unlike
+    // `locale` (one of the 5 UI locales), this drives what OPERATOR bubbles are
+    // translated into for this guest, so a French speaker can read the driver's
+    // Korean in French even though the UI chrome stays in one of the 5.
+    const chatLocale = normalizeChatLocale(body.chatLocale);
 
     const { data: participant, error: participantError } = await supabase
       .from('tour_room_participants')
@@ -123,6 +129,7 @@ export async function POST(
           display_name: displayName,
           locale,
           device_key: deviceKey,
+          ...(chatLocale ? { chat_locale: chatLocale } : {}),
           ...(ttsCapable === null ? {} : { tts_capable: ttsCapable }),
           ...(actor.kind === 'token' && body.inviteId ? { invite_id: String(body.inviteId) } : {}),
           last_seen_at: new Date().toISOString(),
