@@ -51,6 +51,8 @@
     "chatbot:golden": "node --env-file=.env.local scripts/chatbot-golden-test.mjs",
     "facility:collect": "node --env-file=.env.local scripts/collect-facility-pins.mjs",
     "facility:collect:dry": "node --env-file=.env.local scripts/collect-facility-pins.mjs --dry",
+    "facility:collect:kakao": "node --env-file=.env.local scripts/collect-facility-pins.mjs --provider=kakao",
+    "facility:collect:kakao:dry": "node --env-file=.env.local scripts/collect-facility-pins.mjs --provider=kakao --dry",
     "gen:southwest-tour-product-zh-TW-sql": "node scripts/gen-southwest-tour-product-zh-TW-sql.mjs",
     "gen:southwest-tour-product-zh-CN-sql": "node scripts/gen-southwest-tour-product-zh-CN-sql.mjs",
     "gen:southwest-tour-product-ko-sql": "node scripts/gen-southwest-tour-product-ko-sql.mjs",
