@@ -37,6 +37,15 @@ import RoomShell from '@/components/tour-mode/RoomShell';
 import SosButton from '@/components/tour-mode/SosButton';
 import ConciergePanel from '@/components/tour-mode/ConciergePanel';
 import ConciergeEntryRow from '@/components/tour-mode/ConciergeEntryRow';
+import ConciergeInlineAnswer, { type InlineConciergeAnswer } from '@/components/tour-mode/ConciergeInlineAnswer';
+import {
+  inlineConciergeAnswer,
+  latestArrivalContext,
+  type ScheduleItemLike,
+  type Tier0Context,
+} from '@/lib/tour-room/concierge';
+import { activeNotice } from '@/lib/tour-room/notices';
+import { roomLifecycle } from '@/lib/tour-room/time';
 import InstallBanner from '@/components/tour-mode/InstallBanner';
 import { detectEntryLocale, ENTRY_COPY } from '@/components/tour-mode/entryCopy';
 import { GUEST_CREDS_STORAGE_PREFIX } from '@/components/tour-mode/TourModeEntry';
@@ -401,6 +410,38 @@ function TourRoomLive({
   const [replyTo, setReplyTo] = useState<RoomMessage | null>(null);
   const replyOpts = () =>
     replyTo ? { replyToId: replyTo.id, replySnapshot: buildReplySnapshot(replyTo) } : undefined;
+
+  // C — inline Smart Guide answer. A Tier-0 info question typed into the MAIN
+  // chat (restroom / photo / next stop / time left) is answered instantly, on
+  // this screen only — never persisted or broadcast, so the shared feed stays a
+  // human channel and the guide's own reply is never talked over.
+  const [inlineAnswer, setInlineAnswer] = useState<InlineConciergeAnswer | null>(null);
+  const inlineAnswerSeq = useRef(0);
+  // nowMs is passed in from the send event handler (Date.now() is impure and
+  // must be read at the event, not in render scope).
+  const maybeAnswerInline = (text: string, nowMs: number) => {
+    if (viewerRole !== 'customer' || readOnly) return;
+    const arrival = latestArrivalContext(messages);
+    const tourDate = snapshot.booking?.tour_date ?? null;
+    const notice = activeNotice(messages, tourDate, nowMs);
+    const ctx: Tier0Context = {
+      spotTitle: arrival.spotTitle,
+      content: arrival.content,
+      schedule: schedule as ScheduleItemLike[],
+      freeTime:
+        notice && !notice.cancelled && notice.remainingMs !== null
+          ? { remainingMs: notice.remainingMs, point: notice.point }
+          : null,
+      nowMs,
+      lifecycle: roomLifecycle(tourDate, nowMs),
+    };
+    // Tier-0 only, guardrailed — null when the message isn't an answerable info
+    // question, so we stay silent on chit-chat and never talk over the guide.
+    const answer = inlineConciergeAnswer(text, ctx, locale);
+    if (!answer) return;
+    inlineAnswerSeq.current += 1;
+    setInlineAnswer({ id: inlineAnswerSeq.current, question: text, text: answer });
+  };
 
   // Read receipts (Phase 2d): advance my cursor when a new incoming message
   // arrives and the room is on-screen (the room IS the chat). markRead throttles.
@@ -830,6 +871,17 @@ function TourRoomLive({
           {viewerRole === 'customer' && !readOnly && data.lifecycle === 'live' && (
             <QuickSignalBar bookingId={bookingId} roomSession={data.session} locale={locale} />
           )}
+          {viewerRole === 'customer' && !readOnly && inlineAnswer && (
+            <ConciergeInlineAnswer
+              answer={inlineAnswer}
+              locale={locale}
+              onOpen={() => {
+                setInlineAnswer(null);
+                chatApi.openConcierge();
+              }}
+              onDismiss={() => setInlineAnswer(null)}
+            />
+          )}
           {viewerRole === 'customer' && !readOnly && (
             <ConciergeEntryRow locale={locale} onOpen={chatApi.openConcierge} />
           )}
@@ -839,6 +891,7 @@ function TourRoomLive({
               onSendText={(text) => {
                 void sendText(text, replyOpts());
                 setReplyTo(null);
+                maybeAnswerInline(text, Date.now());
               }}
               onSendPreset={(preset) => {
                 void sendPreset(preset, locale, replyOpts());

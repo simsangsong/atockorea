@@ -553,6 +553,23 @@ export function answerTier0(intent: ConciergeIntent, ctx: Tier0Context, locale: 
   }
 }
 
+/**
+ * C — decide whether a free-text customer chat message warrants an instant,
+ * on-screen-only Smart Guide answer, and produce it. Returns the answer text,
+ * or null when the message isn't a Tier-0 info question — or is an emergency /
+ * ops / venue ask that must route to a human instead of being auto-answered.
+ *
+ * Pure (client-only, zero network, zero LLM): the guardrail keeps the AI out of
+ * anything with a human side effect, and the intent gate keeps it silent on
+ * chit-chat, so it never talks over the guide in the shared feed.
+ */
+export function inlineConciergeAnswer(text: string, ctx: Tier0Context, locale: RoomLocale): string | null {
+  if (classifyConciergeGuardrail(text)) return null;
+  const intent = matchConciergeIntent(text);
+  if (!intent) return null;
+  return answerTier0(intent, ctx, locale).text;
+}
+
 // ---------------------------------------------------------------------------
 // Context extraction helpers (shared by panel + endpoint)
 // ---------------------------------------------------------------------------
