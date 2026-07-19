@@ -71,7 +71,12 @@
   --tr-chip-grad-danger: linear-gradient(140deg, #ef4d4d 0%, #b91c1c 100%);
 }
 
-.dark .tr-root {
+/* RoomShell nests `.dark > .tr-root`; the ops console (W1.2) carries both on
+ * one element, so match same-element `.tr-root.dark` too. Additive — no element
+ * currently has both classes except the ops shell, so existing surfaces are
+ * unaffected. */
+.dark .tr-root,
+.tr-root.dark {
   --tr-canvas: #151818;
   --tr-surface: #1d2020;
   --tr-surface-2: #252929;
