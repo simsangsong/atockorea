@@ -666,6 +666,13 @@ function TourRoomLive({
       theme={theme}
       chatActivityKey={messages.length}
       initialTab={deepLink.focusMessageId ? 'chat' : undefined}
+      backHref={
+        viewerRole === 'guide'
+          ? '/tour-mode/guide'
+          : viewerRole === 'driver'
+            ? '/tour-mode/driver'
+            : '/tour-mode?nojump=1'
+      }
       banner={
         <>
           {viewerRole === 'customer' && (
