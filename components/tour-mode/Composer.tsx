@@ -32,7 +32,9 @@ import {
   IconAsk,
   IconCamera,
   IconDone,
+  IconFile,
   IconMic,
+  IconPaperclip,
   IconSend,
 } from '@/components/tour-mode/icons';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
@@ -127,12 +129,30 @@ const VISION_COPY: Record<
 
 const MAX_TEXTAREA_PX = 128; // ~5 lines of tr-body
 
+/** Photo/document picker filter for the attach button (Phase 2). */
+const ATTACH_ACCEPT = 'image/*,.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.csv,.hwp,.zip';
+
+const ATTACH_COPY: Record<
+  RoomLocale,
+  { caption: string; send: string; sending: string; cancel: string; tooBig: string }
+> = {
+  en: { caption: 'Add a caption (optional)', send: 'Send', sending: 'Sending…', cancel: 'Cancel', tooBig: 'File is too large.' },
+  ko: { caption: '설명 추가 (선택)', send: '보내기', sending: '보내는 중…', cancel: '취소', tooBig: '파일이 너무 커요.' },
+  ja: { caption: 'キャプションを追加（任意）', send: '送信', sending: '送信中…', cancel: 'キャンセル', tooBig: 'ファイルが大きすぎます。' },
+  es: { caption: 'Añadir un pie de foto (opcional)', send: 'Enviar', sending: 'Enviando…', cancel: 'Cancelar', tooBig: 'El archivo es demasiado grande.' },
+  zh: { caption: '添加说明（可选）', send: '发送', sending: '发送中…', cancel: '取消', tooBig: '文件太大了。' },
+};
+
+const ATTACH_MAX_IMAGE = 8 * 1024 * 1024;
+const ATTACH_MAX_FILE = 20 * 1024 * 1024;
+
 export default function Composer({
   locale,
   onSendText,
   onSendPreset,
   transcribeVoice,
   vision,
+  onSendAttachment,
   disabled = false,
 }: {
   locale: RoomLocale;
@@ -142,6 +162,9 @@ export default function Composer({
   transcribeVoice?: (blob: Blob, mimeType: string) => Promise<VoiceTranscribeResult | null>;
   /** T4.7 — photo questions; absent = camera button hidden. */
   vision?: VisionAsk;
+  /** Kakao-grade attachments (Phase 2): send a photo/file as a message with an
+   *  optional caption. Absent = attach button hidden. */
+  onSendAttachment?: (file: File, caption: string) => Promise<boolean>;
   disabled?: boolean;
 }) {
   const [draft, setDraft] = useState('');
@@ -169,6 +192,39 @@ export default function Composer({
   const [visionState, setVisionState] = useState<'idle' | 'asking' | 'answered' | 'failed'>('idle');
   const [visionAnswer, setVisionAnswer] = useState('');
   const fileInputRef = useRef<HTMLInputElement | null>(null);
+
+  // Kakao-grade attachment (Phase 2): pick a photo/file → preview + caption → send.
+  const [attach, setAttach] = useState<{ file: File; preview: string | null; isImage: boolean } | null>(null);
+  const [attachCaption, setAttachCaption] = useState('');
+  const [attachSending, setAttachSending] = useState(false);
+  const [attachNote, setAttachNote] = useState<string | null>(null);
+  const attachInputRef = useRef<HTMLInputElement | null>(null);
+
+  const closeAttach = () => {
+    if (attach?.preview) URL.revokeObjectURL(attach.preview);
+    setAttach(null);
+    setAttachCaption('');
+    setAttachNote(null);
+  };
+  const onPickAttachment = (file: File | null) => {
+    if (!file) return;
+    const isImage = file.type.startsWith('image/');
+    if (file.size > (isImage ? ATTACH_MAX_IMAGE : ATTACH_MAX_FILE)) {
+      setAttachNote(ATTACH_COPY[locale].tooBig);
+      return;
+    }
+    if (attach?.preview) URL.revokeObjectURL(attach.preview);
+    setAttachNote(null);
+    setAttachCaption('');
+    setAttach({ file, preview: isImage ? URL.createObjectURL(file) : null, isImage });
+  };
+  const submitAttachment = async () => {
+    if (!attach || !onSendAttachment || attachSending) return;
+    setAttachSending(true);
+    const ok = await onSendAttachment(attach.file, attachCaption.trim());
+    setAttachSending(false);
+    if (ok) closeAttach();
+  };
 
   const closeVision = () => {
     if (visionPreview) URL.revokeObjectURL(visionPreview);
@@ -436,6 +492,60 @@ export default function Composer({
         </div>
       )}
 
+      {attach && (
+        <div className="tr-card mx-3 mb-1.5 p-3" data-testid="attach-panel">
+          <div className="flex gap-2.5">
+            {attach.isImage && attach.preview ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={attach.preview} alt="" className="h-16 w-16 shrink-0 rounded-xl object-cover" />
+            ) : (
+              <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]">
+                <IconFile size={26} strokeWidth={1.75} aria-hidden />
+              </span>
+            )}
+            <div className="min-w-0 flex-1">
+              <p className="tr-card-text truncate font-medium text-[var(--tr-ink)]">{attach.file.name}</p>
+              <input
+                value={attachCaption}
+                onChange={(e) => setAttachCaption(e.target.value)}
+                maxLength={300}
+                placeholder={ATTACH_COPY[locale].caption}
+                className="tr-card-text mt-1.5 w-full rounded-xl bg-[var(--tr-surface-2)] px-3 py-2 text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)] focus:outline-none focus:ring-2 focus:ring-[var(--tr-accent)]"
+                data-testid="attach-caption"
+              />
+            </div>
+          </div>
+          <div className="mt-2 flex justify-end gap-2">
+            <button
+              type="button"
+              onClick={closeAttach}
+              className="tr-label min-h-[40px] rounded-full px-4 font-medium text-[var(--tr-ink-2)]"
+            >
+              {ATTACH_COPY[locale].cancel}
+            </button>
+            <button
+              type="button"
+              onClick={() => void submitAttachment()}
+              disabled={attachSending}
+              className="tr-label flex min-h-[40px] items-center gap-1.5 rounded-full bg-[var(--tr-accent)] px-4 font-semibold text-[var(--tr-bubble-me-ink)] disabled:opacity-50"
+              data-testid="attach-send"
+            >
+              <IconSend size={14} aria-hidden />
+              {attachSending ? ATTACH_COPY[locale].sending : ATTACH_COPY[locale].send}
+            </button>
+          </div>
+        </div>
+      )}
+
+      {attachNote && (
+        <p
+          className="tr-label mx-3 mb-1.5 rounded-xl bg-[var(--tr-danger-soft)] px-3 py-2 text-[var(--tr-danger)]"
+          data-testid="attach-note"
+        >
+          {attachNote}
+        </p>
+      )}
+
       {voiceNote && (
         <p
           className="tr-label mx-3 mb-1.5 rounded-xl bg-[var(--tr-danger-soft)] px-3 py-2 text-[var(--tr-danger)]"
@@ -512,6 +622,30 @@ export default function Composer({
           </div>
         ) : (
           <form onSubmit={onSubmit} className="flex items-end gap-1.5">
+            {onSendAttachment && !hasDraft && (
+              <>
+                <input
+                  ref={attachInputRef}
+                  type="file"
+                  accept={ATTACH_ACCEPT}
+                  className="hidden"
+                  onChange={(e) => {
+                    onPickAttachment(e.target.files?.[0] ?? null);
+                    e.target.value = '';
+                  }}
+                  data-testid="attach-file-input"
+                />
+                <button
+                  type="button"
+                  onClick={() => attachInputRef.current?.click()}
+                  aria-label="attach a photo or file"
+                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-[var(--tr-ink-2)] active:bg-[var(--tr-bubble-system)]"
+                  data-testid="attach-button"
+                >
+                  <IconPaperclip size={21} strokeWidth={2} />
+                </button>
+              </>
+            )}
             {vision && !hasDraft && (
               <>
                 <input

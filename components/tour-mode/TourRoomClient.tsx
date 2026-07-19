@@ -297,8 +297,12 @@ function TourRoomLive({
         })
       : null;
 
+  // Latest-messages ref for async event handlers (vision context, etc.).
+  // Updated in an effect, not during render (readers run well after commit).
   const messagesRef = useRef(messages);
-  messagesRef.current = messages;
+  useEffect(() => {
+    messagesRef.current = messages;
+  }, [messages]);
 
   // W5.1 — remember this room so the installed PWA's start_url (/tour-mode)
   // can jump straight back in; the stored room session makes rejoin seamless.
@@ -409,6 +413,27 @@ function TourRoomLive({
       }
     },
     [bookingId, data.session, locale],
+  );
+
+  // Kakao-grade attachment (Phase 2): send a photo/file as a message with an
+  // optional (auto-translated) caption. It arrives back via the room channel.
+  const sendAttachment = useCallback(
+    async (file: File, caption: string): Promise<boolean> => {
+      try {
+        const form = new FormData();
+        form.append('attachment', file);
+        if (caption) form.append('caption', caption);
+        const res = await fetch(`/api/tour-rooms/${encodeURIComponent(bookingId)}/messages`, {
+          method: 'POST',
+          headers: { 'x-tour-room-auth': data.session },
+          body: form,
+        });
+        return res.ok;
+      } catch {
+        return false;
+      }
+    },
+    [bookingId, data.session],
   );
 
   // T2.9 — report the device's TTS capability once per entry (background,
@@ -670,6 +695,7 @@ function TourRoomLive({
               onSendPreset={(preset) => void sendPreset(preset, locale)}
               transcribeVoice={transcribeVoice}
               vision={{ ask: visionAsk }}
+              onSendAttachment={sendAttachment}
             />
           )}
         </div>

@@ -22,7 +22,10 @@ import AudioButton from '@/components/tour-mode/AudioButton';
 import Avatar from '@/components/tour-mode/Avatar';
 import ExtraLedgerCard, { type ExtraLedgerMeta } from '@/components/tour-mode/ExtraLedgerCard';
 import SpotArrivalCard from '@/components/tour-mode/SpotArrivalCard';
+import Lightbox from '@/components/tour-mode/Lightbox';
 import {
+  IconFile,
+  IconInstall,
   IconOpsBadge,
   IconOriginal,
   IconRetry,
@@ -30,7 +33,7 @@ import {
   IconSending,
   IconTranslated,
 } from '@/components/tour-mode/icons';
-import { buildFeedItems, kstDayKey, type FeedItem } from '@/lib/tour-room/messageGroups';
+import { buildFeedItems, type FeedItem } from '@/lib/tour-room/messageGroups';
 import { formatBubbleTime, formatDateSeparator } from '@/lib/tour-room/timeFormat';
 import { kstToday } from '@/lib/tour-room/time';
 import type { RoomMessage } from '@/hooks/useTourRoomChannel';
@@ -71,6 +74,21 @@ const ROLE_LABEL: Record<RoomLocale, Record<string, string>> = {
   es: { guide: 'Guía', admin: 'AtoC Korea', driver: 'Conductor' },
   zh: { guide: '导游', admin: 'AtoC Korea', driver: '司机' },
 };
+
+/** Attachment metadata carried on image/file messages (Phase 1 route). */
+interface AttachmentMeta {
+  url?: string;
+  mime?: string;
+  name?: string;
+  size?: number;
+}
+
+function formatBytes(bytes?: number): string {
+  if (!bytes || bytes <= 0) return '';
+  const kb = bytes / 1024;
+  if (kb < 1024) return `${Math.max(1, Math.round(kb))} KB`;
+  return `${(kb / 1024).toFixed(1)} MB`;
+}
 
 function displayText(
   message: RoomMessage,
@@ -121,6 +139,7 @@ export default function ChatFeed({
   const [originals, setOriginals] = useState<Set<string>>(new Set());
   const [awayCount, setAwayCount] = useState(0);
   const [showFab, setShowFab] = useState(false);
+  const [lightbox, setLightbox] = useState<{ url: string; name?: string | null } | null>(null);
   const feedRef = useRef<HTMLDivElement | null>(null);
   const nearBottomRef = useRef(true);
 
@@ -342,7 +361,14 @@ export default function ChatFeed({
               </div>
             );
 
-            const bubble = (
+            // Kakao-grade attachments: image → thumbnail bubble → lightbox;
+            // file → download chip. The caption (source_text) still translates.
+            const attachment = message.metadata?.attachment as AttachmentMeta | undefined;
+            const isImage = message.input_kind === 'image' && typeof attachment?.url === 'string';
+            const isFile = message.input_kind === 'file' && typeof attachment?.url === 'string';
+            const caption = displayText(message, viewerLocale, showingOriginal, preferredLocale);
+
+            const textBubble = (
               <button
                 type="button"
                 onClick={translatable ? () => toggleOriginal(message.id) : undefined}
@@ -355,8 +381,54 @@ export default function ChatFeed({
                   failed ? 'opacity-60 outline outline-1 outline-[var(--tr-danger)]' : ''
                 }`}
               >
-                {displayText(message, viewerLocale, showingOriginal, preferredLocale)}
+                {caption}
               </button>
+            );
+
+            const bubble = isImage ? (
+              <div className={`flex flex-col gap-1 ${mine ? 'items-end' : 'items-start'}`}>
+                <button
+                  type="button"
+                  onClick={() => setLightbox({ url: attachment!.url!, name: attachment!.name })}
+                  className={`block overflow-hidden rounded-[var(--tr-radius-bubble)] ${sending ? 'opacity-60' : ''} ${
+                    failed ? 'outline outline-1 outline-[var(--tr-danger)]' : ''
+                  }`}
+                  data-testid="chat-image"
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={attachment!.url}
+                    alt={attachment!.name ?? ''}
+                    loading="lazy"
+                    className="max-h-64 max-w-[62vw] object-cover"
+                  />
+                </button>
+                {caption ? textBubble : null}
+              </div>
+            ) : isFile ? (
+              <a
+                href={attachment!.url}
+                download={attachment!.name ?? undefined}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`flex max-w-[70vw] items-center gap-2.5 rounded-[var(--tr-radius-bubble)] px-3.5 py-2.5 ${tailClass} ${
+                  mine
+                    ? 'bg-[var(--tr-bubble-me)] text-[var(--tr-bubble-me-ink)]'
+                    : 'bg-[var(--tr-bubble-in)] text-[var(--tr-bubble-in-ink)]'
+                } ${sending ? 'opacity-60' : ''}`}
+                data-testid="chat-file"
+              >
+                <IconFile size={22} strokeWidth={1.75} aria-hidden />
+                <span className="min-w-0 flex-1">
+                  <span className="block truncate text-sm font-medium">{attachment!.name ?? 'file'}</span>
+                  {formatBytes(attachment!.size) && (
+                    <span className="tr-meta block opacity-70">{formatBytes(attachment!.size)}</span>
+                  )}
+                </span>
+                <IconInstall size={16} aria-hidden />
+              </a>
+            ) : (
+              textBubble
             );
 
             if (mine) {
@@ -441,6 +513,8 @@ export default function ChatFeed({
           )}
         </button>
       )}
+
+      <Lightbox url={lightbox?.url ?? null} name={lightbox?.name} onClose={() => setLightbox(null)} />
     </div>
   );
 }
