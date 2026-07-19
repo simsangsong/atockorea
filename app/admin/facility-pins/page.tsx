@@ -13,13 +13,16 @@
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import dynamic from 'next/dynamic';
-import { MapPin, Search, Trash2, RotateCcw, Camera, Toilet, Check, Plus, ArrowLeft } from 'lucide-react';
+import { MapPin, Search, Trash2, RotateCcw, Camera, Toilet, Utensils, Star, Check, Plus, ArrowLeft, ListChecks, Pencil } from 'lucide-react';
 import { getAdminAccessToken } from '@/app/admin/match-pois/_hooks/usePoiRow';
 import type { EditorPin } from './_components/PinMap';
+import ReviewQueue, { type ReviewPoiMeta } from './_components/ReviewQueue';
 
 const PinMap = dynamic(() => import('./_components/PinMap'), { ssr: false });
 
-type FacilityKind = 'restroom' | 'photo';
+/** Only restroom / photo can be added by map-click; restaurants are auto-collected. */
+type AddKind = 'restroom' | 'photo';
+type EditorMode = 'edit' | 'review';
 
 interface PoiItem {
   poi_key: string;
@@ -36,6 +39,8 @@ interface PinRow extends EditorPin {
   name: string | null;
   source: 'places_auto' | 'curated';
   is_verified: boolean;
+  rating?: number | null;
+  review_count?: number | null;
 }
 
 async function authedFetch(url: string, init: RequestInit = {}) {
@@ -60,7 +65,8 @@ export default function FacilityPinsPage() {
 
   const [pins, setPins] = useState<PinRow[]>([]);
   const [pinsLoading, setPinsLoading] = useState(false);
-  const [addKind, setAddKind] = useState<FacilityKind>('restroom');
+  const [addKind, setAddKind] = useState<AddKind>('restroom');
+  const [mode, setMode] = useState<EditorMode>('edit');
   const [selectedPinId, setSelectedPinId] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
@@ -176,8 +182,139 @@ export default function FacilityPinsPage() {
 
   const activeCount = pins.filter((p) => p.is_active).length;
 
+  // poi_key → display name / region, for the review queue to group by POI.
+  const poiIndex = useMemo(() => {
+    const m = new Map<string, ReviewPoiMeta>();
+    for (const p of pois) m.set(p.poi_key, { name: poiName(p), region: p.region });
+    return m;
+  }, [pois]);
+
+  // "지도편집" from the review queue → open that POI in the editor to relocate.
+  const handleEditPoi = useCallback(
+    (poiKey: string) => {
+      const p = pois.find((x) => x.poi_key === poiKey);
+      if (!p) return;
+      setSelected(p);
+      setSelectedPinId(null);
+      void loadPins(p.poi_key);
+      setMode('edit');
+    },
+    [pois, loadPins],
+  );
+
   return (
-    <div className="-m-6 flex h-[calc(100vh-3.5rem)] bg-admin-bg">
+    <div className="-m-6 flex h-[calc(100vh-3.5rem)] flex-col bg-admin-bg">
+      {/* top bar — page title + edit/review mode toggle */}
+      <div className="flex items-center gap-2 border-b border-admin-border bg-admin-surface px-4 py-2">
+        <MapPin className="size-4 text-emerald-600" />
+        <h1 className="text-sm font-semibold text-slate-900">편의시설 핀</h1>
+        <div className="ml-auto flex items-center gap-1 rounded-lg bg-slate-100 p-1">
+          <ModeBtn label="편집" icon={Pencil} active={mode === 'edit'} onClick={() => setMode('edit')} />
+          <ModeBtn label="검수 큐" icon={ListChecks} active={mode === 'review'} onClick={() => setMode('review')} />
+        </div>
+      </div>
+
+      <div className="flex min-h-0 flex-1">
+        {mode === 'review' ? (
+          <ReviewQueue authedFetch={authedFetch} poiIndex={poiIndex} onEditPoi={handleEditPoi} />
+        ) : (
+          <EditView
+            poiLoading={poiLoading}
+            filteredPois={filteredPois}
+            search={search}
+            setSearch={setSearch}
+            selected={selected}
+            setSelected={setSelected}
+            selectPoi={selectPoi}
+            pins={pins}
+            pinsLoading={pinsLoading}
+            addKind={addKind}
+            setAddKind={setAddKind}
+            selectedPinId={selectedPinId}
+            setSelectedPinId={setSelectedPinId}
+            error={error}
+            busy={busy}
+            activeCount={activeCount}
+            addPin={addPin}
+            patchPin={patchPin}
+            deletePin={deletePin}
+          />
+        )}
+      </div>
+    </div>
+  );
+}
+
+/** Small segmented-control button for the edit/review mode toggle. */
+function ModeBtn({
+  label,
+  icon: Icon,
+  active,
+  onClick,
+}: {
+  label: string;
+  icon: typeof Pencil;
+  active: boolean;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className={`flex items-center gap-1.5 rounded-md px-2.5 py-1.5 text-xs font-semibold transition ${
+        active ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-500 hover:text-slate-700'
+      }`}
+    >
+      <Icon className="size-3.5" /> {label}
+    </button>
+  );
+}
+
+/** The original two-pane editor (POI list + per-POI map/list), extracted so the
+ *  page can swap it for the review queue. */
+function EditView({
+  poiLoading,
+  filteredPois,
+  search,
+  setSearch,
+  selected,
+  setSelected,
+  selectPoi,
+  pins,
+  pinsLoading,
+  addKind,
+  setAddKind,
+  selectedPinId,
+  setSelectedPinId,
+  error,
+  busy,
+  activeCount,
+  addPin,
+  patchPin,
+  deletePin,
+}: {
+  poiLoading: boolean;
+  filteredPois: PoiItem[];
+  search: string;
+  setSearch: (v: string) => void;
+  selected: PoiItem | null;
+  setSelected: (p: PoiItem | null) => void;
+  selectPoi: (p: PoiItem) => void;
+  pins: PinRow[];
+  pinsLoading: boolean;
+  addKind: AddKind;
+  setAddKind: (k: AddKind) => void;
+  selectedPinId: string | null;
+  setSelectedPinId: (id: string | null) => void;
+  error: string | null;
+  busy: boolean;
+  activeCount: number;
+  addPin: (lat: number, lng: number) => void;
+  patchPin: (id: string, patch: Record<string, unknown>) => void;
+  deletePin: (id: string, hard: boolean) => void;
+}) {
+  return (
+    <div className="flex min-h-0 flex-1">
       {/* POI list — single-pane on mobile (hidden once a POI is picked), always
           shown on lg+. */}
       <aside
@@ -186,9 +323,7 @@ export default function FacilityPinsPage() {
         }`}
       >
         <div className="border-b border-admin-border p-3">
-          <h1 className="mb-2 flex items-center gap-2 text-sm font-semibold text-slate-900">
-            <MapPin className="size-4 text-emerald-600" /> 편의시설 핀 편집
-          </h1>
+          <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-400">관광지 선택</p>
           <div className="relative">
             <Search className="pointer-events-none absolute left-2.5 top-2.5 size-4 text-slate-400" />
             <input
@@ -316,7 +451,7 @@ export default function FacilityPinsPage() {
   );
 }
 
-function KindToggle({ kind, active, onClick }: { kind: FacilityKind; active: boolean; onClick: () => void }) {
+function KindToggle({ kind, active, onClick }: { kind: AddKind; active: boolean; onClick: () => void }) {
   const Icon = kind === 'restroom' ? Toilet : Camera;
   return (
     <button
@@ -359,6 +494,10 @@ function PinListRow({
   useEffect(() => setName(pin.name ?? ''), [pin.name]);
   const dirty = (pin.name ?? '') !== name;
   const isRestroom = pin.kind === 'restroom';
+  const isRestaurant = pin.kind === 'restaurant';
+  const kindColor = isRestroom ? '#2563eb' : isRestaurant ? '#f59e0b' : '#db2777';
+  const KindIcon = isRestroom ? Toilet : isRestaurant ? Utensils : Camera;
+  const kindPlaceholder = isRestroom ? '화장실 이름 (선택)' : isRestaurant ? '식당 이름' : '포토스팟 이름 (선택)';
 
   return (
     <div
@@ -372,14 +511,15 @@ function PinListRow({
           type="button"
           onClick={(e) => {
             e.stopPropagation();
-            onToggleKind();
+            // Restaurants are auto-collected — no restroom/photo toggle for them.
+            if (!isRestaurant) onToggleKind();
           }}
-          disabled={busy}
-          title="종류 전환"
-          className="flex size-7 shrink-0 items-center justify-center rounded-full text-white"
-          style={{ background: isRestroom ? '#2563eb' : '#db2777' }}
+          disabled={busy || isRestaurant}
+          title={isRestaurant ? '맛집 핀 (자동수집)' : '종류 전환 (화장실↔포토)'}
+          className="flex size-7 shrink-0 items-center justify-center rounded-full text-white disabled:cursor-default"
+          style={{ background: kindColor }}
         >
-          {pin.is_active ? <span className="text-[11px] font-bold">{index}</span> : isRestroom ? <Toilet className="size-3.5" /> : <Camera className="size-3.5" />}
+          {pin.is_active ? <span className="text-[11px] font-bold">{index}</span> : <KindIcon className="size-3.5" />}
         </button>
         <input
           value={name}
@@ -389,7 +529,7 @@ function PinListRow({
           onKeyDown={(e) => {
             if (e.key === 'Enter') (e.target as HTMLInputElement).blur();
           }}
-          placeholder={isRestroom ? '화장실 이름 (선택)' : '포토스팟 이름 (선택)'}
+          placeholder={kindPlaceholder}
           className="min-w-0 flex-1 rounded border border-transparent bg-transparent px-1.5 py-1 text-sm text-slate-900 hover:border-slate-200 focus:border-emerald-500 focus:outline-none"
         />
         {dirty ? (
@@ -421,6 +561,14 @@ function PinListRow({
         ) : (
           <span className="rounded bg-slate-100 px-1.5 py-0.5 font-semibold text-slate-500">미검수</span>
         )}
+        {isRestaurant && typeof pin.rating === 'number' ? (
+          <span className="flex items-center gap-0.5 rounded bg-amber-100 px-1.5 py-0.5 font-semibold text-amber-700">
+            <Star className="size-2.5 fill-current" /> {pin.rating.toFixed(1)}
+            {typeof pin.review_count === 'number' && pin.review_count > 0 ? (
+              <span className="font-normal text-amber-600">·{pin.review_count}</span>
+            ) : null}
+          </span>
+        ) : null}
         <span className="text-slate-400">
           {pin.lat.toFixed(5)}, {pin.lng.toFixed(5)}
         </span>

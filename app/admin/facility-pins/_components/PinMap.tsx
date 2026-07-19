@@ -19,15 +19,16 @@ import {
 
 export interface EditorPin {
   id: string;
-  kind: 'restroom' | 'photo';
+  kind: 'restroom' | 'photo' | 'restaurant';
   lat: number;
   lng: number;
   is_active: boolean;
 }
 
-const KIND_FILL: Record<'restroom' | 'photo', string> = {
+const KIND_FILL: Record<EditorPin['kind'], string> = {
   restroom: '#2563eb',
   photo: '#db2777',
+  restaurant: '#f59e0b',
 };
 
 export default function PinMap({

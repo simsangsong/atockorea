@@ -5,6 +5,12 @@
  * no Supabase code reaches the browser bundle. The arrival routes call this to
  * ride the current spot's active pins in the message metadata, so the client
  * Tier0 answer can attach a scoped map card with zero network.
+ *
+ * Verification gate (F-D, §H — "검수분만 노출"): only pins a human has reviewed
+ * (`is_verified=true`) reach a guest. Auto-collected pins (Kakao restrooms,
+ * Google restaurants) land as `is_verified=false` and stay invisible until the
+ * admin approves them in the /admin/facility-pins review queue. This keeps the
+ * customer card trustworthy; the tour-mode flag is OFF, so no live regression.
  */
 
 import { facilityPinFromRow, type FacilityPin } from '@/lib/tour-room/facilityPins';
@@ -15,7 +21,7 @@ export interface FacilityDbClient {
   from(table: string): any;
 }
 
-/** Active restroom/photo pins for a POI, best-effort (never throws). */
+/** Active, human-verified restroom/photo/restaurant pins for a POI, best-effort (never throws). */
 export async function fetchArrivalFacilityPins(
   supabase: FacilityDbClient,
   poiKey: string | null | undefined,
@@ -27,6 +33,7 @@ export async function fetchArrivalFacilityPins(
       .select('kind, lat, lng, name, name_i18n, photo_url, distance_m, rating, review_count, sort_order')
       .eq('poi_key', poiKey)
       .eq('is_active', true)
+      .eq('is_verified', true)
       .order('sort_order', { ascending: true });
     return Array.isArray(data)
       ? data.map((row) => facilityPinFromRow(row as Record<string, unknown>))
