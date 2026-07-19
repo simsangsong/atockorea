@@ -22,6 +22,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   CalendarClock,
+  Car,
   Check,
   ChevronDown,
   ChevronUp,
@@ -41,7 +42,10 @@ import {
 import GuideLedgerPanel from '@/components/tour-mode/guide/GuideLedgerPanel';
 import GuidePlanPanel from '@/components/tour-mode/guide/GuidePlanPanel';
 import MicPrime from '@/components/tour-mode/MicPrime';
+import Cockpit, { type CockpitLifecycle, type CockpitRoom } from '@/components/tour-mode/cockpit/Cockpit';
 import { kstToday } from '@/lib/tour-room/time';
+import { primeAudio } from '@/lib/tour-room/tts';
+import { type RoomMessage } from '@/hooks/useTourRoomChannel';
 import {
   isVoiceRecordingSupported,
   startVoiceRecording,
@@ -49,7 +53,40 @@ import {
 } from '@/lib/tour-room/recorder';
 
 const GUIDE_TOKEN_KEY = 'tour_mode_guide_token';
+const GUIDE_DEVICE_KEY = 'tour_mode_guide_device_key';
 const POLL_MS = 15_000;
+
+/** Stable per-device key so the guide's drive-mode join reuses one participant. */
+function guideDeviceKey(): string {
+  try {
+    const existing = localStorage.getItem(GUIDE_DEVICE_KEY);
+    if (existing) return existing;
+    const fresh = crypto.randomUUID();
+    localStorage.setItem(GUIDE_DEVICE_KEY, fresh);
+    return fresh;
+  } catch {
+    return crypto.randomUUID();
+  }
+}
+
+/** The cockpit's PII-minimal day bundle (shared driver/guide overview route). */
+interface CockpitOverview {
+  tour: { id: string; title: string; city?: string | null };
+  tour_date: string;
+  lifecycle: CockpitLifecycle;
+  rooms: CockpitRoom[];
+}
+
+/** Everything the dark cockpit needs for one room the guide is driving. */
+interface DriveState {
+  bookingId: string;
+  session: string;
+  channelTopic: string | null;
+  initialMessages: RoomMessage[];
+  room: CockpitRoom;
+  tourTitle: string;
+  lifecycle: CockpitLifecycle;
+}
 
 /** One-tap Korean dispatch lines (auto-translated per guest server-side). */
 const BROADCAST_PRESETS = ['곧 출발합니다', '5분 뒤 출발합니다', '잠시 후 집합입니다', '여기서 잠시 쉬어갑니다'];
@@ -249,6 +286,59 @@ export default function GuideConsole() {
     }
   }, [transcribeBroadcast]);
 
+  // ── drive mode — the guide enters the shared dark cockpit for one room ──
+  // Small groups are usually guide-driven, so a guide gets every driver tool
+  // (nav, voice bridge, one-tap signals, wake lock, expense, push). Same token
+  // authorizes the cockpit day bundle + a per-room guide session join.
+  const [drive, setDrive] = useState<DriveState | null>(null);
+  const [driveBusy, setDriveBusy] = useState<string | null>(null);
+  const [driveError, setDriveError] = useState<string | null>(null);
+  const cockpitDataRef = useRef<CockpitOverview | null>(null);
+
+  const enterDrive = useCallback(async (bookingId: string) => {
+    const t = tokenRef.current;
+    if (!t || driveBusy) return;
+    primeAudio(); // this tap is the gesture that unlocks incoming-message TTS
+    setDriveBusy(bookingId);
+    setDriveError(null);
+    try {
+      // 1. cockpit day bundle (schedule + coords + pickup) — cached once
+      let data = cockpitDataRef.current;
+      if (!data) {
+        const res = await fetch(`/api/tour-mode/driver/overview?rt=${encodeURIComponent(t)}`, { cache: 'no-store' });
+        const json = (await res.json()) as CockpitOverview;
+        if (!res.ok) throw new Error('overview');
+        data = json;
+        cockpitDataRef.current = json;
+      }
+      const room = data.rooms.find((r) => r.booking_id === bookingId);
+      if (!room) throw new Error('room');
+
+      // 2. join the room as guide → short-lived room session for the cockpit
+      const joinRes = await fetch(`/api/tour-rooms/${bookingId}/join`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ token: t, deviceKey: guideDeviceKey(), locale: 'ko', ttsCapable: true }),
+      });
+      const joinData = await joinRes.json();
+      if (!joinRes.ok) throw new Error('join');
+
+      setDrive({
+        bookingId,
+        session: joinData.session,
+        channelTopic: joinData.channel?.topic ?? null,
+        initialMessages: (joinData.snapshot?.messages ?? []) as RoomMessage[],
+        room,
+        tourTitle: data.tour?.title ?? '투어',
+        lifecycle: data.lifecycle,
+      });
+    } catch {
+      setDriveError('운전 모드 진입 실패 — 다시 시도해 주세요.');
+    } finally {
+      setDriveBusy(null);
+    }
+  }, [driveBusy]);
+
   const onboardCount = useMemo(
     () => (overview ? overview.rooms.filter((room) => room.onboard_ack).length : 0),
     [overview],
@@ -274,6 +364,24 @@ export default function GuideConsole() {
         <p className="tr-card-text text-[var(--tr-ink-2)]">
           {error ? '접근할 수 없어요 — 링크를 다시 확인해 주세요.' : '불러오는 중…'}
         </p>
+      </div>
+    );
+  }
+
+  // Drive mode: a full-screen dark cockpit for one room; ◀ returns to dispatch.
+  if (drive) {
+    return (
+      <div className="fixed inset-0 z-[60] bg-neutral-950">
+        <Cockpit
+          tourTitle={drive.tourTitle}
+          lifecycle={drive.lifecycle}
+          room={drive.room}
+          bookingId={drive.bookingId}
+          session={drive.session}
+          channelTopic={drive.channelTopic}
+          initialMessages={drive.initialMessages}
+          onExit={() => setDrive(null)}
+        />
       </div>
     );
   }
@@ -355,6 +463,14 @@ export default function GuideConsole() {
       {error && (
         <p className="tr-label mt-3 rounded-xl border border-[var(--tr-danger-soft)] bg-[var(--tr-surface)] px-3 py-2 font-medium text-[var(--tr-danger)]">
           {error}
+        </p>
+      )}
+      {driveError && (
+        <p
+          className="tr-label mt-3 rounded-xl border border-[var(--tr-danger-soft)] bg-[var(--tr-surface)] px-3 py-2 font-medium text-[var(--tr-danger)]"
+          data-testid="drive-error"
+        >
+          {driveError}
         </p>
       )}
 
@@ -463,6 +579,18 @@ export default function GuideConsole() {
                     {ledgerOpen ? <ChevronUp size={13} aria-hidden /> : <ChevronDown size={13} aria-hidden />}
                   </button>
                 </div>
+
+                {/* drive mode — enter the shared dark cockpit for this room */}
+                <button
+                  type="button"
+                  onClick={() => void enterDrive(room.booking_id)}
+                  disabled={driveBusy === room.booking_id}
+                  className="tr-label mt-1.5 flex min-h-[42px] w-full items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-ink)] px-3 font-bold text-[var(--tr-canvas)] active:scale-[0.99] disabled:opacity-50"
+                  data-testid="room-drive"
+                >
+                  <Car size={15} aria-hidden />
+                  {driveBusy === room.booking_id ? '여는 중…' : '운전 모드'}
+                </button>
 
                 {planOpen && tokenRef.current && (
                   <GuidePlanPanel bookingId={room.booking_id} token={tokenRef.current} onChanged={() => void load()} />

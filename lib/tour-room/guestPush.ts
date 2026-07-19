@@ -78,7 +78,7 @@ async function deliver(
 
 async function fetchSubscriptions(
   supabase: RoomDbClient,
-  role: 'customer' | 'driver',
+  role: 'customer' | 'driver' | 'guide',
   bookingId: string,
 ): Promise<SubscriptionRow[]> {
   const { data } = await supabase
@@ -114,9 +114,14 @@ export async function sendGuestRoomPush(
 }
 
 /**
- * Ring the driver's device when a guest message lands (they may be out in a
+ * Ring the operator's device when a guest message lands (they may be out in a
  * nav app). Body stays generic — the message content is not put on the lock
  * screen; tapping opens the console where the Korean TTS plays.
+ *
+ * Phase 2 (unified cockpit): a booking's cockpit is run by EITHER a pure driver
+ * OR a guide who is driving today, so both roles' subscriptions are notified,
+ * each landing on its own console. In private mode only one is subscribed per
+ * booking, so this is at most one extra empty lookup.
  */
 export async function sendDriverRoomPush(
   supabase: RoomDbClient,
@@ -125,16 +130,27 @@ export async function sendDriverRoomPush(
 ): Promise<{ sent: number; pruned: number }> {
   if (!vapidConfigured()) return { sent: 0, pruned: 0 };
   try {
-    const rows = await fetchSubscriptions(supabase, 'driver', bookingId);
-    if (!rows.length) return { sent: 0, pruned: 0 };
-    setVapid();
-    const payload = JSON.stringify({
-      title: DRIVER_TITLE,
-      body: input.body,
-      url: `/tour-mode/driver`,
-      tag: input.tag,
-    });
-    return await deliver(supabase, rows, payload);
+    const targets: Array<{ role: 'driver' | 'guide'; url: string }> = [
+      { role: 'driver', url: '/tour-mode/driver' },
+      { role: 'guide', url: '/tour-mode/guide' },
+    ];
+    let sent = 0;
+    let pruned = 0;
+    for (const target of targets) {
+      const rows = await fetchSubscriptions(supabase, target.role, bookingId);
+      if (!rows.length) continue;
+      setVapid();
+      const payload = JSON.stringify({
+        title: DRIVER_TITLE,
+        body: input.body,
+        url: target.url,
+        tag: input.tag,
+      });
+      const result = await deliver(supabase, rows, payload);
+      sent += result.sent;
+      pruned += result.pruned;
+    }
+    return { sent, pruned };
   } catch (error) {
     console.warn('[tour-room] driver push error:', error);
     return { sent: 0, pruned: 0 };
