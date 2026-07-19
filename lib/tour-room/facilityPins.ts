@@ -15,13 +15,13 @@
 
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
-export type FacilityKind = 'restroom' | 'photo';
+export type FacilityKind = 'restroom' | 'photo' | 'restaurant';
 
 export interface FacilityPin {
   kind: FacilityKind;
   lat: number;
   lng: number;
-  /** Neutral/default label (e.g. "Main gate restroom"). */
+  /** Neutral/default label (e.g. "Main gate restroom", restaurant name). */
   name: string | null;
   /** Optional per-locale label; falls back to `name`, then a kind default. */
   nameI18n?: Partial<Record<RoomLocale, string>> | null;
@@ -29,6 +29,10 @@ export interface FacilityPin {
   photoUrl?: string | null;
   /** Metres from the attraction centre — used for the nearest-first sort. */
   distanceM?: number | null;
+  /** Restaurant rating 0-5 (null for restroom/photo). */
+  rating?: number | null;
+  /** Restaurant review count. */
+  reviewCount?: number | null;
 }
 
 /** F-D7 — at most this many pins per kind on one card (marker clarity + cost). */
@@ -41,14 +45,17 @@ export const FACILITY_PIN_CAP = 3;
  */
 export function facilityPinFromRow(row: Record<string, unknown>): FacilityPin {
   const nameI18n = row.name_i18n;
+  const kind: FacilityKind = row.kind === 'photo' || row.kind === 'restaurant' ? row.kind : 'restroom';
   return {
-    kind: row.kind === 'photo' ? 'photo' : 'restroom',
+    kind,
     lat: Number(row.lat),
     lng: Number(row.lng),
     name: typeof row.name === 'string' ? row.name : null,
     nameI18n: nameI18n && typeof nameI18n === 'object' ? (nameI18n as FacilityPin['nameI18n']) : null,
     photoUrl: typeof row.photo_url === 'string' ? row.photo_url : null,
     distanceM: typeof row.distance_m === 'number' ? row.distance_m : null,
+    rating: typeof row.rating === 'number' ? row.rating : row.rating == null ? null : Number(row.rating),
+    reviewCount: typeof row.review_count === 'number' ? row.review_count : null,
   };
 }
 
@@ -56,12 +63,14 @@ export function facilityPinFromRow(row: Record<string, unknown>): FacilityPin {
 const KIND_COLOR: Record<FacilityKind, string> = {
   restroom: '0x2563eb', // blue
   photo: '0xdb2777', // pink
+  restaurant: '0xf59e0b', // amber
 };
 
 /** Default label when a pin has neither a localized nor a neutral name. */
 const KIND_DEFAULT_LABEL: Record<FacilityKind, Record<RoomLocale, string>> = {
   restroom: { en: 'Restroom', ko: '화장실', zh: '洗手间', ja: 'トイレ', es: 'Baño' },
   photo: { en: 'Photo spot', ko: '포토스팟', zh: '拍照点', ja: '写真スポット', es: 'Foto' },
+  restaurant: { en: 'Restaurant', ko: '맛집', zh: '餐厅', ja: 'レストラン', es: 'Restaurante' },
 };
 
 function isFiniteCoord(lat: unknown, lng: unknown): boolean {
@@ -75,9 +84,15 @@ function isFiniteCoord(lat: unknown, lng: unknown): boolean {
   );
 }
 
+/** "많은 리뷰 + 높은 평점" — reward both a high rating and a large sample. */
+function restaurantScore(p: FacilityPin): number {
+  return (p.rating ?? 0) * Math.log10((p.reviewCount ?? 0) + 1);
+}
+
 /**
- * Filter to one kind, drop invalid coords, sort nearest-first (pins without a
- * distance sink to the end but keep their relative order), and cap.
+ * Filter to one kind, drop invalid coords, rank, and cap. Restrooms/photo spots
+ * sort nearest-first (pins without a distance sink to the end, stable);
+ * restaurants sort by rating × log(reviews) so the best picks lead.
  */
 export function selectFacilityPins(
   pins: FacilityPin[],
@@ -88,6 +103,10 @@ export function selectFacilityPins(
     .filter((p) => p.kind === kind && isFiniteCoord(p.lat, p.lng))
     .map((p, i) => ({ p, i }))
     .sort((a, b) => {
+      if (kind === 'restaurant') {
+        const s = restaurantScore(b.p) - restaurantScore(a.p);
+        return s !== 0 ? s : a.i - b.i;
+      }
       const da = a.p.distanceM ?? Number.POSITIVE_INFINITY;
       const db = b.p.distanceM ?? Number.POSITIVE_INFINITY;
       return da === db ? a.i - b.i : da - db;

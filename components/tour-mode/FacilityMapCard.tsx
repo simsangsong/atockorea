@@ -11,21 +11,29 @@
  */
 
 import { useState } from 'react';
-import { MapPin, Navigation, Toilet, Camera } from 'lucide-react';
+import { MapPin, Navigation, Toilet, Camera, Utensils, Star } from 'lucide-react';
 import {
   facilityStaticMapPath,
   pinDirectionsUrl,
   guestPinLabel,
+  type FacilityKind,
   type FacilityPin,
 } from '@/lib/tour-room/facilityPins';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
+
+const KIND_HEX: Record<FacilityKind, string> = { restroom: '#2563eb', photo: '#db2777', restaurant: '#f59e0b' };
+const KIND_ALT: Record<FacilityKind, string> = { restroom: '화장실 지도', photo: '포토스팟 지도', restaurant: '맛집 지도' };
+
+function compactCount(n: number): string {
+  return n >= 1000 ? `${(n / 1000).toFixed(1).replace(/\.0$/, '')}k` : String(n);
+}
 
 export default function FacilityMapCard({
   kind,
   pins,
   locale,
 }: {
-  kind: 'restroom' | 'photo';
+  kind: FacilityKind;
   pins: FacilityPin[];
   locale: RoomLocale;
 }) {
@@ -33,7 +41,7 @@ export default function FacilityMapCard({
   if (pins.length === 0) return null;
 
   const path = facilityStaticMapPath(pins);
-  const Icon = kind === 'restroom' ? Toilet : Camera;
+  const Icon = kind === 'restroom' ? Toilet : kind === 'restaurant' ? Utensils : Camera;
 
   return (
     <div
@@ -44,7 +52,7 @@ export default function FacilityMapCard({
         // eslint-disable-next-line @next/next/no-img-element
         <img
           src={`/api/maps/static${path}`}
-          alt={kind === 'restroom' ? '화장실 지도' : '포토스팟 지도'}
+          alt={KIND_ALT[kind]}
           loading="lazy"
           onError={() => setImgOk(false)}
           className="h-36 w-full object-cover"
@@ -66,7 +74,7 @@ export default function FacilityMapCard({
             >
               <span
                 className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[11px] font-bold text-white"
-                style={{ background: kind === 'restroom' ? '#2563eb' : '#db2777' }}
+                style={{ background: KIND_HEX[kind] }}
                 aria-hidden
               >
                 {i + 1}
@@ -80,6 +88,15 @@ export default function FacilityMapCard({
               <span className="tr-card-text min-w-0 flex-1 truncate text-[var(--tr-ink)]">
                 {guestPinLabel(pin, locale)}
               </span>
+              {kind === 'restaurant' && typeof pin.rating === 'number' && (
+                <span className="tr-meta flex shrink-0 items-center gap-0.5 text-[var(--tr-ink-2)]">
+                  <Star size={11} className="fill-current text-amber-500" aria-hidden />
+                  {pin.rating.toFixed(1)}
+                  {typeof pin.reviewCount === 'number' && pin.reviewCount > 0 && (
+                    <span className="text-[var(--tr-ink-3)]">·{compactCount(pin.reviewCount)}</span>
+                  )}
+                </span>
+              )}
               <Navigation size={14} className="shrink-0 text-[var(--tr-accent-deep)]" aria-hidden />
             </a>
           </li>

@@ -24,9 +24,10 @@ export async function fetchArrivalFacilityPins(
   try {
     const { data } = await supabase
       .from('poi_facility_pins')
-      .select('kind, lat, lng, name, name_i18n, photo_url, distance_m')
+      .select('kind, lat, lng, name, name_i18n, photo_url, distance_m, rating, review_count, sort_order')
       .eq('poi_key', poiKey)
-      .eq('is_active', true);
+      .eq('is_active', true)
+      .order('sort_order', { ascending: true });
     return Array.isArray(data)
       ? data.map((row) => facilityPinFromRow(row as Record<string, unknown>))
       : [];
