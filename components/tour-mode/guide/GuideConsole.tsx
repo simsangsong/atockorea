@@ -570,7 +570,9 @@ export default function GuideConsole() {
                   </div>
                 </div>
 
-                {/* entrances */}
+                {/* W3.1 — one 44px action row: 채팅 is the labelled primary;
+                    일정/정산/AI/운전 are icon-only (aria-labelled) to reclaim the
+                    second row. */}
                 <div className="mt-3 flex items-center gap-1.5">
                   <a
                     href={roomHref(room.booking_id)}
@@ -583,47 +585,45 @@ export default function GuideConsole() {
                   <button
                     type="button"
                     onClick={() => setOpenPlanBookingId(room.booking_id)}
-                    className={`tr-label flex min-h-[44px] items-center justify-center gap-1 rounded-xl px-3 font-bold ${
+                    aria-label="일정 검토·확정"
+                    className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl active:scale-95 ${
                       badge?.tone === 'review'
                         ? 'bg-[var(--tr-accent-soft)] text-[var(--tr-accent-deep)] ring-1 ring-[var(--tr-hairline)]'
                         : 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]'
                     }`}
                     data-testid="plan-toggle"
                   >
-                    <CalendarClock size={15} aria-hidden />
-                    일정
+                    <CalendarClock size={18} aria-hidden />
                   </button>
                   <button
                     type="button"
                     onClick={() => setOpenLedgerBookingId(room.booking_id)}
-                    className="tr-label flex min-h-[44px] items-center justify-center gap-1 rounded-xl bg-[var(--tr-surface-2)] px-3 font-bold text-[var(--tr-ink-2)]"
+                    aria-label="정산"
+                    className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)] active:scale-95"
                     data-testid="ledger-toggle"
                   >
-                    <Wallet size={15} aria-hidden />
-                    정산
+                    <Wallet size={18} aria-hidden />
                   </button>
                   <button
                     type="button"
                     onClick={() => setOpenAssistBookingId(room.booking_id)}
-                    className="tr-label flex min-h-[44px] items-center justify-center gap-1 rounded-xl bg-[var(--tr-surface-2)] px-3 font-bold text-[var(--tr-ink-2)]"
+                    aria-label="AI 도우미"
+                    className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)] active:scale-95"
                     data-testid="assist-toggle"
                   >
-                    <Sparkles size={15} aria-hidden />
-                    AI
+                    <Sparkles size={18} aria-hidden />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => void enterDrive(room.booking_id)}
+                    disabled={driveBusy === room.booking_id}
+                    aria-label={driveBusy === room.booking_id ? '운전 모드 여는 중' : '운전 모드'}
+                    className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[var(--tr-ink)] text-[var(--tr-canvas)] active:scale-95 disabled:opacity-50"
+                    data-testid="room-drive"
+                  >
+                    <Car size={18} aria-hidden />
                   </button>
                 </div>
-
-                {/* drive mode — enter the shared dark cockpit for this room */}
-                <button
-                  type="button"
-                  onClick={() => void enterDrive(room.booking_id)}
-                  disabled={driveBusy === room.booking_id}
-                  className="tr-label mt-1.5 flex min-h-[44px] w-full items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-ink)] px-3 font-bold text-[var(--tr-canvas)] active:scale-[0.99] disabled:opacity-50"
-                  data-testid="room-drive"
-                >
-                  <Car size={15} aria-hidden />
-                  {driveBusy === room.booking_id ? '여는 중…' : '운전 모드'}
-                </button>
               </article>
             );
           })}
