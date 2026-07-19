@@ -33,11 +33,13 @@ describe('parseLocationMessage', () => {
 });
 
 describe('staticMapUrl', () => {
-  it('builds a Static Maps URL centered + marked at the point', () => {
+  it('routes through the server proxy, centered + marked, with no exposed key', () => {
     const url = staticMapUrl(35.08, 129.07);
-    expect(url).toContain('maps.googleapis.com/maps/api/staticmap');
-    expect(url).toContain('center=35.080000,129.070000');
-    expect(url).toContain('markers=');
-    expect(url).toContain('key=');
+    expect(url.startsWith('/api/maps/static?')).toBe(true);
+    const params = new URLSearchParams(url.split('?')[1]);
+    expect(params.get('center')).toBe('35.080000,129.070000');
+    expect(params.get('markers')).toContain('35.080000,129.070000');
+    expect(url).not.toContain('key=');
+    expect(url).not.toContain('googleapis.com');
   });
 });
