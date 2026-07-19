@@ -38,6 +38,10 @@ import {
   IconTranslated,
 } from '@/components/tour-mode/icons';
 import type { ReplySnapshot } from '@/lib/tour-room/reply';
+import type { ReactionAgg } from '@/hooks/useTourRoomChannel';
+
+/** Quick emoji set for the reaction row (Phase 2c). */
+const REACTION_EMOJI = ['👍', '❤️', '😂', '😮', '🙏'];
 import { buildFeedItems, type FeedItem } from '@/lib/tour-room/messageGroups';
 import { formatBubbleTime, formatDateSeparator } from '@/lib/tour-room/timeFormat';
 import { kstToday } from '@/lib/tour-room/time';
@@ -130,6 +134,8 @@ export default function ChatFeed({
   onExtraConfirm,
   preferredLocale = null,
   onReply,
+  reactions,
+  onReact,
 }: {
   messages: RoomMessage[];
   viewerLocale: RoomLocale;
@@ -150,6 +156,9 @@ export default function ChatFeed({
   /** Kakao-grade reply (Phase 2b): long-press a bubble → this sets the reply
    *  context in the composer. Absent = no reply affordance. */
   onReply?: (message: RoomMessage) => void;
+  /** Kakao-grade reactions (Phase 2c): per-message emoji aggregates + toggle. */
+  reactions?: Record<string, ReactionAgg[]>;
+  onReact?: (messageId: string, emoji: string) => void;
 }) {
   const bubbleText = textScale === 'large' ? 'tr-body-lg' : 'tr-body';
   const systemText = textScale === 'large' ? 'tr-card-text' : 'tr-label';
@@ -540,12 +549,13 @@ export default function ChatFeed({
             );
           })();
 
+          const msgReactions = reactions?.[message.id] ?? [];
           return (
             <div
               key={item.key}
               data-msg-id={message.id}
               onContextMenu={
-                onReply && !system && !message._local
+                (onReply || onReact) && !system && !message._local
                   ? (e) => {
                       e.preventDefault();
                       setActionMsg(message);
@@ -554,6 +564,28 @@ export default function ChatFeed({
               }
             >
               {body}
+              {msgReactions.length > 0 && (
+                <div
+                  className={`mt-0.5 flex flex-wrap gap-1 ${mine ? 'justify-end pr-1' : 'pl-11'}`}
+                  data-testid="reaction-row"
+                >
+                  {msgReactions.map((r) => (
+                    <button
+                      key={r.emoji}
+                      type="button"
+                      onClick={() => onReact?.(message.id, r.emoji)}
+                      className={`tr-meta flex items-center gap-0.5 rounded-full px-2 py-0.5 tabular-nums ${
+                        r.mine
+                          ? 'bg-[var(--tr-accent-soft)] text-[var(--tr-accent-deep)] ring-1 ring-[var(--tr-accent)]'
+                          : 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]'
+                      }`}
+                    >
+                      <span>{r.emoji}</span>
+                      {r.count > 1 && <span>{r.count}</span>}
+                    </button>
+                  ))}
+                </div>
+              )}
               {unreadDividerHere && (
                 <div className="my-3 flex items-center gap-2 px-2" data-testid="unread-divider">
                   <span className="h-px flex-1 bg-[var(--tr-danger)] opacity-40" />
@@ -595,6 +627,24 @@ export default function ChatFeed({
       {actionMsg && (
         <Sheet open onClose={() => setActionMsg(null)} closeLabel={action.close} title={action.title}>
           <div className="flex flex-col">
+            {onReact && (
+              <div className="mb-1 flex items-center justify-around gap-1 border-b border-[var(--tr-hairline)] px-1 pb-3">
+                {REACTION_EMOJI.map((emoji) => (
+                  <button
+                    key={emoji}
+                    type="button"
+                    onClick={() => {
+                      onReact(actionMsg.id, emoji);
+                      setActionMsg(null);
+                    }}
+                    className="flex h-11 w-11 items-center justify-center rounded-full text-2xl active:bg-[var(--tr-surface-2)]"
+                    data-testid={`react-${emoji}`}
+                  >
+                    {emoji}
+                  </button>
+                ))}
+              </div>
+            )}
             {onReply && (
               <button
                 type="button"

@@ -258,13 +258,14 @@ function TourRoomLive({
     pickup_sequence?: PickupSequenceStop[];
     schedule?: Array<Record<string, unknown>>;
   };
-  const { messages, connection, sendText, sendPreset, retryFailed, failedCount, latestCaption, locations, presence } =
+  const { messages, connection, sendText, sendPreset, retryFailed, failedCount, latestCaption, locations, presence, reactions, react } =
     useTourRoomChannel({
       bookingId,
       channelTopic: data.channel.topic,
       roomSession: data.session,
       initialMessages: snapshot.messages ?? [],
       initialLocations: snapshot.locations ?? [],
+      myParticipantId: data.participant.id,
       presence: {
         participantId: data.participant.id,
         role: data.participant.role,
@@ -662,6 +663,8 @@ function TourRoomLive({
             opsHighlightAfter={viewerRole === 'customer' ? sosSentAt : null}
             preferredLocale={viewerRole === 'customer' ? chatLocale : null}
             onReply={!readOnly ? (m) => setReplyTo(m) : undefined}
+            reactions={reactions}
+            onReact={!readOnly ? (id, emoji) => void react(id, emoji) : undefined}
             onExtraConfirm={
               viewerRole === 'customer' && !readOnly
                 ? async (extraId) => {

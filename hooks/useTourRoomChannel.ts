@@ -119,6 +119,55 @@ export function mergeRoomMessages(existing: RoomMessage[], incoming: RoomMessage
   return [...byId.values()].sort((a, b) => (a.created_at < b.created_at ? -1 : a.created_at > b.created_at ? 1 : 0));
 }
 
+// --- reactions (Phase 2c) ---------------------------------------------------
+
+export interface ReactionEntry {
+  emoji: string;
+  participantId: string | null;
+}
+export interface ReactionAgg {
+  emoji: string;
+  count: number;
+  mine: boolean;
+}
+
+/** Pure: apply one live reaction frame to the raw by-message map. */
+export function applyReactionFrame(
+  raw: Record<string, ReactionEntry[]>,
+  frame: { message_id: string; emoji: string; action: 'add' | 'remove'; participant_id: string | null },
+): Record<string, ReactionEntry[]> {
+  const list = raw[frame.message_id] ?? [];
+  const exists = list.some((e) => e.emoji === frame.emoji && e.participantId === frame.participant_id);
+  let nextList: ReactionEntry[];
+  if (frame.action === 'add') {
+    if (exists) return raw;
+    nextList = [...list, { emoji: frame.emoji, participantId: frame.participant_id }];
+  } else {
+    if (!exists) return raw;
+    nextList = list.filter((e) => !(e.emoji === frame.emoji && e.participantId === frame.participant_id));
+  }
+  const next = { ...raw };
+  if (nextList.length) next[frame.message_id] = nextList;
+  else delete next[frame.message_id];
+  return next;
+}
+
+/** Pure: collapse raw entries into per-emoji counts, marking the viewer's own. */
+export function aggregateReactions(
+  entries: ReactionEntry[] | undefined,
+  myParticipantId: string | null,
+): ReactionAgg[] {
+  if (!entries || entries.length === 0) return [];
+  const byEmoji = new Map<string, { count: number; mine: boolean }>();
+  for (const e of entries) {
+    const cur = byEmoji.get(e.emoji) ?? { count: 0, mine: false };
+    cur.count += 1;
+    if (myParticipantId && e.participantId === myParticipantId) cur.mine = true;
+    byEmoji.set(e.emoji, cur);
+  }
+  return [...byEmoji.entries()].map(([emoji, v]) => ({ emoji, count: v.count, mine: v.mine }));
+}
+
 /** Latest server-side cursor in a list (ignores optimistic entries). */
 export function latestCursor(messages: RoomMessage[]): string | null {
   for (let i = messages.length - 1; i >= 0; i -= 1) {
@@ -164,6 +213,8 @@ export interface UseTourRoomChannelOptions {
   initialLocations?: RoomLocation[];
   /** T3.5 — when set, this device is tracked on the channel's presence. */
   presence?: { participantId: string; role: string; displayName: string } | null;
+  /** Phase 2c — this device's participant id, to mark its own reactions. */
+  myParticipantId?: string | null;
 }
 
 export interface UseTourRoomChannel {
@@ -187,10 +238,14 @@ export interface UseTourRoomChannel {
   locations: Record<string, RoomLocation>;
   /** T3.5 — devices currently on the channel (empty until presence syncs). */
   presence: RoomPresence[];
+  /** Phase 2c — per-message emoji reaction aggregates (viewer's own marked). */
+  reactions: Record<string, ReactionAgg[]>;
+  /** Toggle the viewer's emoji reaction on a message (server broadcasts back). */
+  react: (messageId: string, emoji: string) => Promise<void>;
 }
 
 export function useTourRoomChannel(options: UseTourRoomChannelOptions): UseTourRoomChannel {
-  const { bookingId, channelTopic, roomSession } = options;
+  const { bookingId, channelTopic, roomSession, myParticipantId = null } = options;
   const [messages, setMessages] = useState<RoomMessage[]>(options.initialMessages ?? []);
   const [connection, setConnection] = useState<RoomConnection>('connecting');
   // Seed from the persisted unsent queue so the retry affordance survives a
@@ -209,6 +264,7 @@ export function useTourRoomChannel(options: UseTourRoomChannelOptions): UseTourR
     return seeded;
   });
   const [presence, setPresence] = useState<RoomPresence[]>([]);
+  const [reactionsRaw, setReactionsRaw] = useState<Record<string, ReactionEntry[]>>({});
   // Presence identity is fixed for the life of a join — a ref keeps callers
   // free to pass an inline object without re-subscribing the channel.
   const presenceIdentityRef = useRef(options.presence ?? null);
@@ -281,6 +337,21 @@ export function useTourRoomChannel(options: UseTourRoomChannelOptions): UseTourR
       const location = (frame.payload as { location?: RoomLocation })?.location;
       if (location?.participant_id) {
         setLocations((prev) => applyLocationFrame(prev, location));
+      }
+    });
+    channel.on('broadcast', { event: 'reaction' }, (frame) => {
+      const p = frame.payload as
+        | { message_id?: string; emoji?: string; action?: 'add' | 'remove'; participant_id?: string | null }
+        | undefined;
+      if (p?.message_id && p.emoji && (p.action === 'add' || p.action === 'remove')) {
+        setReactionsRaw((prev) =>
+          applyReactionFrame(prev, {
+            message_id: p.message_id!,
+            emoji: p.emoji!,
+            action: p.action!,
+            participant_id: p.participant_id ?? null,
+          }),
+        );
       }
     });
     const presenceIdentity = presenceIdentityRef.current;
@@ -462,8 +533,56 @@ export function useTourRoomChannel(options: UseTourRoomChannelOptions): UseTourR
     };
   }, [retryFailed]);
 
+  // Reactions cold-load (Phase 2c): seed once per join so a reload/rejoin
+  // restores existing reactions; live changes arrive via the broadcast above.
+  useEffect(() => {
+    if (!roomSession) return;
+    let alive = true;
+    void fetch(`/api/tour-rooms/${encodeURIComponent(bookingId)}/reactions`, {
+      headers: { 'x-tour-room-auth': roomSession },
+    })
+      .then((res) => (res.ok ? res.json() : null))
+      .then((json: { reactions?: Array<{ message_id: string; emoji: string; participant_id: string | null }> } | null) => {
+        if (!alive || !json?.reactions) return;
+        const raw: Record<string, ReactionEntry[]> = {};
+        for (const row of json.reactions) {
+          (raw[row.message_id] ??= []).push({ emoji: row.emoji, participantId: row.participant_id });
+        }
+        setReactionsRaw(raw);
+      })
+      .catch(() => undefined);
+    return () => {
+      alive = false;
+    };
+  }, [bookingId, roomSession]);
+
+  const react = useCallback(
+    async (messageId: string, emoji: string): Promise<void> => {
+      try {
+        await fetch(`/api/tour-rooms/${encodeURIComponent(bookingId)}/reactions`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', ...(roomSession ? { 'x-tour-room-auth': roomSession } : {}) },
+          body: JSON.stringify({ messageId, emoji }),
+        });
+        // The server broadcasts the change back (self:true) → the map updates.
+      } catch {
+        /* best-effort; a failed toggle simply doesn't apply */
+      }
+    },
+    [bookingId, roomSession],
+  );
+
+  const reactions = useMemo(() => {
+    const out: Record<string, ReactionAgg[]> = {};
+    for (const [messageId, entries] of Object.entries(reactionsRaw)) {
+      const agg = aggregateReactions(entries, myParticipantId);
+      if (agg.length) out[messageId] = agg;
+    }
+    return out;
+  }, [reactionsRaw, myParticipantId]);
+
   return useMemo(
-    () => ({ messages, connection, sendText, sendPreset, retryFailed, failedCount, latestCaption, locations, presence }),
-    [messages, connection, sendText, sendPreset, retryFailed, failedCount, latestCaption, locations, presence],
+    () => ({ messages, connection, sendText, sendPreset, retryFailed, failedCount, latestCaption, locations, presence, reactions, react }),
+    [messages, connection, sendText, sendPreset, retryFailed, failedCount, latestCaption, locations, presence, reactions, react],
   );
 }
