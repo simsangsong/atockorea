@@ -160,8 +160,15 @@ const nextConfig = {
       { key: 'Content-Security-Policy', value: "frame-ancestors 'self'" },
       { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
       {
+        /**
+         * Tour Room needs same-origin mic (voice bridge STT) and camera (photo
+         * capture) for guests/guides/drivers. `microphone=()` / `camera=()`
+         * blocks BOTH — self included — so `getUserMedia()` was rejected without
+         * even prompting. `(self)` allows only our own origin (no third parties),
+         * which is what the feature requires. geolocation stays self-only.
+         */
         key: 'Permissions-Policy',
-        value: 'camera=(), microphone=(), geolocation=(self), browsing-topics=()',
+        value: 'camera=(self), microphone=(self), geolocation=(self), browsing-topics=()',
       },
     ];
     return [{ source: '/:path*', headers: securityHeaders }];
