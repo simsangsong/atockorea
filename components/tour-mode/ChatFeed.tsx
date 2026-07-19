@@ -42,6 +42,15 @@ import type { ReactionAgg } from '@/hooks/useTourRoomChannel';
 
 /** Quick emoji set for the reaction row (Phase 2c). */
 const REACTION_EMOJI = ['👍', '❤️', '😂', '😮', '🙏'];
+
+const READ_LABEL: Record<RoomLocale, string> = { en: 'Read', ko: '읽음', ja: '既読', es: 'Leído', zh: '已读' };
+const TYPING_LABEL: Record<RoomLocale, string> = {
+  en: 'typing…',
+  ko: '입력 중…',
+  ja: '入力中…',
+  es: 'escribiendo…',
+  zh: '正在输入…',
+};
 import { buildFeedItems, type FeedItem } from '@/lib/tour-room/messageGroups';
 import { formatBubbleTime, formatDateSeparator } from '@/lib/tour-room/timeFormat';
 import { kstToday } from '@/lib/tour-room/time';
@@ -136,6 +145,8 @@ export default function ChatFeed({
   onReply,
   reactions,
   onReact,
+  lastReadByOthersAt = null,
+  typingUsers = [],
 }: {
   messages: RoomMessage[];
   viewerLocale: RoomLocale;
@@ -159,6 +170,10 @@ export default function ChatFeed({
   /** Kakao-grade reactions (Phase 2c): per-message emoji aggregates + toggle. */
   reactions?: Record<string, ReactionAgg[]>;
   onReact?: (messageId: string, emoji: string) => void;
+  /** Phase 2d — newest read time among others → "Read" on my last bubble. */
+  lastReadByOthersAt?: string | null;
+  /** Phase 2d — others currently typing. */
+  typingUsers?: Array<{ role: string; displayName: string }>;
 }) {
   const bubbleText = textScale === 'large' ? 'tr-body-lg' : 'tr-body';
   const systemText = textScale === 'large' ? 'tr-card-text' : 'tr-label';
@@ -238,6 +253,14 @@ export default function ChatFeed({
   const hiddenCount = messages.length - visible.length;
   const items: FeedItem[] = useMemo(() => buildFeedItems(visible, viewerRole), [visible, viewerRole]);
   const todayKey = kstToday();
+
+  // Phase 2d — the id of my newest delivered bubble (the one that shows "Read").
+  const myLastReadableId = useMemo(() => {
+    for (let i = messages.length - 1; i >= 0; i -= 1) {
+      if (messages[i].sender_role === viewerRole && !messages[i]._local) return messages[i].id;
+    }
+    return null;
+  }, [messages, viewerRole]);
 
   // W2.4 — every LEDGER transition drops a fresh capsule; only the newest
   // capsule per extra carries the live state (and the confirm button).
@@ -392,12 +415,24 @@ export default function ChatFeed({
             const tailClass = groupEnd ? (mine ? 'rounded-br-[var(--tr-radius-tail)]' : 'rounded-bl-[var(--tr-radius-tail)]') : '';
             const time = groupEnd ? formatBubbleTime(message.created_at, viewerLocale) : null;
 
+            const readMark =
+              mine &&
+              !message._local &&
+              message.id === myLastReadableId &&
+              Boolean(lastReadByOthersAt) &&
+              lastReadByOthersAt! >= message.created_at;
+
             const metaColumn = (
               <div
                 className={`tr-meta flex shrink-0 flex-col justify-end gap-0.5 pb-0.5 text-[var(--tr-ink-3)] ${
                   mine ? 'items-end' : 'items-start'
                 }`}
               >
+                {readMark && (
+                  <span className="font-semibold text-[var(--tr-safe)]" data-testid="read-mark">
+                    {READ_LABEL[viewerLocale]}
+                  </span>
+                )}
                 {failed && (
                   <span className="text-[var(--tr-danger)]" data-testid="bubble-failed" aria-hidden>
                     <IconRetry size={13} strokeWidth={2.25} />
@@ -596,6 +631,21 @@ export default function ChatFeed({
             </div>
           );
         })}
+
+        {typingUsers.length > 0 && (
+          <div className="mt-1 flex justify-start pl-11" data-testid="typing-indicator">
+            <div className="flex items-center gap-1.5 rounded-[var(--tr-radius-bubble)] bg-[var(--tr-bubble-in)] px-3 py-2">
+              <span className="flex gap-0.5" aria-hidden>
+                <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-[var(--tr-ink-3)] [animation-delay:0ms]" />
+                <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-[var(--tr-ink-3)] [animation-delay:150ms]" />
+                <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-[var(--tr-ink-3)] [animation-delay:300ms]" />
+              </span>
+              <span className="tr-meta text-[var(--tr-ink-3)]">
+                {(ROLE_LABEL[viewerLocale][typingUsers[0].role] ?? typingUsers[0].displayName ?? '').trim()} {TYPING_LABEL[viewerLocale]}
+              </span>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* U3.1 — scroll-to-bottom FAB with the while-away counter. */}

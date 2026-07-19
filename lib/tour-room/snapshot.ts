@@ -104,7 +104,7 @@ export interface RoomSnapshot {
 
 /** Participant columns safe to share with the whole room (no device_key/user_id). */
 const PARTICIPANT_PUBLIC_COLUMNS =
-  'id, role, display_name, locale, location_sharing, tts_capable, last_seen_at, created_at';
+  'id, role, display_name, locale, location_sharing, tts_capable, last_seen_at, last_read_at, created_at';
 
 export async function buildRoomSnapshot(
   supabase: RoomDbClient,

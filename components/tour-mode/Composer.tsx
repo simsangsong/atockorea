@@ -157,6 +157,7 @@ export default function Composer({
   onSendAttachment,
   replyTo,
   onCancelReply,
+  onTyping,
   disabled = false,
 }: {
   locale: RoomLocale;
@@ -173,6 +174,8 @@ export default function Composer({
    *  room client threads its id into the send and clears this on send. */
   replyTo?: ReplySnapshot | null;
   onCancelReply?: () => void;
+  /** Phase 2d — called (throttled by the caller) while the user types. */
+  onTyping?: () => void;
   disabled?: boolean;
 }) {
   const [draft, setDraft] = useState('');
@@ -690,6 +693,7 @@ export default function Composer({
               onChange={(e) => {
                 setDraft(e.target.value);
                 if (!e.target.value) setConfirmHint(false);
+                else onTyping?.();
                 autosize();
               }}
               onKeyDown={onKeyDown}
