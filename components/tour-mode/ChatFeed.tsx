@@ -23,16 +23,21 @@ import Avatar from '@/components/tour-mode/Avatar';
 import ExtraLedgerCard, { type ExtraLedgerMeta } from '@/components/tour-mode/ExtraLedgerCard';
 import SpotArrivalCard from '@/components/tour-mode/SpotArrivalCard';
 import Lightbox from '@/components/tour-mode/Lightbox';
+import ReplyPreview from '@/components/tour-mode/ReplyPreview';
+import Sheet from '@/components/tour-mode/Sheet';
 import {
+  IconCopy,
   IconFile,
   IconInstall,
   IconOpsBadge,
   IconOriginal,
+  IconReply,
   IconRetry,
   IconScrollDown,
   IconSending,
   IconTranslated,
 } from '@/components/tour-mode/icons';
+import type { ReplySnapshot } from '@/lib/tour-room/reply';
 import { buildFeedItems, type FeedItem } from '@/lib/tour-room/messageGroups';
 import { formatBubbleTime, formatDateSeparator } from '@/lib/tour-room/timeFormat';
 import { kstToday } from '@/lib/tour-room/time';
@@ -75,6 +80,15 @@ const ROLE_LABEL: Record<RoomLocale, Record<string, string>> = {
   zh: { guide: '导游', admin: 'AtoC Korea', driver: '司机' },
 };
 
+/** Long-press action-sheet labels (Phase 2b). */
+const ACTION_COPY: Record<RoomLocale, { title: string; reply: string; copy: string; original: string; translated: string; close: string; copied: string }> = {
+  en: { title: 'Message', reply: 'Reply', copy: 'Copy', original: 'Show original', translated: 'Show translation', close: 'Close', copied: 'Copied' },
+  ko: { title: '메시지', reply: '답장', copy: '복사', original: '원문 보기', translated: '번역 보기', close: '닫기', copied: '복사됨' },
+  ja: { title: 'メッセージ', reply: '返信', copy: 'コピー', original: '原文を表示', translated: '翻訳を表示', close: '閉じる', copied: 'コピーしました' },
+  es: { title: 'Mensaje', reply: 'Responder', copy: 'Copiar', original: 'Ver original', translated: 'Ver traducción', close: 'Cerrar', copied: 'Copiado' },
+  zh: { title: '消息', reply: '回复', copy: '复制', original: '查看原文', translated: '查看翻译', close: '关闭', copied: '已复制' },
+};
+
 /** Attachment metadata carried on image/file messages (Phase 1 route). */
 interface AttachmentMeta {
   url?: string;
@@ -115,6 +129,7 @@ export default function ChatFeed({
   opsHighlightAfter = null,
   onExtraConfirm,
   preferredLocale = null,
+  onReply,
 }: {
   messages: RoomMessage[];
   viewerLocale: RoomLocale;
@@ -132,6 +147,9 @@ export default function ChatFeed({
   /** Language-agnostic bridge: the viewer's detected chat language ('fr' …) —
    *  preferred over the folded room locale when a translation exists. */
   preferredLocale?: string | null;
+  /** Kakao-grade reply (Phase 2b): long-press a bubble → this sets the reply
+   *  context in the composer. Absent = no reply affordance. */
+  onReply?: (message: RoomMessage) => void;
 }) {
   const bubbleText = textScale === 'large' ? 'tr-body-lg' : 'tr-body';
   const systemText = textScale === 'large' ? 'tr-card-text' : 'tr-label';
@@ -140,6 +158,35 @@ export default function ChatFeed({
   const [awayCount, setAwayCount] = useState(0);
   const [showFab, setShowFab] = useState(false);
   const [lightbox, setLightbox] = useState<{ url: string; name?: string | null } | null>(null);
+  const [actionMsg, setActionMsg] = useState<RoomMessage | null>(null);
+  const [copiedNote, setCopiedNote] = useState(false);
+  const action = ACTION_COPY[viewerLocale] ?? ACTION_COPY.en;
+
+  const jumpToMessage = useCallback((id: string) => {
+    const el = feedRef.current?.querySelector(`[data-msg-id="${id}"]`);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      el.classList.add('tr-msg-flash');
+      window.setTimeout(() => el.classList.remove('tr-msg-flash'), 1600);
+    }
+  }, []);
+
+  const copyMessage = useCallback(
+    async (m: RoomMessage) => {
+      const text = displayText(m, viewerLocale, originals.has(m.id), preferredLocale);
+      try {
+        await navigator.clipboard?.writeText(text);
+        setCopiedNote(true);
+        window.setTimeout(() => {
+          setCopiedNote(false);
+          setActionMsg(null);
+        }, 800);
+      } catch {
+        setActionMsg(null);
+      }
+    },
+    [viewerLocale, originals, preferredLocale],
+  );
   const feedRef = useRef<HTMLDivElement | null>(null);
   const nearBottomRef = useRef(true);
 
@@ -431,12 +478,25 @@ export default function ChatFeed({
               textBubble
             );
 
+            // Kakao-grade reply: a quote block above the bubble, tap → jump.
+            const replySnap = message.metadata?.reply_to as ReplySnapshot | undefined;
+            const bubbleEl = replySnap ? (
+              <div className={`flex flex-col ${mine ? 'items-end' : 'items-start'}`}>
+                <button type="button" onClick={() => jumpToMessage(replySnap.id)} className="max-w-full text-left" data-testid="reply-jump">
+                  <ReplyPreview variant="bubble" snapshot={replySnap} locale={viewerLocale} mine={mine} />
+                </button>
+                {bubble}
+              </div>
+            ) : (
+              bubble
+            );
+
             if (mine) {
               return (
                 <div className={`flex justify-end pl-12 ${groupStart ? 'mt-2' : 'mt-0.5'} ${animClass}`}>
                   <div className="flex max-w-full items-end gap-1.5">
                     {metaColumn}
-                    <div className="min-w-0">{bubble}</div>
+                    <div className="min-w-0">{bubbleEl}</div>
                   </div>
                 </div>
               );
@@ -463,7 +523,7 @@ export default function ChatFeed({
                     </div>
                   )}
                   <div className="flex items-end gap-1.5">
-                    <div className="min-w-0">{bubble}</div>
+                    <div className="min-w-0">{bubbleEl}</div>
                     {metaColumn}
                   </div>
                   {listenable && tts && (
@@ -481,7 +541,18 @@ export default function ChatFeed({
           })();
 
           return (
-            <div key={item.key}>
+            <div
+              key={item.key}
+              data-msg-id={message.id}
+              onContextMenu={
+                onReply && !system && !message._local
+                  ? (e) => {
+                      e.preventDefault();
+                      setActionMsg(message);
+                    }
+                  : undefined
+              }
+            >
               {body}
               {unreadDividerHere && (
                 <div className="my-3 flex items-center gap-2 px-2" data-testid="unread-divider">
@@ -515,6 +586,53 @@ export default function ChatFeed({
       )}
 
       <Lightbox url={lightbox?.url ?? null} name={lightbox?.name} onClose={() => setLightbox(null)} />
+
+      <style>{`
+        .tr-msg-flash { animation: tr-msg-flash 1.6s ease-out; border-radius: 14px; }
+        @keyframes tr-msg-flash { 0%, 25% { background: var(--tr-accent-soft); } 100% { background: transparent; } }
+      `}</style>
+
+      {actionMsg && (
+        <Sheet open onClose={() => setActionMsg(null)} closeLabel={action.close} title={action.title}>
+          <div className="flex flex-col">
+            {onReply && (
+              <button
+                type="button"
+                onClick={() => {
+                  onReply(actionMsg);
+                  setActionMsg(null);
+                }}
+                className="tr-card-text flex items-center gap-3 rounded-xl px-2 py-3 text-left font-medium text-[var(--tr-ink)] active:bg-[var(--tr-surface-2)]"
+                data-testid="action-reply"
+              >
+                <IconReply size={18} aria-hidden />
+                {action.reply}
+              </button>
+            )}
+            <button
+              type="button"
+              onClick={() => void copyMessage(actionMsg)}
+              className="tr-card-text flex items-center gap-3 rounded-xl px-2 py-3 text-left font-medium text-[var(--tr-ink)] active:bg-[var(--tr-surface-2)]"
+              data-testid="action-copy"
+            >
+              <IconCopy size={18} aria-hidden />
+              {copiedNote ? action.copied : action.copy}
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                toggleOriginal(actionMsg.id);
+                setActionMsg(null);
+              }}
+              className="tr-card-text flex items-center gap-3 rounded-xl px-2 py-3 text-left font-medium text-[var(--tr-ink)] active:bg-[var(--tr-surface-2)]"
+              data-testid="action-translate"
+            >
+              {originals.has(actionMsg.id) ? <IconTranslated size={18} aria-hidden /> : <IconOriginal size={18} aria-hidden />}
+              {originals.has(actionMsg.id) ? action.translated : action.original}
+            </button>
+          </div>
+        </Sheet>
+      )}
     </div>
   );
 }

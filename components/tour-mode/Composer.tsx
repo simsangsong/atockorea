@@ -27,6 +27,8 @@ import {
 } from '@/lib/tour-room/recorder';
 import { isDeviceSttSupported, startDeviceStt, type DeviceSttHandle } from '@/lib/tour-room/deviceStt';
 import { primeAudio, TTS_LANG } from '@/lib/tour-room/tts';
+import ReplyPreview from '@/components/tour-mode/ReplyPreview';
+import type { ReplySnapshot } from '@/lib/tour-room/reply';
 import { useTourRoomSettings } from '@/hooks/useTourRoomSettings';
 import {
   IconAsk,
@@ -153,6 +155,8 @@ export default function Composer({
   transcribeVoice,
   vision,
   onSendAttachment,
+  replyTo,
+  onCancelReply,
   disabled = false,
 }: {
   locale: RoomLocale;
@@ -165,6 +169,10 @@ export default function Composer({
   /** Kakao-grade attachments (Phase 2): send a photo/file as a message with an
    *  optional caption. Absent = attach button hidden. */
   onSendAttachment?: (file: File, caption: string) => Promise<boolean>;
+  /** Kakao-grade reply (Phase 2b): the quoted message being replied to; the
+   *  room client threads its id into the send and clears this on send. */
+  replyTo?: ReplySnapshot | null;
+  onCancelReply?: () => void;
   disabled?: boolean;
 }) {
   const [draft, setDraft] = useState('');
@@ -561,6 +569,10 @@ export default function Composer({
         >
           {copy.confirmHint}
         </p>
+      )}
+
+      {replyTo && (
+        <ReplyPreview snapshot={replyTo} locale={locale} variant="bar" onClose={onCancelReply} />
       )}
 
       {/* Docked bar — full-bleed surface with a hairline, like every messenger. */}

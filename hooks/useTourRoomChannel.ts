@@ -26,6 +26,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { supabase } from '@/lib/supabase';
 import type { QuickReplyPreset } from '@/lib/tour-room/quickReplies';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
+import type { ReplySnapshot } from '@/lib/tour-room/reply';
 
 export interface RoomMessage {
   id: string;
@@ -36,9 +37,19 @@ export interface RoomMessage {
   source_locale?: string | null;
   translations?: Record<string, string>;
   metadata?: Record<string, unknown>;
+  /** Kakao-grade reply: scroll anchor to the quoted original (snapshot lives in
+   *  metadata.reply_to for windowed-out rendering). */
+  reply_to_message_id?: string | null;
   created_at: string;
   /** Client-only: set while an optimistic send is in flight or failed. */
   _local?: 'sending' | 'failed';
+}
+
+/** Reply context threaded through a send (Phase 2b). */
+export interface SendOpts {
+  replyToId?: string;
+  /** Client-built snapshot so the optimistic bubble shows the quote instantly. */
+  replySnapshot?: ReplySnapshot;
 }
 
 export type RoomConnection = 'connecting' | 'realtime' | 'sse' | 'offline';
@@ -119,7 +130,7 @@ export function latestCursor(messages: RoomMessage[]): string | null {
 const unsentKey = (bookingId: string) => `tour_mode_unsent:${bookingId}`;
 
 /** A queued outbound send: free text or a quick-reply preset key (§M-2 ②). */
-export type QueuedSend = { text?: string; presetKey?: string };
+export type QueuedSend = { text?: string; presetKey?: string; replyToId?: string };
 
 function readUnsentQueue(bookingId: string): QueuedSend[] {
   try {
@@ -158,10 +169,11 @@ export interface UseTourRoomChannelOptions {
 export interface UseTourRoomChannel {
   messages: RoomMessage[];
   connection: RoomConnection;
-  /** Send a text message (optimistic; queues on failure). */
-  sendText: (text: string) => Promise<boolean>;
+  /** Send a text message (optimistic; queues on failure). `opts` carries an
+   *  optional reply context (Phase 2b). */
+  sendText: (text: string, opts?: SendOpts) => Promise<boolean>;
   /** Send a pre-translated quick reply — zero server-side LLM calls (§M-2 ②). */
-  sendPreset: (preset: QuickReplyPreset, viewerLocale: RoomLocale) => Promise<boolean>;
+  sendPreset: (preset: QuickReplyPreset, viewerLocale: RoomLocale, opts?: SendOpts) => Promise<boolean>;
   /** Re-send everything in the failed/unsent queue. */
   retryFailed: () => Promise<void>;
   failedCount: number;
@@ -382,23 +394,41 @@ export function useTourRoomChannel(options: UseTourRoomChannelOptions): UseTourR
     ...extra,
   });
 
+  /** Fold a reply context into an optimistic message + queued payload (Phase 2b). */
+  const withReply = (
+    base: Partial<RoomMessage>,
+    opts?: SendOpts,
+  ): { extra: Partial<RoomMessage>; reply: Pick<QueuedSend, 'replyToId'> } => {
+    if (!opts?.replyToId) return { extra: base, reply: {} };
+    return {
+      extra: {
+        ...base,
+        reply_to_message_id: opts.replyToId,
+        metadata: { ...(base.metadata as Record<string, unknown>), ...(opts.replySnapshot ? { reply_to: opts.replySnapshot } : {}) },
+      },
+      reply: { replyToId: opts.replyToId },
+    };
+  };
+
   const sendText = useCallback(
-    async (text: string): Promise<boolean> => {
+    async (text: string, opts?: SendOpts): Promise<boolean> => {
       const trimmed = text.trim();
       if (!trimmed) return false;
-      return sendOptimistic({ text: trimmed }, makeOptimistic(trimmed));
+      const { extra, reply } = withReply({}, opts);
+      return sendOptimistic({ text: trimmed, ...reply }, makeOptimistic(trimmed, extra));
     },
     [sendOptimistic],
   );
 
   const sendPreset = useCallback(
-    async (preset: QuickReplyPreset, viewerLocale: RoomLocale): Promise<boolean> => {
+    async (preset: QuickReplyPreset, viewerLocale: RoomLocale, opts?: SendOpts): Promise<boolean> => {
+      const { extra, reply } = withReply(
+        { translations: { ...preset.text }, metadata: { kind: 'quick_reply', preset_key: preset.key } },
+        opts,
+      );
       return sendOptimistic(
-        { presetKey: preset.key },
-        makeOptimistic(preset.text[viewerLocale] ?? preset.text.en, {
-          translations: { ...preset.text },
-          metadata: { kind: 'quick_reply', preset_key: preset.key },
-        }),
+        { presetKey: preset.key, ...reply },
+        makeOptimistic(preset.text[viewerLocale] ?? preset.text.en, extra),
       );
     },
     [sendOptimistic],
