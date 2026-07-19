@@ -124,14 +124,20 @@ describe('guestPinLabel (A안 — foreign-guest display)', () => {
     expect(guestPinLabel(pin, 'zh')).toBe('洗手间');
   });
 
-  it('honors a curated per-locale name when present', () => {
+  it('always shows the generic label for restrooms, even with a curated name', () => {
+    // User policy 2026-07-20: restrooms are ALWAYS just "Restroom", never a
+    // detailed name — a curated per-locale name is ignored for restrooms.
     const pin = pin_({ kind: 'restroom', name: '천지연폭포 공중화장실', nameI18n: { en: 'Falls Restroom' } });
-    expect(guestPinLabel(pin, 'en')).toBe('Falls Restroom');
-    expect(guestPinLabel(pin, 'ja')).toBe('トイレ'); // no ja override → generic
+    expect(guestPinLabel(pin, 'en')).toBe('Restroom');
+    expect(guestPinLabel(pin, 'ja')).toBe('トイレ');
   });
 
   it('keeps the given name for photo spots', () => {
     expect(guestPinLabel(pin_({ kind: 'photo', name: 'Crater rim view' }), 'en')).toBe('Crater rim view');
+  });
+
+  it('keeps the restaurant name (rating list needs it)', () => {
+    expect(guestPinLabel(pin_({ kind: 'restaurant', name: 'Jinmi Restaurant' }), 'en')).toBe('Jinmi Restaurant');
   });
 });
 
