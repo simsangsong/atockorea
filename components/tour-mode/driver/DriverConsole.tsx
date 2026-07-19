@@ -21,6 +21,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useTourRoomChannel, type RoomMessage } from '@/hooks/useTourRoomChannel';
 import { startVoiceRecording, type ActiveRecording } from '@/lib/tour-room/recorder';
+import MicPrime from '@/components/tour-mode/MicPrime';
 import {
   googleDirectionsUrl,
   kakaoNaviUrl,
@@ -381,6 +382,8 @@ function BridgeScreen({
   const [pendingClip, setPendingClip] = useState<{ blob: Blob; mimeType: string } | null>(null);
   const [countdown, setCountdown] = useState(0);
   const [sending, setSending] = useState(false);
+  const [textDraft, setTextDraft] = useState('');
+  const [textSending, setTextSending] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
   const [sheet, setSheet] = useState<'none' | 'delay' | 'schedule' | 'return' | 'expense'>('none');
   const [pushOn, setPushOn] = useState(false);
@@ -459,6 +462,32 @@ function BridgeScreen({
     },
     [bookingId, session, say],
   );
+
+  // ── typed send — the always-available fallback (webview / quiet typing) ─
+  // Korean text lands per-room via the same route the voice bridge uses; the
+  // server translates KO → each guest's language and fans the bubble out.
+  const sendText = useCallback(async () => {
+    const value = textDraft.trim();
+    if (!value || textSending) return;
+    setTextSending(true);
+    try {
+      const res = await fetch(`/api/tour-rooms/${bookingId}/messages`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'x-tour-room-auth': session },
+        body: JSON.stringify({ text: value }),
+      });
+      if (res.ok) {
+        setTextDraft('');
+        say('전송 완료 ✓');
+      } else {
+        say('전송 실패 — 다시 시도해 주세요');
+      }
+    } catch {
+      say('네트워크 오류 — 다시 시도해 주세요');
+    } finally {
+      setTextSending(false);
+    }
+  }, [bookingId, session, textDraft, textSending, say]);
 
   // 3s cancel window after the clip finishes.
   useEffect(() => {
@@ -732,8 +761,45 @@ function BridgeScreen({
         </div>
       ) : null}
 
+      {/* typed send — always available (webview fallback / quiet typing) */}
+      <div className="px-4 pt-2">
+        <form
+          onSubmit={(event) => {
+            event.preventDefault();
+            void sendText();
+          }}
+          className="flex items-end gap-2"
+        >
+          <textarea
+            value={textDraft}
+            onChange={(event) => setTextDraft(event.target.value)}
+            rows={1}
+            maxLength={2000}
+            placeholder="타이핑해서 보내기"
+            enterKeyHint="send"
+            onKeyDown={(event) => {
+              if (event.key === 'Enter' && !event.shiftKey) {
+                event.preventDefault();
+                void sendText();
+              }
+            }}
+            className="min-w-0 flex-1 resize-none rounded-2xl border border-neutral-700 bg-neutral-900 px-4 py-3 text-lg text-white placeholder:text-neutral-500 focus:border-neutral-500 focus:outline-none"
+            data-testid="driver-text-input"
+          />
+          <button
+            type="submit"
+            disabled={!textDraft.trim() || textSending}
+            className="shrink-0 rounded-2xl bg-neutral-100 px-5 py-3 text-lg font-bold text-neutral-950 disabled:opacity-40"
+            data-testid="driver-text-send"
+          >
+            {textSending ? '…' : '보내기'}
+          </button>
+        </form>
+      </div>
+
       {/* mic */}
       <div className="px-4 pb-3 pt-2">
+        <MicPrime variant="dark" locale="ko" className="mb-2" />
         <button
           type="button"
           onClick={() => void toggleRecord()}

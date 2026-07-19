@@ -29,15 +29,24 @@ import {
   MapPin,
   Megaphone,
   MessageCircle,
+  Mic,
   RefreshCw,
   Send,
+  Square,
   Timer,
   Users,
   Wallet,
+  X,
 } from 'lucide-react';
 import GuideLedgerPanel from '@/components/tour-mode/guide/GuideLedgerPanel';
 import GuidePlanPanel from '@/components/tour-mode/guide/GuidePlanPanel';
+import MicPrime from '@/components/tour-mode/MicPrime';
 import { kstToday } from '@/lib/tour-room/time';
+import {
+  isVoiceRecordingSupported,
+  startVoiceRecording,
+  type ActiveRecording,
+} from '@/lib/tour-room/recorder';
 
 const GUIDE_TOKEN_KEY = 'tour_mode_guide_token';
 const POLL_MS = 15_000;
@@ -177,6 +186,68 @@ export default function GuideConsole() {
     const hhmm = `${String(target.getUTCHours()).padStart(2, '0')}:${String(target.getUTCMinutes()).padStart(2, '0')}`;
     await send({ notice: { kind: 'free_time_timer', time: hhmm, point: freePoint } }, 'free');
   };
+
+  // ── broadcast voice input (record → STT → review → send) ────────────────
+  // The guide speaks Korean; STT transcribes it into the draft, the guide
+  // reviews, then the normal fan-out translates it per guest. STT is scoped to
+  // a booking, so we borrow any room of the day (the tour-date token authorizes
+  // every one). No rooms = nothing to say to, so the mic hides.
+  const [voiceState, setVoiceState] = useState<'idle' | 'recording' | 'transcribing'>('idle');
+  const [micNote, setMicNote] = useState<string | null>(null);
+  const [voiceSupported, setVoiceSupported] = useState(false);
+  const recordingRef = useRef<ActiveRecording | null>(null);
+  useEffect(() => {
+    setVoiceSupported(isVoiceRecordingSupported());
+  }, []);
+  useEffect(() => () => recordingRef.current?.cancel(), []);
+
+  const sttBookingId = overview?.rooms[0]?.booking_id ?? null;
+
+  const transcribeBroadcast = useCallback(
+    async (clip: { blob: Blob; mimeType: string } | null) => {
+      recordingRef.current = null;
+      const t = tokenRef.current;
+      if (!clip || !sttBookingId || !t) {
+        setVoiceState('idle');
+        return;
+      }
+      setVoiceState('transcribing');
+      try {
+        const form = new FormData();
+        const ext = clip.mimeType.includes('mp4') ? 'm4a' : 'webm';
+        form.append('audio', new File([clip.blob], `guide.${ext}`, { type: clip.mimeType }));
+        const res = await fetch(`/api/tour-rooms/${sttBookingId}/stt?rt=${encodeURIComponent(t)}`, {
+          method: 'POST',
+          body: form,
+        });
+        const data = await res.json().catch(() => null);
+        if (res.ok && data?.text) {
+          setDraft((prev) => (prev.trim() ? `${prev.trim()} ${data.text}` : data.text));
+        } else {
+          setMicNote('잘 못 알아들었어요 — 다시 말씀해 주세요.');
+        }
+      } catch {
+        setMicNote('음성 인식 오류 — 다시 시도해 주세요.');
+      } finally {
+        setVoiceState('idle');
+      }
+    },
+    [sttBookingId],
+  );
+
+  const startBroadcastRecording = useCallback(async () => {
+    setMicNote(null);
+    try {
+      const recording = await startVoiceRecording({
+        onFinish: (clip) => void transcribeBroadcast(clip),
+        onError: () => setVoiceState('idle'),
+      });
+      recordingRef.current = recording;
+      setVoiceState('recording');
+    } catch {
+      setMicNote('마이크를 허용해 주세요.');
+    }
+  }, [transcribeBroadcast]);
 
   const onboardCount = useMemo(
     () => (overview ? overview.rooms.filter((room) => room.onboard_ack).length : 0),
@@ -415,33 +486,92 @@ export default function GuideConsole() {
             <Megaphone size={14} aria-hidden />
             전체 공지 (모든 손님, 자동 번역)
           </p>
-          <form
-            className="mt-2 flex gap-2"
-            onSubmit={(e) => {
-              e.preventDefault();
-              const text = draft.trim();
-              if (!text) return;
-              setDraft('');
-              void send({ text }, 'text');
-            }}
-          >
-            <input
-              value={draft}
-              onChange={(e) => setDraft(e.target.value)}
-              maxLength={2000}
-              placeholder="예: 10분 뒤 출발합니다"
-              className="tr-card-text min-w-0 flex-1 rounded-[var(--tr-radius-input)] border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2.5 text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)] focus:border-[var(--tr-accent)] focus:outline-none"
-            />
-            <button
-              type="submit"
-              disabled={!draft.trim() || busy === 'text'}
-              className="tr-label flex min-h-[46px] shrink-0 items-center gap-1.5 rounded-full bg-[var(--tr-accent)] px-4 font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
-              data-testid="fanout-send"
+          {voiceState === 'recording' ? (
+            <div
+              className="mt-2 flex items-center gap-2 rounded-[var(--tr-radius-input)] bg-[var(--tr-danger-soft)] px-3 py-2.5"
+              data-testid="guide-recording-bar"
             >
-              <Send size={15} aria-hidden />
-              보내기
-            </button>
-          </form>
+              <span className="h-2.5 w-2.5 animate-pulse rounded-full bg-[var(--tr-danger)]" />
+              <span className="tr-card-text flex-1 font-semibold text-[var(--tr-ink)]">녹음 중… 끝나면 완료</span>
+              <button
+                type="button"
+                onClick={() => {
+                  recordingRef.current?.cancel();
+                  recordingRef.current = null;
+                  setVoiceState('idle');
+                }}
+                className="tr-label flex min-h-[40px] items-center gap-1 rounded-full px-3 font-medium text-[var(--tr-ink-2)]"
+              >
+                <X size={14} aria-hidden />
+                취소
+              </button>
+              <button
+                type="button"
+                onClick={() => recordingRef.current?.stop()}
+                className="tr-label flex min-h-[40px] items-center gap-1 rounded-full bg-[var(--tr-danger)] px-4 font-semibold text-white"
+                data-testid="guide-recording-done"
+              >
+                <Square size={13} aria-hidden />
+                완료
+              </button>
+            </div>
+          ) : voiceState === 'transcribing' ? (
+            <div
+              className="mt-2 flex items-center gap-2.5 rounded-[var(--tr-radius-input)] bg-[var(--tr-surface-2)] px-3 py-3"
+              data-testid="guide-transcribing-bar"
+            >
+              <span className="h-4 w-4 animate-spin rounded-full border-2 border-[var(--tr-accent)] border-t-transparent" />
+              <span className="tr-card-text text-[var(--tr-ink-2)]">받아쓰는 중…</span>
+            </div>
+          ) : (
+            <form
+              className="mt-2 flex items-end gap-2"
+              onSubmit={(e) => {
+                e.preventDefault();
+                const text = draft.trim();
+                if (!text) return;
+                setDraft('');
+                void send({ text }, 'text');
+              }}
+            >
+              {voiceSupported && sttBookingId && (
+                <button
+                  type="button"
+                  onClick={() => void startBroadcastRecording()}
+                  aria-label="음성으로 공지"
+                  className="flex h-[46px] w-[46px] shrink-0 items-center justify-center rounded-full bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)] active:scale-95"
+                  data-testid="guide-broadcast-mic"
+                >
+                  <Mic size={18} aria-hidden />
+                </button>
+              )}
+              <input
+                value={draft}
+                onChange={(e) => setDraft(e.target.value)}
+                maxLength={2000}
+                placeholder="예: 10분 뒤 출발합니다"
+                className="tr-card-text min-w-0 flex-1 rounded-[var(--tr-radius-input)] border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2.5 text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)] focus:border-[var(--tr-accent)] focus:outline-none"
+              />
+              <button
+                type="submit"
+                disabled={!draft.trim() || busy === 'text'}
+                className="tr-label flex min-h-[46px] shrink-0 items-center gap-1.5 rounded-full bg-[var(--tr-accent)] px-4 font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
+                data-testid="fanout-send"
+              >
+                <Send size={15} aria-hidden />
+                보내기
+              </button>
+            </form>
+          )}
+          {micNote && (
+            <p
+              className="tr-label mt-2 rounded-xl bg-[var(--tr-danger-soft)] px-3 py-2 font-medium text-[var(--tr-danger)]"
+              data-testid="guide-mic-note"
+            >
+              {micNote}
+            </p>
+          )}
+          {voiceSupported && sttBookingId && <MicPrime variant="light" locale="ko" className="mt-2" />}
           <div className="mt-2 flex flex-wrap gap-1.5">
             {BROADCAST_PRESETS.map((phrase) => (
               <button
