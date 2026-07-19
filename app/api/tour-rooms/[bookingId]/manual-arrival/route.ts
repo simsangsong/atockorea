@@ -12,6 +12,7 @@ import { humanizePoiKey } from '@/lib/tour-room/dayPlan';
 import { broadcastToRoom } from '@/lib/tour-room/realtime';
 import { normalizeRoomLocale } from '@/lib/tour-room/snapshot';
 import { renderSpotEventTranslations, resolveSpotContent } from '@/lib/tour-room/spotContent';
+import { fetchArrivalFacilityPins } from '@/lib/tour-room/facilityPins.server';
 
 export const dynamic = 'force-dynamic';
 
@@ -118,6 +119,8 @@ export async function POST(
     }
 
     const room = await ensureRoom(supabase, booking);
+    // W2.1 — ride the spot's restroom/photo pins in the arrival metadata.
+    const facilityPins = await fetchArrivalFacilityPins(supabase, spot.poi_key);
     const { data: message, error: messageError } = await supabase
       .from('tour_room_messages')
       .insert({
@@ -134,10 +137,12 @@ export async function POST(
           kind: 'spot_arrival',
           spot_id: spot.id,
           spot_title: spot.title,
+          poi_key: spot.poi_key,
           audio_url: spot.audio_url,
           manual: true,
           triggered_by_role: actor.role,
           ...(content.content ? { content: content.content, content_tier: content.tier } : {}),
+          ...(facilityPins.length ? { facility_pins: facilityPins } : {}),
         },
       })
       .select()

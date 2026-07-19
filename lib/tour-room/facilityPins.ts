@@ -34,6 +34,24 @@ export interface FacilityPin {
 /** F-D7 — at most this many pins per kind on one card (marker clarity + cost). */
 export const FACILITY_PIN_CAP = 3;
 
+/**
+ * Map a poi_facility_pins DB row to the compact FacilityPin ridden in the
+ * arrival metadata / served to the concierge. Pure — the server route supplies
+ * the row so this file never imports supabase (keeps it client-safe).
+ */
+export function facilityPinFromRow(row: Record<string, unknown>): FacilityPin {
+  const nameI18n = row.name_i18n;
+  return {
+    kind: row.kind === 'photo' ? 'photo' : 'restroom',
+    lat: Number(row.lat),
+    lng: Number(row.lng),
+    name: typeof row.name === 'string' ? row.name : null,
+    nameI18n: nameI18n && typeof nameI18n === 'object' ? (nameI18n as FacilityPin['nameI18n']) : null,
+    photoUrl: typeof row.photo_url === 'string' ? row.photo_url : null,
+    distanceM: typeof row.distance_m === 'number' ? row.distance_m : null,
+  };
+}
+
 /** Marker colours by kind (Static Maps `color:0xRRGGBB`). */
 const KIND_COLOR: Record<FacilityKind, string> = {
   restroom: '0x2563eb', // blue

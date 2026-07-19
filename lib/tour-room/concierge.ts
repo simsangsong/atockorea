@@ -26,6 +26,7 @@
 import { ROOM_LOCALES, type RoomLocale } from '@/lib/tour-room/snapshot';
 import type { SpotArrivalContent } from '@/lib/tour-room/spotContent';
 import type { RoomLifecycle } from '@/lib/tour-room/time';
+import { selectFacilityPins, type FacilityKind, type FacilityPin } from '@/lib/tour-room/facilityPins';
 
 // ---------------------------------------------------------------------------
 // Intents & guardrails
@@ -223,8 +224,10 @@ export const CONCIERGE_COPY: Record<
 /** {spot}/{info}/{title}/{time}/{minutes}/{point}/{q} interpolate verbatim. */
 type AnswerKind =
   | 'restroom_info'
+  | 'restroom_map'
   | 'restroom_none'
   | 'photo_info'
+  | 'photo_map'
   | 'photo_none'
   | 'next_stop_info'
   | 'next_stop_lobby'
@@ -249,6 +252,13 @@ const ANSWERS: Record<AnswerKind, Record<RoomLocale, string>> = {
     es: '{spot} — {info}',
     zh: '{spot} — {info}',
   },
+  restroom_map: {
+    en: '🚻 {spot} — {count} restroom(s) nearby. Tap a pin for directions.',
+    ko: '🚻 {spot} — 근처 화장실 {count}곳이에요. 핀을 누르면 길안내가 열려요.',
+    ja: '🚻 {spot} — 近くのトイレ{count}か所です。ピンをタップで道案内。',
+    es: '🚻 {spot} — {count} baño(s) cerca. Toca un pin para llegar.',
+    zh: '🚻 {spot} — 附近有{count}处洗手间。点击图钉查看路线。',
+  },
   restroom_none: {
     en: 'I don’t have restroom details for this spot — your guide will know best. You can also send the “Restroom” quick reply in chat.',
     ko: '이 스팟의 화장실 정보가 없어요 — 가이드가 가장 잘 알아요. 채팅의 "화장실" 퀵답장으로 바로 물어볼 수도 있어요.',
@@ -262,6 +272,13 @@ const ANSWERS: Record<AnswerKind, Record<RoomLocale, string>> = {
     ja: '📸 {spot} — {info}',
     es: '📸 {spot} — {info}',
     zh: '📸 {spot} — {info}',
+  },
+  photo_map: {
+    en: '📸 {spot} — {count} photo spot(s) marked. Tap a pin for directions.',
+    ko: '📸 {spot} — 포토스팟 {count}곳을 찍어뒀어요. 핀을 누르면 길안내가 열려요.',
+    ja: '📸 {spot} — 写真スポット{count}か所です。ピンをタップで道案内。',
+    es: '📸 {spot} — {count} punto(s) de foto. Toca un pin para llegar.',
+    zh: '📸 {spot} — 已标记{count}处拍照点。点击图钉查看路线。',
   },
   photo_none: {
     en: 'No photo tips saved for this spot yet — ask your guide for the best angle!',
@@ -379,6 +396,7 @@ export interface ConciergeAnswerParams {
   minutes?: number;
   point?: string;
   q?: string;
+  count?: number;
 }
 
 function interpolate(template: string, params: ConciergeAnswerParams): string {
@@ -389,7 +407,8 @@ function interpolate(template: string, params: ConciergeAnswerParams): string {
     .replaceAll('{time}', params.time ?? '')
     .replaceAll('{minutes}', params.minutes === undefined ? '' : String(params.minutes))
     .replaceAll('{point}', params.point ?? '')
-    .replaceAll('{q}', params.q ?? '');
+    .replaceAll('{q}', params.q ?? '')
+    .replaceAll('{count}', params.count === undefined ? '' : String(params.count));
 }
 
 export function renderConciergeAnswer(kind: AnswerKind, locale: RoomLocale, params: ConciergeAnswerParams = {}): string {
@@ -425,6 +444,12 @@ export interface Tier0Context {
   spotTitle: string | null;
   /** Resolved SpotArrivalContent of that arrival (metadata.content). */
   content: SpotArrivalContent | null;
+  /**
+   * Current arrival spot's restroom/photo pins (metadata.facility_pins),
+   * injected server-side at arrival so the restroom/photo answers can attach a
+   * scoped map card with ZERO network. Empty/omitted → text-only fallback.
+   */
+  facilityPins?: FacilityPin[];
   schedule: ScheduleItemLike[];
   /**
    * Active free-time / meeting countdown, derived by the caller from
@@ -442,10 +467,18 @@ export interface Tier0Context {
   lifecycle?: RoomLifecycle;
 }
 
+/** A scoped facility map card attached to a restroom/photo answer (F-D6). */
+export interface ConciergeMapCard {
+  kind: FacilityKind;
+  pins: FacilityPin[];
+}
+
 export interface Tier0Answer {
   text: string;
   /** false = honest "no data" fallback (still a terminal Tier 0 answer). */
   answered: boolean;
+  /** Present when the current spot has restroom/photo pins for this intent. */
+  mapCard?: ConciergeMapCard;
 }
 
 function kstNowHm(nowMs: number): string | null {
@@ -489,14 +522,32 @@ function nextScheduleItem(
 export function answerTier0(intent: ConciergeIntent, ctx: Tier0Context, locale: RoomLocale): Tier0Answer {
   switch (intent) {
     case 'restroom': {
+      const pins = selectFacilityPins(ctx.facilityPins ?? [], 'restroom');
       const info = ctx.content?.convenience?.restroom || ctx.content?.smartNotes?.facilities;
+      if (pins.length > 0) {
+        // Pins win: show the scoped map. Prefer the curated blurb as the lead
+        // line when we also have one, else a map-specific lead.
+        const text =
+          info && ctx.spotTitle
+            ? renderConciergeAnswer('restroom_info', locale, { spot: ctx.spotTitle, info })
+            : renderConciergeAnswer('restroom_map', locale, { spot: ctx.spotTitle ?? '', count: pins.length });
+        return { text, answered: true, mapCard: { kind: 'restroom', pins } };
+      }
       if (info && ctx.spotTitle) {
         return { text: renderConciergeAnswer('restroom_info', locale, { spot: ctx.spotTitle, info }), answered: true };
       }
       return { text: renderConciergeAnswer('restroom_none', locale), answered: false };
     }
     case 'photo_spot': {
+      const pins = selectFacilityPins(ctx.facilityPins ?? [], 'photo');
       const info = ctx.content?.smartNotes?.photo;
+      if (pins.length > 0) {
+        const text =
+          info && ctx.spotTitle
+            ? renderConciergeAnswer('photo_info', locale, { spot: ctx.spotTitle, info })
+            : renderConciergeAnswer('photo_map', locale, { spot: ctx.spotTitle ?? '', count: pins.length });
+        return { text, answered: true, mapCard: { kind: 'photo', pins } };
+      }
       if (info && ctx.spotTitle) {
         return { text: renderConciergeAnswer('photo_info', locale, { spot: ctx.spotTitle, info }), answered: true };
       }
@@ -563,11 +614,11 @@ export function answerTier0(intent: ConciergeIntent, ctx: Tier0Context, locale: 
  * anything with a human side effect, and the intent gate keeps it silent on
  * chit-chat, so it never talks over the guide in the shared feed.
  */
-export function inlineConciergeAnswer(text: string, ctx: Tier0Context, locale: RoomLocale): string | null {
+export function inlineConciergeAnswer(text: string, ctx: Tier0Context, locale: RoomLocale): Tier0Answer | null {
   if (classifyConciergeGuardrail(text)) return null;
   const intent = matchConciergeIntent(text);
   if (!intent) return null;
-  return answerTier0(intent, ctx, locale).text;
+  return answerTier0(intent, ctx, locale);
 }
 
 // ---------------------------------------------------------------------------
@@ -579,24 +630,29 @@ interface MessageLike {
   created_at?: string;
 }
 
-/** Latest geofence arrival → { spotTitle, content } (null-safe). */
+/** Latest geofence arrival → { spotTitle, content, poiKey, facilityPins }. */
 export function latestArrivalContext(messages: MessageLike[]): {
   spotTitle: string | null;
   content: SpotArrivalContent | null;
+  poiKey: string | null;
+  facilityPins: FacilityPin[];
 } {
   for (let i = messages.length - 1; i >= 0; i -= 1) {
     const metadata = messages[i]?.metadata;
     if (metadata?.kind === 'spot_arrival') {
       const content = metadata.content;
+      const rawPins = metadata.facility_pins;
       return {
         spotTitle: typeof metadata.spot_title === 'string' ? metadata.spot_title : null,
         content:
           content && typeof content === 'object' && Object.keys(content as object).length > 0
             ? (content as SpotArrivalContent)
             : null,
+        poiKey: typeof metadata.poi_key === 'string' ? metadata.poi_key : null,
+        facilityPins: Array.isArray(rawPins) ? (rawPins as FacilityPin[]) : [],
       };
     }
   }
-  return { spotTitle: null, content: null };
+  return { spotTitle: null, content: null, poiKey: null, facilityPins: [] };
 }
 
