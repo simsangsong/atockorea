@@ -70,6 +70,9 @@ export interface JoinCredentials {
   contactName?: string | null;
   displayName?: string | null;
   locale?: string | null;
+  /** Explicit chat-translation language (any LLM language, not just the 5 UI
+   *  locales) — drives what operator bubbles get translated into for this guest. */
+  chatLocale?: string | null;
   ttsCapable?: boolean;
 }
 
@@ -125,6 +128,7 @@ export function useTourRoomSession(bookingId: string | null | undefined): UseTou
             contactName: credentials.contactName || undefined,
             displayName: credentials.displayName || undefined,
             locale: credentials.locale || undefined,
+            chatLocale: credentials.chatLocale || undefined,
             ...(typeof credentials.ttsCapable === 'boolean' ? { ttsCapable: credentials.ttsCapable } : {}),
           }),
         });

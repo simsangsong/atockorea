@@ -64,6 +64,27 @@ describe('SettingsTab', () => {
     fireEvent.click(screen.getByText('日本語'));
     expect(onLocaleChange).toHaveBeenCalledWith('ja');
   });
+
+  it('hides the chat-language picker unless onChatLocaleChange is provided', () => {
+    render(<SettingsTab locale="en" onLocaleChange={jest.fn()} />);
+    expect(screen.queryByTestId('chat-language-select')).not.toBeInTheDocument();
+  });
+
+  it('reports a chat-language pick (any LLM language) through the callback', () => {
+    const onChatLocaleChange = jest.fn();
+    render(
+      <SettingsTab
+        locale="en"
+        onLocaleChange={jest.fn()}
+        chatLocale=""
+        onChatLocaleChange={onChatLocaleChange}
+      />,
+    );
+    const select = screen.getByTestId('chat-language-select');
+    // French is outside the 5 room UI locales — proves the plane is unbounded.
+    fireEvent.change(select, { target: { value: 'fr' } });
+    expect(onChatLocaleChange).toHaveBeenCalledWith('fr');
+  });
 });
 
 describe('RoomShell settings tab + theme', () => {

@@ -62,6 +62,20 @@ function readLocaleOverride(bookingId: string): RoomLocale | null {
   }
 }
 
+/** Explicit chat-translation language ('' = auto-detect from typing). Any LLM
+ *  language — separate from the 5-locale UI so a French speaker reads operator
+ *  bubbles in French while the chrome stays one of the five. */
+const chatLocaleOverrideKey = (bookingId: string) => `tour_mode_chat_locale:${bookingId}`;
+
+function readChatLocaleOverride(bookingId: string): string {
+  if (typeof window === 'undefined') return '';
+  try {
+    return window.localStorage.getItem(chatLocaleOverrideKey(bookingId)) ?? '';
+  } catch {
+    return '';
+  }
+}
+
 /** U2.6 — bulk resend pill under the feed (per-message state is on the bubble). */
 const RETRY_COPY: Record<RoomLocale, (n: number) => string> = {
   en: (n) => `${n} failed — tap to resend`,
@@ -135,6 +149,10 @@ export default function TourRoomClient({ bookingId }: { bookingId: string }) {
   // otherwise the device locale — but once /join resolves we adopt the
   // booking's language (below) unless the guest has explicitly overridden.
   const [locale, setLocale] = useState<RoomLocale>(() => readLocaleOverride(bookingId) ?? detectEntryLocale());
+  // Explicit chat-translation language ('' = auto-detect from the guest's own
+  // typing). Independent of `locale` (the 5-locale UI chrome) so a guest can
+  // read operator bubbles in, say, French while the app stays in English.
+  const [chatLocaleOverride, setChatLocaleOverride] = useState<string>(() => readChatLocaleOverride(bookingId));
 
   // T1.12: language switch re-joins so the participant row (and with it the
   // room's translation targeting, D-8) follows the new locale — and we persist
@@ -148,6 +166,22 @@ export default function TourRoomClient({ bookingId }: { bookingId: string }) {
       /* the in-memory switch still applies for this session */
     }
     void join({ locale: next });
+  };
+
+  // Chat-plane language: re-joins so the participant's chat_locale (and the
+  // room's translation targeting) follows — operator bubbles then arrive in
+  // this language. '' clears the client override so display falls back to the
+  // language derived from the guest's own typing.
+  const changeChatLocale = (next: string) => {
+    if (next === chatLocaleOverride) return;
+    setChatLocaleOverride(next);
+    try {
+      if (next) window.localStorage.setItem(chatLocaleOverrideKey(bookingId), next);
+      else window.localStorage.removeItem(chatLocaleOverrideKey(bookingId));
+    } catch {
+      /* the in-memory switch still applies for this session */
+    }
+    if (next) void join({ chatLocale: next });
   };
 
   useEffect(() => {
@@ -238,7 +272,16 @@ export default function TourRoomClient({ bookingId }: { bookingId: string }) {
     );
   }
 
-  return <TourRoomLive bookingId={bookingId} data={state.data} locale={locale} onLocaleChange={changeLocale} />;
+  return (
+    <TourRoomLive
+      bookingId={bookingId}
+      data={state.data}
+      locale={locale}
+      onLocaleChange={changeLocale}
+      chatLocaleOverride={chatLocaleOverride}
+      onChatLocaleChange={changeChatLocale}
+    />
+  );
 }
 
 function TourRoomLive({
@@ -246,11 +289,15 @@ function TourRoomLive({
   data,
   locale,
   onLocaleChange,
+  chatLocaleOverride,
+  onChatLocaleChange,
 }: {
   bookingId: string;
   data: TourRoomJoinResult;
   locale: RoomLocale;
   onLocaleChange: (locale: RoomLocale) => void;
+  chatLocaleOverride: string;
+  onChatLocaleChange: (code: string) => void;
 }) {
   const { settings } = useTourRoomSettings();
   const systemDark = useMediaQuery('(prefers-color-scheme: dark)');
@@ -316,12 +363,15 @@ function TourRoomLive({
   const readOnly = data.lifecycle === 'ended';
   const schedule = Array.isArray(snapshot.schedule) ? snapshot.schedule : [];
 
-  // Language-agnostic bridge: the language this party actually chats in —
-  // derived from the newest plain customer message (server-detected), seeded
-  // by the participant row. Drives bubble display preference for customers.
+  // Language-agnostic bridge: the language this party actually reads in. An
+  // explicit chat-language pick wins; otherwise it's derived from the newest
+  // plain customer message (server-detected), seeded by the participant row.
+  // Drives bubble display preference for customers.
   const chatLocale = useMemo(
-    () => deriveChatLocale(messages, (data.participant as { chat_locale?: unknown } | undefined)?.chat_locale),
-    [messages, data.participant],
+    () =>
+      chatLocaleOverride ||
+      deriveChatLocale(messages, (data.participant as { chat_locale?: unknown } | undefined)?.chat_locale),
+    [messages, data.participant, chatLocaleOverride],
   );
   const myPickup = firstPickup(snapshot.booking?.pickup_points);
   const guideLocation = Object.values(locations).find((l) => l.role === 'guide') ?? null;
@@ -679,7 +729,15 @@ function TourRoomLive({
             }))}
         />
       }
-      settings={<SettingsTab locale={locale} onLocaleChange={onLocaleChange} />}
+      settings={
+        <SettingsTab
+          locale={locale}
+          onLocaleChange={onLocaleChange}
+          {...(viewerRole === 'customer'
+            ? { chatLocale: chatLocaleOverride, onChatLocaleChange }
+            : {})}
+        />
+      }
       chat={
         <div className="flex min-h-0 flex-1 flex-col px-3 pt-2">
           {viewerRole === 'guide' && !readOnly && (

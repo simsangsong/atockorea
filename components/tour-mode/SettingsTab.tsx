@@ -11,6 +11,7 @@
 
 import type { ReactNode } from 'react';
 import { QUICK_REPLY_PRESETS } from '@/lib/tour-room/quickReplies';
+import { CHAT_LANGUAGES } from '@/lib/tour-room/languages';
 import { ROOM_LOCALES, type RoomLocale } from '@/lib/tour-room/snapshot';
 import { useTourRoomSettings } from '@/hooks/useTourRoomSettings';
 import {
@@ -31,6 +32,9 @@ const LOCALE_NAME: Record<RoomLocale, string> = {
 
 interface SettingsCopy {
   language: string;
+  chatLanguage: string;
+  chatLanguageHint: string;
+  chatAuto: string;
   theme: string;
   themeLight: string;
   themeDark: string;
@@ -47,6 +51,9 @@ interface SettingsCopy {
 const COPY: Record<RoomLocale, SettingsCopy> = {
   en: {
     language: 'My language',
+    chatLanguage: 'Chat language',
+    chatLanguageHint: 'Guide and driver messages are shown in this language.',
+    chatAuto: 'Auto (match my typing)',
     theme: 'Appearance',
     themeLight: 'Light',
     themeDark: 'Dark',
@@ -61,6 +68,9 @@ const COPY: Record<RoomLocale, SettingsCopy> = {
   },
   ko: {
     language: '내 언어',
+    chatLanguage: '채팅 언어',
+    chatLanguageHint: '가이드·기사 메시지를 이 언어로 보여줍니다.',
+    chatAuto: '자동 (내가 쓰는 언어)',
     theme: '화면 모드',
     themeLight: '라이트',
     themeDark: '다크',
@@ -75,6 +85,9 @@ const COPY: Record<RoomLocale, SettingsCopy> = {
   },
   ja: {
     language: '言語',
+    chatLanguage: 'チャット言語',
+    chatLanguageHint: 'ガイド・ドライバーのメッセージをこの言語で表示します。',
+    chatAuto: '自動（入力に合わせる）',
     theme: '画面モード',
     themeLight: 'ライト',
     themeDark: 'ダーク',
@@ -89,6 +102,9 @@ const COPY: Record<RoomLocale, SettingsCopy> = {
   },
   es: {
     language: 'Mi idioma',
+    chatLanguage: 'Idioma del chat',
+    chatLanguageHint: 'Los mensajes del guía y del conductor se muestran en este idioma.',
+    chatAuto: 'Automático (según lo que escribo)',
     theme: 'Apariencia',
     themeLight: 'Claro',
     themeDark: 'Oscuro',
@@ -103,6 +119,9 @@ const COPY: Record<RoomLocale, SettingsCopy> = {
   },
   zh: {
     language: '我的语言',
+    chatLanguage: '聊天语言',
+    chatLanguageHint: '导游和司机的消息将以此语言显示。',
+    chatAuto: '自动（按我的输入）',
     theme: '显示模式',
     themeLight: '浅色',
     themeDark: '深色',
@@ -169,10 +188,17 @@ function SegmentedControl<T extends string>({
 export default function SettingsTab({
   locale,
   onLocaleChange,
+  chatLocale,
+  onChatLocaleChange,
 }: {
   locale: RoomLocale;
   /** Also syncs the participant row server-side (translation targeting, D-8). */
   onLocaleChange: (locale: RoomLocale) => void;
+  /** The guest's chat-translation language ('' = auto-detect from typing). */
+  chatLocale?: string;
+  /** Any LLM language; sets participant.chat_locale so operator bubbles come in
+   *  it. Absent = the chat-language picker is hidden (non-guest surfaces). */
+  onChatLocaleChange?: (code: string) => void;
 }) {
   const { settings, update } = useTourRoomSettings();
   const copy = COPY[locale];
@@ -204,6 +230,29 @@ export default function SettingsTab({
           ))}
         </div>
       </section>
+
+      {onChatLocaleChange && (
+        <section className="tr-card p-4" data-testid="chat-language-section">
+          <h3 className="tr-card-text flex items-center gap-1.5 font-semibold text-[var(--tr-ink)]">
+            <IconLanguage size={15} className="text-[var(--tr-ink-3)]" aria-hidden />
+            {copy.chatLanguage}
+          </h3>
+          <p className="tr-meta mt-0.5 leading-snug text-[var(--tr-ink-2)]">{copy.chatLanguageHint}</p>
+          <select
+            value={chatLocale ?? ''}
+            onChange={(e) => onChatLocaleChange(e.target.value)}
+            className="tr-card-text mt-2.5 min-h-[44px] w-full rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] px-3 text-[var(--tr-ink)] focus:border-[var(--tr-accent)] focus:outline-none"
+            data-testid="chat-language-select"
+          >
+            <option value="">{copy.chatAuto}</option>
+            {CHAT_LANGUAGES.map((lang) => (
+              <option key={lang.code} value={lang.code}>
+                {lang.name}
+              </option>
+            ))}
+          </select>
+        </section>
+      )}
 
       <section className="tr-card p-4">
         <h3 className="tr-card-text flex items-center gap-1.5 font-semibold text-[var(--tr-ink)]">
