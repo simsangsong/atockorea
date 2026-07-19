@@ -74,6 +74,7 @@ import SettingsTab from '@/components/tour-mode/SettingsTab';
 import { useTourRoomSession, getOrCreateDeviceKey, type TourRoomJoinResult } from '@/hooks/useTourRoomSession';
 import { deriveChatLocale } from '@/lib/tour-room/chatLocale';
 import { useTourRoomChannel, type RoomMessage } from '@/hooks/useTourRoomChannel';
+import { buildReplySnapshot } from '@/lib/tour-room/reply';
 import { useTourRoomSettings } from '@/hooks/useTourRoomSettings';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { extensionForMime } from '@/lib/tour-room/recorder';
@@ -304,6 +305,12 @@ function TourRoomLive({
     messagesRef.current = messages;
   }, [messages]);
 
+  // Kakao-grade reply (Phase 2b): the message being replied to; threaded into
+  // the next send and cleared afterwards.
+  const [replyTo, setReplyTo] = useState<RoomMessage | null>(null);
+  const replyOpts = () =>
+    replyTo ? { replyToId: replyTo.id, replySnapshot: buildReplySnapshot(replyTo) } : undefined;
+
   // W5.1 — remember this room so the installed PWA's start_url (/tour-mode)
   // can jump straight back in; the stored room session makes rejoin seamless.
   useEffect(() => {
@@ -418,11 +425,12 @@ function TourRoomLive({
   // Kakao-grade attachment (Phase 2): send a photo/file as a message with an
   // optional (auto-translated) caption. It arrives back via the room channel.
   const sendAttachment = useCallback(
-    async (file: File, caption: string): Promise<boolean> => {
+    async (file: File, caption: string, replyToId?: string): Promise<boolean> => {
       try {
         const form = new FormData();
         form.append('attachment', file);
         if (caption) form.append('caption', caption);
+        if (replyToId) form.append('replyToId', replyToId);
         const res = await fetch(`/api/tour-rooms/${encodeURIComponent(bookingId)}/messages`, {
           method: 'POST',
           headers: { 'x-tour-room-auth': data.session },
@@ -653,6 +661,7 @@ function TourRoomLive({
             tts={{ bookingId, roomSession: data.session }}
             opsHighlightAfter={viewerRole === 'customer' ? sosSentAt : null}
             preferredLocale={viewerRole === 'customer' ? chatLocale : null}
+            onReply={!readOnly ? (m) => setReplyTo(m) : undefined}
             onExtraConfirm={
               viewerRole === 'customer' && !readOnly
                 ? async (extraId) => {
@@ -691,11 +700,23 @@ function TourRoomLive({
           {!readOnly && (
             <Composer
               locale={locale}
-              onSendText={(text) => void sendText(text)}
-              onSendPreset={(preset) => void sendPreset(preset, locale)}
+              onSendText={(text) => {
+                void sendText(text, replyOpts());
+                setReplyTo(null);
+              }}
+              onSendPreset={(preset) => {
+                void sendPreset(preset, locale, replyOpts());
+                setReplyTo(null);
+              }}
               transcribeVoice={transcribeVoice}
               vision={{ ask: visionAsk }}
-              onSendAttachment={sendAttachment}
+              onSendAttachment={(file, caption) => {
+                const promise = sendAttachment(file, caption, replyTo?.id);
+                setReplyTo(null);
+                return promise;
+              }}
+              replyTo={replyTo ? buildReplySnapshot(replyTo) : null}
+              onCancelReply={() => setReplyTo(null)}
             />
           )}
         </div>
