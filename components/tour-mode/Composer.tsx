@@ -25,7 +25,8 @@ import {
   MAX_RECORDING_MS,
   type ActiveRecording,
 } from '@/lib/tour-room/recorder';
-import { primeAudio } from '@/lib/tour-room/tts';
+import { isDeviceSttSupported, startDeviceStt, type DeviceSttHandle } from '@/lib/tour-room/deviceStt';
+import { primeAudio, TTS_LANG } from '@/lib/tour-room/tts';
 import { useTourRoomSettings } from '@/hooks/useTourRoomSettings';
 import {
   IconAsk,
@@ -149,6 +150,12 @@ export default function Composer({
   const [elapsedMs, setElapsedMs] = useState(0);
   const [voiceNote, setVoiceNote] = useState<string | null>(null);
   const [confirmHint, setConfirmHint] = useState(false);
+  // Device STT (Web Speech) is preferred when the browser supports it — the
+  // transcript lands instantly with no server round trip; `interim` streams the
+  // live words. `recMode` says which engine the current capture uses.
+  const [recMode, setRecMode] = useState<'device' | 'audio'>('audio');
+  const [interim, setInterim] = useState('');
+  const deviceRef = useRef<DeviceSttHandle | null>(null);
   const cooldowns = useRef<Map<string, number>>(new Map());
   const recordingRef = useRef<ActiveRecording | null>(null);
   const inputRef = useRef<HTMLTextAreaElement | null>(null);
@@ -200,10 +207,19 @@ export default function Composer({
 
   const [voiceSupported, setVoiceSupported] = useState(false);
   useEffect(() => {
-    setVoiceSupported(Boolean(transcribeVoice) && isVoiceRecordingSupported());
+    // Post-mount capability probe (window-only APIs) — kept out of the initial
+    // render for hydration safety; nested so it isn't a bare effect-body setState.
+    const detect = () => setVoiceSupported(Boolean(transcribeVoice) && isVoiceRecordingSupported());
+    detect();
   }, [transcribeVoice]);
 
-  useEffect(() => () => recordingRef.current?.cancel(), []);
+  useEffect(
+    () => () => {
+      recordingRef.current?.cancel();
+      deviceRef.current?.cancel();
+    },
+    [],
+  );
 
   const copy = VOICE_COPY[locale];
 
@@ -247,6 +263,26 @@ export default function Composer({
     }
   };
 
+  // Confirm-before-send contract, shared by both engines: auto-send only when
+  // the user opted out AND nothing flagged the transcript; otherwise the text
+  // lands in the input for review (T2.2). Device STT is never server-flagged.
+  const applyTranscript = useCallback(
+    (text: string, needsConfirmation: boolean) => {
+      if (!text) {
+        setVoiceNote(copy.sttFailed);
+        return;
+      }
+      if (!settings.voiceConfirm && !needsConfirmation) {
+        onSendText(text);
+        return;
+      }
+      setDraft(text);
+      setConfirmHint(true);
+      inputRef.current?.focus();
+    },
+    [settings.voiceConfirm, onSendText, copy.sttFailed],
+  );
+
   const finishClip = useCallback(
     async (clip: { blob: Blob; mimeType: string } | null) => {
       recordingRef.current = null;
@@ -257,27 +293,33 @@ export default function Composer({
       setVoiceState('transcribing');
       const result = await transcribeVoice(clip.blob, clip.mimeType);
       setVoiceState('idle');
-      if (!result || !result.text) {
-        setVoiceNote(copy.sttFailed);
-        return;
-      }
-      // Auto-send only when the user opted out of confirmation AND the
-      // server did not flag the transcript (T2.2 revised).
-      if (!settings.voiceConfirm && !result.needsConfirmation) {
-        onSendText(result.text);
-        return;
-      }
-      setDraft(result.text);
-      setConfirmHint(true);
-      inputRef.current?.focus();
+      applyTranscript(result?.text ?? '', Boolean(result?.needsConfirmation));
     },
-    [transcribeVoice, settings.voiceConfirm, onSendText, copy.sttFailed],
+    [transcribeVoice, applyTranscript],
   );
 
   const startRecording = useCallback(async () => {
     primeAudio();
     setVoiceNote(null);
     setConfirmHint(false);
+    setInterim('');
+    // Preferred: device STT (free, instant, no upload). The transcript flows
+    // through the same confirm-before-send path as the server result.
+    if (isDeviceSttSupported()) {
+      setRecMode('device');
+      setVoiceState('recording');
+      deviceRef.current = startDeviceStt({
+        lang: TTS_LANG[locale] ?? 'en-US',
+        onPartial: setInterim,
+        onFinal: (text) => {
+          deviceRef.current = null;
+          setVoiceState('idle');
+          applyTranscript(text, false);
+        },
+      });
+      return;
+    }
+    setRecMode('audio');
     try {
       const recording = await startVoiceRecording({
         onLevel: setLevel,
@@ -291,7 +333,24 @@ export default function Composer({
     } catch {
       setVoiceNote(copy.micDenied);
     }
-  }, [finishClip, copy.micDenied]);
+  }, [finishClip, copy.micDenied, locale, applyTranscript]);
+
+  const stopRecording = useCallback(() => {
+    if (recMode === 'device') deviceRef.current?.stop();
+    else recordingRef.current?.stop();
+  }, [recMode]);
+
+  const cancelRecording = useCallback(() => {
+    if (recMode === 'device') {
+      deviceRef.current?.cancel();
+      deviceRef.current = null;
+    } else {
+      recordingRef.current?.cancel();
+      recordingRef.current = null;
+    }
+    setInterim('');
+    setVoiceState('idle');
+  }, [recMode]);
 
   if (disabled) return null;
 
@@ -398,38 +457,45 @@ export default function Composer({
       <div className="tr-hairline-t bg-[var(--tr-surface)] px-3 py-2">
         {voiceState === 'recording' ? (
           <div className="flex items-center gap-3 rounded-[var(--tr-radius-input)] bg-[var(--tr-danger-soft)] px-4 py-2.5" data-testid="recording-bar">
-            <span className="h-2.5 w-2.5 animate-pulse rounded-full bg-[var(--tr-danger)]" />
-            <span
-              className={`tr-label font-semibold tabular-nums ${
-                nearCeiling ? 'text-[var(--tr-danger)]' : 'text-[var(--tr-ink)]'
-              }`}
-            >
-              {timer}
-            </span>
-            <div className="flex h-6 flex-1 items-center gap-0.5" aria-hidden>
-              {Array.from({ length: 16 }, (_, i) => (
+            <span className="h-2.5 w-2.5 shrink-0 animate-pulse rounded-full bg-[var(--tr-danger)]" />
+            {recMode === 'device' ? (
+              <p
+                className="tr-label min-w-0 flex-1 truncate font-medium text-[var(--tr-ink)]"
+                data-testid="recording-interim"
+              >
+                {interim || copy.transcribing}
+              </p>
+            ) : (
+              <>
                 <span
-                  key={i}
-                  className="w-1 rounded-full bg-[var(--tr-danger)] opacity-80 transition-all duration-75"
-                  style={{ height: `${Math.max(15, Math.min(100, level * 100 * (0.6 + 0.4 * Math.sin(i * 1.7 + level * 8))))}%` }}
-                />
-              ))}
-            </div>
+                  className={`tr-label font-semibold tabular-nums ${
+                    nearCeiling ? 'text-[var(--tr-danger)]' : 'text-[var(--tr-ink)]'
+                  }`}
+                >
+                  {timer}
+                </span>
+                <div className="flex h-6 flex-1 items-center gap-0.5" aria-hidden>
+                  {Array.from({ length: 16 }, (_, i) => (
+                    <span
+                      key={i}
+                      className="w-1 rounded-full bg-[var(--tr-danger)] opacity-80 transition-all duration-75"
+                      style={{ height: `${Math.max(15, Math.min(100, level * 100 * (0.6 + 0.4 * Math.sin(i * 1.7 + level * 8))))}%` }}
+                    />
+                  ))}
+                </div>
+              </>
+            )}
             <button
               type="button"
-              onClick={() => {
-                recordingRef.current?.cancel();
-                recordingRef.current = null;
-                setVoiceState('idle');
-              }}
-              className="tr-label min-h-[40px] rounded-full px-3 font-medium text-[var(--tr-ink-2)]"
+              onClick={cancelRecording}
+              className="tr-label min-h-[40px] shrink-0 rounded-full px-3 font-medium text-[var(--tr-ink-2)]"
             >
               {copy.cancel}
             </button>
             <button
               type="button"
-              onClick={() => recordingRef.current?.stop()}
-              className="tr-label flex min-h-[40px] items-center gap-1 rounded-full bg-[var(--tr-danger)] px-4 font-semibold text-white"
+              onClick={stopRecording}
+              className="tr-label flex min-h-[40px] shrink-0 items-center gap-1 rounded-full bg-[var(--tr-danger)] px-4 font-semibold text-white"
               data-testid="recording-done"
             >
               <IconDone size={14} aria-hidden />
