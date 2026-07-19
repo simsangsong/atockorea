@@ -155,6 +155,12 @@ export const CONCIERGE_COPY: Record<
     thinking: string;
     error: string;
     send: string;
+    /** A1 — first-visit tooltip on the header button. */
+    hint: string;
+    /** A1 — chat-tab entry row label ("ask the Smart Guide"). */
+    entryRow: string;
+    /** C — label on an AI answer shown only on the asker's own screen. */
+    aiLabel: string;
   }
 > = {
   en: {
@@ -164,6 +170,9 @@ export const CONCIERGE_COPY: Record<
     thinking: 'Checking…',
     error: 'Something went wrong — please try again or ask your guide.',
     send: 'Ask',
+    hint: 'Ask me anything',
+    entryRow: 'Ask the Smart Guide',
+    aiLabel: 'Smart Guide · AI',
   },
   ko: {
     title: '스마트 가이드',
@@ -172,6 +181,9 @@ export const CONCIERGE_COPY: Record<
     thinking: '확인 중…',
     error: '문제가 발생했어요 — 다시 시도하거나 가이드에게 물어보세요.',
     send: '질문',
+    hint: '무엇이든 물어보세요',
+    entryRow: '스마트 가이드에게 물어보기',
+    aiLabel: '스마트 가이드 · AI',
   },
   ja: {
     title: 'スマートガイド',
@@ -180,6 +192,9 @@ export const CONCIERGE_COPY: Record<
     thinking: '確認中…',
     error: 'エラーが発生しました — もう一度試すか、ガイドにお尋ねください。',
     send: '質問',
+    hint: '何でも聞いてください',
+    entryRow: 'スマートガイドに質問',
+    aiLabel: 'スマートガイド · AI',
   },
   es: {
     title: 'Guía inteligente',
@@ -188,6 +203,9 @@ export const CONCIERGE_COPY: Record<
     thinking: 'Consultando…',
     error: 'Algo salió mal — inténtalo de nuevo o pregunta a tu guía.',
     send: 'Preguntar',
+    hint: 'Pregúntame lo que sea',
+    entryRow: 'Pregunta a la Guía inteligente',
+    aiLabel: 'Guía inteligente · IA',
   },
   zh: {
     title: '智能向导',
@@ -196,6 +214,9 @@ export const CONCIERGE_COPY: Record<
     thinking: '查询中…',
     error: '出了点问题 — 请重试或询问导游。',
     send: '提问',
+    hint: '有问题尽管问',
+    entryRow: '向智能向导提问',
+    aiLabel: '智能向导 · AI',
   },
 };
 

@@ -88,6 +88,15 @@ export interface RoomShellHomeApi {
   chatUnread: boolean;
 }
 
+/**
+ * A1 — what the chat tab can drive on the shell. Lets the chat's own Smart
+ * Guide entry row open the (shell-owned) concierge sheet from where the guest
+ * is already typing, without lifting the sheet's open state out of the shell.
+ */
+export interface RoomShellChatApi {
+  openConcierge: () => void;
+}
+
 interface ScheduleItem {
   time?: string;
   departure_time?: string;
@@ -104,6 +113,9 @@ const BASE_TABS: Array<{ key: RoomTab; Icon: typeof IconTabChat }> = [
 ];
 
 const HOME_TABS: Array<{ key: RoomTab; Icon: typeof IconTabChat }> = [{ key: 'home', Icon: IconTabHome }, ...BASE_TABS];
+
+/** A1 — device-scoped flag: the guest has opened the Smart Guide at least once. */
+const CONCIERGE_SEEN_KEY = 'tour_mode_concierge_seen';
 
 /**
  * U6.1 — index of the schedule item currently underway: the last stop whose
@@ -155,8 +167,9 @@ export default function RoomShell({
   connection: RoomConnection;
   locale: RoomLocale;
   schedule: ScheduleItem[];
-  /** Chat tab content (feed + composer), supplied by the page. */
-  chat: ReactNode;
+  /** Chat tab content (feed + composer), supplied by the page. A render
+   *  function receives the chat API (A1 — open the concierge sheet). */
+  chat: ReactNode | ((api: RoomShellChatApi) => ReactNode);
   /** Settings tab content (T1.12), supplied by the page. */
   settings: ReactNode;
   /** T2.8 — live caption / notice banners, floating over every tab. */
@@ -183,6 +196,10 @@ export default function RoomShell({
   const [tab, setTab] = useState<RoomTab>(initialTab ?? (home ? 'home' : 'chat'));
   const [emergencyOpen, setEmergencyOpen] = useState(false);
   const [conciergeOpen, setConciergeOpen] = useState(false);
+  // A1 — first-visit pulse on the concierge button. Defaults to no pulse to
+  // avoid an SSR flash; an effect turns it on only for a guest who has never
+  // opened the Smart Guide (localStorage-gated, once per device).
+  const [conciergePulse, setConciergePulse] = useState(false);
   const [chatUnread, setChatUnread] = useState(false);
   const keyboardOpen = useKeyboardOpen();
   const badge = LIFECYCLE_BADGE[lifecycle] ?? LIFECYCLE_BADGE.live;
@@ -194,6 +211,34 @@ export default function RoomShell({
     const id = window.setInterval(() => setNowMs(Date.now()), 60_000);
     return () => window.clearInterval(id);
   }, []);
+
+  // A1 — light the first-visit pulse only when the Smart Guide exists and the
+  // guest has never opened it on this device.
+  useEffect(() => {
+    if (!concierge) return;
+    // Nested so the effect body doesn't call setState directly (a cascading-
+    // render lint guard); localStorage is client-only, hence the effect.
+    const lightPulseIfUnseen = () => {
+      try {
+        if (window.localStorage.getItem(CONCIERGE_SEEN_KEY) !== '1') setConciergePulse(true);
+      } catch {
+        /* private mode — no pulse, no harm */
+      }
+    };
+    lightPulseIfUnseen();
+  }, [concierge]);
+
+  // Single opener (header button / chat entry row / home CTA) — opens the sheet
+  // and retires the first-visit pulse for good.
+  const openConcierge = () => {
+    setConciergeOpen(true);
+    setConciergePulse(false);
+    try {
+      window.localStorage.setItem(CONCIERGE_SEEN_KEY, '1');
+    } catch {
+      /* noop */
+    }
+  };
   const currentIndex = currentScheduleIndex(schedule, lifecycle, nowMs);
 
   // Unread dot: chat activity while another tab is up. Refs update in effects,
@@ -261,15 +306,32 @@ export default function RoomShell({
             )}
           </div>
           {concierge && (
-            <button
-              type="button"
-              onClick={() => setConciergeOpen(true)}
-              aria-label={CONCIERGE_COPY[locale].title}
-              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-[var(--tr-accent-deep)] active:bg-[var(--tr-accent-soft)]"
-              data-testid="concierge-open"
-            >
-              <IconConcierge size={21} strokeWidth={2} />
-            </button>
+            <div className="relative shrink-0">
+              <button
+                type="button"
+                onClick={openConcierge}
+                aria-label={CONCIERGE_COPY[locale].title}
+                className="relative flex h-11 w-11 items-center justify-center rounded-full text-[var(--tr-accent-deep)] active:bg-[var(--tr-accent-soft)]"
+                data-testid="concierge-open"
+              >
+                {conciergePulse && (
+                  <span
+                    className="tr-concierge-pulse absolute inset-1 rounded-full bg-[var(--tr-accent-soft)]"
+                    aria-hidden
+                  />
+                )}
+                <IconConcierge size={21} strokeWidth={2} className="relative" />
+              </button>
+              {conciergePulse && (
+                <span
+                  className="tr-meta absolute right-0 top-full z-40 mt-1 whitespace-nowrap rounded-full bg-[var(--tr-accent)] px-2.5 py-1 font-medium text-[var(--tr-bubble-me-ink)] shadow-md"
+                  role="status"
+                  data-testid="concierge-hint"
+                >
+                  {CONCIERGE_COPY[locale].hint}
+                </span>
+              )}
+            </div>
           )}
           <button
             type="button"
@@ -300,13 +362,14 @@ export default function RoomShell({
               <div className="min-h-0 flex-1 overflow-y-auto px-3 py-3" data-testid="home-panel">
                 {home({
                   selectTab,
-                  openConcierge: () => setConciergeOpen(true),
+                  openConcierge,
                   openEmergency: () => setEmergencyOpen(true),
                   chatUnread,
                 })}
               </div>
             )}
-            {tab === 'chat' && chat}
+            {tab === 'chat' &&
+              (typeof chat === 'function' ? chat({ openConcierge: () => setConciergeOpen(true) }) : chat)}
             {tab === 'map' && (
               <div className="flex min-h-0 flex-1 flex-col px-3 py-2">
                 {map ?? (

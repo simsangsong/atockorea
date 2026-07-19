@@ -330,9 +330,29 @@
   animation: tr-shimmer 1.4s ease-in-out infinite;
 }
 
+/* A1 — first-visit pulse behind the concierge button (retires once opened). */
+@keyframes tr-concierge-pulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+  70% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+.tr-concierge-pulse {
+  animation: tr-concierge-pulse 1.8s ease-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .tr-anim-bubble-in,
-  .tr-skeleton {
+  .tr-skeleton,
+  .tr-concierge-pulse {
     animation: none;
   }
 }
