@@ -47,6 +47,7 @@ import MicPrime from '@/components/tour-mode/MicPrime';
 import Sheet from '@/components/tour-mode/Sheet';
 import Cockpit, { type CockpitLifecycle, type CockpitRoom } from '@/components/tour-mode/cockpit/Cockpit';
 import { kstToday } from '@/lib/tour-room/time';
+import { OPERATOR_PRESETS } from '@/lib/tour-room/operatorPresets';
 import { primeAudio } from '@/lib/tour-room/tts';
 import { type RoomMessage } from '@/hooks/useTourRoomChannel';
 import {
@@ -92,8 +93,6 @@ interface DriveState {
   city: string | null;
 }
 
-/** One-tap Korean dispatch lines (auto-translated per guest server-side). */
-const BROADCAST_PRESETS = ['곧 출발합니다', '5분 뒤 출발합니다', '잠시 후 집합입니다', '여기서 잠시 쉬어갑니다'];
 
 /** P4 — the collapsed day-tools segment control. */
 const DAY_SEGMENTS = [
@@ -761,15 +760,19 @@ export default function GuideConsole() {
             </p>
           )}
           {voiceSupported && sttBookingId && <MicPrime variant="light" locale="ko" className="mt-2" />}
-          <div className="mt-2 flex flex-wrap gap-1.5">
-            {BROADCAST_PRESETS.map((phrase) => (
+          {/* T3-4 — one-tap situational presets: zero-LLM (instant, resilient),
+              sent to the whole vehicle. Editable free text stays above. */}
+          <div className="mt-2 flex flex-wrap gap-1.5" data-testid="operator-presets">
+            {OPERATOR_PRESETS.map((preset) => (
               <button
-                key={phrase}
+                key={preset.key}
                 type="button"
-                onClick={() => setDraft(phrase)}
-                className="tr-meta rounded-full border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2.5 py-1 font-medium text-[var(--tr-ink-2)] active:scale-95"
+                disabled={busy === `op-${preset.key}`}
+                onClick={() => void send({ operatorPresetKey: preset.key }, `op-${preset.key}`)}
+                className="tr-meta rounded-full border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2.5 py-1 font-medium text-[var(--tr-ink-2)] active:scale-95 disabled:opacity-40"
+                data-testid={`operator-preset-${preset.key}`}
               >
-                {phrase}
+                {preset.emoji} {preset.text.ko}
               </button>
             ))}
           </div>

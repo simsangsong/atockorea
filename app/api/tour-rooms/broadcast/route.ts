@@ -7,6 +7,7 @@ import { translateTextForLocales } from '@/lib/openai-server';
 import { broadcastToRoom } from '@/lib/tour-room/realtime';
 import { sendGuestRoomPush } from '@/lib/tour-room/guestPush';
 import { getQuickReplyPreset } from '@/lib/tour-room/quickReplies';
+import { getOperatorPreset } from '@/lib/tour-room/operatorPresets';
 import { renderSpotEventTranslations } from '@/lib/tour-room/spotContent';
 import { ROOM_LOCALES } from '@/lib/tour-room/snapshot';
 import { pregenerateGuideNoticeTts, type TtsStorageClient } from '@/lib/tour-room/tts-server';
@@ -89,6 +90,18 @@ export async function POST(req: NextRequest) {
       translations = { ...preset.text };
       sourceLocale = 'en';
       messageMetadata = { ...messageMetadata, kind: 'quick_reply', preset_key: preset.key };
+    }
+
+    // T3-4 — operator situational preset (따라오세요 / 여기서 표 사세요 / …). Also
+    // zero-LLM (pre-translated), announced to the whole vehicle via the fan-out.
+    const operatorPresetKey = typeof body.operatorPresetKey === 'string' ? body.operatorPresetKey : null;
+    if (operatorPresetKey) {
+      const preset = getOperatorPreset(operatorPresetKey);
+      if (!preset) return NextResponse.json({ error: 'Unknown operator preset' }, { status: 400 });
+      text = preset.text.en;
+      translations = { ...preset.text };
+      sourceLocale = 'en';
+      messageMetadata = { ...messageMetadata, kind: 'operator_preset', preset_key: preset.key };
     }
 
     // T6.3/T6.5 — structured notices: zero-LLM template constants; the time
@@ -184,7 +197,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'No bookings on this tour date' }, { status: 404 });
     }
 
-    if (!presetKey && !notice) {
+    if (!presetKey && !operatorPresetKey && !notice) {
       const targetLocales = [
         ...new Set([
           ...bookings.map((booking) => String(booking.preferred_language || '')).filter(Boolean),
