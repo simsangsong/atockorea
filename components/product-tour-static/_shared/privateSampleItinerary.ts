@@ -249,8 +249,16 @@ const JEJU_CONFIG: PrivateSampleItineraryConfig = {
     ),
   ],
   rulesTitle: { ko: "프라이빗 투어 안내", en: "Private Tour Guidelines" },
-  // No region surcharge specified for Jeju — common private-tour rules only.
-  rules: [...COMMON_PRIVATE_RULES],
+  rules: [
+    ...COMMON_PRIVATE_RULES,
+    {
+      emphasis: true,
+      text: {
+        ko: "제주시 외 지역에서 픽업 또는 드롭하는 경우 60,000원이 추가됩니다 (예약 시 결제 또는 당일 현금).",
+        en: "Pickup or drop-off outside Jeju City adds ₩60,000 (paid at booking or in cash on the day).",
+      },
+    },
+  ],
 };
 
 /**
