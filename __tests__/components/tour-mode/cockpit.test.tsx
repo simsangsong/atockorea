@@ -165,6 +165,39 @@ describe('shared Cockpit', () => {
     expect(screen.queryByTestId('cockpit-retry-failed')).not.toBeInTheDocument();
   });
 
+  // TIER 1 T1-2 — the driver settles their own advanced expense from the cockpit
+  // (guide-less private tour), not only from the guide panel.
+  it('lists the driver own unsettled expenses and settles on tap', async () => {
+    const fetchMock = jest.fn().mockImplementation((url: string, opts?: { method?: string }) => {
+      if (String(url).includes('/extras') && !opts?.method) {
+        return Promise.resolve({
+          ok: true,
+          json: async () => ({
+            extras: [{ id: 'e-1', item: '입장권 4매', amount_krw: 48000, payer: 'driver', kind: 'ticket', status: 'confirmed' }],
+          }),
+        });
+      }
+      return Promise.resolve({ ok: true, json: async () => ({}) });
+    });
+    const origFetch = global.fetch;
+    global.fetch = fetchMock as unknown as typeof fetch;
+    try {
+      render(<Cockpit {...base} />);
+      fireEvent.click(screen.getByTestId('driver-action-expense'));
+      const settle = await screen.findByTestId('cockpit-settle-extra');
+      expect(screen.getByTestId('cockpit-settle-list')).toHaveTextContent('입장권');
+      fireEvent.click(settle);
+      await waitFor(() =>
+        expect(fetchMock).toHaveBeenCalledWith(
+          expect.stringContaining('/extras'),
+          expect.objectContaining({ method: 'PATCH' }),
+        ),
+      );
+    } finally {
+      global.fetch = origFetch;
+    }
+  });
+
   // TIER 0 P1 — the audio fallback (webview / no device STT) transcribes via
   // /stt and shows the text BEFORE sending; a flagged transcript needs an
   // explicit send so a mistranscription never fans out unseen.

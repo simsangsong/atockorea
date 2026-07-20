@@ -29,7 +29,7 @@ const COPY: Record<
     confirm: 'Confirm',
     confirming: 'Confirming…',
     status: { logged: 'Awaiting your confirm', confirmed: 'Confirmed', settled: 'Settled in cash', voided: 'Cancelled' },
-    kind: { advance: 'Paid on your behalf', extension: 'Extension', parking: 'Parking', other: 'Expense' },
+    kind: { advance: 'Paid on your behalf', ticket: 'Admission ticket', overtime: 'Overtime', extension: 'Extension', parking: 'Parking', pickup: 'Pickup fee', other: 'Expense' },
   },
   ko: {
     title: '여행 지출',
@@ -37,7 +37,7 @@ const COPY: Record<
     confirm: '확인',
     confirming: '확인 중…',
     status: { logged: '확인 대기', confirmed: '확인됨', settled: '현금 수취 완료', voided: '취소됨' },
-    kind: { advance: '대납', extension: '연장', parking: '주차', other: '지출' },
+    kind: { advance: '대납', ticket: '입장권', overtime: '초과근무', extension: '연장', parking: '주차', pickup: '픽업비', other: '지출' },
   },
   ja: {
     title: '旅行中の支出',
@@ -45,7 +45,7 @@ const COPY: Record<
     confirm: '確認',
     confirming: '確認中…',
     status: { logged: 'ご確認待ち', confirmed: '確認済み', settled: '現金受領済み', voided: '取消' },
-    kind: { advance: '立替', extension: '延長', parking: '駐車', other: '支出' },
+    kind: { advance: '立替', ticket: '入場券', overtime: '延長勤務', extension: '延長', parking: '駐車', pickup: '送迎料', other: '支出' },
   },
   es: {
     title: 'Gasto del viaje',
@@ -53,7 +53,7 @@ const COPY: Record<
     confirm: 'Confirmar',
     confirming: 'Confirmando…',
     status: { logged: 'Pendiente de confirmar', confirmed: 'Confirmado', settled: 'Liquidado en efectivo', voided: 'Cancelado' },
-    kind: { advance: 'Pagado por ti', extension: 'Extensión', parking: 'Parking', other: 'Gasto' },
+    kind: { advance: 'Pagado por ti', ticket: 'Entrada', overtime: 'Horas extra', extension: 'Extensión', parking: 'Parking', pickup: 'Recogida', other: 'Gasto' },
   },
   zh: {
     title: '行程支出',
@@ -61,7 +61,7 @@ const COPY: Record<
     confirm: '确认',
     confirming: '确认中…',
     status: { logged: '待您确认', confirmed: '已确认', settled: '已现金结清', voided: '已取消' },
-    kind: { advance: '代付', extension: '延长', parking: '停车', other: '支出' },
+    kind: { advance: '代付', ticket: '门票', overtime: '超时', extension: '延长', parking: '停车', pickup: '接送费', other: '支出' },
   },
 };
 
