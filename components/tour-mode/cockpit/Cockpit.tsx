@@ -26,6 +26,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useTourRoomChannel, type RoomMessage } from '@/hooks/useTourRoomChannel';
 import { startVoiceRecording } from '@/lib/tour-room/recorder';
 import { isDeviceSttSupported, startDeviceStt } from '@/lib/tour-room/deviceStt';
+import { primeAudio } from '@/lib/tour-room/tts';
 import MicPrime from '@/components/tour-mode/MicPrime';
 import OperatorAssist from '@/components/tour-mode/guide/OperatorAssist';
 import LocationPreview from '@/components/tour-mode/LocationPreview';
@@ -67,11 +68,16 @@ const UNDO_WINDOW_MS = 2400;
 export const OPS_PHONE = process.env.NEXT_PUBLIC_TOUR_OPS_PHONE ?? '';
 const VAPID_PUBLIC = process.env.NEXT_PUBLIC_WEB_PUSH_VAPID_PUBLIC_KEY ?? '';
 
-/** What a finished voice capture will send: recognized text (device STT) or an
- *  audio clip to transcribe server-side (fallback). */
-type PendingVoice =
-  | { kind: 'text'; text: string }
-  | { kind: 'audio'; blob: Blob; mimeType: string };
+/** What a finished voice capture will send. Both device STT and the audio
+ *  fallback (server-transcribed before this point) resolve to reviewable text;
+ *  `confirm` forces an explicit send when the transcript was flagged low-
+ *  confidence, so a mistranscription never auto-fans-out unseen. */
+type PendingVoice = { kind: 'text'; text: string; confirm?: boolean };
+
+/** A header-only silent WAV — playing it inside a user gesture unlocks the
+ *  HTMLMediaElement audio channel on iOS Safari (WebAudio priming alone does
+ *  not), so the first incoming guest message autoplays hands-free. */
+const SILENT_WAV = 'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAiBUAABArAAACABAAZGF0YQAAAAA=';
 
 export type CockpitLifecycle = 'lobby' | 'live' | 'ended';
 
@@ -204,17 +210,27 @@ export default function Cockpit({
   onExit?: () => void;
 }) {
   useWakeLock(true);
-  const { messages, connection } = useTourRoomChannel({
+  const {
+    messages,
+    connection,
+    // Optimistic echo + localStorage unsent-queue + retry (parity with the
+    // guest side): the operator sees their own bubble instantly and a failed
+    // send is held for retry instead of silently lost on flaky field data.
+    sendText: sendChannelText,
+    retryFailed,
+    failedCount,
+  } = useTourRoomChannel({
     bookingId,
     channelTopic,
     roomSession: session,
     initialMessages,
+    senderRole: 'driver',
   });
 
   // Voice is a small phase machine: idle → recording → pending (undo window) →
   // sending → idle. Device STT (Web Speech) is preferred; audio upload is the
   // fallback. `recMode` picks which the current capture is.
-  const [phase, setPhase] = useState<'idle' | 'recording' | 'pending' | 'sending'>('idle');
+  const [phase, setPhase] = useState<'idle' | 'recording' | 'transcribing' | 'pending' | 'sending'>('idle');
   const [recMode, setRecMode] = useState<'device' | 'audio'>('audio');
   const [level, setLevel] = useState(0);
   const [interim, setInterim] = useState('');
@@ -233,6 +249,37 @@ export default function Cockpit({
   const playedRef = useRef<Set<string>>(new Set(initialMessages.map((message) => message.id)));
   const audioQueueRef = useRef<string[]>([]);
   const playingRef = useRef(false);
+  // One reusable, gesture-unlocked <audio> element for incoming TTS (T0-5).
+  const warmAudioRef = useRef<HTMLAudioElement | null>(null);
+  const mediaPrimedRef = useRef(false);
+
+  // Unlock the media channel inside a user gesture: play a silent clip on the
+  // element we later reuse for TTS. On iOS Safari only the element that played
+  // during a gesture may be played programmatically afterwards — a fresh
+  // `new Audio(url)` per message stays blocked, so the pure driver never heard
+  // the first guest message. Also primes WebAudio for the device-STT ladder.
+  const primeMedia = useCallback(() => {
+    primeAudio();
+    if (mediaPrimedRef.current || typeof window === 'undefined') return;
+    mediaPrimedRef.current = true;
+    try {
+      const el = warmAudioRef.current ?? new Audio();
+      warmAudioRef.current = el;
+      el.src = SILENT_WAV;
+      const played = el.play();
+      if (played && typeof played.then === 'function') {
+        played.then(
+          () => {
+            el.pause();
+            el.currentTime = 0;
+          },
+          () => undefined,
+        );
+      }
+    } catch {
+      /* priming is best-effort; playback failures surface as the text bubble */
+    }
+  }, []);
 
   const say = useCallback((text: string) => {
     setToast(text);
@@ -245,15 +292,31 @@ export default function Cockpit({
     const url = audioQueueRef.current.shift();
     if (!url) return;
     playingRef.current = true;
-    const audio = new Audio(url);
+    // Reuse the gesture-unlocked element (T0-5); a fresh one is fine off iOS.
+    const audio = warmAudioRef.current ?? new Audio();
+    warmAudioRef.current = audio;
+    audio.src = url;
     audio.onended = audio.onerror = () => {
       playingRef.current = false;
       playNext();
     };
-    void audio.play().catch(() => {
-      playingRef.current = false;
-    });
+    const played = audio.play();
+    if (played && typeof played.catch === 'function') {
+      played.catch(() => {
+        playingRef.current = false;
+      });
+    }
   }, []);
+
+  // Prime the media channel on the first interaction inside the cockpit — the
+  // "운행 시작" tap lives in the parent, so the first tap here (mic, action, or
+  // anywhere) is the gesture that unlocks iOS autoplay.
+  useEffect(() => {
+    if (mediaPrimedRef.current) return undefined;
+    const onGesture = () => primeMedia();
+    document.addEventListener('pointerdown', onGesture, { once: true });
+    return () => document.removeEventListener('pointerdown', onGesture);
+  }, [primeMedia]);
 
   useEffect(() => {
     for (const message of messages) {
@@ -285,68 +348,40 @@ export default function Cockpit({
   }, [messages, bookingId, session, playNext]);
 
   // ── typed send — the always-available fallback (webview / quiet typing) ─
+  // Goes through the channel's optimistic path: the bubble appears instantly,
+  // and a failed send is queued (localStorage) for the retry banner instead of
+  // vanishing on flaky data (T0-4).
   const sendText = useCallback(async () => {
     const value = textDraft.trim();
     if (!value || textSending) return;
     setTextSending(true);
-    try {
-      const res = await fetch(`/api/tour-rooms/${bookingId}/messages`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'x-tour-room-auth': session },
-        body: JSON.stringify({ text: value }),
-      });
-      if (res.ok) {
-        setTextDraft('');
-        say('전송 완료 ✓');
-      } else {
-        say('전송 실패 — 다시 시도해 주세요');
-      }
-    } catch {
-      say('네트워크 오류 — 다시 시도해 주세요');
-    } finally {
-      setTextSending(false);
-    }
-  }, [bookingId, session, textDraft, textSending, say]);
+    setTextDraft(''); // the optimistic bubble now carries the text
+    const ok = await sendChannelText(value);
+    setTextSending(false);
+    if (!ok) say('전송 대기 — 아래 재전송을 눌러 주세요');
+  }, [textDraft, textSending, sendChannelText, say]);
 
   // ── hands-free voice send ──────────────────────────────────────────────
-  // One poster for both payloads: device-recognized text or an audio clip the
-  // server transcribes. Both land as the operator's message → translated → fanned out.
+  // The reviewed transcript (device STT text, or the audio fallback already
+  // transcribed via /stt) goes through the channel's optimistic path, so voice
+  // gets the same instant echo + failure queue as typed sends (T0-4).
   const sendVoice = useCallback(
     async (payload: PendingVoice) => {
       setPhase('sending');
-      try {
-        let res: Response;
-        if (payload.kind === 'text') {
-          res = await fetch(`/api/tour-rooms/${bookingId}/messages`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'x-tour-room-auth': session },
-            body: JSON.stringify({ text: payload.text }),
-          });
-        } else {
-          const form = new FormData();
-          const ext = payload.mimeType.includes('mp4') ? 'm4a' : 'webm';
-          form.append('audio', new File([payload.blob], `driver.${ext}`, { type: payload.mimeType }));
-          res = await fetch(`/api/tour-rooms/${bookingId}/messages`, {
-            method: 'POST',
-            headers: { 'x-tour-room-auth': session },
-            body: form,
-          });
-        }
-        say(res.ok ? '전송 완료 ✓' : '전송 실패 — 다시 말해 주세요');
-      } catch {
-        say('네트워크 오류 — 다시 말해 주세요');
-      } finally {
-        setPending(null);
-        setInterim('');
-        setPhase('idle');
-      }
+      const ok = await sendChannelText(payload.text);
+      setPending(null);
+      setInterim('');
+      setPhase('idle');
+      if (!ok) say('전송 대기 — 아래 재전송을 눌러 주세요');
     },
-    [bookingId, session, say],
+    [sendChannelText, say],
   );
 
-  // Undo-send window: a calm hold before the message goes (no numeric countdown).
+  // Undo-send window: a calm hold before the message goes (no numeric
+  // countdown). A low-confidence transcript (`confirm`) skips the auto-timer —
+  // it waits for an explicit send so a mistranscription never fans out unseen.
   useEffect(() => {
-    if (phase !== 'pending' || !pending) return;
+    if (phase !== 'pending' || !pending || pending.confirm) return;
     const payload = pending;
     const timer = window.setTimeout(() => void sendVoice(payload), UNDO_WINDOW_MS);
     return () => window.clearTimeout(timer);
@@ -358,9 +393,42 @@ export default function Cockpit({
     setPhase('idle');
   }, []);
 
+  // Audio fallback (webview / no device STT): transcribe the clip via /stt and
+  // surface the text for review BEFORE it sends (T0-3). The server flags a
+  // low-confidence transcript (needsConfirmation) → explicit-send in the
+  // pending step; a clean one flows through the calm auto-send undo window.
+  const transcribeClip = useCallback(
+    async (blob: Blob, mimeType: string) => {
+      try {
+        const form = new FormData();
+        const ext = mimeType.includes('mp4') ? 'm4a' : 'webm';
+        form.append('audio', new File([blob], `driver.${ext}`, { type: mimeType }));
+        const res = await fetch(`/api/tour-rooms/${bookingId}/stt`, {
+          method: 'POST',
+          headers: { 'x-tour-room-auth': session },
+          body: form,
+        });
+        const data = await res.json().catch(() => null);
+        const text = typeof data?.text === 'string' ? data.text.trim() : '';
+        if (res.ok && text) {
+          setPending({ kind: 'text', text, confirm: Boolean(data?.needsConfirmation) });
+          setPhase('pending');
+        } else {
+          setPhase('idle');
+          say('잘 못 알아들었어요 — 다시 말해 주세요');
+        }
+      } catch {
+        setPhase('idle');
+        say('네트워크 오류 — 다시 말해 주세요');
+      }
+    },
+    [bookingId, session, say],
+  );
+
   // Start capturing: prefer device STT (free, instant text), else record audio
-  // for server transcription. Same tap stops it.
+  // for server transcription. Same tap stops it. The tap also primes iOS audio.
   const startRecording = useCallback(() => {
+    primeMedia();
     setInterim('');
     if (isDeviceSttSupported()) {
       setRecMode('device');
@@ -389,8 +457,8 @@ export default function Cockpit({
           voiceRef.current = null;
           setLevel(0);
           if (clip && clip.blob.size > 0) {
-            setPending({ kind: 'audio', blob: clip.blob, mimeType: clip.mimeType });
-            setPhase('pending');
+            setPhase('transcribing');
+            void transcribeClip(clip.blob, clip.mimeType);
           } else {
             setPhase('idle');
           }
@@ -410,7 +478,7 @@ export default function Cockpit({
           say('마이크 권한을 허용해 주세요');
         });
     }
-  }, [say]);
+  }, [say, primeMedia, transcribeClip]);
 
   const stopRecording = useCallback(() => {
     voiceRef.current?.stop();
@@ -617,6 +685,13 @@ export default function Cockpit({
         {recent.map((message) => {
           const mine = message.sender_role === 'driver' || message.sender_role === 'guide';
           const system = message.sender_role === 'system' || message.sender_role === 'admin';
+          // Optimistic echo state (T0-4): dim while sending, outline on failure.
+          const localCls =
+            message._local === 'failed'
+              ? 'opacity-60 outline outline-1 outline-[var(--tr-danger)]'
+              : message._local === 'sending'
+                ? 'opacity-60'
+                : '';
           // A guest photo/file is a first-class message — render it, don't drop
           // it into an empty grey bubble. A caption (if any) rides below.
           const att = readMessageAttachment(message);
@@ -668,13 +743,13 @@ export default function Cockpit({
                 </div>
               ) : (
                 <div
-                  className={
+                  className={`${
                     mine
                       ? 'max-w-[85vw] rounded-3xl rounded-br-md bg-[var(--tr-bubble-me)] px-5 py-4 text-xl font-medium text-[var(--tr-bubble-me-ink)]'
                       : system
                         ? 'max-w-[85vw] rounded-2xl bg-[var(--tr-surface-2)] px-4 py-3 text-base text-[var(--tr-ink-2)]'
                         : 'max-w-[85vw] rounded-3xl rounded-bl-md bg-[var(--tr-surface-2)] px-5 py-4 text-2xl font-semibold text-[var(--tr-ink)]'
-                  }
+                  } ${localCls}`}
                 >
                   {text}
                 </div>
@@ -699,6 +774,19 @@ export default function Cockpit({
         @keyframes cockpit-shimmer { 0%, 100% { opacity: .45; } 50% { opacity: 1; } }
         .cockpit-shimmer { animation: cockpit-shimmer 1150ms ease-in-out infinite; }
       `}</style>
+
+      {/* failed-send retry (T0-4): queued on the device, one tap re-sends all. */}
+      {failedCount > 0 ? (
+        <button
+          type="button"
+          onClick={() => void retryFailed()}
+          className="mx-4 mb-1.5 flex items-center justify-center gap-2 rounded-2xl bg-[var(--tr-surface-2)] py-2.5 text-base font-bold text-[var(--tr-danger)] transition-transform active:scale-[0.99]"
+          data-testid="cockpit-retry-failed"
+        >
+          <TriangleAlert size={16} strokeWidth={2.25} aria-hidden />
+          전송 실패 {failedCount}건 · 다시 보내기
+        </button>
+      ) : null}
 
       {/* input dock — idle: type + mic; else elegant recording/undo/sending states */}
       {phase === 'idle' ? (
@@ -782,20 +870,49 @@ export default function Cockpit({
             ■ 말 끝났어요
           </button>
         </div>
+      ) : phase === 'transcribing' ? (
+        <div className="px-4 pb-2 pt-1.5">
+          <div
+            className="cockpit-shimmer w-full rounded-3xl bg-[var(--tr-surface-2)] py-4 text-center text-xl font-bold text-[var(--tr-ink-2)]"
+            data-testid="cockpit-transcribing"
+          >
+            인식 중…
+          </div>
+        </div>
       ) : phase === 'pending' ? (
         <div className="px-4 pb-2 pt-1.5">
-          {pending?.kind === 'text' ? (
-            <p className="mb-2 line-clamp-2 text-center text-xl font-medium text-[var(--tr-ink)]">“{pending.text}”</p>
-          ) : null}
-          <button
-            type="button"
-            onClick={cancelPending}
-            className="relative w-full overflow-hidden rounded-3xl bg-[var(--tr-surface-2)] py-4 transition-transform active:scale-[0.99]"
-            data-testid="cockpit-undo-send"
-          >
-            <span aria-hidden className="cockpit-fill absolute bottom-0 left-0 h-1.5 rounded-full bg-white/80" />
-            <span className="relative text-xl font-bold text-[var(--tr-ink)]">탭하여 취소</span>
-          </button>
+          <p className="mb-2 line-clamp-3 text-center text-xl font-medium text-[var(--tr-ink)]">“{pending?.text}”</p>
+          {pending?.confirm ? (
+            // Low-confidence transcript: explicit send, no auto-timer (T0-3).
+            <div className="grid grid-cols-2 gap-2">
+              <button
+                type="button"
+                onClick={cancelPending}
+                className="rounded-3xl bg-[var(--tr-surface-2)] py-4 text-xl font-bold text-[var(--tr-ink)] transition-transform active:scale-[0.99]"
+                data-testid="cockpit-cancel-send"
+              >
+                취소
+              </button>
+              <button
+                type="button"
+                onClick={() => pending && void sendVoice(pending)}
+                className="rounded-3xl bg-[var(--tr-bubble-me)] py-4 text-xl font-bold text-[var(--tr-bubble-me-ink)] transition-transform active:scale-[0.99]"
+                data-testid="cockpit-confirm-send"
+              >
+                보내기
+              </button>
+            </div>
+          ) : (
+            <button
+              type="button"
+              onClick={cancelPending}
+              className="relative w-full overflow-hidden rounded-3xl bg-[var(--tr-surface-2)] py-4 transition-transform active:scale-[0.99]"
+              data-testid="cockpit-undo-send"
+            >
+              <span aria-hidden className="cockpit-fill absolute bottom-0 left-0 h-1.5 rounded-full bg-white/80" />
+              <span className="relative text-xl font-bold text-[var(--tr-ink)]">탭하여 취소</span>
+            </button>
+          )}
         </div>
       ) : (
         <div className="px-4 pb-2 pt-1.5">

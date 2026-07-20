@@ -225,6 +225,13 @@ export interface UseTourRoomChannelOptions {
    * Italian preference and start receiving operator bubbles in Spanish.
    */
   chatLocale?: string;
+  /**
+   * The role this device's optimistic sends should render as. Guests are
+   * customers (default); the operator cockpit passes 'driver' so its own
+   * instant-echo bubble right-aligns as "mine" before the server row (with the
+   * server-authoritative role) replaces it by id.
+   */
+  senderRole?: string;
 }
 
 export interface UseTourRoomChannel {
@@ -537,7 +544,7 @@ export function useTourRoomChannel(options: UseTourRoomChannelOptions): UseTourR
 
   const makeOptimistic = (sourceText: string, extra?: Partial<RoomMessage>): RoomMessage => ({
     id: `local-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
-    sender_role: 'customer',
+    sender_role: options.senderRole ?? 'customer',
     source_text: sourceText,
     created_at: new Date().toISOString(),
     _local: 'sending',
