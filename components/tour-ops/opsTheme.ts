@@ -1,11 +1,11 @@
 'use client';
 
 /**
- * Ops console theme (사용자 요청 2026-07-18) — one persisted light/dark
- * switch for the WHOLE 관제센터: the OpsApp shell applies `.ops-light` on the
- * root and a globals.css override block remaps the console's dark utility
- * palette, so every tab (홈/대시보드/지도/SOS/설정) flips together; the room
- * manager reads the same key for its explicit palette. LIGHT is the default.
+ * Ops console theme (사용자 요청 2026-07-18) — one persisted light/dark switch
+ * for the WHOLE 관제센터. The OpsApp shell (and the room manager overlay) toggle
+ * `.dark` on their `.tr-root`, flipping the tr-* vars + `dark:` semantics so
+ * every tab (홈/대시보드/지도/SOS/설정) flips together. LIGHT is the default.
+ * (W1.2 — replaced the old `.ops-light` in-place utility remap.)
  */
 
 import { useCallback, useSyncExternalStore } from 'react';

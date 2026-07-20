@@ -131,7 +131,7 @@ export default function OpsDashboardTab({
     <div className="space-y-4 pb-4">
       {attention.length > 0 && (
         <section data-testid="ops-attention-queue">
-          <h2 className="px-1 pb-1.5 text-[13px] font-semibold text-amber-300">응대 필요 {attention.length}</h2>
+          <h2 className="px-1 pb-1.5 text-[13px] font-semibold text-amber-700 dark:text-amber-300">응대 필요 {attention.length}</h2>
           <div className="space-y-2">
             {attention.map((item) => {
               const room = roomById.get(item.roomId);
@@ -140,18 +140,18 @@ export default function OpsDashboardTab({
                   key={`${item.roomId}-${item.reason}`}
                   type="button"
                   onClick={() => onOpenRoom(item.roomId)}
-                  className="block w-full rounded-2xl border border-amber-500/40 bg-amber-950/30 px-4 py-3 text-left"
+                  className="block w-full rounded-2xl border border-amber-200 bg-amber-50 dark:border-amber-500/40 dark:bg-amber-950/30 px-4 py-3 text-left"
                 >
-                  <p className="flex items-center gap-2 text-[13px] font-semibold text-amber-200">
+                  <p className="flex items-center gap-2 text-[13px] font-semibold text-amber-700 dark:text-amber-200">
                     <span className="shrink-0 rounded-full bg-amber-500/20 px-2 py-0.5 text-[10px] font-bold">
                       {ATTENTION_LABELS[item.reason]}
                     </span>
                     <span className="truncate">{room?.booking?.contact_name ?? '게스트'}</span>
-                    <span className="ml-auto shrink-0 text-[10px] font-normal text-amber-400/70">
+                    <span className="ml-auto shrink-0 text-[10px] font-normal text-amber-600 dark:text-amber-400/70">
                       {kstTimeLabel(item.created_at)}
                     </span>
                   </p>
-                  {item.excerpt && <p className="mt-1 truncate text-[12px] text-amber-100/80">{item.excerpt}</p>}
+                  {item.excerpt && <p className="mt-1 truncate text-[12px] text-amber-700 dark:text-amber-100/80">{item.excerpt}</p>}
                 </button>
               );
             })}
@@ -195,7 +195,7 @@ export default function OpsDashboardTab({
                   onClick={() => onOpenRoom(room.id)}
                   className={`block w-full rounded-2xl border text-left transition-colors ${
                     sos
-                      ? 'border-red-500/60 bg-red-950/40 ring-1 ring-red-500/40'
+                      ? 'border-red-200 bg-red-50 ring-1 ring-red-200 dark:border-red-500/60 dark:bg-red-950/40 dark:ring-red-500/40'
                       : 'border-[var(--tr-hairline)] bg-[var(--tr-surface)] active:bg-[var(--tr-surface-2)]'
                   }`}
                   style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto 84px' }}
@@ -214,7 +214,7 @@ export default function OpsDashboardTab({
                           {room.booking?.number_of_guests ?? 1}명 · {room.booking?.preferred_language ?? 'en'}
                         </span>
                         {isLive && (
-                          <span className="ml-0.5 inline-flex shrink-0 items-center gap-1 rounded-full bg-emerald-500/15 px-1.5 py-0.5 text-[9px] font-bold text-emerald-400">
+                          <span className="ml-0.5 inline-flex shrink-0 items-center gap-1 rounded-full bg-emerald-500/15 px-1.5 py-0.5 text-[9px] font-bold text-emerald-700 dark:text-emerald-400">
                             <span className="size-1.5 rounded-full bg-emerald-400" />
                             LIVE
                           </span>
@@ -236,7 +236,7 @@ export default function OpsDashboardTab({
                     </div>
                   </div>
                   {sos && (
-                    <p className="border-t border-red-500/20 px-4 py-2 text-[12px] text-red-300">
+                    <p className="border-t border-red-500/20 px-4 py-2 text-[12px] text-red-600 dark:text-red-300">
                       {sos.metadata.sender_name && <b>{sos.metadata.sender_name}: </b>}
                       {sos.metadata.note ?? 'SOS 발생'}
                       {typeof sos.metadata.latitude === 'number' && ' · 📍 위치 포함'}

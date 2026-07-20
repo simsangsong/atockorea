@@ -196,7 +196,7 @@ export default function OpsRoomDrawer({
         </header>
 
         {sos && (
-          <div className="flex items-center gap-2 border-b border-red-500/30 bg-red-950/50 px-4 py-2.5 text-[12px] text-red-200">
+          <div className="flex items-center gap-2 border-b border-red-200 bg-red-50 px-4 py-2.5 text-[12px] text-red-700 dark:border-red-500/30 dark:bg-red-950/50 dark:text-red-200">
             <span className="animate-pulse">🆘</span>
             <span className="min-w-0 flex-1 truncate">
               {sos.metadata.sender_name && <b>{sos.metadata.sender_name}: </b>}
@@ -204,7 +204,7 @@ export default function OpsRoomDrawer({
             </span>
             {typeof sos.metadata.latitude === 'number' && (
               <a
-                className="flex h-11 shrink-0 items-center gap-1 rounded-lg bg-red-500/20 px-3 font-semibold text-red-100"
+                className="flex h-11 shrink-0 items-center gap-1 rounded-lg bg-red-500/20 px-3 font-semibold text-red-700 dark:text-red-100"
                 href={`https://maps.google.com/?q=${sos.metadata.latitude},${sos.metadata.longitude}`}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -228,7 +228,7 @@ export default function OpsRoomDrawer({
                     mine
                       ? `bg-blue-600 text-white ${message._local ? 'opacity-60' : ''}`
                       : message.sender_role === 'guide'
-                        ? 'bg-amber-500/15 text-amber-100'
+                        ? 'bg-amber-100 text-amber-800 dark:bg-amber-500/15 dark:text-amber-100'
                         : 'bg-[var(--tr-surface-2)] text-[var(--tr-ink)]'
                   }`}
                 >

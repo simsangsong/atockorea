@@ -123,11 +123,11 @@ export default function OpsHomeTab({
             <p
               className={`text-[17px] font-bold tabular-nums ${
                 tone === 'red' && value
-                  ? 'text-red-400'
+                  ? 'text-red-600 dark:text-red-400'
                   : tone === 'amber' && value
-                    ? 'text-amber-300'
+                    ? 'text-amber-700 dark:text-amber-300'
                     : tone === 'emerald' && value
-                      ? 'text-emerald-400'
+                      ? 'text-emerald-700 dark:text-emerald-400'
                       : 'text-[var(--tr-ink)]'
               }`}
             >
@@ -143,12 +143,12 @@ export default function OpsHomeTab({
         <button
           type="button"
           onClick={() => onNavigate('sos')}
-          className="flex w-full items-center justify-between rounded-2xl border border-red-500/50 bg-red-950/40 px-4 py-3 text-left"
+          className="flex w-full items-center justify-between rounded-2xl border border-red-200 bg-red-50 dark:border-red-500/50 dark:bg-red-950/40 px-4 py-3 text-left"
         >
-          <span className="text-[13px] font-bold text-red-100">
+          <span className="text-[13px] font-bold text-red-700 dark:text-red-100">
             <span className="animate-pulse">🆘</span> 활성 SOS {sosCount}건 — 지금 확인
           </span>
-          <span className="text-[12px] text-red-300">SOS 탭 →</span>
+          <span className="text-[12px] text-red-600 dark:text-red-300">SOS 탭 →</span>
         </button>
       )}
 
