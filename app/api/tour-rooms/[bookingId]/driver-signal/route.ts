@@ -112,31 +112,11 @@ export async function POST(
       return NextResponse.json({ error: 'lat and lng are required for parking_pin' }, { status: 400 });
     }
 
-    const room = await ensureRoom(supabase, booking);
-
-    // One-shot pin (PIN primitive) — TTL: end of the day handles itself via
-    // room lifecycle; lost pins are harmless labels on a closed room.
-    let pinId: string | null = null;
-    if (withPin) {
-      const { data: pin } = await supabase
-        .from('tour_room_pins')
-        .insert({
-          room_id: room.id,
-          kind: type === 'parking_pin' ? 'parking' : 'vehicle_arrived',
-          lat,
-          lng,
-          created_by_role: actor.role,
-          created_by_participant_id: actor.kind === 'session' ? actor.sessionPayload.participantId : null,
-        })
-        .select('id')
-        .single();
-      pinId = (pin as { id?: string } | null)?.id ?? null;
-    }
-
+    // Build the (room-independent) message bundle + base metadata once.
     // return_time reuses the guide timer's exact metadata contract so the
     // existing NoticeBanner countdown + Tier0 time-left answers just work.
     let bundle: { source_locale: string; source_text: string; translations: Record<string, string> };
-    let metadata: Record<string, unknown>;
+    let baseMetadata: Record<string, unknown>;
     if (type === 'return_time') {
       const cancel = body.cancel === true;
       const time = typeof body.time === 'string' ? body.time.trim() : '';
@@ -147,7 +127,7 @@ export async function POST(
       bundle = cancel
         ? renderSpotEventTranslations('free_time_cancelled', { point })
         : renderSpotEventTranslations('free_time', { time, point });
-      metadata = {
+      baseMetadata = {
         kind: 'free_time_timer',
         ...(cancel ? { cancelled: true } : { until_time: time }),
         meeting_point: point,
@@ -158,62 +138,126 @@ export async function POST(
         minutes: minutes ?? undefined,
         mapsUrl: withPin ? googleMapsPinUrl(lat!, lng!) : undefined,
       });
-      metadata = {
+      baseMetadata = {
         kind: `driver_${type}`,
         signal_type: type,
         minutes,
-        ...(withPin ? { lat, lng, pin_id: pinId } : {}),
+        ...(withPin ? { lat, lng } : {}),
         sent_by_role: actor.role,
       };
     }
 
-    const { data: message, error: messageError } = await supabase
-      .from('tour_room_messages')
-      .insert({
-        room_id: room.id,
-        booking_id: booking.id,
-        sender_user_id: authUserId,
-        sender_role: 'system',
-        input_kind: 'text',
-        source_text: bundle.source_text,
-        source_locale: bundle.source_locale,
-        translations: bundle.translations,
-        target_locales: Object.keys(bundle.translations),
-        metadata,
-      })
-      .select()
-      .single();
-    if (messageError) throw messageError;
-
-    await broadcastToRoom(room, 'message', { message });
-
-    // W4.1 / P-D7 — delay + return-time also ring opted-in guest devices.
-    if (type === 'delay' || (type === 'return_time' && body.cancel !== true)) {
-      void sendGuestRoomPush(supabase, booking, {
-        translations: bundle.translations,
-        tag: `${type}-${room.id}`,
-      }).catch(() => undefined);
+    // Bus-wide fan-out (Model B, T2 slice 3): a SHARED tour (price_type
+    // 'person'/'group' — bus / small-group) delivers the driver's one-tap signal
+    // to EVERY booking on the day, so 타세요 / 주차핀 / 차량도착 / 지연 reach the
+    // whole vehicle. A PRIVATE charter (vehicle) stays a single room.
+    let isShared = false;
+    if (booking.tour_id && booking.tour_date) {
+      const { data: tourRow } = await supabase
+        .from('tours')
+        .select('price_type')
+        .eq('id', booking.tour_id)
+        .maybeSingle();
+      const priceType = (tourRow as { price_type?: string } | null)?.price_type;
+      isShared = priceType === 'person' || priceType === 'group';
     }
 
-    await recordRoomEvent(supabase, {
-      roomId: room.id,
-      bookingId: booking.id,
-      type: 'signal',
-      actorRole: actor.role,
-      actorParticipantId: actor.kind === 'session' ? actor.sessionPayload.participantId : null,
-      payload: { signal: type, minutes, lat: withPin ? lat : null, lng: withPin ? lng : null },
-    }).catch(() => undefined);
+    type TargetBooking = { id: string; tour_id: string | null; tour_date: string | null; preferred_language?: string | null };
+    let targetBookings: TargetBooking[] = [booking as TargetBooking];
+    if (isShared) {
+      const { data: dayBookings } = await supabase
+        .from('bookings')
+        .select('id, tour_id, tour_date, preferred_language')
+        .eq('tour_id', booking.tour_id)
+        .eq('tour_date', booking.tour_date)
+        .neq('status', 'cancelled');
+      if (dayBookings && dayBookings.length > 0) targetBookings = dayBookings as TargetBooking[];
+    }
 
-    // Vehicle trouble is an ops matter too (mirrors the SOS push, softer tone).
+    const actorParticipantId = actor.kind === 'session' ? actor.sessionPayload.participantId : null;
+    let primaryMessage: unknown = null;
+    let primaryPinId: string | null = null;
+
+    for (const target of targetBookings) {
+      const room = await ensureRoom(supabase, target);
+      const isSender = target.id === booking.id;
+
+      // One-shot pin per room (PIN primitive) — a parking/arrival pin belongs to
+      // every room on the vehicle. TTL handles itself via room lifecycle.
+      let pinId: string | null = null;
+      if (withPin) {
+        const { data: pin } = await supabase
+          .from('tour_room_pins')
+          .insert({
+            room_id: room.id,
+            kind: type === 'parking_pin' ? 'parking' : 'vehicle_arrived',
+            lat,
+            lng,
+            created_by_role: actor.role,
+            created_by_participant_id: isSender ? actorParticipantId : null,
+          })
+          .select('id')
+          .single();
+        pinId = (pin as { id?: string } | null)?.id ?? null;
+      }
+
+      const metadata = { ...baseMetadata, ...(withPin ? { pin_id: pinId } : {}) };
+      const { data: message, error: messageError } = await supabase
+        .from('tour_room_messages')
+        .insert({
+          room_id: room.id,
+          booking_id: target.id,
+          sender_user_id: authUserId,
+          sender_role: 'system',
+          input_kind: 'text',
+          source_text: bundle.source_text,
+          source_locale: bundle.source_locale,
+          translations: bundle.translations,
+          target_locales: Object.keys(bundle.translations),
+          metadata,
+        })
+        .select()
+        .single();
+      if (messageError) throw messageError;
+
+      await broadcastToRoom(room, 'message', { message });
+
+      // W4.1 / P-D7 — delay + return-time also ring opted-in guest devices.
+      if (type === 'delay' || (type === 'return_time' && body.cancel !== true)) {
+        void sendGuestRoomPush(supabase, target, {
+          translations: bundle.translations,
+          tag: `${type}-${room.id}`,
+        }).catch(() => undefined);
+      }
+
+      await recordRoomEvent(supabase, {
+        roomId: room.id,
+        bookingId: target.id,
+        type: 'signal',
+        actorRole: actor.role,
+        actorParticipantId: isSender ? actorParticipantId : null,
+        payload: { signal: type, minutes, lat: withPin ? lat : null, lng: withPin ? lng : null },
+      }).catch(() => undefined);
+
+      if (isSender) {
+        primaryMessage = message;
+        primaryPinId = pinId;
+      }
+    }
+
+    // Vehicle trouble is an ops matter (once for the vehicle, not per booking).
     if (type === 'vehicle_issue') {
       void sendOpsPush({
         title: '🚐 차량 문제 신고 (기사)',
         body: `booking ${booking.id.slice(0, 8)} — 기사님이 차량 문제를 보고했습니다.`,
-        tag: `vehicle-issue-${room.id}`,
+        tag: `vehicle-issue-${booking.id}`,
       }).catch(() => undefined);
     }
 
-    return NextResponse.json({ message, pin_id: pinId }, { status: 201 });
+    return NextResponse.json(
+      { message: primaryMessage, pin_id: primaryPinId, delivered: targetBookings.length },
+      { status: 201 },
+    );
   } catch (error) {
     console.error('POST /api/tour-rooms/[bookingId]/driver-signal error:', error);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
