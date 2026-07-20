@@ -355,6 +355,10 @@ function TourRoomLive({
     bookingId,
     channelTopic: data.channel.topic,
     roomSession: data.session,
+    // Pin the participant's chat_locale to the explicit override so their own
+    // sends don't let write-detection clobber it (guide/driver bubbles then
+    // keep arriving in the chosen chat language, not the app UI language).
+    chatLocale: chatLocaleOverride,
     initialMessages: snapshot.messages ?? [],
     initialLocations: snapshot.locations ?? [],
     myParticipantId: data.participant.id,

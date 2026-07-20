@@ -101,6 +101,10 @@ export async function POST(
     let ackKind: string | null = null;
     let replyToId: string | null = null;
     let messageMetadata: Record<string, unknown> = {};
+    // The sender's EXPLICIT chat-language override (client rides it along on
+    // plain text sends). When present it pins the participant's chat_locale
+    // instead of write-detection clobbering the explicit choice.
+    let chatLocalePref: string | null = null;
 
     const contentType = req.headers.get('content-type') ?? '';
     if (contentType.includes('multipart/form-data')) {
@@ -132,6 +136,7 @@ export async function POST(
       targetLocalesRaw = body.targetLocales;
       guestEmail = String(body.contactEmail || '');
       guestName = String(body.contactName || '');
+      chatLocalePref = typeof body.chatLocale === 'string' ? body.chatLocale : null;
     }
 
     // Authorize before doing any paid work (STT/translation) — same response
@@ -303,11 +308,15 @@ export async function POST(
     // e.g. the driver's Korean voice reply — targets it too. Plain chat only:
     // presets/acks carry fixed-locale text and say nothing about the guest.
     if (senderRole === 'customer' && actor.kind === 'session' && !preset && !ackKind) {
-      const detected = normalizeChatLocale(translation.source_locale);
-      if (detected) {
+      // An explicit chat-language override is authoritative — pin it and never
+      // let write-detection overwrite it (a guest who chose Italian but types
+      // in Spanish must keep receiving operator bubbles in Italian). Auto mode
+      // (no override) falls through to the detected write language.
+      const next = normalizeChatLocale(chatLocalePref) ?? normalizeChatLocale(translation.source_locale);
+      if (next) {
         void supabase
           .from('tour_room_participants')
-          .update({ chat_locale: detected, updated_at: new Date().toISOString() })
+          .update({ chat_locale: next, updated_at: new Date().toISOString() })
           .eq('id', actor.sessionPayload.participantId)
           .then(() => undefined, () => undefined);
       }
