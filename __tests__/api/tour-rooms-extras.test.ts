@@ -20,6 +20,10 @@ jest.mock('@/lib/durable-rate-limit', () => ({
 }));
 jest.mock('@/lib/tour-room/events', () => ({ recordRoomEvent: jest.fn(async () => ({ inserted: true, event: null })) }));
 jest.mock('@/lib/tour-room/realtime', () => ({ broadcastToRoom: jest.fn(async () => ({ ok: true })) }));
+jest.mock('@/lib/tour-room/attachments', () => ({
+  classifyAttachment: jest.fn(() => ({ kind: 'image', ext: 'jpg' })),
+  uploadAttachment: jest.fn(async () => ({ url: 'https://x/att/receipt.jpg', mime: 'image/jpeg', name: 'r.jpg', size: 100 })),
+}));
 
 const getAuthUserMock = getAuthUser as jest.Mock;
 const createServerClientMock = createServerClient as jest.Mock;
@@ -149,6 +153,34 @@ describe('extras API', () => {
     const capsule = db.inserts.tour_room_messages[0];
     expect(capsule.metadata).toMatchObject({ kind: 'extra_ledger', status: 'logged', amount_krw: 48000 });
     expect((capsule.translations as Record<string, string>).ko).toContain('₩48,000');
+  });
+
+  it('T1-3 — a multipart log with a receipt stores receipt_photo_url on the row + capsule', async () => {
+    const db = fakeDb();
+    createServerClientMock.mockReturnValue(db);
+    const receipt = new File([Buffer.from('img')], 'r.jpg', { type: 'image/jpeg' });
+    const form = new Map<string, unknown>([
+      ['item', '입장권 4매'],
+      ['amount_krw', '48000'],
+      ['kind', 'ticket'],
+      ['receipt', receipt],
+    ]);
+    const req = {
+      nextUrl: { searchParams: new URLSearchParams() },
+      headers: {
+        get: (name: string) =>
+          name.toLowerCase() === 'content-type'
+            ? 'multipart/form-data; boundary=x'
+            : name.toLowerCase() === 'x-tour-room-auth'
+              ? session('driver')
+              : null,
+      },
+      formData: async () => ({ get: (k: string) => form.get(k) ?? null }),
+    } as never;
+    const res = await extrasPOST(req, routeParams());
+    expect(res.status).toBe(201);
+    expect(db.inserts.tour_room_extras[0]).toMatchObject({ kind: 'ticket', payer: 'driver', receipt_photo_url: 'https://x/att/receipt.jpg' });
+    expect(db.inserts.tour_room_messages[0].metadata).toMatchObject({ receipt_photo_url: 'https://x/att/receipt.jpg' });
   });
 
   it('customers cannot log; invalid amounts are rejected', async () => {

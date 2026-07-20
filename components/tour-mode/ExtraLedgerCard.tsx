@@ -19,6 +19,7 @@ const COPY: Record<
     cashNote: string;
     confirm: string;
     confirming: string;
+    receipt: string;
     status: Record<string, string>;
     kind: Record<string, string>;
   }
@@ -28,6 +29,7 @@ const COPY: Record<
     cashNote: 'Cash settlement with your guide today',
     confirm: 'Confirm',
     confirming: 'Confirming…',
+    receipt: 'View receipt',
     status: { logged: 'Awaiting your confirm', confirmed: 'Confirmed', settled: 'Settled in cash', voided: 'Cancelled' },
     kind: { advance: 'Paid on your behalf', ticket: 'Admission ticket', overtime: 'Overtime', extension: 'Extension', parking: 'Parking', pickup: 'Pickup fee', other: 'Expense' },
   },
@@ -36,6 +38,7 @@ const COPY: Record<
     cashNote: '당일 가이드에게 현금 정산',
     confirm: '확인',
     confirming: '확인 중…',
+    receipt: '영수증 보기',
     status: { logged: '확인 대기', confirmed: '확인됨', settled: '현금 수취 완료', voided: '취소됨' },
     kind: { advance: '대납', ticket: '입장권', overtime: '초과근무', extension: '연장', parking: '주차', pickup: '픽업비', other: '지출' },
   },
@@ -44,6 +47,7 @@ const COPY: Record<
     cashNote: '当日ガイドへ現金精算',
     confirm: '確認',
     confirming: '確認中…',
+    receipt: 'レシートを見る',
     status: { logged: 'ご確認待ち', confirmed: '確認済み', settled: '現金受領済み', voided: '取消' },
     kind: { advance: '立替', ticket: '入場券', overtime: '延長勤務', extension: '延長', parking: '駐車', pickup: '送迎料', other: '支出' },
   },
@@ -52,6 +56,7 @@ const COPY: Record<
     cashNote: 'Se liquida hoy en efectivo con tu guía',
     confirm: 'Confirmar',
     confirming: 'Confirmando…',
+    receipt: 'Ver recibo',
     status: { logged: 'Pendiente de confirmar', confirmed: 'Confirmado', settled: 'Liquidado en efectivo', voided: 'Cancelado' },
     kind: { advance: 'Pagado por ti', ticket: 'Entrada', overtime: 'Horas extra', extension: 'Extensión', parking: 'Parking', pickup: 'Recogida', other: 'Gasto' },
   },
@@ -60,6 +65,7 @@ const COPY: Record<
     cashNote: '当日与导游现金结算',
     confirm: '确认',
     confirming: '确认中…',
+    receipt: '查看收据',
     status: { logged: '待您确认', confirmed: '已确认', settled: '已现金结清', voided: '已取消' },
     kind: { advance: '代付', ticket: '门票', overtime: '超时', extension: '延长', parking: '停车', pickup: '接送费', other: '支出' },
   },
@@ -71,6 +77,7 @@ export interface ExtraLedgerMeta {
   amount_krw?: number;
   extra_kind?: string;
   status?: string;
+  receipt_photo_url?: string;
 }
 
 export default function ExtraLedgerCard({
@@ -119,6 +126,17 @@ export default function ExtraLedgerCard({
         <span className="ml-2 font-bold text-[var(--tr-accent-deep)]">{formatKrw(meta.amount_krw ?? 0)}</span>
       </p>
       {!voided && <p className="tr-meta mt-0.5 text-[var(--tr-ink-3)]">{copy.cashNote}</p>}
+      {meta.receipt_photo_url && (
+        <a
+          href={meta.receipt_photo_url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="tr-meta mt-1.5 inline-flex items-center gap-1 font-semibold text-[var(--tr-accent-deep)] underline"
+          data-testid="extra-receipt-link"
+        >
+          🧾 {copy.receipt}
+        </a>
+      )}
       {canConfirm && meta.extra_id && onConfirm && state !== 'done' && (
         <button
           type="button"
