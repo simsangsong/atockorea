@@ -39,6 +39,12 @@ import {
 } from '@/lib/tour-room/messageView';
 import { EXTRA_KIND_LABELS, formatKrw } from '@/lib/tour-room/ledger';
 import {
+  baseHoursForCity,
+  computeOvertime,
+  overtimeAmount,
+  OVERTIME_RATE_KRW_PER_HOUR,
+} from '@/lib/tour-room/overtime';
+import {
   AlarmClock,
   Bell,
   BusFront,
@@ -208,6 +214,7 @@ export default function Cockpit({
   session,
   channelTopic,
   initialMessages,
+  city = null,
   onExit,
 }: {
   tourTitle: string;
@@ -217,6 +224,8 @@ export default function Cockpit({
   session: string;
   channelTopic: string | null;
   initialMessages: RoomMessage[];
+  /** Tour city — sets the overtime base hours (Jeju 9h / Busan 8h, T1-1). */
+  city?: string | null;
   /** Guide drive-mode: a way back to dispatch. Omitted by the pure driver. */
   onExit?: () => void;
 }) {
@@ -250,13 +259,17 @@ export default function Cockpit({
   const [textDraft, setTextDraft] = useState('');
   const [textSending, setTextSending] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
-  const [sheet, setSheet] = useState<'none' | 'delay' | 'schedule' | 'return' | 'expense' | 'assist'>('none');
+  const [sheet, setSheet] = useState<'none' | 'delay' | 'schedule' | 'return' | 'expense' | 'overtime' | 'assist'>('none');
   const [pushOn, setPushOn] = useState(false);
   const [expItem, setExpItem] = useState('');
   const [expAmount, setExpAmount] = useState('');
   const [expKind, setExpKind] = useState('parking');
   const [expBusy, setExpBusy] = useState(false);
   const [extras, setExtras] = useState<CockpitExtra[]>([]);
+  // T1-1 overtime settlement inputs (start/end wall-clock + billable hours).
+  const [otStart, setOtStart] = useState('');
+  const [otEnd, setOtEnd] = useState('');
+  const [otHours, setOtHours] = useState(0);
   const [lightbox, setLightbox] = useState<{ url: string; name?: string | null } | null>(null);
   const playedRef = useRef<Set<string>>(new Set(initialMessages.map((message) => message.id)));
   const audioQueueRef = useRef<string[]>([]);
@@ -660,6 +673,49 @@ export default function Cockpit({
     [extras],
   );
 
+  // ── T1-1 overtime settlement ───────────────────────────────────────────
+  const baseHours = useMemo(() => baseHoursForCity(city), [city]);
+  const otComputed = useMemo(() => computeOvertime(baseHours, otStart, otEnd), [baseHours, otStart, otEnd]);
+  const otAmount = overtimeAmount(otHours);
+
+  // Open the overtime sheet: seed start from the pickup time, end with "now",
+  // and pre-fill the billable hours from the computed value.
+  const openOvertime = useCallback(() => {
+    const start = room.pickup?.pickup_time ?? '';
+    const now = kstPlusMinutes(0);
+    setOtStart(start);
+    setOtEnd(now);
+    setOtHours(computeOvertime(baseHours, start, now).overtimeHours);
+    setSheet('overtime');
+  }, [room.pickup, baseHours]);
+
+  const logOvertime = useCallback(async () => {
+    if (otHours <= 0) return;
+    setExpBusy(true);
+    try {
+      const res = await fetch(`/api/tour-rooms/${bookingId}/extras`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'x-tour-room-auth': session },
+        body: JSON.stringify({
+          item: `초과근무 ${otHours}시간 (기준 ${baseHours}시간)`,
+          amount_krw: overtimeAmount(otHours),
+          kind: 'overtime',
+        }),
+      });
+      if (res.ok) {
+        say('초과근무 기록됨 ✓ (정산에 반영)');
+        setSheet('expense');
+        void loadExtras();
+      } else {
+        say('기록 실패 — 다시 시도해 주세요');
+      }
+    } catch {
+      say('네트워크 오류');
+    } finally {
+      setExpBusy(false);
+    }
+  }, [bookingId, session, otHours, baseHours, say, loadExtras]);
+
   // ── phase-aware destination (준비=픽업, 진행=다음 스톱) ───────────────────
   const nextStop = useMemo(() => {
     const now = new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Seoul', hour: '2-digit', minute: '2-digit', hour12: false }).format(new Date());
@@ -1001,19 +1057,28 @@ export default function Cockpit({
         <ActionButton label="AI 도우미" Icon={Sparkles} onClick={() => setSheet('assist')} />
       </div>
 
-      {/* expense log + self-settle (secondary, deliberate) */}
-      <div className="px-4 pb-3">
+      {/* expense/settle + overtime (secondary, deliberate) */}
+      <div className="grid grid-cols-2 gap-1.5 px-4 pb-3">
         <button
           type="button"
           onClick={() => {
             setSheet('expense');
             void loadExtras();
           }}
-          className="flex w-full items-center justify-center gap-2 rounded-2xl bg-[var(--tr-surface-2)] py-2.5 text-base font-bold text-[var(--tr-ink)] transition-transform active:scale-[0.99]"
+          className="flex items-center justify-center gap-2 rounded-2xl bg-[var(--tr-surface-2)] py-2.5 text-base font-bold text-[var(--tr-ink)] transition-transform active:scale-[0.99]"
           data-testid="driver-action-expense"
         >
           <Wallet size={17} strokeWidth={2} aria-hidden />
-          지출·정산 (주차비·대납 등)
+          지출·정산
+        </button>
+        <button
+          type="button"
+          onClick={openOvertime}
+          className="flex items-center justify-center gap-2 rounded-2xl bg-[var(--tr-surface-2)] py-2.5 text-base font-bold text-[var(--tr-ink)] transition-transform active:scale-[0.99]"
+          data-testid="driver-action-overtime"
+        >
+          <Timer size={17} strokeWidth={2} aria-hidden />
+          초과근무
         </button>
       </div>
 
@@ -1187,6 +1252,99 @@ export default function Cockpit({
               data-testid="driver-expense-log"
             >
               {expBusy ? '기록 중…' : '기록'}
+            </button>
+          </div>
+        </Sheet>
+      ) : null}
+
+      {sheet === 'overtime' ? (
+        <Sheet onClose={() => setSheet('none')} title="초과근무 정산">
+          <div className="flex flex-col gap-3">
+            <p className="text-sm text-[var(--tr-ink-2)]">
+              기준 {baseHours}시간 · {formatKrw(OVERTIME_RATE_KRW_PER_HOUR)}/시간
+            </p>
+            <div className="grid grid-cols-2 gap-3">
+              <label className="flex flex-col gap-1">
+                <span className="text-sm font-bold text-[var(--tr-ink-2)]">시작</span>
+                <input
+                  value={otStart}
+                  onChange={(event) => setOtStart(event.target.value)}
+                  inputMode="numeric"
+                  placeholder="09:00"
+                  className="rounded-2xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-4 py-3.5 text-xl tabular-nums text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)]"
+                  data-testid="overtime-start"
+                />
+              </label>
+              <label className="flex flex-col gap-1">
+                <span className="text-sm font-bold text-[var(--tr-ink-2)]">종료</span>
+                <div className="flex items-center gap-1.5">
+                  <input
+                    value={otEnd}
+                    onChange={(event) => setOtEnd(event.target.value)}
+                    inputMode="numeric"
+                    placeholder="18:00"
+                    className="min-w-0 flex-1 rounded-2xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-4 py-3.5 text-xl tabular-nums text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)]"
+                    data-testid="overtime-end"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setOtEnd(kstPlusMinutes(0))}
+                    className="shrink-0 rounded-2xl bg-[var(--tr-surface-2)] px-3 py-3.5 text-sm font-bold text-[var(--tr-ink)]"
+                  >
+                    지금
+                  </button>
+                </div>
+              </label>
+            </div>
+
+            {/* Auto-computed from the times; the driver has final say via ±30분. */}
+            <button
+              type="button"
+              onClick={() => setOtHours(otComputed.overtimeHours)}
+              className="rounded-2xl bg-[var(--tr-surface-2)] py-2.5 text-base font-bold text-[var(--tr-ink)]"
+              data-testid="overtime-recompute"
+            >
+              시간으로 계산
+              {otComputed.workedMinutes != null
+                ? ` · 근무 ${Math.floor(otComputed.workedMinutes / 60)}시간 ${otComputed.workedMinutes % 60}분`
+                : ''}
+            </button>
+
+            <div className="flex items-center justify-between rounded-2xl bg-[var(--tr-surface-2)] px-4 py-3">
+              <button
+                type="button"
+                onClick={() => setOtHours((h) => Math.max(0, Math.round((h - 0.5) * 2) / 2))}
+                className="h-10 w-10 rounded-full bg-[var(--tr-surface)] text-2xl font-bold text-[var(--tr-ink)]"
+                aria-label="30분 빼기"
+              >
+                −
+              </button>
+              <div className="text-center">
+                <p className="text-2xl font-bold text-[var(--tr-ink)]" data-testid="overtime-hours">
+                  초과 {otHours}시간
+                </p>
+                <p className="text-lg font-semibold text-[var(--tr-accent-deep)]" data-testid="overtime-amount">
+                  {formatKrw(otAmount)}
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={() => setOtHours((h) => Math.round((h + 0.5) * 2) / 2)}
+                className="h-10 w-10 rounded-full bg-[var(--tr-surface)] text-2xl font-bold text-[var(--tr-ink)]"
+                aria-label="30분 더하기"
+              >
+                +
+              </button>
+            </div>
+
+            <button
+              type="button"
+              disabled={expBusy || otHours <= 0}
+              onClick={() => void logOvertime()}
+              className="rounded-2xl bg-[var(--tr-bubble-me)] py-4 text-xl font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
+              data-testid="overtime-log"
+            >
+              {expBusy ? '기록 중…' : `${formatKrw(otAmount)} 기록`}
             </button>
           </div>
         </Sheet>
