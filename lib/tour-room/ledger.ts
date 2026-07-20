@@ -7,13 +7,30 @@
  * fallback + notification surface.
  */
 
-export const EXTRA_KINDS = ['advance', 'extension', 'parking', 'other'] as const;
+// Single source of truth for expense kinds (T1-5): the API whitelist, the SQL
+// CHECK, and the cockpit picker all resolve here, so a new kind is never
+// silently downgraded to 'other' by an out-of-sync consumer.
+export const EXTRA_KINDS = ['advance', 'ticket', 'overtime', 'extension', 'parking', 'pickup', 'other'] as const;
 export type ExtraKind = (typeof EXTRA_KINDS)[number];
+
+/** Operator-facing Korean labels (cockpit + guide panel). */
+export const EXTRA_KIND_LABELS: Record<ExtraKind, string> = {
+  advance: '대납',
+  ticket: '입장권',
+  overtime: '초과근무',
+  extension: '연장',
+  parking: '주차',
+  pickup: '픽업비',
+  other: '기타',
+};
 
 export const EXTRA_ACTIONS = ['confirm', 'settle', 'void'] as const;
 export type ExtraAction = (typeof EXTRA_ACTIONS)[number];
 
 export type ExtraStatus = 'logged' | 'confirmed' | 'settled' | 'voided';
+
+/** Who receives the cash for a given expense — the operator who advanced it. */
+export type ExtraPayer = 'guide' | 'driver';
 
 export function formatKrw(amount: number): string {
   return `₩${Math.max(0, Math.round(amount)).toLocaleString('en-US')}`;
@@ -21,13 +38,20 @@ export function formatKrw(amount: number): string {
 
 type Bundle = { source_locale: string; source_text: string; translations: Record<string, string> };
 
-const TEMPLATES: Record<ExtraStatus, (item: string, krw: string) => Record<string, string>> = {
-  logged: (item, krw) => ({
-    en: `💰 Expense logged: ${item} — ${krw}. Cash settlement with your guide today; please confirm.`,
-    ko: `💰 지출 기록: ${item} — ${krw}. 당일 가이드에게 현금 정산해요 — 확인해 주세요.`,
-    ja: `💰 立替を記録: ${item} — ${krw}。当日ガイドへ現金精算です — ご確認ください。`,
-    es: `💰 Gasto registrado: ${item} — ${krw}. Se liquida hoy en efectivo con tu guía; confírmalo.`,
-    zh: `💰 已记录费用:${item} — ${krw}。当日与导游现金结算——请确认。`,
+/** The recipient noun per locale — a guide-less private tour settles to the
+ *  driver directly, so the capsule must name the right person. */
+const RECIPIENT: Record<ExtraPayer, Record<string, string>> = {
+  guide: { en: 'your guide', ko: '가이드', ja: 'ガイド', es: 'tu guía', zh: '导游' },
+  driver: { en: 'your driver', ko: '기사님', ja: 'ドライバー', es: 'tu conductor', zh: '司机' },
+};
+
+const TEMPLATES: Record<ExtraStatus, (item: string, krw: string, who: Record<string, string>) => Record<string, string>> = {
+  logged: (item, krw, who) => ({
+    en: `💰 Expense logged: ${item} — ${krw}. Cash settlement with ${who.en} today; please confirm.`,
+    ko: `💰 지출 기록: ${item} — ${krw}. 당일 ${who.ko}에게 현금 정산해요 — 확인해 주세요.`,
+    ja: `💰 立替を記録: ${item} — ${krw}。当日${who.ja}へ現金精算です — ご確認ください。`,
+    es: `💰 Gasto registrado: ${item} — ${krw}. Se liquida hoy en efectivo con ${who.es}; confírmalo.`,
+    zh: `💰 已记录费用:${item} — ${krw}。当日与${who.zh}现金结算——请确认。`,
   }),
   confirmed: (item, krw) => ({
     en: `✅ Confirmed: ${item} — ${krw}.`,
@@ -52,8 +76,14 @@ const TEMPLATES: Record<ExtraStatus, (item: string, krw: string) => Record<strin
   }),
 };
 
-export function renderExtraCapsule(status: ExtraStatus, item: string, amountKrw: number): Bundle {
-  const translations = TEMPLATES[status](item, formatKrw(amountKrw));
+export function renderExtraCapsule(
+  status: ExtraStatus,
+  item: string,
+  amountKrw: number,
+  payer: ExtraPayer = 'guide',
+): Bundle {
+  const who = RECIPIENT[payer === 'driver' ? 'driver' : 'guide'];
+  const translations = TEMPLATES[status](item, formatKrw(amountKrw), who);
   return { source_locale: 'en', source_text: translations.en, translations };
 }
 
@@ -78,22 +108,32 @@ export function renderSettlementSummary(
   return { source_locale: 'en', source_text: translations.en, translations };
 }
 
-/** Which transition may which role perform? (G1/G2 flow, §C-3 extra machine) */
+/**
+ * Which transition may which role perform? (G1/G2 flow, §C-3 extra machine)
+ *
+ * T1-2: a driver may settle/void the expenses THEY advanced (payer='driver') —
+ * the guide-less private tour where the guest hands the cash to the driver
+ * directly. The guide/admin can still act on any row. `payer` is the row's
+ * payer; omit it and only the operator (guide/admin) may settle/void.
+ */
 export function allowedExtraTransition(
   action: ExtraAction,
   role: string,
   currentStatus: string,
+  payer?: string,
 ): ExtraStatus | null {
   if (action === 'confirm') {
     return role === 'customer' && currentStatus === 'logged' ? 'confirmed' : null;
   }
+  const isOperator = role === 'guide' || role === 'admin';
+  const isOwningDriver = role === 'driver' && payer === 'driver';
   if (action === 'settle') {
-    return (role === 'guide' || role === 'admin') && (currentStatus === 'logged' || currentStatus === 'confirmed')
-      ? 'settled'
-      : null;
+    if (currentStatus !== 'logged' && currentStatus !== 'confirmed') return null;
+    return isOperator || isOwningDriver ? 'settled' : null;
   }
   if (action === 'void') {
-    return (role === 'guide' || role === 'admin') && currentStatus !== 'settled' ? 'voided' : null;
+    if (currentStatus === 'settled') return null;
+    return isOperator || isOwningDriver ? 'voided' : null;
   }
   return null;
 }

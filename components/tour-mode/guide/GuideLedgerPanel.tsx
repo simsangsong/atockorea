@@ -12,7 +12,7 @@
  */
 
 import { useCallback, useEffect, useState } from 'react';
-import { formatKrw } from '@/lib/tour-room/ledger';
+import { formatKrw, EXTRA_KIND_LABELS, type ExtraKind } from '@/lib/tour-room/ledger';
 
 interface ExtraRow {
   id: string;
@@ -23,12 +23,11 @@ interface ExtraRow {
   created_at: string;
 }
 
-const KIND_LABELS: Record<string, string> = {
-  advance: '대납',
-  extension: '연장',
-  parking: '주차',
-  other: '기타',
-};
+/** Labels come from the ledger single source (T1-5). The manual picker offers
+ *  the kinds a guide logs by hand — overtime has its own compute, pickup is a
+ *  booking-side charge. */
+const kindLabel = (kind: string): string => EXTRA_KIND_LABELS[kind as ExtraKind] ?? kind;
+const GUIDE_KIND_ORDER: ExtraKind[] = ['advance', 'ticket', 'parking', 'extension', 'other'];
 
 const STATUS_LABELS: Record<string, string> = {
   logged: '확인 대기',
@@ -145,7 +144,7 @@ export default function GuideLedgerPanel({
                   <span className="ml-1.5 font-bold text-[var(--tr-accent-deep)]">{formatKrw(extra.amount_krw)}</span>
                 </p>
                 <p className="tr-meta text-[var(--tr-ink-3)]">
-                  {KIND_LABELS[extra.kind] ?? extra.kind} · {STATUS_LABELS[extra.status] ?? extra.status}
+                  {kindLabel(extra.kind)} · {STATUS_LABELS[extra.status] ?? extra.status}
                 </p>
               </div>
               {(extra.status === 'logged' || extra.status === 'confirmed') && (
@@ -186,8 +185,8 @@ export default function GuideLedgerPanel({
           onChange={(e) => setKind(e.target.value)}
           className="tr-label shrink-0 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 py-2 text-[var(--tr-ink)]"
         >
-          {Object.entries(KIND_LABELS).map(([value, label]) => (
-            <option key={value} value={value}>{label}</option>
+          {GUIDE_KIND_ORDER.map((value) => (
+            <option key={value} value={value}>{EXTRA_KIND_LABELS[value]}</option>
           ))}
         </select>
         <input

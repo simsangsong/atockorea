@@ -37,6 +37,7 @@ import {
   isTranslationPending,
   formatAttachmentBytes,
 } from '@/lib/tour-room/messageView';
+import { EXTRA_KIND_LABELS, formatKrw } from '@/lib/tour-room/ledger';
 import {
   AlarmClock,
   Bell,
@@ -81,13 +82,23 @@ const SILENT_WAV = 'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAiBUAAB
 
 export type CockpitLifecycle = 'lobby' | 'live' | 'ended';
 
-/** Driver expense kinds (tour_room_extras.kind); parking is the common one. */
-const EXPENSE_KINDS: Array<{ value: string; label: string }> = [
-  { value: 'parking', label: '주차' },
-  { value: 'advance', label: '대납' },
-  { value: 'extension', label: '연장' },
-  { value: 'other', label: '기타' },
-];
+/** Driver expense-picker kinds — labels derive from the ledger single source
+ *  (T1-5) so a new kind is never silently mislabelled. Parking is the common
+ *  one; ticket covers the discount-buy pass-through. */
+const EXPENSE_KINDS = (['parking', 'advance', 'ticket', 'other'] as const).map((value) => ({
+  value,
+  label: EXTRA_KIND_LABELS[value],
+}));
+
+/** The driver's own unsettled expenses (T1-2 self-settle list). */
+interface CockpitExtra {
+  id: string;
+  item: string;
+  amount_krw: number;
+  payer: string;
+  kind: string;
+  status: string;
+}
 
 export interface CockpitScheduleItem {
   time?: string;
@@ -245,6 +256,7 @@ export default function Cockpit({
   const [expAmount, setExpAmount] = useState('');
   const [expKind, setExpKind] = useState('parking');
   const [expBusy, setExpBusy] = useState(false);
+  const [extras, setExtras] = useState<CockpitExtra[]>([]);
   const [lightbox, setLightbox] = useState<{ url: string; name?: string | null } | null>(null);
   const playedRef = useRef<Set<string>>(new Set(initialMessages.map((message) => message.id)));
   const audioQueueRef = useRef<string[]>([]);
@@ -577,7 +589,21 @@ export default function Cockpit({
     if (pushSupported() && Notification.permission === 'granted') void enablePush();
   }, [enablePush]);
 
-  // ── expense log (parking etc.) → the same ledger the guide settles ──────
+  // ── expense ledger (log + T1-2 driver self-settle) ─────────────────────
+  const loadExtras = useCallback(async () => {
+    try {
+      const res = await fetch(`/api/tour-rooms/${bookingId}/extras`, {
+        headers: { 'x-tour-room-auth': session },
+      });
+      if (res.ok) {
+        const data = (await res.json()) as { extras?: CockpitExtra[] };
+        setExtras(data.extras ?? []);
+      }
+    } catch {
+      /* the log form still works without the settle list */
+    }
+  }, [bookingId, session]);
+
   const logExpense = useCallback(async () => {
     const amountKrw = Number.parseInt(expAmount.replace(/[^0-9]/g, ''), 10);
     if (!expItem.trim() || !Number.isFinite(amountKrw) || amountKrw <= 0) return;
@@ -591,8 +617,10 @@ export default function Cockpit({
       if (res.ok) {
         setExpItem('');
         setExpAmount('');
-        setSheet('none');
+        // Keep the sheet open and refresh so the logged item appears in the
+        // self-settle list (the guest may hand over the cash right now).
         say('지출 기록됨 ✓ (정산에 반영)');
+        void loadExtras();
       } else {
         say('기록 실패 — 다시 시도해 주세요');
       }
@@ -601,7 +629,36 @@ export default function Cockpit({
     } finally {
       setExpBusy(false);
     }
-  }, [bookingId, session, expItem, expAmount, expKind, say]);
+  }, [bookingId, session, expItem, expAmount, expKind, say, loadExtras]);
+
+  // T1-2 — the driver marks their own advanced expense settled when the guest
+  // hands over the cash (guide-less private tour; the guide panel still works
+  // for guided ones). The server only allows it for payer='driver' rows.
+  const settleExtra = useCallback(
+    async (extraId: string) => {
+      try {
+        const res = await fetch(`/api/tour-rooms/${bookingId}/extras`, {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json', 'x-tour-room-auth': session },
+          body: JSON.stringify({ extraId, action: 'settle' }),
+        });
+        if (res.ok) {
+          say('수취 완료 ✓');
+          void loadExtras();
+        } else {
+          say('실패 — 다시 시도해 주세요');
+        }
+      } catch {
+        say('네트워크 오류');
+      }
+    },
+    [bookingId, session, say, loadExtras],
+  );
+
+  const myUnsettledExtras = useMemo(
+    () => extras.filter((e) => e.payer === 'driver' && (e.status === 'logged' || e.status === 'confirmed')),
+    [extras],
+  );
 
   // ── phase-aware destination (준비=픽업, 진행=다음 스톱) ───────────────────
   const nextStop = useMemo(() => {
@@ -944,16 +1001,19 @@ export default function Cockpit({
         <ActionButton label="AI 도우미" Icon={Sparkles} onClick={() => setSheet('assist')} />
       </div>
 
-      {/* expense log (secondary, deliberate) */}
+      {/* expense log + self-settle (secondary, deliberate) */}
       <div className="px-4 pb-3">
         <button
           type="button"
-          onClick={() => setSheet('expense')}
+          onClick={() => {
+            setSheet('expense');
+            void loadExtras();
+          }}
           className="flex w-full items-center justify-center gap-2 rounded-2xl bg-[var(--tr-surface-2)] py-2.5 text-base font-bold text-[var(--tr-ink)] transition-transform active:scale-[0.99]"
           data-testid="driver-action-expense"
         >
           <Wallet size={17} strokeWidth={2} aria-hidden />
-          지출 기록 (주차비 등)
+          지출·정산 (주차비·대납 등)
         </button>
       </div>
 
@@ -1059,8 +1119,38 @@ export default function Cockpit({
       ) : null}
 
       {sheet === 'expense' ? (
-        <Sheet onClose={() => setSheet('none')} title="지출 기록 (정산 반영)">
+        <Sheet onClose={() => setSheet('none')} title="지출·정산">
+          {/* T1-2 — the driver's own advanced expenses awaiting cash. Tap
+              수취완료 when the guest pays (guide-less private tour). */}
+          {myUnsettledExtras.length > 0 ? (
+            <div className="mb-4 flex flex-col gap-2" data-testid="cockpit-settle-list">
+              <p className="text-sm font-bold text-[var(--tr-ink-2)]">
+                받을 돈 · 합계 {formatKrw(myUnsettledExtras.reduce((sum, e) => sum + e.amount_krw, 0))}
+              </p>
+              {myUnsettledExtras.map((e) => (
+                <div key={e.id} className="flex items-center gap-2 rounded-2xl bg-[var(--tr-surface-2)] px-4 py-3">
+                  <span className="min-w-0 flex-1">
+                    <span className="block truncate text-base font-semibold text-[var(--tr-ink)]">
+                      {EXTRA_KIND_LABELS[e.kind as keyof typeof EXTRA_KIND_LABELS] ?? e.kind} · {e.item}
+                    </span>
+                    <span className="block text-sm text-[var(--tr-ink-2)]">
+                      {formatKrw(e.amount_krw)} · {e.status === 'confirmed' ? '손님 확인됨' : '미확인'}
+                    </span>
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => void settleExtra(e.id)}
+                    className="shrink-0 rounded-xl bg-[var(--tr-bubble-me)] px-4 py-2.5 text-sm font-bold text-[var(--tr-bubble-me-ink)]"
+                    data-testid="cockpit-settle-extra"
+                  >
+                    수취완료
+                  </button>
+                </div>
+              ))}
+            </div>
+          ) : null}
           <div className="flex flex-col gap-3">
+            <p className="text-sm font-bold text-[var(--tr-ink-2)]">지출 기록</p>
             <div className="grid grid-cols-4 gap-2">
               {EXPENSE_KINDS.map((kind) => (
                 <button

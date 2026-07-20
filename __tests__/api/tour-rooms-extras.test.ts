@@ -5,7 +5,7 @@
  */
 import '@/test-utils/restoreWebPrimitives';
 import { GET as extrasGET, PATCH as extrasPATCH, POST as extrasPOST } from '@/app/api/tour-rooms/[bookingId]/extras/route';
-import { allowedExtraTransition } from '@/lib/tour-room/ledger';
+import { allowedExtraTransition, renderExtraCapsule } from '@/lib/tour-room/ledger';
 import { getAuthUser } from '@/lib/auth';
 import { createServerClient } from '@/lib/supabase';
 import { requestGate } from '@/lib/durable-rate-limit';
@@ -92,7 +92,7 @@ function fakeReq(input?: { headers?: Record<string, string>; json?: unknown }) {
 }
 
 const routeParams = () => ({ params: Promise.resolve({ bookingId: 'booking-1' }) });
-const session = (role: 'customer' | 'guide') =>
+const session = (role: 'customer' | 'guide' | 'driver' | 'admin') =>
   signRoomSession({ roomId: 'room-1', bookingId: 'booking-1', participantId: `p-${role}`, role, displayName: 'X' }).session;
 
 beforeEach(() => {
@@ -113,6 +113,23 @@ describe('allowedExtraTransition (§C-3 extra machine)', () => {
     expect(allowedExtraTransition('settle', 'customer', 'confirmed')).toBeNull();
     expect(allowedExtraTransition('void', 'guide', 'confirmed')).toBe('voided');
     expect(allowedExtraTransition('void', 'guide', 'settled')).toBeNull();
+  });
+
+  it('T1-2 — a driver settles/voids only the expenses they advanced (payer=driver)', () => {
+    expect(allowedExtraTransition('settle', 'driver', 'confirmed', 'driver')).toBe('settled');
+    expect(allowedExtraTransition('settle', 'driver', 'logged', 'driver')).toBe('settled');
+    expect(allowedExtraTransition('settle', 'driver', 'confirmed', 'guide')).toBeNull();
+    expect(allowedExtraTransition('settle', 'driver', 'confirmed')).toBeNull();
+    expect(allowedExtraTransition('void', 'driver', 'logged', 'driver')).toBe('voided');
+    expect(allowedExtraTransition('void', 'driver', 'settled', 'driver')).toBeNull();
+  });
+});
+
+describe('renderExtraCapsule payer-aware recipient (T1-2)', () => {
+  it('names the driver when the driver advanced it, the guide otherwise', () => {
+    expect(renderExtraCapsule('logged', '입장권', 48000, 'driver').translations.ko).toContain('기사님에게');
+    expect(renderExtraCapsule('logged', '입장권', 48000, 'guide').translations.ko).toContain('가이드에게');
+    expect(renderExtraCapsule('logged', 'ticket', 48000, 'driver').translations.en).toContain('your driver');
   });
 });
 
@@ -167,6 +184,25 @@ describe('extras API', () => {
     );
     expect(settleRes.status).toBe(200);
     expect(db.updates.tour_room_extras[0]).toMatchObject({ status: 'settled', settled_via: 'cash' });
+  });
+
+  it('T1-2 — a driver settles their own advance; a guide-paid row is 403', async () => {
+    const own = { id: 'e-1', room_id: 'room-1', item: '입장권', amount_krw: 48000, kind: 'ticket', payer: 'driver', status: 'confirmed' };
+    const db = fakeDb({ extra: own });
+    createServerClientMock.mockReturnValue(db);
+    const ok = await extrasPATCH(
+      fakeReq({ headers: { 'x-tour-room-auth': session('driver') }, json: { extraId: 'e-1', action: 'settle' } }),
+      routeParams(),
+    );
+    expect(ok.status).toBe(200);
+    expect(db.updates.tour_room_extras[0]).toMatchObject({ status: 'settled', settled_via: 'cash' });
+
+    createServerClientMock.mockReturnValue(fakeDb({ extra: { ...own, payer: 'guide' } }));
+    const denied = await extrasPATCH(
+      fakeReq({ headers: { 'x-tour-room-auth': session('driver') }, json: { extraId: 'e-1', action: 'settle' } }),
+      routeParams(),
+    );
+    expect(denied.status).toBe(403);
   });
 
   it('customer settle is 403; unknown extra is 404', async () => {

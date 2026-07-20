@@ -53,7 +53,7 @@ async function insertExtraCapsule(
   extra: ExtraRow,
   status: ExtraStatus,
 ) {
-  const bundle = renderExtraCapsule(status, extra.item, extra.amount_krw);
+  const bundle = renderExtraCapsule(status, extra.item, extra.amount_krw, extra.payer === 'driver' ? 'driver' : 'guide');
   const { data: message } = await supabase
     .from('tour_room_messages')
     .insert({
@@ -283,7 +283,12 @@ export async function PATCH(
       return NextResponse.json({ error: 'Extra not found' }, { status: 404 });
     }
 
-    const nextStatus = allowedExtraTransition(action, actor.role, (existing as ExtraRow).status);
+    const nextStatus = allowedExtraTransition(
+      action,
+      actor.role,
+      (existing as ExtraRow).status,
+      (existing as ExtraRow).payer,
+    );
     if (!nextStatus) {
       return NextResponse.json(
         { error: `Cannot ${action} from ${(existing as ExtraRow).status} as ${actor.role}` },
