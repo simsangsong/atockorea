@@ -48,6 +48,7 @@ import { formatMinutes, haversineKm, totalDriveMinutes, type LatLng } from '@/li
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 import { useTourRoomSession } from '@/hooks/useTourRoomSession';
 import PlanTourItinerary from '@/components/tour-mode/plan/PlanTourItinerary';
+import PlanStopCards from '@/components/tour-mode/plan/PlanStopCards';
 import type { ItineraryStop } from '@/components/product-tour-static/_shared/tourProductDetailSectionTypes';
 import { MAX_PLAN_STOPS, tourStopToEditorStop } from '@/lib/tour-room/planTourStops';
 
@@ -108,6 +109,9 @@ interface CourseTemplate {
   title_i18n: Record<string, string>;
   stops: Array<Record<string, unknown>>;
   total_hours: number | null;
+  /** The tour this course was seeded from — its rich itineraryStops (photos +
+   *  descriptions) power the course preview's tap-to-detail cards. */
+  origin_tour_slug?: string | null;
 }
 
 interface PickerPoi {
@@ -956,6 +960,10 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
   const [googleOpen, setGoogleOpen] = useState(false);
   const [previewTemplate, setPreviewTemplate] = useState<CourseTemplate | null>(null);
   const [replaceArmed, setReplaceArmed] = useState(false);
+  // The previewed course's own rich itinerary (photos + descriptions), pulled
+  // from its origin_tour_slug so the preview shows the same tap-to-detail stop
+  // cards as the product page instead of bland text rows. Empty → text fallback.
+  const [previewRichStops, setPreviewRichStops] = useState<ItineraryStop[]>([]);
   // §G tab ① — the BOOKED tour's own itinerary (rich stop cards + shared drawer).
   const [tourStops, setTourStops] = useState<ItineraryStop[]>([]);
   const [tourTitle, setTourTitle] = useState<string | null>(null);
@@ -1279,7 +1287,37 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
   const closePreview = () => {
     setPreviewTemplate(null);
     setReplaceArmed(false);
+    setPreviewRichStops([]);
   };
+
+  // Pull the previewed course's rich itinerary (its origin_tour_slug) so the
+  // preview shows photo cards + tap→detail like the product page, not bland
+  // text rows. Empty result → the text fallback below. setState routed through
+  // a nested fn so the effect body has no direct setState (lint guard).
+  useEffect(() => {
+    const slug = previewTemplate?.origin_tour_slug?.trim();
+    let cancelled = false;
+    const apply = (rich: ItineraryStop[]) => {
+      if (!cancelled) setPreviewRichStops(rich);
+    };
+    apply([]); // reset while the new course (if any) loads
+    if (slug) {
+      void (async () => {
+        try {
+          const res = await authedFetch(`/tour-itinerary?slug=${encodeURIComponent(slug)}&locale=${locale}`);
+          if (res.ok) {
+            const body = (await res.json()) as { stops?: ItineraryStop[] };
+            apply(Array.isArray(body.stops) ? body.stops : []);
+          }
+        } catch {
+          /* text fallback */
+        }
+      })();
+    }
+    return () => {
+      cancelled = true;
+    };
+  }, [previewTemplate, authedFetch, locale]);
 
   const submitPlan = async () => {
     if (submittingRef.current) return;
@@ -2054,7 +2092,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
             <div className="px-4 pb-4 pt-3">
               <div className="grid grid-cols-3 gap-2">
                 {[
-                  [ui.previewStops, String(previewStops.length)],
+                  [ui.previewStops, String(previewRichStops.length || previewStops.length)],
                   [
                     ui.previewTotal,
                     previewTemplate.total_hours
@@ -2070,45 +2108,58 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                 ))}
               </div>
 
-              <ol className="mt-4 flex flex-col gap-2">
-                {previewStops.map((stop, index) => {
-                  const imageUrl = stop.poi_key ? poiByKey.get(stop.poi_key)?.default_image_url : null;
-                  return (
-                    <li key={stop.id} className="flex gap-3 rounded-2xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] p-3">
-                      <div className="h-16 w-16 shrink-0 overflow-hidden rounded-xl bg-[var(--tr-surface-2)]">
-                        {imageUrl ? (
-                          // eslint-disable-next-line @next/next/no-img-element
-                          <img
-                            src={imageUrl}
-                            alt=""
-                            loading="lazy"
-                            className="h-full w-full object-cover"
-                            onError={(e) => {
-                              e.currentTarget.style.display = 'none';
-                            }}
-                          />
-                        ) : (
-                          <span className="flex h-full w-full items-center justify-center text-[var(--tr-ink-3)]">
-                            <MapPin size={18} aria-hidden />
-                          </span>
-                        )}
-                      </div>
-                      <div className="min-w-0 flex-1">
-                        <div className="flex items-center gap-2">
-                          <span className="tr-meta flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[var(--tr-accent-soft)] font-bold text-[var(--tr-accent-deep)]">
-                            {index + 1}
-                          </span>
-                          <p className="tr-card-text truncate font-bold text-[var(--tr-ink)]">{stop.title}</p>
+              {previewRichStops.length > 0 ? (
+                // Rich itinerary from the course's origin_tour_slug — same photo
+                // cards + tap→detail drawer as the product page (§ 사용자 요청).
+                <div className="mt-4">
+                  <PlanStopCards
+                    stops={previewRichStops}
+                    locale={locale}
+                    canEdit={false}
+                    labels={{ add: ui.tourItinAdd, added: ui.tourItinAdded, details: ui.tourItinDetails }}
+                  />
+                </div>
+              ) : (
+                <ol className="mt-4 flex flex-col gap-2">
+                  {previewStops.map((stop, index) => {
+                    const imageUrl = stop.poi_key ? poiByKey.get(stop.poi_key)?.default_image_url : null;
+                    return (
+                      <li key={stop.id} className="flex gap-3 rounded-2xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] p-3">
+                        <div className="h-16 w-16 shrink-0 overflow-hidden rounded-xl bg-[var(--tr-surface-2)]">
+                          {imageUrl ? (
+                            // eslint-disable-next-line @next/next/no-img-element
+                            <img
+                              src={imageUrl}
+                              alt=""
+                              loading="lazy"
+                              className="h-full w-full object-cover"
+                              onError={(e) => {
+                                e.currentTarget.style.display = 'none';
+                              }}
+                            />
+                          ) : (
+                            <span className="flex h-full w-full items-center justify-center text-[var(--tr-ink-3)]">
+                              <MapPin size={18} aria-hidden />
+                            </span>
+                          )}
                         </div>
-                        <p className="tr-meta mt-1 text-[var(--tr-ink-3)]">
-                          {stop.duration_min ? copy.minutes(stop.duration_min) : copy.minutes(60)}
-                          {stop.stop_type ? ` · ${stop.stop_type}` : ''}
-                        </p>
-                      </div>
-                    </li>
-                  );
-                })}
-              </ol>
+                        <div className="min-w-0 flex-1">
+                          <div className="flex items-center gap-2">
+                            <span className="tr-meta flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[var(--tr-accent-soft)] font-bold text-[var(--tr-accent-deep)]">
+                              {index + 1}
+                            </span>
+                            <p className="tr-card-text truncate font-bold text-[var(--tr-ink)]">{stop.title}</p>
+                          </div>
+                          <p className="tr-meta mt-1 text-[var(--tr-ink-3)]">
+                            {stop.duration_min ? copy.minutes(stop.duration_min) : copy.minutes(60)}
+                            {stop.stop_type ? ` · ${stop.stop_type}` : ''}
+                          </p>
+                        </div>
+                      </li>
+                    );
+                  })}
+                </ol>
+              )}
             </div>
 
             <div className="tr-safe-bottom sticky bottom-0 z-20 border-t border-[var(--tr-hairline)] bg-[var(--tr-surface)]/95 px-4 py-3 backdrop-blur">
