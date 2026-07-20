@@ -179,7 +179,7 @@ export function latestCursor(messages: RoomMessage[]): string | null {
 const unsentKey = (bookingId: string) => `tour_mode_unsent:${bookingId}`;
 
 /** A queued outbound send: free text or a quick-reply preset key (§M-2 ②). */
-export type QueuedSend = { text?: string; presetKey?: string; replyToId?: string };
+export type QueuedSend = { text?: string; presetKey?: string; replyToId?: string; chatLocale?: string };
 
 function readUnsentQueue(bookingId: string): QueuedSend[] {
   try {
@@ -217,6 +217,14 @@ export interface UseTourRoomChannelOptions {
   myParticipantId?: string | null;
   /** Phase 2d — seed read cursors from the join snapshot's participants. */
   initialParticipants?: Array<{ id?: string; last_read_at?: string | null }>;
+  /**
+   * The viewer's EXPLICIT chat-language override (empty = Auto). Rides along on
+   * plain text sends so the server keeps this participant's chat_locale pinned
+   * to the explicit choice instead of clobbering it with write-detection —
+   * otherwise a guest who set chat=Italian but types in Spanish would lose the
+   * Italian preference and start receiving operator bubbles in Spanish.
+   */
+  chatLocale?: string;
 }
 
 export interface UseTourRoomChannel {
@@ -256,6 +264,10 @@ export interface UseTourRoomChannel {
 
 export function useTourRoomChannel(options: UseTourRoomChannelOptions): UseTourRoomChannel {
   const { bookingId, channelTopic, roomSession, myParticipantId = null } = options;
+  // Latest explicit chat-locale override, read at send time (kept in a ref so
+  // sendText's identity stays stable as the override changes).
+  const chatLocaleRef = useRef(options.chatLocale);
+  chatLocaleRef.current = options.chatLocale;
   const [messages, setMessages] = useState<RoomMessage[]>(options.initialMessages ?? []);
   const [connection, setConnection] = useState<RoomConnection>('connecting');
   // Seed from the persisted unsent queue so the retry affordance survives a
@@ -528,7 +540,11 @@ export function useTourRoomChannel(options: UseTourRoomChannelOptions): UseTourR
       const trimmed = text.trim();
       if (!trimmed) return false;
       const { extra, reply } = withReply({}, opts);
-      return sendOptimistic({ text: trimmed, ...reply }, makeOptimistic(trimmed, extra));
+      const override = chatLocaleRef.current?.trim();
+      return sendOptimistic(
+        { text: trimmed, ...reply, ...(override ? { chatLocale: override } : {}) },
+        makeOptimistic(trimmed, extra),
+      );
     },
     [sendOptimistic],
   );
