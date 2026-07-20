@@ -33,10 +33,13 @@ describe('OpsRoomManager (Ops Freedom)', () => {
     await act(async () => {
       render(<OpsRoomManager date="2026-07-18" onClose={noop} onOpenRoom={noop} onRoomsChanged={noop} />);
     });
+    // W1.2 — the palette is now theme-independent tr-* vars; the theme is
+    // expressed by toggling `.dark` on the tr-root (which flips the vars).
     const root = screen.getByTestId('ops-room-manager');
-    expect(root.className).toContain('bg-slate-50');
+    expect(root.classList.contains('tr-root')).toBe(true);
+    expect(root.classList.contains('dark')).toBe(false);
     fireEvent.click(screen.getByTestId('theme-toggle'));
-    expect(root.className).toContain('bg-slate-950');
+    expect(root.classList.contains('dark')).toBe(true);
     expect(window.localStorage.getItem('tour_ops_theme')).toBe('dark');
   });
 
