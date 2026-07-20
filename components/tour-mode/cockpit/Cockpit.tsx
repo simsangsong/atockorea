@@ -29,12 +29,19 @@ import { isDeviceSttSupported, startDeviceStt } from '@/lib/tour-room/deviceStt'
 import MicPrime from '@/components/tour-mode/MicPrime';
 import OperatorAssist from '@/components/tour-mode/guide/OperatorAssist';
 import LocationPreview from '@/components/tour-mode/LocationPreview';
+import Lightbox from '@/components/tour-mode/Lightbox';
 import { parseLocationMessage } from '@/lib/tour-room/locationMessage';
+import {
+  readMessageAttachment,
+  isTranslationPending,
+  formatAttachmentBytes,
+} from '@/lib/tour-room/messageView';
 import {
   AlarmClock,
   Bell,
   BusFront,
   ChevronLeft,
+  FileText,
   Map as MapIcon,
   Phone,
   Sparkles,
@@ -222,6 +229,7 @@ export default function Cockpit({
   const [expAmount, setExpAmount] = useState('');
   const [expKind, setExpKind] = useState('parking');
   const [expBusy, setExpBusy] = useState(false);
+  const [lightbox, setLightbox] = useState<{ url: string; name?: string | null } | null>(null);
   const playedRef = useRef<Set<string>>(new Set(initialMessages.map((message) => message.id)));
   const audioQueueRef = useRef<string[]>([]);
   const playingRef = useRef(false);
@@ -250,8 +258,14 @@ export default function Cockpit({
   useEffect(() => {
     for (const message of messages) {
       if (playedRef.current.has(message.id)) continue;
-      playedRef.current.add(message.id);
       if (message.sender_role !== 'customer' || message._local) continue;
+      // Wait for translation repair (R-6) before speaking — a pending message
+      // would otherwise be read aloud in the guest's language with a Korean
+      // voice. Leave it unmarked so the repaired rebroadcast (same id) plays.
+      if (isTranslationPending(message)) continue;
+      playedRef.current.add(message.id);
+      // A caption-less photo/file has nothing to speak (the image is on screen).
+      if (readMessageAttachment(message) && !message.source_text.trim()) continue;
       void (async () => {
         try {
           const res = await fetch(
@@ -603,13 +617,52 @@ export default function Cockpit({
         {recent.map((message) => {
           const mine = message.sender_role === 'driver' || message.sender_role === 'guide';
           const system = message.sender_role === 'system' || message.sender_role === 'admin';
+          // A guest photo/file is a first-class message — render it, don't drop
+          // it into an empty grey bubble. A caption (if any) rides below.
+          const att = readMessageAttachment(message);
           const text = koText(message);
           // A location message (…q=lat,lng) becomes an inline map preview.
-          const loc = parseLocationMessage(text);
+          const loc = !att ? parseLocationMessage(text) : null;
           return (
             <div key={message.id} className={mine ? 'self-end' : 'self-start'}>
               {!mine && !system ? <p className="mb-1 text-sm font-semibold text-[var(--tr-ink-2)]">손님</p> : null}
-              {loc ? (
+              {att ? (
+                <div className={`flex max-w-[85vw] flex-col gap-1.5 ${mine ? 'items-end' : 'items-start'}`}>
+                  {att.kind === 'image' ? (
+                    <button
+                      type="button"
+                      onClick={() => setLightbox({ url: att.url, name: att.name })}
+                      className="block overflow-hidden rounded-3xl"
+                      data-testid="cockpit-image"
+                    >
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={att.url} alt={att.name} loading="lazy" className="max-h-72 max-w-[80vw] object-cover" />
+                    </button>
+                  ) : (
+                    <a
+                      href={att.url}
+                      download={att.name || undefined}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 rounded-3xl bg-[var(--tr-surface-2)] px-5 py-4 text-[var(--tr-ink)]"
+                      data-testid="cockpit-file"
+                    >
+                      <FileText size={26} strokeWidth={1.75} aria-hidden />
+                      <span className="min-w-0 flex-1">
+                        <span className="block truncate text-lg font-semibold">{att.name || '파일'}</span>
+                        {formatAttachmentBytes(att.size) ? (
+                          <span className="block text-sm text-[var(--tr-ink-2)]">{formatAttachmentBytes(att.size)}</span>
+                        ) : null}
+                      </span>
+                    </a>
+                  )}
+                  {text ? (
+                    <div className="rounded-3xl rounded-bl-md bg-[var(--tr-surface-2)] px-5 py-3 text-xl font-medium text-[var(--tr-ink)]">
+                      {text}
+                    </div>
+                  ) : null}
+                </div>
+              ) : loc ? (
                 <div className="max-w-[85vw]">
                   <LocationPreview lat={loc.lat} lng={loc.lng} label={loc.label} url={loc.url} />
                 </div>
@@ -931,6 +984,9 @@ export default function Cockpit({
           </div>
         </Sheet>
       ) : null}
+
+      {/* Guest photo → full-screen viewer (an address, menu, or lost item). */}
+      <Lightbox url={lightbox?.url ?? null} name={lightbox?.name} onClose={() => setLightbox(null)} />
     </Screen>
   );
 }
