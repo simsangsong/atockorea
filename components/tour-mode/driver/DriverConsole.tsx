@@ -230,6 +230,7 @@ export default function DriverConsole() {
       session={joined.session}
       channelTopic={joined.channelTopic}
       initialMessages={joined.initialMessages}
+      city={overview.tour.city ?? null}
     />
   );
 }

@@ -198,6 +198,32 @@ describe('shared Cockpit', () => {
     }
   });
 
+  // TIER 1 T1-1 — the driver computes overtime (Jeju base 9h, ₩30,000/h) and
+  // logs it as an 'overtime' expense.
+  it('computes and logs driver overtime', async () => {
+    const fetchMock = jest.fn().mockResolvedValue({ ok: true, json: async () => ({}) });
+    const origFetch = global.fetch;
+    global.fetch = fetchMock as unknown as typeof fetch;
+    try {
+      render(<Cockpit {...base} city="Jeju" />);
+      fireEvent.click(screen.getByTestId('driver-action-overtime'));
+      fireEvent.change(screen.getByTestId('overtime-start'), { target: { value: '09:00' } });
+      fireEvent.change(screen.getByTestId('overtime-end'), { target: { value: '19:00' } });
+      fireEvent.click(screen.getByTestId('overtime-recompute'));
+      expect(screen.getByTestId('overtime-hours')).toHaveTextContent('초과 1시간');
+      expect(screen.getByTestId('overtime-amount')).toHaveTextContent('₩30,000');
+      fireEvent.click(screen.getByTestId('overtime-log'));
+      await waitFor(() =>
+        expect(fetchMock).toHaveBeenCalledWith(
+          expect.stringContaining('/extras'),
+          expect.objectContaining({ method: 'POST', body: expect.stringContaining('"kind":"overtime"') }),
+        ),
+      );
+    } finally {
+      global.fetch = origFetch;
+    }
+  });
+
   // TIER 0 P1 — the audio fallback (webview / no device STT) transcribes via
   // /stt and shows the text BEFORE sending; a flagged transcript needs an
   // explicit send so a mistranscription never fans out unseen.

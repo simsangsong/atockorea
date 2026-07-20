@@ -89,6 +89,7 @@ interface DriveState {
   room: CockpitRoom;
   tourTitle: string;
   lifecycle: CockpitLifecycle;
+  city: string | null;
 }
 
 /** One-tap Korean dispatch lines (auto-translated per guest server-side). */
@@ -352,6 +353,7 @@ export default function GuideConsole() {
         room,
         tourTitle: data.tour?.title ?? '투어',
         lifecycle: data.lifecycle,
+        city: data.tour?.city ?? null,
       });
     } catch {
       setDriveError('운전 모드 진입 실패 — 다시 시도해 주세요.');
@@ -402,6 +404,7 @@ export default function GuideConsole() {
           session={drive.session}
           channelTopic={drive.channelTopic}
           initialMessages={drive.initialMessages}
+          city={drive.city}
           onExit={() => setDrive(null)}
         />
       </div>
