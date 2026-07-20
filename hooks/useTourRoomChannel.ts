@@ -448,6 +448,31 @@ export function useTourRoomChannel(options: UseTourRoomChannelOptions): UseTourR
     };
   }, [addMessages, channelTopic, startSse, myParticipantId]);
 
+  // --- translation repair (R-6 completion) ----------------------------------
+  // A message published during a translation-provider outage carries
+  // metadata.translation_status='pending' with empty translations. Any viewer
+  // whose device has connectivity asks the server to re-translate it once; the
+  // repaired row rebroadcasts to everyone (same id → mergeRoomMessages swaps
+  // it in place). Self-heals when the network returns — the Korean-only driver
+  // stops seeing raw foreign text, guests stop seeing raw Korean.
+  const repairRequestedRef = useRef<Set<string>>(new Set());
+  useEffect(() => {
+    if (!roomSession) return;
+    for (const message of messages) {
+      if (message._local) continue;
+      if ((message.metadata as { translation_status?: string } | null)?.translation_status !== 'pending') continue;
+      if (repairRequestedRef.current.has(message.id)) continue;
+      repairRequestedRef.current.add(message.id);
+      void fetch(
+        `/api/tour-rooms/${encodeURIComponent(bookingId)}/messages/${encodeURIComponent(message.id)}/retranslate`,
+        { method: 'POST', headers: { 'x-tour-room-auth': roomSession } },
+      ).catch(() => {
+        // Still offline — allow a later attempt once connectivity returns.
+        repairRequestedRef.current.delete(message.id);
+      });
+    }
+  }, [messages, bookingId, roomSession]);
+
   // --- transport 3: visibility resync (§O-6) --------------------------------
   useEffect(() => {
     if (!roomSession) return;
