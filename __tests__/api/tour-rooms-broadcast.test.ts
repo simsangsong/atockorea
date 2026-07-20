@@ -131,6 +131,28 @@ describe('POST /api/tour-rooms/broadcast (T6.1)', () => {
     expect(broadcastToRoomMock).toHaveBeenCalledTimes(3);
   });
 
+  it('T3-4 — an operator preset fans out zero-LLM 5-locale text to every room', async () => {
+    const db = fakeDb();
+    createServerClientMock.mockReturnValue(db);
+    const res = await broadcastPOST(
+      fakeReq({ tourId: 'tour-1', tourDate: '2099-07-20', token: guideToken(), operatorPresetKey: 'follow_me' }),
+    );
+    expect(res.status).toBe(201);
+    expect(translateMock).not.toHaveBeenCalled(); // pre-translated constant
+    expect(db.inserted.filter((row) => row.table === 'tour_room_messages')).toHaveLength(3);
+    const message = db.inserted.find((row) => row.table === 'tour_room_messages')!;
+    expect(message.metadata).toMatchObject({ kind: 'operator_preset', preset_key: 'follow_me' });
+    expect((message.translations as Record<string, string>).ko).toContain('따라오세요');
+    expect((message.translations as Record<string, string>).en.toLowerCase()).toContain('follow me');
+  });
+
+  it('rejects an unknown operator preset', async () => {
+    const res = await broadcastPOST(
+      fakeReq({ tourId: 'tour-1', tourDate: '2099-07-20', token: guideToken(), operatorPresetKey: 'nope' }),
+    );
+    expect(res.status).toBe(400);
+  });
+
   it('reports partial success without rolling back delivered rooms', async () => {
     createServerClientMock.mockReturnValue(fakeDb({ failRoomFor: ['b2'] }));
     const res = await broadcastPOST(
