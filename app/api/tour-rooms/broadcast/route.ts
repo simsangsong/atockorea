@@ -8,6 +8,7 @@ import { broadcastToRoom } from '@/lib/tour-room/realtime';
 import { sendGuestRoomPush } from '@/lib/tour-room/guestPush';
 import { getQuickReplyPreset } from '@/lib/tour-room/quickReplies';
 import { renderSpotEventTranslations } from '@/lib/tour-room/spotContent';
+import { ROOM_LOCALES } from '@/lib/tour-room/snapshot';
 import { pregenerateGuideNoticeTts, type TtsStorageClient } from '@/lib/tour-room/tts-server';
 
 export const dynamic = 'force-dynamic';
@@ -115,29 +116,42 @@ export async function POST(req: NextRequest) {
         );
         return { ...bundle, source_text: `${bundle.source_text}\n${pinUrl}`, translations };
       };
+      // T2-2 — translate the operator's typed place name so a Korean gather
+      // point reads in each guest's language (banner + feed). R-6: on failure
+      // fall through to the verbatim point (previous behaviour).
+      let pointByLocale: Record<string, string> | null = null;
+      if (point) {
+        try {
+          pointByLocale = (await translateTextForLocales(point, [...ROOM_LOCALES])).translations;
+        } catch (translationError) {
+          console.warn('notice point translation failed, using verbatim:', translationError);
+          pointByLocale = null;
+        }
+      }
+      const pointI18nMeta = pointByLocale ? { meeting_point_i18n: pointByLocale } : {};
       if (notice.kind === 'meeting_notice') {
         if (!point) return NextResponse.json({ error: 'notice.point is required' }, { status: 400 });
         const bundle = withPin(
           time
-            ? renderSpotEventTranslations('meeting_notice_timed', { time, point })
-            : renderSpotEventTranslations('meeting_notice', { point }),
+            ? renderSpotEventTranslations('meeting_notice_timed', { time, point }, pointByLocale)
+            : renderSpotEventTranslations('meeting_notice', { point }, pointByLocale),
         );
         text = bundle.source_text;
         translations = bundle.translations;
         sourceLocale = bundle.source_locale;
-        messageMetadata = { ...messageMetadata, kind: 'meeting_notice', meeting_time: time || null, meeting_point: point, ...pinMeta };
+        messageMetadata = { ...messageMetadata, kind: 'meeting_notice', meeting_time: time || null, meeting_point: point, ...pinMeta, ...pointI18nMeta };
       } else if (notice.kind === 'free_time_timer') {
         if (notice.cancelled) {
-          const bundle = withPin(renderSpotEventTranslations('free_time_cancelled', { point: point || 'the meeting point' }));
+          const bundle = withPin(renderSpotEventTranslations('free_time_cancelled', { point: point || 'the meeting point' }, pointByLocale));
           text = bundle.source_text;
           translations = bundle.translations;
           sourceLocale = bundle.source_locale;
-          messageMetadata = { ...messageMetadata, kind: 'free_time_timer', cancelled: true, meeting_point: point || null, ...pinMeta };
+          messageMetadata = { ...messageMetadata, kind: 'free_time_timer', cancelled: true, meeting_point: point || null, ...pinMeta, ...pointI18nMeta };
         } else {
           if (!time || !/^\d{2}:\d{2}$/.test(time)) {
             return NextResponse.json({ error: 'notice.time (HH:MM) is required for a free-time timer' }, { status: 400 });
           }
-          const bundle = withPin(renderSpotEventTranslations('free_time', { time, point: point || 'the meeting point' }));
+          const bundle = withPin(renderSpotEventTranslations('free_time', { time, point: point || 'the meeting point' }, pointByLocale));
           text = bundle.source_text;
           translations = bundle.translations;
           sourceLocale = bundle.source_locale;
@@ -147,6 +161,7 @@ export async function POST(req: NextRequest) {
             until_time: time, // KST wall clock on the tour date
             meeting_point: point || null,
             ...pinMeta,
+            ...pointI18nMeta,
           };
         }
       } else {

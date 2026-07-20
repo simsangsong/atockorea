@@ -16,6 +16,8 @@ import { recordRoomEvent } from '@/lib/tour-room/events';
 import { broadcastToRoom } from '@/lib/tour-room/realtime';
 import { inPostTourWindow, roomLifecycle } from '@/lib/tour-room/time';
 import { classifyAttachment, uploadAttachment, type StorageClientLike } from '@/lib/tour-room/attachments';
+import { translateTextForLocales } from '@/lib/openai-server';
+import { ROOM_LOCALES } from '@/lib/tour-room/snapshot';
 
 export const dynamic = 'force-dynamic';
 
@@ -55,7 +57,22 @@ async function insertExtraCapsule(
   extra: ExtraRow,
   status: ExtraStatus,
 ) {
-  const bundle = renderExtraCapsule(status, extra.item, extra.amount_krw, extra.payer === 'driver' ? 'driver' : 'guide');
+  // T2-2 — translate the operator's typed item so a Korean expense label reads
+  // in each guest's language (banner + card). R-6: on failure, verbatim.
+  let itemByLocale: Record<string, string> | null = null;
+  try {
+    itemByLocale = (await translateTextForLocales(extra.item, [...ROOM_LOCALES])).translations;
+  } catch (translationError) {
+    console.warn('ledger item translation failed, using verbatim:', translationError);
+    itemByLocale = null;
+  }
+  const bundle = renderExtraCapsule(
+    status,
+    extra.item,
+    extra.amount_krw,
+    extra.payer === 'driver' ? 'driver' : 'guide',
+    itemByLocale,
+  );
   const { data: message } = await supabase
     .from('tour_room_messages')
     .insert({
@@ -71,6 +88,7 @@ async function insertExtraCapsule(
         kind: 'extra_ledger',
         extra_id: extra.id,
         item: extra.item,
+        ...(itemByLocale ? { item_i18n: itemByLocale } : {}),
         amount_krw: extra.amount_krw,
         extra_kind: extra.kind,
         payer: extra.payer,

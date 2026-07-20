@@ -81,9 +81,21 @@ export function renderExtraCapsule(
   item: string,
   amountKrw: number,
   payer: ExtraPayer = 'guide',
+  itemByLocale?: Record<string, string> | null,
 ): Bundle {
   const who = RECIPIENT[payer === 'driver' ? 'driver' : 'guide'];
-  const translations = TEMPLATES[status](item, formatKrw(amountKrw), who);
+  const krw = formatKrw(amountKrw);
+  const base = TEMPLATES[status](item, krw, who);
+  // T2-2 — a per-locale translated item so a Korean expense label ("입장권 4매")
+  // reads in each guest's language. Missing locales fall back to the raw item.
+  if (!itemByLocale) {
+    return { source_locale: 'en', source_text: base.en, translations: base };
+  }
+  const translations: Record<string, string> = {};
+  for (const locale of Object.keys(base)) {
+    const localItem = itemByLocale[locale] ?? item;
+    translations[locale] = localItem === item ? base[locale] : TEMPLATES[status](localItem, krw, who)[locale];
+  }
   return { source_locale: 'en', source_text: translations.en, translations };
 }
 

@@ -125,14 +125,24 @@ export function renderSpotEventText(kind: SpotEventKind, locale: RoomLocale, par
   return interpolate(TEMPLATES[kind][locale], params);
 }
 
-/** All-locale translations bundle for a message row — zero LLM calls. */
+/**
+ * All-locale translations bundle for a message row — zero LLM calls by default.
+ *
+ * T2-2: `pointByLocale` optionally supplies a per-locale translated place name
+ * (the operator typed it in Korean; the caller ran it through the translation
+ * router). When absent (or a locale is missing), the raw `params.point`
+ * interpolates verbatim — preserving the previous behaviour + the R-6 fallback
+ * when translation is unavailable.
+ */
 export function renderSpotEventTranslations(
   kind: SpotEventKind,
   params: SpotEventParams,
+  pointByLocale?: Record<string, string> | null,
 ): { source_locale: string; source_text: string; translations: Record<string, string> } {
   const translations: Record<string, string> = {};
   for (const locale of ROOM_LOCALES) {
-    translations[locale] = renderSpotEventText(kind, locale, params);
+    const localeParams = pointByLocale ? { ...params, point: pointByLocale[locale] ?? params.point } : params;
+    translations[locale] = renderSpotEventText(kind, locale, localeParams);
   }
   return { source_locale: 'en', source_text: translations.en, translations };
 }

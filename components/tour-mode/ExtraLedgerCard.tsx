@@ -74,6 +74,8 @@ const COPY: Record<
 export interface ExtraLedgerMeta {
   extra_id?: string;
   item?: string;
+  /** T2-2 — per-locale translated item (the operator typed it in Korean). */
+  item_i18n?: Record<string, string>;
   amount_krw?: number;
   extra_kind?: string;
   status?: string;
@@ -122,7 +124,7 @@ export default function ExtraLedgerCard({
         </span>
       </div>
       <p className={`tr-body mt-1.5 font-semibold text-[var(--tr-ink)] ${voided ? 'line-through' : ''}`}>
-        {meta.item ?? ''}
+        {meta.item_i18n?.[locale] ?? meta.item ?? ''}
         <span className="ml-2 font-bold text-[var(--tr-accent-deep)]">{formatKrw(meta.amount_krw ?? 0)}</span>
       </p>
       {!voided && <p className="tr-meta mt-0.5 text-[var(--tr-ink-3)]">{copy.cashNote}</p>}
