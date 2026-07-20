@@ -70,7 +70,9 @@ const COPY: Record<RoomLocale, NudgeCopy> = {
 interface PlanStatusResponse {
   day_plan: { status?: string } | null;
   viewer: { can_edit?: boolean; is_lead?: boolean };
-  tour: { guide_curated?: boolean };
+  /** is_private: only private (vehicle-charter) tours have an editable route, so
+   *  only they get the nudge — fixed bus / small-group tours keep a set itinerary. */
+  tour: { guide_curated?: boolean; is_private?: boolean };
 }
 
 /** Finalized = submitted, guide-confirmed/live/done, or delegated to the guide. */
@@ -113,7 +115,8 @@ export default function PlanNudgeModal({
         const data = (await res.json()) as PlanStatusResponse;
         if (cancelled || dismissedRef.current) return;
         const canPlan = Boolean(data.viewer?.can_edit || data.viewer?.is_lead);
-        if (canPlan && !isPlanFinalized(data)) setOpen(true);
+        // Only private (editable-route) tours get the planner nudge.
+        if (canPlan && data.tour?.is_private && !isPlanFinalized(data)) setOpen(true);
       } catch {
         /* fail silent — the Home tab still carries the plan tile */
       }

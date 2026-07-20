@@ -263,12 +263,12 @@ export async function GET(
 
     const { data: bookingRow } = await supabase
       .from('bookings')
-      .select('itinerary, tours ( schedule, city, duration )')
+      .select('itinerary, tours ( schedule, city, duration, price_type )')
       .eq('id', booking.id)
       .maybeSingle();
     const tourRaw = (bookingRow as { tours?: unknown } | null)?.tours;
     const tourJoin = (Array.isArray(tourRaw) ? tourRaw[0] : tourRaw) as
-      | { schedule?: unknown; city?: unknown; duration?: unknown }
+      | { schedule?: unknown; city?: unknown; duration?: unknown; price_type?: unknown }
       | null;
     const result = await resolveDaySchedule(supabase, {
       bookingId: booking.id,
@@ -308,6 +308,11 @@ export async function GET(
         date: booking.tour_date,
         region: regionForCity(tourJoin?.city),
         total_hours: parseTourHours(tourJoin?.duration),
+        // Private (vehicle-charter) tours have a customizable route → the guest
+        // planner is editable. Per-person shared tours (bus / small-group / coach)
+        // run a FIXED itinerary → the planner is view-only for them (사용자 확정
+        // 2026-07-20). Discriminator: tours.price_type ('vehicle' = private).
+        is_private: tourJoin?.price_type === 'vehicle',
         guide_curated: Boolean(
           ((bookingRow as { itinerary?: Record<string, unknown> } | null)?.itinerary as
             | Record<string, unknown>

@@ -42,6 +42,7 @@ function planResponse(input?: {
   needs?: Record<string, unknown>;
   guideCurated?: boolean;
   status?: string;
+  isPrivate?: boolean;
 }) {
   return {
     source: 'tour_schedule',
@@ -54,7 +55,15 @@ function planResponse(input?: {
       version: 1,
     },
     viewer: { role: 'customer', is_lead: true, can_edit: true },
-    tour: { date: '2026-07-14', region: 'jeju', total_hours: 9, guide_curated: input?.guideCurated ?? false },
+    // is_private true → the editable planner renders (fixed tours get a view-only
+    // screen instead). Autosave tests exercise the editable path.
+    tour: {
+      date: '2026-07-14',
+      region: 'jeju',
+      total_hours: 9,
+      guide_curated: input?.guideCurated ?? false,
+      is_private: input?.isPrivate ?? true,
+    },
   };
 }
 
@@ -191,4 +200,13 @@ it('clears delegated outcome when switching back to a direct course', async () =
   expect(putBodies[0]).toMatchObject({ stops: [expect.objectContaining({ poi_key: 'seongsan_ilchulbong' })] });
   expect(putBodies[0].stops_changed).toBe(true);
   expect(putBodies[0].delegate).toBeUndefined();
+});
+
+it('renders a view-only fixed itinerary (no edit tabs) for a non-private tour', async () => {
+  installFetch({ plan: planResponse({ isPrivate: false }) });
+  render(<PlanEditorClient bookingId="booking-1" />);
+
+  await screen.findByText(/set route planned by our team/i);
+  // Editable tabs are gone — the fixed tour's itinerary is view-only.
+  expect(screen.queryByText('Pick places')).not.toBeInTheDocument();
 });

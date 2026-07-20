@@ -13,12 +13,14 @@ function installPlanFetch(plan: {
   can_edit?: boolean;
   is_lead?: boolean;
   guide_curated?: boolean;
+  is_private?: boolean;
 }) {
   global.fetch = jest.fn(async () =>
     jsonResponse({
       day_plan: plan.status ? { status: plan.status } : null,
       viewer: { can_edit: plan.can_edit ?? false, is_lead: plan.is_lead ?? false },
-      tour: { guide_curated: plan.guide_curated ?? false },
+      // Default private (editable-route) so the nudge shows; fixed tours pass false.
+      tour: { guide_curated: plan.guide_curated ?? false, is_private: plan.is_private ?? true },
     }),
   ) as jest.Mock;
 }
@@ -60,6 +62,14 @@ it('stays hidden after the plan has been submitted', async () => {
 
 it('stays hidden for a non-lead member who cannot edit the plan', async () => {
   installPlanFetch({ status: 'guest_draft', can_edit: false, is_lead: false });
+  renderNudge();
+
+  await waitFor(() => expect(global.fetch).toHaveBeenCalled());
+  expect(screen.queryByTestId('plan-nudge')).not.toBeInTheDocument();
+});
+
+it('stays hidden for a fixed-itinerary (non-private) tour', async () => {
+  installPlanFetch({ status: 'guest_draft', can_edit: true, is_lead: true, is_private: false });
   renderNudge();
 
   await waitFor(() => expect(global.fetch).toHaveBeenCalled());
