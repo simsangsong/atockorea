@@ -60,7 +60,8 @@ export default function OpsApp() {
   // Hub sheets (룸·링크 관리 / 메시지 모아보기) ride over every tab like the
   // room drawer does.
   const [managerOpen, setManagerOpen] = useState(false);
-  // Ops-wide light/dark (사용자 요청 2026-07-18) — .ops-light remaps every tab.
+  // Ops-wide light/dark — toggles `.dark` on the tr-root, flipping the tr-*
+  // vars + `dark:` semantics across every tab and overlay.
   const [opsTheme, toggleOpsTheme] = useOpsTheme();
   const [inboxOpen, setInboxOpen] = useState(false);
 
@@ -323,11 +324,11 @@ export default function OpsApp() {
 
   return (
     <div
-      /* W1.2 — tr-* token engine on the ops shell. Single root carries both
-         `.tr-root` and the theme class: `.dark` (→ .tr-root.dark dark vars) or
-         `.ops-light` (kept so not-yet-migrated tabs' raw-slate utilities still
-         flip to light via the globals.css override during the migration). */
-      className={`ops-app tr-root min-h-dvh bg-[var(--tr-canvas)] text-[var(--tr-ink)] ${opsTheme === 'dark' ? 'dark' : 'ops-light'}`}
+      /* W1.2 — tr-* token engine on the ops shell. The root carries `.tr-root`
+         (provides the vars) and toggles `.dark` for dark mode; light is the
+         default. Every tab + overlay is on tr-* chrome + `dark:` semantics now,
+         so the old `.ops-light` override is gone. */
+      className={`tr-root min-h-dvh bg-[var(--tr-canvas)] text-[var(--tr-ink)] ${opsTheme === 'dark' ? 'dark' : ''}`}
       style={{ paddingBottom: 'calc(72px + env(safe-area-inset-bottom, 0px))' }}
     >
       <header

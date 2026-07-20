@@ -38,23 +38,23 @@ export default function OpsSosTab({
         return (
           <div
             key={room.id}
-            className="rounded-2xl border border-red-500/50 bg-red-950/40 p-4 ring-1 ring-red-500/30"
+            className="rounded-2xl border border-red-200 bg-red-50 p-4 ring-1 ring-red-200 dark:border-red-500/50 dark:bg-red-950/40 dark:ring-red-500/30"
             data-testid="ops-sos-card"
           >
             <div className="flex items-start justify-between gap-2">
               <div className="min-w-0">
-                <p className="text-[14px] font-bold text-red-100">
+                <p className="text-[14px] font-bold text-red-700 dark:text-red-100">
                   <span className="animate-pulse">🆘</span> {room.booking?.contact_name ?? '게스트'}
-                  <span className="ml-1.5 font-normal text-red-300/70">
+                  <span className="ml-1.5 font-normal text-red-500 dark:text-red-300/70">
                     {room.booking?.number_of_guests ?? 1}명 · {room.booking?.preferred_language ?? 'en'}
                   </span>
                 </p>
-                <p className="mt-0.5 truncate text-[12px] text-red-200/80">{room.tour?.title ?? ''}</p>
+                <p className="mt-0.5 truncate text-[12px] text-red-500 dark:text-red-200/80">{room.tour?.title ?? ''}</p>
               </div>
-              <span className="shrink-0 text-[11px] text-red-300/70">{kstTimeLabel(sos.created_at)}</span>
+              <span className="shrink-0 text-[11px] text-red-500 dark:text-red-300/70">{kstTimeLabel(sos.created_at)}</span>
             </div>
 
-            <p className="mt-2 rounded-xl bg-red-500/10 px-3 py-2 text-[13px] text-red-100">
+            <p className="mt-2 rounded-xl bg-red-500/10 px-3 py-2 text-[13px] text-red-700 dark:text-red-100">
               {sos.metadata.sender_name && <b>{sos.metadata.sender_name}: </b>}
               {sos.metadata.note ?? '메모 없는 SOS — 즉시 연락 필요'}
             </p>
@@ -73,26 +73,26 @@ export default function OpsSosTab({
                   href={`https://maps.google.com/?q=${sos.metadata.latitude},${sos.metadata.longitude}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-11 items-center justify-center gap-1.5 rounded-xl bg-red-500/20 text-[13px] font-semibold text-red-100"
+                  className="flex h-11 items-center justify-center gap-1.5 rounded-xl bg-red-500/20 text-[13px] font-semibold text-red-700 dark:text-red-100"
                 >
                   <MapPin className="size-4" />
                   위치
                 </a>
               ) : (
-                <span className="flex h-11 items-center justify-center rounded-xl bg-red-500/10 text-[12px] text-red-300/50">
+                <span className="flex h-11 items-center justify-center rounded-xl bg-red-500/10 text-[12px] text-red-500 dark:text-red-300/50">
                   위치 없음
                 </span>
               )}
               {phone ? (
                 <a
                   href={`tel:${phone}`}
-                  className="flex h-11 items-center justify-center gap-1.5 rounded-xl bg-red-500/20 text-[13px] font-semibold text-red-100"
+                  className="flex h-11 items-center justify-center gap-1.5 rounded-xl bg-red-500/20 text-[13px] font-semibold text-red-700 dark:text-red-100"
                 >
                   <Phone className="size-4" />
                   전화
                 </a>
               ) : (
-                <span className="flex h-11 items-center justify-center rounded-xl bg-red-500/10 text-[12px] text-red-300/50">
+                <span className="flex h-11 items-center justify-center rounded-xl bg-red-500/10 text-[12px] text-red-500 dark:text-red-300/50">
                   번호 없음
                 </span>
               )}

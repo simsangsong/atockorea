@@ -142,9 +142,9 @@ export default function OpsInboxView({
                       <span
                         className={
                           row.senderRole === 'customer'
-                            ? 'text-emerald-300'
+                            ? 'text-emerald-700 dark:text-emerald-300'
                             : row.senderRole === 'guide'
-                              ? 'text-violet-300'
+                              ? 'text-violet-700 dark:text-violet-300'
                               : 'text-[var(--tr-ink-2)]'
                         }
                       >

@@ -1503,62 +1503,7 @@ body[data-welcome-popup] [data-slot='dialog-overlay'] {
   }
 }
 
-/* ========== Ops console light mode (사용자 요청 2026-07-18) ==========
-   One switch for the WHOLE 관제센터: OpsApp toggles `.ops-light` on the
-   `.ops-app` root and this block remaps the console's dark utility palette
-   in place — every tab (홈/대시보드/지도/SOS/설정) flips without touching each
-   component. Attribute selectors catch opacity variants (bg-slate-950/90).
-   Semantic accents (blue/emerald buttons, SOS red fills) keep their hue;
-   only the -100..-300 "on-dark" text steps deepen for light backgrounds. */
-.ops-app.ops-light {
-  background: #f1f5f9;
-  color: #0f172a;
-}
-.ops-app.ops-light [class*="bg-slate-950"],
-.ops-app.ops-light [class*="bg-slate-900"] {
-  background-color: #ffffff !important;
-}
-.ops-app.ops-light [class*="bg-white/5"] {
-  background-color: #ffffff !important;
-  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
-}
-.ops-app.ops-light [class*="bg-white/10"] {
-  background-color: #e8edf3 !important;
-}
-.ops-app.ops-light [class*="border-white/"] {
-  border-color: #e2e8f0 !important;
-}
-.ops-app.ops-light [class*="active:bg-white/10"]:active {
-  background-color: #dbe3ec !important;
-}
-.ops-app.ops-light .text-slate-100,
-.ops-app.ops-light .text-slate-200,
-.ops-app.ops-light .text-slate-50,
-.ops-app.ops-light .text-white:not([class*="bg-blue"]):not([class*="bg-emerald"]):not([class*="bg-red"]):not([class*="bg-slate-9"]):not([class*="bg-amber"]) {
-  color: #0f172a !important;
-}
-.ops-app.ops-light .text-slate-300,
-.ops-app.ops-light .text-slate-400 {
-  color: #475569 !important;
-}
-.ops-app.ops-light .text-slate-600 {
-  color: #94a3b8 !important;
-}
-/* Alert/badge "-on-dark" text steps → readable-on-light equivalents */
-.ops-app.ops-light .text-red-100 { color: #b91c1c !important; }
-.ops-app.ops-light .text-red-300 { color: #dc2626 !important; }
-.ops-app.ops-light .text-emerald-300 { color: #047857 !important; }
-.ops-app.ops-light .text-blue-300 { color: #1d4ed8 !important; }
-.ops-app.ops-light .text-violet-300 { color: #6d28d9 !important; }
-.ops-app.ops-light .text-amber-300 { color: #b45309 !important; }
-.ops-app.ops-light [class*="bg-red-950"] {
-  background-color: #fef2f2 !important;
-  border-color: #fecaca !important;
-}
-/* Colored action buttons keep white labels in both themes */
-.ops-app.ops-light [class*="bg-blue-5"],
-.ops-app.ops-light [class*="bg-blue-6"],
-.ops-app.ops-light [class*="bg-emerald-6"],
-.ops-app.ops-light [class*="bg-red-6"] {
-  color: #ffffff !important;
-}
+/* Ops console light/dark (W1.2, 2026-07-20): the console is now fully on the
+   tr-* token system (var(--tr-*) chrome + `dark:` semantic variants), themed by
+   `.tr-root` + `.dark` on the OpsApp/OpsRoomManager root. The old `.ops-light`
+   in-place utility remap was retired here — no more `.ops-app.ops-light` block. */
