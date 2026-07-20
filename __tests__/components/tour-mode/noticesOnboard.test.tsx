@@ -73,6 +73,19 @@ describe('activeNotice (T6.3/T6.5)', () => {
     expect(formatTargetTime(fourPm, 'ko')).toContain('4');
     expect(formatTargetTime(fourPm, 'en')).toMatch(/4:00/);
   });
+
+  it('passes the gather-point pin lat/lng through, null when absent (T2-1)', () => {
+    const pinned = activeNotice(
+      [message({ kind: 'meeting_notice', meeting_time: '16:00', meeting_point: 'Gate 2', meeting_lat: 33.5, meeting_lng: 126.5 }, now)],
+      today,
+      now,
+    )!;
+    expect(pinned.lat).toBe(33.5);
+    expect(pinned.lng).toBe(126.5);
+    const plain = activeNotice([message({ kind: 'meeting_notice', meeting_time: '16:00', meeting_point: 'Gate 2' }, now)], today, now)!;
+    expect(plain.lat).toBeNull();
+    expect(plain.lng).toBeNull();
+  });
 });
 
 describe('NoticeBanner (T6.3/T6.5)', () => {
@@ -92,6 +105,17 @@ describe('NoticeBanner (T6.3/T6.5)', () => {
   it('renders nothing without an active notice', () => {
     render(<NoticeBanner messages={[]} tourDate={today} locale="en" />);
     expect(screen.queryByTestId('notice-banner')).not.toBeInTheDocument();
+  });
+
+  it('renders a tappable map link for a pinned meeting notice (T2-1)', () => {
+    jest.useFakeTimers().setSystemTime(dayStart + 15 * 3600_000);
+    const messages = [
+      message({ kind: 'meeting_notice', meeting_time: '15:30', meeting_point: 'Gate 2', meeting_lat: 33.5, meeting_lng: 126.5 }, dayStart + 14.9 * 3600_000),
+    ];
+    render(<NoticeBanner messages={messages} tourDate={today} locale="en" />);
+    const link = screen.getByTestId('notice-map-link');
+    expect(link).toHaveAttribute('href', 'https://maps.google.com/?q=33.5,126.5');
+    jest.useRealTimers();
   });
 });
 

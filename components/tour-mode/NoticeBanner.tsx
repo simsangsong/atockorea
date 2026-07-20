@@ -28,6 +28,7 @@ const COPY: Record<
     contact: string;
     call: string;
     screenshot: string;
+    map: string;
   }
 > = {
   en: {
@@ -41,6 +42,7 @@ const COPY: Record<
     contact: 'Can’t make it? Contact your guide now.',
     call: 'Call',
     screenshot: 'Tip: screenshot this — it works with no signal.',
+    map: 'Map',
   },
   ko: {
     meeting: '집합 시간',
@@ -53,6 +55,7 @@ const COPY: Record<
     contact: '어려우면 지금 가이드에게 연락해 주세요.',
     call: '전화',
     screenshot: '팁: 이 화면을 스크린샷해 두면 신호가 없어도 볼 수 있어요.',
+    map: '지도',
   },
   ja: {
     meeting: '集合時間',
@@ -65,6 +68,7 @@ const COPY: Record<
     contact: '難しい場合は今すぐガイドへご連絡ください。',
     call: '電話',
     screenshot: 'ヒント: この画面をスクショしておくと圏外でも確認できます。',
+    map: '地図',
   },
   es: {
     meeting: 'Hora de reunión',
@@ -77,6 +81,7 @@ const COPY: Record<
     contact: '¿No puedes llegar? Contacta a tu guía ahora.',
     call: 'Llamar',
     screenshot: 'Consejo: haz captura — funciona sin señal.',
+    map: 'Mapa',
   },
   zh: {
     meeting: '集合时间',
@@ -89,6 +94,7 @@ const COPY: Record<
     contact: '赶不到?请立即联系导游。',
     call: '致电',
     screenshot: '提示: 截图保存此画面——无信号也能查看。',
+    map: '地图',
   },
 };
 
@@ -193,7 +199,22 @@ export default function NoticeBanner({
           {title}
           {notice.targetMs !== null && ` · ${copy.backBy(formatTargetTime(notice.targetMs, locale))}`}
         </p>
-        {notice.point && <p className="tr-label truncate text-[var(--tr-ink-2)]">{copy.at(notice.point)}</p>}
+        {(notice.point || (notice.lat !== null && notice.lng !== null)) && (
+          <p className="tr-label truncate text-[var(--tr-ink-2)]">
+            {notice.point ? copy.at(notice.point) : ''}
+            {notice.lat !== null && notice.lng !== null && (
+              <a
+                href={`https://maps.google.com/?q=${notice.lat},${notice.lng}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-1.5 whitespace-nowrap font-semibold text-[var(--tr-accent-deep)] underline"
+                data-testid="notice-map-link"
+              >
+                📍 {copy.map}
+              </a>
+            )}
+          </p>
+        )}
         {stage === 'set' && (
           // W4.2 / E5 — dead-battery / no-signal insurance while there's time.
           <p data-testid="screenshot-hint" className="tr-meta mt-0.5 text-[var(--tr-ink-3)]">

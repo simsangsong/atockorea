@@ -13,6 +13,9 @@ export interface NoticeState {
   kind: 'meeting_notice' | 'free_time_timer';
   messageId: string;
   point: string | null;
+  /** T2-1 — optional gather-point pin (a foreign guest taps → native map). */
+  lat: number | null;
+  lng: number | null;
   /** ms epoch of the KST wall-clock target; null = untimed notice. */
   targetMs: number | null;
   remainingMs: number | null;
@@ -46,6 +49,8 @@ export function activeNotice(
 
     const cancelled = message.metadata?.cancelled === true;
     const point = (message.metadata?.meeting_point as string | null | undefined) ?? null;
+    const lat = typeof message.metadata?.meeting_lat === 'number' ? (message.metadata.meeting_lat as number) : null;
+    const lng = typeof message.metadata?.meeting_lng === 'number' ? (message.metadata.meeting_lng as number) : null;
     const hhmm =
       (message.metadata?.until_time as string | undefined) ??
       (message.metadata?.meeting_time as string | undefined) ??
@@ -60,6 +65,8 @@ export function activeNotice(
         kind: kind as NoticeState['kind'],
         messageId: message.id,
         point,
+        lat,
+        lng,
         targetMs: null,
         remainingMs: null,
         cancelled: true,
@@ -74,6 +81,8 @@ export function activeNotice(
       kind: kind as NoticeState['kind'],
       messageId: message.id,
       point,
+      lat,
+      lng,
       targetMs,
       remainingMs,
       cancelled: false,
