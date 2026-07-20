@@ -24,6 +24,16 @@ jest.mock('@/lib/tour-room/attachments', () => ({
   classifyAttachment: jest.fn(() => ({ kind: 'image', ext: 'jpg' })),
   uploadAttachment: jest.fn(async () => ({ url: 'https://x/att/receipt.jpg', mime: 'image/jpeg', name: 'r.jpg', size: 100 })),
 }));
+// T2-2 — capsules translate the item; echo by default so existing assertions
+// (which check amounts/status, not the item text) hold. Per-test overrides
+// supply a real per-locale translation.
+jest.mock('@/lib/openai-server', () => ({
+  translateTextForLocales: jest.fn(async (text: string) => ({
+    source_locale: 'ko',
+    translations: { en: text, ko: text, ja: text, es: text, zh: text },
+  })),
+}));
+const translateItemMock = jest.requireMock('@/lib/openai-server').translateTextForLocales as jest.Mock;
 
 const getAuthUserMock = getAuthUser as jest.Mock;
 const createServerClientMock = createServerClient as jest.Mock;
@@ -181,6 +191,23 @@ describe('extras API', () => {
     expect(res.status).toBe(201);
     expect(db.inserts.tour_room_extras[0]).toMatchObject({ kind: 'ticket', payer: 'driver', receipt_photo_url: 'https://x/att/receipt.jpg' });
     expect(db.inserts.tour_room_messages[0].metadata).toMatchObject({ receipt_photo_url: 'https://x/att/receipt.jpg' });
+  });
+
+  it('T2-2 — translates the ledger item into each locale on the capsule', async () => {
+    const db = fakeDb();
+    createServerClientMock.mockReturnValue(db);
+    translateItemMock.mockResolvedValueOnce({
+      source_locale: 'ko',
+      translations: { en: '4 admission tickets', ko: '입장권 4매', ja: '入場券4枚', es: '4 entradas', zh: '4张门票' },
+    });
+    const res = await extrasPOST(
+      fakeReq({ headers: { 'x-tour-room-auth': session('guide') }, json: { item: '입장권 4매', amount_krw: 48000, kind: 'ticket' } }),
+      routeParams(),
+    );
+    expect(res.status).toBe(201);
+    const capsule = db.inserts.tour_room_messages[0];
+    expect(capsule.metadata).toMatchObject({ item_i18n: { en: '4 admission tickets' } });
+    expect((capsule.translations as Record<string, string>).en).toContain('4 admission tickets');
   });
 
   it('customers cannot log; invalid amounts are rejected', async () => {

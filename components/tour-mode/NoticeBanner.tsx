@@ -176,6 +176,8 @@ export default function NoticeBanner({
 
   const urgent = notice.warn5 || (notice.remainingMs !== null && notice.remainingMs === 0);
   const title = notice.kind === 'free_time_timer' ? copy.freeTime : copy.meeting;
+  // T2-2 — the operator's place name, translated into the viewer's language.
+  const displayPoint = notice.pointI18n?.[locale] ?? notice.point;
 
   // U5.4 — a floating overlay pill (rendered in the shell's overlay zone):
   // flat surface + one accent; when urgent only the countdown capsule pulses,
@@ -199,9 +201,9 @@ export default function NoticeBanner({
           {title}
           {notice.targetMs !== null && ` · ${copy.backBy(formatTargetTime(notice.targetMs, locale))}`}
         </p>
-        {(notice.point || (notice.lat !== null && notice.lng !== null)) && (
+        {(displayPoint || (notice.lat !== null && notice.lng !== null)) && (
           <p className="tr-label truncate text-[var(--tr-ink-2)]">
-            {notice.point ? copy.at(notice.point) : ''}
+            {displayPoint ? copy.at(displayPoint) : ''}
             {notice.lat !== null && notice.lng !== null && (
               <a
                 href={`https://maps.google.com/?q=${notice.lat},${notice.lng}`}

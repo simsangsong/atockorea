@@ -155,10 +155,30 @@ describe('POST /api/tour-rooms/broadcast (T6.1)', () => {
       }),
     );
     expect(res.status).toBe(201);
-    expect(translateMock).not.toHaveBeenCalled(); // §M-2 ①
+    // T2-2 — the template stays zero-LLM, but the operator's place name is now
+    // translated so a foreign guest can read it.
+    expect(translateMock).toHaveBeenCalledWith('Gate 2', ['en', 'ko', 'zh', 'ja', 'es']);
     const message = db.inserted.find((row) => row.table === 'tour_room_messages')!;
     expect(message.metadata).toMatchObject({ kind: 'meeting_notice', meeting_time: '15:30', meeting_point: 'Gate 2' });
     expect((message.translations as Record<string, string>).ko).toContain('15:30');
+  });
+
+  it('T2-2 — translates the gather point into each locale (banner + feed)', async () => {
+    const db = fakeDb();
+    createServerClientMock.mockReturnValue(db);
+    translateMock.mockResolvedValueOnce({
+      source_locale: 'ko',
+      translations: { en: 'Parking Gate 2', ko: '주차장 2번 게이트', ja: '駐車場2番ゲート', es: 'Puerta 2', zh: '2号停车门' },
+    });
+    const res = await broadcastPOST(
+      fakeReq({ tourId: 'tour-1', tourDate: '2099-07-20', token: guideToken(), notice: { kind: 'meeting_notice', time: '15:30', point: '주차장 2번 게이트' } }),
+    );
+    expect(res.status).toBe(201);
+    const message = db.inserted.find((row) => row.table === 'tour_room_messages')!;
+    const t = message.translations as Record<string, string>;
+    expect(t.en).toContain('Parking Gate 2'); // English guest reads English
+    expect(t.es).toContain('Puerta 2');
+    expect(message.metadata).toMatchObject({ meeting_point_i18n: { en: 'Parking Gate 2' } });
   });
 
   it('a pinned meeting notice carries lat/lng + a maps URL in every locale (T2-1)', async () => {

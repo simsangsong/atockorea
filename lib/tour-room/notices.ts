@@ -13,6 +13,8 @@ export interface NoticeState {
   kind: 'meeting_notice' | 'free_time_timer';
   messageId: string;
   point: string | null;
+  /** T2-2 — per-locale translated place name (the operator typed it in Korean). */
+  pointI18n: Record<string, string> | null;
   /** T2-1 — optional gather-point pin (a foreign guest taps → native map). */
   lat: number | null;
   lng: number | null;
@@ -49,6 +51,7 @@ export function activeNotice(
 
     const cancelled = message.metadata?.cancelled === true;
     const point = (message.metadata?.meeting_point as string | null | undefined) ?? null;
+    const pointI18n = (message.metadata?.meeting_point_i18n as Record<string, string> | null | undefined) ?? null;
     const lat = typeof message.metadata?.meeting_lat === 'number' ? (message.metadata.meeting_lat as number) : null;
     const lng = typeof message.metadata?.meeting_lng === 'number' ? (message.metadata.meeting_lng as number) : null;
     const hhmm =
@@ -65,6 +68,7 @@ export function activeNotice(
         kind: kind as NoticeState['kind'],
         messageId: message.id,
         point,
+        pointI18n,
         lat,
         lng,
         targetMs: null,
@@ -81,6 +85,7 @@ export function activeNotice(
       kind: kind as NoticeState['kind'],
       messageId: message.id,
       point,
+      pointI18n,
       lat,
       lng,
       targetMs,
