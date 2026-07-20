@@ -95,7 +95,15 @@ interface PlanResponse {
     version?: number;
   } | null;
   viewer: { role: string; is_lead: boolean; can_edit: boolean };
-  tour: { date: string | null; region: string | null; total_hours: number | null; guide_curated: boolean };
+  tour: {
+    date: string | null;
+    region: string | null;
+    total_hours: number | null;
+    guide_curated: boolean;
+    /** Private (vehicle-charter) tour → editable planner; false (per-person bus /
+     *  small-group) → fixed itinerary, view-only. */
+    is_private: boolean;
+  };
 }
 
 interface CourseTemplate {
@@ -961,6 +969,34 @@ interface PlanSaveResponse {
   error?: string;
 }
 
+/**
+ * Copy for the fixed-itinerary (non-private) view. Per-person bus / small-group
+ * tours run a set route, so the planner is view-only for them — self-contained
+ * so it doesn't bloat the main PlanCopy blocks (사용자 확정 2026-07-20).
+ */
+const FIXED_ITIN_COPY: Record<RoomLocale, { eyebrow: string; note: string }> = {
+  en: {
+    eyebrow: 'Set itinerary',
+    note: 'This tour runs a set route planned by our team — no need to build one. Here’s what your day includes:',
+  },
+  ko: {
+    eyebrow: '정해진 일정',
+    note: '이 투어는 저희 팀이 짜둔 정해진 코스로 진행돼요. 따로 일정을 만들 필요 없이, 오늘 일정은 아래와 같아요:',
+  },
+  ja: {
+    eyebrow: '固定コース',
+    note: 'このツアーはチームが計画した固定ルートで進みます。プランを作る必要はありません。当日の行程はこちらです:',
+  },
+  zh: {
+    eyebrow: '固定行程',
+    note: '本行程按我们团队规划好的固定路线进行，无需自行安排。今天的行程如下:',
+  },
+  es: {
+    eyebrow: 'Itinerario fijo',
+    note: 'Este tour sigue una ruta fija planificada por nuestro equipo — no necesitas crear una. Esto es lo que incluye tu día:',
+  },
+};
+
 export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
   const { state, join, roomSession } = useTourRoomSession(bookingId);
   const attempted = useRef(false);
@@ -1451,6 +1487,68 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
     ['pick', copy.tabPick, MapPin],
     ['delegate', copy.tabDelegate, Sparkles],
   ];
+
+  // Fixed-itinerary tours (per-person bus / small-group / coach): the route is
+  // set, so the planner is VIEW-ONLY — show the tour's own itinerary and a note,
+  // no tabs / editing / submit (사용자 확정 2026-07-20). Private (vehicle-charter)
+  // tours fall through to the editable planner below.
+  if (!plan.tour.is_private) {
+    const fx = FIXED_ITIN_COPY[locale] ?? FIXED_ITIN_COPY.en;
+    return (
+      <div className="tr-root tr-plan-root mx-auto min-h-dvh w-full bg-[var(--tr-canvas)] pb-16" data-locale={locale}>
+        <div className="mx-auto w-full max-w-xl px-4 pt-4">
+          <header className="tr-plan-hero">
+            <div className="flex items-start justify-between gap-4">
+              <div className="min-w-0">
+                <p className="tr-meta font-bold uppercase text-[var(--tr-plan-hero-muted)]">{fx.eyebrow}</p>
+                <h1 className="mt-1 text-[24px] font-bold leading-tight text-[var(--tr-plan-hero-ink)]">
+                  {tourTitle || copy.title}
+                </h1>
+              </div>
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-white/10 text-[var(--tr-plan-hero-ink)]">
+                <Route size={21} aria-hidden />
+              </span>
+            </div>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {plan.tour.date && (
+                <span className="tr-label inline-flex min-h-9 items-center gap-1.5 rounded-full bg-white/10 px-3 font-semibold text-[var(--tr-plan-hero-ink)]">
+                  <Clock3 size={14} aria-hidden />
+                  {copy.tourDay} {plan.tour.date}
+                </span>
+              )}
+              {plan.tour.total_hours && (
+                <span className="tr-label inline-flex min-h-9 items-center rounded-full bg-white/10 px-3 font-semibold text-[var(--tr-plan-hero-ink)]">
+                  {copy.courseHours(plan.tour.total_hours)}
+                </span>
+              )}
+            </div>
+          </header>
+
+          <div className="tr-card mt-4 px-4 py-3.5">
+            <p className="tr-card-text leading-relaxed text-[var(--tr-ink-2)]">{fx.note}</p>
+          </div>
+
+          {tourStops.length > 0 && (
+            <div className="mt-4">
+              <PlanStopCards
+                stops={tourStops}
+                locale={locale}
+                canEdit={false}
+                labels={{ add: copy.add, added: copy.added, details: ui.tourItinDetails }}
+              />
+            </div>
+          )}
+
+          <a
+            href={roomHref}
+            className="tr-body mt-6 flex min-h-[50px] w-full items-center justify-center gap-2 rounded-2xl bg-[var(--tr-accent)] px-4 font-bold text-[var(--tr-bubble-me-ink)] active:scale-[0.99]"
+          >
+            {copy.backToRoom}
+          </a>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="tr-root tr-plan-root mx-auto min-h-dvh w-full bg-[var(--tr-canvas)] pb-32" data-locale={locale}>
