@@ -1,5 +1,12 @@
 import type { Metadata, Viewport } from 'next';
 import PwaRegistrar from '@/components/pwa/PwaRegistrar';
+// W1.2 — the ops console runs on the tr-* token engine (var(--tr-*) chrome +
+// `.tr-root`/`.dark`), but those vars live in tour-room-theme.css which was only
+// loaded on /tour-mode. Without it every `bg-[var(--tr-canvas)]` etc. resolved
+// to transparent (the room-manager overlay bled through). Load it here so the
+// vars are defined for the whole ops route. The `.tr-root`-scoped rules don't
+// leak to the rest of the admin.
+import '@/app/tour-room-theme.css';
 
 /**
  * W1.3 — PWA wiring for the ops center. This nested layout only contributes
