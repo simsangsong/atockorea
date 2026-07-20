@@ -15,6 +15,7 @@ import {
 import { recordRoomEvent } from '@/lib/tour-room/events';
 import { broadcastToRoom } from '@/lib/tour-room/realtime';
 import { inPostTourWindow, roomLifecycle } from '@/lib/tour-room/time';
+import { classifyAttachment, uploadAttachment, type StorageClientLike } from '@/lib/tour-room/attachments';
 
 export const dynamic = 'force-dynamic';
 
@@ -42,6 +43,7 @@ interface ExtraRow {
   kind: string;
   status: string;
   settled_via: string | null;
+  receipt_photo_url: string | null;
   created_at: string;
   updated_at: string;
 }
@@ -73,6 +75,9 @@ async function insertExtraCapsule(
         extra_kind: extra.kind,
         payer: extra.payer,
         status,
+        // T1-3 — the receipt travels on the capsule so the guest card can show
+        // it (discount-buy transparency for driver-advanced tickets).
+        ...(extra.receipt_photo_url ? { receipt_photo_url: extra.receipt_photo_url } : {}),
       },
     })
     .select()
@@ -116,21 +121,43 @@ export async function POST(
   try {
     const { bookingId } = await params;
     const supabase = createServerClient();
-    const body = (await req.json().catch(() => ({}))) as {
-      item?: unknown;
-      amount_krw?: unknown;
-      kind?: unknown;
-    };
 
-    const summary = (body as { summary?: unknown }).summary === true;
-    const item = typeof body.item === 'string' ? body.item.trim().slice(0, 120) : '';
-    const amountRaw = typeof body.amount_krw === 'string' ? Number(body.amount_krw) : body.amount_krw;
+    // T1-3 — a receipt photo (ticket transparency) rides on a multipart body;
+    // the JSON path (the common case) is unchanged.
+    let rawItem: unknown;
+    let rawAmount: unknown;
+    let rawKind: unknown;
+    let summary = false;
+    let receiptFile: File | null = null;
+    const contentType = req.headers.get('content-type') ?? '';
+    if (contentType.includes('multipart/form-data')) {
+      const form = await req.formData();
+      rawItem = form.get('item');
+      rawAmount = form.get('amount_krw');
+      rawKind = form.get('kind');
+      const receipt = form.get('receipt');
+      if (receipt instanceof File && receipt.size > 0) receiptFile = receipt;
+    } else {
+      const body = (await req.json().catch(() => ({}))) as {
+        item?: unknown;
+        amount_krw?: unknown;
+        kind?: unknown;
+        summary?: unknown;
+      };
+      rawItem = body.item;
+      rawAmount = body.amount_krw;
+      rawKind = body.kind;
+      summary = body.summary === true;
+    }
+
+    const item = typeof rawItem === 'string' ? rawItem.trim().slice(0, 120) : '';
+    const amountRaw = typeof rawAmount === 'string' ? Number(rawAmount) : rawAmount;
     const amount =
       typeof amountRaw === 'number' && Number.isFinite(amountRaw)
         ? Math.round(amountRaw)
         : NaN;
-    const kind = (EXTRA_KINDS as readonly string[]).includes(body.kind as string)
-      ? (body.kind as ExtraKind)
+    const kind = (EXTRA_KINDS as readonly string[]).includes(rawKind as string)
+      ? (rawKind as ExtraKind)
       : 'other';
     if (!summary && (!item || !Number.isFinite(amount) || amount <= 0 || amount > 10_000_000)) {
       return NextResponse.json(
@@ -201,6 +228,32 @@ export async function POST(
       return NextResponse.json({ message, total_krw: total }, { status: 201 });
     }
 
+    // T1-3 — upload the optional receipt (image only) and store its URL.
+    let receiptUrl: string | null = null;
+    if (receiptFile) {
+      const classified = classifyAttachment({
+        type: receiptFile.type,
+        size: receiptFile.size,
+        name: receiptFile.name,
+      });
+      if ('error' in classified || classified.kind !== 'image') {
+        return NextResponse.json({ error: 'receipt must be an image (≤8MB)' }, { status: 400 });
+      }
+      try {
+        const bytes = Buffer.from(await receiptFile.arrayBuffer());
+        const meta = await uploadAttachment(
+          supabase as unknown as StorageClientLike,
+          room.id,
+          { bytes, type: receiptFile.type, name: receiptFile.name, size: receiptFile.size },
+          classified.ext,
+        );
+        receiptUrl = meta.url;
+      } catch (uploadError) {
+        console.error('tour-room receipt upload failed:', uploadError);
+        return NextResponse.json({ error: 'receipt upload failed' }, { status: 502 });
+      }
+    }
+
     const { data: extra, error: extraError } = await supabase
       .from('tour_room_extras')
       .insert({
@@ -210,6 +263,7 @@ export async function POST(
         amount_krw: amount,
         payer: actor.role === 'driver' ? 'driver' : 'guide',
         kind,
+        ...(receiptUrl ? { receipt_photo_url: receiptUrl } : {}),
       })
       .select()
       .single();

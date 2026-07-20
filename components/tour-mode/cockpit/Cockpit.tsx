@@ -104,6 +104,7 @@ interface CockpitExtra {
   payer: string;
   kind: string;
   status: string;
+  receipt_photo_url?: string | null;
 }
 
 export interface CockpitScheduleItem {
@@ -265,6 +266,7 @@ export default function Cockpit({
   const [expAmount, setExpAmount] = useState('');
   const [expKind, setExpKind] = useState('parking');
   const [expBusy, setExpBusy] = useState(false);
+  const [expReceipt, setExpReceipt] = useState<File | null>(null);
   const [extras, setExtras] = useState<CockpitExtra[]>([]);
   // T1-1 overtime settlement inputs (start/end wall-clock + billable hours).
   const [otStart, setOtStart] = useState('');
@@ -622,14 +624,31 @@ export default function Cockpit({
     if (!expItem.trim() || !Number.isFinite(amountKrw) || amountKrw <= 0) return;
     setExpBusy(true);
     try {
-      const res = await fetch(`/api/tour-rooms/${bookingId}/extras`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'x-tour-room-auth': session },
-        body: JSON.stringify({ item: expItem.trim(), amount_krw: amountKrw, kind: expKind }),
-      });
+      // T1-3 — a receipt photo (ticket transparency) upgrades the send to
+      // multipart; the common no-receipt case stays plain JSON.
+      let res: Response;
+      if (expReceipt) {
+        const form = new FormData();
+        form.append('item', expItem.trim());
+        form.append('amount_krw', String(amountKrw));
+        form.append('kind', expKind);
+        form.append('receipt', expReceipt);
+        res = await fetch(`/api/tour-rooms/${bookingId}/extras`, {
+          method: 'POST',
+          headers: { 'x-tour-room-auth': session },
+          body: form,
+        });
+      } else {
+        res = await fetch(`/api/tour-rooms/${bookingId}/extras`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'x-tour-room-auth': session },
+          body: JSON.stringify({ item: expItem.trim(), amount_krw: amountKrw, kind: expKind }),
+        });
+      }
       if (res.ok) {
         setExpItem('');
         setExpAmount('');
+        setExpReceipt(null);
         // Keep the sheet open and refresh so the logged item appears in the
         // self-settle list (the guest may hand over the cash right now).
         say('지출 기록됨 ✓ (정산에 반영)');
@@ -642,7 +661,7 @@ export default function Cockpit({
     } finally {
       setExpBusy(false);
     }
-  }, [bookingId, session, expItem, expAmount, expKind, say, loadExtras]);
+  }, [bookingId, session, expItem, expAmount, expKind, expReceipt, say, loadExtras]);
 
   // T1-2 — the driver marks their own advanced expense settled when the guest
   // hands over the cash (guide-less private tour; the guide panel still works
@@ -1200,6 +1219,16 @@ export default function Cockpit({
                     </span>
                     <span className="block text-sm text-[var(--tr-ink-2)]">
                       {formatKrw(e.amount_krw)} · {e.status === 'confirmed' ? '손님 확인됨' : '미확인'}
+                      {e.receipt_photo_url ? (
+                        <a
+                          href={e.receipt_photo_url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="ml-2 font-semibold text-[var(--tr-accent-deep)] underline"
+                        >
+                          🧾 영수증
+                        </a>
+                      ) : null}
                     </span>
                   </span>
                   <button
@@ -1244,6 +1273,18 @@ export default function Cockpit({
               placeholder="금액 (₩)"
               className="rounded-2xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-4 py-4 text-xl text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)]"
             />
+            {/* T1-3 — optional receipt photo (입장권 할인가 투명성). */}
+            <label className="flex cursor-pointer items-center justify-center gap-2 rounded-2xl border border-dashed border-[var(--tr-hairline)] bg-[var(--tr-surface)] py-3 text-base font-semibold text-[var(--tr-ink-2)]">
+              <input
+                type="file"
+                accept="image/*"
+                capture="environment"
+                onChange={(event) => setExpReceipt(event.target.files?.[0] ?? null)}
+                className="hidden"
+                data-testid="expense-receipt-input"
+              />
+              🧾 {expReceipt ? '영수증 첨부됨 ✓' : '영수증 사진 (선택)'}
+            </label>
             <button
               type="button"
               disabled={expBusy || !expItem.trim() || !expAmount.trim()}
