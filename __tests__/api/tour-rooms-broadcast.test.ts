@@ -161,6 +161,41 @@ describe('POST /api/tour-rooms/broadcast (T6.1)', () => {
     expect((message.translations as Record<string, string>).ko).toContain('15:30');
   });
 
+  it('a pinned meeting notice carries lat/lng + a maps URL in every locale (T2-1)', async () => {
+    const db = fakeDb();
+    createServerClientMock.mockReturnValue(db);
+    const res = await broadcastPOST(
+      fakeReq({
+        tourId: 'tour-1',
+        tourDate: '2099-07-20',
+        token: guideToken(),
+        notice: { kind: 'meeting_notice', time: '15:30', point: 'Gate 2', lat: 33.5, lng: 126.5 },
+      }),
+    );
+    expect(res.status).toBe(201);
+    const message = db.inserted.find((row) => row.table === 'tour_room_messages')!;
+    expect(message.metadata).toMatchObject({ kind: 'meeting_notice', meeting_lat: 33.5, meeting_lng: 126.5 });
+    const t = message.translations as Record<string, string>;
+    expect(t.en).toContain('https://maps.google.com/?q=33.500000,126.500000');
+    expect(t.ko).toContain('https://maps.google.com/?q=33.500000,126.500000');
+  });
+
+  it('a meeting notice with only a pin (no place text) still sends (T2-1)', async () => {
+    const db = fakeDb();
+    createServerClientMock.mockReturnValue(db);
+    const res = await broadcastPOST(
+      fakeReq({
+        tourId: 'tour-1',
+        tourDate: '2099-07-20',
+        token: guideToken(),
+        notice: { kind: 'meeting_notice', point: '집합 장소', lat: 33.5, lng: 126.5 },
+      }),
+    );
+    expect(res.status).toBe(201);
+    const message = db.inserted.find((row) => row.table === 'tour_room_messages')!;
+    expect(message.metadata).toMatchObject({ meeting_lat: 33.5, meeting_lng: 126.5 });
+  });
+
   it('free-time timer carries until_time; cancel supersedes (T6.5)', async () => {
     const db = fakeDb();
     createServerClientMock.mockReturnValue(db);

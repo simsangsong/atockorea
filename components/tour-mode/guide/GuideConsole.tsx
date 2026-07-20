@@ -174,6 +174,7 @@ export default function GuideConsole() {
   const [draft, setDraft] = useState('');
   const [meetTime, setMeetTime] = useState('');
   const [meetPoint, setMeetPoint] = useState('');
+  const [meetPin, setMeetPin] = useState<{ lat: number; lng: number } | null>(null);
   const [freePoint, setFreePoint] = useState('');
   const [busy, setBusy] = useState<string | null>(null);
   const [refreshing, setRefreshing] = useState(false);
@@ -795,10 +796,49 @@ export default function GuideConsole() {
               placeholder="집합 장소 (예: 주차장 2번 게이트)"
               className="tr-card-text min-w-0 flex-1 rounded-[var(--tr-radius-input)] border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2.5 text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)] focus:border-[var(--tr-accent)] focus:outline-none"
             />
+            {/* T2-1 — drop a GPS pin so a foreign guest can navigate even when
+                the place name means nothing to them. Text is optional once pinned. */}
             <button
               type="button"
-              disabled={!meetPoint.trim() || busy === 'meet'}
-              onClick={() => void send({ notice: { kind: 'meeting_notice', time: meetTime, point: meetPoint.trim() } }, 'meet')}
+              onClick={() => {
+                if (!navigator.geolocation) {
+                  setError('이 기기에서 위치를 사용할 수 없어요.');
+                  return;
+                }
+                navigator.geolocation.getCurrentPosition(
+                  (pos) => setMeetPin({ lat: pos.coords.latitude, lng: pos.coords.longitude }),
+                  () => setError('위치 권한을 허용해 주세요.'),
+                  { enableHighAccuracy: true, timeout: 8000 },
+                );
+              }}
+              aria-pressed={Boolean(meetPin)}
+              className={`tr-label shrink-0 rounded-[var(--tr-radius-input)] border px-3 py-2.5 font-bold ${
+                meetPin
+                  ? 'border-[var(--tr-accent)] bg-[var(--tr-accent-soft)] text-[var(--tr-accent-deep)]'
+                  : 'border-[var(--tr-hairline)] bg-[var(--tr-surface)] text-[var(--tr-ink)]'
+              }`}
+              data-testid="meeting-pin"
+            >
+              {meetPin ? '📍✓' : '📍'}
+            </button>
+            <button
+              type="button"
+              disabled={(!meetPoint.trim() && !meetPin) || busy === 'meet'}
+              onClick={() =>
+                void send(
+                  {
+                    notice: {
+                      kind: 'meeting_notice',
+                      time: meetTime,
+                      point: meetPoint.trim() || '집합 장소',
+                      ...(meetPin ?? {}),
+                    },
+                  },
+                  'meet',
+                ).then((ok) => {
+                  if (ok) setMeetPin(null);
+                })
+              }
               className="tr-label shrink-0 rounded-[var(--tr-radius-input)] bg-[var(--tr-accent)] px-3.5 py-2.5 font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
               data-testid="meeting-send"
             >

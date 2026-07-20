@@ -94,32 +94,50 @@ export async function POST(req: NextRequest) {
     // and place interpolate verbatim, the banner countdowns key off metadata.
     const notice =
       typeof body.notice === 'object' && body.notice !== null
-        ? (body.notice as { kind?: string; time?: string; point?: string; cancelled?: boolean })
+        ? (body.notice as { kind?: string; time?: string; point?: string; cancelled?: boolean; lat?: number; lng?: number })
         : null;
     if (notice) {
       const point = String(notice.point || '').trim().slice(0, 120);
       const time = String(notice.time || '').trim(); // HH:MM (KST wall clock)
+      // T2-1 — an optional gather-point PIN. The pin lat/lng rides on the
+      // metadata (banner) AND a Google Maps URL is appended to the text so the
+      // feed renders an inline map thumbnail (parseLocationMessage), the one
+      // affordance that transcends language for a foreign guest.
+      const lat = typeof notice.lat === 'number' && Number.isFinite(notice.lat) && Math.abs(notice.lat) <= 90 ? notice.lat : null;
+      const lng = typeof notice.lng === 'number' && Number.isFinite(notice.lng) && Math.abs(notice.lng) <= 180 ? notice.lng : null;
+      const hasPin = lat !== null && lng !== null;
+      const pinUrl = hasPin ? `https://maps.google.com/?q=${lat.toFixed(6)},${lng.toFixed(6)}` : null;
+      const pinMeta = hasPin ? { meeting_lat: lat, meeting_lng: lng } : {};
+      const withPin = (bundle: { source_locale: string; source_text: string; translations: Record<string, string> }) => {
+        if (!pinUrl) return bundle;
+        const translations = Object.fromEntries(
+          Object.entries(bundle.translations).map(([loc, value]) => [loc, `${value}\n${pinUrl}`]),
+        );
+        return { ...bundle, source_text: `${bundle.source_text}\n${pinUrl}`, translations };
+      };
       if (notice.kind === 'meeting_notice') {
         if (!point) return NextResponse.json({ error: 'notice.point is required' }, { status: 400 });
-        const bundle = time
-          ? renderSpotEventTranslations('meeting_notice_timed', { time, point })
-          : renderSpotEventTranslations('meeting_notice', { point });
+        const bundle = withPin(
+          time
+            ? renderSpotEventTranslations('meeting_notice_timed', { time, point })
+            : renderSpotEventTranslations('meeting_notice', { point }),
+        );
         text = bundle.source_text;
         translations = bundle.translations;
         sourceLocale = bundle.source_locale;
-        messageMetadata = { ...messageMetadata, kind: 'meeting_notice', meeting_time: time || null, meeting_point: point };
+        messageMetadata = { ...messageMetadata, kind: 'meeting_notice', meeting_time: time || null, meeting_point: point, ...pinMeta };
       } else if (notice.kind === 'free_time_timer') {
         if (notice.cancelled) {
-          const bundle = renderSpotEventTranslations('free_time_cancelled', { point: point || 'the meeting point' });
+          const bundle = withPin(renderSpotEventTranslations('free_time_cancelled', { point: point || 'the meeting point' }));
           text = bundle.source_text;
           translations = bundle.translations;
           sourceLocale = bundle.source_locale;
-          messageMetadata = { ...messageMetadata, kind: 'free_time_timer', cancelled: true, meeting_point: point || null };
+          messageMetadata = { ...messageMetadata, kind: 'free_time_timer', cancelled: true, meeting_point: point || null, ...pinMeta };
         } else {
           if (!time || !/^\d{2}:\d{2}$/.test(time)) {
             return NextResponse.json({ error: 'notice.time (HH:MM) is required for a free-time timer' }, { status: 400 });
           }
-          const bundle = renderSpotEventTranslations('free_time', { time, point: point || 'the meeting point' });
+          const bundle = withPin(renderSpotEventTranslations('free_time', { time, point: point || 'the meeting point' }));
           text = bundle.source_text;
           translations = bundle.translations;
           sourceLocale = bundle.source_locale;
@@ -128,6 +146,7 @@ export async function POST(req: NextRequest) {
             kind: 'free_time_timer',
             until_time: time, // KST wall clock on the tour date
             meeting_point: point || null,
+            ...pinMeta,
           };
         }
       } else {
