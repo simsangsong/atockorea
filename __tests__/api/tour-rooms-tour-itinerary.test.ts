@@ -85,4 +85,31 @@ describe('GET /api/tour-rooms/[bookingId]/tour-itinerary', () => {
     expect(json.stops).toEqual([]);
     expect(loadStopsMock).not.toHaveBeenCalled();
   });
+
+  it('serves a course itinerary via the slug query param (overrides the booked tour)', async () => {
+    loadStopsMock.mockResolvedValue([{ number: 1, name: 'Bomun Lake' }]);
+    const reqWithSlug = {
+      nextUrl: { searchParams: new URLSearchParams('locale=en&slug=busan-gyeongju-cherry') },
+      headers: { get: () => null },
+    } as never;
+    const res = await itineraryGET(reqWithSlug, params());
+    const json = await res.json();
+    expect(res.status).toBe(200);
+    expect(json.stops.map((s: { name: string }) => s.name)).toEqual(['Bomun Lake']);
+    // The course's origin_tour_slug is loaded, not the booked tour's slug.
+    expect(loadStopsMock).toHaveBeenCalledWith(expect.anything(), 'busan-gyeongju-cherry', 'en');
+  });
+
+  it('honors the slug param even when the booking itself has no tour slug', async () => {
+    createServerClientMock.mockReturnValue(fakeDb({ slug: null, title: 'No page tour' }));
+    loadStopsMock.mockResolvedValue([{ number: 1, name: 'Stop A' }]);
+    const reqWithSlug = {
+      nextUrl: { searchParams: new URLSearchParams('slug=some-course') },
+      headers: { get: () => null },
+    } as never;
+    const res = await itineraryGET(reqWithSlug, params());
+    await res.json();
+    expect(res.status).toBe(200);
+    expect(loadStopsMock).toHaveBeenCalledWith(expect.anything(), 'some-course', 'en');
+  });
 });

@@ -40,7 +40,13 @@ export async function GET(
     const tour = (Array.isArray(tourRaw) ? tourRaw[0] : tourRaw) as
       | { slug?: string | null; title?: string | null }
       | null;
-    const slug = typeof tour?.slug === 'string' ? tour.slug : null;
+    // A `slug` query param serves a specific tour's itinerary (a course
+    // template's origin_tour_slug — so the course preview reuses the same rich
+    // stop cards + drawer). Tour-product itineraries are already public via
+    // /tour-product/[slug]; no extra exposure. Defaults to the booked tour.
+    const slugParam = req.nextUrl.searchParams.get('slug')?.trim();
+    const bookedSlug = typeof tour?.slug === 'string' ? tour.slug : null;
+    const slug = slugParam || bookedSlug;
     if (!slug) {
       return NextResponse.json({ stops: [], tourTitle: tour?.title ?? null, slug: null });
     }

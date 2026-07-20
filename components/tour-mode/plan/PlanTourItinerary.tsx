@@ -11,13 +11,9 @@
  * itinerary (the planner then shows generic course templates).
  */
 
-import { useMemo, useState } from 'react';
-import { Check, ChevronRight, Clock3, Plus, Sparkles } from 'lucide-react';
-import {
-  TourStopDetailDrawer,
-} from '@/components/product-tour-static/_shared/TourStopDetailDrawer';
+import { Plus, Sparkles } from 'lucide-react';
+import PlanStopCards from '@/components/tour-mode/plan/PlanStopCards';
 import type { ItineraryStop } from '@/components/product-tour-static/_shared/tourProductDetailSectionTypes';
-import { mergeTourProductSectionUi } from '@/lib/tour-product/tourProductSectionUi';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
 export interface PlanTourItineraryLabels {
@@ -28,19 +24,6 @@ export interface PlanTourItineraryLabels {
   added: string;
   details: string;
   stopsCount: (n: number) => string;
-}
-
-function stopPhoto(stop: ItineraryStop): string | null {
-  if (stop.image) return stop.image;
-  if (stop.images && stop.images.length > 0) return stop.images[0];
-  return null;
-}
-
-/** HH:MM only when the time is a strict clock (ops sometimes write "≈ 08:30"). */
-function stopTime(stop: ItineraryStop): string | null {
-  const raw = (stop.time ?? '').trim();
-  const m = /^(\d{1,2}:\d{2})/.exec(raw);
-  return m ? m[1] : null;
 }
 
 export default function PlanTourItinerary({
@@ -63,9 +46,6 @@ export default function PlanTourItinerary({
   onApplyAll: () => void;
   onAddStop: (stop: ItineraryStop) => void;
 }) {
-  const [drawerStop, setDrawerStop] = useState<ItineraryStop | null>(null);
-  // Locale-aware default drawer copy (the planner has no per-tour sectionUi).
-  const sectionUi = useMemo(() => mergeTourProductSectionUi(undefined, locale), [locale]);
   if (stops.length === 0) return null;
 
   return (
@@ -101,84 +81,13 @@ export default function PlanTourItinerary({
         )}
       </div>
 
-      <div className="flex flex-col gap-2.5">
-        {stops.map((stop) => {
-          const photo = stopPhoto(stop);
-          const time = stopTime(stop);
-          const poiKey = stop._poi_meta?.poi_key ?? null;
-          const added = poiKey ? addedKeys.has(poiKey) : false;
-          return (
-            <article
-              key={`${stop.number}-${stop.name}`}
-              className="tr-card overflow-hidden"
-              data-testid="plan-tour-stop-card"
-            >
-              <button
-                type="button"
-                onClick={() => setDrawerStop(stop)}
-                className="flex w-full items-stretch gap-0 text-left active:opacity-95"
-                aria-label={`${stop.name} — ${labels.details}`}
-              >
-                <div className="relative h-[92px] w-[92px] shrink-0 bg-[var(--tr-surface-2)]">
-                  {photo ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img src={photo} alt={stop.name} loading="lazy" className="h-full w-full object-cover" />
-                  ) : (
-                    <span className="flex h-full w-full items-center justify-center text-[var(--tr-ink-3)]">
-                      <Sparkles size={22} aria-hidden />
-                    </span>
-                  )}
-                  <span className="tr-meta absolute left-1.5 top-1.5 flex h-6 min-w-6 items-center justify-center rounded-full bg-[var(--tr-ink)]/85 px-1.5 font-bold tabular-nums text-[var(--tr-canvas)]">
-                    {String(stop.number).padStart(2, '0')}
-                  </span>
-                </div>
-                <div className="flex min-w-0 flex-1 flex-col justify-center px-3 py-2">
-                  <h3 className="tr-card-text truncate font-bold text-[var(--tr-ink)]">{stop.name}</h3>
-                  <div className="tr-meta mt-1 flex flex-wrap items-center gap-x-2 gap-y-0.5 text-[var(--tr-ink-2)]">
-                    {time && (
-                      <span className="inline-flex items-center gap-1 tabular-nums">
-                        <Clock3 size={12} aria-hidden />
-                        {time}
-                      </span>
-                    )}
-                    {stop.duration && <span>{stop.duration}</span>}
-                    {stop.category && <span className="truncate">{stop.category}</span>}
-                  </div>
-                  <span className="tr-meta mt-1 inline-flex items-center gap-0.5 font-semibold text-[var(--tr-accent-deep)]">
-                    {labels.details}
-                    <ChevronRight size={13} aria-hidden />
-                  </span>
-                </div>
-              </button>
-              {canEdit && (
-                <div className="border-t border-[var(--tr-hairline)] px-3 py-2">
-                  <button
-                    type="button"
-                    onClick={() => onAddStop(stop)}
-                    disabled={added}
-                    className={`tr-label flex min-h-[38px] w-full items-center justify-center gap-1.5 rounded-xl px-3 font-bold transition active:scale-[0.99] ${
-                      added
-                        ? 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-3)]'
-                        : 'bg-[var(--tr-accent-soft)] text-[var(--tr-accent-deep)]'
-                    }`}
-                    data-testid="plan-tour-add-stop"
-                  >
-                    {added ? <Check size={14} aria-hidden /> : <Plus size={14} aria-hidden />}
-                    {added ? labels.added : labels.add}
-                  </button>
-                </div>
-              )}
-            </article>
-          );
-        })}
-      </div>
-
-      <TourStopDetailDrawer
-        stop={drawerStop}
-        open={Boolean(drawerStop)}
-        onClose={() => setDrawerStop(null)}
-        sectionUi={sectionUi}
+      <PlanStopCards
+        stops={stops}
         locale={locale}
+        canEdit={canEdit}
+        addedKeys={addedKeys}
+        labels={{ add: labels.add, added: labels.added, details: labels.details }}
+        onAddStop={onAddStop}
       />
     </section>
   );
