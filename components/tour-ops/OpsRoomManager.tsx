@@ -20,7 +20,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { toast } from 'sonner';
 import { Copy, Loader2, Mail, Moon, Plus, QrCode, RefreshCw, Sun, X } from 'lucide-react';
 import { getOpsToken } from '@/components/tour-ops/opsShared';
-import { useOpsTheme, type OpsTheme } from '@/components/tour-ops/opsTheme';
+import { useOpsTheme } from '@/components/tour-ops/opsTheme';
 
 interface ManagedBooking {
   id: string;
@@ -59,33 +59,36 @@ const CHANNEL_BADGES: Record<string, { label: string; cls: string }> = {
   other: { label: '기타', cls: 'bg-slate-500/20 text-slate-500' },
 };
 
-/** Theme palette — light is the readable default; dark mirrors the ops hub. */
-function palette(theme: OpsTheme) {
-  const dark = theme === 'dark';
+/**
+ * W1.2 — tr-* token palette. Chrome roles resolve via the ops shell's
+ * `.tr-root` + `.dark`/light ancestor (OpsRoomManager renders inside OpsApp),
+ * so no per-theme branch is needed. Semantic badges keep both hues via `dark:`
+ * variants (light default matches the old .ops-light values → shade-neutral).
+ */
+function palette() {
   return {
-    root: dark ? 'bg-slate-950 text-slate-100' : 'bg-slate-50 text-slate-900',
-    headerBorder: dark ? 'border-white/10' : 'border-slate-200',
-    sub: dark ? 'text-slate-500' : 'text-slate-500',
-    iconBtn: dark ? 'text-slate-400 active:bg-white/10' : 'text-slate-500 active:bg-slate-200',
-    card: dark ? 'border-white/10 bg-white/5' : 'border-slate-200 bg-white shadow-sm',
-    groupTitle: dark ? 'text-slate-400' : 'text-slate-600',
-    groupCount: dark ? 'text-slate-600' : 'text-slate-400',
-    nameMeta: dark ? 'text-slate-500' : 'text-slate-500',
-    secondaryBtn: dark ? 'bg-white/10 text-slate-200' : 'bg-slate-100 text-slate-700',
-    linkWrap: dark ? 'bg-white/10' : 'bg-slate-100',
-    linkText: dark ? 'text-slate-200' : 'text-slate-700',
-    linkDivider: dark ? 'border-white/10' : 'border-slate-200',
-    qrIdle: dark ? 'text-slate-500' : 'text-slate-400',
-    badgeNoRoom: dark ? 'bg-white/10 text-slate-400' : 'bg-slate-100 text-slate-500',
-    badgeClosed: dark ? 'bg-slate-500/20 text-slate-400' : 'bg-slate-200 text-slate-500',
-    badgeActive: dark ? 'bg-emerald-500/15 text-emerald-300' : 'bg-emerald-100 text-emerald-700',
-    badgeCustomer: dark ? 'bg-blue-500/15 text-blue-300' : 'bg-blue-100 text-blue-700',
-    badgeGuide: dark ? 'bg-violet-500/15 text-violet-300' : 'bg-violet-100 text-violet-700',
-    input: dark
-      ? 'border-white/15 bg-white/5 text-slate-100 placeholder:text-slate-500'
-      : 'border-slate-300 bg-white text-slate-900 placeholder:text-slate-400',
-    sheet: dark ? 'bg-slate-900 text-slate-100' : 'bg-white text-slate-900',
-    label: dark ? 'text-slate-400' : 'text-slate-600',
+    root: 'bg-[var(--tr-canvas)] text-[var(--tr-ink)]',
+    headerBorder: 'border-[var(--tr-hairline)]',
+    sub: 'text-[var(--tr-ink-3)]',
+    iconBtn: 'text-[var(--tr-ink-2)] active:bg-[var(--tr-surface-2)]',
+    card: 'border-[var(--tr-hairline)] bg-[var(--tr-surface)]',
+    groupTitle: 'text-[var(--tr-ink-2)]',
+    groupCount: 'text-[var(--tr-ink-3)]',
+    nameMeta: 'text-[var(--tr-ink-3)]',
+    secondaryBtn: 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]',
+    linkWrap: 'bg-[var(--tr-surface-2)]',
+    linkText: 'text-[var(--tr-ink-2)]',
+    linkDivider: 'border-[var(--tr-hairline)]',
+    qrIdle: 'text-[var(--tr-ink-3)]',
+    badgeNoRoom: 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]',
+    badgeClosed: 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-3)]',
+    badgeActive: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300',
+    badgeCustomer: 'bg-blue-100 text-blue-700 dark:bg-blue-500/15 dark:text-blue-300',
+    badgeGuide: 'bg-violet-100 text-violet-700 dark:bg-violet-500/15 dark:text-violet-300',
+    input:
+      'border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)]',
+    sheet: 'bg-[var(--tr-surface)] text-[var(--tr-ink)]',
+    label: 'text-[var(--tr-ink-2)]',
   };
 }
 
@@ -139,7 +142,7 @@ export default function OpsRoomManager({
   const [qrOpen, setQrOpen] = useState<{ title: string; link: MintedLink; role: LinkRole } | null>(null);
   const [createOpen, setCreateOpen] = useState(false);
 
-  const T = palette(theme);
+  const T = palette();
 
   const load = useCallback(async () => {
     setLoading(true);
@@ -246,7 +249,13 @@ export default function OpsRoomManager({
   }
 
   return (
-    <div className={`fixed inset-0 z-50 flex flex-col ${T.root}`} data-testid="ops-room-manager">
+    <div
+      /* Self-sufficient tr-* scope: `.tr-root` provides the vars and `.dark`
+         drives the dark palette + semantic `dark:` badges (the shell already
+         nests these, but this fixed overlay stays correct if rendered alone). */
+      className={`tr-root fixed inset-0 z-50 flex flex-col ${theme === 'dark' ? 'dark' : ''} ${T.root}`}
+      data-testid="ops-room-manager"
+    >
       <header
         className={`border-b px-4 ${T.headerBorder}`}
         style={{ paddingTop: 'env(safe-area-inset-top, 0px)' }}
