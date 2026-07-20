@@ -99,3 +99,11 @@ export const mapsStaticRateLimit = rateLimit({
   maxRequests: 60, // 60 map tiles per minute per IP
 });
 
+// /api/places/search proxies Google Places (New) Text Search with our billable
+// server key. Public (used by the D-1 planner's "can't find it?" fallback), so
+// throttle per-IP to blunt billing abuse.
+export const placesSearchRateLimit = rateLimit({
+  windowMs: 60 * 1000, // 1 minute
+  maxRequests: 30, // 30 place searches per minute per IP
+});
+

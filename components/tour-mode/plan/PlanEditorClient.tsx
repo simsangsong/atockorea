@@ -19,7 +19,6 @@
  */
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { useJsApiLoader } from '@react-google-maps/api';
 import {
   AlertTriangle,
   CheckCircle2,
@@ -38,11 +37,6 @@ import {
   UtensilsCrossed,
   X,
 } from 'lucide-react';
-import {
-  GOOGLE_MAPS_LOADER_ID,
-  GOOGLE_MAPS_LOADER_VERSION,
-  libraries as GOOGLE_MAPS_LIBRARIES,
-} from '@/lib/google-maps';
 import { koreanAllergyCardLines } from '@/lib/tour-room/allergyCard';
 import { formatMinutes, haversineKm, totalDriveMinutes, type LatLng } from '@/lib/itinerary-builder/distance';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
@@ -568,12 +562,6 @@ const DURATION_OPTIONS = [30, 45, 60, 90, 120, 180, 240];
 /** Google pick within this range of a curated POI snaps to its poi_key (§G tab ②). */
 const POI_SNAP_KM = 0.12;
 
-const REGION_BOUNDS: Record<string, { north: number; south: number; west: number; east: number }> = {
-  jeju: { north: 33.65, south: 33.1, west: 126.1, east: 126.99 },
-  busan: { north: 35.95, south: 34.95, west: 128.5, east: 129.6 },
-  seoul: { north: 38.4, south: 36.9, west: 126.3, east: 128.75 },
-};
-
 function detectLocale(): RoomLocale {
   // Server always 'en' (Node ≥21 exposes the SERVER's navigator.language —
   // trusting it breaks hydration for non-en devices); client detects for real.
@@ -851,6 +839,14 @@ const PLAN_STATUS_COPY: Record<RoomLocale, PlanStatusCopy> = {
 // Google Places fallback search (tab ② — lazy: mounts only when expanded)
 // ---------------------------------------------------------------------------
 
+interface GooglePlaceHit {
+  place_id: string;
+  name: string;
+  address: string;
+  lat: number;
+  lng: number;
+}
+
 function GooglePlaceSearch({
   region,
   placeholder,
@@ -864,55 +860,84 @@ function GooglePlaceSearch({
   errorLabel: string;
   onPick: (pick: { place_id: string; name: string; lat: number; lng: number }) => void;
 }) {
-  const inputRef = useRef<HTMLInputElement>(null);
+  const [query, setQuery] = useState('');
+  const [results, setResults] = useState<GooglePlaceHit[]>([]);
+  const [state, setState] = useState<'idle' | 'loading' | 'error'>('idle');
   const onPickRef = useRef(onPick);
   useEffect(() => {
     onPickRef.current = onPick;
   });
-  const { isLoaded, loadError } = useJsApiLoader({
-    id: GOOGLE_MAPS_LOADER_ID,
-    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? '',
-    libraries: GOOGLE_MAPS_LIBRARIES,
-    version: GOOGLE_MAPS_LOADER_VERSION,
-  });
 
-  // NOTE: every hook must run before any conditional return (rules-of-hooks) —
-  // the loadError branch below sits *after* this effect, not between the hooks.
+  // Debounced server-side Places (New) Text Search via /api/places/search — no
+  // client-side Google Maps JS, so the browser referrer restriction on the
+  // public key can't break it (and the legacy Autocomplete widget is retired).
+  // setState routed through nested fns (react-hooks/set-state-in-effect guard).
   useEffect(() => {
-    if (loadError || !isLoaded || !inputRef.current) return undefined;
-    const places = (window as Window & { google?: typeof google }).google?.maps?.places;
-    if (!places) return undefined;
-    const bounds = region ? REGION_BOUNDS[region] : undefined;
-    const ac = new places.Autocomplete(inputRef.current, {
-      fields: ['place_id', 'geometry', 'name'],
-      ...(bounds ? { bounds, strictBounds: false } : {}),
-    });
-    const listener = ac.addListener('place_changed', () => {
-      const place = ac.getPlace();
-      const loc = place?.geometry?.location;
-      if (!place?.place_id || !loc) return;
-      onPickRef.current({ place_id: place.place_id, name: place.name ?? '', lat: loc.lat(), lng: loc.lng() });
-      if (inputRef.current) inputRef.current.value = '';
-    });
-    return () => listener.remove();
-  }, [isLoaded, loadError, region]);
-
-  if (loadError) {
-    return (
-      <p className="tr-label rounded-xl border border-[var(--tr-danger-soft)] bg-[var(--tr-surface)] px-3 py-2 text-[var(--tr-danger)]">
-        {errorLabel}
-      </p>
-    );
-  }
+    const q = query.trim();
+    let cancelled = false;
+    const apply = (r: GooglePlaceHit[], s: 'idle' | 'loading' | 'error') => {
+      if (cancelled) return;
+      setResults(r);
+      setState(s);
+    };
+    if (q.length < 2) {
+      apply([], 'idle');
+      return;
+    }
+    const begin = () => {
+      if (!cancelled) setState('loading');
+    };
+    begin();
+    const timer = setTimeout(() => {
+      fetch(`/api/places/search?q=${encodeURIComponent(q)}${region ? `&region=${encodeURIComponent(region)}` : ''}`)
+        .then(async (res) => {
+          const body = (await res.json().catch(() => null)) as { results?: GooglePlaceHit[] } | null;
+          apply(body?.results ?? [], res.ok ? 'idle' : 'error');
+        })
+        .catch(() => apply([], 'error'));
+    }, 300);
+    return () => {
+      cancelled = true;
+      clearTimeout(timer);
+    };
+  }, [query, region]);
 
   return (
-    <input
-      ref={inputRef}
-      type="text"
-      placeholder={isLoaded ? placeholder : loadingLabel}
-      disabled={!isLoaded}
-      className="tr-card-text w-full rounded-[var(--tr-radius-input)] border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2 text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)] focus:border-[var(--tr-accent)] focus:outline-none disabled:opacity-60"
-    />
+    <div>
+      <input
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        type="text"
+        placeholder={placeholder}
+        className="tr-card-text w-full rounded-[var(--tr-radius-input)] border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2 text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)] focus:border-[var(--tr-accent)] focus:outline-none"
+      />
+      {state === 'loading' && <p className="tr-meta mt-1 px-1 text-[var(--tr-ink-3)]">{loadingLabel}</p>}
+      {state === 'error' && (
+        <p className="tr-label mt-1 rounded-xl border border-[var(--tr-danger-soft)] bg-[var(--tr-surface)] px-3 py-2 text-[var(--tr-danger)]">
+          {errorLabel}
+        </p>
+      )}
+      {results.length > 0 && (
+        <ul className="mt-1 overflow-hidden rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)]">
+          {results.map((r) => (
+            <li key={r.place_id} className="border-b border-[var(--tr-hairline)] last:border-b-0">
+              <button
+                type="button"
+                onClick={() => {
+                  onPickRef.current({ place_id: r.place_id, name: r.name, lat: r.lat, lng: r.lng });
+                  setQuery('');
+                  setResults([]);
+                }}
+                className="flex w-full flex-col items-start gap-0.5 px-3 py-2 text-left active:bg-[var(--tr-surface-2)]"
+              >
+                <span className="tr-card-text font-medium text-[var(--tr-ink)]">{r.name}</span>
+                {r.address ? <span className="tr-meta text-[var(--tr-ink-3)]">{r.address}</span> : null}
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
   );
 }
 
