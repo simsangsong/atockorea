@@ -16,7 +16,7 @@ const SUPPORT_EMAIL = 'support@atockorea.com';
 
 const COPY: Record<
   RoomLocale,
-  { title: string; body: string; lostTitle: string; lostAction: string; lostSent: string }
+  { title: string; body: string; lostTitle: string; lostAction: string; lostSent: string; lostPrompt: string }
 > = {
   en: {
     title: 'This tour has ended',
@@ -24,6 +24,7 @@ const COPY: Record<
     lostTitle: 'Left something behind?',
     lostAction: 'Report a lost item',
     lostSent: 'Reported — the driver and guide will check the vehicle. ✓',
+    lostPrompt: 'What did you leave, and where? (e.g. black wallet, seat 12)',
   },
   ko: {
     title: '투어가 종료되었습니다',
@@ -31,6 +32,7 @@ const COPY: Record<
     lostTitle: '두고 내린 물건이 있나요?',
     lostAction: '분실물 신고하기',
     lostSent: '신고됐어요 — 기사님·가이드가 차량을 확인할 거예요. ✓',
+    lostPrompt: '무엇을, 어디에 두고 내리셨나요? (예: 검은 지갑, 12번 좌석)',
   },
   ja: {
     title: 'ツアーは終了しました',
@@ -38,6 +40,7 @@ const COPY: Record<
     lostTitle: 'お忘れ物はありませんか？',
     lostAction: '忘れ物を報告する',
     lostSent: '報告しました — ドライバーとガイドが車内を確認します。✓',
+    lostPrompt: '何を、どこに忘れましたか？（例：黒い財布、12番座席）',
   },
   es: {
     title: 'Este tour ha terminado',
@@ -45,6 +48,7 @@ const COPY: Record<
     lostTitle: '¿Olvidaste algo?',
     lostAction: 'Reportar objeto perdido',
     lostSent: 'Reportado: el conductor y el guía revisarán el vehículo. ✓',
+    lostPrompt: '¿Qué olvidaste y dónde? (ej.: cartera negra, asiento 12)',
   },
   zh: {
     title: '本次旅行已结束',
@@ -52,6 +56,7 @@ const COPY: Record<
     lostTitle: '有物品遗落吗？',
     lostAction: '申报失物',
     lostSent: '已申报——司机和导游会检查车辆。✓',
+    lostPrompt: '您遗落了什么？在哪里？（例：黑色钱包，12号座位）',
   },
 };
 
@@ -79,12 +84,16 @@ export default function EndedCard({
 
   const report = async () => {
     if (!bookingId || !roomSession) return;
+    // B2 — what & where ("black wallet, seat 12"): translated server-side so
+    // the Korean crew searches for the right thing. Cancel = abort, empty = generic.
+    const note = window.prompt(copy.lostPrompt);
+    if (note === null) return;
     setState('busy');
     try {
       const res = await fetch(`/api/tour-rooms/${encodeURIComponent(bookingId)}/signals`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'x-tour-room-auth': roomSession },
-        body: JSON.stringify({ type: 'lost_item' }),
+        body: JSON.stringify({ type: 'lost_item', ...(note.trim() ? { note: note.trim() } : {}) }),
       });
       setState(res.ok ? 'sent' : 'idle');
     } catch {

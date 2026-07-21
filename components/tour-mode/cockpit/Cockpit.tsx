@@ -262,7 +262,7 @@ export default function Cockpit({
   const [textSending, setTextSending] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
   const [sheet, setSheet] = useState<
-    'none' | 'delay' | 'schedule' | 'return' | 'expense' | 'overtime' | 'assist' | 'arrival'
+    'none' | 'delay' | 'schedule' | 'return' | 'expense' | 'overtime' | 'assist' | 'arrival' | 'summary'
   >('none');
   const [pushOn, setPushOn] = useState(false);
   const [expItem, setExpItem] = useState('');
@@ -291,6 +291,14 @@ export default function Cockpit({
   // A4 — the POI's headline event (sticky label) + today's on/off confirmation.
   const [arrEventLabel, setArrEventLabel] = useState('');
   const [arrEventStatus, setArrEventStatus] = useState<'on' | 'off' | null>(null);
+  // B4 — the operator's Korean spot prep (hours/closed/tips) from the GET.
+  const [arrBriefing, setArrBriefing] = useState<string[] | null>(null);
+  // B5 — the end-of-day summary (visited stops · run span · money roll-up).
+  const [daySummary, setDaySummary] = useState<{
+    visited: Array<{ title: string; at: string }>;
+    span: { minutes: number } | null;
+    money: { logged_total: number; settled_total: number; unsettled_total: number; overtime_total: number; count: number };
+  } | null>(null);
   const [lightbox, setLightbox] = useState<{ url: string; name?: string | null } | null>(null);
   const playedRef = useRef<Set<string>>(new Set(initialMessages.map((message) => message.id)));
   const audioQueueRef = useRef<string[]>([]);
@@ -579,6 +587,20 @@ export default function Cockpit({
     }
   }, [signal]);
 
+  // B5 — end-of-day summary sheet: read-only aggregation of the day.
+  const openDaySummary = useCallback(async () => {
+    setDaySummary(null);
+    setSheet('summary');
+    try {
+      const res = await fetch(`/api/tour-rooms/${bookingId}/day-summary`, {
+        headers: { 'x-tour-room-auth': session },
+      });
+      if (res.ok) setDaySummary(await res.json());
+    } catch {
+      /* the sheet shows the loading line */
+    }
+  }, [bookingId, session]);
+
   // A1 — morning briefing: the day's opening speech, one confirmed tap. The
   // server picks join vs private from the tour's price model.
   const sendMorningBriefing = useCallback(async () => {
@@ -622,6 +644,7 @@ export default function Cockpit({
       setArrCoords(null);
       setArrEventLabel('');
       setArrEventStatus(null);
+      setArrBriefing(null);
       setSheet('arrival');
       // The sheet opens right after parking — capture "here" as the pin.
       captureArrCoords();
@@ -640,6 +663,7 @@ export default function Cockpit({
                 event_label?: string | null;
               };
               event_status?: 'on' | 'off' | null;
+              briefing?: string[] | null;
             } | null) => {
               const profile = data?.profile;
               if (!profile) return;
@@ -648,6 +672,7 @@ export default function Cockpit({
               setArrNote(typeof profile.route_note === 'string' ? profile.route_note : '');
               setArrEventLabel(typeof profile.event_label === 'string' ? profile.event_label : '');
               setArrEventStatus(data?.event_status ?? null);
+              setArrBriefing(Array.isArray(data?.briefing) ? data.briefing : null);
             },
           )
           .catch(() => undefined);
@@ -1212,8 +1237,8 @@ export default function Cockpit({
         <ActionButton label="아침브리핑" Icon={Sunrise} onClick={() => void sendMorningBriefing()} />
       </div>
 
-      {/* expense/settle + overtime (secondary, deliberate) */}
-      <div className="grid grid-cols-2 gap-1.5 px-4 pb-3">
+      {/* expense/settle + overtime + day summary (secondary, deliberate) */}
+      <div className="grid grid-cols-3 gap-1.5 px-4 pb-3">
         <button
           type="button"
           onClick={() => {
@@ -1234,6 +1259,15 @@ export default function Cockpit({
         >
           <Timer size={17} strokeWidth={2} aria-hidden />
           초과근무
+        </button>
+        <button
+          type="button"
+          onClick={() => void openDaySummary()}
+          className="flex items-center justify-center gap-2 rounded-2xl bg-[var(--tr-surface-2)] py-2.5 text-base font-bold text-[var(--tr-ink)] transition-transform active:scale-[0.99]"
+          data-testid="driver-action-summary"
+        >
+          <FileText size={17} strokeWidth={2} aria-hidden />
+          오늘 요약
         </button>
       </div>
 
@@ -1339,9 +1373,60 @@ export default function Cockpit({
         </Sheet>
       ) : null}
 
+      {sheet === 'summary' ? (
+        <Sheet onClose={() => setSheet('none')} title="오늘 요약">
+          {!daySummary ? (
+            <p className="py-4 text-center text-lg text-[var(--tr-ink-2)]">불러오는 중…</p>
+          ) : (
+            <div className="flex max-h-[60vh] flex-col gap-3 overflow-y-auto" data-testid="day-summary">
+              <div className="rounded-2xl bg-[var(--tr-surface-2)] px-4 py-3">
+                <p className="text-sm font-bold text-[var(--tr-ink-2)]">방문 스팟 {daySummary.visited.length}곳</p>
+                {daySummary.visited.map((visit) => (
+                  <p key={`${visit.title}-${visit.at}`} className="mt-1 text-base text-[var(--tr-ink)]">
+                    {new Date(visit.at).toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Seoul' })}{' '}
+                    · {visit.title}
+                  </p>
+                ))}
+                {daySummary.span ? (
+                  <p className="mt-2 text-sm text-[var(--tr-ink-2)]">
+                    첫 도착 → 마지막 도착: 약 {Math.floor(daySummary.span.minutes / 60)}시간{' '}
+                    {daySummary.span.minutes % 60}분
+                  </p>
+                ) : null}
+              </div>
+              <div className="rounded-2xl bg-[var(--tr-surface-2)] px-4 py-3">
+                <p className="text-sm font-bold text-[var(--tr-ink-2)]">정산 ({daySummary.money.count}건)</p>
+                <p className="mt-1 text-base text-[var(--tr-ink)]">기록 합계 {formatKrw(daySummary.money.logged_total)}</p>
+                <p className="text-base text-[var(--tr-ink)]">수취 완료 {formatKrw(daySummary.money.settled_total)}</p>
+                <p className="text-base font-bold text-[var(--tr-ink)]">
+                  미수취 {formatKrw(daySummary.money.unsettled_total)}
+                </p>
+                {daySummary.money.overtime_total > 0 ? (
+                  <p className="mt-1 text-sm text-[var(--tr-ink-2)]">
+                    초과근무분 {formatKrw(daySummary.money.overtime_total)} 포함
+                  </p>
+                ) : null}
+              </div>
+            </div>
+          )}
+        </Sheet>
+      ) : null}
+
       {sheet === 'arrival' && arrItem ? (
         <Sheet onClose={() => setSheet('none')} title={`${itemTitle(arrItem)} 도착 안내`}>
           <div className="flex max-h-[62vh] flex-col gap-3 overflow-y-auto">
+            {/* B4 — operator prep: hours/closed/tips at a glance before sending */}
+            {arrBriefing && arrBriefing.length > 0 ? (
+              <div className="rounded-2xl bg-[var(--tr-surface-2)] px-4 py-3" data-testid="arrival-briefing">
+                <p className="mb-1.5 text-sm font-bold text-[var(--tr-ink-2)]">스팟 브리핑</p>
+                {arrBriefing.map((line, index) => (
+                  <p key={index} className="text-sm leading-relaxed text-[var(--tr-ink)]">
+                    {line}
+                  </p>
+                ))}
+              </div>
+            ) : null}
+
             {/* per-day variable ① — parking pin (auto-captured on open) */}
             <div className="flex items-center justify-between gap-3 rounded-2xl bg-[var(--tr-surface-2)] px-4 py-3">
               <p className="min-w-0 text-base font-semibold text-[var(--tr-ink)]">
