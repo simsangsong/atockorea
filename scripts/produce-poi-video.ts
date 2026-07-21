@@ -267,6 +267,19 @@ async function main(): Promise<void> {
       writeText(`${renderPath}.error.txt`, render.stderr?.toString('utf8').slice(0, 4000) ?? 'unknown ffmpeg error');
     }
 
+    // No-overlap guard: every narration must fit inside its own scene.
+    const overflowScenes = narrations
+      .map((narration, index) => ({ index, over: narration.seconds + 0.5 - timeline.scenes[index].duration }))
+      .filter((entry) => entry.over > 0);
+    checks.push({
+      name: `narration_fit_${suffix}`,
+      status: overflowScenes.length === 0 ? 'passed' : 'failed',
+      detail:
+        overflowScenes.length === 0
+          ? 'All narrations fit their scenes; no overlapping voices.'
+          : `Scene(s) ${overflowScenes.map((entry) => entry.index + 1).join(', ')} narration exceeds scene length.`,
+    });
+
     // Stage 7 — per-language QC probes.
     const probe = rendered ? probeRender(ffprobeCommand, renderPath) : null;
     const durationOk = probe?.durationSeconds !== null && probe !== null

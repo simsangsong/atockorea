@@ -21,8 +21,6 @@ export interface ProductionTimeline {
 /** Per-scene floors for the 6-slot brand template (hero, title, culture, must-see, tip, CTA). */
 export const DEFAULT_MIN_SCENE_SECONDS = [3, 4, 6, 6, 5, 6];
 
-const MAX_SCENE_SECONDS = 14;
-
 function round3(value: number): number {
   return Math.round(value * 1000) / 1000;
 }
@@ -45,9 +43,12 @@ export function computeProductionTimeline(input: {
   const count = input.narrationSeconds.length;
   if (count === 0) throw new Error('computeProductionTimeline requires at least one scene');
 
+  // Invariant: a scene is never shorter than its narration + pad. Capping here
+  // would spill audio into the next scene (overlapping voices, uncaptioned
+  // speech); overall length is controlled upstream by the script's speech budget.
   const durations = input.narrationSeconds.map((narration, index) => {
     const floor = input.minSeconds?.[index] ?? DEFAULT_MIN_SCENE_SECONDS[index] ?? 4;
-    return round3(Math.min(MAX_SCENE_SECONDS, Math.max(floor, narration + narrationPad)));
+    return round3(Math.max(floor, narration + narrationPad));
   });
 
   const starts: number[] = [];

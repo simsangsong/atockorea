@@ -113,6 +113,21 @@ describe('video automation pipeline', () => {
     expect(backgroundScene.narration.length).toBeLessThan(60);
   });
 
+  it('trims narration to a speakable per-scene budget at sentence/clause boundaries', () => {
+    const { trimForSpeech } = require('@/lib/video-automation/pipeline');
+    const longEn =
+      'Buy the fish on the first floor, then bring it upstairs to a second-floor restaurant and pay a small cooking fee — that is the local way; the address is 52 Jagalchihaean-ro, Jung-gu; the floor is wet so closed-toe shoes are recommended.';
+    const trimmedEn = trimForSpeech(longEn, 'en');
+    expect(trimmedEn.length).toBeLessThanOrEqual(161);
+    expect(/[.!?]$/.test(trimmedEn)).toBe(true);
+    const longJa =
+      'ジャガルチ市場は韓国最大の水産市場であり、釜山の十大名所のひとつとして知られ、中区の南浦港ウォーターフロントに位置し、地下鉄1号線ジャガルチ駅または南浦駅から徒歩約7分でアクセスできます。';
+    const trimmedJa = trimForSpeech(longJa, 'ja');
+    expect(trimmedJa.length).toBeLessThanOrEqual(71);
+    expect(/[。！？]$/.test(trimmedJa)).toBe(true);
+    expect(trimForSpeech('Short line.', 'en')).toBe('Short line.');
+  });
+
   it('passes the target_languages QC check when languages are overridden', () => {
     const manifest = buildAssetManifest(source, { targetLanguages: ['en'] });
     const outputs: LanguageOutputPaths[] = [
