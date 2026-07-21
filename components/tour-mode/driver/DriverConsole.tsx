@@ -207,6 +207,9 @@ export default function DriverConsole() {
               {room.pickup.name}
             </p>
           ) : null}
+          {/* B3 — pre-departure checklist (device-local; a habit aid, not a
+              gate — 운행 시작 stays enabled regardless). */}
+          <PreDepartureChecklist tourDate={overview.tour_date} />
           <button
             type="button"
             onClick={() => setAudioUnlocked(true)}
@@ -236,6 +239,71 @@ export default function DriverConsole() {
 }
 
 // ───────────────────────────────────────────────────────────────────────────
+
+/** B3 — the day's pre-departure habit list. Device-local (localStorage per
+ *  tour date), never a gate: an experienced driver can ignore it entirely. */
+const PRE_DEPARTURE_ITEMS = [
+  '차량 상태·연료 확인',
+  '예약·인원 확인',
+  '픽업 위치·시간 확인',
+  '입장권/준비물 확인',
+  '내비 목적지 설정',
+] as const;
+
+function PreDepartureChecklist({ tourDate }: { tourDate: string }) {
+  const storageKey = `tr_predep_${tourDate}`;
+  const [checked, setChecked] = useState<boolean[]>(() => {
+    try {
+      const raw = window.localStorage.getItem(storageKey);
+      const parsed = raw ? (JSON.parse(raw) as boolean[]) : null;
+      if (Array.isArray(parsed) && parsed.length === PRE_DEPARTURE_ITEMS.length) return parsed;
+    } catch {
+      /* fresh list */
+    }
+    return PRE_DEPARTURE_ITEMS.map(() => false);
+  });
+
+  const toggle = (index: number) => {
+    setChecked((prev) => {
+      const next = prev.map((value, i) => (i === index ? !value : value));
+      try {
+        window.localStorage.setItem(storageKey, JSON.stringify(next));
+      } catch {
+        /* device-local nicety only */
+      }
+      return next;
+    });
+  };
+
+  const done = checked.filter(Boolean).length;
+  return (
+    <div className="w-full max-w-sm rounded-2xl bg-neutral-900 px-4 py-3 text-left" data-testid="predeparture-checklist">
+      <p className="mb-2 text-sm font-bold text-neutral-400">
+        출발 전 체크 {done}/{PRE_DEPARTURE_ITEMS.length}
+      </p>
+      {PRE_DEPARTURE_ITEMS.map((item, index) => (
+        <button
+          key={item}
+          type="button"
+          onClick={() => toggle(index)}
+          className="flex w-full items-center gap-2.5 py-1.5 text-left"
+        >
+          <span
+            aria-hidden
+            className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-md text-xs font-bold ${
+              checked[index] ? 'bg-emerald-500 text-neutral-950' : 'bg-neutral-700 text-transparent'
+            }`}
+          >
+            ✓
+          </span>
+          <span className={`text-base ${checked[index] ? 'text-neutral-500 line-through' : 'text-neutral-200'}`}>
+            {item}
+          </span>
+        </button>
+      ))}
+    </div>
+  );
+}
 
 function EndScreen({ overview, room }: { overview: DriverOverview; room: CockpitRoom }) {
   return (

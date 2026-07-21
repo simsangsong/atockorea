@@ -52,6 +52,7 @@ import {
   FileText,
   Map as MapIcon,
   Phone,
+  Camera,
   Sparkles,
   SquareParking,
   Sunrise,
@@ -587,6 +588,30 @@ export default function Cockpit({
     }
   }, [signal]);
 
+  // B1 — vehicle photo: one tap → camera → the photo lands in the guest chat
+  // with a translated caption ("오늘 이 차량으로 모시겠습니다"). Rides the
+  // Kakao-grade /messages attachment path — no new schema. Sent the evening
+  // before (or at pickup) so the party recognizes the vehicle.
+  const vehiclePhotoRef = useRef<HTMLInputElement | null>(null);
+  const sendVehiclePhoto = useCallback(
+    async (file: File) => {
+      try {
+        const form = new FormData();
+        form.append('attachment', file);
+        form.append('text', '오늘 이 차량으로 모시겠습니다 🚐');
+        const res = await fetch(`/api/tour-rooms/${bookingId}/messages`, {
+          method: 'POST',
+          headers: { 'x-tour-room-auth': session },
+          body: form,
+        });
+        say(res.ok ? '차량 사진 전송 ✓' : '실패 — 다시 시도해 주세요');
+      } catch {
+        say('네트워크 오류');
+      }
+    },
+    [bookingId, session, say],
+  );
+
   // B5 — end-of-day summary sheet: read-only aggregation of the day.
   const openDaySummary = useCallback(async () => {
     setDaySummary(null);
@@ -1051,6 +1076,21 @@ export default function Cockpit({
         })}
       </div>
 
+      {/* B1 — hidden camera input for the vehicle photo */}
+      <input
+        ref={vehiclePhotoRef}
+        type="file"
+        accept="image/*"
+        capture="environment"
+        className="hidden"
+        data-testid="cockpit-vehicle-photo"
+        onChange={(event) => {
+          const file = event.target.files?.[0];
+          event.target.value = '';
+          if (file) void sendVehiclePhoto(file);
+        }}
+      />
+
       {toast ? (
         <div className="pointer-events-none absolute inset-x-0 top-16 z-20 flex justify-center">
           <span className="rounded-full bg-black/80 px-5 py-2 text-lg font-bold text-[var(--tr-ink)]">{toast}</span>
@@ -1235,6 +1275,7 @@ export default function Cockpit({
         />
         <ActionButton label="AI 도우미" Icon={Sparkles} onClick={() => setSheet('assist')} />
         <ActionButton label="아침브리핑" Icon={Sunrise} onClick={() => void sendMorningBriefing()} />
+        <ActionButton label="차량사진" Icon={Camera} onClick={() => vehiclePhotoRef.current?.click()} />
       </div>
 
       {/* expense/settle + overtime + day summary (secondary, deliberate) */}
