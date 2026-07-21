@@ -260,7 +260,9 @@ export default function Cockpit({
   const [textDraft, setTextDraft] = useState('');
   const [textSending, setTextSending] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
-  const [sheet, setSheet] = useState<'none' | 'delay' | 'schedule' | 'return' | 'expense' | 'overtime' | 'assist'>('none');
+  const [sheet, setSheet] = useState<
+    'none' | 'delay' | 'schedule' | 'return' | 'expense' | 'overtime' | 'assist' | 'arrival'
+  >('none');
   const [pushOn, setPushOn] = useState(false);
   const [expItem, setExpItem] = useState('');
   const [expAmount, setExpAmount] = useState('');
@@ -272,6 +274,19 @@ export default function Cockpit({
   const [otStart, setOtStart] = useState('');
   const [otEnd, setOtEnd] = useState('');
   const [otHours, setOtHours] = useState(0);
+  // A0 — arrival one-tap bundle sheet. Per-day variables are ONLY the meeting
+  // time + the parking pin (auto-GPS on open); follow/ticket/route-note are
+  // sticky per-POI defaults prefetched from the profile (user decision
+  // 2026-07-21). No default meeting time — a deliberate 1-tap choice every
+  // stop, so yesterday's time can never fan out by accident.
+  const [arrItem, setArrItem] = useState<CockpitScheduleItem | null>(null);
+  const [arrTime, setArrTime] = useState('');
+  const [arrNoMeeting, setArrNoMeeting] = useState(false);
+  const [arrFollow, setArrFollow] = useState<'follow' | 'free'>('free');
+  const [arrTicket, setArrTicket] = useState(false);
+  const [arrNote, setArrNote] = useState('');
+  const [arrCoords, setArrCoords] = useState<{ lat: number; lng: number } | null>(null);
+  const [arrBusy, setArrBusy] = useState(false);
   const [lightbox, setLightbox] = useState<{ url: string; name?: string | null } | null>(null);
   const playedRef = useRef<Set<string>>(new Set(initialMessages.map((message) => message.id)));
   const audioQueueRef = useRef<string[]>([]);
@@ -560,22 +575,77 @@ export default function Cockpit({
     }
   }, [signal]);
 
-  const announceArrival = useCallback(
-    async (item: CockpitScheduleItem) => {
-      setSheet('none');
-      try {
-        const res = await fetch(`/api/tour-rooms/${bookingId}/manual-arrival`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'x-tour-room-auth': session },
-          body: JSON.stringify({ poiKey: item.poi_key ?? null, title: itemTitle(item) }),
-        });
-        say(res.ok ? `${itemTitle(item)} 도착 안내 전송 ✓` : '실패 — 다시 시도해 주세요');
-      } catch {
-        say('네트워크 오류');
+  // ── A0 arrival bundle: open sheet → (auto pin + sticky prefill) → send ──
+  const captureArrCoords = useCallback(() => {
+    if (!navigator.geolocation) return;
+    navigator.geolocation.getCurrentPosition(
+      (position) => setArrCoords({ lat: position.coords.latitude, lng: position.coords.longitude }),
+      () => say('위치 권한을 허용해 주세요'),
+      { enableHighAccuracy: true, timeout: 8000 },
+    );
+  }, [say]);
+
+  const openArrivalSheet = useCallback(
+    (item: CockpitScheduleItem) => {
+      setArrItem(item);
+      setArrTime('');
+      setArrNoMeeting(false);
+      setArrFollow('free');
+      setArrTicket(false);
+      setArrNote('');
+      setArrCoords(null);
+      setSheet('arrival');
+      // The sheet opens right after parking — capture "here" as the pin.
+      captureArrCoords();
+      // Sticky per-POI defaults (self-built profile; free-visit when none).
+      if (item.poi_key) {
+        void fetch(`/api/tour-rooms/${bookingId}/arrival-bundle?poiKey=${encodeURIComponent(item.poi_key)}`, {
+          headers: { 'x-tour-room-auth': session },
+        })
+          .then((res) => (res.ok ? res.json() : null))
+          .then((data: { profile?: { follow_mode?: string; ticket_required?: boolean; route_note?: string | null } } | null) => {
+            const profile = data?.profile;
+            if (!profile) return;
+            setArrFollow(profile.follow_mode === 'follow' ? 'follow' : 'free');
+            setArrTicket(profile.ticket_required === true);
+            setArrNote(typeof profile.route_note === 'string' ? profile.route_note : '');
+          })
+          .catch(() => undefined);
       }
     },
-    [bookingId, session, say],
+    [bookingId, session, captureArrCoords],
   );
+
+  const sendArrivalBundle = useCallback(async () => {
+    if (!arrItem || arrBusy) return;
+    if (!arrNoMeeting && !/^\d{2}:\d{2}$/.test(arrTime)) return;
+    setArrBusy(true);
+    try {
+      const res = await fetch(`/api/tour-rooms/${bookingId}/arrival-bundle`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'x-tour-room-auth': session },
+        body: JSON.stringify({
+          poiKey: arrItem.poi_key ?? null,
+          title: itemTitle(arrItem),
+          meetingTime: arrNoMeeting ? null : arrTime,
+          ...(arrCoords ?? {}),
+          profile: { follow_mode: arrFollow, ticket_required: arrTicket, route_note: arrNote.trim() || null },
+        }),
+      });
+      if (res.ok) {
+        const data = (await res.json()) as { delivered?: number };
+        setSheet('none');
+        const teams = data.delivered && data.delivered > 1 ? ` (${data.delivered}팀)` : '';
+        say(`${itemTitle(arrItem)} 도착 안내 전송 ✓${teams}`);
+      } else {
+        say('실패 — 다시 시도해 주세요');
+      }
+    } catch {
+      say('네트워크 오류');
+    } finally {
+      setArrBusy(false);
+    }
+  }, [arrItem, arrBusy, arrNoMeeting, arrTime, arrCoords, arrFollow, arrTicket, arrNote, bookingId, session, say]);
 
   // ── background push (hear guests while out in a nav app) ────────────────
   const enablePush = useCallback(async () => {
@@ -1189,8 +1259,9 @@ export default function Cockpit({
                     ) : null}
                     <button
                       type="button"
-                      onClick={() => void announceArrival(item)}
+                      onClick={() => openArrivalSheet(item)}
                       className="flex-1 rounded-xl bg-[var(--tr-bubble-me)] py-3 text-base font-bold text-[var(--tr-bubble-me-ink)]"
+                      data-testid="cockpit-open-arrival"
                     >
                       도착 안내
                     </button>
@@ -1198,6 +1269,127 @@ export default function Cockpit({
                 </div>
               );
             })}
+          </div>
+        </Sheet>
+      ) : null}
+
+      {sheet === 'arrival' && arrItem ? (
+        <Sheet onClose={() => setSheet('none')} title={`${itemTitle(arrItem)} 도착 안내`}>
+          <div className="flex max-h-[62vh] flex-col gap-3 overflow-y-auto">
+            {/* per-day variable ① — parking pin (auto-captured on open) */}
+            <div className="flex items-center justify-between gap-3 rounded-2xl bg-[var(--tr-surface-2)] px-4 py-3">
+              <p className="min-w-0 text-base font-semibold text-[var(--tr-ink)]">
+                <SquareParking size={16} strokeWidth={2} aria-hidden className="mr-1.5 inline-block align-[-2px]" />
+                주차핀 {arrCoords ? '✓ 현재 위치' : '캡처 안 됨'}
+              </p>
+              <button
+                type="button"
+                onClick={captureArrCoords}
+                className="shrink-0 rounded-xl bg-[var(--tr-surface)] px-3 py-2 text-sm font-bold text-[var(--tr-ink)]"
+              >
+                다시 캡처
+              </button>
+            </div>
+
+            {/* per-day variable ② — meeting time (no default, must choose) */}
+            <div className="rounded-2xl bg-[var(--tr-surface-2)] px-4 py-3">
+              <p className="mb-2 text-base font-semibold text-[var(--tr-ink)]">집합 시간</p>
+              <div className="grid grid-cols-4 gap-2">
+                {[30, 40, 60, 90].map((minutes) => {
+                  const time = kstPlusMinutes(minutes);
+                  const selected = !arrNoMeeting && arrTime === time;
+                  return (
+                    <button
+                      key={minutes}
+                      type="button"
+                      onClick={() => {
+                        setArrNoMeeting(false);
+                        setArrTime(time);
+                      }}
+                      className={`rounded-xl py-3 text-center text-base font-bold ${
+                        selected
+                          ? 'bg-[var(--tr-bubble-me)] text-[var(--tr-bubble-me-ink)]'
+                          : 'bg-[var(--tr-surface)] text-[var(--tr-ink)]'
+                      }`}
+                    >
+                      +{minutes}분
+                      <span className="block text-xs font-medium text-current opacity-70">{time}</span>
+                    </button>
+                  );
+                })}
+              </div>
+              <div className="mt-2 flex items-center gap-2">
+                <input
+                  type="time"
+                  value={arrNoMeeting ? '' : arrTime}
+                  onChange={(event) => {
+                    setArrNoMeeting(false);
+                    setArrTime(event.target.value);
+                  }}
+                  className="flex-1 rounded-xl bg-[var(--tr-surface)] px-3 py-2.5 text-base font-semibold text-[var(--tr-ink)]"
+                  data-testid="arrival-time-input"
+                />
+                <button
+                  type="button"
+                  onClick={() => {
+                    setArrNoMeeting(!arrNoMeeting);
+                    setArrTime('');
+                  }}
+                  className={`rounded-xl px-3 py-2.5 text-sm font-bold ${
+                    arrNoMeeting
+                      ? 'bg-[var(--tr-bubble-me)] text-[var(--tr-bubble-me-ink)]'
+                      : 'bg-[var(--tr-surface)] text-[var(--tr-ink-2)]'
+                  }`}
+                >
+                  집합 없이
+                </button>
+              </div>
+            </div>
+
+            {/* sticky per-POI toggles (prefilled from the profile) */}
+            <div className="grid grid-cols-2 gap-2">
+              <button
+                type="button"
+                onClick={() => setArrFollow(arrFollow === 'follow' ? 'free' : 'follow')}
+                className={`rounded-2xl px-3 py-3 text-base font-bold ${
+                  arrFollow === 'follow'
+                    ? 'bg-[var(--tr-bubble-me)] text-[var(--tr-bubble-me-ink)]'
+                    : 'bg-[var(--tr-surface-2)] text-[var(--tr-ink)]'
+                }`}
+                data-testid="arrival-follow-toggle"
+              >
+                {arrFollow === 'follow' ? '🚶 스태프 인솔' : '🧭 자유 관람'}
+              </button>
+              <button
+                type="button"
+                onClick={() => setArrTicket(!arrTicket)}
+                className={`rounded-2xl px-3 py-3 text-base font-bold ${
+                  arrTicket
+                    ? 'bg-[var(--tr-bubble-me)] text-[var(--tr-bubble-me-ink)]'
+                    : 'bg-[var(--tr-surface-2)] text-[var(--tr-ink)]'
+                }`}
+              >
+                🎟️ 입장권 {arrTicket ? '필요' : '불필요'}
+              </button>
+            </div>
+
+            <textarea
+              value={arrNote}
+              onChange={(event) => setArrNote(event.target.value)}
+              placeholder="관람 순서·노선 메모 (선택 — 다음부터 자동 채워짐)"
+              rows={2}
+              className="w-full resize-none rounded-2xl bg-[var(--tr-surface-2)] px-4 py-3 text-base text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-2)]"
+            />
+
+            <button
+              type="button"
+              onClick={() => void sendArrivalBundle()}
+              disabled={arrBusy || (!arrNoMeeting && !/^\d{2}:\d{2}$/.test(arrTime))}
+              className="w-full rounded-2xl bg-[var(--tr-bubble-me)] py-4 text-lg font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
+              data-testid="arrival-send"
+            >
+              {arrBusy ? '전송 중…' : '전원 발송'}
+            </button>
           </div>
         </Sheet>
       ) : null}

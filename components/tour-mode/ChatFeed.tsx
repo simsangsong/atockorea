@@ -22,6 +22,8 @@ import AudioButton from '@/components/tour-mode/AudioButton';
 import Avatar from '@/components/tour-mode/Avatar';
 import ExtraLedgerCard, { type ExtraLedgerMeta } from '@/components/tour-mode/ExtraLedgerCard';
 import SpotArrivalCard from '@/components/tour-mode/SpotArrivalCard';
+import ArrivalBundleCard from '@/components/tour-mode/ArrivalBundleCard';
+import type { ArrivalBundleMeta } from '@/lib/tour-room/arrivalBundle';
 import Lightbox from '@/components/tour-mode/Lightbox';
 import LocationPreview from '@/components/tour-mode/LocationPreview';
 import ReplyPreview from '@/components/tour-mode/ReplyPreview';
@@ -384,6 +386,21 @@ export default function ChatFeed({
                     locale={viewerLocale}
                     canConfirm={Boolean(newest && meta.status === 'logged' && viewerRole === 'customer' && onExtraConfirm)}
                     onConfirm={onExtraConfirm}
+                  />
+                </div>
+              );
+            }
+            // A0 — the one-tap arrival bundle renders as a single composite
+            // card (meeting strip · badges · route note · restroom map · spot
+            // briefing). The multi-line text stays for TTS / push / cockpit.
+            if (message.metadata?.kind === 'arrival_bundle') {
+              const text = displayText(message, viewerLocale, originals.has(message.id), preferredLocale);
+              return (
+                <div className={`mt-2 ${animClass}`}>
+                  <ArrivalBundleCard
+                    meta={message.metadata as unknown as ArrivalBundleMeta}
+                    arrivedLine={text.split('\n')[0] ?? text}
+                    locale={viewerLocale}
                   />
                 </div>
               );
