@@ -13,7 +13,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import dynamic from 'next/dynamic';
-import { MapPin, Search, Trash2, RotateCcw, Camera, Toilet, Utensils, Star, Check, Plus, ArrowLeft, ListChecks, Pencil } from 'lucide-react';
+import { MapPin, Search, Trash2, RotateCcw, Camera, Toilet, Utensils, Star, Check, Plus, ArrowLeft, ListChecks, Pencil, Ticket } from 'lucide-react';
 import { getAdminAccessToken } from '@/app/admin/match-pois/_hooks/usePoiRow';
 import type { EditorPin } from './_components/PinMap';
 import ReviewQueue, { type ReviewPoiMeta } from './_components/ReviewQueue';
@@ -21,7 +21,7 @@ import ReviewQueue, { type ReviewPoiMeta } from './_components/ReviewQueue';
 const PinMap = dynamic(() => import('./_components/PinMap'), { ssr: false });
 
 /** Only restroom / photo can be added by map-click; restaurants are auto-collected. */
-type AddKind = 'restroom' | 'photo';
+type AddKind = 'restroom' | 'photo' | 'ticket_booth';
 type EditorMode = 'edit' | 'review';
 
 interface PoiItem {
@@ -394,6 +394,7 @@ function EditView({
               <div className="flex shrink-0 items-center gap-1 rounded-lg bg-slate-100 p-1">
                 <KindToggle kind="restroom" active={addKind === 'restroom'} onClick={() => setAddKind('restroom')} />
                 <KindToggle kind="photo" active={addKind === 'photo'} onClick={() => setAddKind('photo')} />
+                <KindToggle kind="ticket_booth" active={addKind === 'ticket_booth'} onClick={() => setAddKind('ticket_booth')} />
               </div>
             </div>
 
@@ -452,7 +453,9 @@ function EditView({
 }
 
 function KindToggle({ kind, active, onClick }: { kind: AddKind; active: boolean; onClick: () => void }) {
-  const Icon = kind === 'restroom' ? Toilet : Camera;
+  const Icon = kind === 'restroom' ? Toilet : kind === 'ticket_booth' ? Ticket : Camera;
+  const color = kind === 'restroom' ? '#2563eb' : kind === 'ticket_booth' ? '#16a34a' : '#db2777';
+  const label = kind === 'restroom' ? '화장실' : kind === 'ticket_booth' ? '매표소' : '포토스팟';
   return (
     <button
       type="button"
@@ -461,8 +464,8 @@ function KindToggle({ kind, active, onClick }: { kind: AddKind; active: boolean;
         active ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-500 hover:text-slate-700'
       }`}
     >
-      <Icon className="size-3.5" style={{ color: active ? (kind === 'restroom' ? '#2563eb' : '#db2777') : undefined }} />
-      {kind === 'restroom' ? '화장실' : '포토스팟'}
+      <Icon className="size-3.5" style={{ color: active ? color : undefined }} />
+      {label}
     </button>
   );
 }

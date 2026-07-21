@@ -36,6 +36,7 @@ export default function ArrivalBundleCard({
   const point = meta.meeting_point_i18n?.[locale]?.trim() || meta.meeting_point || null;
   const routeNote = meta.route_note_i18n?.[locale]?.trim() || meta.route_note || null;
   const restrooms = selectFacilityPins((meta.facility_pins as FacilityPin[] | undefined) ?? [], 'restroom');
+  const ticketBooths = selectFacilityPins((meta.facility_pins as FacilityPin[] | undefined) ?? [], 'ticket_booth');
   const meetingCoords =
     typeof meta.meeting_lat === 'number' && typeof meta.meeting_lng === 'number'
       ? { lat: meta.meeting_lat, lng: meta.meeting_lng }
@@ -156,6 +157,12 @@ export default function ArrivalBundleCard({
 
       {/* restroom map (verified pins only, W2.1) */}
       {restrooms.length > 0 ? <FacilityMapCard kind="restroom" pins={restrooms} locale={locale} /> : null}
+
+      {/* J0 — ticketless join tours: when this stop needs a ticket, the booth
+          pin answers "where do I buy it?" in every language. */}
+      {meta.ticket_required && ticketBooths.length > 0 ? (
+        <FacilityMapCard kind="ticket_booth" pins={ticketBooths} locale={locale} />
+      ) : null}
 
       {/* the spot briefing itself (3-tier content) */}
       {hasContent && meta.content ? (

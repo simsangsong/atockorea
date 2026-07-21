@@ -19,7 +19,7 @@ const SELECT_COLUMNS =
   'id, poi_key, kind, lat, lng, name, name_i18n, photo_url, source, place_id, ' +
   'distance_m, is_verified, is_active, sort_order, created_at, updated_at';
 
-const VALID_KINDS = new Set(['restroom', 'photo']);
+const VALID_KINDS = new Set(['restroom', 'photo', 'ticket_booth']);
 
 function coordOk(v: unknown, max: number): v is number {
   return typeof v === 'number' && Number.isFinite(v) && Math.abs(v) <= max;
@@ -64,7 +64,7 @@ export async function POST(req: NextRequest) {
     const poiKey = typeof body.poi_key === 'string' ? body.poi_key.trim() : '';
     const kind = typeof body.kind === 'string' ? body.kind : '';
     if (!poiKey) return NextResponse.json({ error: 'poi_key is required' }, { status: 400 });
-    if (!VALID_KINDS.has(kind)) return NextResponse.json({ error: 'kind must be restroom or photo' }, { status: 400 });
+    if (!VALID_KINDS.has(kind)) return NextResponse.json({ error: 'kind must be restroom, photo, or ticket_booth' }, { status: 400 });
     if (!coordOk(body.lat, 90) || !coordOk(body.lng, 180)) {
       return NextResponse.json({ error: 'lat/lng out of range' }, { status: 400 });
     }
