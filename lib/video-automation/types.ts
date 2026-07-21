@@ -19,6 +19,8 @@ export interface VideoLocalizedPoiContent {
   category?: string;
   description?: string;
   image?: string;
+  images?: string[];
+  imageCredits?: Array<{ url: string; source?: string }>;
   highlights: string[];
   visitBasics?: Record<string, string>;
   convenience?: Record<string, string>;
