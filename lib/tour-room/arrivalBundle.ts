@@ -33,6 +33,8 @@ export interface ArrivalProfile {
   /** A4 — the POI's recurring headline event ("해녀 공연 14:00"); null = none. */
   event_label: string | null;
   event_label_i18n: Record<string, string> | null;
+  /** J1 — sticky adult admission (KRW); upgrades the ticket line with the price. */
+  ticket_krw: number | null;
 }
 
 /** The `metadata` contract of an `arrival_bundle` message row. */
@@ -47,6 +49,8 @@ export interface ArrivalBundleMeta {
   facility_pins?: FacilityPin[];
   follow_mode: FollowMode;
   ticket_required: boolean;
+  /** J1 — adult admission (KRW) when known; badges + text line show it. */
+  ticket_krw?: number | null;
   route_note?: string | null;
   route_note_i18n?: Record<string, string> | null;
   /** HH:MM KST wall clock; null = "집합 없이" (short photo stop). */
@@ -121,6 +125,20 @@ const TICKET_LINE: Record<RoomLocale, string> = {
   zh: '这里需要门票 — 请在售票处购买。',
 };
 
+/** J1 — priced variant ({price} = pre-formatted ₩ amount, locale-neutral). */
+const TICKET_LINE_PRICED: Record<RoomLocale, string> = {
+  en: 'Admission here is {price} per adult — please buy your ticket at the ticket booth.',
+  ko: '이곳 입장권은 성인 1인 {price}이에요 — 매표소에서 구매해 주세요.',
+  ja: 'ここの入場料は大人1名{price}です — チケット売り場でご購入ください。',
+  es: 'La entrada aquí cuesta {price} por adulto — cómprenla en la taquilla, por favor.',
+  zh: '这里的门票为每位成人{price} — 请在售票处购买。',
+};
+
+/** ₩5,000-style formatting (the won symbol reads in every room locale). */
+export function formatTicketKrw(ticketKrw: number): string {
+  return `₩${ticketKrw.toLocaleString('en-US')}`;
+}
+
 /** Card/badge labels shared by the guest bundle card (client) and tests. */
 export const BUNDLE_COPY: Record<
   RoomLocale,
@@ -148,6 +166,8 @@ export interface ComposeBundleArgs {
   eventStatus?: EventStatus | null;
   eventLabelByLocale?: Record<string, string> | null;
   eventLabel?: string | null;
+  /** J1 — adult admission in KRW; with ticketRequired, prices the ticket line. */
+  ticketKrw?: number | null;
 }
 
 /**
@@ -168,7 +188,13 @@ export function composeArrivalBundleText(args: ComposeBundleArgs): {
       lines.push(renderSpotEventText('meeting_notice_timed', locale, { time: args.meetingTime, point }));
     }
     lines.push(FOLLOW_LINE[args.followMode][locale]);
-    if (args.ticketRequired) lines.push(TICKET_LINE[locale]);
+    if (args.ticketRequired) {
+      lines.push(
+        typeof args.ticketKrw === 'number' && args.ticketKrw > 0
+          ? TICKET_LINE_PRICED[locale].replaceAll('{price}', formatTicketKrw(args.ticketKrw))
+          : TICKET_LINE[locale],
+      );
+    }
     if (args.eventStatus && (args.eventLabel || args.eventLabelByLocale)) {
       const event = args.eventLabelByLocale?.[locale]?.trim() || args.eventLabel?.trim() || '';
       if (event) lines.push(EVENT_LINE[args.eventStatus][locale].replaceAll('{event}', event));
@@ -207,5 +233,7 @@ export function arrivalProfileFromRow(
     meeting_point_i18n: i18n(row?.meeting_point_i18n),
     event_label: typeof row?.event_label === 'string' ? row.event_label : null,
     event_label_i18n: i18n(row?.event_label_i18n),
+    ticket_krw:
+      typeof row?.ticket_krw === 'number' && Number.isFinite(row.ticket_krw) ? row.ticket_krw : null,
   };
 }

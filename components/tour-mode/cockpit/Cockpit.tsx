@@ -286,6 +286,8 @@ export default function Cockpit({
   const [arrNoMeeting, setArrNoMeeting] = useState(false);
   const [arrFollow, setArrFollow] = useState<'follow' | 'free'>('free');
   const [arrTicket, setArrTicket] = useState(false);
+  // J1 — sticky adult admission (KRW string for the input; '' = unset).
+  const [arrTicketKrw, setArrTicketKrw] = useState('');
   const [arrNote, setArrNote] = useState('');
   const [arrCoords, setArrCoords] = useState<{ lat: number; lng: number } | null>(null);
   const [arrBusy, setArrBusy] = useState(false);
@@ -672,6 +674,7 @@ export default function Cockpit({
       setArrNoMeeting(false);
       setArrFollow('free');
       setArrTicket(false);
+      setArrTicketKrw('');
       setArrNote('');
       setArrCoords(null);
       setArrEventLabel('');
@@ -696,6 +699,7 @@ export default function Cockpit({
                 ticket_required?: boolean;
                 route_note?: string | null;
                 event_label?: string | null;
+                ticket_krw?: number | null;
               };
               event_status?: 'on' | 'off' | null;
               briefing?: string[] | null;
@@ -704,6 +708,7 @@ export default function Cockpit({
               if (!profile) return;
               setArrFollow(profile.follow_mode === 'follow' ? 'follow' : 'free');
               setArrTicket(profile.ticket_required === true);
+              setArrTicketKrw(typeof profile.ticket_krw === 'number' ? String(profile.ticket_krw) : '');
               setArrNote(typeof profile.route_note === 'string' ? profile.route_note : '');
               setArrEventLabel(typeof profile.event_label === 'string' ? profile.event_label : '');
               setArrEventStatus(data?.event_status ?? null);
@@ -736,6 +741,7 @@ export default function Cockpit({
                 profile: {
                   follow_mode: arrFollow,
                   ticket_required: arrTicket,
+                  ticket_krw: /^\d+$/.test(arrTicketKrw.trim()) ? Number(arrTicketKrw.trim()) : null,
                   route_note: arrNote.trim() || null,
                   event_label: arrEventLabel.trim() || null,
                 },
@@ -1597,6 +1603,18 @@ export default function Cockpit({
                 🎟️ 입장권 {arrTicket ? '필요' : '불필요'}
               </button>
             </div>
+
+            {/* J1 — adult admission (sticky): prices the guest's ticket line */}
+            {arrTicket ? (
+              <input
+                inputMode="numeric"
+                value={arrTicketKrw}
+                onChange={(event) => setArrTicketKrw(event.target.value.replace(/\D/g, ''))}
+                placeholder="성인 입장권 가격 (원, 선택 — 예: 5000)"
+                className="w-full rounded-2xl bg-[var(--tr-surface-2)] px-4 py-3 text-base text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-2)]"
+                data-testid="arrival-ticket-krw"
+              />
+            ) : null}
 
             {/* A4 — headline event: sticky label + today's O/X confirmation */}
             <div className="rounded-2xl bg-[var(--tr-surface-2)] px-4 py-3">

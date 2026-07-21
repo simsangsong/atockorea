@@ -15,7 +15,7 @@ import { renderNextLegLine } from '@/lib/tour-room/eta';
 import SpotArrivalCard from '@/components/tour-mode/SpotArrivalCard';
 import FacilityMapCard from '@/components/tour-mode/FacilityMapCard';
 import { selectFacilityPins, type FacilityPin } from '@/lib/tour-room/facilityPins';
-import { BUNDLE_COPY, renderEventLine, type ArrivalBundleMeta } from '@/lib/tour-room/arrivalBundle';
+import { BUNDLE_COPY, formatTicketKrw, renderEventLine, type ArrivalBundleMeta } from '@/lib/tour-room/arrivalBundle';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
 function mapsUrl(lat: number, lng: number): string {
@@ -94,6 +94,9 @@ export default function ArrivalBundleCard({
           <span className="tr-pill inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold text-[var(--tr-ink)]">
             <Ticket size={14} strokeWidth={2} aria-hidden />
             {copy.ticket}
+            {typeof meta.ticket_krw === 'number' && meta.ticket_krw > 0 ? (
+              <span className="font-bold">{formatTicketKrw(meta.ticket_krw)}</span>
+            ) : null}
           </span>
         ) : null}
         {!meta.meeting_time && parkingCoords ? (

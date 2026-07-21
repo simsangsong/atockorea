@@ -317,6 +317,45 @@ describe('POST /arrival-bundle × A4 event status', () => {
   });
 });
 
+describe('POST /arrival-bundle × J1 ticket price', () => {
+  it('a priced ticket line + metadata + sticky persistence', async () => {
+    const db = fakeDb('vehicle');
+    createServerClientMock.mockReturnValue(db);
+    const res = await bundlePOST(
+      fakeReq(driverSession(), {
+        poiKey: 'seongsan',
+        meetingTime: null,
+        profile: { ticket_required: true, ticket_krw: 5000 },
+      }),
+      params(),
+    );
+    expect(res.status).toBe(201);
+    const translations = db.inserts.tour_room_messages[0].translations as Record<string, string>;
+    expect(translations.ko).toContain('₩5,000');
+    expect(translations.en).toContain('₩5,000 per adult');
+    const meta = db.inserts.tour_room_messages[0].metadata as Record<string, unknown>;
+    expect(meta.ticket_krw).toBe(5000);
+    expect(db.upserts.tour_poi_arrival_profiles?.[0]).toMatchObject({ ticket_krw: 5000, ticket_required: true });
+  });
+
+  it('garbage prices are ignored (negative, float, huge, string)', async () => {
+    const db = fakeDb('vehicle');
+    createServerClientMock.mockReturnValue(db);
+    const res = await bundlePOST(
+      fakeReq(driverSession(), {
+        poiKey: 'x',
+        meetingTime: null,
+        profile: { ticket_required: true, ticket_krw: -500 },
+      }),
+      params(),
+    );
+    expect(res.status).toBe(201);
+    const translations = db.inserts.tour_room_messages[0].translations as Record<string, string>;
+    expect(translations.ko).not.toContain('₩-');
+    expect(translations.ko).toContain('매표소'); // unpriced fallback line
+  });
+});
+
 describe('pressure: boundaries + auth', () => {
   it('a session signed for ANOTHER booking is rejected', async () => {
     const db = fakeDb('vehicle');

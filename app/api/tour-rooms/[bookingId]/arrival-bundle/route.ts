@@ -50,6 +50,7 @@ interface ProfilePatch {
   route_note?: string | null;
   meeting_point?: string | null;
   event_label?: string | null;
+  ticket_krw?: number | null;
 }
 
 function parseProfilePatch(value: unknown): ProfilePatch | null {
@@ -64,6 +65,11 @@ function parseProfilePatch(value: unknown): ProfilePatch | null {
   if (raw.meeting_point === null) patch.meeting_point = null;
   if (typeof raw.event_label === 'string') patch.event_label = raw.event_label.trim().slice(0, 120) || null;
   if (raw.event_label === null) patch.event_label = null;
+  // J1 — adult admission in KRW (0..1,000,000; anything else is ignored).
+  if (raw.ticket_krw === null) patch.ticket_krw = null;
+  if (typeof raw.ticket_krw === 'number' && Number.isInteger(raw.ticket_krw) && raw.ticket_krw >= 0 && raw.ticket_krw <= 1_000_000) {
+    patch.ticket_krw = raw.ticket_krw;
+  }
   return Object.keys(patch).length > 0 ? patch : null;
 }
 
@@ -253,6 +259,7 @@ export async function POST(
         profile.event_label = patch.event_label;
         profile.event_label_i18n = patch.event_label ? await tryTranslate(patch.event_label) : null;
       }
+      if (patch.ticket_krw !== undefined) profile.ticket_krw = patch.ticket_krw;
       await supabase
         .from('tour_poi_arrival_profiles')
         .upsert(
@@ -266,6 +273,7 @@ export async function POST(
             meeting_point_i18n: profile.meeting_point_i18n,
             event_label: profile.event_label,
             event_label_i18n: profile.event_label_i18n,
+            ticket_krw: profile.ticket_krw,
             updated_by_role: actor.role,
             updated_at: new Date().toISOString(),
           },
@@ -379,6 +387,7 @@ export async function POST(
       eventStatus,
       eventLabelByLocale: profile.event_label_i18n,
       eventLabel: profile.event_label,
+      ticketKrw: profile.ticket_krw,
     });
     if (nextLeg) {
       for (const locale of Object.keys(bundleText.translations)) {
@@ -471,6 +480,7 @@ export async function POST(
           triggered_by_role: actor.role,
           follow_mode: profile.follow_mode,
           ticket_required: profile.ticket_required,
+          ticket_krw: profile.ticket_krw,
           route_note: profile.route_note,
           route_note_i18n: profile.route_note_i18n,
           meeting_time: meetingTime,
