@@ -60,4 +60,6 @@
 - 2026-07-22: 플랜 확정(사용자 구상 반영). 압력테스트 선행 완료(PR #445 — 결함 3건 수정+공격 테스트 12건: 콕핏 프로필 덮어쓰기 레이스·free 스톱 스킵 재공지·스테일 dwell 오표시 / 크로스부킹·경계·R-6 폴백 고정. 핀 kind 'pickup' 충돌은 무혐의).
 - **J0 완료 (PR #446):** facility 핀 kind `ticket_booth`(그린) — 마이그레이션 라이브, lib union+5로케일 라벨(매표소), FacilityMapCard 아이콘, 어드민 토글+API 화이트리스트, 번들 ticket_required 시 매표소 지도 자동 첨부.
 - **J1 완료 (PR #447):** `tour_poi_arrival_profiles.ticket_krw`(CHECK 0..1M, 라이브) — 콕핏 티켓 토글 시 가격 입력(스티키), 번들 티켓 줄 가격 버전("성인 1인 ₩5,000") 5로케일, 카드 배지 금액, 쓰레기값(음수/실수/문자) 무시 폴백.
-- 다음 = J2(콕핏 인원체크: driver-signal 'departing') → J3(암호화 오프라인 캐시 offlineVault).
+- **J2 완료 (PR #449):** driver-signal 'departing' — 콕핏 [출발 ✓](confirm에 인원수 표시)→"인원 확인 완료, 출발합니다" 5로케일, 공유투어 버스 전원 팬아웃. 기사 루프 완성: 도착→번들→인원체크→출발 전부 프리셋 탭.
+- **J3 완료:** 암호화 오프라인 볼트 — `lib/tour-room/offlineVault.ts`(WebCrypto AES-GCM-256, 키=룸세션 HKDF-SHA256 파생(salt 고정+info=bookingId)·비저장, IndexedDB엔 {iv, ciphertext}만). `OfflineInfoCard`가 평문 localStorage 스냅샷을 **퍼지**하고 볼트로 전환, 스냅샷에 최신 도착 안내 전문(손님 로케일 번들 텍스트: 집합·인솔·티켓가격·노선) 포함 → 오프라인에서 복호화 렌더. 테스트 6: 라운드트립·암호문에 평문 부재·오세션/타부킹 복호 거부·GCM 변조 fail-closed·빈 세션 degrade. ⚠한계(SoT §B-3): 클라이언트 암호화≠DRM — 방어 대상은 캐시 파일 벌크 유출.
+- **코드 트랙 종료.** 잔여 = J4(video-automation 합류 게이트)·J5(가격, 사람 게이트)·§D 결정 4건.

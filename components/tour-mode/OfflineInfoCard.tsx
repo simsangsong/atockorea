@@ -1,15 +1,18 @@
 'use client';
 
 /**
- * W4.2 / E6 — the offline safety net. While the room is healthy we silently
- * snapshot the essentials (meeting target, next stops, emergency numbers)
- * into localStorage; when the device drops offline mid-tour the card renders
- * those saved facts instead of a dead screen. No service-worker HTML caching
- * — this covers the realistic case (app already open, signal gone).
+ * W4.2 / E6 → J3 — the offline safety net, now ENCRYPTED. While the room is
+ * healthy we silently snapshot the essentials (meeting target, next stops,
+ * the latest arrival guidance, emergency numbers) into the AES-GCM offline
+ * vault (IndexedDB, key derived from the room session — never stored); when
+ * the device drops offline mid-tour the card decrypts and renders those
+ * facts instead of a dead screen. The old PLAINTEXT localStorage snapshot is
+ * removed on sight (content-protection requirement, 2026-07-22).
  */
 
 import { useEffect, useState } from 'react';
 import { activeNotice, formatTargetTime } from '@/lib/tour-room/notices';
+import { loadVault, saveVault } from '@/lib/tour-room/offlineVault';
 import type { RoomMessage } from '@/hooks/useTourRoomChannel';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
@@ -57,19 +60,25 @@ const COPY: Record<
 interface SavedInfo {
   meeting: string | null;
   stops: string[];
+  /** J3 — the latest arrival guidance (guest-locale bundle text). */
+  guidance: string | null;
   savedAt: number;
 }
 
-const storageKey = (bookingId: string) => `tour_mode_offline:${bookingId}`;
+/** Pre-J3 plaintext snapshot key — purged on sight (content protection). */
+const LEGACY_KEY = (bookingId: string) => `tour_mode_offline:${bookingId}`;
 
 export default function OfflineInfoCard({
   bookingId,
+  roomSession,
   locale,
   tourDate,
   messages,
   schedule,
 }: {
   bookingId: string;
+  /** J3 — derives the vault key; without it nothing is persisted. */
+  roomSession: string;
   locale: RoomLocale;
   tourDate: string | null | undefined;
   messages: RoomMessage[];
@@ -79,9 +88,14 @@ export default function OfflineInfoCard({
   const [offline, setOffline] = useState(false);
   const [saved, setSaved] = useState<SavedInfo | null>(null);
 
-  // Keep the snapshot fresh while online.
+  // Keep the ENCRYPTED snapshot fresh while online (fire-and-forget).
   useEffect(() => {
     if (typeof navigator !== 'undefined' && !navigator.onLine) return;
+    try {
+      window.localStorage.removeItem(LEGACY_KEY(bookingId)); // purge plaintext
+    } catch {
+      /* ignore */
+    }
     try {
       const notice = activeNotice(messages, tourDate);
       const meeting =
@@ -96,23 +110,30 @@ export default function OfflineInfoCard({
         })
         .filter(Boolean)
         .slice(0, 8);
-      window.localStorage.setItem(storageKey(bookingId), JSON.stringify({ meeting, stops, savedAt: Date.now() }));
+      // Latest arrival bundle = the full guidance for the current stop
+      // (meeting, follow/free, ticket price, route note) in the guest locale.
+      let guidance: string | null = null;
+      for (let i = messages.length - 1; i >= 0; i -= 1) {
+        const message = messages[i];
+        if (message.metadata?.kind !== 'arrival_bundle') continue;
+        guidance = message.translations?.[locale] ?? message.source_text ?? null;
+        break;
+      }
+      const payload: SavedInfo = { meeting, stops, guidance, savedAt: Date.now() };
+      void saveVault(roomSession, bookingId, payload).catch(() => undefined);
     } catch {
       /* best effort */
     }
-  }, [bookingId, locale, messages, schedule, tourDate]);
+  }, [bookingId, roomSession, locale, messages, schedule, tourDate]);
 
   useEffect(() => {
     const sync = () => {
       const isOffline = typeof navigator !== 'undefined' && !navigator.onLine;
       setOffline(isOffline);
       if (isOffline) {
-        try {
-          const raw = window.localStorage.getItem(storageKey(bookingId));
-          setSaved(raw ? (JSON.parse(raw) as SavedInfo) : null);
-        } catch {
-          setSaved(null);
-        }
+        void loadVault<SavedInfo>(roomSession, bookingId)
+          .then((value) => setSaved(value))
+          .catch(() => setSaved(null));
       }
     };
     sync();
@@ -122,7 +143,7 @@ export default function OfflineInfoCard({
       window.removeEventListener('online', sync);
       window.removeEventListener('offline', sync);
     };
-  }, [bookingId]);
+  }, [bookingId, roomSession]);
 
   if (!offline) return null;
 
@@ -141,6 +162,11 @@ export default function OfflineInfoCard({
       {saved && saved.stops.length > 0 && (
         <p className="tr-label mt-1 text-[var(--tr-ink-2)]">
           <span className="font-semibold">{copy.nextStops}:</span> {saved.stops.join(' → ')}
+        </p>
+      )}
+      {saved?.guidance && (
+        <p className="tr-label mt-1.5 whitespace-pre-line text-[var(--tr-ink-2)]" data-testid="offline-guidance">
+          {saved.guidance}
         </p>
       )}
       <p className="tr-label mt-1.5 text-[var(--tr-ink)]">{copy.numbers}</p>

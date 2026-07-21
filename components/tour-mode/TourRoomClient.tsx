@@ -696,6 +696,7 @@ function TourRoomLive({
           {viewerRole === 'customer' && (
             <OfflineInfoCard
               bookingId={bookingId}
+              roomSession={data.session}
               locale={locale}
               tourDate={snapshot.booking?.tour_date}
               messages={messages}
