@@ -4,7 +4,9 @@ import { requestGate } from '@/lib/durable-rate-limit';
 import { ensureRoom, resolveRoomActor } from '@/lib/tour-room/access';
 import { recordRoomEvent } from '@/lib/tour-room/events';
 import { getGeneratedSpotContent, refCandidatesFor } from '@/lib/tour-room/generatedContent';
-import { humanizePoiKey } from '@/lib/tour-room/dayPlan';
+import { humanizePoiKey, resolveDaySchedule } from '@/lib/tour-room/dayPlan';
+import { renderNextLegLine, type NextLegMeta } from '@/lib/tour-room/eta';
+import { estimateNextLeg } from '@/lib/tour-room/eta.server';
 import { broadcastToRoom } from '@/lib/tour-room/realtime';
 import { normalizeRoomLocale, ROOM_LOCALES } from '@/lib/tour-room/snapshot';
 import { resolveSpotContent } from '@/lib/tour-room/spotContent';
@@ -243,6 +245,39 @@ export async function POST(
     const facilityPins = await fetchArrivalFacilityPins(supabase, spot.poi_key);
     const refs = refCandidatesFor({ poi_key: spot.poi_key, title: spot.title });
 
+    // A2 — next-stop ETA tail (measured travel-matrix minutes over the
+    // synthetic haversine estimate). Best-effort: any miss just omits the line.
+    let nextLeg: NextLegMeta | null = null;
+    try {
+      const { schedule } = await resolveDaySchedule(supabase, {
+        bookingId: booking.id,
+        tourDate: booking.tour_date ?? null,
+      });
+      const idx = spot.poi_key ? schedule.findIndex((item) => item.poi_key === spot.poi_key) : -1;
+      const next =
+        idx >= 0
+          ? schedule.slice(idx + 1).find((item) => typeof item.poi_key === 'string' && item.poi_key)
+          : undefined;
+      if (next?.poi_key) {
+        const estimate = await estimateNextLeg(supabase, {
+          fromCoords: hasPin ? { lat: lat as number, lng: lng as number } : null,
+          fromPoiKey: spot.poi_key,
+          toPoiKey: next.poi_key as string,
+        });
+        if (estimate) {
+          nextLeg = {
+            title: (typeof next.title === 'string' && next.title) || humanizePoiKey(next.poi_key as string),
+            poi_key: next.poi_key as string,
+            distance_m: estimate.distanceM,
+            minutes: estimate.minutes,
+            source: estimate.source,
+          };
+        }
+      }
+    } catch {
+      nextLeg = null;
+    }
+
     // Named gather point: translated when we have it, verbatim otherwise
     // (R-6); no name at all → the per-locale "the vehicle" default.
     const pointByLocale = profile.meeting_point
@@ -258,6 +293,16 @@ export async function POST(
       routeNoteI18n: profile.route_note_i18n,
       routeNote: profile.route_note,
     });
+    if (nextLeg) {
+      for (const locale of Object.keys(bundleText.translations)) {
+        bundleText.translations[locale] += `\n${renderNextLegLine(locale as import('@/lib/tour-room/snapshot').RoomLocale, {
+          title: nextLeg.title,
+          distanceM: nextLeg.distance_m,
+          minutes: nextLeg.minutes,
+        })}`;
+      }
+      bundleText.source_text = bundleText.translations.en;
+    }
 
     // ── fan-out targets: shared tour = every booking of the day (Model B) ──
     let isShared = false;
@@ -351,6 +396,7 @@ export async function POST(
           ...(hasPin ? { parking_lat: lat, parking_lng: lng, pin_id: pinId } : {}),
           ...(content.content ? { content: content.content, content_tier: content.tier } : {}),
           ...(facilityPins.length ? { facility_pins: facilityPins } : {}),
+          ...(nextLeg ? { next_leg: nextLeg } : {}),
           ...(targetBookings.length > 1 ? { fanout: true } : {}),
         };
 
