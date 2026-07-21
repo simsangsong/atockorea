@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { ensureRoom, resolveRoomActor } from '@/lib/tour-room/access';
+import { ACTIVE_DAY_PLAN_STATUSES, type DayPlanStop } from '@/lib/tour-room/dayPlan';
 
 export const dynamic = 'force-dynamic';
 
@@ -89,7 +90,38 @@ export async function GET(
       /* summary stays partial */
     }
 
-    return NextResponse.json({ visited, span, money });
+    // C5 — current-stop dwell vs the plan's recommended stay ("성산 43분째,
+    // 추천 60분"). Advisory only; recommended is null when no active plan
+    // carries a duration for the stop.
+    let current: { title: string; poi_key: string | null; dwell_minutes: number; recommended_minutes: number | null } | null =
+      null;
+    const last = visited[visited.length - 1];
+    if (last) {
+      const dwellMinutes = Math.max(0, Math.round((Date.now() - new Date(last.at).getTime()) / 60_000));
+      let recommended: number | null = null;
+      if (last.poi_key && booking.tour_date) {
+        try {
+          const { data: plan } = await supabase
+            .from('tour_day_plans')
+            .select('stops')
+            .eq('booking_id', booking.id)
+            .eq('tour_date', booking.tour_date)
+            .in('status', [...ACTIVE_DAY_PLAN_STATUSES])
+            .maybeSingle();
+          const stops = ((plan as { stops?: DayPlanStop[] } | null)?.stops ?? []) as DayPlanStop[];
+          const stop = stops.find((item) => item.poi_key === last.poi_key);
+          recommended = typeof stop?.duration_min === 'number' ? stop.duration_min : null;
+        } catch {
+          recommended = null;
+        }
+      }
+      // Only surface within a sane live window (past days would show nonsense).
+      if (dwellMinutes <= 6 * 60) {
+        current = { title: last.title, poi_key: last.poi_key, dwell_minutes: dwellMinutes, recommended_minutes: recommended };
+      }
+    }
+
+    return NextResponse.json({ visited, span, money, current });
   } catch (error) {
     console.error('GET /api/tour-rooms/[bookingId]/day-summary error:', error);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });

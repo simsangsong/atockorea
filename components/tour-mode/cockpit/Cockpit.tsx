@@ -299,6 +299,8 @@ export default function Cockpit({
     visited: Array<{ title: string; at: string }>;
     span: { minutes: number } | null;
     money: { logged_total: number; settled_total: number; unsettled_total: number; overtime_total: number; count: number };
+    /** C5 — current-stop dwell vs the plan's recommended stay (advisory). */
+    current?: { title: string; dwell_minutes: number; recommended_minutes: number | null } | null;
   } | null>(null);
   const [lightbox, setLightbox] = useState<{ url: string; name?: string | null } | null>(null);
   const playedRef = useRef<Set<string>>(new Set(initialMessages.map((message) => message.id)));
@@ -1420,6 +1422,24 @@ export default function Cockpit({
             <p className="py-4 text-center text-lg text-[var(--tr-ink-2)]">불러오는 중…</p>
           ) : (
             <div className="flex max-h-[60vh] flex-col gap-3 overflow-y-auto" data-testid="day-summary">
+              {/* C5 — live dwell vs recommended, advisory only */}
+              {daySummary.current ? (
+                <div className="rounded-2xl bg-[var(--tr-surface-2)] px-4 py-3" data-testid="day-summary-current">
+                  <p className="text-sm font-bold text-[var(--tr-ink-2)]">현재 스팟</p>
+                  <p className="mt-1 text-base font-bold text-[var(--tr-ink)]">
+                    {daySummary.current.title} · {daySummary.current.dwell_minutes}분째
+                    {daySummary.current.recommended_minutes != null ? (
+                      <span className="ml-1 font-medium text-[var(--tr-ink-2)]">
+                        (추천 {daySummary.current.recommended_minutes}분
+                        {daySummary.current.recommended_minutes - daySummary.current.dwell_minutes > 0
+                          ? ` — ${daySummary.current.recommended_minutes - daySummary.current.dwell_minutes}분 여유`
+                          : ' — 추천 시간 초과'}
+                        )
+                      </span>
+                    ) : null}
+                  </p>
+                </div>
+              ) : null}
               <div className="rounded-2xl bg-[var(--tr-surface-2)] px-4 py-3">
                 <p className="text-sm font-bold text-[var(--tr-ink-2)]">방문 스팟 {daySummary.visited.length}곳</p>
                 {daySummary.visited.map((visit) => (
