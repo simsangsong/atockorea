@@ -14,6 +14,8 @@ import { QUICK_REPLY_PRESETS } from '@/lib/tour-room/quickReplies';
 import { CHAT_LANGUAGES } from '@/lib/tour-room/languages';
 import { ROOM_LOCALES, type RoomLocale } from '@/lib/tour-room/snapshot';
 import { useTourRoomSettings } from '@/hooks/useTourRoomSettings';
+import AppManual from '@/components/tour-mode/AppManual';
+import type { ManualKind } from '@/lib/tour-room/appManual';
 import {
   IconLanguage,
   IconTextSize,
@@ -202,6 +204,7 @@ export default function SettingsTab({
   onLocaleChange,
   chatLocale,
   onChatLocaleChange,
+  manualKind,
 }: {
   locale: RoomLocale;
   /** Also syncs the participant row server-side (translation targeting, D-8). */
@@ -211,6 +214,8 @@ export default function SettingsTab({
   /** Any LLM language; sets participant.chat_locale so operator bubbles come in
    *  it. Absent = the chat-language picker is hidden (non-guest surfaces). */
   onChatLocaleChange?: (code: string) => void;
+  /** A5 — usage-manual shape; absent hides the manual card (non-room surfaces). */
+  manualKind?: ManualKind;
 }) {
   const { settings, update } = useTourRoomSettings();
   const copy = COPY[locale];
@@ -219,6 +224,8 @@ export default function SettingsTab({
   // dividers on the room surface, 44px rows, one accent (amber = action).
   return (
     <div className="space-y-4 pb-4" data-testid="settings-tab">
+      {/* A5 — the always-reachable copy of the first-entry manual. */}
+      {manualKind ? <AppManual variant="inline" kind={manualKind} locale={locale} /> : null}
       {/* One "Language" card with two clearly-labelled sub-controls so the app
           language (chrome, 5 locales) and the chat language (translation target,
           any language) don't read as two competing top-level settings. */}

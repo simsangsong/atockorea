@@ -119,7 +119,7 @@ export async function buildRoomSnapshot(
         .from('bookings')
         .select(
           `id, booking_reference, tour_date, tour_time, number_of_guests, contact_name, itinerary,
-           tours ( id, slug, title, city, image_url, schedule ),
+           tours ( id, slug, title, city, image_url, schedule, price_type ),
            pickup_points ( id, name, address, lat, lng, pickup_time )`,
         )
         .eq('id', booking.id)
