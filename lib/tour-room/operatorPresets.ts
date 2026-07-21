@@ -98,6 +98,18 @@ export const OPERATOR_PRESETS: readonly OperatorPreset[] = [
     },
   },
   {
+    // C7 — shopping-stop expectation setting (buying is never required).
+    key: 'shopping_optional',
+    emoji: '🛍️',
+    text: {
+      en: 'This is a shopping stop — browsing is welcome and buying is entirely optional.',
+      ko: '쇼핑 매장에 들르는 일정이에요 — 구경은 자유, 구매는 전혀 필수가 아닙니다.',
+      ja: 'ここはショッピングの立ち寄りです — 見るだけで大丈夫、購入は一切必須ではありません。',
+      es: 'Esta es una parada de compras: mirar es bienvenido y comprar es totalmente opcional.',
+      zh: '这里是购物停靠点 — 欢迎随意逛逛，完全没有购买义务。',
+    },
+  },
+  {
     key: 'take_photos',
     emoji: '📸',
     text: {
