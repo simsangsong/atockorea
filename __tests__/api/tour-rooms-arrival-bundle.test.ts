@@ -52,7 +52,13 @@ const DAY_BOOKINGS = [
   { id: 'b3', tour_id: 'tour-1', tour_date: '2099-07-21', preferred_language: 'en' },
 ];
 
-function fakeDb(priceType: string, profileRow: Record<string, unknown> | null = null) {
+interface FakeDbOpts {
+  dayPlanStops?: Array<Record<string, unknown>>;
+  poiCoords?: Record<string, { lat: number; lng: number }>;
+  matrixMinutes?: number | null;
+}
+
+function fakeDb(priceType: string, profileRow: Record<string, unknown> | null = null, opts: FakeDbOpts = {}) {
   const inserts: Record<string, Array<Record<string, unknown>>> = {};
   const upserts: Record<string, Array<Record<string, unknown>>> = {};
   const client = {
@@ -60,12 +66,23 @@ function fakeDb(priceType: string, profileRow: Record<string, unknown> | null = 
     upserts,
     from(table: string) {
       const chain: Record<string, unknown> = {};
-      for (const m of ['select', 'eq', 'neq', 'in', 'order', 'limit']) chain[m] = jest.fn(() => chain);
+      const filters: Record<string, unknown> = {};
+      for (const m of ['select', 'neq', 'in', 'order', 'limit']) chain[m] = jest.fn(() => chain);
+      chain.eq = jest.fn((col: string, value: unknown) => {
+        filters[col] = value;
+        return chain;
+      });
       const single = async () => {
         if (table === 'bookings') return { data: { ...BOOKING }, error: null };
         if (table === 'tours') return { data: { price_type: priceType }, error: null };
         if (table === 'tour_poi_arrival_profiles') return { data: profileRow, error: null };
         if (table === 'tour_room_pins') return { data: { id: `pin-${(inserts.tour_room_pins?.length ?? 0)}` }, error: null };
+        if (table === 'tour_day_plans')
+          return { data: opts.dayPlanStops ? { id: 'plan-1', stops: opts.dayPlanStops, status: 'live' } : null, error: null };
+        if (table === 'match_pois')
+          return { data: opts.poiCoords?.[String(filters.poi_key)] ?? null, error: null };
+        if (table === 'poi_travel_matrix')
+          return { data: opts.matrixMinutes != null ? { minutes_p50: opts.matrixMinutes } : null, error: null };
         return { data: null, error: null };
       };
       chain.single = jest.fn(single);
@@ -218,6 +235,46 @@ describe('POST /arrival-bundle', () => {
     expect(meta.route_note).toBe('기존 노트');
     // No patch → nothing re-persisted.
     expect(db.upserts.tour_poi_arrival_profiles).toBeUndefined();
+  });
+});
+
+describe('POST /arrival-bundle × A2 next-leg ETA', () => {
+  it('appends the measured next-stop line + next_leg metadata', async () => {
+    const db = fakeDb('vehicle', null, {
+      dayPlanStops: [
+        { seq: 1, poi_key: 'seongsan', name_i18n: { en: 'Seongsan' } },
+        { seq: 2, poi_key: 'udo', name_i18n: { en: 'Udo Island' } },
+      ],
+      poiCoords: {
+        seongsan: { lat: 33.458, lng: 126.9425 },
+        udo: { lat: 33.5045, lng: 126.9523 },
+      },
+      matrixMinutes: 23,
+    });
+    createServerClientMock.mockReturnValue(db);
+    const res = await bundlePOST(
+      fakeReq(driverSession(), { poiKey: 'seongsan', meetingTime: '15:40', lat: 33.458, lng: 126.9425 }),
+      params(),
+    );
+    expect(res.status).toBe(201);
+    const meta = db.inserts.tour_room_messages[0].metadata as Record<string, unknown>;
+    const nextLeg = meta.next_leg as Record<string, unknown>;
+    expect(nextLeg).toMatchObject({ poi_key: 'udo', minutes: 23, source: 'measured', title: 'Udo Island' });
+    const translations = db.inserts.tour_room_messages[0].translations as Record<string, string>;
+    expect(translations.ko).toContain('다음 이동: Udo Island');
+    expect(translations.ko).toContain('약 23분');
+  });
+
+  it('the last stop of the day has no next-leg line', async () => {
+    const db = fakeDb('vehicle', null, {
+      dayPlanStops: [{ seq: 1, poi_key: 'seongsan' }],
+      poiCoords: { seongsan: { lat: 33.458, lng: 126.9425 } },
+    });
+    createServerClientMock.mockReturnValue(db);
+    const res = await bundlePOST(fakeReq(driverSession(), { poiKey: 'seongsan', meetingTime: null }), params());
+    expect(res.status).toBe(201);
+    const meta = db.inserts.tour_room_messages[0].metadata as Record<string, unknown>;
+    expect(meta.next_leg).toBeUndefined();
   });
 });
 

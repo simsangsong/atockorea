@@ -53,6 +53,8 @@ export interface ArrivalBundleMeta {
   meeting_lng?: number | null;
   parking_lat?: number | null;
   parking_lng?: number | null;
+  /** A2 — next-stop ETA (measured matrix > synthetic haversine). */
+  next_leg?: import('@/lib/tour-room/eta').NextLegMeta | null;
   triggered_by_role?: string;
   manual?: boolean;
   [key: string]: unknown;

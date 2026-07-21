@@ -10,7 +10,8 @@
  * reused as-is). tr-* tokens only — works in light/dark and the cockpit.
  */
 
-import { AlarmClock, MapPin, Footprints, Compass, Ticket, Route } from 'lucide-react';
+import { AlarmClock, MapPin, Footprints, Compass, Ticket, Route, BusFront } from 'lucide-react';
+import { renderNextLegLine } from '@/lib/tour-room/eta';
 import SpotArrivalCard from '@/components/tour-mode/SpotArrivalCard';
 import FacilityMapCard from '@/components/tour-mode/FacilityMapCard';
 import { selectFacilityPins, type FacilityPin } from '@/lib/tour-room/facilityPins';
@@ -115,6 +116,20 @@ export default function ArrivalBundleCard({
             <p className="tr-meta font-medium">{copy.route}</p>
             <p className="whitespace-pre-line text-sm leading-relaxed text-[var(--tr-ink)]">{routeNote}</p>
           </div>
+        </div>
+      ) : null}
+
+      {/* A2 — next-stop ETA footer line */}
+      {meta.next_leg ? (
+        <div className="flex items-center gap-2.5 rounded-[var(--tr-radius-card)] border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-4 py-2.5">
+          <BusFront size={16} strokeWidth={2} aria-hidden className="shrink-0 text-[var(--tr-ink-2)]" />
+          <p className="text-sm font-medium text-[var(--tr-ink)]" data-testid="arrival-next-leg">
+            {renderNextLegLine(locale, {
+              title: meta.next_leg.title,
+              distanceM: meta.next_leg.distance_m,
+              minutes: meta.next_leg.minutes,
+            })}
+          </p>
         </div>
       ) : null}
 
