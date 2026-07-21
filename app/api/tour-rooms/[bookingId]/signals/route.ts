@@ -11,8 +11,9 @@ import {
 } from '@/lib/tour-room/guestSignals';
 import { recordRoomEvent } from '@/lib/tour-room/events';
 import { broadcastToRoom } from '@/lib/tour-room/realtime';
-import { sendGuestRoomPush } from '@/lib/tour-room/guestPush';
-import { normalizeRoomLocale } from '@/lib/tour-room/snapshot';
+import { sendDriverRoomPush, sendGuestRoomPush } from '@/lib/tour-room/guestPush';
+import { normalizeRoomLocale, ROOM_LOCALES } from '@/lib/tour-room/snapshot';
+import { translateTextForLocales } from '@/lib/openai-server';
 import { sendEmail } from '@/lib/email';
 import { sendOpsPush } from '@/lib/tour-ops/push';
 import { inPostTourWindow, roomLifecycle } from '@/lib/tour-room/time';
@@ -48,6 +49,7 @@ export async function POST(
       lat?: unknown;
       lng?: unknown;
       noticeId?: unknown;
+      note?: unknown;
     };
 
     const type = (GUEST_SIGNAL_TYPES as readonly string[]).includes(body.type as string)
@@ -154,12 +156,19 @@ export async function POST(
       return NextResponse.json({ message: message ?? null }, { status: 201 });
     }
 
-    // lost: optional one-shot pin with a TTL (§C-7 — no tracking, ever).
+    // lost / pickup_request / dropoff_change: optional one-shot pin with a TTL
+    // (§C-7 — no tracking, ever). A3: the pickup pin says "come get me HERE";
+    // the dropoff pin marks the requested new drop-off point.
+    const PIN_KIND: Partial<Record<GuestSignalType, string>> = {
+      lost: 'lost_me',
+      pickup_request: 'pickup',
+      dropoff_change: 'dropoff',
+    };
     const latRaw = typeof body.lat === 'string' ? Number(body.lat) : body.lat;
     const lngRaw = typeof body.lng === 'string' ? Number(body.lng) : body.lng;
     const lat = typeof latRaw === 'number' && Number.isFinite(latRaw) && Math.abs(latRaw) <= 90 ? latRaw : null;
     const lng = typeof lngRaw === 'number' && Number.isFinite(lngRaw) && Math.abs(lngRaw) <= 180 ? lngRaw : null;
-    const withPin = type === 'lost' && lat !== null && lng !== null;
+    const withPin = Boolean(PIN_KIND[type]) && lat !== null && lng !== null;
 
     let pinId: string | null = null;
     if (withPin) {
@@ -167,7 +176,7 @@ export async function POST(
         .from('tour_room_pins')
         .insert({
           room_id: room.id,
-          kind: 'lost_me',
+          kind: PIN_KIND[type],
           lat,
           lng,
           label: displayName ?? null,
@@ -180,10 +189,30 @@ export async function POST(
       pinId = (pin as { id?: string } | null)?.id ?? null;
     }
 
-    const bundle = renderGuestSignal(type, {
-      name: displayName,
-      mapsUrl: withPin ? googleMapsPinUrl(lat!, lng!) : undefined,
-    });
+    // A3 / T2-2 — the dropoff note is guest-typed free text: translate it so
+    // the Korean operator reads it natively (verbatim fallback on failure).
+    const note =
+      type === 'dropoff_change' && typeof body.note === 'string'
+        ? body.note.trim().slice(0, 200) || undefined
+        : undefined;
+    let noteByLocale: Record<string, string> | null = null;
+    if (note) {
+      try {
+        noteByLocale = (await translateTextForLocales(note, [...ROOM_LOCALES])).translations;
+      } catch {
+        noteByLocale = null;
+      }
+    }
+
+    const bundle = renderGuestSignal(
+      type,
+      {
+        name: displayName,
+        mapsUrl: withPin ? googleMapsPinUrl(lat!, lng!) : undefined,
+        note,
+      },
+      noteByLocale,
+    );
     const { data: message, error: messageError } = await supabase
       .from('tour_room_messages')
       .insert({
@@ -208,6 +237,16 @@ export async function POST(
     if (messageError) throw messageError;
 
     await broadcastToRoom(room, 'message', { message });
+
+    // A3 — pickup/dropoff requests must reach the operator who is likely in a
+    // nav app: ring the driver/guide devices (fire-and-forget).
+    if (type === 'pickup_request' || type === 'dropoff_change') {
+      const line = bundle.translations.ko ?? bundle.source_text;
+      void sendDriverRoomPush(supabase, booking.id, {
+        body: line.slice(0, 160),
+        tag: `${type}-${room.id}`,
+      }).catch(() => undefined);
+    }
 
     // I3 — lost items also ping the ops consoles (the driver/guide may have
     // already left the room surface for the day).

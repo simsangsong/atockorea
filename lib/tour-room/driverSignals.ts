@@ -9,9 +9,11 @@
 
 import { ROOM_LOCALES, type RoomLocale } from '@/lib/tour-room/snapshot';
 
-export type DriverSignalType = 'delay' | 'parking_pin' | 'vehicle_arrived' | 'vehicle_issue';
+export type DriverSignalType = 'delay' | 'parking_pin' | 'vehicle_arrived' | 'vehicle_issue' | 'eta_reply';
 
 export const DRIVER_DELAY_MINUTES = [5, 10, 15, 20, 30] as const;
+/** A3 — one-tap numeric reply to a guest pickup/drop-off request. */
+export const ETA_REPLY_MINUTES = [3, 5, 10, 15, 20] as const;
 
 const TEMPLATES: Record<DriverSignalType, Record<RoomLocale, string>> = {
   delay: {
@@ -34,6 +36,13 @@ const TEMPLATES: Record<DriverSignalType, Record<RoomLocale, string>> = {
     ja: '車両がピックアップ場所に到着しました。',
     es: 'Tu vehículo ha llegado al punto de recogida.',
     zh: '车辆已抵达接送地点。',
+  },
+  eta_reply: {
+    en: '🚗 Got it — the driver is about {minutes} minutes away. Please wait where you are.',
+    ko: '🚗 확인했어요 — 기사님이 약 {minutes}분 후 도착합니다. 그 자리에서 기다려 주세요.',
+    ja: '🚗 承知しました — ドライバーは約{minutes}分で到着します。その場でお待ちください。',
+    es: '🚗 Recibido: el conductor llegará en unos {minutes} minutos. Espera donde estás.',
+    zh: '🚗 收到——司机约{minutes}分钟后到达，请在原地等候。',
   },
   vehicle_issue: {
     en: 'We are having a vehicle issue. The team is on it — updates will follow here shortly.',

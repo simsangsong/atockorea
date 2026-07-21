@@ -117,6 +117,24 @@ describe('driver-signal fan-out (T2 slice 3)', () => {
     expect(broadcastMock).toHaveBeenCalledTimes(1);
   });
 
+  it('A3: eta_reply stays single-room even on a SHARED tour', async () => {
+    const db = fakeDb('person');
+    createServerClientMock.mockReturnValue(db);
+    const res = await signalPOST(fakeReq(driverSession(), { type: 'eta_reply', minutes: 10 }), params());
+    expect(res.status).toBe(201);
+    expect((await res.json()).delivered).toBe(1);
+    expect(db.inserts.tour_room_messages).toHaveLength(1);
+    const translations = db.inserts.tour_room_messages[0].translations as Record<string, string>;
+    expect(translations.ko).toContain('약 10분 후 도착');
+  });
+
+  it('A3: eta_reply validates the minutes preset', async () => {
+    const db = fakeDb('vehicle');
+    createServerClientMock.mockReturnValue(db);
+    const res = await signalPOST(fakeReq(driverSession(), { type: 'eta_reply', minutes: 7 }), params());
+    expect(res.status).toBe(400);
+  });
+
   it('a parking pin fans out one pin + message per room on a shared tour', async () => {
     const db = fakeDb('person');
     createServerClientMock.mockReturnValue(db);

@@ -946,6 +946,11 @@ export default function Cockpit({
           const text = koText(message);
           // A location message (…q=lat,lng) becomes an inline map preview.
           const loc = !att ? parseLocationMessage(text) : null;
+          // A3 — a guest pickup/drop-off request gets one-tap numeric ETA
+          // reply chips right under the capsule ("N분 후 도착").
+          const wantsEtaReply =
+            message.metadata?.signal_type === 'pickup_request' ||
+            message.metadata?.signal_type === 'dropoff_change';
           return (
             <div key={message.id} className={mine ? 'self-end' : 'self-start'}>
               {!mine && !system ? <p className="mb-1 text-sm font-semibold text-[var(--tr-ink-2)]">손님</p> : null}
@@ -1002,6 +1007,20 @@ export default function Cockpit({
                   {text}
                 </div>
               )}
+              {wantsEtaReply ? (
+                <div className="mt-1.5 flex gap-1.5" data-testid="cockpit-eta-reply">
+                  {[3, 5, 10, 15, 20].map((min) => (
+                    <button
+                      key={min}
+                      type="button"
+                      onClick={() => void signal({ type: 'eta_reply', minutes: min }, `${min}분 후 도착 안내 ✓`)}
+                      className="rounded-xl bg-[var(--tr-bubble-me)] px-3 py-2 text-sm font-bold text-[var(--tr-bubble-me-ink)]"
+                    >
+                      {min}분
+                    </button>
+                  ))}
+                </div>
+              ) : null}
             </div>
           );
         })}

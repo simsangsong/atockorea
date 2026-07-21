@@ -4,6 +4,7 @@ import { requestGate } from '@/lib/durable-rate-limit';
 import { ensureRoom, resolveRoomActor } from '@/lib/tour-room/access';
 import {
   DRIVER_DELAY_MINUTES,
+  ETA_REPLY_MINUTES,
   googleMapsPinUrl,
   renderDriverSignal,
   type DriverSignalType,
@@ -40,6 +41,7 @@ const SIGNAL_TYPES: Array<DriverSignalType | 'return_time'> = [
   'vehicle_arrived',
   'vehicle_issue',
   'return_time',
+  'eta_reply',
 ];
 
 function numberOrNull(value: unknown): number | null {
@@ -103,6 +105,15 @@ export async function POST(
         );
       }
     }
+    if (type === 'eta_reply') {
+      minutes = numberOrNull(body.minutes);
+      if (!minutes || !(ETA_REPLY_MINUTES as readonly number[]).includes(minutes)) {
+        return NextResponse.json(
+          { error: `minutes must be one of: ${ETA_REPLY_MINUTES.join(', ')}` },
+          { status: 400 },
+        );
+      }
+    }
 
     const lat = numberOrNull(body.lat);
     const lng = numberOrNull(body.lng);
@@ -152,7 +163,9 @@ export async function POST(
     // to EVERY booking on the day, so 타세요 / 주차핀 / 차량도착 / 지연 reach the
     // whole vehicle. A PRIVATE charter (vehicle) stays a single room.
     let isShared = false;
-    if (booking.tour_id && booking.tour_date) {
+    // A3 — eta_reply answers ONE party's pickup/drop-off request; it must
+    // never fan out bus-wide.
+    if (type !== 'eta_reply' && booking.tour_id && booking.tour_date) {
       const { data: tourRow } = await supabase
         .from('tours')
         .select('price_type')
@@ -222,8 +235,9 @@ export async function POST(
 
       await broadcastToRoom(room, 'message', { message });
 
-      // W4.1 / P-D7 — delay + return-time also ring opted-in guest devices.
-      if (type === 'delay' || (type === 'return_time' && body.cancel !== true)) {
+      // W4.1 / P-D7 — delay + return-time + eta-reply ring opted-in guest
+      // devices (the eta_reply guest is away from the vehicle, waiting).
+      if (type === 'delay' || type === 'eta_reply' || (type === 'return_time' && body.cancel !== true)) {
         void sendGuestRoomPush(supabase, target, {
           translations: bundle.translations,
           tag: `${type}-${room.id}`,

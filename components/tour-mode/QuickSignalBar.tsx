@@ -12,7 +12,17 @@ import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
 const COPY: Record<
   RoomLocale,
-  { late: string; rest: string; lost: string; lostConfirm: string; sent: string }
+  {
+    late: string;
+    rest: string;
+    lost: string;
+    lostConfirm: string;
+    sent: string;
+    pickup: string;
+    pickupConfirm: string;
+    drop: string;
+    dropPrompt: string;
+  }
 > = {
   en: {
     late: '🕒 Running late',
@@ -20,6 +30,10 @@ const COPY: Record<
     lost: '🧭 I’m lost',
     lostConfirm: 'Share your current location with the guide once?',
     sent: 'Sent to your guide ✓',
+    pickup: '🚕 Pick me up here',
+    pickupConfirm: 'Share your current location once so the driver can come to you?',
+    drop: '📍 Change drop-off',
+    dropPrompt: 'Where would you like to be dropped off? (place name)',
   },
   ko: {
     late: '🕒 늦어요',
@@ -27,6 +41,10 @@ const COPY: Record<
     lost: '🧭 길을 잃었어요',
     lostConfirm: '현재 위치를 가이드에게 1회 공유할까요?',
     sent: '가이드에게 전달됐어요 ✓',
+    pickup: '🚕 여기로 픽업',
+    pickupConfirm: '기사님이 올 수 있도록 현재 위치를 1회 공유할까요?',
+    drop: '📍 드랍 변경',
+    dropPrompt: '어디에서 내리고 싶으세요? (장소 이름)',
   },
   ja: {
     late: '🕒 遅れています',
@@ -34,6 +52,10 @@ const COPY: Record<
     lost: '🧭 道に迷いました',
     lostConfirm: '現在地をガイドに1回共有しますか?',
     sent: 'ガイドに送信しました ✓',
+    pickup: '🚕 ここに迎えに来て',
+    pickupConfirm: 'ドライバーが向かえるよう、現在地を1回共有しますか?',
+    drop: '📍 降車地点を変更',
+    dropPrompt: 'どこで降りたいですか？（場所の名前）',
   },
   es: {
     late: '🕒 Voy tarde',
@@ -41,6 +63,10 @@ const COPY: Record<
     lost: '🧭 Estoy perdido',
     lostConfirm: '¿Compartir tu ubicación actual con el guía una vez?',
     sent: 'Enviado a tu guía ✓',
+    pickup: '🚕 Recógeme aquí',
+    pickupConfirm: '¿Compartir tu ubicación una vez para que el conductor vaya por ti?',
+    drop: '📍 Cambiar bajada',
+    dropPrompt: '¿Dónde quieres bajarte? (nombre del lugar)',
   },
   zh: {
     late: '🕒 我会迟到',
@@ -48,6 +74,10 @@ const COPY: Record<
     lost: '🧭 我迷路了',
     lostConfirm: '向导游一次性共享当前位置?',
     sent: '已发送给导游 ✓',
+    pickup: '🚕 来这里接我',
+    pickupConfirm: '一次性共享当前位置，让司机来接您？',
+    drop: '📍 更改下车点',
+    dropPrompt: '您想在哪里下车？（地点名称）',
   },
 };
 
@@ -82,17 +112,36 @@ export default function QuickSignalBar({
   const [busy, setBusy] = useState<string | null>(null);
   const [sentAt, setSentAt] = useState(0);
 
-  const fire = async (type: 'running_late' | 'rest_stop' | 'lost') => {
+  const fire = async (
+    type: 'running_late' | 'rest_stop' | 'lost' | 'pickup_request' | 'dropoff_change',
+  ) => {
     setBusy(type);
     try {
       let coords: { lat: number; lng: number } | null = null;
+      let note: string | null = null;
       if (type === 'lost' && window.confirm(copy.lostConfirm)) {
         coords = await currentPosition();
+      }
+      // A3 — "come get me HERE": the location IS the request.
+      if (type === 'pickup_request') {
+        if (!window.confirm(copy.pickupConfirm)) {
+          setBusy(null);
+          return;
+        }
+        coords = await currentPosition();
+      }
+      // A3 — drop-off change: the guest names the place (translated server-side).
+      if (type === 'dropoff_change') {
+        note = window.prompt(copy.dropPrompt)?.trim() || null;
+        if (!note) {
+          setBusy(null);
+          return;
+        }
       }
       const res = await fetch(`/api/tour-rooms/${encodeURIComponent(bookingId)}/signals`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'x-tour-room-auth': roomSession },
-        body: JSON.stringify({ type, ...(coords ?? {}) }),
+        body: JSON.stringify({ type, ...(coords ?? {}), ...(note ? { note } : {}) }),
       });
       if (res.ok) setSentAt(Date.now());
     } catch {
@@ -116,7 +165,11 @@ export default function QuickSignalBar({
             ['running_late', copy.late],
             ['rest_stop', copy.rest],
             ['lost', copy.lost],
-          ] as Array<['running_late' | 'rest_stop' | 'lost', string]>
+            ['pickup_request', copy.pickup],
+            ['dropoff_change', copy.drop],
+          ] as Array<
+            ['running_late' | 'rest_stop' | 'lost' | 'pickup_request' | 'dropoff_change', string]
+          >
         ).map(([type, label]) => (
           <button
             key={type}
