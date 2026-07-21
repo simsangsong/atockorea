@@ -76,6 +76,54 @@ describe('composeArrivalBundleText', () => {
   });
 });
 
+describe('A4 event line', () => {
+  it('adds the confirmed-on citation with the localized label', () => {
+    const bundle = composeArrivalBundleText({
+      spotTitle: '성산일출봉',
+      followMode: 'free',
+      ticketRequired: false,
+      meetingTime: null,
+      eventStatus: 'on',
+      eventLabel: '해녀 공연 14:00',
+      eventLabelByLocale: { en: 'Haenyeo show 14:00' },
+    });
+    expect(bundle.translations.ko).toContain('오늘 확인됨: 해녀 공연 14:00 진행합니다');
+    expect(bundle.translations.en).toContain('Haenyeo show 14:00 is running');
+  });
+
+  it('adds the not-running notice', () => {
+    const bundle = composeArrivalBundleText({
+      spotTitle: 'X',
+      followMode: 'free',
+      ticketRequired: false,
+      meetingTime: null,
+      eventStatus: 'off',
+      eventLabel: '해녀 공연',
+    });
+    expect(bundle.translations.ko).toContain('오늘은 해녀 공연 진행하지 않습니다');
+  });
+
+  it('unconfirmed (null) or label-less events add no line', () => {
+    const noStatus = composeArrivalBundleText({
+      spotTitle: 'X',
+      followMode: 'free',
+      ticketRequired: false,
+      meetingTime: null,
+      eventStatus: null,
+      eventLabel: '해녀 공연',
+    });
+    expect(noStatus.translations.en.split('\n')).toHaveLength(2);
+    const noLabel = composeArrivalBundleText({
+      spotTitle: 'X',
+      followMode: 'free',
+      ticketRequired: false,
+      meetingTime: null,
+      eventStatus: 'on',
+    });
+    expect(noLabel.translations.en.split('\n')).toHaveLength(2);
+  });
+});
+
 describe('arrivalProfileFromRow', () => {
   it('null row → free-visit defaults', () => {
     const profile = arrivalProfileFromRow('seongsan', null);

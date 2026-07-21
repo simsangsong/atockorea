@@ -10,12 +10,12 @@
  * reused as-is). tr-* tokens only — works in light/dark and the cockpit.
  */
 
-import { AlarmClock, MapPin, Footprints, Compass, Ticket, Route, BusFront } from 'lucide-react';
+import { AlarmClock, MapPin, Footprints, Compass, Ticket, Route, BusFront, CalendarCheck, CalendarX } from 'lucide-react';
 import { renderNextLegLine } from '@/lib/tour-room/eta';
 import SpotArrivalCard from '@/components/tour-mode/SpotArrivalCard';
 import FacilityMapCard from '@/components/tour-mode/FacilityMapCard';
 import { selectFacilityPins, type FacilityPin } from '@/lib/tour-room/facilityPins';
-import { BUNDLE_COPY, type ArrivalBundleMeta } from '@/lib/tour-room/arrivalBundle';
+import { BUNDLE_COPY, renderEventLine, type ArrivalBundleMeta } from '@/lib/tour-room/arrivalBundle';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
 function mapsUrl(lat: number, lng: number): string {
@@ -116,6 +116,27 @@ export default function ArrivalBundleCard({
             <p className="tr-meta font-medium">{copy.route}</p>
             <p className="whitespace-pre-line text-sm leading-relaxed text-[var(--tr-ink)]">{routeNote}</p>
           </div>
+        </div>
+      ) : null}
+
+      {/* A4 — today's event confirmation (operator one-tap citation) */}
+      {meta.event_status && (meta.event_label || meta.event_label_i18n) ? (
+        <div
+          className="flex items-center gap-2.5 rounded-[var(--tr-radius-card)] border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-4 py-2.5"
+          data-testid="arrival-event-line"
+        >
+          {meta.event_status === 'on' ? (
+            <CalendarCheck size={16} strokeWidth={2} aria-hidden className="shrink-0 text-[var(--tr-safe)]" />
+          ) : (
+            <CalendarX size={16} strokeWidth={2} aria-hidden className="shrink-0 text-[var(--tr-ink-2)]" />
+          )}
+          <p className="text-sm font-medium text-[var(--tr-ink)]">
+            {renderEventLine(
+              meta.event_status,
+              locale,
+              meta.event_label_i18n?.[locale]?.trim() || meta.event_label || '',
+            )}
+          </p>
         </div>
       ) : null}
 

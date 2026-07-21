@@ -278,6 +278,45 @@ describe('POST /arrival-bundle × A2 next-leg ETA', () => {
   });
 });
 
+describe('POST /arrival-bundle × A4 event status', () => {
+  it('confirming ON persists the day row and rides the citation on the bundle', async () => {
+    const db = fakeDb('vehicle', null);
+    createServerClientMock.mockReturnValue(db);
+    const res = await bundlePOST(
+      fakeReq(driverSession(), {
+        poiKey: 'seongsan',
+        meetingTime: null,
+        eventStatus: 'on',
+        profile: { event_label: '해녀 공연 14:00' },
+      }),
+      params(),
+    );
+    expect(res.status).toBe(201);
+    const dayUpsert = db.upserts.poi_day_events?.[0];
+    expect(dayUpsert).toMatchObject({
+      poi_key: 'seongsan',
+      event_date: '2099-07-21',
+      status: 'on',
+      label: '해녀 공연 14:00',
+    });
+    const meta = db.inserts.tour_room_messages[0].metadata as Record<string, unknown>;
+    expect(meta.event_status).toBe('on');
+    expect(meta.event_label).toBe('해녀 공연 14:00');
+    const translations = db.inserts.tour_room_messages[0].translations as Record<string, string>;
+    expect(translations.ko).toContain('오늘 확인됨');
+  });
+
+  it('unconfirmed sends no event line and writes no day row', async () => {
+    const db = fakeDb('vehicle', { event_label: '해녀 공연' });
+    createServerClientMock.mockReturnValue(db);
+    const res = await bundlePOST(fakeReq(driverSession(), { poiKey: 'seongsan', meetingTime: null }), params());
+    expect(res.status).toBe(201);
+    expect(db.upserts.poi_day_events).toBeUndefined();
+    const meta = db.inserts.tour_room_messages[0].metadata as Record<string, unknown>;
+    expect(meta.event_status).toBeUndefined();
+  });
+});
+
 describe('GET /arrival-bundle', () => {
   it('returns the sticky profile for the cockpit sheet', async () => {
     const db = fakeDb('vehicle', { follow_mode: 'follow', ticket_required: true, route_note: 'n' });
