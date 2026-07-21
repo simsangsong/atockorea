@@ -30,6 +30,8 @@ import QuickSignalBar from '@/components/tour-mode/QuickSignalBar';
 import SecondaryCardBanner from '@/components/tour-mode/SecondaryCardBanner';
 import HomeTab from '@/components/tour-mode/HomeTab';
 import PlanNudgeModal from '@/components/tour-mode/PlanNudgeModal';
+import AppManual from '@/components/tour-mode/AppManual';
+import type { ManualKind } from '@/lib/tour-room/appManual';
 import LobbyCard, { firstPickup } from '@/components/tour-mode/LobbyCard';
 import PickupBoard from '@/components/tour-mode/PickupBoard';
 import RoomMapTab from '@/components/tour-mode/map/RoomMapTab';
@@ -374,6 +376,11 @@ function TourRoomLive({
   });
 
   const viewerRole = data.participant.role;
+  // A5 — manual shape from the tour's price model (charter = private).
+  const manualKind: ManualKind =
+    (snapshot.booking?.tours as { price_type?: string } | null | undefined)?.price_type === 'vehicle'
+      ? 'private'
+      : 'join';
   const readOnly = data.lifecycle === 'ended';
   const schedule = Array.isArray(snapshot.schedule) ? snapshot.schedule : [];
 
@@ -661,6 +668,11 @@ function TourRoomLive({
       {viewerRole === 'customer' && !readOnly && data.lifecycle === 'lobby' && (
         <PlanNudgeModal bookingId={bookingId} roomSession={data.session} locale={locale} theme={theme} />
       )}
+      {/* A5 — one-time usage manual on first entry (shape follows the tour's
+          price model: shared → join manual, charter → private manual). */}
+      {viewerRole === 'customer' && !readOnly && (
+        <AppManual variant="auto" kind={manualKind} locale={locale} />
+      )}
       <RoomShell
       title={snapshot.booking?.tours?.title ?? 'Your tour'}
       subtitle={[snapshot.booking?.tour_date, snapshot.booking?.tours?.city].filter(Boolean).join(' · ')}
@@ -788,6 +800,7 @@ function TourRoomLive({
         <SettingsTab
           locale={locale}
           onLocaleChange={onLocaleChange}
+          manualKind={manualKind}
           {...(viewerRole === 'customer'
             ? { chatLocale: chatLocaleOverride, onChatLocaleChange }
             : {})}
