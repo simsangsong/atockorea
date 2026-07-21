@@ -1,0 +1,163 @@
+/**
+ * A0 — arrival one-tap bundle (docs/smart-guide-ops-detail-audit-2026-07-21.md).
+ *
+ * The solo join-tour lead (bus safety staff / Solati driver) announces a stop
+ * with ONE send: spot briefing + meeting time + parking pin + follow-vs-free +
+ * ticket step + viewing-route note, composed into a single multi-line message.
+ * Every line is a pre-translated 5-locale constant (zero-LLM) — the only
+ * translated-at-save-time text is the operator's own route note / meeting
+ * point (T2-2 pattern, verbatim fallback).
+ *
+ * Pure and client-safe: the server route interpolates, the guest card and the
+ * cockpit sheet import the same types so the metadata contract can't drift.
+ */
+
+import { renderSpotEventText } from '@/lib/tour-room/spotContent';
+import { ROOM_LOCALES, type RoomLocale } from '@/lib/tour-room/snapshot';
+import type { FacilityPin } from '@/lib/tour-room/facilityPins';
+import type { SpotArrivalContent } from '@/lib/tour-room/spotContent';
+
+export type FollowMode = 'follow' | 'free';
+
+/** Sticky per-POI defaults (tour_poi_arrival_profiles row, server-resolved). */
+export interface ArrivalProfile {
+  poi_key: string;
+  follow_mode: FollowMode;
+  ticket_required: boolean;
+  route_note: string | null;
+  route_note_i18n: Record<string, string> | null;
+  meeting_point: string | null;
+  meeting_point_i18n: Record<string, string> | null;
+}
+
+/** The `metadata` contract of an `arrival_bundle` message row. */
+export interface ArrivalBundleMeta {
+  kind: 'arrival_bundle';
+  spot_id?: string | null;
+  spot_title: string;
+  poi_key?: string | null;
+  audio_url?: string | null;
+  content?: SpotArrivalContent;
+  content_tier?: string;
+  facility_pins?: FacilityPin[];
+  follow_mode: FollowMode;
+  ticket_required: boolean;
+  route_note?: string | null;
+  route_note_i18n?: Record<string, string> | null;
+  /** HH:MM KST wall clock; null = "집합 없이" (short photo stop). */
+  meeting_time: string | null;
+  meeting_point?: string | null;
+  meeting_point_i18n?: Record<string, string> | null;
+  /** Gather-point pin = the parking spot (the vehicle IS the rally point). */
+  meeting_lat?: number | null;
+  meeting_lng?: number | null;
+  parking_lat?: number | null;
+  parking_lng?: number | null;
+  triggered_by_role?: string;
+  manual?: boolean;
+  [key: string]: unknown;
+}
+
+/** Default gather point when the profile names none: the vehicle itself. */
+export const VEHICLE_POINT: Record<RoomLocale, string> = {
+  en: 'the vehicle',
+  ko: '차량',
+  ja: '車両',
+  es: 'el vehículo',
+  zh: '车辆',
+};
+
+const FOLLOW_LINE: Record<FollowMode, Record<RoomLocale, string>> = {
+  follow: {
+    en: 'From here, please follow the staff.',
+    ko: '여기서부터는 스태프를 따라 이동해 주세요.',
+    ja: 'ここからはスタッフについて移動してください。',
+    es: 'Desde aquí, sigan al personal, por favor.',
+    zh: '从这里开始请跟随工作人员移动。',
+  },
+  free: {
+    en: 'Free viewing here — explore at your own pace.',
+    ko: '자유 관람입니다 — 자유롭게 둘러보세요.',
+    ja: 'ここは自由見学です — ご自身のペースでお楽しみください。',
+    es: 'Visita libre — recorran a su ritmo.',
+    zh: '此处为自由参观 — 请按自己的节奏游览。',
+  },
+};
+
+const TICKET_LINE: Record<RoomLocale, string> = {
+  en: 'Admission tickets are needed here — please buy yours at the ticket booth.',
+  ko: '이곳은 입장권이 필요해요 — 매표소에서 구매해 주세요.',
+  ja: 'ここは入場券が必要です — チケット売り場でご購入ください。',
+  es: 'Aquí se necesita entrada — cómprenla en la taquilla, por favor.',
+  zh: '这里需要门票 — 请在售票处购买。',
+};
+
+/** Card/badge labels shared by the guest bundle card (client) and tests. */
+export const BUNDLE_COPY: Record<
+  RoomLocale,
+  { meeting: string; follow: string; free: string; ticket: string; route: string; parking: string; map: string }
+> = {
+  en: { meeting: 'Meeting time', follow: 'Follow the staff', free: 'Free viewing', ticket: 'Ticket needed', route: 'Suggested route', parking: 'Parking spot', map: 'Map' },
+  ko: { meeting: '집합 시간', follow: '스태프 인솔', free: '자유 관람', ticket: '입장권 필요', route: '추천 관람 순서', parking: '주차 위치', map: '지도' },
+  ja: { meeting: '集合時間', follow: 'スタッフ引率', free: '自由見学', ticket: 'チケット必要', route: 'おすすめ順路', parking: '駐車位置', map: '地図' },
+  es: { meeting: 'Hora de reunión', follow: 'Sigan al personal', free: 'Visita libre', ticket: 'Entrada necesaria', route: 'Ruta sugerida', parking: 'Aparcamiento', map: 'Mapa' },
+  zh: { meeting: '集合时间', follow: '跟随工作人员', free: '自由参观', ticket: '需要门票', route: '推荐路线', parking: '停车位置', map: '地图' },
+};
+
+export interface ComposeBundleArgs {
+  spotTitle: string;
+  followMode: FollowMode;
+  ticketRequired: boolean;
+  /** HH:MM (KST) or null for a no-meeting stop. */
+  meetingTime: string | null;
+  /** Per-locale gather-point label; falls back to VEHICLE_POINT. */
+  pointByLocale?: Record<string, string> | null;
+  /** Per-locale route note; a locale missing falls back to `routeNote` verbatim. */
+  routeNoteI18n?: Record<string, string> | null;
+  routeNote?: string | null;
+}
+
+/**
+ * Compose the bundle's multi-line message text for every room locale. The
+ * line order mirrors what the lead would say out loud: arrived → meeting →
+ * follow/free → ticket → route.
+ */
+export function composeArrivalBundleText(args: ComposeBundleArgs): {
+  source_locale: string;
+  source_text: string;
+  translations: Record<string, string>;
+} {
+  const translations: Record<string, string> = {};
+  for (const locale of ROOM_LOCALES) {
+    const lines: string[] = [renderSpotEventText('arrived', locale, { spot: args.spotTitle })];
+    if (args.meetingTime) {
+      const point = args.pointByLocale?.[locale]?.trim() || VEHICLE_POINT[locale];
+      lines.push(renderSpotEventText('meeting_notice_timed', locale, { time: args.meetingTime, point }));
+    }
+    lines.push(FOLLOW_LINE[args.followMode][locale]);
+    if (args.ticketRequired) lines.push(TICKET_LINE[locale]);
+    const note = args.routeNoteI18n?.[locale]?.trim() || args.routeNote?.trim();
+    if (note) lines.push(note);
+    translations[locale] = lines.join('\n');
+  }
+  return { source_locale: 'en', source_text: translations.en, translations };
+}
+
+/** Row → typed profile (tolerates a null row: returns the free-visit default). */
+export function arrivalProfileFromRow(
+  poiKey: string,
+  row: Record<string, unknown> | null | undefined,
+): ArrivalProfile {
+  const followMode = row?.follow_mode === 'follow' ? 'follow' : 'free';
+  const i18n = (value: unknown): Record<string, string> | null =>
+    value && typeof value === 'object' ? (value as Record<string, string>) : null;
+  return {
+    poi_key: poiKey,
+    follow_mode: followMode,
+    ticket_required: row?.ticket_required === true,
+    route_note: typeof row?.route_note === 'string' ? row.route_note : null,
+    route_note_i18n: i18n(row?.route_note_i18n),
+    meeting_point: typeof row?.meeting_point === 'string' ? row.meeting_point : null,
+    meeting_point_i18n: i18n(row?.meeting_point_i18n),
+  };
+}

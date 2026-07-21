@@ -46,7 +46,15 @@ export function activeNotice(
   if (!tourDate) return null;
   for (let i = messages.length - 1; i >= 0; i -= 1) {
     const message = messages[i];
-    const kind = message.metadata?.kind;
+    let kind = message.metadata?.kind;
+    // A0 — an arrival bundle WITH a meeting time is a meeting notice (the
+    // countdown + rally ladder run unchanged off its metadata). A bundle
+    // without one (짧은 포토스톱) is not a notice and never clears an active
+    // timer, so skip it entirely.
+    if (kind === 'arrival_bundle') {
+      if (typeof message.metadata?.meeting_time !== 'string' || !message.metadata.meeting_time) continue;
+      kind = 'meeting_notice';
+    }
     if (kind !== 'meeting_notice' && kind !== 'free_time_timer') continue;
 
     const cancelled = message.metadata?.cancelled === true;
