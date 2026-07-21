@@ -96,8 +96,11 @@ export async function GET(
     let current: { title: string; poi_key: string | null; dwell_minutes: number; recommended_minutes: number | null } | null =
       null;
     const last = visited[visited.length - 1];
-    if (last) {
-      const dwellMinutes = Math.max(0, Math.round((Date.now() - new Date(last.at).getTime()) / 60_000));
+    // Pressure-fix (2026-07-22): a clock-skewed/future event would clamp to a
+    // misleading "0분째" — a negative raw dwell means the data is not live.
+    const rawDwellMs = last ? Date.now() - new Date(last.at).getTime() : Number.NaN;
+    if (last && rawDwellMs >= 0) {
+      const dwellMinutes = Math.round(rawDwellMs / 60_000);
       let recommended: number | null = null;
       if (last.poi_key && booking.tour_date) {
         try {

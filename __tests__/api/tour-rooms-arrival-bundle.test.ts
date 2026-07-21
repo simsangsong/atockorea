@@ -317,6 +317,71 @@ describe('POST /arrival-bundle × A4 event status', () => {
   });
 });
 
+describe('pressure: boundaries + auth', () => {
+  it('a session signed for ANOTHER booking is rejected', async () => {
+    const db = fakeDb('vehicle');
+    createServerClientMock.mockReturnValue(db);
+    const foreign = signRoomSession({
+      roomId: 'room-x',
+      bookingId: 'someone-else',
+      participantId: 'p-driver',
+      role: 'driver',
+      displayName: 'D',
+    }).session;
+    const res = await bundlePOST(fakeReq(foreign, { poiKey: 'x', meetingTime: null }), params());
+    expect(res.status).toBeGreaterThanOrEqual(401);
+    expect(res.status).toBeLessThan(500);
+    expect(db.inserts.tour_room_messages).toBeUndefined();
+  });
+
+  it('meetingTime 24:00 / 12:60 / 9:30 are all rejected', async () => {
+    const db = fakeDb('vehicle');
+    createServerClientMock.mockReturnValue(db);
+    for (const meetingTime of ['24:00', '12:60', '9:30']) {
+      const res = await bundlePOST(fakeReq(driverSession(), { poiKey: 'x', meetingTime }), params());
+      expect(res.status).toBe(400);
+    }
+  });
+
+  it('out-of-range coords never write a pin (lat 95) but the bundle still sends', async () => {
+    const db = fakeDb('vehicle');
+    createServerClientMock.mockReturnValue(db);
+    const res = await bundlePOST(
+      fakeReq(driverSession(), { poiKey: 'x', meetingTime: null, lat: 95, lng: 126.5 }),
+      params(),
+    );
+    expect(res.status).toBe(201);
+    expect(db.inserts.tour_room_pins).toBeUndefined();
+    const meta = db.inserts.tour_room_messages[0].metadata as Record<string, unknown>;
+    expect(meta.parking_lat).toBeUndefined();
+  });
+
+  it('a 10k-char route note is capped at 500 and unicode/RTL survives', async () => {
+    const db = fakeDb('vehicle');
+    createServerClientMock.mockReturnValue(db);
+    const giant = `한글🚌‏${'x'.repeat(10_000)}`;
+    const res = await bundlePOST(
+      fakeReq(driverSession(), { poiKey: 'x', meetingTime: null, profile: { route_note: giant } }),
+      params(),
+    );
+    expect(res.status).toBe(201);
+    const saved = db.upserts.tour_poi_arrival_profiles?.[0]?.route_note as string;
+    expect(saved.length).toBeLessThanOrEqual(500);
+    expect(saved.startsWith('한글🚌')).toBe(true);
+  });
+
+  it('an invalid eventStatus string is ignored, not persisted', async () => {
+    const db = fakeDb('vehicle', { event_label: '해녀 공연' });
+    createServerClientMock.mockReturnValue(db);
+    const res = await bundlePOST(
+      fakeReq(driverSession(), { poiKey: 'x', meetingTime: null, eventStatus: 'maybe' }),
+      params(),
+    );
+    expect(res.status).toBe(201);
+    expect(db.upserts.poi_day_events).toBeUndefined();
+  });
+});
+
 describe('GET /arrival-bundle', () => {
   it('returns the sticky profile for the cockpit sheet', async () => {
     const db = fakeDb('vehicle', { follow_mode: 'follow', ticket_required: true, route_note: 'n' });
