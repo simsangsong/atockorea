@@ -19,9 +19,12 @@ describe('production timeline', () => {
     expect(timeline.scenes.at(-1)?.subtitleEnd).toBeCloseTo(timeline.total, 3);
   });
 
-  it('caps runaway narrations at the max scene length', () => {
-    const timeline = computeProductionTimeline({ narrationSeconds: [40] });
-    expect(timeline.scenes[0].duration).toBe(14);
+  it('never truncates a scene below its narration length (no-overlap invariant)', () => {
+    const timeline = computeProductionTimeline({ narrationSeconds: [20, 3] });
+    expect(timeline.scenes[0].duration).toBeCloseTo(20.7, 3);
+    const narrationEnd = timeline.scenes[0].solidStart + 0.25 + 20;
+    const nextNarrationStart = timeline.scenes[1].solidStart + 0.25;
+    expect(narrationEnd).toBeLessThanOrEqual(nextNarrationStart);
   });
 });
 

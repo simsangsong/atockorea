@@ -65,6 +65,29 @@ function firstSentence(value: string, fallback: string): string {
   return (match?.[1] ?? clean.slice(0, 220)).trim();
 }
 
+/**
+ * Caps one scene's narration to a speakable length (~10-12s of TTS). Scenes
+ * must stay short enough for the video's pacing — the render timeline never
+ * truncates audio, so length control has to happen here at the script level.
+ */
+export function trimForSpeech(value: string, language: VideoLanguageCode): string {
+  const clean = cleanText(value);
+  const cjk = language === 'ja' || language === 'zh-Hant';
+  const budget = cjk ? 70 : 160;
+  if (clean.length <= budget) return clean;
+  const slice = clean.slice(0, budget);
+  const sentenceEnd = Math.max(
+    ...['.', '!', '?', '。', '！', '？'].map((mark) => slice.lastIndexOf(mark)),
+  );
+  if (sentenceEnd >= budget * 0.4) return slice.slice(0, sentenceEnd + 1).trim();
+  const clauseEnd = Math.max(
+    ...[',', '，', '、', ';', '；', ' — '].map((mark) => slice.lastIndexOf(mark)),
+  );
+  if (clauseEnd >= budget * 0.4) return `${slice.slice(0, clauseEnd).trim()}${cjk ? '。' : '.'}`;
+  const spaceEnd = slice.lastIndexOf(' ');
+  return `${(spaceEnd > budget * 0.5 ? slice.slice(0, spaceEnd) : slice).trim()}${cjk ? '。' : '.'}`;
+}
+
 function pickContent(source: VideoPoiSource, language: VideoLanguageCode): VideoLocalizedPoiContent {
   const direct = source.localized[language];
   if (direct) return direct;
@@ -168,17 +191,20 @@ export function buildVideoScript(source: VideoPoiSource, language: VideoLanguage
     cta,
   ];
 
-  const scenes: VideoScriptScene[] = TIMELINE.map((slot, index) => ({
-    sceneId: `scene-${String(index + 1).padStart(3, '0')}`,
-    start: slot.start,
-    end: slot.end,
-    template: slot.template,
-    visualIntent: slot.visualIntent,
-    narration: firstSentence(narration[index] ?? name, name),
-    screenText: index === 0 ? name : index === 5 ? 'ATOCKOREA Smart Guide' : firstSentence(narration[index] ?? name, name),
-    assetCandidates: [],
-    sourceFactIds: facts.slice(0, 4),
-  }));
+  const scenes: VideoScriptScene[] = TIMELINE.map((slot, index) => {
+    const sceneNarration = trimForSpeech(firstSentence(narration[index] ?? name, name), language);
+    return {
+      sceneId: `scene-${String(index + 1).padStart(3, '0')}`,
+      start: slot.start,
+      end: slot.end,
+      template: slot.template,
+      visualIntent: slot.visualIntent,
+      narration: sceneNarration,
+      screenText: index === 0 ? name : index === 5 ? 'ATOCKOREA Smart Guide' : sceneNarration,
+      assetCandidates: [],
+      sourceFactIds: facts.slice(0, 4),
+    };
+  });
 
   return {
     poiId: source.poiId,
