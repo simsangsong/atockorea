@@ -124,6 +124,26 @@ describe('GET /day-summary', () => {
     (Date.now as jest.Mock).mockRestore?.();
   });
 
+  it('pressure: future/clock-skewed last event shows NO current dwell (not "0분째")', async () => {
+    // Real Date.now (2026) < the 2099 fixture events → raw dwell negative.
+    const res = await summaryGET(fakeReq(driverSession()), params());
+    const json = await res.json();
+    expect(json.current).toBeNull();
+  });
+
+  it('pressure: a session signed for ANOTHER booking is rejected', async () => {
+    const foreign = signRoomSession({
+      roomId: 'room-x',
+      bookingId: 'other-booking',
+      participantId: 'p-driver',
+      role: 'driver',
+      displayName: 'D',
+    }).session;
+    const res = await summaryGET(fakeReq(foreign), params());
+    expect(res.status).toBeGreaterThanOrEqual(401);
+    expect(res.status).toBeLessThan(500);
+  });
+
   it('rejects customers', async () => {
     const res = await summaryGET(fakeReq(customerSession()), params());
     expect(res.status).toBe(403);

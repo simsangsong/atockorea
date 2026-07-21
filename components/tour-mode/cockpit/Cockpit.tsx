@@ -294,6 +294,11 @@ export default function Cockpit({
   const [arrEventStatus, setArrEventStatus] = useState<'on' | 'off' | null>(null);
   // B4 — the operator's Korean spot prep (hours/closed/tips) from the GET.
   const [arrBriefing, setArrBriefing] = useState<string[] | null>(null);
+  // Pressure-fix (2026-07-22): only send the profile patch AFTER the sticky
+  // prefill landed — a send racing the GET would silently wipe the stored
+  // follow/ticket/note back to defaults. Not-ready sends omit `profile`
+  // entirely; the server then serves the stored profile untouched.
+  const [arrProfileReady, setArrProfileReady] = useState(false);
   // B5 — the end-of-day summary (visited stops · run span · money roll-up).
   const [daySummary, setDaySummary] = useState<{
     visited: Array<{ title: string; at: string }>;
@@ -672,6 +677,9 @@ export default function Cockpit({
       setArrEventLabel('');
       setArrEventStatus(null);
       setArrBriefing(null);
+      // Title-only stops have no poi_key → no server profile → toggles are
+      // send-only for this stop and it's safe to include them immediately.
+      setArrProfileReady(!item.poi_key);
       setSheet('arrival');
       // The sheet opens right after parking — capture "here" as the pin.
       captureArrCoords();
@@ -700,6 +708,7 @@ export default function Cockpit({
               setArrEventLabel(typeof profile.event_label === 'string' ? profile.event_label : '');
               setArrEventStatus(data?.event_status ?? null);
               setArrBriefing(Array.isArray(data?.briefing) ? data.briefing : null);
+              setArrProfileReady(true);
             },
           )
           .catch(() => undefined);
@@ -722,12 +731,16 @@ export default function Cockpit({
           meetingTime: arrNoMeeting ? null : arrTime,
           ...(arrCoords ?? {}),
           eventStatus: arrEventStatus,
-          profile: {
-            follow_mode: arrFollow,
-            ticket_required: arrTicket,
-            route_note: arrNote.trim() || null,
-            event_label: arrEventLabel.trim() || null,
-          },
+          ...(arrProfileReady
+            ? {
+                profile: {
+                  follow_mode: arrFollow,
+                  ticket_required: arrTicket,
+                  route_note: arrNote.trim() || null,
+                  event_label: arrEventLabel.trim() || null,
+                },
+              }
+            : {}),
         }),
       });
       if (res.ok) {

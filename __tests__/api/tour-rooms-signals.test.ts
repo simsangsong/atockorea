@@ -226,6 +226,58 @@ describe('POST /api/tour-rooms/[bookingId]/signals', () => {
     expect(translations.en).toContain('black wallet, seat 12');
   });
 
+  it('pressure: a 10k-char dropoff note is capped at 200 before translation', async () => {
+    const db = fakeDb();
+    createServerClientMock.mockReturnValue(db);
+    const res = await signalsPOST(
+      fakeReq({
+        headers: { 'x-tour-room-auth': session('customer') },
+        json: { type: 'dropoff_change', note: '공항'.repeat(6000) },
+      }),
+      routeParams(),
+    );
+    expect(res.status).toBe(201);
+    const translateMock = jest.requireMock('@/lib/openai-server').translateTextForLocales as jest.Mock;
+    expect((translateMock.mock.calls[0][0] as string).length).toBeLessThanOrEqual(200);
+  });
+
+  it('pressure: translation outage falls back to the verbatim note (R-6)', async () => {
+    const db = fakeDb();
+    createServerClientMock.mockReturnValue(db);
+    const translateMock = jest.requireMock('@/lib/openai-server').translateTextForLocales as jest.Mock;
+    translateMock.mockRejectedValueOnce(new Error('provider down'));
+    const res = await signalsPOST(
+      fakeReq({
+        headers: { 'x-tour-room-auth': session('customer') },
+        json: { type: 'dropoff_change', note: '동문시장' },
+      }),
+      routeParams(),
+    );
+    expect(res.status).toBe(201);
+    const translations = db.inserts.tour_room_messages?.[0]?.translations as Record<string, string>;
+    expect(translations.ko).toContain('동문시장'); // verbatim, not lost
+  });
+
+  it('pressure: coords as strings and boundary values behave (89.9 ok, 90.1 no pin)', async () => {
+    const db = fakeDb();
+    createServerClientMock.mockReturnValue(db);
+    const ok = await signalsPOST(
+      fakeReq({ headers: { 'x-tour-room-auth': session('customer') }, json: { type: 'pickup_request', lat: '33.45', lng: '126.9' } }),
+      routeParams(),
+    );
+    expect(ok.status).toBe(201);
+    expect(db.inserts.tour_room_pins).toHaveLength(1);
+
+    const db2 = fakeDb();
+    createServerClientMock.mockReturnValue(db2);
+    const out = await signalsPOST(
+      fakeReq({ headers: { 'x-tour-room-auth': session('customer') }, json: { type: 'pickup_request', lat: 90.1, lng: 126.9 } }),
+      routeParams(),
+    );
+    expect(out.status).toBe(201); // request still lands, just pinless
+    expect(db2.inserts.tour_room_pins).toBeUndefined();
+  });
+
   it('rejects drivers and unknown types', async () => {
     const asDriver = await signalsPOST(
       fakeReq({ headers: { 'x-tour-room-auth': session('driver') }, json: { type: 'rest_stop' } }),

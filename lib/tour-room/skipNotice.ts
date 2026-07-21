@@ -78,8 +78,23 @@ export interface NewlySkippedStop {
 }
 
 /**
+ * Identity ladder for diffing: id → poi_key → English/first name (a free-text
+ * stop has neither id nor poi_key — without the name fallback such a stop
+ * would re-announce on EVERY staff write; pressure-test fix 2026-07-22).
+ */
+function stopIdentity(stop: DayPlanStop): string {
+  if (stop.id) return `id:${stop.id}`;
+  if (stop.poi_key) return `poi:${stop.poi_key}`;
+  const names = stop.name_i18n;
+  const name =
+    (typeof names?.en === 'string' && names.en.trim()) ||
+    Object.values(names ?? {}).find((v) => typeof v === 'string' && v.trim());
+  return name ? `name:${String(name).trim()}` : '';
+}
+
+/**
  * Stops that BECAME skipped in this write (previous status ≠ skipped, next =
- * skipped with a whitelisted reason). Identity by stop id, poi_key fallback.
+ * skipped with a whitelisted reason).
  */
 export function newlySkippedStops(
   previous: DayPlanStop[] | null | undefined,
@@ -88,15 +103,18 @@ export function newlySkippedStops(
   if (!Array.isArray(next)) return [];
   const prevByKey = new Map<string, DayPlanStop>();
   for (const stop of previous ?? []) {
-    const key = String(stop.id ?? stop.poi_key ?? '');
+    const key = stopIdentity(stop);
     if (key) prevByKey.set(key, stop);
   }
   const result: NewlySkippedStop[] = [];
   for (const stop of next) {
     if (stop?.status !== 'skipped' || !isSkipReason(stop.skip_reason)) continue;
-    const key = String(stop.id ?? stop.poi_key ?? '');
+    const key = stopIdentity(stop);
     const before = key ? prevByKey.get(key) : undefined;
     if (before?.status === 'skipped') continue; // already skipped — no re-announce
+    // An identity-less skipped stop can't be diffed — announcing it every
+    // write is worse than staying silent, so skip it.
+    if (!key) continue;
     result.push({ stop, reason: stop.skip_reason });
   }
   return result;

@@ -34,6 +34,20 @@ describe('newlySkippedStops', () => {
     const next = [stop({ id: 'sX', poi_key: 'hallasan', status: 'skipped', skip_reason: 'closed' })];
     expect(newlySkippedStops([], next)).toHaveLength(1);
   });
+
+  it('pressure: a FREE stop (no id/poi_key) diffs by name — announces once, never re-announces', () => {
+    const freeSkipped = stop({ status: 'skipped', skip_reason: 'time', name_i18n: { en: 'Secret Beach' } });
+    const freePending = stop({ status: 'pending', name_i18n: { en: 'Secret Beach' } });
+    expect(newlySkippedStops([freePending], [freeSkipped])).toHaveLength(1);
+    // Every later staff write must NOT re-announce (2026-07-22 fix).
+    expect(newlySkippedStops([freeSkipped], [freeSkipped])).toHaveLength(0);
+  });
+
+  it('pressure: an identity-less skipped stop stays silent instead of spamming', () => {
+    const ghost = stop({ status: 'skipped', skip_reason: 'time' }); // no id/poi_key/name
+    expect(newlySkippedStops([ghost], [ghost])).toHaveLength(0);
+    expect(newlySkippedStops([], [ghost])).toHaveLength(0);
+  });
 });
 
 describe('renderSkipCapsule', () => {

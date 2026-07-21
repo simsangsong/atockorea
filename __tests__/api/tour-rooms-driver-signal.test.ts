@@ -131,8 +131,25 @@ describe('driver-signal fan-out (T2 slice 3)', () => {
   it('A3: eta_reply validates the minutes preset', async () => {
     const db = fakeDb('vehicle');
     createServerClientMock.mockReturnValue(db);
-    const res = await signalPOST(fakeReq(driverSession(), { type: 'eta_reply', minutes: 7 }), params());
-    expect(res.status).toBe(400);
+    for (const minutes of [7, 0, -5, 999, '10; DROP TABLE']) {
+      const res = await signalPOST(fakeReq(driverSession(), { type: 'eta_reply', minutes }), params());
+      expect(res.status).toBe(400);
+    }
+  });
+
+  it('pressure: a customer session cannot fire driver signals', async () => {
+    const db = fakeDb('vehicle');
+    createServerClientMock.mockReturnValue(db);
+    const customer = signRoomSession({
+      roomId: 'room-b1',
+      bookingId: 'b1',
+      participantId: 'p-c',
+      role: 'customer',
+      displayName: 'C',
+    }).session;
+    const res = await signalPOST(fakeReq(customer, { type: 'vehicle_arrived' }), params());
+    expect(res.status).toBe(403);
+    expect(db.inserts.tour_room_messages).toBeUndefined();
   });
 
   it('a parking pin fans out one pin + message per room on a shared tour', async () => {
