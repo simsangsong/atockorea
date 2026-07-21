@@ -9,7 +9,15 @@
  *                   notice via the events UNIQUE dedupe (P-D6)
  */
 
-export const GUEST_SIGNAL_TYPES = ['running_late', 'rest_stop', 'lost', 'rally_overdue', 'lost_item'] as const;
+export const GUEST_SIGNAL_TYPES = [
+  'running_late',
+  'rest_stop',
+  'lost',
+  'rally_overdue',
+  'lost_item',
+  'pickup_request',
+  'dropoff_change',
+] as const;
 export type GuestSignalType = (typeof GUEST_SIGNAL_TYPES)[number];
 
 /** lost_me pins auto-expire (§C-7 — one-shot location, never tracking). */
@@ -18,6 +26,8 @@ export const LOST_PIN_TTL_MS = 30 * 60 * 1000;
 interface SignalArgs {
   name?: string;
   mapsUrl?: string;
+  /** A3 dropoff_change — the guest's typed place (translated by the route). */
+  note?: string;
 }
 
 type Bundle = { source_locale: string; source_text: string; translations: Record<string, string> };
@@ -51,6 +61,20 @@ const TEMPLATES: Record<GuestSignalType, (args: SignalArgs) => Record<string, st
     es: `🧳 Aviso de objeto perdido de ${name ?? 'un huésped'}: puede haber quedado algo en el vehículo. Revísalo y responde aquí.`,
     zh: `🧳 ${name ?? '客人'}的失物报告——可能有物品落在车上。请确认后在此回复。`,
   }),
+  pickup_request: ({ name, mapsUrl }) => ({
+    en: `🚕 ${name ?? 'A guest'} asks to be picked up here${mapsUrl ? ` — location: ${mapsUrl}` : ' — please check in the chat.'}`,
+    ko: `🚕 ${name ?? '손님'}이 이 위치로 픽업을 요청했어요${mapsUrl ? ` — 위치: ${mapsUrl}` : ' — 채팅으로 확인해 주세요.'}`,
+    ja: `🚕 ${name ?? 'ゲスト'}がこの場所への迎車を希望しています${mapsUrl ? ` — 位置: ${mapsUrl}` : ' — チャットでご確認ください。'}`,
+    es: `🚕 ${name ?? 'Un huésped'} pide que lo recojan aquí${mapsUrl ? `; ubicación: ${mapsUrl}` : '; revisa el chat.'}`,
+    zh: `🚕 ${name ?? '客人'}请求在此处接载${mapsUrl ? `——位置：${mapsUrl}` : '——请在聊天中确认。'}`,
+  }),
+  dropoff_change: ({ name, mapsUrl, note }) => ({
+    en: `📍 ${name ?? 'A guest'} requests a different drop-off point${note ? `: ${note}` : ''}.${mapsUrl ? ` Location: ${mapsUrl}` : ''}`,
+    ko: `📍 ${name ?? '손님'}이 드랍 지점 변경을 요청했어요${note ? `: ${note}` : ''}.${mapsUrl ? ` 위치: ${mapsUrl}` : ''}`,
+    ja: `📍 ${name ?? 'ゲスト'}が降車地点の変更を希望しています${note ? `：${note}` : ''}。${mapsUrl ? ` 位置: ${mapsUrl}` : ''}`,
+    es: `📍 ${name ?? 'Un huésped'} solicita otro punto de bajada${note ? `: ${note}` : ''}.${mapsUrl ? ` Ubicación: ${mapsUrl}` : ''}`,
+    zh: `📍 ${name ?? '客人'}请求更改下车地点${note ? `：${note}` : ''}。${mapsUrl ? ` 位置：${mapsUrl}` : ''}`,
+  }),
   rally_overdue: () => ({
     en: '⏰ Meeting time has passed — part of the party hasn’t returned yet. The guide is checking.',
     ko: '⏰ 집합 시간이 지났어요 — 아직 복귀하지 않은 일행이 있어요. 가이드가 확인 중이에요.',
@@ -60,7 +84,20 @@ const TEMPLATES: Record<GuestSignalType, (args: SignalArgs) => Record<string, st
   }),
 };
 
-export function renderGuestSignal(type: GuestSignalType, args: SignalArgs = {}): Bundle {
-  const translations = TEMPLATES[type](args);
+export function renderGuestSignal(
+  type: GuestSignalType,
+  args: SignalArgs = {},
+  /** T2-2 — per-locale translated note (verbatim fallback when absent). */
+  noteByLocale?: Record<string, string> | null,
+): Bundle {
+  let translations = TEMPLATES[type](args);
+  if (noteByLocale) {
+    translations = Object.fromEntries(
+      Object.keys(translations).map((locale) => [
+        locale,
+        TEMPLATES[type]({ ...args, note: noteByLocale[locale] ?? args.note })[locale as keyof typeof translations] as string,
+      ]),
+    ) as Record<string, string>;
+  }
   return { source_locale: 'en', source_text: translations.en, translations };
 }

@@ -19,7 +19,16 @@ jest.mock('@/lib/durable-rate-limit', () => ({
 }));
 jest.mock('@/lib/tour-room/events', () => ({ recordRoomEvent: jest.fn(async () => ({ inserted: true, event: null })) }));
 jest.mock('@/lib/tour-room/realtime', () => ({ broadcastToRoom: jest.fn(async () => ({ ok: true })) }));
-jest.mock('@/lib/tour-room/guestPush', () => ({ sendGuestRoomPush: jest.fn(async () => ({ sent: 0, pruned: 0 })) }));
+jest.mock('@/lib/tour-room/guestPush', () => ({
+  sendGuestRoomPush: jest.fn(async () => ({ sent: 0, pruned: 0 })),
+  sendDriverRoomPush: jest.fn(async () => ({ sent: 0, pruned: 0 })),
+}));
+jest.mock('@/lib/openai-server', () => ({
+  translateTextForLocales: jest.fn(async (text: string) => ({
+    source_locale: 'en',
+    translations: { en: text, ko: `[ko] ${text}`, ja: `[ja] ${text}`, es: `[es] ${text}`, zh: `[zh] ${text}` },
+  })),
+}));
 jest.mock('@/lib/email', () => ({ sendEmail: jest.fn(async () => ({ success: true })) }));
 jest.mock('@/lib/tour-ops/push', () => ({ sendOpsPush: jest.fn(async () => ({ sent: 0, pruned: 0 })), isGonePushStatus: jest.fn(() => false) }));
 
@@ -154,6 +163,51 @@ describe('POST /api/tour-rooms/[bookingId]/signals', () => {
     expect(second.status).toBe(200);
     expect(await second.json()).toMatchObject({ deduped: true });
     expect(db.inserts.tour_room_messages).toHaveLength(1); // still one
+  });
+
+  it('A3: pickup_request writes a pickup pin + rings the operator devices', async () => {
+    const db = fakeDb();
+    createServerClientMock.mockReturnValue(db);
+    const res = await signalsPOST(
+      fakeReq({ headers: { 'x-tour-room-auth': session('customer') }, json: { type: 'pickup_request', lat: 33.45, lng: 126.9 } }),
+      routeParams(),
+    );
+    expect(res.status).toBe(201);
+    expect(db.inserts.tour_room_pins?.[0]).toMatchObject({ kind: 'pickup', lat: 33.45, lng: 126.9 });
+    const message = db.inserts.tour_room_messages?.[0];
+    expect((message?.translations as Record<string, string>).ko).toContain('픽업');
+    expect((message?.translations as Record<string, string>).ko).toContain('maps.google.com');
+    const driverPushMock = jest.requireMock('@/lib/tour-room/guestPush').sendDriverRoomPush as jest.Mock;
+    expect(driverPushMock).toHaveBeenCalledTimes(1);
+  });
+
+  it('A3: dropoff_change translates the guest note and writes a dropoff pin when located', async () => {
+    const db = fakeDb();
+    createServerClientMock.mockReturnValue(db);
+    const res = await signalsPOST(
+      fakeReq({
+        headers: { 'x-tour-room-auth': session('customer') },
+        json: { type: 'dropoff_change', note: 'Dongmun Market', lat: 33.51, lng: 126.52 },
+      }),
+      routeParams(),
+    );
+    expect(res.status).toBe(201);
+    expect(db.inserts.tour_room_pins?.[0]).toMatchObject({ kind: 'dropoff' });
+    const translations = db.inserts.tour_room_messages?.[0]?.translations as Record<string, string>;
+    expect(translations.ko).toContain('[ko] Dongmun Market');
+    expect(translations.en).toContain('Dongmun Market');
+  });
+
+  it('A3: dropoff_change with note only (no coords) still lands', async () => {
+    const db = fakeDb();
+    createServerClientMock.mockReturnValue(db);
+    const res = await signalsPOST(
+      fakeReq({ headers: { 'x-tour-room-auth': session('customer') }, json: { type: 'dropoff_change', note: '공항' } }),
+      routeParams(),
+    );
+    expect(res.status).toBe(201);
+    expect(db.inserts.tour_room_pins).toBeUndefined();
+    expect((db.inserts.tour_room_messages?.[0]?.translations as Record<string, string>).en).toContain('공항');
   });
 
   it('rejects drivers and unknown types', async () => {
