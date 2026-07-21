@@ -210,6 +210,22 @@ describe('POST /api/tour-rooms/[bookingId]/signals', () => {
     expect((db.inserts.tour_room_messages?.[0]?.translations as Record<string, string>).en).toContain('공항');
   });
 
+  it('B2: lost_item carries the translated what-and-where note', async () => {
+    const db = fakeDb();
+    createServerClientMock.mockReturnValue(db);
+    const res = await signalsPOST(
+      fakeReq({
+        headers: { 'x-tour-room-auth': session('customer') },
+        json: { type: 'lost_item', note: 'black wallet, seat 12' },
+      }),
+      routeParams(),
+    );
+    expect(res.status).toBe(201);
+    const translations = db.inserts.tour_room_messages?.[0]?.translations as Record<string, string>;
+    expect(translations.ko).toContain('[ko] black wallet, seat 12');
+    expect(translations.en).toContain('black wallet, seat 12');
+  });
+
   it('rejects drivers and unknown types', async () => {
     const asDriver = await signalsPOST(
       fakeReq({ headers: { 'x-tour-room-auth': session('driver') }, json: { type: 'rest_stop' } }),

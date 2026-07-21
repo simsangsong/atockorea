@@ -54,12 +54,12 @@ const TEMPLATES: Record<GuestSignalType, (args: SignalArgs) => Record<string, st
     es: `🧭 ${name ?? 'Un huésped'} puede estar perdido${mapsUrl ? `; ubicación: ${mapsUrl}` : '; revisa el chat.'}`,
     zh: `🧭 ${name ?? '客人'}可能迷路了${mapsUrl ? `——位置：${mapsUrl}` : '——请在聊天中确认。'}`,
   }),
-  lost_item: ({ name }) => ({
-    en: `🧳 Lost-item report from ${name ?? 'a guest'} — something may have been left in the vehicle. Please check and reply here.`,
-    ko: `🧳 ${name ?? '손님'}의 분실물 신고 — 차량에 물건을 두고 내렸을 수 있어요. 확인 후 여기에 답장해 주세요.`,
-    ja: `🧳 ${name ?? 'ゲスト'}より忘れ物のご連絡 — 車内に忘れ物があるかもしれません。ご確認のうえこちらへご返信ください。`,
-    es: `🧳 Aviso de objeto perdido de ${name ?? 'un huésped'}: puede haber quedado algo en el vehículo. Revísalo y responde aquí.`,
-    zh: `🧳 ${name ?? '客人'}的失物报告——可能有物品落在车上。请确认后在此回复。`,
+  lost_item: ({ name, note }) => ({
+    en: `🧳 Lost-item report from ${name ?? 'a guest'}${note ? ` — "${note}"` : ' — something may have been left in the vehicle'}. Please check and reply here.`,
+    ko: `🧳 ${name ?? '손님'}의 분실물 신고${note ? ` — "${note}"` : ' — 차량에 물건을 두고 내렸을 수 있어요'}. 확인 후 여기에 답장해 주세요.`,
+    ja: `🧳 ${name ?? 'ゲスト'}より忘れ物のご連絡${note ? `——「${note}」` : ' — 車内に忘れ物があるかもしれません'}。ご確認のうえこちらへご返信ください。`,
+    es: `🧳 Aviso de objeto perdido de ${name ?? 'un huésped'}${note ? `: "${note}"` : ': puede haber quedado algo en el vehículo'}. Revísalo y responde aquí.`,
+    zh: `🧳 ${name ?? '客人'}的失物报告${note ? `——「${note}」` : '——可能有物品落在车上'}。请确认后在此回复。`,
   }),
   pickup_request: ({ name, mapsUrl }) => ({
     en: `🚕 ${name ?? 'A guest'} asks to be picked up here${mapsUrl ? ` — location: ${mapsUrl}` : ' — please check in the chat.'}`,

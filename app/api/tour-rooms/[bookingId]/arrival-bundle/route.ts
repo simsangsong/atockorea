@@ -131,7 +131,42 @@ export async function GET(
         eventStatus = null;
       }
     }
-    return NextResponse.json({ profile, event_status: eventStatus });
+    // B4 — a compact Korean spot briefing for the OPERATOR (the "arrive-5-min
+    // -early" prep): resolved from the same content tiers the guest card uses,
+    // so the lead can glance hours/closed-day/tips before tapping send.
+    let briefing: string[] | null = null;
+    try {
+      let spotRow: { title?: string; content?: unknown } | null = null;
+      if (resolved.booking.tour_id) {
+        const { data } = await supabase
+          .from('tour_guide_spots')
+          .select('title, content, poi_key')
+          .eq('tour_id', resolved.booking.tour_id)
+          .eq('poi_key', poiKey)
+          .maybeSingle();
+        spotRow = data as { title?: string; content?: unknown } | null;
+      }
+      const resolvedContent = resolveSpotContent(
+        { title: spotRow?.title ?? humanizePoiKey(poiKey), content: spotRow?.content ?? null, poi_key: poiKey },
+        'ko',
+      );
+      const c = resolvedContent.content;
+      if (c) {
+        const lines = [
+          c.visitBasics?.hours ? `⏰ ${c.visitBasics.hours}` : null,
+          c.visitBasics?.closed ? `🚫 ${c.visitBasics.closed}` : null,
+          c.visitBasics?.admission ? `🎟️ ${c.visitBasics.admission}` : null,
+          c.visitBasics?.walking ? `🚶 ${c.visitBasics.walking}` : null,
+          c.convenience?.restroom ? `🚻 ${c.convenience.restroom}` : null,
+          c.smartNotes?.photo ? `📸 ${c.smartNotes.photo}` : null,
+          c.smartNotes?.tip ? `💡 ${c.smartNotes.tip}` : null,
+        ].filter((line): line is string => Boolean(line));
+        briefing = lines.length > 0 ? lines.slice(0, 6) : null;
+      }
+    } catch {
+      briefing = null;
+    }
+    return NextResponse.json({ profile, event_status: eventStatus, briefing });
   } catch (error) {
     console.error('GET /api/tour-rooms/[bookingId]/arrival-bundle error:', error);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });

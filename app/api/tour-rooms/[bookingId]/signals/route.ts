@@ -189,10 +189,11 @@ export async function POST(
       pinId = (pin as { id?: string } | null)?.id ?? null;
     }
 
-    // A3 / T2-2 — the dropoff note is guest-typed free text: translate it so
-    // the Korean operator reads it natively (verbatim fallback on failure).
+    // A3/B2 / T2-2 — guest-typed free text (dropoff place · lost-item "black
+    // wallet, seat 12"): translate it so the Korean operator reads it natively
+    // (verbatim fallback on failure).
     const note =
-      type === 'dropoff_change' && typeof body.note === 'string'
+      (type === 'dropoff_change' || type === 'lost_item') && typeof body.note === 'string'
         ? body.note.trim().slice(0, 200) || undefined
         : undefined;
     let noteByLocale: Record<string, string> | null = null;
