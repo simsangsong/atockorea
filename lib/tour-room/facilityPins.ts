@@ -15,7 +15,7 @@
 
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
-export type FacilityKind = 'restroom' | 'photo' | 'restaurant';
+export type FacilityKind = 'restroom' | 'photo' | 'restaurant' | 'ticket_booth';
 
 export interface FacilityPin {
   kind: FacilityKind;
@@ -45,7 +45,10 @@ export const FACILITY_PIN_CAP = 3;
  */
 export function facilityPinFromRow(row: Record<string, unknown>): FacilityPin {
   const nameI18n = row.name_i18n;
-  const kind: FacilityKind = row.kind === 'photo' || row.kind === 'restaurant' ? row.kind : 'restroom';
+  const kind: FacilityKind =
+    row.kind === 'photo' || row.kind === 'restaurant' || row.kind === 'ticket_booth'
+      ? row.kind
+      : 'restroom';
   return {
     kind,
     lat: Number(row.lat),
@@ -64,6 +67,7 @@ const KIND_COLOR: Record<FacilityKind, string> = {
   restroom: '0x2563eb', // blue
   photo: '0xdb2777', // pink
   restaurant: '0xf59e0b', // amber
+  ticket_booth: '0x16a34a', // green (J0 — ticketless join tours)
 };
 
 /** Default label when a pin has neither a localized nor a neutral name. */
@@ -71,6 +75,7 @@ const KIND_DEFAULT_LABEL: Record<FacilityKind, Record<RoomLocale, string>> = {
   restroom: { en: 'Restroom', ko: '화장실', zh: '洗手间', ja: 'トイレ', es: 'Baño' },
   photo: { en: 'Photo spot', ko: '포토스팟', zh: '拍照点', ja: '写真スポット', es: 'Foto' },
   restaurant: { en: 'Restaurant', ko: '맛집', zh: '餐厅', ja: 'レストラン', es: 'Restaurante' },
+  ticket_booth: { en: 'Ticket booth', ko: '매표소', zh: '售票处', ja: 'チケット売り場', es: 'Taquilla' },
 };
 
 function isFiniteCoord(lat: unknown, lng: unknown): boolean {

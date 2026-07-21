@@ -11,7 +11,7 @@
  */
 
 import { useState } from 'react';
-import { MapPin, Navigation, Toilet, Camera, Utensils, Star } from 'lucide-react';
+import { MapPin, Navigation, Toilet, Camera, Utensils, Star, Ticket } from 'lucide-react';
 import {
   facilityStaticMapPath,
   pinDirectionsUrl,
@@ -21,8 +21,18 @@ import {
 } from '@/lib/tour-room/facilityPins';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
-const KIND_HEX: Record<FacilityKind, string> = { restroom: '#2563eb', photo: '#db2777', restaurant: '#f59e0b' };
-const KIND_ALT: Record<FacilityKind, string> = { restroom: '화장실 지도', photo: '포토스팟 지도', restaurant: '맛집 지도' };
+const KIND_HEX: Record<FacilityKind, string> = {
+  restroom: '#2563eb',
+  photo: '#db2777',
+  restaurant: '#f59e0b',
+  ticket_booth: '#16a34a',
+};
+const KIND_ALT: Record<FacilityKind, string> = {
+  restroom: '화장실 지도',
+  photo: '포토스팟 지도',
+  restaurant: '맛집 지도',
+  ticket_booth: '매표소 지도',
+};
 
 function compactCount(n: number): string {
   return n >= 1000 ? `${(n / 1000).toFixed(1).replace(/\.0$/, '')}k` : String(n);
@@ -41,7 +51,8 @@ export default function FacilityMapCard({
   if (pins.length === 0) return null;
 
   const path = facilityStaticMapPath(pins);
-  const Icon = kind === 'restroom' ? Toilet : kind === 'restaurant' ? Utensils : Camera;
+  const Icon =
+    kind === 'restroom' ? Toilet : kind === 'restaurant' ? Utensils : kind === 'ticket_booth' ? Ticket : Camera;
 
   return (
     <div

@@ -3,9 +3,11 @@
  * multi-marker Static Maps path for the scoped inline map card.
  * (Track: docs/tour-room-facility-pins-master-plan-2026-07-19.md, W0.2)
  */
+// J0 (2026-07-22) — ticket_booth kind for ticketless join tours.
 import {
   selectFacilityPins,
   facilityStaticMapPath,
+  facilityPinFromRow,
   pinLabel,
   guestPinLabel,
   pinDirectionsUrl,
@@ -150,5 +152,29 @@ describe('pinDirectionsUrl', () => {
     expect(pinDirectionsUrl(pin({ lat: 33.45, lng: 126.56 }))).toBe(
       'https://www.google.com/maps/dir/?api=1&destination=33.450000,126.560000',
     );
+  });
+});
+
+describe('J0 ticket_booth kind (ticketless join tours)', () => {
+  it('maps a ticket_booth row and keeps the kind', () => {
+    const mapped = facilityPinFromRow({ kind: 'ticket_booth', lat: 33.45, lng: 126.94, name: 'Main gate booth' });
+    expect(mapped.kind).toBe('ticket_booth');
+  });
+
+  it('selects ticket booths nearest-first with the standard cap', () => {
+    const pins: FacilityPin[] = [
+      pin_({ kind: 'ticket_booth', distanceM: 200, name: 'far' }),
+      pin_({ kind: 'ticket_booth', distanceM: 20, name: 'near' }),
+      pin_({ kind: 'restroom', distanceM: 5 }),
+    ];
+    const picked = selectFacilityPins(pins, 'ticket_booth');
+    expect(picked).toHaveLength(2);
+    expect(picked[0].name).toBe('near');
+  });
+
+  it('guest label falls back to the localized "Ticket booth" default', () => {
+    expect(guestPinLabel(pin_({ kind: 'ticket_booth' }), 'ko')).toBe('매표소');
+    expect(guestPinLabel(pin_({ kind: 'ticket_booth' }), 'en')).toBe('Ticket booth');
+    expect(guestPinLabel(pin_({ kind: 'ticket_booth', name: 'East booth' }), 'en')).toBe('East booth');
   });
 });
