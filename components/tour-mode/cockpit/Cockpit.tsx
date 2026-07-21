@@ -54,6 +54,7 @@ import {
   Phone,
   Sparkles,
   SquareParking,
+  Sunrise,
   Timer,
   TriangleAlert,
   Wallet,
@@ -577,6 +578,28 @@ export default function Cockpit({
       fire();
     }
   }, [signal]);
+
+  // A1 — morning briefing: the day's opening speech, one confirmed tap. The
+  // server picks join vs private from the tour's price model.
+  const sendMorningBriefing = useCallback(async () => {
+    if (!window.confirm('아침 브리핑을 손님 전원에게 보낼까요?')) return;
+    try {
+      const res = await fetch(`/api/tour-rooms/${bookingId}/morning-briefing`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'x-tour-room-auth': session },
+        body: JSON.stringify({}),
+      });
+      if (res.ok) {
+        const data = (await res.json()) as { delivered?: number };
+        const teams = data.delivered && data.delivered > 1 ? ` (${data.delivered}팀)` : '';
+        say(`아침 브리핑 전송 ✓${teams}`);
+      } else {
+        say('실패 — 다시 시도해 주세요');
+      }
+    } catch {
+      say('네트워크 오류');
+    }
+  }, [bookingId, session, say]);
 
   // ── A0 arrival bundle: open sheet → (auto pin + sticky prefill) → send ──
   const captureArrCoords = useCallback(() => {
@@ -1167,6 +1190,7 @@ export default function Cockpit({
           }}
         />
         <ActionButton label="AI 도우미" Icon={Sparkles} onClick={() => setSheet('assist')} />
+        <ActionButton label="아침브리핑" Icon={Sunrise} onClick={() => void sendMorningBriefing()} />
       </div>
 
       {/* expense/settle + overtime (secondary, deliberate) */}
