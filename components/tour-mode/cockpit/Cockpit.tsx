@@ -287,6 +287,9 @@ export default function Cockpit({
   const [arrNote, setArrNote] = useState('');
   const [arrCoords, setArrCoords] = useState<{ lat: number; lng: number } | null>(null);
   const [arrBusy, setArrBusy] = useState(false);
+  // A4 — the POI's headline event (sticky label) + today's on/off confirmation.
+  const [arrEventLabel, setArrEventLabel] = useState('');
+  const [arrEventStatus, setArrEventStatus] = useState<'on' | 'off' | null>(null);
   const [lightbox, setLightbox] = useState<{ url: string; name?: string | null } | null>(null);
   const playedRef = useRef<Set<string>>(new Set(initialMessages.map((message) => message.id)));
   const audioQueueRef = useRef<string[]>([]);
@@ -594,6 +597,8 @@ export default function Cockpit({
       setArrTicket(false);
       setArrNote('');
       setArrCoords(null);
+      setArrEventLabel('');
+      setArrEventStatus(null);
       setSheet('arrival');
       // The sheet opens right after parking — capture "here" as the pin.
       captureArrCoords();
@@ -603,13 +608,25 @@ export default function Cockpit({
           headers: { 'x-tour-room-auth': session },
         })
           .then((res) => (res.ok ? res.json() : null))
-          .then((data: { profile?: { follow_mode?: string; ticket_required?: boolean; route_note?: string | null } } | null) => {
-            const profile = data?.profile;
-            if (!profile) return;
-            setArrFollow(profile.follow_mode === 'follow' ? 'follow' : 'free');
-            setArrTicket(profile.ticket_required === true);
-            setArrNote(typeof profile.route_note === 'string' ? profile.route_note : '');
-          })
+          .then(
+            (data: {
+              profile?: {
+                follow_mode?: string;
+                ticket_required?: boolean;
+                route_note?: string | null;
+                event_label?: string | null;
+              };
+              event_status?: 'on' | 'off' | null;
+            } | null) => {
+              const profile = data?.profile;
+              if (!profile) return;
+              setArrFollow(profile.follow_mode === 'follow' ? 'follow' : 'free');
+              setArrTicket(profile.ticket_required === true);
+              setArrNote(typeof profile.route_note === 'string' ? profile.route_note : '');
+              setArrEventLabel(typeof profile.event_label === 'string' ? profile.event_label : '');
+              setArrEventStatus(data?.event_status ?? null);
+            },
+          )
           .catch(() => undefined);
       }
     },
@@ -629,7 +646,13 @@ export default function Cockpit({
           title: itemTitle(arrItem),
           meetingTime: arrNoMeeting ? null : arrTime,
           ...(arrCoords ?? {}),
-          profile: { follow_mode: arrFollow, ticket_required: arrTicket, route_note: arrNote.trim() || null },
+          eventStatus: arrEventStatus,
+          profile: {
+            follow_mode: arrFollow,
+            ticket_required: arrTicket,
+            route_note: arrNote.trim() || null,
+            event_label: arrEventLabel.trim() || null,
+          },
         }),
       });
       if (res.ok) {
@@ -1371,6 +1394,44 @@ export default function Cockpit({
               >
                 🎟️ 입장권 {arrTicket ? '필요' : '불필요'}
               </button>
+            </div>
+
+            {/* A4 — headline event: sticky label + today's O/X confirmation */}
+            <div className="rounded-2xl bg-[var(--tr-surface-2)] px-4 py-3">
+              <input
+                value={arrEventLabel}
+                onChange={(event) => {
+                  setArrEventLabel(event.target.value);
+                  if (!event.target.value.trim()) setArrEventStatus(null);
+                }}
+                placeholder="이벤트명 (예: 해녀 공연 14:00) — 선택"
+                className="w-full rounded-xl bg-[var(--tr-surface)] px-3 py-2.5 text-base text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-2)]"
+                data-testid="arrival-event-label"
+              />
+              {arrEventLabel.trim() ? (
+                <div className="mt-2 grid grid-cols-3 gap-2">
+                  {(
+                    [
+                      { value: 'on' as const, label: '오늘 진행 ✓' },
+                      { value: 'off' as const, label: '오늘 안 함' },
+                      { value: null, label: '미확인' },
+                    ]
+                  ).map((option) => (
+                    <button
+                      key={String(option.value)}
+                      type="button"
+                      onClick={() => setArrEventStatus(option.value)}
+                      className={`rounded-xl py-2.5 text-sm font-bold ${
+                        arrEventStatus === option.value
+                          ? 'bg-[var(--tr-bubble-me)] text-[var(--tr-bubble-me-ink)]'
+                          : 'bg-[var(--tr-surface)] text-[var(--tr-ink-2)]'
+                      }`}
+                    >
+                      {option.label}
+                    </button>
+                  ))}
+                </div>
+              ) : null}
             </div>
 
             <textarea

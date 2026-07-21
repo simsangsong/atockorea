@@ -16,6 +16,7 @@ import {
   composeArrivalBundleText,
   VEHICLE_POINT,
   type ArrivalProfile,
+  type EventStatus,
   type FollowMode,
 } from '@/lib/tour-room/arrivalBundle';
 import { translateTextForLocales } from '@/lib/openai-server';
@@ -48,6 +49,7 @@ interface ProfilePatch {
   ticket_required?: boolean;
   route_note?: string | null;
   meeting_point?: string | null;
+  event_label?: string | null;
 }
 
 function parseProfilePatch(value: unknown): ProfilePatch | null {
@@ -60,6 +62,8 @@ function parseProfilePatch(value: unknown): ProfilePatch | null {
   if (raw.route_note === null) patch.route_note = null;
   if (typeof raw.meeting_point === 'string') patch.meeting_point = raw.meeting_point.trim().slice(0, 120) || null;
   if (raw.meeting_point === null) patch.meeting_point = null;
+  if (typeof raw.event_label === 'string') patch.event_label = raw.event_label.trim().slice(0, 120) || null;
+  if (raw.event_label === null) patch.event_label = null;
   return Object.keys(patch).length > 0 ? patch : null;
 }
 
@@ -110,7 +114,24 @@ export async function GET(
     }
     const poiKey = req.nextUrl.searchParams.get('poiKey')?.trim();
     if (!poiKey) return NextResponse.json({ error: 'poiKey is required' }, { status: 400 });
-    return NextResponse.json({ profile: await loadProfile(supabase, poiKey) });
+    const profile = await loadProfile(supabase, poiKey);
+    // A4 — today's already-confirmed status prefills the sheet toggle.
+    let eventStatus: EventStatus | null = null;
+    if (profile.event_label && resolved.booking.tour_date) {
+      try {
+        const { data } = await supabase
+          .from('poi_day_events')
+          .select('status')
+          .eq('poi_key', poiKey)
+          .eq('event_date', resolved.booking.tour_date)
+          .maybeSingle();
+        const status = (data as { status?: string } | null)?.status;
+        eventStatus = status === 'on' || status === 'off' ? status : null;
+      } catch {
+        eventStatus = null;
+      }
+    }
+    return NextResponse.json({ profile, event_status: eventStatus });
   } catch (error) {
     console.error('GET /api/tour-rooms/[bookingId]/arrival-bundle error:', error);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
@@ -131,6 +152,7 @@ export async function POST(
       lat?: unknown;
       lng?: unknown;
       profile?: unknown;
+      eventStatus?: unknown;
     };
 
     const poiKey = typeof body.poiKey === 'string' && body.poiKey.trim() ? body.poiKey.trim() : null;
@@ -192,6 +214,10 @@ export async function POST(
         profile.meeting_point = patch.meeting_point;
         profile.meeting_point_i18n = patch.meeting_point ? await tryTranslate(patch.meeting_point) : null;
       }
+      if (patch.event_label !== undefined && patch.event_label !== profile.event_label) {
+        profile.event_label = patch.event_label;
+        profile.event_label_i18n = patch.event_label ? await tryTranslate(patch.event_label) : null;
+      }
       await supabase
         .from('tour_poi_arrival_profiles')
         .upsert(
@@ -203,10 +229,33 @@ export async function POST(
             route_note_i18n: profile.route_note_i18n,
             meeting_point: profile.meeting_point,
             meeting_point_i18n: profile.meeting_point_i18n,
+            event_label: profile.event_label,
+            event_label_i18n: profile.event_label_i18n,
             updated_by_role: actor.role,
             updated_at: new Date().toISOString(),
           },
           { onConflict: 'poi_key' },
+        );
+    }
+
+    // A4 — today's event confirmation: 'on' | 'off' | undefined (unconfirmed).
+    // Persisted per (poi_key, tour_date) so a later bundle re-send, the GET
+    // prefill, and future consumers (concierge) all see the same answer.
+    const eventStatus: EventStatus | null =
+      body.eventStatus === 'on' || body.eventStatus === 'off' ? body.eventStatus : null;
+    if (eventStatus && poiKey && booking.tour_date && profile.event_label) {
+      await supabase
+        .from('poi_day_events')
+        .upsert(
+          {
+            poi_key: poiKey,
+            event_date: booking.tour_date,
+            status: eventStatus,
+            label: profile.event_label,
+            set_by_role: actor.role,
+            updated_at: new Date().toISOString(),
+          },
+          { onConflict: 'poi_key,event_date' },
         );
     }
 
@@ -292,6 +341,9 @@ export async function POST(
       pointByLocale,
       routeNoteI18n: profile.route_note_i18n,
       routeNote: profile.route_note,
+      eventStatus,
+      eventLabelByLocale: profile.event_label_i18n,
+      eventLabel: profile.event_label,
     });
     if (nextLeg) {
       for (const locale of Object.keys(bundleText.translations)) {
@@ -397,6 +449,13 @@ export async function POST(
           ...(content.content ? { content: content.content, content_tier: content.tier } : {}),
           ...(facilityPins.length ? { facility_pins: facilityPins } : {}),
           ...(nextLeg ? { next_leg: nextLeg } : {}),
+          ...(eventStatus && profile.event_label
+            ? {
+                event_status: eventStatus,
+                event_label: profile.event_label,
+                event_label_i18n: profile.event_label_i18n,
+              }
+            : {}),
           ...(targetBookings.length > 1 ? { fanout: true } : {}),
         };
 

@@ -18,6 +18,8 @@ import type { FacilityPin } from '@/lib/tour-room/facilityPins';
 import type { SpotArrivalContent } from '@/lib/tour-room/spotContent';
 
 export type FollowMode = 'follow' | 'free';
+/** A4 — the operator's per-day confirmation for the POI's headline event. */
+export type EventStatus = 'on' | 'off';
 
 /** Sticky per-POI defaults (tour_poi_arrival_profiles row, server-resolved). */
 export interface ArrivalProfile {
@@ -28,6 +30,9 @@ export interface ArrivalProfile {
   route_note_i18n: Record<string, string> | null;
   meeting_point: string | null;
   meeting_point_i18n: Record<string, string> | null;
+  /** A4 — the POI's recurring headline event ("해녀 공연 14:00"); null = none. */
+  event_label: string | null;
+  event_label_i18n: Record<string, string> | null;
 }
 
 /** The `metadata` contract of an `arrival_bundle` message row. */
@@ -55,6 +60,10 @@ export interface ArrivalBundleMeta {
   parking_lng?: number | null;
   /** A2 — next-stop ETA (measured matrix > synthetic haversine). */
   next_leg?: import('@/lib/tour-room/eta').NextLegMeta | null;
+  /** A4 — today's operator-confirmed event status (null = unconfirmed). */
+  event_status?: EventStatus | null;
+  event_label?: string | null;
+  event_label_i18n?: Record<string, string> | null;
   triggered_by_role?: string;
   manual?: boolean;
   [key: string]: unknown;
@@ -83,6 +92,24 @@ const FOLLOW_LINE: Record<FollowMode, Record<RoomLocale, string>> = {
     ja: 'ここは自由見学です — ご自身のペースでお楽しみください。',
     es: 'Visita libre — recorran a su ritmo.',
     zh: '此处为自由参观 — 请按自己的节奏游览。',
+  },
+};
+
+/** A4 — per-day event citation ({event} interpolates verbatim/translated). */
+const EVENT_LINE: Record<EventStatus, Record<RoomLocale, string>> = {
+  on: {
+    en: "Confirmed for today: {event} is running. ✓",
+    ko: '오늘 확인됨: {event} 진행합니다. ✓',
+    ja: '本日確認済み：{event} は開催されます。✓',
+    es: 'Confirmado para hoy: {event} se realiza. ✓',
+    zh: '今日已确认：{event} 正常进行。✓',
+  },
+  off: {
+    en: 'Please note: {event} is NOT running today.',
+    ko: '안내: 오늘은 {event} 진행하지 않습니다.',
+    ja: 'ご案内：本日 {event} は開催されません。',
+    es: 'Aviso: hoy NO se realiza {event}.',
+    zh: '请注意：今日 {event} 不进行。',
   },
 };
 
@@ -117,6 +144,10 @@ export interface ComposeBundleArgs {
   /** Per-locale route note; a locale missing falls back to `routeNote` verbatim. */
   routeNoteI18n?: Record<string, string> | null;
   routeNote?: string | null;
+  /** A4 — today's confirmed event status + label (line omitted when null). */
+  eventStatus?: EventStatus | null;
+  eventLabelByLocale?: Record<string, string> | null;
+  eventLabel?: string | null;
 }
 
 /**
@@ -138,11 +169,24 @@ export function composeArrivalBundleText(args: ComposeBundleArgs): {
     }
     lines.push(FOLLOW_LINE[args.followMode][locale]);
     if (args.ticketRequired) lines.push(TICKET_LINE[locale]);
+    if (args.eventStatus && (args.eventLabel || args.eventLabelByLocale)) {
+      const event = args.eventLabelByLocale?.[locale]?.trim() || args.eventLabel?.trim() || '';
+      if (event) lines.push(EVENT_LINE[args.eventStatus][locale].replaceAll('{event}', event));
+    }
     const note = args.routeNoteI18n?.[locale]?.trim() || args.routeNote?.trim();
     if (note) lines.push(note);
     translations[locale] = lines.join('\n');
   }
   return { source_locale: 'en', source_text: translations.en, translations };
+}
+
+/** A4 — the card's event citation line (same template the message text uses). */
+export function renderEventLine(
+  status: EventStatus,
+  locale: RoomLocale,
+  label: string,
+): string {
+  return EVENT_LINE[status][locale].replaceAll('{event}', label);
 }
 
 /** Row → typed profile (tolerates a null row: returns the free-visit default). */
@@ -161,5 +205,7 @@ export function arrivalProfileFromRow(
     route_note_i18n: i18n(row?.route_note_i18n),
     meeting_point: typeof row?.meeting_point === 'string' ? row.meeting_point : null,
     meeting_point_i18n: i18n(row?.meeting_point_i18n),
+    event_label: typeof row?.event_label === 'string' ? row.event_label : null,
+    event_label_i18n: i18n(row?.event_label_i18n),
   };
 }
