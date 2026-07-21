@@ -57,6 +57,12 @@ function fakeDb() {
               : { data: null, error: null };
         return Promise.resolve(value).then(res, rej);
       };
+      if (table === 'tour_day_plans') {
+        chain.maybeSingle = jest.fn(async () => ({
+          data: { stops: [{ poi_key: 'udo', duration_min: 60 }] },
+          error: null,
+        }));
+      }
       chain.upsert = jest.fn(() => ({
         select: () => ({
           single: async () => ({ data: { id: 'room-b1', booking_id: 'b1', status: 'active' }, error: null }),
@@ -104,6 +110,18 @@ describe('GET /day-summary', () => {
       overtime_total: 30000,
       count: 2,
     });
+  });
+
+  it('C5: current-stop dwell vs the plan recommended stay', async () => {
+    jest.spyOn(Date, 'now').mockReturnValue(new Date('2099-07-21T02:43:00Z').getTime()); // 43min after Udo
+    const res = await summaryGET(fakeReq(driverSession()), params());
+    const json = await res.json();
+    expect(json.current).toMatchObject({
+      title: 'Udo Island',
+      dwell_minutes: 43,
+      recommended_minutes: 60,
+    });
+    (Date.now as jest.Mock).mockRestore?.();
   });
 
   it('rejects customers', async () => {
