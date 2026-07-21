@@ -1297,6 +1297,17 @@ export default function Cockpit({
         <ActionButton label="AI 도우미" Icon={Sparkles} onClick={() => setSheet('assist')} />
         <ActionButton label="아침브리핑" Icon={Sunrise} onClick={() => void sendMorningBriefing()} />
         <ActionButton label="차량사진" Icon={Camera} onClick={() => vehiclePhotoRef.current?.click()} />
+        <ActionButton
+          label="출발 ✓"
+          Icon={BusFront}
+          onClick={() => {
+            // J2 — the pre-departure headcount confirmation, one confirmed tap.
+            const guests = room.number_of_guests != null ? `${room.number_of_guests}명` : '전원';
+            if (window.confirm(`손님 ${guests} 탑승을 확인했나요? 확인을 누르면 출발 안내가 나갑니다.`)) {
+              void signal({ type: 'departing' }, '인원 확인·출발 안내 완료 ✓');
+            }
+          }}
+        />
       </div>
 
       {/* expense/settle + overtime + day summary (secondary, deliberate) */}

@@ -42,6 +42,7 @@ const SIGNAL_TYPES: Array<DriverSignalType | 'return_time'> = [
   'vehicle_issue',
   'return_time',
   'eta_reply',
+  'departing',
 ];
 
 function numberOrNull(value: unknown): number | null {

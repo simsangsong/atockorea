@@ -137,6 +137,17 @@ describe('driver-signal fan-out (T2 slice 3)', () => {
     }
   });
 
+  it('J2: departing (headcount confirmed) fans out bus-wide on a shared tour', async () => {
+    const db = fakeDb('person');
+    createServerClientMock.mockReturnValue(db);
+    const res = await signalPOST(fakeReq(driverSession(), { type: 'departing' }), params());
+    expect(res.status).toBe(201);
+    expect((await res.json()).delivered).toBe(3);
+    const translations = db.inserts.tour_room_messages[0].translations as Record<string, string>;
+    expect(translations.ko).toContain('인원 확인 완료');
+    expect(translations.en).toContain('departing now');
+  });
+
   it('pressure: a customer session cannot fire driver signals', async () => {
     const db = fakeDb('vehicle');
     createServerClientMock.mockReturnValue(db);
