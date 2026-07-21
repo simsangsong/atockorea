@@ -7,6 +7,7 @@ import { broadcastToRoom } from '@/lib/tour-room/realtime';
 import { sendGuestRoomPush } from '@/lib/tour-room/guestPush';
 import { composeMorningBriefing, type BriefingKind } from '@/lib/tour-room/morningBriefing';
 import { baseHoursForCity, OVERTIME_RATE_KRW_PER_HOUR } from '@/lib/tour-room/overtime';
+import { cityCoords, fetchDayWeather, renderWeatherLines } from '@/lib/tour-room/weather';
 
 export const dynamic = 'force-dynamic';
 
@@ -72,6 +73,21 @@ export async function POST(
       baseHours: baseHoursForCity(city),
       rateKrw: OVERTIME_RATE_KRW_PER_HOUR,
     });
+
+    // B6 — today's weather + clothing hint (Open-Meteo, keyless, 4s budget).
+    // Best-effort: a fetch miss just omits the line.
+    const coords = cityCoords(city);
+    if (coords && booking.tour_date) {
+      const weather = await fetchDayWeather(coords, booking.tour_date);
+      if (weather) {
+        const weatherLines = renderWeatherLines(weather);
+        for (const locale of Object.keys(bundle.translations)) {
+          const line = weatherLines[locale];
+          if (line) bundle.translations[locale] += `\n${line}`;
+        }
+        bundle.source_text = bundle.translations.en;
+      }
+    }
 
     type TargetBooking = { id: string; tour_id: string | null; tour_date: string | null };
     let targetBookings: TargetBooking[] = [booking as TargetBooking];

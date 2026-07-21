@@ -18,6 +18,14 @@ jest.mock('@/lib/durable-rate-limit', () => ({ requestGate: jest.fn(), clientIpK
 jest.mock('@/lib/tour-room/events', () => ({ recordRoomEvent: jest.fn(async () => ({ inserted: true, event: null })) }));
 jest.mock('@/lib/tour-room/realtime', () => ({ broadcastToRoom: jest.fn(async () => ({ ok: true })) }));
 jest.mock('@/lib/tour-room/guestPush', () => ({ sendGuestRoomPush: jest.fn(async () => ({ sent: 0, pruned: 0 })) }));
+// B6 — no live network in tests: fixed forecast; renderers stay real.
+jest.mock('@/lib/tour-room/weather', () => {
+  const actual = jest.requireActual('@/lib/tour-room/weather');
+  return {
+    ...actual,
+    fetchDayWeather: jest.fn(async () => ({ tminC: 21, tmaxC: 27, rainProbPct: 60, windMaxMs: 5 })),
+  };
+});
 
 const getAuthUserMock = getAuthUser as jest.Mock;
 const createServerClientMock = createServerClient as jest.Mock;
@@ -136,6 +144,16 @@ describe('POST /morning-briefing', () => {
     expect(translations.ko).toContain('기본 9시간');
     const meta = db.inserts.tour_room_messages[0].metadata as Record<string, unknown>;
     expect(meta.base_hours).toBe(9);
+  });
+
+  it('B6: the weather line + umbrella hint rides the briefing', async () => {
+    const db = fakeDb('vehicle', 'Jeju');
+    createServerClientMock.mockReturnValue(db);
+    await briefingPOST(fakeReq(driverSession()), params());
+    const translations = db.inserts.tour_room_messages[0].translations as Record<string, string>;
+    expect(translations.ko).toContain('오늘 날씨: 21–27°C');
+    expect(translations.ko).toContain('우산');
+    expect(translations.en).toContain('rain chance 60%');
   });
 
   it('Busan private charter interpolates 8h', async () => {
