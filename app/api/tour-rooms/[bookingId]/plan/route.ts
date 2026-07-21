@@ -15,6 +15,8 @@ import { isRegionSlug } from '@/lib/itinerary-builder/regions';
 import { broadcastToRoom } from '@/lib/tour-room/realtime';
 import { normalizeRoomLocale } from '@/lib/tour-room/snapshot';
 import { hasPoiKbEntry } from '@/lib/tour-room/spotContent';
+import { newlySkippedStops, renderSkipCapsule } from '@/lib/tour-room/skipNotice';
+import { sendGuestRoomPush } from '@/lib/tour-room/guestPush';
 
 export const dynamic = 'force-dynamic';
 
@@ -495,6 +497,44 @@ export async function PUT(
         ...(feasibility ? { warnings: feasibility.warnings.length } : {}),
       },
     }).catch(() => undefined);
+
+    // A6 — stops that BECAME skipped in this staff write get a specific
+    // guest-facing capsule naming the stop + the translated reason (until now
+    // the reason was recorded but the party just saw the stop vanish).
+    if (isStaff && stops !== undefined) {
+      const skipped = newlySkippedStops(
+        ((existing as { stops?: DayPlanStop[] } | null)?.stops ?? []) as DayPlanStop[],
+        nextStops,
+      );
+      for (const entry of skipped.slice(0, 3)) {
+        const bundle = renderSkipCapsule(entry);
+        const { data: skipMessage } = await supabase
+          .from('tour_room_messages')
+          .insert({
+            room_id: room.id,
+            booking_id: booking.id,
+            sender_role: 'system',
+            input_kind: 'text',
+            source_text: bundle.source_text,
+            source_locale: bundle.source_locale,
+            translations: bundle.translations,
+            target_locales: Object.keys(bundle.translations),
+            metadata: {
+              kind: 'plan_stop_skipped',
+              poi_key: entry.stop.poi_key ?? null,
+              skip_reason: entry.reason,
+              version: (plan as { version: number }).version,
+            },
+          })
+          .select()
+          .single();
+        if (skipMessage) await broadcastToRoom(room, 'message', { message: skipMessage });
+        void sendGuestRoomPush(supabase, booking, {
+          translations: bundle.translations,
+          tag: `plan-skip-${room.id}`,
+        }).catch(() => undefined);
+      }
+    }
 
     // Feed capsules — confirm/update (staff), submitted/delegated (guest).
     const capsule = confirm
