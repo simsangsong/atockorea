@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useReducedMotion } from "framer-motion";
 import { useI18n, useTranslations } from "@/lib/i18n";
+import { toTourProductPageLocale } from "@/lib/tour-product/tourProductPageLocale";
 import {
   hrefStaticTourProductDetail,
   useStaticTourProductsLazy,
@@ -47,7 +48,7 @@ export function IdleMatchPreviewCarousel() {
 
   // Lazy catalog (EN inline + active locale chunk on demand) so the idle
   // preview no longer drags all 6 locales into the home initial bundle.
-  const products = useStaticTourProductsLazy(locale);
+  const products = useStaticTourProductsLazy(toTourProductPageLocale(locale));
   const cards = useMemo(() => {
     return IDLE_PREVIEW_SLUGS
       .map((slug) => products.find((p) => p.slug === slug))

@@ -17,37 +17,37 @@ const nextConfig = {
       { source: '/admin/ko/admin', destination: '/admin', permanent: false },
       { source: '/admin/ko', destination: '/admin', permanent: false },
       {
-        source: '/:locale(en|ko|zh-CN|zh-TW|ja|es)/admin/:innerLocale(en|ko|zh-CN|zh-TW|ja|es)/admin/:path*',
+        source: '/:locale(en|ko|zh-CN|zh-TW|ja|es|fr|de|it|ru)/admin/:innerLocale(en|ko|zh-CN|zh-TW|ja|es|fr|de|it|ru)/admin/:path*',
         destination: '/admin/:path*',
         permanent: false,
       },
       {
-        source: '/:locale(en|ko|zh-CN|zh-TW|ja|es)/admin/:innerLocale(en|ko|zh-CN|zh-TW|ja|es)/admin',
+        source: '/:locale(en|ko|zh-CN|zh-TW|ja|es|fr|de|it|ru)/admin/:innerLocale(en|ko|zh-CN|zh-TW|ja|es|fr|de|it|ru)/admin',
         destination: '/admin',
         permanent: false,
       },
       {
-        source: '/:locale(en|ko|zh-CN|zh-TW|ja|es)/admin/:innerLocale(en|ko|zh-CN|zh-TW|ja|es)',
+        source: '/:locale(en|ko|zh-CN|zh-TW|ja|es|fr|de|it|ru)/admin/:innerLocale(en|ko|zh-CN|zh-TW|ja|es|fr|de|it|ru)',
         destination: '/admin',
         permanent: false,
       },
       {
-        source: '/admin/:locale(en|ko|zh-CN|zh-TW|ja|es)/admin',
+        source: '/admin/:locale(en|ko|zh-CN|zh-TW|ja|es|fr|de|it|ru)/admin',
         destination: '/admin',
         permanent: false,
       },
       {
-        source: '/admin/:locale(en|ko|zh-CN|zh-TW|ja|es)/admin/:path*',
+        source: '/admin/:locale(en|ko|zh-CN|zh-TW|ja|es|fr|de|it|ru)/admin/:path*',
         destination: '/admin/:path*',
         permanent: false,
       },
       {
-        source: '/admin/:locale(en|ko|zh-CN|zh-TW|ja|es)',
+        source: '/admin/:locale(en|ko|zh-CN|zh-TW|ja|es|fr|de|it|ru)',
         destination: '/admin',
         permanent: false,
       },
-      { source: '/:locale(en|ko|zh-CN|zh-TW|ja|es)/admin', destination: '/admin', permanent: false },
-      { source: '/:locale(en|ko|zh-CN|zh-TW|ja|es)/admin/:path*', destination: '/admin/:path*', permanent: false },
+      { source: '/:locale(en|ko|zh-CN|zh-TW|ja|es|fr|de|it|ru)/admin', destination: '/admin', permanent: false },
+      { source: '/:locale(en|ko|zh-CN|zh-TW|ja|es|fr|de|it|ru)/admin/:path*', destination: '/admin/:path*', permanent: false },
       /** Legacy My Page paths — canonical is `/mypage`. */
       { source: '/my', destination: '/mypage', permanent: true },
       { source: '/my/:path*', destination: '/mypage/:path*', permanent: true },
@@ -55,7 +55,7 @@ const nextConfig = {
       { source: '/my-page/:path*', destination: '/mypage/:path*', permanent: true },
       { source: `/tour/${eastUuid}`, destination: canonical, permanent: true },
       {
-        source: `/:locale(en|ko|zh-CN|zh-TW|ja|es)/tour/${eastUuid}`,
+        source: `/:locale(en|ko|zh-CN|zh-TW|ja|es|fr|de|it|ru)/tour/${eastUuid}`,
         destination: '/:locale/tour-product/east-signature-nature-core',
         permanent: true,
       },
@@ -63,17 +63,17 @@ const nextConfig = {
       { source: '/tour/east-jeju-signature-small-group', destination: canonical, permanent: true },
       { source: '/tour/jeju-east-small-group-template-preview', destination: canonical, permanent: true },
       {
-        source: '/:locale(en|ko|zh-CN|zh-TW|ja|es)/tour/east-signature-nature-core',
+        source: '/:locale(en|ko|zh-CN|zh-TW|ja|es|fr|de|it|ru)/tour/east-signature-nature-core',
         destination: '/:locale/tour-product/east-signature-nature-core',
         permanent: true,
       },
       {
-        source: '/:locale(en|ko|zh-CN|zh-TW|ja|es)/tour/east-jeju-signature-small-group',
+        source: '/:locale(en|ko|zh-CN|zh-TW|ja|es|fr|de|it|ru)/tour/east-jeju-signature-small-group',
         destination: '/:locale/tour-product/east-signature-nature-core',
         permanent: true,
       },
       {
-        source: '/:locale(en|ko|zh-CN|zh-TW|ja|es)/tour/jeju-east-small-group-template-preview',
+        source: '/:locale(en|ko|zh-CN|zh-TW|ja|es|fr|de|it|ru)/tour/jeju-east-small-group-template-preview',
         destination: '/:locale/tour-product/east-signature-nature-core',
         permanent: true,
       },
@@ -81,17 +81,17 @@ const nextConfig = {
       { source: '/tour-preview/jeju-east-small-group-template-preview', destination: canonical, permanent: true },
       { source: '/tour-preview/east-jeju-signature-small-group', destination: canonical, permanent: true },
       {
-        source: '/:locale(en|ko|zh-CN|zh-TW|ja|es)/tour-preview/east-small-group-v2',
+        source: '/:locale(en|ko|zh-CN|zh-TW|ja|es|fr|de|it|ru)/tour-preview/east-small-group-v2',
         destination: '/:locale/tour-product/east-signature-nature-core',
         permanent: true,
       },
       {
-        source: '/:locale(en|ko|zh-CN|zh-TW|ja|es)/tour-preview/jeju-east-small-group-template-preview',
+        source: '/:locale(en|ko|zh-CN|zh-TW|ja|es|fr|de|it|ru)/tour-preview/jeju-east-small-group-template-preview',
         destination: '/:locale/tour-product/east-signature-nature-core',
         permanent: true,
       },
       {
-        source: '/:locale(en|ko|zh-CN|zh-TW|ja|es)/tour-preview/east-jeju-signature-small-group',
+        source: '/:locale(en|ko|zh-CN|zh-TW|ja|es|fr|de|it|ru)/tour-preview/east-jeju-signature-small-group',
         destination: '/:locale/tour-product/east-signature-nature-core',
         permanent: true,
       },
@@ -119,17 +119,17 @@ const nextConfig = {
       // /seoul stays untouched until Seoul rollout (post-MVP) — it's at least
       // not a dead end since the home + /tours still surface Seoul content.
       {
-        source: '/:locale(en|ko|zh-CN|zh-TW|ja|es)/jeju/:slug',
+        source: '/:locale(en|ko|zh-CN|zh-TW|ja|es|fr|de|it|ru)/jeju/:slug',
         destination: '/:locale/tour-product/:slug',
         permanent: true,
       },
       {
-        source: '/:locale(en|ko|zh-CN|zh-TW|ja|es)/seoul/:slug',
+        source: '/:locale(en|ko|zh-CN|zh-TW|ja|es|fr|de|it|ru)/seoul/:slug',
         destination: '/:locale/tour-product/:slug',
         permanent: true,
       },
       {
-        source: '/:locale(en|ko|zh-CN|zh-TW|ja|es)/busan/:slug',
+        source: '/:locale(en|ko|zh-CN|zh-TW|ja|es|fr|de|it|ru)/busan/:slug',
         destination: '/:locale/tour-product/:slug',
         permanent: true,
       },

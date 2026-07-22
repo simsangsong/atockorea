@@ -1,6 +1,6 @@
-export type Locale = 'en' | 'ko' | 'zh' | 'zh-TW' | 'es' | 'ja';
+export type Locale = 'en' | 'ko' | 'zh' | 'zh-TW' | 'es' | 'ja' | 'fr' | 'de' | 'it' | 'ru';
 
-export const locales: Locale[] = ['en', 'ko', 'zh', 'zh-TW', 'es', 'ja'];
+export const locales: Locale[] = ['en', 'ko', 'zh', 'zh-TW', 'es', 'ja', 'fr', 'de', 'it', 'ru'];
 
 export const defaultLocale: Locale = 'en';
 
@@ -11,6 +11,10 @@ export const localeLabels: Record<Locale, string> = {
   'zh-TW': '中文 (繁體)',
   es: 'Español',
   ja: '日本語',
+  fr: 'Français',
+  de: 'Deutsch',
+  it: 'Italiano',
+  ru: 'Русский',
 };
 
 /**
@@ -49,6 +53,10 @@ export const localeToBcp47: Record<Locale, string> = {
   'zh-TW': 'zh-TW',
   es: 'es-ES',
   ja: 'ja-JP',
+  fr: 'fr-FR',
+  de: 'de-DE',
+  it: 'it-IT',
+  ru: 'ru-RU',
 };
 
 /** BCP 47 `lang` for `<html lang>` */
@@ -60,6 +68,10 @@ export function htmlLangFromLocale(locale: Locale): string {
     'zh-TW': 'zh-TW',
     es: 'es',
     ja: 'ja',
+    fr: 'fr',
+    de: 'de',
+    it: 'it',
+    ru: 'ru',
   };
   return map[locale] ?? 'en';
 }

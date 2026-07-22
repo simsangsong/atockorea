@@ -13,6 +13,10 @@ const MESSAGE_FILE: Record<Locale, string> = {
   "zh-TW": "messages/zh-TW.json",
   es: "messages/es.json",
   ja: "messages/ja.json",
+  fr: "messages/fr.json",
+  de: "messages/de.json",
+  it: "messages/it.json",
+  ru: "messages/ru.json",
 };
 
 const SITECOPY_FILE: Record<Locale, string> = {
@@ -22,6 +26,10 @@ const SITECOPY_FILE: Record<Locale, string> = {
   "zh-TW": "messages/siteCopy/zh-TW.json",
   es: "messages/siteCopy/es.json",
   ja: "messages/siteCopy/ja.json",
+  fr: "messages/siteCopy/fr.json",
+  de: "messages/siteCopy/de.json",
+  it: "messages/siteCopy/it.json",
+  ru: "messages/siteCopy/ru.json",
 };
 
 async function readJsonFile(rel: string): Promise<unknown> {

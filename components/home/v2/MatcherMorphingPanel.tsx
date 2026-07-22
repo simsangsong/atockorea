@@ -27,6 +27,7 @@ import {
   hrefStaticTourProductDetail,
 } from "@/components/product-tour-static/catalog/staticTourCatalogCards";
 import { useI18n, useTranslations } from "@/lib/i18n";
+import { toTourProductPageLocale } from "@/lib/tour-product/tourProductPageLocale";
 import {
   getCardImageFromAdminMedia,
   useTourProductCardMedia,
@@ -57,7 +58,7 @@ export function MatcherMorphingPanel() {
   const [variant, setVariant] = useState<string | null>(null);
   const isDesktop = useMediaQuery("(min-width: 768px)");
   const winnerSlug = matchResult?.winner?.product_id ?? null;
-  const winner = winnerSlug ? getStaticTourProductBySlug(winnerSlug, locale) : null;
+  const winner = winnerSlug ? getStaticTourProductBySlug(winnerSlug, toTourProductPageLocale(locale)) : null;
   const winnerMediaSlugs = useMemo(() => (winnerSlug ? [winnerSlug] : []), [winnerSlug]);
   const winnerMediaBySlug = useTourProductCardMedia(winnerMediaSlugs, locale);
   const winnerImage = winner

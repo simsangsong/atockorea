@@ -16,6 +16,7 @@ import { useTourProductCardMedia } from "@/hooks/useTourProductCardMedia";
 import { DEFAULT_HOMEPAGE_PRODUCT_CARD_IMAGES } from "@/lib/homepage-product-card-images.shared";
 import { clearHomepageMatchTimeouts } from "@/lib/home/services/hero-match-schedule";
 import { useI18n } from "@/lib/i18n";
+import { toTourProductPageLocale } from "@/lib/tour-product/tourProductPageLocale";
 import type { TourMatchApiResponse } from "@/lib/tour-match-v2/api-types";
 
 export type HomeV2MatchPhase = "idle" | "loading" | "result";
@@ -68,7 +69,7 @@ export function HomeV2MatchProvider({ children }: { children: ReactNode }) {
     import("@/components/product-tour-static/catalog/staticTourCatalogCards")
       .then(({ getStaticTourProductBySlug }) => {
         if (cancelled) return;
-        setMatchedJoinImageUrl(getStaticTourProductBySlug(slug, locale)?.heroImage ?? null);
+        setMatchedJoinImageUrl(getStaticTourProductBySlug(slug, toTourProductPageLocale(locale))?.heroImage ?? null);
       })
       .catch(() => {
         if (!cancelled) setMatchedJoinImageUrl(null);

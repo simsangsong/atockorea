@@ -1,9 +1,10 @@
 import { cookies } from "next/headers";
+import { TOUR_PRODUCT_PAGE_LOCALES, type TourProductPageLocale } from "./tourProductPageLocale";
 
-/** `tour_product_pages.locale` — middleware `NEXT_LOCALE`와 맞춤 (zh-CN → zh). */
-export type TourProductPageLocale = "en" | "ko" | "zh" | "zh-TW" | "es" | "ja";
+export type { TourProductPageLocale };
+export { toTourProductPageLocale } from "./tourProductPageLocale";
 
-const ALLOWED = new Set<TourProductPageLocale>(["en", "ko", "zh", "zh-TW", "es", "ja"]);
+const ALLOWED = TOUR_PRODUCT_PAGE_LOCALES;
 
 function normalize(raw: string | undefined | null): TourProductPageLocale | null {
   if (!raw) return null;

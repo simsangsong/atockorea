@@ -7,6 +7,7 @@ import { V0ShadcnButton } from "@/components/home/v2/ui/v0-shadcn-button";
 import { Check, ChevronRight, Clock, Sparkles, Star, Users } from "lucide-react";
 import Image from "next/image";
 import { useI18n, useTranslations } from "@/lib/i18n";
+import { toTourProductPageLocale } from "@/lib/tour-product/tourProductPageLocale";
 import { cn } from "@/lib/utils";
 import { analytics, type HomeCtaSource } from "@/src/design/analytics";
 import { getStaticTourProductBySlug } from "@/components/product-tour-static/catalog/staticTourCatalogCards";
@@ -128,16 +129,16 @@ export function BestMatchPreview() {
 
   const resultVm = useMemo(() => {
     if (matchResult) {
-      return buildV2BestMatchResultViewModelFromApi(matchResult, (key: string) => t(key), locale);
+      return buildV2BestMatchResultViewModelFromApi(matchResult, (key: string) => t(key), toTourProductPageLocale(locale));
     }
-    return buildV2BestMatchResultViewModel((key: string) => t(key), locale);
+    return buildV2BestMatchResultViewModel((key: string) => t(key), toTourProductPageLocale(locale));
   }, [matchResult, t, locale]);
 
   const meta = useMemo(() => {
     const groupMaxFor = (p: NonNullable<ReturnType<typeof getStaticTourProductBySlug>>) =>
       t("premium.v2.bestMatch.groupMaxParam", { n: p.maxGroupSize ?? 8 });
     if (matchResult?.winner?.product_id) {
-      const p = getStaticTourProductBySlug(matchResult.winner.product_id, locale);
+      const p = getStaticTourProductBySlug(matchResult.winner.product_id, toTourProductPageLocale(locale));
       if (p) {
         return {
           rating: String(p.rating),
@@ -147,7 +148,7 @@ export function BestMatchPreview() {
         };
       }
     }
-    const idle = getFeaturedJoinTourProduct(locale);
+    const idle = getFeaturedJoinTourProduct(toTourProductPageLocale(locale));
     return {
       rating: String(idle.rating),
       reviews: String(idle.reviewCount),

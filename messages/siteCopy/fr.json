@@ -1,0 +1,360 @@
+{
+  "brand": {
+    "support": "Nous débutons à Jeju, avant de rayonner dans toute la Corée."
+  },
+  "nav": {
+    "aiTours": "Circuits IA",
+    "privateTours": "Circuits privés",
+    "joinTours": "Petits groupes",
+    "busTours": "Circuits en bus classiques",
+    "myTour": "Mon voyage",
+    "help": "Aide"
+  },
+  "hero": {
+    "eyebrow": "Itinéraires coréens conçus par IA",
+    "headline": "Le prix d'un bus,\nLe confort d'un circuit privé",
+    "sub": "Votre itinéraire généré en un clic",
+    "subCard": "Vivez une journée en Corée plus fluide grâce à un itinéraire pensé par IA, des formats de circuit plus clairs et des options de prise en charge assurées localement.",
+    "cta": "Planifier mon voyage",
+    "badge": "UNE EXPERTISE FAÇONNÉE PAR DES GUIDES PROFESSIONNELS",
+    "trust": [
+      "Un itinéraire conçu par IA en quelques minutes",
+      "Une prise en charge plus intelligente",
+      "De 3 à 13 voyageurs seulement",
+      "Un tarif clair avant de payer"
+    ],
+    "valuePropSubtitles": [
+      "Personnalisé en quelques minutes",
+      "Adapté à la localisation de votre hôtel",
+      "Paiement sécurisé"
+    ],
+    "trustCta": "Annulation gratuite jusqu'à 24 h avant le départ.",
+    "tags": ["Jeju", "Busan", "Seoul", "Petit groupe", "Privé"],
+    "featureEyebrow": "CIRCUIT PARTAGÉ",
+    "featureHeadline": "CIRCUIT PARTAGÉ\nCONÇU PAR IA",
+    "featureBullets": [
+      {
+        "label": "Taille maximale du groupe",
+        "valueSegments": [{ "text": "13", "emphasis": true }]
+      },
+      {
+        "label": "Prix",
+        "valueSegments": [
+          { "text": "À partir de " },
+          { "text": "$59/personne", "emphasis": true },
+          { "text": " — un tarif dégressif selon le nombre de voyageurs" }
+        ]
+      },
+      {
+        "label": "Itinéraire",
+        "valueSegments": [
+          { "text": "Généré par IA " },
+          { "text": "selon vos préférences", "emphasis": true }
+        ]
+      },
+      {
+        "label": "Guide",
+        "valueSegments": [
+          { "text": "Accompagné par un " },
+          { "text": "chauffeur-guide local expérimenté", "emphasis": true }
+        ]
+      }
+    ],
+    "featureCta": "Créer mon circuit partagé"
+  },
+  "howItWorks": {
+    "sectionEyebrow": "Pensé pour voyager intelligemment en Corée",
+    "sectionSubtitle": "Partagez vos préférences de voyage et les détails de votre séjour. Grâce à une véritable expertise locale, nous construisons un itinéraire à la mesure de votre journée.",
+    "title": "Comment ça marche",
+    "step1": "Indiquez vos besoins de voyage",
+    "step2": "Recevez l'itinéraire qui vous correspond",
+    "step3": "Vérifiez et ajustez",
+    "step4": "Réservez et rencontrez votre guide"
+  },
+  "comparison": {
+    "title": "Pourquoi préférer cette formule aux bus touristiques ou aux circuits privés",
+    "bullets": [
+      "Moins d'organisation — nous vous proposons l'itinéraire",
+      "Petits groupes (3 à 13 personnes) — loin de la foule des bus",
+      "Prise en charge près de votre hôtel — un déroulement plus fluide",
+      "Tarifs transparents — aucun frais caché",
+      "Un meilleur rapport qualité-prix qu'un circuit entièrement privé"
+    ]
+  },
+  "previewItinerary": {
+    "sectionHeading": "Exemple d'itinéraire",
+    "title": "Exemple de journée à Jeju",
+    "pickupArea": "Centre-ville",
+    "hotelFitHint": "Bien adapté à votre hôtel",
+    "travelerCount": "4 voyageurs",
+    "vehicleType": "Van premium",
+    "paymentNote": "Paiement intégral en ligne pour confirmer · Annulation gratuite jusqu'à 24 h avant",
+    "oneLine": "4 voyageurs · Van premium · Paiement en ligne · Annulation gratuite jusqu'à 24 h avant."
+  },
+  "reviews": {
+    "title": "Avis des voyageurs",
+    "intro": "Les retours de nos voyageurs après leur circuit — des avis sincères pour vous aider à choisir.",
+    "publicHeading": "Avis récents",
+    "publicLead": "Partagés après une réservation effectuée via AtoC Korea.",
+    "publicEmpty": "Les avis apparaîtront ici au fur et à mesure que les voyageurs termineront leur circuit.",
+    "quotes": [
+      "Bien plus simple que de tout organiser moi-même.",
+      "Plus confortable qu'un circuit en bus classique.",
+      "Le trajet de prise en charge était beaucoup plus logique.",
+      "Bien plus fluide que ce à quoi je m'attendais pour un circuit partagé."
+    ]
+  },
+  "homepageBookWithConfidence": {
+    "eyebrow": "CONFIANCE",
+    "title": "Réservez en toute confiance",
+    "cards": [
+      {
+        "icon": "mapPinned",
+        "headline": "Des règles de prise en charge claires",
+        "tagline": "",
+        "body": "Consultez la compatibilité de votre hôtel et les modalités de prise en charge avant de réserver, pour éviter les mauvaises surprises.",
+        "footer": "Vérification de la zone hôtelière intégrée à la réservation",
+        "footerNote": ""
+      },
+      {
+        "icon": "usersRound",
+        "headline": "Le confort du petit groupe",
+        "tagline": "Plus agréable qu'un bus bondé",
+        "body": "Profitez d'une journée plus agréable, avec un rythme plus détendu, une prise en charge simplifiée et une ambiance de petit groupe.",
+        "footer": "Pensé pour le confort et le bon rapport qualité-prix",
+        "footerNote": ""
+      },
+      {
+        "icon": "landmark",
+        "headline": "La logique d'un opérateur local",
+        "tagline": "",
+        "body": "Conçu à partir de véritables opérations sur le terrain, de la prise en charge à l'hôtel jusqu'à l'organisation pratique de la journée.",
+        "footer": "Pensé pour le voyage tel qu'il se vit réellement",
+        "footerNote": "La formule intermédiaire la plus pratique"
+      }
+    ]
+  },
+  "tourTypes": {
+    "privateTitle": "Circuit privé conçu par IA",
+    "privateBody": "Rien que votre groupe. L'IA élabore l'itinéraire, vous confirmez aussitôt.",
+    "privatePoints": [
+      "Rien que votre groupe",
+      "Confirmation instantanée",
+      "Idéal entre famille et amis"
+    ],
+    "privateCta": "Démarrer mon circuit privé",
+    "joinTitle": "Circuit partagé en petit groupe conçu par IA",
+    "joinBody": "Le confort du petit groupe, une prise en charge près de votre hôtel, des tarifs clairs.",
+    "joinPoints": [
+      "Le confort du petit groupe",
+      "Une prise en charge plus fluide",
+      "Une réservation simple"
+    ],
+    "joinCta": "Rejoindre un petit groupe",
+    "busTitle": "Circuit en bus classique",
+    "busBody": "Itinéraires fixes, format de groupe traditionnel.",
+    "busCta": "Voir les circuits en bus classiques"
+  },
+  "surcharge": {
+    "short": "Un supplément de prise en charge peut s'appliquer",
+    "title": "Un trajet plus fluide pour tous",
+    "body": "Votre hôtel se trouvant hors de la zone principale de prise en charge, des frais supplémentaires s'appliquent. Cela permet de conserver un trajet plus fluide pour l'ensemble des voyageurs.",
+    "final": "Tarif définitif pour l'hôtel sélectionné",
+    "included": "Prise en charge incluse"
+  },
+  "pickupMatch": {
+    "great": "Excellente compatibilité de prise en charge",
+    "good": "Bonne compatibilité de prise en charge",
+    "slight": "Un léger temps de trajet supplémentaire peut s'appliquer"
+  },
+  "joinStatus": {
+    "waiting": "En attente d'autres voyageurs",
+    "balanceOpen": "Solde disponible au paiement",
+    "confirmed": "Confirmé",
+    "missedDeadline": "Délai dépassé",
+    "privateOnly": "Circuit privé recommandé",
+    "joinUnavailable": "Circuit partagé pas encore disponible pour cet itinéraire"
+  },
+  "joinStatusHelp": {
+    "waiting": "Ce circuit doit réunir davantage de voyageurs avant l'ouverture du paiement du solde.",
+    "balanceOpen": "Vous pouvez désormais régler le solde restant dans Mes voyages.",
+    "confirmed": "Ce circuit est confirmé et prêt à démarrer.",
+    "missedDeadline": "Le délai de paiement du solde est dépassé.",
+    "privateOnly": "Cette zone hôtelière convient mieux à un circuit privé.",
+    "joinUnavailable": "Cet itinéraire n'est pas encore ouvert aux réservations en circuit partagé."
+  },
+  "checkout": {
+    "title": "Paiement",
+    "secureCheckoutTitle": "Paiement sécurisé",
+    "secureCheckoutBody": "Réglez la totalité du circuit en ligne pour finaliser votre réservation. Annulation gratuite jusqu'à 24 heures avant le départ.",
+    "confirmationEmailNote": "Vous recevrez un e-mail de confirmation après le paiement.",
+    "cta": "Réserver ma place",
+    "completeBooking": "Finaliser la réservation",
+    "timelineStaticCopy": "Annulation gratuite jusqu'à 24 h avant le départ. Vous recevrez un e-mail de confirmation après le paiement.",
+    "orderSummary": "Récapitulatif de la commande",
+    "basePrice": "Prix de base du circuit",
+    "pickupSurcharge": "Supplément de prise en charge",
+    "subtotal": "Sous-total",
+    "total": "Total"
+  },
+  "listDetail": {
+    "summaryToursFound": "{{count}} circuit(s) trouvé(s)",
+    "destination": "Destination",
+    "destinationAll": "Toutes",
+    "hotelArea": "Zone hôtelière",
+    "date": "Date",
+    "guests": "Voyageurs",
+    "styleTags": "Style de voyage",
+    "editSearch": "Modifier la recherche",
+    "refine": "Affiner",
+    "tourTypeAll": "Tous",
+    "noToursFound": "Aucun circuit trouvé",
+    "loadingTours": "Chargement des circuits…",
+    "viewTour": "Voir le circuit",
+    "viewDetails": "Voir les détails",
+    "joinThisTour": "Rejoindre ce circuit",
+    "listPaymentNote": "Paiement intégral en ligne · Gérez tout dans Mes voyages",
+    "pickupPointsCount": "{count} point(s) de prise en charge"
+  },
+  "detail": {
+    "whyThisFitsYou": "Pourquoi ce circuit vous correspond",
+    "whoThisIsBestFor": "À qui s'adresse ce circuit",
+    "cancellationPolicy": "Politique d'annulation",
+    "cancellationPolicyBody": "Annulation gratuite jusqu'à 24 h avant le départ. Passé ce délai, des frais peuvent s'appliquer selon la politique de l'opérateur.",
+    "pickupTipsIntro": "Les horaires exacts figurent dans votre confirmation. Merci d'arriver en avance ; les absences ne sont pas remboursables.",
+    "badgeAiPlanned": "Conçu par IA",
+    "badgeSmallGroup": "Petit groupe",
+    "badgePrivate": "Privé",
+    "badgeVerifiedGuide": "Guide local vérifié",
+    "badgeTransparentBooking": "Règles de réservation transparentes",
+    "badgeClassicBus": "Bus classique",
+    "selectDateToSeeTimeline": "Sélectionnez une date ci-dessus pour afficher le calendrier de votre réservation",
+    "whoBus": "Les voyageurs qui préfèrent un format de groupe traditionnel"
+  },
+  "timeline": {
+    "title": "Calendrier de réservation",
+    "reserveTitle": "Réservez en ligne",
+    "reserveSub": "Réglez la totalité pour confirmer",
+    "refundTitle": "Annulation gratuite jusqu'au",
+    "refundSub": "24 h avant le départ",
+    "balanceTitle": "Date limite de paiement du solde",
+    "balanceSub": "À régler manuellement dans Mes voyages (le cas échéant)",
+    "startTitle": "Départ du circuit",
+    "startSub": "Les réservations sont closes"
+  },
+  "myTour": {
+    "title": "Mes voyages",
+    "payBalance": "Régler le solde maintenant",
+    "viewDetails": "Voir les détails de la réservation",
+    "viewPickup": "Voir les informations de prise en charge",
+    "rebook": "Réserver un autre circuit",
+    "confirmed": "Confirmé",
+    "awaitingBalance": "En attente du paiement du solde",
+    "nextStep": "Prochaine étape",
+    "status": {
+      "pending": "En attente",
+      "paymentReceived": "Paiement reçu",
+      "awaitingBalance": "En attente du paiement du solde",
+      "balanceDue": "Paiement du solde requis",
+      "confirmed": "Confirmé",
+      "completed": "Terminé",
+      "cancelled": "Annulé",
+      "refunded": "Remboursé",
+      "deadlineMissed": "Délai dépassé"
+    }
+  },
+  "destinations": {
+    "title": "Jeju est disponible dès maintenant. D'autres destinations coréennes arrivent bientôt.",
+    "jeju": "Disponible maintenant",
+    "busan": "Bientôt disponible",
+    "seoul": "Bientôt disponible",
+    "notify": "Me prévenir"
+  },
+  "fallback": {
+    "title": "Vous préférez un circuit de groupe classique ?"
+  },
+  "finalCta": {
+    "sectionEyebrow": "Planifiez dès maintenant",
+    "sectionSubtitle": "Commencez avec le planificateur IA, puis choisissez le format le mieux adapté à votre journée.",
+    "secondaryCta": "Voir les circuits en bus classiques",
+    "title": "Prêt à organiser votre séjour à Jeju plus intelligemment ?",
+    "cta": "Planifier mon voyage"
+  },
+  "builderLoading": {
+    "stage1WithArea": "Vérification du trajet de prise en charge près de [Area]…",
+    "stage1Generic": "Recherche du meilleur itinéraire pour votre zone hôtelière…",
+    "stage2": "Recherche du circuit qui vous correspond le mieux…",
+    "stage3": "Presque prêt…",
+    "end": "Votre voyage est prêt"
+  },
+  "builderPickupArea": {
+    "jeju_city": "Centre-ville",
+    "jeju_outside": "Périphérie",
+    "seogwipo_city": "Zone de Seogwipo",
+    "seogwipo_outside": "Zone extérieure"
+  },
+  "builderSummary": {
+    "paymentNote": "Paiement intégral en ligne · Annulation gratuite jusqu'à 24 h avant le départ"
+  },
+  "planner": {
+    "hotelAreaLabel": "Zone hôtelière"
+  },
+  "productCards": {
+    "busExtraBullet": "Bus classique · prise en charge à un point de rendez-vous",
+    "badgeJoin": "Le plus équilibré",
+    "badgePrivate": "Le plus flexible",
+    "badgeBus": "Le plus économique",
+    "sectionEyebrow": "Formats de circuit",
+    "sectionTitle": "Choisissez votre style",
+    "swipeToCompare": "Glissez pour comparer"
+  },
+  "homepageComparison": {
+    "eyebrow": "Comparez les styles de voyage",
+    "title": "Trouvez le style de voyage\nqui vous correspond en Corée",
+    "subtitle": "Circuits en bus, petits groupes conçus par IA, ou voyage entièrement privé et sur mesure.",
+    "rows": [
+      { "label": "Prix", "ai": "Milieu de gamme", "private": "Premium", "bus": "Le plus bas" },
+      { "label": "Groupe", "ai": "Petit groupe", "private": "Privé uniquement", "bus": "Grand groupe partagé" },
+      { "label": "Itinéraire", "ai": "Conçu par IA", "private": "Sur mesure", "bus": "Fixe" },
+      { "label": "Prise en charge", "ai": "Hôtel", "private": "Hôtel", "bus": "Point de rendez-vous" },
+      { "label": "Idéal pour", "ai": "Un bon rapport qualité-prix", "private": "Une liberté totale", "bus": "Les petits budgets" }
+    ],
+    "cards": [
+      {
+        "valueKey": "ai",
+        "categoryLabel": "PROPULSÉ PAR L'IA",
+        "title": "Petit groupe",
+        "description": "Confort et bon rapport qualité-prix avec des itinéraires IA",
+        "ctaLabel": "Planifier",
+        "ctaHref": "/custom-join-tour",
+        "highlight": true,
+        "badge": "MEILLEUR ÉQUILIBRE"
+      },
+      {
+        "valueKey": "bus",
+        "categoryLabel": "CLASSIQUE",
+        "title": "Circuit en bus",
+        "description": "Circuit touristique à itinéraire fixe, au meilleur prix",
+        "ctaLabel": "Explorer",
+        "ctaHref": "/tours/list",
+        "highlight": false
+      },
+      {
+        "valueKey": "private",
+        "categoryLabel": "PREMIUM",
+        "title": "Circuit privé",
+        "description": "Une liberté totale, entièrement sur mesure",
+        "ctaLabel": "Créer mon circuit",
+        "ctaHref": "/tours/list",
+        "highlight": false
+      }
+    ]
+  },
+  "homepageAiPrices": {
+    "privatePriceLabel": "À partir de ₩398,000 / groupe",
+    "privatePriceSub": "1 à 6 voyageurs · tarif plus élevé au-delà de 6",
+    "joinPriceLabel": "À partir de ₩50,000 / personne",
+    "joinPriceSub": "Paiement intégral en ligne lors de la commande",
+    "busPriceLabel": "À partir de ₩59,000 / personne"
+  }
+}

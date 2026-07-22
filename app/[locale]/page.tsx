@@ -7,13 +7,13 @@ import { createServerClient } from '@/lib/supabase';
 import { loadTourProductCardMediaBySlug } from '@/lib/tour-product/resolveTourProductCardMedia.server';
 import type { TourProductCardMediaMap } from '@/lib/tour-product/cardMediaTypes';
 
-const SUPPORTED_LOCALE_ROUTES = ['ko', 'zh-CN', 'zh-TW', 'ja', 'es'] as const;
+const SUPPORTED_LOCALE_ROUTES = ['ko', 'zh-CN', 'zh-TW', 'ja', 'es', 'fr', 'de', 'it', 'ru'] as const;
 
 /** URL locale segment -> i18n Locale (zh-CN -> zh, zh-TW stays zh-TW) */
-function toI18nLocale(segment: string): 'ko' | 'zh' | 'zh-TW' | 'ja' | 'es' {
+function toI18nLocale(segment: string): 'ko' | 'zh' | 'zh-TW' | 'ja' | 'es' | 'fr' | 'de' | 'it' | 'ru' {
   if (segment === 'zh-CN') return 'zh';
   if (segment === 'zh-TW') return 'zh-TW';
-  return segment as 'ko' | 'zh' | 'ja' | 'es';
+  return segment as 'ko' | 'zh' | 'ja' | 'es' | 'fr' | 'de' | 'it' | 'ru';
 }
 
 /**

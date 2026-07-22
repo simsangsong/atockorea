@@ -34,7 +34,7 @@ import { AdminCommandPalette, type CmdkDataResult } from '@/components/admin/Adm
 import { supabase } from '@/lib/supabase';
 import { decideAdminGuard } from '@/lib/admin/admin-auth-guard';
 
-const ADMIN_SUPPORTED_LOCALES = ['en', 'ko', 'zh-CN', 'zh-TW', 'ja', 'es'];
+const ADMIN_SUPPORTED_LOCALES = ['en', 'ko', 'zh-CN', 'zh-TW', 'ja', 'es', 'fr', 'de', 'it', 'ru'];
 
 type AdminMenuItem = {
   path: string;
