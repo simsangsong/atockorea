@@ -50,7 +50,7 @@
 | **J1** | 티켓 구조화: 스톱 콘텐츠에 `ticket_krw`·`ticket_note` + SpotArrivalCard/번들 카드에 "입장권 ₩5,000 · 매표소는 지도 참고" 5로케일 줄 | 코드 |
 | **J2** | 콕핏 인원체크: 발송 전 "N명 탑승 확인" 스텝(프라이빗=단일룸 인원, 버스=투어일 합계 — driver overview 확장) | 코드 |
 | **J3** | 암호화 오프라인 캐시 코어: 번들/콘텐츠 IndexedDB AES-GCM + 오프라인 렌더 폴백 + 재연결 동기화 | 코드(대형) |
-| **J4** | 동영상 서빙: 스키마 필드(video_url/i18n)+플레이어+J3 오프라인 편입 | **video-automation 트랙 합류 게이트** |
+| **J4** | 동영상 서빙: 스키마 필드(video_url/i18n)+플레이어+J3 오프라인 편입 | ✅ 서빙 완료(§E 2026-07-22) — 오프라인 편입만 §D-1 대기 |
 | **J5** | 상품 정비: 조인투어 전 상품 티켓 미포함 가격·카피 반영 | **사람 게이트**(가격 결정) |
 
 ## §D 결정 대기
@@ -62,4 +62,5 @@
 - **J1 완료 (PR #447):** `tour_poi_arrival_profiles.ticket_krw`(CHECK 0..1M, 라이브) — 콕핏 티켓 토글 시 가격 입력(스티키), 번들 티켓 줄 가격 버전("성인 1인 ₩5,000") 5로케일, 카드 배지 금액, 쓰레기값(음수/실수/문자) 무시 폴백.
 - **J2 완료 (PR #449):** driver-signal 'departing' — 콕핏 [출발 ✓](confirm에 인원수 표시)→"인원 확인 완료, 출발합니다" 5로케일, 공유투어 버스 전원 팬아웃. 기사 루프 완성: 도착→번들→인원체크→출발 전부 프리셋 탭.
 - **J3 완료:** 암호화 오프라인 볼트 — `lib/tour-room/offlineVault.ts`(WebCrypto AES-GCM-256, 키=룸세션 HKDF-SHA256 파생(salt 고정+info=bookingId)·비저장, IndexedDB엔 {iv, ciphertext}만). `OfflineInfoCard`가 평문 localStorage 스냅샷을 **퍼지**하고 볼트로 전환, 스냅샷에 최신 도착 안내 전문(손님 로케일 번들 텍스트: 집합·인솔·티켓가격·노선) 포함 → 오프라인에서 복호화 렌더. 테스트 6: 라운드트립·암호문에 평문 부재·오세션/타부킹 복호 거부·GCM 변조 fail-closed·빈 세션 degrade. ⚠한계(SoT §B-3): 클라이언트 암호화≠DRM — 방어 대상은 캐시 파일 벌크 유출.
-- **코드 트랙 종료.** 잔여 = J4(video-automation 합류 게이트)·J5(가격, 사람 게이트)·§D 결정 4건.
+- **J4 완료 (2026-07-22, video-automation W3와 동일 슬라이스):** 합류 게이트 해소 — `poi_videos` 테이블 라이브(status 검수 게이트, RLS 서비스롤 전용) + `npm run video:upload`(QC 게이트, pending_review로만 등록) + 서빙 `fetchArrivalVideoCard()`(승인분만, fail-open) → arrival-bundle·manual-arrival `metadata.video_card` → `ArrivalVideoCard` 포스터-퍼스트 탭 재생(ko 뷰어 en 폴백, 자막 번인) → `/admin/poi-videos` 검수큐(언어당 승인 1건 불변식). ⚠오프라인 볼트(J3) 동영상 편입은 §D 결정 1 대기로 보류.
+- **코드 트랙 종료.** 잔여 = J5(가격, 사람 게이트)·§D 결정 4건·실렌더 업로드+검수(사람 게이트).

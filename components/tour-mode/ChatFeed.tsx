@@ -23,6 +23,8 @@ import Avatar from '@/components/tour-mode/Avatar';
 import ExtraLedgerCard, { type ExtraLedgerMeta } from '@/components/tour-mode/ExtraLedgerCard';
 import SpotArrivalCard from '@/components/tour-mode/SpotArrivalCard';
 import ArrivalBundleCard from '@/components/tour-mode/ArrivalBundleCard';
+import ArrivalVideoCard from '@/components/tour-mode/ArrivalVideoCard';
+import { isVideoCardMeta } from '@/lib/tour-room/poiVideos';
 import type { ArrivalBundleMeta } from '@/lib/tour-room/arrivalBundle';
 import Lightbox from '@/components/tour-mode/Lightbox';
 import LocationPreview from '@/components/tour-mode/LocationPreview';
@@ -405,16 +407,30 @@ export default function ChatFeed({
                 </div>
               );
             }
-            if (arrivalContent && Object.keys(arrivalContent).length > 0) {
+            // W3/J4 — an approved POI short rides spot_arrival metadata too.
+            const arrivalVideo =
+              message.metadata?.kind === 'spot_arrival' && isVideoCardMeta(message.metadata.video_card)
+                ? message.metadata.video_card
+                : null;
+            if ((arrivalContent && Object.keys(arrivalContent).length > 0) || arrivalVideo) {
               return (
-                <div className={`mt-2 ${animClass}`}>
-                  <SpotArrivalCard
-                    content={arrivalContent}
-                    messageText={displayText(message, viewerLocale, originals.has(message.id), preferredLocale)}
-                    audioUrl={(message.metadata?.audio_url as string | null | undefined) ?? null}
-                    locale={viewerLocale}
-                    contentTier={(message.metadata?.content_tier as string | null | undefined) ?? null}
-                  />
+                <div className={`mt-2 flex flex-col gap-2 ${animClass}`}>
+                  {/* video-only arrival: keep the arrived line above the player */}
+                  {arrivalVideo && !(arrivalContent && Object.keys(arrivalContent).length > 0) ? (
+                    <p className="px-1 text-sm font-semibold text-[var(--tr-ink)]">
+                      {displayText(message, viewerLocale, originals.has(message.id), preferredLocale)}
+                    </p>
+                  ) : null}
+                  {arrivalVideo ? <ArrivalVideoCard meta={arrivalVideo} locale={viewerLocale} /> : null}
+                  {arrivalContent && Object.keys(arrivalContent).length > 0 ? (
+                    <SpotArrivalCard
+                      content={arrivalContent}
+                      messageText={displayText(message, viewerLocale, originals.has(message.id), preferredLocale)}
+                      audioUrl={(message.metadata?.audio_url as string | null | undefined) ?? null}
+                      locale={viewerLocale}
+                      contentTier={(message.metadata?.content_tier as string | null | undefined) ?? null}
+                    />
+                  ) : null}
                 </div>
               );
             }

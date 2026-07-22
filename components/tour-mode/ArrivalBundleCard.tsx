@@ -16,6 +16,8 @@ import SpotArrivalCard from '@/components/tour-mode/SpotArrivalCard';
 import FacilityMapCard from '@/components/tour-mode/FacilityMapCard';
 import { selectFacilityPins, type FacilityPin } from '@/lib/tour-room/facilityPins';
 import { BUNDLE_COPY, formatTicketKrw, renderEventLine, type ArrivalBundleMeta } from '@/lib/tour-room/arrivalBundle';
+import ArrivalVideoCard from '@/components/tour-mode/ArrivalVideoCard';
+import { isVideoCardMeta } from '@/lib/tour-room/poiVideos';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
 function mapsUrl(lat: number, lng: number): string {
@@ -166,6 +168,9 @@ export default function ArrivalBundleCard({
       {meta.ticket_required && ticketBooths.length > 0 ? (
         <FacilityMapCard kind="ticket_booth" pins={ticketBooths} locale={locale} />
       ) : null}
+
+      {/* W3/J4 — the produced POI short (admin-approved renders only) */}
+      {isVideoCardMeta(meta.video_card) ? <ArrivalVideoCard meta={meta.video_card} locale={locale} /> : null}
 
       {/* the spot briefing itself (3-tier content) */}
       {hasContent && meta.content ? (

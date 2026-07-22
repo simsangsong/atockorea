@@ -68,6 +68,8 @@ export interface ArrivalBundleMeta {
   event_status?: EventStatus | null;
   event_label?: string | null;
   event_label_i18n?: Record<string, string> | null;
+  /** W3/J4 — approved POI video renders (poster + per-locale MP4 URLs). */
+  video_card?: import('@/lib/tour-room/poiVideos').ArrivalVideoCardMeta | null;
   triggered_by_role?: string;
   manual?: boolean;
   [key: string]: unknown;

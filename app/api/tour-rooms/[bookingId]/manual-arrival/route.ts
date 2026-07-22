@@ -13,6 +13,7 @@ import { broadcastToRoom } from '@/lib/tour-room/realtime';
 import { normalizeRoomLocale } from '@/lib/tour-room/snapshot';
 import { renderSpotEventTranslations, resolveSpotContent } from '@/lib/tour-room/spotContent';
 import { fetchArrivalFacilityPins } from '@/lib/tour-room/facilityPins.server';
+import { fetchArrivalVideoCard } from '@/lib/tour-room/poiVideos.server';
 
 export const dynamic = 'force-dynamic';
 
@@ -121,6 +122,8 @@ export async function POST(
     const room = await ensureRoom(supabase, booking);
     // W2.1 — ride the spot's restroom/photo pins in the arrival metadata.
     const facilityPins = await fetchArrivalFacilityPins(supabase, spot.poi_key);
+    // W3/J4 — approved POI video renders ride the arrival card (best-effort).
+    const videoCard = await fetchArrivalVideoCard(supabase, spot.poi_key);
     const { data: message, error: messageError } = await supabase
       .from('tour_room_messages')
       .insert({
@@ -143,6 +146,7 @@ export async function POST(
           triggered_by_role: actor.role,
           ...(content.content ? { content: content.content, content_tier: content.tier } : {}),
           ...(facilityPins.length ? { facility_pins: facilityPins } : {}),
+          ...(videoCard ? { video_card: videoCard } : {}),
         },
       })
       .select()
