@@ -5,10 +5,12 @@
  * timers. Pinned above the tabs; ticks against the KST wall-clock target
  * (screen-return resync is inherent), pulses + vibrates at 10 and 5 minutes,
  * and speaks the warning when auto-read is on (device TTS only).
+ * Presentation ladder (2026-07-22): hidden until T-10 → quiet banner (target
+ * time, no ticking) until T-3 → live countdown from T-3.
  */
 
 import { useEffect, useRef, useState } from 'react';
-import { activeNotice, formatRemaining, formatTargetTime, rallyStage } from '@/lib/tour-room/notices';
+import { activeNotice, formatRemaining, formatTargetTime, noticeBannerMode, rallyStage } from '@/lib/tour-room/notices';
 import { IconFreeTime, IconMeeting } from '@/components/tour-mode/icons';
 import { speakWithDevice } from '@/lib/tour-room/tts';
 import { useTourRoomSettings } from '@/hooks/useTourRoomSettings';
@@ -172,7 +174,11 @@ export default function NoticeBanner({
     }
   }, [notice, settings.autoRead, locale, copy]);
 
-  if (!notice || notice.cancelled) return null;
+  // Presentation ladder (user decision 2026-07-22): hidden until T-10 — the
+  // T-10/T-5 nudge effects above still run — quiet (no ticking) until T-3,
+  // then the live countdown. A cancel capsule keeps its brief quiet banner.
+  const mode = noticeBannerMode(notice);
+  if (!notice || notice.cancelled || mode === 'hidden') return null;
 
   const urgent = notice.warn5 || (notice.remainingMs !== null && notice.remainingMs === 0);
   const title = notice.kind === 'free_time_timer' ? copy.freeTime : copy.meeting;
@@ -217,8 +223,9 @@ export default function NoticeBanner({
             )}
           </p>
         )}
-        {stage === 'set' && (
-          // W4.2 / E5 — dead-battery / no-signal insurance while there's time.
+        {mode === 'quiet' && stage !== 'overdue' && stage !== 'contact' && (
+          // W4.2 / E5 — dead-battery / no-signal insurance while there's time
+          // (the quiet T-10..T-3 window is the last calm moment to screenshot).
           <p data-testid="screenshot-hint" className="tr-meta mt-0.5 text-[var(--tr-ink-3)]">
             {copy.screenshot}
           </p>
@@ -237,7 +244,7 @@ export default function NoticeBanner({
           </p>
         )}
       </div>
-      {notice.remainingMs !== null && (
+      {mode === 'countdown' && notice.remainingMs !== null && (
         <span
           data-testid="notice-countdown"
           className={`shrink-0 rounded-full px-3 py-1.5 text-[16px] font-bold tabular-nums text-white ${

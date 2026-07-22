@@ -5,7 +5,7 @@
 import { act, fireEvent, render, screen } from '@testing-library/react';
 import NoticeBanner from '@/components/tour-mode/NoticeBanner';
 import PickupBoard from '@/components/tour-mode/PickupBoard';
-import { activeNotice, formatRemaining, formatTargetTime, rallyStage } from '@/lib/tour-room/notices';
+import { activeNotice, formatRemaining, formatTargetTime, noticeBannerMode, rallyStage } from '@/lib/tour-room/notices';
 import { kstToday, kstStartOfDayMs } from '@/lib/tour-room/time';
 import { __resetTourRoomSettingsForTests } from '@/hooks/useTourRoomSettings';
 import type { RoomMessage } from '@/hooks/useTourRoomChannel';
@@ -88,17 +88,65 @@ describe('activeNotice (T6.3/T6.5)', () => {
   });
 });
 
-describe('NoticeBanner (T6.3/T6.5)', () => {
-  it('renders the countdown for an active free-time timer', () => {
-    jest.useFakeTimers().setSystemTime(dayStart + 15 * 3600_000);
-    const messages = [message({ kind: 'free_time_timer', until_time: '15:30', meeting_point: 'Gate 2' }, dayStart + 14.9 * 3600_000)];
+describe('noticeBannerMode — presentation ladder (user decision 2026-07-22)', () => {
+  const now = dayStart + 15 * 60 * 60 * 1000; // 15:00 KST
+  const modeWithRemaining = (remainMin: number) => {
+    const target = now + remainMin * 60_000;
+    const hhmm = `${String(Math.floor(((target - dayStart) / 3600_000) % 24)).padStart(2, '0')}:${String(
+      Math.floor((target - dayStart) / 60_000) % 60,
+    ).padStart(2, '0')}`;
+    return noticeBannerMode(activeNotice([message({ kind: 'free_time_timer', until_time: hhmm }, now - 3600_000)], today, now));
+  };
+
+  it('hidden > 10min, quiet 10..3min, countdown ≤ 3min and past-due', () => {
+    expect(modeWithRemaining(30)).toBe('hidden');
+    expect(modeWithRemaining(11)).toBe('hidden');
+    expect(modeWithRemaining(10)).toBe('quiet');
+    expect(modeWithRemaining(4)).toBe('quiet');
+    expect(modeWithRemaining(3)).toBe('countdown');
+    expect(modeWithRemaining(1)).toBe('countdown');
+    expect(modeWithRemaining(-2)).toBe('countdown'); // due/overdue keeps the capsule
+  });
+
+  it('cancelled and untimed notices render quiet; no notice is hidden', () => {
+    const cancelled = activeNotice([message({ kind: 'free_time_timer', cancelled: true }, now)], today, now + 60_000);
+    expect(noticeBannerMode(cancelled)).toBe('quiet');
+    expect(noticeBannerMode(null)).toBe('hidden');
+  });
+});
+
+describe('NoticeBanner (T6.3/T6.5 + 2026-07-22 presentation ladder)', () => {
+  const timerAt = (nowOffsetMin: number) => {
+    jest.useFakeTimers().setSystemTime(dayStart + (15 * 60 + nowOffsetMin) * 60_000);
+    // Target 15:30 — nowOffsetMin is minutes past 15:00, so remaining = 30 - offset.
+    return [message({ kind: 'free_time_timer', until_time: '15:30', meeting_point: 'Gate 2' }, dayStart + 14.9 * 3600_000)];
+  };
+
+  it('stays hidden while more than 10 minutes remain', () => {
+    const messages = timerAt(0); // 30min remaining
+    render(<NoticeBanner messages={messages} tourDate={today} locale="en" />);
+    expect(screen.queryByTestId('notice-banner')).not.toBeInTheDocument();
+    jest.useRealTimers();
+  });
+
+  it('shows a quiet banner (no ticking) with the screenshot hint inside T-10', () => {
+    const messages = timerAt(22); // 8min remaining
     render(<NoticeBanner messages={messages} tourDate={today} locale="en" />);
     expect(screen.getByTestId('notice-banner')).toHaveTextContent('Free time');
-    expect(screen.getByTestId('notice-countdown')).toHaveTextContent('30:00');
+    expect(screen.queryByTestId('notice-countdown')).not.toBeInTheDocument();
+    expect(screen.getByTestId('screenshot-hint')).toBeInTheDocument();
+    jest.useRealTimers();
+  });
+
+  it('ticks the live countdown from 3 minutes out', () => {
+    const messages = timerAt(28); // 2min remaining
+    render(<NoticeBanner messages={messages} tourDate={today} locale="en" />);
+    expect(screen.getByTestId('notice-countdown')).toHaveTextContent('2:00');
     act(() => {
       jest.advanceTimersByTime(2_000);
     });
-    expect(screen.getByTestId('notice-countdown')).toHaveTextContent('29:58');
+    expect(screen.getByTestId('notice-countdown')).toHaveTextContent('1:58');
+    expect(screen.queryByTestId('screenshot-hint')).not.toBeInTheDocument();
     jest.useRealTimers();
   });
 
@@ -110,7 +158,7 @@ describe('NoticeBanner (T6.3/T6.5)', () => {
   it('renders a tappable map link for a pinned meeting notice (T2-1)', () => {
     jest.useFakeTimers().setSystemTime(dayStart + 15 * 3600_000);
     const messages = [
-      message({ kind: 'meeting_notice', meeting_time: '15:30', meeting_point: 'Gate 2', meeting_lat: 33.5, meeting_lng: 126.5 }, dayStart + 14.9 * 3600_000),
+      message({ kind: 'meeting_notice', meeting_time: '15:07', meeting_point: 'Gate 2', meeting_lat: 33.5, meeting_lng: 126.5 }, dayStart + 14.9 * 3600_000),
     ];
     render(<NoticeBanner messages={messages} tourDate={today} locale="en" />);
     const link = screen.getByTestId('notice-map-link');

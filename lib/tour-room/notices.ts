@@ -125,6 +125,24 @@ export function rallyStage(notice: NoticeState | null, nowMs = Date.now()): Rall
   return 'contact';
 }
 
+/**
+ * Banner presentation ladder (user decision 2026-07-22): the countdown must
+ * NOT sit on screen for the whole free time. Before T-10 the banner is hidden
+ * (the meeting time lives in the arrival card in chat); T-10 and T-5 fire
+ * one-shot nudges and the banner appears WITHOUT a ticking number ('quiet');
+ * from T-3 the live countdown capsule takes over ('countdown').
+ * Cancelled and untimed notices render quiet (nothing to count down).
+ */
+export type NoticeBannerMode = 'hidden' | 'quiet' | 'countdown';
+
+export function noticeBannerMode(notice: NoticeState | null): NoticeBannerMode {
+  if (!notice) return 'hidden';
+  if (notice.cancelled || notice.remainingMs === null) return 'quiet';
+  if (notice.remainingMs > 10 * 60 * 1000) return 'hidden';
+  if (notice.remainingMs > 3 * 60 * 1000) return 'quiet';
+  return 'countdown';
+}
+
 /** "12:34" countdown text; "0:59" under a minute; "00:00" when due. */
 export function formatRemaining(remainingMs: number): string {
   const totalSeconds = Math.max(0, Math.floor(remainingMs / 1000));

@@ -91,11 +91,11 @@ export const MANUAL_SECTIONS: ManualSection[] = [
       zh: '集合时间倒计时',
     },
     body: {
-      en: 'The meeting time always shows at the top with a live countdown, and your phone nudges you 10 and 5 minutes before. Please keep notifications on and come back a little early.',
-      ko: '집합 시간은 화면 상단에 카운트다운으로 항상 표시되고, 10분·5분 전에 알림이 와요. 알림을 켜두고 조금 일찍 돌아와 주세요.',
-      ja: '集合時間は画面上部にカウントダウンで常時表示され、10分前と5分前に通知が届きます。通知をオンにして少し早めにお戻りください。',
-      es: 'La hora de reunión siempre aparece arriba con cuenta regresiva y el teléfono te avisa 10 y 5 minutos antes. Mantén las notificaciones activadas y vuelve con antelación.',
-      zh: '集合时间始终显示在屏幕顶部并倒计时，手机会在 10 分钟和 5 分钟前提醒您。请开启通知并提前返回。',
+      en: 'Your phone nudges you 10 and 5 minutes before the meeting time, and a live countdown appears at the top for the last 3 minutes. Please keep notifications on and come back a little early.',
+      ko: '집합 10분·5분 전에 알림이 오고, 3분 전부터 화면 상단에 카운트다운이 떠요. 알림을 켜두고 조금 일찍 돌아와 주세요.',
+      ja: '集合の10分前と5分前に通知が届き、3分前からは画面上部にカウントダウンが表示されます。通知をオンにして少し早めにお戻りください。',
+      es: 'El teléfono te avisa 10 y 5 minutos antes de la hora de reunión, y en los últimos 3 minutos aparece una cuenta regresiva arriba. Mantén las notificaciones activadas y vuelve con antelación.',
+      zh: '集合前 10 分钟和 5 分钟手机会提醒您，最后 3 分钟屏幕顶部会显示倒计时。请开启通知并提前返回。',
     },
   },
   {
