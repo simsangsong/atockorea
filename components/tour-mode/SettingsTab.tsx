@@ -158,12 +158,12 @@ function Toggle({ checked, onChange, label }: { checked: boolean; onChange: (v: 
       aria-checked={checked}
       aria-label={label}
       onClick={() => onChange(!checked)}
-      className={`relative h-8 w-[52px] shrink-0 rounded-full transition ${
+      className={`tr-press relative h-8 w-[52px] shrink-0 rounded-full transition-colors duration-[var(--tr-dur-base)] ${
         checked ? 'bg-[var(--tr-accent)]' : 'bg-[var(--tr-bubble-system)]'
       }`}
     >
       <span
-        className={`absolute top-1 h-6 w-6 rounded-full bg-white shadow transition-all ${checked ? 'left-[24px]' : 'left-1'}`}
+        className={`tr-knob absolute top-1 h-6 w-6 rounded-full bg-white shadow ${checked ? 'left-[24px]' : 'left-1'}`}
       />
     </button>
   );
@@ -186,7 +186,7 @@ function SegmentedControl<T extends string>({
           type="button"
           onClick={() => onChange(option.value)}
           aria-pressed={value === option.value}
-          className={`tr-label flex min-h-[36px] flex-1 items-center justify-center gap-1 rounded-lg font-medium transition ${
+          className={`tr-label tr-press flex min-h-[36px] flex-1 items-center justify-center gap-1 rounded-lg font-medium transition-colors duration-[var(--tr-dur-fast)] ${
             value === option.value
               ? 'bg-[var(--tr-surface)] text-[var(--tr-ink)] shadow-sm'
               : 'text-[var(--tr-ink-2)]'
@@ -223,7 +223,7 @@ export default function SettingsTab({
   // U6.3 — grouped-list settings (iOS grammar): flat groups with hairline
   // dividers on the room surface, 44px rows, one accent (amber = action).
   return (
-    <div className="space-y-4 pb-4" data-testid="settings-tab">
+    <div className="tr-stagger space-y-4 pb-4" data-testid="settings-tab">
       {/* A5 — the always-reachable copy of the first-entry manual. */}
       {manualKind ? <AppManual variant="inline" kind={manualKind} locale={locale} /> : null}
       {/* One "Language" card with two clearly-labelled sub-controls so the app
@@ -245,7 +245,7 @@ export default function SettingsTab({
                 type="button"
                 onClick={() => onLocaleChange(code)}
                 aria-pressed={locale === code}
-                className={`tr-card-text min-h-[44px] rounded-xl px-2 transition ${
+                className={`tr-card-text tr-press min-h-[44px] rounded-xl px-2 transition-colors duration-[var(--tr-dur-fast)] ${
                   locale === code
                     ? 'bg-[var(--tr-accent)] font-semibold text-[var(--tr-bubble-me-ink)]'
                     : 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]'

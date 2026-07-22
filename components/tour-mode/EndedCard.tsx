@@ -9,6 +9,7 @@
 
 import { useState } from 'react';
 import { IconEnded, IconMail } from '@/components/tour-mode/icons';
+import { useConfirmSheet } from '@/components/tour-mode/ConfirmSheet';
 import { inPostTourWindow } from '@/lib/tour-room/time';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
@@ -77,6 +78,10 @@ export default function EndedCard({
 }) {
   const copy = COPY[locale];
   const [state, setState] = useState<'idle' | 'busy' | 'sent'>('idle');
+  // M1 — in-app prompt (native dialogs banned on tour surfaces, M-D6).
+  const SEND: Record<RoomLocale, string> = { en: 'Send', ko: '보내기', ja: '送信', es: 'Enviar', zh: '发送' };
+  const CANCEL: Record<RoomLocale, string> = { en: 'Cancel', ko: '취소', ja: 'キャンセル', es: 'Cancelar', zh: '取消' };
+  const { prompt, sheet } = useConfirmSheet({ confirm: SEND[locale], cancel: CANCEL[locale] });
   const subject = encodeURIComponent(
     `Lost item — ${bookingReference ? `booking ${bookingReference}` : 'tour room'}`,
   );
@@ -86,7 +91,7 @@ export default function EndedCard({
     if (!bookingId || !roomSession) return;
     // B2 — what & where ("black wallet, seat 12"): translated server-side so
     // the Korean crew searches for the right thing. Cancel = abort, empty = generic.
-    const note = window.prompt(copy.lostPrompt);
+    const note = await prompt({ message: copy.lostPrompt, allowEmpty: true });
     if (note === null) return;
     setState('busy');
     try {
@@ -134,6 +139,7 @@ export default function EndedCard({
           </a>
         )}
       </div>
+      {sheet}
     </div>
   );
 }

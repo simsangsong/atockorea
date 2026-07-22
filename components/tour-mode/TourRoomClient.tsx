@@ -808,7 +808,7 @@ function TourRoomLive({
         />
       }
       chat={(chatApi) => (
-        <div className="flex min-h-0 flex-1 flex-col px-3 pt-2">
+        <div className="tr-anim-panel-in flex min-h-0 flex-1 flex-col px-3 pt-2">
           {viewerRole === 'guide' && !readOnly && (
             <GuideCaptionBar bookingId={bookingId} roomSession={data.session} locale={locale} />
           )}

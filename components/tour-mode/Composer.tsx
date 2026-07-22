@@ -435,7 +435,7 @@ export default function Composer({
             key={preset.key}
             type="button"
             onClick={() => tapPreset(preset)}
-            className="tr-label shrink-0 rounded-full border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3.5 py-2 text-[var(--tr-ink-2)] transition-transform active:scale-95"
+            className="tr-label tr-press shrink-0 rounded-full border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3.5 py-2 text-[var(--tr-ink-2)]"
           >
             {preset.emoji} {preset.text[locale]}
           </button>
@@ -719,7 +719,7 @@ export default function Composer({
               <button
                 type="submit"
                 aria-label="send"
-                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)] transition-transform active:scale-95"
+                className="tr-btn-raised flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]"
               >
                 <IconSend size={20} strokeWidth={2.5} />
               </button>

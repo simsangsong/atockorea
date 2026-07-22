@@ -48,7 +48,7 @@ export default function ArrivalVideoCard({
           playsInline
           preload="metadata"
           onError={() => setBroken(true)}
-          className="aspect-[9/16] max-h-[420px] w-full bg-black object-contain"
+          className="tr-anim-panel-in aspect-[9/16] max-h-[420px] w-full bg-black object-contain"
           data-testid="arrival-video-player"
         />
       ) : (

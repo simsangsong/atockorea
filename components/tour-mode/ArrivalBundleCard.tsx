@@ -51,7 +51,7 @@ export default function ArrivalBundleCard({
   const hasContent = Boolean(meta.content && Object.keys(meta.content).length > 0);
 
   return (
-    <div className="flex flex-col gap-2" data-testid="arrival-bundle-card">
+    <div className="tr-stagger flex flex-col gap-2" data-testid="arrival-bundle-card">
       {/* content-less stop: the arrived line still leads the card */}
       {!hasContent ? (
         <p className="px-1 text-sm font-semibold text-[var(--tr-ink)]">{arrivedLine}</p>
