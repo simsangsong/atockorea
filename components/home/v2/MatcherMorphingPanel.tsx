@@ -27,7 +27,7 @@ import {
   hrefStaticTourProductDetail,
 } from "@/components/product-tour-static/catalog/staticTourCatalogCards";
 import { useI18n, useTranslations } from "@/lib/i18n";
-import { toTourProductPageLocale } from "@/lib/tour-product/resolveTourProductDbLocale";
+import { toTourProductPageLocale } from "@/lib/tour-product/tourProductPageLocale";
 import {
   getCardImageFromAdminMedia,
   useTourProductCardMedia,

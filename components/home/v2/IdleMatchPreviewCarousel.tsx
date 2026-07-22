@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useReducedMotion } from "framer-motion";
 import { useI18n, useTranslations } from "@/lib/i18n";
-import { toTourProductPageLocale } from "@/lib/tour-product/resolveTourProductDbLocale";
+import { toTourProductPageLocale } from "@/lib/tour-product/tourProductPageLocale";
 import {
   hrefStaticTourProductDetail,
   useStaticTourProductsLazy,

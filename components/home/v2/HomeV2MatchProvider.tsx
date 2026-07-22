@@ -16,7 +16,7 @@ import { useTourProductCardMedia } from "@/hooks/useTourProductCardMedia";
 import { DEFAULT_HOMEPAGE_PRODUCT_CARD_IMAGES } from "@/lib/homepage-product-card-images.shared";
 import { clearHomepageMatchTimeouts } from "@/lib/home/services/hero-match-schedule";
 import { useI18n } from "@/lib/i18n";
-import { toTourProductPageLocale } from "@/lib/tour-product/resolveTourProductDbLocale";
+import { toTourProductPageLocale } from "@/lib/tour-product/tourProductPageLocale";
 import type { TourMatchApiResponse } from "@/lib/tour-match-v2/api-types";
 
 export type HomeV2MatchPhase = "idle" | "loading" | "result";

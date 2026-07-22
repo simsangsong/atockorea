@@ -7,7 +7,7 @@ import { V0ShadcnButton } from "@/components/home/v2/ui/v0-shadcn-button";
 import { Check, ChevronRight, Clock, Sparkles, Star, Users } from "lucide-react";
 import Image from "next/image";
 import { useI18n, useTranslations } from "@/lib/i18n";
-import { toTourProductPageLocale } from "@/lib/tour-product/resolveTourProductDbLocale";
+import { toTourProductPageLocale } from "@/lib/tour-product/tourProductPageLocale";
 import { cn } from "@/lib/utils";
 import { analytics, type HomeCtaSource } from "@/src/design/analytics";
 import { getStaticTourProductBySlug } from "@/components/product-tour-static/catalog/staticTourCatalogCards";

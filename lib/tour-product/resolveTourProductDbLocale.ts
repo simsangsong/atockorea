@@ -1,9 +1,10 @@
 import { cookies } from "next/headers";
+import { TOUR_PRODUCT_PAGE_LOCALES, type TourProductPageLocale } from "./tourProductPageLocale";
 
-/** `tour_product_pages.locale` — middleware `NEXT_LOCALE`와 맞춤 (zh-CN → zh). */
-export type TourProductPageLocale = "en" | "ko" | "zh" | "zh-TW" | "es" | "ja";
+export type { TourProductPageLocale };
+export { toTourProductPageLocale } from "./tourProductPageLocale";
 
-const ALLOWED = new Set<TourProductPageLocale>(["en", "ko", "zh", "zh-TW", "es", "ja"]);
+const ALLOWED = TOUR_PRODUCT_PAGE_LOCALES;
 
 function normalize(raw: string | undefined | null): TourProductPageLocale | null {
   if (!raw) return null;
@@ -11,15 +12,6 @@ function normalize(raw: string | undefined | null): TourProductPageLocale | null
   if (trimmed === "zh-CN") return "zh";
   if (ALLOWED.has(trimmed as TourProductPageLocale)) return trimmed as TourProductPageLocale;
   return null;
-}
-
-/**
- * Narrows any site UI `Locale` (10 locales) down to a `TourProductPageLocale`
- * (6 locales — tour catalog/content translation hasn't reached fr/de/it/ru
- * yet). Falls back to `en` for locales without translated tour content.
- */
-export function toTourProductPageLocale(locale: string): TourProductPageLocale {
-  return ALLOWED.has(locale as TourProductPageLocale) ? (locale as TourProductPageLocale) : "en";
 }
 
 /**
