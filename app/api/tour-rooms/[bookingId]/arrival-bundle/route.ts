@@ -11,6 +11,7 @@ import { broadcastToRoom } from '@/lib/tour-room/realtime';
 import { normalizeRoomLocale, ROOM_LOCALES } from '@/lib/tour-room/snapshot';
 import { resolveSpotContent } from '@/lib/tour-room/spotContent';
 import { fetchArrivalFacilityPins } from '@/lib/tour-room/facilityPins.server';
+import { fetchArrivalVideoCard } from '@/lib/tour-room/poiVideos.server';
 import {
   arrivalProfileFromRow,
   composeArrivalBundleText,
@@ -335,6 +336,8 @@ export async function POST(
     }
 
     const facilityPins = await fetchArrivalFacilityPins(supabase, spot.poi_key);
+    // W3/J4 — approved POI video renders ride the bundle (best-effort).
+    const videoCard = await fetchArrivalVideoCard(supabase, spot.poi_key);
     const refs = refCandidatesFor({ poi_key: spot.poi_key, title: spot.title });
 
     // A2 — next-stop ETA tail (measured travel-matrix minutes over the
@@ -493,6 +496,7 @@ export async function POST(
           ...(hasPin ? { parking_lat: lat, parking_lng: lng, pin_id: pinId } : {}),
           ...(content.content ? { content: content.content, content_tier: content.tier } : {}),
           ...(facilityPins.length ? { facility_pins: facilityPins } : {}),
+          ...(videoCard ? { video_card: videoCard } : {}),
           ...(nextLeg ? { next_leg: nextLeg } : {}),
           ...(eventStatus && profile.event_label
             ? {

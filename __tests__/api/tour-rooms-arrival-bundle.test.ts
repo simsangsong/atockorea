@@ -56,6 +56,8 @@ interface FakeDbOpts {
   dayPlanStops?: Array<Record<string, unknown>>;
   poiCoords?: Record<string, { lat: number; lng: number }>;
   matrixMinutes?: number | null;
+  /** W3/J4 — approved poi_videos rows the video-card fetch should see. */
+  videoRows?: Array<Record<string, unknown>>;
 }
 
 function fakeDb(priceType: string, profileRow: Record<string, unknown> | null = null, opts: FakeDbOpts = {}) {
@@ -88,7 +90,12 @@ function fakeDb(priceType: string, profileRow: Record<string, unknown> | null = 
       chain.single = jest.fn(single);
       chain.maybeSingle = jest.fn(single);
       chain.then = (res: (v: unknown) => unknown, rej?: (e: unknown) => unknown) =>
-        (table === 'bookings' ? Promise.resolve({ data: DAY_BOOKINGS, error: null }) : single()).then(res, rej);
+        (table === 'bookings'
+          ? Promise.resolve({ data: DAY_BOOKINGS, error: null })
+          : table === 'poi_videos'
+            ? Promise.resolve({ data: opts.videoRows ?? [], error: null })
+            : single()
+        ).then(res, rej);
       chain.upsert = jest.fn((values: Record<string, unknown>) => {
         (upserts[table] ??= []).push(values);
         return {
@@ -314,6 +321,35 @@ describe('POST /arrival-bundle × A4 event status', () => {
     expect(db.upserts.poi_day_events).toBeUndefined();
     const meta = db.inserts.tour_room_messages[0].metadata as Record<string, unknown>;
     expect(meta.event_status).toBeUndefined();
+  });
+});
+
+describe('POST /arrival-bundle × W3/J4 video card', () => {
+  it('approved renders ride the bundle metadata keyed by room locale', async () => {
+    const db = fakeDb('vehicle', null, {
+      videoRows: [
+        { language: 'en', version: 1, video_url: 'https://cdn/en.mp4', poster_url: 'https://cdn/p.png', duration_seconds: 64 },
+        { language: 'zh-Hant', version: 1, video_url: 'https://cdn/zh.mp4', poster_url: null, duration_seconds: 64 },
+      ],
+    });
+    createServerClientMock.mockReturnValue(db);
+    const res = await bundlePOST(fakeReq(driverSession(), { poiKey: 'seongsan', meetingTime: null }), params());
+    expect(res.status).toBe(201);
+    const meta = db.inserts.tour_room_messages[0].metadata as Record<string, unknown>;
+    expect(meta.video_card).toEqual({
+      poster_url: 'https://cdn/p.png',
+      duration_seconds: 64,
+      urls: { en: 'https://cdn/en.mp4', zh: 'https://cdn/zh.mp4' },
+    });
+  });
+
+  it('no approved renders → no video_card key at all (honest absence)', async () => {
+    const db = fakeDb('vehicle');
+    createServerClientMock.mockReturnValue(db);
+    const res = await bundlePOST(fakeReq(driverSession(), { poiKey: 'seongsan', meetingTime: null }), params());
+    expect(res.status).toBe(201);
+    const meta = db.inserts.tour_room_messages[0].metadata as Record<string, unknown>;
+    expect(meta.video_card).toBeUndefined();
   });
 });
 

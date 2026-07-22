@@ -50,6 +50,7 @@
     "rag:pressure": "node --env-file=.env.local --import tsx scripts/chatbot-pressure-test.ts",
     "video:generate": "node --env-file=.env.local --import tsx scripts/generate-poi-video.ts",
     "video:produce": "node --env-file=.env.local --import tsx scripts/produce-poi-video.ts",
+    "video:upload": "node --env-file=.env.local --import tsx scripts/upload-poi-video.ts",
     "chatbot:golden": "node --env-file=.env.local scripts/chatbot-golden-test.mjs",
     "facility:collect": "node --env-file=.env.local scripts/collect-facility-pins.mjs",
     "facility:collect:dry": "node --env-file=.env.local scripts/collect-facility-pins.mjs --dry",

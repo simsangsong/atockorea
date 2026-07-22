@@ -54,7 +54,7 @@
 - **W1 (이번 세션):** §C 워크플로우 구현 + 테스트 + 파일럿 렌더 검증(자갈치 또는 경복궁, 4언어).
 - **W1.5:** HyperFrames 오버레이 비교 렌더 1건 → 사용자 스타일 픽 (VP-D2).
 - **W2 (사용자 실영상 수신 후):** ingest에 clip 소스 추가 — probe→씬 감지→프레임 추출→AI 직접 검수→EDL(컷 선정 JSON)→트리밍·색보정→W1 스테이지 4~7 그대로 재사용. 폴더 규약: `assets/video-sources/<poi_key>/*.mp4`.
-- **W3 (앱 통합):** 렌더 산출물 Supabase Storage(`tour-videos`) 업로드 → 도착 이벤트 `metadata.video_card` 부착 → ChatFeed 비디오 카드(포스터+탭 재생) → 어드민 검수 게이트(facility-pins #405 검수큐 패턴 재사용).
+- **W3 (앱 통합):** ✅ 완료(2026-07-22, = 조인투어 트랙 J4 서빙 게이트 해소) — 상세는 §G 로그.
 - **W4 (푸시+홍보):** 웹푸시(기존 `guestPush.ts`/`push_subscriptions` 재사용) + `MetaPublisher` 어댑터(dry-run→실업로드, 토큰=사람 게이트).
 - **W5 (스케일):** 전 POI 배치 크론 + `video_projects` 등 DB 테이블 + 어드민 승인 UI.
 
@@ -77,3 +77,9 @@ npm run video:produce -- --poi=jagalchi_market --tts=openai
 ```
 
 검증 체크리스트: jest 스위트 green / tsc 0 / `qc-production.json` passed·warning 사유 확인 / 렌더 MP4에서 프레임 추출해 시각 검수(자막 안전영역·폰트·Ken Burns 방향).
+
+## §G 착수 로그
+
+- **2026-07-21 W1 완료** (PR #435): 7-스테이지 `video:produce` — 실 Ken Burns 렌더 + TTS 캐시 + 청킹 자막 + QC 실측, 자갈치 4언어 검증.
+- **2026-07-22 W1 후속** (별도 세션, 브랜치 `claude/video-narration-overlap-fix`): 씬 14s 캡이 내레이션을 다음 씬으로 흘리던 문제 — 캡 제거(타임라인은 오디오를 절대 자르지 않는 불변식) + `trimForSpeech()` 대본 단계 스피치 버짓(라틴 ~160자/CJK ~70자, 문장·절 경계 컷) + `narration_fit` QC 체크.
+- **2026-07-22 W3 완료** (조인투어 J4와 동일 슬라이스): ① `poi_videos` 테이블 라이브(poi_key×언어×버전 UNIQUE, status pending_review→approved/rejected, RLS 서비스롤 전용) ② `npm run video:upload` — QC failed 업로드 거부·warning은 `--allow-warnings` 명시 필요(무음 내레이션·미검수 라이선스는 사람이 결정, VP-D6/D10), 퍼블릭 `tour-videos` 버킷에 MP4+포스터, 행은 **pending_review로만** 등록 ③ 서빙: `fetchArrivalVideoCard()`(승인분만·언어별 최신 버전·fail-open) → arrival-bundle·manual-arrival 메타데이터 `video_card`(룸 로케일 키, zh-Hant→zh) ④ `ArrivalVideoCard` 포스터-퍼스트 탭 재생(iOS playsInline, ko 뷰어는 en 폴백 — 자막 번인이라 시청 가능) — ArrivalBundleCard+ChatFeed spot_arrival 배선 ⑤ `/admin/poi-videos` 검수큐(인라인 재생·QC 배지·승인/거절·승인 시 구버전 자동 폐기 = 언어당 승인 1건 불변식). 테스트: 신규 33 + 투어룸/api/컴포넌트 901 green(실패 2건은 main 사전존재 tours.test.ts), tsc 0. **오프라인 볼트(J3) 동영상 편입은 §D 결정 1(캐시 범위) 대기로 의도적 보류.**
