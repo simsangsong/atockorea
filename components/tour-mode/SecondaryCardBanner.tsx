@@ -8,7 +8,7 @@
  */
 
 import { useEffect, useState } from 'react';
-import { activeNotice } from '@/lib/tour-room/notices';
+import { activeNotice, noticeBannerMode } from '@/lib/tour-room/notices';
 import { secondaryCard } from '@/lib/tour-room/activeCard';
 import { formatKrw } from '@/lib/tour-room/ledger';
 import type { RoomMessage } from '@/hooks/useTourRoomChannel';
@@ -77,7 +77,9 @@ export default function SecondaryCardBanner({
   }, []);
 
   // The rally/free-time notice owns the top slot — one card at a time (P-D8).
-  if (activeNotice(messages, tourDate, nowMs)) return null;
+  // Suppress only while the notice banner actually RENDERS: before T-10 the
+  // notice is hidden (2026-07-22 ladder), so the slot is free for this card.
+  if (noticeBannerMode(activeNotice(messages, tourDate, nowMs)) !== 'hidden') return null;
   const card = secondaryCard(messages, nowMs);
   if (!card) return null;
   const copy = COPY[locale];
