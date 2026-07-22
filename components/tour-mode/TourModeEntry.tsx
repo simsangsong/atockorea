@@ -132,7 +132,7 @@ export default function TourModeEntry() {
                   <button
                     type="button"
                     onClick={() => router.push(`/tour-mode/room/${encodeURIComponent(booking.id)}`)}
-                    className="tr-card flex w-full items-center gap-3 p-3 text-left transition-transform active:scale-[0.99]"
+                    className="tr-card flex w-full items-center gap-3 p-3 text-left tr-press"
                   >
                     {booking.tours?.image_url ? (
                       // eslint-disable-next-line @next/next/no-img-element

@@ -169,7 +169,7 @@ export default function ConciergePanel({
             key={chip.intent}
             type="button"
             onClick={() => askChip(chip.intent, chip.label[locale])}
-            className="tr-label flex min-h-[40px] items-center rounded-full bg-[var(--tr-accent-soft)] px-4 font-medium text-[var(--tr-accent-deep)] transition-transform active:scale-95"
+            className="tr-label flex min-h-[40px] items-center rounded-full bg-[var(--tr-accent-soft)] px-4 font-medium text-[var(--tr-accent-deep)] tr-press"
             data-testid={`concierge-chip-${chip.intent}`}
           >
             {chip.label[locale]}
@@ -237,7 +237,7 @@ export default function ConciergePanel({
           onClick={submit}
           disabled={busy || !input.trim()}
           aria-label={copy.send}
-          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)] transition-transform active:scale-95 disabled:opacity-40"
+          className="flex h-11 w-11 shrink-0 items-center justify-center tr-btn-raised rounded-full bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
           data-testid="concierge-send"
         >
           <IconConciergeSend size={19} strokeWidth={2.25} />
