@@ -124,7 +124,7 @@ export default function PickupBoard({
             key={preset.key}
             type="button"
             onClick={() => onSendPreset(preset)}
-            className="tr-label min-h-[44px] flex-1 rounded-xl bg-[var(--tr-surface-2)] px-2 font-medium text-[var(--tr-ink)] transition-transform active:scale-[0.98]"
+            className="tr-label min-h-[44px] flex-1 rounded-xl bg-[var(--tr-surface-2)] px-2 font-medium text-[var(--tr-ink)] tr-press"
           >
             {preset.emoji} {preset.text[locale]}
           </button>
@@ -141,7 +141,7 @@ export default function PickupBoard({
             <button
               type="button"
               onClick={onOnboardAck}
-              className="tr-label min-h-[44px] flex-1 rounded-xl bg-[var(--tr-safe-soft)] px-2 font-semibold text-[var(--tr-safe)] transition-transform active:scale-[0.98]"
+              className="tr-label min-h-[44px] flex-1 rounded-xl bg-[var(--tr-safe-soft)] px-2 font-semibold text-[var(--tr-safe)] tr-press"
               data-testid="onboard-ack"
             >
               {ONBOARD_COPY[locale].button}

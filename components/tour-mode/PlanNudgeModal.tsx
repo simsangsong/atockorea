@@ -200,7 +200,7 @@ export default function PlanNudgeModal({
             <button
               type="button"
               onClick={openPlanner}
-              className="tr-body mt-5 flex min-h-[50px] w-full items-center justify-center gap-2 rounded-2xl bg-[var(--tr-accent)] px-4 font-bold text-[var(--tr-bubble-me-ink)] active:scale-[0.99]"
+              className="tr-body mt-5 flex min-h-[50px] w-full items-center justify-center gap-2 rounded-2xl bg-[var(--tr-accent)] tr-btn-raised px-4 font-bold text-[var(--tr-bubble-me-ink)]"
             >
               <IconPlanEdit size={17} aria-hidden />
               {copy.cta}

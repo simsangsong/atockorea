@@ -93,7 +93,7 @@ export default function LocationShareCard({
           data-testid="location-toggle"
         >
           <span
-            className={`absolute top-1 h-6 w-6 rounded-full bg-white shadow transition-all ${
+            className={`tr-knob absolute top-1 h-6 w-6 rounded-full bg-white shadow ${
               enabled ? 'left-[24px]' : 'left-1'
             }`}
           />

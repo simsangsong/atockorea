@@ -30,7 +30,7 @@ export default function ConciergeEntryRow({
     <button
       type="button"
       onClick={onOpen}
-      className="mb-2 flex w-full items-center gap-2.5 rounded-full border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3.5 py-2 text-left transition-transform active:scale-[0.99]"
+      className="mb-2 flex w-full items-center gap-2.5 rounded-full border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3.5 py-2 text-left tr-press"
       data-testid="concierge-entry-row"
     >
       <span

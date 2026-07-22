@@ -352,7 +352,7 @@ export default function HomeTab({
   tiles.push({ key: 'sos', label: copy.tiles.sos, Icon: IconTileSos, tone: 'danger', onPress: api.openEmergency });
 
   const tileClass =
-    'tr-home-card flex min-h-[76px] flex-col items-center justify-center gap-1.5 px-2 py-2.5 text-center transition-transform active:scale-[0.98]';
+    'tr-home-card flex min-h-[76px] flex-col items-center justify-center gap-1.5 px-2 py-2.5 text-center tr-press';
 
   // H2.1 — "tech" squircle chips (gradient + gloss, .tr-chip in the theme CSS).
   const iconWrapClass = (tone?: 'accent' | 'danger') =>
