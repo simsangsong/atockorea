@@ -456,7 +456,7 @@ export default function HomeTab({
       </button>
 
       {/* ---- Feature grid ------------------------------------------- */}
-      <div className="grid grid-cols-3 gap-1.5" data-testid="home-grid">
+      <div className="tr-stagger grid grid-cols-3 gap-1.5" data-testid="home-grid">
         {tiles.map((tile) =>
           tile.href ? (
             <Link key={tile.key} href={tile.href} data-testid={`home-tile-${tile.key}`} className={tileClass}>

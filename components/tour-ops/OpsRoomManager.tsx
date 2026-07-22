@@ -21,6 +21,7 @@ import { toast } from 'sonner';
 import { Copy, Loader2, Mail, Moon, Plus, QrCode, RefreshCw, Sun, X } from 'lucide-react';
 import { getOpsToken } from '@/components/tour-ops/opsShared';
 import { useOpsTheme } from '@/components/tour-ops/opsTheme';
+import { useConfirmSheet } from '@/components/tour-mode/ConfirmSheet';
 
 interface ManagedBooking {
   id: string;
@@ -141,6 +142,8 @@ export default function OpsRoomManager({
   const [links, setLinks] = useState<Record<string, MintedLink>>({}); // `${bookingId}:${role}`
   const [qrOpen, setQrOpen] = useState<{ title: string; link: MintedLink; role: LinkRole } | null>(null);
   const [createOpen, setCreateOpen] = useState(false);
+  // M1 — in-app confirm (window.confirm is banned on tour surfaces, M-D6).
+  const { confirm: confirmSheet, sheet: confirmSheetEl } = useConfirmSheet({ confirm: '발송', cancel: '취소' });
 
   const T = palette();
 
@@ -192,7 +195,11 @@ export default function OpsRoomManager({
   const dispatchInvites = useCallback(
     async (booking: ManagedBooking) => {
       const target = booking.contact_email ?? '이메일 없음';
-      if (!window.confirm(`초대 메일을 발송할까요?\n손님: ${target}\n(기존 발송 링크는 회수되고 새 링크로 교체됩니다)`)) return;
+      const ok = await confirmSheet({
+        title: '초대 메일 발송',
+        message: `초대 메일을 발송할까요?\n손님: ${target}\n(기존 발송 링크는 회수되고 새 링크로 교체됩니다)`,
+      });
+      if (!ok) return;
       const key = `${booking.id}:dispatch`;
       setBusy(key);
       try {
@@ -214,7 +221,7 @@ export default function OpsRoomManager({
         setBusy(null);
       }
     },
-    [load, onRoomsChanged],
+    [load, onRoomsChanged, confirmSheet],
   );
 
   const setRoomStatus = useCallback(
@@ -548,6 +555,7 @@ export default function OpsRoomManager({
           }}
         />
       )}
+      {confirmSheetEl}
     </div>
   );
 }

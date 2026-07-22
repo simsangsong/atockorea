@@ -23,11 +23,13 @@
  */
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 import { useTourRoomChannel, type RoomMessage } from '@/hooks/useTourRoomChannel';
 import { startVoiceRecording } from '@/lib/tour-room/recorder';
 import { isDeviceSttSupported, startDeviceStt } from '@/lib/tour-room/deviceStt';
 import { primeAudio } from '@/lib/tour-room/tts';
 import MicPrime from '@/components/tour-mode/MicPrime';
+import { useConfirmSheet } from '@/components/tour-mode/ConfirmSheet';
 import OperatorAssist from '@/components/tour-mode/guide/OperatorAssist';
 import LocationPreview from '@/components/tour-mode/LocationPreview';
 import Lightbox from '@/components/tour-mode/Lightbox';
@@ -350,6 +352,10 @@ export default function Cockpit({
     window.setTimeout(() => setToast(null), 2500);
   }, []);
 
+  // M1 — in-app confirmation sheet (window.confirm is banned: iOS WebView
+  // silently returns true for it, which could fire departures unconfirmed).
+  const { confirm: confirmSheet, sheet: confirmSheetEl } = useConfirmSheet({ confirm: '확인', cancel: '취소' });
+
   // ── incoming guest messages → Korean TTS autoplay ─────────────────────
   const playNext = useCallback(() => {
     if (playingRef.current) return;
@@ -638,7 +644,7 @@ export default function Cockpit({
   // A1 — morning briefing: the day's opening speech, one confirmed tap. The
   // server picks join vs private from the tour's price model.
   const sendMorningBriefing = useCallback(async () => {
-    if (!window.confirm('아침 브리핑을 손님 전원에게 보낼까요?')) return;
+    if (!(await confirmSheet({ title: '아침 브리핑', message: '아침 브리핑을 손님 전원에게 보낼까요?', confirmLabel: '보내기' }))) return;
     try {
       const res = await fetch(`/api/tour-rooms/${bookingId}/morning-briefing`, {
         method: 'POST',
@@ -655,7 +661,7 @@ export default function Cockpit({
     } catch {
       say('네트워크 오류');
     }
-  }, [bookingId, session, say]);
+  }, [bookingId, session, say, confirmSheet]);
 
   // ── A0 arrival bundle: open sheet → (auto pin + sticky prefill) → send ──
   const captureArrCoords = useCallback(() => {
@@ -1114,7 +1120,7 @@ export default function Cockpit({
 
       {toast ? (
         <div className="pointer-events-none absolute inset-x-0 top-16 z-20 flex justify-center">
-          <span className="rounded-full bg-black/80 px-5 py-2 text-lg font-bold text-[var(--tr-ink)]">{toast}</span>
+          <span className="tr-anim-panel-in rounded-full bg-black/80 px-5 py-2 text-lg font-bold text-[var(--tr-ink)]">{toast}</span>
         </div>
       ) : null}
 
@@ -1172,7 +1178,7 @@ export default function Cockpit({
               <button
                 type="submit"
                 disabled={!textDraft.trim() || textSending}
-                className="shrink-0 rounded-2xl bg-[var(--tr-bubble-me)] px-5 py-2.5 text-base font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
+                className="tr-btn-raised shrink-0 rounded-2xl bg-[var(--tr-bubble-me)] px-5 py-2.5 text-base font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
                 data-testid="driver-text-send"
               >
                 {textSending ? '…' : '보내기'}
@@ -1184,7 +1190,7 @@ export default function Cockpit({
             <button
               type="button"
               onClick={startRecording}
-              className="w-full rounded-3xl bg-[var(--tr-bubble-me)] py-4 text-2xl font-bold text-[var(--tr-bubble-me-ink)] transition-transform active:scale-[0.99]"
+              className="tr-btn-raised w-full rounded-3xl bg-[var(--tr-bubble-me)] py-4 text-2xl font-bold text-[var(--tr-bubble-me-ink)]"
               data-testid="driver-mic"
             >
               🎤 눌러서 말하기
@@ -1249,7 +1255,7 @@ export default function Cockpit({
               <button
                 type="button"
                 onClick={() => pending && void sendVoice(pending)}
-                className="rounded-3xl bg-[var(--tr-bubble-me)] py-4 text-xl font-bold text-[var(--tr-bubble-me-ink)] transition-transform active:scale-[0.99]"
+                className="tr-btn-raised rounded-3xl bg-[var(--tr-bubble-me)] py-4 text-xl font-bold text-[var(--tr-bubble-me-ink)]"
                 data-testid="cockpit-confirm-send"
               >
                 보내기
@@ -1289,9 +1295,14 @@ export default function Cockpit({
           label="차량문제"
           Icon={TriangleAlert}
           onClick={() => {
-            if (window.confirm('차량 문제를 손님과 운영팀에 알릴까요?')) {
-              void signal({ type: 'vehicle_issue' }, '운영팀에 알렸어요 ✓');
-            }
+            void confirmSheet({
+              title: '차량 문제',
+              message: '차량 문제를 손님과 운영팀에 알릴까요?',
+              confirmLabel: '알리기',
+              danger: true,
+            }).then((ok) => {
+              if (ok) void signal({ type: 'vehicle_issue' }, '운영팀에 알렸어요 ✓');
+            });
           }}
         />
         <ActionButton label="AI 도우미" Icon={Sparkles} onClick={() => setSheet('assist')} />
@@ -1303,9 +1314,18 @@ export default function Cockpit({
           onClick={() => {
             // J2 — the pre-departure headcount confirmation, one confirmed tap.
             const guests = room.number_of_guests != null ? `${room.number_of_guests}명` : '전원';
-            if (window.confirm(`손님 ${guests} 탑승을 확인했나요? 확인을 누르면 출발 안내가 나갑니다.`)) {
-              void signal({ type: 'departing' }, '인원 확인·출발 안내 완료 ✓');
-            }
+            void confirmSheet({
+              title: '출발 전 인원 확인',
+              message: (
+                <>
+                  <span className="mb-1 block text-4xl font-bold tabular-nums">{guests}</span>
+                  손님 {guests} 탑승을 확인했나요? 확인을 누르면 출발 안내가 나갑니다.
+                </>
+              ),
+              confirmLabel: '출발 안내 보내기',
+            }).then((ok) => {
+              if (ok) void signal({ type: 'departing' }, '인원 확인·출발 안내 완료 ✓');
+            });
           }}
         />
       </div>
@@ -1318,7 +1338,7 @@ export default function Cockpit({
             setSheet('expense');
             void loadExtras();
           }}
-          className="flex items-center justify-center gap-2 rounded-2xl bg-[var(--tr-surface-2)] py-2.5 text-base font-bold text-[var(--tr-ink)] transition-transform active:scale-[0.99]"
+          className="tr-btn-flat flex items-center justify-center gap-2 rounded-2xl py-2.5 text-base font-bold text-[var(--tr-ink)]"
           data-testid="driver-action-expense"
         >
           <Wallet size={17} strokeWidth={2} aria-hidden />
@@ -1327,7 +1347,7 @@ export default function Cockpit({
         <button
           type="button"
           onClick={openOvertime}
-          className="flex items-center justify-center gap-2 rounded-2xl bg-[var(--tr-surface-2)] py-2.5 text-base font-bold text-[var(--tr-ink)] transition-transform active:scale-[0.99]"
+          className="tr-btn-flat flex items-center justify-center gap-2 rounded-2xl py-2.5 text-base font-bold text-[var(--tr-ink)]"
           data-testid="driver-action-overtime"
         >
           <Timer size={17} strokeWidth={2} aria-hidden />
@@ -1336,7 +1356,7 @@ export default function Cockpit({
         <button
           type="button"
           onClick={() => void openDaySummary()}
-          className="flex items-center justify-center gap-2 rounded-2xl bg-[var(--tr-surface-2)] py-2.5 text-base font-bold text-[var(--tr-ink)] transition-transform active:scale-[0.99]"
+          className="tr-btn-flat flex items-center justify-center gap-2 rounded-2xl py-2.5 text-base font-bold text-[var(--tr-ink)]"
           data-testid="driver-action-summary"
         >
           <FileText size={17} strokeWidth={2} aria-hidden />
@@ -1505,7 +1525,7 @@ export default function Cockpit({
 
       {sheet === 'arrival' && arrItem ? (
         <Sheet onClose={() => setSheet('none')} title={`${itemTitle(arrItem)} 도착 안내`}>
-          <div className="flex max-h-[62vh] flex-col gap-3 overflow-y-auto">
+          <div className="tr-stagger flex max-h-[62vh] flex-col gap-3 overflow-y-auto">
             {/* B4 — operator prep: hours/closed/tips at a glance before sending */}
             {arrBriefing && arrBriefing.length > 0 ? (
               <div className="rounded-2xl bg-[var(--tr-surface-2)] px-4 py-3" data-testid="arrival-briefing">
@@ -1677,7 +1697,7 @@ export default function Cockpit({
               type="button"
               onClick={() => void sendArrivalBundle()}
               disabled={arrBusy || (!arrNoMeeting && !/^\d{2}:\d{2}$/.test(arrTime))}
-              className="w-full rounded-2xl bg-[var(--tr-bubble-me)] py-4 text-lg font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
+              className="tr-btn-raised w-full rounded-2xl bg-[var(--tr-bubble-me)] py-4 text-lg font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
               data-testid="arrival-send"
             >
               {arrBusy ? '전송 중…' : '전원 발송'}
@@ -1773,7 +1793,7 @@ export default function Cockpit({
               type="button"
               disabled={expBusy || !expItem.trim() || !expAmount.trim()}
               onClick={() => void logExpense()}
-              className="rounded-2xl bg-[var(--tr-bubble-me)] py-4 text-xl font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
+              className="tr-btn-raised rounded-2xl bg-[var(--tr-bubble-me)] py-4 text-xl font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
               data-testid="driver-expense-log"
             >
               {expBusy ? '기록 중…' : '기록'}
@@ -1866,7 +1886,7 @@ export default function Cockpit({
               type="button"
               disabled={expBusy || otHours <= 0}
               onClick={() => void logOvertime()}
-              className="rounded-2xl bg-[var(--tr-bubble-me)] py-4 text-xl font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
+              className="tr-btn-raised rounded-2xl bg-[var(--tr-bubble-me)] py-4 text-xl font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
               data-testid="overtime-log"
             >
               {expBusy ? '기록 중…' : `${formatKrw(otAmount)} 기록`}
@@ -1877,6 +1897,9 @@ export default function Cockpit({
 
       {/* Guest photo → full-screen viewer (an address, menu, or lost item). */}
       <Lightbox url={lightbox?.url ?? null} name={lightbox?.name} onClose={() => setLightbox(null)} />
+
+      {/* M1 — in-app confirmation sheet (replaces window.confirm). */}
+      {confirmSheetEl}
     </Screen>
   );
 }
@@ -1948,7 +1971,7 @@ function ActionButton({ label, Icon, onClick }: { label: string; Icon: LucideIco
     <button
       type="button"
       onClick={onClick}
-      className="flex min-h-[64px] flex-col items-center justify-center gap-1 rounded-2xl bg-[var(--tr-surface-2)] py-2.5 text-[var(--tr-ink)] transition-transform active:scale-[0.97]"
+      className="tr-btn-flat flex min-h-[64px] flex-col items-center justify-center gap-1 rounded-2xl py-2.5 text-[var(--tr-ink)]"
       data-testid={`driver-action-${label}`}
     >
       <Icon size={22} strokeWidth={2} aria-hidden />
@@ -1958,15 +1981,32 @@ function ActionButton({ label, Icon, onClick }: { label: string; Icon: LucideIco
 }
 
 function Sheet({ title, children, onClose }: { title: string; children: React.ReactNode; onClose: () => void }) {
+  // M3 — same spring physics as the room Sheet (M-D3/M-D7): backdrop fade +
+  // slide-up on mount. Enter-only (call sites conditional-mount the sheet).
   return (
-    <div className="absolute inset-0 z-30 flex flex-col justify-end bg-black/60" onClick={onClose}>
-      <div className="rounded-t-3xl bg-[var(--tr-surface)] px-5 pb-8 pt-5" onClick={(event) => event.stopPropagation()}>
+    <div className="absolute inset-0 z-30 flex flex-col justify-end" onClick={onClose}>
+      <motion.div
+        aria-hidden
+        className="absolute inset-0 bg-black/60"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.18 }}
+      />
+      <motion.div
+        className="relative rounded-t-3xl bg-[var(--tr-surface)] px-5 pb-8 pt-5"
+        style={{ boxShadow: 'var(--tr-shadow-overlay)' }}
+        onClick={(event) => event.stopPropagation()}
+        initial={{ y: '100%' }}
+        animate={{ y: 0 }}
+        transition={{ type: 'spring', stiffness: 380, damping: 34 }}
+      >
+        <div className="mx-auto mb-2.5 h-1 w-9 rounded-full bg-[var(--tr-bubble-system)]" aria-hidden />
         <p className="mb-4 text-2xl font-bold text-[var(--tr-ink)]">{title}</p>
         {children}
-        <button type="button" onClick={onClose} className="mt-4 w-full rounded-2xl bg-[var(--tr-surface-2)] py-4 text-xl font-bold text-[var(--tr-ink)]">
+        <button type="button" onClick={onClose} className="tr-btn-flat mt-4 w-full rounded-2xl py-4 text-xl font-bold text-[var(--tr-ink)]">
           닫기
         </button>
-      </div>
+      </motion.div>
     </div>
   );
 }

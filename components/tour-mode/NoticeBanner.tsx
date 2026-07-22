@@ -191,7 +191,7 @@ export default function NoticeBanner({
   return (
     <div
       data-testid="notice-banner"
-      className="mb-2 flex items-center gap-3 rounded-[var(--tr-radius-card)] bg-[var(--tr-surface)] px-4 py-2.5"
+      className="tr-anim-panel-in mb-2 flex items-center gap-3 rounded-[var(--tr-radius-card)] bg-[var(--tr-surface)] px-4 py-2.5"
       style={{ boxShadow: 'var(--tr-shadow-overlay)' }}
     >
       <span
@@ -247,7 +247,7 @@ export default function NoticeBanner({
       {mode === 'countdown' && notice.remainingMs !== null && (
         <span
           data-testid="notice-countdown"
-          className={`shrink-0 rounded-full px-3 py-1.5 text-[16px] font-bold tabular-nums text-white ${
+          className={`tr-anim-panel-in shrink-0 rounded-full px-3 py-1.5 text-[16px] font-bold tabular-nums text-white ${
             urgent ? 'animate-pulse bg-[var(--tr-danger)]' : 'bg-[var(--tr-accent)]'
           }`}
         >

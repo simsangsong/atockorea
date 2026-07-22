@@ -74,6 +74,30 @@ const eslintConfig = defineConfig([
       ],
     },
   },
+  /**
+   * M-D6 (docs/tour-app-highend-motion-master-plan-2026-07-22.md): native
+   * browser dialogs are banned on tour surfaces — iOS WebView silently
+   * returns true for confirm() (see components/admin/ConfirmSheet.tsx), and
+   * they are the opposite of the high-end feel. Use useConfirmSheet().
+   */
+  {
+    files: ["components/tour-mode/**/*.{ts,tsx}", "components/tour-ops/**/*.{ts,tsx}"],
+    rules: {
+      "no-restricted-globals": [
+        "error",
+        { name: "confirm", message: "Use useConfirmSheet() from components/tour-mode/ConfirmSheet (M-D6)." },
+        { name: "alert", message: "Use the toast/say pattern instead (M-D6)." },
+        { name: "prompt", message: "Use useConfirmSheet().prompt (M-D6)." },
+      ],
+      "no-restricted-syntax": [
+        "error",
+        {
+          selector: "MemberExpression[object.name='window'][property.name=/^(confirm|alert|prompt)$/]",
+          message: "Native dialogs are banned on tour surfaces — use useConfirmSheet() (M-D6).",
+        },
+      ],
+    },
+  },
 ]);
 
 export default eslintConfig;

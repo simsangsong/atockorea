@@ -434,7 +434,7 @@ export default function RoomShell({
 
           <div className="mx-auto flex min-h-0 w-full max-w-2xl flex-1 flex-col">
             {tab === 'home' && home && (
-              <div className="min-h-0 flex-1 overflow-y-auto px-3 py-3" data-testid="home-panel">
+              <div className="tr-anim-panel-in min-h-0 flex-1 overflow-y-auto px-3 py-3" data-testid="home-panel">
                 {home({
                   selectTab,
                   openConcierge,
@@ -446,7 +446,7 @@ export default function RoomShell({
             {tab === 'chat' &&
               (typeof chat === 'function' ? chat({ openConcierge: () => setConciergeOpen(true) }) : chat)}
             {tab === 'map' && (
-              <div className="flex min-h-0 flex-1 flex-col px-3 py-2">
+              <div className="tr-anim-panel-in flex min-h-0 flex-1 flex-col px-3 py-2">
                 {map ?? (
                   <div className="tr-card-text flex flex-1 items-center justify-center gap-2 text-[var(--tr-ink-3)]">
                     <IconTabMap size={16} aria-hidden />
@@ -456,7 +456,7 @@ export default function RoomShell({
               </div>
             )}
             {tab === 'schedule' && (
-              <ol className="overflow-y-auto px-4 py-4">
+              <ol className="tr-anim-panel-in overflow-y-auto px-4 py-4">
                 {schedule.length === 0 && (
                   <p className="tr-card-text pt-10 text-center text-[var(--tr-ink-3)]">—</p>
                 )}
@@ -516,7 +516,9 @@ export default function RoomShell({
                 })}
               </ol>
             )}
-            {tab === 'settings' && <div className="min-h-0 flex-1 overflow-y-auto px-3 py-3">{settings}</div>}
+            {tab === 'settings' && (
+              <div className="tr-anim-panel-in min-h-0 flex-1 overflow-y-auto px-3 py-3">{settings}</div>
+            )}
           </div>
         </div>
 
@@ -537,7 +539,7 @@ export default function RoomShell({
                     role="tab"
                     aria-selected={active}
                     onClick={() => selectTab(key)}
-                    className={`relative flex min-h-[44px] flex-1 flex-col items-center justify-center gap-0.5 pb-1 pt-1.5 transition-transform active:scale-95 ${
+                    className={`tr-press relative flex min-h-[44px] flex-1 flex-col items-center justify-center gap-0.5 pb-1 pt-1.5 ${
                       active ? 'text-[var(--tr-safe)]' : 'text-[var(--tr-ink-3)]'
                     }`}
                   >

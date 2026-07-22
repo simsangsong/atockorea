@@ -8,6 +8,7 @@
  */
 
 import { useState } from 'react';
+import { useConfirmSheet } from '@/components/tour-mode/ConfirmSheet';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
 const COPY: Record<
@@ -22,6 +23,8 @@ const COPY: Record<
     pickupConfirm: string;
     drop: string;
     dropPrompt: string;
+    ok: string;
+    cancel: string;
   }
 > = {
   en: {
@@ -34,6 +37,8 @@ const COPY: Record<
     pickupConfirm: 'Share your current location once so the driver can come to you?',
     drop: '📍 Change drop-off',
     dropPrompt: 'Where would you like to be dropped off? (place name)',
+    ok: 'Share',
+    cancel: 'Cancel',
   },
   ko: {
     late: '🕒 늦어요',
@@ -45,6 +50,8 @@ const COPY: Record<
     pickupConfirm: '기사님이 올 수 있도록 현재 위치를 1회 공유할까요?',
     drop: '📍 드랍 변경',
     dropPrompt: '어디에서 내리고 싶으세요? (장소 이름)',
+    ok: '공유',
+    cancel: '취소',
   },
   ja: {
     late: '🕒 遅れています',
@@ -56,6 +63,8 @@ const COPY: Record<
     pickupConfirm: 'ドライバーが向かえるよう、現在地を1回共有しますか?',
     drop: '📍 降車地点を変更',
     dropPrompt: 'どこで降りたいですか？（場所の名前）',
+    ok: '共有する',
+    cancel: 'キャンセル',
   },
   es: {
     late: '🕒 Voy tarde',
@@ -67,6 +76,8 @@ const COPY: Record<
     pickupConfirm: '¿Compartir tu ubicación una vez para que el conductor vaya por ti?',
     drop: '📍 Cambiar bajada',
     dropPrompt: '¿Dónde quieres bajarte? (nombre del lugar)',
+    ok: 'Compartir',
+    cancel: 'Cancelar',
   },
   zh: {
     late: '🕒 我会迟到',
@@ -78,6 +89,8 @@ const COPY: Record<
     pickupConfirm: '一次性共享当前位置，让司机来接您？',
     drop: '📍 更改下车点',
     dropPrompt: '您想在哪里下车？（地点名称）',
+    ok: '共享',
+    cancel: '取消',
   },
 };
 
@@ -111,6 +124,8 @@ export default function QuickSignalBar({
   const copy = COPY[locale];
   const [busy, setBusy] = useState<string | null>(null);
   const [sentAt, setSentAt] = useState(0);
+  // M1 — in-app confirm/prompt sheet (native dialogs banned on tour surfaces).
+  const { confirm, prompt, sheet } = useConfirmSheet({ confirm: copy.ok, cancel: copy.cancel });
 
   const fire = async (
     type: 'running_late' | 'rest_stop' | 'lost' | 'pickup_request' | 'dropoff_change',
@@ -119,12 +134,12 @@ export default function QuickSignalBar({
     try {
       let coords: { lat: number; lng: number } | null = null;
       let note: string | null = null;
-      if (type === 'lost' && window.confirm(copy.lostConfirm)) {
+      if (type === 'lost' && (await confirm({ message: copy.lostConfirm }))) {
         coords = await currentPosition();
       }
       // A3 — "come get me HERE": the location IS the request.
       if (type === 'pickup_request') {
-        if (!window.confirm(copy.pickupConfirm)) {
+        if (!(await confirm({ message: copy.pickupConfirm }))) {
           setBusy(null);
           return;
         }
@@ -132,7 +147,7 @@ export default function QuickSignalBar({
       }
       // A3 — drop-off change: the guest names the place (translated server-side).
       if (type === 'dropoff_change') {
-        note = window.prompt(copy.dropPrompt)?.trim() || null;
+        note = await prompt({ message: copy.dropPrompt, inputPlaceholder: copy.drop.replace('📍 ', '') });
         if (!note) {
           setBusy(null);
           return;
@@ -176,13 +191,14 @@ export default function QuickSignalBar({
             type="button"
             disabled={busy !== null}
             onClick={() => void fire(type)}
-            className="tr-label shrink-0 rounded-full bg-[var(--tr-accent-soft)] px-3 py-1.5 font-semibold text-[var(--tr-accent-deep)] disabled:opacity-50"
+            className="tr-label tr-press shrink-0 rounded-full bg-[var(--tr-accent-soft)] px-3 py-1.5 font-semibold text-[var(--tr-accent-deep)] disabled:opacity-50"
             data-testid={`signal-${type}`}
           >
             {busy === type ? '…' : label}
           </button>
         ))
       )}
+      {sheet}
     </div>
   );
 }
