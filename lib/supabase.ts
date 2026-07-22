@@ -256,7 +256,7 @@ export type Database = {
           phone: string | null;
           birth_year: number | null;
           nationality: string | null;
-          language_preference: 'en' | 'zh' | 'ko' | 'zh-TW' | 'es' | 'ja';
+          language_preference: 'en' | 'zh' | 'ko' | 'zh-TW' | 'es' | 'ja' | 'fr' | 'de' | 'it' | 'ru';
           created_at: string;
           updated_at: string;
         };

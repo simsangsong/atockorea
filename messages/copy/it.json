@@ -1,0 +1,271 @@
+{
+  "brand": {
+    "support": "Da Jeju, in espansione in tutta la Corea."
+  },
+  "nav": {
+    "aiTours": "Tour IA",
+    "privateTours": "Tour Privati",
+    "joinTours": "Piccoli Gruppi",
+    "busTours": "Tour in Bus Classici",
+    "myTour": "Il Mio Tour",
+    "help": "Assistenza"
+  },
+  "hero": {
+    "headline": "Jeju in bus, comfort da tour privato",
+    "sub": "Renda il Suo viaggio a Jeju ancora più speciale, guidato da professionisti del territorio.",
+    "pills": ["Jeju", "Tour", "Privato", "Gruppo", "Bus"],
+    "featuredEyebrow": "TOUR DI GRUPPO",
+    "featuredTitleLines": ["ITINERARI FIRMATI IA", "TOUR DI GRUPPO"],
+    "featuredDetails": [
+      { "label": "Numero massimo di partecipanti", "value": "3–13 viaggiatori" },
+      { "label": "Prezzo", "value": "Da ₩50,000 a persona · pagamento online in un'unica soluzione" },
+      { "label": "Itinerario", "value": "Il meglio dell'est e dell'ovest, selezionato dall'IA" },
+      { "label": "Ritiro", "value": "Ritiro in hotel nell'area di Jeju City" }
+    ],
+    "featuredCta": "Crei il Mio Tour di Gruppo",
+    "subCard": "Ci dica hotel, data e stile di viaggio: troveremo il tour perfetto per Lei. Privato, in piccolo gruppo o bus tradizionale.",
+    "cta": "Prenoti Ora",
+    "badge": "L'ESPERIENZA DI GUIDE PROFESSIONISTE",
+    "trust": [
+      "Itinerario firmato IA in pochi minuti",
+      "Un ritiro pensato per Lei",
+      "Solo 3–13 viaggiatori",
+      "Prezzo chiaro prima di pagare"
+    ],
+    "valuePropSubtitles": [
+      "Su misura in pochi minuti",
+      "Ritiro pensato per la Sua zona",
+      "Pagamento sicuro"
+    ],
+    "trustCta": "Cancellazione gratuita fino a 24 ore prima della partenza.",
+    "glassCard": {
+      "brandPill": "AtoC Korea",
+      "blueEyebrow": "ITINERARI IA PER LA COREA",
+      "headline": "Il prezzo di un bus, il comfort di un tour privato",
+      "subheadline": "Il Suo itinerario, generato con un clic",
+      "description": "Un viaggio in Corea più fluido, con percorsi pianificati dall'IA, formati di tour più chiari e opzioni di ritiro gestite localmente."
+    }
+  },
+  "howItWorks": {
+    "eyebrow": "Pensato per viaggiare in Corea",
+    "title": "Come funziona",
+    "subtitle": "Un percorso semplice: prima pianifichiamo, poi sceglie il formato più adatto alla Sua giornata.",
+    "step1": "Indichi il Suo hotel",
+    "step2": "Pianifichiamo il percorso migliore",
+    "step3": "Scelga il Suo livello di comfort",
+    "step4": "Viaggi con meno pensieri"
+  },
+  "comparison": {
+    "title": "Perché sceglierci rispetto a un bus tour o a un noleggio privato",
+    "bullets": [
+      "Meno organizzazione — pensiamo noi al percorso",
+      "Piccoli gruppi (3–13 persone) — non affollati come i bus",
+      "Ritiro in zona hotel — un flusso più semplice",
+      "Prezzi trasparenti — nessun costo nascosto",
+      "Più conveniente di un tour privato completo"
+    ]
+  },
+  "previewItinerary": {
+    "title": "Esempio di giornata a Jeju",
+    "pickupArea": "Centro città",
+    "hotelFitHint": "Ottima corrispondenza con il Suo hotel",
+    "travelerCount": "4 viaggiatori",
+    "vehicleType": "Van premium",
+    "paymentNote": "Pagamento online completo per confermare · Cancellazione gratuita fino a 24 ore prima",
+    "oneLine": "4 viaggiatori · Van premium · Pagamento online · Cancellazione gratuita fino a 24 ore prima."
+  },
+  "reviews": {
+    "title": "Cosa dicono i nostri viaggiatori",
+    "quotes": [
+      "Molto più semplice che organizzare tutto da soli.",
+      "Più confortevole di un normale bus tour.",
+      "Il percorso di ritiro aveva molto più senso.",
+      "Più piacevole di quanto mi aspettassi da un tour di gruppo."
+    ]
+  },
+  "homeTrust": {
+    "eyebrow": "Fiducia e sicurezza",
+    "title": "Perché i viaggiatori scelgono AtoC Korea",
+    "cards": [
+      {
+        "title": "Partner coreani autorizzati",
+        "description": "I tour giornalieri sono organizzati tramite agenzie di viaggio autorizzate e operatori locali verificati."
+      },
+      {
+        "title": "Prezzi trasparenti",
+        "description": "Veda cosa è incluso e il prezzo totale prima di pagare — nessuna sorpresa dell'ultimo momento."
+      },
+      {
+        "title": "Pagamenti sicuri",
+        "description": "Il pagamento utilizza crittografia di livello professionale e fornitori di pagamento affidabili."
+      }
+    ]
+  },
+  "tourTypes": {
+    "privateTitle": "Tour Privato con IA",
+    "privateBody": "Solo il Suo gruppo. L'IA pianifica il percorso; Lei conferma all'istante.",
+    "privatePoints": [
+      "Solo il Suo gruppo",
+      "Conferma immediata",
+      "Ideale per famiglie e amici"
+    ],
+    "privateCta": "Inizi il Suo Tour Privato",
+    "joinTitle": "Tour di Gruppo con IA",
+    "joinBody": "Il comfort di un piccolo gruppo, ritiro in zona hotel, prezzi chiari.",
+    "joinPoints": [
+      "Comfort da piccolo gruppo",
+      "Ritiro più semplice",
+      "Prenotazione in pochi passaggi"
+    ],
+    "joinCta": "Si Unisca a un Piccolo Gruppo",
+    "busTitle": "Tour in Bus Classico",
+    "busBody": "Itinerari fissi, il formato di gruppo tradizionale.",
+    "busCta": "Scopra i Tour in Bus Classici"
+  },
+  "surcharge": {
+    "short": "Potrebbe applicarsi un supplemento di ritiro",
+    "title": "Un Percorso Più Fluido per Tutti",
+    "body": "Poiché il Suo hotel si trova fuori dall'area di ritiro principale, si applica un supplemento aggiuntivo. Questo aiuta a mantenere il percorso più scorrevole per tutti i viaggiatori.",
+    "final": "Prezzo definitivo per l'hotel selezionato",
+    "included": "Ritiro incluso"
+  },
+  "pickupMatch": {
+    "great": "Corrispondenza di ritiro ottimale",
+    "good": "Buona corrispondenza di ritiro",
+    "slight": "Potrebbe essere richiesto qualche minuto in più di percorso"
+  },
+  "joinStatus": {
+    "waiting": "In attesa di altri viaggiatori",
+    "balanceOpen": "Saldo disponibile",
+    "confirmed": "Confermato",
+    "missedDeadline": "Scadenza superata",
+    "privateOnly": "Consigliato il tour privato",
+    "joinUnavailable": "Tour di gruppo non ancora disponibile per questo percorso"
+  },
+  "joinStatusHelp": {
+    "waiting": "Questo tour necessita di altri viaggiatori prima che si apra il pagamento del saldo.",
+    "balanceOpen": "Ora può saldare l'importo residuo da I Miei Tour.",
+    "confirmed": "Questo tour è confermato ed è pronto a partire.",
+    "missedDeadline": "La scadenza per il pagamento del saldo è trascorsa.",
+    "privateOnly": "Per questa zona hotel un tour privato è la scelta più adatta.",
+    "joinUnavailable": "Questo percorso non è al momento aperto alle prenotazioni di gruppo."
+  },
+  "checkout": {
+    "title": "Checkout",
+    "pageTitle": "Completi la Sua prenotazione",
+    "pageSubtitle": "La preghiamo di inserire i Suoi dati per completare la prenotazione.",
+    "customerInfoTitle": "Dati del cliente",
+    "requiredFieldsHint": "Campi obbligatori *",
+    "secureCheckoutTitle": "Carta registrata — addebito alle 10:00 (ora coreana) il giorno del tour",
+    "secureCheckoutBody": "Registriamo ora la Sua carta. Il prezzo del tour viene addebitato automaticamente alle 10:00 (ora della Corea) nel giorno del tour. Cancelli almeno 24 ore prima della partenza per un rimborso senza penali.",
+    "confirmationEmailNote": "Riceverà un'email di conferma non appena la Sua carta sarà registrata.",
+    "paymentCancelled": "Il pagamento è stato annullato. Può riprovare oppure utilizzare un'altra carta o metodo di pagamento.",
+    "lineCalloutEmphasis": "Deve lasciare il Suo link di chat LINE",
+    "chatContactLineHelper": "Aggiunga un link condivisibile (ad es. line.me/ti/p/…), non un numero di telefono o un ID.",
+    "cta": "Riservi il Mio Posto",
+    "completeBooking": "Proceda ai dati della carta",
+    "timelineStaticCopy": "Cancellazione gratuita fino a 24 ore prima della partenza. Il prezzo del tour viene addebitato automaticamente alle 10:00 (ora della Corea) nel giorno del tour.",
+    "orderSummary": "Riepilogo dell'ordine",
+    "basePrice": "Prezzo base del tour",
+    "pickupSurcharge": "Supplemento di ritiro",
+    "subtotal": "Subtotale",
+    "total": "Totale"
+  },
+  "listDetail": {
+    "summaryToursFound": "{{count}} tour trovati",
+    "destination": "Destinazione",
+    "destinationAll": "Tutte",
+    "hotelArea": "Zona dell'hotel",
+    "date": "Data",
+    "guests": "Ospiti",
+    "styleTags": "Stile di viaggio",
+    "editSearch": "Modifichi la ricerca",
+    "refine": "Affini",
+    "tourTypeAll": "Tutti",
+    "noToursFound": "Nessun tour trovato",
+    "loadingTours": "Caricamento dei tour…",
+    "viewTour": "Veda il tour",
+    "viewDetails": "Veda i dettagli",
+    "joinThisTour": "Si unisca a questo tour",
+    "listPaymentNote": "Pagamento online in un'unica soluzione · Gestione da I Miei Tour"
+  },
+  "detail": {
+    "atAGlance": "In breve",
+    "planEssentials": "Informazioni essenziali",
+    "whyThisFitsYou": "Perché fa per Lei",
+    "whoThisIsBestFor": "A chi è più adatto",
+    "cancellationPolicy": "Politica di cancellazione",
+    "cancellationPolicyBody": "Cancellazione gratuita fino a 24 ore prima della partenza. Successivamente potrebbero applicarsi penali secondo le condizioni dell'operatore.",
+    "pickupTipsIntro": "Gli orari esatti Le saranno comunicati nella conferma. Arrivi in anticipo: i mancati arrivi non sono rimborsabili.",
+    "badgeAiPlanned": "Pianificato dall'IA",
+    "badgeSmallGroup": "Piccolo Gruppo",
+    "badgePrivate": "Privato",
+    "badgeVerifiedGuide": "Guida Locale Verificata",
+    "badgeTransparentBooking": "Regole di Prenotazione Trasparenti",
+    "badgeClassicBus": "Bus Classico",
+    "selectDateToSeeTimeline": "Selezioni una data qui sopra per vedere la Sua timeline di prenotazione",
+    "whoBus": "Viaggiatori che preferiscono un formato di gruppo tradizionale"
+  },
+  "timeline": {
+    "title": "Timeline di prenotazione",
+    "reserveTitle": "Prenoti online",
+    "reserveSub": "Paghi per intero per confermare",
+    "refundTitle": "Cancellazione gratuita fino a",
+    "refundSub": "24 ore prima della partenza",
+    "balanceTitle": "Scadenza pagamento saldo",
+    "balanceSub": "Da completare manualmente da I Miei Tour (se applicabile)",
+    "startTitle": "Il tour ha inizio",
+    "startSub": "Le prenotazioni sono chiuse"
+  },
+  "myTour": {
+    "title": "I Miei Tour",
+    "payBalance": "Paghi Ora il Saldo",
+    "viewDetails": "Veda i Dettagli della Prenotazione",
+    "viewPickup": "Veda le Informazioni di Ritiro",
+    "rebook": "Prenoti un Altro Tour",
+    "confirmed": "Confermato",
+    "awaitingBalance": "In Attesa del Pagamento del Saldo",
+    "nextStep": "Prossimo passo",
+    "status": {
+      "pending": "In sospeso",
+      "paymentReceived": "Pagamento ricevuto",
+      "awaitingBalance": "In Attesa del Pagamento del Saldo",
+      "balanceDue": "Pagamento del Saldo Richiesto",
+      "confirmed": "Confermato",
+      "completed": "Completato",
+      "cancelled": "Annullato",
+      "refunded": "Rimborsato",
+      "deadlineMissed": "Scadenza Superata"
+    }
+  },
+  "destinations": {
+    "title": "Jeju è già disponibile. Presto altre destinazioni in Corea.",
+    "jeju": "Disponibile ora",
+    "busan": "Prossimamente",
+    "seoul": "Prossimamente",
+    "notify": "Mi Avvisi"
+  },
+  "fallback": {
+    "title": "Preferisce un tour di gruppo tradizionale?"
+  },
+  "finalCta": {
+    "title": "Pronto a organizzare il Suo viaggio a Jeju nel modo più intelligente?",
+    "cta": "Pianifichi il Mio Viaggio"
+  },
+  "builderLoading": {
+    "stage1WithArea": "Verifica del percorso di ritiro vicino a [Area]…",
+    "stage1Generic": "Ricerca del percorso migliore per la zona del Suo hotel…",
+    "stage2": "Ricerca del tour più adatto a Lei…",
+    "stage3": "Ci siamo quasi…",
+    "end": "Il Suo viaggio è pronto"
+  },
+  "builderPickupArea": {
+    "jeju_city": "Centro città",
+    "jeju_outside": "Zona limitrofa",
+    "seogwipo_city": "Area di Seogwipo",
+    "seogwipo_outside": "Zona esterna"
+  },
+  "builderSummary": {
+    "paymentNote": "Pagamento online in un'unica soluzione · Cancellazione gratuita fino a 24 ore prima della partenza"
+  }
+}

@@ -59,7 +59,7 @@ async function refreshSupabaseSession(request: NextRequest, response: NextRespon
   }
 }
 
-const SUPPORTED_LOCALES = ['en', 'ko', 'zh-CN', 'zh-TW', 'ja', 'es'];
+const SUPPORTED_LOCALES = ['en', 'ko', 'zh-CN', 'zh-TW', 'ja', 'es', 'fr', 'de', 'it', 'ru'];
 const DEFAULT_LOCALE = 'en';
 const LOCALE_COOKIE = 'NEXT_LOCALE';
 

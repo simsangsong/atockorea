@@ -13,6 +13,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { useI18n } from "@/lib/i18n";
+import { toTourProductPageLocale } from "@/lib/tour-product/resolveTourProductDbLocale";
 import { useStaticTourProductsLazy } from "@/components/product-tour-static/catalog/staticTourCatalogCards.lazy";
 import { getShelvesForDate } from "@/lib/tours-shelves";
 import { useTourProductCardMedia } from "@/hooks/useTourProductCardMedia";
@@ -65,7 +66,7 @@ export function ShelvesContainer({ now, initialMediaBySlug }: ShelvesContainerPr
   // D1: EN ships inline; the active locale's catalog chunk lazy-loads and
   // `tours` updates when it lands (EN copy in the meantime — same fallback
   // the i18n message strings already use).
-  const tours = useStaticTourProductsLazy(locale);
+  const tours = useStaticTourProductsLazy(toTourProductPageLocale(locale));
   const shelves = useMemo(
     () => getShelvesForDate(renderDate, tours),
     [renderDate, tours],

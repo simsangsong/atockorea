@@ -39,7 +39,7 @@ const ONLY_LOCALES = process.argv
   ?.split("=")[1]
   ?.split(",");
 
-const ALL_LOCALES = ["ko", "zh", "zh-TW", "ja", "es"];
+const ALL_LOCALES = ["ko", "zh", "zh-TW", "ja", "es", "fr", "de", "it", "ru"];
 const TARGET_LOCALES = ONLY_LOCALES?.length
   ? ALL_LOCALES.filter((l) => ONLY_LOCALES.includes(l))
   : ALL_LOCALES;

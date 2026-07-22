@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { STATIC_TOUR_PRODUCTS } from '@/components/product-tour-static/catalog/staticTourCatalogCards';
 import { isTourSlugBlockedFromConsumerSurfaces } from '@/lib/tour-consumer-visibility';
 
-const LOCALE_HOME_PATHS = ['/ko', '/zh-CN', '/zh-TW', '/ja', '/es'] as const;
+const LOCALE_HOME_PATHS = ['/ko', '/zh-CN', '/zh-TW', '/ja', '/es', '/fr', '/de', '/it', '/ru'] as const;
 
 function siteUrl(): string {
   const raw =

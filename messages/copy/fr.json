@@ -1,0 +1,271 @@
+{
+  "brand": {
+    "support": "Nous débutons à Jeju, avant de rayonner dans toute la Corée."
+  },
+  "nav": {
+    "aiTours": "Circuits IA",
+    "privateTours": "Circuits privés",
+    "joinTours": "Petits groupes",
+    "busTours": "Circuits en bus classiques",
+    "myTour": "Mes voyages",
+    "help": "Aide"
+  },
+  "hero": {
+    "headline": "Jeju en bus, le confort d'un circuit privé",
+    "sub": "Vivez votre voyage à Jeju autrement, guidé par des professionnels passionnés.",
+    "pills": ["Jeju", "Circuit", "Privé", "Groupe", "Bus"],
+    "featuredEyebrow": "CIRCUIT PARTAGÉ",
+    "featuredTitleLines": ["CONÇU PAR IA", "CIRCUIT PARTAGÉ"],
+    "featuredDetails": [
+      { "label": "Taille du groupe", "value": "3 à 13 voyageurs" },
+      { "label": "Tarif", "value": "À partir de ₩50 000 / personne · paiement intégral en ligne" },
+      { "label": "Itinéraire", "value": "Incontournables de l'est et de l'ouest sélectionnés par IA" },
+      { "label": "Prise en charge", "value": "Prise en charge dans les hôtels du centre-ville de Jeju" }
+    ],
+    "featuredCta": "Créer mon circuit partagé",
+    "subCard": "Indiquez-nous votre hôtel, votre date et votre style de voyage : nous trouvons le circuit qu'il vous faut. Privé, petit groupe ou bus traditionnel.",
+    "cta": "Réserver maintenant",
+    "badge": "UNE EXPERTISE FAÇONNÉE PAR DES GUIDES PROFESSIONNELS",
+    "trust": [
+      "Itinéraire conçu par IA en quelques minutes",
+      "Une prise en charge plus intelligente",
+      "3 à 13 voyageurs seulement",
+      "Un tarif clair avant de payer"
+    ],
+    "valuePropSubtitles": [
+      "Personnalisé en quelques minutes",
+      "Adapté à la zone de votre hôtel",
+      "Paiement sécurisé"
+    ],
+    "trustCta": "Annulation gratuite jusqu'à 24 h avant le départ.",
+    "glassCard": {
+      "brandPill": "AtoC Korea",
+      "blueEyebrow": "ITINÉRAIRES CORÉENS CONÇUS PAR IA",
+      "headline": "Le confort d'un circuit privé, au prix d'un tour en bus",
+      "subheadline": "Itinéraire généré en un clic",
+      "description": "Composez une journée de voyage plus fluide en Corée grâce à un itinéraire conçu par IA, des formats de circuit plus lisibles et des options de prise en charge assurées localement."
+    }
+  },
+  "howItWorks": {
+    "eyebrow": "Pensé pour voyager en Corée",
+    "title": "Comment ça marche",
+    "subtitle": "Un parcours simple : on planifie d'abord, vous choisissez ensuite le format qui vous convient.",
+    "step1": "Indiquez votre hôtel",
+    "step2": "Nous concevons le meilleur itinéraire",
+    "step3": "Choisissez votre niveau de confort",
+    "step4": "Voyagez l'esprit tranquille"
+  },
+  "comparison": {
+    "title": "Pourquoi nous préférer aux bus touristiques ou aux circuits privés classiques",
+    "bullets": [
+      "Moins d'organisation — nous vous proposons l'itinéraire",
+      "Petits groupes (3 à 13) — loin de la foule des bus",
+      "Prise en charge près de votre hôtel — un parcours plus fluide",
+      "Tarifs transparents — aucuns frais cachés",
+      "Un meilleur rapport qualité-prix qu'un circuit privé classique"
+    ]
+  },
+  "previewItinerary": {
+    "title": "Exemple de journée à Jeju",
+    "pickupArea": "Centre-ville",
+    "hotelFitHint": "Bien adapté à votre hôtel",
+    "travelerCount": "4 voyageurs",
+    "vehicleType": "Van premium",
+    "paymentNote": "Paiement intégral en ligne pour confirmer · Annulation gratuite jusqu'à 24 h avant",
+    "oneLine": "4 voyageurs · Van premium · Paiement en ligne · Annulation gratuite jusqu'à 24 h avant."
+  },
+  "reviews": {
+    "title": "Ce qu'en disent les voyageurs",
+    "quotes": [
+      "Bien plus simple que de tout organiser moi-même.",
+      "Plus confortable qu'un bus touristique classique.",
+      "Le trajet de prise en charge était beaucoup plus logique.",
+      "Une fluidité à laquelle je ne m'attendais pas pour un circuit partagé."
+    ]
+  },
+  "homeTrust": {
+    "eyebrow": "Confiance & sécurité",
+    "title": "Pourquoi les voyageurs réservent avec AtoC Korea",
+    "cards": [
+      {
+        "title": "Partenaires coréens agréés",
+        "description": "Nos excursions sont organisées par des agences de voyage agréées et des opérateurs locaux vérifiés."
+      },
+      {
+        "title": "Tarifs transparents",
+        "description": "Consultez le détail des prestations et le prix total avant de payer — sans mauvaise surprise."
+      },
+      {
+        "title": "Paiements sécurisés",
+        "description": "Le paiement s'appuie sur un chiffrement conforme aux standards du secteur et des prestataires de confiance."
+      }
+    ]
+  },
+  "tourTypes": {
+    "privateTitle": "Circuit privé par IA",
+    "privateBody": "Rien que votre groupe. L'IA conçoit l'itinéraire, vous confirmez instantanément.",
+    "privatePoints": [
+      "Rien que votre groupe",
+      "Confirmation instantanée",
+      "Idéal entre amis ou en famille"
+    ],
+    "privateCta": "Créer mon circuit privé",
+    "joinTitle": "Circuit partagé en petit groupe par IA",
+    "joinBody": "Le confort du petit groupe, une prise en charge près de votre hôtel, un tarif clair.",
+    "joinPoints": [
+      "Confort du petit groupe",
+      "Prise en charge simplifiée",
+      "Réservation simple et rapide"
+    ],
+    "joinCta": "Rejoindre un petit groupe",
+    "busTitle": "Circuit en bus classique",
+    "busBody": "Itinéraires fixes, format de groupe traditionnel.",
+    "busCta": "Voir les circuits en bus classiques"
+  },
+  "surcharge": {
+    "short": "Un supplément de prise en charge peut s'appliquer",
+    "title": "Un itinéraire plus fluide pour tous",
+    "body": "Votre hôtel se trouvant hors de la zone principale de prise en charge, des frais supplémentaires s'appliquent. Cela permet de garder un itinéraire fluide pour l'ensemble des voyageurs.",
+    "final": "Tarif final pour l'hôtel sélectionné",
+    "included": "Prise en charge incluse"
+  },
+  "pickupMatch": {
+    "great": "Prise en charge idéale",
+    "good": "Bonne prise en charge",
+    "slight": "Un léger temps de trajet supplémentaire peut s'appliquer"
+  },
+  "joinStatus": {
+    "waiting": "En attente de voyageurs supplémentaires",
+    "balanceOpen": "Solde à régler",
+    "confirmed": "Confirmé",
+    "missedDeadline": "Délai dépassé",
+    "privateOnly": "Circuit privé recommandé",
+    "joinUnavailable": "Circuit partagé pas encore disponible pour cet itinéraire"
+  },
+  "joinStatusHelp": {
+    "waiting": "Ce circuit doit réunir davantage de voyageurs avant l'ouverture du paiement du solde.",
+    "balanceOpen": "Vous pouvez désormais régler le solde restant dans Mes voyages.",
+    "confirmed": "Ce circuit est confirmé et prêt à démarrer.",
+    "missedDeadline": "La date limite de paiement du solde est dépassée.",
+    "privateOnly": "Cette zone d'hôtel convient mieux à un circuit privé.",
+    "joinUnavailable": "Cet itinéraire n'est actuellement pas ouvert aux réservations en circuit partagé."
+  },
+  "checkout": {
+    "title": "Paiement",
+    "pageTitle": "Finalisez votre réservation",
+    "pageSubtitle": "Merci de renseigner vos informations pour finaliser la réservation.",
+    "customerInfoTitle": "Informations client",
+    "requiredFieldsHint": "Champs obligatoires *",
+    "secureCheckoutTitle": "Carte enregistrée — débit à 10 h (heure de Corée) le jour du circuit",
+    "secureCheckoutBody": "Nous enregistrons votre carte dès maintenant. Le prix du circuit est débité automatiquement à 10 h 00 (heure de Corée) le jour du départ. Annulez au moins 24 heures avant le départ pour un remboursement sans frais.",
+    "confirmationEmailNote": "Vous recevrez un e-mail de confirmation dès que votre carte sera enregistrée.",
+    "paymentCancelled": "Le paiement a été annulé. Vous pouvez réessayer ou utiliser une autre carte ou méthode de paiement.",
+    "lineCalloutEmphasis": "Vous devez indiquer votre lien de discussion LINE",
+    "chatContactLineHelper": "Ajoutez un lien partageable (par ex. line.me/ti/p/…), et non un numéro de téléphone ou un identifiant.",
+    "cta": "Réserver ma place",
+    "completeBooking": "Continuer vers les informations de carte",
+    "timelineStaticCopy": "Annulation gratuite jusqu'à 24 h avant le départ. Le prix du circuit est débité automatiquement à 10 h 00 (heure de Corée) le jour du départ.",
+    "orderSummary": "Récapitulatif de la commande",
+    "basePrice": "Prix de base du circuit",
+    "pickupSurcharge": "Supplément de prise en charge",
+    "subtotal": "Sous-total",
+    "total": "Total"
+  },
+  "listDetail": {
+    "summaryToursFound": "{{count}} circuit(s) trouvé(s)",
+    "destination": "Destination",
+    "destinationAll": "Toutes",
+    "hotelArea": "Zone de l'hôtel",
+    "date": "Date",
+    "guests": "Voyageurs",
+    "styleTags": "Style de voyage",
+    "editSearch": "Modifier la recherche",
+    "refine": "Affiner",
+    "tourTypeAll": "Tous",
+    "noToursFound": "Aucun circuit trouvé",
+    "loadingTours": "Chargement des circuits…",
+    "viewTour": "Voir le circuit",
+    "viewDetails": "Voir les détails",
+    "joinThisTour": "Rejoindre ce circuit",
+    "listPaymentNote": "Paiement intégral en ligne · Gérez tout dans Mes voyages"
+  },
+  "detail": {
+    "atAGlance": "En un coup d'œil",
+    "planEssentials": "L'essentiel du programme",
+    "whyThisFitsYou": "Pourquoi ce circuit vous correspond",
+    "whoThisIsBestFor": "Pour qui c'est idéal",
+    "cancellationPolicy": "Politique d'annulation",
+    "cancellationPolicyBody": "Annulation gratuite jusqu'à 24 h avant le départ. Passé ce délai, des frais peuvent s'appliquer selon la politique de l'opérateur.",
+    "pickupTipsIntro": "Les horaires précis figurent dans votre confirmation. Arrivez en avance : les absences ne sont pas remboursées.",
+    "badgeAiPlanned": "Conçu par IA",
+    "badgeSmallGroup": "Petit groupe",
+    "badgePrivate": "Privé",
+    "badgeVerifiedGuide": "Guide local vérifié",
+    "badgeTransparentBooking": "Conditions de réservation transparentes",
+    "badgeClassicBus": "Bus classique",
+    "selectDateToSeeTimeline": "Sélectionnez une date ci-dessus pour voir le déroulé de votre réservation",
+    "whoBus": "Les voyageurs qui préfèrent un format de groupe traditionnel"
+  },
+  "timeline": {
+    "title": "Déroulé de la réservation",
+    "reserveTitle": "Réservez en ligne",
+    "reserveSub": "Paiement intégral pour confirmer",
+    "refundTitle": "Annulation gratuite jusqu'à",
+    "refundSub": "24 h avant le départ",
+    "balanceTitle": "Date limite de paiement du solde",
+    "balanceSub": "À régler manuellement dans Mes voyages (le cas échéant)",
+    "startTitle": "Départ du circuit",
+    "startSub": "Les réservations sont closes"
+  },
+  "myTour": {
+    "title": "Mes voyages",
+    "payBalance": "Payer le solde maintenant",
+    "viewDetails": "Voir les détails de la réservation",
+    "viewPickup": "Voir les informations de prise en charge",
+    "rebook": "Réserver un autre circuit",
+    "confirmed": "Confirmé",
+    "awaitingBalance": "En attente du paiement du solde",
+    "nextStep": "Prochaine étape",
+    "status": {
+      "pending": "En attente",
+      "paymentReceived": "Paiement reçu",
+      "awaitingBalance": "En attente du paiement du solde",
+      "balanceDue": "Solde à régler",
+      "confirmed": "Confirmé",
+      "completed": "Terminé",
+      "cancelled": "Annulé",
+      "refunded": "Remboursé",
+      "deadlineMissed": "Délai dépassé"
+    }
+  },
+  "destinations": {
+    "title": "Jeju est disponible dès maintenant. D'autres destinations coréennes arrivent bientôt.",
+    "jeju": "Disponible dès maintenant",
+    "busan": "Bientôt disponible",
+    "seoul": "Bientôt disponible",
+    "notify": "Me prévenir"
+  },
+  "fallback": {
+    "title": "Vous préférez un circuit de groupe classique ?"
+  },
+  "finalCta": {
+    "title": "Prêt à organiser votre voyage à Jeju plus intelligemment ?",
+    "cta": "Planifier mon voyage"
+  },
+  "builderLoading": {
+    "stage1WithArea": "Vérification de la prise en charge près de [Area]…",
+    "stage1Generic": "Recherche du meilleur itinéraire pour votre zone d'hôtel…",
+    "stage2": "Recherche du circuit qui vous correspond le mieux…",
+    "stage3": "Presque prêt…",
+    "end": "Votre voyage est prêt"
+  },
+  "builderPickupArea": {
+    "jeju_city": "Centre-ville",
+    "jeju_outside": "Périphérie",
+    "seogwipo_city": "Zone de Seogwipo",
+    "seogwipo_outside": "Zone extérieure"
+  },
+  "builderSummary": {
+    "paymentNote": "Paiement intégral en ligne · Annulation gratuite jusqu'à 24 h avant le départ"
+  }
+}

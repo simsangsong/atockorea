@@ -34,7 +34,7 @@ function fillMissing(target, source) {
 }
 
 const en = JSON.parse(fs.readFileSync(path.join(messagesDir, 'en.json'), 'utf8'));
-const locales = ['ko', 'zh', 'zh-TW', 'es', 'ja'];
+const locales = ['ko', 'zh', 'zh-TW', 'es', 'ja', 'fr', 'de', 'it', 'ru'];
 
 for (const loc of locales) {
   const p = path.join(messagesDir, `${loc}.json`);

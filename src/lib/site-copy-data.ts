@@ -5,6 +5,10 @@ import siteCopyJa from "@/messages/siteCopy/ja.json";
 import siteCopyZh from "@/messages/siteCopy/zh.json";
 import siteCopyZhTW from "@/messages/siteCopy/zh-TW.json";
 import siteCopyEs from "@/messages/siteCopy/es.json";
+import siteCopyFr from "@/messages/siteCopy/fr.json";
+import siteCopyDe from "@/messages/siteCopy/de.json";
+import siteCopyIt from "@/messages/siteCopy/it.json";
+import siteCopyRu from "@/messages/siteCopy/ru.json";
 
 export type SiteCopy = typeof siteCopyEn;
 
@@ -15,6 +19,10 @@ const byLocale: Record<Locale, SiteCopy> = {
   zh: siteCopyZh,
   "zh-TW": siteCopyZhTW,
   es: siteCopyEs,
+  fr: siteCopyFr,
+  de: siteCopyDe,
+  it: siteCopyIt,
+  ru: siteCopyRu,
 };
 
 export function getSiteCopyBaseline(locale: Locale): SiteCopy {

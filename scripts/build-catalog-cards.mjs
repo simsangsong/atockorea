@@ -23,7 +23,7 @@ const REPO = path.resolve(__dirname, "..");
 const SRC_DIR = path.join(REPO, "components", "product-tour-static");
 const OUT = path.join(SRC_DIR, "catalog", "catalogCards.generated.ts");
 
-const LOCALES = ["en", "ko", "zh", "zh-TW", "es", "ja"];
+const LOCALES = ["en", "ko", "zh", "zh-TW", "es", "ja", "fr", "de", "it", "ru"];
 
 /** Pull catalog_card + price.amountLabel from one JSON file. */
 async function readSlimPage(jsonPath) {

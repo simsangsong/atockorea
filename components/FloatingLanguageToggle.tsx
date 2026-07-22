@@ -18,6 +18,10 @@ const localeShortLabels: Record<Locale, string> = {
   'zh-TW': '繁中',
   es: 'ES',
   ja: 'JP',
+  fr: 'FR',
+  de: 'DE',
+  it: 'IT',
+  ru: 'RU',
 };
 
 const localeFlags: Record<Locale, string> = {
@@ -27,10 +31,14 @@ const localeFlags: Record<Locale, string> = {
   'zh-TW': '🇹🇼',
   es: '🇪🇸',
   ja: '🇯🇵',
+  fr: '🇫🇷',
+  de: '🇩🇪',
+  it: '🇮🇹',
+  ru: '🇷🇺',
 };
 
-type RouteLocale = 'en' | 'zh-CN' | 'zh-TW' | 'ja' | 'es' | 'ko';
-const routeLocales: RouteLocale[] = ['en', 'zh-CN', 'zh-TW', 'ja', 'es', 'ko'];
+type RouteLocale = 'en' | 'zh-CN' | 'zh-TW' | 'ja' | 'es' | 'ko' | 'fr' | 'de' | 'it' | 'ru';
+const routeLocales: RouteLocale[] = ['en', 'zh-CN', 'zh-TW', 'ja', 'es', 'ko', 'fr', 'de', 'it', 'ru'];
 const localeToRouteLocale: Partial<Record<Locale, RouteLocale>> = {
   en: 'en',
   ko: 'ko',
@@ -38,6 +46,10 @@ const localeToRouteLocale: Partial<Record<Locale, RouteLocale>> = {
   'zh-TW': 'zh-TW',
   es: 'es',
   ja: 'ja',
+  fr: 'fr',
+  de: 'de',
+  it: 'it',
+  ru: 'ru',
 };
 
 /**
@@ -61,7 +73,7 @@ export default function FloatingLanguageToggle() {
   const [menuMounted, setMenuMounted] = useState(false);
   const [menuVisible, setMenuVisible] = useState(false);
   const wrapRef = useRef<HTMLDivElement>(null);
-  const locales: Locale[] = ['en', 'ko', 'zh', 'zh-TW', 'es', 'ja'];
+  const locales: Locale[] = ['en', 'ko', 'zh', 'zh-TW', 'es', 'ja', 'fr', 'de', 'it', 'ru'];
 
   // Click-outside to close
   useEffect(() => {

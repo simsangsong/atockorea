@@ -1,0 +1,271 @@
+{
+  "brand": {
+    "support": "Der Anfang liegt auf Jeju – ganz Korea folgt."
+  },
+  "nav": {
+    "aiTours": "KI-Touren",
+    "privateTours": "Privattouren",
+    "joinTours": "Kleingruppentour",
+    "busTours": "Klassische Bustouren",
+    "myTour": "Meine Tour",
+    "help": "Hilfe"
+  },
+  "hero": {
+    "headline": "Jeju im Bustempo, mit dem Komfort einer Privattour",
+    "sub": "Mit unseren professionellen Guides wird Ihre Jeju-Reise zu etwas Besonderem.",
+    "pills": ["Jeju", "Tour", "Privat", "Gruppe", "Bus"],
+    "featuredEyebrow": "GRUPPENTOUR",
+    "featuredTitleLines": ["KI-GEPLANTE", "GRUPPENTOUR"],
+    "featuredDetails": [
+      { "label": "Max. Gruppengröße", "value": "3–13 Reisende" },
+      { "label": "Preis", "value": "Ab ₩50.000 / Person · vollständige Online-Zahlung" },
+      { "label": "Reiseroute", "value": "KI-kuratierte Highlights im Osten & Westen" },
+      { "label": "Abholung", "value": "Hotelabholung im Stadtgebiet von Jeju" }
+    ],
+    "featuredCta": "Meine Gruppentour zusammenstellen",
+    "subCard": "Nennen Sie uns Ihr Hotel, Ihr Reisedatum und Ihren Reisestil – wir finden die passende Tour für Sie. Privat, in kleiner Gruppe oder klassisch im Bus.",
+    "cta": "Jetzt buchen",
+    "badge": "EXPERTISE VON PROFESSIONELLEN GUIDES",
+    "trust": [
+      "KI-Reiseroute in wenigen Minuten",
+      "Intelligentere Abholung",
+      "Nur 3–13 Reisende",
+      "Transparente Preise vor der Zahlung"
+    ],
+    "valuePropSubtitles": [
+      "In Minuten individuell geplant",
+      "Hotelabgleich nach Lage",
+      "Sichere Zahlung"
+    ],
+    "trustCta": "Kostenlose Stornierung bis 24 Stunden vor Abreise.",
+    "glassCard": {
+      "brandPill": "AtoC Korea",
+      "blueEyebrow": "KI-GEPLANTE KOREA-ROUTEN",
+      "headline": "Der Preis einer Bustour, der Komfort einer Privattour",
+      "subheadline": "Reiseroute mit einem Klick erstellen",
+      "description": "Gestalten Sie Ihren Korea-Tag entspannter – mit KI-geplanten Routen, klar strukturierten Tourformaten und lokal organisierten Abholoptionen."
+    }
+  },
+  "howItWorks": {
+    "eyebrow": "Speziell für Ihre Korea-Reise",
+    "title": "So funktioniert's",
+    "subtitle": "Ganz einfach: Erst planen, dann das passende Format für Ihren Tag wählen.",
+    "step1": "Hotel angeben",
+    "step2": "Wir planen die beste Route",
+    "step3": "Ihren Komfortlevel wählen",
+    "step4": "Entspannter unterwegs"
+  },
+  "comparison": {
+    "title": "Warum sich das mehr lohnt als Bustouren oder private Charter",
+    "bullets": [
+      "Weniger Planungsaufwand – wir schlagen die Route vor",
+      "Kleine Gruppen (3–13) – statt überfüllter Busse",
+      "Abholung im Hotelgebiet – reibungsloser Ablauf",
+      "Transparente Preise – keine versteckten Kosten",
+      "Besseres Preis-Leistungs-Verhältnis als eine reine Privattour"
+    ]
+  },
+  "previewItinerary": {
+    "title": "Beispiel: Jeju-Tagestour",
+    "pickupArea": "Stadtzentrum",
+    "hotelFitHint": "Passt gut zu Ihrem Hotel",
+    "travelerCount": "4 Reisende",
+    "vehicleType": "Premium-Van",
+    "paymentNote": "Vollständige Online-Zahlung zur Bestätigung · Kostenlose Stornierung bis 24 Std. vorher",
+    "oneLine": "4 Reisende · Premium-Van · Online-Zahlung · Kostenlose Stornierung bis 24 Std. vorher."
+  },
+  "reviews": {
+    "title": "Das sagen unsere Reisenden",
+    "quotes": [
+      "Viel einfacher, als alles selbst zu planen.",
+      "Komfortabler als eine gewöhnliche Bustour.",
+      "Die Abholroute war viel durchdachter.",
+      "Lief reibungsloser ab, als ich es bei einer Gruppentour erwartet hätte."
+    ]
+  },
+  "homeTrust": {
+    "eyebrow": "Vertrauen & Sicherheit",
+    "title": "Warum Reisende bei AtoC Korea buchen",
+    "cards": [
+      {
+        "title": "Lizenzierte koreanische Partner",
+        "description": "Tagestouren werden über lizenzierte Reiseveranstalter und geprüfte lokale Anbieter organisiert."
+      },
+      {
+        "title": "Transparente Preise",
+        "description": "Leistungen und Gesamtpreis sehen Sie vor der Zahlung – ganz ohne böse Überraschungen."
+      },
+      {
+        "title": "Sichere Zahlungen",
+        "description": "Die Zahlung erfolgt über branchenübliche Verschlüsselung und vertrauenswürdige Zahlungsanbieter."
+      }
+    ]
+  },
+  "tourTypes": {
+    "privateTitle": "KI-Privattour",
+    "privateBody": "Nur Ihre Gruppe. Die KI plant die Route, Sie bestätigen sofort.",
+    "privatePoints": [
+      "Nur Ihre Gruppe",
+      "Sofortige Bestätigung",
+      "Ideal für Familien & Freunde"
+    ],
+    "privateCta": "Privattour starten",
+    "joinTitle": "KI-Kleingruppentour",
+    "joinBody": "Komfort in kleiner Gruppe, Abholung im Hotelgebiet, klare Preise.",
+    "joinPoints": [
+      "Komfort in kleiner Gruppe",
+      "Bessere Abholung",
+      "Einfacher Buchungsablauf"
+    ],
+    "joinCta": "Kleingruppe beitreten",
+    "busTitle": "Klassische Bustour",
+    "busBody": "Feste Reiserouten im klassischen Gruppenformat.",
+    "busCta": "Klassische Bustouren ansehen"
+  },
+  "surcharge": {
+    "short": "Es kann ein Abholzuschlag anfallen",
+    "title": "Eine reibungslosere Route für alle",
+    "body": "Da Ihr Hotel außerhalb des Hauptabholgebiets liegt, fällt eine zusätzliche Abholgebühr an. So bleibt die Route für alle Reisenden reibungslos.",
+    "final": "Endpreis für Ihr ausgewähltes Hotel",
+    "included": "Abholung inklusive"
+  },
+  "pickupMatch": {
+    "great": "Optimale Abholung",
+    "good": "Gute Abholung",
+    "slight": "Etwas längere Fahrzeit möglich"
+  },
+  "joinStatus": {
+    "waiting": "Wartet auf weitere Reisende",
+    "balanceOpen": "Restzahlung möglich",
+    "confirmed": "Bestätigt",
+    "missedDeadline": "Frist verpasst",
+    "privateOnly": "Privattour empfohlen",
+    "joinUnavailable": "Für diese Route noch keine Gruppentour verfügbar"
+  },
+  "joinStatusHelp": {
+    "waiting": "Für diese Tour werden noch weitere Reisende benötigt, bevor die Restzahlung möglich ist.",
+    "balanceOpen": "Sie können die Restzahlung jetzt unter »Meine Touren« leisten.",
+    "confirmed": "Diese Tour ist bestätigt und startklar.",
+    "missedDeadline": "Die Frist für die Restzahlung ist abgelaufen.",
+    "privateOnly": "Dieses Hotelgebiet eignet sich besser für eine Privattour.",
+    "joinUnavailable": "Diese Route ist derzeit nicht für Gruppentour-Buchungen geöffnet."
+  },
+  "checkout": {
+    "title": "Kasse",
+    "pageTitle": "Buchung abschließen",
+    "pageSubtitle": "Bitte geben Sie Ihre Daten ein, um die Reservierung abzuschließen.",
+    "customerInfoTitle": "Kundendaten",
+    "requiredFieldsHint": "Pflichtfelder *",
+    "secureCheckoutTitle": "Karte hinterlegt — Abbuchung um 10 Uhr koreanischer Zeit am Tourtag",
+    "secureCheckoutBody": "Wir hinterlegen Ihre Karte jetzt. Der Tourpreis wird automatisch um 10:00 Uhr koreanischer Zeit am Tourtag abgebucht. Stornieren Sie mindestens 24 Stunden vor Abreise für eine kostenlose Rückerstattung.",
+    "confirmationEmailNote": "Sobald Ihre Karte hinterlegt ist, erhalten Sie eine Bestätigungs-E-Mail.",
+    "paymentCancelled": "Die Zahlung wurde abgebrochen. Sie können es erneut versuchen oder eine andere Karte bzw. Zahlungsmethode verwenden.",
+    "lineCalloutEmphasis": "Bitte hinterlassen Sie Ihren LINE-Chat-Link",
+    "chatContactLineHelper": "Fügen Sie einen teilbaren Link hinzu (z. B. line.me/ti/p/…), keine Telefonnummer oder ID.",
+    "cta": "Meinen Platz reservieren",
+    "completeBooking": "Weiter zu den Kartendaten",
+    "timelineStaticCopy": "Kostenlose Stornierung bis 24 Stunden vor Abreise. Der Tourpreis wird automatisch um 10:00 Uhr koreanischer Zeit am Tourtag abgebucht.",
+    "orderSummary": "Bestellübersicht",
+    "basePrice": "Grundpreis der Tour",
+    "pickupSurcharge": "Abholzuschlag",
+    "subtotal": "Zwischensumme",
+    "total": "Gesamt"
+  },
+  "listDetail": {
+    "summaryToursFound": "{{count}} Tour(en) gefunden",
+    "destination": "Reiseziel",
+    "destinationAll": "Alle",
+    "hotelArea": "Hotelgebiet",
+    "date": "Datum",
+    "guests": "Gäste",
+    "styleTags": "Reisestil",
+    "editSearch": "Suche bearbeiten",
+    "refine": "Verfeinern",
+    "tourTypeAll": "Alle",
+    "noToursFound": "Keine Touren gefunden",
+    "loadingTours": "Touren werden geladen…",
+    "viewTour": "Tour ansehen",
+    "viewDetails": "Details ansehen",
+    "joinThisTour": "Dieser Tour beitreten",
+    "listPaymentNote": "Vollständige Online-Zahlung · Verwaltung unter »Meine Touren«"
+  },
+  "detail": {
+    "atAGlance": "Auf einen Blick",
+    "planEssentials": "Das Wichtigste zur Planung",
+    "whyThisFitsYou": "Warum diese Tour zu Ihnen passt",
+    "whoThisIsBestFor": "Für wen sich das am besten eignet",
+    "cancellationPolicy": "Stornierungsbedingungen",
+    "cancellationPolicyBody": "Kostenlose Stornierung bis 24 Stunden vor Abreise. Danach können gemäß den Bedingungen des Anbieters Gebühren anfallen.",
+    "pickupTipsIntro": "Die genauen Zeiten finden Sie in der Bestätigung. Bitte seien Sie rechtzeitig vor Ort – bei Nichterscheinen erfolgt keine Rückerstattung.",
+    "badgeAiPlanned": "KI-geplant",
+    "badgeSmallGroup": "Kleingruppe",
+    "badgePrivate": "Privat",
+    "badgeVerifiedGuide": "Geprüfter lokaler Guide",
+    "badgeTransparentBooking": "Transparente Buchungsbedingungen",
+    "badgeClassicBus": "Klassischer Bus",
+    "selectDateToSeeTimeline": "Wählen Sie oben ein Datum, um Ihren Buchungsablauf zu sehen",
+    "whoBus": "Reisende, die ein klassisches Gruppenformat bevorzugen"
+  },
+  "timeline": {
+    "title": "Buchungsablauf",
+    "reserveTitle": "Online buchen",
+    "reserveSub": "Vollständige Zahlung zur Bestätigung",
+    "refundTitle": "Kostenlose Stornierung bis",
+    "refundSub": "24 Std. vor Abreise",
+    "balanceTitle": "Frist für Restzahlung",
+    "balanceSub": "Falls zutreffend, manuell unter »Meine Touren« erledigen",
+    "startTitle": "Tourbeginn",
+    "startSub": "Buchung geschlossen"
+  },
+  "myTour": {
+    "title": "Meine Touren",
+    "payBalance": "Restzahlung jetzt leisten",
+    "viewDetails": "Buchungsdetails ansehen",
+    "viewPickup": "Abholinformationen ansehen",
+    "rebook": "Weitere Tour buchen",
+    "confirmed": "Bestätigt",
+    "awaitingBalance": "Restzahlung ausstehend",
+    "nextStep": "Nächster Schritt",
+    "status": {
+      "pending": "Ausstehend",
+      "paymentReceived": "Zahlung erhalten",
+      "awaitingBalance": "Restzahlung ausstehend",
+      "balanceDue": "Restzahlung erforderlich",
+      "confirmed": "Bestätigt",
+      "completed": "Abgeschlossen",
+      "cancelled": "Storniert",
+      "refunded": "Erstattet",
+      "deadlineMissed": "Frist verpasst"
+    }
+  },
+  "destinations": {
+    "title": "Jeju ist bereits verfügbar. Weitere Reiseziele in Korea folgen.",
+    "jeju": "Jetzt verfügbar",
+    "busan": "Demnächst verfügbar",
+    "seoul": "Demnächst verfügbar",
+    "notify": "Benachrichtigen"
+  },
+  "fallback": {
+    "title": "Lieber eine klassische Gruppentour?"
+  },
+  "finalCta": {
+    "title": "Bereit, Ihre Jeju-Reise auf die smartere Art zu planen?",
+    "cta": "Meine Reise planen"
+  },
+  "builderLoading": {
+    "stage1WithArea": "Abholmöglichkeiten in der Nähe von [Area] werden geprüft…",
+    "stage1Generic": "Die beste Route für Ihr Hotelgebiet wird ermittelt…",
+    "stage2": "Die passende Tour wird gesucht…",
+    "stage3": "Gleich fertig…",
+    "end": "Ihre Reise ist bereit"
+  },
+  "builderPickupArea": {
+    "jeju_city": "Stadtzentrum",
+    "jeju_outside": "Stadtnah",
+    "seogwipo_city": "Gebiet Seogwipo",
+    "seogwipo_outside": "Außerhalb"
+  },
+  "builderSummary": {
+    "paymentNote": "Vollständige Online-Zahlung · Kostenlose Stornierung bis 24 Stunden vor Abreise"
+  }
+}

@@ -6,9 +6,9 @@ import type { Copy } from '@/src/design/copy';
 // Do not static-import supabase here: it triggers server bundle of @supabase/supabase-js
 // and causes "Cannot find module './vendor-chunks/@supabase.js'". Use dynamic import in client-only code.
 
-export type Locale = 'en' | 'ko' | 'zh' | 'zh-TW' | 'es' | 'ja';
+export type Locale = 'en' | 'ko' | 'zh' | 'zh-TW' | 'es' | 'ja' | 'fr' | 'de' | 'it' | 'ru';
 
-export const locales: Locale[] = ['en', 'ko', 'zh', 'zh-TW', 'es', 'ja'];
+export const locales: Locale[] = ['en', 'ko', 'zh', 'zh-TW', 'es', 'ja', 'fr', 'de', 'it', 'ru'];
 export const defaultLocale: Locale = 'en';
 
 const localeNames: Record<Locale, string> = {
@@ -18,6 +18,10 @@ const localeNames: Record<Locale, string> = {
   'zh-TW': '中文 (繁體)',
   es: 'Español',
   ja: '日本語',
+  fr: 'Français',
+  de: 'Deutsch',
+  it: 'Italiano',
+  ru: 'Русский',
 };
 
 /**
@@ -45,6 +49,10 @@ const localeLoaders: Record<Exclude<Locale, 'en'>, () => Promise<{ default: any 
   'zh-TW': () => import('@/messages/zh-TW.json'),
   es: () => import('@/messages/es.json'),
   ja: () => import('@/messages/ja.json'),
+  fr: () => import('@/messages/fr.json'),
+  de: () => import('@/messages/de.json'),
+  it: () => import('@/messages/it.json'),
+  ru: () => import('@/messages/ru.json'),
 };
 
 const localeLoadPromises: Partial<Record<Locale, Promise<void>>> = {};
@@ -107,7 +115,10 @@ export function I18nProvider({ children }: { children: ReactNode }) {
       document.documentElement.lang = locale;
       document.body.setAttribute('lang', locale);
       // Remove old locale classes
-      document.body.classList.remove('lang-en', 'lang-ko', 'lang-zh', 'lang-zh-TW', 'lang-es', 'lang-ja');
+      document.body.classList.remove(
+        'lang-en', 'lang-ko', 'lang-zh', 'lang-zh-TW', 'lang-es', 'lang-ja',
+        'lang-fr', 'lang-de', 'lang-it', 'lang-ru'
+      );
       // Add current locale class
       document.body.classList.add(`lang-${locale}`);
     }
@@ -144,6 +155,10 @@ export function I18nProvider({ children }: { children: ReactNode }) {
       if (code === 'zh') return 'zh';
       if (code === 'es') return 'es';
       if (code === 'ja') return 'ja';
+      if (code === 'fr') return 'fr';
+      if (code === 'de') return 'de';
+      if (code === 'it') return 'it';
+      if (code === 'ru') return 'ru';
       return defaultLocale;
     };
     if (!userOverrideRef.current) setLocaleState(detectBrowserLocale());

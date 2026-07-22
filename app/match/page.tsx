@@ -18,6 +18,7 @@ import { AlertCircle, ChevronRight, Clock, MapPin, RefreshCw, Star } from 'lucid
 import { SitePageShell } from '@/src/components/layout/SitePageShell';
 import { useI18n, useTranslations } from '@/lib/i18n';
 import { getStaticTourProductBySlug } from '@/components/product-tour-static/catalog/staticTourCatalogCards';
+import { toTourProductPageLocale } from '@/lib/tour-product/resolveTourProductDbLocale';
 import type { TourMatchApiResponse } from '@/lib/tour-match-v2/api-types';
 import { cn } from '@/lib/utils';
 import { analytics } from '@/src/design/analytics';
@@ -192,7 +193,7 @@ export default function MatchPage() {
 
   const winner = result?.winner ?? null;
   const winnerProduct = useMemo(
-    () => (winner ? getStaticTourProductBySlug(winner.product_id, locale) : undefined),
+    () => (winner ? getStaticTourProductBySlug(winner.product_id, toTourProductPageLocale(locale)) : undefined),
     [winner, locale],
   );
   const winnerMediaSlugs = useMemo(

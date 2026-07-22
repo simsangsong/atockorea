@@ -14,6 +14,15 @@ function normalize(raw: string | undefined | null): TourProductPageLocale | null
 }
 
 /**
+ * Narrows any site UI `Locale` (10 locales) down to a `TourProductPageLocale`
+ * (6 locales — tour catalog/content translation hasn't reached fr/de/it/ru
+ * yet). Falls back to `en` for locales without translated tour content.
+ */
+export function toTourProductPageLocale(locale: string): TourProductPageLocale {
+  return ALLOWED.has(locale as TourProductPageLocale) ? (locale as TourProductPageLocale) : "en";
+}
+
+/**
  * Resolves the locale to use for tour product pages.
  *
  * Order of precedence:
