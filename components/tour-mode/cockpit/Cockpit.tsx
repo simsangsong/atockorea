@@ -29,7 +29,9 @@ import { startVoiceRecording } from '@/lib/tour-room/recorder';
 import { isDeviceSttSupported, startDeviceStt } from '@/lib/tour-room/deviceStt';
 import { primeAudio } from '@/lib/tour-room/tts';
 import MicPrime from '@/components/tour-mode/MicPrime';
+import TimeWheel from '@/components/tour-mode/cockpit/TimeWheel';
 import { useConfirmSheet } from '@/components/tour-mode/ConfirmSheet';
+import { scheduleClock } from '@/lib/tour-room/time';
 import OperatorAssist from '@/components/tour-mode/guide/OperatorAssist';
 import LocationPreview from '@/components/tour-mode/LocationPreview';
 import Lightbox from '@/components/tour-mode/Lightbox';
@@ -52,6 +54,7 @@ import {
   BusFront,
   ChevronLeft,
   FileText,
+  LayoutGrid,
   Map as MapIcon,
   Phone,
   Camera,
@@ -142,6 +145,20 @@ function kstPlusMinutes(minutes: number): string {
     hour12: false,
   }).format(new Date(Date.now() + minutes * 60 * 1000));
 }
+
+/** HH:MM rounded UP to the next 5-minute mark (wheel resting positions). */
+function roundUpTo5(hhmm: string): string {
+  const match = hhmm.match(/^(\d{2}):(\d{2})$/);
+  if (!match) return hhmm;
+  const total = Number(match[1]) * 60 + Number(match[2]);
+  const rounded = (Math.ceil(total / 5) * 5) % (24 * 60);
+  return `${String(Math.floor(rounded / 60)).padStart(2, '0')}:${String(rounded % 60).padStart(2, '0')}`;
+}
+
+/** Chat font zoom (pinch) bounds + storage key. */
+const CHAT_ZOOM_KEY = 'tr-cockpit-chat-zoom';
+const CHAT_ZOOM_MIN = 0.85;
+const CHAT_ZOOM_MAX = 1.8;
 
 function koText(message: RoomMessage): string {
   return message.translations?.ko?.trim() || message.source_text;
@@ -312,6 +329,19 @@ export default function Cockpit({
     current?: { title: string; dwell_minutes: number; recommended_minutes: number | null } | null;
   } | null>(null);
   const [lightbox, setLightbox] = useState<{ url: string; name?: string | null } | null>(null);
+  // Return-time dial (free wall-clock pick alongside the +N분 chips).
+  const [retTime, setRetTime] = useState('');
+  const [retRest, setRetRest] = useState('12:00');
+  // Arrival meeting-time dial resting position (captured when the sheet opens).
+  const [arrRest, setArrRest] = useState('12:00');
+  // Chat focus mode: tap anywhere in the feed → the feed takes the button
+  // rows' space so a long exchange is readable at a glance; one button
+  // restores the grids. Pinch on the feed adjusts the chat font zoom.
+  const [chatExpanded, setChatExpanded] = useState(false);
+  const [chatZoom, setChatZoom] = useState(1);
+  const chatZoomRef = useRef(1);
+  const feedRef = useRef<HTMLDivElement | null>(null);
+  const pinchRef = useRef<{ startDist: number; startZoom: number } | null>(null);
   const playedRef = useRef<Set<string>>(new Set(initialMessages.map((message) => message.id)));
   const audioQueueRef = useRef<string[]>([]);
   const playingRef = useRef(false);
@@ -351,6 +381,78 @@ export default function Cockpit({
     setToast(text);
     window.setTimeout(() => setToast(null), 2500);
   }, []);
+
+  // ── chat focus mode + pinch font zoom ──────────────────────────────────
+  useEffect(() => {
+    try {
+      const stored = Number(window.localStorage.getItem(CHAT_ZOOM_KEY));
+      if (Number.isFinite(stored) && stored >= CHAT_ZOOM_MIN && stored <= CHAT_ZOOM_MAX) {
+        setChatZoom(stored);
+        chatZoomRef.current = stored;
+      }
+    } catch {
+      /* zoom just stays at 1 */
+    }
+  }, []);
+
+  // Two-finger pinch on the feed = chat font size. Native listeners because
+  // touchmove must be non-passive to preventDefault (blocks page zoom).
+  useEffect(() => {
+    const el = feedRef.current;
+    if (!el) return undefined;
+    const dist = (touches: TouchList) =>
+      Math.hypot(touches[0].clientX - touches[1].clientX, touches[0].clientY - touches[1].clientY);
+    const onStart = (event: TouchEvent) => {
+      if (event.touches.length === 2) {
+        pinchRef.current = { startDist: dist(event.touches), startZoom: chatZoomRef.current };
+      }
+    };
+    const onMove = (event: TouchEvent) => {
+      const pinch = pinchRef.current;
+      if (event.touches.length !== 2 || !pinch) return;
+      event.preventDefault();
+      const next = Math.min(
+        CHAT_ZOOM_MAX,
+        Math.max(CHAT_ZOOM_MIN, pinch.startZoom * (dist(event.touches) / pinch.startDist)),
+      );
+      chatZoomRef.current = next;
+      setChatZoom(next);
+    };
+    const onEnd = (event: TouchEvent) => {
+      if (event.touches.length < 2 && pinchRef.current) {
+        pinchRef.current = null;
+        try {
+          window.localStorage.setItem(CHAT_ZOOM_KEY, String(chatZoomRef.current));
+        } catch {
+          /* not persisted — session-only zoom */
+        }
+      }
+    };
+    el.addEventListener('touchstart', onStart, { passive: true });
+    el.addEventListener('touchmove', onMove, { passive: false });
+    el.addEventListener('touchend', onEnd, { passive: true });
+    el.addEventListener('touchcancel', onEnd, { passive: true });
+    return () => {
+      el.removeEventListener('touchstart', onStart);
+      el.removeEventListener('touchmove', onMove);
+      el.removeEventListener('touchend', onEnd);
+      el.removeEventListener('touchcancel', onEnd);
+    };
+  }, []);
+
+  // Entering focus mode (or a new message while near the bottom) keeps the
+  // feed pinned to the latest bubble.
+  useEffect(() => {
+    const el = feedRef.current;
+    if (!el) return;
+    el.scrollTop = el.scrollHeight;
+  }, [chatExpanded]);
+  useEffect(() => {
+    const el = feedRef.current;
+    if (!el) return;
+    const nearBottom = el.scrollHeight - el.scrollTop - el.clientHeight < 160;
+    if (nearBottom) el.scrollTop = el.scrollHeight;
+  }, [messages.length]);
 
   // M1 — in-app confirmation sheet (window.confirm is banned: iOS WebView
   // silently returns true for it, which could fire departures unconfirmed).
@@ -677,6 +779,9 @@ export default function Cockpit({
     (item: CockpitScheduleItem) => {
       setArrItem(item);
       setArrTime('');
+      // Dial resting position only — arrTime stays empty until a deliberate
+      // chip tap or wheel scroll (§A0: no default meeting time).
+      setArrRest(roundUpTo5(kstPlusMinutes(60)));
       setArrNoMeeting(false);
       setArrFollow('free');
       setArrTicket(false);
@@ -931,8 +1036,13 @@ export default function Cockpit({
   // ── phase-aware destination (준비=픽업, 진행=다음 스톱) ───────────────────
   const nextStop = useMemo(() => {
     const now = new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Seoul', hour: '2-digit', minute: '2-digit', hour12: false }).format(new Date());
+    // scheduleClock: ops sometimes write "≈ 08:00" — normalize before the
+    // string compare, else every stop sorts as "upcoming" forever.
     return (
-      room.schedule.find((item) => typeof item.time === 'string' && item.time > now) ??
+      room.schedule.find((item) => {
+        const start = scheduleClock(item.time);
+        return /^\d{2}:\d{2}$/.test(start) && start > now;
+      }) ??
       room.schedule[0] ??
       null
     );
@@ -952,7 +1062,8 @@ export default function Cockpit({
       : '오늘 일정 없음';
   const navDest = isPrep && pickupDest ? pickupDest : destFrom(nextStop);
 
-  const recent = messages.slice(-8);
+  // Focus mode widens the window — the point is reading a long exchange.
+  const recent = messages.slice(chatExpanded ? -80 : -8);
 
   return (
     <Screen>
@@ -1005,8 +1116,18 @@ export default function Cockpit({
         {navDest ? <NavRow dest={navDest} /> : null}
       </div>
 
-      {/* bubbles */}
-      <div className="flex flex-1 flex-col justify-end gap-2.5 overflow-y-auto px-4 py-3" data-testid="driver-feed">
+      {/* bubbles — tap anywhere to enter chat focus mode; pinch = font zoom */}
+      <div
+        ref={feedRef}
+        onClick={(event) => {
+          if (chatExpanded) return;
+          if ((event.target as HTMLElement).closest('button, a, input, textarea')) return;
+          setChatExpanded(true);
+        }}
+        className="flex flex-1 flex-col justify-end gap-2.5 overflow-y-auto px-4 py-3"
+        style={{ zoom: chatZoom, touchAction: 'pan-y' }}
+        data-testid="driver-feed"
+      >
         {recent.map((message) => {
           const mine = message.sender_role === 'driver' || message.sender_role === 'guide';
           const system = message.sender_role === 'system' || message.sender_role === 'admin';
@@ -1284,11 +1405,36 @@ export default function Cockpit({
         </div>
       )}
 
+      {chatExpanded ? (
+        /* chat focus mode — ONE button puts every action back where it was */
+        <div className="px-4 pb-3">
+          <button
+            type="button"
+            onClick={() => setChatExpanded(false)}
+            className="tr-btn-flat flex w-full items-center justify-center gap-2 rounded-2xl py-3.5 text-base font-bold text-[var(--tr-ink)]"
+            data-testid="cockpit-chat-collapse"
+          >
+            <LayoutGrid size={18} strokeWidth={2} aria-hidden />
+            기능 버튼 보이기
+          </button>
+        </div>
+      ) : (
+        <>
       {/* one-tap actions */}
       <div className="grid grid-cols-3 gap-1.5 px-4 pb-1.5">
         <ActionButton label="타세요" Icon={BusFront} onClick={announceVehicleArrived} />
         <ActionButton label="지연" Icon={Timer} onClick={() => setSheet('delay')} />
-        <ActionButton label="복귀시간" Icon={AlarmClock} onClick={() => setSheet('return')} />
+        <ActionButton
+          label="복귀시간"
+          Icon={AlarmClock}
+          onClick={() => {
+            // Rest the dial just past "now +30" — the chips stay the fast path.
+            const rest = roundUpTo5(kstPlusMinutes(30));
+            setRetRest(rest);
+            setRetTime('');
+            setSheet('return');
+          }}
+        />
         <ActionButton label="일정·도착" Icon={MapIcon} onClick={() => setSheet('schedule')} />
         <ActionButton label="주차핀" Icon={SquareParking} onClick={dropParkingPin} />
         <ActionButton
@@ -1363,6 +1509,8 @@ export default function Cockpit({
           오늘 요약
         </button>
       </div>
+        </>
+      )}
 
       {/* sheets */}
       {sheet === 'assist' ? (
@@ -1414,6 +1562,21 @@ export default function Cockpit({
               );
             })}
           </div>
+          {/* Free pick — the field always has variables the fixed chips miss. */}
+          <p className="mb-2 mt-4 text-sm font-bold text-[var(--tr-ink-2)]">시계로 직접 설정</p>
+          <TimeWheel value={retTime} onChange={setRetTime} restAt={retRest} testId="return-time-wheel" />
+          <button
+            type="button"
+            disabled={!/^\d{2}:\d{2}$/.test(retTime)}
+            onClick={() => {
+              setSheet('none');
+              void signal({ type: 'return_time', time: retTime }, `${retTime} 복귀 안내 완료 ✓`);
+            }}
+            className="tr-btn-raised mt-3 w-full rounded-2xl bg-[var(--tr-bubble-me)] py-4 text-lg font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
+            data-testid="return-time-send"
+          >
+            {/^\d{2}:\d{2}$/.test(retTime) ? `${retTime} 복귀 안내 보내기` : '시계를 돌려 시간을 고르세요'}
+          </button>
           <button
             type="button"
             onClick={() => {
@@ -1580,32 +1743,33 @@ export default function Cockpit({
                   );
                 })}
               </div>
-              <div className="mt-2 flex items-center gap-2">
-                <input
-                  type="time"
+              {/* free pick — the clock dial replaces the fiddly native
+                  time input; any minute is one thumb-flick away */}
+              <div className="mt-2">
+                <TimeWheel
                   value={arrNoMeeting ? '' : arrTime}
-                  onChange={(event) => {
+                  onChange={(hhmm) => {
                     setArrNoMeeting(false);
-                    setArrTime(event.target.value);
+                    setArrTime(hhmm);
                   }}
-                  className="flex-1 rounded-xl bg-[var(--tr-surface)] px-3 py-2.5 text-base font-semibold text-[var(--tr-ink)]"
-                  data-testid="arrival-time-input"
+                  restAt={arrRest}
+                  testId="arrival-time-input"
                 />
-                <button
-                  type="button"
-                  onClick={() => {
-                    setArrNoMeeting(!arrNoMeeting);
-                    setArrTime('');
-                  }}
-                  className={`rounded-xl px-3 py-2.5 text-sm font-bold ${
-                    arrNoMeeting
-                      ? 'bg-[var(--tr-bubble-me)] text-[var(--tr-bubble-me-ink)]'
-                      : 'bg-[var(--tr-surface)] text-[var(--tr-ink-2)]'
-                  }`}
-                >
-                  집합 없이
-                </button>
               </div>
+              <button
+                type="button"
+                onClick={() => {
+                  setArrNoMeeting(!arrNoMeeting);
+                  setArrTime('');
+                }}
+                className={`mt-2 w-full rounded-xl px-3 py-2.5 text-sm font-bold ${
+                  arrNoMeeting
+                    ? 'bg-[var(--tr-bubble-me)] text-[var(--tr-bubble-me-ink)]'
+                    : 'bg-[var(--tr-surface)] text-[var(--tr-ink-2)]'
+                }`}
+              >
+                집합 없이
+              </button>
             </div>
 
             {/* sticky per-POI toggles (prefilled from the profile) */}

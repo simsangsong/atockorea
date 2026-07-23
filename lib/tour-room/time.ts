@@ -86,3 +86,16 @@ export function inPostTourWindow(tourDate: string | null | undefined, nowMs = Da
   const dayEnd = kstEndOfDayMs(tourDate);
   return nowMs > dayEnd && nowMs <= dayEnd + POST_TOUR_WINDOW_MS;
 }
+
+/**
+ * Schedule times are usually HH:MM(:SS) but ops sometimes write free text
+ * ("≈ 08:00") — extract the clock instead of blind-slicing, which rendered
+ * "≈ 08:" in the Today tab and broke every string time comparison.
+ * Returns the trimmed input unchanged when no clock is present.
+ */
+export function scheduleClock(time: unknown): string {
+  const raw = typeof time === 'string' ? time.trim() : '';
+  if (/^\d{2}:\d{2}/.test(raw)) return raw.slice(0, 5);
+  const match = raw.match(/\d{1,2}:\d{2}/);
+  return match ? match[0].padStart(5, '0') : raw;
+}

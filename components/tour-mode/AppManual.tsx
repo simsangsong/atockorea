@@ -42,10 +42,16 @@ export default function AppManual({
   variant,
   kind,
   locale,
+  theme = 'light',
 }: {
   variant: 'auto' | 'inline';
   kind: ManualKind;
   locale: RoomLocale;
+  /** auto variant only — the sheet renders OUTSIDE RoomShell's `.tr-root`
+   *  wrapper, so it must re-scope the token layer itself (like
+   *  PlanNudgeModal); without it every tr-* var is undefined and the sheet
+   *  paints transparent on top of the room. */
+  theme?: 'light' | 'dark';
 }) {
   const [open, setOpen] = useState(false);
 
@@ -82,18 +88,23 @@ export default function AppManual({
 
   if (!open) return null;
   return (
-    <Sheet open onClose={dismiss} title={MANUAL_TITLE[locale]}>
-      <div className="max-h-[60vh] overflow-y-auto pb-2" data-testid="app-manual-auto">
-        <SectionList kind={kind} locale={locale} />
-      </div>
-      <button
-        type="button"
-        onClick={dismiss}
-        className="mt-4 w-full rounded-2xl bg-[var(--tr-accent)] py-3.5 text-base font-bold text-[var(--tr-bubble-me-ink)]"
-        data-testid="app-manual-dismiss"
-      >
-        {MANUAL_CTA[locale]}
-      </button>
-    </Sheet>
+    // `.tr-root.dark` matches the same-element rule in tour-room-theme.css;
+    // display:contents keeps the wrapper out of layout while the CSS vars
+    // still cascade into the fixed-position sheet.
+    <div className={`tr-root contents${theme === 'dark' ? ' dark' : ''}`}>
+      <Sheet open onClose={dismiss} title={MANUAL_TITLE[locale]}>
+        <div className="max-h-[60vh] overflow-y-auto pb-2" data-testid="app-manual-auto">
+          <SectionList kind={kind} locale={locale} />
+        </div>
+        <button
+          type="button"
+          onClick={dismiss}
+          className="mt-4 w-full rounded-2xl bg-[var(--tr-accent)] py-3.5 text-base font-bold text-[var(--tr-bubble-me-ink)]"
+          data-testid="app-manual-dismiss"
+        >
+          {MANUAL_CTA[locale]}
+        </button>
+      </Sheet>
+    </div>
   );
 }

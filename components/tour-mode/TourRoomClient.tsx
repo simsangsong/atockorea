@@ -671,7 +671,7 @@ function TourRoomLive({
       {/* A5 — one-time usage manual on first entry (shape follows the tour's
           price model: shared → join manual, charter → private manual). */}
       {viewerRole === 'customer' && !readOnly && (
-        <AppManual variant="auto" kind={manualKind} locale={locale} />
+        <AppManual variant="auto" kind={manualKind} locale={locale} theme={theme} />
       )}
       <RoomShell
       title={snapshot.booking?.tours?.title ?? 'Your tour'}
