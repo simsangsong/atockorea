@@ -25,6 +25,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useTourRoomChannel, type RoomMessage } from '@/hooks/useTourRoomChannel';
+import { useTourRoomSettings } from '@/hooks/useTourRoomSettings';
 import { DRIVER_QUICK_REPLIES } from '@/lib/tour-room/quickReplies';
 import { startVoiceRecording } from '@/lib/tour-room/recorder';
 import { isDeviceSttSupported, startDeviceStt } from '@/lib/tour-room/deviceStt';
@@ -57,10 +58,12 @@ import {
   FileText,
   LayoutGrid,
   Map as MapIcon,
+  Moon,
   Phone,
   Camera,
   Sparkles,
   SquareParking,
+  Sun,
   Sunrise,
   Timer,
   TriangleAlert,
@@ -253,6 +256,10 @@ export default function Cockpit({
   onExit?: () => void;
 }) {
   useWakeLock(true);
+  // A5 — device theme store: the cockpit defaults dark ('system' → dark in
+  // Screen); the header chip flips an explicit light/dark override.
+  const { settings: deviceSettings, update: updateSettings } = useTourRoomSettings();
+  const cockpitDark = deviceSettings.theme !== 'light';
   const {
     messages,
     connection,
@@ -1075,7 +1082,7 @@ export default function Cockpit({
           <button
             type="button"
             onClick={onExit}
-            className="flex h-9 shrink-0 items-center gap-1 rounded-full bg-[var(--tr-surface-2)] pl-2 pr-3 text-sm font-bold text-[var(--tr-ink)]"
+            className="flex h-8 shrink-0 items-center gap-1 rounded-full bg-[var(--tr-surface-2)] pl-2 pr-3 text-sm font-bold text-[var(--tr-ink)]"
             data-testid="cockpit-exit"
           >
             <ChevronLeft size={16} strokeWidth={2.25} aria-hidden />
@@ -1090,7 +1097,7 @@ export default function Cockpit({
             type="button"
             onClick={() => void enablePush()}
             disabled={pushOn}
-            className={`flex h-9 items-center gap-1 rounded-full px-3 text-sm font-bold ${
+            className={`flex h-8 items-center gap-1 rounded-full px-3 text-sm font-bold ${
               pushOn ? 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]' : 'bg-[var(--tr-bubble-me)] text-[var(--tr-bubble-me-ink)]'
             }`}
             data-testid="driver-push-toggle"
@@ -1099,10 +1106,24 @@ export default function Cockpit({
             {pushOn ? '켜짐' : '알림'}
           </button>
         ) : null}
+        {/* A5 — explicit light/dark flip; default (system) renders dark. */}
+        <button
+          type="button"
+          onClick={() => updateSettings({ theme: cockpitDark ? 'light' : 'dark' })}
+          aria-label={cockpitDark ? '라이트 모드로 전환' : '다크 모드로 전환'}
+          className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--tr-surface-2)] text-[var(--tr-ink)]"
+          data-testid="cockpit-theme-toggle"
+        >
+          {cockpitDark ? (
+            <Sun size={15} strokeWidth={2.25} aria-hidden />
+          ) : (
+            <Moon size={15} strokeWidth={2.25} aria-hidden />
+          )}
+        </button>
         {OPS_PHONE ? (
           <a
             href={`tel:${OPS_PHONE}`}
-            className="flex h-9 items-center gap-1 rounded-full bg-[var(--tr-surface-2)] px-3 text-sm font-bold text-[var(--tr-ink)]"
+            className="flex h-8 items-center gap-1 rounded-full bg-[var(--tr-surface-2)] px-3 text-sm font-bold text-[var(--tr-ink)]"
             data-testid="driver-ops-call"
           >
             <Phone size={15} strokeWidth={2.25} aria-hidden />
@@ -1201,7 +1222,7 @@ export default function Cockpit({
                       ? 'max-w-[85vw] rounded-3xl rounded-br-md bg-[var(--tr-bubble-me)] px-5 py-4 text-xl font-medium text-[var(--tr-bubble-me-ink)]'
                       : system
                         ? 'max-w-[85vw] rounded-2xl bg-[var(--tr-surface-2)] px-4 py-3 text-base text-[var(--tr-ink-2)]'
-                        : 'max-w-[85vw] rounded-3xl rounded-bl-md bg-[var(--tr-surface-2)] px-5 py-4 text-2xl font-semibold text-[var(--tr-ink)]'
+                        : 'max-w-[85vw] rounded-3xl rounded-bl-md bg-[var(--tr-surface-2)] px-5 py-4 text-xl font-semibold text-[var(--tr-ink)]'
                   } ${localCls}`}
                 >
                   {text}
@@ -1380,7 +1401,7 @@ export default function Cockpit({
       ) : phase === 'transcribing' ? (
         <div className="px-4 pb-2 pt-1.5">
           <div
-            className="cockpit-shimmer w-full rounded-3xl bg-[var(--tr-surface-2)] py-4 text-center text-xl font-bold text-[var(--tr-ink-2)]"
+            className="cockpit-shimmer w-full rounded-3xl bg-[var(--tr-surface-2)] py-3 text-center text-lg font-bold text-[var(--tr-ink-2)]"
             data-testid="cockpit-transcribing"
           >
             인식 중…
@@ -1395,7 +1416,7 @@ export default function Cockpit({
               <button
                 type="button"
                 onClick={cancelPending}
-                className="rounded-3xl bg-[var(--tr-surface-2)] py-4 text-xl font-bold text-[var(--tr-ink)] transition-transform active:scale-[0.99]"
+                className="rounded-3xl bg-[var(--tr-surface-2)] py-3 text-lg font-bold text-[var(--tr-ink)] transition-transform active:scale-[0.99]"
                 data-testid="cockpit-cancel-send"
               >
                 취소
@@ -1403,7 +1424,7 @@ export default function Cockpit({
               <button
                 type="button"
                 onClick={() => pending && void sendVoice(pending)}
-                className="tr-btn-raised rounded-3xl bg-[var(--tr-bubble-me)] py-4 text-xl font-bold text-[var(--tr-bubble-me-ink)]"
+                className="tr-btn-raised rounded-3xl bg-[var(--tr-bubble-me)] py-3 text-lg font-bold text-[var(--tr-bubble-me-ink)]"
                 data-testid="cockpit-confirm-send"
               >
                 보내기
@@ -1413,18 +1434,18 @@ export default function Cockpit({
             <button
               type="button"
               onClick={cancelPending}
-              className="relative w-full overflow-hidden rounded-3xl bg-[var(--tr-surface-2)] py-4 transition-transform active:scale-[0.99]"
+              className="relative w-full overflow-hidden rounded-3xl bg-[var(--tr-surface-2)] py-3 transition-transform active:scale-[0.99]"
               data-testid="cockpit-undo-send"
             >
               <span aria-hidden className="cockpit-fill absolute bottom-0 left-0 h-1.5 rounded-full bg-white/80" />
-              <span className="relative text-xl font-bold text-[var(--tr-ink)]">탭하여 취소</span>
+              <span className="relative text-lg font-bold text-[var(--tr-ink)]">탭하여 취소</span>
             </button>
           )}
         </div>
       ) : (
         <div className="px-4 pb-2 pt-1.5">
           <div
-            className="cockpit-shimmer w-full rounded-3xl bg-[var(--tr-surface-2)] py-4 text-center text-xl font-bold text-[var(--tr-ink-2)]"
+            className="cockpit-shimmer w-full rounded-3xl bg-[var(--tr-surface-2)] py-3 text-center text-lg font-bold text-[var(--tr-ink-2)]"
             data-testid="cockpit-sending"
           >
             전송 중…
@@ -2136,9 +2157,14 @@ function NavRow({ dest }: { dest: NavDestination }) {
 export function Screen({ children }: { children: React.ReactNode }) {
   // W1.1 — the cockpit shares the room's dark token layer: outer `.dark` +
   // inner `.tr-root` so `.dark .tr-root` resolves (descendant combinator), the
-  // same way RoomShell applies its dark theme. No more parallel neutral ramp.
+  // same way RoomShell applies its dark theme.
+  // A5 — the hardcoded `.dark` became settings-conditional, but the DRIVER
+  // DEFAULT stays dark (night-driving glare): 'system' and 'dark' both resolve
+  // dark here; only an explicit 'light' lifts it (header chip / settings).
+  const { settings } = useTourRoomSettings();
+  const dark = settings.theme !== 'light';
   return (
-    <div className="dark">
+    <div className={dark ? 'dark' : ''}>
       <div
         className="tr-root relative mx-auto flex h-[100dvh] max-w-lg flex-col bg-[var(--tr-canvas)]"
         data-testid="driver-console"
@@ -2158,14 +2184,16 @@ export function Note({ children }: { children: React.ReactNode }) {
 }
 
 function ActionButton({ label, Icon, onClick }: { label: string; Icon: LucideIcon; onClick: () => void }) {
+  // A2 — compact pass (owner: every icon oversized EXCEPT the mic):
+  // 64→52px min height, 22→18px icon, tighter gap. Still ≥44px touch target.
   return (
     <button
       type="button"
       onClick={onClick}
-      className="tr-btn-flat flex min-h-[64px] flex-col items-center justify-center gap-1 rounded-2xl py-2.5 text-[var(--tr-ink)]"
+      className="tr-btn-flat flex min-h-[52px] flex-col items-center justify-center gap-0.5 rounded-2xl py-2 text-[var(--tr-ink)]"
       data-testid={`driver-action-${label}`}
     >
-      <Icon size={22} strokeWidth={2} aria-hidden />
+      <Icon size={18} strokeWidth={2} aria-hidden />
       <span className="text-sm font-bold">{label}</span>
     </button>
   );
