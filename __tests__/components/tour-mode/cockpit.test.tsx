@@ -9,21 +9,28 @@
 import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import Cockpit, { type CockpitRoom } from '@/components/tour-mode/cockpit/Cockpit';
 import type { RoomMessage } from '@/hooks/useTourRoomChannel';
+import {
+  readTourRoomSettings,
+  __resetTourRoomSettingsForTests,
+} from '@/hooks/useTourRoomSettings';
 
 // Controllable channel state so tests can seed the feed with guest messages
 // and assert against the optimistic send/queue surface (T0-4).
 const sendTextMock = jest.fn().mockResolvedValue(true);
+const sendPresetMock = jest.fn().mockResolvedValue(true);
 const retryFailedMock = jest.fn();
 const mockChannelState: {
   messages: RoomMessage[];
   connection: string;
   sendText: jest.Mock;
+  sendPreset: jest.Mock;
   retryFailed: jest.Mock;
   failedCount: number;
 } = {
   messages: [],
   connection: 'realtime',
   sendText: sendTextMock,
+  sendPreset: sendPresetMock,
   retryFailed: retryFailedMock,
   failedCount: 0,
 };
@@ -48,7 +55,10 @@ beforeAll(() => {
 });
 
 beforeEach(() => {
+  window.localStorage.clear();
+  __resetTourRoomSettingsForTests();
   sendTextMock.mockClear().mockResolvedValue(true);
+  sendPresetMock.mockClear().mockResolvedValue(true);
   retryFailedMock.mockClear();
   mockChannelState.messages = [];
   mockChannelState.connection = 'realtime';
@@ -92,6 +102,38 @@ describe('shared Cockpit', () => {
     expect(screen.getByTestId('driver-action-타세요')).toBeInTheDocument();
     expect(screen.getByTestId('driver-action-expense')).toBeInTheDocument();
     expect(screen.getByText('제주 동부 투어 · 연결됨')).toBeInTheDocument();
+  });
+
+  // A6 (plan §11.A) — the cockpit carries the DRIVER preset strip: one-tap
+  // driving announcements, zero guest phrases.
+  it('renders the driver quick-message strip and sends the 5-locale capsule on tap', async () => {
+    render(<Cockpit {...base} />);
+    const strip = screen.getByTestId('driver-quick-replies');
+    expect(strip).toBeInTheDocument();
+    expect(screen.getByTestId('driver-quick-departing_soon')).toBeInTheDocument();
+    expect(screen.getByTestId('driver-quick-seatbelt_check')).toBeInTheDocument();
+    expect(screen.queryByText(/화장실이 급해요/)).not.toBeInTheDocument();
+
+    fireEvent.click(screen.getByTestId('driver-quick-departing_soon'));
+    await waitFor(() => expect(sendPresetMock).toHaveBeenCalledTimes(1));
+    expect(sendPresetMock.mock.calls[0][0]).toMatchObject({ key: 'departing_soon' });
+    expect(sendPresetMock.mock.calls[0][1]).toBe('ko');
+  });
+
+  // A5 — cockpit theme: default (system) renders DARK for night driving; the
+  // header chip flips an explicit light/dark override in the device store.
+  it('defaults to dark and flips to light via the header theme chip', () => {
+    render(<Cockpit {...base} />);
+    const console = screen.getByTestId('driver-console');
+    expect(console.parentElement).toHaveClass('dark');
+
+    fireEvent.click(screen.getByTestId('cockpit-theme-toggle'));
+    expect(readTourRoomSettings().theme).toBe('light');
+    expect(console.parentElement).not.toHaveClass('dark');
+
+    fireEvent.click(screen.getByTestId('cockpit-theme-toggle'));
+    expect(readTourRoomSettings().theme).toBe('dark');
+    expect(console.parentElement).toHaveClass('dark');
   });
 
   it('omits the exit affordance for the pure driver (no onExit)', () => {

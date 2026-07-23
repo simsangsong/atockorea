@@ -233,8 +233,19 @@ interface CacheRow {
   source_locale: string | null;
 }
 
+/**
+ * A3 / plan §12 Q1 — cache-key salt tied to the translation prompt version.
+ * The translation memory stores outputs of a specific system prompt; when the
+ * prompt changes semantically (e.g. v2 added the honorific-register rule),
+ * bump this so old rows (written under the previous prompt) can never be
+ * served again. Old rows simply stop matching — no migration needed.
+ */
+export const TRANSLATION_PROMPT_VERSION = 2;
+
 export function hashSource(text: string): string {
-  return createHash('sha256').update(text.trim()).digest('hex');
+  return createHash('sha256')
+    .update(`v${TRANSLATION_PROMPT_VERSION}:${text.trim()}`)
+    .digest('hex');
 }
 
 /**
@@ -341,8 +352,17 @@ export async function translateTextViaRouter(
     [
       {
         role: 'system',
+        // A3 honorific filter (plan §11.A): drivers/guides often type blunt or
+        // casual Korean; guests must still receive a courteous translation.
+        // Register only — meaning, information, and content must not change.
+        // Bump TRANSLATION_PROMPT_VERSION whenever this prompt changes.
         content:
-          'Detect the source language. Translate the user text into each requested locale. Preserve names, times, pickup points, prices, and URLs. Respond with only a JSON object of the form {"source_locale": string, "translations": {locale: string}}.',
+          'Detect the source language. Translate the user text into each requested locale. ' +
+          'Always write each translation in the polite, formal register of the target language ' +
+          '(Korean 존댓말, Japanese 敬語/です・ます体, French vous, German Sie, Spanish usted, and the equivalent elsewhere), ' +
+          'even when the source text is casual, blunt, or impolite — but never change, add, or omit any meaning, information, or content. ' +
+          'Preserve names, times, pickup points, prices, and URLs. ' +
+          'Respond with only a JSON object of the form {"source_locale": string, "translations": {locale: string}}.',
       },
       { role: 'user', content: JSON.stringify({ text, target_locales: missing }) },
     ],

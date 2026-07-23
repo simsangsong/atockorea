@@ -3,6 +3,7 @@
  * failure demotion, translation memory (cache hit = zero LLM calls), and the
  * §M-2 skip heuristics.
  */
+import { createHash } from 'node:crypto';
 import {
   chatCompletion,
   hashSource,
@@ -10,6 +11,7 @@ import {
   shouldSkipTranslation,
   translateTextViaRouter,
   AiRouterError,
+  TRANSLATION_PROMPT_VERSION,
   type TranslationCacheDb,
 } from '@/lib/ai/router';
 
@@ -192,6 +194,48 @@ describe('lib/ai/router', () => {
     it('propagates total provider failure (caller owns graceful degradation, T1.3)', async () => {
       fetchMock.mockResolvedValue({ ok: false, status: 500, json: async () => ({}) });
       await expect(translateTextViaRouter('hello there', ['ko'], { db: null })).rejects.toThrow(AiRouterError);
+    });
+  });
+
+  describe('A3 honorific filter + prompt-version cache salt (plan §11.A / §12 Q1)', () => {
+    beforeEach(() => {
+      process.env.GEMINI_API_KEY = 'g-key';
+    });
+
+    it('system prompt demands the polite/formal register without changing content', async () => {
+      fetchMock.mockResolvedValue(okCompletion({ source_locale: 'ko', translations: { ja: 'すぐ出発します' } }));
+      await translateTextViaRouter('곧 출발한다', ['ja'], { db: null });
+      const body = JSON.parse(fetchMock.mock.calls[0][1].body);
+      const system = body.messages[0].content as string;
+      expect(system).toContain('polite, formal register');
+      expect(system).toContain('존댓말');
+      expect(system).toContain('敬語');
+      expect(system).toContain('vous');
+      expect(system).toContain('Sie');
+      expect(system).toContain('never change, add, or omit any meaning, information, or content');
+      // Still a single call on the existing endpoint — no extra pass.
+      expect(fetchMock).toHaveBeenCalledTimes(1);
+    });
+
+    it('cache key is salted with the prompt version so pre-honorific rows can never be served', async () => {
+      const text = 'Good morning everyone';
+      // A v1-era row was stored under the UNSALTED sha256 of the text.
+      const legacyHash = createHash('sha256').update(text.trim()).digest('hex');
+      expect(hashSource(text)).not.toBe(legacyHash);
+      expect(TRANSLATION_PROMPT_VERSION).toBeGreaterThanOrEqual(2);
+
+      const db = fakeCacheDb([
+        { source_hash: legacyHash, locale: 'ko', translated_text: '좋은 아침 (반말 캐시)', source_locale: 'en' },
+      ]);
+      fetchMock.mockResolvedValue(okCompletion({ source_locale: 'en', translations: { ko: '좋은 아침입니다' } }));
+
+      const result = await translateTextViaRouter(text, ['ko'], { db });
+      // The stale row is invisible: the router re-translates and stores under the salted key.
+      expect(result.translations.ko).toBe('좋은 아침입니다');
+      expect(fetchMock).toHaveBeenCalledTimes(1);
+      expect(db.upserted).toEqual([
+        expect.objectContaining({ source_hash: hashSource(text), locale: 'ko', translated_text: '좋은 아침입니다' }),
+      ]);
     });
   });
 

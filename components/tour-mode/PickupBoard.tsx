@@ -88,9 +88,11 @@ export default function PickupBoard({
 }) {
   if (!state.visible || !state.myStop) return null;
   const copy = COPY[locale];
-  const presets = QUICK_REPLY_PRESETS.filter((p) =>
-    (PICKUP_PRESET_KEYS as readonly string[]).includes(p.key),
-  );
+  // Explicit key order (arrived → running_late) — independent of how the
+  // customer set happens to be ordered (A6 role-set refactor).
+  const presets = PICKUP_PRESET_KEYS.map((key) =>
+    QUICK_REPLY_PRESETS.find((p) => p.key === key),
+  ).filter((p): p is QuickReplyPreset => Boolean(p));
   const time = state.myStop.pickup_time ? state.myStop.pickup_time.slice(0, 5) : null;
 
   return (

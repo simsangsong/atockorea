@@ -10,7 +10,7 @@
  */
 
 import type { ReactNode } from 'react';
-import { QUICK_REPLY_PRESETS } from '@/lib/tour-room/quickReplies';
+import { quickRepliesForRole, type QuickReplyRole } from '@/lib/tour-room/quickReplies';
 import { CHAT_LANGUAGES } from '@/lib/tour-room/languages';
 import { ROOM_LOCALES, type RoomLocale } from '@/lib/tour-room/snapshot';
 import { useTourRoomSettings } from '@/hooks/useTourRoomSettings';
@@ -205,6 +205,7 @@ export default function SettingsTab({
   chatLocale,
   onChatLocaleChange,
   manualKind,
+  viewerRole = 'customer',
 }: {
   locale: RoomLocale;
   /** Also syncs the participant row server-side (translation targeting, D-8). */
@@ -216,6 +217,8 @@ export default function SettingsTab({
   onChatLocaleChange?: (code: string) => void;
   /** A5 — usage-manual shape; absent hides the manual card (non-room surfaces). */
   manualKind?: ManualKind;
+  /** A6 — which role's quick-reply set to preview in the reminder card. */
+  viewerRole?: QuickReplyRole;
 }) {
   const { settings, update } = useTourRoomSettings();
   const copy = COPY[locale];
@@ -226,6 +229,39 @@ export default function SettingsTab({
     <div className="tr-stagger space-y-4 pb-4" data-testid="settings-tab">
       {/* A5 — the always-reachable copy of the first-entry manual. */}
       {manualKind ? <AppManual variant="inline" kind={manualKind} locale={locale} /> : null}
+      {/* A5 — display mode promoted above the language card so the theme
+          control is discoverable without scrolling. */}
+      <section className="tr-card p-4">
+        <h3 className="tr-card-text flex items-center gap-1.5 font-semibold text-[var(--tr-ink)]">
+          <IconThemeSystem size={15} className="text-[var(--tr-ink-3)]" aria-hidden />
+          {copy.theme}
+        </h3>
+        <div className="mt-2.5">
+          <SegmentedControl
+            value={settings.theme}
+            onChange={(theme) => update({ theme })}
+            options={[
+              {
+                value: 'light',
+                label: (
+                  <>
+                    <IconThemeLight size={13} aria-hidden /> {copy.themeLight}
+                  </>
+                ),
+              },
+              {
+                value: 'dark',
+                label: (
+                  <>
+                    <IconThemeDark size={13} aria-hidden /> {copy.themeDark}
+                  </>
+                ),
+              },
+              { value: 'system', label: copy.themeSystem },
+            ]}
+          />
+        </div>
+      </section>
       {/* One "Language" card with two clearly-labelled sub-controls so the app
           language (chrome, 5 locales) and the chat language (translation target,
           any language) don't read as two competing top-level settings. */}
@@ -278,38 +314,6 @@ export default function SettingsTab({
         )}
       </section>
 
-      <section className="tr-card p-4">
-        <h3 className="tr-card-text flex items-center gap-1.5 font-semibold text-[var(--tr-ink)]">
-          <IconThemeSystem size={15} className="text-[var(--tr-ink-3)]" aria-hidden />
-          {copy.theme}
-        </h3>
-        <div className="mt-2.5">
-          <SegmentedControl
-            value={settings.theme}
-            onChange={(theme) => update({ theme })}
-            options={[
-              {
-                value: 'light',
-                label: (
-                  <>
-                    <IconThemeLight size={13} aria-hidden /> {copy.themeLight}
-                  </>
-                ),
-              },
-              {
-                value: 'dark',
-                label: (
-                  <>
-                    <IconThemeDark size={13} aria-hidden /> {copy.themeDark}
-                  </>
-                ),
-              },
-              { value: 'system', label: copy.themeSystem },
-            ]}
-          />
-        </div>
-      </section>
-
       <section className="tr-card divide-y divide-[var(--tr-hairline)] px-4">
         <div className="flex items-start justify-between gap-3 py-3.5">
           <div>
@@ -352,7 +356,7 @@ export default function SettingsTab({
       {/* Quick replies always send in every language — shown here as a reminder of what a tap sends. */}
       <section className="tr-card p-4">
         <div className="flex flex-wrap gap-1.5">
-          {QUICK_REPLY_PRESETS.map((preset) => (
+          {quickRepliesForRole(viewerRole).map((preset) => (
             <span
               key={preset.key}
               className="tr-meta rounded-full bg-[var(--tr-surface-2)] px-2.5 py-1 text-[var(--tr-ink-2)]"

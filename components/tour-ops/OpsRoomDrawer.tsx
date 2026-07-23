@@ -14,7 +14,7 @@ import { toast } from 'sonner';
 import { MapPin, Phone, X } from 'lucide-react';
 import type { OpsRoomStream } from '@/hooks/useOpsChannels';
 import type { RoomMessage } from '@/hooks/useTourRoomChannel';
-import { QUICK_REPLY_PRESETS } from '@/lib/tour-room/quickReplies';
+import { GUIDE_QUICK_REPLIES } from '@/lib/tour-room/quickReplies';
 import {
   getOpsToken,
   kstTimeLabel,
@@ -252,7 +252,8 @@ export default function OpsRoomDrawer({
 
         <div className="border-t border-[var(--tr-hairline)] px-3 pt-2">
           <div className="flex gap-1.5 overflow-x-auto pb-2" style={{ scrollbarWidth: 'none' }}>
-            {QUICK_REPLY_PRESETS.map((preset) => (
+            {/* A6 — ops speaks with the staff (guide) set, never guest phrases. */}
+            {GUIDE_QUICK_REPLIES.map((preset) => (
               <button
                 key={preset.key}
                 type="button"

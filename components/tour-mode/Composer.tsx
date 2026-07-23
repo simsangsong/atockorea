@@ -18,7 +18,7 @@
  */
 
 import { useCallback, useEffect, useRef, useState, type FormEvent, type KeyboardEvent } from 'react';
-import { QUICK_REPLY_PRESETS, type QuickReplyPreset } from '@/lib/tour-room/quickReplies';
+import { quickRepliesForRole, type QuickReplyPreset, type QuickReplyRole } from '@/lib/tour-room/quickReplies';
 import {
   isVoiceRecordingSupported,
   startVoiceRecording,
@@ -159,6 +159,7 @@ export default function Composer({
   onCancelReply,
   onTyping,
   disabled = false,
+  viewerRole = 'customer',
 }: {
   locale: RoomLocale;
   onSendText: (text: string) => void;
@@ -177,6 +178,8 @@ export default function Composer({
   /** Phase 2d — called (throttled by the caller) while the user types. */
   onTyping?: () => void;
   disabled?: boolean;
+  /** A6 — selects the role-scoped quick-reply set (customer/guide/driver). */
+  viewerRole?: QuickReplyRole;
 }) {
   const [draft, setDraft] = useState('');
   const [voiceState, setVoiceState] = useState<'idle' | 'recording' | 'transcribing'>('idle');
@@ -428,9 +431,9 @@ export default function Composer({
 
   return (
     <div className="-mx-3">
-      {/* Quick replies ride the canvas just above the docked bar. */}
+      {/* Quick replies ride the canvas just above the docked bar (A6: role-scoped set). */}
       <div className="mb-1.5 flex gap-1.5 overflow-x-auto px-3 pb-1" data-testid="quick-replies">
-        {QUICK_REPLY_PRESETS.map((preset) => (
+        {quickRepliesForRole(viewerRole).map((preset) => (
           <button
             key={preset.key}
             type="button"
