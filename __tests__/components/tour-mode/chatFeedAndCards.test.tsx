@@ -69,7 +69,7 @@ describe('ChatFeed', () => {
 });
 
 describe('Composer', () => {
-  it('renders all 8 preset chips in the viewer locale and guards double taps', () => {
+  it('renders every customer preset chip in the viewer locale and guards double taps', () => {
     jest.useFakeTimers().setSystemTime(new Date('2026-07-14T05:00:00Z'));
     const onSendPreset = jest.fn();
     render(<Composer locale="ko" onSendText={jest.fn()} onSendPreset={onSendPreset} />);
@@ -78,7 +78,7 @@ describe('Composer', () => {
       expect(screen.getByText(new RegExp(preset.text.ko.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')))).toBeInTheDocument();
     }
 
-    const chip = screen.getByText(/버스가 어디에 있나요\?/);
+    const chip = screen.getByText(/화장실이 급해요/);
     fireEvent.click(chip);
     fireEvent.click(chip); // within cooldown — ignored
     expect(onSendPreset).toHaveBeenCalledTimes(1);
@@ -87,6 +87,21 @@ describe('Composer', () => {
     fireEvent.click(chip);
     expect(onSendPreset).toHaveBeenCalledTimes(2);
     jest.useRealTimers();
+  });
+
+  it('A6 — shows the role-scoped preset set (driver sees driving chips, no guest phrases)', () => {
+    const { unmount } = render(
+      <Composer locale="ko" viewerRole="driver" onSendText={jest.fn()} onSendPreset={jest.fn()} />,
+    );
+    expect(screen.getByText(/곧 출발합니다/)).toBeInTheDocument();
+    expect(screen.getByText(/안전벨트를 확인해 주세요/)).toBeInTheDocument();
+    expect(screen.queryByText(/화장실이 급해요/)).not.toBeInTheDocument();
+    unmount();
+
+    render(<Composer locale="ko" viewerRole="guide" onSendText={jest.fn()} onSendPreset={jest.fn()} />);
+    expect(screen.getByText(/저를 따라오세요/)).toBeInTheDocument();
+    expect(screen.queryByText(/곧 출발합니다/)).not.toBeInTheDocument();
+    expect(screen.queryByText(/속이 안 좋아요/)).not.toBeInTheDocument();
   });
 
   it('clears the draft on submit and never submits blank text', () => {

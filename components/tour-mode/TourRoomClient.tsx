@@ -802,6 +802,7 @@ function TourRoomLive({
           locale={locale}
           onLocaleChange={onLocaleChange}
           manualKind={manualKind}
+          viewerRole={viewerRole === 'guide' || viewerRole === 'driver' ? viewerRole : 'customer'}
           {...(viewerRole === 'customer'
             ? { chatLocale: chatLocaleOverride, onChatLocaleChange }
             : {})}
@@ -915,6 +916,7 @@ function TourRoomLive({
           {!readOnly && (
             <Composer
               locale={locale}
+              viewerRole={viewerRole === 'guide' || viewerRole === 'driver' ? viewerRole : 'customer'}
               onSendText={(text) => {
                 void sendText(text, replyOpts());
                 setReplyTo(null);

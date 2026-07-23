@@ -25,6 +25,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useTourRoomChannel, type RoomMessage } from '@/hooks/useTourRoomChannel';
+import { DRIVER_QUICK_REPLIES } from '@/lib/tour-room/quickReplies';
 import { startVoiceRecording } from '@/lib/tour-room/recorder';
 import { isDeviceSttSupported, startDeviceStt } from '@/lib/tour-room/deviceStt';
 import { primeAudio } from '@/lib/tour-room/tts';
@@ -259,6 +260,7 @@ export default function Cockpit({
     // guest side): the operator sees their own bubble instantly and a failed
     // send is held for retry instead of silently lost on flaky field data.
     sendText: sendChannelText,
+    sendPreset: sendChannelPreset,
     retryFailed,
     failedCount,
   } = useTourRoomChannel({
@@ -1271,6 +1273,31 @@ export default function Cockpit({
       {/* input dock — idle: type + mic; else elegant recording/undo/sending states */}
       {phase === 'idle' ? (
         <>
+          {/* A6 — driver quick messages: one tap sends the 5-locale capsule
+              (zero LLM), sized for use at the wheel. */}
+          <div
+            className="flex gap-1.5 overflow-x-auto px-4 pt-1.5"
+            style={{ scrollbarWidth: 'none' }}
+            data-testid="driver-quick-replies"
+          >
+            {DRIVER_QUICK_REPLIES.map((preset) => (
+              <button
+                key={preset.key}
+                type="button"
+                onClick={() => {
+                  void (async () => {
+                    const ok = await sendChannelPreset(preset, 'ko');
+                    say(ok ? '전송 완료 ✓' : '전송 대기 — 아래 재전송을 눌러 주세요');
+                  })();
+                }}
+                className="flex h-11 shrink-0 items-center gap-1 rounded-full border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3.5 text-base font-semibold text-[var(--tr-ink)] transition-transform active:scale-95"
+                data-testid={`driver-quick-${preset.key}`}
+              >
+                <span aria-hidden>{preset.emoji}</span>
+                {preset.text.ko}
+              </button>
+            ))}
+          </div>
           {/* typed send — always available (webview fallback / quiet typing) */}
           <div className="px-4 pt-1.5">
             <form

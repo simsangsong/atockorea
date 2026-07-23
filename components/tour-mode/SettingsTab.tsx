@@ -10,7 +10,7 @@
  */
 
 import type { ReactNode } from 'react';
-import { QUICK_REPLY_PRESETS } from '@/lib/tour-room/quickReplies';
+import { quickRepliesForRole, type QuickReplyRole } from '@/lib/tour-room/quickReplies';
 import { CHAT_LANGUAGES } from '@/lib/tour-room/languages';
 import { ROOM_LOCALES, type RoomLocale } from '@/lib/tour-room/snapshot';
 import { useTourRoomSettings } from '@/hooks/useTourRoomSettings';
@@ -205,6 +205,7 @@ export default function SettingsTab({
   chatLocale,
   onChatLocaleChange,
   manualKind,
+  viewerRole = 'customer',
 }: {
   locale: RoomLocale;
   /** Also syncs the participant row server-side (translation targeting, D-8). */
@@ -216,6 +217,8 @@ export default function SettingsTab({
   onChatLocaleChange?: (code: string) => void;
   /** A5 — usage-manual shape; absent hides the manual card (non-room surfaces). */
   manualKind?: ManualKind;
+  /** A6 — which role's quick-reply set to preview in the reminder card. */
+  viewerRole?: QuickReplyRole;
 }) {
   const { settings, update } = useTourRoomSettings();
   const copy = COPY[locale];
@@ -352,7 +355,7 @@ export default function SettingsTab({
       {/* Quick replies always send in every language — shown here as a reminder of what a tap sends. */}
       <section className="tr-card p-4">
         <div className="flex flex-wrap gap-1.5">
-          {QUICK_REPLY_PRESETS.map((preset) => (
+          {quickRepliesForRole(viewerRole).map((preset) => (
             <span
               key={preset.key}
               className="tr-meta rounded-full bg-[var(--tr-surface-2)] px-2.5 py-1 text-[var(--tr-ink-2)]"
