@@ -23,6 +23,7 @@ import {
   type OpsRoom,
   type SosInfo,
 } from '@/components/tour-ops/opsShared';
+import OpsManifestView from '@/components/tour-ops/OpsManifestView';
 
 const FEED_LIMIT = 80;
 
@@ -46,7 +47,10 @@ export default function OpsRoomDrawer({
   const [pending, setPending] = useState<RoomMessage[]>([]);
   const [draft, setDraft] = useState('');
   const [sending, setSending] = useState(false);
+  // Phase 2 §3.2 — 룸 상세 세그먼트: 대화(기존) | 명단(같은 tour_id+tour_date).
+  const [view, setView] = useState<'chat' | 'manifest'>('chat');
   const feedRef = useRef<HTMLDivElement | null>(null);
+  const manifestAvailable = Boolean(room.tour_id && room.tour_date);
 
   // REST backlog on open — broadcast only carries what arrived while subscribed.
   useEffect(() => {
@@ -195,6 +199,36 @@ export default function OpsRoomDrawer({
           </button>
         </header>
 
+        {/* Phase 2 §3.2 — [대화|명단] 세그먼트 (명단 = tour_id+tour_date 파생 뷰) */}
+        {manifestAvailable && (
+          <div className="flex gap-1.5 border-b border-[var(--tr-hairline)] px-4 py-2">
+            {(
+              [
+                { key: 'chat', label: '대화' },
+                { key: 'manifest', label: '명단' },
+              ] as Array<{ key: 'chat' | 'manifest'; label: string }>
+            ).map(({ key, label }) => (
+              <button
+                key={key}
+                type="button"
+                onClick={() => setView(key)}
+                aria-pressed={view === key}
+                className={`h-8 rounded-full px-3.5 text-[12px] font-semibold ${
+                  view === key
+                    ? 'bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]'
+                    : 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]'
+                }`}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+        )}
+
+        {view === 'manifest' && manifestAvailable && (
+          <OpsManifestView tourId={room.tour_id!} tourDate={room.tour_date!} tourTitle={room.tour?.title ?? null} />
+        )}
+
         {sos && (
           <div className="flex items-center gap-2 border-b border-red-200 bg-red-50 px-4 py-2.5 text-[12px] text-red-700 dark:border-red-500/30 dark:bg-red-950/50 dark:text-red-200">
             <span className="animate-pulse">🆘</span>
@@ -216,6 +250,7 @@ export default function OpsRoomDrawer({
           </div>
         )}
 
+        {view === 'chat' && (
         <div ref={feedRef} className="min-h-[200px] flex-1 space-y-2 overflow-y-auto px-4 py-3">
           {backlogLoading && feed.length === 0 && <p className="text-center text-[12px] text-[var(--tr-ink-3)]">피드를 불러오는 중…</p>}
           {!backlogLoading && feed.length === 0 && <p className="text-center text-[12px] text-[var(--tr-ink-3)]">아직 메시지가 없습니다.</p>}
@@ -249,7 +284,9 @@ export default function OpsRoomDrawer({
             );
           })}
         </div>
+        )}
 
+        {view === 'chat' && (
         <div className="border-t border-[var(--tr-hairline)] px-3 pt-2">
           <div className="flex gap-1.5 overflow-x-auto pb-2" style={{ scrollbarWidth: 'none' }}>
             {/* A6 — ops speaks with the staff (guide) set, never guest phrases. */}
@@ -289,6 +326,7 @@ export default function OpsRoomDrawer({
             </button>
           </form>
         </div>
+        )}
       </div>
     </div>
   );

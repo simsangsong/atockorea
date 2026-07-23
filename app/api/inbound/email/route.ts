@@ -4,6 +4,7 @@ import { Webhook } from 'svix';
 import { createServerClient } from '@/lib/supabase';
 import { classifyInbound } from '@/lib/ops/inbox/classify';
 import { commitInboundEmail } from '@/lib/ops/inbox/commit';
+import { bodyTextFrom, fetchReceivedEmail } from '@/lib/ops/inbox/received';
 import { maskLine } from '@/lib/ops/parse/mask';
 import { DEFAULT_TENANT_ID } from '@/lib/ops/parse/types';
 
@@ -45,45 +46,8 @@ function parseAddress(value: unknown): AddressLike {
   return { email: '', name: null };
 }
 
-function stripHtml(html: string): string {
-  return html
-    .replace(/<style[\s\S]*?<\/style>/gi, ' ')
-    .replace(/<script[\s\S]*?<\/script>/gi, ' ')
-    .replace(/<br\s*\/?>/gi, '\n')
-    .replace(/<\/(p|div|tr|li|h[1-6])>/gi, '\n')
-    .replace(/<[^>]+>/g, ' ')
-    .replace(/&nbsp;/g, ' ')
-    .replace(/&amp;/g, '&')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/[ \t]+/g, ' ')
-    .replace(/\n{3,}/g, '\n\n')
-    .trim();
-}
-
-function bodyTextFrom(data: Record<string, unknown>): string {
-  const text = typeof data.text === 'string' ? data.text : typeof data.text_content === 'string' ? data.text_content : '';
-  if (text.trim()) return text;
-  const html = typeof data.html === 'string' ? data.html : typeof data.html_content === 'string' ? data.html_content : '';
-  return html ? stripHtml(html) : '';
-}
-
-/** A-2 — Resend Received API로 본문 fetch (인메모리 전용). */
-async function fetchReceivedBody(emailId: string): Promise<{ ok: true; data: Record<string, unknown> } | { ok: false; error: string }> {
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) return { ok: false, error: 'RESEND_API_KEY not configured' };
-  try {
-    const { Resend } = await import('resend');
-    const resend = new Resend(apiKey);
-    const { data, error } = await (resend.emails as unknown as {
-      receiving: { get(id: string): Promise<{ data: Record<string, unknown> | null; error: { message?: string } | null }> };
-    }).receiving.get(emailId);
-    if (error || !data) return { ok: false, error: error?.message ?? 'empty Received API response' };
-    return { ok: true, data };
-  } catch (e) {
-    return { ok: false, error: e instanceof Error ? e.message : 'Received API fetch failed' };
-  }
-}
+// A-2 — 본문 헬퍼는 lib/ops/inbox/received.ts로 승격 (Phase 2 리뷰 큐
+// [승인 커밋]과 공유). 인메모리 전용 계약은 동일.
 
 export async function POST(req: NextRequest) {
   // fail-closed: 서명 비밀 없이는 어떤 수신도 처리하지 않는다.
@@ -161,7 +125,7 @@ export async function POST(req: NextRequest) {
     // 어느 쪽이든 인메모리 문자열로만 존재하고 이 핸들러를 벗어나지 않는다.
     let text = bodyTextFrom(data);
     if (!text) {
-      const fetched = await fetchReceivedBody(messageId);
+      const fetched = await fetchReceivedEmail(messageId);
       if (!fetched.ok) {
         await releaseIdempotency();
         return NextResponse.json({ error: `body fetch failed: ${fetched.error}` }, { status: 500 });

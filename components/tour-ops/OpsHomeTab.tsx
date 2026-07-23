@@ -13,6 +13,7 @@ import {
   Inbox,
   LayoutDashboard,
   Link2,
+  MailCheck,
   Map as MapIcon,
 } from 'lucide-react';
 import { isRecent, type OpsRoom, type SosInfo } from '@/components/tour-ops/opsShared';
@@ -27,6 +28,7 @@ export default function OpsHomeTab({
   onNavigate,
   onOpenManager,
   onOpenInbox,
+  onOpenReview,
 }: {
   rooms: OpsRoom[];
   sosRooms: Map<string, SosInfo>;
@@ -35,6 +37,7 @@ export default function OpsHomeTab({
   onNavigate: (tab: OpsTab) => void;
   onOpenManager: () => void;
   onOpenInbox: () => void;
+  onOpenReview?: () => void;
 }) {
   const liveCount = rooms.filter(
     (room) =>
@@ -83,6 +86,13 @@ export default function OpsHomeTab({
       desc: '모든 룸의 메시지를 한 타임라인으로',
       icon: Inbox,
       onClick: onOpenInbox,
+    },
+    {
+      key: 'review',
+      title: '인박스 리뷰 큐',
+      desc: 'OTA 메일 파싱 검토 · 승인 커밋 · 상품 매핑',
+      icon: MailCheck,
+      onClick: onOpenReview,
     },
     {
       key: 'map',

@@ -78,6 +78,13 @@ export interface InboundCommitInput {
   raw: string
   messageId?: string | null
   emit?: (e: FunnelEvent) => void
+  /**
+   * Phase 2 리뷰 큐 [승인 커밋] (plan A-6 "0.60~0.84 → 사람 확정 후 A-7").
+   * true면 confidence 게이트(<0.60 failed / <0.85 review_queued)를 건너뛴다 —
+   * 사람이 마스킹 요약을 보고 확정했으므로. 매핑/외부ID/tour_date 요건은
+   * 그대로 유지된다 (A-7b 오배치 방지는 승인으로도 우회 불가).
+   */
+  approveMode?: boolean
 }
 
 const OTA_CHANNELS: ReadonlySet<string> = new Set(['klook', 'viator', 'gyg', 'kkday', 'atoc'])
@@ -180,17 +187,18 @@ async function commitConfirm(
   channel: string,
   b: ParsedBooking,
   item: InboundCommitItem,
+  approveMode = false,
 ): Promise<void> {
   const mapping = await lookupProductMap(supabase, tenantId, channel, b.productName)
   if (!mapping) {
-    // A-7b — 미매핑 상품은 자동 커밋 금지 (오배치 방지).
+    // A-7b — 미매핑 상품은 자동 커밋 금지 (오배치 방지). approveMode도 우회 불가.
     item.commitResult = 'review_queued'
     item.reason = normalizeForLookup(b.productName ?? '') ? 'unmapped_product' : 'missing_product_name'
     return
   }
   item.tourKind = mapping.tour_kind
 
-  if (b.confidenceScore < AUTO_COMMIT_MIN_CONFIDENCE) {
+  if (!approveMode && b.confidenceScore < AUTO_COMMIT_MIN_CONFIDENCE) {
     item.commitResult = 'review_queued'
     item.reason = 'confidence_below_auto'
     return
@@ -319,8 +327,9 @@ async function commitChange(
   channel: string,
   b: ParsedBooking,
   item: InboundCommitItem,
+  approveMode = false,
 ): Promise<void> {
-  if (b.confidenceScore < AUTO_COMMIT_MIN_CONFIDENCE) {
+  if (!approveMode && b.confidenceScore < AUTO_COMMIT_MIN_CONFIDENCE) {
     item.commitResult = 'review_queued'
     item.reason = 'change_confidence_below_auto'
     return
@@ -415,7 +424,8 @@ export async function commitInboundEmail(input: InboundCommitInput): Promise<Inb
 
     try {
       // A-6 — <0.60 → 실패 코퍼스 (마스킹) + 알림. intent 무관 공통 게이트.
-      if (b.confidenceScore < REVIEW_MIN_CONFIDENCE) {
+      // approveMode(사람 확정)에서는 건너뛴다.
+      if (!input.approveMode && b.confidenceScore < REVIEW_MIN_CONFIDENCE) {
         item.commitResult = 'failed'
         item.reason = 'low_confidence'
         failureRecords.push({
@@ -440,8 +450,8 @@ export async function commitInboundEmail(input: InboundCommitInput): Promise<Inb
       }
 
       if (intent === 'cancel') await commitCancel(supabase, effectiveChannel, b, item)
-      else if (intent === 'change') await commitChange(supabase, effectiveChannel, b, item)
-      else await commitConfirm(supabase, tenantId, effectiveChannel, b, item)
+      else if (intent === 'change') await commitChange(supabase, effectiveChannel, b, item, input.approveMode)
+      else await commitConfirm(supabase, tenantId, effectiveChannel, b, item, input.approveMode)
     } catch (e) {
       item.commitResult = 'failed'
       item.reason = `commit_error: ${e instanceof Error ? e.message : 'unknown'}`
