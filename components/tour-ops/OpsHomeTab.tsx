@@ -7,8 +7,10 @@
  * task — the hub is the task list.
  */
 
+import { useState } from 'react';
 import {
   BarChart3,
+  FileBarChart,
   GraduationCap,
   Inbox,
   LayoutDashboard,
@@ -45,6 +47,36 @@ export default function OpsHomeTab({
       room.participants.some((participant) => isRecent(participant.last_seen_at)),
   ).length;
   const sosCount = sosRooms.size;
+
+  // §11.E 수동 원버튼 [지금 보고서 발송] — POST /api/cron/ops-daily-report (force=true).
+  const [reportState, setReportState] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+  const [reportMsg, setReportMsg] = useState<string>('');
+  const sendReport = async () => {
+    if (reportState === 'sending') return;
+    setReportState('sending');
+    setReportMsg('');
+    try {
+      const res = await fetch('/api/cron/ops-daily-report', { method: 'POST' });
+      const data = (await res.json().catch(() => ({}))) as {
+        sent?: boolean;
+        recipient?: string;
+        attentionTotal?: number | null;
+        error?: string;
+      };
+      if (res.ok && data.sent) {
+        setReportState('sent');
+        setReportMsg(`${data.recipient ?? '수신자'}에게 발송 완료${
+          typeof data.attentionTotal === 'number' ? ` · 요주의 ${data.attentionTotal}건` : ''
+        }`);
+      } else {
+        setReportState('error');
+        setReportMsg(data.error ?? '발송 실패 — 잠시 후 다시 시도하세요.');
+      }
+    } catch {
+      setReportState('error');
+      setReportMsg('네트워크 오류 — 다시 시도하세요.');
+    }
+  };
 
   const stats: Array<{ label: string; value: number; tone?: 'red' | 'amber' | 'emerald' }> = [
     { label: '오늘 룸', value: rooms.length },
@@ -115,6 +147,13 @@ export default function OpsHomeTab({
       icon: BarChart3,
       href: '/admin/chatbot-analytics',
     },
+    {
+      key: 'daily-report',
+      title: reportState === 'sending' ? '보고서 발송 중…' : '지금 보고서 발송',
+      desc: '오늘 실적 · 신규 · 내일 · 연락 · 요주의 每日報表',
+      icon: FileBarChart,
+      onClick: () => void sendReport(),
+    },
   ];
 
   const badgeClass = (tone?: 'red' | 'amber' | 'blue') =>
@@ -160,6 +199,18 @@ export default function OpsHomeTab({
           </span>
           <span className="text-[12px] text-red-600 dark:text-red-300">SOS 탭 →</span>
         </button>
+      )}
+
+      {/* §11.E 일일 보고서 발송 결과 배너 */}
+      {reportState === 'sent' && (
+        <div className="rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-2.5 text-[12px] font-semibold text-emerald-700 dark:border-emerald-500/50 dark:bg-emerald-950/40 dark:text-emerald-200">
+          ✓ 일일 보고서 발송 완료 — {reportMsg}
+        </div>
+      )}
+      {reportState === 'error' && (
+        <div className="rounded-2xl border border-red-200 bg-red-50 px-4 py-2.5 text-[12px] font-semibold text-red-700 dark:border-red-500/50 dark:bg-red-950/40 dark:text-red-200">
+          보고서 발송 실패 — {reportMsg}
+        </div>
       )}
 
       {/* Action tiles */}
