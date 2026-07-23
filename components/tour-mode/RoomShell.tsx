@@ -20,6 +20,7 @@ import { ChevronLeft } from 'lucide-react';
 import EmergencyCard from '@/components/tour-mode/EmergencyCard';
 import Sheet from '@/components/tour-mode/Sheet';
 import { useKeyboardOpen } from '@/components/tour-mode/useKeyboardOpen';
+import { useTourRoomSettings } from '@/hooks/useTourRoomSettings';
 import {
   IconConcierge,
   IconEmergency,
@@ -29,6 +30,9 @@ import {
   IconTabSchedule,
   IconTabSettings,
   IconPickup,
+  IconThemeDark,
+  IconThemeLight,
+  IconThemeSystem,
 } from '@/components/tour-mode/icons';
 import { EMERGENCY_TITLE } from '@/lib/tour-room/emergency';
 import { scheduleClock } from '@/lib/tour-room/time';
@@ -69,6 +73,21 @@ const CLOSE_LABEL: Record<RoomLocale, string> = {
   ja: '閉じる',
   es: 'Cerrar',
   zh: '关闭',
+};
+
+/** A5 — header theme cycle button: aria-label per current 3-state value. */
+const THEME_LABEL: Record<RoomLocale, { light: string; dark: string; system: string }> = {
+  en: { light: 'Display: light', dark: 'Display: dark', system: 'Display: auto' },
+  ko: { light: '화면 모드: 라이트', dark: '화면 모드: 다크', system: '화면 모드: 자동' },
+  ja: { light: '画面モード: ライト', dark: '画面モード: ダーク', system: '画面モード: 自動' },
+  es: { light: 'Pantalla: claro', dark: 'Pantalla: oscuro', system: 'Pantalla: auto' },
+  zh: { light: '显示模式: 浅色', dark: '显示模式: 深色', system: '显示模式: 自动' },
+};
+
+const THEME_CYCLE: Record<'light' | 'dark' | 'system', 'light' | 'dark' | 'system'> = {
+  light: 'dark',
+  dark: 'system',
+  system: 'light',
 };
 
 const LIFECYCLE_BADGE: Record<string, { label: string; className: string }> = {
@@ -213,6 +232,10 @@ export default function RoomShell({
   const [conciergePulse, setConciergePulse] = useState(false);
   const [chatUnread, setChatUnread] = useState(false);
   const keyboardOpen = useKeyboardOpen();
+  // A5 — the header carries an explicit 3-state theme toggle (light → dark →
+  // system). Writes the shared device settings store; the caller re-resolves
+  // and the `theme` prop follows.
+  const { settings: deviceSettings, update: updateSettings } = useTourRoomSettings();
   const badge = LIFECYCLE_BADGE[lifecycle] ?? LIFECYCLE_BADGE.live;
   const labels = TAB_LABEL[locale];
   // The "now" marker on the schedule advances on a 1-min tick (kept out of
@@ -381,6 +404,22 @@ export default function RoomShell({
               subtitle && <p className="tr-meta mt-0.5 truncate text-[var(--tr-ink-3)]">{subtitle}</p>
             )}
           </div>
+          <button
+            type="button"
+            onClick={() => updateSettings({ theme: THEME_CYCLE[deviceSettings.theme] })}
+            aria-label={THEME_LABEL[locale][deviceSettings.theme]}
+            title={THEME_LABEL[locale][deviceSettings.theme]}
+            className="flex h-11 w-9 shrink-0 items-center justify-center rounded-full text-[var(--tr-ink-2)] active:bg-[var(--tr-surface-2)]"
+            data-testid="theme-toggle"
+          >
+            {deviceSettings.theme === 'light' ? (
+              <IconThemeLight size={19} strokeWidth={2} aria-hidden />
+            ) : deviceSettings.theme === 'dark' ? (
+              <IconThemeDark size={19} strokeWidth={2} aria-hidden />
+            ) : (
+              <IconThemeSystem size={19} strokeWidth={2} aria-hidden />
+            )}
+          </button>
           {concierge && (
             <div className="relative shrink-0">
               <button
