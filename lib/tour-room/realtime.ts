@@ -23,7 +23,8 @@ export type RoomBroadcastEvent =
   | 'room'           // room status change (closed, etc.)
   | 'reaction'       // Kakao-grade: emoji reaction added/removed on a message
   | 'read'           // read-cursor advanced by a participant (read receipts)
-  | 'typing';        // ephemeral typing ping (not persisted)
+  | 'typing'         // ephemeral typing ping (not persisted)
+  | 'seat_update';   // ops seating: seat claimed/released/checked-in/absent (plan §5.3 C-10)
 
 function channelSigningSecret(): string {
   return (
