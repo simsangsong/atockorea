@@ -186,6 +186,27 @@ export async function GET(req: NextRequest) {
         continue;
       }
 
+      // F-1 (plan §6.1) — 캡처 확정 시 내부 원장 기입. webhook succeeded와 동일
+      // 멱등키라 둘 다 발화해도 1행으로 수렴; 이 크론 경로가 있어 webhook 미수신
+      // 상황에서도 원장 갭이 생기지 않는다. best-effort — 실패해도 캡처 무영향.
+      try {
+        const { recordCaptureLedger } = await import('@/lib/ops/finance/ledger');
+        const { getFinanceMarginRate } = await import('@/lib/ops/finance/config');
+        const marginRate = await getFinanceMarginRate(supabase);
+        const ledger = await recordCaptureLedger(supabase, {
+          bookingId: booking.id,
+          grossMinor: captured.amount_received ?? captured.amount ?? 0,
+          currency: captured.currency ?? 'usd',
+          marginRate,
+          paymentIntentId: captured.id,
+        });
+        if (!ledger.ok) {
+          console.error(`[capture-tour-day-payments] ledger record skipped booking=${booking.id}: ${ledger.error}`);
+        }
+      } catch (ledgerErr) {
+        console.error(`[capture-tour-day-payments] ledger record failed (non-blocking) booking=${booking.id}:`, ledgerErr);
+      }
+
       summary.captured += 1;
       console.log(
         `[capture-tour-day-payments] captured booking=${booking.id} amount=${captured.amount_received} ${captured.currency}`,

@@ -188,6 +188,28 @@ export async function POST(req: NextRequest) {
          *  release follows the BOOKING lifecycle, not the PI's.) */
         await redeemCouponForBooking(supabase, bookingId);
 
+        /** F-1 (plan §6.1) — 캡처 확정 시 내부 원장 기입(5472 대사 원천). 고객
+         *  인보이스는 없음(D11 — Stripe 영수증 갈음). 멱등 upsert이므로 크론
+         *  캡처와의 이중 발화는 1행으로 수렴한다. best-effort: 원장 실패가
+         *  캡처를 되돌리면 안 되므로 절대 throw하지 않고 로그만 남긴다. */
+        try {
+          const { recordCaptureLedger } = await import('@/lib/ops/finance/ledger');
+          const { getFinanceMarginRate } = await import('@/lib/ops/finance/config');
+          const marginRate = await getFinanceMarginRate(supabase);
+          const ledger = await recordCaptureLedger(supabase, {
+            bookingId,
+            grossMinor: pi.amount_received ?? pi.amount ?? 0,
+            currency: pi.currency ?? 'usd',
+            marginRate,
+            paymentIntentId: pi.id,
+          });
+          if (!ledger.ok) {
+            console.error(`[webhook] entity ledger record skipped for booking ${bookingId}: ${ledger.error}`);
+          }
+        } catch (ledgerErr) {
+          console.error(`[webhook] entity ledger record failed (non-blocking) for booking ${bookingId}:`, ledgerErr);
+        }
+
         console.log(`Booking ${bookingId} card charge captured: ${pi.amount_received} ${pi.currency}`);
         break;
       }
