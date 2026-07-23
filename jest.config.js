@@ -17,7 +17,12 @@ const customJestConfig = {
     '**/?(*.)+(spec|test).[jt]s?(x)',
   ],
   // Playwright specs (T1.9) run via `npm run e2e`, not jest.
-  testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/e2e/'],
+  // lib/ops/parse test fixtures are shared data modules, not suites.
+  testPathIgnorePatterns: [
+    '<rootDir>/node_modules/',
+    '<rootDir>/e2e/',
+    '<rootDir>/lib/ops/parse/__tests__/fixtures/',
+  ],
   collectCoverageFrom: [
     'lib/**/*.{js,jsx,ts,tsx}',
     'app/api/**/*.{js,jsx,ts,tsx}',
