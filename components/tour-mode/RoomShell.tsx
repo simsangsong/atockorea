@@ -31,6 +31,7 @@ import {
   IconPickup,
 } from '@/components/tour-mode/icons';
 import { EMERGENCY_TITLE } from '@/lib/tour-room/emergency';
+import { scheduleClock } from '@/lib/tour-room/time';
 import { CONCIERGE_COPY } from '@/lib/tour-room/concierge';
 import type { RoomConnection } from '@/hooks/useTourRoomChannel';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
@@ -139,7 +140,7 @@ export function currentScheduleIndex(schedule: ScheduleItem[], lifecycle: string
   }
   let current = -1;
   schedule.forEach((item, index) => {
-    const start = String(item.time ?? '').slice(0, 5);
+    const start = scheduleClock(item.time);
     if (/^\d{2}:\d{2}$/.test(start) && start <= nowHm) current = index;
   });
   return current;
@@ -469,7 +470,7 @@ export default function RoomShell({
                           active ? 'font-bold text-[var(--tr-accent-deep)]' : 'text-[var(--tr-ink-3)]'
                         }`}
                       >
-                        {item.time ? String(item.time).slice(0, 5) : ''}
+                        {item.time ? scheduleClock(item.time) : ''}
                       </div>
                       <div className="flex flex-col items-center">
                         <span
