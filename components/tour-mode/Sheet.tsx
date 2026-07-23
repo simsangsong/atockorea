@@ -31,19 +31,32 @@ export default function Sheet({
   const restoreRef = useRef<HTMLElement | null>(null);
   const reduced = useReducedMotion();
 
+  // A1 bug fix (plan §11.A): keep the latest onClose in a ref so the focus
+  // effect below depends on `open` only. Callers pass inline arrows for
+  // onClose, so with [open, onClose] deps the effect re-ran on EVERY parent
+  // re-render while open — and each re-run stole focus back to the panel
+  // (`panelRef.focus()`), blurring any input inside the sheet. On mobile the
+  // loop was deterministic: tapping the concierge input opened the keyboard →
+  // visualViewport resize → RoomShell re-render (useKeyboardOpen) → focus
+  // stolen → keyboard closed. Guests could never type into the Smart Guide.
+  const onCloseRef = useRef(onClose);
+  useEffect(() => {
+    onCloseRef.current = onClose;
+  });
+
   useEffect(() => {
     if (!open) return;
     restoreRef.current = (document.activeElement as HTMLElement | null) ?? null;
     panelRef.current?.focus();
     const onKey = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') onClose();
+      if (event.key === 'Escape') onCloseRef.current();
     };
     document.addEventListener('keydown', onKey);
     return () => {
       document.removeEventListener('keydown', onKey);
       restoreRef.current?.focus?.();
     };
-  }, [open, onClose]);
+  }, [open]);
 
   return (
     <AnimatePresence>
