@@ -6,10 +6,13 @@
  * Two variants from one content source (lib/tour-room/appManual):
  *   auto   — first room entry only (localStorage-gated) → bottom sheet with
  *            the full manual and one CTA. Never re-opens after dismissal.
- *   inline — an always-available Settings card (details/summary accordion).
+ *   inline — an always-available Settings card. A4 (plan §11.A): collapsed by
+ *            default — the icon + title row stays visible, tapping it expands
+ *            the accordion body.
  */
 
 import { useEffect, useState } from 'react';
+import { ChevronDown } from 'lucide-react';
 import Sheet from '@/components/tour-mode/Sheet';
 import {
   MANUAL_CTA,
@@ -54,6 +57,9 @@ export default function AppManual({
   theme?: 'light' | 'dark';
 }) {
   const [open, setOpen] = useState(false);
+  // A4 — inline accordion state: collapsed by default so the Settings tab
+  // stays scannable; the icon + title header is always visible.
+  const [expanded, setExpanded] = useState(false);
 
   // auto: first visit only — the flag is written on dismiss, not on show, so
   // an accidental reload before reading doesn't burn the one-time slot.
@@ -77,11 +83,31 @@ export default function AppManual({
 
   if (variant === 'inline') {
     return (
-      <section className="tr-card p-4" data-testid="app-manual-inline">
-        <h3 className="tr-card-text font-semibold text-[var(--tr-ink)]">📖 {MANUAL_TITLE[locale]}</h3>
-        <div className="mt-3">
-          <SectionList kind={kind} locale={locale} />
-        </div>
+      <section className="tr-card" data-testid="app-manual-inline">
+        <button
+          type="button"
+          onClick={() => setExpanded((v) => !v)}
+          aria-expanded={expanded}
+          className="flex min-h-[52px] w-full items-center gap-2 px-4 py-3 text-left"
+          data-testid="app-manual-toggle"
+        >
+          <h3 className="tr-card-text min-w-0 flex-1 font-semibold text-[var(--tr-ink)]">
+            📖 {MANUAL_TITLE[locale]}
+          </h3>
+          <ChevronDown
+            size={18}
+            strokeWidth={2.25}
+            aria-hidden
+            className={`shrink-0 text-[var(--tr-ink-3)] transition-transform duration-200 ${
+              expanded ? 'rotate-180' : ''
+            }`}
+          />
+        </button>
+        {expanded && (
+          <div className="px-4 pb-4" data-testid="app-manual-body">
+            <SectionList kind={kind} locale={locale} />
+          </div>
+        )}
       </section>
     );
   }
