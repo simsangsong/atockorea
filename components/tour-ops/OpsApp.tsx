@@ -35,6 +35,7 @@ import OpsSettingsTab from '@/components/tour-ops/OpsSettingsTab';
 import OpsRoomDrawer from '@/components/tour-ops/OpsRoomDrawer';
 import OpsRoomManager from '@/components/tour-ops/OpsRoomManager';
 import OpsInboxView from '@/components/tour-ops/OpsInboxView';
+import OpsReviewQueueView from '@/components/tour-ops/OpsReviewQueueView';
 
 const BACKUP_POLL_MS = 20_000;
 const DRIFT_REFRESH_MS = 5 * 60_000;
@@ -64,6 +65,8 @@ export default function OpsApp() {
   // vars + `dark:` semantics across every tab and overlay.
   const [opsTheme, toggleOpsTheme] = useOpsTheme();
   const [inboxOpen, setInboxOpen] = useState(false);
+  // Phase 2 A-6 — 인박스 리뷰 큐 시트 (파싱 review_queued/failed 처리).
+  const [reviewOpen, setReviewOpen] = useState(false);
 
   const [loadError, setLoadError] = useState(false);
   // Monotonic request id: a stale response from the previous date (fired by a
@@ -389,6 +392,7 @@ export default function OpsApp() {
             onNavigate={selectTab}
             onOpenManager={() => setManagerOpen(true)}
             onOpenInbox={() => setInboxOpen(true)}
+            onOpenReview={() => setReviewOpen(true)}
           />
         )}
         {tab === 'dashboard' && (
@@ -433,6 +437,7 @@ export default function OpsApp() {
           onOpenRoom={openRoom}
         />
       )}
+      {reviewOpen && <OpsReviewQueueView onClose={() => setReviewOpen(false)} />}
 
       {openRoomObject && (
         <OpsRoomDrawer
