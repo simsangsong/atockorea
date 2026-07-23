@@ -87,4 +87,35 @@ describe('recordCaptureLedger', () => {
     expect(res.ok).toBe(false)
     expect(res.error).toBe('boom')
   })
+
+  it('is a graceful no-op when the ledger table is not applied yet (missing-table error)', async () => {
+    // Migration not applied → PostgREST reports the relation is missing. The hook
+    // must degrade to a logged no-op, never throw, so the capture is untouched.
+    const client = {
+      from() {
+        return {
+          upsert: () =>
+            Promise.resolve({
+              data: null,
+              error: { code: 'PGRST205', message: "relation \"ops_entity_ledger\" does not exist" },
+            }),
+        }
+      },
+    } as never
+    const res = await recordCaptureLedger(client, { bookingId: 'bk-4', grossMinor: 14400, currency: 'usd', marginRate: 0.05 })
+    expect(res.ok).toBe(false)
+    expect(res.split).toEqual({ grossMinor: 14400, commissionMinor: 720, remitMinor: 13680 })
+    expect(res.error).toMatch(/does not exist/)
+  })
+
+  it('never throws even when the client itself blows up (defensive best-effort)', async () => {
+    const client = {
+      from() {
+        throw new Error('client exploded')
+      },
+    } as never
+    const res = await recordCaptureLedger(client, { bookingId: 'bk-5', grossMinor: 1000, currency: 'usd', marginRate: 0.05 })
+    expect(res.ok).toBe(false)
+    expect(res.error).toBe('client exploded')
+  })
 })
