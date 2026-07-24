@@ -42,6 +42,7 @@ import {
 } from 'lucide-react';
 import GuideLedgerPanel from '@/components/tour-mode/guide/GuideLedgerPanel';
 import GuidePlanPanel from '@/components/tour-mode/guide/GuidePlanPanel';
+import GuideSeatDashboard from '@/components/tour-mode/guide/GuideSeatDashboard';
 import OperatorAssist from '@/components/tour-mode/guide/OperatorAssist';
 import MicPrime from '@/components/tour-mode/MicPrime';
 import Sheet from '@/components/tour-mode/Sheet';
@@ -503,6 +504,16 @@ export default function GuideConsole() {
         >
           {driveError}
         </p>
+      )}
+
+      {/* 명단·좌석·체크인 대시보드 (§5.4b) + 시작 게이트 (§5.4 C-16) —
+          단일 소스 ops_seat_assignments, tour 스코프. 배정 booking 하나로 키잉. */}
+      {tokenRef.current && overview.rooms[0]?.booking_id && (
+        <GuideSeatDashboard
+          token={tokenRef.current}
+          bookingId={overview.rooms[0].booking_id}
+          tourTitle={overview.tour.title}
+        />
       )}
 
       {/* 손님 (rooms) — the guide's core surface */}
