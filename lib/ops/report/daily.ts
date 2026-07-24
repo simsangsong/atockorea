@@ -22,6 +22,7 @@
 import type { SupabaseClient } from '@supabase/supabase-js'
 import { kstToday, kstStartOfDayMs, kstEndOfDayMs } from '@/lib/tour-room/time'
 import { dropSimBookings, simBookingIds } from '../sim/simScope'
+import { capacityVerdict, overCapacityNotice } from '../seating/capacity'
 
 export const DEFAULT_REPORT_TENANT = 'atockorea'
 
@@ -82,6 +83,10 @@ export interface TomorrowTour {
   city: string | null
   roomCount: number
   totalGuests: number
+  /** B2.3 — 이 그룹의 실효 정원(없으면 null). 초과 판정의 근거. */
+  capacity?: number | null
+  /** B2.3 — 정원 초과분(초과 아니면 0). */
+  overBy?: number
   pickups: Array<{ name: string; teams: number; pax: number; firstTime: string | null }>
   guideAssigned: boolean
   driverAssigned: boolean
@@ -112,7 +117,13 @@ export interface AttentionSummary {
   reviewQueued: number // ops_email_parse_logs review_queued 대기
   parseFailures: number // ops_parse_failures 오늘
   unseated: number // 차량 배정됐으나 좌석 미지정 게스트 수
-  /** 위 5개가 전부 0이면 true → "이상 없음" 배너. */
+  /**
+   * §K B2.3 — 정원 초과 그룹. **판매 차단이 아니라 2호차 신호**다(B2-D1).
+   * 문구는 lib/ops/seating/capacity.ts가 만든다 — 같은 숫자를 두 곳에서 계산하면
+   * 반드시 어긋난다(§H-4).
+   */
+  overCapacity: string[]
+  /** 위 6개가 전부 0이면 true → "이상 없음" 배너. */
   clean: boolean
 }
 
@@ -230,17 +241,40 @@ function guestsOf(b: { number_of_guests: number | null }): number {
   return Math.max(1, b.number_of_guests || 1)
 }
 
+interface TourMeta {
+  title: string
+  city: string | null
+  /** B2.3 — 정원 판정 입력. 컬럼이 아직 없는 환경에서는 undefined로 온다. */
+  max_room_guests?: number | null
+  price_type?: string | null
+}
+
 async function loadTourTitles(
   supabase: SupabaseClient,
   tourIds: string[],
-): Promise<Map<string, { title: string; city: string | null }>> {
-  const map = new Map<string, { title: string; city: string | null }>()
+): Promise<Map<string, TourMeta>> {
+  const map = new Map<string, TourMeta>()
   const ids = [...new Set(tourIds.filter(Boolean))]
   if (ids.length === 0) return map
-  const rows = await safeSelect<{ id: string; title: string | null; city: string | null }>(
-    supabase.from('tours').select('id, title, city').in('id', ids),
-  )
-  for (const r of rows) map.set(r.id, { title: r.title ?? '(제목 없음)', city: r.city ?? null })
+  // B2.3 — 정원 컬럼을 같은 쿼리에 태운다(왕복 추가 0). 컬럼이 아직 없는
+  // 배포 순서에서는 select가 실패하므로 기존 컬럼만으로 물러선다 —
+  // 정원 경고 하나 때문에 일일 보고서가 통째로 비면 안 된다.
+  let rows = await safeSelect<{ id: string; title: string | null; city: string | null; max_room_guests?: number | null; price_type?: string | null }>(
+    supabase.from('tours').select('id, title, city, max_room_guests, price_type').in('id', ids),
+  ).catch(() => null)
+  if (!rows) {
+    rows = await safeSelect<{ id: string; title: string | null; city: string | null }>(
+      supabase.from('tours').select('id, title, city').in('id', ids),
+    )
+  }
+  for (const r of rows) {
+    map.set(r.id, {
+      title: r.title ?? '(제목 없음)',
+      city: r.city ?? null,
+      max_room_guests: (r as { max_room_guests?: number | null }).max_room_guests ?? null,
+      price_type: (r as { price_type?: string | null }).price_type ?? null,
+    })
+  }
   return map
 }
 
@@ -574,12 +608,24 @@ async function buildTomorrow(supabase: SupabaseClient, tomorrow: string): Promis
         return v.plate_number ? `${model} (${v.plate_number})` : model
       })
 
+    // §K B2.3 — 정원 초과 판정. 숫자는 lib/ops/seating/capacity.ts가 만든다:
+    // 보고서와 관제가 같은 소스를 써야 두 화면이 어긋나지 않는다(§H-4).
+    // 차량 좌석수는 이 쿼리에 없으므로 상품/그룹 축만 본다 — 좌석 축을 0으로
+    // 오해해 배정 전 모든 그룹을 초과로 만들지 않기 위해 빈 배열을 넘긴다.
+    const verdict = capacityVerdict(
+      activeBookings.map((b) => ({ number_of_guests: b.number_of_guests, status: b.status })),
+      { max_room_guests: meta?.max_room_guests ?? null, price_type: meta?.price_type ?? null },
+      [],
+    )
+
     tours.push({
       tourId,
       tourTitle: meta?.title ?? '(단일 예약)',
       city: meta?.city ?? null,
       roomCount: groupRooms.length,
       totalGuests: activeBookings.reduce((s, b) => s + guestsOf(b), 0),
+      capacity: verdict.capacity,
+      overBy: verdict.overBy,
       pickups: [...pickupMap.values()].sort((a, b) =>
         (a.firstTime ?? '99:99').localeCompare(b.firstTime ?? '99:99'),
       ),
@@ -705,18 +751,34 @@ async function buildAttention(
   const uncontacted = contact?.missingCount ?? 0
   const reviewQueued = reviewLogs.length
   const parseFailures = failures.length
+
+  // §K B2.3 — 정원 초과 그룹. 문구는 capacity.ts가 만든다(같은 숫자, 한 소스).
+  // 🔴 이건 "예약을 막아라"가 아니라 "2호차를 붙여라"다(B2-D1).
+  const overCapacity = tomorrowRaw.tours
+    .map((t) =>
+      t.overBy && t.overBy > 0 && typeof t.capacity === 'number'
+        ? overCapacityNotice(
+            { headcount: t.totalGuests, capacity: t.capacity, over: true, overBy: t.overBy, remaining: 0 },
+            t.tourTitle,
+          )
+        : null,
+    )
+    .filter((line): line is string => Boolean(line))
+
   return {
     unassignedRooms,
     uncontacted,
     reviewQueued,
     parseFailures,
     unseated,
+    overCapacity,
     clean:
       unassignedRooms === 0 &&
       uncontacted === 0 &&
       reviewQueued === 0 &&
       parseFailures === 0 &&
-      unseated === 0,
+      unseated === 0 &&
+      overCapacity.length === 0,
   }
 }
 
@@ -779,6 +841,7 @@ export async function buildDailyReport(
         reviewQueued: 0,
         parseFailures: 0,
         unseated: 0,
+        overCapacity: [],
         clean: true,
       },
     ),
