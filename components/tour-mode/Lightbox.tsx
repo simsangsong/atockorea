@@ -8,17 +8,17 @@
  * scroll is locked while open. Deliberately dependency-free.
  */
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { IconClose, IconInstall } from '@/components/tour-mode/icons';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
 // A1.1 — screen-reader labels (the two icon-only controls were English-fixed).
-const A11Y: Record<RoomLocale, { close: string; download: string }> = {
-  en: { close: 'Close', download: 'Download' },
-  ko: { close: '닫기', download: '다운로드' },
-  ja: { close: '閉じる', download: 'ダウンロード' },
-  es: { close: 'Cerrar', download: 'Descargar' },
-  zh: { close: '关闭', download: '下载' },
+const A11Y: Record<RoomLocale, { close: string; download: string; viewer: string }> = {
+  en: { close: 'Close', download: 'Download', viewer: 'Photo viewer' },
+  ko: { close: '닫기', download: '다운로드', viewer: '사진 보기' },
+  ja: { close: '閉じる', download: 'ダウンロード', viewer: '写真ビューア' },
+  es: { close: 'Cerrar', download: 'Descargar', viewer: 'Visor de fotos' },
+  zh: { close: '关闭', download: '下载', viewer: '图片查看器' },
 };
 
 export default function Lightbox({
@@ -33,10 +33,24 @@ export default function Lightbox({
   locale?: RoomLocale;
 }) {
   const a11y = A11Y[locale] ?? A11Y.en;
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const restoreRef = useRef<HTMLElement | null>(null);
+  // A1.1 — mirror Sheet's dismissable discipline. onClose is passed as an inline
+  // arrow, so a [url, onClose] dep re-ran this effect on every parent re-render
+  // while open (re-binding the key listener and re-locking scroll each time);
+  // ref it and depend on `url` only. Also move focus into the dialog on open and
+  // restore it on close, and mark the container role=dialog/aria-modal so a
+  // screen reader treats the full-screen viewer as the modal it is.
+  const onCloseRef = useRef(onClose);
+  useEffect(() => {
+    onCloseRef.current = onClose;
+  });
   useEffect(() => {
     if (!url) return;
+    restoreRef.current = (document.activeElement as HTMLElement | null) ?? null;
+    containerRef.current?.focus();
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
+      if (e.key === 'Escape') onCloseRef.current();
     };
     document.addEventListener('keydown', onKey);
     const prevOverflow = document.body.style.overflow;
@@ -44,14 +58,20 @@ export default function Lightbox({
     return () => {
       document.removeEventListener('keydown', onKey);
       document.body.style.overflow = prevOverflow;
+      restoreRef.current?.focus?.();
     };
-  }, [url, onClose]);
+  }, [url]);
 
   if (!url) return null;
 
   return (
     <div
-      className="fixed inset-0 z-[70] flex items-center justify-center bg-black/90"
+      ref={containerRef}
+      role="dialog"
+      aria-modal="true"
+      aria-label={a11y.viewer}
+      tabIndex={-1}
+      className="fixed inset-0 z-[70] flex items-center justify-center bg-black/90 outline-none"
       onClick={onClose}
       data-testid="lightbox"
     >

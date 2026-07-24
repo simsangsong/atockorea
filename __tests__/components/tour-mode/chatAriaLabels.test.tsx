@@ -4,7 +4,7 @@
  * while the visible copy was localized. These pin them to the viewer locale.
  */
 
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import Lightbox from '@/components/tour-mode/Lightbox';
 import ReplyPreview from '@/components/tour-mode/ReplyPreview';
 import type { ReplySnapshot } from '@/lib/tour-room/reply';
@@ -19,6 +19,22 @@ describe('Lightbox aria-labels follow the locale', () => {
   it('defaults to English when no locale is passed', () => {
     render(<Lightbox url="https://example.com/a.jpg" onClose={() => {}} />);
     expect(screen.getByTestId('lightbox-close')).toHaveAttribute('aria-label', 'Close');
+  });
+
+  it('is a labelled modal dialog and takes focus on open (A1.1 dialog semantics)', () => {
+    render(<Lightbox url="https://example.com/a.jpg" locale="ko" onClose={() => {}} />);
+    const dialog = screen.getByTestId('lightbox');
+    expect(dialog).toHaveAttribute('role', 'dialog');
+    expect(dialog).toHaveAttribute('aria-modal', 'true');
+    expect(dialog).toHaveAttribute('aria-label', '사진 보기');
+    expect(dialog).toHaveFocus();
+  });
+
+  it('closes on Escape', () => {
+    const onClose = jest.fn();
+    render(<Lightbox url="https://example.com/a.jpg" onClose={onClose} />);
+    fireEvent.keyDown(document, { key: 'Escape' });
+    expect(onClose).toHaveBeenCalledTimes(1);
   });
 });
 

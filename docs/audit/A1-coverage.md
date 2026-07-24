@@ -30,7 +30,7 @@ A-plan-review R6: A1은 "하나도 빠짐없이 소진"이라고 적혀 있었�
 | `ChatFeed.tsx` | A1.1 | P2 **수정완료** → `A1-1-chat-core.md` |
 | `Composer.tsx` | A1.1 | P2 **수정완료** → `A1-1-chat-core.md` |
 | `ConfirmSheet.tsx` | A1.1 | ✅ |
-| `Lightbox.tsx` | A1.1 | P2(aria) 수정완료 · P2(dialog) 백로그 → `A1-1-chat-core.md` |
+| `Lightbox.tsx` | A1.1 | P2 ×3 **전부 수정완료** → `A1-1-chat-core.md` |
 | `ReplyPreview.tsx` | A1.1 | P2 **수정완료** → `A1-1-chat-core.md` |
 
 ## A1.2 — 카드 계열 (18개)
