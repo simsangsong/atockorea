@@ -24,6 +24,7 @@ import EndedCard from '@/components/tour-mode/EndedCard';
 import TravelTimelineEntry from '@/components/tour-mode/TravelTimeline';
 import GuideCaptionBar from '@/components/tour-mode/GuideCaptionBar';
 import NoticeBanner from '@/components/tour-mode/NoticeBanner';
+import DepartureCountdown from '@/components/tour-mode/DepartureCountdown';
 import OfflineInfoCard from '@/components/tour-mode/OfflineInfoCard';
 import PushOptInBanner from '@/components/tour-mode/PushOptInBanner';
 import QuickSignalBar from '@/components/tour-mode/QuickSignalBar';
@@ -346,6 +347,8 @@ function TourRoomLive({
     tour_facilities?: Array<{ name?: string | null; lat?: number | null; lng?: number | null }>;
     pickup_sequence?: PickupSequenceStop[];
     schedule?: Array<Record<string, unknown>>;
+    /** §11.D D4 — the active day plan carries the guest-set departure time. */
+    day_plan?: { departure_time?: string | null } | null;
   };
   const {
     messages,
@@ -734,6 +737,17 @@ function TourRoomLive({
             roomSession={data.session}
             canSignal={viewerRole === 'customer' && !readOnly}
           />
+          {/* §11.D D4 — PRIVATE-tour departure countdown (client-derived). Shows
+              only for a private tour with a guest-set departure time; hidden for
+              join tours and when unset. */}
+          {manualKind === 'private' && snapshot.day_plan?.departure_time && (
+            <DepartureCountdown
+              departureTime={snapshot.day_plan.departure_time}
+              tourDate={snapshot.booking?.tour_date}
+              city={snapshot.booking?.tours?.city}
+              locale={locale}
+            />
+          )}
           {viewerRole === 'customer' && (
             <SecondaryCardBanner messages={messages} tourDate={snapshot.booking?.tour_date} locale={locale} />
           )}
