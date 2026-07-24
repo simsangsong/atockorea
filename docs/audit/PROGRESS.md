@@ -8,11 +8,11 @@
 
 ## 다음 착수 지점
 
-**→ A4.3~A4.5 (죽은코드·테스트공백·`as`) — A1 전부 완료(65/65 + 로케일 표적). §L L5는 A7.2와 함께**
+**→ A0.3 잔여 6지표(dev 서버 필요) · A0.2(관측, A1.3 §2 선행) · §L L5(A7.2와 함께) — 코드-only 잔여는 소진**
 
 ## 기준선
 
-- main = `faf19ef0` (origin/main과 동일, 미푸시 0) — tsc 0 · `next build --webpack` ✓ · 204스위트 2118 green 재검증 완료
+- main = `f5c158dd` (origin/main과 동일, 미푸시 0) — tsc 0 · `next build --webpack` ✓ · 204스위트 2118 green 재검증 완료
 - 작업 워크트리: `C:\Users\sangsong\atockorea-audit` (브랜치 `claude/audit-b0`, `npm ci` 실설치 완료)
 - 라이브 마이그레이션 5건 추가 적용: `ops_ai_usage` · `bookings_sim_tag` · `ops_tour_groups` · `tours_max_room_guests` · `ops_guest_notes`
 - 머지 워크트리: `C:\Users\sangsong\atockorea-main-merge`
@@ -52,7 +52,8 @@
 | 25 | A1.6 진입·셸·기타 (25개) | ✅ `6fecd4f4` · `docs/audit/A1-6-entry-shell-misc.md` |
 | 26 | A1.8 진입 플로우 (3개) | ✅ `7b716ddb` · `docs/audit/A1-8-entry-flows.md` |
 | 27 | A1.7 로케일(표적) | ✅ `faf19ef0` · `docs/audit/A1-7-locale-fit.md` |
-| 28 | A4.3~A4.5 (죽은코드·테스트공백·`as`) · §L L5 | ⬜ |
+| 28 | A4.3~A4.5 (죽은코드·테스트공백·`as`) | ✅ `f5c158dd` · `docs/audit/A4-code-health.md` |
+| 29 | A0.2·A0.3잔여·§L L5 (대부분 dev서버/A7.2 게이트) | ⬜ |
 
 ## 남은 것 (우선순위순)
 
@@ -93,6 +94,15 @@
 - 희소성 UI("매진/잔여") 금지 — 정원은 판매 차단이 아니라 운영 캡 (B2-D1)
 
 ## 실행 로그 (append-only)
+
+- **[34]** A4.3~A4.5 코드 건전성 — 🔴 **성과는 삭제 목록이 아니라 결론이다: 해로운 죽은 코드가 거의 없다.**
+  값 export 미참조 18건은 파 보니 의도된 잠재 API(`excludeSim`)·문서용 상수(원천징수 세율, 헤더가 "리팩터 금지"
+  못박음)·테스트 훅으로 갈려 자동삭제 불가. 실제 삭제=A1.7이 넘긴 죽은 i18n 키 2건(10번들). 스캐너
+  `scripts/audit-dead-exports.mjs` 커밋(게이트 아님 — 잠재 API 섞여 늑대). **자기교정**: 세무 계산 미검으로
+  P1 적으려다, 테스트가 `lib/ops/tax/__tests__/`에 병치돼 28케이스 도는 것 확인(최상위 `__tests__`만 봤던 실수).
+  A4.4 라우트 지도: 감사 소관 16개 미검, `checkin/context`(8상태 분기) 우선. A4.5: `as any` 0건, 이중캐스트
+  대부분 정당(벤더 API·서명 토큰), `ChatFeed` 메타데이터 7캐스트만 A8.2. **TourRoomClient lint(244행) 청산** —
+  이유 적은 eslint-disable(중첩함수 우회보다 정직). 3965 green. → `f5c158dd`
 
 - **[33]** A1.7 로케일 표적 검사 — A0.4의 146건 중 코드로 판정 가능한 것만. 🔴 **하니스의 "최대 위험" 3건 중
   2건이 죽은 키**(`settingsPage.saveNotifications`·`alertNotificationsSaved` — 10번들에 있으나 참조 0,
