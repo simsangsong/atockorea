@@ -8,11 +8,11 @@
 
 ## 다음 착수 지점
 
-**→ 코드-only 감사·백로그 모두 소진(A1~A8 + A2.3 + 백로그 P1/P2). 잔여 = 런타임 게이트(A5/A6/A7.2/A7.3/A0.3/§L L5) + 대형 리팩터 1건(ChatFeed 메타 판별유니온). 오너 게이트 필요.**
+**→ 코드 감사·백로그·A7.2/A7.3 실측까지 완료. 잔여 = A5 시각 카드타이밍·A6 첫렌더(실기기/배포환경) · A0.3 서버 p50/p95(대표환경) · §L L5(A7.2 회귀와) · ChatFeed 메타 리팩터(attended). 전부 오너 환경 게이트.**
 
 ## 기준선
 
-- main = `032ae919` (origin/main과 동일, 미푸시 0) — tsc 0 · `next build --webpack` ✓ · 204스위트 2118 green 재검증 완료
+- main = `44173b1b` (origin/main과 동일, 미푸시 0) — tsc 0 · `next build --webpack` ✓ · 204스위트 2118 green 재검증 완료
 - 작업 워크트리: `C:\Users\sangsong\atockorea-audit` (브랜치 `claude/audit-b0`, `npm ci` 실설치 완료)
 - 라이브 마이그레이션 5건 추가 적용: `ops_ai_usage` · `bookings_sim_tag` · `ops_tour_groups` · `tours_max_room_guests` · `ops_guest_notes`
 - 머지 워크트리: `C:\Users\sangsong\atockorea-main-merge`
@@ -57,7 +57,8 @@
 | 30 | A7.1 가드레일 누수 (응급 P0 수정) | ✅ `d8f1ad5c` · `docs/audit/A7-1-guardrail-leak.md` |
 | 31 | A0.2 결정 · A8 종합 캡스톤 | ✅ (docs) · `docs/audit/A8-synthesis.md` |
 | 32 | A2.3 관제(SOS 사운드 누수 수정) · A8.2 백로그 P1/P2 소진 | ✅ `032ae919` |
-| 33 | A5·A6·A7.2·A7.3·A0.3잔여·§L L5 — **dev서버/실모델 게이트(오너)** · ChatFeed 메타 리팩터(attended) | ⛔ 게이트 |
+| 33 | A7.2·A7.3 실모델 실측(환각 0·언어 6/6) | ✅ `44173b1b` · `A7-2-3-runtime-results.md` |
+| 34 | A5 시각·A6 첫렌더(실기기)·A0.3 p50/p95(배포환경)·§L L5·ChatFeed 리팩터 | ⛔ 환경 게이트 |
 
 ## 남은 것 (우선순위순)
 
@@ -98,6 +99,13 @@
 - 희소성 UI("매진/잔여") 금지 — 정원은 판매 차단이 아니라 운영 캡 (B2-D1)
 
 ## 실행 로그 (append-only)
+
+- **[40]** 런타임 실측 (오너 승인·비용 포함, dev 서버+실모델) — 🟢 **A7.2/A7.3 강한 통과.** 컨시어지를
+  실 모델로 직접 22문항: **환각 0** — 물리 측정치·PII(가이드 전화·집주소·혈액형)·보안(admin 비번)·타손님
+  결제액 전부 정직 회피, 근거 있는 사실만 인용. **A7.3 JA/ES/ZH 6/6 올바른 언어** + 손님 언어로 회피.
+  P3: 고유명사 처리 로케일 차이(JA 한자·ES/ZH 로마자, 오류 아님). **A5 시각/A6 첫렌더는 hidden 브라우저 pane이
+  하이드레이션·합성을 못 해 device 게이트임을 직접 확인.** 레이트리밋 실동작도 확인(§L·A2.4 뒷받침).
+  정리 완료: 플래그 원복·시뮬 데이터 삭제·dev 서버 종료. `A7-2-3-runtime-results.md`. → `44173b1b`
 
 - **[39]** 백로그 소진 (A8.2 코드-only P1/P2 연속 처리) — 감사가 찾은 결함을 실제로 닫았다:
   · **A1.1 P1** 가이드/기사 아바타 동일 글리프 → 기사=버스 글리프(`avatarRoles.test`) → `539cf495`
