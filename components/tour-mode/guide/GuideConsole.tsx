@@ -77,6 +77,8 @@ function guideDeviceKey(): string {
 /** The cockpit's PII-minimal day bundle (shared driver/guide overview route). */
 interface CockpitOverview {
   tour: { id: string; title: string; city?: string | null };
+  /** §11.D D7 — join-vs-private kind resolved server-side; may be absent. */
+  tour_kind?: 'join' | 'private';
   tour_date: string;
   lifecycle: CockpitLifecycle;
   rooms: CockpitRoom[];
@@ -92,6 +94,8 @@ interface DriveState {
   tourTitle: string;
   lifecycle: CockpitLifecycle;
   city: string | null;
+  /** §11.D D7 — join-vs-private kind for hiding private-only cockpit tools. */
+  tourKind: 'join' | 'private';
 }
 
 
@@ -361,6 +365,9 @@ export default function GuideConsole() {
         tourTitle: data.tour?.title ?? '투어',
         lifecycle: data.lifecycle,
         city: data.tour?.city ?? null,
+        // §11.D D7 — same driver overview route now resolves the kind; default
+        // to private when absent so current behavior is unchanged.
+        tourKind: data.tour_kind ?? 'private',
       });
     } catch {
       setDriveError('운전 모드 진입 실패 — 다시 시도해 주세요.');
@@ -412,6 +419,7 @@ export default function GuideConsole() {
           channelTopic={drive.channelTopic}
           initialMessages={drive.initialMessages}
           city={drive.city}
+          tourKind={drive.tourKind}
           onExit={() => setDrive(null)}
         />
       </div>

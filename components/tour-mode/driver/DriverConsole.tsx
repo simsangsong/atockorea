@@ -30,6 +30,8 @@ const DEVICE_KEY = 'tour_mode_driver_device_key';
 
 interface DriverOverview {
   tour: { id: string; title: string; city?: string | null };
+  /** §11.D D7 — join-vs-private kind resolved server-side; may be absent. */
+  tour_kind?: 'join' | 'private';
   tour_date: string;
   lifecycle: CockpitLifecycle;
   driver_name: string;
@@ -237,6 +239,7 @@ export default function DriverConsole() {
       channelTopic={joined.channelTopic}
       initialMessages={joined.initialMessages}
       city={overview.tour.city ?? null}
+      tourKind={overview.tour_kind ?? 'private'}
     />
   );
 }
