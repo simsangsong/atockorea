@@ -2,7 +2,13 @@
  * @jest-environment node
  *
  * 룸 초대 이메일 일괄 발송 코어 — fake send + fake supabase로 네트워크/DB 0.
- * 이메일 있는 게스트만 발송, 마커 원장(daily.ts §4 집계 shape), 실패 격리, 카운트.
+ *
+ * §K B0.3 이후: 전원 공유 claim 링크가 아니라 **예약마다 개인 링크**를 보낸다.
+ * 이 스위트가 지키는 계약:
+ *   1. 손님이 받는 URL이 개인 룸 URL이다(claim 화면을 한 번도 보지 않는다).
+ *   2. 재발송은 폐기-후-재발급 — 예약당 살아있는 토큰이 항상 1개 (B0-D1c).
+ *   3. 이메일 없는 예약을 위해 claim 폴백은 계속 발급된다 (B0-D2).
+ *   4. daily.ts §4 연락현황 집계 shape은 그대로다.
  */
 import {
   buildBulkInvite,
@@ -15,9 +21,9 @@ const FUTURE = new Date(Date.now() + 30 * 86_400_000).toISOString().slice(0, 10)
 const TOUR = 'tour-1';
 
 const ROSTER = [
-  { id: 'b1', contact_name: 'Massimo Colombo', contact_email: 'm@example.com', preferred_language: 'en', status: 'confirmed' },
-  { id: 'b2', contact_name: 'No Email', contact_email: '  ', preferred_language: 'ko', status: 'confirmed' },
-  { id: 'b3', contact_name: 'Tanaka Yuki', contact_email: 'tanaka@example.jp', preferred_language: 'ja', status: 'confirmed' },
+  { id: 'b1', contact_name: 'Massimo Colombo', contact_email: 'm@example.com', preferred_language: 'en', status: 'confirmed', tour_date: FUTURE },
+  { id: 'b2', contact_name: 'No Email', contact_email: '  ', preferred_language: 'ko', status: 'confirmed', tour_date: FUTURE },
+  { id: 'b3', contact_name: 'Tanaka Yuki', contact_email: 'tanaka@example.jp', preferred_language: 'ja', status: 'confirmed', tour_date: FUTURE },
 ];
 
 function makeDb(opts: { rooms?: unknown[] } = {}) {
@@ -71,35 +77,93 @@ describe('buildBulkInvite', () => {
     expect(send.calls.sort()).toEqual(['m@example.com', 'tanaka@example.jp']);
   });
 
-  it('writes one room_claim ledger row + one per-booking customer marker per send', async () => {
+  it('B0.3 — each guest gets their OWN room URL, not the shared claim link', async () => {
+    const { db } = makeDb();
+    const sent: Array<{ to: string; text: string }> = [];
+    const send: InviteSend = async (msg) => {
+      sent.push({ to: msg.to, text: `${msg.html} ${msg.text ?? ''}` });
+      return { success: true };
+    };
+    const outcome = await buildBulkInvite(baseDeps(db, send));
+    expect(outcome.ok).toBe(true);
+    if (!outcome.ok) return;
+
+    expect(sent).toHaveLength(2);
+    for (const msg of sent) {
+      // 개인 링크: /tour-mode/room/<bookingId>?rt=<token>
+      expect(msg.text).toMatch(/\/tour-mode\/room\/(b1|b3)\?rt=/);
+      // 🔴 claim 링크가 손님에게 가면 B0.3이 실패한 것이다.
+      expect(msg.text).not.toContain('/tour-mode/join/');
+    }
+    // 게스트마다 서로 다른 링크여야 한다 — 같으면 개인 링크가 아니다.
+    const b1 = sent.find((m) => m.to === 'm@example.com')!;
+    const b3 = sent.find((m) => m.to === 'tanaka@example.jp')!;
+    expect(b1.text).toContain('/tour-mode/room/b1?rt=');
+    expect(b3.text).toContain('/tour-mode/room/b3?rt=');
+  });
+
+  it('B0-D2 — the claim link is still minted as a fallback, but never sent', async () => {
+    const { db, log } = makeDb();
+    const outcome = await buildBulkInvite(baseDeps(db, fakeSend().fn));
+    expect(outcome.ok).toBe(true);
+    if (!outcome.ok) return;
+
+    // 폴백 링크는 결과로 돌아온다(운영자가 이메일 없는 예약·차량 QR에 쓴다).
+    expect(outcome.result.url).toContain('/tour-mode/join/');
+    expect(outcome.result.skippedNoEmail).toBe(1);
+
+    const roomClaim = queriesFor(log, 'tour_room_invites', 'insert').filter(
+      (q) => (q.payload as { role: string }).role === 'room_claim',
+    );
+    expect(roomClaim).toHaveLength(1);
+    expect(roomClaim[0].payload).toMatchObject({ role: 'room_claim', sent_via: 'ops-link', tour_id: TOUR });
+  });
+
+  it('B0-D1c — re-sending revokes the live invite before minting a new one', async () => {
     const { db, log } = makeDb();
     await buildBulkInvite(baseDeps(db, fakeSend().fn));
 
-    const inserts = queriesFor(log, 'tour_room_invites', 'insert');
-    const roomClaim = inserts.filter((q) => (q.payload as { role: string }).role === 'room_claim');
-    const markers = inserts.filter((q) => (q.payload as { role: string }).role === 'customer');
-
-    // 룸 초대 링크 원장 1건 (claim-link 라우트 미러링).
-    expect(roomClaim).toHaveLength(1);
-    expect(roomClaim[0].payload).toMatchObject({ role: 'room_claim', sent_via: 'ops-link', tour_id: TOUR, tour_date: FUTURE, created_by: 'admin-1' });
-    expect((roomClaim[0].payload as { token_hash: string }).token_hash).toMatch(/^[0-9a-f]{64}$/);
-
-    // 게스트 마커 2건 — daily.ts §4가 이메일 연락으로 집계하는 shape:
-    //   role='customer' + booking_id + sent_via='email' (+ sent_to).
-    expect(markers).toHaveLength(2);
-    for (const m of markers) {
-      expect(m.payload).toMatchObject({ role: 'customer', sent_via: 'email', tour_id: TOUR, tour_date: FUTURE, created_by: 'admin-1' });
-      const p = m.payload as { booking_id: string; sent_to: string; token_hash: string; revoked_at: string };
-      expect(['b1', 'b3']).toContain(p.booking_id);
-      expect(p.sent_to).toMatch(/@example\.(com|jp)$/);
-      expect(p.token_hash).toMatch(/^[0-9a-f]{64}$/);
-      // born-revoked: 개인초대 liveness 소비처(.is('revoked_at', null))에 안 잡히도록.
-      expect(typeof p.revoked_at).toBe('string');
+    const revokes = queriesFor(log, 'tour_room_invites', 'update');
+    // 이메일 있는 게스트 2명 → 폐기 2회.
+    expect(revokes).toHaveLength(2);
+    for (const r of revokes) {
+      expect(typeof (r.payload as { revoked_at: string }).revoked_at).toBe('string');
+      // 같은 규칙: 살아있는 것만, 그 예약의, 고객 역할만.
+      const methods = r.filters.map((f) => f.method);
+      expect(methods).toContain('is');
+      expect(methods).toContain('eq');
     }
-    // 마커 token_hash는 서로 유니크(NOT NULL UNIQUE 제약 만족) + 링크 해시와 다름.
-    const hashes = new Set(markers.map((m) => (m.payload as { token_hash: string }).token_hash));
+
+    // 🔴 순서가 전부다 — 발급 후에 폐기하면 방금 만든 토큰까지 죽는다.
+    const invites = log.filter((q) => q.table === 'tour_room_invites');
+    const firstUpdate = invites.findIndex((q) => q.op === 'update');
+    const firstCustomerInsert = invites.findIndex(
+      (q) => q.op === 'insert' && (q.payload as { role: string }).role === 'customer',
+    );
+    expect(firstUpdate).toBeLessThan(firstCustomerInsert);
+  });
+
+  it('the invite row is now a real live token AND the §4 contact record', async () => {
+    const { db, log } = makeDb();
+    await buildBulkInvite(baseDeps(db, fakeSend().fn));
+
+    const invites = queriesFor(log, 'tour_room_invites', 'insert').filter(
+      (q) => (q.payload as { role: string }).role === 'customer',
+    );
+    expect(invites).toHaveLength(2);
+    for (const m of invites) {
+      // daily.ts buildContactStatus가 읽는 shape — 여기는 바뀌지 않았다.
+      expect(m.payload).toMatchObject({ role: 'customer', sent_via: 'email', tour_id: TOUR, tour_date: FUTURE, created_by: 'admin-1' });
+      const pl = m.payload as { booking_id: string; sent_to: string; token_hash: string; revoked_at?: string };
+      expect(['b1', 'b3']).toContain(pl.booking_id);
+      expect(pl.sent_to).toMatch(/@example\.(com|jp)$/);
+      expect(pl.token_hash).toMatch(/^[0-9a-f]{64}$/);
+      // 🔴 born-revoked 우회가 사라졌다. 이제 토큰이 진짜 개인 것이라
+      // "살아있다"고 적는 것이 사실이다 — 그래야 C-5 탈취 대응이 성립한다.
+      expect(pl.revoked_at).toBeUndefined();
+    }
+    const hashes = new Set(invites.map((m) => (m.payload as { token_hash: string }).token_hash));
     expect(hashes.size).toBe(2);
-    expect(hashes.has((roomClaim[0].payload as { token_hash: string }).token_hash)).toBe(false);
   });
 
   it('one failing send does not abort the batch', async () => {
