@@ -22,9 +22,11 @@ import AudioButton from '@/components/tour-mode/AudioButton';
 import Avatar from '@/components/tour-mode/Avatar';
 import ExtraLedgerCard, { type ExtraLedgerMeta } from '@/components/tour-mode/ExtraLedgerCard';
 import SpotArrivalCard from '@/components/tour-mode/SpotArrivalCard';
+import ApproachCard from '@/components/tour-mode/ApproachCard';
 import ArrivalBundleCard from '@/components/tour-mode/ArrivalBundleCard';
 import ArrivalVideoCard from '@/components/tour-mode/ArrivalVideoCard';
 import { isVideoCardMeta } from '@/lib/tour-room/poiVideos';
+import type { ApproachCardMeta } from '@/lib/tour-room/approach';
 import type { ArrivalBundleMeta } from '@/lib/tour-room/arrivalBundle';
 import Lightbox from '@/components/tour-mode/Lightbox';
 import LocationPreview from '@/components/tour-mode/LocationPreview';
@@ -402,6 +404,18 @@ export default function ChatFeed({
                   <ArrivalBundleCard
                     meta={message.metadata as unknown as ArrivalBundleMeta}
                     arrivedLine={text.split('\n')[0] ?? text}
+                    locale={viewerLocale}
+                  />
+                </div>
+              );
+            }
+            // §11.C C2 — the 1 km approach preview: a light "coming up" card,
+            // visually subordinate to the arrival card that follows it.
+            if (message.metadata?.kind === 'approach_card') {
+              return (
+                <div className={`mt-2 ${animClass}`}>
+                  <ApproachCard
+                    meta={message.metadata as unknown as ApproachCardMeta}
                     locale={viewerLocale}
                   />
                 </div>

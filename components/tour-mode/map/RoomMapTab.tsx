@@ -9,15 +9,18 @@
  * (§O-1 ② — dynamic ssr:false canvas).
  */
 
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import dynamicImport from 'next/dynamic';
 import FindGuideCard from '@/components/tour-mode/map/FindGuideCard';
 import { IconFollow } from '@/components/tour-mode/icons';
 import LocationShareCard from '@/components/tour-mode/map/LocationShareCard';
 import PresenceBar from '@/components/tour-mode/PresenceBar';
+import { useApproachWatch } from '@/hooks/useApproachWatch';
 import { useGeoWatcher } from '@/hooks/useGeoWatcher';
 import { useSpotGeofence } from '@/hooks/useSpotGeofence';
 import { acquireWakeLock, type WakeLockHandle } from '@/lib/tour-room/wakeLock';
+import type { ApproachTarget } from '@/lib/tour-room/approach';
+import type { GeoSample } from '@/lib/tour-room/geo';
 import type { WatchableSpot } from '@/lib/tour-room/spotWatcher';
 import type { RoomLocation, RoomPresence } from '@/hooks/useTourRoomChannel';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
@@ -51,6 +54,7 @@ export default function RoomMapTab({
   facilities,
   pickup,
   geofenceSpots,
+  approachTargets,
 }: {
   bookingId: string;
   roomSession: string;
@@ -63,16 +67,34 @@ export default function RoomMapTab({
   pickup: MapPoint | null;
   /** T4.4 — spots with radii; arrivals auto-post while sharing is on. */
   geofenceSpots?: WatchableSpot[];
+  /** §11.C C2 — scheduled POIs whose 1 km preview may fire while sharing. */
+  approachTargets?: ApproachTarget[];
 }) {
   const [sharing, setSharing] = useState(false);
   const [followGuide, setFollowGuide] = useState(false);
-  const { onSample } = useSpotGeofence({
+  const { onSample: onGeofenceSample } = useSpotGeofence({
     bookingId,
     roomSession,
     spots: geofenceSpots ?? [],
     locale,
     enabled: sharing && (geofenceSpots?.length ?? 0) > 0,
   });
+  // §11.C C2 — the approach stepper rides the same opt-in sample stream as the
+  // arrival geofence; nothing extra is switched on behind the guest's back.
+  const { onSample: onApproachSample } = useApproachWatch({
+    bookingId,
+    roomSession,
+    targets: approachTargets ?? [],
+    locale,
+    enabled: sharing && (approachTargets?.length ?? 0) > 0,
+  });
+  const onSample = useCallback(
+    (sample: GeoSample) => {
+      onGeofenceSample(sample);
+      onApproachSample(sample);
+    },
+    [onGeofenceSample, onApproachSample],
+  );
   const { status, lastPosition, stopSharing } = useGeoWatcher({
     bookingId,
     roomSession,
