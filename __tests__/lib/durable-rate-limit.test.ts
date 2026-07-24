@@ -8,6 +8,11 @@ import {
   requestGate,
   clientIpKey,
   __resetRequestGateMemory,
+  incrWindowCounted,
+  readWindowCounted,
+  incrLocalWindow,
+  readLocalWindow,
+  __resetLocalWindows,
 } from '@/lib/durable-rate-limit';
 
 const MINUTE = 60_000;
@@ -180,5 +185,73 @@ describe('Upstash REST I/O (mocked fetch)', () => {
       json: async () => [{ error: 'WRONGTYPE' }],
     })) as any;
     await expect(durableReadWithTtl('k')).rejects.toThrow(/Upstash error/);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// 🔴 Budget counters that must not fail open (measured 2026-07-25)
+//
+// `requestGate` always degraded to an in-memory limiter when Upstash was
+// absent, but every DIRECT caller of `durableIncrWindow` — the concierge
+// Tier-1 daily cap, the generated-content budget, the dining translation
+// budget — wrapped it in `catch { return false }`. Upstash is unconfigured, so
+// those calls threw on EVERY invocation and each guard answered "budget
+// available" forever. Three separate caps, none of which had ever bound.
+// ---------------------------------------------------------------------------
+
+describe('incrWindowCounted / readWindowCounted', () => {
+  beforeEach(() => {
+    __resetLocalWindows();
+    // An earlier suite assigns these env vars and restores them to the STRING
+    // "undefined" (Node stringifies), which reads as configured. Delete them so
+    // this block really exercises the unconfigured path.
+    delete process.env.UPSTASH_REDIS_REST_URL;
+    delete process.env.UPSTASH_REDIS_REST_TOKEN;
+  });
+
+  it('counts locally instead of throwing when the durable store is absent', async () => {
+    expect(isDurableRateLimitConfigured()).toBe(false);
+    const first = await incrWindowCounted('budget:test', 60);
+    expect(first).toEqual({ count: 1, durable: false });
+    const second = await incrWindowCounted('budget:test', 60);
+    expect(second.count).toBe(2);
+  });
+
+  it('admits the count is process-local so callers do not print it as global', async () => {
+    await incrWindowCounted('budget:test', 60);
+    expect((await readWindowCounted('budget:test')).durable).toBe(false);
+  });
+
+  it('reads zero for an untouched key rather than throwing', async () => {
+    await expect(readWindowCounted('budget:never-touched')).resolves.toEqual({
+      count: 0,
+      durable: false,
+    });
+  });
+
+  it('🔴 a daily cap built on it actually fires — the whole point', async () => {
+    // Mirrors the shape of tier1BudgetExhausted / generationBudgetExhausted.
+    const cap = 5;
+    const exhausted = async () => (await incrWindowCounted('budget:cap', 86_400)).count > cap;
+    const verdicts: boolean[] = [];
+    for (let i = 0; i < 7; i += 1) verdicts.push(await exhausted());
+    // Under the old `catch { return false }` every entry here was `false`.
+    expect(verdicts).toEqual([false, false, false, false, false, true, true]);
+  });
+
+  it('keeps separate keys on separate windows', async () => {
+    await incrWindowCounted('budget:a', 60);
+    await incrWindowCounted('budget:a', 60);
+    await incrWindowCounted('budget:b', 60);
+    expect((await readWindowCounted('budget:a')).count).toBe(2);
+    expect((await readWindowCounted('budget:b')).count).toBe(1);
+  });
+
+  it('rolls the window over once it expires', async () => {
+    const t0 = 1_000_000;
+    expect(incrLocalWindow('budget:roll', 60, t0)).toBe(1);
+    expect(incrLocalWindow('budget:roll', 60, t0 + 59_000)).toBe(2);
+    expect(incrLocalWindow('budget:roll', 60, t0 + 60_001)).toBe(1);
+    expect(readLocalWindow('budget:roll', t0 + 120_002)).toBe(0);
   });
 });

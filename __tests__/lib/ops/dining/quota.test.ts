@@ -14,15 +14,29 @@ import {
   noteQuotaCall,
   readQuotaState,
 } from '@/lib/ops/dining/quota';
-import { durableIncrWindow, durableReadCount } from '@/lib/durable-rate-limit';
+import { incrWindowCounted, readWindowCounted } from '@/lib/durable-rate-limit';
 
-jest.mock('@/lib/durable-rate-limit', () => ({
-  durableIncrWindow: jest.fn(),
-  durableReadCount: jest.fn(),
-}));
+// The fallback now lives in the shared primitive, so the mock wraps THAT and
+// keeps the real implementation underneath: the "unavailable" block below runs
+// the genuine code path (jest has no Upstash env, so the durable call really
+// throws), while the "available" block overrides the return value.
+jest.mock('@/lib/durable-rate-limit', () => {
+  const actual = jest.requireActual('@/lib/durable-rate-limit');
+  return {
+    ...actual,
+    incrWindowCounted: jest.fn(actual.incrWindowCounted),
+    readWindowCounted: jest.fn(actual.readWindowCounted),
+  };
+});
 
-const incrMock = durableIncrWindow as jest.Mock;
-const readMock = durableReadCount as jest.Mock;
+const incrMock = incrWindowCounted as jest.Mock;
+const readMock = readWindowCounted as jest.Mock;
+const actualCounters = jest.requireActual('@/lib/durable-rate-limit');
+
+beforeEach(() => {
+  incrMock.mockImplementation(actualCounters.incrWindowCounted);
+  readMock.mockImplementation(actualCounters.readWindowCounted);
+});
 
 const OPTS = { key: 'ops_dining:test_daily', windowSec: 86_400, cap: 100, alertRatio: 0.7 };
 
@@ -33,7 +47,7 @@ beforeEach(() => {
 
 describe('durable store available', () => {
   it('reports the durable count and flags itself trustworthy', async () => {
-    incrMock.mockResolvedValue(42);
+    incrMock.mockResolvedValue({ count: 42, durable: true });
     const state = await noteQuotaCall(OPTS);
     expect(state.used).toBe(42);
     expect(state.durable).toBe(true);
@@ -43,18 +57,16 @@ describe('durable store available', () => {
   });
 
   it('raises the alert and exhausted flags at the thresholds', async () => {
-    readMock.mockResolvedValue(70);
+    readMock.mockResolvedValue({ count: 70, durable: true });
     expect((await readQuotaState(OPTS)).shouldAlert).toBe(true);
-    readMock.mockResolvedValue(100);
+    readMock.mockResolvedValue({ count: 100, durable: true });
     expect((await readQuotaState(OPTS)).exhausted).toBe(true);
   });
 });
 
 describe('🔴 durable store unavailable (the measured bug)', () => {
-  beforeEach(() => {
-    incrMock.mockRejectedValue(new Error('Upstash is not configured'));
-    readMock.mockRejectedValue(new Error('Upstash is not configured'));
-  });
+  // No mocking here on purpose: jest runs without UPSTASH_REDIS_REST_URL, so
+  // the durable call genuinely throws and we exercise the real fallback.
 
   it('counts calls in-process instead of silently reporting zero', async () => {
     for (let i = 0; i < 10; i += 1) await noteQuotaCall(OPTS);
@@ -87,9 +99,12 @@ describe('🔴 durable store unavailable (the measured bug)', () => {
   });
 
   it('never throws out of the counter, whatever the store does', async () => {
-    incrMock.mockRejectedValue(new Error('boom'));
-    await expect(noteQuotaCall(OPTS)).resolves.toBeDefined();
-    await expect(readQuotaState(OPTS)).resolves.toBeDefined();
+    // The no-throw guarantee lives in the shared primitive, so assert it there:
+    // with no Upstash env the durable call really fails, and the caller still
+    // gets a value. (Mocking the primitive itself to reject would be testing a
+    // state that cannot occur — it is the thing that swallows the failure.)
+    await expect(actualCounters.incrWindowCounted(OPTS.key, OPTS.windowSec)).resolves.toBeDefined();
+    await expect(actualCounters.readWindowCounted(OPTS.key)).resolves.toBeDefined();
   });
 
   it('reads zero before anything has been counted', async () => {

@@ -18,7 +18,7 @@
  * card is always an acceptable outcome (never block, never invent).
  */
 
-import { durableIncrWindow } from '@/lib/durable-rate-limit';
+import { incrWindowCounted } from '@/lib/durable-rate-limit';
 import { chatCompletion } from '@/lib/ai/router';
 import type { RoomDbClient } from '@/lib/tour-room/access';
 import { ROOM_LOCALES, type RoomLocale } from '@/lib/tour-room/snapshot';
@@ -217,15 +217,14 @@ export function parseGeneratedJson(raw: string): Record<string, SpotArrivalConte
 async function generationBudgetExhausted(calls: number): Promise<boolean> {
   const cap = Number(process.env.TOUR_ROOM_CONCIERGE_DAILY_CAP ?? 300);
   if (!Number.isFinite(cap) || cap <= 0) return false;
-  try {
-    let count = 0;
-    for (let i = 0; i < calls; i += 1) {
-      count = await durableIncrWindow('tour_room_concierge:daily_llm', 24 * 60 * 60);
-    }
-    return count > cap;
-  } catch {
-    return false;
+  // `incrWindowCounted` never throws, and counts process-locally when Upstash
+  // is absent. The previous `catch { return false }` meant this cap could not
+  // fire at all in an unconfigured environment (measured 2026-07-25).
+  let count = 0;
+  for (let i = 0; i < calls; i += 1) {
+    count = (await incrWindowCounted('tour_room_concierge:daily_llm', 24 * 60 * 60)).count;
   }
+  return count > cap;
 }
 
 export interface GenerateSpotContentArgs {

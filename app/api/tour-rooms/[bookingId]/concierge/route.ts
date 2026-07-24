@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
-import { requestGate, clientIpKey, durableIncrWindow } from '@/lib/durable-rate-limit';
+import { requestGate, clientIpKey, incrWindowCounted } from '@/lib/durable-rate-limit';
 import { chatCompletion } from '@/lib/ai/router';
 import { ensureRoom, resolveRoomActor } from '@/lib/tour-room/access';
 import { broadcastToRoom } from '@/lib/tour-room/realtime';
@@ -46,16 +46,19 @@ const MAX_QUESTION_CHARS = 500;
 /** Recent feed window for context (latest arrival + active notice live here). */
 const CONTEXT_MESSAGE_LIMIT = 40;
 
-/** V3.5 — global daily LLM-call cap (fail-open: a counter outage never blocks). */
+/**
+ * V3.5 — global daily LLM-call cap.
+ *
+ * `incrWindowCounted` never throws and falls back to a process-local window
+ * when Upstash is absent. The previous `catch { return false }` meant that in
+ * an unconfigured environment this cap never bound at ALL — every call threw
+ * and the guard answered "budget available" (measured 2026-07-25).
+ */
 async function tier1BudgetExhausted(): Promise<boolean> {
   const cap = Number(process.env.TOUR_ROOM_CONCIERGE_DAILY_CAP ?? 300);
   if (!Number.isFinite(cap) || cap <= 0) return false;
-  try {
-    const count = await durableIncrWindow('tour_room_concierge:daily_llm', 24 * 60 * 60);
-    return count > cap;
-  } catch {
-    return false;
-  }
+  const { count } = await incrWindowCounted('tour_room_concierge:daily_llm', 24 * 60 * 60);
+  return count > cap;
 }
 
 const LOCALE_NAME: Record<string, string> = {

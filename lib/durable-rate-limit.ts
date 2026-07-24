@@ -100,6 +100,74 @@ function toCount(value: unknown): number {
 }
 
 // ---------------------------------------------------------------------------
+// Counters that never throw (budget guards)
+//
+// 🔴 A measured defect, 2026-07-25. `requestGate` degrades to an in-memory
+// limiter when Upstash is absent, but every DIRECT caller of
+// `durableIncrWindow` — the concierge Tier-1 daily cap, the generated-content
+// budget, the dining translation budget — wrapped it in `catch { return false }`.
+// Upstash is not configured, so those calls threw on every invocation and each
+// guard reported "plenty of budget left" forever. The plan credits the
+// concierge with a triple budget; without Upstash, none of the three ever bound.
+//
+// A daily cap that cannot fire is worse than no cap, because it is trusted. So
+// counters fall back to a PROCESS-LOCAL fixed window: it cannot see sibling
+// serverless instances (that is exactly what Upstash buys), but it counts, and
+// an under-count is a floor — a guard that fires late still fires, while one
+// that reads zero never does. Callers get `durable` so they can label the
+// number honestly instead of printing a confident, wrong percentage.
+// ---------------------------------------------------------------------------
+
+const localWindows = new Map<string, { count: number; resetAt: number }>();
+
+/** Bump a process-local fixed window and return the post-increment count. */
+export function incrLocalWindow(key: string, windowSec: number, nowMs: number = Date.now()): number {
+  const current = localWindows.get(key);
+  if (!current || nowMs >= current.resetAt) {
+    localWindows.set(key, { count: 1, resetAt: nowMs + windowSec * 1_000 });
+    return 1;
+  }
+  current.count += 1;
+  return current.count;
+}
+
+/** Read a process-local window without modifying it (0 when absent/expired). */
+export function readLocalWindow(key: string, nowMs: number = Date.now()): number {
+  const current = localWindows.get(key);
+  if (!current || nowMs >= current.resetAt) return 0;
+  return current.count;
+}
+
+export interface CountedWindow {
+  count: number;
+  /** false = the count is this process only; say so rather than implying global. */
+  durable: boolean;
+}
+
+/** INCR that never throws: durable when configured, process-local otherwise. */
+export async function incrWindowCounted(key: string, windowSec: number): Promise<CountedWindow> {
+  try {
+    return { count: await durableIncrWindow(key, windowSec), durable: true };
+  } catch {
+    return { count: incrLocalWindow(key, windowSec), durable: false };
+  }
+}
+
+/** Read-only counterpart of `incrWindowCounted`. Never throws. */
+export async function readWindowCounted(key: string): Promise<CountedWindow> {
+  try {
+    return { count: await durableReadCount(key), durable: true };
+  } catch {
+    return { count: readLocalWindow(key), durable: false };
+  }
+}
+
+/** Test helper — clears the process-local fallback windows. */
+export function __resetLocalWindows(): void {
+  localWindows.clear();
+}
+
+// ---------------------------------------------------------------------------
 // Pure decision helpers (no I/O — unit tested).
 // ---------------------------------------------------------------------------
 

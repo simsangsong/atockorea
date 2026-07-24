@@ -27,7 +27,11 @@
  * logic — the original duplication is how the same defect ended up in two files.
  */
 
-import { durableIncrWindow, durableReadCount } from '@/lib/durable-rate-limit';
+import {
+  incrWindowCounted,
+  readWindowCounted,
+  __resetLocalWindows,
+} from '@/lib/durable-rate-limit';
 
 export interface DailyQuotaState {
   used: number;
@@ -44,26 +48,6 @@ export interface DailyQuotaState {
    * still honour it (an under-count is a floor, never an over-count).
    */
   durable: boolean;
-}
-
-/** Fallback counters, keyed the same as the durable ones. Per-process by design. */
-const localWindows = new Map<string, { count: number; resetAt: number }>();
-
-function bumpLocal(key: string, windowSec: number): number {
-  const now = Date.now();
-  const current = localWindows.get(key);
-  if (!current || now >= current.resetAt) {
-    localWindows.set(key, { count: 1, resetAt: now + windowSec * 1_000 });
-    return 1;
-  }
-  current.count += 1;
-  return current.count;
-}
-
-function readLocal(key: string): number {
-  const current = localWindows.get(key);
-  if (!current || Date.now() >= current.resetAt) return 0;
-  return current.count;
 }
 
 function stateFor(used: number, cap: number, alertRatio: number, durable: boolean): DailyQuotaState {
@@ -84,25 +68,17 @@ export interface QuotaCounterOptions {
  * unavailable, so the count is never silently zero.
  */
 export async function noteQuotaCall(opts: QuotaCounterOptions): Promise<DailyQuotaState> {
-  try {
-    const used = await durableIncrWindow(opts.key, opts.windowSec);
-    return stateFor(used, opts.cap, opts.alertRatio, true);
-  } catch {
-    return stateFor(bumpLocal(opts.key, opts.windowSec), opts.cap, opts.alertRatio, false);
-  }
+  const { count, durable } = await incrWindowCounted(opts.key, opts.windowSec);
+  return stateFor(count, opts.cap, opts.alertRatio, durable);
 }
 
 /** Read-only view for the collect guard, the seeding brake and the admin surface. */
 export async function readQuotaState(opts: QuotaCounterOptions): Promise<DailyQuotaState> {
-  try {
-    const used = await durableReadCount(opts.key);
-    return stateFor(used, opts.cap, opts.alertRatio, true);
-  } catch {
-    return stateFor(readLocal(opts.key), opts.cap, opts.alertRatio, false);
-  }
+  const { count, durable } = await readWindowCounted(opts.key);
+  return stateFor(count, opts.cap, opts.alertRatio, durable);
 }
 
 /** Test helper — clears the process-local fallback windows. */
 export function __resetLocalQuotaWindows(): void {
-  localWindows.clear();
+  __resetLocalWindows();
 }
