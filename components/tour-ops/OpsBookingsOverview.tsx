@@ -18,7 +18,7 @@
  */
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { AlertTriangle, CalendarDays, ChevronLeft, ChevronRight, LayoutGrid, PlugZap } from 'lucide-react';
+import { AlertTriangle, CalendarDays, ChevronLeft, ChevronRight, Download, LayoutGrid, PlugZap } from 'lucide-react';
 import { datesIn, leadingBlanks, monthRangeOf } from '@/lib/ops/bookings/ranges';
 import {
   groupByDate,
@@ -137,6 +137,24 @@ export default function OpsBookingsOverview({ getToken }: { getToken?: () => Pro
         >
           {axis === 'tour_date' ? '투어일 기준' : '예약 유입일 기준'}
         </button>
+
+        {/* §K B1.6 — 화면과 **같은 리졸버**가 만든 CSV다(내보내기가 자기 쿼리를
+            가지면 화면과 파일의 숫자가 어긋난다). 🔴 파일에는 이름이 마스킹 없이
+            들어간다 — 내보내기는 명시적 행동이고, 마스킹된 CSV는 대조라는 목적을
+            잃는다. */}
+        <a
+          href={`/api/admin/tour-ops/bookings-overview?${new URLSearchParams({
+            view,
+            axis,
+            format: 'csv',
+            ...(view === 'month' && month ? { month } : {}),
+          })}`}
+          className="flex min-h-[36px] items-center gap-1 rounded-full bg-[var(--tr-surface-2)] px-3 text-xs font-medium text-[var(--tr-ink-2)]"
+          data-testid="csv-export"
+        >
+          <Download size={13} aria-hidden />
+          CSV
+        </a>
       </div>
 
       {loading && <p className="py-8 text-center text-xs text-[var(--tr-ink-3)]">불러오는 중…</p>}
