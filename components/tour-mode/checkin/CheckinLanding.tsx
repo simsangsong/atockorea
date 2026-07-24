@@ -16,7 +16,7 @@
  * 좌석 개별 선택 (§5.4c 3).
  */
 
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
 import { checkinCopy, detectCheckinLocale } from '@/lib/ops/seating/checkinCopy';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
@@ -88,6 +88,7 @@ export default function CheckinLanding({
 }) {
   const [state, setState] = useState<LandingState>({ phase: 'loading' });
   const [locale, setLocale] = useState<RoomLocale>('en');
+  const [dark, setDark] = useState(false);
   const [selecting, setSelecting] = useState(false);
   const [selected, setSelected] = useState<Set<number>>(new Set());
   const signalFired = useRef(false);
@@ -169,6 +170,11 @@ export default function CheckinLanding({
 
   useEffect(() => {
     setLocale(detectCheckinLocale());
+    try {
+      setDark(window.matchMedia?.('(prefers-color-scheme: dark)').matches ?? false);
+    } catch {
+      /* noop — stays light */
+    }
     void resolve();
   }, [resolve]);
 
@@ -246,15 +252,26 @@ export default function CheckinLanding({
     }
   }, [state]);
 
-  const card = 'mx-auto mt-16 w-full max-w-sm rounded-2xl border border-neutral-200 bg-white p-6 text-center shadow-sm dark:border-neutral-700 dark:bg-neutral-900';
-  const title = 'text-lg font-semibold text-neutral-900 dark:text-neutral-100';
-  const sub = 'mt-2 text-sm text-neutral-500 dark:text-neutral-400';
+  // Tour-room brand tokens (ivory/antique-brass), theme via the `.dark` shell
+  // below — the same pattern JoinFlow/CompanionJoin already use. `block` lets
+  // primaryBtn size correctly when it renders as an <a> (welcome-open-room).
+  const shell = (node: ReactNode) => (
+    <div className={dark ? 'dark' : ''}>
+      <div className="tr-root min-h-dvh bg-[var(--tr-canvas)] px-4" data-locale={locale} lang={locale}>
+        {node}
+      </div>
+    </div>
+  );
+  const card =
+    'mx-auto mt-16 w-full max-w-sm rounded-2xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] p-6 text-center shadow-sm';
+  const title = 'text-lg font-semibold text-[var(--tr-ink)]';
+  const sub = 'mt-2 text-sm text-[var(--tr-ink-2)]';
   const primaryBtn =
-    'mt-5 w-full rounded-xl bg-neutral-900 px-4 py-3 text-sm font-semibold text-white active:opacity-80 dark:bg-neutral-100 dark:text-neutral-900';
-  const ghostBtn = 'mt-3 w-full rounded-xl px-4 py-2 text-xs text-neutral-500 underline dark:text-neutral-400';
+    'mt-5 block w-full rounded-xl bg-[var(--tr-accent)] px-4 py-3 text-sm font-semibold text-[var(--tr-bubble-me-ink)] active:opacity-80';
+  const ghostBtn = 'mt-3 w-full rounded-xl px-4 py-2 text-xs text-[var(--tr-ink-3)] underline';
 
   if (state.phase === 'loading' || state.phase === 'submitting') {
-    return (
+    return shell(
       <div className={card} data-testid="checkin-loading">
         <p className={title}>{t('recognizing')}</p>
       </div>
@@ -262,7 +279,7 @@ export default function CheckinLanding({
   }
 
   if (state.phase === 'undone') {
-    return (
+    return shell(
       <div className={card} data-testid="checkin-undone">
         <p className={title}>{t('undone')}</p>
       </div>
@@ -275,7 +292,7 @@ export default function CheckinLanding({
     // 것이 없다. 손님이 아침에 처음 보는 화면이 환영이어야 한다.
     if (state.auto) {
       const seatText = state.seatNumbers.join(', ');
-      return (
+      return shell(
         <div className={card} data-testid="checkin-welcome">
           <p className={title}>{t('welcome', { name: state.displayName || '' })}</p>
           {state.seatNumbers.length > 0 && (
@@ -307,7 +324,7 @@ export default function CheckinLanding({
       );
     }
 
-    return (
+    return shell(
       <div className={card} data-testid="checkin-done">
         <p className="text-3xl">✅</p>
         <p className={title}>{t('success')}</p>
@@ -319,7 +336,7 @@ export default function CheckinLanding({
   }
 
   if (state.phase === 'already') {
-    return (
+    return shell(
       <div className={card} data-testid="checkin-already">
         <p className="text-3xl">✅</p>
         <p className={title}>{t('already')}</p>
@@ -334,7 +351,7 @@ export default function CheckinLanding({
 
   if (state.phase === 'ready') {
     const pending = state.seats.filter((s) => !s.checkedIn && !s.absent);
-    return (
+    return shell(
       <div className={card} data-testid="checkin-ready">
         <p className={title}>{t('greeting', { name: state.displayName || 'Guest' })}</p>
         <p className={sub}>
@@ -344,7 +361,7 @@ export default function CheckinLanding({
         {selecting && (
           <div className="mt-4 space-y-2 text-left" data-testid="checkin-seat-picker">
             {pending.map((s) => (
-              <label key={s.seatNumber} className="flex items-center gap-2 text-sm text-neutral-800 dark:text-neutral-200">
+              <label key={s.seatNumber} className="flex items-center gap-2 text-sm text-[var(--tr-ink)]">
                 <input
                   type="checkbox"
                   checked={selected.has(s.seatNumber)}
@@ -388,7 +405,7 @@ export default function CheckinLanding({
   };
   const m = message[state.phase] ?? message.error;
 
-  return (
+  return shell(
     <div className={card} data-testid={`checkin-${state.phase}`}>
       <p className={title}>{m.main}</p>
       {m.hint && <p className={sub}>{m.hint}</p>}
