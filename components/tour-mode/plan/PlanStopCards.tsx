@@ -55,6 +55,10 @@ export default function PlanStopCards({
   onAddStop?: (stop: ItineraryStop) => void;
 }) {
   const [drawerStop, setDrawerStop] = useState<ItineraryStop | null>(null);
+  // A1.5 — dead asset URLs degrade to the Sparkles swatch below, not the
+  // browser's broken-image glyph. The POI picker in PlanEditorClient already
+  // does this; these cards, which show a far bigger photo, did not.
+  const [brokenPhotos, setBrokenPhotos] = useState<Set<string>>(() => new Set());
   // Locale-aware default drawer copy (the planner has no per-tour sectionUi).
   const sectionUi = useMemo(() => mergeTourProductSectionUi(undefined, locale), [locale]);
 
@@ -62,7 +66,8 @@ export default function PlanStopCards({
     <>
       <div className="flex flex-col gap-2.5">
         {stops.map((stop) => {
-          const photo = stopPhoto(stop);
+          const rawPhoto = stopPhoto(stop);
+          const photo = rawPhoto && !brokenPhotos.has(rawPhoto) ? rawPhoto : null;
           const time = stopTime(stop);
           const poiKey = stop._poi_meta?.poi_key ?? null;
           const added = poiKey ? Boolean(addedKeys?.has(poiKey)) : false;
@@ -81,7 +86,15 @@ export default function PlanStopCards({
                 <div className="relative h-[92px] w-[92px] shrink-0 bg-[var(--tr-surface-2)]">
                   {photo ? (
                     // eslint-disable-next-line @next/next/no-img-element
-                    <img src={photo} alt={stop.name} loading="lazy" className="h-full w-full object-cover" />
+                    <img
+                      src={photo}
+                      alt={stop.name}
+                      loading="lazy"
+                      className="h-full w-full object-cover"
+                      onError={() =>
+                        setBrokenPhotos((prev) => (prev.has(photo) ? prev : new Set(prev).add(photo)))
+                      }
+                    />
                   ) : (
                     <span className="flex h-full w-full items-center justify-center text-[var(--tr-ink-3)]">
                       <Sparkles size={22} aria-hidden />

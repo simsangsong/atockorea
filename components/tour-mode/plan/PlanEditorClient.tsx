@@ -1202,6 +1202,42 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
     if (data.day_plan?.status === 'guest_submitted') setOutcome('submitted');
   }, []);
 
+  /**
+   * 🔴 A1.5 — the plan was locked underneath us (409 `plan_locked`): the guide
+   * confirmed it, or another device submitted it, while this editor was open.
+   *
+   * Re-reading the plan is the honest response. Without it the guest just sees
+   * "저장 실패" at the bottom of a screen that still looks editable, keeps
+   * editing, and every keystroke is discarded — the editor would be lying about
+   * being an editor. Pulling the server truth flips `isConfirmed`/`isSubmitted`,
+   * which swaps the whole surface to the read-only view and shows
+   * `confirmedNote` ("ask in the chat"), the copy that already exists in all 5
+   * locales for exactly this situation.
+   *
+   * Costs one GET, and only on a real conflict.
+   */
+  const resyncLockedPlan = useCallback(async () => {
+    try {
+      const res = await authedFetch('/plan');
+      if (!res.ok) return false;
+      const body = (await res.json()) as PlanResponse;
+      const serverStops = toEditorStops(body.day_plan?.stops as Array<Record<string, unknown>>, locale);
+      const serverNeeds = toNeedsState(body.day_plan?.needs);
+      const serverDeparture =
+        typeof body.day_plan?.departure_time === 'string' ? body.day_plan.departure_time : null;
+      latestDraft.current = { stops: serverStops, needs: serverNeeds, departureTime: serverDeparture };
+      setPlan(body);
+      setStops(serverStops);
+      setNeeds(serverNeeds);
+      setDepartureTime(serverDeparture);
+      setWarnings(body.day_plan?.feasibility?.warnings ?? []);
+      if (body.day_plan?.status === 'guest_submitted') setOutcome('submitted');
+      return true;
+    } catch {
+      return false;
+    }
+  }, [authedFetch, locale]);
+
   const save = useCallback(
     async (draft: DraftSnapshot, extra?: SaveExtra) => {
       if (!plan?.viewer.can_edit) return null;
@@ -1217,6 +1253,12 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
         const res = await authedFetch('/plan', { method: 'PUT', body: JSON.stringify(body) });
         const data = (await res.json().catch(() => ({}))) as PlanSaveResponse;
         if (!res.ok) {
+          if (res.status === 409) {
+            setSaveState('idle');
+            const synced = await resyncLockedPlan();
+            if (!synced) setSaveState('error');
+            return null;
+          }
           setSaveState(res.status === 429 ? 'rate_limited' : 'error');
           return null;
         }
@@ -1231,7 +1273,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
         return null;
       }
     },
-    [applySaveResponse, authedFetch, plan?.viewer.can_edit],
+    [applySaveResponse, authedFetch, plan?.viewer.can_edit, resyncLockedPlan],
   );
 
   const scheduleAutosave = useCallback((draft: DraftSnapshot) => {
@@ -1239,6 +1281,11 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
     setSaveState('dirty');
     if (saveTimer.current) clearTimeout(saveTimer.current);
     saveTimer.current = setTimeout(() => {
+      // 🔴 Clearing the handle is what makes "is a save pending?" answerable.
+      // While it stayed set after firing, `flushPending` believed a draft was
+      // waiting forever after the first edit, and re-PUT the already-saved plan
+      // on every tab switch for the rest of the session.
+      saveTimer.current = null;
       void save(draft);
     }, 2500);
   }, [save]);
@@ -1451,6 +1498,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
     submittingRef.current = true;
     setSubmitBusy(true);
     if (saveTimer.current) clearTimeout(saveTimer.current);
+    saveTimer.current = null;
     try {
       const result = await save(latestDraft.current, { submit: true });
       if (result) setOutcome('submitted');
@@ -1462,6 +1510,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
 
   const delegatePlan = async () => {
     if (saveTimer.current) clearTimeout(saveTimer.current);
+    saveTimer.current = null;
     setSaveState('saving');
     try {
       const res = await authedFetch('/plan', {
@@ -1473,6 +1522,10 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
         applySaveResponse(data);
         setOutcome('delegated');
         setSaveState('saved');
+      } else if (res.status === 409) {
+        setSaveState('idle');
+        const synced = await resyncLockedPlan();
+        if (!synced) setSaveState('error');
       } else {
         setSaveState(res.status === 429 ? 'rate_limited' : 'error');
       }
