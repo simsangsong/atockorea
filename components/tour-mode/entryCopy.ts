@@ -13,6 +13,7 @@ export interface EntryCopy {
   comingSoon: string;
   myBookings: string;
   noBookings: string;
+  loadFailed: string;
   signInHint: string;
   guestTitle: string;
   guestHint: string;
@@ -33,6 +34,7 @@ export const ENTRY_COPY: Record<RoomLocale, EntryCopy> = {
     comingSoon: 'Tour Mode is getting ready. If you have a booking, your tour room link will arrive by email before your tour day.',
     myBookings: 'My upcoming tours',
     noBookings: 'No upcoming confirmed tours on this account.',
+    loadFailed: "Couldn't load your tours — this is on us, not your booking. Try again in a moment.",
     signInHint: 'Signed-in customers see their tour rooms here.',
     guestTitle: 'Find my tour room',
     guestHint: 'Booked as a guest? Enter your booking ID and the email you used.',
@@ -51,6 +53,7 @@ export const ENTRY_COPY: Record<RoomLocale, EntryCopy> = {
     comingSoon: '투어모드를 준비 중입니다. 예약이 있으시면 투어 전에 이메일로 투어룸 링크를 보내드립니다.',
     myBookings: '다가오는 내 투어',
     noBookings: '이 계정에 예정된 확정 투어가 없습니다.',
+    loadFailed: '투어 목록을 불러오지 못했어요 — 예약 문제가 아니라 저희 쪽 문제예요. 잠시 후 다시 시도해 주세요.',
     signInHint: '로그인한 고객은 여기에서 투어룸을 볼 수 있습니다.',
     guestTitle: '내 투어룸 찾기',
     guestHint: '비회원으로 예약하셨나요? 예약 ID와 예약에 사용한 이메일을 입력하세요.',
@@ -69,6 +72,7 @@ export const ENTRY_COPY: Record<RoomLocale, EntryCopy> = {
     comingSoon: 'ツアーモードは準備中です。ご予約がある場合、ツアー前にメールでルームリンクをお送りします。',
     myBookings: '今後のツアー',
     noBookings: 'このアカウントに確定済みのツアーはありません。',
+    loadFailed: 'ツアーを読み込めませんでした — ご予約ではなく当社側の問題です。少し後に再度お試しください。',
     signInHint: 'ログイン済みのお客様はここでツアールームを確認できます。',
     guestTitle: 'ツアールームを探す',
     guestHint: 'ゲストとして予約しましたか？予約IDと予約時のメールアドレスを入力してください。',
@@ -87,6 +91,7 @@ export const ENTRY_COPY: Record<RoomLocale, EntryCopy> = {
     comingSoon: 'El Modo Tour está en preparación. Si tienes una reserva, recibirás el enlace de tu sala por correo antes del tour.',
     myBookings: 'Mis próximos tours',
     noBookings: 'No hay tours confirmados próximos en esta cuenta.',
+    loadFailed: 'No pudimos cargar tus tours — es un problema nuestro, no de tu reserva. Inténtalo en un momento.',
     signInHint: 'Los clientes con sesión iniciada ven sus salas aquí.',
     guestTitle: 'Encontrar mi sala de tour',
     guestHint: '¿Reservaste como invitado? Introduce tu ID de reserva y el correo que usaste.',
@@ -105,6 +110,7 @@ export const ENTRY_COPY: Record<RoomLocale, EntryCopy> = {
     comingSoon: '导览模式正在准备中。如果您有预订，出发前会通过电子邮件收到房间链接。',
     myBookings: '我即将出发的行程',
     noBookings: '此账户暂无已确认的行程。',
+    loadFailed: '未能加载您的行程 — 这是我们的问题，与您的预订无关。请稍后重试。',
     signInHint: '已登录的顾客可在此查看导览房间。',
     guestTitle: '查找我的导览房间',
     guestHint: '以访客身份预订？请输入预订编号和预订时使用的邮箱。',

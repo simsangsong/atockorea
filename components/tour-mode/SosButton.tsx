@@ -9,7 +9,7 @@
  * POST /sos. Sent state shows reassurance, not silence.
  */
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { IconDone, IconEmergency } from '@/components/tour-mode/icons';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
@@ -85,6 +85,36 @@ function currentPositionOnce(timeoutMs = 8_000): Promise<{ latitude: number; lon
   });
 }
 
+/**
+ * 🔴 A1.6 — the alert must never wait on a permission dialog.
+ *
+ * `getCurrentPosition`'s own `timeout` explicitly EXCLUDES the time the user
+ * spends deciding on the browser permission prompt, so a guest who has never
+ * granted location (or who is staring at the SOS screen and never notices the
+ * system dialog) could sit on a spinner forever — in an emergency, with the
+ * alert still on the device. This wall-clock cap covers the prompt too.
+ *
+ * A fix that lands after the cap is dropped rather than sent late: the SOS
+ * carries the position it had at send time and nothing else claims otherwise.
+ */
+const LOCATION_SEND_CAP_MS = 4_000;
+
+function withCap<T>(promise: Promise<T | null>, capMs = LOCATION_SEND_CAP_MS): Promise<T | null> {
+  return new Promise((resolve) => {
+    let settled = false;
+    const finish = (value: T | null) => {
+      if (settled) return;
+      settled = true;
+      resolve(value);
+    };
+    const timer = setTimeout(() => finish(null), capMs);
+    void promise.then((value) => {
+      clearTimeout(timer);
+      finish(value);
+    });
+  });
+}
+
 export default function SosButton({
   bookingId,
   roomSession,
@@ -105,11 +135,24 @@ export default function SosButton({
   );
   const [note, setNote] = useState('');
   const copy = COPY[locale];
+  /**
+   * The fix is requested when the consent sheet opens, not when [Send] is
+   * tapped: the guest spends those seconds reading the consent line (and maybe
+   * typing a note), so the permission prompt and the GPS acquisition overlap
+   * with reading instead of delaying the alert. Nothing is transmitted unless
+   * they press Send — cancelling still sends nothing.
+   */
+  const pendingLocation = useRef<Promise<{ latitude: number; longitude: number } | null> | null>(null);
+
+  const openConfirm = () => {
+    pendingLocation.current = currentPositionOnce();
+    setState('confirm');
+  };
 
   const send = async () => {
     setState('sending');
     try {
-      const location = await currentPositionOnce();
+      const location = await withCap(pendingLocation.current ?? currentPositionOnce());
       const res = await fetch(`/api/tour-rooms/${encodeURIComponent(bookingId)}/sos`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'x-tour-room-auth': roomSession },
@@ -192,7 +235,7 @@ export default function SosButton({
   return (
     <button
       type="button"
-      onClick={() => setState('confirm')}
+      onClick={openConfirm}
       className="tr-card-text flex min-h-[48px] w-full items-center justify-center gap-2 rounded-full bg-[var(--tr-danger)] font-bold text-white active:opacity-90"
       data-testid="sos-button"
     >

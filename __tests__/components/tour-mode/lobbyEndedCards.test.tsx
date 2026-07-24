@@ -2,7 +2,7 @@
  * T1.11 / §O-1 ⑥ — LobbyCard (D-day countdown + pickup plan + chat hint) and
  * EndedCard (read-only notice + lost-item action) across all 5 room locales.
  */
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import LobbyCard from '@/components/tour-mode/LobbyCard';
 import EndedCard from '@/components/tour-mode/EndedCard';
 import { ROOM_LOCALES } from '@/lib/tour-room/snapshot';
@@ -69,5 +69,37 @@ describe('EndedCard', () => {
     render(<EndedCard locale="en" />);
     const action = screen.getByTestId('ended-card').querySelector('a[href^="mailto:"]');
     expect(action!.getAttribute('href')).toContain(encodeURIComponent('tour room'));
+  });
+});
+
+/**
+ * §D A1.6 — a lost-item report that never reached the server used to put the
+ * button back untouched, indistinguishable from "not sent yet". The email path
+ * is a real fallback; failure now routes to it and says why.
+ */
+describe('🔴 lost-item report failure', () => {
+  it('falls back to email and says the report did not go through', async () => {
+    global.fetch = jest.fn(async () => ({ ok: false, json: async () => ({}) })) as unknown as typeof fetch;
+    // Yesterday (KST day end has passed, still inside the 48h window).
+    const tourDate = ymdDaysFromToday(-1);
+    render(
+      <EndedCard
+        locale="ko"
+        bookingReference="ATOC-1"
+        bookingId="booking-1"
+        roomSession="session"
+        tourDate={tourDate}
+      />,
+    );
+
+    fireEvent.click(screen.getByTestId('lost-item-signal'));
+    // The in-app prompt replaces window.prompt (M-D6): confirm with no text.
+    fireEvent.click(await screen.findByRole('button', { name: '보내기' }));
+
+    expect(await screen.findByTestId('lost-item-failed')).toHaveTextContent('이메일로 알려주세요');
+    expect(screen.getByRole('link', { name: /분실물 신고하기/ })).toHaveAttribute(
+      'href',
+      expect.stringContaining('mailto:'),
+    );
   });
 });
