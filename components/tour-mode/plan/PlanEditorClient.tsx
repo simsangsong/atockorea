@@ -93,6 +93,8 @@ interface PlanResponse {
     needs?: Record<string, unknown> | null;
     feasibility?: { warnings?: FeasibilityWarning[] } | null;
     version?: number;
+    /** §11.D D4 — daily departure time "HH:MM" (KST), null until set. */
+    departure_time?: string | null;
   } | null;
   viewer: { role: string; is_lead: boolean; can_edit: boolean };
   tour: {
@@ -169,6 +171,8 @@ interface PlanCopy {
   moveDown: string;
   needsTitle: string;
   needsHint: string;
+  departureTitle: string;
+  departureHint: string;
   adults: string;
   children: string;
   childAges: string;
@@ -236,6 +240,8 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     moveDown: 'Move down',
     needsTitle: 'About your party',
     needsHint: 'Helps your guide prepare — shared only with your guide.',
+    departureTitle: 'Departure time (KST)',
+    departureHint: 'When your driver picks you up — your day’s included hours count from here.',
     adults: 'Adults',
     children: 'Children',
     childAges: 'Child ages',
@@ -311,6 +317,8 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     moveDown: '아래로',
     needsTitle: '여행 정보',
     needsHint: '가이드 준비에만 사용돼요 — 가이드에게만 공유됩니다.',
+    departureTitle: '출발 시각 (KST)',
+    departureHint: '기사님이 픽업하는 시각이에요 — 오늘의 포함 시간이 여기서부터 계산돼요.',
     adults: '성인',
     children: '아동',
     childAges: '아이 나이',
@@ -385,6 +393,8 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     moveDown: '下へ',
     needsTitle: '旅の情報',
     needsHint: 'ガイドの準備にのみ使用され、ガイドにのみ共有されます。',
+    departureTitle: '出発時刻 (KST)',
+    departureHint: 'ドライバーがお迎えする時刻です。本日の含まれる時間はここから計算されます。',
     adults: '大人',
     children: '子ども',
     childAges: 'お子さまの年齢',
@@ -458,6 +468,8 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     moveDown: '下移',
     needsTitle: '出行信息',
     needsHint: '仅用于导游准备,只与导游共享。',
+    departureTitle: '出发时间 (KST)',
+    departureHint: '司机接您的时间——今天的包含时长从此刻开始计算。',
     adults: '成人',
     children: '儿童',
     childAges: '孩子年龄',
@@ -531,6 +543,8 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     moveDown: 'Bajar',
     needsTitle: 'Sobre tu grupo',
     needsHint: 'Solo para preparar tu tour; se comparte únicamente con tu guía.',
+    departureTitle: 'Hora de salida (KST)',
+    departureHint: 'Cuando tu conductor te recoge — las horas incluidas del día cuentan desde aquí.',
     adults: 'Adultos',
     children: 'Niños',
     childAges: 'Edades de los niños',
@@ -972,6 +986,11 @@ interface DraftSnapshot {
   stops: EditorStop[];
   needs: NeedsState;
   stopsChanged?: boolean;
+  /**
+   * D4 — present only on a departure-time edit, so a stops/needs save never
+   * force-writes departure_time (the server treats an absent field as no-op).
+   */
+  departureTime?: string | null;
 }
 
 interface PlanSaveResponse {
@@ -1025,6 +1044,8 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
   const [tab, setTab] = useState<EditorTab>('courses');
   const [stops, setStops] = useState<EditorStop[]>([]);
   const [needs, setNeeds] = useState<NeedsState>(() => toNeedsState(null));
+  // D4 — the lead guest's daily departure time (HH:MM KST), null until set.
+  const [departureTime, setDepartureTime] = useState<string | null>(null);
   const [warnings, setWarnings] = useState<FeasibilityWarning[]>([]);
   const [saveState, setSaveState] = useState<SaveState>('idle');
   const [outcome, setOutcome] = useState<'submitted' | 'delegated' | null>(null);
@@ -1097,10 +1118,13 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
         const planBody = (await planRes.json()) as PlanResponse;
         const loadedStops = toEditorStops(planBody.day_plan?.stops as Array<Record<string, unknown>>, locale);
         const loadedNeeds = toNeedsState(planBody.day_plan?.needs);
-        latestDraft.current = { stops: loadedStops, needs: loadedNeeds };
+        const loadedDeparture =
+          typeof planBody.day_plan?.departure_time === 'string' ? planBody.day_plan.departure_time : null;
+        latestDraft.current = { stops: loadedStops, needs: loadedNeeds, departureTime: loadedDeparture };
         setPlan(planBody);
         setStops(loadedStops);
         setNeeds(loadedNeeds);
+        setDepartureTime(loadedDeparture);
         setWarnings(planBody.day_plan?.feasibility?.warnings ?? []);
         if (planBody.day_plan?.status === 'guest_submitted') {
           setOutcome('submitted');
@@ -1175,6 +1199,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
           needs: needsPayload(draft.needs),
           stops: stopsPayload(draft.stops),
           ...(draft.stopsChanged ? { stops_changed: true } : {}),
+          ...(draft.departureTime !== undefined ? { departure_time: draft.departureTime } : {}),
           ...extra,
         };
         const res = await authedFetch('/plan', { method: 'PUT', body: JSON.stringify(body) });
@@ -1224,6 +1249,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
           needs: needsPayload(draft.needs),
           stops: stopsPayload(draft.stops),
           ...(draft.stopsChanged ? { stops_changed: true } : {}),
+          ...(draft.departureTime !== undefined ? { departure_time: draft.departureTime } : {}),
         }),
         keepalive: true,
       });
@@ -1273,6 +1299,23 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
         scheduleAutosave(draft);
         return next;
       });
+    },
+    [scheduleAutosave],
+  );
+
+  // D4 — a departure-time edit rides the same debounced autosave/PUT path.
+  // Only this draft carries `departureTime`, so stops/needs saves never touch it.
+  const mutateDeparture = useCallback(
+    (value: string | null) => {
+      setDepartureTime(value);
+      const draft: DraftSnapshot = {
+        stops: latestDraft.current.stops,
+        needs: latestDraft.current.needs,
+        stopsChanged: latestDraft.current.stopsChanged,
+        departureTime: value,
+      };
+      latestDraft.current = draft;
+      scheduleAutosave(draft);
     },
     [scheduleAutosave],
   );
@@ -2053,6 +2096,24 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
               {copy.needsTitle}
             </h2>
             <p className="tr-meta mt-0.5 text-[var(--tr-ink-3)]">{copy.needsHint}</p>
+
+            {/* D4 — plan-level daily departure time (KST). Countdown target =
+                departure + base included hours (Jeju 9h / Busan 8h). */}
+            <div className="mt-3">
+              <p className="tr-meta font-semibold uppercase tracking-wide text-[var(--tr-ink-3)]">
+                {copy.departureTitle}
+              </p>
+              <label className="mt-2 flex items-center gap-2 text-[var(--tr-ink-2)]">
+                <input
+                  type="time"
+                  value={departureTime ?? ''}
+                  onChange={(e) => mutateDeparture(e.target.value || null)}
+                  className="tr-label min-h-9 w-32 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 text-[var(--tr-ink)]"
+                  aria-label={copy.departureTitle}
+                />
+              </label>
+              <p className="tr-meta mt-1 text-[var(--tr-ink-3)]">{copy.departureHint}</p>
+            </div>
 
             <div className="mt-3 flex flex-wrap gap-3">
               <label className="tr-label flex items-center gap-2 text-[var(--tr-ink-2)]">
