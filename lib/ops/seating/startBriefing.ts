@@ -22,13 +22,13 @@ import { recordRoomEvent } from '@/lib/tour-room/events';
 import { broadcastToRoom } from '@/lib/tour-room/realtime';
 import { sendGuestRoomPush } from '@/lib/tour-room/guestPush';
 import { composeMorningBriefing } from '@/lib/tour-room/morningBriefing';
-import { baseHoursForCity, OVERTIME_RATE_KRW_PER_HOUR } from '@/lib/tour-room/overtime';
+import { baseHoursForCity, rateForCity } from '@/lib/tour-room/overtime';
 
 export interface TourStartBriefingInput {
   tourId: string;
   /** YYYY-MM-DD (KST). */
   tourDate: string;
-  /** tours.city — 조인 브리핑 문구에는 미사용이나 시그니처 안정성 위해 수용. */
+  /** tours.city — 조인 문구에는 rate 미표기이나 rateForCity 단일 소스 위해 전달. */
   city?: string | null;
 }
 
@@ -48,7 +48,7 @@ export async function fireTourStartBriefing(
   const bundle = composeMorningBriefing({
     kind: 'join',
     baseHours: baseHoursForCity(input.city ?? null),
-    rateKrw: OVERTIME_RATE_KRW_PER_HOUR,
+    rateKrw: rateForCity(input.city ?? null),
   });
 
   const { data: dayBookings } = await supabase
