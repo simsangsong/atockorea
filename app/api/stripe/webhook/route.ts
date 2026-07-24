@@ -191,20 +191,31 @@ export async function POST(req: NextRequest) {
         /** F-1 (plan §6.1) — 캡처 확정 시 내부 원장 기입(5472 대사 원천). 고객
          *  인보이스는 없음(D11 — Stripe 영수증 갈음). 멱등 upsert이므로 크론
          *  캡처와의 이중 발화는 1행으로 수렴한다. best-effort: 원장 실패가
-         *  캡처를 되돌리면 안 되므로 절대 throw하지 않고 로그만 남긴다. */
+         *  캡처를 되돌리면 안 되므로 절대 throw하지 않고 로그만 남긴다.
+         *
+         *  §6.3 — 같은 순간 Stripe 실수수료(balance transaction)도 조회해
+         *  (us, fee, −실수수료) 행을 함께 남긴다. 요율을 추정하지 않고, 못 읽으면
+         *  행을 쓰지 않고 사유만 로그로 남긴다(그 달 stripe_fee_minor는 null). */
         try {
           const { recordCaptureLedger } = await import('@/lib/ops/finance/ledger');
           const { getFinanceMarginRate } = await import('@/lib/ops/finance/config');
+          const { fetchStripeFee } = await import('@/lib/ops/finance/stripeFee');
           const marginRate = await getFinanceMarginRate(supabase);
+          // 읽기 전용 조회 (D10 — 청구·환불·전송 없음).
+          const feeLookup = await fetchStripeFee(getStripe(), pi);
           const ledger = await recordCaptureLedger(supabase, {
             bookingId,
             grossMinor: pi.amount_received ?? pi.amount ?? 0,
             currency: pi.currency ?? 'usd',
             marginRate,
             paymentIntentId: pi.id,
+            stripeFee: feeLookup.ok ? feeLookup.fee : null,
+            stripeFeeGap: feeLookup.ok ? null : feeLookup.reason,
           });
           if (!ledger.ok) {
             console.error(`[webhook] entity ledger record skipped for booking ${bookingId}: ${ledger.error}`);
+          } else if (!ledger.feeRecorded) {
+            console.warn(`[webhook] stripe fee not recorded for booking ${bookingId}: ${ledger.feeGap}`);
           }
         } catch (ledgerErr) {
           console.error(`[webhook] entity ledger record failed (non-blocking) for booking ${bookingId}:`, ledgerErr);

@@ -97,6 +97,48 @@ describe('월 정산서 인쇄 뷰', () => {
     render(<SettlementStatementDoc doc={doc} />);
     expect(screen.getAllByText(PLACEHOLDER).length).toBeGreaterThan(0);
   });
+
+  // §6.3 — Stripe 실수수료 라인. 값이 없으면 "미집계", 일부만 확인됐으면 몇 건인지.
+  it('says 미집계 while no fee row has reached the ledger', () => {
+    const doc = buildStatementDoc({ period, config, ledgerRows, bookingMeta });
+    render(<SettlementStatementDoc doc={doc} />);
+    expect(screen.getByText('Stripe 수수료 (참고)')).toBeInTheDocument();
+    expect(screen.getByText('미집계')).toBeInTheDocument();
+    expect(doc.totals.stripeFeeKnownOrders).toBe(0);
+  });
+
+  it('prints the fee and flags partial coverage rather than implying a complete total', () => {
+    const withFee = [
+      ...ledgerRows,
+      { entity: 'us', booking_id: 'bk-1', period: '2026-08', type: 'fee', amount_minor: -476, currency: 'USD' },
+    ];
+    const doc = buildStatementDoc({
+      period: { ...period, stripe_fee_minor: 476 },
+      config,
+      ledgerRows: withFee,
+      bookingMeta,
+    });
+    render(<SettlementStatementDoc doc={doc} />);
+    // 주문 2건 중 1건만 수수료가 확인된 상태.
+    expect(doc.totals.stripeFeeKnownOrders).toBe(1);
+    expect(screen.getByText('Stripe 수수료 (참고 · 1/2건 확인)')).toBeInTheDocument();
+    expect(screen.getByText('$4.76')).toBeInTheDocument();
+  });
+
+  it('drops the coverage note once every order has a fee row', () => {
+    const complete = [
+      ...ledgerRows,
+      { entity: 'us', booking_id: 'bk-1', period: '2026-08', type: 'fee', amount_minor: -476, currency: 'USD' },
+    ];
+    const doc = buildStatementDoc({
+      period: { ...period, order_count: 1, stripe_fee_minor: 476 },
+      config,
+      ledgerRows: complete,
+      bookingMeta,
+    });
+    render(<SettlementStatementDoc doc={doc} />);
+    expect(screen.getByText('Stripe 수수료 (참고)')).toBeInTheDocument();
+  });
 });
 
 describe('인터컴퍼니 인보이스 인쇄 뷰', () => {

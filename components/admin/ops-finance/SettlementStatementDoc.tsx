@@ -58,8 +58,18 @@ export function SettlementStatementDoc({ doc }: { doc: StatementDoc }) {
             <SumRow label={`총매출 (gross · ${doc.totals.orderCount}건)`} value={formatMinor(doc.totals.grossMinor, c)} />
             <SumRow label={`LLC 커미션 (${doc.marginRateLabel})`} value={`− ${formatMinor(doc.totals.commissionMinor, c)}`} />
             <SumRow label="한국법인 송금분" value={formatMinor(doc.totals.remitMinor, c)} strong />
+            {/* §6.3 — 원장 fee 행에서 파생된 실수수료. 일부만 확인됐으면 몇 건이
+                확인됐는지 함께 적는다 (합계를 완전한 값처럼 보이게 두지 않는다). */}
             {doc.totals.stripeFeeMinor !== null ? (
-              <SumRow label="Stripe 수수료 (참고)" value={formatMinor(doc.totals.stripeFeeMinor, c)} muted />
+              <SumRow
+                label={
+                  doc.totals.stripeFeeKnownOrders < doc.totals.orderCount
+                    ? `Stripe 수수료 (참고 · ${doc.totals.stripeFeeKnownOrders}/${doc.totals.orderCount}건 확인)`
+                    : 'Stripe 수수료 (참고)'
+                }
+                value={formatMinor(doc.totals.stripeFeeMinor, c)}
+                muted
+              />
             ) : (
               <SumRow label="Stripe 수수료 (참고)" value="미집계" muted />
             )}

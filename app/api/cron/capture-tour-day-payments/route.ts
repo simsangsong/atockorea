@@ -189,19 +189,29 @@ export async function GET(req: NextRequest) {
       // F-1 (plan §6.1) — 캡처 확정 시 내부 원장 기입. webhook succeeded와 동일
       // 멱등키라 둘 다 발화해도 1행으로 수렴; 이 크론 경로가 있어 webhook 미수신
       // 상황에서도 원장 갭이 생기지 않는다. best-effort — 실패해도 캡처 무영향.
+      //
+      // §6.3 — Stripe 실수수료 행도 같이 남긴다. 캡처 직후에는 balance
+      // transaction이 아직 안 붙어 있을 수 있는데, 그때는 행을 쓰지 않는다:
+      // 나중에 webhook succeeded가 같은 멱등키로 fee 행만 채워 넣는다.
       try {
         const { recordCaptureLedger } = await import('@/lib/ops/finance/ledger');
         const { getFinanceMarginRate } = await import('@/lib/ops/finance/config');
+        const { fetchStripeFee } = await import('@/lib/ops/finance/stripeFee');
         const marginRate = await getFinanceMarginRate(supabase);
+        const feeLookup = await fetchStripeFee(stripe, captured); // 읽기 전용 (D10)
         const ledger = await recordCaptureLedger(supabase, {
           bookingId: booking.id,
           grossMinor: captured.amount_received ?? captured.amount ?? 0,
           currency: captured.currency ?? 'usd',
           marginRate,
           paymentIntentId: captured.id,
+          stripeFee: feeLookup.ok ? feeLookup.fee : null,
+          stripeFeeGap: feeLookup.ok ? null : feeLookup.reason,
         });
         if (!ledger.ok) {
           console.error(`[capture-tour-day-payments] ledger record skipped booking=${booking.id}: ${ledger.error}`);
+        } else if (!ledger.feeRecorded) {
+          console.warn(`[capture-tour-day-payments] stripe fee not recorded booking=${booking.id}: ${ledger.feeGap}`);
         }
       } catch (ledgerErr) {
         console.error(`[capture-tour-day-payments] ledger record failed (non-blocking) booking=${booking.id}:`, ledgerErr);
