@@ -111,7 +111,7 @@ export async function POST(
           ],
         },
       ],
-      { maxOutputTokens: 800, temperature: 0.4 },
+      { maxOutputTokens: 800, temperature: 0.4, usage: { bookingId: booking.id } },
     );
     const answer = completion.content.trim();
 

@@ -53,6 +53,7 @@ function audioFormatOf(file: File): string {
 async function transcribeAndTranslate(
   audio: File,
   targetLocales: string[],
+  usage?: { bookingId?: string | null },
 ): Promise<CaptionResult> {
   const base64 = Buffer.from(await audio.arrayBuffer()).toString('base64');
   const completion = await chatCompletion(
@@ -71,7 +72,7 @@ async function transcribeAndTranslate(
         ],
       },
     ],
-    { jsonResponse: true, maxOutputTokens: 1000, temperature: 0.2 },
+    { jsonResponse: true, maxOutputTokens: 1000, temperature: 0.2, usage },
   );
   const parsed = JSON.parse(completion.content) as {
     source_locale?: string;
@@ -92,6 +93,7 @@ async function transcribeAndTranslate(
 async function transcribeThenTranslate(
   audio: File,
   targetLocales: string[],
+  usage?: { bookingId?: string | null },
 ): Promise<CaptionResult> {
   const transcribed = await transcribeAudioFile(audio, {});
   const sourceText = transcribed.text.trim();
@@ -99,7 +101,7 @@ async function transcribeThenTranslate(
   let translations: Record<string, string> = {};
   let sourceLocale = transcribed.source_locale || 'und';
   try {
-    const translated = await translateTextViaRouter(sourceText, targetLocales);
+    const translated = await translateTextViaRouter(sourceText, targetLocales, { usage });
     translations = translated.translations;
     if (translated.source_locale !== 'und') sourceLocale = translated.source_locale;
   } catch {
@@ -172,17 +174,19 @@ export async function POST(
     let result: CaptionResult;
     if (audio) {
       try {
-        result = await transcribeAndTranslate(audio, targetLocales);
+        result = await transcribeAndTranslate(audio, targetLocales, { bookingId: booking.id });
       } catch (error) {
         console.warn('[captions] multimodal path failed, falling back to stt-router:', error);
-        result = await transcribeThenTranslate(audio, targetLocales);
+        result = await transcribeThenTranslate(audio, targetLocales, { bookingId: booking.id });
       }
     } else {
       // Tier A — the transcript is already text; one translation call.
       let translations: Record<string, string> = {};
       let sourceLocale = 'und';
       try {
-        const translated = await translateTextViaRouter(text, targetLocales);
+        const translated = await translateTextViaRouter(text, targetLocales, {
+          usage: { bookingId: booking.id },
+        });
         translations = translated.translations;
         sourceLocale = translated.source_locale;
       } catch {

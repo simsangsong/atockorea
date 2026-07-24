@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { requestGate, clientIpKey, incrWindowCounted } from '@/lib/durable-rate-limit';
 import { chatCompletion } from '@/lib/ai/router';
+import { recordAiUsage, recordCacheHit } from '@/lib/ai/usage.server';
 import { ensureRoom, resolveRoomActor } from '@/lib/tour-room/access';
 import { broadcastToRoom } from '@/lib/tour-room/realtime';
 import { normalizeRoomLocale, type RoomLocale } from '@/lib/tour-room/snapshot';
@@ -337,6 +338,9 @@ export async function POST(
             participantId: actor.kind === 'session' ? actor.sessionPayload.participantId : null,
           });
           const text = composeDiningText(built.meta, locale);
+          // §L L0 — a dining answer served off the warm cell costs zero LLM
+          // calls. Counting it makes the saving visible as a numerator.
+          recordCacheHit({ purpose: 'concierge', bookingId: booking.id });
           await logTurn(text, 'tour_room_concierge_dining');
           return NextResponse.json({ kind: 'tier0_dining', text, card: built.meta }, { status: 201 });
         }
@@ -345,6 +349,9 @@ export async function POST(
 
     if (intent) {
       const answer = answerTier0(intent, ctx, locale);
+      // §L L0 — the keyword dictionary is the cheapest answer we have (no
+      // network at all). Every hit here is a Tier 1 call that never happened.
+      recordCacheHit({ purpose: 'concierge', bookingId: booking.id });
       await logTurn(answer.text, 'tour_room_concierge_tier0');
       return NextResponse.json(
         {
@@ -361,6 +368,19 @@ export async function POST(
     // ---- Tier 1 — LLM (budget-gated, V3.5) ------------------------------
     if (await tier1BudgetExhausted()) {
       const text = renderConciergeAnswer('budget_exhausted', locale);
+      // Recorded as `skipped`, not `failed`: this is the budget guard working,
+      // and the two must not look alike in the cost data (§L L0).
+      void recordAiUsage({
+        purpose: 'concierge',
+        provider: 'none',
+        model: 'none',
+        booking_id: booking.id,
+        tokens_in: null,
+        tokens_out: null,
+        cache_hit: false,
+        latency_ms: null,
+        outcome: 'skipped',
+      });
       return NextResponse.json({ kind: 'budget_exhausted', text }, { status: 201 });
     }
 
@@ -396,7 +416,7 @@ export async function POST(
             .join('\n\n'),
         },
       ],
-      { maxOutputTokens: 400, temperature: 0.3 },
+      { maxOutputTokens: 400, temperature: 0.3, usage: { bookingId: booking.id } },
     );
     const text = completion.content.trim();
     await logTurn(text, 'tour_room_concierge_tier1');

@@ -18,8 +18,9 @@ export const dynamic = 'force-dynamic';
  *    codes from day-plan stops) and guest Google picks (demand backflow) —
  *    emailed to the ops list; place-operating-rules stays a reviewed static
  *    file (제보, not auto-apply).
- * ③ retention purge (W5.3 + R-17): day_plans.needs (dietary/allergy — the
- *    P-D11 sensitive block) nulled 30 days after the tour; stale location
+ * ③ retention purge (W5.3 + R-17 + §L L0): day_plans.needs (dietary/allergy —
+ *    the P-D11 sensitive block) nulled 30 days after the tour; ops_ai_usage
+ *    cost telemetry after 30 days; stale location
  *    snapshots and expired/old pins deleted.
  *
  * Weekly Vercel cron; idempotent by construction (running means tolerate
@@ -245,6 +246,23 @@ export async function GET(req: NextRequest) {
       console.warn('[flywheel] dining purge failed:', diningPurgeError);
     }
 
+    // ── ⑤ AI usage retention (audit plan §L L0) ─────────────────────────────
+    // Cost telemetry, not a ledger. Month-over-month trend is all anyone reads
+    // it for, and the rows carry no prompt or answer text, so there is nothing
+    // here worth keeping past 30 days.
+    let aiUsagePurged = 0;
+    try {
+      const usageCutoffIso = new Date(Date.now() - 30 * DAY_MS).toISOString();
+      const { data: usageRows } = await supabase
+        .from('ops_ai_usage')
+        .delete()
+        .lt('created_at', usageCutoffIso)
+        .select('id');
+      aiUsagePurged = Array.isArray(usageRows) ? usageRows.length : 0;
+    } catch (usagePurgeError) {
+      console.warn('[flywheel] ai usage purge failed:', usagePurgeError);
+    }
+
     return NextResponse.json({
       matrix: { legs: legSamples.length, upserts: matrixUpserts },
       digest: { closure_skips: closureSkips.length, google_picks: googlePicks.length },
@@ -255,6 +273,7 @@ export async function GET(req: NextRequest) {
         dining_cells: diningCellsPurged,
         dining_places: diningPlacesPurged,
         dining_recommendations: diningRecsPurged,
+        ai_usage: aiUsagePurged,
       },
     });
   } catch (error) {
