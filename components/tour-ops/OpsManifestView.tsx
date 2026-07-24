@@ -13,7 +13,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { toast } from 'sonner';
-import { Check, ChevronDown, ChevronUp, MessageCircle, RefreshCw } from 'lucide-react';
+import { Check, ChevronDown, ChevronUp, Copy, Mail, MessageCircle, RefreshCw } from 'lucide-react';
 import { getOpsToken } from '@/components/tour-ops/opsShared';
 import {
   groupBookingsByPickup,
@@ -60,6 +60,10 @@ export default function OpsManifestView({
   const [collapsed, setCollapsed] = useState<Set<string>>(new Set());
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [bulkCursor, setBulkCursor] = useState(0);
+  // 룸 초대 이메일 일괄 발송 (§4.2① + §5.1) — D10 확인 게이트.
+  const [emailConfirm, setEmailConfirm] = useState(false);
+  const [emailBusy, setEmailBusy] = useState(false);
+  const [inviteLink, setInviteLink] = useState<string | null>(null);
 
   const load = useCallback(async () => {
     setLoading(true);
@@ -87,6 +91,44 @@ export default function OpsManifestView({
   const groups = useMemo(() => groupBookingsByPickup(bookings), [bookings]);
   const totals = useMemo(() => manifestTotals(bookings), [bookings]);
   const preset = getPreset(presetKey) ?? WA_PRESETS[0];
+  const emailEligible = useMemo(
+    () => bookings.filter((b) => Boolean((b.contactEmail ?? '').trim())).length,
+    [bookings],
+  );
+
+  /** 룸 초대 링크를 이메일 있는 게스트 전원에게 일괄 발송 (확인 게이트 통과 후). */
+  const sendBulkInvite = useCallback(async () => {
+    setEmailBusy(true);
+    try {
+      const token = await getOpsToken();
+      const res = await fetch('/api/admin/tour-ops/manifest/bulk-invite', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+        credentials: 'include',
+        body: JSON.stringify({ tourId, tourDate }),
+      });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.error || '초대 발송 실패');
+      setInviteLink(typeof json.url === 'string' ? json.url : null);
+      toast.success(`${json.sent ?? 0}명 발송 · ${json.skippedNoEmail ?? 0} 이메일없음`);
+      void load();
+    } catch (e) {
+      toast.error(e instanceof Error ? e.message : '초대 발송 실패');
+    } finally {
+      setEmailBusy(false);
+      setEmailConfirm(false);
+    }
+  }, [tourId, tourDate, load]);
+
+  const copyInviteLink = useCallback(async () => {
+    if (!inviteLink) return;
+    try {
+      await navigator.clipboard.writeText(inviteLink);
+      toast.success('초대 링크를 복사했습니다');
+    } catch {
+      toast.error('복사에 실패했습니다');
+    }
+  }, [inviteLink]);
 
   /** wa.me 링크 준비: {room_link}/{pass_link}가 필요한 프리셋이면 links API로
    *  고객 토큰 링크를 먼저 발급(기존 경로 재사용), 아니면 즉시 렌더. */
@@ -231,6 +273,19 @@ export default function OpsManifestView({
         </select>
         <button
           type="button"
+          onClick={() => {
+            setInviteLink(null);
+            setEmailConfirm(true);
+          }}
+          disabled={emailBusy || emailEligible === 0}
+          aria-label="룸 초대 이메일 일괄 발송"
+          className="flex h-8 items-center gap-1 rounded-lg bg-[var(--tr-surface-2)] px-2.5 text-[11px] font-semibold text-[var(--tr-ink)] disabled:opacity-40"
+        >
+          <Mail className="size-3.5" />
+          룸 초대 이메일
+        </button>
+        <button
+          type="button"
           onClick={() => void load()}
           aria-label="새로고침"
           className="flex size-8 items-center justify-center rounded-lg text-[var(--tr-ink-2)] active:bg-[var(--tr-surface-2)]"
@@ -238,6 +293,51 @@ export default function OpsManifestView({
           <RefreshCw className="size-4" />
         </button>
       </div>
+
+      {/* 룸 초대 이메일 일괄 발송 — D10 확인 게이트 (명시적 2차 클릭 요구) */}
+      {emailConfirm && (
+        <div className="flex flex-wrap items-center gap-2 border-b border-[var(--tr-hairline)] bg-amber-50 px-4 py-2 dark:bg-amber-500/10">
+          <span className="text-[12px] text-[var(--tr-ink)]">
+            이메일 있는 게스트 <b>{emailEligible}팀</b>에게 룸 초대 링크를 보냅니다. 계속할까요?
+          </span>
+          <span className="flex-1" />
+          <button
+            type="button"
+            onClick={() => void sendBulkInvite()}
+            disabled={emailBusy}
+            className="h-8 rounded-lg bg-[var(--tr-accent)] px-3 text-[12px] font-semibold text-white disabled:opacity-40"
+          >
+            {emailBusy ? '발송 중…' : '확인 발송'}
+          </button>
+          <button
+            type="button"
+            onClick={() => setEmailConfirm(false)}
+            disabled={emailBusy}
+            className="h-8 rounded-lg px-2 text-[12px] text-[var(--tr-ink-2)]"
+          >
+            취소
+          </button>
+        </div>
+      )}
+
+      {/* 발송 후 초대 링크 노출(복사 가능) */}
+      {inviteLink && (
+        <div className="flex items-center gap-2 border-b border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] px-4 py-2">
+          <Mail className="size-3.5 shrink-0 text-[var(--tr-ink-3)]" />
+          <span className="min-w-0 flex-1 truncate text-[11px] text-[var(--tr-ink-2)]" title={inviteLink}>
+            {inviteLink}
+          </span>
+          <button
+            type="button"
+            onClick={() => void copyInviteLink()}
+            aria-label="초대 링크 복사"
+            className="flex h-8 shrink-0 items-center gap-1 rounded-lg bg-[var(--tr-surface)] px-2.5 text-[11px] font-semibold text-[var(--tr-ink)]"
+          >
+            <Copy className="size-3.5" />
+            복사
+          </button>
+        </div>
+      )}
 
       {/* 일괄 순차 오픈 바 */}
       {selected.size > 0 && (
