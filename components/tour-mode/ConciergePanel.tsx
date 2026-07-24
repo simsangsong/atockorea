@@ -31,6 +31,8 @@ import { activeNotice } from '@/lib/tour-room/notices';
 import { roomLifecycle } from '@/lib/tour-room/time';
 import { IconConcierge, IconConciergeSend } from '@/components/tour-mode/icons';
 import FacilityMapCard from '@/components/tour-mode/FacilityMapCard';
+import DiningCard from '@/components/tour-mode/DiningCard';
+import type { DiningCardMeta } from '@/lib/ops/dining/card';
 import type { ConciergeMapCard } from '@/lib/tour-room/concierge';
 import type { RoomMessage } from '@/hooks/useTourRoomChannel';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
@@ -40,6 +42,8 @@ interface ThreadEntry {
   role: 'user' | 'assistant';
   text: string;
   mapCard?: ConciergeMapCard;
+  /** §5.7 R-5 — the dining RAG's answer (list + Kakao deep links, no tile). */
+  diningCard?: DiningCardMeta;
 }
 
 export default function ConciergePanel({
@@ -86,12 +90,17 @@ export default function ConciergePanel({
     threadRef.current?.scrollTo?.({ top: threadRef.current.scrollHeight });
   }, [thread, busy]);
 
-  const push = (role: ThreadEntry['role'], text: string, mapCard?: ConciergeMapCard) => {
+  const push = (
+    role: ThreadEntry['role'],
+    text: string,
+    mapCard?: ConciergeMapCard,
+    diningCard?: DiningCardMeta,
+  ) => {
     // Snapshot the id now — the updater runs later, and a batched user+
     // assistant pair would otherwise both read the final counter value.
     idRef.current += 1;
     const id = idRef.current;
-    setThread((prev) => [...prev, { id, role, text, mapCard }]);
+    setThread((prev) => [...prev, { id, role, text, mapCard, diningCard }]);
   };
 
   const askServer = async (question: string) => {
@@ -102,8 +111,17 @@ export default function ConciergePanel({
         headers: { 'Content-Type': 'application/json', 'x-tour-room-auth': roomSession },
         body: JSON.stringify({ question, locale }),
       });
-      const json = (await res.json().catch(() => ({}))) as { text?: string };
-      push('assistant', res.ok && json.text ? json.text : copy.error);
+      const json = (await res.json().catch(() => ({}))) as {
+        text?: string;
+        mapCard?: ConciergeMapCard;
+        card?: DiningCardMeta;
+      };
+      push(
+        'assistant',
+        res.ok && json.text ? json.text : copy.error,
+        res.ok ? json.mapCard : undefined,
+        res.ok && json.card?.kind === 'dining_card' ? json.card : undefined,
+      );
     } catch {
       push('assistant', copy.error);
     } finally {
@@ -114,6 +132,13 @@ export default function ConciergePanel({
   const askChip = (intent: (typeof CONCIERGE_CHIPS)[number]['intent'], label: string) => {
     if (busy) return;
     push('user', label);
+    // Food asks live server-side now (§5.7 R-2 ③): the Kakao/Google picks are
+    // cached in the DB, not in the message feed, so this one chip pays for a
+    // round trip. Everything else still answers with zero network.
+    if (intent === 'restaurant') {
+      void askServer(label);
+      return;
+    }
     const answer = answerTier0(intent, { ...ctx, nowMs: Date.now() }, locale);
     push('assistant', answer.text, answer.mapCard);
   };
@@ -124,13 +149,13 @@ export default function ConciergePanel({
     setInput('');
     push('user', question);
 
-    // Food asks resolve to this spot's curated, rating-ranked picks (map card)
-    // when we have them, else the honest venue refusal — checked before the
-    // venue guardrail so a data-backed answer wins over the blanket refusal.
+    // Food asks go to the server's dining RAG (§5.7 R-2 ③) — checked before
+    // the venue guardrail so a data-backed answer wins over the blanket
+    // refusal. The endpoint falls back to this spot's curated pins, and then to
+    // the honest refusal, on its own.
     const intentEarly = matchConciergeIntent(question);
     if (intentEarly === 'restaurant') {
-      const answer = answerTier0('restaurant', { ...ctx, nowMs: Date.now() }, locale);
-      push('assistant', answer.text, answer.mapCard);
+      void askServer(question);
       return;
     }
 
@@ -204,6 +229,15 @@ export default function ConciergePanel({
                   </div>
                   {entry.mapCard && (
                     <FacilityMapCard kind={entry.mapCard.kind} pins={entry.mapCard.pins} locale={locale} />
+                  )}
+                  {entry.diningCard && (
+                    <div className="mt-2">
+                      <DiningCard
+                        meta={entry.diningCard}
+                        locale={locale}
+                        auth={{ bookingId, roomSession }}
+                      />
+                    </div>
                   )}
                 </div>
               </div>

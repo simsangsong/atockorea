@@ -13,6 +13,8 @@
 import { CONCIERGE_COPY, type ConciergeMapCard } from '@/lib/tour-room/concierge';
 import { IconConcierge } from '@/components/tour-mode/icons';
 import FacilityMapCard from '@/components/tour-mode/FacilityMapCard';
+import DiningCard from '@/components/tour-mode/DiningCard';
+import type { DiningCardMeta } from '@/lib/ops/dining/card';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
 export interface InlineConciergeAnswer {
@@ -21,6 +23,8 @@ export interface InlineConciergeAnswer {
   text: string;
   /** W2 — optional scoped restroom/photo map card. */
   mapCard?: ConciergeMapCard;
+  /** §5.7 R-5 — optional dining picks (list + Kakao deep links, no map tile). */
+  diningCard?: DiningCardMeta;
 }
 
 const MORE_LABEL: Record<RoomLocale, string> = {
@@ -44,11 +48,14 @@ export default function ConciergeInlineAnswer({
   locale,
   onOpen,
   onDismiss,
+  auth,
 }: {
   answer: InlineConciergeAnswer;
   locale: RoomLocale;
   onOpen: () => void;
   onDismiss: () => void;
+  /** Room credentials the dining card's feedback POST needs. */
+  auth?: { bookingId: string; roomSession: string } | null;
 }) {
   const copy = CONCIERGE_COPY[locale];
   return (
@@ -69,6 +76,11 @@ export default function ConciergeInlineAnswer({
           <p className="tr-card-text mt-1 whitespace-pre-line leading-relaxed text-[var(--tr-ink)]">{answer.text}</p>
           {answer.mapCard && (
             <FacilityMapCard kind={answer.mapCard.kind} pins={answer.mapCard.pins} locale={locale} />
+          )}
+          {answer.diningCard && (
+            <div className="mt-2">
+              <DiningCard meta={answer.diningCard} locale={locale} auth={auth ?? null} />
+            </div>
           )}
           <div className="mt-2 flex items-center gap-3">
             <button

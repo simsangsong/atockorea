@@ -25,6 +25,8 @@ import SpotArrivalCard from '@/components/tour-mode/SpotArrivalCard';
 import ApproachCard from '@/components/tour-mode/ApproachCard';
 import ArrivalBundleCard from '@/components/tour-mode/ArrivalBundleCard';
 import ArrivalVideoCard from '@/components/tour-mode/ArrivalVideoCard';
+import DiningCard from '@/components/tour-mode/DiningCard';
+import type { DiningCardMeta } from '@/lib/ops/dining/card';
 import { isVideoCardMeta } from '@/lib/tour-room/poiVideos';
 import type { ApproachCardMeta } from '@/lib/tour-room/approach';
 import type { ArrivalBundleMeta } from '@/lib/tour-room/arrivalBundle';
@@ -417,6 +419,20 @@ export default function ChatFeed({
                   <ApproachCard
                     meta={message.metadata as unknown as ApproachCardMeta}
                     locale={viewerLocale}
+                  />
+                </div>
+              );
+            }
+            // §5.7 R-5 — the dining picks (list + Kakao deep links, no map
+            // tile). `tts` already carries this room's { bookingId, roomSession },
+            // which is exactly what the feedback POST needs.
+            if (message.metadata?.kind === 'dining_card') {
+              return (
+                <div className={`mt-2 ${animClass}`}>
+                  <DiningCard
+                    meta={message.metadata as unknown as DiningCardMeta}
+                    locale={viewerLocale}
+                    auth={tts ?? null}
                   />
                 </div>
               );

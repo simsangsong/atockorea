@@ -20,6 +20,10 @@ import { activeNotice } from '@/lib/tour-room/notices';
 import { roomLifecycle, type RoomLifecycle } from '@/lib/tour-room/time';
 import { retrieveKnowledge, buildRagContextText } from '@/lib/rag/retrieve';
 import { logChatTurn } from '@/lib/support/chat-logger';
+import { composeDiningText } from '@/lib/ops/dining/card';
+import { isMealStop } from '@/lib/ops/dining/mealStop';
+import { diningPoiCoords } from '@/lib/ops/dining/post.server';
+import { recommendDining, recordShown } from '@/lib/ops/dining/recommend.server';
 import type { RoomMessage } from '@/hooks/useTourRoomChannel';
 
 export const dynamic = 'force-dynamic';
@@ -243,7 +247,12 @@ export async function POST(
       return NextResponse.json({ kind: 'escalated', text }, { status: 201 });
     }
 
-    if (guardrail === 'venue_recommendation') {
+    // §5.7 R-2 trigger ③ — a FOOD ask is no longer a blanket refusal: it is
+    // promoted to the dining RAG below (real Kakao/Google data, never LLM
+    // memory, which is what §D-3 actually forbids). Every other venue ask —
+    // shops, souvenirs — still stops here.
+    const foodIntent = matchConciergeIntent(question) === 'restaurant';
+    if (guardrail === 'venue_recommendation' && !foodIntent) {
       const text = renderConciergeAnswer('venue_refusal', locale);
       await logTurn(text, 'tour_room_concierge_refused');
       return NextResponse.json({ kind: 'refused_venue', text }, { status: 201 });
@@ -286,6 +295,10 @@ export async function POST(
     const ctx: Tier0Context = {
       spotTitle: arrival.spotTitle,
       content: arrival.content,
+      // The arrival already carries this spot's verified restroom/photo/food
+      // pins — without them the restroom and photo answers silently degraded to
+      // "ask your guide" even in rooms that had the data (F-D6 regression).
+      facilityPins: arrival.facilityPins,
       schedule,
       freeTime:
         notice && !notice.cancelled && notice.remainingMs !== null
@@ -296,10 +309,50 @@ export async function POST(
     };
 
     const intent = matchConciergeIntent(question);
+
+    // ---- §5.7 R-2 ③ — food asks resolve to the dining RAG first ----------
+    // Cache HIT = instant and free; MISS collects once and the cell is then
+    // permanently warm. `null` (no spot, no coordinates, nothing survived the
+    // filters) falls straight through to the unchanged Tier 0 behaviour.
+    if (intent === 'restaurant' && arrival.spotTitle) {
+      const coords = await diningPoiCoords(supabase, arrival.poiKey);
+      if (coords) {
+        const built = await recommendDining(supabase, {
+          bookingId: booking.id,
+          poiKey: arrival.poiKey,
+          spotTitle: arrival.spotTitle,
+          lat: coords.lat,
+          lng: coords.lng,
+          meal: isMealStop({ title: arrival.spotTitle, poi_key: arrival.poiKey }, nowMs).meal,
+          locale,
+          nowMs,
+          triggeredByRole: actor.role,
+        });
+        if (built) {
+          await recordShown(supabase, built.shown, {
+            roomId: room.id,
+            participantId: actor.kind === 'session' ? actor.sessionPayload.participantId : null,
+          });
+          const text = composeDiningText(built.meta, locale);
+          await logTurn(text, 'tour_room_concierge_dining');
+          return NextResponse.json({ kind: 'tier0_dining', text, card: built.meta }, { status: 201 });
+        }
+      }
+    }
+
     if (intent) {
       const answer = answerTier0(intent, ctx, locale);
       await logTurn(answer.text, 'tour_room_concierge_tier0');
-      return NextResponse.json({ kind: 'tier0', text: answer.text }, { status: 201 });
+      return NextResponse.json(
+        {
+          // A food ask with no data left is still the honest venue refusal —
+          // same `kind` the guardrail used to return, so clients don't change.
+          kind: intent === 'restaurant' && !answer.answered ? 'refused_venue' : 'tier0',
+          text: answer.text,
+          ...(answer.mapCard ? { mapCard: answer.mapCard } : {}),
+        },
+        { status: 201 },
+      );
     }
 
     // ---- Tier 1 — LLM (budget-gated, V3.5) ------------------------------

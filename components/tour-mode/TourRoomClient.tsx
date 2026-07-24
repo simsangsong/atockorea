@@ -46,9 +46,11 @@ import ConciergeInlineAnswer, { type InlineConciergeAnswer } from '@/components/
 import {
   inlineConciergeAnswer,
   latestArrivalContext,
+  matchConciergeIntent,
   type ScheduleItemLike,
   type Tier0Context,
 } from '@/lib/tour-room/concierge';
+import type { DiningCardMeta } from '@/lib/ops/dining/card';
 import { activeNotice } from '@/lib/tour-room/notices';
 import { roomLifecycle } from '@/lib/tour-room/time';
 import InstallBanner from '@/components/tour-mode/InstallBanner';
@@ -462,6 +464,26 @@ function TourRoomLive({
       nowMs,
       lifecycle: roomLifecycle(tourDate, nowMs),
     };
+    // §5.7 R-2 ③ — a food ask is the one Tier-0 intent whose data lives in the
+    // DB (the Kakao/Google cache), not in the feed. Ask the endpoint; stay
+    // silent unless it really returns picks, so a data-less room still leaves
+    // the answer to the guide.
+    if (matchConciergeIntent(text) === 'restaurant' && arrival.spotTitle) {
+      inlineAnswerSeq.current += 1;
+      const seq = inlineAnswerSeq.current;
+      void fetch(`/api/tour-rooms/${encodeURIComponent(bookingId)}/concierge`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'x-tour-room-auth': data.session },
+        body: JSON.stringify({ question: text, locale }),
+      })
+        .then((res) => (res.ok ? res.json() : null))
+        .then((json: { kind?: string; text?: string; card?: DiningCardMeta } | null) => {
+          if (json?.kind !== 'tier0_dining' || json.card?.kind !== 'dining_card') return;
+          setInlineAnswer({ id: seq, question: text, text: json.text ?? '', diningCard: json.card });
+        })
+        .catch(() => undefined);
+      return;
+    }
     // Tier-0 only, guardrailed — null when the message isn't an answerable info
     // question, so we stay silent on chit-chat and never talk over the guide.
     const answer = inlineConciergeAnswer(text, ctx, locale);
@@ -963,6 +985,7 @@ function TourRoomLive({
                 chatApi.openConcierge();
               }}
               onDismiss={() => setInlineAnswer(null)}
+              auth={{ bookingId, roomSession: data.session }}
             />
           )}
           {viewerRole === 'customer' && !readOnly && (
