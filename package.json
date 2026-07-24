@@ -83,7 +83,8 @@
     "db:diff": "supabase db diff --linked",
     "db:reset": "supabase db reset",
     "db:exec": "supabase db query --linked",
-    "db:types": "supabase gen types typescript --linked --schema public > lib/database.types.ts"
+    "db:types": "supabase gen types typescript --linked --schema public > lib/database.types.ts",
+    "ai:tier0-coverage": "node --env-file=.env.local --import tsx scripts/tier0-coverage.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.78.0",
