@@ -131,10 +131,20 @@ function normalizeDoc(raw: Record<string, unknown>): KakaoPlaceDoc | null {
  * `maxPages`. Returns normalized docs; `[]` on a missing key, a timeout, a
  * non-200, an unparseable body, or anything thrown.
  */
-export async function kakaoCategorySearch(args: KakaoCategorySearchArgs): Promise<KakaoPlaceDoc[]> {
+export interface KakaoSweepResult {
+  docs: KakaoPlaceDoc[];
+  /** The sweep did not complete — do NOT persist this as a finished answer. */
+  failed: boolean;
+  /** Kakao reported the daily quota is blown (HTTP 400, code -10). */
+  quotaExceeded: boolean;
+}
+
+export async function kakaoCategorySearch(args: KakaoCategorySearchArgs): Promise<KakaoSweepResult> {
   const key = process.env.KAKAO_REST_API_KEY;
-  if (!key) return [];
-  if (!Number.isFinite(args.lat) || !Number.isFinite(args.lng)) return [];
+  if (!key) return { docs: [], failed: true, quotaExceeded: false };
+  if (!Number.isFinite(args.lat) || !Number.isFinite(args.lng)) {
+    return { docs: [], failed: true, quotaExceeded: false };
+  }
 
   // Kakao rejects radius > 20000.
   const radius = Math.max(1, Math.min(20_000, Math.round(args.radiusM)));
@@ -143,6 +153,8 @@ export async function kakaoCategorySearch(args: KakaoCategorySearchArgs): Promis
 
   const docs: KakaoPlaceDoc[] = [];
   const seen = new Set<string>();
+  let failed = false;
+  let quotaExceeded = false;
 
   for (let page = 1; page <= maxPages; page += 1) {
     const controller = new AbortController();
@@ -159,7 +171,20 @@ export async function kakaoCategorySearch(args: KakaoCategorySearchArgs): Promis
         headers: { Authorization: `KakaoAK ${key}` },
         signal: controller.signal,
       });
-      if (!res.ok) break;
+      // Kakao answers a blown daily quota with HTTP 400 + code -10, which is
+      // indistinguishable from "no restaurants here" if we only look at the
+      // document count. Read the body and say which one it was.
+      if (!res.ok) {
+        failed = true;
+        const body = await res.text().catch(() => '');
+        if (body.includes('API limit has been exceeded') || body.includes('"code":-10')) {
+          quotaExceeded = true;
+          console.warn('[ops-dining] kakao daily quota exceeded');
+        } else {
+          console.warn(`[ops-dining] kakao HTTP ${res.status}: ${body.slice(0, 160)}`);
+        }
+        break;
+      }
 
       const data = (await res.json()) as {
         documents?: Array<Record<string, unknown>>;
@@ -174,11 +199,23 @@ export async function kakaoCategorySearch(args: KakaoCategorySearchArgs): Promis
       }
       if (documents.length < size || data?.meta?.is_end) break;
     } catch {
-      break; // silent fallback — a partial page set is still usable
+      // Network error / timeout. A partial page set is still usable, but the
+      // caller must know the sweep was truncated so it does not persist the
+      // result as a complete answer.
+      failed = docs.length === 0;
+      break;
     } finally {
       clearTimeout(timer);
     }
   }
 
-  return docs;
+  return { docs, failed, quotaExceeded };
+}
+
+/**
+ * Back-compat convenience for probes and tests that only want the documents.
+ * Production callers use `kakaoCategorySearch` so they can see `failed`.
+ */
+export async function kakaoCategoryDocs(args: KakaoCategorySearchArgs): Promise<KakaoPlaceDoc[]> {
+  return (await kakaoCategorySearch(args)).docs;
 }

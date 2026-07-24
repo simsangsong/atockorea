@@ -177,19 +177,32 @@ export async function readCellCache(supabase: RoomDbClient, query: CellQuery): P
 }
 
 /** Kakao FD6 + CE7 at one radius. */
-async function sweepKakao(lat: number, lng: number, radiusM: number): Promise<KakaoPlaceDoc[]> {
+interface SweepResult {
+  docs: KakaoPlaceDoc[];
+  /** Neither category completed — the cell was NOT actually surveyed. */
+  failed: boolean;
+  quotaExceeded: boolean;
+}
+
+async function sweepKakao(lat: number, lng: number, radiusM: number): Promise<SweepResult> {
   const [food, cafe] = await Promise.all([
     kakaoCategorySearch({ lat, lng, radiusM, group: 'FD6' }),
     kakaoCategorySearch({ lat, lng, radiusM, group: 'CE7' }),
   ]);
   const seen = new Set<string>();
   const docs: KakaoPlaceDoc[] = [];
-  for (const doc of [...food, ...cafe]) {
+  for (const doc of [...food.docs, ...cafe.docs]) {
     if (seen.has(doc.id)) continue;
     seen.add(doc.id);
     docs.push(doc);
   }
-  return docs;
+  return {
+    docs,
+    // One category failing while the other returned rows still gives a usable
+    // sweep; both failing means we learned nothing about this cell.
+    failed: food.failed && cafe.failed,
+    quotaExceeded: food.quotaExceeded || cafe.quotaExceeded,
+  };
 }
 
 /**
@@ -213,19 +226,35 @@ export async function collectCell(supabase: RoomDbClient, query: CellQuery): Pro
     if (quota.exhausted) return { hit: false, places: [] };
 
     let radiusM = query.radiusM ?? DEFAULT_RADIUS_M;
-    let kakaoDocs = await sweepKakao(query.lat, query.lng, radiusM);
+    let sweep = await sweepKakao(query.lat, query.lng, radiusM);
     let kakaoCalls = 2;
 
     // K5 — attraction interiors have no restaurants; widen once rather than
-    // returning an empty card at a real meal stop.
-    if (kakaoDocs.length < MIN_CANDIDATES && radiusM < WIDE_RADIUS_M) {
+    // returning an empty card at a real meal stop. A FAILED sweep is not a thin
+    // sweep: widening after a blown quota just burns two more rejected calls.
+    if (!sweep.failed && sweep.docs.length < MIN_CANDIDATES && radiusM < WIDE_RADIUS_M) {
       radiusM = WIDE_RADIUS_M;
-      kakaoDocs = await sweepKakao(query.lat, query.lng, radiusM);
+      sweep = await sweepKakao(query.lat, query.lng, radiusM);
       kakaoCalls += 2;
     }
+
+    // 🔴 The sweep failed — we did NOT survey this cell, we were refused.
+    // Persisting that as `place_count: 0` would cache "no restaurants here" for
+    // 90 days off the back of a transient 429/timeout. It actually happened:
+    // a blown Kakao daily quota silently marked four real Jeju tourist areas
+    // as restaurant-free (2026-07-25). Report the miss and leave the cell cold
+    // so the next request retries.
+    if (sweep.failed) {
+      if (sweep.quotaExceeded) {
+        console.warn('[ops-dining] kakao quota exceeded — cell left uncollected:', centre);
+      }
+      return { hit: false, places: [] };
+    }
+
+    const kakaoDocs = sweep.docs;
     if (kakaoDocs.length === 0) {
-      // Record the empty sweep anyway: "we looked here and found nothing" is a
-      // real answer, and without the index row we would re-sweep every request.
+      // A genuine empty answer: the sweep completed and this area really has no
+      // FD6/CE7 businesses. Record it so we do not re-sweep every request.
       await upsertCellIndex(supabase, {
         cell: centre,
         centerLat: query.lat,
