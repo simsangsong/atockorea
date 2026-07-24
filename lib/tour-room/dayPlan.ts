@@ -45,6 +45,13 @@ export interface DayPlanRow {
   status: 'guest_draft' | 'guest_submitted' | 'guide_confirmed' | 'live' | 'done';
   stops: DayPlanStop[];
   needs: Record<string, unknown> | null;
+  /**
+   * §11.D D4 — the lead guest's daily departure time "HH:MM" (KST), null until
+   * set in the plan editor. The `select('*')` in resolveDaySchedule already
+   * carries it onto snapshot.day_plan; the guest countdown targets
+   * departure_time + baseHoursForCity (see DepartureCountdown).
+   */
+  departure_time?: string | null;
   feasibility: Record<string, unknown> | null;
   version: number;
   updated_by: string | null;
