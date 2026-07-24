@@ -241,6 +241,13 @@ export default function TourRoomClient({ bookingId }: { bookingId: string }) {
 
     const url = new URL(window.location.href);
     const token = url.searchParams.get('rt');
+    // A4.5 — this is a once-only mount initializer (guarded by attempted.current)
+    // that reads a client-only URL param, so it cannot run during SSR render and
+    // creates no cascading render. The lint rule guards against setState that
+    // re-triggers renders; that is not what this is. Disabling with the reason
+    // stated is more honest than the repo's "route through a nested fn" trick,
+    // which only hides the same setState from the linter.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (token) setAuthToken(token); // B1 — retained for the guide seat strip
     const guest = consumeGuestCreds(bookingId);
     const override = readLocaleOverride(bookingId);

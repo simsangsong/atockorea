@@ -1,7 +1,7 @@
 # A4 — 코드 건강도 (진행 중)
 
 **축:** 3 코드 · **감사일:** 2026-07-25
-**상태:** A4.1 · A4.2 · A4.6 완료 · A4.3/A4.4/A4.5 미착수
+**상태:** A4.1~A4.6 **전부 완료**
 
 > §J의 "A0.1을 기다리지 않아도 되는 것"에 A4 전부가 들어 있다. 시뮬 환경과 무관하다.
 
@@ -168,11 +168,113 @@ import type { RoomBooking, RoomDbClient, TourRoom } from '@/lib/tour-room/access
 
 ---
 
+## A4.3 — 죽은 코드·미사용 export ✅
+
+### 🔴 결론이 곧 성과다 — 이 저장소엔 해로운 죽은 코드가 거의 없다
+
+죽은 코드는 삭제 목록이 길수록 성과처럼 보이지만, **오탐이 섞인 삭제는 의도된 API를
+지운다.** A4.2가 배운 것과 같다 — 늑대를 외치는 검사는 무시당한다. 그래서 스캔을 두 번 좁혔다:
+
+| 단계 | 대상 | 결과 |
+|---|---|---|
+| 1차 | 모든 export(타입 포함) 미참조 | 432건 |
+| 2차 | **값 export만**(fn/const/class) | 104건 |
+| 3차 | 값 export 중 **선언 외 참조 0** | **18건** |
+
+**타입 export를 뺀 이유:** 미사용 타입은 런타임 비용이 0이고 대개 의도된 공개면이다.
+432건의 대부분이 그거였다 — 넣으면 리포트를 아무도 안 본다.
+
+**18건도 자동 삭제 대상이 아니다.** 스캔은 "참조되지 않음"만 알지 "실수인가 의도인가"를
+모른다. 실제로 파 보니 셋으로 갈렸다:
+
+1. **의도된 잠재 API** — `lib/ops/sim/simScope.ts`의 `excludeSim`은 A0.1이 만든 시뮬 배제
+   툴킷의 일부다. A0.1 문서가 *"29개 `from('bookings')` 사이트 전부에 적용하지 않았다"*고
+   명시했으니, `excludeSim`은 앞으로 쓸 자리를 위해 **일부러 제공된** 헬퍼다. 지우면 안 된다.
+2. **문서용 상수** — `lib/ops/tax/withholding.ts`의 `WITHHOLDING_INCOME_TAX_RATE = 0.03` 등.
+   🔴 처음엔 "상수는 죽어 있고 계산부는 `(gross*3)/100` 매직넘버를 쓴다 → A4.1 드리프트 함정"으로
+   봤으나, **파일 헤더가 정확히 그 반대를 못박고 있었다**: *"부동소수 오차가 원단위 절사를 1원
+   어긋내지 않도록 정수 연산(×3/100, ÷10)을 쓴다 · 리팩터 금지."* 즉 매직넘버가 **옳은 구현**이고
+   `0.03` 상수는 참조용 문서다. 세무 로직이라 §J(사인오프)이기도 하니 **손대지 않는다.**
+   (계산은 `lib/ops/tax/__tests__/withholding.test.ts` 28케이스로 이미 보호된다 — §A4.4 참조.)
+3. **테스트 훅** — `tts.ts`의 `__resetAudioPrimingForTests`·`isAudioPrimed`. 쓰는 테스트가 없어
+   죽어 있지만 삭제 이득이 미미하고, 향후 테스트가 부를 자리다. 남긴다.
+
+### 실제로 지운 것: 죽은 i18n 키 2건
+
+A1.7이 넘긴 `settingsPage.saveNotifications`·`alertNotificationsSaved`. 설정 화면은
+`useTranslations()`(무스코프)라 전체 경로로 참조하는데, 두 키의 전체 경로도 leaf도
+**어디에도 없다.** 10개 번들 전부에서 제거(각 -2줄, JSON 유효성 검증). `localeFit` 회귀 통과.
+
+### 재사용 가능한 스캐너
+
+`scripts/audit-dead-exports.mjs` — 위 3단 로직을 커밋했다. `node scripts/audit-dead-exports.mjs`.
+**테스트로 고정하지 않은 이유:** 잠재 API·테스트 훅이 섞여 매 커밋 빨개지면 그게 늑대다.
+스캐너는 사람이 주기적으로 돌려 판단하는 도구지, 게이트가 아니다.
+
+---
+
+## A4.4 — 테스트 공백 지도 ✅
+
+### 🔴 자기교정 1건 — 세무 계산은 사실 보호되고 있다
+
+처음에 `withholding.ts` 헤더가 가리키는 `__tests__/withholding.test.ts`가 없다고 판단하고
+"리팩터 금지인데 가드가 없다"는 P1을 적으려 했다. **틀렸다** — 테스트는
+`lib/ops/tax/__tests__/withholding.test.ts`에 **병치(co-located)**돼 있고 28케이스가 돈다.
+최상위 `__tests__/`만 검색해서 놓쳤다. 헤더의 경로 표기가 부정확할 뿐, 계산은 보호된다.
+(교훈: 이 저장소는 `lib/**/__tests__/`에도 테스트를 둔다 — 검색 시 포함할 것.)
+
+### 라우트 레벨 공백 (플랜이 지목한 표적)
+
+전체 243개 라우트 중 테스트가 라우트 모듈을 import하지 않는 것 153개. 그중 **감사 소관
+(tour-room/ops) 16개**:
+
+| 라우트 | 성격 | 우선순위 |
+|---|---|---|
+| `/api/ops/checkin/context` · `/checkin/signal` | B5 자동 체크인 판정·미등록 시그널 — **분기 많음** | 🔴 높음 |
+| `/api/tour-rooms/[id]/manual-arrival` | §O-8 도착 카드 발사 | 🟠 중 |
+| `/api/tour-mode/driver/link` · `/driver/overview` | 기사 링크 발급·PII 최소 뷰 | 🟠 중 |
+| `/api/tour-rooms/[id]/plan/templates` | 코스 템플릿 서빙 | 🟡 낮음 |
+| `/api/tour-rooms/[id]/{typing,read,reactions,push-subscribe}` | 얇은 통과 — 로직은 이미 테스트된 lib에 있음 | 🟢 낮음 |
+
+**우선순위 판정 기준:** 라우트 자체에 분기가 있으면 높음, lib 위임 통과면 낮음.
+`checkin/context`는 8개 상태(ready/already/no_seats/not_open/no_token/wrong_room/unregistered/error)를
+분기하는데 라우트 테스트가 없다 — A1.8이 클라이언트(`CheckinLanding`)는 봤지만 서버 판정은 미검이다.
+**여기서 16개 테스트를 쓰지 않는 이유:** 각 라우트가 Supabase 목업 하니스를 요구해 슬라이스가
+커진다. 이 지도를 A8.2 백로그로 넘기되, `checkin/context`만은 우선 티켓으로 표시한다.
+
+---
+
+## A4.5 — 타입 거짓말 (`as` 남용) ✅
+
+### 결론: 감사 소관에 `as any`는 0건, 이중 캐스트는 대부분 정당
+
+- **`as any`: 0건** (grep 히트 1건은 주석의 "as any guest" 문구).
+- **`as unknown as`: 48건** — 표본 검토 결과 **대부분 정당**:
+  - 브라우저 벤더 프리픽스 API(`webkitSpeechRecognition`·`webkitAudioContext`·`navigator.wakeLock`) —
+    TS lib에 타입이 없어 불가피.
+  - 서명된 토큰 페이로드(`companionToken`) — 서명 검증 후 신뢰.
+  - 테스트 seam(`speechSynthesis as SynthLike`) — 목업 주입점.
+
+### 🟡 유일한 백로그 후보 — `ChatFeed`의 메타데이터 캐스트 7건
+
+`ChatFeed.tsx:415~489`가 `message.metadata as unknown as ArrivalBundleMeta`(외 6종)로
+**검증 없이** JSON을 카드 prop 타입으로 단언한다. `kind` 스위치로 감싸여 실무상 형태는 맞지만,
+`kind`↔`meta` 대응을 TS가 검증하지 못한다 — 서버 스키마가 드리프트하면 카드가 깨진다.
+**지금 고치지 않는 이유:** 올바른 해법은 판별 유니온 + 런타임 검증인데 메타데이터 타이핑을
+통째로 바꾸는 큰 작업이다. A8.2 백로그(**"cast-not-validate 경계"**)로 남긴다.
+
+### ✅ `TourRoomClient` react-hooks lint — 청산
+
+`244행`(메모리의 285는 낡음)의 `react-hooks/set-state-in-effect`. **제품 결함이 아니다** —
+`attempted.current`로 1회만 도는 마운트 초기화가 **클라이언트 전용 URL 파라미터**(`?rt=`)를 읽어
+상태에 옮기는 것이다. SSR 렌더에서 못 돌고 리렌더 루프도 없다(규칙이 막는 대상이 아니다).
+**이유를 적은 `eslint-disable`로 청산**했다 — 이 저장소가 쓰는 "중첩 함수로 우회" 트릭보다 정직하다.
+그 트릭은 같은 setState를 린터 눈에서 숨길 뿐이다. `npx eslint` 통과 확인.
+
+---
+
 ## 미착수
 
-| 티켓 | 내용 | 비고 |
-|---|---|---|
-| A4.3 | 죽은 코드·미사용 export | |
-| A4.4 | 테스트 공백 지도 | 특히 라우트 레벨 |
-| A4.5 | 타입 거짓말 (`as` 남용) | 특히 supabase row → 도메인 타입 |
-| A4.6 | 사전존재 결함 청산 | `TourRoomClient.tsx` react-hooks lint · 사전존재 실패 5스위트 |
+없음. A4 전체(A4.1~A4.6) 완료.
+※ A8.2 백로그로 넘긴 것: ChatFeed 메타데이터 판별유니온 · 라우트 16개(특히 `checkin/context`) ·
+18개 미사용 값 export 재검토.
