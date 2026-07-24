@@ -19,7 +19,12 @@ import type {
   VideoStoryboardScene,
 } from '@/lib/video-automation/types';
 
-const TIMELINE = [
+/**
+ * Scene grid shared by the template script (below) and the grounded script
+ * (poiScript.ts). Exported so the LLM path cannot invent a different shape —
+ * both produce the same six scenes in the same order.
+ */
+export const TIMELINE = [
   { start: 0, end: 3, layout: 'hero_intro', template: 'Hero intro', visualIntent: 'Hook shot and POI name' },
   { start: 3, end: 12, layout: 'poi_title', template: 'POI title', visualIntent: 'Core identity' },
   { start: 12, end: 28, layout: 'culture_card', template: 'History or culture card', visualIntent: 'Verified background' },
@@ -28,14 +33,16 @@ const TIMELINE = [
   { start: 53, end: 60, layout: 'smartguide_cta', template: 'Smart Guide message', visualIntent: 'ATOCKOREA CTA' },
 ] as const;
 
-const CTA_BY_LANGUAGE: Record<VideoLanguageCode, string> = {
+/** Fixed app copy, not a claim about the POI — exempt from the claim filter. */
+export const CTA_BY_LANGUAGE: Record<VideoLanguageCode, string> = {
   en: 'Open ATOCKOREA Smart Guide for maps, captions, and local tips at the spot.',
   'zh-Hant': '開啟 ATOCKOREA 智慧導覽，查看地圖、字幕與現場提示。',
   ja: 'ATOCKOREAスマートガイドで地図、字幕、現地ヒントを確認してください。',
   es: 'Abre ATOCKOREA Smart Guide para ver mapas, subtitulos y consejos en el lugar.',
 };
 
-const HOOK_BY_LANGUAGE: Record<VideoLanguageCode, (name: string) => string> = {
+/** Fixed app copy (brand hook). The "60 seconds" is about the film, not the POI. */
+export const HOOK_BY_LANGUAGE: Record<VideoLanguageCode, (name: string) => string> = {
   en: (name) => `${name} in 60 seconds.`,
   'zh-Hant': (name) => `用 60 秒認識 ${name}。`,
   ja: (name) => `${name}を60秒で案内します。`,
