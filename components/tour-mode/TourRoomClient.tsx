@@ -799,6 +799,7 @@ function TourRoomLive({
                 canSignal={!readOnly && data.lifecycle === 'live'}
                 showConcierge={!readOnly}
                 isPrivate={manualKind === 'private'}
+                locations={locations}
               />
             )
           : undefined

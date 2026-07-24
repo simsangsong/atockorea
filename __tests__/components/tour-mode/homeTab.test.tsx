@@ -9,6 +9,7 @@ import RoomShell from '@/components/tour-mode/RoomShell';
 import HomeTab from '@/components/tour-mode/HomeTab';
 import { kstToday } from '@/lib/tour-room/time';
 import type { RoomMessage } from '@/hooks/useTourRoomChannel';
+import type { VehicleLocationLike } from '@/lib/tour-room/vehicleEta';
 
 const messages: RoomMessage[] = [
   {
@@ -27,6 +28,7 @@ function renderRoom({
   showConcierge = lifecycle !== 'ended',
   schedule = [] as Array<Record<string, unknown>>,
   isPrivate = true,
+  locations,
 }: {
   lifecycle: 'lobby' | 'live' | 'ended';
   withHome?: boolean;
@@ -34,6 +36,7 @@ function renderRoom({
   showConcierge?: boolean;
   schedule?: Array<Record<string, unknown>>;
   isPrivate?: boolean;
+  locations?: Record<string, VehicleLocationLike>;
 }) {
   return render(
     <RoomShell
@@ -64,6 +67,7 @@ function renderRoom({
                 canSignal={canSignal}
                 showConcierge={showConcierge}
                 isPrivate={isPrivate}
+                locations={locations}
               />
             )
           : undefined
@@ -159,6 +163,42 @@ describe('HomeTab lifecycle variants (H2)', () => {
 
     fireEvent.click(screen.getByTestId('home-tile-timeline'));
     expect(screen.getByTestId('timeline-panel')).toBeInTheDocument();
+  });
+
+  // §11.C C1 — the vehicle card is wired into the home dashboard and hands
+  // off to the map tab; it stays silent when nobody in the van is sharing.
+  describe('vehicle location card', () => {
+    const driver: Record<string, VehicleLocationLike> = {
+      'p-driver': {
+        participant_id: 'p-driver',
+        role: 'driver',
+        latitude: 33.458,
+        longitude: 126.9425,
+        recorded_at: new Date().toISOString(),
+      },
+    };
+
+    beforeEach(() => {
+      global.fetch = jest.fn(async () => ({ ok: false, json: async () => ({}) })) as never;
+    });
+    afterEach(() => {
+      // @ts-expect-error — ad-hoc fetch mock.
+      delete global.fetch;
+    });
+
+    it('mounts while live and opens the map tab', () => {
+      renderRoom({ lifecycle: 'live', locations: driver });
+      fireEvent.click(screen.getByTestId('vehicle-see-map'));
+      expect(screen.getByRole('tab', { name: '지도' })).toHaveAttribute('aria-selected', 'true');
+    });
+
+    it('absent without a shared vehicle position, and after the tour ends', () => {
+      renderRoom({ lifecycle: 'live' });
+      expect(screen.queryByTestId('vehicle-location-card')).not.toBeInTheDocument();
+
+      renderRoom({ lifecycle: 'ended', canSignal: false, showConcierge: false, locations: driver });
+      expect(screen.queryByTestId('vehicle-location-card')).not.toBeInTheDocument();
+    });
   });
 
   it('pickup tile opens the meeting-point sheet, more row reaches settings', () => {
