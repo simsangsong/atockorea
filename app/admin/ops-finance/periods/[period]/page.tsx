@@ -20,6 +20,7 @@ import {
   AlertTriangle,
   ArrowLeft,
   CheckCircle2,
+  FileDown,
   FileText,
   Receipt,
   RefreshCw,
@@ -124,6 +125,29 @@ export default function SettlementPeriodDetailPage() {
       setBusy(null);
     }
   }, [post, load]);
+
+  /**
+   * §6.3 (G2) — 첨부 파일이 필요한 제출처(세무사·은행)용 PDF를 private 버킷에
+   * 만들어 두고 단기 서명 URL을 연다. 🔴 만들어 보관할 뿐 어디로도 보내지 않는다(D10).
+   */
+  const generatePdf = useCallback(
+    async (kind: 'statement' | 'invoice') => {
+      setBusy(`${kind}-pdf`);
+      try {
+        const { res, json } = await post('/pdf', { kind });
+        if (!res.ok || !json.ok) throw new Error(String(json.message ?? 'PDF 생성에 실패했습니다.'));
+        if (json.message) toast.warning(String(json.message));
+        else toast.success(json.draft ? 'PDF를 만들었습니다 (DRAFT 워터마크).' : 'PDF를 만들었습니다.');
+        if (typeof json.signedUrl === 'string') window.open(json.signedUrl, '_blank', 'noopener');
+        await load();
+      } catch (e) {
+        toast.error(e instanceof Error ? e.message : 'PDF 생성에 실패했습니다.');
+      } finally {
+        setBusy(null);
+      }
+    },
+    [post, load],
+  );
 
   const submitRemittance = useCallback(async () => {
     setBusy('remittance');
@@ -237,6 +261,16 @@ export default function SettlementPeriodDetailPage() {
               <FileText className="size-4" />
               월 정산서 보기 / 인쇄
             </Link>
+            <button
+              type="button"
+              onClick={() => void generatePdf('statement')}
+              disabled={busy !== null}
+              className="inline-flex h-[38px] items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 text-sm font-semibold text-slate-700 hover:bg-slate-50 disabled:opacity-50"
+              data-testid="statement-pdf-button"
+            >
+              <FileDown className="size-4" />
+              {busy === 'statement-pdf' ? '생성 중…' : '정산서 PDF'}
+            </button>
             {data?.invoice ? (
               <Link
                 href={`/admin/ops-finance/periods/${period}/invoice`}
@@ -245,6 +279,18 @@ export default function SettlementPeriodDetailPage() {
                 <Receipt className="size-4" />
                 인보이스 {data.invoice.invoice_no} 보기 / 인쇄
               </Link>
+            ) : null}
+            {data?.invoice ? (
+              <button
+                type="button"
+                onClick={() => void generatePdf('invoice')}
+                disabled={busy !== null}
+                className="inline-flex h-[38px] items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 text-sm font-semibold text-slate-700 hover:bg-slate-50 disabled:opacity-50"
+                data-testid="invoice-pdf-button"
+              >
+                <FileDown className="size-4" />
+                {busy === 'invoice-pdf' ? '생성 중…' : '인보이스 PDF'}
+              </button>
             ) : (
               <button
                 type="button"
