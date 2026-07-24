@@ -235,6 +235,12 @@ export interface InvoiceDoc {
   lines: OrderLine[]
   paymentTerms: string
   bankAccount: string
+  /**
+   * 인보이스 행의 자유 비고. 현재 ops_finance_config에 지급조건·수취계좌 컬럼이
+   * 없으므로(스키마 additive는 expert_reviewed 1개로 제한), 발행 시 여기에 적어
+   * 문서에 싣는 것이 유일한 경로다. 후속 슬라이스에서 구조화 컬럼으로 승격 대상.
+   */
+  notes: string | null
 }
 
 /**
@@ -272,5 +278,6 @@ export function buildInvoiceDoc(input: InvoiceDocInput): InvoiceDoc {
     lines: buildOrderLines(input.ledgerRows, input.bookingMeta),
     paymentTerms: orPlaceholder(input.paymentTerms),
     bankAccount: orPlaceholder(input.bankAccount),
+    notes: invoice.notes,
   }
 }
