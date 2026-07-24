@@ -27,13 +27,24 @@ import { composeLunch } from '@/lib/ops/seating/cards/lunch';
 import { composeEtiquette } from '@/lib/ops/seating/cards/etiquette';
 import type { ComposedBriefingCard } from '@/lib/ops/seating/cards/types';
 import type { SafetyVideoCardMeta } from '@/lib/tour-room/safetyVideo';
+import type { TourKind } from '@/lib/tour-room/tourKind';
 import type { ScheduleItemLike } from '@/lib/tour-room/concierge';
 
 export type BriefingCardId = 'start' | 'safety' | 'schedule' | 'lunch' | 'etiquette';
 
-/** Everything a composer may read. Resolved once per room by the fan-out. */
+/**
+ * Everything a composer may read. Resolved once per room by the fan-out.
+ *
+ * 🔴 The C-17 card-set OPTIONS are deliberately absent here: they are consumed
+ * while this context is built (the safety option decides `safetySeenBefore`,
+ * the lunch option decides `lunchIncluded`), so a spec never has to know that
+ * a config layer exists. Only `tourKind` — a fact about the tour, not a
+ * setting — reaches the composers.
+ */
 export interface BriefingCardContext {
   tourDate: string;
+  /** §11.D D3 — 'join' (shared bus/small-group) | 'private' (charter). */
+  tourKind: TourKind;
   /** Card ①'s capsule, composed by the caller from composeMorningBriefing. */
   startCapsule: ComposedBriefingCard;
   /** Card ② — approved 30 s render, or null (card ships as text only). */
@@ -92,6 +103,7 @@ export const BRIEFING_CARD_STACK: readonly BriefingCardSpec[] = [
         collapsed: ctx.safetySeenBefore,
         videoCard: ctx.safetyVideo,
         tourDate: ctx.tourDate,
+        tourKind: ctx.tourKind,
       }),
   },
   {
@@ -110,7 +122,12 @@ export const BRIEFING_CARD_STACK: readonly BriefingCardSpec[] = [
     subjectKey: (ctx) => dayKey('lunch', ctx),
     push: false,
     compose: (ctx) =>
-      composeLunch({ lunchIncluded: ctx.lunchIncluded, dietary: ctx.dietary, tourDate: ctx.tourDate }),
+      composeLunch({
+        lunchIncluded: ctx.lunchIncluded,
+        dietary: ctx.dietary,
+        tourDate: ctx.tourDate,
+        tourKind: ctx.tourKind,
+      }),
   },
   {
     id: 'etiquette',

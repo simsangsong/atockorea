@@ -35,7 +35,10 @@ export default function BriefingSafetyCard({
   const collapsed = meta.collapsed === true;
   const [open, setOpen] = useState(!collapsed);
   const video = isSafetyVideoMeta(meta.video_card) ? meta.video_card : null;
-  const body = collapsed && open ? safetyFullTranslations()[locale] : text;
+  // §11.D D3 — the expansion must repeat the SAME shape the capsule was sent
+  // in; `meta.tour_kind` is stamped at compose time (older rows have none → the
+  // shipped join wording, which is what they were sent with).
+  const body = collapsed && open ? safetyFullTranslations(meta.tour_kind ?? 'join')[locale] : text;
 
   return (
     <div className="flex flex-col gap-2" data-testid="briefing-safety-card">

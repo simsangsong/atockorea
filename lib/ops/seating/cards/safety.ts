@@ -14,11 +14,19 @@
  * day of the same booking receives the COLLAPSED variant — one reminder line
  * plus a tap to re-open the full text — rather than the whole card again.
  *
+ * §11.D D3 — ONE line differs by tour kind, and only because it is factually
+ * wrong otherwise: the join line tells the guest to keep the on-site staff in
+ * sight, and on a private charter there is no staff walking with them (the
+ * driver stays with the vehicle). The other four lines — seatbelts, what to do
+ * when separated, where the emergency numbers live — are identical for both
+ * kinds and are deliberately NOT duplicated.
+ *
  * Pre-translated 5-locale constants, zero LLM at send time.
  */
 
 import { capsuleFrom, joinLocaleLines, type ComposedBriefingCard } from '@/lib/ops/seating/cards/types';
 import type { SafetyVideoCardMeta } from '@/lib/tour-room/safetyVideo';
+import type { TourKind } from '@/lib/tour-room/tourKind';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
 /** The `metadata` contract of a `briefing_safety` message row. */
@@ -28,9 +36,29 @@ export interface BriefingSafetyMeta {
   collapsed: boolean;
   /** The tour day this card was composed for (KST YYYY-MM-DD). */
   tour_date?: string | null;
+  /** §11.D D3 — which wording shape was sent ('join' | 'private'). */
+  tour_kind?: TourKind;
   video_card?: SafetyVideoCardMeta | null;
   [key: string]: unknown;
 }
+
+/** §11.D D3 — the ONE kind-dependent line (index 2 of the full card). */
+const STAY_TOGETHER: Record<TourKind, Record<RoomLocale, string>> = {
+  join: {
+    en: 'At every stop, stay with the group and keep the staff in sight — we move as one party.',
+    ko: '각 장소에서는 일행과 함께 움직이고 스태프가 보이는 곳에 있어 주세요 — 다 같이 이동합니다.',
+    ja: '各スポットでは一行と一緒に行動し、スタッフが見える範囲にいてください — 全員で移動します。',
+    es: 'En cada parada, permanezcan con el grupo y a la vista del personal: nos movemos juntos.',
+    zh: '每一站请与团队同行，保持在工作人员视线内 — 我们整队行动。',
+  },
+  private: {
+    en: 'At every stop, stay together with your party and come back to the same spot your driver dropped you off.',
+    ko: '각 장소에서는 일행과 함께 움직이시고, 기사님이 내려드린 그 자리로 다시 돌아와 주세요.',
+    ja: '各スポットでは同行の方と一緒に行動し、ドライバーが降ろした場所へお戻りください。',
+    es: 'En cada parada, permanezcan juntos y regresen al mismo punto donde les dejó su conductor.',
+    zh: '每一站请与同行者一起行动，并回到司机放您下车的同一地点。',
+  },
+};
 
 const SAFETY_LINES: Array<Record<RoomLocale, string>> = [
   {
@@ -48,13 +76,6 @@ const SAFETY_LINES: Array<Record<RoomLocale, string>> = [
     zh: '行驶全程请系好安全带，前后座皆须 — 这是韩国法律规定。',
   },
   {
-    en: 'At every stop, stay with the group and keep the staff in sight — we move as one party.',
-    ko: '각 장소에서는 일행과 함께 움직이고 스태프가 보이는 곳에 있어 주세요 — 다 같이 이동합니다.',
-    ja: '各スポットでは一行と一緒に行動し、スタッフが見える範囲にいてください — 全員で移動します。',
-    es: 'En cada parada, permanezcan con el grupo y a la vista del personal: nos movemos juntos.',
-    zh: '每一站请与团队同行，保持在工作人员视线内 — 我们整队行动。',
-  },
-  {
     en: 'If you get separated, do not wander — send a message here, or tap the red SOS button in the app and we will come to you.',
     ko: '길이 엇갈리면 헤매지 마시고 — 여기로 메시지를 보내시거나 앱의 빨간 SOS 버튼을 눌러주세요. 저희가 찾아갑니다.',
     ja: 'はぐれてしまったら動き回らず — ここにメッセージを送るか、アプリの赤いSOSボタンを押してください。こちらから向かいます。',
@@ -69,6 +90,11 @@ const SAFETY_LINES: Array<Record<RoomLocale, string>> = [
     zh: '紧急联系方式在App中随时一键可查 — 无需记忆。',
   },
 ];
+
+/** The full card for one tour kind — the shared lines with the kind line at ②. */
+function safetyLines(kind: TourKind): Array<Record<RoomLocale, string>> {
+  return [SAFETY_LINES[0], SAFETY_LINES[1], STAY_TOGETHER[kind], ...SAFETY_LINES.slice(2)];
+}
 
 /** The collapsed (re-boarding) variant — one line, no repetition of the drill. */
 const SAFETY_COLLAPSED_LINES: Array<Record<RoomLocale, string>> = [
@@ -128,10 +154,12 @@ export interface ComposeSafetyArgs {
   collapsed?: boolean;
   videoCard?: SafetyVideoCardMeta | null;
   tourDate?: string | null;
+  /** §11.D D3 — defaults to 'join' (the shipped wording). */
+  tourKind?: TourKind;
 }
 
 export function composeSafetyTranslations(args: ComposeSafetyArgs = {}): Record<RoomLocale, string> {
-  return joinLocaleLines(args.collapsed ? SAFETY_COLLAPSED_LINES : SAFETY_LINES);
+  return joinLocaleLines(args.collapsed ? SAFETY_COLLAPSED_LINES : safetyLines(args.tourKind ?? 'join'));
 }
 
 export function composeSafety(args: ComposeSafetyArgs = {}): ComposedBriefingCard {
@@ -139,12 +167,13 @@ export function composeSafety(args: ComposeSafetyArgs = {}): ComposedBriefingCar
     kind: 'briefing_safety',
     collapsed: Boolean(args.collapsed),
     tour_date: args.tourDate ?? null,
+    tour_kind: args.tourKind ?? 'join',
     video_card: args.videoCard ?? null,
   };
   return capsuleFrom(composeSafetyTranslations(args), meta as unknown as Record<string, unknown>);
 }
 
 /** The full text, for the collapsed card's "show again" expansion. */
-export function safetyFullTranslations(): Record<RoomLocale, string> {
-  return joinLocaleLines(SAFETY_LINES);
+export function safetyFullTranslations(kind: TourKind = 'join'): Record<RoomLocale, string> {
+  return joinLocaleLines(safetyLines(kind));
 }
