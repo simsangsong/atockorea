@@ -17,7 +17,9 @@ import { useCallback, useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import { Printer, RefreshCw } from 'lucide-react';
 import { getAdminAccessToken } from '@/app/admin/match-pois/_hooks/usePoiRow';
-import { formatKstStamp } from '@/lib/ops/seating/evidence';
+// 클라이언트 안전 파일에서만 가져온다 — evidence.ts는 node:crypto·sharp를 쓰므로
+// 여기서 import하면 프로덕션 webpack 빌드가 깨진다(tsc·jest로는 드러나지 않는다).
+import { formatKstStamp } from '@/lib/ops/seating/evidenceFormat';
 
 interface EvidenceItem {
   id: string;
