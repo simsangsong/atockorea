@@ -6,10 +6,13 @@ import type { Copy } from '@/src/design/copy';
 // Do not static-import supabase here: it triggers server bundle of @supabase/supabase-js
 // and causes "Cannot find module './vendor-chunks/@supabase.js'". Use dynamic import in client-only code.
 
-export type Locale = 'en' | 'ko' | 'zh' | 'zh-TW' | 'es' | 'ja' | 'fr' | 'de' | 'it' | 'ru';
+// §D A4.1 — 사이트 10로케일의 정본은 `lib/locale.ts` 하나다. 여기서 다시
+// 나열하면 로케일이 늘어나는 날 한쪽만 고쳐지고, 그 사실은 고친 사람도 모른다.
+// (이 파일은 'use client'라 별도로 존재하지만, **목록까지** 복제할 이유는 없다.)
+import { locales, defaultLocale, type Locale } from '@/lib/locale';
 
-export const locales: Locale[] = ['en', 'ko', 'zh', 'zh-TW', 'es', 'ja', 'fr', 'de', 'it', 'ru'];
-export const defaultLocale: Locale = 'en';
+export { locales, defaultLocale };
+export type { Locale };
 
 const localeNames: Record<Locale, string> = {
   en: 'English',
