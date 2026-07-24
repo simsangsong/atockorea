@@ -8,11 +8,11 @@
 
 ## 다음 착수 지점
 
-**→ A7.1 가드레일 누수(코드-only, 순수 분류기) → A0.2 관측 → A2.3 관제 → 이후 A5/A6/A7.2/A0.3은 dev서버·런타임 게이트**
+**→ A0.2 관측 도구(Tier0 계측, A1.3 §2 근거) → A2.3 관제 → A8 종합. A5/A6/A7.2/A0.3은 dev서버·런타임 게이트**
 
 ## 기준선
 
-- main = `8e8a4fae` (origin/main과 동일, 미푸시 0) — tsc 0 · `next build --webpack` ✓ · 204스위트 2118 green 재검증 완료
+- main = `d8f1ad5c` (origin/main과 동일, 미푸시 0) — tsc 0 · `next build --webpack` ✓ · 204스위트 2118 green 재검증 완료
 - 작업 워크트리: `C:\Users\sangsong\atockorea-audit` (브랜치 `claude/audit-b0`, `npm ci` 실설치 완료)
 - 라이브 마이그레이션 5건 추가 적용: `ops_ai_usage` · `bookings_sim_tag` · `ops_tour_groups` · `tours_max_room_guests` · `ops_guest_notes`
 - 머지 워크트리: `C:\Users\sangsong\atockorea-main-merge`
@@ -54,7 +54,8 @@
 | 27 | A1.7 로케일(표적) | ✅ `faf19ef0` · `docs/audit/A1-7-locale-fit.md` |
 | 28 | A4.3~A4.5 (죽은코드·테스트공백·`as`) | ✅ `f5c158dd` · `docs/audit/A4-code-health.md` |
 | 29 | A2.4 권한 경계 · A2.1·A2.2 운영자 면 | ✅ `8e8a4fae` · `A2-4-permission-matrix.md`·`A2-1-2-operator-faces.md` |
-| 30 | A7.1 가드레일 누수 · A0.2 관측 · A2.3 관제 · (A5/A6/A7.2/A0.3=런타임 게이트) | ⬜ |
+| 30 | A7.1 가드레일 누수 (응급 P0 수정) | ✅ `d8f1ad5c` · `docs/audit/A7-1-guardrail-leak.md` |
+| 31 | A0.2 관측 · A2.3 관제 · A8 종합 · (A5/A6/A7.2/A0.3=런타임 게이트) | ⬜ |
 
 ## 남은 것 (우선순위순)
 
@@ -95,6 +96,12 @@
 - 희소성 UI("매진/잔여") 금지 — 정원은 판매 차단이 아니라 운영 캡 (B2-D1)
 
 ## 실행 로그 (append-only)
+
+- **[37]** A7.1 가드레일 누수 — 🔴 **P0 즉시 수정.** 100+ 우회표현 코퍼스로 컨시어지 하드코딩 가드레일을 때렸다.
+  **응급 15건 누수** — 사전이 injured/bleeding/unconscious만 알고 **기절·호흡곤란·발작·알레르기쇼크**를 몰랐고,
+  최악은 **`call 119`/`119 불러주세요`/`打119`**(관광객이 가장 먼저 배우는 응급행동)가 챗봇으로 샜다.
+  중국어 간체 `意识`도 못 잡았다(사전은 일본어 `意識`). 추가만으로 닫음(오탐 0 테스트 고정). venue 어순 1건도.
+  ops 무결. 한계(우언은 LLM 2차선이 받음, 응급만 P0) 명시. 회귀 `conciergeGuardrailLeak.test.ts`. → `d8f1ad5c`
 
 - **[36]** A2.1·A2.2 운영자 면 감사(가이드 7 + 기사 3) — 🟢 **P0/P1 없음, 검증된 긍정.** 운영자 면은
   손님 앱이 틀렸던 축에서 **더 성숙**하다: 실패를 반드시 말하고(`GuideLedgerPanel` 가이드언어 에러),
