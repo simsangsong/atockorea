@@ -1,9 +1,64 @@
 # A4 — 코드 건강도 (진행 중)
 
 **축:** 3 코드 · **감사일:** 2026-07-25
-**상태:** A4.2 완료 · A4.1/A4.3/A4.4/A4.5/A4.6 미착수
+**상태:** A4.1 · A4.2 완료 · A4.3/A4.4/A4.5/A4.6 미착수
 
 > §J의 "A0.1을 기다리지 않아도 되는 것"에 A4 전부가 들어 있다. 시뮬 환경과 무관하다.
+
+---
+
+## A4.1 — 중복 진실 사냥 ✅
+
+### 발견: 로케일 목록이 프로덕션 7곳에 복제돼 있었다
+
+정본은 `lib/tour-room/snapshot.ts`의 `ROOM_LOCALES` 하나다. 그런데 같은 5개 로케일이
+**프로덕션 파일 7곳**에 다시 적혀 있었다:
+
+| 파일 | 형태 | 판정 |
+|---|---|---|
+| `app/api/tour-rooms/broadcast/route.ts` | `DEFAULT_TARGET_LOCALES` | 🔴 **`ROOM_LOCALES`를 이미 import해 놓고 바로 아래에 사본을 정의**하고 있었다 |
+| `app/api/tour-rooms/[bookingId]/messages/route.ts` | `DEFAULT_TARGET_LOCALES` | 🔴 복제 |
+| `app/api/tour-rooms/[bookingId]/messages/[messageId]/retranslate/route.ts` | `DEFAULT_TARGET_LOCALES` | 🔴 복제 |
+| `app/api/tour-rooms/[bookingId]/spot-events/route.ts` | `DEFAULT_TARGET_LOCALES` | 🔴 복제 |
+| `components/tour-mode/plan/PlanEditorClient.tsx` | `ROOM_LOCALE_VALUES` | 🔴 복제 |
+| `components/tour-mode/TourRoomClient.tsx` | `ROOM_LOCALE_VALUES` | 🔴 **순서가 달랐다** (`['en','ko','ja','es','zh']`) |
+| `components/tour-mode/entryCopy.ts` | 인라인 리터럴 | 🔴 **순서가 달랐다** |
+
+**순서가 다르다는 것은 이미 어긋났다는 뜻이다.** 두 사본이 같은 값을 담고 있다고 믿을
+근거가 그 시점에 사라진다.
+
+**왜 위험한가:** 6번째 로케일이 추가되는 날, 이 네 라우트는 조용히 5개 로케일로만
+번역을 계속한다. tsc도 jest도 빌드도 아무 말 하지 않는다 — 손님이 자기 언어로 된
+공지를 못 받는 것으로만 드러난다.
+
+**조치:** 7곳 전부 `ROOM_LOCALES`에서 파생하도록 고쳤다.
+`OpsRoomCardSetPanel`은 운영자 기본이 한국어라 `ko`를 앞으로 돌리되 **목록 자체는 정본**을 쓴다.
+
+### 🔴 예외 1건 — 이유와 함께 허용
+
+`app/api/admin/tour-content/generate/route.ts`의 `AUDIO_LOCALES`는 **투어 콘텐츠 오디오
+생성** 집합이지 룸 로케일이 아니다. 지금 구성원이 같은 것은 우연이고, 룸에 6번째
+로케일이 생겨도 오디오가 따라가야 할 이유는 없다 — **묶는 것이 오히려 결합 오류다.**
+
+허용 목록에 이유를 적어 둔 이유: 이유 없는 예외는 다음 사람이 "여기 넣으면 통과하네"로
+읽고, 그 순간 이 검사가 죽는다.
+
+### 확인했고 문제없음 (드리프트 아님)
+
+1. **초과요금 단가** — `lib/tour-room/overtime.ts`가 유일한 정의처다. 제주 ₩30,000 ·
+   부산 ₩40,000이 다른 어디에도 없다. 그 파일이 스스로 적어 둔 약속
+   ("no rate is hardcoded elsewhere … plan §12 Q3")이 실제로 지켜지고 있었다.
+2. **크로스아일랜드 ₩70,000** — `lib/quote-engine/pricing-policy.ts` 한 곳.
+3. **정원 해석 순서(B2.1b)** — `productCapacity`/`effectiveCapacity`가 `capacity.ts` 하나에만 있다.
+   B2-D3가 "우선순위를 안 적으면 드리프트가 확정된다"고 못 박은 지점이 실제로 지켜졌다.
+4. **룸 누락 판정(B1-D2)** — `roomGapFor`가 `unified.ts` 하나에만 있다.
+5. **CSV 인코더** — `aoaToCsv`가 `lib/ops/tax/forms.ts` 하나. B1.6이 재사용했고 두 번째를 만들지 않았다.
+6. **LLM 예산·출력 상한(§L)** — `lib/ai/usage.ts` 하나.
+
+### 재발 방지
+
+`__tests__/audit/singleSourceOfTruth.test.ts` — 위 6개 계약을 **저장소 전수 스캔으로**
+고정했다. 주석은 지켜지지 않아도 아무 일이 없지만 테스트는 운다.
 
 ---
 
@@ -84,7 +139,6 @@ import type { RoomBooking, RoomDbClient, TourRoom } from '@/lib/tour-room/access
 
 | 티켓 | 내용 | 비고 |
 |---|---|---|
-| A4.1 | 중복 진실 사냥 | B1-D3(집계 중복 금지)·B2.1b(정원 우선순위)의 **사후 검증**이기도 하다 — 두 결정이 실제로 단일 지점을 지켰는지 |
 | A4.3 | 죽은 코드·미사용 export | |
 | A4.4 | 테스트 공백 지도 | 특히 라우트 레벨 |
 | A4.5 | 타입 거짓말 (`as` 남용) | 특히 supabase row → 도메인 타입 |

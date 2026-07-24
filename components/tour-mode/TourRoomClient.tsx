@@ -58,6 +58,7 @@ import { detectEntryLocale, ENTRY_COPY } from '@/components/tour-mode/entryCopy'
 import { GUEST_CREDS_STORAGE_PREFIX } from '@/components/tour-mode/TourModeEntry';
 import { decodeTokenBody, storePersonalToken } from '@/lib/ops/seating/personalTokens';
 import { IconLost, IconRetry } from '@/components/tour-mode/icons';
+import { ROOM_LOCALES } from '@/lib/tour-room/snapshot';
 
 /**
  * The viewer's language for a room defaults to the language the guest booked
@@ -67,7 +68,9 @@ import { IconLost, IconRetry } from '@/components/tour-mode/icons';
  * pre-join skeleton; a guest can still override it in Settings, which we
  * persist here so their choice survives a reload / re-entry.
  */
-const ROOM_LOCALE_VALUES = ['en', 'ko', 'ja', 'es', 'zh'] as const;
+// 🔴 §D A4.1 — 여기 있던 사본은 정본과 순서가 달랐다(ja/es/zh 자리가 뒤바뀜).
+// 같은 목록의 두 번째 사본은 언젠가 어긋나고, 순서가 다르면 그게 이미 어긋난 것이다.
+const ROOM_LOCALE_VALUES = ROOM_LOCALES;
 const localeOverrideKey = (bookingId: string) => `tour_mode_locale:${bookingId}`;
 
 function readLocaleOverride(bookingId: string): RoomLocale | null {

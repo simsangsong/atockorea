@@ -4,10 +4,13 @@ import { translateTextForLocales } from '@/lib/openai-server';
 import { ensureRoom, resolveRoomActor, type RoomBooking } from '@/lib/tour-room/access';
 import { broadcastToRoom } from '@/lib/tour-room/realtime';
 import { requestGate } from '@/lib/durable-rate-limit';
+import { ROOM_LOCALES } from '@/lib/tour-room/snapshot';
 
 export const dynamic = 'force-dynamic';
 
-const DEFAULT_TARGET_LOCALES = ['en', 'ko', 'zh', 'ja', 'es'];
+// §D A4.1 — 로케일 목록은 ROOM_LOCALES 하나뿐이다. 여기 다시 적으면
+// 로케일이 하나 늘어나는 날 이 파일만 조용히 5개로 남는다.
+const DEFAULT_TARGET_LOCALES: string[] = [...ROOM_LOCALES];
 
 /**
  * R-6 completion — translation repair.

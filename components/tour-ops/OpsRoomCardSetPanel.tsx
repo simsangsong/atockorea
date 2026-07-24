@@ -21,8 +21,12 @@ import CardSetEditor, {
   type CardSetSavePayload,
 } from '@/components/tour-ops/CardSetEditor';
 import { BRIEFING_CARD_DESCRIPTORS, type BriefingCardSetPreview } from '@/lib/ops/seating/cards/cardSet';
+import { ROOM_LOCALES } from '@/lib/tour-room/snapshot';
 
-const PREVIEW_LOCALES = ['ko', 'en', 'ja', 'es', 'zh'] as const;
+// §D A4.1 — 룸 카드를 미리 보는 화면이므로 이건 **룸 로케일 집합**이다.
+// 사본을 두면 로케일이 늘어난 날 미리보기만 5개로 남는다.
+// 운영자 기본이 한국어라 ko를 앞으로 돌려 보여주되, 목록 자체는 정본을 쓴다.
+const PREVIEW_LOCALES = ['ko', ...ROOM_LOCALES.filter((l) => l !== 'ko')] as const;
 type PreviewLocale = (typeof PREVIEW_LOCALES)[number];
 
 interface CardSetResponse {
