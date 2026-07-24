@@ -332,6 +332,63 @@ describe('buildDailyReport — A0.1 시뮬 격리', () => {
   })
 })
 
+describe('buildDailyReport — §L L6 LLM 예산', () => {
+  it('계측 테이블이 비어 있으면 섹션 자체가 없다 — 없는 숫자를 0으로 그리지 않는다', async () => {
+    const report = await buildDailyReport(mockSupabase(normalRegistry()), { nowMs: NOW })
+    expect(report.attention.data.llm).toBeNull()
+  })
+
+  it('호출과 캐시 히트를 따로 센다 — 캐시로 아낀 것이 절감의 분자다', async () => {
+    const reg = normalRegistry()
+    reg.ops_ai_usage = [
+      { booking_id: 'B1', cache_hit: false, outcome: 'ok', created_at: '2026-07-24T05:00:00Z' },
+      { booking_id: 'B1', cache_hit: true, outcome: 'ok', created_at: '2026-07-24T05:01:00Z' },
+      { booking_id: 'B1', cache_hit: true, outcome: 'ok', created_at: '2026-07-24T05:02:00Z' },
+    ]
+    const report = await buildDailyReport(mockSupabase(reg), { nowMs: NOW })
+    expect(report.attention.data.llm).toMatchObject({ calls: 1, cacheHits: 2, overBudgetTours: [] })
+  })
+
+  it('예산 안이면 요주의가 아니다 — 매일 쓰는 비용이 경고가 되면 경고를 안 읽게 된다', async () => {
+    const reg = normalRegistry()
+    reg.ops_ai_usage = Array.from({ length: 5 }, (_, i) => ({
+      booking_id: 'B1', cache_hit: false, outcome: 'ok', created_at: `2026-07-24T05:0${i}:00Z`,
+    }))
+    const report = await buildDailyReport(mockSupabase(reg), { nowMs: NOW })
+    expect(report.attention.data.llm?.overBudgetTours).toEqual([])
+  })
+
+  it('🔴 투어 1건이 30회를 넘으면 요주의로 올라온다 (§F 예산이 알림이 된다)', async () => {
+    const reg = normalRegistry()
+    reg.ops_ai_usage = Array.from({ length: 31 }, (_, i) => ({
+      booking_id: 'B1', cache_hit: false, outcome: 'ok', created_at: `2026-07-24T05:00:${String(i).padStart(2, '0')}Z`,
+    }))
+    const report = await buildDailyReport(mockSupabase(reg), { nowMs: NOW })
+    expect(report.attention.data.llm?.overBudgetTours).toHaveLength(1)
+    expect(report.attention.data.llm?.overBudgetTours[0]).toContain('31회')
+    expect(report.attention.data.clean).toBe(false)
+  })
+
+  it('캐시 히트 31회는 예산 초과가 아니다 — 호출하지 않은 것을 호출로 세면 안 된다', async () => {
+    const reg = normalRegistry()
+    reg.ops_ai_usage = Array.from({ length: 31 }, (_, i) => ({
+      booking_id: 'B1', cache_hit: true, outcome: 'ok', created_at: `2026-07-24T05:00:${String(i).padStart(2, '0')}Z`,
+    }))
+    const report = await buildDailyReport(mockSupabase(reg), { nowMs: NOW })
+    expect(report.attention.data.llm?.overBudgetTours).toEqual([])
+    expect(report.attention.data.llm?.calls).toBe(0)
+  })
+
+  it('오프라인 배치(booking_id 없음)는 투어당 예산에서 빠진다', async () => {
+    const reg = normalRegistry()
+    reg.ops_ai_usage = Array.from({ length: 50 }, (_, i) => ({
+      booking_id: null, cache_hit: false, outcome: 'ok', created_at: `2026-07-24T05:00:${String(i % 60).padStart(2, '0')}Z`,
+    }))
+    const report = await buildDailyReport(mockSupabase(reg), { nowMs: NOW })
+    expect(report.attention.data.llm?.overBudgetTours).toEqual([])
+  })
+})
+
 describe('kstTomorrow', () => {
   it('KST 다음날 (DST 없음)', () => {
     expect(kstTomorrow(NOW)).toBe('2026-07-25')

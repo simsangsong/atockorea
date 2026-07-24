@@ -23,6 +23,7 @@ import type { SupabaseClient } from '@supabase/supabase-js'
 import { kstToday, kstStartOfDayMs, kstEndOfDayMs } from '@/lib/tour-room/time'
 import { dropSimBookings, simBookingIds } from '../sim/simScope'
 import { capacityVerdict, overCapacityNotice } from '../seating/capacity'
+import { LLM_CALLS_PER_TOUR_BUDGET, countBillableCalls, type AiUsageOutcome } from '@/lib/ai/usage'
 
 export const DEFAULT_REPORT_TENANT = 'atockorea'
 
@@ -123,7 +124,15 @@ export interface AttentionSummary {
    * 반드시 어긋난다(§H-4).
    */
   overCapacity: string[]
-  /** 위 6개가 전부 0이면 true → "이상 없음" 배너. */
+  /**
+   * §L L6 — 오늘 LLM 예산. §F는 "투어 1건당 30회"를 적어놨지만 세는 코드가
+   * 없어 지금까지 검증 불가능한 숫자였다(L0가 그걸 고쳤다).
+   *
+   * 🔴 캐시 히트는 호출로 세지 않는다 — 그게 §L이 재려는 바로 그 차이다.
+   * `overBudgetTours`가 비어 있으면 예산 안이고, 그때는 요주의가 아니다.
+   */
+  llm: { calls: number; cacheHits: number; overBudgetTours: string[] } | null
+  /** 위 7개가 전부 0이면 true → "이상 없음" 배너. */
   clean: boolean
 }
 
@@ -752,6 +761,38 @@ async function buildAttention(
   const reviewQueued = reviewLogs.length
   const parseFailures = failures.length
 
+  // §L L6 — 오늘 LLM 사용량. 테이블 미적용이면 safeSelect가 빈 배열을 주고
+  // 이 섹션은 조용히 빠진다(계측 하나 때문에 보고서가 죽으면 안 된다).
+  const usageRows = await safeSelect<{ booking_id: string | null; cache_hit: boolean; outcome: AiUsageOutcome }>(
+    supabase
+      .from('ops_ai_usage')
+      .select('booking_id, cache_hit, outcome')
+      .gte('created_at', startIso)
+      .lte('created_at', endIso),
+  )
+  let llm: AttentionSummary['llm'] = null
+  if (usageRows.length > 0) {
+    const byBooking = new Map<string, Array<{ cache_hit: boolean; outcome: AiUsageOutcome }>>()
+    for (const row of usageRows) {
+      if (!row.booking_id) continue // 오프라인 배치는 손님 경로 비용이 아니다
+      const list = byBooking.get(row.booking_id) ?? []
+      list.push({ cache_hit: row.cache_hit, outcome: row.outcome })
+      byBooking.set(row.booking_id, list)
+    }
+    const overBudgetTours: string[] = []
+    for (const [bookingId, rows] of byBooking) {
+      const billable = countBillableCalls(rows)
+      if (billable > LLM_CALLS_PER_TOUR_BUDGET) {
+        overBudgetTours.push(`${bookingId.slice(0, 8)} — ${billable}회 (예산 ${LLM_CALLS_PER_TOUR_BUDGET})`)
+      }
+    }
+    llm = {
+      calls: countBillableCalls(usageRows),
+      cacheHits: usageRows.filter((r) => r.cache_hit).length,
+      overBudgetTours,
+    }
+  }
+
   // §K B2.3 — 정원 초과 그룹. 문구는 capacity.ts가 만든다(같은 숫자, 한 소스).
   // 🔴 이건 "예약을 막아라"가 아니라 "2호차를 붙여라"다(B2-D1).
   const overCapacity = tomorrowRaw.tours
@@ -772,13 +813,15 @@ async function buildAttention(
     parseFailures,
     unseated,
     overCapacity,
+    llm,
     clean:
       unassignedRooms === 0 &&
       uncontacted === 0 &&
       reviewQueued === 0 &&
       parseFailures === 0 &&
       unseated === 0 &&
-      overCapacity.length === 0,
+      overCapacity.length === 0 &&
+      (llm?.overBudgetTours.length ?? 0) === 0,
   }
 }
 
@@ -842,6 +885,7 @@ export async function buildDailyReport(
         parseFailures: 0,
         unseated: 0,
         overCapacity: [],
+        llm: null,
         clean: true,
       },
     ),

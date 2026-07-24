@@ -211,6 +211,7 @@ function renderAttention(res: SectionResult<AttentionSummary>): string {
     { label: '파싱 실패 (오늘)', n: a.parseFailures },
     { label: '좌석 미지정 게스트', n: a.unseated },
     { label: '정원 초과 그룹 (2호차 필요)', n: (a.overCapacity ?? []).length },
+    { label: 'LLM 예산 초과 투어', n: (a.llm?.overBudgetTours ?? []).length },
   ]
   const rows = items
     .map((it) => {
@@ -224,15 +225,21 @@ function renderAttention(res: SectionResult<AttentionSummary>): string {
 
   // §K B2.3 — 초과는 숫자만으로는 조치가 안 된다. 어느 투어가 몇 명 초과인지
   // 적어야 운영자가 2호차를 부를 수 있다. 문구는 capacity.ts가 만든 것 그대로.
-  const overLines = a.overCapacity ?? []
-  if (overLines.length === 0) return rows
+  // §L L6 — 예산 안이어도 오늘 쓴 양은 한 줄로 보여준다. 숫자를 매일 보는 것이
+  // 예산이 문서가 아니라 방어선이 되는 유일한 방법이다.
+  const llmLine = a.llm
+    ? `<div style="margin-top:8px;font-size:11px;color:${C.sub};">AI 호출 ${a.llm.calls}회 · 캐시로 아낀 것 ${a.llm.cacheHits}회</div>`
+    : ''
+
+  const overLines = [...(a.overCapacity ?? []), ...(a.llm?.overBudgetTours ?? [])]
+  if (overLines.length === 0) return `${rows}${llmLine}`
   const detail = overLines
     .map(
       (line) =>
         `<div style="font-size:12px;color:${C.amber};padding:4px 0;">· ${esc(line)}</div>`,
     )
     .join('')
-  return `${rows}<div style="margin-top:10px;padding:10px 12px;background:${C.amberBg};border-radius:10px;">${detail}</div>`
+  return `${rows}${llmLine}<div style="margin-top:10px;padding:10px 12px;background:${C.amberBg};border-radius:10px;">${detail}</div>`
 }
 
 function fmtKstDate(ymd: string): string {
@@ -247,7 +254,7 @@ export function renderDailyReport(report: DailyReport): { subject: string; html:
   const a = report.attention.data
   const missing = report.contactStatus.data.missingCount
   const attentionTotal = report.attention.ok
-    ? a.unassignedRooms + a.uncontacted + a.reviewQueued + a.parseFailures + a.unseated + (a.overCapacity ?? []).length
+    ? a.unassignedRooms + a.uncontacted + a.reviewQueued + a.parseFailures + a.unseated + (a.overCapacity ?? []).length + (a.llm?.overBudgetTours ?? []).length
     : null
 
   const summaryBadge =
