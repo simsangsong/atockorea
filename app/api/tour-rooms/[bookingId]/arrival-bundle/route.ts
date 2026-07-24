@@ -22,6 +22,8 @@ import {
 } from '@/lib/tour-room/arrivalBundle';
 import { translateTextForLocales } from '@/lib/openai-server';
 import { sendGuestRoomPush } from '@/lib/tour-room/guestPush';
+import { maybePostDiningForStop } from '@/lib/ops/dining/post.server';
+import type { MealStopLike } from '@/lib/ops/dining/mealStop';
 
 export const dynamic = 'force-dynamic';
 
@@ -343,6 +345,8 @@ export async function POST(
     // A2 — next-stop ETA tail (measured travel-matrix minutes over the
     // synthetic haversine estimate). Best-effort: any miss just omits the line.
     let nextLeg: NextLegMeta | null = null;
+    /** The raw next schedule item — the dining trigger below judges it. */
+    let nextStop: MealStopLike | null = null;
     try {
       const { schedule } = await resolveDaySchedule(supabase, {
         bookingId: booking.id,
@@ -367,6 +371,7 @@ export async function POST(
             minutes: estimate.minutes,
             source: estimate.source,
           };
+          nextStop = next as MealStopLike;
         }
       }
     } catch {
@@ -563,6 +568,23 @@ export async function POST(
 
     if (delivered === 0) {
       return NextResponse.json({ error: 'Delivery failed for every room' }, { status: 500 });
+    }
+
+    // §5.7 R-2 trigger ② — the plan's "15분 전" hook, expressed against the
+    // hook that actually exists: when the NEXT leg is a meal stop and we are
+    // within 20 driving minutes of it, the dining picks for that stop go out
+    // now, while the group is still in the vehicle and can actually choose.
+    // Fire-and-forget — a dining failure must never fail an arrival.
+    if (nextLeg && nextStop && nextLeg.minutes <= 20) {
+      void maybePostDiningForStop(supabase, {
+        booking,
+        stop: nextStop,
+        poiKey: nextLeg.poi_key,
+        spotTitle: nextLeg.title,
+        actorRole: actor.role,
+        actorParticipantId,
+        authUserId,
+      }).catch(() => undefined);
     }
     return NextResponse.json(
       { message: primaryMessage, delivered, profile: poiKey ? profile : null },

@@ -209,10 +209,53 @@ export async function GET(req: NextRequest) {
       console.warn('[flywheel] purge failed:', purgeError);
     }
 
+    // ── ④ dining RAG retention (§5.7 R-7) ───────────────────────────────────
+    // The cache's own TTL is 90 days; a cell/place still sitting there 90 days
+    // AFTER expiry is dead weight nobody will ever re-serve — the next request
+    // for that area re-collects from scratch. Recommendation rows are the
+    // ranking's feedback source, so they live twice as long (180 days) before
+    // they stop meaning anything about a restaurant that has since changed.
+    let diningCellsPurged = 0;
+    let diningPlacesPurged = 0;
+    let diningRecsPurged = 0;
+    try {
+      const staleCacheIso = new Date(Date.now() - 90 * DAY_MS).toISOString();
+      const { data: cells } = await supabase
+        .from('ops_kakao_cell_index')
+        .delete()
+        .lt('expires_at', staleCacheIso)
+        .select('id');
+      diningCellsPurged = Array.isArray(cells) ? cells.length : 0;
+
+      const { data: cachedPlaces } = await supabase
+        .from('ops_kakao_place_cache')
+        .delete()
+        .lt('expires_at', staleCacheIso)
+        .select('id');
+      diningPlacesPurged = Array.isArray(cachedPlaces) ? cachedPlaces.length : 0;
+
+      const recCutoffIso = new Date(Date.now() - 180 * DAY_MS).toISOString();
+      const { data: recs } = await supabase
+        .from('ops_restaurant_recommendations')
+        .delete()
+        .lt('shown_at', recCutoffIso)
+        .select('id');
+      diningRecsPurged = Array.isArray(recs) ? recs.length : 0;
+    } catch (diningPurgeError) {
+      console.warn('[flywheel] dining purge failed:', diningPurgeError);
+    }
+
     return NextResponse.json({
       matrix: { legs: legSamples.length, upserts: matrixUpserts },
       digest: { closure_skips: closureSkips.length, google_picks: googlePicks.length },
-      purge: { needs: needsPurged, pins: pinsPurged, locations: locationsPurged },
+      purge: {
+        needs: needsPurged,
+        pins: pinsPurged,
+        locations: locationsPurged,
+        dining_cells: diningCellsPurged,
+        dining_places: diningPlacesPurged,
+        dining_recommendations: diningRecsPurged,
+      },
     });
   } catch (error) {
     console.error('GET /api/cron/tour-room-flywheel error:', error);
