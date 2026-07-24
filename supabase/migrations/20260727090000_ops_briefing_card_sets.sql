@@ -49,6 +49,9 @@
 -- ============================================================================
 create table if not exists ops_briefing_card_sets (
   id uuid primary key default gen_random_uuid(),
+  -- §2 명명 규칙: 모든 ops_* 는 tenant_id DEFAULT 'atockorea' (B2B 발라내기 대비).
+  -- 2026-07-25 감사 G1에서 다이닝 3테이블이 이걸 빠뜨린 채 적용됐던 전례가 있다.
+  tenant_id text not null default 'atockorea',
 
   -- 'tour' = 투어 상품 기본 세트(scope_id=tours.id)
   -- 'room' = 룸 단위 오버라이드(scope_id=tour_rooms.id)
@@ -92,6 +95,9 @@ create index if not exists ops_briefing_card_sets_scope_idx
   on ops_briefing_card_sets (scope, scope_id);
 
 alter table ops_briefing_card_sets enable row level security;
+
+-- service-role 전용 (기존 ops_* 컨벤션): 정책 0개 + 클라이언트 role 권한 회수.
+revoke all on ops_briefing_card_sets from anon, authenticated;
 
 comment on table ops_briefing_card_sets is
   '§5.4 C-17 시작 브리핑 카드 세트 사전 설정. 2레벨(scope=tour 상품 기본값 / scope=room 룸 오버라이드)이고, 둘 다 없으면 코드 기본값(DEFAULT_BRIEFING_CARD_IDS)이 최종 폴백이다.';
