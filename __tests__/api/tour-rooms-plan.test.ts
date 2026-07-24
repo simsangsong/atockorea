@@ -399,6 +399,77 @@ describe('PUT /api/tour-rooms/[bookingId]/plan — guide plane (unchanged)', () 
   });
 });
 
+describe('PUT /api/tour-rooms/[bookingId]/plan — departure_time (§11.D D4)', () => {
+  it('persists a valid departure_time on a lead-guest draft write', async () => {
+    const db = fakeDb({ isLead: true });
+    createServerClientMock.mockReturnValue(db);
+    const res = await planPUT(
+      fakeReq({
+        headers: { 'x-tour-room-auth': customerSession() },
+        json: { stops: STOPS, departure_time: '9:30' },
+      }),
+      routeParams(),
+    );
+    expect(res.status).toBe(200);
+    // Zero-padded to HH:MM.
+    expect(db.upserts.tour_day_plans[0].departure_time).toBe('09:30');
+  });
+
+  it('clears departure_time when the lead sends an empty string', async () => {
+    const db = fakeDb({ isLead: true, plan: { id: 'plan-1', status: 'guest_draft', stops: STOPS, version: 1 } });
+    createServerClientMock.mockReturnValue(db);
+    const res = await planPUT(
+      fakeReq({
+        headers: { 'x-tour-room-auth': customerSession() },
+        json: { stops: STOPS, departure_time: '' },
+      }),
+      routeParams(),
+    );
+    expect(res.status).toBe(200);
+    expect(db.upserts.tour_day_plans[0]).toHaveProperty('departure_time', null);
+  });
+
+  it('rejects a malformed departure_time with 400', async () => {
+    const db = fakeDb({ isLead: true });
+    createServerClientMock.mockReturnValue(db);
+    const res = await planPUT(
+      fakeReq({
+        headers: { 'x-tour-room-auth': customerSession() },
+        json: { stops: STOPS, departure_time: '25:99' },
+      }),
+      routeParams(),
+    );
+    expect(res.status).toBe(400);
+    expect(await res.json()).toMatchObject({ error: 'invalid_departure_time' });
+    expect(db.upserts.tour_day_plans).toBeUndefined();
+  });
+
+  it('ignores departure_time from a staff (guide) write', async () => {
+    const db = fakeDb({});
+    createServerClientMock.mockReturnValue(db);
+    const res = await planPUT(
+      fakeReq({
+        headers: { 'x-tour-room-auth': guideSession() },
+        json: { stops: STOPS, departure_time: '10:00' },
+      }),
+      routeParams(),
+    );
+    expect(res.status).toBe(200);
+    expect(db.upserts.tour_day_plans[0]).not.toHaveProperty('departure_time');
+  });
+
+  it('does not touch departure_time when the field is absent', async () => {
+    const db = fakeDb({ isLead: true });
+    createServerClientMock.mockReturnValue(db);
+    const res = await planPUT(
+      fakeReq({ headers: { 'x-tour-room-auth': customerSession() }, json: { stops: STOPS } }),
+      routeParams(),
+    );
+    expect(res.status).toBe(200);
+    expect(db.upserts.tour_day_plans[0]).not.toHaveProperty('departure_time');
+  });
+});
+
 describe('GET /api/tour-rooms/[bookingId]/plan — viewer meta', () => {
   it('marks the lead guest editable while the plan is a draft', async () => {
     createServerClientMock.mockReturnValue(
