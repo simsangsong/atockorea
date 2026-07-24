@@ -83,7 +83,15 @@ export interface SeedOptions {
   radiusM: number | null;
 }
 
+/**
+ * Numeric coercion that refuses the empty cases. `Number(null)` and `Number('')`
+ * are both 0 — a finite, perfectly plausible coordinate in the Atlantic — so a
+ * plain `Number.isFinite` guard would happily plan a collection at (0, 126.5)
+ * for a POI whose latitude is simply missing.
+ */
 function num(value: unknown): number {
+  if (value === null || value === undefined) return NaN;
+  if (typeof value === 'string' && value.trim() === '') return NaN;
   const n = typeof value === 'number' ? value : Number(value);
   return Number.isFinite(n) ? n : NaN;
 }
