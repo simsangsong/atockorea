@@ -5,6 +5,7 @@ import {
   GUIDE_SELECT_COLUMNS,
   GUIDES_TENANT_ID,
   buildGuideWrite,
+  toGuideResponse,
   type GuideRow,
 } from '@/lib/ops/guides/registry';
 import { piiEncryptionAvailable } from '@/lib/ops/guides/pii';
@@ -50,7 +51,7 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ error: '가이드 목록을 불러오지 못했습니다', details: error.message }, { status: 500 });
     }
 
-    const guides = (data ?? []) as unknown as GuideRow[];
+    const guides = ((data ?? []) as unknown as Array<Record<string, unknown>>).map(toGuideResponse) as GuideRow[];
 
     // 이번 달 휴무 일수 — 목록에서 "이 사람 이번달 얼마나 쉬나"를 바로 본다.
     // (배정 건수는 가이드↔룸 배정 원장이 생기는 정산 슬라이스에서 붙는다.)
@@ -105,7 +106,7 @@ export async function POST(req: NextRequest) {
       console.error('[POST /api/admin/guides]', error);
       return NextResponse.json({ error: '가이드를 등록하지 못했습니다', details: error.message }, { status: 500 });
     }
-    return NextResponse.json({ data }, { status: 201 });
+    return NextResponse.json({ data: toGuideResponse(data as Record<string, unknown>) }, { status: 201 });
   } catch (e) {
     if (e instanceof AdminAuthFailure) return adminAuthJsonResponse(e);
     const msg = e instanceof Error ? e.message : String(e);

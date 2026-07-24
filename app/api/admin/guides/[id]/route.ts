@@ -5,6 +5,7 @@ import {
   GUIDE_SELECT_COLUMNS,
   GUIDES_TENANT_ID,
   buildGuideWrite,
+  toGuideResponse,
 } from '@/lib/ops/guides/registry';
 import { piiEncryptionAvailable } from '@/lib/ops/guides/pii';
 
@@ -43,7 +44,10 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ id: 
     }
     if (!data) return NextResponse.json({ error: '가이드를 찾을 수 없습니다' }, { status: 404 });
 
-    return NextResponse.json({ data, piiKeyConfigured: piiEncryptionAvailable() });
+    return NextResponse.json({
+      data: toGuideResponse(data as Record<string, unknown>),
+      piiKeyConfigured: piiEncryptionAvailable(),
+    });
   } catch (e) {
     if (e instanceof AdminAuthFailure) return adminAuthJsonResponse(e);
     const msg = e instanceof Error ? e.message : String(e);
@@ -82,7 +86,7 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id
       console.error('[PATCH /api/admin/guides/:id]', error);
       return NextResponse.json({ error: '가이드를 수정하지 못했습니다', details: error.message }, { status: 500 });
     }
-    return NextResponse.json({ data });
+    return NextResponse.json({ data: toGuideResponse(data as Record<string, unknown>) });
   } catch (e) {
     if (e instanceof AdminAuthFailure) return adminAuthJsonResponse(e);
     const msg = e instanceof Error ? e.message : String(e);
@@ -124,7 +128,7 @@ export async function DELETE(req: NextRequest, { params }: { params: Promise<{ i
       console.error('[DELETE /api/admin/guides/:id]', error);
       return NextResponse.json({ error: '비활성화하지 못했습니다', details: error.message }, { status: 500 });
     }
-    return NextResponse.json({ ok: true, deleted: 'soft', data });
+    return NextResponse.json({ ok: true, deleted: 'soft', data: toGuideResponse(data as Record<string, unknown>) });
   } catch (e) {
     if (e instanceof AdminAuthFailure) return adminAuthJsonResponse(e);
     const msg = e instanceof Error ? e.message : String(e);

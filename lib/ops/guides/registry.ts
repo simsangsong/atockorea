@@ -35,6 +35,40 @@ export const GUIDE_SELECT_COLUMNS =
 export const GUIDE_TYPES = ['driver', 'bus_guide', 'both'] as const;
 export type GuideType = (typeof GUIDE_TYPES)[number];
 
+/** 응답에 나갈 수 있는 필드의 전부. 여기 없는 것은 나가지 않는다. */
+const RESPONSE_FIELDS = [
+  'id',
+  'name',
+  'phone',
+  'email',
+  'languages',
+  'guide_type',
+  'rrn_masked',
+  'bank_name',
+  'bank_holder',
+  'bank_account_masked',
+  'certified',
+  'active',
+  'note',
+  'created_at',
+  'updated_at',
+] as const;
+
+/**
+ * 응답 직전 화이트리스트 투영 — 두 번째 방어선.
+ *
+ * GUIDE_SELECT_COLUMNS만으로도 봉투는 조회되지 않지만, 언젠가 누군가
+ * `select('*')`를 쓰거나 조인으로 컬럼이 늘어나면 스프레드가 그대로 새어 나간다.
+ * PII는 "규칙을 지키면 안전"보다 "어겨도 안전"이어야 해서 한 겹 더 둔다.
+ */
+export function toGuideResponse<T extends Record<string, unknown>>(row: T): GuideRow {
+  const out: Record<string, unknown> = {};
+  for (const key of RESPONSE_FIELDS) {
+    if (key in row) out[key] = row[key];
+  }
+  return out as unknown as GuideRow;
+}
+
 export interface GuideRow {
   id: string;
   name: string;
