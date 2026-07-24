@@ -339,6 +339,7 @@ function TourRoomLive({
     tour_guide_spots?: Array<{
       id: string;
       title?: string | null;
+      poi_key?: string | null;
       latitude?: number | null;
       longitude?: number | null;
       trigger_radius_m?: number | null;
@@ -832,6 +833,21 @@ function TourRoomLive({
               longitude: spot.longitude!,
               trigger_radius_m: spot.trigger_radius_m!,
               exit_radius_m: spot.exit_radius_m ?? null,
+            }))}
+          // §11.C C2 — 1 km approach previews use poi_key (the content key),
+          // so a spot without one simply never previews.
+          approachTargets={(snapshot.tour_guide_spots ?? [])
+            .filter(
+              (spot) =>
+                typeof spot.poi_key === 'string' &&
+                spot.poi_key.length > 0 &&
+                typeof spot.latitude === 'number' &&
+                typeof spot.longitude === 'number',
+            )
+            .map((spot) => ({
+              poi_key: spot.poi_key!,
+              latitude: spot.latitude!,
+              longitude: spot.longitude!,
             }))}
         />
       }
