@@ -10,16 +10,29 @@
 
 import { useEffect } from 'react';
 import { IconClose, IconInstall } from '@/components/tour-mode/icons';
+import type { RoomLocale } from '@/lib/tour-room/snapshot';
+
+// A1.1 — screen-reader labels (the two icon-only controls were English-fixed).
+const A11Y: Record<RoomLocale, { close: string; download: string }> = {
+  en: { close: 'Close', download: 'Download' },
+  ko: { close: '닫기', download: '다운로드' },
+  ja: { close: '閉じる', download: 'ダウンロード' },
+  es: { close: 'Cerrar', download: 'Descargar' },
+  zh: { close: '关闭', download: '下载' },
+};
 
 export default function Lightbox({
   url,
   name,
   onClose,
+  locale = 'en',
 }: {
   url: string | null;
   name?: string | null;
   onClose: () => void;
+  locale?: RoomLocale;
 }) {
+  const a11y = A11Y[locale] ?? A11Y.en;
   useEffect(() => {
     if (!url) return;
     const onKey = (e: KeyboardEvent) => {
@@ -45,7 +58,7 @@ export default function Lightbox({
       <button
         type="button"
         onClick={onClose}
-        aria-label="close"
+        aria-label={a11y.close}
         className="absolute right-3 top-3 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white"
         data-testid="lightbox-close"
       >
@@ -57,7 +70,7 @@ export default function Lightbox({
         target="_blank"
         rel="noopener noreferrer"
         onClick={(e) => e.stopPropagation()}
-        aria-label="download"
+        aria-label={a11y.download}
         className="absolute bottom-4 right-3 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white"
         data-testid="lightbox-download"
       >

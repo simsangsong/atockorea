@@ -76,7 +76,7 @@ describe('Composer voice flow (T2.2 confirm-before-send)', () => {
     expect(screen.getByTestId('voice-confirm-hint')).toBeInTheDocument();
     expect(onSendText).not.toHaveBeenCalled();
     // The user confirms by pressing send.
-    fireEvent.click(screen.getByRole('button', { name: 'send' }));
+    fireEvent.click(screen.getByRole('button', { name: /send/i }));
     expect(onSendText).toHaveBeenCalledWith('We are at the gate');
   });
 
