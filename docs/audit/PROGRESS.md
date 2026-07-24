@@ -8,11 +8,11 @@
 
 ## 다음 착수 지점
 
-**→ A0.3 잔여 6지표(dev 서버 필요) · A0.2(관측, A1.3 §2 선행) · §L L5(A7.2와 함께) — 코드-only 잔여는 소진**
+**→ A7.1 가드레일 누수(코드-only, 순수 분류기) → A0.2 관측 → A2.3 관제 → 이후 A5/A6/A7.2/A0.3은 dev서버·런타임 게이트**
 
 ## 기준선
 
-- main = `f5c158dd` (origin/main과 동일, 미푸시 0) — tsc 0 · `next build --webpack` ✓ · 204스위트 2118 green 재검증 완료
+- main = `8e8a4fae` (origin/main과 동일, 미푸시 0) — tsc 0 · `next build --webpack` ✓ · 204스위트 2118 green 재검증 완료
 - 작업 워크트리: `C:\Users\sangsong\atockorea-audit` (브랜치 `claude/audit-b0`, `npm ci` 실설치 완료)
 - 라이브 마이그레이션 5건 추가 적용: `ops_ai_usage` · `bookings_sim_tag` · `ops_tour_groups` · `tours_max_room_guests` · `ops_guest_notes`
 - 머지 워크트리: `C:\Users\sangsong\atockorea-main-merge`
@@ -53,7 +53,8 @@
 | 26 | A1.8 진입 플로우 (3개) | ✅ `7b716ddb` · `docs/audit/A1-8-entry-flows.md` |
 | 27 | A1.7 로케일(표적) | ✅ `faf19ef0` · `docs/audit/A1-7-locale-fit.md` |
 | 28 | A4.3~A4.5 (죽은코드·테스트공백·`as`) | ✅ `f5c158dd` · `docs/audit/A4-code-health.md` |
-| 29 | A0.2·A0.3잔여·§L L5 (대부분 dev서버/A7.2 게이트) | ⬜ |
+| 29 | A2.4 권한 경계 · A2.1·A2.2 운영자 면 | ✅ `8e8a4fae` · `A2-4-permission-matrix.md`·`A2-1-2-operator-faces.md` |
+| 30 | A7.1 가드레일 누수 · A0.2 관측 · A2.3 관제 · (A5/A6/A7.2/A0.3=런타임 게이트) | ⬜ |
 
 ## 남은 것 (우선순위순)
 
@@ -94,6 +95,16 @@
 - 희소성 UI("매진/잔여") 금지 — 정원은 판매 차단이 아니라 운영 캡 (B2-D1)
 
 ## 실행 로그 (append-only)
+
+- **[36]** A2.1·A2.2 운영자 면 감사(가이드 7 + 기사 3) — 🟢 **P0/P1 없음, 검증된 긍정.** 운영자 면은
+  손님 앱이 틀렸던 축에서 **더 성숙**하다: 실패를 반드시 말하고(`GuideLedgerPanel` 가이드언어 에러),
+  전송 실패를 큐잉+시각배너+**음성**(`Cockpit`, 운전 모달리티), 노쇼는 **비대칭 마찰+fail-closed**
+  (증거 없이 안 넘어감). 콕핏 다크 기본 + wake-lock 가시성 재획득(A1.6 P3의 정답). 단일 발견: **실패 침묵은
+  손님 앱 국한**(A1.6이 이미 닫음). **원장 75/75 전량 완료.** P3: 375px 밀도(픽셀게이트)·콕핏 2378줄 분해. → `8e8a4fae`
+- **[35]** A2.4 권한 경계 매트릭스 — 🟢 **P0 없음.** 라우트 가드를 정적 추출(`lib/audit/routeGuards.ts`),
+  가드 없는 뮤테이션 라우트만 사람이 봄. 31→21→16 세 번 좁혔고 매번 오탐=가드어휘 구멍(A4.2 규율).
+  남은 16 전부 의도된 공개면이고 돈 쓰는 것(LLM·이메일)은 전부 rate-limit. **테스트가 공개 허용목록을 고정
+  → 새 무가드 라우트는 CI가 막음.** → `814ce02b`
 
 - **[34]** A4.3~A4.5 코드 건전성 — 🔴 **성과는 삭제 목록이 아니라 결론이다: 해로운 죽은 코드가 거의 없다.**
   값 export 미참조 18건은 파 보니 의도된 잠재 API(`excludeSim`)·문서용 상수(원천징수 세율, 헤더가 "리팩터 금지"
