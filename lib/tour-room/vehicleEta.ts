@@ -94,8 +94,18 @@ export function pickVehicleLocation<T extends VehicleLocationLike>(
 export const VEHICLE_LIVE_MS = 120_000;
 /** Beyond this the position is too old to hang an arrival promise on. */
 export const VEHICLE_RECENT_MS = 10 * 60_000;
+/**
+ * Beyond this the marker stops meaning anything at all. tour_room_locations
+ * keeps ONE row per participant until an explicit stop, so yesterday's ping
+ * survives into today's lobby — without this ceiling a guest would open the
+ * room to "Position 4320 min ago" and read a driver who is sharing nothing as
+ * if they were. One hour also absorbs the legitimate mid-tour gaps (the
+ * watcher is foreground-only, so it pauses whenever the driver switches to a
+ * navigation app), so nothing live is ever hidden by it.
+ */
+export const VEHICLE_MAX_AGE_MS = 60 * 60_000;
 
-export type VehicleFreshnessState = 'live' | 'recent' | 'stale';
+export type VehicleFreshnessState = 'live' | 'recent' | 'stale' | 'expired';
 
 export interface VehicleFreshness {
   ageMs: number;
@@ -103,20 +113,22 @@ export interface VehicleFreshness {
 }
 
 /**
- * How much to trust the marker. `stale` is the honesty gate: the card shows
+ * How much to trust the marker. Two gates, in order of severity: `stale` shows
  * "{n} min ago" instead of an ETA rather than promising an arrival computed
- * from a position the van left long ago.
+ * from a position the van left long ago; `expired` means the card should not
+ * render at all (a leftover row from an earlier day is not a vehicle).
  */
 export function vehicleFreshness(
   recordedAtIso: string | null | undefined,
   nowMs = Date.now(),
 ): VehicleFreshness {
   const at = recordedMs(recordedAtIso);
-  if (!at) return { ageMs: Number.POSITIVE_INFINITY, state: 'stale' };
+  if (!at) return { ageMs: Number.POSITIVE_INFINITY, state: 'expired' };
   const ageMs = Math.max(0, nowMs - at);
   if (ageMs <= VEHICLE_LIVE_MS) return { ageMs, state: 'live' };
   if (ageMs <= VEHICLE_RECENT_MS) return { ageMs, state: 'recent' };
-  return { ageMs, state: 'stale' };
+  if (ageMs <= VEHICLE_MAX_AGE_MS) return { ageMs, state: 'stale' };
+  return { ageMs, state: 'expired' };
 }
 
 /**

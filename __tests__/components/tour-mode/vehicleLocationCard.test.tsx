@@ -81,6 +81,18 @@ describe('VehicleLocationCard', () => {
     expect(screen.queryByTestId('vehicle-live-dot')).not.toBeInTheDocument();
   });
 
+  it("renders nothing for yesterday's leftover position row", () => {
+    // tour_room_locations keeps one row per participant until an explicit
+    // stop, so a lobby visit the next day must not resurrect it as a card.
+    renderCard({ locations: driverAt(26 * 60 * 60_000) });
+    expect(screen.queryByTestId('vehicle-location-card')).not.toBeInTheDocument();
+  });
+
+  it('does not poll the ETA endpoint for an expired position', () => {
+    renderCard({ locations: driverAt(26 * 60 * 60_000) });
+    expect(global.fetch).not.toHaveBeenCalled();
+  });
+
   it('omits the ETA when the booking has no meeting-point coordinates', () => {
     renderCard({ pickup: null });
     expect(screen.queryByTestId('vehicle-eta-line')).not.toBeInTheDocument();

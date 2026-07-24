@@ -77,7 +77,9 @@ export default function VehicleLocationCard({
     return () => window.clearInterval(id);
   }, []);
 
-  const hasVehicle = Boolean(vehicle);
+  const freshness = vehicleFreshness(vehicle?.recorded_at, nowMs);
+  // Expired = an hours-cold leftover row; neither poll it nor draw it.
+  const hasVehicle = Boolean(vehicle) && freshness.state !== 'expired';
   const pickupLat = pickup?.lat ?? null;
   const pickupLng = pickup?.lng ?? null;
 
@@ -125,9 +127,9 @@ export default function VehicleLocationCard({
     };
   }, [hasVehicle]);
 
-  if (!vehicle) return null;
-
-  const freshness = vehicleFreshness(vehicle.recorded_at, nowMs);
+  // No vehicle, or a leftover row from an earlier day: render nothing rather
+  // than a card that reads as sharing while it is hours cold.
+  if (!vehicle || !hasVehicle) return null;
   const localEta =
     pickupLat !== null && pickupLng !== null
       ? vehicleEtaFrom({ lat: vehicle.latitude, lng: vehicle.longitude }, { lat: pickupLat, lng: pickupLng })

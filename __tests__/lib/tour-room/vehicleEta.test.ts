@@ -11,6 +11,7 @@ import {
   vehicleEtaFrom,
   vehicleFreshness,
   VEHICLE_LIVE_MS,
+  VEHICLE_MAX_AGE_MS,
   VEHICLE_RECENT_MS,
 } from '@/lib/tour-room/vehicleEta';
 import { kstStartOfDayMs } from '@/lib/tour-room/time';
@@ -68,9 +69,18 @@ describe('vehicleFreshness bands', () => {
     expect(vehicleFreshness(iso(-VEHICLE_RECENT_MS - 1_000), NOW).state).toBe('stale');
   });
 
-  it('missing/unparseable timestamps are stale with an infinite age', () => {
-    expect(vehicleFreshness(null, NOW)).toEqual({ ageMs: Number.POSITIVE_INFINITY, state: 'stale' });
-    expect(vehicleFreshness('not-a-date', NOW).state).toBe('stale');
+  it('stale up to the 1-hour ceiling, expired past it', () => {
+    expect(vehicleFreshness(iso(-VEHICLE_MAX_AGE_MS), NOW).state).toBe('stale');
+    expect(vehicleFreshness(iso(-VEHICLE_MAX_AGE_MS - 1_000), NOW).state).toBe('expired');
+  });
+
+  it("yesterday's leftover row expires (the card must not render it)", () => {
+    expect(vehicleFreshness(iso(-26 * 60 * 60_000), NOW).state).toBe('expired');
+  });
+
+  it('missing/unparseable timestamps expire with an infinite age', () => {
+    expect(vehicleFreshness(null, NOW)).toEqual({ ageMs: Number.POSITIVE_INFINITY, state: 'expired' });
+    expect(vehicleFreshness('not-a-date', NOW).state).toBe('expired');
   });
 
   it('clock skew (future ping) clamps to age 0', () => {
