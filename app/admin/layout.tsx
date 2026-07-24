@@ -28,6 +28,7 @@ import {
   Sparkles,
   Star,
   Toilet,
+  UsersRound,
   X,
 } from 'lucide-react';
 import Logo from '@/components/Logo';
@@ -52,6 +53,7 @@ const adminMenuItems: AdminMenuItem[] = [
   { path: '/admin/orders', label: '주문 관리', icon: ClipboardList },
   { path: '/admin/ops-finance', label: '파이낸스 원장', icon: Landmark, badge: 'NEW' },
   { path: '/admin/tour-ops', label: '투어 관제센터', icon: RadioTower, badge: 'LIVE' },
+  { path: '/admin/guides', label: '가이드 관리', icon: UsersRound, badge: 'NEW' },
   { path: '/admin/inbox', label: '수신함', icon: Inbox, badge: 'NEW' },
   { path: '/admin/contacts', label: '문의 관리', icon: MessageSquareText },
   { path: '/admin/emails', label: '받은 메일', icon: Mail },
@@ -89,6 +91,7 @@ const pathToBreadcrumb: Record<string, string> = {
   '/admin/external-reviews': '외부 리뷰',
   '/admin/orders': '주문 관리',
   '/admin/ops-finance': '파이낸스 원장',
+  '/admin/guides': '가이드 관리',
   '/admin/inbox': '수신함',
   '/admin/contacts': '문의 관리',
   '/admin/emails': '받은 메일',
