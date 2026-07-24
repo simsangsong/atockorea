@@ -272,7 +272,23 @@ export async function GET(req: NextRequest) {
       console.warn('[flywheel] guest note purge failed:', notePurgeError);
     }
 
-    // ── ⑥ AI usage retention (audit plan §L L0) ─────────────────────────────
+    // ── ⑥ concierge answer cache retention (audit plan §L L2) ───────────────
+    // The context version already carries a 30-minute clock bucket, so rows go
+    // stale on their own; 7 days is well past any chance of a hit.
+    let conciergeCachePurged = 0;
+    try {
+      const cacheCutoffIso = new Date(Date.now() - 7 * DAY_MS).toISOString();
+      const { data: staleAnswers } = await supabase
+        .from('ops_concierge_cache')
+        .delete()
+        .lt('created_at', cacheCutoffIso)
+        .select('id');
+      conciergeCachePurged = Array.isArray(staleAnswers) ? staleAnswers.length : 0;
+    } catch (cachePurgeError) {
+      console.warn('[flywheel] concierge cache purge failed:', cachePurgeError);
+    }
+
+    // ── ⑦ AI usage retention (audit plan §L L0) ─────────────────────────────
     // Cost telemetry, not a ledger. Month-over-month trend is all anyone reads
     // it for, and the rows carry no prompt or answer text, so there is nothing
     // here worth keeping past 30 days.
@@ -301,6 +317,7 @@ export async function GET(req: NextRequest) {
         dining_recommendations: diningRecsPurged,
         ai_usage: aiUsagePurged,
         guest_notes: guestNotesPurged,
+        concierge_cache: conciergeCachePurged,
       },
     });
   } catch (error) {

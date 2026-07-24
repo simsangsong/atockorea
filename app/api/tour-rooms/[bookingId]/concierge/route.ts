@@ -3,6 +3,8 @@ import { createServerClient } from '@/lib/supabase';
 import { requestGate, clientIpKey, incrWindowCounted } from '@/lib/durable-rate-limit';
 import { chatCompletion } from '@/lib/ai/router';
 import { recordAiUsage, recordCacheHit } from '@/lib/ai/usage.server';
+import { conciergeCacheKey, contextVersion, isCacheableQuestion } from '@/lib/tour-room/conciergeCache';
+import { readConciergeCache, writeConciergeCache } from '@/lib/tour-room/conciergeCache.server';
 import { ensureRoom, resolveRoomActor } from '@/lib/tour-room/access';
 import { broadcastToRoom } from '@/lib/tour-room/realtime';
 import { normalizeRoomLocale, type RoomLocale } from '@/lib/tour-room/snapshot';
@@ -384,6 +386,31 @@ export async function POST(
       return NextResponse.json({ kind: 'budget_exhausted', text }, { status: 201 });
     }
 
+    // ---- §L L2 — Tier 1 응답 캐시 ---------------------------------------
+    // 같은 투어의 12명이 같은 질문을 하면 지금까지 LLM을 12번 쳤다.
+    // 🔴 컨텍스트 버전이 키에 들어간다(L-D3): 스팟·라이프사이클·자유시간·
+    // 30분 시각버킷이 하나라도 바뀌면 새 키가 되므로, 지난 스팟의 답이
+    // 다음 손님에게 가는 일이 없다.
+    const cacheVersion = contextVersion({
+      tourId: booking.tour_id ?? null,
+      tourDate: booking.tour_date ?? null,
+      poiKey: arrival.poiKey ?? null,
+      lifecycle,
+      freeTimeActive: Boolean(ctx.freeTime),
+      nowMs,
+    });
+    const cacheable = isCacheableQuestion(question);
+    const cacheKey = cacheable ? conciergeCacheKey(question, locale, cacheVersion) : null;
+
+    if (cacheKey) {
+      const hit = await readConciergeCache(supabase, cacheKey);
+      if (hit) {
+        recordCacheHit({ purpose: 'concierge', bookingId: booking.id });
+        await logTurn(hit.answer, 'tour_room_concierge_tier1');
+        return NextResponse.json({ kind: 'tier1', text: hit.answer, cached: true }, { status: 201 });
+      }
+    }
+
     // Knowledge layer (§D refinement): the current spot is injected
     // deterministically above; scoped RAG only fills in what the room's own
     // data can't answer (nearby POIs, policies, harvested Q&A). Best-effort —
@@ -419,6 +446,10 @@ export async function POST(
       { maxOutputTokens: 400, temperature: 0.3, usage: { bookingId: booking.id } },
     );
     const text = completion.content.trim();
+    // 저장은 await하지 않는다 — 손님은 이미 답을 받았다.
+    if (cacheKey && text) {
+      writeConciergeCache(supabase, { key: cacheKey, locale, contextVersion: cacheVersion, answer: text });
+    }
     await logTurn(text, 'tour_room_concierge_tier1');
     return NextResponse.json({ kind: 'tier1', text, provider: completion.provider }, { status: 201 });
   } catch (error) {
