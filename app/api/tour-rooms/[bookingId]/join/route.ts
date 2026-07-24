@@ -8,6 +8,7 @@ import {
   type RoomActor,
 } from '@/lib/tour-room/access';
 import { checkDriverPin } from '@/lib/tour-room/driver';
+import { isCompanionRoomToken } from '@/lib/tour-room/token';
 import { roomChannelTopic, broadcastToRoom } from '@/lib/tour-room/realtime';
 import { roomShouldBeClosed } from '@/lib/tour-room/time';
 import { buildRoomSnapshot, normalizeRoomLocale } from '@/lib/tour-room/snapshot';
@@ -141,10 +142,17 @@ export async function POST(
       .single();
     if (participantError) throw participantError;
 
+    // §5.2 C-6 — a device that entered through the lead's companion link is
+    // never a lead candidate, not even in an empty room. Without this, a
+    // companion opening the room before the lead ever joined would be promoted
+    // by the "no lead yet" branch below and inherit /plan write rights.
+    const isCompanionDevice =
+      actor.kind === 'token' && isCompanionRoomToken(actor.tokenPayload);
+
     // P-D13 — lead guest: the first customer participant becomes the sole
     // /plan draft editor; the logged-in booking owner takes lead over on join.
     // Best-effort — a failure here never blocks entry.
-    if (actor.role === 'customer' && !participant.is_lead) {
+    if (actor.role === 'customer' && !participant.is_lead && !isCompanionDevice) {
       try {
         const isOwner = actor.kind === 'owner' || (authUserId !== null && authUserId === booking.user_id);
         const { data: leadRows } = await supabase

@@ -168,6 +168,51 @@ describe('GuideSeatDashboard (§5.4b / C-16)', () => {
     expect(screen.getByTestId('no-show-evidence-sheet')).toBeInTheDocument();
   });
 
+  it('paints seat borders with the pickup-group colour, keeping state on the fill (§5.4b)', async () => {
+    mockManifest(manifest(PARTIAL));
+    const { container } = render(<GuideSeatDashboard token="gtok" bookingId="b1" />);
+    await waitFor(() => expect(container.querySelector('[data-seat="1"]')).toBeInTheDocument());
+
+    const rectOf = (n: number) => container.querySelector(`[data-seat="${n}"] rect`)!;
+    const strokeBefore = rectOf(1).getAttribute('stroke');
+    const fillBefore = rectOf(1).getAttribute('fill');
+
+    fireEvent.click(screen.getByTestId('pickup-colors-btn'));
+    await screen.findByTestId('pickup-legend');
+
+    // b1 = "Lotte Hotel" 그룹 → 테두리가 그룹색으로 바뀐다.
+    const groupStroke = rectOf(1).getAttribute('stroke');
+    expect(groupStroke).not.toBe(strokeBefore);
+    expect(groupStroke).toMatch(/^#[0-9A-Fa-f]{6}$/);
+    // 좌석 1은 체크인 상태 — 채움(=상태)은 절대 그룹색에 밀리지 않는다.
+    expect(rectOf(1).getAttribute('fill')).toBe(fillBefore);
+    expect(rectOf(1).getAttribute('fill')).toContain('--tr-seat-green');
+    // 같은 팀의 미체크인 좌석은 같은 테두리, 다른 채움.
+    expect(rectOf(2).getAttribute('stroke')).toBe(groupStroke);
+    expect(rectOf(2).getAttribute('fill')).not.toBe(fillBefore);
+    // 색맹 대비 번호 배지가 함께 찍힌다.
+    expect(container.querySelector('[data-seat="1"]')!.getAttribute('data-accent')).toBe('1');
+
+    // 하이라이트(명단 hover)는 그룹 테두리마저 덮는다 — 일시적 의도가 우선.
+    fireEvent.mouseEnter((await screen.findAllByTestId('roster-row'))[0]);
+    await waitFor(() => expect(rectOf(1).getAttribute('stroke')).toContain('--tr-seat-hl'));
+  });
+
+  it('gives the unassigned pickup bucket no colour and says so in the legend', async () => {
+    mockManifest(manifest([...PARTIAL, { seatNumber: 9, roomVehicleId: 'v1', bookingId: 'b2', guestLabel: null, checkedInAt: null, absentAt: null, locked: false }]));
+    const { container } = render(<GuideSeatDashboard token="gtok" bookingId="b1" />);
+    await waitFor(() => expect(container.querySelector('[data-seat="9"]')).toBeInTheDocument());
+    fireEvent.click(screen.getByTestId('pickup-colors-btn'));
+    await screen.findByTestId('pickup-legend');
+
+    // b2는 픽업 미지정 → 액센트 없음(기존 상태 테두리 그대로).
+    expect(container.querySelector('[data-seat="9"]')!.getAttribute('data-accent')).toBeNull();
+    const items = screen.getAllByTestId('pickup-legend-item');
+    const unassigned = items.find((li) => li.getAttribute('data-pickup-key') === 'unassigned')!;
+    expect(unassigned).toHaveTextContent('색 없음');
+    expect(unassigned.getAttribute('data-pickup-color')).toBe('');
+  });
+
   it('enables the gate when every assigned seat is resolved', async () => {
     const resolved = [
       { seatNumber: 1, roomVehicleId: 'v1', bookingId: 'b1', guestLabel: null, checkedInAt: 't', absentAt: null, locked: false },

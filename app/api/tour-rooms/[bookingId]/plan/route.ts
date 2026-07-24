@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { requestGate } from '@/lib/durable-rate-limit';
-import { ensureRoom, resolveRoomActor, type RoomActor, type RoomDbClient } from '@/lib/tour-room/access';
+import { ensureRoom, resolveRoomActor, type RoomDbClient } from '@/lib/tour-room/access';
+import { isLeadGuest } from '@/lib/tour-room/lead';
 import {
   ACTIVE_DAY_PLAN_STATUSES,
   dayPlanStopsToSchedule,
@@ -232,21 +233,8 @@ async function enrichStopCoords(supabase: RoomDbClient, stops: DayPlanStop[]): P
   }
 }
 
-/** Is this customer the lead guest (P-D13)? Owner sessions count as lead. */
-async function isLeadGuest(supabase: RoomDbClient, actor: RoomActor): Promise<boolean> {
-  if (actor.kind === 'owner') return true;
-  if (actor.kind !== 'session' || actor.role !== 'customer') return false;
-  try {
-    const { data } = await supabase
-      .from('tour_room_participants')
-      .select('is_lead')
-      .eq('id', actor.sessionPayload.participantId)
-      .maybeSingle();
-    return Boolean((data as { is_lead?: boolean } | null)?.is_lead);
-  } catch {
-    return false;
-  }
-}
+// P-D13 lead judgement now lives in lib/tour-room/lead.ts — one authority
+// shared with the §5.2 C-6 companion-invite route (behaviour unchanged).
 
 async function setGuideCuratedFlag(supabase: RoomDbClient, bookingId: string, guideCurated: boolean): Promise<void> {
   try {

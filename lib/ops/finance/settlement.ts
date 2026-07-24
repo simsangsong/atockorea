@@ -68,38 +68,73 @@ export interface PeriodAggregate {
   remitMinor: number
   orderCount: number
   currency: string
+  /**
+   * §6.3 — Σ Stripe 실수수료를 **양수 크기**로. 원장의 fee 행은 유출이라
+   * 음수이므로 부호를 뒤집어 담는다. null = 이 달에 쓸 수 있는 fee 행이
+   * 하나도 없다 = "모른다" (0원과 구분된다 — 추정치를 지어내지 않는다).
+   */
+  stripeFeeMinor: number | null
+  /**
+   * fee 행이 붙은 예약 수. 커버리지 분모는 orderCount다. known < orderCount면
+   * 그 달의 수수료 합계는 일부만 확인된 값이고, 정산서가 그 사실을 표시한다.
+   */
+  feeKnownOrders: number
 }
 
 export function emptyAggregate(): PeriodAggregate {
-  return { grossMinor: 0, commissionMinor: 0, remitMinor: 0, orderCount: 0, currency: 'USD' }
+  return {
+    grossMinor: 0,
+    commissionMinor: 0,
+    remitMinor: 0,
+    orderCount: 0,
+    currency: 'USD',
+    stripeFeeMinor: null,
+    feeKnownOrders: 0,
+  }
 }
 
 /**
- * 원장 행 → 기간 합계. 순수 함수.
+ * 원장 행 → 기간 합계. 순수 함수. 전 구간 정수 minor units.
  *
  * · entity='us' 행만 본다(한국법인 사이드 remit 행은 같은 돈의 반대편이라 이중계상됨).
  * · period를 주면 그 달의 행만 센다(쿼리가 이미 걸렀더라도 방어적으로 한 번 더).
  * · 송금분은 파생: gross − commission. 커미션율로 재계산하지 않는다.
+ * · 기간 통화는 **revenue 행**이 정한다. fee 행은 Stripe 정산통화를 들고 올 수
+ *   있어서, 아무 행이나 통화를 덮어쓰게 두면 정산서 통화가 바뀔 수 있다.
+ * · fee 합계는 기간 통화와 같은 통화의 행만 더한다. 다른 통화의 fee 행은
+ *   섞어 더하지 않고 "확인 안 됨"으로 남긴다(feeKnownOrders에 세지 않는다).
  */
 export function aggregatePeriod(
   rows: SettlementLedgerRow[],
   period?: string | null,
 ): PeriodAggregate {
+  const scoped = (rows ?? []).filter((r) => r.entity === 'us' && (!period || r.period === period))
+
   let grossMinor = 0
   let commissionMinor = 0
   let currency = 'USD'
   const bookingIds = new Set<string>()
 
-  for (const r of rows ?? []) {
-    if (r.entity !== 'us') continue
-    if (period && r.period !== period) continue
-    if (r.currency) currency = String(r.currency).toUpperCase()
+  for (const r of scoped) {
     if (r.type === 'revenue') {
       grossMinor += r.amount_minor
+      if (r.currency) currency = String(r.currency).toUpperCase()
       if (r.booking_id) bookingIds.add(r.booking_id)
     } else if (r.type === 'commission') {
       commissionMinor += r.amount_minor
     }
+  }
+
+  // fee 행은 통화가 확정된 뒤에 센다 (revenue가 통화를 정하기 때문).
+  let feeSigned = 0
+  let feeRows = 0
+  const feeBookings = new Set<string>()
+  for (const r of scoped) {
+    if (r.type !== 'fee') continue
+    if (r.currency && String(r.currency).toUpperCase() !== currency) continue
+    feeSigned += r.amount_minor
+    feeRows += 1
+    if (r.booking_id) feeBookings.add(r.booking_id)
   }
 
   return {
@@ -108,6 +143,8 @@ export function aggregatePeriod(
     remitMinor: grossMinor - commissionMinor,
     orderCount: bookingIds.size,
     currency,
+    stripeFeeMinor: feeRows > 0 ? -feeSigned : null,
+    feeKnownOrders: feeBookings.size,
   }
 }
 
@@ -538,6 +575,9 @@ export async function closePeriod(
     remit_minor: aggregate.remitMinor,
     margin_rate: opts.marginRate,
     order_count: aggregate.orderCount,
+    // §6.3 — 원장의 fee 행에서 파생. 확인된 행이 없으면 null(추정 금지, 컬럼 주석
+    // 그대로). 재마감 시 뒤늦게 들어온 fee 행이 자연히 반영된다.
+    stripe_fee_minor: aggregate.stripeFeeMinor,
     currency: aggregate.currency,
     closed_at: nowIso,
     updated_at: nowIso,

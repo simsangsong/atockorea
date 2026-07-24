@@ -1,6 +1,7 @@
 import { makeFakeFinanceDb, ledgerPair } from '@/test-utils/fakeFinanceDb'
 import {
   aggregatePeriod,
+  closePeriod,
   emptyAggregate,
   fetchPeriodLedgerRows,
   invoiceNumberFor,
@@ -66,6 +67,132 @@ describe('aggregatePeriod', () => {
       { entity: 'us', booking_id: 'bk-1', period: '2026-08', type: 'commission', amount_minor: 1234, currency: 'USD' },
     ]
     expect(aggregatePeriod(rows, '2026-08').remitMinor).toBe(8766)
+  })
+})
+
+describe('aggregatePeriod — Stripe 실수수료 집계 (§6.3)', () => {
+  /** 원장의 fee 행: 유출이므로 음수. */
+  const feeRow = (bookingId: string, feeMinor: number, currency = 'USD'): SettlementLedgerRow => ({
+    entity: 'us',
+    booking_id: bookingId,
+    period: '2026-08',
+    type: 'fee',
+    amount_minor: -feeMinor,
+    currency,
+  })
+
+  it('sums fee rows as a positive magnitude in integer minor units', () => {
+    const rows: SettlementLedgerRow[] = [
+      ...(ledgerPair('bk-1', '2026-08', 14400) as SettlementLedgerRow[]),
+      ...(ledgerPair('bk-2', '2026-08', 20000) as SettlementLedgerRow[]),
+      feeRow('bk-1', 476),
+      feeRow('bk-2', 610),
+    ]
+    const agg = aggregatePeriod(rows, '2026-08')
+    expect(agg.stripeFeeMinor).toBe(1086)
+    expect(Number.isInteger(agg.stripeFeeMinor as number)).toBe(true)
+    expect(agg.feeKnownOrders).toBe(2)
+    // 수수료는 gross/commission/remit 산식에 절대 끼어들지 않는다.
+    expect(agg.commissionMinor + agg.remitMinor).toBe(agg.grossMinor)
+    expect(agg.grossMinor).toBe(34400)
+  })
+
+  it('says "모른다"(null) rather than 0 when no fee row exists', () => {
+    const agg = aggregatePeriod(ledgerPair('bk-1', '2026-08', 14400) as SettlementLedgerRow[], '2026-08')
+    expect(agg.stripeFeeMinor).toBeNull()
+    expect(agg.feeKnownOrders).toBe(0)
+  })
+
+  it('reports partial coverage instead of pretending the sum is complete', () => {
+    const rows: SettlementLedgerRow[] = [
+      ...(ledgerPair('bk-1', '2026-08', 14400) as SettlementLedgerRow[]),
+      ...(ledgerPair('bk-2', '2026-08', 20000) as SettlementLedgerRow[]),
+      ...(ledgerPair('bk-3', '2026-08', 5000) as SettlementLedgerRow[]),
+      feeRow('bk-1', 476),
+    ]
+    const agg = aggregatePeriod(rows, '2026-08')
+    expect(agg.orderCount).toBe(3)
+    expect(agg.feeKnownOrders).toBe(1) // 3건 중 1건만 확인됨 — 정산서가 이 사실을 쓴다
+    expect(agg.stripeFeeMinor).toBe(476)
+  })
+
+  it('never mixes currencies into the fee total, and never lets a fee row set the period currency', () => {
+    const rows: SettlementLedgerRow[] = [
+      ...(ledgerPair('bk-1', '2026-08', 14400) as SettlementLedgerRow[]),
+      feeRow('bk-1', 476),
+      feeRow('bk-2', 90000, 'KRW'), // 정산통화가 다른 행 — 더하면 안 된다
+    ]
+    const agg = aggregatePeriod(rows, '2026-08')
+    expect(agg.currency).toBe('USD')
+    expect(agg.stripeFeeMinor).toBe(476)
+    expect(agg.feeKnownOrders).toBe(1)
+  })
+
+  it('ignores fee rows from the kr side or another month', () => {
+    const rows: SettlementLedgerRow[] = [
+      ...(ledgerPair('bk-1', '2026-08', 14400) as SettlementLedgerRow[]),
+      feeRow('bk-1', 476),
+      { entity: 'kr', booking_id: 'bk-1', period: '2026-08', type: 'fee', amount_minor: -999, currency: 'USD' },
+      { entity: 'us', booking_id: 'bk-9', period: '2026-07', type: 'fee', amount_minor: -888, currency: 'USD' },
+    ]
+    expect(aggregatePeriod(rows, '2026-08').stripeFeeMinor).toBe(476)
+  })
+})
+
+describe('closePeriod — stripe_fee_minor는 원장에서 나온다 (§6.3)', () => {
+  const seedWithFee = () =>
+    makeFakeFinanceDb({
+      ops_entity_ledger: [
+        ...ledgerPair('bk-1', '2026-08', 14400),
+        ...ledgerPair('bk-2', '2026-08', 20000),
+        {
+          tenant_id: 'atockorea',
+          entity: 'us',
+          booking_id: 'bk-1',
+          period: '2026-08',
+          type: 'fee',
+          amount_minor: -476,
+          currency: 'USD',
+          source: 'stripe_capture',
+        },
+      ],
+    })
+
+  it('populates the column from the fee rows, not from a guessed rate', async () => {
+    const db = seedWithFee()
+    const res = await closePeriod(db as never, '2026-08', { marginRate: 0.05 })
+    expect(res.period.stripe_fee_minor).toBe(476)
+    expect(res.period.gross_minor).toBe(34400)
+    expect(res.period.commission_minor + res.period.remit_minor).toBe(res.period.gross_minor)
+    // 2.9%+30¢ 추정치(=$1.09)는 어디에도 나타나지 않는다.
+    expect(res.period.stripe_fee_minor).not.toBe(Math.round(34400 * 0.029) + 60)
+  })
+
+  it('leaves the column null when no fee row is in the ledger yet', async () => {
+    const db = makeFakeFinanceDb({ ops_entity_ledger: [...ledgerPair('bk-1', '2026-08', 14400)] })
+    const res = await closePeriod(db as never, '2026-08', { marginRate: 0.05 })
+    expect(res.period.stripe_fee_minor).toBeNull()
+  })
+
+  it('picks up a late fee row on re-close (webhook arriving after the cron)', async () => {
+    const db = makeFakeFinanceDb({ ops_entity_ledger: [...ledgerPair('bk-1', '2026-08', 14400)] })
+    const first = await closePeriod(db as never, '2026-08', { marginRate: 0.05 })
+    expect(first.period.stripe_fee_minor).toBeNull()
+
+    db.tables.ops_entity_ledger.push({
+      tenant_id: 'atockorea',
+      entity: 'us',
+      booking_id: 'bk-1',
+      period: '2026-08',
+      type: 'fee',
+      amount_minor: -476,
+      currency: 'USD',
+      source: 'stripe_capture',
+    })
+    const second = await closePeriod(db as never, '2026-08', { marginRate: 0.05 })
+    expect(second.created).toBe(false) // 같은 달은 여전히 1행 (멱등)
+    expect(second.period.stripe_fee_minor).toBe(476)
+    expect(db.tables.ops_settlement_periods).toHaveLength(1)
   })
 })
 

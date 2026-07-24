@@ -14,6 +14,7 @@
 //   · 고객 인보이스는 발행하지 않는다(D11) — 발행 문서는 인터컴퍼니 1종뿐.
 
 import type { FinanceConfig } from './config'
+import { aggregatePeriod } from './settlement'
 import type {
   IntercompanyInvoiceRow,
   RemittanceRow,
@@ -158,6 +159,11 @@ export interface StatementDoc {
     remitMinor: number
     orderCount: number
     stripeFeeMinor: number | null
+    /**
+     * §6.3 — 그 달 주문 중 실수수료가 확인된 건수. 합계가 일부만 확인된
+     * 값일 때 문서가 그 사실을 말하기 위한 값 (< orderCount면 부분 확인).
+     */
+    stripeFeeKnownOrders: number
   }
   lines: OrderLine[]
   usEntity: { name: string; address: string; ein: string }
@@ -170,6 +176,9 @@ export interface StatementDoc {
 export function buildStatementDoc(input: StatementDocInput): StatementDoc {
   const { period, config } = input
   const remittances = input.remittances ?? []
+  // 커버리지는 원장에서 다시 센다 — 금액은 스냅샷(period 행)을 쓰되, "몇 건이
+  // 확인됐는가"는 문서를 뽑는 시점의 원장 사실이라야 정직하다.
+  const feeCoverage = aggregatePeriod(input.ledgerRows, period.period)
   return {
     draft: isDraftDocument(config.expertReviewed),
     vatNotice: VAT_NOTICE,
@@ -184,6 +193,7 @@ export function buildStatementDoc(input: StatementDocInput): StatementDoc {
       remitMinor: period.remit_minor,
       orderCount: period.order_count,
       stripeFeeMinor: period.stripe_fee_minor,
+      stripeFeeKnownOrders: feeCoverage.feeKnownOrders,
     },
     lines: buildOrderLines(input.ledgerRows, input.bookingMeta),
     usEntity: {
