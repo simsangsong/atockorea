@@ -155,7 +155,7 @@ describe("Jeju zones + cross-region + pickup (§6, §7)", () => {
     expect(jejuZone(33.51, 126.49)).toBe("city"); // Jeju city
   });
 
-  it("Jeju English 6h East+South mix with downtown pickup = 280k + 60k = ₩340,000", () => {
+  it("Jeju English 6h East+South mix with downtown pickup = 280k + 70k = ₩350,000", () => {
     const r = quote(
       input({
         region: "jeju",
@@ -165,8 +165,8 @@ describe("Jeju zones + cross-region + pickup (§6, §7)", () => {
         jejuPickupZone: "city",
       })
     );
-    expect(r.total).toBe(340000);
-    expect(r.lines.find((l) => l.code === "jeju_east_mix")?.amount).toBe(60000);
+    expect(r.total).toBe(350000);
+    expect(r.lines.find((l) => l.code === "jeju_east_mix")?.amount).toBe(70000);
     expect(r.lines.find((l) => l.code === "jeju_pickup")).toBeUndefined();
   });
 
@@ -191,7 +191,7 @@ describe("Jeju zones + cross-region + pickup (§6, §7)", () => {
   });
 
   it("Jeju distance surcharges are capped at ₩100,000", () => {
-    // east-mix 60k + pickup 60k + cross-side 40k = 160k → capped to 100k
+    // east-mix 70k + pickup 60k + cross-side 40k = 170k → capped to 100k
     const r = quote(
       input({ region: "jeju", durationHours: 6, pax: 2, jejuPoiZones: ["east", "west"], jejuPickupZone: "out_west" })
     );

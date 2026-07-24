@@ -3,6 +3,7 @@
  */
 
 import { assessDayPlanFeasibility } from '@/lib/tour-room/feasibility';
+import { JEJU_EAST_MIX_SURCHARGE } from '@/lib/quote-engine/pricing-policy';
 import type { DayPlanStop } from '@/lib/tour-room/dayPlan';
 
 // A Monday in the future (KST) — Manjanggul is permanently closed either way;
@@ -129,5 +130,76 @@ describe('lib/tour-room/feasibility', () => {
     });
     expect(result.warnings).toEqual([]);
     expect(result.drive_min).toBe(0);
+  });
+
+  describe('Jeju cross-island (동+서/남 same-day) — notice only, never blocks', () => {
+    // Zone coords: east lng≥126.64, west lng≤126.42, south lat≤33.30 (middle),
+    // city lat>33.30 (middle). All within the Jeju service radius.
+    const east = { lat: 33.46, lng: 126.94 }; // Seongsan
+    const west = { lat: 33.39, lng: 126.24 }; // Hyeopjae
+    const south = { lat: 33.25, lng: 126.56 }; // Seogwipo
+    const city = { lat: 33.51, lng: 126.52 }; // Jeju city
+
+    it('warns once when East mixes with West on a jeju plan', () => {
+      const result = assessDayPlanFeasibility({
+        stops: [
+          jejuStop({ id: 'a', name_i18n: { en: 'East' }, ...east }),
+          jejuStop({ id: 'b', name_i18n: { en: 'West' }, ...west }),
+        ],
+        region: 'jeju',
+      });
+      const cross = result.warnings.filter((w) => w.code === 'cross_island');
+      expect(cross).toHaveLength(1);
+      expect(cross[0].stop_id).toBeUndefined(); // plan-wide, not per-stop
+      expect(cross[0].detail.surcharge_krw).toBe(JEJU_EAST_MIX_SURCHARGE);
+    });
+
+    it('warns when East mixes with South', () => {
+      const result = assessDayPlanFeasibility({
+        stops: [
+          jejuStop({ id: 'a', name_i18n: { en: 'East' }, ...east }),
+          jejuStop({ id: 'b', name_i18n: { en: 'South' }, ...south }),
+        ],
+        region: 'jeju',
+      });
+      expect(result.warnings.filter((w) => w.code === 'cross_island')).toHaveLength(1);
+    });
+
+    it('stays quiet for East + City only (city is neutral)', () => {
+      const result = assessDayPlanFeasibility({
+        stops: [
+          jejuStop({ id: 'a', name_i18n: { en: 'East' }, ...east }),
+          jejuStop({ id: 'b', name_i18n: { en: 'City' }, ...city }),
+        ],
+        region: 'jeju',
+      });
+      expect(result.warnings.some((w) => w.code === 'cross_island')).toBe(false);
+    });
+
+    it('stays quiet for West + South only (no East)', () => {
+      const result = assessDayPlanFeasibility({
+        stops: [
+          jejuStop({ id: 'a', name_i18n: { en: 'West' }, ...west }),
+          jejuStop({ id: 'b', name_i18n: { en: 'South' }, ...south }),
+        ],
+        region: 'jeju',
+      });
+      expect(result.warnings.some((w) => w.code === 'cross_island')).toBe(false);
+    });
+
+    it('never fires outside the jeju builder region', () => {
+      const result = assessDayPlanFeasibility({
+        stops: [
+          jejuStop({ id: 'a', name_i18n: { en: 'East' }, ...east }),
+          jejuStop({ id: 'b', name_i18n: { en: 'West' }, ...west }),
+        ],
+        region: 'seoul',
+      });
+      expect(result.warnings.some((w) => w.code === 'cross_island')).toBe(false);
+    });
+
+    it('the surcharge is unified at ₩70,000', () => {
+      expect(JEJU_EAST_MIX_SURCHARGE).toBe(70000);
+    });
   });
 });

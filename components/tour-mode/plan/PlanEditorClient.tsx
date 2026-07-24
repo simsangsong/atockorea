@@ -78,7 +78,7 @@ interface NeedsState {
 }
 
 interface FeasibilityWarning {
-  code: 'overrun' | 'closed' | 'out_of_region';
+  code: 'overrun' | 'closed' | 'out_of_region' | 'cross_island';
   stop_id?: string;
   title?: string;
   detail: Record<string, string | number>;
@@ -186,6 +186,7 @@ interface PlanCopy {
   warnOverrun: (overMin: string, budget: string) => string;
   warnClosed: (title: string) => string;
   warnOutOfRegion: (title: string) => string;
+  warnCrossIsland: (surcharge: string) => string;
   saving: string;
   saved: string;
   saveError: string;
@@ -260,6 +261,8 @@ const COPY: Record<RoomLocale, PlanCopy> = {
       `This plan runs about ${over} over the booked ${budget} — your guide may trim it.`,
     warnClosed: (title) => `${title} looks closed on your tour date.`,
     warnOutOfRegion: (title) => `${title} is outside the usual service area — the guide must confirm.`,
+    warnCrossIsland: (surcharge) =>
+      `Visiting the East side plus the West/South on the same day is a cross-island day — a ${surcharge} surcharge applies (just a heads-up, it won’t block your plan).`,
     saving: 'Saving…',
     saved: 'Saved',
     saveError: 'Couldn’t save — retrying on your next change.',
@@ -332,6 +335,8 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     warnOverrun: (over, budget) => `예약 시간(${budget})보다 약 ${over} 길어요 — 가이드가 조정할 수 있어요.`,
     warnClosed: (title) => `${title}은(는) 투어일에 휴무로 보여요.`,
     warnOutOfRegion: (title) => `${title}은(는) 기본 서비스 권역 밖이에요 — 가이드 확인이 필요해요.`,
+    warnCrossIsland: (surcharge) =>
+      `동+서/남 지역을 같은 날 함께 방문 → 크로스 아일랜드 추가요금 ${surcharge} (안내용, 차단 아님)`,
     saving: '저장 중…',
     saved: '저장됨',
     saveError: '저장에 실패했어요 — 다음 수정 때 다시 시도해요.',
@@ -404,6 +409,8 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     warnOverrun: (over, budget) => `予約時間(${budget})より約${over}長いプランです。ガイドが調整する場合があります。`,
     warnClosed: (title) => `${title}はツアー日に休業のようです。`,
     warnOutOfRegion: (title) => `${title}は通常のサービス圏外です。ガイドの確認が必要です。`,
+    warnCrossIsland: (surcharge) =>
+      `東側と西/南側を同じ日に巡るクロスアイランド行程です → 追加料金${surcharge}（ご案内のみ・ブロックはしません）`,
     saving: '保存中…',
     saved: '保存済み',
     saveError: '保存できませんでした。次の変更時に再試行します。',
@@ -475,6 +482,8 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     warnOverrun: (over, budget) => `此行程比预订时长(${budget})多约${over}——导游可能会调整。`,
     warnClosed: (title) => `${title}在出行日似乎休息。`,
     warnOutOfRegion: (title) => `${title}在常规服务范围之外——需导游确认。`,
+    warnCrossIsland: (surcharge) =>
+      `同一天同时游览东部与西/南部属于跨岛行程 → 需加收${surcharge}（仅作提示，不会阻止行程）`,
     saving: '保存中…',
     saved: '已保存',
     saveError: '保存失败——下次修改时会重试。',
@@ -547,6 +556,8 @@ const COPY: Record<RoomLocale, PlanCopy> = {
       `Este plan supera en ~${over} las ${budget} reservadas; tu guía podría ajustarlo.`,
     warnClosed: (title) => `${title} parece cerrado en tu fecha de tour.`,
     warnOutOfRegion: (title) => `${title} está fuera del área habitual; el guía debe confirmarlo.`,
+    warnCrossIsland: (surcharge) =>
+      `Visitar el este junto con el oeste/sur el mismo día es un día cruzado de la isla — se aplica un recargo de ${surcharge} (solo es un aviso, no bloquea tu plan).`,
     saving: 'Guardando…',
     saved: 'Guardado',
     saveError: 'No se pudo guardar; se reintentará con tu próximo cambio.',
@@ -2012,6 +2023,23 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                   ))}
               </div>
             )}
+
+            {/* plan-wide notice (Jeju cross-island 동+서/남) — notice only, never blocks */}
+            {warnings
+              .filter((w) => w.code === 'cross_island')
+              .map((w, i) => (
+                <div
+                  key={`cross-island-${i}`}
+                  className="tr-card mt-3 border border-[var(--tr-danger-soft,#f3d6d6)] px-4 py-3"
+                >
+                  <p className="tr-meta font-bold uppercase tracking-wide text-[var(--tr-danger)]">
+                    {copy.warningsTitle}
+                  </p>
+                  <p className="tr-label mt-1 text-[var(--tr-ink)]">
+                    {copy.warnCrossIsland(`₩${Number(w.detail.surcharge_krw ?? 0).toLocaleString()}`)}
+                  </p>
+                </div>
+              ))}
           </section>
         )}
 

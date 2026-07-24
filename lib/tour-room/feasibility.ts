@@ -19,9 +19,10 @@
 import { isPlaceUnavailable } from '@/lib/constants/place-operating-rules';
 import { driveMinutes, haversineKm, type LatLng } from '@/lib/itinerary-builder/distance';
 import { REGION_CENTER, isRegionSlug } from '@/lib/itinerary-builder/regions';
+import { isJejuEastMix, jejuZone, JEJU_EAST_MIX_SURCHARGE } from '@/lib/quote-engine/pricing-policy';
 import { humanizePoiKey, type DayPlanStop } from '@/lib/tour-room/dayPlan';
 
-export type FeasibilityCode = 'overrun' | 'closed' | 'out_of_region';
+export type FeasibilityCode = 'overrun' | 'closed' | 'out_of_region' | 'cross_island';
 
 export interface FeasibilityWarning {
   code: FeasibilityCode;
@@ -168,6 +169,26 @@ export function assessDayPlanFeasibility(args: AssessDayPlanArgs): FeasibilityRe
           detail: { distance_km: Math.round(km), radius_km: radiusKm, region },
         });
       }
+    }
+  }
+
+  // ── ④ Jeju cross-island (동+서/남 same-day) — plan-wide notice ─────────────
+  //     Mixing the East side with West/South is a long cross-island day that
+  //     carries a ₩70,000 surcharge on the booking quote (JEJU_EAST_MIX_SURCHARGE).
+  //     Here it is a notice-only warning so the guest/guide can see it in advance;
+  //     it never blocks. Only evaluated for the jeju builder region.
+  if (region === 'jeju') {
+    const zones = stops
+      .map((stop) => {
+        const coords = stopCoords(stop);
+        return coords ? jejuZone(coords.lat, coords.lng) : null;
+      })
+      .filter((zone): zone is ReturnType<typeof jejuZone> => zone !== null);
+    if (isJejuEastMix(zones)) {
+      warnings.push({
+        code: 'cross_island',
+        detail: { surcharge_krw: JEJU_EAST_MIX_SURCHARGE },
+      });
     }
   }
 

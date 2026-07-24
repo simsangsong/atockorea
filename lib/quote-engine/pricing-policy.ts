@@ -163,7 +163,7 @@ export const SUBREGION_SURCHARGE: Record<string, number> = {
 };
 
 /** Jeju itinerary mixing the East side with West/South (long cross-island day). */
-export const JEJU_EAST_MIX_SURCHARGE = 60000;
+export const JEJU_EAST_MIX_SURCHARGE = 70000;
 /** Out-of-city ("시외") hotel pickup on the OPPOSITE side of the tour. */
 export const JEJU_CROSS_SIDE_SURCHARGE = 40000;
 /** Combined Jeju distance surcharges (pickup + cross-side + east-mix) are capped. */
