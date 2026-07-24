@@ -174,6 +174,15 @@ const nextConfig = {
     return [{ source: '/:path*', headers: securityHeaders }];
   },
   generateBuildId: async () => `build-${Date.now()}`,
+  /**
+   * The finance PDF renderer (@react-pdf/renderer) reads its Korean font from
+   * `assets/fonts/` at runtime. Nothing imports those .ttf files, so the module
+   * tracer cannot see them and the serverless function would ship without them —
+   * every Korean glyph would come out blank. Name them explicitly.
+   */
+  outputFileTracingIncludes: {
+    '/api/admin/ops-finance/**': ['./assets/fonts/**'],
+  },
   /** Slow disks / AV scans can hit default chunk load timeouts in dev (ChunkLoadError on app/layout). */
   webpack: (config, { dev, isServer }) => {
     if (dev && !isServer && config.output) {
