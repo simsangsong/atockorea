@@ -1,3 +1,11 @@
+/**
+ * @jest-environment node
+ *
+ * 🔴 jsdom에는 정적 `Response.json`이 없어서 `NextResponse.json`이 터진다.
+ * 이 저장소의 다른 라우트 스위트들이 이미 쓰는 조합(node 환경 +
+ * restoreWebPrimitives)을 그대로 쓴다.
+ */
+import '@/test-utils/restoreWebPrimitives';
 import { GET } from '@/app/api/tours/route';
 
 // Mock Supabase

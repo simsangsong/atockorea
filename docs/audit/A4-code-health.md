@@ -1,7 +1,7 @@
 # A4 — 코드 건강도 (진행 중)
 
 **축:** 3 코드 · **감사일:** 2026-07-25
-**상태:** A4.1 · A4.2 완료 · A4.3/A4.4/A4.5/A4.6 미착수
+**상태:** A4.1 · A4.2 · A4.6 완료 · A4.3/A4.4/A4.5 미착수
 
 > §J의 "A0.1을 기다리지 않아도 되는 것"에 A4 전부가 들어 있다. 시뮬 환경과 무관하다.
 
@@ -132,6 +132,39 @@ import type { RoomBooking, RoomDbClient, TourRoom } from '@/lib/tour-room/access
   지정자 단위 파싱으로 올린다.
 - 외부 패키지(node_modules) 내부는 따라가지 않는다. 느리고, 우리가 고칠 수도 없다.
 - `next/dynamic`으로 감싼 client 컴포넌트는 정적 import로 보인다 — 보수적인 쪽이라 둔다.
+
+---
+
+## A4.6 — 사전존재 결함 청산 ✅
+
+### 🔴 **실패 5스위트는 하나도 제품 결함이 아니었다**
+
+이 5개는 세션 인수인계 문서마다 "사전존재 실패(무시)"로 적혀 왔다. 실제로 파 보니
+**전부 테스트 인프라 문제거나 낡은 테스트**였고, 제품 버그는 하나도 없었다.
+
+| 스위트 | 진짜 원인 | 조치 |
+|---|---|---|
+| `__tests__/utils/test-utils.tsx` | **테스트가 아니라 헬퍼 파일**인데 `__tests__/` 안에 있어서 jest가 스위트로 집었다 → "must contain at least one test" | `test-utils/render.tsx`로 이동. `lib/ops/report/test-support/supabase-mock.ts`가 **같은 이유로 이미 밖에 있었다** — 전례가 있는데 반복됐다 |
+| `__tests__/lib/logger.test.ts` | 🔴 **실제 취약점.** `isDevelopment`가 클래스 필드라 **모듈 로드 시점에 한 번** 스냅샷됐다. 테스트가 `beforeEach`에서 NODE_ENV를 바꿔도 이미 늦었고, debug/info가 영원히 죽어 있었다 | getter로 바꿔 호출 시점에 읽는다. 숨은 import-순서 결합이 사라진다 |
+| `__tests__/lib/error-handler.test.ts` | 테스트가 개발 모드를 **가정만 하고 설정하지 않았다**. 원문 메시지 노출은 개발 모드 전용(운영에선 가려짐 — 그건 옳다) | 그 케이스에서만 NODE_ENV를 명시하고 `finally`로 복원 |
+| `__tests__/api/tours.test.ts` | jsdom에 정적 `Response.json`이 없어 `NextResponse.json`이 터진다 | `@jest-environment node` + `restoreWebPrimitives` — **다른 라우트 스위트들이 이미 쓰는 조합** |
+| `__tests__/integration/assistant-streaming.test.ts` | 두 가지가 겹쳤다: ①질문("weather in Jeju")이 **나중에 생긴 결정적 날씨 즉답**에 먹혀 모델이 아예 호출되지 않았다 ②목업 모델 답이 41자라, 추천 의도에서 "모델이 쓸 만한 걸 못 냈다"로 판정돼 카탈로그 top-3으로 갈아끼워졌다 | 게이트에 안 걸리는 자유서술 질문 + **현실적인 길이(180자 이상)의 목업 답**. 프롬프트만 바꾸면 게이트가 하나 늘 때마다 또 깨진다 |
+
+### 왜 이게 중요한가
+
+**무시가 기본값이 되면 진짜 회귀가 섞여도 안 보인다.** 이번 세션에서 실제로 그 일이
+일어났다 — §L L0이 만든 회귀(`captions` 라우트의 인자 변경)가 `__tests__/`에 있었는데,
+표준 머지 게이트의 스위트 목록에 `__tests__/`가 빠져 있어 **B3 단계에서야** 잡혔다.
+빨간 게 상시로 있으면 새로 빨개진 것을 구분할 수 없다.
+
+### 결과
+
+**전체 스위트 381개 전부 green (실패 0).** 이 저장소에서 처음이다.
+
+### 잔여
+
+- `TourRoomClient.tsx` L285 react-hooks/refs lint 에러는 여전히 있다(main에도 있던 것).
+  lint는 별도 게이트라 이번 범위 밖으로 둔다 — A4.5(타입 거짓말)와 함께 볼 것.
 
 ---
 

@@ -64,12 +64,22 @@ describe('error-handler', () => {
     });
 
     it('should handle generic errors correctly', async () => {
-      const error = new Error('Generic error');
-      const response = handleApiError(error);
-      const data = await response.json();
-      
-      expect(data.error).toBe('Generic error');
-      expect(response.status).toBe(500);
+      // 🔴 원문 메시지는 **개발 모드에서만** 노출된다(운영에서는 'Internal server
+      // error'로 가려진다 — 아래 프로덕션 테스트가 그걸 지킨다). jest는 NODE_ENV가
+      // 'test'라, 개발 모드를 명시하지 않으면 이 테스트는 영원히 실패한다.
+      const env = process.env as NodeJS.ProcessEnv & { NODE_ENV?: string };
+      const original = env.NODE_ENV;
+      env.NODE_ENV = 'development';
+      try {
+        const error = new Error('Generic error');
+        const response = handleApiError(error);
+        const data = await response.json();
+
+        expect(data.error).toBe('Generic error');
+        expect(response.status).toBe(500);
+      } finally {
+        env.NODE_ENV = original;
+      }
     });
 
     it('should not expose stack traces in production', async () => {
