@@ -1,0 +1,58 @@
+{
+  "duration": 30,
+  "resolution": {
+    "width": 1080,
+    "height": 1920
+  },
+  "audio": "silent",
+  "locales": [
+    "en",
+    "ko",
+    "zh-TW",
+    "zh-CN",
+    "ja",
+    "es",
+    "de",
+    "fr",
+    "it",
+    "ru"
+  ],
+  "chapters": [
+    {
+      "id": "opening",
+      "start": 0,
+      "end": 3,
+      "visual": "AtoC logo fade-in"
+    },
+    {
+      "id": "rule-seatbelt",
+      "start": 3,
+      "end": 10,
+      "visual": "Rule 1 — seatbelt pictogram, front and rear seats"
+    },
+    {
+      "id": "rule-no-smoking",
+      "start": 10,
+      "end": 18,
+      "visual": "Rule 2 — no-smoking pictogram, vehicle + tourist site"
+    },
+    {
+      "id": "rule-driver-chat",
+      "start": 18,
+      "end": 26,
+      "visual": "Rule 3 — no talking to the driver while moving; use the app chat"
+    },
+    {
+      "id": "confirm",
+      "start": 26,
+      "end": 29,
+      "visual": "Large seatbelt icon — the confirm gesture"
+    },
+    {
+      "id": "closing",
+      "start": 29,
+      "end": 30,
+      "visual": "AtoC logo fade-out"
+    }
+  ]
+}
