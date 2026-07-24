@@ -246,7 +246,33 @@ export async function GET(req: NextRequest) {
       console.warn('[flywheel] dining purge failed:', diningPurgeError);
     }
 
-    // ── ⑤ AI usage retention (audit plan §L L0) ─────────────────────────────
+    // ── ⑤ guest notes retention (audit plan §K B4-D3) ───────────────────────
+    // Operator memos carry personal detail ("bad knee"), so they follow the
+    // same 30-day rule as guest-declared needs. Keyed off the tour date, not
+    // the write time: a note written on the day is still 30 days of usefulness
+    // after that day, not after it was typed.
+    let guestNotesPurged = 0;
+    try {
+      const noteCutoff = new Date(Date.now() - 30 * DAY_MS);
+      const noteCutoffDate = `${noteCutoff.getUTCFullYear()}-${String(noteCutoff.getUTCMonth() + 1).padStart(2, '0')}-${String(noteCutoff.getUTCDate()).padStart(2, '0')}`;
+      const { data: staleBookings } = await supabase
+        .from('bookings')
+        .select('id')
+        .lt('tour_date', noteCutoffDate);
+      const staleIds = Array.isArray(staleBookings) ? staleBookings.map((b) => (b as { id: string }).id) : [];
+      if (staleIds.length > 0) {
+        const { data: purgedNotes } = await supabase
+          .from('ops_guest_notes')
+          .delete()
+          .in('booking_id', staleIds)
+          .select('id');
+        guestNotesPurged = Array.isArray(purgedNotes) ? purgedNotes.length : 0;
+      }
+    } catch (notePurgeError) {
+      console.warn('[flywheel] guest note purge failed:', notePurgeError);
+    }
+
+    // ── ⑥ AI usage retention (audit plan §L L0) ─────────────────────────────
     // Cost telemetry, not a ledger. Month-over-month trend is all anyone reads
     // it for, and the rows carry no prompt or answer text, so there is nothing
     // here worth keeping past 30 days.
@@ -274,6 +300,7 @@ export async function GET(req: NextRequest) {
         dining_places: diningPlacesPurged,
         dining_recommendations: diningRecsPurged,
         ai_usage: aiUsagePurged,
+        guest_notes: guestNotesPurged,
       },
     });
   } catch (error) {
