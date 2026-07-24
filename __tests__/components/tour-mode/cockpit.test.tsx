@@ -266,6 +266,48 @@ describe('shared Cockpit', () => {
     }
   });
 
+  // §11.D D7 — the private-only cash/overtime/settlement tools stay visible for
+  // a PRIVATE tour and for the default (prop omitted ⇒ private), so every
+  // current mount behaves identically.
+  it('renders the private-only settlement tools for a private tour (and by default)', () => {
+    const { unmount } = render(<Cockpit {...base} tourKind="private" />);
+    expect(screen.getByTestId('driver-action-expense')).toBeInTheDocument();
+    expect(screen.getByTestId('driver-action-overtime')).toBeInTheDocument();
+    expect(screen.getByTestId('driver-action-summary')).toBeInTheDocument();
+    unmount();
+
+    // prop omitted ⇒ defaults to private ⇒ same controls render.
+    render(<Cockpit {...base} />);
+    expect(screen.getByTestId('driver-action-expense')).toBeInTheDocument();
+    expect(screen.getByTestId('driver-action-overtime')).toBeInTheDocument();
+    expect(screen.getByTestId('driver-action-summary')).toBeInTheDocument();
+  });
+
+  // §11.D D7 — on a JOIN tour the private-charter cash/overtime/settlement tools
+  // are HIDDEN (prevent function confusion), while the neutral driving controls
+  // (mic, typed send, one-tap actions) stay visible for both kinds.
+  it('hides the private-only settlement tools on a join tour', () => {
+    render(<Cockpit {...base} tourKind="join" />);
+    expect(screen.queryByTestId('driver-action-expense')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('driver-action-overtime')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('driver-action-summary')).not.toBeInTheDocument();
+    // neutral controls unaffected
+    expect(screen.getByTestId('driver-mic')).toBeInTheDocument();
+    expect(screen.getByTestId('driver-text-input')).toBeInTheDocument();
+    expect(screen.getByTestId('driver-action-타세요')).toBeInTheDocument();
+  });
+
+  // §11.D D7 — even if a stale `sheet` state points at a private sheet, the
+  // join gate keeps the expense/overtime sheets from surfacing. Opening them
+  // requires the (now hidden) buttons, so the sheets are simply unreachable.
+  it('does not surface the expense sheet on a join tour', () => {
+    render(<Cockpit {...base} tourKind="join" />);
+    // The only entry point (지출·정산 button) is gone, so the settle list and
+    // overtime inputs never mount.
+    expect(screen.queryByTestId('cockpit-settle-list')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('overtime-start')).not.toBeInTheDocument();
+  });
+
   // TIER 0 P1 — the audio fallback (webview / no device STT) transcribes via
   // /stt and shows the text BEFORE sending; a flagged transcript needs an
   // explicit send so a mistranscription never fans out unseen.
