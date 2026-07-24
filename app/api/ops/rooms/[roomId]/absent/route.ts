@@ -3,19 +3,26 @@ import { createServerClient } from '@/lib/supabase';
 import { recordRoomEvent } from '@/lib/tour-room/events';
 import { resolveOpsRoomActor, isStaffActor } from '@/lib/ops/seating/access';
 import { loadRoomVehicles, loadAssignments, broadcastSeatUpdate } from '@/lib/ops/seating/service';
+import { hasEvidenceFor } from '@/lib/ops/seating/evidence';
 
 export const dynamic = 'force-dynamic';
 
 /**
- * 노쇼(absent) 처리 — AtoC 통합 플랜 §5.4 C-15 ⚠.
+ * 노쇼(absent) 처리 — AtoC 통합 플랜 §5.4 C-15 ⚠ + §5.4b D12(증거팩).
  *
- * POST { roomVehicleId, seatNumber, action: 'mark' | 'clear', evidenceUrl? }
+ * POST { roomVehicleId, seatNumber, action: 'mark' | 'clear', evidenceId?, evidenceUrl? }
  *   가이드/기사/admin 전용. absent_at 마킹/해제 — 노쇼 좌석은 시작 게이트
  *   계산에서 제외된다 (allSeatsResolved).
  *
- * 증거팩(kursoflow 사진+GPS+워터마크 패턴, ops_no_show_evidence)은 후속
- * 슬라이스 — 이번엔 evidenceUrl 옵션만 받아 tour_room_events payload에
- * 남긴다 (OTA 분쟁 대비 최소 기록; 증거 강제는 UI 슬라이스에서).
+ * 증거 강제 (D12 — 비대칭 마찰 원칙: 체크인은 무마찰, 노쇼만 증거 요구):
+ *   action='mark'는 이 (차량, 좌석)에 대한 ops_no_show_evidence 행이 있어야만
+ *   통과한다. 없으면 400 evidence_required. 클라이언트는 먼저
+ *   POST /api/ops/rooms/[roomId]/no-show-evidence 로 사진+GPS+타임스탬프를
+ *   올리고 받은 evidenceId를 여기에 넘긴다.
+ *   action='clear'(노쇼 취소)는 증거 불요 — 되돌리는 방향엔 마찰이 없다.
+ *
+ *   레거시 evidenceUrl 문자열은 계속 이벤트 payload에 기록만 한다. 그것만으로는
+ *   절대 통과시키지 않는다 (문자열은 위조 가능 — 증거력 0).
  */
 
 export async function POST(
@@ -54,6 +61,25 @@ export async function POST(
     if (!target) return NextResponse.json({ error: 'seat_not_assigned' }, { status: 404 });
 
     const evidenceUrl = typeof body.evidenceUrl === 'string' ? body.evidenceUrl.slice(0, 2048) : null;
+
+    // D12 게이트 — 증거 없는 노쇼는 만들 수 없다. evidenceId가 오면 그 행이
+    // 정말 이 좌석의 것인지까지 확인한다(다른 좌석 증거 재사용 차단).
+    let evidenceId: string | null = null;
+    if (action === 'mark') {
+      const lookup = await hasEvidenceFor(supabase, {
+        roomVehicleId,
+        seatNumber,
+        evidenceId: typeof body.evidenceId === 'string' ? body.evidenceId : null,
+      });
+      if (!lookup.found) {
+        return NextResponse.json(
+          { error: 'evidence_required', message: '현장 사진·위치 증거를 먼저 남겨야 노쇼 처리할 수 있어요.' },
+          { status: 400 },
+        );
+      }
+      evidenceId = lookup.evidenceId;
+    }
+
     const patch =
       action === 'mark'
         ? { absent_at: new Date().toISOString() }
@@ -72,6 +98,8 @@ export async function POST(
       payload: {
         room_vehicle_id: roomVehicleId,
         seat_number: seatNumber,
+        // 감사추적 완성: 어떤 증거 행이 이 비가역 액션을 정당화했는가.
+        ...(evidenceId ? { evidence_id: evidenceId } : {}),
         ...(evidenceUrl ? { evidence_url: evidenceUrl } : {}),
       },
     }).catch(() => undefined);
@@ -83,7 +111,7 @@ export async function POST(
       kind: action === 'mark' ? 'absent' : 'absent_cleared',
     });
 
-    return NextResponse.json({ ok: true, seatNumber, action });
+    return NextResponse.json({ ok: true, seatNumber, action, evidenceId });
   } catch (error) {
     console.error('POST /api/ops/rooms/[roomId]/absent error:', error);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
