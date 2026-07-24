@@ -20,7 +20,7 @@
  */
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { Camera, ChevronDown, ChevronUp, MapPin, Play, QrCode, RefreshCw, Users, X } from 'lucide-react';
+import { Camera, ChevronDown, ChevronUp, MapPin, Palette, Play, QrCode, RefreshCw, Users, X } from 'lucide-react';
 import SeatMap from '@/components/ops/SeatMap';
 import GuideGuestCard, { channelLabel, statusMeta } from '@/components/tour-mode/guide/GuideGuestCard';
 import { useTourManifest, type ManifestAssignment } from '@/hooks/useTourManifest';
@@ -32,6 +32,10 @@ import {
   gateStatus,
   type RosterRow,
 } from '@/lib/ops/seating/dashboard';
+import {
+  buildPickupGroupLegend,
+  buildPickupSeatAccents,
+} from '@/lib/ops/seating/pickupGroupColor';
 
 type Seg = 'roster' | 'seats';
 
@@ -59,6 +63,8 @@ export default function GuideSeatDashboard({
   // D12 — [노쇼 처리] 탭이 여는 증거 캡처 시트의 대상 좌석.
   const [evidenceTarget, setEvidenceTarget] = useState<SeatTarget | null>(null);
   const [qrOpen, setQrOpen] = useState(false);
+  // §5.4b 픽업그룹 색 오버레이 — 기본 OFF (상태색 단독 판독이 기본 뷰).
+  const [pickupColors, setPickupColors] = useState(false);
   const [busy, setBusy] = useState(false);
   const [note, setNote] = useState<string | null>(null);
 
@@ -74,6 +80,8 @@ export default function GuideSeatDashboard({
     [bookings, assignments],
   );
   const gate = useMemo(() => gateStatus(assignments), [assignments]);
+  // 색은 canonical 픽업 키에서 결정론적으로 파생 — 그룹이 늘거나 줄어도 불변.
+  const pickupLegend = useMemo(() => buildPickupGroupLegend(groups.map((g) => g.group)), [groups]);
   const highlightBookingId = hoverBookingId ?? cardBookingId;
   const highlightSeats = useMemo(
     () =>
@@ -157,6 +165,8 @@ export default function GuideSeatDashboard({
   // ── styling ───────────────────────────────────────────────────────────────
   const seatVehicleFor = (roomVehicleId: string): ManifestAssignment[] =>
     assignments.filter((a) => a.room_vehicle_id === roomVehicleId);
+  const accentsFor = (rows: ManifestAssignment[]) =>
+    pickupColors ? buildPickupSeatAccents(pickupLegend, rows) : undefined;
 
   return (
     <section className="mt-6" data-testid="guide-seat-dashboard">
@@ -206,11 +216,26 @@ export default function GuideSeatDashboard({
             </button>
           ))}
         </div>
+        {/* §5.4b — 픽업 순서 운영 뷰: 좌석 테두리를 픽업그룹 색으로 칠한다. */}
+        <button
+          type="button"
+          onClick={() => setPickupColors((v) => !v)}
+          aria-pressed={pickupColors}
+          className={`flex h-9 shrink-0 items-center gap-1.5 rounded-full px-3 text-xs font-bold ${
+            pickupColors
+              ? 'bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]'
+              : 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]'
+          }`}
+          data-testid="pickup-colors-btn"
+        >
+          <Palette size={14} aria-hidden />
+          픽업 색
+        </button>
         <button
           type="button"
           onClick={() => setQrOpen(true)}
           disabled={!anchorRoomId}
-          className="flex h-9 items-center gap-1.5 rounded-full bg-[var(--tr-ink)] px-3 text-xs font-bold text-[var(--tr-canvas)] disabled:opacity-40"
+          className="flex h-9 shrink-0 items-center gap-1.5 rounded-full bg-[var(--tr-ink)] px-3 text-xs font-bold text-[var(--tr-canvas)] disabled:opacity-40"
           data-testid="checkin-qr-btn"
         >
           <QrCode size={14} aria-hidden />
@@ -319,6 +344,38 @@ export default function GuideSeatDashboard({
 
         {/* ── 좌석판 ── */}
         <div className={`space-y-4 ${seg === 'seats' ? '' : 'hidden'} sm:block`} data-testid="seat-view">
+          {/* 색 범례 — 색 단독 판독 금지(§5.4b): 번호 배지 + 픽업지 이름이 함께 온다. */}
+          {pickupColors && pickupLegend.length > 0 && (
+            <ul className="flex flex-wrap gap-1.5" data-testid="pickup-legend">
+              {pickupLegend.map((entry) => (
+                <li
+                  key={entry.key}
+                  className="flex items-center gap-1.5 rounded-full border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2.5 py-1"
+                  data-testid="pickup-legend-item"
+                  data-pickup-key={entry.key}
+                  data-pickup-color={entry.color ?? ''}
+                >
+                  <span
+                    aria-hidden
+                    className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full border-2 text-[9px] font-bold"
+                    style={
+                      entry.color
+                        ? { borderColor: entry.color, color: entry.color }
+                        : { borderColor: 'var(--tr-hairline)', color: 'var(--tr-ink-3)' }
+                    }
+                  >
+                    {entry.index}
+                  </span>
+                  <span className="text-[11px] font-semibold text-[var(--tr-ink-2)]">
+                    {entry.firstPickupTime ? `${entry.firstPickupTime} · ` : ''}
+                    {entry.displayName}
+                    {entry.color ? '' : ' (색 없음)'}
+                  </span>
+                  <span className="text-[11px] text-[var(--tr-ink-3)] tabular-nums">{entry.paxCount}명</span>
+                </li>
+              ))}
+            </ul>
+          )}
           {vehicles.length === 0 && (
             <p className="rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-6 text-center text-sm text-[var(--tr-ink-3)]">
               차량이 아직 배정되지 않았어요.
@@ -335,6 +392,7 @@ export default function GuideSeatDashboard({
                     layout={v.layout}
                     seatStates={buildSeatStateMap(v.layout, seatVehicleFor(v.roomVehicleId))}
                     highlightSeats={highlightSeats}
+                    seatAccents={accentsFor(seatVehicleFor(v.roomVehicleId))}
                     onSeatTap={(n) => onSeatTap(v.roomVehicleId, n)}
                     ariaLabel="좌석판"
                   />

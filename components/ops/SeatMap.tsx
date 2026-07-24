@@ -89,6 +89,32 @@ const SEAT_STYLE: Record<
 
 const HL_STROKE = 'var(--tr-seat-hl, #2563eb)';
 const HL_STROKE_WIDTH = 3;
+/** 그룹 액센트 테두리 — 상태 테두리보다 굵고 하이라이트보다 얇다 (아래 우선순위 주석). */
+const ACCENT_STROKE_WIDTH = 2.5;
+
+/**
+ * 좌석 위에 겹치는 "소속" 표시 (§5.4b 픽업그룹 색 오버레이 등).
+ *
+ * 🔴 우선순위 규약 — 상태색이 그룹색을 이긴다:
+ *   · 채움(fill)·숫자 잉크는 언제나 좌석 상태(체크인/노쇼/내 좌석/잠금)의 것이다.
+ *     운영상 "이 사람이 탔는가"가 "이 사람이 어디서 타는가"보다 항상 중요하고,
+ *     면적이 큰 채움이 그 질문의 답이어야 한다.
+ *   · 그룹색은 테두리에만 얹는다 — 상태를 가리지 않으면서 스캔은 가능한 위치.
+ *   · 하이라이트(명단 행 hover)는 그 테두리마저 덮는다: 가이드가 방금 "이 팀"이라고
+ *     지목한 일시적 의도가, 항상 켜져 있는 그룹 배경보다 우선한다.
+ *   → 최종: 하이라이트 > 그룹 액센트 > 상태 테두리. 채움은 언제나 상태.
+ *
+ * 색만으로 뜻이 전달되면 안 되므로 label(좌석 안 작은 배지) + description(aria)이
+ * 함께 온다. 소비 화면이 도메인 의미를 정하고, SeatMap은 그리기만 한다.
+ */
+export interface SeatAccentDecoration {
+  /** 테두리 색 (literal 또는 CSS 변수). */
+  color: string;
+  /** 좌석 안에 찍히는 짧은 배지 (예: 픽업 그룹 번호). */
+  label?: string;
+  /** aria-label 끝에 덧붙는 설명 (예: "픽업 2 롯데호텔"). */
+  description?: string;
+}
 
 export interface SeatMapProps {
   /** ops_vehicle_layouts.layout_json (또는 layouts.ts의 시드 정의). */
@@ -97,6 +123,11 @@ export interface SeatMapProps {
   seatStates?: Record<number, SeatState>;
   /** party 좌석 하이라이트 (명단 행 hover/탭 — §5.4b 양방향 내비게이션). */
   highlightSeats?: number[];
+  /**
+   * 좌석번호 → 소속 액센트 (선택). 지정된 좌석만 테두리색+배지를 얹는다.
+   * 미지정이면 이 컴포넌트의 기존 동작과 100% 동일 (순수 additive).
+   */
+  seatAccents?: Record<number, SeatAccentDecoration>;
   /** 좌석 탭 콜백. readOnly거나 미지정이면 좌석이 인터랙티브하지 않다. */
   onSeatTap?: (seatNumber: number) => void;
   /** true면 순수 표시 전용 (admin 미리보기 등). */
@@ -114,6 +145,7 @@ export default function SeatMap({
   layout,
   seatStates = {},
   highlightSeats,
+  seatAccents,
   onSeatTap,
   readOnly = false,
   seatLabels = {},
@@ -205,14 +237,21 @@ export default function SeatMap({
         const state: SeatState = seatStates[s.n] ?? 'available';
         const st = SEAT_STYLE[state];
         const hl = highlighted.has(s.n);
+        const accent = seatAccents?.[s.n];
         const label = seatLabels[s.n];
-        const aria = `${label ? `${label} — ` : ''}seat ${s.n} (${state})`;
+        const aria = `${label ? `${label} — ` : ''}seat ${s.n} (${state})${
+          accent?.description ? ` — ${accent.description}` : ''
+        }`;
+        // 하이라이트 > 그룹 액센트 > 상태 (채움은 언제나 상태 — 위 규약 주석).
+        const stroke = hl ? HL_STROKE : accent ? accent.color : st.stroke;
+        const strokeWidth = hl ? HL_STROKE_WIDTH : accent ? ACCENT_STROKE_WIDTH : st.strokeWidth;
         return (
           <g
             key={s.n}
             data-seat={s.n}
             data-state={state}
-            className={`sm-seat sm-seat--${state}${hl ? ' sm-seat--hl' : ''}`}
+            data-accent={accent?.label ?? undefined}
+            className={`sm-seat sm-seat--${state}${hl ? ' sm-seat--hl' : ''}${accent ? ' sm-seat--accent' : ''}`}
             role={interactive ? 'button' : 'img'}
             aria-label={aria}
             aria-disabled={interactive ? undefined : true}
@@ -228,8 +267,8 @@ export default function SeatMap({
               height={CELL}
               rx={7}
               fill={st.fill}
-              stroke={hl ? HL_STROKE : st.stroke}
-              strokeWidth={hl ? HL_STROKE_WIDTH : st.strokeWidth}
+              stroke={stroke}
+              strokeWidth={strokeWidth}
             />
             <text
               x={x + CELL / 2}
@@ -244,6 +283,21 @@ export default function SeatMap({
             >
               {s.n}
             </text>
+            {/* 색맹 대비 2차 신호 — 그룹 번호 배지 (색과 항상 함께 온다). */}
+            {accent?.label && (
+              <text
+                x={x + CELL - 4.5}
+                y={y + 6.5}
+                fontSize={8}
+                fontWeight={700}
+                fill={accent.color}
+                textAnchor="end"
+                dominantBaseline="hanging"
+                style={{ pointerEvents: 'none' }}
+              >
+                {accent.label}
+              </text>
+            )}
           </g>
         );
       })}
