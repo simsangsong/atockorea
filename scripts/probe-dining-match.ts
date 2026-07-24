@@ -5,7 +5,7 @@
  *
  *   node --env-file=.env.local --import tsx scripts/probe-dining-match.ts <lat> <lng> [radius]
  */
-import { kakaoCategorySearch } from '@/lib/ops/dining/kakao.server';
+import { kakaoCategoryDocs } from '@/lib/ops/dining/kakao.server';
 import { googleNearbyRestaurants } from '@/lib/ops/dining/google.server';
 import { nameSimilarity } from '@/lib/ops/dining/merge.server';
 import { haversineM } from '@/lib/tour-room/geo';
@@ -15,8 +15,8 @@ const lng = Number(process.argv[3] ?? 126.9425);
 const radiusM = Number(process.argv[4] ?? 1500);
 
 async function main() {
-  const fd6 = await kakaoCategorySearch({ lat, lng, radiusM, group: 'FD6' });
-  const ce7 = await kakaoCategorySearch({ lat, lng, radiusM, group: 'CE7' });
+  const fd6 = await kakaoCategoryDocs({ lat, lng, radiusM, group: 'FD6' });
+  const ce7 = await kakaoCategoryDocs({ lat, lng, radiusM, group: 'CE7' });
   const kakao = [...fd6, ...ce7];
   const google = (await googleNearbyRestaurants({ lat, lng, radiusM })).filter(
     (g) => typeof g.rating === 'number',

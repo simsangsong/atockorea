@@ -6,7 +6,7 @@
  *
  *   node --env-file=.env.local --import tsx scripts/probe-dining-funnel.ts <lat> <lng> [radius]
  */
-import { kakaoCategorySearch } from '@/lib/ops/dining/kakao.server';
+import { kakaoCategoryDocs } from '@/lib/ops/dining/kakao.server';
 import { googleNearbyRestaurants } from '@/lib/ops/dining/google.server';
 import { mergeKakaoGoogle } from '@/lib/ops/dining/merge.server';
 import { qualityFilter } from '@/lib/ops/dining/places';
@@ -18,8 +18,8 @@ const radiusM = Number(process.argv[4] ?? 1500);
 async function main() {
   console.log(`probe @ ${lat},${lng} r=${radiusM}m\n`);
 
-  const fd6 = await kakaoCategorySearch({ lat, lng, radiusM, group: 'FD6' });
-  const ce7 = await kakaoCategorySearch({ lat, lng, radiusM, group: 'CE7' });
+  const fd6 = await kakaoCategoryDocs({ lat, lng, radiusM, group: 'FD6' });
+  const ce7 = await kakaoCategoryDocs({ lat, lng, radiusM, group: 'CE7' });
   const kakaoDocs = [...fd6, ...ce7];
   console.log(`① kakao   FD6=${fd6.length} CE7=${ce7.length} → ${kakaoDocs.length} docs`);
 

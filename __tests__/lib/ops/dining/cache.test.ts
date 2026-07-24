@@ -223,6 +223,50 @@ describe('collectCell', () => {
       places: [],
     });
   });
+
+  it('🔴 never records a REFUSED sweep as an empty area', async () => {
+    // The measured incident (2026-07-25): Kakao answered "API limit has been
+    // exceeded" (HTTP 400, code -10), the fetch helper returned [], and
+    // collectCell happily wrote place_count: 0 with a 90-day TTL. Four real
+    // Jeju tourist areas — Cheonjeyeon Falls, Camellia Hill, Osulloc, Hallasan
+    // 1100 Wetland — were cached as restaurant-free until October off the back
+    // of a transient quota error. Nothing may be written when the sweep failed.
+    process.env.KAKAO_REST_API_KEY = 'test-key';
+    const realFetch = globalThis.fetch;
+    const fetchSpy = jest.fn(async () =>
+      new Response('{"errorType":"BadRequest","message":"API limit has been exceeded.","code":-10}', {
+        status: 400,
+      }),
+    );
+    globalThis.fetch = fetchSpy as unknown as typeof fetch;
+    try {
+      const { client, tables } = stubClient(() => ({ data: null }));
+      await expect(collectCell(client, { lat: CENTER.lat, lng: CENTER.lng })).resolves.toEqual({
+        hit: false,
+        places: [],
+      });
+      // The cell must stay COLD so the next request retries it.
+      expect(tables).toEqual([]);
+    } finally {
+      globalThis.fetch = realFetch;
+    }
+  });
+
+  it('does not widen the radius after a refused sweep', async () => {
+    // Widening spends two more calls that will be refused for the same reason.
+    process.env.KAKAO_REST_API_KEY = 'test-key';
+    const realFetch = globalThis.fetch;
+    const fetchSpy = jest.fn(async () => new Response('{"code":-10}', { status: 400 }));
+    globalThis.fetch = fetchSpy as unknown as typeof fetch;
+    try {
+      const { client } = stubClient(() => ({ data: null }));
+      await collectCell(client, { lat: CENTER.lat, lng: CENTER.lng });
+      // FD6 + CE7 at the initial radius only — no widened second sweep.
+      expect(fetchSpy).toHaveBeenCalledTimes(2);
+    } finally {
+      globalThis.fetch = realFetch;
+    }
+  });
 });
 
 describe('applyFeedbackScores', () => {
