@@ -183,6 +183,7 @@ export default function RoomShell({
   chatActivityKey,
   initialTab,
   backHref,
+  headerTitleSlot,
 }: {
   title: string;
   subtitle?: string;
@@ -218,6 +219,12 @@ export default function RoomShell({
   /** Optional in-app back target (e.g. guide → console, guest → tour-mode home).
    *  Renders a back chevron so phone users aren't stuck exiting the whole app. */
   backHref?: string;
+  /**
+   * B1 (§11.B) — replaces the title/subtitle block in the header. Used by the
+   * GUIDE view only to swap the tour title for the seat strip; when absent the
+   * classic title+badge+subtitle renders (customer/driver unchanged).
+   */
+  headerTitleSlot?: ReactNode;
 }) {
   const router = useRouter();
   const [tab, setTab] = useState<RoomTab>(initialTab ?? (home ? 'home' : 'chat'));
@@ -382,26 +389,32 @@ export default function RoomShell({
             </button>
           )}
           <div className="min-w-0 flex-1 py-1.5">
-            <div className="flex items-center gap-2">
-              <h1 className="tr-title truncate text-[var(--tr-ink)]">{title}</h1>
-              <span
-                className={`tr-meta shrink-0 rounded-full px-2 py-0.5 font-semibold ${badge.className}`}
-                data-testid="lifecycle-badge"
-              >
-                {badge.label}
-              </span>
-            </div>
-            {degraded && connectionHint ? (
-              <p className="tr-meta mt-0.5 flex items-center gap-1.5 truncate font-medium text-[var(--tr-accent-deep)]">
-                <span
-                  className={`h-1.5 w-1.5 rounded-full ${
-                    connection === 'offline' ? 'bg-[var(--tr-danger)]' : 'animate-pulse bg-[var(--tr-accent)]'
-                  }`}
-                />
-                {connectionHint}
-              </p>
+            {headerTitleSlot ? (
+              headerTitleSlot
             ) : (
-              subtitle && <p className="tr-meta mt-0.5 truncate text-[var(--tr-ink-3)]">{subtitle}</p>
+              <>
+                <div className="flex items-center gap-2">
+                  <h1 className="tr-title truncate text-[var(--tr-ink)]">{title}</h1>
+                  <span
+                    className={`tr-meta shrink-0 rounded-full px-2 py-0.5 font-semibold ${badge.className}`}
+                    data-testid="lifecycle-badge"
+                  >
+                    {badge.label}
+                  </span>
+                </div>
+                {degraded && connectionHint ? (
+                  <p className="tr-meta mt-0.5 flex items-center gap-1.5 truncate font-medium text-[var(--tr-accent-deep)]">
+                    <span
+                      className={`h-1.5 w-1.5 rounded-full ${
+                        connection === 'offline' ? 'bg-[var(--tr-danger)]' : 'animate-pulse bg-[var(--tr-accent)]'
+                      }`}
+                    />
+                    {connectionHint}
+                  </p>
+                ) : (
+                  subtitle && <p className="tr-meta mt-0.5 truncate text-[var(--tr-ink-3)]">{subtitle}</p>
+                )}
+              </>
             )}
           </div>
           <button

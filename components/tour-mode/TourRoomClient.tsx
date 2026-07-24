@@ -36,6 +36,7 @@ import LobbyCard, { firstPickup } from '@/components/tour-mode/LobbyCard';
 import PickupBoard from '@/components/tour-mode/PickupBoard';
 import RoomMapTab from '@/components/tour-mode/map/RoomMapTab';
 import RoomShell from '@/components/tour-mode/RoomShell';
+import GuideSeatStrip from '@/components/tour-mode/guide/GuideSeatStrip';
 import SosButton from '@/components/tour-mode/SosButton';
 import ConciergePanel from '@/components/tour-mode/ConciergePanel';
 import ConciergeEntryRow from '@/components/tour-mode/ConciergeEntryRow';
@@ -165,6 +166,9 @@ export default function TourRoomClient({ bookingId }: { bookingId: string }) {
   // typing). Independent of `locale` (the 5-locale UI chrome) so a guest can
   // read operator bubbles in, say, French while the app stays in English.
   const [chatLocaleOverride, setChatLocaleOverride] = useState<string>(() => readChatLocaleOverride(bookingId));
+  // B1 (§11.B) — the room token is scrubbed from the URL after join; keep it so
+  // the GUIDE-only seat strip can call the staff manifest endpoint.
+  const [authToken, setAuthToken] = useState<string | null>(null);
 
   // T1.12: language switch re-joins so the participant row (and with it the
   // room's translation targeting, D-8) follows the new locale — and we persist
@@ -202,6 +206,7 @@ export default function TourRoomClient({ bookingId }: { bookingId: string }) {
 
     const url = new URL(window.location.href);
     const token = url.searchParams.get('rt');
+    if (token) setAuthToken(token); // B1 — retained for the guide seat strip
     const guest = consumeGuestCreds(bookingId);
     const override = readLocaleOverride(bookingId);
 
@@ -292,6 +297,7 @@ export default function TourRoomClient({ bookingId }: { bookingId: string }) {
       onLocaleChange={changeLocale}
       chatLocaleOverride={chatLocaleOverride}
       onChatLocaleChange={changeChatLocale}
+      authToken={authToken}
     />
   );
 }
@@ -303,6 +309,7 @@ function TourRoomLive({
   onLocaleChange,
   chatLocaleOverride,
   onChatLocaleChange,
+  authToken,
 }: {
   bookingId: string;
   data: TourRoomJoinResult;
@@ -310,6 +317,8 @@ function TourRoomLive({
   onLocaleChange: (locale: RoomLocale) => void;
   chatLocaleOverride: string;
   onChatLocaleChange: (code: string) => void;
+  /** B1 — room token retained by the parent for the guide seat strip. */
+  authToken: string | null;
 }) {
   const { settings } = useTourRoomSettings();
   const systemDark = useMediaQuery('(prefers-color-scheme: dark)');
@@ -676,6 +685,15 @@ function TourRoomLive({
       <RoomShell
       title={snapshot.booking?.tours?.title ?? 'Your tour'}
       subtitle={[snapshot.booking?.tour_date, snapshot.booking?.tours?.city].filter(Boolean).join(' · ')}
+      headerTitleSlot={
+        viewerRole === 'guide' && authToken ? (
+          <GuideSeatStrip
+            bookingId={bookingId}
+            token={authToken}
+            fallbackTitle={snapshot.booking?.tours?.title ?? undefined}
+          />
+        ) : undefined
+      }
       lifecycle={data.lifecycle}
       connection={connection}
       locale={locale}
