@@ -17,7 +17,15 @@ const SUPPORT_EMAIL = 'support@atockorea.com';
 
 const COPY: Record<
   RoomLocale,
-  { title: string; body: string; lostTitle: string; lostAction: string; lostSent: string; lostPrompt: string }
+  {
+    title: string;
+    body: string;
+    lostTitle: string;
+    lostAction: string;
+    lostSent: string;
+    lostFailed: string;
+    lostPrompt: string;
+  }
 > = {
   en: {
     title: 'This tour has ended',
@@ -25,6 +33,7 @@ const COPY: Record<
     lostTitle: 'Left something behind?',
     lostAction: 'Report a lost item',
     lostSent: 'Reported — the driver and guide will check the vehicle. ✓',
+    lostFailed: "Couldn't send the report — please email us instead.",
     lostPrompt: 'What did you leave, and where? (e.g. black wallet, seat 12)',
   },
   ko: {
@@ -33,6 +42,7 @@ const COPY: Record<
     lostTitle: '두고 내린 물건이 있나요?',
     lostAction: '분실물 신고하기',
     lostSent: '신고됐어요 — 기사님·가이드가 차량을 확인할 거예요. ✓',
+    lostFailed: '신고를 보내지 못했어요 — 이메일로 알려주세요.',
     lostPrompt: '무엇을, 어디에 두고 내리셨나요? (예: 검은 지갑, 12번 좌석)',
   },
   ja: {
@@ -41,6 +51,7 @@ const COPY: Record<
     lostTitle: 'お忘れ物はありませんか？',
     lostAction: '忘れ物を報告する',
     lostSent: '報告しました — ドライバーとガイドが車内を確認します。✓',
+    lostFailed: '報告を送信できませんでした — メールでお知らせください。',
     lostPrompt: '何を、どこに忘れましたか？（例：黒い財布、12番座席）',
   },
   es: {
@@ -49,6 +60,7 @@ const COPY: Record<
     lostTitle: '¿Olvidaste algo?',
     lostAction: 'Reportar objeto perdido',
     lostSent: 'Reportado: el conductor y el guía revisarán el vehículo. ✓',
+    lostFailed: 'No se pudo enviar el reporte — escríbenos por correo.',
     lostPrompt: '¿Qué olvidaste y dónde? (ej.: cartera negra, asiento 12)',
   },
   zh: {
@@ -57,6 +69,7 @@ const COPY: Record<
     lostTitle: '有物品遗落吗？',
     lostAction: '申报失物',
     lostSent: '已申报——司机和导游会检查车辆。✓',
+    lostFailed: '申报未能发送 — 请通过邮件告知我们。',
     lostPrompt: '您遗落了什么？在哪里？（例：黑色钱包，12号座位）',
   },
 };
@@ -77,7 +90,7 @@ export default function EndedCard({
   tourDate?: string | null;
 }) {
   const copy = COPY[locale];
-  const [state, setState] = useState<'idle' | 'busy' | 'sent'>('idle');
+  const [state, setState] = useState<'idle' | 'busy' | 'sent' | 'failed'>('idle');
   // M1 — in-app prompt (native dialogs banned on tour surfaces, M-D6).
   const SEND: Record<RoomLocale, string> = { en: 'Send', ko: '보내기', ja: '送信', es: 'Enviar', zh: '发送' };
   const CANCEL: Record<RoomLocale, string> = { en: 'Cancel', ko: '취소', ja: 'キャンセル', es: 'Cancelar', zh: '取消' };
@@ -100,9 +113,12 @@ export default function EndedCard({
         headers: { 'Content-Type': 'application/json', 'x-tour-room-auth': roomSession },
         body: JSON.stringify({ type: 'lost_item', ...(note.trim() ? { note: note.trim() } : {}) }),
       });
-      setState(res.ok ? 'sent' : 'idle');
+      // 🔴 A1.6 — 'idle' put the button back untouched, so a report that never
+      // arrived looked exactly like one not yet sent. The email path below is a
+      // real fallback; failure routes to it instead of hiding.
+      setState(res.ok ? 'sent' : 'failed');
     } catch {
-      setState('idle');
+      setState('failed');
     }
   };
 
@@ -119,7 +135,7 @@ export default function EndedCard({
           <p className="tr-label mt-2 font-semibold text-[var(--tr-safe)]" data-testid="lost-item-sent">
             {copy.lostSent}
           </p>
-        ) : canSignal ? (
+        ) : canSignal && state !== 'failed' ? (
           <button
             type="button"
             disabled={state === 'busy'}
@@ -130,13 +146,23 @@ export default function EndedCard({
             🧳 {copy.lostAction}
           </button>
         ) : (
-          <a
-            href={`mailto:${SUPPORT_EMAIL}?subject=${subject}`}
-            className="tr-label mt-2 inline-flex min-h-[40px] items-center gap-1.5 rounded-full bg-[var(--tr-accent)] px-4 font-semibold text-[var(--tr-bubble-me-ink)]"
-          >
-            <IconMail size={14} aria-hidden />
-            {copy.lostAction}
-          </a>
+          <>
+            {state === 'failed' && (
+              <p
+                className="tr-label mt-2 font-medium text-[var(--tr-danger)]"
+                data-testid="lost-item-failed"
+              >
+                {copy.lostFailed}
+              </p>
+            )}
+            <a
+              href={`mailto:${SUPPORT_EMAIL}?subject=${subject}`}
+              className="tr-label mt-2 inline-flex min-h-[40px] items-center gap-1.5 rounded-full bg-[var(--tr-accent)] px-4 font-semibold text-[var(--tr-bubble-me-ink)]"
+            >
+              <IconMail size={14} aria-hidden />
+              {copy.lostAction}
+            </a>
+          </>
         )}
       </div>
       {sheet}

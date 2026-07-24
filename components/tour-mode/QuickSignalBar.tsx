@@ -7,7 +7,7 @@
  * Fires POST /signals; the server fans out the 5-locale capsule.
  */
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useConfirmSheet } from '@/components/tour-mode/ConfirmSheet';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
@@ -19,6 +19,7 @@ const COPY: Record<
     lost: string;
     lostConfirm: string;
     sent: string;
+    failed: string;
     pickup: string;
     pickupConfirm: string;
     drop: string;
@@ -33,6 +34,7 @@ const COPY: Record<
     lost: '🧭 I’m lost',
     lostConfirm: 'Share your current location with the guide once?',
     sent: 'Sent to your guide ✓',
+    failed: 'Not sent — tell your guide in the chat below.',
     pickup: '🚕 Pick me up here',
     pickupConfirm: 'Share your current location once so the driver can come to you?',
     drop: '📍 Change drop-off',
@@ -46,6 +48,7 @@ const COPY: Record<
     lost: '🧭 길을 잃었어요',
     lostConfirm: '현재 위치를 가이드에게 1회 공유할까요?',
     sent: '가이드에게 전달됐어요 ✓',
+    failed: '전달되지 않았어요 — 아래 채팅으로 알려주세요.',
     pickup: '🚕 여기로 픽업',
     pickupConfirm: '기사님이 올 수 있도록 현재 위치를 1회 공유할까요?',
     drop: '📍 드랍 변경',
@@ -59,6 +62,7 @@ const COPY: Record<
     lost: '🧭 道に迷いました',
     lostConfirm: '現在地をガイドに1回共有しますか?',
     sent: 'ガイドに送信しました ✓',
+    failed: '送信できませんでした — 下のチャットでお知らせください。',
     pickup: '🚕 ここに迎えに来て',
     pickupConfirm: 'ドライバーが向かえるよう、現在地を1回共有しますか?',
     drop: '📍 降車地点を変更',
@@ -72,6 +76,7 @@ const COPY: Record<
     lost: '🧭 Estoy perdido',
     lostConfirm: '¿Compartir tu ubicación actual con el guía una vez?',
     sent: 'Enviado a tu guía ✓',
+    failed: 'No se envió — avisa a tu guía en el chat de abajo.',
     pickup: '🚕 Recógeme aquí',
     pickupConfirm: '¿Compartir tu ubicación una vez para que el conductor vaya por ti?',
     drop: '📍 Cambiar bajada',
@@ -85,6 +90,7 @@ const COPY: Record<
     lost: '🧭 我迷路了',
     lostConfirm: '向导游一次性共享当前位置?',
     sent: '已发送给导游 ✓',
+    failed: '未能发送 — 请在下方聊天中告诉导游。',
     pickup: '🚕 来这里接我',
     pickupConfirm: '一次性共享当前位置，让司机来接您？',
     drop: '📍 更改下车点',
@@ -123,7 +129,7 @@ export default function QuickSignalBar({
 }) {
   const copy = COPY[locale];
   const [busy, setBusy] = useState<string | null>(null);
-  const [sentAt, setSentAt] = useState(0);
+  const [outcome, setOutcome] = useState<'sent' | 'failed' | null>(null);
   // M1 — in-app confirm/prompt sheet (native dialogs banned on tour surfaces).
   const { confirm, prompt, sheet } = useConfirmSheet({ confirm: copy.ok, cancel: copy.cancel });
 
@@ -158,21 +164,39 @@ export default function QuickSignalBar({
         headers: { 'Content-Type': 'application/json', 'x-tour-room-auth': roomSession },
         body: JSON.stringify({ type, ...(coords ?? {}), ...(note ? { note } : {}) }),
       });
-      if (res.ok) setSentAt(Date.now());
+      // 🔴 A1.6 — a help signal that did not arrive must not look like one that
+      // did. Saying nothing leaves the bar exactly as it was before the tap, so
+      // a guest who pressed "I'm lost" walks away believing the guide knows.
+      // The chat below IS the fallback — but only if we say so.
+      setOutcome(res.ok ? 'sent' : 'failed');
     } catch {
-      /* the chat composer remains the fallback */
+      setOutcome('failed');
     } finally {
       setBusy(null);
     }
   };
 
-  const justSent = Date.now() - sentAt < 4000;
+  // The outcome line replaces the chips, so it has to clear itself. It used to
+  // be derived from Date.now() in render with nothing scheduled to re-render,
+  // which in a quiet room left "Sent ✓" up — and the chips unreachable —
+  // until some unrelated update happened to arrive.
+  useEffect(() => {
+    if (!outcome) return;
+    const timer = setTimeout(() => setOutcome(null), outcome === 'sent' ? 4000 : 6000);
+    return () => clearTimeout(timer);
+  }, [outcome]);
 
   return (
     <div className="mb-1.5 flex items-center gap-1.5 overflow-x-auto" data-testid="quick-signal-bar">
-      {justSent ? (
-        <span className="tr-label px-1 py-1 font-semibold text-[var(--tr-safe)]" aria-live="polite">
-          {copy.sent}
+      {outcome ? (
+        <span
+          className={`tr-label px-1 py-1 font-semibold ${
+            outcome === 'sent' ? 'text-[var(--tr-safe)]' : 'text-[var(--tr-danger)]'
+          }`}
+          aria-live="polite"
+          data-testid={outcome === 'sent' ? 'quick-signal-sent' : 'quick-signal-failed'}
+        >
+          {outcome === 'sent' ? copy.sent : copy.failed}
         </span>
       ) : (
         (

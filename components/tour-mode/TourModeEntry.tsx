@@ -33,6 +33,8 @@ export default function TourModeEntry() {
 
   const [bookings, setBookings] = useState<TourModeBooking[] | null>(null);
   const [signedIn, setSignedIn] = useState<boolean | null>(null);
+  /** Distinct from `signedIn === false`: we could not ask, so we do not know. */
+  const [loadFailed, setLoadFailed] = useState(false);
   const [guestBookingId, setGuestBookingId] = useState('');
   const [guestEmail, setGuestEmail] = useState('');
   const [guestName, setGuestName] = useState('');
@@ -74,11 +76,20 @@ export default function TourModeEntry() {
           setSignedIn(false);
           return;
         }
+        // 🔴 A1.6 — a failed load is not an empty account. Treating any
+        // response as data told a guest with a confirmed tour "no upcoming
+        // confirmed tours on this account" the night before their tour, which
+        // reads as "your booking is gone" and sends them to support.
+        if (!res.ok) {
+          setLoadFailed(true);
+          return;
+        }
         const json = (await res.json().catch(() => ({}))) as { bookings?: TourModeBooking[] };
         setSignedIn(true);
         setBookings(json.bookings ?? []);
       } catch {
-        if (!cancelled) setSignedIn(false);
+        // Same reasoning: a network failure is not a signed-out session.
+        if (!cancelled) setLoadFailed(true);
       }
     })();
     return () => {
@@ -120,7 +131,17 @@ export default function TourModeEntry() {
 
         <section className="mt-8">
           <h2 className="tr-title text-[var(--tr-ink)]">{copy.myBookings}</h2>
-          {signedIn === null && <p className="tr-card-text mt-2 text-[var(--tr-ink-3)]">{copy.loading}</p>}
+          {loadFailed && (
+            <p
+              className="tr-card-text mt-2 leading-relaxed text-[var(--tr-danger)]"
+              data-testid="entry-load-failed"
+            >
+              {copy.loadFailed}
+            </p>
+          )}
+          {!loadFailed && signedIn === null && (
+            <p className="tr-card-text mt-2 text-[var(--tr-ink-3)]">{copy.loading}</p>
+          )}
           {signedIn === false && <p className="tr-card-text mt-2 text-[var(--tr-ink-2)]">{copy.signInHint}</p>}
           {signedIn === true && bookings !== null && bookings.length === 0 && (
             <p className="tr-card-text mt-2 text-[var(--tr-ink-2)]">{copy.noBookings}</p>
