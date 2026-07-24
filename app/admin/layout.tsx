@@ -30,6 +30,7 @@ import {
   Star,
   Toilet,
   UsersRound,
+  Utensils,
   X,
 } from 'lucide-react';
 import Logo from '@/components/Logo';
@@ -63,6 +64,7 @@ const adminMenuItems: AdminMenuItem[] = [
   { path: '/admin/cms', label: '콘텐츠 CMS', icon: Sparkles },
   { path: '/admin/match-pois', label: '매칭 POI 관리', icon: MapPin, badge: 'NEW' },
   { path: '/admin/facility-pins', label: '편의시설 핀', icon: Toilet, badge: 'NEW' },
+  { path: '/admin/dining-cache', label: '다이닝 캐시', icon: Utensils, badge: 'NEW' },
   { path: '/admin/analytics', label: '데이터 분석', icon: BarChart3 },
   { path: '/admin/chatbot-analytics', label: '챗봇 분석', icon: Bot, badge: 'NEW' },
   { path: '/admin/settings', label: '시스템 설정', icon: Settings },
@@ -101,6 +103,8 @@ const pathToBreadcrumb: Record<string, string> = {
   '/admin/upload': '이미지 업로드',
   '/admin/cms': '콘텐츠 CMS',
   '/admin/match-pois': '매칭 POI 관리',
+  '/admin/facility-pins': '편의시설 핀',
+  '/admin/dining-cache': '다이닝 캐시',
   '/admin/analytics': '데이터 분석',
   '/admin/chatbot-analytics': '챗봇 분석',
   '/admin/settings': '시스템 설정',

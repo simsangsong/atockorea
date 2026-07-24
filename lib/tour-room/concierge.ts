@@ -667,29 +667,55 @@ interface MessageLike {
   created_at?: string;
 }
 
-/** Latest geofence arrival → { spotTitle, content, poiKey, facilityPins }. */
-export function latestArrivalContext(messages: MessageLike[]): {
+export interface ArrivalContext {
   spotTitle: string | null;
   content: SpotArrivalContent | null;
   poiKey: string | null;
   facilityPins: FacilityPin[];
-} {
+}
+
+const EMPTY_ARRIVAL: ArrivalContext = { spotTitle: null, content: null, poiKey: null, facilityPins: [] };
+
+/**
+ * Metadata kinds that mean "the group is AT this spot now".
+ *
+ * `arrival_bundle` is not optional: the A0 one-tap bundle replaced the geofence
+ * `spot_arrival` on every operator-driven tour, so a bundle-only room used to
+ * hand the concierge no spot context at all — every restroom / photo / food ask
+ * fell back to "ask your guide" even though the answer was sitting in the feed.
+ */
+const ARRIVAL_KINDS = new Set(['spot_arrival', 'arrival_bundle']);
+
+function arrivalFrom(metadata: Record<string, unknown>): ArrivalContext {
+  const content = metadata.content;
+  const rawPins = metadata.facility_pins;
+  return {
+    spotTitle: typeof metadata.spot_title === 'string' ? metadata.spot_title : null,
+    content:
+      content && typeof content === 'object' && Object.keys(content as object).length > 0
+        ? (content as SpotArrivalContent)
+        : null,
+    poiKey: typeof metadata.poi_key === 'string' ? metadata.poi_key : null,
+    facilityPins: Array.isArray(rawPins) ? (rawPins as FacilityPin[]) : [],
+  };
+}
+
+/**
+ * Newest arrival → { spotTitle, content, poiKey, facilityPins }.
+ *
+ * An `approach_card` is only a WEAK fallback: it means "we are 1 km out", not
+ * "we are here", so it is used only when no real arrival exists in the window.
+ * That still beats a null context — the approaching stop is the one the guest
+ * is asking about.
+ */
+export function latestArrivalContext(messages: MessageLike[]): ArrivalContext {
+  let weak: ArrivalContext | null = null;
   for (let i = messages.length - 1; i >= 0; i -= 1) {
     const metadata = messages[i]?.metadata;
-    if (metadata?.kind === 'spot_arrival') {
-      const content = metadata.content;
-      const rawPins = metadata.facility_pins;
-      return {
-        spotTitle: typeof metadata.spot_title === 'string' ? metadata.spot_title : null,
-        content:
-          content && typeof content === 'object' && Object.keys(content as object).length > 0
-            ? (content as SpotArrivalContent)
-            : null,
-        poiKey: typeof metadata.poi_key === 'string' ? metadata.poi_key : null,
-        facilityPins: Array.isArray(rawPins) ? (rawPins as FacilityPin[]) : [],
-      };
-    }
+    if (!metadata || typeof metadata.kind !== 'string') continue;
+    if (ARRIVAL_KINDS.has(metadata.kind)) return arrivalFrom(metadata);
+    if (!weak && metadata.kind === 'approach_card') weak = arrivalFrom(metadata);
   }
-  return { spotTitle: null, content: null, poiKey: null, facilityPins: [] };
+  return weak ?? EMPTY_ARRIVAL;
 }
 

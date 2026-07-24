@@ -81,9 +81,37 @@ describe('ConciergePanel (V2.2)', () => {
     expect(global.fetch).not.toHaveBeenCalled();
   });
 
-  it('venue asks are declined locally', () => {
+  // §5.7 R-2 ③ — food asks were promoted OUT of the blanket venue refusal: the
+  // Kakao/Google picks live in the DB, so this one intent pays a round trip
+  // (and the endpoint still falls back to the same refusal when it has none).
+  it('food asks go to the dining endpoint and render the returned card', async () => {
+    (global.fetch as jest.Mock).mockResolvedValue({
+      ok: true,
+      json: async () => ({
+        kind: 'tier0_dining',
+        text: 'Lunch near Gamcheon',
+        card: {
+          kind: 'dining_card',
+          poi_key: 'gamcheon',
+          spot_title: 'Gamcheon Culture Village',
+          cell: 'wydm9q1',
+          meal: 'lunch',
+          dietary: [],
+          source: 'cache',
+          places: [],
+        },
+      }),
+    });
     renderPanel();
     fireEvent.change(screen.getByTestId('concierge-input'), { target: { value: 'recommend a restaurant' } });
+    fireEvent.click(screen.getByTestId('concierge-send'));
+    await waitFor(() => expect(global.fetch).toHaveBeenCalledTimes(1));
+    await waitFor(() => expect(screen.getByTestId('dining-card')).toBeInTheDocument());
+  });
+
+  it('non-food venue asks are still declined locally', () => {
+    renderPanel();
+    fireEvent.change(screen.getByTestId('concierge-input'), { target: { value: 'any souvenir shop for shopping?' } });
     fireEvent.click(screen.getByTestId('concierge-send'));
     expect(screen.getByText(/guide knows/i)).toBeInTheDocument();
     expect(global.fetch).not.toHaveBeenCalled();

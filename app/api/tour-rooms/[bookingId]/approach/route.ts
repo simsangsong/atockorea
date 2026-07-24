@@ -11,6 +11,7 @@ import { normalizeRoomLocale } from '@/lib/tour-room/snapshot';
 import { resolveSpotContent } from '@/lib/tour-room/spotContent';
 import { fetchArrivalVideoCard } from '@/lib/tour-room/poiVideos.server';
 import { kstToday } from '@/lib/tour-room/time';
+import { maybePostDiningForStop, runAfterResponse } from '@/lib/ops/dining/post.server';
 import {
   APPROACH_SERVER_RADIUS_M,
   composeApproachTranslations,
@@ -268,6 +269,26 @@ export async function POST(
     // already has the app open (foreground watcher, §12 Q2), so a notification
     // would be pure noise; pushes stay reserved for rally-critical arrivals.
     await broadcastToRoom(room, 'message', { message });
+
+    // §5.7 R-2 trigger ① — when the stop we are approaching is a MEAL stop,
+    // the dining picks follow as their own `dining_card` message (the preview
+    // card itself is untouched). Deferred past the response via
+    // runAfterResponse so a cache MISS's external calls are not cut off;
+    // postDiningCard never throws, so this can never turn an approach into
+    // a 500.
+    runAfterResponse(() =>
+      maybePostDiningForStop(supabase, {
+        booking,
+        stop: { title: spot.title, poi_key: poiKey },
+        poiKey,
+        spotTitle: spot.title,
+        lat: coords.lat,
+        lng: coords.lng,
+        actorRole: actor.role,
+        actorParticipantId,
+        authUserId,
+      }),
+    );
 
     return NextResponse.json({ message, content_tier: content.tier }, { status: 201 });
   } catch (error) {
