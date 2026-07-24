@@ -152,6 +152,26 @@ function sanitizeNeeds(raw: unknown): Record<string, unknown> | undefined {
   return Object.keys(out).length > 0 ? out : undefined;
 }
 
+/**
+ * §11.D D4 — the lead guest's daily departure time.
+ *   - absent (`undefined`)     → { provided:false }: leave the column untouched
+ *   - null / '' / whitespace   → { provided:true, value:null }: clear it
+ *   - "H:MM"/"HH:MM" (KST)      → { provided:true, value:'HH:MM' }: zero-padded
+ *   - anything else            → { provided:true, valid:false }: 400 the write
+ */
+function sanitizeDepartureTime(
+  raw: unknown,
+): { provided: boolean; valid: boolean; value: string | null } {
+  if (raw === undefined) return { provided: false, valid: true, value: null };
+  if (raw === null) return { provided: true, valid: true, value: null };
+  if (typeof raw !== 'string') return { provided: true, valid: false, value: null };
+  const v = raw.trim();
+  if (v === '') return { provided: true, valid: true, value: null };
+  if (!/^([01]?\d|2[0-3]):[0-5]\d$/.test(v)) return { provided: true, valid: false, value: null };
+  const [h, m] = v.split(':');
+  return { provided: true, valid: true, value: `${h.padStart(2, '0')}:${m}` };
+}
+
 /** "9 hours" / "10–10.5 hours" → 9 / 10 (first number wins). */
 function parseTourHours(duration: unknown): number | null {
   if (typeof duration !== 'string') return null;
@@ -346,6 +366,7 @@ export async function PUT(
       submit?: unknown;
       delegate?: unknown;
       stops_changed?: unknown;
+      departure_time?: unknown;
     };
 
     const resolved = await resolveRoomActor(req, bookingId, { supabase });
@@ -392,6 +413,13 @@ export async function PUT(
       );
     }
     const needs = sanitizeNeeds(body.needs);
+
+    // D4 — the daily departure time. Validate the format up-front; whether it is
+    // actually persisted is gated below on lead-guest + guest_draft.
+    const departure = sanitizeDepartureTime(body.departure_time);
+    if (departure.provided && !departure.valid) {
+      return NextResponse.json({ error: 'invalid_departure_time' }, { status: 400 });
+    }
 
     const { data: existing } = await supabase
       .from('tour_day_plans')
@@ -452,22 +480,27 @@ export async function PUT(
         ? existingStatus // a guide editing a confirmed plan keeps it live (MUTATE)
         : 'guest_draft';
 
+    // D4 — persist departure_time ONLY when the lead guest edits a draft (the
+    // same gate as a stops edit): non-staff actor + status null/guest_draft.
+    // Guide/driver/admin writes never touch it. `departure_time` may be absent
+    // from the generated types, so the payload is cast at the upsert boundary.
+    const setDeparture = departure.provided && !isStaff && (existingStatus === null || existingStatus === 'guest_draft');
+    const planPayload: Record<string, unknown> = {
+      booking_id: booking.id,
+      tour_date: booking.tour_date,
+      stops: nextStops,
+      status: nextStatus,
+      ...(needs !== undefined ? { needs } : {}),
+      ...(feasibility !== undefined ? { feasibility } : {}),
+      ...(setDeparture ? { departure_time: departure.value } : {}),
+      version: ((existing as { version?: number } | null)?.version ?? 0) + 1,
+      updated_by: actor.role,
+      updated_at: new Date().toISOString(),
+    };
+
     const { data: plan, error: planError } = await supabase
       .from('tour_day_plans')
-      .upsert(
-        {
-          booking_id: booking.id,
-          tour_date: booking.tour_date,
-          stops: nextStops,
-          status: nextStatus,
-          ...(needs !== undefined ? { needs } : {}),
-          ...(feasibility !== undefined ? { feasibility } : {}),
-          version: ((existing as { version?: number } | null)?.version ?? 0) + 1,
-          updated_by: actor.role,
-          updated_at: new Date().toISOString(),
-        },
-        { onConflict: 'booking_id,tour_date' },
-      )
+      .upsert(planPayload as never, { onConflict: 'booking_id,tour_date' })
       .select()
       .single();
     if (planError) throw planError;
