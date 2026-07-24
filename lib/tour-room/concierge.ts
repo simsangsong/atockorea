@@ -72,8 +72,13 @@ const INTENT_KEYWORDS: Record<ConciergeIntent, KeywordSet> = {
  */
 const GUARDRAIL_KEYWORDS: Record<ConciergeGuardrail, KeywordSet> = {
   emergency: {
-    latin: ['ambulance', 'police', 'hospital', 'emergency', 'injured', 'bleeding', 'unconscious', 'heart attack', 'ambulancia', 'policia', 'policía', 'emergencia', 'herido', 'sangrando'],
-    cjk: ['응급', '구급차', '경찰', '병원', '다쳤', '피가', '의식이', '救急', '警察', '病院', '怪我', '出血', '意識', '救护车', '警察', '医院', '受伤', '流血', '晕倒'],
+    // A7.1 — the leak-hunt corpus (conciergeGuardrailLeak.test.ts) added the
+    // distress phrasings a real guest types that the original dictionary missed:
+    // faint/collapse/passed out/can't breathe/choking/seizure/chest pain/
+    // allergic reaction, and the bare Korea emergency numbers 119/112. An
+    // emergency that leaks to the LLM instead of the SOS/119 path is a P0.
+    latin: ['ambulance', 'police', 'hospital', 'emergency', 'injured', 'bleeding', 'unconscious', 'heart attack', 'faint', 'fainted', 'collapse', 'collapsed', 'passed out', 'breathe', 'breathing', 'choking', 'choke', 'seizure', 'chest pain', 'allergic reaction', 'anaphylaxis', '119', '112', 'ambulancia', 'policia', 'policía', 'emergencia', 'herido', 'sangrando', 'desmayó', 'no puede respirar'],
+    cjk: ['응급', '구급차', '경찰', '병원', '다쳤', '피가', '의식이', '쓰러졌', '쓰러져', '기절', '숨을 못', '숨을 안', '숨이 안', '발작', '가슴 통증', '가슴이 아프', '救急', '警察', '病院', '怪我', '出血', '意識', '倒れ', '気を失', '息ができ', '窒息', '発作', '救护车', '医院', '受伤', '流血', '晕倒', '失去意识', '意识', '窒息', '心脏病', '发作'],
   },
   ops_request: {
     latin: ['refund', 'cancel', 'reschedule', 'change the schedule', 'change the itinerary', 'change the time', 'rebook', 'discount', 'reembolso', 'cancelar', 'cambiar la hora', 'cambiar el itinerario', 'descuento'],
@@ -81,7 +86,7 @@ const GUARDRAIL_KEYWORDS: Record<ConciergeGuardrail, KeywordSet> = {
   },
   venue_recommendation: {
     latin: ['restaurant', 'where to eat', 'where should we eat', 'good food', 'best food', 'cafe nearby', 'shopping', 'where to buy', 'souvenir shop', 'restaurante', 'donde comer', 'dónde comer', 'compras', 'tienda'],
-    cjk: ['맛집', '식당 추천', '음식점 추천', '먹을 곳', '먹을만한', '쇼핑', '살 만한', '기념품 가게', '美味しい店', 'レストラン', 'おすすめの店', '買い物', 'お土産屋', '好吃的', '餐厅推荐', '饭店推荐', '购物', '纪念品店'],
+    cjk: ['맛집', '식당 추천', '음식점 추천', '먹을 곳', '먹을만한', '쇼핑', '살 만한', '기념품 가게', '美味しい店', 'レストラン', 'おすすめの店', '買い物', 'お土産屋', '好吃的', '餐厅', '饭店', '购物', '纪念品店'],
   },
 };
 
