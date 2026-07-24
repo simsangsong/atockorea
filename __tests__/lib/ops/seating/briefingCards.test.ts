@@ -67,9 +67,12 @@ describe('5-locale completeness (every card)', () => {
   it('capsule bodies are complete', () => {
     expectTranslations(composeSafetyTranslations());
     expectTranslations(composeSafetyTranslations({ collapsed: true }));
+    expectTranslations(composeSafetyTranslations({ tourKind: 'private' }));
     expectTranslations(safetyFullTranslations());
+    expectTranslations(safetyFullTranslations('private'));
     expectTranslations(composeLunchTranslations({ lunchIncluded: false }));
     expectTranslations(composeLunchTranslations({ lunchIncluded: true }));
+    expectTranslations(composeLunchTranslations({ lunchIncluded: true, tourKind: 'private' }));
     expectTranslations(composeEtiquetteTranslations());
     expectTranslations(composeScheduleTranslations([{ time: '09:30', title: 'Seongsan Ilchulbong' }]));
   });
@@ -120,6 +123,34 @@ describe('card ② safety', () => {
     for (const locale of ROOM_LOCALES) {
       expect(composeSafety({}).translations[locale]).not.toMatch(/\b1330\b|\b119\b|\b112\b/);
     }
+  });
+
+  // §11.D D3 — exactly ONE line differs by kind; the rest must stay shared.
+  it('swaps only the stay-together line for a private charter', () => {
+    const join = composeSafety({ tourKind: 'join' });
+    const priv = composeSafety({ tourKind: 'private' });
+    expect(join.metadata.tour_kind).toBe('join');
+    expect(priv.metadata.tour_kind).toBe('private');
+
+    for (const locale of ROOM_LOCALES) {
+      const a = join.translations[locale].split('\n');
+      const b = priv.translations[locale].split('\n');
+      expect(a).toHaveLength(b.length);
+      const differing = a.filter((line, index) => line !== b[index]);
+      expect(differing).toHaveLength(1);
+    }
+    expect(priv.translations.en).not.toMatch(/staff/i);
+    expect(priv.translations.ko).toContain('기사님');
+  });
+
+  it('defaults to the shipped join wording when no kind is given', () => {
+    expect(composeSafety({}).translations.en).toBe(composeSafety({ tourKind: 'join' }).translations.en);
+    expect(composeSafety({}).metadata.tour_kind).toBe('join');
+  });
+
+  it('the collapsed reminder is kind-neutral (nothing in it names a staff role)', () => {
+    const collapsed = composeSafety({ collapsed: true, tourKind: 'private' });
+    expect(collapsed.translations.en).toBe(composeSafety({ collapsed: true }).translations.en);
   });
 });
 
@@ -190,6 +221,29 @@ describe('card ④ lunch', () => {
     expect(card.translations.en).toMatch(/included/i);
   });
 
+  // §11.D D3 — only the "who walks you there" line differs by kind, and only
+  // on the included branch (a not-included card names nobody).
+  it('names the driver instead of the staff on a private charter', () => {
+    const join = composeLunch({ lunchIncluded: true, tourKind: 'join' });
+    const priv = composeLunch({ lunchIncluded: true, tourKind: 'private' });
+    expect(join.translations.en).toMatch(/the staff will take you/i);
+    expect(priv.translations.en).toMatch(/your driver will take you/i);
+    expect(priv.translations.ko).toContain('기사님이 식당으로');
+    expect(priv.metadata.tour_kind).toBe('private');
+
+    for (const locale of ROOM_LOCALES) {
+      const a = join.translations[locale].split('\n');
+      const b = priv.translations[locale].split('\n');
+      expect(a.filter((line, index) => line !== b[index])).toHaveLength(1);
+    }
+  });
+
+  it('the not-included branch is identical for both kinds', () => {
+    expect(composeLunch({ lunchIncluded: false, tourKind: 'private' }).translations.en).toBe(
+      composeLunch({ lunchIncluded: false, tourKind: 'join' }).translations.en,
+    );
+  });
+
   it('pre-selects the tags already on file, dropping junk and derived tags', () => {
     const card = composeLunch({ lunchIncluded: false, dietary: ['vegan', 'kids', 'astrology'] });
     expect(card.metadata.dietary).toEqual(['vegan']);
@@ -211,6 +265,7 @@ describe('card ⑤ etiquette', () => {
 describe('the declarative stack (C-17 seam)', () => {
   const ctx: BriefingCardContext = {
     tourDate: '2099-07-24',
+    tourKind: 'join',
     startCapsule: {
       source_locale: 'en',
       source_text: 'hi',

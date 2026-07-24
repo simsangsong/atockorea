@@ -23,6 +23,7 @@ import {
   isDietaryTag,
   type DietaryTag,
 } from '@/lib/ops/dining/dietary';
+import type { TourKind } from '@/lib/tour-room/tourKind';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
 /** The storable chips, derived from the shared vocabulary (kids is derived). */
@@ -36,6 +37,8 @@ export interface BriefingLunchMeta {
   /** Tags already on file when the card was composed (chips pre-selected). */
   dietary: string[];
   tour_date?: string | null;
+  /** §11.D D3 — which wording shape was sent ('join' | 'private'). */
+  tour_kind?: TourKind;
   [key: string]: unknown;
 }
 
@@ -55,12 +58,27 @@ const NOT_INCLUDED: Record<RoomLocale, string> = {
   zh: '午餐不含在行程费用内 — 由您自行选择餐厅并现场付款。',
 };
 
-const INCLUDED: Record<RoomLocale, string> = {
-  en: 'Lunch is included today — the staff will take you to the restaurant.',
-  ko: '오늘은 점심이 포함되어 있어요 — 스태프가 식당으로 안내해 드립니다.',
-  ja: '本日は昼食が含まれています — スタッフがレストランへご案内します。',
-  es: 'El almuerzo está incluido hoy: el personal les llevará al restaurante.',
-  zh: '今天含午餐 — 工作人员会带您前往餐厅。',
+/**
+ * §11.D D3 — the ONE kind-dependent line: who walks you to the restaurant.
+ * A private charter has no field staff, so "the staff will take you" names
+ * somebody who is not there. Every other line (not-included, the picks promise,
+ * the intake prompt) is identical for both kinds and is not duplicated.
+ */
+const INCLUDED: Record<TourKind, Record<RoomLocale, string>> = {
+  join: {
+    en: 'Lunch is included today — the staff will take you to the restaurant.',
+    ko: '오늘은 점심이 포함되어 있어요 — 스태프가 식당으로 안내해 드립니다.',
+    ja: '本日は昼食が含まれています — スタッフがレストランへご案内します。',
+    es: 'El almuerzo está incluido hoy: el personal les llevará al restaurante.',
+    zh: '今天含午餐 — 工作人员会带您前往餐厅。',
+  },
+  private: {
+    en: 'Lunch is included today — your driver will take you to the restaurant.',
+    ko: '오늘은 점심이 포함되어 있어요 — 기사님이 식당으로 안내해 드립니다.',
+    ja: '本日は昼食が含まれています — ドライバーがレストランへご案内します。',
+    es: 'El almuerzo está incluido hoy: su conductor les llevará al restaurante.',
+    zh: '今天含午餐 — 司机会带您前往餐厅。',
+  },
 };
 
 const PICKS: Record<RoomLocale, string> = {
@@ -131,12 +149,14 @@ export interface ComposeLunchArgs {
   /** Tags already stored for this booking (chips render pre-selected). */
   dietary?: readonly string[];
   tourDate?: string | null;
+  /** §11.D D3 — defaults to 'join' (the shipped wording). */
+  tourKind?: TourKind;
 }
 
 export function composeLunchTranslations(args: ComposeLunchArgs): Record<RoomLocale, string> {
   return joinLocaleLines([
     LUNCH_HEADER,
-    args.lunchIncluded ? INCLUDED : NOT_INCLUDED,
+    args.lunchIncluded ? INCLUDED[args.tourKind ?? 'join'] : NOT_INCLUDED,
     PICKS,
     INTAKE_PROMPT,
   ]);
@@ -148,6 +168,7 @@ export function composeLunch(args: ComposeLunchArgs): ComposedBriefingCard {
     lunch_included: Boolean(args.lunchIncluded),
     dietary: (args.dietary ?? []).filter(isDietaryTag),
     tour_date: args.tourDate ?? null,
+    tour_kind: args.tourKind ?? 'join',
   };
   return capsuleFrom(composeLunchTranslations(args), meta as unknown as Record<string, unknown>);
 }
