@@ -26,6 +26,7 @@ import {
 import OpsManifestView from '@/components/tour-ops/OpsManifestView';
 import OpsRoomVehiclePanel from '@/components/tour-ops/OpsRoomVehiclePanel';
 import OpsRoomCardSetPanel from '@/components/tour-ops/OpsRoomCardSetPanel';
+import OpsRoomNotesPanel from '@/components/tour-ops/OpsRoomNotesPanel';
 
 const FEED_LIMIT = 80;
 
@@ -52,7 +53,7 @@ export default function OpsRoomDrawer({
   // Phase 2 §3.2 — 룸 상세 세그먼트: 대화(기존) | 명단(같은 tour_id+tour_date)
   // | 차량(§4.1 B-2 배차 — ops_room_vehicles의 유일한 쓰기 표면)
   // | 카드(§5.4 C-17 시작 브리핑 카드 세트 + 발사 전 미리보기).
-  const [view, setView] = useState<'chat' | 'manifest' | 'vehicle' | 'cards'>('chat');
+  const [view, setView] = useState<'chat' | 'manifest' | 'vehicle' | 'cards' | 'notes'>('chat');
   const feedRef = useRef<HTMLDivElement | null>(null);
   const manifestAvailable = Boolean(room.tour_id && room.tour_date);
 
@@ -222,7 +223,9 @@ export default function OpsRoomDrawer({
               ...(manifestAvailable ? [{ key: 'manifest' as const, label: '명단' }] : []),
               { key: 'vehicle', label: '차량' },
               { key: 'cards', label: '카드' },
-            ] as Array<{ key: 'chat' | 'manifest' | 'vehicle' | 'cards'; label: string }>
+              // §K B4.4 — 명단 메모. 가이드 명단·게스트 카드와 **같은 소스**다(B4-D4).
+              { key: 'notes', label: '메모' },
+            ] as Array<{ key: 'chat' | 'manifest' | 'vehicle' | 'cards' | 'notes'; label: string }>
           ).map(({ key, label }) => (
               <button
                 key={key}
@@ -249,6 +252,14 @@ export default function OpsRoomDrawer({
 
         {/* §5.4 C-17 — 시작 브리핑 카드 세트 (룸 오버라이드 + 발사 전 미리보기) */}
         {view === 'cards' && <OpsRoomCardSetPanel roomId={room.id} tourId={room.tour_id ?? null} />}
+
+        {/* §K B4.4 — 운영 메모. 세 화면이 같은 API를 읽으므로 값이 어긋날 수 없다. */}
+        {view === 'notes' && (
+          <OpsRoomNotesPanel
+            roomId={room.id}
+            guests={[{ bookingId: room.booking_id, name: room.booking?.contact_name ?? '게스트' }]}
+          />
+        )}
 
         {sos && (
           <div className="flex items-center gap-2 border-b border-red-200 bg-red-50 px-4 py-2.5 text-[12px] text-red-700 dark:border-red-500/30 dark:bg-red-950/50 dark:text-red-200">
