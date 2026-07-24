@@ -176,9 +176,9 @@ export default function GuideSeatDashboard({
         </button>
       </div>
 
-      {/* segment + actions */}
+      {/* segment (mobile only — sm+ shows both panels side by side) + actions */}
       <div className="mt-3 flex items-center gap-2">
-        <div className="flex flex-1 gap-1 rounded-full bg-[var(--tr-surface-2)] p-1">
+        <div className="flex flex-1 gap-1 rounded-full bg-[var(--tr-surface-2)] p-1 sm:hidden">
           {(['roster', 'seats'] as const).map((k) => (
             <button
               key={k}
@@ -216,9 +216,11 @@ export default function GuideSeatDashboard({
         </p>
       )}
 
-      {/* ── 명단 ──────────────────────────────────────────────────────────── */}
-      {seg === 'roster' && (
-        <div className="mt-3 space-y-2" data-testid="roster-view">
+      {/* 명단 · 좌석판 — 모바일은 세그먼트, 데스크톱(sm+)은 나란히 = 명단 행
+          hover ↔ 좌석판 하이라이트 양방향(§5.4b). */}
+      <div className="mt-3 sm:grid sm:grid-cols-2 sm:gap-4">
+        {/* ── 명단 ── */}
+        <div className={`space-y-2 ${seg === 'roster' ? '' : 'hidden'} sm:block`} data-testid="roster-view">
           {groups.length === 0 && (
             <p className="rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-6 text-center text-sm text-[var(--tr-ink-3)]">
               배정된 예약이 없어요.
@@ -301,11 +303,9 @@ export default function GuideSeatDashboard({
             );
           })}
         </div>
-      )}
 
-      {/* ── 좌석판 ────────────────────────────────────────────────────────── */}
-      {seg === 'seats' && (
-        <div className="mt-3 space-y-4" data-testid="seat-view">
+        {/* ── 좌석판 ── */}
+        <div className={`space-y-4 ${seg === 'seats' ? '' : 'hidden'} sm:block`} data-testid="seat-view">
           {vehicles.length === 0 && (
             <p className="rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-6 text-center text-sm text-[var(--tr-ink-3)]">
               차량이 아직 배정되지 않았어요.
@@ -330,7 +330,7 @@ export default function GuideSeatDashboard({
             ) : null,
           )}
         </div>
-      )}
+      </div>
 
       {/* ── 시작 게이트 (§5.4 C-16) ───────────────────────────────────────── */}
       <button
