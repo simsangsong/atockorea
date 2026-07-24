@@ -8,11 +8,11 @@
 
 ## 다음 착수 지점
 
-**→ 코드-only 감사 소진. 잔여는 전부 런타임 게이트: A5 시뮬(dev서버)·A6 속도·A7.2 환각(실모델)·A0.3 6지표·§L L5·A2.3 관제**
+**→ 코드-only 감사·백로그 모두 소진(A1~A8 + A2.3 + 백로그 P1/P2). 잔여 = 런타임 게이트(A5/A6/A7.2/A7.3/A0.3/§L L5) + 대형 리팩터 1건(ChatFeed 메타 판별유니온). 오너 게이트 필요.**
 
 ## 기준선
 
-- main = `d8f1ad5c` (origin/main과 동일, 미푸시 0) — tsc 0 · `next build --webpack` ✓ · 204스위트 2118 green 재검증 완료
+- main = `032ae919` (origin/main과 동일, 미푸시 0) — tsc 0 · `next build --webpack` ✓ · 204스위트 2118 green 재검증 완료
 - 작업 워크트리: `C:\Users\sangsong\atockorea-audit` (브랜치 `claude/audit-b0`, `npm ci` 실설치 완료)
 - 라이브 마이그레이션 5건 추가 적용: `ops_ai_usage` · `bookings_sim_tag` · `ops_tour_groups` · `tours_max_room_guests` · `ops_guest_notes`
 - 머지 워크트리: `C:\Users\sangsong\atockorea-main-merge`
@@ -56,7 +56,8 @@
 | 29 | A2.4 권한 경계 · A2.1·A2.2 운영자 면 | ✅ `8e8a4fae` · `A2-4-permission-matrix.md`·`A2-1-2-operator-faces.md` |
 | 30 | A7.1 가드레일 누수 (응급 P0 수정) | ✅ `d8f1ad5c` · `docs/audit/A7-1-guardrail-leak.md` |
 | 31 | A0.2 결정 · A8 종합 캡스톤 | ✅ (docs) · `docs/audit/A8-synthesis.md` |
-| 32 | A5·A6·A7.2·A7.3·A0.3잔여·§L L5·A2.3 — **전부 dev서버/실모델 런타임 게이트** | ⬜ |
+| 32 | A2.3 관제(SOS 사운드 누수 수정) · A8.2 백로그 P1/P2 소진 | ✅ `032ae919` |
+| 33 | A5·A6·A7.2·A7.3·A0.3잔여·§L L5 — **dev서버/실모델 게이트(오너)** · ChatFeed 메타 리팩터(attended) | ⛔ 게이트 |
 
 ## 남은 것 (우선순위순)
 
@@ -97,6 +98,14 @@
 - 희소성 UI("매진/잔여") 금지 — 정원은 판매 차단이 아니라 운영 캡 (B2-D1)
 
 ## 실행 로그 (append-only)
+
+- **[39]** 백로그 소진 (A8.2 코드-only P1/P2 연속 처리) — 감사가 찾은 결함을 실제로 닫았다:
+  · **A1.1 P1** 가이드/기사 아바타 동일 글리프 → 기사=버스 글리프(`avatarRoles.test`) → `539cf495`
+  · **A1.2 P2** NoticeBanner 무조건 초당 틱 → 적응형(hidden 30s / countdown 1s)+가시성 재동기화 → `5ee12e3b`
+  · **A1.1 P2** 채팅 aria-label 9개 영어고정 → 5로케일화(Lightbox locale prop 추가) → `5af19a32`
+  · **A1.1 P2 ×2** Lightbox 다이얼로그 시맨틱·onClose ref 부재 → Sheet 패턴 이식(role=dialog·포커스 이동/복원) → `032ae919`
+  남은 코드-only는 **ChatFeed 메타데이터 판별유니온(대형 리팩터·A8.2)** 뿐 — 카드 렌더 전체를 건드려 attended가 안전.
+  나머지는 전부 런타임/실기기 게이트. 4006 green.
 
 - **[38]** A8 종합 캡스톤 (`docs/audit/A8-synthesis.md`) — S1~S6 채점: 🟢 **S5 회복력·S6 신뢰가 이번 감사로 목표 근접**
   (침묵 실패 다수 안내 전환 + 응급 P0 닫음), S1·S3는 **런타임 측정 부재로 채점 불가**(코드 결함 아님 → 다음 관문 A5/A7.2).
