@@ -21,6 +21,12 @@ export interface FinanceConfig {
   krBizRegNo: string | null
   intercompanyPrefix: string
   intercompanySeq: number
+  /**
+   * 미국 CPA·한국 세무사 확인 완료 플래그 (Phase 3 설계 결정 4).
+   * false면 생성 문서 전부에 DRAFT 워터마크. 컬럼이 아직 없거나 조회 실패해도
+   * false로 떨어져야 한다 — 모르면 DRAFT가 안전한 기본값이다.
+   */
+  expertReviewed: boolean
 }
 
 /** 마진율만 필요할 때의 경량 조회 — 실패 시 DEFAULT_MARGIN_RATE. */
@@ -52,11 +58,14 @@ export async function getFinanceConfig(supabase: SupabaseClient): Promise<Financ
     krBizRegNo: null,
     intercompanyPrefix: 'AK-IC',
     intercompanySeq: 0,
+    expertReviewed: false,
   }
   try {
+    // '*' 선택 — expert_reviewed는 Phase 3 마이그레이션에서 추가되는 컬럼이라
+    // 명시 나열하면 적용 전 환경에서 조회 전체가 실패해 설정이 통째로 날아간다.
     const { data } = await supabase
       .from('ops_finance_config')
-      .select('margin_rate, llc_legal_name, llc_address, llc_ein, kr_legal_name, kr_address, kr_biz_reg_no, intercompany_prefix, intercompany_seq')
+      .select('*')
       .eq('id', 1)
       .maybeSingle()
     if (!data) return fallback
@@ -72,6 +81,8 @@ export async function getFinanceConfig(supabase: SupabaseClient): Promise<Financ
       krBizRegNo: (row.kr_biz_reg_no as string) ?? null,
       intercompanyPrefix: (row.intercompany_prefix as string) ?? 'AK-IC',
       intercompanySeq: typeof row.intercompany_seq === 'number' ? row.intercompany_seq : 0,
+      // 명시적 true일 때만 DRAFT 해제 (컬럼 부재/null → false).
+      expertReviewed: row.expert_reviewed === true,
     }
   } catch {
     return fallback

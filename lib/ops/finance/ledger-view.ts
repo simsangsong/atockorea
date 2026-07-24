@@ -57,6 +57,16 @@ export function isMissingTableError(code: string | undefined | null): boolean {
   return code === 'PGRST205' || code === 'PGRST200' || code === '42P01'
 }
 
+/**
+ * 같은 판정을 '메시지'로 해야 할 때. settlement.ts의 IO 헬퍼는 PostgREST 오류를
+ * Error(message)로 감싸 던지므로 코드가 남지 않는다 — 마이그레이션 적용 전에도
+ * 화면이 500 대신 "테이블 미적용" 안내를 띄우게 하려면 문자열로 알아봐야 한다.
+ */
+export function isMissingTableMessage(message: string | undefined | null): boolean {
+  if (!message) return false
+  return /schema cache|does not exist|PGRST205|PGRST200|42P01/i.test(message)
+}
+
 /** 'YYYY-MM' 형식만 통과, 아니면 null. */
 export function normalizeLedgerPeriod(raw: string | null): string | null {
   if (raw && /^\d{4}-\d{2}$/.test(raw)) return raw
