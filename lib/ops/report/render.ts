@@ -210,8 +210,9 @@ function renderAttention(res: SectionResult<AttentionSummary>): string {
     { label: '인박스 리뷰 큐 대기', n: a.reviewQueued },
     { label: '파싱 실패 (오늘)', n: a.parseFailures },
     { label: '좌석 미지정 게스트', n: a.unseated },
+    { label: '정원 초과 그룹 (2호차 필요)', n: (a.overCapacity ?? []).length },
   ]
-  return items
+  const rows = items
     .map((it) => {
       const flagged = it.n > 0
       return `<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid ${C.hair};">
@@ -220,6 +221,18 @@ function renderAttention(res: SectionResult<AttentionSummary>): string {
       </div>`
     })
     .join('')
+
+  // §K B2.3 — 초과는 숫자만으로는 조치가 안 된다. 어느 투어가 몇 명 초과인지
+  // 적어야 운영자가 2호차를 부를 수 있다. 문구는 capacity.ts가 만든 것 그대로.
+  const overLines = a.overCapacity ?? []
+  if (overLines.length === 0) return rows
+  const detail = overLines
+    .map(
+      (line) =>
+        `<div style="font-size:12px;color:${C.amber};padding:4px 0;">· ${esc(line)}</div>`,
+    )
+    .join('')
+  return `${rows}<div style="margin-top:10px;padding:10px 12px;background:${C.amberBg};border-radius:10px;">${detail}</div>`
 }
 
 function fmtKstDate(ymd: string): string {
@@ -234,7 +247,7 @@ export function renderDailyReport(report: DailyReport): { subject: string; html:
   const a = report.attention.data
   const missing = report.contactStatus.data.missingCount
   const attentionTotal = report.attention.ok
-    ? a.unassignedRooms + a.uncontacted + a.reviewQueued + a.parseFailures + a.unseated
+    ? a.unassignedRooms + a.uncontacted + a.reviewQueued + a.parseFailures + a.unseated + (a.overCapacity ?? []).length
     : null
 
   const summaryBadge =

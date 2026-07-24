@@ -208,6 +208,72 @@ describe('buildDailyReport — 부분 실패 (독립 실패 허용)', () => {
   })
 })
 
+describe('buildDailyReport — B2.3 정원 초과 요주의', () => {
+  // 내일(2026-07-25) T1에 B3(2명) + B6(4명) = 6명이 이미 있다.
+  // 정원 12를 넘기려면 7명 이상을 더 얹으면 된다.
+  function overloaded(): TableRegistry {
+    const reg = normalRegistry()
+    ;(reg.tours as Row[])[0] = { id: 'T1', title: 'Jeju Grand Highlights', city: 'Jeju', max_room_guests: 12, price_type: 'person' }
+    ;(reg.tour_rooms as Row[]).push({ id: 'R7', booking_id: 'B7', tour_id: 'T1', tour_date: '2026-07-25', status: 'active' })
+    ;(reg.bookings as Row[]).push({
+      id: 'B7', tour_id: 'T1', tour_date: '2026-07-25', created_at: '2026-07-20T02:00:00Z',
+      number_of_guests: 9, contact_name: 'Big Party', status: 'confirmed', source: 'direct',
+      final_price: 900, currency: 'USD', ota_raw_meta: null, pickup_points: null, sim_tag: null,
+    })
+    return reg
+  }
+
+  it('정원 이내면 요주의가 아니다', async () => {
+    const reg = normalRegistry()
+    ;(reg.tours as Row[])[0] = { id: 'T1', title: 'Jeju Grand Highlights', city: 'Jeju', max_room_guests: 12, price_type: 'person' }
+    const report = await buildDailyReport(mockSupabase(reg), { nowMs: NOW })
+    expect(report.attention.data.overCapacity).toEqual([])
+  })
+
+  it('초과하면 어느 투어가 몇 명 초과인지 문구로 나온다 — 숫자만으로는 조치가 안 된다', async () => {
+    const report = await buildDailyReport(mockSupabase(overloaded()), { nowMs: NOW })
+    const lines = report.attention.data.overCapacity
+    expect(lines).toHaveLength(1)
+    expect(lines[0]).toContain('15명')
+    expect(lines[0]).toContain('정원 12 초과')
+    expect(lines[0]).toContain('2호차')
+    expect(report.attention.data.clean).toBe(false)
+  })
+
+  it('🔴 B2-D1 — 요주의 문구 어디에도 매진·잔여가 없다', async () => {
+    const report = await buildDailyReport(mockSupabase(overloaded()), { nowMs: NOW })
+    for (const line of report.attention.data.overCapacity) {
+      expect(line).not.toContain('매진')
+      expect(line).not.toContain('잔여')
+    }
+  })
+
+  it('정원 컬럼이 아직 없는 환경에서도 보고서가 죽지 않는다 (price_type 기본값으로 판정)', async () => {
+    const reg = overloaded()
+    for (const t of reg.tours as Row[]) {
+      delete t.max_room_guests
+    }
+    const report = await buildDailyReport(mockSupabase(reg), { nowMs: NOW })
+    expect(report.attention.ok).toBe(true)
+    // price_type='person' 코드 기본값 12가 적용된다.
+    expect(report.attention.data.overCapacity).toHaveLength(1)
+  })
+
+  it('시뮬 예약은 정원 카운트에 들어가지 않는다 — 빈 투어가 초과로 뜨면 안 된다', async () => {
+    const reg = normalRegistry()
+    ;(reg.tours as Row[])[0] = { id: 'T1', title: 'Jeju Grand Highlights', city: 'Jeju', max_room_guests: 12, price_type: 'person' }
+    ;(reg.tour_rooms as Row[]).push({ id: 'RS9', booking_id: 'BS9', tour_id: 'T1', tour_date: '2026-07-25', status: 'active' })
+    ;(reg.bookings as Row[]).push({
+      id: 'BS9', tour_id: 'T1', tour_date: '2026-07-25', created_at: '2026-07-20T02:00:00Z',
+      number_of_guests: 99, contact_name: 'Sim Crowd', contact_email: 'sim-tour-mode@atockorea.test',
+      status: 'confirmed', source: 'direct', final_price: 0, currency: 'USD',
+      ota_raw_meta: null, pickup_points: null, sim_tag: 'sim',
+    })
+    const report = await buildDailyReport(mockSupabase(reg), { nowMs: NOW })
+    expect(report.attention.data.overCapacity).toEqual([])
+  })
+})
+
 describe('buildDailyReport — A0.1 시뮬 격리', () => {
   // 시뮬 예약은 라이브 DB에 산다(룸·좌석·명단에서 보여야 시뮬이 성립한다).
   // 이 보고서가 그것을 세면 오너는 매일 아침 존재하지 않는 투어를 본다.
