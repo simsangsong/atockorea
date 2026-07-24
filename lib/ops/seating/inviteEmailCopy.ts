@@ -1,6 +1,10 @@
 /**
  * 조인투어 룸 초대 이메일 5로케일 문구 — AtoC 통합 플랜 §4.2① + §5.1.
  *
+ * §K B0.3 이후 이 메일이 나르는 것은 공유 claim 링크가 아니라 **그 손님의
+ * 개인 룸 링크**다. 문구도 그에 맞춰 고쳤다 — "명단에서 이름을 선택"은 이제
+ * 존재하지 않는 화면을 설명한다.
+ *
  * joinCopy.ts와 동일 캡슐 규약: 사전 번역 상수만(LLM 0), ROOM_LOCALES 기준,
  * 미지원 로케일은 en 폴백. 여기서만 이메일 본문(제목 + HTML + 텍스트)을 만든다
  * — joinCopy를 부풀리지 않기 위해 별도 파일. HTML은 인라인 스타일 + 모바일
@@ -41,25 +45,28 @@ const COPY: Record<CopyKey, Record<RoomLocale, string>> = {
     es: 'Hola {guestName}:',
   },
   intro: {
-    en: "You're confirmed for {tourTitle} on {tourDate}. Tap the button below to join your tour group.",
-    ko: '{tourDate} {tourTitle} 예약이 확정되었습니다. 아래 버튼을 눌러 조인투어에 참여하세요.',
-    zh: '您已确认参加 {tourDate} 的{tourTitle}。请点击下方按钮加入您的行程群组。',
-    ja: '{tourDate}の{tourTitle}のご予約が確定しました。下のボタンからツアーグループにご参加ください。',
-    es: 'Su reserva para {tourTitle} el {tourDate} está confirmada. Toque el botón de abajo para unirse a su grupo de tour.',
+    en: "You're confirmed for {tourTitle} on {tourDate}. Tap the button below to open your tour room.",
+    ko: '{tourDate} {tourTitle} 예약이 확정되었습니다. 아래 버튼을 눌러 투어룸을 열어보세요.',
+    zh: '您已确认参加 {tourDate} 的{tourTitle}。请点击下方按钮打开您的行程群组。',
+    ja: '{tourDate}の{tourTitle}のご予約が確定しました。下のボタンからツアールームを開いてください。',
+    es: 'Su reserva para {tourTitle} el {tourDate} está confirmada. Toque el botón de abajo para abrir su sala de tour.',
   },
+  // §K B0.3 — 이 문구는 claim 단계를 설명하던 것이었다("명단에서 본인 이름을
+  // 선택"). 개인 링크 전환 이후 그 화면은 **존재하지 않는다** — 문구를 그대로
+  // 두면 이메일이 없는 절차를 지시하고, 손님은 나타나지 않는 명단을 찾는다.
   what: {
-    en: 'Select your name from the list, then choose your seat for the day.',
-    ko: '명단에서 본인 이름을 선택한 뒤 좌석을 지정하시면 됩니다.',
-    zh: '在名单中选择您的姓名，然后选择当天的座位。',
-    ja: '名簿からお名前を選び、当日の座席をお選びください。',
-    es: 'Seleccione su nombre en la lista y luego elija su asiento para el día.',
+    en: 'The link below is yours alone — it opens your tour room straight away, with no name to pick. You can choose your seat for the day inside.',
+    ko: '아래 링크는 본인 전용입니다. 이름을 고르실 필요 없이 바로 투어룸이 열리고, 좌석은 그 안에서 선택하시면 됩니다.',
+    zh: '下方链接为您专属，无需选择姓名即可直接打开您的行程群组，座位可在其中选择。',
+    ja: '下のリンクはお客様専用です。お名前を選ぶ必要はなく、そのままツアールームが開きます。座席はその中でお選びいただけます。',
+    es: 'El enlace de abajo es solo suyo: abre directamente su sala de tour, sin tener que elegir su nombre. Puede elegir su asiento allí.',
   },
   cta: {
-    en: 'Join your tour',
-    ko: '조인투어 참여하기',
-    zh: '加入行程',
-    ja: 'ツアーに参加',
-    es: 'Unirse al tour',
+    en: 'Open your tour room',
+    ko: '내 투어룸 열기',
+    zh: '打开我的行程群组',
+    ja: 'ツアールームを開く',
+    es: 'Abrir su sala de tour',
   },
   fallback: {
     en: "If the button doesn't work, open this link:",

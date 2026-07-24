@@ -11,9 +11,13 @@ export const dynamic = 'force-dynamic';
  *
  * POST /api/admin/tour-ops/manifest/bulk-invite
  *   Body: { tourId, tourDate }
- *   (tour_id, tour_date) 룸의 모든 게스트(이메일 있는)에게 룸 초대 링크를 한 번에
- *   이메일 발송한다. 링크 발급은 claim-link 라우트와 동일(room_claim 원장), 발송당
- *   게스트 마커 원장은 일일 보고서 §4 연락현황이 이메일 연락으로 집계한다.
+ *   (tour_id, tour_date) 룸의 게스트 중 이메일이 있는 예약마다 **그 예약의 개인
+ *   링크**를 발송한다(§K B0.3). 이메일이 없는 예약을 위해 claim 링크는 폴백으로
+ *   계속 발급되지만 **발송되지는 않는다**(B0-D2) — 응답의 `url`이 그것이고,
+ *   운영자가 차량 QR·수동 전달에 쓴다.
+ *
+ *   재발송은 폐기-후-재발급이다(B0-D1c): 예약당 살아있는 토큰이 항상 1개로
+ *   수렴하고, 먼저 받은 링크는 무효화된다.
  *
  * 얇은 라우트: 인증 + 파라미터 검증만 하고 핵심은 buildBulkInvite(주입식 send/
  * supabase)에 위임한다 — 단위 테스트는 fake로 네트워크/DB 0.

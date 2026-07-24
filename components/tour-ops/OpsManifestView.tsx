@@ -109,8 +109,17 @@ export default function OpsManifestView({
       });
       const json = await res.json();
       if (!res.ok) throw new Error(json.error || '초대 발송 실패');
-      setInviteLink(typeof json.url === 'string' ? json.url : null);
-      toast.success(`${json.sent ?? 0}명 발송 · ${json.skippedNoEmail ?? 0} 이메일없음`);
+      // B0.3 — 이메일 없는 예약을 위한 **폴백** claim 링크다. 손님에게 나간
+      // 링크가 아니라 운영자가 쓰는 것이므로, 이메일 없는 예약이 있을 때만 띄운다.
+      const noEmail = Number(json.skippedNoEmail ?? 0);
+      setInviteLink(noEmail > 0 && typeof json.url === 'string' ? json.url : null);
+      // 두 종류를 구분해 적는다(B0.3 판정): 개인 링크를 받은 사람 / claim 폴백이
+      // 필요한 사람. 합쳐서 한 숫자로 적으면 "누구에게 뭘 해야 하나"가 사라진다.
+      const parts = [`개인 링크 ${json.sentPersonal ?? json.sent ?? 0}명 발송`];
+      if (noEmail > 0) parts.push(`이메일 없음 ${noEmail}팀 — 아래 폴백 링크로 전달`);
+      if (Number(json.failed ?? 0) > 0) parts.push(`실패 ${json.failed}명`);
+      if (Number(json.revokedPrevious ?? 0) > 0) parts.push(`이전 링크 ${json.revokedPrevious}건 무효화`);
+      toast.success(parts.join(' · '));
       void load();
     } catch (e) {
       toast.error(e instanceof Error ? e.message : '초대 발송 실패');
@@ -298,7 +307,13 @@ export default function OpsManifestView({
       {emailConfirm && (
         <div className="flex flex-wrap items-center gap-2 border-b border-[var(--tr-hairline)] bg-amber-50 px-4 py-2 dark:bg-amber-500/10">
           <span className="text-[12px] text-[var(--tr-ink)]">
-            이메일 있는 게스트 <b>{emailEligible}팀</b>에게 룸 초대 링크를 보냅니다. 계속할까요?
+            이메일 있는 게스트 <b>{emailEligible}팀</b>에게 <b>각자의 개인 링크</b>를 보냅니다.
+            이름을 고르는 화면 없이 바로 투어룸이 열립니다.
+            <br />
+            <span className="text-[var(--tr-ink-2)]">
+              이전에 보낸 링크는 무효화됩니다(한 예약에 살아있는 링크는 항상 하나).
+            </span>{' '}
+            계속할까요?
           </span>
           <span className="flex-1" />
           <button
@@ -320,10 +335,12 @@ export default function OpsManifestView({
         </div>
       )}
 
-      {/* 발송 후 초대 링크 노출(복사 가능) */}
+      {/* B0-D2 폴백 링크 — 이메일 없는 예약이 있을 때만. 손님에게 나간 개인
+          링크가 아니라 운영자가 직접 전달하는 공용 claim 링크다. */}
       {inviteLink && (
         <div className="flex items-center gap-2 border-b border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] px-4 py-2">
           <Mail className="size-3.5 shrink-0 text-[var(--tr-ink-3)]" />
+          <span className="shrink-0 text-[11px] font-medium text-[var(--tr-ink-2)]">이메일 없는 예약용 폴백</span>
           <span className="min-w-0 flex-1 truncate text-[11px] text-[var(--tr-ink-2)]" title={inviteLink}>
             {inviteLink}
           </span>

@@ -56,6 +56,7 @@ import { roomLifecycle } from '@/lib/tour-room/time';
 import InstallBanner from '@/components/tour-mode/InstallBanner';
 import { detectEntryLocale, ENTRY_COPY } from '@/components/tour-mode/entryCopy';
 import { GUEST_CREDS_STORAGE_PREFIX } from '@/components/tour-mode/TourModeEntry';
+import { decodeTokenBody, storePersonalToken } from '@/lib/ops/seating/personalTokens';
 import { IconLost, IconRetry } from '@/components/tour-mode/icons';
 
 /**
@@ -123,6 +124,33 @@ function consumeGuestCreds(bookingId: string): { contactEmail?: string; contactN
     return JSON.parse(raw) as { contactEmail?: string; contactName?: string };
   } catch {
     return null;
+  }
+}
+
+/**
+ * B0.3c — bridge the two token stores.
+ *
+ * A personal link opens the room with ?rt=<booking-scope token>, but until now
+ * only the claim flow (JoinFlow) and the companion flow wrote that token to
+ * `ops_personal_tokens`. So a guest who arrived by personal link — the whole
+ * point of B0.3 — still hit `no_token` at the morning QR and got sent through
+ * the claim screen the personal link exists to remove.
+ *
+ * Only booking-scope tokens are cached. A guide or driver token is tour-date
+ * scoped, and caching one here would make the QR landing greet the guide as a
+ * guest.
+ *
+ * Runs after the join resolves, so an invalid or expired token never gets
+ * stored — the server has already accepted it by then.
+ */
+function cachePersonalTokenForMorningQr(token: string | null): void {
+  if (!token) return;
+  try {
+    const body = decodeTokenBody(token);
+    if (body?.scope !== 'booking') return;
+    storePersonalToken(token);
+  } catch {
+    /* the room still works; only the morning QR shortcut is lost */
   }
 }
 
@@ -223,6 +251,7 @@ export default function TourRoomClient({ bookingId }: { bookingId: string }) {
       locale: override ?? undefined,
     }).then((result) => {
       if (!result) return;
+      cachePersonalTokenForMorningQr(token);
       scrubTokenFromUrl();
       if (!override) {
         const resolved = result.participant?.locale;
