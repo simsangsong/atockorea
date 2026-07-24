@@ -12,6 +12,7 @@
  */
 
 import { ROOM_LOCALES, type RoomLocale } from '@/lib/tour-room/snapshot';
+import { renderTemplate, type MessageVars } from '@/lib/ops/messaging/template';
 
 export interface InviteEmailVars {
   guestName: string;
@@ -28,28 +29,35 @@ export interface InviteEmailContent {
 
 type CopyKey = 'subject' | 'greeting' | 'intro' | 'what' | 'cta' | 'fallback' | 'closing' | 'signoff';
 
-/** 사전 번역 캡슐 — {guestName}/{tourTitle}/{tourDate} 치환 자리. */
+/**
+ * 사전 번역 캡슐.
+ *
+ * 🔴 §K B0.3b — 토큰 이름이 wa.me와 **같다**(`{guest_name}` `{tour_name}`
+ * `{tour_date}` `{room_link}`). 이전에는 이메일만 `{guestName}`·`{inviteUrl}`을
+ * 써서, 같은 것을 두 이름으로 부르고 있었다 — 문구를 고칠 때 한쪽만 고쳐지는
+ * 드리프트의 교과서적 형태다. 계약은 `lib/ops/messaging/template.ts`가 갖는다.
+ */
 const COPY: Record<CopyKey, Record<RoomLocale, string>> = {
   subject: {
-    en: 'Join your tour group — {tourTitle}',
-    ko: '조인투어 참여 안내 — {tourTitle}',
-    zh: '加入您的行程群组 — {tourTitle}',
-    ja: 'ツアーグループへの参加 — {tourTitle}',
-    es: 'Únase a su grupo de tour — {tourTitle}',
+    en: 'Join your tour group — {tour_name}',
+    ko: '조인투어 참여 안내 — {tour_name}',
+    zh: '加入您的行程群组 — {tour_name}',
+    ja: 'ツアーグループへの参加 — {tour_name}',
+    es: 'Únase a su grupo de tour — {tour_name}',
   },
   greeting: {
-    en: 'Hi {guestName},',
-    ko: '{guestName}님, 안녕하세요.',
-    zh: '您好，{guestName}：',
-    ja: '{guestName}様、こんにちは。',
-    es: 'Hola {guestName}:',
+    en: 'Hi {guest_name},',
+    ko: '{guest_name}님, 안녕하세요.',
+    zh: '您好，{guest_name}：',
+    ja: '{guest_name}様、こんにちは。',
+    es: 'Hola {guest_name}:',
   },
   intro: {
-    en: "You're confirmed for {tourTitle} on {tourDate}. Tap the button below to open your tour room.",
-    ko: '{tourDate} {tourTitle} 예약이 확정되었습니다. 아래 버튼을 눌러 투어룸을 열어보세요.',
-    zh: '您已确认参加 {tourDate} 的{tourTitle}。请点击下方按钮打开您的行程群组。',
-    ja: '{tourDate}の{tourTitle}のご予約が確定しました。下のボタンからツアールームを開いてください。',
-    es: 'Su reserva para {tourTitle} el {tourDate} está confirmada. Toque el botón de abajo para abrir su sala de tour.',
+    en: "You're confirmed for {tour_name} on {tour_date}. Tap the button below to open your tour room.",
+    ko: '{tour_date} {tour_name} 예약이 확정되었습니다. 아래 버튼을 눌러 투어룸을 열어보세요.',
+    zh: '您已确认参加 {tour_date} 的{tour_name}。请点击下方按钮打开您的行程群组。',
+    ja: '{tour_date}の{tour_name}のご予約が確定しました。下のボタンからツアールームを開いてください。',
+    es: 'Su reserva para {tour_name} el {tour_date} está confirmada. Toque el botón de abajo para abrir su sala de tour.',
   },
   // §K B0.3 — 이 문구는 claim 단계를 설명하던 것이었다("명단에서 본인 이름을
   // 선택"). 개인 링크 전환 이후 그 화면은 **존재하지 않는다** — 문구를 그대로
@@ -97,10 +105,13 @@ export function resolveInviteLocale(raw?: string | null): RoomLocale {
   return (ROOM_LOCALES as readonly string[]).includes(base) ? (base as RoomLocale) : 'en';
 }
 
-function line(key: CopyKey, locale: RoomLocale, vars: Record<string, string> = {}): string {
-  let text = COPY[key][locale] ?? COPY[key].en;
-  for (const [k, v] of Object.entries(vars)) text = text.replaceAll(`{${k}}`, v);
-  return text;
+/**
+ * §K B0.3b — 치환은 채널 중립 렌더러에 위임한다. 여기서 자체 replaceAll을
+ * 돌리면 wa.me와 규칙이 갈라지고(모르는 토큰 처리·별칭), 그 차이는 문구를
+ * 고치는 날에야 드러난다.
+ */
+function line(key: CopyKey, locale: RoomLocale, vars: MessageVars): string {
+  return renderTemplate(COPY[key][locale] ?? COPY[key].en, vars);
 }
 
 function escapeHtml(value: string): string {
@@ -119,7 +130,13 @@ function escapeHtml(value: string): string {
 export function buildInviteEmail(rawLocale: string | null | undefined, vars: InviteEmailVars): InviteEmailContent {
   const locale = resolveInviteLocale(rawLocale);
   const guestName = (vars.guestName || '').trim() || (locale === 'ko' ? '손님' : 'Guest');
-  const interp = { guestName, tourTitle: vars.tourTitle, tourDate: vars.tourDate };
+  // wa.me와 같은 변수로 넘긴다 — 이름만 맞춘 게 아니라 값의 출처도 같다.
+  const interp: MessageVars = {
+    guestName,
+    tourName: vars.tourTitle,
+    tourDate: vars.tourDate,
+    roomLink: vars.inviteUrl,
+  };
 
   const subject = line('subject', locale, interp);
   const greeting = line('greeting', locale, interp);

@@ -1,3 +1,5 @@
+import { renderTemplate, type MessageVars } from '@/lib/ops/messaging/template'
+
 // AtoC 통합 Phase 2 — WhatsApp Click-to-Chat deep link builder.
 // Ported from kursoflow src/lib/messaging/wa-deep-link.ts + phone-normalize.ts
 // (consolidation plan §2 포팅 ④, §4.2), trimmed to the atockorea surface:
@@ -56,44 +58,21 @@ export function resolveWhatsAppDigits(input: {
 
 // ── Template rendering ───────────────────────────────────────────────────────
 
-export interface WaTemplateInput {
-  guestName: string
-  tourName?: string | null
-  tourDate?: string | null // YYYY-MM-DD or human-readable
-  pickupPoint?: string | null
-  pickupTime?: string | null // HH:MM
-  /** 투어룸 초대/입장 링크 (plan §4.2 {room_link}). */
-  roomLink?: string | null
-  /** 당일 패스/체크인 링크 (plan §4.2 {pass_link}). */
-  passLink?: string | null
-  /** Operator (agency) name — fills {operator}. */
-  operatorName?: string | null
-}
+/**
+ * §K B0.3b — wa.me 입력은 채널 중립 변수와 **같은 것**이다. 별칭으로 남겨
+ * 기존 호출부를 건드리지 않는다.
+ */
+export type WaTemplateInput = MessageVars
 
 /**
- * Substitute {variables} into a template body. Unknown tokens are left as-is
- * (visible in preview — a prompt to fix the template, not silent data loss).
- *
- * Plan tokens: {guest_name} {tour_date} {pickup_time} {room_link} {pass_link}
- * Aliases (kursoflow compat): {name} {tour_name} {pickup_point} {pickup}
- * {pass_url} {operator}
+ * Substitute {variables} into a template body — thin alias over the
+ * channel-neutral renderer (§K B0.3b). The token contract lives in
+ * `lib/ops/messaging/template.ts` and is shared with email.
  */
 export function renderWaTemplate(body: string, i: WaTemplateInput): string {
-  const pickupLine = i.pickupPoint
-    ? `${i.pickupPoint}${i.pickupTime ? ` ${i.pickupTime}` : ''}`
-    : ''
-  return body
-    .replaceAll('{guest_name}', i.guestName)
-    .replaceAll('{name}', i.guestName)
-    .replaceAll('{tour_name}', i.tourName ?? '')
-    .replaceAll('{tour_date}', i.tourDate ?? '')
-    .replaceAll('{pickup_point}', i.pickupPoint ?? '')
-    .replaceAll('{pickup_time}', i.pickupTime ?? '')
-    .replaceAll('{pickup}', pickupLine)
-    .replaceAll('{room_link}', i.roomLink ?? '')
-    .replaceAll('{pass_link}', i.passLink ?? '')
-    .replaceAll('{pass_url}', i.passLink ?? '')
-    .replaceAll('{operator}', i.operatorName ?? 'AtoC Korea')
+  // §K B0.3b — 치환 규칙은 채널 중립 렌더러가 갖는다. 여기 두면 이메일이
+  // 같은 계약을 쓸 수 없고, 두 벌이 되는 순간 문구가 어긋나기 시작한다.
+  return renderTemplate(body, i)
 }
 
 /**
