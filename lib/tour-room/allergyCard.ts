@@ -15,6 +15,11 @@ const DIETARY_KO: Record<string, string> = {
   halal: '할랄 식사만 가능합니다 — 돼지고기와 술(알코올)이 들어가면 안 됩니다.',
   no_pork: '돼지고기를 드시지 않습니다.',
   no_seafood: '해산물(생선·조개·새우 등)을 드시지 않습니다.',
+  // §5.7 R-1 — the two chips the dining RAG added to the A10 checklist.
+  // Shellfish and nut reactions are the ones that turn severe fastest, so both
+  // lines name the hidden sources Korean kitchens actually use.
+  no_shellfish: '조개·갑각류(새우·게·조개·굴 등) 알레르기가 있습니다 — 육수에도 들어가지 않도록 부탁드립니다.',
+  no_nuts: '견과류(땅콩·호두·잣 등) 알레르기가 있습니다 — 고명이나 소스에도 들어가지 않도록 부탁드립니다.',
   gluten_free: '글루텐(밀가루)을 드시지 못합니다 — 밀가루·간장 확인 부탁드립니다.',
 };
 

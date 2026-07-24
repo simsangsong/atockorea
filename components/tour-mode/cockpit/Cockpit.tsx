@@ -68,6 +68,7 @@ import {
   Sunrise,
   Timer,
   TriangleAlert,
+  Utensils,
   Wallet,
   Navigation,
   type LucideIcon,
@@ -1130,6 +1131,45 @@ export default function Cockpit({
       : '오늘 일정 없음';
   const navDest = isPrep && pickupDest ? pickupDest : destFrom(nextStop);
 
+  // §5.7 R-2 ④ — operator one-tap dining picks for the upcoming stop. The
+  // server does the judging (cache HIT/MISS, dietary intake, ranking); this is
+  // just "send it". Declared after `nextStop` on purpose — a useCallback whose
+  // dep array names a later const would hit the TDZ at render.
+  const sendDiningPicks = useCallback(async () => {
+    if (!nextStop) {
+      say('보낼 스팟이 없어요');
+      return;
+    }
+    const title = itemTitle(nextStop);
+    if (!(await confirmSheet({ title: '식당 추천', message: `${title} 근처 식당을 손님에게 보낼까요?`, confirmLabel: '보내기' }))) return;
+    try {
+      const res = await fetch(`/api/tour-rooms/${bookingId}/dining`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'x-tour-room-auth': session },
+        body: JSON.stringify({
+          poiKey: nextStop.poi_key ?? null,
+          spotTitle: title,
+          lat: typeof nextStop.lat === 'number' ? nextStop.lat : undefined,
+          lng: typeof nextStop.lng === 'number' ? nextStop.lng : undefined,
+          post: true,
+        }),
+      });
+      if (!res.ok) {
+        say('실패 — 다시 시도해 주세요');
+        return;
+      }
+      const data = (await res.json()) as { posted?: boolean; delivered?: number; skipped?: string | null };
+      if (!data.posted) {
+        say(data.skipped === 'duplicate' ? '오늘 이 근처 추천은 이미 보냈어요' : '추천할 식당을 못 찾았어요');
+        return;
+      }
+      const teams = data.delivered && data.delivered > 1 ? ` (${data.delivered}팀)` : '';
+      say(`${title} 식당 추천 전송 ✓${teams}`);
+    } catch {
+      say('네트워크 오류');
+    }
+  }, [bookingId, session, say, confirmSheet, nextStop]);
+
   // Focus mode widens the window — the point is reading a long exchange.
   const recent = messages.slice(chatExpanded ? -80 : -8);
 
@@ -1571,6 +1611,7 @@ export default function Cockpit({
             });
           }}
         />
+        <ActionButton label="식당 추천" Icon={Utensils} onClick={() => void sendDiningPicks()} />
         <ActionButton label="AI 도우미" Icon={Sparkles} onClick={() => setSheet('assist')} />
         <ActionButton label="아침브리핑" Icon={Sunrise} onClick={() => void sendMorningBriefing()} />
         <ActionButton label="차량사진" Icon={Camera} onClick={() => vehiclePhotoRef.current?.click()} />
