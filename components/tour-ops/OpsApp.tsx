@@ -19,7 +19,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { toast } from 'sonner';
-import { Home, LayoutDashboard, Map as MapIcon, Moon, RefreshCw, Settings, Siren, Sun } from 'lucide-react';
+import { CalendarRange, Home, LayoutDashboard, Map as MapIcon, Moon, RefreshCw, Settings, Siren, Sun } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import { kstToday } from '@/lib/tour-room/time';
 import { useOpsChannels, type OpsChannelDescriptor } from '@/hooks/useOpsChannels';
@@ -36,12 +36,13 @@ import OpsRoomDrawer from '@/components/tour-ops/OpsRoomDrawer';
 import OpsRoomManager from '@/components/tour-ops/OpsRoomManager';
 import OpsInboxView from '@/components/tour-ops/OpsInboxView';
 import OpsReviewQueueView from '@/components/tour-ops/OpsReviewQueueView';
+import OpsBookingsOverview from '@/components/tour-ops/OpsBookingsOverview';
 
 const BACKUP_POLL_MS = 20_000;
 const DRIFT_REFRESH_MS = 5 * 60_000;
 const SOUND_KEY = 'tour_ops_sound';
 
-export type OpsTab = 'home' | 'dashboard' | 'map' | 'sos' | 'settings';
+export type OpsTab = 'home' | 'dashboard' | 'bookings' | 'map' | 'sos' | 'settings';
 
 interface ChannelRow {
   room_id: string;
@@ -320,6 +321,7 @@ export default function OpsApp() {
   const tabs: Array<{ key: OpsTab; label: string; icon: typeof LayoutDashboard; badge?: number }> = [
     { key: 'home', label: '홈', icon: Home },
     { key: 'dashboard', label: '대시보드', icon: LayoutDashboard, badge: unreadTotal },
+    { key: 'bookings', label: '예약', icon: CalendarRange },
     { key: 'map', label: '지도', icon: MapIcon },
     { key: 'sos', label: 'SOS', icon: Siren, badge: sosCount },
     { key: 'settings', label: '설정', icon: Settings },
@@ -408,6 +410,9 @@ export default function OpsApp() {
             onOpenRoom={openRoom}
           />
         )}
+        {/* §K B1 — 전 채널 예약 통합 통계. 대시보드가 "오늘 돌아가는 것"이라면
+            이쪽은 "이번 주/이번 달에 무엇이 들어왔고 무엇이 새는가"다. */}
+        {tab === 'bookings' && <OpsBookingsOverview />}
         {tab === 'map' && <OpsMapTab rooms={rooms} streams={streams} sosRooms={sosRooms} onSelectRoom={openRoom} />}
         {tab === 'sos' && <OpsSosTab rooms={rooms} sosRooms={sosRooms} onOpenRoom={openRoom} />}
         {tab === 'settings' && (
