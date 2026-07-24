@@ -8,6 +8,11 @@
  * 있었다. 이 패널은 운영자가 이미 일하는 자리(룸 상세 드로어) 안에서
  * 배차·차량번호·기사를 지정한다.
  *
+ * §K B2.4 — 배차는 **그룹 단위**다(B0.4 이후). 2호차를 붙이면 같은 그룹의
+ * 좌석판·명단이 즉시 두 대를 본다. 정원 초과는 여기서 "2호차가 필요하다"로
+ * 말한다 — 🔴 B2-D1: 판매 차단이 아니라 운영 신호이고, 손님 표면에는 절대
+ * 닿지 않는다.
+ *
  * 🔴 좌석이 이미 배정된 차량의 배치도 교체는 서버가 409로 막는다. 이 패널은
  * 그 409가 돌려준 "무엇이 사라지는지"를 좌석번호·손님 이름까지 보여준 뒤에만
  * 선택지를 연다(좌석 유지 / 전체 해제). 그리고 실행 직후 [되돌리기]를 띄운다 —
@@ -18,6 +23,17 @@ import { useCallback, useEffect, useState } from 'react';
 import { toast } from 'sonner';
 import { AlertTriangle, Bus, Loader2, Plus, RotateCcw, Trash2, X } from 'lucide-react';
 import { getOpsToken } from '@/components/tour-ops/opsShared';
+
+/** §K B2.4 — 그룹 정원 판정(운영자 전용). */
+interface GroupCapacity {
+  headcount: number;
+  capacity: number | null;
+  over: boolean;
+  overBy: number;
+  /** 무엇이 정원을 묶고 있나 — 'product'면 2호차를 붙여도 정원이 안 는다. */
+  bottleneck: 'product' | 'seats' | 'group' | null;
+  groupCapacity: number | null;
+}
 
 interface LayoutOption {
   id: string;
@@ -82,6 +98,7 @@ async function authedFetch(url: string, init: RequestInit = {}) {
 
 export default function OpsRoomVehiclePanel({ roomId }: { roomId: string }) {
   const [vehicles, setVehicles] = useState<VehicleRow[]>([]);
+  const [capacity, setCapacity] = useState<GroupCapacity | null>(null);
   const [layouts, setLayouts] = useState<LayoutOption[]>([]);
   const [drivers, setDrivers] = useState<DriverOption[]>([]);
   const [loading, setLoading] = useState(true);
@@ -97,6 +114,7 @@ export default function OpsRoomVehiclePanel({ roomId }: { roomId: string }) {
       const json = await res.json();
       if (!res.ok) throw new Error(json?.error || '차량 정보를 불러오지 못했어요.');
       setVehicles(json.vehicles as VehicleRow[]);
+      setCapacity((json.capacity as GroupCapacity | null) ?? null);
       setLayouts(json.layouts as LayoutOption[]);
       setDrivers(json.drivers as DriverOption[]);
     } catch (error) {
@@ -177,6 +195,36 @@ export default function OpsRoomVehiclePanel({ roomId }: { roomId: string }) {
     }
   }, [undoEventId, roomId, load]);
 
+  /**
+   * §K B2.4 — 이 날짜만 정원을 올린다(B2-D3 그룹 예외).
+   *
+   * 🔴 자동으로 올리지 않는다. 한 번 자동으로 올라간 정원은 아무도 내리지
+   * 않고, 그러면 캡이 사실상 사라진다. 운영자가 눌러야 올라간다.
+   */
+  const setGroupCapacity = useCallback(
+    async (next: number | null) => {
+      setBusy(true);
+      try {
+        const token = await getOpsToken();
+        const res = await fetch(`/api/admin/tour-ops/rooms/${roomId}/group`, {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+          credentials: 'include',
+          body: JSON.stringify({ capacity: next }),
+        });
+        const json = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(json?.error || '정원을 바꾸지 못했어요.');
+        toast.success(next === null ? '상품 정원으로 되돌렸어요.' : `이 날짜 정원을 ${next}로 올렸어요.`);
+        await load();
+      } catch (error) {
+        toast.error(error instanceof Error ? error.message : '정원을 바꾸지 못했어요.');
+      } finally {
+        setBusy(false);
+      }
+    },
+    [roomId, load],
+  );
+
   const removeVehicle = useCallback(
     async (vehicleId: string) => {
       setBusy(true);
@@ -243,9 +291,55 @@ export default function OpsRoomVehiclePanel({ roomId }: { roomId: string }) {
             </div>
           )}
 
-          {vehicles.map((vehicle) => (
+          {/* §K B2.4/B2-D5 — 초과는 "막혔다"가 아니라 "2호차를 붙여라"다.
+              오버부킹은 이미 발생한 사실이고, 시스템이 막을 수 있는 시점이 아니다.
+              🔴 이 숫자는 운영자 전용이다 — 손님 표면에 잔여/매진으로 새지 않는다(B2-D1). */}
+          {capacity?.over && (
+            <div
+              className="rounded-xl bg-amber-50 p-3 dark:bg-amber-950/40"
+              data-testid="capacity-warning"
+            >
+              <p className="flex items-center gap-1.5 text-[12px] font-bold text-amber-700 dark:text-amber-400">
+                <AlertTriangle className="size-3.5" />
+                {capacity.headcount}명 — 정원 {capacity.capacity} 초과({capacity.overBy}명)
+              </p>
+              {capacity.bottleneck === 'seats' ? (
+                <p className="mt-1 text-[11px] text-[var(--tr-ink-2)]">
+                  좌석이 모자라요. 아래에서 2호차를 붙이면 좌석이 늘어나고, 같은 그룹의 좌석판·명단이 함께 반영돼요.
+                </p>
+              ) : (
+                <>
+                  {/* 🔴 실효 정원 = min(상품 정원, 좌석수). 병목이 상품이면 차를
+                      붙여도 숫자가 안 움직인다 — 그 사실을 먼저 말한다. */}
+                  <p className="mt-1 text-[11px] text-[var(--tr-ink-2)]">
+                    지금은 <b>상품 정원 {capacity.capacity}</b>이 한도예요. 2호차를 붙여도 이 숫자는 그대로라,
+                    이 날짜만 정원을 올려야 해요.
+                  </p>
+                  <button
+                    type="button"
+                    disabled={busy}
+                    onClick={() => void setGroupCapacity(capacity.headcount)}
+                    className="mt-2 h-9 rounded-lg bg-amber-600 px-3 text-[11px] font-bold text-white disabled:opacity-40"
+                    data-testid="raise-group-capacity"
+                  >
+                    이 날짜만 정원 {capacity.headcount}로 올리기
+                  </button>
+                </>
+              )}
+            </div>
+          )}
+
+          {capacity && !capacity.over && capacity.capacity !== null && vehicles.length > 0 && (
+            <p className="text-center text-[11px] text-[var(--tr-ink-3)]" data-testid="capacity-ok">
+              {capacity.headcount}명 / 정원 {capacity.capacity}
+            </p>
+          )}
+
+          {vehicles.map((vehicle, index) => (
             <VehicleCard
               key={vehicle.id}
+              // 2호차가 붙으면 어느 쪽이 어느 쪽인지 말할 수 있어야 한다.
+              ordinal={vehicles.length > 1 ? index + 1 : null}
               vehicle={vehicle}
               layouts={layouts}
               drivers={drivers}
@@ -280,7 +374,7 @@ export default function OpsRoomVehiclePanel({ roomId }: { roomId: string }) {
               onClick={() => setAdding(true)}
               className="flex h-11 w-full items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-accent)] text-[12px] font-semibold text-[var(--tr-bubble-me-ink)]"
             >
-              <Plus className="size-4" /> 차량 배정
+              <Plus className="size-4" /> {vehicles.length > 0 ? `${vehicles.length + 1}호차 배정` : '차량 배정'}
             </button>
           )}
         </>
@@ -300,6 +394,7 @@ export default function OpsRoomVehiclePanel({ roomId }: { roomId: string }) {
 
 function VehicleCard({
   vehicle,
+  ordinal,
   layouts,
   drivers,
   busy,
@@ -307,6 +402,8 @@ function VehicleCard({
   onRemove,
 }: {
   vehicle: VehicleRow;
+  /** §K B2.4 — 2대 이상일 때만 1호차/2호차로 부른다. 1대뿐이면 번호가 소음이다. */
+  ordinal?: number | null;
   layouts: LayoutOption[];
   drivers: DriverOption[];
   busy: boolean;
@@ -339,6 +436,14 @@ function VehicleCard({
     <div className="rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] p-3">
       <div className="mb-2 flex items-center gap-2">
         <Bus className="size-4 shrink-0 text-[var(--tr-ink-2)]" />
+        {ordinal ? (
+          <span
+            className="shrink-0 rounded-full bg-[var(--tr-accent-soft)] px-1.5 py-0.5 text-[10px] font-bold text-[var(--tr-accent)]"
+            data-testid="vehicle-ordinal"
+          >
+            {ordinal}호차
+          </span>
+        ) : null}
         <p className="min-w-0 flex-1 truncate text-[13px] font-bold text-[var(--tr-ink)]">
           {layoutLabel(vehicle)}
           {vehicle.plate_number ? <span className="ml-1.5 font-normal">{vehicle.plate_number}</span> : null}

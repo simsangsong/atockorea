@@ -5,6 +5,8 @@ import { getOpsRoom } from '@/lib/ops/seating/access';
 import { broadcastSeatUpdate } from '@/lib/ops/seating/service';
 import { loadLayoutUsage, selectRoomVehicles } from '@/lib/ops/seating/layoutUsage';
 import { ensureTourGroup } from '@/lib/ops/seating/group';
+import { capacityVerdict } from '@/lib/ops/seating/capacity';
+import { dropSimBookings } from '@/lib/ops/sim/simScope';
 import { normalizeLayoutJson } from '@/lib/ops/seating/layoutEditor';
 import { recordRoomEvent } from '@/lib/tour-room/events';
 import type { VehicleLayoutJson } from '@/lib/ops/seating/layouts';
@@ -67,6 +69,101 @@ function seatNumbersOf(layout: VehicleLayoutJson | null): Set<number> {
   return new Set((layout?.seats ?? []).map((seat) => seat.n));
 }
 
+/**
+ * §K B2.4 — 이 룸이 속한 그룹의 룸 id 전부.
+ * `lib/ops/seating/service.ts`의 같은 규칙(B0.4)과 짝을 맞춘다.
+ */
+async function roomIdsInGroup(
+  supabase: ReturnType<typeof createServerClient>,
+  room: { id: string; tour_id: string | null; tour_date: string | null },
+): Promise<string[]> {
+  if (!room.tour_id || !room.tour_date) return [room.id];
+  const { data } = await supabase
+    .from('tour_rooms')
+    .select('id')
+    .eq('tour_id', room.tour_id)
+    .eq('tour_date', room.tour_date);
+  const ids = Array.isArray(data) ? (data as Array<{ id: string }>).map((r) => r.id) : [];
+  return ids.length > 0 ? [...new Set([room.id, ...ids])] : [room.id];
+}
+
+/**
+ * §K B2.4 — 이 그룹의 정원 판정. 배차 화면이 "2호차가 필요한가"를 스스로
+ * 말할 수 있어야 한다.
+ *
+ * 🔴 B2-D1 — 판매 차단이 아니다. 이 값은 **운영자 화면 전용**이고, 손님
+ * 표면에는 절대 닿지 않는다(B2.5 회귀가 그걸 파일시스템으로 감시한다).
+ */
+async function groupCapacity(
+  supabase: ReturnType<typeof createServerClient>,
+  room: { tour_id: string | null; tour_date: string | null },
+  vehicleSeatTotals: Array<{ total_seats?: number | null }>,
+): Promise<{
+  headcount: number;
+  capacity: number | null;
+  over: boolean;
+  overBy: number;
+  /**
+   * 무엇이 정원을 묶고 있나. 실효 정원은 min(상품, 좌석)이라, 병목이 상품이면
+   * **2호차를 붙여도 정원이 그대로다** — 화면이 그걸 말할 수 있어야 운영자가
+   * "차를 붙였는데 왜 아직 초과지"에 빠지지 않는다.
+   */
+  bottleneck: 'product' | 'seats' | 'group' | null;
+  groupCapacity: number | null;
+} | null> {
+  if (!room.tour_id || !room.tour_date) return null;
+  try {
+    const [{ data: bookings }, { data: tour }, { data: group }] = await Promise.all([
+      supabase
+        .from('bookings')
+        .select('number_of_guests, status, sim_tag, contact_email')
+        .eq('tour_id', room.tour_id)
+        .eq('tour_date', room.tour_date),
+      supabase.from('tours').select('max_room_guests, price_type').eq('id', room.tour_id).maybeSingle(),
+      supabase
+        .from('ops_tour_groups')
+        .select('capacity')
+        .eq('tour_id', room.tour_id)
+        .eq('tour_date', room.tour_date)
+        .maybeSingle(),
+    ]);
+    // A0.1 — 시뮬 예약이 정원 카운트에 들어가면 빈 투어가 초과로 뜬다.
+    const real = dropSimBookings((bookings ?? []) as Array<{ sim_tag?: string | null; contact_email?: string | null }>);
+    const verdict = capacityVerdict(
+      real as Array<{ number_of_guests?: number | null; status?: string | null }>,
+      (tour ?? null) as { max_room_guests?: number | null; price_type?: string | null } | null,
+      vehicleSeatTotals,
+      (group ?? null) as { capacity?: number | null } | null,
+    );
+    const groupCap = ((group ?? null) as { capacity?: number | null } | null)?.capacity ?? null;
+    const seatTotal = vehicleSeatTotals.reduce((sum, v) => sum + (v.total_seats ?? 0), 0);
+    const productCap =
+      groupCap ??
+      ((tour ?? null) as { max_room_guests?: number | null } | null)?.max_room_guests ??
+      null;
+
+    let bottleneck: 'product' | 'seats' | 'group' | null = null;
+    if (verdict.capacity !== null) {
+      if (seatTotal > 0 && seatTotal === verdict.capacity && (productCap === null || productCap > seatTotal)) {
+        bottleneck = 'seats';
+      } else if (productCap !== null && productCap === verdict.capacity) {
+        bottleneck = groupCap !== null ? 'group' : 'product';
+      }
+    }
+
+    return {
+      headcount: verdict.headcount,
+      capacity: verdict.capacity,
+      over: verdict.over,
+      overBy: verdict.overBy,
+      bottleneck,
+      groupCapacity: groupCap,
+    };
+  } catch {
+    return null; // 정원 표시 하나 때문에 배차 화면이 죽으면 안 된다
+  }
+}
+
 export async function GET(req: NextRequest, { params }: { params: Promise<{ roomId: string }> }) {
   try {
     await requireAdmin(req);
@@ -76,7 +173,10 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ room
     const room = await getOpsRoom(supabase, roomId);
     if (!room) return NextResponse.json({ error: 'Room not found' }, { status: 404 });
 
-    const { rows, migrationPending } = await selectRoomVehicles(supabase, { roomId });
+    // §K B2.4 — 배차는 그룹 단위다. 2호차가 어느 룸에서 붙었든 여기 보여야
+    // 하고, 그렇지 않으면 좌석판(B0.4에서 이미 그룹을 본다)과 어긋난다.
+    const groupRoomIds = await roomIdsInGroup(supabase, room);
+    const { rows, migrationPending } = await selectRoomVehicles(supabase, { roomIds: groupRoomIds });
 
     const layoutsRes = await supabase
       .from('ops_vehicle_layouts')
@@ -129,8 +229,16 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ room
       }),
     );
 
+    // §K B2.4 — 실효 정원은 배정된 차량 좌석수도 본다(B2-D4: min(상품, 좌석)).
+    const capacity = await groupCapacity(
+      supabase,
+      room,
+      vehicles.map((v) => ({ total_seats: v.total_seats })),
+    );
+
     return NextResponse.json({
       room: { id: room.id, booking_id: room.booking_id, tour_id: room.tour_id, tour_date: room.tour_date },
+      capacity,
       vehicles,
       layouts: layouts.map((layout) => ({
         id: String(layout.id),

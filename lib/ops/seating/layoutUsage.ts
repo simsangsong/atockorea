@@ -38,12 +38,16 @@ const EXTENDED_COLUMNS = `${BASE_COLUMNS}, driver_name, layout_override_json, ov
  */
 export async function selectRoomVehicles(
   supabase: RoomDbClient,
-  filter: { layoutId?: string; roomId?: string; ids?: string[] },
+  filter: { layoutId?: string; roomId?: string; roomIds?: string[]; ids?: string[] },
 ): Promise<{ rows: RoomVehicleRow[]; migrationPending: boolean }> {
   const run = async (columns: string) => {
     let query = supabase.from('ops_room_vehicles').select(columns);
     if (filter.layoutId) query = query.eq('layout_id', filter.layoutId);
     if (filter.roomId) query = query.eq('room_id', filter.roomId);
+    // §K B2.4 — 그룹 스코프. 2호차가 어느 룸에서 붙었든 그룹 전원이 본다
+    // (B0.4가 loadRoomVehicles에 넣은 것과 같은 규칙 — 배차 화면도 같은 답을
+    //  봐야 좌석판과 어긋나지 않는다).
+    if (filter.roomIds) query = query.in('room_id', filter.roomIds);
     if (filter.ids) query = query.in('id', filter.ids);
     return query;
   };
@@ -65,7 +69,8 @@ function normalizeRows(rows: unknown[]): RoomVehicleRow[] {
     const row = item as Record<string, unknown>;
     return {
       id: String(row.id),
-      room_id: String(row.room_id),
+      // B0.1 이후 room_id는 nullable이다(레거시 앵커) — 소유는 group_id가 갖는다.
+      room_id: row.room_id ? String(row.room_id) : '',
       layout_id: String(row.layout_id),
       plate_number: (row.plate_number as string | null) ?? null,
       driver_participant_id: (row.driver_participant_id as string | null) ?? null,
