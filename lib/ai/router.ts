@@ -236,11 +236,12 @@ interface CacheRow {
 /**
  * A3 / plan §12 Q1 — cache-key salt tied to the translation prompt version.
  * The translation memory stores outputs of a specific system prompt; when the
- * prompt changes semantically (e.g. v2 added the honorific-register rule),
- * bump this so old rows (written under the previous prompt) can never be
- * served again. Old rows simply stop matching — no migration needed.
+ * prompt changes semantically (v2 added the honorific-register rule, v3 added
+ * the native-phrasing rule), bump this so old rows (written under the previous
+ * prompt) can never be served again. Old rows simply stop matching — no
+ * migration needed.
  */
-export const TRANSLATION_PROMPT_VERSION = 2;
+export const TRANSLATION_PROMPT_VERSION = 3;
 
 export function hashSource(text: string): string {
   return createHash('sha256')
@@ -354,13 +355,19 @@ export async function translateTextViaRouter(
         role: 'system',
         // A3 honorific filter (plan §11.A): drivers/guides often type blunt or
         // casual Korean; guests must still receive a courteous translation.
-        // Register only — meaning, information, and content must not change.
+        // v3 adds the native-phrasing rule — register alone still produced
+        // word-order-preserving translationese, which reads as machine output
+        // and undercuts the "Smart Guide" the guest is supposed to be talking
+        // to. Register and phrasing may change; meaning may not.
         // Bump TRANSLATION_PROMPT_VERSION whenever this prompt changes.
         content:
           'Detect the source language. Translate the user text into each requested locale. ' +
           'Always write each translation in the polite, formal register of the target language ' +
           '(Korean 존댓말, Japanese 敬語/です・ます体, French vous, German Sie, Spanish usted, and the equivalent elsewhere), ' +
           'even when the source text is casual, blunt, or impolite — but never change, add, or omit any meaning, information, or content. ' +
+          'Write it the way a courteous NATIVE SPEAKER would actually say it to a traveller: idiomatic, natural word order, ' +
+          'natural particles and connectives. Do not mirror the source sentence structure, and do not translate word by word. ' +
+          'A stiff literal rendering is a failure even when every word is correct. ' +
           'Preserve names, times, pickup points, prices, and URLs. ' +
           'Respond with only a JSON object of the form {"source_locale": string, "translations": {locale: string}}.',
       },

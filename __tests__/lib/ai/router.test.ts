@@ -222,7 +222,7 @@ describe('lib/ai/router', () => {
       // A v1-era row was stored under the UNSALTED sha256 of the text.
       const legacyHash = createHash('sha256').update(text.trim()).digest('hex');
       expect(hashSource(text)).not.toBe(legacyHash);
-      expect(TRANSLATION_PROMPT_VERSION).toBeGreaterThanOrEqual(2);
+      expect(TRANSLATION_PROMPT_VERSION).toBeGreaterThanOrEqual(3);
 
       const db = fakeCacheDb([
         { source_hash: legacyHash, locale: 'ko', translated_text: '좋은 아침 (반말 캐시)', source_locale: 'en' },
@@ -236,6 +236,35 @@ describe('lib/ai/router', () => {
       expect(db.upserted).toEqual([
         expect.objectContaining({ source_hash: hashSource(text), locale: 'ko', translated_text: '좋은 아침입니다' }),
       ]);
+    });
+
+    it('instructs BOTH the honorific register and native phrasing (A3 + v3)', async () => {
+      // The guest-facing promise is a courteous NATIVE-sounding guide. v2 fixed
+      // register only, which still produced word-order-preserving
+      // translationese — every word right, obviously machine. Both rules must
+      // survive future prompt edits, so assert on what is actually sent.
+      const db = fakeCacheDb([]);
+      fetchMock.mockResolvedValue(
+        okCompletion({ source_locale: 'ko', translations: { en: 'Please board.' } }),
+      );
+      await translateTextViaRouter('빨리 타', ['en'], { db });
+
+      const body = JSON.parse(String(fetchMock.mock.calls[0][1].body));
+      const system = String(
+        body.messages.find((m: { role: string }) => m.role === 'system').content,
+      );
+
+      // Register — named for the languages where getting it wrong reads rudest.
+      expect(system).toContain('존댓말');
+      expect(system).toContain('敬語');
+      expect(system).toContain('vous');
+      expect(system).toContain('Sie');
+      // Native phrasing + the explicit ban on mirroring source structure.
+      expect(system).toMatch(/native/i);
+      expect(system).toMatch(/idiomatic/i);
+      expect(system).toMatch(/not mirror the source sentence structure/i);
+      // Register and phrasing may move; facts may not.
+      expect(system).toMatch(/never change, add, or omit any meaning/i);
     });
   });
 
