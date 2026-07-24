@@ -85,7 +85,8 @@
     "db:exec": "supabase db query --linked",
     "db:types": "supabase gen types typescript --linked --schema public > lib/database.types.ts",
     "ai:tier0-coverage": "node --env-file=.env.local --import tsx scripts/tier0-coverage.ts",
-    "perf:baseline": "npx tsx scripts/perf-baseline.ts"
+    "perf:baseline": "npx tsx scripts/perf-baseline.ts",
+    "locale:fit": "npx tsx scripts/locale-fit.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.78.0",
