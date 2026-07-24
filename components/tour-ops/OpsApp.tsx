@@ -412,7 +412,7 @@ export default function OpsApp() {
         )}
         {/* §K B1 — 전 채널 예약 통합 통계. 대시보드가 "오늘 돌아가는 것"이라면
             이쪽은 "이번 주/이번 달에 무엇이 들어왔고 무엇이 새는가"다. */}
-        {tab === 'bookings' && <OpsBookingsOverview />}
+        {tab === 'bookings' && <OpsBookingsOverview onOpenReview={() => setReviewOpen(true)} />}
         {tab === 'map' && <OpsMapTab rooms={rooms} streams={streams} sosRooms={sosRooms} onSelectRoom={openRoom} />}
         {tab === 'sos' && <OpsSosTab rooms={rooms} sosRooms={sosRooms} onOpenRoom={openRoom} />}
         {tab === 'settings' && (

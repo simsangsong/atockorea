@@ -15,6 +15,11 @@
  * 설계했다 — 데이터가 많을 것을 가정한 레이아웃은 실제로는 항상 비어 보인다.
  *
  * 🔴 B1-D5 — 목록은 이름을 마스킹한다. 이 화면은 상시 열려 있다.
+ *
+ * §K B1.5 — 확인 대기·예약 실패 카드는 **기존 리뷰 큐를 여는 진입점**이다.
+ * 조치 UI를 여기 다시 만들지 않는다: 승인 커밋·즉석 매핑·수동 예약 생성·무시가
+ * 이미 `OpsReviewQueueView`에 있고, 두 벌이 되면 한쪽만 고쳐지는 날이 온다.
+ * "화면 이동 없이 처리"는 같은 화면 위로 시트가 뜨는 것으로 성립한다.
  */
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
@@ -58,7 +63,14 @@ export function maskName(name: string | null | undefined): string {
   return `${raw[0]}${'*'.repeat(Math.min(raw.length - 2, 4))}${raw[raw.length - 1]}`;
 }
 
-export default function OpsBookingsOverview({ getToken }: { getToken?: () => Promise<string | null> }) {
+export default function OpsBookingsOverview({
+  getToken,
+  onOpenReview,
+}: {
+  getToken?: () => Promise<string | null>;
+  /** §K B1.5 — 기존 리뷰 큐 시트를 연다. 없으면 카드가 그냥 숫자로 남는다. */
+  onOpenReview?: () => void;
+}) {
   const [view, setView] = useState<'week' | 'month'>('week');
   const [axis, setAxis] = useState<'tour_date' | 'created_at'>('tour_date');
   const [month, setMonth] = useState<string | null>(null);
@@ -168,10 +180,20 @@ export default function OpsBookingsOverview({ getToken }: { getToken?: () => Pro
               const count = data.summary.counts[tier];
               const empty = count === 0 && tier !== 'confirmed';
               const notConnected = empty && data.inbox === 'never_ran';
+              // B1.5 — 처리할 것이 있을 때만 누를 수 있게 한다. 0건인 카드가
+              // 눌리면 빈 큐가 열리고, 그건 "할 일이 있나?"에 답하지 않는다.
+              const actionable = tier !== 'confirmed' && count > 0 && Boolean(onOpenReview);
+              const Wrapper = actionable ? 'button' : 'div';
               return (
-                <div
+                <Wrapper
                   key={tier}
-                  className="rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] p-2.5"
+                  {...(actionable
+                    ? { type: 'button' as const, onClick: onOpenReview, 'data-testid-action': 'open-review' }
+                    : {})}
+                  className={
+                    'rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] p-2.5 text-left ' +
+                    (actionable ? 'active:scale-[0.98]' : '')
+                  }
                   data-testid={`tier-${tier}`}
                 >
                   <p className="text-[10px] font-semibold text-[var(--tr-ink-3)]">{TIER_LABEL[tier]}</p>
@@ -190,9 +212,14 @@ export default function OpsBookingsOverview({ getToken }: { getToken?: () => Pro
                       {tier === 'confirmed' && (
                         <p className="text-[10px] text-[var(--tr-ink-3)]">{data.summary.confirmedGuests}명</p>
                       )}
+                      {actionable && (
+                        <p className="text-[10px] font-semibold text-[var(--tr-accent)]" data-testid={`tier-${tier}-cta`}>
+                          탭해서 처리
+                        </p>
+                      )}
                     </>
                   )}
-                </div>
+                </Wrapper>
               );
             })}
           </div>

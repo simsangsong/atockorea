@@ -7,7 +7,7 @@
  * 도는 줄 알고 OTA 메일을 놓친다.
  */
 
-import { render, screen, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import OpsBookingsOverview, { maskName } from '@/components/tour-ops/OpsBookingsOverview';
 
 function payload(over: Record<string, unknown> = {}) {
@@ -128,6 +128,57 @@ describe('B1-D2 — 룸 누락 세 종류를 따로 보여준다', () => {
     render(<OpsBookingsOverview />);
     await waitFor(() => expect(screen.getByTestId('tier-confirmed')).toBeInTheDocument());
     expect(screen.queryByTestId('room-gaps')).toBeNull();
+  });
+});
+
+describe('§K B1.5 — 큐 진입점', () => {
+  const withWork = payload({
+    inbox: 'active',
+    summary: {
+      counts: { confirmed: 2, pending_review: 3, unparsed: 1 },
+      roomGaps: { no_room: 0, no_participant: 0, no_seat: 0 },
+      confirmedGuests: 4,
+      byChannel: [],
+    },
+  });
+
+  it('처리할 것이 있으면 카드가 눌린다', async () => {
+    mockFetch(withWork);
+    const onOpenReview = jest.fn();
+    render(<OpsBookingsOverview onOpenReview={onOpenReview} />);
+    await waitFor(() => expect(screen.getByTestId('tier-pending_review')).toBeInTheDocument());
+
+    fireEvent.click(screen.getByTestId('tier-pending_review'));
+    expect(onOpenReview).toHaveBeenCalledTimes(1);
+    expect(screen.getByTestId('tier-pending_review-cta')).toHaveTextContent('탭해서 처리');
+  });
+
+  it('🔴 0건인 카드는 눌리지 않는다 — 빈 큐를 여는 것은 "할 일이 있나"에 답하지 않는다', async () => {
+    mockFetch(payload({ inbox: 'active' }));
+    const onOpenReview = jest.fn();
+    render(<OpsBookingsOverview onOpenReview={onOpenReview} />);
+    await waitFor(() => expect(screen.getByTestId('tier-unparsed')).toBeInTheDocument());
+
+    fireEvent.click(screen.getByTestId('tier-unparsed'));
+    expect(onOpenReview).not.toHaveBeenCalled();
+    expect(screen.queryByTestId('tier-unparsed-cta')).toBeNull();
+  });
+
+  it('확정 예약 카드는 큐로 가지 않는다 — 리뷰할 것이 없다', async () => {
+    mockFetch(withWork);
+    const onOpenReview = jest.fn();
+    render(<OpsBookingsOverview onOpenReview={onOpenReview} />);
+    await waitFor(() => expect(screen.getByTestId('tier-confirmed')).toBeInTheDocument());
+
+    fireEvent.click(screen.getByTestId('tier-confirmed'));
+    expect(onOpenReview).not.toHaveBeenCalled();
+  });
+
+  it('핸들러를 안 주면 카드는 그냥 숫자로 남는다 (기존 호출부 무변경)', async () => {
+    mockFetch(withWork);
+    render(<OpsBookingsOverview />);
+    await waitFor(() => expect(screen.getByTestId('tier-pending_review')).toBeInTheDocument());
+    expect(screen.queryByTestId('tier-pending_review-cta')).toBeNull();
   });
 });
 
