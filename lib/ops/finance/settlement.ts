@@ -153,13 +153,19 @@ export async function nextInvoiceSeq(
     .from('ops_intercompany_invoices')
     .select('invoice_no')
     .like('invoice_no', `${prefix}-${year}-%`)
-    .order('invoice_no', { ascending: false })
-    .limit(1)
+    .limit(2000)
   if (error) throw new Error(error.message ?? 'invoice seq lookup failed')
 
+  // 최대값은 SQL 정렬이 아니라 여기서 숫자로 고른다: 문자열 정렬은 999를 넘는 순간
+  // 'AK-IC-2026-1000' < 'AK-IC-2026-999'가 되어 연번을 되감아 버린다.
+  // 연 12장 규모라 전체를 읽어 비교하는 비용은 무시할 수 있다.
   const rows = (data ?? []) as { invoice_no: string }[]
-  const top = parseInvoiceSeq(rows[0]?.invoice_no, year, prefix)
-  return (top ?? 0) + 1
+  let top = 0
+  for (const r of rows) {
+    const n = parseInvoiceSeq(r.invoice_no, year, prefix)
+    if (n !== null && n > top) top = n
+  }
+  return top + 1
 }
 
 // ---------------------------------------------------------------------------

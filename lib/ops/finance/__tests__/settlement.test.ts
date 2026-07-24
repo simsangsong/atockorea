@@ -126,6 +126,18 @@ describe('invoice numbering', () => {
     // 새 연도는 다시 1부터 — 연번은 연도 단위다.
     await expect(nextInvoiceSeq(db as never, 2027)).resolves.toBe(1)
   })
+
+  it('picks the max numerically, so passing 999 does not rewind the sequence', async () => {
+    // 문자열 정렬이면 'AK-IC-2026-1000' < 'AK-IC-2026-999'라 1000 다음에 1000이 또 나온다.
+    const db = makeFakeFinanceDb({
+      ops_intercompany_invoices: [
+        { invoice_no: 'AK-IC-2026-998' },
+        { invoice_no: 'AK-IC-2026-999' },
+        { invoice_no: 'AK-IC-2026-1000' },
+      ],
+    })
+    await expect(nextInvoiceSeq(db as never, 2026)).resolves.toBe(1001)
+  })
 })
 
 describe('parseUsdToMinor', () => {
