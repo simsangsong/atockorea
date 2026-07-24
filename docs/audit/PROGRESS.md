@@ -8,16 +8,17 @@
 
 ## 다음 착수 지점
 
-**→ A4.6 (사전존재 결함 청산) · 이어서 A0.3/A0.4 → A1.0 커버리지 원장 → A1 전수 · §L L5는 A7.2와 함께**
+**→ A0.3 (성능 베이스라인) · 이어서 A0.4 로케일 하니스 → A1.0 커버리지 원장 → A1 전수 · §L L5는 A7.2와 함께**
 
 ## 기준선
 
-- main = `0cd5ebd8` (origin/main과 동일, 미푸시 0) — tsc 0 · `next build --webpack` ✓ · 204스위트 2118 green 재검증 완료
+- main = `6dada018` (origin/main과 동일, 미푸시 0) — tsc 0 · `next build --webpack` ✓ · 204스위트 2118 green 재검증 완료
 - 작업 워크트리: `C:\Users\sangsong\atockorea-audit` (브랜치 `claude/audit-b0`, `npm ci` 실설치 완료)
 - 라이브 마이그레이션 5건 추가 적용: `ops_ai_usage` · `bookings_sim_tag` · `ops_tour_groups` · `tours_max_room_guests` · `ops_guest_notes`
 - 머지 워크트리: `C:\Users\sangsong\atockorea-main-merge`
 - Supabase atockorea = `cghyvbwmijqpahnoduyv` (쓰기 가능) · Kursoflow = `thgyevrqykkscvcpwmfp` (읽기전용·쓰기 절대금지)
-- 사전존재 실패 5스위트(무시): `api/tours` · `lib/error-handler` · `lib/logger` · `integration/assistant-streaming` · `utils/test-utils`
+- 🟢 **사전존재 실패 5스위트는 2026-07-25에 전부 해소됐다(A4.6). 전체 381스위트 green, 실패 0.**
+  이제 빨간 것이 보이면 **새로 생긴 것**이다 — 그게 이 정리의 목적이었다.
 
 ## 실행 순서 (§J 개정판)
 
@@ -39,21 +40,23 @@
 | 13 | B5 QR 자동 체크인 (B5.1~5.5) | ✅ `212e837c` |
 | 14 | B1 통합 통계 (B1.1~1.6 전부) | ✅ `c8e256db` · `96881528` · `7e822ddd` |
 | 15 | §L L0·L1·L2·L3·L4·L6 | ✅ (**L5 컨텍스트 다이어트만 미완**) |
-| 16 | A4.1 중복 진실 사냥 · A4.2 client/server 경계 | ✅ `422e1fc8` · `0cd5ebd8` · `docs/audit/A4-code-health.md` |
+| 16 | A4.1 중복 진실 사냥 · A4.2 client/server 경계 · A4.6 사전존재 결함 청산 | ✅ `422e1fc8` · `0cd5ebd8` · `6dada018` · `docs/audit/A4-code-health.md` |
 | 17 | A0.3 성능 베이스라인 · A0.4 로케일 하니스 · A4 잔여 · A1.0 → A1 | ⬜ |
 
 ## 남은 것 (우선순위순)
 
 > **§K 확정 빌드 트랙(B0~B5)은 전부 완료됐다.** 아래는 감사(A)와 §L 잔여다.
 
-1. **A4.6** 사전존재 결함 청산 — 사전존재 실패 5스위트 · `TourRoomClient.tsx` react-hooks lint.
-   ⚠ 이 5스위트는 **모든 세션이 "무시"로 넘겨 왔다** — 무시가 기본값이 되면 진짜 회귀가 섞여도 안 보인다
-2. **A4.3~A4.5** 죽은 코드 · 테스트 공백 지도 · 타입 거짓말(`as`)
+1. **A0.3** 성능 베이스라인 — §F 지표를 지금 값으로 기록. 수치가 없으면 A6이 의미가 없다
+2. **A0.4** 로케일 하니스 → **A1.0 커버리지 원장** → A1 전수
+3. **A4.3~A4.5** 죽은 코드 · 테스트 공백 지도 · 타입 거짓말(`as`).
+   `TourRoomClient.tsx` react-hooks lint는 A4.5와 함께 (lint는 별도 게이트)
 3. **A0.3** 성능 베이스라인 · **A0.4** 로케일 하니스 → **A1.0 커버리지 원장** → A1 전수
 4. **§L L5** 컨텍스트 다이어트 — **A7.2(환각 사냥 50문항)가 판정 도구**라 그것과 함께 할 것.
    먼저 하면 "품질 저하 없음"을 증명할 방법이 없다
-5. 🟡 **머지 게이트 확대** — 표준 게이트 스위트 목록에 `__tests__/`가 빠져 있어 L0 회귀를
-   B3 단계에서야 잡았다. `npx jest lib components app/api __tests__`로 넓힐 것
+5. 🟢 **머지 게이트 확대 — 이제 그냥 `npx jest`를 쓸 것.** 실패 0이 된 이상 스위트를
+   골라 돌릴 이유가 없다. 표준 게이트에 `__tests__/`가 빠져 있어 L0 회귀를 B3 단계에서야
+   잡은 것이 이 변경의 이유다
 
 ## 슬라이스 절차 (매 티켓)
 
@@ -73,6 +76,11 @@
 
 ## 실행 로그 (append-only)
 
+- **[22]** A4.6 사전존재 결함 청산 — 🔴 **5스위트 중 제품 결함은 0건**이었다.
+  헬퍼가 `__tests__/`에 있어서 스위트로 잡힌 것 · logger가 NODE_ENV를 **모듈 로드 시점에 스냅샷**하던 실제 취약점 ·
+  테스트가 개발 모드를 가정만 한 것 · jsdom에 `Response.json`이 없던 것 ·
+  스트리밍 테스트 질문이 **나중에 생긴 날씨 게이트**에 먹히고 목업 답이 41자라 카탈로그로 갈아끼워지던 것.
+  **전체 381스위트 green, 실패 0 — 저장소 처음.** → `6dada018`
 - **[21]** A4.1 중복 진실 사냥 — 로케일 목록이 **프로덕션 7곳**에 복제돼 있었고 2곳은 **순서까지 달랐다**.
   `broadcast/route.ts`는 정본을 import해 놓고 바로 아래에 사본을 정의. 전부 정본 파생으로 교체 +
   단일소스 계약 6개를 전수 스캔 테스트로 고정. 예외 1건은 **이유와 함께** 허용. 3899 green. → `0cd5ebd8`
