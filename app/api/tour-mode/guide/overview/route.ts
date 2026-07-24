@@ -3,6 +3,7 @@ import { createServerClient } from '@/lib/supabase';
 import { getAuthUser } from '@/lib/auth';
 import { verifyRoomToken } from '@/lib/tour-room/token';
 import { roomLifecycle } from '@/lib/tour-room/time';
+import { isPrivateTour } from '@/lib/tour-room/tourKind';
 
 export const dynamic = 'force-dynamic';
 
@@ -43,7 +44,7 @@ export async function GET(req: NextRequest) {
     }
 
     const [{ data: tour }, { data: bookings }] = await Promise.all([
-      supabase.from('tours').select('id, title, city').eq('id', tourId).single(),
+      supabase.from('tours').select('id, title, city, price_type').eq('id', tourId).single(),
       supabase
         .from('bookings')
         .select('id, contact_name, number_of_guests, preferred_language, status, pickup_points ( name, pickup_time )')
@@ -95,6 +96,11 @@ export async function GET(req: NextRequest) {
       byRoom.set(message.room_id, list);
     }
 
+    // D2: the whole console is scoped to ONE tour_id, so the join-vs-private
+    // kind is the same for every room. Surface it per room so the guide's
+    // [일정 검토·확정] entrance can be hidden on join tours (fixed itinerary).
+    const isPrivate = isPrivateTour((tour as { price_type?: string } | null)?.price_type);
+
     const roomsOut = (bookings ?? []).map((booking) => {
       const room = roomByBooking.get(booking.id) ?? null;
       const roomMessages = room ? byRoom.get(room.id) ?? [] : [];
@@ -105,6 +111,7 @@ export async function GET(req: NextRequest) {
       return {
         booking_id: booking.id,
         room_id: room?.id ?? null,
+        is_private: isPrivate,
         day_plan: dayPlan
           ? {
               id: dayPlan.id,

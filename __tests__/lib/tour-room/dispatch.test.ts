@@ -43,6 +43,7 @@ interface FakeState {
   revocations: Array<Record<string, unknown>>;
   roomUpdates: Array<Record<string, unknown>>;
   activeInvites?: number;
+  tourPriceType?: string | null;
 }
 
 function fakeDb(state: FakeState): DispatchDbClient & FakeState {
@@ -63,7 +64,11 @@ function fakeDb(state: FakeState): DispatchDbClient & FakeState {
         if (table === 'bookings') {
           return { data: { ...BOOKING, pickup_points: { name: 'Seomyeon', pickup_time: '08:40' } }, error: null };
         }
-        if (table === 'tours') return { data: { title: 'Busan Top Attractions' }, error: null };
+        if (table === 'tours')
+          return {
+            data: { title: 'Busan Top Attractions', price_type: state.tourPriceType ?? null },
+            error: null,
+          };
         if (table === 'merchants') return { data: { contact_email: 'guide@merchant.test' }, error: null };
         if (table === 'tour_room_invites') {
           return { data: Array.from({ length: state.activeInvites ?? 0 }, (_, i) => ({ id: `inv-${i}` })), error: null };
@@ -131,6 +136,22 @@ describe('dispatchRoomInvites (T5.1)', () => {
     const guideCall = sendEmailMock.mock.calls.find((c) => c[0].to === 'guide@merchant.test')![0];
     expect(guideCall.html).toContain('https://cdn.test/qr/');
     expect(guideCall.html).not.toContain('data:image');
+  });
+
+  it('D2: private (vehicle) tour includes the /plan CTA in the customer mail', async () => {
+    const db = fakeDb({ invites: [], revocations: [], roomUpdates: [], tourPriceType: 'vehicle' });
+    await dispatchRoomInvites(db, BOOKING, { createdBy: 'admin-1' });
+    const customerCall = sendEmailMock.mock.calls.find((c) => c[0].to === 'alex@example.com')![0];
+    expect(customerCall.html).toContain('/tour-mode/plan/booking-1?rt=');
+  });
+
+  it('D2: join (person/group) tour omits the /plan CTA from the customer mail', async () => {
+    const db = fakeDb({ invites: [], revocations: [], roomUpdates: [], tourPriceType: 'person' });
+    await dispatchRoomInvites(db, BOOKING, { createdBy: 'admin-1' });
+    const customerCall = sendEmailMock.mock.calls.find((c) => c[0].to === 'alex@example.com')![0];
+    expect(customerCall.html).not.toContain('/tour-mode/plan/');
+    // The room link itself is unchanged — only the plan CTA is gated.
+    expect(customerCall.html).toContain('/tour-mode/room/booking-1?rt=');
   });
 
   it('reports (not throws) a missing contact email', async () => {

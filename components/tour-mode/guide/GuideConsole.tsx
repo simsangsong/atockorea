@@ -105,6 +105,12 @@ const DAY_SEGMENTS = [
 interface OverviewRoom {
   booking_id: string;
   room_id: string | null;
+  /**
+   * D2: private (vehicle-charter) tour ⇒ the plan editor / review flow is
+   * available; join / shared tours run a fixed itinerary and hide it. May be
+   * absent on older payloads (treated as non-private = hidden).
+   */
+  is_private?: boolean;
   day_plan: { id: string; status: string; version: number; stops_count: number; updated_at: string } | null;
   contact_name: string | null;
   number_of_guests: number | null;
@@ -596,19 +602,23 @@ export default function GuideConsole() {
                     <MessageCircle size={15} aria-hidden />
                     채팅
                   </a>
-                  <button
-                    type="button"
-                    onClick={() => setOpenPlanBookingId(room.booking_id)}
-                    aria-label="일정 검토·확정"
-                    className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl active:scale-95 ${
-                      badge?.tone === 'review'
-                        ? 'bg-[var(--tr-accent-soft)] text-[var(--tr-accent-deep)] ring-1 ring-[var(--tr-hairline)]'
-                        : 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]'
-                    }`}
-                    data-testid="plan-toggle"
-                  >
-                    <CalendarClock size={18} aria-hidden />
-                  </button>
+                  {/* D2: plan review/confirm is a private-tour capability —
+                      join / shared tours run a fixed itinerary, so hide it. */}
+                  {room.is_private && (
+                    <button
+                      type="button"
+                      onClick={() => setOpenPlanBookingId(room.booking_id)}
+                      aria-label="일정 검토·확정"
+                      className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl active:scale-95 ${
+                        badge?.tone === 'review'
+                          ? 'bg-[var(--tr-accent-soft)] text-[var(--tr-accent-deep)] ring-1 ring-[var(--tr-hairline)]'
+                          : 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]'
+                      }`}
+                      data-testid="plan-toggle"
+                    >
+                      <CalendarClock size={18} aria-hidden />
+                    </button>
+                  )}
                   <button
                     type="button"
                     onClick={() => setOpenLedgerBookingId(room.booking_id)}

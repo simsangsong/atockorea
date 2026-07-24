@@ -26,12 +26,14 @@ function renderRoom({
   canSignal = lifecycle === 'live',
   showConcierge = lifecycle !== 'ended',
   schedule = [] as Array<Record<string, unknown>>,
+  isPrivate = true,
 }: {
   lifecycle: 'lobby' | 'live' | 'ended';
   withHome?: boolean;
   canSignal?: boolean;
   showConcierge?: boolean;
   schedule?: Array<Record<string, unknown>>;
+  isPrivate?: boolean;
 }) {
   return render(
     <RoomShell
@@ -61,6 +63,7 @@ function renderRoom({
                 tourSlug="busan-signature"
                 canSignal={canSignal}
                 showConcierge={showConcierge}
+                isPrivate={isPrivate}
               />
             )
           : undefined
@@ -108,12 +111,18 @@ describe('RoomShell home tab (H1)', () => {
 });
 
 describe('HomeTab lifecycle variants (H2)', () => {
-  it('lobby: LobbyCard status + plan tile link, no signal tile', () => {
-    renderRoom({ lifecycle: 'lobby', canSignal: false });
+  it('lobby (private): LobbyCard status + plan tile link, no signal tile', () => {
+    renderRoom({ lifecycle: 'lobby', canSignal: false, isPrivate: true });
     expect(screen.getByTestId('lobby-card')).toBeInTheDocument();
     expect(screen.getByTestId('home-tile-plan')).toHaveAttribute('href', '/tour-mode/plan/bk-1');
     expect(screen.queryByTestId('home-tile-signal')).not.toBeInTheDocument();
     expect(screen.queryByTestId('home-tile-review')).not.toBeInTheDocument();
+  });
+
+  it('lobby (join): D2 hides the plan tile for a shared/join tour', () => {
+    renderRoom({ lifecycle: 'lobby', canSignal: false, isPrivate: false });
+    expect(screen.getByTestId('lobby-card')).toBeInTheDocument();
+    expect(screen.queryByTestId('home-tile-plan')).not.toBeInTheDocument();
   });
 
   it('live: now/next status from the KST schedule + vehicle line', () => {

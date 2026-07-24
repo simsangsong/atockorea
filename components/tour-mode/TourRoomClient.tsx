@@ -781,6 +781,7 @@ function TourRoomLive({
                 tourSlug={(snapshot.booking?.tours as { slug?: string } | null | undefined)?.slug ?? null}
                 canSignal={!readOnly && data.lifecycle === 'live'}
                 showConcierge={!readOnly}
+                isPrivate={manualKind === 'private'}
               />
             )
           : undefined
