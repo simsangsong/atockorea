@@ -111,6 +111,18 @@ export async function DELETE(req: NextRequest, { params }: { params: Promise<{ i
         .eq('id', id)
         .eq('tenant_id', GUIDES_TENANT_ID);
       if (error) {
+        // ops_guide_assignments / ops_guide_settlements 가 ON DELETE RESTRICT로
+        // 붙잡는다 — 정산 증빙이 딸린 가이드는 지울 수 없다. FK 위반을 500 대신
+        // 사람이 이해할 수 있는 409로 바꾼다(비활성화가 올바른 은퇴 방법이다).
+        if (/foreign key|violates|23503/i.test(error.message ?? '')) {
+          return NextResponse.json(
+            {
+              error: '정산·배정 기록이 있는 가이드는 삭제할 수 없습니다. 비활성화로 은퇴 처리해 주세요.',
+              code: 'guide_has_settlement_evidence',
+            },
+            { status: 409 },
+          );
+        }
         console.error('[DELETE /api/admin/guides/:id hard]', error);
         return NextResponse.json({ error: '삭제하지 못했습니다', details: error.message }, { status: 500 });
       }

@@ -162,9 +162,15 @@ export interface RecommendOptions extends Omit<ScoreOptions, 'unavailableGuideId
 }
 
 /**
- * 조회 + 점수. 휴무는 DB에서 읽고, 배정 건수는 호출부가 준다 — 가이드↔룸 배정
- * 원장은 아직 없다(정산 슬라이스에서 생긴다). 그때까지는 배정 화면이 "지금 이
- * 날짜에 내가 이미 고른 사람"을 assignedCounts로 넘기는 것이 유일한 진짜 신호다.
+ * 조회 + 점수.
+ *
+ * 배정 건수의 출처가 두 개다:
+ *   1. **ops_guide_assignments** — 그 날짜에 실제로 등록된 배정(취소 제외).
+ *      정산 슬라이스가 만든 원장이고, 이제 이게 1차 소스다.
+ *   2. 호출부가 넘긴 assignedCounts — 화면에서 방금 고른, 아직 저장 안 된 사람.
+ * 둘을 **합산**한다. 저장된 1건 + 화면에서 방금 고른 1건 = 2탕이라는 사실이
+ * 점수에 반영돼야 하기 때문이다. 배정 테이블이 아직 없는 환경(마이그레이션 적용
+ * 전)에서는 조회가 실패해도 추천이 죽지 않고 2번만으로 동작한다.
  */
 export async function recommendGuides(
   supabase: SupabaseClient,
@@ -188,10 +194,25 @@ export async function recommendGuides(
 
   const unavailableGuideIds = ((off ?? []) as Array<{ guide_id: string }>).map((r) => r.guide_id);
 
+  const assignedCounts = new Map(opts.assignedCounts ?? []);
+  try {
+    const { data: assigned } = await supabase
+      .from('ops_guide_assignments')
+      .select('guide_id, status')
+      .eq('tenant_id', opts.tenantId)
+      .eq('tour_date', opts.date);
+    for (const row of (assigned ?? []) as Array<{ guide_id: string; status: string }>) {
+      if (row.status === 'cancelled') continue;
+      assignedCounts.set(row.guide_id, (assignedCounts.get(row.guide_id) ?? 0) + 1);
+    }
+  } catch {
+    // 배정 원장 미적용 환경 — 추천은 계속 동작해야 한다.
+  }
+
   return scoreGuides(guides as RecommendableGuide[], {
     language: opts.language,
     needType: opts.needType,
-    assignedCounts: opts.assignedCounts,
+    assignedCounts,
     unavailableGuideIds,
     limit: opts.limit,
   });
