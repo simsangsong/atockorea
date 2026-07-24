@@ -8,12 +8,13 @@
 
 ## 다음 착수 지점
 
-**→ §L L0 (계측: `ops_ai_usage` + 라우터 기록기)**
+**→ §K B2.1 (정원: `tours.max_room_guests` + 해석 순서 + 순수 함수)**
 
 ## 기준선
 
-- main = `65b5703c` (origin/main과 동일, 미푸시 0) — tsc 0 · `next build --webpack` ✓ · 204스위트 2118 green 재검증 완료
-- 작업 워크트리: `C:\Users\sangsong\atockorea-audit` (브랜치 `claude/audit-track`, `npm ci` 실설치 완료)
+- main = `d9744be7` (origin/main과 동일, 미푸시 0) — tsc 0 · `next build --webpack` ✓ · 204스위트 2118 green 재검증 완료
+- 작업 워크트리: `C:\Users\sangsong\atockorea-audit` (브랜치 `claude/audit-b0`, `npm ci` 실설치 완료)
+- 라이브 마이그레이션 3건 추가 적용: `ops_ai_usage` · `bookings_sim_tag` · `ops_tour_groups`
 - 머지 워크트리: `C:\Users\sangsong\atockorea-main-merge`
 - Supabase atockorea = `cghyvbwmijqpahnoduyv` (쓰기 가능) · Kursoflow = `thgyevrqykkscvcpwmfp` (읽기전용·쓰기 절대금지)
 - 사전존재 실패 5스위트(무시): `api/tours` · `lib/error-handler` · `lib/logger` · `integration/assistant-streaming` · `utils/test-utils`
@@ -23,12 +24,12 @@
 | # | 티켓 | 상태 |
 |---|---|---|
 | 0 | 플랜 리뷰 + §L 신설 + 플랜 11건 반영 | ✅ `5f0f5842` |
-| 1 | §L L0 계측 (`ops_ai_usage` + 라우터 훅) | ⬜ |
-| 2 | §L L1 출력 토큰 상한 기본값 | ⬜ |
-| 3 | A0.1 시뮬 환경 격리 (`sim_tag` + 모듈 + 가드 + cleanup 재작성) | ⬜ |
-| 4 | B0.1 마이그레이션 (`ops_tour_groups` + 증거 캐스케이드 차단) | ⬜ |
-| 5 | B0.2 `ensureTourGroup()` 리졸버 | ⬜ |
-| 6 | B0.3 + B0.3c 개인 링크 전환 + 룸 진입 토큰 캐싱 | ⬜ |
+| 1 | §L L0 계측 (`ops_ai_usage` + 라우터 훅) | ✅ `c9162012` |
+| 2 | §L L1 출력 토큰 상한 기본값 | ✅ `c9162012` |
+| 3 | A0.1 시뮬 환경 격리 | ✅ `b7058001` · `docs/audit/A0-sim-env.md` |
+| 4 | B0.1 마이그레이션 (`ops_tour_groups` + 증거 캐스케이드 차단) | ✅ `54cd3741` |
+| 5 | B0.2 `ensureTourGroup()` 리졸버 | ✅ `54cd3741` |
+| 6 | B0.3 + B0.3c 개인 링크 전환 + 룸 진입 토큰 캐싱 | ✅ `54cd3741` |
 | 7 | B0.3b 채널 중립 템플릿 렌더러 | ⬜ |
 | 8 | B0.4 차량·좌석판·시작게이트 그룹 이관 + B0.5 회귀 | ⬜ |
 | 9 | B2.1/2.1b/2.2 정원 (컬럼 + 해석순서 + 순수함수) | ⬜ |
@@ -58,4 +59,7 @@
 
 ## 실행 로그 (append-only)
 
+- **[4]** B0.1/0.2/0.3/0.3c — 마스터 룸(`ops_tour_groups`) + 차량 소유 이관 + 노쇼 증거 캐스케이드 차단 · 개인 링크 일괄 발송(폐기-후-재발급) · 룸 진입 토큰 캐싱 · 초대 메일 5로케일 문구 교정. 2251 green. → `54cd3741`
+- **[3]** A0.1 시뮬 격리 — `bookings.sim_tag` + `simScope.ts` + 집계/금전 배제 + 시더 가드 + cleanup 고아행 수정. → `b7058001`
+- **[1-2]** §L L0/L1 — `ops_ai_usage` 계측(라우터 단일 지점, fire-and-forget) + 목적별 출력 상한 기본값 + 30일 퍼지. → `c9162012`
 - **[0]** 플랜 전수 리뷰 완료 — 11건 발견(구현불가 1·커버리지구멍 1·누락 1 포함), 전부 플랜 본문 반영. §L 신설. main `65b5703c` 건전성 재검증. → `5f0f5842`
