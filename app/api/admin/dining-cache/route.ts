@@ -237,6 +237,9 @@ export async function GET(req: NextRequest) {
         google_cap: google.cap,
         google_ratio: google.ratio,
         quota_alert: kakao.shouldAlert || google.shouldAlert,
+        // false → no durable counter answered, so the two counts above are this
+        // instance only. The UI must not present them as the day's total.
+        quota_durable: kakao.durable !== false && google.durable !== false,
       },
       reports,
       cells,

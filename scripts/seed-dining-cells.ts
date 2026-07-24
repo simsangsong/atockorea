@@ -73,6 +73,16 @@ function pct(ratio: number): string {
   return `${(ratio * 100).toFixed(1)}%`;
 }
 
+/**
+ * Never print a bare percentage we cannot stand behind. Without Upstash the
+ * counter is process-local, so it only knows what THIS run has spent — which is
+ * the number that matters for the 70 % brake, but not the day's true total.
+ */
+function quotaLine(state: { used: number; cap: number; ratio: number; durable: boolean }): string {
+  const base = `${state.used}/${state.cap} (${pct(state.ratio)})`;
+  return state.durable ? base : `${base} — this process only, no durable counter`;
+}
+
 function describeSkip(target: SeedTarget): string {
   if (target.skip === 'duplicate-cell') return 'same cell as an earlier POI in this run';
   if (target.skip === 'cached') {
@@ -142,10 +152,14 @@ async function main(): Promise<void> {
     `Seeding dining cells — ${scope}, radius ${radiusM}m, limit ${plan.limit}` +
       `${opts.force ? ', force' : ''}${opts.dry ? '  [DRY RUN — no external calls, no writes]' : ''}`,
   );
-  console.log(
-    `Quota today: kakao ${kakao.used}/${kakao.cap} (${pct(kakao.ratio)}) · ` +
-      `google ${google.used}/${google.cap} (${pct(google.ratio)})\n`,
-  );
+  console.log(`Quota today: kakao ${quotaLine(kakao)} · google ${quotaLine(google)}`);
+  if (!kakao.durable || !google.durable) {
+    console.log(
+      '  ⚠ UPSTASH_REDIS_REST_URL/_TOKEN are unset, so the daily counter is per-process.\n' +
+        '    The 70% brake still stops THIS run, but it cannot see calls other runs or the app made today.',
+    );
+  }
+  console.log('');
 
   for (const target of plan.skipped) {
     console.log(`· ${target.label} [${target.cell}] — skipped: ${describeSkip(target)}`);
@@ -228,8 +242,8 @@ async function main(): Promise<void> {
     ['google calls spent', String(totals.googleCalls)],
     ['skipped', String(plan.skipped.length)],
     ['failed', String(totals.failed)],
-    ['kakao quota today', `${finalKakao.used}/${finalKakao.cap} (${pct(finalKakao.ratio)})`],
-    ['google quota today', `${finalGoogle.used}/${finalGoogle.cap} (${pct(finalGoogle.ratio)})`],
+    ['kakao quota today', quotaLine(finalKakao)],
+    ['google quota today', quotaLine(finalGoogle)],
   ];
   const width = Math.max(...rows.map(([label]) => label.length));
   console.log('\n' + '─'.repeat(width + 12));

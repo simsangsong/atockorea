@@ -53,6 +53,8 @@ interface Stats {
   google_cap: number;
   google_ratio: number;
   quota_alert: boolean;
+  /** false → no durable counter; the call counts are this instance only. */
+  quota_durable?: boolean;
 }
 
 interface ReportRow {
@@ -301,6 +303,8 @@ function StatsStrip({ stats, loading }: { stats: Stats | null; loading: boolean 
 
   const kakaoPct = Math.round(stats.kakao_ratio * 100);
   const googlePct = Math.round(stats.google_ratio * 100);
+  // No durable counter → the number is this instance only, not today's total.
+  const quotaSuffix = stats.quota_durable === false ? ' · 이 인스턴스 기준' : '';
 
   return (
     <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-6">
@@ -325,13 +329,13 @@ function StatsStrip({ stats, loading }: { stats: Stats | null; loading: boolean 
         label="오늘 카카오"
         value={`${stats.kakao_calls_today}`}
         tone={stats.kakao_ratio >= 0.7 ? 'warn' : 'plain'}
-        hint={`/${stats.kakao_cap} (${kakaoPct}%)`}
+        hint={`/${stats.kakao_cap} (${kakaoPct}%)${quotaSuffix}`}
       />
       <StatCard
         label="오늘 구글"
         value={`${stats.google_calls_today}`}
         tone={stats.google_ratio >= 0.7 ? 'warn' : 'plain'}
-        hint={`/${stats.google_cap} (${googlePct}%)`}
+        hint={`/${stats.google_cap} (${googlePct}%)${quotaSuffix}`}
       />
     </div>
   );
