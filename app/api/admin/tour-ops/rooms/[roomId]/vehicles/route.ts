@@ -4,6 +4,7 @@ import { requireAdmin, AdminAuthFailure, adminAuthJsonResponse } from '@/lib/aut
 import { getOpsRoom } from '@/lib/ops/seating/access';
 import { broadcastSeatUpdate } from '@/lib/ops/seating/service';
 import { loadLayoutUsage, selectRoomVehicles } from '@/lib/ops/seating/layoutUsage';
+import { ensureTourGroup } from '@/lib/ops/seating/group';
 import { normalizeLayoutJson } from '@/lib/ops/seating/layoutEditor';
 import { recordRoomEvent } from '@/lib/tour-room/events';
 import type { VehicleLayoutJson } from '@/lib/ops/seating/layouts';
@@ -177,8 +178,16 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ roo
       .maybeSingle();
     if (!layout) return NextResponse.json({ error: 'Layout not found' }, { status: 404 });
 
+    // §K B0.4 — 차량의 진짜 소유자는 그룹이다(B0-D3). room_id도 계속 채우지만
+    // 그건 롤백용 레거시 앵커이고, 그 예약이 취소돼도 차량은 그룹에 남는다.
+    const group = await ensureTourGroup(supabase as never, {
+      tour_id: room.tour_id,
+      tour_date: room.tour_date,
+    });
+
     const insert: Record<string, unknown> = {
       room_id: roomId,
+      ...(group ? { group_id: group.id } : {}),
       layout_id: layoutId,
       plate_number: typeof body.plate_number === 'string' && body.plate_number.trim()
         ? body.plate_number.trim().slice(0, 32)
