@@ -20,7 +20,16 @@ export interface LogContext {
 }
 
 class Logger {
-  private isDevelopment = process.env.NODE_ENV === 'development';
+  /**
+   * 🔴 호출 시점에 읽는다. 예전에는 클래스 필드로 **모듈 로드 시점에 한 번**
+   * 스냅샷했는데, 그러면 이 싱글턴이 어느 순간 import되느냐에 따라 로그 레벨이
+   * 정해진다 — 테스트에서는 늘 'test'로 굳어 debug/info가 영원히 죽어 있었고
+   * (그래서 logger 스위트가 계속 빨갰다), 런타임에도 모듈 평가 순서에 의존하는
+   * 숨은 결합이었다. NODE_ENV 조회는 사실상 공짜다.
+   */
+  private get isDevelopment(): boolean {
+    return process.env.NODE_ENV === 'development';
+  }
   private isClient = typeof window !== 'undefined';
 
   private formatMessage(level: LogLevel, message: string, context?: LogContext): string {

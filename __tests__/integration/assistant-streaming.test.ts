@@ -27,7 +27,39 @@ import type { NextRequest } from "next/server";
 
 import { parseSseBuffer } from "@/lib/chatbot/clientSse";
 
-const MODEL_CHUNKS = ["The sunset ", "time shifts ", "through the seasons."];
+/**
+ * 🔴 A4.6 — 이 스위트는 두 가지가 겹쳐 빨간 채로 방치돼 있었다.
+ *
+ * (1) **프롬프트가 게이트에 먹혔다.** 원래 질문("What is the weather like in Jeju
+ *     in summer?")은 이 테스트가 쓰인 뒤에 생긴 **결정적 날씨 즉답**에 걸려
+ *     모델을 아예 호출하지 않는다. 스트리밍을 검증할 수가 없다.
+ *     → 게이트에 걸리지 않는 자유서술 질문으로 바꿨다.
+ *
+ * (2) **목업 답이 비현실적으로 짧았다.** 아래 참조.
+ */
+
+/**
+ * 🔴 이 배열은 원래 41자짜리("The sunset time shifts through the seasons.")
+ * 였고, 그래서 이 스위트가 오래 빨간 채로 방치돼 있었다.
+ *
+ * 원인은 스트리밍이 아니라 **후처리**다: `finalizeAssistantTurn`은 추천 의도에서
+ * 모델 답이 180자 미만이고 상품 URL도 없으면 "모델이 쓸 만한 걸 못 냈다"로 보고
+ * 카탈로그 top-3으로 갈아끼운다. 41자 목업은 항상 그 조건에 걸렸다 — 실제 모델
+ * 답변은 그렇게 짧지 않으므로, 목업이 현실과 달랐던 것이다.
+ *
+ * 그래서 프롬프트를 이리저리 바꿔 게이트 사이를 통과시키는 대신(그건 게이트가
+ * 하나 늘 때마다 다시 깨진다) **목업을 현실적인 길이로** 만든다(180자 이상).
+ * 이러면 의도 분류가 어떻게 바뀌어도 이 테스트는 스트리밍만 검증한다.
+ *
+ * ⚠ URL은 넣지 않는다 — 후처리가 끝에 붙은 맨 URL을 떼어내서, 목업 문자열과
+ * 최종 답이 어긋난다. 길이 조건만으로 이미 보존되므로 URL은 불필요하다.
+ */
+const MODEL_CHUNKS = [
+  "Jeju's sunset time shifts noticeably through the seasons, ",
+  "from about 17:40 in midwinter to past 19:40 in midsummer, ",
+  "which is why the same itinerary feels quite different in January and July. ",
+  "If you are planning around the light, that difference is worth building the day around.",
+];
 
 jest.mock("@google/generative-ai", () => ({
   GoogleGenerativeAI: class {
@@ -98,7 +130,7 @@ describe("assistant route — SSE streaming (integration)", () => {
       makeReq({
         assistantScope: "site",
         tourProductSlug: "__site__",
-        messages: [{ role: "user", content: "What is the weather like in Jeju in summer?" }],
+        messages: [{ role: "user", content: "Tell me about the haenyeo diving tradition on Jeju." }],
         stream: true,
       }),
     );
@@ -131,7 +163,7 @@ describe("assistant route — SSE streaming (integration)", () => {
       makeReq({
         assistantScope: "site",
         tourProductSlug: "__site__",
-        messages: [{ role: "user", content: "What is the weather like in Jeju in summer?" }],
+        messages: [{ role: "user", content: "Tell me about the haenyeo diving tradition on Jeju." }],
         stream: true,
       }),
     );
