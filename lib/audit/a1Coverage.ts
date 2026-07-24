@@ -52,7 +52,13 @@ export interface CoverageResult {
   unjudged: string[];
 }
 
-const EMPTY_MARKS = new Set(['', '—', '-', 'TBD', 'tbd']);
+/**
+ * 🔴 `⬜`가 여기 없으면 진행률이 거짓말을 한다.
+ * 첫 구현에서 실제로 그랬다 — 69행이 미감사인데 "75/75 판정 완료"라고 찍혔다.
+ * 미감사 표기가 "채워진 칸"으로 세어지는 순간, 이 원장은 자기가 막으려던
+ * 바로 그 착시(전수라고 적혀 있지만 아닌 것)를 스스로 만든다.
+ */
+const EMPTY_MARKS = new Set(['', '—', '-', 'TBD', 'tbd', '⬜']);
 
 export function checkCoverage(files: string[], rows: LedgerRow[]): CoverageResult {
   const byPath = new Map(rows.map((r) => [r.path, r]));
