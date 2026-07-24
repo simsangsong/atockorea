@@ -56,6 +56,19 @@ import {
   startVoiceRecording,
   type ActiveRecording,
 } from '@/lib/tour-room/recorder';
+import {
+  ALL_TARGET,
+  clearTarget,
+  pruneTarget,
+  sendButtonLabel,
+  targetChipLabel,
+  targetOne,
+  targetPayload,
+  targetTone,
+  toggleTarget,
+  type MessageTarget,
+  type TargetRoster,
+} from '@/lib/tour-room/messageTarget';
 
 const GUIDE_TOKEN_KEY = 'tour_mode_guide_token';
 const GUIDE_DEVICE_KEY = 'tour_mode_guide_device_key';
@@ -182,6 +195,10 @@ export default function GuideConsole() {
   const [overview, setOverview] = useState<Overview | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [draft, setDraft] = useState('');
+  // §K B3 — 발송 대상. 기본은 전체이고, 전송 후에도 유지된다(B3-D4):
+  // 개인톡 대화가 이어지는 것이 자연스럽고, 매번 다시 고르게 하면 개인톡이
+  // 사실상 못 쓰는 기능이 된다.
+  const [target, setTarget] = useState<MessageTarget>(ALL_TARGET);
   const [meetTime, setMeetTime] = useState('');
   const [meetPoint, setMeetPoint] = useState('');
   const [meetPin, setMeetPin] = useState<{ lat: number; lng: number } | null>(null);
@@ -196,6 +213,10 @@ export default function GuideConsole() {
   const [dayToolsOpen, setDayToolsOpen] = useState(false);
   const [daySeg, setDaySeg] = useState<'broadcast' | 'meeting' | 'free'>('broadcast');
   const tokenRef = useRef<string | null>(null);
+  // send()가 useCallback이라 target을 의존성에 넣으면 선택할 때마다 재생성된다.
+  // ref로 읽으면 항상 최신값을 쓰면서 콜백은 안정적으로 유지된다.
+  const targetRef = useRef<MessageTarget>(ALL_TARGET);
+  targetRef.current = target;
 
   useEffect(() => {
     const t = readToken();
@@ -217,6 +238,22 @@ export default function GuideConsole() {
     }
   }, []);
 
+  // B3 — 명단(칩 문구·버튼 라벨의 근거). 좌석 번호는 이 페이로드에 없으므로
+  // 이름만 쓴다 — 좌석판에서 고른 경우에도 이름이 가장 확실한 식별자다.
+  const roster: TargetRoster = useMemo(
+    () => ({
+      total: overview?.rooms.length ?? 0,
+      guests: (overview?.rooms ?? []).map((r) => ({ bookingId: r.booking_id, name: r.contact_name })),
+    }),
+    [overview],
+  );
+
+  // B3-D4 — 룸/날짜를 벗어나면 대상이 초기화된다. 명단에 없는 예약이 남아 있으면
+  // 칩이 유령 이름을 보여준다.
+  useEffect(() => {
+    setTarget((prev) => pruneTarget(prev, roster));
+  }, [roster]);
+
   useEffect(() => {
     if (!token) return;
     void load();
@@ -235,7 +272,15 @@ export default function GuideConsole() {
         const res = await fetch('/api/tour-rooms/broadcast', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ tourId: overview.tour.id, tourDate: overview.tour_date, token: t, ...body }),
+          body: JSON.stringify({
+            tourId: overview.tour.id,
+            tourDate: overview.tour_date,
+            token: t,
+            // B3-D1 — 같은 라우트를 탄다. 전체일 때는 아무것도 안 붙으므로
+            // 기존 호출과 완전히 동일한 요청이 나간다.
+            ...targetPayload(targetRef.current),
+            ...body,
+          }),
         });
         const json = await res.json();
         if (!res.ok) throw new Error(json.error || 'send_failed');
@@ -701,8 +746,69 @@ export default function GuideConsole() {
         <div className="tr-card mt-2.5 px-3.5 py-3.5">
           <p className="tr-label flex items-center gap-1.5 font-semibold text-[var(--tr-ink-2)]">
             <Megaphone size={14} aria-hidden />
-            전체 공지 (모든 손님, 자동 번역)
+            메시지 (자동 번역)
           </p>
+
+          {/* §K B3-D3 — 대상은 **항상** 여기 보인다. 라이브 투어에서 오발송은
+              실질 피해라(취소 안내가 12명에게 / 집합 공지가 1명에게), 대상이
+              화면 어딘가에 조용히 있으면 반드시 사고가 난다. 전체와 개인은
+              색·아이콘이 다르다. */}
+          <div className="mt-2 flex items-center gap-2" data-testid="guide-target-row">
+            <span
+              data-testid="guide-target-chip"
+              data-tone={targetTone(target)}
+              className={
+                'tr-label inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 font-bold ' +
+                (targetTone(target) === 'all'
+                  ? 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]'
+                  : 'bg-[var(--tr-accent-soft)] text-[var(--tr-accent)]')
+              }
+            >
+              {targetTone(target) === 'all' ? (
+                <Megaphone size={13} aria-hidden />
+              ) : (
+                <Send size={13} aria-hidden />
+              )}
+              {targetChipLabel(target, roster)}
+            </span>
+            {targetTone(target) !== 'all' && (
+              <button
+                type="button"
+                onClick={() => setTarget(clearTarget())}
+                aria-label="대상 해제 (전체로)"
+                data-testid="guide-target-clear"
+                className="flex min-h-[32px] min-w-[32px] items-center justify-center rounded-full text-[var(--tr-ink-3)] active:scale-95"
+              >
+                <X size={14} aria-hidden />
+              </button>
+            )}
+          </div>
+
+          {/* 이름 탭 = 그 사람에게만. B3-D2 — 세 번째 선택 화면을 만들지 않고
+              가이드가 이미 사람을 지목하는 곳에 진입점을 둔다. */}
+          {roster.guests.length > 0 && (
+            <div className="mt-2 flex flex-wrap gap-1.5" data-testid="guide-target-picker">
+              {roster.guests.map((g) => {
+                const picked = target.kind === 'selected' && target.bookingIds.includes(g.bookingId);
+                return (
+                  <button
+                    key={g.bookingId}
+                    type="button"
+                    onClick={() => setTarget((prev) => toggleTarget(prev, g.bookingId))}
+                    aria-pressed={picked}
+                    className={
+                      'tr-label min-h-[32px] rounded-full border px-2.5 font-medium active:scale-95 ' +
+                      (picked
+                        ? 'border-[var(--tr-accent)] bg-[var(--tr-accent-soft)] text-[var(--tr-accent)]'
+                        : 'border-[var(--tr-hairline)] text-[var(--tr-ink-2)]')
+                    }
+                  >
+                    {g.name?.trim() || '이름 미상'}
+                  </button>
+                );
+              })}
+            </div>
+          )}
           {voiceState === 'recording' ? (
             <div
               className="mt-2 flex items-center gap-2 rounded-[var(--tr-radius-input)] bg-[var(--tr-danger-soft)] px-3 py-2.5"
@@ -776,7 +882,7 @@ export default function GuideConsole() {
                 data-testid="fanout-send"
               >
                 <Send size={15} aria-hidden />
-                보내기
+                {sendButtonLabel(target, roster)}
               </button>
             </form>
           )}

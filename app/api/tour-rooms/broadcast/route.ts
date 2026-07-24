@@ -18,13 +18,24 @@ export const dynamic = 'force-dynamic';
  * T6.1 — guide fan-out: one send lands in EVERY room of a (tourId, tourDate).
  *
  * POST /api/tour-rooms/broadcast
- *   { tourId, tourDate, text | presetKey, metadata? }
+ *   { tourId, tourDate, text | presetKey, metadata?, bookingIds? }
  *   auth: guide tour-date token (rt query/header/body) or admin login.
  *
  * D-3 model: booking-per-room — the guide writes once, the server inserts a
  * message row per room and broadcasts each. Partial failure is REPORTED, not
  * rolled back (a delivered room must keep its message): the response lists
  * per-room ok/error and an overall `partial` flag.
+ *
+ * §K B3.1 — `bookingIds` narrows the fan-out to chosen guests (direct message
+ * or pickup-group message). B3-D1: there is deliberately no second fan-out
+ * path. Translation across the room locales, push, per-room partial reporting
+ * and idempotency all already live here; a client-side loop or a separate DM
+ * route would reimplement every one of them and they would drift apart.
+ * Omitting the field keeps the previous whole-tour behaviour byte for byte.
+ *
+ * Ids outside the token's (tourId, tourDate) scope are dropped, not honoured —
+ * a guide's tour-date token must not become a way to message another day's
+ * guests by passing their booking id.
  */
 
 const MAX_TEXT_CHARS = 2000;
@@ -186,15 +197,38 @@ export async function POST(req: NextRequest) {
 
     // Rooms = every booking of the tour day (rooms are created lazily by
     // /join, so ensure one per booking).
-    const { data: bookings, error: bookingsError } = await supabase
+    const { data: allBookings, error: bookingsError } = await supabase
       .from('bookings')
       .select('id, tour_id, tour_date, preferred_language, status')
       .eq('tour_id', tourId)
       .eq('tour_date', tourDate)
       .neq('status', 'cancelled');
     if (bookingsError) throw bookingsError;
-    if (!bookings || bookings.length === 0) {
+    if (!allBookings || allBookings.length === 0) {
       return NextResponse.json({ error: 'No bookings on this tour date' }, { status: 404 });
+    }
+
+    // §K B3.1 — optional narrowing. The filter is applied to the rows already
+    // scoped by the token, so an id from another tour or another day simply
+    // does not match and is dropped.
+    const requestedIds = Array.isArray(body.bookingIds)
+      ? [...new Set(body.bookingIds.filter((id: unknown): id is string => typeof id === 'string' && id.length > 0))]
+      : null;
+    const bookings = requestedIds ? allBookings.filter((b) => requestedIds.includes(b.id)) : allBookings;
+    if (requestedIds && bookings.length === 0) {
+      // Every requested id was outside this tour day. Sending to the whole
+      // tour instead would be the exact mis-send B3-D3 exists to prevent.
+      return NextResponse.json({ error: 'None of the requested bookings are on this tour date' }, { status: 404 });
+    }
+    const isTargeted = Boolean(requestedIds) && bookings.length < allBookings.length;
+    if (requestedIds) {
+      // B3.4 — the guide feed distinguishes a direct message from an
+      // announcement, so "who did I tell what" stays answerable afterwards.
+      messageMetadata = {
+        ...messageMetadata,
+        audience: isTargeted ? 'selected' : 'all',
+        audience_count: bookings.length,
+      };
     }
 
     if (!presetKey && !operatorPresetKey && !notice) {
