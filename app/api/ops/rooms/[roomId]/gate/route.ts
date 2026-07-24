@@ -5,6 +5,7 @@ import { resolveOpsRoomActor, isStaffActor } from '@/lib/ops/seating/access';
 import { loadRoomVehicles, loadAssignments, broadcastSeatUpdate } from '@/lib/ops/seating/service';
 import { allSeatsResolved, seatCounts } from '@/lib/ops/seating/logic';
 import { fireTourStartBriefing } from '@/lib/ops/seating/startBriefing';
+import { dropSimBookings } from '@/lib/ops/sim/simScope';
 
 export const dynamic = 'force-dynamic';
 
@@ -50,6 +51,49 @@ export async function GET(
   } catch (error) {
     console.error('GET /api/ops/rooms/[roomId]/gate error:', error);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
+  }
+}
+
+/**
+ * §L L3 — 그룹의 각 예약에 대해 오늘 일정을 풀고 프리워밍을 던진다.
+ * 전부 best-effort: 어느 단계가 실패해도 시작 게이트는 이미 끝나 있다.
+ */
+async function schedulePrewarm(
+  supabase: ReturnType<typeof createServerClient>,
+  tourId: string,
+  tourDate: string,
+): Promise<void> {
+  try {
+    const { data } = await supabase
+      .from('bookings')
+      .select('id, preferred_language, status, sim_tag, contact_email')
+      .eq('tour_id', tourId)
+      .eq('tour_date', tourDate)
+      .neq('status', 'cancelled');
+    // A0.1 — 시뮬 예약을 데우느라 실제 예산을 태우지 않는다.
+    const bookings = dropSimBookings((data ?? []) as Array<{ id: string; sim_tag?: string | null; contact_email?: string | null }>);
+    if (bookings.length === 0) return;
+
+    const { resolveDaySchedule } = await import('@/lib/tour-room/dayPlan');
+    const { prewarmForTourStart } = await import('@/lib/ops/ai/prewarm.server');
+
+    const plans: Array<{ bookingId: string; schedule: unknown[]; locales: string[] }> = [];
+    for (const b of bookings as Array<{ id: string; preferred_language?: string | null }>) {
+      try {
+        const resolved = await resolveDaySchedule(supabase, { bookingId: b.id, tourDate });
+        if (resolved.schedule.length === 0) continue;
+        plans.push({
+          bookingId: b.id,
+          schedule: resolved.schedule as unknown[],
+          locales: [b.preferred_language ?? 'en'],
+        });
+      } catch {
+        /* 이 예약만 건너뛴다 */
+      }
+    }
+    if (plans.length > 0) prewarmForTourStart(supabase, plans);
+  } catch (error) {
+    console.warn('[prewarm] scheduling failed:', error);
   }
 }
 
@@ -107,6 +151,14 @@ export async function POST(
           console.warn('[ops-seating] tour-start briefing failed:', e);
           return { delivered: 0, skipped: 0 };
         });
+
+        // §L L3 — 프리워밍. 지금 손님은 버스에 앉아 있고 첫 스팟까지 수십 분이
+        // 남았다. 그 사이에 오늘 쓸 스팟 콘텐츠를 만들어 두면 도착 카드가 캐시
+        // 히트로 뜬다 — 호출 수는 같지만 **손님이 기다리는 시각이 아니다**(L-D4).
+        //
+        // 🔴 await하지 않는다. 이 게이트는 좌석을 잠그는 실시간 동작이고,
+        // 프리워밍 지연이 그걸 막으면 §L-D1을 정면으로 어긴다.
+        void schedulePrewarm(supabase, room.tour_id, room.tour_date);
       }
     }
 
