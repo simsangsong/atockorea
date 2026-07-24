@@ -21,9 +21,20 @@
  *   ④ translation memory — tour_translation_cache keyed by sha256(text)+locale;
  *     a full cache hit answers with zero LLM calls;
  *   ⑤ skip heuristics — emoji/number-only or ≤2-char messages are never sent.
+ *
+ * Audit plan §L adds two more, both of which live here so no call site can
+ * opt out of them:
+ *   L0 metering — every completion (and every full cache hit) writes one
+ *     ops_ai_usage row, fire-and-forget. §F's "under 30 LLM calls per tour"
+ *     was an unverifiable number until this existed; it is now a query.
+ *   L1 output caps — an omitted maxOutputTokens is a per-purpose default
+ *     (usage.ts), not "unbounded". The seven existing call sites all pass an
+ *     explicit value and keep it; the defaults exist for the eighth.
  */
 
 import { createHash } from 'node:crypto';
+
+import { buildUsageRow, resolveMaxOutputTokens, type AiUsageContext, type AiUsageOutcome, type ProviderUsage } from './usage';
 
 export type AiProvider = 'gemini' | 'deepseek' | 'openai';
 export type AiPurpose = 'translate' | 'caption' | 'batch' | 'vision' | 'concierge';
@@ -121,8 +132,20 @@ export interface ChatMessage {
 export interface ChatCompletionOptions {
   /** Ask the provider for a JSON object response. */
   jsonResponse?: boolean;
+  /**
+   * Output cap. Omitting it no longer means "unbounded" — §L-D5 gives every
+   * purpose a default in `usage.ts`, so a new call site cannot leak output
+   * tokens by forgetting. An explicit value always wins.
+   */
   maxOutputTokens?: number;
   temperature?: number;
+  /**
+   * §L L0 — which tour this call belongs to, so §F's "under 30 LLM calls per
+   * tour" becomes a query instead of an aspiration. Offline batch work leaves
+   * it undefined and drops out of per-tour aggregates, which is correct: it is
+   * not on the guest path.
+   */
+  usage?: AiUsageContext;
 }
 
 export interface ChatCompletionResult {
@@ -158,10 +181,13 @@ export async function chatCompletion(
 
   const attempts: Array<{ provider: AiProvider; model: string; reason: string }> = [];
   const timeoutMs = timeoutMsFor(purpose);
+  // §L-D5 — an omitted cap is a default, not "unbounded".
+  const maxOutputTokens = resolveMaxOutputTokens(purpose, options?.maxOutputTokens);
 
   for (const resolved of chain) {
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), timeoutMs);
+    const startedAt = Date.now();
     try {
       const res = await fetch(`${resolved.baseUrl.replace(/\/$/, '')}/chat/completions`, {
         method: 'POST',
@@ -173,7 +199,7 @@ export async function chatCompletion(
           model: resolved.model,
           messages,
           ...(options?.jsonResponse ? { response_format: { type: 'json_object' } } : {}),
-          ...(options?.maxOutputTokens ? { max_tokens: options.maxOutputTokens } : {}),
+          max_tokens: maxOutputTokens,
           ...(options?.temperature !== undefined ? { temperature: options.temperature } : {}),
         }),
         signal: controller.signal,
@@ -186,6 +212,7 @@ export async function chatCompletion(
 
       const data = (await res.json()) as {
         choices?: Array<{ message?: { content?: string | null } }>;
+        usage?: ProviderUsage | null;
       };
       const content = data.choices?.[0]?.message?.content?.trim();
       if (!content) {
@@ -196,6 +223,18 @@ export async function chatCompletion(
       if (attempts.length > 0) {
         console.warn(`[ai-router] ${purpose} demoted to ${resolved.provider} after:`, attempts);
       }
+      // §L L0 — one metering point for every call site, present and future.
+      // Deliberately not awaited: telemetry may not add a round trip to a
+      // guest-facing answer (§L-D1).
+      meter({
+        purpose,
+        provider: resolved.provider,
+        model: resolved.model,
+        usage: data.usage,
+        latencyMs: Date.now() - startedAt,
+        outcome: 'ok',
+        context: options?.usage,
+      });
       return { content, provider: resolved.provider, model: resolved.model };
     } catch (error) {
       const aborted = error instanceof Error && error.name === 'AbortError';
@@ -209,7 +248,56 @@ export async function chatCompletion(
     }
   }
 
+  // A total ladder failure is still a cost event worth seeing: it is the shape
+  // of an outage, and without a row it looks identical to "nobody asked".
+  meter({
+    purpose,
+    provider: chain[chain.length - 1]?.provider ?? 'openai',
+    model: chain[chain.length - 1]?.model ?? 'unknown',
+    usage: null,
+    latencyMs: null,
+    outcome: 'failed',
+    context: options?.usage,
+  });
   throw new AiRouterError(`All AI providers failed for ${purpose}`, attempts);
+}
+
+/**
+ * §L L0 — fire-and-forget metering. The recorder lives in `usage.server.ts`
+ * and is pulled in dynamically for the same reason `defaultCacheDb` is: this
+ * module is imported by server code that must not drag the Supabase client
+ * into a bundle that does not need it.
+ */
+function meter(input: {
+  purpose: AiPurpose;
+  provider: AiProvider;
+  model: string;
+  usage?: ProviderUsage | null;
+  latencyMs: number | null;
+  outcome: AiUsageOutcome;
+  context?: AiUsageContext;
+}): void {
+  try {
+    const row = buildUsageRow(input);
+    void import('./usage.server')
+      .then((mod) => mod.recordAiUsage(row))
+      .catch(() => undefined);
+  } catch {
+    /* metering never breaks a completion */
+  }
+}
+
+/** A saved call. Recorded so §L's effect is a number, not a claim. */
+function meterCacheHit(purpose: AiPurpose, context: AiUsageContext | undefined, latencyMs: number): void {
+  try {
+    void import('./usage.server')
+      .then((mod) =>
+        mod.recordCacheHit({ purpose, bookingId: context?.bookingId ?? null, latencyMs }),
+      )
+      .catch(() => undefined);
+  } catch {
+    /* metering never breaks a completion */
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -311,6 +399,8 @@ async function writeCache(
 export interface TranslateOptions {
   /** Injectable cache DB (tests); null disables the cache entirely. */
   db?: TranslationCacheDb | null;
+  /** §L L0 — which tour this translation belongs to (per-tour budget). */
+  usage?: AiUsageContext;
 }
 
 /**
@@ -330,6 +420,7 @@ export async function translateTextViaRouter(
   }
 
   const sourceHash = hashSource(text);
+  const startedAt = Date.now();
   const db = options?.db === undefined ? await defaultCacheDb() : options.db;
 
   const translations: Record<string, string> = {};
@@ -345,7 +436,10 @@ export async function translateTextViaRouter(
 
   const missing = uniqueTargets.filter((locale) => !(locale in translations));
   if (missing.length === 0) {
-    return { source_locale: sourceLocale, translations }; // full memory hit — zero LLM calls
+    // Full memory hit — zero LLM calls. Metered as a hit so the saving shows up
+    // as a numerator instead of an absence (§L L0).
+    meterCacheHit('translate', options?.usage, Date.now() - startedAt);
+    return { source_locale: sourceLocale, translations };
   }
 
   const completion = await chatCompletion(
@@ -373,7 +467,7 @@ export async function translateTextViaRouter(
       },
       { role: 'user', content: JSON.stringify({ text, target_locales: missing }) },
     ],
-    { jsonResponse: true },
+    { jsonResponse: true, usage: options?.usage },
   );
 
   let parsed: Partial<TranslationResult> = {};
