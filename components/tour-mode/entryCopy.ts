@@ -5,7 +5,7 @@
  * keeps the standalone entry route free of the site i18n shell (§O-1 ②).
  */
 
-import type { RoomLocale } from '@/lib/tour-room/snapshot';
+import { ROOM_LOCALES, type RoomLocale } from '@/lib/tour-room/snapshot';
 
 export interface EntryCopy {
   title: string;
@@ -141,5 +141,6 @@ export function detectEntryLocale(): RoomLocale {
 function normalize(value: string | undefined | null): RoomLocale | null {
   if (!value) return null;
   const base = value.trim().toLowerCase().split('-')[0];
-  return (['en', 'ko', 'ja', 'es', 'zh'] as const).find((l) => l === base) ?? null;
+  // §D A4.1 — 정본은 ROOM_LOCALES 하나다. 사본은 순서까지 달랐다.
+  return ROOM_LOCALES.find((l) => l === base) ?? null;
 }

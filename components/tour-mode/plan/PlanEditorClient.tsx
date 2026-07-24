@@ -39,7 +39,7 @@ import {
 } from 'lucide-react';
 import { koreanAllergyCardLines } from '@/lib/tour-room/allergyCard';
 import { formatMinutes, haversineKm, totalDriveMinutes, type LatLng } from '@/lib/itinerary-builder/distance';
-import type { RoomLocale } from '@/lib/tour-room/snapshot';
+import { ROOM_LOCALES, type RoomLocale } from '@/lib/tour-room/snapshot';
 import { useTourRoomSession } from '@/hooks/useTourRoomSession';
 import PlanTourItinerary from '@/components/tour-mode/plan/PlanTourItinerary';
 import PlanStopCards from '@/components/tour-mode/plan/PlanStopCards';
@@ -134,7 +134,9 @@ interface PickerPoi {
 // Copy — room 5-locale convention (P-D10)
 // ---------------------------------------------------------------------------
 
-const ROOM_LOCALE_VALUES = ['en', 'ko', 'zh', 'ja', 'es'] as const;
+// §D A4.1 — 로케일 목록은 ROOM_LOCALES 하나뿐이다. 여기 다시 적으면
+// 로케일이 하나 늘어나는 날 이 파일만 조용히 5개로 남는다.
+const ROOM_LOCALE_VALUES = ROOM_LOCALES;
 
 interface PlanCopy {
   title: string;

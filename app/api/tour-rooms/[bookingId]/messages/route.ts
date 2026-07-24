@@ -3,7 +3,7 @@ import { createServerClient } from '@/lib/supabase';
 import { transcribeAudioFile, translateTextForLocales, type TranslationResult } from '@/lib/openai-server';
 import { ensureRoom, resolveRoomActor, type RoomActor, type RoomBooking } from '@/lib/tour-room/access';
 import { broadcastToRoom } from '@/lib/tour-room/realtime';
-import { getRoomTranslationTargets } from '@/lib/tour-room/snapshot';
+import { ROOM_LOCALES, getRoomTranslationTargets } from '@/lib/tour-room/snapshot';
 import { normalizeChatLocale, MAX_TRANSLATION_TARGETS } from '@/lib/tour-room/chatLocale';
 import { getQuickReplyPreset } from '@/lib/tour-room/quickReplies';
 import { renderSpotEventTranslations } from '@/lib/tour-room/spotContent';
@@ -16,7 +16,9 @@ import { buildReplySnapshot, type RepliableMessage } from '@/lib/tour-room/reply
 
 export const dynamic = 'force-dynamic';
 
-const DEFAULT_TARGET_LOCALES = ['en', 'ko', 'zh', 'ja', 'es'];
+// §D A4.1 — 로케일 목록은 ROOM_LOCALES 하나뿐이다. 여기 다시 적으면
+// 로케일이 하나 늘어나는 날 이 파일만 조용히 5개로 남는다.
+const DEFAULT_TARGET_LOCALES: string[] = [...ROOM_LOCALES];
 
 function parseLocales(value: unknown, fallback = DEFAULT_TARGET_LOCALES): string[] {
   if (Array.isArray(value)) return value.map(String).filter(Boolean);
