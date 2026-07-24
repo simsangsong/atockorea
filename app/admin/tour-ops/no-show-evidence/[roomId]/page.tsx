@@ -39,10 +39,17 @@ interface EvidenceItem {
 
 const ROLE_LABEL: Record<string, string> = { guide: '가이드', driver: '기사', admin: '관리자' };
 
+/**
+ * 인쇄 전용 CSS. 이 페이지는 admin 레이아웃(사이드바 aside + 상단 header +
+ * 모바일 하단 nav) 안에 들어가므로, 인쇄에서는 그 크롬 전체를 걷어내고 시트만
+ * 남긴다. 내 시트의 제목 줄은 <header>가 아니라 .nse-head div라서 살아남는다.
+ */
 const PRINT_CSS = `
 @media print {
+  aside, nav, header { display: none !important; }
+  main { overflow: visible !important; padding: 0 !important; }
   .nse-noprint { display: none !important; }
-  .nse-page { padding: 0 !important; }
+  .nse-page { padding: 0 !important; background: #fff !important; }
   .nse-item { page-break-inside: avoid; break-inside: avoid; page-break-after: always; break-after: page; }
   .nse-item:last-child { page-break-after: auto; break-after: auto; }
   .nse-photo { max-height: 120mm; }
@@ -91,7 +98,7 @@ export default function NoShowEvidenceSheetPage() {
     <div className="nse-page min-h-screen bg-white p-6 text-neutral-900" data-testid="no-show-evidence-sheet-page">
       <style>{PRINT_CSS}</style>
 
-      <header className="mb-4 flex flex-wrap items-center gap-3 border-b border-neutral-200 pb-3">
+      <div className="nse-head mb-4 flex flex-wrap items-center gap-3 border-b border-neutral-200 pb-3">
         <div className="min-w-0 flex-1">
           <h1 className="text-lg font-bold">노쇼 증거 시트</h1>
           <p className="mt-0.5 text-xs text-neutral-500 tabular-nums">
@@ -116,7 +123,7 @@ export default function NoShowEvidenceSheetPage() {
           <Printer size={14} aria-hidden />
           인쇄 / PDF 저장
         </button>
-      </header>
+      </div>
 
       <p className="nse-noprint mb-4 rounded-xl bg-amber-50 px-3 py-2 text-xs text-amber-800">
         사진 링크는 10분 서명 URL입니다. 만료되면 [새로고침] 후 다시 인쇄하세요.

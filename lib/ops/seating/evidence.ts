@@ -151,7 +151,7 @@ export function validateEvidenceInput(input: EvidenceInput): EvidenceValidation 
 }
 
 /** private 버킷 내부 경로 한 쌍 (원본 + 워터마크본). */
-export function evidencePaths(roomId: string, ext: string, id = randomUUID()): {
+export function evidencePaths(roomId: string, ext: string, id: string = randomUUID()): {
   id: string;
   originalPath: string;
   watermarkedPath: string;
