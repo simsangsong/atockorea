@@ -74,36 +74,50 @@ describe('computeOvertime — grace + per-city rate', () => {
     expect(r.amountKrw).toBe(0);
   });
 
-  it('subtracts the grace then bills the remainder — 50 min OT ⇒ 0.5h', () => {
-    // Jeju 9h base, worked 9h50m → 50 min raw → 30 billable → 0.5h → ₩15,000.
+  it('bills a whole hour once overtime passes the grace — 50 min OT ⇒ 1h', () => {
+    // Jeju 9h base, worked 9h50m → 50 min raw → past 20-min grace → 1h → ₩30,000.
     const jeju = computeOvertime(9, '09:00', '18:50', { city: 'Jeju' });
     expect(jeju.rawOvertimeMinutes).toBe(50);
-    expect(jeju.overtimeHours).toBe(0.5);
-    expect(jeju.amountKrw).toBe(15000);
+    expect(jeju.overtimeHours).toBe(1);
+    expect(jeju.amountKrw).toBe(30000);
 
-    // Busan 8h base, worked 8h50m → 50 min raw → 30 billable → 0.5h → ₩20,000.
+    // Busan 8h base, worked 8h50m → 50 min raw → 1h → ₩40,000.
     const busan = computeOvertime(8, '09:00', '17:50', { city: 'Busan' });
     expect(busan.rawOvertimeMinutes).toBe(50);
-    expect(busan.overtimeHours).toBe(0.5);
-    expect(busan.amountKrw).toBe(20000);
+    expect(busan.overtimeHours).toBe(1);
+    expect(busan.amountKrw).toBe(40000);
+  });
+
+  it('bills whole-hour blocks counted from the 20-min grace mark (ceil)', () => {
+    // Jeju base 9h. Boundaries: 80 min raw → ceil((80−20)/60)=1h; 81 min → 2h.
+    expect(computeOvertime(9, '09:00', '19:20', { city: 'Jeju' })).toMatchObject({
+      rawOvertimeMinutes: 80,
+      overtimeHours: 1,
+      amountKrw: 30000,
+    });
+    expect(computeOvertime(9, '09:00', '19:21', { city: 'Jeju' })).toMatchObject({
+      rawOvertimeMinutes: 81,
+      overtimeHours: 2,
+      amountKrw: 60000,
+    });
   });
 
   it('applies the per-city rate to large overtime (Busan ₩40,000/h)', () => {
-    // Busan 8h base, worked 11h → 180 min raw → 160 billable → 2.667h → 2.5h → ₩100,000.
+    // Busan 8h base, worked 11h → 180 min raw → ceil((180−20)/60)=3h → ₩120,000.
     const r = computeOvertime(8, '09:00', '20:00', { city: 'Busan' });
     expect(r.workedMinutes).toBe(660);
     expect(r.rawOvertimeMinutes).toBe(180);
-    expect(r.overtimeHours).toBe(2.5);
-    expect(r.amountKrw).toBe(100000);
+    expect(r.overtimeHours).toBe(3);
+    expect(r.amountKrw).toBe(120000);
   });
 
-  it('rounds billable half-hours (grace-applied) at the default rate when no city is given', () => {
-    // Busan 8h base, worked 10h15m → 135 min raw → 115 billable → 1.917h → 2.0h.
+  it('bills whole hours (ceil from the grace mark) at the default rate when no city is given', () => {
+    // 8h base, worked 10h15m → 135 min raw → ceil((135−20)/60)=2h.
     // Default rate ₩30,000 (no city) → ₩60,000.
     const r = computeOvertime(8, '09:00', '19:15');
     expect(r.workedMinutes).toBe(615);
     expect(r.rawOvertimeMinutes).toBe(135);
-    expect(r.overtimeHours).toBe(2.0);
+    expect(r.overtimeHours).toBe(2);
     expect(r.amountKrw).toBe(60000);
   });
 
