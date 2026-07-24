@@ -2,7 +2,9 @@ import { makeFakeFinanceDb, ledgerPair } from '@/test-utils/fakeFinanceDb'
 import {
   aggregatePeriod,
   emptyAggregate,
+  fetchPeriodLedgerRows,
   invoiceNumberFor,
+  LEDGER_FETCH_LIMIT,
   isValidPeriod,
   nextInvoiceSeq,
   parseInvoiceSeq,
@@ -64,6 +66,38 @@ describe('aggregatePeriod', () => {
       { entity: 'us', booking_id: 'bk-1', period: '2026-08', type: 'commission', amount_minor: 1234, currency: 'USD' },
     ]
     expect(aggregatePeriod(rows, '2026-08').remitMinor).toBe(8766)
+  })
+})
+
+describe('fetchPeriodLedgerRows — 잘린 읽기는 조용히 넘어가지 않는다', () => {
+  /** 상한만큼 정확히 돌려주는 최소 스텁 (page가 꽉 찬 상황 = 더 있을 수 있음). */
+  function stubDb(rowCount: number) {
+    const rows = Array.from({ length: rowCount }, () => ({
+      entity: 'us',
+      booking_id: 'b',
+      period: '2026-08',
+      type: 'revenue',
+      amount_minor: 100,
+      currency: 'USD',
+      external_ref: null,
+    }))
+    const builder = {
+      select: () => builder,
+      eq: () => builder,
+      limit: () => Promise.resolve({ data: rows, error: null }),
+    }
+    return { from: () => builder } as never
+  }
+
+  it('상한에 닿으면 과소집계 대신 던진다', async () => {
+    await expect(fetchPeriodLedgerRows(stubDb(LEDGER_FETCH_LIMIT), '2026-08')).rejects.toThrow(
+      /page limit reached/,
+    )
+  })
+
+  it('상한 미만이면 그대로 돌려준다', async () => {
+    const rows = await fetchPeriodLedgerRows(stubDb(3), '2026-08')
+    expect(rows).toHaveLength(3)
   })
 })
 

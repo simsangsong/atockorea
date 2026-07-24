@@ -458,6 +458,14 @@ export async function listRemittances(
   return ((data ?? []) as Record<string, unknown>[]).map(normalizeRemittanceRow)
 }
 
+/**
+ * 한 번에 읽는 원장 행 상한. 이 사이클에서 유일하게 "조용히 틀릴 수 있었던"
+ * 지점이라, 상한에 닿으면 잘라내지 않고 던진다 — 정산은 금액이므로 일부만
+ * 집계한 그럴듯한 숫자보다 명시적 실패가 낫다(페이지네이션은 실제로 이 규모에
+ * 닿을 때 도입한다: 5000행 ≈ 주문 2500건/월).
+ */
+export const LEDGER_FETCH_LIMIT = 5000
+
 /** 기간의 us 원장 행(명세용). booking_id/type/amount까지 그대로 돌려준다. */
 export async function fetchPeriodLedgerRows(
   supabase: SupabaseClient,
@@ -470,9 +478,15 @@ export async function fetchPeriodLedgerRows(
     .eq('tenant_id', tenantId)
     .eq('entity', 'us')
     .eq('period', period)
-    .limit(5000)
+    .limit(LEDGER_FETCH_LIMIT)
   if (error) throw new Error(error.message ?? 'ledger lookup failed')
-  return (data ?? []) as SettlementLedgerRow[]
+  const rows = (data ?? []) as SettlementLedgerRow[]
+  if (rows.length >= LEDGER_FETCH_LIMIT) {
+    throw new Error(
+      `ops_entity_ledger page limit reached for ${period} (${rows.length} rows) — a truncated read would silently under-report the settlement; add pagination before closing this period`,
+    )
+  }
+  return rows
 }
 
 // ---------------------------------------------------------------------------
