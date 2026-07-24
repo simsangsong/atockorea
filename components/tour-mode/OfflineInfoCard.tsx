@@ -18,7 +18,19 @@ import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
 const COPY: Record<
   RoomLocale,
-  { title: string; meeting: string; nextStops: string; numbers: string; note: string }
+  {
+    title: string;
+    meeting: string;
+    nextStops: string;
+    numbers: string;
+    note: string;
+    /** A1.2 P1 — 이 스냅샷이 언제 것인지. 없으면 오래된 집합 장소가 현재처럼 보인다. */
+    savedAgo: (age: string) => string;
+    justNow: string;
+    minutesAgo: (n: number) => string;
+    hoursAgo: (n: number) => string;
+    daysAgo: (n: number) => string;
+  }
 > = {
   en: {
     title: '📴 You’re offline — saved info',
@@ -26,6 +38,11 @@ const COPY: Record<
     nextStops: 'Today',
     numbers: 'Emergency: 119 (medical) · 112 (police) · 1330 (interpreter)',
     note: 'The room reconnects automatically when signal returns.',
+    savedAgo: (a: string) => `(saved ${a})`,
+    justNow: 'just now',
+    minutesAgo: (n: number) => `${n} min ago`,
+    hoursAgo: (n: number) => `${n} h ago`,
+    daysAgo: (n: number) => `${n} d ago`,
   },
   ko: {
     title: '📴 오프라인 — 저장된 정보',
@@ -33,6 +50,11 @@ const COPY: Record<
     nextStops: '오늘 일정',
     numbers: '긴급: 119(구급) · 112(경찰) · 1330(통역)',
     note: '신호가 돌아오면 자동으로 다시 연결돼요.',
+    savedAgo: (a: string) => `(${a} 저장됨)`,
+    justNow: '방금',
+    minutesAgo: (n: number) => `${n}분 전`,
+    hoursAgo: (n: number) => `${n}시간 전`,
+    daysAgo: (n: number) => `${n}일 전`,
   },
   ja: {
     title: '📴 オフライン — 保存済み情報',
@@ -40,6 +62,11 @@ const COPY: Record<
     nextStops: '本日',
     numbers: '緊急: 119(救急) · 112(警察) · 1330(通訳)',
     note: '電波が戻ると自動的に再接続します。',
+    savedAgo: (a: string) => `(${a}に保存)`,
+    justNow: 'たった今',
+    minutesAgo: (n: number) => `${n}分前`,
+    hoursAgo: (n: number) => `${n}時間前`,
+    daysAgo: (n: number) => `${n}日前`,
   },
   es: {
     title: '📴 Sin conexión — información guardada',
@@ -47,6 +74,11 @@ const COPY: Record<
     nextStops: 'Hoy',
     numbers: 'Emergencias: 119 (médica) · 112 (policía) · 1330 (intérprete)',
     note: 'La sala se reconecta sola al volver la señal.',
+    savedAgo: (a: string) => `(guardado ${a})`,
+    justNow: 'ahora mismo',
+    minutesAgo: (n: number) => `hace ${n} min`,
+    hoursAgo: (n: number) => `hace ${n} h`,
+    daysAgo: (n: number) => `hace ${n} d`,
   },
   zh: {
     title: '📴 已离线 — 已保存的信息',
@@ -54,6 +86,11 @@ const COPY: Record<
     nextStops: '今日',
     numbers: '紧急: 119(急救) · 112(警察) · 1330(翻译)',
     note: '信号恢复后将自动重新连接。',
+    savedAgo: (a: string) => `(${a}保存)`,
+    justNow: '刚刚',
+    minutesAgo: (n: number) => `${n}分钟前`,
+    hoursAgo: (n: number) => `${n}小时前`,
+    daysAgo: (n: number) => `${n}天前`,
   },
 };
 
@@ -63,6 +100,23 @@ interface SavedInfo {
   /** J3 — the latest arrival guidance (guest-locale bundle text). */
   guidance: string | null;
   savedAt: number;
+}
+
+/**
+ * A1.2 P1 — 스냅샷 나이를 손님 언어로. 정확한 시각 대신 상대 표현을 쓰는 이유:
+ * 오프라인 손님에게 필요한 판단은 "지금 것인가"이지 "몇 시 것인가"가 아니다.
+ */
+function relativeAge(
+  savedAt: number,
+  copy: { justNow: string; minutesAgo: (n: number) => string; hoursAgo: (n: number) => string; daysAgo: (n: number) => string },
+  nowMs = Date.now(),
+): string {
+  const minutes = Math.floor(Math.max(0, nowMs - savedAt) / 60_000);
+  if (minutes < 1) return copy.justNow;
+  if (minutes < 60) return copy.minutesAgo(minutes);
+  const hours = Math.floor(minutes / 60);
+  if (hours < 24) return copy.hoursAgo(hours);
+  return copy.daysAgo(Math.floor(hours / 24));
 }
 
 /** Pre-J3 plaintext snapshot key — purged on sight (content protection). */
@@ -153,7 +207,18 @@ export default function OfflineInfoCard({
       className="mb-2 rounded-[var(--tr-radius-card)] border border-[var(--tr-danger-soft)] bg-[var(--tr-surface)] px-4 py-3"
       style={{ boxShadow: 'var(--tr-shadow-overlay)' }}
     >
-      <p className="tr-card-text font-bold text-[var(--tr-danger)]">{copy.title}</p>
+      <p className="tr-card-text font-bold text-[var(--tr-danger)]">
+        {copy.title}
+        {/* 🔴 A1.2 P1 — 스냅샷 나이를 반드시 보여준다. 이 카드는 오프라인일 때만
+            뜨는데, 그때 손님은 이 집합 장소가 최신인지 확인할 방법이 없다.
+            가이드가 장소를 바꿨는데 스냅샷이 어제 것이면 손님은 확신을 갖고
+            틀린 곳으로 간다 — 카드가 존재하는 이유(S5)를 정면으로 배반한다. */}
+        {saved?.savedAt ? (
+          <span className="tr-meta ml-1.5 font-normal text-[var(--tr-ink-3)]" data-testid="offline-saved-at">
+            {copy.savedAgo(relativeAge(saved.savedAt, copy))}
+          </span>
+        ) : null}
+      </p>
       {saved?.meeting && (
         <p className="tr-card-text mt-1 text-[var(--tr-ink)]">
           <span className="font-semibold">{copy.meeting}:</span> {saved.meeting}
