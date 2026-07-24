@@ -318,7 +318,11 @@ describe('POST /api/tour-rooms/[bookingId]/captions (T2.7)', () => {
     const json = await res.json();
     expect(json.pipeline).toBe('tier-a');
     expect(json.caption.seq).toBe(7);
-    expect(translateViaRouterMock).toHaveBeenCalledWith('3시에 동문에서 모입니다', ['ja', 'es']);
+    // §L L0 — 세 번째 인자는 계측 컨텍스트다(투어당 LLM 호출 집계).
+    // 번역 동작 자체는 바뀌지 않았다: 같은 텍스트, 같은 로케일, 한 번의 호출.
+    expect(translateViaRouterMock).toHaveBeenCalledWith('3시에 동문에서 모입니다', ['ja', 'es'], {
+      usage: { bookingId: 'booking-1' },
+    });
     expect(broadcastToRoomMock).toHaveBeenCalledWith(
       expect.objectContaining({ id: 'room-1' }),
       'caption',

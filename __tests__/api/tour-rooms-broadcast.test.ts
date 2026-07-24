@@ -266,6 +266,121 @@ describe('POST /api/tour-rooms/broadcast (T6.1)', () => {
   });
 });
 
+describe('POST /api/tour-rooms/broadcast — §K B3.1 대상 좁히기', () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+    getAuthUserMock.mockResolvedValue(null);
+    requestGateMock.mockResolvedValue({ allowed: true });
+    translateMock.mockResolvedValue({ source_locale: 'ko', translations: { en: 'hi' } });
+  });
+
+  it('🔴 bookingIds를 안 보내면 기존 전체 팬아웃과 완전히 동일하다 (회귀)', async () => {
+    const db = fakeDb();
+    createServerClientMock.mockReturnValue(db);
+    const res = await broadcastPOST(
+      fakeReq({ tourId: 'tour-1', tourDate: '2099-07-20', token: guideToken(), text: '10분 뒤 출발합니다' }),
+    );
+    expect(res.status).toBe(201);
+    const json = await res.json();
+    expect(json.delivered).toBe(3);
+    expect(db.inserted.filter((row) => row.table === 'tour_room_messages')).toHaveLength(3);
+    // 대상 메타데이터도 붙지 않는다 — 기존 소비처가 보던 것과 같은 shape.
+    const first = db.inserted.find((row) => row.table === 'tour_room_messages') as Record<string, unknown>;
+    const meta = (first?.metadata ?? {}) as Record<string, unknown>;
+    expect(meta.audience).toBeUndefined();
+  });
+
+  it('개인톡: 지정한 한 명에게만 들어간다', async () => {
+    const db = fakeDb();
+    createServerClientMock.mockReturnValue(db);
+    const res = await broadcastPOST(
+      fakeReq({
+        tourId: 'tour-1',
+        tourDate: '2099-07-20',
+        token: guideToken(),
+        text: '예약 변경 확인 부탁드립니다',
+        bookingIds: ['b2'],
+      }),
+    );
+    expect(res.status).toBe(201);
+    const rows = db.inserted.filter((row) => row.table === 'tour_room_messages');
+    expect(rows).toHaveLength(1);
+    expect((rows[0] as Record<string, unknown>).booking_id).toBe('b2');
+    expect(broadcastToRoomMock).toHaveBeenCalledTimes(1);
+  });
+
+  it('선택 발송: 여러 명 — 픽업 그룹 단위 발송이 실사용 시나리오다 (B3-D6)', async () => {
+    const db = fakeDb();
+    createServerClientMock.mockReturnValue(db);
+    await broadcastPOST(
+      fakeReq({
+        tourId: 'tour-1',
+        tourDate: '2099-07-20',
+        token: guideToken(),
+        text: '다음 정류장에서 내리세요',
+        bookingIds: ['b1', 'b3'],
+      }),
+    );
+    const rows = db.inserted.filter((row) => row.table === 'tour_room_messages');
+    expect(rows.map((r) => (r as Record<string, unknown>).booking_id).sort()).toEqual(['b1', 'b3']);
+  });
+
+  it('B3.4 — 가이드가 나중에 "누구한테 뭘 보냈지"를 추적할 수 있게 메타데이터가 남는다', async () => {
+    const db = fakeDb();
+    createServerClientMock.mockReturnValue(db);
+    await broadcastPOST(
+      fakeReq({ tourId: 'tour-1', tourDate: '2099-07-20', token: guideToken(), text: 'x', bookingIds: ['b2'] }),
+    );
+    const row = db.inserted.find((r) => r.table === 'tour_room_messages') as Record<string, unknown>;
+    const meta = row.metadata as Record<string, unknown>;
+    expect(meta.audience).toBe('selected');
+    expect(meta.audience_count).toBe(1);
+  });
+
+  it('🔴 스코프 밖 예약 id는 무시되고, 전체로 새지 않는다 — 404로 거절한다', async () => {
+    const db = fakeDb();
+    createServerClientMock.mockReturnValue(db);
+    const res = await broadcastPOST(
+      fakeReq({
+        tourId: 'tour-1',
+        tourDate: '2099-07-20',
+        token: guideToken(),
+        text: '다른 날 손님에게 보내려는 시도',
+        bookingIds: ['someone-elses-booking'],
+      }),
+    );
+    expect(res.status).toBe(404);
+    expect(db.inserted.filter((row) => row.table === 'tour_room_messages')).toHaveLength(0);
+    expect(broadcastToRoomMock).not.toHaveBeenCalled();
+  });
+
+  it('🔴 빈 배열도 전체 발송으로 번역되지 않는다 — 서버가 거절한다 (B3.5)', async () => {
+    const db = fakeDb();
+    createServerClientMock.mockReturnValue(db);
+    const res = await broadcastPOST(
+      fakeReq({ tourId: 'tour-1', tourDate: '2099-07-20', token: guideToken(), text: 'x', bookingIds: [] }),
+    );
+    expect(res.status).toBe(404);
+    expect(db.inserted.filter((row) => row.table === 'tour_room_messages')).toHaveLength(0);
+  });
+
+  it('전체와 같은 집합을 명시해도 audience는 all로 기록된다 (개인톡으로 오독되지 않게)', async () => {
+    const db = fakeDb();
+    createServerClientMock.mockReturnValue(db);
+    await broadcastPOST(
+      fakeReq({
+        tourId: 'tour-1',
+        tourDate: '2099-07-20',
+        token: guideToken(),
+        text: 'x',
+        bookingIds: ['b1', 'b2', 'b3'],
+      }),
+    );
+    const row = db.inserted.find((r) => r.table === 'tour_room_messages') as Record<string, unknown>;
+    expect((row.metadata as Record<string, unknown>).audience).toBe('all');
+  });
+});
+
 describe('GET /api/tour-mode/guide/overview (T6.2)', () => {
   const fakeGetReq = (query: Record<string, string>) =>
     ({

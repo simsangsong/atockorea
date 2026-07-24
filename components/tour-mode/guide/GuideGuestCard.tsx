@@ -44,7 +44,20 @@ export function statusMeta(status: RosterRowStatus) {
   return STATUS_META[status];
 }
 
-export default function GuideGuestCard({ row, onClose }: { row: RosterRow; onClose: () => void }) {
+export default function GuideGuestCard({
+  row,
+  onClose,
+  onMessage,
+}: {
+  row: RosterRow;
+  onClose: () => void;
+  /**
+   * §K B3-D2 — [메시지] 진입점. 가이드는 이미 여기서 손님을 지목하고 있으므로,
+   * 세 번째 선택 화면을 만들지 않고 이 카드에 붙인다. 주어지지 않으면
+   * 버튼이 나오지 않는다(기존 호출부 무변경).
+   */
+  onMessage?: (bookingId: string) => void;
+}) {
   const waDigits = normalizeWaDigits(row.whatsapp) ?? normalizeWaDigits(row.contactPhone);
   const meta = STATUS_META[row.status];
   const channel = channelLabel(row.channel);
@@ -99,6 +112,18 @@ export default function GuideGuestCard({ row, onClose }: { row: RosterRow; onClo
         <p className="mt-2 rounded-lg bg-[var(--tr-surface-2)] px-3 py-2 text-xs leading-relaxed text-[var(--tr-ink-2)]">
           {row.specialRequests}
         </p>
+      )}
+
+      {onMessage && (
+        <button
+          type="button"
+          onClick={() => onMessage(row.bookingId)}
+          className="mt-3 flex w-full items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-accent)] px-3 py-2.5 text-xs font-bold text-[var(--tr-bubble-me-ink)] active:scale-[0.99]"
+          data-testid="guest-message"
+        >
+          <MessageCircle size={14} aria-hidden />
+          이 손님에게만 메시지
+        </button>
       )}
 
       {(waDigits || row.contactPhone) && (
