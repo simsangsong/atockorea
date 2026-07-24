@@ -53,11 +53,17 @@ describe('PresenceBar (T3.5)', () => {
 });
 
 describe('FindGuideCard (T3.3)', () => {
+  // A1.4: the card now needs to know how old the guide position is. A fresh
+  // timestamp reproduces the original contract; staleness is covered in
+  // `findGuideFreshness.test.tsx`.
+  const FRESH = () => new Date().toISOString();
+
   it('shows distance, direction and the walking deep link', () => {
     render(
       <FindGuideCard
         me={{ latitude: 35.1, longitude: 129.0 }}
         guide={{ latitude: 35.11, longitude: 129.0 }}
+        guideRecordedAt={FRESH()}
         locale="en"
       />,
     );
@@ -69,7 +75,14 @@ describe('FindGuideCard (T3.3)', () => {
   });
 
   it('renders nothing without both positions', () => {
-    render(<FindGuideCard me={null} guide={{ latitude: 1, longitude: 2 }} locale="en" />);
+    render(
+      <FindGuideCard
+        me={null}
+        guide={{ latitude: 1, longitude: 2 }}
+        guideRecordedAt={FRESH()}
+        locale="en"
+      />,
+    );
     expect(screen.queryByTestId('find-guide-card')).not.toBeInTheDocument();
   });
 });
