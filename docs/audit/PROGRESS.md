@@ -8,11 +8,11 @@
 
 ## 다음 착수 지점
 
-**→ A1.7 (로케일 표적, A0.4의 146건) — A1 컴포넌트 65/65 완료. 이어서 A4.3~A4.5 · §L L5는 A7.2와 함께**
+**→ A4.3~A4.5 (죽은코드·테스트공백·`as`) — A1 전부 완료(65/65 + 로케일 표적). §L L5는 A7.2와 함께**
 
 ## 기준선
 
-- main = `7b716ddb` (origin/main과 동일, 미푸시 0) — tsc 0 · `next build --webpack` ✓ · 204스위트 2118 green 재검증 완료
+- main = `faf19ef0` (origin/main과 동일, 미푸시 0) — tsc 0 · `next build --webpack` ✓ · 204스위트 2118 green 재검증 완료
 - 작업 워크트리: `C:\Users\sangsong\atockorea-audit` (브랜치 `claude/audit-b0`, `npm ci` 실설치 완료)
 - 라이브 마이그레이션 5건 추가 적용: `ops_ai_usage` · `bookings_sim_tag` · `ops_tour_groups` · `tours_max_room_guests` · `ops_guest_notes`
 - 머지 워크트리: `C:\Users\sangsong\atockorea-main-merge`
@@ -51,15 +51,15 @@
 | 24 | A1.5 플래너 (3개) | ✅ `7cf7ce7a` · `docs/audit/A1-5-planner.md` |
 | 25 | A1.6 진입·셸·기타 (25개) | ✅ `6fecd4f4` · `docs/audit/A1-6-entry-shell-misc.md` |
 | 26 | A1.8 진입 플로우 (3개) | ✅ `7b716ddb` · `docs/audit/A1-8-entry-flows.md` |
-| 27 | A1.7 로케일(표적) · A4.3~A4.5 · §L L5 | ⬜ |
+| 27 | A1.7 로케일(표적) | ✅ `faf19ef0` · `docs/audit/A1-7-locale-fit.md` |
+| 28 | A4.3~A4.5 (죽은코드·테스트공백·`as`) · §L L5 | ⬜ |
 
 ## 남은 것 (우선순위순)
 
 > **§K 확정 빌드 트랙(B0~B5)은 전부 완료됐다.** 아래는 감사(A)와 §L 잔여다.
 
-1. **A1.7 로케일(표적, A0.4 146건)** — 원장(`docs/audit/A1-coverage.md`)의 `판정` 칸을 채운다.
-   현재 **65/65**(A1 소관 전량 · A2 10개는 별도 웨이브). 빈 칸이 남아 있으면 A1은 미완이고, 파일이 새로 생기면 **테스트가 먼저 운다**.
-   A1.7(로케일)은 A0.4가 표적 146건을 좁혀 뒀으므로 전수가 아니라 표적 검사로 간다
+1. **A4.3~A4.5** 죽은 코드(🔴 A1.7이 넘긴 `settingsPage.saveNotifications`·`alertNotificationsSaved` 2건 포함) ·
+   테스트 공백 지도 · 타입 거짓말(`as`). `TourRoomClient.tsx` react-hooks lint(244행)은 A4.5와 함께 (lint은 별도 게이트)
 2. 🔴 **A0.2(관측 도구) 착수 전 `A1-3-concierge.md` §2를 읽을 것** — Tier0 답변이 서버에 안 남아
    **A7.4 적중률이 구조적으로 측정 불가**다(사전이 완벽해도 0%). 선택지 3개와 근거가 거기 있다.
    전부 로깅은 §F(네트워크 0)·§L-D1 위반이라 정답이 아니다
@@ -93,6 +93,13 @@
 - 희소성 UI("매진/잔여") 금지 — 정원은 판매 차단이 아니라 운영 캡 (B2-D1)
 
 ## 실행 로그 (append-only)
+
+- **[33]** A1.7 로케일 표적 검사 — A0.4의 146건 중 코드로 판정 가능한 것만. 🔴 **하니스의 "최대 위험" 3건 중
+  2건이 죽은 키**(`settingsPage.saveNotifications`·`alertNotificationsSaved` — 10번들에 있으나 참조 0,
+  렌더 자리 없음). 하니스는 문자열을 보지 렌더를 안 봐서 생긴 허수 → **A4.3로 제거 이관**.
+  렌더되는 최상위 2건은 안전 완화: 공유 `MyPageSection <h2>`(독일어 30자 합성어)·`Footer` 법적 링크 그리드
+  (25자 단일 토큰)에 `overflow-wrap:anywhere`(컨테이너보다 긴 토큰에만 작용 → 타 로케일 무영향).
+  fr 63·it 29 라벨은 컨테이너가 제각각이라 **실기기 375px 픽셀 게이트**로 남긴다(도배는 §L-D6 위반). → `faf19ef0`
 
 - **[32]** A1.8 진입 플로우 감사(3개, 신설) — **P2 즉시 수정**: QR 체크인 화면의 **다크 모드가 통째로 죽어 있었다**.
   이 화면만 형제(`JoinFlow`·`CompanionJoin`)와 달리 생 `neutral-*`+`dark:`로 손수 스타일했는데,
