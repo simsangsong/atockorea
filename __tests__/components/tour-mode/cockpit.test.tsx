@@ -241,9 +241,9 @@ describe('shared Cockpit', () => {
   });
 
   // TIER 1 T1-1 — the driver computes overtime (Jeju base 9h, ₩30,000/h) and
-  // logs it as an 'overtime' expense. Jeju 9h base; 10h worked → 60 min raw OT,
-  // of which the first 20 min are the free grace → 40 billable min → 0.5h →
-  // ₩15,000 (grace-applied per D5).
+  // logs it as an 'overtime' expense. Jeju 9h base; 10h worked → 60 min raw OT.
+  // Owner rule (D5, 2026-07-24): past the 20-min grace it bills whole hours from
+  // the grace mark → ceil((60−20)/60)=1h → ₩30,000.
   it('computes and logs driver overtime', async () => {
     const fetchMock = jest.fn().mockResolvedValue({ ok: true, json: async () => ({}) });
     const origFetch = global.fetch;
@@ -254,8 +254,8 @@ describe('shared Cockpit', () => {
       fireEvent.change(screen.getByTestId('overtime-start'), { target: { value: '09:00' } });
       fireEvent.change(screen.getByTestId('overtime-end'), { target: { value: '19:00' } });
       fireEvent.click(screen.getByTestId('overtime-recompute'));
-      expect(screen.getByTestId('overtime-hours')).toHaveTextContent('초과 0.5시간');
-      expect(screen.getByTestId('overtime-amount')).toHaveTextContent('₩15,000');
+      expect(screen.getByTestId('overtime-hours')).toHaveTextContent('초과 1시간');
+      expect(screen.getByTestId('overtime-amount')).toHaveTextContent('₩30,000');
       fireEvent.click(screen.getByTestId('overtime-log'));
       await waitFor(() =>
         expect(fetchMock).toHaveBeenCalledWith(
@@ -269,7 +269,7 @@ describe('shared Cockpit', () => {
   });
 
   // D5 — the overtime rate is per-city. Busan bills ₩40,000/h. Busan 8h base;
-  // 9h10m worked → 70 min raw OT → 20 min grace → 50 billable min → 1h → ₩40,000.
+  // 9h10m worked → 70 min raw OT → past 20-min grace → ceil((70−20)/60)=1h → ₩40,000.
   it('uses the Busan per-city overtime rate (₩40,000/h)', () => {
     render(<Cockpit {...base} city="Busan" />);
     fireEvent.click(screen.getByTestId('driver-action-overtime'));

@@ -19,12 +19,12 @@ export const DEFAULT_BASE_HOURS = 8;
 
 /**
  * Free overtime window: the first 20 minutes beyond the base hours are not
- * billed. Interpretation (LITERAL "20분 이내 무료, 20분 초과부터 시간당"): the
- * grace is SUBTRACTED from the raw overtime minutes before billing, so 50 min
- * of overtime bills 30 min (0.5h). Flipping to a THRESHOLD reading — where
- * crossing 20 min bills the full raw overtime — is a localized change: bill
- * `rawOvertimeMinutes` when it exceeds the grace instead of subtracting it in
- * `computeOvertime` below.
+ * billed. Billing rule (owner-confirmed 2026-07-24, "20분 지난 시점부터 한시간
+ * 으로 쳐"): the grace is NOT prorated/subtracted — once overtime passes the
+ * 20-min grace it is billed in WHOLE HOURS, rounded UP, counted from the grace
+ * mark: `overtimeHours = raw ≤ 20 ? 0 : ceil((raw − 20) / 60)`. So 21–80 min of
+ * overtime = 1 hour, 81–140 min = 2 hours, etc. (Changing the block size or the
+ * grace is a one-line change in `computeOvertime` below.)
  */
 export const OVERTIME_GRACE_MINUTES = 20;
 
@@ -99,7 +99,7 @@ export interface OvertimeResult {
   workedMinutes: number | null;
   /** Raw overtime minutes beyond base, BEFORE the grace deduction (display). */
   rawOvertimeMinutes: number;
-  /** Billable overtime beyond base AFTER grace, rounded to the nearest half hour. */
+  /** Billable overtime beyond base AFTER the 20-min grace, in whole hours (ceil). */
   overtimeHours: number;
   /** Cash owed for the grace-applied billable hours at the city's rate. */
   amountKrw: number;
@@ -108,17 +108,17 @@ export interface OvertimeResult {
 /**
  * Compute overtime from base hours + start/end wall-clock strings.
  *
- * Formula (grace-subtracted reading):
+ * Formula (owner-confirmed 2026-07-24 — whole-hour blocks from the grace mark,
+ * NOT prorated):
  *   rawOvertimeMinutes = max(0, workedMinutes − baseHours×60)
- *   billableMinutes    = max(0, rawOvertimeMinutes − OVERTIME_GRACE_MINUTES)
- *   overtimeHours      = roundHalfHour(billableMinutes / 60)
+ *   overtimeHours      = rawOvertimeMinutes ≤ 20 ? 0 : ceil((raw − 20) / 60)
  *   amountKrw          = overtimeHours × rateForCity(city)
  *
- * So ≤20 min overtime ⇒ free; 50 min ⇒ 30 billable min ⇒ 0.5h ⇒ ₩15,000 (Jeju)
- * / ₩20,000 (Busan). `opts.city` picks both the rate and stays optional so
- * pre-existing callers keep the default rate (₩30,000) — but note the grace now
- * applies unconditionally, so `overtimeHours`/`amountKrw` reflect the billable
- * (post-grace) figure even without a city.
+ * So ≤20 min overtime ⇒ free; 21–80 min ⇒ 1h ⇒ ₩30,000 (Jeju) / ₩40,000 (Busan);
+ * 81–140 min ⇒ 2h; etc. `opts.city` picks both base handling and the rate and
+ * stays optional so pre-existing callers keep the default rate (₩30,000) — but
+ * note the grace + whole-hour billing applies unconditionally, so
+ * `overtimeHours`/`amountKrw` reflect the billable figure even without a city.
  */
 export function computeOvertime(
   baseHours: number,
@@ -131,8 +131,10 @@ export function computeOvertime(
     return { workedMinutes: null, rawOvertimeMinutes: 0, overtimeHours: 0, amountKrw: 0 };
   }
   const rawOvertimeMinutes = Math.max(0, workedMinutes - baseHours * 60);
-  const billableMinutes = Math.max(0, rawOvertimeMinutes - OVERTIME_GRACE_MINUTES);
-  const overtimeHours = roundHalfHour(billableMinutes / 60);
+  const overtimeHours =
+    rawOvertimeMinutes <= OVERTIME_GRACE_MINUTES
+      ? 0
+      : Math.ceil((rawOvertimeMinutes - OVERTIME_GRACE_MINUTES) / 60);
   const rate = rateForCity(opts?.city ?? null);
   return { workedMinutes, rawOvertimeMinutes, overtimeHours, amountKrw: overtimeAmount(overtimeHours, rate) };
 }
