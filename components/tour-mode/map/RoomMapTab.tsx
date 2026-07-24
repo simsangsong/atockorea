@@ -168,6 +168,8 @@ export default function RoomMapTab({
             : null)
         }
         guide={guideLocation ? { latitude: guideLocation.latitude, longitude: guideLocation.longitude } : null}
+        // A1.4 — 좌표만 넘기면 카드가 나이를 알 수 없다. `recorded_at`이 정직성 게이트의 입력이다.
+        guideRecordedAt={guideLocation?.recorded_at ?? null}
         locale={locale}
       />
     </div>
