@@ -51,6 +51,14 @@ function shouldFirePreset(cooldowns: Map<string, number>, key: string, nowMs: nu
   return true;
 }
 
+const A11Y: Record<RoomLocale, { attach: string; askPhoto: string; recordVoice: string; send: string }> = {
+  en: { attach: 'Attach a photo or file', askPhoto: 'Ask about a photo', recordVoice: 'Record a voice message', send: 'Send' },
+  ko: { attach: '사진·파일 첨부', askPhoto: '사진에 대해 물어보기', recordVoice: '음성 메시지 녹음', send: '보내기' },
+  ja: { attach: '写真・ファイルを添付', askPhoto: '写真について質問', recordVoice: '音声メッセージを録音', send: '送信' },
+  es: { attach: 'Adjuntar foto o archivo', askPhoto: 'Preguntar sobre una foto', recordVoice: 'Grabar un mensaje de voz', send: 'Enviar' },
+  zh: { attach: '添加照片或文件', askPhoto: '询问照片', recordVoice: '录制语音消息', send: '发送' },
+};
+
 const PLACEHOLDER: Record<RoomLocale, string> = {
   en: 'Message',
   ko: '메시지 보내기',
@@ -656,7 +664,7 @@ export default function Composer({
                 <button
                   type="button"
                   onClick={() => attachInputRef.current?.click()}
-                  aria-label="attach a photo or file"
+                  aria-label={(A11Y[locale] ?? A11Y.en).attach}
                   className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-[var(--tr-ink-2)] active:bg-[var(--tr-bubble-system)]"
                   data-testid="attach-button"
                 >
@@ -681,7 +689,7 @@ export default function Composer({
                 <button
                   type="button"
                   onClick={() => fileInputRef.current?.click()}
-                  aria-label="ask about a photo"
+                  aria-label={(A11Y[locale] ?? A11Y.en).askPhoto}
                   className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-[var(--tr-ink-2)] active:bg-[var(--tr-bubble-system)]"
                   data-testid="camera-button"
                 >
@@ -711,7 +719,7 @@ export default function Composer({
               <button
                 type="button"
                 onClick={() => void startRecording()}
-                aria-label="record voice message"
+                aria-label={(A11Y[locale] ?? A11Y.en).recordVoice}
                 className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-[var(--tr-ink-2)] active:bg-[var(--tr-bubble-system)]"
                 data-testid="mic-button"
               >
@@ -721,7 +729,7 @@ export default function Composer({
             {hasDraft && (
               <button
                 type="submit"
-                aria-label="send"
+                aria-label={(A11Y[locale] ?? A11Y.en).send}
                 className="tr-btn-raised flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]"
               >
                 <IconSend size={20} strokeWidth={2.5} />

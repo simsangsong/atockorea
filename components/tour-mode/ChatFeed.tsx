@@ -152,6 +152,17 @@ function displayText(
   return translated;
 }
 
+// A1.1 — screen-reader labels for icon-only controls. The visible copy is all
+// 5-locale; these were the last English-fixed strings a ko/ja/zh/es guest using
+// a screen reader would hear.
+const A11Y: Record<RoomLocale, { actions: string; scrollLatest: string }> = {
+  en: { actions: 'Message actions', scrollLatest: 'Scroll to latest messages' },
+  ko: { actions: '메시지 동작', scrollLatest: '최신 메시지로 이동' },
+  ja: { actions: 'メッセージ操作', scrollLatest: '最新メッセージへ移動' },
+  es: { actions: 'Acciones del mensaje', scrollLatest: 'Ir a los mensajes recientes' },
+  zh: { actions: '消息操作', scrollLatest: '滚动到最新消息' },
+};
+
 export default function ChatFeed({
   messages,
   viewerLocale,
@@ -568,7 +579,7 @@ export default function ChatFeed({
                   <button
                     type="button"
                     onClick={() => setActionMsg(message)}
-                    aria-label="message actions"
+                    aria-label={(A11Y[viewerLocale] ?? A11Y.en).actions}
                     className="flex h-6 w-6 items-center justify-center rounded-full text-[var(--tr-ink-3)] active:bg-[var(--tr-bubble-system)]"
                     data-testid="msg-actions"
                   >
@@ -805,7 +816,7 @@ export default function ChatFeed({
         <button
           type="button"
           onClick={() => scrollToBottom(true)}
-          aria-label="scroll to latest messages"
+          aria-label={(A11Y[viewerLocale] ?? A11Y.en).scrollLatest}
           className="absolute bottom-3 right-2 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-[var(--tr-surface)] text-[var(--tr-ink-2)]"
           style={{ boxShadow: 'var(--tr-shadow-overlay)' }}
           data-testid="scroll-to-bottom"
@@ -819,7 +830,7 @@ export default function ChatFeed({
         </button>
       )}
 
-      <Lightbox url={lightbox?.url ?? null} name={lightbox?.name} onClose={() => setLightbox(null)} />
+      <Lightbox url={lightbox?.url ?? null} name={lightbox?.name} locale={viewerLocale} onClose={() => setLightbox(null)} />
 
       <style>{`
         .tr-msg-flash { animation: tr-msg-flash 1.6s ease-out; border-radius: 14px; }

@@ -14,6 +14,10 @@ import { IconClose, IconFile, IconListen, IconPhotoNote } from '@/components/tou
 import type { ReplySnapshot } from '@/lib/tour-room/reply';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
+const CANCEL_LABEL: Record<RoomLocale, string> = {
+  en: 'Cancel reply', ko: '답장 취소', ja: '返信をキャンセル', es: 'Cancelar respuesta', zh: '取消回复',
+};
+
 const ROLE_LABEL: Record<RoomLocale, Record<string, string>> = {
   en: { guide: 'Guide', driver: 'Driver', admin: 'AtoC Korea', customer: 'Guest', system: 'Notice' },
   ko: { guide: '가이드', driver: '기사님', admin: 'AtoC Korea', customer: '손님', system: '안내' },
@@ -72,7 +76,7 @@ export default function ReplyPreview({
           <button
             type="button"
             onClick={onClose}
-            aria-label="cancel reply"
+            aria-label={CANCEL_LABEL[locale] ?? CANCEL_LABEL.en}
             className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-[var(--tr-ink-2)]"
             data-testid="reply-cancel"
           >
