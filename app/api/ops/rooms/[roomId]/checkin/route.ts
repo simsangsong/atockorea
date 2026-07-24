@@ -21,6 +21,13 @@ export const dynamic = 'force-dynamic';
  *   { method: 'guest_qr', checkinToken, nonce? }             — 개인 토큰 + QR 검증
  *       nonce 제공 시 반드시 유효해야 함(5분 로테이션 만료 → 403 nonce_expired);
  *       미제공 = 인쇄 정적 QR 경로 (checkinToken 필수).
+ *   { method: 'guest_qr_auto', checkinToken, nonce }         — §K B5 자동 체크인
+ *       🔴 nonce **필수**. 정적 QR로는 자동이 성립하지 않는다(B5-D1): 차량 외부
+ *       인쇄 QR은 인도에서도 스캔되므로 자동이면 타지 않은 사람이 탑승으로
+ *       기록되고, 시작 게이트가 빈자리를 안은 채 열린다.
+ *       actor를 따로 기록해(B5-D5) "자동이 오작동했나"를 데이터로 판정한다.
+ *   { method: 'guest_qr_auto', action: 'undo' }              — B5-D2 즉시 되돌리기
+ *       자기 예약의 좌석 중 **자동으로 체크인된 것만** 되돌린다.
  *   { method: 'guide_manual', roomVehicleId, seatNumber, action?: 'checkin'|'undo' }
  *       — 가이드/기사/admin 토큰. 스마트폰 없는 게스트 (C-13③), actor 감사 기록.
  *   guest 경로 공통: seatNumbers?: number[] — party 일부만 체크인(§5.4c 3).
@@ -129,8 +136,8 @@ export async function POST(
       return NextResponse.json({ ok: true, seatNumbers: [seatNumber], action });
     }
 
-    // ── guest_app / guest_qr — 게스트 셀프 체크인 ────────────────────────
-    if (method !== 'guest_app' && method !== 'guest_qr') {
+    // ── guest_app / guest_qr / guest_qr_auto — 게스트 셀프 체크인 ────────
+    if (method !== 'guest_app' && method !== 'guest_qr' && method !== 'guest_qr_auto') {
       return NextResponse.json({ error: 'unknown_method' }, { status: 400 });
     }
     if (actor.role !== 'customer') {
@@ -142,16 +149,22 @@ export async function POST(
       return NextResponse.json({ error: 'checkin_not_open', tourDate: room.tour_date }, { status: 403 });
     }
 
-    if (method === 'guest_qr') {
+    const guestUndo = method === 'guest_qr_auto' && body.action === 'undo';
+
+    if (method === 'guest_qr' || (method === 'guest_qr_auto' && !guestUndo)) {
       // QR 소지 증명: checkinToken 필수 + (있다면) nonce는 유효해야 한다.
       const qrPayload = verifyRoomCheckinToken(body.checkinToken);
       if (!qrPayload || qrPayload.roomId !== room.id) {
         return NextResponse.json({ error: 'invalid_checkin_token' }, { status: 403 });
       }
-      if (body.nonce !== undefined && body.nonce !== null && body.nonce !== '') {
-        if (!verifyCheckinNonce(room.id, body.nonce)) {
-          return NextResponse.json({ error: 'nonce_expired' }, { status: 403 });
-        }
+      const hasNonce = body.nonce !== undefined && body.nonce !== null && body.nonce !== '';
+      // 🔴 B5-D1 — 자동 경로는 nonce가 **없으면 거부**한다. guest_qr의 "미제공 =
+      // 정적 QR 허용" 완화가 여기까지 오면 자동 체크인의 전제가 무너진다.
+      if (method === 'guest_qr_auto' && !hasNonce) {
+        return NextResponse.json({ error: 'nonce_required_for_auto' }, { status: 403 });
+      }
+      if (hasNonce && !verifyCheckinNonce(room.id, body.nonce)) {
+        return NextResponse.json({ error: 'nonce_expired' }, { status: 403 });
       }
       // nonce 부재 = 인쇄 정적 QR 경로 (Q-1 — 개인 토큰이 신원을 보증).
     }
@@ -159,6 +172,47 @@ export async function POST(
     const bookingId = actor.bookingId;
     const mine = (await loadAssignments(supabase, vehicleIds)).filter((a) => a.booking_id === bookingId);
     if (mine.length === 0) return NextResponse.json({ error: 'no_seats' }, { status: 400 });
+
+    // ── B5-D2 즉시 되돌리기 ──────────────────────────────────────────────
+    // 🔴 손님이 되돌릴 수 있는 것은 **자동으로 체크인된 좌석뿐**이다.
+    // 규칙이 좁아야 하는 이유: 손님이 자기 의사로 누른 체크인(guest_qr/guest_app)이나
+    // 가이드가 대신 해준 체크인(guide_manual)까지 손님이 지울 수 있으면,
+    // 시작 게이트가 근거로 삼는 탑승 기록이 손님 쪽에서 흔들린다.
+    // 자동은 시스템이 대신 단언한 것이므로 정정 권한이 손님에게 있다.
+    if (guestUndo) {
+      const undoable = mine.filter((a) => a.checked_in_at && a.checkin_actor === 'guest_qr_auto');
+      const requestedUndo = Array.isArray(body.seatNumbers)
+        ? new Set(body.seatNumbers.map(Number).filter((n: number) => Number.isInteger(n)))
+        : null;
+      const targets = requestedUndo ? undoable.filter((a) => requestedUndo.has(a.seat_number)) : undoable;
+      if (targets.length === 0) {
+        return NextResponse.json({ error: 'nothing_to_undo' }, { status: 400 });
+      }
+      const { error: undoError } = await supabase
+        .from('ops_seat_assignments')
+        .update({ checked_in_at: null, checkin_actor: null })
+        .in(
+          'id',
+          targets.map((a) => a.id),
+        );
+      if (undoError) throw undoError;
+
+      const undoneSeats = targets.map((a) => a.seat_number);
+      await recordRoomEvent(supabase, {
+        roomId: room.id,
+        bookingId,
+        type: 'seat_checkin',
+        actorRole: 'customer',
+        payload: { seat_numbers: undoneSeats, method: 'guest_qr_auto', action: 'undo' },
+      }).catch(() => undefined);
+      // 되돌린 좌석이 즉시 가이드 좌석판에 반영되어야 한다(B5.2 판정).
+      await broadcastSeatUpdate(supabase, room, {
+        bookingId,
+        seatNumbers: undoneSeats,
+        kind: 'checkin_undone',
+      });
+      return NextResponse.json({ ok: true, undone: true, seatNumbers: undoneSeats });
+    }
 
     const requested = Array.isArray(body.seatNumbers)
       ? new Set(body.seatNumbers.map(Number).filter((n: number) => Number.isInteger(n)))

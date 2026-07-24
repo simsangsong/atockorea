@@ -15,6 +15,9 @@ export const dynamic = 'force-dynamic';
  *
  * POST { checkinToken, nonce?, tokens: string[] }  (부작용 없음 — 판정만)
  *
+ * §K B5.1 — 응답의 `autoEligible`이 랜딩의 자동/탭 분기를 정한다. 정적 QR은
+ * 기존 동작(탭 유지) 그대로다.
+ *
  * 게스트가 룸 QR을 스캔하면 랜딩(/tour-mode/checkin/[token])이 디바이스에
  * 저장된 개인 토큰들(localStorage `ops_personal_tokens`)을 보내 상태를 받는다:
  *
@@ -63,6 +66,17 @@ export async function POST(req: NextRequest) {
       roomId: room.id,
       tourDate: room.tour_date,
       nonceValid, // null = 정적 QR (nonce 없음)
+      // §K B5-D1 — 🔴 자동 체크인은 **nonce가 유효한 QR에서만** 가능하다.
+      //
+      // 체크인은 "이 사람이 탑승했다"는 운영상 단언이다. 차량 외부에 붙는
+      // 인쇄용 정적 QR은 인도에서도 스캔되므로, 자동이면 **타지 않은 사람이
+      // 탑승으로 기록**되고 시작 게이트가 빈자리를 안은 채 열린다 — 노쇼/absent
+      // 설계가 막으려던 바로 그 실패다. 가이드 콘솔 QR은 차 안 가이드 화면에만
+      // 뜨므로 물리적 현장성이 5분 로테이션 nonce로 담보된다.
+      //
+      // 클라이언트가 nonceValid로 재유도하게 두지 않고 서버가 단언한다:
+      // 판정이 두 곳에 살면 한쪽만 바뀌는 날이 온다.
+      autoEligible: nonceValid === true,
     };
 
     const rawTokens: unknown[] = Array.isArray(body.tokens) ? body.tokens.slice(0, MAX_TOKENS) : [];

@@ -8,6 +8,15 @@ import { ROOM_LOCALES, type RoomLocale } from '@/lib/tour-room/snapshot';
 export type CheckinCopyKey =
   | 'recognizing'
   | 'greeting' // {name}
+  // §K B5-D3 — 자동 체크인 경로의 문구는 **질문이 아니라 환영**이다.
+  // 'greeting'("체크인할까요?")은 물어볼 것이 남아 있는 정적 QR 경로에만 쓴다.
+  // 자동이면 물을 것이 없고, 손님이 아침에 처음 보는 화면이 환영이어야 한다.
+  | 'welcome' // {name}
+  | 'welcomeSeat' // {seat}
+  | 'welcomeParty' // {n}
+  | 'undo'
+  | 'undone'
+  | 'openRoom'
   | 'yourSeats'
   | 'partyPrompt' // {n}
   | 'confirmAll' // {n}
@@ -40,6 +49,52 @@ const COPY: Record<CheckinCopyKey, Record<RoomLocale, string>> = {
     zh: '{name}，现在办理登车确认吗？',
     ja: '{name}さん、チェックインしますか？',
     es: 'Hola {name}, ¿confirmamos su asistencia?',
+  },
+  welcome: {
+    en: 'Welcome, {name} 👋',
+    ko: '안녕하세요 {name}님 👋',
+    zh: '欢迎您，{name} 👋',
+    ja: 'ようこそ、{name}さん 👋',
+    es: 'Bienvenido/a, {name} 👋',
+  },
+  welcomeSeat: {
+    en: "You're in seat {seat}.",
+    ko: '{seat}번 좌석입니다.',
+    zh: '您的座位是 {seat} 号。',
+    ja: '{seat}番の座席です。',
+    es: 'Su asiento es el {seat}.',
+  },
+  welcomeParty: {
+    en: 'Checked in — {n} in your party.',
+    ko: '일행 {n}명 체크인 완료.',
+    zh: '已确认 — 同行 {n} 人。',
+    ja: 'チェックイン完了 — 同行{n}名。',
+    es: 'Confirmado — {n} personas en su grupo.',
+  },
+  // B5-D2 — 되돌리기를 모달로 막지 않는다. 일행 3명 중 1명이 아직 화장실인
+  // 경우가 실제로 흔하고, 자동의 이득(탭 0)을 지키면서 정정 경로를 남긴다.
+  undo: {
+    en: 'Fix this',
+    ko: '수정',
+    zh: '修改',
+    ja: '修正',
+    es: 'Corregir',
+  },
+  undone: {
+    en: 'Undone — check in again when you are ready.',
+    ko: '취소했어요 — 준비되면 다시 체크인하세요.',
+    zh: '已撤销 — 准备好后可再次确认。',
+    ja: '取り消しました — 準備ができたら再度チェックインしてください。',
+    es: 'Deshecho: confirme de nuevo cuando esté listo/a.',
+  },
+  // B5-D4 — 체크인이 막다른 화면이 되면 안 된다. 스캔 직후가 손님이 앱을
+  // 열어보는 유일한 순간일 수 있다.
+  openRoom: {
+    en: 'Open my tour room',
+    ko: '투어룸 열기',
+    zh: '打开我的行程群组',
+    ja: 'ツアールームを開く',
+    es: 'Abrir mi sala de tour',
   },
   yourSeats: {
     en: 'Your seats',
