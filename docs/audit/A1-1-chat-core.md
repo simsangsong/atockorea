@@ -67,7 +67,7 @@
   (`ChatFeed.tsx:141`, `Composer.tsx:152`, ReplyPreview). 제약이 아니라 누락이다.
   `Lightbox`만 prop 추가가 필요하다.
 
-### 🟡 P2 — `Lightbox`의 이펙트가 인라인 `onClose`에 의존한다 (이미 한 번 값을 치른 패턴)
+### 🟡→✅ P2 — `Lightbox`의 이펙트가 인라인 `onClose`에 의존한다 (2026-07-25 수정: Sheet 패턴 이식)
 
 - **재현 경로:** `Lightbox.tsx:24-35`의 `useEffect(..., [url, onClose])`.
   호출부 두 곳이 전부 인라인 화살표를 넘긴다 —
@@ -83,7 +83,7 @@
   그때 `Sheet.tsx`는 고쳤지만 **형제 컴포넌트의 같은 패턴은 남았다.** 여기서는 증상이
   가벼울 뿐이고, 원인은 동일하다.
 
-### 🟡 P2 — `Lightbox`에 다이얼로그 시맨틱·포커스 트랩이 없다
+### 🟡→✅ P2 — `Lightbox`에 다이얼로그 시맨틱·포커스 트랩이 없다 (2026-07-25 수정: role=dialog·포커스 이동/복원)
 
 - **재현 경로:** `Lightbox.tsx:38-45`. 사진 버블을 탭해 연 뒤 Tab을 누른다.
 - **관측된 동작:** 배경 `div`에 `role="dialog"`·`aria-modal`이 없고 포커스 트랩도 없다.
