@@ -2,17 +2,41 @@
  * T1-1 — driver overtime settlement (real-world money rule).
  *
  * A private charter includes a base number of hours (user-confirmed 2026-07-20:
- * Jeju 9h, Busan 8h); beyond that the guest pays the driver ₩30,000 per hour in
- * cash on the day. Pure + injectable so the cockpit sheet and tests share the
+ * Jeju 9h, Busan 8h); beyond that the guest pays the driver in cash on the day.
+ * The per-hour overtime rate is PER-CITY (AtoC plan §11.D D5, user-confirmed:
+ * Jeju ₩30,000/h, Busan ₩40,000/h), and the first OVERTIME_GRACE_MINUTES of
+ * overtime are free. Pure + injectable so the cockpit sheet and tests share the
  * exact arithmetic (no floating clock — the caller passes the HH:MM strings).
+ *
+ * SINGLE SOURCE OF TRUTH: every consumer (cockpit, morning-briefing route,
+ * ops startBriefing) must read the rate from this module via rateForCity — no
+ * rate is hardcoded elsewhere, so the promise can never drift (plan §12 Q3).
  */
 
+/** Fallback overtime rate when the city is unknown (also Jeju's rate). */
 export const OVERTIME_RATE_KRW_PER_HOUR = 30000;
 export const DEFAULT_BASE_HOURS = 8;
+
+/**
+ * Free overtime window: the first 20 minutes beyond the base hours are not
+ * billed. Interpretation (LITERAL "20분 이내 무료, 20분 초과부터 시간당"): the
+ * grace is SUBTRACTED from the raw overtime minutes before billing, so 50 min
+ * of overtime bills 30 min (0.5h). Flipping to a THRESHOLD reading — where
+ * crossing 20 min bills the full raw overtime — is a localized change: bill
+ * `rawOvertimeMinutes` when it exceeds the grace instead of subtracting it in
+ * `computeOvertime` below.
+ */
+export const OVERTIME_GRACE_MINUTES = 20;
 
 const BASE_HOURS_BY_CITY: Array<{ match: RegExp; hours: number }> = [
   { match: /jeju|제주/i, hours: 9 },
   { match: /busan|부산/i, hours: 8 },
+];
+
+/** Per-city overtime rate (₩/h). Mirrors BASE_HOURS_BY_CITY's regex pattern. */
+const RATE_BY_CITY: Array<{ match: RegExp; rate: number }> = [
+  { match: /jeju|제주/i, rate: 30000 },
+  { match: /busan|부산/i, rate: 40000 },
 ];
 
 /** Base included hours for the tour's city (defaults to 8 when unknown). */
@@ -23,6 +47,19 @@ export function baseHoursForCity(city?: string | null): number {
     }
   }
   return DEFAULT_BASE_HOURS;
+}
+
+/**
+ * Overtime rate (₩/h) for the tour's city, falling back to the flat
+ * OVERTIME_RATE_KRW_PER_HOUR (₩30,000) when the city is unknown.
+ */
+export function rateForCity(city?: string | null): number {
+  if (city) {
+    for (const entry of RATE_BY_CITY) {
+      if (entry.match.test(city)) return entry.rate;
+    }
+  }
+  return OVERTIME_RATE_KRW_PER_HOUR;
 }
 
 /** Parse an "HH:MM" wall-clock string to minutes-of-day, or null if malformed. */
@@ -50,29 +87,52 @@ export function roundHalfHour(hours: number): number {
 }
 
 /** Cash owed for a given number of overtime hours (never negative). */
-export function overtimeAmount(overtimeHours: number): number {
-  return Math.round(Math.max(0, overtimeHours) * OVERTIME_RATE_KRW_PER_HOUR);
+export function overtimeAmount(
+  overtimeHours: number,
+  rate: number = OVERTIME_RATE_KRW_PER_HOUR,
+): number {
+  return Math.round(Math.max(0, overtimeHours) * rate);
 }
 
 export interface OvertimeResult {
   /** Minutes between start and end, or null when times are missing/invalid. */
   workedMinutes: number | null;
-  /** Overtime beyond base, rounded to the nearest half hour. */
+  /** Raw overtime minutes beyond base, BEFORE the grace deduction (display). */
+  rawOvertimeMinutes: number;
+  /** Billable overtime beyond base AFTER grace, rounded to the nearest half hour. */
   overtimeHours: number;
-  /** Cash owed at the fixed hourly rate. */
+  /** Cash owed for the grace-applied billable hours at the city's rate. */
   amountKrw: number;
 }
 
-/** Compute overtime from base hours + start/end wall-clock strings. */
+/**
+ * Compute overtime from base hours + start/end wall-clock strings.
+ *
+ * Formula (grace-subtracted reading):
+ *   rawOvertimeMinutes = max(0, workedMinutes − baseHours×60)
+ *   billableMinutes    = max(0, rawOvertimeMinutes − OVERTIME_GRACE_MINUTES)
+ *   overtimeHours      = roundHalfHour(billableMinutes / 60)
+ *   amountKrw          = overtimeHours × rateForCity(city)
+ *
+ * So ≤20 min overtime ⇒ free; 50 min ⇒ 30 billable min ⇒ 0.5h ⇒ ₩15,000 (Jeju)
+ * / ₩20,000 (Busan). `opts.city` picks both the rate and stays optional so
+ * pre-existing callers keep the default rate (₩30,000) — but note the grace now
+ * applies unconditionally, so `overtimeHours`/`amountKrw` reflect the billable
+ * (post-grace) figure even without a city.
+ */
 export function computeOvertime(
   baseHours: number,
   startHm?: string | null,
   endHm?: string | null,
+  opts?: { city?: string | null },
 ): OvertimeResult {
   const workedMinutes = minutesBetween(startHm, endHm);
   if (workedMinutes == null) {
-    return { workedMinutes: null, overtimeHours: 0, amountKrw: 0 };
+    return { workedMinutes: null, rawOvertimeMinutes: 0, overtimeHours: 0, amountKrw: 0 };
   }
-  const overtimeHours = roundHalfHour(Math.max(0, workedMinutes / 60 - baseHours));
-  return { workedMinutes, overtimeHours, amountKrw: overtimeAmount(overtimeHours) };
+  const rawOvertimeMinutes = Math.max(0, workedMinutes - baseHours * 60);
+  const billableMinutes = Math.max(0, rawOvertimeMinutes - OVERTIME_GRACE_MINUTES);
+  const overtimeHours = roundHalfHour(billableMinutes / 60);
+  const rate = rateForCity(opts?.city ?? null);
+  return { workedMinutes, rawOvertimeMinutes, overtimeHours, amountKrw: overtimeAmount(overtimeHours, rate) };
 }
