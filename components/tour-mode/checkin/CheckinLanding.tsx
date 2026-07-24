@@ -23,6 +23,8 @@ import type { RoomLocale } from '@/lib/tour-room/snapshot';
 const TOKENS_STORAGE_KEY = 'ops_personal_tokens';
 const DEVICE_KEY_STORAGE = 'tour_mode_device_key';
 
+import { decodeTokenBody } from '@/lib/ops/seating/personalTokens';
+
 export function readStoredPersonalTokens(): string[] {
   if (typeof window === 'undefined') return [];
   try {
@@ -46,7 +48,16 @@ interface SeatInfo {
 
 type LandingState =
   | { phase: 'loading' }
-  | { phase: 'ready'; roomId: string; token: string; displayName: string; seats: SeatInfo[]; partySize: number }
+  | {
+      phase: 'ready';
+      roomId: string;
+      token: string;
+      displayName: string;
+      seats: SeatInfo[];
+      partySize: number;
+      /** §K B5-D1 — nonce가 유효한 콘솔 QR인가. 서버가 단언한다. */
+      autoEligible: boolean;
+    }
   | { phase: 'already'; displayName?: string; seats?: SeatInfo[] }
   | { phase: 'no_seats'; displayName?: string }
   | { phase: 'not_open'; tourDate: string | null }
@@ -54,7 +65,17 @@ type LandingState =
   | { phase: 'wrong_room' }
   | { phase: 'unregistered' }
   | { phase: 'submitting' }
-  | { phase: 'done'; seatNumbers: number[] }
+  | {
+      phase: 'done';
+      seatNumbers: number[];
+      /** 자동으로 들어온 경로인지 — 환영 화면과 [수정]은 여기서만 뜬다. */
+      auto?: boolean;
+      displayName?: string;
+      roomId?: string;
+      token?: string;
+      bookingId?: string;
+    }
+  | { phase: 'undone' }
   | { phase: 'nonce_expired' }
   | { phase: 'error' };
 
@@ -99,6 +120,9 @@ export default function CheckinLanding({
             displayName: data.displayName ?? '',
             seats: data.seats ?? [],
             partySize: data.partySize ?? 1,
+            // 서버가 정한다(B5.1). 클라이언트가 nonceValid로 재유도하면
+            // 판정이 두 곳에 살고, 한쪽만 바뀌는 날이 온다.
+            autoEligible: data.autoEligible === true,
           });
           setSelected(
             new Set(
@@ -148,11 +172,11 @@ export default function CheckinLanding({
     void resolve();
   }, [resolve]);
 
-  const submit = useCallback(async () => {
+  const submit = useCallback(async (opts: { auto?: boolean } = {}) => {
     if (state.phase !== 'ready') return;
-    const { roomId, token, seats } = state;
+    const { roomId, token, seats, displayName } = state;
     const pendingAll = seats.filter((s) => !s.checkedIn && !s.absent).map((s) => s.seatNumber);
-    const seatNumbers = selecting ? [...selected] : pendingAll;
+    const seatNumbers = opts.auto ? pendingAll : selecting ? [...selected] : pendingAll;
     if (seatNumbers.length === 0) return;
     setState({ phase: 'submitting' });
     try {
@@ -160,7 +184,9 @@ export default function CheckinLanding({
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'x-tour-room-token': token },
         body: JSON.stringify({
-          method: 'guest_qr',
+          // §K B5-D5 — 자동과 수동을 actor로 구분 기록한다. 나중에 "자동이
+          // 오작동했나"를 데이터로 판정할 수 있어야 한다.
+          method: opts.auto ? 'guest_qr_auto' : 'guest_qr',
           checkinToken,
           nonce: nonce || undefined,
           ...(seatNumbers.length < pendingAll.length ? { seatNumbers } : {}),
@@ -168,7 +194,17 @@ export default function CheckinLanding({
       });
       const data = await res.json().catch(() => ({}));
       if (res.ok) {
-        setState({ phase: 'done', seatNumbers: data.seatNumbers ?? seatNumbers });
+        setState({
+          phase: 'done',
+          seatNumbers: data.seatNumbers ?? seatNumbers,
+          auto: opts.auto === true,
+          displayName,
+          roomId,
+          token,
+          // 룸 링크에 필요한 bookingId는 토큰 안에 있다 — 서버가 이미 검증한
+          // 토큰이므로 여기서 서명을 다시 볼 이유는 없다(디코드만).
+          bookingId: decodeTokenBody(token)?.bookingId,
+        });
         return;
       }
       if (res.status === 403 && data.error === 'nonce_expired') {
@@ -185,6 +221,31 @@ export default function CheckinLanding({
     }
   }, [state, selecting, selected, checkinToken, nonce]);
 
+  // §K B5.2 — 콘솔 QR(nonce 유효)이면 스캔 즉시 체크인한다. 탭 0.
+  // 정적 QR은 여기 걸리지 않으므로 기존 "체크인할까요?" 동작 그대로다(B5-D1).
+  const autoFired = useRef(false);
+  useEffect(() => {
+    if (state.phase !== 'ready' || !state.autoEligible || autoFired.current) return;
+    autoFired.current = true;
+    void submit({ auto: true });
+  }, [state, submit]);
+
+  // B5-D2 — 되돌리기. 모달로 막지 않는다: 일행 3명 중 1명이 아직 화장실인
+  // 경우가 실제로 흔하고, 자동의 이득(탭 0)을 지키면서 정정 경로를 남긴다.
+  const undoAuto = useCallback(async () => {
+    if (state.phase !== 'done' || !state.roomId || !state.token) return;
+    try {
+      const res = await fetch(`/api/ops/rooms/${state.roomId}/checkin`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'x-tour-room-token': state.token },
+        body: JSON.stringify({ method: 'guest_qr_auto', action: 'undo' }),
+      });
+      if (res.ok) setState({ phase: 'undone' });
+    } catch {
+      /* 되돌리기 실패는 화면을 바꾸지 않는다 — 체크인은 유지된 상태다 */
+    }
+  }, [state]);
+
   const card = 'mx-auto mt-16 w-full max-w-sm rounded-2xl border border-neutral-200 bg-white p-6 text-center shadow-sm dark:border-neutral-700 dark:bg-neutral-900';
   const title = 'text-lg font-semibold text-neutral-900 dark:text-neutral-100';
   const sub = 'mt-2 text-sm text-neutral-500 dark:text-neutral-400';
@@ -200,7 +261,52 @@ export default function CheckinLanding({
     );
   }
 
+  if (state.phase === 'undone') {
+    return (
+      <div className={card} data-testid="checkin-undone">
+        <p className={title}>{t('undone')}</p>
+      </div>
+    );
+  }
+
   if (state.phase === 'done') {
+    // §K B5-D3 — 자동으로 들어왔으면 화면은 **질문이 아니라 환영**이다.
+    // "체크인할까요?"는 물어볼 것이 남아 있을 때의 문구이고, 자동이면 물을
+    // 것이 없다. 손님이 아침에 처음 보는 화면이 환영이어야 한다.
+    if (state.auto) {
+      const seatText = state.seatNumbers.join(', ');
+      return (
+        <div className={card} data-testid="checkin-welcome">
+          <p className={title}>{t('welcome', { name: state.displayName || '' })}</p>
+          {state.seatNumbers.length > 0 && (
+            <p className="mt-2 text-2xl font-bold text-neutral-900 dark:text-neutral-100" data-testid="welcome-seat">
+              {t('welcomeSeat', { seat: seatText })}
+            </p>
+          )}
+          <p className={sub} data-testid="welcome-party">
+            {t('welcomeParty', { n: String(state.seatNumbers.length) })}
+          </p>
+
+          {/* B5-D4 — 막다른 화면이 되면 안 된다. 스캔 직후가 손님이 앱을
+              열어보는 유일한 순간일 수 있다. */}
+          {state.roomId && state.token && (
+            <a
+              href={`/tour-mode/room/${state.bookingId ?? ''}?rt=${encodeURIComponent(state.token)}`}
+              className={primaryBtn}
+              data-testid="welcome-open-room"
+            >
+              {t('openRoom')}
+            </a>
+          )}
+
+          {/* B5-D2 — 정정 경로. 모달이 아니라 같은 화면의 조용한 링크다. */}
+          <button type="button" onClick={() => void undoAuto()} className={ghostBtn} data-testid="welcome-undo">
+            {t('undo')}
+          </button>
+        </div>
+      );
+    }
+
     return (
       <div className={card} data-testid="checkin-done">
         <p className="text-3xl">✅</p>
