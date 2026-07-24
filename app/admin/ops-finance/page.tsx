@@ -1,9 +1,18 @@
 'use client';
 
 import { useCallback, useEffect, useState } from 'react';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { toast } from 'sonner';
-import { Coins, Landmark, Send, RefreshCw, AlertTriangle } from 'lucide-react';
+import {
+  Coins,
+  Landmark,
+  Send,
+  RefreshCw,
+  AlertTriangle,
+  CalendarCheck,
+  CalendarClock,
+} from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 
 /**
@@ -12,7 +21,9 @@ import { supabase } from '@/lib/supabase';
  * 캡처 시 ops_entity_ledger에 기입된 원장 행을 월·법인으로 필터해 보여주고,
  * 이번 달 합계(gross / LLC 커미션 5% / 송금분 95%)를 카드로 요약한다.
  * ⚠ /admin/settlements는 머천트 정산(settlements 테이블)이 선점 → 비충돌 경로 사용.
- * 월 정산서·인터컴퍼니 인보이스·송금 기록은 다음 슬라이스.
+ *
+ * 월 마감 · 인터컴퍼니 인보이스 · 송금 기록 · 3자 대사는 Phase 3에서 붙었다:
+ *   /admin/ops-finance/periods  (사이클), /admin/ops-finance/filings (신고기한).
  */
 
 interface LedgerRow {
@@ -128,7 +139,21 @@ export default function OpsFinancePage() {
             발행하지 않음(Stripe 영수증 갈음).
           </p>
         </div>
-        <div className="flex items-end gap-2">
+        <div className="flex flex-wrap items-end gap-2">
+          <Link
+            href="/admin/ops-finance/periods"
+            className="inline-flex h-[34px] items-center gap-1.5 rounded-lg bg-slate-900 px-3 text-sm font-semibold text-white"
+          >
+            <CalendarCheck className="size-4" />
+            월 정산 사이클
+          </Link>
+          <Link
+            href="/admin/ops-finance/filings"
+            className="inline-flex h-[34px] items-center gap-1.5 rounded-lg border border-slate-200 px-2.5 text-sm font-medium text-slate-600 hover:bg-slate-100"
+          >
+            <CalendarClock className="size-4" />
+            신고기한
+          </Link>
           <label className="flex flex-col gap-1 text-xs font-medium text-slate-500">
             정산월
             <input
