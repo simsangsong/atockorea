@@ -26,6 +26,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useTourRoomChannel, type RoomMessage } from '@/hooks/useTourRoomChannel';
 import { useTourRoomSettings } from '@/hooks/useTourRoomSettings';
+import { useGeoWatcher } from '@/hooks/useGeoWatcher';
 import { DRIVER_QUICK_REPLIES } from '@/lib/tour-room/quickReplies';
 import { startVoiceRecording } from '@/lib/tour-room/recorder';
 import { isDeviceSttSupported, startDeviceStt } from '@/lib/tour-room/deviceStt';
@@ -68,6 +69,7 @@ import {
   Timer,
   TriangleAlert,
   Wallet,
+  Navigation,
   type LucideIcon,
 } from 'lucide-react';
 import {
@@ -157,6 +159,15 @@ function roundUpTo5(hhmm: string): string {
   const total = Number(match[1]) * 60 + Number(match[2]);
   const rounded = (Math.ceil(total / 5) * 5) % (24 * 60);
   return `${String(Math.floor(rounded / 60)).padStart(2, '0')}:${String(rounded % 60).padStart(2, '0')}`;
+}
+
+/**
+ * §11.C C1 — per-booking memory of the vehicle-location opt-in. Default OFF
+ * (first use is always a deliberate tap); once ON it auto-resumes on the next
+ * mount so the driver never re-taps it every morning of the same tour.
+ */
+export function vehicleShareKey(bookingId: string): string {
+  return `tr.vehicleShare.${bookingId}`;
 }
 
 /** Chat font zoom (pinch) bounds + storage key. */
@@ -399,6 +410,44 @@ export default function Cockpit({
     setToast(text);
     window.setTimeout(() => setToast(null), 2500);
   }, []);
+
+  // ── §11.C C1 vehicle location sharing ─────────────────────────────────
+  // The cockpit only ever took ONE-SHOT positions (parking pin, vehicle
+  // arrived); nothing published continuously, so the guest's map had no van on
+  // it. This opt-in feeds the existing T3.1 relay through the existing
+  // watcher — no new endpoint, no background tracking (foreground only, the
+  // hook pauses on a hidden tab), and permission denial stays terminal.
+  const [shareLocation, setShareLocation] = useState(false);
+  useEffect(() => {
+    try {
+      if (window.localStorage.getItem(vehicleShareKey(bookingId)) === '1') setShareLocation(true);
+    } catch {
+      /* private-mode storage — the toggle just starts OFF */
+    }
+  }, [bookingId]);
+  const { status: geoStatus, stopSharing } = useGeoWatcher({
+    bookingId,
+    roomSession: session,
+    enabled: shareLocation,
+  });
+  const toggleShareLocation = useCallback(() => {
+    setShareLocation((on) => {
+      const next = !on;
+      try {
+        if (next) window.localStorage.setItem(vehicleShareKey(bookingId), '1');
+        else window.localStorage.removeItem(vehicleShareKey(bookingId));
+      } catch {
+        /* best-effort memory only */
+      }
+      if (!next) void stopSharing();
+      return next;
+    });
+  }, [bookingId, stopSharing]);
+  // Permission denial is terminal in the hook — say it once, don't re-request.
+  useEffect(() => {
+    if (geoStatus === 'denied') say('위치 권한을 허용해 주세요 (설정 > 위치)');
+    else if (geoStatus === 'unsupported') say('이 기기에서 위치를 사용할 수 없어요');
+  }, [geoStatus, say]);
 
   // ── chat focus mode + pinch font zoom ──────────────────────────────────
   useEffect(() => {
@@ -1084,6 +1133,19 @@ export default function Cockpit({
   // Focus mode widens the window — the point is reading a long exchange.
   const recent = messages.slice(chatExpanded ? -80 : -8);
 
+  // C1 — one glanceable word for the sharing state (denial is terminal).
+  const shareLabel = !shareLocation
+    ? '위치공유'
+    : geoStatus === 'denied'
+      ? '권한 필요'
+      : geoStatus === 'unsupported'
+        ? '사용 불가'
+        : geoStatus === 'error'
+          ? '오류'
+          : geoStatus === 'watching'
+            ? '공유 중'
+            : '켜는 중…';
+
   return (
     <Screen>
       {/* header: back (guide) · title · connection · wake · ops call */}
@@ -1532,6 +1594,27 @@ export default function Cockpit({
             });
           }}
         />
+        {/* §11.C C1 — vehicle location sharing. Same compact geometry as
+            ActionButton (52px cell, 18px glyph); the mic is untouched. */}
+        <button
+          type="button"
+          onClick={toggleShareLocation}
+          aria-pressed={shareLocation}
+          className={`tr-btn-flat relative flex min-h-[52px] flex-col items-center justify-center gap-0.5 rounded-2xl py-2 ${
+            shareLocation && geoStatus === 'watching' ? 'text-[var(--tr-safe)]' : 'text-[var(--tr-ink)]'
+          }`}
+          data-testid="driver-action-location-share"
+        >
+          {shareLocation && geoStatus === 'watching' ? (
+            <span
+              className="absolute right-2 top-2 h-2 w-2 rounded-full bg-[var(--tr-safe)]"
+              data-testid="driver-share-dot"
+              aria-hidden
+            />
+          ) : null}
+          <Navigation size={18} strokeWidth={2} aria-hidden />
+          <span className="text-sm font-bold">{shareLabel}</span>
+        </button>
       </div>
 
       {/* expense/settle + overtime + day summary (secondary, deliberate).
