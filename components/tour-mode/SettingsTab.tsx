@@ -15,6 +15,7 @@ import { CHAT_LANGUAGES } from '@/lib/tour-room/languages';
 import { ROOM_LOCALES, type RoomLocale } from '@/lib/tour-room/snapshot';
 import { useTourRoomSettings } from '@/hooks/useTourRoomSettings';
 import AppManual from '@/components/tour-mode/AppManual';
+import CompanionInviteCard from '@/components/tour-mode/CompanionInviteCard';
 import type { ManualKind } from '@/lib/tour-room/appManual';
 import {
   IconLanguage,
@@ -206,6 +207,7 @@ export default function SettingsTab({
   onChatLocaleChange,
   manualKind,
   viewerRole = 'customer',
+  companionInvite,
 }: {
   locale: RoomLocale;
   /** Also syncs the participant row server-side (translation targeting, D-8). */
@@ -219,6 +221,12 @@ export default function SettingsTab({
   manualKind?: ManualKind;
   /** A6 — which role's quick-reply set to preview in the reminder card. */
   viewerRole?: QuickReplyRole;
+  /**
+   * §5.2 C-6 — auth for the lead-only [동행자 초대] card. Absent hides it
+   * (staff surfaces); present, the card still self-hides unless the server
+   * says this viewer is the lead guest.
+   */
+  companionInvite?: { bookingId: string; roomSession: string };
 }) {
   const { settings, update } = useTourRoomSettings();
   const copy = COPY[locale];
@@ -229,6 +237,14 @@ export default function SettingsTab({
     <div className="tr-stagger space-y-4 pb-4" data-testid="settings-tab">
       {/* A5 — the always-reachable copy of the first-entry manual. */}
       {manualKind ? <AppManual variant="inline" kind={manualKind} locale={locale} /> : null}
+      {/* §5.2 C-6 — lead only; the card asks the server and hides itself otherwise. */}
+      {companionInvite ? (
+        <CompanionInviteCard
+          bookingId={companionInvite.bookingId}
+          roomSession={companionInvite.roomSession}
+          locale={locale}
+        />
+      ) : null}
       {/* A5 — display mode promoted above the language card so the theme
           control is discoverable without scrolling. */}
       <section className="tr-card p-4">

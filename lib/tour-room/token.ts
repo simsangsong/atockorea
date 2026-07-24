@@ -36,6 +36,14 @@ export interface CustomerRoomTokenPayload {
   role: 'customer';
   bookingId: string;
   displayName: string;
+  /**
+   * §5.2 C-6 — this device joined through the lead's "동행자 초대" link.
+   * Same booking scope and same room powers as any guest (own chat identity,
+   * own check-in, own push), but NEVER the lead: the join API refuses to
+   * promote a companion, so /plan's lead-only writes stay closed to them.
+   * Absent/false on every previously issued token — purely additive.
+   */
+  companion?: true;
   iat: number;
   exp: number;
 }
@@ -121,6 +129,34 @@ export function signCustomerRoomToken(input: {
     exp: roomTokenExpiryForTourDate(input.tourDate),
   };
   return { token: encode(payload), payload };
+}
+
+/**
+ * §5.2 C-6 — a companion device's personal token. Identical scope to a lead's
+ * customer token (one booking, expires with the tour day) plus the `companion`
+ * marker that keeps lead promotion off the table.
+ */
+export function signCompanionRoomToken(input: {
+  bookingId: string;
+  displayName: string;
+  tourDate: string;
+}): { token: string; payload: CustomerRoomTokenPayload } {
+  const iat = Math.floor(Date.now() / 1000);
+  const payload: CustomerRoomTokenPayload = {
+    scope: 'booking',
+    role: 'customer',
+    bookingId: input.bookingId,
+    displayName: input.displayName,
+    companion: true,
+    iat,
+    exp: roomTokenExpiryForTourDate(input.tourDate),
+  };
+  return { token: encode(payload), payload };
+}
+
+/** Was this room token minted for a companion device (§5.2 C-6)? */
+export function isCompanionRoomToken(payload: RoomTokenPayload | null | undefined): boolean {
+  return Boolean(payload && payload.scope === 'booking' && payload.companion === true);
 }
 
 export function signGuideRoomToken(input: {

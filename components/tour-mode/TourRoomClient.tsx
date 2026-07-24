@@ -881,7 +881,12 @@ function TourRoomLive({
           manualKind={manualKind}
           viewerRole={viewerRole === 'guide' || viewerRole === 'driver' ? viewerRole : 'customer'}
           {...(viewerRole === 'customer'
-            ? { chatLocale: chatLocaleOverride, onChatLocaleChange }
+            ? {
+                chatLocale: chatLocaleOverride,
+                onChatLocaleChange,
+                // §5.2 C-6 — the card itself checks is_lead server-side.
+                companionInvite: { bookingId, roomSession: data.session },
+              }
             : {})}
         />
       }
