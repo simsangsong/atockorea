@@ -68,6 +68,15 @@ export async function getOpsToken(): Promise<string> {
 }
 
 /** Short two-tone alert via WebAudio — no asset needed (v1, T7.2). */
+// 🔴 A2.3 — one shared AudioContext, created lazily and reused. Creating a new
+// one per SOS leaked contexts: browsers cap concurrent AudioContexts (~6 in
+// Chrome), so after a handful of SOS events `new AudioContext()` throws and —
+// caught silently below — every subsequent SOS on a busy day would be silent
+// for the rest of the session. Reusing one and resume()-ing it also lets the
+// alarm recover once the agent has interacted (autoplay policy), which the
+// per-call context could not.
+let sosAudioCtx: AudioContext | null = null;
+
 export function playSosSound() {
   try {
     type Ctor = new () => AudioContext;
@@ -75,7 +84,11 @@ export function playSosSound() {
       (window as unknown as { AudioContext?: Ctor; webkitAudioContext?: Ctor }).AudioContext ??
       (window as unknown as { webkitAudioContext?: Ctor }).webkitAudioContext;
     if (!Ctx) return;
-    const ctx = new Ctx();
+    if (!sosAudioCtx) sosAudioCtx = new Ctx();
+    const ctx = sosAudioCtx;
+    // Suspended until a user gesture (wall-mounted, never-clicked console); a
+    // resume() after any later interaction revives the alarm for the next SOS.
+    if (ctx.state === 'suspended') void ctx.resume().catch(() => undefined);
     for (const [freq, at] of [[880, 0], [660, 0.18], [880, 0.36]] as const) {
       const osc = ctx.createOscillator();
       const gain = ctx.createGain();
