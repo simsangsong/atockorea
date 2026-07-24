@@ -8,11 +8,11 @@
 
 ## 다음 착수 지점
 
-**→ A0.3 (성능 베이스라인) · 이어서 A0.4 로케일 하니스 → A1.0 커버리지 원장 → A1 전수 · §L L5는 A7.2와 함께**
+**→ A0.4 (로케일 하니스) · 이어서 A1.0 커버리지 원장 → A1 전수 · §L L5는 A7.2와 함께**
 
 ## 기준선
 
-- main = `6dada018` (origin/main과 동일, 미푸시 0) — tsc 0 · `next build --webpack` ✓ · 204스위트 2118 green 재검증 완료
+- main = `442ad178` (origin/main과 동일, 미푸시 0) — tsc 0 · `next build --webpack` ✓ · 204스위트 2118 green 재검증 완료
 - 작업 워크트리: `C:\Users\sangsong\atockorea-audit` (브랜치 `claude/audit-b0`, `npm ci` 실설치 완료)
 - 라이브 마이그레이션 5건 추가 적용: `ops_ai_usage` · `bookings_sim_tag` · `ops_tour_groups` · `tours_max_room_guests` · `ops_guest_notes`
 - 머지 워크트리: `C:\Users\sangsong\atockorea-main-merge`
@@ -41,14 +41,16 @@
 | 14 | B1 통합 통계 (B1.1~1.6 전부) | ✅ `c8e256db` · `96881528` · `7e822ddd` |
 | 15 | §L L0·L1·L2·L3·L4·L6 | ✅ (**L5 컨텍스트 다이어트만 미완**) |
 | 16 | A4.1 중복 진실 사냥 · A4.2 client/server 경계 · A4.6 사전존재 결함 청산 | ✅ `422e1fc8` · `0cd5ebd8` · `6dada018` · `docs/audit/A4-code-health.md` |
-| 17 | A0.3 성능 베이스라인 · A0.4 로케일 하니스 · A4 잔여 · A1.0 → A1 | ⬜ |
+| 17 | A0.3 성능 베이스라인 | ✅ `442ad178` · `docs/audit/A0-perf-baseline.md` |
+| 18 | A0.4 로케일 하니스 · A4.3~A4.5 · A1.0 → A1 전수 · §L L5 | ⬜ |
 
 ## 남은 것 (우선순위순)
 
 > **§K 확정 빌드 트랙(B0~B5)은 전부 완료됐다.** 아래는 감사(A)와 §L 잔여다.
 
-1. **A0.3** 성능 베이스라인 — §F 지표를 지금 값으로 기록. 수치가 없으면 A6이 의미가 없다
-2. **A0.4** 로케일 하니스 → **A1.0 커버리지 원장** → A1 전수
+1. **A0.4** 로케일 하니스 → **A1.0 커버리지 원장** → A1 전수
+2. **A0.3 잔여 6지표** — 서버·실기기 필요. `npm run dev` + `ALLOW_SIM_SEED=1 npx tsx scripts/sim-tour-day.ts`면
+   착수 가능하다(A0.1이 그 문을 열어 뒀다). 🔴 추정치로 채우지 말 것
 3. **A4.3~A4.5** 죽은 코드 · 테스트 공백 지도 · 타입 거짓말(`as`).
    `TourRoomClient.tsx` react-hooks lint는 A4.5와 함께 (lint는 별도 게이트)
 3. **A0.3** 성능 베이스라인 · **A0.4** 로케일 하니스 → **A1.0 커버리지 원장** → A1 전수
@@ -76,6 +78,9 @@
 
 ## 실행 로그 (append-only)
 
+- **[23]** A0.3 성능 베이스라인 — 정직하게 잴 수 있는 **4/10만** 실측. 손님 룸 first-load JS **205KB/350KB**(여유 145KB) ·
+  Tier0 매칭 **1.0µs**/예산 100ms · L2 캐시 키 1.2µs(§L-D1 계산 경로 검증). 나머지 6개는 **추정하지 않고** 미측정으로 남김.
+  `npm run perf:baseline`로 재실행 가능. → `442ad178`
 - **[22]** A4.6 사전존재 결함 청산 — 🔴 **5스위트 중 제품 결함은 0건**이었다.
   헬퍼가 `__tests__/`에 있어서 스위트로 잡힌 것 · logger가 NODE_ENV를 **모듈 로드 시점에 스냅샷**하던 실제 취약점 ·
   테스트가 개발 모드를 가정만 한 것 · jsdom에 `Response.json`이 없던 것 ·
