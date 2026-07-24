@@ -22,6 +22,8 @@
  * Server-only: supabase + recommend.server.
  */
 
+import { after } from 'next/server';
+
 import type { RoomBooking, RoomDbClient } from '@/lib/tour-room/access';
 import { ensureRoom } from '@/lib/tour-room/access';
 import { recordRoomEvent, type RoomEventActorRole } from '@/lib/tour-room/events';
@@ -214,6 +216,26 @@ export async function postDiningCard(
   } catch (error) {
     console.warn('[ops-dining] postDiningCard failed:', error);
     return NOTHING;
+  }
+}
+
+/**
+ * Run post-response work that must survive the response.
+ *
+ * A cache MISS spends two external API calls plus a translation pass — far
+ * longer than the request itself — and a bare `void` would let the serverless
+ * function be frozen mid-collection. `after()` is the primitive that keeps it
+ * alive on Vercel (precedent: the assistant route's session-memory write).
+ *
+ * It requires a request scope, though, which route handlers invoked directly
+ * from unit tests do not have; there it throws. So the fallback is the plain
+ * floating promise — in that environment nothing is about to freeze anyway.
+ */
+export function runAfterResponse(work: () => Promise<unknown>): void {
+  try {
+    after(() => work().catch(() => undefined));
+  } catch {
+    void work().catch(() => undefined);
   }
 }
 
