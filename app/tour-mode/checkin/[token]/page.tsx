@@ -23,8 +23,12 @@ export default async function CheckinPage({
 }) {
   const { token } = await params;
   const { n } = await searchParams;
+  // CheckinLanding renders its own themed `.dark > .tr-root` shell (it detects
+  // the device theme client-side). The old `dark:bg-neutral-950` here was dead —
+  // Tailwind darkMode is 'class' and nothing set a `.dark` ancestor — so this
+  // wrapper just carries the brand canvas the layout already uses.
   return (
-    <main className="min-h-screen bg-neutral-50 px-4 dark:bg-neutral-950">
+    <main className="min-h-screen">
       <CheckinLanding checkinToken={decodeURIComponent(token)} nonce={n ?? null} />
     </main>
   );
