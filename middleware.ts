@@ -295,6 +295,14 @@ function routeRequest(request: NextRequest): NextResponse {
     return NextResponse.next();
   }
 
+  // 가이드 셀프 스케줄 링크(§11.F `/g/schedule/[token]`)도 같은 이유로 로케일
+  // 중립이다. 스태프 전용 한국어 단일 로케일 화면이라 `/ko/g/...` 같은 접두사가
+  // 붙으면 존재하지 않는 경로가 된다 — 그런데 이 링크를 받는 사람은 대부분
+  // 한국어 브라우저를 쓰므로, 우회가 없으면 실제 사용자 거의 전원이 404를 본다.
+  if (pathname === '/g' || pathname.startsWith('/g/')) {
+    return NextResponse.next();
+  }
+
   const eastDupRedirect = redirectEastSignatureLegacyMarketingPaths(request);
   if (eastDupRedirect) return eastDupRedirect;
 

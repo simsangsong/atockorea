@@ -20,6 +20,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { toast } from 'sonner';
 import { Copy, Loader2, Mail, Moon, Plus, QrCode, RefreshCw, Sun, X } from 'lucide-react';
 import { getOpsToken } from '@/components/tour-ops/opsShared';
+import GuideRestNotice from '@/components/tour-ops/GuideRestNotice';
 import { useOpsTheme } from '@/components/tour-ops/opsTheme';
 import { useConfirmSheet } from '@/components/tour-mode/ConfirmSheet';
 
@@ -344,6 +345,8 @@ export default function OpsRoomManager({
       </div>
 
       <div className="flex-1 overflow-y-auto px-3 py-3 pb-8">
+      {/* §11.F — 이 날짜에 휴무로 등록된 가이드 알림. 경고만, 배정 차단 없음. */}
+      <GuideRestNotice date={viewDate} />
       <div className="mx-auto w-full max-w-3xl">
         {loading && bookings.length === 0 ? (
           <p className={`mt-16 text-center text-[13px] ${T.sub}`}>불러오는 중…</p>
