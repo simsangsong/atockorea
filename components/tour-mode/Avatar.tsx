@@ -7,7 +7,7 @@
  * sender_role, so feed avatars for other travellers are the neutral glyph).
  */
 
-import { IconGuide, IconOpsBadge, IconTraveller } from '@/components/tour-mode/icons';
+import { IconDriver, IconGuide, IconOpsBadge, IconTraveller } from '@/components/tour-mode/icons';
 import { avatarColorFor, avatarInitial } from '@/lib/tour-room/avatarColor';
 
 export default function Avatar({
@@ -40,6 +40,10 @@ export default function Avatar({
   }
 
   if (role === 'driver') {
+    // A1.1 P1 — a distinct glyph (van, not the guide's flag) so the guest can
+    // tell at a glance who is speaking; the driver only speaks Korean over the
+    // W3 bridge, so "guide vs driver" decides what the guest may ask. The
+    // background stays the muted ink so the guide keeps visual primacy.
     return (
       <span
         className="flex shrink-0 items-center justify-center rounded-full bg-[var(--tr-ink-2,var(--tr-ink))] text-[var(--tr-surface)]"
@@ -47,7 +51,7 @@ export default function Avatar({
         data-testid="avatar-driver"
         aria-hidden
       >
-        <IconGuide size={iconSize} strokeWidth={2.25} />
+        <IconDriver size={iconSize} strokeWidth={2.25} />
       </span>
     );
   }

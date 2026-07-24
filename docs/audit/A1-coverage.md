@@ -26,7 +26,7 @@ A-plan-review R6: A1은 "하나도 빠짐없이 소진"이라고 적혀 있었�
 
 | 파일 | 티켓 | 판정 |
 |---|---|---|
-| `Avatar.tsx` | A1.1 | P1 · P3 → `A1-1-chat-core.md` |
+| `Avatar.tsx` | A1.1 | P1 **수정완료** · P3 → `A1-1-chat-core.md` |
 | `ChatFeed.tsx` | A1.1 | P2 → `A1-1-chat-core.md` |
 | `Composer.tsx` | A1.1 | P2 → `A1-1-chat-core.md` |
 | `ConfirmSheet.tsx` | A1.1 | ✅ |
