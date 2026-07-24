@@ -25,7 +25,7 @@
  */
 
 import { chatCompletion } from '@/lib/ai/router';
-import { durableIncrWindow } from '@/lib/durable-rate-limit';
+import { incrWindowCounted } from '@/lib/durable-rate-limit';
 import type { SignatureMenu } from '@/lib/ops/dining/places';
 
 /**
@@ -223,15 +223,13 @@ export function filterMenusToReviewText(menus: readonly string[], reviewText: st
 export async function translationBudgetExhausted(calls: number): Promise<boolean> {
   const cap = Number(process.env.TOUR_ROOM_CONCIERGE_DAILY_CAP ?? 300);
   if (!Number.isFinite(cap) || cap <= 0) return false;
-  try {
-    let count = 0;
-    for (let i = 0; i < calls; i += 1) {
-      count = await durableIncrWindow('tour_room_concierge:daily_llm', 24 * 60 * 60);
-    }
-    return count > cap;
-  } catch {
-    return false;
+  // Never throws; counts process-locally without Upstash. A `catch → false`
+  // here would repeat the defect this module's sibling quota.ts documents.
+  let count = 0;
+  for (let i = 0; i < calls; i += 1) {
+    count = (await incrWindowCounted('tour_room_concierge:daily_llm', 24 * 60 * 60)).count;
   }
+  return count > cap;
 }
 
 // ---------------------------------------------------------------------------

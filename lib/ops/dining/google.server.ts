@@ -14,7 +14,7 @@
  * Every failure returns `[]`. Same silent-fallback contract as Kakao.
  */
 
-import { durableIncrWindow, durableReadCount } from '@/lib/durable-rate-limit';
+import { noteQuotaCall, readQuotaState, type DailyQuotaState } from '@/lib/ops/dining/quota';
 
 const GOOGLE_TIMEOUT_MS = 4_000;
 const MAX_RESULT_COUNT = 20;
@@ -25,43 +25,29 @@ export const GOOGLE_QUOTA_ALERT_RATIO = 0.7;
 const GOOGLE_QUOTA_KEY = 'ops_dining:google_daily';
 const DAY_SECONDS = 24 * 60 * 60;
 
-export interface GoogleQuotaState {
-  used: number;
-  cap: number;
-  ratio: number;
-  shouldAlert: boolean;
-  exhausted: boolean;
-}
+export type GoogleQuotaState = DailyQuotaState;
 
 export function googleDailyCap(): number {
   const raw = Number(process.env.OPS_DINING_GOOGLE_DAILY_CAP ?? DEFAULT_GOOGLE_DAILY_CAP);
   return Number.isFinite(raw) && raw > 0 ? raw : DEFAULT_GOOGLE_DAILY_CAP;
 }
 
-function stateFor(used: number, cap: number): GoogleQuotaState {
-  const ratio = cap > 0 ? used / cap : 0;
-  return { used, cap, ratio, shouldAlert: ratio >= GOOGLE_QUOTA_ALERT_RATIO, exhausted: ratio >= 1 };
+function counterOptions() {
+  return {
+    key: GOOGLE_QUOTA_KEY,
+    windowSec: DAY_SECONDS,
+    cap: googleDailyCap(),
+    alertRatio: GOOGLE_QUOTA_ALERT_RATIO,
+  };
 }
 
 /** Count one outbound Places call. Never throws. */
 export async function noteGoogleCall(): Promise<GoogleQuotaState> {
-  const cap = googleDailyCap();
-  try {
-    const used = await durableIncrWindow(GOOGLE_QUOTA_KEY, DAY_SECONDS);
-    return stateFor(used, cap);
-  } catch {
-    return stateFor(0, cap);
-  }
+  return noteQuotaCall(counterOptions());
 }
 
 export async function googleQuotaState(): Promise<GoogleQuotaState> {
-  const cap = googleDailyCap();
-  try {
-    const used = await durableReadCount(GOOGLE_QUOTA_KEY);
-    return stateFor(used, cap);
-  } catch {
-    return stateFor(0, cap);
-  }
+  return readQuotaState(counterOptions());
 }
 
 /**
@@ -225,9 +211,17 @@ export interface GoogleNearbyArgs {
 /**
  * `POST places:searchNearby` over restaurants + cafes, popularity-ranked.
  *
- * `languageCode: 'en'` because the display name is only used as a translation
- * hint and a merge tiebreaker — the *rendered* name always comes from Kakao's
- * Korean original plus our own one-time translation.
+ * 🔴 `languageCode: 'ko'` is load-bearing, not a preference. `displayName` has
+ * exactly one consumer — `isSameBusiness()` in merge.server.ts — and there it is
+ * the JOIN KEY against Kakao's Korean `place_name`. Asking Google for English
+ * names meant comparing "Seongsan Sunrise Peak Cafe" to "성산일출봉 카페": the
+ * bigram score is ~0, so the pair was rejected and the Google row was dropped for
+ * want of a Kakao twin. Measured at Seongsan: 'en' matched 2 of 20 rated places,
+ * 'ko' matched 6 before any scoring change.
+ *
+ * We never needed English here. The rendered name comes from Kakao's Korean
+ * original plus our own one-time translation (translate.server.ts) — this field
+ * is never shown to a guest.
  */
 export async function googleNearbyRestaurants(args: GoogleNearbyArgs): Promise<GooglePlace[]> {
   const key = googleApiKey();
@@ -249,7 +243,7 @@ export async function googleNearbyRestaurants(args: GoogleNearbyArgs): Promise<G
         includedTypes: ['restaurant', 'cafe'],
         maxResultCount: MAX_RESULT_COUNT,
         rankPreference: 'POPULARITY',
-        languageCode: 'en',
+        languageCode: 'ko',
         locationRestriction: {
           circle: {
             center: { latitude: args.lat, longitude: args.lng },

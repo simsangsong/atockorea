@@ -10,7 +10,7 @@ import '@/test-utils/restoreWebPrimitives';
 import { POST as conciergePOST } from '@/app/api/tour-rooms/[bookingId]/concierge/route';
 import { getAuthUser } from '@/lib/auth';
 import { createServerClient } from '@/lib/supabase';
-import { requestGate, durableIncrWindow } from '@/lib/durable-rate-limit';
+import { requestGate, incrWindowCounted } from '@/lib/durable-rate-limit';
 import { chatCompletion } from '@/lib/ai/router';
 import { broadcastToRoom } from '@/lib/tour-room/realtime';
 import { logChatTurn } from '@/lib/support/chat-logger';
@@ -21,7 +21,10 @@ jest.mock('@/lib/supabase', () => ({ createServerClient: jest.fn() }));
 jest.mock('@/lib/durable-rate-limit', () => ({
   requestGate: jest.fn(),
   clientIpKey: jest.fn(() => 'ip:test'),
-  durableIncrWindow: jest.fn(),
+  // The budget guard moved to the never-throwing counter: it returns
+  // { count, durable } and falls back to a process-local window when Upstash
+  // is absent, instead of throwing and being caught into "budget available".
+  incrWindowCounted: jest.fn(),
 }));
 jest.mock('@/lib/ai/router', () => ({ chatCompletion: jest.fn() }));
 jest.mock('@/lib/tour-room/realtime', () => ({
@@ -34,7 +37,7 @@ jest.mock('@/lib/support/chat-logger', () => ({
 const getAuthUserMock = getAuthUser as jest.Mock;
 const createServerClientMock = createServerClient as jest.Mock;
 const requestGateMock = requestGate as jest.Mock;
-const durableIncrWindowMock = durableIncrWindow as jest.Mock;
+const incrWindowCountedMock = incrWindowCounted as jest.Mock;
 const chatCompletionMock = chatCompletion as jest.Mock;
 const broadcastMock = broadcastToRoom as jest.Mock;
 const logChatTurnMock = logChatTurn as jest.Mock;
@@ -125,7 +128,7 @@ beforeEach(() => {
   delete process.env.TOUR_ROOM_CONCIERGE_DAILY_CAP;
   getAuthUserMock.mockResolvedValue(null);
   requestGateMock.mockResolvedValue({ allowed: true, retryAfterMs: 0 });
-  durableIncrWindowMock.mockResolvedValue(1);
+  incrWindowCountedMock.mockResolvedValue({ count: 1, durable: true });
   chatCompletionMock.mockResolvedValue({ content: 'A friendly LLM answer.', provider: 'gemini', model: 'flash' });
   createServerClientMock.mockReturnValue(fakeDb());
 });
@@ -241,15 +244,19 @@ describe('POST /api/tour-rooms/[bookingId]/concierge', () => {
 
   it('V3.5: the global daily budget gate stops Tier 1 (guardrails/Tier 0 unaffected)', async () => {
     process.env.TOUR_ROOM_CONCIERGE_DAILY_CAP = '100';
-    durableIncrWindowMock.mockResolvedValue(101);
+    incrWindowCountedMock.mockResolvedValue({ count: 101, durable: true });
     const res = await ask('some free question with no keywords');
     const json = await res.json();
     expect(json.kind).toBe('budget_exhausted');
     expect(chatCompletionMock).not.toHaveBeenCalled();
   });
 
-  it('V3.5: a counter outage fails open (Tier 1 still answers)', async () => {
-    durableIncrWindowMock.mockRejectedValue(new Error('redis down'));
+  it('V3.5: a counter outage still answers — it degrades to a local count, it does not blank out', async () => {
+    // Previously the route caught the throw and answered "budget available",
+    // which meant the cap never bound in an unconfigured environment. Now the
+    // counter itself absorbs the outage and returns a process-local count, so
+    // a guest still gets an answer AND the cap keeps counting.
+    incrWindowCountedMock.mockResolvedValue({ count: 3, durable: false });
     const res = await ask('some free question with no keywords');
     const json = await res.json();
     expect(json.kind).toBe('tier1');

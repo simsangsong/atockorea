@@ -13,7 +13,7 @@
  * and the vehicle-eta route's `kakaoEta`).
  */
 
-import { durableIncrWindow, durableReadCount } from '@/lib/durable-rate-limit';
+import { noteQuotaCall, readQuotaState, type DailyQuotaState } from '@/lib/ops/dining/quota';
 
 /** A guest-facing path must never hang on a third party (same as vehicle-eta). */
 const KAKAO_TIMEOUT_MS = 2_500;
@@ -64,48 +64,31 @@ export const QUOTA_ALERT_RATIO = 0.7;
 const KAKAO_QUOTA_KEY = 'ops_dining:kakao_daily';
 const DAY_SECONDS = 24 * 60 * 60;
 
-export interface QuotaState {
-  used: number;
-  cap: number;
-  /** used / cap, clamped to [0, ∞). 0 when the cap is not a positive number. */
-  ratio: number;
-  /** true at ≥ 70 % — the caller pings ops once a day (lib/ops/inbox/alert). */
-  shouldAlert: boolean;
-  /** true at ≥ 100 % — collection stops and serving degrades to cache-only. */
-  exhausted: boolean;
-}
+export type QuotaState = DailyQuotaState;
 
 export function kakaoDailyCap(): number {
   const raw = Number(process.env.OPS_DINING_KAKAO_DAILY_CAP ?? DEFAULT_KAKAO_DAILY_CAP);
   return Number.isFinite(raw) && raw > 0 ? raw : DEFAULT_KAKAO_DAILY_CAP;
 }
 
-function stateFor(used: number, cap: number): QuotaState {
-  const ratio = cap > 0 ? used / cap : 0;
-  return { used, cap, ratio, shouldAlert: ratio >= QUOTA_ALERT_RATIO, exhausted: ratio >= 1 };
+function counterOptions() {
+  return {
+    key: KAKAO_QUOTA_KEY,
+    windowSec: DAY_SECONDS,
+    cap: kakaoDailyCap(),
+    alertRatio: QUOTA_ALERT_RATIO,
+  };
 }
 
 /** Count one outbound Kakao call. Never throws (an unreachable counter must
  *  not break collection — worst case we under-count for a day). */
 export async function noteKakaoCall(): Promise<QuotaState> {
-  const cap = kakaoDailyCap();
-  try {
-    const used = await durableIncrWindow(KAKAO_QUOTA_KEY, DAY_SECONDS);
-    return stateFor(used, cap);
-  } catch {
-    return stateFor(0, cap);
-  }
+  return noteQuotaCall(counterOptions());
 }
 
 /** Read-only quota view for the collect guard and the admin surface. */
 export async function quotaState(): Promise<QuotaState> {
-  const cap = kakaoDailyCap();
-  try {
-    const used = await durableReadCount(KAKAO_QUOTA_KEY);
-    return stateFor(used, cap);
-  } catch {
-    return stateFor(0, cap);
-  }
+  return readQuotaState(counterOptions());
 }
 
 /** False when no REST key is configured — callers degrade to cache-only. */

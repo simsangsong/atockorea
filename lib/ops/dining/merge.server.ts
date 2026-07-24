@@ -13,9 +13,14 @@
  * restaurant there is, and `qualityFilter`'s K1 fallback exists for exactly
  * that case.
  *
- * Matching is intentionally strict (≤ 40 m AND a name-similarity floor):
- * Korean food streets stack five restaurants in one building, so distance
- * alone would happily glue a rating onto the wrong business.
+ * Matching is strict on DISTANCE (≤ 40 m, or ≤ 120 m for a near-identical name):
+ * Korean food streets stack five restaurants in one building, so distance alone
+ * would happily glue a rating onto the wrong business. It is deliberately
+ * forgiving on SPELLING, because the two sources disagree about spelling for
+ * reasons that carry no information — a branch suffix ("프릳츠 제주성산점" vs
+ * "프릳츠 제주 성산"), a location qualifier the whole cell shares ("성산일출봉
+ * 청운식당" vs "청운식당"), or a latin brand tag ("꽃담수제버거 GreenroofJeju").
+ * Rejecting those cost us 15 of 20 rated Google places at Seongsan.
  *
  * The pure helpers are exported for tests; only the type imports touch the io
  * modules, so importing this file pulls in no fetch surface.
@@ -30,26 +35,107 @@ import type { KakaoPlaceDoc } from '@/lib/ops/dining/kakao.server';
 
 /** Same-building tolerance for calling two rows the same business. */
 export const MERGE_MAX_DISTANCE_M = 40;
-/** Token-overlap floor (Dice coefficient over character bigrams). */
+/** Name-similarity floor inside `MERGE_MAX_DISTANCE_M`. */
 export const MERGE_MIN_NAME_SIMILARITY = 0.6;
 
 /**
- * Strip everything that differs between the two sources' spelling of the same
- * business: whitespace, punctuation, and the branch suffix (제주점 / 本店 / …).
+ * Place qualifiers that are noise inside a Korean business name. One source
+ * writes "성산일출봉 청운식당" and the other writes "청운식당"; neither syllable of
+ * "성산" tells us anything about *which* business this is, because every row in
+ * the cell shares it.
+ *
+ * 🔴 Stripping these is only safe while something meaningful survives — "제주"
+ * on its own is a business name, and reducing it to '' would match it against
+ * everything in the cell. `reduceQualifiers` may return '', and every caller
+ * must decide what to do with that (see `MIN_QUALIFIER_RESIDUAL`).
+ *
+ * Longest first so "성산일출봉" is consumed before "성산" can bite a hole in it.
+ * Adding an entry trades yield against collision risk: two different businesses
+ * that differ ONLY by qualifier ("제주김밥" vs "성산김밥") collapse to the same
+ * string. The 40 m gate is what keeps that bounded.
  */
-export function normalizeName(raw: unknown): string {
-  if (typeof raw !== 'string') return '';
-  return raw
+const LOCATION_QUALIFIERS: readonly string[] = [
+  '성산일출봉', '제주국제공항', '제주공항', '성산포', '서귀포', '성산',
+  '제주도', '제주시', '제주', '중문', '애월', '함덕', '협재', '표선', '한림', '우도',
+  '해운대', '광안리', '남포동', '부산',
+  '인사동', '명동', '강남', '홍대', '서울',
+  '경주', '전주', '강릉', '속초', '여수',
+].sort((a, b) => b.length - a.length);
+
+/** Branch markers, matched AFTER qualifier reduction ("제주성산점" → "점"). */
+const BRANCH_MARKERS = new Set([
+  '점', '본점', '직영점', '지점',
+  '店', '本店', '分店',
+  'branch', 'store', 'location',
+]);
+
+/** A qualifier residual shorter than this is not distinctive enough to trust. */
+const MIN_QUALIFIER_RESIDUAL = 2;
+
+const HANGUL = /[가-힣]/;
+const LATIN_ONLY = /^[a-z0-9]+$/;
+
+/** Remove every known place qualifier. May legitimately return ''. */
+function reduceQualifiers(token: string): string {
+  let out = token;
+  for (const qualifier of LOCATION_QUALIFIERS) {
+    if (out.includes(qualifier)) out = out.split(qualifier).join('');
+  }
+  return out;
+}
+
+/**
+ * Split a raw name into comparable tokens: lowercase + NFKC, bracketed asides
+ * dropped, punctuation treated as a separator, branch markers removed, and a
+ * trailing latin brand tag ("꽃담수제버거 GreenroofJeju") popped — but only while
+ * a Hangul token survives, so a genuinely latin name ("Olle Guksu") is kept whole.
+ */
+function cleanTokens(raw: unknown): string[] {
+  if (typeof raw !== 'string') return [];
+  const tokens = raw
     .toLowerCase()
     .normalize('NFKC')
-    // Branch suffixes: "…점" / "…店" / "… branch" / "… store".
-    .replace(/\s*(본점|직영점|[가-힣a-z0-9]*점)\s*$/u, '')
-    .replace(/\s*(本店|分店|[\p{Script=Han}]*店)\s*$/u, '')
-    .replace(/\s*\b(branch|store|location)\b\s*$/u, '')
-    // Bracketed qualifiers Google likes to append.
-    .replace(/[([{][^)\]}]*[)\]}]/gu, '')
-    .replace(/[\s\p{P}\p{S}]+/gu, '')
-    .trim();
+    .replace(/[([{][^)\]}]*[)\]}]/gu, ' ')
+    .replace(/[\p{P}\p{S}]+/gu, ' ')
+    .split(/\s+/u)
+    .filter(Boolean);
+  if (tokens.length === 0) return [];
+
+  let kept = tokens.filter((token) => !BRANCH_MARKERS.has(reduceQualifiers(token)));
+  // A name that is *only* a branch marker keeps its original spelling rather
+  // than normalizing to '' (which would score 0 against everything).
+  if (kept.length === 0) kept = tokens;
+
+  while (
+    kept.length > 1 &&
+    LATIN_ONLY.test(kept[kept.length - 1]) &&
+    kept.slice(0, -1).some((token) => HANGUL.test(token))
+  ) {
+    kept = kept.slice(0, -1);
+  }
+  return kept;
+}
+
+/**
+ * Canonical compact spelling — whitespace and punctuation gone, branch marker
+ * gone. Location qualifiers are deliberately KEPT here; `nameSimilarity` scores
+ * the qualifier-free form separately and takes the better of the two, so
+ * stripping can only ever raise a score, never lose a true match.
+ */
+export function normalizeName(raw: unknown): string {
+  return cleanTokens(raw).join('');
+}
+
+/** Tokens with place qualifiers removed; '' residuals fall back to the original. */
+export function qualifierFreeTokens(raw: unknown): string[] {
+  const base = cleanTokens(raw);
+  const distinctive = base.filter((token) => reduceQualifiers(token) !== '');
+  // Every token was a qualifier → the place name really is a place name.
+  const source = distinctive.length > 0 ? distinctive : base;
+  return source.map((token) => {
+    const reduced = reduceQualifiers(token);
+    return reduced.length >= MIN_QUALIFIER_RESIDUAL ? reduced : token;
+  });
 }
 
 function bigrams(value: string): string[] {
@@ -59,40 +145,84 @@ function bigrams(value: string): string[] {
   return out;
 }
 
-/**
- * Dice coefficient over character bigrams — 1 for identical strings, ~0 for
- * unrelated ones, and tolerant of the transliteration noise we actually see
- * ("Heukdwaeji Garden" vs "흑돼지가든" score 0 and correctly fail to match; the
- * real matches are Korean-vs-Korean with a suffix difference).
- */
-export function nameSimilarity(a: string, b: string): number {
-  const left = normalizeName(a);
-  const right = normalizeName(b);
-  if (!left || !right) return 0;
-  if (left === right) return 1;
-  if (left.includes(right) || right.includes(left)) {
-    return Math.min(left.length, right.length) / Math.max(left.length, right.length);
-  }
-
-  const leftGrams = bigrams(left);
-  const rightGrams = bigrams(right);
-  if (leftGrams.length === 0 || rightGrams.length === 0) return 0;
-
+/** Dice coefficient over a multiset. */
+function dice(left: string[], right: string[]): number {
+  if (left.length === 0 || right.length === 0) return 0;
   const pool = new Map<string, number>();
-  for (const gram of leftGrams) pool.set(gram, (pool.get(gram) ?? 0) + 1);
+  for (const item of left) pool.set(item, (pool.get(item) ?? 0) + 1);
 
   let hits = 0;
-  for (const gram of rightGrams) {
-    const count = pool.get(gram) ?? 0;
+  for (const item of right) {
+    const count = pool.get(item) ?? 0;
     if (count > 0) {
-      pool.set(gram, count - 1);
+      pool.set(item, count - 1);
       hits += 1;
     }
   }
-  return (2 * hits) / (leftGrams.length + rightGrams.length);
+  return (2 * hits) / (left.length + right.length);
 }
 
-/** True when the two rows are confidently the same business. */
+/**
+ * Score two compact spellings: whole-string containment OR character-bigram
+ * Dice, whichever is kinder.
+ *
+ * 🔴 The `max` is the bug fix. The old version *returned* the containment ratio
+ * as soon as one string contained the other, which for "해녀의집" inside
+ * "성산어촌계해녀의집" is 4/9 = 0.44 — below the floor — even though the bigram
+ * score for the same pair is 0.67. Containment short-circuiting a higher score
+ * is what threw away true matches.
+ */
+function scorePair(left: string, right: string): number {
+  if (!left || !right) return 0;
+  if (left === right) return 1;
+  const containment =
+    left.includes(right) || right.includes(left)
+      ? Math.min(left.length, right.length) / Math.max(left.length, right.length)
+      : 0;
+  return Math.max(containment, dice(bigrams(left), bigrams(right)));
+}
+
+/**
+ * How confident are we that these two spellings are one business? 1 for
+ * identical, ~0 for unrelated.
+ *
+ * Three views, best of: the raw compact spelling, the qualifier-free compact
+ * spelling, and token overlap. Token overlap is what rescues names where the
+ * extra material is a whole word — "해일리 베이커리 카페" vs "해일리 카페" shares
+ * two of three tokens (0.80) but is only 0.47 as one string.
+ *
+ * Transliteration is still (correctly) not matched: "Heukdwaeji Garden" vs
+ * "흑돼지가든" shares no character, and inventing a romanization table here would
+ * merge ratings onto the wrong business.
+ */
+export function nameSimilarity(a: string, b: string): number {
+  const rawLeft = normalizeName(a);
+  const rawRight = normalizeName(b);
+  if (!rawLeft || !rawRight) return 0;
+
+  const tokensLeft = qualifierFreeTokens(a);
+  const tokensRight = qualifierFreeTokens(b);
+
+  return Math.max(
+    scorePair(rawLeft, rawRight),
+    scorePair(tokensLeft.join(''), tokensRight.join('')),
+    dice(tokensLeft, tokensRight),
+  );
+}
+
+/**
+ * True when the two rows are confidently the same business.
+ *
+ * 🔴 Distance stays a FLAT hard gate at 40 m, and that is a measured decision,
+ * not an oversight. A tiered gate (40–120 m for a near-identical name) was
+ * built and probed against Seongsan, Daepo Jusangjeolli and Jeju Cruise Port:
+ * it matched ZERO additional places at all three. Distance was never what threw
+ * the candidates away — 17 of 20 rated Google places at Seongsan already had a
+ * Kakao doc inside 40 m, and it was the name score that rejected them. Widening
+ * a safety gate that buys nothing is pure downside: Korean food streets stack
+ * five restaurants in one building, and every extra metre is another chance to
+ * glue a 4.8★ rating onto the wrong business.
+ */
 export function isSameBusiness(kakao: KakaoPlaceDoc, google: GooglePlace): boolean {
   const distance = haversineM(
     { latitude: kakao.y, longitude: kakao.x },
