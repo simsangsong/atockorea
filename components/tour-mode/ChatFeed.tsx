@@ -26,6 +26,14 @@ import ApproachCard from '@/components/tour-mode/ApproachCard';
 import ArrivalBundleCard from '@/components/tour-mode/ArrivalBundleCard';
 import ArrivalVideoCard from '@/components/tour-mode/ArrivalVideoCard';
 import DiningCard from '@/components/tour-mode/DiningCard';
+import BriefingSafetyCard from '@/components/tour-mode/BriefingSafetyCard';
+import BriefingScheduleCard from '@/components/tour-mode/BriefingScheduleCard';
+import BriefingLunchCard from '@/components/tour-mode/BriefingLunchCard';
+import BriefingEtiquetteCard from '@/components/tour-mode/BriefingEtiquetteCard';
+import type { BriefingSafetyMeta } from '@/lib/ops/seating/cards/safety';
+import type { BriefingScheduleMeta } from '@/lib/ops/seating/cards/schedule';
+import type { BriefingLunchMeta } from '@/lib/ops/seating/cards/lunch';
+import type { BriefingEtiquetteMeta } from '@/lib/ops/seating/cards/etiquette';
 import type { DiningCardMeta } from '@/lib/ops/dining/card';
 import { isVideoCardMeta } from '@/lib/tour-room/poiVideos';
 import type { ApproachCardMeta } from '@/lib/tour-room/approach';
@@ -433,6 +441,54 @@ export default function ChatFeed({
                     meta={message.metadata as unknown as DiningCardMeta}
                     locale={viewerLocale}
                     auth={tts ?? null}
+                  />
+                </div>
+              );
+            }
+            // §5.4 C-16 ②~⑤ — the start-briefing card stack. One branch per
+            // metadata.kind; the composed capsule text stays the card body so
+            // TTS / push / the cockpit keep reading the same words.
+            if (message.metadata?.kind === 'briefing_safety') {
+              return (
+                <div className={`mt-2 ${animClass}`}>
+                  <BriefingSafetyCard
+                    meta={message.metadata as unknown as BriefingSafetyMeta}
+                    text={displayText(message, viewerLocale, originals.has(message.id), preferredLocale)}
+                    locale={viewerLocale}
+                    preferredLocale={preferredLocale}
+                  />
+                </div>
+              );
+            }
+            if (message.metadata?.kind === 'briefing_schedule') {
+              return (
+                <div className={`mt-2 ${animClass}`}>
+                  <BriefingScheduleCard
+                    meta={message.metadata as unknown as BriefingScheduleMeta}
+                    locale={viewerLocale}
+                  />
+                </div>
+              );
+            }
+            if (message.metadata?.kind === 'briefing_lunch') {
+              return (
+                <div className={`mt-2 ${animClass}`}>
+                  <BriefingLunchCard
+                    meta={message.metadata as unknown as BriefingLunchMeta}
+                    text={displayText(message, viewerLocale, originals.has(message.id), preferredLocale)}
+                    locale={viewerLocale}
+                    auth={viewerRole === 'customer' ? tts ?? null : null}
+                  />
+                </div>
+              );
+            }
+            if (message.metadata?.kind === 'briefing_etiquette') {
+              return (
+                <div className={`mt-2 ${animClass}`}>
+                  <BriefingEtiquetteCard
+                    meta={message.metadata as unknown as BriefingEtiquetteMeta}
+                    text={displayText(message, viewerLocale, originals.has(message.id), preferredLocale)}
+                    locale={viewerLocale}
                   />
                 </div>
               );
