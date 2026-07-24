@@ -8,11 +8,11 @@
 
 ## 다음 착수 지점
 
-**→ A0.4 (로케일 하니스) · 이어서 A1.0 커버리지 원장 → A1 전수 · §L L5는 A7.2와 함께**
+**→ A1.0 (커버리지 원장) · 이어서 A1 전수 · A4.3~A4.5 · §L L5는 A7.2와 함께**
 
 ## 기준선
 
-- main = `442ad178` (origin/main과 동일, 미푸시 0) — tsc 0 · `next build --webpack` ✓ · 204스위트 2118 green 재검증 완료
+- main = `7c54a87f` (origin/main과 동일, 미푸시 0) — tsc 0 · `next build --webpack` ✓ · 204스위트 2118 green 재검증 완료
 - 작업 워크트리: `C:\Users\sangsong\atockorea-audit` (브랜치 `claude/audit-b0`, `npm ci` 실설치 완료)
 - 라이브 마이그레이션 5건 추가 적용: `ops_ai_usage` · `bookings_sim_tag` · `ops_tour_groups` · `tours_max_room_guests` · `ops_guest_notes`
 - 머지 워크트리: `C:\Users\sangsong\atockorea-main-merge`
@@ -42,13 +42,15 @@
 | 15 | §L L0·L1·L2·L3·L4·L6 | ✅ (**L5 컨텍스트 다이어트만 미완**) |
 | 16 | A4.1 중복 진실 사냥 · A4.2 client/server 경계 · A4.6 사전존재 결함 청산 | ✅ `422e1fc8` · `0cd5ebd8` · `6dada018` · `docs/audit/A4-code-health.md` |
 | 17 | A0.3 성능 베이스라인 | ✅ `442ad178` · `docs/audit/A0-perf-baseline.md` |
-| 18 | A0.4 로케일 하니스 · A4.3~A4.5 · A1.0 → A1 전수 · §L L5 | ⬜ |
+| 18 | A0.4 로케일 하니스 | ✅ `7c54a87f` · `docs/audit/A0-locale-harness.md` |
+| 19 | A1.0 커버리지 원장 → A1 전수 · A4.3~A4.5 · §L L5 | ⬜ |
 
 ## 남은 것 (우선순위순)
 
 > **§K 확정 빌드 트랙(B0~B5)은 전부 완료됐다.** 아래는 감사(A)와 §L 잔여다.
 
-1. **A0.4** 로케일 하니스 → **A1.0 커버리지 원장** → A1 전수
+1. **A1.0 커버리지 원장** → A1 전수. A0.4가 표적 목록(좁은 컨테이너 146건)을 만들어 뒀으므로
+   A1.7은 전수가 아니라 표적 검사로 갈 수 있다
 2. **A0.3 잔여 6지표** — 서버·실기기 필요. `npm run dev` + `ALLOW_SIM_SEED=1 npx tsx scripts/sim-tour-day.ts`면
    착수 가능하다(A0.1이 그 문을 열어 뒀다). 🔴 추정치로 채우지 말 것
 3. **A4.3~A4.5** 죽은 코드 · 테스트 공백 지도 · 타입 거짓말(`as`).
@@ -78,6 +80,10 @@
 
 ## 실행 로그 (append-only)
 
+- **[24]** A0.4 로케일 하니스 — 20,295 문자열 → **볼 것 146건**으로 좁힘. 판정 기준은 문자 수가 아니라
+  **최장 무공백 토큰**(CJK는 글자 단위로 끊겨 안전). 🔴좁은 컨테이너/산문 구분이 없으면 약관 본문에 묻힌다.
+  키 누락 0 확인·고정. 부수 발견: **10로케일 목록도 `i18n.ts`/`locale.ts`에 복제**돼 있어 정본 파생으로 교체.
+  플랜 문구 정정: 룸 카드는 5로케일이라 de/ru가 없다. → `7c54a87f`
 - **[23]** A0.3 성능 베이스라인 — 정직하게 잴 수 있는 **4/10만** 실측. 손님 룸 first-load JS **205KB/350KB**(여유 145KB) ·
   Tier0 매칭 **1.0µs**/예산 100ms · L2 캐시 키 1.2µs(§L-D1 계산 경로 검증). 나머지 6개는 **추정하지 않고** 미측정으로 남김.
   `npm run perf:baseline`로 재실행 가능. → `442ad178`
