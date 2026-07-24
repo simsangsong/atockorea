@@ -12,7 +12,7 @@
  * 구독(useSeatChannel)으로 타인 선택 즉시 반영 + 서버 UNIQUE 409 재선택.
  */
 
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import SeatMap from '@/components/ops/SeatMap';
 import type { SeatState } from '@/lib/ops/seating/logic';
 import type { VehicleLayoutJson } from '@/lib/ops/seating/layouts';
@@ -60,6 +60,18 @@ type Phase =
   | { k: 'submitting' }
   | { k: 'done'; seatNumbers: number[] }
   | { k: 'error' };
+
+/** 안정 셸 — JoinFlow 내부에 정의하면 매 렌더 새 컴포넌트가 되어 입력 포커스를
+ *  잃는다(A1과 동종 버그). 모듈 레벨로 승격해 재마운트를 막는다. */
+function JoinShell({ dark, locale, children }: { dark: boolean; locale: RoomLocale; children: ReactNode }) {
+  return (
+    <div className={dark ? 'dark' : ''}>
+      <div className="tr-root min-h-dvh bg-[var(--tr-canvas)] px-4 pb-10" data-locale={locale} lang={locale}>
+        {children}
+      </div>
+    </div>
+  );
+}
 
 export default function JoinFlow({
   claimToken,
@@ -319,7 +331,6 @@ export default function JoinFlow({
   }, [token, activeVehicle, selected, roomId, displayName, vehicles, t]);
 
   // ── styling (tour-room tokens; dark via prefers-color-scheme) ─────────────
-  const shell = `${dark ? 'dark' : ''}`;
   const card =
     'mx-auto mt-6 w-full max-w-md rounded-2xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] p-5 shadow-sm';
   const title = 'text-lg font-bold text-[var(--tr-ink)]';
@@ -330,40 +341,32 @@ export default function JoinFlow({
   const inputCls =
     'mt-1 w-full rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-canvas)] px-3 py-2.5 text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)] focus:border-[var(--tr-accent)] focus:outline-none';
 
-  const Wrap = ({ children }: { children: React.ReactNode }) => (
-    <div className={shell}>
-      <div className="tr-root min-h-dvh bg-[var(--tr-canvas)] px-4 pb-10" data-locale={locale} lang={locale}>
-        {children}
-      </div>
-    </div>
-  );
-
   if (phase.k === 'loading' || phase.k === 'claiming' || phase.k === 'submitting') {
     return (
-      <Wrap>
+      <JoinShell dark={dark} locale={locale}>
         <div className={card} data-testid="join-loading">
           <p className={title}>{t('loading')}</p>
         </div>
-      </Wrap>
+      </JoinShell>
     );
   }
 
   if (phase.k === 'error') {
     return (
-      <Wrap>
+      <JoinShell dark={dark} locale={locale}>
         <div className={card} data-testid="join-error">
           <p className={title}>{t('error')}</p>
           <button type="button" className={primaryBtn} onClick={() => window.location.reload()}>
             {t('retry')}
           </button>
         </div>
-      </Wrap>
+      </JoinShell>
     );
   }
 
   if (phase.k === 'roster') {
     return (
-      <Wrap>
+      <JoinShell dark={dark} locale={locale}>
         <div className={card} data-testid="join-roster">
           <p className={title}>{t('rosterTitle')}</p>
           <p className={sub}>{t('rosterHint')}</p>
@@ -398,14 +401,14 @@ export default function JoinFlow({
             ))}
           </ul>
         </div>
-      </Wrap>
+      </JoinShell>
     );
   }
 
   if (phase.k === 'verify') {
     const entry = phase.entry;
     return (
-      <Wrap>
+      <JoinShell dark={dark} locale={locale}>
         <div className={card} data-testid="join-verify">
           <p className={title}>{t('verifyTitle', { name: entry.name })}</p>
           <p className={sub}>{t('verifyHint')}</p>
@@ -449,13 +452,13 @@ export default function JoinFlow({
             {t('back')}
           </button>
         </div>
-      </Wrap>
+      </JoinShell>
     );
   }
 
   if (phase.k === 'already') {
     return (
-      <Wrap>
+      <JoinShell dark={dark} locale={locale}>
         <div className={card} data-testid="join-already">
           <p className={title}>{t('alreadyClaimed')}</p>
           <p className={sub}>{t('alreadyClaimedHint')}</p>
@@ -471,13 +474,13 @@ export default function JoinFlow({
             {t('back')}
           </button>
         </div>
-      </Wrap>
+      </JoinShell>
     );
   }
 
   if (phase.k === 'done') {
     return (
-      <Wrap>
+      <JoinShell dark={dark} locale={locale}>
         <div className={card} data-testid="join-done">
           <p className="text-3xl">🎫</p>
           <p className={title}>{t('done')}</p>
@@ -486,13 +489,13 @@ export default function JoinFlow({
           </p>
           <p className="mt-3 text-xs text-[var(--tr-ink-3)]">{t('doneHint')}</p>
         </div>
-      </Wrap>
+      </JoinShell>
     );
   }
 
   // phase.k === 'seats'
   return (
-    <Wrap>
+    <JoinShell dark={dark} locale={locale}>
       <div className={card} data-testid="join-seats">
         <p className={title}>{t('seatTitle')}</p>
         {!activeVehicle ? (
@@ -554,6 +557,6 @@ export default function JoinFlow({
           </>
         )}
       </div>
-    </Wrap>
+    </JoinShell>
   );
 }
