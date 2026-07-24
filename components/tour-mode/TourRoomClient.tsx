@@ -746,6 +746,9 @@ function TourRoomLive({
               tourDate={snapshot.booking?.tour_date}
               city={snapshot.booking?.tours?.city}
               locale={locale}
+              bookingId={bookingId}
+              roomSession={data.session}
+              canExtend={viewerRole === 'customer' && !readOnly}
             />
           )}
           {viewerRole === 'customer' && (
