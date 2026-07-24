@@ -139,7 +139,6 @@ import type { RoomBooking, RoomDbClient, TourRoom } from '@/lib/tour-room/access
 
 | 티켓 | 내용 | 비고 |
 |---|---|---|
-| A4.1 | 중복 진실 사냥 | B1-D3(집계 중복 금지)·B2.1b(정원 우선순위)의 **사후 검증**이기도 하다 — 두 결정이 실제로 단일 지점을 지켰는지 |
 | A4.3 | 죽은 코드·미사용 export | |
 | A4.4 | 테스트 공백 지도 | 특히 라우트 레벨 |
 | A4.5 | 타입 거짓말 (`as` 남용) | 특히 supabase row → 도메인 타입 |
