@@ -35,6 +35,28 @@ function xy(r: number, c: number): [number, number] {
   return [PADX + c * (CELL + GAP) + (c >= 2 ? AISLE : 0), PADY + r * (CELL + GAP)];
 }
 
+/**
+ * 지오메트리 공개 (§5.3b admin 배치도 에디터 — additive).
+ *
+ * 에디터는 이 컴포넌트 위에 "빈 칸" 오버레이 SVG를 정확히 겹쳐 그려야 한다
+ * (SeatMap은 존재하는 좌석만 그리므로 빈 칸을 탭할 방법이 없다). 렌더 로직을
+ * 건드리는 대신 좌표 계산만 내보낸다 — 기존 소비 화면 동작은 완전 무변경.
+ */
+export const SEAT_GEOMETRY = { CELL, GAP, PADX, PADY, AISLE } as const;
+
+/** 격자 좌표 → SVG 좌상단 (x, y). SeatMap 내부 배치와 동일. */
+export function seatCellXY(r: number, c: number): [number, number] {
+  return xy(r, c);
+}
+
+/** 오버레이 SVG가 써야 할 viewBox 크기 (cols × rows 기준). */
+export function seatMapDimensions(cols: number, rows: number): { width: number; height: number } {
+  return {
+    width: PADX * 2 + cols * (CELL + GAP) + AISLE,
+    height: PADY * 2 + rows * (CELL + GAP),
+  };
+}
+
 /** 기본 설비 라벨 (데모와 동일 — 소비 화면에서 로케일별 오버라이드 가능). */
 export const DEFAULT_FIXTURE_LABELS: Record<FixtureType, string> = {
   driver: '운전석',

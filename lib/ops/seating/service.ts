@@ -20,6 +20,8 @@ export interface RoomVehicleWithLayout {
   layout: VehicleLayoutJson | null;
   total_seats: number | null;
   model: string | null;
+  /** §5.3b — 이 실차만 표준 배치와 다르면 true (layout은 오버라이드본이다). */
+  layout_overridden: boolean;
 }
 
 export interface SeatAssignmentRow extends SeatAssignmentLike {
@@ -31,28 +33,50 @@ export interface SeatAssignmentRow extends SeatAssignmentLike {
   assigned_at: string | null;
 }
 
-/** 룸의 차량들 + 배치도 (§5.3 C-7: 차량 미배정이면 빈 배열 = "좌석 오픈 예정"). */
+const ROOM_VEHICLE_BASE_SELECT =
+  'id, room_id, layout_id, plate_number, ops_vehicle_layouts ( model, layout_json, total_seats )';
+/** §5.3b — 실차 단위 오버라이드. 20260726090000 마이그레이션 이후에만 존재한다. */
+const ROOM_VEHICLE_OVERRIDE_SELECT = `${ROOM_VEHICLE_BASE_SELECT}, layout_override_json`;
+
+/**
+ * 룸의 차량들 + 배치도 (§5.3 C-7: 차량 미배정이면 빈 배열 = "좌석 오픈 예정").
+ *
+ * §5.3b 오버라이드가 걸린 실차는 표준 배치도 대신 자기 layout_override_json을
+ * 쓴다 — 좌석판·명단·게이트가 전부 이 함수를 통해 배치도를 받으므로 여기 한
+ * 곳만 알면 된다. 오버라이드 컬럼이 아직 없는 환경(마이그레이션 미적용)에서는
+ * 기존 select로 물러선다 — 배포 순서가 앞서더라도 좌석 플로우가 죽지 않게.
+ */
 export async function loadRoomVehicles(
   supabase: RoomDbClient,
   roomId: string,
 ): Promise<RoomVehicleWithLayout[]> {
-  const { data, error } = await supabase
+  let { data, error } = await supabase
     .from('ops_room_vehicles')
-    .select('id, room_id, layout_id, plate_number, ops_vehicle_layouts ( model, layout_json, total_seats )')
+    .select(ROOM_VEHICLE_OVERRIDE_SELECT)
     .eq('room_id', roomId);
+  if (error) {
+    ({ data, error } = await supabase
+      .from('ops_room_vehicles')
+      .select(ROOM_VEHICLE_BASE_SELECT)
+      .eq('room_id', roomId));
+  }
   if (error || !Array.isArray(data)) return [];
   return data.map((row: Record<string, unknown>) => {
     const joined = row.ops_vehicle_layouts as
       | { model?: string; layout_json?: VehicleLayoutJson; total_seats?: number }
       | null;
+    const override = (row.layout_override_json as VehicleLayoutJson | null) ?? null;
+    const layout = override ?? joined?.layout_json ?? null;
     return {
       id: String(row.id),
       room_id: String(row.room_id),
       layout_id: String(row.layout_id),
       plate_number: (row.plate_number as string | null) ?? null,
-      layout: joined?.layout_json ?? null,
-      total_seats: joined?.total_seats ?? null,
+      layout,
+      // 오버라이드가 있으면 정원도 그 배치도가 진실이다.
+      total_seats: override ? override.seats.length : joined?.total_seats ?? null,
       model: joined?.model ?? null,
+      layout_overridden: Boolean(override),
     };
   });
 }
