@@ -24,6 +24,7 @@ import {
   type SosInfo,
 } from '@/components/tour-ops/opsShared';
 import OpsManifestView from '@/components/tour-ops/OpsManifestView';
+import OpsRoomVehiclePanel from '@/components/tour-ops/OpsRoomVehiclePanel';
 
 const FEED_LIMIT = 80;
 
@@ -47,8 +48,9 @@ export default function OpsRoomDrawer({
   const [pending, setPending] = useState<RoomMessage[]>([]);
   const [draft, setDraft] = useState('');
   const [sending, setSending] = useState(false);
-  // Phase 2 §3.2 — 룸 상세 세그먼트: 대화(기존) | 명단(같은 tour_id+tour_date).
-  const [view, setView] = useState<'chat' | 'manifest'>('chat');
+  // Phase 2 §3.2 — 룸 상세 세그먼트: 대화(기존) | 명단(같은 tour_id+tour_date)
+  // | 차량(§4.1 B-2 배차 — ops_room_vehicles의 유일한 쓰기 표면).
+  const [view, setView] = useState<'chat' | 'manifest' | 'vehicle'>('chat');
   const feedRef = useRef<HTMLDivElement | null>(null);
   const manifestAvailable = Boolean(room.tour_id && room.tour_date);
 
@@ -208,15 +210,16 @@ export default function OpsRoomDrawer({
           </button>
         </header>
 
-        {/* Phase 2 §3.2 — [대화|명단] 세그먼트 (명단 = tour_id+tour_date 파생 뷰) */}
-        {manifestAvailable && (
-          <div className="flex gap-1.5 border-b border-[var(--tr-hairline)] px-4 py-2">
-            {(
-              [
-                { key: 'chat', label: '대화' },
-                { key: 'manifest', label: '명단' },
-              ] as Array<{ key: 'chat' | 'manifest'; label: string }>
-            ).map(({ key, label }) => (
+        {/* Phase 2 §3.2 — [대화|명단|차량] 세그먼트 (명단 = tour_id+tour_date 파생 뷰,
+            차량 = §4.1 B-2 배차. 차량 탭은 룸만 있으면 되므로 항상 노출된다). */}
+        <div className="flex gap-1.5 border-b border-[var(--tr-hairline)] px-4 py-2">
+          {(
+            [
+              { key: 'chat', label: '대화' },
+              ...(manifestAvailable ? [{ key: 'manifest' as const, label: '명단' }] : []),
+              { key: 'vehicle', label: '차량' },
+            ] as Array<{ key: 'chat' | 'manifest' | 'vehicle'; label: string }>
+          ).map(({ key, label }) => (
               <button
                 key={key}
                 type="button"
@@ -228,15 +231,17 @@ export default function OpsRoomDrawer({
                     : 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]'
                 }`}
               >
-                {label}
-              </button>
-            ))}
-          </div>
-        )}
+              {label}
+            </button>
+          ))}
+        </div>
 
         {view === 'manifest' && manifestAvailable && (
           <OpsManifestView tourId={room.tour_id!} tourDate={room.tour_date!} tourTitle={room.tour?.title ?? null} />
         )}
+
+        {/* §4.1 B-2 — 배차 (ops_room_vehicles 쓰기 표면) */}
+        {view === 'vehicle' && <OpsRoomVehiclePanel roomId={room.id} />}
 
         {sos && (
           <div className="flex items-center gap-2 border-b border-red-200 bg-red-50 px-4 py-2.5 text-[12px] text-red-700 dark:border-red-500/30 dark:bg-red-950/50 dark:text-red-200">

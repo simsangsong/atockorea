@@ -87,23 +87,31 @@ async function loadVehiclesForRooms(
   roomIds: string[],
 ): Promise<RoomVehicleWithLayout[]> {
   if (roomIds.length === 0) return [];
-  const { data, error } = await supabase
+  const base =
+    'id, room_id, layout_id, plate_number, ops_vehicle_layouts ( model, layout_json, total_seats )';
+  // §5.3b 실차 오버라이드 (마이그레이션 미적용 환경에서는 기존 select로 물러선다).
+  let { data, error } = await supabase
     .from('ops_room_vehicles')
-    .select('id, room_id, layout_id, plate_number, ops_vehicle_layouts ( model, layout_json, total_seats )')
+    .select(`${base}, layout_override_json`)
     .in('room_id', roomIds);
+  if (error) {
+    ({ data, error } = await supabase.from('ops_room_vehicles').select(base).in('room_id', roomIds));
+  }
   if (error || !Array.isArray(data)) return [];
   return data.map((row: Record<string, unknown>) => {
     const joined = row.ops_vehicle_layouts as
       | { model?: string; layout_json?: VehicleLayoutJson; total_seats?: number }
       | null;
+    const override = (row.layout_override_json as VehicleLayoutJson | null) ?? null;
     return {
       id: String(row.id),
       room_id: String(row.room_id),
       layout_id: String(row.layout_id),
       plate_number: (row.plate_number as string | null) ?? null,
-      layout: joined?.layout_json ?? null,
-      total_seats: joined?.total_seats ?? null,
+      layout: override ?? joined?.layout_json ?? null,
+      total_seats: override ? override.seats.length : joined?.total_seats ?? null,
       model: joined?.model ?? null,
+      layout_overridden: Boolean(override),
     };
   });
 }
