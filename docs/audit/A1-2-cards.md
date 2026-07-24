@@ -30,7 +30,7 @@
 
 ## 2. findings (백로그)
 
-### 🟡 P2 — `NoticeBanner`가 공지가 없어도 초당 리렌더한다
+### 🟡→✅ P2 — `NoticeBanner`가 공지가 없어도 초당 리렌더한다 (2026-07-25 수정: 적응형 틱)
 
 - **재현 경로:** `NoticeBanner.tsx:128-131`. 활성 공지가 없는 상태로 룸을 열어 둔다.
 - **관측된 동작:** `setInterval(() => setNowMs(Date.now()), 1_000)`이 **조건 없이** 돈다.
