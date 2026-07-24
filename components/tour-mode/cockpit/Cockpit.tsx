@@ -241,6 +241,7 @@ export default function Cockpit({
   channelTopic,
   initialMessages,
   city = null,
+  tourKind,
   onExit,
 }: {
   tourTitle: string;
@@ -252,9 +253,17 @@ export default function Cockpit({
   initialMessages: RoomMessage[];
   /** Tour city — sets the overtime base hours (Jeju 9h / Busan 8h, T1-1). */
   city?: string | null;
+  /**
+   * §11.D D7 — join-vs-private discriminator. DEFAULTS to private when
+   * unresolved/undefined so every current mount behaves identically; only a
+   * resolved 'join' HIDES the private-only cash/overtime/settlement tools.
+   */
+  tourKind?: 'join' | 'private';
   /** Guide drive-mode: a way back to dispatch. Omitted by the pure driver. */
   onExit?: () => void;
 }) {
+  // §11.D D7 — undefined ⇒ private ⇒ isJoin false ⇒ current behavior unchanged.
+  const isJoin = tourKind === 'join';
   useWakeLock(true);
   // A5 — device theme store: the cockpit defaults dark ('system' → dark in
   // Screen); the header chip flips an explicit light/dark override.
@@ -1524,7 +1533,11 @@ export default function Cockpit({
         />
       </div>
 
-      {/* expense/settle + overtime + day summary (secondary, deliberate) */}
+      {/* expense/settle + overtime + day summary (secondary, deliberate).
+          §11.D D7 — private-only cash/overtime/settlement tools: hidden whole
+          (row and all) on a JOIN tour so a join-tour driver never sees the
+          private-charter settlement surface. Unchanged for private/undefined. */}
+      {!isJoin ? (
       <div className="grid grid-cols-3 gap-1.5 px-4 pb-3">
         <button
           type="button"
@@ -1557,6 +1570,7 @@ export default function Cockpit({
           오늘 요약
         </button>
       </div>
+      ) : null}
         </>
       )}
 
@@ -1716,6 +1730,10 @@ export default function Cockpit({
                   </p>
                 ) : null}
               </div>
+              {/* §11.D D7 — the cash-settlement money roll-up is a private-only
+                  tool; hidden on a JOIN tour (the visited-spots / run-span
+                  summary above stays — it is neutral operational info). */}
+              {!isJoin ? (
               <div className="rounded-2xl bg-[var(--tr-surface-2)] px-4 py-3">
                 <p className="text-sm font-bold text-[var(--tr-ink-2)]">정산 ({daySummary.money.count}건)</p>
                 <p className="mt-1 text-base text-[var(--tr-ink)]">기록 합계 {formatKrw(daySummary.money.logged_total)}</p>
@@ -1729,6 +1747,7 @@ export default function Cockpit({
                   </p>
                 ) : null}
               </div>
+              ) : null}
             </div>
           )}
         </Sheet>
@@ -1918,7 +1937,9 @@ export default function Cockpit({
         </Sheet>
       ) : null}
 
-      {sheet === 'expense' ? (
+      {/* §11.D D7 — private-only; the !isJoin guard keeps a stale `sheet`
+          state from surfacing the settlement sheet on a join tour. */}
+      {sheet === 'expense' && !isJoin ? (
         <Sheet onClose={() => setSheet('none')} title="지출·정산">
           {/* T1-2 — the driver's own advanced expenses awaiting cash. Tap
               수취완료 when the guest pays (guide-less private tour). */}
@@ -2014,7 +2035,8 @@ export default function Cockpit({
         </Sheet>
       ) : null}
 
-      {sheet === 'overtime' ? (
+      {/* §11.D D7 — private-only; !isJoin guards a stale `sheet` state. */}
+      {sheet === 'overtime' && !isJoin ? (
         <Sheet onClose={() => setSheet('none')} title="초과근무 정산">
           <div className="flex flex-col gap-3">
             <p className="text-sm text-[var(--tr-ink-2)]">

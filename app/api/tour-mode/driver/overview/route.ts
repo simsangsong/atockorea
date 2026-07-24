@@ -3,6 +3,7 @@ import { createServerClient } from '@/lib/supabase';
 import { resolveDaySchedule } from '@/lib/tour-room/dayPlan';
 import { roomLifecycle } from '@/lib/tour-room/time';
 import { verifyRoomToken } from '@/lib/tour-room/token';
+import { tourKindFromPriceType } from '@/lib/tour-room/tourKind';
 
 export const dynamic = 'force-dynamic';
 
@@ -33,7 +34,7 @@ export async function GET(req: NextRequest) {
     const { tourId, tourDate } = payload;
 
     const [{ data: tour }, { data: bookings }] = await Promise.all([
-      supabase.from('tours').select('id, title, city').eq('id', tourId).single(),
+      supabase.from('tours').select('id, title, city, price_type').eq('id', tourId).single(),
       supabase
         .from('bookings')
         .select('id, number_of_guests, tour_date, itinerary, pickup_points ( name, lat, lng, pickup_time ), tours ( schedule )')
@@ -93,6 +94,9 @@ export async function GET(req: NextRequest) {
 
     return NextResponse.json({
       tour: tour ?? { id: tourId, title: 'Tour', city: null },
+      // §11.D D7 — resolve the join-vs-private kind server-side (additive).
+      // 'vehicle' ⇒ private; a missing tour row falls back to the safe join shape.
+      tour_kind: tourKindFromPriceType((tour as { price_type?: string | null } | null)?.price_type ?? null),
       tour_date: tourDate,
       lifecycle: roomLifecycle(tourDate),
       driver_name: payload.displayName,
