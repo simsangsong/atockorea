@@ -142,6 +142,8 @@ describe('POST /morning-briefing', () => {
     expect(json.delivered).toBe(1);
     const translations = db.inserts.tour_room_messages[0].translations as Record<string, string>;
     expect(translations.ko).toContain('기본 9시간');
+    // D5 — Jeju bills ₩30,000/h; the brief reads rateForCity('제주').
+    expect(translations.ko).toContain('₩30,000');
     const meta = db.inserts.tour_room_messages[0].metadata as Record<string, unknown>;
     expect(meta.base_hours).toBe(9);
   });
@@ -162,5 +164,8 @@ describe('POST /morning-briefing', () => {
     await briefingPOST(fakeReq(driverSession()), params());
     const translations = db.inserts.tour_room_messages[0].translations as Record<string, string>;
     expect(translations.ko).toContain('기본 8시간');
+    // D5 — Busan bills ₩40,000/h (not the flat ₩30,000); rateForCity('Busan').
+    expect(translations.ko).toContain('₩40,000');
+    expect(translations.ko).not.toContain('₩30,000');
   });
 });

@@ -6,7 +6,7 @@ import { recordRoomEvent } from '@/lib/tour-room/events';
 import { broadcastToRoom } from '@/lib/tour-room/realtime';
 import { sendGuestRoomPush } from '@/lib/tour-room/guestPush';
 import { composeMorningBriefing, type BriefingKind } from '@/lib/tour-room/morningBriefing';
-import { baseHoursForCity, OVERTIME_RATE_KRW_PER_HOUR } from '@/lib/tour-room/overtime';
+import { baseHoursForCity, rateForCity } from '@/lib/tour-room/overtime';
 import { cityCoords, fetchDayWeather, renderWeatherLines } from '@/lib/tour-room/weather';
 
 export const dynamic = 'force-dynamic';
@@ -20,8 +20,9 @@ export const dynamic = 'force-dynamic';
  * the tour's price model: shared (person/group) → the JOIN briefing fanned
  * out to every booking of the day; private charter (vehicle) → the PRIVATE
  * briefing with the city's included hours (Jeju 9h / Busan 8h) and the
- * ₩30,000/h cash overtime rule — interpolated from the same constants the
- * settlement sheet uses, so the promise can never drift from the arithmetic.
+ * per-city cash overtime rate (Jeju ₩30,000/h / Busan ₩40,000/h) — read from
+ * the same rateForCity the settlement sheet uses, so the promise can never
+ * drift from the arithmetic.
  */
 
 export async function POST(
@@ -71,7 +72,7 @@ export async function POST(
     const bundle = composeMorningBriefing({
       kind,
       baseHours: baseHoursForCity(city),
-      rateKrw: OVERTIME_RATE_KRW_PER_HOUR,
+      rateKrw: rateForCity(city),
     });
 
     // B6 — today's weather + clothing hint (Open-Meteo, keyless, 4s budget).

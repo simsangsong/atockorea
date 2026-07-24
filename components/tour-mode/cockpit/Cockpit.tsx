@@ -48,7 +48,7 @@ import {
   baseHoursForCity,
   computeOvertime,
   overtimeAmount,
-  OVERTIME_RATE_KRW_PER_HOUR,
+  rateForCity,
 } from '@/lib/tour-room/overtime';
 import {
   AlarmClock,
@@ -1010,8 +1010,9 @@ export default function Cockpit({
 
   // ── T1-1 overtime settlement ───────────────────────────────────────────
   const baseHours = useMemo(() => baseHoursForCity(city), [city]);
-  const otComputed = useMemo(() => computeOvertime(baseHours, otStart, otEnd), [baseHours, otStart, otEnd]);
-  const otAmount = overtimeAmount(otHours);
+  const otRate = useMemo(() => rateForCity(city), [city]);
+  const otComputed = useMemo(() => computeOvertime(baseHours, otStart, otEnd, { city }), [baseHours, otStart, otEnd, city]);
+  const otAmount = overtimeAmount(otHours, otRate);
 
   // Open the overtime sheet: seed start from the pickup time, end with "now",
   // and pre-fill the billable hours from the computed value.
@@ -1033,7 +1034,7 @@ export default function Cockpit({
         headers: { 'Content-Type': 'application/json', 'x-tour-room-auth': session },
         body: JSON.stringify({
           item: `초과근무 ${otHours}시간 (기준 ${baseHours}시간)`,
-          amount_krw: overtimeAmount(otHours),
+          amount_krw: overtimeAmount(otHours, otRate),
           kind: 'overtime',
         }),
       });
@@ -1049,7 +1050,7 @@ export default function Cockpit({
     } finally {
       setExpBusy(false);
     }
-  }, [bookingId, session, otHours, baseHours, say, loadExtras]);
+  }, [bookingId, session, otHours, baseHours, otRate, say, loadExtras]);
 
   // ── phase-aware destination (준비=픽업, 진행=다음 스톱) ───────────────────
   const nextStop = useMemo(() => {
@@ -2040,7 +2041,7 @@ export default function Cockpit({
         <Sheet onClose={() => setSheet('none')} title="초과근무 정산">
           <div className="flex flex-col gap-3">
             <p className="text-sm text-[var(--tr-ink-2)]">
-              기준 {baseHours}시간 · {formatKrw(OVERTIME_RATE_KRW_PER_HOUR)}/시간
+              기준 {baseHours}시간 · {formatKrw(otRate)}/시간
             </p>
             <div className="grid grid-cols-2 gap-3">
               <label className="flex flex-col gap-1">
