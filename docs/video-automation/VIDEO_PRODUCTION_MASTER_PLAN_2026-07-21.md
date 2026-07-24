@@ -56,7 +56,7 @@
 - **W2 (사용자 실영상 수신 후):** ingest에 clip 소스 추가 — probe→씬 감지→프레임 추출→AI 직접 검수→EDL(컷 선정 JSON)→트리밍·색보정→W1 스테이지 4~7 그대로 재사용. 폴더 규약: `assets/video-sources/<poi_key>/*.mp4`.
 - **W3 (앱 통합):** ✅ 완료(2026-07-22, = 조인투어 트랙 J4 서빙 게이트 해소) — 상세는 §G 로그.
 - **W4 (푸시+홍보):** 웹푸시(기존 `guestPush.ts`/`push_subscriptions` 재사용) + `MetaPublisher` 어댑터(dry-run→실업로드, 토큰=사람 게이트).
-- **W5 (스케일):** 전 POI 배치 크론 + `video_projects` 등 DB 테이블 + 어드민 승인 UI.
+- **W5 (스케일):** 전 POI 배치 크론 + `video_projects` 등 DB 테이블 + 어드민 승인 UI. ✅ 배치 러너(`npm run video:batch`)·근거기반 대본은 §G 로그 참조. 남은 건 크론 등록.
 
 ## §E 사람 게이트 (코드로 해결 불가)
 
@@ -83,3 +83,10 @@ npm run video:produce -- --poi=jagalchi_market --tts=openai
 - **2026-07-21 W1 완료** (PR #435): 7-스테이지 `video:produce` — 실 Ken Burns 렌더 + TTS 캐시 + 청킹 자막 + QC 실측, 자갈치 4언어 검증.
 - **2026-07-22 W1 후속** (별도 세션, 브랜치 `claude/video-narration-overlap-fix`): 씬 14s 캡이 내레이션을 다음 씬으로 흘리던 문제 — 캡 제거(타임라인은 오디오를 절대 자르지 않는 불변식) + `trimForSpeech()` 대본 단계 스피치 버짓(라틴 ~160자/CJK ~70자, 문장·절 경계 컷) + `narration_fit` QC 체크.
 - **2026-07-22 W3 완료** (조인투어 J4와 동일 슬라이스): ① `poi_videos` 테이블 라이브(poi_key×언어×버전 UNIQUE, status pending_review→approved/rejected, RLS 서비스롤 전용) ② `npm run video:upload` — QC failed 업로드 거부·warning은 `--allow-warnings` 명시 필요(무음 내레이션·미검수 라이선스는 사람이 결정, VP-D6/D10), 퍼블릭 `tour-videos` 버킷에 MP4+포스터, 행은 **pending_review로만** 등록 ③ 서빙: `fetchArrivalVideoCard()`(승인분만·언어별 최신 버전·fail-open) → arrival-bundle·manual-arrival 메타데이터 `video_card`(룸 로케일 키, zh-Hant→zh) ④ `ArrivalVideoCard` 포스터-퍼스트 탭 재생(iOS playsInline, ko 뷰어는 en 폴백 — 자막 번인이라 시청 가능) — ArrivalBundleCard+ChatFeed spot_arrival 배선 ⑤ `/admin/poi-videos` 검수큐(인라인 재생·QC 배지·승인/거절·승인 시 구버전 자동 폐기 = 언어당 승인 1건 불변식). 테스트: 신규 33 + 투어룸/api/컴포넌트 901 green(실패 2건은 main 사전존재 tours.test.ts), tsc 0. **오프라인 볼트(J3) 동영상 편입은 §D 결정 1(캐시 범위) 대기로 의도적 보류.**
+- **2026-07-24 §14.3 POI 소개비디오 프로덕션 경로 완결** (통합플랜 §14.3 큐 #4 잔여):
+  ① **근거기반 대본** — `poiFacts.ts`(사실시트 + 하드클레임 필터: 시각·요금·전화·치수·연도·%·입장료·최상급 + **단위 없는 2자리 이상 숫자** 전부, 숫자는 사실시트 숫자토큰 **정확일치**로만 통과 — 부분문자열 허용 시 사실의 "1990"이 지어낸 "90 m"를 승인해버림) + `poiScript.ts`(프롬프트 → 비평가 → 조립, `generatedContent.ts` 패턴). 문장 단위로 잘라내고 잘린 문장은 `grounding.json`+QC `narration_grounding`에 남긴다. 씬 1(훅)·6(CTA)은 POI에 대한 주장이 아니라 고정 앱 카피이므로 필터 면제. **실측**: 성산일출봉 gemini 초안의 "600 meters wide and 90 meters deep … 99 jagged rocks"가 자동 제거됨(해당 씬은 무음 비주얼로 남음 — 채워넣지 않는다).
+  ② **소스 확장** — `poiDbSource.ts`/`poiSource.server.ts`가 정적 투어 JSON·`data/poi_kb`에 더해 `match_pois`(content_locales)·`generated_spot_content`(ready 행)까지 읽는다. 파일 소스가 같은 언어에서 우선(사람 저작 + imageCredits 라이선스 근거).
+  ③ **단일 프로듀서** — `scripts/produce-poi-video.ts` 본문을 `lib/video-automation/produce/run.server.ts`로 이관. 배치·단건 CLI가 **같은 렌더 경로**를 호출한다(두 번째 렌더 경로는 검수큐가 승인한 것과 드리프트한다). 업로드도 `upload.server.ts`로 동일 이관.
+  ④ **배치 러너** `npm run video:batch` (`--dry` 기본, `--apply`로만 실행) — `match_pois`에서 후보 수집(로컬 이미지 게이트는 `planSceneImages` 재사용), 일정 등장횟수 정렬, **완료 판정 = 완료된 run 디렉터리 또는 해당 버전의 `poi_videos` 행**(별도 저널 없음 → 중단 후 재실행이 곧 재개), `--budget` USD 브레이크·POI당 250ms 페이싱·요약표·재개 명령 출력. `--upload` 시 기존 게이트 그대로 **pending_review**로만 등록.
+  ⑤ 자막은 기존 `subtitles.ts`/`subtitleCues.ts` 그대로(포크 없음). 테스트 신규 27 green, tsc 0.
+  🔴 **정직한 경계**: 렌더는 로컬 ffmpeg 8.1.2로 **실제 동작 확인**(성산일출봉 en 실렌더 2회). 다만 (a) 소스 실영상은 여전히 미제공이라 씬 비주얼은 스틸 Ken Burns뿐(VP-D11 `clip` 미구현), (b) `--tts=openai` 실합성은 이번 세션에서 **실행하지 않음**(비용 발생 — 기본값 silent 유지), (c) ffmpeg는 CI/Vercel에 없으므로 배치는 로컬/워커 전용이며 크론 등록은 실행 환경 결정(사람 게이트) 이후.
