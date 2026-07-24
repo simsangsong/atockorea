@@ -43,7 +43,12 @@ export function MyPageSection({
             ) : null}
             <div className="min-w-0">
               {title ? (
-                <h2 className="text-[16px] font-semibold tracking-tight text-slate-900 md:text-[17px]">
+                // A1.7 — long unbreakable tokens (German compounds like
+                // "Benachrichtigungseinstellungen", 30 chars) must wrap rather
+                // than overflow the card on a 375px screen. `break-words` only
+                // affects tokens wider than the container, so every other
+                // locale is untouched. The parent already has `min-w-0`.
+                <h2 className="text-[16px] font-semibold tracking-tight text-slate-900 [overflow-wrap:anywhere] md:text-[17px]">
                   {title}
                 </h2>
               ) : null}

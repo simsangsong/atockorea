@@ -85,8 +85,13 @@ export default function Footer({ premiumHandoff }: FooterProps) {
         </div>
 
         {/* About, Support, Legal */}
+        {/* A1.7 — three fixed columns at ~115px on a 375px phone. German legal
+            labels are single unbreakable tokens ("Rückerstattungsrichtlinie",
+            25 chars; "Geschäftsbedingungen", 20) that overflow their cell.
+            overflow-wrap is inherited, so setting it here lets any over-long
+            link wrap to a second line; every shorter locale is untouched. */}
         <div
-          className="mb-2 grid grid-cols-3 gap-x-2.5 gap-y-1 border-t border-slate-800/90 pt-2.5 sm:mb-2.5 sm:gap-x-4 sm:pt-3 md:gap-x-6"
+          className="mb-2 grid grid-cols-3 gap-x-2.5 gap-y-1 border-t border-slate-800/90 pt-2.5 [overflow-wrap:anywhere] sm:mb-2.5 sm:gap-x-4 sm:pt-3 md:gap-x-6"
           data-footer-section="nav"
         >
           <div className="min-w-0">
