@@ -16,8 +16,9 @@ export const dynamic = 'force-dynamic';
  * 휴무자는 **빠지지 않는다** — 맨 뒤로 밀리고 사유가 붙는다(trust-based NOTICE).
  * 배정 자체를 막는 것은 이 시스템의 일이 아니다.
  *
- * `assigned`는 화면이 "이 날짜에 이미 고른 사람"을 알려주는 파라미터다. 가이드↔룸
- * 배정 원장은 정산 슬라이스에서 생기고, 그전까지는 이게 유일한 진짜 신호다.
+ * `assigned`는 화면이 "이 날짜에 방금 고른, 아직 저장 안 된 사람"을 알려주는
+ * 파라미터다. 저장된 배정은 이제 ops_guide_assignments에서 직접 읽고 둘을
+ * 합산한다(정산 슬라이스가 그 원장을 만들었다).
  */
 
 export async function GET(req: NextRequest) {

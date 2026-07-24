@@ -31,6 +31,21 @@ export interface RateRow {
   created_at?: string;
 }
 
+/** ops_guide_assignments 행 + 목록 조인으로 붙는 가이드 이름. PII는 없다. */
+export interface AssignmentListRow {
+  id: string;
+  guide_id: string;
+  booking_id: string | null;
+  room_id: string | null;
+  tour_date: string;
+  tour_type: string;
+  role: string;
+  amount_krw: number | null;
+  status: string;
+  note: string | null;
+  guide_name?: string | null;
+}
+
 export interface ResolvedRateRow {
   tourType: string;
   amountKrw: number;

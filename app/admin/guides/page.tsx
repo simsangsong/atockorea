@@ -1,19 +1,24 @@
 'use client';
 
 /**
- * 가이드 관리 (§6.9 / §11.F) — 프로필 · 단가 · 휴무 달력.
+ * 가이드 관리 (§6.9 / §11.F) — 프로필 · 단가 · 휴무 달력 · 배정.
  *
- * 왼쪽 목록에서 사람을 고르고 오른쪽에서 3개 탭을 편집하는 구조. 모바일에서는
+ * 왼쪽 목록에서 사람을 고르고 오른쪽에서 4개 탭을 편집하는 구조. 모바일에서는
  * 목록 → 상세로 전환된다(관제 현장에서 폰으로 여는 화면이라 44px 터치 타깃을
  * 지킨다).
  *
- * 이 화면이 다루는 것은 데이터까지다 — 세무 서식 생성과 월 정산은 다음 슬라이스.
+ * 배정 탭이 월 정산의 입력이다: tour_rooms에는 guide_id가 없어서 "이 가이드가
+ * 이 달에 무엇을 했는가"가 어디에도 없었고, 그 원장을 여기서 만든다. 실제 정산과
+ * 세무 서식은 /admin/guide-settlements.
  */
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import Link from 'next/link';
 import {
   ArrowLeft,
+  Calculator,
   CalendarDays,
+  ClipboardList,
   Coins,
   Copy,
   Link2,
@@ -29,14 +34,16 @@ import GuideRestCalendar, { type RestDay } from '@/components/ops/GuideRestCalen
 import { kstToday } from '@/lib/ops/guides/availability';
 import GuideProfileForm, { emptyForm, formFromRow, type GuideFormValue } from './_components/GuideProfileForm';
 import GuideRatesPanel from './_components/GuideRatesPanel';
-import type { GuideListRow, RateRow, ResolvedRateRow } from './_types';
+import GuideAssignmentsPanel from './_components/GuideAssignmentsPanel';
+import type { AssignmentListRow, GuideListRow, RateRow, ResolvedRateRow } from './_types';
 
-type Tab = 'profile' | 'rates' | 'calendar';
+type Tab = 'profile' | 'rates' | 'calendar' | 'assignments';
 
 const TABS: Array<{ key: Tab; label: string; icon: typeof User }> = [
   { key: 'profile', label: '프로필', icon: User },
   { key: 'rates', label: '단가', icon: Coins },
   { key: 'calendar', label: '휴무', icon: CalendarDays },
+  { key: 'assignments', label: '배정', icon: ClipboardList },
 ];
 
 async function authedFetch(url: string, init: RequestInit = {}) {
@@ -77,6 +84,11 @@ export default function AdminGuidesPage() {
   const [calYear, setCalYear] = useState(ty);
   const [calMonth, setCalMonth] = useState(tm);
   const [busyDate, setBusyDate] = useState<string | null>(null);
+
+  // 배정 탭 — 월 정산의 입력 원장.
+  const [assignments, setAssignments] = useState<AssignmentListRow[]>([]);
+  const [assignMonth, setAssignMonth] = useState(today.slice(0, 7));
+  const [busyAssignmentId, setBusyAssignmentId] = useState<string | null>(null);
 
   // PII 원문 열람 (목적 입력 → 열람, 호출마다 감사로그 1행).
   const [revealField, setRevealField] = useState<'rrn' | 'bank_account' | null>(null);
@@ -131,6 +143,76 @@ export default function AdminGuidesPage() {
     }
   }, []);
 
+  const loadAssignments = useCallback(async (guideId: string, month: string) => {
+    try {
+      const res = await authedFetch(
+        `/api/admin/guides/assignments?guideId=${encodeURIComponent(guideId)}&period=${encodeURIComponent(month)}`,
+      );
+      const json = await res.json();
+      if (!res.ok) throw new Error(json?.error || '배정 로드 실패');
+      setAssignments(json.data as AssignmentListRow[]);
+    } catch (e) {
+      setError(e instanceof Error ? e.message : String(e));
+    }
+  }, []);
+
+  const addAssignment = async (
+    input: { tourDate: string; tourType: string; role: string; amountKrw: number | null; note: string },
+  ) => {
+    if (!selectedId) return;
+    setBusy(true);
+    setError(null);
+    try {
+      const res = await authedFetch('/api/admin/guides/assignments', {
+        method: 'POST',
+        body: JSON.stringify({ guideId: selectedId, ...input }),
+      });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json?.error || '배정 추가 실패');
+      setNotice('배정을 추가했습니다. 수행 후 [일했음]을 눌러야 정산에 집계됩니다.');
+      await loadAssignments(selectedId, assignMonth);
+    } catch (e) {
+      setError(e instanceof Error ? e.message : String(e));
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const patchAssignment = async (id: string, patch: Record<string, unknown>) => {
+    if (!selectedId) return;
+    setBusyAssignmentId(id);
+    setError(null);
+    try {
+      const res = await authedFetch(`/api/admin/guides/assignments/${id}`, {
+        method: 'PATCH',
+        body: JSON.stringify(patch),
+      });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json?.error || '배정 수정 실패');
+      await loadAssignments(selectedId, assignMonth);
+    } catch (e) {
+      setError(e instanceof Error ? e.message : String(e));
+    } finally {
+      setBusyAssignmentId(null);
+    }
+  };
+
+  const deleteAssignment = async (id: string) => {
+    if (!selectedId) return;
+    setBusyAssignmentId(id);
+    setError(null);
+    try {
+      const res = await authedFetch(`/api/admin/guides/assignments/${id}`, { method: 'DELETE' });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json?.error || '배정 삭제 실패');
+      await loadAssignments(selectedId, assignMonth);
+    } catch (e) {
+      setError(e instanceof Error ? e.message : String(e));
+    } finally {
+      setBusyAssignmentId(null);
+    }
+  };
+
   const selectGuide = (row: GuideListRow) => {
     setCreating(false);
     closeReveal();
@@ -140,6 +222,7 @@ export default function AdminGuidesPage() {
     setRates([]);
     setResolvedRates([]);
     setRestDays([]);
+    setAssignments([]);
     setCalYear(ty);
     setCalMonth(tm);
     void loadRates(row.id);
@@ -466,6 +549,7 @@ export default function AdminGuidesPage() {
                         setTab(t.key);
                         if (t.key === 'calendar' && selectedId) void loadRestDays(selectedId, calYear, calMonth);
                         if (t.key === 'rates' && selectedId) void loadRates(selectedId);
+                        if (t.key === 'assignments' && selectedId) void loadAssignments(selectedId, assignMonth);
                       }}
                       className={`flex h-11 items-center gap-1.5 rounded-xl px-4 text-[13px] font-semibold transition ${
                         tab === t.key ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
@@ -613,6 +697,31 @@ export default function AdminGuidesPage() {
                     }}
                     onToggle={(date, isRest) => void toggleRestDay(date, isRest)}
                   />
+                </>
+              )}
+
+              {!creating && tab === 'assignments' && (
+                <>
+                  <GuideAssignmentsPanel
+                    month={assignMonth}
+                    rows={assignments}
+                    busy={busy}
+                    busyId={busyAssignmentId}
+                    onMonthChange={(m) => {
+                      setAssignMonth(m);
+                      if (selectedId && /^\d{4}-\d{2}$/.test(m)) void loadAssignments(selectedId, m);
+                    }}
+                    onAdd={(input) => void addAssignment(input)}
+                    onPatch={(id, patch) => void patchAssignment(id, patch)}
+                    onDelete={(id) => void deleteAssignment(id)}
+                  />
+                  <Link
+                    href="/admin/guide-settlements"
+                    className="mt-4 flex h-11 items-center justify-center gap-1.5 rounded-xl border border-slate-200 text-[13px] font-semibold text-slate-700 hover:bg-slate-50"
+                  >
+                    <Calculator className="size-4" />
+                    월 정산 · 세무 서식으로
+                  </Link>
                 </>
               )}
             </div>
