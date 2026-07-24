@@ -23,6 +23,7 @@ import {
   signGuideRoomToken,
 } from '@/lib/tour-room/token';
 import { normalizeRoomLocale } from '@/lib/tour-room/snapshot';
+import { isPrivateTour } from '@/lib/tour-room/tourKind';
 import type { RoomDbClient } from '@/lib/tour-room/access';
 
 const QR_BUCKET = process.env.SUPABASE_TOUR_ROOM_PHOTOS_BUCKET || 'tour-room-photos';
@@ -136,14 +137,22 @@ export async function dispatchRoomInvites(
   const base = appUrl();
   let revokedCount = 0;
 
-  // Tour title for the mails.
+  // Tour title for the mails, plus the price_type kind discriminator (D2: the
+  // /plan pre-selection CTA is a PRIVATE-tour capability only).
   let tourTitle = 'Your Korea tour';
+  let tourPriceType: string | null = null;
   try {
-    const { data: tour } = await supabase.from('tours').select('title').eq('id', booking.tour_id).single();
+    const { data: tour } = await supabase
+      .from('tours')
+      .select('title, price_type')
+      .eq('id', booking.tour_id)
+      .single();
     if (tour?.title) tourTitle = tour.title as string;
+    tourPriceType = (tour as { price_type?: string | null } | null)?.price_type ?? null;
   } catch {
     /* title is cosmetic */
   }
+  const tourIsPrivate = isPrivateTour(tourPriceType);
 
   // Pickup line (cosmetic).
   let pickupName: string | null = null;
@@ -186,7 +195,12 @@ export async function dispatchRoomInvites(
     });
     const locale = normalizeRoomLocale(booking.preferred_language) as InviteLocale;
     const roomUrl = `${base}/tour-mode/room/${booking.id}?rt=${encodeURIComponent(token)}`;
-    const planUrl = `${base}/tour-mode/plan/${booking.id}?rt=${encodeURIComponent(token)}`;
+    // D2: only private (vehicle-charter) tours get the plan pre-selection CTA;
+    // join tours run a fixed itinerary, so we pass no planUrl and the template
+    // omits the CTA block entirely.
+    const planUrl = tourIsPrivate
+      ? `${base}/tour-mode/plan/${booking.id}?rt=${encodeURIComponent(token)}`
+      : undefined;
     const mail = buildCustomerRoomInviteHtml({
       locale,
       customerName: booking.contact_name || 'Traveller',

@@ -32,6 +32,7 @@ import HomeTab from '@/components/tour-mode/HomeTab';
 import PlanNudgeModal from '@/components/tour-mode/PlanNudgeModal';
 import AppManual from '@/components/tour-mode/AppManual';
 import type { ManualKind } from '@/lib/tour-room/appManual';
+import { tourKindFromPriceType } from '@/lib/tour-room/tourKind';
 import LobbyCard, { firstPickup } from '@/components/tour-mode/LobbyCard';
 import PickupBoard from '@/components/tour-mode/PickupBoard';
 import RoomMapTab from '@/components/tour-mode/map/RoomMapTab';
@@ -386,10 +387,11 @@ function TourRoomLive({
 
   const viewerRole = data.participant.role;
   // A5 — manual shape from the tour's price model (charter = private).
-  const manualKind: ManualKind =
-    (snapshot.booking?.tours as { price_type?: string } | null | undefined)?.price_type === 'vehicle'
-      ? 'private'
-      : 'join';
+  // D1: routed through the canonical helper (vehicle ⇒ private, else join) —
+  // behaviour-identical to the prior inline `price_type === 'vehicle'` test.
+  const manualKind: ManualKind = tourKindFromPriceType(
+    (snapshot.booking?.tours as { price_type?: string } | null | undefined)?.price_type,
+  );
   const readOnly = data.lifecycle === 'ended';
   const schedule = Array.isArray(snapshot.schedule) ? snapshot.schedule : [];
 
@@ -779,6 +781,7 @@ function TourRoomLive({
                 tourSlug={(snapshot.booking?.tours as { slug?: string } | null | undefined)?.slug ?? null}
                 canSignal={!readOnly && data.lifecycle === 'live'}
                 showConcierge={!readOnly}
+                isPrivate={manualKind === 'private'}
               />
             )
           : undefined

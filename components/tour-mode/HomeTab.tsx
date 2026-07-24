@@ -276,6 +276,7 @@ export default function HomeTab({
   tourSlug,
   canSignal,
   showConcierge,
+  isPrivate,
 }: {
   api: RoomShellHomeApi;
   locale: RoomLocale;
@@ -291,6 +292,11 @@ export default function HomeTab({
   tourSlug?: string | null;
   canSignal: boolean;
   showConcierge: boolean;
+  /**
+   * D2: the "Plan my day" editor is a PRIVATE-tour capability only. Join /
+   * shared tours run a fixed itinerary, so this tile is hidden for them.
+   */
+  isPrivate: boolean;
 }) {
   const copy = COPY[locale];
   const [sheet, setSheet] = useState<HomeSheet>(null);
@@ -332,7 +338,9 @@ export default function HomeTab({
     { key: 'map', label: copy.tiles.map, Icon: IconTileMap, onPress: () => api.selectTab('map') },
     { key: 'pickup', label: copy.tiles.pickup, Icon: IconTilePickup, onPress: () => setSheet('pickup') },
   );
-  if (lifecycle === 'lobby') {
+  // D2: the plan editor is private-tour only — join tours run a fixed
+  // itinerary, so this entrance stays hidden for them.
+  if (lifecycle === 'lobby' && isPrivate) {
     tiles.push({
       key: 'plan',
       label: copy.tiles.plan,

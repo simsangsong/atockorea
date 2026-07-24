@@ -14,6 +14,7 @@ import { generateSpotContent } from '@/lib/tour-room/generatedContent';
 import { isRegionSlug } from '@/lib/itinerary-builder/regions';
 import { broadcastToRoom } from '@/lib/tour-room/realtime';
 import { normalizeRoomLocale } from '@/lib/tour-room/snapshot';
+import { isPrivateTour } from '@/lib/tour-room/tourKind';
 import { hasPoiKbEntry } from '@/lib/tour-room/spotContent';
 import { newlySkippedStops, renderSkipCapsule } from '@/lib/tour-room/skipNotice';
 import { sendGuestRoomPush } from '@/lib/tour-room/guestPush';
@@ -314,7 +315,9 @@ export async function GET(
         // planner is editable. Per-person shared tours (bus / small-group / coach)
         // run a FIXED itinerary → the planner is view-only for them (사용자 확정
         // 2026-07-20). Discriminator: tours.price_type ('vehicle' = private).
-        is_private: tourJoin?.price_type === 'vehicle',
+        // D1: routed through the canonical helper — behaviour-identical to the
+        // prior inline `price_type === 'vehicle'` test.
+        is_private: isPrivateTour(tourJoin?.price_type as string | null | undefined),
         guide_curated: Boolean(
           ((bookingRow as { itinerary?: Record<string, unknown> } | null)?.itinerary as
             | Record<string, unknown>
