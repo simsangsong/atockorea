@@ -21,6 +21,7 @@
 
 import type { SupabaseClient } from '@supabase/supabase-js'
 import { kstToday, kstStartOfDayMs, kstEndOfDayMs } from '@/lib/tour-room/time'
+import { dropSimBookings, simBookingIds } from '../sim/simScope'
 
 export const DEFAULT_REPORT_TENANT = 'atockorea'
 
@@ -171,6 +172,8 @@ function pickupOf(row: BookingRow): { name: string | null; time: string | null }
 
 interface BookingRow {
   id: string
+  /** A0.1 — NULL이면 실 예약. 값이 있으면 집계에서 제외된다. */
+  sim_tag?: string | null
   tour_id: string | null
   tour_date: string | null
   created_at?: string | null
@@ -210,8 +213,13 @@ interface InviteRow {
   created_at: string | null
 }
 
+// A0.1 — 시뮬 예약은 룸·명단에서는 보이되 집계에서는 세지 않는다.
+// 이 보고서가 그 "집계"의 첫 번째 표면이다.
+const BOOKING_COLS_SIM = ', sim_tag'
+
 const BOOKING_COLS =
-  'id, tour_id, tour_date, created_at, number_of_guests, contact_name, contact_email, status, source, external_booking_id, final_price, total_price, currency, ota_raw_meta, pickup_points ( name, pickup_time )'
+  'id, tour_id, tour_date, created_at, number_of_guests, contact_name, contact_email, status, source, external_booking_id, final_price, total_price, currency, ota_raw_meta, pickup_points ( name, pickup_time )' +
+  BOOKING_COLS_SIM
 
 /** 취소 예약 제외 (명단·집계 공통 규칙 — plan A-7d soft cancel). */
 function isActiveBooking(status: string | null): boolean {
@@ -250,7 +258,7 @@ async function buildTodayTours(
   const roomIds = rooms.map((r) => r.id)
   const tourIds = rooms.map((r) => r.tour_id).filter((v): v is string => Boolean(v))
 
-  const [bookings, titles, invites, seats, events, extras] = await Promise.all([
+  const [bookingsRaw, titles, invites, seats, events, extras] = await Promise.all([
     safeSelect<BookingRow>(supabase.from('bookings').select(BOOKING_COLS).in('id', bookingIds)),
     loadTourTitles(supabase, tourIds),
     safeSelect<InviteRow>(
@@ -271,11 +279,16 @@ async function buildTodayTours(
     ),
   ])
 
+  // A0.1 — 시뮬 예약을 떨어뜨리고, **그 예약의 룸도 함께** 뺀다. 예약만 빼면
+  // "예약 없는 룸"이라는 존재하지 않는 상태가 집계에 생긴다.
+  const bookings = dropSimBookings(bookingsRaw)
+  const simIds = simBookingIds(bookingsRaw)
   const bookingById = new Map(bookings.map((b) => [b.id, b]))
 
   // group rooms by tour_id (null → its own bucket keyed by booking to avoid merge)
   const groups = new Map<string, RoomRow[]>()
   for (const room of rooms) {
+    if (simIds.has(room.booking_id)) continue
     const key = room.tour_id ?? `__notour__${room.booking_id}`
     const list = groups.get(key) ?? []
     list.push(room)
@@ -386,6 +399,9 @@ async function buildNewBookings(
       .select(BOOKING_COLS)
       .gte('created_at', startIso)
       .lte('created_at', endIso)
+      // A0.1 — 예약에서 직접 출발하는 집계라 쿼리 레벨 배제로 충분하다
+      // (룸만 남는 문제가 없다).
+      .is('sim_tag', null)
       .order('created_at', { ascending: false }),
   )
   const active = rows.filter((b) => isActiveBooking(b.status))
@@ -470,7 +486,7 @@ async function buildTomorrow(supabase: SupabaseClient, tomorrow: string): Promis
   const roomIds = rooms.map((r) => r.id)
   const tourIds = rooms.map((r) => r.tour_id).filter((v): v is string => Boolean(v))
 
-  const [bookings, titles, invites, vehicles, seats] = await Promise.all([
+  const [bookingsRaw, titles, invites, vehicles, seats] = await Promise.all([
     safeSelect<BookingRow>(supabase.from('bookings').select(BOOKING_COLS).in('id', bookingIds)),
     loadTourTitles(supabase, tourIds),
     safeSelect<InviteRow>(
@@ -500,6 +516,9 @@ async function buildTomorrow(supabase: SupabaseClient, tomorrow: string): Promis
     }
   }
 
+  // A0.1 — 오늘 집계와 같은 규칙: 시뮬 예약과 그 룸을 함께 뺀다.
+  const bookings = dropSimBookings(bookingsRaw)
+  const simIds = simBookingIds(bookingsRaw)
   const bookingById = new Map(bookings.map((b) => [b.id, b]))
   const roomByBooking = new Map(rooms.map((r) => [r.booking_id, r.id]))
   const seatedBookingIds = new Set(seats.map((s) => s.booking_id))
@@ -508,6 +527,7 @@ async function buildTomorrow(supabase: SupabaseClient, tomorrow: string): Promis
   // group by tour
   const groups = new Map<string, RoomRow[]>()
   for (const room of rooms) {
+    if (simIds.has(room.booking_id)) continue
     const key = room.tour_id ?? `__notour__${room.booking_id}`
     const list = groups.get(key) ?? []
     list.push(room)

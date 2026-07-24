@@ -1,6 +1,17 @@
 /**
  * Simulation seeder for the full-feature manual QA pass (ops-center audit).
  *
+ * Audit plan A0.1 — every booking this writes carries `sim_tag`, so the rows
+ * stay visible to rooms, seating, check-in and the manifest (that is the point
+ * of a simulation) while staying out of the two places where they do damage:
+ * aggregates (§11.E daily report, §K B1 stats, §K B2 capacity) and money
+ * (Stripe capture cron, ops_entity_ledger). `lib/ops/sim/simScope.ts` is the
+ * single place that decides what counts as simulated.
+ *
+ * The seeder refuses to run without ALLOW_SIM_SEED=1. It writes to the live
+ * database, and "I did not mean to run that" should cost a typo, not a
+ * cleanup.
+ *
  * Seeds ONE clearly-labelled tour-day scenario in the live DB (same approach
  * as e2e/global-setup — everything labelled sim-tour-mode@atockorea.test and
  * removable with --cleanup):
@@ -12,7 +23,7 @@
  * Run:   npx tsx scripts/sim-tour-day.ts            → writes scripts/.sim-fixtures.json
  *        npx tsx scripts/sim-tour-day.ts --cleanup  → removes everything it created
  */
-import { writeFileSync, readFileSync, existsSync } from 'node:fs';
+import { writeFileSync, readFileSync, existsSync, unlinkSync } from 'node:fs';
 import path from 'node:path';
 import { loadEnvConfig } from '@next/env';
 import { createClient } from '@supabase/supabase-js';
@@ -21,7 +32,30 @@ import { kstToday } from '../lib/tour-room/time';
 
 const SIM_EMAIL = 'sim-tour-mode@atockorea.test';
 const SIM_ADMIN_EMAIL = 'sim-tour-ops-admin@atockorea.test';
+const SIM_TAG = 'sim';
 const OUT = path.join(__dirname, '.sim-fixtures.json');
+
+/**
+ * Children of `bookings` whose FK is ON DELETE SET NULL — deleting the booking
+ * does NOT remove them, it orphans them. They have to go first, while
+ * booking_id still says which rows were simulated.
+ *
+ * ops_entity_ledger is the one that matters: it is the corporate ledger behind
+ * the three-way reconciliation in §6, and an orphaned simulated revenue row
+ * there cannot be identified afterwards, let alone removed safely.
+ */
+const SET_NULL_CHILDREN: Array<{ table: string; column: string }> = [
+  { table: 'ops_entity_ledger', column: 'booking_id' },
+  { table: 'ops_email_parse_logs', column: 'booking_id' },
+  { table: 'ops_guide_assignments', column: 'booking_id' },
+  { table: 'emails', column: 'booking_id' },
+  { table: 'reviews', column: 'booking_id' },
+  { table: 'promo_code_usage', column: 'booking_id' },
+  { table: 'received_emails', column: 'related_booking_id' },
+  { table: 'coupon_grants', column: 'locked_booking_id' },
+  // NO ACTION — this one blocks the delete outright rather than orphaning.
+  { table: 'coupon_redemptions', column: 'booking_id' },
+];
 
 async function main() {
   loadEnvConfig(process.cwd());
@@ -33,25 +67,69 @@ async function main() {
 
   if (process.argv.includes('--cleanup')) {
     const fixtures = existsSync(OUT) ? JSON.parse(readFileSync(OUT, 'utf8')) : null;
-    const { data: bookings } = await service.from('bookings').select('id').eq('contact_email', SIM_EMAIL);
-    for (const b of bookings ?? []) {
-      const { data: rooms } = await service.from('tour_rooms').select('id').eq('booking_id', b.id);
-      for (const r of rooms ?? []) {
-        for (const t of ['tour_room_messages', 'tour_room_participants', 'tour_room_locations']) {
-          await service.from(t).delete().eq('room_id', r.id);
+    // Tag first, legacy address second: rows seeded before sim_tag existed are
+    // still identifiable by the address the seeder has always used.
+    const { data: tagged } = await service.from('bookings').select('id').eq('sim_tag', SIM_TAG);
+    const { data: byEmail } = await service
+      .from('bookings')
+      .select('id')
+      .in('contact_email', [SIM_EMAIL, SIM_ADMIN_EMAIL]);
+    const ids = [...new Set([...(tagged ?? []), ...(byEmail ?? [])].map((b) => b.id as string))];
+
+    // 1. SET NULL / NO ACTION children, while booking_id still identifies them.
+    if (ids.length > 0) {
+      for (const { table, column } of SET_NULL_CHILDREN) {
+        const { error } = await service.from(table).delete().in(column, ids);
+        // A table missing from this environment is not a failure — the parse
+        // stack and the finance tables ship in separate deployments.
+        if (error && !/does not exist|schema cache/i.test(error.message)) {
+          console.warn('cleanup: ' + table + '.' + column + ' -> ' + error.message);
         }
-        await service.from('tour_rooms').delete().eq('id', r.id);
       }
-      await service.from('tour_room_invites').delete().eq('booking_id', b.id);
-      await service.from('bookings').delete().eq('id', b.id);
     }
+
+    // 2. The booking itself. Everything else hangs off ON DELETE CASCADE
+    //    (tour_rooms -> messages/participants/locations/events/extras/pins,
+    //    ops_seat_assignments, ops_room_vehicles, ops_no_show_evidence,
+    //    tour_room_invites, push_subscriptions, tour_day_plans).
+    if (ids.length > 0) {
+      const { error } = await service.from('bookings').delete().in('id', ids);
+      if (error) throw error;
+    }
+
     if (fixtures?.adminUserId) {
       await service.from('push_subscriptions').delete().eq('user_id', fixtures.adminUserId);
       await service.from('user_profiles').delete().eq('id', fixtures.adminUserId);
       await service.auth.admin.deleteUser(fixtures.adminUserId).catch(() => undefined);
     }
-    console.log('sim cleanup done:', (bookings ?? []).length, 'bookings removed');
+
+    // 3. Prove it. A cleanup that reports success while leaving orphans behind
+    //    is exactly the failure this rewrite exists to end.
+    const { count: leftover } = await service
+      .from('bookings')
+      .select('id', { count: 'exact', head: true })
+      .eq('sim_tag', SIM_TAG);
+    console.log('sim cleanup done:', ids.length, 'bookings removed, leftover:', leftover ?? 0);
+    if (existsSync(OUT)) {
+      try {
+        unlinkSync(OUT);
+        console.log('fixtures file removed (it holds signed tokens)');
+      } catch {
+        /* best effort */
+      }
+    }
     return;
+  }
+
+  // Seeding (unlike cleanup) writes to the live database. Make that a decision.
+  if (process.env.ALLOW_SIM_SEED !== '1') {
+    throw new Error(
+      [
+        'refusing to seed: set ALLOW_SIM_SEED=1.',
+        'This writes bookings into the live database. They carry sim_tag and stay out of',
+        'aggregates and money, but they are still real rows — remove them with --cleanup.',
+      ].join('\n'),
+    );
   }
 
   const { data: tours } = await service.from('tours').select('id, title').limit(2);
@@ -73,6 +151,8 @@ async function main() {
         contact_email: SIM_EMAIL,
         contact_phone: '+82-10-0000-0000',
         preferred_language: lang,
+        // A0.1 — the whole isolation contract rides on this one field.
+        sim_tag: SIM_TAG,
       })
       .select('id')
       .single();

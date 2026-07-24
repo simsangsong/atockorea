@@ -98,6 +98,22 @@ function makeSupabase() {
   const client = {
     from() {
       return {
+        // A0.1 — recordCaptureLedger reads the booking's sim_tag before
+        // writing. A real booking answers NULL.
+        select() {
+          return {
+            eq() {
+              return {
+                maybeSingle() {
+                  return Promise.resolve({
+                    data: { sim_tag: null, contact_email: 'guest@example.com' },
+                    error: null,
+                  })
+                },
+              }
+            },
+          }
+        },
         upsert(rows: unknown, opts: unknown) {
           calls.push({ rows, opts })
           return Promise.resolve({ data: null, error: null })

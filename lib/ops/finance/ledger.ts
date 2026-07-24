@@ -28,6 +28,7 @@
 import type { SupabaseClient } from '@supabase/supabase-js'
 import { FINANCE_TENANT_ID } from './config'
 import type { StripeFeeFacts } from './stripeFee'
+import { isSimBooking } from '../sim/simScope'
 
 const KST_OFFSET_MS = 9 * 60 * 60 * 1000
 
@@ -98,6 +99,23 @@ interface LedgerRowInsert {
   meta: Record<string, unknown>
 }
 
+/**
+ * A0.1 — 이 예약이 시뮬인가. 조회 자체가 실패하면 false(= 진행)를 준다.
+ * 이유는 호출부 주석 참조.
+ */
+async function isSimulatedBooking(supabase: SupabaseClient, bookingId: string): Promise<boolean> {
+  try {
+    const { data } = await supabase
+      .from('bookings')
+      .select('sim_tag, contact_email')
+      .eq('id', bookingId)
+      .maybeSingle()
+    return isSimBooking(data as { sim_tag?: string | null; contact_email?: string | null } | null)
+  } catch {
+    return false
+  }
+}
+
 /** 캡처 확정 후 원장 2~3행 멱등 기입. 절대 throw하지 않는다(호출부 best-effort). */
 export async function recordCaptureLedger(
   supabase: SupabaseClient,
@@ -107,6 +125,19 @@ export async function recordCaptureLedger(
     if (!input.bookingId) return { ok: false, split: null, feeRecorded: false, error: 'missing_booking_id' }
     const gross = Math.round(input.grossMinor || 0)
     if (!(gross > 0)) return { ok: false, split: null, feeRecorded: false, error: 'non_positive_gross' }
+
+    // A0.1 — 법인 원장 앞의 마지막 방어선. 시뮬 매출이 여기 들어오면 §6 3자
+    // 대사가 깨지고, booking_id가 SET NULL이라 지운 뒤에는 어느 행이 시뮬이었는지
+    // 알아낼 방법조차 없다.
+    //
+    // 🔴 fail-open이다. 조회가 실패하면 "시뮬 아님"으로 보고 계속 진행한다 —
+    // 1차 방어는 캡처 크론의 `.is('sim_tag', null)`이고 이건 심층 방어일 뿐인데,
+    // 여기서 fail-closed로 막으면 일시적 DB 오류가 **실제 매출을 원장에서 조용히
+    // 누락**시킨다. 시뮬 유입보다 실매출 누락이 나쁘고, 후자는 아무도 눈치채지
+    // 못한다.
+    if (await isSimulatedBooking(supabase, input.bookingId)) {
+      return { ok: false, split: null, feeRecorded: false, error: 'sim_booking' }
+    }
 
     const split = computeCaptureSplit(gross, input.marginRate)
     const currency = (input.currency || 'usd').toUpperCase()

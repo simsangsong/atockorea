@@ -33,6 +33,18 @@ class Builder {
     this.preds.push((r) => vals.includes(r[col]))
     return this
   }
+  // PostgREST `.is(col, null)` — used by A0.1 to keep simulated bookings out of
+  // aggregates. `is` is not `eq`: undefined (column absent from a fixture row)
+  // has to read as NULL, or every existing fixture would suddenly look
+  // simulated.
+  is(col: string, val: unknown): this {
+    if (val === null) {
+      this.preds.push((r) => r[col] === null || r[col] === undefined)
+    } else {
+      this.preds.push((r) => r[col] === val)
+    }
+    return this
+  }
   gte(col: string, val: unknown): this {
     this.preds.push((r) => r[col] != null && (r[col] as never) >= (val as never))
     return this
