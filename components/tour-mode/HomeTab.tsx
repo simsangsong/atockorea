@@ -19,8 +19,9 @@
 import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import LobbyCard from '@/components/tour-mode/LobbyCard';
-import { vehicleLineFromPayload } from '@/components/tour-mode/LobbyCard';
+import { firstPickup, vehicleLineFromPayload } from '@/components/tour-mode/LobbyCard';
 import QuickSignalBar from '@/components/tour-mode/QuickSignalBar';
+import VehicleLocationCard from '@/components/tour-mode/map/VehicleLocationCard';
 import Sheet from '@/components/tour-mode/Sheet';
 import { TravelTimelineSheet } from '@/components/tour-mode/TravelTimeline';
 import { currentScheduleIndex, type RoomShellHomeApi } from '@/components/tour-mode/RoomShell';
@@ -43,6 +44,7 @@ import {
   IconTileSos,
 } from '@/components/tour-mode/icons';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
+import type { VehicleLocationLike } from '@/lib/tour-room/vehicleEta';
 import type { RoomMessage } from '@/hooks/useTourRoomChannel';
 
 interface ScheduleItem {
@@ -277,6 +279,7 @@ export default function HomeTab({
   canSignal,
   showConcierge,
   isPrivate,
+  locations,
 }: {
   api: RoomShellHomeApi;
   locale: RoomLocale;
@@ -297,6 +300,11 @@ export default function HomeTab({
    * shared tours run a fixed itinerary, so this tile is hidden for them.
    */
   isPrivate: boolean;
+  /**
+   * §11.C C1 — live room positions (the channel's by-participant map). Feeds
+   * the vehicle card; absent or vehicle-less simply renders nothing.
+   */
+  locations?: Record<string, VehicleLocationLike> | null;
 }) {
   const copy = COPY[locale];
   const [sheet, setSheet] = useState<HomeSheet>(null);
@@ -312,6 +320,13 @@ export default function HomeTab({
   const hasTimeline = timelineData.stopCount > 0 || timelineData.photoCount > 0;
   const vehicleLine = vehicleLineFromPayload(busPayload);
   const reviewHref = tourSlug ? `/tour-product/${tourSlug}#reviews` : '/mypage';
+
+  // §11.C C3 — the guest's own meeting point is the vehicle-ETA destination.
+  const pickupPoint = firstPickup(pickupPoints);
+  const vehicleDestination =
+    typeof pickupPoint?.lat === 'number' && typeof pickupPoint?.lng === 'number'
+      ? { lat: pickupPoint.lat, lng: pickupPoint.lng, name: pickupPoint.name ?? null }
+      : null;
 
   // Live now/next — same KST wall-clock derivation as the schedule tab.
   const currentIndex = currentScheduleIndex(schedule, lifecycle, nowMs);
@@ -432,6 +447,20 @@ export default function HomeTab({
           <p className="tr-title text-[var(--tr-ink)]">{copy.endedTitle}</p>
           <p className="tr-card-text mt-1 text-[var(--tr-ink-2)]">{copy.endedBody}</p>
         </div>
+      )}
+
+      {/* ---- Vehicle location + ETA (§11.C C1/C3) -------------------- */}
+      {lifecycle !== 'ended' && (
+        <VehicleLocationCard
+          locale={locale}
+          locations={locations}
+          pickup={vehicleDestination}
+          bookingId={bookingId}
+          roomSession={roomSession}
+          tourDate={tourDate}
+          pickupTime={pickupPoint?.pickup_time ?? null}
+          onOpenMap={() => api.selectTab('map')}
+        />
       )}
 
       {/* ---- Chat preview ------------------------------------------- */}
