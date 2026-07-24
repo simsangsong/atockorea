@@ -19,6 +19,7 @@
 
 import { randomUUID } from 'node:crypto';
 import { classifyAttachment } from '@/lib/tour-room/attachments';
+import { formatKstStamp } from '@/lib/ops/seating/evidenceFormat';
 
 /** private 버킷. 없으면 ensureEvidenceBucket이 public:false로 만든다. */
 export const EVIDENCE_BUCKET = process.env.SUPABASE_OPS_EVIDENCE_BUCKET || 'ops-evidence';
@@ -164,17 +165,12 @@ export function evidencePaths(roomId: string, ext: string, id: string = randomUU
   };
 }
 
-/** "2026-07-24 14:03:22 KST" — 증거는 항상 현지(KST) 시각으로 읽힌다. */
-export function formatKstStamp(iso: string | number | Date): string {
-  const ms = iso instanceof Date ? iso.getTime() : typeof iso === 'number' ? iso : Date.parse(String(iso));
-  if (!Number.isFinite(ms)) return '-';
-  const kst = new Date(ms + 9 * 60 * 60 * 1000);
-  const p = (n: number, w = 2) => String(n).padStart(w, '0');
-  return (
-    `${kst.getUTCFullYear()}-${p(kst.getUTCMonth() + 1)}-${p(kst.getUTCDate())} ` +
-    `${p(kst.getUTCHours())}:${p(kst.getUTCMinutes())}:${p(kst.getUTCSeconds())} KST`
-  );
-}
+/**
+ * "2026-07-24 14:03:22 KST" — 증거는 항상 현지(KST) 시각으로 읽힌다.
+ * 구현은 클라이언트 안전 파일에 있다(이 모듈은 node:crypto·sharp를 쓴다).
+ * 여기서 re-export하므로 서버 쪽 기존 import 경로는 그대로다.
+ */
+export { formatKstStamp };
 
 export interface WatermarkContext {
   capturedAt: string;
