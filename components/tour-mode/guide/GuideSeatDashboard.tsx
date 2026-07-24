@@ -20,9 +20,10 @@
  */
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { Camera, ChevronDown, ChevronUp, MapPin, Palette, Play, QrCode, RefreshCw, Users, X } from 'lucide-react';
+import { Camera, ChevronDown, ChevronUp, MapPin, Palette, Play, QrCode, RefreshCw, StickyNote, Users, X } from 'lucide-react';
 import SeatMap from '@/components/ops/SeatMap';
 import GuideGuestCard, { channelLabel, statusMeta } from '@/components/tour-mode/guide/GuideGuestCard';
+import { hasNote, noteSummary, type GuestNote } from '@/lib/ops/seating/guestNotes';
 import { useTourManifest, type ManifestAssignment } from '@/hooks/useTourManifest';
 import { buildSeatStateMap } from '@/lib/ops/seating/logic';
 import {
@@ -67,11 +68,69 @@ export default function GuideSeatDashboard({
   const [pickupColors, setPickupColors] = useState(false);
   const [busy, setBusy] = useState(false);
   const [note, setNote] = useState<string | null>(null);
+  // §K B4 — 그룹 전체의 운영자 메모. 명단 행(아이콘)과 게스트 카드(전문)가
+  // 같은 소스를 읽는다(B4-D4) — 두 곳에서 따로 부르면 반드시 어긋난다.
+  const [guestNotes, setGuestNotes] = useState<Map<string, GuestNote>>(new Map());
 
   const bookings = data?.bookings ?? [];
   const assignments = data?.assignments ?? [];
   const vehicles = data?.vehicles ?? [];
   const anchorRoomId = data?.anchorRoomId ?? null;
+
+  // 메모는 명단과 따로 로드한다 — 메모 테이블이 아직 없거나 조회가 실패해도
+  // 명단은 그대로 떠야 한다(다른 ops_* 표면과 같은 graceful degrade).
+  const loadNotes = useCallback(async () => {
+    if (!anchorRoomId || !token) return;
+    try {
+      const res = await fetch(`/api/ops/rooms/${anchorRoomId}/notes?rt=${encodeURIComponent(token)}`, {
+        cache: 'no-store',
+      });
+      if (!res.ok) return;
+      const json = (await res.json()) as { notes?: GuestNote[] };
+      setGuestNotes(new Map((json.notes ?? []).map((n) => [n.bookingId, n])));
+    } catch {
+      /* 메모 없이 명단이 뜬다 */
+    }
+  }, [anchorRoomId, token]);
+
+  useEffect(() => {
+    void loadNotes();
+  }, [loadNotes]);
+
+  const saveNote = useCallback(
+    async (targetBookingId: string, text: string) => {
+      if (!anchorRoomId || !token) return;
+      // 낙관적 저장: 승차 중에 쓰는 물건이라 왕복을 기다리게 하지 않는다.
+      // 실패하면 서버 상태로 되돌린다(사라진 것처럼 보이지 않게 loadNotes 재호출).
+      const previous = guestNotes;
+      const optimistic = new Map(previous);
+      if (text.trim()) {
+        optimistic.set(targetBookingId, {
+          bookingId: targetBookingId,
+          note: text.trim(),
+          updatedByRole: 'guide',
+          updatedByName: null,
+          updatedAt: new Date().toISOString(),
+        });
+      } else {
+        optimistic.delete(targetBookingId);
+      }
+      setGuestNotes(optimistic);
+      try {
+        const res = await fetch(`/api/ops/rooms/${anchorRoomId}/notes?rt=${encodeURIComponent(token)}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ bookingId: targetBookingId, note: text }),
+        });
+        if (!res.ok) throw new Error('save_failed');
+        await loadNotes();
+      } catch {
+        setGuestNotes(previous);
+        setNote('메모 저장에 실패했습니다');
+      }
+    },
+    [anchorRoomId, token, guestNotes, loadNotes],
+  );
 
   const counts = useMemo(() => dashboardCounts(bookings, assignments), [bookings, assignments]);
   const groups = useMemo(() => buildRosterGroups(bookings, assignments), [bookings, assignments]);
@@ -323,6 +382,18 @@ export default function GuideSeatDashboard({
                                     ⚠ {row.highlights.length}
                                   </span>
                                 )}
+                                {/* B4 — 메모 아이콘 + 말줄임. 🔴 위 ⚠(손님이 선언한
+                                    needs)와 다른 모양이어야 한다: 하나는 손님 말,
+                                    하나는 운영자 말이다(B4-D1). */}
+                                {hasNote(guestNotes.get(row.bookingId)?.note) && (
+                                  <span
+                                    className="inline-flex max-w-[9rem] items-center gap-1 rounded-full bg-[var(--tr-surface-2)] px-1.5 py-0.5 text-[10px] font-medium text-[var(--tr-ink-2)]"
+                                    data-testid="row-note"
+                                  >
+                                    <StickyNote size={9} aria-hidden />
+                                    <span className="truncate">{noteSummary(guestNotes.get(row.bookingId)?.note)}</span>
+                                  </span>
+                                )}
                               </span>
                               <span className="mt-0.5 block text-xs text-[var(--tr-ink-3)] tabular-nums">
                                 {row.seatNumbers.length > 0 ? `좌석 ${row.seatNumbers.join(', ')}` : '좌석 미지정'}
@@ -426,7 +497,12 @@ export default function GuideSeatDashboard({
         <div className="fixed inset-0 z-40 flex items-end justify-center sm:items-center" data-testid="dashboard-card">
           <button type="button" aria-label="닫기" className="absolute inset-0 bg-black/30" onClick={() => setCardBookingId(null)} />
           <div className="relative z-10 w-full max-w-md p-4">
-            <GuideGuestCard row={cardRow} onClose={() => setCardBookingId(null)} />
+            <GuideGuestCard
+              row={cardRow}
+              onClose={() => setCardBookingId(null)}
+              note={guestNotes.get(cardRow.bookingId) ?? null}
+              onSaveNote={saveNote}
+            />
           </div>
         </div>
       )}
