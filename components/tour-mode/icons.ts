@@ -51,6 +51,9 @@ export {
   Volume2 as IconListen,
   ShieldCheck as IconOpsBadge,
   Flag as IconGuide,
+  // A1.1 P1 — the driver needs a glyph distinct from the guide's flag; the
+  // van/bus reads "the person driving" at a glance in a 36px feed avatar.
+  Bus as IconDriver,
   User as IconTraveller,
 
   // Cards & banners
