@@ -125,14 +125,29 @@ export default function NoticeBanner({
   });
   const overdueFiredRef = useRef<string | null>(null);
 
-  useEffect(() => {
-    const timer = setInterval(() => setNowMs(Date.now()), 1_000);
-    return () => clearInterval(timer);
-  }, []);
-
   const notice = activeNotice(messages, tourDate, nowMs);
   const copy = COPY[locale];
   const stage = rallyStage(notice, nowMs);
+  const mode = noticeBannerMode(notice);
+
+  // A1.2 — adaptive tick. The banner is 'hidden' for most of the tour day, so
+  // ticking every second while drawing nothing was pure battery/render waste
+  // (the discipline DepartureCountdown already had). `now` must still advance to
+  // detect the time-based transitions, so tick coarsely when hidden/quiet and
+  // only at 1s during the live seconds-countdown; resync on tab return.
+  useEffect(() => {
+    const tick = () => setNowMs(Date.now());
+    const period = mode === 'countdown' ? 1_000 : mode === 'quiet' ? 15_000 : 30_000;
+    const timer = setInterval(tick, period);
+    const onVisible = () => {
+      if (document.visibilityState === 'visible') tick();
+    };
+    document.addEventListener('visibilitychange', onVisible);
+    return () => {
+      clearInterval(timer);
+      document.removeEventListener('visibilitychange', onVisible);
+    };
+  }, [mode]);
 
   // W2.3 / P-D6 — the T+5 crossing fires exactly one room-wide event: every
   // customer client attempts it, the server's UNIQUE(subject_key) dedupes.
@@ -177,7 +192,6 @@ export default function NoticeBanner({
   // Presentation ladder (user decision 2026-07-22): hidden until T-10 — the
   // T-10/T-5 nudge effects above still run — quiet (no ticking) until T-3,
   // then the live countdown. A cancel capsule keeps its brief quiet banner.
-  const mode = noticeBannerMode(notice);
   if (!notice || notice.cancelled || mode === 'hidden') return null;
 
   const urgent = notice.warn5 || (notice.remainingMs !== null && notice.remainingMs === 0);

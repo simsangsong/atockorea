@@ -229,3 +229,31 @@ describe('rallyStage — W2.3 ESCALATE ladder (P-D6, time-derived)', () => {
     (Date.now as jest.Mock).mockRestore();
   });
 });
+
+describe('NoticeBanner adaptive tick (A1.2 — no per-second render while hidden)', () => {
+  const timerAt = (nowOffsetMin: number) => {
+    jest.useFakeTimers().setSystemTime(dayStart + (15 * 60 + nowOffsetMin) * 60_000);
+    return [message({ kind: 'free_time_timer', until_time: '15:30', meeting_point: 'Gate 2' }, dayStart + 14.9 * 3600_000)];
+  };
+
+  afterEach(() => jest.useRealTimers());
+
+  it('🔴 ticks coarsely (30s) while hidden — not every second', () => {
+    const messages = timerAt(0); // installs fake timers first; 30min out → hidden
+    const spy = jest.spyOn(global, 'setInterval');
+    render(<NoticeBanner messages={messages} tourDate={today} locale="en" />);
+    const periods = spy.mock.calls.map((c) => c[1]);
+    expect(periods).toContain(30_000);
+    expect(periods).not.toContain(1_000);
+    spy.mockRestore();
+  });
+
+  it('ticks at 1s during the live seconds-countdown', () => {
+    const messages = timerAt(28); // 2min out → countdown
+    const spy = jest.spyOn(global, 'setInterval');
+    render(<NoticeBanner messages={messages} tourDate={today} locale="en" />);
+    const periods = spy.mock.calls.map((c) => c[1]);
+    expect(periods).toContain(1_000);
+    spy.mockRestore();
+  });
+});

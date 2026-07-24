@@ -50,7 +50,7 @@ A-plan-review R6: A1은 "하나도 빠짐없이 소진"이라고 적혀 있었�
 | `EmergencyCard.tsx` | A1.2 | ✅ |
 | `ExtraLedgerCard.tsx` | A1.2 | ✅ |
 | `FacilityMapCard.tsx` | A1.2 | ✅ |
-| `NoticeBanner.tsx` | A1.2 | P2 → `A1-2-cards.md` |
+| `NoticeBanner.tsx` | A1.2 | P2 **수정완료** → `A1-2-cards.md` |
 | `OfflineInfoCard.tsx` | A1.2 | P1 **수정완료** → `A1-2-cards.md` |
 | `SafetyVideoCard.tsx` | A1.2 | ✅ (실영상 미검증) |
 | `SecondaryCardBanner.tsx` | A1.2 | ✅ |
