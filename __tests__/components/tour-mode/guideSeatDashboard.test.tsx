@@ -45,14 +45,35 @@ const PARTIAL = [
   { seatNumber: 2, roomVehicleId: 'v1', bookingId: 'b1', guestLabel: null, checkedInAt: null, absentAt: null, locked: false },
 ];
 
-function mockManifest(body: unknown) {
+function mockManifest(body: unknown, opts: { evidenceStatus?: number; evidenceBody?: unknown } = {}) {
+  const calls: Array<{ url: string; method: string; body: unknown }> = [];
   global.fetch = jest.fn((input: RequestInfo | URL, init?: RequestInit) => {
     const url = typeof input === 'string' ? input : String(input);
     const method = (init?.method ?? 'GET').toUpperCase();
+    calls.push({ url, method, body: init?.body });
     const reply = (b: unknown, s = 200) => Promise.resolve({ ok: s < 400, status: s, json: () => Promise.resolve(b) } as Response);
     if (url.includes('/manifest') && method === 'GET') return reply(body);
+    if (url.includes('/no-show-evidence')) {
+      return reply(opts.evidenceBody ?? { ok: true, evidenceId: 'ev-1' }, opts.evidenceStatus ?? 200);
+    }
     return reply({ ok: true }); // mutations
   }) as unknown as typeof fetch;
+  return calls;
+}
+
+/** 좌석판 2번 좌석(배정·미체크인) 탭 → 액션 시트 → [노쇼 처리] → 증거 시트. */
+async function openEvidenceSheet(container: HTMLElement) {
+  await waitFor(() => expect(container.querySelector('[data-seat="2"]')).toBeInTheDocument());
+  fireEvent.click(container.querySelector('[data-seat="2"]')!);
+  fireEvent.click(await screen.findByTestId('act-absent'));
+  return screen.findByTestId('no-show-evidence-sheet');
+}
+
+function attachPhoto() {
+  const input = screen.getByTestId('evidence-photo-input') as HTMLInputElement;
+  const file = new File(['x'], 'IMG_1.jpg', { type: 'image/jpeg' });
+  Object.defineProperty(input, 'files', { value: [file], configurable: true });
+  fireEvent.change(input);
 }
 
 describe('GuideSeatDashboard (§5.4b / C-16)', () => {
@@ -93,6 +114,58 @@ describe('GuideSeatDashboard (§5.4b / C-16)', () => {
     await screen.findByTestId('seat-action-sheet');
     expect(screen.getByTestId('act-checkin')).toBeInTheDocument();
     expect(screen.getByTestId('act-absent')).toBeInTheDocument();
+  });
+
+  it('opens the evidence sheet instead of marking absent directly (D12 friction)', async () => {
+    const calls = mockManifest(manifest(PARTIAL));
+    const { container } = render(<GuideSeatDashboard token="gtok" bookingId="b1" />);
+    await openEvidenceSheet(container);
+
+    // 사진도 GPS 사유도 없으니 제출 불가 — absent는 아직 호출되지 않았다.
+    expect(screen.getByTestId('evidence-submit')).toBeDisabled();
+    expect(calls.some((c) => c.url.includes('/absent'))).toBe(false);
+
+    // jsdom엔 geolocation이 없다 → 사유 입력이 필수로 열린다.
+    expect(screen.getByTestId('evidence-gps-reason')).toBeInTheDocument();
+  });
+
+  it('uploads evidence first, then marks absent with the returned evidenceId', async () => {
+    const calls = mockManifest(manifest(PARTIAL));
+    const { container } = render(<GuideSeatDashboard token="gtok" bookingId="b1" />);
+    await openEvidenceSheet(container);
+
+    attachPhoto();
+    fireEvent.change(screen.getByTestId('evidence-gps-reason'), { target: { value: '실내 주차장' } });
+    await waitFor(() => expect(screen.getByTestId('evidence-submit')).not.toBeDisabled());
+    fireEvent.click(screen.getByTestId('evidence-submit'));
+
+    await waitFor(() => expect(calls.some((c) => c.url.includes('/absent'))).toBe(true));
+    const evidenceCall = calls.find((c) => c.url.includes('/no-show-evidence'));
+    expect(evidenceCall?.body).toBeInstanceOf(FormData);
+    const absentCall = calls.find((c) => c.url.includes('/absent'));
+    expect(JSON.parse(String(absentCall?.body))).toMatchObject({
+      action: 'mark',
+      seatNumber: 2,
+      evidenceId: 'ev-1',
+    });
+  });
+
+  it('never marks absent when the evidence upload fails', async () => {
+    const calls = mockManifest(manifest(PARTIAL), {
+      evidenceStatus: 400,
+      evidenceBody: { error: 'gps_reason_required', message: '위치를 받지 못했다면 그 이유를 적어주세요.' },
+    });
+    const { container } = render(<GuideSeatDashboard token="gtok" bookingId="b1" />);
+    await openEvidenceSheet(container);
+
+    attachPhoto();
+    fireEvent.change(screen.getByTestId('evidence-gps-reason'), { target: { value: '실내 주차장' } });
+    fireEvent.click(screen.getByTestId('evidence-submit'));
+
+    await screen.findByTestId('evidence-error');
+    expect(calls.some((c) => c.url.includes('/absent'))).toBe(false);
+    // 시트는 열린 채로 남아 재시도 가능.
+    expect(screen.getByTestId('no-show-evidence-sheet')).toBeInTheDocument();
   });
 
   it('enables the gate when every assigned seat is resolved', async () => {

@@ -189,6 +189,15 @@ export default function OpsRoomDrawer({
           >
             주문
           </a>
+          {/* §5.4b D12 — 노쇼 증거 시트 (OTA 분쟁 제출용 인쇄 뷰) */}
+          <a
+            href={`/admin/tour-ops/no-show-evidence/${room.id}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex h-11 shrink-0 items-center rounded-xl bg-[var(--tr-surface-2)] px-3 text-[12px] font-medium text-[var(--tr-ink-2)]"
+          >
+            증거
+          </a>
           <button
             type="button"
             onClick={onClose}

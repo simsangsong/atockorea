@@ -9,12 +9,18 @@
  * 좌석 탭 → 액션 시트(체크인 guide_manual / 노쇼 absent / 미지정 게스트 현장
  * 지정). [체크인 QR] 전체화면(5분 nonce, 인쇄). [투어 시작] = allSeatsResolved.
  *
+ * 노쇼만 마찰이 있다 (§5.4b D12 — 비대칭 마찰 원칙): [노쇼 처리]는 absent를
+ * 바로 부르지 않고 증거 캡처 시트를 연다. 카메라 강제(capture="environment")
+ * 현장 사진 + GPS 1회 취득(실패 시 사유 필수) + 촬영시각을 먼저 업로드하고,
+ * 받은 evidenceId로만 absent를 호출한다. 업로드 실패 시 절대 넘어가지 않는다.
+ *
  * 단일 소스 = ops_seat_assignments(useTourManifest). 변경은 응답 anchorRoomId로
- * 기존 /api/ops/rooms/[roomId]/{checkin,absent,seats,gate} 를 호출한다.
+ * 기존 /api/ops/rooms/[roomId]/{checkin,absent,seats,gate,no-show-evidence} 를
+ * 호출한다.
  */
 
-import { useCallback, useEffect, useMemo, useState } from 'react';
-import { ChevronDown, ChevronUp, Play, QrCode, RefreshCw, Users, X } from 'lucide-react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { Camera, ChevronDown, ChevronUp, MapPin, Play, QrCode, RefreshCw, Users, X } from 'lucide-react';
 import SeatMap from '@/components/ops/SeatMap';
 import GuideGuestCard, { channelLabel, statusMeta } from '@/components/tour-mode/guide/GuideGuestCard';
 import { useTourManifest, type ManifestAssignment } from '@/hooks/useTourManifest';
@@ -50,6 +56,8 @@ export default function GuideSeatDashboard({
   const [hoverBookingId, setHoverBookingId] = useState<string | null>(null);
   const [cardBookingId, setCardBookingId] = useState<string | null>(null);
   const [seatTarget, setSeatTarget] = useState<SeatTarget | null>(null);
+  // D12 — [노쇼 처리] 탭이 여는 증거 캡처 시트의 대상 좌석.
+  const [evidenceTarget, setEvidenceTarget] = useState<SeatTarget | null>(null);
   const [qrOpen, setQrOpen] = useState(false);
   const [busy, setBusy] = useState(false);
   const [note, setNote] = useState<string | null>(null);
@@ -109,8 +117,13 @@ export default function GuideSeatDashboard({
 
   const manualCheckin = (t: SeatTarget, action: 'checkin' | 'undo') =>
     mutate('checkin', { method: 'guide_manual', roomVehicleId: t.roomVehicleId, seatNumber: t.seatNumber, action });
-  const markAbsent = (t: SeatTarget, action: 'mark' | 'clear') =>
-    mutate('absent', { roomVehicleId: t.roomVehicleId, seatNumber: t.seatNumber, action });
+  const markAbsent = (t: SeatTarget, action: 'mark' | 'clear', evidenceId?: string) =>
+    mutate('absent', {
+      roomVehicleId: t.roomVehicleId,
+      seatNumber: t.seatNumber,
+      action,
+      ...(evidenceId ? { evidenceId } : {}),
+    });
   const assignSeat = (t: SeatTarget, targetBookingId: string) => {
     const label = bookings.find((b) => b.id === targetBookingId)?.contactName ?? undefined;
     return mutate('seats', {
@@ -368,8 +381,31 @@ export default function GuideSeatDashboard({
           unseated={unseated.map((b) => ({ id: b.id, name: b.contactName ?? 'Guest' }))}
           onClose={() => setSeatTarget(null)}
           onCheckin={(action) => void manualCheckin(seatTarget, action).then(() => setSeatTarget(null))}
-          onAbsent={(action) => void markAbsent(seatTarget, action).then(() => setSeatTarget(null))}
+          onAbsent={(action) => {
+            // 노쇼 마킹은 증거를 먼저 받는다 (D12). 취소는 무마찰 그대로.
+            if (action === 'mark') {
+              setEvidenceTarget(seatTarget);
+              setSeatTarget(null);
+              return;
+            }
+            void markAbsent(seatTarget, 'clear').then(() => setSeatTarget(null));
+          }}
           onAssign={(bid) => void assignSeat(seatTarget, bid).then(() => setSeatTarget(null))}
+        />
+      )}
+
+      {/* 노쇼 증거 캡처 시트 (§5.4b D12) — 사진·GPS·타임스탬프 없이는 닫히지 않는다 */}
+      {evidenceTarget && anchorRoomId && (
+        <NoShowEvidenceSheet
+          target={evidenceTarget}
+          roomId={anchorRoomId}
+          token={token}
+          onClose={() => setEvidenceTarget(null)}
+          onRecorded={(evidenceId) => {
+            const t = evidenceTarget;
+            setEvidenceTarget(null);
+            void markAbsent(t, 'mark', evidenceId);
+          }}
         />
       )}
 
@@ -453,6 +489,210 @@ function SeatActionSheet({
             </>
           )}
         </div>
+      </div>
+    </div>
+  );
+}
+
+type GpsState =
+  | { kind: 'pending' }
+  | { kind: 'ok'; latitude: number; longitude: number; accuracyM: number | null }
+  | { kind: 'failed'; reason: string };
+
+const GPS_TIMEOUT_MS = 8000;
+
+/**
+ * 노쇼 증거 캡처 시트 (§5.4b D12).
+ *
+ * 카메라 강제(capture="environment") 현장 사진은 필수. GPS는 시트가 열리자마자
+ * 1회 취득하고, 거부/실패하면 사유 입력이 필수로 열린다 — "GPS 없음"도 기록된
+ * 사실이지 우회로가 아니다. 업로드가 200으로 끝나야만 onRecorded가 불리고
+ * 그때 비로소 absent가 호출된다.
+ */
+function NoShowEvidenceSheet({
+  target,
+  roomId,
+  token,
+  onClose,
+  onRecorded,
+}: {
+  target: SeatTarget;
+  roomId: string;
+  token: string;
+  onClose: () => void;
+  onRecorded: (evidenceId: string) => void;
+}) {
+  const [photo, setPhoto] = useState<File | null>(null);
+  const [gps, setGps] = useState<GpsState>({ kind: 'pending' });
+  const [reason, setReason] = useState('');
+  const [note, setNote] = useState('');
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const fileRef = useRef<HTMLInputElement | null>(null);
+
+  useEffect(() => {
+    let alive = true;
+    const geo = typeof navigator !== 'undefined' ? navigator.geolocation : undefined;
+    if (!geo) {
+      setGps({ kind: 'failed', reason: '이 기기에서 위치를 쓸 수 없어요' });
+      return () => {
+        alive = false;
+      };
+    }
+    geo.getCurrentPosition(
+      (pos) => {
+        if (!alive) return;
+        setGps({
+          kind: 'ok',
+          latitude: pos.coords.latitude,
+          longitude: pos.coords.longitude,
+          accuracyM: Number.isFinite(pos.coords.accuracy) ? Math.round(pos.coords.accuracy) : null,
+        });
+      },
+      () => {
+        if (!alive) return;
+        setGps({ kind: 'failed', reason: '위치를 받지 못했어요' });
+      },
+      { enableHighAccuracy: true, timeout: GPS_TIMEOUT_MS, maximumAge: 0 },
+    );
+    return () => {
+      alive = false;
+    };
+  }, []);
+
+  const needsReason = gps.kind === 'failed';
+  const canSubmit = Boolean(photo) && (gps.kind === 'ok' || reason.trim().length > 0) && !submitting;
+
+  const submit = async () => {
+    if (!photo || submitting) return;
+    setSubmitting(true);
+    setError(null);
+    try {
+      const form = new FormData();
+      form.append('photo', photo);
+      form.append('roomVehicleId', target.roomVehicleId);
+      form.append('seatNumber', String(target.seatNumber));
+      form.append('capturedAt', new Date().toISOString());
+      if (gps.kind === 'ok') {
+        form.append('latitude', String(gps.latitude));
+        form.append('longitude', String(gps.longitude));
+        if (gps.accuracyM !== null) form.append('accuracyM', String(gps.accuracyM));
+      } else {
+        form.append('gpsUnavailableReason', reason.trim());
+      }
+      if (note.trim()) form.append('note', note.trim());
+
+      // Content-Type은 절대 직접 넣지 않는다 (boundary는 브라우저가 붙인다).
+      const res = await fetch(`/api/ops/rooms/${roomId}/no-show-evidence`, {
+        method: 'POST',
+        headers: { 'x-tour-room-token': token },
+        body: form,
+      });
+      const json = (await res.json().catch(() => ({}))) as { evidenceId?: string; message?: string; error?: string };
+      if (!res.ok || !json.evidenceId) {
+        setError(json.message || json.error || '증거를 저장하지 못했어요. 다시 시도해 주세요.');
+        return;
+      }
+      onRecorded(json.evidenceId);
+    } catch {
+      setError('네트워크 오류로 증거를 저장하지 못했어요.');
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  return (
+    <div className="fixed inset-0 z-[55] flex items-end justify-center sm:items-center" data-testid="no-show-evidence-sheet">
+      <button type="button" aria-label="닫기" className="absolute inset-0 bg-black/40" onClick={onClose} />
+      <div className="relative z-10 max-h-[88dvh] w-full max-w-sm overflow-y-auto rounded-t-2xl bg-[var(--tr-surface)] p-4 sm:rounded-2xl">
+        <div className="mb-1 flex items-center justify-between">
+          <p className="text-sm font-bold text-[var(--tr-ink)]">{target.seatNumber}번 좌석 노쇼 증거</p>
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label="닫기"
+            className="flex h-11 w-11 items-center justify-center text-[var(--tr-ink-3)]"
+            data-testid="evidence-cancel"
+          >
+            <X size={16} aria-hidden />
+          </button>
+        </div>
+        <p className="mb-3 text-xs text-[var(--tr-ink-3)]">
+          픽업지 현장 사진과 위치·시각을 남겨야 노쇼로 처리돼요. (OTA 분쟁 대응 자료)
+        </p>
+
+        {/* 1. 카메라 강제 — accept=image/* + capture=environment */}
+        <input
+          ref={fileRef}
+          type="file"
+          accept="image/*"
+          capture="environment"
+          className="sr-only"
+          data-testid="evidence-photo-input"
+          onChange={(e) => {
+            setPhoto(e.target.files?.[0] ?? null);
+            setError(null);
+          }}
+        />
+        <button
+          type="button"
+          onClick={() => fileRef.current?.click()}
+          className="flex min-h-[52px] w-full items-center gap-2 rounded-xl border border-dashed border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] px-4 py-3 text-left text-sm font-bold text-[var(--tr-ink)]"
+          data-testid="evidence-photo-btn"
+        >
+          <Camera size={18} className="shrink-0 text-[var(--tr-ink-2)]" aria-hidden />
+          <span className="min-w-0 flex-1 truncate">
+            {photo ? photo.name : '현장 사진 촬영 (필수)'}
+          </span>
+          {photo && <span className="shrink-0 text-xs font-semibold text-[var(--tr-safe)]">준비됨</span>}
+        </button>
+
+        {/* 2. GPS — 성공하면 좌표, 실패하면 사유 필수 */}
+        <div className="mt-2 flex items-start gap-2 rounded-xl bg-[var(--tr-surface-2)] px-3 py-2.5" data-testid="evidence-gps">
+          <MapPin size={15} className="mt-0.5 shrink-0 text-[var(--tr-ink-2)]" aria-hidden />
+          <p className="text-xs text-[var(--tr-ink-2)] tabular-nums">
+            {gps.kind === 'pending' && '위치 확인 중…'}
+            {gps.kind === 'ok' &&
+              `${gps.latitude.toFixed(5)}, ${gps.longitude.toFixed(5)}${gps.accuracyM !== null ? ` (±${gps.accuracyM}m)` : ''}`}
+            {gps.kind === 'failed' && `${gps.reason} — 사유를 적어주세요`}
+          </p>
+        </div>
+        {needsReason && (
+          <textarea
+            value={reason}
+            onChange={(e) => setReason(e.target.value)}
+            rows={2}
+            placeholder="예: 실내 주차장이라 GPS 미수신"
+            className="mt-2 w-full rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2.5 text-sm text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)]"
+            data-testid="evidence-gps-reason"
+          />
+        )}
+
+        {/* 3. 선택 메모 */}
+        <textarea
+          value={note}
+          onChange={(e) => setNote(e.target.value)}
+          rows={2}
+          placeholder="메모 (선택) — 예: 10분 대기 후 출발"
+          className="mt-2 w-full rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2.5 text-sm text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)]"
+          data-testid="evidence-note"
+        />
+
+        {error && (
+          <p className="mt-2 rounded-xl bg-[var(--tr-danger-soft)] px-3 py-2 text-xs font-medium text-[var(--tr-danger)]" data-testid="evidence-error">
+            {error}
+          </p>
+        )}
+
+        <button
+          type="button"
+          disabled={!canSubmit}
+          onClick={() => void submit()}
+          className="mt-3 min-h-[48px] w-full rounded-xl bg-[var(--tr-danger)] px-4 py-3 text-sm font-bold text-white disabled:bg-[var(--tr-surface-2)] disabled:text-[var(--tr-ink-3)]"
+          data-testid="evidence-submit"
+        >
+          {submitting ? '증거 저장 중…' : '증거 저장 후 노쇼 처리'}
+        </button>
       </div>
     </div>
   );

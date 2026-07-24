@@ -79,11 +79,17 @@ export function queriesFor(log: FakeQuery[], table: string, op?: FakeQuery['op']
   return log.filter((q) => q.table === table && (!op || q.op === op));
 }
 
-/** 라우트 핸들러용 fake NextRequest (headers + nextUrl + json body). */
+/**
+ * 라우트 핸들러용 fake NextRequest (headers + nextUrl + json body).
+ *
+ * multipart 라우트(노쇼 증거 업로드 등)는 `formData`를 넘기면 된다 —
+ * content-type 헤더는 테스트가 직접 지정한다(실제 브라우저처럼).
+ */
 export function fakeNextRequest(input: {
   headers?: Record<string, string>;
   searchParams?: Record<string, string>;
   body?: unknown;
+  formData?: FormData;
   origin?: string;
 }) {
   const headers = new Headers(input.headers ?? {});
@@ -92,5 +98,6 @@ export function fakeNextRequest(input: {
     headers,
     nextUrl: { searchParams, origin: input.origin ?? 'http://localhost:3000' },
     json: async () => input.body ?? {},
+    formData: async () => input.formData ?? new FormData(),
   } as unknown as import('next/server').NextRequest;
 }
