@@ -80,6 +80,10 @@ export async function GET(req: NextRequest) {
     )
     .eq('status', 'confirmed')
     .eq('payment_method', 'stripe')
+    // A0.1 — 시뮬 예약은 돈이 오가는 경로에 절대 들어오지 않는다. 지금은
+    // 시더가 payment_method를 안 채워서 우연히 안전하지만, 우연에 기대는
+    // 안전은 시더가 한 줄 바뀌는 순간 사라진다.
+    .is('sim_tag', null)
     .eq('payment_status', 'authorized')
     .eq('payment_intent_status', 'authorized')
     .not('payment_intent_id', 'is', null)

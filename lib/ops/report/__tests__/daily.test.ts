@@ -7,6 +7,8 @@
 import { buildDailyReport, kstTomorrow } from '../daily'
 import { mockSupabase, missingTable, type TableRegistry } from '../test-support/supabase-mock'
 
+type Row = Record<string, unknown>
+
 // 18:00 KST 2026-07-24 (=09:00 UTC). today=2026-07-24, tomorrow=2026-07-25.
 const NOW = Date.parse('2026-07-24T09:00:00Z')
 
@@ -203,6 +205,64 @@ describe('buildDailyReport — 부분 실패 (독립 실패 허용)', () => {
     expect(t.seatCount).toBeNull()
     expect(t.checkedIn).toBeNull()
     expect(t.noShow).toBeNull()
+  })
+})
+
+describe('buildDailyReport — A0.1 시뮬 격리', () => {
+  // 시뮬 예약은 라이브 DB에 산다(룸·좌석·명단에서 보여야 시뮬이 성립한다).
+  // 이 보고서가 그것을 세면 오너는 매일 아침 존재하지 않는 투어를 본다.
+  function withSim(): TableRegistry {
+    const reg = normalRegistry()
+    ;(reg.tour_rooms as Row[]).push(
+      { id: 'RS', booking_id: 'BS', tour_id: 'T1', tour_date: '2026-07-24', status: 'active' },
+      { id: 'RS2', booking_id: 'BS2', tour_id: 'T1', tour_date: '2026-07-25', status: 'active' },
+    )
+    ;(reg.bookings as Row[]).push(
+      {
+        id: 'BS', tour_id: 'T1', tour_date: '2026-07-24', created_at: '2026-07-24T04:00:00Z',
+        number_of_guests: 9, contact_name: 'Sim Alex', contact_email: 'sim-tour-mode@atockorea.test',
+        status: 'confirmed', source: 'direct', final_price: 999, currency: 'USD',
+        ota_raw_meta: null, pickup_points: null, sim_tag: 'sim',
+      },
+      {
+        id: 'BS2', tour_id: 'T1', tour_date: '2026-07-25', created_at: '2026-07-24T04:30:00Z',
+        number_of_guests: 7, contact_name: 'Sim Yuki', contact_email: 'sim-tour-mode@atockorea.test',
+        status: 'confirmed', source: 'direct', final_price: 777, currency: 'USD',
+        ota_raw_meta: null, pickup_points: null, sim_tag: 'sim',
+      },
+    )
+    return reg
+  }
+
+  it('① 오늘 투어에서 시뮬 예약과 그 룸이 함께 빠진다 — 룸만 남으면 "예약 없는 룸"이 생긴다', async () => {
+    const report = await buildDailyReport(mockSupabase(withSim()), { nowMs: NOW })
+    const t = report.todayTours.data[0]
+    expect(t.totalGuests).toBe(5) // 시뮬 9명이 더해지지 않는다
+    expect(t.roomCount).toBe(2) // RS가 세어지지 않는다
+  })
+
+  it('② 신규 예약 집계에서 시뮬이 빠진다', async () => {
+    const withoutSim = await buildDailyReport(mockSupabase(normalRegistry()), { nowMs: NOW })
+    const withSimReport = await buildDailyReport(mockSupabase(withSim()), { nowMs: NOW })
+    expect(withSimReport.newBookings.data.total).toBe(withoutSim.newBookings.data.total)
+  })
+
+  it('③ 내일 예정에서도 시뮬이 빠진다', async () => {
+    const withoutSim = await buildDailyReport(mockSupabase(normalRegistry()), { nowMs: NOW })
+    const withSimReport = await buildDailyReport(mockSupabase(withSim()), { nowMs: NOW })
+    expect(JSON.stringify(withSimReport.tomorrowTours.data)).toBe(
+      JSON.stringify(withoutSim.tomorrowTours.data),
+    )
+  })
+
+  it('④ sim_tag 컬럼이 아직 없는 환경(전 필드 undefined)에서도 실 예약은 전부 남는다', async () => {
+    // 마이그레이션 적용 전 배포 순간을 모사한다. 여기서 실 예약이 사라지면
+    // 보고서가 통째로 빈다 — 격리보다 훨씬 나쁜 실패다.
+    const reg = normalRegistry()
+    for (const b of reg.bookings as Row[]) delete b.sim_tag
+    const report = await buildDailyReport(mockSupabase(reg), { nowMs: NOW })
+    expect(report.todayTours.data[0].totalGuests).toBe(5)
+    expect(report.newBookings.data.total).toBeGreaterThan(0)
   })
 })
 

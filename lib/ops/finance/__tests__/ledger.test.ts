@@ -33,13 +33,31 @@ describe('kstPeriod', () => {
 })
 
 // Minimal supabase stub capturing the upsert payload.
-function makeSupabase() {
+//
+// A0.1 added one read before the writes: the ledger checks whether the booking
+// is a simulation before it lets revenue near the corporate books. The stub has
+// to answer that read, and `simTag` lets a test say "this one is simulated".
+function makeSupabase(opts?: { simTag?: string | null }) {
   const calls: Array<{ table: string; rows: unknown; opts: unknown }> = []
   const client = {
     from(table: string) {
       return {
-        upsert(rows: unknown, opts: unknown) {
-          calls.push({ table, rows, opts })
+        select() {
+          return {
+            eq() {
+              return {
+                maybeSingle() {
+                  return Promise.resolve({
+                    data: { sim_tag: opts?.simTag ?? null, contact_email: 'guest@example.com' },
+                    error: null,
+                  })
+                },
+              }
+            },
+          }
+        },
+        upsert(rows: unknown, o: unknown) {
+          calls.push({ table, rows, opts: o })
           return Promise.resolve({ data: null, error: null })
         },
       }
@@ -49,6 +67,22 @@ function makeSupabase() {
 }
 
 describe('recordCaptureLedger', () => {
+  it('A0.1 — refuses a simulated booking so sim revenue never reaches the corporate ledger', async () => {
+    const { client, calls } = makeSupabase({ simTag: 'sim' })
+    const res = await recordCaptureLedger(client, {
+      bookingId: 'bk-sim',
+      grossMinor: 14400,
+      currency: 'usd',
+      marginRate: 0.05,
+      paymentIntentId: 'pi_sim',
+      nowMs: Date.parse('2026-08-17T02:00:00Z'),
+    })
+    expect(res.ok).toBe(false)
+    expect(res.error).toBe('sim_booking')
+    // The point is not the return value — it is that nothing was written.
+    expect(calls).toHaveLength(0)
+  })
+
   it('writes revenue + commission rows idempotently (us entity, uppercased currency)', async () => {
     const { client, calls } = makeSupabase()
     const res = await recordCaptureLedger(client, {
