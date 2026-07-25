@@ -39,6 +39,7 @@ import {
 } from 'lucide-react';
 import { getAdminAccessToken } from '@/app/admin/match-pois/_hooks/usePoiRow';
 import LayoutCanvas, { type EditorTool } from './_components/LayoutCanvas';
+import VehicleRosterPanel from './_components/VehicleRosterPanel';
 import {
   FIXTURE_LABELS_KO,
   MAX_COLS,
@@ -108,6 +109,9 @@ const TOOLS: Array<{ key: EditorTool; label: string; icon: typeof MousePointer2 
 ];
 
 export default function VehicleLayoutsPage() {
+  /* W1 — 배치도(모델별 도면)와 차량(번호판을 가진 개체)은 다른 것이라 화면도
+     둘로 나눈다. 사이드바 항목을 늘리지 않으려고 같은 페이지의 탭으로 산다. */
+  const [pageTab, setPageTab] = useState<'vehicles' | 'layouts'>('vehicles');
   const [layouts, setLayouts] = useState<LayoutRow[]>([]);
   const [overrides, setOverrides] = useState<OverrideRow[]>([]);
   const [migrationPending, setMigrationPending] = useState(false);
@@ -398,15 +402,47 @@ export default function VehicleLayoutsPage() {
     <div className="-m-6 flex h-[calc(100vh-3.5rem)] flex-col bg-admin-bg">
       <div className="flex items-center gap-2 border-b border-admin-border bg-admin-surface px-4 py-2">
         <Bus className="size-4 text-emerald-600" />
-        <h1 className="text-sm font-semibold text-slate-900">차량 배치도</h1>
+        <h1 className="text-cjk-safe text-sm font-semibold text-slate-900">차량</h1>
+        <div className="ml-2 flex items-center gap-1 rounded-lg bg-slate-100 p-0.5">
+          {(
+            [
+              { key: 'vehicles', label: '차량 목록' },
+              { key: 'layouts', label: '배치도' },
+            ] as const
+          ).map((t) => (
+            <button
+              key={t.key}
+              type="button"
+              onClick={() => setPageTab(t.key)}
+              aria-current={pageTab === t.key ? 'page' : undefined}
+              className={`text-cjk-safe rounded-md px-2.5 py-1 text-xs font-semibold transition-colors ${
+                pageTab === t.key ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-500 hover:text-slate-800'
+              }`}
+            >
+              {t.label}
+            </button>
+          ))}
+        </div>
         {migrationPending && (
-          <span className="ml-2 rounded bg-amber-100 px-2 py-0.5 text-[11px] font-semibold text-amber-700">
+          <span className="text-cjk-safe ml-2 rounded bg-amber-100 px-2 py-0.5 text-[11px] font-semibold text-amber-700">
             마이그레이션 미적용 — 확정·오버라이드 기능 제한
           </span>
         )}
       </div>
 
-      <div className="flex min-h-0 flex-1">
+      {pageTab === 'vehicles' && (
+        <div className="min-h-0 flex-1 overflow-y-auto">
+          <VehicleRosterPanel
+            layouts={layouts.map((row) => ({
+              id: row.id,
+              label: layoutName(row),
+              totalSeats: row.total_seats,
+            }))}
+          />
+        </div>
+      )}
+
+      <div className={`min-h-0 flex-1 ${pageTab === 'layouts' ? 'flex' : 'hidden'}`}>
         {/* 목록 */}
         <aside
           className={`w-full flex-col border-r border-admin-border bg-admin-surface lg:flex lg:w-72 ${
