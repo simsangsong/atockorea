@@ -12,6 +12,7 @@ import {
   BarChart3,
   Bot,
   CalendarRange,
+  Send,
   FileBarChart,
   GraduationCap,
   History,
@@ -37,6 +38,7 @@ export default function OpsHomeTab({
   onOpenRoomHistory,
   onOpenSchedule,
   onOpenAutopilot,
+  onOpenMessaging,
 }: {
   rooms: OpsRoom[];
   sosRooms: Map<string, SosInfo>;
@@ -52,6 +54,8 @@ export default function OpsHomeTab({
   onOpenSchedule?: () => void;
   /** W5 — 오토파일럿 제안 큐(제안만, 실행 없음). */
   onOpenAutopilot?: () => void;
+  /** M4 — 손님 안내 보내기(이메일 일괄 + 왓츠앱 순차). */
+  onOpenMessaging?: () => void;
 }) {
   const liveCount = rooms.filter(
     (room) =>
@@ -137,6 +141,13 @@ export default function OpsHomeTab({
       desc: 'OTA 메일 파싱 검토 · 승인 커밋 · 상품 매핑',
       icon: MailCheck,
       onClick: onOpenReview,
+    },
+    {
+      key: 'messaging',
+      title: '손님 안내 보내기',
+      desc: '내일 투어 · 이메일 일괄 + 왓츠앱 순차 · 날씨 자동 포함',
+      icon: Send,
+      onClick: onOpenMessaging,
     },
     {
       key: 'autopilot',

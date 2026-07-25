@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { requireAdmin } from '@/lib/auth';
 import type { ManifestBooking } from '@/lib/ops/manifest/group';
+import { getForecastCached } from '@/lib/ops/messaging/guestMessageLoad';
 
 export const dynamic = 'force-dynamic';
 
@@ -107,10 +108,19 @@ export async function GET(req: NextRequest) {
       };
     });
 
+    // M1 — 투어일 예보. 명단과 함께 내려서 화면이 wa.me 문구에 날씨·착장을 채운다.
+    // 실패는 null이고, 그 경우 화면이 해당 줄을 통째로 뺀다(지어내지 않는다).
+    const forecast = await getForecastCached(
+      supabase,
+      (tour as { city?: string | null } | null)?.city ?? null,
+      date,
+    ).catch(() => null);
+
     return NextResponse.json({
       tour: tour ?? null,
       date,
       bookings: manifest,
+      forecast,
     });
   } catch (error: unknown) {
     if (error instanceof Error && (error.message === 'Unauthorized' || error.message.includes('Forbidden'))) {

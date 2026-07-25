@@ -244,6 +244,80 @@ kursoflow의 `departure-reminders` 크론 + `whatsapp-broadcast`가 하는 일�
   (안 하면 `a1Coverage.test.ts`가 실패한다).
 - 보고는 한국어, 코드·커밋은 영어.
 
+---
+
+## 13. 손님 안내 메시지 체인 (M1~M5) — v2 추가 요구
+
+### 13.0 전수 조사: 이미 있는 것 / 없는 것
+
+사용자가 나열한 체인을 코드로 하나씩 확인했다. **절반 이상이 이미 있다.**
+
+| 단계 | 상태 | 근거 |
+|---|---|---|
+| 자동 파싱 (OTA 메일) | ✅ | `lib/ops/parse/**`, `ops_email_parse_logs`, 인박스 리뷰 큐 |
+| 투어룸 생성 | ✅ | `OpsRoomManager` + `/api/admin/tour-ops/rooms` |
+| 고객 명단 생성 | ✅ | `OpsManifestView`(501줄) + `lib/ops/manifest/group.ts` (픽업지 그룹핑) |
+| **왓츠앱 순차 발송** | ✅ **이미 구현** | `OpsManifestView` — 프리셋 선택 → wa.me 새 탭 + opened 로그 → [발송 완료] 체크, 일괄 모드 **[다음 열기 (N번째)]** (팝업 차단 안전: 클릭당 1탭) |
+| 개인 토큰 링크 | ✅ | `{room_link}`가 예약별 개인 링크로 해석됨(§K B0.3) |
+| 이메일 일괄 발송 | 🔶 **부분** | `manifest/bulk-invite` — 고정 초대문구만. **제목·본문 prefill/편집 없음** |
+| 가이드 배정 | ✅ (+W2 충돌 차단) | |
+| 가이드 단가 반영 | ✅ (+W2 규칙 7 경고) | |
+| 정산 일괄 반영 | ✅ (+W7 일괄 worked) | |
+| 월말정산·세무서식 | ✅ (+W6 엑셀) | |
+| **투어별 템플릿** | ❌ | 프리셋이 (preset_key × locale) 전역 1벌뿐 |
+| **날씨·착장 안내** | ❌ | 코드에 날씨 개념 자체가 없음 |
+| **관제 홈에서 진입** | ❌ | 명단은 룸 드로어 안에만 있어 "내일 안내 보내기"가 3단계 깊이 |
+
+→ 남은 것은 **템플릿의 개인화(투어별·날씨)와 이메일 쪽 prefill, 그리고 진입 동선**이다.
+
+### 13.1 M1 — 다음날 날씨 예보 → 문구 자동 삽입
+
+- **API 선택: Open-Meteo.** 키가 없고(신규 credential 0), 무료이며, 좌표만 있으면 된다.
+  라이브 `tours.city`는 **Jeju·Seoul·Busan 3개뿐**이라 좌표는 상수 표로 충분하다 —
+  지오코딩을 붙이는 것은 지금 없는 문제를 푸는 일이다.
+- `lib/ops/weather/forecast.ts` (순수 + fetch 분리):
+  `weatherLine(forecast, locale)` · `clothingAdvice(forecast, locale)` 6로케일.
+- 캐시 `ops_weather_cache(city, date, payload, fetched_at)` — 손님 수만큼 부르지 않는다.
+- 🔴 **예보를 못 가져오면 그 줄을 통째로 뺀다.** 빈 `{weather}`가 남은 메시지를
+  보내는 것보다 낫고, 지어낸 날씨는 최악이다.
+- 신규 토큰 `{weather}` `{clothing}` — 계약(`lib/ops/messaging/template.ts`)에 추가.
+
+### 13.2 M2 — 투어별 템플릿 오버라이드
+
+```
+ops_tour_message_templates(tenant_id, tour_id, preset_key, locale, channel,
+                           subject, body, updated_by, updated_at)
+  UNIQUE(tenant_id, tour_id, preset_key, locale, channel)
+```
+해석 순서: **투어 오버라이드 → 전역 `ops_whatsapp_templates` → 코드 프리셋**.
+`channel`이 있는 이유: 이메일은 제목이 필요하고 wa.me는 아니다.
+
+### 13.3 M3 — 이메일 원버튼 일괄 발송 (prefill + 미리보기 + 발송)
+
+- `GET  /api/admin/tour-ops/manifest/bulk-message?...` → 수신자별 **렌더된 제목·본문**
+  + 개인 링크 + 날씨 줄. 화면이 보내기 전에 그대로 보여준다.
+- `POST /api/admin/tour-ops/manifest/bulk-message` → 편집된 제목·본문으로 일괄 발송.
+- 🔴 **미리보기에서 본 그대로 나간다.** 서버가 다시 렌더하면 화면과 다른 것이 나갈 수 있어,
+  POST는 화면이 확인한 본문을 받아 **수신자별 변수만** 채운다.
+- 발송 기록은 기존 `ops_whatsapp_send_logs`를 채널 확장해 재사용한다(로그가 두 벌이 되면
+  "이 손님에게 무엇을 보냈나"의 답이 갈라진다). additive: `channel`·`subject`·`status`·`error`.
+
+### 13.4 M4 — 진입 동선 (UI)
+
+- 관제 홈에 **[손님 안내 보내기]** 타일 신설 → 날짜별 룸 목록 → 명단 → WA/이메일.
+- 오토파일럿에 `guest_message_pending` 탐지 추가: **내일 투어인데 D-1 안내를 아무에게도
+  안 보낸 룸**. 이 체인에서 사람이 가장 자주 빠뜨리는 칸이다.
+
+### 13.5 M5 — 체인 감사 문서
+
+`docs/ops-guest-message-chain-2026-07-26.md` — 파싱→룸→명단→발송→배정→정산→세무의
+각 칸이 어느 파일/라우트/테이블에 있는지 1:1 표. 다음 사람이 "이미 있는 것"을
+다시 만들지 않게.
+
 ## 12. 변경 이력
 
 - v1 (2026-07-25) — 최초 작성. 복구 문서 §2 A/B/C + 사용자 추가 요구(정산 체인·Excel·IA)를 W1~W11로 통합.
+- v2 (2026-07-26) — §13 손님 안내 메시지 체인(M1~M5) 추가. 전수 조사 결과 왓츠앱
+  순차 발송·개인 링크·명단은 **이미 구현돼 있었고**, 남은 것은 투어별 템플릿·날씨
+  문구·이메일 prefill·진입 동선으로 좁혀졌다.
+- W1~W11 진행: W1✅ W2✅ W3✅ W4✅ W5✅ W6✅ W7✅ W9(B)✅ W10(C)✅ W11✅ / W8은 M1~M4가 대체.

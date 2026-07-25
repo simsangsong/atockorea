@@ -15,7 +15,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { toast } from 'sonner';
-import { AlertTriangle, Bus, Check, Loader2, Receipt, RefreshCw, UserX, Wallet, X } from 'lucide-react';
+import { AlertTriangle, Bus, Check, Loader2, Receipt, RefreshCw, Send, UserX, Wallet, X } from 'lucide-react';
 import { getOpsToken } from '@/components/tour-ops/opsShared';
 import { ACTION_LABEL, KIND_LABEL, actionHref, type SuggestionKind } from '@/lib/ops/autopilot/detectors';
 
@@ -38,6 +38,7 @@ const KIND_ICON: Record<SuggestionKind, typeof UserX> = {
   capacity_over: AlertTriangle,
   rate_missing: Wallet,
   settlement_pending: Receipt,
+  guest_message_pending: Send,
 };
 
 const SEVERITY_TONE: Record<SuggestionRow['severity'], string> = {

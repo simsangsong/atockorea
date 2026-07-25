@@ -19,6 +19,7 @@ export const SUGGESTION_KINDS = [
   'capacity_over',
   'rate_missing',
   'settlement_pending',
+  'guest_message_pending',
 ] as const;
 export type SuggestionKind = (typeof SUGGESTION_KINDS)[number];
 
@@ -71,6 +72,11 @@ export interface DetectorInputs {
     capacity: number | null;
   }>;
   rates: GuideRateRow[];
+  /**
+   * M4 — 안내 메시지를 한 번이라도 보낸(또는 wa.me를 연) 예약 id.
+   * 로그가 없는 예약 = 아직 아무 안내도 나가지 않은 손님이다.
+   */
+  messagedBookingIds?: Set<string>;
   /** 직전 달의 정산 상태. */
   previousPeriod: {
     period: string;
@@ -170,6 +176,34 @@ export function detectSuggestions(input: DetectorInputs): Suggestion[] {
     }
   }
 
+  // ③-b 안내 미발송. **내일·모레 투어인데 아무 안내도 안 나간 예약**만 본다 —
+  //     D-7 시점부터 잡으면 매일 전부 걸려서 큐가 노이즈가 된다. 사람이 실제로
+  //     빠뜨리는 칸은 전날 저녁이다.
+  const messaged = input.messagedBookingIds;
+  if (messaged) {
+    const dueSoon = upcoming.filter((t) => t.tourDate <= addDays(input.today, 2) && t.bookingId);
+    const silent = dueSoon.filter((t) => !messaged.has(t.bookingId!));
+    // 룸이 아니라 **투어·날짜 단위**로 하나만 낸다. 20명이면 제안 20건은 큐가 아니라 벽이다.
+    const byTourDate = new Map<string, { tourDate: string; title: string | null; count: number }>();
+    for (const t of silent) {
+      const key = `${t.tourDate}`;
+      const entry = byTourDate.get(key) ?? { tourDate: t.tourDate, title: t.tourTitle, count: 0 };
+      entry.count += 1;
+      byTourDate.set(key, entry);
+    }
+    for (const [, entry] of [...byTourDate.entries()].sort((a, b) => (a[0] < b[0] ? -1 : 1))) {
+      out.push({
+        kind: 'guest_message_pending',
+        severity: urgencyFromLeadTime(input.today, entry.tourDate),
+        subjectKey: `guest_message_pending:${entry.tourDate}`,
+        tourDate: entry.tourDate,
+        title: `안내 미발송 — ${entry.tourDate}`,
+        detail: `${entry.count}팀에게 아직 아무 안내도 나가지 않았습니다.`,
+        payload: { tourDate: entry.tourDate, pendingCount: entry.count },
+      });
+    }
+  }
+
   // ④ 단가 미설정. worked 인데 금액도 단가표도 없으면 정산이 0원을 지급한다.
   const rateMissing = liveAssignments
     .filter((a) => a.status === 'worked' && a.amountKrw == null)
@@ -210,6 +244,7 @@ export const KIND_LABEL: Record<SuggestionKind, string> = {
   capacity_over: '정원 부족',
   rate_missing: '단가 미설정',
   settlement_pending: '정산 미실행',
+  guest_message_pending: '안내 미발송',
 };
 
 /** 제안 → 화면이 보낼 곳. 실행이 아니라 **이동**이다(§1-7). */
@@ -221,6 +256,8 @@ export function actionHref(s: { kind: SuggestionKind; payload: Record<string, un
       return `/admin/guide-settlements?period=${String(s.payload.period ?? '')}`;
     case 'guide_unassigned':
       return '/admin/guides?tab=assignments';
+    case 'guest_message_pending':
+      return '/admin/tour-ops';
     default:
       return '/admin/tour-ops';
   }
@@ -232,4 +269,5 @@ export const ACTION_LABEL: Record<SuggestionKind, string> = {
   capacity_over: '관제센터로',
   rate_missing: '단가 설정으로',
   settlement_pending: '정산 화면으로',
+  guest_message_pending: '안내 보내기로',
 };

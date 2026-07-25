@@ -106,6 +106,22 @@ export async function runAutopilot(
         .eq('period', prevPeriod),
     ]);
 
+  // M4 — 안내가 한 번이라도 나간 예약. 로그가 없으면 아무 안내도 못 받은 손님이다.
+  // 조회 실패는 조용히 넘긴다: 안내 미발송 제안이 안 뜰 뿐, 다른 탐지는 살아 있다.
+  let messagedBookingIds: Set<string> | undefined;
+  if (bookingIds.length > 0) {
+    const { data: sendLogs, error: sendLogError } = await supabase
+      .from('ops_whatsapp_send_logs')
+      .select('booking_id')
+      .in('booking_id', bookingIds)
+      .limit(5000);
+    if (!sendLogError) {
+      messagedBookingIds = new Set(
+        ((sendLogs ?? []) as Array<{ booking_id: string }>).map((r) => r.booking_id),
+      );
+    }
+  }
+
   const guestsByBooking = new Map(
     (((bookingsRes.data ?? []) as Array<{ id: string; number_of_guests: number | null; status: string | null }>) ?? [])
       .filter((b) => b.status !== 'cancelled')
@@ -186,6 +202,7 @@ export async function runAutopilot(
       };
     }),
     rates: (ratesRes.data ?? []) as unknown as GuideRateRow[],
+    messagedBookingIds,
     previousPeriod: {
       period: prevPeriod,
       workedCount: prevAssignRes.count ?? 0,

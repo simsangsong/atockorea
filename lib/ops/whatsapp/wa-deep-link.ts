@@ -104,4 +104,8 @@ export const WA_TEMPLATE_VARIABLES: { token: string; label: string }[] = [
   { token: '{room_link}', label: '투어룸 링크' },
   { token: '{pass_link}', label: '패스 링크' },
   { token: '{operator}', label: '여행사명' },
+  // M1 — 예보에서 자동으로 채워진다. 예보가 없으면 그 줄은 통째로 빠진다
+  // (`stripEmptyTokenLines`) — 빈 라벨이 남은 메시지를 보내지 않기 위해서다.
+  { token: '{weather}', label: '투어일 날씨 (자동)' },
+  { token: '{clothing}', label: '착장 안내 (자동)' },
 ]

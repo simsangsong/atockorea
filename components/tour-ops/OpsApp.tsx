@@ -40,6 +40,7 @@ import OpsBookingsOverview from '@/components/tour-ops/OpsBookingsOverview';
 import OpsRoomHistoryView from '@/components/tour-ops/OpsRoomHistoryView';
 import OpsScheduleCalendar from '@/components/tour-ops/OpsScheduleCalendar';
 import OpsAutopilotView from '@/components/tour-ops/OpsAutopilotView';
+import OpsGuestMessagingView from '@/components/tour-ops/OpsGuestMessagingView';
 
 const BACKUP_POLL_MS = 20_000;
 const DRIFT_REFRESH_MS = 5 * 60_000;
@@ -76,6 +77,8 @@ export default function OpsApp() {
   const [scheduleOpen, setScheduleOpen] = useState(false);
   // W5 — 오토파일럿 제안 큐. 제안만 한다(실행 없음).
   const [autopilotOpen, setAutopilotOpen] = useState(false);
+  // M4 — 손님 안내 보내기(이메일 일괄 + 왓츠앱 순차). 매일 하는 일이라 홈에서 한 번에 연다.
+  const [messagingOpen, setMessagingOpen] = useState(false);
 
   const [loadError, setLoadError] = useState(false);
   // Monotonic request id: a stale response from the previous date (fired by a
@@ -406,6 +409,7 @@ export default function OpsApp() {
             onOpenRoomHistory={() => setRoomHistoryOpen(true)}
             onOpenSchedule={() => setScheduleOpen(true)}
             onOpenAutopilot={() => setAutopilotOpen(true)}
+            onOpenMessaging={() => setMessagingOpen(true)}
           />
         )}
         {tab === 'dashboard' && (
@@ -467,6 +471,7 @@ export default function OpsApp() {
       )}
       {scheduleOpen && <OpsScheduleCalendar initialPeriod={date.slice(0, 7)} onClose={() => setScheduleOpen(false)} />}
       {autopilotOpen && <OpsAutopilotView onClose={() => setAutopilotOpen(false)} />}
+      {messagingOpen && <OpsGuestMessagingView initialDate={date} onClose={() => setMessagingOpen(false)} />}
 
       {openRoomObject && (
         <OpsRoomDrawer

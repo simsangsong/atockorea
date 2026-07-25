@@ -26,6 +26,13 @@ export interface MessageVars {
   /** 당일 패스/체크인 링크. */
   passLink?: string | null;
   operatorName?: string | null;
+  /**
+   * M1 — 다음날 예보 한 줄('맑음 12–19°C'). 예보를 못 가져왔으면 **넣지 않는다**:
+   * 빈 값이면 아래 `stripEmptyLines`가 그 줄을 통째로 지운다. 지어낸 날씨는 최악이다.
+   */
+  weather?: string | null;
+  /** M1 — 착장 안내 한두 문장. */
+  clothing?: string | null;
 }
 
 /**
@@ -47,7 +54,38 @@ export const TEMPLATE_TOKENS = {
   '{pass_link}': (v: MessageVars) => v.passLink ?? '',
   '{pass_url}': (v: MessageVars) => v.passLink ?? '',
   '{operator}': (v: MessageVars) => v.operatorName ?? 'AtoC Korea',
+  '{weather}': (v: MessageVars) => v.weather ?? '',
+  '{clothing}': (v: MessageVars) => v.clothing ?? '',
 } as const satisfies Record<string, (v: MessageVars) => string>;
+
+/**
+ * M1 — 값이 없어 빈 껍데기만 남은 줄을 지운다.
+ *
+ * `날씨: {weather}` 가 `날씨: ` 로 나가면 손님은 우리가 뭔가를 빠뜨렸다고 읽는다.
+ * 그래서 **치환 후 그 줄의 토큰이 전부 비었으면 줄을 통째로 없앤다.**
+ *
+ * 🔴 `renderTemplate` 안에 넣지 않는 이유: 기존 계약은 "빈 토큰 = 빈 문자열을
+ * 제자리에"이고(`[{room_link}]` → `[]`), 그 계약에 기대는 템플릿이 이미 라이브에
+ * 있다. 줄 삭제는 **날씨처럼 없을 수도 있는 선택 정보**에만 적용하는 별도 단계다.
+ * 호출부: `lib/ops/messaging/guestMessage.ts`.
+ */
+export function stripEmptyTokenLines(rendered: string, original: string, vars: MessageVars): string {
+  const originalLines = original.split('\n');
+  const renderedLines = rendered.split('\n');
+  if (originalLines.length !== renderedLines.length) return rendered;
+
+  const kept = renderedLines.filter((line, i) => {
+    const source = originalLines[i];
+    const tokens = tokensUsed(source);
+    if (tokens.length === 0) return true;
+    // 이 줄의 토큰이 전부 비었는가 → 남은 건 라벨뿐이므로 줄을 버린다.
+    const allEmpty = tokens.every((t) => !TEMPLATE_TOKENS[t](vars).trim());
+    return !allEmpty;
+  });
+
+  // 줄을 지우면서 생긴 연속 빈 줄을 하나로 접는다.
+  return kept.join('\n').replace(/\n{3,}/g, '\n\n').trim();
+}
 
 export type TemplateToken = keyof typeof TEMPLATE_TOKENS;
 

@@ -20,6 +20,9 @@ import { detectAssignmentConflicts } from '../lib/ops/guides/conflicts';
 import { loadConflictContext } from '../lib/ops/guides/conflictContext';
 import { kstToday } from '../lib/ops/guides/availability';
 import { runAutopilot } from '../lib/ops/autopilot/runner';
+import { getForecastCached, loadTemplate } from '../lib/ops/messaging/guestMessageLoad';
+import { composeForRecipient } from '../lib/ops/messaging/guestMessage';
+import { clothingAdvice, weatherLine } from '../lib/ops/weather/forecast';
 
 config({ path: '.env.local' });
 
@@ -226,6 +229,72 @@ async function checkAutopilot(cleanup: boolean) {
   }
 }
 
+/**
+ * M1~M3 — 날씨 예보(실제 Open-Meteo 호출) + 템플릿 해석 + 조립.
+ * 예보는 외부 API라 tsc·jest가 검증할 수 없다. 실제로 도는지 여기서 본다.
+ */
+async function checkGuestMessaging() {
+  const tomorrow = new Date(Date.now() + 86_400_000).toISOString().slice(0, 10);
+
+  // 예보 — 라이브 도시 3개 전부.
+  for (const city of ['Seoul', 'Busan', 'Jeju']) {
+    try {
+      const forecast = await getForecastCached(supabase, city, tomorrow);
+      if (!forecast) {
+        bad(`M1 ${city} 예보`, '예보 없음 (Open-Meteo 응답 실패 또는 날짜 범위 밖)');
+        continue;
+      }
+      ok(
+        `M1 ${city} 예보`,
+        `${weatherLine(forecast, 'ko')} · ${clothingAdvice(forecast, 'ko').slice(0, 24)}…`,
+      );
+    } catch (e) {
+      bad(`M1 ${city} 예보`, e);
+    }
+  }
+
+  // 템플릿 해석 — 투어 오버라이드가 없으면 전역/코드로 떨어져야 한다.
+  const { data: tours } = await supabase.from('tours').select('id, title, city').limit(1);
+  const tour = (tours ?? [])[0] as { id: string; title: string | null; city: string | null } | undefined;
+  if (!tour) return ok('M2 템플릿 해석', '투어 0건 — 건너뜀');
+
+  try {
+    const tpl = await loadTemplate(supabase, {
+      tourId: tour.id,
+      presetKey: 'pickup_d1',
+      locale: 'ko',
+      channel: 'email',
+    });
+    ok('M2 템플릿 해석', `출처=${tpl.source} · ${tpl.body.length}자`);
+
+    // 조립 — 예보가 있으면 날씨 줄이 들어가고, 없으면 그 줄이 사라져야 한다.
+    const forecast = await getForecastCached(supabase, tour.city, tomorrow);
+    const composed = composeForRecipient(
+      { body: tpl.body, subject: '테스트' },
+      {
+        bookingId: 'probe',
+        guestName: '홍길동',
+        email: 'probe@example.com',
+        locale: 'ko',
+        pickupPoint: '명동역',
+        pickupTime: '08:30',
+        roomLink: 'https://example.com/r/probe',
+      },
+      { tourName: tour.title, tourDate: tomorrow, operatorName: 'AtoC Korea', forecast },
+    );
+    const hasWeatherLine = composed.body.includes('날씨');
+    if (forecast && !hasWeatherLine) bad('M3 조립', '예보가 있는데 날씨 줄이 없다');
+    else if (!forecast && hasWeatherLine) bad('M3 조립', '예보가 없는데 날씨 줄이 남았다');
+    else ok('M3 조립', `누락 변수 ${composed.missing.length}개 · 날씨줄 ${hasWeatherLine ? '있음' : '없음(정상)'}`);
+  } catch (e) {
+    bad('M2/M3 템플릿·조립', e);
+  }
+
+  // 캐시가 실제로 쌓였는가.
+  const { count } = await supabase.from('ops_weather_cache').select('id', { count: 'exact', head: true });
+  ok('M1 예보 캐시', `${count ?? 0}행`);
+}
+
 async function main() {
   const cleanup = process.argv.includes('--cleanup');
   console.log(`\n관제 쿼리 스모크 — 대상 월 ${period}${cleanup ? ' (--cleanup)' : ''}\n`);
@@ -235,6 +304,7 @@ async function main() {
   await checkConflictContext();
   await checkRoomMonthly();
   await checkSchedule();
+  await checkGuestMessaging();
   await checkAutopilot(cleanup);
   console.log(`\n${pass} PASS / ${fail} FAIL\n`);
   process.exit(fail > 0 ? 1 : 0);

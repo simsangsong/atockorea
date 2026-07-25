@@ -21,11 +21,11 @@ import {
   extractHighlights,
   type ManifestBooking,
 } from '@/lib/ops/manifest/group';
-import {
-  buildWhatsAppDeepLink,
-  resolveWhatsAppDigits,
-} from '@/lib/ops/whatsapp/wa-deep-link';
+import { renderWaTemplate, resolveWhatsAppDigits } from '@/lib/ops/whatsapp/wa-deep-link';
 import { WA_PRESETS, getPreset, presetBodyForLocale, type WaPresetKey } from '@/lib/ops/whatsapp/presets';
+import { weatherVars } from '@/lib/ops/messaging/guestMessage';
+import { stripEmptyTokenLines } from '@/lib/ops/messaging/template';
+import type { DailyForecast } from '@/lib/ops/weather/forecast';
 
 const HIGHLIGHT_LABELS: Record<string, string> = {
   allergy: '알레르기',
@@ -64,6 +64,8 @@ export default function OpsManifestView({
   const [emailConfirm, setEmailConfirm] = useState(false);
   const [emailBusy, setEmailBusy] = useState(false);
   const [inviteLink, setInviteLink] = useState<string | null>(null);
+  // M1 — 투어일 예보. 명단과 함께 온다. null 이면 wa.me 문구에서 날씨·착장 줄이 빠진다.
+  const [forecast, setForecast] = useState<DailyForecast | null>(null);
 
   const load = useCallback(async () => {
     setLoading(true);
@@ -77,6 +79,7 @@ export default function OpsManifestView({
       const json = await res.json();
       if (!res.ok) throw new Error(json.error || '명단 불러오기 실패');
       setBookings((json.bookings ?? []) as ManifestBooking[]);
+      setForecast((json.forecast ?? null) as DailyForecast | null);
     } catch (e) {
       setLoadError(e instanceof Error ? e.message : '명단 불러오기 실패');
     } finally {
@@ -162,6 +165,9 @@ export default function OpsManifestView({
           /* 링크 없이도 발송은 가능 — 변수는 빈 값 */
         }
       }
+      // M1 — 예보가 있으면 날씨·착장을 채우고, 없으면 그 줄을 통째로 뺀다.
+      // 빈 '🌤️ 날씨: ' 가 손님에게 나가면 뭔가 빠뜨린 것처럼 읽힌다.
+      const { weather, clothing } = weatherVars(forecast, booking.preferredLanguage);
       const input = {
         phone: digits,
         guestName: booking.contactName ?? 'Guest',
@@ -172,12 +178,17 @@ export default function OpsManifestView({
         roomLink: roomLink || null,
         passLink: roomLink || null,
         operatorName: 'AtoC Korea',
+        weather,
+        clothing,
       };
-      const url = buildWhatsAppDeepLink(input, body);
-      if (!url) return null;
-      return { url, message: decodeURIComponent(url.split('?text=')[1] ?? '') };
+      // 렌더 → 빈 줄 제거 → 그 결과를 그대로 URL에 싣는다.
+      // buildWhatsAppDeepLink 에 넘기면 이미 치환된 문자열을 한 번 더 렌더하게 되므로
+      // 여기서는 링크를 직접 만든다 — 화면에 보이는 문구와 보내지는 문구가 같아야 한다.
+      const rendered = stripEmptyTokenLines(renderWaTemplate(body, input), body, input);
+      const url = `https://wa.me/${digits}?text=${encodeURIComponent(rendered)}`;
+      return { url, message: rendered };
     },
-    [preset, tourDate, tourTitle],
+    [preset, tourDate, tourTitle, forecast],
   );
 
   const logAction = useCallback(async (payload: Record<string, unknown>) => {
