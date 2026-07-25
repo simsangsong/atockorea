@@ -35,7 +35,9 @@ const EXTRA_FIRST_RE = /^\s*First name:\s*(.+?)\s*$/im
 const EXTRA_LAST_RE = /^\s*Last name:\s*(.+?)\s*$/im
 const EXTRA_PHONE_RE = /^\s*Phone number:\s*([+\d][\d\s\-()]{5,})\s*$/im
 const EXTRA_EMAIL_RE = /^\s*Email:\s*([^\s<>]+@[^\s<>]+)\s*$/im
-const SPECIAL_RE = /Special requirements:\s*(.+?)\s*$/im
+// ⚠ `\s*`를 쓰면 개행을 넘어가 다음 줄("Departure location: …")을 삼킨다.
+// Klook은 특이사항이 없으면 라벨만 남기고 줄을 비우므로 가로 공백만 허용한다.
+const SPECIAL_RE = /Special requirements:[^\S\n]*(\S.*?)[^\S\n]*$/im
 
 const KLOOK_EMAIL_MARKERS = [
   /Klook has confirmed an order/i,

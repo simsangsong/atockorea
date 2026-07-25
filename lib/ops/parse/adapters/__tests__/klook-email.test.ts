@@ -95,6 +95,21 @@ describe('klookEmailAdapter — Klook order-confirmed email', () => {
     expect(notes).toContain('companion.fixture@example.com')
   })
 
+  it('does not let an empty "Special requirements:" swallow the next line', () => {
+    // 라이브 회귀: \s* 가 개행을 넘어 "Departure location: …"을 특이사항으로
+    // 잡아 notes에 픽업이 중복 기재됐다.
+    const notes = klookEmailAdapter.parse(KLOOK_ORDER_EMAIL).bookings[0].notes ?? ''
+    expect(notes).not.toContain('Departure location')
+  })
+
+  it('still captures a real special requirement when one is present', () => {
+    const withReq = KLOOK_ORDER_EMAIL.replace(
+      'Special requirements:\n',
+      'Special requirements: Vegetarian meal, wheelchair access\n',
+    )
+    expect(klookEmailAdapter.parse(withReq).bookings[0].notes).toContain('Vegetarian meal')
+  })
+
   it('degrades to leftover (never throws) when the template is not this one', () => {
     for (const junk of ['', 'hello world', 'Klook order confirmed but no labels at all']) {
       const out = klookEmailAdapter.parse(junk)
