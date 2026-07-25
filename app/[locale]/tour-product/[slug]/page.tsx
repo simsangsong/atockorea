@@ -6,6 +6,7 @@ import {
   assertRegisteredConsumerSlug,
   buildTourProductMetadata,
   tourProductDbLocaleFromUrlLocale,
+  tourProductLocaleNeedsEnglishFallback,
 } from "@/app/tour-product/[slug]/tourProductPageBody";
 
 type RouteParams = { locale: string; slug: string };
@@ -37,6 +38,7 @@ export async function generateMetadata({
   params: Promise<RouteParams>;
 }): Promise<Metadata> {
   const { locale, slug } = await params;
+  if (tourProductLocaleNeedsEnglishFallback(locale)) return {};
   const dbLocale = tourProductDbLocaleFromUrlLocale(locale);
   if (!dbLocale) return {};
   assertRegisteredConsumerSlug(slug);
@@ -49,8 +51,10 @@ export default async function LocalizedTourProductPage({
   params: Promise<RouteParams>;
 }) {
   const { locale, slug } = await params;
-  if (locale === "en") {
+  if (locale === "en" || tourProductLocaleNeedsEnglishFallback(locale)) {
     // English is canonical at the bare path — never index /en/tour-product/*.
+    // P1-7: site locales without product content land here too, so they get the
+    // English page instead of a 404.
     redirect(`/tour-product/${slug}`);
   }
   const dbLocale = tourProductDbLocaleFromUrlLocale(locale);

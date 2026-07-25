@@ -19,7 +19,9 @@ import { usePathname } from 'next/navigation';
  * The prefix list mirrors `SUPPORTED_LOCALES` in middleware.ts (en is never
  * a prefix — bare paths are canonical EN).
  */
-const LOCALE_PREFIX_RE = /^\/(?:ko|ja|es|zh-CN|zh-TW)(?=\/|$)/;
+// P1-7 — fr/de/it/ru were added to SUPPORTED_LOCALES but never here, so
+// their pages kept the prefix and every path comparison silently missed.
+const LOCALE_PREFIX_RE = /^\/(?:ko|ja|es|zh-CN|zh-TW|fr|de|it|ru)(?=\/|$)/;
 
 export function stripLocalePrefix(pathname: string | null | undefined): string {
   const stripped = (pathname || '/').replace(LOCALE_PREFIX_RE, '');

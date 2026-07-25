@@ -37,6 +37,26 @@ import { isTourSlugBlockedFromConsumerSurfaces } from "@/lib/tour-consumer-visib
 /** URL prefixes served by `app/[locale]/tour-product/[slug]` (en lives at the bare path). */
 export const TOUR_PRODUCT_URL_LOCALES = ["ko", "ja", "es", "zh-CN", "zh-TW"] as const;
 
+/**
+ * P1-7 — locales the SITE routes but this page has no content for.
+ *
+ * middleware.ts SUPPORTED_LOCALES grew to 10 (fr/de/it/ru were added with their
+ * messages/*.json), while tour_product_pages holds rows for only en/ko/ja/es/
+ * zh/zh-TW. `/fr/tour-product/<slug>` therefore passed the middleware, reached
+ * this page, resolved to a null db locale and 404'd.
+ *
+ * Adding them to TOUR_PRODUCT_URL_LOCALES would be worse than the 404 — it
+ * would render an empty page. Until the content exists these fall back to the
+ * canonical English URL, which is what `/en/...` already does. Fallback rule:
+ * supported-but-untranslated → 308 to the bare EN path, never a 404.
+ */
+export const TOUR_PRODUCT_FALLBACK_URL_LOCALES = ["fr", "de", "it", "ru"] as const;
+
+/** Does this URL locale have product content, or must it fall back to EN? */
+export function tourProductLocaleNeedsEnglishFallback(urlLocale: string): boolean {
+  return (TOUR_PRODUCT_FALLBACK_URL_LOCALES as readonly string[]).includes(urlLocale);
+}
+
 /** `NEXT_LOCALE` / URL locale → `tour_product_pages.locale` (zh-CN rows are stored as "zh"). */
 export function tourProductDbLocaleFromUrlLocale(urlLocale: string): TourProductPageLocale | null {
   if (urlLocale === "zh-CN") return "zh";
