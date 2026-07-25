@@ -708,4 +708,48 @@ describe('세무 서식', () => {
     expect(res.status).toBe(200);
     expect(json.period).toBe('2026');
   });
+
+  // W6/W7 — 엑셀 출력 + 소득자 1명분 교부용.
+  it('serves a real xlsx workbook, not a renamed csv', async () => {
+    const { client } = db();
+    createServerClientMock.mockReturnValue(client);
+    const res = await formsGET(fakeNextRequest({ searchParams: { format: 'xlsx' } }), {
+      params: Promise.resolve({ key: '2026-08', form: 'simplified' }),
+    });
+    expect(res.status).toBe(200);
+    expect(res.headers.get('content-type')).toContain('spreadsheetml.sheet');
+    const bytes = Buffer.from(await res.arrayBuffer());
+    // PK\x03\x04 — zip local file header. 파일이 열리는지의 최소 증거.
+    expect(bytes.subarray(0, 4).toString('latin1')).toBe('PK');
+  });
+
+  it('narrows the receipt to one guide so a copy handed over carries nobody else', async () => {
+    const { client } = db();
+    createServerClientMock.mockReturnValue(client);
+    const res = await formsGET(fakeNextRequest({ searchParams: { guideId: 'g-1' } }), {
+      params: Promise.resolve({ key: '2026-08', form: 'receipt' }),
+    });
+    const json = await res.json();
+    expect(res.status).toBe(200);
+    expect(json.guideId).toBe('g-1');
+    expect(json.guideCount).toBe(1);
+  });
+
+  it('404s rather than emitting an empty receipt for a guide with no pay that month', async () => {
+    const { client } = db();
+    createServerClientMock.mockReturnValue(client);
+    const res = await formsGET(fakeNextRequest({ searchParams: { guideId: 'nobody' } }), {
+      params: Promise.resolve({ key: '2026-08', form: 'receipt' }),
+    });
+    expect(res.status).toBe(404);
+  });
+
+  it('rejects an unknown format', async () => {
+    const { client } = db();
+    createServerClientMock.mockReturnValue(client);
+    const res = await formsGET(fakeNextRequest({ searchParams: { format: 'pdf' } }), {
+      params: Promise.resolve({ key: '2026-08', form: 'simplified' }),
+    });
+    expect(res.status).toBe(400);
+  });
 });

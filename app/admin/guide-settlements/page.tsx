@@ -233,6 +233,17 @@ export default function GuideSettlementsPage() {
     [period, saveBlob],
   );
 
+  /** 소득자 1명분 원천징수영수증 — 교부용이라 합본이 아니라 그 사람 것만 뽑는다. */
+  const downloadReceiptFor = useCallback(
+    (guideId: string, guideName: string | null) =>
+      saveBlob(
+        `/api/admin/guide-settlements/${encodeURIComponent(period)}/forms/receipt?format=xlsx&guideId=${encodeURIComponent(guideId)}`,
+        `atockorea-receipt-${period}-${(guideName ?? guideId).replace(/[^A-Za-z0-9가-힣]/g, '')}.xlsx`,
+        '원천징수영수증',
+      ),
+    [period, saveBlob],
+  );
+
   /** 이체·대사용 지급 명세. 서식과 달리 주민번호가 없다. */
   const downloadPayoutSheet = useCallback(
     (format: 'csv' | 'xlsx') =>
@@ -416,6 +427,18 @@ export default function GuideSettlementsPage() {
                   </td>
                   <td className="px-3 py-2 text-right">
                     <div className="flex justify-end gap-1.5">
+                      {/* 원천징수영수증은 **소득자에게 교부하는** 서식이다. 합본을
+                          그대로 건네면 다른 가이드의 지급액과 주민번호가 함께 넘어간다. */}
+                      <button
+                        type="button"
+                        onClick={() => void downloadReceiptFor(row.guide_id, row.guide_name)}
+                        className="inline-flex h-8 items-center gap-1 rounded-lg border border-slate-200 px-2 text-xs font-semibold text-slate-700 hover:bg-slate-100"
+                        title="이 가이드에게 교부할 원천징수영수증"
+                        data-testid="settlement-receipt"
+                      >
+                        <FileSpreadsheet className="size-3.5" />
+                        <span className="text-cjk-safe">영수증</span>
+                      </button>
                       {row.status === 'draft' ? (
                         <button
                           type="button"

@@ -138,7 +138,23 @@ export async function GET(
     ]);
 
     // 지급액 0원인 가이드는 서식에 올리지 않는다(신고 대상이 아니다).
-    const payable = rows.filter((r) => r.gross_krw > 0);
+    let payable = rows.filter((r) => r.gross_krw > 0);
+
+    /**
+     * `?guideId=` — 소득자 1명분만. 원천징수영수증은 **소득자에게 교부하는**
+     * 서식이라 한 사람 것을 뽑는 일이 실제 업무다. 합본을 그대로 건네면 다른
+     * 가이드의 지급액과 주민번호가 함께 넘어간다.
+     */
+    const guideFilter = req.nextUrl.searchParams.get('guideId')?.trim();
+    if (guideFilter) {
+      payable = payable.filter((r) => r.guide_id === guideFilter);
+      if (payable.length === 0) {
+        return NextResponse.json(
+          { ok: false, message: '이 기간에 해당 가이드의 지급액이 없습니다.' },
+          { status: 404 },
+        );
+      }
+    }
     const identities = await fetchGuideIdentities(supabase, payable.map((r) => r.guide_id));
 
     // ── 복호화 구간 (렌더 산출물로 나가는 경우에만) ────────────────────────
@@ -225,6 +241,10 @@ export async function GET(
     // 전문가 확인 전에는 전부 DRAFT (finance 슬라이스와 같은 스위치).
     const draft = isDraftDocument(config.expertReviewed);
 
+    /** 소득자 1명분이면 파일명이 겹치지 않게 구분자를 넣는다. */
+    const withGuideSuffix = (name: string) =>
+      guideFilter ? name.replace(/(\.[a-z]+)$/, `-${guideFilter.slice(0, 8)}$1`) : name;
+
     if (format === 'csv') {
       const body = draft
         ? csvWithBom({ ...doc, notes: ['⚠ DRAFT — 세무사 확인 전 초안입니다. 제출용이 아닙니다.', ...doc.notes] })
@@ -233,7 +253,7 @@ export async function GET(
         status: 200,
         headers: {
           'Content-Type': 'text/csv; charset=utf-8',
-          'Content-Disposition': `attachment; filename="${csvFilename(doc)}"`,
+          'Content-Disposition': `attachment; filename="${withGuideSuffix(csvFilename(doc))}"`,
           'Cache-Control': 'no-store',
         },
       });
@@ -245,7 +265,7 @@ export async function GET(
       const file = buildXlsx(taxFormSheets(doc, { draft }));
       return new NextResponse(new Uint8Array(file), {
         status: 200,
-        headers: xlsxDownloadHeaders(xlsxFilename(doc)),
+        headers: xlsxDownloadHeaders(withGuideSuffix(xlsxFilename(doc))),
       });
     }
 
@@ -267,6 +287,8 @@ export async function GET(
       headerRowIndex: doc.headerRowIndex,
       notes: doc.notes,
       guideCount: new Set(payable.map((r) => r.guide_id)).size,
+      guideId: guideFilter ?? null,
+      guideName: guideFilter ? (identities.get(guideFilter)?.name ?? null) : null,
       warnings,
     });
   } catch (e) {
