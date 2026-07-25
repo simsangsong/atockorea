@@ -10,6 +10,15 @@ import { __resetTourRoomSettingsForTests } from '@/hooks/useTourRoomSettings';
 import type { RoomMessage } from '@/hooks/useTourRoomChannel';
 import { ROOM_LOCALES } from '@/lib/tour-room/snapshot';
 
+
+/**
+ * The camera/attach buttons moved into the KakaoTalk-style "+" tray, so a
+ * photo question now starts by opening it.
+ */
+function openComposerTray() {
+  fireEvent.click(screen.getByTestId('composer-actions-toggle'));
+}
+
 jest.mock('@/lib/tour-room/recorder', () => ({
   isVoiceRecordingSupported: jest.fn(() => false),
   startVoiceRecording: jest.fn(),
@@ -95,7 +104,8 @@ describe('Composer photo questions (T4.7)', () => {
   it('private ask shows the answer inline in the panel', async () => {
     const ask = jest.fn(async () => ({ answer: 'That is hotteok — a sweet pancake.', shared: false }));
     render(<Composer locale="en" onSendText={jest.fn()} onSendPreset={jest.fn()} vision={{ ask }} />);
-    fireEvent.click(screen.getByTestId('camera-button'));
+    openComposerTray();
+    fireEvent.click(screen.getByTestId('action-grid-camera'));
     pickPhoto();
     await act(async () => {
       fireEvent.click(screen.getByTestId('vision-ask-button'));
@@ -107,7 +117,8 @@ describe('Composer photo questions (T4.7)', () => {
   it('shared ask closes the panel (the room broadcast carries the answer)', async () => {
     const ask = jest.fn(async () => ({ answer: 'answer', shared: true }));
     render(<Composer locale="en" onSendText={jest.fn()} onSendPreset={jest.fn()} vision={{ ask }} />);
-    fireEvent.click(screen.getByTestId('camera-button'));
+    openComposerTray();
+    fireEvent.click(screen.getByTestId('action-grid-camera'));
     pickPhoto();
     fireEvent.click(screen.getByRole('checkbox'));
     await act(async () => {
@@ -120,7 +131,8 @@ describe('Composer photo questions (T4.7)', () => {
   it('failure keeps the panel with a retry note', async () => {
     const ask = jest.fn(async () => null);
     render(<Composer locale="ko" onSendText={jest.fn()} onSendPreset={jest.fn()} vision={{ ask }} />);
-    fireEvent.click(screen.getByTestId('camera-button'));
+    openComposerTray();
+    fireEvent.click(screen.getByTestId('action-grid-camera'));
     pickPhoto();
     await act(async () => {
       fireEvent.click(screen.getByTestId('vision-ask-button'));

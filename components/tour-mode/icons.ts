@@ -32,6 +32,7 @@ export {
   // Composer
   Plus as IconAttach,
   Paperclip as IconPaperclip,
+  Plus as IconPlus,
   FileText as IconFile,
   Mic as IconMic,
   Camera as IconCamera,

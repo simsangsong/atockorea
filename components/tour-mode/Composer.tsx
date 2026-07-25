@@ -37,8 +37,10 @@ import {
   IconFile,
   IconMic,
   IconPaperclip,
+  IconPlus,
   IconSend,
 } from '@/components/tour-mode/icons';
+import ActionGrid, { type ActionGridItem } from '@/components/tour-mode/ActionGrid';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
 const PRESET_COOLDOWN_MS = 1500;
@@ -50,6 +52,15 @@ function shouldFirePreset(cooldowns: Map<string, number>, key: string, nowMs: nu
   cooldowns.set(key, nowMs);
   return true;
 }
+
+/** Tile captions for the "+" tray — short by necessity (52px tiles). */
+const TRAY_LABEL: Record<RoomLocale, { photo: string; camera: string }> = {
+  en: { photo: 'Photo', camera: 'Ask a photo' },
+  ko: { photo: '사진·파일', camera: '사진 질문' },
+  ja: { photo: '写真・ファイル', camera: '写真で質問' },
+  es: { photo: 'Foto', camera: 'Preguntar' },
+  zh: { photo: '照片·文件', camera: '拍照提问' },
+};
 
 const A11Y: Record<RoomLocale, { attach: string; askPhoto: string; recordVoice: string; send: string }> = {
   en: { attach: 'Attach a photo or file', askPhoto: 'Ask about a photo', recordVoice: 'Record a voice message', send: 'Send' },
@@ -168,6 +179,7 @@ export default function Composer({
   onTyping,
   disabled = false,
   viewerRole = 'customer',
+  extraActions,
 }: {
   locale: RoomLocale;
   onSendText: (text: string) => void;
@@ -188,6 +200,11 @@ export default function Composer({
   disabled?: boolean;
   /** A6 — selects the role-scoped quick-reply set (customer/guide/driver). */
   viewerRole?: QuickReplyRole;
+  /**
+   * Room-level actions the parent wants inside the "+" tray (Smart Guide,
+   * emergency…). The composer contributes its own photo/camera tiles.
+   */
+  extraActions?: ActionGridItem[];
 }) {
   const [draft, setDraft] = useState('');
   const [voiceState, setVoiceState] = useState<'idle' | 'recording' | 'transcribing'>('idle');
@@ -195,6 +212,7 @@ export default function Composer({
   const [elapsedMs, setElapsedMs] = useState(0);
   const [voiceNote, setVoiceNote] = useState<string | null>(null);
   const [confirmHint, setConfirmHint] = useState(false);
+  const [actionsOpen, setActionsOpen] = useState(false);
   // Device STT (Web Speech) is preferred when the browser supports it — the
   // transcript lands instantly with no server round trip; `interim` streams the
   // live words. `recMode` says which engine the current capture uses.
@@ -437,6 +455,36 @@ export default function Composer({
   const nearCeiling = elapsedMs > MAX_RECORDING_MS - 10_000;
   const hasDraft = Boolean(draft.trim());
 
+  // The "+" tray: the composer's own photo/camera tiles plus whatever the room
+  // hands down (Smart Guide, emergency…). Same component and tones as the
+  // driver cockpit, so the two surfaces stay one language.
+  const trayLabels = TRAY_LABEL[locale] ?? TRAY_LABEL.en;
+  const trayItems: ActionGridItem[] = [
+    ...(onSendAttachment
+      ? [
+          {
+            key: 'photo',
+            label: trayLabels.photo,
+            Icon: IconPaperclip,
+            tone: 'blue' as const,
+            onClick: () => attachInputRef.current?.click(),
+          },
+        ]
+      : []),
+    ...(vision
+      ? [
+          {
+            key: 'camera',
+            label: trayLabels.camera,
+            Icon: IconCamera,
+            tone: 'violet' as const,
+            onClick: () => fileInputRef.current?.click(),
+          },
+        ]
+      : []),
+    ...(extraActions ?? []),
+  ];
+
   return (
     <div className="-mx-3">
       {/* Quick replies ride the canvas just above the docked bar (A6: role-scoped set). */}
@@ -589,6 +637,10 @@ export default function Composer({
         <ReplyPreview snapshot={replyTo} locale={locale} variant="bar" onClose={onCancelReply} />
       )}
 
+      {/* The "+" tray sits directly on top of the docked bar, the way every
+          messenger stacks its attachment panel — not floating mid-canvas. */}
+      <ActionGrid open={actionsOpen} onClose={() => setActionsOpen(false)} items={trayItems} />
+
       {/* Docked bar — full-bleed surface with a hairline, like every messenger. */}
       <div className="tr-hairline-t bg-[var(--tr-surface)] px-3 py-2">
         {voiceState === 'recording' ? (
@@ -661,15 +713,6 @@ export default function Composer({
                   }}
                   data-testid="attach-file-input"
                 />
-                <button
-                  type="button"
-                  onClick={() => attachInputRef.current?.click()}
-                  aria-label={(A11Y[locale] ?? A11Y.en).attach}
-                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-[var(--tr-ink-2)] active:bg-[var(--tr-bubble-system)]"
-                  data-testid="attach-button"
-                >
-                  <IconPaperclip size={21} strokeWidth={2} />
-                </button>
               </>
             )}
             {vision && !hasDraft && (
@@ -686,17 +729,27 @@ export default function Composer({
                   }}
                   data-testid="vision-file-input"
                 />
-                <button
-                  type="button"
-                  onClick={() => fileInputRef.current?.click()}
-                  aria-label={(A11Y[locale] ?? A11Y.en).askPhoto}
-                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-[var(--tr-ink-2)] active:bg-[var(--tr-bubble-system)]"
-                  data-testid="camera-button"
-                >
-                  <IconCamera size={22} strokeWidth={2} />
-                </button>
               </>
             )}
+            {/* Kakao-grade "+" — the attach and camera buttons used to sit
+                permanently either side of the input, competing with the mic and
+                send for a narrow row. Folded into one tray. */}
+            {(onSendAttachment || vision || (extraActions?.length ?? 0) > 0) && !hasDraft ? (
+              <button
+                type="button"
+                onClick={() => setActionsOpen((v) => !v)}
+                aria-expanded={actionsOpen}
+                aria-label={(A11Y[locale] ?? A11Y.en).attach}
+                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-[var(--tr-ink-2)] active:bg-[var(--tr-bubble-system)]"
+                data-testid="composer-actions-toggle"
+              >
+                <IconPlus
+                  size={22}
+                  strokeWidth={2.4}
+                  className={`transition-transform duration-200 ${actionsOpen ? 'rotate-45' : ''}`}
+                />
+              </button>
+            ) : null}
             <textarea
               ref={inputRef}
               value={draft}

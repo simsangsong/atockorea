@@ -72,7 +72,9 @@ describe('Composer attach flow', () => {
 
   it('hides the attach button without an onSendAttachment handler', () => {
     render(<Composer locale="en" onSendText={jest.fn()} onSendPreset={jest.fn()} />);
-    expect(screen.queryByTestId('attach-button')).not.toBeInTheDocument();
+    // Without onSendAttachment there is no photo tile; with no other tray
+    // items the "+" itself stays hidden too.
+    expect(screen.queryByTestId('action-grid-photo')).not.toBeInTheDocument();
   });
 
   it('picks a photo → preview + caption → send calls onSendAttachment', async () => {

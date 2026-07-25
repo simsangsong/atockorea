@@ -515,28 +515,38 @@
 }
 
 /* ---- Action grid tones (KakaoTalk-style attachment panel) --------------
-   One colour per action so the grid is scannable at a glance instead of a
-   wall of identical grey glyphs. Each tone carries a soft tile background and
-   a saturated glyph; the dark theme swaps to a deep tile + a brighter glyph so
-   contrast holds both ways (the room's dark mode is class-scoped, not media). */
-.tr-tone {
-  background: var(--tone-bg);
-  color: var(--tone-fg);
-}
-.tr-tone-blue   { --tone-bg: #dbeafe; --tone-fg: #2563eb; }
-.tr-tone-green  { --tone-bg: #dcfce7; --tone-fg: #16a34a; }
-.tr-tone-amber  { --tone-bg: #fef3c7; --tone-fg: #d97706; }
-.tr-tone-rose   { --tone-bg: #ffe4e6; --tone-fg: #e11d48; }
-.tr-tone-violet { --tone-bg: #ede9fe; --tone-fg: #7c3aed; }
-.tr-tone-cyan   { --tone-bg: #cffafe; --tone-fg: #0891b2; }
-.tr-tone-slate  { --tone-bg: #e2e8f0; --tone-fg: #475569; }
-.tr-tone-orange { --tone-bg: #ffedd5; --tone-fg: #ea580c; }
+   Jewel-toned SOLID tiles with a white glyph, not pastel-tile + coloured
+   glyph. The pastel version read washed-out and muddy at 52px: two low-chroma
+   colours competing inside one small circle. A saturated tile carrying a white
+   mark is how iOS/Kakao app icons read premium — the colour becomes the
+   identity and the glyph stays legible at a glance from a car seat.
 
-.dark .tr-tone-blue   { --tone-bg: #1e3a5f; --tone-fg: #7dd3fc; }
-.dark .tr-tone-green  { --tone-bg: #14532d; --tone-fg: #86efac; }
-.dark .tr-tone-amber  { --tone-bg: #4a3209; --tone-fg: #fcd34d; }
-.dark .tr-tone-rose   { --tone-bg: #4c1d24; --tone-fg: #fda4af; }
-.dark .tr-tone-violet { --tone-bg: #3b2a63; --tone-fg: #c4b5fd; }
-.dark .tr-tone-cyan   { --tone-bg: #164e63; --tone-fg: #67e8f9; }
-.dark .tr-tone-slate  { --tone-bg: #334155; --tone-fg: #cbd5e1; }
-.dark .tr-tone-orange { --tone-bg: #4a2408; --tone-fg: #fdba74; }
+   Each tone gets a subtle 135° gradient (lighter → base) for depth and a soft
+   shadow tinted with its own hue, so the row reads as objects rather than
+   flat swatches. Hues are held at a consistent lightness/chroma so no single
+   tile shouts louder than its neighbours. */
+.tr-tone {
+  background-image: linear-gradient(135deg, var(--tone-lift), var(--tone-bg));
+  color: #fff;
+  box-shadow: 0 2px 6px -1px var(--tone-shadow), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+.tr-tone-blue   { --tone-bg: #2f6be0; --tone-lift: #5b8cf0; --tone-shadow: rgba(47, 107, 224, 0.42); }
+.tr-tone-green  { --tone-bg: #14a06b; --tone-lift: #3cc48d; --tone-shadow: rgba(20, 160, 107, 0.42); }
+.tr-tone-amber  { --tone-bg: #d9902a; --tone-lift: #f0b355; --tone-shadow: rgba(217, 144, 42, 0.42); }
+.tr-tone-rose   { --tone-bg: #d94a5c; --tone-lift: #ef7386; --tone-shadow: rgba(217, 74, 92, 0.42); }
+.tr-tone-violet { --tone-bg: #6d55d6; --tone-lift: #9179ef; --tone-shadow: rgba(109, 85, 214, 0.42); }
+.tr-tone-cyan   { --tone-bg: #0d97ad; --tone-lift: #35bcd1; --tone-shadow: rgba(13, 151, 173, 0.42); }
+.tr-tone-slate  { --tone-bg: #5a6b82; --tone-lift: #7e8fa6; --tone-shadow: rgba(90, 107, 130, 0.42); }
+.tr-tone-orange { --tone-bg: #dd6f3a; --tone-lift: #f19163; --tone-shadow: rgba(221, 111, 58, 0.42); }
+
+/* Dark theme: pull the tiles down a step so they sit ON the dark canvas rather
+   than glowing off it, and soften the shadow (a bright halo on near-black reads
+   cheap). The glyph stays white — contrast is what survives sunlight. */
+.dark .tr-tone-blue   { --tone-bg: #2a5cc4; --tone-lift: #3f78e0; --tone-shadow: rgba(0, 0, 0, 0.5); }
+.dark .tr-tone-green  { --tone-bg: #12885c; --tone-lift: #1da977; --tone-shadow: rgba(0, 0, 0, 0.5); }
+.dark .tr-tone-amber  { --tone-bg: #b87a22; --tone-lift: #d69a3c; --tone-shadow: rgba(0, 0, 0, 0.5); }
+.dark .tr-tone-rose   { --tone-bg: #ba3f4f; --tone-lift: #d75e70; --tone-shadow: rgba(0, 0, 0, 0.5); }
+.dark .tr-tone-violet { --tone-bg: #5c47b8; --tone-lift: #7a63d6; --tone-shadow: rgba(0, 0, 0, 0.5); }
+.dark .tr-tone-cyan   { --tone-bg: #0b7f92; --tone-lift: #159fb5; --tone-shadow: rgba(0, 0, 0, 0.5); }
+.dark .tr-tone-slate  { --tone-bg: #4a5a70; --tone-lift: #64768e; --tone-shadow: rgba(0, 0, 0, 0.5); }
+.dark .tr-tone-orange { --tone-bg: #bd5c2e; --tone-lift: #db7c4c; --tone-shadow: rgba(0, 0, 0, 0.5); }
