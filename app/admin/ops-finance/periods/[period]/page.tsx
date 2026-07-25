@@ -323,7 +323,10 @@ export default function SettlementPeriodDetailPage() {
               </button>
             </div>
 
-            <table className="mt-3 w-full text-sm">
+            {/* P1-5 — `w-full` 만으로는 좁은 화면에서 컬럼이 짜부라지고 CJK 라벨이
+                글자 단위로 무너진다. overflow 래퍼 + min-w 가 한 쌍이다. */}
+            <div className="mt-3 overflow-x-auto">
+            <table className="w-full min-w-[380px] text-sm">
               <tbody>
                 <ReconcileRow label="① 정산서 송금분" value={formatMinor(p.remit_minor, currency)} />
                 <ReconcileRow
@@ -339,6 +342,7 @@ export default function SettlementPeriodDetailPage() {
                 />
               </tbody>
             </table>
+            </div>
 
             {rec ? (
               <p
@@ -392,14 +396,15 @@ export default function SettlementPeriodDetailPage() {
             </button>
 
             {(data?.remittances ?? []).length > 0 ? (
-              <table className="mt-4 w-full text-left text-xs">
+              <div className="mt-4 overflow-x-auto">
+              <table className="w-full min-w-[520px] text-left text-xs">
                 <thead className="border-b border-slate-200 text-[11px] uppercase tracking-wide text-slate-500">
                   <tr>
-                    <th className="py-1.5 pr-2">송금일</th>
-                    <th className="py-1.5 pr-2 text-right">금액</th>
-                    <th className="py-1.5 pr-2 text-right">원화</th>
-                    <th className="py-1.5 pr-2">참조</th>
-                    <th className="py-1.5">증빙</th>
+                    <th className="text-cjk-safe py-1.5 pr-2">송금일</th>
+                    <th className="text-cjk-safe py-1.5 pr-2 text-right">금액</th>
+                    <th className="text-cjk-safe py-1.5 pr-2 text-right">원화</th>
+                    <th className="text-cjk-safe py-1.5 pr-2">참조</th>
+                    <th className="text-cjk-safe py-1.5">증빙</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-100">
@@ -426,6 +431,7 @@ export default function SettlementPeriodDetailPage() {
                   ))}
                 </tbody>
               </table>
+              </div>
             ) : null}
           </section>
 
@@ -493,7 +499,8 @@ function Card({ label, value, strong }: { label: string; value: string; strong?:
 function ReconcileRow({ label, value }: { label: string; value: string }) {
   return (
     <tr className="border-b border-slate-100 last:border-b-0">
-      <th scope="row" className="py-1.5 text-left text-xs font-medium text-slate-500">
+      {/* P1-5 — 2열 표의 라벨은 폭이 제한된 셀에 들어가는 CJK 라벨이다. */}
+      <th scope="row" className="text-cjk-safe py-1.5 text-left text-xs font-medium text-slate-500">
         {label}
       </th>
       <td className="py-1.5 text-right font-semibold tabular-nums text-slate-900">{value}</td>

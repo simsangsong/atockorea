@@ -171,7 +171,7 @@ export default function PoiVideosPage() {
                     <div className="flex flex-col gap-2 p-3">
                       <div className="flex items-center justify-between">
                         <span className="text-sm font-bold text-stone-900">{row.language}</span>
-                        <span className={`rounded-full px-2 py-0.5 text-[11px] font-semibold ${badge.tone}`}>{badge.label}</span>
+                        <span className={`text-cjk-safe rounded-full px-2 py-0.5 text-[11px] font-semibold ${badge.tone}`}>{badge.label}</span>
                       </div>
                       {row.duration_seconds ? (
                         <p className="text-xs text-stone-500">{Math.round(row.duration_seconds)}초 · {new Date(row.created_at).toLocaleDateString('ko-KR')}</p>

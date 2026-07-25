@@ -110,7 +110,7 @@ export default function ExperimentDetailPage() {
         </Link>
         <h2 className="font-mono text-base font-semibold text-slate-900">{expKey}</h2>
         {status ? (
-          <span className={`rounded px-1.5 py-0.5 text-[10px] font-medium ${status.cls}`}>
+          <span className={`text-cjk-safe rounded px-1.5 py-0.5 text-[10px] font-medium ${status.cls}`}>
             {status.text}
           </span>
         ) : null}

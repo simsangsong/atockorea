@@ -125,7 +125,9 @@ export default function RetentionPage() {
         <Skeleton className="h-64 w-full rounded-design-md" />
       ) : (
         <div className="overflow-x-auto rounded-design-md border border-admin-border bg-admin-surface shadow-admin-card">
-          <table className="min-w-full text-xs">
+          {/* P1-5 — `min-w-full`은 "컨테이너 이상"이라 스크롤을 발동시키지 못한다.
+              고정 px min-w 라야 overflow-x-auto 래퍼가 실제로 작동한다. */}
+          <table className="w-full min-w-[720px] text-xs">
             <thead>
               <tr className="bg-admin-surface-hover">
                 <th className={cn('px-3 py-2 text-left font-semibold text-slate-500', stickyHead)}>

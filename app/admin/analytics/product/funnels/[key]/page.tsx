@@ -219,7 +219,8 @@ export default function FunnelDetailPage() {
             </p>
           </div>
           <div className="overflow-x-auto">
-            <table className="min-w-full text-xs">
+            {/* P1-5 — retention 과 같은 결함: `min-w-full`은 스크롤을 발동시키지 않는다. */}
+            <table className="w-full min-w-[720px] text-xs">
               <thead className="bg-slate-50">
                 <tr>
                   <th className="px-3 py-2 text-left text-slate-500">{breakdown}</th>

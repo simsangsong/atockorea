@@ -31,6 +31,12 @@ const ROUTES = [
   '/admin/vehicle-layouts',
   '/admin/dining-cache',
   '/admin/poi-videos',
+  // P1-5 잔여분(2026-07-26): min-w 없이 `w-full`/`min-w-full`만 있던 표들.
+  // 화면에 띄워 보지 않은 CSS 안전망은 가설일 뿐이라 경로를 원장에 올린다.
+  '/admin/support',
+  '/admin/ops-finance/periods',
+  '/admin/analytics/product/retention',
+  '/admin/inbox',
 ];
 
 interface Offender {

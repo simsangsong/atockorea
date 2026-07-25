@@ -336,7 +336,7 @@ function InboxItemCard({ item, onOpen }: { item: InboxItem; onOpen: (i: InboxIte
         ) : (
           <span className="size-2 flex-shrink-0" />
         )}
-        <span className={cn('inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-xs font-medium', SOURCE_CHIP[item.source])}>
+        <span className={cn('text-cjk-safe inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-xs font-medium', SOURCE_CHIP[item.source])}>
           <Icon className="size-3" strokeWidth={2} />
           {INBOX_SOURCE_LABEL[item.source]}
         </span>
@@ -377,7 +377,7 @@ function DetailSheet({
       <div className="relative max-h-[90dvh] w-full overflow-y-auto rounded-t-2xl bg-admin-surface-raised p-5 pb-[calc(1.25rem+env(safe-area-inset-bottom))] shadow-admin-float sm:max-w-lg sm:rounded-2xl">
         <div className="mx-auto mb-3 h-1 w-9 rounded-full bg-slate-200 sm:hidden" />
         <div className="flex items-start justify-between gap-2">
-          <span className={cn('inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-xs font-medium', SOURCE_CHIP[item.source])}>
+          <span className={cn('text-cjk-safe inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-xs font-medium', SOURCE_CHIP[item.source])}>
             <Icon className="size-3" strokeWidth={2} />
             {INBOX_SOURCE_LABEL[item.source]}
           </span>

@@ -147,18 +147,21 @@ export default function SupportInboxPage() {
         ) : tickets.length === 0 ? (
           <div className="text-sm text-slate-500 py-12 text-center">No tickets</div>
         ) : (
-          <table className="w-full text-sm">
+          /* P1-5 — 9열 표다. `w-full` 만 두면 좁은 화면에서 스크롤이 발동하지 않고
+             컬럼이 짜부라져, 한국어가 섞인 Reason·Summary 셀이 글자 단위로 무너진다. */
+          <div className="overflow-x-auto">
+          <table className="w-full min-w-[980px] text-sm">
             <thead className="bg-slate-50 text-left text-xs uppercase text-slate-500">
               <tr>
-                <th className="px-3 py-2">#</th>
-                <th className="px-3 py-2">Status</th>
-                <th className="px-3 py-2">Reason</th>
-                <th className="px-3 py-2">Tour</th>
-                <th className="px-3 py-2">Page</th>
-                <th className="px-3 py-2">Locale</th>
-                <th className="px-3 py-2">Notif</th>
-                <th className="px-3 py-2">Updated</th>
-                <th className="px-3 py-2">Summary</th>
+                <th className="text-cjk-safe px-3 py-2">#</th>
+                <th className="text-cjk-safe px-3 py-2">Status</th>
+                <th className="text-cjk-safe px-3 py-2">Reason</th>
+                <th className="text-cjk-safe px-3 py-2">Tour</th>
+                <th className="text-cjk-safe px-3 py-2">Page</th>
+                <th className="text-cjk-safe px-3 py-2">Locale</th>
+                <th className="text-cjk-safe px-3 py-2">Notif</th>
+                <th className="text-cjk-safe px-3 py-2">Updated</th>
+                <th className="text-cjk-safe px-3 py-2">Summary</th>
               </tr>
             </thead>
             <tbody>
@@ -194,6 +197,7 @@ export default function SupportInboxPage() {
               ))}
             </tbody>
           </table>
+          </div>
         )}
       </div>
     </div>

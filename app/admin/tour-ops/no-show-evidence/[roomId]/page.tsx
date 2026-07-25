@@ -149,7 +149,10 @@ export default function NoShowEvidenceSheetPage() {
               {item.seatNumber}번 좌석 · {item.guestLabel || 'Guest'}
             </h2>
 
-            <table className="mt-3 w-full border-collapse text-sm">
+            {/* P1-5 — 라벨 열이 `w-44`로 고정돼 있어 좁은 화면에서 값 열이 먼저
+                짜부라진다. 증거팩은 인쇄·법적 근거라 줄바꿈으로 뭉개지면 안 된다. */}
+            <div className="mt-3 overflow-x-auto">
+            <table className="w-full min-w-[440px] border-collapse text-sm">
               <tbody>
                 <Row label="촬영 시각 (기기 신고)" value={formatKstStamp(item.capturedAt)} />
                 <Row label="서버 수신 시각 (권위)" value={formatKstStamp(item.recordedAt)} />
@@ -169,6 +172,7 @@ export default function NoShowEvidenceSheetPage() {
                 {item.note && <Row label="현장 메모" value={item.note} />}
               </tbody>
             </table>
+            </div>
 
             {item.watermarkedUrl || item.photoUrl ? (
               // eslint-disable-next-line @next/next/no-img-element
@@ -201,7 +205,10 @@ export default function NoShowEvidenceSheetPage() {
 function Row({ label, value }: { label: string; value: string }) {
   return (
     <tr className="border-b border-neutral-200 last:border-b-0">
-      <th scope="row" className="w-44 py-1.5 pr-3 text-left align-top text-xs font-semibold text-neutral-500">
+      <th
+        scope="row"
+        className="text-cjk-safe w-44 py-1.5 pr-3 text-left align-top text-xs font-semibold text-neutral-500"
+      >
         {label}
       </th>
       <td className="text-cjk-body py-1.5 align-top text-sm text-neutral-900 tabular-nums">{value}</td>

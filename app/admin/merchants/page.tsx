@@ -394,7 +394,7 @@ export default function MerchantsPage() {
                         </span>
                       )}
                     </div>
-                    <span className={cn('flex-shrink-0 rounded-full px-2 py-1 text-xs font-semibold', statusPillClass(merchant.status))}>
+                    <span className={cn('text-cjk-safe flex-shrink-0 rounded-full px-2 py-1 text-xs font-semibold', statusPillClass(merchant.status))}>
                       {statusLabel(merchant.status)}
                     </span>
                   </div>

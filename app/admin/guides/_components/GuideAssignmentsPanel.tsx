@@ -221,7 +221,7 @@ export default function GuideAssignmentsPanel({
                     </p>
                   ) : null}
                 </div>
-                <span className={`flex-shrink-0 rounded-full px-2 py-0.5 text-[10px] font-bold ${STATUS_TONE[r.status]}`}>
+                <span className={`text-cjk-safe flex-shrink-0 rounded-full px-2 py-0.5 text-[10px] font-bold ${STATUS_TONE[r.status]}`}>
                   {STATUS_LABEL[r.status] ?? r.status}
                 </span>
                 <div className="flex flex-shrink-0 gap-1">

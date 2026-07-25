@@ -391,7 +391,7 @@ export default function GuideSettlementsPage() {
                   </td>
                   <td className="px-3 py-2 text-right font-bold tabular-nums text-slate-900">{krw(row.payout_krw)}</td>
                   <td className="px-3 py-2">
-                    <span className={`rounded px-2 py-0.5 text-xs font-semibold ${STATUS_TONE[row.status] ?? 'bg-slate-100 text-slate-600'}`}>
+                    <span className={`text-cjk-safe rounded px-2 py-0.5 text-xs font-semibold ${STATUS_TONE[row.status] ?? 'bg-slate-100 text-slate-600'}`}>
                       {STATUS_LABEL[row.status] ?? row.status}
                     </span>
                   </td>

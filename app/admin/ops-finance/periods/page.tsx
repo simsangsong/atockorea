@@ -195,7 +195,7 @@ export default function SettlementPeriodsPage() {
             >
               <div className="flex items-center justify-between gap-2">
                 <span className="text-base font-bold tabular-nums text-slate-900">{p.period}</span>
-                <span className={`rounded px-2 py-0.5 text-xs font-semibold ${STATUS_TONE[p.status] ?? 'bg-slate-100 text-slate-600'}`}>
+                <span className={`text-cjk-safe rounded px-2 py-0.5 text-xs font-semibold ${STATUS_TONE[p.status] ?? 'bg-slate-100 text-slate-600'}`}>
                   {STATUS_LABEL[p.status] ?? p.status}
                 </span>
               </div>

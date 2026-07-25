@@ -240,7 +240,7 @@ export default function ExperimentsListPage() {
                   <div className="flex-1">
                     <div className="flex items-center gap-2">
                       <p className="font-mono text-sm font-semibold text-slate-900">{exp.key}</p>
-                      <span className={`rounded px-1.5 py-0.5 text-xs font-medium ${status.cls}`}>
+                      <span className={`text-cjk-safe rounded px-1.5 py-0.5 text-xs font-medium ${status.cls}`}>
                         {status.text}
                       </span>
                     </div>
