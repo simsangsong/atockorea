@@ -13,7 +13,8 @@
 import '@/test-utils/restoreWebPrimitives';
 import { GET as listGET, POST as listPOST } from '@/app/api/admin/guides/assignments/route';
 import { PATCH as assignPATCH, DELETE as assignDELETE } from '@/app/api/admin/guides/assignments/[id]/route';
-import { PATCH as bulkPATCH, BULK_LIMIT } from '@/app/api/admin/guides/assignments/bulk/route';
+import { PATCH as bulkPATCH } from '@/app/api/admin/guides/assignments/bulk/route';
+import { ASSIGNMENT_BULK_LIMIT } from '@/lib/ops/guides/bulkLimits';
 import {
   GET as settlementsGET,
   POST as settlementsPOST,
@@ -328,7 +329,7 @@ describe('배정 일괄 전이', () => {
   it('refuses an oversized batch rather than silently truncating it', async () => {
     const { client, log } = db();
     createServerClientMock.mockReturnValue(client);
-    const ids = Array.from({ length: BULK_LIMIT + 1 }, (_, i) => `a${i}`);
+    const ids = Array.from({ length: ASSIGNMENT_BULK_LIMIT + 1 }, (_, i) => `a${i}`);
     const res = await bulkPATCH(fakeNextRequest({ body: { ids, status: 'worked' } }));
     expect(res.status).toBe(400);
     expect((await res.json()).code).toBe('too_many');

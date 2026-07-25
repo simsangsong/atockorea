@@ -4,6 +4,7 @@ import { requireAdmin, AdminAuthFailure, adminAuthJsonResponse } from '@/lib/aut
 import { sendEmail } from '@/lib/email';
 import { OPS_TENANT_ID } from '@/lib/ops/tenant';
 import { resolveRate, type GuideRateRow } from '@/lib/ops/guides/rates';
+import { ASSIGNMENT_NOTIFY_LIMIT } from '@/lib/ops/guides/bulkLimits';
 import {
   groupByGuide,
   noticeBody,
@@ -14,8 +15,6 @@ import {
 
 export const dynamic = 'force-dynamic';
 
-/** 한 번에 안내할 배정 수 상한. */
-export const NOTIFY_LIMIT = 500;
 
 /**
  * 가이드 배정 안내 메일 (손님 안내 체인의 가이드 쪽 짝).
@@ -41,9 +40,9 @@ export async function POST(req: NextRequest) {
     if (ids.length === 0) {
       return NextResponse.json({ error: '안내할 배정을 선택해 주세요.', code: 'ids_required' }, { status: 400 });
     }
-    if (ids.length > NOTIFY_LIMIT) {
+    if (ids.length > ASSIGNMENT_NOTIFY_LIMIT) {
       return NextResponse.json(
-        { error: `한 번에 ${NOTIFY_LIMIT}건까지만 안내할 수 있어요.`, code: 'too_many' },
+        { error: `한 번에 ${ASSIGNMENT_NOTIFY_LIMIT}건까지만 안내할 수 있어요.`, code: 'too_many' },
         { status: 400 },
       );
     }

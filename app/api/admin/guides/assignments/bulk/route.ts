@@ -4,11 +4,10 @@ import { requireAdmin, AdminAuthFailure, adminAuthJsonResponse } from '@/lib/aut
 import { OPS_TENANT_ID } from '@/lib/ops/tenant';
 import { ASSIGNMENT_STATUSES, type AssignmentStatus } from '@/lib/ops/tax/assignments';
 import { blockCodeFromDbError, blockMessage } from '@/lib/ops/guides/conflicts';
+import { ASSIGNMENT_BULK_LIMIT } from '@/lib/ops/guides/bulkLimits';
 
 export const dynamic = 'force-dynamic';
 
-/** 한 번에 처리하는 배정 수 상한. 화면이 한 달치를 다 보여줘도 넉넉하다. */
-export const BULK_LIMIT = 500;
 
 /**
  * 배정 상태 일괄 변경 (관제 W7).
@@ -48,10 +47,10 @@ export async function PATCH(req: NextRequest) {
     if (ids.length === 0) {
       return NextResponse.json({ error: '변경할 배정을 선택해 주세요.', code: 'ids_required' }, { status: 400 });
     }
-    if (ids.length > BULK_LIMIT) {
+    if (ids.length > ASSIGNMENT_BULK_LIMIT) {
       // 잘라내고 성공했다고 하면 나머지가 조용히 빠진다.
       return NextResponse.json(
-        { error: `한 번에 ${BULK_LIMIT}건까지만 바꿀 수 있어요. 나눠서 진행해 주세요.`, code: 'too_many' },
+        { error: `한 번에 ${ASSIGNMENT_BULK_LIMIT}건까지만 바꿀 수 있어요. 나눠서 진행해 주세요.`, code: 'too_many' },
         { status: 400 },
       );
     }

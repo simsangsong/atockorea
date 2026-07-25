@@ -195,3 +195,35 @@ export const SKIP_REASON_LABEL: Record<BulkPlan['skipped'][number]['reason'], st
   no_email: '이메일 주소 없음',
   missing_vars: '링크 등 필수 항목이 비어 있음',
 };
+
+/**
+ * 프리셋별 기본 이메일 제목. 투어명이 있으면 붙인다.
+ *
+ * 🔴 라우트 파일이 아니라 여기 사는 이유: Next 라우트 모듈은 **핸들러와 정해진
+ * 설정 값 외의 export를 금지**한다(`next build`가 거절한다. `tsc --noEmit`은
+ * 잡지 못하므로 빌드까지 돌려야 드러난다).
+ */
+export function defaultEmailSubject(preset: string, tourName: string | null): string {
+  const suffix = tourName ? ` — ${tourName}` : '';
+  switch (preset) {
+    case 'confirm_d7':
+      return `Your booking is confirmed${suffix}`;
+    case 'pickup_d1':
+      return `Tomorrow's pickup details${suffix}`;
+    case 'room_invite':
+      return `Your tour room link${suffix}`;
+    case 'day_pass':
+      return `Today's tour — meeting point${suffix}`;
+    case 'thanks':
+      return `Thank you for travelling with us${suffix}`;
+    default:
+      return `AtoC Korea${suffix}`;
+  }
+}
+
+/** 평문 본문 → 최소 HTML. 링크만 클릭 가능하게 만들고 나머지는 그대로 둔다. */
+export function plainTextToEmailHtml(text: string): string {
+  const escaped = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  const linked = escaped.replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" style="color:#2563eb">$1</a>');
+  return `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:15px;line-height:1.7;color:#111827;white-space:pre-wrap">${linked}</div>`;
+}

@@ -9,7 +9,9 @@ import { WA_PRESET_KEYS, type WaPresetKey } from '@/lib/ops/whatsapp/presets';
 import {
   composeForRecipient,
   isMessageChannel,
+  defaultEmailSubject,
   planBulkEmail,
+  plainTextToEmailHtml,
   type MessageChannel,
   type RecipientInput,
 } from '@/lib/ops/messaging/guestMessage';
@@ -173,7 +175,7 @@ export async function GET(req: NextRequest) {
         passLink: previewLink,
       };
       const composed = composeForRecipient(
-        { body: tpl.body, subject: tpl.subject ?? defaultSubject(preset, tour?.title ?? null) },
+        { body: tpl.body, subject: tpl.subject ?? defaultEmailSubject(preset, tour?.title ?? null) },
         input,
         { tourName: tour?.title ?? null, tourDate: date, operatorName: 'AtoC Korea', forecast },
       );
@@ -203,25 +205,6 @@ export async function GET(req: NextRequest) {
     const msg = e instanceof Error ? e.message : String(e);
     console.error('[GET /api/admin/tour-ops/manifest/bulk-message]', msg);
     return NextResponse.json({ error: 'Internal server error', details: msg }, { status: 500 });
-  }
-}
-
-/** 프리셋별 기본 이메일 제목. 투어명이 있으면 붙인다. */
-export function defaultSubject(preset: WaPresetKey, tourName: string | null): string {
-  const suffix = tourName ? ` — ${tourName}` : '';
-  switch (preset) {
-    case 'confirm_d7':
-      return `Your booking is confirmed${suffix}`;
-    case 'pickup_d1':
-      return `Tomorrow's pickup details${suffix}`;
-    case 'room_invite':
-      return `Your tour room link${suffix}`;
-    case 'day_pass':
-      return `Today's tour — meeting point${suffix}`;
-    case 'thanks':
-      return `Thank you for travelling with us${suffix}`;
-    default:
-      return `AtoC Korea${suffix}`;
   }
 }
 
@@ -299,7 +282,7 @@ export async function POST(req: NextRequest) {
         await sendEmail({
           to: recipient.email!,
           subject: message.subject ?? editedSubject,
-          html: toHtml(message.body),
+          html: plainTextToEmailHtml(message.body),
           text: message.body,
         });
         sent += 1;
@@ -376,15 +359,3 @@ export async function POST(req: NextRequest) {
   }
 }
 
-/** 평문 본문 → 최소 HTML. 링크만 클릭 가능하게 만들고 나머지는 그대로 둔다. */
-export function toHtml(text: string): string {
-  const escaped = text
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;');
-  const linked = escaped.replace(
-    /(https?:\/\/[^\s<]+)/g,
-    '<a href="$1" style="color:#2563eb">$1</a>',
-  );
-  return `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:15px;line-height:1.7;color:#111827;white-space:pre-wrap">${linked}</div>`;
-}
