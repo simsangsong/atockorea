@@ -121,13 +121,17 @@ export default function FilingCalendarPage() {
       ) : null}
 
       <div className="overflow-hidden rounded-xl border border-slate-200 bg-white">
-        <table className="w-full text-left text-sm">
+        {/* P1-5 — this table had NEITHER a scroller NOR a min-w, so on a phone
+            the 상태 column collapsed to ~18px and "준비 전" / "보류 / 해당 없음"
+            rendered one glyph per line. CSS alone cannot fix an 18px column. */}
+        <div className="overflow-x-auto">
+        <table className="w-full min-w-[620px] text-left text-sm">
           <thead className="border-b border-slate-200 bg-slate-50 text-xs font-semibold uppercase tracking-wide text-slate-500">
             <tr>
-              <th className="px-3 py-2.5">기한</th>
-              <th className="px-3 py-2.5">법인</th>
-              <th className="px-3 py-2.5">신고 항목</th>
-              <th className="px-3 py-2.5">상태</th>
+              <th className="text-cjk-safe px-3 py-2.5">기한</th>
+              <th className="text-cjk-safe px-3 py-2.5">법인</th>
+              <th className="text-cjk-safe px-3 py-2.5">신고 항목</th>
+              <th className="text-cjk-safe px-3 py-2.5">상태</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-100">
@@ -152,7 +156,7 @@ export default function FilingCalendarPage() {
                       {f.note ? <p className="mt-0.5 text-xs text-slate-500">{f.note}</p> : null}
                     </td>
                     <td className="px-3 py-2.5">
-                      <span className={`rounded px-2 py-0.5 text-xs font-semibold ${STATUS_TONE[f.status] ?? ''}`}>
+                      <span className={`text-cjk-safe inline-block rounded px-2 py-0.5 text-xs font-semibold ${STATUS_TONE[f.status] ?? ''}`}>
                         {STATUS_LABEL[f.status] ?? f.status}
                       </span>
                     </td>
@@ -162,6 +166,7 @@ export default function FilingCalendarPage() {
             )}
           </tbody>
         </table>
+        </div>
       </div>
     </div>
   );

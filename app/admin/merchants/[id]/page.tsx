@@ -290,7 +290,7 @@ export default function MerchantDetailPage() {
         <h2 className="mb-4 text-base font-semibold text-slate-900">등록 투어 ({merchant.tours?.length || 0})</h2>
         {merchant.tours && merchant.tours.length > 0 ? (
           <div className="overflow-x-auto">
-            <table className="w-full">
+            <table className="w-full min-w-[640px]">
               <thead className="border-b border-admin-border bg-slate-50">
                 <tr>
                   {['투어', '도시', '가격', '상태', '등록일'].map((h) => (

@@ -46,7 +46,9 @@ export function DataTable<T>({
           className,
         )}
       >
-        <table className="w-full text-sm">
+        {/* P1-5 — min-w makes the overflow-x-auto wrapper actually engage; with
+            w-full alone the columns squeeze and CJK headers stack vertically. */}
+        <table className="w-full min-w-[720px] text-sm">
           <thead>
             <tr className="border-b border-admin-border-strong bg-admin-surface-hover text-left">
               {columns.map((c) => (

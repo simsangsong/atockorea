@@ -1239,6 +1239,33 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     font-feature-settings: "tnum" 1, "kern" 1;
   }
   /*
+   * 🔴 CJK safety net (P1-5). Korean/Chinese have no spaces, so the CSS default
+   * (word-break: normal) is free to break between ANY two characters — in a
+   * squeezed table header, a flex-1 tab or a badge that renders one glyph per
+   * line (빈민 / 유형 / 준비전 stacked vertically).
+   *
+   * An audit counted 288 at-risk elements across 69 admin files; per-file
+   * classes had reached 7 of them. Labels are a closed set of element types, so
+   * the honest fix is here, once.
+   *
+   * `keep-all` suppresses soft-wrap opportunities only INSIDE CJK runs — ASCII
+   * is unaffected, so URLs and IDs behave exactly as before. `overflow-wrap:
+   * break-word` is the companion escape hatch: a single unbreakable run still
+   * wraps rather than overflowing its column.
+   *
+   * Deliberately NOT included:
+   *   - `white-space: nowrap` — full-row buttons ("승인 (기존 기기 폐기)",
+   *     "🆘 활성 SOS N건 — 지금 확인") legitimately wrap onto two lines.
+   *   - `td`, `p`, `div` — long unspaced Korean prose in a narrow cell needs to
+   *     keep breaking; those get `.text-cjk-body` per element instead.
+   * This lives in @layer base, so any explicit break-all/break-words utility on
+   * an individual element still wins.
+   */
+  .admin-root :is(button, th, label, dt, summary, [role='tab']) {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+  /*
    * iOS zoom guard (W1.4 / spec §6.1): iOS Safari auto-zooms any focused field
    * whose font is below 16px. Floor inputs at 16px on mobile only — desktop keeps
    * Tailwind density. The .admin-root selector has enough specificity to override

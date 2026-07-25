@@ -458,7 +458,7 @@ export default function OrdersPage() {
                 {/* Desktop: full table. Hidden on mobile where 9 columns can't fit. */}
                 <div className="hidden overflow-hidden rounded-design-md border border-admin-border bg-admin-surface shadow-admin-card md:block">
                   <div className="overflow-x-auto">
-                    <table className="w-full">
+                    <table className="w-full min-w-[900px]">
                       <thead className="border-b border-admin-border bg-slate-50">
                         <tr>
                           <th className="w-px px-5 py-3" />
