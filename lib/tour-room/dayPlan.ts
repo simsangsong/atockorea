@@ -38,13 +38,22 @@ export type ScheduleSource =
  * P0-5 — room locale → `tour_product_pages.locale`.
  * zh-CN rows are stored as "zh" (same convention as the product detail route).
  */
+/**
+ * The locales `tour_product_pages` actually holds content for. NOT the room
+ * locale list — it carries zh-TW separately, and the two lists are free to
+ * diverge (§A4.1: two copies of a list that disagree are worse than one list).
+ * Derived checks below reference this constant rather than repeating it.
+ */
+const PRODUCT_PAGE_LOCALES = ['en', 'ko', 'ja', 'es', 'zh', 'zh-TW'] as const;
+
 function productPageLocale(locale?: string | null): string | null {
   const wanted = (locale ?? '').trim();
   if (!wanted) return null;
   if (wanted === 'zh-CN') return 'zh';
-  if (['en', 'ko', 'ja', 'es', 'zh', 'zh-TW'].includes(wanted)) return wanted;
+  const known = PRODUCT_PAGE_LOCALES as readonly string[];
+  if (known.includes(wanted)) return wanted;
   const base = wanted.split('-')[0];
-  return ['en', 'ko', 'ja', 'es', 'zh'].includes(base) ? base : null;
+  return known.includes(base) ? base : null;
 }
 
 interface ProductItineraryStop {
