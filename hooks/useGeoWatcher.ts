@@ -14,7 +14,7 @@
  */
 
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { shouldPublishPing, type GeoSample, type LatLng } from '@/lib/tour-room/geo';
+import { isAccurateEnough, shouldPublishPing, type GeoSample, type LatLng } from '@/lib/tour-room/geo';
 
 export const PING_INTERVAL_MS = 15_000;
 
@@ -22,6 +22,15 @@ export type GeoWatcherStatus = 'idle' | 'watching' | 'denied' | 'unsupported' | 
 
 export interface UseGeoWatcher {
   status: GeoWatcherStatus;
+  /**
+   * When the server last accepted a position. `null` while the watcher is
+   * running but nothing has been published yet — samples coarser than
+   * MAX_ACCURACY_M are dropped silently (geo.ts), so 'watching' alone was
+   * telling the operator "공유 중" while the room received nothing.
+   */
+  lastPublishedAtMs: number | null;
+  /** True when the only reason nothing is published is sample accuracy. */
+  accuracyBlocked: boolean;
   lastPosition: (LatLng & { accuracyM: number | null; heading: number | null; speedMps: number | null }) | null;
   /** Explicit opt-out: stops the watch and clears the server snapshot. */
   stopSharing: () => Promise<void>;
@@ -39,6 +48,8 @@ export function useGeoWatcher(options: {
   onSampleRef.current = options.onSample;
   const [status, setStatus] = useState<GeoWatcherStatus>('idle');
   const [lastPosition, setLastPosition] = useState<UseGeoWatcher['lastPosition']>(null);
+  const [lastPublishedAtMs, setLastPublishedAtMs] = useState<number | null>(null);
+  const [accuracyBlocked, setAccuracyBlocked] = useState(false);
   const publishedRef = useRef<{ publishedAtMs: number; position: LatLng } | null>(null);
   const watchIdRef = useRef<number | null>(null);
 
@@ -46,6 +57,9 @@ export function useGeoWatcher(options: {
 
   const publish = useCallback(
     (sample: GeoSample & { heading: number | null }) => {
+      // Distinguish "too coarse to publish" from "throttled" — the first is a
+      // state the operator must be told about, the second is normal.
+      setAccuracyBlocked(!isAccurateEnough(sample));
       if (!shouldPublishPing(publishedRef.current, sample, PING_INTERVAL_MS)) return;
       publishedRef.current = { publishedAtMs: sample.timestampMs, position: sample };
       void fetch(endpoint, {
@@ -58,7 +72,11 @@ export function useGeoWatcher(options: {
           heading: sample.heading ?? undefined,
           speedMps: sample.speedMps ?? undefined,
         }),
-      }).catch(() => undefined);
+      })
+        .then((res) => {
+          if (res.ok) setLastPublishedAtMs(Date.now());
+        })
+        .catch(() => undefined);
     },
     [endpoint, roomSession],
   );
@@ -110,6 +128,8 @@ export function useGeoWatcher(options: {
     if (!enabled) {
       stopWatch();
       setStatus('idle');
+      setLastPublishedAtMs(null);
+      setAccuracyBlocked(false);
       return;
     }
     if (status === 'denied') return; // terminal — the toggle UI guides to settings
@@ -140,5 +160,5 @@ export function useGeoWatcher(options: {
     }
   }, [endpoint, roomSession, stopWatch]);
 
-  return { status, lastPosition, stopSharing };
+  return { status, lastPosition, lastPublishedAtMs, accuracyBlocked, stopSharing };
 }

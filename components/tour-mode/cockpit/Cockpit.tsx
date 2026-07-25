@@ -426,7 +426,7 @@ export default function Cockpit({
       /* private-mode storage — the toggle just starts OFF */
     }
   }, [bookingId]);
-  const { status: geoStatus, stopSharing } = useGeoWatcher({
+  const { status: geoStatus, lastPublishedAtMs, accuracyBlocked, stopSharing } = useGeoWatcher({
     bookingId,
     roomSession: session,
     enabled: shareLocation,
@@ -741,20 +741,40 @@ export default function Cockpit({
     [bookingId, session, say],
   );
 
+  /**
+   * 주차핀 — the one-shot fix used to be `{enableHighAccuracy: true,
+   * timeout: 8000}` with no maximumAge, i.e. a cold high-accuracy lock in 8s.
+   * A parking garage is exactly where that times out, and the failure path sent
+   * NOTHING while blaming permissions for every error code. Live DB: zero
+   * parking pins have ever been created.
+   *
+   * Now: accept a recent cached fix, then retry coarse (a rough pin next to the
+   * van beats no pin), and say what actually went wrong.
+   */
   const dropParkingPin = useCallback(() => {
     if (!navigator.geolocation) {
       say('이 기기에서 위치를 사용할 수 없어요');
       return;
     }
-    navigator.geolocation.getCurrentPosition(
-      (position) =>
-        void signal(
-          { type: 'parking_pin', lat: position.coords.latitude, lng: position.coords.longitude },
-          '주차 위치 공유 완료 ✓',
-        ),
-      () => say('위치 권한을 허용해 주세요'),
-      { enableHighAccuracy: true, timeout: 8000 },
-    );
+    const send = (position: GeolocationPosition) =>
+      void signal(
+        { type: 'parking_pin', lat: position.coords.latitude, lng: position.coords.longitude },
+        '주차 위치 공유 완료 ✓',
+      );
+    const explain = (error: GeolocationPositionError) => {
+      if (error.code === error.PERMISSION_DENIED) say('위치 권한을 허용해 주세요 (설정 > 위치)');
+      else if (error.code === error.TIMEOUT) say('위치를 못 잡았어요 — 실외로 나가서 다시 눌러주세요');
+      else say('지금 위치를 확인할 수 없어요 — 잠시 후 다시 시도해 주세요');
+    };
+    say('주차 위치 확인 중…');
+    navigator.geolocation.getCurrentPosition(send, () => {
+      // Second attempt: coarse network fix, longer window, cached fix allowed.
+      navigator.geolocation.getCurrentPosition(send, explain, {
+        enableHighAccuracy: false,
+        timeout: 15000,
+        maximumAge: 120000,
+      });
+    }, { enableHighAccuracy: true, timeout: 8000, maximumAge: 30000 });
   }, [signal, say]);
 
   // 차량 도착 (vehicle_arrived) — pickup or after free time. Adds a GPS pin when
@@ -1174,6 +1194,12 @@ export default function Cockpit({
   const recent = messages.slice(chatExpanded ? -80 : -8);
 
   // C1 — one glanceable word for the sharing state (denial is terminal).
+  // 🔴 'watching' only means the device is emitting samples. Anything coarser
+  // than MAX_ACCURACY_M is dropped before the POST, so the button used to read
+  // "공유 중" with a green dot while the room received nothing at all — the
+  // worst kind of failure, one that looks like success. Say "공유 중" only once
+  // the server has actually accepted a position.
+  const sharingLive = shareLocation && geoStatus === 'watching' && lastPublishedAtMs !== null;
   const shareLabel = !shareLocation
     ? '위치공유'
     : geoStatus === 'denied'
@@ -1182,9 +1208,11 @@ export default function Cockpit({
         ? '사용 불가'
         : geoStatus === 'error'
           ? '오류'
-          : geoStatus === 'watching'
+          : sharingLive
             ? '공유 중'
-            : '켜는 중…';
+            : geoStatus === 'watching'
+              ? (accuracyBlocked ? '신호 약함' : '위치 잡는 중…')
+              : '켜는 중…';
 
   return (
     <Screen>
@@ -1642,11 +1670,11 @@ export default function Cockpit({
           onClick={toggleShareLocation}
           aria-pressed={shareLocation}
           className={`tr-btn-flat relative flex min-h-[52px] flex-col items-center justify-center gap-0.5 rounded-2xl py-2 ${
-            shareLocation && geoStatus === 'watching' ? 'text-[var(--tr-safe)]' : 'text-[var(--tr-ink)]'
+            sharingLive ? 'text-[var(--tr-safe)]' : 'text-[var(--tr-ink)]'
           }`}
           data-testid="driver-action-location-share"
         >
-          {shareLocation && geoStatus === 'watching' ? (
+          {sharingLive ? (
             <span
               className="absolute right-2 top-2 h-2 w-2 rounded-full bg-[var(--tr-safe)]"
               data-testid="driver-share-dot"

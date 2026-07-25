@@ -145,8 +145,13 @@ export default function RoomMapTab({
     };
   }, [sharing]);
 
+  // The operator a guest follows may be a guide OR a driver — on a driver-run
+  // tour the guest previously had no follow target and no FindGuideCard at all,
+  // because this only ever looked for 'guide'.
   const guideLocation =
-    Object.values(locations).find((location) => location.role === 'guide') ?? null;
+    Object.values(locations).find((location) => location.role === 'guide') ??
+    Object.values(locations).find((location) => location.role === 'driver') ??
+    null;
 
   // P1-1 — an operator follows the guests; only a guest follows the guide.
   const isOperator = isOperatorRole(viewerRole);
