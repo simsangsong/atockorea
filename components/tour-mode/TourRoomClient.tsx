@@ -59,7 +59,9 @@ import InstallBanner from '@/components/tour-mode/InstallBanner';
 import { detectEntryLocale, ENTRY_COPY } from '@/components/tour-mode/entryCopy';
 import { GUEST_CREDS_STORAGE_PREFIX } from '@/components/tour-mode/TourModeEntry';
 import { decodeTokenBody, storePersonalToken } from '@/lib/ops/seating/personalTokens';
-import { IconLost, IconRetry } from '@/components/tour-mode/icons';
+import { IconEmergency, IconHighlight, IconLost, IconRetry } from '@/components/tour-mode/icons';
+import { CONCIERGE_COPY } from '@/lib/tour-room/concierge';
+import { EMERGENCY_TITLE } from '@/lib/tour-room/emergency';
 import { ROOM_LOCALES } from '@/lib/tour-room/snapshot';
 
 /**
@@ -1130,6 +1132,31 @@ function TourRoomLive({
               replyTo={replyTo ? buildReplySnapshot(replyTo) : null}
               onCancelReply={() => setReplyTo(null)}
               onTyping={sendTyping}
+              /* C — 손님 트레이. 콕핏의 "+" 트레이와 같은 자리에 손님도 스마트가이드와
+                 긴급을 갖는다. 둘 다 **셸이 소유한 시트를 여는 것**이지 새 흐름이
+                 아니다 — 긴급 동작이 두 벌이 되면 그중 하나는 반드시 썩는다.
+                 스마트가이드 진입 줄(ConciergeEntryRow)은 그대로 둔다: 스크롤로
+                 밀려나도 트레이에는 항상 있고, 트레이를 모르는 손님에게는 줄이 남는다. */
+              extraActions={
+                viewerRole === 'customer'
+                  ? [
+                      {
+                        key: 'smart-guide',
+                        label: CONCIERGE_COPY[locale].title,
+                        Icon: IconHighlight,
+                        tone: 'amber' as const,
+                        onClick: chatApi.openConcierge,
+                      },
+                      {
+                        key: 'emergency',
+                        label: EMERGENCY_TITLE[locale],
+                        Icon: IconEmergency,
+                        tone: 'rose' as const,
+                        onClick: chatApi.openEmergency,
+                      },
+                    ]
+                  : undefined
+              }
             />
           )}
         </div>

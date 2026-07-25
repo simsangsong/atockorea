@@ -127,6 +127,12 @@ export interface RoomShellHomeApi {
  */
 export interface RoomShellChatApi {
   openConcierge: () => void;
+  /**
+   * C — the composer's "+" tray reaches the emergency sheet (SOS + contacts).
+   * The sheet stays shell-owned: duplicating the SOS flow into the tray would
+   * give an emergency two code paths, and one of them would rot.
+   */
+  openEmergency: () => void;
 }
 
 interface ScheduleItem {
@@ -537,7 +543,15 @@ export default function RoomShell({
               </div>
             )}
             {tab === 'chat' &&
-              (typeof chat === 'function' ? chat({ openConcierge: () => setConciergeOpen(true) }) : chat)}
+              (typeof chat === 'function'
+                ? chat({
+                    // 공용 opener 를 쓴다. 예전에는 여기서 setConciergeOpen(true)를
+                    // 직접 불러 첫 방문 펄스와 seen 키가 갱신되지 않았고, 그래서
+                    // 채팅에서 스마트가이드를 열어도 헤더 버튼은 계속 반짝였다.
+                    openConcierge,
+                    openEmergency: () => setEmergencyOpen(true),
+                  })
+                : chat)}
             {tab === 'map' && (
               <div className="tr-anim-panel-in flex min-h-0 flex-1 flex-col px-3 py-2">
                 {map ?? (
