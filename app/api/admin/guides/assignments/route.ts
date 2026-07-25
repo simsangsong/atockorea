@@ -10,6 +10,8 @@ import {
   periodDateBounds,
   type AssignmentRow,
 } from '@/lib/ops/tax/assignments';
+import { blockCodeFromDbError, blockMessage, detectAssignmentConflicts } from '@/lib/ops/guides/conflicts';
+import { loadConflictContext, normalizeTime } from '@/lib/ops/guides/conflictContext';
 
 export const dynamic = 'force-dynamic';
 
@@ -106,9 +108,21 @@ export async function GET(req: NextRequest) {
   }
 }
 
+/**
+ * W2 — 배정 저장(또는 `?dryRun=1` 이면 판정만).
+ *
+ * 응답 계약:
+ *   201 { data, warnings }        저장됨. 경고는 사람이 봐야 하는 사실.
+ *   409 { blocked, warnings, ... } 저장 거부. `overridable`이 true인 항목은
+ *                                  `conflictOverride` + `conflictOverrideReason`으로 통과 가능.
+ *   200 { dryRun:true, blocked, warnings } 판정만(저장 없음).
+ *
+ * 검증이 두 겹인 이유: 여기의 판정은 **경고까지 만들 수 있고** DB 트리거는
+ * **동시 편집에서도 뚫리지 않는다.** 둘 중 하나만으로는 부족하다.
+ */
 export async function POST(req: NextRequest) {
   try {
-    await requireAdmin(req);
+    const admin = await requireAdmin(req);
     const body = (await req.json().catch(() => null)) as Record<string, unknown> | null;
     if (!body) return NextResponse.json({ error: 'Invalid JSON body' }, { status: 400 });
 
@@ -118,17 +132,71 @@ export async function POST(req: NextRequest) {
     }
 
     const supabase = createServerClient();
+    const override = body.conflictOverride === true || body.conflict_override === true;
+    const overrideReason =
+      typeof body.conflictOverrideReason === 'string'
+        ? body.conflictOverrideReason.trim()
+        : typeof body.conflict_override_reason === 'string'
+          ? (body.conflict_override_reason as string).trim()
+          : '';
+
+    if (override && !overrideReason) {
+      // DB CHECK도 막지만, 사람에게는 "왜 막혔는지"가 필요하다.
+      return NextResponse.json(
+        { error: '충돌을 무시하고 배정하려면 사유를 적어 주세요.', code: 'override_reason_required' },
+        { status: 400 },
+      );
+    }
+
+    const candidate = {
+      guideId: built.fields.guide_id as string,
+      tourDate: built.fields.tour_date as string,
+      tourType: built.fields.tour_type as string,
+      bookingId: (built.fields.booking_id as string | null) ?? null,
+      startTime: normalizeTime(body.startTime ?? body.start_time),
+      endTime: normalizeTime(body.endTime ?? body.end_time),
+      status: (built.fields.status as string) ?? 'planned',
+      conflictOverride: override,
+    };
+
+    const { context, resolvedTimes } = await loadConflictContext(supabase, candidate, {
+      amountKrw: (built.fields.amount_krw as number | null) ?? null,
+    });
+    const verdict = detectAssignmentConflicts({ ...candidate, ...resolvedTimes }, context);
+
+    if (req.nextUrl.searchParams.get('dryRun') === '1') {
+      return NextResponse.json({ dryRun: true, ...verdict, resolvedTimes });
+    }
+    if (verdict.blocked.length > 0) {
+      return NextResponse.json({ error: verdict.blocked[0].message, ...verdict }, { status: 409 });
+    }
+
     const { data, error } = await supabase
       .from('ops_guide_assignments')
-      .insert({ tenant_id: GUIDES_TENANT_ID, ...built.fields })
+      .insert({
+        tenant_id: GUIDES_TENANT_ID,
+        ...built.fields,
+        start_time: resolvedTimes.startTime,
+        end_time: resolvedTimes.endTime,
+        assigned_by: admin.email,
+        assigned_at: new Date().toISOString(),
+        conflict_override: override,
+        conflict_override_reason: override ? overrideReason : null,
+      })
       .select(ASSIGNMENT_SELECT_COLUMNS)
       .single();
 
     if (error) {
-      // UNIQUE(guide_id, tour_date, booking_id) — 같은 예약에 같은 사람을 두 번.
-      if (/duplicate key|unique/i.test(error.message ?? '')) {
+      // DB가 최종 방어선에서 잡아낸 경우 — 위 판정과 저장 사이의 동시 편집.
+      const code = blockCodeFromDbError(error.message);
+      if (code) {
         return NextResponse.json(
-          { error: '이 가이드는 그 날짜의 같은 예약에 이미 배정되어 있어요.', code: 'duplicate' },
+          {
+            error: blockMessage(code),
+            blocked: [{ code, message: blockMessage(code), overridable: code !== 'guide_inactive' && code !== 'duplicate_slot' }],
+            warnings: verdict.warnings,
+            source: 'db',
+          },
           { status: 409 },
         );
       }
@@ -136,7 +204,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: '배정을 저장하지 못했습니다', details: error.message }, { status: 500 });
     }
 
-    return NextResponse.json({ data }, { status: 201 });
+    return NextResponse.json({ data, warnings: verdict.warnings }, { status: 201 });
   } catch (e) {
     if (e instanceof AdminAuthFailure) return adminAuthJsonResponse(e);
     const msg = e instanceof Error ? e.message : String(e);

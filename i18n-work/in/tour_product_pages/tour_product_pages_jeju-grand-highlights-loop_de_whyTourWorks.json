@@ -1,0 +1,115 @@
+{
+  "unitId": "tour_product_pages:jeju-grand-highlights-loop:de:whyTourWorks",
+  "surface": "tour_product_pages",
+  "slug": "jeju-grand-highlights-loop",
+  "locale": "de",
+  "chunk": "whyTourWorks",
+  "tier": "A2",
+  "segments": {
+    "/whyTourWorks/bestFor/0": {
+      "source_en": "Travelers who only have one day in Jeju"
+    },
+    "/whyTourWorks/bestFor/1": {
+      "source_en": "First-time visitors who want the island's UNESCO sites"
+    },
+    "/whyTourWorks/bestFor/2": {
+      "source_en": "Travelers who want iconic landmarks and local culture together"
+    },
+    "/whyTourWorks/bestFor/3": {
+      "source_en": "Travelers who enjoy active, full-day sightseeing"
+    },
+    "/whyTourWorks/lessIdealFor/0": {
+      "source_en": "Travelers who prefer a slow, relaxed pace"
+    },
+    "/whyTourWorks/lessIdealFor/1": {
+      "source_en": "Travelers who want to avoid stairs or uphill walking"
+    },
+    "/whyTourWorks/lessIdealFor/2": {
+      "source_en": "Groups traveling with very young children"
+    },
+    "/whyTourWorks/lessIdealFor/3": {
+      "source_en": "Guests who are uncomfortable in cool, dim cave passages"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/0/label": {
+      "source_en": "Open on the Hallasan highland"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/0/detail": {
+      "source_en": "Starting at the 1,100 m alpine wetland sets the day against Jeju's mountain core before the long cross-island drive begins."
+    },
+    "/whyTourWorks/routeLogicSections/0/items/1/label": {
+      "source_en": "Keep the south coast in the middle"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/1/detail": {
+      "source_en": "Jusangjeolli, Jeongbang and lunch hold the west-to-east flow together while keeping the visual density high through midday."
+    },
+    "/whyTourWorks/routeLogicSections/0/items/2/label": {
+      "source_en": "Finish in the east with crater and cave"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/2/detail": {
+      "source_en": "Haenyeo culture, the Seongsan climb and the ⟦G0⟧ turn the eastern leg into a strong UNESCO finale rather than a string of separate stops.",
+      "glossary": [
+        "⟦G0⟧ = Manjanggul Lava Tube"
+      ]
+    },
+    "/whyTourWorks/routeLogicSections/0/title": {
+      "source_en": "Built to cover Jeju's best in one day"
+    },
+    "/whyTourWorks/routeLogicSections/0/iconBg": {
+      "source_en": "bg-amber-50/80"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/0/label": {
+      "source_en": "Three UNESCO World Heritage sites"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/0/detail": {
+      "source_en": "Hallasan, ⟦G0⟧ and Manjanggul are all part of Jeju's UNESCO inscription — the highest UNESCO density possible in a single Jeju day.",
+      "glossary": [
+        "⟦G0⟧ = Seongsan Ilchulbong"
+      ]
+    },
+    "/whyTourWorks/routeLogicSections/1/items/1/label": {
+      "source_en": "A living cultural layer"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/1/detail": {
+      "source_en": "The haenyeo free-diving show adds UNESCO Intangible Cultural Heritage to a day otherwise built on volcanic landforms."
+    },
+    "/whyTourWorks/routeLogicSections/1/items/2/label": {
+      "source_en": "Maximum value for the time"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/2/detail": {
+      "source_en": "Mountain, cliffs, waterfall, culture, crater and cave in one circuit — designed so a single day still feels like a complete Jeju trip."
+    },
+    "/whyTourWorks/routeLogicSections/1/title": {
+      "source_en": "Why this day feels especially substantial"
+    },
+    "/whyTourWorks/routeLogicSections/1/iconBg": {
+      "source_en": "bg-sky-50/80"
+    },
+    "/whyTourWorks/routeLogicSections/2/items/0/label": {
+      "source_en": "Haenyeo show is weather-dependent"
+    },
+    "/whyTourWorks/routeLogicSections/2/items/0/detail": {
+      "source_en": "The open-air free-diving demonstration can be cancelled in high seas; on those days the route visits the Haenyeo Museum instead."
+    },
+    "/whyTourWorks/routeLogicSections/2/items/1/label": {
+      "source_en": "Manjanggul has periodic closures"
+    },
+    "/whyTourWorks/routeLogicSections/2/items/1/detail": {
+      "source_en": "If the lava tube is closed for conservation or capacity, the nearby Ilchul Land Micheon Cave lava tube is used as the alternate."
+    },
+    "/whyTourWorks/routeLogicSections/2/items/2/label": {
+      "source_en": "Return time may shift slightly"
+    },
+    "/whyTourWorks/routeLogicSections/2/items/2/detail": {
+      "source_en": "Traffic, group walking speed and crowd levels can all cause small changes to the final return time."
+    },
+    "/whyTourWorks/routeLogicSections/2/title": {
+      "source_en": "When on-site conditions change"
+    },
+    "/whyTourWorks/routeLogicSections/2/iconBg": {
+      "source_en": "bg-slate-50/80"
+    }
+  },
+  "glossaryTokens": {
+    "⟦G0⟧": "Seongsan Ilchulbong"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "unitId": "tour_product_pages:jeju-grand-highlights-loop:de:practicalWeatherStatic",
+  "surface": "tour_product_pages",
+  "slug": "jeju-grand-highlights-loop",
+  "locale": "de",
+  "chunk": "practicalWeatherStatic",
+  "tier": "A2",
+  "segments": {
+    "/practicalWeatherStatic/today/label": {
+      "source_en": "Live weather integration"
+    },
+    "/practicalWeatherStatic/tomorrow/label": {
+      "source_en": "Updated daily"
+    },
+    "/practicalWeatherStatic/_seasonalSummary": {
+      "source_en": "A full-island loop covering east, south, and west Jeju in one day. Weather can vary between regions — coastal stops mild year-round, but inland transit can be cooler and windier."
+    },
+    "/practicalWeatherStatic/_seasonalTemperatures/0/notes": {
+      "source_en": "Cherry blossoms on east coast in early April; mild driving conditions."
+    },
+    "/practicalWeatherStatic/_seasonalTemperatures/0/range": {
+      "source_en": "8–22°C"
+    },
+    "/practicalWeatherStatic/_seasonalTemperatures/0/season": {
+      "source_en": "Spring (Mar–May)"
+    },
+    "/practicalWeatherStatic/_seasonalTemperatures/1/notes": {
+      "source_en": "Hot but humidity moderated by coastal driving. ⟦G0⟧ at peak flow.",
+      "glossary": [
+        "⟦G0⟧ = Cheonjiyeon Falls"
+      ]
+    },
+    "/practicalWeatherStatic/_seasonalTemperatures/1/range": {
+      "source_en": "22–30°C"
+    },
+    "/practicalWeatherStatic/_seasonalTemperatures/1/season": {
+      "source_en": "Summer (Jun–Aug)"
+    },
+    "/practicalWeatherStatic/_seasonalTemperatures/2/notes": {
+      "source_en": "Best season — clearest visibility across all stops, comfortable walking temps."
+    },
+    "/practicalWeatherStatic/_seasonalTemperatures/2/range": {
+      "source_en": "10–24°C"
+    },
+    "/practicalWeatherStatic/_seasonalTemperatures/2/season": {
+      "source_en": "Autumn (Sep–Nov)"
+    },
+    "/practicalWeatherStatic/_seasonalTemperatures/3/notes": {
+      "source_en": "Wind chill significant at Seongsan rim and Jusangjeolli cliffs. Fewer crowds at all stops."
+    },
+    "/practicalWeatherStatic/_seasonalTemperatures/3/range": {
+      "source_en": "3–10°C"
+    },
+    "/practicalWeatherStatic/_seasonalTemperatures/3/season": {
+      "source_en": "Winter (Dec–Feb)"
+    }
+  },
+  "glossaryTokens": {
+    "⟦G0⟧": "Cheonjiyeon Falls"
+  }
+}

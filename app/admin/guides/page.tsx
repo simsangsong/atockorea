@@ -35,7 +35,15 @@ import { kstToday } from '@/lib/ops/guides/availability';
 import GuideProfileForm, { emptyForm, formFromRow, type GuideFormValue } from './_components/GuideProfileForm';
 import GuideRatesPanel from './_components/GuideRatesPanel';
 import GuideAssignmentsPanel from './_components/GuideAssignmentsPanel';
-import type { AssignmentListRow, GuideListRow, RateRow, ResolvedRateRow } from './_types';
+import type {
+  AssignmentDraft,
+  AssignmentListRow,
+  ConflictItem,
+  GuideListRow,
+  PendingOverride,
+  RateRow,
+  ResolvedRateRow,
+} from './_types';
 
 type Tab = 'profile' | 'rates' | 'calendar' | 'assignments';
 
@@ -89,6 +97,9 @@ export default function AdminGuidesPage() {
   const [assignments, setAssignments] = useState<AssignmentListRow[]>([]);
   const [assignMonth, setAssignMonth] = useState(today.slice(0, 7));
   const [busyAssignmentId, setBusyAssignmentId] = useState<string | null>(null);
+  // W2 — 409로 막힌 시도(사유를 받으면 재시도) + 저장은 됐지만 사람이 봐야 할 경고.
+  const [pendingOverride, setPendingOverride] = useState<PendingOverride | null>(null);
+  const [assignmentWarnings, setAssignmentWarnings] = useState<ConflictItem[]>([]);
 
   // PII 원문 열람 (목적 입력 → 열람, 호출마다 감사로그 1행).
   const [revealField, setRevealField] = useState<'rrn' | 'bank_account' | null>(null);
@@ -156,20 +167,50 @@ export default function AdminGuidesPage() {
     }
   }, []);
 
-  const addAssignment = async (
-    input: { tourDate: string; tourType: string; role: string; amountKrw: number | null; note: string },
-  ) => {
+  /**
+   * W2 — 배정 저장. 409는 실패가 아니라 **판정 결과**다.
+   *
+   * 막힌 항목이 전부 `overridable`이면 화면은 사유 입력을 띄우고 재시도할 수
+   * 있게 붙잡아 둔다(휴무일 배정은 현장에서 실제로 일어난다). 하나라도
+   * 오버라이드 불가면 그냥 오류로 보여준다 — 비활성 가이드나 완전 중복은
+   * 사유로 통과시킬 성질의 것이 아니다.
+   */
+  const addAssignment = async (input: AssignmentDraft, overrideReason?: string) => {
     if (!selectedId) return;
     setBusy(true);
     setError(null);
     try {
       const res = await authedFetch('/api/admin/guides/assignments', {
         method: 'POST',
-        body: JSON.stringify({ guideId: selectedId, ...input }),
+        body: JSON.stringify({
+          guideId: selectedId,
+          ...input,
+          ...(overrideReason
+            ? { conflictOverride: true, conflictOverrideReason: overrideReason }
+            : {}),
+        }),
       });
       const json = await res.json();
+
+      if (res.status === 409) {
+        const blocked = (json?.blocked ?? []) as ConflictItem[];
+        if (blocked.length > 0 && blocked.every((b) => b.overridable)) {
+          setPendingOverride({ input, blocked, warnings: (json?.warnings ?? []) as ConflictItem[] });
+          setError(null);
+          return;
+        }
+        throw new Error(json?.error || '배정할 수 없습니다');
+      }
       if (!res.ok) throw new Error(json?.error || '배정 추가 실패');
-      setNotice('배정을 추가했습니다. 수행 후 [일했음]을 눌러야 정산에 집계됩니다.');
+
+      setPendingOverride(null);
+      const warnings = (json?.warnings ?? []) as ConflictItem[];
+      setAssignmentWarnings(warnings);
+      setNotice(
+        overrideReason
+          ? '사유를 남기고 배정했습니다. 수행 후 [일했음]을 눌러야 정산에 집계됩니다.'
+          : '배정을 추가했습니다. 수행 후 [일했음]을 눌러야 정산에 집계됩니다.',
+      );
       await loadAssignments(selectedId, assignMonth);
     } catch (e) {
       setError(e instanceof Error ? e.message : String(e));
@@ -714,6 +755,13 @@ export default function AdminGuidesPage() {
                     onAdd={(input) => void addAssignment(input)}
                     onPatch={(id, patch) => void patchAssignment(id, patch)}
                     onDelete={(id) => void deleteAssignment(id)}
+                    pendingOverride={pendingOverride}
+                    warnings={assignmentWarnings}
+                    onDismissOverride={() => setPendingOverride(null)}
+                    onDismissWarnings={() => setAssignmentWarnings([])}
+                    onConfirmOverride={(reason) => {
+                      if (pendingOverride) void addAssignment(pendingOverride.input, reason);
+                    }}
                   />
                   <Link
                     href="/admin/guide-settlements"

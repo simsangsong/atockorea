@@ -1,0 +1,58 @@
+{
+  "unitId": "tour_product_pages:jeju-grand-highlights-loop:de:seo",
+  "surface": "tour_product_pages",
+  "slug": "jeju-grand-highlights-loop",
+  "locale": "de",
+  "chunk": "seo",
+  "tier": "A1",
+  "segments": {
+    "/seo/title": {
+      "source_en": "Jeju Grand Highlights Loop · 3 UNESCO Sites + Haenyeo + Cliffs | AtoC"
+    },
+    "/seo/pageTitle": {
+      "source_en": "Jeju Grand Highlights Loop — 3 UNESCO Sites + Haenyeo | AtoC Korea"
+    },
+    "/seo/description": {
+      "source_en": "Jeju full-island highlights small-group day tour: Hallasan 1100 highland → Jusangjeolli cliff → Jeongbang Waterfall → haenyeo free-diving show → ⟦G1⟧ → ⟦G0⟧. Three UNESCO World Heritage sites in one 10.5-hour day.",
+      "glossary": [
+        "⟦G0⟧ = Manjanggul Lava Tube",
+        "⟦G1⟧ = Seongsan Ilchulbong"
+      ]
+    },
+    "/seo/metaDescription": {
+      "source_en": "Small-group 10.5-hour Jeju loop: Hallasan 1100 highland, Jusangjeolli cliffs, Jeongbang waterfall, a live haenyeo free-diving show, ⟦G1⟧ and ⟦G0⟧ — three UNESCO sites in one day.",
+      "glossary": [
+        "⟦G0⟧ = Manjanggul Lava Tube",
+        "⟦G1⟧ = Seongsan Ilchulbong"
+      ]
+    },
+    "/seo/primaryKeywords/0": {
+      "source_en": "Jeju highlights small group tour"
+    },
+    "/seo/primaryKeywords/1": {
+      "source_en": "Jeju one day full island tour"
+    },
+    "/seo/primaryKeywords/2": {
+      "source_en": "Jeju UNESCO day tour"
+    },
+    "/seo/primaryKeywords/3": {
+      "source_en": "⟦G0⟧ tour",
+      "glossary": [
+        "⟦G0⟧ = Seongsan Ilchulbong"
+      ]
+    },
+    "/seo/primaryKeywords/4": {
+      "source_en": "⟦G0⟧ tour",
+      "glossary": [
+        "⟦G0⟧ = Manjanggul Lava Tube"
+      ]
+    },
+    "/seo/primaryKeywords/5": {
+      "source_en": "Jeju haenyeo show tour"
+    }
+  },
+  "glossaryTokens": {
+    "⟦G0⟧": "Manjanggul Lava Tube",
+    "⟦G1⟧": "Seongsan Ilchulbong"
+  }
+}

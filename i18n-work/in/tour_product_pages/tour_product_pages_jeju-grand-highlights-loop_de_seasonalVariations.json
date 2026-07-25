@@ -1,0 +1,35 @@
+{
+  "unitId": "tour_product_pages:jeju-grand-highlights-loop:de:seasonalVariations",
+  "surface": "tour_product_pages",
+  "slug": "jeju-grand-highlights-loop",
+  "locale": "de",
+  "chunk": "seasonalVariations",
+  "tier": "A2",
+  "segments": {
+    "/seasonalVariations/0/season": {
+      "source_en": "Spring"
+    },
+    "/seasonalVariations/0/description": {
+      "source_en": "Mountain air feels especially fresh, and island-wide visibility is often cleaner and brighter."
+    },
+    "/seasonalVariations/1/season": {
+      "source_en": "Summer"
+    },
+    "/seasonalVariations/1/description": {
+      "source_en": "Days are longest, and the coastal colors tend to feel the most vivid and saturated."
+    },
+    "/seasonalVariations/2/season": {
+      "source_en": "Autumn"
+    },
+    "/seasonalVariations/2/description": {
+      "source_en": "Clear skies often make the full-island route feel especially satisfying from start to finish."
+    },
+    "/seasonalVariations/3/season": {
+      "source_en": "Winter"
+    },
+    "/seasonalVariations/3/description": {
+      "source_en": "The air turns sharper and clearer, and the contrast between mountain and sea becomes even stronger."
+    }
+  },
+  "glossaryTokens": {}
+}

@@ -44,6 +44,38 @@ export interface AssignmentListRow {
   status: string;
   note: string | null;
   guide_name?: string | null;
+  /** W2 — 겹침 판정의 근거가 되는 시각 스냅샷. null = 미상. */
+  start_time?: string | null;
+  end_time?: string | null;
+  assigned_by?: string | null;
+  conflict_override?: boolean;
+  conflict_override_reason?: string | null;
+}
+
+/** W2 — 배정 API가 돌려주는 충돌 항목(블록·경고 공통 모양). */
+export interface ConflictItem {
+  code: string;
+  message: string;
+  /** 사유를 적으면 통과시킬 수 있는가. 경고는 항상 false. */
+  overridable: boolean;
+  conflictsWith?: string;
+}
+
+/** 409로 막힌 배정 시도 — 사유를 받아 재시도하기 위해 화면이 붙잡아 두는 상태. */
+export interface PendingOverride {
+  input: AssignmentDraft;
+  blocked: ConflictItem[];
+  warnings: ConflictItem[];
+}
+
+export interface AssignmentDraft {
+  tourDate: string;
+  tourType: string;
+  role: string;
+  amountKrw: number | null;
+  note: string;
+  startTime: string | null;
+  endTime: string | null;
 }
 
 export interface ResolvedRateRow {

@@ -1,0 +1,60 @@
+{
+  "unitId": "tour_product_pages:jeju-grand-highlights-loop:de:staticQuestions",
+  "surface": "tour_product_pages",
+  "slug": "jeju-grand-highlights-loop",
+  "locale": "de",
+  "chunk": "staticQuestions",
+  "tier": "A2",
+  "segments": {
+    "/staticQuestions/0/answer": {
+      "source_en": "Yes. This route is built to cover Jeju's core landmarks — three UNESCO sites, haenyeo culture, cliffs and a waterfall — in one day, at a faster pace than a standard day tour."
+    },
+    "/staticQuestions/0/question": {
+      "source_en": "If I only have one day in Jeju, is this the right route?"
+    },
+    "/staticQuestions/1/answer": {
+      "source_en": "Three: the Hallasan 1100 highland (part of the Hallasan World Heritage area), ⟦G1⟧, and the ⟦G0⟧ — all within Jeju's 'Volcanic Island and Lava Tubes' inscription. The haenyeo show is also UNESCO Intangible Cultural Heritage.",
+      "glossary": [
+        "⟦G0⟧ = Manjanggul Lava Tube",
+        "⟦G1⟧ = Seongsan Ilchulbong"
+      ]
+    },
+    "/staticQuestions/1/question": {
+      "source_en": "Which stops are the UNESCO sites?"
+    },
+    "/staticQuestions/2/answer": {
+      "source_en": "The open-air free-diving demonstration depends on sea conditions. If it is cancelled, the route visits the Haenyeo Museum nearby, which tells the same women-divers' story indoors."
+    },
+    "/staticQuestions/2/question": {
+      "source_en": "What happens if the haenyeo show is cancelled?"
+    },
+    "/staticQuestions/3/answer": {
+      "source_en": "Manjanggul closes periodically for conservation and capacity. When it is closed, the tour visits the nearby Ilchul Land Micheon Cave — another lava tube from the same volcanic system — instead."
+    },
+    "/staticQuestions/3/question": {
+      "source_en": "Is Manjanggul always open?"
+    },
+    "/staticQuestions/4/answer": {
+      "source_en": "It is more active than a typical small-group day tour: the route covers most of the island and includes the Seongsan climb, the Jeongbang stairs and the Manjanggul cave walk."
+    },
+    "/staticQuestions/4/question": {
+      "source_en": "Will this route feel tiring?"
+    },
+    "/staticQuestions/5/answer": {
+      "source_en": "Possibly, but only with a generous evening buffer. If your flight timing is tight, this route is not recommended."
+    },
+    "/staticQuestions/5/question": {
+      "source_en": "Can I join if I arrive in or leave Jeju on the same day?"
+    },
+    "/staticQuestions/6/answer": {
+      "source_en": "It sits on the way back toward Jeju City and works as a cool, sheltered UNESCO finale after a long day of open-air landforms."
+    },
+    "/staticQuestions/6/question": {
+      "source_en": "Why is Manjanggul scheduled last?"
+    }
+  },
+  "glossaryTokens": {
+    "⟦G0⟧": "Manjanggul Lava Tube",
+    "⟦G1⟧": "Seongsan Ilchulbong"
+  }
+}

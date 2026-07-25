@@ -1,0 +1,292 @@
+{
+  "unitId": "tour_product_pages:jeju-grand-highlights-loop:de:itineraryStops-2",
+  "surface": "tour_product_pages",
+  "slug": "jeju-grand-highlights-loop",
+  "locale": "de",
+  "chunk": "itineraryStops-2",
+  "tier": "B",
+  "segments": {
+    "/itineraryStops/1/whyOnRoute": {
+      "source_en": "Jusangjeolli is the most efficient single demonstration of Jeju's volcanic geology — a short stop on the south coast that visually summarizes the lava-meets-sea story, on the way between the Hallasan highland and Jeongbang Waterfall."
+    },
+    "/itineraryStops/1/convenience/parking": {
+      "source_en": "Parking available (paid lot)"
+    },
+    "/itineraryStops/1/convenience/restroom": {
+      "source_en": "Entrance area"
+    },
+    "/itineraryStops/1/description": {
+      "source_en": "**⟦G0⟧ (대포 주상절리)** is one of Jeju's clearest examples of columnar basalt along the coast. Lava from Hallasan-area volcanic activity cooled and contracted into tightly packed polygonal stone columns, creating the dramatic cliff line now viewed from a safe seaside deck. \n\nThe columns rise above the waves on the Jungmun coast and are especially photogenic when the sea is active. The visit is short, high-impact, and easier than a long coastal hike, making it a strong stop for mixed-age groups. Walking is mostly on maintained paths and viewing platforms, but wind and sea spray can vary by weather and tide.",
+      "glossary": [
+        "⟦G0⟧ = Daepo Jusangjeolli Cliff"
+      ]
+    },
+    "/itineraryStops/1/visitBasics/hours": {
+      "source_en": "09:00–18:00 (last entry 17:40)"
+    },
+    "/itineraryStops/1/visitBasics/closed": {
+      "source_en": "Open year-round"
+    },
+    "/itineraryStops/1/visitBasics/walking": {
+      "source_en": "Easy to moderate"
+    },
+    "/itineraryStops/1/visitBasics/admission": {
+      "source_en": "KRW 2,000 adults / KRW 1,000 children and teens"
+    },
+    "/itineraryStops/1/galleryItems/0/alt": {
+      "source_en": "⟦G0⟧ — gallery image 1",
+      "glossary": [
+        "⟦G0⟧ = Daepo Jusangjeolli Cliff"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/0/caption": {
+      "source_en": "⟦G0⟧ — photo 1",
+      "glossary": [
+        "⟦G0⟧ = Daepo Jusangjeolli Cliff"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/0/location": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Daepo Jusangjeolli Cliff"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/1/alt": {
+      "source_en": "⟦G0⟧ — gallery image 2",
+      "glossary": [
+        "⟦G0⟧ = Daepo Jusangjeolli Cliff"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/1/caption": {
+      "source_en": "⟦G0⟧ — photo 2",
+      "glossary": [
+        "⟦G0⟧ = Daepo Jusangjeolli Cliff"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/1/location": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Daepo Jusangjeolli Cliff"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/2/alt": {
+      "source_en": "⟦G0⟧ — gallery image 3",
+      "glossary": [
+        "⟦G0⟧ = Daepo Jusangjeolli Cliff"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/2/caption": {
+      "source_en": "⟦G0⟧ — photo 3",
+      "glossary": [
+        "⟦G0⟧ = Daepo Jusangjeolli Cliff"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/2/location": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Daepo Jusangjeolli Cliff"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/3/alt": {
+      "source_en": "⟦G0⟧ — gallery image 4",
+      "glossary": [
+        "⟦G0⟧ = Daepo Jusangjeolli Cliff"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/3/caption": {
+      "source_en": "⟦G0⟧ — photo 4",
+      "glossary": [
+        "⟦G0⟧ = Daepo Jusangjeolli Cliff"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/3/location": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Daepo Jusangjeolli Cliff"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/4/alt": {
+      "source_en": "⟦G0⟧ — gallery image 5",
+      "glossary": [
+        "⟦G0⟧ = Daepo Jusangjeolli Cliff"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/4/caption": {
+      "source_en": "⟦G0⟧ — photo 5",
+      "glossary": [
+        "⟦G0⟧ = Daepo Jusangjeolli Cliff"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/4/location": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Daepo Jusangjeolli Cliff"
+      ]
+    },
+    "/itineraryStops/2/name": {
+      "source_en": "Jeongbang Waterfall"
+    },
+    "/itineraryStops/2/category": {
+      "source_en": "Coastal Waterfall — Falls Directly Into Ocean (Asia Unique)"
+    },
+    "/itineraryStops/2/duration": {
+      "source_en": "40 min"
+    },
+    "/itineraryStops/2/timeUsed/0": {
+      "source_en": "Entrance + ticket + descent (130 steps) — ~10 min"
+    },
+    "/itineraryStops/2/timeUsed/1": {
+      "source_en": "Cove viewpoint + falls photography — ~25 min"
+    },
+    "/itineraryStops/2/timeUsed/2": {
+      "source_en": "Optional cliff-side path + Seobul inscription — ~10 min"
+    },
+    "/itineraryStops/2/timeUsed/3": {
+      "source_en": "Ascent back to coach — ~10 min"
+    },
+    "/itineraryStops/2/timeUsed/4": {
+      "source_en": "Buffer — ~5 min"
+    },
+    "/itineraryStops/2/_poi_meta/sources/0": {
+      "source_en": "Korea Cultural Heritage Foundation — Yeongjusipgyeong canon"
+    },
+    "/itineraryStops/2/_poi_meta/sources/1": {
+      "source_en": "VisitJeju — Jeongbang Pokpo official listing"
+    },
+    "/itineraryStops/2/_poi_meta/sources/2": {
+      "source_en": "Seogwipo City tourism office — admission and access"
+    },
+    "/itineraryStops/2/_poi_meta/sources/3": {
+      "source_en": "Korea Geological Survey — coastal waterfall inventory"
+    },
+    "/itineraryStops/2/_poi_meta/sources/4": {
+      "source_en": "Jeju Folklore Records — Xu Fu / Seobulgwacha inscription study"
+    },
+    "/itineraryStops/2/highlights/0": {
+      "source_en": "**Asia's only waterfall falling directly into the ocean** — 23 m vertical drop, no riverbed"
+    },
+    "/itineraryStops/2/highlights/1": {
+      "source_en": "Falls are **8 m wide** with a 5 m base pool flushing into the Pacific each tide"
+    },
+    "/itineraryStops/2/highlights/2": {
+      "source_en": "One of the **'Yeongjusipgyeong'** — Joseon-era 10 Scenic Wonders of Jeju"
+    },
+    "/itineraryStops/2/highlights/3": {
+      "source_en": "**'Seobulgwacha' inscription** — attributed to Xu Fu (Qin alchemist, ~219 BCE), origin of place-name 'Seogwipo'"
+    },
+    "/itineraryStops/2/highlights/4": {
+      "source_en": "**130 stone steps** down to the cove — knee-friendly footwear recommended"
+    },
+    "/itineraryStops/2/highlights/5": {
+      "source_en": "Admission **₩2,000 adult / ₩1,000 youth / FREE under 7 + over 65**"
+    },
+    "/itineraryStops/2/highlights/6": {
+      "source_en": "Spray-cooled microclimate at the base — natural summer relief"
+    },
+    "/itineraryStops/2/highlights/7": {
+      "source_en": "Local **haenyeo (해녀, women divers)** sometimes sell fresh catches at the cove on calm days"
+    },
+    "/itineraryStops/2/highlights/8": {
+      "source_en": "Photographic 'sweet hour' typically **14:00–14:30** when sun lights the falls face from west"
+    },
+    "/itineraryStops/2/smartNotes/tip": {
+      "source_en": "Because of the stairs and rocky path, it usually feels more physically active on site than it appears on the map."
+    },
+    "/itineraryStops/2/smartNotes/facilities": {
+      "source_en": "Basic facilities are located near the entrance."
+    },
+    "/itineraryStops/2/whyOnRoute": {
+      "source_en": "Jeongbang — the only waterfall in Asia that falls straight into the sea — closes the south-coast run, so the group rolls east with the morning's three landscapes done and lunch waiting under Ilchulbong."
+    },
+    "/itineraryStops/2/convenience/parking": {
+      "source_en": "Parking available"
+    },
+    "/itineraryStops/2/convenience/restroom": {
+      "source_en": "Entrance area"
+    },
+    "/itineraryStops/2/description": {
+      "source_en": "**⟦G0⟧ (정방폭포, 'falls that drop straight to sea')** is the **only waterfall in Asia that falls directly into the ocean** — a **23 m vertical drop** straight off a basalt cliff into the Pacific, no intermediate pool, no riverbed mouth. \n\nThe cascade is **8 m wide** with a 5 m base pool that reaches the open sea on every tide. This single geographic distinction is why Jeongbang is one of the **'Yeongjusipgyeong (영주십경, 10 Scenic Wonders of Jeju)'** — a Joseon-era literati canon of the island's most poetic landscapes. \n\nThe Yeongjusipgyeong list, codified by **18th-century Confucian scholar Lee Won-jo (이원조)**, also includes Seongsan Sunrise, Hallasan summit, and Cheonjeyeon — meaning today's loop covers **3 of the 10** in a single day. Carved on the cliff face beside the falls is the inscription **'Seobulgwacha (서불과차, Seobul Headed Back West)'**, attributed to **Xu Fu (서복)**, the legendary Qin-dynasty alchemist sent by **Emperor Qin Shi Huang (~219 BCE)** to find the elixir of immortality. \n\nLocal lore says he passed through here on his way home — the inscription is the etymological root of the place name **'Seogwipo' (서귀포, 'where Seo headed back')**. Access is via **130 stone steps** down to the cove (steepish — knee-friendly footwear recommended). \n\nAdmission: **Adult ₩2,000 / Youth ₩1,000 / FREE under 7 and over 65**. The thunderous spray-cooled microclimate at the base is a noted summer relief spot. \n\n**Local haenyeo (해녀, women divers — UNESCO Intangible Cultural Heritage 2016)** sometimes sell fresh sea urchin, abalone, and conch directly at the cove on calm-sea days — a rare photographic opportunity to see the diving community at work outside their formal museum context.",
+      "glossary": [
+        "⟦G0⟧ = Jeongbang Falls"
+      ]
+    },
+    "/itineraryStops/2/visitBasics/closed": {
+      "source_en": "Open year-round"
+    },
+    "/itineraryStops/2/visitBasics/walking": {
+      "source_en": "Moderate, with stairs"
+    },
+    "/itineraryStops/2/visitBasics/admission": {
+      "source_en": "KRW 2,000 adults / KRW 1,000 children"
+    },
+    "/itineraryStops/2/galleryItems/0/alt": {
+      "source_en": "Jeongbang Waterfall — gallery image 1"
+    },
+    "/itineraryStops/2/galleryItems/0/caption": {
+      "source_en": "Jeongbang Waterfall — photo 1"
+    },
+    "/itineraryStops/2/galleryItems/0/location": {
+      "source_en": "Jeongbang Waterfall"
+    },
+    "/itineraryStops/2/galleryItems/1/alt": {
+      "source_en": "Jeongbang Waterfall — gallery image 2"
+    },
+    "/itineraryStops/2/galleryItems/1/caption": {
+      "source_en": "Jeongbang Waterfall — photo 2"
+    },
+    "/itineraryStops/2/galleryItems/1/location": {
+      "source_en": "Jeongbang Waterfall"
+    },
+    "/itineraryStops/2/galleryItems/2/alt": {
+      "source_en": "Jeongbang Waterfall — gallery image 3"
+    },
+    "/itineraryStops/2/galleryItems/2/caption": {
+      "source_en": "Jeongbang Waterfall — photo 3"
+    },
+    "/itineraryStops/2/galleryItems/2/location": {
+      "source_en": "Jeongbang Waterfall"
+    },
+    "/itineraryStops/3/name": {
+      "source_en": "Lunch — Seongsan Local"
+    },
+    "/itineraryStops/3/category": {
+      "source_en": "Midday Reset — Seongsan Harbor Cuisine"
+    },
+    "/itineraryStops/3/duration": {
+      "source_en": "50 min"
+    },
+    "/itineraryStops/3/timeUsed/0": {
+      "source_en": "Walk to lunch venue — ~5 min"
+    },
+    "/itineraryStops/3/timeUsed/1": {
+      "source_en": "Order + meal + drinks — ~40 min"
+    },
+    "/itineraryStops/3/timeUsed/2": {
+      "source_en": "Walk to the haenyeo show cove — ~5 min"
+    },
+    "/itineraryStops/3/highlights/0": {
+      "source_en": "**Seongsan-ri harbor village** at the foot of Ilchulbong — lunch, show and climb in one place"
+    },
+    "/itineraryStops/3/highlights/1": {
+      "source_en": "**Jeonbok (abalone)** hot-pot / stone-pot rice year-round, **galchi-jorim** in season (Sep–Feb)"
+    },
+    "/itineraryStops/3/highlights/2": {
+      "source_en": "**Heuk-doeji (Jeju black pig)** option — Cultural Heritage Material No. 5 (2015)"
+    },
+    "/itineraryStops/3/highlights/3": {
+      "source_en": "**Vegetarian bibim-guksu** alternative on request"
+    },
+    "/itineraryStops/3/highlights/4": {
+      "source_en": "Lunch venue **a few minutes' walk from the haenyeo show cove** — zero extra coach transit"
+    },
+    "/itineraryStops/3/highlights/5": {
+      "source_en": "Group dietary requirements collected at pickup; menu pre-confirmed"
+    },
+    "/itineraryStops/3/smartNotes/tip": {
+      "source_en": "It is better to eat at a comfortable pace here than to rush and lose energy for the afternoon."
+    }
+  },
+  "glossaryTokens": {
+    "⟦G0⟧": "Jeongbang Falls"
+  }
+}
