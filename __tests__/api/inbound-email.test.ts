@@ -65,6 +65,8 @@ function webhookBody(overrides: Record<string, unknown> = {}) {
     type: 'email.received',
     data: {
       email_id: 'em_abc123',
+      // 전용 인박스 주소 — 수신자 게이트(A-1)를 통과하는 기본 픽스처.
+      to: 'bookings@atockorea.com',
       from: 'Klook <no-reply@klook.com>',
       subject: 'New booking received - KLK-1001',
       text: 'Booking Ref: KLK-1001\nLead: Massimo Cassina\nDate: 2026-08-17',
@@ -110,10 +112,14 @@ function commitReturns(partial: Record<string, unknown> = {}) {
 }
 
 const savedSecret = process.env.RESEND_WEBHOOK_SECRET;
+const savedInbound = process.env.OPS_INBOUND_ADDRESSES;
 
 beforeEach(() => {
   jest.clearAllMocks();
   process.env.RESEND_WEBHOOK_SECRET = 'whsec_test';
+  // 명시적으로 비워 기본 상수(bookings@atockorea.com)를 타게 한다 —
+  // 로컬 env가 새어 들어와 게이트 테스트가 흔들리지 않도록.
+  delete process.env.OPS_INBOUND_ADDRESSES;
   mockVerify.mockImplementation(() => undefined);
   createServerClientMock.mockReturnValue(fakeDb());
   commitReturns();
@@ -122,6 +128,68 @@ beforeEach(() => {
 afterAll(() => {
   if (savedSecret === undefined) delete process.env.RESEND_WEBHOOK_SECRET;
   else process.env.RESEND_WEBHOOK_SECRET = savedSecret;
+  if (savedInbound === undefined) delete process.env.OPS_INBOUND_ADDRESSES;
+  else process.env.OPS_INBOUND_ADDRESSES = savedInbound;
+});
+
+describe('POST /api/inbound/email — recipient gate (A-1)', () => {
+  it('ignores mail addressed to the support inbox without touching the parser', async () => {
+    const db = fakeDb();
+    createServerClientMock.mockReturnValue(db);
+    const res = await POST(
+      fakeReq(
+        webhookBody({
+          to: 'support@atockorea.com',
+          from: 'guest@example.com',
+          subject: 'Re: Your AtoC Korea booking A2C-1B2C3D4E',
+          text: 'Hi, I want to cancel my booking please. 취소 부탁드립니다.',
+        }),
+      ),
+    );
+    const json = await res.json();
+    expect(res.status).toBe(200);
+    expect(json.ignored).toBe('recipient_not_allowed');
+    // 파서도, 멱등 로그 행도 건드리지 않는다.
+    expect(commitMock).not.toHaveBeenCalled();
+    expect(db.state.inserts).toHaveLength(0);
+  });
+
+  it('accepts the dedicated inbox address', async () => {
+    const res = await POST(fakeReq(webhookBody({ to: 'bookings@atockorea.com' })));
+    const json = await res.json();
+    expect(json.ignored).toBeUndefined();
+    expect(commitMock).toHaveBeenCalled();
+  });
+
+  it('accepts Gmail-forwarded mail via X-Forwarded-To when To: is the original OTA recipient', async () => {
+    const res = await POST(
+      fakeReq(
+        webhookBody({
+          to: 'jason@gmail.com',
+          headers: { 'X-Forwarded-To': 'bookings@atockorea.com' },
+        }),
+      ),
+    );
+    expect((await res.json()).ignored).toBeUndefined();
+    expect(commitMock).toHaveBeenCalled();
+  });
+
+  it('rejects fail-closed when no recipient can be read from the payload', async () => {
+    const res = await POST(fakeReq(webhookBody({ to: undefined })));
+    const json = await res.json();
+    expect(json.ignored).toBe('recipient_not_allowed');
+    expect(json.recipients).toEqual([]);
+    expect(commitMock).not.toHaveBeenCalled();
+  });
+
+  it('honours the OPS_INBOUND_ADDRESSES override and the "*" escape hatch', async () => {
+    process.env.OPS_INBOUND_ADDRESSES = 'ota@example.com';
+    expect((await (await POST(fakeReq(webhookBody({ to: 'ota@example.com' })))).json()).ignored).toBeUndefined();
+    expect((await (await POST(fakeReq(webhookBody()))).json()).ignored).toBe('recipient_not_allowed');
+
+    process.env.OPS_INBOUND_ADDRESSES = '*';
+    expect((await (await POST(fakeReq(webhookBody({ to: 'anything@wherever.com' })))).json()).ignored).toBeUndefined();
+  });
 });
 
 describe('POST /api/inbound/email — signature gate', () => {
@@ -181,7 +249,13 @@ describe('POST /api/inbound/email — classification routing', () => {
       fakeReq(
         JSON.stringify({
           type: 'email.received',
-          data: { email_id: 'em_x', from: 'promo@random.io', subject: 'Big summer sale!', text: 'Buy now' },
+          data: {
+            email_id: 'em_x',
+            to: 'bookings@atockorea.com',
+            from: 'promo@random.io',
+            subject: 'Big summer sale!',
+            text: 'Buy now',
+          },
         }),
       ),
     );
