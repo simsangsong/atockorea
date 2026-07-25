@@ -39,6 +39,7 @@ import OpsReviewQueueView from '@/components/tour-ops/OpsReviewQueueView';
 import OpsBookingsOverview from '@/components/tour-ops/OpsBookingsOverview';
 import OpsRoomHistoryView from '@/components/tour-ops/OpsRoomHistoryView';
 import OpsScheduleCalendar from '@/components/tour-ops/OpsScheduleCalendar';
+import OpsAutopilotView from '@/components/tour-ops/OpsAutopilotView';
 
 const BACKUP_POLL_MS = 20_000;
 const DRIFT_REFRESH_MS = 5 * 60_000;
@@ -73,6 +74,8 @@ export default function OpsApp() {
   // W3/W4 — 월 범위 화면들. 탭이 이미 6개라 `flex-1`이 좁아서 새 탭 대신 시트로.
   const [roomHistoryOpen, setRoomHistoryOpen] = useState(false);
   const [scheduleOpen, setScheduleOpen] = useState(false);
+  // W5 — 오토파일럿 제안 큐. 제안만 한다(실행 없음).
+  const [autopilotOpen, setAutopilotOpen] = useState(false);
 
   const [loadError, setLoadError] = useState(false);
   // Monotonic request id: a stale response from the previous date (fired by a
@@ -402,6 +405,7 @@ export default function OpsApp() {
             onOpenReview={() => setReviewOpen(true)}
             onOpenRoomHistory={() => setRoomHistoryOpen(true)}
             onOpenSchedule={() => setScheduleOpen(true)}
+            onOpenAutopilot={() => setAutopilotOpen(true)}
           />
         )}
         {tab === 'dashboard' && (
@@ -462,6 +466,7 @@ export default function OpsApp() {
         />
       )}
       {scheduleOpen && <OpsScheduleCalendar initialPeriod={date.slice(0, 7)} onClose={() => setScheduleOpen(false)} />}
+      {autopilotOpen && <OpsAutopilotView onClose={() => setAutopilotOpen(false)} />}
 
       {openRoomObject && (
         <OpsRoomDrawer

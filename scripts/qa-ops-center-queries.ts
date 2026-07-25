@@ -19,6 +19,7 @@ import { resolveSeatCapacity } from '../lib/ops/vehicles/registry';
 import { detectAssignmentConflicts } from '../lib/ops/guides/conflicts';
 import { loadConflictContext } from '../lib/ops/guides/conflictContext';
 import { kstToday } from '../lib/ops/guides/availability';
+import { runAutopilot } from '../lib/ops/autopilot/runner';
 
 config({ path: '.env.local' });
 
@@ -182,14 +183,59 @@ async function checkSchedule() {
   }
 }
 
+/**
+ * W5 오토파일럿 — 유일하게 **쓰는** 검사다(제안 큐 upsert). `--cleanup` 을 주면
+ * 이 스크립트가 만든 제안 행을 지우고 잔여 0을 확인한다. 시뮬 데이터를 라이브에
+ * 남기지 않는 것이 이 저장소의 규칙이다.
+ */
+async function checkAutopilot(cleanup: boolean) {
+  const before = await supabase
+    .from('ops_autopilot_suggestions')
+    .select('id', { count: 'exact', head: true });
+  const beforeCount = before.count ?? 0;
+
+  try {
+    const result = await runAutopilot(supabase, { today: kstToday(), horizonDays: 14 });
+    ok(
+      'W5 오토파일럿 점검',
+      `발견 ${result.found} · 신규 ${result.created} · 갱신 ${result.updated} · 처리된 항목 유지 ${result.skippedResolved}`,
+    );
+  } catch (e) {
+    return bad('W5 오토파일럿 점검', e);
+  }
+
+  const after = await supabase.from('ops_autopilot_suggestions').select('id', { count: 'exact', head: true });
+  const afterCount = after.count ?? 0;
+
+  if (cleanup) {
+    if (afterCount > beforeCount) {
+      // 이 실행이 만든 행만 지운다 — 사람이 이미 쌓아둔 큐를 날리면 안 된다.
+      const { data: rows } = await supabase
+        .from('ops_autopilot_suggestions')
+        .select('id')
+        .order('created_at', { ascending: false })
+        .limit(afterCount - beforeCount);
+      const ids = (rows ?? []).map((r: { id: string }) => r.id);
+      if (ids.length) await supabase.from('ops_autopilot_suggestions').delete().in('id', ids);
+    }
+    const final = await supabase.from('ops_autopilot_suggestions').select('id', { count: 'exact', head: true });
+    if ((final.count ?? 0) === beforeCount) ok('W5 정리', `잔여 ${final.count} (실행 전과 동일)`);
+    else bad('W5 정리', `잔여 ${final.count} ≠ 실행 전 ${beforeCount}`);
+  } else {
+    ok('W5 큐 상태', `${afterCount}건 (정리하려면 --cleanup)`);
+  }
+}
+
 async function main() {
-  console.log(`\n관제 쿼리 스모크 — 대상 월 ${period} (읽기 전용)\n`);
+  const cleanup = process.argv.includes('--cleanup');
+  console.log(`\n관제 쿼리 스모크 — 대상 월 ${period}${cleanup ? ' (--cleanup)' : ''}\n`);
   await checkVehicles();
   await checkVehicleIdColumn();
   await checkAssignmentColumns();
   await checkConflictContext();
   await checkRoomMonthly();
   await checkSchedule();
+  await checkAutopilot(cleanup);
   console.log(`\n${pass} PASS / ${fail} FAIL\n`);
   process.exit(fail > 0 ? 1 : 0);
 }

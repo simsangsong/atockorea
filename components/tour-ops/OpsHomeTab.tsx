@@ -10,6 +10,7 @@
 import { useState } from 'react';
 import {
   BarChart3,
+  Bot,
   CalendarRange,
   FileBarChart,
   GraduationCap,
@@ -35,6 +36,7 @@ export default function OpsHomeTab({
   onOpenReview,
   onOpenRoomHistory,
   onOpenSchedule,
+  onOpenAutopilot,
 }: {
   rooms: OpsRoom[];
   sosRooms: Map<string, SosInfo>;
@@ -48,6 +50,8 @@ export default function OpsHomeTab({
   onOpenRoomHistory?: () => void;
   /** W4 — 가이드·차량 월 달력 시트. */
   onOpenSchedule?: () => void;
+  /** W5 — 오토파일럿 제안 큐(제안만, 실행 없음). */
+  onOpenAutopilot?: () => void;
 }) {
   const liveCount = rooms.filter(
     (room) =>
@@ -133,6 +137,13 @@ export default function OpsHomeTab({
       desc: 'OTA 메일 파싱 검토 · 승인 커밋 · 상품 매핑',
       icon: MailCheck,
       onClick: onOpenReview,
+    },
+    {
+      key: 'autopilot',
+      title: '오토파일럿',
+      desc: '미배정 · 미배차 · 단가 누락 점검 (제안만)',
+      icon: Bot,
+      onClick: onOpenAutopilot,
     },
     {
       key: 'room-history',
