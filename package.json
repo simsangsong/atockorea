@@ -88,7 +88,12 @@
     "db:types": "supabase gen types typescript --linked --schema public > lib/database.types.ts",
     "ai:tier0-coverage": "node --env-file=.env.local --import tsx scripts/tier0-coverage.ts",
     "perf:baseline": "npx tsx scripts/perf-baseline.ts",
-    "locale:fit": "npx tsx scripts/locale-fit.ts"
+    "locale:fit": "npx tsx scripts/locale-fit.ts",
+    "i18n:extract": "node --env-file=.env.local --import tsx scripts/i18n/extract.ts",
+    "i18n:verify": "npx tsx scripts/i18n/verify.ts",
+    "i18n:glossary": "npx tsx scripts/i18n/build-glossary.ts",
+    "i18n:apply": "node --env-file=.env.local --import tsx scripts/i18n/apply.ts",
+    "i18n:status": "npx tsx scripts/i18n/status.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.78.0",

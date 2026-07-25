@@ -126,6 +126,32 @@ describe('extractLeaves', () => {
     const { unknownKeys } = extractLeaves({ ...payload, brandNewSection: { t: 'x' } });
     expect(unknownKeys).toContain('brandNewSection');
   });
+
+  it('언더스코어 서브트리는 화이트리스트 섹션 안에서도 버린다', () => {
+    const { leaves } = extractLeaves({
+      itinerary_variants: [
+        {
+          stops: [
+            {
+              name: 'Jeju Cruise Terminal Pickup',
+              duration: '30 min',
+              _poi_meta: { poi_key: 'jeju_cruise_port', sources: ['VisitKorea cruise terminal page'] },
+            },
+          ],
+        },
+      ],
+    });
+    const pointers = leaves.map((l) => l.pointer);
+    expect(pointers).toContain('/itinerary_variants/0/stops/0/name');
+    expect(pointers.some((p) => p.includes('_poi_meta'))).toBe(false);
+  });
+
+  it('출처 인용(sources)은 번역하지 않는다', () => {
+    const { leaves } = extractLeaves({
+      itineraryStops: [{ blurb: 'A crater rim walk', sources: ['VisitKorea', 'Jeju Tourism Org'] }],
+    });
+    expect(leaves.map((l) => l.pointer)).toEqual(['/itineraryStops/0/blurb']);
+  });
 });
 
 describe('JSON Pointer 왕복', () => {
@@ -151,13 +177,23 @@ describe('JSON Pointer 왕복', () => {
 });
 
 describe('chunkLeaves', () => {
-  it('top-level 키 경계를 넘지 않는다', () => {
+  it('등급 경계를 넘지 않는다 — 감수 범위가 등급 단위이므로', () => {
     const leaves = [
       { pointer: '/hero/a', text: 'x'.repeat(100), topLevelKey: 'hero', tier: 'A1' as const },
       { pointer: '/itineraryStops/0/a', text: 'y'.repeat(100), topLevelKey: 'itineraryStops', tier: 'B' as const },
     ];
     const chunks = chunkLeaves(leaves, 10_000);
     expect(chunks).toHaveLength(2);
+    expect(chunks.every((c) => new Set(c.map((l) => l.tier)).size === 1)).toBe(true);
+  });
+
+  it('같은 등급의 작은 키들은 한 청크로 묶는다', () => {
+    const leaves = [
+      { pointer: '/hero/a', text: 'x'.repeat(50), topLevelKey: 'hero', tier: 'A1' as const },
+      { pointer: '/seo/a', text: 'y'.repeat(50), topLevelKey: 'seo', tier: 'A1' as const },
+      { pointer: '/subnavItems/0', text: 'z'.repeat(50), topLevelKey: 'subnavItems', tier: 'A1' as const },
+    ];
+    expect(chunkLeaves(leaves, 6000)).toHaveLength(1);
   });
 
   it('큰 섹션을 상한으로 쪼갠다', () => {

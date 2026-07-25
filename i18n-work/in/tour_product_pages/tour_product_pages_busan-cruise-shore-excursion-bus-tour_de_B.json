@@ -1,0 +1,744 @@
+{
+  "unitId": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:de:B",
+  "surface": "tour_product_pages",
+  "slug": "busan-cruise-shore-excursion-bus-tour",
+  "locale": "de",
+  "chunk": "B",
+  "tier": "B",
+  "segments": {
+    "/routePhases/0/phase": {
+      "source_en": "Coastal morning"
+    },
+    "/routePhases/0/duration": {
+      "source_en": "≈ 2.5 hours"
+    },
+    "/routePhases/0/description": {
+      "source_en": "Cruise terminal pickup at 08:30, drive northeast to ⟦G0⟧ Temple for the 09:30 arrival before the worst tour-bus crowds.",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/routePhases/1/phase": {
+      "source_en": "Memorial & lunch"
+    },
+    "/routePhases/1/duration": {
+      "source_en": "≈ 2 hours"
+    },
+    "/routePhases/1/description": {
+      "source_en": "⟦G0⟧ (60 min) for Korean War context, then an optional 60-min Busan-specific lunch (dwaeji-gukbap or milmyeon).",
+      "glossary": [
+        "⟦G0⟧ = UN-Gedenkfriedhof"
+      ]
+    },
+    "/routePhases/2/phase": {
+      "source_en": "Nampo-dong cluster"
+    },
+    "/routePhases/2/duration": {
+      "source_en": "≈ 1.5 hours"
+    },
+    "/routePhases/2/description": {
+      "source_en": "⟦G0⟧ → ⟦G2⟧ → ⟦G1⟧ — three short adjacent stops covering Busan's food, film, and refugee-market heritage within 600 m walking radius.",
+      "glossary": [
+        "⟦G0⟧ = Jagalchi-Markt",
+        "⟦G1⟧ = Gukje-Markt",
+        "⟦G2⟧ = BIFF-Platz"
+      ]
+    },
+    "/routePhases/3/phase": {
+      "source_en": "Village & coast"
+    },
+    "/routePhases/3/duration": {
+      "source_en": "≈ 2 hours"
+    },
+    "/routePhases/3/description": {
+      "source_en": "⟦G0⟧ (90 min at golden hour) for the rainbow-roof panorama, then ⟦G1⟧ (30 min) for the cable-car coastline shot.",
+      "glossary": [
+        "⟦G0⟧ = Kulturdorf Gamcheon",
+        "⟦G1⟧ = Songdo-Strand"
+      ]
+    },
+    "/routePhases/4/phase": {
+      "source_en": "Twilight viewpoint & return"
+    },
+    "/routePhases/4/duration": {
+      "source_en": "≈ 1 hour"
+    },
+    "/routePhases/4/description": {
+      "source_en": "⟦G0⟧ & Busan Diamond Tower at twilight (30 min), then the ~15-min drive back to the cruise terminal for 19:30 reboarding.",
+      "glossary": [
+        "⟦G0⟧ = Yongdusan-Park"
+      ]
+    },
+    "/galleryItems/0/alt": {
+      "source_en": "⟦G0⟧ Temple — gallery image 1",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/galleryItems/0/caption": {
+      "source_en": "⟦G0⟧ Temple — photo 1",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/galleryItems/0/location": {
+      "source_en": "⟦G0⟧ Temple",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/galleryItems/1/alt": {
+      "source_en": "⟦G0⟧ in Korea — gallery image 1",
+      "glossary": [
+        "⟦G0⟧ = UN-Gedenkfriedhof"
+      ]
+    },
+    "/galleryItems/1/caption": {
+      "source_en": "⟦G0⟧ in Korea — photo 1",
+      "glossary": [
+        "⟦G0⟧ = UN-Gedenkfriedhof"
+      ]
+    },
+    "/galleryItems/1/location": {
+      "source_en": "⟦G0⟧ in Korea",
+      "glossary": [
+        "⟦G0⟧ = UN-Gedenkfriedhof"
+      ]
+    },
+    "/galleryItems/2/alt": {
+      "source_en": "⟦G0⟧ — gallery image 1",
+      "glossary": [
+        "⟦G0⟧ = Jagalchi-Markt"
+      ]
+    },
+    "/galleryItems/2/caption": {
+      "source_en": "⟦G0⟧ — photo 1",
+      "glossary": [
+        "⟦G0⟧ = Jagalchi-Markt"
+      ]
+    },
+    "/galleryItems/2/location": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Jagalchi-Markt"
+      ]
+    },
+    "/galleryItems/3/alt": {
+      "source_en": "⟦G0⟧ — gallery image 1",
+      "glossary": [
+        "⟦G0⟧ = BIFF-Platz"
+      ]
+    },
+    "/galleryItems/3/caption": {
+      "source_en": "⟦G0⟧ — photo 1",
+      "glossary": [
+        "⟦G0⟧ = BIFF-Platz"
+      ]
+    },
+    "/galleryItems/3/location": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = BIFF-Platz"
+      ]
+    },
+    "/galleryItems/4/alt": {
+      "source_en": "⟦G0⟧ — on-route photo",
+      "glossary": [
+        "⟦G0⟧ = Gukje-Markt"
+      ]
+    },
+    "/galleryItems/4/caption": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Gukje-Markt"
+      ]
+    },
+    "/galleryItems/4/location": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Gukje-Markt"
+      ]
+    },
+    "/galleryItems/5/alt": {
+      "source_en": "⟦G0⟧ — gallery image 1",
+      "glossary": [
+        "⟦G0⟧ = Kulturdorf Gamcheon"
+      ]
+    },
+    "/galleryItems/5/caption": {
+      "source_en": "⟦G0⟧ — photo 1",
+      "glossary": [
+        "⟦G0⟧ = Kulturdorf Gamcheon"
+      ]
+    },
+    "/galleryItems/5/location": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Kulturdorf Gamcheon"
+      ]
+    },
+    "/galleryItems/6/alt": {
+      "source_en": "⟦G0⟧ — on-route photo",
+      "glossary": [
+        "⟦G0⟧ = Songdo-Strand"
+      ]
+    },
+    "/galleryItems/6/caption": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Songdo-Strand"
+      ]
+    },
+    "/galleryItems/6/location": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Songdo-Strand"
+      ]
+    },
+    "/galleryItems/7/alt": {
+      "source_en": "⟦G0⟧ & Busan Diamond Tower — gallery image 1",
+      "glossary": [
+        "⟦G0⟧ = Yongdusan-Park"
+      ]
+    },
+    "/galleryItems/7/caption": {
+      "source_en": "⟦G0⟧ & Busan Diamond Tower — photo 1",
+      "glossary": [
+        "⟦G0⟧ = Yongdusan-Park"
+      ]
+    },
+    "/galleryItems/7/location": {
+      "source_en": "⟦G0⟧ & Busan Diamond Tower",
+      "glossary": [
+        "⟦G0⟧ = Yongdusan-Park"
+      ]
+    },
+    "/galleryItems/8/alt": {
+      "source_en": "⟦G0⟧ Temple — gallery image 2",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/galleryItems/8/caption": {
+      "source_en": "⟦G0⟧ Temple — photo 2",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/galleryItems/8/location": {
+      "source_en": "⟦G0⟧ Temple",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/galleryItems/9/alt": {
+      "source_en": "⟦G0⟧ Temple — gallery image 3",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/galleryItems/9/caption": {
+      "source_en": "⟦G0⟧ Temple — photo 3",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/galleryItems/9/location": {
+      "source_en": "⟦G0⟧ Temple",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/galleryItems/10/alt": {
+      "source_en": "⟦G0⟧ Temple — gallery image 4",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/galleryItems/10/caption": {
+      "source_en": "⟦G0⟧ Temple — photo 4",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/galleryItems/10/location": {
+      "source_en": "⟦G0⟧ Temple",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/galleryItems/11/alt": {
+      "source_en": "⟦G0⟧ Temple — gallery image 5",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/galleryItems/11/caption": {
+      "source_en": "⟦G0⟧ Temple — photo 5",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/galleryItems/11/location": {
+      "source_en": "⟦G0⟧ Temple",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/galleryItems/12/alt": {
+      "source_en": "⟦G0⟧ Temple — gallery image 6",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/galleryItems/12/caption": {
+      "source_en": "⟦G0⟧ Temple — photo 6",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/galleryItems/12/location": {
+      "source_en": "⟦G0⟧ Temple",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/galleryItems/13/alt": {
+      "source_en": "⟦G0⟧ in Korea — gallery image 2",
+      "glossary": [
+        "⟦G0⟧ = UN-Gedenkfriedhof"
+      ]
+    },
+    "/galleryItems/13/caption": {
+      "source_en": "⟦G0⟧ in Korea — photo 2",
+      "glossary": [
+        "⟦G0⟧ = UN-Gedenkfriedhof"
+      ]
+    },
+    "/galleryItems/13/location": {
+      "source_en": "⟦G0⟧ in Korea",
+      "glossary": [
+        "⟦G0⟧ = UN-Gedenkfriedhof"
+      ]
+    },
+    "/galleryItems/14/alt": {
+      "source_en": "⟦G0⟧ in Korea — gallery image 3",
+      "glossary": [
+        "⟦G0⟧ = UN-Gedenkfriedhof"
+      ]
+    },
+    "/galleryItems/14/caption": {
+      "source_en": "⟦G0⟧ in Korea — photo 3",
+      "glossary": [
+        "⟦G0⟧ = UN-Gedenkfriedhof"
+      ]
+    },
+    "/galleryItems/14/location": {
+      "source_en": "⟦G0⟧ in Korea",
+      "glossary": [
+        "⟦G0⟧ = UN-Gedenkfriedhof"
+      ]
+    },
+    "/galleryItems/15/alt": {
+      "source_en": "⟦G0⟧ — gallery image 2",
+      "glossary": [
+        "⟦G0⟧ = Jagalchi-Markt"
+      ]
+    },
+    "/galleryItems/15/caption": {
+      "source_en": "⟦G0⟧ — photo 2",
+      "glossary": [
+        "⟦G0⟧ = Jagalchi-Markt"
+      ]
+    },
+    "/galleryItems/15/location": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Jagalchi-Markt"
+      ]
+    },
+    "/galleryItems/16/alt": {
+      "source_en": "⟦G0⟧ — gallery image 3",
+      "glossary": [
+        "⟦G0⟧ = Jagalchi-Markt"
+      ]
+    },
+    "/galleryItems/16/caption": {
+      "source_en": "⟦G0⟧ — photo 3",
+      "glossary": [
+        "⟦G0⟧ = Jagalchi-Markt"
+      ]
+    },
+    "/galleryItems/16/location": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Jagalchi-Markt"
+      ]
+    },
+    "/galleryItems/17/alt": {
+      "source_en": "⟦G0⟧ — gallery image 4",
+      "glossary": [
+        "⟦G0⟧ = Jagalchi-Markt"
+      ]
+    },
+    "/galleryItems/17/caption": {
+      "source_en": "⟦G0⟧ — photo 4",
+      "glossary": [
+        "⟦G0⟧ = Jagalchi-Markt"
+      ]
+    },
+    "/galleryItems/17/location": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Jagalchi-Markt"
+      ]
+    },
+    "/galleryItems/18/alt": {
+      "source_en": "⟦G0⟧ — gallery image 5",
+      "glossary": [
+        "⟦G0⟧ = Jagalchi-Markt"
+      ]
+    },
+    "/galleryItems/18/caption": {
+      "source_en": "⟦G0⟧ — photo 5",
+      "glossary": [
+        "⟦G0⟧ = Jagalchi-Markt"
+      ]
+    },
+    "/galleryItems/18/location": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Jagalchi-Markt"
+      ]
+    },
+    "/galleryItems/19/alt": {
+      "source_en": "⟦G0⟧ — gallery image 6",
+      "glossary": [
+        "⟦G0⟧ = Jagalchi-Markt"
+      ]
+    },
+    "/galleryItems/19/caption": {
+      "source_en": "⟦G0⟧ — photo 6",
+      "glossary": [
+        "⟦G0⟧ = Jagalchi-Markt"
+      ]
+    },
+    "/galleryItems/19/location": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Jagalchi-Markt"
+      ]
+    },
+    "/galleryItems/20/alt": {
+      "source_en": "⟦G0⟧ — gallery image 7",
+      "glossary": [
+        "⟦G0⟧ = Jagalchi-Markt"
+      ]
+    },
+    "/galleryItems/20/caption": {
+      "source_en": "⟦G0⟧ — photo 7",
+      "glossary": [
+        "⟦G0⟧ = Jagalchi-Markt"
+      ]
+    },
+    "/galleryItems/20/location": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Jagalchi-Markt"
+      ]
+    },
+    "/galleryItems/21/alt": {
+      "source_en": "⟦G0⟧ — gallery image 8",
+      "glossary": [
+        "⟦G0⟧ = Jagalchi-Markt"
+      ]
+    },
+    "/galleryItems/21/caption": {
+      "source_en": "⟦G0⟧ — photo 8",
+      "glossary": [
+        "⟦G0⟧ = Jagalchi-Markt"
+      ]
+    },
+    "/galleryItems/21/location": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Jagalchi-Markt"
+      ]
+    },
+    "/galleryItems/22/alt": {
+      "source_en": "⟦G0⟧ — gallery image 9",
+      "glossary": [
+        "⟦G0⟧ = Jagalchi-Markt"
+      ]
+    },
+    "/galleryItems/22/caption": {
+      "source_en": "⟦G0⟧ — photo 9",
+      "glossary": [
+        "⟦G0⟧ = Jagalchi-Markt"
+      ]
+    },
+    "/galleryItems/22/location": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Jagalchi-Markt"
+      ]
+    },
+    "/galleryItems/23/alt": {
+      "source_en": "⟦G0⟧ — gallery image 10",
+      "glossary": [
+        "⟦G0⟧ = Jagalchi-Markt"
+      ]
+    },
+    "/galleryItems/23/caption": {
+      "source_en": "⟦G0⟧ — photo 10",
+      "glossary": [
+        "⟦G0⟧ = Jagalchi-Markt"
+      ]
+    },
+    "/galleryItems/23/location": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Jagalchi-Markt"
+      ]
+    },
+    "/galleryItems/24/alt": {
+      "source_en": "⟦G0⟧ — gallery image 11",
+      "glossary": [
+        "⟦G0⟧ = Jagalchi-Markt"
+      ]
+    },
+    "/galleryItems/24/caption": {
+      "source_en": "⟦G0⟧ — photo 11",
+      "glossary": [
+        "⟦G0⟧ = Jagalchi-Markt"
+      ]
+    },
+    "/galleryItems/24/location": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Jagalchi-Markt"
+      ]
+    },
+    "/galleryItems/25/alt": {
+      "source_en": "⟦G0⟧ — gallery image 12",
+      "glossary": [
+        "⟦G0⟧ = Jagalchi-Markt"
+      ]
+    },
+    "/galleryItems/25/caption": {
+      "source_en": "⟦G0⟧ — photo 12",
+      "glossary": [
+        "⟦G0⟧ = Jagalchi-Markt"
+      ]
+    },
+    "/galleryItems/25/location": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Jagalchi-Markt"
+      ]
+    },
+    "/galleryItems/26/alt": {
+      "source_en": "⟦G0⟧ — gallery image 2",
+      "glossary": [
+        "⟦G0⟧ = BIFF-Platz"
+      ]
+    },
+    "/galleryItems/26/caption": {
+      "source_en": "⟦G0⟧ — photo 2",
+      "glossary": [
+        "⟦G0⟧ = BIFF-Platz"
+      ]
+    },
+    "/galleryItems/26/location": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = BIFF-Platz"
+      ]
+    },
+    "/galleryItems/27/alt": {
+      "source_en": "⟦G0⟧ — gallery image 3",
+      "glossary": [
+        "⟦G0⟧ = BIFF-Platz"
+      ]
+    },
+    "/galleryItems/27/caption": {
+      "source_en": "⟦G0⟧ — photo 3",
+      "glossary": [
+        "⟦G0⟧ = BIFF-Platz"
+      ]
+    },
+    "/galleryItems/27/location": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = BIFF-Platz"
+      ]
+    },
+    "/galleryItems/28/alt": {
+      "source_en": "⟦G0⟧ — gallery image 4",
+      "glossary": [
+        "⟦G0⟧ = BIFF-Platz"
+      ]
+    },
+    "/galleryItems/28/caption": {
+      "source_en": "⟦G0⟧ — photo 4",
+      "glossary": [
+        "⟦G0⟧ = BIFF-Platz"
+      ]
+    },
+    "/galleryItems/28/location": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = BIFF-Platz"
+      ]
+    },
+    "/galleryItems/29/alt": {
+      "source_en": "⟦G0⟧ — on-route photo",
+      "glossary": [
+        "⟦G0⟧ = Gukje-Markt"
+      ]
+    },
+    "/galleryItems/29/caption": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Gukje-Markt"
+      ]
+    },
+    "/galleryItems/29/location": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Gukje-Markt"
+      ]
+    },
+    "/galleryItems/30/alt": {
+      "source_en": "⟦G0⟧ — gallery image 2",
+      "glossary": [
+        "⟦G0⟧ = Kulturdorf Gamcheon"
+      ]
+    },
+    "/galleryItems/30/caption": {
+      "source_en": "⟦G0⟧ — photo 2",
+      "glossary": [
+        "⟦G0⟧ = Kulturdorf Gamcheon"
+      ]
+    },
+    "/galleryItems/30/location": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Kulturdorf Gamcheon"
+      ]
+    },
+    "/galleryItems/31/alt": {
+      "source_en": "⟦G0⟧ — gallery image 3",
+      "glossary": [
+        "⟦G0⟧ = Kulturdorf Gamcheon"
+      ]
+    },
+    "/galleryItems/31/caption": {
+      "source_en": "⟦G0⟧ — photo 3",
+      "glossary": [
+        "⟦G0⟧ = Kulturdorf Gamcheon"
+      ]
+    },
+    "/galleryItems/31/location": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Kulturdorf Gamcheon"
+      ]
+    },
+    "/galleryItems/32/alt": {
+      "source_en": "⟦G0⟧ — gallery image 8",
+      "glossary": [
+        "⟦G0⟧ = Kulturdorf Gamcheon"
+      ]
+    },
+    "/galleryItems/32/caption": {
+      "source_en": "⟦G0⟧ — photo 8",
+      "glossary": [
+        "⟦G0⟧ = Kulturdorf Gamcheon"
+      ]
+    },
+    "/galleryItems/32/location": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Kulturdorf Gamcheon"
+      ]
+    },
+    "/galleryItems/33/alt": {
+      "source_en": "⟦G0⟧ & Busan Diamond Tower — gallery image 2",
+      "glossary": [
+        "⟦G0⟧ = Yongdusan-Park"
+      ]
+    },
+    "/galleryItems/33/caption": {
+      "source_en": "⟦G0⟧ & Busan Diamond Tower — photo 2",
+      "glossary": [
+        "⟦G0⟧ = Yongdusan-Park"
+      ]
+    },
+    "/galleryItems/33/location": {
+      "source_en": "⟦G0⟧ & Busan Diamond Tower",
+      "glossary": [
+        "⟦G0⟧ = Yongdusan-Park"
+      ]
+    },
+    "/galleryItems/34/alt": {
+      "source_en": "⟦G0⟧ & Busan Diamond Tower — gallery image 3",
+      "glossary": [
+        "⟦G0⟧ = Yongdusan-Park"
+      ]
+    },
+    "/galleryItems/34/caption": {
+      "source_en": "⟦G0⟧ & Busan Diamond Tower — photo 3",
+      "glossary": [
+        "⟦G0⟧ = Yongdusan-Park"
+      ]
+    },
+    "/galleryItems/34/location": {
+      "source_en": "⟦G0⟧ & Busan Diamond Tower",
+      "glossary": [
+        "⟦G0⟧ = Yongdusan-Park"
+      ]
+    },
+    "/galleryItems/35/alt": {
+      "source_en": "⟦G0⟧ & Busan Diamond Tower — gallery image 7",
+      "glossary": [
+        "⟦G0⟧ = Yongdusan-Park"
+      ]
+    },
+    "/galleryItems/35/caption": {
+      "source_en": "⟦G0⟧ & Busan Diamond Tower — photo 7",
+      "glossary": [
+        "⟦G0⟧ = Yongdusan-Park"
+      ]
+    },
+    "/galleryItems/35/location": {
+      "source_en": "⟦G0⟧ & Busan Diamond Tower",
+      "glossary": [
+        "⟦G0⟧ = Yongdusan-Park"
+      ]
+    },
+    "/galleryItems/36/alt": {
+      "source_en": "⟦G0⟧ & Busan Diamond Tower — gallery image 8",
+      "glossary": [
+        "⟦G0⟧ = Yongdusan-Park"
+      ]
+    },
+    "/galleryItems/36/caption": {
+      "source_en": "⟦G0⟧ & Busan Diamond Tower — photo 8",
+      "glossary": [
+        "⟦G0⟧ = Yongdusan-Park"
+      ]
+    },
+    "/galleryItems/36/location": {
+      "source_en": "⟦G0⟧ & Busan Diamond Tower",
+      "glossary": [
+        "⟦G0⟧ = Yongdusan-Park"
+      ]
+    }
+  },
+  "glossaryTokens": {
+    "⟦G0⟧": "Yongdusan-Park",
+    "⟦G1⟧": "Songdo-Strand",
+    "⟦G2⟧": "BIFF-Platz"
+  }
+}

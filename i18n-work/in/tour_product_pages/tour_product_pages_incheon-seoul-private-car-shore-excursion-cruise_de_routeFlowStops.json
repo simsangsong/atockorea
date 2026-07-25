@@ -1,0 +1,70 @@
+{
+  "unitId": "tour_product_pages:incheon-seoul-private-car-shore-excursion-cruise:de:routeFlowStops",
+  "surface": "tour_product_pages",
+  "slug": "incheon-seoul-private-car-shore-excursion-cruise",
+  "locale": "de",
+  "chunk": "routeFlowStops",
+  "tier": "B",
+  "segments": {
+    "/routeFlowStops/0/name": {
+      "source_en": "Incheon Cruise Terminal"
+    },
+    "/routeFlowStops/0/theme": {
+      "source_en": "Departure"
+    },
+    "/routeFlowStops/1/name": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Gyeongbokgung-Palast"
+      ]
+    },
+    "/routeFlowStops/1/theme": {
+      "source_en": "Heritage Palace"
+    },
+    "/routeFlowStops/2/name": {
+      "source_en": "⟦G0⟧ + ⟦G1⟧",
+      "glossary": [
+        "⟦G0⟧ = Hanok-Dorf Bukchon",
+        "⟦G1⟧ = Insadong"
+      ]
+    },
+    "/routeFlowStops/2/theme": {
+      "source_en": "Heritage Village"
+    },
+    "/routeFlowStops/3/name": {
+      "source_en": "Lunch (⟦G0⟧ / Tosokchon / BBQ)",
+      "glossary": [
+        "⟦G0⟧ = Insadong"
+      ]
+    },
+    "/routeFlowStops/3/theme": {
+      "source_en": "Meal"
+    },
+    "/routeFlowStops/4/name": {
+      "source_en": "N Seoul Tower (Namsan)"
+    },
+    "/routeFlowStops/4/theme": {
+      "source_en": "City View"
+    },
+    "/routeFlowStops/5/name": {
+      "source_en": "⟦G1⟧ or ⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Jogyesa-Tempel",
+        "⟦G1⟧ = Myeongdong"
+      ]
+    },
+    "/routeFlowStops/5/theme": {
+      "source_en": "Temple"
+    },
+    "/routeFlowStops/6/name": {
+      "source_en": "Incheon Cruise Terminal"
+    },
+    "/routeFlowStops/6/theme": {
+      "source_en": "Return"
+    }
+  },
+  "glossaryTokens": {
+    "⟦G0⟧": "Jogyesa-Tempel",
+    "⟦G1⟧": "Myeongdong"
+  }
+}

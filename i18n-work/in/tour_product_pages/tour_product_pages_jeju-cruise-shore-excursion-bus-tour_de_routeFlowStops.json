@@ -1,0 +1,52 @@
+{
+  "unitId": "tour_product_pages:jeju-cruise-shore-excursion-bus-tour:de:routeFlowStops",
+  "surface": "tour_product_pages",
+  "slug": "jeju-cruise-shore-excursion-bus-tour",
+  "locale": "de",
+  "chunk": "routeFlowStops",
+  "tier": "B",
+  "segments": {
+    "/routeFlowStops/0/name": {
+      "source_en": "Cruise Terminal"
+    },
+    "/routeFlowStops/0/theme": {
+      "source_en": "Departure"
+    },
+    "/routeFlowStops/1/name": {
+      "source_en": "Sunrise Peak"
+    },
+    "/routeFlowStops/1/theme": {
+      "source_en": "Volcano"
+    },
+    "/routeFlowStops/2/name": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Seopjikoji"
+      ]
+    },
+    "/routeFlowStops/2/theme": {
+      "source_en": "Coast"
+    },
+    "/routeFlowStops/3/name": {
+      "source_en": "Lunch"
+    },
+    "/routeFlowStops/3/theme": {
+      "source_en": "Meal"
+    },
+    "/routeFlowStops/4/name": {
+      "source_en": "Folk Village"
+    },
+    "/routeFlowStops/4/theme": {
+      "source_en": "Culture"
+    },
+    "/routeFlowStops/5/name": {
+      "source_en": "Cruise Terminal"
+    },
+    "/routeFlowStops/5/theme": {
+      "source_en": "Return"
+    }
+  },
+  "glossaryTokens": {
+    "⟦G0⟧": "Seopjikoji"
+  }
+}

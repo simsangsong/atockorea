@@ -1,0 +1,47 @@
+{
+  "note": "글로서리 L2(브랜드·제품) + L3(도메인 용어). 4언어 공통. 플랜 v3 §5-① / Q4 확정.",
+  "keepAsIs": [
+    "AtoC Korea",
+    "AtoC",
+    "Tour Room",
+    "Smart Guide",
+    "Smart Pass",
+    "Everland",
+    "Petite France",
+    "Snoopy Garden",
+    "Hello Kitty Island",
+    "Arte Museum",
+    "Nexon Computer Museum",
+    "Starfield Library",
+    "Manor Blanc",
+    "Bunker des Lumieres",
+    "Osulloc",
+    "BIFF",
+    "UNESCO",
+    "KTX",
+    "T-money",
+    "WhatsApp",
+    "KakaoTalk"
+  ],
+  "domainTerms": {
+    "note": "L3 — 일관성 사후 검사 대상. 한 문서 안에서 같은 개념이 두 단어로 나오면 안 된다.",
+    "en": [
+      "pickup",
+      "drop-off",
+      "meeting point",
+      "no-show",
+      "settlement",
+      "extra charge",
+      "grace period",
+      "cross-island",
+      "join tour",
+      "private tour",
+      "shore excursion",
+      "lead guest"
+    ]
+  },
+  "bannedAllLocales": [
+    "cheap tour",
+    "budget tour"
+  ]
+}

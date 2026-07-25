@@ -251,7 +251,8 @@ async function main(): Promise<void> {
 }
 
 /**
- * 청크 라벨 = top-level 키 (+ 같은 키가 여러 청크로 갈리면 순번).
+ * 청크 라벨. 단일 키 청크는 키 이름, 여러 키가 묶인 청크는 등급 이름을 쓴다.
+ * 같은 라벨이 반복되면 순번을 붙인다(`itineraryStops-2`).
  *
  * 카운터는 **슬러그마다 새로 만든다** — 전역이면 두 번째 슬러그의 `hero`가
  * `hero-2`가 되어 unit id가 슬러그별로 어긋난다.
@@ -259,10 +260,11 @@ async function main(): Promise<void> {
 function chunkLabeller(): (chunk: Leaf[]) => string {
   const counters = new Map<string, number>();
   return (chunk: Leaf[]) => {
-    const key = chunk[0].topLevelKey;
-    const n = (counters.get(key) ?? 0) + 1;
-    counters.set(key, n);
-    return n === 1 ? key : `${key}-${n}`;
+    const keys = new Set(chunk.map((l) => l.topLevelKey));
+    const base = keys.size === 1 ? chunk[0].topLevelKey : chunk[0].tier;
+    const n = (counters.get(base) ?? 0) + 1;
+    counters.set(base, n);
+    return n === 1 ? base : `${base}-${n}`;
   };
 }
 

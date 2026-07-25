@@ -1,0 +1,79 @@
+{
+  "unitId": "tour_product_pages:from-incheon-seoul-day-tour-cruise-guests:de:A2",
+  "surface": "tour_product_pages",
+  "slug": "from-incheon-seoul-day-tour-cruise-guests",
+  "locale": "de",
+  "chunk": "A2",
+  "tier": "A2",
+  "segments": {
+    "/whyTourWorks/bestFor/0": {
+      "source_en": "Cruise passengers calling at Incheon with a 9+ hour port window"
+    },
+    "/whyTourWorks/bestFor/1": {
+      "source_en": "First-time visitors to Seoul wanting palace + hanok + market + crafts in one day"
+    },
+    "/whyTourWorks/bestFor/2": {
+      "source_en": "Couples and adult families"
+    },
+    "/whyTourWorks/bestFor/3": {
+      "source_en": "Travelers prioritizing heritage + food in central Seoul"
+    },
+    "/whyTourWorks/lessIdealFor/0": {
+      "source_en": "Cruise passengers with shorter port-call windows (<8 hours)"
+    },
+    "/whyTourWorks/lessIdealFor/1": {
+      "source_en": "Travelers wanting deep palace exploration (90 min covers highlights only)"
+    },
+    "/whyTourWorks/lessIdealFor/2": {
+      "source_en": "Travelers who need a tight return buffer (>2 hours) for ship boarding"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/0/label": {
+      "source_en": "Adjacent stops in central Seoul, no wasted transit"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/0/detail": {
+      "source_en": "Gyeongbokgung, Bukchon, Gwangjang, and ⟦G0⟧ are within a 2 km radius of each other in central Seoul, allowing 5–10 minute drives between stops and even some walking. The only long transit is the 60–75 min outbound and 75 min return between the cruise terminal and central Seoul.",
+      "glossary": [
+        "⟦G0⟧ = Insadong"
+      ]
+    },
+    "/whyTourWorks/routeLogicSections/0/items/1/label": {
+      "source_en": "Lunch at Gwangjang, not at a separate restaurant"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/1/detail": {
+      "source_en": "Streetfood at ⟦G0⟧ is the day's main meal. This consolidates lunch + the market experience into one 75-minute stop, keeping the day to 9 hours and giving cruise visitors a more memorable food experience than a generic restaurant lunch.",
+      "glossary": [
+        "⟦G0⟧ = Gwangjang-Markt"
+      ]
+    },
+    "/whyTourWorks/routeLogicSections/0/items/2/label": {
+      "source_en": "Honest about the Tuesday closure"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/2/detail": {
+      "source_en": "Gyeongbokgung is closed on Tuesdays. Most cruise tours don't disclose this and silently substitute the day's anchor stop. We tell you upfront: on Tuesdays the tour swaps to Changdeokgung Palace + Secret Garden, which is UNESCO-listed (the Secret Garden adds ₩5,000)."
+    },
+    "/whyTourWorks/routeLogicSections/0/items/3/label": {
+      "source_en": "Hanbok hack disclosed"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/3/detail": {
+      "source_en": "Wearing a complete hanbok grants free entry to all four major royal palaces in Seoul. Hanbok rental shops are concentrated near the palace district (around Gyeongbokgung's Gwanghwamun gate and Anguk Station, not inside Bukchon as some guides suggest). Standard 4-hour rental ₩15,000–₩25,000. If you arrive in hanbok you save ₩3,000 admission and the palace photographs are noticeably better — but this requires a 30-min rental detour at the start, which is not built into the route by default."
+    },
+    "/whyTourWorks/routeLogicSections/0/title": {
+      "source_en": "Why this route is built this way"
+    },
+    "/whyTourWorks/routeLogicSections/0/iconBg": {
+      "source_en": "bg-sky-50/80"
+    },
+    "/routeShapeIntro/title": {
+      "source_en": "How this day flows"
+    },
+    "/routeShapeIntro/subtitle": {
+      "source_en": "A point-to-point shared coach loop that begins and ends at the Incheon Cruise Terminal. The Seoul portion is a walkable cluster — Gyeongbokgung, Bukchon, and ⟦G0⟧ are within 10 minutes of each other by coach. The shared format keeps the price down compared to a private cruise excursion, while still bundling the transport, guide, and admissions into a single product timed to your ship's port call.",
+      "glossary": [
+        "⟦G0⟧ = Gwangjang-Markt"
+      ]
+    }
+  },
+  "glossaryTokens": {
+    "⟦G0⟧": "Gwangjang-Markt"
+  }
+}

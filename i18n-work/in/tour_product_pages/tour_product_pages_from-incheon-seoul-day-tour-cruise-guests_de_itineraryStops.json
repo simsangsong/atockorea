@@ -1,0 +1,151 @@
+{
+  "unitId": "tour_product_pages:from-incheon-seoul-day-tour-cruise-guests:de:itineraryStops",
+  "surface": "tour_product_pages",
+  "slug": "from-incheon-seoul-day-tour-cruise-guests",
+  "locale": "de",
+  "chunk": "itineraryStops",
+  "tier": "B",
+  "segments": {
+    "/itineraryStops/0/name": {
+      "source_en": "Incheon Cruise Terminal pickup"
+    },
+    "/itineraryStops/0/category": {
+      "source_en": "Departure"
+    },
+    "/itineraryStops/0/duration": {
+      "source_en": "30 min"
+    },
+    "/itineraryStops/0/timeUsed/0": {
+      "source_en": "Disembark cruise ship and clear Korean immigration (~30 min)"
+    },
+    "/itineraryStops/0/timeUsed/1": {
+      "source_en": "Meet driver-guide at curbside pickup point"
+    },
+    "/itineraryStops/0/timeUsed/2": {
+      "source_en": "Begin 60-90 min drive to first Seoul stop"
+    },
+    "/itineraryStops/0/timeUsed/3": {
+      "source_en": "Pre-departure check: K-ETA / e-Arrival Card status verification (~5 min)"
+    },
+    "/itineraryStops/0/timeUsed/4": {
+      "source_en": "Free port shuttle option check at terminal lobby (~5 min if applicable)"
+    },
+    "/itineraryStops/0/highlights/0": {
+      "source_en": "Curbside pickup at Incheon Cruise Terminal (opened Apr 2019, capacity for Oasis-Class ships)"
+    },
+    "/itineraryStops/0/highlights/1": {
+      "source_en": "60-90 min drive to central Seoul via Yeongjong Bridge + Incheon-Seoul Expressway"
+    },
+    "/itineraryStops/0/highlights/2": {
+      "source_en": "Driver-guide with English-language commentary en route"
+    },
+    "/itineraryStops/0/highlights/3": {
+      "source_en": "Designed for cruise passengers: built around your ship's all-aboard time"
+    },
+    "/itineraryStops/0/highlights/4": {
+      "source_en": "**South Korea's largest cruise terminal** — 2-story 7,364 m² building (1F arrivals / 2F departures); USD 580M total project investment; opened **April 25, 2019**"
+    },
+    "/itineraryStops/0/highlights/5": {
+      "source_en": "**Berths Royal Caribbean Oasis-Class** ships (228,000 GT, 6,370 passengers + 2,400 crew) — also handles MSC Bellissima, Diamond Princess, Spectrum of the Seas (2026/27 season)"
+    },
+    "/itineraryStops/0/highlights/6": {
+      "source_en": "**Free port shuttle** from terminal to Incheon Subway Line 1 'International Business District Station' (cruise-line dependent — verify in terminal lobby on arrival)"
+    },
+    "/itineraryStops/0/highlights/7": {
+      "source_en": "**200-vehicle parking lot** including 156 large-bus capacity for tour-operator pickups"
+    },
+    "/itineraryStops/0/highlights/8": {
+      "source_en": "**Mandatory digital e-Arrival Card since January 1, 2026** for visitors without K-ETA exemption — recommend K-ETA registration before sailing (USD 8, 3-year validity)"
+    },
+    "/itineraryStops/0/smartNotes/tip": {
+      "source_en": "Allow 30 min minimum for Korean immigration. Keep passport + cruise card accessible. The terminal address in Korean is 인천항 크루즈터미널 (연수구 국제항만대로 438) — DO NOT confuse with the older Incheon International Ferry Terminal."
+    },
+    "/itineraryStops/0/whyOnRoute": {
+      "source_en": "Incheon Cruise Terminal pickup is the day's logistical anchor — without a pre-arranged transfer, cruise passengers face a 7-km gap from terminal to nearest metro station and a 60-90 min taxi to Seoul. The shared-van format keeps cost competitive while preserving the directness of door-to-door service. For cruise guests this pickup is the day's hard-cost-deciding stop — pre-arranged transfers eliminate the 7-km port-to-metro gap and the 60-90-min taxi alternative. Sharing the van with up to 7 other passengers keeps cost competitive (~30-50% of private-charter price) while preserving door-to-door directness; the all-aboard time is built into the day's schedule with a 90-minute reboarding buffer."
+    },
+    "/itineraryStops/0/convenience/parking": {
+      "source_en": "Tour bus and taxi stands outside the terminal; driver-guide meets at the assigned curbside point."
+    },
+    "/itineraryStops/0/convenience/restroom": {
+      "source_en": "Inside the terminal arrival/departure halls."
+    },
+    "/itineraryStops/0/description": {
+      "source_en": "Pickup at Incheon Cruise Terminal — Korea's flagship cruise facility, opened April 25, 2019 in Songdo International Business District as a USD 580 million investment capable of berthing the world's largest cruise ships including Royal Caribbean's Oasis-Class (228,000 tons / 6,370 passengers). \n\nAfter clearing immigration (budget ~30 min), look for the small-group van at the curbside meeting point with your name placard. Drive time to central Seoul is approximately 60-90 minutes via the Yeongjong Bridge and the Incheon-Seoul Expressway, with views of the Yellow Sea industrial coastline transitioning to the high-rise Han River corridor. \n\nThe 2026 season runs a record 75+ cruise calls, and the terminal sits 7 km from the nearest Incheon Subway Line 1 station — not walkable — making the pre-arranged tour van the most efficient port-to-Seoul option. \n\nBeyond the cruise terminal itself, the Songdo International Business District (opened 2003 as Korea's first Free Economic Zone) is a fully-planned 'smart city' with **Songdo Central Park** (a saltwater canal park 5 minutes by taxi) as the main short-stay attraction for guests with <8-hour shore time. \n\n**Free port shuttle** to Incheon Subway Line 1 'International Business District Station' is offered on most cruise calls (verify in terminal lobby on arrival). \n\n**As of January 1, 2026**, South Korea requires a **mandatory digital e-Arrival Card** for visitors without K-ETA exemption — completing K-ETA registration before sailing (USD 8, 3-year validity) eliminates the form-fill step at the gangway."
+    },
+    "/itineraryStops/0/visitBasics/hours": {
+      "source_en": "Cruise-call dependent; pickup is after immigration clearance at the terminal."
+    },
+    "/itineraryStops/0/visitBasics/closed": {
+      "source_en": "Available only when the cruise ship calls at Incheon."
+    },
+    "/itineraryStops/0/visitBasics/walking": {
+      "source_en": "Easy - short walk from gangway/arrival hall to curbside pickup."
+    },
+    "/itineraryStops/0/visitBasics/admission": {
+      "source_en": "No attraction admission; terminal access follows port and cruise security rules."
+    },
+    "/itineraryStops/1/name": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Gyeongbokgung-Palast"
+      ]
+    },
+    "/itineraryStops/1/category": {
+      "source_en": "Royal Palace"
+    },
+    "/itineraryStops/1/duration": {
+      "source_en": "90 min"
+    },
+    "/itineraryStops/1/timeUsed/0": {
+      "source_en": "Arrival, ticketing, and orientation by driver-guide (~10 min)"
+    },
+    "/itineraryStops/1/timeUsed/1": {
+      "source_en": "Royal Guard Changing Ceremony viewing if timing permits (~20 min at 10:00 or 14:00)"
+    },
+    "/itineraryStops/1/timeUsed/2": {
+      "source_en": "Self-paced walk through main throne halls + Gyeonghoeru + Hyangwonjeong (~50 min)"
+    },
+    "/itineraryStops/1/timeUsed/3": {
+      "source_en": "Photo time + reassembly at vehicle (~10 min)"
+    },
+    "/itineraryStops/1/timeUsed/4": {
+      "source_en": "Optional National Folk Museum or National Palace Museum extension (within grounds, free) (~15 min)"
+    },
+    "/itineraryStops/1/highlights/0": {
+      "source_en": "Joseon Dynasty's main royal palace — built 1395 as the heart of new Seoul"
+    },
+    "/itineraryStops/1/highlights/1": {
+      "source_en": "Geunjeongjeon Throne Hall — largest wooden building in Korea"
+    },
+    "/itineraryStops/1/highlights/2": {
+      "source_en": "Gyeonghoeru Pavilion (48-pillar pavilion on lotus pond, royal banquets)"
+    },
+    "/itineraryStops/1/highlights/3": {
+      "source_en": "Royal Guard Changing Ceremony at 10:00 + 14:00 (~20 min, daily except Tuesdays)"
+    },
+    "/itineraryStops/1/highlights/4": {
+      "source_en": "Hyangwonjeong Pavilion — Korea's most photographed garden scene"
+    },
+    "/itineraryStops/1/highlights/5": {
+      "source_en": "FREE admission for visitors wearing hanbok"
+    },
+    "/itineraryStops/1/highlights/6": {
+      "source_en": "**Closed Tuesdays** — Changdeokgung (UNESCO World Heritage 1997) is the substitute"
+    },
+    "/itineraryStops/1/highlights/7": {
+      "source_en": "**Royal Guard Changing Ceremony re-enacted since 1996** based on Cultural Heritage Administration historical research — went on hiatus after 2008 Sungnyemun arson incident, resumed 2016 (with the 70+ performer authentic-armor format used today)"
+    },
+    "/itineraryStops/1/highlights/8": {
+      "source_en": "**3 additional ceremonies between main 10:00 + 14:00 changes**: Gwanghwamun Gate Guard Ceremony at 11:00 + 13:00; Public Training of Royal Guard Soldiers at 09:35 + 13:35 — total 6 daily reenactments (except Tuesdays)"
+    },
+    "/itineraryStops/1/smartNotes/tip": {
+      "source_en": "Time the visit for the 10:00 Changing of the Guard — arrive 09:50 at Heungnyemun Gate. Skip Tuesday — closed (Changdeokgung substitute). Hanbok rental in Bukchon (5 min walk) is 15,000-20,000 KRW for 4 hours and saves the 3,000 KRW admission. Combine with ⟦G0⟧ naturally — both within 10-min walk.",
+      "glossary": [
+        "⟦G0⟧ = Hanok-Dorf Bukchon"
+      ]
+    }
+  },
+  "glossaryTokens": {
+    "⟦G0⟧": "Hanok-Dorf Bukchon"
+  }
+}

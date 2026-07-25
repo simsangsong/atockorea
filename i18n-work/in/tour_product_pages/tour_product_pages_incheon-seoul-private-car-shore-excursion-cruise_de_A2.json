@@ -1,0 +1,258 @@
+{
+  "unitId": "tour_product_pages:incheon-seoul-private-car-shore-excursion-cruise:de:A2",
+  "surface": "tour_product_pages",
+  "slug": "incheon-seoul-private-car-shore-excursion-cruise",
+  "locale": "de",
+  "chunk": "A2",
+  "tier": "A2",
+  "segments": {
+    "/whyTourWorks/bestFor/0": {
+      "source_en": "First-time visitors to the area"
+    },
+    "/whyTourWorks/bestFor/1": {
+      "source_en": "Couples"
+    },
+    "/whyTourWorks/bestFor/2": {
+      "source_en": "Adult families"
+    },
+    "/whyTourWorks/lessIdealFor/0": {
+      "source_en": "Travelers wanting a fixed-group tour with set departures (this is private; book individually)"
+    },
+    "/whyTourWorks/lessIdealFor/1": {
+      "source_en": "Cruise groups larger than the vehicle's seating (typical sedan 1–3 pax, SUV 4–6, van 7+; specify at booking)"
+    },
+    "/whyTourWorks/lessIdealFor/2": {
+      "source_en": "Budget-first travelers — private format costs more than shared cruise excursions"
+    },
+    "/whyTourWorks/lessIdealFor/3": {
+      "source_en": "Travelers whose all-aboard window is shorter than 7 hours (hard fit)"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/0/label": {
+      "source_en": "Built around your all-aboard time, not a fixed clock"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/0/detail": {
+      "source_en": "Standard group tours run on the operator's schedule, not yours. A private cruise excursion starts the moment you disembark and ends well before your all-aboard, with a 60-minute safety buffer that absorbs Seoul traffic. The driver-guide treats the ship's departure time as the only deadline that matters."
+    },
+    "/whyTourWorks/routeLogicSections/0/items/1/label": {
+      "source_en": "Pickup at the gangway, not 'meet at a station in Seoul'"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/1/detail": {
+      "source_en": "Cruise terminals at Incheon are 50 km from central Seoul. Public transit means a taxi to Incheon Airport, then the AREX train, then a subway line, then walking — easily 90+ minutes each way and a real risk if delayed. A private car is direct, door-to-door, and your luggage stays in the vehicle if you want."
+    },
+    "/whyTourWorks/routeLogicSections/0/items/2/label": {
+      "source_en": "No mystery shopping stops, no group of 40"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/2/detail": {
+      "source_en": "Many large cruise-line excursions include forced ginseng-shop or duty-free stops that eat 60–90 minutes of your day. A private car has no such commercial pressure: you stop where you want, for as long as you want, in your own group only."
+    },
+    "/whyTourWorks/routeLogicSections/0/items/3/label": {
+      "source_en": "Customizable on the day"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/3/detail": {
+      "source_en": "Royal guard ceremony cancelled by rain? Skip Bukchon, add Jogyesa? Want to swap ⟦G0⟧ for the Korean War Memorial because your father served? All possible — a private guide-driver can rebuild the day mid-itinerary as long as the sailaway window holds.",
+      "glossary": [
+        "⟦G0⟧ = Myeongdong"
+      ]
+    },
+    "/whyTourWorks/routeLogicSections/0/title": {
+      "source_en": "Why this route is built this way"
+    },
+    "/whyTourWorks/routeLogicSections/0/iconBg": {
+      "source_en": "bg-sky-50/80"
+    },
+    "/routeShapeIntro/title": {
+      "source_en": "How this day flows"
+    },
+    "/routeShapeIntro/subtitle": {
+      "source_en": "A point-to-point loop that starts and ends at your ship's gangway. The Seoul itinerary itself is a cluster, not a line — Gyeongbokgung, Bukchon, ⟦G1⟧, and ⟦G0⟧ are all within a 20-minute radius of each other, which is what makes a 7–9 hour port day workable. The driver-guide's main job, after the cultural commentary, is keeping your sail-away time visible at every transition.",
+      "glossary": [
+        "⟦G0⟧ = Myeongdong",
+        "⟦G1⟧ = Insadong"
+      ]
+    },
+    "/staticQuestions/0/answer": {
+      "source_en": "The driver-guide tracks the cruise schedule and adjusts pickup time accordingly. If the delay is significant (over 2 hours), the day's itinerary may need to be shortened — your guide will recommend the best subset to fit the remaining window."
+    },
+    "/staticQuestions/0/question": {
+      "source_en": "What if my ship is delayed arriving at Incheon?"
+    },
+    "/staticQuestions/1/answer": {
+      "source_en": "Gyeongbokgung is closed on Tuesdays. If your port day falls on Tuesday, the substitute is Changdeokgung Palace and its UNESCO-listed Secret Garden (Huwon) — equally worth the visit, sometimes preferred by repeat visitors."
+    },
+    "/staticQuestions/1/question": {
+      "source_en": "What if Gyeongbokgung is closed?"
+    },
+    "/staticQuestions/2/answer": {
+      "source_en": "Generally no — DMZ tours from Incheon are tight on time (DMZ is ≈ 50 km north of Seoul, the cruise terminal is ≈ 50 km west). For most cruise schedules, a DMZ + Seoul highlights combo doesn't fit. If your port call is 10+ hours and you want DMZ-only, ask in advance — a separate Incheon-DMZ private tour is offered."
+    },
+    "/staticQuestions/2/question": {
+      "source_en": "Can we go to the DMZ instead?"
+    },
+    "/staticQuestions/3/answer": {
+      "source_en": "You provide the ship name, port-call date, expected arrival time, and all-aboard time at booking. The guide cross-checks against the published cruise itinerary and the Incheon Port Authority's daily schedule. Any change communicated by your cruise line should also be relayed to the guide via WhatsApp."
+    },
+    "/staticQuestions/3/question": {
+      "source_en": "How does the guide know our ship's schedule?"
+    },
+    "/staticQuestions/4/answer": {
+      "source_en": "The tour runs in light rain. In a typhoon or heavy snow, the itinerary shifts indoors (palace covered halls, Jogyesa, ⟦G0⟧'s underground arcade, museum stops). The driver carries umbrellas. Outright cancellation only if a typhoon also cancels your ship's port call.",
+      "glossary": [
+        "⟦G0⟧ = Myeongdong"
+      ]
+    },
+    "/staticQuestions/4/question": {
+      "source_en": "What if there's heavy rain or a typhoon?"
+    },
+    "/staticQuestions/5/answer": {
+      "source_en": "Yes — many cruise guests use the day to also handle a hotel transfer or duty-free errand with luggage on board. The vehicle is locked when not in use; valuables should still be carried with you. Luggage capacity depends on vehicle size, so advise volume in advance."
+    },
+    "/staticQuestions/5/question": {
+      "source_en": "Can we leave luggage in the car?"
+    },
+    "/staticQuestions/6/answer": {
+      "source_en": "Yes — it covers the most distinctive stops in the area in a single balanced day."
+    },
+    "/staticQuestions/6/question": {
+      "source_en": "Is this a good choice for first-time visitors to Seoul?"
+    },
+    "/staticQuestions/7/answer": {
+      "source_en": "Moderate walking with some active sections."
+    },
+    "/staticQuestions/7/question": {
+      "source_en": "Is the walking difficult?"
+    },
+    "/staticQuestions/8/answer": {
+      "source_en": "Yes for families whose kids can handle a full day of moving around."
+    },
+    "/staticQuestions/8/question": {
+      "source_en": "Is this tour suitable for families?"
+    },
+    "/staticQuestions/9/answer": {
+      "source_en": "Yes for active seniors; less ideal for low-mobility travelers."
+    },
+    "/staticQuestions/9/question": {
+      "source_en": "Can older adults join comfortably?"
+    },
+    "/staticQuestions/10/answer": {
+      "source_en": "Best fit is around age 6 and up — children comfortable with a full-day rhythm and the walking notes above."
+    },
+    "/staticQuestions/10/question": {
+      "source_en": "What's the recommended minimum age?"
+    },
+    "/bookingTrustItems/0/title": {
+      "source_en": "Licensed local operator"
+    },
+    "/bookingTrustItems/0/iconBg": {
+      "source_en": "bg-emerald-50/80"
+    },
+    "/bookingTrustItems/0/description": {
+      "source_en": "Authorized Korean tour operator with full insurance"
+    },
+    "/bookingTrustItems/1/title": {
+      "source_en": "Route specialists"
+    },
+    "/bookingTrustItems/1/iconBg": {
+      "source_en": "bg-sky-50/80"
+    },
+    "/bookingTrustItems/1/description": {
+      "source_en": "Hand-tuned itinerary, not a generic loop"
+    },
+    "/bookingTrustItems/2/title": {
+      "source_en": "Curated group size"
+    },
+    "/bookingTrustItems/2/iconBg": {
+      "source_en": "bg-amber-50/80"
+    },
+    "/bookingTrustItems/2/description": {
+      "source_en": "Right-sized for the route"
+    },
+    "/seasonalVariations/0/season": {
+      "source_en": "Spring"
+    },
+    "/seasonalVariations/0/description": {
+      "source_en": "Cherry blossoms at Gyeongbokgung and along the Cheonggyecheon Stream; Bukchon's traditional houses in spring greens."
+    },
+    "/seasonalVariations/1/season": {
+      "source_en": "Summer"
+    },
+    "/seasonalVariations/1/description": {
+      "source_en": "Long daylight hours mean you can squeeze N Seoul Tower into a tight window; many indoor museum options if it's hot."
+    },
+    "/seasonalVariations/2/season": {
+      "source_en": "Autumn"
+    },
+    "/seasonalVariations/2/description": {
+      "source_en": "Maple foliage at Gyeongbokgung's rear garden (Hyangwonjeong) and along Bukchon ridges; clearest air for tower viewpoints."
+    },
+    "/seasonalVariations/3/season": {
+      "source_en": "Winter"
+    },
+    "/seasonalVariations/3/description": {
+      "source_en": "Snow on the palace courtyards is one of Seoul's classic photographs; fewer crowds at major sites."
+    },
+    "/bookingSupportSteps/0/title": {
+      "source_en": "Instant Confirmation"
+    },
+    "/bookingSupportSteps/0/detail": {
+      "source_en": "Booking confirmation with itinerary summary"
+    },
+    "/bookingSupportSteps/0/timing": {
+      "source_en": "Immediately"
+    },
+    "/bookingSupportSteps/1/title": {
+      "source_en": "12-Hour Reminder"
+    },
+    "/bookingSupportSteps/1/detail": {
+      "source_en": "Weather update and any route adjustments"
+    },
+    "/bookingSupportSteps/1/timing": {
+      "source_en": "12 hours before"
+    },
+    "/bookingSupportSteps/2/title": {
+      "source_en": "Final Pickup Info"
+    },
+    "/bookingSupportSteps/2/detail": {
+      "source_en": "Exact pickup time and driver contact"
+    },
+    "/bookingSupportSteps/2/timing": {
+      "source_en": "Evening before"
+    },
+    "/bookingSupportSteps/3/title": {
+      "source_en": "Day-of Route Notes"
+    },
+    "/bookingSupportSteps/3/detail": {
+      "source_en": "Morning briefing based on live conditions"
+    },
+    "/bookingSupportSteps/3/timing": {
+      "source_en": "Morning of tour"
+    },
+    "/bookingSupportSteps/4/title": {
+      "source_en": "Stop-by-Stop Tips"
+    },
+    "/bookingSupportSteps/4/detail": {
+      "source_en": "Real-time guidance at each location"
+    },
+    "/bookingSupportSteps/4/timing": {
+      "source_en": "During tour"
+    },
+    "/bookingSupportSteps/5/title": {
+      "source_en": "Post-tour Support"
+    },
+    "/bookingSupportSteps/5/detail": {
+      "source_en": "Follow-up and recommendations"
+    },
+    "/bookingSupportSteps/5/timing": {
+      "source_en": "After tour"
+    },
+    "/practicalWeatherStatic/today/label": {
+      "source_en": "See seasonal notes"
+    },
+    "/practicalWeatherStatic/tomorrow/label": {
+      "source_en": "See seasonal notes"
+    }
+  },
+  "glossaryTokens": {
+    "⟦G0⟧": "Myeongdong",
+    "⟦G1⟧": "Insadong"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "unitId": "tour_product_pages:busan-private-car-charter-cruise-shore:de:A2-2",
+  "surface": "tour_product_pages",
+  "slug": "busan-private-car-charter-cruise-shore",
+  "locale": "de",
+  "chunk": "A2-2",
+  "tier": "A2",
+  "segments": {
+    "/bookingSupportSteps/0/title": {
+      "source_en": "Reserve online"
+    },
+    "/bookingSupportSteps/0/detail": {
+      "source_en": "Pick a date and pay nothing today — reserve now & pay later."
+    },
+    "/bookingSupportSteps/0/description": {
+      "source_en": "Reserve online; instant confirmation includes the cruise detail intake form (ship name, port, all-aboard time)."
+    },
+    "/bookingSupportSteps/1/title": {
+      "source_en": "Send your cruise details"
+    },
+    "/bookingSupportSteps/1/detail": {
+      "source_en": "Share your ship name, arrival date, and dock — we confirm timing within 24 hours."
+    },
+    "/bookingSupportSteps/1/description": {
+      "source_en": "Send us your cruise details within 48 hours of booking so we can adjust your 8-hour period."
+    },
+    "/bookingSupportSteps/2/title": {
+      "source_en": "Customize your stops (optional)"
+    },
+    "/bookingSupportSteps/2/detail": {
+      "source_en": "Send any preferred or skipped stops at least 2 days before the tour."
+    },
+    "/bookingSupportSteps/2/description": {
+      "source_en": "Optionally adjust your stop list (add or swap attractions) up to 24 hours before — we'll confirm the revised route."
+    },
+    "/bookingSupportSteps/3/title": {
+      "source_en": "Receive driver details"
+    },
+    "/bookingSupportSteps/3/detail": {
+      "source_en": "Vehicle plate number, driver name, and contact phone are sent the day before."
+    },
+    "/bookingSupportSteps/3/description": {
+      "source_en": "Driver details (name, vehicle plate, meeting point at the terminal) sent the evening before."
+    },
+    "/bookingSupportSteps/4/title": {
+      "source_en": "Meet at the cruise terminal"
+    },
+    "/bookingSupportSteps/4/detail": {
+      "source_en": "Driver waits at the arrival hall with an AtoC Korea sign within 30 min of disembarkation."
+    },
+    "/bookingSupportSteps/4/description": {
+      "source_en": "Driver meets you at the cruise terminal arrival hall with a name placard for your group."
+    },
+    "/bookingSupportSteps/5/title": {
+      "source_en": "On-time return to your ship"
+    },
+    "/bookingSupportSteps/5/detail": {
+      "source_en": "Drop-off ≈ 90 min before all-aboard call. Hotel or KTX drop-off available instead."
+    },
+    "/bookingSupportSteps/5/description": {
+      "source_en": "Drop-off at the same terminal at least 60 minutes before all-aboard; brief feedback form sent afterward."
+    },
+    "/practicalWeatherStatic/advice": {
+      "source_en": "Layered clothing in spring/autumn; sun protection and light rain shell in summer; warm coat and gloves in winter for the coastal cliffs at ⟦G0⟧.",
+      "glossary": [
+        "⟦G0⟧ = Taejongdae"
+      ]
+    },
+    "/practicalWeatherStatic/summary": {
+      "source_en": "Busan has a humid subtropical climate with four distinct seasons. Cruise season concentrates in spring (Mar–May) and autumn (Sep–Nov), both pleasant 12–25°C with low rainfall. Summer (Jun–Aug) brings warm humid weather and occasional monsoon showers. Winter (Dec–Feb) is cool and windy."
+    }
+  },
+  "glossaryTokens": {
+    "⟦G0⟧": "Taejongdae"
+  }
+}

@@ -43,7 +43,12 @@ export const TOP_LEVEL_TIERS: Record<string, Tier> = {
   routeFlowStops: 'B',
   galleryItems: 'B',
 
+  // 고객 노출이지만 v3.0 초판 실측에서 누락됐던 키 (2026-07-26 추가).
+  sticky_booking_bar: 'A1', // CTA 문구 + `price.per` 라벨
+  itinerary_variants: 'B', // 대체 일정 — `stops[].name/time/duration/category`
+
   // 🚫 금지 — 파이프라인이 건드리면 실패로 간주.
+  _publication: 'FORBIDDEN', // 스키마 마이그레이션 내부 기록
   slug: 'FORBIDDEN',
   locale: 'FORBIDDEN',
   product_id: 'FORBIDDEN',
@@ -163,11 +168,26 @@ export function isTranslatableLeaf(text: string, keyHint = ''): boolean {
   if (!/\s/.test(s) && /^[a-z0-9]+([._-][a-z0-9]+)+$/i.test(s)) return false;
 
   // 키 이름 자체가 식별자성이면 제외 (id, key, slug, url, icon, image, ...).
-  if (/(^|_|\.)(id|ids|key|keys|slug|url|href|src|icon|image|images|photo|code|type|kind|variant|token|ref|anchor|tag|color|locale|lang)$/i.test(keyHint)) {
+  if (/(^|_|\.)(id|ids|key|keys|slug|url|href|src|icon|image|images|photo|code|type|kind|variant|token|ref|anchor|tag|color|locale|lang|currency)$/i.test(keyHint)) {
     return false;
   }
 
   return true;
+}
+
+/**
+ * 서브트리 단위로 순회를 멈출 키.
+ *
+ * top-level 화이트리스트를 통과한 섹션 **안쪽에도** 번역 금물인 가지가 있다.
+ * `itinerary_variants[].stops[]._poi_meta.sources` 는 출처 인용(VisitKorea URL 등)이라
+ * 번역되면 근거가 훼손된다.
+ *
+ * 규칙: **언더스코어로 시작하는 키는 전부 내부 메타데이터로 간주해 서브트리를 버린다.**
+ * 이 코드베이스의 관례(`_poi_meta`·`_publication`·`_metadata`)와 일치한다.
+ */
+export function isSkippedSubtreeKey(key: string): boolean {
+  if (key.startsWith('_')) return true;
+  return key === 'sources' || key === 'provenance' || key === 'citations';
 }
 
 // ── 재귀 순회 ─────────────────────────────────────────────────────────────────
@@ -236,6 +256,7 @@ export function extractLeaves(payload: unknown, options: ExtractOptions = {}): E
     }
     if (node && typeof node === 'object') {
       for (const [k, v] of Object.entries(node as Record<string, unknown>)) {
+        if (isSkippedSubtreeKey(k)) continue; // 내부 메타데이터·출처 인용은 버린다.
         walk(v, joinPointer(pointer, k), topKey);
       }
     }
@@ -248,32 +269,63 @@ export function extractLeaves(payload: unknown, options: ExtractOptions = {}): E
 /**
  * 청크 분할 — unit = 슬러그 1 × 로케일 1 × 청크 1 (플랜 §3-[2]).
  *
- * top-level 키 경계를 넘지 않게 묶는다. 한 unit이 한 섹션만 다루면 서브에이전트
- * 프롬프트가 짧아지고, 실패 시 재큐 범위도 그 섹션으로 국한된다.
+ * **등급별로 묶는다** — 플랜이 말하는 "A-1묶음 / A-2묶음 / itineraryStops"가 이것이다.
+ * 등급을 섞지 않는 이유는 감수 범위가 등급 단위이기 때문이다(A-1은 100% 사람 감수,
+ * B는 표본). 한 unit에 A-1과 B가 섞이면 감수 큐를 나눌 수 없다.
+ *
+ * 등급 안에서는 top-level 키 그룹을 통째로 유지한 채 상한까지 채운다. 키 하나가
+ * 상한을 넘으면 그 키만 여러 청크로 쪼갠다(`itineraryStops`가 대표적).
  */
 export function chunkLeaves(leaves: Leaf[], maxCharsPerChunk = 6000): Leaf[][] {
-  const byKey = new Map<string, Leaf[]>();
+  const byTier = new Map<Tier, Map<string, Leaf[]>>();
   for (const leaf of leaves) {
-    const list = byKey.get(leaf.topLevelKey);
+    const tierBucket = byTier.get(leaf.tier) ?? new Map<string, Leaf[]>();
+    byTier.set(leaf.tier, tierBucket);
+    const list = tierBucket.get(leaf.topLevelKey);
     if (list) list.push(leaf);
-    else byKey.set(leaf.topLevelKey, [leaf]);
+    else tierBucket.set(leaf.topLevelKey, [leaf]);
   }
 
   const chunks: Leaf[][] = [];
-  for (const group of byKey.values()) {
+
+  for (const tierBucket of byTier.values()) {
     let current: Leaf[] = [];
     let size = 0;
-    for (const leaf of group) {
-      if (current.length > 0 && size + leaf.text.length > maxCharsPerChunk) {
-        chunks.push(current);
-        current = [];
-        size = 0;
+
+    const flush = (): void => {
+      if (current.length > 0) chunks.push(current);
+      current = [];
+      size = 0;
+    };
+
+    for (const group of tierBucket.values()) {
+      const groupChars = group.reduce((n, l) => n + l.text.length, 0);
+
+      // 키 하나가 상한을 넘으면 그 키만 단독으로 쪼갠다.
+      if (groupChars > maxCharsPerChunk) {
+        flush();
+        let part: Leaf[] = [];
+        let partSize = 0;
+        for (const leaf of group) {
+          if (part.length > 0 && partSize + leaf.text.length > maxCharsPerChunk) {
+            chunks.push(part);
+            part = [];
+            partSize = 0;
+          }
+          part.push(leaf);
+          partSize += leaf.text.length;
+        }
+        if (part.length > 0) chunks.push(part);
+        continue;
       }
-      current.push(leaf);
-      size += leaf.text.length;
+
+      if (current.length > 0 && size + groupChars > maxCharsPerChunk) flush();
+      current.push(...group);
+      size += groupChars;
     }
-    if (current.length > 0) chunks.push(current);
+    flush();
   }
+
   return chunks;
 }
 
