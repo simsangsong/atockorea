@@ -9,6 +9,15 @@
 import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import Cockpit, { type CockpitRoom } from '@/components/tour-mode/cockpit/Cockpit';
 import type { RoomMessage } from '@/hooks/useTourRoomChannel';
+
+/**
+ * The twelve action buttons now live in a KakaoTalk-style tray behind the "+"
+ * in the composer instead of three permanently-open grids. Everything that
+ * asserts on an action must open it first.
+ */
+function openActionTray() {
+  fireEvent.click(screen.getByTestId('cockpit-actions-toggle'));
+}
 import {
   readTourRoomSettings,
   __resetTourRoomSettingsForTests,
@@ -99,8 +108,9 @@ describe('shared Cockpit', () => {
     expect(screen.getByTestId('driver-console')).toBeInTheDocument();
     expect(screen.getByTestId('driver-mic')).toBeInTheDocument();
     expect(screen.getByTestId('driver-text-input')).toBeInTheDocument();
-    expect(screen.getByTestId('driver-action-타세요')).toBeInTheDocument();
-    expect(screen.getByTestId('driver-action-expense')).toBeInTheDocument();
+    openActionTray();
+    expect(screen.getByTestId('action-grid-board')).toBeInTheDocument();
+    expect(screen.getByTestId('action-grid-expense')).toBeInTheDocument();
     expect(screen.getByText('제주 동부 투어 · 연결됨')).toBeInTheDocument();
   });
 
@@ -225,7 +235,8 @@ describe('shared Cockpit', () => {
     global.fetch = fetchMock as unknown as typeof fetch;
     try {
       render(<Cockpit {...base} />);
-      fireEvent.click(screen.getByTestId('driver-action-expense'));
+      openActionTray();
+      fireEvent.click(screen.getByTestId('action-grid-expense'));
       const settle = await screen.findByTestId('cockpit-settle-extra');
       expect(screen.getByTestId('cockpit-settle-list')).toHaveTextContent('입장권');
       fireEvent.click(settle);
@@ -250,7 +261,8 @@ describe('shared Cockpit', () => {
     global.fetch = fetchMock as unknown as typeof fetch;
     try {
       render(<Cockpit {...base} city="Jeju" />);
-      fireEvent.click(screen.getByTestId('driver-action-overtime'));
+      openActionTray();
+      fireEvent.click(screen.getByTestId('action-grid-overtime'));
       fireEvent.change(screen.getByTestId('overtime-start'), { target: { value: '09:00' } });
       fireEvent.change(screen.getByTestId('overtime-end'), { target: { value: '19:00' } });
       fireEvent.click(screen.getByTestId('overtime-recompute'));
@@ -272,7 +284,8 @@ describe('shared Cockpit', () => {
   // 9h10m worked → 70 min raw OT → past 20-min grace → ceil((70−20)/60)=1h → ₩40,000.
   it('uses the Busan per-city overtime rate (₩40,000/h)', () => {
     render(<Cockpit {...base} city="Busan" />);
-    fireEvent.click(screen.getByTestId('driver-action-overtime'));
+    openActionTray();
+    fireEvent.click(screen.getByTestId('action-grid-overtime'));
     expect(screen.getByText(/₩40,000\/시간/)).toBeInTheDocument();
     fireEvent.change(screen.getByTestId('overtime-start'), { target: { value: '09:00' } });
     fireEvent.change(screen.getByTestId('overtime-end'), { target: { value: '18:10' } });
@@ -286,16 +299,18 @@ describe('shared Cockpit', () => {
   // current mount behaves identically.
   it('renders the private-only settlement tools for a private tour (and by default)', () => {
     const { unmount } = render(<Cockpit {...base} tourKind="private" />);
-    expect(screen.getByTestId('driver-action-expense')).toBeInTheDocument();
-    expect(screen.getByTestId('driver-action-overtime')).toBeInTheDocument();
-    expect(screen.getByTestId('driver-action-summary')).toBeInTheDocument();
+    openActionTray();
+    expect(screen.getByTestId('action-grid-expense')).toBeInTheDocument();
+    expect(screen.getByTestId('action-grid-overtime')).toBeInTheDocument();
+    expect(screen.getByTestId('action-grid-summary')).toBeInTheDocument();
     unmount();
 
     // prop omitted ⇒ defaults to private ⇒ same controls render.
     render(<Cockpit {...base} />);
-    expect(screen.getByTestId('driver-action-expense')).toBeInTheDocument();
-    expect(screen.getByTestId('driver-action-overtime')).toBeInTheDocument();
-    expect(screen.getByTestId('driver-action-summary')).toBeInTheDocument();
+    openActionTray();
+    expect(screen.getByTestId('action-grid-expense')).toBeInTheDocument();
+    expect(screen.getByTestId('action-grid-overtime')).toBeInTheDocument();
+    expect(screen.getByTestId('action-grid-summary')).toBeInTheDocument();
   });
 
   // §11.D D7 — on a JOIN tour the private-charter cash/overtime/settlement tools
@@ -303,13 +318,14 @@ describe('shared Cockpit', () => {
   // (mic, typed send, one-tap actions) stay visible for both kinds.
   it('hides the private-only settlement tools on a join tour', () => {
     render(<Cockpit {...base} tourKind="join" />);
-    expect(screen.queryByTestId('driver-action-expense')).not.toBeInTheDocument();
-    expect(screen.queryByTestId('driver-action-overtime')).not.toBeInTheDocument();
-    expect(screen.queryByTestId('driver-action-summary')).not.toBeInTheDocument();
+    openActionTray();
+    expect(screen.queryByTestId('action-grid-expense')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('action-grid-overtime')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('action-grid-summary')).not.toBeInTheDocument();
     // neutral controls unaffected
     expect(screen.getByTestId('driver-mic')).toBeInTheDocument();
     expect(screen.getByTestId('driver-text-input')).toBeInTheDocument();
-    expect(screen.getByTestId('driver-action-타세요')).toBeInTheDocument();
+    expect(screen.getByTestId('action-grid-board')).toBeInTheDocument();
   });
 
   // §11.D D7 — even if a stale `sheet` state points at a private sheet, the
@@ -359,4 +375,30 @@ describe('shared Cockpit', () => {
       recorder.startVoiceRecording.mockReset();
     }
   });
+
+  // The tray replaced three permanently-open grids of identical grey buttons.
+  it('keeps the actions folded until "+" is tapped, and closes on a one-shot action', () => {
+    render(<Cockpit {...base} />);
+    // Folded: nothing but the toggle.
+    expect(screen.queryByTestId('action-grid')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('action-grid-board')).not.toBeInTheDocument();
+
+    openActionTray();
+    expect(screen.getByTestId('action-grid')).toBeInTheDocument();
+    expect(screen.getByTestId('action-grid-board')).toBeInTheDocument();
+    expect(screen.getByTestId('action-grid-parking')).toBeInTheDocument();
+
+    // A one-shot action closes the tray, messenger-style.
+    fireEvent.click(screen.getByTestId('action-grid-schedule'));
+    expect(screen.queryByTestId('action-grid')).not.toBeInTheDocument();
+  });
+
+  it('keeps the tray open for the location toggle so the state change is visible', () => {
+    render(<Cockpit {...base} />);
+    openActionTray();
+    fireEvent.click(screen.getByTestId('action-grid-share'));
+    // Still open — a toggle whose feedback vanishes is a toggle you cannot read.
+    expect(screen.getByTestId('action-grid')).toBeInTheDocument();
+  });
+
 });

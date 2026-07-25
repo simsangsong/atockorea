@@ -32,6 +32,7 @@ import { startVoiceRecording } from '@/lib/tour-room/recorder';
 import { isDeviceSttSupported, startDeviceStt } from '@/lib/tour-room/deviceStt';
 import { primeAudio } from '@/lib/tour-room/tts';
 import MicPrime from '@/components/tour-mode/MicPrime';
+import ActionGrid, { type ActionGridItem } from '@/components/tour-mode/ActionGrid';
 import TimeWheel from '@/components/tour-mode/cockpit/TimeWheel';
 import { useConfirmSheet } from '@/components/tour-mode/ConfirmSheet';
 import { scheduleClock } from '@/lib/tour-room/time';
@@ -71,6 +72,7 @@ import {
   Utensils,
   Wallet,
   Navigation,
+  Plus,
   type LucideIcon,
 } from 'lucide-react';
 import {
@@ -431,6 +433,7 @@ export default function Cockpit({
     roomSession: session,
     enabled: shareLocation,
   });
+  const [actionsOpen, setActionsOpen] = useState(false);
   const toggleShareLocation = useCallback(() => {
     setShareLocation((on) => {
       const next = !on;
@@ -1214,6 +1217,119 @@ export default function Cockpit({
               ? (accuracyBlocked ? '신호 약함' : '위치 잡는 중…')
               : '켜는 중…';
 
+  /**
+   * The tray's contents. Order is by how often a driver reaches for it, not by
+   * how the code grew: boarding and delay first, settlement last. Colour is
+   * assigned by meaning — movement blue, time amber, alerts rose, money green —
+   * so the grid is scannable without reading.
+   */
+  const driverActions = useMemo<ActionGridItem[]>(() => {
+    const base: ActionGridItem[] = [
+      { key: 'board', label: '타세요', Icon: BusFront, tone: 'blue', onClick: announceVehicleArrived },
+      { key: 'delay', label: '지연', Icon: Timer, tone: 'amber', onClick: () => setSheet('delay') },
+      {
+        key: 'return',
+        label: '복귀시간',
+        Icon: AlarmClock,
+        tone: 'amber',
+        onClick: () => {
+          const rest = roundUpTo5(kstPlusMinutes(30));
+          setRetRest(rest);
+          setRetTime('');
+          setSheet('return');
+        },
+      },
+      { key: 'schedule', label: '일정·도착', Icon: MapIcon, tone: 'violet', onClick: () => setSheet('schedule') },
+      { key: 'parking', label: '주차핀', Icon: SquareParking, tone: 'blue', onClick: dropParkingPin },
+      {
+        key: 'share',
+        label: '위치공유',
+        Icon: Navigation,
+        tone: 'cyan',
+        active: sharingLive,
+        pressed: shareLocation,
+        keepOpen: true,
+        hint: shareLocation ? shareLabel : null,
+        onClick: toggleShareLocation,
+      },
+      {
+        key: 'issue',
+        label: '차량문제',
+        Icon: TriangleAlert,
+        tone: 'rose',
+        onClick: () => {
+          void confirmSheet({
+            title: '차량 문제',
+            message: '차량 문제를 손님과 운영팀에 알릴까요?',
+            confirmLabel: '알리기',
+            danger: true,
+          }).then((ok) => {
+            if (ok) void signal({ type: 'vehicle_issue' }, '운영팀에 알렸어요 ✓');
+          });
+        },
+      },
+      {
+        key: 'departing',
+        label: '출발 ✓',
+        Icon: BusFront,
+        tone: 'green',
+        onClick: () => {
+          const guests = room.number_of_guests != null ? `${room.number_of_guests}명` : '전원';
+          void confirmSheet({
+            title: '출발 전 인원 확인',
+            message: (
+              <>
+                <span className="mb-1 block text-4xl font-bold tabular-nums">{guests}</span>
+                손님 {guests} 탑승을 확인했나요? 확인을 누르면 출발 안내가 나갑니다.
+              </>
+            ),
+            confirmLabel: '출발 안내 보내기',
+          }).then((ok) => {
+            if (ok) void signal({ type: 'departing' }, '인원 확인·출발 안내 완료 ✓');
+          });
+        },
+      },
+      { key: 'dining', label: '식당 추천', Icon: Utensils, tone: 'orange', onClick: () => void sendDiningPicks() },
+      { key: 'assist', label: 'AI 도우미', Icon: Sparkles, tone: 'violet', onClick: () => setSheet('assist') },
+      { key: 'briefing', label: '아침브리핑', Icon: Sunrise, tone: 'amber', onClick: () => void sendMorningBriefing() },
+      { key: 'photo', label: '차량사진', Icon: Camera, tone: 'slate', onClick: () => vehiclePhotoRef.current?.click() },
+    ];
+    // §11.D D7 — the private-charter money tools never appear on a join tour.
+    if (isJoin) return base;
+    return [
+      ...base,
+      {
+        key: 'expense',
+        label: '지출·정산',
+        Icon: Wallet,
+        tone: 'green',
+        onClick: () => {
+          setSheet('expense');
+          void loadExtras();
+        },
+      },
+      { key: 'overtime', label: '초과근무', Icon: Timer, tone: 'orange', onClick: openOvertime },
+      { key: 'summary', label: '오늘 요약', Icon: FileText, tone: 'slate', onClick: () => void openDaySummary() },
+    ];
+  }, [
+    announceVehicleArrived,
+    confirmSheet,
+    dropParkingPin,
+    isJoin,
+    loadExtras,
+    openDaySummary,
+    openOvertime,
+    room.number_of_guests,
+    sendDiningPicks,
+    sendMorningBriefing,
+    shareLabel,
+    shareLocation,
+    sharingLive,
+    signal,
+    toggleShareLocation,
+  ]);
+
+
   return (
     <Screen>
       {/* header: back (guide) · title · connection · wake · ops call */}
@@ -1468,6 +1584,24 @@ export default function Cockpit({
               }}
               className="flex items-end gap-2"
             >
+              {/* Kakao-grade "+" — the 12 action buttons used to sit permanently
+                  open above this row. Folded by default; rotates into an × when
+                  the tray is out. */}
+              <button
+                type="button"
+                onClick={() => setActionsOpen((v) => !v)}
+                aria-expanded={actionsOpen}
+                aria-label={actionsOpen ? '기능 닫기' : '기능 열기'}
+                className="tr-btn-flat shrink-0 rounded-2xl p-2.5 text-[var(--tr-ink-2)]"
+                data-testid="cockpit-actions-toggle"
+              >
+                <Plus
+                  size={22}
+                  strokeWidth={2.4}
+                  aria-hidden
+                  className={`transition-transform duration-200 ${actionsOpen ? 'rotate-45' : ''}`}
+                />
+              </button>
               <textarea
                 value={textDraft}
                 onChange={(event) => setTextDraft(event.target.value)}
@@ -1608,122 +1742,14 @@ export default function Cockpit({
         </div>
       ) : (
         <>
-      {/* one-tap actions */}
-      <div className="grid grid-cols-3 gap-1.5 px-4 pb-1.5">
-        <ActionButton label="타세요" Icon={BusFront} onClick={announceVehicleArrived} />
-        <ActionButton label="지연" Icon={Timer} onClick={() => setSheet('delay')} />
-        <ActionButton
-          label="복귀시간"
-          Icon={AlarmClock}
-          onClick={() => {
-            // Rest the dial just past "now +30" — the chips stay the fast path.
-            const rest = roundUpTo5(kstPlusMinutes(30));
-            setRetRest(rest);
-            setRetTime('');
-            setSheet('return');
-          }}
-        />
-        <ActionButton label="일정·도착" Icon={MapIcon} onClick={() => setSheet('schedule')} />
-        <ActionButton label="주차핀" Icon={SquareParking} onClick={dropParkingPin} />
-        <ActionButton
-          label="차량문제"
-          Icon={TriangleAlert}
-          onClick={() => {
-            void confirmSheet({
-              title: '차량 문제',
-              message: '차량 문제를 손님과 운영팀에 알릴까요?',
-              confirmLabel: '알리기',
-              danger: true,
-            }).then((ok) => {
-              if (ok) void signal({ type: 'vehicle_issue' }, '운영팀에 알렸어요 ✓');
-            });
-          }}
-        />
-        <ActionButton label="식당 추천" Icon={Utensils} onClick={() => void sendDiningPicks()} />
-        <ActionButton label="AI 도우미" Icon={Sparkles} onClick={() => setSheet('assist')} />
-        <ActionButton label="아침브리핑" Icon={Sunrise} onClick={() => void sendMorningBriefing()} />
-        <ActionButton label="차량사진" Icon={Camera} onClick={() => vehiclePhotoRef.current?.click()} />
-        <ActionButton
-          label="출발 ✓"
-          Icon={BusFront}
-          onClick={() => {
-            // J2 — the pre-departure headcount confirmation, one confirmed tap.
-            const guests = room.number_of_guests != null ? `${room.number_of_guests}명` : '전원';
-            void confirmSheet({
-              title: '출발 전 인원 확인',
-              message: (
-                <>
-                  <span className="mb-1 block text-4xl font-bold tabular-nums">{guests}</span>
-                  손님 {guests} 탑승을 확인했나요? 확인을 누르면 출발 안내가 나갑니다.
-                </>
-              ),
-              confirmLabel: '출발 안내 보내기',
-            }).then((ok) => {
-              if (ok) void signal({ type: 'departing' }, '인원 확인·출발 안내 완료 ✓');
-            });
-          }}
-        />
-        {/* §11.C C1 — vehicle location sharing. Same compact geometry as
-            ActionButton (52px cell, 18px glyph); the mic is untouched. */}
-        <button
-          type="button"
-          onClick={toggleShareLocation}
-          aria-pressed={shareLocation}
-          className={`tr-btn-flat relative flex min-h-[52px] flex-col items-center justify-center gap-0.5 rounded-2xl py-2 ${
-            sharingLive ? 'text-[var(--tr-safe)]' : 'text-[var(--tr-ink)]'
-          }`}
-          data-testid="driver-action-location-share"
-        >
-          {sharingLive ? (
-            <span
-              className="absolute right-2 top-2 h-2 w-2 rounded-full bg-[var(--tr-safe)]"
-              data-testid="driver-share-dot"
-              aria-hidden
-            />
-          ) : null}
-          <Navigation size={18} strokeWidth={2} aria-hidden />
-          <span className="text-sm font-bold">{shareLabel}</span>
-        </button>
-      </div>
-
-      {/* expense/settle + overtime + day summary (secondary, deliberate).
-          §11.D D7 — private-only cash/overtime/settlement tools: hidden whole
-          (row and all) on a JOIN tour so a join-tour driver never sees the
-          private-charter settlement surface. Unchanged for private/undefined. */}
-      {!isJoin ? (
-      <div className="grid grid-cols-3 gap-1.5 px-4 pb-3">
-        <button
-          type="button"
-          onClick={() => {
-            setSheet('expense');
-            void loadExtras();
-          }}
-          className="tr-btn-flat flex items-center justify-center gap-2 rounded-2xl py-2.5 text-base font-bold text-[var(--tr-ink)]"
-          data-testid="driver-action-expense"
-        >
-          <Wallet size={17} strokeWidth={2} aria-hidden />
-          지출·정산
-        </button>
-        <button
-          type="button"
-          onClick={openOvertime}
-          className="tr-btn-flat flex items-center justify-center gap-2 rounded-2xl py-2.5 text-base font-bold text-[var(--tr-ink)]"
-          data-testid="driver-action-overtime"
-        >
-          <Timer size={17} strokeWidth={2} aria-hidden />
-          초과근무
-        </button>
-        <button
-          type="button"
-          onClick={() => void openDaySummary()}
-          className="tr-btn-flat flex items-center justify-center gap-2 rounded-2xl py-2.5 text-base font-bold text-[var(--tr-ink)]"
-          data-testid="driver-action-summary"
-        >
-          <FileText size={17} strokeWidth={2} aria-hidden />
-          오늘 요약
-        </button>
-      </div>
-      ) : null}
+      {/* Kakao-grade action tray — folded by default (the "+" in the composer).
+          These twelve used to be three permanently-open grids of identical grey
+          buttons, eating the chat's vertical space in a moving vehicle. */}
+      <ActionGrid
+        open={actionsOpen}
+        onClose={() => setActionsOpen(false)}
+        items={driverActions}
+      />
         </>
       )}
 

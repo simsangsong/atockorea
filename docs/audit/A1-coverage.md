@@ -64,6 +64,7 @@ A-plan-review R6: A1은 "하나도 빠짐없이 소진"이라고 적혀 있었�
 | `ConciergeInlineAnswer.tsx` | A1.3 | ✅ |
 | `ConciergePanel.tsx` | A1.3 | P2 → `A1-3-concierge.md` |
 | `Sheet.tsx` | A1.3 | ✅ 🔴모범 (Lightbox 대조군) |
+| `ActionGrid.tsx` | A1.3 | ✅ 신설 (카톡식 접이 액션 트레이 — 기사 콘솔 12버튼 상시노출 대체) |
 
 ## A1.4 — 지도·위치 (6개)
 

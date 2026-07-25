@@ -11,6 +11,15 @@ import Cockpit, { vehicleShareKey, type CockpitRoom } from '@/components/tour-mo
 import { __resetTourRoomSettingsForTests } from '@/hooks/useTourRoomSettings';
 import type { RoomMessage } from '@/hooks/useTourRoomChannel';
 
+/**
+ * The twelve action buttons now live in a KakaoTalk-style tray behind the "+"
+ * in the composer instead of three permanently-open grids. Everything that
+ * asserts on an action must open it first.
+ */
+function openActionTray() {
+  fireEvent.click(screen.getByTestId('cockpit-actions-toggle'));
+}
+
 const mockChannelState = {
   messages: [] as RoomMessage[],
   connection: 'realtime',
@@ -34,12 +43,19 @@ jest.mock('@/lib/tour-room/deviceStt', () => ({
 const stopSharingMock = jest.fn().mockResolvedValue(undefined);
 const geoWatcherCalls: Array<{ bookingId: string; roomSession: string; enabled: boolean }> = [];
 let geoStatus = 'idle';
+// The label now distinguishes "the device is emitting" from "the server
+// accepted a position" — a coarse fix publishes nothing (P0: the button used
+// to read 공유 중 while the room got nothing).
+let geoPublishedAt: number | null = 1;
+let geoAccuracyBlocked = false;
 jest.mock('@/hooks/useGeoWatcher', () => ({
   useGeoWatcher: (options: { bookingId: string; roomSession: string; enabled: boolean }) => {
     geoWatcherCalls.push({ ...options });
     return {
       status: options.enabled ? geoStatus : 'idle',
       lastPosition: null,
+      lastPublishedAtMs: options.enabled ? geoPublishedAt : null,
+      accuracyBlocked: options.enabled ? geoAccuracyBlocked : false,
       stopSharing: stopSharingMock,
     };
   },
@@ -56,6 +72,8 @@ beforeEach(() => {
   geoWatcherCalls.length = 0;
   stopSharingMock.mockClear();
   geoStatus = 'watching';
+  geoPublishedAt = 1;
+  geoAccuracyBlocked = false;
 });
 
 const room: CockpitRoom = {
@@ -81,27 +99,30 @@ const lastEnabled = () => geoWatcherCalls[geoWatcherCalls.length - 1].enabled;
 describe('Cockpit vehicle-location toggle (§11.C C1)', () => {
   it('starts OFF — the watcher is mounted but not publishing', () => {
     render(<Cockpit {...base} />);
-    const toggle = screen.getByTestId('driver-action-location-share');
+    openActionTray();
+    const toggle = screen.getByTestId('action-grid-share');
     expect(toggle).toHaveAttribute('aria-pressed', 'false');
     expect(toggle).toHaveTextContent('위치공유');
     expect(lastEnabled()).toBe(false);
-    expect(screen.queryByTestId('driver-share-dot')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('action-grid-active-share')).not.toBeInTheDocument();
   });
 
   it('turning it on enables the watcher and remembers the booking', () => {
     render(<Cockpit {...base} />);
-    fireEvent.click(screen.getByTestId('driver-action-location-share'));
+    openActionTray();
+    fireEvent.click(screen.getByTestId('action-grid-share'));
     expect(lastEnabled()).toBe(true);
     expect(window.localStorage.getItem(vehicleShareKey('b1'))).toBe('1');
-    expect(screen.getByTestId('driver-action-location-share')).toHaveTextContent('공유 중');
-    expect(screen.getByTestId('driver-share-dot')).toBeInTheDocument();
+    expect(screen.getByTestId('action-grid-share')).toHaveTextContent('공유 중');
+    expect(screen.getByTestId('action-grid-active-share')).toBeInTheDocument();
   });
 
   it('auto-resumes on the next mount once remembered', () => {
     window.localStorage.setItem(vehicleShareKey('b1'), '1');
     render(<Cockpit {...base} />);
     expect(lastEnabled()).toBe(true);
-    expect(screen.getByTestId('driver-action-location-share')).toHaveAttribute('aria-pressed', 'true');
+    openActionTray();
+    expect(screen.getByTestId('action-grid-share')).toHaveAttribute('aria-pressed', 'true');
   });
 
   it('the memory is per booking — another booking still starts OFF', () => {
@@ -113,7 +134,8 @@ describe('Cockpit vehicle-location toggle (§11.C C1)', () => {
   it('turning it off clears the server snapshot and the memory', () => {
     window.localStorage.setItem(vehicleShareKey('b1'), '1');
     render(<Cockpit {...base} />);
-    fireEvent.click(screen.getByTestId('driver-action-location-share'));
+    openActionTray();
+    fireEvent.click(screen.getByTestId('action-grid-share'));
     expect(stopSharingMock).toHaveBeenCalledTimes(1);
     expect(lastEnabled()).toBe(false);
     expect(window.localStorage.getItem(vehicleShareKey('b1'))).toBeNull();
@@ -122,14 +144,16 @@ describe('Cockpit vehicle-location toggle (§11.C C1)', () => {
   it('a denied permission is surfaced, not retried in a loop', () => {
     geoStatus = 'denied';
     render(<Cockpit {...base} />);
-    fireEvent.click(screen.getByTestId('driver-action-location-share'));
-    expect(screen.getByTestId('driver-action-location-share')).toHaveTextContent('권한 필요');
+    openActionTray();
+    fireEvent.click(screen.getByTestId('action-grid-share'));
+    expect(screen.getByTestId('action-grid-share')).toHaveTextContent('권한 필요');
     expect(screen.getByText('위치 권한을 허용해 주세요 (설정 > 위치)')).toBeInTheDocument();
   });
 
   it('stays available on a join tour (vehicle position is kind-neutral)', () => {
     render(<Cockpit {...base} tourKind="join" />);
-    expect(screen.getByTestId('driver-action-location-share')).toBeInTheDocument();
-    expect(screen.queryByTestId('driver-action-expense')).not.toBeInTheDocument();
+    openActionTray();
+    expect(screen.getByTestId('action-grid-share')).toBeInTheDocument();
+    expect(screen.queryByTestId('action-grid-expense')).not.toBeInTheDocument();
   });
 });

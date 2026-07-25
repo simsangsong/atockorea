@@ -513,3 +513,30 @@
     transition: none;
   }
 }
+
+/* ---- Action grid tones (KakaoTalk-style attachment panel) --------------
+   One colour per action so the grid is scannable at a glance instead of a
+   wall of identical grey glyphs. Each tone carries a soft tile background and
+   a saturated glyph; the dark theme swaps to a deep tile + a brighter glyph so
+   contrast holds both ways (the room's dark mode is class-scoped, not media). */
+.tr-tone {
+  background: var(--tone-bg);
+  color: var(--tone-fg);
+}
+.tr-tone-blue   { --tone-bg: #dbeafe; --tone-fg: #2563eb; }
+.tr-tone-green  { --tone-bg: #dcfce7; --tone-fg: #16a34a; }
+.tr-tone-amber  { --tone-bg: #fef3c7; --tone-fg: #d97706; }
+.tr-tone-rose   { --tone-bg: #ffe4e6; --tone-fg: #e11d48; }
+.tr-tone-violet { --tone-bg: #ede9fe; --tone-fg: #7c3aed; }
+.tr-tone-cyan   { --tone-bg: #cffafe; --tone-fg: #0891b2; }
+.tr-tone-slate  { --tone-bg: #e2e8f0; --tone-fg: #475569; }
+.tr-tone-orange { --tone-bg: #ffedd5; --tone-fg: #ea580c; }
+
+.dark .tr-tone-blue   { --tone-bg: #1e3a5f; --tone-fg: #7dd3fc; }
+.dark .tr-tone-green  { --tone-bg: #14532d; --tone-fg: #86efac; }
+.dark .tr-tone-amber  { --tone-bg: #4a3209; --tone-fg: #fcd34d; }
+.dark .tr-tone-rose   { --tone-bg: #4c1d24; --tone-fg: #fda4af; }
+.dark .tr-tone-violet { --tone-bg: #3b2a63; --tone-fg: #c4b5fd; }
+.dark .tr-tone-cyan   { --tone-bg: #164e63; --tone-fg: #67e8f9; }
+.dark .tr-tone-slate  { --tone-bg: #334155; --tone-fg: #cbd5e1; }
+.dark .tr-tone-orange { --tone-bg: #4a2408; --tone-fg: #fdba74; }
