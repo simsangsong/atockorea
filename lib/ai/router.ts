@@ -35,6 +35,12 @@
 import { createHash } from 'node:crypto';
 
 import { buildUsageRow, resolveMaxOutputTokens, type AiUsageContext, type AiUsageOutcome, type ProviderUsage } from './usage';
+import {
+  collectUnknownProperNouns,
+  maskGlossaryTerms,
+  restoreGlossaryTerms,
+  type GlossaryEntry,
+} from './glossary';
 
 export type AiProvider = 'gemini' | 'deepseek' | 'openai';
 export type AiPurpose = 'translate' | 'caption' | 'batch' | 'vision' | 'concierge';
@@ -401,6 +407,32 @@ export interface TranslateOptions {
   db?: TranslationCacheDb | null;
   /** §L L0 — which tour this translation belongs to (per-tour budget). */
   usage?: AiUsageContext;
+  /**
+   * P1-8 — confirmed proper nouns. Omitted: loaded from the POI knowledge base.
+   * Pass [] to disable masking (tests, or text known to carry no place names).
+   */
+  glossary?: GlossaryEntry[];
+}
+
+/** Server-only glossary load, mirrored on the cache-db pattern below. */
+async function defaultGlossary(): Promise<GlossaryEntry[]> {
+  if (typeof window !== 'undefined') return [];
+  try {
+    const mod = await import('./glossary.server');
+    return await mod.loadGlossary();
+  } catch {
+    return [];
+  }
+}
+
+async function reportUnknownProperNouns(terms: string[], context?: string): Promise<void> {
+  if (typeof window !== 'undefined') return;
+  try {
+    const mod = await import('./glossary.server');
+    mod.logUnknownProperNouns(terms, context);
+  } catch {
+    /* logging must never break a translation */
+  }
 }
 
 /**
@@ -453,6 +485,17 @@ export async function translateTextViaRouter(
   // common case while restoring correctness for large fan-outs.
   const perLocaleBudget = 64 + Math.ceil(text.length * 1.5);
   const translateOutputCap = Math.min(8000, Math.max(1200, 160 + missing.length * perLocaleBudget));
+
+  // P1-8 — mask confirmed proper nouns before the model sees them, so a place
+  // name is rendered from the knowledge base instead of being "corrected" into
+  // a plausible neighbour (감천문화마을 → 甘泉文化村 instead of 甘川文化村).
+  const glossary = options?.glossary ?? (await defaultGlossary());
+  const masked = maskGlossaryTerms(text, glossary);
+  const promptText = masked.text;
+  if (glossary.length > 0) {
+    const unknown = collectUnknownProperNouns(text, glossary);
+    if (unknown.length > 0) void reportUnknownProperNouns(unknown, options?.usage?.label ?? undefined);
+  }
   const completion = await chatCompletion(
     'translate',
     [
@@ -476,7 +519,7 @@ export async function translateTextViaRouter(
           'Preserve names, times, pickup points, prices, and URLs. ' +
           'Respond with only a JSON object of the form {"source_locale": string, "translations": {locale: string}}.',
       },
-      { role: 'user', content: JSON.stringify({ text, target_locales: missing }) },
+      { role: 'user', content: JSON.stringify({ text: promptText, target_locales: missing }) },
     ],
     { jsonResponse: true, usage: options?.usage, maxOutputTokens: translateOutputCap },
   );
@@ -495,8 +538,11 @@ export async function translateTextViaRouter(
   for (const locale of missing) {
     const value = parsed.translations?.[locale];
     if (typeof value === 'string' && value) {
-      fresh[locale] = value;
-      translations[locale] = value;
+      // P1-8 — swap the tokens for the CONFIRMED name in this locale. Cache the
+      // restored string so a later hit serves the corrected name too.
+      const restored = restoreGlossaryTerms(value, masked.terms, locale);
+      fresh[locale] = restored;
+      translations[locale] = restored;
     }
   }
 
