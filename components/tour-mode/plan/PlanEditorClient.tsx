@@ -1679,9 +1679,16 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
               <p className="tr-meta font-bold uppercase text-[var(--tr-plan-hero-muted)]">Smart guide planner</p>
               <h1 className="mt-1 text-[24px] font-bold leading-tight text-[var(--tr-plan-hero-ink)]">{copy.title}</h1>
             </div>
-            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-white/10 text-[var(--tr-plan-hero-ink)]">
+            {/* P1-2 — the editing path had no persistent way back; roomHref was
+                only linked from the read-only branch and the outcome banners. */}
+            <a
+              href={roomHref}
+              aria-label="홈으로"
+              data-testid="plan-home"
+              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-white/10 text-[var(--tr-plan-hero-ink)] active:scale-95"
+            >
               <MapIcon size={21} aria-hidden />
-            </span>
+            </a>
           </div>
           <div className="mt-4 flex flex-wrap gap-2">
             {plan.tour.date && (

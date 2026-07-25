@@ -15,6 +15,7 @@
  */
 
 import { useCallback, useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { type RoomMessage } from '@/hooks/useTourRoomChannel';
 import Cockpit, {
   Screen,
@@ -67,6 +68,7 @@ function deviceKey(): string {
 }
 
 export default function DriverConsole() {
+  const router = useRouter();
   const [token, setToken] = useState<string | null>(null);
   const [overview, setOverview] = useState<DriverOverview | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -240,6 +242,9 @@ export default function DriverConsole() {
       initialMessages={joined.initialMessages}
       city={overview.tour.city ?? null}
       tourKind={overview.tour_kind ?? 'private'}
+      /* P1-2 — Cockpit already ships the 대시보드 control; without onExit it
+         never rendered, leaving the driver with no way home at all. */
+      onExit={() => router.push('/tour-mode/driver')}
     />
   );
 }

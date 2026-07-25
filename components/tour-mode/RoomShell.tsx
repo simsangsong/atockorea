@@ -16,7 +16,7 @@
 
 import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import { useRouter } from 'next/navigation';
-import { ChevronLeft } from 'lucide-react';
+import { ChevronLeft, Home as HomeIcon } from 'lucide-react';
 import EmergencyCard from '@/components/tour-mode/EmergencyCard';
 import Sheet from '@/components/tour-mode/Sheet';
 import { useKeyboardOpen } from '@/components/tour-mode/useKeyboardOpen';
@@ -183,6 +183,7 @@ export default function RoomShell({
   chatActivityKey,
   initialTab,
   backHref,
+  homeHref,
   headerTitleSlot,
 }: {
   title: string;
@@ -219,6 +220,11 @@ export default function RoomShell({
   /** Optional in-app back target (e.g. guide → console, guest → tour-mode home).
    *  Renders a back chevron so phone users aren't stuck exiting the whole app. */
   backHref?: string;
+  /**
+   * P1-2 — always-visible home entry point. Unlike backHref this navigates
+   * straight to the app home in one tap, from whichever tab is open.
+   */
+  homeHref?: string;
   /**
    * B1 (§11.B) — replaces the title/subtitle block in the header. Used by the
    * GUIDE view only to swap the tour title for the seat strip; when absent the
@@ -389,6 +395,20 @@ export default function RoomShell({
             >
               <ChevronLeft size={24} strokeWidth={2.25} aria-hidden />
             </button>
+          )}
+          {/* P1-2 — one tap to the app home from ANY tab. The chevron above is a
+              ladder (close sheet → pop tab → only then navigate), so it is not
+              a home affordance; guests reach home via their Home tab, and the
+              operator shells (which have no Home tab) need this. */}
+          {homeHref && (
+            <a
+              href={homeHref}
+              aria-label="홈으로"
+              data-testid="room-home"
+              className="-ml-1 flex h-11 w-9 shrink-0 items-center justify-center rounded-full text-[var(--tr-ink-2)] active:bg-[var(--tr-surface-2)]"
+            >
+              <HomeIcon size={20} strokeWidth={2.25} aria-hidden />
+            </a>
           )}
           <div className="min-w-0 flex-1 py-1.5">
             {headerTitleSlot ? (

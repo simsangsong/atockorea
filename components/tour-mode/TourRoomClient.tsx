@@ -39,6 +39,8 @@ import PickupBoard from '@/components/tour-mode/PickupBoard';
 import RoomMapTab from '@/components/tour-mode/map/RoomMapTab';
 import RoomShell from '@/components/tour-mode/RoomShell';
 import GuideSeatStrip from '@/components/tour-mode/guide/GuideSeatStrip';
+import GuideSeatDashboard from '@/components/tour-mode/guide/GuideSeatDashboard';
+import Sheet from '@/components/tour-mode/Sheet';
 import SosButton from '@/components/tour-mode/SosButton';
 import ConciergePanel from '@/components/tour-mode/ConciergePanel';
 import ConciergeEntryRow from '@/components/tour-mode/ConciergeEntryRow';
@@ -188,6 +190,23 @@ function readDeepLink(): { focusMessageId: string | null; reply: boolean } {
     return { focusMessageId: null, reply: false };
   }
 }
+
+/** P1-3 — roster/seating sheet, reachable from the guide's chat header. */
+const MANIFEST_CLOSE_LABEL: Record<RoomLocale, string> = {
+  en: 'Close',
+  ko: '닫기',
+  ja: '閉じる',
+  es: 'Cerrar',
+  zh: '关闭',
+};
+
+const MANIFEST_SHEET_TITLE: Record<RoomLocale, string> = {
+  en: 'Roster & seats',
+  ko: '명단·좌석',
+  ja: '名簿・座席',
+  es: 'Lista y asientos',
+  zh: '名单·座位',
+};
 
 export default function TourRoomClient({ bookingId }: { bookingId: string }) {
   const copy = useMemo(() => ENTRY_COPY[detectEntryLocale()], []);
@@ -574,6 +593,10 @@ function TourRoomLive({
   // keeps it across a mid-tour reload.
   const sosSentKey = `tour_mode_sos_sent:${bookingId}`;
   const [sosSentAt, setSosSentAt] = useState<string | null>(null);
+  // P1-3 — roster / seating opened as a sheet OVER the chat, so the guide never
+  // loses the conversation (it previously lived only on /tour-mode/guide, a
+  // different route entirely).
+  const [manifestOpen, setManifestOpen] = useState(false);
   useEffect(() => {
     const restore = () => {
       try {
@@ -754,11 +777,27 @@ function TourRoomLive({
       subtitle={[snapshot.booking?.tour_date, snapshot.booking?.tours?.city].filter(Boolean).join(' · ')}
       headerTitleSlot={
         viewerRole === 'guide' && authToken ? (
-          <GuideSeatStrip
-            bookingId={bookingId}
-            token={authToken}
-            fallbackTitle={snapshot.booking?.tours?.title ?? undefined}
-          />
+          /* P1-3 — the strip's own chips are buttons, so the roster opener is a
+             SIBLING control rather than a wrapper (no nested interactives). */
+          <div className="flex min-w-0 flex-1 items-center gap-1.5">
+            <div className="min-w-0 flex-1">
+              <GuideSeatStrip
+                bookingId={bookingId}
+                token={authToken}
+                fallbackTitle={snapshot.booking?.tours?.title ?? undefined}
+              />
+            </div>
+            <button
+              type="button"
+              onClick={() => setManifestOpen(true)}
+              aria-haspopup="dialog"
+              aria-label={MANIFEST_SHEET_TITLE[locale]}
+              data-testid="open-manifest-sheet"
+              className="text-cjk-safe tr-label tr-press shrink-0 rounded-full bg-[var(--tr-bubble-system)] px-2.5 py-1 font-semibold text-[var(--tr-ink-2)]"
+            >
+              {MANIFEST_SHEET_TITLE[locale]}
+            </button>
+          </div>
         ) : undefined
       }
       lifecycle={data.lifecycle}
@@ -768,6 +807,7 @@ function TourRoomLive({
       theme={theme}
       chatActivityKey={messages.length}
       initialTab={deepLink.focusMessageId ? 'chat' : undefined}
+      homeHref={viewerRole === 'guide' ? '/tour-mode/guide' : viewerRole === 'driver' ? '/tour-mode/driver' : undefined}
       backHref={
         viewerRole === 'guide'
           ? '/tour-mode/guide'
@@ -1064,6 +1104,24 @@ function TourRoomLive({
         </div>
       )}
       />
+
+      {/* P1-3 — roster + seat map over the chat. GuideSeatDashboard is already
+          self-contained (token + bookingId), so the guide keeps the
+          conversation underneath instead of navigating to /tour-mode/guide. */}
+      {viewerRole === 'guide' && authToken && (
+        <Sheet
+          open={manifestOpen}
+          onClose={() => setManifestOpen(false)}
+          title={MANIFEST_SHEET_TITLE[locale]}
+          closeLabel={MANIFEST_CLOSE_LABEL[locale]}
+        >
+          <GuideSeatDashboard
+            token={authToken}
+            bookingId={bookingId}
+            tourTitle={snapshot.booking?.tours?.title ?? undefined}
+          />
+        </Sheet>
+      )}
     </>
   );
 }

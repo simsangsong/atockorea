@@ -26,6 +26,7 @@ import {
   Check,
   ChevronDown,
   ChevronUp,
+  Home,
   Inbox,
   MapPin,
   Megaphone,
@@ -495,6 +496,15 @@ export default function GuideConsole() {
             </h1>
           </div>
           <div className="flex shrink-0 items-center gap-1.5">
+            {/* P1-2 — the guide console had no way back to the app home at all. */}
+            <a
+              href="/tour-mode"
+              aria-label="홈으로"
+              data-testid="guide-console-home"
+              className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-[var(--tr-plan-hero-ink)] active:scale-95"
+            >
+              <Home size={15} aria-hidden />
+            </a>
             <button
               type="button"
               onClick={() => {
