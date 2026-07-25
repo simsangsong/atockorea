@@ -271,6 +271,38 @@ export default function AdminGuidesPage() {
     }
   };
 
+  /**
+   * 선택한 배정을 가이드에게 메일로 안내. 가이드 1명당 1통으로 묶여 나가고,
+   * 실패한 사람의 배정은 계속 "안내 안 함"으로 남아 다음 시도 대상이 된다.
+   */
+  const notifyAssignments = async (ids: string[]) => {
+    if (!selectedId || ids.length === 0) return;
+    setBusy(true);
+    setError(null);
+    try {
+      const res = await authedFetch('/api/admin/guides/assignments/notify', {
+        method: 'POST',
+        body: JSON.stringify({ ids }),
+      });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json?.error || '안내 발송 실패');
+      if (json.failedCount > 0) {
+        setError(
+          `${json.sent}명 발송, ${json.failedCount}명 실패 — ${json.failures
+            .map((f: { guideName: string; reason: string }) => `${f.guideName}(${f.reason})`)
+            .join(' / ')}`,
+        );
+      } else {
+        setNotice(`가이드 ${json.sent}명에게 배정 ${json.notifiedAssignments}건을 안내했습니다.`);
+      }
+      await loadAssignments(selectedId, assignMonth);
+    } catch (e) {
+      setError(e instanceof Error ? e.message : String(e));
+    } finally {
+      setBusy(false);
+    }
+  };
+
   const deleteAssignment = async (id: string) => {
     if (!selectedId) return;
     setBusyAssignmentId(id);
@@ -796,6 +828,7 @@ export default function AdminGuidesPage() {
                       if (pendingOverride) void addAssignment(pendingOverride.input, reason);
                     }}
                     onBulkStatus={(ids, status) => void bulkAssignmentStatus(ids, status)}
+                    onNotify={(ids) => void notifyAssignments(ids)}
                   />
                   <Link
                     href="/admin/guide-settlements"

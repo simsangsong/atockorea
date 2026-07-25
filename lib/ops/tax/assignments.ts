@@ -21,7 +21,7 @@ export const SETTLEABLE_STATUS: AssignmentStatus = 'worked';
 
 /** API가 돌려주는 컬럼. 배정 원장에는 PII가 없다(가이드 이름은 조인으로 붙인다). */
 export const ASSIGNMENT_SELECT_COLUMNS =
-  'id, guide_id, booking_id, room_id, tour_date, tour_type, role, amount_krw, status, note, start_time, end_time, assigned_by, assigned_at, conflict_override, conflict_override_reason, created_at, updated_at';
+  'id, guide_id, booking_id, room_id, tour_date, tour_type, role, amount_krw, status, note, start_time, end_time, assigned_by, assigned_at, conflict_override, conflict_override_reason, notified_at, created_at, updated_at';
 
 export interface AssignmentRow {
   id: string;
@@ -41,6 +41,8 @@ export interface AssignmentRow {
   assigned_at?: string | null;
   conflict_override?: boolean;
   conflict_override_reason?: string | null;
+  /** 가이드 배정 안내 발송 시각. NULL = 아직 안 알렸다. */
+  notified_at?: string | null;
   created_at?: string;
   updated_at?: string;
 }

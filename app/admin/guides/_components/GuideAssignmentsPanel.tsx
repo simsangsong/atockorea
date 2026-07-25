@@ -16,7 +16,7 @@
  */
 
 import { useState } from 'react';
-import { AlertTriangle, CalendarDays, Check, Clock, Loader2, Plus, ShieldAlert, Trash2, Undo2, X } from 'lucide-react';
+import { AlertTriangle, CalendarDays, Check, Clock, Loader2, Mail, Plus, ShieldAlert, Trash2, Undo2, X } from 'lucide-react';
 import type { AssignmentDraft, AssignmentListRow, ConflictItem, PendingOverride } from '../_types';
 
 const TOUR_TYPE_PRESETS = ['private', 'bus', 'cruise', 'walking'];
@@ -50,6 +50,7 @@ export default function GuideAssignmentsPanel({
   onDismissOverride,
   onDismissWarnings,
   onBulkStatus,
+  onNotify,
 }: {
   /** 'YYYY-MM'. */
   month: string;
@@ -69,6 +70,8 @@ export default function GuideAssignmentsPanel({
   onDismissWarnings: () => void;
   /** W7 — 선택한 배정을 한 번에 전이. 월말에 한 건씩 누르게 두면 아무도 안 누른다. */
   onBulkStatus: (ids: string[], status: 'worked' | 'planned' | 'cancelled') => void;
+  /** 선택한 배정을 가이드에게 메일로 안내. 가이드 1명당 1통으로 묶여 나간다. */
+  onNotify: (ids: string[]) => void;
 }) {
   const [tourDate, setTourDate] = useState(`${month}-01`);
   const [tourType, setTourType] = useState('private');
@@ -243,6 +246,19 @@ export default function GuideAssignmentsPanel({
                   </button>
                   <button
                     type="button"
+                    onClick={() => {
+                      onNotify(selectedIds);
+                      setSelected(new Set());
+                    }}
+                    disabled={busy}
+                    className="flex h-8 items-center gap-1 rounded-lg border border-slate-200 px-2 text-[11px] font-semibold text-slate-700 disabled:opacity-50"
+                    data-testid="assignment-notify"
+                  >
+                    <Mail className="size-3.5" />
+                    <span className="text-cjk-safe">배정 안내 보내기</span>
+                  </button>
+                  <button
+                    type="button"
                     onClick={() => setSelected(new Set())}
                     className="text-cjk-safe h-8 rounded-lg border border-slate-200 px-2 text-[11px] font-semibold text-slate-500 hover:bg-slate-50"
                   >
@@ -280,6 +296,9 @@ export default function GuideAssignmentsPanel({
                     {r.start_time ? ` · ${r.start_time.slice(0, 5)}${r.end_time ? `–${r.end_time.slice(0, 5)}` : ''}` : ''}
                     {r.note ? ` · ${r.note}` : ''}
                   </p>
+                  {r.status !== 'cancelled' && !r.notified_at ? (
+                    <p className="text-cjk-safe mt-0.5 text-[11px] text-slate-400">가이드 안내 안 함</p>
+                  ) : null}
                   {r.conflict_override && r.conflict_override_reason ? (
                     <p className="text-cjk-body mt-0.5 text-[11px] text-amber-700">
                       충돌 무시: {r.conflict_override_reason}

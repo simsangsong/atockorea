@@ -50,6 +50,8 @@ export interface AssignmentListRow {
   assigned_by?: string | null;
   conflict_override?: boolean;
   conflict_override_reason?: string | null;
+  /** 가이드에게 배정 안내가 나간 시각. null = 아직 안 알림. */
+  notified_at?: string | null;
 }
 
 /** W2 — 배정 API가 돌려주는 충돌 항목(블록·경고 공통 모양). */
