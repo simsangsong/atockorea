@@ -92,3 +92,5 @@ scripts/.sim-fixtures.json
 .qa-shots-cjk3/
 .qa-shots-guest-tray/
 .qa-shots-guest-tray2/
+# QA 캡처는 전부 무시한다. 하나씩 적으면 다음에 만드는 디렉터리가 반드시 빠진다.
+.qa-shots-*/
