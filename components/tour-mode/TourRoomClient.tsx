@@ -597,6 +597,11 @@ function TourRoomLive({
   // loses the conversation (it previously lived only on /tour-mode/guide, a
   // different route entirely).
   const [manifestOpen, setManifestOpen] = useState(false);
+  // P0-5 rich schedule — the product page's itinerary (photo, description,
+  // highlights, facilities) for the guest's language. Same authenticated route
+  // the /plan editor already uses; [] when the tour has no product page, and
+  // the shell then keeps its plain timeline.
+  const [richStops, setRichStops] = useState<unknown[]>([]);
   useEffect(() => {
     const restore = () => {
       try {
@@ -692,6 +697,31 @@ function TourRoomLive({
     },
     [bookingId, data.session, locale],
   );
+
+  // P0-5 — pull the product page's rich itinerary for this guest's language.
+  // The route is the one the /plan editor already uses, so there is no new
+  // backend and no new auth path; a tour with no product page returns [] and
+  // the shell falls back to its plain time/title timeline.
+  useEffect(() => {
+    if (!data.session) return;
+    let cancelled = false;
+    (async () => {
+      try {
+        const res = await fetch(
+          `/api/tour-rooms/${encodeURIComponent(bookingId)}/tour-itinerary?locale=${encodeURIComponent(locale)}`,
+          { headers: { 'x-tour-room-auth': data.session } },
+        );
+        if (!res.ok) return;
+        const json = (await res.json()) as { stops?: unknown[] };
+        if (!cancelled && Array.isArray(json.stops)) setRichStops(json.stops);
+      } catch {
+        // Offline / route unavailable — the plain timeline still renders.
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [bookingId, data.session, locale]);
 
   // Kakao-grade attachment (Phase 2): send a photo/file as a message with an
   // optional (auto-translated) caption. It arrives back via the room channel.
@@ -808,6 +838,7 @@ function TourRoomLive({
       chatActivityKey={messages.length}
       initialTab={deepLink.focusMessageId ? 'chat' : undefined}
       homeHref={viewerRole === 'guide' ? '/tour-mode/guide' : viewerRole === 'driver' ? '/tour-mode/driver' : undefined}
+      richStops={richStops}
       backHref={
         viewerRole === 'guide'
           ? '/tour-mode/guide'

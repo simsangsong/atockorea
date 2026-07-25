@@ -19,6 +19,7 @@ import { useRouter } from 'next/navigation';
 import { ChevronLeft, Home as HomeIcon } from 'lucide-react';
 import EmergencyCard from '@/components/tour-mode/EmergencyCard';
 import Sheet from '@/components/tour-mode/Sheet';
+import PlanStopCards from '@/components/tour-mode/plan/PlanStopCards';
 import { useKeyboardOpen } from '@/components/tour-mode/useKeyboardOpen';
 import { useTourRoomSettings, textScaleFactor } from '@/hooks/useTourRoomSettings';
 import {
@@ -49,6 +50,15 @@ const TAB_LABEL: Record<
   ja: { home: 'ホーム', chat: 'チャット', map: '地図', schedule: '本日', settings: '設定' },
   es: { home: 'Inicio', chat: 'Chat', map: 'Mapa', schedule: 'Hoy', settings: 'Ajustes' },
   zh: { home: '首页', chat: '聊天', map: '地图', schedule: '今日', settings: '设置' },
+};
+
+/** P0-5 — the rich stop cards are view-only here; only "Details" is used. */
+const STOP_CARD_LABELS: Record<RoomLocale, { add: string; added: string; details: string }> = {
+  en: { add: 'Add', added: 'Added', details: 'Details' },
+  ko: { add: '담기', added: '담김', details: '자세히' },
+  ja: { add: '追加', added: '追加済み', details: '詳細' },
+  es: { add: 'Añadir', added: 'Añadido', details: 'Detalles' },
+  zh: { add: '添加', added: '已添加', details: '详情' },
 };
 
 const MAP_SOON: Record<RoomLocale, string> = {
@@ -184,6 +194,7 @@ export default function RoomShell({
   initialTab,
   backHref,
   homeHref,
+  richStops,
   headerTitleSlot,
 }: {
   title: string;
@@ -225,6 +236,13 @@ export default function RoomShell({
    * straight to the app home in one tap, from whichever tab is open.
    */
   homeHref?: string;
+  /**
+   * P0-5 — the product page's itinerary for this guest's language (photo,
+   * description, highlights, facilities). When present the Today tab renders
+   * the same rich cards + detail drawer the product page and the /plan editor
+   * use; when empty it keeps the plain time/title timeline.
+   */
+  richStops?: unknown[];
   /**
    * B1 (§11.B) — replaces the title/subtitle block in the header. Used by the
    * GUIDE view only to swap the tour title for the seat strip; when absent the
@@ -530,7 +548,21 @@ export default function RoomShell({
                 )}
               </div>
             )}
-            {tab === 'schedule' && (
+            {/* P0-5 — when the product page has this tour's itinerary in the
+                guest's language, show the SAME rich cards they saw when
+                booking (photo + Details drawer with description, highlights,
+                facilities), instead of a bare time/title list. */}
+            {tab === 'schedule' && richStops && richStops.length > 0 && (
+              <div className="tr-anim-panel-in overflow-y-auto px-4 py-4">
+                <PlanStopCards
+                  stops={richStops as Parameters<typeof PlanStopCards>[0]['stops']}
+                  locale={locale}
+                  canEdit={false}
+                  labels={STOP_CARD_LABELS[locale]}
+                />
+              </div>
+            )}
+            {tab === 'schedule' && !(richStops && richStops.length > 0) && (
               <ol className="tr-anim-panel-in overflow-y-auto px-4 py-4">
                 {schedule.length === 0 && (
                   <p className="tr-card-text pt-10 text-center text-[var(--tr-ink-3)]">—</p>

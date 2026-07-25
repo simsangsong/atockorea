@@ -126,6 +126,39 @@ async function main() {
       record('P0-5 schedule in guest language', locale, null, 'schedule tab not reachable');
     }
 
+    // P0-5 rich schedule — tap "Details" and confirm the product-page drawer
+    // opens with the long-form content (not just a title list).
+    if (locale === 'zh' || locale === 'ko') {
+      const details = page.getByText(locale === 'zh' ? '详情' : '자세히').first();
+      if (await details.isVisible().catch(() => false)) {
+        await details.click({ timeout: 8000 }).catch(() => {});
+        await page.waitForTimeout(2200);
+        await page.screenshot({ path: path.join(SHOTS, `guest-${locale}-drawer.png`) });
+        const drawerBody = (await page.textContent('body')) ?? '';
+        // Assert on the drawer's OWN localized headings, not a byte count —
+        // a length threshold is language-dependent and gave a false FAIL on zh,
+        // whose text is more compact than Korean for the same content.
+        const heading = locale === 'zh' ? '亮点' : '하이라이트';
+        const fullDesc = locale === 'zh' ? '详细介绍' : '자세한 설명';
+        record(
+          'P0-5 stop detail drawer opens',
+          locale,
+          drawerBody.includes(heading),
+          `highlights heading "${heading}" present`,
+        );
+        record(
+          'P0-5 drawer chrome is localized',
+          locale,
+          drawerBody.includes(fullDesc),
+          `full-description label "${fullDesc}" (was hardcoded English)`,
+        );
+        await page.keyboard.press('Escape').catch(() => {});
+        await page.waitForTimeout(500);
+      } else {
+        record('P0-5 stop detail drawer opens', locale, null, 'no Details affordance on the cards');
+      }
+    }
+
     // P1-1 — the guest SHOULD see the guide-following affordance.
     const bodyText = (await page.textContent('body')) ?? '';
     record(
