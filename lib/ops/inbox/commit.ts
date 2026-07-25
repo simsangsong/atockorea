@@ -7,6 +7,7 @@
 //             confidence 0.60~0.84 (A-6)  → 'review_queued'
 //             confidence ≥0.85 + mapped   → bookings upsert (source, external_booking_id)
 //                                           + ensureRoom (기존 tour-room 경로 재사용)
+//                                           + 운영자 알림 (stage='external')
 //                                           → 'auto_committed'
 //   cancel:   (source, external_booking_id) match → status='cancelled' soft → 'cancelled'
 //             no match/키 없음                    → 'review_queued'
@@ -216,15 +217,18 @@ async function commitConfirm(
   }
 
   let merchantId: string | null = null
+  let tourTitle: string | null = null
   try {
     const { data: tour } = await supabase
       .from('tours')
-      .select('id, merchant_id')
+      .select('id, merchant_id, title')
       .eq('id', mapping.tour_id)
       .maybeSingle()
-    merchantId = (tour as { merchant_id?: string | null } | null)?.merchant_id ?? null
+    const row = tour as { merchant_id?: string | null; title?: string | null } | null
+    merchantId = row?.merchant_id ?? null
+    tourTitle = row?.title ?? null
   } catch {
-    /* merchant is optional */
+    /* merchant/title are optional */
   }
 
   const otaRawMeta = buildOtaRawMeta(b, channel, mapping.tour_kind)
@@ -293,6 +297,66 @@ async function commitConfirm(
     item.roomId = room.id
   } catch (e) {
     item.reason = `room_create_failed: ${e instanceof Error ? e.message : 'unknown'}`
+  }
+
+  // 운영자 알림 — Stripe/자체예약과 같은 레일(ADMIN_BOOKING_NOTIFICATION_EMAILS)
+  // 을 그대로 쓰되 stage='external'. OTA 건은 결제가 이미 끝난 상태라
+  // created/paid 문구가 둘 다 거짓이 되기 때문에 전용 stage를 쓴다.
+  // best-effort: 알림 실패가 커밋을 되돌리지 않는다.
+  await notifyOperator({
+    bookingId: bookingId!,
+    externalBookingId: b.externalBookingId,
+    tourTitle,
+    tourDate: b.tourDate,
+    partySize: upsertFields.number_of_guests as number,
+    leadName: b.leadName,
+    email: b.email ?? null,
+    phone: b.phone ?? b.whatsapp ?? null,
+    language: b.language ?? null,
+    pickup: b.pickupPointNormalized ?? b.pickupPointRaw ?? null,
+    channel,
+  })
+}
+
+interface OperatorNotifyInput {
+  bookingId: string
+  externalBookingId: string
+  tourTitle: string | null
+  tourDate: string
+  partySize: number
+  leadName: string
+  email: string | null
+  phone: string | null
+  language: string | null
+  pickup: string | null
+  /** commitConfirm이 확정한 실효 채널 — 파서 행 플랫폼으로 승격됐을 수 있다. */
+  channel: string
+}
+
+/** 절대 throw하지 않는다 — 알림은 커밋의 부산물이지 조건이 아니다. */
+async function notifyOperator(input: OperatorNotifyInput): Promise<void> {
+  try {
+    const { sendAdminBookingAlert } = await import('@/lib/email-templates/admin-booking-alert')
+    await sendAdminBookingAlert({
+      stage: 'external',
+      bookingId: input.bookingId,
+      // REF에 OTA 예약번호를 실어야 운영자가 OTA 콘솔과 바로 대조할 수 있다.
+      bookingReference: input.externalBookingId,
+      tourTitle: input.tourTitle ?? input.externalBookingId,
+      tourDate: input.tourDate,
+      numberOfGuests: input.partySize,
+      // OTA 메일에서 판매가를 파싱하지 않는다(ParsedBooking에 가격 필드 없음).
+      // 0원을 보내면 "₩0"으로 렌더돼 거짓이 되므로 null로 둬서 "—"가 나오게 한다.
+      totalPrice: null,
+      customerName: input.leadName,
+      customerEmail: input.email,
+      customerPhone: input.phone,
+      preferredLanguage: input.language,
+      pickupPoint: input.pickup,
+      source: input.channel,
+    })
+  } catch (e) {
+    console.warn('inbox commit: operator alert failed (non-fatal):', e)
   }
 }
 

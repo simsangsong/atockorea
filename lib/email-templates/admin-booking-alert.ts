@@ -8,6 +8,9 @@
  *                (or abandoned — worth chasing).
  *   authorized — card hold succeeded (webhook amount_capturable_updated).
  *   paid       — captured (webhook payment_intent.succeeded).
+ *   external   — OTA inbox auto-commit (plan §3 A-7): the guest already paid on
+ *                Klook/Viator/GYG/KKday, so there is no Stripe leg to chase.
+ *                payment_status='external'; REF carries the OTA booking number.
  *
  * Recipients: ADMIN_BOOKING_NOTIFICATION_EMAILS (comma-separated), same env
  * and default as the rest of the admin rails.
@@ -15,7 +18,7 @@
 
 import { sendEmail } from '@/lib/email';
 
-export type BookingAlertStage = 'created' | 'authorized' | 'paid';
+export type BookingAlertStage = 'created' | 'authorized' | 'paid' | 'external';
 
 export interface AdminBookingAlertParams {
   stage: BookingAlertStage;
@@ -53,6 +56,12 @@ const STAGE_META: Record<BookingAlertStage, { badge: string; color: string; bg: 
     color: '#14532d',
     bg: '#bbf7d0',
     note: '결제가 캡처되었습니다.',
+  },
+  external: {
+    badge: 'OTA 예약 · 자동배치',
+    color: '#1e3a5f',
+    bg: '#dbeafe',
+    note: 'OTA 인박스에서 자동 파싱되어 예약과 투어룸이 생성됐습니다. 결제는 OTA에서 이미 완료된 건이라 Stripe 결제 단계가 없습니다. 명단·좌석·배정은 관제센터에서 확인하세요.',
   },
 };
 
@@ -108,7 +117,9 @@ export function buildAdminBookingAlertHtml(params: AdminBookingAlertParams): {
       ? `🆕 새 예약 접수 — ${params.tourTitle} (${params.tourDate || params.bookingDate || ''})`
       : params.stage === 'authorized'
         ? `💳 카드 홀드 완료 — ${params.tourTitle} (${reference})`
-        : `✅ 결제 완료 — ${params.tourTitle} (${reference})`;
+        : params.stage === 'external'
+          ? `🎫 OTA 예약 접수 — ${params.tourTitle} (${params.tourDate || ''} · ${reference})`
+          : `✅ 결제 완료 — ${params.tourTitle} (${reference})`;
 
   const html = `<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="color-scheme" content="light"></head>
 <body style="margin:0;padding:28px 12px;background:#f4f1e9;font-family:-apple-system,'Apple SD Gothic Neo',Segoe UI,Roboto,sans-serif;">

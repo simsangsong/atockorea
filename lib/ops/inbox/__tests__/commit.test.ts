@@ -17,11 +17,17 @@ jest.mock('@/lib/tour-room/access', () => ({
   ensureRoom: jest.fn(async (_db: unknown, b: { id: string }) => ({ id: `room-${b.id}`, booking_id: b.id, status: 'active' })),
 }))
 jest.mock('../alert', () => ({ sendLowConfidenceAlert: jest.fn(async () => ({ sent: false, skipped: true })) }))
+jest.mock('@/lib/email-templates/admin-booking-alert', () => ({
+  sendAdminBookingAlert: jest.fn(async () => ({ sent: 1, failed: 0 })),
+}))
+
+import { sendAdminBookingAlert } from '@/lib/email-templates/admin-booking-alert'
 
 const runFunnelMock = runFunnel as jest.Mock
 const recordParseFailuresMock = recordParseFailures as jest.Mock
 const ensureRoomMock = ensureRoom as jest.Mock
 const alertMock = sendLowConfidenceAlert as jest.Mock
+const operatorAlertMock = sendAdminBookingAlert as jest.Mock
 
 function parsedBooking(overrides: Partial<ParsedBooking> = {}): ParsedBooking {
   return {
@@ -45,6 +51,8 @@ interface FakeDbOptions {
   productMap?: { tour_id: string; tour_kind: string } | null
   existingBooking?: Record<string, unknown> | null
   insertError?: { code: string; message?: string } | null
+  /** undefined = 기본 제목, null = 제목 없는 tours 행. */
+  tourTitle?: string | null
 }
 
 function fakeDb(opts: FakeDbOptions = {}) {
@@ -61,7 +69,10 @@ function fakeDb(opts: FakeDbOptions = {}) {
       chain.maybeSingle = jest.fn(async () => {
         if (table === 'ops_channel_product_map') return { data: opts.productMap ?? null, error: null }
         if (table === 'bookings') return { data: opts.existingBooking ?? null, error: null }
-        if (table === 'tours') return { data: { id: 'tour-1', merchant_id: 'm-1' }, error: null }
+        if (table === 'tours') {
+          const title = opts.tourTitle === undefined ? 'Jeju Grand Highlights' : opts.tourTitle
+          return { data: { id: 'tour-1', merchant_id: 'm-1', title }, error: null }
+        }
         return { data: null, error: null }
       })
       chain.insert = jest.fn((row: Record<string, unknown>) => {
@@ -202,6 +213,52 @@ describe('commitInboundEmail — confirm', () => {
     const out = await commitInboundEmail({ ...baseInput, channel: 'unknown', supabase: db as never })
     expect(out.items[0].commitResult).toBe('auto_committed')
     expect(db.bookingInserts[0].source).toBe('gyg')
+  })
+})
+
+describe('commitInboundEmail — operator alert (§3 A-7 후속)', () => {
+  it('emails the ops rails with stage=external and the OTA ref after an auto-commit', async () => {
+    funnelReturns([parsedBooking()])
+    const db = fakeDb({ productMap: { tour_id: 'tour-1', tour_kind: 'join' } })
+    await commitInboundEmail({ ...baseInput, supabase: db as never })
+
+    expect(operatorAlertMock).toHaveBeenCalledTimes(1)
+    const params = operatorAlertMock.mock.calls[0][0]
+    // OTA 건은 결제가 이미 끝나 created/paid 문구가 둘 다 거짓 — 전용 stage.
+    expect(params.stage).toBe('external')
+    expect(params.bookingId).toBe('b-new')
+    // REF = OTA 예약번호여야 운영자가 OTA 콘솔과 바로 대조할 수 있다.
+    expect(params.bookingReference).toBe('KLK-1001')
+    expect(params.tourTitle).toBe('Jeju Grand Highlights')
+    expect(params.tourDate).toBe('2026-08-17')
+    expect(params.numberOfGuests).toBe(2)
+    expect(params.source).toBe('klook')
+    // 파서가 가격을 뽑지 않으므로 0원("₩0")이 아니라 null("—")이어야 한다.
+    expect(params.totalPrice).toBeNull()
+  })
+
+  it('stays silent for review_queued / failed — only committed bookings notify', async () => {
+    funnelReturns([parsedBooking({ confidenceScore: 0.7 })])
+    const db = fakeDb({ productMap: { tour_id: 'tour-1', tour_kind: 'join' } })
+    const out = await commitInboundEmail({ ...baseInput, supabase: db as never })
+    expect(out.items[0].commitResult).toBe('review_queued')
+    expect(operatorAlertMock).not.toHaveBeenCalled()
+  })
+
+  it('does not fail the commit when the alert throws', async () => {
+    operatorAlertMock.mockRejectedValueOnce(new Error('resend down'))
+    funnelReturns([parsedBooking()])
+    const db = fakeDb({ productMap: { tour_id: 'tour-1', tour_kind: 'join' } })
+    const out = await commitInboundEmail({ ...baseInput, supabase: db as never })
+    expect(out.items[0].commitResult).toBe('auto_committed')
+    expect(out.items[0].roomId).toBe('room-b-new')
+  })
+
+  it('falls back to the OTA ref as the title when the tour row has none', async () => {
+    funnelReturns([parsedBooking()])
+    const db = fakeDb({ productMap: { tour_id: 'tour-1', tour_kind: 'join' }, tourTitle: null })
+    await commitInboundEmail({ ...baseInput, supabase: db as never })
+    expect(operatorAlertMock.mock.calls[0][0].tourTitle).toBe('KLK-1001')
   })
 })
 
