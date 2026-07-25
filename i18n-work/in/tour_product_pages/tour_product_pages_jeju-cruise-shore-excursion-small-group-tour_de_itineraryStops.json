@@ -56,6 +56,7 @@
     },
     "/itineraryStops/1/name": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Seongsan Ilchulbong"
       ]
@@ -128,7 +129,12 @@
     }
   },
   "glossaryTokens": {
-    "⟦G0⟧": "Seongsan Ilchulbong"
+    "/itineraryStops/1/name": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/itineraryStops/1/whyOnRoute": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    }
   },
-  "tmHits": 0
+  "tmHits": 1
 }

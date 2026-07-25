@@ -55,6 +55,7 @@
     },
     "/itineraryStops/2/galleryItems/0/location": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Hanok-Dorf Bukchon"
       ]
@@ -73,6 +74,7 @@
     },
     "/itineraryStops/2/galleryItems/1/location": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Hanok-Dorf Bukchon"
       ]
@@ -151,9 +153,38 @@
     }
   },
   "glossaryTokens": {
-    "⟦G0⟧": "Insadong",
-    "⟦G1⟧": "Gyeongbokgung-Palast",
-    "⟦G2⟧": "Insadong"
+    "/itineraryStops/2/whyOnRoute": {
+      "⟦G0⟧": "Insadong"
+    },
+    "/itineraryStops/2/description": {
+      "⟦G0⟧": "Hanok-Dorf Bukchon",
+      "⟦G1⟧": "Gyeongbokgung-Palast",
+      "⟦G2⟧": "Insadong"
+    },
+    "/itineraryStops/2/galleryItems/0/alt": {
+      "⟦G0⟧": "Hanok-Dorf Bukchon"
+    },
+    "/itineraryStops/2/galleryItems/0/caption": {
+      "⟦G0⟧": "Hanok-Dorf Bukchon"
+    },
+    "/itineraryStops/2/galleryItems/0/location": {
+      "⟦G0⟧": "Hanok-Dorf Bukchon"
+    },
+    "/itineraryStops/2/galleryItems/1/alt": {
+      "⟦G0⟧": "Hanok-Dorf Bukchon"
+    },
+    "/itineraryStops/2/galleryItems/1/caption": {
+      "⟦G0⟧": "Hanok-Dorf Bukchon"
+    },
+    "/itineraryStops/2/galleryItems/1/location": {
+      "⟦G0⟧": "Hanok-Dorf Bukchon"
+    },
+    "/itineraryStops/3/name": {
+      "⟦G0⟧": "Gwangjang-Markt"
+    },
+    "/itineraryStops/3/whyOnRoute": {
+      "⟦G0⟧": "Insadong"
+    }
   },
-  "tmHits": 0
+  "tmHits": 2
 }

@@ -32,7 +32,8 @@
       ]
     },
     "/routePhases/2/phase": {
-      "source_en": "Lunch"
+      "source_en": "Lunch",
+      "tm": "Mittagessen"
     },
     "/routePhases/2/duration": {
       "source_en": "about 1 hour"
@@ -76,6 +77,7 @@
     },
     "/galleryItems/0/location": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Hamdeok-Seoubong-Strand"
       ]
@@ -94,6 +96,7 @@
     },
     "/galleryItems/1/location": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Hamdeok-Seoubong-Strand"
       ]
@@ -112,24 +115,28 @@
     },
     "/galleryItems/2/location": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Hamdeok-Seoubong-Strand"
       ]
     },
     "/galleryItems/3/alt": {
       "source_en": "⟦G0⟧ — gallery image 4",
+      "tm": "⟦G0⟧ — Galeriebild 4",
       "glossary": [
         "⟦G0⟧ = Hamdeok-Seoubong-Strand"
       ]
     },
     "/galleryItems/3/caption": {
       "source_en": "⟦G0⟧ — photo 4",
+      "tm": "⟦G0⟧ — Foto 4",
       "glossary": [
         "⟦G0⟧ = Hamdeok-Seoubong-Strand"
       ]
     },
     "/galleryItems/3/location": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Hamdeok-Seoubong-Strand"
       ]
@@ -451,8 +458,188 @@
     }
   },
   "glossaryTokens": {
-    "⟦G0⟧": "Manjanggul-Lavaröhre",
-    "⟦G1⟧": "Seongsan Ilchulbong"
+    "/routePhases/0/description": {
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
+    },
+    "/routePhases/1/description": {
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand",
+      "⟦G1⟧": "Folkloredorf Seongeup"
+    },
+    "/routePhases/3/description": {
+      "⟦G0⟧": "Manjanggul-Lavaröhre",
+      "⟦G1⟧": "Seongsan Ilchulbong"
+    },
+    "/galleryItems/0/alt": {
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
+    },
+    "/galleryItems/0/caption": {
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
+    },
+    "/galleryItems/0/location": {
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
+    },
+    "/galleryItems/1/alt": {
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
+    },
+    "/galleryItems/1/caption": {
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
+    },
+    "/galleryItems/1/location": {
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
+    },
+    "/galleryItems/2/alt": {
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
+    },
+    "/galleryItems/2/caption": {
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
+    },
+    "/galleryItems/2/location": {
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
+    },
+    "/galleryItems/3/alt": {
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
+    },
+    "/galleryItems/3/caption": {
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
+    },
+    "/galleryItems/3/location": {
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
+    },
+    "/galleryItems/4/alt": {
+      "⟦G0⟧": "Folkloredorf Seongeup"
+    },
+    "/galleryItems/4/caption": {
+      "⟦G0⟧": "Folkloredorf Seongeup"
+    },
+    "/galleryItems/4/location": {
+      "⟦G0⟧": "Folkloredorf Seongeup"
+    },
+    "/galleryItems/5/alt": {
+      "⟦G0⟧": "Folkloredorf Seongeup"
+    },
+    "/galleryItems/5/caption": {
+      "⟦G0⟧": "Folkloredorf Seongeup"
+    },
+    "/galleryItems/5/location": {
+      "⟦G0⟧": "Folkloredorf Seongeup"
+    },
+    "/galleryItems/6/alt": {
+      "⟦G0⟧": "Folkloredorf Seongeup"
+    },
+    "/galleryItems/6/caption": {
+      "⟦G0⟧": "Folkloredorf Seongeup"
+    },
+    "/galleryItems/6/location": {
+      "⟦G0⟧": "Folkloredorf Seongeup"
+    },
+    "/galleryItems/7/alt": {
+      "⟦G0⟧": "Folkloredorf Seongeup"
+    },
+    "/galleryItems/7/caption": {
+      "⟦G0⟧": "Folkloredorf Seongeup"
+    },
+    "/galleryItems/7/location": {
+      "⟦G0⟧": "Folkloredorf Seongeup"
+    },
+    "/galleryItems/8/alt": {
+      "⟦G0⟧": "Folkloredorf Seongeup"
+    },
+    "/galleryItems/8/caption": {
+      "⟦G0⟧": "Folkloredorf Seongeup"
+    },
+    "/galleryItems/8/location": {
+      "⟦G0⟧": "Folkloredorf Seongeup"
+    },
+    "/galleryItems/9/alt": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/galleryItems/9/caption": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/galleryItems/9/location": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/galleryItems/10/alt": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/galleryItems/10/caption": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/galleryItems/10/location": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/galleryItems/11/alt": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/galleryItems/11/caption": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/galleryItems/11/location": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/galleryItems/12/alt": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/galleryItems/12/caption": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/galleryItems/12/location": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/galleryItems/13/alt": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/galleryItems/13/caption": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/galleryItems/13/location": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/galleryItems/14/alt": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/galleryItems/14/caption": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/galleryItems/14/location": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/galleryItems/15/alt": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/galleryItems/15/caption": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/galleryItems/15/location": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/galleryItems/21/alt": {
+      "⟦G0⟧": "Manjanggul-Lavaröhre"
+    },
+    "/galleryItems/21/caption": {
+      "⟦G0⟧": "Manjanggul-Lavaröhre"
+    },
+    "/galleryItems/21/location": {
+      "⟦G0⟧": "Manjanggul-Lavaröhre"
+    },
+    "/galleryItems/22/alt": {
+      "⟦G0⟧": "Manjanggul-Lavaröhre"
+    },
+    "/galleryItems/22/caption": {
+      "⟦G0⟧": "Manjanggul-Lavaröhre"
+    },
+    "/galleryItems/22/location": {
+      "⟦G0⟧": "Manjanggul-Lavaröhre"
+    },
+    "/galleryItems/23/alt": {
+      "⟦G0⟧": "Manjanggul-Lavaröhre"
+    },
+    "/galleryItems/23/caption": {
+      "⟦G0⟧": "Manjanggul-Lavaröhre"
+    },
+    "/galleryItems/23/location": {
+      "⟦G0⟧": "Manjanggul-Lavaröhre"
+    }
   },
-  "tmHits": 0
+  "tmHits": 7
 }

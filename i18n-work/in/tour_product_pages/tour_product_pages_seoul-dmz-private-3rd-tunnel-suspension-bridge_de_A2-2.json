@@ -115,7 +115,8 @@
       "source_en": "Right-sized for the route"
     },
     "/seasonalVariations/0/season": {
-      "source_en": "Spring"
+      "source_en": "Spring",
+      "tm": "Frühling"
     },
     "/seasonalVariations/0/description": {
       "source_en": "Pleasant temperatures, but yellow dust in March-April can reduce the cross-border visibility from ⟦G0⟧.",
@@ -127,7 +128,8 @@
       "source_en": "Lush but humid"
     },
     "/seasonalVariations/1/season": {
-      "source_en": "Summer"
+      "source_en": "Summer",
+      "tm": "Sommer"
     },
     "/seasonalVariations/1/description": {
       "source_en": "Lush green forests around Gamaksan, but humidity makes the tunnel descent and the bridge climb feel more demanding."
@@ -136,7 +138,8 @@
       "source_en": "Best all-round season"
     },
     "/seasonalVariations/2/season": {
-      "source_en": "Autumn"
+      "source_en": "Autumn",
+      "tm": "Herbst"
     },
     "/seasonalVariations/2/description": {
       "source_en": "Korea's cleanest visibility window for ⟦G0⟧ and the strongest foliage season at Gamaksan. The best all-round time for this route.",
@@ -148,7 +151,8 @@
       "source_en": "Stark and weather-sensitive"
     },
     "/seasonalVariations/3/season": {
-      "source_en": "Winter"
+      "source_en": "Winter",
+      "tm": "Winter"
     },
     "/seasonalVariations/3/description": {
       "source_en": "The DMZ feels especially stark and quiet in winter, but cold winds can close the suspension bridge. Dress in real layers."
@@ -169,7 +173,8 @@
       "source_en": "Weather update and any route adjustments"
     },
     "/bookingSupportSteps/1/timing": {
-      "source_en": "12 hours before"
+      "source_en": "12 hours before",
+      "tm": "12 Stunden vorher"
     },
     "/bookingSupportSteps/2/title": {
       "source_en": "Final Pickup Info"
@@ -208,14 +213,36 @@
       "source_en": "After tour"
     },
     "/practicalWeatherStatic/today/label": {
-      "source_en": "Live weather integration"
+      "source_en": "Live weather integration",
+      "tm": "Live-Wetterintegration"
     },
     "/practicalWeatherStatic/tomorrow/label": {
-      "source_en": "Updated daily"
+      "source_en": "Updated daily",
+      "tm": "Täglich aktualisiert"
     }
   },
   "glossaryTokens": {
-    "⟦G0⟧": "Aussichtspunkt Dora"
+    "/staticQuestions/0/answer": {
+      "⟦G0⟧": "Aussichtspunkt Dora"
+    },
+    "/staticQuestions/2/answer": {
+      "⟦G0⟧": "Aussichtspunkt Dora"
+    },
+    "/staticQuestions/5/answer": {
+      "⟦G0⟧": "Aussichtspunkt Dora"
+    },
+    "/staticQuestions/7/answer": {
+      "⟦G0⟧": "Aussichtspunkt Dora"
+    },
+    "/staticQuestions/9/answer": {
+      "⟦G0⟧": "Aussichtspunkt Dora"
+    },
+    "/seasonalVariations/0/description": {
+      "⟦G0⟧": "Aussichtspunkt Dora"
+    },
+    "/seasonalVariations/2/description": {
+      "⟦G0⟧": "Aussichtspunkt Dora"
+    }
   },
-  "tmHits": 0
+  "tmHits": 7
 }

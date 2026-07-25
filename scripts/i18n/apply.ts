@@ -59,7 +59,8 @@ if (!LOCALE || !['de', 'fr', 'it', 'ru'].includes(LOCALE)) {
 
 interface InUnit {
   segments: Record<string, { source_en: string }>;
-  glossaryTokens: Record<string, string>;
+  /** pointer → (토큰 → 확정 명칭). 유닛 단위로 합치면 안 된다 — extract.ts 주석 참조. */
+  glossaryTokens: Record<string, Record<string, string>>;
 }
 interface OutUnit {
   segments: Record<string, string>;
@@ -185,7 +186,7 @@ async function main(): Promise<void> {
 
       for (const [pointer, translated] of Object.entries(outUnit.segments ?? {})) {
         if (typeof translated !== 'string' || translated.trim().length === 0) continue; // 규칙 6 → 영어 유지
-        const restored = restore(translated, inUnit.glossaryTokens ?? {}, locale);
+        const restored = restore(translated, inUnit.glossaryTokens?.[pointer] ?? {}, locale);
         if (setAtPointer(payload, pointer, restored)) applied += 1;
         else missed += 1;
       }

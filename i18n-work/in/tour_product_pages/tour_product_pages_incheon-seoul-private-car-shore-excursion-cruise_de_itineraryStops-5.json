@@ -225,9 +225,67 @@
     }
   },
   "glossaryTokens": {
-    "⟦G0⟧": "Jogyesa-Tempel",
-    "⟦G1⟧": "Myeongdong",
-    "⟦G2⟧": "Insadong"
+    "/itineraryStops/5/name": {
+      "⟦G0⟧": "Jogyesa-Tempel",
+      "⟦G1⟧": "Myeongdong"
+    },
+    "/itineraryStops/5/timeUsed/3": {
+      "⟦G0⟧": "Myeongdong"
+    },
+    "/itineraryStops/5/highlights/0": {
+      "⟦G0⟧": "Myeongdong"
+    },
+    "/itineraryStops/5/highlights/2": {
+      "⟦G0⟧": "Myeongdong"
+    },
+    "/itineraryStops/5/highlights/3": {
+      "⟦G0⟧": "Jogyesa-Tempel"
+    },
+    "/itineraryStops/5/highlights/7": {
+      "⟦G0⟧": "Myeongdong"
+    },
+    "/itineraryStops/5/highlights/8": {
+      "⟦G0⟧": "Myeongdong"
+    },
+    "/itineraryStops/5/smartNotes/tip": {
+      "⟦G0⟧": "Myeongdong",
+      "⟦G1⟧": "Insadong"
+    },
+    "/itineraryStops/5/smartNotes/facilities": {
+      "⟦G0⟧": "Myeongdong"
+    },
+    "/itineraryStops/5/whyOnRoute": {
+      "⟦G0⟧": "Myeongdong"
+    },
+    "/itineraryStops/5/convenience/restroom": {
+      "⟦G0⟧": "Myeongdong"
+    },
+    "/itineraryStops/5/description": {
+      "⟦G0⟧": "Jogyesa-Tempel",
+      "⟦G1⟧": "Myeongdong",
+      "⟦G2⟧": "Insadong"
+    },
+    "/itineraryStops/5/visitBasics/hours": {
+      "⟦G0⟧": "Myeongdong"
+    },
+    "/itineraryStops/5/visitBasics/walking": {
+      "⟦G0⟧": "Myeongdong"
+    },
+    "/itineraryStops/5/visitBasics/admission": {
+      "⟦G0⟧": "Myeongdong"
+    },
+    "/itineraryStops/5/galleryItems/0/alt": {
+      "⟦G0⟧": "Jogyesa-Tempel",
+      "⟦G1⟧": "Myeongdong"
+    },
+    "/itineraryStops/5/galleryItems/0/caption": {
+      "⟦G0⟧": "Jogyesa-Tempel",
+      "⟦G1⟧": "Myeongdong"
+    },
+    "/itineraryStops/5/galleryItems/0/location": {
+      "⟦G0⟧": "Jogyesa-Tempel",
+      "⟦G1⟧": "Myeongdong"
+    }
   },
   "tmHits": 0
 }

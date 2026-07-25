@@ -25,7 +25,8 @@
       "source_en": "Meal is paid on site unless otherwise specified"
     },
     "/itineraryStops/4/name": {
-      "source_en": "Seongsan Haenyeo Free-Diving Show"
+      "source_en": "Seongsan Haenyeo Free-Diving Show",
+      "tm": "Seongsan Haenyeo Freitauch-Show"
     },
     "/itineraryStops/4/category": {
       "source_en": "UNESCO Intangible Heritage — Women Divers' Live Performance"
@@ -107,6 +108,7 @@
     },
     "/itineraryStops/5/name": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Seongsan Ilchulbong"
       ]
@@ -179,7 +181,24 @@
     }
   },
   "glossaryTokens": {
-    "⟦G0⟧": "Seongsan Ilchulbong"
+    "/itineraryStops/3/description": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/itineraryStops/4/convenience/parking": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/itineraryStops/4/convenience/restroom": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/itineraryStops/4/description": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/itineraryStops/5/name": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/itineraryStops/5/whyOnRoute": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    }
   },
-  "tmHits": 0
+  "tmHits": 2
 }

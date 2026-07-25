@@ -258,9 +258,49 @@
     }
   },
   "glossaryTokens": {
-    "⟦G0⟧": "Jagalchi-Markt",
-    "⟦G1⟧": "Gukje-Markt",
-    "⟦G2⟧": "BIFF-Platz"
+    "/itineraryStops/5/galleryItems/2/location": {
+      "⟦G0⟧": "Yongdusan-Park"
+    },
+    "/itineraryStops/5/galleryItems/3/alt": {
+      "⟦G0⟧": "Yongdusan-Park"
+    },
+    "/itineraryStops/5/galleryItems/3/caption": {
+      "⟦G0⟧": "Yongdusan-Park"
+    },
+    "/itineraryStops/5/galleryItems/3/location": {
+      "⟦G0⟧": "Yongdusan-Park"
+    },
+    "/itineraryStops/5/galleryItems/4/alt": {
+      "⟦G0⟧": "Yongdusan-Park"
+    },
+    "/itineraryStops/5/galleryItems/4/caption": {
+      "⟦G0⟧": "Yongdusan-Park"
+    },
+    "/itineraryStops/5/galleryItems/4/location": {
+      "⟦G0⟧": "Yongdusan-Park"
+    },
+    "/itineraryStops/6/highlights/5": {
+      "⟦G0⟧": "Gukje-Markt",
+      "⟦G1⟧": "BIFF-Platz"
+    },
+    "/itineraryStops/6/whyOnRoute": {
+      "⟦G0⟧": "Gukje-Markt",
+      "⟦G1⟧": "BIFF-Platz"
+    },
+    "/itineraryStops/6/convenience/parking": {
+      "⟦G0⟧": "BIFF-Platz"
+    },
+    "/itineraryStops/6/convenience/restroom": {
+      "⟦G0⟧": "BIFF-Platz"
+    },
+    "/itineraryStops/6/description": {
+      "⟦G0⟧": "Jagalchi-Markt",
+      "⟦G1⟧": "Gukje-Markt",
+      "⟦G2⟧": "BIFF-Platz"
+    },
+    "/itineraryStops/6/visitBasics/hours": {
+      "⟦G0⟧": "Jagalchi-Markt"
+    }
   },
   "tmHits": 0
 }

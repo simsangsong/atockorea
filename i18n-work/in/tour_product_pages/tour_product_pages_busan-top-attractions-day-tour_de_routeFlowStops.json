@@ -35,6 +35,7 @@
     },
     "/routeFlowStops/4/name": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = UN-Gedenkfriedhof"
       ]
@@ -44,6 +45,7 @@
     },
     "/routeFlowStops/5/name": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Kulturdorf Gamcheon"
       ]
@@ -59,7 +61,15 @@
     }
   },
   "glossaryTokens": {
-    "⟦G0⟧": "Kulturdorf Gamcheon"
+    "/routeFlowStops/1/name": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/routeFlowStops/4/name": {
+      "⟦G0⟧": "UN-Gedenkfriedhof"
+    },
+    "/routeFlowStops/5/name": {
+      "⟦G0⟧": "Kulturdorf Gamcheon"
+    }
   },
-  "tmHits": 0
+  "tmHits": 2
 }

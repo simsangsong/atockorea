@@ -8,18 +8,21 @@
   "segments": {
     "/itineraryStops/4/galleryItems/4/alt": {
       "source_en": "⟦G0⟧ — gallery image 6",
+      "tm": "⟦G0⟧ — Galeriebild 6",
       "glossary": [
         "⟦G0⟧ = Folkloredorf Seongeup"
       ]
     },
     "/itineraryStops/4/galleryItems/4/caption": {
       "source_en": "⟦G0⟧ — photo 6",
+      "tm": "⟦G0⟧ — Foto 6",
       "glossary": [
         "⟦G0⟧ = Folkloredorf Seongeup"
       ]
     },
     "/itineraryStops/4/galleryItems/4/location": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Folkloredorf Seongeup"
       ]
@@ -83,7 +86,15 @@
     }
   },
   "glossaryTokens": {
-    "⟦G0⟧": "Folkloredorf Seongeup"
+    "/itineraryStops/4/galleryItems/4/alt": {
+      "⟦G0⟧": "Folkloredorf Seongeup"
+    },
+    "/itineraryStops/4/galleryItems/4/caption": {
+      "⟦G0⟧": "Folkloredorf Seongeup"
+    },
+    "/itineraryStops/4/galleryItems/4/location": {
+      "⟦G0⟧": "Folkloredorf Seongeup"
+    }
   },
-  "tmHits": 0
+  "tmHits": 3
 }

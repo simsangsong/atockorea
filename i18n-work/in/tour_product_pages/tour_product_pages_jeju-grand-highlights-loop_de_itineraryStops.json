@@ -8,6 +8,7 @@
   "segments": {
     "/itineraryStops/0/name": {
       "source_en": "⟦G0⟧ (Ramsar + UNESCO)",
+      "tm": "⟦G0⟧ (Ramsar + UNESCO)",
       "glossary": [
         "⟦G0⟧ = Hochlagen-Feuchtgebiet Hallasan 1100"
       ]
@@ -95,60 +96,70 @@
     },
     "/itineraryStops/0/galleryItems/0/alt": {
       "source_en": "⟦G0⟧ (Ramsar + UNESCO) — gallery image 1",
+      "tm": "⟦G0⟧ (Ramsar + UNESCO) — Galeriebild 1",
       "glossary": [
         "⟦G0⟧ = Hochlagen-Feuchtgebiet Hallasan 1100"
       ]
     },
     "/itineraryStops/0/galleryItems/0/caption": {
       "source_en": "⟦G0⟧ (Ramsar + UNESCO) — photo 1",
+      "tm": "⟦G0⟧ (Ramsar + UNESCO) — Foto 1",
       "glossary": [
         "⟦G0⟧ = Hochlagen-Feuchtgebiet Hallasan 1100"
       ]
     },
     "/itineraryStops/0/galleryItems/0/location": {
       "source_en": "⟦G0⟧ (Ramsar + UNESCO)",
+      "tm": "⟦G0⟧ (Ramsar + UNESCO)",
       "glossary": [
         "⟦G0⟧ = Hochlagen-Feuchtgebiet Hallasan 1100"
       ]
     },
     "/itineraryStops/0/galleryItems/1/alt": {
       "source_en": "⟦G0⟧ (Ramsar + UNESCO) — gallery image 2",
+      "tm": "⟦G0⟧ (Ramsar + UNESCO) — Galeriebild 2",
       "glossary": [
         "⟦G0⟧ = Hochlagen-Feuchtgebiet Hallasan 1100"
       ]
     },
     "/itineraryStops/0/galleryItems/1/caption": {
       "source_en": "⟦G0⟧ (Ramsar + UNESCO) — photo 2",
+      "tm": "⟦G0⟧ (Ramsar + UNESCO) — Foto 2",
       "glossary": [
         "⟦G0⟧ = Hochlagen-Feuchtgebiet Hallasan 1100"
       ]
     },
     "/itineraryStops/0/galleryItems/1/location": {
       "source_en": "⟦G0⟧ (Ramsar + UNESCO)",
+      "tm": "⟦G0⟧ (Ramsar + UNESCO)",
       "glossary": [
         "⟦G0⟧ = Hochlagen-Feuchtgebiet Hallasan 1100"
       ]
     },
     "/itineraryStops/0/galleryItems/2/alt": {
       "source_en": "⟦G0⟧ (Ramsar + UNESCO) — gallery image 3",
+      "tm": "⟦G0⟧ (Ramsar + UNESCO) — Galeriebild 3",
       "glossary": [
         "⟦G0⟧ = Hochlagen-Feuchtgebiet Hallasan 1100"
       ]
     },
     "/itineraryStops/0/galleryItems/2/caption": {
       "source_en": "⟦G0⟧ (Ramsar + UNESCO) — photo 3",
+      "tm": "⟦G0⟧ (Ramsar + UNESCO) — Foto 3",
       "glossary": [
         "⟦G0⟧ = Hochlagen-Feuchtgebiet Hallasan 1100"
       ]
     },
     "/itineraryStops/0/galleryItems/2/location": {
       "source_en": "⟦G0⟧ (Ramsar + UNESCO)",
+      "tm": "⟦G0⟧ (Ramsar + UNESCO)",
       "glossary": [
         "⟦G0⟧ = Hochlagen-Feuchtgebiet Hallasan 1100"
       ]
     },
     "/itineraryStops/1/name": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Daepo-Jusangjeolli-Klippe"
       ]
@@ -218,7 +229,45 @@
     }
   },
   "glossaryTokens": {
-    "⟦G0⟧": "Daepo-Jusangjeolli-Klippe"
+    "/itineraryStops/0/name": {
+      "⟦G0⟧": "Hochlagen-Feuchtgebiet Hallasan 1100"
+    },
+    "/itineraryStops/0/smartNotes/tip": {
+      "⟦G0⟧": "Cheonjeyeon-Wasserfall"
+    },
+    "/itineraryStops/0/description": {
+      "⟦G0⟧": "Hochlagen-Feuchtgebiet Hallasan 1100"
+    },
+    "/itineraryStops/0/galleryItems/0/alt": {
+      "⟦G0⟧": "Hochlagen-Feuchtgebiet Hallasan 1100"
+    },
+    "/itineraryStops/0/galleryItems/0/caption": {
+      "⟦G0⟧": "Hochlagen-Feuchtgebiet Hallasan 1100"
+    },
+    "/itineraryStops/0/galleryItems/0/location": {
+      "⟦G0⟧": "Hochlagen-Feuchtgebiet Hallasan 1100"
+    },
+    "/itineraryStops/0/galleryItems/1/alt": {
+      "⟦G0⟧": "Hochlagen-Feuchtgebiet Hallasan 1100"
+    },
+    "/itineraryStops/0/galleryItems/1/caption": {
+      "⟦G0⟧": "Hochlagen-Feuchtgebiet Hallasan 1100"
+    },
+    "/itineraryStops/0/galleryItems/1/location": {
+      "⟦G0⟧": "Hochlagen-Feuchtgebiet Hallasan 1100"
+    },
+    "/itineraryStops/0/galleryItems/2/alt": {
+      "⟦G0⟧": "Hochlagen-Feuchtgebiet Hallasan 1100"
+    },
+    "/itineraryStops/0/galleryItems/2/caption": {
+      "⟦G0⟧": "Hochlagen-Feuchtgebiet Hallasan 1100"
+    },
+    "/itineraryStops/0/galleryItems/2/location": {
+      "⟦G0⟧": "Hochlagen-Feuchtgebiet Hallasan 1100"
+    },
+    "/itineraryStops/1/name": {
+      "⟦G0⟧": "Daepo-Jusangjeolli-Klippe"
+    }
   },
-  "tmHits": 0
+  "tmHits": 11
 }

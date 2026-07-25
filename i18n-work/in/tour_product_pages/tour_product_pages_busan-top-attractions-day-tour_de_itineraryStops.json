@@ -146,8 +146,30 @@
     }
   },
   "glossaryTokens": {
-    "⟦G0⟧": "Haedong Yonggungsa",
-    "⟦G1⟧": "Tongdosa-Tempel"
+    "/itineraryStops/0/whyOnRoute": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/itineraryStops/0/description": {
+      "⟦G0⟧": "UN-Gedenkfriedhof",
+      "⟦G1⟧": "Haedong Yonggungsa"
+    },
+    "/itineraryStops/1/name": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/itineraryStops/1/highlights/2": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/itineraryStops/1/whyOnRoute": {
+      "⟦G0⟧": "Cheongsapo Blue Line Park",
+      "⟦G1⟧": "UN-Gedenkfriedhof"
+    },
+    "/itineraryStops/1/convenience/parking": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/itineraryStops/1/description": {
+      "⟦G0⟧": "Haedong Yonggungsa",
+      "⟦G1⟧": "Tongdosa-Tempel"
+    }
   },
   "tmHits": 0
 }

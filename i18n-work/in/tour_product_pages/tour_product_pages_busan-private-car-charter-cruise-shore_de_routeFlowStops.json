@@ -14,6 +14,7 @@
     },
     "/routeFlowStops/2/label": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Taejongdae"
       ]
@@ -23,12 +24,14 @@
     },
     "/routeFlowStops/4/label": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Yongdusan-Park"
       ]
     },
     "/routeFlowStops/5/label": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Jagalchi-Markt"
       ]
@@ -38,7 +41,15 @@
     }
   },
   "glossaryTokens": {
-    "⟦G0⟧": "Jagalchi-Markt"
+    "/routeFlowStops/2/label": {
+      "⟦G0⟧": "Taejongdae"
+    },
+    "/routeFlowStops/4/label": {
+      "⟦G0⟧": "Yongdusan-Park"
+    },
+    "/routeFlowStops/5/label": {
+      "⟦G0⟧": "Jagalchi-Markt"
+    }
   },
-  "tmHits": 0
+  "tmHits": 3
 }

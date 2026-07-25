@@ -49,6 +49,7 @@
     },
     "/seo/primaryKeywords/4": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Cheongsapo Blue Line Park"
       ]
@@ -319,10 +320,38 @@
     }
   },
   "glossaryTokens": {
-    "⟦G0⟧": "Jagalchi-Markt",
-    "⟦G1⟧": "UN-Gedenkfriedhof",
-    "⟦G2⟧": "Haedong Yonggungsa",
-    "⟦G3⟧": "Jagalchi-Markt"
+    "/seo/description": {
+      "⟦G0⟧": "Kulturdorf Gamcheon",
+      "⟦G1⟧": "UN-Gedenkfriedhof",
+      "⟦G2⟧": "Haedong Yonggungsa",
+      "⟦G3⟧": "Jagalchi-Markt"
+    },
+    "/seo/metaDescription": {
+      "⟦G0⟧": "Kulturdorf Gamcheon",
+      "⟦G1⟧": "Haedong Yonggungsa",
+      "⟦G2⟧": "Jagalchi-Markt"
+    },
+    "/seo/primaryKeywords/1": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/seo/primaryKeywords/2": {
+      "⟦G0⟧": "Kulturdorf Gamcheon"
+    },
+    "/seo/primaryKeywords/4": {
+      "⟦G0⟧": "Cheongsapo Blue Line Park"
+    },
+    "/catalog_card/subtitle": {
+      "⟦G0⟧": "Kulturdorf Gamcheon",
+      "⟦G1⟧": "UN-Gedenkfriedhof",
+      "⟦G2⟧": "Haedong Yonggungsa",
+      "⟦G3⟧": "Jagalchi-Markt"
+    },
+    "/catalog_card/shortCardDescription": {
+      "⟦G0⟧": "Kulturdorf Gamcheon"
+    },
+    "/practicalAccordionItems/3/content/2": {
+      "⟦G0⟧": "Jagalchi-Markt"
+    }
   },
-  "tmHits": 0
+  "tmHits": 1
 }

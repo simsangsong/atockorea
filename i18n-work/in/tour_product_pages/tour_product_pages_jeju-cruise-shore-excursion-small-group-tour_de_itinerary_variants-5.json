@@ -155,9 +155,33 @@
     }
   },
   "glossaryTokens": {
-    "⟦G0⟧": "Olle-Maeil-Markt",
-    "⟦G1⟧": "Cheonjiyeon-Wasserfall",
-    "⟦G2⟧": "Olle-Maeil-Markt"
+    "/itinerary_variants/1/stops/3/description": {
+      "⟦G0⟧": "Cheonjiyeon-Wasserfall"
+    },
+    "/itinerary_variants/1/stops/4/name": {
+      "⟦G0⟧": "Cheonjiyeon-Wasserfall"
+    },
+    "/itinerary_variants/1/stops/4/highlights/8": {
+      "⟦G0⟧": "Olle-Maeil-Markt"
+    },
+    "/itinerary_variants/1/stops/4/whyOnRoute": {
+      "⟦G0⟧": "Cheonjeyeon-Wasserfall",
+      "⟦G1⟧": "Cheonjiyeon-Wasserfall"
+    },
+    "/itinerary_variants/1/stops/4/description": {
+      "⟦G0⟧": "Cheonjeyeon-Wasserfall",
+      "⟦G1⟧": "Cheonjiyeon-Wasserfall",
+      "⟦G2⟧": "Olle-Maeil-Markt"
+    },
+    "/itinerary_variants/1/stops/5/name": {
+      "⟦G0⟧": "Olle-Maeil-Markt"
+    },
+    "/itinerary_variants/1/stops/5/highlights/8": {
+      "⟦G0⟧": "Cheonjiyeon-Wasserfall"
+    },
+    "/itinerary_variants/1/stops/6/whyOnRoute": {
+      "⟦G0⟧": "Olle-Maeil-Markt"
+    }
   },
   "tmHits": 0
 }

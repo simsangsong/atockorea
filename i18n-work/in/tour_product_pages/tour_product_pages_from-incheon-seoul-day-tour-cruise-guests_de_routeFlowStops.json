@@ -23,6 +23,7 @@
     },
     "/routeFlowStops/2/name": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Hanok-Dorf Bukchon"
       ]
@@ -56,7 +57,18 @@
     }
   },
   "glossaryTokens": {
-    "⟦G0⟧": "Insadong"
+    "/routeFlowStops/1/name": {
+      "⟦G0⟧": "Gyeongbokgung-Palast"
+    },
+    "/routeFlowStops/2/name": {
+      "⟦G0⟧": "Hanok-Dorf Bukchon"
+    },
+    "/routeFlowStops/3/name": {
+      "⟦G0⟧": "Gwangjang-Markt"
+    },
+    "/routeFlowStops/4/name": {
+      "⟦G0⟧": "Insadong"
+    }
   },
-  "tmHits": 0
+  "tmHits": 1
 }

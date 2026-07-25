@@ -205,9 +205,29 @@
     }
   },
   "glossaryTokens": {
-    "⟦G0⟧": "Taejongdae",
-    "⟦G1⟧": "Haedong Yonggungsa",
-    "⟦G2⟧": "Taejongdae"
+    "/whyTourWorks/routeLogicSections/0/items/2/detail": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/1/detail": {
+      "⟦G0⟧": "Taejongdae"
+    },
+    "/routeShapeIntro/body": {
+      "⟦G0⟧": "UN-Gedenkfriedhof",
+      "⟦G1⟧": "Haedong Yonggungsa",
+      "⟦G2⟧": "Taejongdae"
+    },
+    "/staticQuestions/2/answer": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/seasonalVariations/0/swaps": {
+      "⟦G0⟧": "Taejongdae"
+    },
+    "/seasonalVariations/0/summary": {
+      "⟦G0⟧": "Yongdusan-Park"
+    },
+    "/seasonalVariations/3/swaps": {
+      "⟦G0⟧": "Taejongdae"
+    }
   },
   "tmHits": 0
 }

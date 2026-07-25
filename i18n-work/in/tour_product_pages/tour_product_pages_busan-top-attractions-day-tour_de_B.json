@@ -111,6 +111,7 @@
     },
     "/galleryItems/3/location": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Kulturdorf Gamcheon"
       ]
@@ -336,6 +337,7 @@
     },
     "/galleryItems/20/location": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Kulturdorf Gamcheon"
       ]
@@ -354,42 +356,49 @@
     },
     "/galleryItems/21/location": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Kulturdorf Gamcheon"
       ]
     },
     "/galleryItems/22/alt": {
       "source_en": "⟦G0⟧ — gallery image 5",
+      "tm": "⟦G0⟧ — Galeriebild 5",
       "glossary": [
         "⟦G0⟧ = Kulturdorf Gamcheon"
       ]
     },
     "/galleryItems/22/caption": {
       "source_en": "⟦G0⟧ — photo 5",
+      "tm": "⟦G0⟧ — Foto 5",
       "glossary": [
         "⟦G0⟧ = Kulturdorf Gamcheon"
       ]
     },
     "/galleryItems/22/location": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Kulturdorf Gamcheon"
       ]
     },
     "/galleryItems/23/alt": {
       "source_en": "⟦G0⟧ — gallery image 6",
+      "tm": "⟦G0⟧ — Galeriebild 6",
       "glossary": [
         "⟦G0⟧ = Kulturdorf Gamcheon"
       ]
     },
     "/galleryItems/23/caption": {
       "source_en": "⟦G0⟧ — photo 6",
+      "tm": "⟦G0⟧ — Foto 6",
       "glossary": [
         "⟦G0⟧ = Kulturdorf Gamcheon"
       ]
     },
     "/galleryItems/23/location": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Kulturdorf Gamcheon"
       ]
@@ -408,6 +417,7 @@
     },
     "/galleryItems/24/location": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Kulturdorf Gamcheon"
       ]
@@ -495,8 +505,151 @@
     }
   },
   "glossaryTokens": {
-    "⟦G0⟧": "Kulturdorf Gamcheon",
-    "⟦G1⟧": "UN-Gedenkfriedhof"
+    "/routePhases/0/description": {
+      "⟦G0⟧": "Cheongsapo Blue Line Park"
+    },
+    "/routePhases/2/description": {
+      "⟦G0⟧": "Kulturdorf Gamcheon",
+      "⟦G1⟧": "UN-Gedenkfriedhof"
+    },
+    "/routePhases/3/description": {
+      "⟦G0⟧": "Jagalchi-Markt"
+    },
+    "/galleryItems/0/alt": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/galleryItems/0/caption": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/galleryItems/0/location": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/galleryItems/2/alt": {
+      "⟦G0⟧": "UN-Gedenkfriedhof"
+    },
+    "/galleryItems/2/caption": {
+      "⟦G0⟧": "UN-Gedenkfriedhof"
+    },
+    "/galleryItems/2/location": {
+      "⟦G0⟧": "UN-Gedenkfriedhof"
+    },
+    "/galleryItems/3/alt": {
+      "⟦G0⟧": "Kulturdorf Gamcheon"
+    },
+    "/galleryItems/3/caption": {
+      "⟦G0⟧": "Kulturdorf Gamcheon"
+    },
+    "/galleryItems/3/location": {
+      "⟦G0⟧": "Kulturdorf Gamcheon"
+    },
+    "/galleryItems/5/alt": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/galleryItems/5/caption": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/galleryItems/5/location": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/galleryItems/6/alt": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/galleryItems/6/caption": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/galleryItems/6/location": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/galleryItems/7/alt": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/galleryItems/7/caption": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/galleryItems/7/location": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/galleryItems/8/alt": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/galleryItems/8/caption": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/galleryItems/8/location": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/galleryItems/9/alt": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/galleryItems/9/caption": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/galleryItems/9/location": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/galleryItems/18/alt": {
+      "⟦G0⟧": "UN-Gedenkfriedhof"
+    },
+    "/galleryItems/18/caption": {
+      "⟦G0⟧": "UN-Gedenkfriedhof"
+    },
+    "/galleryItems/18/location": {
+      "⟦G0⟧": "UN-Gedenkfriedhof"
+    },
+    "/galleryItems/19/alt": {
+      "⟦G0⟧": "UN-Gedenkfriedhof"
+    },
+    "/galleryItems/19/caption": {
+      "⟦G0⟧": "UN-Gedenkfriedhof"
+    },
+    "/galleryItems/19/location": {
+      "⟦G0⟧": "UN-Gedenkfriedhof"
+    },
+    "/galleryItems/20/alt": {
+      "⟦G0⟧": "Kulturdorf Gamcheon"
+    },
+    "/galleryItems/20/caption": {
+      "⟦G0⟧": "Kulturdorf Gamcheon"
+    },
+    "/galleryItems/20/location": {
+      "⟦G0⟧": "Kulturdorf Gamcheon"
+    },
+    "/galleryItems/21/alt": {
+      "⟦G0⟧": "Kulturdorf Gamcheon"
+    },
+    "/galleryItems/21/caption": {
+      "⟦G0⟧": "Kulturdorf Gamcheon"
+    },
+    "/galleryItems/21/location": {
+      "⟦G0⟧": "Kulturdorf Gamcheon"
+    },
+    "/galleryItems/22/alt": {
+      "⟦G0⟧": "Kulturdorf Gamcheon"
+    },
+    "/galleryItems/22/caption": {
+      "⟦G0⟧": "Kulturdorf Gamcheon"
+    },
+    "/galleryItems/22/location": {
+      "⟦G0⟧": "Kulturdorf Gamcheon"
+    },
+    "/galleryItems/23/alt": {
+      "⟦G0⟧": "Kulturdorf Gamcheon"
+    },
+    "/galleryItems/23/caption": {
+      "⟦G0⟧": "Kulturdorf Gamcheon"
+    },
+    "/galleryItems/23/location": {
+      "⟦G0⟧": "Kulturdorf Gamcheon"
+    },
+    "/galleryItems/24/alt": {
+      "⟦G0⟧": "Kulturdorf Gamcheon"
+    },
+    "/galleryItems/24/caption": {
+      "⟦G0⟧": "Kulturdorf Gamcheon"
+    },
+    "/galleryItems/24/location": {
+      "⟦G0⟧": "Kulturdorf Gamcheon"
+    }
   },
-  "tmHits": 0
+  "tmHits": 10
 }

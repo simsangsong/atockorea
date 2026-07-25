@@ -14,6 +14,7 @@
     },
     "/routeFlowStops/1/name": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Hamdeok-Seoubong-Strand"
       ]
@@ -23,6 +24,7 @@
     },
     "/routeFlowStops/2/name": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Folkloredorf Seongeup"
       ]
@@ -31,7 +33,8 @@
       "source_en": "Heritage Village"
     },
     "/routeFlowStops/3/name": {
-      "source_en": "Lunch"
+      "source_en": "Lunch",
+      "tm": "Mittagessen"
     },
     "/routeFlowStops/3/theme": {
       "source_en": "Meal"
@@ -65,7 +68,15 @@
     }
   },
   "glossaryTokens": {
-    "⟦G0⟧": "Seongsan Ilchulbong"
+    "/routeFlowStops/1/name": {
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
+    },
+    "/routeFlowStops/2/name": {
+      "⟦G0⟧": "Folkloredorf Seongeup"
+    },
+    "/routeFlowStops/4/name": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    }
   },
-  "tmHits": 0
+  "tmHits": 3
 }

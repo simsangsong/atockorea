@@ -132,8 +132,15 @@ interface UnitFile {
   tier: string;
   /** pointer → 번역가에게 주는 3원 소스 (플랜 §2). `tm`이 있으면 그대로 쓴다. */
   segments: Record<string, { source_en: string; glossary?: string[]; tm?: string }>;
-  /** 마스킹 복원용 — 토큰 → 확정 명칭. 검증·적용 단계가 이걸 쓴다. */
-  glossaryTokens: Record<string, string>;
+  /**
+   * 마스킹 복원용 — **pointer → (토큰 → 확정 명칭)**.
+   *
+   * 🔴 반드시 pointer별로 분리해야 한다. `maskGlossaryTerms`는 호출마다 `⟦G0⟧`부터
+   * 번호를 새로 매기므로 **같은 토큰이 세그먼트마다 다른 고유명사를 가리킨다.**
+   * 유닛 하나로 합치면 마지막 값이 앞을 덮어써서, 복원 때 엉뚱한 지명이 박힌다
+   * (2026-07-26 실측: `⟦G0⟧`가 스톱1에서 Jusangjeolli, 스톱3에서 Seongsan Ilchulbong).
+   */
+  glossaryTokens: Record<string, Record<string, string>>;
   /** TM으로 이미 확정된 세그먼트 수 — 서브에이전트가 새로 번역할 양을 가늠하게 한다. */
   tmHits: number;
 }
@@ -177,7 +184,7 @@ async function main(): Promise<void> {
       const id = unitId(SURFACE, page.slug, locale, chunkName);
 
       const segments: UnitFile['segments'] = {};
-      const glossaryTokens: Record<string, string> = {};
+      const glossaryTokens: Record<string, Record<string, string>> = {};
       let tmHits = 0;
 
       for (const leaf of chunk) {
@@ -195,10 +202,12 @@ async function main(): Promise<void> {
           segments[leaf.pointer].glossary = masked.terms.map(
             (t) => `${t.token} = ${t.entry.names[locale] ?? t.entry.names.en ?? t.matched}`,
           );
+          const perPointer: Record<string, string> = {};
           for (const term of masked.terms) {
-            glossaryTokens[term.token] =
+            perPointer[term.token] =
               term.entry.names[locale] ?? term.entry.names.en ?? term.matched;
           }
+          glossaryTokens[leaf.pointer] = perPointer;
         }
       }
 

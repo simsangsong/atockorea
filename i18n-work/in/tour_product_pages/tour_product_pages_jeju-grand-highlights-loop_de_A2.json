@@ -7,230 +7,307 @@
   "tier": "A2",
   "segments": {
     "/whyTourWorks/bestFor/0": {
-      "source_en": "Travelers who only have one day in Jeju"
+      "source_en": "Travelers who only have one day in Jeju",
+      "tm": "Reisende, die nur einen Tag auf Jeju haben"
     },
     "/whyTourWorks/bestFor/1": {
-      "source_en": "First-time visitors who want the island's UNESCO sites"
+      "source_en": "First-time visitors who want the island's UNESCO sites",
+      "tm": "Erstbesucher, die die UNESCO-Stätten der Insel sehen möchten"
     },
     "/whyTourWorks/bestFor/2": {
-      "source_en": "Travelers who want iconic landmarks and local culture together"
+      "source_en": "Travelers who want iconic landmarks and local culture together",
+      "tm": "Reisende, die ikonische Wahrzeichen und lokale Kultur zusammen erleben möchten"
     },
     "/whyTourWorks/bestFor/3": {
-      "source_en": "Travelers who enjoy active, full-day sightseeing"
+      "source_en": "Travelers who enjoy active, full-day sightseeing",
+      "tm": "Reisende, die eine aktive, ganztägige Besichtigungstour genießen"
     },
     "/whyTourWorks/lessIdealFor/0": {
-      "source_en": "Travelers who prefer a slow, relaxed pace"
+      "source_en": "Travelers who prefer a slow, relaxed pace",
+      "tm": "Reisende, die ein langsames, entspanntes Tempo bevorzugen"
     },
     "/whyTourWorks/lessIdealFor/1": {
-      "source_en": "Travelers who want to avoid stairs or uphill walking"
+      "source_en": "Travelers who want to avoid stairs or uphill walking",
+      "tm": "Reisende, die Treppen oder Anstiege zu Fuß vermeiden möchten"
     },
     "/whyTourWorks/lessIdealFor/2": {
-      "source_en": "Groups traveling with very young children"
+      "source_en": "Groups traveling with very young children",
+      "tm": "Gruppen, die mit sehr kleinen Kindern reisen"
     },
     "/whyTourWorks/lessIdealFor/3": {
-      "source_en": "Guests who are uncomfortable in cool, dim cave passages"
+      "source_en": "Guests who are uncomfortable in cool, dim cave passages",
+      "tm": "Gäste, die sich in kühlen, dämmrigen Höhlengängen unwohl fühlen"
     },
     "/whyTourWorks/routeLogicSections/0/items/0/label": {
-      "source_en": "Open on the Hallasan highland"
+      "source_en": "Open on the Hallasan highland",
+      "tm": "Beginn im Hallasan-Hochland"
     },
     "/whyTourWorks/routeLogicSections/0/items/0/detail": {
-      "source_en": "Starting at the 1,100 m alpine wetland sets the day against Jeju's mountain core before the long cross-island drive begins."
+      "source_en": "Starting at the 1,100 m alpine wetland sets the day against Jeju's mountain core before the long cross-island drive begins.",
+      "tm": "Der Start im alpinen Feuchtgebiet auf 1.100 m verankert den Tag in Jejus bergigem Zentrum, bevor die lange Fahrt quer über die Insel beginnt."
     },
     "/whyTourWorks/routeLogicSections/0/items/1/label": {
-      "source_en": "Keep the south coast in the middle"
+      "source_en": "Keep the south coast in the middle",
+      "tm": "Die Südküste in der Mitte halten"
     },
     "/whyTourWorks/routeLogicSections/0/items/1/detail": {
-      "source_en": "Jusangjeolli, Jeongbang and lunch hold the west-to-east flow together while keeping the visual density high through midday."
+      "source_en": "Jusangjeolli, Jeongbang and lunch hold the west-to-east flow together while keeping the visual density high through midday.",
+      "tm": "Jusangjeolli, Jeongbang und das Mittagessen halten den Ablauf von West nach Ost zusammen und sorgen bis in den Mittag hinein für eine hohe visuelle Dichte."
     },
     "/whyTourWorks/routeLogicSections/0/items/2/label": {
-      "source_en": "Finish in the east with crater and cave"
+      "source_en": "Finish in the east with crater and cave",
+      "tm": "Abschluss im Osten mit Krater und Höhle"
     },
     "/whyTourWorks/routeLogicSections/0/items/2/detail": {
       "source_en": "Haenyeo culture, the Seongsan climb and the ⟦G0⟧ turn the eastern leg into a strong UNESCO finale rather than a string of separate stops.",
+      "tm": "Die Haenyeo-Kultur, der Aufstieg auf den Seongsan und die ⟦G0⟧ machen die östliche Etappe zu einem starken UNESCO-Finale statt zu einer Aneinanderreihung einzelner Stopps.",
       "glossary": [
         "⟦G0⟧ = Manjanggul-Lavaröhre"
       ]
     },
     "/whyTourWorks/routeLogicSections/0/title": {
-      "source_en": "Built to cover Jeju's best in one day"
+      "source_en": "Built to cover Jeju's best in one day",
+      "tm": "Gebaut, um das Beste von Jeju an einem Tag abzudecken"
     },
     "/whyTourWorks/routeLogicSections/0/iconBg": {
       "source_en": "bg-amber-50/80"
     },
     "/whyTourWorks/routeLogicSections/1/items/0/label": {
-      "source_en": "Three UNESCO World Heritage sites"
+      "source_en": "Three UNESCO World Heritage sites",
+      "tm": "Drei Stätten des UNESCO-Welterbes"
     },
     "/whyTourWorks/routeLogicSections/1/items/0/detail": {
       "source_en": "Hallasan, ⟦G0⟧ and Manjanggul are all part of Jeju's UNESCO inscription — the highest UNESCO density possible in a single Jeju day.",
+      "tm": "Hallasan, ⟦G0⟧ und Manjanggul gehören alle zu Jejus UNESCO-Eintragung — die höchstmögliche UNESCO-Dichte an einem einzigen Jeju-Tag.",
       "glossary": [
         "⟦G0⟧ = Seongsan Ilchulbong"
       ]
     },
     "/whyTourWorks/routeLogicSections/1/items/1/label": {
-      "source_en": "A living cultural layer"
+      "source_en": "A living cultural layer",
+      "tm": "Eine lebendige kulturelle Ebene"
     },
     "/whyTourWorks/routeLogicSections/1/items/1/detail": {
-      "source_en": "The haenyeo free-diving show adds UNESCO Intangible Cultural Heritage to a day otherwise built on volcanic landforms."
+      "source_en": "The haenyeo free-diving show adds UNESCO Intangible Cultural Heritage to a day otherwise built on volcanic landforms.",
+      "tm": "Die Freitauchshow der Haenyeo fügt einem Tag, der ansonsten auf vulkanischen Landformen aufbaut, immaterielles UNESCO-Kulturerbe hinzu."
     },
     "/whyTourWorks/routeLogicSections/1/items/2/label": {
-      "source_en": "Maximum value for the time"
+      "source_en": "Maximum value for the time",
+      "tm": "Maximaler Gegenwert für die Zeit"
     },
     "/whyTourWorks/routeLogicSections/1/items/2/detail": {
-      "source_en": "Mountain, cliffs, waterfall, culture, crater and cave in one circuit — designed so a single day still feels like a complete Jeju trip."
+      "source_en": "Mountain, cliffs, waterfall, culture, crater and cave in one circuit — designed so a single day still feels like a complete Jeju trip.",
+      "tm": "Berg, Klippen, Wasserfall, Kultur, Krater und Höhle in einer Rundtour — so angelegt, dass sich ein einziger Tag dennoch wie eine vollständige Jeju-Reise anfühlt."
     },
     "/whyTourWorks/routeLogicSections/1/title": {
-      "source_en": "Why this day feels especially substantial"
+      "source_en": "Why this day feels especially substantial",
+      "tm": "Warum sich dieser Tag besonders gehaltvoll anfühlt"
     },
     "/whyTourWorks/routeLogicSections/1/iconBg": {
       "source_en": "bg-sky-50/80"
     },
     "/whyTourWorks/routeLogicSections/2/items/0/label": {
-      "source_en": "Haenyeo show is weather-dependent"
+      "source_en": "Haenyeo show is weather-dependent",
+      "tm": "Die Haenyeo-Show ist wetterabhängig"
     },
     "/whyTourWorks/routeLogicSections/2/items/0/detail": {
-      "source_en": "The open-air free-diving demonstration can be cancelled in high seas; on those days the route visits the Haenyeo Museum instead."
+      "source_en": "The open-air free-diving demonstration can be cancelled in high seas; on those days the route visits the Haenyeo Museum instead.",
+      "tm": "Die Freitauch-Vorführung unter freiem Himmel kann bei hohem Seegang abgesagt werden; an diesen Tagen besucht die Route stattdessen das Haenyeo Museum."
     },
     "/whyTourWorks/routeLogicSections/2/items/1/label": {
-      "source_en": "Manjanggul has periodic closures"
+      "source_en": "Manjanggul has periodic closures",
+      "tm": "Manjanggul ist zeitweise geschlossen"
     },
     "/whyTourWorks/routeLogicSections/2/items/1/detail": {
-      "source_en": "If the lava tube is closed for conservation or capacity, the nearby Ilchul Land Micheon Cave lava tube is used as the alternate."
+      "source_en": "If the lava tube is closed for conservation or capacity, the nearby Ilchul Land Micheon Cave lava tube is used as the alternate.",
+      "tm": "Ist die Lavaröhre aus Konservierungs- oder Kapazitätsgründen geschlossen, wird die nahe gelegene Lavaröhre Ilchul Land Micheon Cave als Alternative genutzt."
     },
     "/whyTourWorks/routeLogicSections/2/items/2/label": {
-      "source_en": "Return time may shift slightly"
+      "source_en": "Return time may shift slightly",
+      "tm": "Die Rückkehrzeit kann sich leicht verschieben"
     },
     "/whyTourWorks/routeLogicSections/2/items/2/detail": {
-      "source_en": "Traffic, group walking speed and crowd levels can all cause small changes to the final return time."
+      "source_en": "Traffic, group walking speed and crowd levels can all cause small changes to the final return time.",
+      "tm": "Verkehr, Gehtempo der Gruppe und Besucherandrang können alle zu kleinen Änderungen der endgültigen Rückkehrzeit führen."
     },
     "/whyTourWorks/routeLogicSections/2/title": {
-      "source_en": "When on-site conditions change"
+      "source_en": "When on-site conditions change",
+      "tm": "Wenn sich die Bedingungen vor Ort ändern"
     },
     "/whyTourWorks/routeLogicSections/2/iconBg": {
       "source_en": "bg-slate-50/80"
     },
     "/routeShapeIntro/title": {
-      "source_en": "How the day flows"
+      "source_en": "How the day flows",
+      "tm": "So verläuft der Tag"
     },
     "/routeShapeIntro/subtitle": {
       "source_en": "The day runs from the Hallasan 1100 highland through the south-coast cliffs and waterfall, then crosses east to Seongsan for lunch beneath Ilchulbong, a live haenyeo free-diving show, the ⟦G1⟧ climb, and the ⟦G0⟧. About 180 km and roughly 5 hours of driving in total; pickup is usually 08:00–08:35, with return to Jeju City around 18:00–18:30.",
+      "tm": "Der Tag führt vom Hallasan 1100 Highland über die Klippen und den Wasserfall der Südküste und quert dann nach Osten nach Seongsan — zum Mittagessen unterhalb des Ilchulbong, zu einer Live-Freitauchshow der Haenyeo, zum Aufstieg auf den ⟦G1⟧ und zur ⟦G0⟧. Insgesamt rund 180 km und etwa 5 Stunden Fahrt; die Abholung erfolgt üblicherweise zwischen 08:00 und 08:35 Uhr, die Rückkehr nach Jeju City gegen 18:00–18:30 Uhr.",
       "glossary": [
         "⟦G0⟧ = Manjanggul-Lavaröhre",
         "⟦G1⟧ = Seongsan Ilchulbong"
       ]
     },
     "/staticQuestions/0/answer": {
-      "source_en": "Yes. This route is built to cover Jeju's core landmarks — three UNESCO sites, haenyeo culture, cliffs and a waterfall — in one day, at a faster pace than a standard day tour."
+      "source_en": "Yes. This route is built to cover Jeju's core landmarks — three UNESCO sites, haenyeo culture, cliffs and a waterfall — in one day, at a faster pace than a standard day tour.",
+      "tm": "Ja. Diese Route ist darauf ausgelegt, Jejus zentrale Wahrzeichen — drei UNESCO-Stätten, die Haenyeo-Kultur, Klippen und einen Wasserfall — an einem Tag abzudecken, in einem schnelleren Tempo als bei einer üblichen Tagestour."
     },
     "/staticQuestions/0/question": {
-      "source_en": "If I only have one day in Jeju, is this the right route?"
+      "source_en": "If I only have one day in Jeju, is this the right route?",
+      "tm": "Ist dies die richtige Route, wenn ich nur einen Tag auf Jeju habe?"
     },
     "/staticQuestions/1/answer": {
       "source_en": "Three: the Hallasan 1100 highland (part of the Hallasan World Heritage area), ⟦G1⟧, and the ⟦G0⟧ — all within Jeju's 'Volcanic Island and Lava Tubes' inscription. The haenyeo show is also UNESCO Intangible Cultural Heritage.",
+      "tm": "Drei: das Hallasan 1100 Highland (Teil des Welterbegebiets Hallasan), ⟦G1⟧ und die ⟦G0⟧ — alle innerhalb von Jejus Eintragung „Volcanic Island and Lava Tubes“. Die Haenyeo-Show ist zudem immaterielles UNESCO-Kulturerbe.",
       "glossary": [
         "⟦G0⟧ = Manjanggul-Lavaröhre",
         "⟦G1⟧ = Seongsan Ilchulbong"
       ]
     },
     "/staticQuestions/1/question": {
-      "source_en": "Which stops are the UNESCO sites?"
+      "source_en": "Which stops are the UNESCO sites?",
+      "tm": "Welche Stopps sind die UNESCO-Stätten?"
     },
     "/staticQuestions/2/answer": {
-      "source_en": "The open-air free-diving demonstration depends on sea conditions. If it is cancelled, the route visits the Haenyeo Museum nearby, which tells the same women-divers' story indoors."
+      "source_en": "The open-air free-diving demonstration depends on sea conditions. If it is cancelled, the route visits the Haenyeo Museum nearby, which tells the same women-divers' story indoors.",
+      "tm": "Die Freitauch-Vorführung unter freiem Himmel hängt von den Bedingungen auf See ab. Fällt sie aus, besucht die Route das nahe gelegene Haenyeo Museum, das dieselbe Geschichte der Taucherinnen im Innenraum erzählt."
     },
     "/staticQuestions/2/question": {
-      "source_en": "What happens if the haenyeo show is cancelled?"
+      "source_en": "What happens if the haenyeo show is cancelled?",
+      "tm": "Was passiert, wenn die Haenyeo-Show abgesagt wird?"
     },
     "/staticQuestions/3/answer": {
-      "source_en": "Manjanggul closes periodically for conservation and capacity. When it is closed, the tour visits the nearby Ilchul Land Micheon Cave — another lava tube from the same volcanic system — instead."
+      "source_en": "Manjanggul closes periodically for conservation and capacity. When it is closed, the tour visits the nearby Ilchul Land Micheon Cave — another lava tube from the same volcanic system — instead.",
+      "tm": "Manjanggul wird regelmäßig aus Konservierungs- und Kapazitätsgründen geschlossen. In diesem Fall besucht die Tour stattdessen die nahe gelegene Ilchul Land Micheon Cave — eine weitere Lavaröhre desselben vulkanischen Systems."
     },
     "/staticQuestions/3/question": {
-      "source_en": "Is Manjanggul always open?"
+      "source_en": "Is Manjanggul always open?",
+      "tm": "Ist Manjanggul immer geöffnet?"
     },
     "/staticQuestions/4/answer": {
-      "source_en": "It is more active than a typical small-group day tour: the route covers most of the island and includes the Seongsan climb, the Jeongbang stairs and the Manjanggul cave walk."
+      "source_en": "It is more active than a typical small-group day tour: the route covers most of the island and includes the Seongsan climb, the Jeongbang stairs and the Manjanggul cave walk.",
+      "tm": "Sie ist aktiver als eine typische Tagestour in kleiner Gruppe: Die Route deckt den größten Teil der Insel ab und umfasst den Aufstieg auf den Seongsan, die Treppen von Jeongbang und den Höhlenweg durch Manjanggul."
     },
     "/staticQuestions/4/question": {
-      "source_en": "Will this route feel tiring?"
+      "source_en": "Will this route feel tiring?",
+      "tm": "Fühlt sich diese Route anstrengend an?"
     },
     "/staticQuestions/5/answer": {
-      "source_en": "Possibly, but only with a generous evening buffer. If your flight timing is tight, this route is not recommended."
+      "source_en": "Possibly, but only with a generous evening buffer. If your flight timing is tight, this route is not recommended.",
+      "tm": "Möglicherweise, aber nur mit einem großzügigen Zeitpuffer am Abend. Wenn Ihre Flugzeiten knapp sind, ist diese Route nicht zu empfehlen."
     },
     "/staticQuestions/5/question": {
-      "source_en": "Can I join if I arrive in or leave Jeju on the same day?"
+      "source_en": "Can I join if I arrive in or leave Jeju on the same day?",
+      "tm": "Kann ich teilnehmen, wenn ich am selben Tag auf Jeju ankomme oder abreise?"
     },
     "/staticQuestions/6/answer": {
-      "source_en": "It sits on the way back toward Jeju City and works as a cool, sheltered UNESCO finale after a long day of open-air landforms."
+      "source_en": "It sits on the way back toward Jeju City and works as a cool, sheltered UNESCO finale after a long day of open-air landforms.",
+      "tm": "Es liegt auf dem Rückweg Richtung Jeju City und funktioniert als kühles, geschütztes UNESCO-Finale nach einem langen Tag mit Landformen unter freiem Himmel."
     },
     "/staticQuestions/6/question": {
-      "source_en": "Why is Manjanggul scheduled last?"
+      "source_en": "Why is Manjanggul scheduled last?",
+      "tm": "Warum ist Manjanggul als Letztes eingeplant?"
     },
     "/bookingTrustItems/0/body": {
       "source_en": "Licensed local operator designing this loop for travelers who have one day and want Jeju's most recognizable landmarks — a Hallasan highland, columnar cliffs, an ocean waterfall, a living haenyeo show, the Seongsan tuff cone and the ⟦G0⟧ — in a single circuit.",
+      "tm": "Lizenzierter lokaler Anbieter, der diese Rundtour für Reisende gestaltet, die einen Tag Zeit haben und Jejus bekannteste Wahrzeichen — ein Hallasan-Hochland, säulenförmige Klippen, einen Wasserfall am Meer, eine lebendige Haenyeo-Show, den Tuffkegel Seongsan und die ⟦G0⟧ — in einer einzigen Rundfahrt erleben möchten.",
       "glossary": [
         "⟦G0⟧ = Manjanggul-Lavaröhre"
       ]
     },
     "/bookingTrustItems/0/title": {
-      "source_en": "Jeju's best, in a single day"
+      "source_en": "Jeju's best, in a single day",
+      "tm": "Das Beste von Jeju an einem einzigen Tag"
     },
     "/bookingTrustItems/0/iconBg": {
       "source_en": "bg-emerald-50/80"
     },
     "/bookingTrustItems/0/description": {
-      "source_en": "Three UNESCO sites plus haenyeo culture"
+      "source_en": "Three UNESCO sites plus haenyeo culture",
+      "tm": "Drei UNESCO-Stätten plus Haenyeo-Kultur"
     },
     "/bookingTrustItems/1/body": {
-      "source_en": "Route specialists who run the full-island loop regularly — the stop sequence minimizes backtracking and times the south-coast and haenyeo stops to tide, light and demonstration schedules."
+      "source_en": "Route specialists who run the full-island loop regularly — the stop sequence minimizes backtracking and times the south-coast and haenyeo stops to tide, light and demonstration schedules.",
+      "tm": "Routenspezialisten, die die Rundtour über die ganze Insel regelmäßig durchführen — die Abfolge der Stopps minimiert Rückwege und stimmt die Stopps an der Südküste und bei den Haenyeo auf Gezeiten, Licht und Vorführungszeiten ab."
     },
     "/bookingTrustItems/1/title": {
-      "source_en": "Focused on iconic landmarks"
+      "source_en": "Focused on iconic landmarks",
+      "tm": "Fokussiert auf ikonische Wahrzeichen"
     },
     "/bookingTrustItems/1/iconBg": {
       "source_en": "bg-sky-50/80"
     },
     "/bookingTrustItems/1/description": {
-      "source_en": "From the Hallasan highland to a UNESCO lava tube"
+      "source_en": "From the Hallasan highland to a UNESCO lava tube",
+      "tm": "Vom Hallasan-Hochland zu einer UNESCO-Lavaröhre"
     },
     "/bookingTrustItems/2/body": {
-      "source_en": "Small-group format keeps the day flexible — the guide can swap the haenyeo show for the museum, or Manjanggul for the Ilchul Land lava tube, without breaking the route."
+      "source_en": "Small-group format keeps the day flexible — the guide can swap the haenyeo show for the museum, or Manjanggul for the Ilchul Land lava tube, without breaking the route.",
+      "tm": "Das Kleingruppenformat hält den Tag flexibel — der Guide kann die Haenyeo-Show gegen das Museum oder Manjanggul gegen die Lavaröhre in Ilchul Land tauschen, ohne die Route zu unterbrechen."
     },
     "/bookingTrustItems/2/title": {
-      "source_en": "Small-group operation"
+      "source_en": "Small-group operation",
+      "tm": "Durchführung in kleinen Gruppen"
     },
     "/bookingTrustItems/2/iconBg": {
       "source_en": "bg-amber-50/80"
     },
     "/bookingTrustItems/2/description": {
-      "source_en": "Better able to adapt to closures and on-site conditions"
+      "source_en": "Better able to adapt to closures and on-site conditions",
+      "tm": "Besser anpassungsfähig an Schließungen und Bedingungen vor Ort"
     },
     "/seasonalVariations/0/season": {
-      "source_en": "Spring"
+      "source_en": "Spring",
+      "tm": "Frühling"
     },
     "/seasonalVariations/0/description": {
-      "source_en": "Mountain air feels especially fresh, and island-wide visibility is often cleaner and brighter."
+      "source_en": "Mountain air feels especially fresh, and island-wide visibility is often cleaner and brighter.",
+      "tm": "Die Bergluft wirkt besonders frisch, und die Sicht ist auf der ganzen Insel oft klarer und heller."
     },
     "/seasonalVariations/1/season": {
-      "source_en": "Summer"
+      "source_en": "Summer",
+      "tm": "Sommer"
     },
     "/seasonalVariations/1/description": {
-      "source_en": "Days are longest, and the coastal colors tend to feel the most vivid and saturated."
+      "source_en": "Days are longest, and the coastal colors tend to feel the most vivid and saturated.",
+      "tm": "Die Tage sind am längsten, und die Farben der Küste wirken meist am lebendigsten und intensivsten."
     },
     "/seasonalVariations/2/season": {
-      "source_en": "Autumn"
+      "source_en": "Autumn",
+      "tm": "Herbst"
     },
     "/seasonalVariations/2/description": {
-      "source_en": "Clear skies often make the full-island route feel especially satisfying from start to finish."
+      "source_en": "Clear skies often make the full-island route feel especially satisfying from start to finish.",
+      "tm": "Klarer Himmel lässt die Route über die ganze Insel von Anfang bis Ende oft besonders lohnend wirken."
     },
     "/seasonalVariations/3/season": {
-      "source_en": "Winter"
+      "source_en": "Winter",
+      "tm": "Winter"
     },
     "/seasonalVariations/3/description": {
-      "source_en": "The air turns sharper and clearer, and the contrast between mountain and sea becomes even stronger."
+      "source_en": "The air turns sharper and clearer, and the contrast between mountain and sea becomes even stronger.",
+      "tm": "Die Luft wird schärfer und klarer, und der Kontrast zwischen Berg und Meer wird noch stärker."
     }
   },
   "glossaryTokens": {
-    "⟦G0⟧": "Manjanggul-Lavaröhre",
-    "⟦G1⟧": "Seongsan Ilchulbong"
+    "/whyTourWorks/routeLogicSections/0/items/2/detail": {
+      "⟦G0⟧": "Manjanggul-Lavaröhre"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/0/detail": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/routeShapeIntro/subtitle": {
+      "⟦G0⟧": "Manjanggul-Lavaröhre",
+      "⟦G1⟧": "Seongsan Ilchulbong"
+    },
+    "/staticQuestions/1/answer": {
+      "⟦G0⟧": "Manjanggul-Lavaröhre",
+      "⟦G1⟧": "Seongsan Ilchulbong"
+    },
+    "/bookingTrustItems/0/body": {
+      "⟦G0⟧": "Manjanggul-Lavaröhre"
+    }
   },
-  "tmHits": 0
+  "tmHits": 62
 }

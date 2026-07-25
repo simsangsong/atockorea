@@ -114,8 +114,16 @@
     }
   },
   "glossaryTokens": {
-    "⟦G0⟧": "Haedong Yonggungsa",
-    "⟦G1⟧": "BIFF-Platz"
+    "/whyTourWorks/routeLogicSections/1/items/0/detail": {
+      "⟦G0⟧": "Gukje-Markt",
+      "⟦G1⟧": "BIFF-Platz"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/2/detail": {
+      "⟦G0⟧": "Yongdusan-Park"
+    },
+    "/routeShapeIntro/subtitle": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    }
   },
   "tmHits": 0
 }

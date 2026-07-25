@@ -271,11 +271,17 @@
     }
   },
   "glossaryTokens": {
-    "⟦G0⟧": "Hanok-Dorf Bukchon",
-    "⟦G1⟧": "Gyeongbokgung-Palast",
-    "⟦G2⟧": "Jogyesa-Tempel",
-    "⟦G3⟧": "Myeongdong",
-    "⟦G4⟧": "Insadong"
+    "/seo/metaDescription": {
+      "⟦G0⟧": "Myeongdong",
+      "⟦G1⟧": "Insadong"
+    },
+    "/catalog_card/shortCardDescription": {
+      "⟦G0⟧": "Hanok-Dorf Bukchon",
+      "⟦G1⟧": "Gyeongbokgung-Palast",
+      "⟦G2⟧": "Jogyesa-Tempel",
+      "⟦G3⟧": "Myeongdong",
+      "⟦G4⟧": "Insadong"
+    }
   },
   "tmHits": 0
 }

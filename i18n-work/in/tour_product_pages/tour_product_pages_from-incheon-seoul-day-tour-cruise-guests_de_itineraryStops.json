@@ -86,6 +86,7 @@
     },
     "/itineraryStops/1/name": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Gyeongbokgung-Palast"
       ]
@@ -146,7 +147,12 @@
     }
   },
   "glossaryTokens": {
-    "⟦G0⟧": "Hanok-Dorf Bukchon"
+    "/itineraryStops/1/name": {
+      "⟦G0⟧": "Gyeongbokgung-Palast"
+    },
+    "/itineraryStops/1/smartNotes/tip": {
+      "⟦G0⟧": "Hanok-Dorf Bukchon"
+    }
   },
-  "tmHits": 0
+  "tmHits": 1
 }

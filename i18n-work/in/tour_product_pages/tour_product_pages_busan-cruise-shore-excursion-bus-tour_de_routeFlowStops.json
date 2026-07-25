@@ -23,6 +23,7 @@
     },
     "/routeFlowStops/2/name": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = UN-Gedenkfriedhof"
       ]
@@ -38,6 +39,7 @@
     },
     "/routeFlowStops/4/name": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Jagalchi-Markt"
       ]
@@ -47,6 +49,7 @@
     },
     "/routeFlowStops/5/name": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = BIFF-Platz"
       ]
@@ -56,6 +59,7 @@
     },
     "/routeFlowStops/6/name": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Gukje-Markt"
       ]
@@ -65,6 +69,7 @@
     },
     "/routeFlowStops/7/name": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Kulturdorf Gamcheon"
       ]
@@ -74,6 +79,7 @@
     },
     "/routeFlowStops/8/name": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Songdo-Strand"
       ]
@@ -83,6 +89,7 @@
     },
     "/routeFlowStops/9/name": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Yongdusan-Park"
       ]
@@ -98,7 +105,30 @@
     }
   },
   "glossaryTokens": {
-    "⟦G0⟧": "Yongdusan-Park"
+    "/routeFlowStops/1/name": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/routeFlowStops/2/name": {
+      "⟦G0⟧": "UN-Gedenkfriedhof"
+    },
+    "/routeFlowStops/4/name": {
+      "⟦G0⟧": "Jagalchi-Markt"
+    },
+    "/routeFlowStops/5/name": {
+      "⟦G0⟧": "BIFF-Platz"
+    },
+    "/routeFlowStops/6/name": {
+      "⟦G0⟧": "Gukje-Markt"
+    },
+    "/routeFlowStops/7/name": {
+      "⟦G0⟧": "Kulturdorf Gamcheon"
+    },
+    "/routeFlowStops/8/name": {
+      "⟦G0⟧": "Songdo-Strand"
+    },
+    "/routeFlowStops/9/name": {
+      "⟦G0⟧": "Yongdusan-Park"
+    }
   },
-  "tmHits": 0
+  "tmHits": 7
 }

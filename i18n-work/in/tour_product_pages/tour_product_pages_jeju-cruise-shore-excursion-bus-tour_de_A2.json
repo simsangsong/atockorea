@@ -183,7 +183,8 @@
       "source_en": "Cruise season opens"
     },
     "/seasonalVariations/0/season": {
-      "source_en": "Spring"
+      "source_en": "Spring",
+      "tm": "Frühling"
     },
     "/seasonalVariations/0/description": {
       "source_en": "Mild and clear; best visibility for cruise excursions"
@@ -192,7 +193,8 @@
       "source_en": "Peak cruise calls"
     },
     "/seasonalVariations/1/season": {
-      "source_en": "Summer"
+      "source_en": "Summer",
+      "tm": "Sommer"
     },
     "/seasonalVariations/1/description": {
       "source_en": "Hot but breezy on coast; Hallasan 1100 cool refuge"
@@ -201,13 +203,15 @@
       "source_en": "Best clarity"
     },
     "/seasonalVariations/2/season": {
-      "source_en": "Autumn"
+      "source_en": "Autumn",
+      "tm": "Herbst"
     },
     "/seasonalVariations/2/description": {
       "source_en": "Sharpest visibility for both port routes"
     },
     "/seasonalVariations/3/season": {
-      "source_en": "Winter"
+      "source_en": "Winter",
+      "tm": "Winter"
     },
     "/seasonalVariations/3/description": {
       "source_en": "Fewer cruise calls; Hallasan 1100 may have snow"
@@ -231,7 +235,8 @@
       "source_en": "Weather update and any route adjustments"
     },
     "/bookingSupportSteps/1/timing": {
-      "source_en": "12 hours before"
+      "source_en": "12 hours before",
+      "tm": "12 Stunden vorher"
     },
     "/bookingSupportSteps/1/description": {
       "source_en": "Route confirmed (east or south) based on your port assignment 24 hours before."
@@ -292,9 +297,17 @@
     }
   },
   "glossaryTokens": {
-    "⟦G0⟧": "Seongsan Ilchulbong",
-    "⟦G1⟧": "Seongsan Ilchulbong",
-    "⟦G2⟧": "Seopjikoji"
+    "/whyTourWorks/routeLogicSections/0/items/0/detail": {
+      "⟦G0⟧": "Folkloredorf Seongeup",
+      "⟦G1⟧": "Seongsan Ilchulbong",
+      "⟦G2⟧": "Seopjikoji"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/1/detail": {
+      "⟦G0⟧": "Cheonjiyeon-Wasserfall"
+    },
+    "/bookingTrustItems/0/body": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    }
   },
-  "tmHits": 0
+  "tmHits": 5
 }

@@ -80,6 +80,7 @@
     },
     "/itineraryStops/5/name": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Kulturdorf Gamcheon"
       ]
@@ -152,7 +153,42 @@
     }
   },
   "glossaryTokens": {
-    "⟦G0⟧": "UN-Gedenkfriedhof"
+    "/itineraryStops/4/description": {
+      "⟦G0⟧": "UN-Gedenkfriedhof"
+    },
+    "/itineraryStops/4/galleryItems/0/alt": {
+      "⟦G0⟧": "UN-Gedenkfriedhof"
+    },
+    "/itineraryStops/4/galleryItems/0/caption": {
+      "⟦G0⟧": "UN-Gedenkfriedhof"
+    },
+    "/itineraryStops/4/galleryItems/0/location": {
+      "⟦G0⟧": "UN-Gedenkfriedhof"
+    },
+    "/itineraryStops/4/galleryItems/1/alt": {
+      "⟦G0⟧": "UN-Gedenkfriedhof"
+    },
+    "/itineraryStops/4/galleryItems/1/caption": {
+      "⟦G0⟧": "UN-Gedenkfriedhof"
+    },
+    "/itineraryStops/4/galleryItems/1/location": {
+      "⟦G0⟧": "UN-Gedenkfriedhof"
+    },
+    "/itineraryStops/4/galleryItems/2/alt": {
+      "⟦G0⟧": "UN-Gedenkfriedhof"
+    },
+    "/itineraryStops/4/galleryItems/2/caption": {
+      "⟦G0⟧": "UN-Gedenkfriedhof"
+    },
+    "/itineraryStops/4/galleryItems/2/location": {
+      "⟦G0⟧": "UN-Gedenkfriedhof"
+    },
+    "/itineraryStops/5/name": {
+      "⟦G0⟧": "Kulturdorf Gamcheon"
+    },
+    "/itineraryStops/5/whyOnRoute": {
+      "⟦G0⟧": "UN-Gedenkfriedhof"
+    }
   },
-  "tmHits": 0
+  "tmHits": 1
 }

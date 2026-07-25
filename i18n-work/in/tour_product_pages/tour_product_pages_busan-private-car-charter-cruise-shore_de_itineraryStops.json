@@ -182,6 +182,7 @@
     },
     "/itineraryStops/2/highlights/0": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
@@ -308,12 +309,14 @@
     },
     "/itineraryStops/3/highlights/0": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = UN-Gedenkfriedhof"
       ]
     },
     "/itineraryStops/3/highlights/1": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Kulturdorf Gamcheon"
       ]
@@ -360,14 +363,61 @@
     }
   },
   "glossaryTokens": {
-    "⟦G0⟧": "Kulturdorf Gamcheon",
-    "⟦G1⟧": "UN-Gedenkfriedhof",
-    "⟦G2⟧": "Jagalchi-Markt",
-    "⟦G3⟧": "Yongdusan-Park",
-    "⟦G4⟧": "Gukje-Markt",
-    "⟦G5⟧": "Songdo-Strand",
-    "⟦G6⟧": "BIFF-Platz",
-    "⟦G7⟧": "Taejongdae"
+    "/itineraryStops/1/highlights/8": {
+      "⟦G0⟧": "UN-Gedenkfriedhof"
+    },
+    "/itineraryStops/1/galleryItems/0/alt": {
+      "⟦G0⟧": "UN-Gedenkfriedhof"
+    },
+    "/itineraryStops/1/galleryItems/0/caption": {
+      "⟦G0⟧": "UN-Gedenkfriedhof"
+    },
+    "/itineraryStops/1/galleryItems/0/location": {
+      "⟦G0⟧": "UN-Gedenkfriedhof"
+    },
+    "/itineraryStops/1/galleryItems/1/alt": {
+      "⟦G0⟧": "UN-Gedenkfriedhof"
+    },
+    "/itineraryStops/1/galleryItems/1/caption": {
+      "⟦G0⟧": "UN-Gedenkfriedhof"
+    },
+    "/itineraryStops/1/galleryItems/1/location": {
+      "⟦G0⟧": "UN-Gedenkfriedhof"
+    },
+    "/itineraryStops/1/galleryItems/2/alt": {
+      "⟦G0⟧": "UN-Gedenkfriedhof"
+    },
+    "/itineraryStops/1/galleryItems/2/caption": {
+      "⟦G0⟧": "UN-Gedenkfriedhof"
+    },
+    "/itineraryStops/1/galleryItems/2/location": {
+      "⟦G0⟧": "UN-Gedenkfriedhof"
+    },
+    "/itineraryStops/2/highlights/0": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/itineraryStops/2/description": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/itineraryStops/3/highlights/0": {
+      "⟦G0⟧": "UN-Gedenkfriedhof"
+    },
+    "/itineraryStops/3/highlights/1": {
+      "⟦G0⟧": "Kulturdorf Gamcheon"
+    },
+    "/itineraryStops/3/highlights/2": {
+      "⟦G0⟧": "Gukje-Markt"
+    },
+    "/itineraryStops/3/description": {
+      "⟦G0⟧": "Kulturdorf Gamcheon",
+      "⟦G1⟧": "UN-Gedenkfriedhof",
+      "⟦G2⟧": "Jagalchi-Markt",
+      "⟦G3⟧": "Yongdusan-Park",
+      "⟦G4⟧": "Gukje-Markt",
+      "⟦G5⟧": "Songdo-Strand",
+      "⟦G6⟧": "BIFF-Platz",
+      "⟦G7⟧": "Taejongdae"
+    }
   },
-  "tmHits": 0
+  "tmHits": 3
 }

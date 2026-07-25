@@ -20,6 +20,7 @@
     },
     "/routeFlowStops/2/name": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Seopjikoji"
       ]
@@ -28,7 +29,8 @@
       "source_en": "Coast"
     },
     "/routeFlowStops/3/name": {
-      "source_en": "Lunch"
+      "source_en": "Lunch",
+      "tm": "Mittagessen"
     },
     "/routeFlowStops/3/theme": {
       "source_en": "Meal"
@@ -37,7 +39,8 @@
       "source_en": "Folk Village"
     },
     "/routeFlowStops/4/theme": {
-      "source_en": "Culture"
+      "source_en": "Culture",
+      "tm": "Kultur"
     },
     "/routeFlowStops/5/name": {
       "source_en": "Cruise Terminal"
@@ -47,7 +50,9 @@
     }
   },
   "glossaryTokens": {
-    "⟦G0⟧": "Seopjikoji"
+    "/routeFlowStops/2/name": {
+      "⟦G0⟧": "Seopjikoji"
+    }
   },
-  "tmHits": 0
+  "tmHits": 3
 }

@@ -86,7 +86,8 @@
       "source_en": "Lunch (East Jeju — local seafood or black pork)"
     },
     "/itinerary_variants/0/stops/3/category": {
-      "source_en": "Lunch"
+      "source_en": "Lunch",
+      "tm": "Mittagessen"
     },
     "/itinerary_variants/0/stops/3/duration": {
       "source_en": "60 min"
@@ -117,8 +118,25 @@
     }
   },
   "glossaryTokens": {
-    "⟦G0⟧": "Seopjikoji",
-    "⟦G1⟧": "Seopjikoji"
+    "/itinerary_variants/0/stops/1/description": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/itinerary_variants/0/stops/2/name": {
+      "⟦G0⟧": "Seopjikoji"
+    },
+    "/itinerary_variants/0/stops/2/highlights/8": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/itinerary_variants/0/stops/2/whyOnRoute": {
+      "⟦G0⟧": "Seopjikoji"
+    },
+    "/itinerary_variants/0/stops/2/description": {
+      "⟦G0⟧": "Seongsan Ilchulbong",
+      "⟦G1⟧": "Seopjikoji"
+    },
+    "/itinerary_variants/0/stops/3/whyOnRoute": {
+      "⟦G0⟧": "Seopjikoji"
+    }
   },
-  "tmHits": 0
+  "tmHits": 1
 }

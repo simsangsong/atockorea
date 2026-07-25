@@ -70,7 +70,8 @@
       "source_en": "Midday"
     },
     "/itinerary_variants/0/routePhases/1/theme": {
-      "source_en": "Lunch"
+      "source_en": "Lunch",
+      "tm": "Mittagessen"
     },
     "/itinerary_variants/0/routePhases/1/bgClass": {
       "source_en": "bg-amber-50/70"
@@ -104,6 +105,7 @@
     },
     "/itinerary_variants/0/routeFlowStops/2/name": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Seopjikoji"
       ]
@@ -112,7 +114,8 @@
       "source_en": "Coast"
     },
     "/itinerary_variants/0/routeFlowStops/3/name": {
-      "source_en": "Lunch"
+      "source_en": "Lunch",
+      "tm": "Mittagessen"
     },
     "/itinerary_variants/0/routeFlowStops/3/theme": {
       "source_en": "Meal"
@@ -121,7 +124,8 @@
       "source_en": "Folk Village"
     },
     "/itinerary_variants/0/routeFlowStops/4/theme": {
-      "source_en": "Culture"
+      "source_en": "Culture",
+      "tm": "Kultur"
     },
     "/itinerary_variants/0/routeFlowStops/5/name": {
       "source_en": "Cruise Terminal"
@@ -134,6 +138,7 @@
     },
     "/itinerary_variants/0/poi_tags_in_variant/1": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Seopjikoji"
       ]
@@ -195,6 +200,7 @@
     },
     "/itinerary_variants/1/stops/1/name": {
       "source_en": "⟦G0⟧ (Ramsar + UNESCO)",
+      "tm": "⟦G0⟧ (Ramsar + UNESCO)",
       "glossary": [
         "⟦G0⟧ = Hochlagen-Feuchtgebiet Hallasan 1100"
       ]
@@ -219,8 +225,28 @@
     }
   },
   "glossaryTokens": {
-    "⟦G0⟧": "Hochlagen-Feuchtgebiet Hallasan 1100",
-    "⟦G1⟧": "Olle-Maeil-Markt"
+    "/itinerary_variants/0/stops/4/whyOnRoute": {
+      "⟦G0⟧": "Folkloredorf Seongeup"
+    },
+    "/itinerary_variants/0/stops/4/description": {
+      "⟦G0⟧": "Folkloredorf Seongeup"
+    },
+    "/itinerary_variants/0/routeFlowStops/2/name": {
+      "⟦G0⟧": "Seopjikoji"
+    },
+    "/itinerary_variants/0/poi_tags_in_variant/1": {
+      "⟦G0⟧": "Seopjikoji"
+    },
+    "/itinerary_variants/1/stops/0/whyOnRoute": {
+      "⟦G0⟧": "Feuchtgebiet Hallasan 1100"
+    },
+    "/itinerary_variants/1/stops/0/description": {
+      "⟦G0⟧": "Cheonjiyeon-Wasserfall",
+      "⟦G1⟧": "Olle-Maeil-Markt"
+    },
+    "/itinerary_variants/1/stops/1/name": {
+      "⟦G0⟧": "Hochlagen-Feuchtgebiet Hallasan 1100"
+    }
   },
-  "tmHits": 0
+  "tmHits": 6
 }

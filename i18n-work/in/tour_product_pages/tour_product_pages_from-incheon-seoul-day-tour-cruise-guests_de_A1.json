@@ -297,10 +297,31 @@
     }
   },
   "glossaryTokens": {
-    "⟦G0⟧": "Insadong",
-    "⟦G1⟧": "Insadong",
-    "⟦G2⟧": "Gwangjang-Markt",
-    "⟦G3⟧": "Insadong"
+    "/seo/metaDescription": {
+      "⟦G0⟧": "Hanok-Dorf Bukchon",
+      "⟦G1⟧": "Gyeongbokgung-Palast",
+      "⟦G2⟧": "Gwangjang-Markt",
+      "⟦G3⟧": "Insadong"
+    },
+    "/catalog_card/shortCardDescription": {
+      "⟦G0⟧": "Hanok-Dorf Bukchon",
+      "⟦G1⟧": "Gyeongbokgung-Palast",
+      "⟦G2⟧": "Gwangjang-Markt",
+      "⟦G3⟧": "Insadong"
+    },
+    "/practicalAccordionItems/0/content/1": {
+      "⟦G0⟧": "Gwangjang-Markt"
+    },
+    "/practicalAccordionItems/2/content/3": {
+      "⟦G0⟧": "Insadong"
+    },
+    "/practicalAccordionItems/3/content/2": {
+      "⟦G0⟧": "Gwangjang-Markt",
+      "⟦G1⟧": "Insadong"
+    },
+    "/practicalAccordionItems/5/content/1": {
+      "⟦G0⟧": "Insadong"
+    }
   },
   "tmHits": 0
 }

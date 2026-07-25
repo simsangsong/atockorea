@@ -41,6 +41,7 @@
     },
     "/itineraryStops/7/name": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Kulturdorf Gamcheon"
       ]
@@ -110,9 +111,21 @@
     }
   },
   "glossaryTokens": {
-    "⟦G0⟧": "UN-Gedenkfriedhof",
-    "⟦G1⟧": "Gukje-Markt",
-    "⟦G2⟧": "BIFF-Platz"
+    "/itineraryStops/6/whyOnRoute": {
+      "⟦G0⟧": "UN-Gedenkfriedhof",
+      "⟦G1⟧": "Gukje-Markt",
+      "⟦G2⟧": "BIFF-Platz"
+    },
+    "/itineraryStops/6/description": {
+      "⟦G0⟧": "Kulturdorf Gamcheon",
+      "⟦G1⟧": "Gukje-Markt"
+    },
+    "/itineraryStops/7/name": {
+      "⟦G0⟧": "Kulturdorf Gamcheon"
+    },
+    "/itineraryStops/7/whyOnRoute": {
+      "⟦G0⟧": "UN-Gedenkfriedhof"
+    }
   },
-  "tmHits": 0
+  "tmHits": 1
 }

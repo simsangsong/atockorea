@@ -164,25 +164,29 @@
       "source_en": "Right-sized for the route"
     },
     "/seasonalVariations/0/season": {
-      "source_en": "Spring"
+      "source_en": "Spring",
+      "tm": "Frühling"
     },
     "/seasonalVariations/0/description": {
       "source_en": "Rapeseed (canola) flowers on Hamdeok's Seoubong cone slopes — striking yellow against emerald sea."
     },
     "/seasonalVariations/1/season": {
-      "source_en": "Summer"
+      "source_en": "Summer",
+      "tm": "Sommer"
     },
     "/seasonalVariations/1/description": {
       "source_en": "Best sea colors at Hamdeok Beach; long daylight for Seongsan visit."
     },
     "/seasonalVariations/2/season": {
-      "source_en": "Autumn"
+      "source_en": "Autumn",
+      "tm": "Herbst"
     },
     "/seasonalVariations/2/description": {
       "source_en": "Clearest visibility for Seongsan rim panoramas; Seongeup village stays photogenic year-round."
     },
     "/seasonalVariations/3/season": {
-      "source_en": "Winter"
+      "source_en": "Winter",
+      "tm": "Winter"
     },
     "/seasonalVariations/3/description": {
       "source_en": "Quietest crowds; Haenyeo Museum particularly valuable in cold weather."
@@ -206,7 +210,8 @@
       "source_en": "Weather update and any route adjustments"
     },
     "/bookingSupportSteps/1/timing": {
-      "source_en": "12 hours before"
+      "source_en": "12 hours before",
+      "tm": "12 Stunden vorher"
     },
     "/bookingSupportSteps/1/description": {
       "source_en": "Pre-tour note on haenyeo demonstration schedule (14:00 at Seongsan) so you know which timing to target."
@@ -221,7 +226,8 @@
       "source_en": "Evening before"
     },
     "/bookingSupportSteps/2/description": {
-      "source_en": "Final pickup time confirmed the evening before."
+      "source_en": "Final pickup time confirmed the evening before.",
+      "tm": "Die endgültige Abholzeit wird am Vorabend bestätigt."
     },
     "/bookingSupportSteps/3/title": {
       "source_en": "Day-of Route Notes"
@@ -267,10 +273,37 @@
     }
   },
   "glossaryTokens": {
-    "⟦G0⟧": "Manjanggul-Lavaröhre",
-    "⟦G1⟧": "Seongsan Ilchulbong",
-    "⟦G2⟧": "Cheonjeyeon-Wasserfall",
-    "⟦G3⟧": "Camellia Hill"
+    "/whyTourWorks/routeLogicSections/0/items/0/detail": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/2/detail": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/3/label": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/routeShapeIntro/subtitle": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/staticQuestions/0/answer": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/staticQuestions/1/question": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/staticQuestions/2/answer": {
+      "⟦G0⟧": "Folkloredorf Seongeup",
+      "⟦G1⟧": "Seongsan Ilchulbong",
+      "⟦G2⟧": "Cheonjeyeon-Wasserfall",
+      "⟦G3⟧": "Camellia Hill"
+    },
+    "/bookingTrustItems/1/body": {
+      "⟦G0⟧": "Folkloredorf Seongeup",
+      "⟦G1⟧": "Seongsan Ilchulbong"
+    },
+    "/bookingTrustItems/2/body": {
+      "⟦G0⟧": "Manjanggul-Lavaröhre"
+    }
   },
-  "tmHits": 0
+  "tmHits": 6
 }

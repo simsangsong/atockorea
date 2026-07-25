@@ -72,16 +72,28 @@ describe('G3 숫자 — 값 변조 검출, 서식 변경 허용 (H2)', () => {
 
   it('값이 바뀌면 fail — 40분 → 30분', () => {
     const f = checkNumbers('about 40 minutes', 'etwa 30 Minuten', '/p');
-    expect(f[0]).toMatchObject({ gate: 'G3', severity: 'fail' });
+    expect(f.some((x) => x.severity === 'fail' && x.message.includes('소실'))).toBe(true);
   });
 
   it('통화 자릿수가 잘리면 fail — ₩70,000 → €70', () => {
     const f = checkNumbers('₩70,000 per person', '€70 pro Person', '/p');
-    expect(f[0]).toMatchObject({ gate: 'G3', severity: 'fail' });
+    expect(f.some((x) => x.severity === 'fail')).toBe(true);
   });
 
   it('시각 표기는 값이 유지되면 통과', () => {
     expect(checkNumbers('Meet at 09:30', 'Treffpunkt 09:30 Uhr', '/p')).toEqual([]);
+  });
+
+  it('날짜 현지화(월 이름 → 숫자)는 fail이 아니라 flag', () => {
+    // `12 Oct 2009` → `12.10.2009`. 월이 숫자가 되며 10이 새로 생기지만 사실은 그대로다.
+    const f = checkNumbers('designated 12 Oct 2009', 'ausgewiesen am 12.10.2009', '/p');
+    expect(f.every((x) => x.severity === 'flag')).toBe(true);
+    expect(f[0].message).toContain('숫자 추가');
+  });
+
+  it('천단위 구분기호는 합치고 날짜 구분점은 합치지 않는다', () => {
+    expect(numberMultiset('1.100 m')).toEqual(['1100']);
+    expect(numberMultiset('02.07.2007')).toEqual(['02', '07', '2007']);
   });
 });
 
@@ -98,6 +110,22 @@ describe('G4 통화·단위', () => {
 
   it('원문에 이미 mile이 있으면 통과', () => {
     expect(checkCurrencyAndUnits('2 miles', '2 Meilen', '/p')).toEqual([]);
+  });
+
+  it('독일어 합성어를 야드파운드로 오탐하지 않는다 — Fußweg ≠ foot', () => {
+    // JS `\b`는 ASCII 기준이라 `ß` 뒤에 가짜 경계가 생긴다. 실측 오탐 케이스.
+    expect(checkCurrencyAndUnits('Walk to lunch venue — ~5 min', 'Fußweg zum Mittagslokal — ca. 5 Min.', '/p')).toEqual([]);
+    expect(checkCurrencyAndUnits('a short walk', 'ein kurzer Fußmarsch zum Zollhaus', '/p')).toEqual([]);
+  });
+
+  it('숫자 없는 Fuß 는 단위가 아니다 — "밑동"·"걸어서"', () => {
+    expect(checkCurrencyAndUnits('a 5 m base pool', 'ein 5 m großes Becken am Fuß', '/p')).toEqual([]);
+    expect(checkCurrencyAndUnits('avoid uphill walking', 'Anstiege zu Fuß vermeiden', '/p')).toEqual([]);
+  });
+
+  it('숫자를 동반한 야드파운드 단위는 여전히 잡는다', () => {
+    const f = checkCurrencyAndUnits('a 3 m drop', 'ein Sturz von 10 Fuß', '/p');
+    expect(f.some((x) => x.message.includes('단위 변환'))).toBe(true);
   });
 });
 
@@ -177,9 +205,16 @@ describe('G9 미번역 잔존 — 플래그', () => {
 });
 
 describe('G10 문자셋 — 로케일 교차 오염 (H8)', () => {
-  it('독일어에 CJK가 섞이면 fail', () => {
-    const f = checkCharset('Besuchen Sie 甘泉文化村', '/p', 'de');
+  it('원문에 없던 CJK가 번역에 생기면 fail', () => {
+    const f = checkCharset('Besuchen Sie 甘泉文化村', '/p', 'de', 'Visit Gamcheon Culture Village');
     expect(f.some((x) => x.gate === 'G10' && x.severity === 'fail')).toBe(true);
+  });
+
+  it('원문에 이미 있던 한국어 병기는 보존해도 통과 — 규칙 1', () => {
+    // 이 상품 원문에는 `haenyeo (해녀, women divers)` 같은 병기가 흔하다.
+    const src = 'Local **haenyeo (해녀, women divers)** sell fresh catches';
+    const tgt = 'Einheimische **haenyeo (해녀, Taucherinnen)** verkaufen frischen Fang';
+    expect(checkCharset(tgt, '/p', 'de', src)).toEqual([]);
   });
 
   it('독일어에 키릴이 섞이면 fail', () => {

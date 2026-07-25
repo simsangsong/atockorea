@@ -69,7 +69,8 @@
       "source_en": "Lunch (East Jeju — local seafood or black pork)"
     },
     "/itinerary_variants/0/stops/3/category": {
-      "source_en": "Lunch"
+      "source_en": "Lunch",
+      "tm": "Mittagessen"
     },
     "/itinerary_variants/0/stops/3/duration": {
       "source_en": "75 min"
@@ -100,6 +101,7 @@
     },
     "/itinerary_variants/0/stops/4/name": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Folkloredorf Seongeup"
       ]
@@ -157,8 +159,20 @@
     }
   },
   "glossaryTokens": {
-    "⟦G0⟧": "Folkloredorf Seongeup",
-    "⟦G1⟧": "Seopjikoji"
+    "/itinerary_variants/0/stops/2/highlights/8": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/itinerary_variants/0/stops/2/whyOnRoute": {
+      "⟦G0⟧": "Seongsan Ilchulbong",
+      "⟦G1⟧": "Seopjikoji"
+    },
+    "/itinerary_variants/0/stops/2/description": {
+      "⟦G0⟧": "Seongsan Ilchulbong",
+      "⟦G1⟧": "Seopjikoji"
+    },
+    "/itinerary_variants/0/stops/4/name": {
+      "⟦G0⟧": "Folkloredorf Seongeup"
+    }
   },
-  "tmHits": 0
+  "tmHits": 2
 }

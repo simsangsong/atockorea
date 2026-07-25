@@ -57,19 +57,33 @@ const DIGIT_SEPARATORS = /[.,    ]/;
 /**
  * 숫자 값 멀티셋. **서식은 무시하고 값만 비교한다.**
  *
- * 자릿수 사이의 구분기호를 제거해 자릿수열로 환원한다.
- *   `1,234.5`(en) → `12345`
- *   `1.234,5`(de) → `12345`   ← 같은 값으로 판정 (서식 변경 허용)
- *   `₩70,000` → `70000` vs `€70` → `70`   ← 다른 값으로 판정 (H2 변조 검출)
+ * 천단위 구분기호만 제거한다 — **구분기호 뒤에 정확히 3자리가 올 때만.**
+ *   `1,234.5`(en) → `1234` `5`
+ *   `1.234,5`(de) → `1234` `5`   ← 같은 값으로 판정 (서식 변경 허용)
+ *   `₩70,000` → `70000` vs `€70` → `70`   ← 다른 값 (H2 변조 검출)
  *
- * 서식 관례 자체는 스타일가이드/사람 감수가 본다. 이 게이트의 목적은 **값 변조**다.
+ * 🔴 "자릿수 사이 구분기호를 전부 제거"하면 **날짜가 뭉개진다** — 독일어 `12.10.2009`가
+ * `12102009` 하나로 합쳐져 원문 `12 Oct 2009`([12, 2009])와 어긋난다(2026-07-26 실측 오탐).
+ * 3자리 규칙은 천단위만 걸러내고 날짜는 `12` `10` `2009`로 남긴다.
  */
 export function numberMultiset(text: string): string[] {
   const collapsed = text.replace(
-    new RegExp(`(\\d)${DIGIT_SEPARATORS.source}(?=\\d)`, 'g'),
-    '$1',
+    new RegExp(`(\\d)${DIGIT_SEPARATORS.source}(\\d{3})(?!\\d)`, 'g'),
+    '$1$2',
   );
   return (collapsed.match(/\d+/g) ?? []).slice().sort();
+}
+
+/** 멀티셋 차집합 — a에는 있는데 b에는 없는 원소(중복 횟수까지 고려). */
+function missingFrom(a: string[], b: string[]): string[] {
+  const pool = [...b];
+  const missing: string[] = [];
+  for (const v of a) {
+    const i = pool.indexOf(v);
+    if (i === -1) missing.push(v);
+    else pool.splice(i, 1);
+  }
+  return missing;
 }
 
 function multiset(text: string, re: RegExp): string[] {
@@ -106,21 +120,57 @@ export function checkGlossaryTokens(source: string, target: string, pointer: str
   }];
 }
 
-/** G3 — 숫자 값 멀티셋 동일. H2(수치 변조) 검출. */
+/**
+ * G3 — 숫자 값. H2(수치 변조) 검출.
+ *
+ * **비대칭 판정**이다.
+ *   원문에 있는 숫자가 번역에서 사라짐 → `fail` (사실 손실. "40분"→"30분", ₩70,000→€70)
+ *   번역에만 있는 숫자        → `flag` (대개 서식 변환. `12 Oct 2009`→`12.10.2009`는
+ *                                     월 이름이 숫자가 되므로 `10`이 새로 생긴다)
+ *
+ * 대칭 비교로 두면 정상적인 날짜 현지화가 전부 실패로 잡혀 재큐 루프에 빠진다
+ * (2026-07-26 실측 오탐).
+ */
 export function checkNumbers(source: string, target: string, pointer: string): Finding[] {
   const a = numberMultiset(source);
   const b = numberMultiset(target);
   if (sameMultiset(a, b)) return [];
-  return [{
-    gate: 'G3',
-    severity: 'fail',
-    pointer,
-    message: `숫자 값 불일치 — 원문 [${a.join(' ')}] vs 번역 [${b.join(' ')}]`,
-  }];
+
+  const findings: Finding[] = [];
+  const lost = missingFrom(a, b);
+  const added = missingFrom(b, a);
+
+  if (lost.length > 0) {
+    findings.push({
+      gate: 'G3',
+      severity: 'fail',
+      pointer,
+      message: `숫자 소실 — 원문의 [${lost.join(' ')}] 이 번역에 없다 (원문 [${a.join(' ')}] vs 번역 [${b.join(' ')}])`,
+    });
+  }
+  if (added.length > 0) {
+    findings.push({
+      gate: 'G3',
+      severity: 'flag',
+      pointer,
+      message: `숫자 추가 — 번역에만 [${added.join(' ')}] 이 있다 (날짜 서식 변환이면 정상)`,
+    });
+  }
+  return findings;
 }
 
-/** 야드파운드법 흔적 — km→mile 류 단위 변환은 금지(규칙 3). */
-const IMPERIAL_RE = /\b(miles?|mi\.|Meilen?|miglia|miglio|мил[ья]|inch(?:es)?|Zoll|pollici|дюйм|foot|feet|Fuß|piedi|фут|pounds?|lbs?|Pfund|libbre|фунт)\b/gi;
+/**
+ * 야드파운드법 흔적 — km→mile 류 단위 변환은 금지(규칙 3).
+ *
+ * 두 가지를 실측 오탐으로 배웠다(2026-07-26).
+ *
+ * 1. **`\b`를 쓰면 안 된다.** JS `\w`는 ASCII만이라 `ß`·`ü` 앞뒤에 가짜 경계가 생겨
+ *    `\bFuß\b` 가 `Fußweg`(보행로)에 매치한다.
+ * 2. **숫자가 앞에 와야 단위다.** 독일어 `Fuß`는 "발·밑동"이 본뜻이고 측정 단위는
+ *    드문 용법이다 — `Becken am Fuß`(밑동의 웅덩이) · `zu Fuß`(걸어서)가 전부
+ *    오탐이었다. 실제 단위 변환은 언제나 `30 miles` · `12 Fuß`처럼 수치를 동반한다.
+ */
+const IMPERIAL_RE = /\d[\d.,]*\s*(?<![\p{L}])(miles?|mi\.|Meilen?|miglia|miglio|мил[ья]|inch(?:es)?|Zoll|pollici|дюйм|foot|feet|Fuß|piedi|фут|pounds?|lbs?|Pfund|libbre|фунт)(?![\p{L}])/giu;
 
 /** G4 — 통화 기호·ISO 코드 동일 + 단위 변환 검출. */
 export function checkCurrencyAndUnits(source: string, target: string, pointer: string): Finding[] {
@@ -272,17 +322,30 @@ export function checkUntranslated(
 const CJK_RE = /[　-〿぀-ヿ㐀-䶿一-鿿가-힯豈-﫿]/g;
 const CYRILLIC_RE = /\p{Script=Cyrillic}/gu;
 
-/** G10 — 문자셋. 로케일 교차 오염(H8) 검출. */
-export function checkCharset(target: string, pointer: string, locale: TargetLocale): Finding[] {
+/**
+ * G10 — 문자셋. 로케일 교차 오염(H8) 검출.
+ *
+ * 🔴 CJK는 **원문 대비**로 판정한다. 이 상품 원문(en)에는 한국어 병기가 흔하다 —
+ * `haenyeo (해녀, women divers)` · `1100 Rest Area (1100 휴게소)`. 규칙 1(정보 삭제 금지)에
+ * 따라 번역은 이걸 **보존해야** 하므로, 타깃만 보고 CJK를 막으면 올바른 번역이
+ * 전부 실패한다(2026-07-26 실측 오탐). 원문보다 **늘어났을 때만** 오염이다.
+ */
+export function checkCharset(
+  target: string,
+  pointer: string,
+  locale: TargetLocale,
+  source = '',
+): Finding[] {
   const findings: Finding[] = [];
 
-  const cjk = countMatches(target, CJK_RE);
-  if (cjk > 0) {
+  const cjkTarget = countMatches(target, CJK_RE);
+  const cjkSource = countMatches(source, CJK_RE);
+  if (cjkTarget > cjkSource) {
     findings.push({
       gate: 'G10',
       severity: 'fail',
       pointer,
-      message: `CJK 문자 ${cjk}자 혼입 — ${locale} 번역에 있을 수 없다(로케일 교차 오염)`,
+      message: `CJK 문자가 원문 ${cjkSource}자 → 번역 ${cjkTarget}자로 증가 — 로케일 교차 오염`,
     });
   }
 
@@ -444,7 +507,7 @@ export function verifyUnit(
       ...checkVerbatim(src, tgt, pointer),
       ...checkLengthRatio(src, tgt, pointer, options.locale, options.lengthRatioMinChars),
       ...checkUntranslated(src, tgt, pointer, options.keepAsIs),
-      ...checkCharset(tgt, pointer, options.locale),
+      ...checkCharset(tgt, pointer, options.locale, src),
       ...checkBannedTerms(tgt, pointer, options.bannedTerms),
     );
   }

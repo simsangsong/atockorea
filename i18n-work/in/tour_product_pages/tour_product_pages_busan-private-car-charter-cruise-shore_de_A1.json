@@ -307,11 +307,38 @@
     }
   },
   "glossaryTokens": {
-    "⟦G0⟧": "Taejongdae",
-    "⟦G1⟧": "UN-Gedenkfriedhof",
-    "⟦G2⟧": "Jagalchi-Markt",
-    "⟦G3⟧": "Yongdusan-Park",
-    "⟦G4⟧": "Taejongdae"
+    "/hero/tagline": {
+      "⟦G0⟧": "UN-Gedenkfriedhof",
+      "⟦G1⟧": "Taejongdae"
+    },
+    "/catalog_card/shortCardDescription": {
+      "⟦G0⟧": "Kulturdorf Gamcheon",
+      "⟦G1⟧": "UN-Gedenkfriedhof",
+      "⟦G2⟧": "Haedong Yonggungsa",
+      "⟦G3⟧": "Jagalchi-Markt"
+    },
+    "/practicalAccordionItems/1/content/1": {
+      "⟦G0⟧": "Taejongdae"
+    },
+    "/practicalAccordionItems/2/content/0": {
+      "⟦G0⟧": "Kulturdorf Gamcheon",
+      "⟦G1⟧": "UN-Gedenkfriedhof",
+      "⟦G2⟧": "Jagalchi-Markt",
+      "⟦G3⟧": "Yongdusan-Park",
+      "⟦G4⟧": "Taejongdae"
+    },
+    "/practicalAccordionItems/2/content/1": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/practicalAccordionItems/4/content/2": {
+      "⟦G0⟧": "Taejongdae"
+    },
+    "/practicalAccordionItems/5/content/1": {
+      "⟦G0⟧": "Kulturdorf Gamcheon"
+    },
+    "/practicalAccordionItems/5/content/2": {
+      "⟦G0⟧": "Taejongdae"
+    }
   },
   "tmHits": 0
 }

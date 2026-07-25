@@ -147,8 +147,22 @@
     }
   },
   "glossaryTokens": {
-    "⟦G0⟧": "Seongsan Ilchulbong",
-    "⟦G1⟧": "Seongsan Ilchulbong"
+    "/itineraryStops/5/description": {
+      "⟦G0⟧": "Haenyeo-Museum Jeju",
+      "⟦G1⟧": "Seongsan Ilchulbong"
+    },
+    "/itineraryStops/6/name": {
+      "⟦G0⟧": "Manjanggul-Lavaröhre"
+    },
+    "/itineraryStops/6/highlights/0": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/itineraryStops/6/highlights/1": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/itineraryStops/6/whyOnRoute": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    }
   },
   "tmHits": 0
 }

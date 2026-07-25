@@ -7,48 +7,62 @@
   "tier": "B",
   "segments": {
     "/routeFlowStops/0/name": {
-      "source_en": "Hallasan 1100"
+      "source_en": "Hallasan 1100",
+      "tm": "Hallasan 1100"
     },
     "/routeFlowStops/0/theme": {
-      "source_en": "Highland"
+      "source_en": "Highland",
+      "tm": "Hochland"
     },
     "/routeFlowStops/1/name": {
-      "source_en": "Jusangjeolli"
+      "source_en": "Jusangjeolli",
+      "tm": "Jusangjeolli"
     },
     "/routeFlowStops/1/theme": {
-      "source_en": "Cliffs"
+      "source_en": "Cliffs",
+      "tm": "Klippen"
     },
     "/routeFlowStops/2/name": {
-      "source_en": "Jeongbang"
+      "source_en": "Jeongbang",
+      "tm": "Jeongbang"
     },
     "/routeFlowStops/2/theme": {
-      "source_en": "Waterfall"
+      "source_en": "Waterfall",
+      "tm": "Wasserfall"
     },
     "/routeFlowStops/3/name": {
-      "source_en": "Lunch"
+      "source_en": "Lunch",
+      "tm": "Mittagessen"
     },
     "/routeFlowStops/3/theme": {
-      "source_en": "Reset"
+      "source_en": "Reset",
+      "tm": "Pause"
     },
     "/routeFlowStops/4/name": {
-      "source_en": "Haenyeo Show"
+      "source_en": "Haenyeo Show",
+      "tm": "Haenyeo-Show"
     },
     "/routeFlowStops/4/theme": {
-      "source_en": "Culture"
+      "source_en": "Culture",
+      "tm": "Kultur"
     },
     "/routeFlowStops/5/name": {
-      "source_en": "Seongsan"
+      "source_en": "Seongsan",
+      "tm": "Seongsan"
     },
     "/routeFlowStops/5/theme": {
-      "source_en": "Crater"
+      "source_en": "Crater",
+      "tm": "Krater"
     },
     "/routeFlowStops/6/name": {
-      "source_en": "Manjanggul"
+      "source_en": "Manjanggul",
+      "tm": "Manjanggul"
     },
     "/routeFlowStops/6/theme": {
-      "source_en": "Lava Tube"
+      "source_en": "Lava Tube",
+      "tm": "Lavaröhre"
     }
   },
   "glossaryTokens": {},
-  "tmHits": 0
+  "tmHits": 14
 }

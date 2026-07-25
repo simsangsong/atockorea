@@ -141,8 +141,22 @@
     }
   },
   "glossaryTokens": {
-    "⟦G0⟧": "UN-Gedenkfriedhof",
-    "⟦G1⟧": "Haedong Yonggungsa"
+    "/itineraryStops/3/whyOnRoute": {
+      "⟦G0⟧": "UN-Gedenkfriedhof",
+      "⟦G1⟧": "Haedong Yonggungsa"
+    },
+    "/itineraryStops/3/description": {
+      "⟦G0⟧": "UN-Gedenkfriedhof"
+    },
+    "/itineraryStops/4/name": {
+      "⟦G0⟧": "UN-Gedenkfriedhof"
+    },
+    "/itineraryStops/4/highlights/0": {
+      "⟦G0⟧": "UN-Gedenkfriedhof"
+    },
+    "/itineraryStops/4/highlights/8": {
+      "⟦G0⟧": "UN-Gedenkfriedhof"
+    }
   },
   "tmHits": 0
 }

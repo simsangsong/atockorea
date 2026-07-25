@@ -124,9 +124,26 @@
     }
   },
   "glossaryTokens": {
-    "⟦G0⟧": "Gukje-Markt",
-    "⟦G1⟧": "Songdo-Strand",
-    "⟦G2⟧": "BIFF-Platz"
+    "/staticQuestions/3/answer": {
+      "⟦G0⟧": "Cheongsapo Blue Line Park",
+      "⟦G1⟧": "Taejongdae"
+    },
+    "/staticQuestions/9/answer": {
+      "⟦G0⟧": "BIFF-Platz"
+    },
+    "/staticQuestions/12/answer": {
+      "⟦G0⟧": "Gukje-Markt",
+      "⟦G1⟧": "BIFF-Platz"
+    },
+    "/staticQuestions/13/answer": {
+      "⟦G0⟧": "Gukje-Markt",
+      "⟦G1⟧": "BIFF-Platz"
+    },
+    "/staticQuestions/14/answer": {
+      "⟦G0⟧": "Gukje-Markt",
+      "⟦G1⟧": "Songdo-Strand",
+      "⟦G2⟧": "BIFF-Platz"
+    }
   },
   "tmHits": 0
 }

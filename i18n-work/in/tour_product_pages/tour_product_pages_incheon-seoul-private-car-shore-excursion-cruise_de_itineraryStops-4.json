@@ -124,9 +124,14 @@
     }
   },
   "glossaryTokens": {
-    "⟦G0⟧": "N Seoul Tower (Namsan Seoul Tower)",
-    "⟦G1⟧": "Myeongdong",
-    "⟦G2⟧": "Insadong"
+    "/itineraryStops/3/description": {
+      "⟦G0⟧": "Gwangjang-Markt",
+      "⟦G1⟧": "Myeongdong",
+      "⟦G2⟧": "Insadong"
+    },
+    "/itineraryStops/4/description": {
+      "⟦G0⟧": "N Seoul Tower (Namsan Seoul Tower)"
+    }
   },
   "tmHits": 0
 }

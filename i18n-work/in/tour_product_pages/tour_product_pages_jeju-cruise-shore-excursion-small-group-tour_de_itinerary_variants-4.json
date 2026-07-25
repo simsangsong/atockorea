@@ -44,6 +44,7 @@
     },
     "/itinerary_variants/1/stops/2/name": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Daepo-Jusangjeolli-Klippe"
       ]
@@ -115,7 +116,8 @@
       ]
     },
     "/itinerary_variants/1/stops/3/category": {
-      "source_en": "Lunch"
+      "source_en": "Lunch",
+      "tm": "Mittagessen"
     },
     "/itinerary_variants/1/stops/3/duration": {
       "source_en": "75 min"
@@ -153,8 +155,31 @@
     }
   },
   "glossaryTokens": {
-    "⟦G0⟧": "Cheonjiyeon-Wasserfall",
-    "⟦G1⟧": "Olle-Maeil-Markt"
+    "/itinerary_variants/1/stops/1/description": {
+      "⟦G0⟧": "Hochlagen-Feuchtgebiet Hallasan 1100"
+    },
+    "/itinerary_variants/1/stops/2/name": {
+      "⟦G0⟧": "Daepo-Jusangjeolli-Klippe"
+    },
+    "/itinerary_variants/1/stops/2/whyOnRoute": {
+      "⟦G0⟧": "Daepo-Jusangjeolli-Klippe"
+    },
+    "/itinerary_variants/1/stops/2/description": {
+      "⟦G0⟧": "Daepo-Jusangjeolli-Klippe"
+    },
+    "/itinerary_variants/1/stops/3/name": {
+      "⟦G0⟧": "Olle-Maeil-Markt"
+    },
+    "/itinerary_variants/1/stops/3/highlights/0": {
+      "⟦G0⟧": "Olle-Maeil-Markt"
+    },
+    "/itinerary_variants/1/stops/3/highlights/3": {
+      "⟦G0⟧": "Cheonjiyeon-Wasserfall"
+    },
+    "/itinerary_variants/1/stops/3/whyOnRoute": {
+      "⟦G0⟧": "Cheonjiyeon-Wasserfall",
+      "⟦G1⟧": "Olle-Maeil-Markt"
+    }
   },
-  "tmHits": 0
+  "tmHits": 2
 }

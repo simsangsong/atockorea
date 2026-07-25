@@ -122,13 +122,16 @@
     },
     "/itineraryStops/2/name": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Aussichtspunkt Dora"
       ]
     }
   },
   "glossaryTokens": {
-    "⟦G0⟧": "Aussichtspunkt Dora"
+    "/itineraryStops/2/name": {
+      "⟦G0⟧": "Aussichtspunkt Dora"
+    }
   },
-  "tmHits": 0
+  "tmHits": 1
 }

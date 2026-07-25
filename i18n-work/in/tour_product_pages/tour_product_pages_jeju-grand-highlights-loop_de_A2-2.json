@@ -7,84 +7,110 @@
   "tier": "A2",
   "segments": {
     "/bookingSupportSteps/0/title": {
-      "source_en": "Instant confirmation"
+      "source_en": "Instant confirmation",
+      "tm": "Sofortige Bestätigung"
     },
     "/bookingSupportSteps/0/detail": {
-      "source_en": "A booking confirmation is sent with a summary of the route."
+      "source_en": "A booking confirmation is sent with a summary of the route.",
+      "tm": "Eine Buchungsbestätigung mit einer Zusammenfassung der Route wird versendet."
     },
     "/bookingSupportSteps/0/timing": {
-      "source_en": "After booking"
+      "source_en": "After booking",
+      "tm": "Nach der Buchung"
     },
     "/bookingSupportSteps/0/description": {
-      "source_en": "Instant confirmation with Jeju City hotel pickup details."
+      "source_en": "Instant confirmation with Jeju City hotel pickup details.",
+      "tm": "Sofortige Bestätigung mit Angaben zur Hotelabholung in Jeju City."
     },
     "/bookingSupportSteps/1/title": {
-      "source_en": "Pre-departure reminder"
+      "source_en": "Pre-departure reminder",
+      "tm": "Erinnerung vor der Abfahrt"
     },
     "/bookingSupportSteps/1/detail": {
-      "source_en": "Weather notes and route adjustment guidance are shared in advance."
+      "source_en": "Weather notes and route adjustment guidance are shared in advance.",
+      "tm": "Wetterhinweise und Informationen zur Routenanpassung werden vorab mitgeteilt."
     },
     "/bookingSupportSteps/1/timing": {
-      "source_en": "12 hours before"
+      "source_en": "12 hours before",
+      "tm": "12 Stunden vorher"
     },
     "/bookingSupportSteps/1/description": {
-      "source_en": "Pre-tour note on Seongsan rim conditions and Jeongbang Waterfall access."
+      "source_en": "Pre-tour note on Seongsan rim conditions and Jeongbang Waterfall access.",
+      "tm": "Hinweis vor der Tour zu den Bedingungen am Kraterrand von Seongsan und zum Zugang zum Jeongbang Waterfall."
     },
     "/bookingSupportSteps/2/title": {
-      "source_en": "Final pickup notice"
+      "source_en": "Final pickup notice",
+      "tm": "Endgültige Abholinformation"
     },
     "/bookingSupportSteps/2/detail": {
-      "source_en": "You receive your exact pickup time and contact details."
+      "source_en": "You receive your exact pickup time and contact details.",
+      "tm": "Sie erhalten Ihre genaue Abholzeit und die Kontaktdaten."
     },
     "/bookingSupportSteps/2/timing": {
-      "source_en": "The night before"
+      "source_en": "The night before",
+      "tm": "Am Abend zuvor"
     },
     "/bookingSupportSteps/2/description": {
-      "source_en": "Final pickup time confirmed the evening before."
+      "source_en": "Final pickup time confirmed the evening before.",
+      "tm": "Die endgültige Abholzeit wird am Vorabend bestätigt."
     },
     "/bookingSupportSteps/3/title": {
-      "source_en": "Day-of route note"
+      "source_en": "Day-of route note",
+      "tm": "Routenhinweis am Tourtag"
     },
     "/bookingSupportSteps/3/detail": {
-      "source_en": "Any latest on-site updates are briefly shared before departure."
+      "source_en": "Any latest on-site updates are briefly shared before departure.",
+      "tm": "Aktuelle Informationen vor Ort werden vor der Abfahrt kurz mitgeteilt."
     },
     "/bookingSupportSteps/3/timing": {
-      "source_en": "Morning of departure"
+      "source_en": "Morning of departure",
+      "tm": "Am Morgen der Abfahrt"
     },
     "/bookingSupportSteps/3/description": {
-      "source_en": "Morning message with weather summary and any adjustment."
+      "source_en": "Morning message with weather summary and any adjustment.",
+      "tm": "Morgennachricht mit Wetterübersicht und etwaigen Anpassungen."
     },
     "/bookingSupportSteps/4/title": {
-      "source_en": "Stop-by-stop guidance"
+      "source_en": "Stop-by-stop guidance",
+      "tm": "Begleitung von Stopp zu Stopp"
     },
     "/bookingSupportSteps/4/detail": {
-      "source_en": "Key information is shared at each stop as needed."
+      "source_en": "Key information is shared at each stop as needed.",
+      "tm": "Wichtige Informationen werden bei Bedarf an jedem Stopp mitgeteilt."
     },
     "/bookingSupportSteps/4/timing": {
-      "source_en": "During the tour"
+      "source_en": "During the tour",
+      "tm": "Während der Tour"
     },
     "/bookingSupportSteps/4/description": {
-      "source_en": "Guide narrates Hallasan's shield-volcano geology, columnar joint formation at Jusangjeolli, and Seongsan's Surtseyan-eruption birth story."
+      "source_en": "Guide narrates Hallasan's shield-volcano geology, columnar joint formation at Jusangjeolli, and Seongsan's Surtseyan-eruption birth story.",
+      "tm": "Der Guide erläutert die Schildvulkan-Geologie des Hallasan, die Entstehung der Basaltsäulen am Jusangjeolli und die Entstehungsgeschichte von Seongsan durch einen surtseyanischen Ausbruch."
     },
     "/bookingSupportSteps/5/title": {
-      "source_en": "Post-tour support"
+      "source_en": "Post-tour support",
+      "tm": "Betreuung nach der Tour"
     },
     "/bookingSupportSteps/5/detail": {
-      "source_en": "Follow-up support and additional recommendations are available if needed."
+      "source_en": "Follow-up support and additional recommendations are available if needed.",
+      "tm": "Bei Bedarf stehen weiterführende Unterstützung und zusätzliche Empfehlungen zur Verfügung."
     },
     "/bookingSupportSteps/5/timing": {
-      "source_en": "After the tour"
+      "source_en": "After the tour",
+      "tm": "Nach der Tour"
     },
     "/bookingSupportSteps/5/description": {
-      "source_en": "Post-tour feedback request sent after return."
+      "source_en": "Post-tour feedback request sent after return.",
+      "tm": "Feedback-Anfrage zur Tour, versendet nach der Rückkehr."
     },
     "/practicalWeatherStatic/today/label": {
-      "source_en": "Live weather integration"
+      "source_en": "Live weather integration",
+      "tm": "Live-Wetterintegration"
     },
     "/practicalWeatherStatic/tomorrow/label": {
-      "source_en": "Updated daily"
+      "source_en": "Updated daily",
+      "tm": "Täglich aktualisiert"
     }
   },
   "glossaryTokens": {},
-  "tmHits": 0
+  "tmHits": 26
 }

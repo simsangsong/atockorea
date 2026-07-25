@@ -14,6 +14,7 @@
     },
     "/routeFlowStops/1/name": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Gyeongbokgung-Palast"
       ]
@@ -64,8 +65,20 @@
     }
   },
   "glossaryTokens": {
-    "⟦G0⟧": "Jogyesa-Tempel",
-    "⟦G1⟧": "Myeongdong"
+    "/routeFlowStops/1/name": {
+      "⟦G0⟧": "Gyeongbokgung-Palast"
+    },
+    "/routeFlowStops/2/name": {
+      "⟦G0⟧": "Hanok-Dorf Bukchon",
+      "⟦G1⟧": "Insadong"
+    },
+    "/routeFlowStops/3/name": {
+      "⟦G0⟧": "Insadong"
+    },
+    "/routeFlowStops/5/name": {
+      "⟦G0⟧": "Jogyesa-Tempel",
+      "⟦G1⟧": "Myeongdong"
+    }
   },
-  "tmHits": 0
+  "tmHits": 1
 }
