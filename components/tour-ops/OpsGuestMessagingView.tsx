@@ -375,13 +375,17 @@ export default function OpsGuestMessagingView({
                   )}
                 </div>
 
-                {/* 날씨 — 있으면 보여주고, 없으면 없다고 말한다. 지어내지 않는다. */}
+                {/* 날씨 — 있으면 보여주고, 없으면 없다고 말한다. 지어내지 않는다.
+                    🔴 **불러오는 중을 "실패"라고 말하지 않는다.** 아직 일어나지 않은
+                    실패를 단언하면 운영자는 멀쩡한 예보를 포기하고 손으로 적는다. */}
                 <div className="flex items-start gap-2 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2">
                   <CloudSun className="mt-0.5 size-4 shrink-0 text-[var(--tr-ink-3)]" />
                   <p className="text-cjk-body text-[12px] leading-relaxed text-[var(--tr-ink-2)]">
-                    {preview?.forecast
-                      ? `${preview.city ?? ''} ${date} 예보 — 최저 ${Math.round(preview.forecast.tempMinC)}° / 최고 ${Math.round(preview.forecast.tempMaxC)}°, 강수확률 ${Math.round(preview.forecast.precipProbability)}%. 아래 문구에 날씨·착장 안내가 자동으로 들어갑니다.`
-                      : '예보를 가져오지 못했습니다 — 날씨·착장 문장은 빼고 발송됩니다.'}
+                    {previewLoading || !preview
+                      ? '예보 확인 중…'
+                      : preview.forecast
+                        ? `${preview.city ?? ''} ${date} 예보 — 최저 ${Math.round(preview.forecast.tempMinC)}° / 최고 ${Math.round(preview.forecast.tempMaxC)}°, 강수확률 ${Math.round(preview.forecast.precipProbability)}%. 아래 문구에 날씨·착장 안내가 자동으로 들어갑니다.`
+                        : '예보를 가져오지 못했습니다 — 날씨·착장 문장은 빼고 발송됩니다.'}
                   </p>
                 </div>
 

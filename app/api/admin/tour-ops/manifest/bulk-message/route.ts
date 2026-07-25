@@ -147,11 +147,18 @@ export async function GET(req: NextRequest) {
     // 실제로 보내지 않은 링크가 원장에 남는다. 자리표시자로 모양만 보여준다.
     const previewLink = `${appUrl()}/tour-mode/room/…`;
 
+    // 템플릿은 **로케일당 한 번만** 읽는다. 수신자마다 읽으면 20명 = 40번의
+    // 왕복이고, 미리보기가 눈에 띄게 느려져 운영자가 기다리다 딴 데로 간다.
+    const templateByLocale = new Map<string, Awaited<ReturnType<typeof loadTemplate>>>();
+    for (const locale of new Set(rows.map((r) => r.preferred_language ?? 'en'))) {
+      templateByLocale.set(locale, await loadTemplate(supabase, { tourId, presetKey: preset, locale, channel }));
+    }
+
     const recipients = [];
     let templateSource: string | null = null;
     for (const row of rows) {
       const locale = row.preferred_language ?? 'en';
-      const tpl = await loadTemplate(supabase, { tourId, presetKey: preset, locale, channel });
+      const tpl = templateByLocale.get(locale)!;
       templateSource = tpl.source;
       const pickup = pickupOf(row);
       const input: RecipientInput = {
