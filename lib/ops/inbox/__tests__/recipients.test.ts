@@ -61,6 +61,16 @@ describe('collectRecipients', () => {
     expect(new Set(found)).toEqual(new Set(['jason@gmail.com', 'ops@atockorea.com', 'bookings@atockorea.com']))
   })
 
+  it('reads the envelope recipient Resend parks in bcc (라이브 페이로드 형태)', () => {
+    // 실제 실패 이벤트 형태: To:는 다른 주소, 봉투 수신자는 bcc 배열에.
+    const found = collectRecipients({
+      to: 'noreply@klook.com',
+      bcc: ['bookings@atockorea.com'],
+      attachments: [],
+    })
+    expect(found).toContain('bookings@atockorea.com')
+  })
+
   it('drops values that are not addresses', () => {
     expect(collectRecipients({ to: 'undisclosed-recipients', recipients: 42 })).toEqual([])
   })

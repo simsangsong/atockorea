@@ -73,6 +73,11 @@ function headerValue(headers: unknown, name: string): unknown {
  * 전용 주소는 봉투 수신자에만 나타난다. Gmail은 전달 시 `X-Forwarded-To`를
  * 덧붙이고, 다수 MTA는 `Delivered-To`를 남긴다 — 그래서 봉투 필드
  * (to/recipients)와 이 두 헤더까지 모두 본다.
+ *
+ * bcc를 반드시 포함해야 하는 이유(라이브 페이로드로 확인, 2026-07-25):
+ * Resend는 헤더에 없는 봉투 수신자를 `bcc` 배열에 싣는다 — 실제 실패 이벤트가
+ * `"bcc": ["support@atockorea.com"]`, To:는 다른 주소인 형태였다. bcc를 빼면
+ * 숨은 수신자로 도착한 정상 메일이 통째로 거부된다.
  */
 export function collectRecipients(data: Record<string, unknown>): string[] {
   const headers = data.headers
@@ -81,6 +86,7 @@ export function collectRecipients(data: Record<string, unknown>): string[] {
     data.to_email,
     data.recipients,
     data.cc,
+    data.bcc,
     headerValue(headers, 'to'),
     headerValue(headers, 'cc'),
     headerValue(headers, 'delivered-to'),
