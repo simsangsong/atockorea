@@ -49,6 +49,7 @@ export default function GuideAssignmentsPanel({
   onConfirmOverride,
   onDismissOverride,
   onDismissWarnings,
+  onBulkStatus,
 }: {
   /** 'YYYY-MM'. */
   month: string;
@@ -66,6 +67,8 @@ export default function GuideAssignmentsPanel({
   onConfirmOverride: (reason: string) => void;
   onDismissOverride: () => void;
   onDismissWarnings: () => void;
+  /** W7 — 선택한 배정을 한 번에 전이. 월말에 한 건씩 누르게 두면 아무도 안 누른다. */
+  onBulkStatus: (ids: string[], status: 'worked' | 'planned' | 'cancelled') => void;
 }) {
   const [tourDate, setTourDate] = useState(`${month}-01`);
   const [tourType, setTourType] = useState('private');
@@ -75,6 +78,21 @@ export default function GuideAssignmentsPanel({
   const [startTime, setStartTime] = useState('');
   const [endTime, setEndTime] = useState('');
   const [overrideReason, setOverrideReason] = useState('');
+  // W7 — 일괄 선택. 목록이 바뀌면 사라진 행의 id가 남지 않도록 아래에서 걸러낸다.
+  const [selected, setSelected] = useState<Set<string>>(() => new Set());
+
+  const visibleIds = rows.map((r) => r.id);
+  const selectedIds = visibleIds.filter((id) => selected.has(id));
+  const toggleOne = (id: string) =>
+    setSelected((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+  /** "예정만 고르기" — 실제로 누르고 싶은 것은 거의 항상 이것이다. */
+  const selectPlanned = () => setSelected(new Set(rows.filter((r) => r.status === 'planned').map((r) => r.id)));
+  const plannedCount = rows.filter((r) => r.status === 'planned').length;
 
   const submit = () => {
     if (!/^\d{4}-\d{2}-\d{2}$/.test(tourDate) || !tourType.trim()) return;
@@ -194,7 +212,47 @@ export default function GuideAssignmentsPanel({
       </div>
 
       <section>
-        <h4 className="mb-2 text-[13px] font-bold text-slate-800">배정 목록</h4>
+        <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
+          <h4 className="text-cjk-safe text-[13px] font-bold text-slate-800">배정 목록</h4>
+          {rows.length > 0 && (
+            <div className="flex flex-wrap items-center gap-1.5">
+              {plannedCount > 0 && (
+                <button
+                  type="button"
+                  onClick={selectPlanned}
+                  className="text-cjk-safe h-8 rounded-lg border border-slate-200 px-2 text-[11px] font-semibold text-slate-600 hover:bg-slate-50"
+                  data-testid="assignment-select-planned"
+                >
+                  예정 {plannedCount}건 선택
+                </button>
+              )}
+              {selectedIds.length > 0 && (
+                <>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      onBulkStatus(selectedIds, 'worked');
+                      setSelected(new Set());
+                    }}
+                    disabled={busy}
+                    className="flex h-8 items-center gap-1 rounded-lg bg-slate-900 px-2 text-[11px] font-bold text-white disabled:opacity-50"
+                    data-testid="assignment-bulk-worked"
+                  >
+                    <Check className="size-3.5" />
+                    <span className="text-cjk-safe">{selectedIds.length}건 일했음</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setSelected(new Set())}
+                    className="text-cjk-safe h-8 rounded-lg border border-slate-200 px-2 text-[11px] font-semibold text-slate-500 hover:bg-slate-50"
+                  >
+                    선택 해제
+                  </button>
+                </>
+              )}
+            </div>
+          )}
+        </div>
         {rows.length === 0 ? (
           <p className="rounded-xl bg-slate-50 px-3 py-4 text-center text-[13px] text-slate-500">
             이 달의 배정이 없습니다. 아래에서 추가하세요.
@@ -203,6 +261,13 @@ export default function GuideAssignmentsPanel({
           <ul className="divide-y divide-slate-100 overflow-hidden rounded-xl border border-slate-200">
             {rows.map((r) => (
               <li key={r.id} className="flex items-center gap-2 bg-white px-3 py-2.5" data-testid="assignment-row">
+                <input
+                  type="checkbox"
+                  checked={selected.has(r.id)}
+                  onChange={() => toggleOne(r.id)}
+                  aria-label={`${r.tour_date} ${r.tour_type} 선택`}
+                  className="size-4 flex-shrink-0"
+                />
                 <div className="min-w-0 flex-1">
                   <p className="flex items-center gap-1.5 truncate text-[14px] font-semibold text-slate-900">
                     <CalendarDays className="size-3.5 flex-shrink-0 text-slate-400" />

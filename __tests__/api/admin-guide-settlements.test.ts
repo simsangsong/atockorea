@@ -13,6 +13,7 @@
 import '@/test-utils/restoreWebPrimitives';
 import { GET as listGET, POST as listPOST } from '@/app/api/admin/guides/assignments/route';
 import { PATCH as assignPATCH, DELETE as assignDELETE } from '@/app/api/admin/guides/assignments/[id]/route';
+import { PATCH as bulkPATCH, BULK_LIMIT } from '@/app/api/admin/guides/assignments/bulk/route';
 import {
   GET as settlementsGET,
   POST as settlementsPOST,
@@ -179,6 +180,7 @@ describe('인증 게이트', () => {
       listPOST(fakeNextRequest({ body: { guideId: 'g-1', tourDate: '2026-08-03', tourType: 'private' } })),
       assignPATCH(fakeNextRequest({ body: { status: 'worked' } }), { params: Promise.resolve({ id: 'as-1' }) }),
       assignDELETE(fakeNextRequest({}), { params: Promise.resolve({ id: 'as-1' }) }),
+      bulkPATCH(fakeNextRequest({ body: { ids: ['as-1'], status: 'worked' } })),
       settlementsGET(fakeNextRequest({ searchParams: { period: '2026-08' } })),
       settlementsPOST(fakeNextRequest({ body: { period: '2026-08' } })),
       settlementPATCH(fakeNextRequest({ body: { status: 'paid' } }), { params: Promise.resolve({ key: 's-1' }) }),
@@ -255,6 +257,82 @@ describe('배정 원장', () => {
     expect(text).not.toContain('rrn');
     expect(text).not.toContain(PLAIN_RRN);
     expect(text).not.toContain('v1.');
+  });
+});
+
+/**
+ * W7 — 일괄 전이. 이 라우트가 없을 때 월말에 수십 번을 눌러야 했고, 그래서
+ * 아무도 누르지 않았다. 정산이 비어 있는 가장 흔한 원인이 그것이다.
+ */
+describe('배정 일괄 전이', () => {
+  it('marks every selected assignment and reports the count', async () => {
+    const { client, log } = db();
+    createServerClientMock.mockReturnValue(client);
+    const res = await bulkPATCH(fakeNextRequest({ body: { ids: ['a1', 'a2', 'a3'], status: 'worked' } }));
+    expect(res.status).toBe(200);
+    const json = await res.json();
+    expect(json.changed).toBe(3);
+    expect(json.failedCount).toBe(0);
+    expect(queriesFor(log, 'ops_guide_assignments', 'update')).toHaveLength(3);
+  });
+
+  it('de-duplicates ids so a double-selected row is written once', async () => {
+    const { client, log } = db();
+    createServerClientMock.mockReturnValue(client);
+    const res = await bulkPATCH(fakeNextRequest({ body: { ids: ['a1', 'a1', 'a2'], status: 'worked' } }));
+    expect((await res.json()).changed).toBe(2);
+    expect(queriesFor(log, 'ops_guide_assignments', 'update')).toHaveLength(2);
+  });
+
+  it('reports per-row failures instead of calling a partial run a success', async () => {
+    // 12건 중 10건 성공을 "성공"으로 뭉뚱그리면 나머지 2명이 정산에서 사라진다.
+    const { client } = db();
+    const original = client.from;
+    client.from = ((table: string) => {
+      const chain = original(table);
+      if (table === 'ops_guide_assignments') {
+        const update = chain.update;
+        chain.update = (payload: unknown) => {
+          const c = update(payload);
+          const eq = c.eq;
+          c.eq = (col: string, value: unknown) => {
+            const inner = eq(col, value);
+            if (col === 'id' && value === 'bad') {
+              inner.maybeSingle = async () => ({ data: null, error: { message: 'assignment_guide_unavailable' } });
+            }
+            return inner;
+          };
+          return c;
+        };
+      }
+      return chain;
+    }) as typeof client.from;
+    createServerClientMock.mockReturnValue(client);
+
+    const res = await bulkPATCH(fakeNextRequest({ body: { ids: ['ok', 'bad'], status: 'worked' } }));
+    const json = await res.json();
+    expect(json.changed).toBe(1);
+    expect(json.failedCount).toBe(1);
+    expect(json.failed[0].id).toBe('bad');
+    expect(json.failed[0].reason).toContain('휴무일');
+  });
+
+  it('rejects an empty selection and an unknown status without writing', async () => {
+    const { client, log } = db();
+    createServerClientMock.mockReturnValue(client);
+    expect((await bulkPATCH(fakeNextRequest({ body: { ids: [], status: 'worked' } }))).status).toBe(400);
+    expect((await bulkPATCH(fakeNextRequest({ body: { ids: ['a1'], status: 'paid' } }))).status).toBe(400);
+    expect(queriesFor(log, 'ops_guide_assignments', 'update')).toHaveLength(0);
+  });
+
+  it('refuses an oversized batch rather than silently truncating it', async () => {
+    const { client, log } = db();
+    createServerClientMock.mockReturnValue(client);
+    const ids = Array.from({ length: BULK_LIMIT + 1 }, (_, i) => `a${i}`);
+    const res = await bulkPATCH(fakeNextRequest({ body: { ids, status: 'worked' } }));
+    expect(res.status).toBe(400);
+    expect((await res.json()).code).toBe('too_many');
+    expect(queriesFor(log, 'ops_guide_assignments', 'update')).toHaveLength(0);
   });
 });
 

@@ -238,6 +238,39 @@ export default function AdminGuidesPage() {
     }
   };
 
+  /**
+   * W7 — 선택한 배정을 한 번에 전이. 서버가 **건별 결과**를 돌려주므로 일부
+   * 실패를 성공으로 뭉뚱그리지 않는다 — 조용히 빠진 사람이 정산에서 사라진다.
+   */
+  const bulkAssignmentStatus = async (ids: string[], status: 'worked' | 'planned' | 'cancelled') => {
+    if (!selectedId || ids.length === 0) return;
+    setBusy(true);
+    setError(null);
+    try {
+      const res = await authedFetch('/api/admin/guides/assignments/bulk', {
+        method: 'PATCH',
+        body: JSON.stringify({ ids, status }),
+      });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json?.error || '일괄 변경 실패');
+      if (json.failedCount > 0) {
+        setError(
+          `${json.changed}건 변경, ${json.failedCount}건 실패 — ${json.failed
+            .slice(0, 3)
+            .map((f: { reason?: string }) => f.reason)
+            .join(' / ')}`,
+        );
+      } else {
+        setNotice(`${json.changed}건을 ${status === 'worked' ? '일했음' : status === 'planned' ? '예정' : '취소'}으로 바꿨습니다.`);
+      }
+      await loadAssignments(selectedId, assignMonth);
+    } catch (e) {
+      setError(e instanceof Error ? e.message : String(e));
+    } finally {
+      setBusy(false);
+    }
+  };
+
   const deleteAssignment = async (id: string) => {
     if (!selectedId) return;
     setBusyAssignmentId(id);
@@ -762,6 +795,7 @@ export default function AdminGuidesPage() {
                     onConfirmOverride={(reason) => {
                       if (pendingOverride) void addAssignment(pendingOverride.input, reason);
                     }}
+                    onBulkStatus={(ids, status) => void bulkAssignmentStatus(ids, status)}
                   />
                   <Link
                     href="/admin/guide-settlements"
