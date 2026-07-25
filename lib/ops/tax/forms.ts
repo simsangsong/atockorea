@@ -361,6 +361,49 @@ export function csvFilename(doc: TaxFormDoc): string {
   return `atockorea-${doc.key}-${doc.period}.csv`;
 }
 
+export function xlsxFilename(doc: TaxFormDoc): string {
+  return `atockorea-${doc.key}-${doc.period}.xlsx`;
+}
+
+// ---------------------------------------------------------------------------
+// 출력 — .xlsx 시트 기술 (W6)
+// ---------------------------------------------------------------------------
+
+/**
+ * 서식 위에 붙는 표제 행 수. `headerRowIndex`를 이만큼 밀어야 굵은 헤더가 엉뚱한
+ * 줄에 붙지 않는다. 상수로 두는 이유는 딱 하나 — 표제를 한 줄 늘렸다가 헤더가
+ * 어긋나는 사고를 코드가 스스로 막게 하려고.
+ */
+export const XLSX_TITLE_ROWS = 3;
+
+export interface TaxFormSheetSpec {
+  name: string;
+  rows: Aoa;
+  headerRowIndex: number;
+}
+
+/**
+ * 서식 → 시트 2장. **[서식]과 [안내]를 나누는 이유**: CSV는 고지를 표 아래에
+ * 덧붙일 수밖에 없어서 홈택스에 그대로 올리면 쓰레기 행이 섞인다. 엑셀은 시트를
+ * 나눌 수 있으니 표는 표만 남기고 고지는 옆 시트로 보낸다.
+ */
+export function taxFormSheets(doc: TaxFormDoc, opts: { draft?: boolean } = {}): TaxFormSheetSpec[] {
+  const title: Aoa = [[doc.title], ['대상 기간', doc.period], []];
+  const notes: Aoa = [
+    ['항목', '내용'],
+    ...(opts.draft ? ([['⚠ 상태', 'DRAFT — 세무사 확인 전 초안입니다. 제출용이 아닙니다.']] as Aoa) : []),
+    ...doc.notes.map((n) => ['안내', n] as Cell[]),
+  ];
+  return [
+    {
+      name: doc.title,
+      rows: [...title, ...doc.aoa],
+      headerRowIndex: doc.headerRowIndex >= 0 ? doc.headerRowIndex + XLSX_TITLE_ROWS : -1,
+    },
+    { name: '안내', rows: notes, headerRowIndex: 0 },
+  ];
+}
+
 function escapeHtml(value: Cell): string {
   return String(value ?? '')
     .replace(/&/g, '&amp;')

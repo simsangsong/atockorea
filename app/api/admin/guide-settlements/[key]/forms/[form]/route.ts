@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { requireAdmin, AdminAuthFailure, adminAuthJsonResponse } from '@/lib/auth';
 import { getFinanceConfig } from '@/lib/ops/finance/config';
+import { buildXlsx, xlsxDownloadHeaders } from '@/lib/ops/export/xlsx';
 import { isDraftDocument } from '@/lib/ops/finance/documents';
 import { decryptGuidePii, piiEncryptionAvailable } from '@/lib/ops/guides/pii';
 import { logPiiAccess } from '@/lib/ops/guides/registry';
@@ -19,6 +20,8 @@ import {
   csvWithBom,
   isTaxFormKey,
   renderFormHtml,
+  taxFormSheets,
+  xlsxFilename,
   type AnnualPerson,
   type PayerInfo,
   type TaxFormDoc,
@@ -49,7 +52,7 @@ export const dynamic = 'force-dynamic';
  *   않는다. 여기서 받는 값은 기간('YYYY-MM' 또는 연간 서식의 'YYYY')이다.
  */
 
-type Format = 'json' | 'csv' | 'html';
+type Format = 'json' | 'csv' | 'html' | 'xlsx';
 
 /** 지급자(원천징수의무자) = 한국 종합여행업 법인. 없는 값은 지어내지 않고 빈칸. */
 function payerFrom(config: Awaited<ReturnType<typeof getFinanceConfig>>): PayerInfo {
@@ -120,8 +123,11 @@ export async function GET(
     }
 
     const formatParam = req.nextUrl.searchParams.get('format') ?? 'json';
-    if (!['json', 'csv', 'html'].includes(formatParam)) {
-      return NextResponse.json({ ok: false, message: 'format은 json · csv · html 중 하나입니다.' }, { status: 400 });
+    if (!['json', 'csv', 'html', 'xlsx'].includes(formatParam)) {
+      return NextResponse.json(
+        { ok: false, message: 'format은 json · csv · html · xlsx 중 하나입니다.' },
+        { status: 400 },
+      );
     }
     const format = formatParam as Format;
 
@@ -230,6 +236,16 @@ export async function GET(
           'Content-Disposition': `attachment; filename="${csvFilename(doc)}"`,
           'Cache-Control': 'no-store',
         },
+      });
+    }
+
+    if (format === 'xlsx') {
+      // CSV와 **같은 복호화 경로**를 탄다(위 wantsPlaintext). 즉 주민번호 평문이
+      // 실리고, 실렸다는 사실은 이미 감사로그에 남아 있다.
+      const file = buildXlsx(taxFormSheets(doc, { draft }));
+      return new NextResponse(new Uint8Array(file), {
+        status: 200,
+        headers: xlsxDownloadHeaders(xlsxFilename(doc)),
       });
     }
 

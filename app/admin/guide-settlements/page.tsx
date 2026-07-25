@@ -21,6 +21,7 @@ import {
   ArrowLeft,
   BadgeCheck,
   Calculator,
+  FileSpreadsheet,
   FileText,
   Loader2,
   Printer,
@@ -198,31 +199,49 @@ export default function GuideSettlementsPage() {
     [period],
   );
 
-  const downloadCsv = useCallback(
-    async (form: TaxFormKey) => {
-      try {
-        const key = form === 'annual' ? period.slice(0, 4) : period;
-        const res = await authedFetch(
-          `/api/admin/guide-settlements/${encodeURIComponent(key)}/forms/${form}?format=csv`,
-        );
-        if (!res.ok) {
-          const json = await res.json().catch(() => ({}));
-          throw new Error(json?.message || 'CSV를 만들지 못했습니다.');
-        }
-        const blob = await res.blob();
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = `atockorea-${form}-${key}.csv`;
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-        URL.revokeObjectURL(url);
-      } catch (e) {
-        toast.error(e instanceof Error ? e.message : 'CSV를 만들지 못했습니다.');
+  /** 응답 blob을 파일로 떨어뜨린다. 인증 헤더가 필요해 <a download>로는 안 된다. */
+  const saveBlob = useCallback(async (url: string, filename: string, label: string) => {
+    try {
+      const res = await authedFetch(url);
+      if (!res.ok) {
+        const json = await res.json().catch(() => ({}));
+        throw new Error(json?.message || `${label}을(를) 만들지 못했습니다.`);
       }
+      const blob = await res.blob();
+      const objectUrl = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = objectUrl;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(objectUrl);
+    } catch (e) {
+      toast.error(e instanceof Error ? e.message : `${label}을(를) 만들지 못했습니다.`);
+    }
+  }, []);
+
+  const downloadForm = useCallback(
+    (form: TaxFormKey, format: 'csv' | 'xlsx') => {
+      const key = form === 'annual' ? period.slice(0, 4) : period;
+      return saveBlob(
+        `/api/admin/guide-settlements/${encodeURIComponent(key)}/forms/${form}?format=${format}`,
+        `atockorea-${form}-${key}.${format}`,
+        format === 'xlsx' ? '엑셀' : 'CSV',
+      );
     },
-    [period],
+    [period, saveBlob],
+  );
+
+  /** 이체·대사용 지급 명세. 서식과 달리 주민번호가 없다. */
+  const downloadPayoutSheet = useCallback(
+    (format: 'csv' | 'xlsx') =>
+      saveBlob(
+        `/api/admin/guide-settlements/export?period=${encodeURIComponent(period)}&format=${format}`,
+        `atockorea-guide-settlement-${period}.${format}`,
+        format === 'xlsx' ? '엑셀' : 'CSV',
+      ),
+    [period, saveBlob],
   );
 
   return (
@@ -441,8 +460,8 @@ export default function GuideSettlementsPage() {
           <FileText className="size-4" />
           세무 서식
         </h2>
-        <p className="mt-0.5 text-xs text-slate-500">
-          인쇄(PDF 저장)와 CSV 내려받기까지만 합니다. 홈택스·위택스 제출은 사람이 합니다.
+        <p className="text-cjk-body mt-0.5 text-xs text-slate-500">
+          인쇄(PDF 저장)와 엑셀·CSV 내려받기까지만 합니다. 홈택스·위택스 제출은 사람이 합니다.
         </p>
         <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2">
           {TAX_FORM_KEYS.map((form) => (
@@ -457,11 +476,20 @@ export default function GuideSettlementsPage() {
                   className="inline-flex h-8 items-center gap-1 rounded-lg border border-slate-200 px-2 text-xs font-semibold text-slate-700 hover:bg-slate-100"
                 >
                   <Printer className="size-3.5" />
-                  인쇄
+                  <span className="text-cjk-safe">인쇄</span>
                 </Link>
                 <button
                   type="button"
-                  onClick={() => void downloadCsv(form)}
+                  onClick={() => void downloadForm(form, 'xlsx')}
+                  className="inline-flex h-8 items-center gap-1 rounded-lg border border-emerald-200 bg-emerald-50 px-2 text-xs font-semibold text-emerald-700 hover:bg-emerald-100"
+                  data-testid={`form-xlsx-${form}`}
+                >
+                  <FileSpreadsheet className="size-3.5" />
+                  엑셀
+                </button>
+                <button
+                  type="button"
+                  onClick={() => void downloadForm(form, 'csv')}
                   className="inline-flex h-8 items-center rounded-lg border border-slate-200 px-2 text-xs font-semibold text-slate-700 hover:bg-slate-100"
                 >
                   CSV
@@ -469,6 +497,35 @@ export default function GuideSettlementsPage() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* 서식과 다른 물건이라 자리를 나눈다 — 이쪽은 세무서가 아니라 은행 화면
+            옆에 놓고 보는 표이고, 주민번호가 들어 있지 않다. */}
+        <div className="mt-3 flex flex-wrap items-center justify-between gap-2 rounded-lg border border-slate-200 bg-slate-50 px-3 py-2">
+          <div className="min-w-0">
+            <p className="text-cjk-safe text-sm font-semibold text-slate-800">이체용 지급 명세</p>
+            <p className="text-cjk-body text-[11px] text-slate-500">
+              은행·계좌 마스크 + 실지급액. 주민등록번호는 들어가지 않습니다.
+            </p>
+          </div>
+          <div className="flex flex-shrink-0 gap-1.5">
+            <button
+              type="button"
+              onClick={() => void downloadPayoutSheet('xlsx')}
+              className="inline-flex h-8 items-center gap-1 rounded-lg border border-emerald-200 bg-emerald-50 px-2 text-xs font-semibold text-emerald-700 hover:bg-emerald-100"
+              data-testid="payout-sheet-xlsx"
+            >
+              <FileSpreadsheet className="size-3.5" />
+              엑셀
+            </button>
+            <button
+              type="button"
+              onClick={() => void downloadPayoutSheet('csv')}
+              className="inline-flex h-8 items-center rounded-lg border border-slate-200 px-2 text-xs font-semibold text-slate-700 hover:bg-slate-100"
+            >
+              CSV
+            </button>
+          </div>
         </div>
       </div>
 

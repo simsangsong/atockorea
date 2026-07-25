@@ -91,22 +91,25 @@ export default function TaxFormPrintPage() {
     void load();
   }, [load]);
 
-  const downloadCsv = useCallback(async () => {
-    if (!form) return;
-    const res = await authedFetch(
-      `/api/admin/guide-settlements/${encodeURIComponent(periodParam)}/forms/${form}?format=csv`,
-    );
-    if (!res.ok) return;
-    const blob = await res.blob();
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `atockorea-${form}-${periodParam}.csv`;
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-    URL.revokeObjectURL(url);
-  }, [form, periodParam]);
+  const download = useCallback(
+    async (format: 'csv' | 'xlsx') => {
+      if (!form) return;
+      const res = await authedFetch(
+        `/api/admin/guide-settlements/${encodeURIComponent(periodParam)}/forms/${form}?format=${format}`,
+      );
+      if (!res.ok) return;
+      const blob = await res.blob();
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `atockorea-${form}-${periodParam}.${format}`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    },
+    [form, periodParam],
+  );
 
   if (loading) {
     return <p className="p-8 text-center text-sm text-neutral-400">불러오는 중…</p>;
@@ -146,11 +149,20 @@ export default function TaxFormPrintPage() {
         </Link>
         <button
           type="button"
-          onClick={() => void downloadCsv()}
+          onClick={() => void download('xlsx')}
+          className="inline-flex h-11 items-center gap-1.5 rounded-xl border border-emerald-200 bg-emerald-50 px-3 text-xs font-semibold text-emerald-700"
+          data-testid="form-download-xlsx"
+        >
+          <Download className="size-3.5" />
+          <span className="text-cjk-safe">엑셀 내려받기</span>
+        </button>
+        <button
+          type="button"
+          onClick={() => void download('csv')}
           className="inline-flex h-11 items-center gap-1.5 rounded-xl border border-neutral-200 px-3 text-xs font-semibold text-neutral-600"
         >
           <Download className="size-3.5" />
-          CSV 내려받기
+          <span className="text-cjk-safe">CSV 내려받기</span>
         </button>
       </div>
 
