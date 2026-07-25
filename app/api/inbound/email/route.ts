@@ -5,6 +5,7 @@ import { createServerClient } from '@/lib/supabase';
 import { classifyInbound } from '@/lib/ops/inbox/classify';
 import { commitInboundEmail } from '@/lib/ops/inbox/commit';
 import { bodyTextFrom, fetchReceivedEmail } from '@/lib/ops/inbox/received';
+import { checkOpsInboundRecipient } from '@/lib/ops/inbox/recipients';
 import { maskLine } from '@/lib/ops/parse/mask';
 import { DEFAULT_TENANT_ID } from '@/lib/ops/parse/types';
 
@@ -19,7 +20,12 @@ export const dynamic = 'force-dynamic';
  *   commitInboundEmail (파싱 → bookings/룸 커밋) → 로그 확정.
  *
  * 안전 원칙:
- *   - RESEND_WEBHOOK_SECRET 부재 → 501 fail-closed (검증 없는 수신 금지).
+ *   - 서명 시크릿 부재 → 501 fail-closed (검증 없는 수신 금지). 엔드포인트별로
+ *     시크릿이 다르므로 OPS_INBOUND_WEBHOOK_SECRET 우선, RESEND_WEBHOOK_SECRET
+ *     폴백 (아래 POST 주석 참조).
+ *   - 수신자 게이트: OPS_INBOUND_ADDRESSES(기본 bookings@atockorea.com)로 온
+ *     메일만 파싱한다. Resend 인바운드는 도메인 catch-all이고 웹훅은 계정
+ *     단위 — 이 게이트가 없으면 support@ 고객 문의가 파서를 탄다.
  *   - 원문 이메일은 인메모리 처리 후 폐기 — DB 저장 절대 금지 (A-2).
  *     ops_email_parse_logs.masked_summary에는 maskLine() 마스킹본만.
  *   - 멱등: 로그 행을 먼저 insert (unique message_id). 중복 웹훅 재전송은
@@ -51,7 +57,13 @@ function parseAddress(value: unknown): AddressLike {
 
 export async function POST(req: NextRequest) {
   // fail-closed: 서명 비밀 없이는 어떤 수신도 처리하지 않는다.
-  const webhookSecret = process.env.RESEND_WEBHOOK_SECRET;
+  //
+  // 시크릿이 두 개인 이유: svix 서명 시크릿은 웹훅 엔드포인트마다 다르다.
+  // support 라우트(/api/webhooks/resend)와 이 라우트를 각각 Resend 웹훅으로
+  // 등록하면 시크릿이 서로 달라, 하나의 env를 공유할 경우 둘 중 하나가 매
+  // 수신마다 401이 된다. OPS_INBOUND_WEBHOOK_SECRET이 이 엔드포인트 전용이고,
+  // 없으면 기존 RESEND_WEBHOOK_SECRET으로 폴백한다(웹훅이 하나뿐인 구성 호환).
+  const webhookSecret = process.env.OPS_INBOUND_WEBHOOK_SECRET || process.env.RESEND_WEBHOOK_SECRET;
   if (!webhookSecret) {
     return NextResponse.json({ error: 'inbound webhook not configured' }, { status: 501 });
   }
@@ -90,6 +102,19 @@ export async function POST(req: NextRequest) {
   const messageId = typeof messageIdRaw === 'string' && messageIdRaw.trim() ? messageIdRaw.trim() : null;
   if (!messageId) {
     return NextResponse.json({ error: 'missing message id' }, { status: 400 });
+  }
+
+  // A-1 수신자 게이트 — 전용 인박스 주소로 온 메일만 파싱한다.
+  // Resend 인바운드는 도메인 catch-all + 계정 단위 웹훅이라 이 필터가 없으면
+  // support@ 고객 문의까지 파서를 타고, 확정메일에 달린 "취소" 답장이
+  // commitCancel로 이어질 수 있다 (lib/ops/inbox/recipients.ts 모듈 주석).
+  // 멱등 로그 선점보다 먼저 — 무관한 메일이 로그 행을 소비하지 않게.
+  const gate = checkOpsInboundRecipient(data);
+  if (!gate.accepted) {
+    return NextResponse.json(
+      { ok: true, ignored: 'recipient_not_allowed', recipients: gate.recipients },
+      { status: 200 },
+    );
   }
 
   const from = parseAddress(data.from ?? data.from_email);
