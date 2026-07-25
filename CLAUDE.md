@@ -1,5 +1,28 @@
 # CLAUDE.md — 프로젝트 메모리
 
+## 완료: 관제센터 + 정산 체인 + 손님 안내 (2026-07-26, 브랜치 `fix/smartguide-recovery-2026-07-25`)
+
+**플랜(단일 기준):** `docs/ops-center-settlement-upgrade-plan-2026-07-25.md` (v2, W1~W11 + M1~M5)
+**체인 전수 감사:** `docs/ops-guest-message-chain-2026-07-26.md` ← **이 영역 손대기 전에 이걸 먼저 읽어라**
+
+**W1~W11 + M1~M5 전부 구현·검증 완료.** 게이트: `npx tsc --noEmit` 0 · `npx jest` 4355 pass / 21 skip / 0 fail.
+
+신규: `ops_vehicles`(차량 마스터) · 배정 충돌 차단(API+**DB 트리거**) · 투어룸 월간 뷰 ·
+근무/배차 달력(한 컴포넌트 두 축) · 오토파일럿(제안 전용) · **의존성 0 xlsx 작성기** ·
+일괄 worked · 가이드별 원천징수영수증 · 날씨 자동 삽입(Open-Meteo, 키 불필요) ·
+이메일 원버튼 일괄 발송(미리보기→발송) · 투어별 문구 오버라이드 · 어드민 사이드바 23→6그룹.
+
+**🔴 다시 만들지 말 것 (이미 있다):** 왓츠앱 순차 발송·개인 토큰 링크·명단 픽업 그룹핑 ·
+3.3% 원천징수 산식·세무 서식 4종·월 정산 멱등 배치. `lib/ops/parse/autopilot-trigger.ts`는
+**OTA 파서용 동명이인**이며 관제 오토파일럿(`lib/ops/autopilot/**`)과 무관하다.
+
+**검증 하니스:** `npx tsx scripts/qa-ops-center-queries.ts --cleanup` (라이브 15검사, 쓰기는
+오토파일럿뿐이고 --cleanup 이 되돌린다) · `npx tsx scripts/qa-admin-cjk.ts` (세션 없으면
+**exit 2** — 예전엔 조용히 0건을 보고했다).
+
+**사람 게이트 3건:** ① `OPS_GUIDE_PII_ENC_KEY` 설정(한 번 넣으면 교체 금지) ② 실기기 리허설
+(마이크·TTS·푸시·GPS) ③ 세무 서식 CPA 검수 후 `ops_finance_config.expert_reviewed`.
+
 ## 진행 중: 다국어 확장 de/fr/it/ru (2026-07-26 착수)
 
 **마스터 플랜(단일 기준):** `docs/i18n-expansion-plan-v2-2026-07-25.md` (v3.2)
