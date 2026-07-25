@@ -7,6 +7,9 @@ import {
   loadVoices,
   detectTtsTier,
   speakMessage,
+  primeAudio,
+  utteranceLang,
+  __resetAudioPrimingForTests,
   TTS_LANG,
   type SynthLike,
   type VoiceLike,
@@ -140,6 +143,45 @@ describe('speakMessage ladder (T2.9)', () => {
     (global.fetch as jest.Mock).mockResolvedValue({ ok: false });
     const tier = await speakMessage('hello', { ...target, locale: 'en' }, { ...synth, addEventListener: undefined } as never);
     expect(tier).toBe('none');
+  });
+
+  // P0-6 — iOS/webview only lets you play an element that already played during
+  // a gesture. Creating a fresh Audio AFTER the fetch await is rejected, which
+  // is what left the guest speaker permanently muted.
+  it('P0-6: server tier reuses the gesture-warmed element instead of a new Audio', async () => {
+    __resetAudioPrimingForTests();
+    const created: Array<{ play: jest.Mock; src?: string }> = [];
+    (global as { Audio?: unknown }).Audio = jest.fn(function FakeAudio(this: unknown, src?: string) {
+      const el = { play: jest.fn(async () => undefined), src, preload: '' };
+      created.push(el);
+      return el;
+    });
+
+    primeAudio(); // the user gesture: one element created and played (silence)
+    expect(created).toHaveLength(1);
+
+    (global.fetch as jest.Mock).mockResolvedValue({
+      ok: true,
+      json: async () => ({ url: 'https://cdn.test/warm.mp3' }),
+    });
+    const synth = fakeSynth({ voices: [] });
+    const tier = await speakMessage('안내입니다', target, { ...synth, addEventListener: undefined } as never);
+
+    expect(tier).toBe('server');
+    // No SECOND element was constructed — the warmed one had its src swapped.
+    expect(created).toHaveLength(1);
+    expect(created[0].src).toBe('https://cdn.test/warm.mp3');
+    expect(created[0].play).toHaveBeenCalledTimes(2); // silence, then the mp3
+  });
+});
+
+describe('P0-6 utteranceLang — languages outside the 5 room locales', () => {
+  it('maps room locales, and passes through a chat-bridge language instead of throwing', () => {
+    expect(utteranceLang('ko')).toBe('ko-KR');
+    // A French-speaking guest (chat_locale) used to crash TTS_LANG[locale].split.
+    expect(() => utteranceLang('fr')).not.toThrow();
+    expect(utteranceLang('fr')).toBe('fr');
+    expect(hasLocaleVoice([{ lang: 'fr-FR' }], 'fr' as never)).toBe(true);
   });
 });
 

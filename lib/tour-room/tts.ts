@@ -42,9 +42,19 @@ export interface SynthLike {
   removeEventListener?: (type: string, listener: () => void) => void;
 }
 
+/**
+ * BCP-47 tag for a locale, tolerating languages outside the 5 room locales.
+ * The chat bridge lets a guest read in any language (chat_locale), and
+ * `TTS_LANG[locale]` was undefined for those — `.split()` then threw and left
+ * the speaker button spinning forever instead of degrading (P0-6).
+ */
+export function utteranceLang(locale: string): string {
+  return TTS_LANG[locale as RoomLocale] ?? locale ?? 'en-US';
+}
+
 /** Does any installed voice cover the locale? (language-prefix match) */
 export function hasLocaleVoice(voices: VoiceLike[], locale: RoomLocale): boolean {
-  const prefix = TTS_LANG[locale].split('-')[0].toLowerCase();
+  const prefix = utteranceLang(locale).split('-')[0].toLowerCase();
   return voices.some((voice) => (voice.lang || '').toLowerCase().replace('_', '-').startsWith(prefix));
 }
 
@@ -93,7 +103,7 @@ export function speakWithDevice(
   return new Promise((resolve) => {
     try {
       const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = TTS_LANG[locale];
+      utterance.lang = utteranceLang(locale);
       utterance.onend = () => resolve(true);
       utterance.onerror = () => resolve(false);
       synth.speak(utterance);
@@ -122,7 +132,12 @@ export async function playServerTts(target: ServerTtsTarget): Promise<boolean> {
     if (!res.ok) return false;
     const { url } = (await res.json()) as { url?: string };
     if (!url) return false;
-    const audio = new Audio(url);
+    // P0-6 — reuse the gesture-warmed element (see primeAudio). A fresh
+    // `new Audio(url)` created after the await has no user activation left and
+    // iOS Safari / in-app webviews reject its play(), which is what left the
+    // speaker stuck on the muted glyph.
+    const audio = warmAudio ?? new Audio();
+    audio.src = url;
     await audio.play();
     return true;
   } catch {
@@ -152,6 +167,19 @@ export async function speakMessage(
 
 let primed = false;
 
+/**
+ * P0-6 — the single HTMLMediaElement every server-tier playback reuses.
+ *
+ * On iOS Safari and in-app webviews only an element that was played during a
+ * user gesture may be played programmatically afterwards; a fresh
+ * `new Audio(url)` per message stays blocked forever. The driver cockpit
+ * already solved this (Cockpit.tsx, T0-5) — the guest path never got the fix,
+ * so every guest tap fell through to 'none' and the button showed 🔇.
+ */
+const SILENT_WAV = 'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAiBUAABArAAACABAAZGF0YQAAAAA=';
+
+let warmAudio: HTMLAudioElement | null = null;
+
 /** True once a user gesture has unlocked audio playback this session. */
 export function isAudioPrimed(): boolean {
   return primed;
@@ -160,6 +188,20 @@ export function isAudioPrimed(): boolean {
 export function primeAudio(): void {
   if (primed || typeof window === 'undefined') return;
   primed = true;
+  try {
+    // Unlock the MEDIA channel by playing silence on the element we will keep
+    // reusing. This must happen inside the gesture, before any await.
+    if (typeof Audio !== 'undefined' && !warmAudio) {
+      const element = new Audio(SILENT_WAV);
+      element.preload = 'auto';
+      void element.play().catch(() => {
+        /* still worth reusing: some engines unlock on the attempt alone */
+      });
+      warmAudio = element;
+    }
+  } catch {
+    /* fall through to the WebAudio prime below */
+  }
   try {
     // A zero-length silent buffer satisfies the autoplay gesture requirement
     // for both WebAudio and (on most engines) HTMLAudio started later.
@@ -183,4 +225,5 @@ export function primeAudio(): void {
 /** Test hook. */
 export function __resetAudioPrimingForTests(): void {
   primed = false;
+  warmAudio = null;
 }
