@@ -47,6 +47,14 @@ interface Offender {
   height: number;
 }
 
+/**
+ * 이 페이지가 실제로 어드민 화면인가. 로그인 화면으로 튕겼는데 "0건"을 보고하면
+ * 하니스가 통과 도장을 찍어 주는 셈이 된다.
+ */
+async function isAdminShell(page: Page): Promise<boolean> {
+  return page.evaluate(() => Boolean(document.querySelector('.admin-root')));
+}
+
 async function measure(page: Page, route: string): Promise<Offender[]> {
   return page.evaluate((r) => {
     const hangul = /[가-힣]/;
@@ -107,15 +115,26 @@ async function main() {
       cookies.map((c) => ({ ...c, domain: 'localhost', path: '/', httpOnly: false, secure: false, sameSite: 'Lax' as const })),
     );
   } catch (error) {
-    console.log('note: admin session not adopted —', String(error).slice(0, 80));
+    // 🔴 조용히 넘어가면 안 된다. 세션이 없으면 모든 /admin 경로가 로그인 화면으로
+    // 튕기고, 측정 대상 요소가 하나도 없어 이 하니스는 **초록색 0건**을 보고한다 —
+    // 이 저장소가 기록해 둔 "성공한 척하는 실패"의 정확한 사례다.
+    console.error('🔴 admin session not adopted —', String(error).slice(0, 120));
+    console.error('   먼저 `ALLOW_SIM_SEED=1 npx tsx scripts/sim-tour-day.ts` 로 픽스처를 만들어 주세요.');
+    process.exit(2);
   }
 
   const offenders: Offender[] = [];
+  const notAdmin: string[] = [];
   for (const route of ROUTES) {
     const page = await ctx.newPage();
     try {
       await page.goto(`${BASE}${route}`, { waitUntil: 'networkidle', timeout: 30000 });
       await page.waitForTimeout(1800);
+      if (!(await isAdminShell(page))) {
+        notAdmin.push(route);
+        await page.close();
+        continue;
+      }
       offenders.push(...(await measure(page, route)));
       await page.screenshot({ path: path.join(SHOTS, `${route.replace(/\//g, '_') || 'root'}.png`), fullPage: false });
     } catch (error) {
@@ -127,8 +146,16 @@ async function main() {
   await ctx.close();
   await browser.close();
 
+  if (notAdmin.length > 0) {
+    // 측정하지 못한 경로를 통과로 세지 않는다.
+    console.log(`\n🔴 ${notAdmin.length} routes never rendered the admin shell (signed out?):`);
+    for (const route of notAdmin) console.log(`  ${route}`);
+    console.log(`shots → ${SHOTS}`);
+    process.exit(2);
+  }
+
   if (offenders.length === 0) {
-    console.log('\n✅ no vertically-stacked Korean labels found');
+    console.log(`\n✅ no vertically-stacked Korean labels found (${ROUTES.length} routes measured)`);
   } else {
     console.log(`\n🔴 ${offenders.length} stacked labels:`);
     for (const o of offenders.slice(0, 40)) {

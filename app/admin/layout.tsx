@@ -50,31 +50,87 @@ type AdminMenuItem = {
   badge?: string;
 };
 
-const adminMenuItems: AdminMenuItem[] = [
-  { path: '/admin', label: '대시보드', icon: LayoutDashboard },
-  { path: '/admin/merchants', label: '업체 관리', icon: Building2 },
-  { path: '/admin/products', label: '상품 관리', icon: Package },
-  { path: '/admin/external-reviews', label: '외부 리뷰', icon: Star, badge: 'NEW' },
-  { path: '/admin/orders', label: '주문 관리', icon: ClipboardList },
-  { path: '/admin/ops-finance', label: '파이낸스 원장', icon: Landmark, badge: 'NEW' },
-  { path: '/admin/tour-ops', label: '투어 관제센터', icon: RadioTower, badge: 'LIVE' },
-  { path: '/admin/tour-ops/reclaims', label: '재등록 승인', icon: ShieldCheck, badge: 'NEW' },
-  { path: '/admin/tour-ops/card-sets', label: '브리핑 카드 세트', icon: LayoutList, badge: 'NEW' },
-  { path: '/admin/vehicle-layouts', label: '차량 배치도', icon: Bus, badge: 'NEW' },
-  { path: '/admin/guides', label: '가이드 관리', icon: UsersRound, badge: 'NEW' },
-  { path: '/admin/guide-settlements', label: '가이드 정산', icon: Receipt, badge: 'NEW' },
-  { path: '/admin/inbox', label: '수신함', icon: Inbox, badge: 'NEW' },
-  { path: '/admin/contacts', label: '문의 관리', icon: MessageSquareText },
-  { path: '/admin/emails', label: '받은 메일', icon: Mail },
-  { path: '/admin/upload', label: '이미지 업로드', icon: ImageUp },
-  { path: '/admin/cms', label: '콘텐츠 CMS', icon: Sparkles },
-  { path: '/admin/match-pois', label: '매칭 POI 관리', icon: MapPin, badge: 'NEW' },
-  { path: '/admin/facility-pins', label: '편의시설 핀', icon: Toilet, badge: 'NEW' },
-  { path: '/admin/dining-cache', label: '다이닝 캐시', icon: Utensils, badge: 'NEW' },
-  { path: '/admin/analytics', label: '데이터 분석', icon: BarChart3 },
-  { path: '/admin/chatbot-analytics', label: '챗봇 분석', icon: Bot, badge: 'NEW' },
-  { path: '/admin/settings', label: '시스템 설정', icon: Settings },
+type AdminMenuGroup = {
+  label: string;
+  items: AdminMenuItem[];
+  /** 기본으로 펼쳐 두는 그룹 — 매일 쓰는 것만. */
+  defaultOpen?: boolean;
+};
+
+/**
+ * 사이드바 IA — 6그룹 23항목.
+ *
+ * 이전에는 23개가 평면으로 나열돼 있어 스캔이 불가능했고, `NEW` 뱃지가 12개라
+ * 강조가 강조의 기능을 잃었다(전부 NEW면 아무것도 NEW가 아니다). 그래서 뱃지는
+ * 정말로 "지금 살아 돌아가는 것"인 관제센터의 LIVE 하나만 남긴다.
+ *
+ * 🔴 **기능은 하나도 지우지 않는다.** 항목이 그룹 안으로 들어갔을 뿐이고,
+ * 모든 경로는 (a) 그룹 (b) ⌘K 팔레트 둘 다로 여전히 도달 가능하다.
+ * 이 배열이 사이드바·모바일 서랍·팔레트·브레드크럼의 **단일 소스**다.
+ */
+const adminMenuGroups: AdminMenuGroup[] = [
+  {
+    label: '운영',
+    defaultOpen: true,
+    items: [
+      { path: '/admin', label: '대시보드', icon: LayoutDashboard },
+      { path: '/admin/orders', label: '주문 관리', icon: ClipboardList },
+      { path: '/admin/inbox', label: '수신함', icon: Inbox },
+      { path: '/admin/contacts', label: '문의 관리', icon: MessageSquareText },
+      { path: '/admin/emails', label: '받은 메일', icon: Mail },
+    ],
+  },
+  {
+    label: '투어 현장',
+    defaultOpen: true,
+    items: [
+      { path: '/admin/tour-ops', label: '투어 관제센터', icon: RadioTower, badge: 'LIVE' },
+      { path: '/admin/tour-ops/reclaims', label: '재등록 승인', icon: ShieldCheck },
+      { path: '/admin/tour-ops/card-sets', label: '브리핑 카드 세트', icon: LayoutList },
+    ],
+  },
+  {
+    label: '가이드 · 차량',
+    defaultOpen: true,
+    items: [
+      { path: '/admin/guides', label: '가이드 관리', icon: UsersRound },
+      { path: '/admin/guide-settlements', label: '가이드 정산', icon: Receipt },
+      { path: '/admin/vehicle-layouts', label: '차량 · 배치도', icon: Bus },
+    ],
+  },
+  {
+    label: '상품 · 콘텐츠',
+    items: [
+      { path: '/admin/products', label: '상품 관리', icon: Package },
+      { path: '/admin/merchants', label: '업체 관리', icon: Building2 },
+      { path: '/admin/external-reviews', label: '외부 리뷰', icon: Star },
+      { path: '/admin/cms', label: '콘텐츠 CMS', icon: Sparkles },
+      { path: '/admin/upload', label: '이미지 업로드', icon: ImageUp },
+    ],
+  },
+  {
+    label: '데이터 · 지도',
+    items: [
+      { path: '/admin/match-pois', label: '매칭 POI 관리', icon: MapPin },
+      { path: '/admin/facility-pins', label: '편의시설 핀', icon: Toilet },
+      { path: '/admin/dining-cache', label: '다이닝 캐시', icon: Utensils },
+      { path: '/admin/analytics', label: '데이터 분석', icon: BarChart3 },
+      { path: '/admin/chatbot-analytics', label: '챗봇 분석', icon: Bot },
+    ],
+  },
+  {
+    label: '정산 · 설정',
+    items: [
+      { path: '/admin/ops-finance', label: '파이낸스 원장', icon: Landmark },
+      { path: '/admin/settings', label: '시스템 설정', icon: Settings },
+    ],
+  },
 ];
+
+/** 평면 목록 — 활성 항목 판정과 ⌘K 팔레트가 쓴다. */
+const adminMenuItems: AdminMenuItem[] = adminMenuGroups.flatMap((group) => group.items);
+
+const SIDEBAR_OPEN_GROUPS_KEY = 'atockorea-admin-sidebar-groups';
 
 /**
  * The four high-frequency destinations surfaced in the mobile bottom tab bar
@@ -93,31 +149,14 @@ const mobileTabLabels: Record<string, string> = {
   '/admin/merchants': '업체',
 };
 
+/**
+ * 브레드크럼 라벨. 메뉴에서 **파생**시킨다 — 예전에는 같은 23줄을 손으로 두 번
+ * 적어야 했고, 한쪽만 고치면 헤더와 사이드바가 다른 이름을 말했다.
+ * 메뉴에 없는 하위 경로만 아래에서 덧붙인다.
+ */
 const pathToBreadcrumb: Record<string, string> = {
-  '/admin': '대시보드',
-  '/admin/merchants': '업체 관리',
+  ...Object.fromEntries(adminMenuItems.map((item) => [item.path, item.label])),
   '/admin/merchants/create': '업체 추가',
-  '/admin/products': '상품 관리',
-  '/admin/external-reviews': '외부 리뷰',
-  '/admin/orders': '주문 관리',
-  '/admin/ops-finance': '파이낸스 원장',
-  '/admin/tour-ops': '투어 관제센터',
-  '/admin/tour-ops/reclaims': '재등록 승인',
-  '/admin/tour-ops/card-sets': '브리핑 카드 세트',
-  '/admin/vehicle-layouts': '차량 배치도',
-  '/admin/guides': '가이드 관리',
-  '/admin/guide-settlements': '가이드 정산',
-  '/admin/inbox': '수신함',
-  '/admin/contacts': '문의 관리',
-  '/admin/emails': '받은 메일',
-  '/admin/upload': '이미지 업로드',
-  '/admin/cms': '콘텐츠 CMS',
-  '/admin/match-pois': '매칭 POI 관리',
-  '/admin/facility-pins': '편의시설 핀',
-  '/admin/dining-cache': '다이닝 캐시',
-  '/admin/analytics': '데이터 분석',
-  '/admin/chatbot-analytics': '챗봇 분석',
-  '/admin/settings': '시스템 설정',
 };
 
 function normalizeAdminPathname(pathname: string): string {
@@ -159,6 +198,12 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   const [user, setUser] = useState<any>(null);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  // 접이식 그룹. SSR 마크업과 첫 클라이언트 렌더가 어긋나지 않도록 기본값으로
+  // 시작하고, 마운트 후에 저장된 상태를 얹는다.
+  const [openGroups, setOpenGroups] = useState<Set<string>>(
+    () => new Set(adminMenuGroups.filter((g) => g.defaultOpen).map((g) => g.label)),
+  );
+  const [groupsHydrated, setGroupsHydrated] = useState(false);
 
   useEffect(() => {
     checkAuth();
@@ -184,6 +229,50 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   useEffect(() => {
     setMobileNavOpen(false);
   }, [pathname]);
+
+  // Restore the collapsed/expanded groups after mount (never during SSR).
+  useEffect(() => {
+    try {
+      const stored = window.localStorage.getItem(SIDEBAR_OPEN_GROUPS_KEY);
+      const parsed = stored ? (JSON.parse(stored) as unknown) : null;
+      if (Array.isArray(parsed)) {
+        setOpenGroups(new Set(parsed.filter((v): v is string => typeof v === 'string')));
+      }
+    } catch {
+      // 사이드바 접힘 상태는 편의 기능이다 — 못 읽으면 기본값으로 간다.
+    }
+    setGroupsHydrated(true);
+  }, []);
+
+  useEffect(() => {
+    if (!groupsHydrated) return;
+    try {
+      window.localStorage.setItem(SIDEBAR_OPEN_GROUPS_KEY, JSON.stringify([...openGroups]));
+    } catch {
+      /* preference just won't persist */
+    }
+  }, [groupsHydrated, openGroups]);
+
+  // 현재 페이지가 접힌 그룹 안에 있으면 그 그룹을 펼친다 — ⌘K나 직접 링크로
+  // 들어왔을 때 사이드바가 "여기가 어디인지"를 못 보여주면 안 된다.
+  useEffect(() => {
+    const normalized = normalizeAdminPathname(pathname);
+    const owner = adminMenuGroups.find((group) =>
+      group.items.some(
+        (item) => normalized === item.path || (item.path !== '/admin' && normalized.startsWith(`${item.path}/`)),
+      ),
+    );
+    if (owner) setOpenGroups((prev) => (prev.has(owner.label) ? prev : new Set([...prev, owner.label])));
+  }, [pathname]);
+
+  const toggleGroup = useCallback((label: string) => {
+    setOpenGroups((prev) => {
+      const next = new Set(prev);
+      if (next.has(label)) next.delete(label);
+      else next.add(label);
+      return next;
+    });
+  }, []);
 
   // Lock body scroll while the drawer is open so the backdrop doesn't scroll.
   useEffect(() => {
@@ -436,34 +525,65 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           </button>
         </div>
 
-        <nav className="flex-1 space-y-0.5 overflow-y-auto px-2 py-3">
-          {adminMenuItems.map((item) => {
-            const isActive = item.path === bestMatch;
-            const Icon = item.icon;
-
+        <nav className="flex-1 overflow-y-auto px-2 py-3">
+          {adminMenuGroups.map((group) => {
+            const open = openGroups.has(group.label);
+            const groupActive = group.items.some((item) => item.path === bestMatch);
             return (
-              <Link
-                key={item.path}
-                href={item.path}
-                aria-current={isActive ? 'page' : undefined}
-                className={`group flex h-9 items-center gap-2.5 rounded-lg px-2.5 text-[13px] font-medium transition-colors ${
-                  isActive
-                    ? 'bg-white text-slate-950 shadow-sm'
-                    : 'text-slate-300 hover:bg-white/[0.08] hover:text-white'
-                }`}
-              >
-                <Icon className={`size-4 flex-shrink-0 ${isActive ? 'text-blue-600' : 'text-slate-400 group-hover:text-slate-200'}`} />
-                <span className="min-w-0 flex-1 truncate">{item.label}</span>
-                {item.badge ? (
-                  <span
-                    className={`rounded px-1.5 py-0.5 text-xs font-bold leading-none ${
-                      isActive ? 'bg-blue-100 text-blue-700' : 'bg-blue-500/90 text-white'
-                    }`}
-                  >
-                    {item.badge}
-                  </span>
+              <div key={group.label} className="mb-1.5 last:mb-0">
+                <button
+                  type="button"
+                  onClick={() => toggleGroup(group.label)}
+                  aria-expanded={open}
+                  className="flex h-8 w-full items-center gap-1.5 rounded-lg px-2.5 text-left text-[11px] font-semibold uppercase tracking-wide text-slate-400 transition-colors hover:text-slate-200"
+                >
+                  <ChevronDown
+                    className={`size-3.5 flex-shrink-0 transition-transform ${open ? '' : '-rotate-90'}`}
+                  />
+                  {/* P1-5 — 그룹 라벨도 폭이 제한된 CJK 라벨이다. */}
+                  <span className="text-cjk-safe min-w-0 flex-1">{group.label}</span>
+                  {!open && groupActive ? (
+                    // 접힌 그룹 안에 현재 페이지가 있으면 점으로 알린다 —
+                    // 그렇지 않으면 "내가 어디 있는지"가 화면에서 사라진다.
+                    <span className="size-1.5 flex-shrink-0 rounded-full bg-blue-400" aria-hidden />
+                  ) : null}
+                </button>
+
+                {open ? (
+                  <div className="mt-0.5 space-y-0.5">
+                    {group.items.map((item) => {
+                      const isActive = item.path === bestMatch;
+                      const Icon = item.icon;
+                      return (
+                        <Link
+                          key={item.path}
+                          href={item.path}
+                          aria-current={isActive ? 'page' : undefined}
+                          className={`group flex h-9 items-center gap-2.5 rounded-lg px-2.5 text-[13px] font-medium transition-colors ${
+                            isActive
+                              ? 'bg-white text-slate-950 shadow-sm'
+                              : 'text-slate-300 hover:bg-white/[0.08] hover:text-white'
+                          }`}
+                        >
+                          <Icon
+                            className={`size-4 flex-shrink-0 ${isActive ? 'text-blue-600' : 'text-slate-400 group-hover:text-slate-200'}`}
+                          />
+                          <span className="min-w-0 flex-1 truncate">{item.label}</span>
+                          {item.badge ? (
+                            <span
+                              className={`text-cjk-safe rounded px-1.5 py-0.5 text-xs font-bold leading-none ${
+                                isActive ? 'bg-blue-100 text-blue-700' : 'bg-blue-500/90 text-white'
+                              }`}
+                            >
+                              {item.badge}
+                            </span>
+                          ) : null}
+                        </Link>
+                      );
+                    })}
+                  </div>
                 ) : null}
-              </Link>
+              </div>
             );
           })}
         </nav>
