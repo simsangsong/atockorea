@@ -2,66 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import crypto from 'crypto';
 import { Webhook } from 'svix';
-
-type ParsedEmailAddress = { email: string; name: string | null };
-
-/** Resend can send addresses as strings or objects, depending on the event version. */
-function parseEmailAddress(value: unknown): ParsedEmailAddress {
-  if (!value || typeof value !== 'string') return { email: '', name: null };
-  const match = value.trim().match(/^(.+?)\s*<([^>]+)>$/);
-  if (match) {
-    const name = match[1].trim().replace(/^["']|["']$/g, '') || null;
-    const email = match[2].trim().toLowerCase();
-    return { email, name: name || null };
-  }
-  return { email: value.trim().toLowerCase(), name: null };
-}
-
-function extractEmailAddresses(value: unknown): ParsedEmailAddress[] {
-  if (!value) return [];
-
-  if (Array.isArray(value)) {
-    return value.flatMap((item) => extractEmailAddresses(item));
-  }
-
-  if (typeof value === 'object') {
-    const record = value as Record<string, unknown>;
-    const parsed = parseEmailAddress(record.email ?? record.address ?? record.value);
-    const name = typeof record.name === 'string' && record.name.trim()
-      ? record.name.trim()
-      : parsed.name;
-    return parsed.email ? [{ email: parsed.email, name }] : [];
-  }
-
-  const parsed = parseEmailAddress(value);
-  return parsed.email ? [parsed] : [];
-}
-
-function firstEmailAddress(...values: unknown[]): ParsedEmailAddress {
-  for (const value of values) {
-    const [parsed] = extractEmailAddresses(value);
-    if (parsed?.email) return parsed;
-  }
-  return { email: '', name: null };
-}
-
-const DEFAULT_SUPPORT_INBOUND_ADDRESSES = [
-  'support@atockorea.com',
-  'support@atcokorea.com',
-];
-
-function supportInboundAddresses(): Set<string> {
-  const configured = process.env.SUPPORT_INBOUND_ADDRESSES;
-  const source = configured
-    ? configured.split(',')
-    : DEFAULT_SUPPORT_INBOUND_ADDRESSES;
-  return new Set(source.map((email) => email.trim().toLowerCase()).filter(Boolean));
-}
-
-function isSupportRecipient(email: string): boolean {
-  const normalized = email.trim().toLowerCase();
-  return supportInboundAddresses().has(normalized);
-}
+import { storeReceivedEmail } from '@/lib/support/storeReceivedEmail';
 
 async function hydrateReceivedEmail(emailData: Record<string, unknown>): Promise<Record<string, unknown>> {
   const resendApiKey = process.env.RESEND_API_KEY;
@@ -96,6 +37,14 @@ async function hydrateReceivedEmail(emailData: Record<string, unknown>): Promise
  * POST /api/webhooks/resend
  * Resend Inbound 수신 메일 웹훅 (email.received)
  * Requires RESEND_WEBHOOK_SECRET and verifies Svix signature.
+ *
+ * 저장 규칙은 lib/support/storeReceivedEmail.ts 하나뿐이다 — 백필 스크립트
+ * (scripts/backfill-received-emails.ts)와 공유해서 실시간분과 복구분이
+ * 서로 다르게 저장되는 일이 없게 한다.
+ *
+ * ⚠ 웹훅 URL은 반드시 www 정규 호스트여야 한다. apex(atockorea.com)는 307로
+ * 리다이렉트되고 Resend는 리다이렉트를 따라가지 않고 실패로 기록한다 —
+ * 2026-05-21 이후 수신분이 통째로 유실된 원인이 이것이었다.
  */
 export async function POST(req: NextRequest) {
   try {
@@ -141,97 +90,43 @@ export async function POST(req: NextRequest) {
 
     const emailData = await hydrateReceivedEmail((body.data || body) as Record<string, unknown>);
 
-    // Resend 문서: from/to can be strings or structured address objects, email_id 사용
-    const messageId = emailData.message_id || emailData.email_id || emailData.id || crypto.randomUUID();
-    const fromParsed = firstEmailAddress(emailData.from, emailData.from_email);
-    const fromEmail = fromParsed.email || 'unknown@unknown';
-    const fromName = fromParsed.name ?? (typeof emailData.from_name === 'string' ? emailData.from_name : null);
-
-    const toRecipients = [
-      ...extractEmailAddresses(emailData.to),
-      ...extractEmailAddresses(emailData.to_email),
-      ...extractEmailAddresses(emailData.recipients),
-      ...extractEmailAddresses((emailData.headers as Record<string, unknown> | undefined)?.to),
-    ];
-    const supportRecipient = toRecipients.find((recipient) => isSupportRecipient(recipient.email));
-    const toEmail = supportRecipient?.email || '';
-
-    const subject = typeof emailData.subject === 'string' ? emailData.subject : '(No Subject)';
-    const textContent = typeof emailData.text === 'string'
-      ? emailData.text
-      : typeof emailData.text_content === 'string'
-        ? emailData.text_content
-        : '';
-    const htmlContent = typeof emailData.html === 'string'
-      ? emailData.html
-      : typeof emailData.html_content === 'string'
-        ? emailData.html_content
-        : '';
-    const attachments = Array.isArray(emailData.attachments) ? emailData.attachments : [];
-
-    if (!toEmail) {
-      return NextResponse.json({ message: 'Email not for support inbox, ignoring' }, { status: 200 });
-    }
-    const supabase = createServerClient();
-
-    const insertPayload = {
-      message_id: String(messageId),
-      from_email: fromEmail,
-      from_name: fromName,
-      to_email: toEmail,
-      subject,
-      text_content: textContent || null,
-      html_content: htmlContent || null,
-      attachments: attachments.map((att: { filename?: string; name?: string; content_type?: string; type?: string; size?: number }) => ({
-        filename: att.filename ?? att.name,
-        content_type: att.content_type ?? att.type,
-        size: att.size ?? 0,
-      })),
-      category: categorizeEmail(subject, textContent),
-    };
-
-    const { data, error } = await supabase
-      .from('received_emails')
-      .insert(insertPayload)
-      .select()
-      .single();
-
-    if (error) {
-      const isDuplicate = error.code === '23505';
-      if (isDuplicate) {
-        return NextResponse.json({ success: true, message: 'Email already stored' }, { status: 200 });
-      }
-      console.error('Error saving email to database:', error);
-      return NextResponse.json(
-        { error: 'Failed to save email', details: error.message },
-        { status: 500 }
-      );
-    }
-
-    const messageForInquiry = (textContent || htmlContent || '').slice(0, 50000);
-    const { error: inquiryErr } = await supabase.from('contact_inquiries').insert({
-      full_name: fromName || fromEmail?.split('@')[0] || 'Unknown',
-      email: fromEmail,
-      subject,
-      message: messageForInquiry,
-      privacy_consent: true,
-      status: 'new',
-      is_read: false,
+    const outcome = await storeReceivedEmail({
+      supabase: createServerClient(),
+      data: emailData,
+      fallbackMessageId: crypto.randomUUID(),
     });
 
-    if (inquiryErr) {
-      console.error('Error saving to contact_inquiries:', inquiryErr);
-      return NextResponse.json(
-        { error: 'Failed to save inquiry', details: inquiryErr.message },
-        { status: 500 }
-      );
+    switch (outcome.result) {
+      case 'not_support':
+        // 관측된 수신자를 함께 돌려준다 — 예전에 bcc를 못 읽어 정상 메일을
+        // 조용히 버리던 실패가 로그만 보고는 진단이 안 됐다.
+        return NextResponse.json(
+          { message: 'Email not for support inbox, ignoring', recipients: outcome.recipients },
+          { status: 200 }
+        );
+      case 'duplicate':
+        return NextResponse.json({ success: true, message: 'Email already stored' }, { status: 200 });
+      case 'error':
+        console.error(`Error saving inbound email (${outcome.stage}):`, outcome.message);
+        return NextResponse.json(
+          { error: `Failed to save ${outcome.stage}`, details: outcome.message },
+          { status: 500 }
+        );
+      case 'stored_self':
+        // 우리가 보낸 알림이 catch-all로 되돌아온 것 — 기록만 남기고
+        // contact_inquiries(고객 문의 큐)는 만들지 않았다.
+        return NextResponse.json({
+          success: true,
+          message: 'Self-sent notification stored without creating an inquiry',
+          email_id: outcome.emailId,
+        }, { status: 200 });
+      case 'stored':
+        return NextResponse.json({
+          success: true,
+          message: 'Email received and saved',
+          email_id: outcome.emailId,
+        }, { status: 200 });
     }
-
-    return NextResponse.json({
-      success: true,
-      message: 'Email received and saved',
-      email_id: data.id,
-    }, { status: 200 });
   } catch (error: unknown) {
     console.error('Resend webhook error:', error);
     return NextResponse.json(
@@ -239,36 +134,6 @@ export async function POST(req: NextRequest) {
       { status: 500 }
     );
   }
-}
-
-/**
- * 根据邮件主题和内容自动分类
- */
-function categorizeEmail(subject: string, content: string): string {
-  const subjectLower = subject.toLowerCase();
-  const contentLower = content.toLowerCase();
-  
-  // 支持相关关键词
-  if (subjectLower.includes('support') || contentLower.includes('help') || contentLower.includes('assistance')) {
-    return 'support';
-  }
-  
-  // 咨询相关
-  if (subjectLower.includes('inquiry') || subjectLower.includes('question') || subjectLower.includes('ask')) {
-    return 'inquiry';
-  }
-  
-  // 投诉相关
-  if (subjectLower.includes('complaint') || subjectLower.includes('refund') || subjectLower.includes('cancel')) {
-    return 'complaint';
-  }
-  
-  // 预订相关
-  if (subjectLower.includes('booking') || subjectLower.includes('reservation') || subjectLower.includes('tour')) {
-    return 'booking';
-  }
-  
-  return 'other';
 }
 
 /**
