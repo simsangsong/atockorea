@@ -20,7 +20,9 @@ export const dynamic = 'force-dynamic';
  *   commitInboundEmail (파싱 → bookings/룸 커밋) → 로그 확정.
  *
  * 안전 원칙:
- *   - RESEND_WEBHOOK_SECRET 부재 → 501 fail-closed (검증 없는 수신 금지).
+ *   - 서명 시크릿 부재 → 501 fail-closed (검증 없는 수신 금지). 엔드포인트별로
+ *     시크릿이 다르므로 OPS_INBOUND_WEBHOOK_SECRET 우선, RESEND_WEBHOOK_SECRET
+ *     폴백 (아래 POST 주석 참조).
  *   - 수신자 게이트: OPS_INBOUND_ADDRESSES(기본 bookings@atockorea.com)로 온
  *     메일만 파싱한다. Resend 인바운드는 도메인 catch-all이고 웹훅은 계정
  *     단위 — 이 게이트가 없으면 support@ 고객 문의가 파서를 탄다.
@@ -55,7 +57,13 @@ function parseAddress(value: unknown): AddressLike {
 
 export async function POST(req: NextRequest) {
   // fail-closed: 서명 비밀 없이는 어떤 수신도 처리하지 않는다.
-  const webhookSecret = process.env.RESEND_WEBHOOK_SECRET;
+  //
+  // 시크릿이 두 개인 이유: svix 서명 시크릿은 웹훅 엔드포인트마다 다르다.
+  // support 라우트(/api/webhooks/resend)와 이 라우트를 각각 Resend 웹훅으로
+  // 등록하면 시크릿이 서로 달라, 하나의 env를 공유할 경우 둘 중 하나가 매
+  // 수신마다 401이 된다. OPS_INBOUND_WEBHOOK_SECRET이 이 엔드포인트 전용이고,
+  // 없으면 기존 RESEND_WEBHOOK_SECRET으로 폴백한다(웹훅이 하나뿐인 구성 호환).
+  const webhookSecret = process.env.OPS_INBOUND_WEBHOOK_SECRET || process.env.RESEND_WEBHOOK_SECRET;
   if (!webhookSecret) {
     return NextResponse.json({ error: 'inbound webhook not configured' }, { status: 501 });
   }

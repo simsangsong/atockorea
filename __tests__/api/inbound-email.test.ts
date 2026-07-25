@@ -113,10 +113,12 @@ function commitReturns(partial: Record<string, unknown> = {}) {
 
 const savedSecret = process.env.RESEND_WEBHOOK_SECRET;
 const savedInbound = process.env.OPS_INBOUND_ADDRESSES;
+const savedOpsSecret = process.env.OPS_INBOUND_WEBHOOK_SECRET;
 
 beforeEach(() => {
   jest.clearAllMocks();
   process.env.RESEND_WEBHOOK_SECRET = 'whsec_test';
+  delete process.env.OPS_INBOUND_WEBHOOK_SECRET;
   // 명시적으로 비워 기본 상수(bookings@atockorea.com)를 타게 한다 —
   // 로컬 env가 새어 들어와 게이트 테스트가 흔들리지 않도록.
   delete process.env.OPS_INBOUND_ADDRESSES;
@@ -130,6 +132,33 @@ afterAll(() => {
   else process.env.RESEND_WEBHOOK_SECRET = savedSecret;
   if (savedInbound === undefined) delete process.env.OPS_INBOUND_ADDRESSES;
   else process.env.OPS_INBOUND_ADDRESSES = savedInbound;
+  if (savedOpsSecret === undefined) delete process.env.OPS_INBOUND_WEBHOOK_SECRET;
+  else process.env.OPS_INBOUND_WEBHOOK_SECRET = savedOpsSecret;
+});
+
+describe('POST /api/inbound/email — per-endpoint signing secret', () => {
+  it('prefers OPS_INBOUND_WEBHOOK_SECRET over the shared support secret', async () => {
+    process.env.RESEND_WEBHOOK_SECRET = 'whsec_support';
+    process.env.OPS_INBOUND_WEBHOOK_SECRET = 'whsec_ops';
+    const { Webhook } = jest.requireMock('svix') as { Webhook: jest.Mock };
+    await POST(fakeReq(webhookBody()));
+    expect(Webhook).toHaveBeenCalledWith('whsec_ops');
+    delete process.env.OPS_INBOUND_WEBHOOK_SECRET;
+  });
+
+  it('falls back to RESEND_WEBHOOK_SECRET when the dedicated one is absent', async () => {
+    process.env.RESEND_WEBHOOK_SECRET = 'whsec_support';
+    delete process.env.OPS_INBOUND_WEBHOOK_SECRET;
+    const { Webhook } = jest.requireMock('svix') as { Webhook: jest.Mock };
+    await POST(fakeReq(webhookBody()));
+    expect(Webhook).toHaveBeenCalledWith('whsec_support');
+  });
+
+  it('returns 501 when neither secret is set', async () => {
+    delete process.env.RESEND_WEBHOOK_SECRET;
+    delete process.env.OPS_INBOUND_WEBHOOK_SECRET;
+    expect((await POST(fakeReq(webhookBody()))).status).toBe(501);
+  });
 });
 
 describe('POST /api/inbound/email — recipient gate (A-1)', () => {
