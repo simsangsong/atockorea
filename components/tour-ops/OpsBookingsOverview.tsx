@@ -128,7 +128,7 @@ export default function OpsBookingsOverview({
             onClick={() => setView(k)}
             aria-pressed={view === k}
             className={
-              'flex min-h-[36px] items-center gap-1.5 rounded-full px-3 text-xs font-bold ' +
+              'text-cjk-safe flex min-h-[36px] items-center gap-1.5 rounded-full px-3 text-xs font-bold ' +
               (view === k
                 ? 'bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]'
                 : 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]')

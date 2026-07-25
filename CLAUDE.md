@@ -1,5 +1,20 @@
 # CLAUDE.md — 프로젝트 메모리
 
+## 🔴 UI 불변 규칙: CJK 텍스트는 절대 글자 단위 줄바꿈 금지 (P1-5, 2026-07-25)
+
+한국어·중국어·일본어는 띄어쓰기가 없어 **CSS 기본값(`word-break: normal`)만으로도 글자 단위로 쪼개진다.** 그래서 표 헤더/버튼/뱃지가 `빈민` `유형` `준비전`처럼 세로로 무너진다. **원인은 `break-all`이 아니라 "아무 것도 지정하지 않은 것"** — `break-all`을 grep해서는 대부분의 사고 지점을 찾지 못한다.
+
+전역 유틸 (`app/globals.css` `@layer utilities`):
+- **`.text-cjk-safe`** — 절대 안 쪼개져야 하는 라벨: **표 헤더 / 버튼 / 뱃지 / 칩 / 탭**. `nowrap + keep-all + min-width:0 + ellipsis`.
+- **`.text-cjk-body`** — 줄바꿈은 되되 어절 단위로만: 본문·설명. `keep-all + overflow-wrap:break-word`.
+
+지켜야 할 것:
+1. 폭이 제한된 컨테이너(`flex-1`, 표 셀, 칩)에 들어가는 CJK 라벨에는 **반드시 둘 중 하나를 적용**한다.
+2. `break-all`은 **URL·해시·ID 등 ASCII 연속문자에만** 허용. CJK 텍스트에 붙이면 안 된다.
+3. 가로 스크롤 표는 `overflow-x-auto` + **`min-w-[Npx]`를 같이** 준다. `w-full`만 있으면 스크롤이 발동하지 않고 컬럼이 짜부라져 같은 사고가 난다. (참고 구현: `app/admin/guide-settlements/page.tsx`)
+4. 공용 프리미티브(`components/admin/DataTable.tsx`)에 이미 적용돼 있으니 **새 관리자 표는 이걸 쓰는 것이 기본**이다.
+
+
 ## 완료: 투어룸 UI/UX 글로벌 리디자인 v1 (프레젠테이션 전용, U0~U8)
 
 **마스터 플랜(단일 기준):** `docs/tour-room-ui-redesign-master-plan-2026-07-15.md` (§A 진단 → §C 바인딩 결정 U-D1~12 → §K WBS 8웨이브/46티켓)

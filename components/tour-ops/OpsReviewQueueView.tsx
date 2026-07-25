@@ -186,7 +186,7 @@ export default function OpsReviewQueueView({ onClose }: { onClose: () => void })
               type="button"
               onClick={() => setFilter(key)}
               aria-pressed={filter === key}
-              className={`h-8 rounded-full px-3.5 text-[12px] font-semibold ${
+              className={`text-cjk-safe h-8 rounded-full px-3.5 text-[12px] font-semibold ${
                 filter === key
                   ? 'bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]'
                   : 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]'

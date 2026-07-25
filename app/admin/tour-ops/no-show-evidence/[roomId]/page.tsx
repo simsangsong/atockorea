@@ -204,7 +204,7 @@ function Row({ label, value }: { label: string; value: string }) {
       <th scope="row" className="w-44 py-1.5 pr-3 text-left align-top text-xs font-semibold text-neutral-500">
         {label}
       </th>
-      <td className="py-1.5 align-top text-sm text-neutral-900 break-all tabular-nums">{value}</td>
+      <td className="text-cjk-body py-1.5 align-top text-sm text-neutral-900 tabular-nums">{value}</td>
     </tr>
   );
 }

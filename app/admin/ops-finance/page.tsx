@@ -228,15 +228,18 @@ export default function OpsFinancePage() {
       {/* 원장 리스트 */}
       <div className="overflow-hidden rounded-xl border border-slate-200 bg-white">
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-sm">
+          {/* P1-5 — min-w makes the overflow-x-auto above actually engage;
+              without it w-full just squeezes the columns until the Korean
+              headers break one character per line. */}
+          <table className="w-full min-w-[720px] text-left text-sm">
             <thead className="border-b border-slate-200 bg-slate-50 text-xs font-semibold uppercase tracking-wide text-slate-500">
               <tr>
-                <th className="px-3 py-2.5">법인</th>
-                <th className="px-3 py-2.5">유형</th>
-                <th className="px-3 py-2.5 text-right">금액</th>
-                <th className="px-3 py-2.5">예약 ID</th>
-                <th className="px-3 py-2.5">참조(PI/ref)</th>
-                <th className="px-3 py-2.5">기입 시각</th>
+                <th className="text-cjk-safe px-3 py-2.5">법인</th>
+                <th className="text-cjk-safe px-3 py-2.5">유형</th>
+                <th className="text-cjk-safe px-3 py-2.5 text-right">금액</th>
+                <th className="text-cjk-safe px-3 py-2.5">예약 ID</th>
+                <th className="text-cjk-safe px-3 py-2.5">참조(PI/ref)</th>
+                <th className="text-cjk-safe px-3 py-2.5">기입 시각</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100">
@@ -257,7 +260,7 @@ export default function OpsFinancePage() {
                   <tr key={r.id} className="hover:bg-slate-50">
                     <td className="px-3 py-2.5">
                       <span
-                        className={`rounded px-1.5 py-0.5 text-xs font-semibold ${
+                        className={`text-cjk-safe inline-block rounded px-1.5 py-0.5 text-xs font-semibold ${
                           r.entity === 'us' ? 'bg-blue-50 text-blue-700' : 'bg-slate-100 text-slate-700'
                         }`}
                       >

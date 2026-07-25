@@ -53,7 +53,8 @@ export function DataTable<T>({
                 <th
                   key={c.key}
                   className={cn(
-                    'px-4 py-2.5 text-xs font-semibold uppercase tracking-wide text-slate-500',
+                    // P1-5 — CJK headers must never break per character.
+                    'px-4 py-2.5 text-xs font-semibold uppercase tracking-wide text-slate-500 text-cjk-safe',
                     c.align === 'right' && 'text-right',
                     c.headerClassName,
                   )}
@@ -108,7 +109,7 @@ export function DataTable<T>({
               <dl className="space-y-1.5">
                 {columns.map((c) => (
                   <div key={c.key} className="flex items-start justify-between gap-3">
-                    <dt className="text-xs font-medium text-slate-500">{c.header}</dt>
+                    <dt className="text-cjk-safe text-xs font-medium text-slate-500">{c.header}</dt>
                     <dd
                       className={cn(
                         'text-right text-sm text-slate-800',

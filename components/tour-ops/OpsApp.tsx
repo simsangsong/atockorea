@@ -483,7 +483,8 @@ export default function OpsApp() {
                   </span>
                 ) : null}
               </span>
-              {label}
+              {/* P1-5 — '대시보드' in a flex-1 tab is the classic per-character break. */}
+              <span className="text-cjk-safe max-w-full px-0.5">{label}</span>
             </button>
           );
         })}

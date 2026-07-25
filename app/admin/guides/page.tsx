@@ -440,7 +440,7 @@ export default function AdminGuidesPage() {
       )}
       {notice && (
         <p className="mb-3 flex items-start gap-2 rounded-xl bg-emerald-50 px-3 py-2 text-[13px] font-medium text-emerald-800">
-          <span className="min-w-0 flex-1 break-all">{notice}</span>
+          <span className="text-cjk-body min-w-0 flex-1">{notice}</span>
           <button type="button" onClick={() => setNotice(null)} className="shrink-0 text-emerald-600">
             닫기
           </button>

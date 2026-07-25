@@ -72,6 +72,38 @@
   --focus-ring-offset: 2px;
 }
 
+/* CJK line-breaking (P1-5) — the recurring "vertical text" defect.
+
+   Korean/Chinese/Japanese have no spaces to break on, and the CSS default
+   (word-break: normal) is therefore allowed to break between ANY two
+   characters. In a squeezed table header or a flex-1 button this renders one
+   glyph per line ("빈민", "유형", "준비전" stacked vertically). Note the cause
+   is the DEFAULT, not `word-break: break-all` — most damaged spots never set
+   any break property at all, so grepping for break-all does not find them.
+
+   .text-cjk-safe  — labels that must never break mid-word: table headers,
+                     buttons, badges, chips, tabs. Truncates instead.
+   .text-cjk-body  — running text that MAY wrap, but only at word/phrase
+                     boundaries (keep-all), never between syllables.
+
+   Rule: any CJK label in a width-constrained container gets one of these.
+   See CLAUDE.md "CJK 텍스트는 절대 글자 단위 줄바꿈 금지". */
+@layer utilities {
+  .text-cjk-safe {
+    white-space: nowrap;
+    word-break: keep-all;
+    overflow-wrap: normal;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .text-cjk-body {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    hyphens: none;
+  }
+}
+
 /* Section padding utilities — drop-in for any home section.
    Mobile uses the :root values (compact). Desktop bumps to Apple-grade
    inflation (96/128/160) where breathing room reads as confidence. */

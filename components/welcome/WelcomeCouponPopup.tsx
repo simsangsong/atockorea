@@ -460,7 +460,9 @@ export default function WelcomeCouponPopup() {
         <h3 className="text-[14.5px] font-semibold" style={{ color: INK }}>
           {t('otpTitle')}
         </h3>
-        <p className="break-all text-[11px] leading-relaxed text-stone-500">
+        {/* P1-5 — the sentence around the address is Korean; break-all split it
+            per character. keep-all + break-word wraps the email, not the 한글. */}
+        <p className="text-cjk-body text-[11px] leading-relaxed text-stone-500">
           {t('otpSub', { email: email.trim() })}
         </p>
       </div>

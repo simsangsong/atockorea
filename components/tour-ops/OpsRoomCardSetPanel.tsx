@@ -187,7 +187,7 @@ export default function OpsRoomCardSetPanel({ roomId, tourId }: { roomId: string
                       type="button"
                       onClick={() => setLocale(code)}
                       aria-pressed={locale === code}
-                      className={`h-7 rounded-full px-2.5 text-[11px] font-semibold ${
+                      className={`text-cjk-safe h-7 rounded-full px-2.5 text-[11px] font-semibold ${
                         locale === code
                           ? 'bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]'
                           : 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]'
