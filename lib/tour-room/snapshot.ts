@@ -175,6 +175,7 @@ export async function buildRoomSnapshot(
     tourDate: booking.tour_date,
     itinerary: bookingRow?.itinerary ?? null,
     tourSchedule: (tour as { schedule?: unknown } | null)?.schedule,
+    tourId: booking.tour_id ?? null,
     locale,
   });
 

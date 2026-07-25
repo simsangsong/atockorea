@@ -7,6 +7,7 @@ import {
   dayPlanStopsToSchedule,
   humanizePoiKey,
   pickLocalizedName,
+  productStopsToSchedule,
   poiKeysToSchedule,
   resolveDaySchedule,
   type DayPlanRow,
@@ -275,5 +276,46 @@ describe('resolveDaySchedule — the 4-stage chain', () => {
       tourSchedule: [],
     });
     expect(result.schedule[0].title).toBe('Gwangalli Beach');
+  });
+});
+
+/**
+ * P0-5 stage ②.5 — the product page already stores this tour's itinerary in all
+ * six content locales. Live rooms were hitting stage ③ (tours.schedule), a
+ * single-language English blob, which is why a Chinese guest read an English
+ * itinerary while the Chinese one sat in tour_product_pages unused.
+ */
+describe('P0-5 product-page itinerary (stage ②.5)', () => {
+  const stops = [
+    {
+      number: 2,
+      name: '유엔기념공원 (한국전쟁)',
+      time: '≈ 09:30',
+      duration: '45분',
+      category: '관람',
+      _poi_meta: { poi_key: 'un_memorial_cemetery' },
+    },
+    { number: 1, name: '부산 크루즈 터미널에서 픽업', time: 'Cruise arrival + 30 min' },
+  ];
+
+  it('orders by the stop number and carries title/time/poi_key through', () => {
+    const items = productStopsToSchedule(stops);
+    expect(items.map((item) => item.title)).toEqual([
+      '부산 크루즈 터미널에서 픽업',
+      '유엔기념공원 (한국전쟁)',
+    ]);
+    expect(items[1]).toMatchObject({
+      time: '≈ 09:30',
+      duration: '45분',
+      category: '관람',
+      poi_key: 'un_memorial_cemetery',
+      source: 'product_page',
+    });
+  });
+
+  it('drops nameless stops and tolerates junk', () => {
+    expect(productStopsToSchedule(null)).toEqual([]);
+    expect(productStopsToSchedule('nope')).toEqual([]);
+    expect(productStopsToSchedule([null, 42, {}, { number: 1, name: '   ' }])).toEqual([]);
   });
 });

@@ -4,13 +4,21 @@
  *
  *   ① tour_day_plans (status guide_confirmed / live / done)
  *   ② bookings.itinerary.poi_keys (itinerary-builder bookings)
- *   ③ tours.schedule (legacy jsonb — today's only source)
+ *   ②.5 tour_product_pages.detail_payload.itineraryStops — the SAME itinerary
+ *       the guest read when booking, already translated into all six content
+ *       locales (P0-5)
+ *   ③ tours.schedule (legacy jsonb — single-language English)
  *   ④ [] — the honest fallback
  *
  * Every schedule consumer (room snapshot, concierge Tier0 context, guide
- * overview) reads this chain and nothing else. With no tour_day_plans row and
- * no itinerary poi_keys the output is byte-identical to the legacy
- * `tour.schedule ?? []` path — that equivalence is the W0 regression gate.
+ * overview) reads this chain and nothing else.
+ *
+ * P0-5 note on stage ②.5: stage ③ is a single-language English blob and it is
+ * what live rooms actually hit, which is why a Chinese guest saw an English
+ * itinerary. Rather than translate that blob at runtime, the resolver now reads
+ * the product page's itinerary, which is already stored per locale. Callers
+ * that pass no `tourId`/`locale` (ops gate, driver overview) skip the stage and
+ * keep the legacy output exactly.
  *
  * Read-bundle contract (same as snapshot.ts): any stage's query failure
  * degrades to the next stage, never throws.
@@ -19,7 +27,61 @@
 import type { RoomDbClient } from '@/lib/tour-room/access';
 import type { ScheduleItemLike } from '@/lib/tour-room/concierge';
 
-export type ScheduleSource = 'day_plan' | 'booking_itinerary' | 'tour_schedule' | 'none';
+export type ScheduleSource =
+  | 'day_plan'
+  | 'booking_itinerary'
+  | 'product_page'
+  | 'tour_schedule'
+  | 'none';
+
+/**
+ * P0-5 — room locale → `tour_product_pages.locale`.
+ * zh-CN rows are stored as "zh" (same convention as the product detail route).
+ */
+function productPageLocale(locale?: string | null): string | null {
+  const wanted = (locale ?? '').trim();
+  if (!wanted) return null;
+  if (wanted === 'zh-CN') return 'zh';
+  if (['en', 'ko', 'ja', 'es', 'zh', 'zh-TW'].includes(wanted)) return wanted;
+  const base = wanted.split('-')[0];
+  return ['en', 'ko', 'ja', 'es', 'zh'].includes(base) ? base : null;
+}
+
+interface ProductItineraryStop {
+  name?: unknown;
+  time?: unknown;
+  number?: unknown;
+  duration?: unknown;
+  category?: unknown;
+  _poi_meta?: { poi_key?: unknown } | null;
+}
+
+/**
+ * Stage ②.5 transform — the product detail page's itinerary, in the reader's
+ * language. This is the SAME itinerary the guest already read when booking, so
+ * the room now agrees with the product page instead of showing an English-only
+ * copy of it.
+ */
+export function productStopsToSchedule(stops: unknown): ScheduleItemLike[] {
+  if (!Array.isArray(stops)) return [];
+  return (stops as ProductItineraryStop[])
+    .filter((stop) => stop && typeof stop === 'object')
+    .slice()
+    .sort((a, b) => (Number(a.number) || 0) - (Number(b.number) || 0))
+    .map((stop) => {
+      const item: ScheduleItemLike = {
+        title: typeof stop.name === 'string' ? stop.name.trim() : '',
+        source: 'product_page',
+      };
+      if (typeof stop.time === 'string' && stop.time.trim()) item.time = stop.time.trim();
+      if (typeof stop.duration === 'string' && stop.duration.trim()) item.duration = stop.duration.trim();
+      if (typeof stop.category === 'string' && stop.category.trim()) item.category = stop.category.trim();
+      const poiKey = stop._poi_meta?.poi_key;
+      if (typeof poiKey === 'string' && poiKey) item.poi_key = poiKey;
+      return item;
+    })
+    .filter((item) => item.title !== '');
+}
 
 /** §C-2 stop element (jsonb — keep fields optional and tolerate extras). */
 export interface DayPlanStop {
@@ -189,6 +251,8 @@ export interface ResolveDayScheduleArgs {
   itinerary?: unknown;
   /** tours.schedule from the caller's existing tours join (stage ③ input). */
   tourSchedule?: unknown;
+  /** P0-5 — stage ②.5 input: the tour whose product page holds the translated itinerary. */
+  tourId?: string | null;
   /**
    * P0-5 — the reader's language. Stage ① reads it out of `name_i18n` and
    * stage ② out of `match_pois.names_other_locales`; omitting it keeps the old
@@ -267,6 +331,39 @@ export async function resolveDaySchedule(
       titleByKey = {};
     }
     return { source: 'booking_itinerary', schedule: poiKeysToSchedule(poiKeys, titleByKey), dayPlan: null };
+  }
+
+  // ── stage ②.5 — the product page's itinerary, in the reader's language ───
+  //
+  // P0-5: `tours.schedule` (stage ③) is a single-language English blob, and it
+  // is what live rooms actually hit. The very same itinerary already exists
+  // translated in tour_product_pages.detail_payload.itineraryStops for all six
+  // content locales — it is what the guest read when they booked. Reading it
+  // here costs one query and no translation, and makes the room agree with the
+  // product page instead of contradicting it in English.
+  if (args.tourId) {
+    const wanted = productPageLocale(args.locale);
+    // Ask for the reader's locale and English in one round trip, so the
+    // fallback costs nothing extra when the locale row is missing.
+    const wantedLocales = [...new Set([wanted, 'en'].filter(Boolean))] as string[];
+    if (wantedLocales.length > 0) {
+      try {
+        const { data } = await supabase
+          .from('tour_product_pages')
+          .select('locale, detail_payload')
+          .eq('tour_id', args.tourId)
+          .in('locale', wantedLocales);
+        const rows = (data ?? []) as Array<{ locale?: string; detail_payload?: { itineraryStops?: unknown } | null }>;
+        const preferred =
+          rows.find((row) => row.locale === wanted) ?? rows.find((row) => row.locale === 'en') ?? null;
+        const schedule = productStopsToSchedule(preferred?.detail_payload?.itineraryStops);
+        if (schedule.length > 0) {
+          return { source: 'product_page', schedule, dayPlan: null };
+        }
+      } catch {
+        // degrade to stage ③
+      }
+    }
   }
 
   // ── stage ③ — legacy tours.schedule passthrough ──────────────────────────
