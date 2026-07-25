@@ -173,10 +173,22 @@ export async function POST(
 
     let result: CaptionResult;
     if (audio) {
-      try {
-        result = await transcribeAndTranslate(audio, targetLocales, { bookingId: booking.id });
-      } catch (error) {
-        console.warn('[captions] multimodal path failed, falling back to stt-router:', error);
+      // P0-1: the default caption chat models (gemini-2.5-flash-lite / gpt-5-mini)
+      // do NOT accept `input_audio`, so the one-call multimodal primary failed
+      // 100% of the time (confirmed via ops_ai_usage) and only added a dead ~3s
+      // hop before the Whisper fallback — on devices without Web Speech (iOS
+      // Safari) that made captions feel entirely dead. Go straight to Whisper
+      // STT → translate. Set TOUR_AI_CAPTION_MULTIMODAL=1 to re-enable the
+      // one-call path once an audio-capable caption model is configured
+      // (TOUR_AI_CAPTION_MODEL / TOUR_AI_CAPTION_PROVIDERS).
+      if (process.env.TOUR_AI_CAPTION_MULTIMODAL === '1') {
+        try {
+          result = await transcribeAndTranslate(audio, targetLocales, { bookingId: booking.id });
+        } catch (error) {
+          console.warn('[captions] multimodal path failed, falling back to stt-router:', error);
+          result = await transcribeThenTranslate(audio, targetLocales, { bookingId: booking.id });
+        }
+      } else {
         result = await transcribeThenTranslate(audio, targetLocales, { bookingId: booking.id });
       }
     } else {

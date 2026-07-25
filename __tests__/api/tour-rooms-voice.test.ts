@@ -174,6 +174,9 @@ const GOOD_STT = {
 beforeEach(() => {
   jest.clearAllMocks();
   process.env.TOUR_ROOM_TOKEN_SECRET = 'unit-test-secret';
+  // P0-1: multimodal captions are opt-in (the default chat models reject audio);
+  // the default Tier-B path is Whisper STT → translate. Tests opt in explicitly.
+  delete process.env.TOUR_AI_CAPTION_MULTIMODAL;
   getAuthUserMock.mockResolvedValue(null);
   requestGateMock.mockResolvedValue({ allowed: true, retryAfterMs: 0 });
   transcribeMock.mockResolvedValue(GOOD_STT);
@@ -359,7 +362,25 @@ describe('POST /api/tour-rooms/[bookingId]/captions (T2.7)', () => {
     expect(json.caption.translations).toEqual({});
   });
 
+  it('Tier B default: multimodal is off → straight to Whisper STT + translate (P0-1)', async () => {
+    // The default chat models reject input_audio, so the multimodal primary is
+    // opt-in. By default a Tier-B chunk must NOT touch chatCompletion and must
+    // go directly through the stt-router fallback pipeline.
+    transcribeMock.mockResolvedValue({ ...GOOD_STT, text: '여기는 감천문화마을입니다' });
+    const res = await captionsPOST(
+      fakeReq({ query: { rt: guideToken() }, form: audioForm({ seq: '9' }) }),
+      routeParams(),
+    );
+    expect(res.status).toBe(201);
+    const json = await res.json();
+    expect(json.pipeline).toBe('stt-fallback');
+    expect(json.caption.source_text).toBe('여기는 감천문화마을입니다');
+    expect(chatCompletionMock).not.toHaveBeenCalled();
+    expect(transcribeMock).toHaveBeenCalled();
+  });
+
   it('Tier B: multimodal one-call transcribes and translates', async () => {
+    process.env.TOUR_AI_CAPTION_MULTIMODAL = '1';
     chatCompletionMock.mockResolvedValue({
       content: JSON.stringify({
         source_locale: 'ko',
@@ -381,6 +402,7 @@ describe('POST /api/tour-rooms/[bookingId]/captions (T2.7)', () => {
   });
 
   it('Tier B falls back to stt-router + translate when multimodal fails', async () => {
+    process.env.TOUR_AI_CAPTION_MULTIMODAL = '1';
     chatCompletionMock.mockRejectedValue(new Error('gemini down'));
     transcribeMock.mockResolvedValue({ ...GOOD_STT, text: 'fallback transcript' });
     const res = await captionsPOST(
