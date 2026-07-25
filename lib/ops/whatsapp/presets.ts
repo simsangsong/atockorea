@@ -370,13 +370,24 @@ export function getPreset(key: string): WaPresetDefinition | null {
   return WA_PRESETS.find((p) => p.key === key) ?? null
 }
 
+/**
+ * 손님 로케일 → 프리셋 로케일 키. zh-TW(번체)와 zh(간체)를 구분하고, 문구가 없는
+ * 언어(fr/de/it/ru 등)는 영어로 떨어진다.
+ *
+ * 🔴 이 함수가 **로케일 매핑의 단일 기준**이다. 저장된 문구를 로케일로 찾을 때와
+ * 코드 프리셋을 고를 때가 서로 다르게 접히면, 같은 손님이 채널마다 다른 언어의
+ * 문구를 받는다.
+ */
+export function waLocaleKey(locale: string | null | undefined): WaLocale {
+  const raw = (locale ?? 'en').trim()
+  if (/^zh[-_]?tw$/i.test(raw) || /^zh[-_]hant/i.test(raw)) return 'zh-TW'
+  const two = raw.toLowerCase().slice(0, 2)
+  if (two === 'zh') return 'zh'
+  return (WA_LOCALES as readonly string[]).includes(two) ? (two as WaLocale) : 'en'
+}
+
 /** Resolve the preset body for a guest locale — normalizes zh-TW vs zh, falls
  *  back to en for the 4-locale Phase 2.5 languages (fr/de/it/ru 등). */
 export function presetBodyForLocale(preset: WaPresetDefinition, locale: string | null | undefined): string {
-  const raw = (locale ?? 'en').trim()
-  if (/^zh[-_]?tw$/i.test(raw) || /^zh[-_]hant/i.test(raw)) return preset.bodies['zh-TW']
-  const two = raw.toLowerCase().slice(0, 2)
-  if (two === 'zh') return preset.bodies.zh
-  const hit = (WA_LOCALES as readonly string[]).includes(two) ? preset.bodies[two as WaLocale] : null
-  return hit ?? preset.bodies.en
+  return preset.bodies[waLocaleKey(locale)]
 }

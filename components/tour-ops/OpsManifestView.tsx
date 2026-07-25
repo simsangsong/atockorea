@@ -22,7 +22,7 @@ import {
   type ManifestBooking,
 } from '@/lib/ops/manifest/group';
 import { renderWaTemplate, resolveWhatsAppDigits } from '@/lib/ops/whatsapp/wa-deep-link';
-import { WA_PRESETS, getPreset, presetBodyForLocale, type WaPresetKey } from '@/lib/ops/whatsapp/presets';
+import { WA_PRESETS, getPreset, presetBodyForLocale, waLocaleKey, type WaPresetKey } from '@/lib/ops/whatsapp/presets';
 import { weatherVars } from '@/lib/ops/messaging/guestMessage';
 import { stripEmptyTokenLines } from '@/lib/ops/messaging/template';
 import type { DailyForecast } from '@/lib/ops/weather/forecast';
@@ -66,6 +66,9 @@ export default function OpsManifestView({
   const [inviteLink, setInviteLink] = useState<string | null>(null);
   // M1 — 투어일 예보. 명단과 함께 온다. null 이면 wa.me 문구에서 날씨·착장 줄이 빠진다.
   const [forecast, setForecast] = useState<DailyForecast | null>(null);
+  // M2 — 로케일별로 **해석된** 문구(투어 전용 → 전역 → 코드). 비어 있으면 코드 프리셋으로 떨어진다.
+  const [resolvedBodies, setResolvedBodies] = useState<Record<string, string>>({});
+  const [templateSource, setTemplateSource] = useState<string | null>(null);
 
   const load = useCallback(async () => {
     setLoading(true);
@@ -90,6 +93,38 @@ export default function OpsManifestView({
   useEffect(() => {
     void load();
   }, [load]);
+
+  // M2 — 투어 전용 문구가 있으면 그것을 쓴다. 실패하면 조용히 코드 프리셋으로
+  // 떨어진다(발송 자체를 막을 이유는 없다).
+  useEffect(() => {
+    let cancelled = false;
+    void (async () => {
+      try {
+        const token = await getOpsToken();
+        const res = await fetch(
+          `/api/admin/tour-ops/tour-templates?tourId=${encodeURIComponent(tourId)}&preset=${presetKey}&channel=whatsapp`,
+          { headers: { Authorization: `Bearer ${token}` }, credentials: 'include', cache: 'no-store' },
+        );
+        const json = await res.json();
+        if (cancelled || !res.ok) return;
+        const bodies: Record<string, string> = {};
+        let source: string | null = null;
+        for (const [locale, entry] of Object.entries(json.locales ?? {})) {
+          const e = entry as { body: string; source: string };
+          bodies[locale] = e.body;
+          if (e.source === 'tour') source = 'tour';
+          else source ??= e.source;
+        }
+        setResolvedBodies(bodies);
+        setTemplateSource(source);
+      } catch {
+        /* 코드 프리셋 폴백 */
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [tourId, presetKey]);
 
   const groups = useMemo(() => groupBookingsByPickup(bookings), [bookings]);
   const totals = useMemo(() => manifestTotals(bookings), [bookings]);
@@ -148,7 +183,9 @@ export default function OpsManifestView({
     async (booking: ManifestBooking): Promise<{ url: string; message: string } | null> => {
       const digits = resolveWhatsAppDigits({ phone: booking.contactPhone, whatsapp: booking.whatsapp });
       if (!digits) return null;
-      const body = presetBodyForLocale(preset, booking.preferredLanguage);
+      // 해석된 문구(투어 전용/전역)가 있으면 그것이 이긴다.
+      const localeKey = waLocaleKey(booking.preferredLanguage);
+      const body = resolvedBodies[localeKey] ?? presetBodyForLocale(preset, booking.preferredLanguage);
       let roomLink = '';
       if (body.includes('{room_link}') || body.includes('{pass_link}') || body.includes('{pass_url}')) {
         try {
@@ -188,7 +225,7 @@ export default function OpsManifestView({
       const url = `https://wa.me/${digits}?text=${encodeURIComponent(rendered)}`;
       return { url, message: rendered };
     },
-    [preset, tourDate, tourTitle, forecast],
+    [preset, tourDate, tourTitle, forecast, resolvedBodies],
   );
 
   const logAction = useCallback(async (payload: Record<string, unknown>) => {
@@ -279,6 +316,13 @@ export default function OpsManifestView({
           <span className="text-amber-700 dark:text-amber-300">미연락 {totals.uncontacted}</span>
         )}
         <span className="flex-1" />
+        {/* M2 — 이 투어 전용 문구가 쓰이는 중이면 말해 준다. 어느 문구가 나가는지
+            모른 채 보내면, 고쳐 둔 문구가 반영됐는지 확인할 방법이 없다. */}
+        {templateSource === 'tour' && (
+          <span className="text-cjk-safe rounded-full bg-[var(--tr-surface-2)] px-2 py-0.5 text-[10px] font-semibold text-[var(--tr-ink-2)]">
+            투어 전용 문구
+          </span>
+        )}
         <select
           value={presetKey}
           onChange={(e) => setPresetKey(e.target.value as WaPresetKey)}

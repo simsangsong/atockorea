@@ -96,6 +96,7 @@ export default function OpsGuestMessagingView({
   const [subject, setSubject] = useState('');
   const [body, setBody] = useState('');
   const [sending, setSending] = useState(false);
+  const [savingTemplate, setSavingTemplate] = useState(false);
   const [result, setResult] = useState<{
     sent: number;
     failed: number;
@@ -206,6 +207,62 @@ export default function OpsGuestMessagingView({
       setSending(false);
     }
   }, [openTour, preview, subject, body, preset, date]);
+
+  /**
+   * 편집 중인 문구가 어느 로케일용인가. 편집 기준을 첫 수신자로 잡았으므로
+   * 저장도 그 로케일에만 한다 — 한 번에 6개 언어를 덮어쓰면 다른 언어 손님에게
+   * 엉뚱한 말이 나간다.
+   */
+  const editLocale = preview?.recipients[0]?.locale ?? 'en';
+
+  const saveTourTemplate = useCallback(async () => {
+    if (!openTour) return;
+    setSavingTemplate(true);
+    try {
+      const token = await getOpsToken();
+      const res = await fetch('/api/admin/tour-ops/tour-templates', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+        credentials: 'include',
+        body: JSON.stringify({
+          tourId: openTour.tourId,
+          preset,
+          channel: 'email',
+          locale: editLocale,
+          subject,
+          body,
+        }),
+      });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.error || '저장 실패');
+      toast.success(`${editLocale} 손님용 이 투어 전용 문구로 저장했어요.`);
+      setPreview((p) => (p ? { ...p, templateSource: 'tour' } : p));
+    } catch (e) {
+      toast.error(e instanceof Error ? e.message : '저장 실패');
+    } finally {
+      setSavingTemplate(false);
+    }
+  }, [openTour, preset, editLocale, subject, body]);
+
+  const revertTourTemplate = useCallback(async () => {
+    if (!openTour) return;
+    setSavingTemplate(true);
+    try {
+      const token = await getOpsToken();
+      const res = await fetch(
+        `/api/admin/tour-ops/tour-templates?tourId=${openTour.tourId}&preset=${preset}&channel=email&locale=${encodeURIComponent(editLocale)}`,
+        { method: 'DELETE', headers: { Authorization: `Bearer ${token}` }, credentials: 'include' },
+      );
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.error || '되돌리기 실패');
+      toast.success('기본 문구로 되돌렸어요.');
+      await loadPreview(openTour, preset);
+    } catch (e) {
+      toast.error(e instanceof Error ? e.message : '되돌리기 실패');
+    } finally {
+      setSavingTemplate(false);
+    }
+  }, [openTour, preset, editLocale, loadPreview]);
 
   const emailable = useMemo(() => preview?.recipients.filter((r) => r.canEmail).length ?? 0, [preview]);
   const notEmailable = useMemo(() => preview?.recipients.filter((r) => !r.canEmail) ?? [], [preview]);
@@ -430,6 +487,37 @@ export default function OpsGuestMessagingView({
                         </p>
                       </div>
                     )}
+
+                    {/* M2 — 지금 화면의 문구를 이 투어 전용으로 굳힌다. 편집하고
+                        있는 자리에서 저장하는 것이 자연스럽고, 별도 관리 화면을
+                        만들면 아무도 거기까지 가지 않는다.
+                        ⚠ 저장되는 것은 **첫 수신자의 로케일** 한 벌이다 — 여러 언어를
+                        한 번에 덮어쓰면 다른 언어 손님에게 엉뚱한 말이 나간다. */}
+                    <div className="flex flex-wrap items-center gap-2 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2">
+                      <p className="text-cjk-body min-w-0 flex-1 text-[11px] leading-relaxed text-[var(--tr-ink-3)]">
+                        이 문구를 <b>{editLocale}</b> 손님용 <b>이 투어 전용</b>으로 저장할 수 있어요.
+                        {preview?.templateSource === 'tour' ? ' (현재 전용 문구 사용 중)' : ''}
+                      </p>
+                      <button
+                        type="button"
+                        onClick={() => void saveTourTemplate()}
+                        disabled={savingTemplate || !body.trim()}
+                        className="text-cjk-safe h-9 shrink-0 rounded-lg border border-[var(--tr-hairline)] px-2.5 text-[11px] font-semibold text-[var(--tr-ink-2)] disabled:opacity-50"
+                        data-testid="save-tour-template"
+                      >
+                        {savingTemplate ? '저장 중…' : '이 투어 문구로 저장'}
+                      </button>
+                      {preview?.templateSource === 'tour' && (
+                        <button
+                          type="button"
+                          onClick={() => void revertTourTemplate()}
+                          disabled={savingTemplate}
+                          className="text-cjk-safe h-9 shrink-0 rounded-lg border border-[var(--tr-hairline)] px-2.5 text-[11px] font-semibold text-[var(--tr-ink-3)] disabled:opacity-50"
+                        >
+                          기본으로 되돌리기
+                        </button>
+                      )}
+                    </div>
 
                     <button
                       type="button"
