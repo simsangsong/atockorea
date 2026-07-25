@@ -78,12 +78,51 @@ export function humanizePoiKey(poiKey: string): string {
     .join(' ');
 }
 
-function stopTitle(stop: DayPlanStop): string {
-  const names = stop.name_i18n;
-  if (names && typeof names === 'object') {
-    const preferred = names.en ?? Object.values(names).find((v) => typeof v === 'string' && v.trim());
-    if (typeof preferred === 'string' && preferred.trim()) return preferred.trim();
+/**
+ * P0-5 — pick a name in the reader's language.
+ *
+ * This resolver used to read `names.en` with no locale in scope at all, so a
+ * Chinese guest was served English for every stop even when the Chinese name
+ * was sitting right there in the same jsonb. The lookup ladder mirrors the one
+ * already used by PlanEditorClient / skipNotice / locale-content:
+ *
+ *   exact locale → base language (zh-TW → zh) → any regional sibling (zh → zh-TW)
+ *   → en → any non-empty value
+ *
+ * English stays the LAST resort rather than the first, which is the whole bug.
+ */
+export function pickLocalizedName(
+  names: Record<string, string> | null | undefined,
+  locale?: string | null,
+): string {
+  if (!names || typeof names !== 'object') return '';
+  const clean = (value: unknown): string =>
+    typeof value === 'string' && value.trim() ? value.trim() : '';
+
+  const wanted = (locale ?? '').trim();
+  if (wanted) {
+    const exact = clean(names[wanted]);
+    if (exact) return exact;
+
+    const base = wanted.split('-')[0];
+    if (base && base !== wanted) {
+      const baseHit = clean(names[base]);
+      if (baseHit) return baseHit;
+    }
+    // 'zh' should still find 'zh-TW' when only the regional variant is stored.
+    const sibling = Object.keys(names).find((key) => key.split('-')[0] === base && clean(names[key]));
+    if (sibling) return clean(names[sibling]);
   }
+
+  const english = clean(names.en);
+  if (english) return english;
+  const first = Object.values(names).find((value) => clean(value));
+  return clean(first);
+}
+
+function stopTitle(stop: DayPlanStop, locale?: string | null): string {
+  const preferred = pickLocalizedName(stop.name_i18n, locale);
+  if (preferred) return preferred;
   if (typeof stop.poi_key === 'string' && stop.poi_key) return humanizePoiKey(stop.poi_key);
   return '';
 }
@@ -94,7 +133,10 @@ function stopTitle(stop: DayPlanStop): string {
  * the concierge Tier0 answers). Skipped stops are excluded so "next stop"
  * answers never point at a stop the guide removed; ordering follows seq.
  */
-export function dayPlanStopsToSchedule(stops: DayPlanStop[] | unknown): ScheduleItemLike[] {
+export function dayPlanStopsToSchedule(
+  stops: DayPlanStop[] | unknown,
+  locale?: string | null,
+): ScheduleItemLike[] {
   if (!Array.isArray(stops)) return [];
   return (stops as DayPlanStop[])
     .filter((stop) => stop && typeof stop === 'object' && stop.status !== 'skipped')
@@ -103,7 +145,7 @@ export function dayPlanStopsToSchedule(stops: DayPlanStop[] | unknown): Schedule
     .map((stop) => {
       const time = typeof stop.arrival_planned === 'string' ? stop.arrival_planned.slice(0, 5) : '';
       const item: ScheduleItemLike = {
-        title: stopTitle(stop),
+        title: stopTitle(stop, locale),
         source: 'day_plan',
       };
       if (/^\d{2}:\d{2}$/.test(time)) item.time = time;
@@ -147,6 +189,13 @@ export interface ResolveDayScheduleArgs {
   itinerary?: unknown;
   /** tours.schedule from the caller's existing tours join (stage ③ input). */
   tourSchedule?: unknown;
+  /**
+   * P0-5 — the reader's language. Stage ① reads it out of `name_i18n` and
+   * stage ② out of `match_pois.names_other_locales`; omitting it keeps the old
+   * English-first behaviour for callers that are not guest-facing (ops gate,
+   * driver overview).
+   */
+  locale?: string | null;
 }
 
 export async function resolveDaySchedule(
@@ -165,7 +214,11 @@ export async function resolveDaySchedule(
         .maybeSingle();
       if (data) {
         const plan = data as DayPlanRow;
-        return { source: 'day_plan', schedule: dayPlanStopsToSchedule(plan.stops), dayPlan: plan };
+        return {
+          source: 'day_plan',
+          schedule: dayPlanStopsToSchedule(plan.stops, args.locale),
+          dayPlan: plan,
+        };
       }
     } catch {
       // degrade to stage ②
@@ -190,12 +243,25 @@ export async function resolveDaySchedule(
   if (poiKeys.length > 0) {
     let titleByKey: Record<string, string> = {};
     try {
+      // P0-5 — names_other_locales carries ja / zh / zh-TW / es for most POIs
+      // (75 of 124 live). Selecting name_en alone is why a Chinese guest saw an
+      // English itinerary while the Chinese name sat unused in the same row.
       const { data } = await supabase
         .from('match_pois')
-        .select('poi_key, name_en')
+        .select('poi_key, name_en, name_ko, names_other_locales')
         .in('poi_key', poiKeys);
-      for (const row of (data ?? []) as Array<{ poi_key?: string; name_en?: string | null }>) {
-        if (row.poi_key && row.name_en) titleByKey[row.poi_key] = row.name_en;
+      for (const row of (data ?? []) as Array<{
+        poi_key?: string;
+        name_en?: string | null;
+        name_ko?: string | null;
+        names_other_locales?: Record<string, string> | null;
+      }>) {
+        if (!row.poi_key) continue;
+        const names: Record<string, string> = { ...(row.names_other_locales ?? {}) };
+        if (row.name_en) names.en = row.name_en;
+        if (row.name_ko) names.ko = row.name_ko;
+        const title = pickLocalizedName(names, args.locale);
+        if (title) titleByKey[row.poi_key] = title;
       }
     } catch {
       titleByKey = {};

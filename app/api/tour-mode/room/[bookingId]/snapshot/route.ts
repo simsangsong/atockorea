@@ -43,7 +43,11 @@ export async function GET(
     }
 
     const room = await ensureRoom(supabase, resolved.booking);
-    const snapshot = await buildRoomSnapshot(supabase, resolved.booking, room);
+    // P0-5 — the schedule must resolve in the reader's language. The client
+    // sends its active locale as `?locale=`; omitting it keeps the previous
+    // English-first behaviour rather than guessing.
+    const locale = req.nextUrl.searchParams.get('locale');
+    const snapshot = await buildRoomSnapshot(supabase, resolved.booking, room, locale);
     return NextResponse.json(snapshot);
   } catch (error) {
     console.error('GET /api/tour-mode/room/[bookingId]/snapshot error:', error);

@@ -110,6 +110,8 @@ export async function buildRoomSnapshot(
   supabase: RoomDbClient,
   booking: RoomBooking,
   room: TourRoom,
+  /** P0-5 — the reader's language, so the schedule resolves in it (not English). */
+  locale?: string | null,
 ): Promise<RoomSnapshot> {
   const tourId = booking.tour_id;
 
@@ -173,6 +175,7 @@ export async function buildRoomSnapshot(
     tourDate: booking.tour_date,
     itinerary: bookingRow?.itinerary ?? null,
     tourSchedule: (tour as { schedule?: unknown } | null)?.schedule,
+    locale,
   });
 
   return {

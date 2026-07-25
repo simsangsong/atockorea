@@ -6,6 +6,7 @@
 import {
   dayPlanStopsToSchedule,
   humanizePoiKey,
+  pickLocalizedName,
   poiKeysToSchedule,
   resolveDaySchedule,
   type DayPlanRow,
@@ -103,6 +104,45 @@ describe('poiKeysToSchedule (stage ② transform)', () => {
 describe('humanizePoiKey', () => {
   it('title-cases snake_case', () => {
     expect(humanizePoiKey('n_seoul_tower')).toBe('N Seoul Tower');
+  });
+});
+
+// P0-5 — the resolver used to read name_i18n.en with no locale in scope, so a
+// Chinese guest got an English itinerary while the Chinese name sat unused in
+// the same jsonb. English must be the LAST resort, not the first.
+describe('P0-5 locale-aware stop titles', () => {
+  const NAMES = {
+    en: 'Gamcheon Culture Village',
+    ko: '감천문화마을',
+    zh: '甘川文化村',
+    'zh-TW': '甘川文化村',
+    ja: '甘川文化村',
+  };
+
+  it('serves the stop title in the reader locale', () => {
+    const stops = [{ seq: 1, poi_key: 'gamcheon_culture_village', name_i18n: NAMES }];
+    expect(dayPlanStopsToSchedule(stops, 'zh')[0].title).toBe('甘川文化村');
+    expect(dayPlanStopsToSchedule(stops, 'ko')[0].title).toBe('감천문화마을');
+    expect(dayPlanStopsToSchedule(stops, 'ja')[0].title).toBe('甘川文化村');
+  });
+
+  it('falls back base-language → English, and keeps English for en readers', () => {
+    const stops = [{ seq: 1, name_i18n: NAMES }];
+    // zh-CN has no exact key; the base language 'zh' answers it.
+    expect(dayPlanStopsToSchedule(stops, 'zh-CN')[0].title).toBe('甘川文化村');
+    // A locale with no translation at all degrades to English, not to blank.
+    expect(dayPlanStopsToSchedule(stops, 'fr')[0].title).toBe('Gamcheon Culture Village');
+    expect(dayPlanStopsToSchedule(stops, 'en')[0].title).toBe('Gamcheon Culture Village');
+  });
+
+  it('omitting locale keeps the legacy English-first behaviour (ops/driver callers)', () => {
+    expect(dayPlanStopsToSchedule([{ seq: 1, name_i18n: NAMES }])[0].title).toBe('Gamcheon Culture Village');
+  });
+
+  it('pickLocalizedName finds a regional sibling when only zh-TW is stored', () => {
+    expect(pickLocalizedName({ en: 'Jagalchi Market', 'zh-TW': '札嘎其市場' }, 'zh')).toBe('札嘎其市場');
+    expect(pickLocalizedName(null, 'zh')).toBe('');
+    expect(pickLocalizedName({}, 'zh')).toBe('');
   });
 });
 

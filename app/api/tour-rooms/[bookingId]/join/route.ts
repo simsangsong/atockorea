@@ -192,7 +192,10 @@ export async function POST(
       displayName,
     });
 
-    const snapshot = await buildRoomSnapshot(supabase, booking, room);
+    // P0-5 — resolve the schedule in this guest's language. chatLocale wins when
+    // present because it keeps the regional variant (zh-TW) that the folded room
+    // locale would lose, and match_pois stores zh-TW names separately.
+    const snapshot = await buildRoomSnapshot(supabase, booking, room, chatLocale || locale);
 
     return NextResponse.json(
       {
