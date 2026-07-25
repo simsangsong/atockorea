@@ -112,6 +112,12 @@ describe('G4 통화·단위', () => {
     expect(checkCurrencyAndUnits('2 miles', '2 Meilen', '/p')).toEqual([]);
   });
 
+  it('원문의 하이픈 결합 단위도 인식한다 — "0.4-mile"', () => {
+    // 하이픈을 수치·단위 사이 구분자로 세지 않으면 원문 쪽이 0으로 세어져
+    // 정상 번역이 "변환"으로 오탐된다. 실측 케이스.
+    expect(checkCurrencyAndUnits('a 0.4-mile loop trail', 'ein 0,4 Meilen langer Rundweg', '/p')).toEqual([]);
+  });
+
   it('독일어 합성어를 야드파운드로 오탐하지 않는다 — Fußweg ≠ foot', () => {
     // JS `\b`는 ASCII 기준이라 `ß` 뒤에 가짜 경계가 생긴다. 실측 오탐 케이스.
     expect(checkCurrencyAndUnits('Walk to lunch venue — ~5 min', 'Fußweg zum Mittagslokal — ca. 5 Min.', '/p')).toEqual([]);
