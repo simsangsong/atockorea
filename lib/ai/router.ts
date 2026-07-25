@@ -442,6 +442,17 @@ export async function translateTextViaRouter(
     return { source_locale: sourceLocale, translations };
   }
 
+  // P0-2/P0-3 — the fan-out returns ONE JSON object holding all N locales.
+  // Commit e9a999a0 (§L L1) began forcing max_tokens on this call, which had
+  // never passed a cap and was effectively unbounded; the per-purpose default
+  // (1200) truncated multi-language responses → invalid JSON (parsed below) →
+  // the whole translation was dropped and callers fell back to the untranslated
+  // source. Scale the cap to locale count and source length so a fan-out is
+  // never truncated. Output tokens bill only as generated, so short messages
+  // stay cheap (measured ~40 tok) — this preserves §L cost control for the
+  // common case while restoring correctness for large fan-outs.
+  const perLocaleBudget = 64 + Math.ceil(text.length * 1.5);
+  const translateOutputCap = Math.min(8000, Math.max(1200, 160 + missing.length * perLocaleBudget));
   const completion = await chatCompletion(
     'translate',
     [
@@ -467,7 +478,7 @@ export async function translateTextViaRouter(
       },
       { role: 'user', content: JSON.stringify({ text, target_locales: missing }) },
     ],
-    { jsonResponse: true, usage: options?.usage },
+    { jsonResponse: true, usage: options?.usage, maxOutputTokens: translateOutputCap },
   );
 
   let parsed: Partial<TranslationResult> = {};

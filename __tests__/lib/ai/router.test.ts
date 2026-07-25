@@ -195,6 +195,31 @@ describe('lib/ai/router', () => {
       fetchMock.mockResolvedValue({ ok: false, status: 500, json: async () => ({}) });
       await expect(translateTextViaRouter('hello there', ['ko'], { db: null })).rejects.toThrow(AiRouterError);
     });
+
+    // P0-2/P0-3 regression: commit e9a999a0 (§L L1) forced max_tokens onto this
+    // call, which had always been unbounded. The per-purpose default (1200)
+    // truncated a large multi-locale JSON fan-out → invalid JSON → the whole
+    // translation was dropped and callers showed the untranslated source. The
+    // cap must scale with locale count and source length.
+    it('P0-2/P0-3: scales max_tokens above the 1200 default for a large fan-out', async () => {
+      fetchMock.mockResolvedValue(
+        okCompletion({
+          source_locale: 'ko',
+          translations: { en: 'x', ja: 'x', zh: 'x', es: 'x', fr: 'x', de: 'x', it: 'x', ru: 'x' },
+        }),
+      );
+      const longText = '오늘 일정은 감천문화마을에서 시작해 자갈치시장을 거쳐 태종대까지 이동합니다. '.repeat(4);
+      await translateTextViaRouter(longText, ['en', 'ja', 'zh', 'es', 'fr', 'de', 'it', 'ru'], { db: null });
+      const body = JSON.parse(String(fetchMock.mock.calls[0][1].body));
+      expect(body.max_tokens).toBeGreaterThan(1200);
+    });
+
+    it('P0-2/P0-3: a tiny single-locale translation stays capped at the 1200 floor', async () => {
+      fetchMock.mockResolvedValue(okCompletion({ source_locale: 'en', translations: { ko: '지금 버스에 탑승해 주세요' } }));
+      await translateTextViaRouter('Please board the bus now.', ['ko'], { db: null });
+      const body = JSON.parse(String(fetchMock.mock.calls[0][1].body));
+      expect(body.max_tokens).toBe(1200);
+    });
   });
 
   describe('A3 honorific filter + prompt-version cache salt (plan §11.A / §12 Q1)', () => {
