@@ -112,6 +112,7 @@ export default function LobbyCard({
   tourTime,
   pickupPoints,
   busPayload,
+  viewerRole,
 }: {
   locale: RoomLocale;
   tourDate: string | null;
@@ -119,6 +120,8 @@ export default function LobbyCard({
   pickupPoints?: unknown;
   /** W4.3/B1 — tour_bus_details payload for the vehicle line. */
   busPayload?: unknown;
+  /** P1-4 — the chat hint is written to a guest; operators must not see it. */
+  viewerRole?: string | null;
 }) {
   const copy = COPY[locale];
   const pickup = firstPickup(pickupPoints);
@@ -173,7 +176,11 @@ export default function LobbyCard({
         </div>
       )}
 
-      <p className="tr-label mt-2.5 leading-relaxed text-[var(--tr-ink-2)]">{copy.chatHint}</p>
+      {/* P1-4 — "가이드의 안내 메시지가 여기에 도착해요" addresses a guest;
+          a guide/driver reading their own lobby is not waiting on themselves. */}
+      {viewerRole !== 'guide' && viewerRole !== 'driver' && viewerRole !== 'admin' && (
+        <p className="tr-label mt-2.5 leading-relaxed text-[var(--tr-ink-2)]">{copy.chatHint}</p>
+      )}
     </div>
   );
 }

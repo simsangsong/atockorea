@@ -945,6 +945,7 @@ function TourRoomLive({
           )}
           {data.lifecycle === 'lobby' && (
             <LobbyCard
+              viewerRole={viewerRole}
               locale={locale}
               tourDate={snapshot.booking?.tour_date ?? null}
               tourTime={snapshot.booking?.tour_time ?? null}

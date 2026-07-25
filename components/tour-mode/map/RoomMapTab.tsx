@@ -35,18 +35,45 @@ const RoomMapCanvas = dynamicImport(() => import('@/components/tour-mode/map/Roo
   ),
 });
 
-const FOLLOW_LABEL: Record<RoomLocale, string> = {
-  en: 'Follow guide',
-  ko: '가이드 따라가기',
-  ja: 'ガイドを追跡',
-  es: 'Seguir al guía',
-  zh: '跟随导游',
+/**
+ * P1-1 — map action labels are keyed by ROLE first, then locale.
+ *
+ * The guide's own screen was showing "가이드 따라가기 / 找到导游" (follow the
+ * guide) because the map tab had no role in scope at all: the follow toggle was
+ * gated only on "a guide location exists", which for a guide viewer is their
+ * own pin. Keeping the two label sets side by side as constants makes the
+ * asymmetry visible, so a future edit cannot quietly reintroduce it.
+ *
+ *   guide/driver → follow the GUESTS ("손님 위치 보기")
+ *   customer     → follow the GUIDE  ("가이드 따라가기")
+ */
+export const MAP_FOLLOW_LABEL: Record<'customer' | 'operator', Record<RoomLocale, string>> = {
+  customer: {
+    en: 'Follow guide',
+    ko: '가이드 따라가기',
+    ja: 'ガイドを追跡',
+    es: 'Seguir al guía',
+    zh: '跟随导游',
+  },
+  operator: {
+    en: 'View guests',
+    ko: '손님 위치 보기',
+    ja: 'お客様の位置',
+    es: 'Ver a los viajeros',
+    zh: '查看客人位置',
+  },
 };
+
+/** Operators (guide/driver) never get the guest wayfinding affordances. */
+export function isOperatorRole(role?: string | null): boolean {
+  return role === 'guide' || role === 'driver' || role === 'admin';
+}
 
 export default function RoomMapTab({
   bookingId,
   roomSession,
   locale,
+  viewerRole,
   myParticipantId,
   locations,
   presence,
@@ -59,6 +86,8 @@ export default function RoomMapTab({
   bookingId: string;
   roomSession: string;
   locale: RoomLocale;
+  /** P1-1 — which action set this viewer gets. Guest affordances are gated on it. */
+  viewerRole?: string | null;
   myParticipantId: string | null;
   locations: Record<string, RoomLocation>;
   presence: RoomPresence[];
@@ -119,6 +148,13 @@ export default function RoomMapTab({
   const guideLocation =
     Object.values(locations).find((location) => location.role === 'guide') ?? null;
 
+  // P1-1 — an operator follows the guests; only a guest follows the guide.
+  const isOperator = isOperatorRole(viewerRole);
+  const guestLocation =
+    Object.values(locations).find((location) => location.role === 'customer') ?? null;
+  const followTarget = isOperator ? guestLocation : guideLocation;
+  const followLabel = MAP_FOLLOW_LABEL[isOperator ? 'operator' : 'customer'][locale];
+
   const onToggle = (next: boolean) => {
     setSharing(next);
     if (!next) void stopSharing();
@@ -143,7 +179,7 @@ export default function RoomMapTab({
           pickup={pickup}
           followGuide={followGuide}
         />
-        {guideLocation && (
+        {followTarget && (
           <button
             type="button"
             onClick={() => setFollowGuide((v) => !v)}
@@ -155,11 +191,14 @@ export default function RoomMapTab({
             data-testid="follow-guide-toggle"
           >
             <IconFollow size={14} aria-hidden />
-            {FOLLOW_LABEL[locale]}
+            {followLabel}
           </button>
         )}
       </div>
 
+      {/* P1-1 — "가이드에게 가기 / 找到导游" is a GUEST affordance; it used to
+          render unconditionally, so the guide got directions to themselves. */}
+      {!isOperator && (
       <FindGuideCard
         me={
           lastPosition ??
@@ -172,6 +211,7 @@ export default function RoomMapTab({
         guideRecordedAt={guideLocation?.recorded_at ?? null}
         locale={locale}
       />
+      )}
     </div>
   );
 }

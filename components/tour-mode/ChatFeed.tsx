@@ -89,13 +89,34 @@ const EARLIER_LABEL: Record<RoomLocale, string> = {
   zh: '查看更早的消息',
 };
 
-const EMPTY_COPY: Record<RoomLocale, string> = {
-  en: 'No messages yet — updates from your guide will appear here.',
-  ko: '아직 메시지가 없어요 — 가이드의 안내가 여기에 도착해요.',
-  ja: 'まだメッセージはありません — ガイドのご案内はここに届きます。',
-  es: 'Aún no hay mensajes: los avisos de tu guía aparecerán aquí.',
-  zh: '还没有消息 — 导游的通知会显示在这里。',
+/**
+ * P1-4 — the empty state is role-aware.
+ *
+ * "가이드의 안내가 여기에 도착해요" is written to a GUEST waiting on their
+ * guide. It was rendered for every role, so a guide opening their own chat was
+ * told to wait for themselves. viewerRole was already in scope at the render
+ * site; only the copy lookup ignored it.
+ */
+const EMPTY_COPY: Record<'customer' | 'operator', Record<RoomLocale, string>> = {
+  customer: {
+    en: 'No messages yet — updates from your guide will appear here.',
+    ko: '아직 메시지가 없어요 — 가이드의 안내가 여기에 도착해요.',
+    ja: 'まだメッセージはありません — ガイドのご案内はここに届きます。',
+    es: 'Aún no hay mensajes: los avisos de tu guía aparecerán aquí.',
+    zh: '还没有消息 — 导游的通知会显示在这里。',
+  },
+  operator: {
+    en: 'No messages yet — say hello to your guests, or send a quick reply.',
+    ko: '아직 메시지가 없어요 — 손님에게 첫 안내를 보내보세요.',
+    ja: 'まだメッセージはありません — お客様に最初のご案内を送りましょう。',
+    es: 'Aún no hay mensajes: envía el primer aviso a tus viajeros.',
+    zh: '还没有消息 — 先给客人发送第一条通知吧。',
+  },
 };
+
+function isOperatorViewer(role?: string): boolean {
+  return role === 'guide' || role === 'driver' || role === 'admin';
+}
 
 const UNREAD_LABEL: Record<RoomLocale, string> = {
   en: 'New messages',
@@ -374,7 +395,7 @@ export default function ChatFeed({
 
         {messages.length === 0 && (
           <p className="tr-card-text mx-auto max-w-[240px] pt-16 text-center leading-relaxed text-[var(--tr-ink-3)]">
-            {EMPTY_COPY[viewerLocale]}
+            {EMPTY_COPY[isOperatorViewer(viewerRole) ? 'operator' : 'customer'][viewerLocale]}
           </p>
         )}
 
