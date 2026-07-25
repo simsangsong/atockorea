@@ -1,5 +1,20 @@
 # CLAUDE.md — 프로젝트 메모리
 
+## 진행 중: 다국어 확장 de/fr/it/ru (2026-07-26 착수)
+
+**마스터 플랜(단일 기준):** `docs/i18n-expansion-plan-v2-2026-07-25.md` (v3.2)
+**다음 세션 부트스트랩:** `docs/NEXT-SESSION-I18N-EXPANSION-2026-07-26.md` ← **이 트랙 이어받으면 이걸 먼저**
+**첫 명령:** `npm run i18n:status`
+
+**왜 라이브 DB에 써도 안전한가 (이 트랙의 핵심 전제):**
+`app/tour-product/[slug]/tourProductPageBody.tsx`에서 de/fr/it/ru은 `TOUR_PRODUCT_FALLBACK_URL_LOCALES`에 있다. 즉 **`tour_product_pages`에 `locale='de'` 행을 넣어도 그 배열을 고치기 전까지 고객 화면은 안 바뀐다.** 번역을 비가시적으로 스테이징하고 오픈은 별도 사람 결정으로 분리하는 구조. `__tests__/app/tourProductLocaleRouting.test.ts`가 이 이원 구조를 강제한다.
+
+**🔴 건드리면 안 되는 것:** ① 위 로케일 배열 2개(오픈 결정=사람) ② 기존 로케일 행 UPDATE(`apply.ts`는 INSERT만) ③ `messages/*.json` 기존 키 ④ `match_pois.names_other_locales`(게이트가 없어 쓰는 즉시 고객 반영 — 플랜 Q10/Q12)
+
+**상태:** P0 인프라 완료(`lib/i18n/pipeline/` 테스트 74 green, tsc 0) · 글로서리 L1 4언어 × POI 122건 완료 · 독일어 Tier1 10슬러그 추출(112 unit) · **독일어 `jeju-grand-highlights-loop` DB 발행 완료**. 잔여는 독일어 9슬러그 + fr/it/ru 전량.
+
+**⚠ 워크트리 경합:** `atockorea-main-merge`는 타 세션과 공유된다. 커밋 시 **`git add -A` 금지, 경로 명시**(2026-07-26에 외부 커밋이 진행 중 파일을 쓸어간 사례 있음).
+
 ## 🔴 UI 불변 규칙: CJK 텍스트는 절대 글자 단위 줄바꿈 금지 (P1-5, 2026-07-25)
 
 한국어·중국어·일본어는 띄어쓰기가 없어 **CSS 기본값(`word-break: normal`)만으로도 글자 단위로 쪼개진다.** 그래서 표 헤더/버튼/뱃지가 `빈민` `유형` `준비전`처럼 세로로 무너진다. **원인은 `break-all`이 아니라 "아무 것도 지정하지 않은 것"** — `break-all`을 grep해서는 대부분의 사고 지점을 찾지 못한다.

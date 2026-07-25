@@ -2,7 +2,7 @@
   "version": 1,
   "pipelineVersion": "1",
   "createdAt": "2026-07-25T15:20:31.123Z",
-  "updatedAt": "2026-07-25T15:30:49.277Z",
+  "updatedAt": "2026-07-25T15:37:04.175Z",
   "units": [
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:de:A1",
@@ -191,10 +191,12 @@
       "locale": "de",
       "chunk": "A1",
       "tier": "A1",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 1,
       "segments": 89,
-      "sourceChars": 5229
+      "sourceChars": 5229,
+      "fails": 0,
+      "flags": 6
     },
     {
       "id": "tour_product_pages:busan-private-car-charter-cruise-shore:de:A2",
@@ -203,10 +205,12 @@
       "locale": "de",
       "chunk": "A2",
       "tier": "A2",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 2,
       "segments": 58,
-      "sourceChars": 5426
+      "sourceChars": 5426,
+      "fails": 0,
+      "flags": 7
     },
     {
       "id": "tour_product_pages:busan-private-car-charter-cruise-shore:de:A2-2",
@@ -215,10 +219,12 @@
       "locale": "de",
       "chunk": "A2-2",
       "tier": "A2",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 2,
       "segments": 20,
-      "sourceChars": 1639
+      "sourceChars": 1639,
+      "fails": 0,
+      "flags": 1
     },
     {
       "id": "tour_product_pages:busan-private-car-charter-cruise-shore:de:B",
@@ -227,10 +233,12 @@
       "locale": "de",
       "chunk": "B",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 2,
       "segments": 75,
-      "sourceChars": 3206
+      "sourceChars": 3206,
+      "fails": 0,
+      "flags": 5
     },
     {
       "id": "tour_product_pages:busan-private-car-charter-cruise-shore:de:itineraryStops",
@@ -239,10 +247,12 @@
       "locale": "de",
       "chunk": "itineraryStops",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 1,
       "segments": 99,
-      "sourceChars": 5951
+      "sourceChars": 5951,
+      "fails": 0,
+      "flags": 9
     },
     {
       "id": "tour_product_pages:busan-private-car-charter-cruise-shore:de:itineraryStops-2",
@@ -251,10 +261,12 @@
       "locale": "de",
       "chunk": "itineraryStops-2",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 1,
       "segments": 56,
-      "sourceChars": 5985
+      "sourceChars": 5985,
+      "fails": 0,
+      "flags": 11
     },
     {
       "id": "tour_product_pages:busan-private-car-charter-cruise-shore:de:itineraryStops-3",
@@ -263,10 +275,12 @@
       "locale": "de",
       "chunk": "itineraryStops-3",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 1,
       "segments": 69,
-      "sourceChars": 5979
+      "sourceChars": 5979,
+      "fails": 0,
+      "flags": 5
     },
     {
       "id": "tour_product_pages:busan-private-car-charter-cruise-shore:de:itineraryStops-4",
@@ -275,10 +289,12 @@
       "locale": "de",
       "chunk": "itineraryStops-4",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 2,
       "segments": 8,
-      "sourceChars": 1046
+      "sourceChars": 1046,
+      "fails": 0,
+      "flags": 1
     },
     {
       "id": "tour_product_pages:busan-private-car-charter-cruise-shore:de:routeFlowStops",
@@ -287,10 +303,12 @@
       "locale": "de",
       "chunk": "routeFlowStops",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "auto_pass",
+      "attempts": 2,
       "segments": 7,
-      "sourceChars": 88
+      "sourceChars": 88,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:busan-top-attractions-day-tour:de:A1",
@@ -1140,7 +1158,7 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 2,
+      "attempts": 4,
       "segments": 111,
       "sourceChars": 4718,
       "fails": 0,
@@ -1154,7 +1172,7 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 3,
+      "attempts": 5,
       "segments": 68,
       "sourceChars": 5136,
       "fails": 0,
@@ -1168,7 +1186,7 @@
       "chunk": "A2-2",
       "tier": "A2",
       "status": "auto_pass",
-      "attempts": 3,
+      "attempts": 5,
       "segments": 26,
       "sourceChars": 1026,
       "fails": 0,
@@ -1182,7 +1200,7 @@
       "chunk": "B",
       "tier": "B",
       "status": "flagged",
-      "attempts": 3,
+      "attempts": 5,
       "segments": 51,
       "sourceChars": 1831,
       "fails": 0,
@@ -1196,7 +1214,7 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 3,
+      "attempts": 5,
       "segments": 57,
       "sourceChars": 5509,
       "fails": 0,
@@ -1210,7 +1228,7 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 3,
+      "attempts": 5,
       "segments": 72,
       "sourceChars": 5705,
       "fails": 0,
@@ -1224,7 +1242,7 @@
       "chunk": "itineraryStops-3",
       "tier": "B",
       "status": "flagged",
-      "attempts": 3,
+      "attempts": 5,
       "segments": 51,
       "sourceChars": 4873,
       "fails": 0,
@@ -1238,7 +1256,7 @@
       "chunk": "itineraryStops-4",
       "tier": "B",
       "status": "flagged",
-      "attempts": 2,
+      "attempts": 4,
       "segments": 48,
       "sourceChars": 5281,
       "fails": 0,
@@ -1252,7 +1270,7 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 3,
+      "attempts": 5,
       "segments": 14,
       "sourceChars": 119,
       "fails": 0,
