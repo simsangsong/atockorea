@@ -33,6 +33,7 @@ import { isDeviceSttSupported, startDeviceStt } from '@/lib/tour-room/deviceStt'
 import { primeAudio } from '@/lib/tour-room/tts';
 import MicPrime from '@/components/tour-mode/MicPrime';
 import ActionGrid, { type ActionGridItem } from '@/components/tour-mode/ActionGrid';
+import GuideSeatDashboard from '@/components/tour-mode/guide/GuideSeatDashboard';
 import TimeWheel from '@/components/tour-mode/cockpit/TimeWheel';
 import { useConfirmSheet } from '@/components/tour-mode/ConfirmSheet';
 import { scheduleClock } from '@/lib/tour-room/time';
@@ -69,6 +70,7 @@ import {
   Sunrise,
   Timer,
   TriangleAlert,
+  Users,
   Utensils,
   Wallet,
   Navigation,
@@ -252,6 +254,7 @@ export default function Cockpit({
   room,
   bookingId,
   session,
+  roomToken,
   channelTopic,
   initialMessages,
   city = null,
@@ -263,6 +266,13 @@ export default function Cockpit({
   room: CockpitRoom;
   bookingId: string;
   session: string;
+  /**
+   * The RAW room token (`?rt=`), distinct from `session`. The manifest API
+   * authenticates with `x-tour-room-token`, not the `x-tour-room-auth` session
+   * every other cockpit call uses. Optional: the guide/admin mounts of this
+   * component have no token, and the 명단·좌석 tile hides without one.
+   */
+  roomToken?: string | null;
   channelTopic: string | null;
   initialMessages: RoomMessage[];
   /** Tour city — sets the overtime base hours (Jeju 9h / Busan 8h, T1-1). */
@@ -314,7 +324,8 @@ export default function Cockpit({
   const [textSending, setTextSending] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
   const [sheet, setSheet] = useState<
-    'none' | 'delay' | 'schedule' | 'return' | 'expense' | 'overtime' | 'assist' | 'arrival' | 'summary'
+    | 'none' | 'delay' | 'schedule' | 'return' | 'expense' | 'overtime' | 'assist' | 'arrival'
+    | 'summary' | 'manifest'
   >('none');
   const [pushOn, setPushOn] = useState(false);
   const [expItem, setExpItem] = useState('');
@@ -1226,6 +1237,21 @@ export default function Cockpit({
   const driverActions = useMemo<ActionGridItem[]>(() => {
     const base: ActionGridItem[] = [
       { key: 'board', label: '타세요', Icon: BusFront, tone: 'blue', onClick: announceVehicleArrived },
+      // The roster/seat map was reachable from the guide's chat but nowhere in
+      // the cockpit — the driver is the person actually counting heads at the
+      // door. Same self-contained component, and the manifest endpoint already
+      // authorises the driver role.
+      ...(roomToken
+        ? [
+            {
+              key: 'manifest',
+              label: '명단·좌석',
+              Icon: Users,
+              tone: 'slate' as const,
+              onClick: () => setSheet('manifest'),
+            },
+          ]
+        : []),
       { key: 'delay', label: '지연', Icon: Timer, tone: 'amber', onClick: () => setSheet('delay') },
       {
         key: 'return',
@@ -1314,6 +1340,7 @@ export default function Cockpit({
   }, [
     announceVehicleArrived,
     confirmSheet,
+    roomToken,
     dropParkingPin,
     isJoin,
     loadExtras,
@@ -1866,6 +1893,17 @@ export default function Cockpit({
                 </div>
               );
             })}
+          </div>
+        </Sheet>
+      ) : null}
+
+      {sheet === 'manifest' && roomToken ? (
+        <Sheet onClose={() => setSheet('none')} title="명단·좌석">
+          {/* GuideSeatDashboard is self-contained (token + bookingId) and the
+              manifest endpoint already authorises driver | guide | admin, so
+              this needs no server change. */}
+          <div className="max-h-[68vh] overflow-y-auto">
+            <GuideSeatDashboard token={roomToken} bookingId={bookingId} tourTitle={tourTitle} />
           </div>
         </Sheet>
       ) : null}

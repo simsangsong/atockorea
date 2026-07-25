@@ -238,6 +238,8 @@ export default function DriverConsole() {
       room={room}
       bookingId={joined.bookingId}
       session={joined.session}
+      /* The manifest API reads x-tour-room-token, not the session. */
+      roomToken={token}
       channelTopic={joined.channelTopic}
       initialMessages={joined.initialMessages}
       city={overview.tour.city ?? null}
