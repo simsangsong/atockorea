@@ -1,8 +1,8 @@
 {
   "version": 1,
   "pipelineVersion": "1",
-  "createdAt": "2026-07-25T15:08:51.221Z",
-  "updatedAt": "2026-07-25T15:14:15.495Z",
+  "createdAt": "2026-07-25T15:20:31.123Z",
+  "updatedAt": "2026-07-25T15:25:40.563Z",
   "units": [
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:de:A1",
@@ -13,8 +13,8 @@
       "tier": "A1",
       "status": "pending",
       "attempts": 0,
-      "segments": 62,
-      "sourceChars": 2530
+      "segments": 61,
+      "sourceChars": 2520
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:de:A2",
@@ -193,8 +193,8 @@
       "tier": "A1",
       "status": "pending",
       "attempts": 0,
-      "segments": 90,
-      "sourceChars": 5239
+      "segments": 89,
+      "sourceChars": 5229
     },
     {
       "id": "tour_product_pages:busan-private-car-charter-cruise-shore:de:A2",
@@ -301,8 +301,8 @@
       "tier": "A1",
       "status": "pending",
       "attempts": 0,
-      "segments": 94,
-      "sourceChars": 4442
+      "segments": 93,
+      "sourceChars": 4432
     },
     {
       "id": "tour_product_pages:busan-top-attractions-day-tour:de:A2",
@@ -445,8 +445,8 @@
       "tier": "A1",
       "status": "pending",
       "attempts": 0,
-      "segments": 89,
-      "sourceChars": 4923
+      "segments": 88,
+      "sourceChars": 4913
     },
     {
       "id": "tour_product_pages:from-incheon-seoul-day-tour-cruise-guests:de:A2",
@@ -577,8 +577,8 @@
       "tier": "A1",
       "status": "pending",
       "attempts": 0,
-      "segments": 85,
-      "sourceChars": 4561
+      "segments": 84,
+      "sourceChars": 4551
     },
     {
       "id": "tour_product_pages:incheon-seoul-private-car-shore-excursion-cruise:de:A2",
@@ -697,8 +697,8 @@
       "tier": "A1",
       "status": "pending",
       "attempts": 0,
-      "segments": 95,
-      "sourceChars": 3896
+      "segments": 94,
+      "sourceChars": 3886
     },
     {
       "id": "tour_product_pages:jeju-cruise-shore-excursion-bus-tour:de:A2",
@@ -865,8 +865,8 @@
       "tier": "A1",
       "status": "pending",
       "attempts": 0,
-      "segments": 96,
-      "sourceChars": 4069
+      "segments": 95,
+      "sourceChars": 4059
     },
     {
       "id": "tour_product_pages:jeju-cruise-shore-excursion-small-group-tour:de:A2",
@@ -1033,8 +1033,8 @@
       "tier": "A1",
       "status": "pending",
       "attempts": 0,
-      "segments": 103,
-      "sourceChars": 4932
+      "segments": 102,
+      "sourceChars": 4922
     },
     {
       "id": "tour_product_pages:jeju-eastern-unesco-spots-day-tour:de:A2",
@@ -1141,8 +1141,8 @@
       "tier": "A1",
       "status": "pending",
       "attempts": 0,
-      "segments": 112,
-      "sourceChars": 4728
+      "segments": 111,
+      "sourceChars": 4718
     },
     {
       "id": "tour_product_pages:jeju-grand-highlights-loop:de:A2",
@@ -1151,10 +1151,12 @@
       "locale": "de",
       "chunk": "A2",
       "tier": "A2",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 1,
       "segments": 68,
-      "sourceChars": 5136
+      "sourceChars": 5136,
+      "fails": 0,
+      "flags": 7
     },
     {
       "id": "tour_product_pages:jeju-grand-highlights-loop:de:A2-2",
@@ -1163,10 +1165,12 @@
       "locale": "de",
       "chunk": "A2-2",
       "tier": "A2",
-      "status": "pending",
-      "attempts": 0,
+      "status": "auto_pass",
+      "attempts": 1,
       "segments": 26,
-      "sourceChars": 1026
+      "sourceChars": 1026,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:jeju-grand-highlights-loop:de:B",
@@ -1175,10 +1179,12 @@
       "locale": "de",
       "chunk": "B",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 1,
       "segments": 51,
-      "sourceChars": 1831
+      "sourceChars": 1831,
+      "fails": 0,
+      "flags": 4
     },
     {
       "id": "tour_product_pages:jeju-grand-highlights-loop:de:itineraryStops",
@@ -1187,10 +1193,13 @@
       "locale": "de",
       "chunk": "itineraryStops",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "verify_fail",
+      "attempts": 1,
       "segments": 57,
-      "sourceChars": 5509
+      "sourceChars": 5509,
+      "lastError": "숫자 값 불일치 — 원문 [12 1893 2009] vs 번역 [12102009 1893]",
+      "fails": 4,
+      "flags": 5
     },
     {
       "id": "tour_product_pages:jeju-grand-highlights-loop:de:itineraryStops-2",
@@ -1199,10 +1208,13 @@
       "locale": "de",
       "chunk": "itineraryStops-2",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "verify_fail",
+      "attempts": 1,
       "segments": 72,
-      "sourceChars": 5705
+      "sourceChars": 5705,
+      "lastError": "CJK 문자 6자 혼입 — de 번역에 있을 수 없다(로케일 교차 오염)",
+      "fails": 5,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:jeju-grand-highlights-loop:de:itineraryStops-3",
@@ -1211,10 +1223,13 @@
       "locale": "de",
       "chunk": "itineraryStops-3",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "verify_fail",
+      "attempts": 1,
       "segments": 51,
-      "sourceChars": 4873
+      "sourceChars": 4873,
+      "lastError": "CJK 문자 26자 혼입 — de 번역에 있을 수 없다(로케일 교차 오염)",
+      "fails": 3,
+      "flags": 2
     },
     {
       "id": "tour_product_pages:jeju-grand-highlights-loop:de:itineraryStops-4",
@@ -1235,10 +1250,12 @@
       "locale": "de",
       "chunk": "routeFlowStops",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 1,
       "segments": 14,
-      "sourceChars": 119
+      "sourceChars": 119,
+      "fails": 0,
+      "flags": 5
     },
     {
       "id": "tour_product_pages:seoul-dmz-private-3rd-tunnel-suspension-bridge:de:A1",
@@ -1249,8 +1266,8 @@
       "tier": "A1",
       "status": "pending",
       "attempts": 0,
-      "segments": 109,
-      "sourceChars": 5564
+      "segments": 108,
+      "sourceChars": 5554
     },
     {
       "id": "tour_product_pages:seoul-dmz-private-3rd-tunnel-suspension-bridge:de:A2",

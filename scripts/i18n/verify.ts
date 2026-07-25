@@ -18,6 +18,9 @@ import { fileURLToPath } from 'node:url';
 
 import { verifyUnit, type Finding, type TargetLocale } from '../../lib/i18n/pipeline/gates';
 import { applyVerifyOutcome, type Manifest } from '../../lib/i18n/pipeline/manifest';
+import { emptyTm, tmRecord, tmSize, type TranslationMemory } from '../../lib/i18n/pipeline/tm';
+
+const PIPELINE_VERSION = '1';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const WORK = join(ROOT, 'i18n-work');
@@ -110,6 +113,12 @@ function main(): void {
   console.log(`\n=== i18n verify · ${locale} · ${targets.length} unit ===`);
   console.log(`금지어 ${banned.length}개 · 원문유지 허용 ${keepAsIs.length}개\n`);
 
+  const tmPath = join(WORK, 'tm', `${locale}.json`);
+  const tm: TranslationMemory = existsSync(tmPath)
+    ? (JSON.parse(readFileSync(tmPath, 'utf8')) as TranslationMemory)
+    : emptyTm(locale, PIPELINE_VERSION);
+  const tmBefore = tmSize(tm);
+
   const reports: UnitReport[] = [];
   let missing = 0;
 
@@ -184,6 +193,21 @@ function main(): void {
       findings: result.findings,
     });
 
+    // 검증을 통과한 세그먼트만 TM에 넣는다 — 실패한 unit의 문구가 재사용되면 안 된다.
+    if (!result.failed) {
+      const failedPointers = new Set(
+        result.findings.filter((f) => f.severity === 'fail').map((f) => f.pointer),
+      );
+      tmRecord(
+        tm,
+        PIPELINE_VERSION,
+        unit.id,
+        Object.entries(sourceSegments)
+          .filter(([pointer]) => !failedPointers.has(pointer))
+          .map(([pointer, source]) => ({ source, target: outUnit.segments?.[pointer] ?? '' })),
+      );
+    }
+
     const mark = result.failed ? '✗' : result.flagged ? '△' : '✓';
     console.log(
       `${mark} ${unit.id} — 세그먼트 ${result.stats.segments} · fail ${result.stats.fails} · flag ${result.stats.flags}`,
@@ -202,6 +226,9 @@ function main(): void {
   manifest.updatedAt = new Date().toISOString();
   writeAtomic(manifestPath, JSON.stringify(manifest, null, 2));
 
+  mkdirSync(join(WORK, 'tm'), { recursive: true });
+  writeAtomic(tmPath, JSON.stringify(tm, null, 2));
+
   const reportDir = join(WORK, 'reports', RUN_ID);
   mkdirSync(reportDir, { recursive: true });
   writeAtomic(
@@ -214,6 +241,7 @@ function main(): void {
   const passed = reports.length - failed - flagged;
 
   console.log(`\n검증 ${reports.length} unit — 통과 ${passed} · 플래그 ${flagged} · 실패 ${failed}`);
+  console.log(`TM ${tmBefore} → ${tmSize(tm)} (+${tmSize(tm) - tmBefore})`);
   if (missing > 0) console.log(`미번역 ${missing} unit (출력 파일 없음 — 상태 변경 없음)`);
   console.log(`리포트: i18n-work/reports/${RUN_ID}/verify.json`);
 

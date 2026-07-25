@@ -54,9 +54,6 @@
     "/hero/tagline": {
       "source_en": "Pick your cruise port: Jeju Port runs the east UNESCO route, Gangjeong Port runs the Hallasan + Olle Market route. Both 8-hour routes run on a small-group mini-coach."
     },
-    "/hero/imagePosition": {
-      "source_en": "center 35%"
-    },
     "/glanceItems/0/label": {
       "source_en": "Duration"
     },
@@ -306,5 +303,6 @@
   },
   "glossaryTokens": {
     "⟦G0⟧": "Seopjikoji"
-  }
+  },
+  "tmHits": 0
 }

@@ -57,9 +57,6 @@
     "/hero/tagline": {
       "source_en": "Pick your cruise port: Jeju Port covers the east UNESCO route; Gangjeong Port covers the Hallasan + Olle Market route. Same large-coach format, same 8-hour duration — just different island highlights."
     },
-    "/hero/imagePosition": {
-      "source_en": "center 35%"
-    },
     "/glanceItems/0/label": {
       "source_en": "Duration"
     },
@@ -306,5 +303,6 @@
   },
   "glossaryTokens": {
     "⟦G0⟧": "Seopjikoji"
-  }
+  },
+  "tmHits": 0
 }

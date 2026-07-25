@@ -86,6 +86,10 @@ const SETTLEMENT = {
 
 interface Over {
   assignments?: unknown[];
+  /** W2 — 그날의 휴무 행. 있으면 배정이 하드 블록된다(사유로 통과 가능). */
+  restDays?: unknown[];
+  /** W2 — 단가 이력. 비면 rate_missing 경고가 붙는다. */
+  rates?: unknown[];
   settlements?: unknown[];
   guideRow?: Record<string, unknown>;
   ledgerRow?: unknown;
@@ -110,9 +114,14 @@ function db(over: Over = {}) {
       if (q.op === 'insert') return { data: { ...ASSIGNMENT, ...(q.payload as object) } };
       if (q.op === 'update') return { data: { ...ASSIGNMENT, ...(q.payload as object) } };
       if (q.op === 'delete') return { data: null };
-      return { data: over.assignments ?? [ASSIGNMENT] };
+      const rows = over.assignments ?? [ASSIGNMENT];
+      // W2 PATCH가 "고친 뒤의 모습"을 만들려고 현재 행을 maybeSingle로 읽는다.
+      // 목록과 같은 배열을 돌려주면 그 판정이 통째로 무의미해진다.
+      if (q.terminal !== 'list') return { data: rows[0] ?? null };
+      return { data: rows };
     }
-    if (q.table === 'ops_guide_rates') return { data: [] };
+    if (q.table === 'ops_guide_rates') return { data: over.rates ?? [] };
+    if (q.table === 'ops_guide_unavailable_dates') return { data: over.restDays ?? [] };
     if (q.table === 'ops_guide_settlements') {
       if (q.op === 'upsert') {
         const payloads = (Array.isArray(q.payload) ? q.payload : [q.payload]) as Record<string, unknown>[];
@@ -186,9 +195,12 @@ describe('인증 게이트', () => {
   });
 });
 
+/** 그날이 비어 있는 상태 — 충돌 없이 배정이 되는 정상 경로. */
+const CLEAN_DAY = { assignments: [] as unknown[] };
+
 describe('배정 원장', () => {
   it('creates an assignment with the tenant stamped in', async () => {
-    const { client, log } = db();
+    const { client, log } = db(CLEAN_DAY);
     createServerClientMock.mockReturnValue(client);
     const res = await listPOST(
       fakeNextRequest({ body: { guideId: 'g-1', tourDate: '2026-08-03', tourType: 'private', role: 'both' } }),
@@ -198,10 +210,13 @@ describe('배정 원장', () => {
     expect(payload).toMatchObject({ tenant_id: 'atockorea', guide_id: 'g-1', tour_date: '2026-08-03', role: 'both' });
     // 기본 상태는 planned — 만들자마자 정산 대상이 되면 안 된다.
     expect(payload).not.toHaveProperty('status');
+    // W2 감사: 누가 언제 배정했는가.
+    expect(payload.assigned_by).toBe('admin@atockorea.com');
+    expect(payload.assigned_at).toEqual(expect.any(String));
   });
 
   it('rejects an impossible date and an unknown role without writing', async () => {
-    const { client, log } = db();
+    const { client, log } = db(CLEAN_DAY);
     createServerClientMock.mockReturnValue(client);
     expect(
       (await listPOST(fakeNextRequest({ body: { guideId: 'g-1', tourDate: '2026-02-30', tourType: 'private' } }))).status,
@@ -240,6 +255,151 @@ describe('배정 원장', () => {
     expect(text).not.toContain('rrn');
     expect(text).not.toContain(PLAIN_RRN);
     expect(text).not.toContain('v1.');
+  });
+});
+
+/**
+ * W2 — 배정 충돌 (`docs/ops-center-settlement-upgrade-plan-2026-07-25.md` §3).
+ *
+ * 여기서 지키는 계약: **409는 실패가 아니라 판정이다.** 응답이 blocked/warnings를
+ * 실어 보내야 화면이 "사유를 적으면 됩니다"와 "그건 안 됩니다"를 구별할 수 있다.
+ */
+describe('배정 충돌', () => {
+  const NEW_ASSIGNMENT = { guideId: 'g-1', tourDate: '2026-08-03', tourType: 'private' };
+
+  it('refuses a duplicate booking-less assignment on the same day and writes nothing', async () => {
+    // 기본 fixture(ASSIGNMENT)가 이미 그날 booking 없는 배정을 갖고 있다.
+    const { client, log } = db();
+    createServerClientMock.mockReturnValue(client);
+    const res = await listPOST(fakeNextRequest({ body: NEW_ASSIGNMENT }));
+    expect(res.status).toBe(409);
+    const json = await res.json();
+    expect(json.blocked.map((b: { code: string }) => b.code)).toContain('duplicate_slot');
+    // 오버라이드로 통과시킬 수 있는 종류가 아니다 — 구별 불가능한 중복이다.
+    expect(json.blocked.find((b: { code: string }) => b.code === 'duplicate_slot').overridable).toBe(false);
+    expect(queriesFor(log, 'ops_guide_assignments', 'insert')).toHaveLength(0);
+  });
+
+  it('refuses a rest-day assignment but marks it overridable', async () => {
+    const { client, log } = db({ ...CLEAN_DAY, restDays: [{ id: 'r-1' }] });
+    createServerClientMock.mockReturnValue(client);
+    const res = await listPOST(fakeNextRequest({ body: NEW_ASSIGNMENT }));
+    expect(res.status).toBe(409);
+    const json = await res.json();
+    expect(json.blocked.find((b: { code: string }) => b.code === 'guide_unavailable').overridable).toBe(true);
+    expect(queriesFor(log, 'ops_guide_assignments', 'insert')).toHaveLength(0);
+  });
+
+  it('lets a rest-day assignment through with a reason, and records the reason', async () => {
+    const { client, log } = db({ ...CLEAN_DAY, restDays: [{ id: 'r-1' }] });
+    createServerClientMock.mockReturnValue(client);
+    const res = await listPOST(
+      fakeNextRequest({
+        body: { ...NEW_ASSIGNMENT, conflictOverride: true, conflictOverrideReason: '본인이 나오겠다고 함' },
+      }),
+    );
+    expect(res.status).toBe(201);
+    const payload = queriesFor(log, 'ops_guide_assignments', 'insert')[0].payload as Record<string, unknown>;
+    expect(payload.conflict_override).toBe(true);
+    expect(payload.conflict_override_reason).toBe('본인이 나오겠다고 함');
+  });
+
+  it('refuses an override with no reason — a reasonless override is just a disabled guard', async () => {
+    const { client, log } = db({ ...CLEAN_DAY, restDays: [{ id: 'r-1' }] });
+    createServerClientMock.mockReturnValue(client);
+    const res = await listPOST(
+      fakeNextRequest({ body: { ...NEW_ASSIGNMENT, conflictOverride: true, conflictOverrideReason: '   ' } }),
+    );
+    expect(res.status).toBe(400);
+    expect((await res.json()).code).toBe('override_reason_required');
+    expect(queriesFor(log, 'ops_guide_assignments', 'insert')).toHaveLength(0);
+  });
+
+  it('warns about a missing rate at assignment time rather than paying 0원 a month later', async () => {
+    const { client } = db(CLEAN_DAY); // rates 비어 있음
+    createServerClientMock.mockReturnValue(client);
+    const res = await listPOST(fakeNextRequest({ body: NEW_ASSIGNMENT }));
+    expect(res.status).toBe(201);
+    const json = await res.json();
+    expect(json.warnings.map((w: { code: string }) => w.code)).toContain('rate_missing');
+  });
+
+  it('stays quiet about the rate when the assignment pins its own amount', async () => {
+    const { client } = db(CLEAN_DAY);
+    createServerClientMock.mockReturnValue(client);
+    const res = await listPOST(fakeNextRequest({ body: { ...NEW_ASSIGNMENT, amountKrw: 200_000 } }));
+    const json = await res.json();
+    expect(json.warnings.map((w: { code: string }) => w.code)).not.toContain('rate_missing');
+  });
+
+  it('answers dryRun with the verdict and writes nothing', async () => {
+    const { client, log } = db({ ...CLEAN_DAY, restDays: [{ id: 'r-1' }] });
+    createServerClientMock.mockReturnValue(client);
+    const res = await listPOST(
+      fakeNextRequest({ body: NEW_ASSIGNMENT, searchParams: { dryRun: '1' } }),
+    );
+    expect(res.status).toBe(200);
+    const json = await res.json();
+    expect(json.dryRun).toBe(true);
+    expect(json.blocked.map((b: { code: string }) => b.code)).toContain('guide_unavailable');
+    expect(queriesFor(log, 'ops_guide_assignments', 'insert')).toHaveLength(0);
+  });
+
+  it('inherits the booking tour_time as the assignment time snapshot', async () => {
+    const { client, log } = db(CLEAN_DAY);
+    createServerClientMock.mockReturnValue(client);
+    await listPOST(fakeNextRequest({ body: { ...NEW_ASSIGNMENT, bookingId: 'bk-1' } }));
+    const payload = queriesFor(log, 'ops_guide_assignments', 'insert')[0].payload as Record<string, unknown>;
+    // fixture 의 bookings 응답에 tour_time 이 없으므로 시각은 미상으로 남는다 —
+    // 모르는 시각을 지어내지 않는 것이 이 스냅샷의 요점이다.
+    expect(payload.start_time).toBeNull();
+    expect(payload.end_time).toBeNull();
+  });
+
+  it('translates a trigger violation into 409 rather than a 500', async () => {
+    // API 판정과 저장 사이의 동시 편집 — DB가 최종 방어선에서 잡는 경우.
+    const { client } = db(CLEAN_DAY);
+    const original = client.from;
+    client.from = ((table: string) => {
+      const chain = original(table);
+      if (table === 'ops_guide_assignments') {
+        const insert = chain.insert;
+        chain.insert = (payload: unknown) => {
+          const c = insert(payload);
+          c.single = async () => ({ data: null, error: { message: 'assignment_guide_unavailable' } });
+          return c;
+        };
+      }
+      return chain;
+    }) as typeof client.from;
+    createServerClientMock.mockReturnValue(client);
+
+    const res = await listPOST(fakeNextRequest({ body: NEW_ASSIGNMENT }));
+    expect(res.status).toBe(409);
+    const json = await res.json();
+    expect(json.source).toBe('db');
+    expect(json.blocked[0].code).toBe('guide_unavailable');
+  });
+
+  it('does not dress an unrelated database error up as a conflict', async () => {
+    const { client } = db(CLEAN_DAY);
+    const original = client.from;
+    client.from = ((table: string) => {
+      const chain = original(table);
+      if (table === 'ops_guide_assignments') {
+        const insert = chain.insert;
+        chain.insert = (payload: unknown) => {
+          const c = insert(payload);
+          c.single = async () => ({ data: null, error: { message: 'connection terminated unexpectedly' } });
+          return c;
+        };
+      }
+      return chain;
+    }) as typeof client.from;
+    createServerClientMock.mockReturnValue(client);
+
+    const res = await listPOST(fakeNextRequest({ body: NEW_ASSIGNMENT }));
+    expect(res.status).toBe(500);
   });
 });
 

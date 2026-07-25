@@ -48,9 +48,6 @@
     "/hero/tagline": {
       "source_en": "Four central-Seoul stops coordinated with your ship's schedule"
     },
-    "/hero/imagePosition": {
-      "source_en": "center 35%"
-    },
     "/glanceItems/0/label": {
       "source_en": "Photo Value"
     },
@@ -304,5 +301,6 @@
     "⟦G1⟧": "Insadong",
     "⟦G2⟧": "Gwangjang-Markt",
     "⟦G3⟧": "Insadong"
-  }
+  },
+  "tmHits": 0
 }

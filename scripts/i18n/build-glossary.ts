@@ -96,9 +96,11 @@ function verifyLocale(locale: Loc, source: Source): { out: OutFile; issues: Issu
     if (typeof value !== 'string' || value.trim().length === 0) continue; // 규칙 6 미번역은 정상
     const en = poi.en ?? '';
 
-    // K2 문자셋
+    // K2 문자셋.
+    // 러시아어에서 값이 영어 원문과 **정확히 같으면** 브랜드 의도 유지로 본다
+    // (Everland·Petite France·Snoopy Garden 류). 전사 누락과 구분되는 지점이다.
     if (locale === 'ru') {
-      if (!CYRILLIC.test(value)) {
+      if (!CYRILLIC.test(value) && value.trim() !== en.trim()) {
         issues.push({ check: 'K2', key: poi.key, message: `키릴 없음 — "${value}"` });
       }
     } else if (CYRILLIC.test(value)) {

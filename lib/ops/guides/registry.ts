@@ -15,6 +15,7 @@
  */
 
 import type { SupabaseClient } from '@supabase/supabase-js';
+import { OPS_TENANT_ID } from '@/lib/ops/tenant';
 import {
   encryptGuidePii,
   maskBankAccount,
@@ -23,7 +24,9 @@ import {
   GuidePiiKeyMissingError,
 } from './pii';
 
-export const GUIDES_TENANT_ID = 'atockorea';
+/** @deprecated 새 코드는 `@/lib/ops/tenant`의 OPS_TENANT_ID 를 직접 쓴다 — 이 모듈은
+ *  server-only(`pii.ts`)를 끌고 오므로 상수만 필요한 곳에서 import하면 안 된다. */
+export const GUIDES_TENANT_ID = OPS_TENANT_ID;
 
 /**
  * API가 돌려주는 컬럼 목록 — `rrn_enc` / `bank_account_enc` 부재가 이 상수의

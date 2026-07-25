@@ -37,6 +37,8 @@ import OpsRoomManager from '@/components/tour-ops/OpsRoomManager';
 import OpsInboxView from '@/components/tour-ops/OpsInboxView';
 import OpsReviewQueueView from '@/components/tour-ops/OpsReviewQueueView';
 import OpsBookingsOverview from '@/components/tour-ops/OpsBookingsOverview';
+import OpsRoomHistoryView from '@/components/tour-ops/OpsRoomHistoryView';
+import OpsScheduleCalendar from '@/components/tour-ops/OpsScheduleCalendar';
 
 const BACKUP_POLL_MS = 20_000;
 const DRIFT_REFRESH_MS = 5 * 60_000;
@@ -68,6 +70,9 @@ export default function OpsApp() {
   const [inboxOpen, setInboxOpen] = useState(false);
   // Phase 2 A-6 — 인박스 리뷰 큐 시트 (파싱 review_queued/failed 처리).
   const [reviewOpen, setReviewOpen] = useState(false);
+  // W3/W4 — 월 범위 화면들. 탭이 이미 6개라 `flex-1`이 좁아서 새 탭 대신 시트로.
+  const [roomHistoryOpen, setRoomHistoryOpen] = useState(false);
+  const [scheduleOpen, setScheduleOpen] = useState(false);
 
   const [loadError, setLoadError] = useState(false);
   // Monotonic request id: a stale response from the previous date (fired by a
@@ -395,6 +400,8 @@ export default function OpsApp() {
             onOpenManager={() => setManagerOpen(true)}
             onOpenInbox={() => setInboxOpen(true)}
             onOpenReview={() => setReviewOpen(true)}
+            onOpenRoomHistory={() => setRoomHistoryOpen(true)}
+            onOpenSchedule={() => setScheduleOpen(true)}
           />
         )}
         {tab === 'dashboard' && (
@@ -443,6 +450,18 @@ export default function OpsApp() {
         />
       )}
       {reviewOpen && <OpsReviewQueueView onClose={() => setReviewOpen(false)} />}
+      {roomHistoryOpen && (
+        <OpsRoomHistoryView
+          initialPeriod={date.slice(0, 7)}
+          onClose={() => setRoomHistoryOpen(false)}
+          onOpenRoom={(roomId) => {
+            // 다른 달의 방을 열면 대시보드의 날짜도 그 날로 맞춰야 룸이 목록에 있다.
+            setRoomHistoryOpen(false);
+            openRoom(roomId);
+          }}
+        />
+      )}
+      {scheduleOpen && <OpsScheduleCalendar initialPeriod={date.slice(0, 7)} onClose={() => setScheduleOpen(false)} />}
 
       {openRoomObject && (
         <OpsRoomDrawer

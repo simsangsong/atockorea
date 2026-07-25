@@ -10,8 +10,10 @@
 import { useState } from 'react';
 import {
   BarChart3,
+  CalendarRange,
   FileBarChart,
   GraduationCap,
+  History,
   Inbox,
   LayoutDashboard,
   Link2,
@@ -31,6 +33,8 @@ export default function OpsHomeTab({
   onOpenManager,
   onOpenInbox,
   onOpenReview,
+  onOpenRoomHistory,
+  onOpenSchedule,
 }: {
   rooms: OpsRoom[];
   sosRooms: Map<string, SosInfo>;
@@ -40,6 +44,10 @@ export default function OpsHomeTab({
   onOpenManager: () => void;
   onOpenInbox: () => void;
   onOpenReview?: () => void;
+  /** W3 — 월 범위 투어룸 내역 시트. */
+  onOpenRoomHistory?: () => void;
+  /** W4 — 가이드·차량 월 달력 시트. */
+  onOpenSchedule?: () => void;
 }) {
   const liveCount = rooms.filter(
     (room) =>
@@ -125,6 +133,20 @@ export default function OpsHomeTab({
       desc: 'OTA 메일 파싱 검토 · 승인 커밋 · 상품 매핑',
       icon: MailCheck,
       onClick: onOpenReview,
+    },
+    {
+      key: 'room-history',
+      title: '투어룸 생성 내역',
+      desc: '이번 달 방 · 손님 미입장 방 찾기 · 엑셀',
+      icon: History,
+      onClick: onOpenRoomHistory,
+    },
+    {
+      key: 'schedule',
+      title: '가이드 · 차량 달력',
+      desc: '월 매트릭스 · 배정 충돌 · 휴무 한눈에',
+      icon: CalendarRange,
+      onClick: onOpenSchedule,
     },
     {
       key: 'map',

@@ -36,6 +36,16 @@ describe('등급 분류', () => {
     expect(tierOfTopLevelKey('guestReviews')).toBe('HOLD');
     expect(tierOfTopLevelKey('reviewsSummary')).toBe('HOLD');
   });
+
+  it('page_sections 는 죽은 데이터로 분류된다 — 렌더 경로가 읽지 않는다', () => {
+    expect(tierOfTopLevelKey('page_sections')).toBe('DEAD');
+  });
+
+  it('가격 위젯·이미지·섹션 enum 은 금지 등급이다', () => {
+    for (const key of ['pricingTiers', 'priceSource', 'liveStatusSection', 'ogImage', 'heroImage', 'thumbnail', 'imageUrl']) {
+      expect(tierOfTopLevelKey(key)).toBe('FORBIDDEN');
+    }
+  });
 });
 
 describe('리프 번역 대상성 휴리스틱', () => {
@@ -69,6 +79,11 @@ describe('리프 번역 대상성 휴리스틱', () => {
     expect(isTranslatableLeaf('Sunrise Peak', 'title')).toBe(true);
     expect(isTranslatableLeaf('Sunrise Peak', 'icon')).toBe(false);
     expect(isTranslatableLeaf('Sunrise Peak', 'image_url')).toBe(false);
+  });
+
+  it('React 컴포넌트명과 CSS 값은 제외 — 번역되면 렌더가 깨진다', () => {
+    expect(isTranslatableLeaf('TourHeroSection', 'component')).toBe(false);
+    expect(isTranslatableLeaf('center 35%', 'imagePosition')).toBe(false);
   });
 });
 

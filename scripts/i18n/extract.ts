@@ -32,6 +32,7 @@ import {
   type Manifest,
   type Unit,
 } from '../../lib/i18n/pipeline/manifest';
+import { emptyTm, tmLookup, tmSize, type TranslationMemory } from '../../lib/i18n/pipeline/tm';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const WORK = join(ROOT, 'i18n-work');
@@ -129,10 +130,12 @@ interface UnitFile {
   locale: string;
   chunk: string;
   tier: string;
-  /** pointer → 번역가에게 주는 3원 소스 (플랜 §2). */
-  segments: Record<string, { source_en: string; glossary?: string[] }>;
+  /** pointer → 번역가에게 주는 3원 소스 (플랜 §2). `tm`이 있으면 그대로 쓴다. */
+  segments: Record<string, { source_en: string; glossary?: string[]; tm?: string }>;
   /** 마스킹 복원용 — 토큰 → 확정 명칭. 검증·적용 단계가 이걸 쓴다. */
   glossaryTokens: Record<string, string>;
+  /** TM으로 이미 확정된 세그먼트 수 — 서브에이전트가 새로 번역할 양을 가늠하게 한다. */
+  tmHits: number;
 }
 
 async function main(): Promise<void> {
@@ -141,6 +144,12 @@ async function main(): Promise<void> {
 
   console.log(`\n=== i18n extract · ${SURFACE} · ${locale} ===`);
   console.log(`글로서리 L1 ${entries.length}건${hasTargetNames ? '' : ' (⚠ 대상 로케일 명칭 없음 — en 폴백)'}`);
+
+  const tmPath = join(WORK, 'tm', `${locale}.json`);
+  const tm: TranslationMemory = existsSync(tmPath)
+    ? (JSON.parse(readFileSync(tmPath, 'utf8')) as TranslationMemory)
+    : emptyTm(locale, PIPELINE_VERSION);
+  console.log(`TM ${tmSize(tm)}건`);
 
   const pages = await fetchEnglishPages();
   const slugs = LIMIT > 0 ? pages.slice(0, LIMIT) : pages;
@@ -155,6 +164,7 @@ async function main(): Promise<void> {
   const unknownKeysSeen = new Set<string>();
   let unitsWritten = 0;
   let segmentsTotal = 0;
+  let tmHitsTotal = 0;
 
   for (const page of slugs) {
     const report = extractLeaves(page.detail_payload, { tiers: TIER_FILTER });
@@ -168,10 +178,19 @@ async function main(): Promise<void> {
 
       const segments: UnitFile['segments'] = {};
       const glossaryTokens: Record<string, string> = {};
+      let tmHits = 0;
 
       for (const leaf of chunk) {
         const masked = maskGlossaryTerms(leaf.text, entries);
         segments[leaf.pointer] = { source_en: masked.text };
+
+        // TM 적중 — 이미 확정된 번역이 있으면 실어 보낸다(일관성 + 비용).
+        const hit = tmLookup(tm, masked.text, PIPELINE_VERSION);
+        if (hit) {
+          segments[leaf.pointer].tm = hit;
+          tmHits += 1;
+        }
+
         if (masked.terms.length > 0) {
           segments[leaf.pointer].glossary = masked.terms.map(
             (t) => `${t.token} = ${t.entry.names[locale] ?? t.entry.names.en ?? t.matched}`,
@@ -192,6 +211,7 @@ async function main(): Promise<void> {
         tier: chunk[0].tier,
         segments,
         glossaryTokens,
+        tmHits,
       };
 
       const outDir = join(WORK, 'in', SURFACE);
@@ -216,6 +236,7 @@ async function main(): Promise<void> {
       byId.set(id, unit);
       unitsWritten += 1;
       segmentsTotal += unit.segments;
+      tmHitsTotal += tmHits;
     }
   }
 
@@ -225,6 +246,9 @@ async function main(): Promise<void> {
   writeAtomic(manifestPath, JSON.stringify(manifest, null, 2));
 
   console.log(`unit ${unitsWritten}개 · 세그먼트 ${segmentsTotal}개 → i18n-work/in/${SURFACE}/`);
+  console.log(
+    `TM 적중 ${tmHitsTotal}/${segmentsTotal} — 새로 번역할 세그먼트 ${segmentsTotal - tmHitsTotal}개`,
+  );
   console.log(`매니페스트: ${manifest.units.length} unit (전 로케일 누적)`);
 
   if (unknownKeysSeen.size > 0) {

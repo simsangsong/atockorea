@@ -8,7 +8,15 @@
  * 매칭 엔진이, `slug`/`locale`/`product_id`가 번역되면 라우팅이 깨진다.
  */
 
-export type Tier = 'A1' | 'A2' | 'B' | 'FORBIDDEN' | 'HOLD';
+/**
+ * 등급. 번역 대상은 A1·A2·B뿐이고, 나머지 셋은 **이유가 다르다** —
+ * 그 이유를 잃지 않으려고 한 값으로 뭉치지 않는다.
+ *
+ *   FORBIDDEN 건드리면 깨진다 (매칭엔진·라우팅·가격 위젯·URL)
+ *   DEAD      건드려도 안전하지만 렌더되지 않는다 → 번역하면 순수 낭비
+ *   HOLD      번역 가치가 미결이다 (사람 판단 대기)
+ */
+export type Tier = 'A1' | 'A2' | 'B' | 'FORBIDDEN' | 'DEAD' | 'HOLD';
 
 /**
  * `detail_payload` top-level 키 등급 (2026-07-25 라이브 실측 30키 기준).
@@ -57,8 +65,30 @@ export const TOP_LEVEL_TIERS: Record<string, Tier> = {
   matching_profile: 'FORBIDDEN',
   matching_metadata: 'FORBIDDEN',
   price: 'FORBIDDEN',
+  priceSource: 'FORBIDDEN', // 가격 출처 기록(내부)
+  liveStatusSection: 'FORBIDDEN', // 섹션 식별자 enum ("haenyeo")
+  ogImage: 'FORBIDDEN',
+  imageUrl: 'FORBIDDEN',
+  heroImage: 'FORBIDDEN',
+  thumbnail: 'FORBIDDEN',
+  // `paxLabel`("1–6 pax")만 번역 가치가 있으나 `unit`·`durations`("8h")가 코드 값이라
+  // 가격 위젯이 깨질 위험이 이득보다 크다. 플랜 v3.2 §7 Q11 — 사람 판단 대기.
+  pricingTiers: 'FORBIDDEN',
+
+  /**
+   * 💀 죽은 데이터 — 렌더 경로가 읽지 않는다 (2026-07-26 실측).
+   *
+   * `components/product-tour-static/_shared/tourProductFullPageJsonTypes.ts:6` 이
+   * "Fields unused by the template (e.g. `seo`, `page_sections`)" 라고 명시하고,
+   * 저장소 전체 grep에서 `page_sections` 소비처가 그 주석 하나뿐이다.
+   * 슬러그당 ~39,000자 × 24슬러그 — **번역하면 순수 낭비이고, 최상위 키의 복제라
+   * 두 사본이 갈라질 위험만 남는다.** (TM 중복 45%의 주 원인)
+   */
+  page_sections: 'DEAD',
 
   // ⚠ 보류 — 플랜 v3 §7 Q8. 실고객 리뷰 번역의 진실성 문제가 미결.
+  // 덧붙여 `assembleTourProductReviews`가 런타임에 대부분 덮어쓴다
+  // (lib/tour-product/loadTourProductPage.ts:271) — payload 값은 폴백일 뿐이다.
   guestReviews: 'HOLD',
   reviewsSummary: 'HOLD',
 };
@@ -168,7 +198,9 @@ export function isTranslatableLeaf(text: string, keyHint = ''): boolean {
   if (!/\s/.test(s) && /^[a-z0-9]+([._-][a-z0-9]+)+$/i.test(s)) return false;
 
   // 키 이름 자체가 식별자성이면 제외 (id, key, slug, url, icon, image, ...).
-  if (/(^|_|\.)(id|ids|key|keys|slug|url|href|src|icon|image|images|photo|code|type|kind|variant|token|ref|anchor|tag|color|locale|lang|currency)$/i.test(keyHint)) {
+  //   `component`: React 컴포넌트명("TourHeroSection") — 번역되면 렌더가 깨진다
+  //   `imagePosition`/`align`/`layout`: CSS 값("center 35%")
+  if (/(^|_|\.)(id|ids|key|keys|slug|url|href|src|icon|image|images|photo|code|type|kind|variant|token|ref|anchor|tag|color|locale|lang|currency|component|position|imageposition|align|layout|unit|durations)$/i.test(keyHint)) {
     return false;
   }
 

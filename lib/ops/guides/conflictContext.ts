@@ -12,7 +12,7 @@
  */
 
 import type { SupabaseClient } from '@supabase/supabase-js';
-import { GUIDES_TENANT_ID } from './registry';
+import { OPS_TENANT_ID } from '@/lib/ops/tenant';
 import type { GuideRateRow } from './rates';
 import type { CandidateAssignment, ConflictContext, ExistingAssignment } from './conflicts';
 
@@ -67,7 +67,7 @@ export async function loadConflictContext(
     amountKrw?: number | null;
   } = {},
 ): Promise<LoadedConflictContext> {
-  const tenantId = opts.tenantId ?? GUIDES_TENANT_ID;
+  const tenantId = opts.tenantId ?? OPS_TENANT_ID;
 
   const [guideRes, sameDayRes, unavailableRes, ratesRes, bookingRes] = await Promise.all([
     supabase.from('ops_guides').select('id, active, languages').eq('id', candidate.guideId).maybeSingle(),

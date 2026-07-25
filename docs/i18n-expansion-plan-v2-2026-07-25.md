@@ -1,6 +1,6 @@
 # 다국어 확장 플랜 — 러시아어·프랑스어·독일어·이탈리아어
 
-> **버전: v3.1 (2026-07-26 야간)** — 파일명은 고정, 버전은 이 줄로 관리.
+> **버전: v3.2 (2026-07-26 야간)** — 파일명은 고정, 버전은 이 줄로 관리.
 > v1 = 커밋 `afd60e73` `docs/ui-overhaul-and-i18n-expansion-plan-2026-07-25.md` §B (뼈대)
 > v2.0 = 실측 재검증 + 파이프라인·할루시네이션 방어 정의
 > v2.2 = 범위를 전 고객노출면으로 확장 + 실행모델을 API배치 → Claude Code 세션으로 교체
@@ -156,7 +156,8 @@ v2.2 §7의 P0~P9는 **고객 가치 순서**였다(이메일이 P2로 앞에 �
 
 ## 5. 추출 화이트리스트 — 실측 키 기준 (v2.2 §1 정정)
 
-v2.2의 등급표는 `page_sections` 같은 **존재하지 않는 키**를 참조하고 있었다. 실측 34키로 교체한다.
+v2.2의 등급표는 실제 스키마와 어긋나 있었다. 실측 키로 교체한다.
+(v2.2가 B등급 최대 물량으로 잡았던 `page_sections`는 24슬러그에 **존재하지만 렌더되지 않는다** — §8.5 ① 참조.)
 
 `detail_payload` 실측 top-level 30키:
 ```
@@ -203,6 +204,8 @@ Q1~Q7은 §1에서 재분류(전부 번역을 막지 않음). 신규:
 | **Q8** | `guestReviews`·`reviewsSummary` = 실제 고객 리뷰. 4언어 번역이 진실성 문제인가? | 기존 6로케일에 선례가 있으나 **일단 보류**하고 A/B군에서 제외. 사람 판단 |
 | **Q9** | 오픈 시 `TOUR_PRODUCT_URL_LOCALES` 플립은 언어별 개별? | 개별. §8 게이트 통과 언어만 |
 | **Q10** | ru 키릴 전사(Kontsevich) 감수자가 있는가? | 없으면 **ru POI 명칭은 스테이징만 하고 미적용 유지** — de/fr/it만 적용 |
+| **Q11** | `pricingTiers.paxLabel`("1–6 pax")을 번역할 것인가? | **비권고.** 같은 객체의 `unit`·`durations`가 코드 값이라 가격 위젯 파손 위험이 이득보다 크다. 필요하면 `paxLabel`만 별도 경로로 |
+| **Q12** | `match_pois` POI 명칭 DB 적용을 언제 할 것인가? | 글로서리 파일만으로 파이프라인이 돌므로 **급하지 않다.** ru는 Q10 통과 후, de/fr/it은 표본 확인 후 |
 
 ---
 
@@ -218,6 +221,85 @@ Q1~Q7은 §1에서 재분류(전부 번역을 막지 않음). 신규:
 6. SEO hreflang/sitemap. ⚠ 미번역 로케일에 hreflang 발행 금지
 
 **즉 야간작업으로 오픈까지 가지 않는다** — 4·5번이 사람 작업(S9~S11)에 걸려 있다. 야간작업의 목표는 **"오픈 직전까지 스테이징을 끝내두는 것"**이다. 이것이 v3의 정직한 스코프다.
+
+---
+
+## 8.5 구현 중 나온 실측 정정 (v3.2 — 2026-07-26 야간)
+
+파이프라인을 실제로 돌리자 플랜이 몰랐던 것들이 나왔다. **전부 작업량을 줄이는 방향이었다.**
+
+### ① `page_sections` = 죽은 데이터 — 24슬러그 × 39,000자
+
+`components/product-tour-static/_shared/tourProductFullPageJsonTypes.ts:6` 이
+"Fields unused by the template (e.g. `seo`, `page_sections`)"라고 명시하고, **저장소 전체 grep에서 `page_sections` 소비처가 그 주석 하나뿐**이다. DB 렌더 경로(`loadTourProductPage.ts`)는 읽지 않는다.
+
+- v2.2는 이걸 **B등급 36,000자**로 잡아 번역 대상에 넣었다 → **전량 오판**
+- 게다가 최상위 키의 복제라, 번역하면 **같은 문구의 사본 두 개가 갈라진다**
+- → 신규 등급 `DEAD` 도입. `FORBIDDEN`(건드리면 깨짐)과 이유가 달라 구분한다
+
+### ② TM 중복 45.1% (실측)
+
+독일어 Tier1 10슬러그 = 세그먼트 5,566개 중 **고유 3,056개.** 슬러그마다 예약안내·신뢰항목·실용정보가 거의 같기 때문이다.
+v2.2는 "실측 35% 절감"이라 했는데 실제로는 더 크다. → `lib/i18n/pipeline/tm.ts` 구현. TM은 **비용 장치이기 이전에 일관성 장치**다 — 같은 원문이 슬러그마다 다르게 번역되면 L3 도메인 용어가 문서 간에 갈린다.
+
+### ③ 실제 번역 분량은 JSON 크기의 1/4
+
+`detail_payload`는 슬러그당 58k~150k자지만 **번역 대상 리프는 34,208자**(jeju-grand-highlights-loop 실측). 나머지는 구조·식별자·좌표·URL이다. v2.2의 "슬러그당 ~10,000단어" 추정은 대체로 맞았다.
+
+### ④ 렌더를 깨뜨릴 뻔한 리프 2종
+
+- `page_sections[].component` = `"TourHeroSection"` — **React 컴포넌트명.** 번역되면 렌더가 죽는다
+- `hero.imagePosition` = `"center 35%"` — CSS 값
+
+둘 다 공백 없는 영단어라 초기 휴리스틱을 **통과**했다. → 키 이름 블랙리스트에 `component`·`position`·`align`·`layout`·`unit`·`durations`·`currency` 추가.
+**교훈: 값만 보는 휴리스틱은 부족하다. 키 이름이 1차 신호다.**
+
+### ⑤ `guestReviews`는 런타임에 덮어써진다
+
+`loadTourProductPage.ts:271` `assembleTourProductReviews()`가 리뷰 시스템 값으로 교체한다 — payload 값은 폴백일 뿐이다. Q8(진실성)과 별개로 **번역 효용 자체가 낮다.**
+
+### ⑥ `pricingTiers` → 신규 Q11
+
+`{unit:"vehicle", tiers:[{paxLabel:"1–6 pax", prices:{"8h":359}}], durations:["8h"]}`.
+번역 가치가 있는 건 `paxLabel` 하나인데 `unit`·`durations`가 코드 값이라 **가격 위젯이 깨질 위험이 이득보다 크다.** → FORBIDDEN 처리, Q11로 사람 판단에 넘김.
+
+### ⑦ 원문(en) 데이터 결함 2건 — 번역가들이 잡아냄
+
+| POI | 결함 | 발견 |
+|---|---|---|
+| `un_memorial_cemetery` | `name_en = "Un Memorial Cemetery"` — 부산 **UN**기념공원의 대소문자 깨짐 | de·fr·it **3개 에이전트가 독립적으로** 지적 |
+| `hallasumokwon_arboretum` | `"Hallasumokwon Arboretum"` = 한라**수목원** + arboretum → **"수목원 수목원"** | ru 에이전트가 `ko`를 근거로 발견 → `Дендрарий Халла` |
+
+**서로 다른 컨텍스트의 에이전트가 같은 결함에 수렴한 것은 신호다.** 마스킹·격리 구조가 의도대로 작동한다는 방증이기도 하다.
+
+### ⑧ Tier1 선정 — 예약 데이터로는 불가능했다
+
+`bookings` 전수 = **7건**(jeju-grand-highlights-loop 5 · busan-private-car-charter-cruise-shore 2). 매출 순위를 만들 표본이 아니다.
+→ 대안 기준: **크루즈 기항지 투어 = 유럽 승객 유입 경로.** de/fr/it/ru 손님이 실제로 들어오는 문이다.
+Tier1 10슬러그 = 실주문 2 + 크루즈기항 5 + 플래그십 데이투어 3.
+
+### ⑨ 🔴 마스킹이 **표기 변형**을 놓친다 — 유닛 간 불일치
+
+독일어 1차 팬아웃에서 같은 슬러그의 두 유닛이 **같은 장소를 다르게** 옮겼다.
+
+| 유닛 | 원문 | 번역 |
+|---|---|---|
+| `B` | `Jeongbang Waterfall` | `Jeongbang-Wasserfall` |
+| `A2-2` | `Jeongbang Waterfall` | `Jeongbang Waterfall` (원형 유지) |
+
+원인: 글로서리 L1의 확정 표기는 **`Jeongbang Falls`**(= `match_pois.name_en`)인데 본문은 **`Jeongbang Waterfall`**로 쓰여 있다. `maskGlossaryTerms`는 등록된 표면형과 **문자열이 일치할 때만** 치환하므로 변형 표기는 마스킹되지 않고, 번역가가 각자 판단하게 된다.
+
+**이건 컨텍스트 격리(§3-[2])의 대가다.** 격리가 오염을 막는 대신 유닛 간 합의를 없앤다. G1~G11은 유닛 **안**만 보므로 이 불일치를 잡지 못한다.
+
+→ **완화 3단**
+1. **글로서리에 표면형 변형을 등록한다** — `Falls`/`Waterfall`, `Mountain`/`Mt.`, `Cave`/`Lava Tube` 류. `GlossaryEntry.names`는 임의 키를 받으므로 `alt1`·`alt2`로 넣으면 `surfaceForms()`가 그대로 집는다(코드 변경 불요).
+2. **TM이 2차 방어** — 같은 원문이면 같은 번역이 나간다. 단 이번처럼 원문이 같아도 유닛이 동시에 돌면 TM이 비어 있어 못 막는다. **슬러그 1개를 먼저 끝내 TM을 채운 뒤 나머지를 돌리는 순서가 유리하다.**
+3. **교차 유닛 일관성 검사(G12) 신설 후보** — 한 슬러그 안에서 같은 원문이 다르게 번역됐는지 검사. 미구현.
+
+### ⑩ ⚠ 워크트리 경합 (운영 주의)
+
+`atockorea-main-merge`는 **다른 세션과 공유 중**이다. 이 세션 도중 커밋 4개가 외부에서 쌓였고, 그중 `edf700b6`이 broad `git add`로 진행 중이던 `i18n-work/` 파일을 함께 커밋했다.
+→ **커밋 시 `git add -A` 금지. 경로를 명시하라.** (CLAUDE.md의 "메인 dir은 타 세션 경합" 경고와 같은 사안)
 
 ---
 
