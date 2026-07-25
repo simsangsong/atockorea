@@ -59,6 +59,34 @@ it('🔴 says it failed when the server rejects the subscription', async () => {
   expect(window.localStorage.getItem('tour_mode_push_optin:booking-1')).toBeNull();
 });
 
+it('P0-4: stops offering retry after a second failure (no infinite loop)', async () => {
+  global.fetch = jest.fn(async () => ({ ok: false, json: async () => ({}) })) as unknown as typeof fetch;
+  await showBanner();
+
+  fireEvent.click(screen.getByTestId('push-enable'));
+  await waitFor(() => expect(screen.getByTestId('push-failed')).toBeInTheDocument());
+
+  // Second attempt fails too → terminal 'stopped' state, accurate reason, and
+  // crucially NO retry button, so the banner can't loop "try again" forever.
+  fireEvent.click(screen.getByTestId('push-enable'));
+  await waitFor(() => expect(screen.getByTestId('push-stopped')).toBeInTheDocument());
+  expect(screen.getByTestId('push-stopped')).toHaveTextContent('지금은 알림을 켤 수 없어요');
+  expect(screen.queryByTestId('push-enable')).toBeNull();
+});
+
+it('P0-4: shows an accurate blocked reason (no retry) when permission is denied', async () => {
+  (global as unknown as { Notification: unknown }).Notification = {
+    permission: 'default',
+    requestPermission: async () => 'denied',
+  };
+  await showBanner();
+
+  fireEvent.click(screen.getByTestId('push-enable'));
+  await waitFor(() => expect(screen.getByTestId('push-blocked')).toBeInTheDocument());
+  expect(screen.getByTestId('push-blocked')).toHaveTextContent('알림이 차단');
+  expect(screen.queryByTestId('push-enable')).toBeNull();
+});
+
 it('confirms success in the guest locale', async () => {
   global.fetch = jest.fn(async () => ({ ok: true, json: async () => ({}) })) as unknown as typeof fetch;
   await showBanner();

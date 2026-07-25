@@ -9,12 +9,12 @@
  * permission → renders nothing.
  */
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
 const COPY: Record<
   RoomLocale,
-  { text: string; enable: string; later: string; done: string; failed: string }
+  { text: string; enable: string; later: string; done: string; failed: string; blocked: string; stopped: string }
 > = {
   en: {
     text: '🔔 Get a ping for meeting times and vehicle delays?',
@@ -22,6 +22,8 @@ const COPY: Record<
     later: 'Later',
     done: 'Notifications on — only meeting times and delays.',
     failed: "Couldn't turn these on — tap to try again.",
+    blocked: 'Notifications are blocked. Allow them in your browser settings, then reopen.',
+    stopped: "Notifications can't be turned on right now. Please try again later.",
   },
   ko: {
     text: '🔔 집합 시간·차량 지연 알림을 받아볼까요?',
@@ -29,6 +31,8 @@ const COPY: Record<
     later: '나중에',
     done: '알림 켜짐 — 집합·지연만 알려드려요.',
     failed: '알림을 켜지 못했어요 — 다시 시도해 주세요.',
+    blocked: '브라우저에서 알림이 차단돼 있어요. 설정에서 허용한 뒤 다시 열어주세요.',
+    stopped: '지금은 알림을 켤 수 없어요. 잠시 후 다시 시도해 주세요.',
   },
   ja: {
     text: '🔔 集合時間・車両遅延の通知を受け取りますか?',
@@ -36,6 +40,8 @@ const COPY: Record<
     later: '後で',
     done: '通知オン — 集合と遅延のみお知らせします。',
     failed: '通知をオンにできませんでした — もう一度お試しください。',
+    blocked: '通知がブロックされています。ブラウザの設定で許可してから開き直してください。',
+    stopped: '今は通知をオンにできません。しばらくしてからお試しください。',
   },
   es: {
     text: '🔔 ¿Recibir avisos de hora de reunión y retrasos del vehículo?',
@@ -43,6 +49,8 @@ const COPY: Record<
     later: 'Luego',
     done: 'Avisos activados: solo reuniones y retrasos.',
     failed: 'No se pudieron activar — toca para reintentar.',
+    blocked: 'Las notificaciones están bloqueadas. Actívalas en los ajustes del navegador y vuelve a abrir.',
+    stopped: 'No se pueden activar ahora. Inténtalo de nuevo más tarde.',
   },
   zh: {
     text: '🔔 接收集合时间和车辆延误提醒?',
@@ -50,6 +58,8 @@ const COPY: Record<
     later: '以后',
     done: '已开启提醒——仅限集合与延误。',
     failed: '未能开启提醒 — 请再试一次。',
+    blocked: '通知已被浏览器阻止。请在设置中允许后重新打开。',
+    stopped: '暂时无法开启提醒，请稍后再试。',
   },
 };
 
@@ -75,7 +85,10 @@ export default function PushOptInBanner({
 }) {
   const copy = COPY[locale];
   const [visible, setVisible] = useState(false);
-  const [state, setState] = useState<'idle' | 'busy' | 'done' | 'failed'>('idle');
+  const [state, setState] = useState<'idle' | 'busy' | 'done' | 'failed' | 'blocked' | 'stopped'>('idle');
+  // P0-4: bound the retries so the banner can never become an infinite
+  // "tap to try again" loop when the environment simply can't subscribe.
+  const attemptsRef = useRef(0);
 
   useEffect(() => {
     // Deferred a beat: the room settles first, then the (dismissible) ask.
@@ -110,12 +123,22 @@ export default function PushOptInBanner({
     setVisible(false);
   };
 
+  // P0-4: a failure is either a one-off (offer a single retry) or persistent
+  // (the environment/config can't subscribe — stop, say so accurately, and let
+  // the guest dismiss). Never loop a generic "try again" forever.
+  const fail = () => {
+    attemptsRef.current += 1;
+    setState(attemptsRef.current >= 2 ? 'stopped' : 'failed');
+  };
+
   const enable = async () => {
     setState('busy');
     try {
       const permission = await Notification.requestPermission();
       if (permission !== 'granted') {
-        dismiss();
+        // Denied/blocked is an accurate, actionable reason — show it rather
+        // than silently vanishing or looping a generic retry.
+        setState('blocked');
         return;
       }
       const registration = await navigator.serviceWorker.ready;
@@ -139,14 +162,14 @@ export default function PushOptInBanner({
         setTimeout(() => setVisible(false), 3000);
         return;
       }
-      // 🔴 A1.6 — the subscription exists in the browser but the server never
-      // stored it, so nothing will ever be delivered. Falling back to 'idle'
-      // put the banner back to its untouched look, which reads as "not enabled
-      // yet" to a guest who just granted OS permission and would otherwise wait
-      // for a departure ping that cannot arrive.
-      setState('failed');
+      // A1.6 — the subscription exists in the browser but the server never
+      // stored it, so nothing will ever be delivered; surface it rather than
+      // reverting to the untouched look (which reads as "not enabled yet").
+      fail();
     } catch {
-      setState('failed');
+      // subscribe() throwing (unsupported context / invalid VAPID key) or a
+      // network error — both handled by the bounded retry ladder.
+      fail();
     }
   };
 
@@ -162,21 +185,42 @@ export default function PushOptInBanner({
         <>
           <p
             className={`tr-label min-w-0 flex-1 ${
-              state === 'failed' ? 'font-medium text-[var(--tr-danger)]' : 'text-[var(--tr-ink)]'
+              state === 'failed' || state === 'blocked'
+                ? 'font-medium text-[var(--tr-danger)]'
+                : state === 'stopped'
+                  ? 'text-[var(--tr-ink-2)]'
+                  : 'text-[var(--tr-ink)]'
             }`}
-            data-testid={state === 'failed' ? 'push-failed' : undefined}
+            data-testid={
+              state === 'failed'
+                ? 'push-failed'
+                : state === 'blocked'
+                  ? 'push-blocked'
+                  : state === 'stopped'
+                    ? 'push-stopped'
+                    : undefined
+            }
           >
-            {state === 'failed' ? copy.failed : copy.text}
+            {state === 'blocked'
+              ? copy.blocked
+              : state === 'stopped'
+                ? copy.stopped
+                : state === 'failed'
+                  ? copy.failed
+                  : copy.text}
           </p>
-          <button
-            type="button"
-            disabled={state === 'busy'}
-            onClick={() => void enable()}
-            className="tr-label shrink-0 rounded-full bg-[var(--tr-accent)] px-3 py-1.5 font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-50"
-            data-testid="push-enable"
-          >
-            {state === 'busy' ? '…' : copy.enable}
-          </button>
+          {/* Terminal states (blocked / stopped) offer no retry — dismiss only. */}
+          {state !== 'blocked' && state !== 'stopped' && (
+            <button
+              type="button"
+              disabled={state === 'busy'}
+              onClick={() => void enable()}
+              className="tr-label shrink-0 rounded-full bg-[var(--tr-accent)] px-3 py-1.5 font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-50"
+              data-testid="push-enable"
+            >
+              {state === 'busy' ? '…' : copy.enable}
+            </button>
+          )}
           <button
             type="button"
             onClick={dismiss}
