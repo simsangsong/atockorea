@@ -13,7 +13,11 @@ import type { ReactNode } from 'react';
 import { quickRepliesForRole, type QuickReplyRole } from '@/lib/tour-room/quickReplies';
 import { CHAT_LANGUAGES } from '@/lib/tour-room/languages';
 import { ROOM_LOCALES, type RoomLocale } from '@/lib/tour-room/snapshot';
-import { useTourRoomSettings } from '@/hooks/useTourRoomSettings';
+import {
+  useTourRoomSettings,
+  TEXT_SCALE_STEPS,
+  type TextScaleStep,
+} from '@/hooks/useTourRoomSettings';
 import AppManual from '@/components/tour-mode/AppManual';
 import CompanionInviteCard from '@/components/tour-mode/CompanionInviteCard';
 import type { ManualKind } from '@/lib/tour-room/appManual';
@@ -357,15 +361,46 @@ export default function SettingsTab({
           <IconTextSize size={15} className="text-[var(--tr-ink-3)]" aria-hidden />
           {copy.textSize}
         </h3>
+        {/* P1-6 — 5 steps. A slider rather than 5 segmented buttons: five CJK
+            labels in flex-1 cells is exactly the P1-5 breaking trap, and a
+            slider is the easier target in a moving vehicle. */}
         <div className="mt-2.5">
-          <SegmentedControl
-            value={settings.textScale}
-            onChange={(textScale) => update({ textScale })}
-            options={[
-              { value: 'normal', label: copy.textNormal },
-              { value: 'large', label: copy.textLarge },
-            ]}
-          />
+          <div className="flex items-center gap-3">
+            <span className="tr-meta shrink-0 text-[var(--tr-ink-3)]" aria-hidden>
+              {copy.textNormal}
+            </span>
+            <input
+              type="range"
+              min={1}
+              max={5}
+              step={1}
+              value={settings.textScale}
+              onChange={(event) =>
+                update({ textScale: Number(event.target.value) as TextScaleStep })
+              }
+              aria-label={copy.textSize}
+              aria-valuetext={`${settings.textScale} / 5`}
+              data-testid="text-scale-slider"
+              className="tr-press h-9 min-w-0 flex-1 accent-[var(--tr-accent)]"
+            />
+            <span className="tr-title shrink-0 text-[var(--tr-ink-3)]" aria-hidden>
+              {copy.textLarge}
+            </span>
+          </div>
+          <div className="mt-1 flex justify-between px-9" aria-hidden>
+            {TEXT_SCALE_STEPS.map((step) => (
+              <span
+                key={step}
+                className={`tr-meta tabular-nums ${
+                  step === settings.textScale
+                    ? 'font-bold text-[var(--tr-accent-deep)]'
+                    : 'text-[var(--tr-ink-3)]'
+                }`}
+              >
+                {step}
+              </span>
+            ))}
+          </div>
         </div>
       </section>
 

@@ -76,6 +76,7 @@ import { kstToday } from '@/lib/tour-room/time';
 import type { RoomMessage } from '@/hooks/useTourRoomChannel';
 import type { SpotArrivalContent } from '@/lib/tour-room/spotContent';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
+import type { TextScaleStep } from '@/hooks/useTourRoomSettings';
 
 const WINDOW = 60;
 const NEAR_BOTTOM_PX = 120;
@@ -167,7 +168,7 @@ export default function ChatFeed({
   messages,
   viewerLocale,
   viewerRole = 'customer',
-  textScale = 'normal',
+  textScale = 3,
   tts,
   opsHighlightAfter = null,
   onExtraConfirm,
@@ -184,7 +185,7 @@ export default function ChatFeed({
   /** Bubbles from this role right-align as "mine". */
   viewerRole?: string;
   /** T1.12 settings: 'large' bumps bubble text for senior travellers. */
-  textScale?: 'normal' | 'large';
+  textScale?: TextScaleStep;
   /** T2.4 — when set, incoming bubbles get a listen button (TTS ladder). */
   tts?: { bookingId: string; roomSession: string } | null;
   /** W4.3 — after an SOS, admin replies newer than this ISO time get the
@@ -208,8 +209,10 @@ export default function ChatFeed({
   /** Phase 3 — deep-link: scroll to + flash this message once it's in the feed. */
   focusMessageId?: string | null;
 }) {
-  const bubbleText = textScale === 'large' ? 'tr-body-lg' : 'tr-body';
-  const systemText = textScale === 'large' ? 'tr-card-text' : 'tr-label';
+  // P1-6 — --tr-font-scale already scales every size; the class bump gives the
+  // top steps an extra jump in the bubble itself (senior-friendly, §E).
+  const bubbleText = textScale >= 4 ? 'tr-body-lg' : 'tr-body';
+  const systemText = textScale >= 4 ? 'tr-card-text' : 'tr-label';
   const [windowSize, setWindowSize] = useState(WINDOW);
   const [originals, setOriginals] = useState<Set<string>>(new Set());
   const [awayCount, setAwayCount] = useState(0);

@@ -17,19 +17,55 @@ import { useCallback, useSyncExternalStore } from 'react';
 
 const STORAGE_KEY = 'tour_mode_settings';
 
+/**
+ * P1-6 — text size is 5 steps (1 = smallest … 5 = largest), 3 being the
+ * default. It used to be a 2-value 'normal' | 'large' that only swapped two
+ * chat-bubble classes; the step now drives --tr-font-scale on .tr-root, so the
+ * whole surface moves together.
+ */
+export type TextScaleStep = 1 | 2 | 3 | 4 | 5;
+
+export const TEXT_SCALE_STEPS: TextScaleStep[] = [1, 2, 3, 4, 5];
+export const DEFAULT_TEXT_SCALE: TextScaleStep = 3;
+
+/** Multiplier per step, applied to every .tr-* size (tour-room-theme.css). */
+export const TEXT_SCALE_FACTORS: Record<TextScaleStep, number> = {
+  1: 0.85,
+  2: 0.925,
+  3: 1,
+  4: 1.15,
+  5: 1.35,
+};
+
+export function textScaleFactor(step: TextScaleStep): number {
+  return TEXT_SCALE_FACTORS[step] ?? 1;
+}
+
 export interface TourRoomSettings {
   theme: 'light' | 'dark' | 'system';
   voiceConfirm: boolean;
   autoRead: boolean;
-  textScale: 'normal' | 'large';
+  textScale: TextScaleStep;
 }
 
 export const DEFAULT_TOUR_ROOM_SETTINGS: TourRoomSettings = {
   theme: 'system',
   voiceConfirm: true,
   autoRead: false,
-  textScale: 'normal',
+  textScale: DEFAULT_TEXT_SCALE,
 };
+
+/**
+ * Accept the new 1–5 step and migrate the two legacy values in place, so a
+ * guest who had already chosen "크게" keeps a large size instead of being
+ * silently reset to the default.
+ */
+function normalizeTextScale(raw: unknown): TextScaleStep {
+  if (raw === 'large') return 4;
+  if (raw === 'normal') return DEFAULT_TEXT_SCALE;
+  const step = typeof raw === 'number' ? Math.round(raw) : Number.NaN;
+  return (TEXT_SCALE_STEPS as number[]).includes(step) ? (step as TextScaleStep) : DEFAULT_TEXT_SCALE;
+}
 
 function sanitize(raw: unknown): TourRoomSettings {
   const value = (raw ?? {}) as Partial<TourRoomSettings>;
@@ -39,9 +75,7 @@ function sanitize(raw: unknown): TourRoomSettings {
       : DEFAULT_TOUR_ROOM_SETTINGS.theme,
     voiceConfirm: typeof value.voiceConfirm === 'boolean' ? value.voiceConfirm : DEFAULT_TOUR_ROOM_SETTINGS.voiceConfirm,
     autoRead: typeof value.autoRead === 'boolean' ? value.autoRead : DEFAULT_TOUR_ROOM_SETTINGS.autoRead,
-    textScale: value.textScale === 'large' || value.textScale === 'normal'
-      ? value.textScale
-      : DEFAULT_TOUR_ROOM_SETTINGS.textScale,
+    textScale: normalizeTextScale(value.textScale),
   };
 }
 

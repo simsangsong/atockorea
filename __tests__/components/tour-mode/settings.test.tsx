@@ -26,7 +26,7 @@ describe('useTourRoomSettings store', () => {
       theme: 'system',
       voiceConfirm: true,
       autoRead: false,
-      textScale: 'normal',
+      textScale: 3,
     });
     expect(readTourRoomSettings()).toEqual(DEFAULT_TOUR_ROOM_SETTINGS);
   });
@@ -37,7 +37,7 @@ describe('useTourRoomSettings store', () => {
     expect(readTourRoomSettings()).toMatchObject({ theme: 'dark', voiceConfirm: false });
 
     window.localStorage.setItem('tour_mode_settings', '{"theme":"neon","textScale":9}');
-    expect(readTourRoomSettings()).toMatchObject({ theme: 'system', textScale: 'normal' });
+    expect(readTourRoomSettings()).toMatchObject({ theme: 'system', textScale: 3 });
   });
 });
 
@@ -138,8 +138,22 @@ describe('ChatFeed text scale (T1.12)', () => {
     created_at: '2026-07-14T05:00:00Z',
   };
 
-  it('bumps bubble text when textScale=large', () => {
-    render(<ChatFeed messages={[message]} viewerLocale="en" textScale="large" />);
+  it('bumps bubble text at the large steps (4-5)', () => {
+    render(<ChatFeed messages={[message]} viewerLocale="en" textScale={4} />);
     expect(screen.getByText('hello there').closest('button')).toHaveClass('tr-body-lg');
+  });
+
+  // P1-6 — 5 steps replaced the 2-value setting; a guest who had already chosen
+  // the legacy 'large' must stay large rather than being reset to the default.
+  it('migrates the legacy normal/large values instead of discarding them', () => {
+    window.localStorage.setItem('tour_mode_settings', '{"textScale":"large"}');
+    expect(readTourRoomSettings().textScale).toBe(4);
+    window.localStorage.setItem('tour_mode_settings', '{"textScale":"normal"}');
+    expect(readTourRoomSettings().textScale).toBe(3);
+  });
+
+  it('keeps the default bubble class at the small/default steps', () => {
+    render(<ChatFeed messages={[message]} viewerLocale="en" textScale={2} />);
+    expect(screen.getByText('hello there').closest('button')).toHaveClass('tr-body');
   });
 });

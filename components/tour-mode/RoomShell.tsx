@@ -14,13 +14,13 @@
  * and the `.dark .tr-root` token layer apply without touching <html>.
  */
 
-import { useEffect, useRef, useState, type ReactNode } from 'react';
+import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import { useRouter } from 'next/navigation';
 import { ChevronLeft } from 'lucide-react';
 import EmergencyCard from '@/components/tour-mode/EmergencyCard';
 import Sheet from '@/components/tour-mode/Sheet';
 import { useKeyboardOpen } from '@/components/tour-mode/useKeyboardOpen';
-import { useTourRoomSettings } from '@/hooks/useTourRoomSettings';
+import { useTourRoomSettings, textScaleFactor } from '@/hooks/useTourRoomSettings';
 import {
   IconConcierge,
   IconEmergency,
@@ -371,6 +371,8 @@ export default function RoomShell({
         className="tr-root mx-auto flex h-dvh w-full flex-col bg-[var(--tr-canvas)]"
         data-locale={locale}
         lang={locale}
+        // P1-6 — one variable scales the whole tour-room typography scale.
+        style={{ '--tr-font-scale': textScaleFactor(deviceSettings.textScale) } as CSSProperties}
       >
         {/* ---- Slim header ------------------------------------------- */}
         <header
