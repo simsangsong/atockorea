@@ -165,9 +165,48 @@ describe('readMasterVehicleRef', () => {
 });
 
 describe('resolveDispatchVehicle', () => {
-  it('makes the master the source of truth for the plate — that is the whole point', () => {
-    const out = resolveDispatchVehicle({ master: MASTER, requestedPlate: '12가 3456 오타' });
-    expect(out).toMatchObject({ ok: true, vehicleId: MASTER.id, plateNumber: '12가 3456' });
+  /**
+   * 🔴 이 운영은 차를 소유하지 않는다 — 매번 렌트하고 정보가 매번 바뀐다.
+   * 그래서 **타입만으로 배차가 끝나야** 하고, 번호판·등록차량은 옵션이다.
+   */
+  it('dispatches on the type alone — plate and master are optional', () => {
+    expect(resolveDispatchVehicle({ requestedLayoutId: 'layout-county' })).toEqual({
+      ok: true,
+      vehicleId: null,
+      layoutId: 'layout-county',
+      plateNumber: null,
+    });
+  });
+
+  it('fills the plate from the master when it is left as-is', () => {
+    expect(resolveDispatchVehicle({ master: MASTER })).toMatchObject({
+      ok: true,
+      vehicleId: MASTER.id,
+      plateNumber: '12가 3456',
+    });
+    // 같은 번호를 다르게 띄어 쓴 것은 같은 차다 — 표기만 정규화하고 연결은 유지.
+    expect(resolveDispatchVehicle({ master: MASTER, requestedPlate: '12가3456' })).toMatchObject({
+      vehicleId: MASTER.id,
+      plateNumber: '12가 3456',
+    });
+  });
+
+  /**
+   * 등록 차량은 지름길일 뿐이다. 번호가 다르면 그건 **다른 차**이고, 연결을 유지한
+   * 채 번호만 다르게 두면 그때부터 마스터가 거짓말을 시작한다.
+   */
+  it('drops the master link when a different plate is given', () => {
+    expect(resolveDispatchVehicle({ master: MASTER, requestedPlate: '99하 1111' })).toMatchObject({
+      ok: true,
+      vehicleId: null,
+      plateNumber: '99하 1111',
+    });
+  });
+
+  it('treats an empty plate as "not known yet", not as a contradiction', () => {
+    expect(resolveDispatchVehicle({ master: MASTER, requestedPlate: '   ' })).toMatchObject({
+      vehicleId: MASTER.id,
+    });
   });
 
   it('inherits the master layout but lets an explicit choice win (좌석 뗀 날)', () => {

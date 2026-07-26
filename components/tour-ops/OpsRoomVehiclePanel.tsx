@@ -21,7 +21,7 @@
 
 import { useCallback, useEffect, useState } from 'react';
 import { toast } from 'sonner';
-import { AlertTriangle, Bus, Loader2, Plus, RotateCcw, Trash2, X } from 'lucide-react';
+import { AlertTriangle, Bus, Camera, Loader2, Plus, RotateCcw, Trash2, X } from 'lucide-react';
 import { getOpsToken } from '@/components/tour-ops/opsShared';
 
 /** §K B2.4 — 그룹 정원 판정(운영자 전용). */
@@ -95,6 +95,8 @@ interface VehicleRow {
   master_active: boolean | null;
   driver_participant_id: string | null;
   driver_name: string | null;
+  /** 차량 사진의 단기 서명 URL. null = 사진 없음(렌트라 그게 기본 상태다). */
+  photo_url: string | null;
   has_override: boolean;
   override_note: string | null;
   total_seats: number;
@@ -324,6 +326,60 @@ export default function OpsRoomVehiclePanel({ roomId }: { roomId: string }) {
     [roomId, load],
   );
 
+  /**
+   * 차량 사진 첨부 (옵션).
+   *
+   * 렌트라 "어떤 차가 왔는지"는 번호판 텍스트보다 사진 한 장이 정확하다 —
+   * 사진에는 오타가 없다. 실패해도 배차 자체는 이미 성립돼 있으므로 토스트로만
+   * 알린다(사진 하나 때문에 배차를 되돌리지 않는다).
+   */
+  const uploadPhoto = useCallback(
+    async (vehicleId: string, file: File) => {
+      setBusy(true);
+      try {
+        const form = new FormData();
+        form.append('vehicle_id', vehicleId);
+        form.append('photo', file);
+        const token = await getOpsToken();
+        const res = await fetch(`/api/admin/tour-ops/rooms/${encodeURIComponent(roomId)}/vehicles/photo`, {
+          method: 'POST',
+          headers: { Authorization: `Bearer ${token}` },
+          credentials: 'include',
+          body: form,
+        });
+        const json = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(json?.message || json?.error || '사진을 올리지 못했어요.');
+        toast.success('차량 사진을 저장했어요.');
+        await load();
+      } catch (error) {
+        toast.error(error instanceof Error ? error.message : '사진을 올리지 못했어요.');
+      } finally {
+        setBusy(false);
+      }
+    },
+    [roomId, load],
+  );
+
+  const clearPhoto = useCallback(
+    async (vehicleId: string) => {
+      setBusy(true);
+      try {
+        const res = await authedFetch(
+          `/api/admin/tour-ops/rooms/${encodeURIComponent(roomId)}/vehicles/photo?vehicle_id=${encodeURIComponent(vehicleId)}`,
+          { method: 'DELETE' },
+        );
+        if (!res.ok) throw new Error('사진을 지우지 못했어요.');
+        toast.success('사진을 내렸어요.');
+        await load();
+      } catch (error) {
+        toast.error(error instanceof Error ? error.message : '사진을 지우지 못했어요.');
+      } finally {
+        setBusy(false);
+      }
+    },
+    [roomId, load],
+  );
+
   const createVehicle = useCallback(
     async (payload: Record<string, unknown>) => {
       setBusy(true);
@@ -417,6 +473,8 @@ export default function OpsRoomVehiclePanel({ roomId }: { roomId: string }) {
               busy={busy}
               onSave={(patch) => void patchVehicle(vehicle.id, patch)}
               onRemove={() => void removeVehicle(vehicle.id)}
+              onPhoto={(file) => void uploadPhoto(vehicle.id, file)}
+              onPhotoClear={() => void clearPhoto(vehicle.id)}
             />
           ))}
 
@@ -477,13 +535,20 @@ export default function OpsRoomVehiclePanel({ roomId }: { roomId: string }) {
 }
 
 /**
- * §2-1 — "등록된 차량에서 고르기 / 직접 입력".
+ * 차량 지정 — **타입이 1순위, 번호판·등록차량은 옵션.**
  *
- * 마스터를 고르면 번호판은 마스터가 정본이라 자유 입력을 닫는다. 두 곳에서 다르게
- * 타이핑된 번호판은 같은 차를 두 대로 만들고, 그 순간 배차 달력의 중복 감지가
- * 다시 죽는다 — 이 항목이 고치려던 문제가 그것이다.
+ * 🔴 최초 구현(§2-1)은 "보유 차량을 등록해 두고 고른다"를 기본 동선으로 깔았는데,
+ * 이 운영은 **차를 소유하지 않고 매번 렌트한다.** 그래서 배차 시점에 확정돼 있는
+ * 것은 차종·좌석수뿐이고 번호판은 대개 당일에야 나온다. 등록 차량을 앞세우면
+ * 매번 "없어요"만 보게 되고, 없는 걸 만들라는 잔소리가 영구히 남는다.
  *
- * 마스터 미등록(용차·대차)은 계속 자유 입력으로 남는다. 그 폴백은 의도된 설계다.
+ * 그래서:
+ *   · **타입(배치도)** — 필수. 좌석수·좌석판·정원 판정이 전부 여기서 나온다.
+ *   · **번호판** — 옵션. 항상 열려 있다(당일 확인 후 입력).
+ *   · **등록 차량** — 옵션 지름길. 자주 쓰는 렌트 차가 생겼을 때만 의미가 있다.
+ *
+ * 등록 차량을 고른 뒤 번호판을 다르게 고치면 연결을 **끊는다.** 다른 번호 = 다른
+ * 차이고, 연결을 유지한 채 번호만 다르면 그 순간 마스터가 거짓말을 시작한다.
  */
 function MasterVehicleField({
   options,
@@ -501,52 +566,50 @@ function MasterVehicleField({
   const selected = options.find((option) => option.id === masterId) ?? null;
   return (
     <>
-      <label className="mb-2 block text-[11px] font-semibold text-[var(--tr-ink-2)]">
-        차량
-        <select
-          value={masterId}
-          data-testid="master-vehicle-select"
+      <label className="mb-1 block text-[11px] font-semibold text-[var(--tr-ink-2)]">
+        차량번호 <span className="font-normal text-[var(--tr-ink-3)]">(선택 — 당일 확인 후 입력해도 돼요)</span>
+        <input
+          value={plate}
           onChange={(event) => {
-            const next = event.target.value;
-            onMasterChange(next, options.find((option) => option.id === next) ?? null);
+            onPlateChange(event.target.value);
+            // 번호를 손으로 고쳤다 = 등록 차량과 다른 차다. 연결을 끊는다.
+            if (selected && event.target.value !== selected.display_plate) onMasterChange('', null);
           }}
+          maxLength={32}
+          placeholder="예: 12가 3456 — 아직 몰라도 비워 두세요"
+          data-testid="vehicle-plate-input"
           className="mt-1 h-10 w-full rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 text-[13px] font-normal text-[var(--tr-ink)]"
-        >
-          <option value="">— 직접 입력 (용차·대차) —</option>
-          {options.map((option) => (
-            <option key={option.id} value={option.id}>
-              {masterLabel(option)}
-            </option>
-          ))}
-        </select>
+        />
       </label>
-      {selected ? (
-        <p className="mb-2 text-[11px] text-[var(--tr-ink-2)]">
-          번호판 <b>{selected.display_plate}</b> — 차량 마스터가 정본이에요. 바꾸려면{' '}
-          <a href="/admin/vehicle-layouts" className="underline">
-            차량 등록
-          </a>
-          에서 고쳐 주세요.
-        </p>
-      ) : (
+
+      {/* 등록 차량은 지름길일 뿐이다. 한 대도 없으면 아예 보여주지 않는다 —
+          렌트 운영에서 "등록된 차량이 없어요"는 고칠 것이 아니라 정상이다. */}
+      {options.length > 0 && (
         <label className="mb-2 block text-[11px] font-semibold text-[var(--tr-ink-2)]">
-          차량번호
-          <input
-            value={plate}
-            onChange={(event) => onPlateChange(event.target.value)}
-            maxLength={32}
-            placeholder="예: 12가 3456"
+          자주 쓰는 차량에서 채우기 <span className="font-normal text-[var(--tr-ink-3)]">(선택)</span>
+          <select
+            value={masterId}
+            data-testid="master-vehicle-select"
+            onChange={(event) => {
+              const next = event.target.value;
+              const option = options.find((item) => item.id === next) ?? null;
+              onMasterChange(next, option);
+              if (option) onPlateChange(option.display_plate);
+            }}
             className="mt-1 h-10 w-full rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 text-[13px] font-normal text-[var(--tr-ink)]"
-          />
+          >
+            <option value="">— 선택 안 함 —</option>
+            {options.map((option) => (
+              <option key={option.id} value={option.id}>
+                {masterLabel(option)}
+              </option>
+            ))}
+          </select>
         </label>
       )}
-      {options.length === 0 && (
+      {selected && (
         <p className="mb-2 text-[11px] text-[var(--tr-ink-3)]">
-          등록된 차량이 없어요.{' '}
-          <a href="/admin/vehicle-layouts" className="underline">
-            차량을 먼저 등록
-          </a>
-          하면 배차 달력의 차량 축과 중복 배차 감지가 켜져요.
+          등록 차량 <b>{selected.display_plate}</b>에 연결돼 있어요. 번호를 고치면 연결이 풀립니다.
         </p>
       )}
     </>
@@ -562,6 +625,8 @@ function VehicleCard({
   busy,
   onSave,
   onRemove,
+  onPhoto,
+  onPhotoClear,
 }: {
   vehicle: VehicleRow;
   /** §K B2.4 — 2대 이상일 때만 1호차/2호차로 부른다. 1대뿐이면 번호가 소음이다. */
@@ -572,6 +637,8 @@ function VehicleCard({
   busy: boolean;
   onSave: (patch: Record<string, unknown>) => void;
   onRemove: () => void;
+  onPhoto: (file: File) => void;
+  onPhotoClear: () => void;
 }) {
   const [layoutId, setLayoutId] = useState(vehicle.layout_id);
   const [masterId, setMasterId] = useState(vehicle.master_vehicle_id ?? '');
@@ -634,24 +701,13 @@ function VehicleCard({
         정원 {vehicle.capacity ?? vehicle.total_seats}석 · 배정 {seated}석 · 체크인 {checkedIn}석
       </p>
 
-      <MasterVehicleField
-        options={masterVehicles}
-        masterId={masterId}
-        onMasterChange={(next, option) => {
-          setMasterId(next);
-          // 마스터의 표준 배치도를 미리 골라 준다 — 저장 전에 화면에서 보이고,
-          // 좌석이 사라지는 교체라면 기존 409 흐름이 그대로 막는다.
-          if (option?.layout_id) setLayoutId(option.layout_id);
-        }}
-        plate={plate}
-        onPlateChange={setPlate}
-      />
-
+      {/* 타입이 먼저다 — 렌트라 배차 시점에 확정된 것은 차종·좌석수뿐이다. */}
       <label className="mb-2 block text-[11px] font-semibold text-[var(--tr-ink-2)]">
-        배치도
+        차량 타입 <span className="font-normal text-[var(--tr-ink-3)]">(필수 — 좌석수·좌석판이 여기서 나와요)</span>
         <select
           value={layoutId}
           onChange={(event) => setLayoutId(event.target.value)}
+          data-testid="vehicle-type-select"
           className="mt-1 h-10 w-full rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 text-[13px] font-normal text-[var(--tr-ink)]"
         >
           {layouts.map((layout) => (
@@ -667,6 +723,19 @@ function VehicleCard({
           <AlertTriangle className="mt-0.5 size-3 shrink-0" />이 배치도는 아직 실차 사진 대조가 안 됐어요.
         </p>
       )}
+
+      <MasterVehicleField
+        options={masterVehicles}
+        masterId={masterId}
+        onMasterChange={(next, option) => {
+          setMasterId(next);
+          // 등록 차량에 표준 배치도가 있으면 타입도 같이 채운다 — 저장 전에 화면에
+          // 보이고, 좌석이 사라지는 교체라면 기존 409 흐름이 그대로 막는다.
+          if (option?.layout_id) setLayoutId(option.layout_id);
+        }}
+        plate={plate}
+        onPlateChange={setPlate}
+      />
 
       <label className="mb-2 block text-[11px] font-semibold text-[var(--tr-ink-2)]">
         기사 (입장한 스태프)
@@ -694,6 +763,52 @@ function VehicleCard({
           className="mt-1 h-10 w-full rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 text-[13px] font-normal text-[var(--tr-ink)]"
         />
       </label>
+
+      {/* 차량 사진(옵션). 렌트라 실제로 온 차는 사진이 가장 정확한 기록이다 —
+          번호판 텍스트와 달리 사진에는 오타가 없다. 없는 것이 정상 상태다. */}
+      <div className="mb-2">
+        <p className="mb-1 text-[11px] font-semibold text-[var(--tr-ink-2)]">
+          차량 사진 <span className="font-normal text-[var(--tr-ink-3)]">(선택)</span>
+        </p>
+        {vehicle.photo_url ? (
+          <div className="flex items-center gap-2">
+            <a href={vehicle.photo_url} target="_blank" rel="noopener noreferrer" className="shrink-0">
+              {/* eslint-disable-next-line @next/next/no-img-element -- 서명 URL은 만료된다(최적화 캐시 대상 아님) */}
+              <img
+                src={vehicle.photo_url}
+                alt="차량 사진"
+                data-testid="vehicle-photo"
+                className="h-16 w-24 rounded-lg object-cover"
+              />
+            </a>
+            <button
+              type="button"
+              disabled={busy}
+              onClick={onPhotoClear}
+              className="h-9 rounded-lg border border-[var(--tr-hairline)] px-2.5 text-[11px] font-semibold text-[var(--tr-ink-2)] disabled:opacity-40"
+              data-testid="vehicle-photo-clear"
+            >
+              사진 내리기
+            </button>
+          </div>
+        ) : (
+          <label className="flex h-10 w-full cursor-pointer items-center justify-center gap-1.5 rounded-lg border border-dashed border-[var(--tr-hairline)] text-[11px] font-semibold text-[var(--tr-ink-2)]">
+            <Camera className="size-3.5" />
+            사진 첨부 (당일 찍어서 올려도 돼요)
+            <input
+              type="file"
+              accept="image/*"
+              className="hidden"
+              data-testid="vehicle-photo-input"
+              onChange={(event) => {
+                const file = event.target.files?.[0];
+                if (file) onPhoto(file);
+                event.target.value = '';
+              }}
+            />
+          </label>
+        )}
+      </div>
 
       <div className="flex gap-2">
         <a
@@ -758,6 +873,22 @@ function NewVehicleForm({
           <X className="size-4" />
         </button>
       </div>
+      {/* 타입만 골라도 배차가 끝난다. 번호판·등록차량은 그 아래 옵션이다. */}
+      <label className="mb-2 block text-[11px] font-semibold text-[var(--tr-ink-2)]">
+        차량 타입 <span className="font-normal text-[var(--tr-ink-3)]">(이것만 골라도 배차돼요)</span>
+        <select
+          value={layoutId}
+          onChange={(event) => setLayoutId(event.target.value)}
+          data-testid="new-vehicle-type-select"
+          className="mt-1 h-10 w-full rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 text-[13px] font-normal text-[var(--tr-ink)]"
+        >
+          {layouts.map((layout) => (
+            <option key={layout.id} value={layout.id}>
+              {layoutLabel({ display_name: layout.display_name, model: layout.model })} ({layout.total_seats}석)
+            </option>
+          ))}
+        </select>
+      </label>
       <MasterVehicleField
         options={masterVehicles}
         masterId={masterId}
@@ -768,17 +899,6 @@ function NewVehicleForm({
         plate={plate}
         onPlateChange={setPlate}
       />
-      <select
-        value={layoutId}
-        onChange={(event) => setLayoutId(event.target.value)}
-        className="mb-2 h-10 w-full rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 text-[13px] text-[var(--tr-ink)]"
-      >
-        {layouts.map((layout) => (
-          <option key={layout.id} value={layout.id}>
-            {layoutLabel({ display_name: layout.display_name, model: layout.model })} ({layout.total_seats}석)
-          </option>
-        ))}
-      </select>
       <select
         value={driverParticipantId}
         onChange={(event) => setDriverParticipantId(event.target.value)}

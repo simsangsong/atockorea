@@ -299,16 +299,39 @@ describe('차량 마스터 연결', () => {
   it('POST writes ops_room_vehicles.vehicle_id and takes the plate from the master', async () => {
     const client = makeDb({ masterVehicles: [MASTER] });
     createServerClientMock.mockReturnValue(client);
-    const res = await POST(
-      req({ body: { master_vehicle_id: MASTER_ID, plate_number: '오타 그대로 보낸 값' } }),
-      ctx,
-    );
+    const res = await POST(req({ body: { master_vehicle_id: MASTER_ID } }), ctx);
     expect(res.status).toBe(201);
     expect(client.inserted.find((row) => row.table === 'ops_room_vehicles')!.values).toMatchObject({
       vehicle_id: MASTER_ID,
       layout_id: OLD_LAYOUT_ID, // 마스터의 배치도를 상속
       plate_number: '12가 3456',
     });
+  });
+
+  /**
+   * 🔴 렌트 운영 — 타입만으로 배차가 끝나야 한다. 번호판·등록차량 없이도 201.
+   */
+  it('POST dispatches on the type alone, with no plate and no master', async () => {
+    const client = makeDb({});
+    createServerClientMock.mockReturnValue(client);
+    const res = await POST(req({ body: { layout_id: OLD_LAYOUT_ID } }), ctx);
+    expect(res.status).toBe(201);
+    const values = client.inserted.find((row) => row.table === 'ops_room_vehicles')!.values as Record<string, unknown>;
+    expect(values).toMatchObject({ layout_id: OLD_LAYOUT_ID, plate_number: null });
+    expect(values.vehicle_id).toBeUndefined();
+  });
+
+  it('POST drops the master link when a different plate comes with it', async () => {
+    const client = makeDb({ masterVehicles: [MASTER] });
+    createServerClientMock.mockReturnValue(client);
+    const res = await POST(
+      req({ body: { master_vehicle_id: MASTER_ID, layout_id: OLD_LAYOUT_ID, plate_number: '99하 1111' } }),
+      ctx,
+    );
+    expect(res.status).toBe(201);
+    const values = client.inserted.find((row) => row.table === 'ops_room_vehicles')!.values as Record<string, unknown>;
+    expect(values.vehicle_id).toBeUndefined();
+    expect(values.plate_number).toBe('99하 1111');
   });
 
   it('POST 404s an unknown master instead of dispatching an unlinked vehicle', async () => {

@@ -13,6 +13,7 @@ import {
 } from '@/lib/ops/seating/capacity';
 import { dropSimBookings } from '@/lib/ops/sim/simScope';
 import { normalizeLayoutJson } from '@/lib/ops/seating/layoutEditor';
+import { layoutPhotoSignedUrl, type LayoutPhotoStorageClient } from '@/lib/ops/seating/layoutPhoto';
 import { recordRoomEvent } from '@/lib/tour-room/events';
 import {
   formatPlate,
@@ -387,6 +388,12 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ room
           master_active: master ? master.active : null,
           driver_participant_id: vehicle.driver_participant_id,
           driver_name: vehicle.driver_name,
+          // 사진은 private 버킷에 있다 — 단기 서명 URL로만 내보낸다. 실패해도
+          // 배차 화면은 그대로 뜬다(사진 칸만 빈다).
+          photo_url: await layoutPhotoSignedUrl(
+            supabase as unknown as LayoutPhotoStorageClient,
+            vehicle.photo_path,
+          ),
           has_override: Boolean(vehicle.layout_override_json),
           override_note: vehicle.override_note,
           total_seats: layoutSeats,
