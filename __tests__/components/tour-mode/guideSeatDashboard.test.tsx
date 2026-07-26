@@ -224,4 +224,36 @@ describe('GuideSeatDashboard (§5.4b / C-16)', () => {
     await waitFor(() => expect(gate).not.toBeDisabled());
     expect(gate).toHaveTextContent('투어 시작');
   });
+
+  /** W3 (U4-D3) — 좌석 터치 → 그 손님과의 대화 / 개인 공지. */
+  describe('seat → chat wiring', () => {
+    it('offers [대화 열기]/[이 손님에게만 공지] on an assigned seat and reports the booking', async () => {
+      mockManifest(manifest(PARTIAL));
+      const onOpenChat = jest.fn();
+      const onTargetNotice = jest.fn();
+      const { container } = render(
+        <GuideSeatDashboard token="gtok" bookingId="b1" onOpenChat={onOpenChat} onTargetNotice={onTargetNotice} />,
+      );
+      await waitFor(() => expect(container.querySelector('[data-seat="2"]')).toBeInTheDocument());
+      fireEvent.click(container.querySelector('[data-seat="2"]')!);
+      fireEvent.click(await screen.findByTestId('act-open-chat'));
+      expect(onOpenChat).toHaveBeenCalledWith('b1');
+      // sheet closed by the action
+      expect(screen.queryByTestId('seat-action-sheet')).not.toBeInTheDocument();
+
+      fireEvent.click(container.querySelector('[data-seat="2"]')!);
+      fireEvent.click(await screen.findByTestId('act-target-notice'));
+      expect(onTargetNotice).toHaveBeenCalledWith('b1');
+    });
+
+    it('hides both actions when the callbacks are absent (guest-safe default)', async () => {
+      mockManifest(manifest(PARTIAL));
+      const { container } = render(<GuideSeatDashboard token="gtok" bookingId="b1" />);
+      await waitFor(() => expect(container.querySelector('[data-seat="2"]')).toBeInTheDocument());
+      fireEvent.click(container.querySelector('[data-seat="2"]')!);
+      await screen.findByTestId('seat-action-sheet');
+      expect(screen.queryByTestId('act-open-chat')).not.toBeInTheDocument();
+      expect(screen.queryByTestId('act-target-notice')).not.toBeInTheDocument();
+    });
+  });
 });

@@ -42,9 +42,10 @@ import GuideSeatDashboard from '@/components/tour-mode/guide/GuideSeatDashboard'
 import OperatorAssist from '@/components/tour-mode/guide/OperatorAssist';
 import MicPrime from '@/components/tour-mode/MicPrime';
 import Sheet from '@/components/tour-mode/Sheet';
-import StaffShell from '@/components/tour-mode/staff/StaffShell';
+import StaffShell, { type StaffTabKey } from '@/components/tour-mode/staff/StaffShell';
 import StaffSettings from '@/components/tour-mode/staff/StaffSettings';
 import { PreDepartureChecklist } from '@/components/tour-mode/driver/DriverConsole';
+import { useTourManifest } from '@/hooks/useTourManifest';
 import Cockpit, { type CockpitLifecycle, type CockpitRoom } from '@/components/tour-mode/cockpit/Cockpit';
 import { kstToday } from '@/lib/tour-room/time';
 import { OPERATOR_PRESETS } from '@/lib/tour-room/operatorPresets';
@@ -211,6 +212,8 @@ export default function GuideConsole() {
   // P4 redesign: day-wide tools collapse behind one section with a segment.
   const [dayToolsOpen, setDayToolsOpen] = useState(false);
   const [daySeg, setDaySeg] = useState<'broadcast' | 'meeting' | 'free'>('broadcast');
+  // W2 — the shell tab is controlled here so seat actions can jump tabs.
+  const [staffTab, setStaffTab] = useState<StaffTabKey>('chat');
   const tokenRef = useRef<string | null>(null);
   // send()가 useCallback이라 target을 의존성에 넣으면 선택할 때마다 재생성된다.
   // ref로 읽으면 항상 최신값을 쓰면서 콜백은 안정적으로 유지된다.
@@ -237,14 +240,32 @@ export default function GuideConsole() {
     }
   }, []);
 
-  // B3 — 명단(칩 문구·버튼 라벨의 근거). 좌석 번호는 이 페이로드에 없으므로
-  // 이름만 쓴다 — 좌석판에서 고른 경우에도 이름이 가장 확실한 식별자다.
+  // W3 (U4-D3) — the seat ledger feeds the roster so target chips and send
+  // buttons can finally say "3번 Massimo" (guestLabel's seat path was dead
+  // code while this payload carried names only). Party bookings may hold
+  // several seats; the lowest number is the label.
+  const manifestAnchor = overview?.rooms[0]?.booking_id ?? null;
+  const { data: manifest } = useTourManifest(manifestAnchor, token);
+  const seatByBooking = useMemo(() => {
+    const map = new Map<string, number>();
+    for (const a of manifest?.assignments ?? []) {
+      const prev = map.get(a.booking_id);
+      if (prev === undefined || a.seat_number < prev) map.set(a.booking_id, a.seat_number);
+    }
+    return map;
+  }, [manifest]);
+
+  // B3 — 명단(칩 문구·버튼 라벨의 근거). 좌석이 배정돼 있으면 함께 싣는다.
   const roster: TargetRoster = useMemo(
     () => ({
       total: overview?.rooms.length ?? 0,
-      guests: (overview?.rooms ?? []).map((r) => ({ bookingId: r.booking_id, name: r.contact_name })),
+      guests: (overview?.rooms ?? []).map((r) => ({
+        bookingId: r.booking_id,
+        name: r.contact_name,
+        seat: seatByBooking.get(r.booking_id) ?? null,
+      })),
     }),
-    [overview],
+    [overview, seatByBooking],
   );
 
   // B3-D4 — 룸/날짜를 벗어나면 대상이 초기화된다. 명단에 없는 예약이 남아 있으면
@@ -1027,12 +1048,23 @@ export default function GuideConsole() {
   );
 
   // 좌석·명단 tab — 단일 소스 ops_seat_assignments, tour 스코프 (§5.4b).
+  // U4-D3: 좌석 터치 → [대화 열기]=그 예약의 룸(=1:1), [이 손님에게만 공지]=
+  // 타겟 발송 프리필 + 대화 탭 점프.
   const seatsTab =
     tokenRef.current && overview.rooms[0]?.booking_id ? (
       <GuideSeatDashboard
         token={tokenRef.current}
         bookingId={overview.rooms[0].booking_id}
         tourTitle={overview.tour.title}
+        onOpenChat={(bid) => {
+          window.location.assign(roomHref(bid));
+        }}
+        onTargetNotice={(bid) => {
+          setTarget(targetOne(bid));
+          setDayToolsOpen(true);
+          setDaySeg('broadcast');
+          setStaffTab('chat');
+        }}
       />
     ) : (
       <p className="tr-card-text pt-10 text-center text-[var(--tr-ink-3)]">오늘은 배정된 예약이 없어요.</p>
@@ -1118,6 +1150,8 @@ export default function GuideConsole() {
       }}
       refreshing={refreshing}
       chatBadge={replyCount}
+      tab={staffTab}
+      onTabChange={setStaffTab}
       chat={chatTab}
       seats={seatsTab}
       ops={opsTab}

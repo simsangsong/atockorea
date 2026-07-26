@@ -75,6 +75,8 @@ export default function StaffShell({
   chatBadge = 0,
   seatsBadge = 0,
   initialTab = 'chat',
+  tab: controlledTab,
+  onTabChange,
   overlay,
 }: {
   title: string;
@@ -92,6 +94,9 @@ export default function StaffShell({
   /** Attention count on the 좌석·명단 tab (e.g. unseated parties). */
   seatsBadge?: number;
   initialTab?: StaffTabKey;
+  /** Controlled mode — the console can jump tabs (seat sheet → 대화 compose). */
+  tab?: StaffTabKey;
+  onTabChange?: (tab: StaffTabKey) => void;
   /**
    * Sheets/modals. MUST render inside this themed root — a Sheet mounted as a
    * sibling of the shell sits outside `.tr-root` and renders transparent (a
@@ -99,7 +104,12 @@ export default function StaffShell({
    */
   overlay?: ReactNode;
 }) {
-  const [tab, setTab] = useState<StaffTabKey>(initialTab);
+  const [internalTab, setInternalTab] = useState<StaffTabKey>(initialTab);
+  const tab = controlledTab ?? internalTab;
+  const selectTab = (next: StaffTabKey) => {
+    onTabChange?.(next);
+    if (controlledTab === undefined) setInternalTab(next);
+  };
   const { settings: deviceSettings, update: updateSettings } = useTourRoomSettings();
   const systemDark = useMediaQuery('(prefers-color-scheme: dark)');
   const theme =
@@ -218,7 +228,7 @@ export default function StaffShell({
                     type="button"
                     role="tab"
                     aria-selected={active}
-                    onClick={() => setTab(key)}
+                    onClick={() => selectTab(key)}
                     data-testid={`staff-tab-btn-${key}`}
                     className={`tr-press relative flex min-h-[44px] flex-1 flex-col items-center justify-center gap-0.5 pb-1 pt-1.5 ${
                       active ? 'text-[var(--tr-safe)]' : 'text-[var(--tr-ink-3)]'
