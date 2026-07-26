@@ -100,3 +100,57 @@ it('unlinks the registered vehicle once the plate is edited to a different one',
   await waitFor(() => expect(postBody().plate_number).toBe('99하 1111'));
   expect(postBody().master_vehicle_id).toBeNull();
 });
+
+/**
+ * 기사 링크의 2차 인증은 번호판 뒤 4자리다. 번호판이 없으면 그 게이트는
+ * 열려 있고(fail-open), 관제는 그 사실을 볼 방법이 없었다. 렌트 운영에서
+ * 번호판은 당일에야 나오므로 "아직 안 켜졌다"는 정상 상태이기도 하다 —
+ * 그래서 경고가 아니라 상태 표시이고, 번호판이 적히면 사라져야 한다.
+ */
+async function renderWithDispatch(vehicles: unknown[]) {
+  global.fetch = jest.fn(async () => ({
+    ok: true,
+    status: 200,
+    json: async () => ({
+      room: { id: 'room-1', booking_id: 'bk-1', tour_id: 't1', tour_date: '2026-08-17' },
+      capacity: null,
+      vehicles,
+      master_vehicles: [],
+      layouts: LAYOUTS,
+      drivers: [],
+    }),
+  })) as unknown as typeof fetch;
+  render(<OpsRoomVehiclePanel roomId="room-1" />);
+  // 배차가 이미 있으면 헤더가 '차량 배정' 버튼이 아니라 배차 행이다.
+  await waitFor(() => expect(screen.getByTestId('vehicle-type-select')).toBeInTheDocument());
+}
+
+const dispatchRow = (plate: string | null) => ({
+  id: 'rv-1',
+  layout_id: 'lay-1',
+  model: 'county_20',
+  display_name: { ko: '카운티 20인승' },
+  plate_number: plate,
+  master_vehicle_id: null,
+  master_plate: null,
+  master_active: null,
+  driver_participant_id: null,
+  driver_name: null,
+  photo_url: null,
+  has_override: false,
+  override_note: null,
+  total_seats: 20,
+  capacity: 20,
+  assignments: [],
+});
+
+it('배차에 번호판이 없으면 기사 PIN 이 꺼져 있다고 알린다', async () => {
+  await renderWithDispatch([dispatchRow(null)]);
+  expect(await screen.findByTestId('vehicle-pin-open')).toBeInTheDocument();
+});
+
+it('번호판이 적히면 그 표시는 사라진다', async () => {
+  await renderWithDispatch([dispatchRow('12가 3456')]);
+  await waitFor(() => expect(screen.getByText(/12가 3456/)).toBeInTheDocument());
+  expect(screen.queryByTestId('vehicle-pin-open')).not.toBeInTheDocument();
+});

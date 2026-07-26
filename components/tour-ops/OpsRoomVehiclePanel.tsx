@@ -681,6 +681,20 @@ function VehicleCard({
           {layoutLabel(vehicle)}
           {vehicle.plate_number ? <span className="ml-1.5 font-normal">{vehicle.plate_number}</span> : null}
         </p>
+        {/* 기사 링크의 2차 인증은 번호판 뒤 4자리다. 번호판이 비어 있으면 그
+            게이트는 열려 있고(fail-open — 관제가 칸을 안 채웠다고 투어를 못
+            들어가게 만들 수는 없다), 관제는 그 사실을 볼 방법이 없었다.
+            렌트 운영이라 번호판은 당일에야 나오므로 "아직 안 켜졌다"가
+            정상 상태이기도 하다 — 그래서 경고가 아니라 상태 표시다. */}
+        {!vehicle.plate_number && (
+          <span
+            title="번호판을 적으면 기사 링크에 뒤 4자리 PIN이 걸립니다. 지금은 링크만으로 입장됩니다."
+            className="text-cjk-safe shrink-0 rounded bg-[var(--tr-surface-2)] px-1.5 py-0.5 text-[10px] font-semibold text-[var(--tr-ink-3)]"
+            data-testid="vehicle-pin-open"
+          >
+            PIN 미설정
+          </span>
+        )}
         {vehicle.has_override && (
           <span className="shrink-0 rounded bg-amber-100 px-1.5 py-0.5 text-[10px] font-semibold text-amber-700 dark:bg-amber-500/15 dark:text-amber-200">
             오버라이드
