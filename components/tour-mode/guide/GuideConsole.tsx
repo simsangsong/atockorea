@@ -44,8 +44,10 @@ import MicPrime from '@/components/tour-mode/MicPrime';
 import Sheet from '@/components/tour-mode/Sheet';
 import StaffShell, { type StaffTabKey } from '@/components/tour-mode/staff/StaffShell';
 import StaffSettings from '@/components/tour-mode/staff/StaffSettings';
+import GuideAnnouncePanel from '@/components/tour-mode/staff/GuideAnnouncePanel';
 import { PreDepartureChecklist } from '@/components/tour-mode/driver/DriverConsole';
 import { useTourManifest } from '@/hooks/useTourManifest';
+import { useResolvedTourTheme } from '@/hooks/useResolvedTourTheme';
 import Cockpit, { type CockpitLifecycle, type CockpitRoom } from '@/components/tour-mode/cockpit/Cockpit';
 import { kstToday } from '@/lib/tour-room/time';
 import { OPERATOR_PRESETS } from '@/lib/tour-room/operatorPresets';
@@ -214,6 +216,11 @@ export default function GuideConsole() {
   const [daySeg, setDaySeg] = useState<'broadcast' | 'meeting' | 'free'>('broadcast');
   // W2 — the shell tab is controlled here so seat actions can jump tabs.
   const [staffTab, setStaffTab] = useState<StaffTabKey>('chat');
+  // 손님 안내 보내기 (wa.me/mailto 원버튼) — 사용자 요청 2026-07-27.
+  const [announceOpen, setAnnounceOpen] = useState(false);
+  // 적대적 리뷰 #1 — [이 손님에게만 공지]는 컴포저가 실제로 보여야 완결이다.
+  const dayToolsRef = useRef<HTMLElement | null>(null);
+  const preShellDark = useResolvedTourTheme() === 'dark';
   const tokenRef = useRef<string | null>(null);
   // send()가 useCallback이라 target을 의존성에 넣으면 선택할 때마다 재생성된다.
   // ref로 읽으면 항상 최신값을 쓰면서 콜백은 안정적으로 유지된다.
@@ -445,6 +452,12 @@ export default function GuideConsole() {
     () => (overview ? overview.rooms.filter((room) => room.onboard_ack).length : 0),
     [overview],
   );
+  // 좌석·명단 탭 어텐션 — 배차가 있는 날에만 의미가 있다(배차 0이면 전원이
+  // "미지정"이라 뱃지가 소음이 된다). 교차표면 감사 #6.
+  const unseatedCount = useMemo(() => {
+    if (!manifest || manifest.vehicles.length === 0 || !overview) return 0;
+    return overview.rooms.filter((room) => !seatByBooking.has(room.booking_id)).length;
+  }, [manifest, overview, seatByBooking]);
   const roomLabel = useMemo(() => {
     const map = new Map<string, { name: string; hue: number; bookingId: string }>();
     for (const room of overview?.rooms ?? []) {
@@ -454,22 +467,17 @@ export default function GuideConsole() {
     return map;
   }, [overview]);
 
-  if (!token) {
-    return (
+  // 프리셸(토큰 없음/로딩/에러)도 저장된 테마를 존중한다 — 래퍼 없이는 다크
+  // 사용자가 셸 뜨기 전 라이트 플래시를 본다 (교차표면 감사 #6).
+  const preShell = (message: string) => (
+    <div className={preShellDark ? 'dark' : ''}>
       <div className="tr-root tr-plan-root flex min-h-dvh items-center justify-center bg-[var(--tr-canvas)] px-6 text-center">
-        <p className="tr-card-text text-[var(--tr-ink-2)]">가이드 링크(이메일의 버튼)로 접속해 주세요.</p>
+        <p className="tr-card-text text-[var(--tr-ink-2)]">{message}</p>
       </div>
-    );
-  }
-  if (!overview) {
-    return (
-      <div className="tr-root tr-plan-root flex min-h-dvh items-center justify-center bg-[var(--tr-canvas)] px-6 text-center">
-        <p className="tr-card-text text-[var(--tr-ink-2)]">
-          {error ? '접근할 수 없어요 — 링크를 다시 확인해 주세요.' : '불러오는 중…'}
-        </p>
-      </div>
-    );
-  }
+    </div>
+  );
+  if (!token) return preShell('가이드 링크(이메일의 버튼)로 접속해 주세요.');
+  if (!overview) return preShell(error ? '접근할 수 없어요 — 링크를 다시 확인해 주세요.' : '불러오는 중…');
 
   // Drive mode: a full-screen dark cockpit for one room; ◀ returns to dispatch.
   if (drive) {
@@ -542,6 +550,27 @@ export default function GuideConsole() {
           {driveError}
         </p>
       )}
+
+      {/* 손님 안내 보내기 — 전날/당일 wa.me·메일 프리필 원버튼 (관제 M4의 가이드 입구) */}
+      <button
+        type="button"
+        onClick={() => setAnnounceOpen(true)}
+        className="tr-card mt-3 flex min-h-[52px] w-full items-center gap-3 border border-[var(--tr-hairline)] px-3.5 text-left active:scale-[0.995]"
+        data-testid="open-announce"
+      >
+        <span className="tr-chip tr-chip--accent flex h-9 w-9 shrink-0 items-center justify-center !rounded-[13px]">
+          <IconMeeting size={TR_ICON.chip} aria-hidden />
+        </span>
+        <span className="min-w-0 flex-1">
+          <span className="tr-card-text text-cjk-safe block font-semibold text-[var(--tr-ink)]">
+            손님 안내 보내기
+          </span>
+          <span className="tr-meta block text-[var(--tr-ink-3)]">
+            왓츠앱·메일 문구가 채워진 채 열려요 — {overview.tour_date}
+          </span>
+        </span>
+        <IconScrollDown size={TR_ICON.chip} className="shrink-0 -rotate-90 text-[var(--tr-ink-3)]" aria-hidden />
+      </button>
 
       {/* 손님 (rooms) — the guide's core surface */}
       <section className="mt-3">
@@ -676,7 +705,7 @@ export default function GuideConsole() {
       </section>
 
       {/* 전체 안내 (day-wide tools) — collapsible, segmented (P4) */}
-      <section className="mt-6">
+      <section className="mt-6" ref={dayToolsRef}>
         <button
           type="button"
           onClick={() => setDayToolsOpen((v) => !v)}
@@ -1064,6 +1093,13 @@ export default function GuideConsole() {
           setDayToolsOpen(true);
           setDaySeg('broadcast');
           setStaffTab('chat');
+          // 셸이 탭 전환 시 scrollTop을 0으로 되돌린 뒤, 컴포저(전체 안내)로
+          // 내려간다 — 두 프레임 뒤: 탭 마운트(1) → 스크롤(2).
+          window.requestAnimationFrame(() =>
+            window.requestAnimationFrame(() =>
+              dayToolsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }),
+            ),
+          );
         }}
       />
     ) : (
@@ -1117,6 +1153,15 @@ export default function GuideConsole() {
   // transparent — 2026-07-26 field incident).
   const overlay = (
     <>
+      {announceOpen && tokenRef.current && (
+        <Sheet open onClose={() => setAnnounceOpen(false)} closeLabel="닫기" title="손님 안내 보내기">
+          <GuideAnnouncePanel
+            token={tokenRef.current}
+            tourId={overview.tour.id}
+            tourDate={overview.tour_date}
+          />
+        </Sheet>
+      )}
       {openPlanBookingId && tokenRef.current && (
         <Sheet open onClose={() => setOpenPlanBookingId(null)} closeLabel="닫기" title="일정 검토·확정">
           <GuidePlanPanel
@@ -1150,6 +1195,7 @@ export default function GuideConsole() {
       }}
       refreshing={refreshing}
       chatBadge={replyCount}
+      seatsBadge={unseatedCount}
       tab={staffTab}
       onTabChange={setStaffTab}
       chat={chatTab}

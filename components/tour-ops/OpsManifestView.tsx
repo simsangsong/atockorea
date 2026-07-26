@@ -458,7 +458,7 @@ export default function OpsManifestView({
             type="button"
             onClick={() => void sendBulkInvite()}
             disabled={emailBusy}
-            className="h-8 rounded-lg bg-[var(--tr-accent)] px-3 text-[12px] font-semibold text-white disabled:opacity-40"
+            className="h-8 rounded-lg bg-[var(--tr-accent)] px-3 text-[12px] font-semibold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
           >
             {emailBusy ? '발송 중…' : '확인 발송'}
           </button>

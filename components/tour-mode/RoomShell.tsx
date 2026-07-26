@@ -97,6 +97,22 @@ const THEME_LABEL: Record<RoomLocale, { light: string; dark: string; system: str
   zh: { light: '显示模式: 浅色', dark: '显示模式: 深色', system: '显示模式: 自动' },
 };
 
+/** 손님 노출 아이콘 버튼의 스크린리더 라벨 — ko 하드코딩 금지 (감사 #3). */
+const BACK_LABEL: Record<RoomLocale, string> = {
+  en: 'Back',
+  ko: '뒤로',
+  ja: '戻る',
+  es: 'Atrás',
+  zh: '返回',
+};
+const DRAWER_LABEL: Record<RoomLocale, string> = {
+  en: 'Menu',
+  ko: '메뉴',
+  ja: 'メニュー',
+  es: 'Menú',
+  zh: '菜单',
+};
+
 const THEME_CYCLE: Record<'light' | 'dark' | 'system', 'light' | 'dark' | 'system'> = {
   light: 'dark',
   dark: 'system',
@@ -433,7 +449,7 @@ export default function RoomShell({
             <button
               type="button"
               onClick={handleBack}
-              aria-label="뒤로"
+              aria-label={BACK_LABEL[locale]}
               className="-ml-1.5 flex h-11 w-9 shrink-0 items-center justify-center rounded-full text-[var(--tr-ink-2)] active:bg-[var(--tr-surface-2)]"
               data-testid="room-back"
             >
@@ -443,8 +459,11 @@ export default function RoomShell({
           {/* P1-2 — one tap to the app home from ANY tab. The chevron above is a
               ladder (close sheet → pop tab → only then navigate), so it is not
               a home affordance; guests reach home via their Home tab, and the
-              operator shells (which have no Home tab) need this. */}
-          {homeHref && (
+              operator shells (which have no Home tab) need this.
+              폭 예산 (적대적 리뷰 #4): backHref와 같은 곳을 가리키면 생략한다 —
+              가이드 룸 헤더는 좌석 스트립이 살아야 하고, ☰가 44px을 새로
+              가져간 만큼 중복 버튼 하나가 스트립 칩 하나 값이다. */}
+          {homeHref && homeHref !== backHref && (
             <a
               href={homeHref}
               aria-label="홈으로"
@@ -540,7 +559,7 @@ export default function RoomShell({
             <button
               type="button"
               onClick={() => setDrawerOpen(true)}
-              aria-label="메뉴"
+              aria-label={DRAWER_LABEL[locale]}
               className="-mr-1.5 flex h-11 w-9 shrink-0 items-center justify-center rounded-full text-[var(--tr-ink-2)] active:bg-[var(--tr-surface-2)]"
               data-testid="room-drawer-open"
             >

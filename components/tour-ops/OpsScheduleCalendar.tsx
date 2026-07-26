@@ -228,7 +228,7 @@ export default function OpsScheduleCalendar({
                       key={d.date}
                       className={`w-[26px] px-0 py-1.5 text-center font-semibold tabular-nums ${
                         d.isToday
-                          ? 'text-[var(--tr-accent,#2563eb)]'
+                          ? 'text-[var(--tr-accent)]'
                           : d.weekday === 0
                             ? 'text-red-500'
                             : d.weekday === 6

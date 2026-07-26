@@ -247,6 +247,17 @@ export const DRIVER_QUICK_REPLIES: readonly QuickReplyPreset[] = [
     },
   },
   {
+    key: 'return_to_vehicle',
+    emoji: '🚗',
+    text: {
+      en: 'Please return to the vehicle now.',
+      ko: '차량으로 돌아와 주세요. 곧 출발해요.',
+      ja: '車にお戻りください。まもなく出発します。',
+      es: 'Vuelvan al vehículo, por favor; salimos pronto.',
+      zh: '请回到车上，马上出发。',
+    },
+  },
+  {
     key: 'rest_stop',
     emoji: '🅿️',
     text: {
@@ -258,6 +269,17 @@ export const DRIVER_QUICK_REPLIES: readonly QuickReplyPreset[] = [
     },
   },
   {
+    key: 'fuel_stop',
+    emoji: '⛽',
+    text: {
+      en: "Quick fuel stop — we'll be moving again shortly.",
+      ko: '주유소에 잠깐 들릅니다. 곧 출발해요.',
+      ja: 'ガソリンスタンドに少し寄ります。すぐ出発します。',
+      es: 'Parada rápida para repostar; seguimos enseguida.',
+      zh: '去加油站稍作停留，马上继续出发。',
+    },
+  },
+  {
     key: 'vehicle_delay',
     emoji: '🔧',
     text: {
@@ -266,6 +288,17 @@ export const DRIVER_QUICK_REPLIES: readonly QuickReplyPreset[] = [
       ja: '車両の問題で少し遅れています。',
       es: 'Vamos con un poco de retraso por un problema del vehículo.',
       zh: '因车辆问题稍有延误。',
+    },
+  },
+  {
+    key: 'traffic_delay',
+    emoji: '🚦',
+    text: {
+      en: "Traffic is heavy — we're running a bit behind.",
+      ko: '교통 정체로 도착이 조금 늦어지고 있어요.',
+      ja: '渋滞のため到着が少し遅れています。',
+      es: 'Hay mucho tráfico; llegaremos con algo de retraso.',
+      zh: '路上堵车，到达时间稍有延后。',
     },
   },
   {
@@ -303,39 +336,6 @@ export const DRIVER_QUICK_REPLIES: readonly QuickReplyPreset[] = [
   },
   // W5 (U4-D12) — three real road situations that had no one-tap line:
   // a fuel stop, calling everyone back to the vehicle, plain traffic.
-  {
-    key: 'fuel_stop',
-    emoji: '⛽',
-    text: {
-      en: "Quick fuel stop — we'll be moving again shortly.",
-      ko: '주유소에 잠깐 들릅니다. 곧 출발해요.',
-      ja: 'ガソリンスタンドに少し寄ります。すぐ出発します。',
-      es: 'Parada rápida para repostar; seguimos enseguida.',
-      zh: '去加油站稍作停留，马上继续出发。',
-    },
-  },
-  {
-    key: 'return_to_vehicle',
-    emoji: '🚗',
-    text: {
-      en: 'Please return to the vehicle now.',
-      ko: '차량으로 돌아와 주세요. 곧 출발해요.',
-      ja: '車にお戻りください。まもなく出発します。',
-      es: 'Vuelvan al vehículo, por favor; salimos pronto.',
-      zh: '请回到车上，马上出发。',
-    },
-  },
-  {
-    key: 'traffic_delay',
-    emoji: '🚦',
-    text: {
-      en: "Traffic is heavy — we're running a bit behind.",
-      ko: '교통 정체로 도착이 조금 늦어지고 있어요.',
-      ja: '渋滞のため到着が少し遅れています。',
-      es: 'Hay mucho tráfico; llegaremos con algo de retraso.',
-      zh: '路上堵车，到达时间稍有延后。',
-    },
-  },
 ] as const;
 
 /**

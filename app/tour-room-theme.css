@@ -246,6 +246,9 @@
   --tr-accent-deep: #111315;
   --tr-accent-soft: #e4eee9;
   --tr-safe: #667985;
+  /* safe를 슬레이트로 재정의하면 워시도 짝으로 — 파인 워시 위 슬레이트 글자는
+     11px에서 AA 미달이었다 (교차표면 감사 #4). */
+  --tr-safe-soft: rgba(102, 121, 133, 0.16);
   --tr-danger: #b55252;
   --tr-danger-soft: rgba(181, 82, 82, 0.14);
   --tr-bubble-me-ink: #f4f8f6;
@@ -272,6 +275,7 @@
   --tr-accent-deep: #ffffff;
   --tr-accent-soft: rgba(143, 191, 169, 0.16);
   --tr-safe: #91a3aa;
+  --tr-safe-soft: rgba(145, 163, 170, 0.18);
   --tr-danger: #d27a7a;
   --tr-danger-soft: rgba(210, 122, 122, 0.18);
   --tr-bubble-me-ink: #10201a;

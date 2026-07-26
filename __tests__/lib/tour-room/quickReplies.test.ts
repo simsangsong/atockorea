@@ -33,19 +33,19 @@ describe('role-scoped quick replies (A6)', () => {
   });
 
   it('driver set is the owner-specified driving context', () => {
+    // W5 (U4-D12) 신규 3종은 빈도·긴급도 순서로 **삽입**된다 — 스크롤 없이
+    // 닿아야 하는 복귀 호출이 9번째에 붙어 있으면 운전 중 못 쓴다 (리뷰 #6).
     expect(DRIVER_QUICK_REPLIES.map((p) => p.key)).toEqual([
       'departing_soon',
       'arriving_soon',
+      'return_to_vehicle',
       'rest_stop',
+      'fuel_stop',
       'vehicle_delay',
+      'traffic_delay',
       'moving_to_parking',
       'seatbelt_check',
       'check_belongings',
-      // W5 (U4-D12, 2026-07-27) — three real road situations that had no
-      // one-tap line: fuel stop, everyone-back-to-the-vehicle, traffic.
-      'fuel_stop',
-      'return_to_vehicle',
-      'traffic_delay',
     ]);
     // No guest phrases in the driver strip.
     for (const key of ['need_toilet_urgent', 'where_bus', 'where_meet', 'need_restroom']) {
