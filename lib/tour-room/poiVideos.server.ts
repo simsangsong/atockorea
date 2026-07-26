@@ -26,6 +26,7 @@ interface VideoRow {
   version?: number;
   video_url?: string;
   poster_url?: string | null;
+  subtitle_url?: string | null;
   duration_seconds?: number | string | null;
 }
 
@@ -42,25 +43,32 @@ export async function fetchArrivalVideoCard(
   try {
     const { data } = await supabase
       .from('poi_videos')
-      .select('language, version, video_url, poster_url, duration_seconds')
+      .select('language, version, video_url, poster_url, subtitle_url, duration_seconds')
       .eq('poi_key', poiKey)
       .eq('status', 'approved')
       .order('version', { ascending: false });
     if (!Array.isArray(data) || data.length === 0) return null;
 
     const urls: ArrivalVideoCardMeta['urls'] = {};
+    const subtitles: NonNullable<ArrivalVideoCardMeta['subtitles']> = {};
     let poster: string | null = null;
     let duration: number | null = null;
     for (const row of data as VideoRow[]) {
       const locale = row.language ? VIDEO_LANGUAGE_TO_ROOM_LOCALE[row.language] : undefined;
       if (!locale || !row.video_url || urls[locale]) continue; // rows are newest-first per language
       urls[locale] = row.video_url;
+      if (row.subtitle_url) subtitles[locale] = row.subtitle_url;
       if (!poster && row.poster_url) poster = row.poster_url;
       const seconds = typeof row.duration_seconds === 'string' ? Number(row.duration_seconds) : row.duration_seconds;
       if (duration === null && typeof seconds === 'number' && Number.isFinite(seconds)) duration = seconds;
     }
     if (Object.keys(urls).length === 0) return null;
-    return { poster_url: poster, duration_seconds: duration, urls };
+    return {
+      poster_url: poster,
+      duration_seconds: duration,
+      urls,
+      ...(Object.keys(subtitles).length > 0 ? { subtitles } : {}),
+    };
   } catch {
     return null;
   }

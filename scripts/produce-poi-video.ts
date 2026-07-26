@@ -30,6 +30,7 @@ interface CliOptions {
   tts: TtsMode;
   script: ScriptMode;
   burnSubtitles: boolean;
+  subtitleOverlay: boolean;
   filesOnly: boolean;
 }
 
@@ -37,8 +38,11 @@ function usage(): never {
   throw new Error(
     [
       'Usage: npm run video:produce -- --poi=<poi_key> [--tour=<tour_slug>] [--languages=en,zh-Hant,ja,es]',
-      '                              [--tts=openai|silent] [--script=template|llm] [--no-burn-subs] [--files-only]',
-      'Example: npm run video:produce -- --poi=jagalchi_market --tts=openai --script=llm',
+      '                              [--tts=openai|silent] [--script=template|llm] [--no-burn-subs]',
+      '                              [--subs=overlay] [--files-only]',
+      '  --subs=overlay  one language-neutral silent MP4 + per-locale VTT files',
+      '                  (player overlays the viewer locale; no TTS cost, no burn-in)',
+      'Example: npm run video:produce -- --poi=jagalchi_market --subs=overlay --script=llm',
     ].join('\n'),
   );
 }
@@ -50,6 +54,7 @@ function parseArgs(argv: string[]): CliOptions {
     tts: 'silent',
     script: 'template',
     burnSubtitles: true,
+    subtitleOverlay: false,
     filesOnly: false,
   };
   for (const arg of argv) {
@@ -81,6 +86,10 @@ function parseArgs(argv: string[]): CliOptions {
       opts.script = mode;
     } else if (arg === '--no-burn-subs') {
       opts.burnSubtitles = false;
+    } else if (arg.startsWith('--subs=')) {
+      const mode = arg.slice('--subs='.length).trim();
+      if (mode !== 'overlay' && mode !== 'burn') usage();
+      opts.subtitleOverlay = mode === 'overlay';
     } else if (arg === '--files-only') {
       opts.filesOnly = true;
     } else {
@@ -111,7 +120,8 @@ async function main(): Promise<void> {
     languages: options.languages,
     tts: options.tts,
     script: options.script,
-    burnSubtitles: options.burnSubtitles,
+    burnSubtitles: options.subtitleOverlay ? false : options.burnSubtitles,
+    subtitleOverlay: options.subtitleOverlay,
     supabase,
   });
 

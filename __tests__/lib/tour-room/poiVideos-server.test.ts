@@ -59,6 +59,31 @@ describe('fetchArrivalVideoCard — approval gate', () => {
     });
   });
 
+  it('folds subtitle_url per locale for overlay renders and omits the key for legacy rows', async () => {
+    const client = fakeClient([
+      {
+        language: 'en',
+        version: 2,
+        video_url: 'https://cdn/neutral-v2.mp4',
+        subtitle_url: 'https://cdn/en-v2.vtt',
+      },
+      {
+        language: 'ja',
+        version: 2,
+        video_url: 'https://cdn/neutral-v2.mp4',
+        subtitle_url: 'https://cdn/ja-v2.vtt',
+      },
+    ]);
+    const card = await fetchArrivalVideoCard(client, 'seongsan_ilchulbong');
+    expect(card?.subtitles).toEqual({ en: 'https://cdn/en-v2.vtt', ja: 'https://cdn/ja-v2.vtt' });
+
+    // Legacy burned-in rows (subtitle_url null) → no subtitles key at all.
+    const legacy = fakeClient([{ language: 'en', version: 1, video_url: 'https://cdn/en-v1.mp4', subtitle_url: null }]);
+    const legacyCard = await fetchArrivalVideoCard(legacy, 'x');
+    expect(legacyCard).not.toBeNull();
+    expect(legacyCard && 'subtitles' in legacyCard).toBe(false);
+  });
+
   it('keeps only the newest version per language (rows arrive newest-first)', async () => {
     const client = fakeClient([
       { language: 'en', version: 3, video_url: 'https://cdn/en-v3.mp4' },

@@ -68,6 +68,8 @@ export interface BatchOptions {
   languages: VideoLanguageCode[];
   tts: 'openai' | 'silent';
   script: 'template' | 'llm';
+  /** `--subs=overlay` — one neutral silent MP4 + per-locale VTT (no burn-in). */
+  subtitleOverlay: boolean;
   version: number;
   /** File the produced runs into the review queue as pending_review. */
   upload: boolean;
@@ -86,6 +88,7 @@ export function parseBatchArgs(argv: string[]): BatchOptions {
     languages: [...DEFAULT_VIDEO_LANGUAGE_CODES],
     tts: 'silent',
     script: 'template',
+    subtitleOverlay: false,
     version: 1,
     upload: false,
     allowWarnings: false,
@@ -135,6 +138,10 @@ export function parseBatchArgs(argv: string[]): BatchOptions {
       const mode = arg.slice('--script='.length).trim();
       if (mode !== 'template' && mode !== 'llm') throw new Error(`Invalid --script: ${arg}`);
       options.script = mode;
+    } else if (arg.startsWith('--subs=')) {
+      const mode = arg.slice('--subs='.length).trim();
+      if (mode !== 'overlay' && mode !== 'burn') throw new Error(`Invalid --subs: ${arg}`);
+      options.subtitleOverlay = mode === 'overlay';
     } else if (arg.startsWith('--version=')) {
       const version = Number(arg.slice('--version='.length));
       if (!Number.isFinite(version) || version <= 0) throw new Error(`Invalid --version: ${arg}`);

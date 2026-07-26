@@ -23,6 +23,7 @@ interface VideoRow {
   version: number;
   video_url: string;
   poster_url: string | null;
+  subtitle_url: string | null;
   duration_seconds: number | null;
   status: VideoStatus;
   qc: { checks?: Array<{ name: string; status: string; detail: string }> } | null;
@@ -166,8 +167,15 @@ export default function PoiVideosPage() {
                       controls
                       playsInline
                       preload="none"
+                      crossOrigin={row.subtitle_url ? 'anonymous' : undefined}
                       className="aspect-[9/16] w-full bg-black object-contain"
-                    />
+                    >
+                      {/* Overlay renders: the narration IS the subtitle — the
+                          reviewer must see it to review it. */}
+                      {row.subtitle_url ? (
+                        <track kind="subtitles" src={row.subtitle_url} srcLang={row.language} default />
+                      ) : null}
+                    </video>
                     <div className="flex flex-col gap-2 p-3">
                       <div className="flex items-center justify-between">
                         <span className="text-sm font-bold text-stone-900">{row.language}</span>

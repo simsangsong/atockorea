@@ -30,7 +30,12 @@ import { buildRenderArgs, SUBTITLE_FONT_BY_LANGUAGE } from '@/lib/video-automati
 import { planSceneImages } from '@/lib/video-automation/produce/ingest';
 import { computeProductionTimeline } from '@/lib/video-automation/produce/timeline';
 import { cuesForScene, cuesToSrt, cuesToVtt } from '@/lib/video-automation/produce/subtitleCues';
-import { synthesizeSceneNarration, type TtsMode } from '@/lib/video-automation/produce/tts';
+import {
+  estimateSpeechSeconds,
+  silentWavBuffer,
+  synthesizeSceneNarration,
+  type TtsMode,
+} from '@/lib/video-automation/produce/tts';
 import type { VideoPoiSource, VideoScript } from '@/lib/video-automation/types';
 
 export type ScriptMode = 'template' | 'llm';
@@ -64,6 +69,13 @@ export interface ProduceOptions {
   languages: VideoLanguageCode[];
   tts: TtsMode;
   burnSubtitles: boolean;
+  /**
+   * Subtitle-overlay mode: render ONE language-neutral silent MP4 on a shared
+   * timeline (per scene, the max estimated reading time across languages) and
+   * emit per-locale VTT files for the player to overlay with <track>. Implies
+   * no burn-in and no TTS spend; adding a locale later is one VTT, no re-render.
+   */
+  subtitleOverlay?: boolean;
   script: ScriptMode;
   /** Optional — enables the match_pois / generated_spot_content source legs. */
   supabase?: VideoSourceDbClient | null;
@@ -157,7 +169,7 @@ function imageUriToRelativePath(uri: string): string {
 export function runDirFor(
   base: string,
   source: Pick<VideoPoiSource, 'poiId'>,
-  options: Pick<ProduceOptions, 'version' | 'languages' | 'tts' | 'script'>,
+  options: Pick<ProduceOptions, 'version' | 'languages' | 'tts' | 'script' | 'subtitleOverlay'>,
 ): string {
   const key = createHash('sha1')
     .update(
@@ -167,6 +179,8 @@ export function runDirFor(
         languages: options.languages,
         tts: options.tts,
         script: options.script,
+        // Only stamped in overlay mode so pre-existing run dirs keep their hash.
+        ...(options.subtitleOverlay ? { mode: 'neutral-overlay' } : {}),
       }),
     )
     .digest('hex')
@@ -218,19 +232,25 @@ export async function producePoiVideo(options: ProduceOptions): Promise<ProduceR
   const groundingLog: Array<Record<string, unknown>> = [];
   let ttsChars = 0;
 
+  // Stage 2 — scripts for every language up front (shared by both render
+  // modes; overlay mode needs all of them before it can size the timeline).
+  // Grounded assembly runs in both script modes; the LLM only supplies a
+  // draft that the claim filter then has to accept.
+  const prepared: Array<{
+    language: VideoLanguageCode;
+    suffix: string;
+    script: VideoScript;
+    grounded: ReturnType<typeof assembleGroundedScript>;
+  }> = [];
   for (const language of options.languages) {
     const profile = videoLanguageProfile(language);
     const suffix = profile.subtitleFileSuffix;
-
-    // Stage 2 — script. Grounded assembly runs in both modes; the LLM only
-    // supplies a draft that the claim filter then has to accept.
     const generation =
       options.script === 'llm' ? await generatePoiNarration(source, language) : null;
     if (generation?.error) {
       coverageWarnings.push(`${language}: narration draft unavailable (${generation.error}); template narration used.`);
     }
     const grounded = assembleGroundedScript(source, language, generation?.draft ?? null);
-    const script = grounded.script;
 
     const content = source.localized[language];
     if (!content || content.sourceLocale !== profile.sourceLocale) {
@@ -247,7 +267,115 @@ export async function producePoiVideo(options: ProduceOptions): Promise<ProduceR
       removedClaims: grounded.removedClaims,
       emptyScenes: grounded.emptyScenes,
     });
+    prepared.push({ language, suffix, script: grounded.script, grounded });
+  }
 
+  if (options.subtitleOverlay) {
+    // ── Overlay mode: ONE neutral silent render + per-locale soft subs ──────
+    // Shared timeline: per scene, the longest estimated reading time across
+    // languages, so every locale's cues fit inside their scene window.
+    const sceneCount = Math.max(...prepared.map((entry) => entry.script.scenes.length));
+    const canonicalSeconds = Array.from({ length: sceneCount }, (_, index) =>
+      Math.max(
+        ...prepared.map((entry) =>
+          estimateSpeechSeconds(entry.script.scenes[index]?.narration ?? '', entry.language),
+        ),
+      ),
+    );
+    const timeline = computeProductionTimeline({ narrationSeconds: canonicalSeconds });
+
+    // A silent audio bed sized to the canonical scenes (players and QC both
+    // expect an audio stream; there is deliberately no narration to pay for).
+    const neutralNarrations = canonicalSeconds.map((seconds, index) => {
+      const narrationPath = path.join(out, 'narration', 'neutral', `scene-${index + 1}.wav`);
+      ensureDir(path.dirname(narrationPath));
+      writeFileSync(narrationPath, silentWavBuffer(seconds));
+      return narrationPath;
+    });
+
+    // Stage 5 — per-locale cues resynced to the shared timeline.
+    for (const entry of prepared) {
+      const adaptedScript: VideoScript = {
+        ...entry.script,
+        duration: timeline.total,
+        scenes: entry.script.scenes.map((scene, index) => ({
+          ...scene,
+          start: timeline.scenes[index].subtitleStart,
+          end: timeline.scenes[index].subtitleEnd,
+        })),
+      };
+      const cues = entry.script.scenes.flatMap((scene, index) =>
+        cuesForScene(
+          scene.narration,
+          entry.language,
+          timeline.scenes[index].subtitleStart,
+          timeline.scenes[index].subtitleEnd,
+        ),
+      );
+      writeText(path.join(out, 'subtitles', `${entry.suffix}.vtt`), cuesToVtt(cues));
+      writeText(path.join(out, 'subtitles', `${entry.suffix}.srt`), cuesToSrt(cues));
+      writeJson(path.join(out, 'scripts', `${entry.suffix}.script.json`), adaptedScript);
+      writeText(path.join(out, 'narration', `${entry.suffix}.txt`), entry.script.scenes.map((s) => s.narration).join('\n'));
+    }
+
+    // Stage 6 — single neutral render, no burn-in.
+    const renderPath = path.join(out, 'renders', `${source.poiId}-neutral.mp4`);
+    ensureDir(path.dirname(renderPath));
+    const args = buildRenderArgs({
+      images: sceneImages,
+      narrations: neutralNarrations.map((narrationPath, index) => ({
+        path: toRepoRelative(root, narrationPath),
+        delayMs: timeline.scenes[index].narrationDelayMs,
+      })),
+      timeline,
+      srtPath: undefined,
+      fontName: SUBTITLE_FONT_BY_LANGUAGE.en,
+      outputPath: toRepoRelative(root, renderPath),
+    });
+    const render = spawnSync(ffmpegCommand, args, { cwd: root, stdio: 'pipe', maxBuffer: 32 * 1024 * 1024 });
+    const rendered = render.status === 0;
+    if (!rendered) {
+      writeText(`${renderPath}.error.txt`, render.stderr?.toString('utf8').slice(0, 4000) ?? 'unknown ffmpeg error');
+    }
+
+    // Stage 7 — QC on the shared render.
+    const probe = rendered ? probeRender(ffprobeCommand, renderPath) : null;
+    const durationOk =
+      probe !== null && probe.durationSeconds !== null
+        ? Math.abs(probe.durationSeconds - timeline.total) <= 1.5
+        : false;
+    const resolutionOk = probe?.width === 1080 && probe?.height === 1920;
+    checks.push({
+      name: 'render_neutral',
+      status: rendered && durationOk && resolutionOk && probe?.hasAudio ? 'passed' : 'failed',
+      detail: rendered
+        ? `duration=${probe?.durationSeconds?.toFixed(2)}s (target ${timeline.total.toFixed(2)}s), ${probe?.width}x${probe?.height}, audio=${probe?.hasAudio}`
+        : 'ffmpeg render failed; see renders/*.error.txt',
+    });
+    checks.push({
+      name: 'subtitle_overlay',
+      status: 'passed',
+      detail: `Neutral render + soft subtitles for ${prepared.map((entry) => entry.language).join(', ')}.`,
+    });
+
+    for (const entry of prepared) {
+      log(`  ${entry.language}: soft subtitles on shared render · ${entry.grounded.narrationSource} narration`);
+      languageResults.push({
+        language: entry.language,
+        renderPath: rendered ? toRepoRelative(root, renderPath) : null,
+        vttPath: toRepoRelative(root, path.join(out, 'subtitles', `${entry.suffix}.vtt`)),
+        srtPath: toRepoRelative(root, path.join(out, 'subtitles', `${entry.suffix}.srt`)),
+        totalSeconds: timeline.total,
+        narrationMode: 'silent',
+        narrationSource: entry.grounded.narrationSource,
+        narrationCached: 0,
+        narrationChars: entry.script.scenes.reduce((sum, scene) => sum + scene.narration.length, 0),
+        removedClaims: entry.grounded.removedClaims.length,
+        sceneDurations: timeline.scenes.map((scene) => scene.duration),
+      });
+    }
+  } else {
+  for (const { language, suffix, script, grounded } of prepared) {
     // Stage 3 — narration synthesis. An empty scene (everything it could have
     // said was unsupported) stays silent rather than being padded with filler.
     const narrations = [];
@@ -354,6 +482,7 @@ export async function producePoiVideo(options: ProduceOptions): Promise<ProduceR
       sceneDurations: timeline.scenes.map((scene) => scene.duration),
     });
   }
+  }
 
   // Poster from the first successful render's real frame.
   const firstRender = languageResults.find((result) => result.renderPath);
@@ -386,8 +515,12 @@ export async function producePoiVideo(options: ProduceOptions): Promise<ProduceR
   });
   checks.push({
     name: 'narration_mode',
-    status: options.tts === 'openai' ? 'passed' : 'warning',
-    detail: options.tts === 'openai' ? 'Real TTS narration.' : 'Silent placeholder narration (--tts=silent).',
+    status: options.subtitleOverlay || options.tts === 'openai' ? 'passed' : 'warning',
+    detail: options.subtitleOverlay
+      ? 'Subtitle-overlay mode: intentionally silent (subtitles carry the narration).'
+      : options.tts === 'openai'
+        ? 'Real TTS narration.'
+        : 'Silent placeholder narration (--tts=silent).',
   });
   checks.push({
     name: 'scene_images',
@@ -429,7 +562,8 @@ export async function producePoiVideo(options: ProduceOptions): Promise<ProduceR
     outputDir: toRepoRelative(root, out),
     tts: options.tts,
     scriptMode: options.script,
-    burnSubtitles: options.burnSubtitles,
+    burnSubtitles: options.subtitleOverlay ? false : options.burnSubtitles,
+    renderMode: options.subtitleOverlay ? 'neutral-overlay' : 'per-language',
     targetLanguages: options.languages,
     poster: posterRelative,
     sceneImages: imagePlan.selected,
