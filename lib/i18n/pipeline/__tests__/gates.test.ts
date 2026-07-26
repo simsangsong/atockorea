@@ -187,6 +187,20 @@ describe('G3 숫자 — 값 변조 검출, 서식 변경 허용 (H2)', () => {
     expect(f.some((x) => x.severity === 'fail')).toBe(true);
   });
 
+  // 2026-07-26 실측: 이탈리아어는 연대를 낱말로 적는다.
+  it('낱말로 적은 연대는 fail이 아니라 flag', () => {
+    const f = checkNumbers('destroyed by 1950s fires', 'distrutta dagli incendi degli anni Cinquanta', '/p', 'it');
+    expect(f.every((x) => x.severity === 'flag')).toBe(true);
+    expect(
+      checkNumbers('the 1960s boom', 'der Boom der sechziger Jahre', '/p', 'de').every((x) => x.severity === 'flag'),
+    ).toBe(true);
+  });
+
+  it('연대 예외가 엉뚱한 연대를 받아주지 않는다 — 1950s → anni Ottanta', () => {
+    const f = checkNumbers('1950s fires', 'incendi degli anni Ottanta', '/p', 'it');
+    expect(f.some((x) => x.severity === 'fail')).toBe(true);
+  });
+
   it('철자 수사 예외가 진짜 변조를 덮지 않는다 — 40 → 30', () => {
     const f = checkNumbers('about 40 minutes', 'etwa 30 Minuten', '/p', 'de');
     expect(f.some((x) => x.severity === 'fail' && x.message.includes('소실'))).toBe(true);

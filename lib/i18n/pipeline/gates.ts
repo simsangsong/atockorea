@@ -249,6 +249,37 @@ function matchesAny(text: string, patterns: RegExp[] | undefined): boolean {
   return patterns !== undefined && patterns.some((re) => re.test(text));
 }
 
+/**
+ * 연대를 낱말로 적은 표기. `1950s fires` → it `incendi degli anni Cinquanta`
+ * (2026-07-26 실측). 십의 자리만 보면 되므로 표는 10~90 아홉 칸이면 충분하다.
+ */
+const DECADE_WORDS: Record<TargetLocale, Record<string, RegExp>> = {
+  de: {
+    10: /zehner/i, 20: /zwanziger/i, 30: /dreißiger/i, 40: /vierziger/i, 50: /fünfziger/i,
+    60: /sechziger/i, 70: /siebziger/i, 80: /achtziger/i, 90: /neunziger/i,
+  },
+  fr: {
+    10: /(?<!\p{L})dix(?!\p{L})/iu, 20: /vingt/i, 30: /trente/i, 40: /quarante/i, 50: /cinquante/i,
+    60: /soixante/i, 70: /soixante-dix/i, 80: /quatre-vingt/i, 90: /quatre-vingt-dix/i,
+  },
+  it: {
+    10: /dieci/i, 20: /venti/i, 30: /trenta/i, 40: /quaranta/i, 50: /cinquanta/i,
+    60: /sessanta/i, 70: /settanta/i, 80: /ottanta/i, 90: /novanta/i,
+  },
+  ru: {
+    10: /десят/i, 20: /двадцат/i, 30: /тридцат/i, 40: /сороков/i, 50: /пятидесят/i,
+    60: /шестидесят/i, 70: /семидесят/i, 80: /восьмидесят/i, 90: /девяност/i,
+  },
+};
+
+/** 소실된 숫자가 연대이고, 번역에 그 연대의 낱말 표기가 있는가. */
+function hasDecadeWord(text: string, token: string, locale: TargetLocale): boolean {
+  const m = /^(?:1[89]|20)(\d)0$/.exec(token);
+  if (m === null) return false;
+  const re = DECADE_WORDS[locale][`${m[1]}0`];
+  return re !== undefined && re.test(text);
+}
+
 /** 40 이하 정수의 로마 숫자. 세기 표기에만 쓰이므로 상한을 낮게 둔다. */
 function toRoman(value: number): string | null {
   if (!Number.isInteger(value) || value < 1 || value > 40) return null;
@@ -337,7 +368,8 @@ export function checkNumbers(
       locale &&
       (matchesAny(target, NUMERAL_WORDS[locale][n]) ||
         matchesAny(target, MONTH_NAMES[locale][n]) ||
-        hasRomanForm(target, n))
+        hasRomanForm(target, n) ||
+        hasDecadeWord(target, n, locale))
     ) spelled.push(n);
     else lost.push(n);
   }

@@ -246,6 +246,8 @@ node -e "const fs=require('fs');const d='i18n-work/out/tour_product_pages/fr';co
 
 ---
 
+| 15 | **G3 오탐 9 (it 두 번째 슬러그)** — `1950s fires` → `incendi degli anni Cinquanta` | 이탈리아어는 **연대를 낱말로 적는다**. `1950`이 사라지지만 값은 그대로 | 4언어 연대 낱말표(10~90) 추가, flag 강등. `1950s` → `anni Ottanta` 같은 진짜 오역은 계속 fail |
+
 오탐 12·13은 **프랑스어 첫 슬러그에서 바로 나왔다.** 새 로케일은 새 서식 관례를 들고 온다 —
 이탈리아어·러시아어 첫 슬러그에서도 같은 일이 생긴다고 보고, 실패가 뜨면 먼저 원문·번역을
 열어 서식 관례인지부터 확인하라.
