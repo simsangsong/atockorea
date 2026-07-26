@@ -75,6 +75,7 @@ import {
   Wallet,
   Navigation,
   Plus,
+  Paperclip,
   type LucideIcon,
 } from 'lucide-react';
 import {
@@ -176,6 +177,11 @@ export function vehicleShareKey(bookingId: string): string {
 }
 
 /** Chat font zoom (pinch) bounds + storage key. */
+/** Attachment picker filter + ceilings — same contract as the guest composer. */
+const ATTACH_ACCEPT = 'image/*,.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.csv,.hwp,.zip';
+const ATTACH_MAX_IMAGE = 8 * 1024 * 1024;
+const ATTACH_MAX_FILE = 20 * 1024 * 1024;
+
 const CHAT_ZOOM_KEY = 'tr-cockpit-chat-zoom';
 const CHAT_ZOOM_MIN = 0.85;
 const CHAT_ZOOM_MAX = 1.8;
@@ -829,6 +835,54 @@ export default function Cockpit({
       }
     },
     [bookingId, session, say],
+  );
+
+  /**
+   * General photo/file attachment.
+   *
+   * The cockpit could already send exactly one kind of picture — the vehicle
+   * photo, with its own fixed caption — and nothing else. A guide holding up a
+   * ticket, a driver photographing a changed meeting point, anyone sending a
+   * PDF voucher had no way to do it from the console the guests are watching.
+   * Same `/messages` multipart path the guest composer uses; no new schema.
+   *
+   * Deliberately NOT the guest's preview-and-caption sheet: this surface is
+   * used one-handed, often at a kerb. Pick a file and it goes, with whatever is
+   * already typed riding along as the caption — the same grammar as every other
+   * cockpit control.
+   */
+  const attachRef = useRef<HTMLInputElement | null>(null);
+  const sendAttachment = useCallback(
+    async (file: File) => {
+      const isImage = file.type.startsWith('image/');
+      if (file.size > (isImage ? ATTACH_MAX_IMAGE : ATTACH_MAX_FILE)) {
+        say(isImage ? '사진이 너무 커요 (8MB 이하)' : '파일이 너무 커요 (20MB 이하)');
+        return;
+      }
+      const caption = textDraft.trim();
+      try {
+        const form = new FormData();
+        form.append('attachment', file);
+        if (caption) form.append('text', caption);
+        const res = await fetch(`/api/tour-rooms/${bookingId}/messages`, {
+          method: 'POST',
+          headers: { 'x-tour-room-auth': session },
+          body: form,
+        });
+        if (res.ok) {
+          setTextDraft('');
+          say(isImage ? '사진 전송 ✓' : '파일 전송 ✓');
+        } else {
+          // Say what the server said. A generic "failed" hides "too big" and
+          // "unsupported type", which are the two the sender can act on.
+          const body = (await res.json().catch(() => null)) as { error?: string } | null;
+          say(body?.error ? `실패 — ${body.error}` : '실패 — 다시 시도해 주세요');
+        }
+      } catch {
+        say('네트워크 오류');
+      }
+    },
+    [bookingId, session, say, textDraft],
   );
 
   // B5 — end-of-day summary sheet: read-only aggregation of the day.
@@ -1544,6 +1598,21 @@ export default function Cockpit({
           if (file) void sendVehiclePhoto(file);
         }}
       />
+      {/* General attachment picker. No `capture` here on purpose — the vehicle
+          photo wants the camera, but a ticket or a voucher usually already
+          exists in the gallery or the files app. */}
+      <input
+        ref={attachRef}
+        type="file"
+        accept={ATTACH_ACCEPT}
+        className="hidden"
+        data-testid="cockpit-attach-input"
+        onChange={(event) => {
+          const file = event.target.files?.[0];
+          event.target.value = '';
+          if (file) void sendAttachment(file);
+        }}
+      />
 
       {toast ? (
         <div className="pointer-events-none absolute inset-x-0 top-16 z-20 flex justify-center">
@@ -1628,6 +1697,16 @@ export default function Cockpit({
                   aria-hidden
                   className={`transition-transform duration-200 ${actionsOpen ? 'rotate-45' : ''}`}
                 />
+              </button>
+              <button
+                type="button"
+                onClick={() => attachRef.current?.click()}
+                aria-label="사진·파일 첨부"
+                title="사진·파일 첨부"
+                className="tr-btn-flat shrink-0 rounded-2xl p-2.5 text-[var(--tr-ink-2)]"
+                data-testid="cockpit-attach"
+              >
+                <Paperclip size={22} strokeWidth={2.2} aria-hidden />
               </button>
               <textarea
                 value={textDraft}

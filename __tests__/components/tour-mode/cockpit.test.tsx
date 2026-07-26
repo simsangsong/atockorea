@@ -401,4 +401,75 @@ describe('shared Cockpit', () => {
     expect(screen.getByTestId('action-grid')).toBeInTheDocument();
   });
 
+  /**
+   * The roster tile is gated on `roomToken`, and the guide mount used to omit
+   * it — so a guide who tapped 운전 모드 lost the head-count the driver
+   * arriving by link could see. The gate itself is right (the manifest call
+   * needs that token); what was wrong was a caller not filling it.
+   */
+  describe('명단·좌석 tile', () => {
+    it('appears when the room token is supplied', () => {
+      render(<Cockpit {...base} roomToken="rt-token" />);
+      openActionTray();
+      expect(screen.getByTestId('action-grid-manifest')).toBeInTheDocument();
+    });
+
+    it('stays hidden without one, rather than opening a sheet that cannot load', () => {
+      render(<Cockpit {...base} />);
+      openActionTray();
+      expect(screen.queryByTestId('action-grid-manifest')).not.toBeInTheDocument();
+    });
+  });
+
+  /**
+   * Until now the cockpit could send exactly one picture — the vehicle photo,
+   * with its own fixed caption. A guide holding up a ticket had no way to send
+   * it from the console the guests are watching.
+   */
+  describe('사진·파일 첨부', () => {
+    it('posts the picked file to /messages with whatever is typed as the caption', async () => {
+      const fetchMock = jest.fn().mockResolvedValue({ ok: true, json: async () => ({}) });
+      const original = global.fetch;
+      global.fetch = fetchMock as unknown as typeof fetch;
+      try {
+        render(<Cockpit {...base} />);
+        fireEvent.change(screen.getByTestId('driver-text-input'), { target: { value: '입장권입니다' } });
+
+        const file = new File(['x'], 'ticket.pdf', { type: 'application/pdf' });
+        const input = screen.getByTestId('cockpit-attach-input') as HTMLInputElement;
+        await act(async () => {
+          fireEvent.change(input, { target: { files: [file] } });
+        });
+
+        await waitFor(() => expect(fetchMock).toHaveBeenCalled());
+        const [url, init] = fetchMock.mock.calls.at(-1) as [string, RequestInit];
+        expect(url).toBe('/api/tour-rooms/b1/messages');
+        const form = init.body as FormData;
+        expect(form.get('attachment')).toBe(file);
+        expect(form.get('text')).toBe('입장권입니다');
+        // The draft is consumed by the send, not left to be sent twice.
+        await waitFor(() => expect((screen.getByTestId('driver-text-input') as HTMLTextAreaElement).value).toBe(''));
+      } finally {
+        global.fetch = original;
+      }
+    });
+
+    it('refuses an oversized image before spending the upload', async () => {
+      const fetchMock = jest.fn().mockResolvedValue({ ok: true, json: async () => ({}) });
+      const original = global.fetch;
+      global.fetch = fetchMock as unknown as typeof fetch;
+      try {
+        render(<Cockpit {...base} />);
+        const big = new File([''], 'huge.jpg', { type: 'image/jpeg' });
+        Object.defineProperty(big, 'size', { value: 9 * 1024 * 1024 });
+        await act(async () => {
+          fireEvent.change(screen.getByTestId('cockpit-attach-input'), { target: { files: [big] } });
+        });
+        expect(fetchMock).not.toHaveBeenCalled();
+        expect(await screen.findByText(/8MB/)).toBeInTheDocument();
+      } finally {
+        global.fetch = original;
+      }
+    });
+  });
 });
