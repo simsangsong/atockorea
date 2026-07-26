@@ -59,7 +59,7 @@ import InstallBanner from '@/components/tour-mode/InstallBanner';
 import { detectEntryLocale, ENTRY_COPY } from '@/components/tour-mode/entryCopy';
 import { GUEST_CREDS_STORAGE_PREFIX } from '@/components/tour-mode/TourModeEntry';
 import { decodeTokenBody, storePersonalToken } from '@/lib/ops/seating/personalTokens';
-import { IconEmergency, IconHighlight, IconLost, IconRetry } from '@/components/tour-mode/icons';
+import { IconEmergency, IconHighlight, IconLost, IconPresence, IconRetry } from '@/components/tour-mode/icons';
 import { CONCIERGE_COPY } from '@/lib/tour-room/concierge';
 import { EMERGENCY_TITLE } from '@/lib/tour-room/emergency';
 import { ROOM_LOCALES } from '@/lib/tour-room/snapshot';
@@ -284,11 +284,28 @@ export default function TourRoomClient({ bookingId }: { bookingId: string }) {
       if (!result) return;
       cachePersonalTokenForMorningQr(token);
       scrubTokenFromUrl();
-      if (!override) {
-        const resolved = result.participant?.locale;
-        if (resolved && (ROOM_LOCALE_VALUES as readonly string[]).includes(resolved)) {
-          setLocale(resolved as RoomLocale);
-        }
+      if (override) return;
+
+      /* 🔴 Staff are not guests. Entering through the room URL, a guide or
+         driver inherited `booking.preferred_language`, so a Korean guide
+         working an English booking got an English shell wrapped around
+         staff panels that are hardcoded Korean — half the screen in each
+         language. The dedicated consoles have always joined with 'ko'
+         (GuideConsole/DriverConsole); only this entry point did not.
+         Re-joining also fixes the quieter half: until now the staff
+         participant row carried the guest's locale, so the room's
+         translation targets never included Korean and the guest's message
+         was never rendered in the language the guide actually reads. */
+      const role = result.participant?.role;
+      if (role && role !== 'customer') {
+        setLocale('ko');
+        void join({ locale: 'ko' });
+        return;
+      }
+
+      const resolved = result.participant?.locale;
+      if (resolved && (ROOM_LOCALE_VALUES as readonly string[]).includes(resolved)) {
+        setLocale(resolved as RoomLocale);
       }
     });
   }, [bookingId, join, locale]);
@@ -819,15 +836,22 @@ function TourRoomLive({
                 fallbackTitle={snapshot.booking?.tours?.title ?? undefined}
               />
             </div>
+            {/* Icon, not a text pill. The header already carries back, home,
+                theme and SOS; a spelled-out "명단·좌석" left the seat strip
+                beside it about forty pixels, so the one chip in it rendered as
+                a clipped "－" — a broken-looking glyph where a guest's name
+                should be. The label lives on aria-label and in the sheet's own
+                title, where it is not competing for width. */}
             <button
               type="button"
               onClick={() => setManifestOpen(true)}
               aria-haspopup="dialog"
               aria-label={MANIFEST_SHEET_TITLE[locale]}
+              title={MANIFEST_SHEET_TITLE[locale]}
               data-testid="open-manifest-sheet"
-              className="text-cjk-safe tr-label tr-press shrink-0 rounded-full bg-[var(--tr-bubble-system)] px-2.5 py-1 font-semibold text-[var(--tr-ink-2)]"
+              className="tr-press flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[var(--tr-bubble-system)] text-[var(--tr-ink-2)]"
             >
-              {MANIFEST_SHEET_TITLE[locale]}
+              <IconPresence size={18} aria-hidden />
             </button>
           </div>
         ) : undefined
@@ -1167,18 +1191,28 @@ function TourRoomLive({
           self-contained (token + bookingId), so the guide keeps the
           conversation underneath instead of navigating to /tour-mode/guide. */}
       {viewerRole === 'guide' && authToken && (
-        <Sheet
-          open={manifestOpen}
-          onClose={() => setManifestOpen(false)}
-          title={MANIFEST_SHEET_TITLE[locale]}
-          closeLabel={MANIFEST_CLOSE_LABEL[locale]}
-        >
-          <GuideSeatDashboard
-            token={authToken}
-            bookingId={bookingId}
-            tourTitle={snapshot.booking?.tours?.title ?? undefined}
-          />
-        </Sheet>
+        /* 🔴 The sheet is a SIBLING of RoomShell, so it renders outside the
+           `.tr-root` that defines every `--tr-*` token. Without this wrapper
+           `bg-[var(--tr-surface)]` resolves to nothing and the panel comes up
+           TRANSPARENT — the roster appeared painted straight onto the chat,
+           with the composer and tab bar showing through it. `contents` keeps
+           the wrapper out of the layout; the `dark` class is what makes the
+           `.dark .tr-root` cascade resolve. Same fix, same reason, as
+           AppManual's auto variant. */
+        <div className={`tr-root contents${theme === 'dark' ? ' dark' : ''}`}>
+          <Sheet
+            open={manifestOpen}
+            onClose={() => setManifestOpen(false)}
+            title={MANIFEST_SHEET_TITLE[locale]}
+            closeLabel={MANIFEST_CLOSE_LABEL[locale]}
+          >
+            <GuideSeatDashboard
+              token={authToken}
+              bookingId={bookingId}
+              tourTitle={snapshot.booking?.tours?.title ?? undefined}
+            />
+          </Sheet>
+        </div>
       )}
     </>
   );
