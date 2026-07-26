@@ -1,8 +1,8 @@
 # A1-coverage — 손님 앱 커버리지 원장 (A1.0)
 
 **생성일:** 2026-07-25 · **대상:** `components/tour-mode/**/*.{ts,tsx}` (테스트 제외)
-**총 75개** · 회귀: `__tests__/audit/a1Coverage.test.ts`
-**진행:** ✅ **75/75 전량 감사 완료** (A1 소관 65 + A2 운영자면 10). 산출물 `A1-1`~`A1-8` · `A2-1-2-operator-faces.md` · `A2-4-permission-matrix.md`
+**총 78개** · 회귀: `__tests__/audit/a1Coverage.test.ts`
+**진행:** ✅ **78/78 전량 감사 완료** (A1 소관 65 + A2 운영자면 10). 산출물 `A1-1`~`A1-8` · `A2-1-2-operator-faces.md` · `A2-4-permission-matrix.md`
 
 > 🔴 **이 표가 A1의 완료 판정이다.** `판정` 칸이 비어 있는 행이 하나라도 있으면 A1은 미완이다.
 > 파일이 새로 생겼는데 행이 없으면 **테스트가 실패한다** — 원장이 낡는 것을 문서 규율이 아니라
@@ -158,9 +158,20 @@ A-plan-review R6: A1은 "하나도 빠짐없이 소진"이라고 적혀 있었�
 | A1.8 | 3 |
 | A2.1 | 7 |
 | A2.2 | 3 |
-| **합계** | **75** |
+| W2/W4 | 3 |
+| **합계** | **78** |
 
-A1 소관 **65개** · A2 소관 10개(가이드·기사 면).
+A1 소관 **65개** · A2 소관 10개(가이드·기사 면) · W-트랙 신규 3개.
+
+## W-트랙 신규 (2026-07-27, 스마트앱 UI 프리미엄 업그레이드 — SoT `docs/smartapp-ui-premium-upgrade-master-plan-2026-07-26.md`)
+
+태어날 때부터 테스트를 지참한 컴포넌트 — 감사가 아니라 출생신고다.
+
+| 파일 | 티켓 | 판정 |
+|---|---|---|
+| `RoomDrawer.tsx` | W4 | ✅ 신규 — `roomDrawer.test.tsx` 5케이스(미디어 인증 헤더·숏컷·멤버·ESC) |
+| `staff/StaffShell.tsx` | W2 | ✅ 신규 — `staffShell.test.tsx` 6케이스(4탭·뱃지·테마 순환·overlay 스코프) |
+| `staff/StaffSettings.tsx` | W2/W5 | ✅ 신규 — 테마 세그·글자크기·사용설명 아코디언(스토어는 기존 `useTourRoomSettings` 검증 경유) |
 
 ## 🔴 플랜 대비 조정
 
