@@ -50,6 +50,30 @@ interface DriverOption {
   last_seen_at: string | null;
 }
 
+/**
+ * §2-1 — 등록된 차량(차량 마스터) 후보.
+ *
+ * 🔴 이름 주의: 이 id는 `ops_vehicles.id`이고, 요청 본문에서 `master_vehicle_id`로
+ * 보낸다. `vehicle_id`는 **배차 행 id**를 뜻하는 다른 값이다(PATCH의 첫 필드).
+ */
+interface MasterVehicleOption {
+  id: string;
+  plate_number: string;
+  display_plate: string;
+  nickname: string | null;
+  layout_id: string | null;
+  capacity: number | null;
+  active: boolean;
+}
+
+function masterLabel(option: MasterVehicleOption): string {
+  const bits = [option.display_plate];
+  if (option.nickname) bits.push(option.nickname);
+  if (option.capacity) bits.push(`${option.capacity}석`);
+  if (!option.active) bits.push('운행 중지');
+  return bits.join(' · ');
+}
+
 interface AssignmentBrief {
   seat_number: number;
   guest_label: string | null;
@@ -65,11 +89,17 @@ interface VehicleRow {
   model: string | null;
   display_name: Record<string, string> | null;
   plate_number: string | null;
+  /** 연결된 차량 마스터(`ops_vehicles.id`). null = 용차·대차. */
+  master_vehicle_id: string | null;
+  master_plate: string | null;
+  master_active: boolean | null;
   driver_participant_id: string | null;
   driver_name: string | null;
   has_override: boolean;
   override_note: string | null;
   total_seats: number;
+  /** 정원 판정이 보는 좌석수(마스터 실차 정원 우선). null = 미상. */
+  capacity: number | null;
   assignments: AssignmentBrief[];
 }
 
@@ -100,6 +130,7 @@ export default function OpsRoomVehiclePanel({ roomId }: { roomId: string }) {
   const [vehicles, setVehicles] = useState<VehicleRow[]>([]);
   const [capacity, setCapacity] = useState<GroupCapacity | null>(null);
   const [layouts, setLayouts] = useState<LayoutOption[]>([]);
+  const [masterVehicles, setMasterVehicles] = useState<MasterVehicleOption[]>([]);
   const [drivers, setDrivers] = useState<DriverOption[]>([]);
   const [loading, setLoading] = useState(true);
   const [busy, setBusy] = useState(false);
@@ -116,6 +147,7 @@ export default function OpsRoomVehiclePanel({ roomId }: { roomId: string }) {
       setVehicles(json.vehicles as VehicleRow[]);
       setCapacity((json.capacity as GroupCapacity | null) ?? null);
       setLayouts(json.layouts as LayoutOption[]);
+      setMasterVehicles((json.master_vehicles as MasterVehicleOption[]) ?? []);
       setDrivers(json.drivers as DriverOption[]);
     } catch (error) {
       toast.error(error instanceof Error ? error.message : '차량 정보를 불러오지 못했어요.');
@@ -342,6 +374,7 @@ export default function OpsRoomVehiclePanel({ roomId }: { roomId: string }) {
               ordinal={vehicles.length > 1 ? index + 1 : null}
               vehicle={vehicle}
               layouts={layouts}
+              masterVehicles={masterVehicles}
               drivers={drivers}
               busy={busy}
               onSave={(patch) => void patchVehicle(vehicle.id, patch)}
@@ -363,6 +396,7 @@ export default function OpsRoomVehiclePanel({ roomId }: { roomId: string }) {
           {adding ? (
             <NewVehicleForm
               layouts={layouts}
+              masterVehicles={masterVehicles}
               drivers={drivers}
               busy={busy}
               onCancel={() => setAdding(false)}
@@ -392,10 +426,88 @@ export default function OpsRoomVehiclePanel({ roomId }: { roomId: string }) {
   );
 }
 
+/**
+ * §2-1 — "등록된 차량에서 고르기 / 직접 입력".
+ *
+ * 마스터를 고르면 번호판은 마스터가 정본이라 자유 입력을 닫는다. 두 곳에서 다르게
+ * 타이핑된 번호판은 같은 차를 두 대로 만들고, 그 순간 배차 달력의 중복 감지가
+ * 다시 죽는다 — 이 항목이 고치려던 문제가 그것이다.
+ *
+ * 마스터 미등록(용차·대차)은 계속 자유 입력으로 남는다. 그 폴백은 의도된 설계다.
+ */
+function MasterVehicleField({
+  options,
+  masterId,
+  onMasterChange,
+  plate,
+  onPlateChange,
+}: {
+  options: MasterVehicleOption[];
+  masterId: string;
+  onMasterChange: (next: string, option: MasterVehicleOption | null) => void;
+  plate: string;
+  onPlateChange: (next: string) => void;
+}) {
+  const selected = options.find((option) => option.id === masterId) ?? null;
+  return (
+    <>
+      <label className="mb-2 block text-[11px] font-semibold text-[var(--tr-ink-2)]">
+        차량
+        <select
+          value={masterId}
+          data-testid="master-vehicle-select"
+          onChange={(event) => {
+            const next = event.target.value;
+            onMasterChange(next, options.find((option) => option.id === next) ?? null);
+          }}
+          className="mt-1 h-10 w-full rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 text-[13px] font-normal text-[var(--tr-ink)]"
+        >
+          <option value="">— 직접 입력 (용차·대차) —</option>
+          {options.map((option) => (
+            <option key={option.id} value={option.id}>
+              {masterLabel(option)}
+            </option>
+          ))}
+        </select>
+      </label>
+      {selected ? (
+        <p className="mb-2 text-[11px] text-[var(--tr-ink-2)]">
+          번호판 <b>{selected.display_plate}</b> — 차량 마스터가 정본이에요. 바꾸려면{' '}
+          <a href="/admin/vehicle-layouts" className="underline">
+            차량 등록
+          </a>
+          에서 고쳐 주세요.
+        </p>
+      ) : (
+        <label className="mb-2 block text-[11px] font-semibold text-[var(--tr-ink-2)]">
+          차량번호
+          <input
+            value={plate}
+            onChange={(event) => onPlateChange(event.target.value)}
+            maxLength={32}
+            placeholder="예: 12가 3456"
+            className="mt-1 h-10 w-full rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 text-[13px] font-normal text-[var(--tr-ink)]"
+          />
+        </label>
+      )}
+      {options.length === 0 && (
+        <p className="mb-2 text-[11px] text-[var(--tr-ink-3)]">
+          등록된 차량이 없어요.{' '}
+          <a href="/admin/vehicle-layouts" className="underline">
+            차량을 먼저 등록
+          </a>
+          하면 배차 달력의 차량 축과 중복 배차 감지가 켜져요.
+        </p>
+      )}
+    </>
+  );
+}
+
 function VehicleCard({
   vehicle,
   ordinal,
   layouts,
+  masterVehicles,
   drivers,
   busy,
   onSave,
@@ -405,18 +517,21 @@ function VehicleCard({
   /** §K B2.4 — 2대 이상일 때만 1호차/2호차로 부른다. 1대뿐이면 번호가 소음이다. */
   ordinal?: number | null;
   layouts: LayoutOption[];
+  masterVehicles: MasterVehicleOption[];
   drivers: DriverOption[];
   busy: boolean;
   onSave: (patch: Record<string, unknown>) => void;
   onRemove: () => void;
 }) {
   const [layoutId, setLayoutId] = useState(vehicle.layout_id);
+  const [masterId, setMasterId] = useState(vehicle.master_vehicle_id ?? '');
   const [plate, setPlate] = useState(vehicle.plate_number ?? '');
   const [driverParticipantId, setDriverParticipantId] = useState(vehicle.driver_participant_id ?? '');
   const [driverName, setDriverName] = useState(vehicle.driver_name ?? '');
 
   useEffect(() => {
     setLayoutId(vehicle.layout_id);
+    setMasterId(vehicle.master_vehicle_id ?? '');
     setPlate(vehicle.plate_number ?? '');
     setDriverParticipantId(vehicle.driver_participant_id ?? '');
     setDriverName(vehicle.driver_name ?? '');
@@ -424,6 +539,7 @@ function VehicleCard({
 
   const dirty =
     layoutId !== vehicle.layout_id ||
+    masterId !== (vehicle.master_vehicle_id ?? '') ||
     plate !== (vehicle.plate_number ?? '') ||
     driverParticipantId !== (vehicle.driver_participant_id ?? '') ||
     driverName !== (vehicle.driver_name ?? '');
@@ -465,8 +581,21 @@ function VehicleCard({
       </div>
 
       <p className="mb-2 text-[11px] text-[var(--tr-ink-2)]">
-        정원 {vehicle.total_seats}석 · 배정 {seated}석 · 체크인 {checkedIn}석
+        정원 {vehicle.capacity ?? vehicle.total_seats}석 · 배정 {seated}석 · 체크인 {checkedIn}석
       </p>
+
+      <MasterVehicleField
+        options={masterVehicles}
+        masterId={masterId}
+        onMasterChange={(next, option) => {
+          setMasterId(next);
+          // 마스터의 표준 배치도를 미리 골라 준다 — 저장 전에 화면에서 보이고,
+          // 좌석이 사라지는 교체라면 기존 409 흐름이 그대로 막는다.
+          if (option?.layout_id) setLayoutId(option.layout_id);
+        }}
+        plate={plate}
+        onPlateChange={setPlate}
+      />
 
       <label className="mb-2 block text-[11px] font-semibold text-[var(--tr-ink-2)]">
         배치도
@@ -488,17 +617,6 @@ function VehicleCard({
           <AlertTriangle className="mt-0.5 size-3 shrink-0" />이 배치도는 아직 실차 사진 대조가 안 됐어요.
         </p>
       )}
-
-      <label className="mb-2 block text-[11px] font-semibold text-[var(--tr-ink-2)]">
-        차량번호
-        <input
-          value={plate}
-          onChange={(event) => setPlate(event.target.value)}
-          maxLength={32}
-          placeholder="예: 12가 3456"
-          className="mt-1 h-10 w-full rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 text-[13px] font-normal text-[var(--tr-ink)]"
-        />
-      </label>
 
       <label className="mb-2 block text-[11px] font-semibold text-[var(--tr-ink-2)]">
         기사 (입장한 스태프)
@@ -540,6 +658,8 @@ function VehicleCard({
           onClick={() =>
             onSave({
               layout_id: layoutId,
+              // 🔴 master_vehicle_id = 차량 마스터. PATCH의 vehicle_id(배차 행 id)와 다르다.
+              master_vehicle_id: masterId || null,
               plate_number: plate,
               driver_participant_id: driverParticipantId || null,
               driver_name: driverName,
@@ -556,18 +676,21 @@ function VehicleCard({
 
 function NewVehicleForm({
   layouts,
+  masterVehicles,
   drivers,
   busy,
   onCancel,
   onCreate,
 }: {
   layouts: LayoutOption[];
+  masterVehicles: MasterVehicleOption[];
   drivers: DriverOption[];
   busy: boolean;
   onCancel: () => void;
   onCreate: (payload: Record<string, unknown>) => void;
 }) {
   const [layoutId, setLayoutId] = useState(layouts[0]?.id ?? '');
+  const [masterId, setMasterId] = useState('');
   const [plate, setPlate] = useState('');
   const [driverParticipantId, setDriverParticipantId] = useState('');
   const [driverName, setDriverName] = useState('');
@@ -585,6 +708,16 @@ function NewVehicleForm({
           <X className="size-4" />
         </button>
       </div>
+      <MasterVehicleField
+        options={masterVehicles}
+        masterId={masterId}
+        onMasterChange={(next, option) => {
+          setMasterId(next);
+          if (option?.layout_id) setLayoutId(option.layout_id);
+        }}
+        plate={plate}
+        onPlateChange={setPlate}
+      />
       <select
         value={layoutId}
         onChange={(event) => setLayoutId(event.target.value)}
@@ -596,13 +729,6 @@ function NewVehicleForm({
           </option>
         ))}
       </select>
-      <input
-        value={plate}
-        onChange={(event) => setPlate(event.target.value)}
-        placeholder="차량번호 (예: 12가 3456)"
-        maxLength={32}
-        className="mb-2 h-10 w-full rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 text-[13px] text-[var(--tr-ink)]"
-      />
       <select
         value={driverParticipantId}
         onChange={(event) => setDriverParticipantId(event.target.value)}
@@ -628,6 +754,7 @@ function NewVehicleForm({
         onClick={() =>
           onCreate({
             layout_id: layoutId,
+            master_vehicle_id: masterId || null,
             plate_number: plate,
             driver_participant_id: driverParticipantId || null,
             driver_name: driverName,

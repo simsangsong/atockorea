@@ -71,6 +71,103 @@ export function resolveSeatCapacity(
   return null;
 }
 
+/* ===========================================================================
+ * 배차 인스턴스 ↔ 차량 마스터 연결 (관제 후속 §2-1)
+ *
+ * 🔴 이름 충돌 경고. 두 개의 `vehicle_id`가 존재한다:
+ *   · 배차 라우트의 요청 파라미터 `vehicle_id` = `ops_room_vehicles.id` (배차 행)
+ *   · 컬럼 `ops_room_vehicles.vehicle_id`      = `ops_vehicles.id`      (마스터)
+ * 그래서 마스터 참조는 요청 본문에서 **`master_vehicle_id`**라는 다른 이름을 쓴다.
+ * 같은 이름 두 뜻을 라우트 경계에 두면 오배차가 조용히 일어난다.
+ * =========================================================================== */
+
+/** 요청 본문의 마스터 참조 키. 라우트·화면·테스트가 같은 상수를 본다. */
+export const MASTER_VEHICLE_KEY = 'master_vehicle_id';
+
+export interface DispatchVehicleInput {
+  /**
+   * 운영자가 고른 마스터 차량 행. null = 마스터 미연결(용차·대차) —
+   * 그 폴백은 의도된 설계다(마이그레이션 설계 결정 1).
+   */
+  master?: Pick<VehicleRow, 'id' | 'plate_number' | 'layout_id' | 'active'> | null;
+  /** 화면이 고른 배치도. 마스터 연결 시 비어 있으면 마스터의 배치도를 상속한다. */
+  requestedLayoutId?: string | null;
+  /** 마스터 미연결일 때의 자유 입력 번호판. */
+  requestedPlate?: string | null;
+}
+
+export type DispatchVehicleResult =
+  | { ok: true; vehicleId: string | null; layoutId: string; plateNumber: string | null }
+  | { ok: false; code: 'vehicle_inactive' | 'layout_required'; message: string };
+
+/**
+ * 배차 행에 저장할 (마스터 참조, 배치도, 표시 번호판)을 한 번에 푼다.
+ *
+ * 설계:
+ *   1. **마스터가 정본이다.** 연결되면 번호판은 마스터에서 온다 — 운영자가 룸마다
+ *      다시 타이핑하면 '12가3456'과 '12가 3456'이 두 대가 되고, 그러면 중복 배차
+ *      감지가 다시 죽는다(이 항목이 고치려던 바로 그 문제).
+ *   2. **배치도는 상속하되 덮어쓸 수 있다.** 같은 차가 좌석을 떼고 운행하는 날이
+ *      있고, 그날은 화면이 고른 배치도가 이긴다.
+ *   3. **운행 중지 차량은 거절한다.** 소프트 삭제된 차를 새로 배차하는 것은 거의
+ *      항상 실수다. 이미 붙어 있던 배차는 건드리지 않는다(그건 과거 사실이다).
+ */
+export function resolveDispatchVehicle(input: DispatchVehicleInput): DispatchVehicleResult {
+  const requestedLayoutId =
+    typeof input.requestedLayoutId === 'string' && input.requestedLayoutId.trim()
+      ? input.requestedLayoutId.trim()
+      : null;
+
+  const master = input.master ?? null;
+  if (master) {
+    if (master.active === false) {
+      return {
+        ok: false,
+        code: 'vehicle_inactive',
+        message: '운행 중지된 차량이에요. 차량 마스터에서 다시 운행 중으로 바꾼 뒤 배차해 주세요.',
+      };
+    }
+    const layoutId = requestedLayoutId ?? master.layout_id ?? null;
+    if (!layoutId) {
+      return {
+        ok: false,
+        code: 'layout_required',
+        message: '이 차량에 표준 배치도가 없어요. 배치도를 함께 골라 주세요.',
+      };
+    }
+    return {
+      ok: true,
+      vehicleId: master.id,
+      layoutId,
+      // 표시용 컬럼이므로 사람이 읽는 형태로 넣는다(정본은 마스터 행이다).
+      plateNumber: formatPlate(master.plate_number) || null,
+    };
+  }
+
+  if (!requestedLayoutId) {
+    return { ok: false, code: 'layout_required', message: '배치도를 골라 주세요.' };
+  }
+  const plate = typeof input.requestedPlate === 'string' ? input.requestedPlate.trim().slice(0, 32) : '';
+  return { ok: true, vehicleId: null, layoutId: requestedLayoutId, plateNumber: plate || null };
+}
+
+/**
+ * 요청 본문에서 `master_vehicle_id`를 읽는다.
+ *   · 키 없음        → `{ present: false }` (기존 연결을 건드리지 않는다)
+ *   · null/빈 문자열 → `{ present: true, id: null }` (연결 해제 = 용차로 되돌림)
+ */
+export function readMasterVehicleRef(
+  body: Record<string, unknown>,
+): { present: false } | { present: true; id: string | null } | { error: string } {
+  if (!(MASTER_VEHICLE_KEY in body)) return { present: false };
+  const raw = body[MASTER_VEHICLE_KEY];
+  if (raw === null || raw === '') return { present: true, id: null };
+  if (typeof raw !== 'string' || !UUID_RE.test(raw.trim())) {
+    return { error: '차량 선택 값이 올바르지 않아요.' };
+  }
+  return { present: true, id: raw.trim() };
+}
+
 export interface VehicleWriteInput {
   plateNumber?: unknown;
   layoutId?: unknown;

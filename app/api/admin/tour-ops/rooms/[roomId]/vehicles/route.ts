@@ -9,6 +9,14 @@ import { capacityVerdict } from '@/lib/ops/seating/capacity';
 import { dropSimBookings } from '@/lib/ops/sim/simScope';
 import { normalizeLayoutJson } from '@/lib/ops/seating/layoutEditor';
 import { recordRoomEvent } from '@/lib/tour-room/events';
+import {
+  formatPlate,
+  readMasterVehicleRef,
+  resolveDispatchVehicle,
+  resolveSeatCapacity,
+  VEHICLES_TENANT_ID,
+  type VehicleRow as MasterVehicleRow,
+} from '@/lib/ops/vehicles/registry';
 import type { VehicleLayoutJson } from '@/lib/ops/seating/layouts';
 
 export const dynamic = 'force-dynamic';
@@ -22,11 +30,18 @@ export const dynamic = 'force-dynamic';
  * 작업에 매달려 있었다. 이 라우트가 그 구멍이다.
  *
  *   GET    /api/admin/tour-ops/rooms/[roomId]/vehicles
- *          배정된 차량 + 배치도 후보 + 기사 후보(룸에 입장한 driver 참가자).
- *   POST   { layout_id, plate_number?, driver_participant_id?, driver_name? }
- *   PATCH  { vehicle_id, ... , strategy?: 'block'|'keep'|'clear', confirm? }
+ *          배정된 차량 + 배치도 후보 + 기사 후보(룸에 입장한 driver 참가자)
+ *          + **등록 차량 후보**(`master_vehicles`).
+ *   POST   { layout_id?, master_vehicle_id?, plate_number?, driver_participant_id?, driver_name? }
+ *   PATCH  { vehicle_id, master_vehicle_id?, ... , strategy?: 'block'|'keep'|'clear', confirm? }
  *          { undo_event_id }                      직전 변경 되돌리기
  *   DELETE ?vehicle_id=…&confirm=1
+ *
+ * 🔴 이름 충돌 (읽지 않고 고치면 오배차가 난다):
+ *   · 요청의 `vehicle_id`        = `ops_room_vehicles.id`  (이 배차 행)
+ *   · 요청의 `master_vehicle_id` = `ops_vehicles.id`       (차량 마스터)
+ *   컬럼 이름은 `ops_room_vehicles.vehicle_id`로 마스터를 가리키지만, 요청 경계에서는
+ *   절대 그 이름을 쓰지 않는다. 순수 규칙은 `lib/ops/vehicles/registry.ts`.
  *
  * 🔴 이미 좌석이 배정된 차량의 배치도를 바꾸는 것은 **기본적으로 막힌다**
  * (strategy 'block' = 기본값 → 409 + 영향받는 좌석·손님 목록). 운영자는
@@ -62,6 +77,40 @@ async function loadAssignmentsFor(
     .select(ASSIGNMENT_COLUMNS)
     .eq('room_vehicle_id', roomVehicleId);
   return ((data ?? []) as AssignmentRow[]).sort((a, b) => a.seat_number - b.seat_number);
+}
+
+/** 배차 화면이 고를 수 있는 등록 차량 한 대. */
+interface MasterVehicleOption {
+  id: string;
+  plate_number: string;
+  /** 사람이 읽는 번호판 ('12가 3456'). */
+  display_plate: string;
+  nickname: string | null;
+  layout_id: string | null;
+  /** 실효 정원 (seat_capacity ?? 배치도 total_seats). null = 미상. */
+  capacity: number | null;
+  active: boolean;
+}
+
+type MasterVehicleFields = Pick<MasterVehicleRow, 'id' | 'plate_number' | 'layout_id' | 'active' | 'seat_capacity'>;
+
+const MASTER_COLUMNS = 'id, plate_number, layout_id, active, seat_capacity';
+
+/**
+ * 등록 차량 한 대. 마스터 테이블이 없는 환경(마이그레이션 미적용)에서는 null이고,
+ * 그때 라우트는 "차량을 찾지 못했다"로 답한다 — 배차 자체는 계속 된다(용차 경로).
+ */
+async function loadMasterVehicle(
+  supabase: ReturnType<typeof createServerClient>,
+  id: string,
+): Promise<MasterVehicleFields | null> {
+  const { data } = await supabase
+    .from('ops_vehicles')
+    .select(MASTER_COLUMNS)
+    .eq('id', id)
+    .eq('tenant_id', VEHICLES_TENANT_ID)
+    .maybeSingle();
+  return (data as MasterVehicleFields | null) ?? null;
 }
 
 /** 배치도의 좌석번호 집합 (오버라이드가 있으면 그쪽이 진실). */
@@ -200,23 +249,58 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ room
       .eq('room_id', roomId)
       .in('role', ['driver', 'guide']);
 
+    // §2-1 — 등록 차량 후보. 마스터 테이블이 없으면 빈 목록이고, 화면은 자유 입력
+    // 번호판(용차 경로)만 보여준다.
+    const { data: masterRows } = await supabase
+      .from('ops_vehicles')
+      .select(MASTER_COLUMNS)
+      .eq('tenant_id', VEHICLES_TENANT_ID)
+      .order('active', { ascending: false })
+      .order('plate_number', { ascending: true })
+      .limit(500);
+    const masterList = (masterRows ?? []) as unknown as Array<MasterVehicleFields & { nickname?: string | null }>;
+    const masterById = new Map(masterList.map((row) => [row.id, row]));
+    const layoutSeatsOf = (layoutId: string | null | undefined): number | null => {
+      if (!layoutId) return null;
+      const layout = layoutById.get(layoutId);
+      return layout ? Number(layout.total_seats ?? 0) || null : null;
+    };
+    const masterVehicles: MasterVehicleOption[] = masterList.map((row) => ({
+      id: row.id,
+      plate_number: row.plate_number,
+      display_plate: formatPlate(row.plate_number),
+      nickname: row.nickname ?? null,
+      layout_id: row.layout_id,
+      capacity: resolveSeatCapacity(row, layoutSeatsOf(row.layout_id)),
+      active: row.active,
+    }));
+
     const vehicles = await Promise.all(
       rows.map(async (vehicle) => {
         const base = layoutById.get(vehicle.layout_id);
         const effective =
           vehicle.layout_override_json ?? ((base?.layout_json as VehicleLayoutJson | undefined) ?? null);
         const assignments = await loadAssignmentsFor(supabase, vehicle.id);
+        const layoutSeats = effective ? effective.seats.length : Number(base?.total_seats ?? 0);
+        const master = vehicle.vehicle_id ? masterById.get(vehicle.vehicle_id) ?? null : null;
         return {
           id: vehicle.id,
           layout_id: vehicle.layout_id,
           model: base ? String(base.model) : null,
           display_name: (base?.display_name as Record<string, string> | undefined) ?? null,
           plate_number: vehicle.plate_number,
+          // 🔴 요청의 `vehicle_id`(=이 행의 id)와 헷갈리지 않도록 응답에서도 이름을 나눈다.
+          master_vehicle_id: vehicle.vehicle_id,
+          master_plate: master ? formatPlate(master.plate_number) : null,
+          master_active: master ? master.active : null,
           driver_participant_id: vehicle.driver_participant_id,
           driver_name: vehicle.driver_name,
           has_override: Boolean(vehicle.layout_override_json),
           override_note: vehicle.override_note,
-          total_seats: effective ? effective.seats.length : Number(base?.total_seats ?? 0),
+          total_seats: layoutSeats,
+          // 정원 판정이 보는 값. 마스터에 실차 좌석수가 있으면 그것이 이긴다
+          // (개조 차량). 미상은 0이 아니라 null이다.
+          capacity: master ? resolveSeatCapacity(master, layoutSeats) : layoutSeats || null,
           assignments: assignments.map((a) => ({
             seat_number: a.seat_number,
             guest_label: a.guest_label,
@@ -230,16 +314,18 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ room
     );
 
     // §K B2.4 — 실효 정원은 배정된 차량 좌석수도 본다(B2-D4: min(상품, 좌석)).
+    // §2-1 이후 그 좌석수는 마스터의 실차 정원을 먼저 본다.
     const capacity = await groupCapacity(
       supabase,
       room,
-      vehicles.map((v) => ({ total_seats: v.total_seats })),
+      vehicles.map((v) => ({ total_seats: v.capacity ?? v.total_seats })),
     );
 
     return NextResponse.json({
       room: { id: room.id, booking_id: room.booking_id, tour_id: room.tour_id, tour_date: room.tour_date },
       capacity,
       vehicles,
+      master_vehicles: masterVehicles,
       layouts: layouts.map((layout) => ({
         id: String(layout.id),
         model: String(layout.model),
@@ -276,8 +362,24 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ roo
     const room = await getOpsRoom(supabase, roomId);
     if (!room) return NextResponse.json({ error: 'Room not found' }, { status: 404 });
 
-    const layoutId = typeof body.layout_id === 'string' ? body.layout_id : '';
-    if (!layoutId) return NextResponse.json({ error: 'layout_id is required' }, { status: 400 });
+    // §2-1 — 등록 차량을 골랐으면 마스터가 정본이다(번호판·배치도 상속).
+    const masterRef = readMasterVehicleRef(body);
+    if ('error' in masterRef) return NextResponse.json({ error: masterRef.error }, { status: 400 });
+    const masterId = masterRef.present ? masterRef.id : null;
+    const master = masterId ? await loadMasterVehicle(supabase, masterId) : null;
+    if (masterId && !master) {
+      return NextResponse.json({ error: '등록된 차량을 찾지 못했어요.' }, { status: 404 });
+    }
+
+    const resolved = resolveDispatchVehicle({
+      master,
+      requestedLayoutId: typeof body.layout_id === 'string' ? body.layout_id : null,
+      requestedPlate: typeof body.plate_number === 'string' ? body.plate_number : null,
+    });
+    if (!resolved.ok) {
+      return NextResponse.json({ error: resolved.message, code: resolved.code }, { status: 400 });
+    }
+    const layoutId = resolved.layoutId;
 
     const { data: layout } = await supabase
       .from('ops_vehicle_layouts')
@@ -297,14 +399,13 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ roo
       room_id: roomId,
       ...(group ? { group_id: group.id } : {}),
       layout_id: layoutId,
-      plate_number: typeof body.plate_number === 'string' && body.plate_number.trim()
-        ? body.plate_number.trim().slice(0, 32)
-        : null,
+      plate_number: resolved.plateNumber,
       driver_participant_id:
         typeof body.driver_participant_id === 'string' && body.driver_participant_id
           ? body.driver_participant_id
           : null,
     };
+    if (resolved.vehicleId) insert.vehicle_id = resolved.vehicleId;
     if (typeof body.driver_name === 'string') {
       insert.driver_name = body.driver_name.trim().slice(0, 60) || null;
     }
@@ -313,6 +414,11 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ roo
     if (created.error && 'driver_name' in insert) {
       // 마이그레이션 미적용 환경 — 라벨 없이라도 배차는 되게 한다.
       delete insert.driver_name;
+      created = await supabase.from('ops_room_vehicles').insert(insert).select('id').single();
+    }
+    if (created.error && 'vehicle_id' in insert) {
+      // 마스터 연결 컬럼이 없는 환경 — 번호판 텍스트만으로 배차는 성사시킨다.
+      delete insert.vehicle_id;
       created = await supabase.from('ops_room_vehicles').insert(insert).select('id').single();
     }
     if (created.error) throw created.error;
@@ -328,6 +434,7 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ roo
         layout_id: layoutId,
         model: (layout as { model?: string }).model ?? null,
         plate_number: insert.plate_number,
+        master_vehicle_id: resolved.vehicleId,
         by: admin.id,
       },
     }).catch(() => undefined);
@@ -367,7 +474,31 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ ro
       return NextResponse.json({ error: 'Vehicle not found in this room' }, { status: 404 });
     }
 
-    const nextLayoutId = typeof body.layout_id === 'string' && body.layout_id ? body.layout_id : vehicle.layout_id;
+    // §2-1 — 등록 차량 선택/해제. 키가 없으면 기존 연결을 그대로 둔다.
+    const masterRef = readMasterVehicleRef(body);
+    if ('error' in masterRef) return NextResponse.json({ error: masterRef.error }, { status: 400 });
+    const nextMasterId = masterRef.present ? masterRef.id : vehicle.vehicle_id;
+    const master = nextMasterId ? await loadMasterVehicle(supabase, nextMasterId) : null;
+    if (nextMasterId && !master) {
+      return NextResponse.json({ error: '등록된 차량을 찾지 못했어요.' }, { status: 404 });
+    }
+    // 이미 붙어 있던 연결을 유지만 하는 경우에는 운행 중지 여부를 따지지 않는다 —
+    // 과거의 배차 사실을 지금의 상태로 되돌려 거절하면 기사 이름 한 줄도 못 고친다.
+    const linkChanged = masterRef.present && masterRef.id !== vehicle.vehicle_id;
+    const masterForResolve = master ? (linkChanged ? master : { ...master, active: true }) : null;
+
+    const resolved = resolveDispatchVehicle({
+      master: masterForResolve,
+      requestedLayoutId:
+        typeof body.layout_id === 'string' && body.layout_id ? body.layout_id : vehicle.layout_id,
+      requestedPlate:
+        'plate_number' in body && typeof body.plate_number === 'string' ? body.plate_number : vehicle.plate_number,
+    });
+    if (!resolved.ok) {
+      return NextResponse.json({ error: resolved.message, code: resolved.code }, { status: 400 });
+    }
+
+    const nextLayoutId = resolved.layoutId;
     const layoutChanged = nextLayoutId !== vehicle.layout_id;
     const assignments = await loadAssignmentsFor(supabase, vehicleId);
 
@@ -426,11 +557,9 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ ro
     }
 
     const update: Record<string, unknown> = { layout_id: nextLayoutId };
-    if ('plate_number' in body) {
-      update.plate_number =
-        typeof body.plate_number === 'string' && body.plate_number.trim()
-          ? body.plate_number.trim().slice(0, 32)
-          : null;
+    // 마스터가 붙으면 번호판은 마스터에서 온다(정본 하나). 용차는 입력값 그대로.
+    if ('plate_number' in body || resolved.vehicleId !== vehicle.vehicle_id) {
+      update.plate_number = resolved.plateNumber;
     }
     if ('driver_participant_id' in body) {
       update.driver_participant_id =
@@ -445,9 +574,15 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ ro
           : null;
     }
 
+    if (masterRef.present) update.vehicle_id = resolved.vehicleId;
+
     let updated = await supabase.from('ops_room_vehicles').update(update).eq('id', vehicleId);
     if (updated.error && 'driver_name' in update) {
       delete update.driver_name;
+      updated = await supabase.from('ops_room_vehicles').update(update).eq('id', vehicleId);
+    }
+    if (updated.error && 'vehicle_id' in update) {
+      delete update.vehicle_id;
       updated = await supabase.from('ops_room_vehicles').update(update).eq('id', vehicleId);
     }
     if (updated.error) throw updated.error;

@@ -26,15 +26,26 @@ export interface RoomVehicleRow {
   driver_name: string | null;
   layout_override_json: VehicleLayoutJson | null;
   override_note: string | null;
+  /**
+   * 차량 마스터(`ops_vehicles.id`) 참조. NULL = 마스터 미등록(용차·대차)이고,
+   * 그때는 `plate_number` 텍스트가 표시 정본이다.
+   *
+   * 🔴 이름 주의: 배차 라우트의 요청 파라미터 `vehicle_id`는 **이 행의 id**
+   * (`ops_room_vehicles.id`)를 가리킨다. 마스터 참조는 요청 본문에서
+   * `master_vehicle_id`라는 다른 이름을 쓴다 — 같은 이름 두 뜻을 만들지 않는다.
+   */
+  vehicle_id: string | null;
 }
 
 const BASE_COLUMNS = 'id, room_id, layout_id, plate_number, driver_participant_id';
 const EXTENDED_COLUMNS = `${BASE_COLUMNS}, driver_name, layout_override_json, override_note`;
+const FULL_COLUMNS = `${EXTENDED_COLUMNS}, vehicle_id`;
 
 /**
- * ops_room_vehicles 조회 — 20260726090000 마이그레이션이 아직 적용되지 않은
- * 환경에서도 동작하도록 확장 컬럼 실패 시 기본 컬럼으로 물러선다.
- * (배포 순서가 마이그레이션보다 앞설 수 있다 — 그때 배차 화면 전체가 죽으면 안 된다.)
+ * ops_room_vehicles 조회 — 마이그레이션이 아직 적용되지 않은 환경에서도 동작하도록
+ * 넓은 컬럼셋부터 시도하고 실패하면 좁혀 간다
+ * (`vehicle_id` = 20260730090000, 오버라이드 3종 = 20260726090000).
+ * 배포 순서가 마이그레이션보다 앞설 수 있다 — 그때 배차 화면 전체가 죽으면 안 된다.
  */
 export async function selectRoomVehicles(
   supabase: RoomDbClient,
@@ -52,8 +63,15 @@ export async function selectRoomVehicles(
     return query;
   };
 
+  const full = await run(FULL_COLUMNS);
+  if (!full.error && Array.isArray(full.data)) {
+    return { rows: normalizeRows(full.data), migrationPending: false };
+  }
+
   const extended = await run(EXTENDED_COLUMNS);
   if (!extended.error && Array.isArray(extended.data)) {
+    // 마스터 연결 컬럼만 없는 상태 — 배차 자체는 정상이므로 pending으로 표시하지
+    // 않는다(그 배너는 오버라이드 기능 부재를 가리킨다).
     return { rows: normalizeRows(extended.data), migrationPending: false };
   }
 
@@ -77,6 +95,7 @@ function normalizeRows(rows: unknown[]): RoomVehicleRow[] {
       driver_name: (row.driver_name as string | null) ?? null,
       layout_override_json: (row.layout_override_json as VehicleLayoutJson | null) ?? null,
       override_note: (row.override_note as string | null) ?? null,
+      vehicle_id: (row.vehicle_id as string | null) ?? null,
     };
   });
 }
