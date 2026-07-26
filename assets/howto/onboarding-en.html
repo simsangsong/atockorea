@@ -184,30 +184,34 @@ const DRIVER = (x, y, s = 1) => `
     <circle cx="100" cy="72" r="5" style="fill:var(--teal)"/>
   </g>`;
 
-/* Detailed minivan (side view, facing right): glazing, mirror, lamps, hubs. */
+/* Detailed minivan (side view, facing right): proper nose/hood, raked
+   windshield, glazing, mirror, lamps, door seams, layered hubs. ~640w. */
 const VAN = (x, y, s = 1) => `
   <g transform="translate(${x} ${y}) scale(${s})">
-    ${GROUND(330, 232, 620)}
-    <path d="M14 210 v-96 a30 30 0 0 1 30 -30 h250 c30 0 44 6 62 24 l64 62 h164 a30 30 0 0 1 30 30 v10 a16 16 0 0 1 -16 16 h-24" style="fill:var(--surface)" class="pict"/>
-    <path d="M14 210 h60" class="pict"/>
-    <path d="M196 210 h230" class="pict"/>
-    <rect x="52" y="106" width="104" height="64" rx="16" style="fill:var(--glass)"/>
-    <rect x="176" y="106" width="104" height="64" rx="16" style="fill:var(--glass)"/>
-    <path d="M312 108 c8 -2 26 4 34 12 l46 44 h-80 z" style="fill:var(--glass)"/>
-    <path d="M300 96 v114" class="pict pict-thin" opacity="0.35"/>
-    <rect x="300" y="150" width="26" height="10" rx="5" style="fill:var(--ink)" opacity="0.5"/>
-    <rect x="12" y="150" width="18" height="26" rx="8" style="fill:var(--teal)"/>
-    <rect x="580" y="176" width="30" height="14" rx="7" style="fill:var(--teal)"/>
-    <g><circle cx="140" cy="212" r="46" style="fill:var(--ink-deep)"/><circle cx="140" cy="212" r="22" style="fill:var(--surface)"/><circle cx="140" cy="212" r="8" style="fill:var(--teal-deep)"/></g>
-    <g><circle cx="470" cy="212" r="46" style="fill:var(--ink-deep)"/><circle cx="470" cy="212" r="22" style="fill:var(--surface)"/><circle cx="470" cy="212" r="8" style="fill:var(--teal-deep)"/></g>
+    ${GROUND(320, 232, 640)}
+    <path d="M22 208 v-128 a30 30 0 0 1 30 -30 h240 c24 0 38 6 50 20 l58 68 l116 16 a38 38 0 0 1 33 37 v17"
+          style="fill:var(--surface)" class="pict"/>
+    <path d="M22 208 h527" class="pict"/>
+    <path d="M404 142 l104 14" class="pict pict-thin" opacity="0.4"/>
+    <rect x="58" y="78" width="98" height="60" rx="13" style="fill:var(--glass)"/>
+    <rect x="174" y="78" width="108" height="60" rx="13" style="fill:var(--glass)"/>
+    <path d="M306 78 c14 2 24 8 32 17 l40 47 h-72 z" style="fill:var(--glass)"/>
+    <path d="M170 66 v138" class="pict pict-thin" opacity="0.3"/>
+    <path d="M300 66 v140" class="pict pict-thin" opacity="0.3"/>
+    <rect x="312" y="156" width="26" height="10" rx="5" style="fill:var(--ink)" opacity="0.5"/>
+    <rect x="388" y="98" width="28" height="15" rx="7.5" style="fill:var(--ink)"/>
+    <rect x="18" y="96" width="13" height="32" rx="6.5" style="fill:var(--teal)"/>
+    <rect x="512" y="156" width="30" height="14" rx="7" style="fill:var(--teal)"/>
+    <g><circle cx="150" cy="208" r="46" style="fill:var(--ink-deep)"/><circle cx="150" cy="208" r="22" style="fill:var(--surface)"/><circle cx="150" cy="208" r="8" style="fill:var(--teal-deep)"/></g>
+    <g><circle cx="464" cy="208" r="46" style="fill:var(--ink-deep)"/><circle cx="464" cy="208" r="22" style="fill:var(--surface)"/><circle cx="464" cy="208" r="8" style="fill:var(--teal-deep)"/></g>
   </g>`;
 
 /* ── Scene 1 — title lockup ─────────────────────────────────── */
 {
   const { el, t0 } = scene(0, {
     kicker: 'AtoC Smart Guide',
-    title: 'Meet your<br/>Smart Guide',
-    sub: 'Your whole tour, live on your phone',
+    title: 'One link.<br/>Your whole day.',
+    sub: 'Opens right in your browser — nothing to install',
     art: `
     <svg viewBox="0 0 1080 980">
       <circle cx="540" cy="440" r="360" style="fill:var(--teal-soft)" opacity="0.4"/>
@@ -250,9 +254,9 @@ const VAN = (x, y, s = 1) => `
 /* ── Scene 2 — scan the QR at pickup ────────────────────────── */
 {
   const { el, t0 } = scene(1, {
-    kicker: 'Step One',
-    title: 'Scan the QR<br/>at pickup',
-    sub: 'No app install — it opens in your browser',
+    kicker: 'Getting Started',
+    title: 'Scan once —<br/>you&rsquo;re in',
+    sub: 'Your driver shows you the QR at pickup',
     art: `
     <svg viewBox="0 0 1080 980">
       <circle cx="540" cy="450" r="340" style="fill:var(--teal-soft)" opacity="0.35"/>
@@ -302,8 +306,8 @@ const VAN = (x, y, s = 1) => `
 {
   const { el, t0 } = scene(2, {
     kicker: 'Live Translation',
-    title: 'Chat in<br/>any language',
-    sub: 'Translated live — both ways',
+    title: 'Speak your language —<br/>so does your driver',
+    sub: 'Every message is translated instantly, both ways',
     art: `
     <svg viewBox="0 0 1080 980">
       <circle cx="540" cy="450" r="340" style="fill:var(--teal-soft)" opacity="0.4"/>
@@ -342,9 +346,9 @@ const VAN = (x, y, s = 1) => `
 /* ── Scene 4 — spot guides arrive automatically ─────────────── */
 {
   const { el, t0 } = scene(3, {
-    kicker: 'On Arrival',
-    title: 'Spot guides arrive<br/>automatically',
-    sub: 'Photos, stories and tips — in your language',
+    kicker: 'At Every Stop',
+    title: 'Every place tells<br/>you its story',
+    sub: 'Stories, tips and photo spots appear as you arrive — ask anything, anytime',
     art: `
     <svg viewBox="0 0 1080 980">
       <circle cx="540" cy="450" r="340" style="fill:var(--teal-soft)" opacity="0.35"/>
@@ -393,8 +397,8 @@ const VAN = (x, y, s = 1) => `
 {
   const { el, t0 } = scene(4, {
     kicker: 'Free Time',
-    title: 'A countdown keeps<br/>everyone together',
-    sub: 'Back at the van, right on time',
+    title: 'Wander freely,<br/>return on time',
+    sub: 'One shared countdown — nobody gets left behind',
     art: `
     <svg viewBox="0 0 1080 980">
       <circle cx="540" cy="400" r="330" style="fill:var(--teal-soft)" opacity="0.35"/>
@@ -438,8 +442,8 @@ const VAN = (x, y, s = 1) => `
 {
   const { el, t0 } = scene(5, {
     kicker: 'Always With You',
-    title: '24/7 human<br/>support',
-    sub: 'One tap for help — anytime · AtoC Korea',
+    title: 'Real people<br/>behind the screen',
+    sub: 'Late, lost, or need help? One tap reaches our team — 24/7',
     art: `
     <svg viewBox="0 0 1080 980">
       <circle cx="540" cy="450" r="340" style="fill:var(--teal-soft)" opacity="0.4"/>
