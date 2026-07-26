@@ -1,0 +1,38 @@
+{
+  "unitId": "tour_product_pages:from-incheon-seoul-day-tour-cruise-guests:ru:A2-3",
+  "locale": "ru",
+  "segments": {
+    "/seasonalVariations/0/season": "Весна (март–май)",
+    "/seasonalVariations/0/description": "Цветение вишни у пруда дворца Кёнбоккун вокруг павильона Кёнхверу в начале — середине апреля. Заходы круизных судов в этом сезоне достигают пика.",
+    "/seasonalVariations/1/season": "Лето (июнь–август)",
+    "/seasonalVariations/1/description": "Долгий световой день; влажно. В июле возможны муссонные дожди — крытый рынок Кванджан становится вариантом на дождливый день. Берите с собой воду.",
+    "/seasonalVariations/2/season": "Осень (сентябрь–ноябрь)",
+    "/seasonalVariations/2/description": "Лучший сезон для съёмки дворцов — ясное синее небо, листва в конце октября. Комфортная погода для прогулок.",
+    "/seasonalVariations/3/season": "Зима (декабрь–февраль)",
+    "/seasonalVariations/3/description": "Холодно, но спокойно; дворы Кёнбоккуна в снегу необычайно умиротворённые. Возьмите тёплую многослойную одежду — дворцовые дворы не защищают от ветра.",
+    "/bookingSupportSteps/0/title": "Мгновенное подтверждение",
+    "/bookingSupportSteps/0/detail": "Подтверждение бронирования с кратким описанием маршрута",
+    "/bookingSupportSteps/0/timing": "Сразу",
+    "/bookingSupportSteps/1/title": "Напоминание за 12 часов",
+    "/bookingSupportSteps/1/detail": "Обновление по погоде и любые изменения маршрута",
+    "/bookingSupportSteps/1/timing": "За 12 часов",
+    "/bookingSupportSteps/2/title": "Окончательная информация о посадке",
+    "/bookingSupportSteps/2/detail": "Точное время посадки и контакт водителя",
+    "/bookingSupportSteps/2/timing": "Накануне вечером",
+    "/bookingSupportSteps/3/title": "Заметки о маршруте в день тура",
+    "/bookingSupportSteps/3/detail": "Утренний брифинг с учётом текущих условий",
+    "/bookingSupportSteps/3/timing": "Утром в день тура",
+    "/bookingSupportSteps/4/title": "Советы на каждой остановке",
+    "/bookingSupportSteps/4/detail": "Подсказки в реальном времени в каждом месте",
+    "/bookingSupportSteps/4/timing": "Во время тура",
+    "/bookingSupportSteps/5/title": "Поддержка после тура",
+    "/bookingSupportSteps/5/detail": "Дальнейшая связь и рекомендации",
+    "/bookingSupportSteps/5/timing": "После тура",
+    "/practicalWeatherStatic/today/label": "Смотрите сезонные заметки",
+    "/practicalWeatherStatic/tomorrow/label": "Смотрите сезонные заметки"
+  },
+  "notes": {
+    "/seasonalVariations/0/description": "빈 값 없음. 경복궁·광장시장은 글로서리 확정분(Дворец Кёнбоккун · Рынок Кванджан). 신규 전사 1건: 경회루 → Кёнхверу — 경=Кён(글로서리 Кёнбоккун·Кёнджу), 회=хве(기출력 ru 다수 선례: 회 요리 «хве», 연등회 Йондынхве), 루=ру. 스타일가이드 「주요 대응」에 oe 항목이 없어 도출 근거를 여기 명시한다 — 감수 권장.",
+    "/bookingSupportSteps/0/title": "bookingSupportSteps 12건과 practicalWeatherStatic 2건은 원문이 기출력과 동일해 표기를 그대로 맞췄다(seoul-dmz-private-3rd-tunnel-suspension-bridge_ru_A2-2 · busan-top-attractions-day-tour_ru_A2-3). 계절명 괄호는 기출력 관례대로 월 이름을 러시아어 전체 형태로 표기했다."
+  }
+}
