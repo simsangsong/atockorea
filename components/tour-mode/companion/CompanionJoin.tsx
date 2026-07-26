@@ -17,6 +17,7 @@ import { IconTicket, TR_ICON } from '@/components/tour-mode/icons';
 import { getOrCreateDeviceKey, storePersonalToken } from '@/lib/ops/seating/personalTokens';
 import { companionCopy, detectCompanionLocale, type CompanionCopyKey } from '@/lib/tour-room/companionCopy';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
+import { useResolvedTourTheme } from '@/hooks/useResolvedTourTheme';
 
 type Phase = 'form' | 'joining' | 'done' | 'full' | 'expired' | 'error';
 
@@ -28,7 +29,7 @@ export default function CompanionJoin({
   bookingId: string;
 }) {
   const [locale, setLocale] = useState<RoomLocale>('en');
-  const [dark, setDark] = useState(false);
+  const dark = useResolvedTourTheme() === 'dark';
   const [phase, setPhase] = useState<Phase>('form');
   const [name, setName] = useState('');
   const [roomUrl, setRoomUrl] = useState<string | null>(null);
@@ -39,14 +40,10 @@ export default function CompanionJoin({
     [locale],
   );
 
-  // 기기 로케일/테마는 마운트 후에만 읽는다 (SSR 결정론 — iOS QA 스윕 회귀 방지).
+  // 기기 로케일은 마운트 후에만 읽는다 (SSR 결정론 — iOS QA 스윕 회귀 방지).
+  // 테마는 useResolvedTourTheme 한 곳 (U4-D11 — 설정 존중).
   useEffect(() => {
     setLocale(detectCompanionLocale());
-    try {
-      setDark(window.matchMedia?.('(prefers-color-scheme: dark)').matches ?? false);
-    } catch {
-      /* noop */
-    }
   }, []);
 
   const submit = useCallback(async () => {
