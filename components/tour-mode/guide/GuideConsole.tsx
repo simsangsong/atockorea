@@ -20,9 +20,10 @@
  */
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { IconCollapse, IconInbox, IconSubmit, IconStop } from '@/components/tour-mode/icons';
+import { IconInbox, IconSubmit, IconStop } from '@/components/tour-mode/icons';
 import {
   IconArrived,
+  IconChevronRight,
   IconConcierge,
   IconClose,
   IconDone,
@@ -30,7 +31,7 @@ import {
   IconLedger,
   IconMeeting,
   IconMic,
-  IconScrollDown,
+  IconMore,
   IconTabChat,
   IconTileSchedule,
   IconVehicle,
@@ -49,7 +50,7 @@ import { PreDepartureChecklist } from '@/components/tour-mode/driver/DriverConso
 import { useTourManifest } from '@/hooks/useTourManifest';
 import { useResolvedTourTheme } from '@/hooks/useResolvedTourTheme';
 import Cockpit, { type CockpitLifecycle, type CockpitRoom } from '@/components/tour-mode/cockpit/Cockpit';
-import { kstToday } from '@/lib/tour-room/time';
+import { chatListClock, kstToday } from '@/lib/tour-room/time';
 import { OPERATOR_PRESETS } from '@/lib/tour-room/operatorPresets';
 import { primeAudio } from '@/lib/tour-room/tts';
 import { type RoomMessage } from '@/hooks/useTourRoomChannel';
@@ -211,15 +212,17 @@ export default function GuideConsole() {
   const [openLedgerBookingId, setOpenLedgerBookingId] = useState<string | null>(null);
   // B — per-room operator AI assist (staff-facing Smart Guide).
   const [openAssistBookingId, setOpenAssistBookingId] = useState<string | null>(null);
-  // P4 redesign: day-wide tools collapse behind one section with a segment.
+  // C-D7 — the day-wide tools live in a sheet now, opened from the pinned
+  // [전체 공지] chat-list row (and by seat-tab "이 손님에게만 공지").
   const [dayToolsOpen, setDayToolsOpen] = useState(false);
   const [daySeg, setDaySeg] = useState<'broadcast' | 'meeting' | 'free'>('broadcast');
   // W2 — the shell tab is controlled here so seat actions can jump tabs.
   const [staffTab, setStaffTab] = useState<StaffTabKey>('chat');
   // 손님 안내 보내기 (wa.me/mailto 원버튼) — 사용자 요청 2026-07-27.
   const [announceOpen, setAnnounceOpen] = useState(false);
-  // 적대적 리뷰 #1 — [이 손님에게만 공지]는 컴포저가 실제로 보여야 완결이다.
-  const dayToolsRef = useRef<HTMLElement | null>(null);
+  // C-D7 — per-guest ⋮ action sheet (일정/정산/AI/운전/개인 공지) so the chat
+  // list rows stay one line tall without losing any of the five actions.
+  const [actionBookingId, setActionBookingId] = useState<string | null>(null);
   const preShellDark = useResolvedTourTheme() === 'dark';
   const tokenRef = useRef<string | null>(null);
   // send()가 useCallback이라 target을 의존성에 넣으면 선택할 때마다 재생성된다.
@@ -507,6 +510,14 @@ export default function GuideConsole() {
 
   const notReturned = overview.rooms.filter((room) => !room.onboard_ack);
   const rooms = [...overview.rooms].sort((a, b) => attentionScore(b) - attentionScore(a));
+  // C-D7 — the 전체 공지 row's preview: latest fan-out (broadcast route stamps
+  // metadata.fanout on every copy; the feed is created_at DESC, so find() is
+  // the most recent one).
+  const lastBroadcast = overview.feed.find(
+    (message) =>
+      (message.metadata as { fanout?: boolean } | undefined)?.fanout === true &&
+      message.sender_role !== 'customer',
+  );
   const replyCount = overview.rooms.filter((room) => room.last_message?.sender_role === 'customer').length;
   const reviewCount = overview.rooms.filter(
     (room) => room.day_plan?.status === 'guest_draft' || room.day_plan?.status === 'guest_submitted',
@@ -551,31 +562,67 @@ export default function GuideConsole() {
         </p>
       )}
 
-      {/* 손님 안내 보내기 — 전날/당일 wa.me·메일 프리필 원버튼 (관제 M4의 가이드 입구) */}
-      <button
-        type="button"
-        onClick={() => setAnnounceOpen(true)}
-        className="tr-card mt-3 flex min-h-[52px] w-full items-center gap-3 border border-[var(--tr-hairline)] px-3.5 text-left active:scale-[0.995]"
-        data-testid="open-announce"
-      >
-        <span className="tr-chip tr-chip--accent flex h-9 w-9 shrink-0 items-center justify-center !rounded-[13px]">
-          <IconMeeting size={TR_ICON.chip} aria-hidden />
-        </span>
-        <span className="min-w-0 flex-1">
-          <span className="tr-card-text text-cjk-safe block font-semibold text-[var(--tr-ink)]">
-            손님 안내 보내기
+      {/* C-D7 — pinned channel rows (카톡 채팅탭의 상단 고정 문법): 안내 발송
+          도구들이 대화 리스트와 같은 행 문법으로 산다. */}
+      <div className="tr-card mt-3 divide-y divide-[var(--tr-hairline)] overflow-hidden border border-[var(--tr-hairline)]">
+        {/* 손님 안내 보내기 — 전날/당일 wa.me·메일 프리필 (관제 M4의 가이드 입구) */}
+        <button
+          type="button"
+          onClick={() => setAnnounceOpen(true)}
+          className="flex min-h-[60px] w-full items-center gap-3 px-3.5 py-2 text-left active:bg-[var(--tr-surface-2)]"
+          data-testid="open-announce"
+        >
+          <span className="tr-chip tr-chip--base flex h-11 w-11 shrink-0 items-center justify-center !rounded-[14px]">
+            <IconSubmit size={TR_ICON.action} aria-hidden />
           </span>
-          <span className="tr-meta block text-[var(--tr-ink-3)]">
-            왓츠앱·메일 문구가 채워진 채 열려요 — {overview.tour_date}
+          <span className="min-w-0 flex-1">
+            <span className="tr-card-text text-cjk-safe block font-bold text-[var(--tr-ink)]">
+              손님 안내 보내기
+            </span>
+            <span className="tr-meta mt-0.5 block truncate text-[var(--tr-ink-3)]">
+              왓츠앱·메일 문구가 채워진 채 열려요
+            </span>
           </span>
-        </span>
-        <IconScrollDown size={TR_ICON.chip} className="shrink-0 -rotate-90 text-[var(--tr-ink-3)]" aria-hidden />
-      </button>
+          <IconChevronRight size={TR_ICON.chip} className="shrink-0 text-[var(--tr-ink-3)]" aria-hidden />
+        </button>
+        {/* 전체 공지 — the broadcast "thread". Preview = the latest fan-out
+            message (metadata.fanout), so this row reads like a group chat. */}
+        <button
+          type="button"
+          onClick={() => {
+            setDaySeg('broadcast');
+            setDayToolsOpen(true);
+          }}
+          className="flex min-h-[60px] w-full items-center gap-3 px-3.5 py-2 text-left active:bg-[var(--tr-surface-2)]"
+          data-testid="daytools-open"
+        >
+          <span className="tr-chip tr-chip--accent flex h-11 w-11 shrink-0 items-center justify-center !rounded-[14px]">
+            <IconMeeting size={TR_ICON.action} aria-hidden />
+          </span>
+          <span className="min-w-0 flex-1">
+            <span className="flex items-center gap-1.5">
+              <span className="tr-card-text text-cjk-safe font-bold text-[var(--tr-ink)]">전체 공지</span>
+              <span className="tr-meta tr-num shrink-0 text-[var(--tr-ink-3)]">{overview.rooms.length}팀</span>
+            </span>
+            <span className="tr-meta mt-0.5 block truncate text-[var(--tr-ink-3)]" data-testid="daytools-preview">
+              {lastBroadcast ? koPreview(lastBroadcast) : '집합·자유시간·전체 안내 보내기'}
+            </span>
+          </span>
+          <span className="flex shrink-0 flex-col items-end gap-1 self-start pt-1.5">
+            <span className="tr-meta tr-num text-[var(--tr-ink-3)]">
+              {lastBroadcast ? chatListClock(lastBroadcast.created_at) : ''}
+            </span>
+            <IconChevronRight size={TR_ICON.chip} className="text-[var(--tr-ink-3)]" aria-hidden />
+          </span>
+        </button>
+      </div>
 
-      {/* 손님 (rooms) — the guide's core surface */}
-      <section className="mt-3">
+      {/* C-D7 — 대화 (rooms as a KakaoTalk-style chat list). Row tap = that
+          guest's 1:1 room; the trailing ⋮ keeps 일정/정산/AI/운전/개인 공지
+          one tap away (편의성 무손실). */}
+      <section className="mt-4">
         <h2 className="tr-label px-1 font-bold uppercase tracking-wide text-[var(--tr-ink-3)]">
-          손님 · {overview.rooms.length}
+          대화 · {overview.rooms.length}
         </h2>
         {overview.rooms.length === 0 && (
           <div className="tr-card mt-2 flex flex-col items-center gap-2 px-4 py-8 text-center">
@@ -583,145 +630,97 @@ export default function GuideConsole() {
             <p className="tr-card-text text-[var(--tr-ink-2)]">오늘은 배정된 예약이 없어요.</p>
           </div>
         )}
-        <div className="mt-2 space-y-2.5">
-          {rooms.map((room) => {
-            const badge = planBadge(room.day_plan?.status);
-            const awaitingReply = room.last_message?.sender_role === 'customer';
-            return (
-              <article key={room.booking_id} className="tr-card tr-plan-course-card px-3.5 py-3" data-testid="room-card">
-                <div className="flex items-start gap-3">
-                  <span
-                    className="tr-body flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl font-bold text-white"
-                    style={{ backgroundColor: `hsl(${roomHue(room.booking_id)} 55% 52%)` }}
-                    aria-hidden
-                  >
-                    {(room.contact_name ?? 'G').trim()[0]?.toUpperCase()}
-                  </span>
-                  <div className="min-w-0 flex-1">
-                    <div className="flex flex-wrap items-center gap-1.5">
-                      <p className="tr-card-text font-bold text-[var(--tr-ink)]">{room.contact_name ?? '게스트'}</p>
-                      <span className="tr-meta text-[var(--tr-ink-3)]">
-                        {room.number_of_guests ?? 1}명 · {room.preferred_language ?? 'en'}
-                      </span>
-                      {room.onboard_ack && (
-                        <span className="inline-flex items-center gap-0.5 text-[var(--tr-safe)]" title="탑승 확인">
-                          <IconDone size={TR_ICON.meta} aria-hidden />
-                        </span>
-                      )}
-                      {badge && (
-                        <span
-                          className={`tr-meta text-cjk-safe rounded-full px-2 py-0.5 font-bold ${
-                            badge.tone === 'review'
-                              ? 'bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]'
-                              : 'bg-[var(--tr-accent-soft)] text-[var(--tr-ink-2)]'
-                          }`}
-                        >
-                          {badge.label}
-                        </span>
-                      )}
-                      {awaitingReply && (
-                        <span className="tr-meta text-cjk-safe rounded-full bg-[var(--tr-danger-soft)] px-2 py-0.5 font-bold text-[var(--tr-danger)]">
-                          답장 필요
-                        </span>
-                      )}
-                    </div>
-                    {room.pickup?.name && (
-                      <p className="tr-meta mt-0.5 flex items-center gap-1 text-[var(--tr-ink-2)]">
-                        <IconArrived size={TR_ICON.meta} className="shrink-0" aria-hidden />
-                        <span className="truncate">
-                          {room.pickup.pickup_time ? `${room.pickup.pickup_time} · ` : ''}
-                          {room.pickup.name}
-                        </span>
-                      </p>
-                    )}
-                    <p className="tr-meta mt-0.5 line-clamp-1 text-[var(--tr-ink-3)]">
-                      {koPreview(room.last_message)}
-                    </p>
-                  </div>
-                </div>
-
-                {/* W3.1 — one 44px action row: 채팅 is the labelled primary;
-                    일정/정산/AI/운전 are icon-only (aria-labelled) to reclaim the
-                    second row. */}
-                <div className="mt-3 flex items-center gap-1.5">
+        {overview.rooms.length > 0 && (
+          <div className="tr-card mt-2 divide-y divide-[var(--tr-hairline)] overflow-hidden border border-[var(--tr-hairline)]">
+            {rooms.map((room) => {
+              const badge = planBadge(room.day_plan?.status);
+              const awaitingReply = room.last_message?.sender_role === 'customer';
+              return (
+                <div key={room.booking_id} className="flex items-center" data-testid="room-card">
                   <a
                     href={roomHref(room.booking_id)}
-                    className="tr-label text-cjk-safe flex min-h-[44px] flex-1 items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-accent)] px-3 font-bold text-[var(--tr-bubble-me-ink)] active:scale-[0.99]"
+                    className="flex min-h-[64px] min-w-0 flex-1 items-center gap-3 py-2 pl-3.5 active:bg-[var(--tr-surface-2)]"
                     data-testid="room-chat"
                   >
-                    <IconTabChat size={TR_ICON.chip} aria-hidden />
-                    채팅
-                  </a>
-                  {/* D2: plan review/confirm is a private-tour capability —
-                      join / shared tours run a fixed itinerary, so hide it. */}
-                  {room.is_private && (
-                    <button
-                      type="button"
-                      onClick={() => setOpenPlanBookingId(room.booking_id)}
-                      aria-label="일정 검토·확정"
-                      className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl active:scale-95 ${
-                        badge?.tone === 'review'
-                          ? 'bg-[var(--tr-accent-soft)] text-[var(--tr-accent-deep)] ring-1 ring-[var(--tr-hairline)]'
-                          : 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]'
-                      }`}
-                      data-testid="plan-toggle"
+                    <span
+                      className="tr-body flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl font-bold text-white"
+                      style={{ backgroundColor: `hsl(${roomHue(room.booking_id)} 55% 52%)` }}
+                      aria-hidden
                     >
-                      <IconTileSchedule size={TR_ICON.action} aria-hidden />
-                    </button>
-                  )}
+                      {(room.contact_name ?? 'G').trim()[0]?.toUpperCase()}
+                    </span>
+                    <span className="min-w-0 flex-1">
+                      <span className="flex items-center gap-1.5">
+                        <span className="tr-card-text truncate font-bold text-[var(--tr-ink)]">
+                          {room.contact_name ?? '게스트'}
+                        </span>
+                        <span className="tr-meta tr-num shrink-0 text-[var(--tr-ink-3)]">
+                          {room.number_of_guests ?? 1}명
+                        </span>
+                        {room.onboard_ack && (
+                          <span className="inline-flex shrink-0 items-center text-[var(--tr-safe)]" title="탑승 확인">
+                            <IconDone size={TR_ICON.meta} aria-hidden />
+                          </span>
+                        )}
+                        {badge && (
+                          <span
+                            className={`tr-meta text-cjk-safe shrink-0 rounded-full px-1.5 py-0.5 font-bold ${
+                              badge.tone === 'review'
+                                ? 'bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]'
+                                : 'bg-[var(--tr-accent-soft)] text-[var(--tr-ink-2)]'
+                            }`}
+                          >
+                            {badge.label}
+                          </span>
+                        )}
+                      </span>
+                      <span
+                        className={`tr-meta mt-0.5 line-clamp-1 ${
+                          awaitingReply
+                            ? 'font-semibold text-[var(--tr-ink)]'
+                            : 'text-[var(--tr-ink-3)]'
+                        }`}
+                      >
+                        {koPreview(room.last_message)}
+                      </span>
+                    </span>
+                    <span className="ml-1 flex shrink-0 flex-col items-end gap-1.5 self-start pt-1.5">
+                      <span className="tr-meta tr-num text-[var(--tr-ink-3)]">
+                        {chatListClock(room.last_message?.created_at)}
+                      </span>
+                      {awaitingReply && (
+                        <span
+                          className="h-2 w-2 rounded-full bg-[var(--tr-danger)]"
+                          data-testid="room-unread-dot"
+                          title="답장 필요"
+                        />
+                      )}
+                    </span>
+                  </a>
                   <button
                     type="button"
-                    onClick={() => setOpenLedgerBookingId(room.booking_id)}
-                    aria-label="정산"
-                    className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)] active:scale-95"
-                    data-testid="ledger-toggle"
+                    onClick={() => setActionBookingId(room.booking_id)}
+                    aria-label={`${room.contact_name ?? '게스트'} 더보기`}
+                    aria-haspopup="dialog"
+                    className="mr-1 flex h-11 w-10 shrink-0 items-center justify-center rounded-full text-[var(--tr-ink-3)] active:bg-[var(--tr-surface-2)]"
+                    data-testid="room-more"
                   >
-                    <IconLedger size={TR_ICON.action} aria-hidden />
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setOpenAssistBookingId(room.booking_id)}
-                    aria-label="AI 도우미"
-                    className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)] active:scale-95"
-                    data-testid="assist-toggle"
-                  >
-                    <IconConcierge size={TR_ICON.action} aria-hidden />
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => void enterDrive(room.booking_id)}
-                    disabled={driveBusy === room.booking_id}
-                    aria-label={driveBusy === room.booking_id ? '운전 모드 여는 중' : '운전 모드'}
-                    className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[var(--tr-ink)] text-[var(--tr-canvas)] active:scale-95 disabled:opacity-50"
-                    data-testid="room-drive"
-                  >
-                    <IconVehicle size={TR_ICON.action} aria-hidden />
+                    <IconMore size={TR_ICON.action} aria-hidden />
                   </button>
                 </div>
-              </article>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
+        )}
       </section>
 
-      {/* 전체 안내 (day-wide tools) — collapsible, segmented (P4) */}
-      <section className="mt-6" ref={dayToolsRef}>
-        <button
-          type="button"
-          onClick={() => setDayToolsOpen((v) => !v)}
-          className="flex w-full items-center justify-between px-1 py-1"
-          data-testid="daytools-toggle"
-        >
-          <span className="tr-label font-bold uppercase tracking-wide text-[var(--tr-ink-3)]">전체 안내</span>
-          {dayToolsOpen ? (
-            <IconCollapse size={TR_ICON.chip} className="text-[var(--tr-ink-3)]" aria-hidden />
-          ) : (
-            <IconScrollDown size={TR_ICON.chip} className="text-[var(--tr-ink-3)]" aria-hidden />
-          )}
-        </button>
-
-        {dayToolsOpen && (
-          <div className="mt-2">
+      {/* C-D7 — 전체 안내 sheet: opened by the pinned [전체 공지] row above and
+          by the seat tab's "이 손님에게만 공지" (target pre-filled). The tools
+          inside are unchanged — they just live behind a sheet instead of an
+          inline collapsible, so the chat list keeps the room list on screen. */}
+      {dayToolsOpen && (
+        <Sheet open onClose={() => setDayToolsOpen(false)} closeLabel="닫기" title="전체 안내">
+          <div data-testid="daytools-sheet">
             <div className="flex gap-1 rounded-full bg-[var(--tr-surface-2)] p-1">
               {DAY_SEGMENTS.map(({ key, label, Icon }) => (
                 <button
@@ -1028,8 +1027,8 @@ export default function GuideConsole() {
         </div>
             )}
           </div>
-        )}
-      </section>
+        </Sheet>
+      )}
 
       {/* recent feed */}
       {overview.feed.length > 0 && (
@@ -1089,17 +1088,12 @@ export default function GuideConsole() {
           window.location.assign(roomHref(bid));
         }}
         onTargetNotice={(bid) => {
+          // C-D7 — the composer is a sheet now: prefill the target, jump to
+          // the 대화 tab (the sheet mounts there) and open it. No scroll dance.
           setTarget(targetOne(bid));
-          setDayToolsOpen(true);
           setDaySeg('broadcast');
           setStaffTab('chat');
-          // 셸이 탭 전환 시 scrollTop을 0으로 되돌린 뒤, 컴포저(전체 안내)로
-          // 내려간다 — 두 프레임 뒤: 탭 마운트(1) → 스크롤(2).
-          window.requestAnimationFrame(() =>
-            window.requestAnimationFrame(() =>
-              dayToolsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }),
-            ),
-          );
+          setDayToolsOpen(true);
         }}
       />
     ) : (
@@ -1151,8 +1145,111 @@ export default function GuideConsole() {
   // P4 — plan / ledger open in a sheet. Rendered through the shell's overlay
   // slot so they stay INSIDE the themed root (a sheet outside .tr-root goes
   // transparent — 2026-07-26 field incident).
+  // C-D7 — the chat-list row's ⋮ sheet: every action the old room card
+  // carried, now one tap behind the row (일정/정산/AI/운전/개인 공지).
+  const actionRoom = actionBookingId
+    ? overview.rooms.find((room) => room.booking_id === actionBookingId) ?? null
+    : null;
+  const actionRow = (
+    label: string,
+    Icon: typeof IconTabChat,
+    onPress: () => void,
+    opts: { testid: string; disabled?: boolean; primary?: boolean } ,
+  ) => (
+    <button
+      type="button"
+      disabled={opts.disabled}
+      onClick={onPress}
+      data-testid={opts.testid}
+      className={`text-cjk-safe flex min-h-[52px] w-full items-center gap-3 rounded-xl px-3.5 text-left active:scale-[0.995] disabled:opacity-40 ${
+        opts.primary
+          ? 'bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]'
+          : 'bg-[var(--tr-surface-2)] text-[var(--tr-ink)]'
+      }`}
+    >
+      <Icon size={TR_ICON.action} className="shrink-0" aria-hidden />
+      <span className="tr-card-text min-w-0 flex-1 font-semibold">{label}</span>
+      <IconChevronRight
+        size={TR_ICON.chip}
+        className={`shrink-0 ${opts.primary ? 'opacity-70' : 'text-[var(--tr-ink-3)]'}`}
+        aria-hidden
+      />
+    </button>
+  );
+
   const overlay = (
     <>
+      {actionRoom && (
+        <Sheet
+          open
+          onClose={() => setActionBookingId(null)}
+          closeLabel="닫기"
+          title={
+            <span className="flex min-w-0 items-center gap-2">
+              <span
+                className="tr-name flex h-8 w-8 shrink-0 items-center justify-center rounded-xl font-bold text-white"
+                style={{ backgroundColor: `hsl(${roomHue(actionRoom.booking_id)} 55% 52%)` }}
+                aria-hidden
+              >
+                {(actionRoom.contact_name ?? 'G').trim()[0]?.toUpperCase()}
+              </span>
+              <span className="truncate">{actionRoom.contact_name ?? '게스트'}</span>
+              <span className="tr-meta tr-num shrink-0 font-normal text-[var(--tr-ink-3)]">
+                {actionRoom.number_of_guests ?? 1}명 · {actionRoom.preferred_language ?? 'en'}
+              </span>
+            </span>
+          }
+        >
+          <div className="space-y-2" data-testid="guest-action-sheet">
+            {actionRoom.pickup?.name && (
+              <p className="tr-meta flex items-center gap-1.5 px-1 text-[var(--tr-ink-2)]">
+                <IconArrived size={TR_ICON.meta} className="shrink-0" aria-hidden />
+                <span className="truncate">
+                  {actionRoom.pickup.pickup_time ? `${actionRoom.pickup.pickup_time} · ` : ''}
+                  {actionRoom.pickup.name}
+                </span>
+              </p>
+            )}
+            <a
+              href={roomHref(actionRoom.booking_id)}
+              data-testid="sheet-room-chat"
+              className="text-cjk-safe flex min-h-[52px] w-full items-center gap-3 rounded-xl bg-[var(--tr-accent)] px-3.5 text-left text-[var(--tr-bubble-me-ink)] active:scale-[0.995]"
+            >
+              <IconTabChat size={TR_ICON.action} className="shrink-0" aria-hidden />
+              <span className="tr-card-text min-w-0 flex-1 font-semibold">채팅 열기</span>
+              <IconChevronRight size={TR_ICON.chip} className="shrink-0 opacity-70" aria-hidden />
+            </a>
+            {actionRoom.is_private &&
+              actionRow('일정 검토·확정', IconTileSchedule, () => {
+                setActionBookingId(null);
+                setOpenPlanBookingId(actionRoom.booking_id);
+              }, { testid: 'plan-toggle' })}
+            {actionRow('정산', IconLedger, () => {
+              setActionBookingId(null);
+              setOpenLedgerBookingId(actionRoom.booking_id);
+            }, { testid: 'ledger-toggle' })}
+            {actionRow('AI 도우미', IconConcierge, () => {
+              setActionBookingId(null);
+              setOpenAssistBookingId(actionRoom.booking_id);
+            }, { testid: 'assist-toggle' })}
+            {actionRow('이 손님에게만 공지', IconMeeting, () => {
+              setActionBookingId(null);
+              setTarget(targetOne(actionRoom.booking_id));
+              setDaySeg('broadcast');
+              setDayToolsOpen(true);
+            }, { testid: 'target-notice-toggle' })}
+            {actionRow(
+              driveBusy === actionRoom.booking_id ? '운전 모드 여는 중…' : '운전 모드',
+              IconVehicle,
+              () => {
+                setActionBookingId(null);
+                void enterDrive(actionRoom.booking_id);
+              },
+              { testid: 'room-drive', disabled: driveBusy === actionRoom.booking_id },
+            )}
+          </div>
+        </Sheet>
+      )}
       {announceOpen && tokenRef.current && (
         <Sheet open onClose={() => setAnnounceOpen(false)} closeLabel="닫기" title="손님 안내 보내기">
           <GuideAnnouncePanel
