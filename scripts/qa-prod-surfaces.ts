@@ -32,7 +32,7 @@ config({ path: '.env.local' });
 
 const BASE = process.env.QA_BASE ?? 'https://www.atockorea.com';
 const FIXTURES = path.join('scripts', '.sim-fixtures.json');
-const PHASES = ['auth', 'media', 'payment', 'chat'] as const;
+const PHASES = ['auth', 'media', 'payment', 'chat', 'edges'] as const;
 type Phase = (typeof PHASES)[number];
 
 const requested = process.argv.slice(2).filter((a) => (PHASES as readonly string[]).includes(a)) as Phase[];
@@ -580,6 +580,110 @@ async function phaseChat(bookingId: string, session: string) {
   });
 }
 
+// ── edges: 아무도 안 부르던 96개 라우트의 거부 경로 ───────────────────────
+
+/**
+ * 커버리지 감사(2026-07-26)에서 **250개 중 96개**가 프로덕션 하니스에도
+ * jest 에도 걸리지 않는 것으로 나왔다. 그중 가장 위험한 덩어리가 `auth` 11개
+ * (전부 쓰기, 커버리지 0)와 외부 노출 `agent` 다.
+ *
+ * 여기서는 **거부 경로만** 친다. 이 단계는 계정을 만들지도, 예약을 만들지도,
+ * 메일·텔레그램을 보내지도 않는다 — 자격증명 없이/형식이 틀린 채로 불렀을 때
+ * 서버가 실제로 거절하는지만 본다. 그것만으로도 "가드가 아예 없는 라우트"는
+ * 잡히고, 그게 이 감사가 찾는 것이다.
+ */
+async function phaseEdges() {
+  phaseLabel = 'edges · 미검증 라우트 거부 경로';
+  say('안전 규약', 'NOTE', '계정 생성·예약 생성·메일 발송을 하지 않는다 — 거부/검증 경로만');
+
+  // ── auth (11개, 전부 쓰기, 커버리지 0) ──
+  // 인증코드 발송은 **주소를 넣지 않는다** — 넣으면 실제로 메일이 나간다.
+  const authProbes: Array<[string, string, unknown, number[]]> = [
+    ['비밀번호 변경 — 무인증', '/api/auth/change-password', { currentPassword: 'x', newPassword: 'Abcd1234!' }, [401]],
+    ['비밀번호 변경 — 본문 누락', '/api/auth/change-password', {}, [400, 401]],
+    ['이메일 확인 — 본문 누락', '/api/auth/check-email', {}, [400, 401, 429]],
+    ['프로필 생성 — 무인증', '/api/auth/create-profile', { full_name: 'QA' }, [400, 401]],
+    ['🔴 계정 삭제 — 남의 id', '/api/auth/delete-user-without-profile', { userId: '00000000-0000-4000-8000-000000000000' }, [401]],
+    ['계정 삭제 — id 누락', '/api/auth/delete-user-without-profile', {}, [400]],
+    // forgot-id 는 **언제나** 200 { ok: true } 다. 그것이 옳다 — 상태코드가
+    // 갈리면 그 자체로 "이 주소가 등록돼 있나"를 알려주는 신호가 된다.
+    // 주소가 없거나 형식이 틀리면 아무것도 보내지 않고 같은 응답만 준다.
+    ['아이디 찾기 — 계정 존재를 흘리지 않는다', '/api/auth/forgot-id', {}, [200]],
+    ['머천트 로그인 — 빈 자격증명', '/api/auth/merchant/login', {}, [400, 401]],
+    ['머천트 로그인 — 틀린 자격증명', '/api/auth/merchant/login', { email: 'qa-nobody@atockorea.test', password: 'wrong-password' }, [400, 401]],
+    ['머천트 비번변경 — 무인증', '/api/auth/merchant/change-password', { currentPassword: 'x', newPassword: 'Abcd1234!' }, [400, 401, 403]],
+    ['인증코드 발송 — 주소 누락(발송 안 함)', '/api/auth/send-verification-code', {}, [400, 401, 429]],
+    ['인증코드 확인 — 틀린 코드', '/api/auth/verify-code', { email: 'qa-nobody@atockorea.test', code: '000000' }, [400, 401, 404, 429]],
+  ];
+  for (const [name, p, body, expect] of authProbes) {
+    await call(name, p, { method: 'POST', body, expect, gap: 150 });
+  }
+
+  // ── agent (외부 노출). 예약은 서명된 quote 토큰이 있어야 한다. ──
+  await call('에이전트 예약 — 위조 quote 거부', '/api/agent/v1/book', {
+    method: 'POST',
+    body: { quote_token: 'forged.token.value', contact: { name: 'QA', email: 'qa@atockorea.test' } },
+    expect: [400, 401, 409, 429],
+  });
+  await call('에이전트 예약 — 본문 누락', '/api/agent/v1/book', { method: 'POST', body: {}, expect: [400, 409, 429] });
+  // ⚠ 빈 본문에 404 `tour_not_found` 가 온다. 거부하기는 하지만 "필수 필드가
+  // 없다"를 "그런 투어가 없다"로 말하는 것이라, 부르는 쪽이 재시도할지 포기할지
+  // 를 잘못 고르게 만든다. 지금은 기록만 하고 상태코드는 그대로 둔다.
+  await call('에이전트 견적 — 본문 누락', '/api/agent/v1/quote', { method: 'POST', body: {}, expect: [400, 404, 422, 429] });
+  await call('에이전트 카탈로그 — 공개 읽기', '/api/agent/v1/tours', { expect: [200, 429], note: true });
+  await call('에이전트 OpenAPI — 공개 읽기', '/api/agent/openapi.json', { expect: [200, 429], note: true });
+
+  // ── 쓰기 표면들, 무인증 ──
+  const writeProbes: Array<[string, string, string, unknown, number[]]> = [
+    ['장바구니 무인증', 'POST', '/api/cart', { tourId: 'x' }, [400, 401, 403]],
+    ['알림 무인증', 'POST', '/api/notifications', { title: 'x' }, [400, 401, 403]],
+    ['재고 무인증', 'POST', '/api/inventory', {}, [400, 401, 403]],
+    ['머천트 상품 무인증', 'POST', '/api/merchant/products', {}, [400, 401, 403]],
+    ['정산 무인증', 'POST', '/api/settlements', {}, [400, 401, 403]],
+    ['리뷰 작성 무인증', 'POST', '/api/reviews', { rating: 5 }, [400, 401, 403]],
+    ['리뷰 신고 무인증', 'POST', '/api/reviews/reports', {}, [400, 401, 403]],
+    ['프로모코드 생성 무인증', 'POST', '/api/promo-codes', {}, [400, 401, 403]],
+    ['업로드 무인증', 'POST', '/api/upload', {}, [400, 401, 403, 415]],
+    ['어드민 업로드 무인증', 'POST', '/api/admin/upload', {}, [400, 401, 403, 415]],
+    ['빌더 예약 무인증', 'POST', '/api/itinerary/book', {}, [400, 401, 403]],
+    // 503 `telegram_webhook_secret_unconfigured` = 프로덕션에 시크릿이 없어
+    // 이 웹훅이 아예 동작하지 않는 상태다. 거부 자체는 fail-closed 라 옳다.
+    ['텔레그램 웹훅 — 서명 없음', 'POST', '/api/telegram/support-webhook', { message: {} }, [400, 401, 403, 503]],
+    ['에러 로그 — 본문 누락', 'POST', '/api/logs/error', {}, [400, 401, 204, 200]],
+    // Origin 없이 오면 CSRF 가드가 먼저 막는다(403 ORIGIN_REQUIRED) — 그것도 검사할 값이다.
+    ['문의 — Origin 없으면 CSRF 가드', 'POST', '/api/contact', {}, [403]],
+    ['리마인더 메일 — 무인증(발송 안 함)', 'POST', '/api/emails/reminders', {}, [400, 401, 403]],
+  ];
+  for (const [name, method, p, body, expect] of writeProbes) {
+    await call(name, p, { method, body, expect, gap: 150 });
+  }
+
+  // 가드를 통과시킨 뒤의 **검증**도 본다 — 가드만 보면 그 뒤가 비어 있어도 모른다.
+  await call('문의 — Origin 있고 본문 누락(생성 안 함)', '/api/contact', {
+    method: 'POST',
+    headers: { origin: BASE },
+    body: {},
+    expect: [400, 422],
+  });
+
+  // ── 나머지 크론 5종: 인증이 실제로 걸려 있는가 ──
+  for (const c of ['analytics-anonymize', 'analytics-refresh-views', 'rag-harvest', 'rag-reindex', 'recapture-holds']) {
+    await call(`크론 무인증 거부 — ${c}`, `/api/cron/${c}`, { expect: [401, 403, 503], gap: 120 });
+  }
+
+  // ── 공개 읽기 표면 (200 이어야 정상) ──
+  for (const [name, p] of [
+    ['환율', '/api/currency/rate'],
+    ['해녀 공연 상태', '/api/haenyeo-status'],
+    ['목적지 목록', '/api/tours/destinations'],
+    ['홈 리뷰 요약', '/api/reviews/home-summary'],
+    ['활성 실험', '/api/analytics/experiments/active'],
+    ['빌더 POI', '/api/itinerary-builder/pois'],
+  ] as Array<[string, string]>) {
+    await call(`공개 읽기 — ${name}`, p, { expect: [200, 429], note: true, gap: 120 });
+  }
+}
+
 // ── 실행 ──────────────────────────────────────────────────────────────────
 
 async function main() {
@@ -608,6 +712,7 @@ async function main() {
   if (phases.includes('media') && fx && session) await phaseMedia(fx.booking1, session);
   if (phases.includes('payment') && fx) await phasePayment(fx.adminJwt);
   if (phases.includes('chat') && fx && session) await phaseChat(fx.booking1, session);
+  if (phases.includes('edges')) await phaseEdges();
 
   // ── 리포트 ──
   // 스윕은 라우트 수만큼 행을 만든다. 통과한 것은 한 줄로 접고, 문제만 펼친다.
