@@ -1,16 +1,18 @@
 <!doctype html>
 <!--
-  Smart Guide onboarding — pictogram animation (howto-video track v1).
+  Smart Guide onboarding — pictogram animation v3 (howto-video track).
 
-  Airline-safety-card grammar (flat rounded pictograms, slow easing, generous
-  whitespace) in the AtoC palette: ivory / ink charcoal / antique brass / deep
-  pine. 1080x1920, six ~5.5s scenes with 0.5s crossfades (~30.5s total).
+  High-end tech × fresh travel: white / cool-gray surfaces, deep navy ink,
+  ocean-teal accents. v3 detail pass: duotone layered characters (hair, collar,
+  driver cap), glazed van with mirrors and lamps, phones with screen insets and
+  typing indicators, ticked clock with sweeping hands, soft shadows, micro
+  animations (typing dots, pin ripples, check draw, bubble float, SOS pulse).
 
   Deterministic rendering contract (scripts/render-howto-video.mjs):
-    window.__total          — total timeline in ms
-    window.__seek(tMs)      — jump every WAAPI animation to absolute time t
-  All animations are element.animate(..., { delay: sceneStart + ..., fill:'both' })
-  and start paused, so a frame at time t is exactly reproducible.
+    window.__total, window.__seek(tMs) over paused WAAPI animations.
+  Gotchas honored: fade-outs fill:'forwards' only; animated nodes never carry
+  their own transform attribute (translate lives on a wrapper <g>); fills on
+  .pict strokes must be inline style (CSS class fill:none wins over attrs).
 -->
 <html lang="en">
 <head>
@@ -18,22 +20,22 @@
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   :root {
-    /* High-end tech × fresh travel: white / cool gray surfaces, deep navy
-       ink, ocean-teal accents. (Variable names kept from v1 — --ivory is now
-       the light surface, --brass the accent, --pine the deep accent.) */
-    --ivory: #ffffff;        /* surface: phone bodies, cards, clock face */
-    --ivory-2: #e9edf2;      /* page vignette edge (cool gray) */
-    --ink: #14294b;          /* deep navy — strokes, figures, headline */
-    --ink-2: #5a6b81;        /* slate — subcopy */
-    --brass: #1a9db4;        /* ocean teal — accent lines, rings, kicker */
-    --brass-soft: #7cc6d4;
-    --pine: #0d5f74;         /* deep ocean — filled accents, bubbles */
+    --surface: #ffffff;
+    --page-edge: #e9edf2;
+    --screen: #f2f6fa;      /* phone screen inset */
+    --glass: #d9edf5;       /* van glazing */
+    --ink: #14294b;         /* deep navy */
+    --ink-deep: #0c1c33;    /* hair, tires */
+    --ink-2: #5a6b81;       /* slate subcopy */
+    --teal: #1a9db4;        /* ocean teal accent */
+    --teal-deep: #0d5f74;
+    --teal-soft: #bfe2ec;
     --safe: #c0392b;
+    --shadow: rgba(20, 41, 75, 0.10);
   }
   html, body { width: 1080px; height: 1920px; overflow: hidden; }
   body {
-    background:
-      radial-gradient(140% 90% at 50% 8%, #fbfcfe 55%, var(--ivory-2) 100%);
+    background: radial-gradient(140% 90% at 50% 8%, #fbfcfe 55%, var(--page-edge) 100%);
     font-family: 'Segoe UI', -apple-system, sans-serif;
     color: var(--ink);
   }
@@ -43,46 +45,25 @@
   .art svg { position: absolute; inset: 0; width: 100%; height: 100%; }
 
   .kicker {
-    position: absolute; top: 200px; width: 100%;
-    text-align: center;
-    font-size: 34px; font-weight: 600;
-    letter-spacing: 0.42em; text-transform: uppercase;
-    color: var(--brass);
+    position: absolute; top: 200px; width: 100%; text-align: center;
+    font-size: 34px; font-weight: 600; letter-spacing: 0.42em;
+    text-transform: uppercase; color: var(--teal);
   }
   .caption { position: absolute; top: 1370px; width: 100%; text-align: center; }
   .caption h1 {
     font-family: Georgia, 'Times New Roman', serif;
-    font-size: 88px; font-weight: 500; line-height: 1.14;
-    letter-spacing: -0.01em;
+    font-size: 88px; font-weight: 500; line-height: 1.14; letter-spacing: -0.01em;
   }
-  .caption p {
-    margin-top: 26px;
-    font-size: 42px; font-weight: 400; color: var(--ink-2);
-    letter-spacing: 0.01em;
-  }
-  .rule {
-    width: 96px; height: 3px; background: var(--brass);
-    margin: 0 auto 34px auto; border-radius: 2px;
-  }
+  .caption p { margin-top: 26px; font-size: 42px; color: var(--ink-2); letter-spacing: 0.01em; }
+  .rule { width: 96px; height: 3px; background: var(--teal); margin: 0 auto 34px; border-radius: 2px; }
   .stepdots { position: absolute; bottom: 130px; width: 100%; display: flex; justify-content: center; gap: 22px; }
   .stepdots i { width: 14px; height: 14px; border-radius: 50%; background: #ccd5de; }
-  .stepdots i.on { background: var(--brass); }
+  .stepdots i.on { background: var(--teal); }
 
-  /* pictogram strokes */
-  .pict { fill: none; stroke: var(--ink); stroke-width: 16; stroke-linecap: round; stroke-linejoin: round; }
-  .pict-thin { stroke-width: 10; }
-  .fill-ink { fill: var(--ink); stroke: none; }
-  .fill-brass { fill: var(--brass); stroke: none; }
-  .fill-pine { fill: var(--pine); stroke: none; }
-  .fill-ivory { fill: var(--ivory); stroke: none; }
-  .stroke-brass { stroke: var(--brass); }
-  .stroke-pine { stroke: var(--pine); }
-  .stroke-safe { stroke: var(--safe); }
-  .soft { opacity: 0.16; }
-  .bubble-label {
-    font-family: 'Segoe UI', sans-serif; font-weight: 600;
-    fill: var(--ivory);
-  }
+  .pict { fill: none; stroke: var(--ink); stroke-width: 14; stroke-linecap: round; stroke-linejoin: round; }
+  .pict-thin { stroke-width: 9; }
+  .bubble-label { font-family: 'Segoe UI', sans-serif; font-weight: 600; fill: #fff; }
+  .chip-label { font-family: 'Segoe UI', sans-serif; font-weight: 700; letter-spacing: 0.18em; }
 </style>
 </head>
 <body>
@@ -90,12 +71,12 @@
 
 <script>
 /* ───────────────────────── timeline ───────────────────────── */
-const SCENE = 5500, XFADE = 500, STEP = SCENE - XFADE; // scene starts every 5s
+const SCENE = 5500, XFADE = 500, STEP = SCENE - XFADE;
 const N = 6;
 const TOTAL = STEP * (N - 1) + SCENE;
 window.__total = TOTAL;
 
-const EASE = 'cubic-bezier(0.22, 1, 0.36, 1)';   // slow, premium settle
+const EASE = 'cubic-bezier(0.22, 1, 0.36, 1)';
 const anims = [];
 function an(el, frames, opt) {
   const a = el.animate(frames, { fill: 'both', easing: EASE, ...opt });
@@ -105,7 +86,6 @@ function an(el, frames, opt) {
 }
 window.__seek = (t) => { anims.forEach((a) => { a.currentTime = t; }); };
 
-/* scene shell: kicker + art + caption + crossfade in/out */
 function scene(i, { kicker, title, sub, art }) {
   const t0 = i * STEP;
   const el = document.createElement('div');
@@ -113,34 +93,24 @@ function scene(i, { kicker, title, sub, art }) {
   el.innerHTML = `
     <div class="kicker">${kicker}</div>
     <div class="art">${art}</div>
-    <div class="caption">
-      <div class="rule"></div>
-      <h1>${title}</h1>
-      ${sub ? `<p>${sub}</p>` : ''}
-    </div>
-    <div class="stepdots">${Array.from({ length: N }, (_, d) =>
-      `<i class="${d === i ? 'on' : ''}"></i>`).join('')}</div>`;
+    <div class="caption"><div class="rule"></div><h1>${title}</h1>${sub ? `<p>${sub}</p>` : ''}</div>
+    <div class="stepdots">${Array.from({ length: N }, (_, d) => `<i class="${d === i ? 'on' : ''}"></i>`).join('')}</div>`;
   document.getElementById('stage').appendChild(el);
 
   an(el, [{ opacity: 0 }, { opacity: 1 }], { delay: t0, duration: XFADE, easing: 'ease-in-out' });
-  // fill:'forwards' only — a 'both' fill would backwards-fill opacity:1 and
-  // make every scene visible before its own start (all scenes stacked).
   if (i < N - 1)
     an(el, [{ opacity: 1 }, { opacity: 0 }], { delay: t0 + STEP, duration: XFADE, easing: 'ease-in-out', fill: 'forwards' });
 
-  // caption drifts up as the scene settles
-  const cap = el.querySelector('.caption');
-  an(cap, [{ transform: 'translateY(46px)', opacity: 0 }, { transform: 'translateY(0)', opacity: 1 }],
+  an(el.querySelector('.caption'),
+    [{ transform: 'translateY(46px)', opacity: 0 }, { transform: 'translateY(0)', opacity: 1 }],
     { delay: t0 + 350, duration: 900 });
-  const kick = el.querySelector('.kicker');
-  an(kick, [{ opacity: 0 }, { opacity: 1 }], { delay: t0 + 150, duration: 700 });
+  an(el.querySelector('.kicker'), [{ opacity: 0 }, { opacity: 1 }], { delay: t0 + 150, duration: 700 });
   return { el, t0 };
 }
 
-/* helpers */
+/* animation helpers (animated node must NOT carry a transform attribute) */
 const drift = (el, t0, { from = 'translateY(60px)', dur = 1000, delay = 0 } = {}) =>
-  an(el, [{ transform: from, opacity: 0 }, { transform: 'translate(0,0)', opacity: 1 }],
-    { delay: t0 + delay, duration: dur });
+  an(el, [{ transform: from, opacity: 0 }, { transform: 'translate(0,0)', opacity: 1 }], { delay: t0 + delay, duration: dur });
 const pop = (el, t0, delay, dur = 600) =>
   an(el, [
     { transform: 'scale(0)', opacity: 0 },
@@ -152,20 +122,87 @@ const draw = (el, t0, delay, dur = 900) => {
   el.style.strokeDasharray = len;
   an(el, [{ strokeDashoffset: len }, { strokeDashoffset: 0 }], { delay: t0 + delay, duration: dur });
 };
+const float = (el, t0, delay, amp = 7, period = 2600) =>
+  an(el, [
+    { transform: 'translateY(0px)' },
+    { transform: `translateY(${-amp}px)` },
+    { transform: 'translateY(0px)' },
+  ], { delay: t0 + delay, duration: period, iterations: Infinity, easing: 'ease-in-out' });
 
-/* shared pictogram fragments (viewBox 1080x980) */
-const PHONE = (x, y, s = 1) => `
-  <g transform="translate(${x} ${y}) scale(${s})" class="phone">
-    <rect class="pict" x="0" y="0" width="330" height="640" rx="52" style="fill:var(--ivory)"/>
-    <line class="pict pict-thin" x1="120" y1="70" x2="210" y2="70"/>
-  </g>`;
-const PERSON = (x, y, s = 1, cls = 'fill-ink') => `
+/* ───────────── pictogram library (viewBox 1080x980) ───────────── */
+const GROUND = (x, y, w) =>
+  `<ellipse cx="${x}" cy="${y}" rx="${w / 2}" ry="${w * 0.055}" style="fill:var(--shadow)"/>`;
+
+/* Detailed phone: navy shell, screen inset, camera dot, home indicator. */
+const PHONE = (x, y, s = 1, inner = '') => `
   <g transform="translate(${x} ${y}) scale(${s})">
-    <circle class="${cls}" cx="60" cy="42" r="42"/>
-    <path class="${cls}" d="M60 96 c-52 0 -60 46 -60 92 v96 a14 14 0 0 0 14 14 h92 a14 14 0 0 0 14 -14 v-96 c0 -46 -8 -92 -60 -92 z"/>
+    <rect x="0" y="0" width="330" height="640" rx="54" style="fill:var(--ink)"/>
+    <rect x="12" y="12" width="306" height="616" rx="44" style="fill:var(--surface)"/>
+    <rect x="26" y="58" width="278" height="520" rx="30" style="fill:var(--screen)"/>
+    <circle cx="165" cy="36" r="7" style="fill:var(--ink)"/>
+    <rect x="120" y="598" width="90" height="7" rx="3.5" style="fill:#c3cdd8"/>
+    ${inner}
   </g>`;
 
-/* ── Scene 1 — title: phone + van lockup ─────────────────────── */
+/* Shoulder-bust characters (airport-pictogram grammar), duotone layers:
+   crescent hair / flat cap over the head, shirt-V collar, teal accents.
+   Local space: ~200w × ~320h, base line at y=318. */
+const GUEST_A = (x, y, s = 1) => `
+  <g transform="translate(${x} ${y}) scale(${s})">
+    ${GROUND(100, 322, 230)}
+    <path d="M2 318 c0 -80 42 -124 98 -124 s98 44 98 124 z" style="fill:var(--ink)"/>
+    <path d="M100 194 l-24 -22 h48 z" style="fill:#ffffff" opacity="0.92"/>
+    <rect x="60" y="216" width="80" height="14" rx="7" style="fill:var(--teal)"/>
+    <rect x="82" y="152" width="36" height="42" rx="13" style="fill:var(--ink)"/>
+    <circle cx="100" cy="104" r="56" style="fill:var(--ink-deep)"/>
+    <path d="M44 92 c-6 34 -2 56 2 66 c8 6 20 4 22 -4 c-4 -18 -4 -40 0 -58 z" style="fill:var(--ink-deep)"/>
+    <path d="M156 92 c6 34 2 56 -2 66 c-8 6 -20 4 -22 -4 c4 -18 4 -40 0 -58 z" style="fill:var(--ink-deep)"/>
+    <circle cx="104" cy="114" r="47" style="fill:var(--ink)"/>
+  </g>`;
+const GUEST_B = (x, y, s = 1) => `
+  <g transform="translate(${x} ${y}) scale(${s})">
+    ${GROUND(100, 322, 230)}
+    <path d="M2 318 c0 -80 42 -124 98 -124 s98 44 98 124 z" style="fill:var(--teal-deep)"/>
+    <path d="M100 194 l-24 -22 h48 z" style="fill:#ffffff" opacity="0.92"/>
+    <rect x="60" y="216" width="80" height="14" rx="7" style="fill:var(--teal)"/>
+    <rect x="82" y="152" width="36" height="42" rx="13" style="fill:var(--teal-deep)"/>
+    <circle cx="150" cy="70" r="20" style="fill:var(--ink-deep)"/>
+    <circle cx="100" cy="104" r="56" style="fill:var(--ink-deep)"/>
+    <circle cx="97" cy="116" r="47" style="fill:var(--teal-deep)"/>
+  </g>`;
+const DRIVER = (x, y, s = 1) => `
+  <g transform="translate(${x} ${y}) scale(${s})">
+    ${GROUND(100, 322, 230)}
+    <path d="M2 318 c0 -80 42 -124 98 -124 s98 44 98 124 z" style="fill:var(--ink)"/>
+    <path d="M100 194 l-24 -22 h48 z" style="fill:#ffffff" opacity="0.92"/>
+    <rect x="56" y="224" width="88" height="14" rx="7" style="fill:var(--teal)"/>
+    <rect x="82" y="152" width="36" height="42" rx="13" style="fill:var(--ink)"/>
+    <circle cx="100" cy="108" r="52" style="fill:var(--ink)"/>
+    <path d="M50 96 a52 46 0 0 1 100 0 z" style="fill:var(--teal-deep)"/>
+    <rect x="42" y="90" width="116" height="14" rx="7" style="fill:var(--teal-deep)"/>
+    <rect x="128" y="92" width="46" height="11" rx="5.5" style="fill:var(--teal-deep)"/>
+    <circle cx="100" cy="72" r="5" style="fill:var(--teal)"/>
+  </g>`;
+
+/* Detailed minivan (side view, facing right): glazing, mirror, lamps, hubs. */
+const VAN = (x, y, s = 1) => `
+  <g transform="translate(${x} ${y}) scale(${s})">
+    ${GROUND(330, 232, 620)}
+    <path d="M14 210 v-96 a30 30 0 0 1 30 -30 h250 c30 0 44 6 62 24 l64 62 h164 a30 30 0 0 1 30 30 v10 a16 16 0 0 1 -16 16 h-24" style="fill:var(--surface)" class="pict"/>
+    <path d="M14 210 h60" class="pict"/>
+    <path d="M196 210 h230" class="pict"/>
+    <rect x="52" y="106" width="104" height="64" rx="16" style="fill:var(--glass)"/>
+    <rect x="176" y="106" width="104" height="64" rx="16" style="fill:var(--glass)"/>
+    <path d="M312 108 c8 -2 26 4 34 12 l46 44 h-80 z" style="fill:var(--glass)"/>
+    <path d="M300 96 v114" class="pict pict-thin" opacity="0.35"/>
+    <rect x="300" y="150" width="26" height="10" rx="5" style="fill:var(--ink)" opacity="0.5"/>
+    <rect x="12" y="150" width="18" height="26" rx="8" style="fill:var(--teal)"/>
+    <rect x="580" y="176" width="30" height="14" rx="7" style="fill:var(--teal)"/>
+    <g><circle cx="140" cy="212" r="46" style="fill:var(--ink-deep)"/><circle cx="140" cy="212" r="22" style="fill:var(--surface)"/><circle cx="140" cy="212" r="8" style="fill:var(--teal-deep)"/></g>
+    <g><circle cx="470" cy="212" r="46" style="fill:var(--ink-deep)"/><circle cx="470" cy="212" r="22" style="fill:var(--surface)"/><circle cx="470" cy="212" r="8" style="fill:var(--teal-deep)"/></g>
+  </g>`;
+
+/* ── Scene 1 — title lockup ─────────────────────────────────── */
 {
   const { el, t0 } = scene(0, {
     kicker: 'AtoC Smart Guide',
@@ -173,31 +210,44 @@ const PERSON = (x, y, s = 1, cls = 'fill-ink') => `
     sub: 'Your whole tour, live on your phone',
     art: `
     <svg viewBox="0 0 1080 980">
-      <circle class="fill-brass soft" cx="540" cy="470" r="360"/>
-      <g class="ph">${PHONE(430, 80, 0.92)}
-        <g class="chatline">
-          <rect class="fill-pine" x="470" y="210" width="180" height="52" rx="26"/>
-          <rect class="fill-brass" x="530" y="290" width="180" height="52" rx="26"/>
-          <rect class="fill-ink soft" x="470" y="370" width="140" height="52" rx="26"/>
-        </g>
+      <circle cx="540" cy="440" r="360" style="fill:var(--teal-soft)" opacity="0.4"/>
+      <g class="spark1"><path class="pict pict-thin" style="stroke:var(--teal)" d="M180 300 v40 m-20 -20 h40"/></g>
+      <g class="spark2"><path class="pict pict-thin" style="stroke:var(--teal)" d="M905 250 v30 m-15 -15 h30"/></g>
+      <g class="ph">
+        <g>${PHONE(392, 60, 0.9, `
+          <g class="msg1"><rect x="44" y="90" width="176" height="58" rx="26" style="fill:var(--teal-deep)"/>
+            <path d="M56 144 l-8 22 l26 -14 z" style="fill:var(--teal-deep)"/>
+            <text x="132" y="128" font-size="30" text-anchor="middle" class="bubble-label">Where next?</text></g>
+          <g class="msg2"><rect x="104" y="176" width="182" height="58" rx="26" style="fill:var(--teal)"/>
+            <path d="M274 230 l8 22 l-26 -14 z" style="fill:var(--teal)"/>
+            <text x="195" y="214" font-size="30" text-anchor="middle" class="bubble-label">Seongsan!</text></g>
+          <g class="typing"><rect x="44" y="262" width="104" height="54" rx="26" style="fill:#dfe7ee"/>
+            <circle class="td" cx="74" cy="289" r="7" style="fill:var(--ink-2)"/>
+            <circle class="td" cx="96" cy="289" r="7" style="fill:var(--ink-2)"/>
+            <circle class="td" cx="118" cy="289" r="7" style="fill:var(--ink-2)"/></g>
+          <g class="mapline"><path class="pict-thin" style="stroke:var(--teal);fill:none;stroke-dasharray:4 16;stroke-linecap:round" d="M60 480 c60 -50 140 10 210 -40"/>
+            <circle cx="60" cy="480" r="10" style="fill:var(--teal-deep)"/>
+            <path d="M270 414 c-14 0 -24 10 -24 23 c0 16 24 37 24 37 s24 -21 24 -37 c0 -13 -10 -23 -24 -23 z" style="fill:var(--teal)"/></g>
+        `)}</g>
       </g>
-      <g class="van">
-        <g transform="translate(245 700) scale(0.95)">
-          <path class="pict" d="M0 150 v-96 a24 24 0 0 1 24 -24 h300 l96 72 h180 a24 24 0 0 1 24 24 v24" style="fill:var(--ivory)"/>
-          <line class="pict" x1="0" y1="150" x2="624" y2="150"/>
-          <circle class="pict" cx="150" cy="150" r="44" style="fill:var(--ivory)"/>
-          <circle class="pict" cx="480" cy="150" r="44" style="fill:var(--ivory)"/>
-          <rect class="fill-pine" x="60" y="60" width="120" height="52" rx="12"/>
-        </g>
-      </g>
+      <g class="van"><g>${VAN(210, 640, 0.94)}</g></g>
     </svg>`,
   });
   drift(el.querySelector('.ph'), t0, { from: 'translateY(80px)', dur: 1100, delay: 300 });
-  drift(el.querySelector('.van'), t0, { from: 'translateX(-140px)', dur: 1200, delay: 550 });
-  el.querySelectorAll('.chatline rect').forEach((r, i) => pop(r, t0, 1300 + i * 240));
+  float(el.querySelector('.ph'), t0, 1500);
+  drift(el.querySelector('.van'), t0, { from: 'translateX(-160px)', dur: 1300, delay: 600 });
+  pop(el.querySelector('.msg1'), t0, 1250);
+  pop(el.querySelector('.msg2'), t0, 1600);
+  pop(el.querySelector('.typing'), t0, 1950);
+  el.querySelectorAll('.td').forEach((d, i) =>
+    an(d, [{ opacity: 0.25 }, { opacity: 1 }, { opacity: 0.25 }],
+      { delay: t0 + 2200 + i * 180, duration: 900, iterations: Infinity, easing: 'ease-in-out' }));
+  drift(el.querySelector('.mapline'), t0, { from: 'translateY(20px)', dur: 700, delay: 2400 });
+  pop(el.querySelector('.spark1'), t0, 2000, 500);
+  pop(el.querySelector('.spark2'), t0, 2300, 500);
 }
 
-/* ── Scene 2 — scan the QR at pickup ─────────────────────────── */
+/* ── Scene 2 — scan the QR at pickup ────────────────────────── */
 {
   const { el, t0 } = scene(1, {
     kicker: 'Step One',
@@ -205,44 +255,50 @@ const PERSON = (x, y, s = 1, cls = 'fill-ink') => `
     sub: 'No app install — it opens in your browser',
     art: `
     <svg viewBox="0 0 1080 980">
-      <circle class="fill-pine soft" cx="540" cy="460" r="340"/>
+      <circle cx="540" cy="450" r="340" style="fill:var(--teal-soft)" opacity="0.35"/>
       <g class="card">
-        <rect class="pict" x="150" y="240" width="380" height="500" rx="28" style="fill:var(--ivory)"/>
-        <g class="qr" transform="translate(212 310)">
-          <!-- QR finder patterns (TL/TR/BL) + data dots -->
-          <!-- outer g holds the translate; inner g.q takes the pop transform
-               (animating transform on the same node would clobber the translate) -->
+        ${GROUND(340, 800, 380)}
+        <rect x="150" y="220" width="380" height="520" rx="30" style="fill:var(--surface)" class="pict"/>
+        <text x="212" y="292" font-size="26" class="chip-label" style="fill:var(--teal)">ATOC KOREA</text>
+        <g transform="translate(212 330)">
           ${[[0,0],[176,0],[0,176]].map(([qx,qy]) => `
             <g transform="translate(${qx} ${qy})"><g class="q">
-              <rect class="pict pict-thin" x="0" y="0" width="80" height="80" rx="14"/>
-              <rect class="fill-ink" x="22" y="22" width="36" height="36" rx="8"/>
+              <rect class="pict pict-thin" x="0" y="0" width="80" height="80" rx="16"/>
+              <rect x="24" y="24" width="32" height="32" rx="8" style="fill:var(--ink)"/>
             </g></g>`).join('')}
-          ${[[110,10],[130,60],[196,110],[110,110],[150,150],[220,196],[110,220],[60,120],[10,116]]
-            .map(([qx,qy]) => `<rect class="fill-ink q" x="${qx}" y="${qy}" width="26" height="26" rx="6"/>`).join('')}
+          ${[[112,8],[136,58],[200,112],[112,112],[152,152],[222,200],[112,222],[58,120],[8,118],[200,60],[226,8]]
+            .map(([qx,qy]) => `<rect class="q" x="${qx}" y="${qy}" width="24" height="24" rx="6" style="fill:var(--ink)"/>`).join('')}
         </g>
-        <line class="pict pict-thin stroke-brass" x1="212" y1="640" x2="470" y2="640"/>
-        <line class="pict pict-thin stroke-brass" x1="212" y1="692" x2="392" y2="692"/>
+        <rect x="212" y="636" width="256" height="9" rx="4.5" style="fill:#c3cdd8"/>
+        <rect x="212" y="672" width="176" height="9" rx="4.5" style="fill:#c3cdd8"/>
       </g>
-      <g class="ph2">${PHONE(640, 280, 0.86)}
-        <g class="check">
-          <circle class="fill-pine" cx="782" cy="540" r="72"/>
-          <path class="pict" style="stroke:var(--ivory)" d="M746 540 l26 28 l48 -54"/>
-        </g>
+      <g class="ph2">
+        <g>${PHONE(640, 300, 0.84, `
+          <g class="scanframe">
+            <path class="pict" style="stroke:var(--teal)" d="M70 190 h-24 a10 10 0 0 1 -10 -10 v-24"/>
+            <path class="pict" style="stroke:var(--teal)" d="M260 190 h24 a10 10 0 0 0 10 -10 v-24"/>
+            <path class="pict" style="stroke:var(--teal)" d="M70 330 h-24 a10 10 0 0 0 -10 10 v24"/>
+            <path class="pict" style="stroke:var(--teal)" d="M260 330 h24 a10 10 0 0 1 10 10 v24"/>
+          </g>
+          <g class="checkwrap">
+            <circle cx="165" cy="262" r="64" style="fill:var(--teal-deep)"/>
+            <path class="checkpath pict" style="stroke:#ffffff" d="M132 262 l24 26 l44 -50"/>
+          </g>
+        `)}</g>
       </g>
-      <g class="beam">
-        <path class="pict pict-thin stroke-brass" d="M560 470 L648 500" stroke-dasharray="2 26" opacity="0.9"/>
-      </g>
+      <g class="beam"><path class="pict pict-thin" style="stroke:var(--teal);stroke-dasharray:2 24" d="M545 470 L650 500"/></g>
     </svg>`,
   });
   drift(el.querySelector('.card'), t0, { from: 'translateY(70px)', dur: 1000, delay: 300 });
   drift(el.querySelector('.ph2'), t0, { from: 'translateX(120px)', dur: 1000, delay: 650 });
-  el.querySelectorAll('.q').forEach((r, i) => pop(r, t0, 1000 + i * 90, 380));
-  an(el.querySelector('.beam'), [{ opacity: 0 }, { opacity: 1, offset: 0.3 }, { opacity: 1 }],
-    { delay: t0 + 1900, duration: 500 });
-  pop(el.querySelector('.check'), t0, 2600, 700);
+  el.querySelectorAll('.q').forEach((r, i) => pop(r, t0, 1000 + i * 70, 360));
+  an(el.querySelector('.beam'), [{ opacity: 0 }, { opacity: 1 }], { delay: t0 + 1900, duration: 400 });
+  pop(el.querySelector('.scanframe'), t0, 1800, 500);
+  pop(el.querySelector('.checkwrap'), t0, 2700, 600);
+  draw(el.querySelector('.checkpath'), t0, 3000, 500);
 }
 
-/* ── Scene 3 — chat in any language ──────────────────────────── */
+/* ── Scene 3 — chat in any language ─────────────────────────── */
 {
   const { el, t0 } = scene(2, {
     kicker: 'Live Translation',
@@ -250,31 +306,40 @@ const PERSON = (x, y, s = 1, cls = 'fill-ink') => `
     sub: 'Translated live — both ways',
     art: `
     <svg viewBox="0 0 1080 980">
-      <circle class="fill-brass soft" cx="540" cy="470" r="340"/>
-      ${PERSON(180, 560, 1.5)}
-      ${PERSON(720, 560, 1.5, 'fill-pine')}
-      <g class="b1">
-        <rect class="fill-ink" x="150" y="300" width="300" height="110" rx="42"/>
-        <path class="fill-ink" d="M240 402 l-20 52 l60 -44 z"/>
-        <text class="bubble-label" x="300" y="372" font-size="52" text-anchor="middle">Hola!</text>
-      </g>
+      <circle cx="540" cy="450" r="340" style="fill:var(--teal-soft)" opacity="0.4"/>
+      <g class="pA"><g>${GUEST_A(160, 520, 1.42)}</g></g>
+      <g class="pB"><g>${DRIVER(730, 520, 1.42)}</g></g>
+      <g class="b1w"><g class="b1">
+        <rect x="140" y="260" width="310" height="112" rx="44" style="fill:var(--ink)"/>
+        <path d="M230 364 l-20 52 l62 -44 z" style="fill:var(--ink)"/>
+        <text x="295" y="333" font-size="52" text-anchor="middle" class="bubble-label">Hola!</text>
+        <g transform="translate(160 388)"><rect width="66" height="40" rx="12" style="fill:var(--teal-soft)"/>
+          <text x="33" y="28" font-size="24" text-anchor="middle" class="chip-label" style="fill:var(--teal-deep)">ES</text></g>
+      </g></g>
       <g class="arrows">
-        <path class="pict stroke-brass" d="M480 330 h96 m0 0 l-28 -28 m28 28 l-28 28"/>
-        <path class="pict stroke-brass" d="M600 470 h-96 m0 0 l28 -28 m-28 28 l28 28"/>
+        <path class="a1 pict" style="stroke:var(--teal)" d="M478 316 h110 m0 0 l-30 -30 m30 30 l-30 30"/>
+        <path class="a2 pict" style="stroke:var(--teal)" d="M600 452 h-110 m0 0 l30 -30 m-30 30 l30 30"/>
       </g>
-      <g class="b2">
-        <rect class="fill-pine" x="630" y="300" width="330" height="110" rx="42"/>
-        <path class="fill-pine" d="M870 402 l20 52 l-60 -44 z"/>
-        <text class="bubble-label" x="795" y="376" font-size="50" text-anchor="middle">안녕하세요</text>
-      </g>
+      <g class="b2w"><g class="b2">
+        <rect x="620" y="260" width="340" height="112" rx="44" style="fill:var(--teal-deep)"/>
+        <path d="M868 364 l20 52 l-62 -44 z" style="fill:var(--teal-deep)"/>
+        <text x="790" y="336" font-size="50" text-anchor="middle" class="bubble-label">안녕하세요</text>
+        <g transform="translate(874 388)"><rect width="70" height="40" rx="12" style="fill:var(--teal-soft)"/>
+          <text x="35" y="28" font-size="24" text-anchor="middle" class="chip-label" style="fill:var(--teal-deep)">KO</text></g>
+      </g></g>
     </svg>`,
   });
-  pop(el.querySelector('.b1'), t0, 700, 700);
-  el.querySelectorAll('.arrows path').forEach((p, i) => draw(p, t0, 1500 + i * 300, 700));
-  pop(el.querySelector('.b2'), t0, 2400, 700);
+  drift(el.querySelector('.pA'), t0, { from: 'translateX(-80px)', dur: 900, delay: 300 });
+  drift(el.querySelector('.pB'), t0, { from: 'translateX(80px)', dur: 900, delay: 450 });
+  pop(el.querySelector('.b1'), t0, 900, 700);
+  float(el.querySelector('.b1w'), t0, 1600, 6);
+  draw(el.querySelector('.a1'), t0, 1600, 650);
+  draw(el.querySelector('.a2'), t0, 1950, 650);
+  pop(el.querySelector('.b2'), t0, 2500, 700);
+  float(el.querySelector('.b2w'), t0, 3200, 6, 3000);
 }
 
-/* ── Scene 4 — spot guides arrive automatically ──────────────── */
+/* ── Scene 4 — spot guides arrive automatically ─────────────── */
 {
   const { el, t0 } = scene(3, {
     kicker: 'On Arrival',
@@ -282,31 +347,49 @@ const PERSON = (x, y, s = 1, cls = 'fill-ink') => `
     sub: 'Photos, stories and tips — in your language',
     art: `
     <svg viewBox="0 0 1080 980">
-      <circle class="fill-pine soft" cx="540" cy="470" r="340"/>
+      <circle cx="540" cy="450" r="340" style="fill:var(--teal-soft)" opacity="0.35"/>
+      <g class="ripples">
+        <circle class="rip1" cx="540" cy="536" r="60" style="fill:none;stroke:var(--teal);stroke-width:8"/>
+        <circle class="rip2" cx="540" cy="536" r="60" style="fill:none;stroke:var(--teal);stroke-width:6"/>
+      </g>
       <g class="pin">
-        <path class="fill-brass" d="M540 150 c-96 0 -160 68 -160 152 c0 110 160 248 160 248 s160 -138 160 -248 c0 -84 -64 -152 -160 -152 z"/>
-        <circle class="fill-ivory" cx="540" cy="300" r="58"/>
+        <path d="M540 130 c-92 0 -154 64 -154 146 c0 106 154 260 154 260 s154 -154 154 -260 c0 -82 -62 -146 -154 -146 z" style="fill:var(--teal)"/>
+        <circle cx="540" cy="274" r="72" style="fill:var(--surface)"/>
+        <path d="M492 300 l30 -40 l22 22 l26 -34 l26 52 z" style="fill:var(--teal-deep)"/>
+        <circle cx="512" cy="248" r="12" style="fill:var(--teal)"/>
       </g>
       <g class="cardpop">
-        <rect class="pict" x="300" y="560" width="480" height="300" rx="28" style="fill:var(--ivory)"/>
-        <rect class="fill-pine soft" x="336" y="596" width="180" height="130" rx="16" style="opacity:0.35"/>
-        <path class="pict pict-thin stroke-pine" d="M350 700 l50 -56 l40 40 l54 -66 l40 82" />
-        <line class="pict pict-thin stroke-brass" x1="552" y1="620" x2="744" y2="620"/>
-        <line class="pict pict-thin" x1="552" y1="672" x2="744" y2="672" opacity="0.4"/>
-        <line class="pict pict-thin" x1="552" y1="716" x2="700" y2="716" opacity="0.4"/>
-        <line class="pict pict-thin" x1="336" y1="790" x2="744" y2="790" opacity="0.25"/>
+        ${GROUND(540, 906, 480)}
+        <rect x="290" y="580" width="500" height="310" rx="30" style="fill:var(--surface)" class="pict"/>
+        <rect x="326" y="616" width="190" height="140" rx="18" style="fill:var(--glass)"/>
+        <path d="M338 736 l50 -62 l38 40 l50 -66 l42 88 z" style="fill:var(--teal-deep)"/>
+        <circle cx="366" cy="652" r="15" style="fill:#f5c045"/>
+        <g transform="translate(540 616)"><rect width="66" height="40" rx="12" style="fill:var(--teal-soft)"/>
+          <text x="33" y="28" font-size="24" text-anchor="middle" class="chip-label" style="fill:var(--teal-deep)">EN</text></g>
+        <rect x="540" y="672" width="212" height="12" rx="6" style="fill:var(--ink)" opacity="0.85"/>
+        <rect x="540" y="706" width="180" height="9" rx="4.5" style="fill:#c3cdd8"/>
+        <rect x="540" y="734" width="196" height="9" rx="4.5" style="fill:#c3cdd8"/>
+        <rect x="326" y="790" width="428" height="9" rx="4.5" style="fill:#c3cdd8"/>
+        <rect x="326" y="820" width="330" height="9" rx="4.5" style="fill:#c3cdd8"/>
       </g>
     </svg>`,
   });
   an(el.querySelector('.pin'),
-    [{ transform: 'translateY(-260px)', opacity: 0 },
-     { transform: 'translateY(24px)', opacity: 1, offset: 0.72 },
+    [{ transform: 'translateY(-300px)', opacity: 0 },
+     { transform: 'translateY(26px)', opacity: 1, offset: 0.7 },
      { transform: 'translateY(0)', opacity: 1 }],
-    { delay: t0 + 500, duration: 1000 });
-  pop(el.querySelector('.cardpop'), t0, 1700, 800);
+    { delay: t0 + 450, duration: 950 });
+  for (const [cls, d] of [['.rip1', 1350], ['.rip2', 1600]]) {
+    const ring = el.querySelector(cls);
+    an(ring, [
+      { transform: 'scale(0.4)', transformOrigin: '540px 536px', opacity: 0.8 },
+      { transform: 'scale(2.6)', transformOrigin: '540px 536px', opacity: 0 },
+    ], { delay: t0 + d, duration: 1100, easing: 'ease-out' });
+  }
+  pop(el.querySelector('.cardpop'), t0, 1900, 800);
 }
 
-/* ── Scene 5 — free time, timed ──────────────────────────────── */
+/* ── Scene 5 — countdown keeps everyone together ────────────── */
 {
   const { el, t0 } = scene(4, {
     kicker: 'Free Time',
@@ -314,37 +397,44 @@ const PERSON = (x, y, s = 1, cls = 'fill-ink') => `
     sub: 'Back at the van, right on time',
     art: `
     <svg viewBox="0 0 1080 980">
-      <circle class="fill-brass soft" cx="540" cy="440" r="340"/>
+      <circle cx="540" cy="400" r="330" style="fill:var(--teal-soft)" opacity="0.35"/>
       <g class="clock">
-        <circle class="pict" cx="540" cy="420" r="230" style="fill:var(--ivory)"/>
-        <circle class="ring pict stroke-brass" cx="540" cy="420" r="230" transform="rotate(-90 540 420)" stroke-width="22"/>
-        <line class="pict hand" x1="540" y1="420" x2="540" y2="270"/>
-        <line class="pict" x1="540" y1="420" x2="640" y2="420"/>
-        <circle class="fill-ink" cx="540" cy="420" r="18"/>
+        <circle cx="540" cy="380" r="220" style="fill:var(--surface)" class="pict"/>
+        ${Array.from({ length: 12 }, (_, i) => {
+          const a = (i * 30 - 90) * Math.PI / 180, major = i % 3 === 0;
+          const r1 = major ? 178 : 190, r2 = 202;
+          return `<line x1="${540 + r1 * Math.cos(a)}" y1="${380 + r1 * Math.sin(a)}"
+                        x2="${540 + r2 * Math.cos(a)}" y2="${380 + r2 * Math.sin(a)}"
+                        class="pict ${major ? '' : 'pict-thin'}" ${major ? '' : 'opacity="0.4"'}/>`;
+        }).join('')}
+        <circle class="ring" cx="540" cy="380" r="220" transform="rotate(-90 540 380)"
+                style="fill:none;stroke:var(--teal);stroke-width:20;stroke-linecap:round"/>
+        <g class="handm"><line class="pict" x1="540" y1="380" x2="540" y2="238" style="stroke-width:18"/></g>
+        <g class="handh"><line class="pict" x1="540" y1="380" x2="636" y2="380" style="stroke-width:18"/></g>
+        <circle cx="540" cy="380" r="20" style="fill:var(--teal-deep)"/>
+        <circle cx="540" cy="380" r="8" style="fill:var(--surface)"/>
       </g>
       <g class="walkers">
-        ${PERSON(150, 740, 1.05)}
-        ${PERSON(300, 760, 0.9, 'fill-pine')}
-        ${PERSON(430, 745, 1.0)}
+        <g class="wA"><g>${GUEST_A(110, 638, 0.85)}</g></g>
+        <g class="wB"><g>${GUEST_B(258, 652, 0.78)}</g></g>
+        <g class="wC"><g>${GUEST_A(392, 644, 0.82)}</g></g>
       </g>
-      <g transform="translate(660 740)"><g class="minivan">
-        <path class="pict" d="M0 110 v-64 a20 20 0 0 1 20 -20 h190 l70 52 h60 a20 20 0 0 1 20 20 v12" style="fill:var(--ivory)"/>
-        <line class="pict" x1="0" y1="110" x2="360" y2="110"/>
-        <circle class="pict" cx="100" cy="110" r="32" style="fill:var(--ivory)"/>
-        <circle class="pict" cx="290" cy="110" r="32" style="fill:var(--ivory)"/>
-      </g></g>
+      <g class="minivan"><g>${VAN(620, 700, 0.72)}</g></g>
     </svg>`,
   });
-  draw(el.querySelector('.ring'), t0, 500, 1600);
-  an(el.querySelector('.hand'),
-    [{ transform: 'rotate(0deg)', transformOrigin: '540px 420px' },
-     { transform: 'rotate(80deg)', transformOrigin: '540px 420px' }],
-    { delay: t0 + 700, duration: 1800 });
-  drift(el.querySelector('.walkers'), t0, { from: 'translateX(-110px)', dur: 1400, delay: 1500 });
-  drift(el.querySelector('.minivan'), t0, { from: 'translateY(40px)', dur: 900, delay: 600 });
+  draw(el.querySelector('.ring'), t0, 500, 1700);
+  an(el.querySelector('.handm'),
+    [{ transform: 'rotate(0deg)', transformOrigin: '540px 380px' }, { transform: 'rotate(150deg)', transformOrigin: '540px 380px' }],
+    { delay: t0 + 700, duration: 2000 });
+  an(el.querySelector('.handh'),
+    [{ transform: 'rotate(0deg)', transformOrigin: '540px 380px' }, { transform: 'rotate(28deg)', transformOrigin: '540px 380px' }],
+    { delay: t0 + 700, duration: 2000 });
+  drift(el.querySelector('.walkers'), t0, { from: 'translateX(-120px)', dur: 1500, delay: 1400 });
+  ['.wA', '.wB', '.wC'].forEach((w, i) => float(el.querySelector(w), t0, 1400 + i * 200, 5, 1400));
+  drift(el.querySelector('.minivan'), t0, { from: 'translateY(46px)', dur: 900, delay: 600 });
 }
 
-/* ── Scene 6 — 24/7 human support ────────────────────────────── */
+/* ── Scene 6 — 24/7 human support ───────────────────────────── */
 {
   const { el, t0 } = scene(5, {
     kicker: 'Always With You',
@@ -352,29 +442,41 @@ const PERSON = (x, y, s = 1, cls = 'fill-ink') => `
     sub: 'One tap for help — anytime · AtoC Korea',
     art: `
     <svg viewBox="0 0 1080 980">
-      <circle class="fill-pine soft" cx="540" cy="460" r="340"/>
+      <circle cx="540" cy="450" r="340" style="fill:var(--teal-soft)" opacity="0.4"/>
       <g class="agent">
-        <circle class="fill-ink" cx="540" cy="360" r="86"/>
-        <path class="fill-ink" d="M540 470 c-108 0 -124 96 -124 190 a20 20 0 0 0 20 20 h208 a20 20 0 0 0 20 -20 c0 -94 -16 -190 -124 -190 z"/>
-        <path class="pict stroke-brass" d="M424 356 a116 116 0 0 1 232 0" stroke-width="20"/>
-        <rect class="fill-brass" x="400" y="346" width="44" height="86" rx="22"/>
-        <rect class="fill-brass" x="636" y="346" width="44" height="86" rx="22"/>
-        <path class="pict pict-thin stroke-brass" d="M658 432 a92 92 0 0 1 -74 62" />
+        ${GROUND(500, 856, 460)}
+        <path d="M500 850 c-150 0 -172 -104 -172 -196 a172 150 0 0 1 344 0 c0 92 -22 196 -172 196 z" transform="translate(0 30)" style="fill:var(--ink)" opacity="0"/>
+        <path d="M500 470 c-118 0 -138 102 -138 196 a22 22 0 0 0 22 22 h232 a22 22 0 0 0 22 -22 c0 -94 -20 -196 -138 -196 z" style="fill:var(--ink)"/>
+        <path d="M500 470 c-30 0 -52 8 -68 22 l68 60 l68 -60 c-16 -14 -38 -22 -68 -22 z" style="fill:var(--surface)"/>
+        <path d="M500 552 l-22 -20 h44 z" style="fill:var(--teal)"/>
+        <circle cx="410" cy="600" r="16" style="fill:var(--teal)"/>
+        <circle cx="500" cy="352" r="88" style="fill:var(--ink)"/>
+        <path d="M412 340 a88 88 0 0 1 176 0 c-10 -30 -34 -50 -50 -54 c-22 -6 -30 10 -62 10 c-22 0 -50 20 -64 44 z" style="fill:var(--ink-deep)"/>
+        <path d="M388 350 a112 112 0 0 1 224 0" style="fill:none;stroke:var(--teal);stroke-width:18;stroke-linecap:round"/>
+        <rect x="368" y="338" width="42" height="82" rx="21" style="fill:var(--teal)"/>
+        <rect x="590" y="338" width="42" height="82" rx="21" style="fill:var(--teal)"/>
+        <path d="M612 420 a96 96 0 0 1 -72 58" style="fill:none;stroke:var(--teal);stroke-width:12;stroke-linecap:round"/>
+        <circle cx="536" cy="482" r="12" style="fill:var(--teal)"/>
+        <g class="online"><circle cx="620" cy="290" r="14" style="fill:#2ecc71"/><circle class="onlinering" cx="620" cy="290" r="14" style="fill:none;stroke:#2ecc71;stroke-width:5"/></g>
       </g>
       <g class="sos">
-        <circle cx="810" cy="640" r="104" style="fill:var(--ivory);stroke:var(--safe);stroke-width:14px"/>
-        <text x="810" y="668" font-size="66" font-weight="700" text-anchor="middle" fill="var(--safe)" font-family="'Segoe UI', sans-serif">SOS</text>
+        ${GROUND(810, 780, 220)}
+        <circle cx="810" cy="640" r="104" style="fill:var(--surface);stroke:var(--safe);stroke-width:14"/>
+        <text x="810" y="668" font-size="64" font-weight="700" text-anchor="middle" style="fill:var(--safe)" font-family="'Segoe UI', sans-serif">SOS</text>
       </g>
-      <g class="halo"><circle class="pict pict-thin stroke-safe" cx="810" cy="640" r="150" opacity="0.5"/></g>
+      <g class="halo"><circle class="halo1" cx="810" cy="640" r="140" style="fill:none;stroke:var(--safe);stroke-width:8" opacity="0"/></g>
     </svg>`,
   });
   drift(el.querySelector('.agent'), t0, { from: 'translateY(70px)', dur: 1100, delay: 350 });
+  an(el.querySelector('.onlinering'), [
+    { transform: 'scale(1)', transformOrigin: '620px 290px', opacity: 0.8 },
+    { transform: 'scale(2.2)', transformOrigin: '620px 290px', opacity: 0 },
+  ], { delay: t0 + 1400, duration: 1400, iterations: Infinity, easing: 'ease-out' });
   pop(el.querySelector('.sos'), t0, 1500, 700);
-  an(el.querySelector('.halo circle'),
-    [{ transform: 'scale(0.75)', transformOrigin: '810px 640px', opacity: 0 },
-     { transform: 'scale(1)', transformOrigin: '810px 640px', opacity: 0.5, offset: 0.6 },
-     { transform: 'scale(1.12)', transformOrigin: '810px 640px', opacity: 0 }],
-    { delay: t0 + 2100, duration: 1600 });
+  an(el.querySelector('.halo1'), [
+    { transform: 'scale(0.8)', transformOrigin: '810px 640px', opacity: 0.6 },
+    { transform: 'scale(1.5)', transformOrigin: '810px 640px', opacity: 0 },
+  ], { delay: t0 + 2200, duration: 1500, iterations: Infinity, easing: 'ease-out' });
 }
 
 window.__seek(0);
