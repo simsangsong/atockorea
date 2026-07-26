@@ -52,12 +52,15 @@ const TEMPLATES: Record<GuestSignalType, (args: SignalArgs) => Record<string, st
     es: `🚻 ${name ?? 'Un huésped'} pidió una parada corta cuando sea posible.`,
     zh: `🚻 ${name ?? '客人'}请求方便时短暂停车。`,
   }),
+  // Pin-bearing templates put the URL on its OWN line (driver-signal grammar):
+  // parseLocationMessage strips that line for the map card, so the visible
+  // capsule text stays clean — no dangling "— 위치:" tail (final-polish audit).
   lost: ({ name, mapsUrl }) => ({
-    en: `🧭 ${name ?? 'A guest'} may be lost${mapsUrl ? ` — location: ${mapsUrl}` : ' — please check in the chat.'}`,
-    ko: `🧭 ${name ?? '손님'}이 길을 잃은 것 같아요${mapsUrl ? ` — 위치: ${mapsUrl}` : ' — 채팅으로 확인해 주세요.'}`,
-    ja: `🧭 ${name ?? 'ゲスト'}が道に迷ったようです${mapsUrl ? ` — 位置: ${mapsUrl}` : ' — チャットでご確認ください。'}`,
-    es: `🧭 ${name ?? 'Un huésped'} puede estar perdido${mapsUrl ? `; ubicación: ${mapsUrl}` : '; revisa el chat.'}`,
-    zh: `🧭 ${name ?? '客人'}可能迷路了${mapsUrl ? `——位置：${mapsUrl}` : '——请在聊天中确认。'}`,
+    en: `🧭 ${name ?? 'A guest'} may be lost${mapsUrl ? `\n${mapsUrl}` : ' — please check in the chat.'}`,
+    ko: `🧭 ${name ?? '손님'}이 길을 잃은 것 같아요${mapsUrl ? `\n${mapsUrl}` : ' — 채팅으로 확인해 주세요.'}`,
+    ja: `🧭 ${name ?? 'ゲスト'}が道に迷ったようです${mapsUrl ? `\n${mapsUrl}` : ' — チャットでご確認ください。'}`,
+    es: `🧭 ${name ?? 'Un huésped'} puede estar perdido${mapsUrl ? `\n${mapsUrl}` : '; revisa el chat.'}`,
+    zh: `🧭 ${name ?? '客人'}可能迷路了${mapsUrl ? `\n${mapsUrl}` : '——请在聊天中确认。'}`,
   }),
   lost_item: ({ name, note }) => ({
     en: `🧳 Lost-item report from ${name ?? 'a guest'}${note ? ` — "${note}"` : ' — something may have been left in the vehicle'}. Please check and reply here.`,
@@ -67,28 +70,28 @@ const TEMPLATES: Record<GuestSignalType, (args: SignalArgs) => Record<string, st
     zh: `🧳 ${name ?? '客人'}的失物报告${note ? `——「${note}」` : '——可能有物品落在车上'}。请确认后在此回复。`,
   }),
   pickup_request: ({ name, mapsUrl }) => ({
-    en: `🚕 ${name ?? 'A guest'} asks to be picked up here${mapsUrl ? ` — location: ${mapsUrl}` : ' — please check in the chat.'}`,
-    ko: `🚕 ${name ?? '손님'}이 이 위치로 픽업을 요청했어요${mapsUrl ? ` — 위치: ${mapsUrl}` : ' — 채팅으로 확인해 주세요.'}`,
-    ja: `🚕 ${name ?? 'ゲスト'}がこの場所への迎車を希望しています${mapsUrl ? ` — 位置: ${mapsUrl}` : ' — チャットでご確認ください。'}`,
-    es: `🚕 ${name ?? 'Un huésped'} pide que lo recojan aquí${mapsUrl ? `; ubicación: ${mapsUrl}` : '; revisa el chat.'}`,
-    zh: `🚕 ${name ?? '客人'}请求在此处接载${mapsUrl ? `——位置：${mapsUrl}` : '——请在聊天中确认。'}`,
+    en: `🚕 ${name ?? 'A guest'} asks to be picked up here${mapsUrl ? `\n${mapsUrl}` : ' — please check in the chat.'}`,
+    ko: `🚕 ${name ?? '손님'}이 이 위치로 픽업을 요청했어요${mapsUrl ? `\n${mapsUrl}` : ' — 채팅으로 확인해 주세요.'}`,
+    ja: `🚕 ${name ?? 'ゲスト'}がこの場所への迎車を希望しています${mapsUrl ? `\n${mapsUrl}` : ' — チャットでご確認ください。'}`,
+    es: `🚕 ${name ?? 'Un huésped'} pide que lo recojan aquí${mapsUrl ? `\n${mapsUrl}` : '; revisa el chat.'}`,
+    zh: `🚕 ${name ?? '客人'}请求在此处接载${mapsUrl ? `\n${mapsUrl}` : '——请在聊天中确认。'}`,
   }),
   dropoff_change: ({ name, mapsUrl, note }) => ({
-    en: `📍 ${name ?? 'A guest'} requests a different drop-off point${note ? `: ${note}` : ''}.${mapsUrl ? ` Location: ${mapsUrl}` : ''}`,
-    ko: `📍 ${name ?? '손님'}이 드랍 지점 변경을 요청했어요${note ? `: ${note}` : ''}.${mapsUrl ? ` 위치: ${mapsUrl}` : ''}`,
-    ja: `📍 ${name ?? 'ゲスト'}が降車地点の変更を希望しています${note ? `：${note}` : ''}。${mapsUrl ? ` 位置: ${mapsUrl}` : ''}`,
-    es: `📍 ${name ?? 'Un huésped'} solicita otro punto de bajada${note ? `: ${note}` : ''}.${mapsUrl ? ` Ubicación: ${mapsUrl}` : ''}`,
-    zh: `📍 ${name ?? '客人'}请求更改下车地点${note ? `：${note}` : ''}。${mapsUrl ? ` 位置：${mapsUrl}` : ''}`,
+    en: `📍 ${name ?? 'A guest'} requests a different drop-off point${note ? `: ${note}` : ''}.${mapsUrl ? `\n${mapsUrl}` : ''}`,
+    ko: `📍 ${name ?? '손님'}이 드랍 지점 변경을 요청했어요${note ? `: ${note}` : ''}.${mapsUrl ? `\n${mapsUrl}` : ''}`,
+    ja: `📍 ${name ?? 'ゲスト'}が降車地点の変更を希望しています${note ? `：${note}` : ''}。${mapsUrl ? `\n${mapsUrl}` : ''}`,
+    es: `📍 ${name ?? 'Un huésped'} solicita otro punto de bajada${note ? `: ${note}` : ''}.${mapsUrl ? `\n${mapsUrl}` : ''}`,
+    zh: `📍 ${name ?? '客人'}请求更改下车地点${note ? `：${note}` : ''}。${mapsUrl ? `\n${mapsUrl}` : ''}`,
   }),
   // M-D3/M-D4 — "meet me exactly here": a general-purpose one-shot pin (not
   // an emergency), fired from the 📍 chip; the guest usually follows it with
   // one photo of what they can see. Staff open it in KakaoNavi (M-D2).
   share_location: ({ name, mapsUrl }) => ({
-    en: `📍 ${name ?? 'A guest'} shared their exact location${mapsUrl ? ` — ${mapsUrl}` : ' — please check the chat.'}`,
-    ko: `📍 ${name ?? '손님'}이 정확한 위치를 공유했어요${mapsUrl ? ` — 위치: ${mapsUrl}` : ' — 채팅으로 확인해 주세요.'}`,
-    ja: `📍 ${name ?? 'ゲスト'}が正確な現在地を共有しました${mapsUrl ? ` — 位置: ${mapsUrl}` : ' — チャットでご確認ください。'}`,
-    es: `📍 ${name ?? 'Un huésped'} compartió su ubicación exacta${mapsUrl ? ` — ${mapsUrl}` : '; revisa el chat.'}`,
-    zh: `📍 ${name ?? '客人'}分享了准确位置${mapsUrl ? `——位置：${mapsUrl}` : '——请在聊天中确认。'}`,
+    en: `📍 ${name ?? 'A guest'} shared their exact location${mapsUrl ? `\n${mapsUrl}` : ' — please check the chat.'}`,
+    ko: `📍 ${name ?? '손님'}이 정확한 위치를 공유했어요${mapsUrl ? `\n${mapsUrl}` : ' — 채팅으로 확인해 주세요.'}`,
+    ja: `📍 ${name ?? 'ゲスト'}が正確な現在地を共有しました${mapsUrl ? `\n${mapsUrl}` : ' — チャットでご確認ください。'}`,
+    es: `📍 ${name ?? 'Un huésped'} compartió su ubicación exacta${mapsUrl ? `\n${mapsUrl}` : '; revisa el chat.'}`,
+    zh: `📍 ${name ?? '客人'}分享了准确位置${mapsUrl ? `\n${mapsUrl}` : '——请在聊天中确认。'}`,
   }),
   // M-D3/M-D5 — private-tour guests SET the meeting themselves (D-1 or at a
   // spot). Metadata mirrors the guide's meeting_notice contract, so the
