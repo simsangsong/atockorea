@@ -39,9 +39,20 @@ npm run i18n:status
 | 글로서리 L2/L3 (브랜드·도메인) | ✅ `i18n-work/glossary/_brands.json` |
 | 독일어 Tier1 10슬러그 추출 | ✅ 112 unit / 5,566 세그먼트 |
 | **독일어 Tier1 10슬러그 전량** | ✅ **DB INSERT 완료 (2026-07-26)** · 112 unit · 검증 실패 0 · 전 슬러그 커버리지 100% |
-| 프랑스어·이탈리아어·러시아어 상품상세 | ⏳ 미착수 (글로서리만 준비됨) |
+| **프랑스어 Tier1 10슬러그 전량** | ✅ **DB INSERT 완료 (2026-07-26)** · 112 unit · 검증 실패 0 · 조판 위반 0 · 전 슬러그 커버리지 100% |
+| 이탈리아어·러시아어 상품상세 | ⏳ 미착수 (글로서리만 준비됨) |
 
-**독일어는 끝났다. 다음 명령은 `npm run i18n:extract -- --locale=fr --slugs=<Tier1 10개>` 다.**
+**독일어·프랑스어는 끝났다. 다음 명령은 이탈리아어 추출이다:**
+```bash
+npm run i18n:extract -- --locale=it --slugs=jeju-grand-highlights-loop,busan-private-car-charter-cruise-shore,seoul-dmz-private-3rd-tunnel-suspension-bridge,busan-cruise-shore-excursion-bus-tour,busan-top-attractions-day-tour,from-incheon-seoul-day-tour-cruise-guests,incheon-seoul-private-car-shore-excursion-cruise,jeju-cruise-shore-excursion-bus-tour,jeju-cruise-shore-excursion-small-group-tour,jeju-eastern-unesco-spots-day-tour
+```
+그다음 러시아어. 🔴 **러시아어 서브에이전트에는 `styleguide/ru.md`의 복수형 4형태 경고와
+Kontsevich 전사표를 반드시 읽히게 하라.**
+
+**프랑스어 프롬프트에서 효과가 확인된 4줄**(it/ru로 옮길 때 언어만 바꿔 그대로 써라):
+① 시각 서식 — "서식 변경은 값 변경이 아니다"를 **명시**하라. 안 넣으면 규칙 3을 오해해
+   원문 콜론형을 유지하는 유닛이 나온다(실측). ② 조판 — "쓴 뒤 코드포인트를 직접 세어
+   확인하라". ③ 도시명 — 고유명 예외를 함께 준다. ④ 층 번호 — 원문 숫자 유지.
 
 검증기는 독일어를 돌리며 오탐 11종을 걸러내고 다듬어졌다(§11). 그중 **서수·월 이름·관용구
 표에는 fr/it/ru 항목을 미리 넣어 뒀다** — 이탈리아어 `quinto`처럼 서수 어간이 기수와 다른
