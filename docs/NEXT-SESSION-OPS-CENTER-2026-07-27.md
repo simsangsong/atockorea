@@ -8,11 +8,11 @@
 
 | 항목 | 값 |
 |---|---|
-| 브랜치 | **`main`** (직전 작업 `fix/smartguide-recovery-2026-07-25` 47커밋 fast-forward 머지 완료, `ea3d738e`) |
-| 워크트리 | `C:\Users\sangsong\atockorea-main-merge` — ⚠️ **타 세션과 공유**. 커밋 시 `git add -A` 금지, 경로 명시 |
+| 브랜치 | `claude/ops-next-additions` (main에서 분기, §4 1~8번 8커밋 — **머지 대기**) |
+| 워크트리 | `C:\Users\sangsong\atockorea-ops-next` (node_modules는 `atockorea-main-merge`에서 정션 — 🔴 삭제 시 정션 먼저 끊을 것) |
 | Supabase | ✅ `mcp__atockorea__*` = `cghyvbwmijqpahnoduyv` 만 사용 |
 | 🛑 금지 | `mcp__kursoflow__*` 와 이름 없는 UUID MCP — 둘 다 Kursoflow. **코드 참조는 디스크**(`C:\Users\sangsong\kursoflow-app`)로만 |
-| 게이트 | `npx tsc --noEmit` 0 · `npx jest` **4369 pass / 21 skip** · **`npx next build --webpack` exit 0** |
+| 게이트 | `npx tsc --noEmit` 0 · `npx jest` **4430 pass / 21 skip** · **`npx next build --webpack` exit 0** |
 | 라이브 검증 | `npx tsx scripts/qa-ops-center-queries.ts --cleanup` (15검사) |
 | 화면 검증 | `npx tsx scripts/qa-admin-cjk.ts` (세션 없으면 **exit 2**) |
 
@@ -54,7 +54,26 @@
 
 ---
 
-## 2. 🔴 직전 세션이 남긴 갭 (정직하게)
+## 2. 🔴 직전 세션이 남긴 갭 — **2026-07-26 전부 닫힘**
+
+> 아래 2-1~2-8은 브랜치 `claude/ops-next-additions`에서 8커밋으로 전부 구현됐다.
+> 워크트리 `C:\Users\sangsong\atockorea-ops-next`. 게이트 통과:
+> `tsc` 0 · `jest` **4430 pass / 21 skip** · `next build --webpack` exit 0 ·
+> `qa-ops-center-queries.ts --cleanup` **15 PASS / 0 FAIL** (라이브 잔여 0).
+> **prod 스키마 변경 없음** — 전부 코드 변경이다(`vehicle_id` 컬럼은 이미 있었다).
+>
+> | 갭 | 무엇을 했나 | 커밋 |
+> |---|---|---|
+> | 2-1 | 배차 패널 "등록된 차량에서 고르기" → `ops_room_vehicles.vehicle_id` 기입. 마스터 연결 시 번호판은 마스터가 정본(자유 입력 닫힘), 용차는 텍스트 유지 | `66c2fea0` |
+> | 2-2 | **좌석을 줄이는 저장만** 하드 블록(409 `capacity_short`) + 사유 입력 시 통과·기록. 배치도/마스터 교체와 배차 해제 양쪽 | `eedaa7bb` |
+> | 2-3 | 오토파일럿 점검을 **일일** 크론(`ops-daily-report`, 18:00 KST)에 편입. 결과가 같은 요청의 일일 보고서 ⑤ 요주의에 실린다 | `8aa52515` |
+> | 2-4 | `ops_weather_cache` 퍼지(투어일 +7일) — flywheel 퍼지 단계 ⑧ | `ebaac91a` |
+> | 2-5 | 배정 안내 메일에 셀프 스케줄 링크. URL 조립은 `issueGuideScheduleLink` 한 곳 | `bf2b3ecf` |
+> | 2-6 | 명단이 채널을 갈라 읽는다(이메일 로그가 왓츠앱 상태를 오염시키던 **라이브 버그** 수정) + 손님별 메일 이력·실패 사유·카운터 | `501fc7a3` |
+> | 2-7 | 명단에서 왓츠앱 문구 편집·되돌리기(6로케일) | `6cbf0e54` |
+> | 2-8 | 예약 내역 xlsx(요약·상세 2시트), CSV와 같은 리졸버·같은 행 | `77a9ec48` |
+>
+> 아래 원문은 **왜 그게 문제였는지**의 기록으로 남긴다. 다시 만들지 말 것.
 
 ### 2-1. 차량 마스터가 배차와 **연결돼 있지 않다** ← 최우선
 
@@ -130,20 +149,40 @@
 
 ---
 
-## 4. 추가하면 좋은 것 (우선순위 순)
+## 4. 추가하면 좋은 것 — **1~8번 전부 완료 (2026-07-26)**
 
-| 순위 | 항목 | 왜 |
-|---|---|---|
-| 1 | **§2-1 차량 마스터 ↔ 배차 연결** | 이게 없으면 W1·W4 차량 축이 장식이다 |
-| 2 | **§2-2 정원 초과 하드 블록** | 안전 문제. 설계안이 하드 블록으로 못박았다 |
-| 3 | **§2-3 오토파일럿 크론** | 안 누르면 큐가 안 생긴다 |
-| 4 | **§2-6 이메일 발송 이력 표시** | "보냈나?"를 화면에서 못 보면 중복 발송한다 |
-| 5 | §2-5 배정 안내에 셀프 링크 | 가이드가 자기 일정을 볼 경로 |
-| 6 | §2-8 예약 내역 엑셀 | 엔진은 이미 있다 |
-| 7 | §2-4 예보 캐시 퍼지 | 급하지 않지만 영구 증가 |
-| 8 | §2-7 왓츠앱 문구 저장 UI | API는 이미 있다 |
-| — | OTA 수신 주소 설정 UI | 미착수. `OpsSettingsTab.tsx` 존재. 화이트리스트는 **파싱 신뢰의 근거**라 여기 없는 발신자는 자동 확정 금지 |
-| — | `ops_guides.address_enc` | 컬럼 자체가 아직 없다. 기존 봉투(`lib/ops/guides/pii.ts`) 재사용, 새 키 만들지 말 것 |
+§2 표를 볼 것. 1~8번(§2-1~2-8)은 브랜치 `claude/ops-next-additions`에 8커밋으로
+들어갔고 세 게이트를 모두 통과했다. **다시 만들지 말 것.**
+
+남은 것:
+
+| 항목 | 왜 / 주의 |
+|---|---|
+| OTA 수신 주소 설정 UI | 미착수. `OpsSettingsTab.tsx` 존재. 화이트리스트는 **파싱 신뢰의 근거**라 여기 없는 발신자는 자동 확정 금지 |
+| `ops_guides.address_enc` | 컬럼 자체가 아직 없다. 기존 봉투(`lib/ops/guides/pii.ts`) 재사용, 새 키 만들지 말 것 |
+
+### 4-1. 이번에 새로 알게 된 것
+
+- **`ops_whatsapp_send_logs`는 두 채널이 같이 사는 테이블이고 `opened_at`은
+  NOT NULL DEFAULT now()다.** 채널을 안 거르고 읽으면 메일 한 통이 "왓츠앱을 열었다"가
+  된다. 이 테이블을 새로 읽는 코드는 반드시 `channel`로 먼저 나눌 것
+  (`channel` DEFAULT `'whatsapp'`이라 옛 행은 제자리에 온다).
+- **정원 하드 블록은 "줄이는 저장"에만 건다.** 이미 모자란 상태를 막으면 2호차를
+  붙이는 것까지 거부하게 되고, 그건 오버부킹을 고치러 온 사람의 손을 묶는다.
+- **좌석수 미상은 판정하지 않는다.** 모르는 것을 근거로 저장을 거부하면 운영자는
+  시스템을 우회하는 법부터 배우고, 그때부터 화면은 있지도 않은 좌석을 말한다.
+- **순수 함수 테스트만으로는 "호출부가 안 채우는 인자"를 절대 못 잡는다.**
+  §2-5가 정확히 그 모양이었다(계약도 테스트도 있었고 라우트만 비어 있었다).
+  새 기능은 라우트/화면을 통과시키는 테스트를 한 개는 둘 것.
+- **차량 배차의 `vehicle_id` 두 뜻**은 여전히 살아 있다. 요청 경계에서는
+  `master_vehicle_id`(마스터)와 `vehicle_id`(배차 행 id)로 갈라져 있고, 순수 규칙은
+  `lib/ops/vehicles/registry.ts`에 모여 있다.
+
+### 4-2. 사람이 해야 남는 것 (여전히)
+
+§3 전부 유효하다. 특히 **§3-4 첫 데이터 입력** — 차량 마스터가 0대인 동안
+§2-1의 드롭다운은 "등록된 차량이 없어요"만 보여주고, 배차 달력의 차량 축과
+중복 배차 감지는 계속 꺼져 있다. 코드로는 더 닫을 수 없다.
 
 ---
 
@@ -160,37 +199,38 @@
 6. **워크트리 공유.** `git add -A` 금지, 경로 명시.
 7. 커밋 푸터는 `Co-Authored-By: Claude <noreply@anthropic.com>` 만. **모델 식별자 금지.**
 8. 보고는 한국어, 코드·커밋은 영어.
+9. **한 테이블에 두 채널이 살면 반드시 채널로 나눠 읽어라.** `ops_whatsapp_send_logs`가
+   실제로 그랬고, 안 나눈 코드가 메일 발송을 "왓츠앱 열었음"으로 보여주고 있었다.
+10. **순수 함수 테스트는 "호출부가 안 채우는 인자"를 못 잡는다.** 계약도 있고 테스트도
+    green인데 기능이 없는 상태가 실제로 있었다(§2-5). 표면 테스트를 하나는 둘 것.
 
 ---
 
 ## 6. 다음 세션 프롬프트
 
-아래를 그대로 붙여넣으면 된다.
+§4 1~8번은 끝났다(브랜치 `claude/ops-next-additions`, 머지 대기).
+이어받는 세션은 아래 중 하나다.
+
+**(a) 머지부터:**
 
 ```
-C:\Users\sangsong\atockorea-main-merge 에서 작업한다. 브랜치는 main에서 새로 딴다.
+C:\Users\sangsong\atockorea-ops-next 의 claude/ops-next-additions 를 main에 머지해라.
+머지 전 게이트 재확인: npx tsc --noEmit + npx jest + npx next build --webpack.
+prod 스키마 변경은 없다(코드 전용). 머지·배포 직전에 알려라.
+```
 
-먼저 docs/NEXT-SESSION-OPS-CENTER-2026-07-27.md 를 읽고,
-이어서 docs/ops-guest-message-chain-2026-07-26.md 의 표로 "이미 있는 것"을 확인해라.
-이미 있는 걸 다시 만들지 마라 — 그게 이 영역의 가장 비싼 실수다.
+**(b) 남은 항목:**
 
-Supabase는 mcp__atockorea__* (cghyvbwmijqpahnoduyv)만 사용. kursoflow MCP는 금지
-(코드 참조는 디스크 C:\Users\sangsong\kursoflow-app 로만).
+```
+C:\Users\sangsong\atockorea-ops-next, main에서 새 브랜치.
+docs/NEXT-SESSION-OPS-CENTER-2026-07-27.md §4를 읽어라 — 1~8번은 이미 끝났다.
+남은 것은 OTA 수신 주소 설정 UI와 ops_guides.address_enc 둘뿐이다.
+후자는 기존 봉투(lib/ops/guides/pii.ts)를 재사용하고 새 키를 만들지 마라.
 
-문서 §4 "추가하면 좋은 것"을 1번부터 순서대로 전부 구현해라. 항목마다
-원인/설계 → 구현 → 검증 → 개별 커밋. 중간에 확인 질문하지 말고 끝까지 진행하되,
-되돌리기 어려운 것(prod 스키마 변경, main 머지, 배포)만 직전에 알려라.
-
-특히 1번(차량 마스터 ↔ 배차 연결)은 §2-1의 이름 충돌 경고를 먼저 읽어라 —
-배차 라우트의 vehicle_id 파라미터와 내가 추가한 컬럼은 같은 이름 다른 뜻이다.
-
+Supabase는 mcp__atockorea__* (cghyvbwmijqpahnoduyv)만 사용. kursoflow MCP는 금지.
 게이트: npx tsc --noEmit (0) + npx jest (전부 통과) + npx next build --webpack (exit 0).
-tsc만 통과시키고 머지하면 배포가 깨진다 — 직전 세션이 그럴 뻔했다.
-라이브 검증은 npx tsx scripts/qa-ops-center-queries.ts --cleanup.
-시뮬 데이터를 쓰면 반드시 --cleanup 하고 라이브 DB 잔여 0 확인.
-
-워크트리는 타 세션과 공유된다. 커밋 시 git add -A 금지, 경로를 명시해라.
-커밋 푸터에 모델 식별자 금지. 보고는 한국어.
+라이브 검증은 npx tsx scripts/qa-ops-center-queries.ts --cleanup (잔여 0 확인).
+워크트리 공유 — git add -A 금지, 경로 명시. 커밋 푸터에 모델 식별자 금지. 보고는 한국어.
 ```
 
 ### 더 짧게 (한 항목만 시킬 때)
