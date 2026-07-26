@@ -148,6 +148,83 @@ describe('lib/ai/router', () => {
     });
   });
 
+  /**
+   * The OpenAI leg of the ladder had never once worked. Production logs showed
+   * `{provider:'openai', model:'gpt-5-mini', reason:'http_400'}` on every
+   * attempt, because the gpt-5 family rejects `max_tokens` (it wants
+   * `max_completion_tokens`) and rejects any `temperature` but the default.
+   * Nobody noticed, because the last leg is only reached when the ones in
+   * front of it fail — exactly when no one is looking.
+   */
+  describe('chatCompletion — provider dialects (openai fallback)', () => {
+    const bodyOf = (call: number) => JSON.parse((fetchMock.mock.calls[call][1] as RequestInit).body as string);
+
+    it('sends max_completion_tokens to openai and max_tokens to the others', async () => {
+      process.env.GEMINI_API_KEY = 'g-key';
+      process.env.OPENAI_API_KEY = 'o-key';
+      fetchMock
+        .mockResolvedValueOnce({ ok: false, status: 429, json: async () => ({}) })
+        .mockResolvedValueOnce(okCompletion('hello'));
+
+      await chatCompletion('translate', [{ role: 'user', content: 'hi' }], { maxOutputTokens: 400 });
+
+      expect(bodyOf(0)).toMatchObject({ max_tokens: 400 });
+      expect(bodyOf(0).max_completion_tokens).toBeUndefined();
+      expect(bodyOf(1)).toMatchObject({ max_completion_tokens: 400 });
+      expect(bodyOf(1).max_tokens).toBeUndefined();
+    });
+
+    it('drops the parameter a 400 names, and retries the same provider once', async () => {
+      process.env.OPENAI_API_KEY = 'o-key';
+      fetchMock
+        .mockResolvedValueOnce({
+          ok: false,
+          status: 400,
+          json: async () => ({
+            error: {
+              message: "Unsupported value: 'temperature' does not support 0.2 with this model.",
+              param: 'temperature',
+              code: 'unsupported_value',
+            },
+          }),
+        })
+        .mockResolvedValueOnce(okCompletion('OK'));
+
+      const result = await chatCompletion('translate', [{ role: 'user', content: 'hi' }], { temperature: 0.2 });
+
+      expect(result).toMatchObject({ content: 'OK', provider: 'openai' });
+      // Same provider, twice — a fixable request is not a provider being down.
+      expect(fetchMock).toHaveBeenCalledTimes(2);
+      expect(bodyOf(0).temperature).toBe(0.2);
+      expect(bodyOf(1).temperature).toBeUndefined();
+    });
+
+    it('does not retry a 400 that names nothing we sent', async () => {
+      process.env.OPENAI_API_KEY = 'o-key';
+      fetchMock.mockResolvedValue({
+        ok: false,
+        status: 400,
+        json: async () => ({ error: { message: 'quota exceeded', code: 'insufficient_quota' } }),
+      });
+
+      await expect(chatCompletion('translate', [{ role: 'user', content: 'hi' }])).rejects.toThrow(AiRouterError);
+      expect(fetchMock).toHaveBeenCalledTimes(1);
+    });
+
+    it('carries WHY into the error — http_400 alone is what hid this for months', async () => {
+      process.env.OPENAI_API_KEY = 'o-key';
+      fetchMock.mockResolvedValue({
+        ok: false,
+        status: 400,
+        json: async () => ({ error: { message: 'the specific reason', code: 'insufficient_quota' } }),
+      });
+
+      await expect(chatCompletion('translate', [{ role: 'user', content: 'hi' }])).rejects.toThrow(
+        /the specific reason/,
+      );
+    });
+  });
+
   describe('translateTextViaRouter — translation memory (AC: cache hit = 0 LLM calls)', () => {
     beforeEach(() => {
       process.env.GEMINI_API_KEY = 'g-key';

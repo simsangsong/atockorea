@@ -163,7 +163,17 @@ export interface ChatCompletionResult {
 export class AiRouterError extends Error {
   attempts: Array<{ provider: AiProvider; model: string; reason: string }>;
   constructor(message: string, attempts: Array<{ provider: AiProvider; model: string; reason: string }>) {
-    super(message);
+    /**
+     * The reasons go in the MESSAGE, not only in a property.
+     *
+     * "All AI providers failed for translate" is what most call sites log and
+     * most alerts show, and it says nothing you can act on. The gpt-5
+     * parameter rejection that broke the entire OpenAI leg looked exactly like
+     * that line for months — the detail existed, on `.attempts`, where nobody
+     * was reading.
+     */
+    const detail = attempts.map((a) => `${a.provider}/${a.model}: ${a.reason}`).join(' | ');
+    super(detail ? `${message} — ${detail}` : message);
     this.name = 'AiRouterError';
     this.attempts = attempts;
   }
@@ -175,6 +185,64 @@ export class AiRouterError extends Error {
  * refusals surface as empty/blocked content). Throws AiRouterError when every
  * configured provider failed.
  */
+/**
+ * The request body, adapted to the provider's dialect.
+ *
+ * All three providers speak "OpenAI-compatible", but OpenAI itself has moved:
+ * its chat models take `max_completion_tokens`, and the gpt-5 family rejects
+ * `max_tokens` outright. `max_completion_tokens` is accepted by the older
+ * OpenAI models too, so this is safe across whatever OPENAI_TEXT_MODEL is set
+ * to — while deepseek and the gemini compatibility endpoint keep `max_tokens`,
+ * which is what they understand.
+ */
+function buildCompletionBody(
+  resolved: { provider: AiProvider; model: string },
+  messages: ChatMessage[],
+  maxOutputTokens: number,
+  options?: ChatCompletionOptions,
+): Record<string, unknown> {
+  const tokenField = resolved.provider === 'openai' ? 'max_completion_tokens' : 'max_tokens';
+  return {
+    model: resolved.model,
+    messages,
+    ...(options?.jsonResponse ? { response_format: { type: 'json_object' } } : {}),
+    [tokenField]: maxOutputTokens,
+    ...(options?.temperature !== undefined ? { temperature: options.temperature } : {}),
+  };
+}
+
+/**
+ * The parameter an OpenAI-shaped 400 is complaining about, if it named one.
+ *
+ * Both `unsupported_parameter` ("max_tokens is not supported with this model")
+ * and `unsupported_value` ("temperature does not support 0.2") put the field
+ * name in `error.param`, which is what makes a targeted retry possible without
+ * keeping a list of which model dislikes what.
+ */
+/**
+ * Read an error body without consuming the response, and without assuming the
+ * object is a real `Response` — the router's own tests hand it plain literals,
+ * and a helper that explodes on those would be reporting the mock rather than
+ * the provider.
+ */
+async function readErrorBody(res: Response): Promise<{ error?: { param?: string; code?: string; message?: string } } | null> {
+  try {
+    const source = typeof res.clone === 'function' ? res.clone() : res;
+    return (await source.json()) as { error?: { param?: string; code?: string; message?: string } };
+  } catch {
+    return null;
+  }
+}
+
+async function unsupportedParamFrom(res: Response): Promise<string | null> {
+  const data = await readErrorBody(res);
+  const param = data?.error?.param;
+  const code = data?.error?.code;
+  if (!param || typeof param !== 'string') return null;
+  if (code !== 'unsupported_parameter' && code !== 'unsupported_value') return null;
+  return param;
+}
+
 export async function chatCompletion(
   purpose: AiPurpose,
   messages: ChatMessage[],
@@ -195,24 +263,63 @@ export async function chatCompletion(
     const timer = setTimeout(() => controller.abort(), timeoutMs);
     const startedAt = Date.now();
     try {
-      const res = await fetch(`${resolved.baseUrl.replace(/\/$/, '')}/chat/completions`, {
+      let body = buildCompletionBody(resolved, messages, maxOutputTokens, options);
+      let res = await fetch(`${resolved.baseUrl.replace(/\/$/, '')}/chat/completions`, {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${resolved.apiKey}`,
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          model: resolved.model,
-          messages,
-          ...(options?.jsonResponse ? { response_format: { type: 'json_object' } } : {}),
-          max_tokens: maxOutputTokens,
-          ...(options?.temperature !== undefined ? { temperature: options.temperature } : {}),
-        }),
+        body: JSON.stringify(body),
         signal: controller.signal,
       });
 
+      /**
+       * 🔴 A 400 naming a parameter is a request we can fix, not a provider
+       * that is down. Drop the parameter it named and ask once more.
+       *
+       * This is not hypothetical: production logs showed
+       * `{provider:'openai', model:'gpt-5-mini', reason:'http_400'}` on every
+       * single attempt, because the gpt-5 family rejects `max_tokens` (wants
+       * `max_completion_tokens`) and rejects any `temperature` but the
+       * default. The last leg of the fallback chain had therefore never once
+       * worked — and nobody noticed, because it is only ever reached when the
+       * legs in front of it fail, which is exactly when no one is looking.
+       *
+       * Read from the error body rather than a hardcoded model list, so the
+       * next time a provider renames something the router adapts instead of
+       * quietly losing its fallback again.
+       */
+      if (res.status === 400) {
+        const offending = await unsupportedParamFrom(res);
+        if (offending && offending in body) {
+          const { [offending]: _dropped, ...retryBody } = body as Record<string, unknown>;
+          void _dropped;
+          body = retryBody as typeof body;
+          console.warn(
+            `[ai-router] ${resolved.provider}/${resolved.model} rejected "${offending}" — retrying without it`,
+          );
+          res = await fetch(`${resolved.baseUrl.replace(/\/$/, '')}/chat/completions`, {
+            method: 'POST',
+            headers: {
+              Authorization: `Bearer ${resolved.apiKey}`,
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(body),
+            signal: controller.signal,
+          });
+        }
+      }
+
       if (!res.ok) {
-        attempts.push({ provider: resolved.provider, model: resolved.model, reason: `http_${res.status}` });
+        // Carry WHY. `http_400` alone is what let a permanently broken
+        // fallback read like a transient blip for months.
+        const detail = (await readErrorBody(res))?.error?.message ?? '';
+        attempts.push({
+          provider: resolved.provider,
+          model: resolved.model,
+          reason: detail ? `http_${res.status}: ${detail.slice(0, 160)}` : `http_${res.status}`,
+        });
         continue;
       }
 
