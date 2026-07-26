@@ -114,8 +114,8 @@ export default function OpsHomeTab({
   }> = [
     {
       key: 'manager',
-      title: '룸 · 링크 만들기',
-      desc: '룸 생성 · 손님/가이드 링크 · QR · 초대 메일',
+      title: '배정 · 룸 · 링크',
+      desc: '가이드·기사 링크 발급 · 차량 배정 · QR · 초대 메일',
       icon: Link2,
       onClick: onOpenManager,
     },

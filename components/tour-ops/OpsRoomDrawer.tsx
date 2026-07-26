@@ -31,6 +31,7 @@ import OpsRoomNotesPanel from '@/components/tour-ops/OpsRoomNotesPanel';
 const FEED_LIMIT = 80;
 
 export default function OpsRoomDrawer({
+  initialView,
   room,
   stream,
   sos,
@@ -38,6 +39,8 @@ export default function OpsRoomDrawer({
   onDelivered,
   onSeen,
 }: {
+  /** 배정 발견성 — 매니저의 [차량]이 곧장 차량 뷰로 연다. */
+  initialView?: 'chat' | 'manifest' | 'vehicle' | 'cards' | 'notes';
   room: OpsRoom;
   stream: OpsRoomStream | undefined;
   sos: SosInfo | null;
@@ -53,7 +56,7 @@ export default function OpsRoomDrawer({
   // Phase 2 §3.2 — 룸 상세 세그먼트: 대화(기존) | 명단(같은 tour_id+tour_date)
   // | 차량(§4.1 B-2 배차 — ops_room_vehicles의 유일한 쓰기 표면)
   // | 카드(§5.4 C-17 시작 브리핑 카드 세트 + 발사 전 미리보기).
-  const [view, setView] = useState<'chat' | 'manifest' | 'vehicle' | 'cards' | 'notes'>('chat');
+  const [view, setView] = useState<'chat' | 'manifest' | 'vehicle' | 'cards' | 'notes'>(initialView ?? 'chat');
   const feedRef = useRef<HTMLDivElement | null>(null);
   const manifestAvailable = Boolean(room.tour_id && room.tour_date);
 

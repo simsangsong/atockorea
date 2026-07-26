@@ -285,8 +285,12 @@ export default function OpsApp() {
     [sosRooms],
   );
 
+  // 배정 발견성(2026-07-27): 룸 매니저의 [차량] 버튼이 드로어를 곧장
+  // 차량 뷰로 연다 — 3뎁스(룸 열기→탭 찾기)를 1탭으로.
+  const [openRoomView, setOpenRoomView] = useState<'chat' | 'vehicle'>('chat');
   const openRoom = useCallback(
-    (roomId: string) => {
+    (roomId: string, view: 'chat' | 'vehicle' = 'chat') => {
+      setOpenRoomView(view);
       setOpenRoomId(roomId);
       markRead(roomId);
       acknowledgeSos(sosKeysForRoom(roomId));
@@ -478,6 +482,7 @@ export default function OpsApp() {
       {openRoomObject && (
         <OpsRoomDrawer
           room={openRoomObject}
+          initialView={openRoomView}
           stream={streams[openRoomObject.id]}
           sos={sosRooms.get(openRoomObject.id) ?? null}
           onClose={() => setOpenRoomId(null)}
