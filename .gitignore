@@ -94,3 +94,7 @@ scripts/.sim-fixtures.json
 .qa-shots-guest-tray2/
 # QA 캡처는 전부 무시한다. 하나씩 적으면 다음에 만드는 디렉터리가 반드시 빠진다.
 .qa-shots-*/
+
+# QA 하니스가 남기는 로컬 산출물 (서명 토큰·응답 본문 포함 — 커밋 금지)
+scripts/.sim-fixtures.json
+scripts/.qa-prod-*.json
