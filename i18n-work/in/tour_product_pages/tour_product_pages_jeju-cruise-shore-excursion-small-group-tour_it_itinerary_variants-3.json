@@ -1,0 +1,240 @@
+{
+  "unitId": "tour_product_pages:jeju-cruise-shore-excursion-small-group-tour:it:itinerary_variants-3",
+  "surface": "tour_product_pages",
+  "slug": "jeju-cruise-shore-excursion-small-group-tour",
+  "locale": "it",
+  "chunk": "itinerary_variants-3",
+  "tier": "B",
+  "segments": {
+    "/itinerary_variants/0/stops/4/whyOnRoute": {
+      "source_en": "**⟦G0⟧ is the main cultural stop of the east route.** In a small group, the guide can explain Jeju stone houses, old village lanes, local household customs, and the role this area played in Joseon-era administration at a more personal pace. Access to private homes or resident-led explanations depends on local conditions, so the visit is presented as a respectful village walk rather than a promised home-entry program.",
+      "glossary": [
+        "⟦G0⟧ = Villaggio folcloristico di Seongeup"
+      ]
+    },
+    "/itinerary_variants/0/stops/4/description": {
+      "source_en": "**⟦G0⟧ (성읍민속마을)** is an inhabited Joseon-era village that preserves old Jeju stone walls, thatched-roof houses, narrow alleys, and traditional household layouts. Historically, the village served as the administrative center of Jeongui-hyeon, one of the main local districts of Joseon-era Jeju, and its heritage value is recognized as an Important Folklore Cultural Heritage site. Unlike a staged folk park, people still live here, so the visit must be respectful and quiet around private homes. The village is also known for its old zelkova and hackberry trees near the center, traditional Jeju household culture, stone grandfather statues, and local stories connected to village life.",
+      "glossary": [
+        "⟦G0⟧ = Villaggio folcloristico di Seongeup"
+      ]
+    },
+    "/itinerary_variants/0/stops/5/name": {
+      "source_en": "Return to Jeju Cruise Terminal (Jeju Port — north)"
+    },
+    "/itinerary_variants/0/stops/5/time": {
+      "source_en": "≈ 15:30 → arrive port ≈ 16:45"
+    },
+    "/itinerary_variants/0/stops/5/category": {
+      "source_en": "Cruise Return & All-Aboard"
+    },
+    "/itinerary_variants/0/stops/5/duration": {
+      "source_en": "75 min drive + 60 min buffer"
+    },
+    "/itinerary_variants/0/stops/5/highlights/0": {
+      "source_en": "**Drop-off 60+ min before all-aboard time** — standard cruise embarkation buffer"
+    },
+    "/itinerary_variants/0/stops/5/highlights/1": {
+      "source_en": "~70–80 min from East Jeju via Highway 1132 + Route 16 with one comfort stop"
+    },
+    "/itinerary_variants/0/stops/5/highlights/2": {
+      "source_en": "Driver/guide assist with luggage at terminal entrance"
+    },
+    "/itinerary_variants/0/stops/5/highlights/3": {
+      "source_en": "Bus #100 connects terminal directly to **Jeju International Airport** (for late flights)"
+    },
+    "/itinerary_variants/0/stops/5/highlights/4": {
+      "source_en": "Tax-free souvenir shops, Jeju Bank ATM, currency exchange, Wi-Fi rental on-site"
+    },
+    "/itinerary_variants/0/stops/5/highlights/5": {
+      "source_en": "Free shuttle to **Dongmun Traditional Market** (~10 min) if extra time before all-aboard"
+    },
+    "/itinerary_variants/0/stops/5/whyOnRoute": {
+      "source_en": "**The return drive is kept conversational and flexible.** The guide uses the drive back to answer remaining questions, summarize the day's volcanic and cultural highlights, and monitor timing for the ship. The schedule is planned to return to Jeju Port with a comfortable buffer before all-aboard, with pace adjustments made if traffic or weather changes."
+    },
+    "/itinerary_variants/0/stops/5/description": {
+      "source_en": "Return drive to the **Jeju International Passenger Terminal** (제주항 국제여객터미널) on Jeju City's northern coast. The route from East Jeju (Seongsan/Seongeup area) takes ~70–80 minutes via Highway 1132 (the coastal ring road) and Route 16, with one designated comfort stop. Drop-off is timed to deliver guests to the terminal **at least 60 minutes before your ship's all-aboard time**, traveler-fit the cruise industry's standard buffer for embarkation queues. The vehicle pulls into the **100-bus parking capacity lot**, guests disembark at the terminal entrance with luggage assistance from the driver/guide. If guests have early evening flights from Jeju International Airport, **Bus #100 connects directly from the cruise terminal to the airport** — the guide can advise on this option. The terminal interior offers convenience store, pharmacy, snack shop, souvenir shops with **tax-free items**, Jeju Bank ATM accepting overseas cards, currency exchange (typical hours 08:00–17:00), and SK Telecom T-mobile Wi-Fi rental counter — useful if guests want last-minute purchases or to reload mobile data before sailaway. **Free shuttle bus to Dongmun Traditional Market** (oldest/largest in Jeju City, ~10 min) is also available for any guests with extra time before all-aboard."
+    },
+    "/itinerary_variants/0/port_label": {
+      "source_en": "Jeju Port (Northern Terminal)"
+    },
+    "/itinerary_variants/0/routePhases/0/label": {
+      "source_en": "Morning"
+    },
+    "/itinerary_variants/0/routePhases/0/theme": {
+      "source_en": "UNESCO volcano + coast"
+    },
+    "/itinerary_variants/0/routePhases/1/label": {
+      "source_en": "Midday"
+    },
+    "/itinerary_variants/0/routePhases/1/theme": {
+      "source_en": "Lunch"
+    },
+    "/itinerary_variants/0/routePhases/2/label": {
+      "source_en": "Afternoon"
+    },
+    "/itinerary_variants/0/routePhases/2/theme": {
+      "source_en": "Folk culture + return"
+    },
+    "/itinerary_variants/0/route_focus": {
+      "source_en": "East coast UNESCO landmarks + folk culture"
+    },
+    "/itinerary_variants/0/duration_band": {
+      "source_en": "8h"
+    },
+    "/itinerary_variants/0/routeFlowStops/0/name": {
+      "source_en": "Cruise Terminal"
+    },
+    "/itinerary_variants/0/routeFlowStops/0/theme": {
+      "source_en": "Departure"
+    },
+    "/itinerary_variants/0/routeFlowStops/1/name": {
+      "source_en": "Sunrise Peak"
+    },
+    "/itinerary_variants/0/routeFlowStops/1/theme": {
+      "source_en": "Volcano"
+    },
+    "/itinerary_variants/0/routeFlowStops/2/name": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Seopjikoji"
+      ]
+    },
+    "/itinerary_variants/0/routeFlowStops/2/theme": {
+      "source_en": "Coast"
+    },
+    "/itinerary_variants/0/routeFlowStops/3/name": {
+      "source_en": "Lunch"
+    },
+    "/itinerary_variants/0/routeFlowStops/3/theme": {
+      "source_en": "Meal"
+    },
+    "/itinerary_variants/0/routeFlowStops/4/name": {
+      "source_en": "Folk Village"
+    },
+    "/itinerary_variants/0/routeFlowStops/4/theme": {
+      "source_en": "Culture"
+    },
+    "/itinerary_variants/0/routeFlowStops/5/name": {
+      "source_en": "Cruise Terminal"
+    },
+    "/itinerary_variants/0/routeFlowStops/5/theme": {
+      "source_en": "Return"
+    },
+    "/itinerary_variants/0/port_label_short": {
+      "source_en": "Jeju Port"
+    },
+    "/itinerary_variants/0/poi_tags_in_variant/1": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Seopjikoji"
+      ]
+    },
+    "/itinerary_variants/0/theme_tags_in_variant/0": {
+      "source_en": "volcano"
+    },
+    "/itinerary_variants/0/theme_tags_in_variant/1": {
+      "source_en": "coast"
+    },
+    "/itinerary_variants/0/theme_tags_in_variant/2": {
+      "source_en": "culture"
+    },
+    "/itinerary_variants/1/stops/0/name": {
+      "source_en": "Gangjeong Cruise Terminal Pickup (Seogwipo — south)"
+    },
+    "/itinerary_variants/1/stops/0/time": {
+      "source_en": "Cruise arrival + 30 min"
+    },
+    "/itinerary_variants/1/stops/0/category": {
+      "source_en": "Pickup & Cruise Logistics"
+    },
+    "/itinerary_variants/1/stops/0/duration": {
+      "source_en": "30 min"
+    },
+    "/itinerary_variants/1/stops/0/highlights/0": {
+      "source_en": "**Two berths × 220,000-ton capacity** — handles 2 cruise ships concurrently"
+    },
+    "/itinerary_variants/1/stops/0/highlights/1": {
+      "source_en": "Pickup 30 min after clearance; English-speaking guide + name placard at arrival hall"
+    },
+    "/itinerary_variants/1/stops/0/highlights/2": {
+      "source_en": "Officially **'Civilian-Military Complex Port for Beautiful Tourism'** — opened Feb 2016"
+    },
+    "/itinerary_variants/1/stops/0/highlights/3": {
+      "source_en": "**53-bus outdoor parking** — fills fast on dual-ship days; guides arrive early"
+    },
+    "/itinerary_variants/1/stops/0/highlights/4": {
+      "source_en": "Better **wheelchair accessibility** than Jeju Port (north) — flat interior, elevators"
+    },
+    "/itinerary_variants/1/stops/0/highlights/5": {
+      "source_en": "**Adora Magic City semi-homeport since May 1, 2025** — 33 roundtrips planned"
+    },
+    "/itinerary_variants/1/stops/0/highlights/6": {
+      "source_en": "Southern itinerary is mandatory from this port — Seongsan is 70+ min one-way"
+    },
+    "/itinerary_variants/1/stops/0/whyOnRoute": {
+      "source_en": "**Small-group pickup at Gangjeong** — the dual-berth 220,000-ton port handles larger cruise ships (Adora Magic City semi-homeport since May 1, 2025; Costa, MSC, Royal Caribbean), and the small-group product's **8–15 pax minicoach** has zero parking schedule limit at the 53-bus lot, even on dual-ship days when the lot fills with coach-tour vehicles. The personalized welcome includes confirming guest preferences for the day (⟦G0⟧ duration, Cheonjiyeon trail pace, Olle Market food priorities). Gangjeong's **better wheelchair accessibility** vs Jeju Port (north) makes this the preferred south route for mobility-considerate small groups.",
+      "glossary": [
+        "⟦G0⟧ = Zona umida 1100 di Hallasan"
+      ]
+    },
+    "/itinerary_variants/1/stops/0/description": {
+      "source_en": "Your driver and English-speaking guide meet your party at the **Gangjeong Port Cruise Terminal** in Seogwipo, the main cruise terminal on Jeju's southern coast. Pickup is timed around your ship's clearance and the guide carries a name sign or clear meeting information. Because Gangjeong is close to Seogwipo, the south route can cover Hallasan 1100 Highland, Jusangjeolli Cliff, ⟦G0⟧, and ⟦G1⟧ without the long cross-island drive required from Jeju Port. Before departure, the guide confirms the all-aboard time, weather, walking pace, and any ship-specific return requirements.",
+      "glossary": [
+        "⟦G0⟧ = Cascata di Cheonjiyeon",
+        "⟦G1⟧ = Mercato Olle Maeil"
+      ]
+    },
+    "/itinerary_variants/1/stops/1/name": {
+      "source_en": "⟦G0⟧ (Ramsar + UNESCO)",
+      "glossary": [
+        "⟦G0⟧ = Zona umida a quota 1100 di Hallasan"
+      ]
+    },
+    "/itinerary_variants/1/stops/1/category": {
+      "source_en": "Alpine Wetland — Ramsar Site + within Hallasan UNESCO World Heritage"
+    },
+    "/itinerary_variants/1/stops/1/duration": {
+      "source_en": "75 min"
+    },
+    "/itinerary_variants/1/stops/1/timeUsed/0": {
+      "source_en": "Coach arrival + parking at 1100 Rest Area — ~5 min"
+    },
+    "/itinerary_variants/1/stops/1/timeUsed/1": {
+      "source_en": "Boardwalk loop + observation decks — ~25 min"
+    },
+    "/itinerary_variants/1/stops/1/timeUsed/2": {
+      "source_en": "Interpretive signage + natural-history exhibit — ~10 min"
+    },
+    "/itinerary_variants/1/stops/1/timeUsed/3": {
+      "source_en": "Buffer / cafe restroom — ~5 min"
+    },
+    "/itinerary_variants/1/stops/1/highlights/0": {
+      "source_en": "**Ramsar Site No. 1893** (designated 12 Oct 2009) — Wetland of International Importance"
+    }
+  },
+  "glossaryTokens": {
+    "/itinerary_variants/0/stops/4/whyOnRoute": {
+      "⟦G0⟧": "Villaggio folcloristico di Seongeup"
+    },
+    "/itinerary_variants/0/stops/4/description": {
+      "⟦G0⟧": "Villaggio folcloristico di Seongeup"
+    },
+    "/itinerary_variants/0/routeFlowStops/2/name": {
+      "⟦G0⟧": "Seopjikoji"
+    },
+    "/itinerary_variants/0/poi_tags_in_variant/1": {
+      "⟦G0⟧": "Seopjikoji"
+    },
+    "/itinerary_variants/1/stops/0/whyOnRoute": {
+      "⟦G0⟧": "Zona umida 1100 di Hallasan"
+    },
+    "/itinerary_variants/1/stops/0/description": {
+      "⟦G0⟧": "Cascata di Cheonjiyeon",
+      "⟦G1⟧": "Mercato Olle Maeil"
+    },
+    "/itinerary_variants/1/stops/1/name": {
+      "⟦G0⟧": "Zona umida a quota 1100 di Hallasan"
+    }
+  },
+  "tmHits": 0
+}

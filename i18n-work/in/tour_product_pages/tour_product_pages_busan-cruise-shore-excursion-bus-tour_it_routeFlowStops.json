@@ -1,0 +1,127 @@
+{
+  "unitId": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:it:routeFlowStops",
+  "surface": "tour_product_pages",
+  "slug": "busan-cruise-shore-excursion-bus-tour",
+  "locale": "it",
+  "chunk": "routeFlowStops",
+  "tier": "B",
+  "segments": {
+    "/routeFlowStops/0/name": {
+      "source_en": "Busan Port pickup (cruise terminal)"
+    },
+    "/routeFlowStops/0/theme": {
+      "source_en": "Cruise pickup"
+    },
+    "/routeFlowStops/1/name": {
+      "source_en": "⟦G0⟧ Temple",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/routeFlowStops/1/theme": {
+      "source_en": "Seaside temple"
+    },
+    "/routeFlowStops/2/name": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Cimitero commemorativo delle Nazioni Unite"
+      ]
+    },
+    "/routeFlowStops/2/theme": {
+      "source_en": "Memorial"
+    },
+    "/routeFlowStops/3/name": {
+      "source_en": "Lunch (optional)"
+    },
+    "/routeFlowStops/3/theme": {
+      "source_en": "Meal"
+    },
+    "/routeFlowStops/4/name": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Mercato Jagalchi"
+      ]
+    },
+    "/routeFlowStops/4/theme": {
+      "source_en": "Seafood market"
+    },
+    "/routeFlowStops/5/name": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Piazza BIFF"
+      ]
+    },
+    "/routeFlowStops/5/theme": {
+      "source_en": "Film & street food"
+    },
+    "/routeFlowStops/6/name": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Mercato Gukje"
+      ]
+    },
+    "/routeFlowStops/6/theme": {
+      "source_en": "Refugee-era market"
+    },
+    "/routeFlowStops/7/name": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Villaggio culturale di Gamcheon"
+      ]
+    },
+    "/routeFlowStops/7/theme": {
+      "source_en": "Art village"
+    },
+    "/routeFlowStops/8/name": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Spiaggia di Songdo"
+      ]
+    },
+    "/routeFlowStops/8/theme": {
+      "source_en": "Coastal park"
+    },
+    "/routeFlowStops/9/name": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Parco di Yongdusan"
+      ]
+    },
+    "/routeFlowStops/9/theme": {
+      "source_en": "City viewpoint"
+    },
+    "/routeFlowStops/10/name": {
+      "source_en": "Return to Busan Port"
+    },
+    "/routeFlowStops/10/theme": {
+      "source_en": "Cruise return"
+    }
+  },
+  "glossaryTokens": {
+    "/routeFlowStops/1/name": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/routeFlowStops/2/name": {
+      "⟦G0⟧": "Cimitero commemorativo delle Nazioni Unite"
+    },
+    "/routeFlowStops/4/name": {
+      "⟦G0⟧": "Mercato Jagalchi"
+    },
+    "/routeFlowStops/5/name": {
+      "⟦G0⟧": "Piazza BIFF"
+    },
+    "/routeFlowStops/6/name": {
+      "⟦G0⟧": "Mercato Gukje"
+    },
+    "/routeFlowStops/7/name": {
+      "⟦G0⟧": "Villaggio culturale di Gamcheon"
+    },
+    "/routeFlowStops/8/name": {
+      "⟦G0⟧": "Spiaggia di Songdo"
+    },
+    "/routeFlowStops/9/name": {
+      "⟦G0⟧": "Parco di Yongdusan"
+    }
+  },
+  "tmHits": 0
+}
