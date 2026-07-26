@@ -160,6 +160,58 @@ export function capacityVerdict(
   };
 }
 
+export interface SeatReductionVerdict {
+  headcount: number;
+  seatsBefore: number;
+  seatsAfter: number;
+  /** 이 저장이 좌석을 줄이는가. */
+  reduces: boolean;
+  /** 줄인 뒤 앉을 자리가 없는 인원. 0 = 문제 없음. */
+  shortfall: number;
+  /** 사유 없는 저장을 막아야 하는가. */
+  blocked: boolean;
+}
+
+/**
+ * 설계안 §1-2 — **정원 초과는 하드 블록(안전 문제).**
+ *
+ * 다만 막을 수 있는 시점은 하나뿐이다: **운영자가 좌석을 줄이는 저장.**
+ * 이미 좌석이 모자란 상태를 막으면 2호차를 붙이는 것조차 거부하게 되고, 그것은
+ * 오버부킹을 고치러 온 사람의 손을 묶는 짓이다(B2-D5가 경고를 "2호차가 필요하다"로
+ * 쓰는 이유와 같다). 그래서:
+ *
+ *   · 좌석이 **늘거나 그대로** → 판정하지 않는다.
+ *   · 좌석이 **줄고**, 줄인 뒤 인원보다 적다 → 막는다.
+ *
+ * 좌석수를 모르는 배차(마스터·배치도 미상)는 합에 들어가지 않는다. `seatsBefore`가
+ * 0이면 애초에 아는 좌석이 없었다는 뜻이므로 판정하지 않는다 — 모르는 것을 근거로
+ * 저장을 거부하면 운영자는 시스템을 우회하는 법부터 배운다.
+ */
+export function seatReductionVerdict(input: {
+  headcount: number;
+  seatsBefore: number;
+  seatsAfter: number;
+}): SeatReductionVerdict {
+  const headcount = Math.max(0, Math.floor(input.headcount));
+  const seatsBefore = Math.max(0, Math.floor(input.seatsBefore));
+  const seatsAfter = Math.max(0, Math.floor(input.seatsAfter));
+  const reduces = seatsAfter < seatsBefore;
+  const shortfall = Math.max(0, headcount - seatsAfter);
+  return {
+    headcount,
+    seatsBefore,
+    seatsAfter,
+    reduces,
+    shortfall,
+    blocked: reduces && seatsBefore > 0 && headcount > 0 && shortfall > 0,
+  };
+}
+
+/** 막았을 때 화면에 그대로 띄우는 문장. 숫자를 감추지 않는다. */
+export function seatShortfallMessage(verdict: SeatReductionVerdict): string {
+  return `이 저장은 좌석을 ${verdict.seatsBefore}석에서 ${verdict.seatsAfter}석으로 줄여요. 예약 인원 ${verdict.headcount}명 중 ${verdict.shortfall}명이 앉을 자리가 없어집니다.`;
+}
+
 /**
  * B2-D5 — 운영자용 경고 문구. "막혔다"가 아니라 "2호차가 필요하다"로 쓴다.
  * 오버부킹은 이미 발생한 사실이고, 시스템이 막을 수 있는 시점이 아니다.

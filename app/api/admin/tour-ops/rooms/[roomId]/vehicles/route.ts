@@ -5,7 +5,12 @@ import { getOpsRoom } from '@/lib/ops/seating/access';
 import { broadcastSeatUpdate } from '@/lib/ops/seating/service';
 import { loadLayoutUsage, selectRoomVehicles } from '@/lib/ops/seating/layoutUsage';
 import { ensureTourGroup } from '@/lib/ops/seating/group';
-import { capacityVerdict } from '@/lib/ops/seating/capacity';
+import {
+  capacityVerdict,
+  groupHeadcount,
+  seatReductionVerdict,
+  seatShortfallMessage,
+} from '@/lib/ops/seating/capacity';
 import { dropSimBookings } from '@/lib/ops/sim/simScope';
 import { normalizeLayoutJson } from '@/lib/ops/seating/layoutEditor';
 import { recordRoomEvent } from '@/lib/tour-room/events';
@@ -211,6 +216,93 @@ async function groupCapacity(
   } catch {
     return null; // 정원 표시 하나 때문에 배차 화면이 죽으면 안 된다
   }
+}
+
+/**
+ * 설계안 §1-2 — 좌석 하드 블록이 쓰는 사실 두 가지: 그룹 인원과 배차별 좌석수.
+ *
+ * 좌석수는 GET이 쓰는 규칙과 같아야 한다(마스터 실차 정원 > 오버라이드 배치도 >
+ * 표준 배치도). 여기서 다른 규칙을 쓰면 화면이 "24석"이라고 말하면서 저장은
+ * "20석이라 막았다"고 답하게 된다.
+ */
+async function loadSeatContext(
+  supabase: ReturnType<typeof createServerClient>,
+  room: { id: string; tour_id: string | null; tour_date: string | null },
+): Promise<{ headcount: number; seatsByDispatch: Map<string, number> }> {
+  const groupRoomIds = await roomIdsInGroup(supabase, room);
+  const { rows } = await selectRoomVehicles(supabase, { roomIds: groupRoomIds });
+
+  const layoutIds = [...new Set(rows.map((r) => r.layout_id).filter(Boolean))];
+  const masterIds = [...new Set(rows.map((r) => r.vehicle_id).filter(Boolean))] as string[];
+
+  const [layoutRes, masterRes, bookingRes] = await Promise.all([
+    layoutIds.length
+      ? supabase.from('ops_vehicle_layouts').select('id, total_seats').in('id', layoutIds)
+      : Promise.resolve({ data: [] }),
+    masterIds.length
+      ? supabase.from('ops_vehicles').select('id, seat_capacity, layout_id').in('id', masterIds)
+      : Promise.resolve({ data: [] }),
+    room.tour_id && room.tour_date
+      ? supabase
+          .from('bookings')
+          .select('number_of_guests, status, sim_tag, contact_email')
+          .eq('tour_id', room.tour_id)
+          .eq('tour_date', room.tour_date)
+      : Promise.resolve({ data: [] }),
+  ]);
+
+  const layoutSeats = new Map(
+    (((layoutRes.data ?? []) as Array<{ id: string; total_seats: number | null }>) ?? []).map((l) => [
+      l.id,
+      Number(l.total_seats ?? 0),
+    ]),
+  );
+  const masterById = new Map(
+    (((masterRes.data ?? []) as Array<{ id: string; seat_capacity: number | null; layout_id: string | null }>) ?? []).map(
+      (m) => [m.id, m],
+    ),
+  );
+
+  const seatsByDispatch = new Map<string, number>();
+  for (const row of rows) {
+    const master = row.vehicle_id ? masterById.get(row.vehicle_id) ?? null : null;
+    const layoutId = master?.layout_id ?? row.layout_id;
+    const base = row.layout_override_json
+      ? row.layout_override_json.seats.length
+      : layoutSeats.get(layoutId) ?? null;
+    const seats = resolveSeatCapacity(master, base);
+    if (seats != null) seatsByDispatch.set(row.id, seats);
+  }
+
+  // A0.1 — 시뮬 예약이 섞이면 빈 투어가 좌석 부족으로 막힌다.
+  const real = dropSimBookings(
+    ((bookingRes.data ?? []) as Array<{ sim_tag?: string | null; contact_email?: string | null }>) ?? [],
+  );
+  return { headcount: groupHeadcount(real as Array<{ number_of_guests?: number | null; status?: string | null }>), seatsByDispatch };
+}
+
+/** 좌석을 줄이는 저장에 붙이는 409 본문. 숫자와 사유 요구를 함께 돌려준다. */
+function seatShortfallResponse(verdict: ReturnType<typeof seatReductionVerdict>): NextResponse {
+  return NextResponse.json(
+    {
+      error: 'capacity_short',
+      message: seatShortfallMessage(verdict),
+      headcount: verdict.headcount,
+      seats_before: verdict.seatsBefore,
+      seats_after: verdict.seatsAfter,
+      shortfall: verdict.shortfall,
+      // 막되 되돌릴 수 없게 만들지는 않는다 — 사유를 적으면 통과하고, 그 사유가 기록된다.
+      requires: 'capacity_override_reason',
+    },
+    { status: 409 },
+  );
+}
+
+/** 사유는 있어야 하고, 공백 두 글자는 사유가 아니다. */
+function readOverrideReason(value: unknown): string | null {
+  if (typeof value !== 'string') return null;
+  const trimmed = value.trim();
+  return trimmed.length >= 2 ? trimmed.slice(0, 200) : null;
 }
 
 export async function GET(req: NextRequest, { params }: { params: Promise<{ roomId: string }> }) {
@@ -500,6 +592,52 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ ro
 
     const nextLayoutId = resolved.layoutId;
     const layoutChanged = nextLayoutId !== vehicle.layout_id;
+
+    // 설계안 §1-2 — 좌석을 줄이는 저장은 사유 없이는 막는다(안전 문제).
+    // 늘리거나 그대로인 저장은 판정하지 않는다: 2호차를 붙이러 온 사람을 막으면
+    // 시스템이 오버부킹을 고치는 유일한 길을 스스로 닫는다.
+    const overrideReason = readOverrideReason(body.capacity_override_reason);
+    if (layoutChanged || resolved.vehicleId !== vehicle.vehicle_id) {
+      const { headcount, seatsByDispatch } = await loadSeatContext(supabase, room);
+      const { data: nextLayoutSeats } = await supabase
+        .from('ops_vehicle_layouts')
+        .select('total_seats')
+        .eq('id', nextLayoutId)
+        .maybeSingle();
+      const baseSeats = vehicle.layout_override_json
+        ? vehicle.layout_override_json.seats.length
+        : Number((nextLayoutSeats as { total_seats?: number | null } | null)?.total_seats ?? 0) || null;
+      const nextSeats = resolveSeatCapacity(
+        master ? { seat_capacity: master.seat_capacity } : null,
+        baseSeats,
+      );
+      if (nextSeats != null) {
+        const seatsBefore = [...seatsByDispatch.values()].reduce((sum, n) => sum + n, 0);
+        const verdict = seatReductionVerdict({
+          headcount,
+          seatsBefore,
+          seatsAfter: seatsBefore - (seatsByDispatch.get(vehicleId) ?? 0) + nextSeats,
+        });
+        if (verdict.blocked && !overrideReason) return seatShortfallResponse(verdict);
+        if (verdict.blocked && overrideReason) {
+          await recordRoomEvent(supabase, {
+            roomId,
+            bookingId: room.booking_id,
+            type: 'vehicle_capacity_override',
+            actorRole: 'admin',
+            payload: {
+              room_vehicle_id: vehicleId,
+              reason: overrideReason,
+              headcount: verdict.headcount,
+              seats_before: verdict.seatsBefore,
+              seats_after: verdict.seatsAfter,
+              by: admin.id,
+            },
+          }).catch(() => undefined);
+        }
+      }
+    }
+
     const assignments = await loadAssignmentsFor(supabase, vehicleId);
 
     let released: AssignmentRow[] = [];
@@ -652,6 +790,18 @@ export async function DELETE(req: NextRequest, { params }: { params: Promise<{ r
       return NextResponse.json({ error: 'Vehicle not found in this room' }, { status: 404 });
     }
 
+    // 설계안 §1-2 — 배차 해제는 좌석을 확실히 줄인다. 줄인 뒤 앉을 자리가 없어지면
+    // 사유 없이는 막는다(`capacity_reason=`).
+    const overrideReason = readOverrideReason(req.nextUrl.searchParams.get('capacity_reason'));
+    const { headcount, seatsByDispatch } = await loadSeatContext(supabase, room);
+    const seatsBefore = [...seatsByDispatch.values()].reduce((sum, n) => sum + n, 0);
+    const verdict = seatReductionVerdict({
+      headcount,
+      seatsBefore,
+      seatsAfter: seatsBefore - (seatsByDispatch.get(vehicleId) ?? 0),
+    });
+    if (verdict.blocked && !overrideReason) return seatShortfallResponse(verdict);
+
     const assignments = await loadAssignmentsFor(supabase, vehicleId);
     if (assignments.length > 0 && req.nextUrl.searchParams.get('confirm') !== '1') {
       return NextResponse.json(
@@ -679,6 +829,10 @@ export async function DELETE(req: NextRequest, { params }: { params: Promise<{ r
         layout_id: vehicle.layout_id,
         plate_number: vehicle.plate_number,
         by: admin.id,
+        // 좌석이 모자라지는 것을 알고도 해제했다면, 그 사유가 기록으로 남는다.
+        ...(verdict.blocked && overrideReason
+          ? { capacity_override_reason: overrideReason, headcount: verdict.headcount, seats_after: verdict.seatsAfter }
+          : {}),
         released: assignments.map((a) => ({
           booking_id: a.booking_id,
           participant_id: a.participant_id,

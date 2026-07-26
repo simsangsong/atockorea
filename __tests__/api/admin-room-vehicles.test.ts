@@ -78,6 +78,7 @@ function makeDb(options: {
   assignments?: Array<Record<string, unknown>>;
   events?: Array<Record<string, unknown>>;
   masterVehicles?: Array<Record<string, unknown>>;
+  bookings?: Array<Record<string, unknown>>;
 }) {
   const deleted: unknown[] = [];
   const updated: Array<{ table: string; values: Record<string, unknown> }> = [];
@@ -144,6 +145,8 @@ function makeDb(options: {
             const wanted = eq ? String((eq[1] as unknown[])[1]) : null;
             return { data: wanted ? layouts.filter((l) => l.id === wanted) : layouts, error: null };
           }
+          case 'bookings':
+            return { data: options.bookings ?? [], error: null };
           case 'ops_vehicles': {
             const pool = options.masterVehicles ?? [];
             // maybeSingle 경로는 id로 한 대만 찾는다.
@@ -477,6 +480,94 @@ describe('PATCH — 되돌리기 (스냅샷 복원)', () => {
       makeDb({ events: [{ id: 'evt-1', room_id: 'other', type: 'vehicle_changed', payload: {} }] }),
     );
     expect((await PATCH(req({ body: { undo_event_id: 'evt-1' } }), ctx)).status).toBe(404);
+  });
+});
+
+/**
+ * 설계안 §1-2 — 정원 초과 하드 블록.
+ *
+ * 막는 것은 **좌석을 줄이는 저장**뿐이다. 이미 모자란 상태에서 차를 붙이는 것은
+ * 막지 않는다 — 막으면 오버부킹을 고치는 유일한 경로가 닫힌다.
+ */
+describe('좌석 하드 블록', () => {
+  /** 5석 카운티 1대 + 4명 예약 → 3석 쏠라티로 바꾸면 1명이 못 앉는다. */
+  const CROWDED = { vehicles: [vehicle()], bookings: [{ number_of_guests: 4, status: 'confirmed' }] };
+
+  it('PATCH blocks a downgrade that leaves guests without a seat', async () => {
+    createServerClientMock.mockReturnValue(makeDb(CROWDED));
+    const res = await PATCH(req({ body: { vehicle_id: 'rv-1', layout_id: NEW_LAYOUT_ID } }), ctx);
+    expect(res.status).toBe(409);
+    const json = await res.json();
+    expect(json.error).toBe('capacity_short');
+    expect(json).toMatchObject({ headcount: 4, seats_before: 5, seats_after: 3, shortfall: 1 });
+    expect(json.requires).toBe('capacity_override_reason');
+  });
+
+  it('PATCH lets it through once a reason is given, and records that reason', async () => {
+    createServerClientMock.mockReturnValue(makeDb(CROWDED));
+    const res = await PATCH(
+      req({
+        body: {
+          vehicle_id: 'rv-1',
+          layout_id: NEW_LAYOUT_ID,
+          capacity_override_reason: '차량 고장 대차 — 1명 택시',
+        },
+      }),
+      ctx,
+    );
+    expect(res.status).toBe(200);
+    const override = recordRoomEventMock.mock.calls.find(
+      (call) => call[1].type === 'vehicle_capacity_override',
+    )![1];
+    expect(override.payload).toMatchObject({ reason: '차량 고장 대차 — 1명 택시', seats_after: 3 });
+  });
+
+  it('PATCH rejects a blank reason — 공백은 사유가 아니다', async () => {
+    createServerClientMock.mockReturnValue(makeDb(CROWDED));
+    const res = await PATCH(
+      req({ body: { vehicle_id: 'rv-1', layout_id: NEW_LAYOUT_ID, capacity_override_reason: '  ' } }),
+      ctx,
+    );
+    expect(res.status).toBe(409);
+  });
+
+  it('PATCH does not block when everyone still fits', async () => {
+    createServerClientMock.mockReturnValue(
+      makeDb({ vehicles: [vehicle()], bookings: [{ number_of_guests: 2, status: 'confirmed' }] }),
+    );
+    const res = await PATCH(req({ body: { vehicle_id: 'rv-1', layout_id: NEW_LAYOUT_ID } }), ctx);
+    expect(res.status).toBe(200);
+  });
+
+  it('PATCH ignores cancelled bookings when counting heads', async () => {
+    createServerClientMock.mockReturnValue(
+      makeDb({
+        vehicles: [vehicle()],
+        bookings: [
+          { number_of_guests: 2, status: 'confirmed' },
+          { number_of_guests: 9, status: 'cancelled' },
+        ],
+      }),
+    );
+    expect((await PATCH(req({ body: { vehicle_id: 'rv-1', layout_id: NEW_LAYOUT_ID } }), ctx)).status).toBe(200);
+  });
+
+  it('DELETE blocks unassigning the only vehicle a full group has', async () => {
+    createServerClientMock.mockReturnValue(makeDb(CROWDED));
+    const res = await DELETE(req({ search: 'vehicle_id=rv-1' }), ctx);
+    expect(res.status).toBe(409);
+    expect((await res.json()).error).toBe('capacity_short');
+  });
+
+  it('DELETE proceeds with a reason and keeps it in the snapshot event', async () => {
+    createServerClientMock.mockReturnValue(makeDb(CROWDED));
+    const res = await DELETE(
+      req({ search: `vehicle_id=rv-1&capacity_reason=${encodeURIComponent('투어 취소')}` }),
+      ctx,
+    );
+    expect(res.status).toBe(200);
+    const event = recordRoomEventMock.mock.calls.find((call) => call[1].type === 'vehicle_unassigned')![1];
+    expect(event.payload.capacity_override_reason).toBe('투어 취소');
   });
 });
 

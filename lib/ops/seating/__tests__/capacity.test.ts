@@ -9,6 +9,8 @@
  */
 
 import {
+  seatReductionVerdict,
+  seatShortfallMessage,
   CAPACITY_DEFAULTS,
   capacityVerdict,
   effectiveCapacity,
@@ -156,5 +158,44 @@ describe('overCapacityNotice — B2-D5 문구', () => {
     for (const banned of ['매진', '잔여', 'Sold out', 'sold out', '마감', '자리 남']) {
       expect(text).not.toContain(banned);
     }
+  });
+});
+
+/**
+ * 설계안 §1-2 — 좌석 하드 블록.
+ *
+ * 계약: **줄이는 저장만 막는다.** 이미 모자란 상태를 막으면 2호차를 붙이는 것조차
+ * 거부하게 되고, 그건 오버부킹을 고치러 온 사람의 손을 묶는 짓이다.
+ */
+describe('seatReductionVerdict', () => {
+  it('blocks a save that drops seats below the headcount', () => {
+    const verdict = seatReductionVerdict({ headcount: 18, seatsBefore: 20, seatsAfter: 15 });
+    expect(verdict).toMatchObject({ reduces: true, shortfall: 3, blocked: true });
+  });
+
+  it('never blocks adding capacity, even while the group is already over', () => {
+    // 12명인데 좌석 5석 → 2호차를 붙이는 중. 여기서 막으면 고칠 방법이 사라진다.
+    expect(seatReductionVerdict({ headcount: 12, seatsBefore: 5, seatsAfter: 20 }).blocked).toBe(false);
+    expect(seatReductionVerdict({ headcount: 12, seatsBefore: 5, seatsAfter: 5 }).blocked).toBe(false);
+  });
+
+  it('does not block a reduction that still seats everyone', () => {
+    expect(seatReductionVerdict({ headcount: 8, seatsBefore: 20, seatsAfter: 15 }).blocked).toBe(false);
+  });
+
+  it('refuses to judge when no seat count was known (미상은 0이 아니다)', () => {
+    expect(seatReductionVerdict({ headcount: 10, seatsBefore: 0, seatsAfter: 0 }).blocked).toBe(false);
+  });
+
+  it('does not block when the group has no guests yet', () => {
+    expect(seatReductionVerdict({ headcount: 0, seatsBefore: 20, seatsAfter: 5 }).blocked).toBe(false);
+  });
+
+  it('spells out the numbers instead of just saying "blocked"', () => {
+    const message = seatShortfallMessage(seatReductionVerdict({ headcount: 18, seatsBefore: 20, seatsAfter: 15 }));
+    expect(message).toContain('20석');
+    expect(message).toContain('15석');
+    expect(message).toContain('18명');
+    expect(message).toContain('3명');
   });
 });
