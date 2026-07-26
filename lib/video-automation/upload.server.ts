@@ -121,9 +121,11 @@ export async function uploadProducedRun(
   // shorts, not private data.
   const { data: buckets } = await supabase.storage.listBuckets();
   if (!buckets?.some((bucket) => bucket.name === TOUR_VIDEOS_BUCKET)) {
+    // 50MB: renders are single-digit MB; 200MB exceeded the project's global
+    // upload cap and made bucket creation itself fail (live 2026-07-26).
     const { error } = await supabase.storage.createBucket(TOUR_VIDEOS_BUCKET, {
       public: true,
-      fileSizeLimit: 200 * 1024 * 1024,
+      fileSizeLimit: 50 * 1024 * 1024,
     });
     if (error) throw new Error(`Failed to create bucket ${TOUR_VIDEOS_BUCKET}: ${error.message}`);
   }
