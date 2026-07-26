@@ -15,7 +15,7 @@ import type { RoomLocale } from '@/lib/tour-room/snapshot';
 import { detectEntryLocale } from '@/components/tour-mode/entryCopy';
 import { isInAppWebview } from '@/components/tour-mode/WebviewEscapeBanner';
 import { isStandaloneDisplayMode } from '@/hooks/useStandaloneDisplayMode';
-import { IconInstall } from '@/components/tour-mode/icons';
+import { IconInstall, TR_ICON } from '@/components/tour-mode/icons';
 import { kstStartOfDayMs, kstEndOfDayMs } from '@/lib/tour-room/time';
 
 const DISMISS_KEY = 'atoc-tour-mode-a2hs-dismissed';
@@ -179,7 +179,7 @@ export default function InstallBanner({
                 onClick={install}
                 className="tr-card-text flex min-h-[44px] items-center gap-1.5 rounded-full bg-[var(--tr-accent)] px-4 font-semibold text-[var(--tr-bubble-me-ink)]"
               >
-                <IconInstall size={15} aria-hidden />
+                <IconInstall size={TR_ICON.chip} aria-hidden />
                 {copy.install}
               </button>
             )}

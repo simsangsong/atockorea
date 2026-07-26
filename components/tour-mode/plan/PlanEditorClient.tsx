@@ -19,24 +19,25 @@
  */
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+// Reorder pair + glyphs the icons.ts barrel does not carry stay direct
+// (IconMoveUp has no barrel entry; IconTime/IconSubmit/IconPerson are distinct glyphs
+// from the barrel's Clock/ArrowUp/User).
+import { IconMoveDown, IconMoveUp, IconTime, IconSubmit, IconPerson } from '@/components/tour-mode/icons';
 import {
-  AlertTriangle,
-  CheckCircle2,
-  ChevronDown,
-  ChevronUp,
-  Clock3,
-  Map as MapIcon,
-  MapPin,
-  Plus,
-  Route,
-  Search,
-  Send,
-  Sparkles,
-  Trash2,
-  UserRound,
-  UtensilsCrossed,
-  X,
-} from 'lucide-react';
+  IconArrived,
+  IconAsk,
+  IconClose,
+  IconConcierge,
+  IconDining,
+  IconJourney,
+  IconPlus,
+  IconSuccess,
+  IconTabMap,
+  IconTrash,
+  IconWarn,
+  TR_ICON,
+  TR_STROKE,
+} from '@/components/tour-mode/icons';
 import { koreanAllergyCardLines } from '@/lib/tour-room/allergyCard';
 import { formatMinutes, haversineKm, totalDriveMinutes, type LatLng } from '@/lib/itinerary-builder/distance';
 import { ROOM_LOCALES, type RoomLocale } from '@/lib/tour-room/snapshot';
@@ -1601,10 +1602,10 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
   }
 
   const roomHref = `/tour-mode/room/${encodeURIComponent(bookingId)}`;
-  const tabItems: Array<[EditorTab, string, typeof Route]> = [
-    ['courses', copy.tabCourses, Route],
-    ['pick', copy.tabPick, MapPin],
-    ['delegate', copy.tabDelegate, Sparkles],
+  const tabItems: Array<[EditorTab, string, typeof IconJourney]> = [
+    ['courses', copy.tabCourses, IconJourney],
+    ['pick', copy.tabPick, IconArrived],
+    ['delegate', copy.tabDelegate, IconConcierge],
   ];
 
   // Fixed-itinerary tours (per-person bus / small-group / coach): the route is
@@ -1620,18 +1621,18 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
             <div className="flex items-start justify-between gap-4">
               <div className="min-w-0">
                 <p className="tr-meta font-bold uppercase text-[var(--tr-plan-hero-muted)]">{fx.eyebrow}</p>
-                <h1 className="mt-1 text-[24px] font-bold leading-tight text-[var(--tr-plan-hero-ink)]">
+                <h1 className="tr-display mt-1 font-bold leading-tight text-[var(--tr-plan-hero-ink)]">
                   {tourTitle || copy.title}
                 </h1>
               </div>
               <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-white/10 text-[var(--tr-plan-hero-ink)]">
-                <Route size={21} aria-hidden />
+                <IconJourney size={TR_ICON.nav} aria-hidden />
               </span>
             </div>
             <div className="mt-4 flex flex-wrap gap-2">
               {plan.tour.date && (
                 <span className="tr-label inline-flex min-h-9 items-center gap-1.5 rounded-full bg-white/10 px-3 font-semibold text-[var(--tr-plan-hero-ink)]">
-                  <Clock3 size={14} aria-hidden />
+                  <IconTime size={TR_ICON.meta} aria-hidden />
                   {copy.tourDay} {plan.tour.date}
                 </span>
               )}
@@ -1677,7 +1678,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
           <div className="flex items-start justify-between gap-4">
             <div className="min-w-0">
               <p className="tr-meta font-bold uppercase text-[var(--tr-plan-hero-muted)]">Smart guide planner</p>
-              <h1 className="mt-1 text-[24px] font-bold leading-tight text-[var(--tr-plan-hero-ink)]">{copy.title}</h1>
+              <h1 className="tr-display mt-1 font-bold leading-tight text-[var(--tr-plan-hero-ink)]">{copy.title}</h1>
             </div>
             {/* P1-2 — the editing path had no persistent way back; roomHref was
                 only linked from the read-only branch and the outcome banners. */}
@@ -1687,13 +1688,13 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
               data-testid="plan-home"
               className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-white/10 text-[var(--tr-plan-hero-ink)] active:scale-95"
             >
-              <MapIcon size={21} aria-hidden />
+              <IconTabMap size={TR_ICON.nav} aria-hidden />
             </a>
           </div>
           <div className="mt-4 flex flex-wrap gap-2">
             {plan.tour.date && (
               <span className="tr-label inline-flex min-h-9 items-center gap-1.5 rounded-full bg-white/10 px-3 font-semibold text-[var(--tr-plan-hero-ink)]">
-                <Clock3 size={14} aria-hidden />
+                <IconTime size={TR_ICON.meta} aria-hidden />
                 {copy.tourDay} {plan.tour.date}
               </span>
             )}
@@ -1752,13 +1753,13 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                   role="tab"
                   aria-selected={tab === key}
                   onClick={() => setTab(key)}
-                  className={`tr-label flex min-h-[46px] items-center justify-center gap-1.5 rounded-xl px-2 text-center font-bold transition ${
+                  className={`tr-label text-cjk-safe flex min-h-[46px] items-center justify-center gap-1.5 rounded-xl px-2 text-center font-bold transition ${
                     tab === key
                       ? 'bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)] shadow-[var(--tr-plan-shadow-button)]'
                       : 'text-[var(--tr-ink-2)] hover:bg-[var(--tr-surface-2)]'
                   }`}
                 >
-                  <Icon size={14} strokeWidth={2.3} aria-hidden />
+                  <Icon size={TR_ICON.meta} strokeWidth={TR_STROKE.small} aria-hidden />
                   {label}
                 </button>
               ))}
@@ -1811,7 +1812,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                     <article key={template.id} className="tr-card tr-plan-course-card px-4 py-4">
                       <div className="flex items-start gap-3">
                         <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[var(--tr-accent-soft)] text-[var(--tr-accent-deep)]">
-                          <Route size={19} aria-hidden />
+                          <IconJourney size={TR_ICON.action} aria-hidden />
                         </span>
                         <div className="min-w-0 flex-1">
                           <div className="flex items-center gap-2">
@@ -1820,7 +1821,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                             </span>
                             <span className="tr-meta font-semibold uppercase text-[var(--tr-accent-deep)]">{copy.tabCourses}</span>
                           </div>
-                          <h2 className="mt-1 text-[16px] font-bold leading-snug text-[var(--tr-ink)]">{title}</h2>
+                          <h2 className="tr-title mt-1 font-bold leading-snug text-[var(--tr-ink)]">{title}</h2>
                           {preview && (
                             <p className="tr-label tr-plan-line-clamp-2 mt-1.5 leading-relaxed text-[var(--tr-ink-2)]">
                               {preview}
@@ -1834,7 +1835,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                         </span>
                         {template.total_hours && (
                           <span className="tr-label inline-flex min-h-8 items-center gap-1 rounded-full bg-[var(--tr-surface-2)] px-3 text-[var(--tr-ink-2)]">
-                            <Clock3 size={13} aria-hidden />
+                            <IconTime size={TR_ICON.meta} aria-hidden />
                             {copy.courseHours(template.total_hours)}
                           </span>
                         )}
@@ -1844,7 +1845,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                         onClick={() => setPreviewTemplate(template)}
                         className="tr-body mt-3 flex min-h-[46px] w-full items-center justify-center gap-2 rounded-2xl bg-[var(--tr-accent)] px-4 font-bold text-[var(--tr-bubble-me-ink)] shadow-[var(--tr-plan-shadow-button)] transition active:scale-[0.99]"
                       >
-                        <Search size={17} aria-hidden />
+                        <IconAsk size={TR_ICON.chip} aria-hidden />
                         {ui.previewCourse}
                       </button>
                     </article>
@@ -1857,8 +1858,8 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
             {tab === 'pick' && (
               <div className="mt-3">
                 <div className="relative">
-                  <Search
-                    size={17}
+                  <IconAsk
+                    size={TR_ICON.chip}
                     className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[var(--tr-ink-3)]"
                     aria-hidden
                   />
@@ -1914,13 +1915,13 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                         type="button"
                         onClick={() => addPoiStop(poi)}
                         disabled={added}
-                        className={`tr-label inline-flex min-h-10 shrink-0 items-center gap-1 rounded-full px-3 font-bold ${
+                        className={`tr-label text-cjk-safe inline-flex min-h-[44px] shrink-0 items-center gap-1 rounded-full px-3 font-bold ${
                           added
                             ? 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-3)]'
                             : 'bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]'
                         }`}
                       >
-                        {added ? <CheckCircle2 size={14} aria-hidden /> : <Plus size={14} aria-hidden />}
+                        {added ? <IconSuccess size={TR_ICON.meta} aria-hidden /> : <IconPlus size={TR_ICON.meta} aria-hidden />}
                         {added ? copy.added : copy.add}
                       </button>
                     </div>
@@ -1930,9 +1931,9 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                 <button
                   type="button"
                   onClick={() => setGoogleOpen((v) => !v)}
-                  className="tr-label mt-3 inline-flex min-h-10 items-center gap-1.5 rounded-full bg-[var(--tr-accent-soft)] px-3 font-bold text-[var(--tr-accent-deep)]"
+                  className="tr-label mt-3 inline-flex min-h-[44px] items-center gap-1.5 rounded-full bg-[var(--tr-accent-soft)] px-3 font-bold text-[var(--tr-accent-deep)]"
                 >
-                  <MapPin size={14} aria-hidden />
+                  <IconArrived size={TR_ICON.meta} aria-hidden />
                   {copy.googleToggle}
                 </button>
                 {googleOpen && (
@@ -1953,16 +1954,16 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
             {tab === 'delegate' && (
               <div className="tr-card mt-3 px-4 py-5">
                 <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[var(--tr-accent-soft)] text-[var(--tr-accent-deep)]">
-                  <Sparkles size={20} aria-hidden />
+                  <IconConcierge size={TR_ICON.action} aria-hidden />
                 </span>
-                <p className="mt-3 text-[17px] font-bold leading-snug text-[var(--tr-ink)]">{copy.delegateTitle}</p>
+                <p className="tr-title mt-3 font-bold leading-snug text-[var(--tr-ink)]">{copy.delegateTitle}</p>
                 <p className="tr-card-text mt-1.5 leading-relaxed text-[var(--tr-ink-2)]">{copy.delegateDesc}</p>
                 <button
                   type="button"
                   onClick={() => void delegatePlan()}
                   className="tr-body mt-4 flex min-h-[48px] w-full items-center justify-center gap-2 rounded-2xl bg-[var(--tr-accent)] px-4 font-bold text-[var(--tr-bubble-me-ink)] shadow-[var(--tr-plan-shadow-button)]"
                 >
-                  <Sparkles size={17} aria-hidden />
+                  <IconConcierge size={TR_ICON.chip} aria-hidden />
                   {copy.delegateCta}
                 </button>
               </div>
@@ -1976,7 +1977,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
             <div className="flex items-center justify-between gap-3">
               <h2 className="tr-body flex items-center gap-2 font-bold text-[var(--tr-ink)]">
                 <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[var(--tr-accent-soft)] text-[var(--tr-accent-deep)]">
-                  <Route size={16} aria-hidden />
+                  <IconJourney size={TR_ICON.chip} aria-hidden />
                 </span>
                 {copy.yourDay}
               </h2>
@@ -2066,7 +2067,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                           )}
                           {stopWarnings.map((w) => (
                             <p key={w.code} className="tr-meta mt-1.5 flex items-center gap-1 font-semibold text-[var(--tr-danger)]">
-                              <AlertTriangle size={13} aria-hidden />
+                              <IconWarn size={TR_ICON.meta} aria-hidden />
                               {w.code === 'closed'
                                 ? copy.warnClosed(w.title ?? stop.title)
                                 : copy.warnOutOfRegion(w.title ?? stop.title)}
@@ -2088,7 +2089,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                               }
                               className="flex h-9 w-9 items-center justify-center rounded-xl bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)] transition active:scale-95 disabled:opacity-40"
                             >
-                              <ChevronUp size={17} aria-hidden />
+                              <IconMoveUp size={TR_ICON.chip} aria-hidden />
                             </button>
                             <button
                               type="button"
@@ -2103,7 +2104,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                               }
                               className="flex h-9 w-9 items-center justify-center rounded-xl bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)] transition active:scale-95 disabled:opacity-40"
                             >
-                              <ChevronDown size={17} aria-hidden />
+                              <IconMoveDown size={TR_ICON.chip} aria-hidden />
                             </button>
                             <button
                               type="button"
@@ -2111,7 +2112,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                               onClick={() => mutateStops((prev) => prev.filter((s) => s.id !== stop.id))}
                               className="flex h-9 w-9 items-center justify-center rounded-xl bg-[var(--tr-danger-soft)] text-[var(--tr-danger)] transition active:scale-95"
                             >
-                              <Trash2 size={16} aria-hidden />
+                              <IconTrash size={TR_ICON.chip} aria-hidden />
                             </button>
                           </div>
                         )}
@@ -2163,7 +2164,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
           <section className="tr-card mt-6 px-4 py-4">
             <h2 className="tr-body flex items-center gap-2 font-bold text-[var(--tr-ink)]">
               <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[var(--tr-accent-soft)] text-[var(--tr-accent-deep)]">
-                <UserRound size={16} aria-hidden />
+                <IconPerson size={TR_ICON.chip} aria-hidden />
               </span>
               {copy.needsTitle}
             </h2>
@@ -2237,7 +2238,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                   key={key}
                   onClick={() => mutateNeeds({ [key]: !needs[key] } as Partial<NeedsState>)}
                   aria-pressed={needs[key]}
-                  className={`tr-label min-h-10 rounded-full border px-3 font-medium ${
+                  className={`tr-label min-h-[44px] rounded-full border px-3 font-medium ${
                     needs[key]
                       ? 'border-[var(--tr-accent)] bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]'
                       : 'border-[var(--tr-hairline)] bg-[var(--tr-surface)] text-[var(--tr-ink-2)]'
@@ -2249,7 +2250,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
             </div>
 
             <p className="tr-meta mt-3 flex items-center gap-1.5 font-semibold uppercase text-[var(--tr-ink-3)]">
-              <UtensilsCrossed size={13} aria-hidden />
+              <IconDining size={TR_ICON.meta} aria-hidden />
               {copy.dietaryTitle}
             </p>
             <div className="mt-1.5 flex flex-wrap gap-2">
@@ -2265,7 +2266,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                       })
                     }
                     aria-pressed={active}
-                    className={`tr-label min-h-10 rounded-full border px-3 font-medium ${
+                    className={`tr-label min-h-[44px] rounded-full border px-3 font-medium ${
                       active
                         ? 'border-[var(--tr-accent)] bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]'
                         : 'border-[var(--tr-hairline)] bg-[var(--tr-surface)] text-[var(--tr-ink-2)]'
@@ -2293,7 +2294,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                   key={key}
                   onClick={() => mutateNeeds({ pace: key })}
                   aria-pressed={needs.pace === key}
-                  className={`tr-label min-h-10 flex-1 rounded-full border px-3 font-medium ${
+                  className={`tr-label text-cjk-safe min-h-[44px] flex-1 rounded-full border px-3 font-medium ${
                     needs.pace === key
                       ? 'border-[var(--tr-accent)] bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]'
                       : 'border-[var(--tr-hairline)] bg-[var(--tr-surface)] text-[var(--tr-ink-2)]'
@@ -2329,8 +2330,8 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                     key={i}
                     className={
                       i === 0
-                        ? 'text-[16px] font-bold leading-relaxed text-[var(--tr-ink)]'
-                        : 'mt-1.5 text-[17px] font-semibold leading-relaxed text-[var(--tr-ink)]'
+                        ? 'tr-title font-bold leading-relaxed text-[var(--tr-ink)]'
+                        : 'tr-body-lg mt-1.5 font-semibold leading-relaxed text-[var(--tr-ink)]'
                     }
                   >
                     {line}
@@ -2355,7 +2356,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
               <div className="flex items-start justify-between gap-3">
                 <div className="min-w-0">
                   <p className="tr-meta font-bold uppercase tracking-wide text-[var(--tr-accent-deep)]">{ui.previewTitle}</p>
-                  <h2 className="mt-0.5 text-[18px] font-bold leading-snug text-[var(--tr-ink)]">
+                  <h2 className="tr-body-lg mt-0.5 font-bold leading-snug text-[var(--tr-ink)]">
                     {previewTemplate.title_i18n?.[locale] ||
                       previewTemplate.title_i18n?.en ||
                       Object.values(previewTemplate.title_i18n ?? {})[0] ||
@@ -2368,7 +2369,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                   onClick={closePreview}
                   className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]"
                 >
-                  <X size={17} aria-hidden />
+                  <IconClose size={TR_ICON.chip} aria-hidden />
                 </button>
               </div>
             </div>
@@ -2423,7 +2424,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                             />
                           ) : (
                             <span className="flex h-full w-full items-center justify-center text-[var(--tr-ink-3)]">
-                              <MapPin size={18} aria-hidden />
+                              <IconArrived size={TR_ICON.action} aria-hidden />
                             </span>
                           )}
                         </div>
@@ -2466,7 +2467,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                       }}
                       className="tr-body flex min-h-[50px] flex-1 items-center justify-center gap-2 rounded-2xl bg-[var(--tr-accent)] px-4 font-bold text-[var(--tr-bubble-me-ink)] shadow-[var(--tr-plan-shadow-button)]"
                     >
-                      <CheckCircle2 size={17} aria-hidden />
+                      <IconSuccess size={TR_ICON.chip} aria-hidden />
                       {ui.replaceApply}
                     </button>
                   </div>
@@ -2484,7 +2485,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                   }}
                   className="tr-body flex min-h-[50px] w-full items-center justify-center gap-2 rounded-2xl bg-[var(--tr-accent)] px-4 font-bold text-[var(--tr-bubble-me-ink)] shadow-[var(--tr-plan-shadow-button)]"
                 >
-                  <CheckCircle2 size={17} aria-hidden />
+                  <IconSuccess size={TR_ICON.chip} aria-hidden />
                   {copy.useCourse}
                 </button>
               )}
@@ -2509,7 +2510,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
               disabled={stops.length === 0 || saveState === 'saving' || submitBusy}
               className="tr-body flex min-h-[48px] shrink-0 items-center justify-center gap-2 rounded-2xl bg-[var(--tr-accent)] px-5 font-bold text-[var(--tr-bubble-me-ink)] shadow-[var(--tr-plan-shadow-button)] disabled:opacity-50"
             >
-              <Send size={17} aria-hidden />
+              <IconSubmit size={TR_ICON.chip} aria-hidden />
               {saveState === 'saving' || submitBusy ? copy.submitting : copy.submit}
             </button>
           </div>

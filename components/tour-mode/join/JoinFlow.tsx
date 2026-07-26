@@ -13,6 +13,7 @@
  */
 
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
+import { IconTicket, TR_ICON } from '@/components/tour-mode/icons';
 import SeatMap from '@/components/ops/SeatMap';
 import type { SeatState } from '@/lib/ops/seating/logic';
 import type { VehicleLayoutJson } from '@/lib/ops/seating/layouts';
@@ -333,11 +334,11 @@ export default function JoinFlow({
   // ── styling (tour-room tokens; dark via prefers-color-scheme) ─────────────
   const card =
     'mx-auto mt-6 w-full max-w-md rounded-2xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] p-5 shadow-sm';
-  const title = 'text-lg font-bold text-[var(--tr-ink)]';
-  const sub = 'mt-1 text-sm text-[var(--tr-ink-2)]';
+  const title = 'tr-title font-bold text-[var(--tr-ink)]';
+  const sub = 'mt-1 tr-card-text text-[var(--tr-ink-2)]';
   const primaryBtn =
-    'mt-4 w-full rounded-xl bg-[var(--tr-accent)] px-4 py-3 text-sm font-bold text-[var(--tr-bubble-me-ink)] active:scale-[0.99] disabled:opacity-40';
-  const ghostBtn = 'mt-2 w-full rounded-xl px-4 py-2 text-xs font-medium text-[var(--tr-ink-3)] underline';
+    'mt-4 w-full rounded-xl bg-[var(--tr-accent)] px-4 py-3 tr-body font-bold text-[var(--tr-bubble-me-ink)] active:scale-[0.99] disabled:opacity-40';
+  const ghostBtn = 'mt-2 w-full rounded-xl px-4 py-2 tr-label font-medium text-[var(--tr-ink-3)] underline';
   const inputCls =
     'mt-1 w-full rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-canvas)] px-3 py-2.5 text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)] focus:border-[var(--tr-accent)] focus:outline-none';
 
@@ -386,15 +387,15 @@ export default function JoinFlow({
                   data-testid="roster-entry"
                 >
                   <span className="min-w-0">
-                    <span className="block truncate font-semibold text-[var(--tr-ink)]">{entry.name}</span>
-                    <span className="text-xs text-[var(--tr-ink-3)]">{t('pax', { n: entry.partySize })}</span>
+                    <span className="tr-name block truncate text-[var(--tr-ink)]">{entry.name}</span>
+                    <span className="tr-meta text-[var(--tr-ink-3)]">{t('pax', { n: entry.partySize })}</span>
                   </span>
                   {entry.claimed ? (
-                    <span className="shrink-0 rounded-full bg-[var(--tr-surface-2)] px-2 py-0.5 text-[11px] font-semibold text-[var(--tr-ink-3)]">
+                    <span className="tr-meta text-cjk-safe shrink-0 rounded-full bg-[var(--tr-surface-2)] px-2 py-0.5 font-semibold text-[var(--tr-ink-3)]">
                       {t('claimed')}
                     </span>
                   ) : (
-                    <span className="shrink-0 text-xs font-bold text-[var(--tr-accent-deep)]">{t('pickName')} ›</span>
+                    <span className="tr-label text-cjk-safe shrink-0 font-bold text-[var(--tr-accent-deep)]">{t('pickName')} ›</span>
                   )}
                 </button>
               </li>
@@ -412,7 +413,7 @@ export default function JoinFlow({
         <div className={card} data-testid="join-verify">
           <p className={title}>{t('verifyTitle', { name: entry.name })}</p>
           <p className={sub}>{t('verifyHint')}</p>
-          <label className="mt-4 block text-xs font-semibold text-[var(--tr-ink-2)]">
+          <label className="tr-label mt-4 block font-semibold text-[var(--tr-ink-2)]">
             {t('emailTailLabel')}
             <input
               value={answerEmail}
@@ -423,7 +424,7 @@ export default function JoinFlow({
               autoComplete="off"
             />
           </label>
-          <label className="mt-3 block text-xs font-semibold text-[var(--tr-ink-2)]">
+          <label className="tr-label mt-3 block font-semibold text-[var(--tr-ink-2)]">
             {t('partySizeLabel')}
             <input
               value={answerParty}
@@ -435,7 +436,7 @@ export default function JoinFlow({
             />
           </label>
           {note && (
-            <p className="mt-3 rounded-lg bg-[var(--tr-danger-soft)] px-3 py-2 text-xs font-medium text-[var(--tr-danger)]">
+            <p className="tr-label mt-3 rounded-lg bg-[var(--tr-danger-soft)] px-3 py-2 font-medium text-[var(--tr-danger)]">
               {note}
             </p>
           )}
@@ -482,12 +483,15 @@ export default function JoinFlow({
     return (
       <JoinShell dark={dark} locale={locale}>
         <div className={card} data-testid="join-done">
-          <p className="text-3xl">🎫</p>
+          {/* W0.2 success-hero grammar — ticket roundel instead of emoji chrome. */}
+          <div className="mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-[var(--tr-accent-soft)]">
+            <IconTicket size={TR_ICON.tile} className="text-[var(--tr-accent)]" aria-hidden />
+          </div>
           <p className={title}>{t('done')}</p>
           <p className={sub}>
             {t('yourSeats')}: {phase.seatNumbers.join(', ')}
           </p>
-          <p className="mt-3 text-xs text-[var(--tr-ink-3)]">{t('doneHint')}</p>
+          <p className="tr-meta mt-3 text-[var(--tr-ink-3)]">{t('doneHint')}</p>
         </div>
       </JoinShell>
     );
@@ -515,7 +519,7 @@ export default function JoinFlow({
                       setActiveVehicleId(v.roomVehicleId);
                       setSelected(new Set());
                     }}
-                    className={`rounded-full px-3 py-1 text-xs font-semibold ${
+                    className={`tr-label text-cjk-safe rounded-full px-3 py-1 font-semibold ${
                       v.roomVehicleId === activeVehicle.roomVehicleId
                         ? 'bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]'
                         : 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]'
@@ -537,11 +541,11 @@ export default function JoinFlow({
                 />
               </div>
             )}
-            <p className="mt-3 text-center text-sm font-semibold text-[var(--tr-ink-2)]" data-testid="seat-count">
+            <p className="tr-card-text mt-3 text-center font-semibold text-[var(--tr-ink-2)]" data-testid="seat-count">
               {t('selectedCount', { sel: selected.size, n: partySize })}
             </p>
             {note && (
-              <p className="mt-2 rounded-lg bg-[var(--tr-danger-soft)] px-3 py-2 text-center text-xs font-medium text-[var(--tr-danger)]">
+              <p className="tr-label mt-2 rounded-lg bg-[var(--tr-danger-soft)] px-3 py-2 text-center font-medium text-[var(--tr-danger)]">
                 {note}
               </p>
             )}

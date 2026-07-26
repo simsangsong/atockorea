@@ -11,7 +11,7 @@
 
 import { useEffect, useRef, type ReactNode } from 'react';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
-import { IconClose } from '@/components/tour-mode/icons';
+import { IconClose, TR_ICON } from '@/components/tour-mode/icons';
 
 export default function Sheet({
   open,
@@ -95,7 +95,7 @@ export default function Sheet({
                 className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-[var(--tr-ink-3)] active:bg-[var(--tr-bubble-system)]"
                 data-testid="room-sheet-close"
               >
-                <IconClose size={20} />
+                <IconClose size={TR_ICON.action} />
               </button>
             </div>
             <div className="max-h-[70dvh] overflow-y-auto px-5 pb-5">{children}</div>

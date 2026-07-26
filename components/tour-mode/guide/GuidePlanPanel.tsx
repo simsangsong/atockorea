@@ -23,6 +23,7 @@
  */
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { IconClose, IconWarn, TR_ICON } from '../icons';
 import type { DayPlanStop } from '@/lib/tour-room/dayPlan';
 import {
   markNewStops,
@@ -62,7 +63,7 @@ const SKIP_REASON_LABELS: Record<string, string> = {
 const DURATIONS = [30, 45, 60, 90, 120, 180];
 
 const INPUT_CLASS =
-  'rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-1.5 py-1 text-[12px] text-[var(--tr-ink)]';
+  'tr-label rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-1.5 py-1 text-[var(--tr-ink)]';
 
 function stopTitle(stop: DayPlanStop): string {
   const names = stop.name_i18n;
@@ -250,13 +251,13 @@ export default function GuidePlanPanel({
 
   if (error && !data) {
     return (
-      <p className="mt-2 rounded-xl border border-[var(--tr-danger-soft)] bg-[var(--tr-surface)] px-3 py-2 text-[12px] text-[var(--tr-danger)]">
+      <p className="tr-label mt-2 rounded-xl border border-[var(--tr-danger-soft)] bg-[var(--tr-surface)] px-3 py-2 text-[var(--tr-danger)]">
         {error}
       </p>
     );
   }
   if (!data) {
-    return <p className="mt-2 px-1 text-[12px] text-[var(--tr-ink-3)]">일정 불러오는 중…</p>;
+    return <p className="tr-label mt-2 px-1 text-[var(--tr-ink-3)]">일정 불러오는 중…</p>;
   }
 
   const needs = needsSummary(data.day_plan?.needs);
@@ -266,7 +267,7 @@ export default function GuidePlanPanel({
       {/* status row */}
       <div className="flex items-center justify-between gap-2">
         <span
-          className={`rounded-full px-2.5 py-1 text-[11px] font-bold ${
+          className={`tr-meta text-cjk-safe rounded-full px-2.5 py-1 font-bold ${
             hasDraft
               ? 'bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]'
               : isActive
@@ -281,18 +282,18 @@ export default function GuidePlanPanel({
               : '개별 일정 없음 (기본 코스 운행)'}
         </span>
         {planStatus === null && (
-          <span className="text-[11px] text-[var(--tr-ink-3)]">스톱을 추가해 개별 일정을 만들 수 있어요</span>
+          <span className="tr-meta text-[var(--tr-ink-3)]">스톱을 추가해 개별 일정을 만들 수 있어요</span>
         )}
       </div>
 
       {/* needs (A10) */}
       {needs.length > 0 && (
         <div className="mt-2 rounded-xl bg-[var(--tr-surface)] px-3 py-2">
-          <p className="text-[11px] font-semibold text-[var(--tr-ink-3)]">손님 정보</p>
+          <p className="tr-meta font-semibold text-[var(--tr-ink-3)]">손님 정보</p>
           {needs.map((line, i) => (
             <p
               key={i}
-              className={`text-[12px] leading-relaxed ${line.startsWith('⚠') ? 'font-semibold text-[var(--tr-danger)]' : 'text-[var(--tr-ink-2)]'}`}
+              className={`tr-label leading-relaxed ${line.startsWith('⚠') ? 'font-semibold text-[var(--tr-danger)]' : 'text-[var(--tr-ink-2)]'}`}
             >
               {line}
             </p>
@@ -304,7 +305,10 @@ export default function GuidePlanPanel({
       {warnings.length > 0 && (
         <div className="mt-2 rounded-xl border border-[var(--tr-danger-soft)] bg-[var(--tr-surface)] px-3 py-2">
           {warnings.map((w, i) => (
-            <p key={i} className="text-[12px] leading-relaxed text-[var(--tr-danger)]">⚠ {warningText(w)}</p>
+            <p key={i} className="tr-label leading-relaxed text-[var(--tr-danger)]">
+              <IconWarn size={TR_ICON.meta} className="mr-1 inline-block align-[-2px]" aria-hidden />
+              {warningText(w)}
+            </p>
           ))}
         </div>
       )}
@@ -327,15 +331,15 @@ export default function GuidePlanPanel({
               }`}
             >
               <div className="flex items-center gap-2">
-                <span className="w-5 shrink-0 text-center text-[12px] font-bold text-[var(--tr-ink-3)]">{index + 1}</span>
+                <span className="tr-label tr-num w-5 shrink-0 text-center font-bold text-[var(--tr-ink-3)]">{index + 1}</span>
                 <div className="min-w-0 flex-1">
-                  <p className={`line-clamp-2 text-[13px] font-semibold leading-snug ${skipped ? 'text-[var(--tr-ink-3)] line-through' : 'text-[var(--tr-ink)]'}`}>
+                  <p className={`tr-name line-clamp-2 font-semibold leading-snug ${skipped ? 'text-[var(--tr-ink-3)] line-through' : 'text-[var(--tr-ink)]'}`}>
                     {stopTitle(stop)}
                     {newStopIds.has(id) && (
-                      <span className="ml-1.5 rounded bg-[var(--tr-accent-soft)] px-1.5 py-0.5 text-[10px] font-bold text-[var(--tr-accent-deep)]">신규</span>
+                      <span className="tr-meta ml-1.5 rounded bg-[var(--tr-accent-soft)] px-1.5 py-0.5 font-bold text-[var(--tr-accent-deep)]">신규</span>
                     )}
                     {typeof stop.memo_guest === 'string' && stop.memo_guest && (
-                      <span className="ml-1.5 text-[11px] font-normal text-[var(--tr-ink-3)]">“{stop.memo_guest}”</span>
+                      <span className="tr-meta ml-1.5 font-normal text-[var(--tr-ink-3)]">“{stop.memo_guest}”</span>
                     )}
                   </p>
                   <div className="mt-1 flex flex-wrap items-center gap-1.5">
@@ -376,7 +380,7 @@ export default function GuidePlanPanel({
                           type="button"
                           disabled={busy === `arrive:${id}` || arrivedIds.has(id)}
                           onClick={() => void announceArrival(stop)}
-                          className={`rounded-lg px-2 py-1 text-[12px] font-semibold ${
+                          className={`tr-label rounded-lg px-2 py-1 font-semibold ${
                             arrivedIds.has(id) || stop.status === 'arrived'
                               ? 'bg-[var(--tr-accent-soft)] text-[var(--tr-safe)]'
                               : 'bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]'
@@ -412,7 +416,7 @@ export default function GuidePlanPanel({
                               return next;
                             })
                           }
-                          className="rounded-full border border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] px-2 py-1 text-[11px] font-medium text-[var(--tr-ink-2)]"
+                          className="tr-meta text-cjk-safe rounded-full border border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] px-2 py-1 font-medium text-[var(--tr-ink-2)]"
                         >
                           ↺ {poi.name_ko ?? poi.name_en} ({distance_km.toFixed(1)}km)
                         </button>
@@ -433,7 +437,7 @@ export default function GuidePlanPanel({
                         return next;
                       })
                     }
-                    className="h-7 w-7 rounded-lg bg-[var(--tr-surface-2)] text-[12px] font-bold text-[var(--tr-ink-2)] disabled:opacity-30"
+                    className="tr-label h-7 w-7 rounded-lg bg-[var(--tr-surface-2)] font-bold text-[var(--tr-ink-2)] disabled:opacity-30"
                   >↑</button>
                   <button
                     type="button"
@@ -446,7 +450,7 @@ export default function GuidePlanPanel({
                         return next;
                       })
                     }
-                    className="h-7 w-7 rounded-lg bg-[var(--tr-surface-2)] text-[12px] font-bold text-[var(--tr-ink-2)] disabled:opacity-30"
+                    className="tr-label h-7 w-7 rounded-lg bg-[var(--tr-surface-2)] font-bold text-[var(--tr-ink-2)] disabled:opacity-30"
                   >↓</button>
                   {isActive ? (
                     <button
@@ -462,7 +466,7 @@ export default function GuidePlanPanel({
                           ),
                         )
                       }
-                      className={`h-7 rounded-lg px-2 text-[12px] font-semibold ${skipped ? 'bg-[var(--tr-accent-soft)] text-[var(--tr-ink-2)]' : 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]'}`}
+                      className={`tr-label text-cjk-safe h-7 rounded-lg px-2 font-semibold ${skipped ? 'bg-[var(--tr-accent-soft)] text-[var(--tr-ink-2)]' : 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]'}`}
                       data-testid="skip-toggle"
                     >
                       {skipped ? '복원' : '스킵'}
@@ -472,8 +476,10 @@ export default function GuidePlanPanel({
                       type="button"
                       aria-label="삭제"
                       onClick={() => mutate((prev) => prev.filter((s) => s.id !== stop.id))}
-                      className="h-7 w-7 rounded-lg bg-[var(--tr-surface-2)] text-[12px] font-bold text-[var(--tr-danger)]"
-                    >✕</button>
+                      className="flex h-7 w-7 items-center justify-center rounded-lg bg-[var(--tr-surface-2)] text-[var(--tr-danger)]"
+                    >
+                      <IconClose size={TR_ICON.meta} aria-hidden />
+                    </button>
                   )}
                 </div>
               </div>
@@ -523,7 +529,7 @@ export default function GuidePlanPanel({
           list={`plan-pois-${bookingId}`}
           maxLength={120}
           placeholder="스톱 추가 (장소명)"
-          className="min-w-0 flex-1 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2 text-[13px] text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)] focus:border-[var(--tr-accent)] focus:outline-none"
+          className="tr-card-text min-w-0 flex-1 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2 text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)] focus:border-[var(--tr-accent)] focus:outline-none"
         />
         <datalist id={`plan-pois-${bookingId}`}>
           {pois.slice(0, 100).map((poi) => (
@@ -533,14 +539,14 @@ export default function GuidePlanPanel({
         <button
           type="submit"
           disabled={!addText.trim()}
-          className="shrink-0 rounded-xl bg-[var(--tr-surface)] px-3 py-2 text-[13px] font-semibold text-[var(--tr-ink-2)] ring-1 ring-[var(--tr-hairline)] disabled:opacity-40"
+          className="tr-label shrink-0 rounded-xl bg-[var(--tr-surface)] px-3 py-2 font-semibold text-[var(--tr-ink-2)] ring-1 ring-[var(--tr-hairline)] disabled:opacity-40"
         >
           추가
         </button>
       </form>
 
       {error && (
-        <p className="mt-2 rounded-xl border border-[var(--tr-danger-soft)] bg-[var(--tr-surface)] px-3 py-2 text-[12px] text-[var(--tr-danger)]">
+        <p className="tr-label mt-2 rounded-xl border border-[var(--tr-danger-soft)] bg-[var(--tr-surface)] px-3 py-2 text-[var(--tr-danger)]">
           {error}
         </p>
       )}
@@ -552,7 +558,7 @@ export default function GuidePlanPanel({
             type="button"
             disabled={!dirty || busy !== null || stops.length === 0}
             onClick={() => void putPlan({}, 'save')}
-            className="flex-1 rounded-xl bg-[var(--tr-accent)] py-2.5 text-[13px] font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
+            className="tr-label flex-1 rounded-xl bg-[var(--tr-accent)] py-2.5 font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
             data-testid="plan-save"
           >
             {busy === 'save' ? '저장 중…' : '저장 (손님에게 변경 안내)'}
@@ -562,7 +568,7 @@ export default function GuidePlanPanel({
             type="button"
             disabled={busy !== null || stops.length === 0}
             onClick={() => void putPlan({ confirm: true }, 'confirm')}
-            className="flex-1 rounded-xl bg-[var(--tr-accent)] py-2.5 text-[13px] font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
+            className="tr-label flex-1 rounded-xl bg-[var(--tr-accent)] py-2.5 font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
             data-testid="plan-confirm"
           >
             {busy === 'confirm' ? '확정 중…' : '일정 확정 (손님에게 발송)'}

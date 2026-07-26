@@ -110,7 +110,7 @@ export default function ExtraLedgerCard({
           {copy.title} · {copy.kind[meta.extra_kind ?? 'other'] ?? copy.kind.other}
         </p>
         <span
-          className={`tr-meta rounded-full px-2 py-0.5 font-bold ${
+          className={`tr-meta text-cjk-safe rounded-full px-2 py-0.5 font-bold ${
             settled
               ? 'bg-[var(--tr-safe)] text-white'
               : status === 'confirmed'
@@ -125,7 +125,7 @@ export default function ExtraLedgerCard({
       </div>
       <p className={`tr-body mt-1.5 font-semibold text-[var(--tr-ink)] ${voided ? 'line-through' : ''}`}>
         {meta.item_i18n?.[locale] ?? meta.item ?? ''}
-        <span className="ml-2 font-bold text-[var(--tr-accent-deep)]">{formatKrw(meta.amount_krw ?? 0)}</span>
+        <span className="tr-num ml-2 font-bold text-[var(--tr-accent-deep)]">{formatKrw(meta.amount_krw ?? 0)}</span>
       </p>
       {!voided && <p className="tr-meta mt-0.5 text-[var(--tr-ink-3)]">{copy.cashNote}</p>}
       {meta.receipt_photo_url && (

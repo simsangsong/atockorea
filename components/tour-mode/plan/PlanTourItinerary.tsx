@@ -11,7 +11,7 @@
  * itinerary (the planner then shows generic course templates).
  */
 
-import { Plus, Sparkles } from 'lucide-react';
+import { IconHighlight, IconPlus, TR_ICON } from '@/components/tour-mode/icons';
 import PlanStopCards from '@/components/tour-mode/plan/PlanStopCards';
 import type { ItineraryStop } from '@/components/product-tour-static/_shared/tourProductDetailSectionTypes';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
@@ -53,11 +53,11 @@ export default function PlanTourItinerary({
       <div className="tr-card px-4 py-4">
         <div className="flex items-start gap-3">
           <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[var(--tr-accent-soft)] text-[var(--tr-accent-deep)]">
-            <Sparkles size={19} aria-hidden />
+            <IconHighlight size={TR_ICON.action} aria-hidden />
           </span>
           <div className="min-w-0 flex-1">
             <span className="tr-meta font-semibold uppercase text-[var(--tr-accent-deep)]">{labels.sectionTitle}</span>
-            <h2 className="mt-0.5 text-[16px] font-bold leading-snug text-[var(--tr-ink)]">
+            <h2 className="tr-title mt-0.5 font-bold leading-snug text-[var(--tr-ink)]">
               {tourTitle || labels.sectionTitle}
             </h2>
             <p className="tr-label mt-1 leading-relaxed text-[var(--tr-ink-2)]">{labels.sectionSub}</p>
@@ -75,7 +75,7 @@ export default function PlanTourItinerary({
             className="tr-body mt-3 flex min-h-[46px] w-full items-center justify-center gap-2 rounded-2xl bg-[var(--tr-accent)] px-4 font-bold text-[var(--tr-bubble-me-ink)] shadow-[var(--tr-plan-shadow-button)] transition active:scale-[0.99]"
             data-testid="plan-tour-apply-all"
           >
-            <Plus size={17} aria-hidden />
+            <IconPlus size={TR_ICON.chip} aria-hidden />
             {labels.applyAll}
           </button>
         )}

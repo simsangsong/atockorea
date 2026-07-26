@@ -13,7 +13,8 @@
  */
 
 import { useState } from 'react';
-import { ShieldCheck, ChevronDown, ChevronUp } from 'lucide-react';
+import { IconCollapse } from '@/components/tour-mode/icons';
+import { IconOpsBadge, IconScrollDown, TR_ICON, TR_STROKE } from '@/components/tour-mode/icons';
 import SafetyVideoCard from '@/components/tour-mode/SafetyVideoCard';
 import { SAFETY_COPY, safetyFullTranslations, type BriefingSafetyMeta } from '@/lib/ops/seating/cards/safety';
 import { isSafetyVideoMeta } from '@/lib/tour-room/safetyVideo';
@@ -48,9 +49,9 @@ export default function BriefingSafetyCard({
             className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--tr-accent-soft)] text-[var(--tr-accent-deep)]"
             aria-hidden
           >
-            <ShieldCheck size={15} strokeWidth={2} />
+            <IconOpsBadge size={TR_ICON.chip} strokeWidth={TR_STROKE.default} />
           </span>
-          <p className="min-w-0 flex-1 text-sm font-semibold text-[var(--tr-ink)]" data-testid="briefing-safety-title">
+          <p className="tr-title min-w-0 flex-1 text-[var(--tr-ink)]" data-testid="briefing-safety-title">
             {collapsed ? copy.collapsedTitle : copy.title}
           </p>
           {collapsed ? (
@@ -58,14 +59,14 @@ export default function BriefingSafetyCard({
               type="button"
               onClick={() => setOpen((v) => !v)}
               aria-expanded={open}
-              className="tr-pill tr-press inline-flex min-h-[44px] shrink-0 items-center gap-1 px-3 text-sm font-semibold text-[var(--tr-ink)]"
+              className="tr-pill tr-label tr-press inline-flex min-h-[44px] shrink-0 items-center gap-1 px-3 font-semibold text-[var(--tr-ink)]"
               data-testid="briefing-safety-toggle"
             >
               {open ? copy.collapse : copy.expand}
               {open ? (
-                <ChevronUp size={14} strokeWidth={2} aria-hidden />
+                <IconCollapse size={TR_ICON.meta} strokeWidth={TR_STROKE.small} aria-hidden />
               ) : (
-                <ChevronDown size={14} strokeWidth={2} aria-hidden />
+                <IconScrollDown size={TR_ICON.meta} strokeWidth={TR_STROKE.small} aria-hidden />
               )}
             </button>
           ) : null}

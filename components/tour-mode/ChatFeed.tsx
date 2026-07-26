@@ -5,7 +5,8 @@
  *
  * - Bubble system: consecutive-sender grouping (avatar + name once, tail and
  *   timestamp on the group's last bubble), KST date-separator pills, centered
- *   system capsules, my-bubble in the warm-yellow brand grammar (U-D2).
+ *   system capsules, my-bubble in the deep-pine signature (U4-D8), text
+ *   bubbles capped at 76% of the row (U4-D10 — long messages keep a gutter).
  * - Viewer-locale translation shown first; tapping a translated bubble
  *   toggles the original text (per-message). The affordance lives in the
  *   side meta column (globe / undo), not inside the bubble (U-D11).
@@ -55,6 +56,8 @@ import {
   IconScrollDown,
   IconSending,
   IconTranslated,
+  TR_ICON,
+  TR_STROKE,
 } from '@/components/tour-mode/icons';
 import type { ReplySnapshot } from '@/lib/tour-room/reply';
 import type { ReactionAgg } from '@/hooks/useTourRoomChannel';
@@ -538,7 +541,7 @@ export default function ChatFeed({
                 <div className={`mt-2 flex flex-col gap-2 ${animClass}`}>
                   {/* video-only arrival: keep the arrived line above the player */}
                   {arrivalVideo && !(arrivalContent && Object.keys(arrivalContent).length > 0) ? (
-                    <p className="px-1 text-sm font-semibold text-[var(--tr-ink)]">
+                    <p className="tr-body px-1 font-semibold text-[var(--tr-ink)]">
                       {displayText(message, viewerLocale, originals.has(message.id), preferredLocale)}
                     </p>
                   ) : null}
@@ -607,7 +610,7 @@ export default function ChatFeed({
                     className="flex h-6 w-6 items-center justify-center rounded-full text-[var(--tr-ink-3)] active:bg-[var(--tr-bubble-system)]"
                     data-testid="msg-actions"
                   >
-                    <IconMore size={15} aria-hidden />
+                    <IconMore size={TR_ICON.chip} aria-hidden />
                   </button>
                 )}
                 {readMark && (
@@ -617,17 +620,21 @@ export default function ChatFeed({
                 )}
                 {failed && (
                   <span className="text-[var(--tr-danger)]" data-testid="bubble-failed" aria-hidden>
-                    <IconRetry size={13} strokeWidth={2.25} />
+                    <IconRetry size={TR_ICON.meta} strokeWidth={TR_STROKE.small} />
                   </span>
                 )}
                 {sending && !failed && (
                   <span data-testid="bubble-sending" aria-hidden>
-                    <IconSending size={12} strokeWidth={2} />
+                    <IconSending size={TR_ICON.meta} strokeWidth={TR_STROKE.small} />
                   </span>
                 )}
                 {translatable && (
                   <span aria-hidden>
-                    {showingOriginal ? <IconOriginal size={12} strokeWidth={2} /> : <IconTranslated size={12} strokeWidth={2} />}
+                    {showingOriginal ? (
+                      <IconOriginal size={TR_ICON.meta} strokeWidth={TR_STROKE.small} />
+                    ) : (
+                      <IconTranslated size={TR_ICON.meta} strokeWidth={TR_STROKE.small} />
+                    )}
                   </span>
                 )}
                 {time && <span className="whitespace-nowrap tabular-nums">{time}</span>}
@@ -694,14 +701,14 @@ export default function ChatFeed({
                 } ${sending ? 'opacity-60' : ''}`}
                 data-testid="chat-file"
               >
-                <IconFile size={22} strokeWidth={1.75} aria-hidden />
+                <IconFile size={TR_ICON.nav} strokeWidth={TR_STROKE.default} aria-hidden />
                 <span className="min-w-0 flex-1">
-                  <span className="block truncate text-sm font-medium">{attachment!.name ?? 'file'}</span>
+                  <span className="tr-card-text block truncate font-medium">{attachment!.name ?? 'file'}</span>
                   {formatBytes(attachment!.size) && (
-                    <span className="tr-meta block opacity-70">{formatBytes(attachment!.size)}</span>
+                    <span className="tr-meta tr-num block opacity-70">{formatBytes(attachment!.size)}</span>
                   )}
                 </span>
-                <IconInstall size={16} aria-hidden />
+                <IconInstall size={TR_ICON.chip} aria-hidden />
               </a>
             ) : loc ? (
               <LocationPreview lat={loc.lat} lng={loc.lng} label={loc.label} url={loc.url} />
@@ -725,7 +732,9 @@ export default function ChatFeed({
             if (mine) {
               return (
                 <div className={`flex justify-end pl-12 ${groupStart ? 'mt-2' : 'mt-0.5'} ${animClass}`}>
-                  <div className="flex max-w-full items-end gap-1.5">
+                  {/* U4-D10 — 76% cap: long paragraphs keep a breathing gutter
+                      like Kakao/WhatsApp instead of wall-to-wall text. */}
+                  <div className="flex max-w-[76%] items-end gap-1.5">
                     {metaColumn}
                     <div className="min-w-0">{bubbleEl}</div>
                   </div>
@@ -738,17 +747,17 @@ export default function ChatFeed({
                 <div className="w-9 shrink-0 self-start pt-0.5">
                   {groupStart && <Avatar role={message.sender_role} size={34} />}
                 </div>
-                <div className="ml-2 min-w-0 max-w-full">
+                <div className="ml-2 min-w-0 max-w-[76%]">
                   {groupStart && (
                     <div
-                      className={`tr-meta mb-1 flex items-center gap-1 font-medium ${
+                      className={`tr-name mb-1 flex items-center gap-1 ${
                         opsHighlighted ? 'text-[var(--tr-safe)]' : 'text-[var(--tr-ink-2)]'
                       }`}
                     >
                       {roleLabel ?? ''}
                       {opsHighlighted && (
                         <span className="text-[var(--tr-safe)]" data-testid="ops-reply-dot" aria-hidden>
-                          <IconOpsBadge size={13} strokeWidth={2.25} />
+                          <IconOpsBadge size={TR_ICON.meta} strokeWidth={TR_STROKE.small} />
                         </span>
                       )}
                     </div>
@@ -845,9 +854,9 @@ export default function ChatFeed({
           style={{ boxShadow: 'var(--tr-shadow-overlay)' }}
           data-testid="scroll-to-bottom"
         >
-          <IconScrollDown size={20} />
+          <IconScrollDown size={TR_ICON.action} />
           {awayCount > 0 && (
-            <span className="absolute -top-1.5 min-w-[18px] rounded-full bg-[var(--tr-accent)] px-1 py-0.5 text-center text-[10px] font-bold leading-none text-[var(--tr-bubble-me-ink)]">
+            <span className="tr-meta tr-num absolute -top-1.5 min-w-[18px] rounded-full bg-[var(--tr-accent)] px-1 py-0.5 text-center font-bold leading-none text-[var(--tr-bubble-me-ink)]">
               {awayCount > 99 ? '99+' : awayCount}
             </span>
           )}
@@ -892,7 +901,7 @@ export default function ChatFeed({
                 className="tr-card-text flex items-center gap-3 rounded-xl px-2 py-3 text-left font-medium text-[var(--tr-ink)] active:bg-[var(--tr-surface-2)]"
                 data-testid="action-reply"
               >
-                <IconReply size={18} aria-hidden />
+                <IconReply size={TR_ICON.action} aria-hidden />
                 {action.reply}
               </button>
             )}
@@ -902,7 +911,7 @@ export default function ChatFeed({
               className="tr-card-text flex items-center gap-3 rounded-xl px-2 py-3 text-left font-medium text-[var(--tr-ink)] active:bg-[var(--tr-surface-2)]"
               data-testid="action-copy"
             >
-              <IconCopy size={18} aria-hidden />
+              <IconCopy size={TR_ICON.action} aria-hidden />
               {copiedNote ? action.copied : action.copy}
             </button>
             <button
@@ -914,7 +923,11 @@ export default function ChatFeed({
               className="tr-card-text flex items-center gap-3 rounded-xl px-2 py-3 text-left font-medium text-[var(--tr-ink)] active:bg-[var(--tr-surface-2)]"
               data-testid="action-translate"
             >
-              {originals.has(actionMsg.id) ? <IconTranslated size={18} aria-hidden /> : <IconOriginal size={18} aria-hidden />}
+              {originals.has(actionMsg.id) ? (
+                <IconTranslated size={TR_ICON.action} aria-hidden />
+              ) : (
+                <IconOriginal size={TR_ICON.action} aria-hidden />
+              )}
               {originals.has(actionMsg.id) ? action.translated : action.original}
             </button>
           </div>

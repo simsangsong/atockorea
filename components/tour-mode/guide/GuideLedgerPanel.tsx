@@ -12,6 +12,7 @@
  */
 
 import { useCallback, useEffect, useState } from 'react';
+import { IconReceipt, TR_ICON } from '../icons';
 import { formatKrw, EXTRA_KIND_LABELS, type ExtraKind } from '@/lib/tour-room/ledger';
 
 interface ExtraRow {
@@ -119,7 +120,7 @@ export default function GuideLedgerPanel({
       <div className="flex items-center justify-between">
         <p className="tr-label font-semibold text-[var(--tr-ink-2)]">정산 (당일 현금 직불 · 기록용)</p>
         {unsettled > 0 && (
-          <span className="tr-meta rounded-full bg-[var(--tr-accent)] px-2 py-0.5 font-bold text-[var(--tr-bubble-me-ink)]">
+          <span className="tr-meta text-cjk-safe rounded-full bg-[var(--tr-accent)] px-2 py-0.5 font-bold text-[var(--tr-bubble-me-ink)]">
             미수취 {formatKrw(unsettled)}
           </span>
         )}
@@ -225,10 +226,17 @@ export default function GuideLedgerPanel({
               })
               .finally(() => setBusy(null));
           }}
-          className="tr-label mt-2 w-full rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] py-2 font-semibold text-[var(--tr-ink)] disabled:opacity-50"
+          className="tr-label mt-2 flex w-full items-center justify-center gap-1.5 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] py-2 font-semibold text-[var(--tr-ink)] disabled:opacity-50"
           data-testid="settlement-summary"
         >
-          {busy === 'summary' ? '발송 중…' : '🧾 정산 요약 발송 (손님 채팅으로)'}
+          {busy === 'summary' ? (
+            '발송 중…'
+          ) : (
+            <>
+              <IconReceipt size={TR_ICON.chip} aria-hidden />
+              정산 요약 발송 (손님 채팅으로)
+            </>
+          )}
         </button>
       )}
 

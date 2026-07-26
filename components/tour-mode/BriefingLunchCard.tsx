@@ -17,7 +17,8 @@
  */
 
 import { useState } from 'react';
-import { Utensils, Check } from 'lucide-react';
+import { IconMeal } from '@/components/tour-mode/icons';
+import { IconDone, TR_ICON, TR_STROKE } from '@/components/tour-mode/icons';
 import { LUNCH_COPY, LUNCH_INTAKE_TAGS, type BriefingLunchMeta } from '@/lib/ops/seating/cards/lunch';
 import { DIETARY_LABELS } from '@/lib/ops/dining/dietary';
 import type { DietaryTag } from '@/lib/ops/dining/dietary';
@@ -75,9 +76,9 @@ export default function BriefingLunchCard({
           className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--tr-accent-soft)] text-[var(--tr-accent-deep)]"
           aria-hidden
         >
-          <Utensils size={15} strokeWidth={2} />
+          <IconMeal size={TR_ICON.chip} strokeWidth={TR_STROKE.default} />
         </span>
-        <p className="min-w-0 flex-1 text-sm font-semibold text-[var(--tr-ink)]">{copy.title}</p>
+        <p className="tr-title min-w-0 flex-1 text-[var(--tr-ink)]">{copy.title}</p>
       </div>
 
       <p
@@ -106,7 +107,7 @@ export default function BriefingLunchCard({
                 }`}
                 data-testid={`briefing-lunch-chip-${tag}`}
               >
-                {active ? <Check size={13} strokeWidth={2.5} aria-hidden /> : null}
+                {active ? <IconDone size={TR_ICON.meta} strokeWidth={TR_STROKE.small} aria-hidden /> : null}
                 {DIETARY_LABELS[tag][locale]}
               </button>
             );

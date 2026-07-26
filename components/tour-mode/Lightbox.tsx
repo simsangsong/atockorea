@@ -9,7 +9,7 @@
  */
 
 import { useEffect, useRef } from 'react';
-import { IconClose, IconInstall } from '@/components/tour-mode/icons';
+import { IconClose, IconInstall, TR_ICON } from '@/components/tour-mode/icons';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
 // A1.1 — screen-reader labels (the two icon-only controls were English-fixed).
@@ -82,7 +82,7 @@ export default function Lightbox({
         className="absolute right-3 top-3 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white"
         data-testid="lightbox-close"
       >
-        <IconClose size={22} />
+        <IconClose size={TR_ICON.nav} />
       </button>
       <a
         href={url}
@@ -94,7 +94,7 @@ export default function Lightbox({
         className="absolute bottom-4 right-3 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white"
         data-testid="lightbox-download"
       >
-        <IconInstall size={20} />
+        <IconInstall size={TR_ICON.action} />
       </a>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img

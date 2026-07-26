@@ -11,7 +11,7 @@
  */
 
 import { QUICK_REPLY_PRESETS, type QuickReplyPreset } from '@/lib/tour-room/quickReplies';
-import { IconPickup } from '@/components/tour-mode/icons';
+import { IconPickup, TR_ICON } from '@/components/tour-mode/icons';
 import type { PickupBoardState } from '@/lib/tour-room/pickup';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
@@ -99,7 +99,7 @@ export default function PickupBoard({
     <div className="tr-card mb-2 px-4 py-3.5" data-testid="pickup-board">
       <div className="flex items-center justify-between gap-2">
         <p className="tr-title flex items-center gap-1.5 text-[var(--tr-ink)]">
-          <IconPickup size={16} className="text-[var(--tr-safe)]" aria-hidden />
+          <IconPickup size={TR_ICON.chip} className="text-[var(--tr-safe)]" aria-hidden />
           {copy.title}
         </p>
         {state.mode === 'live' && state.etaMinutes !== null && (

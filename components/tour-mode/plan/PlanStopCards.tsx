@@ -12,7 +12,8 @@
  */
 
 import { useMemo, useState } from 'react';
-import { Check, ChevronRight, Clock3, Plus, Sparkles } from 'lucide-react';
+import { IconTime } from '@/components/tour-mode/icons';
+import { IconChevronRight, IconDone, IconHighlight, IconPlus, TR_ICON } from '@/components/tour-mode/icons';
 import { TourStopDetailDrawer } from '@/components/product-tour-static/_shared/TourStopDetailDrawer';
 import type { ItineraryStop } from '@/components/product-tour-static/_shared/tourProductDetailSectionTypes';
 import { mergeTourProductSectionUi } from '@/lib/tour-product/tourProductSectionUi';
@@ -97,7 +98,7 @@ export default function PlanStopCards({
                     />
                   ) : (
                     <span className="flex h-full w-full items-center justify-center text-[var(--tr-ink-3)]">
-                      <Sparkles size={22} aria-hidden />
+                      <IconHighlight size={TR_ICON.nav} aria-hidden />
                     </span>
                   )}
                   <span className="tr-meta absolute left-1.5 top-1.5 flex h-6 min-w-6 items-center justify-center rounded-full bg-[var(--tr-ink)]/85 px-1.5 font-bold tabular-nums text-[var(--tr-canvas)]">
@@ -109,7 +110,7 @@ export default function PlanStopCards({
                   <div className="tr-meta mt-1 flex flex-wrap items-center gap-x-2 gap-y-0.5 text-[var(--tr-ink-2)]">
                     {time && (
                       <span className="inline-flex items-center gap-1 tabular-nums">
-                        <Clock3 size={12} aria-hidden />
+                        <IconTime size={TR_ICON.meta} aria-hidden />
                         {time}
                       </span>
                     )}
@@ -118,7 +119,7 @@ export default function PlanStopCards({
                   </div>
                   <span className="tr-meta mt-1 inline-flex items-center gap-0.5 font-semibold text-[var(--tr-accent-deep)]">
                     {labels.details}
-                    <ChevronRight size={13} aria-hidden />
+                    <IconChevronRight size={TR_ICON.meta} aria-hidden />
                   </span>
                 </div>
               </button>
@@ -128,14 +129,14 @@ export default function PlanStopCards({
                     type="button"
                     onClick={() => onAddStop?.(stop)}
                     disabled={added}
-                    className={`tr-label flex min-h-[38px] w-full items-center justify-center gap-1.5 rounded-xl px-3 font-bold transition active:scale-[0.99] ${
+                    className={`tr-label flex min-h-[44px] w-full items-center justify-center gap-1.5 rounded-xl px-3 font-bold transition active:scale-[0.99] ${
                       added
                         ? 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-3)]'
                         : 'bg-[var(--tr-accent-soft)] text-[var(--tr-accent-deep)]'
                     }`}
                     data-testid="plan-tour-add-stop"
                   >
-                    {added ? <Check size={14} aria-hidden /> : <Plus size={14} aria-hidden />}
+                    {added ? <IconDone size={TR_ICON.meta} aria-hidden /> : <IconPlus size={TR_ICON.meta} aria-hidden />}
                     {added ? labels.added : labels.add}
                   </button>
                 </div>

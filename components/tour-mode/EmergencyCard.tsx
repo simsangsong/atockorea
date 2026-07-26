@@ -9,7 +9,7 @@
 
 import { type ReactNode } from 'react';
 import { EMERGENCY_CONTACTS, EMERGENCY_TITLE } from '@/lib/tour-room/emergency';
-import { IconEmergency, IconPhone } from '@/components/tour-mode/icons';
+import { IconEmergency, IconPhone, TR_ICON } from '@/components/tour-mode/icons';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
 export default function EmergencyCard({
@@ -27,7 +27,7 @@ export default function EmergencyCard({
     <div data-testid="emergency-card">
       {showTitle && (
         <h3 className="tr-title flex items-center gap-2 text-[var(--tr-danger)]">
-          <IconEmergency size={18} aria-hidden />
+          <IconEmergency size={TR_ICON.action} aria-hidden />
           {EMERGENCY_TITLE[locale]}
         </h3>
       )}
@@ -43,7 +43,7 @@ export default function EmergencyCard({
                 className="flex min-h-[44px] items-center gap-3 rounded-xl px-1 py-2 active:bg-[var(--tr-bubble-system)]"
               >
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[var(--tr-danger-soft)] text-[var(--tr-danger)]">
-                  <IconPhone size={16} aria-hidden />
+                  <IconPhone size={TR_ICON.chip} aria-hidden />
                 </span>
                 <span className="min-w-0">
                   <span className="tr-card-text block font-medium text-[var(--tr-ink)]">{contact.label[locale]}</span>
@@ -58,7 +58,7 @@ export default function EmergencyCard({
                 className="flex min-h-[44px] items-center gap-3 rounded-xl px-1 py-2 active:bg-[var(--tr-bubble-system)]"
               >
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[var(--tr-bubble-system)] text-[var(--tr-ink-2)]">
-                  <IconEmergency size={16} aria-hidden />
+                  <IconEmergency size={TR_ICON.chip} aria-hidden />
                 </span>
                 <span className="min-w-0">
                   <span className="tr-card-text block font-medium text-[var(--tr-ink)]">{contact.label[locale]}</span>
@@ -68,7 +68,7 @@ export default function EmergencyCard({
             ) : (
               <div className="flex min-h-[44px] items-center gap-3 px-1 py-2">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[var(--tr-bubble-system)] text-[var(--tr-ink-3)]">
-                  <IconPhone size={16} aria-hidden />
+                  <IconPhone size={TR_ICON.chip} aria-hidden />
                 </span>
                 <span className="min-w-0">
                   <span className="tr-card-text block font-medium text-[var(--tr-ink)]">{contact.label[locale]}</span>

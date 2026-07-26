@@ -7,7 +7,7 @@
  * sender_role, so feed avatars for other travellers are the neutral glyph).
  */
 
-import { IconDriver, IconGuide, IconOpsBadge, IconTraveller } from '@/components/tour-mode/icons';
+import { IconDriver, IconGuide, IconOpsBadge, IconTraveller, TR_STROKE } from '@/components/tour-mode/icons';
 import { avatarColorFor, avatarInitial } from '@/lib/tour-room/avatarColor';
 
 export default function Avatar({
@@ -34,7 +34,7 @@ export default function Avatar({
         data-testid="avatar-guide"
         aria-hidden
       >
-        <IconGuide size={iconSize} strokeWidth={2.25} />
+        <IconGuide size={iconSize} strokeWidth={TR_STROKE.small} />
       </span>
     );
   }
@@ -51,7 +51,7 @@ export default function Avatar({
         data-testid="avatar-driver"
         aria-hidden
       >
-        <IconDriver size={iconSize} strokeWidth={2.25} />
+        <IconDriver size={iconSize} strokeWidth={TR_STROKE.small} />
       </span>
     );
   }
@@ -64,7 +64,7 @@ export default function Avatar({
         data-testid="avatar-admin"
         aria-hidden
       >
-        <IconOpsBadge size={iconSize} strokeWidth={2.25} />
+        <IconOpsBadge size={iconSize} strokeWidth={TR_STROKE.small} />
       </span>
     );
   }
@@ -78,7 +78,7 @@ export default function Avatar({
         data-testid="avatar-anon"
         aria-hidden
       >
-        <IconTraveller size={iconSize} strokeWidth={2.25} />
+        <IconTraveller size={iconSize} strokeWidth={TR_STROKE.small} />
       </span>
     );
   }

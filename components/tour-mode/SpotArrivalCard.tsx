@@ -24,6 +24,8 @@ import {
   IconRestroom,
   IconTip,
   IconWalking,
+  TR_ICON,
+  TR_STROKE,
 } from '@/components/tour-mode/icons';
 import type { SpotArrivalContent } from '@/lib/tour-room/spotContent';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
@@ -103,7 +105,7 @@ export default function SpotArrivalCard({
           />
           <div className="absolute inset-x-0 bottom-0 px-4 pb-3">
             <p className="tr-meta flex items-center gap-1 font-semibold uppercase tracking-wide text-white/90">
-              <IconArrived size={12} strokeWidth={2.5} aria-hidden />
+              <IconArrived size={TR_ICON.meta} strokeWidth={TR_STROKE.small} aria-hidden />
               {copy.arrived}
             </p>
             <p className="tr-title mt-0.5 text-white">{content.name}</p>
@@ -114,7 +116,7 @@ export default function SpotArrivalCard({
         {!content.image && (
           <>
             <p className="tr-meta flex items-center gap-1 font-semibold uppercase tracking-wide text-[var(--tr-accent-deep)]">
-              <IconArrived size={12} strokeWidth={2.5} aria-hidden />
+              <IconArrived size={TR_ICON.meta} strokeWidth={TR_STROKE.small} aria-hidden />
               {copy.arrived}
             </p>
             <p className="tr-title mt-0.5 text-[var(--tr-ink)]">{content.name}</p>
@@ -138,7 +140,7 @@ export default function SpotArrivalCard({
                 key={index}
                 className="tr-meta flex items-center gap-1 rounded-full bg-[var(--tr-accent-soft)] px-2.5 py-1 font-medium text-[var(--tr-accent-deep)]"
               >
-                <IconHighlight size={11} aria-hidden />
+                <IconHighlight size={TR_ICON.meta} aria-hidden />
                 {highlight}
               </span>
             ))}
@@ -149,7 +151,7 @@ export default function SpotArrivalCard({
           <ul className="mt-2.5 space-y-1.5">
             {visibleRows.map((row, index) => (
               <li key={index} className="tr-label flex gap-2 leading-relaxed text-[var(--tr-ink-2)]">
-                <row.Icon size={15} strokeWidth={2} className="mt-0.5 shrink-0 text-[var(--tr-ink-3)]" aria-hidden />
+                <row.Icon size={TR_ICON.chip} strokeWidth={TR_STROKE.default} className="mt-0.5 shrink-0 text-[var(--tr-ink-3)]" aria-hidden />
                 <span>{row.text}</span>
               </li>
             ))}
@@ -161,10 +163,10 @@ export default function SpotArrivalCard({
             <button
               type="button"
               onClick={toggleAudio}
-              className="tr-label flex min-h-[40px] items-center gap-1.5 rounded-full bg-[var(--tr-accent)] px-4 font-semibold text-[var(--tr-bubble-me-ink)]"
+              className="tr-label flex min-h-[44px] items-center gap-1.5 rounded-full bg-[var(--tr-accent)] px-4 font-semibold text-[var(--tr-bubble-me-ink)]"
               data-testid="spot-audio-button"
             >
-              {playing ? <IconPause size={14} aria-hidden /> : <IconPlay size={14} aria-hidden />}
+              {playing ? <IconPause size={TR_ICON.meta} aria-hidden /> : <IconPlay size={TR_ICON.meta} aria-hidden />}
               {copy.audio}
             </button>
           )}
@@ -172,7 +174,7 @@ export default function SpotArrivalCard({
             <button
               type="button"
               onClick={() => setExpanded((v) => !v)}
-              className="tr-label min-h-[40px] rounded-full px-3 font-medium text-[var(--tr-ink-2)]"
+              className="tr-label min-h-[44px] rounded-full px-3 font-medium text-[var(--tr-ink-2)]"
               data-testid="spot-expand-toggle"
             >
               {expanded ? copy.less : copy.more}

@@ -11,7 +11,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { activeNotice, formatRemaining, formatTargetTime, noticeBannerMode, rallyStage } from '@/lib/tour-room/notices';
-import { IconFreeTime, IconMeeting } from '@/components/tour-mode/icons';
+import { IconFreeTime, IconMeeting, TR_ICON } from '@/components/tour-mode/icons';
 import { speakWithDevice } from '@/lib/tour-room/tts';
 import { useTourRoomSettings } from '@/hooks/useTourRoomSettings';
 import type { RoomMessage } from '@/hooks/useTourRoomChannel';
@@ -214,7 +214,7 @@ export default function NoticeBanner({
         }`}
         aria-hidden
       >
-        {notice.kind === 'free_time_timer' ? <IconFreeTime size={17} /> : <IconMeeting size={17} />}
+        {notice.kind === 'free_time_timer' ? <IconFreeTime size={TR_ICON.chip} /> : <IconMeeting size={TR_ICON.chip} />}
       </span>
       <div className="min-w-0 flex-1">
         <p className={`tr-card-text font-semibold ${urgent ? 'text-[var(--tr-danger)]' : 'text-[var(--tr-ink)]'}`}>
@@ -261,7 +261,7 @@ export default function NoticeBanner({
       {mode === 'countdown' && notice.remainingMs !== null && (
         <span
           data-testid="notice-countdown"
-          className={`tr-anim-panel-in shrink-0 rounded-full px-3 py-1.5 text-[16px] font-bold tabular-nums text-white ${
+          className={`tr-title tr-num tr-anim-panel-in shrink-0 rounded-full px-3 py-1.5 font-bold text-white ${
             urgent ? 'animate-pulse bg-[var(--tr-danger)]' : 'bg-[var(--tr-accent)]'
           }`}
         >

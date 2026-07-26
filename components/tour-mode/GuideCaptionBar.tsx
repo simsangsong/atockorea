@@ -16,7 +16,7 @@ import {
   type CaptionCapture,
 } from '@/lib/tour-room/captionCapture';
 import { extensionForMime } from '@/lib/tour-room/recorder';
-import { IconMic } from '@/components/tour-mode/icons';
+import { IconMic, TR_ICON } from '@/components/tour-mode/icons';
 import { TTS_LANG } from '@/lib/tour-room/tts';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
@@ -123,7 +123,7 @@ export default function GuideCaptionBar({
           className="tr-card-text flex min-h-[44px] w-full items-center justify-center gap-2 rounded-[var(--tr-radius-card)] bg-[#12151a] font-semibold text-white"
           data-testid="caption-start"
         >
-          <IconMic size={16} aria-hidden />
+          <IconMic size={TR_ICON.chip} aria-hidden />
           {copy.start}
         </button>
       ) : (

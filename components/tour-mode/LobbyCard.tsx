@@ -11,7 +11,7 @@
  */
 
 import { kstDaysUntil } from '@/lib/tour-room/time';
-import { IconDate, IconPickup } from '@/components/tour-mode/icons';
+import { IconDate, IconPickup, TR_ICON } from '@/components/tour-mode/icons';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
 export interface PickupPoint {
@@ -142,7 +142,7 @@ export default function LobbyCard({
 
       {tourDate && (
         <p className="tr-card-text mt-2 flex items-center gap-1.5 text-[var(--tr-ink-2)]">
-          <IconDate size={14} className="shrink-0 text-[var(--tr-ink-3)]" aria-hidden />
+          <IconDate size={TR_ICON.meta} className="shrink-0 text-[var(--tr-ink-3)]" aria-hidden />
           {copy.meetOn} <span className="font-semibold text-[var(--tr-ink)]">{tourDate}</span>
           {time && <span className="font-semibold text-[var(--tr-ink)]">· {time}</span>}
         </p>
@@ -151,7 +151,7 @@ export default function LobbyCard({
       {pickup && (pickup.name || pickup.address) && (
         <div className="mt-2.5 rounded-xl bg-[var(--tr-surface-2)] px-3 py-2.5">
           <p className="tr-meta flex items-center gap-1 font-semibold uppercase tracking-wide text-[var(--tr-ink-3)]">
-            <IconPickup size={12} aria-hidden />
+            <IconPickup size={TR_ICON.meta} aria-hidden />
             {copy.pickupTitle}
           </p>
           {pickup.name && (

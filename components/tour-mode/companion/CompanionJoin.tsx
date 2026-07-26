@@ -13,6 +13,7 @@
  */
 
 import { useCallback, useEffect, useState } from 'react';
+import { IconTicket, TR_ICON } from '@/components/tour-mode/icons';
 import { getOrCreateDeviceKey, storePersonalToken } from '@/lib/ops/seating/personalTokens';
 import { companionCopy, detectCompanionLocale, type CompanionCopyKey } from '@/lib/tour-room/companionCopy';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
@@ -88,10 +89,10 @@ export default function CompanionJoin({
 
   const card =
     'mx-auto mt-10 w-full max-w-md rounded-2xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] p-5 shadow-sm';
-  const title = 'text-lg font-bold text-[var(--tr-ink)]';
-  const sub = 'mt-1 text-sm text-[var(--tr-ink-2)]';
+  const title = 'tr-title font-bold text-[var(--tr-ink)]';
+  const sub = 'mt-1 tr-card-text text-[var(--tr-ink-2)]';
   const primaryBtn =
-    'mt-4 min-h-[48px] w-full rounded-xl bg-[var(--tr-accent)] px-4 py-3 text-sm font-bold text-[var(--tr-bubble-me-ink)] active:scale-[0.99] disabled:opacity-40';
+    'mt-4 min-h-[48px] w-full rounded-xl bg-[var(--tr-accent)] px-4 py-3 tr-body font-bold text-[var(--tr-bubble-me-ink)] active:scale-[0.99] disabled:opacity-40';
 
   return (
     <div className={dark ? 'dark' : ''}>
@@ -117,7 +118,10 @@ export default function CompanionJoin({
         )}
         {phase === 'done' && (
           <div className={card} data-testid="companion-done">
-            <p className="text-3xl">🎟️</p>
+            {/* W0.2 success-hero grammar — ticket roundel instead of emoji chrome. */}
+            <div className="mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-[var(--tr-accent-soft)]">
+              <IconTicket size={TR_ICON.tile} className="text-[var(--tr-accent)]" aria-hidden />
+            </div>
             <p className={title}>{t('joinedTitle')}</p>
             <p className={sub}>{t('joinedHint')}</p>
             {roomUrl && (
@@ -131,7 +135,7 @@ export default function CompanionJoin({
           <div className={card} data-testid="companion-form">
             <p className={title}>{t('joinTitle')}</p>
             <p className={sub}>{t('joinHint')}</p>
-            <label className="mt-4 block text-xs font-semibold text-[var(--tr-ink-2)]">
+            <label className="tr-label mt-4 block font-semibold text-[var(--tr-ink-2)]">
               {t('nameLabel')}
               <input
                 value={name}

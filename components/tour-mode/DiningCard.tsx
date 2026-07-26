@@ -19,7 +19,16 @@
  */
 
 import { useMemo, useState } from 'react';
-import { MapPin, Navigation, Star, Utensils, AlertTriangle, Check, Flag } from 'lucide-react';
+import { IconMeal, IconReport } from '@/components/tour-mode/icons';
+import {
+  IconArrived,
+  IconDone,
+  IconFollow,
+  IconReview,
+  IconWarn,
+  TR_ICON,
+  TR_STROKE,
+} from '@/components/tour-mode/icons';
 import {
   DINING_COPY,
   diningTitle,
@@ -134,9 +143,9 @@ export default function DiningCard({
             className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--tr-accent-soft)] text-[var(--tr-accent-deep)]"
             aria-hidden
           >
-            <Utensils size={15} strokeWidth={2} />
+            <IconMeal size={TR_ICON.chip} strokeWidth={TR_STROKE.default} />
           </span>
-          <p className="min-w-0 flex-1 text-sm font-semibold text-[var(--tr-ink)]" data-testid="dining-title">
+          <p className="tr-title min-w-0 flex-1 text-[var(--tr-ink)]" data-testid="dining-title">
             {diningTitle(meta, locale)}
           </p>
         </div>
@@ -197,7 +206,7 @@ export default function DiningCard({
               const picked = chosen === place.place_key;
               return (
                 <li key={place.place_key} className="px-3.5 py-2.5" data-testid="dining-place">
-                  <p className="text-sm font-semibold leading-snug text-[var(--tr-ink)]">
+                  <p className="tr-card-text font-semibold leading-snug text-[var(--tr-ink)]">
                     {placeDisplayName(place, locale)}
                   </p>
 
@@ -211,8 +220,8 @@ export default function DiningCard({
                     ) : null}
                     {price ? <span className="font-semibold">{price}</span> : null}
                     {typeof place.rating === 'number' ? (
-                      <span className="inline-flex items-center gap-0.5">
-                        <Star size={11} className="fill-current text-amber-500" aria-hidden />
+                      <span className="tr-num inline-flex items-center gap-0.5">
+                        <IconReview size={TR_ICON.meta} className="fill-current text-amber-500" aria-hidden />
                         {place.rating.toFixed(1)}
                         {typeof place.review_count === 'number' && place.review_count > 0 ? (
                           <span className="text-[var(--tr-ink-3)]">·{compactCount(place.review_count)}</span>
@@ -256,10 +265,10 @@ export default function DiningCard({
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={() => send(place.place_key, 'tap')}
-                        className="tr-pill inline-flex min-h-[44px] items-center gap-1 px-3 text-sm font-semibold text-[var(--tr-ink)]"
+                        className="tr-pill tr-label inline-flex min-h-[44px] items-center gap-1 px-3 font-semibold text-[var(--tr-ink)]"
                         data-testid="dining-map-link"
                       >
-                        <MapPin size={14} strokeWidth={2} aria-hidden />
+                        <IconArrived size={TR_ICON.meta} strokeWidth={TR_STROKE.small} aria-hidden />
                         {copy.mapLink}
                       </a>
                     ) : null}
@@ -269,10 +278,10 @@ export default function DiningCard({
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={() => send(place.place_key, 'tap')}
-                        className="tr-pill inline-flex min-h-[44px] items-center gap-1 px-3 text-sm font-semibold text-[var(--tr-ink)]"
+                        className="tr-pill tr-label inline-flex min-h-[44px] items-center gap-1 px-3 font-semibold text-[var(--tr-ink)]"
                         data-testid="dining-directions-link"
                       >
-                        <Navigation size={14} strokeWidth={2} aria-hidden />
+                        <IconFollow size={TR_ICON.meta} strokeWidth={TR_STROKE.small} aria-hidden />
                         {copy.directions}
                       </a>
                     ) : null}
@@ -283,14 +292,14 @@ export default function DiningCard({
                         send(place.place_key, 'visited');
                       }}
                       aria-pressed={picked}
-                      className={`tr-press inline-flex min-h-[44px] items-center gap-1 rounded-full px-3 text-sm font-semibold ${
+                      className={`tr-label tr-press inline-flex min-h-[44px] items-center gap-1 rounded-full px-3 font-semibold ${
                         picked
                           ? 'bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]'
                           : 'bg-[var(--tr-accent-soft)] text-[var(--tr-accent-deep)]'
                       }`}
                       data-testid="dining-go-here"
                     >
-                      <Check size={14} strokeWidth={2.25} aria-hidden />
+                      <IconDone size={TR_ICON.meta} strokeWidth={TR_STROKE.small} aria-hidden />
                       {copy.goHere}
                     </button>
                     <button
@@ -304,7 +313,7 @@ export default function DiningCard({
                       className="tr-label tr-press inline-flex min-h-[44px] items-center gap-1 px-2 text-[var(--tr-ink-3)]"
                       data-testid="dining-report-wrong"
                     >
-                      <Flag size={13} strokeWidth={2} aria-hidden />
+                      <IconReport size={TR_ICON.meta} strokeWidth={TR_STROKE.small} aria-hidden />
                       {copy.reportWrong}
                     </button>
                   </div>
@@ -320,7 +329,7 @@ export default function DiningCard({
             className="tr-meta flex items-start gap-1.5 border-t border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] px-3.5 py-2 leading-relaxed text-[var(--tr-ink-2)]"
             data-testid="dining-caution"
           >
-            <AlertTriangle size={13} strokeWidth={2} aria-hidden className="mt-0.5 shrink-0" />
+            <IconWarn size={TR_ICON.meta} strokeWidth={TR_STROKE.small} aria-hidden className="mt-0.5 shrink-0" />
             <span>{copy.caution}</span>
           </p>
         ) : null}

@@ -17,6 +17,7 @@
  */
 
 import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
+import { IconSuccess, TR_ICON } from '@/components/tour-mode/icons';
 import { checkinCopy, detectCheckinLocale } from '@/lib/ops/seating/checkinCopy';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
@@ -264,11 +265,18 @@ export default function CheckinLanding({
   );
   const card =
     'mx-auto mt-16 w-full max-w-sm rounded-2xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] p-6 text-center shadow-sm';
-  const title = 'text-lg font-semibold text-[var(--tr-ink)]';
-  const sub = 'mt-2 text-sm text-[var(--tr-ink-2)]';
+  const title = 'tr-title font-semibold text-[var(--tr-ink)]';
+  const sub = 'mt-2 tr-card-text text-[var(--tr-ink-2)]';
   const primaryBtn =
-    'mt-5 block w-full rounded-xl bg-[var(--tr-accent)] px-4 py-3 text-sm font-semibold text-[var(--tr-bubble-me-ink)] active:opacity-80';
-  const ghostBtn = 'mt-3 w-full rounded-xl px-4 py-2 text-xs text-[var(--tr-ink-3)] underline';
+    'mt-5 block w-full rounded-xl bg-[var(--tr-accent)] px-4 py-3 tr-body font-semibold text-[var(--tr-bubble-me-ink)] active:opacity-80';
+  const ghostBtn = 'mt-3 w-full rounded-xl px-4 py-2 tr-label text-[var(--tr-ink-3)] underline';
+  // W0.2 success-hero grammar — the ✅ emoji chrome becomes a soft accent
+  // roundel with the semantic success glyph (icons.ts U-D3: no emoji in chrome).
+  const successHero = (
+    <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-[var(--tr-accent-soft)]">
+      <IconSuccess size={TR_ICON.tile} className="text-[var(--tr-accent)]" aria-hidden />
+    </div>
+  );
 
   if (state.phase === 'loading' || state.phase === 'submitting') {
     return shell(
@@ -296,7 +304,7 @@ export default function CheckinLanding({
         <div className={card} data-testid="checkin-welcome">
           <p className={title}>{t('welcome', { name: state.displayName || '' })}</p>
           {state.seatNumbers.length > 0 && (
-            <p className="mt-2 text-2xl font-bold text-neutral-900 dark:text-neutral-100" data-testid="welcome-seat">
+            <p className="tr-display tr-num mt-2 font-bold text-neutral-900 dark:text-neutral-100" data-testid="welcome-seat">
               {t('welcomeSeat', { seat: seatText })}
             </p>
           )}
@@ -326,7 +334,7 @@ export default function CheckinLanding({
 
     return shell(
       <div className={card} data-testid="checkin-done">
-        <p className="text-3xl">✅</p>
+        {successHero}
         <p className={title}>{t('success')}</p>
         <p className={sub}>
           {t('yourSeats')}: {state.seatNumbers.join(', ')}
@@ -338,7 +346,7 @@ export default function CheckinLanding({
   if (state.phase === 'already') {
     return shell(
       <div className={card} data-testid="checkin-already">
-        <p className="text-3xl">✅</p>
+        {successHero}
         <p className={title}>{t('already')}</p>
         {state.seats && state.seats.length > 0 && (
           <p className={sub}>
@@ -361,7 +369,7 @@ export default function CheckinLanding({
         {selecting && (
           <div className="mt-4 space-y-2 text-left" data-testid="checkin-seat-picker">
             {pending.map((s) => (
-              <label key={s.seatNumber} className="flex items-center gap-2 text-sm text-[var(--tr-ink)]">
+              <label key={s.seatNumber} className="tr-card-text flex items-center gap-2 text-[var(--tr-ink)]">
                 <input
                   type="checkbox"
                   checked={selected.has(s.seatNumber)}

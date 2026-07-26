@@ -13,7 +13,7 @@
  */
 
 import { useEffect, useRef, useState } from 'react';
-import { IconConcierge, IconConciergeSend } from '@/components/tour-mode/icons';
+import { IconConcierge, IconConciergeSend, TR_ICON, TR_STROKE } from '@/components/tour-mode/icons';
 
 interface Turn {
   id: number;
@@ -89,7 +89,7 @@ export default function OperatorAssist({
               key={s}
               type="button"
               onClick={() => void ask(s)}
-              className="tr-label flex min-h-[40px] items-center rounded-full bg-[var(--tr-accent-soft)] px-4 font-medium text-[var(--tr-accent-deep)] active:scale-95"
+              className="tr-label flex min-h-[44px] items-center rounded-full bg-[var(--tr-accent-soft)] px-4 font-medium text-[var(--tr-accent-deep)] active:scale-95"
             >
               {s}
             </button>
@@ -116,7 +116,7 @@ export default function OperatorAssist({
                   className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[var(--tr-accent-soft)] text-[var(--tr-accent-deep)]"
                   aria-hidden
                 >
-                  <IconConcierge size={13} strokeWidth={2.25} />
+                  <IconConcierge size={TR_ICON.meta} strokeWidth={TR_STROKE.small} />
                 </span>
                 <div className="tr-card-text whitespace-pre-line rounded-[var(--tr-radius-bubble)] bg-[var(--tr-surface)] px-3.5 py-2 leading-relaxed text-[var(--tr-ink)]">
                   {t.text}
@@ -155,7 +155,7 @@ export default function OperatorAssist({
           className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)] active:scale-95 disabled:opacity-40"
           data-testid="operator-assist-send"
         >
-          <IconConciergeSend size={19} strokeWidth={2.25} />
+          <IconConciergeSend size={TR_ICON.action} strokeWidth={TR_STROKE.default} />
         </button>
       </div>
     </div>

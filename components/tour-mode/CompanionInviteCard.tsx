@@ -15,7 +15,8 @@
  */
 
 import { useCallback, useEffect, useState } from 'react';
-import { Link2, Share2 } from 'lucide-react';
+import { IconLink, IconShare } from '@/components/tour-mode/icons';
+import { TR_ICON } from '@/components/tour-mode/icons';
 import { companionCopy, type CompanionCopyKey } from '@/lib/tour-room/companionCopy';
 import type { CompanionSlots } from '@/lib/tour-room/companion';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
@@ -120,12 +121,12 @@ export default function CompanionInviteCard({
   return (
     <section className="tr-card p-4" data-testid="companion-invite-card">
       <h3 className="tr-card-text flex items-center gap-1.5 font-semibold text-[var(--tr-ink)]">
-        <Link2 size={15} className="text-[var(--tr-ink-3)]" aria-hidden />
+        <IconLink size={TR_ICON.chip} className="text-[var(--tr-ink-3)]" aria-hidden />
         {t('inviteTitle')}
       </h3>
       <p className="tr-meta mt-0.5 leading-snug text-[var(--tr-ink-3)]">{t('inviteHint')}</p>
       {slots && (
-        <p className="tr-meta mt-1 text-[var(--tr-ink-2)] tabular-nums" data-testid="companion-slots">
+        <p className="tr-meta tr-num mt-1 text-[var(--tr-ink-2)]" data-testid="companion-slots">
           {full
             ? t('inviteFull')
             : t('inviteSlots', { remaining: slots.remaining, capacity: slots.capacity })}
@@ -165,7 +166,7 @@ export default function CompanionInviteCard({
               className="tr-card-text tr-press flex min-h-[44px] flex-1 items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-accent)] px-3 font-bold text-[var(--tr-bubble-me-ink)]"
               data-testid="companion-share-link"
             >
-              <Share2 size={14} aria-hidden />
+              <IconShare size={TR_ICON.meta} aria-hidden />
               {t('share')}
             </button>
           </div>

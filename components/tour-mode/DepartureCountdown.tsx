@@ -236,7 +236,7 @@ export default function DepartureCountdown({
         <p className="tr-meta font-semibold uppercase tracking-wide text-[var(--tr-ink-3)]">
           {copy.endsAt} {formatTargetTime(targetMs, locale)}
         </p>
-        <p className="tr-body mt-0.5 font-bold text-[var(--tr-ink)]">
+        <p className="tr-body tr-num mt-0.5 font-bold text-[var(--tr-ink)]">
           {ended ? copy.ended : `${copy.remaining} ${copy.hm(h, m)}`}
         </p>
       </div>
@@ -264,11 +264,11 @@ export default function DepartureCountdown({
                   type="button"
                   disabled={submitting !== null}
                   onClick={() => void addTime(hours)}
-                  className="tr-btn-flat flex min-h-[52px] items-center justify-between gap-3 px-4 text-base font-bold disabled:opacity-50"
+                  className="tr-btn-flat tr-title flex min-h-[52px] items-center justify-between gap-3 px-4 font-bold disabled:opacity-50"
                   data-testid={`add-time-option-${hours}`}
                 >
                   <span>{addCopy.option(hours)}</span>
-                  <span className="text-[var(--tr-accent-deep)]">
+                  <span className="tr-num text-[var(--tr-accent-deep)]">
                     {submitting === hours ? '…' : formatKrw(overtimeAmount(hours, previewRate))}
                   </span>
                 </button>

@@ -14,7 +14,7 @@
  * 60 s short is exactly what the ride into the stop is for.
  */
 
-import { Navigation } from 'lucide-react';
+import { IconFollow, TR_ICON, TR_STROKE } from '@/components/tour-mode/icons';
 import ArrivalVideoCard from '@/components/tour-mode/ArrivalVideoCard';
 import { APPROACH_COPY, type ApproachCardMeta } from '@/lib/tour-room/approach';
 import { formatDistance } from '@/lib/tour-room/eta';
@@ -54,7 +54,7 @@ export default function ApproachCard({
           />
         ) : (
           <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-[10px] bg-[var(--tr-accent-soft)]">
-            <Navigation size={18} strokeWidth={2} aria-hidden className="text-[var(--tr-ink-2)]" />
+            <IconFollow size={TR_ICON.action} strokeWidth={TR_STROKE.default} aria-hidden className="text-[var(--tr-ink-2)]" />
           </span>
         )}
 
@@ -64,11 +64,11 @@ export default function ApproachCard({
             <span aria-hidden>·</span>
             <span data-testid="approach-distance">{formatDistance(meta.distance_m)}</span>
           </p>
-          <p className="truncate text-sm font-semibold text-[var(--tr-ink)]">{meta.spot_title}</p>
+          <p className="tr-card-text truncate font-semibold text-[var(--tr-ink)]">{meta.spot_title}</p>
           {teaser ? (
-            <p className="line-clamp-2 text-xs leading-relaxed text-[var(--tr-ink-2)]">{teaser}</p>
+            <p className="tr-meta line-clamp-2 leading-relaxed text-[var(--tr-ink-2)]">{teaser}</p>
           ) : (
-            <p className="text-xs leading-relaxed text-[var(--tr-ink-3)]">{copy.preview}</p>
+            <p className="tr-meta leading-relaxed text-[var(--tr-ink-3)]">{copy.preview}</p>
           )}
         </div>
 
@@ -77,7 +77,7 @@ export default function ApproachCard({
             href={mapsUrl(coords.lat, coords.lng)}
             target="_blank"
             rel="noreferrer"
-            className="tr-pill flex min-h-[44px] shrink-0 items-center px-3 text-sm font-semibold text-[var(--tr-ink)]"
+            className="tr-pill tr-label flex min-h-[44px] shrink-0 items-center px-3 font-semibold text-[var(--tr-ink)]"
           >
             {copy.map}
           </a>

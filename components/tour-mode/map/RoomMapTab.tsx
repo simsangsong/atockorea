@@ -12,7 +12,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import dynamicImport from 'next/dynamic';
 import FindGuideCard from '@/components/tour-mode/map/FindGuideCard';
-import { IconFollow } from '@/components/tour-mode/icons';
+import { IconFollow, TR_ICON } from '@/components/tour-mode/icons';
 import LocationShareCard from '@/components/tour-mode/map/LocationShareCard';
 import PresenceBar from '@/components/tour-mode/PresenceBar';
 import { useApproachWatch } from '@/hooks/useApproachWatch';
@@ -189,13 +189,13 @@ export default function RoomMapTab({
             type="button"
             onClick={() => setFollowGuide((v) => !v)}
             aria-pressed={followGuide}
-            className={`tr-label absolute right-2 top-2 flex min-h-[40px] items-center gap-1.5 rounded-full px-3.5 font-semibold ${
+            className={`tr-label text-cjk-safe absolute right-2 top-2 flex min-h-[44px] items-center gap-1.5 rounded-full px-3.5 font-semibold ${
               followGuide ? 'bg-[#12151a] text-white' : 'bg-[var(--tr-surface)] text-[var(--tr-ink)]'
             }`}
             style={{ boxShadow: 'var(--tr-shadow-overlay)' }}
             data-testid="follow-guide-toggle"
           >
-            <IconFollow size={14} aria-hidden />
+            <IconFollow size={TR_ICON.meta} aria-hidden />
             {followLabel}
           </button>
         )}

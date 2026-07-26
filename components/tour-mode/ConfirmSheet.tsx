@@ -95,7 +95,7 @@ export function useConfirmSheet(labels?: { confirm?: string; cancel?: string }) 
               onChange={(event) => setText(event.target.value)}
               placeholder={options.inputPlaceholder}
               autoFocus
-              className="min-h-[48px] w-full rounded-[var(--tr-radius-input)] border border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] px-4 text-base text-[var(--tr-ink)] focus:border-[var(--tr-accent)] focus:outline-none"
+              className="tr-body min-h-[48px] w-full rounded-[var(--tr-radius-input)] border border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] px-4 text-[var(--tr-ink)] focus:border-[var(--tr-accent)] focus:outline-none"
               data-testid="confirm-sheet-input"
             />
           ) : null}
@@ -103,7 +103,7 @@ export function useConfirmSheet(labels?: { confirm?: string; cancel?: string }) 
             <button
               type="button"
               onClick={() => settle(options.input ? null : false)}
-              className="tr-btn-flat min-h-[52px] flex-1 text-base font-bold"
+              className="tr-btn-flat tr-title min-h-[52px] flex-1 font-bold"
               data-testid="confirm-sheet-cancel"
             >
               {cancelLabel}
@@ -120,7 +120,7 @@ export function useConfirmSheet(labels?: { confirm?: string; cancel?: string }) 
                 }
               }}
               disabled={options.input && !options.allowEmpty ? text.trim().length === 0 : false}
-              className={`min-h-[52px] flex-1 text-base font-bold ${
+              className={`tr-title min-h-[52px] flex-1 font-bold ${
                 options.danger ? 'tr-btn-physical tr-btn-physical--danger' : 'tr-btn-physical'
               }`}
               data-testid="confirm-sheet-ok"

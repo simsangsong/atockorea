@@ -20,7 +20,7 @@
  */
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { IconChevronRight, IconEta, IconPickup } from '@/components/tour-mode/icons';
+import { IconChevronRight, IconEta, IconPickup, TR_ICON, TR_STROKE } from '@/components/tour-mode/icons';
 import { staticMapUrl } from '@/lib/tour-room/locationMessage';
 import {
   isPickupWindow,
@@ -154,14 +154,14 @@ export default function VehicleLocationCard({
           />
         ) : (
           <div className="flex h-16 w-full items-center justify-center bg-[var(--tr-surface-2)] text-[var(--tr-ink-3)]">
-            <IconPickup size={26} strokeWidth={1.75} aria-hidden />
+            <IconPickup size={TR_ICON.tile} strokeWidth={TR_STROKE.default} aria-hidden />
           </div>
         )}
       </button>
 
       <div className="px-4 py-3">
         <p className="tr-label flex items-center gap-1.5 font-semibold text-[var(--tr-ink)]">
-          <IconPickup size={14} className="shrink-0 text-[var(--tr-ink-3)]" aria-hidden />
+          <IconPickup size={TR_ICON.meta} className="shrink-0 text-[var(--tr-ink-3)]" aria-hidden />
           <span className="min-w-0 flex-1 truncate">{copy.title}</span>
           {freshness.state === 'live' && (
             <span
@@ -177,7 +177,7 @@ export default function VehicleLocationCard({
             className="tr-card-text mt-1 flex items-center gap-1.5 font-semibold text-[var(--tr-ink)]"
             data-testid="vehicle-eta-line"
           >
-            <IconEta size={14} className="shrink-0 text-[var(--tr-ink-3)]" aria-hidden />
+            <IconEta size={TR_ICON.meta} className="shrink-0 text-[var(--tr-ink-3)]" aria-hidden />
             {renderVehicleEtaLine(locale, eta)}
           </p>
         )}
@@ -199,7 +199,7 @@ export default function VehicleLocationCard({
           className="tr-label mt-2 flex min-h-[44px] w-full items-center justify-center gap-1 rounded-full bg-[var(--tr-surface-2)] font-semibold text-[var(--tr-ink)] tr-press"
         >
           {copy.button}
-          <IconChevronRight size={16} aria-hidden />
+          <IconChevronRight size={TR_ICON.chip} aria-hidden />
         </button>
       </div>
     </div>

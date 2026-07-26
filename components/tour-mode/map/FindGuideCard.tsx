@@ -18,7 +18,7 @@
 
 import { bearingDeg, haversineM, type LatLng } from '@/lib/tour-room/geo';
 import { vehicleFreshness } from '@/lib/tour-room/vehicleEta';
-import { IconFollow, IconGuide, IconWalking } from '@/components/tour-mode/icons';
+import { IconBearing, IconGuide, IconWalking, TR_ICON, TR_STROKE } from '@/components/tour-mode/icons';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
 const COPY: Record<
@@ -99,6 +99,11 @@ export default function FindGuideCard({
   const mapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${guide.latitude},${guide.longitude}&travelmode=walking`;
 
   const bearing = bearingDeg(me, guide);
+  // W0.3 — the 8-sector compass renders as ONE rotated glyph (IconBearing /
+  // Navigation2 points due north at 0°): sector index × 45° (N=0, NE=45 …
+  // NW=315). The emoji table above remains the sector logic + test contract;
+  // `title` keeps the direction readable in dev tools.
+  const sectorDeg = (Math.round((((bearing % 360) + 360) % 360) / 45) % 8) * 45;
 
   return (
     <div
@@ -108,15 +113,18 @@ export default function FindGuideCard({
     >
       <span
         className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/10"
-        style={{ transform: `rotate(${Math.round(bearing)}deg)` }}
         aria-hidden
         title={arrow}
       >
-        <IconFollow size={18} strokeWidth={2.25} className="-rotate-45" />
+        <IconBearing
+          size={TR_ICON.nav}
+          strokeWidth={TR_STROKE.default}
+          style={{ transform: `rotate(${sectorDeg}deg)` }}
+        />
       </span>
       <div className="min-w-0 flex-1">
         <p className="tr-card-text flex items-center gap-1.5 font-semibold">
-          <IconGuide size={14} className="text-[var(--tr-accent)]" aria-hidden />
+          <IconGuide size={TR_ICON.meta} className="text-[var(--tr-accent)]" aria-hidden />
           {copy.title}
         </p>
         <p className="tr-label opacity-80">{copy.away(formatDistance(distance))}</p>
@@ -136,9 +144,9 @@ export default function FindGuideCard({
           href={mapsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="tr-label flex min-h-[40px] shrink-0 items-center gap-1.5 rounded-full bg-[var(--tr-safe)] px-3.5 font-semibold text-white"
+          className="tr-label text-cjk-safe flex min-h-[44px] shrink-0 items-center gap-1.5 rounded-full bg-[var(--tr-safe)] px-3.5 font-semibold text-white"
         >
-          <IconWalking size={14} aria-hidden />
+          <IconWalking size={TR_ICON.meta} aria-hidden />
           {copy.walk}
         </a>
       )}

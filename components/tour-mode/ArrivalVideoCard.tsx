@@ -13,7 +13,8 @@
  */
 
 import { useState } from 'react';
-import { Play, Clapperboard } from 'lucide-react';
+import { IconVideo } from '@/components/tour-mode/icons';
+import { IconPlay, TR_ICON, TR_STROKE } from '@/components/tour-mode/icons';
 import {
   formatVideoDuration,
   pickSubtitleUrl,
@@ -86,16 +87,16 @@ export default function ArrivalVideoCard({
             />
           ) : (
             <div className="flex aspect-[9/16] max-h-[420px] w-full items-center justify-center bg-[var(--tr-surface-2)] text-[var(--tr-ink-3)]">
-              <Clapperboard size={28} strokeWidth={1.75} aria-hidden />
+              <IconVideo size={TR_ICON.tile} strokeWidth={TR_STROKE.default} aria-hidden />
             </div>
           )}
           <span className="absolute inset-0 flex items-center justify-center">
             <span className="flex h-14 w-14 items-center justify-center rounded-full bg-black/55 text-white backdrop-blur-sm">
-              <Play size={26} strokeWidth={2} fill="currentColor" aria-hidden className="ml-1" />
+              <IconPlay size={TR_ICON.tile} strokeWidth={TR_STROKE.default} fill="currentColor" aria-hidden className="ml-1" />
             </span>
           </span>
           {duration ? (
-            <span className="absolute bottom-2 right-2 rounded bg-black/65 px-1.5 py-0.5 text-[11px] font-semibold text-white">
+            <span className="tr-meta tr-num absolute bottom-2 right-2 rounded bg-black/65 px-1.5 py-0.5 font-semibold text-white">
               {duration}
             </span>
           ) : null}
