@@ -88,6 +88,21 @@ export function inPostTourWindow(tourDate: string | null | undefined, nowMs = Da
 }
 
 /**
+ * C-D7 — chat-list timestamp (KakaoTalk grammar): today's messages show a
+ * KST wall clock (HH:MM), older ones show M/D. Empty/invalid input → ''.
+ */
+export function chatListClock(iso: string | null | undefined, nowMs = Date.now()): string {
+  if (!iso) return '';
+  const t = Date.parse(iso);
+  if (!Number.isFinite(t)) return '';
+  const then = new Date(t + KST_OFFSET_MS);
+  if (ymdOf(t) === ymdOf(nowMs)) {
+    return `${String(then.getUTCHours()).padStart(2, '0')}:${String(then.getUTCMinutes()).padStart(2, '0')}`;
+  }
+  return `${then.getUTCMonth() + 1}/${then.getUTCDate()}`;
+}
+
+/**
  * Schedule times are usually HH:MM(:SS) but ops sometimes write free text
  * ("≈ 08:00") — extract the clock instead of blind-slicing, which rendered
  * "≈ 08:" in the Today tab and broke every string time comparison.

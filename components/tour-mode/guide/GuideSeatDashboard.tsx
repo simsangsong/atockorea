@@ -32,6 +32,7 @@ import {
   TR_ICON,
 } from '../icons';
 import SeatMap from '@/components/ops/SeatMap';
+import { roomHue } from '@/lib/tour-room/hue';
 import GuideGuestCard, { channelLabel, statusMeta } from '@/components/tour-mode/guide/GuideGuestCard';
 import { hasNote, noteSummary, type GuestNote } from '@/lib/ops/seating/guestNotes';
 import { useTourManifest, type ManifestAssignment } from '@/hooks/useTourManifest';
@@ -325,46 +326,53 @@ export default function GuideSeatDashboard({
                     {rows.map((row) => {
                       const meta = statusMeta(row.status);
                       const ch = channelLabel(row.channel);
+                      const noteText = guestNotes.get(row.bookingId)?.note;
                       return (
                         <li key={row.bookingId}>
+                          {/* C-D8 — KakaoTalk 친구탭 행 문법: 아바타(대화 탭과
+                              같은 휴 색 = 같은 사람 같은 색) · 이름 · 서브라인 ·
+                              트레일링 상태 pill. 탭=게스트 카드(기존). */}
                           <button
                             type="button"
                             onMouseEnter={() => setHoverBookingId(row.bookingId)}
                             onMouseLeave={() => setHoverBookingId((cur) => (cur === row.bookingId ? null : cur))}
                             onClick={() => setCardBookingId(row.bookingId)}
-                            className="flex w-full items-center gap-2 px-3.5 py-2.5 text-left active:bg-[var(--tr-surface-2)]"
+                            className="flex min-h-[60px] w-full items-center gap-3 px-3.5 py-2 text-left active:bg-[var(--tr-surface-2)]"
                             data-testid="roster-row"
                           >
+                            <span
+                              className="tr-name flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl font-bold text-white"
+                              style={{ backgroundColor: `hsl(${roomHue(row.bookingId)} 55% 52%)` }}
+                              aria-hidden
+                            >
+                              {(row.name || 'G').trim()[0]?.toUpperCase()}
+                            </span>
                             <span className="min-w-0 flex-1">
-                              <span className="flex flex-wrap items-center gap-1.5">
-                                <span className="tr-name truncate font-semibold text-[var(--tr-ink)]">{row.name}</span>
-                                <span className="tr-meta text-[var(--tr-ink-3)]">{row.partySize}명</span>
-                                {ch && (
-                                  <span className="tr-meta text-cjk-safe rounded-full bg-[var(--tr-surface-2)] px-1.5 py-0.5 font-semibold text-[var(--tr-ink-3)]">
-                                    {ch}
-                                  </span>
-                                )}
+                              <span className="flex items-center gap-1.5">
+                                <span className="tr-card-text truncate font-bold text-[var(--tr-ink)]">{row.name}</span>
+                                <span className="tr-meta tr-num shrink-0 text-[var(--tr-ink-3)]">{row.partySize}명</span>
                                 {row.highlights.length > 0 && (
-                                  <span className="tr-meta text-cjk-safe inline-flex items-center gap-0.5 rounded-full bg-[var(--tr-danger-soft)] px-1.5 py-0.5 font-bold text-[var(--tr-danger)]" data-testid="row-highlight">
+                                  <span className="tr-meta text-cjk-safe inline-flex shrink-0 items-center gap-0.5 rounded-full bg-[var(--tr-danger-soft)] px-1.5 py-0.5 font-bold text-[var(--tr-danger)]" data-testid="row-highlight">
                                     <IconWarn size={TR_ICON.meta} className="shrink-0" aria-hidden />
                                     {row.highlights.length}
                                   </span>
                                 )}
-                                {/* B4 — 메모 아이콘 + 말줄임. 🔴 위 경고 배지(손님이 선언한
-                                    needs)와 다른 모양이어야 한다: 하나는 손님 말,
-                                    하나는 운영자 말이다(B4-D1). */}
-                                {hasNote(guestNotes.get(row.bookingId)?.note) && (
+                                {/* B4 — 메모 아이콘. 🔴 위 경고 배지(손님이 선언한
+                                    needs)와 다른 모양: 하나는 손님 말, 하나는
+                                    운영자 말이다(B4-D1). */}
+                                {hasNote(noteText) && (
                                   <span
-                                    className="tr-meta inline-flex max-w-[9rem] items-center gap-1 rounded-full bg-[var(--tr-surface-2)] px-1.5 py-0.5 font-medium text-[var(--tr-ink-2)]"
+                                    className="tr-meta inline-flex min-w-0 max-w-[7.5rem] items-center gap-1 rounded-full bg-[var(--tr-surface-2)] px-1.5 py-0.5 font-medium text-[var(--tr-ink-2)]"
                                     data-testid="row-note"
                                   >
                                     <IconNote size={TR_ICON.meta} className="shrink-0" aria-hidden />
-                                    <span className="truncate">{noteSummary(guestNotes.get(row.bookingId)?.note)}</span>
+                                    <span className="truncate">{noteSummary(noteText)}</span>
                                   </span>
                                 )}
                               </span>
-                              <span className="tr-meta mt-0.5 block text-[var(--tr-ink-3)] tabular-nums">
+                              <span className="tr-meta mt-0.5 block truncate text-[var(--tr-ink-3)] tabular-nums">
                                 {row.seatNumbers.length > 0 ? `좌석 ${row.seatNumbers.join(', ')}` : '좌석 미지정'}
+                                {ch ? ` · ${ch}` : ''}
                               </span>
                             </span>
                             <span className={`tr-meta text-cjk-safe shrink-0 rounded-full px-2 py-0.5 font-bold ${meta.cls}`}>

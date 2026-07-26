@@ -170,8 +170,10 @@ A1 소관 **65개** · A2 소관 10개(가이드·기사 면) · W-트랙 신규
 | 파일 | 티켓 | 판정 |
 |---|---|---|
 | `RoomDrawer.tsx` | W4 | ✅ 신규 — `roomDrawer.test.tsx` 5케이스(미디어 인증 헤더·숏컷·멤버·ESC) |
-| `staff/StaffShell.tsx` | W2 | ✅ 신규 — `staffShell.test.tsx` 6케이스(4탭·뱃지·테마 순환·overlay 스코프) |
-| `staff/StaffSettings.tsx` | W2/W5 | ✅ 신규 — 테마 세그·글자크기·사용설명 아코디언(스토어는 기존 `useTourRoomSettings` 검증 경유) |
+| `staff/StaffShell.tsx` | W2 | ✅ 신규 — `staffShell.test.tsx` 6케이스(4탭·뱃지·테마 스토어 추종·overlay 스코프) + C-D1 헤더 다이어트·C-D5 스킨 스탬프(`skinPicker.test.tsx`) |
+| `staff/StaffSettings.tsx` | W2/W5 | ✅ 신규 — 테마 세그·글자크기·사용설명 아코디언(스토어는 기존 `useTourRoomSettings` 검증 경유) + C-D6 배경 테마 피커 |
+| `staff/GuideAnnouncePanel.tsx` | 리뷰라운드(#488) | ✅ 신규 — `guideAnnouncePanel.test.tsx`(프리셋·수신자 wa.me/mailto·변수누락 배지) + walk `13-staff-announce` 실렌더 |
+| `SkinPicker.tsx` | C-D6(chat-ui-theme 2026-07-27) | ✅ 신규 — `skinPicker.test.tsx` 5케이스(6스킨 렌더·persist·라벨 로케일·양 셸 스탬프) + walk 스킨 매트릭스 실렌더 |
 
 ## 🔴 플랜 대비 조정
 

@@ -824,7 +824,6 @@ function TourRoomLive({
       )}
       <RoomShell
       title={snapshot.booking?.tours?.title ?? 'Your tour'}
-      subtitle={[snapshot.booking?.tour_date, snapshot.booking?.tours?.city].filter(Boolean).join(' · ')}
       headerTitleSlot={
         viewerRole === 'guide' && authToken ? (
           /* P1-3 — the strip's own chips are buttons, so the roster opener is a

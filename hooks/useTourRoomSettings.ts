@@ -41,8 +41,19 @@ export function textScaleFactor(step: TextScaleStep): number {
   return TEXT_SCALE_FACTORS[step] ?? 1;
 }
 
+/**
+ * C-D4/C-D5 (docs/smartapp-chat-ui-theme-master-plan-2026-07-27.md) — the
+ * background skin. Each value maps to a `.tr-root[data-tr-skin]` token block
+ * (light + dark variants) in app/tour-room-theme.css. 'classic' is the deep
+ * pine baseline and stamps no overrides.
+ */
+export const TOUR_SKINS = ['classic', 'sky', 'winter', 'forest', 'meadow', 'contrast'] as const;
+export type TourSkin = (typeof TOUR_SKINS)[number];
+export const DEFAULT_TOUR_SKIN: TourSkin = 'classic';
+
 export interface TourRoomSettings {
   theme: 'light' | 'dark' | 'system';
+  skin: TourSkin;
   voiceConfirm: boolean;
   autoRead: boolean;
   textScale: TextScaleStep;
@@ -50,6 +61,7 @@ export interface TourRoomSettings {
 
 export const DEFAULT_TOUR_ROOM_SETTINGS: TourRoomSettings = {
   theme: 'system',
+  skin: DEFAULT_TOUR_SKIN,
   voiceConfirm: true,
   autoRead: false,
   textScale: DEFAULT_TEXT_SCALE,
@@ -73,6 +85,9 @@ function sanitize(raw: unknown): TourRoomSettings {
     theme: value.theme === 'light' || value.theme === 'dark' || value.theme === 'system'
       ? value.theme
       : DEFAULT_TOUR_ROOM_SETTINGS.theme,
+    skin: (TOUR_SKINS as readonly string[]).includes(value.skin as string)
+      ? (value.skin as TourSkin)
+      : DEFAULT_TOUR_SKIN,
     voiceConfirm: typeof value.voiceConfirm === 'boolean' ? value.voiceConfirm : DEFAULT_TOUR_ROOM_SETTINGS.voiceConfirm,
     autoRead: typeof value.autoRead === 'boolean' ? value.autoRead : DEFAULT_TOUR_ROOM_SETTINGS.autoRead,
     textScale: normalizeTextScale(value.textScale),

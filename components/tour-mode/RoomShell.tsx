@@ -32,9 +32,6 @@ import {
   IconTabSchedule,
   IconTabSettings,
   IconPickup,
-  IconThemeDark,
-  IconThemeLight,
-  IconThemeSystem,
   TR_ICON,
   TR_STROKE,
 } from '@/components/tour-mode/icons';
@@ -88,15 +85,6 @@ const CLOSE_LABEL: Record<RoomLocale, string> = {
   zh: '关闭',
 };
 
-/** A5 — header theme cycle button: aria-label per current 3-state value. */
-const THEME_LABEL: Record<RoomLocale, { light: string; dark: string; system: string }> = {
-  en: { light: 'Display: light', dark: 'Display: dark', system: 'Display: auto' },
-  ko: { light: '화면 모드: 라이트', dark: '화면 모드: 다크', system: '화면 모드: 자동' },
-  ja: { light: '画面モード: ライト', dark: '画面モード: ダーク', system: '画面モード: 自動' },
-  es: { light: 'Pantalla: claro', dark: 'Pantalla: oscuro', system: 'Pantalla: auto' },
-  zh: { light: '显示模式: 浅色', dark: '显示模式: 深色', system: '显示模式: 自动' },
-};
-
 /** 손님 노출 아이콘 버튼의 스크린리더 라벨 — ko 하드코딩 금지 (감사 #3). */
 const BACK_LABEL: Record<RoomLocale, string> = {
   en: 'Back',
@@ -111,12 +99,6 @@ const DRAWER_LABEL: Record<RoomLocale, string> = {
   ja: 'メニュー',
   es: 'Menú',
   zh: '菜单',
-};
-
-const THEME_CYCLE: Record<'light' | 'dark' | 'system', 'light' | 'dark' | 'system'> = {
-  light: 'dark',
-  dark: 'system',
-  system: 'light',
 };
 
 const LIFECYCLE_BADGE: Record<string, { label: string; className: string }> = {
@@ -202,7 +184,6 @@ export function currentScheduleIndex(schedule: ScheduleItem[], lifecycle: string
 
 export default function RoomShell({
   title,
-  subtitle,
   lifecycle,
   connection,
   locale,
@@ -224,7 +205,6 @@ export default function RoomShell({
   renderDrawer,
 }: {
   title: string;
-  subtitle?: string;
   lifecycle: 'lobby' | 'live' | 'ended';
   connection: RoomConnection;
   locale: RoomLocale;
@@ -301,10 +281,9 @@ export default function RoomShell({
   const [conciergePulse, setConciergePulse] = useState(false);
   const [chatUnread, setChatUnread] = useState(false);
   const keyboardOpen = useKeyboardOpen();
-  // A5 — the header carries an explicit 3-state theme toggle (light → dark →
-  // system). Writes the shared device settings store; the caller re-resolves
-  // and the `theme` prop follows.
-  const { settings: deviceSettings, update: updateSettings } = useTourRoomSettings();
+  // Device store: text scale + skin stamp. (The theme control itself lives in
+  // the Settings tab and the drawer's 화면 모드 tile — C-D1 header diet.)
+  const { settings: deviceSettings } = useTourRoomSettings();
   const badge = LIFECYCLE_BADGE[lifecycle] ?? LIFECYCLE_BADGE.live;
   const labels = TAB_LABEL[locale];
   // The "now" marker on the schedule advances on a 1-min tick (kept out of
@@ -437,12 +416,19 @@ export default function RoomShell({
         className="tr-root mx-auto flex h-dvh w-full flex-col bg-[var(--tr-canvas)]"
         data-locale={locale}
         lang={locale}
+        // C-D5 — background skin: token overrides key off this attribute.
+        data-tr-skin={deviceSettings.skin}
         // P1-6 — one variable scales the whole tour-room typography scale.
         style={{ '--tr-font-scale': textScaleFactor(deviceSettings.textScale) } as CSSProperties}
       >
-        {/* ---- Slim header ------------------------------------------- */}
+        {/* ---- Slim header (C-D1/C-D2 — KakaoTalk grammar) --------------
+            Chrome shares the canvas color (no white bar, no divider), the
+            right cluster is capped at THREE icons (theme control moved to the
+            drawer tile + Settings tab), buttons are a uniform 40px column on a
+            44px touch row, and the static subtitle line is gone — the title
+            owns the width. This is what un-truncates the tour name. */}
         <header
-          className="tr-safe-top tr-hairline-b z-30 flex shrink-0 items-center gap-2 bg-[var(--tr-surface)] px-4"
+          className="tr-safe-top tr-chrome-line-b z-30 flex shrink-0 items-center gap-1 bg-[var(--tr-chrome)] px-3"
           style={{ minHeight: 'var(--tr-header-h)' }}
         >
           {(backHref || tabStack.length > 0) && (
@@ -450,7 +436,7 @@ export default function RoomShell({
               type="button"
               onClick={handleBack}
               aria-label={BACK_LABEL[locale]}
-              className="-ml-1.5 flex h-11 w-9 shrink-0 items-center justify-center rounded-full text-[var(--tr-ink-2)] active:bg-[var(--tr-surface-2)]"
+              className="-ml-1 flex h-11 w-10 shrink-0 items-center justify-center rounded-full text-[var(--tr-ink)] active:bg-[var(--tr-bubble-system)]"
               data-testid="room-back"
             >
               <IconBack size={TR_ICON.nav} strokeWidth={TR_STROKE.default} aria-hidden />
@@ -461,19 +447,18 @@ export default function RoomShell({
               a home affordance; guests reach home via their Home tab, and the
               operator shells (which have no Home tab) need this.
               폭 예산 (적대적 리뷰 #4): backHref와 같은 곳을 가리키면 생략한다 —
-              가이드 룸 헤더는 좌석 스트립이 살아야 하고, ☰가 44px을 새로
-              가져간 만큼 중복 버튼 하나가 스트립 칩 하나 값이다. */}
+              가이드 룸 헤더는 좌석 스트립이 살아야 한다. */}
           {homeHref && homeHref !== backHref && (
             <a
               href={homeHref}
               aria-label="홈으로"
               data-testid="room-home"
-              className="-ml-1 flex h-11 w-9 shrink-0 items-center justify-center rounded-full text-[var(--tr-ink-2)] active:bg-[var(--tr-surface-2)]"
+              className="-ml-1 flex h-11 w-10 shrink-0 items-center justify-center rounded-full text-[var(--tr-ink-2)] active:bg-[var(--tr-bubble-system)]"
             >
               <IconTabHome size={TR_ICON.action} strokeWidth={TR_STROKE.default} aria-hidden />
             </a>
           )}
-          <div className="min-w-0 flex-1 py-1.5">
+          <div className="min-w-0 flex-1 px-1 py-1.5">
             {headerTitleSlot ? (
               headerTitleSlot
             ) : (
@@ -487,7 +472,7 @@ export default function RoomShell({
                     {badge.label}
                   </span>
                 </div>
-                {degraded && connectionHint ? (
+                {degraded && connectionHint && (
                   <p className="tr-meta mt-0.5 flex items-center gap-1.5 truncate font-medium text-[var(--tr-accent-deep)]">
                     <span
                       className={`h-1.5 w-1.5 rounded-full ${
@@ -496,35 +481,17 @@ export default function RoomShell({
                     />
                     {connectionHint}
                   </p>
-                ) : (
-                  subtitle && <p className="tr-meta mt-0.5 truncate text-[var(--tr-ink-3)]">{subtitle}</p>
                 )}
               </>
             )}
           </div>
-          <button
-            type="button"
-            onClick={() => updateSettings({ theme: THEME_CYCLE[deviceSettings.theme] })}
-            aria-label={THEME_LABEL[locale][deviceSettings.theme]}
-            title={THEME_LABEL[locale][deviceSettings.theme]}
-            className="flex h-11 w-9 shrink-0 items-center justify-center rounded-full text-[var(--tr-ink-2)] active:bg-[var(--tr-surface-2)]"
-            data-testid="theme-toggle"
-          >
-            {deviceSettings.theme === 'light' ? (
-              <IconThemeLight size={TR_ICON.action} strokeWidth={TR_STROKE.default} aria-hidden />
-            ) : deviceSettings.theme === 'dark' ? (
-              <IconThemeDark size={TR_ICON.action} strokeWidth={TR_STROKE.default} aria-hidden />
-            ) : (
-              <IconThemeSystem size={TR_ICON.action} strokeWidth={TR_STROKE.default} aria-hidden />
-            )}
-          </button>
           {concierge && (
             <div className="relative shrink-0">
               <button
                 type="button"
                 onClick={openConcierge}
                 aria-label={CONCIERGE_COPY[locale].title}
-                className="relative flex h-11 w-11 items-center justify-center rounded-full text-[var(--tr-accent-deep)] active:bg-[var(--tr-accent-soft)]"
+                className="relative flex h-11 w-10 items-center justify-center rounded-full text-[var(--tr-accent-deep)] active:bg-[var(--tr-accent-soft)]"
                 data-testid="concierge-open"
               >
                 {conciergePulse && (
@@ -550,7 +517,7 @@ export default function RoomShell({
             type="button"
             onClick={() => setEmergencyOpen(true)}
             aria-label={EMERGENCY_TITLE[locale]}
-            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-[var(--tr-danger)] active:bg-[var(--tr-danger-soft)]"
+            className="flex h-11 w-10 shrink-0 items-center justify-center rounded-full text-[var(--tr-danger)] active:bg-[var(--tr-danger-soft)]"
             data-testid="emergency-open"
           >
             <IconEmergency size={TR_ICON.nav} strokeWidth={TR_STROKE.default} />
@@ -560,7 +527,7 @@ export default function RoomShell({
               type="button"
               onClick={() => setDrawerOpen(true)}
               aria-label={DRAWER_LABEL[locale]}
-              className="-mr-1.5 flex h-11 w-9 shrink-0 items-center justify-center rounded-full text-[var(--tr-ink-2)] active:bg-[var(--tr-surface-2)]"
+              className="-mr-1 flex h-11 w-10 shrink-0 items-center justify-center rounded-full text-[var(--tr-ink)] active:bg-[var(--tr-bubble-system)]"
               data-testid="room-drawer-open"
             >
               <IconDrawer size={TR_ICON.action} strokeWidth={TR_STROKE.default} aria-hidden />
@@ -696,7 +663,7 @@ export default function RoomShell({
         {/* ---- Bottom tab bar ---------------------------------------- */}
         {!keyboardOpen && (
           <nav
-            className="tr-safe-bottom tr-hairline-t z-30 shrink-0 bg-[var(--tr-surface)]"
+            className="tr-safe-bottom tr-chrome-line-t z-30 shrink-0 bg-[var(--tr-chrome)]"
             role="tablist"
             data-testid="room-tabbar"
           >

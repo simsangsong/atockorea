@@ -21,9 +21,10 @@ beforeEach(() => {
 });
 
 describe('useTourRoomSettings store', () => {
-  it('defaults voiceConfirm ON, system theme, normal text', () => {
+  it('defaults voiceConfirm ON, system theme, classic skin, normal text', () => {
     expect(DEFAULT_TOUR_ROOM_SETTINGS).toEqual({
       theme: 'system',
+      skin: 'classic',
       voiceConfirm: true,
       autoRead: false,
       textScale: 3,
@@ -38,6 +39,16 @@ describe('useTourRoomSettings store', () => {
 
     window.localStorage.setItem('tour_mode_settings', '{"theme":"neon","textScale":9}');
     expect(readTourRoomSettings()).toMatchObject({ theme: 'system', textScale: 3 });
+  });
+
+  it('persists a picked skin and falls back to classic on unknown values (C-D5)', () => {
+    writeTourRoomSettings({ skin: 'winter' });
+    __resetTourRoomSettingsForTests();
+    expect(readTourRoomSettings().skin).toBe('winter');
+
+    // A stored value from a future/older build must never break the room.
+    window.localStorage.setItem('tour_mode_settings', '{"skin":"lava"}');
+    expect(readTourRoomSettings().skin).toBe('classic');
   });
 });
 

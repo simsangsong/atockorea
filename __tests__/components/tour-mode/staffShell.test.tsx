@@ -3,8 +3,12 @@
  * The old console was one tall scroll with no tabs and no theme control;
  * these tests pin the new frame's contract.
  */
-import { fireEvent, render, screen } from '@testing-library/react';
+import { act, fireEvent, render, screen } from '@testing-library/react';
 import StaffShell from '@/components/tour-mode/staff/StaffShell';
+import {
+  writeTourRoomSettings,
+  __resetTourRoomSettingsForTests,
+} from '@/hooks/useTourRoomSettings';
 
 function mount(extra: Partial<React.ComponentProps<typeof StaffShell>> = {}) {
   return render(
@@ -40,6 +44,7 @@ beforeAll(() => {
 
 beforeEach(() => {
   window.localStorage.clear();
+  __resetTourRoomSettingsForTests();
 });
 
 describe('StaffShell', () => {
@@ -72,14 +77,18 @@ describe('StaffShell', () => {
     expect(screen.getByTestId('staff-tab-badge-chat')).toHaveTextContent('9+');
   });
 
-  it('cycles the theme and applies the room-scoped dark wrapper', () => {
+  it('follows the shared device theme store with a room-scoped dark wrapper (header itself has no toggle — C-D1 diet)', () => {
     const { container } = mount();
-    const toggle = screen.getByTestId('staff-theme-toggle');
-    // default 'system' → cycle: system → light → dark
-    fireEvent.click(toggle); // → light
+    expect(screen.queryByTestId('staff-theme-toggle')).not.toBeInTheDocument();
     expect(container.querySelector('.dark')).toBeNull();
-    fireEvent.click(toggle); // → dark
+    act(() => {
+      writeTourRoomSettings({ theme: 'dark' }); // what StaffSettings' 설정 tab writes
+    });
     expect(container.querySelector('.dark')).not.toBeNull();
+    act(() => {
+      writeTourRoomSettings({ theme: 'light' });
+    });
+    expect(container.querySelector('.dark')).toBeNull();
   });
 
   it('renders lifecycle badge and overlay INSIDE the themed root (transparent-sheet regression)', () => {

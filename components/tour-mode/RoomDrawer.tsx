@@ -20,6 +20,7 @@ import Avatar from '@/components/tour-mode/Avatar';
 import Lightbox from '@/components/tour-mode/Lightbox';
 import type { DrawerAttachmentItem, DrawerLinkItem } from '@/lib/tour-room/drawer';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
+import { useTourRoomSettings } from '@/hooks/useTourRoomSettings';
 import {
   IconClose,
   IconConcierge,
@@ -32,6 +33,9 @@ import {
   IconTabMap,
   IconTabSchedule,
   IconTabSettings,
+  IconThemeDark,
+  IconThemeLight,
+  IconThemeSystem,
   TR_ICON,
   TR_STROKE,
 } from '@/components/tour-mode/icons';
@@ -51,6 +55,8 @@ const COPY: Record<
     concierge: string;
     emergency: string;
     close: string;
+    /** C-D1 — the theme control moved out of the header into this tile. */
+    display: { light: string; dark: string; system: string };
     roles: Record<string, string>;
   }
 > = {
@@ -67,6 +73,7 @@ const COPY: Record<
     concierge: 'Smart Guide',
     emergency: 'Emergency',
     close: 'Close',
+    display: { light: 'Light', dark: 'Dark', system: 'Auto' },
     roles: { guide: 'Guide', driver: 'Driver', admin: 'AtoC Korea', customer: 'Traveller' },
   },
   ko: {
@@ -82,6 +89,7 @@ const COPY: Record<
     concierge: '스마트 가이드',
     emergency: '긴급',
     close: '닫기',
+    display: { light: '라이트', dark: '다크', system: '자동' },
     roles: { guide: '가이드', driver: '기사님', admin: 'AtoC Korea', customer: '여행자' },
   },
   ja: {
@@ -97,6 +105,7 @@ const COPY: Record<
     concierge: 'スマートガイド',
     emergency: '緊急',
     close: '閉じる',
+    display: { light: 'ライト', dark: 'ダーク', system: '自動' },
     roles: { guide: 'ガイド', driver: 'ドライバー', admin: 'AtoC Korea', customer: '旅行者' },
   },
   es: {
@@ -112,6 +121,7 @@ const COPY: Record<
     concierge: 'Guía inteligente',
     emergency: 'Emergencia',
     close: 'Cerrar',
+    display: { light: 'Claro', dark: 'Oscuro', system: 'Auto' },
     roles: { guide: 'Guía', driver: 'Conductor', admin: 'AtoC Korea', customer: 'Viajero' },
   },
   zh: {
@@ -127,6 +137,7 @@ const COPY: Record<
     concierge: '智能向导',
     emergency: '紧急',
     close: '关闭',
+    display: { light: '浅色', dark: '深色', system: '自动' },
     roles: { guide: '导游', driver: '司机', admin: 'AtoC Korea', customer: '旅客' },
   },
 };
@@ -166,6 +177,17 @@ export default function RoomDrawer({
   onOpenEmergency: () => void;
 }) {
   const copy = COPY[locale] ?? COPY.en;
+  // C-D1 — the header lost its theme button in the icon diet; the drawer tile
+  // is the quick control now (Settings tab keeps the full segmented one).
+  // Cycling must NOT close the drawer: the user is previewing looks.
+  const { settings: deviceSettings, update: updateSettings } = useTourRoomSettings();
+  const themeCycle = { light: 'dark', dark: 'system', system: 'light' } as const;
+  const ThemeIcon =
+    deviceSettings.theme === 'light'
+      ? IconThemeLight
+      : deviceSettings.theme === 'dark'
+        ? IconThemeDark
+        : IconThemeSystem;
   const [images, setImages] = useState<DrawerAttachmentItem[] | null>(null);
   const [files, setFiles] = useState<DrawerAttachmentItem[] | null>(null);
   const [links, setLinks] = useState<DrawerLinkItem[] | null>(null);
@@ -246,7 +268,7 @@ export default function RoomDrawer({
           @media (prefers-reduced-motion: reduce) { [data-testid='room-drawer'] aside { animation: none !important; } }
         `}</style>
 
-        <div className="tr-safe-top tr-hairline-b flex shrink-0 items-center gap-2 bg-[var(--tr-surface)] px-4" style={{ minHeight: 'var(--tr-header-h)' }}>
+        <div className="tr-safe-top tr-chrome-line-b flex shrink-0 items-center gap-2 bg-[var(--tr-chrome)] px-4" style={{ minHeight: 'var(--tr-header-h)' }}>
           <p className="tr-title min-w-0 flex-1 truncate text-[var(--tr-ink)]">{title}</p>
           <button
             type="button"
@@ -383,6 +405,22 @@ export default function RoomDrawer({
                   <span className="tr-meta text-cjk-safe max-w-full font-medium text-[var(--tr-ink)]">{label}</span>
                 </button>
               ))}
+              {/* 화면 모드 — cycles in place (no onClose): the whole point is
+                  seeing the room change behind the drawer. */}
+              <button
+                type="button"
+                onClick={() => updateSettings({ theme: themeCycle[deviceSettings.theme] })}
+                data-testid="drawer-theme-tile"
+                aria-label={`${copy.settings} · ${copy.display[deviceSettings.theme]}`}
+                className="tr-home-card tr-press flex min-h-[68px] flex-col items-center justify-center gap-1.5 px-1 py-2"
+              >
+                <span className="tr-chip tr-chip--accent relative flex h-10 w-10 items-center justify-center !rounded-[13px]">
+                  <ThemeIcon size={TR_ICON.action} strokeWidth={TR_STROKE.default} aria-hidden />
+                </span>
+                <span className="tr-meta text-cjk-safe max-w-full font-medium text-[var(--tr-ink)]">
+                  {copy.display[deviceSettings.theme]}
+                </span>
+              </button>
             </div>
           </section>
 
