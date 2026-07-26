@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { requireAdmin, AdminAuthFailure, adminAuthJsonResponse } from '@/lib/auth';
 import { GUIDES_TENANT_ID } from '@/lib/ops/guides/registry';
-import { DEFAULT_TTL_SECONDS, signGuideScheduleToken } from '@/lib/ops/guides/selfToken';
+import { DEFAULT_TTL_SECONDS, issueGuideScheduleLink } from '@/lib/ops/guides/selfToken';
 
 export const dynamic = 'force-dynamic';
 
@@ -46,16 +46,16 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ id:
     const guide = data as { id: string; name: string; active: boolean } | null;
     if (!guide) return NextResponse.json({ error: '가이드를 찾을 수 없습니다' }, { status: 404 });
 
-    const { token, payload } = signGuideScheduleToken({
+    const link = issueGuideScheduleLink({
       guideId: guide.id,
       name: guide.name,
       ttlSeconds,
+      origin: process.env.NEXT_PUBLIC_SITE_URL || req.nextUrl.origin,
     });
 
-    const origin = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') || req.nextUrl.origin;
     return NextResponse.json({
-      url: `${origin}/g/schedule/${token}`,
-      expiresAt: new Date(payload.exp * 1000).toISOString(),
+      url: link.url,
+      expiresAt: link.expiresAt,
       guide: { id: guide.id, name: guide.name, active: guide.active },
     });
   } catch (e) {

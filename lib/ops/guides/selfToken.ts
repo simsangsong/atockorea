@@ -75,6 +75,27 @@ export function signGuideScheduleToken(input: {
   return { token: `${body}.${sign(body, primarySecret())}`, payload };
 }
 
+/**
+ * 링크 한 벌. 발급 지점이 둘(관리자 [링크 발급], 배정 안내 메일)이 되면서
+ * 경로 문자열을 두 곳에 적으면 언젠가 한쪽이 404를 보낸다 — 그것도 가이드가
+ * 눌렀을 때만 알게 된다. 그래서 URL 조립은 여기 한 곳이다.
+ */
+export function issueGuideScheduleLink(input: {
+  guideId: string;
+  name?: string | null;
+  ttlSeconds?: number;
+  /** 'https://…' — 없으면 NEXT_PUBLIC_SITE_URL. */
+  origin?: string | null;
+}): { url: string; token: string; expiresAt: string } {
+  const { token, payload } = signGuideScheduleToken(input);
+  const base = (input.origin || process.env.NEXT_PUBLIC_SITE_URL || '').replace(/\/$/, '');
+  return {
+    url: `${base}/g/schedule/${token}`,
+    token,
+    expiresAt: new Date(payload.exp * 1000).toISOString(),
+  };
+}
+
 function signatureMatches(body: string, sig: string): boolean {
   for (const secret of verificationSecrets()) {
     const expected = sign(body, secret);
