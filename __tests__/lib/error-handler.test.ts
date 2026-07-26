@@ -53,6 +53,45 @@ describe('error-handler', () => {
       expect(response.status).toBe(400);
     });
 
+    /**
+     * An auth failure carries its own status. It also carries a `code`, which
+     * is the shape the Supabase branch identifies by — so it used to land
+     * there, find no match for 'UNAUTHORIZED' in the postgres code map, and
+     * come out as a 500. Measured on production: GET /api/admin/tours answered
+     * 500 with a body reading {"error":"Unauthorized","code":"UNAUTHORIZED"}.
+     * The right words at the wrong status: a monitor reads 5xx as "the server
+     * is broken" and a client reads it as "retry", when the truth is "log in".
+     */
+    it('honours a status the error already stated, instead of guessing 500', async () => {
+      class AuthFailure extends Error {
+        status = 401;
+        code = 'UNAUTHORIZED';
+      }
+      const response = handleApiError(new AuthFailure('Unauthorized'));
+      const data = await response.json();
+
+      expect(response.status).toBe(401);
+      expect(data.error).toBe('Unauthorized');
+      expect(data.code).toBe('UNAUTHORIZED');
+    });
+
+    it('keeps a 403 a 403', async () => {
+      const forbidden = Object.assign(new Error('Forbidden: Insufficient permissions'), {
+        status: 403,
+        code: 'FORBIDDEN',
+      });
+      const response = handleApiError(forbidden);
+      expect(response.status).toBe(403);
+    });
+
+    it('does not let a 5xx status short-circuit the normal paths', async () => {
+      // Only client-error statuses are trusted from the error object; a 500
+      // still goes through the generic handler so it gets logged as one.
+      const boom = Object.assign(new Error('upstream exploded'), { status: 502 });
+      const response = handleApiError(boom);
+      expect(response.status).toBe(500);
+    });
+
     it('should handle Supabase errors correctly', async () => {
       const supabaseError = { code: 'PGRST116', message: 'Not found' };
       const response = handleApiError(supabaseError);

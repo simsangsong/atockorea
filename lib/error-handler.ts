@@ -40,6 +40,39 @@ export function handleApiError(error: unknown, req?: NextRequest): NextResponse 
     );
   }
 
+  /**
+   * An error that already knows its HTTP status.
+   *
+   * 🔴 This has to run BEFORE the Supabase branch below, which identifies its
+   * errors by "has a `code` property" — a shape `AdminAuthFailure` also has.
+   * So an unauthenticated request landed in the Supabase branch, its
+   * 'UNAUTHORIZED' code found no match in the postgres code map, and the
+   * fallback made it a **500**. Measured on production 2026-07-26:
+   * `GET /api/admin/tours` answered 500 with a body reading
+   * `{"error":"Unauthorized","code":"UNAUTHORIZED"}` — the right words at the
+   * wrong status. Seven route files funnel auth failures through here, so the
+   * fix belongs here rather than in each of them.
+   *
+   * That mismatch is not cosmetic: a 5xx tells a monitor the server is
+   * broken and tells a client to retry, when the truth is "log in".
+   */
+  if (error && typeof error === 'object' && 'status' in error) {
+    const known = error as { status: unknown; message?: unknown; code?: unknown };
+    if (typeof known.status === 'number' && known.status >= 400 && known.status < 500) {
+      serverLogger.warn('Rejected request', {
+        status: known.status,
+        code: typeof known.code === 'string' ? known.code : undefined,
+      });
+      return NextResponse.json(
+        {
+          error: typeof known.message === 'string' && known.message ? known.message : 'Request rejected',
+          ...(typeof known.code === 'string' ? { code: known.code } : {}),
+        },
+        { status: known.status },
+      );
+    }
+  }
+
   // Supabase errors
   if (error && typeof error === 'object' && 'code' in error) {
     const supabaseError = error as { code: string; message: string; details?: unknown };
