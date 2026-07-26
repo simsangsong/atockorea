@@ -41,6 +41,11 @@ describe('role-scoped quick replies (A6)', () => {
       'moving_to_parking',
       'seatbelt_check',
       'check_belongings',
+      // W5 (U4-D12, 2026-07-27) — three real road situations that had no
+      // one-tap line: fuel stop, everyone-back-to-the-vehicle, traffic.
+      'fuel_stop',
+      'return_to_vehicle',
+      'traffic_delay',
     ]);
     // No guest phrases in the driver strip.
     for (const key of ['need_toilet_urgent', 'where_bus', 'where_meet', 'need_restroom']) {
@@ -57,6 +62,10 @@ describe('role-scoped quick replies (A6)', () => {
       'feeling_carsick',
       'request_short_stop',
       'running_late',
+      // W5 (U4-D12) — photos / snack run / kids' pace.
+      'taking_photos',
+      'buying_snack',
+      'with_kids',
     ]) {
       expect(keys).toContain(key);
     }

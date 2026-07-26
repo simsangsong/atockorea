@@ -26,6 +26,7 @@ import {
   findRecognizedToken,
 } from '@/lib/ops/seating/personalTokens';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
+import { useResolvedTourTheme } from '@/hooks/useResolvedTourTheme';
 
 interface RosterEntry {
   bookingId: string;
@@ -84,7 +85,7 @@ export default function JoinFlow({
   tourDate: string;
 }) {
   const [locale, setLocale] = useState<RoomLocale>('en');
-  const [dark, setDark] = useState(false);
+  const dark = useResolvedTourTheme() === 'dark';
   const [phase, setPhase] = useState<Phase>({ k: 'loading' });
   const [roster, setRoster] = useState<RosterEntry[]>([]);
   const [token, setToken] = useState<string | null>(null);
@@ -106,11 +107,6 @@ export default function JoinFlow({
 
   useEffect(() => {
     setLocale(detectJoinLocale());
-    try {
-      setDark(window.matchMedia?.('(prefers-color-scheme: dark)').matches ?? false);
-    } catch {
-      /* noop */
-    }
   }, []);
 
   // ── seats loader (shared by initial load + realtime + 409 refresh) ────────

@@ -20,6 +20,7 @@ import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react'
 import { IconSuccess, TR_ICON } from '@/components/tour-mode/icons';
 import { checkinCopy, detectCheckinLocale } from '@/lib/ops/seating/checkinCopy';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
+import { useResolvedTourTheme } from '@/hooks/useResolvedTourTheme';
 
 const TOKENS_STORAGE_KEY = 'ops_personal_tokens';
 const DEVICE_KEY_STORAGE = 'tour_mode_device_key';
@@ -89,7 +90,7 @@ export default function CheckinLanding({
 }) {
   const [state, setState] = useState<LandingState>({ phase: 'loading' });
   const [locale, setLocale] = useState<RoomLocale>('en');
-  const [dark, setDark] = useState(false);
+  const dark = useResolvedTourTheme() === 'dark';
   const [selecting, setSelecting] = useState(false);
   const [selected, setSelected] = useState<Set<number>>(new Set());
   const signalFired = useRef(false);
@@ -171,11 +172,6 @@ export default function CheckinLanding({
 
   useEffect(() => {
     setLocale(detectCheckinLocale());
-    try {
-      setDark(window.matchMedia?.('(prefers-color-scheme: dark)').matches ?? false);
-    } catch {
-      /* noop — stays light */
-    }
     void resolve();
   }, [resolve]);
 

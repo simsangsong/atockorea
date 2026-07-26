@@ -203,6 +203,20 @@
   overflow-wrap: break-word;
 }
 
+/* U4-D11 ③ — the tour-mode layout canvas. The layout is a server component,
+ * so it cannot read the stored theme; prefers-color-scheme is the best
+ * first-paint guess, and the client shells (.tr-root wrappers) paint the
+ * stored choice over it immediately. Kills the light flash behind a dark
+ * room that the hard-coded #f3f4f2 used to cause. */
+.tour-mode-canvas {
+  background: #f3f4f2;
+}
+@media (prefers-color-scheme: dark) {
+  .tour-mode-canvas {
+    background: #151818;
+  }
+}
+
 /* ---- Shared primitives ----------------------------------------------- */
 
 /* Centered capsule pill: date separators, system messages, "earlier" loader. */

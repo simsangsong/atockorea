@@ -30,12 +30,21 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 1,
   viewportFit: 'cover',
-  themeColor: '#f3f4f2',
+  // U4-D11 ③ — the browser chrome follows the OS instead of flashing a light
+  // status bar over a dark room (an explicit in-app Light pick still renders a
+  // light SHELL inside; only this chrome strip follows the OS).
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#f3f4f2' },
+    { media: '(prefers-color-scheme: dark)', color: '#151818' },
+  ],
 };
 
 export default function TourModeLayout({ children }: { children: React.ReactNode }) {
   return (
-    <main className="min-h-dvh bg-[#f3f4f2]">
+    // .tour-mode-canvas (tour-room-theme.css) resolves light/dark via media
+    // query — this is a SERVER component, so the OS answer is the best
+    // first-paint guess; the client shells repaint with the stored choice.
+    <main className="tour-mode-canvas min-h-dvh">
       <PwaRegistrar swPath="/sw-tour-mode.js" scope="/tour-mode" />
       <WebviewEscapeBanner />
       {children}
