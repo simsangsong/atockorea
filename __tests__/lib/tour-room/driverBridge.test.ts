@@ -76,6 +76,69 @@ describe('vehicle PIN gate (P-D3)', () => {
     const db = dbWithPayload({});
     await expect(checkDriverPin(db, 'tour-1', FUTURE_DATE, '')).resolves.toEqual({ required: false, ok: true });
   });
+
+  /**
+   * The plate moved to the dispatch panel and the gate did not follow it, so
+   * in production `expected` was null for almost every tour and any forwarded
+   * driver link opened the room. These pin the new first source.
+   */
+  function dbWithDispatch(
+    dispatches: Array<{ plate_number?: string | null; vehicle?: { plate_number?: string | null } | null }>,
+    busPayload: unknown = {},
+  ): RoomDbClient {
+    return {
+      from: (table: string) => {
+        if (table === 'tour_rooms') {
+          const chain: Record<string, unknown> = {};
+          chain.select = () => chain;
+          chain.eq = () => chain;
+          chain.then = (res: (v: unknown) => unknown) => Promise.resolve({ data: [{ id: 'room-1' }], error: null }).then(res);
+          return chain;
+        }
+        if (table === 'ops_room_vehicles') {
+          const chain: Record<string, unknown> = {};
+          chain.select = () => chain;
+          chain.in = () => chain;
+          chain.then = (res: (v: unknown) => unknown) => Promise.resolve({ data: dispatches, error: null }).then(res);
+          return chain;
+        }
+        return {
+          select: () => ({
+            eq: () => ({ eq: () => ({ maybeSingle: async () => ({ data: { payload: busPayload }, error: null }) }) }),
+          }),
+        };
+      },
+    } as unknown as RoomDbClient;
+  }
+
+  it('takes the PIN from the dispatched plate', async () => {
+    const db = dbWithDispatch([{ plate_number: '서울 12가 3456' }]);
+    await expect(checkDriverPin(db, 'tour-1', FUTURE_DATE, '3456')).resolves.toEqual({ required: true, ok: true });
+    await expect(checkDriverPin(db, 'tour-1', FUTURE_DATE, '1111')).resolves.toEqual({ required: true, ok: false });
+    await expect(checkDriverPin(db, 'tour-1', FUTURE_DATE, '')).resolves.toEqual({ required: true, ok: false });
+  });
+
+  it('accepts the registered vehicle plate when the dispatch has none of its own', async () => {
+    const db = dbWithDispatch([{ plate_number: null, vehicle: { plate_number: '제주 79바 4321' } }]);
+    await expect(checkDriverPin(db, 'tour-1', FUTURE_DATE, '4321')).resolves.toEqual({ required: true, ok: true });
+  });
+
+  it('accepts any plate running that day — a second bus must not lock out the first', async () => {
+    const db = dbWithDispatch([{ plate_number: '서울12가3456' }, { plate_number: '서울34나7788' }]);
+    await expect(checkDriverPin(db, 'tour-1', FUTURE_DATE, '3456')).resolves.toEqual({ required: true, ok: true });
+    await expect(checkDriverPin(db, 'tour-1', FUTURE_DATE, '7788')).resolves.toEqual({ required: true, ok: true });
+    await expect(checkDriverPin(db, 'tour-1', FUTURE_DATE, '0000')).resolves.toEqual({ required: true, ok: false });
+  });
+
+  it('still falls back to the legacy sheet, and stays open with a plateless dispatch', async () => {
+    const legacy = dbWithDispatch([{ plate_number: null, vehicle: null }], { vehicle_number: '경기 12아 7788' });
+    await expect(checkDriverPin(legacy, 'tour-1', FUTURE_DATE, '7788')).resolves.toEqual({ required: true, ok: true });
+
+    // Rental model: the type is dispatched days ahead, the plate arrives on the
+    // day. Until it does there is nothing to check and entry must not break.
+    const typeOnly = dbWithDispatch([{ plate_number: null, vehicle: null }], {});
+    await expect(checkDriverPin(typeOnly, 'tour-1', FUTURE_DATE, '')).resolves.toEqual({ required: false, ok: true });
+  });
 });
 
 describe('driver signal bundles (5-locale, zero LLM)', () => {
