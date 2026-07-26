@@ -1,7 +1,687 @@
 {
   "locale": "ru",
-  "generatedAt": "2026-07-26T07:16:47.360Z",
+  "generatedAt": "2026-07-26T07:42:55.758Z",
   "reports": [
+    {
+      "unitId": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:ru:A1",
+      "status": "flagged",
+      "segments": 61,
+      "fails": 0,
+      "flags": 5,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/seo/title",
+          "message": "길이비 1.33 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/seo/pageTitle",
+          "message": "길이비 1.34 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/hero/meta/duration",
+          "message": "길이비 1.42 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/catalog_card/title",
+          "message": "길이비 1.58 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/catalog_card/subtitle",
+          "message": "길이비 1.35 가 ru 허용범위 0.85–1.3 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:ru:A2",
+      "status": "flagged",
+      "segments": 29,
+      "fails": 0,
+      "flags": 4,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/bestFor/1",
+          "message": "길이비 1.38 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/bestFor/3",
+          "message": "길이비 1.51 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/lessIdealFor/0",
+          "message": "길이비 1.45 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/lessIdealFor/3",
+          "message": "길이비 1.33 가 ru 허용범위 0.85–1.3 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:ru:A2-2",
+      "status": "flagged",
+      "segments": 42,
+      "fails": 0,
+      "flags": 3,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/seasonalVariations/1/description",
+          "message": "길이비 1.33 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/bookingSupportSteps/3/detail",
+          "message": "길이비 1.38 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/bookingSupportSteps/4/detail",
+          "message": "길이비 1.43 가 ru 허용범위 0.85–1.3 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:ru:B",
+      "status": "flagged",
+      "segments": 126,
+      "fails": 0,
+      "flags": 15,
+      "findings": [
+        {
+          "gate": "G10",
+          "severity": "flag",
+          "pointer": "/galleryItems/7/alt",
+          "message": "키릴 비율 51% < 60% — 러시아어 미번역 의심"
+        },
+        {
+          "gate": "G10",
+          "severity": "flag",
+          "pointer": "/galleryItems/7/caption",
+          "message": "키릴 비율 22% < 60% — 러시아어 미번역 의심"
+        },
+        {
+          "gate": "G10",
+          "severity": "flag",
+          "pointer": "/galleryItems/7/location",
+          "message": "키릴 비율 5% < 60% — 러시아어 미번역 의심"
+        },
+        {
+          "gate": "G10",
+          "severity": "flag",
+          "pointer": "/galleryItems/33/alt",
+          "message": "키릴 비율 51% < 60% — 러시아어 미번역 의심"
+        },
+        {
+          "gate": "G10",
+          "severity": "flag",
+          "pointer": "/galleryItems/33/caption",
+          "message": "키릴 비율 22% < 60% — 러시아어 미번역 의심"
+        },
+        {
+          "gate": "G10",
+          "severity": "flag",
+          "pointer": "/galleryItems/33/location",
+          "message": "키릴 비율 5% < 60% — 러시아어 미번역 의심"
+        },
+        {
+          "gate": "G10",
+          "severity": "flag",
+          "pointer": "/galleryItems/34/alt",
+          "message": "키릴 비율 51% < 60% — 러시아어 미번역 의심"
+        },
+        {
+          "gate": "G10",
+          "severity": "flag",
+          "pointer": "/galleryItems/34/caption",
+          "message": "키릴 비율 22% < 60% — 러시아어 미번역 의심"
+        },
+        {
+          "gate": "G10",
+          "severity": "flag",
+          "pointer": "/galleryItems/34/location",
+          "message": "키릴 비율 5% < 60% — 러시아어 미번역 의심"
+        },
+        {
+          "gate": "G10",
+          "severity": "flag",
+          "pointer": "/galleryItems/35/alt",
+          "message": "키릴 비율 51% < 60% — 러시아어 미번역 의심"
+        },
+        {
+          "gate": "G10",
+          "severity": "flag",
+          "pointer": "/galleryItems/35/caption",
+          "message": "키릴 비율 22% < 60% — 러시아어 미번역 의심"
+        },
+        {
+          "gate": "G10",
+          "severity": "flag",
+          "pointer": "/galleryItems/35/location",
+          "message": "키릴 비율 5% < 60% — 러시아어 미번역 의심"
+        },
+        {
+          "gate": "G10",
+          "severity": "flag",
+          "pointer": "/galleryItems/36/alt",
+          "message": "키릴 비율 51% < 60% — 러시아어 미번역 의심"
+        },
+        {
+          "gate": "G10",
+          "severity": "flag",
+          "pointer": "/galleryItems/36/caption",
+          "message": "키릴 비율 22% < 60% — 러시아어 미번역 의심"
+        },
+        {
+          "gate": "G10",
+          "severity": "flag",
+          "pointer": "/galleryItems/36/location",
+          "message": "키릴 비율 5% < 60% — 러시아어 미번역 의심"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:ru:itineraryStops",
+      "status": "flagged",
+      "segments": 39,
+      "fails": 0,
+      "flags": 6,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/timeUsed/2",
+          "message": "길이비 1.39 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/timeUsed/3",
+          "message": "길이비 1.31 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/highlights/1",
+          "message": "길이비 1.38 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/highlights/4",
+          "message": "길이비 1.34 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/smartNotes/tip",
+          "message": "길이비 1.39 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/convenience/parking",
+          "message": "길이비 1.41 가 ru 허용범위 0.85–1.3 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:ru:itineraryStops-2",
+      "status": "flagged",
+      "segments": 60,
+      "fails": 0,
+      "flags": 6,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/timeUsed/1",
+          "message": "길이비 1.35 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/timeUsed/3",
+          "message": "길이비 1.45 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/highlights/3",
+          "message": "길이비 1.40 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/convenience/parking",
+          "message": "길이비 1.37 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/visitBasics/hours",
+          "message": "길이비 1.31 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/highlights/2",
+          "message": "길이비 1.44 가 ru 허용범위 0.85–1.3 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:ru:itineraryStops-3",
+      "status": "flagged",
+      "segments": 64,
+      "fails": 0,
+      "flags": 4,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/timeUsed/1",
+          "message": "길이비 1.32 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/highlights/3",
+          "message": "길이비 1.42 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/highlights/4",
+          "message": "길이비 1.33 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/visitBasics/admission",
+          "message": "길이비 1.52 가 ru 허용범위 0.85–1.3 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:ru:itineraryStops-4",
+      "status": "flagged",
+      "segments": 49,
+      "fails": 0,
+      "flags": 3,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/highlights/6",
+          "message": "길이비 1.38 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/visitBasics/closed",
+          "message": "길이비 1.35 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/6/highlights/1",
+          "message": "길이비 1.31 가 ru 허용범위 0.85–1.3 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:ru:itineraryStops-5",
+      "status": "flagged",
+      "segments": 29,
+      "fails": 0,
+      "flags": 7,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/6/convenience/parking",
+          "message": "길이비 1.41 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/6/visitBasics/walking",
+          "message": "길이비 1.33 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/7/timeUsed/2",
+          "message": "길이비 1.33 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/7/timeUsed/3",
+          "message": "길이비 1.59 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/7/highlights/6",
+          "message": "길이비 1.33 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/7/highlights/7",
+          "message": "길이비 1.37 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/7/convenience/parking",
+          "message": "길이비 1.50 가 ru 허용범위 0.85–1.3 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:ru:itineraryStops-6",
+      "status": "flagged",
+      "segments": 35,
+      "fails": 0,
+      "flags": 5,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/7/visitBasics/hours",
+          "message": "길이비 1.41 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/7/visitBasics/admission",
+          "message": "길이비 1.34 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G10",
+          "severity": "flag",
+          "pointer": "/itineraryStops/8/timeUsed/1",
+          "message": "키릴 비율 37% < 60% — 러시아어 미번역 의심"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/8/highlights/6",
+          "message": "길이비 1.40 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/8/convenience/parking",
+          "message": "길이비 1.70 가 ru 허용범위 0.85–1.3 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:ru:itineraryStops-7",
+      "status": "flagged",
+      "segments": 25,
+      "fails": 0,
+      "flags": 6,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/8/visitBasics/hours",
+          "message": "길이비 1.38 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/8/visitBasics/closed",
+          "message": "길이비 1.45 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G10",
+          "severity": "flag",
+          "pointer": "/itineraryStops/9/name",
+          "message": "키릴 비율 5% < 60% — 러시아어 미번역 의심"
+        },
+        {
+          "gate": "G10",
+          "severity": "flag",
+          "pointer": "/itineraryStops/9/highlights/2",
+          "message": "키릴 비율 54% < 60% — 러시아어 미번역 의심"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/9/highlights/6",
+          "message": "길이비 1.57 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G10",
+          "severity": "flag",
+          "pointer": "/itineraryStops/9/convenience/restroom",
+          "message": "키릴 비율 59% < 60% — 러시아어 미번역 의심"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:ru:itineraryStops-8",
+      "status": "flagged",
+      "segments": 28,
+      "fails": 0,
+      "flags": 17,
+      "findings": [
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/9/description",
+          "message": "숫자가 철자 수사로 바뀐 것으로 보인다 — [17 20] (값이 맞는지 감수 필요)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/9/visitBasics/closed",
+          "message": "길이비 1.41 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G10",
+          "severity": "flag",
+          "pointer": "/itineraryStops/9/galleryItems/0/alt",
+          "message": "키릴 비율 51% < 60% — 러시아어 미번역 의심"
+        },
+        {
+          "gate": "G10",
+          "severity": "flag",
+          "pointer": "/itineraryStops/9/galleryItems/0/caption",
+          "message": "키릴 비율 22% < 60% — 러시아어 미번역 의심"
+        },
+        {
+          "gate": "G10",
+          "severity": "flag",
+          "pointer": "/itineraryStops/9/galleryItems/0/location",
+          "message": "키릴 비율 5% < 60% — 러시아어 미번역 의심"
+        },
+        {
+          "gate": "G10",
+          "severity": "flag",
+          "pointer": "/itineraryStops/9/galleryItems/1/alt",
+          "message": "키릴 비율 51% < 60% — 러시아어 미번역 의심"
+        },
+        {
+          "gate": "G10",
+          "severity": "flag",
+          "pointer": "/itineraryStops/9/galleryItems/1/caption",
+          "message": "키릴 비율 22% < 60% — 러시아어 미번역 의심"
+        },
+        {
+          "gate": "G10",
+          "severity": "flag",
+          "pointer": "/itineraryStops/9/galleryItems/1/location",
+          "message": "키릴 비율 5% < 60% — 러시아어 미번역 의심"
+        },
+        {
+          "gate": "G10",
+          "severity": "flag",
+          "pointer": "/itineraryStops/9/galleryItems/2/alt",
+          "message": "키릴 비율 51% < 60% — 러시아어 미번역 의심"
+        },
+        {
+          "gate": "G10",
+          "severity": "flag",
+          "pointer": "/itineraryStops/9/galleryItems/2/caption",
+          "message": "키릴 비율 22% < 60% — 러시아어 미번역 의심"
+        },
+        {
+          "gate": "G10",
+          "severity": "flag",
+          "pointer": "/itineraryStops/9/galleryItems/2/location",
+          "message": "키릴 비율 5% < 60% — 러시아어 미번역 의심"
+        },
+        {
+          "gate": "G10",
+          "severity": "flag",
+          "pointer": "/itineraryStops/9/galleryItems/3/alt",
+          "message": "키릴 비율 51% < 60% — 러시아어 미번역 의심"
+        },
+        {
+          "gate": "G10",
+          "severity": "flag",
+          "pointer": "/itineraryStops/9/galleryItems/3/caption",
+          "message": "키릴 비율 22% < 60% — 러시아어 미번역 의심"
+        },
+        {
+          "gate": "G10",
+          "severity": "flag",
+          "pointer": "/itineraryStops/9/galleryItems/3/location",
+          "message": "키릴 비율 5% < 60% — 러시아어 미번역 의심"
+        },
+        {
+          "gate": "G10",
+          "severity": "flag",
+          "pointer": "/itineraryStops/9/galleryItems/4/alt",
+          "message": "키릴 비율 51% < 60% — 러시아어 미번역 의심"
+        },
+        {
+          "gate": "G10",
+          "severity": "flag",
+          "pointer": "/itineraryStops/9/galleryItems/4/caption",
+          "message": "키릴 비율 22% < 60% — 러시아어 미번역 의심"
+        },
+        {
+          "gate": "G10",
+          "severity": "flag",
+          "pointer": "/itineraryStops/9/galleryItems/4/location",
+          "message": "키릴 비율 5% < 60% — 러시아어 미번역 의심"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:ru:practicalAccordionItems",
+      "status": "flagged",
+      "segments": 51,
+      "fails": 0,
+      "flags": 5,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/1/content/4",
+          "message": "길이비 1.31 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/2/content/0",
+          "message": "길이비 1.36 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/2/content/3",
+          "message": "길이비 1.47 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/2/preview",
+          "message": "길이비 1.36 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/5/content/5",
+          "message": "길이비 0.80 가 ru 허용범위 0.85–1.3 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:ru:routeFlowStops",
+      "status": "auto_pass",
+      "segments": 22,
+      "fails": 0,
+      "flags": 0,
+      "findings": []
+    },
+    {
+      "unitId": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:ru:staticQuestions",
+      "status": "flagged",
+      "segments": 32,
+      "fails": 0,
+      "flags": 5,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/staticQuestions/6/question",
+          "message": "길이비 1.49 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/staticQuestions/7/question",
+          "message": "길이비 1.38 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G10",
+          "severity": "flag",
+          "pointer": "/staticQuestions/8/question",
+          "message": "키릴 비율 60% < 60% — 러시아어 미번역 의심"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/staticQuestions/11/question",
+          "message": "길이비 0.78 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/staticQuestions/15/answer",
+          "message": "길이비 0.84 가 ru 허용범위 0.85–1.3 밖"
+        }
+      ]
+    },
     {
       "unitId": "tour_product_pages:busan-top-attractions-day-tour:ru:A1",
       "status": "flagged",
