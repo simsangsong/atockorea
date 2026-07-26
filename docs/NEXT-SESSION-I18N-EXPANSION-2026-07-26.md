@@ -157,6 +157,7 @@ i18n-work/out/tour_product_pages/de/tour_product_pages_<SLUG>_de_<CHUNK>.json
 | 5 | Q11 `pricingTiers.paxLabel` 번역 여부 | 가격 위젯 파손 위험 |
 | 6 | 플랜 §8 오픈 게이트 6개 | 특히 4·5번(이메일·결제 외부화)은 아직 미착수 |
 | 7 | **인용부호 관례가 유닛마다 갈린다** — `„…“` 와 `»…«` 가 섞여 발행됐다 | 스타일가이드가 둘 다 허용한다. 하나로 고정할지는 브랜드 결정. G12(교차 유닛 일관성) 미구현이라 검증기가 못 잡는다 |
+| 7b | **`liveStatusWidget` 값이 번역 큐에 있다** — `"haenyeo"` 같은 위젯 식별자 | 번역기는 그대로 두거나 빈 값 처리해 왔다(둘 다 안전). `isSkippedSubtreeKey`에 넣을지, 아니면 등급표에서 뺄지는 이 필드가 렌더에 어떻게 쓰이는지 아는 사람이 정한다 |
 | 8 | **같은 상품 안에서 용어가 갈린다** — `busan-cruise-shore`의 `headlineLine1`은 `Kreuzfahrt-Landgang`, 나머지 세그먼트는 `Kreuzfahrt-Landausflug` | 레이아웃 길이 때문에 의도적으로 짧게 쓴 것. 허용할지 통일할지는 감수자 판단 |
 | 9 | **이미 발행된 3슬러그에 Tailwind 클래스 세그먼트가 남아 있다** | 추출기는 고쳤지만(아래 §11) de는 재추출하지 않았다. 값이 원문 그대로거나 빈 값(영어 폴백)이라 렌더는 정상 — 손볼 필요는 없고, de를 재추출할 때 자연히 사라진다 |
 
@@ -181,6 +182,9 @@ i18n-work/out/tour_product_pages/de/tour_product_pages_<SLUG>_de_<CHUNK>.json
 | 5 | **Tailwind 클래스가 번역 큐에 들어왔다** — `iconBg: "bg-sky-50/80"` · `bgClass` | `iconBg`는 camelCase라 식별자 키 목록(`icon$`)에 안 걸리고, 값에 `/`가 있어 kebab enum 규칙도 비껴갔다. 번역되면 렌더가 깨진다 | `segments.ts` `isTranslatableLeaf` — 값 형태로 판별 |
 | 6 | **G3 "숫자 소실" 오탐** — `open 24h` → `rund um die Uhr geöffnet` | 관용구가 숫자를 통째로 흡수한다. `~1 hour` → `rund eine Stunde`(Duden: 12 이하는 철자)도 같은 계열 | `gates.ts` `checkNumbers(…, locale)` — 관용구표는 면제, 철자 수사표는 **flag 강등**(면제 아님: `eine`·`un`·`una`가 부정관사와 겹쳐 면제하면 진짜 변조를 덮는다) |
 | 7 | **G3 "숫자 소실" 오탐 2** — `April 6, 1951` → `06.04.1951` | 날짜 서식이 일(日)을 두 자리로 채워 `6`이 `06`이 된다. 앞자리 0은 값을 바꾸지 않는다 | `gates.ts` — 값 비교 시 앞자리 0 정규화. 표시용 멀티셋은 원문 그대로 |
+| 8 | **G3 오탐 3** — `4-story` → `vierstöckig`, `5th tallest` → `fünfthöchster` | 수사가 합성어·서수의 앞머리로 붙어 뒤쪽 낱말 경계에 걸렸다 | 수사표에서 뒤쪽 경계 제거(`1` 제외 — `ein-`은 `einige`·`einfach`의 앞머리이기도 하다). 서수 어간이 기수와 다른 it/ru/fr용 서수형도 함께 추가 |
+| 9 | **G3 오탐 4** — `810,000 … in 2024` → `2024 810.000` | 공백-천단위 규칙이 어순 재배치로 나란히 놓인 두 숫자를 `2024810`으로 붙였다 | 대상 텍스트를 공백-구분기호 O/X 두 가지로 토큰화해 **원문을 더 보존하는 쪽**을 쓴다. fr/ru의 `1 234`는 그대로 인정된다 |
+| 10 | **G3 오탐 5** — `24/7` → `rund um die Uhr` | 한 관용구가 두 숫자를 함께 삼킨다 | 관용구표를 `24`·`7` 둘 다에 건다 |
 
 수정 5는 **fr/it/ru 추출에만 반영된다** — de는 이미 추출이 끝나 재추출하지 않았다(§8 #9).
 

@@ -70,6 +70,18 @@ describe('G3 숫자 — 값 변조 검출, 서식 변경 허용 (H2)', () => {
     expect(checkNumbers('1,234 people', '1 234 personnes', '/p')).toEqual([]);
   });
 
+  // 2026-07-26 실측: 독일어 어순이 `810,000 … in 2024` 를 `2024 810.000` 으로 바꾸면
+  // 공백-천단위 규칙이 `2024 810` 을 `2024810` 으로 붙여 두 값이 한꺼번에 사라졌다.
+  it('어순 재배치로 나란히 놓인 두 숫자를 붙이지 않는다', () => {
+    expect(
+      checkNumbers('810,000 guests on 414 ships in 2024', '2024 810.000 Gäste mit 414 Schiffen', '/p', 'de'),
+    ).toEqual([]);
+  });
+
+  it('그래도 fr/ru 공백 천단위는 계속 인정한다', () => {
+    expect(checkNumbers('1,234 people', '1 234 personnes', '/p', 'fr')).toEqual([]);
+  });
+
   it('값이 바뀌면 fail — 40분 → 30분', () => {
     const f = checkNumbers('about 40 minutes', 'etwa 30 Minuten', '/p');
     expect(f.some((x) => x.severity === 'fail' && x.message.includes('소실'))).toBe(true);
@@ -90,6 +102,10 @@ describe('G3 숫자 — 값 변조 검출, 서식 변경 허용 (H2)', () => {
       checkNumbers('Pedestrian street open 24h', 'Fußgängerstraße rund um die Uhr geöffnet', '/p', 'de'),
     ).toEqual([]);
     expect(checkNumbers('open 24h', 'открыто круглосуточно', '/p', 'ru')).toEqual([]);
+    // `24/7` 은 한 관용구가 두 숫자를 함께 삼킨다.
+    expect(
+      checkNumbers('a 24/7 contact number', 'eine rund um die Uhr erreichbare Kontaktnummer', '/p', 'de'),
+    ).toEqual([]);
   });
 
   it('철자 수사는 fail이 아니라 flag — 감수는 받되 발행은 막지 않는다', () => {

@@ -66,9 +66,13 @@ const DIGIT_SEPARATORS = /[.,    ]/;
  * `12102009` 하나로 합쳐져 원문 `12 Oct 2009`([12, 2009])와 어긋난다(2026-07-26 실측 오탐).
  * 3자리 규칙은 천단위만 걸러내고 날짜는 `12` `10` `2009`로 남긴다.
  */
-export function numberMultiset(text: string): string[] {
+export function numberMultiset(
+  text: string,
+  options: { spaceAsGroupSeparator?: boolean } = {},
+): string[] {
+  const separators = options.spaceAsGroupSeparator === false ? '[.,]' : DIGIT_SEPARATORS.source;
   const collapsed = text.replace(
-    new RegExp(`(\\d)${DIGIT_SEPARATORS.source}(\\d{3})(?!\\d)`, 'g'),
+    new RegExp(`(\\d)${separators}(\\d{3})(?!\\d)`, 'g'),
     '$1$2',
   );
   return (collapsed.match(/\d+/g) ?? []).slice().sort();
@@ -125,12 +129,20 @@ export function checkGlossaryTokens(source: string, target: string, pointer: str
  *
  * 2026-07-26 실측 오탐: `open 24h` · `24-hour pedestrian street` 를 독일어로 옮기면
  * `rund um die Uhr geöffnet` 가 되어 `24`가 사라진다. 사실은 그대로다.
+ * `24/7` 은 같은 관용구가 **두 숫자를 함께** 삼키므로 `7` 도 같은 표를 쓴다.
  */
+const ROUND_THE_CLOCK: Record<TargetLocale, RegExp[]> = {
+  de: [/rund um die uhr/i, /durchgehend geöffnet/i, /ganztägig geöffnet/i],
+  fr: [/en continu/i, /jour et nuit/i, /jour comme nuit/i],
+  it: [/giorno e notte/i, /sempre apert[oa]/i],
+  ru: [/круглосуточн/i],
+};
+
 const NUMERAL_IDIOMS: Record<TargetLocale, Record<string, RegExp[]>> = {
-  de: { '24': [/rund um die uhr/i, /durchgehend geöffnet/i, /ganztägig geöffnet/i] },
-  fr: { '24': [/en continu/i, /jour et nuit/i, /jour comme nuit/i] },
-  it: { '24': [/giorno e notte/i, /sempre apert[oa]/i] },
-  ru: { '24': [/круглосуточн/i] },
+  de: { '24': ROUND_THE_CLOCK.de, '7': ROUND_THE_CLOCK.de },
+  fr: { '24': ROUND_THE_CLOCK.fr, '7': ROUND_THE_CLOCK.fr },
+  it: { '24': ROUND_THE_CLOCK.it, '7': ROUND_THE_CLOCK.it },
+  ru: { '24': ROUND_THE_CLOCK.ru, '7': ROUND_THE_CLOCK.ru },
 };
 
 /**
@@ -228,7 +240,17 @@ export function checkNumbers(
 
   // 값 비교는 앞자리 0을 무시한다. 표시용 멀티셋(a·b)은 원문 그대로 둔다.
   const aNorm = a.map(stripLeadingZeros);
-  const bNorm = b.map(stripLeadingZeros);
+
+  // 공백은 두 가지로 읽힌다: fr/ru 천단위 구분기호(`1 234`)이거나, 어순이 바뀌어
+  // 나란히 놓인 두 별개 숫자의 어절 간격이거나.
+  //   `810,000 … arrived … in 2024` → de `2024 810.000`
+  // 구분기호로 읽으면 `2024 810` 이 `2024810` 으로 붙어 두 값이 동시에 사라진다
+  // (2026-07-26 실측). 원문을 더 많이 보존하는 쪽으로 읽는다.
+  const bNorm = [b, numberMultiset(target, { spaceAsGroupSeparator: false })]
+    .map((tokens) => tokens.map(stripLeadingZeros))
+    .reduce((best, cur) =>
+      missingFrom(aNorm, cur).length < missingFrom(aNorm, best).length ? cur : best,
+    );
 
   const findings: Finding[] = [];
   const added = missingFrom(bNorm, aNorm);
