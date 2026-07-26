@@ -13,6 +13,7 @@
 
 import { useState } from 'react';
 import { OPS_PHONE } from '@/components/tour-mode/cockpit/Cockpit';
+import SkinPicker from '@/components/tour-mode/SkinPicker';
 import { useTourRoomSettings, TEXT_SCALE_STEPS, type TextScaleStep } from '@/hooks/useTourRoomSettings';
 import {
   IconCollapse,
@@ -136,6 +137,11 @@ export default function StaffSettings() {
         <p className="tr-meta mt-2 leading-snug text-[var(--tr-ink-3)]">
           자동은 기기 설정을 따라요. 야간 운행 중 콕핏은 자동에서도 다크로 유지돼요.
         </p>
+        {/* C-D6 — 배경 테마: 콘솔·대화방·손님방 셸에 즉시 적용(이 기기 저장). */}
+        <p className="tr-label mt-4 font-semibold text-[var(--tr-ink-2)]">배경 테마</p>
+        <div className="mt-2">
+          <SkinPicker locale="ko" />
+        </div>
       </section>
 
       <section className="tr-card border border-[var(--tr-hairline)] p-4">

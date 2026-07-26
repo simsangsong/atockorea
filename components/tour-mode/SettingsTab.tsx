@@ -19,6 +19,7 @@ import {
   type TextScaleStep,
 } from '@/hooks/useTourRoomSettings';
 import AppManual from '@/components/tour-mode/AppManual';
+import SkinPicker from '@/components/tour-mode/SkinPicker';
 import CompanionInviteCard from '@/components/tour-mode/CompanionInviteCard';
 import type { ManualKind } from '@/lib/tour-room/appManual';
 import {
@@ -46,6 +47,7 @@ interface SettingsCopy {
   chatLanguageHint: string;
   chatAuto: string;
   theme: string;
+  skin: string;
   themeLight: string;
   themeDark: string;
   themeSystem: string;
@@ -67,6 +69,7 @@ const COPY: Record<RoomLocale, SettingsCopy> = {
     chatLanguageHint: 'Guide and driver messages are shown in this language.',
     chatAuto: 'Auto (match my typing)',
     theme: 'Appearance',
+    skin: 'Background theme',
     themeLight: 'Light',
     themeDark: 'Dark',
     themeSystem: 'Auto',
@@ -86,6 +89,7 @@ const COPY: Record<RoomLocale, SettingsCopy> = {
     chatLanguageHint: '가이드·기사 메시지를 이 언어로 보여줍니다.',
     chatAuto: '자동 (내가 쓰는 언어)',
     theme: '화면 모드',
+    skin: '배경 테마',
     themeLight: '라이트',
     themeDark: '다크',
     themeSystem: '자동',
@@ -105,6 +109,7 @@ const COPY: Record<RoomLocale, SettingsCopy> = {
     chatLanguageHint: 'ガイド・ドライバーのメッセージをこの言語で表示します。',
     chatAuto: '自動（入力に合わせる）',
     theme: '画面モード',
+    skin: '背景テーマ',
     themeLight: 'ライト',
     themeDark: 'ダーク',
     themeSystem: '自動',
@@ -124,6 +129,7 @@ const COPY: Record<RoomLocale, SettingsCopy> = {
     chatLanguageHint: 'Los mensajes del guía y del conductor se muestran en este idioma.',
     chatAuto: 'Automático (según lo que escribo)',
     theme: 'Apariencia',
+    skin: 'Tema de fondo',
     themeLight: 'Claro',
     themeDark: 'Oscuro',
     themeSystem: 'Auto',
@@ -143,6 +149,7 @@ const COPY: Record<RoomLocale, SettingsCopy> = {
     chatLanguageHint: '导游和司机的消息将以此语言显示。',
     chatAuto: '自动（按我的输入）',
     theme: '显示模式',
+    skin: '背景主题',
     themeLight: '浅色',
     themeDark: '深色',
     themeSystem: '自动',
@@ -281,6 +288,11 @@ export default function SettingsTab({
               { value: 'system', label: copy.themeSystem },
             ]}
           />
+        </div>
+        {/* C-D6 — background skins (KakaoTalk theme grammar, colors only). */}
+        <p className="tr-label mt-4 font-semibold text-[var(--tr-ink-2)]">{copy.skin}</p>
+        <div className="mt-2">
+          <SkinPicker locale={locale} />
         </div>
       </section>
       {/* One "Language" card with two clearly-labelled sub-controls so the app

@@ -52,7 +52,7 @@
   /* Text (ink-3 is meta-only — timestamps, counters; never body copy) */
   --tr-ink: #1a1d21;
   --tr-ink-2: #565d66;
-  --tr-ink-3: #6e767f;
+  --tr-ink-3: #626a73;
 
   /* Role colors: pine for primary actions (pairs with --tr-bubble-me-ink),
    * neutral ink for emphasis text, pine-washed soft for selected states. */
@@ -134,6 +134,267 @@
   --tr-chip-grad: linear-gradient(135deg, #434b4e 0%, #202526 100%);
   --tr-chip-grad-accent: linear-gradient(135deg, #6fae97 0%, #3e6b5a 100%);
   --tr-chip-grad-danger: linear-gradient(135deg, #ef6b6b 0%, #b91c1c 100%);
+}
+
+/* ---- Background skins (C-D4, chat-ui-theme plan 2026-07-27) -----------
+ *
+ * Six skins picked in Settings (device-scoped, `data-tr-skin` on .tr-root).
+ * Each is a FULL palette — light + dark blocks — referencing the KakaoTalk
+ * themes the owner supplied (겨울이야기 / 비밀의숲 / 숨바꼭질 / 고대비) and the
+ * classic sky wallpaper, colors only (no characters / illustrations).
+ *
+ * Invariants every skin keeps:
+ *  - --tr-danger / --tr-danger-soft are NEVER overridden (SOS red, §H).
+ *  - --tr-accent pairs with --tr-bubble-me-ink (the CTA recipe used on 60+
+ *    call sites), so both always move together at ≥4.5:1.
+ *  - The attribute selector (0,2,0) outranks .tr-plan-root (0,1,0), so the
+ *    staff shell reskins too; the plan editor (unstamped) is untouched.
+ *  - 'classic' has no block on purpose — it IS the base palette. */
+
+/* ── sky 하늘 — KakaoTalk classic sky wallpaper; deep pine bubbles ride it. */
+.tr-root[data-tr-skin='sky'] {
+  --tr-canvas: #b9cddd;
+  --tr-surface: #fdfefe;
+  --tr-surface-2: #e6edf3;
+  --tr-hairline: rgba(28, 42, 54, 0.12);
+  --tr-bubble-in: #fdfefe;
+  --tr-bubble-in-ink: #17202a;
+  --tr-bubble-system: rgba(20, 35, 48, 0.1);
+  --tr-bubble-system-ink: #33455a;
+  --tr-ink: #17202a;
+  --tr-ink-2: #4c5a66;
+  --tr-ink-3: #47555f;
+  --tr-accent-soft: #dfeae4;
+  --tr-safe: #356352;
+  --tr-safe-soft: rgba(46, 94, 78, 0.16);
+  --tr-home-canvas: linear-gradient(180deg, #c6d8e5 0%, #b3c8da 100%);
+  --tr-home-tile: #fdfefe;
+}
+.dark .tr-root[data-tr-skin='sky'],
+.tr-root.dark[data-tr-skin='sky'] {
+  --tr-canvas: #10161c;
+  --tr-surface: #171e25;
+  --tr-surface-2: #1f2830;
+  --tr-hairline: rgba(230, 238, 244, 0.1);
+  --tr-bubble-in: #1f2830;
+  --tr-bubble-in-ink: #e6ebf0;
+  --tr-bubble-system: rgba(230, 238, 244, 0.08);
+  --tr-bubble-system-ink: #a7b2bc;
+  --tr-ink: #e6ebf0;
+  --tr-ink-2: #a7b2bc;
+  --tr-ink-3: #7e8a95;
+  --tr-home-canvas: linear-gradient(180deg, #131a21 0%, #0e1419 100%);
+  --tr-home-tile: #171e25;
+}
+
+/* ── winter 겨울 — 겨울이야기: powder-blue snow light, steel-blue signature. */
+.tr-root[data-tr-skin='winter'] {
+  --tr-canvas: #dde8f2;
+  --tr-surface: #ffffff;
+  --tr-surface-2: #e9eff6;
+  --tr-hairline: rgba(30, 45, 60, 0.1);
+  --tr-bubble-me: #46708f;
+  --tr-bubble-me-ink: #f2f7fb;
+  --tr-bubble-in: #ffffff;
+  --tr-bubble-in-ink: #1a2028;
+  --tr-bubble-system: rgba(23, 34, 45, 0.07);
+  --tr-bubble-system-ink: #535f6d;
+  --tr-ink: #1a2028;
+  --tr-ink-2: #525e6b;
+  --tr-ink-3: #5a6875;
+  --tr-accent: #46708f;
+  --tr-accent-deep: #111820;
+  --tr-accent-soft: #dfe9f2;
+  --tr-safe: #40688a;
+  --tr-safe-soft: rgba(70, 112, 143, 0.16);
+  --tr-home-canvas: linear-gradient(180deg, #e8eff8 0%, #d8e4f0 100%);
+  --tr-home-tile: #ffffff;
+  --tr-chip-grad-accent: linear-gradient(140deg, #5d87a6 0%, #3c6485 100%);
+}
+.dark .tr-root[data-tr-skin='winter'],
+.tr-root.dark[data-tr-skin='winter'] {
+  --tr-canvas: #11161d;
+  --tr-surface: #181e27;
+  --tr-surface-2: #202834;
+  --tr-hairline: rgba(228, 234, 241, 0.1);
+  --tr-bubble-me: #86aecb;
+  --tr-bubble-me-ink: #0e1720;
+  --tr-bubble-in: #202834;
+  --tr-bubble-in-ink: #e4eaf1;
+  --tr-bubble-system: rgba(228, 234, 241, 0.08);
+  --tr-bubble-system-ink: #a5b1bd;
+  --tr-ink: #e4eaf1;
+  --tr-ink-2: #a5b1bd;
+  --tr-ink-3: #7d8996;
+  --tr-accent: #86aecb;
+  --tr-accent-deep: #ffffff;
+  --tr-accent-soft: rgba(134, 174, 203, 0.16);
+  --tr-safe: #6f9cbd;
+  --tr-safe-soft: rgba(134, 174, 203, 0.2);
+  --tr-home-canvas: linear-gradient(180deg, #131922 0%, #0f141b 100%);
+  --tr-home-tile: #181e27;
+  --tr-chip-grad-accent: linear-gradient(135deg, #7aa6c6 0%, #4a7396 100%);
+}
+
+/* ── forest 숲 — 비밀의숲: cream paper + light-olive canvas, forest green. */
+.tr-root[data-tr-skin='forest'] {
+  --tr-canvas: #e4e8cd;
+  --tr-surface: #fbfaf2;
+  --tr-surface-2: #ecedd9;
+  --tr-hairline: rgba(44, 48, 26, 0.1);
+  --tr-bubble-me: #52702c;
+  --tr-bubble-me-ink: #f4f8ea;
+  --tr-bubble-in: #fbfaf2;
+  --tr-bubble-in-ink: #1c2013;
+  --tr-bubble-system: rgba(40, 46, 20, 0.07);
+  --tr-bubble-system-ink: #4e563d;
+  --tr-ink: #1c2013;
+  --tr-ink-2: #565e48;
+  --tr-ink-3: #5d654e;
+  --tr-accent: #52702c;
+  --tr-accent-deep: #171a0e;
+  --tr-accent-soft: #e9eed6;
+  --tr-safe: #4d6b2a;
+  --tr-safe-soft: rgba(82, 112, 44, 0.16);
+  --tr-home-canvas: linear-gradient(180deg, #edf0da 0%, #e0e5c6 100%);
+  --tr-home-tile: #fbfaf2;
+  --tr-chip-grad-accent: linear-gradient(140deg, #74904a 0%, #4c6827 100%);
+}
+.dark .tr-root[data-tr-skin='forest'],
+.tr-root.dark[data-tr-skin='forest'] {
+  --tr-canvas: #131711;
+  --tr-surface: #1a1f16;
+  --tr-surface-2: #232a1d;
+  --tr-hairline: rgba(231, 235, 221, 0.1);
+  --tr-bubble-me: #a4bd7e;
+  --tr-bubble-me-ink: #131a09;
+  --tr-bubble-in: #232a1d;
+  --tr-bubble-in-ink: #e7ebdd;
+  --tr-bubble-system: rgba(231, 235, 221, 0.08);
+  --tr-bubble-system-ink: #a9b29c;
+  --tr-ink: #e7ebdd;
+  --tr-ink-2: #a9b29c;
+  --tr-ink-3: #828b74;
+  --tr-accent: #a4bd7e;
+  --tr-accent-deep: #ffffff;
+  --tr-accent-soft: rgba(164, 189, 126, 0.16);
+  --tr-safe: #87a25f;
+  --tr-safe-soft: rgba(164, 189, 126, 0.2);
+  --tr-home-canvas: linear-gradient(180deg, #161b12 0%, #111510 100%);
+  --tr-home-tile: #1a1f16;
+  --tr-chip-grad-accent: linear-gradient(135deg, #96b26c 0%, #5c7838 100%);
+}
+
+/* ── meadow 들녘 — 숨바꼭질: pastel sky fading into spring grass, deep teal. */
+.tr-root[data-tr-skin='meadow'] {
+  --tr-canvas: #d6e6e2;
+  --tr-surface: #fdfefd;
+  --tr-surface-2: #e7efe9;
+  --tr-hairline: rgba(24, 38, 30, 0.1);
+  --tr-bubble-me: #37705f;
+  --tr-bubble-me-ink: #f0f7f4;
+  --tr-bubble-in: #fdfefd;
+  --tr-bubble-in-ink: #182019;
+  --tr-bubble-system: rgba(24, 38, 30, 0.07);
+  --tr-bubble-system-ink: #47544c;
+  --tr-ink: #182019;
+  --tr-ink-2: #515d55;
+  --tr-ink-3: #57645a;
+  --tr-accent: #37705f;
+  --tr-accent-deep: #101815;
+  --tr-accent-soft: #dcebe4;
+  --tr-safe: #326557;
+  --tr-safe-soft: rgba(55, 112, 95, 0.16);
+  /* The hide-and-seek horizon: sky above, meadow below. */
+  --tr-home-canvas: linear-gradient(180deg, #dcecf2 0%, #d3e6d8 100%);
+  --tr-home-tile: #fdfefd;
+  --tr-chip-grad-accent: linear-gradient(140deg, #4f907c 0%, #2d6353 100%);
+}
+.dark .tr-root[data-tr-skin='meadow'],
+.tr-root.dark[data-tr-skin='meadow'] {
+  --tr-canvas: #101614;
+  --tr-surface: #161d1a;
+  --tr-surface-2: #1e2722;
+  --tr-hairline: rgba(227, 234, 230, 0.1);
+  --tr-bubble-me: #8ec0ae;
+  --tr-bubble-me-ink: #0e1b16;
+  --tr-bubble-in: #1e2722;
+  --tr-bubble-in-ink: #e3eae6;
+  --tr-bubble-system: rgba(227, 234, 230, 0.08);
+  --tr-bubble-system-ink: #a3aea8;
+  --tr-ink: #e3eae6;
+  --tr-ink-2: #a3aea8;
+  --tr-ink-3: #7c8781;
+  --tr-accent: #8ec0ae;
+  --tr-accent-deep: #ffffff;
+  --tr-accent-soft: rgba(142, 192, 174, 0.16);
+  --tr-safe: #66a08c;
+  --tr-safe-soft: rgba(142, 192, 174, 0.2);
+  --tr-home-canvas: linear-gradient(180deg, #121815 0%, #0e1412 100%);
+  --tr-home-tile: #161d1a;
+  --tr-chip-grad-accent: linear-gradient(135deg, #7fb3a0 0%, #43705f 100%);
+}
+
+/* ── contrast 고대비 — the accessibility skin (저시력, KakaoTalk 고대비).
+ * Light = paper-white with hard black; dark = true black with hard white.
+ * Soft washes are replaced by opaque high-contrast fills, and the chrome
+ * line TURNS ON — separation must never rely on subtle tints here. */
+.tr-root[data-tr-skin='contrast'] {
+  --tr-canvas: #ffffff;
+  --tr-chrome-line: rgba(0, 0, 0, 0.4);
+  --tr-surface: #ffffff;
+  --tr-surface-2: #ededed;
+  --tr-hairline: rgba(0, 0, 0, 0.35);
+  --tr-bubble-me: #111111;
+  --tr-bubble-me-ink: #ffffff;
+  --tr-bubble-in: #efefef;
+  --tr-bubble-in-ink: #000000;
+  --tr-bubble-system: rgba(0, 0, 0, 0.1);
+  --tr-bubble-system-ink: #1a1a1a;
+  --tr-ink: #000000;
+  --tr-ink-2: #1f1f1f;
+  --tr-ink-3: #3d3d3d;
+  --tr-accent: #111111;
+  --tr-accent-deep: #000000;
+  --tr-accent-soft: #e6e6e6;
+  --tr-safe: #111111;
+  --tr-safe-soft: #e2e2e2;
+  --tr-home-canvas: #ffffff;
+  --tr-home-tile: #ffffff;
+  --tr-home-card-line: rgba(0, 0, 0, 0.4);
+  --tr-tile-shadow: none;
+  --tr-chip-ink: #ffffff;
+  --tr-chip-grad: linear-gradient(140deg, #2e2e2e 0%, #000000 100%);
+  --tr-chip-grad-accent: linear-gradient(140deg, #2e2e2e 0%, #000000 100%);
+}
+.dark .tr-root[data-tr-skin='contrast'],
+.tr-root.dark[data-tr-skin='contrast'] {
+  --tr-canvas: #000000;
+  --tr-chrome-line: rgba(255, 255, 255, 0.45);
+  --tr-surface: #0d0d0d;
+  --tr-surface-2: #1c1c1c;
+  --tr-hairline: rgba(255, 255, 255, 0.4);
+  --tr-bubble-me: #ffffff;
+  --tr-bubble-me-ink: #000000;
+  --tr-bubble-in: #1f1f1f;
+  --tr-bubble-in-ink: #ffffff;
+  --tr-bubble-system: rgba(255, 255, 255, 0.16);
+  --tr-bubble-system-ink: #ffffff;
+  --tr-ink: #ffffff;
+  --tr-ink-2: #ececec;
+  --tr-ink-3: #cfcfcf;
+  --tr-accent: #ffffff;
+  --tr-accent-deep: #ffffff;
+  --tr-accent-soft: #262626;
+  --tr-safe: #ffffff;
+  --tr-safe-soft: #2e2e2e;
+  --tr-home-canvas: #000000;
+  --tr-home-tile: #0d0d0d;
+  --tr-home-card-line: rgba(255, 255, 255, 0.5);
+  --tr-tile-shadow: none;
+  --tr-chip-ink: #000000;
+  --tr-chip-grad: linear-gradient(140deg, #ffffff 0%, #d6d6d6 100%);
+  --tr-chip-grad-accent: linear-gradient(140deg, #ffffff 0%, #d6d6d6 100%);
 }
 
 /* ---- Typography scale (U-D6) ----------------------------------------
