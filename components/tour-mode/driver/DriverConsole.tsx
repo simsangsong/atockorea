@@ -256,7 +256,8 @@ export default function DriverConsole() {
 // ───────────────────────────────────────────────────────────────────────────
 
 /** B3 — the day's pre-departure habit list. Device-local (localStorage per
- *  tour date), never a gate: an experienced driver can ignore it entirely. */
+ *  tour date), never a gate: an experienced driver can ignore it entirely.
+ *  Exported for the staff shell's 운행 tab — guides drive too (W2). */
 const PRE_DEPARTURE_ITEMS = [
   '차량 상태·연료 확인',
   '예약·인원 확인',
@@ -265,7 +266,7 @@ const PRE_DEPARTURE_ITEMS = [
   '내비 목적지 설정',
 ] as const;
 
-function PreDepartureChecklist({ tourDate }: { tourDate: string }) {
+export function PreDepartureChecklist({ tourDate }: { tourDate: string }) {
   const storageKey = `tr_predep_${tourDate}`;
   const [checked, setChecked] = useState<boolean[]>(() => {
     try {

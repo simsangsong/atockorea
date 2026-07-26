@@ -20,7 +20,7 @@
  */
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { IconCollapse, IconInbox, IconRefresh, IconSubmit, IconStop } from '@/components/tour-mode/icons';
+import { IconCollapse, IconInbox, IconSubmit, IconStop } from '@/components/tour-mode/icons';
 import {
   IconArrived,
   IconConcierge,
@@ -30,10 +30,8 @@ import {
   IconLedger,
   IconMeeting,
   IconMic,
-  IconPresence,
   IconScrollDown,
   IconTabChat,
-  IconTabHome,
   IconTileSchedule,
   IconVehicle,
   TR_ICON,
@@ -44,6 +42,9 @@ import GuideSeatDashboard from '@/components/tour-mode/guide/GuideSeatDashboard'
 import OperatorAssist from '@/components/tour-mode/guide/OperatorAssist';
 import MicPrime from '@/components/tour-mode/MicPrime';
 import Sheet from '@/components/tour-mode/Sheet';
+import StaffShell from '@/components/tour-mode/staff/StaffShell';
+import StaffSettings from '@/components/tour-mode/staff/StaffSettings';
+import { PreDepartureChecklist } from '@/components/tour-mode/driver/DriverConsole';
 import Cockpit, { type CockpitLifecycle, type CockpitRoom } from '@/components/tour-mode/cockpit/Cockpit';
 import { kstToday } from '@/lib/tour-room/time';
 import { OPERATOR_PRESETS } from '@/lib/tour-room/operatorPresets';
@@ -484,90 +485,28 @@ export default function GuideConsole() {
   const roomHref = (bookingId: string) =>
     `/tour-mode/room/${bookingId}?rt=${encodeURIComponent(tokenRef.current ?? '')}`;
 
-  return (
-    <div
-      className="tr-root tr-plan-root mx-auto min-h-dvh w-full max-w-xl bg-[var(--tr-canvas)] px-4 pb-10 pt-4"
-      data-testid="guide-console"
-    >
-      {/* hero */}
-      <header className="tr-plan-hero">
-        <div className="flex items-start justify-between gap-3">
-          <div className="min-w-0">
-            {/* 아래 제목에는 truncate 가 있는데 이 눈썹 라벨에는 없었다.
-                한국어는 띄어쓰기가 없어 기본값만으로 글자 단위로 쪼개지므로,
-                옆 형제가 폭을 가져가면 "가이/드 /콘솔"이 된다 (CLAUDE.md P1-5). */}
-            <p className="text-cjk-safe tr-meta font-bold uppercase tracking-wide text-[var(--tr-plan-hero-muted)]">
-              가이드 콘솔
-            </p>
-            <h1 className="tr-display mt-1 truncate leading-tight text-[var(--tr-plan-hero-ink)]">
-              {overview.tour.title}
-            </h1>
-          </div>
-          <div className="flex shrink-0 items-center gap-1.5">
-            {/* P1-2 — the guide console had no way back to the app home at all. */}
-            <a
-              href="/tour-mode"
-              aria-label="홈으로"
-              data-testid="guide-console-home"
-              className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-[var(--tr-plan-hero-ink)] active:scale-95"
-            >
-              <IconTabHome size={TR_ICON.chip} aria-hidden />
-            </a>
-            <button
-              type="button"
-              onClick={() => {
-                setRefreshing(true);
-                void load().finally(() => setRefreshing(false));
-              }}
-              aria-label="새로고침"
-              className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-[var(--tr-plan-hero-ink)] active:scale-95"
-            >
-              <IconRefresh size={TR_ICON.chip} className={refreshing ? 'animate-spin' : ''} aria-hidden />
-            </button>
-            <span
-              className={`tr-meta rounded-full px-2.5 py-1 font-bold ${
-                overview.lifecycle === 'live'
-                  ? 'bg-white/20 text-[var(--tr-plan-hero-ink)]'
-                  : 'bg-white/10 text-[var(--tr-plan-hero-muted)]'
-              }`}
-            >
-              {overview.lifecycle === 'live' ? 'LIVE' : overview.lifecycle === 'lobby' ? '대기' : '종료'}
-            </span>
-          </div>
-        </div>
-        {/* W3.2 — base stats as one hairline-divided strip (denser, one unit);
-            reply/review stay separate attention badges. */}
-        <div className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1.5">
-          <div className="tr-meta inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 font-semibold text-[var(--tr-plan-hero-ink)]">
-            <span className="inline-flex items-center gap-1 tabular-nums">
-              <IconTileSchedule size={TR_ICON.meta} aria-hidden />
-              {overview.tour_date}
-            </span>
-            <span className="h-3 w-px bg-white/20" aria-hidden />
-            <span className="inline-flex items-center gap-1 tabular-nums">
-              <IconPresence size={TR_ICON.meta} aria-hidden />
-              예약 {overview.rooms.length}
-            </span>
-            <span className="h-3 w-px bg-white/20" aria-hidden />
-            <span className="inline-flex items-center gap-1 tabular-nums">
-              <IconDone size={TR_ICON.meta} aria-hidden />
-              탑승 {onboardCount}/{overview.rooms.length}
-            </span>
-          </div>
+  // ── W2 (U4-D1/D2): the day is now FOUR TABS in the staff shell, not one
+  // tall scroll. Each tab's JSX is built here so all state stays local.
+  const chatTab = (
+    <div data-testid="guide-console">
+      {/* attention strip — reply/review counts (date · counts live in the
+          shell's subtitle line now) */}
+      {(replyCount > 0 || reviewCount > 0) && (
+        <div className="flex flex-wrap items-center gap-1.5">
           {replyCount > 0 && (
-            <span className="tr-meta text-cjk-safe inline-flex items-center gap-1 rounded-full bg-white/20 px-2.5 py-1 font-bold tabular-nums text-[var(--tr-plan-hero-ink)]">
+            <span className="tr-meta text-cjk-safe inline-flex items-center gap-1 rounded-full bg-[var(--tr-danger-soft)] px-2.5 py-1 font-bold tabular-nums text-[var(--tr-danger)]">
               <IconTabChat size={TR_ICON.meta} aria-hidden />
               답장 {replyCount}
             </span>
           )}
           {reviewCount > 0 && (
-            <span className="tr-meta text-cjk-safe inline-flex items-center gap-1 rounded-full bg-white/20 px-2.5 py-1 font-bold tabular-nums text-[var(--tr-plan-hero-ink)]">
+            <span className="tr-meta text-cjk-safe inline-flex items-center gap-1 rounded-full bg-[var(--tr-accent-soft)] px-2.5 py-1 font-bold tabular-nums text-[var(--tr-accent)]">
               <IconTileSchedule size={TR_ICON.meta} aria-hidden />
               검토 {reviewCount}
             </span>
           )}
         </div>
-      </header>
+      )}
 
       {error && (
         <p className="tr-label mt-3 rounded-xl border border-[var(--tr-danger-soft)] bg-[var(--tr-surface)] px-3 py-2 font-medium text-[var(--tr-danger)]">
@@ -583,18 +522,8 @@ export default function GuideConsole() {
         </p>
       )}
 
-      {/* 명단·좌석·체크인 대시보드 (§5.4b) + 시작 게이트 (§5.4 C-16) —
-          단일 소스 ops_seat_assignments, tour 스코프. 배정 booking 하나로 키잉. */}
-      {tokenRef.current && overview.rooms[0]?.booking_id && (
-        <GuideSeatDashboard
-          token={tokenRef.current}
-          bookingId={overview.rooms[0].booking_id}
-          tourTitle={overview.tour.title}
-        />
-      )}
-
       {/* 손님 (rooms) — the guide's core surface */}
-      <section className="mt-5">
+      <section className="mt-3">
         <h2 className="tr-label px-1 font-bold uppercase tracking-wide text-[var(--tr-ink-3)]">
           손님 · {overview.rooms.length}
         </h2>
@@ -1094,8 +1023,68 @@ export default function GuideConsole() {
       <p className="tr-meta mt-6 text-center text-[var(--tr-ink-3)]">
         {kstToday() === overview.tour_date ? '오늘 투어' : overview.tour_date} · 15초마다 자동 새로고침
       </p>
+    </div>
+  );
 
-      {/* P4 — plan / ledger open in a sheet instead of expanding inline. */}
+  // 좌석·명단 tab — 단일 소스 ops_seat_assignments, tour 스코프 (§5.4b).
+  const seatsTab =
+    tokenRef.current && overview.rooms[0]?.booking_id ? (
+      <GuideSeatDashboard
+        token={tokenRef.current}
+        bookingId={overview.rooms[0].booking_id}
+        tourTitle={overview.tour.title}
+      />
+    ) : (
+      <p className="tr-card-text pt-10 text-center text-[var(--tr-ink-3)]">오늘은 배정된 예약이 없어요.</p>
+    );
+
+  // 운행 tab — per-room drive entry + the pre-departure habit list.
+  const opsTab = (
+    <div className="flex flex-col gap-3" data-testid="guide-ops-tab">
+      {overview.rooms.length === 0 && (
+        <p className="tr-card-text pt-10 text-center text-[var(--tr-ink-3)]">오늘은 배정된 예약이 없어요.</p>
+      )}
+      {rooms.map((room) => (
+        <div
+          key={room.booking_id}
+          className="tr-card flex items-center gap-3 border border-[var(--tr-hairline)] px-3.5 py-3"
+        >
+          <span
+            className="tr-body flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl font-bold text-white"
+            style={{ backgroundColor: `hsl(${roomHue(room.booking_id)} 55% 52%)` }}
+            aria-hidden
+          >
+            {(room.contact_name ?? 'G').trim()[0]?.toUpperCase()}
+          </span>
+          <div className="min-w-0 flex-1">
+            <p className="tr-card-text font-bold text-[var(--tr-ink)]">{room.contact_name ?? '게스트'}</p>
+            <p className="tr-meta text-[var(--tr-ink-3)]">
+              {room.number_of_guests ?? 1}명{room.pickup?.name ? ` · ${room.pickup.name}` : ''}
+            </p>
+          </div>
+          <button
+            type="button"
+            onClick={() => void enterDrive(room.booking_id)}
+            disabled={driveBusy === room.booking_id}
+            className="tr-label text-cjk-safe flex min-h-[44px] shrink-0 items-center gap-1.5 rounded-xl bg-[var(--tr-ink)] px-4 font-bold text-[var(--tr-canvas)] active:scale-95 disabled:opacity-50"
+            data-testid="ops-drive"
+          >
+            <IconVehicle size={TR_ICON.chip} aria-hidden />
+            운전 모드
+          </button>
+        </div>
+      ))}
+      <div className="flex justify-center">
+        <PreDepartureChecklist tourDate={overview.tour_date} />
+      </div>
+    </div>
+  );
+
+  // P4 — plan / ledger open in a sheet. Rendered through the shell's overlay
+  // slot so they stay INSIDE the themed root (a sheet outside .tr-root goes
+  // transparent — 2026-07-26 field incident).
+  const overlay = (
+    <>
       {openPlanBookingId && tokenRef.current && (
         <Sheet open onClose={() => setOpenPlanBookingId(null)} closeLabel="닫기" title="일정 검토·확정">
           <GuidePlanPanel
@@ -1115,6 +1104,25 @@ export default function GuideConsole() {
           <OperatorAssist bookingId={openAssistBookingId} token={tokenRef.current} />
         </Sheet>
       )}
-    </div>
+    </>
+  );
+
+  return (
+    <StaffShell
+      title={overview.tour.title}
+      lifecycle={overview.lifecycle}
+      subtitle={`${overview.tour_date} · 예약 ${overview.rooms.length} · 탑승 ${onboardCount}/${overview.rooms.length}`}
+      onRefresh={() => {
+        setRefreshing(true);
+        void load().finally(() => setRefreshing(false));
+      }}
+      refreshing={refreshing}
+      chatBadge={replyCount}
+      chat={chatTab}
+      seats={seatsTab}
+      ops={opsTab}
+      settings={<StaffSettings />}
+      overlay={overlay}
+    />
   );
 }
