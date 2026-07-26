@@ -877,7 +877,7 @@ function NewVehicleForm({
   return (
     <div className="rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] p-3">
       <div className="mb-2 flex items-center gap-2">
-        <p className="flex-1 text-[13px] font-bold text-[var(--tr-ink)]">새 차량 배정</p>
+        <p className="text-cjk-safe flex-1 text-[13px] font-bold text-[var(--tr-ink)]">새 차량 배정</p>
         <button
           type="button"
           onClick={onCancel}
