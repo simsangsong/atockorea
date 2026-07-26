@@ -116,4 +116,17 @@ describe('GET /api/cron/tour-room-flywheel', () => {
     expect(body.purge).toMatchObject({ needs: 2, pins: 1, locations: 1 });
     expect(db.deletes).toEqual(expect.arrayContaining(['tour_room_pins', 'tour_room_locations']));
   });
+
+  /**
+   * §2-4 — 예보 캐시는 (city, date) 키라 그 날이 지나면 다시 서빙될 수 없다.
+   * 낡은 데이터가 아니라 **닿을 수 없는 데이터**이고, 지우는 곳이 없어 하루
+   * 몇 행씩 영구히 쌓이고 있었다.
+   */
+  it('purges forecast rows whose tour day has passed', async () => {
+    const db = fakeDb();
+    createServerClientMock.mockReturnValue(db);
+    const body = await (await flywheelGET(fakeReq({ authorization: 'Bearer cron-test-secret' }))).json();
+    expect(db.deletes).toEqual(expect.arrayContaining(['ops_weather_cache']));
+    expect(body.purge.weather_cache).toBe(1);
+  });
 });
