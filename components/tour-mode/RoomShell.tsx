@@ -101,10 +101,18 @@ const DRAWER_LABEL: Record<RoomLocale, string> = {
   zh: '菜单',
 };
 
-const LIFECYCLE_BADGE: Record<string, { label: string; className: string }> = {
-  lobby: { label: 'D-day soon', className: 'bg-[var(--tr-accent-soft)] text-[var(--tr-accent-deep)]' },
-  live: { label: 'LIVE', className: 'bg-[var(--tr-safe-soft)] text-[var(--tr-safe)]' },
-  ended: { label: 'Ended', className: 'bg-[var(--tr-bubble-system)] text-[var(--tr-ink-2)]' },
+/**
+ * C-D1 폭 예산 후속 (실기기 리포트 2026-07-27): the lobby pill "D-day soon"
+ * was shrink-0 and ~90px wide, so on a phone the TITLE — the thing the diet
+ * was for — still truncated to a few characters. Messenger grammar fixes it:
+ * lobby/live become an 8px status dot beside the title (KakaoTalk headers
+ * carry no text pills at all); only the ended state keeps a short pill,
+ * because "read-only room" must stay unmistakable.
+ */
+const LIFECYCLE_BADGE: Record<string, { label: string; dot: string | null; pillClass: string | null }> = {
+  lobby: { label: 'D-day soon', dot: 'bg-[var(--tr-accent)]', pillClass: null },
+  live: { label: 'LIVE', dot: 'animate-pulse bg-[var(--tr-safe)]', pillClass: null },
+  ended: { label: 'Ended', dot: null, pillClass: 'bg-[var(--tr-bubble-system)] text-[var(--tr-ink-2)]' },
 };
 
 export type RoomTab = 'home' | 'chat' | 'map' | 'schedule' | 'settings';
@@ -463,14 +471,24 @@ export default function RoomShell({
               headerTitleSlot
             ) : (
               <>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1.5">
                   <h1 className="tr-title truncate text-[var(--tr-ink)]">{title}</h1>
-                  <span
-                    className={`tr-meta shrink-0 rounded-full px-2 py-0.5 font-semibold ${badge.className}`}
-                    data-testid="lifecycle-badge"
-                  >
-                    {badge.label}
-                  </span>
+                  {badge.pillClass ? (
+                    <span
+                      className={`tr-meta shrink-0 rounded-full px-2 py-0.5 font-semibold ${badge.pillClass}`}
+                      data-testid="lifecycle-badge"
+                    >
+                      {badge.label}
+                    </span>
+                  ) : (
+                    <span
+                      className={`h-2 w-2 shrink-0 rounded-full ${badge.dot}`}
+                      role="status"
+                      aria-label={badge.label}
+                      title={badge.label}
+                      data-testid="lifecycle-badge"
+                    />
+                  )}
                 </div>
                 {degraded && connectionHint && (
                   <p className="tr-meta mt-0.5 flex items-center gap-1.5 truncate font-medium text-[var(--tr-accent-deep)]">
