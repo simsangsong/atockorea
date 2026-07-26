@@ -245,6 +245,42 @@ function chunk<T>(items: T[], size: number): T[][] {
 export interface TranslateOptions {
   locales?: readonly string[];
   batchSize?: number;
+  concurrency?: number;
+}
+
+/**
+ * How many batches may be in flight at once.
+ *
+ * The batches were run one after another, and a guest asking for food at a
+ * fresh cell paid for the whole corpus in series: a dense Seoul cell keeps 120
+ * places = 10 batches = 20 sequential model calls, measured at 46s on
+ * production (2026-07-26) for a card that shows five restaurants. Nothing about
+ * a batch depends on the batch before it, so the wait was pure serialisation.
+ *
+ * Bounded rather than unbounded: `translationBudgetExhausted` reserves the whole
+ * run up front, but the provider still sees the burst, and ten concurrent
+ * 2200-token completions is a good way to turn a slow card into a rate-limited
+ * one. Four keeps the tail short without that.
+ */
+const TRANSLATE_CONCURRENCY = 4;
+
+/** Run `worker` over `items`, at most `limit` at a time, results in order. */
+async function mapWithConcurrency<T, R>(
+  items: T[],
+  limit: number,
+  worker: (item: T) => Promise<R>,
+): Promise<R[]> {
+  const results = new Array<R>(items.length);
+  let cursor = 0;
+  const runners = Array.from({ length: Math.min(Math.max(1, limit), items.length) }, async () => {
+    for (;;) {
+      const index = cursor++;
+      if (index >= items.length) return;
+      results[index] = await worker(items[index]);
+    }
+  });
+  await Promise.all(runners);
+  return results;
 }
 
 /**
@@ -271,68 +307,79 @@ export async function translateAndEnrichPlaces<T extends TranslatablePlace>(
     return list.map((row) => ({ ...row, signature_menus: row.signature_menus ?? [] }));
   }
 
-  const enriched = new Map<string, EnrichedFields>();
+  // One batch is independent of every other, so they overlap. A batch that
+  // throws still yields its own rows unenriched and leaves the rest alone.
+  const perBatch = await mapWithConcurrency(
+    batches,
+    options.concurrency ?? TRANSLATE_CONCURRENCY,
+    async (batch): Promise<Array<[string, EnrichedFields]>> => {
+      const keys = batch.map((row) => row.place_key);
+      let draft: Record<string, { name_i18n: Record<string, string>; signature_menus: string[] }> | null = null;
 
-  for (const batch of batches) {
-    const keys = batch.map((row) => row.place_key);
-    let draft: Record<string, { name_i18n: Record<string, string>; signature_menus: string[] }> | null = null;
-
-    try {
-      const prompt = buildTranslationPrompt({ places: batch, locales });
-      const completion = await chatCompletion(
-        'batch',
-        [
-          { role: 'system', content: prompt.system },
-          { role: 'user', content: prompt.user },
-        ],
-        { maxOutputTokens: 2200, temperature: 0.2 },
-      );
-      draft = parseTranslationJson(completion.content, keys, locales);
-    } catch (error) {
-      console.warn('[ops-dining] translation batch failed:', error);
-      draft = null;
-    }
-    if (!draft) continue;
-
-    // Critic pass — only for the places that actually proposed a menu.
-    const criticInput = batch
-      .filter((row) => (draft?.[row.place_key]?.signature_menus.length ?? 0) > 0)
-      .map((row) => ({
-        place_key: row.place_key,
-        review_text: row.review_text ?? '',
-        menus: draft?.[row.place_key]?.signature_menus ?? [],
-      }));
-
-    let criticed: Record<string, string[]> | null = null;
-    if (criticInput.length > 0) {
       try {
-        const prompt = buildMenuCriticPrompt({ places: criticInput });
+        const prompt = buildTranslationPrompt({ places: batch, locales });
         const completion = await chatCompletion(
           'batch',
           [
             { role: 'system', content: prompt.system },
             { role: 'user', content: prompt.user },
           ],
-          { maxOutputTokens: 900, temperature: 0 },
+          { maxOutputTokens: 2200, temperature: 0.2 },
         );
-        criticed = parseCriticJson(completion.content, criticInput.map((p) => p.place_key));
-      } catch {
-        criticed = null; // the deterministic gate below still holds
+        draft = parseTranslationJson(completion.content, keys, locales);
+      } catch (error) {
+        console.warn('[ops-dining] translation batch failed:', error);
+        draft = null;
       }
-    }
+      if (!draft) return [];
 
-    for (const row of batch) {
-      const entry = draft[row.place_key];
-      if (!entry) continue;
-      const proposed = criticed?.[row.place_key] ?? entry.signature_menus;
-      // 🔴 Final, non-negotiable verbatim gate (K3).
-      const verified = filterMenusToReviewText(proposed, row.review_text);
-      enriched.set(row.place_key, {
-        name_i18n: Object.keys(entry.name_i18n).length > 0 ? entry.name_i18n : null,
-        signature_menus: verified.map((name) => ({ name })),
-      });
-    }
-  }
+      // Critic pass — only for the places that actually proposed a menu.
+      const criticInput = batch
+        .filter((row) => (draft?.[row.place_key]?.signature_menus.length ?? 0) > 0)
+        .map((row) => ({
+          place_key: row.place_key,
+          review_text: row.review_text ?? '',
+          menus: draft?.[row.place_key]?.signature_menus ?? [],
+        }));
+
+      let criticed: Record<string, string[]> | null = null;
+      if (criticInput.length > 0) {
+        try {
+          const prompt = buildMenuCriticPrompt({ places: criticInput });
+          const completion = await chatCompletion(
+            'batch',
+            [
+              { role: 'system', content: prompt.system },
+              { role: 'user', content: prompt.user },
+            ],
+            { maxOutputTokens: 900, temperature: 0 },
+          );
+          criticed = parseCriticJson(completion.content, criticInput.map((p) => p.place_key));
+        } catch {
+          criticed = null; // the deterministic gate below still holds
+        }
+      }
+
+      const out: Array<[string, EnrichedFields]> = [];
+      for (const row of batch) {
+        const entry = draft[row.place_key];
+        if (!entry) continue;
+        const proposed = criticed?.[row.place_key] ?? entry.signature_menus;
+        // 🔴 Final, non-negotiable verbatim gate (K3).
+        const verified = filterMenusToReviewText(proposed, row.review_text);
+        out.push([
+          row.place_key,
+          {
+            name_i18n: Object.keys(entry.name_i18n).length > 0 ? entry.name_i18n : null,
+            signature_menus: verified.map((name) => ({ name })),
+          },
+        ]);
+      }
+      return out;
+    },
+  );
+
+  const enriched = new Map<string, EnrichedFields>(perBatch.flat());
 
   return list.map((row) => {
     const fields = enriched.get(row.place_key);
