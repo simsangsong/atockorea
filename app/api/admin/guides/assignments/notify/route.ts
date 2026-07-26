@@ -5,6 +5,7 @@ import { sendEmail } from '@/lib/email';
 import { OPS_TENANT_ID } from '@/lib/ops/tenant';
 import { resolveRate, type GuideRateRow } from '@/lib/ops/guides/rates';
 import { ASSIGNMENT_NOTIFY_LIMIT } from '@/lib/ops/guides/bulkLimits';
+import { issueGuideScheduleLink } from '@/lib/ops/guides/selfToken';
 import {
   groupByGuide,
   noticeBody,
@@ -148,7 +149,16 @@ export async function POST(req: NextRequest) {
         failures.push({ guideName: entry.guideName, reason: '이메일 주소 없음' });
         continue;
       }
-      const text = noticeBody({ guideName: entry.guideName, assignments: entry.assignments });
+      // §2-5 — 셀프 스케줄 링크. 지금까지 `noticeBody`가 받을 준비만 돼 있고
+      // 아무도 채우지 않아, 가이드는 "일정 바뀌면 회신하세요"만 받았다. 링크
+      // 발급은 서명 한 번이라 별도 라우트를 부를 이유가 없다(자기 API를 HTTP로
+      // 다시 부르면 인증·타임아웃·리전 문제를 새로 만든다).
+      const scheduleLink = issueGuideScheduleLink({
+        guideId: entry.guideId,
+        name: entry.guideName,
+        origin: process.env.NEXT_PUBLIC_SITE_URL || req.nextUrl.origin,
+      }).url;
+      const text = noticeBody({ guideName: entry.guideName, assignments: entry.assignments, scheduleLink });
       try {
         const result = await sendEmail({
           to: entry.email,

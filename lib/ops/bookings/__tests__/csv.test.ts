@@ -7,8 +7,15 @@
  *   3. 쉼표·따옴표·줄바꿈이 든 이름이 열을 밀지 않는다.
  */
 
-import { UNIFIED_CSV_HEADERS, unifiedCsv, unifiedCsvFilename } from '../csv';
-import { buildUnifiedRecords } from '../unified';
+import {
+  UNIFIED_CSV_HEADERS,
+  unifiedCsv,
+  unifiedCsvFilename,
+  unifiedDetailAoa,
+  unifiedSummaryAoa,
+  unifiedXlsxFilename,
+} from '../csv';
+import { buildUnifiedRecords, summarize } from '../unified';
 
 const RANGE = { from: '2026-08-17', to: '2026-08-23' };
 
@@ -98,3 +105,44 @@ describe('파일명', () => {
     expect(/^[\x00-\x7F]+$/.test(name)).toBe(true);
   });
 });
+
+/**
+ * §2-8 — 엑셀 출력.
+ *
+ * 계약: CSV와 **같은 행**을 쓴다. 두 벌이 되면 같은 기간의 두 파일이 다른 숫자를
+ * 말하고, 그때는 둘 다 못 믿는다(§H-4). 그리고 요약 시트에도 합계는 없다.
+ */
+describe('xlsx AoA', () => {
+  it('shares the detail rows with the CSV path', () => {
+    const detail = unifiedDetailAoa(records)
+    expect(detail[0]).toEqual([...UNIFIED_CSV_HEADERS])
+    const csv = unifiedCsv(records, RANGE)
+    for (const cell of detail[1]) {
+      if (cell !== '') expect(csv).toContain(String(cell))
+    }
+  })
+
+  it('🔴 summary sheet still refuses to add the tiers up (B1-D1)', () => {
+    const flat = unifiedSummaryAoa(summarize(records), RANGE).flat().join(' ')
+    expect(flat).not.toContain('합계')
+    expect(flat).not.toContain('총계')
+    expect(flat).not.toContain('Total')
+  })
+
+  it('summary carries the per-tier counts and the room gaps', () => {
+    const rows = unifiedSummaryAoa(summarize(records), RANGE)
+    const find = (label: string) => rows.find((r) => r[0] === label)?.[1]
+    expect(find('확정')).toBe(1)
+    expect(find('예약실패')).toBe(1)
+    expect(find('대상 기간')).toBe('2026-08-17 ~ 2026-08-23')
+    expect(find('투어룸 없음')).toBe(1)
+  })
+
+  it('keeps the PII warning in the file, same as the CSV', () => {
+    expect(unifiedSummaryAoa(summarize(records), RANGE).flat().join(' ')).toContain('손님 이름을 포함')
+  })
+
+  it('names the file in ASCII', () => {
+    expect(unifiedXlsxFilename(RANGE)).toBe('atockorea-bookings-2026-08-17_2026-08-23.xlsx')
+  })
+})

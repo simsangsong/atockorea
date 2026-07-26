@@ -21,7 +21,8 @@ export const dynamic = 'force-dynamic';
  * ③ retention purge (W5.3 + R-17 + §L L0): day_plans.needs (dietary/allergy —
  *    the P-D11 sensitive block) nulled 30 days after the tour; ops_ai_usage
  *    cost telemetry after 30 days; stale location
- *    snapshots and expired/old pins deleted.
+ *    snapshots and expired/old pins deleted; forecast cache rows whose tour day
+ *    has passed (관제 후속 §2-4 — they can never be served again).
  *
  * Weekly Vercel cron; idempotent by construction (running means tolerate
  * re-runs only at the cost of sample weighting, purges are naturally so).
@@ -305,6 +306,29 @@ export async function GET(req: NextRequest) {
       console.warn('[flywheel] ai usage purge failed:', usagePurgeError);
     }
 
+    // ── ⑧ weather forecast cache retention (관제 후속 §2-4) ──────────────────
+    // The cache is keyed (city, date) and only ever answers "what is the weather
+    // on that tour day". Once the day is past, the row can never be served again
+    // — it is not stale data, it is unreachable data. Nothing purged it, so it
+    // grew a few rows a day forever: slow, but it never stops.
+    //
+    // Keyed off the tour date, not fetched_at: a row fetched today for a tour
+    // three weeks out must survive until that tour. The 7-day tail covers the
+    // ops screens that still look back at yesterday's message.
+    let weatherCachePurged = 0;
+    try {
+      const cutoff = new Date(Date.now() - 7 * DAY_MS);
+      const cutoffDate = `${cutoff.getUTCFullYear()}-${String(cutoff.getUTCMonth() + 1).padStart(2, '0')}-${String(cutoff.getUTCDate()).padStart(2, '0')}`;
+      const { data: staleForecasts } = await supabase
+        .from('ops_weather_cache')
+        .delete()
+        .lt('date', cutoffDate)
+        .select('id');
+      weatherCachePurged = Array.isArray(staleForecasts) ? staleForecasts.length : 0;
+    } catch (weatherPurgeError) {
+      console.warn('[flywheel] weather cache purge failed:', weatherPurgeError);
+    }
+
     return NextResponse.json({
       matrix: { legs: legSamples.length, upserts: matrixUpserts },
       digest: { closure_skips: closureSkips.length, google_picks: googlePicks.length },
@@ -318,6 +342,7 @@ export async function GET(req: NextRequest) {
         ai_usage: aiUsagePurged,
         guest_notes: guestNotesPurged,
         concierge_cache: conciergeCachePurged,
+        weather_cache: weatherCachePurged,
       },
     });
   } catch (error) {

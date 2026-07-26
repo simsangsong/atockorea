@@ -20,9 +20,25 @@ export interface ManifestBooking {
   pickupName: string | null
   pickupTime: string | null
   specialRequests: string | null
-  /** ops_whatsapp_send_logs 파생 — 마지막 로그 기준. */
+  /**
+   * ops_whatsapp_send_logs 파생 — 마지막 **왓츠앱** 로그 기준.
+   *
+   * 🔴 채널을 섞으면 안 된다. 이메일 로그도 같은 테이블에 남고 `opened_at`이
+   * NOT NULL DEFAULT now()라, 채널을 안 거르면 메일 한 번 보낸 것이 "왓츠앱을
+   * 열었다"로 보인다 — 그러면 운영자는 안 연 사람에게 안 열고, 실제로는
+   * 아무도 왓츠앱을 못 받는다.
+   */
   waOpenedAt?: string | null
   waMarkedSentAt?: string | null
+  /**
+   * 마지막 **이메일** 로그. 'sent'면 서버가 실제로 보냈다는 뜻이고,
+   * 'failed'/'skipped'는 못 보낸 사유가 `emailError`에 남는다 — 못 보낸 사람을
+   * 조용히 목록에서 지우지 않는다는 규칙의 화면 쪽 절반이다.
+   */
+  emailStatus?: 'sent' | 'failed' | 'skipped' | null
+  emailAt?: string | null
+  emailError?: string | null
+  emailSubject?: string | null
 }
 
 export interface ManifestGroup {
@@ -119,13 +135,32 @@ export function groupBookingsByPickup(bookings: ManifestBooking[]): ManifestGrou
 export interface ManifestTotals {
   teams: number
   pax: number
-  contacted: number // marked_sent 기준 (연락 완료 팀 수)
+  /** 어느 채널로든 연락이 나간 팀 수. */
+  contacted: number
   uncontacted: number
+  /** 메일이 실제로 나간 팀 수. */
+  emailed: number
+  /** 메일을 시도했지만 못 나간 팀 수 — 0이 아니면 화면이 말해야 한다. */
+  emailFailed: number
+}
+
+/** 이메일이 실제로 손님에게 도착 시도된 상태인가 (skip·fail은 아니다). */
+function emailDelivered(booking: ManifestBooking): boolean {
+  return booking.emailStatus === 'sent'
 }
 
 export function manifestTotals(bookings: ManifestBooking[]): ManifestTotals {
   const teams = bookings.length
   const pax = bookings.reduce((s, b) => s + Math.max(1, b.partySize || 1), 0)
-  const contacted = bookings.filter((b) => Boolean(b.waMarkedSentAt)).length
-  return { teams, pax, contacted, uncontacted: teams - contacted }
+  // 왓츠앱은 사람이 [발송 완료]를 눌러야 연락이고, 이메일은 서버가 보냈으면 연락이다.
+  // 두 채널을 같은 잣대로 세면 둘 중 하나가 항상 거짓말이 된다.
+  const contacted = bookings.filter((b) => Boolean(b.waMarkedSentAt) || emailDelivered(b)).length
+  return {
+    teams,
+    pax,
+    contacted,
+    uncontacted: teams - contacted,
+    emailed: bookings.filter(emailDelivered).length,
+    emailFailed: bookings.filter((b) => b.emailStatus === 'failed').length,
+  }
 }

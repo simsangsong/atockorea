@@ -102,3 +102,33 @@ describe('manifestTotals', () => {
     expect(totals.uncontacted).toBe(2)
   })
 })
+
+/**
+ * §2-6 — 이메일 이력.
+ *
+ * 계약: **채널이 섞이지 않는다.** 왓츠앱은 사람이 [발송 완료]를 눌러야 연락이고,
+ * 이메일은 서버가 보냈으면 연락이다. 실패는 연락이 아니다 — 실패를 연락으로 세면
+ * 화면이 "20명 전원 발송"이라고 말하면서 3명은 아무것도 못 받는다.
+ */
+describe('manifestTotals — 이메일 채널', () => {
+  it('counts a delivered email as contact even without a WhatsApp tap', () => {
+    const totals = manifestTotals([booking({ emailStatus: 'sent', emailAt: '2026-08-16T09:00:00Z' })])
+    expect(totals).toMatchObject({ contacted: 1, uncontacted: 0, emailed: 1, emailFailed: 0 })
+  })
+
+  it('does not count a failed or skipped email as contact', () => {
+    const totals = manifestTotals([
+      booking({ emailStatus: 'failed', emailError: 'no address' }),
+      booking({ emailStatus: 'skipped', emailError: 'link not issued' }),
+    ])
+    expect(totals).toMatchObject({ contacted: 0, uncontacted: 2, emailed: 0, emailFailed: 1 })
+  })
+
+  it('does not double-count someone reached on both channels', () => {
+    const totals = manifestTotals([
+      booking({ waMarkedSentAt: '2026-08-16T09:00:00Z', emailStatus: 'sent' }),
+    ])
+    expect(totals.contacted).toBe(1)
+    expect(totals.emailed).toBe(1)
+  })
+})

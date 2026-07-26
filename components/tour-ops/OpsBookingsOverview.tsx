@@ -154,6 +154,22 @@ export default function OpsBookingsOverview({
             가지면 화면과 파일의 숫자가 어긋난다). 🔴 파일에는 이름이 마스킹 없이
             들어간다 — 내보내기는 명시적 행동이고, 마스킹된 CSV는 대조라는 목적을
             잃는다. */}
+        {/* §2-8 — 엑셀은 요약·상세 2장이다. CSV는 예약번호를 지수 표기로 바꾸는
+            등 열 때마다 형변환을 겪어서, 남기고 돌려 볼 파일은 xlsx가 낫다.
+            둘 다 남긴 이유는 CSV를 스크립트로 먹이는 경로가 이미 있어서다. */}
+        <a
+          href={`/api/admin/tour-ops/bookings-overview?${new URLSearchParams({
+            view,
+            axis,
+            format: 'xlsx',
+            ...(view === 'month' && month ? { month } : {}),
+          })}`}
+          className="flex min-h-[36px] items-center gap-1 rounded-full bg-[var(--tr-surface-2)] px-3 text-xs font-medium text-[var(--tr-ink-2)]"
+          data-testid="xlsx-export"
+        >
+          <Download size={13} aria-hidden />
+          엑셀
+        </a>
         <a
           href={`/api/admin/tour-ops/bookings-overview?${new URLSearchParams({
             view,
@@ -164,7 +180,6 @@ export default function OpsBookingsOverview({
           className="flex min-h-[36px] items-center gap-1 rounded-full bg-[var(--tr-surface-2)] px-3 text-xs font-medium text-[var(--tr-ink-2)]"
           data-testid="csv-export"
         >
-          <Download size={13} aria-hidden />
           CSV
         </a>
       </div>

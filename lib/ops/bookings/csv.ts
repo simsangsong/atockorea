@@ -15,7 +15,7 @@
  */
 
 import { aoaToCsv, UTF8_BOM } from '@/lib/ops/tax/forms';
-import type { UnifiedRecord } from './unified';
+import type { UnifiedRecord, UnifiedSummary } from './unified';
 
 const TIER_LABEL: Record<UnifiedRecord['tier'], string> = {
   confirmed: '확정',
@@ -40,28 +40,74 @@ export const UNIFIED_CSV_HEADERS = [
   '비고',
 ] as const;
 
+const META_NOTES = [
+  ['※ 이 파일은 손님 이름을 포함합니다 — 취급에 주의하세요.'],
+  ['※ 확정·확인대기·예약실패를 더한 숫자는 넣지 않았습니다 — 서로 다른 것이라 더하면 의미가 없습니다.'],
+];
+
+/** 상세 표(AoA). CSV와 xlsx가 같은 행을 쓴다 — 두 벌이면 반드시 어긋난다(§H-4). */
+export function unifiedDetailAoa(records: UnifiedRecord[]): Array<Array<string | number>> {
+  return [
+    [...UNIFIED_CSV_HEADERS],
+    ...records.map((r) => [
+      TIER_LABEL[r.tier],
+      r.channel,
+      r.tourDate ?? '',
+      r.createdAt ?? '',
+      r.guestName ?? '',
+      r.partySize > 0 ? r.partySize : '',
+      r.roomGap ? GAP_LABEL[r.roomGap] ?? r.roomGap : '',
+      r.reason ?? '',
+    ]),
+  ];
+}
+
 export function unifiedCsv(records: UnifiedRecord[], range: { from: string; to: string }): string {
   const meta = [
     ['AtoC 예약 통합 내역'],
     ['대상 기간', `${range.from} ~ ${range.to}`],
-    ['※ 이 파일은 손님 이름을 포함합니다 — 취급에 주의하세요.'],
-    ['※ 확정·확인대기·예약실패를 더한 숫자는 넣지 않았습니다 — 서로 다른 것이라 더하면 의미가 없습니다.'],
+    ...META_NOTES,
     [],
   ];
-  const rows = records.map((r) => [
-    TIER_LABEL[r.tier],
-    r.channel,
-    r.tourDate ?? '',
-    r.createdAt ?? '',
-    r.guestName ?? '',
-    r.partySize > 0 ? r.partySize : '',
-    r.roomGap ? GAP_LABEL[r.roomGap] ?? r.roomGap : '',
-    r.reason ?? '',
-  ]);
-  return UTF8_BOM + aoaToCsv([...meta, [...UNIFIED_CSV_HEADERS], ...rows]);
+  return UTF8_BOM + aoaToCsv([...meta, ...unifiedDetailAoa(records)]);
+}
+
+/**
+ * §2-8 — 요약 시트(AoA).
+ *
+ * 🔴 B1-D1을 여기서도 지킨다: **합계 행을 만들지 않는다.** 확정·확인대기·
+ * 예약실패는 서로 다른 것이라 더한 숫자는 아무 질문에도 답하지 못하고, 한 번
+ * 스프레드시트에 찍히면 그 숫자가 인용되기 시작한다.
+ */
+export function unifiedSummaryAoa(
+  summary: UnifiedSummary,
+  range: { from: string; to: string },
+): Array<Array<string | number>> {
+  const rows: Array<Array<string | number>> = [
+    ['항목', '값'],
+    ['대상 기간', `${range.from} ~ ${range.to}`],
+    [TIER_LABEL.confirmed, summary.counts.confirmed],
+    [TIER_LABEL.pending_review, summary.counts.pending_review],
+    [TIER_LABEL.unparsed, summary.counts.unparsed],
+    ['확정 예약 인원', summary.confirmedGuests],
+    [GAP_LABEL.no_room, summary.roomGaps.no_room],
+    [GAP_LABEL.no_participant, summary.roomGaps.no_participant],
+    [GAP_LABEL.no_seat, summary.roomGaps.no_seat],
+    [],
+    ['채널', '티어', '건수'],
+  ];
+  for (const row of summary.byChannel) {
+    rows.push([row.channel, TIER_LABEL[row.tier], row.count]);
+  }
+  rows.push([], ...META_NOTES);
+  return rows;
 }
 
 /** ASCII 파일명 — 한글 파일명은 Content-Disposition 인코딩이 번거롭다. */
 export function unifiedCsvFilename(range: { from: string; to: string }): string {
   return `atockorea-bookings-${range.from}_${range.to}.csv`;
+}
+
+export function unifiedXlsxFilename(range: { from: string; to: string }): string {
+  return `atockorea-bookings-${range.from}_${range.to}.xlsx`;
 }

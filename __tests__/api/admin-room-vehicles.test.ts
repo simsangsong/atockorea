@@ -62,10 +62,23 @@ const SOLATI: VehicleLayoutJson = {
 
 type Op = [string, unknown[]];
 
+/** 차량 마스터 1대 — §2-1 연결 테스트용. */
+const MASTER_ID = '11111111-1111-4111-8111-111111111111';
+const MASTER = {
+  id: MASTER_ID,
+  plate_number: '12가3456',
+  nickname: '흰색 카운티',
+  layout_id: OLD_LAYOUT_ID,
+  active: true,
+  seat_capacity: null,
+};
+
 function makeDb(options: {
   vehicles?: Array<Record<string, unknown>>;
   assignments?: Array<Record<string, unknown>>;
   events?: Array<Record<string, unknown>>;
+  masterVehicles?: Array<Record<string, unknown>>;
+  bookings?: Array<Record<string, unknown>>;
 }) {
   const deleted: unknown[] = [];
   const updated: Array<{ table: string; values: Record<string, unknown> }> = [];
@@ -131,6 +144,15 @@ function makeDb(options: {
             const eq = state.ops.find(([name]) => name === 'eq');
             const wanted = eq ? String((eq[1] as unknown[])[1]) : null;
             return { data: wanted ? layouts.filter((l) => l.id === wanted) : layouts, error: null };
+          }
+          case 'bookings':
+            return { data: options.bookings ?? [], error: null };
+          case 'ops_vehicles': {
+            const pool = options.masterVehicles ?? [];
+            // maybeSingle 경로는 id로 한 대만 찾는다.
+            const byId = state.ops.find(([name, args]) => name === 'eq' && (args as unknown[])[0] === 'id');
+            const wanted = byId ? String((byId[1] as unknown[])[1]) : null;
+            return { data: wanted ? pool.filter((v) => v.id === wanted) : pool, error: null };
           }
           case 'tour_room_participants':
             return { data: [{ id: 'p-driver', display_name: '김기사', role: 'driver', last_seen_at: null }], error: null };
@@ -241,6 +263,98 @@ describe('POST — 배차', () => {
       expect.anything(),
       expect.objectContaining({ type: 'vehicle_assigned' }),
     );
+  });
+});
+
+/**
+ * §2-1 — 차량 마스터 ↔ 배차 연결.
+ *
+ * 🔴 이름 충돌이 이 슬라이스의 핵심 위험이다:
+ *   · 요청 `vehicle_id`        = `ops_room_vehicles.id` (배차 행)
+ *   · 요청 `master_vehicle_id` = `ops_vehicles.id`      (차량 마스터)
+ * 둘을 섞으면 다른 차에 배차된다. 아래 테스트가 그 경계를 고정한다.
+ */
+describe('차량 마스터 연결', () => {
+  it('GET returns the registered vehicles as pickable options', async () => {
+    createServerClientMock.mockReturnValue(makeDb({ masterVehicles: [MASTER] }));
+    const json = await (await GET(req(), ctx)).json();
+    expect(json.master_vehicles).toEqual([
+      expect.objectContaining({ id: MASTER_ID, display_plate: '12가 3456', capacity: 5 }),
+    ]);
+  });
+
+  it('GET reports the master link on the dispatch row (and its capacity)', async () => {
+    createServerClientMock.mockReturnValue(
+      makeDb({ vehicles: [vehicle({ vehicle_id: MASTER_ID })], masterVehicles: [MASTER] }),
+    );
+    const json = await (await GET(req(), ctx)).json();
+    expect(json.vehicles[0]).toMatchObject({
+      id: 'rv-1',
+      master_vehicle_id: MASTER_ID,
+      master_plate: '12가 3456',
+      capacity: 5,
+    });
+  });
+
+  it('POST writes ops_room_vehicles.vehicle_id and takes the plate from the master', async () => {
+    const client = makeDb({ masterVehicles: [MASTER] });
+    createServerClientMock.mockReturnValue(client);
+    const res = await POST(
+      req({ body: { master_vehicle_id: MASTER_ID, plate_number: '오타 그대로 보낸 값' } }),
+      ctx,
+    );
+    expect(res.status).toBe(201);
+    expect(client.inserted.find((row) => row.table === 'ops_room_vehicles')!.values).toMatchObject({
+      vehicle_id: MASTER_ID,
+      layout_id: OLD_LAYOUT_ID, // 마스터의 배치도를 상속
+      plate_number: '12가 3456',
+    });
+  });
+
+  it('POST 404s an unknown master instead of dispatching an unlinked vehicle', async () => {
+    createServerClientMock.mockReturnValue(makeDb({ masterVehicles: [] }));
+    const res = await POST(req({ body: { master_vehicle_id: MASTER_ID } }), ctx);
+    expect(res.status).toBe(404);
+  });
+
+  it('POST refuses a retired vehicle', async () => {
+    createServerClientMock.mockReturnValue(makeDb({ masterVehicles: [{ ...MASTER, active: false }] }));
+    const res = await POST(req({ body: { master_vehicle_id: MASTER_ID } }), ctx);
+    expect(res.status).toBe(400);
+    expect((await res.json()).code).toBe('vehicle_inactive');
+  });
+
+  it('PATCH links an existing dispatch row — vehicle_id stays the row id', async () => {
+    const client = makeDb({ vehicles: [vehicle()], masterVehicles: [MASTER] });
+    createServerClientMock.mockReturnValue(client);
+    const res = await PATCH(req({ body: { vehicle_id: 'rv-1', master_vehicle_id: MASTER_ID } }), ctx);
+    expect(res.status).toBe(200);
+    expect(client.updated.find((row) => row.table === 'ops_room_vehicles')!.values).toMatchObject({
+      vehicle_id: MASTER_ID,
+      plate_number: '12가 3456',
+    });
+  });
+
+  it('PATCH unlinks back to 용차 without wiping the typed plate', async () => {
+    const client = makeDb({ vehicles: [vehicle({ vehicle_id: MASTER_ID })], masterVehicles: [MASTER] });
+    createServerClientMock.mockReturnValue(client);
+    const res = await PATCH(
+      req({ body: { vehicle_id: 'rv-1', master_vehicle_id: null, plate_number: '99하 1111' } }),
+      ctx,
+    );
+    expect(res.status).toBe(200);
+    expect(client.updated.find((row) => row.table === 'ops_room_vehicles')!.values).toMatchObject({
+      vehicle_id: null,
+      plate_number: '99하 1111',
+    });
+  });
+
+  it('PATCH keeps editing a dispatch whose master was retired afterwards', async () => {
+    createServerClientMock.mockReturnValue(
+      makeDb({ vehicles: [vehicle({ vehicle_id: MASTER_ID })], masterVehicles: [{ ...MASTER, active: false }] }),
+    );
+    const res = await PATCH(req({ body: { vehicle_id: 'rv-1', driver_name: '박기사' } }), ctx);
+    expect(res.status).toBe(200);
   });
 });
 
@@ -366,6 +480,94 @@ describe('PATCH — 되돌리기 (스냅샷 복원)', () => {
       makeDb({ events: [{ id: 'evt-1', room_id: 'other', type: 'vehicle_changed', payload: {} }] }),
     );
     expect((await PATCH(req({ body: { undo_event_id: 'evt-1' } }), ctx)).status).toBe(404);
+  });
+});
+
+/**
+ * 설계안 §1-2 — 정원 초과 하드 블록.
+ *
+ * 막는 것은 **좌석을 줄이는 저장**뿐이다. 이미 모자란 상태에서 차를 붙이는 것은
+ * 막지 않는다 — 막으면 오버부킹을 고치는 유일한 경로가 닫힌다.
+ */
+describe('좌석 하드 블록', () => {
+  /** 5석 카운티 1대 + 4명 예약 → 3석 쏠라티로 바꾸면 1명이 못 앉는다. */
+  const CROWDED = { vehicles: [vehicle()], bookings: [{ number_of_guests: 4, status: 'confirmed' }] };
+
+  it('PATCH blocks a downgrade that leaves guests without a seat', async () => {
+    createServerClientMock.mockReturnValue(makeDb(CROWDED));
+    const res = await PATCH(req({ body: { vehicle_id: 'rv-1', layout_id: NEW_LAYOUT_ID } }), ctx);
+    expect(res.status).toBe(409);
+    const json = await res.json();
+    expect(json.error).toBe('capacity_short');
+    expect(json).toMatchObject({ headcount: 4, seats_before: 5, seats_after: 3, shortfall: 1 });
+    expect(json.requires).toBe('capacity_override_reason');
+  });
+
+  it('PATCH lets it through once a reason is given, and records that reason', async () => {
+    createServerClientMock.mockReturnValue(makeDb(CROWDED));
+    const res = await PATCH(
+      req({
+        body: {
+          vehicle_id: 'rv-1',
+          layout_id: NEW_LAYOUT_ID,
+          capacity_override_reason: '차량 고장 대차 — 1명 택시',
+        },
+      }),
+      ctx,
+    );
+    expect(res.status).toBe(200);
+    const override = recordRoomEventMock.mock.calls.find(
+      (call) => call[1].type === 'vehicle_capacity_override',
+    )![1];
+    expect(override.payload).toMatchObject({ reason: '차량 고장 대차 — 1명 택시', seats_after: 3 });
+  });
+
+  it('PATCH rejects a blank reason — 공백은 사유가 아니다', async () => {
+    createServerClientMock.mockReturnValue(makeDb(CROWDED));
+    const res = await PATCH(
+      req({ body: { vehicle_id: 'rv-1', layout_id: NEW_LAYOUT_ID, capacity_override_reason: '  ' } }),
+      ctx,
+    );
+    expect(res.status).toBe(409);
+  });
+
+  it('PATCH does not block when everyone still fits', async () => {
+    createServerClientMock.mockReturnValue(
+      makeDb({ vehicles: [vehicle()], bookings: [{ number_of_guests: 2, status: 'confirmed' }] }),
+    );
+    const res = await PATCH(req({ body: { vehicle_id: 'rv-1', layout_id: NEW_LAYOUT_ID } }), ctx);
+    expect(res.status).toBe(200);
+  });
+
+  it('PATCH ignores cancelled bookings when counting heads', async () => {
+    createServerClientMock.mockReturnValue(
+      makeDb({
+        vehicles: [vehicle()],
+        bookings: [
+          { number_of_guests: 2, status: 'confirmed' },
+          { number_of_guests: 9, status: 'cancelled' },
+        ],
+      }),
+    );
+    expect((await PATCH(req({ body: { vehicle_id: 'rv-1', layout_id: NEW_LAYOUT_ID } }), ctx)).status).toBe(200);
+  });
+
+  it('DELETE blocks unassigning the only vehicle a full group has', async () => {
+    createServerClientMock.mockReturnValue(makeDb(CROWDED));
+    const res = await DELETE(req({ search: 'vehicle_id=rv-1' }), ctx);
+    expect(res.status).toBe(409);
+    expect((await res.json()).error).toBe('capacity_short');
+  });
+
+  it('DELETE proceeds with a reason and keeps it in the snapshot event', async () => {
+    createServerClientMock.mockReturnValue(makeDb(CROWDED));
+    const res = await DELETE(
+      req({ search: `vehicle_id=rv-1&capacity_reason=${encodeURIComponent('투어 취소')}` }),
+      ctx,
+    );
+    expect(res.status).toBe(200);
+    const event = recordRoomEventMock.mock.calls.find((call) => call[1].type === 'vehicle_unassigned')![1];
+    expect(event.payload.capacity_override_reason).toBe('투어 취소');
   });
 });
 

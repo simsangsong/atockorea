@@ -8,6 +8,7 @@
 import {
   DEFAULT_TTL_SECONDS,
   hashGuideScheduleToken,
+  issueGuideScheduleLink,
   signGuideScheduleToken,
   verifyGuideScheduleToken,
 } from '@/lib/ops/guides/selfToken';
@@ -114,5 +115,25 @@ describe('guide schedule token', () => {
     const hash = hashGuideScheduleToken(token);
     expect(hash).toMatch(/^[0-9a-f]{64}$/);
     expect(hash).not.toContain(token.slice(0, 12));
+  });
+});
+
+/**
+ * §2-5 — 링크 조립이 한 곳이라는 계약.
+ *
+ * 발급 지점이 둘(관리자 [링크 발급], 배정 안내 메일)이라 경로를 두 곳에 적으면
+ * 언젠가 한쪽이 404를 보낸다 — 그것도 가이드가 눌렀을 때만 알게 된다.
+ */
+describe('issueGuideScheduleLink', () => {
+  it('builds a link the verifier accepts', () => {
+    const link = issueGuideScheduleLink({ guideId: 'g-1', name: '박가이드', origin: 'https://atockorea.com' });
+    expect(link.url.startsWith('https://atockorea.com/g/schedule/')).toBe(true);
+    const token = link.url.split('/g/schedule/')[1];
+    expect(verifyGuideScheduleToken(token)).toMatchObject({ guideId: 'g-1', name: '박가이드' });
+  });
+
+  it('does not double the slash when the origin has a trailing one', () => {
+    const link = issueGuideScheduleLink({ guideId: 'g-1', origin: 'https://atockorea.com/' });
+    expect(link.url).not.toContain('com//g/schedule');
   });
 });

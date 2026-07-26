@@ -10,6 +10,8 @@ import {
   buildVehicleWrite,
   formatPlate,
   normalizePlate,
+  readMasterVehicleRef,
+  resolveDispatchVehicle,
   resolveSeatCapacity,
 } from '../registry';
 
@@ -130,6 +132,75 @@ describe('buildVehicleWrite', () => {
     expect(buildVehicleWrite({ layoutId: 'county_20' }, 'update')).toMatchObject({
       ok: false,
       code: 'layout_id_invalid',
+    });
+  });
+});
+
+/* ===========================================================================
+ * 배차 인스턴스 ↔ 마스터 연결 (§2-1)
+ * =========================================================================== */
+
+const MASTER = {
+  id: '11111111-1111-4111-8111-111111111111',
+  plate_number: '12가3456',
+  layout_id: '22222222-2222-4222-8222-222222222222',
+  active: true,
+};
+
+describe('readMasterVehicleRef', () => {
+  it('leaves the existing link alone when the key is absent', () => {
+    expect(readMasterVehicleRef({ layout_id: 'x' })).toEqual({ present: false });
+  });
+
+  it('reads null and empty string as "unlink" (용차로 되돌림)', () => {
+    expect(readMasterVehicleRef({ master_vehicle_id: null })).toEqual({ present: true, id: null });
+    expect(readMasterVehicleRef({ master_vehicle_id: '' })).toEqual({ present: true, id: null });
+  });
+
+  it('rejects a value that is not a uuid instead of silently unlinking', () => {
+    expect(readMasterVehicleRef({ master_vehicle_id: '12가3456' })).toMatchObject({
+      error: expect.any(String),
+    });
+  });
+});
+
+describe('resolveDispatchVehicle', () => {
+  it('makes the master the source of truth for the plate — that is the whole point', () => {
+    const out = resolveDispatchVehicle({ master: MASTER, requestedPlate: '12가 3456 오타' });
+    expect(out).toMatchObject({ ok: true, vehicleId: MASTER.id, plateNumber: '12가 3456' });
+  });
+
+  it('inherits the master layout but lets an explicit choice win (좌석 뗀 날)', () => {
+    const inherited = resolveDispatchVehicle({ master: MASTER });
+    expect(inherited).toMatchObject({ ok: true, layoutId: MASTER.layout_id });
+
+    const explicit = resolveDispatchVehicle({ master: MASTER, requestedLayoutId: 'layout-other' });
+    expect(explicit).toMatchObject({ ok: true, layoutId: 'layout-other' });
+  });
+
+  it('refuses to dispatch a retired vehicle', () => {
+    expect(resolveDispatchVehicle({ master: { ...MASTER, active: false } })).toMatchObject({
+      ok: false,
+      code: 'vehicle_inactive',
+    });
+  });
+
+  it('asks for a layout when the master has none', () => {
+    expect(resolveDispatchVehicle({ master: { ...MASTER, layout_id: null } })).toMatchObject({
+      ok: false,
+      code: 'layout_required',
+    });
+  });
+
+  it('keeps the free-text plate path for 용차 (마스터 미등록은 의도된 폴백)', () => {
+    const out = resolveDispatchVehicle({ requestedLayoutId: 'layout-a', requestedPlate: ' 99하 1111 ' });
+    expect(out).toEqual({ ok: true, vehicleId: null, layoutId: 'layout-a', plateNumber: '99하 1111' });
+  });
+
+  it('requires a layout when there is no master to inherit one from', () => {
+    expect(resolveDispatchVehicle({ requestedPlate: '99하1111' })).toMatchObject({
+      ok: false,
+      code: 'layout_required',
     });
   });
 });
