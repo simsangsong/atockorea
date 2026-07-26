@@ -170,6 +170,8 @@ export default function RoomDrawer({
   const [files, setFiles] = useState<DrawerAttachmentItem[] | null>(null);
   const [links, setLinks] = useState<DrawerLinkItem[] | null>(null);
   const [lightbox, setLightbox] = useState<{ url: string; name?: string | null } | null>(null);
+  // 적대적 리뷰 #3 — 만료 세션의 403이 "아직 없어요"로 위장되면 안 된다.
+  const [authExpired, setAuthExpired] = useState(false);
 
   const fetchKind = useCallback(
     async (kind: 'image' | 'file' | 'link') => {
@@ -178,6 +180,10 @@ export default function RoomDrawer({
           headers: { 'x-tour-room-auth': roomSession },
           cache: 'no-store',
         });
+        if (res.status === 401 || res.status === 403) {
+          setAuthExpired(true);
+          return [];
+        }
         const json = await res.json();
         return res.ok ? (json.items ?? []) : [];
       } catch {
@@ -254,6 +260,22 @@ export default function RoomDrawer({
         </div>
 
         <div className="min-h-0 flex-1 space-y-5 overflow-y-auto px-4 py-4">
+          {authExpired && (
+            <p
+              className="tr-label rounded-xl bg-[var(--tr-danger-soft)] px-3 py-2 font-medium text-[var(--tr-danger)]"
+              data-testid="drawer-auth-expired"
+            >
+              {locale === 'ko'
+                ? '세션이 만료됐어요 — 초대 링크로 방을 다시 열어주세요.'
+                : locale === 'ja'
+                  ? 'セッションが切れました — 招待リンクからもう一度開いてください。'
+                  : locale === 'es'
+                    ? 'La sesión expiró: vuelve a abrir la sala desde tu enlace.'
+                    : locale === 'zh'
+                      ? '会话已过期 — 请通过邀请链接重新打开房间。'
+                      : 'Session expired — reopen the room from your invite link.'}
+            </p>
+          )}
           {/* ① 모아보기 — 사진/동영상 */}
           <section>
             <h3 className={sectionLabel}>{copy.media}</h3>

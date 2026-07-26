@@ -176,13 +176,13 @@ export default function DriverConsole() {
     return (
       <Screen>
         <div className="flex flex-1 flex-col items-center justify-center gap-6 px-8">
-          <p className="tr-display text-[var(--tr-ink)]">차량번호 뒤 4자리</p>
+          <p className="text-2xl font-bold text-[var(--tr-ink)]">차량번호 뒤 4자리</p>
           <input
             inputMode="numeric"
             maxLength={4}
             value={pin}
             onChange={(event) => setPin(event.target.value.replace(/\D/g, ''))}
-            className="tr-display w-48 rounded-2xl border-2 border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-4 py-4 text-center tracking-[0.5em] text-[var(--tr-ink)]"
+            className="w-48 rounded-2xl border-2 border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-4 py-4 text-center text-4xl font-bold tracking-[0.5em] text-[var(--tr-ink)]"
             data-testid="driver-pin-input"
           />
           {error ? <p className="tr-body-lg text-[var(--tr-danger)]">{error}</p> : null}
@@ -190,7 +190,7 @@ export default function DriverConsole() {
             type="button"
             disabled={pin.length !== 4 || joining}
             onClick={() => void join(pin)}
-            className="tr-display w-full max-w-xs rounded-2xl bg-[var(--tr-bubble-me)] py-5 text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
+            className="w-full max-w-xs rounded-2xl bg-[var(--tr-bubble-me)] py-5 text-2xl font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
           >
             확인
           </button>
@@ -205,7 +205,7 @@ export default function DriverConsole() {
     return (
       <Screen>
         <div className="flex flex-1 flex-col items-center justify-center gap-4 px-8 text-center">
-          <p className="tr-display text-[var(--tr-ink)]">{overview.tour.title}</p>
+          <p className="text-3xl font-bold text-[var(--tr-ink)]">{overview.tour.title}</p>
           <p className="tr-body-lg text-[var(--tr-ink-2)]">
             {overview.tour_date} · 손님 {room.number_of_guests ?? '-'}명
           </p>
@@ -221,7 +221,7 @@ export default function DriverConsole() {
           <button
             type="button"
             onClick={() => setAudioUnlocked(true)}
-            className="tr-display mt-6 flex w-full max-w-sm items-center justify-center gap-2.5 rounded-3xl bg-[var(--tr-bubble-me)] py-8 text-[var(--tr-bubble-me-ink)]"
+            className="mt-6 flex w-full max-w-sm items-center justify-center gap-2.5 rounded-3xl bg-[var(--tr-bubble-me)] py-8 text-3xl font-bold text-[var(--tr-bubble-me-ink)]"
             data-testid="driver-start"
           >
             <IconDriver size={TR_ICON.tile} aria-hidden />
@@ -326,7 +326,7 @@ function EndScreen({ overview, room }: { overview: DriverOverview; room: Cockpit
     <Screen>
       <div className="flex flex-1 flex-col gap-5 overflow-y-auto px-6 py-8">
         <div className="text-center">
-          <p className="tr-display text-[var(--tr-ink)]">오늘 투어 종료</p>
+          <p className="text-3xl font-bold text-[var(--tr-ink)]">오늘 투어 종료</p>
           <p className="tr-body-lg mt-2 text-[var(--tr-ink-3)]">
             {overview.tour.title} · {overview.tour_date}
           </p>

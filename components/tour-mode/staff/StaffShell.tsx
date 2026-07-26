@@ -22,7 +22,7 @@
  * staff get the toggle guests always had.
  */
 
-import { useState, type CSSProperties, type ReactNode } from 'react';
+import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import { useKeyboardOpen } from '@/components/tour-mode/useKeyboardOpen';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { useTourRoomSettings, textScaleFactor } from '@/hooks/useTourRoomSettings';
@@ -116,6 +116,14 @@ export default function StaffShell({
     deviceSettings.theme === 'system' ? (systemDark ? 'dark' : 'light') : deviceSettings.theme;
   const keyboardOpen = useKeyboardOpen();
   const badge = LIFECYCLE_BADGE[lifecycle];
+  // 적대적 리뷰 #1 — 네 탭이 스크롤 컨테이너 하나를 공유하므로, 전환 시
+  // scrollTop을 리셋하지 않으면 좌석판에서 내려간 위치 그대로 대화 탭 중간에
+  // 착지한다 (탭은 각자 맨 위에서 시작하는 것이 탭 문법이다).
+  const panelRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    const el = panelRef.current;
+    if (el && typeof el.scrollTo === 'function') el.scrollTo({ top: 0 });
+  }, [tab]);
 
   return (
     <div className={theme === 'dark' ? 'dark' : ''}>
@@ -187,7 +195,7 @@ export default function StaffShell({
 
         {/* ---- Tab panels -------------------------------------------- */}
         <div className="relative flex min-h-0 flex-1 flex-col">
-          <div className="mx-auto flex min-h-0 w-full flex-1 flex-col overflow-y-auto px-4 pb-6 pt-3">
+          <div ref={panelRef} className="mx-auto flex min-h-0 w-full flex-1 flex-col overflow-y-auto px-4 pb-6 pt-3">
             {tab === 'chat' && (
               <div className="tr-anim-panel-in" data-testid="staff-tab-chat">
                 {chat}

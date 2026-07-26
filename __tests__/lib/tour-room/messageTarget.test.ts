@@ -127,8 +127,11 @@ describe('B3-D4 — 전송 후 대상은 유지되고, ✕와 명단 이탈로�
     expect(t).toEqual({ kind: 'selected', bookingIds: ['b1'] });
   });
 
-  it('전부 사라지면 전체로 돌아간다', () => {
-    expect(pruneTarget({ kind: 'selected', bookingIds: ['gone'] }, roster)).toEqual(ALL_TARGET);
+  it('전부 사라져도 조용히 전체로 돌아가지 않는다 — 오발송이 유령 칩보다 나쁘다 (2026-07-27)', () => {
+    // 취소 직후의 폴링 창에서 선택이 소리 없이 ALL이 되면, 1명 공지가 차량
+    // 전체로 나간다. 선택을 유지하면 전송은 서버 404 가드에 시끄럽게 걸린다.
+    const stale: MessageTarget = { kind: 'selected', bookingIds: ['gone'] };
+    expect(pruneTarget(stale, roster)).toBe(stale);
   });
 
   it('전부 살아 있으면 같은 객체를 그대로 준다 (불필요한 리렌더 방지)', () => {

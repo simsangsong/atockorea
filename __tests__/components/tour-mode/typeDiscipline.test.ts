@@ -20,8 +20,10 @@ import path from 'path';
 
 const ROOT = path.join(process.cwd(), 'components', 'tour-mode');
 
-/** Tailwind font-size utilities (responsive/state variants included). */
-const TEXT_UTILITY = /(?:^|[\s'"`:])text-(?:xs|sm|base|lg|xl|2xl|3xl|4xl|\[\d+(?:\.\d+)?px\])(?=$|[\s'"`])/;
+/** Tailwind font-size utilities (responsive/state variants, !important, any
+ *  size step incl. 5xl+, and arbitrary px/rem/em values). */
+const TEXT_UTILITY =
+  /(?:^|[\s'"`:])!?text-(?:xs|sm|base|lg|\d?xl|\[\d+(?:\.\d+)?(?:px|rem|em)\])(?=$|[\s'"`])/;
 
 /**
  * Known, justified exceptions. Each entry documents WHY it is allowed — do
@@ -47,6 +49,14 @@ const TEXT_ALLOWLIST: Record<string, { pattern: string; reason: string }[]> = {
     { pattern: 'text-xl', reason: 'driving-mode large label' },
     { pattern: 'text-2xl', reason: 'driving-mode large label' },
     { pattern: 'text-4xl', reason: 'driving-mode headcount display' },
+  ],
+  'DriverConsole.tsx': [
+    // Same rationale as the cockpit it gates: PIN entry / 운행 시작 are read
+    // from a car seat. The W0 sweep shrank these 30-36px → 20px; the
+    // adversarial review (2026-07-27) called the inconsistency out — restored.
+    { pattern: 'text-2xl', reason: 'driving-gate large label' },
+    { pattern: 'text-3xl', reason: 'driving-gate CTA / titles' },
+    { pattern: 'text-4xl', reason: 'PIN input at arm-length' },
   ],
   'GuideSeatDashboard.tsx': [
     // Legend numeral inside a fixed 16px circle; tr-meta's 14px line box clips.
@@ -106,7 +116,8 @@ describe('tour-mode type discipline (U4-D7)', () => {
       if (LUCIDE_ALLOWLIST.has(base)) continue;
       const lines = fs.readFileSync(file, 'utf8').split('\n');
       lines.forEach((line, i) => {
-        if (!line.includes("from 'lucide-react'")) return;
+        // single or double quotes, plus deep imports ('lucide-react/…').
+        if (!/from\s+['"]lucide-react(?:\/[^'"]*)?['"]/.test(line)) return;
         if (/^\s*import\s+type\s/.test(line)) return; // type-only: erased at build
         violations.push(`${rel}:${i + 1}`);
       });

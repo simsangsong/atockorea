@@ -3,7 +3,7 @@ import { createServerClient } from '@/lib/supabase';
 import { requireAdmin, AdminAuthFailure, adminAuthJsonResponse } from '@/lib/auth';
 import { sendEmail } from '@/lib/email';
 import { ensureRoom, type RoomDbClient } from '@/lib/tour-room/access';
-import { hashToken, signCustomerRoomToken } from '@/lib/tour-room/token';
+import { hashToken, signCustomerRoomToken, verifyRoomToken } from '@/lib/tour-room/token';
 import { OPS_TENANT_ID } from '@/lib/ops/tenant';
 import { WA_PRESET_KEYS, type WaPresetKey } from '@/lib/ops/whatsapp/presets';
 import {
@@ -22,10 +22,18 @@ export const dynamic = 'force-dynamic';
 /**
  * 손님 안내 메시지 — 미리보기 + 원버튼 일괄 발송 (M3, 플랜 §13.3).
  *
- *   GET  ?tourId=&date=&preset=&channel=email|whatsapp
+ *   GET  ?tourId=&date=&preset=&channel=email|whatsapp[&mint=1][&rt=<guide token>]
  *        → 수신자별 렌더된 제목·본문 + 개인 링크 + 날씨 줄. **보내기 전에 그대로 보여준다.**
  *   POST { tourId, date, preset, subject, body, bookingIds? }
  *        → 화면이 확인한 문구로 일괄 발송.
+ *
+ * 가이드 토큰 (2026-07-27, 스마트앱 W-트랙 후속): GET은 tour-date 스코프의
+ * 가이드 토큰(`rt`)도 인가한다 — 단, 토큰의 (tourId, tourDate)와 요청이
+ * 일치할 때만. D-1 안내를 보내는 사람이 현장에선 가이드 본인이고, 관제
+ * 로그인 없이 자기 날짜의 명단·문구·wa.me 링크를 얻는 경로다.
+ * `mint=1`이면 미리보기 자리표시자 대신 **실제 개인 룸 링크를 발급**한다 —
+ * wa.me/mailto 프리필로 곧장 보내는 흐름에서는 자리표시자가 곧 사고다.
+ * POST(서버 이메일 발송)는 어드민 전용 그대로다.
  *
  * 🔴 **미리보기에서 본 그대로 나간다.** POST는 화면이 보낸 본문을 받아 수신자별
  * 변수만 채운다 — 서버가 템플릿을 다시 읽으면, 운영자가 화면에서 고친 문구가
@@ -47,7 +55,14 @@ interface BookingRow {
   contact_email: string | null;
   preferred_language: string | null;
   status: string | null;
+  ota_raw_meta: { whatsapp?: unknown } | null;
   pickup_points: { name?: string | null; pickup_time?: string | null } | Array<{ name?: string | null; pickup_time?: string | null }> | null;
+}
+
+/** OTA 손님(Klook/GYG)은 전화 대신 왓츠앱 번호만 있는 경우가 흔하다. */
+function whatsappOf(row: BookingRow): string | null {
+  const wa = row.ota_raw_meta?.whatsapp;
+  return typeof wa === 'string' && wa.trim() ? wa : null;
 }
 
 function pickupOf(row: BookingRow): { name: string | null; time: string | null } {
@@ -62,7 +77,8 @@ function pickupOf(row: BookingRow): { name: string | null; time: string | null }
 async function mintRoomLink(
   supabase: ReturnType<typeof createServerClient>,
   booking: { id: string; tour_id: string | null; tour_date: string; contact_name: string | null },
-  adminId: string,
+  /** admin.id, 또는 가이드 토큰 경로에서는 null (driver/link 라우트 선례). */
+  adminId: string | null,
 ): Promise<string | null> {
   try {
     await ensureRoom(supabase as unknown as RoomDbClient, {
@@ -103,7 +119,7 @@ async function loadContext(
     supabase
       .from('bookings')
       .select(
-        'id, contact_name, contact_phone, contact_email, preferred_language, status, pickup_points ( name, pickup_time )',
+        'id, contact_name, contact_phone, contact_email, preferred_language, status, ota_raw_meta, pickup_points ( name, pickup_time )',
       )
       .eq('tour_id', tourId)
       .eq('tour_date', date)
@@ -118,12 +134,30 @@ async function loadContext(
 
 export async function GET(req: NextRequest) {
   try {
-    const admin = await requireAdmin(req);
     const sp = req.nextUrl.searchParams;
     const tourId = sp.get('tourId') ?? '';
     const date = sp.get('date') ?? '';
     const preset = (sp.get('preset') ?? 'pickup_d1') as WaPresetKey;
     const channelParam = sp.get('channel') ?? 'email';
+    const mint = sp.get('mint') === '1';
+
+    // 인가 사다리: 가이드 tour-date 토큰(자기 날짜만) → 어드민 로그인.
+    const rt = sp.get('rt');
+    const rtPayload = rt ? verifyRoomToken(rt) : null;
+    const isGuide = rtPayload?.scope === 'tour-date' && rtPayload.role === 'guide';
+    let actorEmail: string;
+    if (isGuide) {
+      if (rtPayload.tourId !== tourId || rtPayload.tourDate !== date) {
+        return NextResponse.json(
+          { error: 'Guide token does not cover this tour/date' },
+          { status: 403 },
+        );
+      }
+      actorEmail = 'guide-console';
+    } else {
+      const admin = await requireAdmin(req);
+      actorEmail = admin.email;
+    }
 
     if (!tourId || !/^\d{4}-\d{2}-\d{2}$/.test(date)) {
       return NextResponse.json({ error: 'tourId and date (YYYY-MM-DD) required' }, { status: 400 });
@@ -145,9 +179,23 @@ export async function GET(req: NextRequest) {
     // 예보는 **투어일** 기준이다. D-1 안내를 전날 저녁에 보내므로 "내일 날씨"가 곧 투어일 날씨.
     const forecast = await getForecastCached(supabase, tour?.city ?? null, date);
 
-    // 미리보기는 링크를 발급하지 않는다 — 확인만 하려고 토큰을 20개 찍어내면
-    // 실제로 보내지 않은 링크가 원장에 남는다. 자리표시자로 모양만 보여준다.
+    // 미리보기는 기본적으로 링크를 발급하지 않는다 — 확인만 하려고 토큰을
+    // 20개 찍어내면 실제로 보내지 않은 링크가 원장에 남는다. 단 `mint=1`
+    // (wa.me/mailto 프리필로 바로 보내는 가이드 흐름)은 실링크가 필수다.
     const previewLink = `${appUrl()}/tour-mode/room/…`;
+    const linkByBooking = new Map<string, string | null>();
+    if (mint) {
+      for (const row of rows) {
+        linkByBooking.set(
+          row.id,
+          await mintRoomLink(
+            supabase,
+            { id: row.id, tour_id: tourId, tour_date: date, contact_name: row.contact_name },
+            null,
+          ),
+        );
+      }
+    }
 
     // 템플릿은 **로케일당 한 번만** 읽는다. 수신자마다 읽으면 20명 = 40번의
     // 왕복이고, 미리보기가 눈에 띄게 느려져 운영자가 기다리다 딴 데로 간다.
@@ -163,16 +211,19 @@ export async function GET(req: NextRequest) {
       const tpl = templateByLocale.get(locale)!;
       templateSource = tpl.source;
       const pickup = pickupOf(row);
+      const realLink = mint ? linkByBooking.get(row.id) ?? null : null;
+      const link = mint ? realLink : previewLink;
       const input: RecipientInput = {
         bookingId: row.id,
         guestName: row.contact_name ?? 'Guest',
         email: row.contact_email,
         phone: row.contact_phone,
+        whatsapp: whatsappOf(row),
         locale,
         pickupPoint: pickup.name,
         pickupTime: pickup.time,
-        roomLink: previewLink,
-        passLink: previewLink,
+        roomLink: link,
+        passLink: link,
       };
       const composed = composeForRecipient(
         { body: tpl.body, subject: tpl.subject ?? defaultEmailSubject(preset, tour?.title ?? null) },
@@ -183,6 +234,7 @@ export async function GET(req: NextRequest) {
         ...composed,
         email: row.contact_email,
         phone: row.contact_phone,
+        whatsapp: whatsappOf(row),
         canEmail: Boolean(row.contact_email?.includes('@')),
         templateSource: tpl.source,
       });
@@ -198,7 +250,7 @@ export async function GET(req: NextRequest) {
       forecast,
       templateSource,
       recipients,
-      previewedBy: admin.email,
+      previewedBy: actorEmail,
     });
   } catch (e) {
     if (e instanceof AdminAuthFailure) return adminAuthJsonResponse(e);

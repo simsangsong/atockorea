@@ -121,14 +121,20 @@ export function clearTarget(): MessageTarget {
 }
 
 /**
- * B3-D4 — 룸/날짜를 벗어나면 초기화한다. 명단에 없는 예약이 대상으로 남아 있으면
- * 전송이 조용히 404가 되거나(서버가 막아주지만) 칩이 유령 이름을 보여준다.
+ * B3-D4 — 명단에서 사라진 예약을 대상에서 걷어낸다.
+ *
+ * 🔴 단, **전원이 사라졌을 때 '전체'로 되돌리지 않는다** (적대적 리뷰
+ * 2026-07-27). "대상을 못 찾았으니 전체로 보낸다"는 폴백이 바로 이 트랙이
+ * 막으려는 사고다 — 취소 직후의 폴링 창에서 조용히 ALL이 되면, 1명에게
+ * 보내려던 공지가 차량 전체로 나간다. 선택을 유지하면 칩이 잠깐 유령
+ * 이름을 보여주지만, 전송은 서버의 스코프 밖 404 가드에 걸려 **시끄럽게**
+ * 실패한다. 혼란(보이는)과 오발송(안 보이는) 중 전자를 고른다.
  */
 export function pruneTarget(target: MessageTarget, roster: TargetRoster): MessageTarget {
   if (target.kind === 'all') return target;
   const live = target.bookingIds.filter((id) => roster.guests.some((g) => g.bookingId === id));
   if (live.length === target.bookingIds.length) return target;
-  return live.length === 0 ? ALL_TARGET : { kind: 'selected', bookingIds: live };
+  return live.length === 0 ? target : { kind: 'selected', bookingIds: live };
 }
 
 export function isTargeted(target: MessageTarget): boolean {
