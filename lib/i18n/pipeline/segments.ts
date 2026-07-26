@@ -207,7 +207,10 @@ export function isTranslatableLeaf(text: string, keyHint = ''): boolean {
 
   // enum·slug·식별자: 공백 없는 snake_case / kebab-case / dot.path.
   //   "small_group" "zh-TW" "hero.title" 같은 값은 데이터이고 문구가 아니다.
-  if (!/\s/.test(s) && /^[a-z0-9]+([._-][a-z0-9]+)+$/i.test(s)) return false;
+  //   구분자는 **연속으로 올 수 있다** — `dmz__suspension_bridge` 처럼 밑줄이 겹치면
+  //   `[._-]` 한 글자만 허용하던 규칙을 비껴가 번역 큐에 들어왔다(2026-07-26 실측).
+  //   실측상 이 확장으로 새로 빠지는 값은 그 하나뿐이다.
+  if (!/\s/.test(s) && /^[a-z0-9]+([._-]+[a-z0-9]+)+$/i.test(s)) return false;
 
   // 키 이름 자체가 식별자성이면 제외 (id, key, slug, url, icon, image, ...).
   //   `component`: React 컴포넌트명("TourHeroSection") — 번역되면 렌더가 깨진다

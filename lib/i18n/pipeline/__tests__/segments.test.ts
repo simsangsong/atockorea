@@ -65,6 +65,15 @@ describe('리프 번역 대상성 휴리스틱', () => {
     expect(isTranslatableLeaf('hero.title')).toBe(false);
   });
 
+  // 2026-07-26 실측: `dmz__suspension_bridge` 가 `/catalog_card/tags/1` 에 슬러그 그대로
+  // 들어 있었다. 구분자를 한 글자만 허용해서 겹밑줄이 규칙을 비껴갔다.
+  it('구분자가 겹쳐도 slug 로 인식한다', () => {
+    expect(isTranslatableLeaf('dmz__suspension_bridge')).toBe(false);
+    expect(isTranslatableLeaf('a--b')).toBe(false);
+    // 공백이 있으면 이 규칙 자체가 적용되지 않으므로 문구는 계속 통과한다.
+    expect(isTranslatableLeaf('Small group')).toBe(true);
+  });
+
   it('숫자·색상·CSS 값은 제외', () => {
     expect(isTranslatableLeaf('70000')).toBe(false);
     expect(isTranslatableLeaf('#a3b2c1')).toBe(false);
