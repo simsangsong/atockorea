@@ -32,9 +32,6 @@ import {
   IconTabChat,
   IconTabHome,
   IconTabSettings,
-  IconThemeDark,
-  IconThemeLight,
-  IconThemeSystem,
   IconVehicle,
   TR_ICON,
   TR_STROKE,
@@ -48,13 +45,6 @@ const TABS: Array<{ key: StaffTabKey; label: string; Icon: typeof IconTabChat }>
   { key: 'ops', label: '운행', Icon: IconVehicle },
   { key: 'settings', label: '설정', Icon: IconTabSettings },
 ];
-
-const THEME_CYCLE = { light: 'dark', dark: 'system', system: 'light' } as const;
-const THEME_LABEL: Record<'light' | 'dark' | 'system', string> = {
-  light: '테마: 라이트 (탭하면 다크)',
-  dark: '테마: 다크 (탭하면 시스템)',
-  system: '테마: 시스템 (탭하면 라이트)',
-};
 
 const LIFECYCLE_BADGE: Record<'lobby' | 'live' | 'ended', { label: string; cls: string }> = {
   lobby: { label: '대기', cls: 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]' },
@@ -110,7 +100,7 @@ export default function StaffShell({
     onTabChange?.(next);
     if (controlledTab === undefined) setInternalTab(next);
   };
-  const { settings: deviceSettings, update: updateSettings } = useTourRoomSettings();
+  const { settings: deviceSettings } = useTourRoomSettings();
   const systemDark = useMediaQuery('(prefers-color-scheme: dark)');
   const theme =
     deviceSettings.theme === 'system' ? (systemDark ? 'dark' : 'light') : deviceSettings.theme;
@@ -131,23 +121,26 @@ export default function StaffShell({
         className="tr-root tr-plan-root mx-auto flex h-dvh w-full max-w-xl flex-col bg-[var(--tr-canvas)]"
         data-locale="ko"
         lang="ko"
+        data-tr-skin={deviceSettings.skin}
         style={{ '--tr-font-scale': textScaleFactor(deviceSettings.textScale) } as CSSProperties}
         data-testid="staff-shell"
       >
-        {/* ---- Slim header (RoomShell grammar) ----------------------- */}
+        {/* ---- Slim header (C-D1 diet: home · title · refresh — 2 icons).
+            Chrome shares the canvas color; the theme control lives in the
+            설정 tab (one tap away on the tab bar), not the header. ----- */}
         <header
-          className="tr-safe-top tr-hairline-b z-30 flex shrink-0 items-center gap-2 bg-[var(--tr-surface)] px-4"
+          className="tr-safe-top tr-chrome-line-b z-30 flex shrink-0 items-center gap-1 bg-[var(--tr-chrome)] px-3"
           style={{ minHeight: 'var(--tr-header-h)' }}
         >
           <a
             href="/tour-mode"
             aria-label="홈으로"
             data-testid="staff-home"
-            className="-ml-1 flex h-11 w-9 shrink-0 items-center justify-center rounded-full text-[var(--tr-ink-2)] active:bg-[var(--tr-surface-2)]"
+            className="-ml-1 flex h-11 w-10 shrink-0 items-center justify-center rounded-full text-[var(--tr-ink-2)] active:bg-[var(--tr-bubble-system)]"
           >
             <IconTabHome size={TR_ICON.action} strokeWidth={TR_STROKE.default} aria-hidden />
           </a>
-          <div className="min-w-0 flex-1 py-1.5">
+          <div className="min-w-0 flex-1 px-1 py-1.5">
             <div className="flex items-center gap-2">
               <h1 className="tr-title truncate text-[var(--tr-ink)]">{title}</h1>
               <span
@@ -164,7 +157,7 @@ export default function StaffShell({
               type="button"
               onClick={onRefresh}
               aria-label="새로고침"
-              className="flex h-11 w-9 shrink-0 items-center justify-center rounded-full text-[var(--tr-ink-2)] active:bg-[var(--tr-surface-2)]"
+              className="-mr-1 flex h-11 w-10 shrink-0 items-center justify-center rounded-full text-[var(--tr-ink)] active:bg-[var(--tr-bubble-system)]"
               data-testid="staff-refresh"
             >
               <IconRefresh
@@ -175,22 +168,6 @@ export default function StaffShell({
               />
             </button>
           )}
-          <button
-            type="button"
-            onClick={() => updateSettings({ theme: THEME_CYCLE[deviceSettings.theme] })}
-            aria-label={THEME_LABEL[deviceSettings.theme]}
-            title={THEME_LABEL[deviceSettings.theme]}
-            className="flex h-11 w-9 shrink-0 items-center justify-center rounded-full text-[var(--tr-ink-2)] active:bg-[var(--tr-surface-2)]"
-            data-testid="staff-theme-toggle"
-          >
-            {deviceSettings.theme === 'light' ? (
-              <IconThemeLight size={TR_ICON.action} strokeWidth={TR_STROKE.default} aria-hidden />
-            ) : deviceSettings.theme === 'dark' ? (
-              <IconThemeDark size={TR_ICON.action} strokeWidth={TR_STROKE.default} aria-hidden />
-            ) : (
-              <IconThemeSystem size={TR_ICON.action} strokeWidth={TR_STROKE.default} aria-hidden />
-            )}
-          </button>
         </header>
 
         {/* ---- Tab panels -------------------------------------------- */}
@@ -222,7 +199,7 @@ export default function StaffShell({
         {/* ---- Bottom tab bar (RoomShell grammar, staff set) --------- */}
         {!keyboardOpen && (
           <nav
-            className="tr-safe-bottom tr-hairline-t z-30 shrink-0 bg-[var(--tr-surface)]"
+            className="tr-safe-bottom tr-chrome-line-t z-30 shrink-0 bg-[var(--tr-chrome)]"
             role="tablist"
             data-testid="staff-tabbar"
           >

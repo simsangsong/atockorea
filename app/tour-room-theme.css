@@ -23,11 +23,23 @@
  */
 
 .tr-root {
-  /* Canvas & surfaces */
-  --tr-canvas: #f3f4f2;
+  /* Canvas & surfaces. C-D3 (chat-ui-theme plan 2026-07-27): the light canvas
+   * carries a faint sage wash — the flat near-white read as "unfinished app"
+   * next to KakaoTalk/LINE wallpapered rooms. Surfaces stay ivory so bubbles
+   * and cards still lift off the canvas. */
+  --tr-canvas: #eef1ee;
   --tr-surface: #fcfcfb;
   --tr-surface-2: #ecefee;
   --tr-hairline: rgba(37, 42, 44, 0.08);
+
+  /* C-D2 — chrome (header / bottom tab bar / drawer header). KakaoTalk and
+   * LINE paint chrome in the wallpaper's own color with no divider, which is
+   * exactly why their rooms read calm; a white bar over a tinted canvas is
+   * what read "조잡" in the audit. Follows the resolved canvas by default
+   * (skins and .tr-plan-root flow through var()); a skin may override both.
+   * The line is transparent by default — the high-contrast skin turns it on. */
+  --tr-chrome: var(--tr-canvas);
+  --tr-chrome-line: transparent;
 
   /* Bubbles (U4-D8: mine = deep pine, the app's signature) */
   --tr-bubble-me: #2e5e4e;
@@ -63,9 +75,11 @@
   /* Overlay elevation (feed elements stay flat) */
   --tr-shadow-overlay: 0 4px 16px rgba(0, 0, 0, 0.12);
 
-  /* Home dashboard (H2.1 reskin): soft grey canvas, clean white tiles,
-   * and neutral ink chips. The launcher stays refined and understated. */
-  --tr-home-canvas: #f3f4f2;
+  /* Home dashboard (H2.1 reskin): soft canvas, clean white tiles, and neutral
+   * ink chips. C-D3 — a barely-there vertical wash gives the launcher depth
+   * without competing with the tiles (consumed via [background:…] so
+   * gradients are legal here). */
+  --tr-home-canvas: linear-gradient(180deg, #f1f4f0 0%, #eaefe9 100%);
   --tr-home-tile: #fcfcfb;
   --tr-home-card-line: rgba(37, 42, 44, 0.06);
   --tr-tile-shadow: 0 1px 2px rgba(37, 42, 44, 0.03), 0 10px 26px rgba(37, 42, 44, 0.07);
@@ -111,7 +125,7 @@
 
   --tr-shadow-overlay: 0 4px 16px rgba(0, 0, 0, 0.45);
 
-  --tr-home-canvas: #151818;
+  --tr-home-canvas: linear-gradient(180deg, #171b1a 0%, #131616 100%);
   --tr-home-tile: #1d2020;
   --tr-home-card-line: rgba(244, 245, 242, 0.06);
   --tr-tile-shadow: 0 1px 2px rgba(0, 0, 0, 0.28), 0 6px 16px rgba(0, 0, 0, 0.32);
@@ -209,7 +223,7 @@
  * stored choice over it immediately. Kills the light flash behind a dark
  * room that the hard-coded #f3f4f2 used to cause. */
 .tour-mode-canvas {
-  background: #f3f4f2;
+  background: #eef1ee;
 }
 @media (prefers-color-scheme: dark) {
   .tour-mode-canvas {
@@ -354,6 +368,16 @@
 }
 .tr-hairline-b {
   border-bottom: 1px solid var(--tr-hairline);
+}
+
+/* C-D2 — chrome edges (header bottom / tab bar top). Transparent by default:
+ * chrome shares the canvas color, so a visible seam would reintroduce the
+ * boxed-in look. Skins that need separation (high contrast) set the token. */
+.tr-chrome-line-t {
+  border-top: 1px solid var(--tr-chrome-line);
+}
+.tr-chrome-line-b {
+  border-bottom: 1px solid var(--tr-chrome-line);
 }
 
 /* Safe-area helpers for the docked composer / bottom tab bar. */
