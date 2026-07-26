@@ -85,6 +85,22 @@ describe('리프 번역 대상성 휴리스틱', () => {
     expect(isTranslatableLeaf('TourHeroSection', 'component')).toBe(false);
     expect(isTranslatableLeaf('center 35%', 'imagePosition')).toBe(false);
   });
+
+  // 2026-07-26 실측: `iconBg`·`bgClass` 의 Tailwind 클래스가 번역 큐에 들어와 있었다.
+  // 키 이름이 camelCase라 식별자 키 목록에 걸리지 않았고, 값에 `/` 가 있어
+  // kebab-case enum 규칙도 비껴갔다. 값 자체로 막는다.
+  it('Tailwind 유틸리티 클래스는 제외', () => {
+    expect(isTranslatableLeaf('bg-sky-50/80', 'iconBg')).toBe(false);
+    expect(isTranslatableLeaf('bg-emerald-50/80', 'iconBg')).toBe(false);
+    expect(isTranslatableLeaf('from-amber-50 to-white', 'bgClass')).toBe(false);
+    expect(isTranslatableLeaf('text-amber-700 ring-1', 'bgClass')).toBe(false);
+  });
+
+  it('문구는 Tailwind 규칙에 걸리지 않는다', () => {
+    expect(isTranslatableLeaf('Pick-up at 08:30 from the cruise terminal')).toBe(true);
+    expect(isTranslatableLeaf('a 2-hour walk', 'summary')).toBe(true);
+    expect(isTranslatableLeaf('Gwangbok-ro 1-gil', 'name')).toBe(true);
+  });
 });
 
 describe('extractLeaves', () => {

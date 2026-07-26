@@ -190,6 +190,18 @@ export function isTranslatableLeaf(text: string, keyHint = ''): boolean {
   if (/^#[0-9a-f]{3,8}$/i.test(s)) return false;
   if (/^-?\d+(\.\d+)?(px|rem|em|vh|vw|%|s|ms)$/i.test(s)) return false;
 
+  // CSS 유틸리티 클래스 값 — `bg-sky-50/80` · `text-amber-700 ring-1`.
+  //   모든 토큰이 소문자 kebab이고 숫자·`/`·`:` 를 포함하면 문구가 아니라 스타일이다.
+  //   (2026-07-26 실측: `iconBg`·`bgClass` 값이 번역 큐에 들어와 있었다.)
+  const tokens = s.split(/\s+/);
+  if (
+    tokens.length <= 8 &&
+    /[\d/:]/.test(s) &&
+    tokens.every((t) => /^-?[a-z][a-z0-9]*(?:[:/-][a-z0-9./[\]%_-]+)+$/.test(t))
+  ) {
+    return false;
+  }
+
   // ISO 날짜·시각.
   if (/^\d{4}-\d{2}-\d{2}([T ]\d{2}:\d{2}(:\d{2})?)?/.test(s)) return false;
 

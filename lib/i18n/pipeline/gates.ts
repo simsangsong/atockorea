@@ -121,6 +121,66 @@ export function checkGlossaryTokens(source: string, target: string, pointer: str
 }
 
 /**
+ * 숫자가 통째로 흡수되는 관용구. 다의성이 없으므로 **완전 면제**한다.
+ *
+ * 2026-07-26 실측 오탐: `open 24h` · `24-hour pedestrian street` 를 독일어로 옮기면
+ * `rund um die Uhr geöffnet` 가 되어 `24`가 사라진다. 사실은 그대로다.
+ */
+const NUMERAL_IDIOMS: Record<TargetLocale, Record<string, RegExp[]>> = {
+  de: { '24': [/rund um die uhr/i, /durchgehend geöffnet/i, /ganztägig geöffnet/i] },
+  fr: { '24': [/en continu/i, /jour et nuit/i, /jour comme nuit/i] },
+  it: { '24': [/giorno e notte/i, /sempre apert[oa]/i] },
+  ru: { '24': [/круглосуточн/i] },
+};
+
+/**
+ * 철자로 쓴 수사. 각 언어 관례상 작은 수는 낱말로 적는다
+ * (독일어 Duden: 12 이하 — `~1 hour` → `rund eine Stunde`).
+ *
+ * 🔴 **면제가 아니라 flag 강등**이다. `eine`·`un`·`una` 는 부정관사와 형태가 겹쳐
+ * 문장 어디에나 나타난다 — 면제해 버리면 `1 hour`→`zwei Stunden` 같은 진짜 변조도
+ * 함께 통과한다. 발행은 막지 않되 감수 큐에는 올린다.
+ */
+const NUMERAL_WORDS: Record<TargetLocale, Record<string, RegExp[]>> = {
+  de: {
+    '1': [/(?<!\p{L})ein(e[mnrs]?|s)?(?!\p{L})/iu], '2': [/(?<!\p{L})zwei(?!\p{L})/iu],
+    '3': [/(?<!\p{L})drei(?!\p{L})/iu], '4': [/(?<!\p{L})vier(?!\p{L})/iu],
+    '5': [/(?<!\p{L})fünf(?!\p{L})/iu], '6': [/(?<!\p{L})sechs(?!\p{L})/iu],
+    '7': [/(?<!\p{L})sieben(?!\p{L})/iu], '8': [/(?<!\p{L})acht(?!\p{L})/iu],
+    '9': [/(?<!\p{L})neun(?!\p{L})/iu], '10': [/(?<!\p{L})zehn(?!\p{L})/iu],
+    '11': [/(?<!\p{L})elf(?!\p{L})/iu], '12': [/(?<!\p{L})zwölf(?!\p{L})/iu],
+  },
+  fr: {
+    '1': [/(?<!\p{L})une?(?!\p{L})/iu], '2': [/(?<!\p{L})deux(?!\p{L})/iu],
+    '3': [/(?<!\p{L})trois(?!\p{L})/iu], '4': [/(?<!\p{L})quatre(?!\p{L})/iu],
+    '5': [/(?<!\p{L})cinq(?!\p{L})/iu], '6': [/(?<!\p{L})six(?!\p{L})/iu],
+    '7': [/(?<!\p{L})sept(?!\p{L})/iu], '8': [/(?<!\p{L})huit(?!\p{L})/iu],
+    '9': [/(?<!\p{L})neuf(?!\p{L})/iu], '10': [/(?<!\p{L})dix(?!\p{L})/iu],
+    '11': [/(?<!\p{L})onze(?!\p{L})/iu], '12': [/(?<!\p{L})douze(?!\p{L})/iu],
+  },
+  it: {
+    '1': [/(?<!\p{L})un[oa']?(?!\p{L})/iu], '2': [/(?<!\p{L})due(?!\p{L})/iu],
+    '3': [/(?<!\p{L})tre(?!\p{L})/iu], '4': [/(?<!\p{L})quattro(?!\p{L})/iu],
+    '5': [/(?<!\p{L})cinque(?!\p{L})/iu], '6': [/(?<!\p{L})sei(?!\p{L})/iu],
+    '7': [/(?<!\p{L})sette(?!\p{L})/iu], '8': [/(?<!\p{L})otto(?!\p{L})/iu],
+    '9': [/(?<!\p{L})nove(?!\p{L})/iu], '10': [/(?<!\p{L})dieci(?!\p{L})/iu],
+    '11': [/(?<!\p{L})undici(?!\p{L})/iu], '12': [/(?<!\p{L})dodici(?!\p{L})/iu],
+  },
+  ru: {
+    '1': [/(?<!\p{L})од(ин|на|но)(?!\p{L})/iu], '2': [/(?<!\p{L})дв[ае](?!\p{L})/iu],
+    '3': [/(?<!\p{L})три(?!\p{L})/iu], '4': [/(?<!\p{L})четыре(?!\p{L})/iu],
+    '5': [/(?<!\p{L})пять(?!\p{L})/iu], '6': [/(?<!\p{L})шесть(?!\p{L})/iu],
+    '7': [/(?<!\p{L})семь(?!\p{L})/iu], '8': [/(?<!\p{L})восемь(?!\p{L})/iu],
+    '9': [/(?<!\p{L})девять(?!\p{L})/iu], '10': [/(?<!\p{L})десять(?!\p{L})/iu],
+    '11': [/(?<!\p{L})одиннадцать(?!\p{L})/iu], '12': [/(?<!\p{L})двенадцать(?!\p{L})/iu],
+  },
+};
+
+function matchesAny(text: string, patterns: RegExp[] | undefined): boolean {
+  return patterns !== undefined && patterns.some((re) => re.test(text));
+}
+
+/**
  * G3 — 숫자 값. H2(수치 변조) 검출.
  *
  * **비대칭 판정**이다.
@@ -130,15 +190,31 @@ export function checkGlossaryTokens(source: string, target: string, pointer: str
  *
  * 대칭 비교로 두면 정상적인 날짜 현지화가 전부 실패로 잡혀 재큐 루프에 빠진다
  * (2026-07-26 실측 오탐).
+ *
+ * `locale`을 주면 **수사가 낱말로 바뀐 경우**를 구분한다 — 아래 두 표 참조.
+ * 주지 않으면 순수 숫자 비교로만 동작한다(하위 호환).
  */
-export function checkNumbers(source: string, target: string, pointer: string): Finding[] {
+export function checkNumbers(
+  source: string,
+  target: string,
+  pointer: string,
+  locale?: TargetLocale,
+): Finding[] {
   const a = numberMultiset(source);
   const b = numberMultiset(target);
   if (sameMultiset(a, b)) return [];
 
   const findings: Finding[] = [];
-  const lost = missingFrom(a, b);
   const added = missingFrom(b, a);
+
+  // 소실 숫자를 세 갈래로 나눈다: 관용구 흡수(면제) · 철자 수사(flag 강등) · 진짜 소실(fail).
+  const lost: string[] = [];
+  const spelled: string[] = [];
+  for (const n of missingFrom(a, b)) {
+    if (locale && matchesAny(target, NUMERAL_IDIOMS[locale][n])) continue;
+    if (locale && matchesAny(target, NUMERAL_WORDS[locale][n])) spelled.push(n);
+    else lost.push(n);
+  }
 
   if (lost.length > 0) {
     findings.push({
@@ -146,6 +222,14 @@ export function checkNumbers(source: string, target: string, pointer: string): F
       severity: 'fail',
       pointer,
       message: `숫자 소실 — 원문의 [${lost.join(' ')}] 이 번역에 없다 (원문 [${a.join(' ')}] vs 번역 [${b.join(' ')}])`,
+    });
+  }
+  if (spelled.length > 0) {
+    findings.push({
+      gate: 'G3',
+      severity: 'flag',
+      pointer,
+      message: `숫자가 철자 수사로 바뀐 것으로 보인다 — [${spelled.join(' ')}] (값이 맞는지 감수 필요)`,
     });
   }
   if (added.length > 0) {
@@ -500,7 +584,7 @@ export function verifyUnit(
 
     findings.push(
       ...checkGlossaryTokens(src, tgt, pointer),
-      ...checkNumbers(src, tgt, pointer),
+      ...checkNumbers(src, tgt, pointer, options.locale),
       ...checkCurrencyAndUnits(src, tgt, pointer),
       ...checkPlaceholders(src, tgt, pointer),
       ...checkMarkup(src, tgt, pointer),

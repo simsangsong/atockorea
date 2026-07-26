@@ -84,6 +84,30 @@ describe('G3 숫자 — 값 변조 검출, 서식 변경 허용 (H2)', () => {
     expect(checkNumbers('Meet at 09:30', 'Treffpunkt 09:30 Uhr', '/p')).toEqual([]);
   });
 
+  // 2026-07-26 실측 오탐: `open 24h` → `rund um die Uhr geöffnet` 로 24가 사라진다.
+  it('숫자를 흡수하는 관용구는 면제 — 24h → rund um die Uhr', () => {
+    expect(
+      checkNumbers('Pedestrian street open 24h', 'Fußgängerstraße rund um die Uhr geöffnet', '/p', 'de'),
+    ).toEqual([]);
+    expect(checkNumbers('open 24h', 'открыто круглосуточно', '/p', 'ru')).toEqual([]);
+  });
+
+  it('철자 수사는 fail이 아니라 flag — 감수는 받되 발행은 막지 않는다', () => {
+    const f = checkNumbers('~1 hour of light', 'rund eine Stunde Licht', '/p', 'de');
+    expect(f.every((x) => x.severity === 'flag')).toBe(true);
+    expect(f[0].message).toContain('철자 수사');
+  });
+
+  it('철자 수사 예외가 진짜 변조를 덮지 않는다 — 40 → 30', () => {
+    const f = checkNumbers('about 40 minutes', 'etwa 30 Minuten', '/p', 'de');
+    expect(f.some((x) => x.severity === 'fail' && x.message.includes('소실'))).toBe(true);
+  });
+
+  it('locale 없이 부르면 기존 동작 그대로', () => {
+    const f = checkNumbers('open 24h', 'rund um die Uhr geöffnet', '/p');
+    expect(f.some((x) => x.severity === 'fail')).toBe(true);
+  });
+
   it('날짜 현지화(월 이름 → 숫자)는 fail이 아니라 flag', () => {
     // `12 Oct 2009` → `12.10.2009`. 월이 숫자가 되며 10이 새로 생기지만 사실은 그대로다.
     const f = checkNumbers('designated 12 Oct 2009', 'ausgewiesen am 12.10.2009', '/p');
