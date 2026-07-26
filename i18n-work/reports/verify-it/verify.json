@@ -1,6 +1,6 @@
 {
   "locale": "it",
-  "generatedAt": "2026-07-26T03:51:48.956Z",
+  "generatedAt": "2026-07-26T04:03:59.761Z",
   "reports": [
     {
       "unitId": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:it:A1",
@@ -4335,6 +4335,927 @@
     },
     {
       "unitId": "tour_product_pages:jeju-cruise-shore-excursion-bus-tour:it:routeFlowStops",
+      "status": "auto_pass",
+      "segments": 12,
+      "fails": 0,
+      "flags": 0,
+      "findings": []
+    },
+    {
+      "unitId": "tour_product_pages:jeju-cruise-shore-excursion-small-group-tour:it:A1",
+      "status": "flagged",
+      "segments": 95,
+      "fails": 0,
+      "flags": 14,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/catalog_card/title",
+          "message": "길이비 1.74 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/catalog_card/subtitle",
+          "message": "길이비 1.42 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/pickup_dropoff/return/0/name",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/pickup_dropoff/return/1/name",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/pickup_dropoff/departure/0/time",
+          "message": "길이비 1.57 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/pickup_dropoff/departure/1/time",
+          "message": "길이비 1.57 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/sticky_booking_bar/note",
+          "message": "길이비 1.44 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/0/content/2",
+          "message": "길이비 1.51 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/0/content/3",
+          "message": "길이비 1.40 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/0/preview",
+          "message": "길이비 1.49 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/1/content/0",
+          "message": "길이비 1.50 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/2/preview",
+          "message": "길이비 1.40 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/3/content/3",
+          "message": "길이비 1.48 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/3/preview",
+          "message": "길이비 1.43 가 it 허용범위 0.95–1.35 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:jeju-cruise-shore-excursion-small-group-tour:it:A2",
+      "status": "flagged",
+      "segments": 86,
+      "fails": 0,
+      "flags": 21,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/bestFor/0",
+          "message": "길이비 1.56 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/bestFor/1",
+          "message": "길이비 1.45 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/0/items/2/label",
+          "message": "길이비 1.44 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/0/items/2/detail",
+          "message": "길이비 1.67 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/1/items/0/detail",
+          "message": "길이비 1.38 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/staticQuestions/0/answer",
+          "message": "길이비 1.44 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/staticQuestions/0/question",
+          "message": "길이비 1.39 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/staticQuestions/1/answer",
+          "message": "길이비 1.41 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/staticQuestions/1/question",
+          "message": "길이비 0.77 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/staticQuestions/2/question",
+          "message": "길이비 1.36 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/staticQuestions/6/question",
+          "message": "길이비 1.50 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/staticQuestions/7/answer",
+          "message": "길이비 1.36 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/staticQuestions/7/question",
+          "message": "길이비 0.91 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/0/body",
+          "message": "길이비 1.36 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/0/description",
+          "message": "길이비 1.35 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/2/body",
+          "message": "길이비 1.39 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/seasonalVariations/2/description",
+          "message": "길이비 1.43 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/bookingSupportSteps/1/detail",
+          "message": "길이비 1.43 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/bookingSupportSteps/2/detail",
+          "message": "길이비 1.36 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/bookingSupportSteps/4/description",
+          "message": "길이비 1.51 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/bookingSupportSteps/5/description",
+          "message": "길이비 1.58 가 it 허용범위 0.95–1.35 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:jeju-cruise-shore-excursion-small-group-tour:it:B",
+      "status": "auto_pass",
+      "segments": 66,
+      "fails": 0,
+      "flags": 0,
+      "findings": []
+    },
+    {
+      "unitId": "tour_product_pages:jeju-cruise-shore-excursion-small-group-tour:it:itinerary_variants",
+      "status": "flagged",
+      "segments": 34,
+      "fails": 0,
+      "flags": 14,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/0/stops/0/duration",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/0/stops/0/highlights/0",
+          "message": "길이비 1.46 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/0/stops/0/highlights/5",
+          "message": "길이비 1.39 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/0/stops/0/whyOnRoute",
+          "message": "길이비 1.36 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/0/stops/0/description",
+          "message": "숫자 추가 — 번역에만 [24 7] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/0/stops/1/duration",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/0/stops/1/timeUsed/0",
+          "message": "길이비 1.36 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/0/stops/1/timeUsed/1",
+          "message": "길이비 1.58 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/0/stops/1/timeUsed/2",
+          "message": "길이비 1.40 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/0/stops/1/timeUsed/4",
+          "message": "길이비 1.37 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/0/stops/1/highlights/1",
+          "message": "길이비 1.42 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/0/stops/1/highlights/3",
+          "message": "길이비 1.40 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/0/stops/1/highlights/4",
+          "message": "길이비 1.58 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/0/stops/2/duration",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:jeju-cruise-shore-excursion-small-group-tour:it:itinerary_variants-2",
+      "status": "flagged",
+      "segments": 45,
+      "fails": 0,
+      "flags": 11,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/0/stops/2/timeUsed/2",
+          "message": "길이비 0.91 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/0/stops/2/highlights/0",
+          "message": "길이비 1.40 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/0/stops/3/duration",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/0/stops/3/highlights/0",
+          "message": "길이비 1.36 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/0/stops/3/highlights/2",
+          "message": "길이비 1.65 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/0/stops/3/highlights/4",
+          "message": "길이비 0.89 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/0/stops/4/duration",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/0/stops/4/timeUsed/0",
+          "message": "길이비 1.47 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/0/stops/4/timeUsed/1",
+          "message": "길이비 1.42 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/0/stops/4/timeUsed/3",
+          "message": "길이비 1.56 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/0/stops/4/highlights/4",
+          "message": "길이비 1.37 가 it 허용범위 0.95–1.35 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:jeju-cruise-shore-excursion-small-group-tour:it:itinerary_variants-3",
+      "status": "flagged",
+      "segments": 61,
+      "fails": 0,
+      "flags": 11,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/0/stops/5/highlights/3",
+          "message": "길이비 1.35 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/0/route_focus",
+          "message": "길이비 1.40 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/0/theme_tags_in_variant/0",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/0/theme_tags_in_variant/1",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/0/theme_tags_in_variant/2",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/1/stops/0/duration",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/1/stops/0/highlights/3",
+          "message": "길이비 1.46 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/1/stops/1/name",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/1/stops/1/duration",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/1/stops/1/timeUsed/1",
+          "message": "길이비 1.55 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/1/stops/1/timeUsed/3",
+          "message": "길이비 1.58 가 it 허용범위 0.95–1.35 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:jeju-cruise-shore-excursion-small-group-tour:it:itinerary_variants-4",
+      "status": "flagged",
+      "segments": 39,
+      "fails": 0,
+      "flags": 8,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/1/stops/2/duration",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/1/stops/2/timeUsed/1",
+          "message": "길이비 1.46 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/1/stops/2/timeUsed/2",
+          "message": "길이비 1.57 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/1/stops/2/timeUsed/3",
+          "message": "길이비 1.61 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/1/stops/2/highlights/2",
+          "message": "길이비 1.39 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/1/stops/3/duration",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/1/stops/3/highlights/0",
+          "message": "길이비 1.75 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/1/stops/3/highlights/2",
+          "message": "길이비 1.71 가 it 허용범위 0.95–1.35 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:jeju-cruise-shore-excursion-small-group-tour:it:itinerary_variants-5",
+      "status": "flagged",
+      "segments": 40,
+      "fails": 0,
+      "flags": 10,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/1/stops/4/duration",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/1/stops/4/highlights/2",
+          "message": "길이비 1.36 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/1/stops/5/duration",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/1/stops/5/highlights/1",
+          "message": "숫자가 철자 수사로 바뀐 것으로 보인다 — [1960] (값이 맞는지 감수 필요)"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/1/stops/5/highlights/1",
+          "message": "숫자 추가 — 번역에만 [60] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/1/stops/5/highlights/8",
+          "message": "길이비 1.63 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/1/stops/5/description",
+          "message": "숫자가 철자 수사로 바뀐 것으로 보인다 — [1960] (값이 맞는지 감수 필요)"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/1/stops/5/description",
+          "message": "숫자 추가 — 번역에만 [60] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/1/stops/6/highlights/0",
+          "message": "길이비 1.63 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/1/stops/6/highlights/3",
+          "message": "길이비 1.50 가 it 허용범위 0.95–1.35 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:jeju-cruise-shore-excursion-small-group-tour:it:itinerary_variants-6",
+      "status": "flagged",
+      "segments": 31,
+      "fails": 0,
+      "flags": 9,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/1/route_focus",
+          "message": "길이비 1.56 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/1/routeFlowStops/2/name",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/1/routeFlowStops/4/name",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/1/theme_tags_in_variant/0",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/1/theme_tags_in_variant/1",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/1/theme_tags_in_variant/2",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/1/theme_tags_in_variant/3",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/1/theme_tags_in_variant/4",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itinerary_variants/1/theme_tags_in_variant/5",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:jeju-cruise-shore-excursion-small-group-tour:it:itineraryStops",
+      "status": "flagged",
+      "segments": 38,
+      "fails": 0,
+      "flags": 13,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/duration",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/highlights/0",
+          "message": "길이비 1.58 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/highlights/5",
+          "message": "길이비 1.39 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/smartNotes/tip",
+          "message": "길이비 1.39 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/convenience/parking",
+          "message": "길이비 1.75 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/convenience/restroom",
+          "message": "길이비 1.40 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/duration",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/timeUsed/0",
+          "message": "길이비 1.36 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/timeUsed/1",
+          "message": "길이비 1.43 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/timeUsed/2",
+          "message": "길이비 1.40 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/timeUsed/4",
+          "message": "길이비 1.43 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/highlights/3",
+          "message": "길이비 1.44 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/highlights/4",
+          "message": "길이비 1.83 가 it 허용범위 0.95–1.35 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:jeju-cruise-shore-excursion-small-group-tour:it:itineraryStops-2",
+      "status": "flagged",
+      "segments": 69,
+      "fails": 0,
+      "flags": 8,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/liveStatusWidget",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/duration",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/visitBasics/hours",
+          "message": "숫자 추가 — 번역에만 [24] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/0/alt",
+          "message": "길이비 1.44 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/1/alt",
+          "message": "길이비 1.44 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/2/alt",
+          "message": "길이비 1.44 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/3/alt",
+          "message": "길이비 1.44 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/4/alt",
+          "message": "길이비 1.44 가 it 허용범위 0.95–1.35 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:jeju-cruise-shore-excursion-small-group-tour:it:itineraryStops-3",
+      "status": "flagged",
+      "segments": 64,
+      "fails": 0,
+      "flags": 14,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/duration",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/highlights/2",
+          "message": "길이비 1.73 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/highlights/4",
+          "message": "길이비 0.89 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/smartNotes/tip",
+          "message": "길이비 1.37 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/convenience/parking",
+          "message": "길이비 1.73 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/duration",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/timeUsed/0",
+          "message": "길이비 1.73 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/timeUsed/1",
+          "message": "길이비 1.46 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/timeUsed/3",
+          "message": "길이비 1.49 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/highlights/4",
+          "message": "길이비 1.37 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/convenience/restroom",
+          "message": "길이비 1.44 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/visitBasics/hours",
+          "message": "숫자 추가 — 번역에만 [24] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/visitBasics/walking",
+          "message": "길이비 1.54 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/visitBasics/admission",
+          "message": "길이비 1.57 가 it 허용범위 0.95–1.35 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:jeju-cruise-shore-excursion-small-group-tour:it:itineraryStops-4",
+      "status": "auto_pass",
+      "segments": 22,
+      "fails": 0,
+      "flags": 0,
+      "findings": []
+    },
+    {
+      "unitId": "tour_product_pages:jeju-cruise-shore-excursion-small-group-tour:it:routeFlowStops",
       "status": "auto_pass",
       "segments": 12,
       "fails": 0,
