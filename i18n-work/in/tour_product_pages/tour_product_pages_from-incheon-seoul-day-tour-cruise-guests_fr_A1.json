@@ -1,0 +1,327 @@
+{
+  "unitId": "tour_product_pages:from-incheon-seoul-day-tour-cruise-guests:fr:A1",
+  "surface": "tour_product_pages",
+  "slug": "from-incheon-seoul-day-tour-cruise-guests",
+  "locale": "fr",
+  "chunk": "A1",
+  "tier": "A1",
+  "segments": {
+    "/seo/pageTitle": {
+      "source_en": "From Incheon: Seoul Cruise Day Tour (Small Group) | AtoC Korea"
+    },
+    "/seo/metaDescription": {
+      "source_en": "9-hour shared-van shore excursion from Incheon Cruise Terminal to Seoul: ⟦G1⟧, ⟦G0⟧, ⟦G2⟧, ⟦G3⟧. EN guide.",
+      "glossary": [
+        "⟦G0⟧ = Village hanok de Bukchon",
+        "⟦G1⟧ = Palais de Gyeongbokgung",
+        "⟦G2⟧ = Marché Gwangjang",
+        "⟦G3⟧ = Insadong"
+      ]
+    },
+    "/seo/primaryKeywords/0": {
+      "source_en": "Incheon cruise day tour"
+    },
+    "/seo/primaryKeywords/1": {
+      "source_en": "Seoul shore excursion small group"
+    },
+    "/seo/primaryKeywords/2": {
+      "source_en": "From Incheon Seoul day tour"
+    },
+    "/seo/primaryKeywords/3": {
+      "source_en": "Gyeongbokgung cruise tour"
+    },
+    "/hero/meta/stops": {
+      "source_en": "7 stops"
+    },
+    "/hero/meta/region": {
+      "source_en": "Seoul (from Incheon cruise terminal)"
+    },
+    "/hero/meta/duration": {
+      "source_en": "≈ 9 hours, calibrated to your cruise's port-call window"
+    },
+    "/hero/pills/1": {
+      "source_en": "cruise"
+    },
+    "/hero/pills/2": {
+      "source_en": "seoul"
+    },
+    "/hero/tagline": {
+      "source_en": "Four central-Seoul stops coordinated with your ship's schedule"
+    },
+    "/glanceItems/0/label": {
+      "source_en": "Photo Value"
+    },
+    "/glanceItems/0/value": {
+      "source_en": "High"
+    },
+    "/glanceItems/1/label": {
+      "source_en": "Scenic"
+    },
+    "/glanceItems/1/value": {
+      "source_en": "Good"
+    },
+    "/glanceItems/2/label": {
+      "source_en": "Walking"
+    },
+    "/glanceItems/2/value": {
+      "source_en": "High"
+    },
+    "/glanceItems/3/label": {
+      "source_en": "Rain Safety"
+    },
+    "/glanceItems/3/value": {
+      "source_en": "Moderate"
+    },
+    "/glanceItems/4/label": {
+      "source_en": "Family Fit"
+    },
+    "/glanceItems/4/value": {
+      "source_en": "Good"
+    },
+    "/glanceItems/5/label": {
+      "source_en": "Balance"
+    },
+    "/glanceItems/5/value": {
+      "source_en": "Balanced"
+    },
+    "/subnavItems/0/label": {
+      "source_en": "Overview"
+    },
+    "/subnavItems/1/label": {
+      "source_en": "Itinerary"
+    },
+    "/subnavItems/2/label": {
+      "source_en": "Details"
+    },
+    "/subnavItems/3/label": {
+      "source_en": "FAQ"
+    },
+    "/subnavItems/4/label": {
+      "source_en": "Reviews"
+    },
+    "/catalog_card/tags/1": {
+      "source_en": "seoul"
+    },
+    "/catalog_card/title": {
+      "source_en": "Incheon to Seoul: Cruise Day Tour"
+    },
+    "/catalog_card/badges/0": {
+      "source_en": "Cruise excursion"
+    },
+    "/catalog_card/badges/1": {
+      "source_en": "Small shared van"
+    },
+    "/catalog_card/badges/2": {
+      "source_en": "Pickup at Incheon port"
+    },
+    "/catalog_card/badges/3": {
+      "source_en": "9-hour window"
+    },
+    "/catalog_card/region": {
+      "source_en": "Seoul (from Incheon cruise terminal)"
+    },
+    "/catalog_card/duration": {
+      "source_en": "9 hours"
+    },
+    "/catalog_card/subtitle": {
+      "source_en": "Seoul's central heritage, hanok, market, and crafts circuit from your Incheon cruise terminal."
+    },
+    "/catalog_card/priceLabel": {
+      "source_en": "From US$69 per person (was $76, 9% off)"
+    },
+    "/catalog_card/shortCardDescription": {
+      "source_en": "Shared-van day tour from Incheon Cruise Terminal hitting Seoul's headline central-city stops in a single 9-hour window: ⟦G1⟧ (or Changdeokgung on Tuesdays), ⟦G0⟧, lunch at ⟦G2⟧ (the city's most-photographed streetfood alley), and ⟦G3⟧ cultural street. Pickup calibrated to your specific ship's disembarkation; certified English/Chinese-speaking guide; ≈75 min return drive built in.",
+      "glossary": [
+        "⟦G0⟧ = Village hanok de Bukchon",
+        "⟦G1⟧ = Palais de Gyeongbokgung",
+        "⟦G2⟧ = Marché Gwangjang",
+        "⟦G3⟧ = Insadong"
+      ]
+    },
+    "/headlineLine1": {
+      "source_en": "Incheon to Seoul"
+    },
+    "/headlineLine2": {
+      "source_en": "Cruise Day Tour"
+    },
+    "/pickup_dropoff/notes/0": {
+      "source_en": "Provide ship name, port-call date, expected disembarkation time, and all-aboard time at booking. Pickup is at the Incheon Cruise Terminal in Songdo (the dedicated ocean-cruise terminal; do NOT confuse with the Incheon International Ferry Terminal or with Incheon Airport on Yeongjong Island). Shared van with other cruise passengers from various ships; if multiple ships sail at different times, earliest-sailing passengers are dropped first. On-time return is the product."
+    },
+    "/pickup_dropoff/return/0/name": {
+      "source_en": "Incheon Cruise Terminal"
+    },
+    "/pickup_dropoff/departure/0/name": {
+      "source_en": "Incheon Cruise Terminal (Songdo)"
+    },
+    "/pickup_dropoff/departure/0/time": {
+      "source_en": "Calibrated to ship disembarkation"
+    },
+    "/sticky_booking_bar/note": {
+      "source_en": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB."
+    },
+    "/sticky_booking_bar/price/per": {
+      "source_en": "person"
+    },
+    "/practicalAccordionItems/0/title": {
+      "source_en": "What's included"
+    },
+    "/practicalAccordionItems/0/content/0": {
+      "source_en": "Air-conditioned shared van, certified English/Chinese-speaking guide, fuel/tolls/parking."
+    },
+    "/practicalAccordionItems/0/content/1": {
+      "source_en": "Not included: Gyeongbokgung admission (₩3,000 adult, FREE with hanbok), Changdeokgung Secret Garden (₩5,000, only applicable on Tuesday substitution), lunch at ⟦G0⟧ (₩10,000–₩20,000), optional Hanbok rental (₩15,000–₩25,000 for 4-hour rental, available at shops near the palace district — see FAQ), tips.",
+      "glossary": [
+        "⟦G0⟧ = Marché Gwangjang"
+      ]
+    },
+    "/practicalAccordionItems/0/content/2": {
+      "source_en": "Total typical out-of-pocket without hanbok: ₩15,000–₩25,000 per person."
+    },
+    "/practicalAccordionItems/0/preview": {
+      "source_en": "Air-conditioned shared van, certified English/Chinese-speaking guide, fuel/tolls/parking."
+    },
+    "/practicalAccordionItems/1/title": {
+      "source_en": "Pickup & drop-off"
+    },
+    "/practicalAccordionItems/1/content/0": {
+      "source_en": "Group meets at the Incheon Port International Passenger Terminal arrival hall in Songdo."
+    },
+    "/practicalAccordionItems/1/content/1": {
+      "source_en": "Pickup time is calibrated to your ship's actual disembarkation, not a fixed start."
+    },
+    "/practicalAccordionItems/1/content/2": {
+      "source_en": "Provide ship name, port-call date, expected disembarkation time, and all-aboard time at booking."
+    },
+    "/practicalAccordionItems/1/content/3": {
+      "source_en": "Drop-off at the terminal with at least a 60-minute buffer before your stated all-aboard time."
+    },
+    "/practicalAccordionItems/1/preview": {
+      "source_en": "Group meets at the Incheon Port International Passenger Terminal arrival hall in Songdo."
+    },
+    "/practicalAccordionItems/2/title": {
+      "source_en": "Sail-away timing"
+    },
+    "/practicalAccordionItems/2/content/0": {
+      "source_en": "Drop-off at the cruise terminal at least 60 minutes before your all-aboard time."
+    },
+    "/practicalAccordionItems/2/content/1": {
+      "source_en": "Cruise rule of thumb: be back on the ship at least 30 minutes before stated departure."
+    },
+    "/practicalAccordionItems/2/content/2": {
+      "source_en": "The route is built with a 60-minute buffer for return-drive traffic."
+    },
+    "/practicalAccordionItems/2/content/3": {
+      "source_en": "Incheon-bound rush hour (≈17:00–19:00) and rain can extend the return drive — the operator monitors and may shorten the ⟦G0⟧ block by 15–30 min if traffic warrants.",
+      "glossary": [
+        "⟦G0⟧ = Insadong"
+      ]
+    },
+    "/practicalAccordionItems/2/preview": {
+      "source_en": "Drop-off at the cruise terminal at least 60 minutes before your all-aboard time."
+    },
+    "/practicalAccordionItems/3/title": {
+      "source_en": "Walking & terrain"
+    },
+    "/practicalAccordionItems/3/content/0": {
+      "source_en": "Moderate."
+    },
+    "/practicalAccordionItems/3/content/1": {
+      "source_en": "Total walking ≈4 km."
+    },
+    "/practicalAccordionItems/3/content/2": {
+      "source_en": "Gyeongbokgung covers a large flat-courtyard area; Bukchon has gentle slopes on hanok-lined streets; ⟦G0⟧ is flat indoor alleys; ⟦G1⟧ is a flat pedestrian street.",
+      "glossary": [
+        "⟦G0⟧ = Marché Gwangjang",
+        "⟦G1⟧ = Insadong"
+      ]
+    },
+    "/practicalAccordionItems/3/content/3": {
+      "source_en": "No significant stairs except optional Bukchon viewpoints."
+    },
+    "/practicalAccordionItems/3/content/4": {
+      "source_en": "Comfortable closed-toe shoes recommended."
+    },
+    "/practicalAccordionItems/3/preview": {
+      "source_en": "Moderate."
+    },
+    "/practicalAccordionItems/4/title": {
+      "source_en": "Cancellation"
+    },
+    "/practicalAccordionItems/4/content/0": {
+      "source_en": "Free cancellation up to 24 hours before pickup."
+    },
+    "/practicalAccordionItems/4/content/1": {
+      "source_en": "Same-day cancellations and no-shows non-refundable."
+    },
+    "/practicalAccordionItems/4/content/2": {
+      "source_en": "If your ship's port call is cancelled by the cruise line, full refund with cancellation documentation."
+    },
+    "/practicalAccordionItems/4/preview": {
+      "source_en": "Free cancellation up to 24 hours before pickup."
+    },
+    "/practicalAccordionItems/5/title": {
+      "source_en": "Children & accessibility"
+    },
+    "/practicalAccordionItems/5/content/0": {
+      "source_en": "Children age 8 and up are welcome and the route works well for them."
+    },
+    "/practicalAccordionItems/5/content/1": {
+      "source_en": "Strollers are fine at Gyeongbokgung (flat courtyards) and ⟦G0⟧, but Bukchon's hanok lanes have gentle slopes that may be effortful.",
+      "glossary": [
+        "⟦G0⟧ = Insadong"
+      ]
+    },
+    "/practicalAccordionItems/5/content/2": {
+      "source_en": "Wheelchair users: Gyeongbokgung is wheelchair-friendly via the Heungnyemun gate; the Bukchon viewpoints are not."
+    },
+    "/practicalAccordionItems/5/content/3": {
+      "source_en": "Advise mobility needs at booking."
+    },
+    "/practicalAccordionItems/5/preview": {
+      "source_en": "Children age 8 and up are welcome and the route works well for them."
+    },
+    "/practicalAccordionItems/6/title": {
+      "source_en": "Tuesday route note"
+    },
+    "/practicalAccordionItems/6/content/0": {
+      "source_en": "Gyeongbokgung is closed on Tuesdays."
+    },
+    "/practicalAccordionItems/6/content/1": {
+      "source_en": "On Tuesday cruise calls the route swaps to Changdeokgung Palace + Secret Garden, which is a UNESCO World Heritage site (the Secret Garden requires a separate ₩5,000 ticket and is visited on a guided schedule)."
+    },
+    "/practicalAccordionItems/6/content/2": {
+      "source_en": "The rest of the day stays identical."
+    },
+    "/practicalAccordionItems/6/preview": {
+      "source_en": "Gyeongbokgung is closed on Tuesdays."
+    }
+  },
+  "glossaryTokens": {
+    "/seo/metaDescription": {
+      "⟦G0⟧": "Village hanok de Bukchon",
+      "⟦G1⟧": "Palais de Gyeongbokgung",
+      "⟦G2⟧": "Marché Gwangjang",
+      "⟦G3⟧": "Insadong"
+    },
+    "/catalog_card/shortCardDescription": {
+      "⟦G0⟧": "Village hanok de Bukchon",
+      "⟦G1⟧": "Palais de Gyeongbokgung",
+      "⟦G2⟧": "Marché Gwangjang",
+      "⟦G3⟧": "Insadong"
+    },
+    "/practicalAccordionItems/0/content/1": {
+      "⟦G0⟧": "Marché Gwangjang"
+    },
+    "/practicalAccordionItems/2/content/3": {
+      "⟦G0⟧": "Insadong"
+    },
+    "/practicalAccordionItems/3/content/2": {
+      "⟦G0⟧": "Marché Gwangjang",
+      "⟦G1⟧": "Insadong"
+    },
+    "/practicalAccordionItems/5/content/1": {
+      "⟦G0⟧": "Insadong"
+    }
+  },
+  "tmHits": 0
+}

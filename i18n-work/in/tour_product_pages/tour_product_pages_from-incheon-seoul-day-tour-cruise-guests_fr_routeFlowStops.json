@@ -1,0 +1,73 @@
+{
+  "unitId": "tour_product_pages:from-incheon-seoul-day-tour-cruise-guests:fr:routeFlowStops",
+  "surface": "tour_product_pages",
+  "slug": "from-incheon-seoul-day-tour-cruise-guests",
+  "locale": "fr",
+  "chunk": "routeFlowStops",
+  "tier": "B",
+  "segments": {
+    "/routeFlowStops/0/name": {
+      "source_en": "Incheon Cruise Terminal"
+    },
+    "/routeFlowStops/0/theme": {
+      "source_en": "Departure"
+    },
+    "/routeFlowStops/1/name": {
+      "source_en": "⟦G0⟧ (or Changdeokgung on Tuesdays)",
+      "glossary": [
+        "⟦G0⟧ = Palais de Gyeongbokgung"
+      ]
+    },
+    "/routeFlowStops/1/theme": {
+      "source_en": "Royal palace"
+    },
+    "/routeFlowStops/2/name": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Village hanok de Bukchon"
+      ]
+    },
+    "/routeFlowStops/2/theme": {
+      "source_en": "Hanok residential district"
+    },
+    "/routeFlowStops/3/name": {
+      "source_en": "Lunch at ⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Marché Gwangjang"
+      ]
+    },
+    "/routeFlowStops/3/theme": {
+      "source_en": "Streetfood market"
+    },
+    "/routeFlowStops/4/name": {
+      "source_en": "⟦G0⟧ cultural street",
+      "glossary": [
+        "⟦G0⟧ = Insadong"
+      ]
+    },
+    "/routeFlowStops/4/theme": {
+      "source_en": "Crafts & cultural shopping"
+    },
+    "/routeFlowStops/5/name": {
+      "source_en": "Incheon Cruise Terminal"
+    },
+    "/routeFlowStops/5/theme": {
+      "source_en": "Return"
+    }
+  },
+  "glossaryTokens": {
+    "/routeFlowStops/1/name": {
+      "⟦G0⟧": "Palais de Gyeongbokgung"
+    },
+    "/routeFlowStops/2/name": {
+      "⟦G0⟧": "Village hanok de Bukchon"
+    },
+    "/routeFlowStops/3/name": {
+      "⟦G0⟧": "Marché Gwangjang"
+    },
+    "/routeFlowStops/4/name": {
+      "⟦G0⟧": "Insadong"
+    }
+  },
+  "tmHits": 0
+}

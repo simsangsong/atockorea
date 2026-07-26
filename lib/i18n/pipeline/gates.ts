@@ -163,6 +163,8 @@ const NUMERAL_IDIOMS: Record<TargetLocale, Record<string, RegExp[]>> = {
  */
 const NUMERAL_WORDS: Record<TargetLocale, Record<string, RegExp[]>> = {
   de: {
+    // 정각의 분은 생략될 수 있다 — `14:00` → `14 Uhr`. 아래 fr 주석 참조.
+    '0': [/\d\s*Uhr(?!\s*\d)/u],
     '1': [/(?<!\p{L})ein(e[mnrs]?|s)?(?!\p{L})/iu, /(?<!\p{L})erst/iu],
     '2': [/(?<!\p{L})zwei/iu, /(?<!\p{L})zweit/iu], '3': [/(?<!\p{L})drei/iu],
     '4': [/(?<!\p{L})vier/iu], '5': [/(?<!\p{L})fünf/iu], '6': [/(?<!\p{L})sech/iu],
@@ -170,6 +172,10 @@ const NUMERAL_WORDS: Record<TargetLocale, Record<string, RegExp[]>> = {
     '10': [/(?<!\p{L})zehn/iu], '11': [/(?<!\p{L})elf/iu], '12': [/(?<!\p{L})zwölf/iu],
   },
   fr: {
+    // 🔴 프랑스어 시각 표기는 **정각의 분을 적지 않는다** — `14:00–14:30` → `14 h–14 h 30`.
+    //    `00`이 사라지지만 값은 그대로다(2026-07-26 실측). 분이 뒤따르지 않는
+    //    시(時) 표시가 있으면 소실된 `0`을 그 관례로 본다.
+    '0': [/\d\s*h(?!\s*\d)/u],
     '1': [/(?<!\p{L})une?(?!\p{L})/iu, /(?<!\p{L})premi[eè]r/iu],
     '2': [/(?<!\p{L})deux/iu, /(?<!\p{L})second/iu], '3': [/(?<!\p{L})trois/iu],
     '4': [/(?<!\p{L})quatr/iu], '5': [/(?<!\p{L})cinq/iu], '6': [/(?<!\p{L})six/iu],
@@ -177,6 +183,7 @@ const NUMERAL_WORDS: Record<TargetLocale, Record<string, RegExp[]>> = {
     '10': [/(?<!\p{L})dix/iu], '11': [/(?<!\p{L})onz/iu], '12': [/(?<!\p{L})douz/iu],
   },
   it: {
+    '0': [/(?<!\p{L})ore\s*\d/iu, /\d\s*h(?!\s*\d)/u],
     '1': [/(?<!\p{L})un[oa']?(?!\p{L})/iu, /(?<!\p{L})prim[oaie]/iu],
     '2': [/(?<!\p{L})due/iu, /(?<!\p{L})second/iu],
     '3': [/(?<!\p{L})tre(?!\p{L})/iu, /(?<!\p{L})terz/iu],
@@ -190,6 +197,7 @@ const NUMERAL_WORDS: Record<TargetLocale, Record<string, RegExp[]>> = {
     '11': [/(?<!\p{L})undic/iu], '12': [/(?<!\p{L})dodic/iu],
   },
   ru: {
+    '0': [/\d\s*ч(?!\s*\d)/u],
     '1': [/(?<!\p{L})од(ин|на|но)(?!\p{L})/iu, /(?<!\p{L})перв/iu],
     '2': [/(?<!\p{L})дв[ае](?!\p{L})/iu, /(?<!\p{L})втор/iu],
     '3': [/(?<!\p{L})тр[еи][хй]?(?!\p{L})/iu, /(?<!\p{L})трет/iu],
@@ -235,6 +243,34 @@ const MONTH_NAMES: Record<TargetLocale, Record<string, RegExp[]>> = {
 
 function matchesAny(text: string, patterns: RegExp[] | undefined): boolean {
   return patterns !== undefined && patterns.some((re) => re.test(text));
+}
+
+/** 40 이하 정수의 로마 숫자. 세기 표기에만 쓰이므로 상한을 낮게 둔다. */
+function toRoman(value: number): string | null {
+  if (!Number.isInteger(value) || value < 1 || value > 40) return null;
+  const table: Array<[number, string]> = [[40, 'XL'], [10, 'X'], [9, 'IX'], [5, 'V'], [4, 'IV'], [1, 'I']];
+  let rest = value;
+  let out = '';
+  for (const [v, s] of table) {
+    while (rest >= v) {
+      out += s;
+      rest -= v;
+    }
+  }
+  return out;
+}
+
+/**
+ * 로마 숫자로 적힌 같은 값이 번역에 있는가.
+ *
+ * 프랑스어·이탈리아어·러시아어는 **세기를 로마 숫자로 적는다** —
+ * `18th-century scholar` → `le lettré du XVIIIe siècle` (2026-07-26 실측).
+ * 대문자로만 비교해 낱말 속 `i`·`v`·`x` 를 잘못 집지 않는다.
+ */
+function hasRomanForm(text: string, token: string): boolean {
+  const roman = toRoman(Number(token));
+  if (roman === null) return false;
+  return new RegExp(`(?<!\\p{L})${roman}(?:e|er|ᵉ|ème)?(?!\\p{L})`, 'u').test(text);
 }
 
 /**
@@ -295,7 +331,9 @@ export function checkNumbers(
     if (locale && matchesAny(target, NUMERAL_IDIOMS[locale][n])) continue;
     if (
       locale &&
-      (matchesAny(target, NUMERAL_WORDS[locale][n]) || matchesAny(target, MONTH_NAMES[locale][n]))
+      (matchesAny(target, NUMERAL_WORDS[locale][n]) ||
+        matchesAny(target, MONTH_NAMES[locale][n]) ||
+        hasRomanForm(target, n))
     ) spelled.push(n);
     else lost.push(n);
   }

@@ -1,0 +1,33 @@
+{
+  "unitId": "tour_product_pages:jeju-grand-highlights-loop:fr:A2-2",
+  "locale": "fr",
+  "segments": {
+    "/bookingSupportSteps/0/title": "Confirmation immédiate",
+    "/bookingSupportSteps/0/detail": "Une confirmation de réservation est envoyée avec un résumé de l'itinéraire.",
+    "/bookingSupportSteps/0/timing": "Après la réservation",
+    "/bookingSupportSteps/0/description": "Confirmation immédiate avec les détails de la prise en charge à l'hôtel à Jeju City.",
+    "/bookingSupportSteps/1/title": "Rappel avant le départ",
+    "/bookingSupportSteps/1/detail": "Les informations météo et les consignes d'ajustement de l'itinéraire sont communiquées à l'avance.",
+    "/bookingSupportSteps/1/timing": "12 heures avant",
+    "/bookingSupportSteps/1/description": "Note avant le circuit sur l'état du bord du cratère de Seongsan et l'accès à Jeongbang Waterfall.",
+    "/bookingSupportSteps/2/title": "Dernier avis de prise en charge",
+    "/bookingSupportSteps/2/detail": "Vous recevez l'heure exacte de votre prise en charge ainsi que les coordonnées de contact.",
+    "/bookingSupportSteps/2/timing": "La veille au soir",
+    "/bookingSupportSteps/2/description": "Heure de prise en charge définitive confirmée la veille au soir.",
+    "/bookingSupportSteps/3/title": "Note d'itinéraire du jour",
+    "/bookingSupportSteps/3/detail": "Les dernières informations sur place sont brièvement communiquées avant le départ.",
+    "/bookingSupportSteps/3/timing": "Le matin du départ",
+    "/bookingSupportSteps/3/description": "Message du matin avec le résumé météo et les éventuels ajustements.",
+    "/bookingSupportSteps/4/title": "Accompagnement à chaque étape",
+    "/bookingSupportSteps/4/detail": "Les informations essentielles sont communiquées à chaque étape, selon les besoins.",
+    "/bookingSupportSteps/4/timing": "Pendant le circuit",
+    "/bookingSupportSteps/4/description": "Le guide raconte la géologie du volcan bouclier de Hallasan, la formation des orgues basaltiques à Jusangjeolli et la naissance de Seongsan lors d'une éruption surtseyenne.",
+    "/bookingSupportSteps/5/title": "Assistance après le circuit",
+    "/bookingSupportSteps/5/detail": "Un suivi et des recommandations complémentaires sont disponibles si nécessaire.",
+    "/bookingSupportSteps/5/timing": "Après le circuit",
+    "/bookingSupportSteps/5/description": "Demande d'avis après le circuit, envoyée après le retour.",
+    "/practicalWeatherStatic/today/label": "Intégration météo en direct",
+    "/practicalWeatherStatic/tomorrow/label": "Mise à jour quotidienne"
+  },
+  "notes": {}
+}

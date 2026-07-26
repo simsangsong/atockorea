@@ -1,0 +1,287 @@
+{
+  "unitId": "tour_product_pages:jeju-cruise-shore-excursion-small-group-tour:fr:A2",
+  "surface": "tour_product_pages",
+  "slug": "jeju-cruise-shore-excursion-small-group-tour",
+  "locale": "fr",
+  "chunk": "A2",
+  "tier": "A2",
+  "segments": {
+    "/whyTourWorks/bestFor/0": {
+      "source_en": "Cruise passengers needing a same-day round-trip from the cruise terminal"
+    },
+    "/whyTourWorks/bestFor/1": {
+      "source_en": "First-time Jeju visitors who want UNESCO highlights in one day"
+    },
+    "/whyTourWorks/bestFor/2": {
+      "source_en": "Travelers who want a guided format-appropriate route with smaller group attention"
+    },
+    "/whyTourWorks/lessIdealFor/0": {
+      "source_en": "Travelers with very low mobility (Seongsan rim and Hallasan 1100 require some walking)"
+    },
+    "/whyTourWorks/lessIdealFor/1": {
+      "source_en": "Stroller-heavy groups"
+    },
+    "/whyTourWorks/lessIdealFor/2": {
+      "source_en": "Travelers wanting unhurried pacing — cruise schedule is fixed"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/0/label": {
+      "source_en": "Jeju Port = north terminal"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/0/detail": {
+      "source_en": "East-coast UNESCO loop with ⟦G1⟧, ⟦G2⟧, and ⟦G0⟧.",
+      "glossary": [
+        "⟦G0⟧ = Village folklorique de Seongeup",
+        "⟦G1⟧ = Seongsan Ilchulbong",
+        "⟦G2⟧ = Seopjikoji"
+      ]
+    },
+    "/whyTourWorks/routeLogicSections/0/items/1/label": {
+      "source_en": "Gangjeong Port = south (Seogwipo) terminal"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/1/detail": {
+      "source_en": "Hallasan 1100 alpine + Jusangjeolli + ⟦G0⟧ + Olle Market.",
+      "glossary": [
+        "⟦G0⟧ = Cascade de Cheonjiyeon"
+      ]
+    },
+    "/whyTourWorks/routeLogicSections/0/items/2/label": {
+      "source_en": "Same 8-hour structure both ports"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/2/detail": {
+      "source_en": "Cruise return-time limit is the same; the route adapts to minimize transit waste."
+    },
+    "/whyTourWorks/routeLogicSections/0/title": {
+      "source_en": "Why two port routes"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/0/label": {
+      "source_en": "Mini-coach small group"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/0/detail": {
+      "source_en": "Smaller group, more guide attention, faster pace through stops."
+    },
+    "/whyTourWorks/routeLogicSections/1/title": {
+      "source_en": "Small Group Tour specifics"
+    },
+    "/routeShapeIntro/title": {
+      "source_en": "How this day flows"
+    },
+    "/routeShapeIntro/subtitle": {
+      "source_en": "Route depends on your cruise port. Jeju Port (north) runs east UNESCO; Gangjeong Port (south) runs Hallasan alpine + Olle Market."
+    },
+    "/staticQuestions/0/answer": {
+      "source_en": "Your cruise booking confirmation lists the Jeju port. We confirm the port with you at booking and route the day accordingly. Most major cruise lines call at Jeju Port (north terminal); some Seogwipo-area calls use Gangjeong Port."
+    },
+    "/staticQuestions/0/question": {
+      "source_en": "How do I know which port my cruise calls at?"
+    },
+    "/staticQuestions/1/answer": {
+      "source_en": "Yes. Both route options return to the cruise terminal between 16:30-17:00, with buffer for any traffic delay. We track your sailaway time and adjust pace if conditions change."
+    },
+    "/staticQuestions/1/question": {
+      "source_en": "Will I be back to the ship in time?"
+    },
+    "/staticQuestions/2/answer": {
+      "source_en": "Notify us as soon as you know — we switch the route option to match. Port-routing is the whole reason this tour has two route options instead of one."
+    },
+    "/staticQuestions/2/question": {
+      "source_en": "What if my cruise call port changes?"
+    },
+    "/staticQuestions/3/answer": {
+      "source_en": "Yes — it covers the most distinctive stops in the area in a single balanced day."
+    },
+    "/staticQuestions/3/question": {
+      "source_en": "Is this a good choice for first-time visitors to Jeju?"
+    },
+    "/staticQuestions/4/answer": {
+      "source_en": "Moderate walking with some active sections."
+    },
+    "/staticQuestions/4/question": {
+      "source_en": "Is the walking difficult?"
+    },
+    "/staticQuestions/5/answer": {
+      "source_en": "Yes — comfortable for most families."
+    },
+    "/staticQuestions/5/question": {
+      "source_en": "Is this tour suitable for families?"
+    },
+    "/staticQuestions/6/answer": {
+      "source_en": "Yes for active seniors; less ideal for low-mobility travelers."
+    },
+    "/staticQuestions/6/question": {
+      "source_en": "Can older adults join comfortably?"
+    },
+    "/staticQuestions/7/answer": {
+      "source_en": "Best fit is around age 6 and up — children comfortable with a full-day rhythm and the walking notes above."
+    },
+    "/staticQuestions/7/question": {
+      "source_en": "What's the recommended minimum age?"
+    },
+    "/staticQuestions/8/answer": {
+      "source_en": "Several stops are exposed; very wet weather may shorten or substitute stops."
+    },
+    "/staticQuestions/8/question": {
+      "source_en": "Can the tour run in rainy weather?"
+    },
+    "/staticQuestions/9/answer": {
+      "source_en": "A lunch break is built into the route. Whether the meal itself is included depends on the booked rate — check the inclusions list."
+    },
+    "/staticQuestions/9/question": {
+      "source_en": "Is lunch included?"
+    },
+    "/staticQuestions/10/answer": {
+      "source_en": "At the cruise terminal arrival hall — Jeju Port (north) or Gangjeong Port (south) depending on where your ship docks. Your guide waits at the gangway-side arrival hall with an AtoC Korea sign and your name. Exact pickup time is confirmed the evening before, based on your ship's posted arrival."
+    },
+    "/staticQuestions/10/question": {
+      "source_en": "Where do I get picked up?"
+    },
+    "/bookingTrustItems/0/body": {
+      "source_en": "Licensed local operator with the same port-based routing as the large-coach version but in a mini-van of max 10 — better for narrow Seongeup village lanes and smaller group dynamics."
+    },
+    "/bookingTrustItems/0/title": {
+      "source_en": "Licensed local operator"
+    },
+    "/bookingTrustItems/0/description": {
+      "source_en": "Authorized Korean tour operator with full insurance"
+    },
+    "/bookingTrustItems/1/body": {
+      "source_en": "All admissions to stops on the assigned route are covered in the tour price."
+    },
+    "/bookingTrustItems/1/title": {
+      "source_en": "Route specialists"
+    },
+    "/bookingTrustItems/1/description": {
+      "source_en": "Hand-tuned itinerary, not a generic loop"
+    },
+    "/bookingTrustItems/2/body": {
+      "source_en": "Ship-return timing: return drop-off to your original terminal 60+ minutes before all-aboard."
+    },
+    "/bookingTrustItems/2/title": {
+      "source_en": "Carefully managed group size"
+    },
+    "/bookingTrustItems/2/description": {
+      "source_en": "Right-sized for the route"
+    },
+    "/seasonalVariations/0/title": {
+      "source_en": "Cruise season opens"
+    },
+    "/seasonalVariations/0/season": {
+      "source_en": "Spring"
+    },
+    "/seasonalVariations/0/description": {
+      "source_en": "Mild and clear; best visibility for cruise excursions"
+    },
+    "/seasonalVariations/1/title": {
+      "source_en": "Peak cruise calls"
+    },
+    "/seasonalVariations/1/season": {
+      "source_en": "Summer"
+    },
+    "/seasonalVariations/1/description": {
+      "source_en": "Hot but breezy on coast; Hallasan 1100 cool refuge"
+    },
+    "/seasonalVariations/2/title": {
+      "source_en": "Best clarity"
+    },
+    "/seasonalVariations/2/season": {
+      "source_en": "Autumn"
+    },
+    "/seasonalVariations/2/description": {
+      "source_en": "Sharpest visibility for both port routes"
+    },
+    "/seasonalVariations/3/season": {
+      "source_en": "Winter"
+    },
+    "/seasonalVariations/3/description": {
+      "source_en": "Fewer cruise calls; Hallasan 1100 may have snow"
+    },
+    "/bookingSupportSteps/0/title": {
+      "source_en": "Instant Confirmation"
+    },
+    "/bookingSupportSteps/0/detail": {
+      "source_en": "Booking confirmation with itinerary summary"
+    },
+    "/bookingSupportSteps/0/timing": {
+      "source_en": "Immediately"
+    },
+    "/bookingSupportSteps/0/description": {
+      "source_en": "Instant confirmation; send ship name, port (Jeju Port or Gangjeong Port), all-aboard time."
+    },
+    "/bookingSupportSteps/1/title": {
+      "source_en": "12-Hour Reminder"
+    },
+    "/bookingSupportSteps/1/detail": {
+      "source_en": "Weather update and any route adjustments"
+    },
+    "/bookingSupportSteps/1/timing": {
+      "source_en": "12 hours before"
+    },
+    "/bookingSupportSteps/1/description": {
+      "source_en": "Route confirmed (east or south) 24 hours before based on port."
+    },
+    "/bookingSupportSteps/2/title": {
+      "source_en": "Final Pickup Info"
+    },
+    "/bookingSupportSteps/2/detail": {
+      "source_en": "Exact pickup time and driver contact"
+    },
+    "/bookingSupportSteps/2/timing": {
+      "source_en": "Evening before"
+    },
+    "/bookingSupportSteps/2/description": {
+      "source_en": "Van plate and guide contact sent the evening before."
+    },
+    "/bookingSupportSteps/3/title": {
+      "source_en": "Day-of Route Notes"
+    },
+    "/bookingSupportSteps/3/detail": {
+      "source_en": "Morning briefing based on live conditions"
+    },
+    "/bookingSupportSteps/3/timing": {
+      "source_en": "Morning of tour"
+    },
+    "/bookingSupportSteps/3/description": {
+      "source_en": "Guide meets your group at the cruise terminal with a name placard."
+    },
+    "/bookingSupportSteps/4/title": {
+      "source_en": "Stop-by-Stop Tips"
+    },
+    "/bookingSupportSteps/4/detail": {
+      "source_en": "Real-time guidance at each location"
+    },
+    "/bookingSupportSteps/4/timing": {
+      "source_en": "During tour"
+    },
+    "/bookingSupportSteps/4/description": {
+      "source_en": "On-time return drop-off; brief review request sent after."
+    },
+    "/bookingSupportSteps/5/title": {
+      "source_en": "Post-tour Support"
+    },
+    "/bookingSupportSteps/5/detail": {
+      "source_en": "Follow-up and recommendations"
+    },
+    "/bookingSupportSteps/5/timing": {
+      "source_en": "After tour"
+    },
+    "/bookingSupportSteps/5/description": {
+      "source_en": "Post-tour feedback survey sent; any follow-up travel questions answered same day."
+    },
+    "/practicalWeatherStatic/today/label": {
+      "source_en": "See seasonal notes"
+    },
+    "/practicalWeatherStatic/tomorrow/label": {
+      "source_en": "See seasonal notes"
+    }
+  },
+  "glossaryTokens": {
+    "/whyTourWorks/routeLogicSections/0/items/0/detail": {
+      "⟦G0⟧": "Village folklorique de Seongeup",
+      "⟦G1⟧": "Seongsan Ilchulbong",
+      "⟦G2⟧": "Seopjikoji"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/1/detail": {
+      "⟦G0⟧": "Cascade de Cheonjiyeon"
+    }
+  },
+  "tmHits": 0
+}

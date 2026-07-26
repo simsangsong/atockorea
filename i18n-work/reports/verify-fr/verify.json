@@ -1,0 +1,831 @@
+{
+  "locale": "fr",
+  "generatedAt": "2026-07-26T01:42:39.604Z",
+  "reports": [
+    {
+      "unitId": "tour_product_pages:jeju-grand-highlights-loop:fr:A1",
+      "status": "flagged",
+      "segments": 111,
+      "fails": 0,
+      "flags": 18,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/seo/primaryKeywords/0",
+          "message": "길이비 1.59 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/catalog_card/tags/1",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/catalog_card/subtitle",
+          "message": "길이비 1.42 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/pickup_dropoff/return/0/name",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/pickup_dropoff/return/2/name",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/pickup_dropoff/departure/0/name",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/pickup_dropoff/departure/2/name",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/sticky_booking_bar/note",
+          "message": "길이비 1.54 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/0/preview",
+          "message": "길이비 0.94 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/1/content/0",
+          "message": "길이비 1.61 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/1/content/2",
+          "message": "길이비 1.51 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/1/content/3",
+          "message": "길이비 1.49 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/2/title",
+          "message": "길이비 1.45 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/2/content/2",
+          "message": "길이비 1.42 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/2/preview",
+          "message": "길이비 1.65 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/3/content/3",
+          "message": "길이비 1.48 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/3/preview",
+          "message": "길이비 1.47 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/5/content/0",
+          "message": "길이비 0.86 가 fr 허용범위 1–1.4 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:jeju-grand-highlights-loop:fr:A2",
+      "status": "flagged",
+      "segments": 62,
+      "fails": 0,
+      "flags": 10,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/bestFor/1",
+          "message": "길이비 1.67 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/bestFor/3",
+          "message": "길이비 1.44 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/lessIdealFor/3",
+          "message": "길이비 1.45 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/0/items/1/label",
+          "message": "길이비 0.82 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/0/title",
+          "message": "길이비 1.43 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/1/title",
+          "message": "길이비 1.41 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/2/items/0/label",
+          "message": "길이비 1.42 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/2/items/1/label",
+          "message": "길이비 0.97 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/staticQuestions/6/question",
+          "message": "길이비 1.48 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/seasonalVariations/1/description",
+          "message": "길이비 1.49 가 fr 허용범위 1–1.4 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:jeju-grand-highlights-loop:fr:A2-2",
+      "status": "flagged",
+      "segments": 26,
+      "fails": 0,
+      "flags": 4,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/bookingSupportSteps/0/description",
+          "message": "길이비 1.47 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/bookingSupportSteps/1/detail",
+          "message": "길이비 1.48 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/bookingSupportSteps/2/detail",
+          "message": "길이비 1.64 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/bookingSupportSteps/4/detail",
+          "message": "길이비 1.67 가 fr 허용범위 1–1.4 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:jeju-grand-highlights-loop:fr:B",
+      "status": "flagged",
+      "segments": 51,
+      "fails": 0,
+      "flags": 20,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/routePhases/0/phase",
+          "message": "길이비 0.88 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/routePhases/1/phase",
+          "message": "길이비 1.47 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/0/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/0/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/1/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/1/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/2/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/2/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/3/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/4/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/5/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/6/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/10/alt",
+          "message": "길이비 1.44 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/10/caption",
+          "message": "길이비 1.45 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/10/location",
+          "message": "길이비 1.61 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/11/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/12/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/13/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/14/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/15/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:jeju-grand-highlights-loop:fr:itineraryStops",
+      "status": "flagged",
+      "segments": 57,
+      "fails": 0,
+      "flags": 19,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/name",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/duration",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/timeUsed/0",
+          "message": "길이비 1.44 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/timeUsed/1",
+          "message": "길이비 1.50 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/smartNotes/tip",
+          "message": "길이비 1.46 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/convenience/parking",
+          "message": "길이비 1.83 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/visitBasics/hours",
+          "message": "숫자가 철자 수사로 바뀐 것으로 보인다 — [0 0] (값이 맞는지 감수 필요)"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/visitBasics/hours",
+          "message": "숫자 추가 — 번역에만 [24] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/visitBasics/closed",
+          "message": "길이비 1.47 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/galleryItems/0/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/galleryItems/0/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/galleryItems/1/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/galleryItems/1/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/galleryItems/2/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/galleryItems/2/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/duration",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/timeUsed/1",
+          "message": "길이비 1.64 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/timeUsed/2",
+          "message": "길이비 1.50 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/timeUsed/3",
+          "message": "길이비 1.64 가 fr 허용범위 1–1.4 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:jeju-grand-highlights-loop:fr:itineraryStops-2",
+      "status": "flagged",
+      "segments": 72,
+      "fails": 0,
+      "flags": 15,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/galleryItems/0/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/galleryItems/1/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/galleryItems/2/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/galleryItems/3/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/galleryItems/4/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/duration",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/timeUsed/1",
+          "message": "길이비 1.43 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/highlights/8",
+          "message": "숫자가 철자 수사로 바뀐 것으로 보인다 — [0] (값이 맞는지 감수 필요)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/highlights/8",
+          "message": "길이비 1.58 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/description",
+          "message": "숫자가 철자 수사로 바뀐 것으로 보인다 — [18] (값이 맞는지 감수 필요)"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/duration",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/timeUsed/2",
+          "message": "길이비 1.63 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/highlights/4",
+          "message": "길이비 1.44 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/highlights/5",
+          "message": "길이비 1.48 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/whyOnRoute",
+          "message": "숫자가 철자 수사로 바뀐 것으로 보인다 — [0] (값이 맞는지 감수 필요)"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:jeju-grand-highlights-loop:fr:itineraryStops-3",
+      "status": "flagged",
+      "segments": 51,
+      "fails": 0,
+      "flags": 14,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/name",
+          "message": "길이비 1.61 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/duration",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/timeUsed/0",
+          "message": "길이비 1.53 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/highlights/3",
+          "message": "길이비 1.43 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/convenience/parking",
+          "message": "길이비 0.97 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/duration",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/timeUsed/0",
+          "message": "길이비 1.62 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/timeUsed/1",
+          "message": "길이비 1.53 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/timeUsed/2",
+          "message": "길이비 1.45 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/timeUsed/4",
+          "message": "길이비 1.43 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/highlights/2",
+          "message": "길이비 1.52 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/highlights/4",
+          "message": "길이비 1.72 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/highlights/6",
+          "message": "길이비 1.42 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/convenience/restroom",
+          "message": "길이비 0.97 가 fr 허용범위 1–1.4 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:jeju-grand-highlights-loop:fr:itineraryStops-4",
+      "status": "flagged",
+      "segments": 48,
+      "fails": 0,
+      "flags": 18,
+      "findings": [
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/description",
+          "message": "숫자가 철자 수사로 바뀐 것으로 보인다 — [0] (값이 맞는지 감수 필요)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/visitBasics/hours",
+          "message": "길이비 1.71 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/visitBasics/closed",
+          "message": "길이비 0.84 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/galleryItems/0/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/galleryItems/1/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/galleryItems/2/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/galleryItems/3/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/galleryItems/4/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/galleryItems/5/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/galleryItems/6/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G1",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/liveStatusWidget",
+          "message": "빈 번역 — 규칙 6에 따른 미번역. 이 포인터는 발행에서 제외(영어 폴백)"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/6/duration",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/6/timeUsed/3",
+          "message": "길이비 0.97 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/6/highlights/3",
+          "message": "길이비 1.45 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/6/convenience/parking",
+          "message": "길이비 0.81 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/6/visitBasics/hours",
+          "message": "숫자가 철자 수사로 바뀐 것으로 보인다 — [0 0] (값이 맞는지 감수 필요)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/6/visitBasics/walking",
+          "message": "길이비 1.44 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/6/visitBasics/admission",
+          "message": "길이비 1.48 가 fr 허용범위 1–1.4 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:jeju-grand-highlights-loop:fr:routeFlowStops",
+      "status": "flagged",
+      "segments": 14,
+      "fails": 0,
+      "flags": 6,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/routeFlowStops/0/name",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/routeFlowStops/1/name",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/routeFlowStops/2/name",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/routeFlowStops/4/theme",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/routeFlowStops/5/name",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/routeFlowStops/6/name",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
+    }
+  ]
+}

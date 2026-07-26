@@ -1,0 +1,96 @@
+{
+  "unitId": "tour_product_pages:from-incheon-seoul-day-tour-cruise-guests:fr:A2-3",
+  "surface": "tour_product_pages",
+  "slug": "from-incheon-seoul-day-tour-cruise-guests",
+  "locale": "fr",
+  "chunk": "A2-3",
+  "tier": "A2",
+  "segments": {
+    "/seasonalVariations/0/season": {
+      "source_en": "Spring (Mar–May)"
+    },
+    "/seasonalVariations/0/description": {
+      "source_en": "Cherry blossoms at Gyeongbokgung's pond around the Gyeonghoeru pavilion in early-to-mid April. Cruise arrivals peak in this season."
+    },
+    "/seasonalVariations/1/season": {
+      "source_en": "Summer (Jun–Aug)"
+    },
+    "/seasonalVariations/1/description": {
+      "source_en": "Long daylight; humid. July monsoon possible — the Gwangjang indoor market becomes the rainy-day option. Carry water."
+    },
+    "/seasonalVariations/2/season": {
+      "source_en": "Autumn (Sep–Nov)"
+    },
+    "/seasonalVariations/2/description": {
+      "source_en": "Best season for palace photography — clear blue skies, foliage in late October. Comfortable walking weather."
+    },
+    "/seasonalVariations/3/season": {
+      "source_en": "Winter (Dec–Feb)"
+    },
+    "/seasonalVariations/3/description": {
+      "source_en": "Cold but quiet; Gyeongbokgung courtyards are uniquely peaceful in snow. Bring warm layers — palace courtyards offer no wind shelter."
+    },
+    "/bookingSupportSteps/0/title": {
+      "source_en": "Instant Confirmation"
+    },
+    "/bookingSupportSteps/0/detail": {
+      "source_en": "Booking confirmation with itinerary summary"
+    },
+    "/bookingSupportSteps/0/timing": {
+      "source_en": "Immediately"
+    },
+    "/bookingSupportSteps/1/title": {
+      "source_en": "12-Hour Reminder"
+    },
+    "/bookingSupportSteps/1/detail": {
+      "source_en": "Weather update and any route adjustments"
+    },
+    "/bookingSupportSteps/1/timing": {
+      "source_en": "12 hours before"
+    },
+    "/bookingSupportSteps/2/title": {
+      "source_en": "Final Pickup Info"
+    },
+    "/bookingSupportSteps/2/detail": {
+      "source_en": "Exact pickup time and driver contact"
+    },
+    "/bookingSupportSteps/2/timing": {
+      "source_en": "Evening before"
+    },
+    "/bookingSupportSteps/3/title": {
+      "source_en": "Day-of Route Notes"
+    },
+    "/bookingSupportSteps/3/detail": {
+      "source_en": "Morning briefing based on live conditions"
+    },
+    "/bookingSupportSteps/3/timing": {
+      "source_en": "Morning of tour"
+    },
+    "/bookingSupportSteps/4/title": {
+      "source_en": "Stop-by-Stop Tips"
+    },
+    "/bookingSupportSteps/4/detail": {
+      "source_en": "Real-time guidance at each location"
+    },
+    "/bookingSupportSteps/4/timing": {
+      "source_en": "During tour"
+    },
+    "/bookingSupportSteps/5/title": {
+      "source_en": "Post-tour Support"
+    },
+    "/bookingSupportSteps/5/detail": {
+      "source_en": "Follow-up and recommendations"
+    },
+    "/bookingSupportSteps/5/timing": {
+      "source_en": "After tour"
+    },
+    "/practicalWeatherStatic/today/label": {
+      "source_en": "See seasonal notes"
+    },
+    "/practicalWeatherStatic/tomorrow/label": {
+      "source_en": "See seasonal notes"
+    }
+  },
+  "glossaryTokens": {},
+  "tmHits": 0
+}

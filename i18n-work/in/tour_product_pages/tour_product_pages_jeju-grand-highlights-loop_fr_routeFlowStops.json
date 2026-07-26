@@ -1,0 +1,54 @@
+{
+  "unitId": "tour_product_pages:jeju-grand-highlights-loop:fr:routeFlowStops",
+  "surface": "tour_product_pages",
+  "slug": "jeju-grand-highlights-loop",
+  "locale": "fr",
+  "chunk": "routeFlowStops",
+  "tier": "B",
+  "segments": {
+    "/routeFlowStops/0/name": {
+      "source_en": "Hallasan 1100"
+    },
+    "/routeFlowStops/0/theme": {
+      "source_en": "Highland"
+    },
+    "/routeFlowStops/1/name": {
+      "source_en": "Jusangjeolli"
+    },
+    "/routeFlowStops/1/theme": {
+      "source_en": "Cliffs"
+    },
+    "/routeFlowStops/2/name": {
+      "source_en": "Jeongbang"
+    },
+    "/routeFlowStops/2/theme": {
+      "source_en": "Waterfall"
+    },
+    "/routeFlowStops/3/name": {
+      "source_en": "Lunch"
+    },
+    "/routeFlowStops/3/theme": {
+      "source_en": "Reset"
+    },
+    "/routeFlowStops/4/name": {
+      "source_en": "Haenyeo Show"
+    },
+    "/routeFlowStops/4/theme": {
+      "source_en": "Culture"
+    },
+    "/routeFlowStops/5/name": {
+      "source_en": "Seongsan"
+    },
+    "/routeFlowStops/5/theme": {
+      "source_en": "Crater"
+    },
+    "/routeFlowStops/6/name": {
+      "source_en": "Manjanggul"
+    },
+    "/routeFlowStops/6/theme": {
+      "source_en": "Lava Tube"
+    }
+  },
+  "glossaryTokens": {},
+  "tmHits": 0
+}

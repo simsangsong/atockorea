@@ -135,6 +135,30 @@ describe('G3 숫자 — 값 변조 검출, 서식 변경 허용 (H2)', () => {
     expect(checkNumbers('opened 2015-10', 'открыт в октябре 2015', '/p', 'ru').every((x) => x.severity === 'flag')).toBe(true);
   });
 
+  // 2026-07-26 실측: 프랑스어는 정각의 분을 적지 않아 `00` 이 사라진다.
+  it('정각의 분 생략은 fail이 아니라 flag', () => {
+    const f = checkNumbers('open 14:00–14:30', 'ouvert 14 h–14 h 30', '/p', 'fr');
+    expect(f.every((x) => x.severity === 'flag')).toBe(true);
+  });
+
+  it('정각 예외가 시(時) 변조를 덮지 않는다 — 14:00 → 15 h', () => {
+    const f = checkNumbers('open 14:00', 'ouvert 15 h', '/p', 'fr');
+    expect(f.some((x) => x.severity === 'fail')).toBe(true);
+  });
+
+  // 2026-07-26 실측: fr/it/ru는 세기를 로마 숫자로 적는다.
+  it('로마 숫자로 적힌 세기는 fail이 아니라 flag', () => {
+    const f = checkNumbers('18th-century scholar', 'le lettré du XVIIIe siècle', '/p', 'fr');
+    expect(f.every((x) => x.severity === 'flag')).toBe(true);
+    expect(checkNumbers('the 21st century', 'XXI век', '/p', 'ru').every((x) => x.severity === 'flag')).toBe(true);
+  });
+
+  it('로마 숫자 예외가 낱말 속 글자를 잘못 집지 않는다', () => {
+    // `Vil…`·`ix` 같은 소문자는 로마 숫자로 보지 않는다 — 5가 진짜 사라졌다.
+    const f = checkNumbers('5 villages', 'des villages', '/p', 'fr');
+    expect(f.some((x) => x.severity === 'fail')).toBe(true);
+  });
+
   it('철자 수사 예외가 진짜 변조를 덮지 않는다 — 40 → 30', () => {
     const f = checkNumbers('about 40 minutes', 'etwa 30 Minuten', '/p', 'de');
     expect(f.some((x) => x.severity === 'fail' && x.message.includes('소실'))).toBe(true);

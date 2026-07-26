@@ -1,0 +1,52 @@
+{
+  "unitId": "tour_product_pages:busan-private-car-charter-cruise-shore:fr:routeFlowStops",
+  "surface": "tour_product_pages",
+  "slug": "busan-private-car-charter-cruise-shore",
+  "locale": "fr",
+  "chunk": "routeFlowStops",
+  "tier": "B",
+  "segments": {
+    "/routeFlowStops/0/label": {
+      "source_en": "Cruise Port"
+    },
+    "/routeFlowStops/1/label": {
+      "source_en": "UN Cemetery"
+    },
+    "/routeFlowStops/2/label": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Taejongdae"
+      ]
+    },
+    "/routeFlowStops/3/label": {
+      "source_en": "Gamcheon Village"
+    },
+    "/routeFlowStops/4/label": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Parc Yongdusan"
+      ]
+    },
+    "/routeFlowStops/5/label": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Marché Jagalchi"
+      ]
+    },
+    "/routeFlowStops/6/label": {
+      "source_en": "Cruise Port"
+    }
+  },
+  "glossaryTokens": {
+    "/routeFlowStops/2/label": {
+      "⟦G0⟧": "Taejongdae"
+    },
+    "/routeFlowStops/4/label": {
+      "⟦G0⟧": "Parc Yongdusan"
+    },
+    "/routeFlowStops/5/label": {
+      "⟦G0⟧": "Marché Jagalchi"
+    }
+  },
+  "tmHits": 0
+}
