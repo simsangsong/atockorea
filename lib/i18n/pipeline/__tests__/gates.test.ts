@@ -108,6 +108,20 @@ describe('G3 숫자 — 값 변조 검출, 서식 변경 허용 (H2)', () => {
     expect(f.some((x) => x.severity === 'fail')).toBe(true);
   });
 
+  // 2026-07-26 실측 오탐: `April 6, 1951` → `06.04.1951` 은 일(日)이 두 자리로 패딩된다.
+  it('앞자리 0 패딩은 값 변화가 아니다', () => {
+    // 월 이름이 숫자가 되어 `4`가 새로 생기는 건 기존 flag 동작. 여기서 보는 건 `6`이
+    // `06`이 되어도 fail 이 아니라는 것.
+    const f = checkNumbers('dedicated April 6, 1951', 'am 06.04.1951 eingeweiht', '/p', 'de');
+    expect(f.every((x) => x.severity === 'flag')).toBe(true);
+    expect(checkNumbers('opens at 9:30', 'öffnet um 09:30 Uhr', '/p', 'de')).toEqual([]);
+  });
+
+  it('패딩 예외가 값 변조를 덮지 않는다 — 6 → 16', () => {
+    const f = checkNumbers('6 nations', '16 Nationen', '/p', 'de');
+    expect(f.some((x) => x.severity === 'fail')).toBe(true);
+  });
+
   it('날짜 현지화(월 이름 → 숫자)는 fail이 아니라 flag', () => {
     // `12 Oct 2009` → `12.10.2009`. 월이 숫자가 되며 10이 새로 생기지만 사실은 그대로다.
     const f = checkNumbers('designated 12 Oct 2009', 'ausgewiesen am 12.10.2009', '/p');

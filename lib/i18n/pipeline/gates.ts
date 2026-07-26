@@ -181,6 +181,16 @@ function matchesAny(text: string, patterns: RegExp[] | undefined): boolean {
 }
 
 /**
+ * 앞자리 0 제거 — 값 비교용. 자릿수 패딩은 값을 바꾸지 않는다.
+ *
+ * 2026-07-26 실측 오탐: `dedicated April 6, 1951` → `am 06.04.1951` 로 옮기면
+ * 날짜 서식이 일(日)을 두 자리로 채워 `6` 이 `06` 이 된다. 값은 그대로다.
+ */
+function stripLeadingZeros(n: string): string {
+  return n.replace(/^0+(?=\d)/, '');
+}
+
+/**
  * G3 — 숫자 값. H2(수치 변조) 검출.
  *
  * **비대칭 판정**이다.
@@ -204,13 +214,17 @@ export function checkNumbers(
   const b = numberMultiset(target);
   if (sameMultiset(a, b)) return [];
 
+  // 값 비교는 앞자리 0을 무시한다. 표시용 멀티셋(a·b)은 원문 그대로 둔다.
+  const aNorm = a.map(stripLeadingZeros);
+  const bNorm = b.map(stripLeadingZeros);
+
   const findings: Finding[] = [];
-  const added = missingFrom(b, a);
+  const added = missingFrom(bNorm, aNorm);
 
   // 소실 숫자를 세 갈래로 나눈다: 관용구 흡수(면제) · 철자 수사(flag 강등) · 진짜 소실(fail).
   const lost: string[] = [];
   const spelled: string[] = [];
-  for (const n of missingFrom(a, b)) {
+  for (const n of missingFrom(aNorm, bNorm)) {
     if (locale && matchesAny(target, NUMERAL_IDIOMS[locale][n])) continue;
     if (locale && matchesAny(target, NUMERAL_WORDS[locale][n])) spelled.push(n);
     else lost.push(n);
