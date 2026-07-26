@@ -462,6 +462,12 @@ export default function GuideConsole() {
           room={drive.room}
           bookingId={drive.bookingId}
           session={drive.session}
+          /* The 명단·좌석 tile renders only when this is present, and the guide
+             mount left it out — so a guide who tapped 운전 모드 lost the roster
+             that the driver arriving by link could see. The manifest endpoint
+             authorises guide, driver and admin alike, and this component holds
+             the same token it already uses for the overview fetch. */
+          roomToken={tokenRef.current}
           channelTopic={drive.channelTopic}
           initialMessages={drive.initialMessages}
           city={drive.city}
