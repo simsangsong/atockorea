@@ -48,7 +48,7 @@ const COPY: Record<
     cancel: 'Cancel',
     meet: '📍 Meet me here',
     meetConfirm: 'Send your exact location so your driver can navigate right to you?',
-    photoAsk: 'Add one photo of what you can see — it makes the exact spot unmistakable.',
+    photoAsk: 'Add one photo of this spot',
     photoCaption: '📍 What I can see from here',
     skip: 'Skip',
   },
@@ -67,7 +67,7 @@ const COPY: Record<
     cancel: '취소',
     meet: '📍 여기서 만나요',
     meetConfirm: '기사님이 바로 내비로 찾아올 수 있게 정확한 위치를 보낼까요?',
-    photoAsk: '지금 보이는 풍경 사진 1장을 더하면 정확한 지점을 바로 알아볼 수 있어요.',
+    photoAsk: '보이는 풍경 사진 1장 더하기',
     photoCaption: '📍 지금 여기서 보이는 풍경이에요',
     skip: '건너뛰기',
   },
@@ -86,7 +86,7 @@ const COPY: Record<
     cancel: 'キャンセル',
     meet: '📍 ここで会いましょう',
     meetConfirm: 'ドライバーがナビで直行できるよう、正確な現在地を送信しますか?',
-    photoAsk: '見えている景色の写真を1枚添えると、正確な地点がすぐ伝わります。',
+    photoAsk: '見えている景色を1枚追加',
     photoCaption: '📍 いまここから見える景色です',
     skip: 'スキップ',
   },
@@ -105,7 +105,7 @@ const COPY: Record<
     cancel: 'Cancelar',
     meet: '📍 Encuéntrame aquí',
     meetConfirm: '¿Enviar tu ubicación exacta para que el conductor navegue hasta ti?',
-    photoAsk: 'Añade una foto de lo que ves: el punto exacto será inconfundible.',
+    photoAsk: 'Añadir una foto del lugar',
     photoCaption: '📍 Esto es lo que veo desde aquí',
     skip: 'Omitir',
   },
@@ -124,7 +124,7 @@ const COPY: Record<
     cancel: '取消',
     meet: '📍 在这里见面',
     meetConfirm: '发送您的准确位置，让司机直接导航到您身边？',
-    photoAsk: '再拍一张您眼前的照片，准确地点一目了然。',
+    photoAsk: '再拍一张眼前的照片',
     photoCaption: '📍 这是我现在看到的景象',
     skip: '跳过',
   },
@@ -311,10 +311,18 @@ export default function QuickSignalBar({
           if (file) void sendPhoto(file);
         }}
       />
+      {/* iOS Safari may refuse a programmatic input.click() this long after
+          the tap gesture — the hint doubles as the manual (re)open button, so
+          the photo path never dead-ends. */}
       {photoAsk && !outcome && (
-        <span className="tr-meta shrink-0 text-[var(--tr-ink-3)]" data-testid="meet-photo-hint">
-          {copy.photoAsk}
-        </span>
+        <button
+          type="button"
+          onClick={() => photoInputRef.current?.click()}
+          className="tr-meta tr-press shrink-0 rounded-full bg-[var(--tr-surface-2)] px-3 py-1.5 font-semibold text-[var(--tr-ink)]"
+          data-testid="meet-photo-hint"
+        >
+          📷 {copy.photoAsk}
+        </button>
       )}
       {sheet}
     </div>

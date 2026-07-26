@@ -565,16 +565,21 @@ export default function ChatFeed({
               // driver at a red light. Staff get Kakao chips, guests Google.
               const sysText = displayText(message, viewerLocale, originals.has(message.id), preferredLocale);
               const sysLoc = parseLocationMessage(sysText);
+              // New templates carry the URL on its own line (clean parser label);
+              // the trailing-separator trim covers rows sent before that change.
+              const sysLabel = sysLoc
+                ? sysLoc.label.replace(/[\s—–\-·:：;]+$/u, '').trim() || sysText
+                : sysText;
               return (
                 <div className={`my-2 flex flex-col items-center gap-1.5 ${animClass}`}>
                   <div className={`tr-pill max-w-[88%] px-4 py-1.5 text-center leading-relaxed ${systemText}`}>
-                    {sysLoc ? sysText.replace(sysLoc.url, '').trim() || sysText : sysText}
+                    {sysLabel}
                   </div>
                   {sysLoc && (
                     <LocationPreview
                       lat={sysLoc.lat}
                       lng={sysLoc.lng}
-                      label={sysLoc.label}
+                      label={sysLabel}
                       url={sysLoc.url}
                       audience={
                         viewerRole === 'guide' || viewerRole === 'driver' || viewerRole === 'admin'

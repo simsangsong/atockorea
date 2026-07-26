@@ -22,6 +22,7 @@
  * staff get the toggle guests always had.
  */
 
+import Link from 'next/link';
 import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import { useKeyboardOpen } from '@/components/tour-mode/useKeyboardOpen';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
@@ -132,14 +133,14 @@ export default function StaffShell({
           className="tr-safe-top tr-chrome-line-b z-30 flex shrink-0 items-center gap-1 bg-[var(--tr-chrome)] px-3"
           style={{ minHeight: 'var(--tr-header-h)' }}
         >
-          <a
+          <Link
             href="/tour-mode"
             aria-label="홈으로"
             data-testid="staff-home"
             className="-ml-1 flex h-11 w-10 shrink-0 items-center justify-center rounded-full text-[var(--tr-ink-2)] active:bg-[var(--tr-bubble-system)]"
           >
             <IconTabHome size={TR_ICON.action} strokeWidth={TR_STROKE.default} aria-hidden />
-          </a>
+          </Link>
           <div className="min-w-0 flex-1 px-1 py-1.5">
             <div className="flex items-center gap-2">
               <h1 className="tr-title truncate text-[var(--tr-ink)]">{title}</h1>

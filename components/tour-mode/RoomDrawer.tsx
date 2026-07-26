@@ -29,7 +29,6 @@ import {
   IconInstall,
   IconLink,
   IconOpenExternal,
-  IconPhotoNote,
   IconTabMap,
   IconTabSchedule,
   IconTabSettings,
