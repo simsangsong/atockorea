@@ -28,6 +28,10 @@ const HTML = arg('html');
 const OUT = arg('out');
 const FPS = Number(arg('fps', '30'));
 const PREVIEW = process.argv.includes('--preview');
+// --alpha: transparent-background PNG frames only (no MP4) — an overlay layer
+// for compositing onto real footage with ffmpeg (route arrows, captions,
+// watermarks). The scene file must leave the page background transparent.
+const ALPHA = process.argv.includes('--alpha');
 if (!HTML || !OUT) {
   console.error('Usage: node scripts/render-howto-video.mjs --html=<file> --out=<dir> [--fps=30] [--preview]');
   process.exit(1);
@@ -70,10 +74,17 @@ async function main() {
   for (let f = 0; f < frameCount; f += 1) {
     const t = Math.min(total - 1, Math.round((f / FPS) * 1000));
     await page.evaluate((ms) => window.__seek(ms), t);
-    await page.screenshot({ path: path.join(framesDir, `f${String(f).padStart(5, '0')}.png`) });
+    await page.screenshot({
+      path: path.join(framesDir, `f${String(f).padStart(5, '0')}.png`),
+      omitBackground: ALPHA,
+    });
     if (f % 120 === 0) console.log(`  frame ${f}/${frameCount}`);
   }
   await browser.close();
+  if (ALPHA) {
+    console.log(`alpha frames → ${framesDir}`);
+    return;
+  }
 
   const mp4 = path.join(outDir, `${path.basename(HTML, '.html')}.mp4`);
   const encode = spawnSync(ffmpegCmd(), [

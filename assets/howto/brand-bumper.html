@@ -1,0 +1,51 @@
+<!doctype html>
+<!--
+  Brand bumper — 2.4s AtoC wordmark, used as intro AND outro around POI
+  route-guide footage (slow fade per the direction: "로고 천천히").
+  Same deterministic __seek contract; rendered opaque at 1080x1920.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 1920px; overflow: hidden; }
+  body {
+    background: radial-gradient(140% 90% at 50% 8%, #fbfcfe 55%, #e9edf2 100%);
+    font-family: 'Segoe UI', -apple-system, sans-serif; color: #14294b;
+  }
+  .wordmark { position: absolute; top: 44%; width: 100%; text-align: center; }
+  .wordmark h1 { font-family: Georgia, serif; font-size: 170px; font-weight: 500; }
+  .wordmark p {
+    margin-top: 22px; font-size: 42px; font-weight: 600;
+    letter-spacing: 0.46em; text-transform: uppercase; color: #1a9db4;
+  }
+  .rule { width: 130px; height: 4px; background: #1a9db4; margin: 40px auto 0; border-radius: 2px; }
+  .site { position: absolute; top: 62%; width: 100%; text-align: center; font-size: 34px; color: #5a6b81; letter-spacing: 0.08em; }
+</style>
+</head>
+<body>
+<div class="wordmark">
+  <h1>AtoC</h1>
+  <p>Korea</p>
+  <div class="rule"></div>
+</div>
+<div class="site">atockorea.com</div>
+<script>
+window.__total = 2400;
+const anims = [];
+function an(el, frames, opt) {
+  const a = el.animate(frames, { fill: 'both', easing: 'cubic-bezier(0.22,1,0.36,1)', ...opt });
+  a.pause(); anims.push(a); return a;
+}
+window.__seek = (t) => { anims.forEach((a) => { a.currentTime = t; }); };
+an(document.querySelector('.wordmark'),
+  [{ transform: 'scale(0.96) translateY(20px)', opacity: 0 },
+   { transform: 'scale(1) translateY(0)', opacity: 1 }],
+  { delay: 150, duration: 1400 });
+an(document.querySelector('.rule'), [{ transform: 'scaleX(0)' }, { transform: 'scaleX(1)' }], { delay: 900, duration: 900 });
+an(document.querySelector('.site'), [{ opacity: 0 }, { opacity: 1 }], { delay: 1300, duration: 800 });
+window.__seek(0);
+</script>
+</body>
+</html>
