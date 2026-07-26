@@ -1,0 +1,341 @@
+<!doctype html>
+<!--
+  Safety intro film — 30.0s silent pictogram render (plan §5.6/§5.7).
+
+  THE deliverable safetyScript.ts has been waiting for: chapter timings match
+  SAFETY_SCRIPT_CUES exactly (opening 0-3 / seatbelt 3-10 / no-smoking 10-18 /
+  driver-chat 18-26 / confirm 26-29 / closing 29-30), so the ten existing
+  WebVTT tracks line up with no code change. NO on-screen copy — subtitles
+  carry every word; visuals are locale-neutral (pictograms + numerals 1·2·3).
+
+  Palette + deterministic __seek(t) contract shared with onboarding-en.html.
+  Render: node scripts/render-howto-video.mjs --html=assets/howto/safety-intro-30s.html --out=...
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --surface: #ffffff;
+    --page-edge: #e9edf2;
+    --ink: #14294b;
+    --ink-deep: #0c1c33;
+    --ink-2: #5a6b81;
+    --teal: #1a9db4;
+    --teal-deep: #0d5f74;
+    --teal-soft: #bfe2ec;
+    --safe: #c0392b;
+    --shadow: rgba(20, 41, 75, 0.10);
+  }
+  html, body { width: 1080px; height: 1920px; overflow: hidden; }
+  body {
+    background: radial-gradient(140% 90% at 50% 8%, #fbfcfe 55%, var(--page-edge) 100%);
+    font-family: 'Segoe UI', -apple-system, sans-serif;
+    color: var(--ink);
+  }
+  .stage { position: absolute; inset: 0; }
+  .scene { position: absolute; inset: 0; opacity: 0; }
+  .art { position: absolute; top: 210px; left: 0; width: 1080px; height: 1250px; }
+  .art svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+  /* Rule numeral chip — the only "text", and it's locale-neutral. */
+  .rulenum {
+    position: absolute; top: 260px; width: 100%; text-align: center;
+  }
+  .rulenum span {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 110px; height: 110px; border-radius: 50%;
+    background: var(--teal-deep); color: #fff;
+    font-size: 62px; font-weight: 700;
+  }
+  /* Subtitle safe area — bottom 420px stays visually quiet for the VTT line. */
+  .wordmark {
+    position: absolute; top: 46%; width: 100%; text-align: center;
+  }
+  .wordmark h1 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 150px; font-weight: 500; letter-spacing: 0.01em;
+  }
+  .wordmark p {
+    margin-top: 20px; font-size: 40px; font-weight: 600;
+    letter-spacing: 0.46em; text-transform: uppercase; color: var(--teal);
+  }
+  .wordmark .rule { width: 120px; height: 4px; background: var(--teal); margin: 38px auto 0; border-radius: 2px; }
+  .pict { fill: none; stroke: var(--ink); stroke-width: 14; stroke-linecap: round; stroke-linejoin: round; }
+  .pict-thin { stroke-width: 9; }
+</style>
+</head>
+<body>
+<div class="stage" id="stage"></div>
+
+<script>
+/* Chapter boundaries — MUST mirror lib/video-automation/safetyScript.ts. */
+const CUES = [
+  { id: 'opening', start: 0,     end: 3000  },
+  { id: 'belt',    start: 3000,  end: 10000 },
+  { id: 'smoke',   start: 10000, end: 18000 },
+  { id: 'chat',    start: 18000, end: 26000 },
+  { id: 'confirm', start: 26000, end: 29000 },
+  { id: 'closing', start: 29000, end: 30000 },
+];
+const XFADE = 400;
+window.__total = 30000;
+
+const EASE = 'cubic-bezier(0.22, 1, 0.36, 1)';
+const anims = [];
+function an(el, frames, opt) {
+  const a = el.animate(frames, { fill: 'both', easing: EASE, ...opt });
+  a.pause();
+  anims.push(a);
+  return a;
+}
+window.__seek = (t) => { anims.forEach((a) => { a.currentTime = t; }); };
+
+function scene(idx, html) {
+  const { start, end } = CUES[idx];
+  const el = document.createElement('div');
+  el.className = 'scene';
+  el.innerHTML = html;
+  document.getElementById('stage').appendChild(el);
+  an(el, [{ opacity: 0 }, { opacity: 1 }], { delay: start, duration: XFADE, easing: 'ease-in-out' });
+  if (idx < CUES.length - 1)
+    an(el, [{ opacity: 1 }, { opacity: 0 }], { delay: end - XFADE, duration: XFADE, easing: 'ease-in-out', fill: 'forwards' });
+  return { el, t0: start };
+}
+
+const drift = (el, t0, { from = 'translateY(60px)', dur = 900, delay = 0 } = {}) =>
+  an(el, [{ transform: from, opacity: 0 }, { transform: 'translate(0,0)', opacity: 1 }], { delay: t0 + delay, duration: dur });
+const pop = (el, t0, delay, dur = 600) =>
+  an(el, [
+    { transform: 'scale(0)', opacity: 0 },
+    { transform: 'scale(1.06)', opacity: 1, offset: 0.7 },
+    { transform: 'scale(1)', opacity: 1 },
+  ], { delay: t0 + delay, duration: dur });
+const draw = (el, t0, delay, dur = 900) => {
+  const len = el.getTotalLength ? el.getTotalLength() : 300;
+  el.style.strokeDasharray = len;
+  an(el, [{ strokeDashoffset: len }, { strokeDashoffset: 0 }], { delay: t0 + delay, duration: dur });
+};
+
+const GROUND = (x, y, w) => `<ellipse cx="${x}" cy="${y}" rx="${w / 2}" ry="${w * 0.055}" style="fill:var(--shadow)"/>`;
+const RULENUM = (n) => `<div class="rulenum"><span>${n}</span></div>`;
+
+/* Bust reused from the onboarding set (local ~200w, base y=318). `extra`
+   renders INSIDE the local coordinate space (caps, accessories). */
+const BUST = (x, y, s = 1, fill = 'var(--ink)', extra = '', ground = true) => `
+  <g transform="translate(${x} ${y}) scale(${s})">
+    ${ground ? GROUND(100, 322, 230) : ''}
+    <path d="M2 318 c0 -80 42 -124 98 -124 s98 44 98 124 z" style="fill:${fill}"/>
+    <path d="M100 194 l-24 -22 h48 z" style="fill:#ffffff" opacity="0.92"/>
+    <rect x="82" y="152" width="36" height="42" rx="13" style="fill:${fill}"/>
+    <circle cx="100" cy="104" r="52" style="fill:${fill}"/>
+    ${extra}
+  </g>`;
+/* Driver cap, in bust-local coordinates. */
+const CAP_EXTRA = `
+    <path d="M52 96 a48 44 0 0 1 96 0 z" style="fill:var(--teal-deep)"/>
+    <rect x="44" y="90" width="112" height="13" rx="6.5" style="fill:var(--teal-deep)"/>
+    <rect x="128" y="92" width="42" height="10" rx="5" style="fill:var(--teal-deep)"/>`;
+
+/* ── 1. opening (0–3s) — brand lockup ───────────────────────── */
+{
+  const { el, t0 } = scene(0, `
+    <div class="wordmark">
+      <h1>AtoC</h1>
+      <p>Smart Guide</p>
+      <div class="rule ruledraw"></div>
+    </div>`);
+  drift(el.querySelector('.wordmark'), t0, { from: 'translateY(40px)', dur: 900, delay: 150 });
+  an(el.querySelector('.ruledraw'), [{ transform: 'scaleX(0)' }, { transform: 'scaleX(1)' }], { delay: t0 + 700, duration: 700 });
+}
+
+/* ── 2. seatbelt (3–10s) — sash click, front & rear seats ───── */
+{
+  const { el, t0 } = scene(1, `
+    ${RULENUM(1)}
+    <div class="art"><svg viewBox="0 0 1080 1250">
+      <circle cx="540" cy="480" r="330" style="fill:var(--teal-soft)" opacity="0.4"/>
+      <g class="bustw"><g>${BUST(400, 270, 1.7)}</g></g>
+      <g class="sash">
+        <path class="sashpath" d="M448 468 L672 700" style="fill:none;stroke:var(--teal);stroke-width:30;stroke-linecap:round"/>
+        <rect class="buckle" x="628" y="668" width="86" height="60" rx="14" style="fill:var(--teal-deep)"/>
+        <rect x="654" y="686" width="34" height="24" rx="6" style="fill:#ffffff"/>
+      </g>
+      <g class="checkwrap">
+        <circle cx="760" cy="430" r="62" style="fill:var(--teal-deep)"/>
+        <path class="checkpath pict" style="stroke:#ffffff" d="M728 430 l24 25 l42 -48"/>
+      </g>
+      <g class="seats">
+        <g class="seatA"><g transform="translate(300 890)">
+          ${GROUND(100, 232, 220)}
+          <rect x="28" y="0" width="46" height="26" rx="12" style="fill:var(--ink)"/>
+          <path d="M42 34 c-14 0 -22 10 -22 24 v90 c0 30 20 48 50 48 h92 a16 16 0 0 0 0 -32 h-80 c-12 0 -18 -7 -18 -18 v-88 c0 -14 -8 -24 -22 -24 z" style="fill:var(--ink)"/>
+          <path class="seatAbelt" d="M50 62 L146 156" style="fill:none;stroke:var(--teal);stroke-width:16;stroke-linecap:round"/>
+        </g></g>
+        <g class="seatB"><g transform="translate(600 890)">
+          ${GROUND(100, 232, 220)}
+          <rect x="28" y="0" width="46" height="26" rx="12" style="fill:var(--ink)"/>
+          <path d="M42 34 c-14 0 -22 10 -22 24 v90 c0 30 20 48 50 48 h92 a16 16 0 0 0 0 -32 h-80 c-12 0 -18 -7 -18 -18 v-88 c0 -14 -8 -24 -22 -24 z" style="fill:var(--ink)"/>
+          <path class="seatBbelt" d="M50 62 L146 156" style="fill:none;stroke:var(--teal);stroke-width:16;stroke-linecap:round"/>
+        </g></g>
+      </g>
+    </svg></div>`);
+  pop(el.querySelector('.rulenum span'), t0, 200, 500);
+  drift(el.querySelector('.bustw'), t0, { from: 'translateY(60px)', dur: 900, delay: 300 });
+  draw(el.querySelector('.sashpath'), t0, 1100, 900);
+  pop(el.querySelector('.buckle'), t0, 1900, 500);
+  pop(el.querySelector('.checkwrap'), t0, 2500, 600);
+  drift(el.querySelector('.seatA'), t0, { from: 'translateY(40px)', dur: 700, delay: 3100 });
+  drift(el.querySelector('.seatB'), t0, { from: 'translateY(40px)', dur: 700, delay: 3400 });
+  draw(el.querySelector('.seatAbelt'), t0, 3900, 600);
+  draw(el.querySelector('.seatBbelt'), t0, 4300, 600);
+}
+
+/* ── 3. no smoking (10–18s) — vehicle + tourist sites ───────── */
+{
+  const { el, t0 } = scene(2, `
+    ${RULENUM(2)}
+    <div class="art"><svg viewBox="0 0 1080 1250">
+      <circle cx="540" cy="480" r="330" style="fill:var(--teal-soft)" opacity="0.35"/>
+      <g class="cig">
+        <rect x="330" y="440" width="330" height="64" rx="18" style="fill:var(--surface)" class="pict"/>
+        <rect x="614" y="452" width="46" height="40" rx="10" style="fill:var(--safe)"/>
+        <path class="smoke1" d="M680 420 c20 -24 -10 -44 10 -68" style="fill:none;stroke:var(--ink-2);stroke-width:10;stroke-linecap:round"/>
+        <path class="smoke2" d="M716 430 c22 -28 -8 -50 12 -76" style="fill:none;stroke:var(--ink-2);stroke-width:10;stroke-linecap:round" opacity="0.6"/>
+      </g>
+      <g class="ban">
+        <circle class="bancircle" cx="540" cy="470" r="250" style="fill:none;stroke:var(--safe);stroke-width:26"/>
+        <path class="banslash" d="M368 300 L714 642" style="fill:none;stroke:var(--safe);stroke-width:26;stroke-linecap:round"/>
+      </g>
+      <g class="minis">
+        <g class="miniA"><g transform="translate(250 880)">
+          ${GROUND(120, 220, 260)}
+          <path class="pict" d="M10 190 v-70 a22 22 0 0 1 22 -22 h120 c16 0 26 4 34 14 l30 36 l60 8 a24 24 0 0 1 21 24 v10"
+                style="fill:var(--surface)"/>
+          <path class="pict" d="M10 190 h256"/>
+          <circle cx="70" cy="190" r="26" style="fill:var(--ink-deep)"/><circle cx="70" cy="190" r="11" style="fill:var(--surface)"/>
+          <circle cx="210" cy="190" r="26" style="fill:var(--ink-deep)"/><circle cx="210" cy="190" r="11" style="fill:var(--surface)"/>
+          <g class="badgeA"><circle cx="250" cy="60" r="38" style="fill:var(--surface);stroke:var(--safe);stroke-width:10"/>
+            <path d="M226 36 L274 84" style="stroke:var(--safe);stroke-width:10;stroke-linecap:round"/></g>
+        </g></g>
+        <g class="miniB"><g transform="translate(650 856)">
+          ${GROUND(100, 244, 220)}
+          <path d="M100 20 c-52 0 -88 36 -88 84 c0 62 88 140 88 140 s88 -78 88 -140 c0 -48 -36 -84 -88 -84 z" style="fill:var(--teal)"/>
+          <circle cx="100" cy="102" r="40" style="fill:var(--surface)"/>
+          <g class="badgeB"><circle cx="180" cy="40" r="38" style="fill:var(--surface);stroke:var(--safe);stroke-width:10"/>
+            <path d="M156 16 L204 64" style="stroke:var(--safe);stroke-width:10;stroke-linecap:round"/></g>
+        </g></g>
+      </g>
+    </svg></div>`);
+  pop(el.querySelector('.rulenum span'), t0, 200, 500);
+  drift(el.querySelector('.cig'), t0, { from: 'translateY(50px)', dur: 800, delay: 300 });
+  draw(el.querySelector('.smoke1'), t0, 900, 700);
+  draw(el.querySelector('.smoke2'), t0, 1100, 700);
+  draw(el.querySelector('.bancircle'), t0, 1600, 900);
+  draw(el.querySelector('.banslash'), t0, 2400, 600);
+  drift(el.querySelector('.miniA'), t0, { from: 'translateY(40px)', dur: 700, delay: 3600 });
+  drift(el.querySelector('.miniB'), t0, { from: 'translateY(40px)', dur: 700, delay: 3900 });
+  pop(el.querySelector('.badgeA'), t0, 4600, 500);
+  pop(el.querySelector('.badgeB'), t0, 4900, 500);
+}
+
+/* ── 4. don't talk to the driver — use the chat (18–26s) ────── */
+{
+  const { el, t0 } = scene(3, `
+    ${RULENUM(3)}
+    <div class="art"><svg viewBox="0 0 1080 1250">
+      <circle cx="540" cy="500" r="330" style="fill:var(--teal-soft)" opacity="0.35"/>
+      <g class="drv">
+        ${GROUND(300, 990, 400)}
+        <g>${BUST(130, 400, 1.3, 'var(--ink)', CAP_EXTRA, false)}</g>
+        <g class="wheel">
+          <circle cx="300" cy="864" r="96" style="fill:none;stroke:var(--ink);stroke-width:18"/>
+          <circle cx="300" cy="864" r="20" style="fill:var(--ink)"/>
+          <path d="M300 884 v56 M222 838 l58 18 M378 838 l-58 18" style="stroke:var(--ink);stroke-width:12;stroke-linecap:round;fill:none"/>
+        </g>
+      </g>
+      <g class="talk">
+        <rect x="150" y="270" width="200" height="88" rx="34" style="fill:var(--surface)" class="pict pict-thin"/>
+        <circle cx="212" cy="314" r="9" style="fill:var(--ink-2)"/>
+        <circle cx="250" cy="314" r="9" style="fill:var(--ink-2)"/>
+        <circle cx="288" cy="314" r="9" style="fill:var(--ink-2)"/>
+        <path class="talkban" d="M160 260 L346 368" style="fill:none;stroke:var(--safe);stroke-width:18;stroke-linecap:round"/>
+      </g>
+      <g class="arrow"><path class="arrowpath pict" style="stroke:var(--teal)" d="M470 520 h150 m0 0 l-34 -34 m34 34 l-34 34"/></g>
+      <g class="phw">
+        <g transform="translate(670 260)">
+          <rect x="0" y="0" width="300" height="580" rx="50" style="fill:var(--ink)"/>
+          <rect x="11" y="11" width="278" height="558" rx="40" style="fill:var(--surface)"/>
+          <rect x="24" y="52" width="252" height="472" rx="28" style="fill:#f2f6fa"/>
+          <circle cx="150" cy="33" r="6" style="fill:var(--ink)"/>
+          <g class="okbub">
+            <rect x="52" y="120" width="196" height="66" rx="30" style="fill:var(--teal)"/>
+            <path d="M226 180 l10 26 l-30 -16 z" style="fill:var(--teal)"/>
+          </g>
+          <g class="okcheck">
+            <circle cx="150" cy="330" r="64" style="fill:var(--teal-deep)"/>
+            <path class="okpath pict" style="stroke:#ffffff" d="M118 330 l24 25 l42 -48"/>
+          </g>
+        </g>
+      </g>
+    </svg></div>`);
+  pop(el.querySelector('.rulenum span'), t0, 200, 500);
+  drift(el.querySelector('.drv'), t0, { from: 'translateX(-70px)', dur: 900, delay: 300 });
+  pop(el.querySelector('.talk'), t0, 1100, 600);
+  draw(el.querySelector('.talkban'), t0, 1900, 500);
+  draw(el.querySelector('.arrowpath'), t0, 2700, 700);
+  drift(el.querySelector('.phw'), t0, { from: 'translateX(90px)', dur: 900, delay: 3000 });
+  pop(el.querySelector('.okbub'), t0, 4100, 550);
+  pop(el.querySelector('.okcheck'), t0, 4800, 600);
+  draw(el.querySelector('.okpath'), t0, 5200, 450);
+}
+
+/* ── 5. confirm (26–29s) — tap the seatbelt to continue ─────── */
+{
+  const { el, t0 } = scene(4, `
+    <div class="art"><svg viewBox="0 0 1080 1250">
+      <circle cx="540" cy="560" r="330" style="fill:var(--teal-soft)" opacity="0.4"/>
+      <g class="btn">
+        ${GROUND(540, 940, 460)}
+        <rect x="330" y="330" width="420" height="420" rx="72" style="fill:var(--surface)" class="pict"/>
+        <path d="M420 470 l90 82" style="stroke:var(--teal);stroke-width:34;stroke-linecap:round"/>
+        <path d="M660 470 l-90 82" style="stroke:var(--teal);stroke-width:34;stroke-linecap:round"/>
+        <rect x="486" y="516" width="108" height="76" rx="16" style="fill:var(--teal-deep)"/>
+        <rect x="518" y="540" width="44" height="28" rx="7" style="fill:#ffffff"/>
+      </g>
+      <g class="tapring"><circle cx="620" cy="660" r="70" style="fill:none;stroke:var(--teal);stroke-width:10" opacity="0"/></g>
+      <g class="finger">
+        <path d="M640 700 c-6 -34 2 -74 22 -80 c16 -4 26 10 24 34 c14 -6 26 0 28 14 c12 -4 22 2 24 14 c10 -2 18 6 18 18 v50 c0 40 -28 66 -64 66 h-20 c-36 0 -52 -26 -60 -58 z"
+              style="fill:var(--surface);stroke:var(--ink);stroke-width:11"/>
+      </g>
+    </svg></div>`);
+  pop(el.querySelector('.btn'), t0, 250, 700);
+  an(el.querySelector('.finger'),
+    [{ transform: 'translate(90px, 110px)', opacity: 0 },
+     { transform: 'translate(0, 0)', opacity: 1, offset: 0.55 },
+     { transform: 'translate(-8px, -10px)', opacity: 1 }],
+    { delay: t0 + 900, duration: 1100 });
+  an(el.querySelector('.tapring circle'), [
+    { transform: 'scale(0.5)', transformOrigin: '620px 660px', opacity: 0.9 },
+    { transform: 'scale(1.9)', transformOrigin: '620px 660px', opacity: 0 },
+  ], { delay: t0 + 1900, duration: 800, easing: 'ease-out' });
+  an(el.querySelector('.btn'), [
+    { transform: 'scale(1)' }, { transform: 'scale(0.97)' }, { transform: 'scale(1)' },
+  ], { delay: t0 + 1950, duration: 420 });
+}
+
+/* ── 6. closing (29–30s) ────────────────────────────────────── */
+{
+  const { el, t0 } = scene(5, `
+    <div class="wordmark">
+      <h1>AtoC</h1>
+      <p>Smart Guide</p>
+    </div>`);
+  drift(el.querySelector('.wordmark'), t0, { from: 'translateY(24px)', dur: 500, delay: 80 });
+}
+
+window.__seek(0);
+</script>
+</body>
+</html>
