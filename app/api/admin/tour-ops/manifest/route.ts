@@ -32,6 +32,30 @@ interface BookingRow {
   pickup_points: { name?: string | null; pickup_time?: string | null } | Array<{ name?: string | null; pickup_time?: string | null }> | null;
 }
 
+type EmailLogStatus = 'sent' | 'failed' | 'skipped';
+
+interface SendLogRow {
+  booking_id: string;
+  channel: string | null;
+  status: string | null;
+  subject: string | null;
+  error: string | null;
+  opened_at: string | null;
+  marked_sent_at: string | null;
+  created_at: string | null;
+}
+
+/**
+ * 이메일 로그 상태. 모르는 값은 'failed'로 본다 — 못 보낸 것을 보낸 것으로
+ * 읽히게 두는 쪽이 반대보다 훨씬 비싸다(중복 발송은 되돌릴 수 있고, 미발송은
+ * 손님이 공항에서 기다리는 것으로 끝난다).
+ */
+function normalizeEmailStatus(raw: string | null | undefined): EmailLogStatus {
+  if (raw === 'sent') return 'sent';
+  if (raw === 'skipped') return 'skipped';
+  return 'failed';
+}
+
 export async function GET(req: NextRequest) {
   try {
     await requireAdmin(req);
@@ -57,16 +81,37 @@ export async function GET(req: NextRequest) {
 
     const rows = (bookings ?? []) as unknown as BookingRow[];
 
-    // wa 발송 로그 (테이블 미적용 시 조용히 스킵).
+    // 발송 로그 (테이블 미적용 시 조용히 스킵).
+    //
+    // 🔴 채널을 갈라서 읽는다. 한 테이블에 왓츠앱·이메일이 같이 살고
+    // `opened_at`은 NOT NULL DEFAULT now()라, 안 거르면 메일 한 통이 "왓츠앱을
+    // 열었다"로 표시된다 — 그러면 아무도 왓츠앱을 못 받는다. `channel`은
+    // DEFAULT 'whatsapp'이라 컬럼 추가 이전의 옛 행도 제자리에 온다.
     const waByBooking = new Map<string, { openedAt: string | null; markedSentAt: string | null }>();
+    const emailByBooking = new Map<
+      string,
+      { status: EmailLogStatus; at: string | null; error: string | null; subject: string | null }
+    >();
     if (rows.length > 0) {
       try {
         const { data: logs } = await supabase
           .from('ops_whatsapp_send_logs')
-          .select('booking_id, opened_at, marked_sent_at, created_at')
+          .select('booking_id, channel, status, subject, error, opened_at, marked_sent_at, created_at')
           .in('booking_id', rows.map((r) => r.id))
           .order('created_at', { ascending: false });
-        for (const log of (logs ?? []) as Array<{ booking_id: string; opened_at: string | null; marked_sent_at: string | null }>) {
+        for (const log of (logs ?? []) as SendLogRow[]) {
+          if (log.channel === 'email') {
+            // 가장 최근 이메일 로그 1건만 — 상태는 마지막 시도가 진실이다.
+            if (!emailByBooking.has(log.booking_id)) {
+              emailByBooking.set(log.booking_id, {
+                status: normalizeEmailStatus(log.status),
+                at: log.marked_sent_at ?? log.created_at ?? null,
+                error: log.error ?? null,
+                subject: log.subject ?? null,
+              });
+            }
+            continue;
+          }
           const existing = waByBooking.get(log.booking_id);
           if (!existing) {
             waByBooking.set(log.booking_id, { openedAt: log.opened_at, markedSentAt: log.marked_sent_at });
@@ -90,6 +135,7 @@ export async function GET(req: NextRequest) {
         (point?.pickup_time as string | undefined) ??
         (typeof meta.pickup_time === 'string' ? meta.pickup_time : null);
       const wa = waByBooking.get(row.id);
+      const email = emailByBooking.get(row.id);
       return {
         id: row.id,
         contactName: row.contact_name,
@@ -105,6 +151,10 @@ export async function GET(req: NextRequest) {
         specialRequests: row.special_requests,
         waOpenedAt: wa?.openedAt ?? null,
         waMarkedSentAt: wa?.markedSentAt ?? null,
+        emailStatus: email?.status ?? null,
+        emailAt: email?.at ?? null,
+        emailError: email?.error ?? null,
+        emailSubject: email?.subject ?? null,
       };
     });
 

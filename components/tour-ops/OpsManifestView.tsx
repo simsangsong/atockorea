@@ -34,6 +34,45 @@ const HIGHLIGHT_LABELS: Record<string, string> = {
   infant: '유아',
 };
 
+/** 'YYYY-MM-DDTHH:mm:ssZ' → 'M/D HH:MM' (KST). 없으면 빈 문자열. */
+function shortKst(iso: string | null | undefined): string {
+  if (!iso) return '';
+  const t = Date.parse(iso);
+  if (Number.isNaN(t)) return '';
+  const kst = new Date(t + 9 * 60 * 60 * 1000);
+  const hh = String(kst.getUTCHours()).padStart(2, '0');
+  const mm = String(kst.getUTCMinutes()).padStart(2, '0');
+  return `${kst.getUTCMonth() + 1}/${kst.getUTCDate()} ${hh}:${mm}`;
+}
+
+/**
+ * §2-6 — 이 손님에게 메일이 갔는가.
+ *
+ * 이력이 화면에 없으면 운영자는 "혹시 몰라서" 또 보낸다. 그리고 못 나간 사람은
+ * 아무 표시도 없이 목록에 남아 보낸 사람처럼 보인다 — 이 저장소가 반복해서
+ * 만든 실패다. 그래서 실패·건너뜀은 사유까지 적는다.
+ */
+function EmailTrace({ booking }: { booking: ManifestBooking }) {
+  if (!booking.emailStatus) return null;
+  const when = shortKst(booking.emailAt);
+  if (booking.emailStatus === 'sent') {
+    return (
+      <p className="mt-0.5 text-[10px] text-[var(--tr-ink-3)]" data-testid="manifest-email-trace">
+        <Mail className="mr-0.5 inline size-3 align-[-1px]" />
+        메일 발송{when ? ` ${when}` : ''}
+        {booking.emailSubject ? ` · ${booking.emailSubject}` : ''}
+      </p>
+    );
+  }
+  return (
+    <p className="mt-0.5 text-[10px] font-semibold text-rose-600 dark:text-rose-400" data-testid="manifest-email-trace">
+      <Mail className="mr-0.5 inline size-3 align-[-1px]" />
+      메일 {booking.emailStatus === 'skipped' ? '제외' : '실패'}
+      {booking.emailError ? ` — ${booking.emailError}` : ''}
+    </p>
+  );
+}
+
 const SOURCE_BADGE: Record<string, string> = {
   klook: 'Klook',
   viator: 'Viator',
@@ -315,6 +354,17 @@ export default function OpsManifestView({
         {totals.uncontacted > 0 && (
           <span className="text-amber-700 dark:text-amber-300">미연락 {totals.uncontacted}</span>
         )}
+        {/* §2-6 — 메일이 나갔는지를 화면에서 못 보면 같은 사람에게 또 보낸다. */}
+        {totals.emailed > 0 && (
+          <span className="text-[var(--tr-ink-2)]" data-testid="manifest-emailed-count">
+            메일 {totals.emailed}
+          </span>
+        )}
+        {totals.emailFailed > 0 && (
+          <span className="font-semibold text-rose-600 dark:text-rose-400" data-testid="manifest-email-failed-count">
+            메일 실패 {totals.emailFailed}
+          </span>
+        )}
         <span className="flex-1" />
         {/* M2 — 이 투어 전용 문구가 쓰이는 중이면 말해 준다. 어느 문구가 나가는지
             모른 채 보내면, 고쳐 둔 문구가 반영됐는지 확인할 방법이 없다. */}
@@ -513,6 +563,10 @@ export default function OpsManifestView({
                               ))}
                             </p>
                           )}
+                          {/* §2-6 — 메일 이력. 왓츠앱 상태와 한 칸에 섞지 않는다:
+                              이메일은 서버가 실제로 보낸 것이고 왓츠앱은 사람이
+                              탭한 것이라, 같은 뱃지로 쓰면 그 차이가 사라진다. */}
+                          <EmailTrace booking={booking} />
                         </div>
                         <button
                           type="button"
