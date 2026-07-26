@@ -56,6 +56,20 @@ export function layoutPhotoPath(layoutId: string, ext: string, id: string = rand
   return `vehicle-layout/${layoutId}/${id}.${safeExt}`;
 }
 
+/**
+ * 배차 1건의 차량 사진 경로 — **같은 버킷, 다른 접두사.**
+ *
+ * 이 운영은 차를 소유하지 않고 매번 렌트한다. 실제로 어떤 차가 왔는지는 번호판
+ * 텍스트보다 사진 한 장이 정확하고(오타가 없다), 그 사진은 배치도 참조 사진과
+ * 같은 성격의 물건이다 — 차 안이 찍히고, 나중에 꺼내 보는 기록이다. 그래서 새
+ * 버킷을 만들지 않는다: 버킷이 늘면 보관·권한 정책이 같이 늘고, 늘어난 정책은
+ * 반드시 한쪽만 갱신된다.
+ */
+export function roomVehiclePhotoPath(roomVehicleId: string, ext: string, id: string = randomUUID()): string {
+  const safeExt = /^[a-z0-9]{1,5}$/i.test(ext) ? ext.toLowerCase() : 'jpg';
+  return `room-vehicle/${roomVehicleId}/${id}.${safeExt}`;
+}
+
 export interface LayoutPhotoStorageClient {
   storage: {
     listBuckets(): Promise<{ data: Array<{ name: string }> | null }>;

@@ -35,11 +35,16 @@ export interface RoomVehicleRow {
    * `master_vehicle_id`라는 다른 이름을 쓴다 — 같은 이름 두 뜻을 만들지 않는다.
    */
   vehicle_id: string | null;
+  /**
+   * 차량 사진의 private storage path (옵션). NULL이 정상 — 렌트라 사진은 당일에야
+   * 생기고, 없다고 배차가 불완전한 것이 아니다. URL이 아니라 path다.
+   */
+  photo_path: string | null;
 }
 
 const BASE_COLUMNS = 'id, room_id, layout_id, plate_number, driver_participant_id';
 const EXTENDED_COLUMNS = `${BASE_COLUMNS}, driver_name, layout_override_json, override_note`;
-const FULL_COLUMNS = `${EXTENDED_COLUMNS}, vehicle_id`;
+const FULL_COLUMNS = `${EXTENDED_COLUMNS}, vehicle_id, photo_path`;
 
 /**
  * ops_room_vehicles 조회 — 마이그레이션이 아직 적용되지 않은 환경에서도 동작하도록
@@ -96,6 +101,7 @@ function normalizeRows(rows: unknown[]): RoomVehicleRow[] {
       layout_override_json: (row.layout_override_json as VehicleLayoutJson | null) ?? null,
       override_note: (row.override_note as string | null) ?? null,
       vehicle_id: (row.vehicle_id as string | null) ?? null,
+      photo_path: (row.photo_path as string | null) ?? null,
     };
   });
 }

@@ -21,7 +21,7 @@
 
 import { useCallback, useEffect, useState } from 'react';
 import { toast } from 'sonner';
-import { AlertTriangle, Bus, Loader2, Plus, RotateCcw, Trash2, X } from 'lucide-react';
+import { AlertTriangle, Bus, Camera, Loader2, Plus, RotateCcw, Trash2, X } from 'lucide-react';
 import { getOpsToken } from '@/components/tour-ops/opsShared';
 
 /** §K B2.4 — 그룹 정원 판정(운영자 전용). */
@@ -95,6 +95,8 @@ interface VehicleRow {
   master_active: boolean | null;
   driver_participant_id: string | null;
   driver_name: string | null;
+  /** 차량 사진의 단기 서명 URL. null = 사진 없음(렌트라 그게 기본 상태다). */
+  photo_url: string | null;
   has_override: boolean;
   override_note: string | null;
   total_seats: number;
@@ -324,6 +326,60 @@ export default function OpsRoomVehiclePanel({ roomId }: { roomId: string }) {
     [roomId, load],
   );
 
+  /**
+   * 차량 사진 첨부 (옵션).
+   *
+   * 렌트라 "어떤 차가 왔는지"는 번호판 텍스트보다 사진 한 장이 정확하다 —
+   * 사진에는 오타가 없다. 실패해도 배차 자체는 이미 성립돼 있으므로 토스트로만
+   * 알린다(사진 하나 때문에 배차를 되돌리지 않는다).
+   */
+  const uploadPhoto = useCallback(
+    async (vehicleId: string, file: File) => {
+      setBusy(true);
+      try {
+        const form = new FormData();
+        form.append('vehicle_id', vehicleId);
+        form.append('photo', file);
+        const token = await getOpsToken();
+        const res = await fetch(`/api/admin/tour-ops/rooms/${encodeURIComponent(roomId)}/vehicles/photo`, {
+          method: 'POST',
+          headers: { Authorization: `Bearer ${token}` },
+          credentials: 'include',
+          body: form,
+        });
+        const json = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(json?.message || json?.error || '사진을 올리지 못했어요.');
+        toast.success('차량 사진을 저장했어요.');
+        await load();
+      } catch (error) {
+        toast.error(error instanceof Error ? error.message : '사진을 올리지 못했어요.');
+      } finally {
+        setBusy(false);
+      }
+    },
+    [roomId, load],
+  );
+
+  const clearPhoto = useCallback(
+    async (vehicleId: string) => {
+      setBusy(true);
+      try {
+        const res = await authedFetch(
+          `/api/admin/tour-ops/rooms/${encodeURIComponent(roomId)}/vehicles/photo?vehicle_id=${encodeURIComponent(vehicleId)}`,
+          { method: 'DELETE' },
+        );
+        if (!res.ok) throw new Error('사진을 지우지 못했어요.');
+        toast.success('사진을 내렸어요.');
+        await load();
+      } catch (error) {
+        toast.error(error instanceof Error ? error.message : '사진을 지우지 못했어요.');
+      } finally {
+        setBusy(false);
+      }
+    },
+    [roomId, load],
+  );
+
   const createVehicle = useCallback(
     async (payload: Record<string, unknown>) => {
       setBusy(true);
@@ -417,6 +473,8 @@ export default function OpsRoomVehiclePanel({ roomId }: { roomId: string }) {
               busy={busy}
               onSave={(patch) => void patchVehicle(vehicle.id, patch)}
               onRemove={() => void removeVehicle(vehicle.id)}
+              onPhoto={(file) => void uploadPhoto(vehicle.id, file)}
+              onPhotoClear={() => void clearPhoto(vehicle.id)}
             />
           ))}
 
@@ -567,6 +625,8 @@ function VehicleCard({
   busy,
   onSave,
   onRemove,
+  onPhoto,
+  onPhotoClear,
 }: {
   vehicle: VehicleRow;
   /** §K B2.4 — 2대 이상일 때만 1호차/2호차로 부른다. 1대뿐이면 번호가 소음이다. */
@@ -577,6 +637,8 @@ function VehicleCard({
   busy: boolean;
   onSave: (patch: Record<string, unknown>) => void;
   onRemove: () => void;
+  onPhoto: (file: File) => void;
+  onPhotoClear: () => void;
 }) {
   const [layoutId, setLayoutId] = useState(vehicle.layout_id);
   const [masterId, setMasterId] = useState(vehicle.master_vehicle_id ?? '');
@@ -701,6 +763,52 @@ function VehicleCard({
           className="mt-1 h-10 w-full rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 text-[13px] font-normal text-[var(--tr-ink)]"
         />
       </label>
+
+      {/* 차량 사진(옵션). 렌트라 실제로 온 차는 사진이 가장 정확한 기록이다 —
+          번호판 텍스트와 달리 사진에는 오타가 없다. 없는 것이 정상 상태다. */}
+      <div className="mb-2">
+        <p className="mb-1 text-[11px] font-semibold text-[var(--tr-ink-2)]">
+          차량 사진 <span className="font-normal text-[var(--tr-ink-3)]">(선택)</span>
+        </p>
+        {vehicle.photo_url ? (
+          <div className="flex items-center gap-2">
+            <a href={vehicle.photo_url} target="_blank" rel="noopener noreferrer" className="shrink-0">
+              {/* eslint-disable-next-line @next/next/no-img-element -- 서명 URL은 만료된다(최적화 캐시 대상 아님) */}
+              <img
+                src={vehicle.photo_url}
+                alt="차량 사진"
+                data-testid="vehicle-photo"
+                className="h-16 w-24 rounded-lg object-cover"
+              />
+            </a>
+            <button
+              type="button"
+              disabled={busy}
+              onClick={onPhotoClear}
+              className="h-9 rounded-lg border border-[var(--tr-hairline)] px-2.5 text-[11px] font-semibold text-[var(--tr-ink-2)] disabled:opacity-40"
+              data-testid="vehicle-photo-clear"
+            >
+              사진 내리기
+            </button>
+          </div>
+        ) : (
+          <label className="flex h-10 w-full cursor-pointer items-center justify-center gap-1.5 rounded-lg border border-dashed border-[var(--tr-hairline)] text-[11px] font-semibold text-[var(--tr-ink-2)]">
+            <Camera className="size-3.5" />
+            사진 첨부 (당일 찍어서 올려도 돼요)
+            <input
+              type="file"
+              accept="image/*"
+              className="hidden"
+              data-testid="vehicle-photo-input"
+              onChange={(event) => {
+                const file = event.target.files?.[0];
+                if (file) onPhoto(file);
+                event.target.value = '';
+              }}
+            />
+          </label>
+        )}
+      </div>
 
       <div className="flex gap-2">
         <a
