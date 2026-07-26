@@ -157,6 +157,7 @@ i18n-work/out/tour_product_pages/de/tour_product_pages_<SLUG>_de_<CHUNK>.json
 | # | 사안 | 왜 사람인가 |
 |---|---|---|
 | 1 | **상품명 번역 여부** — `Jeju Grand Highlights Loop` → `Große Jeju-Highlights-Rundtour` | 브랜드 결정. 기존 es는 완전 번역(`Gran Circuito…`), ko/ja는 음차라 선례가 갈린다. A-1 감수 1순위 |
+| 2b | **원문 스톱 수가 서로 어긋난다** — `busan-top-attractions-day-tour` A1: hero는 `5 stops`, tagline은 `seven stops` | 손님이 같은 화면에서 두 숫자를 본다. 번역기는 규칙 5대로 양쪽을 그대로 옮겼으므로 **de·fr 번역본에도 그대로 복제돼 있다.** 원문을 고치면 두 로케일 재추출·재번역이 필요하다 |
 | 2 | **원문 데이터 결함 4건** — `Un Memorial Cemetery`(→UN), `Hallasumokwon Arboretum`(수목원 중복), `₩90-minute Subway Line 1`(`incheon-seoul-private-car…` `/itineraryStops/0/description` — 앞 항목 `₩10,000 taxi`의 ₩가 옮아붙은 오기, 90분은 금액이 아니다), `/sticky_booking_bar/note`(`from-incheon-seoul…`·`seoul-dmz…` — `checkout_tour_id`·Supabase·JSONB가 적힌 개발자 주석이 고객 노출 필드에 들어 있다) | 원문 수정은 번역 범위 밖. 번역기는 규칙 1·3에 따라 값을 그대로 옮겼다(주석 필드는 빈 값 처리 → 영어 폴백) |
 | 3 | **원문 시각 불일치** — `pickup_dropoff/notes/0`은 복귀 `17:30–18:00`, `practicalAccordionItems/0/content/1`은 `18:00–18:30` | 어느 쪽이 맞는지 운영이 안다 |
 | 4 | Q10 러시아어 전사 감수자 | 없으면 ru POI 명칭 DB 미적용 유지 |
