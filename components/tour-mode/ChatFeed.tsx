@@ -559,11 +559,30 @@ export default function ChatFeed({
               );
             }
             if (system) {
+              // M-D2/M-D4 — a system capsule carrying a pin (lost-me, "meet me
+              // here", pickup request, meeting set) renders the SAME map card
+              // bubbles get; the raw URL line alone was invisible-grade for a
+              // driver at a red light. Staff get Kakao chips, guests Google.
+              const sysText = displayText(message, viewerLocale, originals.has(message.id), preferredLocale);
+              const sysLoc = parseLocationMessage(sysText);
               return (
-                <div className={`my-2 flex justify-center ${animClass}`}>
+                <div className={`my-2 flex flex-col items-center gap-1.5 ${animClass}`}>
                   <div className={`tr-pill max-w-[88%] px-4 py-1.5 text-center leading-relaxed ${systemText}`}>
-                    {displayText(message, viewerLocale, originals.has(message.id), preferredLocale)}
+                    {sysLoc ? sysText.replace(sysLoc.url, '').trim() || sysText : sysText}
                   </div>
+                  {sysLoc && (
+                    <LocationPreview
+                      lat={sysLoc.lat}
+                      lng={sysLoc.lng}
+                      label={sysLoc.label}
+                      url={sysLoc.url}
+                      audience={
+                        viewerRole === 'guide' || viewerRole === 'driver' || viewerRole === 'admin'
+                          ? 'staff'
+                          : 'guest'
+                      }
+                    />
+                  )}
                 </div>
               );
             }
@@ -711,7 +730,18 @@ export default function ChatFeed({
                 <IconInstall size={TR_ICON.chip} aria-hidden />
               </a>
             ) : loc ? (
-              <LocationPreview lat={loc.lat} lng={loc.lng} label={loc.label} url={loc.url} />
+              <LocationPreview
+                lat={loc.lat}
+                lng={loc.lng}
+                label={loc.label}
+                url={loc.url}
+                /* M-D2 — the operator opens a guest pin in Kakao, not Google. */
+                audience={
+                  viewerRole === 'guide' || viewerRole === 'driver' || viewerRole === 'admin'
+                    ? 'staff'
+                    : 'guest'
+                }
+              />
             ) : (
               textBubble
             );

@@ -51,14 +51,19 @@ const BOOKING = {
   preferred_language: 'ja',
 };
 
-function fakeDb() {
+function fakeDb(opts: { tourPriceType?: string | null } = {}) {
   const inserts: Record<string, Array<Record<string, unknown>>> = {};
   const client = {
     inserts,
     from(table: string) {
       const chain: Record<string, unknown> = {};
       for (const m of ['select', 'eq', 'in', 'order', 'limit']) chain[m] = jest.fn(() => chain);
-      const resolve = async () => (table === 'bookings' ? { data: { ...BOOKING }, error: null } : { data: null, error: null });
+      const resolve = async () =>
+        table === 'bookings'
+          ? { data: { ...BOOKING }, error: null }
+          : table === 'tours'
+            ? { data: { price_type: opts.tourPriceType ?? null }, error: null }
+            : { data: null, error: null };
       chain.single = jest.fn(resolve);
       chain.maybeSingle = jest.fn(resolve);
       chain.upsert = jest.fn(() => ({
@@ -309,5 +314,88 @@ describe('POST /api/tour-rooms/[bookingId]/signals', () => {
     );
     expect(frozen.status).toBe(403);
     expect(await frozen.json()).toMatchObject({ error: 'post_tour_window_closed' });
+  });
+
+  // ── M-D3/M-D4 (docs/meet-exactly-master-plan-2026-07-27.md) ─────────────────
+
+  it('share_location writes a guest_spot pin, embeds the maps URL and rings the operators', async () => {
+    const db = fakeDb();
+    createServerClientMock.mockReturnValue(db);
+    const res = await signalsPOST(
+      fakeReq({
+        headers: { 'x-tour-room-auth': session('customer') },
+        json: { type: 'share_location', lat: 37.5665, lng: 126.978 },
+      }),
+      routeParams(),
+    );
+    expect(res.status).toBe(201);
+    const pin = db.inserts.tour_room_pins[0];
+    expect(pin).toMatchObject({ kind: 'guest_spot', lat: 37.5665, lng: 126.978 });
+    const msg = db.inserts.tour_room_messages[0];
+    expect(msg.metadata).toMatchObject({ kind: 'guest_share_location', signal_type: 'share_location' });
+    expect((msg.translations as Record<string, string>).ko).toContain('정확한 위치');
+    expect((msg.translations as Record<string, string>).en).toContain('maps.google.com');
+    const { sendDriverRoomPush } = jest.requireMock('@/lib/tour-room/guestPush');
+    expect(sendDriverRoomPush).toHaveBeenCalled();
+  });
+
+  it('meeting_propose is refused on join tours (server-side private gate)', async () => {
+    const db = fakeDb({ tourPriceType: 'person' });
+    createServerClientMock.mockReturnValue(db);
+    const res = await signalsPOST(
+      fakeReq({
+        headers: { 'x-tour-room-auth': session('customer') },
+        json: { type: 'meeting_propose', time: '18:30', point: 'Hotel lobby' },
+      }),
+      routeParams(),
+    );
+    expect(res.status).toBe(403);
+    expect(await res.json()).toMatchObject({ error: 'private_tour_only' });
+    expect(db.inserts.tour_room_messages).toBeUndefined();
+  });
+
+  it('meeting_propose on a private tour speaks the meeting_notice contract (banner-compatible metadata, no pin row)', async () => {
+    const db = fakeDb({ tourPriceType: 'vehicle' });
+    createServerClientMock.mockReturnValue(db);
+    const res = await signalsPOST(
+      fakeReq({
+        headers: { 'x-tour-room-auth': session('customer') },
+        json: { type: 'meeting_propose', time: '18:30', point: 'Cartier 1F', lat: 37.51, lng: 127.06 },
+      }),
+      routeParams(),
+    );
+    expect(res.status).toBe(201);
+    const msg = db.inserts.tour_room_messages[0];
+    expect(msg.metadata).toMatchObject({
+      kind: 'meeting_notice',
+      signal_type: 'meeting_propose',
+      proposed_by: 'customer',
+      meeting_time: '18:30',
+      meeting_lat: 37.51,
+      meeting_lng: 127.06,
+    });
+    // The typed place is translated per-locale (meeting_point_i18n) so the
+    // Korean driver reads it natively.
+    expect((msg.metadata as Record<string, unknown>).meeting_point_i18n).toMatchObject({ ko: '[ko] Cartier 1F' });
+    expect((msg.translations as Record<string, string>).ko).toContain('만남');
+    // Coordinates live on the metadata — a 30-min pin TTL must never expire a
+    // D-1 meeting, so no pins row is written.
+    expect(db.inserts.tour_room_pins).toBeUndefined();
+    const { sendDriverRoomPush } = jest.requireMock('@/lib/tour-room/guestPush');
+    expect(sendDriverRoomPush).toHaveBeenCalled();
+  });
+
+  it('meeting_propose validates: time is required, and place-or-pin must exist', async () => {
+    createServerClientMock.mockReturnValue(fakeDb({ tourPriceType: 'vehicle' }));
+    const noTime = await signalsPOST(
+      fakeReq({ headers: { 'x-tour-room-auth': session('customer') }, json: { type: 'meeting_propose', point: 'Lobby' } }),
+      routeParams(),
+    );
+    expect(noTime.status).toBe(400);
+    const nowhere = await signalsPOST(
+      fakeReq({ headers: { 'x-tour-room-auth': session('customer') }, json: { type: 'meeting_propose', time: '09:00' } }),
+      routeParams(),
+    );
+    expect(nowhere.status).toBe(400);
   });
 });

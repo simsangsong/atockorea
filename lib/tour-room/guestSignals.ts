@@ -17,6 +17,8 @@ export const GUEST_SIGNAL_TYPES = [
   'lost_item',
   'pickup_request',
   'dropoff_change',
+  'share_location',
+  'meeting_propose',
 ] as const;
 export type GuestSignalType = (typeof GUEST_SIGNAL_TYPES)[number];
 
@@ -26,8 +28,11 @@ export const LOST_PIN_TTL_MS = 30 * 60 * 1000;
 interface SignalArgs {
   name?: string;
   mapsUrl?: string;
-  /** A3 dropoff_change — the guest's typed place (translated by the route). */
+  /** A3 dropoff_change / M-D3 meeting_propose — the guest's typed place
+   *  (translated per-locale by the route via noteByLocale). */
   note?: string;
+  /** M-D3 meeting_propose — HH:MM KST wall clock. */
+  time?: string;
 }
 
 type Bundle = { source_locale: string; source_text: string; translations: Record<string, string> };
@@ -74,6 +79,26 @@ const TEMPLATES: Record<GuestSignalType, (args: SignalArgs) => Record<string, st
     ja: `📍 ${name ?? 'ゲスト'}が降車地点の変更を希望しています${note ? `：${note}` : ''}。${mapsUrl ? ` 位置: ${mapsUrl}` : ''}`,
     es: `📍 ${name ?? 'Un huésped'} solicita otro punto de bajada${note ? `: ${note}` : ''}.${mapsUrl ? ` Ubicación: ${mapsUrl}` : ''}`,
     zh: `📍 ${name ?? '客人'}请求更改下车地点${note ? `：${note}` : ''}。${mapsUrl ? ` 位置：${mapsUrl}` : ''}`,
+  }),
+  // M-D3/M-D4 — "meet me exactly here": a general-purpose one-shot pin (not
+  // an emergency), fired from the 📍 chip; the guest usually follows it with
+  // one photo of what they can see. Staff open it in KakaoNavi (M-D2).
+  share_location: ({ name, mapsUrl }) => ({
+    en: `📍 ${name ?? 'A guest'} shared their exact location${mapsUrl ? ` — ${mapsUrl}` : ' — please check the chat.'}`,
+    ko: `📍 ${name ?? '손님'}이 정확한 위치를 공유했어요${mapsUrl ? ` — 위치: ${mapsUrl}` : ' — 채팅으로 확인해 주세요.'}`,
+    ja: `📍 ${name ?? 'ゲスト'}が正確な現在地を共有しました${mapsUrl ? ` — 位置: ${mapsUrl}` : ' — チャットでご確認ください。'}`,
+    es: `📍 ${name ?? 'Un huésped'} compartió su ubicación exacta${mapsUrl ? ` — ${mapsUrl}` : '; revisa el chat.'}`,
+    zh: `📍 ${name ?? '客人'}分享了准确位置${mapsUrl ? `——位置：${mapsUrl}` : '——请在聊天中确认。'}`,
+  }),
+  // M-D3/M-D5 — private-tour guests SET the meeting themselves (D-1 or at a
+  // spot). Metadata mirrors the guide's meeting_notice contract, so the
+  // countdown banner / 10·5-minute warnings / rally ladder run unchanged.
+  meeting_propose: ({ name, time, note, mapsUrl }) => ({
+    en: `🤝 ${name ?? 'A guest'} set the meeting${time ? ` — ${time}` : ''}${note ? ` · ${note}` : ''}${mapsUrl ? `\n${mapsUrl}` : ''}`,
+    ko: `🤝 ${name ?? '손님'}이 만남을 정했어요${time ? ` — ${time}` : ''}${note ? ` · ${note}` : ''}${mapsUrl ? `\n${mapsUrl}` : ''}`,
+    ja: `🤝 ${name ?? 'ゲスト'}が待ち合わせを設定しました${time ? ` — ${time}` : ''}${note ? ` · ${note}` : ''}${mapsUrl ? `\n${mapsUrl}` : ''}`,
+    es: `🤝 ${name ?? 'Un huésped'} fijó el encuentro${time ? ` — ${time}` : ''}${note ? ` · ${note}` : ''}${mapsUrl ? `\n${mapsUrl}` : ''}`,
+    zh: `🤝 ${name ?? '客人'}确定了见面安排${time ? `——${time}` : ''}${note ? ` · ${note}` : ''}${mapsUrl ? `\n${mapsUrl}` : ''}`,
   }),
   rally_overdue: () => ({
     en: '⏰ Meeting time has passed — part of the party hasn’t returned yet. The guide is checking.',

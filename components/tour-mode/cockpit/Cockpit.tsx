@@ -1560,7 +1560,8 @@ export default function Cockpit({
                 </div>
               ) : loc ? (
                 <div className="max-w-[85vw]">
-                  <LocationPreview lat={loc.lat} lng={loc.lng} label={loc.label} url={loc.url} />
+                  {/* M-D2 — the cockpit IS the driver: Kakao chips, always. */}
+                  <LocationPreview lat={loc.lat} lng={loc.lng} label={loc.label} url={loc.url} audience="staff" />
                 </div>
               ) : (
                 <div

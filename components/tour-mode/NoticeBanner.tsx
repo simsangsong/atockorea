@@ -11,6 +11,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { activeNotice, formatRemaining, formatTargetTime, noticeBannerMode, rallyStage } from '@/lib/tour-room/notices';
+import { kakaoWebRouteUrl } from '@/lib/tour-room/nav-links';
 import { IconFreeTime, IconMeeting, TR_ICON } from '@/components/tour-mode/icons';
 import { speakWithDevice } from '@/lib/tour-room/tts';
 import { useTourRoomSettings } from '@/hooks/useTourRoomSettings';
@@ -107,6 +108,7 @@ export default function NoticeBanner({
   bookingId,
   roomSession,
   canSignal = false,
+  viewerRole = 'customer',
 }: {
   messages: RoomMessage[];
   tourDate: string | null | undefined;
@@ -115,6 +117,8 @@ export default function NoticeBanner({
   bookingId?: string;
   roomSession?: string | null;
   canSignal?: boolean;
+  /** M-D2 — staff open the gather pin in Kakao (car route), guests in Google. */
+  viewerRole?: string;
 }) {
   const [nowMs, setNowMs] = useState(() => Date.now());
   const { settings } = useTourRoomSettings();
@@ -226,7 +230,11 @@ export default function NoticeBanner({
             {displayPoint ? copy.at(displayPoint) : ''}
             {notice.lat !== null && notice.lng !== null && (
               <a
-                href={`https://maps.google.com/?q=${notice.lat},${notice.lng}`}
+                href={
+                  viewerRole === 'guide' || viewerRole === 'driver' || viewerRole === 'admin'
+                    ? kakaoWebRouteUrl({ lat: notice.lat, lng: notice.lng, name: displayPoint ?? undefined })
+                    : `https://maps.google.com/?q=${notice.lat},${notice.lng}`
+                }
                 target="_blank"
                 rel="noopener noreferrer"
                 className="ml-1.5 whitespace-nowrap font-semibold text-[var(--tr-accent-deep)] underline"
