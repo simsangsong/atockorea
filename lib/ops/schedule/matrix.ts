@@ -40,6 +40,17 @@ export interface ScheduleSubject {
   label: string;
   sublabel?: string | null;
   active?: boolean;
+  /**
+   * 이 행이 **한 대**인가 **한 종류**인가.
+   *
+   *   · `'instance'` (기본) — 특정 가이드 한 명, 등록된 차량 한 대.
+   *     같은 날 두 건이면 확인이 필요하다.
+   *   · `'class'` — 차량 **타입** 행(카운티·쏠라티…). 이 운영은 차를 소유하지 않고
+   *     매번 렌트하므로 달력에서 의미 있는 축은 "그날 카운티 몇 대"다. 같은 타입이
+   *     하루에 두 건인 것은 **2대를 빌린다는 뜻이지 충돌이 아니다** — 그걸 충돌로
+   *     칠하면 달력이 매일 빨갛고, 매일 빨간 경고는 아무도 안 읽는다.
+   */
+  kind?: 'instance' | 'class';
 }
 
 export type CellIssue = 'overlap' | 'double' | 'on_rest_day' | 'problem';
@@ -90,21 +101,33 @@ export interface BuildMatrixInput {
  * overlap 과 double 을 나누는 이유: 둘을 하나로 합치면 "빨간 셀"이 흔해지고,
  * 흔한 경고는 읽히지 않는다.
  */
-export function cellIssues(items: ScheduleItem[], unavailable: boolean): CellIssue[] {
+export function cellIssues(
+  items: ScheduleItem[],
+  unavailable: boolean,
+  /**
+   * 같은 칸의 2건을 겹침으로 볼 것인가. 타입 행(`kind: 'class'`)에서는 **false** —
+   * 그 행의 2건은 "그날 2대 빌린다"이지 충돌이 아니다.
+   */
+  countsAsOneSubject = true,
+): CellIssue[] {
   const live = items.filter((i) => i.status !== 'cancelled');
   const issues: CellIssue[] = [];
 
   let overlapFound = false;
-  for (let i = 0; i < live.length && !overlapFound; i++) {
-    for (let j = i + 1; j < live.length; j++) {
-      if (overlaps({ start: live[i].startTime, end: live[i].endTime }, { start: live[j].startTime, end: live[j].endTime })) {
-        overlapFound = true;
-        break;
+  if (countsAsOneSubject) {
+    for (let i = 0; i < live.length && !overlapFound; i++) {
+      for (let j = i + 1; j < live.length; j++) {
+        if (
+          overlaps({ start: live[i].startTime, end: live[i].endTime }, { start: live[j].startTime, end: live[j].endTime })
+        ) {
+          overlapFound = true;
+          break;
+        }
       }
     }
+    if (overlapFound) issues.push('overlap');
+    else if (live.length > 1) issues.push('double');
   }
-  if (overlapFound) issues.push('overlap');
-  else if (live.length > 1) issues.push('double');
 
   if (unavailable && live.length > 0) issues.push('on_rest_day');
   if (live.some((i) => i.problem)) issues.push('problem');
@@ -156,7 +179,7 @@ export function buildScheduleMatrix(input: BuildMatrixInput): ScheduleMatrix {
       const dayItems = byDate.get(day.date) ?? [];
       const isRest = rest.has(day.date);
       if (dayItems.length === 0 && !isRest) continue; // 빈 셀은 만들지 않는다(월 31 × 가이드 N 개의 빈 객체)
-      const issues = cellIssues(dayItems, isRest);
+      const issues = cellIssues(dayItems, isRest, subject.kind !== 'class');
       cells.set(day.date, { date: day.date, items: dayItems, unavailable: isRest, issues });
 
       const live = dayItems.filter((i) => i.status !== 'cancelled').length;

@@ -111,6 +111,14 @@ async function loadGuideAxis(
  * (`ops_tour_groups.tour_date`)에서 온다. 둘 다 없는 배차 행은 달력에 놓을 자리가
  * 없으므로 제외하되, 몇 건이 그랬는지 보고한다 — 조용히 빠지면 "배차가 없다"로
  * 읽힌다.
+ *
+ * 🔴 **행의 단위는 등록 차량이 아니라 "차량 타입"이 기본이다.** 이 운영은 차를
+ * 소유하지 않고 매번 렌트한다. 등록 차량만 행으로 세우면 이 달력은 영구히 비어
+ * 있고, 배차는 전부 '미배정'으로 떨어져 아무 질문에도 답하지 못한다.
+ *
+ * 타입 행이면 답이 나온다: **"8월 3일에 카운티 2대, 쏠라티 1대"** — 렌트 예약을
+ * 걸 때 필요한 바로 그 숫자다. 등록 차량이 있으면 그 행이 따로 서고(그 차는 한
+ * 대이므로 중복 배차 감지가 계속 유효하다), 없으면 타입 행이 받는다.
  */
 async function loadVehicleAxis(
   supabase: SupabaseClient,
@@ -119,7 +127,7 @@ async function loadVehicleAxis(
 ): Promise<LoadedSchedule & { undatedCount: number }> {
   const { first, last } = periodBounds(period);
 
-  const [vehiclesRes, roomsRes, groupsRes] = await Promise.all([
+  const [vehiclesRes, roomsRes, groupsRes, layoutsRes] = await Promise.all([
     supabase
       .from('ops_vehicles')
       .select('id, plate_number, nickname, seat_capacity, active')
@@ -140,6 +148,8 @@ async function loadVehicleAxis(
       .gte('tour_date', first)
       .lte('tour_date', last)
       .limit(SCHEDULE_SCAN_LIMIT),
+    // 타입 행의 라벨·좌석수. 렌트 운영에서 이게 달력의 주 축이다.
+    supabase.from('ops_vehicle_layouts').select('id, model, display_name, total_seats').limit(200),
   ]);
 
   const roomDates = new Map((((roomsRes.data ?? []) as Array<{ id: string; tour_date: string | null }>) ?? []).map((r) => [r.id, r.tour_date]));
@@ -171,6 +181,7 @@ async function loadVehicleAxis(
           group_id: string | null;
           plate_number: string | null;
           driver_name: string | null;
+          layout_id: string | null;
         }>);
 
   const vehicles = (vehiclesRes.data ?? []) as Array<{
@@ -180,13 +191,31 @@ async function loadVehicleAxis(
     seat_capacity: number | null;
     active: boolean;
   }>;
+  const layouts = (layoutsRes.data ?? []) as Array<{
+    id: string;
+    model: string;
+    display_name: Record<string, string> | null;
+    total_seats: number | null;
+  }>;
+  const layoutById = new Map(layouts.map((l) => [l.id, l]));
 
-  const subjects: ScheduleSubject[] = vehicles.map((v) => ({
-    id: v.id,
-    label: formatPlate(v.plate_number),
-    sublabel: v.nickname,
-    active: v.active,
-  }));
+  // 등록 차량은 한 대짜리 행(중복 배차 감지 유효), 타입은 종류 행(2대는 정상).
+  const subjects: ScheduleSubject[] = [
+    ...vehicles.map((v) => ({
+      id: v.id,
+      label: formatPlate(v.plate_number),
+      sublabel: v.nickname,
+      active: v.active,
+      kind: 'instance' as const,
+    })),
+    ...layouts.map((l) => ({
+      id: l.id,
+      label: l.display_name?.ko || l.display_name?.en || l.model,
+      sublabel: l.total_seats ? `${l.total_seats}석` : null,
+      active: true,
+      kind: 'class' as const,
+    })),
+  ];
 
   let undatedCount = 0;
   const items: ScheduleItem[] = [];
@@ -196,13 +225,20 @@ async function loadVehicleAxis(
       undatedCount += 1;
       continue;
     }
+    // 등록 차량에 연결됐으면 그 차 행, 아니면 **타입 행**. 번호판 텍스트로
+    // 차 행에 억지로 붙이지는 않는다 — 문자열 매칭은 오배차를 만든다.
+    const subjectId = d.vehicle_id ?? (d.layout_id && layoutById.has(d.layout_id) ? d.layout_id : null);
+    const typeLabel = d.layout_id ? layoutById.get(d.layout_id) : undefined;
     items.push({
       id: d.id,
       date,
-      // 마스터 미등록(용차·대차)은 미배정 행으로 모인다 — 번호판 텍스트만 있는
-      // 배차를 차량 행에 억지로 붙이면 문자열 매칭으로 오배차를 만들게 된다.
-      subjectId: d.vehicle_id,
-      label: d.plate_number ? formatPlate(d.plate_number) : (d.driver_name ?? '배차'),
+      subjectId,
+      // 번호판을 모르는 배차(렌트 예약 전)는 타입 이름으로 보인다 — 빈 칸보다 낫다.
+      label:
+        (d.plate_number ? formatPlate(d.plate_number) : null) ??
+        d.driver_name ??
+        (typeLabel ? typeLabel.display_name?.ko || typeLabel.model : null) ??
+        '배차',
       status: null,
     });
   }

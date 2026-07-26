@@ -255,3 +255,55 @@ describe('matrixToAoa', () => {
     expect(new Set(aoa.map((r) => r.length)).size).toBe(1);
   });
 });
+
+/**
+ * 타입 행 — 렌트 운영의 기본 축.
+ *
+ * 이 운영은 차를 소유하지 않고 매번 렌트한다. 그래서 달력에서 의미 있는 질문은
+ * "12가3456이 두 번 배차됐나"가 아니라 **"그날 카운티 몇 대 빌려야 하나"**다.
+ * 같은 타입 2건은 2대를 빌린다는 뜻이지 충돌이 아니다 — 그걸 빨갛게 칠하면
+ * 달력이 매일 빨갛고, 매일 빨간 경고는 아무도 안 읽는다.
+ */
+describe('타입 행 (kind: class)', () => {
+  const twoOfAType = () =>
+    buildScheduleMatrix({
+      period: '2026-08',
+      axis: 'vehicle',
+      subjects: [{ id: 'lay-county', label: '카운티 20인승', kind: 'class' }],
+      items: [
+        { id: 'd1', date: '2026-08-03', subjectId: 'lay-county', label: '카운티 20인승' },
+        { id: 'd2', date: '2026-08-03', subjectId: 'lay-county', label: '카운티 20인승' },
+      ],
+    });
+
+  it('counts two of the same type on one day without calling it a conflict', () => {
+    const row = twoOfAType().rows[0];
+    expect(row.cells.get('2026-08-03')!.items).toHaveLength(2);
+    expect(row.cells.get('2026-08-03')!.issues).toEqual([]);
+    expect(row.issueCount).toBe(0);
+    expect(row.total).toBe(2);
+  });
+
+  it('still flags two dispatches of one registered vehicle (instance rows unchanged)', () => {
+    const matrix = buildScheduleMatrix({
+      period: '2026-08',
+      axis: 'vehicle',
+      subjects: [{ id: 'veh-1', label: '12가 3456' }],
+      items: [
+        { id: 'd1', date: '2026-08-03', subjectId: 'veh-1', label: '12가 3456' },
+        { id: 'd2', date: '2026-08-03', subjectId: 'veh-1', label: '12가 3456' },
+      ],
+    });
+    expect(matrix.rows[0].cells.get('2026-08-03')!.issues).toContain('double');
+  });
+
+  it('still surfaces a per-item problem on a type row', () => {
+    const matrix = buildScheduleMatrix({
+      period: '2026-08',
+      axis: 'vehicle',
+      subjects: [{ id: 'lay-county', label: '카운티', kind: 'class' }],
+      items: [{ id: 'd1', date: '2026-08-03', subjectId: 'lay-county', label: '카운티', problem: '정원 초과' }],
+    });
+    expect(matrix.rows[0].cells.get('2026-08-03')!.issues).toEqual(['problem']);
+  });
+});
