@@ -1,0 +1,328 @@
+{
+  "unitId": "tour_product_pages:jeju-eastern-unesco-spots-day-tour:ru:itineraryStops",
+  "surface": "tour_product_pages",
+  "slug": "jeju-eastern-unesco-spots-day-tour",
+  "locale": "ru",
+  "chunk": "itineraryStops",
+  "tier": "B",
+  "segments": {
+    "/itineraryStops/0/name": {
+      "source_en": "Pickup (4 points across Jeju City)"
+    },
+    "/itineraryStops/0/category": {
+      "source_en": "Pickup — Jeju City Hotel/Hub Sequence"
+    },
+    "/itineraryStops/0/duration": {
+      "source_en": "30 min"
+    },
+    "/itineraryStops/0/timeUsed/0": {
+      "source_en": "Hagwi pickup ~09:00 — 5 min"
+    },
+    "/itineraryStops/0/timeUsed/1": {
+      "source_en": "Airport pickup ~09:10 — 5 min"
+    },
+    "/itineraryStops/0/timeUsed/2": {
+      "source_en": "City Hall pickup ~09:20 — 5 min"
+    },
+    "/itineraryStops/0/timeUsed/3": {
+      "source_en": "Dongmun pickup ~09:30 — 5 min"
+    },
+    "/itineraryStops/0/timeUsed/4": {
+      "source_en": "Eastbound Route 1132 to Hamdeok — ~30 min"
+    },
+    "/itineraryStops/0/highlights/0": {
+      "source_en": "**4 pickup points** across Jeju City — Airport, City Hall, Hagwi, Dongmun"
+    },
+    "/itineraryStops/0/highlights/1": {
+      "source_en": "Sequence west→east minimizes morning coach distance"
+    },
+    "/itineraryStops/0/highlights/2": {
+      "source_en": "**Small-group minicoach (max 14 pax)** with English guide"
+    },
+    "/itineraryStops/0/highlights/3": {
+      "source_en": "Bilingual itinerary card + weather brief at first stop"
+    },
+    "/itineraryStops/0/highlights/4": {
+      "source_en": "Total morning transit Jeju City → Hamdeok: ~40 min"
+    },
+    "/itineraryStops/0/highlights/5": {
+      "source_en": "Drop-off mirrors pickup with optional Dongmun Market end-of-day stop"
+    },
+    "/itineraryStops/0/whyOnRoute": {
+      "source_en": "Four pickup points cover Jeju City's main hotel + transport zones (airport, mid-city, old town, market district) without forcing guests across the city. Sequencing west→east lands the coach at Hamdeok ~09:50 — early enough to catch the morning low-tide beach panorama before peak visitor flow."
+    },
+    "/itineraryStops/0/description": {
+      "source_en": "**Pickup is consolidated at four central Jeju City points** to minimize morning crisscrossing: **Jeju International Airport (제주공항)** for guests with same-day arrivals or hotels near the airport corridor; **Jeju City Hall (제주시청)** for guests in the Yeon-dong / Nohyeong / Old Town hotel cluster; **Hagwi-dong (하귀동)** as the westernmost pickup before heading east; and **Dongmun Traditional Market (동문시장)** as the optional eastern Jeju City pickup near Tapdong waterfront. \n\nSequence is Hagwi → Airport → City Hall → Dongmun → eastward Route 1132 toward Hamdeok. The minicoach is **small-group (max ~14 pax)** with English-speaking guide. \n\n**Bilingual printed itinerary card** distributed at pickup, weather brief at first stop."
+    },
+    "/itineraryStops/1/name": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Пляж Хамдок Соубон"
+      ]
+    },
+    "/itineraryStops/1/category": {
+      "source_en": "Top-3 Jeju Beach — Olle Trail 19 + WWII Coastal History"
+    },
+    "/itineraryStops/1/duration": {
+      "source_en": "60 min"
+    },
+    "/itineraryStops/1/timeUsed/0": {
+      "source_en": "Coach arrival + parking — ~5 min"
+    },
+    "/itineraryStops/1/timeUsed/1": {
+      "source_en": "Beach walk (main stretch + 2nd cove) — ~25 min"
+    },
+    "/itineraryStops/1/timeUsed/2": {
+      "source_en": "WWII tunnel exteriors viewing — ~10 min"
+    },
+    "/itineraryStops/1/timeUsed/3": {
+      "source_en": "Cafe Delmoondo or beachfront photography — ~15 min"
+    },
+    "/itineraryStops/1/timeUsed/4": {
+      "source_en": "Buffer / regroup — ~5 min"
+    },
+    "/itineraryStops/1/highlights/0": {
+      "source_en": "**Top 3 Jeju beaches** — emerald-turquoise water + white coral sand"
+    },
+    "/itineraryStops/1/highlights/1": {
+      "source_en": "**500 m main beach** + 3 connected coves (~900 m total length)"
+    },
+    "/itineraryStops/1/highlights/2": {
+      "source_en": "**Seoubong volcanic cone** ~1-hour summit climb — canola-yellow slopes March–April"
+    },
+    "/itineraryStops/1/highlights/3": {
+      "source_en": "**WWII Imperial Japanese Army tunnels** in adjacent cliffs — kamikaze suicide-boat shelters"
+    },
+    "/itineraryStops/1/highlights/4": {
+      "source_en": "**Olle Trail Course 19 (조천 → 김녕)** — blue-orange ribbon trail markers"
+    },
+    "/itineraryStops/1/highlights/5": {
+      "source_en": "**Cafe Delmoondo** — large terraces, beachfront, signature stop"
+    },
+    "/itineraryStops/1/highlights/6": {
+      "source_en": "Up to **50,000 daily summer visitors** at peak; uncrowded spring + autumn"
+    },
+    "/itineraryStops/1/highlights/7": {
+      "source_en": "**FREE admission**; 20 km / ~40 min from Jeju International Airport"
+    },
+    "/itineraryStops/1/highlights/8": {
+      "source_en": "Mediterranean-like color contrast — rare on the Korean Peninsula"
+    },
+    "/itineraryStops/1/smartNotes/tip": {
+      "source_en": "Less crowded than Hyeopjae or Gimnyeong beaches; the Delmoondo café area on the east side is popular for sunset"
+    },
+    "/itineraryStops/1/smartNotes/facilities": {
+      "source_en": "Multiple cafés along the beachfront; convenience stores nearby"
+    },
+    "/itineraryStops/1/whyOnRoute": {
+      "source_en": "**The morning's first stop, opening with the sea.** Right after pickup at four points across Jeju City, the day begins at ⟦G0⟧, about a 40-minute drive away. After lightly enjoying the emerald water, white sand, and the walking heritage of Olle Trail Course 19, the route continues inland to Seongeup and on to the eastern tip at Seongsan and Manjanggul. Because it is early in the morning, it is relatively quiet even in the summer peak season.",
+      "glossary": [
+        "⟦G0⟧ = Пляж Хамдок Соубон"
+      ]
+    },
+    "/itineraryStops/1/convenience/parking": {
+      "source_en": "Public parking lot (paid in summer)"
+    },
+    "/itineraryStops/1/convenience/restroom": {
+      "source_en": "Public restrooms and shower facilities at beach"
+    },
+    "/itineraryStops/1/description": {
+      "source_en": "**⟦G0⟧ (함덕 서우봉 해변)** is one of Jeju's best-known east-coast beaches, loved for its bright sand, shallow emerald water, and the small volcanic cone of **Seoubong (서우봉)** rising at the eastern end. \n\nThe main beach and connected coves give guests an easy first look at Jeju's coastal scenery without a long walk, and the seaside promenade is suitable for families and seniors. \n\nIn spring, the slopes around Seoubong often turn yellow with canola flowers; in clear weather, the short upper path gives a broad view over the eastern coastline. \n\nThe area also has a historical layer: coastal caves and wartime remains around Seoubong are connected with Japan's late-colonial military presence on Jeju, adding context beyond the beach view. Hamdeok is also part of **Jeju Olle Trail Course 19**, so guests can experience a small piece of Jeju's walking culture before moving inland. \n\nAdmission is free, and the stop works well as a relaxed photo and orientation point at the beginning of the eastern route.",
+      "glossary": [
+        "⟦G0⟧ = Пляж Хамдок Соубон"
+      ]
+    },
+    "/itineraryStops/1/visitBasics/hours": {
+      "source_en": "Open 24 hours (beach); managed swim season July–August with lifeguards"
+    },
+    "/itineraryStops/1/visitBasics/closed": {
+      "source_en": "Open year-round"
+    },
+    "/itineraryStops/1/visitBasics/walking": {
+      "source_en": "Easy — beach is flat sand; Seoubong hike is moderate (steps)"
+    },
+    "/itineraryStops/1/visitBasics/admission": {
+      "source_en": "Free"
+    },
+    "/itineraryStops/1/galleryItems/0/alt": {
+      "source_en": "⟦G0⟧ — gallery image 1",
+      "glossary": [
+        "⟦G0⟧ = Пляж Хамдок Соубон"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/0/caption": {
+      "source_en": "⟦G0⟧ — photo 1",
+      "glossary": [
+        "⟦G0⟧ = Пляж Хамдок Соубон"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/0/location": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Пляж Хамдок Соубон"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/1/alt": {
+      "source_en": "⟦G0⟧ — gallery image 2",
+      "glossary": [
+        "⟦G0⟧ = Пляж Хамдок Соубон"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/1/caption": {
+      "source_en": "⟦G0⟧ — photo 2",
+      "glossary": [
+        "⟦G0⟧ = Пляж Хамдок Соубон"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/1/location": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Пляж Хамдок Соубон"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/2/alt": {
+      "source_en": "⟦G0⟧ — gallery image 3",
+      "glossary": [
+        "⟦G0⟧ = Пляж Хамдок Соубон"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/2/caption": {
+      "source_en": "⟦G0⟧ — photo 3",
+      "glossary": [
+        "⟦G0⟧ = Пляж Хамдок Соубон"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/2/location": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Пляж Хамдок Соубон"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/3/alt": {
+      "source_en": "⟦G0⟧ — gallery image 4",
+      "glossary": [
+        "⟦G0⟧ = Пляж Хамдок Соубон"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/3/caption": {
+      "source_en": "⟦G0⟧ — photo 4",
+      "glossary": [
+        "⟦G0⟧ = Пляж Хамдок Соубон"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/3/location": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Пляж Хамдок Соубон"
+      ]
+    },
+    "/itineraryStops/2/name": {
+      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage)",
+      "glossary": [
+        "⟦G0⟧ = Фольклорная деревня Сонъып"
+      ]
+    },
+    "/itineraryStops/2/category": {
+      "source_en": "Joseon-era Walled Town — Important Folklore Cultural Heritage (1423 founding)"
+    },
+    "/itineraryStops/2/duration": {
+      "source_en": "60 min"
+    },
+    "/itineraryStops/2/timeUsed/0": {
+      "source_en": "Parking + welcome brief by village docent — ~10 min"
+    },
+    "/itineraryStops/2/timeUsed/1": {
+      "source_en": "Walk to ancient trees + village center — ~10 min"
+    },
+    "/itineraryStops/2/timeUsed/2": {
+      "source_en": "Hanok interior visits (2–3 representative homes) — ~15 min"
+    },
+    "/itineraryStops/2/timeUsed/3": {
+      "source_en": "Omegisul brewery free tasting — ~10 min"
+    },
+    "/itineraryStops/2/timeUsed/4": {
+      "source_en": "Olle alley walk + photography — ~10 min"
+    },
+    "/itineraryStops/2/timeUsed/5": {
+      "source_en": "Buffer — ~5 min"
+    },
+    "/itineraryStops/2/highlights/0": {
+      "source_en": "**Founded 1423** by Sejong the Great — administrative center until **1914 (~500 years)**"
+    },
+    "/itineraryStops/2/highlights/1": {
+      "source_en": "**110 traditional structures** within original eupseong walled-town footprint"
+    },
+    "/itineraryStops/2/highlights/2": {
+      "source_en": "**Important Folklore Cultural Heritage of South Korea** (entire village + multiple buildings)"
+    },
+    "/itineraryStops/2/highlights/3": {
+      "source_en": "**Two ~600-year-old trees** at center: Saw-leaf Zelkova + Japanese Hackberry — **Natural Monuments**"
+    },
+    "/itineraryStops/2/highlights/4": {
+      "source_en": "Designed on **Joseon Korean feng shui (geomancy) principles** — typical county-capital plan"
+    },
+    "/itineraryStops/2/highlights/5": {
+      "source_en": "**'Dae Jang Geum' (MBC 2003–2004)** filming location — international K-drama hit"
+    },
+    "/itineraryStops/2/highlights/6": {
+      "source_en": "**Omegisul (오메기술)** — rice-based Jeju liquor brewed by single family for generations (free tasting)"
+    },
+    "/itineraryStops/2/highlights/7": {
+      "source_en": "Historical scars: **1826 fire** destroyed ~80 buildings; **1948 Jeju Uprising** damage"
+    },
+    "/itineraryStops/2/highlights/8": {
+      "source_en": "**FREE admission** — village still inhabited by ~250 families maintaining traditions"
+    }
+  },
+  "glossaryTokens": {
+    "/itineraryStops/1/name": {
+      "⟦G0⟧": "Пляж Хамдок Соубон"
+    },
+    "/itineraryStops/1/whyOnRoute": {
+      "⟦G0⟧": "Пляж Хамдок Соубон"
+    },
+    "/itineraryStops/1/description": {
+      "⟦G0⟧": "Пляж Хамдок Соубон"
+    },
+    "/itineraryStops/1/galleryItems/0/alt": {
+      "⟦G0⟧": "Пляж Хамдок Соубон"
+    },
+    "/itineraryStops/1/galleryItems/0/caption": {
+      "⟦G0⟧": "Пляж Хамдок Соубон"
+    },
+    "/itineraryStops/1/galleryItems/0/location": {
+      "⟦G0⟧": "Пляж Хамдок Соубон"
+    },
+    "/itineraryStops/1/galleryItems/1/alt": {
+      "⟦G0⟧": "Пляж Хамдок Соубон"
+    },
+    "/itineraryStops/1/galleryItems/1/caption": {
+      "⟦G0⟧": "Пляж Хамдок Соубон"
+    },
+    "/itineraryStops/1/galleryItems/1/location": {
+      "⟦G0⟧": "Пляж Хамдок Соубон"
+    },
+    "/itineraryStops/1/galleryItems/2/alt": {
+      "⟦G0⟧": "Пляж Хамдок Соубон"
+    },
+    "/itineraryStops/1/galleryItems/2/caption": {
+      "⟦G0⟧": "Пляж Хамдок Соубон"
+    },
+    "/itineraryStops/1/galleryItems/2/location": {
+      "⟦G0⟧": "Пляж Хамдок Соубон"
+    },
+    "/itineraryStops/1/galleryItems/3/alt": {
+      "⟦G0⟧": "Пляж Хамдок Соубон"
+    },
+    "/itineraryStops/1/galleryItems/3/caption": {
+      "⟦G0⟧": "Пляж Хамдок Соубон"
+    },
+    "/itineraryStops/1/galleryItems/3/location": {
+      "⟦G0⟧": "Пляж Хамдок Соубон"
+    },
+    "/itineraryStops/2/name": {
+      "⟦G0⟧": "Фольклорная деревня Сонъып"
+    }
+  },
+  "tmHits": 0
+}

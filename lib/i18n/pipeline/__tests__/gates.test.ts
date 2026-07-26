@@ -261,6 +261,39 @@ describe('G4 통화·단위', () => {
     expect(f.some((x) => x.severity === 'fail')).toBe(true);
   });
 
+  // 2026-07-26 ru 첫 슬러그 실측: 원문이 ISO 코드, 번역이 기호였다.
+  // 같은 통화의 다른 표기이므로 값은 그대로다.
+  it('ISO 코드와 기호는 같은 통화로 본다 — KRW ≡ ₩', () => {
+    expect(
+      checkCurrencyAndUnits(
+        'KRW 2,000 adults / KRW 1,000 children',
+        '₩2 000 взрослые / ₩1 000 дети',
+        '/p',
+      ),
+    ).toEqual([]);
+    expect(checkCurrencyAndUnits('USD 419 per group', '419 $ за группу', '/p')).toEqual([]);
+  });
+
+  it('별칭 정규화가 통화 바꿔치기를 덮지 않는다 — KRW → €', () => {
+    const f = checkCurrencyAndUnits('KRW 70,000', '€70 000', '/p');
+    expect(f.some((x) => x.gate === 'G4' && x.severity === 'fail')).toBe(true);
+  });
+
+  // 2026-07-26 ru 첫 슬러그 실측: pickup_dropoff 의 name 필드가 통째로 호텔·브랜드명이었다.
+  // 라틴으로 두는 것이 맞는 값이라, 키릴 비율만으로 fail 을 내면 발행이 막힌다.
+  it('G10 — 고유명사만 있는 필드는 fail 이 아니라 flag', () => {
+    const kept = checkCharset('Ocean Suites Jeju Hotel', '/p', 'ru', 'Ocean Suites Jeju Hotel');
+    expect(kept.every((x) => x.severity === 'flag')).toBe(true);
+
+    const partial = checkCharset('Shilla Duty Free (магазин на Чеджу)', '/p', 'ru', 'Shilla Duty Free (Jeju Store)');
+    expect(partial.every((x) => x.severity === 'flag')).toBe(true);
+  });
+
+  it('G10 — 키릴 0에 원문과도 다르면 여전히 fail', () => {
+    const f = checkCharset('Ozean Suiten Hotel Jeju', '/p', 'ru', 'Ocean Suites Jeju Hotel');
+    expect(f.some((x) => x.gate === 'G10' && x.severity === 'fail')).toBe(true);
+  });
+
   it('km → mile 변환을 fail로 잡는다', () => {
     const f = checkCurrencyAndUnits('12 km drive', '12 miles drive', '/p');
     expect(f.some((x) => x.message.includes('단위 변환'))).toBe(true);

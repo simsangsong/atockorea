@@ -53,6 +53,26 @@ const URL_RE = /https?:\/\/[^\s<>"')\]]+/g;
 const EMAIL_RE = /[\w.+-]+@[\w-]+\.[\w.-]+/g;
 const PHONE_RE = /(?:\+\d[\d\s()-]{6,}\d)/g;
 const CURRENCY_RE = /[₩€$¥£₽]|\b(?:KRW|EUR|USD|JPY|GBP|RUB|CNY)\b/g;
+
+/**
+ * 기호와 ISO 코드는 **같은 통화의 다른 표기**다 — `KRW 2,000` 과 `₩2 000` 은 같은 값이다.
+ *
+ * G4가 막아야 하는 것은 `₩70,000` → `€70` 같은 **바꿔치기**이지 표기 관례가 아니다.
+ * 정규화하지 않으면 원문이 코드로, 번역이 기호로 적힌 순간 fail 이 뜬다
+ * (2026-07-26 ru 첫 슬러그 실측 2건).
+ */
+const CURRENCY_ALIASES: Record<string, string> = {
+  '₩': 'KRW',
+  '€': 'EUR',
+  $: 'USD',
+  '¥': 'JPY',
+  '£': 'GBP',
+  '₽': 'RUB',
+};
+
+function canonicalCurrency(token: string): string {
+  return CURRENCY_ALIASES[token] ?? token.toUpperCase();
+}
 const MD_LINK_RE = /\[[^\]]*\]\([^)]*\)/g;
 
 /** 숫자 자릿수 구분기호로 쓰이는 공백류 — nbsp·narrow nbsp·thin space 포함. */
@@ -437,8 +457,8 @@ const IMPERIAL_RE = /\d[\d.,]*[\s -]*(?<![\p{L}])(miles?|mi\.|Meilen?|miglia|mi
 export function checkCurrencyAndUnits(source: string, target: string, pointer: string): Finding[] {
   const findings: Finding[] = [];
 
-  const a = multiset(source, CURRENCY_RE);
-  const b = multiset(target, CURRENCY_RE);
+  const a = multiset(source, CURRENCY_RE).map(canonicalCurrency);
+  const b = multiset(target, CURRENCY_RE).map(canonicalCurrency);
   const aKinds = [...new Set(a)].sort();
   const bKinds = [...new Set(b)].sort();
 
@@ -626,9 +646,20 @@ export function checkCharset(
   if (locale === 'ru') {
     // 키릴 비율 하한. 라틴 고유명사가 섞이므로 60%.
     if (letters >= 10 && cyrillic / letters < 0.6) {
+      // 다만 **필드 전체가 고유명사**인 경우가 있다 — `Ocean Suites Jeju Hotel`,
+      // `LOTTE City Hotel Jeju`. 이런 이름은 라틴으로 두는 것이 맞다: 손님이 택시
+      // 기사에게 보여주고 현장 간판과 대조하는 이름이라 키릴로 바꾸면 오히려 해롭다
+      // (글로서리도 `Arte Museum Чеджу` 처럼 브랜드는 라틴으로 남긴다).
+      //
+      // 그래서 이 게이트가 fail 로 막아야 하는 것은 **영어를 통째로 남긴 경우**뿐이다:
+      //   · 키릴이 하나라도 있으면 번역가가 손을 댄 것이고, 낮은 비율은 고유명사 밀도다
+      //   · 키릴이 0인데 원문과 똑같으면 의도적 원문 유지 — 그건 G9(미번역 잔존)가 볼 일이고
+      //     `keepAsIs` 면제도 거기에 걸려 있다
+      // 둘 다 아니면(키릴 0 + 원문과 다름) 러시아어가 아닌 무언가를 쓴 것이므로 fail 이다.
+      const engaged = cyrillic > 0 || target.trim() === source.trim();
       findings.push({
         gate: 'G10',
-        severity: 'fail',
+        severity: engaged ? 'flag' : 'fail',
         pointer,
         message: `키릴 비율 ${((cyrillic / letters) * 100).toFixed(0)}% < 60% — 러시아어 미번역 의심`,
       });

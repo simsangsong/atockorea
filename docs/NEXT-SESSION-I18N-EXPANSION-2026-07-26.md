@@ -185,6 +185,8 @@ i18n-work/out/tour_product_pages/de/tour_product_pages_<SLUG>_de_<CHUNK>.json
 | 7b | ~~**`liveStatusWidget` 값이 번역 큐에 있다**~~ → **해결됨(2026-07-26), 사람 판단 불필요** | 렌더 코드를 열어 확인했다: `TourStopDetailDrawer.tsx:872` 가 `stop.liveStatusWidget === "haenyeo"` 로 **정확 비교**한다. 즉 번역되면 위젯이 조용히 사라진다 — 안전한 필드가 아니었다. 다행히 실측 10건 전부 원문 유지 또는 빈 값이라 **피해 없음**(ko/ja/es/zh도 전부 `haenyeo` 원형). 추출기를 고쳤다(§11 #17). 이미 발행된 행은 값이 `haenyeo` 그대로라 손댈 것이 없다 |
 | 7d | **`Sunrise Peak` 라벨이 로케일마다, 또 같은 페이지 안에서 갈린다** — 최상위 `routeFlowStops/1/name`은 세 로케일 모두 번역(`Sonnenaufgangsgipfel`·`Pic du lever de soleil`·`Picco dell'alba`)했는데, **`itinerary_variants` 안의 같은 필드**는 de·fr이 영어 `Sunrise Peak`으로 두고 it만 번역했다 | 같은 UI 칩에 쓰이는 같은 필드다. 본문에는 `성산일출봉`·로마자 `Seongsan Ilchulbong`이 함께 나오므로 **길 찾기 위험은 아니고 라벨 일관성 문제**다. it는 페이지 안에서 일관되게 맞춰 두었고, de·fr은 §8 #5a와 같은 INSERT-only 제약(§5 규칙 2)에 걸려 재발행 없이는 못 고친다. 오픈 전에 하나로 정하는 것이 좋다 |
 | 7e | 🔴 **독일어 `theme_tags_in_variant` 12건이 번역된 채 발행됐다** — `volcano→Vulkan`, `coast→Küste`, `culture→Kultur`, `alpine→Bergwelt`, `geology→Geologie`, `waterfall→Wasserfall`, `market→Markt`, `shopping→Einkaufen` (`jeju-cruise-shore-excursion-bus-tour` 3건 + `jeju-cruise-shore-excursion-small-group-tour` 9건) | **이 필드는 taxonomy다** — 원문 주석이 "score only the matched route option's `poi_tags_in_variant` / `theme_tags_in_variant`" 라고 적고 있고, **en·ko·ja·es·zh·zh-TW 여섯 로케일 전부 영어 원형을 쓴다.** 번역된 값은 taxonomy와 매칭되지 않으므로 독일어에서 해당 변형의 스코어링이 어긋난다. fr은 무사(0건), it는 **발행 전에 3건 고쳤다**. 추출기는 고쳤다(§11 #18) — 이제 이 필드는 큐에 들어오지 않는다. 독일어 기존 행은 §8 #5a와 같은 INSERT-only 제약이라 **삭제 후 재발행이 필요하고 그건 사람 결정**이다. ⚠ `catalog_card/tags`(`Small group`·`Good value`)는 **반대다** — 손님에게 보이는 칩이고 ko·ja·es도 번역하므로 지금처럼 번역하는 것이 맞다. 두 필드를 뭉뚱그리지 마라 |
+| 7f | **`_brands.json` 의 `keepAsIs` 가 "4언어 공통"이라 적혀 있는데 러시아어만 예외다** — `UNESCO` | 실측: `messages/ru.json` 은 **ЮНЕСКО 7 / UNESCO 0**, de·fr·it 은 **UNESCO 7 / ЮНЕСКО 0**. 키릴 문자권이라 라틴 약어가 그대로 남으면 내비게이션은 `ЮНЕСКО`, 본문은 `UNESCO` 가 되어 한 화면에서 갈린다. ru 번역가가 스스로 이 대조를 해보고 `ЮНЕСКО` 로 통일했고 그 판단이 맞다(프랑스어 `Séoul` 을 정한 것과 같은 방법). **게이트 영향은 없다** — `keepAsIs` 는 G9 미번역 잔존 면제 목록으로만 쓰여서, 번역해도 통과한다. 남은 ru 슬러그는 프롬프트로 `ЮНЕСКО` 를 고정했다. 파일에 로케일 예외를 적을지는 사람이 정하면 된다 |
+| 7g | **ru 글로서리 `notes` 에 번역가 스스로 "검수 요망"을 단 항목들이 있다** — `Сопчикходжи`(섭지코지), `Чхонджеён`(천제연), `Халласан Осынсэнъак`(어승생악) 등 | 전부 **Kontsevich 규칙과 러시아 여행 콘텐츠 통용 표기가 갈리는** 지점이고, 글로서리 작성자가 규칙을 우선하되 근거와 함께 표시해 두었다. 러시아어 감수자(§8 #4)가 생기면 이 목록부터 보면 된다 — 근거가 이미 적혀 있어 판단이 빠르다 |
 | 8 | **같은 상품 안에서 용어가 갈린다** — `busan-cruise-shore`의 `headlineLine1`은 `Kreuzfahrt-Landgang`, 나머지 세그먼트는 `Kreuzfahrt-Landausflug` | 레이아웃 길이 때문에 의도적으로 짧게 쓴 것. 허용할지 통일할지는 감수자 판단 |
 | 9 | **이미 발행된 3슬러그에 Tailwind 클래스 세그먼트가 남아 있다** | 추출기는 고쳤지만(아래 §11) de는 재추출하지 않았다. 값이 원문 그대로거나 빈 값(영어 폴백)이라 렌더는 정상 — 손볼 필요는 없고, de를 재추출할 때 자연히 사라진다 |
 
@@ -257,6 +259,27 @@ node -e "const fs=require('fs');const d='i18n-work/out/tour_product_pages/fr';co
 
 #17·#18은 **같은 증상의 서로 다른 원인**이었다. #17을 고치고 끝냈다면 taxonomy 유출은
 그대로 남았을 것이다 — 키 목록에 이름이 있다고 해서 그 필터가 실제로 **돌았다는 뜻은 아니다.**
+
+| 19 | **G4 오탐 2 (ru 첫 슬러그)** — `KRW 2,000` → `₩2 000` | **ISO 코드와 기호는 같은 통화의 다른 표기**인데 G4가 다른 종류로 봤다. 로케일마다 어느 쪽을 쓰는지가 갈리므로 원문=코드·번역=기호 조합은 계속 나온다 | 비교 전에 별칭을 정규화한다(`₩`≡`KRW`, `$`≡`USD`, `€`≡`EUR`…). `KRW`→`€` 같은 진짜 바꿔치기는 여전히 fail — 가드 테스트 포함 |
+| 20 | 🔴 **G10 오탐 (ru 첫 슬러그)** — `Ocean Suites Jeju Hotel` · `LOTTE City Hotel Jeju` 가 키릴 비율 0%로 **fail** | 이 필드(`pickup_dropoff/*/name`)는 **통째로 고유명사**다. 라틴으로 두는 것이 맞다 — 손님이 택시 기사에게 보여주고 현장 간판과 대조하는 이름이라 키릴로 바꾸면 오히려 해롭고, 글로서리도 `Arte Museum Чеджу` 처럼 브랜드는 라틴으로 남긴다. 60% 하한은 "고유명사가 섞인" 문장을 상정한 값이라 필드 전체가 이름인 경우를 못 견딘다 | fail 은 **영어를 통째로 남긴 경우**로 좁혔다: 키릴이 하나라도 있으면 번역가가 손을 댄 것(낮은 비율 = 고유명사 밀도), 키릴 0인데 원문과 같으면 의도적 유지(G9 소관, `keepAsIs` 면제도 거기 있다) → 둘 다 flag. **키릴 0 + 원문과 다름** 만 fail 로 남겼다 |
+
+수정 19·20 반영 후 **de·fr·it 112 unit 재검증에서 실패 0 유지** — 이미 통과하던 것이 느슨해지지 않았음을 확인했다.
+
+### 러시아어 첫 슬러그 — 프롬프트 결함 1건 (게이트 오탐 아님)
+
+번역가 둘이 **독립적으로** `Jeongbang Waterfall`·`Jusangjeolli` 를 "Kontsevich 대조표에
+없다"며 빈 값 처리했다(11 세그먼트). 규칙은 옳게 따랐다 — 러시아어에서 즉석 전사 금지는
+특히 중요하다. 문제는 **`glossary/ru.json` 에 확정형이 이미 있었다**는 것이다
+(`jeongbang_falls` → `Водопад Чонбан`, `daepo_jusangjeolli_cliff` → `Утёс Тэпхо Чусанджолли`).
+같은 슬러그의 `routeFlowStops` 담당자는 글로서리를 직접 열어 정상 처리했다.
+
+원인은 §9에 이미 적힌 "표기 변형 미마스킹"이다 — 글로서리 키는 `jeongbang_falls` 인데
+본문은 `Jeongbang Waterfall` 이라 마스킹이 안 걸렸고, **마스킹이 없으면 번역가에게 남는 건
+스타일가이드 대조표뿐인데 그건 글로서리의 부분집합이다.**
+
+→ 프롬프트에 한 줄 박으면 끝난다: **"지명이 ⟦G⟧ 로 마스킹돼 있지 않아도 먼저
+`glossary/ru.json` 의 `names` 를 찾아라. 거기에도 대조표에도 없을 때만 규칙 8."**
+두 유닛 재실행으로 11 세그먼트 전부 복구했다(영어 폴백 면함).
 
 세 번의 추출기 유출(#9 Tailwind · #17 위젯 판별자 · #18 taxonomy 태그)은 전부
 **번역가가 "이건 문구가 아닌 것 같다"고 보고해서** 발견됐다. 게이트는 하나도 못 잡았다 —

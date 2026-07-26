@@ -1,0 +1,33 @@
+{
+  "unitId": "tour_product_pages:jeju-grand-highlights-loop:ru:A2-2",
+  "locale": "ru",
+  "segments": {
+    "/bookingSupportSteps/0/title": "Мгновенное подтверждение",
+    "/bookingSupportSteps/0/detail": "Подтверждение бронирования отправляется вместе с кратким описанием маршрута.",
+    "/bookingSupportSteps/0/timing": "После бронирования",
+    "/bookingSupportSteps/0/description": "Мгновенное подтверждение с деталями трансфера от отеля в городе Чеджу.",
+    "/bookingSupportSteps/1/title": "Напоминание перед выездом",
+    "/bookingSupportSteps/1/detail": "Заметки о погоде и рекомендации по корректировке маршрута отправляются заранее.",
+    "/bookingSupportSteps/1/timing": "За 12 часов",
+    "/bookingSupportSteps/1/description": "Предварительная заметка об условиях на кромке Сонсан и о доступе к водопаду Чонбан.",
+    "/bookingSupportSteps/2/title": "Окончательное уведомление о трансфере",
+    "/bookingSupportSteps/2/detail": "Вы получаете точное время трансфера и контактные данные.",
+    "/bookingSupportSteps/2/timing": "Накануне вечером",
+    "/bookingSupportSteps/2/description": "Окончательное время трансфера подтверждается накануне вечером.",
+    "/bookingSupportSteps/3/title": "Заметка о маршруте в день тура",
+    "/bookingSupportSteps/3/detail": "Все последние обновления на месте кратко сообщаются перед выездом.",
+    "/bookingSupportSteps/3/timing": "Утро в день выезда",
+    "/bookingSupportSteps/3/description": "Утреннее сообщение с краткой сводкой погоды и возможными изменениями.",
+    "/bookingSupportSteps/4/title": "Сопровождение на каждой остановке",
+    "/bookingSupportSteps/4/detail": "Ключевая информация сообщается на каждой остановке по мере необходимости.",
+    "/bookingSupportSteps/4/timing": "Во время тура",
+    "/bookingSupportSteps/4/description": "Гид рассказывает о геологии щитового вулкана Халласан, об образовании столбчатой отдельности на Чусанджолли и об истории рождения Сонсан в результате извержения сурцейского типа.",
+    "/bookingSupportSteps/5/title": "Поддержка после тура",
+    "/bookingSupportSteps/5/detail": "При необходимости доступны дальнейшая поддержка и дополнительные рекомендации.",
+    "/bookingSupportSteps/5/timing": "После тура",
+    "/bookingSupportSteps/5/description": "Просьба оставить отзыв отправляется после возвращения.",
+    "/practicalWeatherStatic/today/label": "Интеграция с погодой в реальном времени",
+    "/practicalWeatherStatic/tomorrow/label": "Обновляется ежедневно"
+  },
+  "notes": {}
+}

@@ -1,0 +1,43 @@
+{
+  "unitId": "tour_product_pages:seoul-dmz-private-3rd-tunnel-suspension-bridge:ru:routeFlowStops",
+  "surface": "tour_product_pages",
+  "slug": "seoul-dmz-private-3rd-tunnel-suspension-bridge",
+  "locale": "ru",
+  "chunk": "routeFlowStops",
+  "tier": "B",
+  "segments": {
+    "/routeFlowStops/0/name": {
+      "source_en": "Imjingak"
+    },
+    "/routeFlowStops/0/theme": {
+      "source_en": "Memorial"
+    },
+    "/routeFlowStops/1/name": {
+      "source_en": "3rd Tunnel"
+    },
+    "/routeFlowStops/1/theme": {
+      "source_en": "Underground"
+    },
+    "/routeFlowStops/2/name": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Смотровая площадка Тора"
+      ]
+    },
+    "/routeFlowStops/2/theme": {
+      "source_en": "Border View"
+    },
+    "/routeFlowStops/3/name": {
+      "source_en": "Gamaksan Bridge"
+    },
+    "/routeFlowStops/3/theme": {
+      "source_en": "Suspension"
+    }
+  },
+  "glossaryTokens": {
+    "/routeFlowStops/2/name": {
+      "⟦G0⟧": "Смотровая площадка Тора"
+    }
+  },
+  "tmHits": 0
+}
