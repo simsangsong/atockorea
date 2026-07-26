@@ -115,5 +115,11 @@
 | R5 | 고대비 스킨에서 soft 토큰들이 저대비로 남음 | 고대비는 soft류를 전부 고불투명 재정의, 육안+검사 |
 | R6 | feed에 metadata 미포함(overview API)이면 공지 미리보기 실패 | P3에서 API select 확인, 미포함이면 폴백 카피 사용(추가 select는 1줄) |
 
-## §E 실행 로그 (구현하며 갱신)
-- [ ] P0 · [ ] P1 · [ ] P2 · [ ] P3 · [ ] P4 · [ ] P5
+## §E 실행 로그 (2026-07-27 완주)
+- [x] P0 스킨 인프라 — settings.skin(sanitize)+data-tr-skin 스탬프+`--tr-chrome`/`--tr-chrome-line`+기본 캔버스 세이지 워시
+- [x] P1 헤더 컴팩트 — RoomShell(우측 3아이콘 상한, 테마 토글→서랍 타일+설정 탭, 정적 부제 제거)·StaffShell(홈+새로고침 2아이콘)·RoomDrawer 크롬, themeToggle/staffShell 테스트 재작성
+- [x] P2 스킨 6종+피커 — sky/winter/forest/meadow/contrast 라이트+다크 블록, **대비 수치검증 66쌍 전부 통과**(ink-3/system-ink 5스킨 보정 포함), SkinPicker 5로케일+StaffSettings 배선
+- [x] P3 대화 리스트 — 고정 채널 행 2(안내 발송·전체 공지=최근 fanout 미리보기)+대화 행(휴 아바타·미리보기·KST 시각·언리드 도트)+⋮ 액션 시트(5액션 보존)+전체 안내 시트 이사(scrollIntoView 사다리 삭제), chatListClock KST 자정 경계 테스트
+- [x] P4 명단 리스킨 — 친구탭 행 문법(대화 탭과 동일 휴=`lib/tour-room/hue` 추출로 순환 임포트 회피), 좌석판·뮤테이션·테스트ID 무접촉
+- [x] P5 게이트 — tsc 0 · 투어모드 스위트 997 green · 전체 jest 4538 pass(잔여 실패 4스위트=main과 동일한 사전존재 러너 스코프, A1 원장 신규 2행 등록으로 원장 테스트 회복) · `npm run build` 통과 · Playwright walk 21컷 **WALK OK·콘솔 에러 0**(스킨 매트릭스·시트 3종·명단·겨울 라이트/다크 실렌더 검증)
+- 기록된 dev 전용 이슈: Next dev N-인디케이터가 헤드리스에서 좌하단 탭을 가림 → walk는 `$eval` 직접 디스패치(프로덕션 무관)
