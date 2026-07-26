@@ -397,6 +397,32 @@ describe('PUT /api/tour-rooms/[bookingId]/plan — guide plane (unchanged)', () 
     const body = await res.json();
     expect(body.schedule.map((s: { title: string }) => s.title)).toEqual(['Kept Stop', 'Junk Status']);
   });
+
+  it('a post-confirmation edit says "changed", not "confirmed"', async () => {
+    const db = fakeDb({ plan: { id: 'plan-1', status: 'guide_confirmed', stops: [], version: 2 } });
+    createServerClientMock.mockReturnValue(db);
+    const res = await planPUT(
+      fakeReq({
+        headers: { 'x-tour-room-auth': guideSession() },
+        json: { stops: [{ title: 'Kept Stop', duration_min: 60, status: 'arrived' }] },
+      }),
+      routeParams(),
+    );
+    expect(res.status).toBe(200);
+    const capsule = (db.inserts.tour_room_messages as Array<Record<string, unknown>>).find(
+      (m) => (m.metadata as { kind?: string })?.kind === 'plan_updated',
+    );
+    expect(capsule).toBeDefined();
+    // It reused the confirmed wording, so the guest was told the plan was
+    // confirmed at the exact moment it had been changed after confirmation.
+    const translations = capsule!.translations as Record<string, string>;
+    for (const locale of ['en', 'ko', 'ja', 'es', 'zh']) {
+      expect(translations[locale]).toBeTruthy();
+      expect(translations[locale]).not.toContain('{');
+    }
+    expect(translations.en).not.toMatch(/confirmed/i);
+    expect(translations.ko).not.toContain('확정');
+  });
 });
 
 describe('PUT /api/tour-rooms/[bookingId]/plan — departure_time (§11.D D4)', () => {

@@ -48,6 +48,20 @@ const PLAN_CONFIRMED: Record<string, string> = {
   zh: '今日行程已确定——请在“今日”标签查看。',
 };
 
+/**
+ * A change made AFTER confirmation. It borrowed the confirmed wording, so a
+ * guest whose stop had just been dropped was told the itinerary was confirmed
+ * — the one thing that had stopped being true. Kept generic on purpose: the
+ * `plan_stop_skipped` capsule already names the stop and the reason.
+ */
+const PLAN_UPDATED: Record<string, string> = {
+  en: 'Today’s itinerary has changed — check the Today tab for the current schedule.',
+  ko: '오늘의 일정이 변경되었어요 — 오늘 탭에서 최신 일정을 확인해 주세요.',
+  ja: '本日の行程が変更されました。「本日」タブで最新の予定をご確認ください。',
+  es: 'El itinerario de hoy ha cambiado: revisa la pestaña de Hoy para verlo actualizado.',
+  zh: '今日行程有变更——请在“今日”标签查看最新安排。',
+};
+
 const PLAN_SUBMITTED: Record<string, string> = {
   en: 'Your wish-list itinerary was sent to the guide — they’ll review and confirm it.',
   ko: '희망 일정이 가이드에게 전달되었어요 — 확인 후 확정해 드릴게요.',
@@ -568,7 +582,7 @@ export async function PUT(
         : submit
           ? { kind: 'plan_submitted', translations: PLAN_SUBMITTED }
           : isStaff && nextStatus !== 'guest_draft'
-            ? { kind: 'plan_updated', translations: PLAN_CONFIRMED }
+            ? { kind: 'plan_updated', translations: PLAN_UPDATED }
             : null;
     if (capsule) {
       const translations = { ...capsule.translations };
