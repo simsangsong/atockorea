@@ -11,6 +11,7 @@
 
 import { useMemo, useState } from 'react';
 import { useTourManifest } from '@/hooks/useTourManifest';
+import { useGuestNotes } from '@/hooks/useGuestNotes';
 import { buildSeatStrip, buildRosterRows, type RosterRow } from '@/lib/ops/seating/dashboard';
 import GuideGuestCard from '@/components/tour-mode/guide/GuideGuestCard';
 
@@ -25,6 +26,14 @@ export default function GuideSeatStrip({
 }) {
   const { data } = useTourManifest(bookingId, token);
   const [openBookingId, setOpenBookingId] = useState<string | null>(null);
+  /**
+   * 🔴 이 카드는 명단에서 여는 것과 **같은 카드**인데, 여기서는 메모를 읽지
+   * 않고 열었다. 카드의 메모 블록은 조건부가 아니라 항상 렌더되므로 결과는
+   * "메모 없음"이 아니라 "운영 메모: (비어 있음)"이라는 **단언**이었다 —
+   * 알레르기나 무릎 같은 것이 적혀 있어도 이 입구로 들어온 가이드에게는
+   * 없는 것이 된다. 명단과 같은 훅을 쓴다(§K B4-D4).
+   */
+  const { notes, saveNote } = useGuestNotes(data?.anchorRoomId ?? null, token);
 
   const chips = useMemo(
     () => (data ? buildSeatStrip(data.bookings, data.assignments) : []),
@@ -83,7 +92,12 @@ export default function GuideSeatStrip({
             onClick={() => setOpenBookingId(null)}
           />
           <div className="relative z-10 mt-16 w-full max-w-sm px-4">
-            <GuideGuestCard row={openRow} onClose={() => setOpenBookingId(null)} />
+            <GuideGuestCard
+              row={openRow}
+              onClose={() => setOpenBookingId(null)}
+              note={notes.get(openRow.bookingId) ?? null}
+              onSaveNote={saveNote}
+            />
           </div>
         </div>
       )}
