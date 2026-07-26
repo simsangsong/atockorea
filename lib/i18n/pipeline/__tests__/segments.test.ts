@@ -101,6 +101,35 @@ describe('리프 번역 대상성 휴리스틱', () => {
     expect(isTranslatableLeaf('a 2-hour walk', 'summary')).toBe(true);
     expect(isTranslatableLeaf('Gwangbok-ro 1-gil', 'name')).toBe(true);
   });
+
+  // 2026-07-26 실측: `liveStatusWidget: "haenyeo"` 가 번역 큐에 들어와 있었다.
+  // TourStopDetailDrawer 는 `stop.liveStatusWidget === "haenyeo"` 로 정확히 비교하므로
+  // 번역되면 위젯이 조용히 사라진다. 식별자 키 경계가 `_`·`.` 뒤에서만 매치해
+  // camelCase 꼬리(`...Widget`)를 놓치고 있었다.
+  it('camelCase 꼬리도 식별자 키로 인정한다', () => {
+    expect(isTranslatableLeaf('haenyeo', 'liveStatusWidget')).toBe(false);
+    expect(isTranslatableLeaf('haenyeo', 'live_status_widget')).toBe(false);
+    expect(isTranslatableLeaf('TourHeroSection', 'heroComponent')).toBe(false);
+    expect(isTranslatableLeaf('sunrise', 'badgeIcon')).toBe(false);
+  });
+
+  // 반대 방향 가드 — 낱말이 우연히 식별자 목록으로 끝나도, 키가 아니라 값이
+  // 문구면 살아 있어야 한다. `title`·`name` 은 목록에 없다.
+  it('식별자 낱말을 품은 문구 키는 계속 통과한다', () => {
+    expect(isTranslatableLeaf('Haenyeo diving demonstration', 'title')).toBe(true);
+    expect(isTranslatableLeaf('Sunrise Peak', 'stopName')).toBe(true);
+  });
+
+  // 2026-07-26 실측: 배열 원소의 keyHint 가 인덱스라 키 필터를 비껴갔다.
+  // `theme_tags_in_variant` 는 taxonomy(변형 스코어링용)라 번역되면 안 되고,
+  // `catalog_card/tags` 는 손님에게 보이는 칩이라 번역돼야 한다 — 둘이 갈린다.
+  it('taxonomy 태그는 제외하고 표시용 칩은 통과한다', () => {
+    expect(isTranslatableLeaf('volcano', 'theme_tags_in_variant')).toBe(false);
+    expect(isTranslatableLeaf('coast', 'theme_tags_in_variant')).toBe(false);
+    expect(isTranslatableLeaf('⟦G0⟧', 'poi_tags_in_variant')).toBe(false);
+    expect(isTranslatableLeaf('Small group', 'tags')).toBe(true);
+    expect(isTranslatableLeaf('Good value', 'tags')).toBe(true);
+  });
 });
 
 describe('extractLeaves', () => {

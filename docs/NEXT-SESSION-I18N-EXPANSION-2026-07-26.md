@@ -182,7 +182,9 @@ i18n-work/out/tour_product_pages/de/tour_product_pages_<SLUG>_de_<CHUNK>.json
 | 6b | 🔴 **프랑스어 `Séoul` vs `Seoul` 이 갈렸다** — 실측 `Séoul` 38 · `Seoul` 58, 한 파일(`seoul-dmz…itineraryStops`) 안에서 둘 다 쓴 사례도 있다 | **사이트 자체 관례는 `Séoul` 이다** — `messages/fr.json` 이 18:3으로 그렇게 쓴다. 즉 판단이 아니라 정렬 문제다. 다만 `N Seoul Tower`·`Seoul Station` 같은 고유명은 영어로 둬야 해서 **일괄 치환은 위험**하다. 이미 발행된 5슬러그는 §8 #5a와 같은 INSERT-only 제약에 걸린다. 남은 슬러그부터는 프롬프트에 고정하는 것이 최소 조치 |
 | 7c | **시각 서식이 유닛마다 갈릴 수 있다** — fr `jeju-cruise-bus`에서 한 유닛만 `09:00–22:00` 콜론형, 나머지 9개는 `09 h 00` 형이었다(실측 11곳 vs 0곳) | 담당 번역가가 "값 불변 규칙 때문에 콜론형을 유지했다"고 적었는데 **오해다** — 서식 변경은 값 변경이 아니고 G3도 정상 처리한다. 이번엔 발행 전에 통일했지만, 같은 오해가 반복될 수 있으니 스타일가이드에 한 줄 박아 두면 좋다 |
 | 7a | **`N/A` 처리가 유닛마다 갈린다** — `Entfällt`(3건) vs 원문 유지 | 스타일가이드에 규정이 없어 번역가마다 판단이 달랐다. 어느 쪽이든 렌더는 정상이지만 한 상품 안에서 섞이면 눈에 띈다. 스타일가이드에 한 줄 넣으면 끝난다 |
-| 7b | **`liveStatusWidget` 값이 번역 큐에 있다** — `"haenyeo"` 같은 위젯 식별자 | 번역기는 그대로 두거나 빈 값 처리해 왔다(둘 다 안전). `isSkippedSubtreeKey`에 넣을지, 아니면 등급표에서 뺄지는 이 필드가 렌더에 어떻게 쓰이는지 아는 사람이 정한다 |
+| 7b | ~~**`liveStatusWidget` 값이 번역 큐에 있다**~~ → **해결됨(2026-07-26), 사람 판단 불필요** | 렌더 코드를 열어 확인했다: `TourStopDetailDrawer.tsx:872` 가 `stop.liveStatusWidget === "haenyeo"` 로 **정확 비교**한다. 즉 번역되면 위젯이 조용히 사라진다 — 안전한 필드가 아니었다. 다행히 실측 10건 전부 원문 유지 또는 빈 값이라 **피해 없음**(ko/ja/es/zh도 전부 `haenyeo` 원형). 추출기를 고쳤다(§11 #17). 이미 발행된 행은 값이 `haenyeo` 그대로라 손댈 것이 없다 |
+| 7d | **`Sunrise Peak` 라벨이 로케일마다, 또 같은 페이지 안에서 갈린다** — 최상위 `routeFlowStops/1/name`은 세 로케일 모두 번역(`Sonnenaufgangsgipfel`·`Pic du lever de soleil`·`Picco dell'alba`)했는데, **`itinerary_variants` 안의 같은 필드**는 de·fr이 영어 `Sunrise Peak`으로 두고 it만 번역했다 | 같은 UI 칩에 쓰이는 같은 필드다. 본문에는 `성산일출봉`·로마자 `Seongsan Ilchulbong`이 함께 나오므로 **길 찾기 위험은 아니고 라벨 일관성 문제**다. it는 페이지 안에서 일관되게 맞춰 두었고, de·fr은 §8 #5a와 같은 INSERT-only 제약(§5 규칙 2)에 걸려 재발행 없이는 못 고친다. 오픈 전에 하나로 정하는 것이 좋다 |
+| 7e | 🔴 **독일어 `theme_tags_in_variant` 12건이 번역된 채 발행됐다** — `volcano→Vulkan`, `coast→Küste`, `culture→Kultur`, `alpine→Bergwelt`, `geology→Geologie`, `waterfall→Wasserfall`, `market→Markt`, `shopping→Einkaufen` (`jeju-cruise-shore-excursion-bus-tour` 3건 + `jeju-cruise-shore-excursion-small-group-tour` 9건) | **이 필드는 taxonomy다** — 원문 주석이 "score only the matched route option's `poi_tags_in_variant` / `theme_tags_in_variant`" 라고 적고 있고, **en·ko·ja·es·zh·zh-TW 여섯 로케일 전부 영어 원형을 쓴다.** 번역된 값은 taxonomy와 매칭되지 않으므로 독일어에서 해당 변형의 스코어링이 어긋난다. fr은 무사(0건), it는 **발행 전에 3건 고쳤다**. 추출기는 고쳤다(§11 #18) — 이제 이 필드는 큐에 들어오지 않는다. 독일어 기존 행은 §8 #5a와 같은 INSERT-only 제약이라 **삭제 후 재발행이 필요하고 그건 사람 결정**이다. ⚠ `catalog_card/tags`(`Small group`·`Good value`)는 **반대다** — 손님에게 보이는 칩이고 ko·ja·es도 번역하므로 지금처럼 번역하는 것이 맞다. 두 필드를 뭉뚱그리지 마라 |
 | 8 | **같은 상품 안에서 용어가 갈린다** — `busan-cruise-shore`의 `headlineLine1`은 `Kreuzfahrt-Landgang`, 나머지 세그먼트는 `Kreuzfahrt-Landausflug` | 레이아웃 길이 때문에 의도적으로 짧게 쓴 것. 허용할지 통일할지는 감수자 판단 |
 | 9 | **이미 발행된 3슬러그에 Tailwind 클래스 세그먼트가 남아 있다** | 추출기는 고쳤지만(아래 §11) de는 재추출하지 않았다. 값이 원문 그대로거나 빈 값(영어 폴백)이라 렌더는 정상 — 손볼 필요는 없고, de를 재추출할 때 자연히 사라진다 |
 
@@ -249,6 +251,17 @@ node -e "const fs=require('fs');const d='i18n-work/out/tour_product_pages/fr';co
 
 | 15 | **G3 오탐 9 (it 두 번째 슬러그)** — `1950s fires` → `incendi degli anni Cinquanta` | 이탈리아어는 **연대를 낱말로 적는다**. `1950`이 사라지지만 값은 그대로 | 4언어 연대 낱말표(10~90) 추가, flag 강등. `1950s` → `anni Ottanta` 같은 진짜 오역은 계속 fail |
 | 16 | **G3 오탐 10 (it 다섯 번째 슬러그)** — `early 1930s` → `anni '30 del Novecento` | 같은 연대인데 이번엔 **축약 숫자 표기**다. 낱말표만으로는 못 잡는다 | 아포스트로피 뒤 두 자리(`'30`)도 인정. 언어를 가리지 않는 형태라 4언어 공통으로 동작한다 |
+| 17 | 🔴 **추출기 버그 2 — 위젯 판별자 유출** — `liveStatusWidget: "haenyeo"` (it 여덟 번째 슬러그, 번역가가 보고) | 식별자 키 목록이 `(^\|_\|.)` 경계로만 매치해 **camelCase 꼬리(`...Widget`)를 놓쳤다.** `imageposition`이 소문자 덩어리로 따로 적혀 있던 것이 같은 구멍을 개별 우회한 흔적이다. 값(`haenyeo`)은 평범한 낱말이라 값 기반 규칙으로도 못 잡는다 — **키로만 막을 수 있다** | 경계에 `[a-z0-9]`를 추가하고 `widget(s)`를 목록에 넣었다. **추측 대신 실측**: 현재 추출된 전체 입력에 이 확장을 돌려 새로 빠지는 키가 `liveStatusWidget` 하나뿐임을 확인한 뒤 반영했다. 양방향 가드 테스트 포함(103 green) |
+
+| 18 | 🔴 **추출기 버그 3 — 배열 원소가 키 필터를 통째로 비껴간다** — `theme_tags_in_variant`(`volcano`·`coast`·`culture`…)·`poi_tags_in_variant` 유출 | `keyHint = pointer.slice(pointer.lastIndexOf('/')+1)` 이라 **배열 원소의 keyHint 가 인덱스 `"0"`** 이었다. 두 필드 다 `_variant` 로 끝나 식별자 목록에 **이미 있었는데도** 매치될 기회조차 없었다. #17을 고친 뒤에도 남아 있던 더 깊은 구멍이다 | 숫자 토큰을 건너뛰고 가장 가까운 이름 토큰을 keyHint 로 쓴다. 실측 결과 새로 빠지는 것은 이 두 필드뿐이고 **`catalog_card/tags` 는 그대로 통과한다**(`tags` 는 목록에 없다 — 표시용 칩이라 통과가 맞다). 양방향 테스트 포함(104 green) |
+
+#17·#18은 **같은 증상의 서로 다른 원인**이었다. #17을 고치고 끝냈다면 taxonomy 유출은
+그대로 남았을 것이다 — 키 목록에 이름이 있다고 해서 그 필터가 실제로 **돌았다는 뜻은 아니다.**
+
+세 번의 추출기 유출(#9 Tailwind · #17 위젯 판별자 · #18 taxonomy 태그)은 전부
+**번역가가 "이건 문구가 아닌 것 같다"고 보고해서** 발견됐다. 게이트는 하나도 못 잡았다 —
+G1~G13은 번역 품질을 보지, 애초에 번역돼선 안 될 것이 큐에 있는지는 보지 않는다.
+**번역가의 그런 보고는 노이즈가 아니라 유일한 탐지 채널이다. 흘리지 마라.**
 
 오탐 12·13은 **프랑스어 첫 슬러그에서 바로 나왔다.** 새 로케일은 새 서식 관례를 들고 온다 —
 이탈리아어·러시아어 첫 슬러그에서도 같은 일이 생긴다고 보고, 실패가 뜨면 먼저 원문·번역을

@@ -212,7 +212,16 @@ export function isTranslatableLeaf(text: string, keyHint = ''): boolean {
   // 키 이름 자체가 식별자성이면 제외 (id, key, slug, url, icon, image, ...).
   //   `component`: React 컴포넌트명("TourHeroSection") — 번역되면 렌더가 깨진다
   //   `imagePosition`/`align`/`layout`: CSS 값("center 35%")
-  if (/(^|_|\.)(id|ids|key|keys|slug|url|href|src|icon|image|images|photo|code|type|kind|variant|token|ref|anchor|tag|color|locale|lang|currency|component|position|imageposition|align|layout|unit|durations)$/i.test(keyHint)) {
+  //   `liveStatusWidget`: 위젯 판별자("haenyeo") — TourStopDetailDrawer 가 `=== "haenyeo"`
+  //     로 정확히 비교하므로, 번역되면 위젯이 조용히 사라진다
+  //
+  // 경계에 `[a-z0-9]` 를 넣어 **camelCase 꼬리도** 잡는다. 원래는 `_`·`.` 뒤에서만
+  // 매치해서 `liveStatusWidget` 같은 키가 통과했다(`imageposition` 이 소문자 덩어리로
+  // 따로 적혀 있는 것이 같은 구멍을 개별 우회한 흔적이다).
+  //   2026-07-26 실측: 현재 추출된 전체 입력에서 이 확장으로 새로 빠지는 키는
+  //   `liveStatusWidget` 하나뿐이다. 오분류의 두 방향은 대칭이 아니다 —
+  //   문구를 빼면 영어 폴백이지만, 판별자를 번역하면 렌더가 깨진다.
+  if (/(^|_|\.|[a-z0-9])(id|ids|key|keys|slug|url|href|src|icon|image|images|photo|code|type|kind|variant|token|ref|anchor|tag|color|locale|lang|currency|component|position|imageposition|align|layout|unit|durations|widget|widgets)$/i.test(keyHint)) {
     return false;
   }
 
@@ -286,7 +295,16 @@ export function extractLeaves(payload: unknown, options: ExtractOptions = {}): E
 
   function walk(node: unknown, pointer: string, topKey: string): void {
     if (typeof node === 'string') {
-      const keyHint = pointer.slice(pointer.lastIndexOf('/') + 1);
+      // 배열 원소의 마지막 토큰은 인덱스라, 그대로 쓰면 keyHint 가 `"0"` 이 되어
+      // 식별자 키 필터를 **통째로 비껴간다.** 숫자 토큰을 건너뛰고 가장 가까운
+      // 이름 토큰을 쓴다.
+      //   2026-07-26 실측: 이 구멍으로 `theme_tags_in_variant`(volcano·coast·culture…)와
+      //   `poi_tags_in_variant` 가 번역 큐에 들어와 있었다. 둘 다 `_variant` 로 끝나
+      //   목록에는 이미 있었는데 keyHint 가 인덱스라 매치될 기회조차 없었다.
+      //   `catalog_card/tags` 는 `tags` 가 목록에 없어 그대로 통과한다 — 이쪽은
+      //   손님에게 보이는 칩이고 ko·ja·es 도 번역한다.
+      const tokens = pointer.split('/').filter(Boolean);
+      const keyHint = [...tokens].reverse().find((t) => !/^\d+$/.test(t)) ?? '';
       if (isTranslatableLeaf(node, keyHint)) {
         leaves.push({ pointer, text: node, topLevelKey: topKey, tier: tierOfTopLevelKey(topKey) });
       } else {
