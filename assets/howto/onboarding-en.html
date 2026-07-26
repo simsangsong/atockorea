@@ -1,0 +1,380 @@
+<!doctype html>
+<!--
+  Smart Guide onboarding — pictogram animation (howto-video track v1).
+
+  Airline-safety-card grammar (flat rounded pictograms, slow easing, generous
+  whitespace) in the AtoC palette: ivory / ink charcoal / antique brass / deep
+  pine. 1080x1920, six ~5.5s scenes with 0.5s crossfades (~30.5s total).
+
+  Deterministic rendering contract (scripts/render-howto-video.mjs):
+    window.__total          — total timeline in ms
+    window.__seek(tMs)      — jump every WAAPI animation to absolute time t
+  All animations are element.animate(..., { delay: sceneStart + ..., fill:'both' })
+  and start paused, so a frame at time t is exactly reproducible.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --ivory: #f6f1e7;
+    --ivory-2: #efe8d9;
+    --ink: #26251f;
+    --ink-2: #55524a;
+    --brass: #a8853f;
+    --brass-soft: #c4a86b;
+    --pine: #1f4d3f;
+    --safe: #b5443c;
+  }
+  html, body { width: 1080px; height: 1920px; overflow: hidden; }
+  body {
+    background:
+      radial-gradient(140% 90% at 50% 8%, var(--ivory) 55%, var(--ivory-2) 100%);
+    font-family: 'Segoe UI', -apple-system, sans-serif;
+    color: var(--ink);
+  }
+  .stage { position: absolute; inset: 0; }
+  .scene { position: absolute; inset: 0; opacity: 0; }
+  .art { position: absolute; top: 330px; left: 0; width: 1080px; height: 980px; }
+  .art svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+  .kicker {
+    position: absolute; top: 200px; width: 100%;
+    text-align: center;
+    font-size: 34px; font-weight: 600;
+    letter-spacing: 0.42em; text-transform: uppercase;
+    color: var(--brass);
+  }
+  .caption { position: absolute; top: 1370px; width: 100%; text-align: center; }
+  .caption h1 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 88px; font-weight: 500; line-height: 1.14;
+    letter-spacing: -0.01em;
+  }
+  .caption p {
+    margin-top: 26px;
+    font-size: 42px; font-weight: 400; color: var(--ink-2);
+    letter-spacing: 0.01em;
+  }
+  .rule {
+    width: 96px; height: 3px; background: var(--brass);
+    margin: 0 auto 34px auto; border-radius: 2px;
+  }
+  .stepdots { position: absolute; bottom: 130px; width: 100%; display: flex; justify-content: center; gap: 22px; }
+  .stepdots i { width: 14px; height: 14px; border-radius: 50%; background: #cfc6b2; }
+  .stepdots i.on { background: var(--brass); }
+
+  /* pictogram strokes */
+  .pict { fill: none; stroke: var(--ink); stroke-width: 16; stroke-linecap: round; stroke-linejoin: round; }
+  .pict-thin { stroke-width: 10; }
+  .fill-ink { fill: var(--ink); stroke: none; }
+  .fill-brass { fill: var(--brass); stroke: none; }
+  .fill-pine { fill: var(--pine); stroke: none; }
+  .fill-ivory { fill: var(--ivory); stroke: none; }
+  .stroke-brass { stroke: var(--brass); }
+  .stroke-pine { stroke: var(--pine); }
+  .stroke-safe { stroke: var(--safe); }
+  .soft { opacity: 0.16; }
+  .bubble-label {
+    font-family: 'Segoe UI', sans-serif; font-weight: 600;
+    fill: var(--ivory);
+  }
+</style>
+</head>
+<body>
+<div class="stage" id="stage"></div>
+
+<script>
+/* ───────────────────────── timeline ───────────────────────── */
+const SCENE = 5500, XFADE = 500, STEP = SCENE - XFADE; // scene starts every 5s
+const N = 6;
+const TOTAL = STEP * (N - 1) + SCENE;
+window.__total = TOTAL;
+
+const EASE = 'cubic-bezier(0.22, 1, 0.36, 1)';   // slow, premium settle
+const anims = [];
+function an(el, frames, opt) {
+  const a = el.animate(frames, { fill: 'both', easing: EASE, ...opt });
+  a.pause();
+  anims.push(a);
+  return a;
+}
+window.__seek = (t) => { anims.forEach((a) => { a.currentTime = t; }); };
+
+/* scene shell: kicker + art + caption + crossfade in/out */
+function scene(i, { kicker, title, sub, art }) {
+  const t0 = i * STEP;
+  const el = document.createElement('div');
+  el.className = 'scene';
+  el.innerHTML = `
+    <div class="kicker">${kicker}</div>
+    <div class="art">${art}</div>
+    <div class="caption">
+      <div class="rule"></div>
+      <h1>${title}</h1>
+      ${sub ? `<p>${sub}</p>` : ''}
+    </div>
+    <div class="stepdots">${Array.from({ length: N }, (_, d) =>
+      `<i class="${d === i ? 'on' : ''}"></i>`).join('')}</div>`;
+  document.getElementById('stage').appendChild(el);
+
+  an(el, [{ opacity: 0 }, { opacity: 1 }], { delay: t0, duration: XFADE, easing: 'ease-in-out' });
+  // fill:'forwards' only — a 'both' fill would backwards-fill opacity:1 and
+  // make every scene visible before its own start (all scenes stacked).
+  if (i < N - 1)
+    an(el, [{ opacity: 1 }, { opacity: 0 }], { delay: t0 + STEP, duration: XFADE, easing: 'ease-in-out', fill: 'forwards' });
+
+  // caption drifts up as the scene settles
+  const cap = el.querySelector('.caption');
+  an(cap, [{ transform: 'translateY(46px)', opacity: 0 }, { transform: 'translateY(0)', opacity: 1 }],
+    { delay: t0 + 350, duration: 900 });
+  const kick = el.querySelector('.kicker');
+  an(kick, [{ opacity: 0 }, { opacity: 1 }], { delay: t0 + 150, duration: 700 });
+  return { el, t0 };
+}
+
+/* helpers */
+const drift = (el, t0, { from = 'translateY(60px)', dur = 1000, delay = 0 } = {}) =>
+  an(el, [{ transform: from, opacity: 0 }, { transform: 'translate(0,0)', opacity: 1 }],
+    { delay: t0 + delay, duration: dur });
+const pop = (el, t0, delay, dur = 600) =>
+  an(el, [
+    { transform: 'scale(0)', opacity: 0 },
+    { transform: 'scale(1.06)', opacity: 1, offset: 0.7 },
+    { transform: 'scale(1)', opacity: 1 },
+  ], { delay: t0 + delay, duration: dur });
+const draw = (el, t0, delay, dur = 900) => {
+  const len = el.getTotalLength ? el.getTotalLength() : 300;
+  el.style.strokeDasharray = len;
+  an(el, [{ strokeDashoffset: len }, { strokeDashoffset: 0 }], { delay: t0 + delay, duration: dur });
+};
+
+/* shared pictogram fragments (viewBox 1080x980) */
+const PHONE = (x, y, s = 1) => `
+  <g transform="translate(${x} ${y}) scale(${s})" class="phone">
+    <rect class="pict" x="0" y="0" width="330" height="640" rx="52" style="fill:var(--ivory)"/>
+    <line class="pict pict-thin" x1="120" y1="70" x2="210" y2="70"/>
+  </g>`;
+const PERSON = (x, y, s = 1, cls = 'fill-ink') => `
+  <g transform="translate(${x} ${y}) scale(${s})">
+    <circle class="${cls}" cx="60" cy="42" r="42"/>
+    <path class="${cls}" d="M60 96 c-52 0 -60 46 -60 92 v96 a14 14 0 0 0 14 14 h92 a14 14 0 0 0 14 -14 v-96 c0 -46 -8 -92 -60 -92 z"/>
+  </g>`;
+
+/* ── Scene 1 — title: phone + van lockup ─────────────────────── */
+{
+  const { el, t0 } = scene(0, {
+    kicker: 'AtoC Smart Guide',
+    title: 'Meet your<br/>Smart Guide',
+    sub: 'Your whole tour, live on your phone',
+    art: `
+    <svg viewBox="0 0 1080 980">
+      <circle class="fill-brass soft" cx="540" cy="470" r="360"/>
+      <g class="ph">${PHONE(430, 80, 0.92)}
+        <g class="chatline">
+          <rect class="fill-pine" x="470" y="210" width="180" height="52" rx="26"/>
+          <rect class="fill-brass" x="530" y="290" width="180" height="52" rx="26"/>
+          <rect class="fill-ink soft" x="470" y="370" width="140" height="52" rx="26"/>
+        </g>
+      </g>
+      <g class="van">
+        <g transform="translate(245 700) scale(0.95)">
+          <path class="pict" d="M0 150 v-96 a24 24 0 0 1 24 -24 h300 l96 72 h180 a24 24 0 0 1 24 24 v24" style="fill:var(--ivory)"/>
+          <line class="pict" x1="0" y1="150" x2="624" y2="150"/>
+          <circle class="pict" cx="150" cy="150" r="44" style="fill:var(--ivory)"/>
+          <circle class="pict" cx="480" cy="150" r="44" style="fill:var(--ivory)"/>
+          <rect class="fill-pine" x="60" y="60" width="120" height="52" rx="12"/>
+        </g>
+      </g>
+    </svg>`,
+  });
+  drift(el.querySelector('.ph'), t0, { from: 'translateY(80px)', dur: 1100, delay: 300 });
+  drift(el.querySelector('.van'), t0, { from: 'translateX(-140px)', dur: 1200, delay: 550 });
+  el.querySelectorAll('.chatline rect').forEach((r, i) => pop(r, t0, 1300 + i * 240));
+}
+
+/* ── Scene 2 — scan the QR at pickup ─────────────────────────── */
+{
+  const { el, t0 } = scene(1, {
+    kicker: 'Step One',
+    title: 'Scan the QR<br/>at pickup',
+    sub: 'No app install — it opens in your browser',
+    art: `
+    <svg viewBox="0 0 1080 980">
+      <circle class="fill-pine soft" cx="540" cy="460" r="340"/>
+      <g class="card">
+        <rect class="pict" x="150" y="240" width="380" height="500" rx="28" style="fill:var(--ivory)"/>
+        <g class="qr" transform="translate(212 310)">
+          <!-- QR finder patterns (TL/TR/BL) + data dots -->
+          <!-- outer g holds the translate; inner g.q takes the pop transform
+               (animating transform on the same node would clobber the translate) -->
+          ${[[0,0],[176,0],[0,176]].map(([qx,qy]) => `
+            <g transform="translate(${qx} ${qy})"><g class="q">
+              <rect class="pict pict-thin" x="0" y="0" width="80" height="80" rx="14"/>
+              <rect class="fill-ink" x="22" y="22" width="36" height="36" rx="8"/>
+            </g></g>`).join('')}
+          ${[[110,10],[130,60],[196,110],[110,110],[150,150],[220,196],[110,220],[60,120],[10,116]]
+            .map(([qx,qy]) => `<rect class="fill-ink q" x="${qx}" y="${qy}" width="26" height="26" rx="6"/>`).join('')}
+        </g>
+        <line class="pict pict-thin stroke-brass" x1="212" y1="640" x2="470" y2="640"/>
+        <line class="pict pict-thin stroke-brass" x1="212" y1="692" x2="392" y2="692"/>
+      </g>
+      <g class="ph2">${PHONE(640, 280, 0.86)}
+        <g class="check">
+          <circle class="fill-pine" cx="782" cy="540" r="72"/>
+          <path class="pict" style="stroke:var(--ivory)" d="M746 540 l26 28 l48 -54"/>
+        </g>
+      </g>
+      <g class="beam">
+        <path class="pict pict-thin stroke-brass" d="M560 470 L648 500" stroke-dasharray="2 26" opacity="0.9"/>
+      </g>
+    </svg>`,
+  });
+  drift(el.querySelector('.card'), t0, { from: 'translateY(70px)', dur: 1000, delay: 300 });
+  drift(el.querySelector('.ph2'), t0, { from: 'translateX(120px)', dur: 1000, delay: 650 });
+  el.querySelectorAll('.q').forEach((r, i) => pop(r, t0, 1000 + i * 90, 380));
+  an(el.querySelector('.beam'), [{ opacity: 0 }, { opacity: 1, offset: 0.3 }, { opacity: 1 }],
+    { delay: t0 + 1900, duration: 500 });
+  pop(el.querySelector('.check'), t0, 2600, 700);
+}
+
+/* ── Scene 3 — chat in any language ──────────────────────────── */
+{
+  const { el, t0 } = scene(2, {
+    kicker: 'Live Translation',
+    title: 'Chat in<br/>any language',
+    sub: 'Translated live — both ways',
+    art: `
+    <svg viewBox="0 0 1080 980">
+      <circle class="fill-brass soft" cx="540" cy="470" r="340"/>
+      ${PERSON(180, 560, 1.5)}
+      ${PERSON(720, 560, 1.5, 'fill-pine')}
+      <g class="b1">
+        <rect class="fill-ink" x="150" y="300" width="300" height="110" rx="42"/>
+        <path class="fill-ink" d="M240 402 l-20 52 l60 -44 z"/>
+        <text class="bubble-label" x="300" y="372" font-size="52" text-anchor="middle">Hola!</text>
+      </g>
+      <g class="arrows">
+        <path class="pict stroke-brass" d="M480 330 h96 m0 0 l-28 -28 m28 28 l-28 28"/>
+        <path class="pict stroke-brass" d="M600 470 h-96 m0 0 l28 -28 m-28 28 l28 28"/>
+      </g>
+      <g class="b2">
+        <rect class="fill-pine" x="630" y="300" width="330" height="110" rx="42"/>
+        <path class="fill-pine" d="M870 402 l20 52 l-60 -44 z"/>
+        <text class="bubble-label" x="795" y="376" font-size="50" text-anchor="middle">안녕하세요</text>
+      </g>
+    </svg>`,
+  });
+  pop(el.querySelector('.b1'), t0, 700, 700);
+  el.querySelectorAll('.arrows path').forEach((p, i) => draw(p, t0, 1500 + i * 300, 700));
+  pop(el.querySelector('.b2'), t0, 2400, 700);
+}
+
+/* ── Scene 4 — spot guides arrive automatically ──────────────── */
+{
+  const { el, t0 } = scene(3, {
+    kicker: 'On Arrival',
+    title: 'Spot guides arrive<br/>automatically',
+    sub: 'Photos, stories and tips — in your language',
+    art: `
+    <svg viewBox="0 0 1080 980">
+      <circle class="fill-pine soft" cx="540" cy="470" r="340"/>
+      <g class="pin">
+        <path class="fill-brass" d="M540 150 c-96 0 -160 68 -160 152 c0 110 160 248 160 248 s160 -138 160 -248 c0 -84 -64 -152 -160 -152 z"/>
+        <circle class="fill-ivory" cx="540" cy="300" r="58"/>
+      </g>
+      <g class="cardpop">
+        <rect class="pict" x="300" y="560" width="480" height="300" rx="28" style="fill:var(--ivory)"/>
+        <rect class="fill-pine soft" x="336" y="596" width="180" height="130" rx="16" style="opacity:0.35"/>
+        <path class="pict pict-thin stroke-pine" d="M350 700 l50 -56 l40 40 l54 -66 l40 82" />
+        <line class="pict pict-thin stroke-brass" x1="552" y1="620" x2="744" y2="620"/>
+        <line class="pict pict-thin" x1="552" y1="672" x2="744" y2="672" opacity="0.4"/>
+        <line class="pict pict-thin" x1="552" y1="716" x2="700" y2="716" opacity="0.4"/>
+        <line class="pict pict-thin" x1="336" y1="790" x2="744" y2="790" opacity="0.25"/>
+      </g>
+    </svg>`,
+  });
+  an(el.querySelector('.pin'),
+    [{ transform: 'translateY(-260px)', opacity: 0 },
+     { transform: 'translateY(24px)', opacity: 1, offset: 0.72 },
+     { transform: 'translateY(0)', opacity: 1 }],
+    { delay: t0 + 500, duration: 1000 });
+  pop(el.querySelector('.cardpop'), t0, 1700, 800);
+}
+
+/* ── Scene 5 — free time, timed ──────────────────────────────── */
+{
+  const { el, t0 } = scene(4, {
+    kicker: 'Free Time',
+    title: 'A countdown keeps<br/>everyone together',
+    sub: 'Back at the van, right on time',
+    art: `
+    <svg viewBox="0 0 1080 980">
+      <circle class="fill-brass soft" cx="540" cy="440" r="340"/>
+      <g class="clock">
+        <circle class="pict" cx="540" cy="420" r="230" style="fill:var(--ivory)"/>
+        <circle class="ring pict stroke-brass" cx="540" cy="420" r="230" transform="rotate(-90 540 420)" stroke-width="22"/>
+        <line class="pict hand" x1="540" y1="420" x2="540" y2="270"/>
+        <line class="pict" x1="540" y1="420" x2="640" y2="420"/>
+        <circle class="fill-ink" cx="540" cy="420" r="18"/>
+      </g>
+      <g class="walkers">
+        ${PERSON(150, 740, 1.05)}
+        ${PERSON(300, 760, 0.9, 'fill-pine')}
+        ${PERSON(430, 745, 1.0)}
+      </g>
+      <g transform="translate(660 740)"><g class="minivan">
+        <path class="pict" d="M0 110 v-64 a20 20 0 0 1 20 -20 h190 l70 52 h60 a20 20 0 0 1 20 20 v12" style="fill:var(--ivory)"/>
+        <line class="pict" x1="0" y1="110" x2="360" y2="110"/>
+        <circle class="pict" cx="100" cy="110" r="32" style="fill:var(--ivory)"/>
+        <circle class="pict" cx="290" cy="110" r="32" style="fill:var(--ivory)"/>
+      </g></g>
+    </svg>`,
+  });
+  draw(el.querySelector('.ring'), t0, 500, 1600);
+  an(el.querySelector('.hand'),
+    [{ transform: 'rotate(0deg)', transformOrigin: '540px 420px' },
+     { transform: 'rotate(80deg)', transformOrigin: '540px 420px' }],
+    { delay: t0 + 700, duration: 1800 });
+  drift(el.querySelector('.walkers'), t0, { from: 'translateX(-110px)', dur: 1400, delay: 1500 });
+  drift(el.querySelector('.minivan'), t0, { from: 'translateY(40px)', dur: 900, delay: 600 });
+}
+
+/* ── Scene 6 — 24/7 human support ────────────────────────────── */
+{
+  const { el, t0 } = scene(5, {
+    kicker: 'Always With You',
+    title: '24/7 human<br/>support',
+    sub: 'One tap for help — anytime · AtoC Korea',
+    art: `
+    <svg viewBox="0 0 1080 980">
+      <circle class="fill-pine soft" cx="540" cy="460" r="340"/>
+      <g class="agent">
+        <circle class="fill-ink" cx="540" cy="360" r="86"/>
+        <path class="fill-ink" d="M540 470 c-108 0 -124 96 -124 190 a20 20 0 0 0 20 20 h208 a20 20 0 0 0 20 -20 c0 -94 -16 -190 -124 -190 z"/>
+        <path class="pict stroke-brass" d="M424 356 a116 116 0 0 1 232 0" stroke-width="20"/>
+        <rect class="fill-brass" x="400" y="346" width="44" height="86" rx="22"/>
+        <rect class="fill-brass" x="636" y="346" width="44" height="86" rx="22"/>
+        <path class="pict pict-thin stroke-brass" d="M658 432 a92 92 0 0 1 -74 62" />
+      </g>
+      <g class="sos">
+        <circle cx="810" cy="640" r="104" style="fill:var(--ivory);stroke:var(--safe);stroke-width:14px"/>
+        <text x="810" y="668" font-size="66" font-weight="700" text-anchor="middle" fill="var(--safe)" font-family="'Segoe UI', sans-serif">SOS</text>
+      </g>
+      <g class="halo"><circle class="pict pict-thin stroke-safe" cx="810" cy="640" r="150" opacity="0.5"/></g>
+    </svg>`,
+  });
+  drift(el.querySelector('.agent'), t0, { from: 'translateY(70px)', dur: 1100, delay: 350 });
+  pop(el.querySelector('.sos'), t0, 1500, 700);
+  an(el.querySelector('.halo circle'),
+    [{ transform: 'scale(0.75)', transformOrigin: '810px 640px', opacity: 0 },
+     { transform: 'scale(1)', transformOrigin: '810px 640px', opacity: 0.5, offset: 0.6 },
+     { transform: 'scale(1.12)', transformOrigin: '810px 640px', opacity: 0 }],
+    { delay: t0 + 2100, duration: 1600 });
+}
+
+window.__seek(0);
+</script>
+</body>
+</html>
