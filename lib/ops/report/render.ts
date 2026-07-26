@@ -211,6 +211,8 @@ function renderAttention(res: SectionResult<AttentionSummary>): string {
     { label: '파싱 실패 (오늘)', n: a.parseFailures },
     { label: '좌석 미지정 게스트', n: a.unseated },
     { label: '정원 초과 그룹 (2호차 필요)', n: (a.overCapacity ?? []).length },
+    // 관제 W5 — 크론이 채운 큐를 아무도 안 열면 큐가 없는 것과 같다.
+    { label: '오토파일럿 미처리 제안', n: a.autopilotOpen ?? 0 },
     { label: 'LLM 예산 초과 투어', n: (a.llm?.overBudgetTours ?? []).length },
   ]
   const rows = items

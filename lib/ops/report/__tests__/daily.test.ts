@@ -158,6 +158,30 @@ describe('buildDailyReport — 정상 데이터', () => {
     expect(a.unseated).toBe(1) // B3 (차량 배정된 R3, 좌석 없음)
     expect(a.clean).toBe(false)
   })
+
+  /**
+   * 관제 W5 — 크론이 채운 큐가 매일 읽히는 자리로 나와야 한다. 큐만 쌓이고
+   * 아무도 안 열면 점검을 자동화한 의미가 없다.
+   */
+  it('⑤ 오토파일럿 미처리 제안 수를 싣고, 미처리가 있으면 clean=false', async () => {
+    const reg = normalRegistry()
+    reg.ops_autopilot_suggestions = [
+      { id: 'S1', status: 'suggested' },
+      { id: 'S2', status: 'suggested' },
+      { id: 'S3', status: 'done' },
+    ]
+    const report = await buildDailyReport(mockSupabase(reg), { nowMs: NOW })
+    expect(report.attention.data.autopilotOpen).toBe(2)
+    expect(report.attention.data.clean).toBe(false)
+  })
+
+  it('⑤ 제안 테이블이 아직 없으면 0으로 두고 보고서는 그대로 나간다', async () => {
+    const reg = normalRegistry()
+    reg.ops_autopilot_suggestions = missingTable()
+    const report = await buildDailyReport(mockSupabase(reg), { nowMs: NOW })
+    expect(report.attention.ok).toBe(true)
+    expect(report.attention.data.autopilotOpen).toBe(0)
+  })
 })
 
 describe('buildDailyReport — 빈 데이터', () => {

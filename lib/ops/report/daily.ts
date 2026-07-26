@@ -132,7 +132,14 @@ export interface AttentionSummary {
    * `overBudgetTours`가 비어 있으면 예산 안이고, 그때는 요주의가 아니다.
    */
   llm: { calls: number; cacheHits: number; overBudgetTours: string[] } | null
-  /** 위 7개가 전부 0이면 true → "이상 없음" 배너. */
+  /**
+   * 오토파일럿 미처리 제안 수 (관제 W5).
+   *
+   * 크론이 매일 큐를 채워도 아무도 그 화면을 열지 않으면 큐는 없는 것과 같다.
+   * 매일 읽히는 자리가 이 보고서 하나뿐이라, 여기 한 줄로 싣는다.
+   */
+  autopilotOpen: number
+  /** 위 항목이 전부 0이면 true → "이상 없음" 배너. */
   clean: boolean
 }
 
@@ -744,7 +751,7 @@ async function buildAttention(
   const startIso = new Date(kstStartOfDayMs(today)).toISOString()
   const endIso = new Date(kstEndOfDayMs(today)).toISOString()
 
-  const [reviewLogs, failures] = await Promise.all([
+  const [reviewLogs, failures, autopilotRows] = await Promise.all([
     safeSelect<{ id: string }>(
       supabase.from('ops_email_parse_logs').select('id').eq('commit_result', 'review_queued'),
     ),
@@ -755,11 +762,16 @@ async function buildAttention(
         .gte('created_at', startIso)
         .lte('created_at', endIso),
     ),
+    // 관제 W5 — 아직 아무도 손대지 않은 제안. 테이블 미적용이면 빈 배열.
+    safeSelect<{ id: string }>(
+      supabase.from('ops_autopilot_suggestions').select('id').eq('status', 'suggested'),
+    ),
   ])
 
   const uncontacted = contact?.missingCount ?? 0
   const reviewQueued = reviewLogs.length
   const parseFailures = failures.length
+  const autopilotOpen = autopilotRows.length
 
   // §L L6 — 오늘 LLM 사용량. 테이블 미적용이면 safeSelect가 빈 배열을 주고
   // 이 섹션은 조용히 빠진다(계측 하나 때문에 보고서가 죽으면 안 된다).
@@ -814,6 +826,7 @@ async function buildAttention(
     unseated,
     overCapacity,
     llm,
+    autopilotOpen,
     clean:
       unassignedRooms === 0 &&
       uncontacted === 0 &&
@@ -821,6 +834,7 @@ async function buildAttention(
       parseFailures === 0 &&
       unseated === 0 &&
       overCapacity.length === 0 &&
+      autopilotOpen === 0 &&
       (llm?.overBudgetTours.length ?? 0) === 0,
   }
 }
@@ -886,6 +900,7 @@ export async function buildDailyReport(
         unseated: 0,
         overCapacity: [],
         llm: null,
+        autopilotOpen: 0,
         clean: true,
       },
     ),
