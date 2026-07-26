@@ -496,7 +496,12 @@ export default function GuideConsole() {
       <header className="tr-plan-hero">
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">
-            <p className="tr-meta font-bold uppercase tracking-wide text-[var(--tr-plan-hero-muted)]">가이드 콘솔</p>
+            {/* 아래 제목에는 truncate 가 있는데 이 눈썹 라벨에는 없었다.
+                한국어는 띄어쓰기가 없어 기본값만으로 글자 단위로 쪼개지므로,
+                옆 형제가 폭을 가져가면 "가이/드 /콘솔"이 된다 (CLAUDE.md P1-5). */}
+            <p className="text-cjk-safe tr-meta font-bold uppercase tracking-wide text-[var(--tr-plan-hero-muted)]">
+              가이드 콘솔
+            </p>
             <h1 className="mt-1 truncate text-[20px] font-bold leading-tight text-[var(--tr-plan-hero-ink)]">
               {overview.tour.title}
             </h1>
