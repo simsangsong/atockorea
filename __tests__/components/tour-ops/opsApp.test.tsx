@@ -202,7 +202,7 @@ describe('OpsApp home hub', () => {
 
     // Task tiles.
     const tiles = screen.getByTestId('ops-home-tiles');
-    for (const title of ['룸 · 링크 만들기', '실시간 모니터링', '메시지 모아보기', '위치 보기', '문답 학습', '챗봇 분석']) {
+    for (const title of ['배정 · 룸 · 링크', '실시간 모니터링', '메시지 모아보기', '위치 보기', '문답 학습', '챗봇 분석']) {
       expect(within(tiles).getByText(title)).toBeInTheDocument();
     }
     // Learning tiles deep-link into the admin tools.
@@ -218,7 +218,7 @@ describe('OpsApp home hub', () => {
     render(<OpsApp />);
     await waitFor(() => expect(screen.getByTestId('ops-home-tiles')).toBeInTheDocument());
 
-    fireEvent.click(screen.getByText('룸 · 링크 만들기'));
+    fireEvent.click(screen.getByText('배정 · 룸 · 링크'));
     const manager = await screen.findByTestId('ops-room-manager');
     await waitFor(() => expect(within(manager).getByText(/Alex/)).toBeInTheDocument());
     expect(within(manager).getByText('룸 활성')).toBeInTheDocument();

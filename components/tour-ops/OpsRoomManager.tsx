@@ -18,7 +18,7 @@
 
 import { useCallback, useEffect, useState } from 'react';
 import { toast } from 'sonner';
-import { Copy, Loader2, Mail, Moon, Plus, QrCode, RefreshCw, Sun, X } from 'lucide-react';
+import { CarFront, Copy, Loader2, Mail, Moon, Plus, QrCode, RefreshCw, Sun, X } from 'lucide-react';
 import { getOpsToken } from '@/components/tour-ops/opsShared';
 import GuideRestNotice from '@/components/tour-ops/GuideRestNotice';
 import { useOpsTheme } from '@/components/tour-ops/opsTheme';
@@ -131,7 +131,7 @@ export default function OpsRoomManager({
 }: {
   date: string;
   onClose: () => void;
-  onOpenRoom: (roomId: string) => void;
+  onOpenRoom: (roomId: string, view?: 'chat' | 'vehicle') => void;
   onRoomsChanged: () => void;
 }) {
   const [viewDate, setViewDate] = useState(date);
@@ -436,6 +436,19 @@ export default function OpsRoomManager({
                           )}
                           초대 메일 발송
                         </button>
+                        {/* 배정 발견성(2026-07-27): 차량 배정이 룸 드로어 3뎁스에
+                            숨어 있어 owner도 못 찾았다. 여기서 곧장 차량 뷰로. */}
+                        {room && (
+                          <button
+                            type="button"
+                            onClick={() => onOpenRoom(room.id, 'vehicle')}
+                            data-testid={`manager-vehicle-${booking.id}`}
+                            className="flex h-10 items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-accent)] text-[12px] font-semibold text-[var(--tr-bubble-me-ink)]"
+                          >
+                            <CarFront className="size-4" />
+                            차량 배정
+                          </button>
+                        )}
                         {room ? (
                           <button
                             type="button"
