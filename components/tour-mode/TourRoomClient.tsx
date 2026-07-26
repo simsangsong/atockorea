@@ -38,6 +38,7 @@ import LobbyCard, { firstPickup } from '@/components/tour-mode/LobbyCard';
 import PickupBoard from '@/components/tour-mode/PickupBoard';
 import RoomMapTab from '@/components/tour-mode/map/RoomMapTab';
 import RoomShell from '@/components/tour-mode/RoomShell';
+import RoomDrawer from '@/components/tour-mode/RoomDrawer';
 import GuideSeatStrip from '@/components/tour-mode/guide/GuideSeatStrip';
 import GuideSeatDashboard from '@/components/tour-mode/guide/GuideSeatDashboard';
 import Sheet from '@/components/tour-mode/Sheet';
@@ -873,6 +874,23 @@ function TourRoomLive({
             : undefined /* customers have no "up" — back only steps tabs, never
                            dumps to the booking gate or exits the app */
       }
+      renderDrawer={(api) => (
+        <RoomDrawer
+          title={snapshot.booking?.tours?.title ?? 'Your tour'}
+          locale={locale}
+          bookingId={bookingId}
+          roomSession={data.session}
+          participants={
+            ((snapshot as { participants?: Array<{ role?: string; display_name?: string }> }).participants ?? [])
+              .filter((p) => p.display_name)
+              .map((p) => ({ role: p.role ?? 'customer', display_name: p.display_name! }))
+          }
+          onClose={api.close}
+          onSelectTab={api.selectTab}
+          onOpenConcierge={viewerRole === 'customer' ? api.openConcierge : undefined}
+          onOpenEmergency={api.openEmergency}
+        />
+      )}
       banner={
         <>
           {viewerRole === 'customer' && (

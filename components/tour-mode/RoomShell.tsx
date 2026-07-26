@@ -24,6 +24,7 @@ import { useTourRoomSettings, textScaleFactor } from '@/hooks/useTourRoomSetting
 import {
   IconBack,
   IconConcierge,
+  IconDrawer,
   IconEmergency,
   IconTabChat,
   IconTabHome,
@@ -204,6 +205,7 @@ export default function RoomShell({
   homeHref,
   richStops,
   headerTitleSlot,
+  renderDrawer,
 }: {
   title: string;
   subtitle?: string;
@@ -257,6 +259,17 @@ export default function RoomShell({
    * classic title+badge+subtitle renders (customer/driver unchanged).
    */
   headerTitleSlot?: ReactNode;
+  /**
+   * U4-D5 — the room drawer (카톡 서랍). When present the header gains a ☰
+   * button (rightmost); the render prop receives the shell API so drawer
+   * shortcuts can switch tabs / open the concierge or emergency sheets.
+   */
+  renderDrawer?: (api: {
+    close: () => void;
+    selectTab: (tab: 'schedule' | 'map' | 'settings') => void;
+    openConcierge: () => void;
+    openEmergency: () => void;
+  }) => ReactNode;
 }) {
   const router = useRouter();
   const [tab, setTab] = useState<RoomTab>(initialTab ?? (home ? 'home' : 'chat'));
@@ -265,6 +278,7 @@ export default function RoomShell({
   const [tabStack, setTabStack] = useState<RoomTab[]>([]);
   const [emergencyOpen, setEmergencyOpen] = useState(false);
   const [conciergeOpen, setConciergeOpen] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
   // A1 — first-visit pulse on the concierge button. Defaults to no pulse to
   // avoid an SSR flash; an effect turns it on only for a guest who has never
   // opened the Smart Guide (localStorage-gated, once per device).
@@ -341,6 +355,10 @@ export default function RoomShell({
   // the room or wants to exit to backHref. One click = one step:
   //   open sheet → close it → pop a tab → (root) exit to console / stay.
   const goBack = (): 'stayed' | 'exit' | 'noop' => {
+    if (drawerOpen) {
+      setDrawerOpen(false);
+      return 'stayed';
+    }
     if (conciergeOpen) {
       setConciergeOpen(false);
       return 'stayed';
@@ -518,6 +536,17 @@ export default function RoomShell({
           >
             <IconEmergency size={TR_ICON.nav} strokeWidth={TR_STROKE.default} />
           </button>
+          {renderDrawer && (
+            <button
+              type="button"
+              onClick={() => setDrawerOpen(true)}
+              aria-label="메뉴"
+              className="-mr-1.5 flex h-11 w-9 shrink-0 items-center justify-center rounded-full text-[var(--tr-ink-2)] active:bg-[var(--tr-surface-2)]"
+              data-testid="room-drawer-open"
+            >
+              <IconDrawer size={TR_ICON.action} strokeWidth={TR_STROKE.default} aria-hidden />
+            </button>
+          )}
         </header>
 
         {/* ---- Tab panels + floating banner zone --------------------- */}
@@ -701,6 +730,25 @@ export default function RoomShell({
         >
           <EmergencyCard locale={locale} sos={sos} showTitle={false} />
         </Sheet>
+
+        {/* ---- Room drawer (U4-D5, 카톡 서랍) -------------------------- */}
+        {renderDrawer &&
+          drawerOpen &&
+          renderDrawer({
+            close: () => setDrawerOpen(false),
+            selectTab: (t) => {
+              setDrawerOpen(false);
+              selectTab(t);
+            },
+            openConcierge: () => {
+              setDrawerOpen(false);
+              openConcierge();
+            },
+            openEmergency: () => {
+              setDrawerOpen(false);
+              setEmergencyOpen(true);
+            },
+          })}
 
         {/* ---- Smart Guide sheet (V2.2) ------------------------------- */}
         {concierge && (
