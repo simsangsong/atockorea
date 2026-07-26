@@ -281,6 +281,22 @@ describe('G4 통화·단위', () => {
 
   // 2026-07-26 ru 첫 슬러그 실측: pickup_dropoff 의 name 필드가 통째로 호텔·브랜드명이었다.
   // 라틴으로 두는 것이 맞는 값이라, 키릴 비율만으로 fail 을 내면 발행이 막힌다.
+  // 2026-07-26 ru 실측: 러시아어는 합성어에서 사격 어간을 쓴다 — 수사가 낱말 속으로 들어간다.
+  it('G3 — 러시아어 합성 수사 어간을 인식한다', () => {
+    const f = checkNumbers('The 2-hour stop accommodates a slow pace.', 'Двухчасовая остановка рассчитана на неспешный темп.', '/p', 'ru');
+    expect(f.every((x) => x.severity !== 'fail')).toBe(true);
+
+    expect(checkNumbers('a 3-hour walk', 'трёхчасовая прогулка', '/p', 'ru').every((x) => x.severity !== 'fail')).toBe(true);
+    expect(checkNumbers('a 1-day tour', 'однодневный тур', '/p', 'ru').every((x) => x.severity !== 'fail')).toBe(true);
+    expect(checkNumbers('a 7-day pass', 'семидневный проездной', '/p', 'ru').every((x) => x.severity !== 'fail')).toBe(true);
+  });
+
+  it('G3 — 합성 어간 예외가 진짜 값 변경을 덮지 않는다', () => {
+    // 2시간짜리를 3시간으로 바꾼 것은 여전히 잡혀야 한다.
+    const f = checkNumbers('The 2-hour stop', 'Трёхчасовая остановка', '/p', 'ru');
+    expect(f.some((x) => x.gate === 'G3' && x.severity === 'fail')).toBe(true);
+  });
+
   it('G10 — 고유명사만 있는 필드는 fail 이 아니라 flag', () => {
     const kept = checkCharset('Ocean Suites Jeju Hotel', '/p', 'ru', 'Ocean Suites Jeju Hotel');
     expect(kept.every((x) => x.severity === 'flag')).toBe(true);
