@@ -16,13 +16,13 @@
 
 import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import { useRouter } from 'next/navigation';
-import { ChevronLeft, Home as HomeIcon } from 'lucide-react';
 import EmergencyCard from '@/components/tour-mode/EmergencyCard';
 import Sheet from '@/components/tour-mode/Sheet';
 import PlanStopCards from '@/components/tour-mode/plan/PlanStopCards';
 import { useKeyboardOpen } from '@/components/tour-mode/useKeyboardOpen';
 import { useTourRoomSettings, textScaleFactor } from '@/hooks/useTourRoomSettings';
 import {
+  IconBack,
   IconConcierge,
   IconEmergency,
   IconTabChat,
@@ -34,6 +34,8 @@ import {
   IconThemeDark,
   IconThemeLight,
   IconThemeSystem,
+  TR_ICON,
+  TR_STROKE,
 } from '@/components/tour-mode/icons';
 import { EMERGENCY_TITLE } from '@/lib/tour-room/emergency';
 import { scheduleClock } from '@/lib/tour-room/time';
@@ -417,7 +419,7 @@ export default function RoomShell({
               className="-ml-1.5 flex h-11 w-9 shrink-0 items-center justify-center rounded-full text-[var(--tr-ink-2)] active:bg-[var(--tr-surface-2)]"
               data-testid="room-back"
             >
-              <ChevronLeft size={24} strokeWidth={2.25} aria-hidden />
+              <IconBack size={TR_ICON.nav} strokeWidth={TR_STROKE.default} aria-hidden />
             </button>
           )}
           {/* P1-2 — one tap to the app home from ANY tab. The chevron above is a
@@ -431,7 +433,7 @@ export default function RoomShell({
               data-testid="room-home"
               className="-ml-1 flex h-11 w-9 shrink-0 items-center justify-center rounded-full text-[var(--tr-ink-2)] active:bg-[var(--tr-surface-2)]"
             >
-              <HomeIcon size={20} strokeWidth={2.25} aria-hidden />
+              <IconTabHome size={TR_ICON.action} strokeWidth={TR_STROKE.default} aria-hidden />
             </a>
           )}
           <div className="min-w-0 flex-1 py-1.5">
@@ -472,11 +474,11 @@ export default function RoomShell({
             data-testid="theme-toggle"
           >
             {deviceSettings.theme === 'light' ? (
-              <IconThemeLight size={19} strokeWidth={2} aria-hidden />
+              <IconThemeLight size={TR_ICON.action} strokeWidth={TR_STROKE.default} aria-hidden />
             ) : deviceSettings.theme === 'dark' ? (
-              <IconThemeDark size={19} strokeWidth={2} aria-hidden />
+              <IconThemeDark size={TR_ICON.action} strokeWidth={TR_STROKE.default} aria-hidden />
             ) : (
-              <IconThemeSystem size={19} strokeWidth={2} aria-hidden />
+              <IconThemeSystem size={TR_ICON.action} strokeWidth={TR_STROKE.default} aria-hidden />
             )}
           </button>
           {concierge && (
@@ -494,7 +496,7 @@ export default function RoomShell({
                     aria-hidden
                   />
                 )}
-                <IconConcierge size={21} strokeWidth={2} className="relative" />
+                <IconConcierge size={TR_ICON.nav} strokeWidth={TR_STROKE.default} className="relative" />
               </button>
               {conciergePulse && (
                 <span
@@ -514,7 +516,7 @@ export default function RoomShell({
             className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-[var(--tr-danger)] active:bg-[var(--tr-danger-soft)]"
             data-testid="emergency-open"
           >
-            <IconEmergency size={22} strokeWidth={2} />
+            <IconEmergency size={TR_ICON.nav} strokeWidth={TR_STROKE.default} />
           </button>
         </header>
 
@@ -556,7 +558,7 @@ export default function RoomShell({
               <div className="tr-anim-panel-in flex min-h-0 flex-1 flex-col px-3 py-2">
                 {map ?? (
                   <div className="tr-card-text flex flex-1 items-center justify-center gap-2 text-[var(--tr-ink-3)]">
-                    <IconTabMap size={16} aria-hidden />
+                    <IconTabMap size={TR_ICON.chip} aria-hidden />
                     {MAP_SOON[locale]}
                   </div>
                 )}
@@ -626,7 +628,7 @@ export default function RoomShell({
                           </div>
                           {item.departure_time && (
                             <div className="tr-meta mt-0.5 flex items-center gap-1 text-[var(--tr-ink-2)]">
-                              <IconPickup size={12} aria-hidden />
+                              <IconPickup size={TR_ICON.meta} strokeWidth={TR_STROKE.small} aria-hidden />
                               {String(item.departure_time)}
                             </div>
                           )}
@@ -669,7 +671,7 @@ export default function RoomShell({
                         active ? 'scale-100 bg-[var(--tr-safe-soft)]' : 'scale-90'
                       }`}
                     >
-                      <Icon size={21} strokeWidth={active ? 2.25 : 2} aria-hidden />
+                      <Icon size={TR_ICON.nav} strokeWidth={active ? TR_STROKE.small : TR_STROKE.default} aria-hidden />
                       {key === 'chat' && chatUnread && (
                         <span
                           className="absolute right-1 top-0 h-2 w-2 rounded-full bg-[var(--tr-danger)]"
@@ -677,7 +679,7 @@ export default function RoomShell({
                         />
                       )}
                     </span>
-                    <span className="text-[10px] font-medium leading-none">{labels[key]}</span>
+                    <span className="tr-meta text-cjk-safe max-w-full font-medium leading-none">{labels[key]}</span>
                   </button>
                 );
               })}
@@ -692,7 +694,7 @@ export default function RoomShell({
           closeLabel={CLOSE_LABEL[locale]}
           title={
             <span className="flex items-center gap-2 text-[var(--tr-danger)]">
-              <IconEmergency size={18} aria-hidden />
+              <IconEmergency size={TR_ICON.action} aria-hidden />
               {EMERGENCY_TITLE[locale]}
             </span>
           }
@@ -708,7 +710,7 @@ export default function RoomShell({
             closeLabel={CLOSE_LABEL[locale]}
             title={
               <span className="flex items-center gap-2 text-[var(--tr-accent-deep)]">
-                <IconConcierge size={18} aria-hidden />
+                <IconConcierge size={TR_ICON.action} aria-hidden />
                 {CONCIERGE_COPY[locale].title}
               </span>
             }

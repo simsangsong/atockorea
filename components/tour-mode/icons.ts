@@ -4,12 +4,28 @@
  * One semantic name per job, all lucide. Components import from here, not
  * from lucide-react directly, so the room's icon language stays consistent
  * and swappable in one place. Emoji remain allowed only inside message
- * CONTENT (e.g. quick-reply preset text that actually gets sent).
+ * CONTENT (e.g. quick-reply preset text that actually gets sent) and in the
+ * quick-reply chips, which preview that content (U4-D6 amendment §N).
  */
+
+/**
+ * U4-D6 — the only icon sizes allowed in tour-room chrome. The audit found
+ * 254 call sites spread over 19 different px values; five steps is the whole
+ * vocabulary now:
+ *   meta 14   — inline glyphs beside 11–12px text (bubble meta column)
+ *   chip 16   — quick-reply chips, list-row leading glyphs
+ *   action 18 — standard buttons, card actions
+ *   nav 22    — header buttons, tab bar, composer dock
+ *   tile 26   — action-grid tiles, cockpit large targets
+ */
+export const TR_ICON = { meta: 14, chip: 16, action: 18, nav: 22, tile: 26 } as const;
+/** Stroke pairs with size: 1.75 at ≥16px, 2 at 14px (thin strokes vanish small). */
+export const TR_STROKE = { default: 1.75, small: 2 } as const;
 
 export {
   // Shell & navigation
   House as IconTabHome,
+  ChevronLeft as IconBack,
   MoreHorizontal as IconMore,
   PencilLine as IconPlanEdit,
   MessageCircle as IconTabChat,
@@ -101,4 +117,50 @@ export {
   Route as IconJourney,
   Star as IconReview,
   Gift as IconReward,
+
+  // U4-D6 — barrel consolidation (W0.1): every glyph the room uses, one file.
+  AlarmClock as IconAlarm,
+  CalendarCheck as IconEventOn,
+  CalendarX as IconEventOff,
+  Clapperboard as IconVideo,
+  Landmark as IconLandmark,
+  Utensils as IconMeal,
+  ChevronUp as IconCollapse,
+  ChevronUp as IconMoveUp,
+  ChevronDown as IconMoveDown,
+  Link2 as IconLink,
+  Share2 as IconShare,
+  Flag as IconReport,
+  Inbox as IconInbox,
+  RefreshCw as IconRefresh,
+  Send as IconSubmit,
+  Square as IconStop,
+  Palette as IconPalette,
+  QrCode as IconQr,
+  StickyNote as IconNote,
+  Clock3 as IconTime,
+  UserRound as IconPerson,
+  Crosshair as IconRecenter,
+  Maximize2 as IconFitAll,
+
+  // U4-D6 — emoji-chrome retirement glyphs (W0.2)
+  CircleCheck as IconSuccess,
+  Ticket as IconTicket,
+  Receipt as IconReceipt,
+  TriangleAlert as IconWarn,
+  Salad as IconDiet,
+  Accessibility as IconAccessible,
+  Baby as IconInfant,
+  PartyPopper as IconCheers,
+  Navigation2 as IconBearing,
+  Car as IconVehicle,
+  Compass as IconExplore,
+  ClipboardCheck as IconChecklist,
+  Wallet as IconLedger,
+  CircleDollarSign as IconExpense,
+  UtensilsCrossed as IconDining,
+  CloudSun as IconBriefing,
+  ListChecks as IconSummary,
+  Armchair as IconSeat,
+  LayoutGrid as IconDrawer,
 } from 'lucide-react';

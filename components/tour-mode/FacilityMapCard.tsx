@@ -11,7 +11,17 @@
  */
 
 import { useState } from 'react';
-import { MapPin, Navigation, Toilet, Camera, Utensils, Star, Ticket } from 'lucide-react';
+import { IconMeal } from '@/components/tour-mode/icons';
+import {
+  IconAdmission,
+  IconArrived,
+  IconCamera,
+  IconFollow,
+  IconRestroom,
+  IconReview,
+  TR_ICON,
+  TR_STROKE,
+} from '@/components/tour-mode/icons';
 import {
   facilityStaticMapPath,
   pinDirectionsUrl,
@@ -52,7 +62,7 @@ export default function FacilityMapCard({
 
   const path = facilityStaticMapPath(pins);
   const Icon =
-    kind === 'restroom' ? Toilet : kind === 'restaurant' ? Utensils : kind === 'ticket_booth' ? Ticket : Camera;
+    kind === 'restroom' ? IconRestroom : kind === 'restaurant' ? IconMeal : kind === 'ticket_booth' ? IconAdmission : IconCamera;
 
   return (
     <div
@@ -70,7 +80,7 @@ export default function FacilityMapCard({
         />
       ) : (
         <div className="flex h-16 w-full items-center justify-center bg-[var(--tr-surface-2)] text-[var(--tr-ink-3)]">
-          <MapPin size={24} strokeWidth={1.75} aria-hidden />
+          <IconArrived size={TR_ICON.nav} strokeWidth={TR_STROKE.default} aria-hidden />
         </div>
       )}
       <ul className="divide-y divide-[var(--tr-hairline)]">
@@ -84,7 +94,7 @@ export default function FacilityMapCard({
               data-testid="facility-pin-row"
             >
               <span
-                className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[11px] font-bold text-white"
+                className="tr-meta tr-num flex h-6 w-6 shrink-0 items-center justify-center rounded-full font-bold text-white"
                 style={{ background: KIND_HEX[kind] }}
                 aria-hidden
               >
@@ -94,21 +104,21 @@ export default function FacilityMapCard({
                 // eslint-disable-next-line @next/next/no-img-element
                 <img src={pin.photoUrl} alt="" className="h-7 w-7 shrink-0 rounded object-cover" loading="lazy" />
               ) : (
-                <Icon size={15} className="shrink-0 text-[var(--tr-ink-3)]" aria-hidden />
+                <Icon size={TR_ICON.chip} className="shrink-0 text-[var(--tr-ink-3)]" aria-hidden />
               )}
               <span className="tr-card-text min-w-0 flex-1 truncate text-[var(--tr-ink)]">
                 {guestPinLabel(pin, locale)}
               </span>
               {kind === 'restaurant' && typeof pin.rating === 'number' && (
-                <span className="tr-meta flex shrink-0 items-center gap-0.5 text-[var(--tr-ink-2)]">
-                  <Star size={11} className="fill-current text-amber-500" aria-hidden />
+                <span className="tr-meta tr-num flex shrink-0 items-center gap-0.5 text-[var(--tr-ink-2)]">
+                  <IconReview size={TR_ICON.meta} className="fill-current text-amber-500" aria-hidden />
                   {pin.rating.toFixed(1)}
                   {typeof pin.reviewCount === 'number' && pin.reviewCount > 0 && (
                     <span className="text-[var(--tr-ink-3)]">·{compactCount(pin.reviewCount)}</span>
                   )}
                 </span>
               )}
-              <Navigation size={14} className="shrink-0 text-[var(--tr-accent-deep)]" aria-hidden />
+              <IconFollow size={TR_ICON.meta} className="shrink-0 text-[var(--tr-accent-deep)]" aria-hidden />
             </a>
           </li>
         ))}

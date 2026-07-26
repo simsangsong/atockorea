@@ -10,7 +10,7 @@
  * "Photo / File / Voice" placeholder per viewer.
  */
 
-import { IconClose, IconFile, IconListen, IconPhotoNote } from '@/components/tour-mode/icons';
+import { IconClose, IconFile, IconListen, IconPhotoNote, TR_ICON } from '@/components/tour-mode/icons';
 import type { ReplySnapshot } from '@/lib/tour-room/reply';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
@@ -68,7 +68,7 @@ export default function ReplyPreview({
         <div className="min-w-0 flex-1 border-l-2 border-[var(--tr-accent)] pl-2.5">
           <p className="tr-meta font-bold text-[var(--tr-accent-deep)]">{roleLabel}</p>
           <p className="tr-label flex items-center gap-1 truncate text-[var(--tr-ink-2)]">
-            {KindIcon && <KindIcon size={12} aria-hidden />}
+            {KindIcon && <KindIcon size={TR_ICON.meta} aria-hidden />}
             {body}
           </p>
         </div>
@@ -80,7 +80,7 @@ export default function ReplyPreview({
             className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-[var(--tr-ink-2)]"
             data-testid="reply-cancel"
           >
-            <IconClose size={16} />
+            <IconClose size={TR_ICON.chip} />
           </button>
         )}
       </div>
@@ -97,7 +97,7 @@ export default function ReplyPreview({
     >
       <p className="tr-meta font-bold text-[var(--tr-accent-deep)]">{roleLabel}</p>
       <p className="tr-meta flex items-center gap-1 truncate text-[var(--tr-ink-3)]">
-        {KindIcon && <KindIcon size={11} aria-hidden />}
+        {KindIcon && <KindIcon size={TR_ICON.meta} aria-hidden />}
         {body}
       </p>
     </div>

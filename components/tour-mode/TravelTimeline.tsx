@@ -26,6 +26,7 @@ import {
   IconPhotoNote,
   IconChevronRight,
   IconDone,
+  TR_ICON,
 } from '@/components/tour-mode/icons';
 import {
   buildTravelTimeline,
@@ -107,7 +108,7 @@ function RewardBlock({
       return (
         <div className="tr-card mt-3 bg-[var(--tr-accent-soft)] px-4 py-3" data-testid="timeline-reward">
           <p className="tr-title flex items-center gap-1.5 text-[var(--tr-accent-deep)]">
-            <IconDone size={16} aria-hidden />
+            <IconDone size={TR_ICON.chip} aria-hidden />
             {copy.rewardDoneTitle}
           </p>
           <p className="tr-card-text mt-1 text-[var(--tr-ink-2)]">
@@ -134,7 +135,7 @@ function RewardBlock({
     return (
       <div className="tr-card mt-3 bg-[var(--tr-surface-2)] px-4 py-3" data-testid="timeline-reward-progress">
         <p className="tr-title flex items-center gap-1.5 text-[var(--tr-ink)]">
-          <IconReward size={16} className="text-[var(--tr-accent-deep)]" aria-hidden />
+          <IconReward size={TR_ICON.chip} className="text-[var(--tr-accent-deep)]" aria-hidden />
           {copy.rewardProgressTitle}
         </p>
         <p className="tr-card-text mt-1 text-[var(--tr-ink-2)]">{copy.rewardProgressBody}</p>
@@ -146,7 +147,7 @@ function RewardBlock({
   return (
     <div className="tr-card mt-3 bg-[var(--tr-accent-soft)] px-4 py-3" data-testid="timeline-reward-ready">
       <p className="tr-title flex items-center gap-1.5 text-[var(--tr-accent-deep)]">
-        <IconReward size={16} aria-hidden />
+        <IconReward size={TR_ICON.chip} aria-hidden />
         {copy.rewardReadyTitle}
       </p>
       <p className="tr-card-text mt-1 text-[var(--tr-ink-2)]">{copy.rewardReadyBody}</p>
@@ -155,9 +156,9 @@ function RewardBlock({
         onClick={() => void claim()}
         disabled={state.phase === 'loading'}
         data-testid="timeline-claim"
-        className="tr-label mt-2.5 inline-flex min-h-[40px] items-center gap-1.5 rounded-full bg-[var(--tr-accent)] px-4 font-semibold text-[var(--tr-bubble-me-ink)] disabled:opacity-50"
+        className="tr-label mt-2.5 inline-flex min-h-[44px] items-center gap-1.5 rounded-full bg-[var(--tr-accent)] px-4 font-semibold text-[var(--tr-bubble-me-ink)] disabled:opacity-50"
       >
-        <IconReward size={14} aria-hidden />
+        <IconReward size={TR_ICON.meta} aria-hidden />
         {state.phase === 'loading' ? copy.claiming : copy.claim}
       </button>
     </div>
@@ -189,12 +190,12 @@ function TimelineBody({
               <ol className="mt-2">
                 {data.stops.map((stop, index) => (
                   <li key={stop.id} className="relative flex gap-3">
-                    <div className="tr-meta w-11 shrink-0 pt-1 text-right tabular-nums text-[var(--tr-ink-3)]">
+                    <div className="tr-meta tr-num w-11 shrink-0 pt-1 text-right text-[var(--tr-ink-3)]">
                       {formatTime(stop.at)}
                     </div>
                     <div className="flex flex-col items-center">
                       <span className="mt-1 flex h-5 w-5 items-center justify-center rounded-full bg-[var(--tr-accent-soft)] text-[var(--tr-accent-deep)]">
-                        <IconArrived size={12} aria-hidden />
+                        <IconArrived size={TR_ICON.meta} aria-hidden />
                       </span>
                       {index < data.stops.length - 1 && (
                         <span className="w-px flex-1 bg-[var(--tr-hairline)]" aria-hidden />
@@ -212,7 +213,7 @@ function TimelineBody({
           {data.photos.length > 0 && (
             <section className="mt-4">
               <p className="tr-label flex items-center gap-1.5 font-semibold text-[var(--tr-ink-2)]">
-                <IconPhotoNote size={13} aria-hidden />
+                <IconPhotoNote size={TR_ICON.meta} aria-hidden />
                 {copy.photosHeading}
               </p>
               <div className="mt-2 grid grid-cols-3 gap-1.5">
@@ -240,7 +241,7 @@ function TimelineBody({
         data-testid="timeline-review"
         className="tr-label mt-3 flex min-h-[44px] items-center justify-center gap-1.5 rounded-full border border-[var(--tr-hairline)] font-semibold text-[var(--tr-ink)]"
       >
-        <IconReview size={15} className="text-[var(--tr-accent-deep)]" aria-hidden />
+        <IconReview size={TR_ICON.chip} className="text-[var(--tr-accent-deep)]" aria-hidden />
         {copy.reviewCta}
       </a>
       <p className="tr-meta mt-1.5 text-center text-[var(--tr-ink-3)]">{copy.reviewHint}</p>
@@ -280,7 +281,7 @@ export function TravelTimelineSheet({
       closeLabel={CLOSE_LABEL[locale]}
       title={
         <span className="flex items-center gap-2 text-[var(--tr-accent-deep)]">
-          <IconJourney size={18} aria-hidden />
+          <IconJourney size={TR_ICON.action} aria-hidden />
           {copy.title}
         </span>
       }
@@ -326,13 +327,13 @@ export default function TravelTimelineEntry({
         className="tr-card mb-2 flex w-full items-center gap-3 px-4 py-3 text-left"
       >
         <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[var(--tr-accent-soft)] text-[var(--tr-accent-deep)]">
-          <IconJourney size={18} aria-hidden />
+          <IconJourney size={TR_ICON.action} aria-hidden />
         </span>
         <span className="min-w-0 flex-1">
           <span className="tr-title block truncate text-[var(--tr-ink)]">{copy.title}</span>
           <span className="tr-meta block text-[var(--tr-ink-3)]">{copy.summary(data.stopCount, data.photoCount)}</span>
         </span>
-        <IconChevronRight size={18} className="shrink-0 text-[var(--tr-ink-3)]" aria-hidden />
+        <IconChevronRight size={TR_ICON.action} className="shrink-0 text-[var(--tr-ink-3)]" aria-hidden />
       </button>
 
       <TravelTimelineSheet

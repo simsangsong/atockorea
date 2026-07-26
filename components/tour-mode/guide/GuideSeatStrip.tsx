@@ -73,7 +73,7 @@ export default function GuideSeatStrip({
               key={chip.key}
               type="button"
               onClick={() => setOpenBookingId(chip.bookingId)}
-              className={`shrink-0 whitespace-nowrap rounded-full px-2.5 py-1 text-xs font-semibold ${tone}`}
+              className={`tr-label shrink-0 whitespace-nowrap rounded-full px-2.5 py-1 font-semibold ${tone}`}
               data-testid={chip.unseated ? 'seat-chip-unseated' : 'seat-chip'}
             >
               {chip.seatNumber != null ? `${chip.seatNumber}번 ` : '－ '}

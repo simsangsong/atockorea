@@ -9,7 +9,7 @@
  */
 
 import { useState } from 'react';
-import { ExternalLink, MapPin } from 'lucide-react';
+import { IconArrived, IconOpenExternal, TR_ICON, TR_STROKE } from '@/components/tour-mode/icons';
 import { staticMapUrl } from '@/lib/tour-room/locationMessage';
 
 export default function LocationPreview({
@@ -43,15 +43,15 @@ export default function LocationPreview({
         />
       ) : (
         <div className="flex h-24 w-full items-center justify-center bg-[var(--tr-surface-2)] text-[var(--tr-ink-3)]">
-          <MapPin size={30} strokeWidth={1.75} aria-hidden />
+          <IconArrived size={TR_ICON.tile} strokeWidth={TR_STROKE.default} aria-hidden />
         </div>
       )}
       <div className="flex items-center gap-2 px-3 py-2">
-        <MapPin size={15} className="shrink-0 text-[var(--tr-accent-deep)]" aria-hidden />
+        <IconArrived size={TR_ICON.chip} className="shrink-0 text-[var(--tr-accent-deep)]" aria-hidden />
         <span className="tr-card-text min-w-0 flex-1 truncate text-[var(--tr-bubble-in-ink)]">
           {label || '위치 보기'}
         </span>
-        <ExternalLink size={14} className="shrink-0 text-[var(--tr-ink-3)]" aria-hidden />
+        <IconOpenExternal size={TR_ICON.meta} className="shrink-0 text-[var(--tr-ink-3)]" aria-hidden />
       </div>
     </a>
   );

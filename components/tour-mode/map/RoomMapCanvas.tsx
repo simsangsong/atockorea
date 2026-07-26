@@ -15,7 +15,8 @@
 
 import { useCallback, useEffect, useMemo, useRef } from 'react';
 import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
-import { Crosshair, Maximize2 } from 'lucide-react';
+import { IconRecenter, IconFitAll } from '@/components/tour-mode/icons';
+import { TR_ICON, TR_STROKE } from '@/components/tour-mode/icons';
 import {
   GOOGLE_MAPS_LOADER_ID,
   GOOGLE_MAPS_LOADER_VERSION,
@@ -170,7 +171,7 @@ export default function RoomMapCanvas({
           style={{ boxShadow: 'var(--tr-shadow-overlay)' }}
           data-testid="map-recenter-me"
         >
-          <Crosshair size={20} strokeWidth={2} aria-hidden />
+          <IconRecenter size={TR_ICON.action} strokeWidth={TR_STROKE.default} aria-hidden />
         </button>
         <button
           type="button"
@@ -180,7 +181,7 @@ export default function RoomMapCanvas({
           style={{ boxShadow: 'var(--tr-shadow-overlay)' }}
           data-testid="map-fit-all"
         >
-          <Maximize2 size={18} strokeWidth={2} aria-hidden />
+          <IconFitAll size={TR_ICON.action} strokeWidth={TR_STROKE.default} aria-hidden />
         </button>
       </div>
       <GoogleMap

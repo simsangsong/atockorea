@@ -12,7 +12,7 @@
  */
 
 import { useEffect, useState } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { IconScrollDown, TR_ICON, TR_STROKE } from '@/components/tour-mode/icons';
 import Sheet from '@/components/tour-mode/Sheet';
 import {
   MANUAL_CTA,
@@ -28,7 +28,7 @@ function SectionList({ kind, locale }: { kind: ManualKind; locale: RoomLocale })
     <div className="flex flex-col gap-3">
       {manualSections(kind).map((section) => (
         <div key={section.key} className="flex items-start gap-3">
-          <span aria-hidden className="mt-0.5 text-xl leading-none">
+          <span aria-hidden className="tr-display mt-0.5 leading-none">
             {section.emoji}
           </span>
           <div className="min-w-0">
@@ -94,9 +94,9 @@ export default function AppManual({
           <h3 className="tr-card-text min-w-0 flex-1 font-semibold text-[var(--tr-ink)]">
             📖 {MANUAL_TITLE[locale]}
           </h3>
-          <ChevronDown
-            size={18}
-            strokeWidth={2.25}
+          <IconScrollDown
+            size={TR_ICON.action}
+            strokeWidth={TR_STROKE.default}
             aria-hidden
             className={`shrink-0 text-[var(--tr-ink-3)] transition-transform duration-200 ${
               expanded ? 'rotate-180' : ''
@@ -125,7 +125,7 @@ export default function AppManual({
         <button
           type="button"
           onClick={dismiss}
-          className="mt-4 w-full rounded-2xl bg-[var(--tr-accent)] py-3.5 text-base font-bold text-[var(--tr-bubble-me-ink)]"
+          className="tr-title mt-4 w-full rounded-2xl bg-[var(--tr-accent)] py-3.5 font-bold text-[var(--tr-bubble-me-ink)]"
           data-testid="app-manual-dismiss"
         >
           {MANUAL_CTA[locale]}

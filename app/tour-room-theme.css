@@ -7,8 +7,13 @@
  * (class-based Tailwind dark mode, T1.12).
  *
  * Binding decisions this file encodes:
- *  - U2-D1 my bubble = neutral ink + clean surface text in BOTH themes,
- *          replacing saturated chat-app colors with a restrained concierge tone.
+ *  - U4-D8 (docs/smartapp-ui-premium-upgrade-master-plan-2026-07-26.md §E-3,
+ *          user-picked option A) signature = DEEP PINE. My bubble and primary
+ *          CTAs share one pine family; the luminance architecture is kept from
+ *          U2-D1 (dark-on-light in light theme, light-on-dark in dark theme),
+ *          only the hue carries the brand now. --tr-accent-deep stays neutral
+ *          ink on purpose — it is the strong-emphasis TEXT token (75 call
+ *          sites), and green body text is exactly the cheapness we're removing.
  *  - U-D6  the typography scale below is the only text sizing allowed in
  *          tour-room components — no new arbitrary px values.
  *  - U-D9  dark mode is a 3-layer system (canvas / surface / bubble), not a
@@ -24,10 +29,9 @@
   --tr-surface-2: #ecefee;
   --tr-hairline: rgba(37, 42, 44, 0.08);
 
-  /* Bubbles */
-  --tr-bubble-me: #252a2c;
-  --tr-bubble-me-ink: #fcfcfb;
-  --tr-bubble-me-accent: #252a2c;
+  /* Bubbles (U4-D8: mine = deep pine, the app's signature) */
+  --tr-bubble-me: #2e5e4e;
+  --tr-bubble-me-ink: #f4f8f6;
   --tr-bubble-in: #fcfcfb;
   --tr-bubble-in-ink: #1a1d21;
   --tr-bubble-system: rgba(23, 27, 32, 0.06);
@@ -38,10 +42,11 @@
   --tr-ink-2: #565d66;
   --tr-ink-3: #6e767f;
 
-  /* Role colors: neutral ink for primary actions, pale grey for soft states. */
-  --tr-accent: #252a2c;
+  /* Role colors: pine for primary actions (pairs with --tr-bubble-me-ink),
+   * neutral ink for emphasis text, pine-washed soft for selected states. */
+  --tr-accent: #2e5e4e;
   --tr-accent-deep: #111315;
-  --tr-accent-soft: #ecefee;
+  --tr-accent-soft: #e4eee9;
   --tr-safe: #3f6b58;
   --tr-safe-soft: #dce9e2;
   --tr-danger: #dc2626;
@@ -67,7 +72,7 @@
   --tr-chip-ink: #fcfcfb;
   --tr-chip-shadow: rgba(37, 42, 44, 0.2);
   --tr-chip-grad: linear-gradient(140deg, #3a4144 0%, #181c1e 100%);
-  --tr-chip-grad-accent: linear-gradient(140deg, #667985 0%, #252a2c 100%);
+  --tr-chip-grad-accent: linear-gradient(140deg, #4e8a74 0%, #2e5e4e 100%);
   --tr-chip-grad-danger: linear-gradient(140deg, #ef4d4d 0%, #b91c1c 100%);
 }
 
@@ -82,9 +87,11 @@
   --tr-surface-2: #252929;
   --tr-hairline: rgba(244, 245, 242, 0.1);
 
-  --tr-bubble-me: #f4f5f2;
-  --tr-bubble-me-ink: #151818;
-  --tr-bubble-me-accent: #f4f5f2;
+  /* Dark keeps the light-on-dark CTA/bubble architecture — the pine simply
+   * rides it as a soft sage (Kakao dark keeps yellow, LINE dark keeps green:
+   * the signature色 survives the theme, only its luminance flips). */
+  --tr-bubble-me: #8fbfa9;
+  --tr-bubble-me-ink: #10201a;
   --tr-bubble-in: #252929;
   --tr-bubble-in-ink: #e8eaed;
   --tr-bubble-system: rgba(232, 234, 237, 0.08);
@@ -94,9 +101,9 @@
   --tr-ink-2: #a6adb6;
   --tr-ink-3: #7d858f;
 
-  --tr-accent: #f4f5f2;
+  --tr-accent: #8fbfa9;
   --tr-accent-deep: #ffffff;
-  --tr-accent-soft: rgba(244, 245, 242, 0.12);
+  --tr-accent-soft: rgba(143, 191, 169, 0.16);
   --tr-safe: #5f9c85;
   --tr-safe-soft: rgba(63, 107, 88, 0.22);
   --tr-danger: #f87171;
@@ -111,7 +118,7 @@
   --tr-chip-ink: #f4f5f2;
   --tr-chip-shadow: rgba(0, 0, 0, 0.4);
   --tr-chip-grad: linear-gradient(135deg, #434b4e 0%, #202526 100%);
-  --tr-chip-grad-accent: linear-gradient(135deg, #91a3aa 0%, #31393c 100%);
+  --tr-chip-grad-accent: linear-gradient(135deg, #6fae97 0%, #3e6b5a 100%);
   --tr-chip-grad-danger: linear-gradient(135deg, #ef6b6b 0%, #b91c1c 100%);
 }
 
@@ -157,6 +164,16 @@
   line-height: 1.35;
   font-weight: 500;
 }
+/* U4-D7: hero/section display size — staff console heroes, sheet titles. */
+.tr-display {
+  font-size: calc(20px * var(--tr-font-scale, 1));
+  line-height: 1.3;
+  font-weight: 700;
+}
+/* U4-D7: counters/prices/times align in columns. Pairs with any size class. */
+.tr-num {
+  font-variant-numeric: tabular-nums;
+}
 
 /* CJK needs a touch more leading to breathe (§J). RoomShell stamps the
  * active room locale on the root as data-locale. */
@@ -167,6 +184,23 @@
 .tr-root[data-locale='ja'] .tr-card-text,
 .tr-root[data-locale='zh'] .tr-card-text {
   line-height: 1.55;
+}
+/* Korean reads dense at 1.45 too — a half-step, not the full ja/zh 1.55
+ * (hangul has word spaces; it needs air, not scaffolding). U4-D14. */
+.tr-root[data-locale='ko'] .tr-body,
+.tr-root[data-locale='ko'] .tr-body-lg,
+.tr-root[data-locale='ko'] .tr-card-text {
+  line-height: 1.5;
+}
+
+/* U4-D14 — CJK safety net (CLAUDE.md invariant: CJK must never break
+ * per-character). Mirrors the admin-root rule in globals.css. keep-all only:
+ * words still wrap at word boundaries, they just never shatter mid-word.
+ * Chrome that must stay on ONE line additionally opts into .text-cjk-safe. */
+.tr-root :is(button, label, summary, th, dt, [role='tab']),
+.tr-plan-root :is(button, label, summary, th, dt, [role='tab']) {
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 /* ---- Shared primitives ----------------------------------------------- */
@@ -194,13 +228,13 @@
   --tr-ink: #252a2c;
   --tr-ink-2: #626b6f;
   --tr-ink-3: #7b8589;
-  --tr-accent: #252a2c;
+  --tr-accent: #2e5e4e;
   --tr-accent-deep: #111315;
-  --tr-accent-soft: #ecefee;
+  --tr-accent-soft: #e4eee9;
   --tr-safe: #667985;
   --tr-danger: #b55252;
   --tr-danger-soft: rgba(181, 82, 82, 0.14);
-  --tr-bubble-me-ink: #fcfcfb;
+  --tr-bubble-me-ink: #f4f8f6;
   --tr-radius-card: 18px;
   --tr-radius-input: 16px;
   --tr-plan-hero: #252a2c;
@@ -209,7 +243,7 @@
   --tr-plan-secondary: #7f8a90;
   --tr-plan-shadow-soft: 0 1px 2px rgba(37, 42, 44, 0.04), 0 8px 24px rgba(37, 42, 44, 0.06);
   --tr-plan-shadow-card: 0 1px 2px rgba(37, 42, 44, 0.04), 0 14px 34px rgba(37, 42, 44, 0.08);
-  --tr-plan-shadow-button: 0 8px 20px rgba(78, 96, 107, 0.2);
+  --tr-plan-shadow-button: 0 8px 20px rgba(46, 94, 78, 0.22);
 }
 
 .dark .tr-plan-root {
@@ -220,13 +254,13 @@
   --tr-ink: #f4f5f2;
   --tr-ink-2: #b9c0c2;
   --tr-ink-3: #899295;
-  --tr-accent: #f4f5f2;
+  --tr-accent: #8fbfa9;
   --tr-accent-deep: #ffffff;
-  --tr-accent-soft: rgba(145, 163, 170, 0.16);
+  --tr-accent-soft: rgba(143, 191, 169, 0.16);
   --tr-safe: #91a3aa;
   --tr-danger: #d27a7a;
   --tr-danger-soft: rgba(210, 122, 122, 0.18);
-  --tr-bubble-me-ink: #151818;
+  --tr-bubble-me-ink: #10201a;
   --tr-plan-hero: #101313;
   --tr-plan-hero-ink: #f4f5f2;
   --tr-plan-hero-muted: #a9b4b7;
@@ -319,7 +353,6 @@
 .tr-plan-root {
   --tr-dur-fast: 120ms;
   --tr-dur-base: 200ms;
-  --tr-dur-slow: 320ms;
   --tr-ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
   --tr-ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
@@ -347,9 +380,6 @@
     0 1px 2px rgba(0, 0, 0, 0.08),
     0 2px 6px var(--tr-chip-shadow);
   filter: brightness(0.95);
-}
-.tr-btn-physical--accent {
-  background: var(--tr-chip-grad-accent);
 }
 .tr-btn-physical--danger {
   background: var(--tr-chip-grad-danger);
@@ -394,13 +424,6 @@
 }
 .tr-btn-flat:active {
   transform: translateY(1px) scale(0.97);
-}
-
-.tr-btn-quiet {
-  transition: opacity var(--tr-dur-fast) var(--tr-ease-out);
-}
-.tr-btn-quiet:active {
-  opacity: 0.6;
 }
 
 /* Generic press for chips/tiles that keep their own background. */
@@ -509,7 +532,8 @@
   .tr-btn-raised,
   .tr-btn-flat,
   .tr-press,
-  .tr-knob {
+  .tr-knob,
+  .tr-plan-course-card {
     transition: none;
   }
 }

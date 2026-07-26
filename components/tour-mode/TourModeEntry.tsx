@@ -13,7 +13,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { detectEntryLocale, ENTRY_COPY } from '@/components/tour-mode/entryCopy';
-import { IconChevronRight, IconTabMap } from '@/components/tour-mode/icons';
+import { IconChevronRight, IconTabMap, TR_ICON } from '@/components/tour-mode/icons';
 import { isStandaloneDisplayMode } from '@/hooks/useStandaloneDisplayMode';
 
 interface TourModeBooking {
@@ -123,7 +123,7 @@ export default function TourModeEntry() {
   return (
     <div className="tr-root min-h-dvh bg-[var(--tr-canvas)]">
       <div className="mx-auto w-full max-w-md px-4 pb-16 pt-10">
-        <h1 className="text-[24px] font-semibold leading-snug text-[var(--tr-ink)]">{copy.title}</h1>
+        <h1 className="tr-display font-semibold leading-snug text-[var(--tr-ink)]">{copy.title}</h1>
         <p className="tr-body mt-2 text-[var(--tr-ink-2)]">{copy.subtitle}</p>
         <p className="tr-label mt-3 rounded-xl bg-[var(--tr-accent-soft)] px-3 py-2 leading-relaxed text-[var(--tr-accent-deep)]">
           {copy.linkHint}
@@ -165,7 +165,7 @@ export default function TourModeEntry() {
                       />
                     ) : (
                       <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[var(--tr-surface-2)] text-[var(--tr-ink-3)]">
-                        <IconTabMap size={20} aria-hidden />
+                        <IconTabMap size={TR_ICON.action} aria-hidden />
                       </span>
                     )}
                     <span className="min-w-0 flex-1">
@@ -176,7 +176,7 @@ export default function TourModeEntry() {
                         {[booking.tour_date, booking.tour_time, booking.tours?.city].filter(Boolean).join(' · ')}
                       </span>
                     </span>
-                    <IconChevronRight size={18} className="shrink-0 text-[var(--tr-ink-3)]" aria-hidden />
+                    <IconChevronRight size={TR_ICON.action} className="shrink-0 text-[var(--tr-ink-3)]" aria-hidden />
                   </button>
                 </li>
               ))}

@@ -7,16 +7,29 @@
  */
 
 import { useState } from 'react';
-import { MapPin, MessageCircle, Phone, StickyNote, X } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
+import { IconNote } from '@/components/tour-mode/icons';
+import {
+  IconAccessible,
+  IconArrived,
+  IconClose,
+  IconDiet,
+  IconInfant,
+  IconPhone,
+  IconTabChat,
+  IconWarn,
+  TR_ICON,
+} from '../icons';
 import { GUEST_NOTE_MAX, noteAttribution, type GuestNote } from '@/lib/ops/seating/guestNotes';
 import { normalizeWaDigits } from '@/lib/ops/whatsapp/wa-deep-link';
 import type { RosterRow, RosterRowStatus } from '@/lib/ops/seating/dashboard';
 
-const HIGHLIGHT_LABEL: Record<string, string> = {
-  allergy: '⚠ 알레르기',
-  dietary: '🥗 식단',
-  mobility: '♿ 이동보조',
-  infant: '👶 유아 동반',
+/** U-D3 (§N) — needs badges carry a lucide glyph, not an emoji, in chrome. */
+const HIGHLIGHT_META: Record<string, { Icon: LucideIcon; label: string }> = {
+  allergy: { Icon: IconWarn, label: '알레르기' },
+  dietary: { Icon: IconDiet, label: '식단' },
+  mobility: { Icon: IconAccessible, label: '이동보조' },
+  infant: { Icon: IconInfant, label: '유아 동반' },
 };
 
 const CHANNEL_LABEL: Record<string, string> = {
@@ -79,8 +92,8 @@ export default function GuideGuestCard({
     <div className="rounded-2xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] p-4" data-testid="guest-card">
       <div className="flex items-start justify-between gap-2">
         <div className="min-w-0">
-          <p className="truncate text-base font-bold text-[var(--tr-ink)]">{row.name}</p>
-          <p className="mt-0.5 text-xs text-[var(--tr-ink-3)]">
+          <p className="tr-title truncate font-bold text-[var(--tr-ink)]">{row.name}</p>
+          <p className="tr-meta mt-0.5 text-[var(--tr-ink-3)]">
             {row.partySize}명{row.preferredLanguage ? ` · ${row.preferredLanguage}` : ''}
             {channel ? ` · ${channel}` : ''}
           </p>
@@ -91,30 +104,35 @@ export default function GuideGuestCard({
           aria-label="닫기"
           className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-[var(--tr-ink-3)] active:bg-[var(--tr-surface-2)]"
         >
-          <X size={16} aria-hidden />
+          <IconClose size={TR_ICON.chip} aria-hidden />
         </button>
       </div>
 
       <div className="mt-2 flex flex-wrap items-center gap-1.5">
-        <span className={`rounded-full px-2 py-0.5 text-[11px] font-bold ${meta.cls}`}>{meta.label}</span>
+        <span className={`tr-meta text-cjk-safe rounded-full px-2 py-0.5 font-bold ${meta.cls}`}>{meta.label}</span>
         {row.seatNumbers.length > 0 && (
-          <span className="rounded-full bg-[var(--tr-surface-2)] px-2 py-0.5 text-[11px] font-semibold text-[var(--tr-ink-2)] tabular-nums">
+          <span className="tr-meta text-cjk-safe rounded-full bg-[var(--tr-surface-2)] px-2 py-0.5 font-semibold text-[var(--tr-ink-2)] tabular-nums">
             좌석 {row.seatNumbers.join(', ')}
           </span>
         )}
-        {row.highlights.map((h) => (
-          <span
-            key={h}
-            className="rounded-full bg-[var(--tr-danger-soft)] px-2 py-0.5 text-[11px] font-semibold text-[var(--tr-danger)]"
-          >
-            {HIGHLIGHT_LABEL[h] ?? h}
-          </span>
-        ))}
+        {row.highlights.map((h) => {
+          const hl = HIGHLIGHT_META[h];
+          const HlIcon = hl?.Icon;
+          return (
+            <span
+              key={h}
+              className="tr-meta text-cjk-safe inline-flex items-center gap-1 rounded-full bg-[var(--tr-danger-soft)] px-2 py-0.5 font-semibold text-[var(--tr-danger)]"
+            >
+              {HlIcon ? <HlIcon size={TR_ICON.meta} className="shrink-0" aria-hidden /> : null}
+              {hl?.label ?? h}
+            </span>
+          );
+        })}
       </div>
 
       {row.pickupName && (
-        <p className="mt-2 flex items-center gap-1.5 text-xs text-[var(--tr-ink-2)]">
-          <MapPin size={13} className="shrink-0" aria-hidden />
+        <p className="tr-meta mt-2 flex items-center gap-1.5 text-[var(--tr-ink-2)]">
+          <IconArrived size={TR_ICON.meta} className="shrink-0" aria-hidden />
           <span className="truncate">
             {row.pickupTime ? `${row.pickupTime} · ` : ''}
             {row.pickupName}
@@ -123,7 +141,7 @@ export default function GuideGuestCard({
       )}
 
       {row.specialRequests && (
-        <p className="mt-2 rounded-lg bg-[var(--tr-surface-2)] px-3 py-2 text-xs leading-relaxed text-[var(--tr-ink-2)]">
+        <p className="tr-card-text mt-2 rounded-lg bg-[var(--tr-surface-2)] px-3 py-2 leading-relaxed text-[var(--tr-ink-2)]">
           {row.specialRequests}
         </p>
       )}
@@ -132,8 +150,8 @@ export default function GuideGuestCard({
           시각적으로도 분리해 둔다. 섞여 보이면 알레르기 표시가 누구 말인지
           모호해지고, 그 표시를 믿을 수 없게 된다. */}
       <div className="mt-3 rounded-xl border border-dashed border-[var(--tr-hairline)] p-2.5" data-testid="guest-note">
-        <p className="flex items-center gap-1.5 text-[11px] font-semibold text-[var(--tr-ink-3)]">
-          <StickyNote size={12} aria-hidden />
+        <p className="tr-meta flex items-center gap-1.5 font-semibold text-[var(--tr-ink-3)]">
+          <IconNote size={TR_ICON.meta} aria-hidden />
           운영 메모 <span className="font-normal">(손님에게 보이지 않음)</span>
         </p>
         {editing && onSaveNote ? (
@@ -145,7 +163,7 @@ export default function GuideGuestCard({
               rows={3}
               autoFocus
               placeholder="예: 무릎이 안 좋으셔서 계단 코스는 피해주세요"
-              className="w-full rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2.5 py-2 text-xs text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)] focus:border-[var(--tr-accent)] focus:outline-none"
+              className="tr-card-text w-full rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2.5 py-2 text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)] focus:border-[var(--tr-accent)] focus:outline-none"
               data-testid="guest-note-input"
             />
             <div className="mt-1.5 flex justify-end gap-2">
@@ -155,7 +173,7 @@ export default function GuideGuestCard({
                   setDraft(note?.note ?? '');
                   setEditing(false);
                 }}
-                className="min-h-[36px] rounded-lg px-3 text-xs font-medium text-[var(--tr-ink-2)]"
+                className="tr-label min-h-[44px] rounded-lg px-3 font-medium text-[var(--tr-ink-2)]"
               >
                 취소
               </button>
@@ -172,7 +190,7 @@ export default function GuideGuestCard({
                     setSaving(false);
                   }
                 }}
-                className="min-h-[36px] rounded-lg bg-[var(--tr-accent)] px-3 text-xs font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
+                className="tr-label min-h-[44px] rounded-lg bg-[var(--tr-accent)] px-3 font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
                 data-testid="guest-note-save"
               >
                 저장
@@ -188,14 +206,14 @@ export default function GuideGuestCard({
               setEditing(true);
             }}
             disabled={!onSaveNote}
-            className="mt-1 w-full text-left text-xs leading-relaxed text-[var(--tr-ink-2)] disabled:cursor-default"
+            className="tr-card-text mt-1 w-full text-left leading-relaxed text-[var(--tr-ink-2)] disabled:cursor-default"
             data-testid="guest-note-view"
           >
             {note?.note ? (
               <>
                 <span className="whitespace-pre-wrap">{note.note}</span>
                 {/* 출처를 지우지 않는다 — 메모는 사실이 아니라 누군가의 관찰이다. */}
-                <span className="mt-1 block text-[10px] text-[var(--tr-ink-3)]">{noteAttribution(note)}</span>
+                <span className="tr-meta mt-1 block text-[var(--tr-ink-3)]">{noteAttribution(note)}</span>
               </>
             ) : (
               <span className="text-[var(--tr-ink-3)]">{onSaveNote ? '탭해서 메모 추가' : '메모 없음'}</span>
@@ -208,10 +226,10 @@ export default function GuideGuestCard({
         <button
           type="button"
           onClick={() => onMessage(row.bookingId)}
-          className="mt-3 flex w-full items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-accent)] px-3 py-2.5 text-xs font-bold text-[var(--tr-bubble-me-ink)] active:scale-[0.99]"
+          className="tr-label text-cjk-safe mt-3 flex w-full items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-accent)] px-3 py-2.5 font-bold text-[var(--tr-bubble-me-ink)] active:scale-[0.99]"
           data-testid="guest-message"
         >
-          <MessageCircle size={14} aria-hidden />
+          <IconTabChat size={TR_ICON.meta} aria-hidden />
           이 손님에게만 메시지
         </button>
       )}
@@ -223,20 +241,20 @@ export default function GuideGuestCard({
               href={`https://wa.me/${waDigits}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-1 items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-safe)] px-3 py-2.5 text-xs font-bold text-white active:scale-[0.99]"
+              className="tr-label flex flex-1 items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-safe)] px-3 py-2.5 font-bold text-white active:scale-[0.99]"
               data-testid="guest-wa"
             >
-              <MessageCircle size={14} aria-hidden />
+              <IconTabChat size={TR_ICON.meta} aria-hidden />
               WhatsApp
             </a>
           )}
           {row.contactPhone && (
             <a
               href={`tel:${row.contactPhone}`}
-              className="flex flex-1 items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-surface-2)] px-3 py-2.5 text-xs font-bold text-[var(--tr-ink)] active:scale-[0.99]"
+              className="tr-label flex flex-1 items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-surface-2)] px-3 py-2.5 font-bold text-[var(--tr-ink)] active:scale-[0.99]"
               data-testid="guest-tel"
             >
-              <Phone size={14} aria-hidden />
+              <IconPhone size={TR_ICON.meta} aria-hidden />
               전화
             </a>
           )}

@@ -11,7 +11,7 @@
  */
 
 import { CONCIERGE_COPY, type ConciergeMapCard } from '@/lib/tour-room/concierge';
-import { IconConcierge } from '@/components/tour-mode/icons';
+import { IconConcierge, TR_ICON, TR_STROKE } from '@/components/tour-mode/icons';
 import FacilityMapCard from '@/components/tour-mode/FacilityMapCard';
 import DiningCard from '@/components/tour-mode/DiningCard';
 import type { DiningCardMeta } from '@/lib/ops/dining/card';
@@ -69,7 +69,7 @@ export default function ConciergeInlineAnswer({
           className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]"
           aria-hidden
         >
-          <IconConcierge size={13} strokeWidth={2.25} />
+          <IconConcierge size={TR_ICON.meta} strokeWidth={TR_STROKE.small} />
         </span>
         <div className="min-w-0 flex-1">
           <p className="tr-meta font-semibold text-[var(--tr-accent-deep)]">{copy.aiLabel}</p>

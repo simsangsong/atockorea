@@ -39,6 +39,8 @@ import {
   IconPaperclip,
   IconPlus,
   IconSend,
+  TR_ICON,
+  TR_STROKE,
 } from '@/components/tour-mode/icons';
 import ActionGrid, { type ActionGridItem } from '@/components/tour-mode/ActionGrid';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
@@ -542,7 +544,7 @@ export default function Composer({
             <button
               type="button"
               onClick={closeVision}
-              className="tr-label min-h-[40px] rounded-full px-4 font-medium text-[var(--tr-ink-2)]"
+              className="tr-label min-h-[44px] rounded-full px-4 font-medium text-[var(--tr-ink-2)]"
             >
               {VISION_COPY[locale].close}
             </button>
@@ -551,10 +553,10 @@ export default function Composer({
                 type="button"
                 onClick={() => void askVision()}
                 disabled={visionState === 'asking'}
-                className="tr-label flex min-h-[40px] items-center gap-1.5 rounded-full bg-[var(--tr-accent)] px-4 font-semibold text-[var(--tr-bubble-me-ink)] disabled:opacity-50"
+                className="tr-label flex min-h-[44px] items-center gap-1.5 rounded-full bg-[var(--tr-accent)] px-4 font-semibold text-[var(--tr-bubble-me-ink)] disabled:opacity-50"
                 data-testid="vision-ask-button"
               >
-                <IconAsk size={14} aria-hidden />
+                <IconAsk size={TR_ICON.meta} strokeWidth={TR_STROKE.small} aria-hidden />
                 {visionState === 'asking' ? VISION_COPY[locale].asking : VISION_COPY[locale].ask}
               </button>
             )}
@@ -570,7 +572,7 @@ export default function Composer({
               <img src={attach.preview} alt="" className="h-16 w-16 shrink-0 rounded-xl object-cover" />
             ) : (
               <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]">
-                <IconFile size={26} strokeWidth={1.75} aria-hidden />
+                <IconFile size={TR_ICON.tile} strokeWidth={TR_STROKE.default} aria-hidden />
               </span>
             )}
             <div className="min-w-0 flex-1">
@@ -589,7 +591,7 @@ export default function Composer({
             <button
               type="button"
               onClick={closeAttach}
-              className="tr-label min-h-[40px] rounded-full px-4 font-medium text-[var(--tr-ink-2)]"
+              className="tr-label min-h-[44px] rounded-full px-4 font-medium text-[var(--tr-ink-2)]"
             >
               {ATTACH_COPY[locale].cancel}
             </button>
@@ -597,10 +599,10 @@ export default function Composer({
               type="button"
               onClick={() => void submitAttachment()}
               disabled={attachSending}
-              className="tr-label flex min-h-[40px] items-center gap-1.5 rounded-full bg-[var(--tr-accent)] px-4 font-semibold text-[var(--tr-bubble-me-ink)] disabled:opacity-50"
+              className="tr-label flex min-h-[44px] items-center gap-1.5 rounded-full bg-[var(--tr-accent)] px-4 font-semibold text-[var(--tr-bubble-me-ink)] disabled:opacity-50"
               data-testid="attach-send"
             >
-              <IconSend size={14} aria-hidden />
+              <IconSend size={TR_ICON.meta} strokeWidth={TR_STROKE.small} aria-hidden />
               {attachSending ? ATTACH_COPY[locale].sending : ATTACH_COPY[locale].send}
             </button>
           </div>
@@ -676,17 +678,17 @@ export default function Composer({
             <button
               type="button"
               onClick={cancelRecording}
-              className="tr-label min-h-[40px] shrink-0 rounded-full px-3 font-medium text-[var(--tr-ink-2)]"
+              className="tr-label min-h-[44px] shrink-0 rounded-full px-3 font-medium text-[var(--tr-ink-2)]"
             >
               {copy.cancel}
             </button>
             <button
               type="button"
               onClick={stopRecording}
-              className="tr-label flex min-h-[40px] shrink-0 items-center gap-1 rounded-full bg-[var(--tr-danger)] px-4 font-semibold text-white"
+              className="tr-label flex min-h-[44px] shrink-0 items-center gap-1 rounded-full bg-[var(--tr-danger)] px-4 font-semibold text-white"
               data-testid="recording-done"
             >
-              <IconDone size={14} aria-hidden />
+              <IconDone size={TR_ICON.meta} strokeWidth={TR_STROKE.small} aria-hidden />
               {copy.done}
             </button>
           </div>
@@ -744,8 +746,8 @@ export default function Composer({
                 data-testid="composer-actions-toggle"
               >
                 <IconPlus
-                  size={22}
-                  strokeWidth={2.4}
+                  size={TR_ICON.nav}
+                  strokeWidth={TR_STROKE.default}
                   className={`transition-transform duration-200 ${actionsOpen ? 'rotate-45' : ''}`}
                 />
               </button>
@@ -776,7 +778,7 @@ export default function Composer({
                 className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-[var(--tr-ink-2)] active:bg-[var(--tr-bubble-system)]"
                 data-testid="mic-button"
               >
-                <IconMic size={22} strokeWidth={2} />
+                <IconMic size={TR_ICON.nav} strokeWidth={TR_STROKE.default} />
               </button>
             )}
             {hasDraft && (
@@ -785,7 +787,7 @@ export default function Composer({
                 aria-label={(A11Y[locale] ?? A11Y.en).send}
                 className="tr-btn-raised flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]"
               >
-                <IconSend size={20} strokeWidth={2.5} />
+                <IconSend size={TR_ICON.action} strokeWidth={TR_STROKE.default} />
               </button>
             )}
           </form>

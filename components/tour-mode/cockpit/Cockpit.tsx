@@ -59,14 +59,10 @@ import {
   BusFront,
   ChevronLeft,
   FileText,
-  LayoutGrid,
   Map as MapIcon,
-  Moon,
-  Phone,
   Camera,
   Sparkles,
   SquareParking,
-  Sun,
   Sunrise,
   Timer,
   TriangleAlert,
@@ -74,10 +70,24 @@ import {
   Utensils,
   Wallet,
   Navigation,
-  Plus,
-  Paperclip,
   type LucideIcon,
 } from 'lucide-react';
+import {
+  IconDone,
+  IconDrawer,
+  IconExplore,
+  IconMic,
+  IconPaperclip,
+  IconPhone,
+  IconPlus,
+  IconReceipt,
+  IconThemeDark,
+  IconThemeLight,
+  IconTicket,
+  IconWalking,
+  TR_ICON,
+  TR_STROKE,
+} from '../icons';
 import {
   googleDirectionsUrl,
   kakaoNaviUrl,
@@ -1419,14 +1429,14 @@ export default function Cockpit({
           <button
             type="button"
             onClick={onExit}
-            className="flex h-8 shrink-0 items-center gap-1 rounded-full bg-[var(--tr-surface-2)] pl-2 pr-3 text-sm font-bold text-[var(--tr-ink)]"
+            className="tr-label flex h-8 shrink-0 items-center gap-1 rounded-full bg-[var(--tr-surface-2)] pl-2 pr-3 font-bold text-[var(--tr-ink)]"
             data-testid="cockpit-exit"
           >
-            <ChevronLeft size={16} strokeWidth={2.25} aria-hidden />
+            <ChevronLeft size={TR_ICON.chip} strokeWidth={TR_STROKE.default} aria-hidden />
             대시보드
           </button>
         ) : null}
-        <p className="min-w-0 flex-1 truncate text-sm text-[var(--tr-ink-2)]">
+        <p className="tr-card-text min-w-0 flex-1 truncate text-[var(--tr-ink-2)]">
           {tourTitle} · {connection === 'realtime' || connection === 'sse' ? '연결됨' : '연결 중…'}
         </p>
         {pushSupported() ? (
@@ -1434,12 +1444,12 @@ export default function Cockpit({
             type="button"
             onClick={() => void enablePush()}
             disabled={pushOn}
-            className={`flex h-8 items-center gap-1 rounded-full px-3 text-sm font-bold ${
+            className={`tr-label flex h-8 items-center gap-1 rounded-full px-3 font-bold ${
               pushOn ? 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]' : 'bg-[var(--tr-bubble-me)] text-[var(--tr-bubble-me-ink)]'
             }`}
             data-testid="driver-push-toggle"
           >
-            <Bell size={15} strokeWidth={2.25} aria-hidden />
+            <Bell size={TR_ICON.chip} strokeWidth={TR_STROKE.default} aria-hidden />
             {pushOn ? '켜짐' : '알림'}
           </button>
         ) : null}
@@ -1452,18 +1462,18 @@ export default function Cockpit({
           data-testid="cockpit-theme-toggle"
         >
           {cockpitDark ? (
-            <Sun size={15} strokeWidth={2.25} aria-hidden />
+            <IconThemeLight size={TR_ICON.chip} strokeWidth={TR_STROKE.default} aria-hidden />
           ) : (
-            <Moon size={15} strokeWidth={2.25} aria-hidden />
+            <IconThemeDark size={TR_ICON.chip} strokeWidth={TR_STROKE.default} aria-hidden />
           )}
         </button>
         {OPS_PHONE ? (
           <a
             href={`tel:${OPS_PHONE}`}
-            className="flex h-8 items-center gap-1 rounded-full bg-[var(--tr-surface-2)] px-3 text-sm font-bold text-[var(--tr-ink)]"
+            className="tr-label flex h-8 items-center gap-1 rounded-full bg-[var(--tr-surface-2)] px-3 font-bold text-[var(--tr-ink)]"
             data-testid="driver-ops-call"
           >
-            <Phone size={15} strokeWidth={2.25} aria-hidden />
+            <IconPhone size={TR_ICON.chip} strokeWidth={TR_STROKE.default} aria-hidden />
             운영팀
           </a>
         ) : null}
@@ -1471,8 +1481,8 @@ export default function Cockpit({
 
       {/* phase-aware destination + nav */}
       <div className="border-b border-[var(--tr-hairline)] px-4 py-2">
-        <p className="text-xs font-bold uppercase tracking-wide text-[var(--tr-ink-3)]">{destLabel}</p>
-        <p className="mt-0.5 truncate text-lg font-bold text-[var(--tr-ink)]">{destTitle}</p>
+        <p className="tr-label font-bold uppercase tracking-wide text-[var(--tr-ink-3)]">{destLabel}</p>
+        <p className="tr-body-lg mt-0.5 truncate font-bold text-[var(--tr-ink)]">{destTitle}</p>
         {navDest ? <NavRow dest={navDest} /> : null}
       </div>
 
@@ -1511,7 +1521,7 @@ export default function Cockpit({
             message.metadata?.signal_type === 'dropoff_change';
           return (
             <div key={message.id} className={mine ? 'self-end' : 'self-start'}>
-              {!mine && !system ? <p className="mb-1 text-sm font-semibold text-[var(--tr-ink-2)]">손님</p> : null}
+              {!mine && !system ? <p className="tr-name mb-1 text-[var(--tr-ink-2)]">손님</p> : null}
               {att ? (
                 <div className={`flex max-w-[85vw] flex-col gap-1.5 ${mine ? 'items-end' : 'items-start'}`}>
                   {att.kind === 'image' ? (
@@ -1533,11 +1543,11 @@ export default function Cockpit({
                       className="flex items-center gap-3 rounded-3xl bg-[var(--tr-surface-2)] px-5 py-4 text-[var(--tr-ink)]"
                       data-testid="cockpit-file"
                     >
-                      <FileText size={26} strokeWidth={1.75} aria-hidden />
+                      <FileText size={TR_ICON.tile} strokeWidth={TR_STROKE.default} aria-hidden />
                       <span className="min-w-0 flex-1">
-                        <span className="block truncate text-lg font-semibold">{att.name || '파일'}</span>
+                        <span className="tr-body-lg block truncate font-semibold">{att.name || '파일'}</span>
                         {formatAttachmentBytes(att.size) ? (
-                          <span className="block text-sm text-[var(--tr-ink-2)]">{formatAttachmentBytes(att.size)}</span>
+                          <span className="tr-card-text block text-[var(--tr-ink-2)]">{formatAttachmentBytes(att.size)}</span>
                         ) : null}
                       </span>
                     </a>
@@ -1558,7 +1568,7 @@ export default function Cockpit({
                     mine
                       ? 'max-w-[85vw] rounded-3xl rounded-br-md bg-[var(--tr-bubble-me)] px-5 py-4 text-xl font-medium text-[var(--tr-bubble-me-ink)]'
                       : system
-                        ? 'max-w-[85vw] rounded-2xl bg-[var(--tr-surface-2)] px-4 py-3 text-base text-[var(--tr-ink-2)]'
+                        ? 'tr-body max-w-[85vw] rounded-2xl bg-[var(--tr-surface-2)] px-4 py-3 text-[var(--tr-ink-2)]'
                         : 'max-w-[85vw] rounded-3xl rounded-bl-md bg-[var(--tr-surface-2)] px-5 py-4 text-xl font-semibold text-[var(--tr-ink)]'
                   } ${localCls}`}
                 >
@@ -1572,7 +1582,7 @@ export default function Cockpit({
                       key={min}
                       type="button"
                       onClick={() => void signal({ type: 'eta_reply', minutes: min }, `${min}분 후 도착 안내 ✓`)}
-                      className="rounded-xl bg-[var(--tr-bubble-me)] px-3 py-2 text-sm font-bold text-[var(--tr-bubble-me-ink)]"
+                      className="tr-label rounded-xl bg-[var(--tr-bubble-me)] px-3 py-2 font-bold text-[var(--tr-bubble-me-ink)]"
                     >
                       {min}분
                     </button>
@@ -1616,7 +1626,7 @@ export default function Cockpit({
 
       {toast ? (
         <div className="pointer-events-none absolute inset-x-0 top-16 z-20 flex justify-center">
-          <span className="tr-anim-panel-in rounded-full bg-black/80 px-5 py-2 text-lg font-bold text-[var(--tr-ink)]">{toast}</span>
+          <span className="tr-anim-panel-in tr-body-lg rounded-full bg-black/80 px-5 py-2 font-bold text-[var(--tr-ink)]">{toast}</span>
         </div>
       ) : null}
 
@@ -1635,10 +1645,10 @@ export default function Cockpit({
         <button
           type="button"
           onClick={() => void retryFailed()}
-          className="mx-4 mb-1.5 flex items-center justify-center gap-2 rounded-2xl bg-[var(--tr-surface-2)] py-2.5 text-base font-bold text-[var(--tr-danger)] transition-transform active:scale-[0.99]"
+          className="tr-body mx-4 mb-1.5 flex items-center justify-center gap-2 rounded-2xl bg-[var(--tr-surface-2)] py-2.5 font-bold text-[var(--tr-danger)] transition-transform active:scale-[0.99]"
           data-testid="cockpit-retry-failed"
         >
-          <TriangleAlert size={16} strokeWidth={2.25} aria-hidden />
+          <TriangleAlert size={TR_ICON.chip} strokeWidth={TR_STROKE.default} aria-hidden />
           전송 실패 {failedCount}건 · 다시 보내기
         </button>
       ) : null}
@@ -1663,7 +1673,7 @@ export default function Cockpit({
                     say(ok ? '전송 완료 ✓' : '전송 대기 — 아래 재전송을 눌러 주세요');
                   })();
                 }}
-                className="flex h-11 shrink-0 items-center gap-1 rounded-full border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3.5 text-base font-semibold text-[var(--tr-ink)] transition-transform active:scale-95"
+                className="tr-body flex h-11 shrink-0 items-center gap-1 rounded-full border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3.5 font-semibold text-[var(--tr-ink)] transition-transform active:scale-95"
                 data-testid={`driver-quick-${preset.key}`}
               >
                 <span aria-hidden>{preset.emoji}</span>
@@ -1691,9 +1701,9 @@ export default function Cockpit({
                 className="tr-btn-flat shrink-0 rounded-2xl p-2.5 text-[var(--tr-ink-2)]"
                 data-testid="cockpit-actions-toggle"
               >
-                <Plus
-                  size={22}
-                  strokeWidth={2.4}
+                <IconPlus
+                  size={TR_ICON.nav}
+                  strokeWidth={TR_STROKE.default}
                   aria-hidden
                   className={`transition-transform duration-200 ${actionsOpen ? 'rotate-45' : ''}`}
                 />
@@ -1706,7 +1716,7 @@ export default function Cockpit({
                 className="tr-btn-flat shrink-0 rounded-2xl p-2.5 text-[var(--tr-ink-2)]"
                 data-testid="cockpit-attach"
               >
-                <Paperclip size={22} strokeWidth={2.2} aria-hidden />
+                <IconPaperclip size={TR_ICON.nav} strokeWidth={TR_STROKE.default} aria-hidden />
               </button>
               <textarea
                 value={textDraft}
@@ -1721,13 +1731,13 @@ export default function Cockpit({
                     void sendText();
                   }
                 }}
-                className="min-w-0 flex-1 resize-none rounded-2xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-4 py-2.5 text-base text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)] focus:border-[var(--tr-ink-3)] focus:outline-none"
+                className="tr-body min-w-0 flex-1 resize-none rounded-2xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-4 py-2.5 text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)] focus:border-[var(--tr-ink-3)] focus:outline-none"
                 data-testid="driver-text-input"
               />
               <button
                 type="submit"
                 disabled={!textDraft.trim() || textSending}
-                className="tr-btn-raised shrink-0 rounded-2xl bg-[var(--tr-bubble-me)] px-5 py-2.5 text-base font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
+                className="tr-btn-raised tr-body shrink-0 rounded-2xl bg-[var(--tr-bubble-me)] px-5 py-2.5 font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
                 data-testid="driver-text-send"
               >
                 {textSending ? '…' : '보내기'}
@@ -1739,10 +1749,11 @@ export default function Cockpit({
             <button
               type="button"
               onClick={startRecording}
-              className="tr-btn-raised w-full rounded-3xl bg-[var(--tr-bubble-me)] py-4 text-2xl font-bold text-[var(--tr-bubble-me-ink)]"
+              className="tr-btn-raised flex w-full items-center justify-center gap-2.5 rounded-3xl bg-[var(--tr-bubble-me)] py-4 text-2xl font-bold text-[var(--tr-bubble-me-ink)]"
               data-testid="driver-mic"
             >
-              🎤 눌러서 말하기
+              <IconMic size={TR_ICON.tile} aria-hidden />
+              눌러서 말하기
             </button>
           </div>
         </>
@@ -1765,7 +1776,7 @@ export default function Cockpit({
                 />
               ))}
             </span>
-            <p className="min-w-0 flex-1 truncate text-lg text-[var(--tr-ink)]">
+            <p className="tr-body-lg min-w-0 flex-1 truncate text-[var(--tr-ink)]">
               {recMode === 'device' ? interim || '듣는 중…' : '녹음 중…'}
             </p>
           </div>
@@ -1781,7 +1792,7 @@ export default function Cockpit({
       ) : phase === 'transcribing' ? (
         <div className="px-4 pb-2 pt-1.5">
           <div
-            className="cockpit-shimmer w-full rounded-3xl bg-[var(--tr-surface-2)] py-3 text-center text-lg font-bold text-[var(--tr-ink-2)]"
+            className="cockpit-shimmer tr-body-lg w-full rounded-3xl bg-[var(--tr-surface-2)] py-3 text-center font-bold text-[var(--tr-ink-2)]"
             data-testid="cockpit-transcribing"
           >
             인식 중…
@@ -1796,7 +1807,7 @@ export default function Cockpit({
               <button
                 type="button"
                 onClick={cancelPending}
-                className="rounded-3xl bg-[var(--tr-surface-2)] py-3 text-lg font-bold text-[var(--tr-ink)] transition-transform active:scale-[0.99]"
+                className="tr-body-lg rounded-3xl bg-[var(--tr-surface-2)] py-3 font-bold text-[var(--tr-ink)] transition-transform active:scale-[0.99]"
                 data-testid="cockpit-cancel-send"
               >
                 취소
@@ -1804,7 +1815,7 @@ export default function Cockpit({
               <button
                 type="button"
                 onClick={() => pending && void sendVoice(pending)}
-                className="tr-btn-raised rounded-3xl bg-[var(--tr-bubble-me)] py-3 text-lg font-bold text-[var(--tr-bubble-me-ink)]"
+                className="tr-btn-raised tr-body-lg rounded-3xl bg-[var(--tr-bubble-me)] py-3 font-bold text-[var(--tr-bubble-me-ink)]"
                 data-testid="cockpit-confirm-send"
               >
                 보내기
@@ -1818,14 +1829,14 @@ export default function Cockpit({
               data-testid="cockpit-undo-send"
             >
               <span aria-hidden className="cockpit-fill absolute bottom-0 left-0 h-1.5 rounded-full bg-white/80" />
-              <span className="relative text-lg font-bold text-[var(--tr-ink)]">탭하여 취소</span>
+              <span className="tr-body-lg relative font-bold text-[var(--tr-ink)]">탭하여 취소</span>
             </button>
           )}
         </div>
       ) : (
         <div className="px-4 pb-2 pt-1.5">
           <div
-            className="cockpit-shimmer w-full rounded-3xl bg-[var(--tr-surface-2)] py-3 text-center text-lg font-bold text-[var(--tr-ink-2)]"
+            className="cockpit-shimmer tr-body-lg w-full rounded-3xl bg-[var(--tr-surface-2)] py-3 text-center font-bold text-[var(--tr-ink-2)]"
             data-testid="cockpit-sending"
           >
             전송 중…
@@ -1839,10 +1850,10 @@ export default function Cockpit({
           <button
             type="button"
             onClick={() => setChatExpanded(false)}
-            className="tr-btn-flat flex w-full items-center justify-center gap-2 rounded-2xl py-3.5 text-base font-bold text-[var(--tr-ink)]"
+            className="tr-btn-flat tr-body flex w-full items-center justify-center gap-2 rounded-2xl py-3.5 font-bold text-[var(--tr-ink)]"
             data-testid="cockpit-chat-collapse"
           >
-            <LayoutGrid size={18} strokeWidth={2} aria-hidden />
+            <IconDrawer size={TR_ICON.action} strokeWidth={TR_STROKE.default} aria-hidden />
             기능 버튼 보이기
           </button>
         </div>
@@ -1910,7 +1921,7 @@ export default function Cockpit({
             })}
           </div>
           {/* Free pick — the field always has variables the fixed chips miss. */}
-          <p className="mb-2 mt-4 text-sm font-bold text-[var(--tr-ink-2)]">시계로 직접 설정</p>
+          <p className="tr-label mb-2 mt-4 font-bold text-[var(--tr-ink-2)]">시계로 직접 설정</p>
           <TimeWheel value={retTime} onChange={setRetTime} restAt={retRest} testId="return-time-wheel" />
           <button
             type="button"
@@ -1919,7 +1930,7 @@ export default function Cockpit({
               setSheet('none');
               void signal({ type: 'return_time', time: retTime }, `${retTime} 복귀 안내 완료 ✓`);
             }}
-            className="tr-btn-raised mt-3 w-full rounded-2xl bg-[var(--tr-bubble-me)] py-4 text-lg font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
+            className="tr-btn-raised tr-body-lg mt-3 w-full rounded-2xl bg-[var(--tr-bubble-me)] py-4 font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
             data-testid="return-time-send"
           >
             {/^\d{2}:\d{2}$/.test(retTime) ? `${retTime} 복귀 안내 보내기` : '시계를 돌려 시간을 고르세요'}
@@ -1930,7 +1941,7 @@ export default function Cockpit({
               setSheet('none');
               void signal({ type: 'return_time', cancel: true }, '복귀 타이머 해제 ✓');
             }}
-            className="mt-3 w-full rounded-2xl bg-[var(--tr-surface-2)] py-4 text-lg font-semibold text-[var(--tr-ink-2)]"
+            className="tr-body-lg mt-3 w-full rounded-2xl bg-[var(--tr-surface-2)] py-4 font-semibold text-[var(--tr-ink-2)]"
           >
             타이머 해제
           </button>
@@ -1940,12 +1951,12 @@ export default function Cockpit({
       {sheet === 'schedule' ? (
         <Sheet onClose={() => setSheet('none')} title="오늘 일정 · 도착 안내">
           <div className="flex max-h-[55vh] flex-col gap-2 overflow-y-auto">
-            {room.schedule.length === 0 ? <p className="text-lg text-[var(--tr-ink-2)]">등록된 일정이 없어요.</p> : null}
+            {room.schedule.length === 0 ? <p className="tr-body-lg text-[var(--tr-ink-2)]">등록된 일정이 없어요.</p> : null}
             {room.schedule.map((item, index) => {
               const dest = destFrom(item);
               return (
                 <div key={`${item.poi_key ?? item.title ?? index}`} className="rounded-2xl bg-[var(--tr-surface-2)] px-4 py-3">
-                  <p className="text-lg font-semibold text-[var(--tr-ink)]">
+                  <p className="tr-body-lg font-semibold text-[var(--tr-ink)]">
                     {item.time ? `${item.time} · ` : ''}{itemTitle(item)}
                   </p>
                   <div className="mt-2 flex gap-2">
@@ -1955,7 +1966,7 @@ export default function Cockpit({
                         onClick={() => {
                           window.setTimeout(() => window.open(kakaoWebRouteUrl(dest), '_blank'), 1200);
                         }}
-                        className="flex-1 rounded-xl bg-[#FEE500] py-3 text-center text-base font-bold text-black"
+                        className="tr-body flex-1 rounded-xl bg-[#FEE500] py-3 text-center font-bold text-black"
                       >
                         내비
                       </a>
@@ -1963,7 +1974,7 @@ export default function Cockpit({
                     <button
                       type="button"
                       onClick={() => openArrivalSheet(item)}
-                      className="flex-1 rounded-xl bg-[var(--tr-bubble-me)] py-3 text-base font-bold text-[var(--tr-bubble-me-ink)]"
+                      className="tr-body flex-1 rounded-xl bg-[var(--tr-bubble-me)] py-3 font-bold text-[var(--tr-bubble-me-ink)]"
                       data-testid="cockpit-open-arrival"
                     >
                       도착 안내
@@ -1990,14 +2001,14 @@ export default function Cockpit({
       {sheet === 'summary' ? (
         <Sheet onClose={() => setSheet('none')} title="오늘 요약">
           {!daySummary ? (
-            <p className="py-4 text-center text-lg text-[var(--tr-ink-2)]">불러오는 중…</p>
+            <p className="tr-body-lg py-4 text-center text-[var(--tr-ink-2)]">불러오는 중…</p>
           ) : (
             <div className="flex max-h-[60vh] flex-col gap-3 overflow-y-auto" data-testid="day-summary">
               {/* C5 — live dwell vs recommended, advisory only */}
               {daySummary.current ? (
                 <div className="rounded-2xl bg-[var(--tr-surface-2)] px-4 py-3" data-testid="day-summary-current">
-                  <p className="text-sm font-bold text-[var(--tr-ink-2)]">현재 스팟</p>
-                  <p className="mt-1 text-base font-bold text-[var(--tr-ink)]">
+                  <p className="tr-label font-bold text-[var(--tr-ink-2)]">현재 스팟</p>
+                  <p className="tr-body mt-1 font-bold text-[var(--tr-ink)]">
                     {daySummary.current.title} · {daySummary.current.dwell_minutes}분째
                     {daySummary.current.recommended_minutes != null ? (
                       <span className="ml-1 font-medium text-[var(--tr-ink-2)]">
@@ -2012,15 +2023,15 @@ export default function Cockpit({
                 </div>
               ) : null}
               <div className="rounded-2xl bg-[var(--tr-surface-2)] px-4 py-3">
-                <p className="text-sm font-bold text-[var(--tr-ink-2)]">방문 스팟 {daySummary.visited.length}곳</p>
+                <p className="tr-label font-bold text-[var(--tr-ink-2)]">방문 스팟 {daySummary.visited.length}곳</p>
                 {daySummary.visited.map((visit) => (
-                  <p key={`${visit.title}-${visit.at}`} className="mt-1 text-base text-[var(--tr-ink)]">
+                  <p key={`${visit.title}-${visit.at}`} className="tr-body mt-1 text-[var(--tr-ink)]">
                     {new Date(visit.at).toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Seoul' })}{' '}
                     · {visit.title}
                   </p>
                 ))}
                 {daySummary.span ? (
-                  <p className="mt-2 text-sm text-[var(--tr-ink-2)]">
+                  <p className="tr-card-text mt-2 text-[var(--tr-ink-2)]">
                     첫 도착 → 마지막 도착: 약 {Math.floor(daySummary.span.minutes / 60)}시간{' '}
                     {daySummary.span.minutes % 60}분
                   </p>
@@ -2031,14 +2042,14 @@ export default function Cockpit({
                   summary above stays — it is neutral operational info). */}
               {!isJoin ? (
               <div className="rounded-2xl bg-[var(--tr-surface-2)] px-4 py-3">
-                <p className="text-sm font-bold text-[var(--tr-ink-2)]">정산 ({daySummary.money.count}건)</p>
-                <p className="mt-1 text-base text-[var(--tr-ink)]">기록 합계 {formatKrw(daySummary.money.logged_total)}</p>
-                <p className="text-base text-[var(--tr-ink)]">수취 완료 {formatKrw(daySummary.money.settled_total)}</p>
-                <p className="text-base font-bold text-[var(--tr-ink)]">
+                <p className="tr-label font-bold text-[var(--tr-ink-2)]">정산 ({daySummary.money.count}건)</p>
+                <p className="tr-body tr-num mt-1 text-[var(--tr-ink)]">기록 합계 {formatKrw(daySummary.money.logged_total)}</p>
+                <p className="tr-body tr-num text-[var(--tr-ink)]">수취 완료 {formatKrw(daySummary.money.settled_total)}</p>
+                <p className="tr-body tr-num font-bold text-[var(--tr-ink)]">
                   미수취 {formatKrw(daySummary.money.unsettled_total)}
                 </p>
                 {daySummary.money.overtime_total > 0 ? (
-                  <p className="mt-1 text-sm text-[var(--tr-ink-2)]">
+                  <p className="tr-card-text mt-1 text-[var(--tr-ink-2)]">
                     초과근무분 {formatKrw(daySummary.money.overtime_total)} 포함
                   </p>
                 ) : null}
@@ -2055,9 +2066,9 @@ export default function Cockpit({
             {/* B4 — operator prep: hours/closed/tips at a glance before sending */}
             {arrBriefing && arrBriefing.length > 0 ? (
               <div className="rounded-2xl bg-[var(--tr-surface-2)] px-4 py-3" data-testid="arrival-briefing">
-                <p className="mb-1.5 text-sm font-bold text-[var(--tr-ink-2)]">스팟 브리핑</p>
+                <p className="tr-label mb-1.5 font-bold text-[var(--tr-ink-2)]">스팟 브리핑</p>
                 {arrBriefing.map((line, index) => (
-                  <p key={index} className="text-sm leading-relaxed text-[var(--tr-ink)]">
+                  <p key={index} className="tr-card-text leading-relaxed text-[var(--tr-ink)]">
                     {line}
                   </p>
                 ))}
@@ -2066,14 +2077,14 @@ export default function Cockpit({
 
             {/* per-day variable ① — parking pin (auto-captured on open) */}
             <div className="flex items-center justify-between gap-3 rounded-2xl bg-[var(--tr-surface-2)] px-4 py-3">
-              <p className="min-w-0 text-base font-semibold text-[var(--tr-ink)]">
-                <SquareParking size={16} strokeWidth={2} aria-hidden className="mr-1.5 inline-block align-[-2px]" />
+              <p className="tr-body min-w-0 font-semibold text-[var(--tr-ink)]">
+                <SquareParking size={TR_ICON.chip} strokeWidth={TR_STROKE.default} aria-hidden className="mr-1.5 inline-block align-[-2px]" />
                 주차핀 {arrCoords ? '✓ 현재 위치' : '캡처 안 됨'}
               </p>
               <button
                 type="button"
                 onClick={captureArrCoords}
-                className="shrink-0 rounded-xl bg-[var(--tr-surface)] px-3 py-2 text-sm font-bold text-[var(--tr-ink)]"
+                className="tr-label shrink-0 rounded-xl bg-[var(--tr-surface)] px-3 py-2 font-bold text-[var(--tr-ink)]"
               >
                 다시 캡처
               </button>
@@ -2081,7 +2092,7 @@ export default function Cockpit({
 
             {/* per-day variable ② — meeting time (no default, must choose) */}
             <div className="rounded-2xl bg-[var(--tr-surface-2)] px-4 py-3">
-              <p className="mb-2 text-base font-semibold text-[var(--tr-ink)]">집합 시간</p>
+              <p className="tr-body mb-2 font-semibold text-[var(--tr-ink)]">집합 시간</p>
               <div className="grid grid-cols-4 gap-2">
                 {[30, 40, 60, 90].map((minutes) => {
                   const time = kstPlusMinutes(minutes);
@@ -2094,14 +2105,14 @@ export default function Cockpit({
                         setArrNoMeeting(false);
                         setArrTime(time);
                       }}
-                      className={`rounded-xl py-3 text-center text-base font-bold ${
+                      className={`tr-body rounded-xl py-3 text-center font-bold ${
                         selected
                           ? 'bg-[var(--tr-bubble-me)] text-[var(--tr-bubble-me-ink)]'
                           : 'bg-[var(--tr-surface)] text-[var(--tr-ink)]'
                       }`}
                     >
                       +{minutes}분
-                      <span className="block text-xs font-medium text-current opacity-70">{time}</span>
+                      <span className="tr-meta tr-num block font-medium text-current opacity-70">{time}</span>
                     </button>
                   );
                 })}
@@ -2125,7 +2136,7 @@ export default function Cockpit({
                   setArrNoMeeting(!arrNoMeeting);
                   setArrTime('');
                 }}
-                className={`mt-2 w-full rounded-xl px-3 py-2.5 text-sm font-bold ${
+                className={`tr-label mt-2 w-full rounded-xl px-3 py-2.5 font-bold ${
                   arrNoMeeting
                     ? 'bg-[var(--tr-bubble-me)] text-[var(--tr-bubble-me-ink)]'
                     : 'bg-[var(--tr-surface)] text-[var(--tr-ink-2)]'
@@ -2140,25 +2151,36 @@ export default function Cockpit({
               <button
                 type="button"
                 onClick={() => setArrFollow(arrFollow === 'follow' ? 'free' : 'follow')}
-                className={`rounded-2xl px-3 py-3 text-base font-bold ${
+                className={`tr-body flex items-center justify-center gap-1.5 rounded-2xl px-3 py-3 font-bold ${
                   arrFollow === 'follow'
                     ? 'bg-[var(--tr-bubble-me)] text-[var(--tr-bubble-me-ink)]'
                     : 'bg-[var(--tr-surface-2)] text-[var(--tr-ink)]'
                 }`}
                 data-testid="arrival-follow-toggle"
               >
-                {arrFollow === 'follow' ? '🚶 스태프 인솔' : '🧭 자유 관람'}
+                {arrFollow === 'follow' ? (
+                  <>
+                    <IconWalking size={TR_ICON.action} aria-hidden />
+                    스태프 인솔
+                  </>
+                ) : (
+                  <>
+                    <IconExplore size={TR_ICON.action} aria-hidden />
+                    자유 관람
+                  </>
+                )}
               </button>
               <button
                 type="button"
                 onClick={() => setArrTicket(!arrTicket)}
-                className={`rounded-2xl px-3 py-3 text-base font-bold ${
+                className={`tr-body flex items-center justify-center gap-1.5 rounded-2xl px-3 py-3 font-bold ${
                   arrTicket
                     ? 'bg-[var(--tr-bubble-me)] text-[var(--tr-bubble-me-ink)]'
                     : 'bg-[var(--tr-surface-2)] text-[var(--tr-ink)]'
                 }`}
               >
-                🎟️ 입장권 {arrTicket ? '필요' : '불필요'}
+                <IconTicket size={TR_ICON.action} aria-hidden />
+                입장권 {arrTicket ? '필요' : '불필요'}
               </button>
             </div>
 
@@ -2169,7 +2191,7 @@ export default function Cockpit({
                 value={arrTicketKrw}
                 onChange={(event) => setArrTicketKrw(event.target.value.replace(/\D/g, ''))}
                 placeholder="성인 입장권 가격 (원, 선택 — 예: 5000)"
-                className="w-full rounded-2xl bg-[var(--tr-surface-2)] px-4 py-3 text-base text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-2)]"
+                className="tr-body w-full rounded-2xl bg-[var(--tr-surface-2)] px-4 py-3 text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-2)]"
                 data-testid="arrival-ticket-krw"
               />
             ) : null}
@@ -2183,29 +2205,30 @@ export default function Cockpit({
                   if (!event.target.value.trim()) setArrEventStatus(null);
                 }}
                 placeholder="이벤트명 (예: 해녀 공연 14:00) — 선택"
-                className="w-full rounded-xl bg-[var(--tr-surface)] px-3 py-2.5 text-base text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-2)]"
+                className="tr-body w-full rounded-xl bg-[var(--tr-surface)] px-3 py-2.5 text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-2)]"
                 data-testid="arrival-event-label"
               />
               {arrEventLabel.trim() ? (
                 <div className="mt-2 grid grid-cols-3 gap-2">
                   {(
                     [
-                      { value: 'on' as const, label: '오늘 진행 ✓' },
-                      { value: 'off' as const, label: '오늘 안 함' },
-                      { value: null, label: '미확인' },
+                      { value: 'on' as const, label: '오늘 진행', withDone: true },
+                      { value: 'off' as const, label: '오늘 안 함', withDone: false },
+                      { value: null, label: '미확인', withDone: false },
                     ]
                   ).map((option) => (
                     <button
                       key={String(option.value)}
                       type="button"
                       onClick={() => setArrEventStatus(option.value)}
-                      className={`rounded-xl py-2.5 text-sm font-bold ${
+                      className={`tr-label text-cjk-safe flex items-center justify-center gap-1 rounded-xl py-2.5 font-bold ${
                         arrEventStatus === option.value
                           ? 'bg-[var(--tr-bubble-me)] text-[var(--tr-bubble-me-ink)]'
                           : 'bg-[var(--tr-surface)] text-[var(--tr-ink-2)]'
                       }`}
                     >
                       {option.label}
+                      {option.withDone ? <IconDone size={TR_ICON.meta} aria-hidden /> : null}
                     </button>
                   ))}
                 </div>
@@ -2217,14 +2240,14 @@ export default function Cockpit({
               onChange={(event) => setArrNote(event.target.value)}
               placeholder="관람 순서·노선 메모 (선택 — 다음부터 자동 채워짐)"
               rows={2}
-              className="w-full resize-none rounded-2xl bg-[var(--tr-surface-2)] px-4 py-3 text-base text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-2)]"
+              className="tr-body w-full resize-none rounded-2xl bg-[var(--tr-surface-2)] px-4 py-3 text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-2)]"
             />
 
             <button
               type="button"
               onClick={() => void sendArrivalBundle()}
               disabled={arrBusy || (!arrNoMeeting && !/^\d{2}:\d{2}$/.test(arrTime))}
-              className="tr-btn-raised w-full rounded-2xl bg-[var(--tr-bubble-me)] py-4 text-lg font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
+              className="tr-btn-raised tr-body-lg w-full rounded-2xl bg-[var(--tr-bubble-me)] py-4 font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
               data-testid="arrival-send"
             >
               {arrBusy ? '전송 중…' : '전원 발송'}
@@ -2241,25 +2264,26 @@ export default function Cockpit({
               수취완료 when the guest pays (guide-less private tour). */}
           {myUnsettledExtras.length > 0 ? (
             <div className="mb-4 flex flex-col gap-2" data-testid="cockpit-settle-list">
-              <p className="text-sm font-bold text-[var(--tr-ink-2)]">
+              <p className="tr-label font-bold text-[var(--tr-ink-2)]">
                 받을 돈 · 합계 {formatKrw(myUnsettledExtras.reduce((sum, e) => sum + e.amount_krw, 0))}
               </p>
               {myUnsettledExtras.map((e) => (
                 <div key={e.id} className="flex items-center gap-2 rounded-2xl bg-[var(--tr-surface-2)] px-4 py-3">
                   <span className="min-w-0 flex-1">
-                    <span className="block truncate text-base font-semibold text-[var(--tr-ink)]">
+                    <span className="tr-body block truncate font-semibold text-[var(--tr-ink)]">
                       {EXTRA_KIND_LABELS[e.kind as keyof typeof EXTRA_KIND_LABELS] ?? e.kind} · {e.item}
                     </span>
-                    <span className="block text-sm text-[var(--tr-ink-2)]">
+                    <span className="tr-card-text block text-[var(--tr-ink-2)]">
                       {formatKrw(e.amount_krw)} · {e.status === 'confirmed' ? '손님 확인됨' : '미확인'}
                       {e.receipt_photo_url ? (
                         <a
                           href={e.receipt_photo_url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="ml-2 font-semibold text-[var(--tr-accent-deep)] underline"
+                          className="ml-2 inline-flex items-center gap-1 align-[-2px] font-semibold text-[var(--tr-accent-deep)] underline"
                         >
-                          🧾 영수증
+                          <IconReceipt size={TR_ICON.meta} aria-hidden />
+                          영수증
                         </a>
                       ) : null}
                     </span>
@@ -2267,7 +2291,7 @@ export default function Cockpit({
                   <button
                     type="button"
                     onClick={() => void settleExtra(e.id)}
-                    className="shrink-0 rounded-xl bg-[var(--tr-bubble-me)] px-4 py-2.5 text-sm font-bold text-[var(--tr-bubble-me-ink)]"
+                    className="tr-label text-cjk-safe shrink-0 rounded-xl bg-[var(--tr-bubble-me)] px-4 py-2.5 font-bold text-[var(--tr-bubble-me-ink)]"
                     data-testid="cockpit-settle-extra"
                   >
                     수취완료
@@ -2277,14 +2301,14 @@ export default function Cockpit({
             </div>
           ) : null}
           <div className="flex flex-col gap-3">
-            <p className="text-sm font-bold text-[var(--tr-ink-2)]">지출 기록</p>
+            <p className="tr-label font-bold text-[var(--tr-ink-2)]">지출 기록</p>
             <div className="grid grid-cols-4 gap-2">
               {EXPENSE_KINDS.map((kind) => (
                 <button
                   key={kind.value}
                   type="button"
                   onClick={() => setExpKind(kind.value)}
-                  className={`rounded-xl py-3 text-base font-bold ${
+                  className={`tr-body text-cjk-safe rounded-xl py-3 font-bold ${
                     expKind === kind.value ? 'bg-[var(--tr-bubble-me)] text-[var(--tr-bubble-me-ink)]' : 'bg-[var(--tr-surface-2)] text-[var(--tr-ink)]'
                   }`}
                 >
@@ -2307,7 +2331,7 @@ export default function Cockpit({
               className="rounded-2xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-4 py-4 text-xl text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)]"
             />
             {/* T1-3 — optional receipt photo (입장권 할인가 투명성). */}
-            <label className="flex cursor-pointer items-center justify-center gap-2 rounded-2xl border border-dashed border-[var(--tr-hairline)] bg-[var(--tr-surface)] py-3 text-base font-semibold text-[var(--tr-ink-2)]">
+            <label className="tr-body flex cursor-pointer items-center justify-center gap-2 rounded-2xl border border-dashed border-[var(--tr-hairline)] bg-[var(--tr-surface)] py-3 font-semibold text-[var(--tr-ink-2)]">
               <input
                 type="file"
                 accept="image/*"
@@ -2316,7 +2340,15 @@ export default function Cockpit({
                 className="hidden"
                 data-testid="expense-receipt-input"
               />
-              🧾 {expReceipt ? '영수증 첨부됨 ✓' : '영수증 사진 (선택)'}
+              <IconReceipt size={TR_ICON.action} aria-hidden />
+              {expReceipt ? (
+                <>
+                  영수증 첨부됨
+                  <IconDone size={TR_ICON.chip} aria-hidden />
+                </>
+              ) : (
+                '영수증 사진 (선택)'
+              )}
             </label>
             <button
               type="button"
@@ -2335,12 +2367,12 @@ export default function Cockpit({
       {sheet === 'overtime' && !isJoin ? (
         <Sheet onClose={() => setSheet('none')} title="초과근무 정산">
           <div className="flex flex-col gap-3">
-            <p className="text-sm text-[var(--tr-ink-2)]">
+            <p className="tr-card-text text-[var(--tr-ink-2)]">
               기준 {baseHours}시간 · {formatKrw(otRate)}/시간
             </p>
             <div className="grid grid-cols-2 gap-3">
               <label className="flex flex-col gap-1">
-                <span className="text-sm font-bold text-[var(--tr-ink-2)]">시작</span>
+                <span className="tr-label font-bold text-[var(--tr-ink-2)]">시작</span>
                 <input
                   value={otStart}
                   onChange={(event) => setOtStart(event.target.value)}
@@ -2351,7 +2383,7 @@ export default function Cockpit({
                 />
               </label>
               <label className="flex flex-col gap-1">
-                <span className="text-sm font-bold text-[var(--tr-ink-2)]">종료</span>
+                <span className="tr-label font-bold text-[var(--tr-ink-2)]">종료</span>
                 <div className="flex items-center gap-1.5">
                   <input
                     value={otEnd}
@@ -2364,7 +2396,7 @@ export default function Cockpit({
                   <button
                     type="button"
                     onClick={() => setOtEnd(kstPlusMinutes(0))}
-                    className="shrink-0 rounded-2xl bg-[var(--tr-surface-2)] px-3 py-3.5 text-sm font-bold text-[var(--tr-ink)]"
+                    className="tr-label shrink-0 rounded-2xl bg-[var(--tr-surface-2)] px-3 py-3.5 font-bold text-[var(--tr-ink)]"
                   >
                     지금
                   </button>
@@ -2376,7 +2408,7 @@ export default function Cockpit({
             <button
               type="button"
               onClick={() => setOtHours(otComputed.overtimeHours)}
-              className="rounded-2xl bg-[var(--tr-surface-2)] py-2.5 text-base font-bold text-[var(--tr-ink)]"
+              className="tr-body rounded-2xl bg-[var(--tr-surface-2)] py-2.5 font-bold text-[var(--tr-ink)]"
               data-testid="overtime-recompute"
             >
               시간으로 계산
@@ -2398,7 +2430,7 @@ export default function Cockpit({
                 <p className="text-2xl font-bold text-[var(--tr-ink)]" data-testid="overtime-hours">
                   초과 {otHours}시간
                 </p>
-                <p className="text-lg font-semibold text-[var(--tr-accent-deep)]" data-testid="overtime-amount">
+                <p className="tr-body-lg tr-num font-semibold text-[var(--tr-accent-deep)]" data-testid="overtime-amount">
                   {formatKrw(otAmount)}
                 </p>
               </div>
@@ -2444,11 +2476,11 @@ function NavRow({ dest }: { dest: NavDestination }) {
         onClick={() => {
           window.setTimeout(() => window.open(kakaoWebRouteUrl(dest), '_blank'), 1200);
         }}
-        className="rounded-xl bg-[#FEE500] py-2.5 text-center text-sm font-bold text-black"
+        className="tr-label text-cjk-safe rounded-xl bg-[#FEE500] py-2.5 text-center font-bold text-black"
       >
         카카오
       </a>
-      <a href={tmapUrl(dest)} className="rounded-xl bg-[#0f5bd6] py-2.5 text-center text-sm font-bold text-[var(--tr-ink)]">
+      <a href={tmapUrl(dest)} className="tr-label text-cjk-safe rounded-xl bg-[#0f5bd6] py-2.5 text-center font-bold text-[var(--tr-ink)]">
         티맵
       </a>
       <a
@@ -2456,7 +2488,7 @@ function NavRow({ dest }: { dest: NavDestination }) {
         onClick={() => {
           window.setTimeout(() => window.open(naverWebUrl(dest), '_blank'), 1200);
         }}
-        className="rounded-xl bg-[#03C75A] py-2.5 text-center text-sm font-bold text-[var(--tr-ink)]"
+        className="tr-label text-cjk-safe rounded-xl bg-[#03C75A] py-2.5 text-center font-bold text-[var(--tr-ink)]"
       >
         네이버
       </a>
@@ -2464,7 +2496,7 @@ function NavRow({ dest }: { dest: NavDestination }) {
         href={googleDirectionsUrl(dest, 'driving')}
         target="_blank"
         rel="noopener noreferrer"
-        className="rounded-xl bg-[var(--tr-surface-2)] py-2.5 text-center text-sm font-bold text-[var(--tr-ink)]"
+        className="tr-label text-cjk-safe rounded-xl bg-[var(--tr-surface-2)] py-2.5 text-center font-bold text-[var(--tr-ink)]"
       >
         구글
       </a>
@@ -2511,8 +2543,8 @@ function ActionButton({ label, Icon, onClick }: { label: string; Icon: LucideIco
       className="tr-btn-flat flex min-h-[52px] flex-col items-center justify-center gap-0.5 rounded-2xl py-2 text-[var(--tr-ink)]"
       data-testid={`driver-action-${label}`}
     >
-      <Icon size={18} strokeWidth={2} aria-hidden />
-      <span className="text-sm font-bold">{label}</span>
+      <Icon size={TR_ICON.action} strokeWidth={TR_STROKE.default} aria-hidden />
+      <span className="tr-label font-bold">{label}</span>
     </button>
   );
 }

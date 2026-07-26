@@ -27,6 +27,7 @@ import {
   IconThemeDark,
   IconThemeLight,
   IconThemeSystem,
+  TR_ICON,
 } from '@/components/tour-mode/icons';
 
 const LOCALE_NAME: Record<RoomLocale, string> = {
@@ -253,7 +254,7 @@ export default function SettingsTab({
           control is discoverable without scrolling. */}
       <section className="tr-card p-4">
         <h3 className="tr-card-text flex items-center gap-1.5 font-semibold text-[var(--tr-ink)]">
-          <IconThemeSystem size={15} className="text-[var(--tr-ink-3)]" aria-hidden />
+          <IconThemeSystem size={TR_ICON.chip} className="text-[var(--tr-ink-3)]" aria-hidden />
           {copy.theme}
         </h3>
         <div className="mt-2.5">
@@ -265,7 +266,7 @@ export default function SettingsTab({
                 value: 'light',
                 label: (
                   <>
-                    <IconThemeLight size={13} aria-hidden /> {copy.themeLight}
+                    <IconThemeLight size={TR_ICON.meta} aria-hidden /> {copy.themeLight}
                   </>
                 ),
               },
@@ -273,7 +274,7 @@ export default function SettingsTab({
                 value: 'dark',
                 label: (
                   <>
-                    <IconThemeDark size={13} aria-hidden /> {copy.themeDark}
+                    <IconThemeDark size={TR_ICON.meta} aria-hidden /> {copy.themeDark}
                   </>
                 ),
               },
@@ -287,7 +288,7 @@ export default function SettingsTab({
           any language) don't read as two competing top-level settings. */}
       <section className="tr-card p-4">
         <h3 className="tr-card-text flex items-center gap-1.5 font-semibold text-[var(--tr-ink)]">
-          <IconLanguage size={15} className="text-[var(--tr-ink-3)]" aria-hidden />
+          <IconLanguage size={TR_ICON.chip} className="text-[var(--tr-ink-3)]" aria-hidden />
           {copy.language}
         </h3>
 
@@ -358,7 +359,7 @@ export default function SettingsTab({
 
       <section className="tr-card p-4">
         <h3 className="tr-card-text flex items-center gap-1.5 font-semibold text-[var(--tr-ink)]">
-          <IconTextSize size={15} className="text-[var(--tr-ink-3)]" aria-hidden />
+          <IconTextSize size={TR_ICON.chip} className="text-[var(--tr-ink-3)]" aria-hidden />
           {copy.textSize}
         </h3>
         {/* P1-6 — 5 steps. A slider rather than 5 segmented buttons: five CJK
@@ -391,7 +392,7 @@ export default function SettingsTab({
             {TEXT_SCALE_STEPS.map((step) => (
               <span
                 key={step}
-                className={`tr-meta tabular-nums ${
+                className={`tr-meta tr-num ${
                   step === settings.textScale
                     ? 'font-bold text-[var(--tr-accent-deep)]'
                     : 'text-[var(--tr-ink-3)]'

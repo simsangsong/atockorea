@@ -8,7 +8,7 @@
  */
 
 import { useState } from 'react';
-import { IconEnded, IconMail } from '@/components/tour-mode/icons';
+import { IconEnded, IconMail, TR_ICON } from '@/components/tour-mode/icons';
 import { useConfirmSheet } from '@/components/tour-mode/ConfirmSheet';
 import { inPostTourWindow } from '@/lib/tour-room/time';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
@@ -125,7 +125,7 @@ export default function EndedCard({
   return (
     <div data-testid="ended-card" className="tr-card mb-2 px-4 py-4 text-center">
       <p className="tr-title flex items-center justify-center gap-1.5 text-[var(--tr-ink)]">
-        <IconEnded size={16} className="text-[var(--tr-ink-3)]" aria-hidden />
+        <IconEnded size={TR_ICON.chip} className="text-[var(--tr-ink-3)]" aria-hidden />
         {copy.title}
       </p>
       <p className="tr-card-text mt-1 text-[var(--tr-ink-2)]">{copy.body}</p>
@@ -140,7 +140,7 @@ export default function EndedCard({
             type="button"
             disabled={state === 'busy'}
             onClick={() => void report()}
-            className="tr-label mt-2 inline-flex min-h-[40px] items-center gap-1.5 rounded-full bg-[var(--tr-accent)] px-4 font-semibold text-[var(--tr-bubble-me-ink)] disabled:opacity-50"
+            className="tr-label mt-2 inline-flex min-h-[44px] items-center gap-1.5 rounded-full bg-[var(--tr-accent)] px-4 font-semibold text-[var(--tr-bubble-me-ink)] disabled:opacity-50"
             data-testid="lost-item-signal"
           >
             🧳 {copy.lostAction}
@@ -157,9 +157,9 @@ export default function EndedCard({
             )}
             <a
               href={`mailto:${SUPPORT_EMAIL}?subject=${subject}`}
-              className="tr-label mt-2 inline-flex min-h-[40px] items-center gap-1.5 rounded-full bg-[var(--tr-accent)] px-4 font-semibold text-[var(--tr-bubble-me-ink)]"
+              className="tr-label mt-2 inline-flex min-h-[44px] items-center gap-1.5 rounded-full bg-[var(--tr-accent)] px-4 font-semibold text-[var(--tr-bubble-me-ink)]"
             >
-              <IconMail size={14} aria-hidden />
+              <IconMail size={TR_ICON.meta} aria-hidden />
               {copy.lostAction}
             </a>
           </>

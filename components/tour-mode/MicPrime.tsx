@@ -77,8 +77,8 @@ export default function MicPrime({
         } ${className}`}
         data-testid="mic-prime-denied"
       >
-        <p className={`text-sm font-bold ${dark ? 'text-white' : 'text-[var(--tr-danger)]'}`}>{copy.deniedTitle}</p>
-        <p className={`mt-1 text-xs leading-snug ${dark ? 'text-neutral-300' : 'text-[var(--tr-ink-2)]'}`}>
+        <p className={`tr-card-text font-bold ${dark ? 'text-white' : 'text-[var(--tr-danger)]'}`}>{copy.deniedTitle}</p>
+        <p className={`tr-label mt-1 leading-snug ${dark ? 'text-neutral-300' : 'text-[var(--tr-ink-2)]'}`}>
           {copy.deniedHow}
         </p>
       </div>
@@ -93,14 +93,14 @@ export default function MicPrime({
         onClick={() => void prime()}
         className={
           dark
-            ? 'w-full rounded-2xl bg-neutral-100 py-3 text-lg font-bold text-neutral-950'
-            : 'w-full rounded-full bg-[var(--tr-accent)] py-2.5 text-sm font-bold text-[var(--tr-bubble-me-ink)]'
+            ? 'tr-body-lg w-full rounded-2xl bg-neutral-100 py-3 font-bold text-neutral-950'
+            : 'tr-card-text w-full rounded-full bg-[var(--tr-accent)] py-2.5 font-bold text-[var(--tr-bubble-me-ink)]'
         }
       >
         {copy.allow}
       </button>
       <p
-        className={`mt-1.5 text-center text-xs leading-snug ${
+        className={`tr-label mt-1.5 text-center leading-snug ${
           dark ? 'text-neutral-400' : 'text-[var(--tr-ink-3)]'
         }`}
       >

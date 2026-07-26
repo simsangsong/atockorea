@@ -18,7 +18,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
-import { IconClose, IconPlanEdit } from '@/components/tour-mode/icons';
+import { IconClose, IconPlanEdit, TR_ICON } from '@/components/tour-mode/icons';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
 interface NudgeCopy {
@@ -186,13 +186,13 @@ export default function PlanNudgeModal({
               aria-label={copy.close}
               className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full text-[var(--tr-ink-3)] active:bg-black/5"
             >
-              <IconClose size={18} aria-hidden />
+              <IconClose size={TR_ICON.action} aria-hidden />
             </button>
 
             <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]">
-              <IconPlanEdit size={22} aria-hidden />
+              <IconPlanEdit size={TR_ICON.nav} aria-hidden />
             </span>
-            <h2 id="plan-nudge-title" className="mt-3 text-[19px] font-bold leading-snug text-[var(--tr-ink)]">
+            <h2 id="plan-nudge-title" className="tr-display mt-3 leading-snug text-[var(--tr-ink)]">
               {copy.title}
             </h2>
             <p className="tr-card-text mt-2 leading-relaxed text-[var(--tr-ink-2)]">{copy.body}</p>
@@ -202,13 +202,13 @@ export default function PlanNudgeModal({
               onClick={openPlanner}
               className="tr-body mt-5 flex min-h-[50px] w-full items-center justify-center gap-2 rounded-2xl bg-[var(--tr-accent)] tr-btn-raised px-4 font-bold text-[var(--tr-bubble-me-ink)]"
             >
-              <IconPlanEdit size={17} aria-hidden />
+              <IconPlanEdit size={TR_ICON.chip} aria-hidden />
               {copy.cta}
             </button>
             <button
               type="button"
               onClick={dismiss}
-              className="tr-label mt-2 min-h-[40px] w-full font-semibold text-[var(--tr-ink-3)]"
+              className="tr-label mt-2 min-h-[44px] w-full font-semibold text-[var(--tr-ink-3)]"
             >
               {copy.later}
             </button>

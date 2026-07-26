@@ -42,6 +42,8 @@ import {
   IconTilePickup,
   IconTileSchedule,
   IconTileSos,
+  TR_ICON,
+  TR_STROKE,
 } from '@/components/tour-mode/icons';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 import type { VehicleLocationLike } from '@/lib/tour-room/vehicleEta';
@@ -386,7 +388,7 @@ export default function HomeTab({
   const tileInner = (tile: Tile) => (
     <>
       <span className={iconWrapClass(tile.tone)}>
-        <tile.Icon size={19} strokeWidth={2} aria-hidden />
+        <tile.Icon size={TR_ICON.action} strokeWidth={TR_STROKE.default} aria-hidden />
         {tile.dot && (
           <span
             className="absolute -right-0.5 -top-0.5 h-2 w-2 rounded-full bg-[var(--tr-danger)]"
@@ -394,7 +396,7 @@ export default function HomeTab({
           />
         )}
       </span>
-      <span className="tr-label font-medium leading-tight text-[var(--tr-ink)]">{tile.label}</span>
+      <span className="tr-label text-cjk-safe max-w-full leading-tight text-[var(--tr-ink)]">{tile.label}</span>
     </>
   );
 
@@ -436,7 +438,7 @@ export default function HomeTab({
           )}
           {vehicleLine && (
             <p className="tr-label mt-2.5 flex items-center gap-1.5 text-[var(--tr-ink-2)]" data-testid="home-vehicle">
-              <IconPickup size={13} className="shrink-0 text-[var(--tr-ink-3)]" aria-hidden />
+              <IconPickup size={TR_ICON.meta} strokeWidth={TR_STROKE.small} className="shrink-0 text-[var(--tr-ink-3)]" aria-hidden />
               <span className="truncate">{vehicleLine}</span>
             </p>
           )}
@@ -471,7 +473,7 @@ export default function HomeTab({
         className="tr-home-card mb-2 flex w-full items-center gap-3 px-4 py-3 text-left"
       >
         <span className="tr-chip tr-chip--base relative flex h-9 w-9 shrink-0 items-center justify-center !rounded-[13px]">
-          <IconTileChat size={17} aria-hidden />
+          <IconTileChat size={TR_ICON.chip} aria-hidden />
           {api.chatUnread && (
             <span className="absolute -right-0.5 -top-0.5 h-2.5 w-2.5 rounded-full bg-[var(--tr-danger)]" />
           )}
@@ -489,7 +491,7 @@ export default function HomeTab({
             {latestText || copy.chatEmpty}
           </span>
         </span>
-        <IconChevronRight size={18} className="shrink-0 text-[var(--tr-ink-3)]" aria-hidden />
+        <IconChevronRight size={TR_ICON.action} className="shrink-0 text-[var(--tr-ink-3)]" aria-hidden />
       </button>
 
       {/* ---- Feature grid ------------------------------------------- */}
@@ -520,7 +522,7 @@ export default function HomeTab({
         data-testid="home-more"
         className="tr-label mt-2 flex min-h-[44px] w-full items-center justify-center gap-1.5 rounded-full font-medium text-[var(--tr-ink-3)] active:bg-[var(--tr-surface)]"
       >
-        <IconMore size={16} aria-hidden />
+        <IconMore size={TR_ICON.chip} aria-hidden />
         {copy.more}
       </button>
 
@@ -531,7 +533,7 @@ export default function HomeTab({
         closeLabel={copy.close}
         title={
           <span className="flex items-center gap-2 text-[var(--tr-ink)]">
-            <IconPickup size={18} aria-hidden />
+            <IconPickup size={TR_ICON.action} aria-hidden />
             {copy.tiles.pickup}
           </span>
         }
@@ -553,7 +555,7 @@ export default function HomeTab({
           closeLabel={copy.close}
           title={
             <span className="flex items-center gap-2 text-[var(--tr-ink)]">
-              <IconQuickReply size={18} aria-hidden />
+              <IconQuickReply size={TR_ICON.action} aria-hidden />
               {copy.tiles.signal}
             </span>
           }
@@ -581,7 +583,7 @@ export default function HomeTab({
         closeLabel={copy.close}
         title={
           <span className="flex items-center gap-2 text-[var(--tr-ink)]">
-            <IconMore size={18} aria-hidden />
+            <IconMore size={TR_ICON.action} aria-hidden />
             {copy.more}
           </span>
         }
@@ -596,17 +598,17 @@ export default function HomeTab({
             className="flex min-h-[52px] w-full items-center gap-3 text-left"
           >
             <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]">
-              <IconTabSettings size={18} aria-hidden />
+              <IconTabSettings size={TR_ICON.action} aria-hidden />
             </span>
             <span className="tr-card-text flex-1 font-medium text-[var(--tr-ink)]">{copy.settingsRow}</span>
-            <IconChevronRight size={18} className="shrink-0 text-[var(--tr-ink-3)]" aria-hidden />
+            <IconChevronRight size={TR_ICON.action} className="shrink-0 text-[var(--tr-ink-3)]" aria-hidden />
           </button>
           <a href={reviewHref} className="flex min-h-[52px] w-full items-center gap-3 text-left">
             <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]">
-              <IconReview size={18} aria-hidden />
+              <IconReview size={TR_ICON.action} aria-hidden />
             </span>
             <span className="tr-card-text flex-1 font-medium text-[var(--tr-ink)]">{copy.reviewRow}</span>
-            <IconChevronRight size={18} className="shrink-0 text-[var(--tr-ink-3)]" aria-hidden />
+            <IconChevronRight size={TR_ICON.action} className="shrink-0 text-[var(--tr-ink-3)]" aria-hidden />
           </a>
         </div>
       </Sheet>

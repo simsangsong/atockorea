@@ -16,6 +16,7 @@
 
 import { useCallback, useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { IconCheers, IconDone, IconDriver, IconPhone, TR_ICON } from '../icons';
 import { type RoomMessage } from '@/hooks/useTourRoomChannel';
 import Cockpit, {
   Screen,
@@ -175,21 +176,21 @@ export default function DriverConsole() {
     return (
       <Screen>
         <div className="flex flex-1 flex-col items-center justify-center gap-6 px-8">
-          <p className="text-2xl font-bold text-[var(--tr-ink)]">차량번호 뒤 4자리</p>
+          <p className="tr-display text-[var(--tr-ink)]">차량번호 뒤 4자리</p>
           <input
             inputMode="numeric"
             maxLength={4}
             value={pin}
             onChange={(event) => setPin(event.target.value.replace(/\D/g, ''))}
-            className="w-48 rounded-2xl border-2 border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-4 py-4 text-center text-4xl font-bold tracking-[0.5em] text-[var(--tr-ink)]"
+            className="tr-display w-48 rounded-2xl border-2 border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-4 py-4 text-center tracking-[0.5em] text-[var(--tr-ink)]"
             data-testid="driver-pin-input"
           />
-          {error ? <p className="text-lg text-[var(--tr-danger)]">{error}</p> : null}
+          {error ? <p className="tr-body-lg text-[var(--tr-danger)]">{error}</p> : null}
           <button
             type="button"
             disabled={pin.length !== 4 || joining}
             onClick={() => void join(pin)}
-            className="w-full max-w-xs rounded-2xl bg-[var(--tr-bubble-me)] py-5 text-2xl font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
+            className="tr-display w-full max-w-xs rounded-2xl bg-[var(--tr-bubble-me)] py-5 text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
           >
             확인
           </button>
@@ -204,12 +205,12 @@ export default function DriverConsole() {
     return (
       <Screen>
         <div className="flex flex-1 flex-col items-center justify-center gap-4 px-8 text-center">
-          <p className="text-3xl font-bold text-[var(--tr-ink)]">{overview.tour.title}</p>
-          <p className="text-xl text-[var(--tr-ink-2)]">
+          <p className="tr-display text-[var(--tr-ink)]">{overview.tour.title}</p>
+          <p className="tr-body-lg text-[var(--tr-ink-2)]">
             {overview.tour_date} · 손님 {room.number_of_guests ?? '-'}명
           </p>
           {room.pickup?.name ? (
-            <p className="text-lg text-[var(--tr-ink-3)]">
+            <p className="tr-body-lg text-[var(--tr-ink-3)]">
               픽업 {room.pickup.pickup_time ? `${room.pickup.pickup_time} · ` : ''}
               {room.pickup.name}
             </p>
@@ -220,12 +221,13 @@ export default function DriverConsole() {
           <button
             type="button"
             onClick={() => setAudioUnlocked(true)}
-            className="mt-6 w-full max-w-sm rounded-3xl bg-[var(--tr-bubble-me)] py-8 text-3xl font-bold text-[var(--tr-bubble-me-ink)]"
+            className="tr-display mt-6 flex w-full max-w-sm items-center justify-center gap-2.5 rounded-3xl bg-[var(--tr-bubble-me)] py-8 text-[var(--tr-bubble-me-ink)]"
             data-testid="driver-start"
           >
-            🚐 운행 시작
+            <IconDriver size={TR_ICON.tile} aria-hidden />
+            운행 시작
           </button>
-          <p className="text-base text-[var(--tr-ink-3)]">시작을 누르면 손님 메시지를 소리로 읽어드려요.</p>
+          <p className="tr-body text-[var(--tr-ink-3)]">시작을 누르면 손님 메시지를 소리로 읽어드려요.</p>
         </div>
       </Screen>
     );
@@ -291,7 +293,7 @@ function PreDepartureChecklist({ tourDate }: { tourDate: string }) {
   const done = checked.filter(Boolean).length;
   return (
     <div className="w-full max-w-sm rounded-2xl bg-[var(--tr-surface)] px-4 py-3 text-left" data-testid="predeparture-checklist">
-      <p className="mb-2 text-sm font-bold text-[var(--tr-ink-3)]">
+      <p className="tr-label mb-2 font-bold text-[var(--tr-ink-3)]">
         출발 전 체크 {done}/{PRE_DEPARTURE_ITEMS.length}
       </p>
       {PRE_DEPARTURE_ITEMS.map((item, index) => (
@@ -303,13 +305,13 @@ function PreDepartureChecklist({ tourDate }: { tourDate: string }) {
         >
           <span
             aria-hidden
-            className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-md text-xs font-bold ${
+            className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-md ${
               checked[index] ? 'bg-[var(--tr-safe)] text-white' : 'bg-[var(--tr-bubble-system)] text-transparent'
             }`}
           >
-            ✓
+            <IconDone size={TR_ICON.meta} aria-hidden />
           </span>
-          <span className={`text-base ${checked[index] ? 'text-[var(--tr-ink-3)] line-through' : 'text-[var(--tr-ink-2)]'}`}>
+          <span className={`tr-body ${checked[index] ? 'text-[var(--tr-ink-3)] line-through' : 'text-[var(--tr-ink-2)]'}`}>
             {item}
           </span>
         </button>
@@ -323,19 +325,22 @@ function EndScreen({ overview, room }: { overview: DriverOverview; room: Cockpit
     <Screen>
       <div className="flex flex-1 flex-col gap-5 overflow-y-auto px-6 py-8">
         <div className="text-center">
-          <p className="text-3xl font-bold text-[var(--tr-ink)]">오늘 투어 종료</p>
-          <p className="mt-2 text-lg text-[var(--tr-ink-3)]">
+          <p className="tr-display text-[var(--tr-ink)]">오늘 투어 종료</p>
+          <p className="tr-body-lg mt-2 text-[var(--tr-ink-3)]">
             {overview.tour.title} · {overview.tour_date}
           </p>
-          <p className="mt-1 text-base text-[var(--tr-ink-3)]">수고하셨어요 🙌</p>
+          <p className="tr-body mt-1 flex items-center justify-center gap-1.5 text-[var(--tr-ink-3)]">
+            수고하셨어요
+            <IconCheers size={TR_ICON.chip} aria-hidden />
+          </p>
         </div>
 
         {room.schedule.length > 0 ? (
           <div className="rounded-3xl bg-[var(--tr-surface)] px-5 py-4">
-            <p className="text-sm font-bold uppercase tracking-wide text-[var(--tr-ink-3)]">오늘 방문</p>
+            <p className="tr-label font-bold uppercase tracking-wide text-[var(--tr-ink-3)]">오늘 방문</p>
             <ul className="mt-2 space-y-1.5">
               {room.schedule.map((item, index) => (
-                <li key={`${item.poi_key ?? item.title ?? index}`} className="text-lg text-[var(--tr-ink-2)]">
+                <li key={`${item.poi_key ?? item.title ?? index}`} className="tr-body-lg text-[var(--tr-ink-2)]">
                   {item.time ? `${item.time} · ` : ''}{itemTitle(item)}
                 </li>
               ))}
@@ -346,10 +351,11 @@ function EndScreen({ overview, room }: { overview: DriverOverview; room: Cockpit
         {OPS_PHONE ? (
           <a
             href={`tel:${OPS_PHONE}`}
-            className="rounded-2xl bg-[var(--tr-surface-2)] py-4 text-center text-xl font-bold text-[var(--tr-ink)]"
+            className="tr-display flex items-center justify-center gap-2 rounded-2xl bg-[var(--tr-surface-2)] py-4 text-center text-[var(--tr-ink)]"
             data-testid="driver-ops-call"
           >
-            📞 운영팀에 전화
+            <IconPhone size={TR_ICON.nav} aria-hidden />
+            운영팀에 전화
           </a>
         ) : null}
       </div>

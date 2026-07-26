@@ -20,27 +20,24 @@
  */
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { IconCollapse, IconInbox, IconRefresh, IconSubmit, IconStop } from '@/components/tour-mode/icons';
 import {
-  CalendarClock,
-  Car,
-  Check,
-  ChevronDown,
-  ChevronUp,
-  Home,
-  Inbox,
-  MapPin,
-  Megaphone,
-  MessageCircle,
-  Mic,
-  RefreshCw,
-  Send,
-  Sparkles,
-  Square,
-  Timer,
-  Users,
-  Wallet,
-  X,
-} from 'lucide-react';
+  IconArrived,
+  IconConcierge,
+  IconClose,
+  IconDone,
+  IconEta,
+  IconLedger,
+  IconMeeting,
+  IconMic,
+  IconPresence,
+  IconScrollDown,
+  IconTabChat,
+  IconTabHome,
+  IconTileSchedule,
+  IconVehicle,
+  TR_ICON,
+} from '../icons';
 import GuideLedgerPanel from '@/components/tour-mode/guide/GuideLedgerPanel';
 import GuidePlanPanel from '@/components/tour-mode/guide/GuidePlanPanel';
 import GuideSeatDashboard from '@/components/tour-mode/guide/GuideSeatDashboard';
@@ -115,9 +112,9 @@ interface DriveState {
 
 /** P4 — the collapsed day-tools segment control. */
 const DAY_SEGMENTS = [
-  { key: 'broadcast' as const, label: '공지', Icon: Megaphone },
-  { key: 'meeting' as const, label: '집합', Icon: MapPin },
-  { key: 'free' as const, label: '자유시간', Icon: Timer },
+  { key: 'broadcast' as const, label: '공지', Icon: IconMeeting },
+  { key: 'meeting' as const, label: '집합', Icon: IconArrived },
+  { key: 'free' as const, label: '자유시간', Icon: IconEta },
 ];
 
 interface OverviewRoom {
@@ -502,7 +499,7 @@ export default function GuideConsole() {
             <p className="text-cjk-safe tr-meta font-bold uppercase tracking-wide text-[var(--tr-plan-hero-muted)]">
               가이드 콘솔
             </p>
-            <h1 className="mt-1 truncate text-[20px] font-bold leading-tight text-[var(--tr-plan-hero-ink)]">
+            <h1 className="tr-display mt-1 truncate leading-tight text-[var(--tr-plan-hero-ink)]">
               {overview.tour.title}
             </h1>
           </div>
@@ -514,7 +511,7 @@ export default function GuideConsole() {
               data-testid="guide-console-home"
               className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-[var(--tr-plan-hero-ink)] active:scale-95"
             >
-              <Home size={15} aria-hidden />
+              <IconTabHome size={TR_ICON.chip} aria-hidden />
             </a>
             <button
               type="button"
@@ -525,7 +522,7 @@ export default function GuideConsole() {
               aria-label="새로고침"
               className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-[var(--tr-plan-hero-ink)] active:scale-95"
             >
-              <RefreshCw size={15} className={refreshing ? 'animate-spin' : ''} aria-hidden />
+              <IconRefresh size={TR_ICON.chip} className={refreshing ? 'animate-spin' : ''} aria-hidden />
             </button>
             <span
               className={`tr-meta rounded-full px-2.5 py-1 font-bold ${
@@ -543,29 +540,29 @@ export default function GuideConsole() {
         <div className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1.5">
           <div className="tr-meta inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 font-semibold text-[var(--tr-plan-hero-ink)]">
             <span className="inline-flex items-center gap-1 tabular-nums">
-              <CalendarClock size={13} aria-hidden />
+              <IconTileSchedule size={TR_ICON.meta} aria-hidden />
               {overview.tour_date}
             </span>
             <span className="h-3 w-px bg-white/20" aria-hidden />
             <span className="inline-flex items-center gap-1 tabular-nums">
-              <Users size={13} aria-hidden />
+              <IconPresence size={TR_ICON.meta} aria-hidden />
               예약 {overview.rooms.length}
             </span>
             <span className="h-3 w-px bg-white/20" aria-hidden />
             <span className="inline-flex items-center gap-1 tabular-nums">
-              <Check size={13} aria-hidden />
+              <IconDone size={TR_ICON.meta} aria-hidden />
               탑승 {onboardCount}/{overview.rooms.length}
             </span>
           </div>
           {replyCount > 0 && (
-            <span className="tr-meta inline-flex items-center gap-1 rounded-full bg-white/20 px-2.5 py-1 font-bold tabular-nums text-[var(--tr-plan-hero-ink)]">
-              <MessageCircle size={13} aria-hidden />
+            <span className="tr-meta text-cjk-safe inline-flex items-center gap-1 rounded-full bg-white/20 px-2.5 py-1 font-bold tabular-nums text-[var(--tr-plan-hero-ink)]">
+              <IconTabChat size={TR_ICON.meta} aria-hidden />
               답장 {replyCount}
             </span>
           )}
           {reviewCount > 0 && (
-            <span className="tr-meta inline-flex items-center gap-1 rounded-full bg-white/20 px-2.5 py-1 font-bold tabular-nums text-[var(--tr-plan-hero-ink)]">
-              <CalendarClock size={13} aria-hidden />
+            <span className="tr-meta text-cjk-safe inline-flex items-center gap-1 rounded-full bg-white/20 px-2.5 py-1 font-bold tabular-nums text-[var(--tr-plan-hero-ink)]">
+              <IconTileSchedule size={TR_ICON.meta} aria-hidden />
               검토 {reviewCount}
             </span>
           )}
@@ -603,7 +600,7 @@ export default function GuideConsole() {
         </h2>
         {overview.rooms.length === 0 && (
           <div className="tr-card mt-2 flex flex-col items-center gap-2 px-4 py-8 text-center">
-            <Inbox size={26} className="text-[var(--tr-ink-3)]" aria-hidden />
+            <IconInbox size={TR_ICON.tile} className="text-[var(--tr-ink-3)]" aria-hidden />
             <p className="tr-card-text text-[var(--tr-ink-2)]">오늘은 배정된 예약이 없어요.</p>
           </div>
         )}
@@ -615,7 +612,7 @@ export default function GuideConsole() {
               <article key={room.booking_id} className="tr-card tr-plan-course-card px-3.5 py-3" data-testid="room-card">
                 <div className="flex items-start gap-3">
                   <span
-                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl text-[15px] font-bold text-white"
+                    className="tr-body flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl font-bold text-white"
                     style={{ backgroundColor: `hsl(${roomHue(room.booking_id)} 55% 52%)` }}
                     aria-hidden
                   >
@@ -629,12 +626,12 @@ export default function GuideConsole() {
                       </span>
                       {room.onboard_ack && (
                         <span className="inline-flex items-center gap-0.5 text-[var(--tr-safe)]" title="탑승 확인">
-                          <Check size={13} aria-hidden />
+                          <IconDone size={TR_ICON.meta} aria-hidden />
                         </span>
                       )}
                       {badge && (
                         <span
-                          className={`tr-meta rounded-full px-2 py-0.5 font-bold ${
+                          className={`tr-meta text-cjk-safe rounded-full px-2 py-0.5 font-bold ${
                             badge.tone === 'review'
                               ? 'bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]'
                               : 'bg-[var(--tr-accent-soft)] text-[var(--tr-ink-2)]'
@@ -644,14 +641,14 @@ export default function GuideConsole() {
                         </span>
                       )}
                       {awaitingReply && (
-                        <span className="tr-meta rounded-full bg-[var(--tr-danger-soft)] px-2 py-0.5 font-bold text-[var(--tr-danger)]">
+                        <span className="tr-meta text-cjk-safe rounded-full bg-[var(--tr-danger-soft)] px-2 py-0.5 font-bold text-[var(--tr-danger)]">
                           답장 필요
                         </span>
                       )}
                     </div>
                     {room.pickup?.name && (
                       <p className="tr-meta mt-0.5 flex items-center gap-1 text-[var(--tr-ink-2)]">
-                        <MapPin size={12} className="shrink-0" aria-hidden />
+                        <IconArrived size={TR_ICON.meta} className="shrink-0" aria-hidden />
                         <span className="truncate">
                           {room.pickup.pickup_time ? `${room.pickup.pickup_time} · ` : ''}
                           {room.pickup.name}
@@ -670,10 +667,10 @@ export default function GuideConsole() {
                 <div className="mt-3 flex items-center gap-1.5">
                   <a
                     href={roomHref(room.booking_id)}
-                    className="tr-label flex min-h-[44px] flex-1 items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-accent)] px-3 font-bold text-[var(--tr-bubble-me-ink)] active:scale-[0.99]"
+                    className="tr-label text-cjk-safe flex min-h-[44px] flex-1 items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-accent)] px-3 font-bold text-[var(--tr-bubble-me-ink)] active:scale-[0.99]"
                     data-testid="room-chat"
                   >
-                    <MessageCircle size={15} aria-hidden />
+                    <IconTabChat size={TR_ICON.chip} aria-hidden />
                     채팅
                   </a>
                   {/* D2: plan review/confirm is a private-tour capability —
@@ -690,7 +687,7 @@ export default function GuideConsole() {
                       }`}
                       data-testid="plan-toggle"
                     >
-                      <CalendarClock size={18} aria-hidden />
+                      <IconTileSchedule size={TR_ICON.action} aria-hidden />
                     </button>
                   )}
                   <button
@@ -700,7 +697,7 @@ export default function GuideConsole() {
                     className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)] active:scale-95"
                     data-testid="ledger-toggle"
                   >
-                    <Wallet size={18} aria-hidden />
+                    <IconLedger size={TR_ICON.action} aria-hidden />
                   </button>
                   <button
                     type="button"
@@ -709,7 +706,7 @@ export default function GuideConsole() {
                     className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)] active:scale-95"
                     data-testid="assist-toggle"
                   >
-                    <Sparkles size={18} aria-hidden />
+                    <IconConcierge size={TR_ICON.action} aria-hidden />
                   </button>
                   <button
                     type="button"
@@ -719,7 +716,7 @@ export default function GuideConsole() {
                     className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[var(--tr-ink)] text-[var(--tr-canvas)] active:scale-95 disabled:opacity-50"
                     data-testid="room-drive"
                   >
-                    <Car size={18} aria-hidden />
+                    <IconVehicle size={TR_ICON.action} aria-hidden />
                   </button>
                 </div>
               </article>
@@ -738,9 +735,9 @@ export default function GuideConsole() {
         >
           <span className="tr-label font-bold uppercase tracking-wide text-[var(--tr-ink-3)]">전체 안내</span>
           {dayToolsOpen ? (
-            <ChevronUp size={16} className="text-[var(--tr-ink-3)]" aria-hidden />
+            <IconCollapse size={TR_ICON.chip} className="text-[var(--tr-ink-3)]" aria-hidden />
           ) : (
-            <ChevronDown size={16} className="text-[var(--tr-ink-3)]" aria-hidden />
+            <IconScrollDown size={TR_ICON.chip} className="text-[var(--tr-ink-3)]" aria-hidden />
           )}
         </button>
 
@@ -752,12 +749,12 @@ export default function GuideConsole() {
                   key={key}
                   type="button"
                   onClick={() => setDaySeg(key)}
-                  className={`tr-label flex flex-1 items-center justify-center gap-1 rounded-full py-1.5 font-bold ${
+                  className={`tr-label text-cjk-safe flex flex-1 items-center justify-center gap-1 rounded-full py-1.5 font-bold ${
                     daySeg === key ? 'bg-[var(--tr-surface)] text-[var(--tr-ink)] shadow-sm' : 'text-[var(--tr-ink-3)]'
                   }`}
                   data-testid={`dayseg-${key}`}
                 >
-                  <Icon size={13} aria-hidden />
+                  <Icon size={TR_ICON.meta} aria-hidden />
                   {label}
                 </button>
               ))}
@@ -766,7 +763,7 @@ export default function GuideConsole() {
             {daySeg === 'broadcast' && (
         <div className="tr-card mt-2.5 px-3.5 py-3.5">
           <p className="tr-label flex items-center gap-1.5 font-semibold text-[var(--tr-ink-2)]">
-            <Megaphone size={14} aria-hidden />
+            <IconMeeting size={TR_ICON.meta} aria-hidden />
             메시지 (자동 번역)
           </p>
 
@@ -779,16 +776,16 @@ export default function GuideConsole() {
               data-testid="guide-target-chip"
               data-tone={targetTone(target)}
               className={
-                'tr-label inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 font-bold ' +
+                'tr-label text-cjk-safe inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 font-bold ' +
                 (targetTone(target) === 'all'
                   ? 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]'
                   : 'bg-[var(--tr-accent-soft)] text-[var(--tr-accent)]')
               }
             >
               {targetTone(target) === 'all' ? (
-                <Megaphone size={13} aria-hidden />
+                <IconMeeting size={TR_ICON.meta} aria-hidden />
               ) : (
-                <Send size={13} aria-hidden />
+                <IconSubmit size={TR_ICON.meta} aria-hidden />
               )}
               {targetChipLabel(target, roster)}
             </span>
@@ -800,7 +797,7 @@ export default function GuideConsole() {
                 data-testid="guide-target-clear"
                 className="flex min-h-[32px] min-w-[32px] items-center justify-center rounded-full text-[var(--tr-ink-3)] active:scale-95"
               >
-                <X size={14} aria-hidden />
+                <IconClose size={TR_ICON.meta} aria-hidden />
               </button>
             )}
           </div>
@@ -818,7 +815,7 @@ export default function GuideConsole() {
                     onClick={() => setTarget((prev) => toggleTarget(prev, g.bookingId))}
                     aria-pressed={picked}
                     className={
-                      'tr-label min-h-[32px] rounded-full border px-2.5 font-medium active:scale-95 ' +
+                      'tr-label text-cjk-safe min-h-[32px] rounded-full border px-2.5 font-medium active:scale-95 ' +
                       (picked
                         ? 'border-[var(--tr-accent)] bg-[var(--tr-accent-soft)] text-[var(--tr-accent)]'
                         : 'border-[var(--tr-hairline)] text-[var(--tr-ink-2)]')
@@ -844,18 +841,18 @@ export default function GuideConsole() {
                   recordingRef.current = null;
                   setVoiceState('idle');
                 }}
-                className="tr-label flex min-h-[40px] items-center gap-1 rounded-full px-3 font-medium text-[var(--tr-ink-2)]"
+                className="tr-label flex min-h-[44px] items-center gap-1 rounded-full px-3 font-medium text-[var(--tr-ink-2)]"
               >
-                <X size={14} aria-hidden />
+                <IconClose size={TR_ICON.meta} aria-hidden />
                 취소
               </button>
               <button
                 type="button"
                 onClick={() => recordingRef.current?.stop()}
-                className="tr-label flex min-h-[40px] items-center gap-1 rounded-full bg-[var(--tr-danger)] px-4 font-semibold text-white"
+                className="tr-label flex min-h-[44px] items-center gap-1 rounded-full bg-[var(--tr-danger)] px-4 font-semibold text-white"
                 data-testid="guide-recording-done"
               >
-                <Square size={13} aria-hidden />
+                <IconStop size={TR_ICON.meta} aria-hidden />
                 완료
               </button>
             </div>
@@ -886,7 +883,7 @@ export default function GuideConsole() {
                   className="flex h-[46px] w-[46px] shrink-0 items-center justify-center rounded-full bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)] active:scale-95"
                   data-testid="guide-broadcast-mic"
                 >
-                  <Mic size={18} aria-hidden />
+                  <IconMic size={TR_ICON.action} aria-hidden />
                 </button>
               )}
               <input
@@ -899,10 +896,10 @@ export default function GuideConsole() {
               <button
                 type="submit"
                 disabled={!draft.trim() || busy === 'text'}
-                className="tr-label flex min-h-[46px] shrink-0 items-center gap-1.5 rounded-full bg-[var(--tr-accent)] px-4 font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
+                className="tr-label text-cjk-safe flex min-h-[46px] shrink-0 items-center gap-1.5 rounded-full bg-[var(--tr-accent)] px-4 font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
                 data-testid="fanout-send"
               >
-                <Send size={15} aria-hidden />
+                <IconSubmit size={TR_ICON.chip} aria-hidden />
                 {sendButtonLabel(target, roster)}
               </button>
             </form>
@@ -938,7 +935,7 @@ export default function GuideConsole() {
             {daySeg === 'meeting' && (
         <div className="tr-card mt-2.5 px-3.5 py-3.5">
           <p className="tr-label flex items-center gap-1.5 font-semibold text-[var(--tr-ink-2)]">
-            <MapPin size={14} aria-hidden />
+            <IconArrived size={TR_ICON.meta} aria-hidden />
             집합 공지 (손님 화면에 카운트다운)
           </p>
           <div className="mt-2 flex gap-2">
@@ -971,14 +968,16 @@ export default function GuideConsole() {
                 );
               }}
               aria-pressed={Boolean(meetPin)}
-              className={`tr-label shrink-0 rounded-[var(--tr-radius-input)] border px-3 py-2.5 font-bold ${
+              aria-label={meetPin ? '집합 위치 핀 찍힘' : '현재 위치로 집합 핀 찍기'}
+              className={`inline-flex shrink-0 items-center gap-0.5 rounded-[var(--tr-radius-input)] border px-3 py-2.5 ${
                 meetPin
                   ? 'border-[var(--tr-accent)] bg-[var(--tr-accent-soft)] text-[var(--tr-accent-deep)]'
                   : 'border-[var(--tr-hairline)] bg-[var(--tr-surface)] text-[var(--tr-ink)]'
               }`}
               data-testid="meeting-pin"
             >
-              {meetPin ? '📍✓' : '📍'}
+              <IconArrived size={TR_ICON.chip} aria-hidden />
+              {meetPin ? <IconDone size={TR_ICON.meta} aria-hidden /> : null}
             </button>
             <button
               type="button"
@@ -1010,7 +1009,7 @@ export default function GuideConsole() {
             {daySeg === 'free' && (
         <div className="tr-card mt-2.5 px-3.5 py-3.5">
           <p className="tr-label flex items-center gap-1.5 font-semibold text-[var(--tr-ink-2)]">
-            <Timer size={14} aria-hidden />
+            <IconEta size={TR_ICON.meta} aria-hidden />
             자유시간 (10분·5분 전 자동 알림)
           </p>
           <input

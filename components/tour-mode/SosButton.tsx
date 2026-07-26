@@ -10,7 +10,7 @@
  */
 
 import { useRef, useState } from 'react';
-import { IconDone, IconEmergency } from '@/components/tour-mode/icons';
+import { IconDone, IconEmergency, TR_ICON } from '@/components/tour-mode/icons';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
 const COPY: Record<
@@ -173,7 +173,7 @@ export default function SosButton({
     return (
       <div className="rounded-xl bg-[var(--tr-safe-soft)] px-3 py-2.5" data-testid="sos-sent">
         <p className="tr-label flex items-start gap-1.5 font-medium leading-relaxed text-[var(--tr-safe)]">
-          <IconDone size={14} className="mt-0.5 shrink-0" aria-hidden />
+          <IconDone size={TR_ICON.meta} className="mt-0.5 shrink-0" aria-hidden />
           {copy.sent}
         </p>
         <p className="tr-label mt-1.5 flex items-center gap-1.5 font-semibold text-[var(--tr-safe)]" data-testid="sos-connected">
@@ -222,7 +222,7 @@ export default function SosButton({
               <span className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" aria-hidden />
             ) : (
               <>
-                <IconEmergency size={15} aria-hidden />
+                <IconEmergency size={TR_ICON.chip} aria-hidden />
                 {copy.send}
               </>
             )}
@@ -239,7 +239,7 @@ export default function SosButton({
       className="tr-card-text flex min-h-[48px] w-full items-center justify-center gap-2 rounded-full bg-[var(--tr-danger)] font-bold text-white active:opacity-90"
       data-testid="sos-button"
     >
-      <IconEmergency size={17} aria-hidden />
+      <IconEmergency size={TR_ICON.chip} aria-hidden />
       {copy.button}
     </button>
   );

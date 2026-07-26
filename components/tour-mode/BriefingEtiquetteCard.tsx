@@ -9,7 +9,8 @@
  * guest where the phrasebook already is instead of duplicating it.
  */
 
-import { Landmark } from 'lucide-react';
+import { IconLandmark } from '@/components/tour-mode/icons';
+import { TR_ICON, TR_STROKE } from '@/components/tour-mode/icons';
 import { ETIQUETTE_COPY, type BriefingEtiquetteMeta } from '@/lib/ops/seating/cards/etiquette';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
@@ -35,9 +36,9 @@ export default function BriefingEtiquetteCard({
           className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--tr-accent-soft)] text-[var(--tr-accent-deep)]"
           aria-hidden
         >
-          <Landmark size={15} strokeWidth={2} />
+          <IconLandmark size={TR_ICON.chip} strokeWidth={TR_STROKE.default} />
         </span>
-        <p className="min-w-0 flex-1 text-sm font-semibold text-[var(--tr-ink)]">{copy.title}</p>
+        <p className="tr-title min-w-0 flex-1 text-[var(--tr-ink)]">{copy.title}</p>
       </div>
 
       <p

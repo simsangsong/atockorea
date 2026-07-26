@@ -10,7 +10,7 @@
  */
 
 import { CONCIERGE_CHIPS, CONCIERGE_COPY } from '@/lib/tour-room/concierge';
-import { IconConcierge } from '@/components/tour-mode/icons';
+import { IconConcierge, TR_ICON, TR_STROKE } from '@/components/tour-mode/icons';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
 export default function ConciergeEntryRow({
@@ -37,7 +37,7 @@ export default function ConciergeEntryRow({
         className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[var(--tr-accent-soft)] text-[var(--tr-accent-deep)]"
         aria-hidden
       >
-        <IconConcierge size={15} strokeWidth={2.25} />
+        <IconConcierge size={TR_ICON.chip} strokeWidth={TR_STROKE.default} />
       </span>
       <span className="min-w-0 flex-1">
         <span className="tr-card-text block truncate font-semibold text-[var(--tr-ink)]">{copy.entryRow}</span>

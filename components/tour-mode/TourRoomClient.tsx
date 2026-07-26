@@ -59,7 +59,7 @@ import InstallBanner from '@/components/tour-mode/InstallBanner';
 import { detectEntryLocale, ENTRY_COPY } from '@/components/tour-mode/entryCopy';
 import { GUEST_CREDS_STORAGE_PREFIX } from '@/components/tour-mode/TourModeEntry';
 import { decodeTokenBody, storePersonalToken } from '@/lib/ops/seating/personalTokens';
-import { IconEmergency, IconHighlight, IconLost, IconPresence, IconRetry } from '@/components/tour-mode/icons';
+import { IconEmergency, IconHighlight, IconLost, IconPresence, IconRetry, TR_ICON, TR_STROKE } from '@/components/tour-mode/icons';
 import { CONCIERGE_COPY } from '@/lib/tour-room/concierge';
 import { EMERGENCY_TITLE } from '@/lib/tour-room/emergency';
 import { ROOM_LOCALES } from '@/lib/tour-room/snapshot';
@@ -355,7 +355,7 @@ export default function TourRoomClient({ bookingId }: { bookingId: string }) {
     return (
       <div className="tr-root mx-auto flex h-dvh w-full flex-col items-center justify-center bg-[var(--tr-canvas)] px-6 text-center">
         <span className="flex h-16 w-16 items-center justify-center rounded-full bg-[var(--tr-surface)] text-[var(--tr-ink-3)]">
-          <IconLost size={28} strokeWidth={1.75} aria-hidden />
+          <IconLost size={TR_ICON.tile} strokeWidth={TR_STROKE.default} aria-hidden />
         </span>
         <p className="tr-card-text mt-5 max-w-xs leading-relaxed text-[var(--tr-ink-2)]">
           {state.httpStatus === 404 ? copy.errorNotFound : copy.errorGeneric}
@@ -851,7 +851,7 @@ function TourRoomLive({
               data-testid="open-manifest-sheet"
               className="tr-press flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[var(--tr-bubble-system)] text-[var(--tr-ink-2)]"
             >
-              <IconPresence size={18} aria-hidden />
+              <IconPresence size={TR_ICON.action} aria-hidden />
             </button>
           </div>
         ) : undefined
@@ -1108,10 +1108,10 @@ function TourRoomLive({
             <button
               type="button"
               onClick={() => void retryFailed()}
-              className="tr-label mb-2 flex min-h-[40px] w-full items-center justify-center gap-1.5 rounded-full bg-[var(--tr-danger-soft)] font-medium text-[var(--tr-danger)]"
+              className="tr-label mb-2 flex min-h-[44px] w-full items-center justify-center gap-1.5 rounded-full bg-[var(--tr-danger-soft)] font-medium text-[var(--tr-danger)]"
               data-testid="retry-failed"
             >
-              <IconRetry size={14} aria-hidden />
+              <IconRetry size={TR_ICON.meta} aria-hidden />
               {RETRY_COPY[locale](failedCount)}
             </button>
           )}

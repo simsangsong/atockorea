@@ -9,7 +9,7 @@
 
 import type { GeoWatcherStatus } from '@/hooks/useGeoWatcher';
 import { isWakeLockSupported } from '@/lib/tour-room/wakeLock';
-import { IconMyLocation } from '@/components/tour-mode/icons';
+import { IconMyLocation, TR_ICON } from '@/components/tour-mode/icons';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
 const COPY: Record<
@@ -78,7 +78,7 @@ export default function LocationShareCard({
     <div className="tr-card px-4 py-3" data-testid="location-share-card">
       <div className="flex items-center justify-between gap-3">
         <p className="tr-title flex items-center gap-1.5 text-[var(--tr-ink)]">
-          <IconMyLocation size={16} className="text-[var(--tr-safe)]" aria-hidden />
+          <IconMyLocation size={TR_ICON.chip} className="text-[var(--tr-safe)]" aria-hidden />
           {copy.title}
         </p>
         <button

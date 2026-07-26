@@ -11,7 +11,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { speakWithDevice } from '@/lib/tour-room/tts';
-import { IconCaption, IconOriginal, IconTranslated } from '@/components/tour-mode/icons';
+import { IconCaption, IconOriginal, IconTranslated, TR_ICON } from '@/components/tour-mode/icons';
 import { useTourRoomSettings } from '@/hooks/useTourRoomSettings';
 import type { RoomCaption } from '@/hooks/useTourRoomChannel';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
@@ -70,14 +70,14 @@ export default function CaptionBanner({
       style={{ boxShadow: 'var(--tr-shadow-overlay)' }}
     >
       <span className="tr-meta flex items-center gap-1.5 font-semibold uppercase tracking-wide text-emerald-400">
-        <IconCaption size={12} aria-hidden />
+        <IconCaption size={TR_ICON.meta} aria-hidden />
         <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
         {LIVE_LABEL[locale]}
       </span>
       <span className="tr-body mt-1 block leading-relaxed text-white">{text}</span>
       {toggleable && (
         <span className="mt-1 block text-white/50" aria-hidden>
-          {showOriginal ? <IconOriginal size={12} /> : <IconTranslated size={12} />}
+          {showOriginal ? <IconOriginal size={TR_ICON.meta} /> : <IconTranslated size={TR_ICON.meta} />}
         </span>
       )}
     </button>

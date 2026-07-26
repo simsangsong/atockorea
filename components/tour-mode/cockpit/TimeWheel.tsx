@@ -99,8 +99,8 @@ function WheelColumn({
           }}
           className={`flex w-full snap-center items-center justify-center tabular-nums transition-colors duration-[var(--tr-dur-fast)] ${
             committed && position === v
-              ? 'text-2xl font-bold text-[var(--tr-ink)]'
-              : 'text-xl font-semibold text-[var(--tr-ink-3)]'
+              ? 'tr-display text-[var(--tr-ink)]'
+              : 'tr-body-lg font-semibold text-[var(--tr-ink-3)]'
           }`}
           style={{ height: ITEM_H }}
         >
@@ -153,7 +153,7 @@ export default function TimeWheel({
       />
       <div className="relative flex items-stretch px-3">
         <WheelColumn values={HOURS} position={hour} committed={committed} onPick={pickHour} />
-        <div className="flex items-center text-2xl font-bold text-[var(--tr-ink-2)]" aria-hidden>
+        <div className="tr-display flex items-center text-[var(--tr-ink-2)]" aria-hidden>
           :
         </div>
         <WheelColumn values={MINUTES} position={minute} committed={committed} onPick={pickMinute} />

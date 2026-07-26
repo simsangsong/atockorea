@@ -20,7 +20,17 @@
  */
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { Camera, ChevronDown, ChevronUp, MapPin, Palette, Play, QrCode, RefreshCw, StickyNote, Users, X } from 'lucide-react';
+import { IconCollapse, IconPalette, IconQr, IconRefresh, IconNote } from '@/components/tour-mode/icons';
+import {
+  IconArrived,
+  IconCamera,
+  IconClose,
+  IconPlay,
+  IconPresence,
+  IconScrollDown,
+  IconWarn,
+  TR_ICON,
+} from '../icons';
 import SeatMap from '@/components/ops/SeatMap';
 import GuideGuestCard, { channelLabel, statusMeta } from '@/components/tour-mode/guide/GuideGuestCard';
 import { hasNote, noteSummary, type GuestNote } from '@/lib/ops/seating/guestNotes';
@@ -185,18 +195,18 @@ export default function GuideSeatDashboard({
         className="sticky top-0 z-10 -mx-4 flex items-center gap-x-2.5 gap-y-1 overflow-x-auto border-b border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-4 py-2"
         data-testid="counter-bar"
       >
-        <span className="inline-flex items-center gap-1 text-sm font-bold text-[var(--tr-ink)] tabular-nums">
-          <Users size={14} aria-hidden />
+        <span className="tr-card-text text-cjk-safe inline-flex items-center gap-1 font-bold text-[var(--tr-ink)] tabular-nums">
+          <IconPresence size={TR_ICON.meta} aria-hidden />
           {counts.totalPax}명 · {counts.teams}팀
         </span>
         <span className="h-3.5 w-px bg-[var(--tr-hairline)]" aria-hidden />
-        <span className="text-sm font-semibold text-[var(--tr-safe)] tabular-nums" data-testid="count-checkedin">
+        <span className="tr-card-text text-cjk-safe font-semibold text-[var(--tr-safe)] tabular-nums" data-testid="count-checkedin">
           체크인 {counts.checkedInPax}
         </span>
-        <span className="text-sm font-semibold text-[var(--tr-ink-2)] tabular-nums" data-testid="count-waiting">
+        <span className="tr-card-text text-cjk-safe font-semibold text-[var(--tr-ink-2)] tabular-nums" data-testid="count-waiting">
           대기 {counts.waitingPax}
         </span>
-        <span className="text-sm font-semibold text-[var(--tr-danger)] tabular-nums" data-testid="count-absent">
+        <span className="tr-card-text text-cjk-safe font-semibold text-[var(--tr-danger)] tabular-nums" data-testid="count-absent">
           노쇼 {counts.absentPax}
         </span>
         <button
@@ -205,7 +215,7 @@ export default function GuideSeatDashboard({
           aria-label="새로고침"
           className="ml-auto flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-[var(--tr-ink-3)] active:bg-[var(--tr-surface-2)]"
         >
-          <RefreshCw size={13} className={loading ? 'animate-spin' : ''} aria-hidden />
+          <IconRefresh size={TR_ICON.meta} className={loading ? 'animate-spin' : ''} aria-hidden />
         </button>
       </div>
 
@@ -217,7 +227,7 @@ export default function GuideSeatDashboard({
               key={k}
               type="button"
               onClick={() => setSeg(k)}
-              className={`flex-1 rounded-full py-1.5 text-xs font-bold ${
+              className={`tr-label text-cjk-safe flex-1 rounded-full py-1.5 font-bold ${
                 seg === k ? 'bg-[var(--tr-surface)] text-[var(--tr-ink)] shadow-sm' : 'text-[var(--tr-ink-3)]'
               }`}
               data-testid={`seg-${k}`}
@@ -231,35 +241,35 @@ export default function GuideSeatDashboard({
           type="button"
           onClick={() => setPickupColors((v) => !v)}
           aria-pressed={pickupColors}
-          className={`flex h-9 shrink-0 items-center gap-1.5 rounded-full px-3 text-xs font-bold ${
+          className={`tr-label text-cjk-safe flex h-9 shrink-0 items-center gap-1.5 rounded-full px-3 font-bold ${
             pickupColors
               ? 'bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]'
               : 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]'
           }`}
           data-testid="pickup-colors-btn"
         >
-          <Palette size={14} aria-hidden />
+          <IconPalette size={TR_ICON.meta} aria-hidden />
           픽업 색
         </button>
         <button
           type="button"
           onClick={() => setQrOpen(true)}
           disabled={!anchorRoomId}
-          className="flex h-9 shrink-0 items-center gap-1.5 rounded-full bg-[var(--tr-ink)] px-3 text-xs font-bold text-[var(--tr-canvas)] disabled:opacity-40"
+          className="tr-label text-cjk-safe flex h-9 shrink-0 items-center gap-1.5 rounded-full bg-[var(--tr-ink)] px-3 font-bold text-[var(--tr-canvas)] disabled:opacity-40"
           data-testid="checkin-qr-btn"
         >
-          <QrCode size={14} aria-hidden />
+          <IconQr size={TR_ICON.meta} aria-hidden />
           체크인 QR
         </button>
       </div>
 
       {error && (
-        <p className="mt-3 rounded-xl border border-[var(--tr-danger-soft)] bg-[var(--tr-surface)] px-3 py-2 text-xs font-medium text-[var(--tr-danger)]">
+        <p className="tr-label mt-3 rounded-xl border border-[var(--tr-danger-soft)] bg-[var(--tr-surface)] px-3 py-2 font-medium text-[var(--tr-danger)]">
           {error}
         </p>
       )}
       {note && (
-        <p className="mt-2 rounded-xl bg-[var(--tr-danger-soft)] px-3 py-2 text-xs font-medium text-[var(--tr-danger)]" data-testid="dashboard-note">
+        <p className="tr-label mt-2 rounded-xl bg-[var(--tr-danger-soft)] px-3 py-2 font-medium text-[var(--tr-danger)]" data-testid="dashboard-note">
           {note}
         </p>
       )}
@@ -270,7 +280,7 @@ export default function GuideSeatDashboard({
         {/* ── 명단 ── */}
         <div className={`space-y-2 ${seg === 'roster' ? '' : 'hidden'} sm:block`} data-testid="roster-view">
           {groups.length === 0 && (
-            <p className="rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-6 text-center text-sm text-[var(--tr-ink-3)]">
+            <p className="tr-card-text rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-6 text-center text-[var(--tr-ink-3)]">
               배정된 예약이 없어요.
             </p>
           )}
@@ -290,18 +300,18 @@ export default function GuideSeatDashboard({
                   data-testid="pickup-group-header"
                 >
                   <span className="min-w-0">
-                    <span className="block truncate text-sm font-bold text-[var(--tr-ink)]">
+                    <span className="tr-name block truncate font-bold text-[var(--tr-ink)]">
                       {group.firstPickupTime ? `${group.firstPickupTime} · ` : ''}
                       {group.displayName}
                     </span>
-                    <span className="text-xs text-[var(--tr-ink-3)]">
+                    <span className="tr-meta text-[var(--tr-ink-3)]">
                       {group.teamCount}팀 {group.paxCount}명 · 체크인 {checked}/{group.teamCount}
                     </span>
                   </span>
                   {isCollapsed ? (
-                    <ChevronDown size={16} className="shrink-0 text-[var(--tr-ink-3)]" aria-hidden />
+                    <IconScrollDown size={TR_ICON.chip} className="shrink-0 text-[var(--tr-ink-3)]" aria-hidden />
                   ) : (
-                    <ChevronUp size={16} className="shrink-0 text-[var(--tr-ink-3)]" aria-hidden />
+                    <IconCollapse size={TR_ICON.chip} className="shrink-0 text-[var(--tr-ink-3)]" aria-hidden />
                   )}
                 </button>
                 {!isCollapsed && (
@@ -321,36 +331,37 @@ export default function GuideSeatDashboard({
                           >
                             <span className="min-w-0 flex-1">
                               <span className="flex flex-wrap items-center gap-1.5">
-                                <span className="truncate text-sm font-semibold text-[var(--tr-ink)]">{row.name}</span>
-                                <span className="text-xs text-[var(--tr-ink-3)]">{row.partySize}명</span>
+                                <span className="tr-name truncate font-semibold text-[var(--tr-ink)]">{row.name}</span>
+                                <span className="tr-meta text-[var(--tr-ink-3)]">{row.partySize}명</span>
                                 {ch && (
-                                  <span className="rounded-full bg-[var(--tr-surface-2)] px-1.5 py-0.5 text-[10px] font-semibold text-[var(--tr-ink-3)]">
+                                  <span className="tr-meta text-cjk-safe rounded-full bg-[var(--tr-surface-2)] px-1.5 py-0.5 font-semibold text-[var(--tr-ink-3)]">
                                     {ch}
                                   </span>
                                 )}
                                 {row.highlights.length > 0 && (
-                                  <span className="rounded-full bg-[var(--tr-danger-soft)] px-1.5 py-0.5 text-[10px] font-bold text-[var(--tr-danger)]" data-testid="row-highlight">
-                                    ⚠ {row.highlights.length}
+                                  <span className="tr-meta text-cjk-safe inline-flex items-center gap-0.5 rounded-full bg-[var(--tr-danger-soft)] px-1.5 py-0.5 font-bold text-[var(--tr-danger)]" data-testid="row-highlight">
+                                    <IconWarn size={TR_ICON.meta} className="shrink-0" aria-hidden />
+                                    {row.highlights.length}
                                   </span>
                                 )}
-                                {/* B4 — 메모 아이콘 + 말줄임. 🔴 위 ⚠(손님이 선언한
+                                {/* B4 — 메모 아이콘 + 말줄임. 🔴 위 경고 배지(손님이 선언한
                                     needs)와 다른 모양이어야 한다: 하나는 손님 말,
                                     하나는 운영자 말이다(B4-D1). */}
                                 {hasNote(guestNotes.get(row.bookingId)?.note) && (
                                   <span
-                                    className="inline-flex max-w-[9rem] items-center gap-1 rounded-full bg-[var(--tr-surface-2)] px-1.5 py-0.5 text-[10px] font-medium text-[var(--tr-ink-2)]"
+                                    className="tr-meta inline-flex max-w-[9rem] items-center gap-1 rounded-full bg-[var(--tr-surface-2)] px-1.5 py-0.5 font-medium text-[var(--tr-ink-2)]"
                                     data-testid="row-note"
                                   >
-                                    <StickyNote size={9} aria-hidden />
+                                    <IconNote size={TR_ICON.meta} className="shrink-0" aria-hidden />
                                     <span className="truncate">{noteSummary(guestNotes.get(row.bookingId)?.note)}</span>
                                   </span>
                                 )}
                               </span>
-                              <span className="mt-0.5 block text-xs text-[var(--tr-ink-3)] tabular-nums">
+                              <span className="tr-meta mt-0.5 block text-[var(--tr-ink-3)] tabular-nums">
                                 {row.seatNumbers.length > 0 ? `좌석 ${row.seatNumbers.join(', ')}` : '좌석 미지정'}
                               </span>
                             </span>
-                            <span className={`shrink-0 rounded-full px-2 py-0.5 text-[11px] font-bold ${meta.cls}`}>
+                            <span className={`tr-meta text-cjk-safe shrink-0 rounded-full px-2 py-0.5 font-bold ${meta.cls}`}>
                               {meta.label}
                             </span>
                           </button>
@@ -388,25 +399,25 @@ export default function GuideSeatDashboard({
                   >
                     {entry.index}
                   </span>
-                  <span className="text-[11px] font-semibold text-[var(--tr-ink-2)]">
+                  <span className="tr-meta font-semibold text-[var(--tr-ink-2)]">
                     {entry.firstPickupTime ? `${entry.firstPickupTime} · ` : ''}
                     {entry.displayName}
                     {entry.color ? '' : ' (색 없음)'}
                   </span>
-                  <span className="text-[11px] text-[var(--tr-ink-3)] tabular-nums">{entry.paxCount}명</span>
+                  <span className="tr-meta text-[var(--tr-ink-3)] tabular-nums">{entry.paxCount}명</span>
                 </li>
               ))}
             </ul>
           )}
           {vehicles.length === 0 && (
-            <p className="rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-6 text-center text-sm text-[var(--tr-ink-3)]">
+            <p className="tr-card-text rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-6 text-center text-[var(--tr-ink-3)]">
               차량이 아직 배정되지 않았어요.
             </p>
           )}
           {vehicles.map((v) =>
             v.layout ? (
               <div key={v.roomVehicleId} className="rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] p-3">
-                <p className="mb-2 text-xs font-bold text-[var(--tr-ink-2)]">
+                <p className="tr-label mb-2 font-bold text-[var(--tr-ink-2)]">
                   {v.plateNumber || v.model || '차량'}
                 </p>
                 <div className="overflow-x-auto">
@@ -430,10 +441,10 @@ export default function GuideSeatDashboard({
         type="button"
         disabled={!gate.enabled || busy || Boolean(data?.started)}
         onClick={() => void startTour()}
-        className="mt-5 flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--tr-safe)] px-4 py-3 text-sm font-bold text-white disabled:bg-[var(--tr-surface-2)] disabled:text-[var(--tr-ink-3)]"
+        className="tr-label flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--tr-safe)] px-4 py-3 font-bold text-white disabled:bg-[var(--tr-surface-2)] disabled:text-[var(--tr-ink-3)] mt-5"
         data-testid="start-gate-btn"
       >
-        <Play size={16} aria-hidden />
+        <IconPlay size={TR_ICON.chip} aria-hidden />
         {data?.started
           ? '투어 시작됨'
           : gate.enabled
@@ -522,15 +533,15 @@ function SeatActionSheet({
 }) {
   const a = target.assignment;
   const btn =
-    'w-full rounded-xl px-4 py-3 text-sm font-bold active:scale-[0.99] disabled:opacity-40';
+    'tr-label w-full rounded-xl px-4 py-3 font-bold active:scale-[0.99] disabled:opacity-40';
   return (
     <div className="fixed inset-0 z-50 flex items-end justify-center sm:items-center" data-testid="seat-action-sheet">
       <button type="button" aria-label="닫기" className="absolute inset-0 bg-black/40" onClick={onClose} />
       <div className="relative z-10 w-full max-w-sm rounded-t-2xl bg-[var(--tr-surface)] p-4 sm:rounded-2xl">
         <div className="mb-3 flex items-center justify-between">
-          <p className="text-sm font-bold text-[var(--tr-ink)]">{target.seatNumber}번 좌석</p>
+          <p className="tr-title font-bold text-[var(--tr-ink)]">{target.seatNumber}번 좌석</p>
           <button type="button" onClick={onClose} aria-label="닫기" className="text-[var(--tr-ink-3)]">
-            <X size={16} aria-hidden />
+            <IconClose size={TR_ICON.chip} aria-hidden />
           </button>
         </div>
         <div className="space-y-2">
@@ -557,8 +568,8 @@ function SeatActionSheet({
             </>
           ) : (
             <>
-              <p className="text-xs text-[var(--tr-ink-3)]">빈 좌석 — 미지정 게스트를 현장 지정</p>
-              {unseated.length === 0 && <p className="text-xs text-[var(--tr-ink-3)]">미지정 게스트가 없어요.</p>}
+              <p className="tr-meta text-[var(--tr-ink-3)]">빈 좌석 — 미지정 게스트를 현장 지정</p>
+              {unseated.length === 0 && <p className="tr-meta text-[var(--tr-ink-3)]">미지정 게스트가 없어요.</p>}
               {unseated.map((g) => (
                 <button
                   key={g.id}
@@ -691,7 +702,7 @@ function NoShowEvidenceSheet({
       <button type="button" aria-label="닫기" className="absolute inset-0 bg-black/40" onClick={onClose} />
       <div className="relative z-10 max-h-[88dvh] w-full max-w-sm overflow-y-auto rounded-t-2xl bg-[var(--tr-surface)] p-4 sm:rounded-2xl">
         <div className="mb-1 flex items-center justify-between">
-          <p className="text-sm font-bold text-[var(--tr-ink)]">{target.seatNumber}번 좌석 노쇼 증거</p>
+          <p className="tr-title font-bold text-[var(--tr-ink)]">{target.seatNumber}번 좌석 노쇼 증거</p>
           <button
             type="button"
             onClick={onClose}
@@ -699,10 +710,10 @@ function NoShowEvidenceSheet({
             className="flex h-11 w-11 items-center justify-center text-[var(--tr-ink-3)]"
             data-testid="evidence-cancel"
           >
-            <X size={16} aria-hidden />
+            <IconClose size={TR_ICON.chip} aria-hidden />
           </button>
         </div>
-        <p className="mb-3 text-xs text-[var(--tr-ink-3)]">
+        <p className="tr-meta mb-3 text-[var(--tr-ink-3)]">
           픽업지 현장 사진과 위치·시각을 남겨야 노쇼로 처리돼요. (OTA 분쟁 대응 자료)
         </p>
 
@@ -722,20 +733,20 @@ function NoShowEvidenceSheet({
         <button
           type="button"
           onClick={() => fileRef.current?.click()}
-          className="flex min-h-[52px] w-full items-center gap-2 rounded-xl border border-dashed border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] px-4 py-3 text-left text-sm font-bold text-[var(--tr-ink)]"
+          className="tr-label flex min-h-[52px] w-full items-center gap-2 rounded-xl border border-dashed border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] px-4 py-3 text-left font-bold text-[var(--tr-ink)]"
           data-testid="evidence-photo-btn"
         >
-          <Camera size={18} className="shrink-0 text-[var(--tr-ink-2)]" aria-hidden />
+          <IconCamera size={TR_ICON.action} className="shrink-0 text-[var(--tr-ink-2)]" aria-hidden />
           <span className="min-w-0 flex-1 truncate">
             {photo ? photo.name : '현장 사진 촬영 (필수)'}
           </span>
-          {photo && <span className="shrink-0 text-xs font-semibold text-[var(--tr-safe)]">준비됨</span>}
+          {photo && <span className="tr-meta shrink-0 font-semibold text-[var(--tr-safe)]">준비됨</span>}
         </button>
 
         {/* 2. GPS — 성공하면 좌표, 실패하면 사유 필수 */}
         <div className="mt-2 flex items-start gap-2 rounded-xl bg-[var(--tr-surface-2)] px-3 py-2.5" data-testid="evidence-gps">
-          <MapPin size={15} className="mt-0.5 shrink-0 text-[var(--tr-ink-2)]" aria-hidden />
-          <p className="text-xs text-[var(--tr-ink-2)] tabular-nums">
+          <IconArrived size={TR_ICON.chip} className="mt-0.5 shrink-0 text-[var(--tr-ink-2)]" aria-hidden />
+          <p className="tr-label text-[var(--tr-ink-2)] tabular-nums">
             {gps.kind === 'pending' && '위치 확인 중…'}
             {gps.kind === 'ok' &&
               `${gps.latitude.toFixed(5)}, ${gps.longitude.toFixed(5)}${gps.accuracyM !== null ? ` (±${gps.accuracyM}m)` : ''}`}
@@ -748,7 +759,7 @@ function NoShowEvidenceSheet({
             onChange={(e) => setReason(e.target.value)}
             rows={2}
             placeholder="예: 실내 주차장이라 GPS 미수신"
-            className="mt-2 w-full rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2.5 text-sm text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)]"
+            className="tr-card-text mt-2 w-full rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2.5 text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)]"
             data-testid="evidence-gps-reason"
           />
         )}
@@ -759,12 +770,12 @@ function NoShowEvidenceSheet({
           onChange={(e) => setNote(e.target.value)}
           rows={2}
           placeholder="메모 (선택) — 예: 10분 대기 후 출발"
-          className="mt-2 w-full rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2.5 text-sm text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)]"
+          className="tr-card-text mt-2 w-full rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2.5 text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)]"
           data-testid="evidence-note"
         />
 
         {error && (
-          <p className="mt-2 rounded-xl bg-[var(--tr-danger-soft)] px-3 py-2 text-xs font-medium text-[var(--tr-danger)]" data-testid="evidence-error">
+          <p className="tr-label mt-2 rounded-xl bg-[var(--tr-danger-soft)] px-3 py-2 font-medium text-[var(--tr-danger)]" data-testid="evidence-error">
             {error}
           </p>
         )}
@@ -773,7 +784,7 @@ function NoShowEvidenceSheet({
           type="button"
           disabled={!canSubmit}
           onClick={() => void submit()}
-          className="mt-3 min-h-[48px] w-full rounded-xl bg-[var(--tr-danger)] px-4 py-3 text-sm font-bold text-white disabled:bg-[var(--tr-surface-2)] disabled:text-[var(--tr-ink-3)]"
+          className="tr-label mt-3 min-h-[48px] w-full rounded-xl bg-[var(--tr-danger)] px-4 py-3 font-bold text-white disabled:bg-[var(--tr-surface-2)] disabled:text-[var(--tr-ink-3)]"
           data-testid="evidence-submit"
         >
           {submitting ? '증거 저장 중…' : '증거 저장 후 노쇼 처리'}
@@ -835,16 +846,16 @@ function CheckinQrOverlay({
 
   return (
     <div className="fixed inset-0 z-[60] flex flex-col items-center justify-center bg-white p-6 text-center" data-testid="checkin-qr-overlay">
-      <p className="text-lg font-bold text-neutral-900">체크인 QR</p>
-      <p className="mt-1 text-sm text-neutral-500">게스트가 카메라로 스캔하면 원탭 체크인됩니다.</p>
+      <p className="tr-body-lg font-bold text-neutral-900">체크인 QR</p>
+      <p className="tr-card-text mt-1 text-neutral-500">게스트가 카메라로 스캔하면 원탭 체크인됩니다.</p>
       <div className="mt-6 flex h-[320px] w-[320px] items-center justify-center">
         {err ? (
-          <p className="text-sm text-neutral-500">QR을 불러오지 못했어요.</p>
+          <p className="tr-card-text text-neutral-500">QR을 불러오지 못했어요.</p>
         ) : dataUrl ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img src={dataUrl} alt="check-in QR" width={320} height={320} data-testid="qr-image" />
         ) : (
-          <p className="text-sm text-neutral-400">불러오는 중…</p>
+          <p className="tr-card-text text-neutral-400">불러오는 중…</p>
         )}
       </div>
       <div className="mt-6 flex gap-2">
@@ -853,13 +864,13 @@ function CheckinQrOverlay({
             href={staticUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-xl bg-neutral-100 px-4 py-2.5 text-sm font-bold text-neutral-900"
+            className="tr-label rounded-xl bg-neutral-100 px-4 py-2.5 font-bold text-neutral-900"
             data-testid="qr-print"
           >
             인쇄용 QR
           </a>
         )}
-        <button type="button" onClick={onClose} className="rounded-xl bg-neutral-900 px-5 py-2.5 text-sm font-bold text-white" data-testid="qr-close">
+        <button type="button" onClick={onClose} className="tr-label rounded-xl bg-neutral-900 px-5 py-2.5 font-bold text-white" data-testid="qr-close">
           닫기
         </button>
       </div>

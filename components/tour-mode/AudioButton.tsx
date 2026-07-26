@@ -12,7 +12,7 @@
 
 import { useState } from 'react';
 import { primeAudio, speakMessage } from '@/lib/tour-room/tts';
-import { IconListen, IconMuted } from '@/components/tour-mode/icons';
+import { IconListen, IconMuted, TR_ICON } from '@/components/tour-mode/icons';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
 export default function AudioButton({
@@ -57,9 +57,9 @@ export default function AudioButton({
       {state === 'busy' ? (
         <span className="h-3 w-3 animate-spin rounded-full border-2 border-[var(--tr-accent)] border-t-transparent" aria-hidden />
       ) : state === 'unavailable' ? (
-        <IconMuted size={13} aria-hidden />
+        <IconMuted size={TR_ICON.meta} aria-hidden />
       ) : (
-        <IconListen size={14} aria-hidden />
+        <IconListen size={TR_ICON.meta} aria-hidden />
       )}
     </button>
   );

@@ -29,7 +29,7 @@ import {
 } from '@/lib/tour-room/concierge';
 import { activeNotice } from '@/lib/tour-room/notices';
 import { roomLifecycle } from '@/lib/tour-room/time';
-import { IconConcierge, IconConciergeSend } from '@/components/tour-mode/icons';
+import { IconConcierge, IconConciergeSend, TR_ICON, TR_STROKE } from '@/components/tour-mode/icons';
 import FacilityMapCard from '@/components/tour-mode/FacilityMapCard';
 import DiningCard from '@/components/tour-mode/DiningCard';
 import type { DiningCardMeta } from '@/lib/ops/dining/card';
@@ -194,7 +194,7 @@ export default function ConciergePanel({
             key={chip.intent}
             type="button"
             onClick={() => askChip(chip.intent, chip.label[locale])}
-            className="tr-label flex min-h-[40px] items-center rounded-full bg-[var(--tr-accent-soft)] px-4 font-medium text-[var(--tr-accent-deep)] tr-press"
+            className="tr-label flex min-h-[44px] items-center rounded-full bg-[var(--tr-accent-soft)] px-4 font-medium text-[var(--tr-accent-deep)] tr-press"
             data-testid={`concierge-chip-${chip.intent}`}
           >
             {chip.label[locale]}
@@ -221,7 +221,7 @@ export default function ConciergePanel({
                   className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[var(--tr-accent-soft)] text-[var(--tr-accent-deep)]"
                   aria-hidden
                 >
-                  <IconConcierge size={13} strokeWidth={2.25} />
+                  <IconConcierge size={TR_ICON.meta} strokeWidth={TR_STROKE.small} />
                 </span>
                 <div className="min-w-0 flex-1">
                   <div className="tr-card-text inline-block whitespace-pre-line rounded-[var(--tr-radius-bubble)] bg-[var(--tr-surface)] px-3.5 py-2 leading-relaxed text-[var(--tr-ink)]">
@@ -274,7 +274,7 @@ export default function ConciergePanel({
           className="flex h-11 w-11 shrink-0 items-center justify-center tr-btn-raised rounded-full bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
           data-testid="concierge-send"
         >
-          <IconConciergeSend size={19} strokeWidth={2.25} />
+          <IconConciergeSend size={TR_ICON.action} strokeWidth={TR_STROKE.default} />
         </button>
       </div>
     </div>

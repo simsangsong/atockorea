@@ -11,7 +11,7 @@
  * send time). Only the chrome is localized.
  */
 
-import { CalendarDays } from 'lucide-react';
+import { IconDate, TR_ICON, TR_STROKE } from '@/components/tour-mode/icons';
 import { SCHEDULE_COPY, type BriefingScheduleMeta } from '@/lib/ops/seating/cards/schedule';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
@@ -36,9 +36,9 @@ export default function BriefingScheduleCard({
           className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--tr-accent-soft)] text-[var(--tr-accent-deep)]"
           aria-hidden
         >
-          <CalendarDays size={15} strokeWidth={2} />
+          <IconDate size={TR_ICON.chip} strokeWidth={TR_STROKE.default} />
         </span>
-        <p className="min-w-0 flex-1 text-sm font-semibold text-[var(--tr-ink)]">{copy.title}</p>
+        <p className="tr-title min-w-0 flex-1 text-[var(--tr-ink)]">{copy.title}</p>
         <span className="tr-meta shrink-0 text-[var(--tr-ink-3)]" data-testid="briefing-schedule-count">
           {copy.stopCount.replace('{n}', String(stops.length))}
         </span>
@@ -52,13 +52,13 @@ export default function BriefingScheduleCard({
             data-testid="briefing-schedule-stop"
           >
             <span
-              className={`w-[46px] shrink-0 tabular-nums text-sm font-bold ${
+              className={`tr-card-text tr-num w-[46px] shrink-0 font-bold ${
                 stop.time ? 'text-[var(--tr-accent-deep)]' : 'text-[var(--tr-ink-3)]'
               }`}
             >
               {stop.time ?? '·'}
             </span>
-            <span className="min-w-0 flex-1 text-sm font-medium leading-snug text-[var(--tr-ink)]">
+            <span className="tr-card-text min-w-0 flex-1 font-medium leading-snug text-[var(--tr-ink)]">
               {stop.title}
             </span>
           </li>
