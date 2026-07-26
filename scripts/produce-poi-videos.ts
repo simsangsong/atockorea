@@ -239,7 +239,8 @@ async function main(): Promise<void> {
         languages: options.languages,
         tts: options.tts,
         script: options.script,
-        burnSubtitles: true,
+        burnSubtitles: !options.subtitleOverlay,
+        subtitleOverlay: options.subtitleOverlay,
         supabase,
         log: (line) => console.log(line),
       });

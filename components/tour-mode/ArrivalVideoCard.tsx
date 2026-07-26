@@ -7,7 +7,8 @@
  * Poster-first: no video bytes load until the guest taps play, then it swaps
  * to a native <video controls autoPlay playsInline> (inline on iOS, no
  * fullscreen hijack). The URL is picked for the viewer's locale with an
- * English fallback (subtitles are burned in, so it stays watchable).
+ * English fallback. Legacy renders have burned-in subtitles; overlay renders
+ * (one neutral silent MP4) attach the viewer-locale VTT as a <track> instead.
  * tr-* tokens only — light/dark and the cockpit alike.
  */
 
@@ -15,6 +16,7 @@ import { useState } from 'react';
 import { Play, Clapperboard } from 'lucide-react';
 import {
   formatVideoDuration,
+  pickSubtitleUrl,
   pickVideoUrl,
   type ArrivalVideoCardMeta,
 } from '@/lib/tour-room/poiVideos';
@@ -32,6 +34,11 @@ export default function ArrivalVideoCard({
   const url = pickVideoUrl(meta, locale);
   if (!url || broken) return null;
 
+  // Overlay renders (neutral MP4): soft subtitles in the viewer's locale via
+  // <track>. Legacy burned-in renders have no subtitle URL — no track, same
+  // behavior as before. crossOrigin lets the browser fetch the VTT from the
+  // public storage origin.
+  const subtitleUrl = pickSubtitleUrl(meta, locale);
   const duration = formatVideoDuration(meta.duration_seconds);
 
   return (
@@ -47,10 +54,21 @@ export default function ArrivalVideoCard({
           autoPlay
           playsInline
           preload="metadata"
+          crossOrigin={subtitleUrl ? 'anonymous' : undefined}
           onError={() => setBroken(true)}
           className="tr-anim-panel-in aspect-[9/16] max-h-[420px] w-full bg-black object-contain"
           data-testid="arrival-video-player"
-        />
+        >
+          {subtitleUrl ? (
+            <track
+              kind="subtitles"
+              src={subtitleUrl}
+              srcLang={locale}
+              default
+              data-testid="arrival-video-subtitles"
+            />
+          ) : null}
+        </video>
       ) : (
         <button
           type="button"

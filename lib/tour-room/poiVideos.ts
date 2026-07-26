@@ -20,6 +20,12 @@ export interface ArrivalVideoCardMeta {
   duration_seconds: number | null;
   /** Room-locale → public MP4 URL ('ko' never has an entry; render falls back). */
   urls: Partial<Record<RoomLocale, string>>;
+  /**
+   * Room-locale → public VTT URL for subtitle-overlay renders (one neutral
+   * silent MP4, soft subs picked by viewer locale). Absent on legacy
+   * burned-in renders — the player then adds no <track> and nothing changes.
+   */
+  subtitles?: Partial<Record<RoomLocale, string>>;
 }
 
 /** Video pipeline language → room locale ('zh-Hant' → 'zh'; ko has no video). */
@@ -33,6 +39,12 @@ export const VIDEO_LANGUAGE_TO_ROOM_LOCALE: Record<string, RoomLocale> = {
 /** The viewer's video URL: their locale, else English, else any language. */
 export function pickVideoUrl(meta: ArrivalVideoCardMeta, locale: RoomLocale): string | null {
   return meta.urls[locale] ?? meta.urls.en ?? Object.values(meta.urls).find(Boolean) ?? null;
+}
+
+/** The viewer's soft-subtitle URL (overlay renders only): locale, else English. */
+export function pickSubtitleUrl(meta: ArrivalVideoCardMeta, locale: RoomLocale): string | null {
+  if (!meta.subtitles || typeof meta.subtitles !== 'object') return null;
+  return meta.subtitles[locale] ?? meta.subtitles.en ?? Object.values(meta.subtitles).find(Boolean) ?? null;
 }
 
 export function isVideoCardMeta(value: unknown): value is ArrivalVideoCardMeta {

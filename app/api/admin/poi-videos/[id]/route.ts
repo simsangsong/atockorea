@@ -15,7 +15,7 @@ export const dynamic = 'force-dynamic';
  */
 
 const SELECT_COLUMNS =
-  'id, poi_key, language, version, video_url, poster_url, duration_seconds, status, qc, created_at, reviewed_at, reviewed_by';
+  'id, poi_key, language, version, video_url, poster_url, subtitle_url, duration_seconds, status, qc, created_at, reviewed_at, reviewed_by';
 
 const ALLOWED = new Set(['approved', 'rejected', 'pending_review']);
 

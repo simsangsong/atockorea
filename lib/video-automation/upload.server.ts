@@ -26,7 +26,9 @@ export interface QcFile {
 export interface RunSummaryFile {
   poiId: string;
   poster: string | null;
-  languages: Array<{ language: string; renderPath: string | null; totalSeconds: number }>;
+  /** 'neutral-overlay' = one shared silent MP4 + per-locale VTT (soft subs). */
+  renderMode?: 'per-language' | 'neutral-overlay';
+  languages: Array<{ language: string; renderPath: string | null; totalSeconds: number; vttPath?: string }>;
 }
 
 export interface UploadDbClient {
@@ -143,8 +145,12 @@ export async function uploadProducedRun(
     }
   }
 
+  const overlay = summary.renderMode === 'neutral-overlay';
   const uploaded: UploadResult['uploaded'] = [];
   const skipped: string[] = [];
+  // Overlay runs share ONE render across languages — upload the bytes once and
+  // reuse the URL for every language row (keyed by the on-disk path).
+  const uploadedRenders = new Map<string, string>();
   for (const lang of summary.languages) {
     if (!lang.renderPath) {
       skipped.push(lang.language);
@@ -153,15 +159,38 @@ export async function uploadProducedRun(
     }
     const file = path.resolve(options.root, lang.renderPath);
     if (!existsSync(file)) throw new Error(`Render missing on disk: ${file}`);
-    const bytes = readFileSync(file);
-    const hash = createHash('sha1').update(bytes).digest('hex').slice(0, 8);
-    const storagePath = `poi/${poiKey}/v${qc.version}/${lang.language}-${hash}.mp4`;
-    const { error: uploadError } = await supabase.storage.from(TOUR_VIDEOS_BUCKET).upload(storagePath, bytes, {
-      contentType: 'video/mp4',
-      upsert: true,
-    });
-    if (uploadError) throw new Error(`${lang.language} upload failed: ${uploadError.message}`);
-    const url = supabase.storage.from(TOUR_VIDEOS_BUCKET).getPublicUrl(storagePath).data.publicUrl;
+    let url = uploadedRenders.get(file);
+    if (!url) {
+      const bytes = readFileSync(file);
+      const hash = createHash('sha1').update(bytes).digest('hex').slice(0, 8);
+      const objectName = overlay ? `neutral-${hash}.mp4` : `${lang.language}-${hash}.mp4`;
+      const storagePath = `poi/${poiKey}/v${qc.version}/${objectName}`;
+      const { error: uploadError } = await supabase.storage.from(TOUR_VIDEOS_BUCKET).upload(storagePath, bytes, {
+        contentType: 'video/mp4',
+        upsert: true,
+      });
+      if (uploadError) throw new Error(`${lang.language} upload failed: ${uploadError.message}`);
+      url = supabase.storage.from(TOUR_VIDEOS_BUCKET).getPublicUrl(storagePath).data.publicUrl;
+      uploadedRenders.set(file, url);
+    }
+
+    // Overlay mode: the narration lives in the per-locale VTT — upload it and
+    // record it on the row so the player can attach a <track>.
+    let subtitleUrl: string | null = null;
+    if (overlay) {
+      if (!lang.vttPath) throw new Error(`${lang.language}: overlay run without vttPath in run-summary.json.`);
+      const vttFile = path.resolve(options.root, lang.vttPath);
+      if (!existsSync(vttFile)) throw new Error(`Subtitles missing on disk: ${vttFile}`);
+      const vttBytes = readFileSync(vttFile);
+      const vttHash = createHash('sha1').update(vttBytes).digest('hex').slice(0, 8);
+      const vttStoragePath = `poi/${poiKey}/v${qc.version}/${lang.language}-${vttHash}.vtt`;
+      const { error: vttError } = await supabase.storage.from(TOUR_VIDEOS_BUCKET).upload(vttStoragePath, vttBytes, {
+        contentType: 'text/vtt',
+        upsert: true,
+      });
+      if (vttError) throw new Error(`${lang.language} subtitle upload failed: ${vttError.message}`);
+      subtitleUrl = supabase.storage.from(TOUR_VIDEOS_BUCKET).getPublicUrl(vttStoragePath).data.publicUrl;
+    }
 
     const { error: upsertError } = await supabase.from('poi_videos').upsert(
       {
@@ -171,6 +200,7 @@ export async function uploadProducedRun(
         kind: 'poi',
         video_url: url,
         poster_url: posterUrl,
+        subtitle_url: subtitleUrl,
         duration_seconds: lang.totalSeconds,
         status: 'pending_review', // VP-D10 — only an admin approval serves it
         qc: { status: qc.status, checks: qc.checks },
@@ -179,7 +209,7 @@ export async function uploadProducedRun(
     );
     if (upsertError) throw new Error(`${lang.language} row upsert failed: ${upsertError.message}`);
     uploaded.push({ language: lang.language, url });
-    log(`✓ ${lang.language} → ${url}`);
+    log(`✓ ${lang.language} → ${url}${subtitleUrl ? ' (+vtt)' : ''}`);
   }
 
   if (uploaded.length === 0) throw new Error('No renders uploaded — nothing to review.');

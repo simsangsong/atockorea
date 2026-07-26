@@ -6,6 +6,7 @@
 import {
   formatVideoDuration,
   isVideoCardMeta,
+  pickSubtitleUrl,
   pickVideoUrl,
   VIDEO_LANGUAGE_TO_ROOM_LOCALE,
   type ArrivalVideoCardMeta,
@@ -33,6 +34,24 @@ describe('pickVideoUrl', () => {
 
   it('returns null for an empty card', () => {
     expect(pickVideoUrl({ poster_url: null, duration_seconds: null, urls: {} }, 'en')).toBeNull();
+  });
+});
+
+describe('pickSubtitleUrl', () => {
+  const OVERLAY: ArrivalVideoCardMeta = {
+    ...CARD,
+    urls: { en: 'https://cdn/neutral.mp4', ja: 'https://cdn/neutral.mp4' },
+    subtitles: { en: 'https://cdn/en.vtt', ja: 'https://cdn/ja.vtt' },
+  };
+
+  it('serves the viewer locale subtitles, English fallback for ko', () => {
+    expect(pickSubtitleUrl(OVERLAY, 'ja')).toBe('https://cdn/ja.vtt');
+    expect(pickSubtitleUrl(OVERLAY, 'ko')).toBe('https://cdn/en.vtt');
+  });
+
+  it('returns null for legacy burned-in cards (no subtitles key)', () => {
+    expect(pickSubtitleUrl(CARD, 'en')).toBeNull();
+    expect(pickSubtitleUrl({ ...CARD, subtitles: {} }, 'en')).toBeNull();
   });
 });
 
