@@ -1,3 +1,4 @@
+import { periodDateBounds } from '@/lib/ops/tax/assignments';
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { requireAdmin, AdminAuthFailure, adminAuthJsonResponse } from '@/lib/auth';
@@ -30,10 +31,9 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ error: 'period=YYYY-MM 가 필요합니다' }, { status: 400 });
     }
 
-    const [year, month] = period.split('-').map(Number);
-    const lastDay = new Date(Date.UTC(month === 12 ? year + 1 : year, month === 12 ? 0 : month, 0)).getUTCDate();
-    const first = `${period}-01`;
-    const last = `${period}-${String(lastDay).padStart(2, '0')}`;
+    // Same maths as the tax forms and the autopilot scan — one helper, so a
+    // fourth copy cannot drift into `${period}-31` the way the scan's did.
+    const { first, last } = periodDateBounds(period);
 
     const { data: rooms, error } = await supabase
       .from('tour_rooms')
