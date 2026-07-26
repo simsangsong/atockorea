@@ -98,6 +98,19 @@ describe('G3 숫자 — 값 변조 검출, 서식 변경 허용 (H2)', () => {
     expect(f[0].message).toContain('철자 수사');
   });
 
+  // 2026-07-26 실측: 수사는 합성어·서수의 앞머리로 붙어 뒤쪽 경계 검사를 통과하지 못했다.
+  it('합성어·서수에 붙은 수사도 잡는다', () => {
+    const a = checkNumbers('4-story complex', 'vierstöckiger Komplex', '/p', 'de');
+    expect(a.every((x) => x.severity === 'flag')).toBe(true);
+    const b = checkNumbers("world's 5th tallest", 'fünfthöchster der Welt', '/p', 'de');
+    expect(b.every((x) => x.severity === 'flag')).toBe(true);
+    // 서수가 기수와 어간을 공유하지 않는 언어.
+    const c = checkNumbers('the 5th floor', 'il quinto piano', '/p', 'it');
+    expect(c.every((x) => x.severity === 'flag')).toBe(true);
+    const d = checkNumbers('the 5th floor', 'пятый этаж', '/p', 'ru');
+    expect(d.every((x) => x.severity === 'flag')).toBe(true);
+  });
+
   it('철자 수사 예외가 진짜 변조를 덮지 않는다 — 40 → 30', () => {
     const f = checkNumbers('about 40 minutes', 'etwa 30 Minuten', '/p', 'de');
     expect(f.some((x) => x.severity === 'fail' && x.message.includes('소실'))).toBe(true);
