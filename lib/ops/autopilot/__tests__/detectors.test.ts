@@ -15,6 +15,7 @@ import {
   type DetectorInputs,
 } from '../detectors';
 import { previousPeriodOf } from '../runner';
+import { periodDateBounds } from '@/lib/ops/tax/assignments';
 
 const TODAY = '2026-08-10';
 
@@ -55,6 +56,32 @@ describe('previousPeriodOf', () => {
   it('rolls back over a year boundary', () => {
     expect(previousPeriodOf('2026-08-10')).toBe('2026-07');
     expect(previousPeriodOf('2026-01-05')).toBe('2025-12');
+  });
+
+  /**
+   * The scan used to bound the previous month as `${prevPeriod}-31`. In five
+   * months of twelve that date does not exist, Postgres rejected the query,
+   * supabase-js returned count: null, and `?? 0` turned "the query never ran"
+   * into "no worked assignments" — so the settlement reminder went quiet
+   * without anyone noticing. Every previous month must produce a real date.
+   */
+  it('every previous month has a last day that actually exists', () => {
+    for (let month = 1; month <= 12; month += 1) {
+      const today = `2026-${String(month).padStart(2, '0')}-15`;
+      const { first, last } = periodDateBounds(previousPeriodOf(today));
+      for (const bound of [first, last]) {
+        expect(bound).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+        // `new Date` silently rolls 2026-06-31 forward to July 1st, so compare
+        // the string back out rather than trusting the parse to fail.
+        expect(new Date(`${bound}T00:00:00Z`).toISOString().slice(0, 10)).toBe(bound);
+      }
+    }
+  });
+
+  it('bounds February, including a leap year', () => {
+    expect(periodDateBounds(previousPeriodOf('2026-03-01')).last).toBe('2026-02-28');
+    expect(periodDateBounds(previousPeriodOf('2028-03-01')).last).toBe('2028-02-29');
+    expect(periodDateBounds(previousPeriodOf('2026-07-01')).last).toBe('2026-06-30');
   });
 });
 

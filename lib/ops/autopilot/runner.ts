@@ -8,6 +8,7 @@
 import type { SupabaseClient } from '@supabase/supabase-js';
 import { OPS_TENANT_ID } from '@/lib/ops/tenant';
 import { resolveSeatCapacity } from '@/lib/ops/vehicles/registry';
+import { periodDateBounds } from '@/lib/ops/tax/assignments';
 import type { GuideRateRow } from '@/lib/ops/guides/rates';
 import { detectSuggestions, type DetectorInputs, type Suggestion } from './detectors';
 
@@ -44,6 +45,19 @@ export async function runAutopilot(
   const nowIso = opts.nowIso ?? new Date().toISOString();
   const horizonEnd = addDays(opts.today, horizonDays);
   const prevPeriod = previousPeriodOf(opts.today);
+  /**
+   * 🔴 This used to build the range as `${prevPeriod}-01` … `${prevPeriod}-31`.
+   * June has no 31st. PostgREST passed the string through and Postgres rejected
+   * it — "date/time field value out of range: 2026-06-31", five times in one
+   * day of production logs. supabase-js does not throw on that: `count` came
+   * back null, the consumer read it as `?? 0`, and "no worked assignments" is
+   * indistinguishable from "the query never ran". So the settlement reminder
+   * silently never fired in any month whose predecessor is short — February,
+   * April, June, September, November, which is five months of twelve.
+   *
+   * `periodDateBounds` already computed this correctly for the tax forms.
+   */
+  const prevBounds = periodDateBounds(prevPeriod);
 
   const { data: rooms } = await supabase
     .from('tour_rooms')
@@ -97,8 +111,8 @@ export async function runAutopilot(
         .select('id', { count: 'exact', head: true })
         .eq('tenant_id', tenantId)
         .eq('status', 'worked')
-        .gte('tour_date', `${prevPeriod}-01`)
-        .lte('tour_date', `${prevPeriod}-31`),
+        .gte('tour_date', prevBounds.first)
+        .lte('tour_date', prevBounds.last),
       supabase
         .from('ops_guide_settlements')
         .select('id', { count: 'exact', head: true })
@@ -209,6 +223,24 @@ export async function runAutopilot(
       settlementCount: prevSettleRes.count ?? 0,
     },
   };
+
+  /**
+   * A failed count and an empty month look identical downstream — both arrive
+   * as 0 and the detector stays quiet. That is exactly how the `-31` bug hid
+   * for months. Say so out loud instead: the scan still returns everything it
+   * did find, but a broken query no longer passes for a clean one.
+   */
+  for (const [label, res] of [
+    ['worked assignments', prevAssignRes],
+    ['settlement rows', prevSettleRes],
+  ] as const) {
+    if (res.error) {
+      console.error(
+        `[autopilot] previous-period ${label} query failed for ${prevPeriod} — the settlement reminder cannot fire this run:`,
+        res.error.message,
+      );
+    }
+  }
 
   const found = detectSuggestions(inputs);
   const written = await persistSuggestions(supabase, found, { tenantId, nowIso });
