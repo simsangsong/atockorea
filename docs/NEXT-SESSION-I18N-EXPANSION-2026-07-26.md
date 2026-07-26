@@ -157,6 +157,7 @@ i18n-work/out/tour_product_pages/de/tour_product_pages_<SLUG>_de_<CHUNK>.json
 | # | 사안 | 왜 사람인가 |
 |---|---|---|
 | 1 | **상품명 번역 여부** — `Jeju Grand Highlights Loop` → `Große Jeju-Highlights-Rundtour` | 브랜드 결정. 기존 es는 완전 번역(`Gran Circuito…`), ko/ja는 음차라 선례가 갈린다. A-1 감수 1순위 |
+| 2c | **원문 영어 구문이 깨져 있다** — `jeju-cruise-shore-excursion-bus-tour` `/itineraryStops/5/description`: `traveler-fit the cruise industry's standard buffer` | 독일어·프랑스어 번역가가 **각각 독립적으로** 같은 지점을 지적했다. 둘 다 규칙 5에 따라 고치지 않고 최소 해석으로 옮겼으므로 두 로케일에 그대로 남아 있다 |
 | 2b | **원문 스톱 수가 서로 어긋난다** — `busan-top-attractions-day-tour` A1: hero는 `5 stops`, tagline은 `seven stops` | 손님이 같은 화면에서 두 숫자를 본다. 번역기는 규칙 5대로 양쪽을 그대로 옮겼으므로 **de·fr 번역본에도 그대로 복제돼 있다.** 원문을 고치면 두 로케일 재추출·재번역이 필요하다 |
 | 2 | **원문 데이터 결함 4건** — `Un Memorial Cemetery`(→UN), `Hallasumokwon Arboretum`(수목원 중복), `₩90-minute Subway Line 1`(`incheon-seoul-private-car…` `/itineraryStops/0/description` — 앞 항목 `₩10,000 taxi`의 ₩가 옮아붙은 오기, 90분은 금액이 아니다), `/sticky_booking_bar/note`(`from-incheon-seoul…`·`seoul-dmz…` — `checkout_tour_id`·Supabase·JSONB가 적힌 개발자 주석이 고객 노출 필드에 들어 있다) | 원문 수정은 번역 범위 밖. 번역기는 규칙 1·3에 따라 값을 그대로 옮겼다(주석 필드는 빈 값 처리 → 영어 폴백) |
 | 3 | **원문 시각 불일치** — `pickup_dropoff/notes/0`은 복귀 `17:30–18:00`, `practicalAccordionItems/0/content/1`은 `18:00–18:30` | 어느 쪽이 맞는지 운영이 안다 |
@@ -167,6 +168,7 @@ i18n-work/out/tour_product_pages/de/tour_product_pages_<SLUG>_de_<CHUNK>.json
 | 5a | 🔴 **디스크와 DB가 어긋난 슬러그 1개** — `jeju-grand-highlights-loop` fr | 발행 **뒤에** G13(신규 조판 게이트)이 이 유닛의 U+202F 누락 21곳을 잡아서 out/ 파일은 고쳤다. 그런데 `apply.ts`는 INSERT만 하므로(§5 규칙 2, 건드리지 않았다) **DB 행은 옛 버전 그대로**다. 조판 차이일 뿐 렌더는 정상이고 fr은 아직 고객에게 안 보인다. 반영하려면 그 행을 지우고 재발행해야 하는데, **DB 삭제는 사람이 결정할 일**이다. 그냥 두는 것도 선택지다 |
 | 6a | 🔴 **층 번호를 현지 관례로 바꿀 것인가** — fr 번역가가 `2nd floor` → `premier étage`(프랑스식 rez-de-chaussée 기준)로 옮겼다 | **손님이 현장에서 길을 잃을 수 있는 유일한 항목이다.** 한국 건물 엘리베이터·표지판은 미국식 `2F`로 적혀 있다. 독일어 번역가는 같은 이유로 `1F`/`2F`를 그대로 뒀다. 서식이 아니라 **안내 정확성** 문제라 사람이 정해야 한다 — 정하면 스타일가이드 4종에 같은 규칙을 넣어라 |
 | 6b | 🔴 **프랑스어 `Séoul` vs `Seoul` 이 갈렸다** — 실측 `Séoul` 38 · `Seoul` 58, 한 파일(`seoul-dmz…itineraryStops`) 안에서 둘 다 쓴 사례도 있다 | **사이트 자체 관례는 `Séoul` 이다** — `messages/fr.json` 이 18:3으로 그렇게 쓴다. 즉 판단이 아니라 정렬 문제다. 다만 `N Seoul Tower`·`Seoul Station` 같은 고유명은 영어로 둬야 해서 **일괄 치환은 위험**하다. 이미 발행된 5슬러그는 §8 #5a와 같은 INSERT-only 제약에 걸린다. 남은 슬러그부터는 프롬프트에 고정하는 것이 최소 조치 |
+| 7c | **시각 서식이 유닛마다 갈릴 수 있다** — fr `jeju-cruise-bus`에서 한 유닛만 `09:00–22:00` 콜론형, 나머지 9개는 `09 h 00` 형이었다(실측 11곳 vs 0곳) | 담당 번역가가 "값 불변 규칙 때문에 콜론형을 유지했다"고 적었는데 **오해다** — 서식 변경은 값 변경이 아니고 G3도 정상 처리한다. 이번엔 발행 전에 통일했지만, 같은 오해가 반복될 수 있으니 스타일가이드에 한 줄 박아 두면 좋다 |
 | 7a | **`N/A` 처리가 유닛마다 갈린다** — `Entfällt`(3건) vs 원문 유지 | 스타일가이드에 규정이 없어 번역가마다 판단이 달랐다. 어느 쪽이든 렌더는 정상이지만 한 상품 안에서 섞이면 눈에 띈다. 스타일가이드에 한 줄 넣으면 끝난다 |
 | 7b | **`liveStatusWidget` 값이 번역 큐에 있다** — `"haenyeo"` 같은 위젯 식별자 | 번역기는 그대로 두거나 빈 값 처리해 왔다(둘 다 안전). `isSkippedSubtreeKey`에 넣을지, 아니면 등급표에서 뺄지는 이 필드가 렌더에 어떻게 쓰이는지 아는 사람이 정한다 |
 | 8 | **같은 상품 안에서 용어가 갈린다** — `busan-cruise-shore`의 `headlineLine1`은 `Kreuzfahrt-Landgang`, 나머지 세그먼트는 `Kreuzfahrt-Landausflug` | 레이아웃 길이 때문에 의도적으로 짧게 쓴 것. 허용할지 통일할지는 감수자 판단 |
