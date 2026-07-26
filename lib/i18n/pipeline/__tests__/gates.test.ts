@@ -127,6 +127,14 @@ describe('G3 숫자 — 값 변조 검출, 서식 변경 허용 (H2)', () => {
     expect(d.every((x) => x.severity === 'flag')).toBe(true);
   });
 
+  // 2026-07-26 실측: 날짜 현지화는 양방향이다. 숫자 → 월 이름 쪽도 잡는다.
+  it('월 이름이 된 숫자는 fail이 아니라 flag', () => {
+    const f = checkNumbers('Global Geopark 2010-10', 'Global Geopark Oktober 2010', '/p', 'de');
+    expect(f.every((x) => x.severity === 'flag')).toBe(true);
+    expect(checkNumbers('opened 2015-08', 'ouvert en août 2015', '/p', 'fr').every((x) => x.severity === 'flag')).toBe(true);
+    expect(checkNumbers('opened 2015-10', 'открыт в октябре 2015', '/p', 'ru').every((x) => x.severity === 'flag')).toBe(true);
+  });
+
   it('철자 수사 예외가 진짜 변조를 덮지 않는다 — 40 → 30', () => {
     const f = checkNumbers('about 40 minutes', 'etwa 30 Minuten', '/p', 'de');
     expect(f.some((x) => x.severity === 'fail' && x.message.includes('소실'))).toBe(true);

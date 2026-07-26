@@ -200,6 +200,39 @@ const NUMERAL_WORDS: Record<TargetLocale, Record<string, RegExp[]>> = {
   },
 };
 
+/**
+ * 월 이름. 날짜 현지화는 **양방향**으로 숫자를 옮긴다.
+ *   `12 Oct 2009` → `12.10.2009`  월 이름이 숫자가 된다 → 이미 `숫자 추가` flag
+ *   `Global Geopark 2010-10` → `Oktober 2010`  숫자가 월 이름이 된다 → 여기
+ * (2026-07-26 실측). 철자 수사와 같은 정책으로 **flag 강등**한다.
+ */
+const MONTH_NAMES: Record<TargetLocale, Record<string, RegExp[]>> = {
+  de: {
+    '1': [/(?<!\p{L})jan/iu], '2': [/(?<!\p{L})feb/iu], '3': [/(?<!\p{L})mär/iu],
+    '4': [/(?<!\p{L})apr/iu], '5': [/(?<!\p{L})mai(?!\p{L})/iu], '6': [/(?<!\p{L})jun/iu],
+    '7': [/(?<!\p{L})jul/iu], '8': [/(?<!\p{L})aug/iu], '9': [/(?<!\p{L})sep/iu],
+    '10': [/(?<!\p{L})okt/iu], '11': [/(?<!\p{L})nov/iu], '12': [/(?<!\p{L})dez/iu],
+  },
+  fr: {
+    '1': [/(?<!\p{L})janv/iu], '2': [/(?<!\p{L})f[ée]vr/iu], '3': [/(?<!\p{L})mars(?!\p{L})/iu],
+    '4': [/(?<!\p{L})avr/iu], '5': [/(?<!\p{L})mai(?!\p{L})/iu], '6': [/(?<!\p{L})juin/iu],
+    '7': [/(?<!\p{L})juil/iu], '8': [/(?<!\p{L})ao[uû]t/iu], '9': [/(?<!\p{L})septembre/iu],
+    '10': [/(?<!\p{L})oct/iu], '11': [/(?<!\p{L})nov/iu], '12': [/(?<!\p{L})d[ée]c/iu],
+  },
+  it: {
+    '1': [/(?<!\p{L})genn/iu], '2': [/(?<!\p{L})febb/iu], '3': [/(?<!\p{L})marzo/iu],
+    '4': [/(?<!\p{L})aprile/iu], '5': [/(?<!\p{L})magg/iu], '6': [/(?<!\p{L})giugno/iu],
+    '7': [/(?<!\p{L})luglio/iu], '8': [/(?<!\p{L})agosto/iu], '9': [/(?<!\p{L})sett/iu],
+    '10': [/(?<!\p{L})ottobre/iu], '11': [/(?<!\p{L})novembre/iu], '12': [/(?<!\p{L})dicembre/iu],
+  },
+  ru: {
+    '1': [/(?<!\p{L})янв/iu], '2': [/(?<!\p{L})февр?/iu], '3': [/(?<!\p{L})март/iu],
+    '4': [/(?<!\p{L})апрел?/iu], '5': [/(?<!\p{L})ма[йя](?!\p{L})/iu], '6': [/(?<!\p{L})июн/iu],
+    '7': [/(?<!\p{L})июл/iu], '8': [/(?<!\p{L})авг/iu], '9': [/(?<!\p{L})сент/iu],
+    '10': [/(?<!\p{L})окт/iu], '11': [/(?<!\p{L})нояб/iu], '12': [/(?<!\p{L})дек/iu],
+  },
+};
+
 function matchesAny(text: string, patterns: RegExp[] | undefined): boolean {
   return patterns !== undefined && patterns.some((re) => re.test(text));
 }
@@ -260,7 +293,10 @@ export function checkNumbers(
   const spelled: string[] = [];
   for (const n of missingFrom(aNorm, bNorm)) {
     if (locale && matchesAny(target, NUMERAL_IDIOMS[locale][n])) continue;
-    if (locale && matchesAny(target, NUMERAL_WORDS[locale][n])) spelled.push(n);
+    if (
+      locale &&
+      (matchesAny(target, NUMERAL_WORDS[locale][n]) || matchesAny(target, MONTH_NAMES[locale][n]))
+    ) spelled.push(n);
     else lost.push(n);
   }
 
