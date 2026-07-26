@@ -37,6 +37,16 @@ export const WRONG_REPORT_HIDE_AT = 3;
 /** Rows loaded per read — ranking only ever needs the best handful. */
 const MAX_ROWS = 120;
 
+/**
+ * How many freshly collected places get translated while the guest waits.
+ *
+ * Two batches of 12, and the batches overlap, so the wait is roughly one
+ * batch — a few seconds instead of the twenty sequential model calls the
+ * whole corpus used to cost. The rest are stored untranslated and picked up
+ * by the weekly flywheel; the card shows five.
+ */
+export const SYNC_ENRICH_LIMIT = 24;
+
 const CELL_TABLE = 'ops_kakao_cell_index';
 const PLACE_TABLE = 'ops_kakao_place_cache';
 const REC_TABLE = 'ops_restaurant_recommendations';
@@ -276,10 +286,30 @@ export async function collectCell(supabase: RoomDbClient, query: CellQuery): Pro
     const filtered = qualityFilter(merged as MergedPlace[]);
     const keep = (filtered.places as MergedPlace[]).slice(0, MAX_ROWS);
 
-    const enriched = await translateAndEnrichPlaces(keep);
+    /**
+     * 🔴 The first guest to ask at a fresh cell used to pay for the whole
+     * corpus. A dense cell keeps 120 places; enrichment is 2 model calls per
+     * batch of 12; that was 46s in front of a card showing five restaurants,
+     * and 15.8s after the batches were made to overlap. Still the guest paying.
+     *
+     * So enrich a head and store the rest untranslated. The card renders the
+     * Korean name alone for those — correct, just plainer, which is the
+     * contract translateAndEnrichPlaces already documents — and the weekly
+     * flywheel fills them in (`enrichPendingPlaces`). Nothing is lost; the
+     * bill moves off the person waiting.
+     *
+     * Head-first rather than rank-first because ranking needs the dietary
+     * tags and feedback that only `recommendDining` has. `qualityFilter` has
+     * already sorted by quality, so the head is the part most likely to be
+     * shown anyway.
+     */
+    const head = keep.slice(0, SYNC_ENRICH_LIMIT);
+    const tail = keep.slice(SYNC_ENRICH_LIMIT);
+    const enrichedHead = await translateAndEnrichPlaces(head);
+    const enriched = [...enrichedHead, ...tail];
     const expiresAt = expiryIso();
 
-    await upsertPlaces(supabase, enriched, centre, expiresAt);
+    await upsertPlaces(supabase, enriched, centre, expiresAt, new Set(head.map((p) => p.place_key)));
     await upsertCellIndex(supabase, {
       cell: centre,
       centerLat: query.lat,
@@ -307,6 +337,13 @@ async function upsertPlaces(
   rows: MergedPlace[],
   searchCell: string,
   expiresAt: string,
+  /**
+   * Which of these rows went through enrichment. Rows outside this set keep
+   * `enriched_at` NULL, which is how the flywheel finds them later — and it
+   * has to be a separate column, because `name_i18n IS NULL` cannot tell
+   * "not tried yet" from "tried and the model returned nothing".
+   */
+  enrichedKeys?: Set<string>,
 ): Promise<void> {
   if (rows.length === 0) return;
 
@@ -341,6 +378,9 @@ async function upsertPlaces(
       quality_score: placeQualityScore(row),
       expires_at: expiresAt,
       updated_at: new Date().toISOString(),
+      ...(enrichedKeys === undefined || enrichedKeys.has(row.place_key)
+        ? { enriched_at: new Date().toISOString() }
+        : {}),
     };
   });
 
@@ -492,5 +532,84 @@ export async function loadFeedback(
     return applyFeedbackScores((data ?? []) as Array<Record<string, unknown>>);
   } catch {
     return {};
+  }
+}
+
+/**
+ * Translate the places a guest's request deliberately left untranslated.
+ *
+ * `collectCell` enriches only a head (SYNC_ENRICH_LIMIT) so the person waiting
+ * for a restaurant card is not paying for the whole corpus. This is the other
+ * half of that bargain: the weekly flywheel comes back and settles the bill.
+ *
+ * Bounded on purpose. Left unbounded it would translate every backlog row in
+ * one cron tick and blow the daily model budget in a single request — the
+ * budget check inside translateAndEnrichPlaces would then refuse work for
+ * everything else that day.
+ *
+ * Never throws. A failed repair means some cards keep showing Korean names,
+ * which is a fine outcome; a failed cron is not.
+ */
+export async function enrichPendingPlaces(
+  supabase: RoomDbClient,
+  options: { limit?: number } = {},
+): Promise<{ found: number; enriched: number }> {
+  const limit = Math.max(1, Math.min(options.limit ?? 60, MAX_ROWS));
+  try {
+    const { data, error } = await supabase
+      .from(PLACE_TABLE)
+      .select('place_key, name, category_name, cuisine, signature_menus')
+      .is('enriched_at', null)
+      .gt('expires_at', new Date().toISOString())
+      .limit(limit);
+    if (error) {
+      console.warn('[ops-dining] enrichPendingPlaces read failed:', error.message);
+      return { found: 0, enriched: 0 };
+    }
+
+    const rows = (data ?? []) as Array<{
+      place_key: string;
+      name: string;
+      category_name?: string | null;
+      cuisine?: string | null;
+      signature_menus?: unknown;
+    }>;
+    if (rows.length === 0) return { found: 0, enriched: 0 };
+
+    // review_text is not stored — it is the merge-time bundle the K3 verbatim
+    // gate checks menus against. Without it no menu can be verified, so this
+    // pass only recovers NAMES, and the gate stays honest by having nothing to
+    // pass. Menus for these rows arrive when the cell is next collected fresh.
+    const enriched = await translateAndEnrichPlaces(
+      rows.map((row) => ({
+        place_key: row.place_key,
+        name: row.name,
+        category_name: row.category_name ?? null,
+        cuisine: row.cuisine ?? null,
+        review_text: '',
+        name_i18n: null,
+        signature_menus: [],
+      })),
+    );
+
+    const stamp = new Date().toISOString();
+    let written = 0;
+    for (const row of enriched) {
+      const { error: updateError } = await supabase
+        .from(PLACE_TABLE)
+        .update({
+          ...(row.name_i18n ? { name_i18n: row.name_i18n } : {}),
+          // Stamped whether or not anything came back: a row the model had
+          // nothing to say about must not be retried every single week.
+          enriched_at: stamp,
+          updated_at: stamp,
+        })
+        .eq('place_key', row.place_key);
+      if (!updateError) written += 1;
+    }
+    return { found: rows.length, enriched: written };
+  } catch (error) {
+    console.warn('[ops-dining] enrichPendingPlaces failed:', error);
+    return { found: 0, enriched: 0 };
   }
 }

@@ -3,6 +3,7 @@ import { createServerClient } from '@/lib/supabase';
 import { checkCronAuth } from '@/lib/cron-auth';
 import { sendEmail } from '@/lib/email';
 import { kstToday } from '@/lib/tour-room/time';
+import { enrichPendingPlaces } from '@/lib/ops/dining/cache.server';
 
 export const dynamic = 'force-dynamic';
 
@@ -247,6 +248,19 @@ export async function GET(req: NextRequest) {
       console.warn('[flywheel] dining purge failed:', diningPurgeError);
     }
 
+    // ── ④-b dining enrichment backlog ───────────────────────────────────────
+    // `collectCell` translates only a head while a guest waits — the first
+    // person to ask at a fresh cell should not pay for the whole corpus. This
+    // is the other half of that bargain: the rows deliberately left alone get
+    // their names here, once a week, on nobody's clock. Bounded so one tick
+    // cannot swallow the day's model budget.
+    let diningEnriched = { found: 0, enriched: 0 };
+    try {
+      diningEnriched = await enrichPendingPlaces(supabase, { limit: 60 });
+    } catch (enrichError) {
+      console.warn('[flywheel] dining enrichment failed:', enrichError);
+    }
+
     // ── ⑤ guest notes retention (audit plan §K B4-D3) ───────────────────────
     // Operator memos carry personal detail ("bad knee"), so they follow the
     // same 30-day rule as guest-declared needs. Keyed off the tour date, not
@@ -344,6 +358,8 @@ export async function GET(req: NextRequest) {
         concierge_cache: conciergeCachePurged,
         weather_cache: weatherCachePurged,
       },
+      // 손님이 기다리지 않도록 미뤄 둔 번역을, 아무의 시계도 아닌 여기서 갚는다.
+      dining_enrichment: diningEnriched,
     });
   } catch (error) {
     console.error('GET /api/cron/tour-room-flywheel error:', error);
