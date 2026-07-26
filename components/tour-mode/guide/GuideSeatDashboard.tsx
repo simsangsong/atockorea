@@ -61,10 +61,16 @@ export default function GuideSeatDashboard({
   token,
   bookingId,
   tourTitle,
+  onOpenChat,
+  onTargetNotice,
 }: {
   token: string;
   bookingId: string;
   tourTitle?: string;
+  /** U4-D3 — seat tap → that party's room chat (room-per-booking = the DM). */
+  onOpenChat?: (bookingId: string) => void;
+  /** U4-D3 — seat tap → targeted broadcast compose (bookingIds:[…]). */
+  onTargetNotice?: (bookingId: string) => void;
 }) {
   const { data, error, loading, refetch } = useTourManifest(bookingId, token);
   const [seg, setSeg] = useState<Seg>('roster');
@@ -464,6 +470,14 @@ export default function GuideSeatDashboard({
               onClose={() => setCardBookingId(null)}
               note={guestNotes.get(cardRow.bookingId) ?? null}
               onSaveNote={saveNote}
+              onMessage={
+                onTargetNotice
+                  ? (bid) => {
+                      setCardBookingId(null);
+                      onTargetNotice(bid);
+                    }
+                  : undefined
+              }
             />
           </div>
         </div>
@@ -476,6 +490,22 @@ export default function GuideSeatDashboard({
           busy={busy}
           unseated={unseated.map((b) => ({ id: b.id, name: b.contactName ?? 'Guest' }))}
           onClose={() => setSeatTarget(null)}
+          onOpenChat={
+            onOpenChat
+              ? (bid) => {
+                  setSeatTarget(null);
+                  onOpenChat(bid);
+                }
+              : undefined
+          }
+          onTargetNotice={
+            onTargetNotice
+              ? (bid) => {
+                  setSeatTarget(null);
+                  onTargetNotice(bid);
+                }
+              : undefined
+          }
           onCheckin={(action) => void manualCheckin(seatTarget, action).then(() => setSeatTarget(null))}
           onAbsent={(action) => {
             // 노쇼 마킹은 증거를 먼저 받는다 (D12). 취소는 무마찰 그대로.
@@ -513,12 +543,14 @@ export default function GuideSeatDashboard({
   );
 }
 
-/** 좌석 탭 액션 시트 — 체크인(guide_manual) / 노쇼(absent) / 미지정 게스트 현장 지정. */
+/** 좌석 탭 액션 시트 — 대화/개인 공지(U4-D3) · 체크인(guide_manual) / 노쇼(absent) / 미지정 게스트 현장 지정. */
 function SeatActionSheet({
   target,
   busy,
   unseated,
   onClose,
+  onOpenChat,
+  onTargetNotice,
   onCheckin,
   onAbsent,
   onAssign,
@@ -527,6 +559,8 @@ function SeatActionSheet({
   busy: boolean;
   unseated: Array<{ id: string; name: string }>;
   onClose: () => void;
+  onOpenChat?: (bookingId: string) => void;
+  onTargetNotice?: (bookingId: string) => void;
   onCheckin: (action: 'checkin' | 'undo') => void;
   onAbsent: (action: 'mark' | 'clear') => void;
   onAssign: (bookingId: string) => void;
@@ -539,7 +573,10 @@ function SeatActionSheet({
       <button type="button" aria-label="닫기" className="absolute inset-0 bg-black/40" onClick={onClose} />
       <div className="relative z-10 w-full max-w-sm rounded-t-2xl bg-[var(--tr-surface)] p-4 sm:rounded-2xl">
         <div className="mb-3 flex items-center justify-between">
-          <p className="tr-title font-bold text-[var(--tr-ink)]">{target.seatNumber}번 좌석</p>
+          <p className="tr-title font-bold text-[var(--tr-ink)]">
+            {target.seatNumber}번 좌석
+            {a?.guest_label ? <span className="tr-card-text ml-2 font-semibold text-[var(--tr-ink-2)]">{a.guest_label}</span> : null}
+          </p>
           <button type="button" onClick={onClose} aria-label="닫기" className="text-[var(--tr-ink-3)]">
             <IconClose size={TR_ICON.chip} aria-hidden />
           </button>
@@ -547,6 +584,30 @@ function SeatActionSheet({
         <div className="space-y-2">
           {a ? (
             <>
+              {/* U4-D3 — 좌석 터치 = 그 손님과의 대화. 룸이 예약당이라 그
+                  룸을 여는 것이 곧 1:1이고, 새 채널·새 스키마는 없다. */}
+              {onOpenChat && (
+                <button
+                  type="button"
+                  disabled={busy}
+                  className={`${btn} text-cjk-safe flex items-center justify-center gap-1.5 bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]`}
+                  onClick={() => onOpenChat(a.booking_id)}
+                  data-testid="act-open-chat"
+                >
+                  대화 열기
+                </button>
+              )}
+              {onTargetNotice && (
+                <button
+                  type="button"
+                  disabled={busy}
+                  className={`${btn} text-cjk-safe bg-[var(--tr-accent-soft)] text-[var(--tr-accent)]`}
+                  onClick={() => onTargetNotice(a.booking_id)}
+                  data-testid="act-target-notice"
+                >
+                  이 손님에게만 공지
+                </button>
+              )}
               {a.absent_at ? (
                 <button type="button" disabled={busy} className={`${btn} bg-[var(--tr-surface-2)] text-[var(--tr-ink)]`} onClick={() => onAbsent('clear')} data-testid="act-absent-clear">
                   노쇼 취소
