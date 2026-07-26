@@ -131,17 +131,60 @@ export async function getBookingForRoom(
   return data as RoomBooking;
 }
 
+/**
+ * The room for a booking, created on first sight.
+ *
+ * 🔴 This used to upsert unconditionally, and 72 call sites across 32 routes
+ * reach it — including every GET. So a guest polling their room WROTE to it
+ * each time: production showed `tour_rooms` at 1516 updates against 69
+ * inserts, a 22:1 ratio where almost every one of those writes came from a
+ * read. Each cost a round trip, a WAL record, and — because `updated_at`
+ * changed every time — woke anything subscribed to the row.
+ *
+ * Read first now. The signature and return are unchanged so no caller has to
+ * know; the write happens on the two occasions that actually warrant one:
+ * the room does not exist yet, or the denormalised tour_id/tour_date drifted
+ * from the booking (an ops date change).
+ *
+ * Creation still goes through `upsert(onConflict: 'booking_id')` rather than
+ * `insert`: two devices opening a brand-new room at once both read nothing,
+ * and the loser of that race must get the winner's row, not a 23505.
+ */
 export async function ensureRoom(
   supabase: RoomDbClient,
   booking: { id: string; tour_id?: string | null; tour_date?: string | null },
 ): Promise<TourRoom> {
+  const tourId = booking.tour_id ?? null;
+  const tourDate = booking.tour_date ?? null;
+
+  const { data: existing } = await supabase
+    .from('tour_rooms')
+    .select('*')
+    .eq('booking_id', booking.id)
+    .maybeSingle();
+
+  if (existing) {
+    const room = existing as TourRoom;
+    if (room.tour_id === tourId && room.tour_date === tourDate) return room;
+    // The booking moved. Repair the copy — this is a real change, so it is a
+    // real write, and `updated_at` moving here means something.
+    const { data: repaired, error: repairError } = await supabase
+      .from('tour_rooms')
+      .update({ tour_id: tourId, tour_date: tourDate, updated_at: new Date().toISOString() })
+      .eq('id', room.id)
+      .select()
+      .single();
+    if (repairError) throw repairError;
+    return repaired as TourRoom;
+  }
+
   const { data, error } = await supabase
     .from('tour_rooms')
     .upsert(
       {
         booking_id: booking.id,
-        tour_id: booking.tour_id ?? null,
-        tour_date: booking.tour_date ?? null,
+        tour_id: tourId,
+        tour_date: tourDate,
         updated_at: new Date().toISOString(),
       },
       { onConflict: 'booking_id' },

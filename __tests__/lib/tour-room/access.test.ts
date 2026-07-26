@@ -4,6 +4,7 @@
  */
 import type { NextRequest } from 'next/server';
 import {
+  ensureRoom,
   matchesGuestCredentials,
   resolveRoomActor,
   signRoomSession,
@@ -374,6 +375,76 @@ describe('lib/tour-room/access', () => {
     it('matchesGuestCredentials never matches on empty email', () => {
       expect(matchesGuestCredentials({ contact_email: '', contact_name: 'A' }, '')).toBe(false);
       expect(matchesGuestCredentials({ contact_email: null, contact_name: null }, null)).toBe(false);
+    });
+  });
+
+  /**
+   * ensureRoom upserted unconditionally, and 72 call sites reach it — GETs
+   * included. Production showed tour_rooms at 1516 updates against 69 inserts:
+   * guests polling their room were writing to it, waking every subscriber on
+   * `updated_at`. These pin that a read stays a read.
+   */
+  describe('ensureRoom', () => {
+    const ROOM = {
+      id: 'room-1',
+      booking_id: BOOKING.id,
+      tour_id: BOOKING.tour_id,
+      tour_date: BOOKING.tour_date,
+      status: 'active',
+    };
+
+    /** Records every write so a test can assert none happened. */
+    function roomDb(existing: Record<string, unknown> | null) {
+      const writes: Array<{ op: 'upsert' | 'update'; values: Record<string, unknown> }> = [];
+      const db = {
+        writes,
+        from: () => ({
+          select: () => ({
+            eq: () => ({ maybeSingle: async () => ({ data: existing, error: null }) }),
+          }),
+          upsert: (values: Record<string, unknown>) => {
+            writes.push({ op: 'upsert', values });
+            return {
+              select: () => ({ single: async () => ({ data: { ...ROOM, ...values }, error: null }) }),
+            };
+          },
+          update: (values: Record<string, unknown>) => {
+            writes.push({ op: 'update', values });
+            return {
+              eq: () => ({
+                select: () => ({ single: async () => ({ data: { ...ROOM, ...values }, error: null }) }),
+              }),
+            };
+          },
+        }),
+      };
+      return db;
+    }
+
+    it('does not write when the room already matches the booking', async () => {
+      const db = roomDb(ROOM);
+      const room = await ensureRoom(db as unknown as RoomDbClient, BOOKING);
+      expect(room.id).toBe('room-1');
+      expect(db.writes).toHaveLength(0);
+    });
+
+    it('creates the room on first sight', async () => {
+      const db = roomDb(null);
+      const room = await ensureRoom(db as unknown as RoomDbClient, BOOKING);
+      expect(room.booking_id).toBe(BOOKING.id);
+      // upsert, not insert: two devices opening a new room at once both read
+      // nothing, and the loser must get the winner's row rather than a 23505.
+      expect(db.writes).toEqual([expect.objectContaining({ op: 'upsert' })]);
+    });
+
+    it('repairs the denormalised copy when the booking date moved', async () => {
+      const moved = { ...BOOKING, tour_date: '2099-01-02' };
+      const db = roomDb(ROOM);
+      const room = await ensureRoom(db as unknown as RoomDbClient, moved);
+      expect(room.tour_date).toBe('2099-01-02');
+      expect(db.writes).toEqual([
+        expect.objectContaining({ op: 'update', values: expect.objectContaining({ tour_date: '2099-01-02' }) }),
+      ]);
     });
   });
 });
