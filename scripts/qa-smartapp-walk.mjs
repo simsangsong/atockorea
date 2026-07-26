@@ -1,6 +1,7 @@
 /**
  * qa-smartapp-walk — headless real-browser walkthrough of the smart app
- * (guest room / drawer / dark, staff shell 4 tabs / announce / manual).
+ * (guest room / drawer / dark / skins, staff shell 4 tabs / chat list /
+ * daytools sheet / guest action sheet / roster / skin picker).
  *
  * Why this exists: the MCP browser pane cannot composite while hidden, so
  * in-pane screenshots are impossible in unattended sessions (documented
@@ -43,10 +44,17 @@ const dismissManual = async () => {
     await page.waitForTimeout(500);
   }
 };
+/** Pick a skin via the guest Settings tab (assumes room is open). */
+const pickGuestSkin = async (skin) => {
+  await page.locator('[data-testid="room-tabbar"] [role="tab"]').last().click({ timeout: 10000 });
+  await page.waitForSelector('[data-testid="skin-picker"]', { timeout: 10000 });
+  await page.click(`[data-testid="skin-${skin}"]`);
+  await page.waitForTimeout(400);
+};
 
 try {
   // ── guest room: lands on HOME tab; first visit shows the manual sheet ──
-  await page.goto(BASE + fx.room1Url, { waitUntil: 'domcontentloaded' });
+  await page.goto(BASE + fx.room1Url, { waitUntil: 'domcontentloaded', timeout: 60000 });
   await page.waitForSelector('[data-testid="room-tabbar"]', { timeout: 30000 });
   await page.waitForTimeout(1500);
   await dismissManual();
@@ -55,30 +63,83 @@ try {
   await page.locator('[data-testid="room-tabbar"] [role="tab"]').nth(1).click({ timeout: 10000 });
   await page.waitForSelector('[data-testid="chat-feed"]', { timeout: 15000 });
   await page.waitForTimeout(1000);
-  await shot('02-guest-chat-light');
+  await shot('02-guest-chat-classic');
+
+  // header diet: theme toggle must be GONE from the header
+  if (await page.locator('[data-testid="theme-toggle"]').count()) {
+    errors.push('HEADER-DIET VIOLATION: theme-toggle still in header');
+  }
 
   await page.click('[data-testid="room-drawer-open"]', { timeout: 10000 });
   await page.waitForSelector('[data-testid="room-drawer"]', { timeout: 8000 });
   await page.waitForTimeout(900);
   await shot('03-guest-drawer');
-  await page.click('[data-testid="drawer-close"]');
 
-  await page.click('[data-testid="theme-toggle"]'); // system → light
-  await page.click('[data-testid="theme-toggle"]'); // light → dark
+  // drawer 화면 모드 tile: system → light → dark (stays open while cycling)
+  await page.click('[data-testid="drawer-theme-tile"]');
+  await page.click('[data-testid="drawer-theme-tile"]');
   await page.waitForTimeout(700);
-  await shot('04-guest-chat-dark');
-  await page.click('[data-testid="theme-toggle"]'); // → system
+  await shot('04-guest-chat-dark-via-drawer');
+  await page.click('[data-testid="drawer-theme-tile"]'); // → system
+  await page.click('[data-testid="drawer-close"]');
+  await page.waitForTimeout(400);
+
+  // ── skins on the guest chat ──
+  for (const skin of ['sky', 'winter', 'forest', 'meadow', 'contrast']) {
+    await pickGuestSkin(skin);
+    await page.locator('[data-testid="room-tabbar"] [role="tab"]').nth(1).click();
+    await page.waitForSelector('[data-testid="chat-feed"]', { timeout: 15000 });
+    await page.waitForTimeout(600);
+    await shot(`05-guest-chat-skin-${skin}`);
+  }
+  // contrast + dark = the 고대비 look
+  await page.click('[data-testid="room-drawer-open"]');
+  await page.waitForSelector('[data-testid="drawer-theme-tile"]', { timeout: 8000 });
+  await page.click('[data-testid="drawer-theme-tile"]'); // system → light
+  await page.click('[data-testid="drawer-theme-tile"]'); // light → dark
+  await page.click('[data-testid="drawer-close"]');
+  await page.waitForTimeout(600);
+  await shot('06-guest-chat-contrast-dark');
+  // restore for the staff walk: back to classic + system
+  await page.click('[data-testid="room-drawer-open"]');
+  await page.waitForSelector('[data-testid="drawer-theme-tile"]', { timeout: 8000 });
+  await page.click('[data-testid="drawer-theme-tile"]'); // dark → system
+  await page.click('[data-testid="drawer-close"]');
+  await pickGuestSkin('classic');
+  await shot('07-guest-settings-skin-picker');
 
   // ── staff shell ──
-  await page.goto(BASE + fx.guideUrl, { waitUntil: 'domcontentloaded' });
+  await page.goto(BASE + fx.guideUrl, { waitUntil: 'domcontentloaded', timeout: 60000 });
   await page.waitForSelector('[data-testid="staff-shell"]', { timeout: 30000 });
   await page.waitForTimeout(1500);
-  await shot('05-staff-chat-tab');
+  await shot('10-staff-chat-list');
 
+  // pinned rows: 전체 공지 sheet (daytools) with target picker + presets
+  await page.click('[data-testid="daytools-open"]', { timeout: 10000 });
+  await page.waitForSelector('[data-testid="daytools-sheet"]', { timeout: 8000 });
+  await page.waitForTimeout(800);
+  await shot('11-staff-daytools-sheet');
+  await page.keyboard.press('Escape');
+  await page.waitForTimeout(500);
+
+  // per-guest ⋮ action sheet
+  const more = page.locator('[data-testid="room-more"]').first();
+  if (await more.count()) {
+    await more.click();
+    await page.waitForSelector('[data-testid="guest-action-sheet"]', { timeout: 8000 });
+    await page.waitForTimeout(700);
+    await shot('12-staff-guest-action-sheet');
+    await page.keyboard.press('Escape');
+    await page.waitForTimeout(500);
+  } else {
+    errors.push('WALK: no room-more button (no rooms seeded?)');
+  }
+
+  // announce (wa.me / mailto) sheet still reachable from its pinned row
   await page.click('[data-testid="open-announce"]', { timeout: 10000 });
   await page.waitForSelector('[data-testid="guide-announce"]', { timeout: 15000 });
   await page.waitForTimeout(3000);
-  await shot('06-staff-announce');
+  await shot('13-staff-announce');
   console.log(
     'announce — recipients:',
     await page.locator('[data-testid="announce-recipient"]').count(),
@@ -92,24 +153,40 @@ try {
 
   await page.click('[data-testid="staff-tab-btn-seats"]');
   await page.waitForTimeout(1800);
-  await shot('07-staff-seats-tab');
+  await shot('14-staff-roster');
 
   await page.click('[data-testid="staff-tab-btn-ops"]');
   await page.waitForTimeout(800);
-  await shot('08-staff-ops-tab');
+  await shot('15-staff-ops-tab');
 
   await page.click('[data-testid="staff-tab-btn-settings"]');
   await page.waitForSelector('[data-testid="staff-settings"]', { timeout: 8000 });
-  await page.click('[data-testid="staff-manual-toggle"]');
-  await page.waitForTimeout(600);
-  await shot('09-staff-settings-manual');
+  await page.waitForSelector('[data-testid="skin-picker"]', { timeout: 8000 });
+  await shot('16-staff-settings');
 
-  await page.click('[data-testid="staff-theme-toggle"]'); // system → light
-  await page.click('[data-testid="staff-theme-toggle"]'); // light → dark
-  await page.waitForTimeout(600);
-  await page.click('[data-testid="staff-tab-btn-chat"]');
+  // staff skin: winter, then dark via the settings segmented control
+  await page.click('[data-testid="skin-winter"]');
+  await page.waitForTimeout(400);
+  // Next dev's "N" indicator overlays the bottom-left tab in headless; a
+  // forced click still hits the overlay, so dispatch on the element directly
+  // (dev-only overlay; production has no such element).
+  await page.$eval('[data-testid="staff-tab-btn-chat"]', (el) => el.click());
   await page.waitForTimeout(700);
-  await shot('10-staff-chat-dark');
+  await shot('17-staff-chat-skin-winter');
+
+  await page.click('[data-testid="staff-tab-btn-settings"]');
+  await page.waitForSelector('[data-testid="staff-theme-dark"]', { timeout: 8000 });
+  await page.click('[data-testid="staff-theme-dark"]');
+  await page.waitForTimeout(400);
+  await page.$eval('[data-testid="staff-tab-btn-chat"]', (el) => el.click());
+  await page.waitForTimeout(700);
+  await shot('18-staff-chat-winter-dark');
+
+  // restore
+  await page.click('[data-testid="staff-tab-btn-settings"]');
+  await page.waitForSelector('[data-testid="skin-classic"]', { timeout: 8000 });
+  await page.click('[data-testid="skin-classic"]');
+  await page.click('[data-testid="staff-theme-system"]');
 
   console.log('WALK OK');
 } catch (e) {
