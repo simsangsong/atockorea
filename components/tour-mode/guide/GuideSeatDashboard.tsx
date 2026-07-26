@@ -35,6 +35,7 @@ import SeatMap from '@/components/ops/SeatMap';
 import GuideGuestCard, { channelLabel, statusMeta } from '@/components/tour-mode/guide/GuideGuestCard';
 import { hasNote, noteSummary, type GuestNote } from '@/lib/ops/seating/guestNotes';
 import { useTourManifest, type ManifestAssignment } from '@/hooks/useTourManifest';
+import { useGuestNotes } from '@/hooks/useGuestNotes';
 import { buildSeatStateMap } from '@/lib/ops/seating/logic';
 import {
   buildRosterGroups,
@@ -78,69 +79,19 @@ export default function GuideSeatDashboard({
   const [pickupColors, setPickupColors] = useState(false);
   const [busy, setBusy] = useState(false);
   const [note, setNote] = useState<string | null>(null);
-  // §K B4 — 그룹 전체의 운영자 메모. 명단 행(아이콘)과 게스트 카드(전문)가
-  // 같은 소스를 읽는다(B4-D4) — 두 곳에서 따로 부르면 반드시 어긋난다.
-  const [guestNotes, setGuestNotes] = useState<Map<string, GuestNote>>(new Map());
-
   const bookings = data?.bookings ?? [];
   const assignments = data?.assignments ?? [];
   const vehicles = data?.vehicles ?? [];
   const anchorRoomId = data?.anchorRoomId ?? null;
 
-  // 메모는 명단과 따로 로드한다 — 메모 테이블이 아직 없거나 조회가 실패해도
-  // 명단은 그대로 떠야 한다(다른 ops_* 표면과 같은 graceful degrade).
-  const loadNotes = useCallback(async () => {
-    if (!anchorRoomId || !token) return;
-    try {
-      const res = await fetch(`/api/ops/rooms/${anchorRoomId}/notes?rt=${encodeURIComponent(token)}`, {
-        cache: 'no-store',
-      });
-      if (!res.ok) return;
-      const json = (await res.json()) as { notes?: GuestNote[] };
-      setGuestNotes(new Map((json.notes ?? []).map((n) => [n.bookingId, n])));
-    } catch {
-      /* 메모 없이 명단이 뜬다 */
-    }
-  }, [anchorRoomId, token]);
-
+  // §K B4 — 로딩·저장은 `useGuestNotes` 한 곳에 있다. 이 파일이 직접 들고
+  // 있던 동안, 같은 카드를 여는 세 번째 표면(헤더 좌석 스트립)이 메모를 아예
+  // 안 읽고 열었다 — 이 자리에 적혀 있던 "두 곳에서 따로 부르면 반드시
+  // 어긋난다"가 그대로 일어난 것이다. 이제 갈라질 곳이 없다.
+  const { notes: guestNotes, error: noteError, saveNote } = useGuestNotes(anchorRoomId, token);
   useEffect(() => {
-    void loadNotes();
-  }, [loadNotes]);
-
-  const saveNote = useCallback(
-    async (targetBookingId: string, text: string) => {
-      if (!anchorRoomId || !token) return;
-      // 낙관적 저장: 승차 중에 쓰는 물건이라 왕복을 기다리게 하지 않는다.
-      // 실패하면 서버 상태로 되돌린다(사라진 것처럼 보이지 않게 loadNotes 재호출).
-      const previous = guestNotes;
-      const optimistic = new Map(previous);
-      if (text.trim()) {
-        optimistic.set(targetBookingId, {
-          bookingId: targetBookingId,
-          note: text.trim(),
-          updatedByRole: 'guide',
-          updatedByName: null,
-          updatedAt: new Date().toISOString(),
-        });
-      } else {
-        optimistic.delete(targetBookingId);
-      }
-      setGuestNotes(optimistic);
-      try {
-        const res = await fetch(`/api/ops/rooms/${anchorRoomId}/notes?rt=${encodeURIComponent(token)}`, {
-          method: 'PUT',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ bookingId: targetBookingId, note: text }),
-        });
-        if (!res.ok) throw new Error('save_failed');
-        await loadNotes();
-      } catch {
-        setGuestNotes(previous);
-        setNote('메모 저장에 실패했습니다');
-      }
-    },
-    [anchorRoomId, token, guestNotes, loadNotes],
-  );
+    if (noteError) setNote(noteError);
+  }, [noteError]);
 
   const counts = useMemo(() => dashboardCounts(bookings, assignments), [bookings, assignments]);
   const groups = useMemo(() => buildRosterGroups(bookings, assignments), [bookings, assignments]);

@@ -353,7 +353,9 @@ export default function OpsApp() {
       >
         <div className="flex min-h-[52px] items-center justify-between gap-2 px-4">
           <div className="flex min-w-0 items-center gap-1.5">
-            <h1 className="text-[15px] font-bold tracking-tight">투어 관제센터</h1>
+            {/* min-w-0 플렉스 자식이라 좁은 화면에서 눌린다. 보호가 없으면
+                "관제센터"가 글자 단위로 쪼개진다 (CLAUDE.md P1-5). */}
+            <h1 className="text-cjk-safe text-[15px] font-bold tracking-tight">투어 관제센터</h1>
             {/* Connection state with a visible label (a bare dot's tooltip
                 never shows on touch — the primary ops device). */}
             <span className="flex shrink-0 items-center gap-1 text-[10px] font-medium text-[var(--tr-ink-3)]">
