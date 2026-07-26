@@ -1,6 +1,6 @@
 {
   "locale": "it",
-  "generatedAt": "2026-07-26T03:12:16.813Z",
+  "generatedAt": "2026-07-26T03:17:27.054Z",
   "reports": [
     {
       "unitId": "tour_product_pages:busan-private-car-charter-cruise-shore:it:A1",
@@ -1342,6 +1342,723 @@
           "severity": "flag",
           "pointer": "/routeFlowStops/6/name",
           "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-dmz-private-3rd-tunnel-suspension-bridge:it:A1",
+      "status": "flagged",
+      "segments": 108,
+      "fails": 0,
+      "flags": 16,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/hero/meta/region",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G1",
+          "severity": "flag",
+          "pointer": "/catalog_card/tags/1",
+          "message": "빈 번역 — 규칙 6에 따른 미번역. 이 포인터는 발행에서 제외(영어 폴백)"
+        },
+        {
+          "gate": "G1",
+          "severity": "flag",
+          "pointer": "/sticky_booking_bar/note",
+          "message": "빈 번역 — 규칙 6에 따른 미번역. 이 포인터는 발행에서 제외(영어 폴백)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/sticky_booking_bar/price/priceNote",
+          "message": "길이비 1.38 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/0/content/1",
+          "message": "길이비 1.44 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/0/content/4",
+          "message": "길이비 1.43 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/0/preview",
+          "message": "길이비 1.38 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/1/content/2",
+          "message": "길이비 0.95 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/1/content/4",
+          "message": "길이비 1.60 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/1/preview",
+          "message": "길이비 1.38 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/2/content/0",
+          "message": "길이비 1.58 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/3/content/2",
+          "message": "길이비 1.39 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/4/title",
+          "message": "길이비 0.73 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/4/content/1",
+          "message": "길이비 1.47 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/5/content/4",
+          "message": "길이비 1.69 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/5/preview",
+          "message": "길이비 1.57 가 it 허용범위 0.95–1.35 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-dmz-private-3rd-tunnel-suspension-bridge:it:A2",
+      "status": "flagged",
+      "segments": 33,
+      "fails": 0,
+      "flags": 13,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/bestFor/3",
+          "message": "길이비 0.93 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/lessIdealFor/0",
+          "message": "숫자가 철자 수사로 바뀐 것으로 보인다 — [3] (값이 맞는지 감수 필요)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/lessIdealFor/1",
+          "message": "길이비 1.37 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/lessIdealFor/3",
+          "message": "길이비 0.93 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/lessIdealFor/4",
+          "message": "숫자가 철자 수사로 바뀐 것으로 보인다 — [2 3] (값이 맞는지 감수 필요)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/0/items/1/label",
+          "message": "길이비 1.38 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/1/items/0/label",
+          "message": "숫자가 철자 수사로 바뀐 것으로 보인다 — [3] (값이 맞는지 감수 필요)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/1/items/1/label",
+          "message": "길이비 1.35 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/1/items/2/detail",
+          "message": "길이비 1.62 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/1/title",
+          "message": "길이비 0.71 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/2/items/0/detail",
+          "message": "숫자가 철자 수사로 바뀐 것으로 보인다 — [2 3] (값이 맞는지 감수 필요)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/2/items/2/label",
+          "message": "길이비 1.50 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/routeShapeIntro/subtitle",
+          "message": "숫자가 철자 수사로 바뀐 것으로 보인다 — [3] (값이 맞는지 감수 필요)"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-dmz-private-3rd-tunnel-suspension-bridge:it:A2-2",
+      "status": "flagged",
+      "segments": 59,
+      "fails": 0,
+      "flags": 17,
+      "findings": [
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/staticQuestions/0/answer",
+          "message": "숫자가 철자 수사로 바뀐 것으로 보인다 — [3] (값이 맞는지 감수 필요)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/staticQuestions/1/question",
+          "message": "길이비 0.87 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/staticQuestions/2/answer",
+          "message": "숫자가 철자 수사로 바뀐 것으로 보인다 — [2 3] (값이 맞는지 감수 필요)"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/staticQuestions/3/answer",
+          "message": "숫자가 철자 수사로 바뀐 것으로 보인다 — [3] (값이 맞는지 감수 필요)"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/staticQuestions/3/question",
+          "message": "숫자가 철자 수사로 바뀐 것으로 보인다 — [3] (값이 맞는지 감수 필요)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/staticQuestions/3/question",
+          "message": "길이비 1.36 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/staticQuestions/4/question",
+          "message": "길이비 1.47 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/staticQuestions/5/answer",
+          "message": "숫자가 철자 수사로 바뀐 것으로 보인다 — [3] (값이 맞는지 감수 필요)"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/staticQuestions/7/answer",
+          "message": "숫자가 철자 수사로 바뀐 것으로 보인다 — [3] (값이 맞는지 감수 필요)"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/staticQuestions/8/answer",
+          "message": "숫자가 철자 수사로 바뀐 것으로 보인다 — [3] (값이 맞는지 감수 필요)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/staticQuestions/9/question",
+          "message": "길이비 1.76 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/staticQuestions/10/answer",
+          "message": "숫자가 철자 수사로 바뀐 것으로 보인다 — [3] (값이 맞는지 감수 필요)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/staticQuestions/10/question",
+          "message": "길이비 0.91 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/0/description",
+          "message": "길이비 1.47 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/1/description",
+          "message": "길이비 1.40 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/bookingSupportSteps/1/detail",
+          "message": "길이비 1.43 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/bookingSupportSteps/3/detail",
+          "message": "길이비 1.39 가 it 허용범위 0.95–1.35 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-dmz-private-3rd-tunnel-suspension-bridge:it:B",
+      "status": "flagged",
+      "segments": 36,
+      "fails": 0,
+      "flags": 5,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/0/alt",
+          "message": "길이비 1.51 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/3/alt",
+          "message": "길이비 1.51 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/4/alt",
+          "message": "길이비 1.51 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/5/alt",
+          "message": "길이비 1.51 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/6/alt",
+          "message": "길이비 1.51 가 it 허용범위 0.95–1.35 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-dmz-private-3rd-tunnel-suspension-bridge:it:itineraryStops",
+      "status": "flagged",
+      "segments": 40,
+      "fails": 0,
+      "flags": 12,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/name",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/duration",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/timeUsed/1",
+          "message": "길이비 1.38 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/timeUsed/2",
+          "message": "길이비 1.42 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/timeUsed/4",
+          "message": "길이비 1.38 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/convenience/parking",
+          "message": "길이비 1.66 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/visitBasics/hours",
+          "message": "숫자 추가 — 번역에만 [24] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/visitBasics/walking",
+          "message": "길이비 1.55 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/galleryItems/0/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/galleryItems/1/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/galleryItems/2/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/galleryItems/3/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-dmz-private-3rd-tunnel-suspension-bridge:it:itineraryStops-2",
+      "status": "flagged",
+      "segments": 39,
+      "fails": 0,
+      "flags": 18,
+      "findings": [
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/name",
+          "message": "숫자가 철자 수사로 바뀐 것으로 보인다 — [3] (값이 맞는지 감수 필요)"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/duration",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/timeUsed/1",
+          "message": "길이비 1.68 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/timeUsed/4",
+          "message": "길이비 1.44 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/highlights/2",
+          "message": "길이비 1.46 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/highlights/4",
+          "message": "길이비 1.38 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/whyOnRoute",
+          "message": "숫자가 철자 수사로 바뀐 것으로 보인다 — [3] (값이 맞는지 감수 필요)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/convenience/parking",
+          "message": "길이비 1.40 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/visitBasics/hours",
+          "message": "길이비 1.42 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/galleryItems/0/alt",
+          "message": "숫자가 철자 수사로 바뀐 것으로 보인다 — [3] (값이 맞는지 감수 필요)"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/galleryItems/0/caption",
+          "message": "숫자가 철자 수사로 바뀐 것으로 보인다 — [3] (값이 맞는지 감수 필요)"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/galleryItems/0/location",
+          "message": "숫자가 철자 수사로 바뀐 것으로 보인다 — [3] (값이 맞는지 감수 필요)"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/galleryItems/1/alt",
+          "message": "숫자가 철자 수사로 바뀐 것으로 보인다 — [3] (값이 맞는지 감수 필요)"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/galleryItems/1/caption",
+          "message": "숫자가 철자 수사로 바뀐 것으로 보인다 — [3] (값이 맞는지 감수 필요)"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/galleryItems/1/location",
+          "message": "숫자가 철자 수사로 바뀐 것으로 보인다 — [3] (값이 맞는지 감수 필요)"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/galleryItems/2/alt",
+          "message": "숫자가 철자 수사로 바뀐 것으로 보인다 — [3] (값이 맞는지 감수 필요)"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/galleryItems/2/caption",
+          "message": "숫자가 철자 수사로 바뀐 것으로 보인다 — [3] (값이 맞는지 감수 필요)"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/galleryItems/2/location",
+          "message": "숫자가 철자 수사로 바뀐 것으로 보인다 — [3] (값이 맞는지 감수 필요)"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-dmz-private-3rd-tunnel-suspension-bridge:it:itineraryStops-3",
+      "status": "flagged",
+      "segments": 44,
+      "fails": 0,
+      "flags": 15,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/duration",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/timeUsed/0",
+          "message": "숫자가 철자 수사로 바뀐 것으로 보인다 — [3] (값이 맞는지 감수 필요)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/timeUsed/3",
+          "message": "길이비 1.42 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/timeUsed/4",
+          "message": "길이비 1.57 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/highlights/2",
+          "message": "길이비 1.43 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/highlights/7",
+          "message": "길이비 1.36 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/highlights/8",
+          "message": "숫자가 철자 수사로 바뀐 것으로 보인다 — [3] (값이 맞는지 감수 필요)"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/whyOnRoute",
+          "message": "숫자가 철자 수사로 바뀐 것으로 보인다 — [3] (값이 맞는지 감수 필요)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/convenience/parking",
+          "message": "길이비 1.42 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/convenience/restroom",
+          "message": "길이비 1.55 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/description",
+          "message": "숫자가 철자 수사로 바뀐 것으로 보인다 — [1950 3] (값이 맞는지 감수 필요)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/visitBasics/walking",
+          "message": "길이비 1.67 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/duration",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/timeUsed/1",
+          "message": "길이비 1.45 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/timeUsed/3",
+          "message": "길이비 1.35 가 it 허용범위 0.95–1.35 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-dmz-private-3rd-tunnel-suspension-bridge:it:itineraryStops-4",
+      "status": "flagged",
+      "segments": 30,
+      "fails": 0,
+      "flags": 8,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/highlights/3",
+          "message": "길이비 1.43 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/convenience/parking",
+          "message": "길이비 1.47 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/visitBasics/hours",
+          "message": "길이비 1.40 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/visitBasics/walking",
+          "message": "길이비 1.38 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/galleryItems/0/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/galleryItems/1/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/galleryItems/2/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/galleryItems/3/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-dmz-private-3rd-tunnel-suspension-bridge:it:routeFlowStops",
+      "status": "flagged",
+      "segments": 8,
+      "fails": 0,
+      "flags": 2,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/routeFlowStops/0/name",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/routeFlowStops/1/name",
+          "message": "숫자가 철자 수사로 바뀐 것으로 보인다 — [3] (값이 맞는지 감수 필요)"
         }
       ]
     }

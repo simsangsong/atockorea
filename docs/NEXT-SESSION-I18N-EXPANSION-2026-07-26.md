@@ -168,6 +168,7 @@ i18n-work/out/tour_product_pages/de/tour_product_pages_<SLUG>_de_<CHUNK>.json
 | # | 사안 | 왜 사람인가 |
 |---|---|---|
 | 1 | **상품명 번역 여부** — `Jeju Grand Highlights Loop` → `Große Jeju-Highlights-Rundtour` | 브랜드 결정. 기존 es는 완전 번역(`Gran Circuito…`), ko/ja는 음차라 선례가 갈린다. A-1 감수 1순위 |
+| 2d | **원문의 다리 길이가 서로 어긋난다** — `seoul-dmz…` A1: `metaDescription`은 `150m`, `hero/tagline`·`catalog_card/subtitle`·`shortCardDescription`은 `220-meter` (감악산 출렁다리) | 검색 결과에 뜨는 문구와 상품 카드 문구가 다른 숫자를 말한다. **de·fr·it 세 로케일에 그대로 복제돼 있다**(규칙 5). 어느 쪽이 맞는지는 운영이 안다 |
 | 2c | **원문 영어 구문이 깨져 있다** — `jeju-cruise-shore-excursion-bus-tour` `/itineraryStops/5/description`: `traveler-fit the cruise industry's standard buffer` | 독일어·프랑스어 번역가가 **각각 독립적으로** 같은 지점을 지적했다. 둘 다 규칙 5에 따라 고치지 않고 최소 해석으로 옮겼으므로 두 로케일에 그대로 남아 있다 |
 | 2b | **원문 스톱 수가 서로 어긋난다** — `busan-top-attractions-day-tour` A1: hero는 `5 stops`, tagline은 `seven stops` | 손님이 같은 화면에서 두 숫자를 본다. 번역기는 규칙 5대로 양쪽을 그대로 옮겼으므로 **de·fr 번역본에도 그대로 복제돼 있다.** 원문을 고치면 두 로케일 재추출·재번역이 필요하다 |
 | 2 | **원문 데이터 결함 4건** — `Un Memorial Cemetery`(→UN), `Hallasumokwon Arboretum`(수목원 중복), `₩90-minute Subway Line 1`(`incheon-seoul-private-car…` `/itineraryStops/0/description` — 앞 항목 `₩10,000 taxi`의 ₩가 옮아붙은 오기, 90분은 금액이 아니다), `/sticky_booking_bar/note`(`from-incheon-seoul…`·`seoul-dmz…` — `checkout_tour_id`·Supabase·JSONB가 적힌 개발자 주석이 고객 노출 필드에 들어 있다) | 원문 수정은 번역 범위 밖. 번역기는 규칙 1·3에 따라 값을 그대로 옮겼다(주석 필드는 빈 값 처리 → 영어 폴백) |
