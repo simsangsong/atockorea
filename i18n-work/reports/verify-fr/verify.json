@@ -1,7 +1,946 @@
 {
   "locale": "fr",
-  "generatedAt": "2026-07-26T02:00:09.004Z",
+  "generatedAt": "2026-07-26T02:13:37.024Z",
   "reports": [
+    {
+      "unitId": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:fr:A1",
+      "status": "flagged",
+      "segments": 61,
+      "fails": 0,
+      "flags": 10,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/seo/title",
+          "message": "길이비 1.43 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/seo/pageTitle",
+          "message": "길이비 1.46 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/hero/meta/region",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/catalog_card/tags/2",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/catalog_card/title",
+          "message": "길이비 1.56 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/catalog_card/region",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/catalog_card/priceLabel",
+          "message": "길이비 1.65 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/pickup_dropoff/primary/address",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/pickup_dropoff/alternates/0/time",
+          "message": "길이비 1.41 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/pickup_dropoff/alternates/0/address",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:fr:A2",
+      "status": "flagged",
+      "segments": 29,
+      "fails": 0,
+      "flags": 5,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/bestFor/1",
+          "message": "길이비 1.89 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/lessIdealFor/0",
+          "message": "길이비 1.57 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/lessIdealFor/1",
+          "message": "길이비 1.41 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/2/items/1/detail",
+          "message": "길이비 1.40 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/2/items/2/detail",
+          "message": "길이비 1.41 가 fr 허용범위 1–1.4 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:fr:A2-2",
+      "status": "flagged",
+      "segments": 42,
+      "fails": 0,
+      "flags": 6,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/bookingSupportSteps/0/description",
+          "message": "길이비 1.41 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/bookingSupportSteps/2/detail",
+          "message": "길이비 1.57 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/bookingSupportSteps/2/description",
+          "message": "길이비 1.51 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/bookingSupportSteps/3/detail",
+          "message": "길이비 1.52 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/bookingSupportSteps/4/detail",
+          "message": "길이비 1.48 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/bookingSupportSteps/5/description",
+          "message": "길이비 1.50 가 fr 허용범위 1–1.4 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:fr:B",
+      "status": "flagged",
+      "segments": 126,
+      "fails": 0,
+      "flags": 21,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/routePhases/0/description",
+          "message": "길이비 1.49 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/2/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/3/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/5/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/15/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/16/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/17/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/18/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/19/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/20/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/21/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/22/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/23/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/24/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/25/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/26/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/27/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/28/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/30/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/31/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/32/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:fr:itineraryStops",
+      "status": "flagged",
+      "segments": 39,
+      "fails": 0,
+      "flags": 8,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/name",
+          "message": "길이비 1.43 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/timeUsed/2",
+          "message": "길이비 1.55 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/duration",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/timeUsed/0",
+          "message": "길이비 1.44 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/highlights/7",
+          "message": "길이비 1.43 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/smartNotes/tip",
+          "message": "길이비 1.47 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/convenience/restroom",
+          "message": "길이비 1.45 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/visitBasics/hours",
+          "message": "길이비 1.45 가 fr 허용범위 1–1.4 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:fr:itineraryStops-2",
+      "status": "flagged",
+      "segments": 60,
+      "fails": 0,
+      "flags": 8,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/duration",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/timeUsed/3",
+          "message": "길이비 1.43 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/highlights/2",
+          "message": "길이비 1.41 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/highlights/7",
+          "message": "길이비 1.55 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/visitBasics/hours",
+          "message": "길이비 1.41 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/duration",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/highlights/0",
+          "message": "길이비 1.48 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/highlights/2",
+          "message": "길이비 1.51 가 fr 허용범위 1–1.4 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:fr:itineraryStops-3",
+      "status": "flagged",
+      "segments": 64,
+      "fails": 0,
+      "flags": 19,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/duration",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/timeUsed/2",
+          "message": "길이비 1.43 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/highlights/3",
+          "message": "길이비 1.66 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/smartNotes/facilities",
+          "message": "길이비 1.49 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/visitBasics/hours",
+          "message": "길이비 1.71 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/visitBasics/admission",
+          "message": "길이비 1.80 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/galleryItems/0/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/galleryItems/1/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/galleryItems/2/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/galleryItems/3/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/galleryItems/4/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/galleryItems/5/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/galleryItems/6/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/galleryItems/7/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/galleryItems/8/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/galleryItems/9/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/galleryItems/10/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/galleryItems/11/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/duration",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:fr:itineraryStops-4",
+      "status": "flagged",
+      "segments": 49,
+      "fails": 0,
+      "flags": 16,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/timeUsed/1",
+          "message": "길이비 1.53 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/highlights/3",
+          "message": "길이비 0.98 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/highlights/6",
+          "message": "숫자 추가 — 번역에만 [24] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/convenience/parking",
+          "message": "길이비 1.47 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/description",
+          "message": "숫자 추가 — 번역에만 [24] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/visitBasics/hours",
+          "message": "숫자가 철자 수사로 바뀐 것으로 보인다 — [0 0] (값이 맞는지 감수 필요)"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/visitBasics/hours",
+          "message": "숫자 추가 — 번역에만 [24] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/galleryItems/0/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/galleryItems/1/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/galleryItems/2/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/galleryItems/3/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/6/duration",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/6/timeUsed/2",
+          "message": "길이비 1.43 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/6/timeUsed/4",
+          "message": "길이비 1.63 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/6/highlights/1",
+          "message": "길이비 1.57 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/6/highlights/6",
+          "message": "길이비 1.59 가 fr 허용범위 1–1.4 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:fr:itineraryStops-5",
+      "status": "flagged",
+      "segments": 29,
+      "fails": 0,
+      "flags": 8,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/6/convenience/parking",
+          "message": "길이비 1.52 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/6/description",
+          "message": "숫자가 철자 수사로 바뀐 것으로 보인다 — [0] (값이 맞는지 감수 필요)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/6/visitBasics/hours",
+          "message": "길이비 1.77 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/6/visitBasics/closed",
+          "message": "길이비 1.57 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/7/duration",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/7/timeUsed/3",
+          "message": "길이비 1.73 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/7/smartNotes/tip",
+          "message": "숫자가 철자 수사로 바뀐 것으로 보인다 — [0 0] (값이 맞는지 감수 필요)"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/7/whyOnRoute",
+          "message": "숫자가 철자 수사로 바뀐 것으로 보인다 — [0 0 0 0] (값이 맞는지 감수 필요)"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:fr:itineraryStops-6",
+      "status": "flagged",
+      "segments": 35,
+      "fails": 0,
+      "flags": 8,
+      "findings": [
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/7/description",
+          "message": "숫자 추가 — 번역에만 [24] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/7/visitBasics/hours",
+          "message": "길이비 1.60 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/7/galleryItems/0/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/7/galleryItems/1/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/7/galleryItems/2/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/7/galleryItems/3/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/8/duration",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/8/highlights/6",
+          "message": "숫자 추가 — 번역에만 [24] 이 있다 (날짜 서식 변환이면 정상)"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:fr:itineraryStops-7",
+      "status": "flagged",
+      "segments": 25,
+      "fails": 0,
+      "flags": 6,
+      "findings": [
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/8/visitBasics/hours",
+          "message": "숫자가 철자 수사로 바뀐 것으로 보인다 — [0 0] (값이 맞는지 감수 필요)"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/8/visitBasics/hours",
+          "message": "숫자 추가 — 번역에만 [24 24] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/8/visitBasics/closed",
+          "message": "길이비 1.66 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/9/duration",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/9/timeUsed/1",
+          "message": "길이비 1.44 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/9/highlights/6",
+          "message": "숫자 추가 — 번역에만 [24] 이 있다 (날짜 서식 변환이면 정상)"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:fr:itineraryStops-8",
+      "status": "flagged",
+      "segments": 28,
+      "fails": 0,
+      "flags": 2,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/9/visitBasics/closed",
+          "message": "길이비 1.50 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/10/timeUsed/2",
+          "message": "길이비 1.58 가 fr 허용범위 1–1.4 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:fr:practicalAccordionItems",
+      "status": "flagged",
+      "segments": 51,
+      "fails": 0,
+      "flags": 11,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/0/content/1",
+          "message": "길이비 1.41 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/1/content/0",
+          "message": "길이비 1.52 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/1/content/3",
+          "message": "길이비 1.47 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/1/content/4",
+          "message": "길이비 1.46 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/2/content/3",
+          "message": "길이비 1.61 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/5/content/1",
+          "message": "길이비 1.53 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/5/content/2",
+          "message": "길이비 1.46 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/6/content/0",
+          "message": "길이비 1.48 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/6/content/1",
+          "message": "숫자가 철자 수사로 바뀐 것으로 보인다 — [0 0] (값이 맞는지 감수 필요)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/6/preview",
+          "message": "길이비 1.59 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/7/content/3",
+          "message": "길이비 1.47 가 fr 허용범위 1–1.4 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:fr:routeFlowStops",
+      "status": "flagged",
+      "segments": 22,
+      "fails": 0,
+      "flags": 1,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/routeFlowStops/0/name",
+          "message": "길이비 1.60 가 fr 허용범위 1–1.4 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:fr:staticQuestions",
+      "status": "flagged",
+      "segments": 32,
+      "fails": 0,
+      "flags": 5,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/staticQuestions/0/question",
+          "message": "길이비 1.77 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/staticQuestions/2/question",
+          "message": "길이비 1.48 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G4",
+          "severity": "flag",
+          "pointer": "/staticQuestions/3/answer",
+          "message": "통화 기호 개수 차이 — 원문 3회 vs 번역 2회 (범위 표기 관례면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/staticQuestions/9/question",
+          "message": "길이비 1.43 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/staticQuestions/12/answer",
+          "message": "길이비 1.40 가 fr 허용범위 1–1.4 밖"
+        }
+      ]
+    },
     {
       "unitId": "tour_product_pages:busan-private-car-charter-cruise-shore:fr:A1",
       "status": "flagged",

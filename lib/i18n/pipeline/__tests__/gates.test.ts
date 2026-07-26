@@ -14,6 +14,7 @@ import {
   checkNumbers,
   checkPlaceholders,
   checkStructure,
+  checkTypography,
   checkUntranslated,
   checkVerbatim,
   numberMultiset,
@@ -57,6 +58,33 @@ describe('G2 글로서리 토큰 — 마스킹 방어 (H1)', () => {
   it('토큰 개수가 늘어나도 fail', () => {
     const f = checkGlossaryTokens('⟦G0⟧', '⟦G0⟧ und ⟦G1⟧', '/p');
     expect(f[0]).toMatchObject({ gate: 'G2', severity: 'fail' });
+  });
+});
+
+// 2026-07-26 실측: 서브에이전트가 "U+202F 적용" 이라 보고했지만 실제로는 일반 공백을 썼고,
+// 같은 슬러그의 나머지 13개 파일과 조판이 갈렸다. 자기보고는 검증이 아니다.
+describe('G13 로케일 조판 — 프랑스어 좁은 비분리 공백', () => {
+  it('일반 공백을 쓰면 flag', () => {
+    const f = checkTypography('Entrée GRATUITE ; réservation conseillée', '/p', 'fr');
+    expect(f).toHaveLength(1);
+    expect(f[0].severity).toBe('flag');
+    expect(f[0].gate).toBe('G13');
+  });
+
+  it('«…» 안쪽도 본다', () => {
+    expect(checkTypography('la cérémonie « Turn Toward Busan »', '/p', 'fr')).toHaveLength(1);
+  });
+
+  it('U+202F를 제대로 쓰면 통과', () => {
+    expect(checkTypography('Entrée GRATUITE ; la cérémonie : « Busan »', '/p', 'fr')).toEqual([]);
+  });
+
+  it('프랑스어가 아니면 보지 않는다', () => {
+    expect(checkTypography('Eintritt FREI ; Reservierung', '/p', 'de')).toEqual([]);
+  });
+
+  it('해당 문장부호가 없으면 통과', () => {
+    expect(checkTypography('Départ du terminal de croisière', '/p', 'fr')).toEqual([]);
   });
 });
 
@@ -200,6 +228,18 @@ describe('G4 통화·단위', () => {
   it('통화 기호가 바뀌면 fail', () => {
     const f = checkCurrencyAndUnits('₩70,000', '€70,000', '/p');
     expect(f.some((x) => x.gate === 'G4' && x.severity === 'fail')).toBe(true);
+  });
+
+  // 2026-07-26 실측: 프랑스어는 기호를 숫자 뒤에 놓고 범위에서 한 번만 쓴다.
+  it('범위에서 기호가 한 번만 남는 건 fail이 아니라 flag', () => {
+    const f = checkCurrencyAndUnits('$300–$500+ per group', 'de 300 à 500 $ et plus par groupe', '/p');
+    expect(f.every((x) => x.severity === 'flag')).toBe(true);
+    expect(f[0].message).toContain('개수 차이');
+  });
+
+  it('개수 예외가 통화 바꿔치기를 덮지 않는다 — ₩ 둘 → € 하나', () => {
+    const f = checkCurrencyAndUnits('₩10,000–₩20,000', '€10 000–20 000', '/p');
+    expect(f.some((x) => x.severity === 'fail')).toBe(true);
   });
 
   it('km → mile 변환을 fail로 잡는다', () => {

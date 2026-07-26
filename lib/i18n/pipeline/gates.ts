@@ -11,7 +11,11 @@
  */
 
 export type Severity = 'fail' | 'flag';
-export type GateId = 'G1' | 'G2' | 'G3' | 'G4' | 'G5' | 'G6' | 'G7' | 'G8' | 'G9' | 'G10' | 'G11';
+// G12는 플랜에서 **교차 유닛 일관성** 검사용으로 예약돼 있다(§9, 미구현).
+// 로케일 조판 검사는 그 뒤 번호를 쓴다.
+export type GateId =
+  | 'G1' | 'G2' | 'G3' | 'G4' | 'G5' | 'G6'
+  | 'G7' | 'G8' | 'G9' | 'G10' | 'G11' | 'G13';
 
 export interface Finding {
   gate: GateId;
@@ -378,18 +382,36 @@ export function checkNumbers(
  */
 const IMPERIAL_RE = /\d[\d.,]*[\s -]*(?<![\p{L}])(miles?|mi\.|Meilen?|miglia|miglio|мил[ья]|inch(?:es)?|Zoll|pollici|дюйм|foot|feet|Fuß|piedi|фут|pounds?|lbs?|Pfund|libbre|фунт)(?![\p{L}])/giu;
 
-/** G4 — 통화 기호·ISO 코드 동일 + 단위 변환 검출. */
+/**
+ * G4 — 통화 기호·ISO 코드 동일 + 단위 변환 검출.
+ *
+ * 🔴 **어떤 통화인지(집합)로 판정하고, 몇 번 나오는지(개수)로는 판정하지 않는다.**
+ * 이 게이트가 막아야 하는 것은 `₩70,000` → `€70` 같은 **통화 바꿔치기**다. 반면
+ * 기호가 몇 번 적히는지는 언어마다 다르다 — 프랑스어는 기호를 숫자 뒤에 놓고
+ * 범위에서 한 번만 쓴다: `$300–$500+` → `de 300 à 500 $ et plus` (2026-07-26 실측).
+ * 값 자체는 G3가 따로 지킨다.
+ */
 export function checkCurrencyAndUnits(source: string, target: string, pointer: string): Finding[] {
   const findings: Finding[] = [];
 
   const a = multiset(source, CURRENCY_RE);
   const b = multiset(target, CURRENCY_RE);
-  if (!sameMultiset(a, b)) {
+  const aKinds = [...new Set(a)].sort();
+  const bKinds = [...new Set(b)].sort();
+
+  if (!sameMultiset(aKinds, bKinds)) {
     findings.push({
       gate: 'G4',
       severity: 'fail',
       pointer,
-      message: `통화 표기 불일치 — 원문 [${a.join(' ')}] vs 번역 [${b.join(' ')}]`,
+      message: `통화 종류 불일치 — 원문 [${aKinds.join(' ')}] vs 번역 [${bKinds.join(' ')}]`,
+    });
+  } else if (!sameMultiset(a, b)) {
+    findings.push({
+      gate: 'G4',
+      severity: 'flag',
+      pointer,
+      message: `통화 기호 개수 차이 — 원문 ${a.length}회 vs 번역 ${b.length}회 (범위 표기 관례면 정상)`,
     });
   }
 
@@ -581,6 +603,44 @@ export function checkCharset(
 }
 
 /**
+ * G13 — 로케일 조판 관례.
+ *
+ * 지금은 프랑스어의 **좁은 비분리 공백(U+202F)** 만 본다. 프랑스어 조판은
+ * `;` `:` `!` `?` `»` 앞과 `«` 뒤에 이 공백을 요구하고, 스타일가이드도 🔴로 못박고 있다.
+ *
+ * 왜 게이트가 필요한가 (2026-07-26 실측): 번역 서브에이전트가 "U+202F를 적용했다"고
+ * **보고했지만 실제로는 일반 공백을 쓴** 유닛이 있었다. 같은 슬러그의 나머지 13개 파일은
+ * 전부 U+202F를 써서 한 상품 안에서 조판이 갈렸다. 자기보고는 검증이 아니다.
+ *
+ * 천단위 구분은 일부러 보지 않는다 — `2024 810` 처럼 나란히 놓인 두 숫자와
+ * 구분할 수 없어서다(G3에서 겪은 것과 같은 모호성).
+ *
+ * severity는 `flag`. 조판은 렌더를 깨지 않으므로 발행을 막을 이유가 없다.
+ */
+const PLAIN_SPACE_BEFORE_PUNCT_RE = / [;:!?»]/g;
+const PLAIN_SPACE_AFTER_GUILLEMET_RE = /« /g;
+
+export function checkTypography(
+  target: string,
+  pointer: string,
+  locale: TargetLocale,
+): Finding[] {
+  if (locale !== 'fr') return [];
+
+  const count =
+    countMatches(target, PLAIN_SPACE_BEFORE_PUNCT_RE) +
+    countMatches(target, PLAIN_SPACE_AFTER_GUILLEMET_RE);
+  if (count === 0) return [];
+
+  return [{
+    gate: 'G13',
+    severity: 'flag',
+    pointer,
+    message: `좁은 비분리 공백 누락 ${count}곳 — 프랑스어는 «…» 안쪽과 ; : ! ? 앞에 U+202F를 쓴다`,
+  }];
+}
+
+/**
  * 메타언급 — 번역 결과물이 자신이 번역임을 말하면 안 된다.
  *
  * 어순이 언어마다 다르므로(독일어 `von KI übersetzt` / `übersetzt von KI`)
@@ -714,6 +774,7 @@ export function verifyUnit(
       ...checkLengthRatio(src, tgt, pointer, options.locale, options.lengthRatioMinChars),
       ...checkUntranslated(src, tgt, pointer, options.keepAsIs),
       ...checkCharset(tgt, pointer, options.locale, src),
+      ...checkTypography(tgt, pointer, options.locale),
       ...checkBannedTerms(tgt, pointer, options.bannedTerms),
     );
   }
