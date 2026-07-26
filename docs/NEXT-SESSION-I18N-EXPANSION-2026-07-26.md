@@ -170,7 +170,7 @@ i18n-work/out/tour_product_pages/de/tour_product_pages_<SLUG>_de_<CHUNK>.json
 | 1 | **상품명 번역 여부** — `Jeju Grand Highlights Loop` → `Große Jeju-Highlights-Rundtour` | 브랜드 결정. 기존 es는 완전 번역(`Gran Circuito…`), ko/ja는 음차라 선례가 갈린다. A-1 감수 1순위 |
 | 2d | **원문의 다리 길이가 서로 어긋난다** — `seoul-dmz…` A1: `metaDescription`은 `150m`, `hero/tagline`·`catalog_card/subtitle`·`shortCardDescription`은 `220-meter` (감악산 출렁다리) | 검색 결과에 뜨는 문구와 상품 카드 문구가 다른 숫자를 말한다. **de·fr·it 세 로케일에 그대로 복제돼 있다**(규칙 5). 어느 쪽이 맞는지는 운영이 안다 |
 | 2c | **원문 영어 구문이 깨져 있다** — `jeju-cruise-shore-excursion-bus-tour` `/itineraryStops/5/description`: `traveler-fit the cruise industry's standard buffer` | 독일어·프랑스어 번역가가 **각각 독립적으로** 같은 지점을 지적했다. 둘 다 규칙 5에 따라 고치지 않고 최소 해석으로 옮겼으므로 두 로케일에 그대로 남아 있다 |
-| 2b | **원문 스톱 수가 서로 어긋난다** — `busan-top-attractions-day-tour` A1: hero는 `5 stops`, tagline은 `seven stops` | 손님이 같은 화면에서 두 숫자를 본다. 번역기는 규칙 5대로 양쪽을 그대로 옮겼으므로 **de·fr 번역본에도 그대로 복제돼 있다.** 원문을 고치면 두 로케일 재추출·재번역이 필요하다 |
+| 2b | **`busan-top-attractions-day-tour` A1 한 상품에 불일치 2건** — ① 스톱 수: hero `5 stops` vs tagline `seven stops` ② 소요시간: `catalog_card/duration` `10.5 hours` vs `catalog_card/subtitle` `A 9.5-hour … route` | 둘 다 **같은 카드/화면에서 손님 눈에 동시에 보인다.** 소요시간 쪽은 아래 두 세그먼트를 보면 **의도된 범위 표기일 가능성**이 있다 — `pickup_dropoff/notes/0`: "Seomyeon ≈10 h, Haeundae ≈9.5 h"(픽업 지점별 차이). 그렇다면 카드의 `10.5`/`9.5` 둘 다 대표값으로 부적절하다. 규칙 5대로 **de·fr·it 세 로케일에 그대로 복제돼 있다** — 원문을 고치면 3로케일 재추출·재번역이 필요하다 |
 | 2 | **원문 데이터 결함 4건** — `Un Memorial Cemetery`(→UN), `Hallasumokwon Arboretum`(수목원 중복), `₩90-minute Subway Line 1`(`incheon-seoul-private-car…` `/itineraryStops/0/description` — 앞 항목 `₩10,000 taxi`의 ₩가 옮아붙은 오기, 90분은 금액이 아니다), `/sticky_booking_bar/note`(`from-incheon-seoul…`·`seoul-dmz…` — `checkout_tour_id`·Supabase·JSONB가 적힌 개발자 주석이 고객 노출 필드에 들어 있다) | 원문 수정은 번역 범위 밖. 번역기는 규칙 1·3에 따라 값을 그대로 옮겼다(주석 필드는 빈 값 처리 → 영어 폴백) |
 | 3 | **원문 시각 불일치** — `pickup_dropoff/notes/0`은 복귀 `17:30–18:00`, `practicalAccordionItems/0/content/1`은 `18:00–18:30` | 어느 쪽이 맞는지 운영이 안다 |
 | 4 | Q10 러시아어 전사 감수자 | 없으면 ru POI 명칭 DB 미적용 유지 |
@@ -248,6 +248,7 @@ node -e "const fs=require('fs');const d='i18n-work/out/tour_product_pages/fr';co
 ---
 
 | 15 | **G3 오탐 9 (it 두 번째 슬러그)** — `1950s fires` → `incendi degli anni Cinquanta` | 이탈리아어는 **연대를 낱말로 적는다**. `1950`이 사라지지만 값은 그대로 | 4언어 연대 낱말표(10~90) 추가, flag 강등. `1950s` → `anni Ottanta` 같은 진짜 오역은 계속 fail |
+| 16 | **G3 오탐 10 (it 다섯 번째 슬러그)** — `early 1930s` → `anni '30 del Novecento` | 같은 연대인데 이번엔 **축약 숫자 표기**다. 낱말표만으로는 못 잡는다 | 아포스트로피 뒤 두 자리(`'30`)도 인정. 언어를 가리지 않는 형태라 4언어 공통으로 동작한다 |
 
 오탐 12·13은 **프랑스어 첫 슬러그에서 바로 나왔다.** 새 로케일은 새 서식 관례를 들고 온다 —
 이탈리아어·러시아어 첫 슬러그에서도 같은 일이 생긴다고 보고, 실패가 뜨면 먼저 원문·번역을

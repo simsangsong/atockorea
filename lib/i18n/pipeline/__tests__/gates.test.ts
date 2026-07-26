@@ -196,6 +196,11 @@ describe('G3 숫자 — 값 변조 검출, 서식 변경 허용 (H2)', () => {
     ).toBe(true);
   });
 
+  it("축약 연대 표기도 받는다 — 1930s → anni '30", () => {
+    const f = checkNumbers("in the early 1930s", "all'inizio degli anni '30 del Novecento", '/p', 'it');
+    expect(f.every((x) => x.severity === 'flag')).toBe(true);
+  });
+
   it('연대 예외가 엉뚱한 연대를 받아주지 않는다 — 1950s → anni Ottanta', () => {
     const f = checkNumbers('1950s fires', 'incendi degli anni Ottanta', '/p', 'it');
     expect(f.some((x) => x.severity === 'fail')).toBe(true);

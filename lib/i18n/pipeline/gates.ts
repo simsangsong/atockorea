@@ -272,11 +272,22 @@ const DECADE_WORDS: Record<TargetLocale, Record<string, RegExp>> = {
   },
 };
 
-/** 소실된 숫자가 연대이고, 번역에 그 연대의 낱말 표기가 있는가. */
+/**
+ * 소실된 숫자가 연대이고, 번역에 그 연대 표기가 있는가.
+ *
+ * 두 가지 형태를 본다.
+ *   낱말   `1950s` → it `anni Cinquanta`
+ *   축약   `1930s` → it `anni '30 del Novecento` (2026-07-26 실측)
+ * 축약형은 아포스트로피 뒤 두 자리라 언어를 가리지 않는다.
+ */
 function hasDecadeWord(text: string, token: string, locale: TargetLocale): boolean {
   const m = /^(?:1[89]|20)(\d)0$/.exec(token);
   if (m === null) return false;
-  const re = DECADE_WORDS[locale][`${m[1]}0`];
+
+  const tens = `${m[1]}0`;
+  if (new RegExp(`['’]\\s?${tens}(?!\\d)`).test(text)) return true;
+
+  const re = DECADE_WORDS[locale][tens];
   return re !== undefined && re.test(text);
 }
 
