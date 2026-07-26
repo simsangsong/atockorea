@@ -27,6 +27,9 @@ const ctx = await browser.newContext({
   deviceScaleFactor: 2,
   isMobile: true,
   hasTouch: true,
+  // M-D4 walk — the exact-location flow needs real geolocation grants.
+  geolocation: { latitude: 37.5665, longitude: 126.978 },
+  permissions: ['geolocation'],
 });
 const page = await ctx.newPage();
 const errors = [];
@@ -69,6 +72,26 @@ try {
   if (await page.locator('[data-testid="theme-toggle"]').count()) {
     errors.push('HEADER-DIET VIOLATION: theme-toggle still in header');
   }
+
+  // ── M-D4 meet-exactly: [Meet me here] → confirm → pin + one photo ──
+  await page.click('[data-testid="signal-share_location"]', { timeout: 10000 });
+  await page.waitForSelector('[data-testid="confirm-sheet-ok"]', { timeout: 8000 });
+  await page.click('[data-testid="confirm-sheet-ok"]');
+  await page.waitForSelector('[data-testid="location-preview"]', { timeout: 20000 });
+  // the one-photo follow-up: feed a tiny PNG through the capture input
+  const PNG_1PX = Buffer.from(
+    'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==',
+    'base64',
+  );
+  await page.setInputFiles('[data-testid="meet-photo-input"]', {
+    name: 'spot.png',
+    mimeType: 'image/png',
+    buffer: PNG_1PX,
+  });
+  await page.waitForTimeout(2500);
+  await shot('02b-guest-meet-here-pin-photo');
+  const guestChips = await page.locator('[data-testid="nav-chip-google"]').count();
+  if (!guestChips) errors.push('MEET-EXACTLY: guest nav chips missing on location preview');
 
   await page.click('[data-testid="room-drawer-open"]', { timeout: 10000 });
   await page.waitForSelector('[data-testid="room-drawer"]', { timeout: 8000 });
@@ -150,6 +173,27 @@ try {
   );
   await page.keyboard.press('Escape');
   await page.waitForTimeout(500);
+
+  // ── M-D2: the SAME pin, seen by staff — Kakao chips, not Google ──
+  const roomHref = await page.locator('[data-testid="room-chat"]').first().getAttribute('href');
+  if (roomHref) {
+    await page.goto(BASE + roomHref, { waitUntil: 'domcontentloaded', timeout: 60000 });
+    await page.waitForSelector('[data-testid="room-tabbar"]', { timeout: 30000 });
+    // operator rooms have no Home tab — they LAND on chat (no click needed;
+    // the bottom-left tab is under the dev N-indicator anyway).
+    await page.waitForSelector('[data-testid="chat-feed"]', { timeout: 15000 });
+    await page.waitForTimeout(1200);
+    const kakao = await page.locator('[data-testid="nav-chip-kakao-navi"]').count();
+    if (!kakao) errors.push('MEET-EXACTLY: staff kakao chips missing in guide room view');
+    await page.locator('[data-testid="location-preview"]').last().scrollIntoViewIfNeeded().catch(() => {});
+    await page.waitForTimeout(400);
+    await shot('13b-staff-room-kakao-chips');
+    await page.goBack({ waitUntil: 'domcontentloaded' });
+    await page.waitForSelector('[data-testid="staff-shell"]', { timeout: 30000 });
+    await page.waitForTimeout(800);
+  } else {
+    errors.push('MEET-EXACTLY: no room-chat link to open as staff');
+  }
 
   await page.click('[data-testid="staff-tab-btn-seats"]');
   await page.waitForTimeout(1800);

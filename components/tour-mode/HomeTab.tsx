@@ -20,6 +20,7 @@ import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import LobbyCard from '@/components/tour-mode/LobbyCard';
 import { firstPickup, vehicleLineFromPayload } from '@/components/tour-mode/LobbyCard';
+import MeetSetCard from '@/components/tour-mode/MeetSetCard';
 import QuickSignalBar from '@/components/tour-mode/QuickSignalBar';
 import VehicleLocationCard from '@/components/tour-mode/map/VehicleLocationCard';
 import Sheet from '@/components/tour-mode/Sheet';
@@ -538,6 +539,11 @@ export default function HomeTab({
           </span>
         }
       >
+        {/* M-D5 — private tours: the guest sets time & place; lobby (D-1) and
+            live alike. Join tours keep the fixed pickup board only. */}
+        {isPrivate && lifecycle !== 'ended' && (
+          <MeetSetCard bookingId={bookingId} roomSession={roomSession} locale={locale} />
+        )}
         <LobbyCard
           locale={locale}
           tourDate={tourDate}
