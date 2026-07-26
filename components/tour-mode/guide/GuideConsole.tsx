@@ -50,6 +50,7 @@ import { PreDepartureChecklist } from '@/components/tour-mode/driver/DriverConso
 import { useTourManifest } from '@/hooks/useTourManifest';
 import { useResolvedTourTheme } from '@/hooks/useResolvedTourTheme';
 import Cockpit, { type CockpitLifecycle, type CockpitRoom } from '@/components/tour-mode/cockpit/Cockpit';
+import { roomHue } from '@/lib/tour-room/hue';
 import { chatListClock, kstToday } from '@/lib/tour-room/time';
 import { OPERATOR_PRESETS } from '@/lib/tour-room/operatorPresets';
 import { primeAudio } from '@/lib/tour-room/tts';
@@ -155,12 +156,10 @@ export function koPreview(m: { source_text?: string; translations?: Record<strin
   return m.translations?.ko?.trim() || m.source_text || '아직 메시지 없음';
 }
 
-/** Stable pastel hue per room for the color tags (T6.2). */
-export function roomHue(bookingId: string): number {
-  let hash = 0;
-  for (let i = 0; i < bookingId.length; i += 1) hash = (hash * 31 + bookingId.charCodeAt(i)) % 360;
-  return hash;
-}
+/** Stable pastel hue per room (T6.2) — lives in lib/tour-room/hue so the seat
+ *  dashboard shares the identical color without a component import cycle.
+ *  Re-exported to keep existing imports (tests, prior callers) working. */
+export { roomHue };
 
 function readToken(): string | null {
   try {
