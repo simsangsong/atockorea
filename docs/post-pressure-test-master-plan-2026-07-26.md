@@ -113,21 +113,66 @@ Tier1 LLM 응답이라 본질적으로 느리다. **이건 지연을 줄일 게 
 
 ---
 
-## §D 성능·부하 — DB 레벨 (근거: 어드바이저 297건)
+## §D 성능·부하 — DB 레벨
 
-우선순위는 **건수가 아니라 뜨거운 테이블 여부**로 매긴다.
+> 🔴 **이 절은 착수 후 전면 개정됐다.** 처음에는 어드바이저 297건을 그대로 줄 세워
+> "미인덱스 FK 15건, 그중 투어룸 2건이 최우선"이라고 적었다. **틀렸다.**
+> 실제 행 수를 재 보니 `tour_room_events` 2행, `tour_room_message_reactions` 0행이었다.
+> 빈 테이블에 인덱스를 다는 것은 쓰기 비용만 늘린다. 어드바이저는 규모를 모른다 —
+> **어드바이저를 정렬 기준으로 쓰면 안 되고, 정렬 기준은 실측이어야 한다.**
+
+### D1 🔴 RAG 벡터 검색이 19MB HNSW 인덱스를 한 번도 안 쓰고 있었다 → **해결**
+
+실측으로 드러난 이 DB의 최대 열원이다.
+
+```
+pg_stat_user_indexes  knowledge_chunks_embedding_hnsw   idx_scan = 0     (19 MB)
+pg_stat_user_tables   knowledge_chunks   seq_scan 1561 · seq_tup_read 2,887,026
+pg_stat_statements    이 RPC  mean 75ms × 1518콜 = DB 시간 118초
+```
+
+1120행짜리 테이블이 **56MB**인 이유는 행마다 1536차원 벡터가 붙어 있어서다.
+매 질의가 그걸 전부 읽고 1120번 거리 계산을 했다.
+
+**원인이 세 겹이었다.** 하나씩 벗겨야 보였다:
+
+| # | 원인 | 확인 방법 |
+|---|---|---|
+| ① | `min_similarity`가 **거리식 자체에 걸린 잔여 필터** → ORDER BY 인덱스 경로 불가 | 이 술어만 빼면 즉시 Index Scan |
+| ② | 후보 풀 24에서는 전수 스캔이 더 싸다고 계산됨 | `limit 8`은 인덱스, `limit 24`는 전수 |
+| ③ | **SQL 함수 본문이 제네릭 플랜으로 캐시됨** — `limit $4`가 계획 시점에 값이 없다 | SET 절 세 번 다 실패, `execute…using`만 성공 |
+
+**처방:** ANN을 먼저 끝내고 임계값을 밖에서 걸며, plpgsql `return query execute … using`으로
+매 호출 실제 값으로 계획한다. 값은 전부 `USING`으로 넘어가므로 주입 표면이 없다.
+
+```
+원본                                buffers 16,969   391ms
++ enable_seqscan=off                buffers 12,084   (비트맵으로 바뀌었을 뿐)
++ ANN 먼저/임계값 나중               buffers 15,403   (함수 안에서는 변화 없음)
++ plan_cache_mode=force_custom_plan buffers 15,403   (변화 없음)
++ execute…using (최종)              buffers    892   ← 19배
+```
+
+**결과가 안 바뀌는 근거:** 브루트포스 상위 24와 이 함수의 상위 24를 대조 —
+**id 목록과 순서가 완전히 동일**. 임계값을 넘는 행은 못 넘는 행보다 항상 더 유사하므로
+"통과분의 상위 k"와 "상위 k 중 통과분"은 같은 집합이다. 적용 후 `idx_scan` 0 → 10.
+
+⚠ 남은 한계: `p_locale`/`p_source_types`가 non-null이면 ANN 뒤 잔여 필터로 `match_count`보다
+적게 올 수 있다(ANN+필터의 고전 문제). 지금 앱은 `p_locale=null`로만 부른다.
+
+### D2 나머지 (우선순위 재조정)
 
 | 항목 | 규모 | 처방 | 우선도 |
 |---|---|---|---|
-| `auth_rls_initplan` 63건 | `reviews`·`bookings`·`merchants`·`products`·`received_emails` 등 뜨거운 테이블 | 정책의 `auth.uid()` → `(select auth.uid())`. 행마다 재평가되던 것이 1회로 준다 | **높음** |
-| `multiple_permissive_policies` 70건 | `merchants`(12)·`tours`(6)·`emails`(6)… | 같은 (역할, 명령)에 겹친 정책 병합 | 중 |
-| 미인덱스 FK 15건 | **`tour_room_events.booking_id`·`tour_room_message_reactions.room_id`**가 핵심(투어룸 뜨거운 경로) | 커버링 인덱스 추가 | **높음**(투어룸 2건) / 낮음(나머지) |
-| 미사용 인덱스 148건 | — | **지금 손대지 않는다.** 라이브 트래픽이 얇아서 "미사용"이 곧 "불필요"가 아니다 | 보류 |
-| RAG RPC ~75ms × 1518콜 | 챗봇 하이브리드 검색 | ivfflat/HNSW 파라미터·`match_count` 점검 | 중 |
-| Auth 커넥션 10 고정 | 인스턴스 키워도 안 늘어남 | 퍼센트 기반으로 전환 | 낮음(현 트래픽) |
+| `auth_rls_initplan` 63건 | `reviews`·`bookings`·`merchants`·`products` 등 **실제로 행이 있는** 테이블 | 정책의 `auth.uid()` → `(select auth.uid())` | 중 |
+| `multiple_permissive_policies` 70건 | `merchants`(12)·`tours`(6)·`emails`(6)… | 같은 (역할, 명령) 정책 병합 | 낮음 |
+| **미인덱스 FK 15건** | 대상 테이블이 0~15행 | **하지 않는다** — 빈 테이블 인덱스는 쓰기 비용만 늘린다. 트래픽이 붙은 뒤 재평가 | **보류(개정)** |
+| 미사용 인덱스 148건 | — | 보류. "미사용"이 "불필요"가 아니라 "아직 안 밟힌 경로"일 수 있다 | 보류 |
+| `tour_product_pages` | 236행 22MB, seq_scan 764 | JSONB가 커서 detoast 비용. 상세페이지 ISR이 흡수 중 | 낮음 |
+| Auth 커넥션 10 고정 | 인스턴스 키워도 안 늘어남 | 퍼센트 기반 전환 | 낮음 |
 
 🔴 **RLS 변경은 additive가 아니다.** 정책을 고치면 접근 범위가 바뀔 수 있다. 반드시
-"변경 전/후 같은 쿼리가 같은 행 수를 돌려주는가"를 스크립트로 대조한 뒤에만 적용한다.
+"변경 전/후 같은 쿼리가 같은 행 수를 돌려주는가"를 대조한 뒤에만 적용한다.
 
 ---
 
@@ -224,11 +269,12 @@ INFO `rls_enabled_no_policy` 60여건은 **정책 없음 = 아무도 못 읽음*
 - **게이트**: `tour_rooms.n_tup_upd` 증가율이 **읽기 요청 수에 비례하지 않을 것** ·
   압력테스트 하니스 재실행해 **p90 1142ms → 목표 <500ms** 확인
 
-### Wave 3 — DB 열기 식히기 (§D, 1일)
-- **W3.1** 투어룸 뜨거운 FK 2건 인덱스(`tour_room_events.booking_id`, `tour_room_message_reactions.room_id`)
-- **W3.2** `auth_rls_initplan` 상위 6테이블만 `(select auth.uid())`로 — **행 수 대조 스크립트 선행**
+### Wave 3 — DB 열기 식히기 (§D)
+- ~~**W3.1** 투어룸 FK 2건 인덱스~~ → **취소.** 대상 테이블이 0~2행이었다(§D 머리말).
+- ✅ **W3.1′ RAG 벡터 검색이 HNSW를 쓰게 한다** — 버퍼 16,969→892, `idx_scan` 0→10 (§D1)
+- **W3.2** `auth_rls_initplan` 상위 6테이블 `(select auth.uid())` — **행 수 대조 선행**
 - **W3.3** `multiple_permissive_policies` 상위 3테이블 병합
-- **게이트**: 마이그레이션마다 `get_advisors` 재실행 · 대조 스크립트 0 diff
+- **게이트**: 마이그레이션마다 `get_advisors` 재실행 · 대조 0 diff
 
 ### Wave 4 — 노출 닫기 (§E, 반나절)
 - **W4.1** 공개 버킷 3종 목록 권한 제거
@@ -291,3 +337,11 @@ INFO `rls_enabled_no_policy` 60여건은 **정책 없음 = 아무도 못 읽음*
 6. **시뮬레이터는 픽셀을 못 본다.** §F-2 다섯 건은 전부 실기기 스크린샷 3장이 잡았고,
    그중 둘(투명 시트·잘린 좌석 칩)은 **어떤 API 검사로도 잡히지 않는다.**
    실기기 화면 캡처를 정기 입력으로 둘 것.
+7. 🔴 **어드바이저를 우선순위로 쓰지 마라.** 이 플랜의 §D 첫 판은 297건을 건수로 줄 세워
+   "미인덱스 FK가 최우선"이라고 적었다. 대상 테이블은 0~2행이었다. 어드바이저는 **규모를
+   모른다.** `pg_stat_user_tables`를 먼저 보고 나서 어드바이저를 읽을 것 — 순서가 반대면
+   빈 테이블에 인덱스를 달면서 진짜 열원(§D1, 56MB 전수 스캔 × 1518콜)을 지나친다.
+8. **"이 설정 하나면 될 것"이 세 번 틀릴 수 있다.** §D1에서 `enable_seqscan`,
+   쿼리 재작성, `plan_cache_mode`를 차례로 걸었고 셋 다 함수 내부 플랜을 못 바꿨다.
+   매번 `EXPLAIN (ANALYZE, BUFFERS)`로 확인했기 때문에 세 번 다 즉시 알았다.
+   **버퍼 수를 안 봤으면 첫 번째에서 "고쳤다"고 적고 끝났을 것이다.**
