@@ -477,13 +477,20 @@ export default function OpsRoomVehiclePanel({ roomId }: { roomId: string }) {
 }
 
 /**
- * §2-1 — "등록된 차량에서 고르기 / 직접 입력".
+ * 차량 지정 — **타입이 1순위, 번호판·등록차량은 옵션.**
  *
- * 마스터를 고르면 번호판은 마스터가 정본이라 자유 입력을 닫는다. 두 곳에서 다르게
- * 타이핑된 번호판은 같은 차를 두 대로 만들고, 그 순간 배차 달력의 중복 감지가
- * 다시 죽는다 — 이 항목이 고치려던 문제가 그것이다.
+ * 🔴 최초 구현(§2-1)은 "보유 차량을 등록해 두고 고른다"를 기본 동선으로 깔았는데,
+ * 이 운영은 **차를 소유하지 않고 매번 렌트한다.** 그래서 배차 시점에 확정돼 있는
+ * 것은 차종·좌석수뿐이고 번호판은 대개 당일에야 나온다. 등록 차량을 앞세우면
+ * 매번 "없어요"만 보게 되고, 없는 걸 만들라는 잔소리가 영구히 남는다.
  *
- * 마스터 미등록(용차·대차)은 계속 자유 입력으로 남는다. 그 폴백은 의도된 설계다.
+ * 그래서:
+ *   · **타입(배치도)** — 필수. 좌석수·좌석판·정원 판정이 전부 여기서 나온다.
+ *   · **번호판** — 옵션. 항상 열려 있다(당일 확인 후 입력).
+ *   · **등록 차량** — 옵션 지름길. 자주 쓰는 렌트 차가 생겼을 때만 의미가 있다.
+ *
+ * 등록 차량을 고른 뒤 번호판을 다르게 고치면 연결을 **끊는다.** 다른 번호 = 다른
+ * 차이고, 연결을 유지한 채 번호만 다르면 그 순간 마스터가 거짓말을 시작한다.
  */
 function MasterVehicleField({
   options,
@@ -501,52 +508,50 @@ function MasterVehicleField({
   const selected = options.find((option) => option.id === masterId) ?? null;
   return (
     <>
-      <label className="mb-2 block text-[11px] font-semibold text-[var(--tr-ink-2)]">
-        차량
-        <select
-          value={masterId}
-          data-testid="master-vehicle-select"
+      <label className="mb-1 block text-[11px] font-semibold text-[var(--tr-ink-2)]">
+        차량번호 <span className="font-normal text-[var(--tr-ink-3)]">(선택 — 당일 확인 후 입력해도 돼요)</span>
+        <input
+          value={plate}
           onChange={(event) => {
-            const next = event.target.value;
-            onMasterChange(next, options.find((option) => option.id === next) ?? null);
+            onPlateChange(event.target.value);
+            // 번호를 손으로 고쳤다 = 등록 차량과 다른 차다. 연결을 끊는다.
+            if (selected && event.target.value !== selected.display_plate) onMasterChange('', null);
           }}
+          maxLength={32}
+          placeholder="예: 12가 3456 — 아직 몰라도 비워 두세요"
+          data-testid="vehicle-plate-input"
           className="mt-1 h-10 w-full rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 text-[13px] font-normal text-[var(--tr-ink)]"
-        >
-          <option value="">— 직접 입력 (용차·대차) —</option>
-          {options.map((option) => (
-            <option key={option.id} value={option.id}>
-              {masterLabel(option)}
-            </option>
-          ))}
-        </select>
+        />
       </label>
-      {selected ? (
-        <p className="mb-2 text-[11px] text-[var(--tr-ink-2)]">
-          번호판 <b>{selected.display_plate}</b> — 차량 마스터가 정본이에요. 바꾸려면{' '}
-          <a href="/admin/vehicle-layouts" className="underline">
-            차량 등록
-          </a>
-          에서 고쳐 주세요.
-        </p>
-      ) : (
+
+      {/* 등록 차량은 지름길일 뿐이다. 한 대도 없으면 아예 보여주지 않는다 —
+          렌트 운영에서 "등록된 차량이 없어요"는 고칠 것이 아니라 정상이다. */}
+      {options.length > 0 && (
         <label className="mb-2 block text-[11px] font-semibold text-[var(--tr-ink-2)]">
-          차량번호
-          <input
-            value={plate}
-            onChange={(event) => onPlateChange(event.target.value)}
-            maxLength={32}
-            placeholder="예: 12가 3456"
+          자주 쓰는 차량에서 채우기 <span className="font-normal text-[var(--tr-ink-3)]">(선택)</span>
+          <select
+            value={masterId}
+            data-testid="master-vehicle-select"
+            onChange={(event) => {
+              const next = event.target.value;
+              const option = options.find((item) => item.id === next) ?? null;
+              onMasterChange(next, option);
+              if (option) onPlateChange(option.display_plate);
+            }}
             className="mt-1 h-10 w-full rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 text-[13px] font-normal text-[var(--tr-ink)]"
-          />
+          >
+            <option value="">— 선택 안 함 —</option>
+            {options.map((option) => (
+              <option key={option.id} value={option.id}>
+                {masterLabel(option)}
+              </option>
+            ))}
+          </select>
         </label>
       )}
-      {options.length === 0 && (
+      {selected && (
         <p className="mb-2 text-[11px] text-[var(--tr-ink-3)]">
-          등록된 차량이 없어요.{' '}
-          <a href="/admin/vehicle-layouts" className="underline">
-            차량을 먼저 등록
-          </a>
-          하면 배차 달력의 차량 축과 중복 배차 감지가 켜져요.
+          등록 차량 <b>{selected.display_plate}</b>에 연결돼 있어요. 번호를 고치면 연결이 풀립니다.
         </p>
       )}
     </>
@@ -634,24 +639,13 @@ function VehicleCard({
         정원 {vehicle.capacity ?? vehicle.total_seats}석 · 배정 {seated}석 · 체크인 {checkedIn}석
       </p>
 
-      <MasterVehicleField
-        options={masterVehicles}
-        masterId={masterId}
-        onMasterChange={(next, option) => {
-          setMasterId(next);
-          // 마스터의 표준 배치도를 미리 골라 준다 — 저장 전에 화면에서 보이고,
-          // 좌석이 사라지는 교체라면 기존 409 흐름이 그대로 막는다.
-          if (option?.layout_id) setLayoutId(option.layout_id);
-        }}
-        plate={plate}
-        onPlateChange={setPlate}
-      />
-
+      {/* 타입이 먼저다 — 렌트라 배차 시점에 확정된 것은 차종·좌석수뿐이다. */}
       <label className="mb-2 block text-[11px] font-semibold text-[var(--tr-ink-2)]">
-        배치도
+        차량 타입 <span className="font-normal text-[var(--tr-ink-3)]">(필수 — 좌석수·좌석판이 여기서 나와요)</span>
         <select
           value={layoutId}
           onChange={(event) => setLayoutId(event.target.value)}
+          data-testid="vehicle-type-select"
           className="mt-1 h-10 w-full rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 text-[13px] font-normal text-[var(--tr-ink)]"
         >
           {layouts.map((layout) => (
@@ -667,6 +661,19 @@ function VehicleCard({
           <AlertTriangle className="mt-0.5 size-3 shrink-0" />이 배치도는 아직 실차 사진 대조가 안 됐어요.
         </p>
       )}
+
+      <MasterVehicleField
+        options={masterVehicles}
+        masterId={masterId}
+        onMasterChange={(next, option) => {
+          setMasterId(next);
+          // 등록 차량에 표준 배치도가 있으면 타입도 같이 채운다 — 저장 전에 화면에
+          // 보이고, 좌석이 사라지는 교체라면 기존 409 흐름이 그대로 막는다.
+          if (option?.layout_id) setLayoutId(option.layout_id);
+        }}
+        plate={plate}
+        onPlateChange={setPlate}
+      />
 
       <label className="mb-2 block text-[11px] font-semibold text-[var(--tr-ink-2)]">
         기사 (입장한 스태프)
@@ -758,6 +765,22 @@ function NewVehicleForm({
           <X className="size-4" />
         </button>
       </div>
+      {/* 타입만 골라도 배차가 끝난다. 번호판·등록차량은 그 아래 옵션이다. */}
+      <label className="mb-2 block text-[11px] font-semibold text-[var(--tr-ink-2)]">
+        차량 타입 <span className="font-normal text-[var(--tr-ink-3)]">(이것만 골라도 배차돼요)</span>
+        <select
+          value={layoutId}
+          onChange={(event) => setLayoutId(event.target.value)}
+          data-testid="new-vehicle-type-select"
+          className="mt-1 h-10 w-full rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 text-[13px] font-normal text-[var(--tr-ink)]"
+        >
+          {layouts.map((layout) => (
+            <option key={layout.id} value={layout.id}>
+              {layoutLabel({ display_name: layout.display_name, model: layout.model })} ({layout.total_seats}석)
+            </option>
+          ))}
+        </select>
+      </label>
       <MasterVehicleField
         options={masterVehicles}
         masterId={masterId}
@@ -768,17 +791,6 @@ function NewVehicleForm({
         plate={plate}
         onPlateChange={setPlate}
       />
-      <select
-        value={layoutId}
-        onChange={(event) => setLayoutId(event.target.value)}
-        className="mb-2 h-10 w-full rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 text-[13px] text-[var(--tr-ink)]"
-      >
-        {layouts.map((layout) => (
-          <option key={layout.id} value={layout.id}>
-            {layoutLabel({ display_name: layout.display_name, model: layout.model })} ({layout.total_seats}석)
-          </option>
-        ))}
-      </select>
       <select
         value={driverParticipantId}
         onChange={(event) => setDriverParticipantId(event.target.value)}

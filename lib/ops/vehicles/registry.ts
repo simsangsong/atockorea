@@ -103,13 +103,19 @@ export type DispatchVehicleResult =
 /**
  * 배차 행에 저장할 (마스터 참조, 배치도, 표시 번호판)을 한 번에 푼다.
  *
+ * 🔴 **이 운영은 차를 소유하지 않는다 — 매번 렌트하고 차량 정보가 매번 바뀐다.**
+ * 그래서 배차 시점에 확정된 것은 **타입(배치도)뿐**이고, 번호판은 대개 당일에야
+ * 나온다. 타입만으로 배차가 끝나야 하고, 번호판은 언제 넣어도 되는 옵션이다.
+ *
  * 설계:
- *   1. **마스터가 정본이다.** 연결되면 번호판은 마스터에서 온다 — 운영자가 룸마다
- *      다시 타이핑하면 '12가3456'과 '12가 3456'이 두 대가 되고, 그러면 중복 배차
- *      감지가 다시 죽는다(이 항목이 고치려던 바로 그 문제).
- *   2. **배치도는 상속하되 덮어쓸 수 있다.** 같은 차가 좌석을 떼고 운행하는 날이
- *      있고, 그날은 화면이 고른 배치도가 이긴다.
- *   3. **운행 중지 차량은 거절한다.** 소프트 삭제된 차를 새로 배차하는 것은 거의
+ *   1. **타입이 필수, 나머지는 옵션.** 좌석수·좌석판·정원 판정이 전부 타입에서
+ *      나오므로 타입만 있으면 배차는 완결이다.
+ *   2. **등록 차량(마스터)은 지름길일 뿐이다.** 연결하면 번호판을 채워 주지만,
+ *      **다른 번호판이 들어오면 연결을 끊는다** — 다른 번호는 다른 차이고, 연결을
+ *      유지한 채 번호만 다르면 그때부터 마스터가 거짓말을 한다.
+ *   3. **배치도는 상속하되 덮어쓸 수 있다.** 같은 차가 좌석을 떼고 운행하는 날이
+ *      있고, 그날은 화면이 고른 타입이 이긴다.
+ *   4. **운행 중지 차량은 거절한다.** 소프트 삭제된 차를 새로 배차하는 것은 거의
  *      항상 실수다. 이미 붙어 있던 배차는 건드리지 않는다(그건 과거 사실이다).
  */
 export function resolveDispatchVehicle(input: DispatchVehicleInput): DispatchVehicleResult {
@@ -117,14 +123,22 @@ export function resolveDispatchVehicle(input: DispatchVehicleInput): DispatchVeh
     typeof input.requestedLayoutId === 'string' && input.requestedLayoutId.trim()
       ? input.requestedLayoutId.trim()
       : null;
+  const requestedPlate = typeof input.requestedPlate === 'string' ? input.requestedPlate.trim() : '';
 
   const master = input.master ?? null;
-  if (master) {
+  // 설계 2 — 들어온 번호판이 마스터의 것과 다르면 그건 다른 차다. 연결을 끊고
+  // 입력값을 그대로 쓴다(빈 값은 "아직 모름"이라 연결을 끊지 않는다).
+  const plateContradictsMaster =
+    Boolean(master) &&
+    requestedPlate.length > 0 &&
+    normalizePlate(requestedPlate) !== normalizePlate(master!.plate_number);
+
+  if (master && !plateContradictsMaster) {
     if (master.active === false) {
       return {
         ok: false,
         code: 'vehicle_inactive',
-        message: '운행 중지된 차량이에요. 차량 마스터에서 다시 운행 중으로 바꾼 뒤 배차해 주세요.',
+        message: '운행 중지된 차량이에요. 차량 목록에서 다시 운행 중으로 바꾼 뒤 배차해 주세요.',
       };
     }
     const layoutId = requestedLayoutId ?? master.layout_id ?? null;
@@ -132,7 +146,7 @@ export function resolveDispatchVehicle(input: DispatchVehicleInput): DispatchVeh
       return {
         ok: false,
         code: 'layout_required',
-        message: '이 차량에 표준 배치도가 없어요. 배치도를 함께 골라 주세요.',
+        message: '차량 타입을 골라 주세요.',
       };
     }
     return {
@@ -144,11 +158,12 @@ export function resolveDispatchVehicle(input: DispatchVehicleInput): DispatchVeh
     };
   }
 
-  if (!requestedLayoutId) {
-    return { ok: false, code: 'layout_required', message: '배치도를 골라 주세요.' };
+  // 마스터 미연결(렌트·용차·대차)이 **기본 경로**다. 타입만 있으면 배차는 끝난다.
+  const layoutId = requestedLayoutId ?? master?.layout_id ?? null;
+  if (!layoutId) {
+    return { ok: false, code: 'layout_required', message: '차량 타입을 골라 주세요.' };
   }
-  const plate = typeof input.requestedPlate === 'string' ? input.requestedPlate.trim().slice(0, 32) : '';
-  return { ok: true, vehicleId: null, layoutId: requestedLayoutId, plateNumber: plate || null };
+  return { ok: true, vehicleId: null, layoutId, plateNumber: requestedPlate.slice(0, 32) || null };
 }
 
 /**
