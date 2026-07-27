@@ -73,8 +73,21 @@ describe('🔴 로케일 목록은 하나뿐이다', () => {
   const literalRe = /\[\s*(['"])(en|ko|zh|ja|es)\1(\s*,\s*(['"])(en|ko|zh|ja|es)\4){4}\s*,?\s*\]/;
 
   it('정본이 존재한다', () => {
-    expect(ROOM_LOCALES).toHaveLength(5);
-    expect([...ROOM_LOCALES].sort()).toEqual(['en', 'es', 'ja', 'ko', 'zh']);
+    // 2026-07-27 확장: UI 10로케일. LLM 팬아웃 동결 집합(CORE_TRANSLATION_LOCALES,
+    // 구 5종)도 같은 정본 파일에만 산다 — 아래 리터럴 검사가 그 사본을 계속 잡는다.
+    expect(ROOM_LOCALES).toHaveLength(10);
+    expect([...ROOM_LOCALES].sort()).toEqual([
+      'de',
+      'en',
+      'es',
+      'fr',
+      'it',
+      'ja',
+      'ko',
+      'ru',
+      'zh',
+      'zh-TW',
+    ]);
   });
 
   it('🔴 정본 밖 어디에도 5로케일 배열 리터럴이 없다', () => {

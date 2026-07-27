@@ -3,7 +3,7 @@
  * 사전 번역 상수, LLM 0 — morningBriefing.ts와 동일 규약, ROOM_LOCALES 기준).
  */
 
-import { ROOM_LOCALES, type RoomLocale } from '@/lib/tour-room/snapshot';
+import { ROOM_LOCALES, normalizeRoomLocale, type RoomLocale } from '@/lib/tour-room/snapshot';
 
 export type CheckinCopyKey =
   | 'recognizing'
@@ -40,6 +40,7 @@ const COPY: Record<CheckinCopyKey, Record<RoomLocale, string>> = {
     en: 'Checking your booking…',
     ko: '예약을 확인하는 중…',
     zh: '正在确认您的预订…',
+    'zh-TW': '正在確認您的預訂…',
     ja: 'ご予約を確認しています…',
     es: 'Comprobando su reserva…',
     fr: 'Vérification de votre réservation…',
@@ -51,6 +52,7 @@ const COPY: Record<CheckinCopyKey, Record<RoomLocale, string>> = {
     en: 'Hi {name} — check in now?',
     ko: '{name}님, 체크인할까요?',
     zh: '{name}，现在办理登车确认吗？',
+    'zh-TW': '{name}，現在辦理上車報到嗎？',
     ja: '{name}さん、チェックインしますか？',
     es: 'Hola {name}, ¿confirmamos su asistencia?',
     fr: 'Bonjour {name} — on s’enregistre?',
@@ -62,6 +64,7 @@ const COPY: Record<CheckinCopyKey, Record<RoomLocale, string>> = {
     en: 'Welcome, {name} 👋',
     ko: '안녕하세요 {name}님 👋',
     zh: '欢迎您，{name} 👋',
+    'zh-TW': '歡迎您，{name} 👋',
     ja: 'ようこそ、{name}さん 👋',
     es: 'Bienvenido/a, {name} 👋',
     fr: 'Bienvenue, {name} 👋',
@@ -73,6 +76,7 @@ const COPY: Record<CheckinCopyKey, Record<RoomLocale, string>> = {
     en: "You're in seat {seat}.",
     ko: '{seat}번 좌석입니다.',
     zh: '您的座位是 {seat} 号。',
+    'zh-TW': '您的座位是 {seat} 號。',
     ja: '{seat}番の座席です。',
     es: 'Su asiento es el {seat}.',
     fr: 'Vous êtes au siège {seat}.',
@@ -84,8 +88,9 @@ const COPY: Record<CheckinCopyKey, Record<RoomLocale, string>> = {
     en: 'Checked in — {n} in your party.',
     ko: '일행 {n}명 체크인 완료.',
     zh: '已确认 — 同行 {n} 人。',
+    'zh-TW': '已完成報到 — 同行人數：{n}。',
     ja: 'チェックイン完了 — 同行{n}名。',
-    es: 'Confirmado — {n} personas en su grupo.',
+    es: 'Confirmado — personas en su grupo: {n}.',
     fr: 'Enregistré — {n} personnes dans votre groupe.',
     de: 'Eingecheckt — {n} Personen in Ihrer Gruppe.',
     ru: 'Регистрация пройдена — в вашей группе {n} чел.',
@@ -97,6 +102,7 @@ const COPY: Record<CheckinCopyKey, Record<RoomLocale, string>> = {
     en: 'Fix this',
     ko: '수정',
     zh: '修改',
+    'zh-TW': '修改',
     ja: '修正',
     es: 'Corregir',
     fr: 'Corriger',
@@ -108,6 +114,7 @@ const COPY: Record<CheckinCopyKey, Record<RoomLocale, string>> = {
     en: 'Undone — check in again when you are ready.',
     ko: '취소했어요 — 준비되면 다시 체크인하세요.',
     zh: '已撤销 — 准备好后可再次确认。',
+    'zh-TW': '已取消 — 準備好後可再次報到。',
     ja: '取り消しました — 準備ができたら再度チェックインしてください。',
     es: 'Deshecho: confirme de nuevo cuando esté listo/a.',
     fr: 'Annulé — refaites l’enregistrement quand vous le souhaitez.',
@@ -121,6 +128,7 @@ const COPY: Record<CheckinCopyKey, Record<RoomLocale, string>> = {
     en: 'Open my tour room',
     ko: '투어룸 열기',
     zh: '打开我的行程群组',
+    'zh-TW': '開啟我的行程群組',
     ja: 'ツアールームを開く',
     es: 'Abrir mi sala de tour',
     fr: 'Ouvrir mon espace tour',
@@ -132,6 +140,7 @@ const COPY: Record<CheckinCopyKey, Record<RoomLocale, string>> = {
     en: 'Your seats',
     ko: '내 좌석',
     zh: '您的座位',
+    'zh-TW': '您的座位',
     ja: 'あなたの座席',
     es: 'Sus asientos',
     fr: 'Vos sièges',
@@ -143,8 +152,9 @@ const COPY: Record<CheckinCopyKey, Record<RoomLocale, string>> = {
     en: 'Check in all {n} of your party?',
     ko: '일행 {n}명 모두 체크인할까요?',
     zh: '同行 {n} 人全部确认吗？',
+    'zh-TW': '要為同行的 {n} 位一起報到嗎？',
     ja: '同行者{n}名まとめてチェックインしますか？',
-    es: '¿Confirmar a las {n} personas de su grupo?',
+    es: '¿Confirmar el check-in de su grupo ({n})?',
     fr: 'Enregistrer les {n} personnes de votre groupe?',
     de: 'Alle {n} Personen Ihrer Gruppe einchecken?',
     ru: 'Зарегистрировать всех {n} человек из вашей группы?',
@@ -154,6 +164,7 @@ const COPY: Record<CheckinCopyKey, Record<RoomLocale, string>> = {
     en: 'Check in all ({n})',
     ko: '전원 체크인 ({n}명)',
     zh: '全部确认（{n}人）',
+    'zh-TW': '全部報到（{n} 人）',
     ja: '全員チェックイン（{n}名）',
     es: 'Confirmar todos ({n})',
     fr: 'Tout enregistrer ({n})',
@@ -165,6 +176,7 @@ const COPY: Record<CheckinCopyKey, Record<RoomLocale, string>> = {
     en: 'Check in',
     ko: '체크인 확인',
     zh: '确认登车',
+    'zh-TW': '確認上車',
     ja: 'チェックイン',
     es: 'Confirmar',
     fr: 'S’enregistrer',
@@ -176,6 +188,7 @@ const COPY: Record<CheckinCopyKey, Record<RoomLocale, string>> = {
     en: 'Select who is here',
     ko: '지금 있는 인원만 선택',
     zh: '仅选择在场的人',
+    'zh-TW': '僅選擇在場的人',
     ja: '今いる人だけ選ぶ',
     es: 'Seleccionar solo a los presentes',
     fr: 'Sélectionner les personnes présentes',
@@ -187,6 +200,7 @@ const COPY: Record<CheckinCopyKey, Record<RoomLocale, string>> = {
     en: 'Checked in — enjoy the tour! ✅',
     ko: '체크인 완료 — 즐거운 투어 되세요! ✅',
     zh: '已确认 — 祝您旅途愉快！✅',
+    'zh-TW': '報到完成 — 祝您旅途愉快！✅',
     ja: 'チェックイン完了 — よい旅を！✅',
     es: 'Confirmado — ¡disfrute del tour! ✅',
     fr: 'Enregistrement confirmé — profitez bien du tour! ✅',
@@ -198,6 +212,7 @@ const COPY: Record<CheckinCopyKey, Record<RoomLocale, string>> = {
     en: 'You are already checked in. ✅',
     ko: '이미 체크인되어 있어요. ✅',
     zh: '您已完成确认。✅',
+    'zh-TW': '您已完成報到。✅',
     ja: 'すでにチェックイン済みです。✅',
     es: 'Ya está confirmado. ✅',
     fr: 'Votre enregistrement est déjà fait. ✅',
@@ -209,6 +224,7 @@ const COPY: Record<CheckinCopyKey, Record<RoomLocale, string>> = {
     en: 'We could not recognize this device.',
     ko: '이 기기에서 등록 정보를 찾지 못했어요.',
     zh: '未能在此设备上找到您的登记信息。',
+    'zh-TW': '無法在這台裝置上找到您的登記資訊。',
     ja: 'この端末で登録情報が見つかりませんでした。',
     es: 'No pudimos reconocer este dispositivo.',
     fr: 'Impossible de reconnaître cet appareil.',
@@ -220,6 +236,7 @@ const COPY: Record<CheckinCopyKey, Record<RoomLocale, string>> = {
     en: 'Open your invitation link first to register, then scan again — or ask the guide.',
     ko: '먼저 초대 링크를 열어 등록한 뒤 다시 스캔해 주세요 — 또는 가이드에게 문의하세요.',
     zh: '请先打开邀请链接完成登记后再扫描 — 或联系导游。',
+    'zh-TW': '請先開啟邀請連結完成登記後再掃描 — 或聯絡導遊。',
     ja: 'まず招待リンクから登録し、もう一度スキャンしてください — またはガイドへ。',
     es: 'Abra primero su enlace de invitación para registrarse y vuelva a escanear, o consulte al guía.',
     fr: 'Ouvrez d’abord votre lien d’invitation pour vous inscrire, puis scannez à nouveau — ou demandez au guide.',
@@ -231,6 +248,7 @@ const COPY: Record<CheckinCopyKey, Record<RoomLocale, string>> = {
     en: 'This QR belongs to a different tour or date.',
     ko: '이 QR은 다른 투어/날짜의 것입니다.',
     zh: '此二维码属于其他行程或日期。',
+    'zh-TW': '此 QR Code 屬於其他行程或日期。',
     ja: 'このQRは別のツアー/日付のものです。',
     es: 'Este QR corresponde a otro tour u otra fecha.',
     fr: 'Ce QR correspond à un autre tour ou à une autre date.',
@@ -242,6 +260,7 @@ const COPY: Record<CheckinCopyKey, Record<RoomLocale, string>> = {
     en: 'Your booking was not found on this list.',
     ko: '이 명단에서 예약을 찾지 못했어요.',
     zh: '未在此名单中找到您的预订。',
+    'zh-TW': '在這份名單中找不到您的預訂。',
     ja: 'この名簿にご予約が見つかりませんでした。',
     es: 'Su reserva no aparece en esta lista.',
     fr: 'Votre réservation ne figure pas sur cette liste.',
@@ -253,6 +272,7 @@ const COPY: Record<CheckinCopyKey, Record<RoomLocale, string>> = {
     en: 'The guide has been notified — please show your booking confirmation.',
     ko: '가이드에게 알림을 보냈어요 — 예약 확인서를 보여주세요.',
     zh: '已通知导游 — 请出示您的预订确认。',
+    'zh-TW': '已通知導遊 — 請出示您的預訂確認。',
     ja: 'ガイドに通知しました — 予約確認をご提示ください。',
     es: 'Se ha avisado al guía; muestre su confirmación de reserva.',
     fr: 'Le guide a été prévenu — merci de présenter votre confirmation de réservation.',
@@ -264,6 +284,7 @@ const COPY: Record<CheckinCopyKey, Record<RoomLocale, string>> = {
     en: 'No seat assigned yet — the guide will seat you on board.',
     ko: '아직 좌석이 지정되지 않았어요 — 가이드가 현장에서 지정해 드립니다.',
     zh: '尚未分配座位 — 导游将在车上为您安排。',
+    'zh-TW': '尚未安排座位 — 導遊會在車上為您安排。',
     ja: 'まだ座席が未指定です — ガイドが現地でご案内します。',
     es: 'Aún no tiene asiento asignado; el guía se lo asignará a bordo.',
     fr: 'Aucun siège attribué pour l’instant — le guide vous placera à bord.',
@@ -275,6 +296,7 @@ const COPY: Record<CheckinCopyKey, Record<RoomLocale, string>> = {
     en: 'Check-in opens on the tour day ({date}).',
     ko: '체크인은 투어 당일({date})에 열려요.',
     zh: '登车确认将于行程当天（{date}）开放。',
+    'zh-TW': '上車報到將於行程當天（{date}）開放。',
     ja: 'チェックインはツアー当日（{date}）に開始します。',
     es: 'El registro se abre el día del tour ({date}).',
     fr: 'L’enregistrement ouvre le jour du tour ({date}).',
@@ -286,6 +308,7 @@ const COPY: Record<CheckinCopyKey, Record<RoomLocale, string>> = {
     en: 'This QR view expired — please scan the screen again.',
     ko: 'QR이 갱신되었어요 — 화면을 다시 스캔해 주세요.',
     zh: '二维码已刷新 — 请重新扫描屏幕。',
+    'zh-TW': 'QR Code 已更新 — 請重新掃描螢幕。',
     ja: 'QRが更新されました — 画面をもう一度スキャンしてください。',
     es: 'El QR se actualizó; vuelva a escanear la pantalla.',
     fr: 'Ce QR a été actualisé — merci de scanner à nouveau l’écran.',
@@ -297,6 +320,7 @@ const COPY: Record<CheckinCopyKey, Record<RoomLocale, string>> = {
     en: 'Something went wrong.',
     ko: '문제가 발생했어요.',
     zh: '出了点问题。',
+    'zh-TW': '出了點狀況。',
     ja: 'エラーが発生しました。',
     es: 'Algo salió mal.',
     fr: 'Un problème est survenu.',
@@ -308,6 +332,7 @@ const COPY: Record<CheckinCopyKey, Record<RoomLocale, string>> = {
     en: 'Try again',
     ko: '다시 시도',
     zh: '重试',
+    'zh-TW': '重試',
     ja: 'もう一度',
     es: 'Reintentar',
     fr: 'Réessayer',
@@ -318,10 +343,8 @@ const COPY: Record<CheckinCopyKey, Record<RoomLocale, string>> = {
 };
 
 export function detectCheckinLocale(raw?: string | null): RoomLocale {
-  const base = (raw ?? (typeof navigator !== 'undefined' ? navigator.language : 'en'))
-    .toLowerCase()
-    .split('-')[0];
-  return (ROOM_LOCALES as readonly string[]).includes(base) ? (base as RoomLocale) : 'en';
+  // Delegates so zh-TW survives: a bare split('-')[0] folds it to 'zh'.
+  return normalizeRoomLocale(raw ?? (typeof navigator !== 'undefined' ? navigator.language : 'en'), 'en');
 }
 
 export function checkinCopy(

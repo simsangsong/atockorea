@@ -62,6 +62,13 @@ const COPY: Record<RoomLocale, { title: string; body: string; install: string; i
     iosGuide: '点按分享按钮，然后选择"添加到主屏幕"。',
     dismiss: '暂不',
   },
+  'zh-TW': {
+    title: '將旅遊房間加入主畫面',
+    body: '從主畫面點一下，直接進入您的即時旅遊房間。',
+    install: '安裝',
+    iosGuide: '點一下「分享」按鈕，然後選擇「加入主畫面」。',
+    dismiss: '暫不',
+  },
   fr: {
     title: 'Ajoutez votre espace tour à l’écran d’accueil',
     body: 'Un seul geste pour retrouver votre tour en direct.',

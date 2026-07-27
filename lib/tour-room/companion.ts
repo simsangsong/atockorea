@@ -13,6 +13,8 @@
  * (플랜: "degrade gracefully").
  */
 
+import { normalizeRoomLocale } from '@/lib/tour-room/snapshot';
+
 /** 이 예약이 허용하는 총 디바이스 수. 값이 이상하면 보수적으로 1. */
 export function companionCapacity(numberOfGuests: number | null | undefined): number {
   const n = Number(numberOfGuests);
@@ -47,6 +49,7 @@ export const COMPANION_FULL_MESSAGE: Record<string, string> = {
   ja: 'この予約はすでに登録可能な端末数に達しています。予約された方かガイドにご連絡ください。',
   es: 'Esta reserva ya tiene todos sus dispositivos registrados. Consulta con quien hizo la reserva o avisa al guía.',
   zh: '此预订的可注册设备已用完。请联系预订人或导游。',
+  'zh-TW': '此預訂可註冊的裝置已用完。請聯絡當初預訂的人，或告知導遊。',
   fr: 'Tous les appareils autorisés pour cette réservation sont déjà enregistrés. Demandez à la personne qui a réservé de partager son écran, ou contactez le guide.',
   de: 'Für diese Buchung sind bereits alle Geräte registriert. Bitten Sie die buchende Person, ihren Bildschirm zu teilen, oder wenden Sie sich an den Guide.',
   ru: 'Для этого бронирования уже зарегистрированы все устройства. Попросите оформившего бронь показать свой экран или свяжитесь с гидом.',
@@ -54,6 +57,8 @@ export const COMPANION_FULL_MESSAGE: Record<string, string> = {
 };
 
 export function companionFullMessage(locale: string | null | undefined): string {
-  const key = (locale ?? 'en').slice(0, 2).toLowerCase();
+  // normalizeRoomLocale keeps zh-TW whole; a bare slice(0,2) folded it to 'zh'
+  // and stranded the Traditional string entirely (2026-07-27).
+  const key = normalizeRoomLocale(locale, 'en');
   return COMPANION_FULL_MESSAGE[key] ?? COMPANION_FULL_MESSAGE.en;
 }

@@ -175,6 +175,9 @@ A1 소관 **65개** · A2 소관 10개(가이드·기사 면) · W-트랙 신규
 | `staff/GuideAnnouncePanel.tsx` | 리뷰라운드(#488) | ✅ 신규 — `guideAnnouncePanel.test.tsx`(프리셋·수신자 wa.me/mailto·변수누락 배지) + walk `13-staff-announce` 실렌더 |
 | `SkinPicker.tsx` | C-D6(chat-ui-theme 2026-07-27) | ✅ 신규 — `skinPicker.test.tsx` 5케이스(6스킨 렌더·persist·라벨 로케일·양 셸 스탬프) + walk 스킨 매트릭스 실렌더 |
 | `MeetSetCard.tsx` | M-D5(meet-exactly 2026-07-27) | ✅ 신규 — `meetExactly.test.tsx` 3케이스(시간 게이트·장소/핀 필수·meeting_propose 페이로드) · 프라이빗 전용은 서버 403 테스트가 짝 |
+| `InstallCard.tsx` | T-D2(pwa-ui-theme 2026-07-27) | ✅ 신규 — `installEntry.test.tsx` 4케이스(비대상 은닉·네이티브 원탭 후 소거·iOS 2단계 안내·appinstalled 후 영구 은닉) + walk 합성 `beforeinstallprompt` 실렌더 |
+| `scenery/SkinScenery.tsx` | T-D5(pwa-ui-theme 2026-07-27) | ✅ 신규 — `skinContrast.test.ts`가 씬 팔레트를 검사(밴드 fill vs ink-3 ≥3.5 · 라이트/다크 키 대칭 · 스킨↔씬 매핑 · contrast 무씬) + walk 9스킨 실렌더 |
+| `hooks/useInstallPrompt.ts`(컴포넌트 아님, 짝 기록) | T-D2 | ✅ — 모듈 레벨 캡처·소거는 `installEntry.test.tsx`의 시임으로 전수 |
 
 ## 🔴 플랜 대비 조정
 

@@ -236,6 +236,15 @@ const COPY: Record<RoomLocale, VehicleEtaCopy> = {
     notSharing: '尚未共享位置',
     pickupWindow: '正在前往接您',
   },
+  'zh-TW': {
+    title: '司機位置',
+    button: '查看車輛位置',
+    eta: '約{min}分鐘 · {dist}',
+    age: '{n}分鐘前的位置',
+    justNow: '剛剛的位置',
+    notSharing: '尚未分享位置',
+    pickupWindow: '正在前往接您',
+  },
   fr: {
     title: 'Position du chauffeur',
     button: 'Voir le véhicule',

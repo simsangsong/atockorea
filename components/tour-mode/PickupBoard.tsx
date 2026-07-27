@@ -60,6 +60,13 @@ const COPY: Record<
     scheduled: '预定接送时间',
     mapHint: '大巴实时位置请看地图标签',
   },
+  'zh-TW': {
+    title: '今早接送',
+    stop: (n, total) => `您的上車點是 ${total} 站中的第 ${n} 站`,
+    eta: (min) => `巴士距離約 ${min} 分鐘`,
+    scheduled: '預定接送時間',
+    mapHint: '巴士即時位置請看「地圖」分頁',
+  },
   fr: {
     title: 'Prise en charge de ce matin',
     stop: (n, total) => `Votre arrêt: ${n} sur ${total}`,
@@ -98,6 +105,7 @@ const ONBOARD_COPY: Record<RoomLocale, { button: string; done: string }> = {
   ja: { button: '乗車しました', done: '乗車済み ✓' },
   es: { button: 'Ya estoy en el bus', done: 'A bordo ✓' },
   zh: { button: '我已上车', done: '已上车 ✓' },
+  'zh-TW': { button: '我上車了', done: '已上車 ✓' },
   fr: { button: 'Je suis à bord', done: 'À bord ✓' },
   de: { button: 'Ich bin im Bus', done: 'An Bord ✓' },
   ru: { button: 'Я в автобусе', done: 'На борту ✓' },

@@ -16,6 +16,7 @@ import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
 const CANCEL_LABEL: Record<RoomLocale, string> = {
   en: 'Cancel reply', ko: '답장 취소', ja: '返信をキャンセル', es: 'Cancelar respuesta', zh: '取消回复',
+  'zh-TW': '取消回覆',
   fr: 'Annuler la réponse', de: 'Antwort abbrechen', ru: 'Отменить ответ', it: 'Annulla risposta',
 };
 
@@ -25,6 +26,7 @@ const ROLE_LABEL: Record<RoomLocale, Record<string, string>> = {
   ja: { guide: 'ガイド', driver: 'ドライバー', admin: 'AtoC Korea', customer: 'ゲスト', system: 'お知らせ' },
   es: { guide: 'Guía', driver: 'Conductor', admin: 'AtoC Korea', customer: 'Huésped', system: 'Aviso' },
   zh: { guide: '导游', driver: '司机', admin: 'AtoC Korea', customer: '客人', system: '通知' },
+  'zh-TW': { guide: '導遊', driver: '司機', admin: 'AtoC Korea', customer: '客人', system: '通知' },
   fr: { guide: 'Guide', driver: 'Chauffeur', admin: 'AtoC Korea', customer: 'Voyageur', system: 'Annonce' },
   de: { guide: 'Guide', driver: 'Fahrer', admin: 'AtoC Korea', customer: 'Gast', system: 'Hinweis' },
   ru: { guide: 'Гид', driver: 'Водитель', admin: 'AtoC Korea', customer: 'Гость', system: 'Уведомление' },
@@ -37,6 +39,7 @@ const KIND_LABEL: Record<RoomLocale, { image: string; file: string; audio: strin
   ja: { image: '写真', file: 'ファイル', audio: '音声メッセージ' },
   es: { image: 'Foto', file: 'Archivo', audio: 'Mensaje de voz' },
   zh: { image: '照片', file: '文件', audio: '语音消息' },
+  'zh-TW': { image: '照片', file: '檔案', audio: '語音訊息' },
   fr: { image: 'Photo', file: 'Fichier', audio: 'Message vocal' },
   de: { image: 'Foto', file: 'Datei', audio: 'Sprachnachricht' },
   ru: { image: 'Фото', file: 'Файл', audio: 'Голосовое сообщение' },

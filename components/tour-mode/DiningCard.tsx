@@ -51,14 +51,14 @@ import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
 /** Positive tag badges we are allowed to render (verified signals only). */
 const TAG_LABELS: Record<string, Record<RoomLocale, string>> = {
-  vegetarian_friendly: { en: 'Veg-friendly', ko: '채식 가능', ja: 'ベジ対応', es: 'Apto veg.', zh: '有素食', fr: 'Option végé', de: 'Vegetarisch', ru: 'Вегетарианцам', it: 'Adatto veg.' },
-  vegan: { en: 'Vegan', ko: '비건', ja: 'ヴィーガン', es: 'Vegano', zh: '纯素', fr: 'Végétalien', de: 'Vegan', ru: 'Веган', it: 'Vegano' },
-  halal: { en: 'Halal', ko: '할랄', ja: 'ハラル', es: 'Halal', zh: '清真', fr: 'Halal', de: 'Halal', ru: 'Халяль', it: 'Halal' },
-  kids_ok: { en: 'Kid-friendly', ko: '아이 동반', ja: '子ども可', es: 'Para niños', zh: '适合儿童', fr: 'Enfants bienvenus', de: 'Kinderfreundlich', ru: 'Можно с детьми', it: 'Per bambini' },
-  takeout: { en: 'Takeout', ko: '포장', ja: 'テイクアウト', es: 'Para llevar', zh: '外带', fr: 'À emporter', de: 'Zum Mitnehmen', ru: 'Навынос', it: 'Da asporto' },
-  parking: { en: 'Parking', ko: '주차', ja: '駐車場', es: 'Parking', zh: '停车', fr: 'Parking', de: 'Parkplatz', ru: 'Парковка', it: 'Parcheggio' },
-  reservable: { en: 'Reservations', ko: '예약 가능', ja: '予約可', es: 'Reservas', zh: '可预订', fr: 'Réservations', de: 'Reservierbar', ru: 'Бронь', it: 'Prenotabile' },
-  cafe: { en: 'Café', ko: '카페', ja: 'カフェ', es: 'Café', zh: '咖啡', fr: 'Café', de: 'Café', ru: 'Кафе', it: 'Caffè' },
+  vegetarian_friendly: { en: 'Veg-friendly', ko: '채식 가능', ja: 'ベジ対応', es: 'Apto veg.', zh: '有素食', 'zh-TW': '有素食', fr: 'Option végé', de: 'Vegetarisch', ru: 'Вегетарианцам', it: 'Adatto veg.' },
+  vegan: { en: 'Vegan', ko: '비건', ja: 'ヴィーガン', es: 'Vegano', zh: '纯素', 'zh-TW': '純素', fr: 'Végétalien', de: 'Vegan', ru: 'Веган', it: 'Vegano' },
+  halal: { en: 'Halal', ko: '할랄', ja: 'ハラル', es: 'Halal', zh: '清真', 'zh-TW': '清真', fr: 'Halal', de: 'Halal', ru: 'Халяль', it: 'Halal' },
+  kids_ok: { en: 'Kid-friendly', ko: '아이 동반', ja: '子ども可', es: 'Para niños', zh: '适合儿童', 'zh-TW': '適合兒童', fr: 'Enfants bienvenus', de: 'Kinderfreundlich', ru: 'Можно с детьми', it: 'Per bambini' },
+  takeout: { en: 'Takeout', ko: '포장', ja: 'テイクアウト', es: 'Para llevar', zh: '外带', 'zh-TW': '外帶', fr: 'À emporter', de: 'Zum Mitnehmen', ru: 'Навынос', it: 'Da asporto' },
+  parking: { en: 'Parking', ko: '주차', ja: '駐車場', es: 'Parking', zh: '停车', 'zh-TW': '停車', fr: 'Parking', de: 'Parkplatz', ru: 'Парковка', it: 'Parcheggio' },
+  reservable: { en: 'Reservations', ko: '예약 가능', ja: '予約可', es: 'Reservas', zh: '可预订', 'zh-TW': '可訂位', fr: 'Réservations', de: 'Reservierbar', ru: 'Бронь', it: 'Prenotabile' },
+  cafe: { en: 'Café', ko: '카페', ja: 'カフェ', es: 'Café', zh: '咖啡', 'zh-TW': '咖啡', fr: 'Café', de: 'Café', ru: 'Кафе', it: 'Caffè' },
 };
 
 const FILTER_HINT: Record<RoomLocale, string> = {
@@ -67,6 +67,7 @@ const FILTER_HINT: Record<RoomLocale, string> = {
   ja: '絞り込み',
   es: 'Filtrar',
   zh: '筛选',
+  'zh-TW': '篩選',
   fr: 'Filtrer',
   de: 'Filtern',
   ru: 'Фильтр',

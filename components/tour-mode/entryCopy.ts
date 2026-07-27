@@ -123,6 +123,25 @@ export const ENTRY_COPY: Record<RoomLocale, EntryCopy> = {
     errorGeneric: '无法打开房间。请核对信息后重试。',
     errorNotFound: '未找到符合该信息的预订。',
   },
+  'zh-TW': {
+    title: '導覽模式',
+    subtitle: '即時旅遊房間 — 用您的語言與導遊交流，掌握路線，不錯過任何出發時間。',
+    comingSoon: '導覽模式正在準備中。如果您有預訂，出發前會透過電子郵件收到房間連結。',
+    myBookings: '我即將出發的行程',
+    noBookings: '此帳戶暫無已確認的行程。',
+    loadFailed: '未能載入您的行程 — 這是我們的問題，與您的預訂無關。請稍後再試。',
+    signInHint: '已登入的顧客可在此查看旅遊房間。',
+    guestTitle: '尋找我的旅遊房間',
+    guestHint: '以訪客身分預訂？請輸入預訂編號和預訂時使用的電子郵件。',
+    bookingIdLabel: '預訂編號',
+    emailLabel: '預訂時使用的電子郵件',
+    nameLabel: '姓名（選填）',
+    enterRoom: '進入房間',
+    linkHint: '收到我們傳送的房間連結？點一下即可開啟。',
+    loading: '載入中…',
+    errorGeneric: '無法開啟房間。請核對資訊後再試。',
+    errorNotFound: '未找到符合該資訊的預訂。',
+  },
   fr: {
     title: 'Mode Tour',
     subtitle: 'Votre espace tour en direct — échangez avec votre guide dans votre langue, suivez l’itinéraire et ne manquez aucun départ.',
@@ -222,7 +241,12 @@ export function detectEntryLocale(): RoomLocale {
 
 function normalize(value: string | undefined | null): RoomLocale | null {
   if (!value) return null;
-  const base = value.trim().toLowerCase().split('-')[0];
+  const lower = value.trim().toLowerCase();
+  // Traditional-script Chinese devices land on zh-TW (mirrors normalizeRoomLocale).
+  if (lower === 'zh-tw' || lower === 'zh-hk' || lower === 'zh-mo' || lower.startsWith('zh-hant')) {
+    return 'zh-TW';
+  }
+  const base = lower.split('-')[0];
   // §D A4.1 — 정본은 ROOM_LOCALES 하나다. 사본은 순서까지 달랐다.
   return ROOM_LOCALES.find((l) => l === base) ?? null;
 }

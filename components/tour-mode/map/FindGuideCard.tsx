@@ -55,6 +55,12 @@ const COPY: Record<
     walk: '步行导航',
     stale: (m) => `${m} 分钟前的位置 — 可能已经移动`,
   },
+  'zh-TW': {
+    title: '找到導遊',
+    away: (d) => `距離 ${d}`,
+    walk: '步行導航',
+    stale: (m) => `${m} 分鐘前的位置 — 可能已經移動`,
+  },
   fr: {
     title: 'Retrouver mon guide',
     away: (d) => `à ${d}`,

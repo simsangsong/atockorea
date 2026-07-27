@@ -55,6 +55,12 @@ const COPY: Record<RoomLocale, { message: string; android: string; ios: string; 
     ios: '点按 ⋯ 或分享按钮 → "在 Safari 中打开"',
     dismiss: '关闭',
   },
+  'zh-TW': {
+    message: 'App 內建瀏覽器會限制語音和定位功能。',
+    android: '在 Chrome 中開啟',
+    ios: '點一下 ⋯ 或「分享」圖示 →「以 Safari 開啟」',
+    dismiss: '關閉',
+  },
   fr: {
     message: 'Ce navigateur intégré limite les fonctions vocales et de localisation.',
     android: 'Ouvrir dans Chrome',

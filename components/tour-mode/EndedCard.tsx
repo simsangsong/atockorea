@@ -72,6 +72,15 @@ const COPY: Record<
     lostFailed: '申报未能发送 — 请通过邮件告知我们。',
     lostPrompt: '您遗落了什么？在哪里？（例：黑色钱包，12号座位）',
   },
+  'zh-TW': {
+    title: '本次旅行已結束',
+    body: '感謝您的參與！聊天現已轉為唯讀。',
+    lostTitle: '有東西忘了拿嗎？',
+    lostAction: '回報遺失物品',
+    lostSent: '已回報 — 司機和導遊會協助檢查車輛。✓',
+    lostFailed: '回報沒有送出 — 請改用電子郵件告知我們。',
+    lostPrompt: '您忘了什麼東西？放在哪裡？（例：黑色錢包、12 號座位）',
+  },
   fr: {
     title: 'Ce tour est terminé',
     body: 'Merci d’avoir voyagé avec nous! Le chat est désormais en lecture seule.',
@@ -128,8 +137,8 @@ export default function EndedCard({
   const copy = COPY[locale];
   const [state, setState] = useState<'idle' | 'busy' | 'sent' | 'failed'>('idle');
   // M1 — in-app prompt (native dialogs banned on tour surfaces, M-D6).
-  const SEND: Record<RoomLocale, string> = { en: 'Send', ko: '보내기', ja: '送信', es: 'Enviar', zh: '发送', fr: 'Envoyer', de: 'Senden', ru: 'Отправить', it: 'Invia' };
-  const CANCEL: Record<RoomLocale, string> = { en: 'Cancel', ko: '취소', ja: 'キャンセル', es: 'Cancelar', zh: '取消', fr: 'Annuler', de: 'Abbrechen', ru: 'Отмена', it: 'Annulla' };
+  const SEND: Record<RoomLocale, string> = { en: 'Send', ko: '보내기', ja: '送信', es: 'Enviar', zh: '发送', 'zh-TW': '傳送', fr: 'Envoyer', de: 'Senden', ru: 'Отправить', it: 'Invia' };
+  const CANCEL: Record<RoomLocale, string> = { en: 'Cancel', ko: '취소', ja: 'キャンセル', es: 'Cancelar', zh: '取消', 'zh-TW': '取消', fr: 'Annuler', de: 'Abbrechen', ru: 'Отмена', it: 'Annulla' };
   const { prompt, sheet } = useConfirmSheet({ confirm: SEND[locale], cancel: CANCEL[locale] });
   const subject = encodeURIComponent(
     `Lost item — ${bookingReference ? `booking ${bookingReference}` : 'tour room'}`,

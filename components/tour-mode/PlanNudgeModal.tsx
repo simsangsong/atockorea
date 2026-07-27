@@ -58,6 +58,13 @@ const COPY: Record<RoomLocale, NudgeCopy> = {
     later: '稍后再说',
     close: '关闭',
   },
+  'zh-TW': {
+    title: '先規劃明天的行程',
+    body: '現在先定好想去的地點，司機和導遊就能準確掌握路線——當天溝通更少，玩得更盡興。',
+    cta: '規劃行程',
+    later: '稍後再說',
+    close: '關閉',
+  },
   es: {
     title: 'Planea la ruta de mañana',
     body: 'Define tus paradas ahora para que tu conductor y guía sepan adónde ir: menos coordinación el día del tour y más tiempo para disfrutarlo.',

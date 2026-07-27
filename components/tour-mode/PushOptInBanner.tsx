@@ -61,6 +61,15 @@ const COPY: Record<
     blocked: '通知已被浏览器阻止。请在设置中允许后重新打开。',
     stopped: '暂时无法开启提醒，请稍后再试。',
   },
+  'zh-TW': {
+    text: '🔔 要接收集合時間與車輛延誤的通知嗎？',
+    enable: '開啟',
+    later: '稍後',
+    done: '已開啟通知——僅限集合與延誤。',
+    failed: '無法開啟通知——請再試一次。',
+    blocked: '通知已被瀏覽器封鎖。請在設定中允許後重新開啟。',
+    stopped: '目前無法開啟通知，請稍後再試。',
+  },
   fr: {
     text: '🔔 Recevoir une alerte pour les heures de rendez-vous et les retards du véhicule?',
     enable: 'Activer',

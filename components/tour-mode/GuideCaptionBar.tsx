@@ -29,6 +29,7 @@ const COPY: Record<
   ja: { start: 'ライブ字幕を開始', stop: '停止', live: '字幕配信中', record: '記録を残す', denied: 'マイクがブロックされています — ブラウザ設定で許可してください。' },
   es: { start: 'Iniciar subtítulos en vivo', stop: 'Detener', live: 'Emitiendo subtítulos', record: 'Guardar registro', denied: 'El micrófono está bloqueado — permítelo en el navegador.' },
   zh: { start: '开始实时字幕', stop: '停止', live: '字幕直播中', record: '保留记录', denied: '麦克风被禁用 — 请在浏览器设置中允许。' },
+  'zh-TW': { start: '開始即時字幕', stop: '停止', live: '字幕直播中', record: '保留紀錄', denied: '麥克風被封鎖 — 請在瀏覽器設定中允許。' },
   fr: { start: 'Démarrer les sous-titres en direct', stop: 'Arrêter', live: 'Diffusion des sous-titres', record: 'Garder une trace', denied: 'Le micro est bloqué — autorisez-le dans les réglages du navigateur.' },
   de: { start: 'Live-Untertitel starten', stop: 'Stopp', live: 'Untertitel werden übertragen', record: 'Mitschrift speichern', denied: 'Mikrofon ist blockiert — bitte in den Browser-Einstellungen erlauben.' },
   ru: { start: 'Начать трансляцию субтитров', stop: 'Стоп', live: 'Трансляция субтитров', record: 'Сохранять запись', denied: 'Микрофон заблокирован — разрешите доступ в настройках браузера.' },

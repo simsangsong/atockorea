@@ -193,6 +193,27 @@ export const DINING_COPY: Record<RoomLocale, DiningCopy> = {
     caution: DIETARY_CAUTION.zh,
     empty: '没有找到符合条件的餐厅 — 请告诉您的向导，我们会再找。',
   },
+  'zh-TW': {
+    title: {
+      lunch: '{spot}附近的午餐',
+      dinner: '{spot}附近的晚餐',
+      snack: '{spot}附近的點心',
+    },
+    walk: '步行{min}分鐘',
+    openUntil: '營業至{time}',
+    openNow: '營業中',
+    closedToday: '目前未營業',
+    hoursUnknown: '營業時間不詳',
+    unrated: '暫無評價資訊 — 依距離排序',
+    reviews: '{count}則評價',
+    filteredFor: '已套用條件',
+    goHere: '就去這家',
+    reportWrong: '資訊有誤',
+    mapLink: 'Kakao 地圖',
+    directions: '路線',
+    caution: DIETARY_CAUTION['zh-TW'],
+    empty: '沒有找到符合條件的餐廳 — 請告訴您的導遊，我們會再找。',
+  },
   fr: {
     title: {
       lunch: 'Déjeuner près de {spot}',

@@ -53,6 +53,12 @@ const COPY: Record<
     deniedTitle: '麦克风已被禁用',
     deniedHow: '点击地址栏的🔒/ⓘ图标 → 网站设置 → 允许麦克风，然后刷新页面。',
   },
+  'zh-TW': {
+    allow: '🎤 允許麥克風',
+    whyPrompt: '開啟麥克風即可用語音傳送，我們會自動轉寫並翻譯。',
+    deniedTitle: '麥克風已被封鎖',
+    deniedHow: '點一下網址列的🔒/ⓘ圖示 → 網站設定 → 允許麥克風，然後重新整理頁面。',
+  },
   fr: {
     allow: '🎤 Autoriser le micro',
     whyPrompt: 'Activez le micro pour parler — nous transcrivons et traduisons pour vous.',

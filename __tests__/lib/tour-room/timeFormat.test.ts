@@ -33,6 +33,6 @@ describe('formatDateSeparator', () => {
   });
 
   it('has a BCP47 tag for every room locale', () => {
-    expect(Object.keys(LOCALE_TAG).sort()).toEqual(['de', 'en', 'es', 'fr', 'it', 'ja', 'ko', 'ru', 'zh']);
+    expect(Object.keys(LOCALE_TAG).sort()).toEqual(['de', 'en', 'es', 'fr', 'it', 'ja', 'ko', 'ru', 'zh', 'zh-TW']);
   });
 });

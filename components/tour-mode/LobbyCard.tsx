@@ -58,7 +58,7 @@ const COPY: Record<
     chatHint: 'ガイドからのご案内はここに届きます。ご質問はいつでもどうぞ。',
   },
   es: {
-    dday: (n) => (n === 0 ? 'Hoy' : `Faltan ${n} días`),
+    dday: (n) => (n === 0 ? 'Hoy' : n === 1 ? 'Falta 1 día' : `Faltan ${n} días`),
     title: 'Tu sala de tour está lista',
     meetOn: 'Nos vemos el',
     pickupTitle: 'Recogida',
@@ -72,6 +72,14 @@ const COPY: Record<
     pickupTitle: '接送',
     vehicleTitle: '乘坐车辆',
     chatHint: '导游的通知会显示在这里。有问题随时在下方留言。',
+  },
+  'zh-TW': {
+    dday: (n) => (n === 0 ? '今天' : `還有${n}天`),
+    title: '您的旅遊房間已就緒',
+    meetOn: '集合日期',
+    pickupTitle: '接送',
+    vehicleTitle: '乘坐車輛',
+    chatHint: '導遊的通知會顯示在這裡。有問題隨時在下方留言。',
   },
   fr: {
     dday: (n) => (n === 0 ? 'Aujourd’hui' : `J-${n}`),

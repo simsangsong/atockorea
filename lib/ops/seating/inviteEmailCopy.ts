@@ -11,7 +11,7 @@
  * 폭 대응(테이블 없이 max-width 480px 카드), 변수는 전부 이스케이프한다.
  */
 
-import { ROOM_LOCALES, type RoomLocale } from '@/lib/tour-room/snapshot';
+import { ROOM_LOCALES, normalizeRoomLocale, type RoomLocale } from '@/lib/tour-room/snapshot';
 import { renderTemplate, type MessageVars } from '@/lib/ops/messaging/template';
 
 export interface InviteEmailVars {
@@ -42,6 +42,7 @@ const COPY: Record<CopyKey, Record<RoomLocale, string>> = {
     en: 'Join your tour group — {tour_name}',
     ko: '조인투어 참여 안내 — {tour_name}',
     zh: '加入您的行程群组 — {tour_name}',
+    'zh-TW': '加入您的行程群組 — {tour_name}',
     ja: 'ツアーグループへの参加 — {tour_name}',
     es: 'Únase a su grupo de tour — {tour_name}',
     fr: 'Rejoignez votre groupe de tour — {tour_name}',
@@ -53,6 +54,7 @@ const COPY: Record<CopyKey, Record<RoomLocale, string>> = {
     en: 'Hi {guest_name},',
     ko: '{guest_name}님, 안녕하세요.',
     zh: '您好，{guest_name}：',
+    'zh-TW': '您好，{guest_name}：',
     ja: '{guest_name}様、こんにちは。',
     es: 'Hola {guest_name}:',
     fr: 'Bonjour {guest_name},',
@@ -64,6 +66,7 @@ const COPY: Record<CopyKey, Record<RoomLocale, string>> = {
     en: "You're confirmed for {tour_name} on {tour_date}. Tap the button below to open your tour room.",
     ko: '{tour_date} {tour_name} 예약이 확정되었습니다. 아래 버튼을 눌러 투어룸을 열어보세요.',
     zh: '您已确认参加 {tour_date} 的{tour_name}。请点击下方按钮打开您的行程群组。',
+    'zh-TW': '您已確認參加 {tour_date} 的{tour_name}。請點選下方按鈕開啟您的行程群組。',
     ja: '{tour_date}の{tour_name}のご予約が確定しました。下のボタンからツアールームを開いてください。',
     es: 'Su reserva para {tour_name} el {tour_date} está confirmada. Toque el botón de abajo para abrir su sala de tour.',
     fr: 'Votre réservation pour {tour_name} le {tour_date} est confirmée. Touchez le bouton ci-dessous pour ouvrir votre espace tour.',
@@ -78,6 +81,7 @@ const COPY: Record<CopyKey, Record<RoomLocale, string>> = {
     en: 'The link below is yours alone — it opens your tour room straight away, with no name to pick. You can choose your seat for the day inside.',
     ko: '아래 링크는 본인 전용입니다. 이름을 고르실 필요 없이 바로 투어룸이 열리고, 좌석은 그 안에서 선택하시면 됩니다.',
     zh: '下方链接为您专属，无需选择姓名即可直接打开您的行程群组，座位可在其中选择。',
+    'zh-TW': '下方連結為您專屬，不必選擇姓名即可直接開啟行程群組，並在其中選位。',
     ja: '下のリンクはお客様専用です。お名前を選ぶ必要はなく、そのままツアールームが開きます。座席はその中でお選びいただけます。',
     es: 'El enlace de abajo es solo suyo: abre directamente su sala de tour, sin tener que elegir su nombre. Puede elegir su asiento allí.',
     fr: 'Le lien ci-dessous est strictement personnel — il ouvre directement votre espace tour, sans nom à choisir. Vous pourrez y sélectionner votre siège pour la journée.',
@@ -89,6 +93,7 @@ const COPY: Record<CopyKey, Record<RoomLocale, string>> = {
     en: 'Open your tour room',
     ko: '내 투어룸 열기',
     zh: '打开我的行程群组',
+    'zh-TW': '開啟我的行程群組',
     ja: 'ツアールームを開く',
     es: 'Abrir su sala de tour',
     fr: 'Ouvrir mon espace tour',
@@ -100,6 +105,7 @@ const COPY: Record<CopyKey, Record<RoomLocale, string>> = {
     en: "If the button doesn't work, open this link:",
     ko: '버튼이 열리지 않으면 이 링크를 여세요:',
     zh: '如果按钮无法使用，请打开此链接：',
+    'zh-TW': '如果按鈕無法使用，請開啟這個連結：',
     ja: 'ボタンが動作しない場合は、このリンクを開いてください：',
     es: 'Si el botón no funciona, abra este enlace:',
     fr: 'Si le bouton ne fonctionne pas, ouvrez ce lien:',
@@ -111,6 +117,7 @@ const COPY: Record<CopyKey, Record<RoomLocale, string>> = {
     en: 'See you on the tour!',
     ko: '투어에서 만나요!',
     zh: '期待与您同行！',
+    'zh-TW': '期待與您同行！',
     ja: 'ツアーでお会いしましょう！',
     es: '¡Nos vemos en el tour!',
     fr: 'À bientôt pour le tour!',
@@ -122,6 +129,7 @@ const COPY: Record<CopyKey, Record<RoomLocale, string>> = {
     en: 'AtoC Korea',
     ko: 'AtoC Korea',
     zh: 'AtoC Korea',
+    'zh-TW': 'AtoC Korea',
     ja: 'AtoC Korea',
     es: 'AtoC Korea',
     fr: 'AtoC Korea',
@@ -133,8 +141,8 @@ const COPY: Record<CopyKey, Record<RoomLocale, string>> = {
 
 /** 로케일 정규화 — 미지원이면 en. */
 export function resolveInviteLocale(raw?: string | null): RoomLocale {
-  const base = (raw ?? 'en').toLowerCase().split('-')[0];
-  return (ROOM_LOCALES as readonly string[]).includes(base) ? (base as RoomLocale) : 'en';
+  // Delegates so zh-TW survives (a bare split('-')[0] folds it to 'zh').
+  return normalizeRoomLocale(raw, 'en');
 }
 
 /**

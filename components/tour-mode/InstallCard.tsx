@@ -63,6 +63,13 @@ const COPY: Record<RoomLocale, InstallCopy> = {
     iosStep1: '点按 Safari 的分享按钮',
     iosStep2: '选择"添加到主屏幕"',
   },
+  'zh-TW': {
+    title: '加入主畫面',
+    body: '從主畫面點一下，直接進入您的旅遊房間。',
+    install: '安裝',
+    iosStep1: '點一下 Safari 的「分享」按鈕',
+    iosStep2: '選擇「加入主畫面」',
+  },
   fr: {
     title: 'Ajouter à l’écran d’accueil',
     body: 'Un seul geste depuis votre écran d’accueil pour rejoindre votre tour.',

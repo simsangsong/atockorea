@@ -72,6 +72,17 @@ const COPY: Record<
     connected: '已连接运营团队 — AtoC Korea的回复会在聊天中高亮显示。',
     failed: '发送失败 — 请拨打上方112/1330，或重试。',
   },
+  'zh-TW': {
+    button: 'SOS — 我需要緊急協助',
+    confirmTitle: '要向導遊和營運團隊傳送SOS嗎？',
+    consent: '僅這次SOS會附上一次您目前的位置，以便我們找到您。',
+    note: '發生了什麼事？（選填）',
+    send: '傳送SOS',
+    cancel: '取消',
+    sent: 'SOS已傳送——已通知導遊和營運團隊。若安全請在原地等候。',
+    connected: '已連線營運團隊——AtoC Korea 的回覆會在聊天中醒目顯示。',
+    failed: '傳送失敗——請撥打上方的112/1330，或再試一次。',
+  },
   fr: {
     button: 'SOS — j’ai besoin d’aide en urgence',
     confirmTitle: 'Envoyer un SOS à votre guide et à notre équipe?',
