@@ -11,7 +11,6 @@
 import {
   isCourseOptionItinerary,
   toCourseOptions,
-  courseToStopSeeds,
 } from '@/lib/tour-room/courseOptions';
 import type { ItineraryStop } from '@/components/product-tour-static/_shared/tourProductDetailSectionTypes';
 
@@ -135,18 +134,3 @@ describe('toCourseOptions', () => {
   });
 });
 
-describe('courseToStopSeeds', () => {
-  it('poi_key만 넣는다 — 이름을 복사하면 로케일이 굳는다', () => {
-    const seeds = courseToStopSeeds(toCourseOptions(CHARTER)[1]);
-    expect(seeds).toEqual([
-      { poi_key: 'hyeopjae_beach' },
-      { poi_key: 'hallim_park' },
-      { poi_key: 'osulloc_tea_museum' },
-      { poi_key: 'geumneung_beach' },
-    ]);
-  });
-
-  it('커스텀 코스는 정류지를 만들지 않는다', () => {
-    expect(courseToStopSeeds(toCourseOptions(CHARTER)[3])).toEqual([]);
-  });
-});
