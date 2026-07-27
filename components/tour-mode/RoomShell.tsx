@@ -583,7 +583,13 @@ export default function RoomShell({
             <div className="relative z-20 mx-auto w-full max-w-2xl shrink-0 px-3 pt-2">{banner}</div>
           )}
 
-          <div className="relative z-[1] mx-auto flex min-h-0 w-full max-w-2xl flex-1 flex-col">
+          {/* 🔴 No z-index here. `z-[1]` (added with the scenery layer) created a
+              STACKING CONTEXT, so any `fixed` overlay rendered inside a tab —
+              the Today tab's stop-detail drawer at z-[71] — was trapped below
+              the header/tab bar (z-30) and got clipped top and bottom (owner
+              device report 2026-07-27). `relative` alone still paints above the
+              z-0 scenery (later in DOM order) without capturing descendants. */}
+          <div className="relative mx-auto flex min-h-0 w-full max-w-2xl flex-1 flex-col">
             {tab === 'home' && home && (
               <div className="tr-anim-panel-in min-h-0 flex-1 overflow-y-auto px-3 py-3" data-testid="home-panel">
                 {home({

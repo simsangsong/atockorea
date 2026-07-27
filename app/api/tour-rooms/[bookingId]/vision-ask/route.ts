@@ -25,12 +25,19 @@ export const dynamic = 'force-dynamic';
 const MAX_IMAGE_BYTES = 8 * 1024 * 1024;
 const PHOTOS_BUCKET = process.env.SUPABASE_TOUR_ROOM_PHOTOS_BUCKET || 'tour-room-photos';
 
+// 9 room locales (5 → 9 expansion, 2026-07-27). A missing entry silently
+// answered a French guest's photo question in English — the prompt language
+// must follow ROOM_LOCALES, not a stale copy of it.
 const LOCALE_NAME: Record<string, string> = {
   en: 'English',
   ko: 'Korean',
   ja: 'Japanese',
   es: 'Spanish',
   zh: 'Simplified Chinese',
+  fr: 'French',
+  de: 'German',
+  ru: 'Russian',
+  it: 'Italian',
 };
 
 function promptFor(preset: string | null, locale: string, question: string, context: string): string {
