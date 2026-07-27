@@ -151,6 +151,27 @@ describe('tour-mode + tour-ops type discipline (U4-D7 / O2)', () => {
     expect(violations).toEqual([]);
   });
 
+  /**
+   * 🔴 O3 자체 감사 — 토큰 대비 게이트는 **토큰 쌍**을 검사하지, 한 요소가 실제로
+   * 어떤 조합을 쓰는지는 모른다. 색 코드모드 1차가 `bg-red-500/10`(10% 분홍 워시)을
+   * 진한 `--tr-danger`로 바꾸는 바람에, 같은 요소의 `text-red-700`(역시 danger)과
+   * 겹쳐 **글자가 배경과 같은 색이 된 곳이 10군데** 나왔다. 사람 눈으로는 SOS 탭을
+   * 열어봐야 보이고, 스크린샷에도 그 상태가 안 잡힐 수 있다.
+   */
+  it('한 요소가 같은 토큰을 배경과 글자에 동시에 쓰지 않는다', () => {
+    const violations: string[] = [];
+    for (const file of files) {
+      const lines = fs.readFileSync(file, 'utf8').split(String.fromCharCode(10));
+      lines.forEach((line, i) => {
+        const bg = new Set([...line.matchAll(/\bbg-\[var\((--tr-[a-z0-9-]+)\)\]/g)].map((m) => m[1]));
+        const fg = new Set([...line.matchAll(/\btext-\[var\((--tr-[a-z0-9-]+)\)\]/g)].map((m) => m[1]));
+        const clash = [...bg].filter((t) => fg.has(t));
+        if (clash.length) violations.push(`${relative(file)}:${i + 1} → ${clash.join(', ')}`);
+      });
+    }
+    expect(violations).toEqual([]);
+  });
+
   it('imports lucide icons through the barrel (icons.ts), not directly', () => {
     // tour-mode ONLY. The barrel exists so the room's icon language stays
     // swappable in one place (U-D3/U4-D6); the ops center is a different

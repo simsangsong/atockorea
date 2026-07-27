@@ -273,7 +273,7 @@ export default function OpsRoomDrawer({
             </span>
             {typeof sos.metadata.latitude === 'number' && (
               <a
-                className="flex h-11 shrink-0 items-center gap-1 rounded-lg bg-[var(--tr-danger)] px-3 font-semibold text-[var(--tr-danger)] "
+                className="flex h-11 shrink-0 items-center gap-1 rounded-lg bg-[var(--tr-danger-soft)] px-3 font-semibold text-[var(--tr-danger)] "
                 href={`https://maps.google.com/?q=${sos.metadata.latitude},${sos.metadata.longitude}`}
                 target="_blank"
                 rel="noopener noreferrer"

@@ -54,7 +54,7 @@ export default function OpsSosTab({
               <span className="shrink-0 tr-meta text-[var(--tr-danger)] ">{kstTimeLabel(sos.created_at)}</span>
             </div>
 
-            <p className="mt-2 rounded-xl bg-[var(--tr-danger)] px-3 py-2 tr-card-text text-[var(--tr-danger)] ">
+            <p className="mt-2 rounded-xl bg-[var(--tr-danger-soft)] px-3 py-2 tr-card-text text-[var(--tr-danger)] ">
               {sos.metadata.sender_name && <b>{sos.metadata.sender_name}: </b>}
               {sos.metadata.note ?? '메모 없는 SOS — 즉시 연락 필요'}
             </p>
@@ -73,26 +73,26 @@ export default function OpsSosTab({
                   href={`https://maps.google.com/?q=${sos.metadata.latitude},${sos.metadata.longitude}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-11 items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-danger)] tr-card-text font-semibold text-[var(--tr-danger)] "
+                  className="flex h-11 items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-danger-soft)] tr-card-text font-semibold text-[var(--tr-danger)] "
                 >
                   <MapPin className="size-4" />
                   위치
                 </a>
               ) : (
-                <span className="flex h-11 items-center justify-center rounded-xl bg-[var(--tr-danger)] tr-label text-[var(--tr-danger)] ">
+                <span className="flex h-11 items-center justify-center rounded-xl bg-[var(--tr-danger-soft)] tr-label text-[var(--tr-danger)] ">
                   위치 없음
                 </span>
               )}
               {phone ? (
                 <a
                   href={`tel:${phone}`}
-                  className="flex h-11 items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-danger)] tr-card-text font-semibold text-[var(--tr-danger)] "
+                  className="flex h-11 items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-danger-soft)] tr-card-text font-semibold text-[var(--tr-danger)] "
                 >
                   <Phone className="size-4" />
                   전화
                 </a>
               ) : (
-                <span className="flex h-11 items-center justify-center rounded-xl bg-[var(--tr-danger)] tr-label text-[var(--tr-danger)] ">
+                <span className="flex h-11 items-center justify-center rounded-xl bg-[var(--tr-danger-soft)] tr-label text-[var(--tr-danger)] ">
                   번호 없음
                 </span>
               )}
