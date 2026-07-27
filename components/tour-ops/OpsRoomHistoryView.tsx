@@ -14,6 +14,7 @@
  */
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useEscapeClose } from '@/hooks/useEscapeClose';
 import { toast } from 'sonner';
 import { ChevronLeft, ChevronRight, Download, RefreshCw, X } from 'lucide-react';
 import { getOpsToken } from '@/components/tour-ops/opsShared';
@@ -46,6 +47,9 @@ export default function OpsRoomHistoryView({
   onClose: () => void;
   onOpenRoom?: (roomId: string) => void;
 }) {
+  // O5 — Escape closes this overlay. It covers the whole screen, and on the
+  // desktop the board actually runs on, 닫기 was the only way out.
+  useEscapeClose(onClose);
   const [period, setPeriod] = useState(initialPeriod);
   const [data, setData] = useState<RoomMonthResult | null>(null);
   const [loading, setLoading] = useState(true);
