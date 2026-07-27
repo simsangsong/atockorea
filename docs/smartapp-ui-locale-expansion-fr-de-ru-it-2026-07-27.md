@@ -67,4 +67,7 @@
 - [x] L1 — 코어 표면 직접 번역 완료: RoomShell(7맵)·SettingsTab·RoomDrawer(+세션만료 체인)·HomeTab·InstallCard/Banner·entryCopy·Composer(6맵)·ChatFeed(8맵)·QuickSignalBar·SosButton·ConciergeInlineAnswer·PickupBoard(2)·PresenceBar·SpotArrivalCard·LobbyCard·NoticeBanner·PlanNudgeModal·TourRoomClient(3)·EndedCard(3)·PlanStopCards(콘텐츠 6로케일 드로어 → `drawerContentLocale` 협착, fr/de/ru/it=en 콘텐츠 폴백)
 - [x] L1.5 — **tsc 사각지대(느슨한 Record<string>) 5파일 수거**: guestSignals(시그널 캡슐 7종)·ledger(정산 캡슐 5맵)·notices(Intl 태그)·companion(정원 초과 문구)·layouts(차량 표시명 5종)·guestPush(푸시 타이틀)
 - [x] L2 — 위임 에이전트: 컴포넌트 세컨더리 19파일 완료(보고 수신 — PlanEditorClient 60키×4 포함; fr '투어룸' 용어 분기 발견 → L3에서 'salon de visite'로 통일). lib/tour-room 17파일 + lib/ops 9파일 진행 중
-- [ ] L3 감수(4언어 병렬) → L4 게이트 → L5 머지
+- [x] L3 감수 — 4언어 원어민 리뷰 에이전트 병렬(수정 권한): fr 40+건(«espace tour»·«fil du voyage» 통일, !?:; 앞 공백 13, 칼크 교정) · de 20건(**존재하지 않는 탭 참조 „Zeitplan/Programm“→„Heute“**, n=1 문법, „KI-generierter Guide“ 오독, NoticeBanner 성별-안전 „Treffpunkt: p“) · ru 20+건(원장 캡슐 **여격→조격**, «собирайтесь»=짐싸기 오독 제거, «таймлайн»→«лента путешествия», 수사 격 회피 라벨형) · it 13건(**rinviare→reinviare 실오역**, n=1 3건, «diario di viaggio» 통일). 잔존 의도적 예외는 각 보고에 기록.
+- [x] L4 게이트 — tsc 0 · jest 146스위트/1582(감수 후 1604) green(5로케일 박제 테스트 3파일 갱신) · `npm run build` · walk 33컷 콘솔 0 + fr/de 홈·설정 육안(탭바 „Einstellungen“/« Réglages » 수납 확인). **관찰된 사전존재 니트(무접촉)**: es `Faltan 1 días`(LobbyCard dday n=1).
+- [x] L5 — main 전진분(#500 등) 머지: 유일 충돌 guestSignals.ts = 정확히만나기(핀 URL 별도 줄 문법 + share_location/meeting_propose 신설)와 교차 → **main 신문법 채택 + 9로케일 이식**, MeetSetCard·QuickSignalBar 신키 5종도 4언어 완성. 게이트 재통과 후 **PR #501 머지(8f9424ad)**.
+- ⚠ 기록: 로케일 변경은 룸 재조인→셸이 홈 탭으로 리마운트(walk에 문서화). CORE_TRANSLATION_LOCALES 덕에 LLM 팬아웃 비용은 fr/de/ru/it 손님이 실제 입장할 때만 발생.
