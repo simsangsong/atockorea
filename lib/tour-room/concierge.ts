@@ -171,6 +171,9 @@ export const CONCIERGE_COPY: Record<
     send: string;
     /** A1 — first-visit tooltip on the header button. */
     hint: string;
+    /** R7 — the camera button in the sheet (photo question). */
+    photoAsk: string;
+    photoAsking: string;
     /** A1 — chat-tab entry row label ("ask the Smart Guide"). */
     entryRow: string;
     /** C — label on an AI answer shown only on the asker's own screen. */
@@ -185,6 +188,8 @@ export const CONCIERGE_COPY: Record<
     error: 'Something went wrong — please try again or ask your guide.',
     send: 'Ask',
     hint: 'Ask me anything',
+    photoAsk: 'Ask about a photo',
+    photoAsking: 'Reading the photo…',
     entryRow: 'Ask the Smart Guide',
     aiLabel: 'Smart Guide · AI',
   },
@@ -196,6 +201,8 @@ export const CONCIERGE_COPY: Record<
     error: '문제가 발생했어요 — 다시 시도하거나 가이드에게 물어보세요.',
     send: '질문',
     hint: '무엇이든 물어보세요',
+    photoAsk: '사진으로 물어보기',
+    photoAsking: '사진 읽는 중…',
     entryRow: '스마트 가이드에게 물어보기',
     aiLabel: '스마트 가이드 · AI',
   },
@@ -207,6 +214,8 @@ export const CONCIERGE_COPY: Record<
     error: 'エラーが発生しました — もう一度試すか、ガイドにお尋ねください。',
     send: '質問',
     hint: '何でも聞いてください',
+    photoAsk: '写真で質問',
+    photoAsking: '写真を読み取り中…',
     entryRow: 'スマートガイドに質問',
     aiLabel: 'スマートガイド · AI',
   },
@@ -218,6 +227,8 @@ export const CONCIERGE_COPY: Record<
     error: 'Algo salió mal — inténtalo de nuevo o pregunta a tu guía.',
     send: 'Preguntar',
     hint: 'Pregúntame lo que sea',
+    photoAsk: 'Preguntar con una foto',
+    photoAsking: 'Leyendo la foto…',
     entryRow: 'Pregunta a la Guía inteligente',
     aiLabel: 'Guía inteligente · IA',
   },
@@ -229,6 +240,8 @@ export const CONCIERGE_COPY: Record<
     error: '出了点问题 — 请重试或询问导游。',
     send: '提问',
     hint: '有问题尽管问',
+    photoAsk: '用照片提问',
+    photoAsking: '正在识别照片…',
     entryRow: '向智能向导提问',
     aiLabel: '智能向导 · AI',
   },
@@ -240,6 +253,8 @@ export const CONCIERGE_COPY: Record<
     error: 'Une erreur est survenue — réessayez ou demandez à votre guide.',
     send: 'Demander',
     hint: 'Posez-moi vos questions',
+    photoAsk: 'Poser une question avec une photo',
+    photoAsking: 'Lecture de la photo…',
     entryRow: 'Demander au Guide intelligent',
     aiLabel: 'Guide intelligent · IA',
   },
@@ -251,6 +266,8 @@ export const CONCIERGE_COPY: Record<
     error: 'Etwas ist schiefgelaufen — versuchen Sie es erneut oder fragen Sie Ihren Guide.',
     send: 'Fragen',
     hint: 'Fragen Sie mich alles',
+    photoAsk: 'Mit einem Foto fragen',
+    photoAsking: 'Foto wird gelesen…',
     entryRow: 'Den Smart Guide fragen',
     aiLabel: 'Smart Guide · KI',
   },
@@ -262,6 +279,8 @@ export const CONCIERGE_COPY: Record<
     error: 'Что-то пошло не так — попробуйте еще раз или спросите гида.',
     send: 'Спросить',
     hint: 'Спрашивайте о чем угодно',
+    photoAsk: 'Спросить по фото',
+    photoAsking: 'Читаю фото…',
     entryRow: 'Спросить Умного гида',
     aiLabel: 'Умный гид · ИИ',
   },
@@ -273,6 +292,8 @@ export const CONCIERGE_COPY: Record<
     error: 'Qualcosa è andato storto — riprova o chiedi alla tua guida.',
     send: 'Chiedi',
     hint: 'Chiedimi quello che vuoi',
+    photoAsk: 'Chiedi con una foto',
+    photoAsking: 'Sto leggendo la foto…',
     entryRow: 'Chiedi alla Guida smart',
     aiLabel: 'Guida smart · IA',
   },

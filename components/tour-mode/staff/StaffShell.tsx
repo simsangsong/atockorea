@@ -177,7 +177,9 @@ export default function StaffShell({
           {/* T-D5 — skin scenery behind the staff panels too (same wallpaper
               grammar as the guest room; contrast skin renders nothing). */}
           <SkinScenery skin={deviceSettings.skin} dark={theme === 'dark'} />
-          <div ref={panelRef} className="relative z-[1] mx-auto flex min-h-0 w-full flex-1 flex-col overflow-y-auto px-4 pb-6 pt-3">
+          {/* No z-index — see RoomShell: a stacking context here clips any
+              fixed overlay a tab renders (drawers, lightboxes). */}
+          <div ref={panelRef} className="relative mx-auto flex min-h-0 w-full flex-1 flex-col overflow-y-auto px-4 pb-6 pt-3">
             {tab === 'chat' && (
               <div className="tr-anim-panel-in" data-testid="staff-tab-chat">
                 {chat}

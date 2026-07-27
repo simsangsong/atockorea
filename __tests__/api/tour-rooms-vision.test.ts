@@ -12,6 +12,7 @@ import { createServerClient } from '@/lib/supabase';
 import { requestGate } from '@/lib/durable-rate-limit';
 import { chatCompletion } from '@/lib/ai/router';
 import { signRoomSession } from '@/lib/tour-room/access';
+import { ROOM_LOCALES } from '@/lib/tour-room/snapshot';
 
 jest.mock('@/lib/auth', () => ({ getAuthUser: jest.fn() }));
 jest.mock('@/lib/supabase', () => ({ createServerClient: jest.fn() }));
@@ -167,6 +168,38 @@ describe('POST /api/tour-rooms/[bookingId]/vision-ask (T4.7)', () => {
     const prompt = chatCompletionMock.mock.calls[0][1][0].content[0].text as string;
     expect(prompt).toContain('menu');
     expect(prompt.toLowerCase()).toContain('allergen');
+  });
+
+  /**
+   * The prompt's target language came from a hand-kept 5-entry map while the
+   * room shipped 9 locales, so French/German/Russian/Italian guests silently
+   * got English answers back. Drive every room locale through the route and
+   * require the prompt to name that locale's language.
+   */
+  it('names the right language for every room locale — no silent English fallback', async () => {
+    const expected: Record<string, string> = {
+      en: 'English',
+      ko: 'Korean',
+      ja: 'Japanese',
+      es: 'Spanish',
+      zh: 'Simplified Chinese',
+      fr: 'French',
+      de: 'German',
+      ru: 'Russian',
+      it: 'Italian',
+    };
+    // Every locale the room can actually be in must have an entry above.
+    expect(Object.keys(expected).sort()).toEqual([...ROOM_LOCALES].sort());
+
+    for (const locale of ROOM_LOCALES) {
+      chatCompletionMock.mockClear();
+      await visionPOST(
+        fakeReq({ form: imageForm({ locale }), headers: { 'x-tour-room-auth': session() } }),
+        routeParams(),
+      );
+      const prompt = chatCompletionMock.mock.calls[0][1][0].content[0].text as string;
+      expect(prompt).toContain(expected[locale]);
+    }
   });
 
   it('429s on the participant daily gate before the vision call', async () => {

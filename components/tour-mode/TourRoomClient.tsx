@@ -969,6 +969,9 @@ function TourRoomLive({
             schedule={schedule}
             messages={messages}
             tourDate={snapshot.booking?.tour_date ?? null}
+            /* R7 — same vision-ask flow the composer uses, so the Smart Guide
+               sheet has the photo button the manual promises. */
+            onVisionAsk={visionAsk}
           />
         ) : null
       }
