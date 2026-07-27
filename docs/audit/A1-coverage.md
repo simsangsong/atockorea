@@ -1,8 +1,8 @@
 # A1-coverage — 손님 앱 커버리지 원장 (A1.0)
 
 **생성일:** 2026-07-25 · **대상:** `components/tour-mode/**/*.{ts,tsx}` (테스트 제외)
-**총 78개** · 회귀: `__tests__/audit/a1Coverage.test.ts`
-**진행:** ✅ **78/78 전량 감사 완료** (A1 소관 65 + A2 운영자면 10). 산출물 `A1-1`~`A1-8` · `A2-1-2-operator-faces.md` · `A2-4-permission-matrix.md`
+**총 80개** · 회귀: `__tests__/audit/a1Coverage.test.ts`
+**진행:** ✅ **80/80 전량 감사 완료** (A1 소관 67 + A2 운영자면 10). 산출물 `A1-1`~`A1-8` · `A2-1-2-operator-faces.md` · `A2-4-permission-matrix.md`
 
 > 🔴 **이 표가 A1의 완료 판정이다.** `판정` 칸이 비어 있는 행이 하나라도 있으면 A1은 미완이다.
 > 파일이 새로 생겼는데 행이 없으면 **테스트가 실패한다** — 원장이 낡는 것을 문서 규율이 아니라
@@ -178,6 +178,8 @@ A1 소관 **65개** · A2 소관 10개(가이드·기사 면) · W-트랙 신규
 | `scenery/SkinScenery.tsx` | T-D5(풍경 9씬, PR#495) | ✅ 신규 — 스킨별 SVG 풍경(시그니처 상단 스트립·다크=밤), 고대비 스킨은 렌더 없음 |
 | `MeetSetCard.tsx` | M-D5(meet-exactly 2026-07-27) | ✅ 신규 — `meetExactly.test.tsx` 3케이스(시간 게이트·장소/핀 필수·meeting_propose 페이로드) · 프라이빗 전용은 서버 403 테스트가 짝 |
 | `LanguageSelect.tsx` | R3v2(기기 리포트 2026-07-27) | ✅ 신규 — 앱/채팅 언어 공용 드롭다운(트리거=국기+현재값, 시트=radiogroup+체크). 칩 나열을 대체했고 9로케일·32언어를 같은 UI로 감당 |
+| `interpret/InterpretClient.tsx` | V1(대면 통역 2026-07-27) | ✅ 신규 — 화면 분할 양면 push-to-talk(상단 180° 회전). 마이크 상시개방을 의도적으로 배제(소음이 정확도 천장) · 자막이 1차 채널이고 TTS 는 보조 · 숫자 유실 경고 `droppedNumbers` |
+| `interpret/InterpretEntry.tsx` | V1(대면 통역 2026-07-27) | ✅ 신규 — 룸 세션을 이어받는 진입(조인 UI 를 또 만들지 않음). `useSyncExternalStore` 로 localStorage 를 읽어 SSR 불일치를 구조적으로 차단 |
 
 ## 🔴 플랜 대비 조정
 
