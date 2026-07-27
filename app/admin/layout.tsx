@@ -86,6 +86,7 @@ const adminMenuGroups: AdminMenuGroup[] = [
       { path: '/admin', label: '대시보드', icon: LayoutDashboard },
       { path: '/admin/orders', label: '주문 관리', icon: ClipboardList },
       { path: '/admin/inbox', label: '수신함', icon: Inbox },
+      { path: '/admin/parse-rules', label: '파서 학습 규칙', icon: Sparkles },
       { path: '/admin/contacts', label: '문의 관리', icon: MessageSquareText },
       { path: '/admin/support', label: '상담 티켓', icon: LifeBuoy },
       { path: '/admin/emails', label: '받은 메일', icon: Mail },
