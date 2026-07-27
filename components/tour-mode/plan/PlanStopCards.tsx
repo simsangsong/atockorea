@@ -143,10 +143,8 @@ export default function PlanStopCards({
                     type="button"
                     onClick={() => onAddStop?.(stop)}
                     disabled={added}
-                    className={`tr-label flex min-h-[44px] w-full items-center justify-center gap-1.5 rounded-xl px-3 font-bold transition active:scale-[0.99] ${
-                      added
-                        ? 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-3)]'
-                        : 'bg-[var(--tr-accent-soft)] text-[var(--tr-accent-deep)]'
+                    className={`tr-plan-btn tr-plan-btn--block tr-plan-btn--tap tr-label ${
+                      added ? 'tr-plan-btn--done' : 'tr-plan-btn--soft'
                     }`}
                     data-testid="plan-tour-add-stop"
                   >

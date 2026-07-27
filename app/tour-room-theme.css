@@ -44,6 +44,15 @@
   /* Bubbles (U4-D8: mine = deep pine, the app's signature) */
   --tr-bubble-me: #2e5e4e;
   --tr-bubble-me-ink: #f4f8f6;
+  /* 🔴 Ink for anything painted ON --tr-accent (solid CTAs, count badges).
+   * Three components already read this token; it was never DECLARED, so
+   * `color: var(--tr-on-accent)` was an invalid substitution and the text fell
+   * back to INHERITING the surrounding dark ink — a dark label on a deep-pine
+   * button, which is exactly what the 2026-07-28 device report described.
+   * Declared beside --tr-bubble-me-ink in EVERY block that sets it, because the
+   * contrast gate already proves that ink clears 4.5:1 against that block's
+   * accent. Same pairing, same guarantee, one more surface. */
+  --tr-on-accent: #f4f8f6;
   --tr-bubble-in: #fcfcfb;
   --tr-bubble-in-ink: #1a1d21;
   --tr-bubble-system: rgba(23, 27, 32, 0.06);
@@ -112,6 +121,7 @@
    * the signature色 survives the theme, only its luminance flips). */
   --tr-bubble-me: #8fbfa9;
   --tr-bubble-me-ink: #10201a;
+  --tr-on-accent: #10201a;
   --tr-bubble-in: #252929;
   --tr-bubble-in-ink: #e8eaed;
   --tr-bubble-system: rgba(232, 234, 237, 0.08);
@@ -210,6 +220,7 @@
   --tr-hairline: rgba(30, 45, 60, 0.1);
   --tr-bubble-me: #46708f;
   --tr-bubble-me-ink: #f2f7fb;
+  --tr-on-accent: #f2f7fb;
   --tr-bubble-in: #ffffff;
   --tr-bubble-in-ink: #1a2028;
   --tr-bubble-system: rgba(23, 34, 45, 0.07);
@@ -234,6 +245,7 @@
   --tr-hairline: rgba(228, 234, 241, 0.1);
   --tr-bubble-me: #86aecb;
   --tr-bubble-me-ink: #0e1720;
+  --tr-on-accent: #0e1720;
   --tr-bubble-in: #202834;
   --tr-bubble-in-ink: #e4eaf1;
   --tr-bubble-system: rgba(228, 234, 241, 0.08);
@@ -259,6 +271,7 @@
   --tr-hairline: rgba(44, 48, 26, 0.1);
   --tr-bubble-me: #52702c;
   --tr-bubble-me-ink: #f4f8ea;
+  --tr-on-accent: #f4f8ea;
   --tr-bubble-in: #fbfaf2;
   --tr-bubble-in-ink: #1c2013;
   --tr-bubble-system: rgba(40, 46, 20, 0.07);
@@ -283,6 +296,7 @@
   --tr-hairline: rgba(231, 235, 221, 0.1);
   --tr-bubble-me: #a4bd7e;
   --tr-bubble-me-ink: #131a09;
+  --tr-on-accent: #131a09;
   --tr-bubble-in: #232a1d;
   --tr-bubble-in-ink: #e7ebdd;
   --tr-bubble-system: rgba(231, 235, 221, 0.08);
@@ -308,6 +322,7 @@
   --tr-hairline: rgba(24, 38, 30, 0.1);
   --tr-bubble-me: #37705f;
   --tr-bubble-me-ink: #f0f7f4;
+  --tr-on-accent: #f0f7f4;
   --tr-bubble-in: #fdfefd;
   --tr-bubble-in-ink: #182019;
   --tr-bubble-system: rgba(24, 38, 30, 0.07);
@@ -333,6 +348,7 @@
   --tr-hairline: rgba(227, 234, 230, 0.1);
   --tr-bubble-me: #8ec0ae;
   --tr-bubble-me-ink: #0e1b16;
+  --tr-on-accent: #0e1b16;
   --tr-bubble-in: #1e2722;
   --tr-bubble-in-ink: #e3eae6;
   --tr-bubble-system: rgba(227, 234, 230, 0.08);
@@ -365,6 +381,7 @@
   --tr-hairline: rgba(26, 42, 30, 0.1);
   --tr-bubble-me: #a34d14;
   --tr-bubble-me-ink: #fdf3e7;
+  --tr-on-accent: #fdf3e7;
   --tr-bubble-in: #fbfdf9;
   --tr-bubble-in-ink: #1b211c;
   --tr-bubble-system: rgba(26, 42, 30, 0.07);
@@ -387,6 +404,7 @@
   --tr-hairline: rgba(228, 238, 230, 0.1);
   --tr-bubble-me: #e0a878;
   --tr-bubble-me-ink: #241304;
+  --tr-on-accent: #241304;
   --tr-bubble-in: #232e25;
   --tr-bubble-in-ink: #e4ece5;
   --tr-bubble-system: rgba(228, 238, 230, 0.08);
@@ -410,6 +428,7 @@
   --tr-hairline: rgba(35, 32, 54, 0.1);
   --tr-bubble-me: #55519b;
   --tr-bubble-me-ink: #f2f1fa;
+  --tr-on-accent: #f2f1fa;
   --tr-bubble-in: #fdfdfe;
   --tr-bubble-in-ink: #1c1a26;
   --tr-bubble-system: rgba(30, 28, 54, 0.08);
@@ -434,6 +453,7 @@
   --tr-hairline: rgba(232, 231, 240, 0.1);
   --tr-bubble-me: #a7a3dc;
   --tr-bubble-me-ink: #14122b;
+  --tr-on-accent: #14122b;
   --tr-bubble-in: #242230;
   --tr-bubble-in-ink: #e8e7f0;
   --tr-bubble-system: rgba(232, 231, 240, 0.08);
@@ -461,6 +481,7 @@
   --tr-hairline: rgba(23, 36, 43, 0.1);
   --tr-bubble-me: #20596f;
   --tr-bubble-me-ink: #eef7fa;
+  --tr-on-accent: #eef7fa;
   --tr-bubble-in: #fdfeff;
   --tr-bubble-in-ink: #17242b;
   --tr-bubble-system: rgba(20, 40, 52, 0.08);
@@ -485,6 +506,7 @@
   --tr-hairline: rgba(233, 236, 239, 0.1);
   --tr-bubble-me: #8fc0d8;
   --tr-bubble-me-ink: #0d1b22;
+  --tr-on-accent: #0d1b22;
   --tr-bubble-in: #22262c;
   --tr-bubble-in-ink: #e9ecef;
   --tr-bubble-system: rgba(233, 236, 239, 0.08);
@@ -510,6 +532,7 @@
   --tr-hairline: rgba(64, 26, 40, 0.1);
   --tr-bubble-me: #99465f;
   --tr-bubble-me-ink: #fbf1f4;
+  --tr-on-accent: #fbf1f4;
   --tr-bubble-in: #fefcfd;
   --tr-bubble-in-ink: #231a1e;
   --tr-bubble-system: rgba(64, 26, 40, 0.07);
@@ -534,6 +557,7 @@
   --tr-hairline: rgba(238, 230, 233, 0.1);
   --tr-bubble-me: #d8a3b4;
   --tr-bubble-me-ink: #26131a;
+  --tr-on-accent: #26131a;
   --tr-bubble-in: #2c2127;
   --tr-bubble-in-ink: #eee6e9;
   --tr-bubble-system: rgba(238, 230, 233, 0.08);
@@ -563,6 +587,7 @@
   --tr-hairline: rgba(0, 0, 0, 0.35);
   --tr-bubble-me: #111111;
   --tr-bubble-me-ink: #ffffff;
+  --tr-on-accent: #ffffff;
   --tr-bubble-in: #efefef;
   --tr-bubble-in-ink: #000000;
   --tr-bubble-system: rgba(0, 0, 0, 0.1);
@@ -592,6 +617,7 @@
   --tr-hairline: rgba(255, 255, 255, 0.4);
   --tr-bubble-me: #ffffff;
   --tr-bubble-me-ink: #000000;
+  --tr-on-accent: #000000;
   --tr-bubble-in: #1f1f1f;
   --tr-bubble-in-ink: #ffffff;
   --tr-bubble-system: rgba(255, 255, 255, 0.16);
@@ -746,60 +772,92 @@
   border-radius: var(--tr-radius-card);
 }
 
-/* Plan picker (/tour-mode/plan): cool grey surfaces and crisp black CTA contrast.
+/* Plan picker (/tour-mode/plan) — 2026-07-28 refresh.
+ *
+ * The old palette was cool grey + a saturated forest CTA: every card the same
+ * near-white, every action the same heavy solid slab. The device report called
+ * it "몽땅 하얀 카드에 진 녹색 버튼". What changed, and why:
+ *
+ *  - canvas/surface-2 carry a faint SAGE tint instead of neutral grey, so a
+ *    white card reads as a card against it rather than as more of the page;
+ *  - the accent lightens from #2e5e4e to #42806a and gains --tr-accent-hi, the
+ *    top stop of the physical CTA gradient (a flat fill cannot read as a
+ *    button; a 2-stop gradient + inset highlight can, at no extra weight);
+ *  - --tr-accent-deep stops being near-black. It is the ink for every soft
+ *    chip in this screen, and near-black on a mint wash is what made the
+ *    "pretty" surfaces read as administrative;
+ *  - ink-3 darkens to clear 4.5:1 on the canvas. It did not before — this
+ *    scope was outside the contrast gate, which is now fixed (skinContrast).
+ *
  * Scoped so the live room keeps its existing bubble grammar. */
 .tr-plan-root {
-  --tr-canvas: #f3f4f2;
-  --tr-surface: #fcfcfb;
-  --tr-surface-2: #ecefee;
-  --tr-hairline: rgba(37, 42, 44, 0.08);
-  --tr-ink: #252a2c;
-  --tr-ink-2: #626b6f;
-  --tr-ink-3: #7b8589;
-  --tr-accent: #2e5e4e;
-  --tr-accent-deep: #111315;
-  --tr-accent-soft: #e4eee9;
+  --tr-canvas: #f1f4f1;
+  --tr-surface: #ffffff;
+  --tr-surface-2: #e8efea;
+  --tr-hairline: rgba(38, 62, 52, 0.1);
+  --tr-ink: #1f2a26;
+  --tr-ink-2: #556860;
+  --tr-ink-3: #5f7169;
+  --tr-accent: #42806a;
+  --tr-accent-hi: #55977e;
+  --tr-accent-deep: #275343;
+  --tr-accent-soft: #e3efe8;
   --tr-safe: #667985;
   /* safe를 슬레이트로 재정의하면 워시도 짝으로 — 파인 워시 위 슬레이트 글자는
      11px에서 AA 미달이었다 (교차표면 감사 #4). */
   --tr-safe-soft: rgba(102, 121, 133, 0.16);
-  --tr-danger: #b55252;
-  --tr-danger-soft: rgba(181, 82, 82, 0.14);
-  --tr-bubble-me-ink: #f4f8f6;
-  --tr-radius-card: 18px;
-  --tr-radius-input: 16px;
-  --tr-plan-hero: #252a2c;
-  --tr-plan-hero-ink: #fcfcfb;
-  --tr-plan-hero-muted: #c9d0d2;
-  --tr-plan-secondary: #7f8a90;
-  --tr-plan-shadow-soft: 0 1px 2px rgba(37, 42, 44, 0.04), 0 8px 24px rgba(37, 42, 44, 0.06);
-  --tr-plan-shadow-card: 0 1px 2px rgba(37, 42, 44, 0.04), 0 14px 34px rgba(37, 42, 44, 0.08);
-  --tr-plan-shadow-button: 0 8px 20px rgba(46, 94, 78, 0.22);
+  --tr-danger: #b04a4a;
+  --tr-danger-soft: rgba(176, 74, 74, 0.14);
+  --tr-bubble-me-ink: #f7fdfa;
+  --tr-on-accent: #f7fdfa;
+  --tr-radius-card: 16px;
+  --tr-radius-input: 14px;
+  /* Hero: a pale sage wash, not a black slab. Chips ride it in white. */
+  --tr-plan-hero: linear-gradient(150deg, #eaf3ed 0%, #dcebe2 55%, #d3e5da 100%);
+  --tr-plan-hero-ink: #1f3a30;
+  --tr-plan-hero-muted: #4d6d60;
+  --tr-plan-hero-chip: rgba(255, 255, 255, 0.72);
+  --tr-plan-hero-line: rgba(38, 82, 66, 0.12);
+  --tr-plan-secondary: #667e74;
+  --tr-plan-shadow-soft: 0 1px 2px rgba(31, 58, 48, 0.04), 0 6px 16px rgba(31, 58, 48, 0.05);
+  --tr-plan-shadow-card: 0 1px 2px rgba(31, 58, 48, 0.04), 0 10px 24px rgba(31, 58, 48, 0.06);
+  --tr-plan-shadow-button: 0 4px 12px rgba(48, 106, 85, 0.24);
+  --tr-plan-btn-inset: rgba(255, 255, 255, 0.24);
 }
 
-.dark .tr-plan-root {
-  --tr-canvas: #151818;
-  --tr-surface: #1d2020;
-  --tr-surface-2: #252929;
-  --tr-hairline: rgba(244, 245, 242, 0.1);
-  --tr-ink: #f4f5f2;
-  --tr-ink-2: #b9c0c2;
-  --tr-ink-3: #899295;
+/* The planner opens STANDALONE from the invite email — no RoomShell above it,
+ * so there is no `.dark` ancestor to descend from. It carries the class on
+ * itself instead, which is why the self-form is listed here (the skin blocks
+ * already use the same `.dark X, X.dark` pairing for the same reason). */
+.dark .tr-plan-root,
+.tr-plan-root.dark {
+  --tr-canvas: #131716;
+  --tr-surface: #1c2120;
+  --tr-surface-2: #252c29;
+  --tr-hairline: rgba(226, 240, 234, 0.11);
+  --tr-ink: #eef3f0;
+  --tr-ink-2: #b2bdb8;
+  --tr-ink-3: #97a49e;
   --tr-accent: #8fbfa9;
-  --tr-accent-deep: #ffffff;
+  --tr-accent-hi: #a6d0bc;
+  --tr-accent-deep: #a8d4c1;
   --tr-accent-soft: rgba(143, 191, 169, 0.16);
   --tr-safe: #91a3aa;
   --tr-safe-soft: rgba(145, 163, 170, 0.18);
   --tr-danger: #d27a7a;
   --tr-danger-soft: rgba(210, 122, 122, 0.18);
   --tr-bubble-me-ink: #10201a;
-  --tr-plan-hero: #101313;
-  --tr-plan-hero-ink: #f4f5f2;
-  --tr-plan-hero-muted: #a9b4b7;
-  --tr-plan-secondary: #b9c0c2;
+  --tr-on-accent: #10201a;
+  --tr-plan-hero: linear-gradient(150deg, #1b2422 0%, #151d1b 60%, #121817 100%);
+  --tr-plan-hero-ink: #eef3f0;
+  --tr-plan-hero-muted: #a3b1ab;
+  --tr-plan-hero-chip: rgba(255, 255, 255, 0.08);
+  --tr-plan-hero-line: rgba(226, 240, 234, 0.09);
+  --tr-plan-secondary: #b2bdb8;
   --tr-plan-shadow-soft: none;
   --tr-plan-shadow-card: none;
   --tr-plan-shadow-button: none;
+  --tr-plan-btn-inset: rgba(255, 255, 255, 0.1);
 }
 
 .tr-plan-root .tr-card {
@@ -809,10 +867,10 @@
 
 .tr-plan-hero {
   background: var(--tr-plan-hero);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 22px;
+  border: 1px solid var(--tr-plan-hero-line);
+  border-radius: 20px;
   box-shadow: var(--tr-plan-shadow-card);
-  padding: 18px;
+  padding: 15px 16px;
 }
 
 .tr-plan-course-card {
@@ -824,6 +882,196 @@
 
 .tr-plan-course-card:active {
   transform: scale(0.995);
+}
+
+/* ---- Planner buttons: small, physical, and only ONE loud one --------------
+ *
+ * Every action in this screen used to be the same full-bleed saturated slab,
+ * so nothing was primary and the page read as a wall of green. The hierarchy
+ * is now three tiers, and the loud tier is rationed to the real commit
+ * (submit / adopt a course):
+ *
+ *   --primary  gradient + inset top highlight + colored lift  → commits
+ *   --soft     accent wash + deep-accent ink                  → adds, toggles
+ *   --quiet    surface + hairline                             → cancel, clear
+ *
+ * The press physics are the point of "physical": a 1px downward translate with
+ * the lift shadow collapsing under it reads as a key bottoming out. Sizes are
+ * one step smaller than before (42px default, 36px compact) — thumb-legal at
+ * 44px on the tap targets that need it, tighter everywhere else. */
+.tr-plan-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 42px;
+  padding-inline: 15px;
+  border-radius: 13px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  transition:
+    transform var(--tr-dur-fast, 120ms) var(--tr-ease-out, ease),
+    box-shadow var(--tr-dur-fast, 120ms) var(--tr-ease-out, ease),
+    background-color var(--tr-dur-fast, 120ms) var(--tr-ease-out, ease),
+    filter var(--tr-dur-fast, 120ms) var(--tr-ease-out, ease);
+}
+
+.tr-plan-btn--sm {
+  min-height: 36px;
+  padding-inline: 12px;
+  border-radius: 11px;
+}
+
+/* 44px stays reachable where the control is the row's only tap target. */
+.tr-plan-btn--tap {
+  min-height: 44px;
+}
+
+.tr-plan-btn--block {
+  display: flex;
+  width: 100%;
+}
+
+.tr-plan-btn--primary {
+  color: var(--tr-on-accent);
+  background-image: linear-gradient(180deg, var(--tr-accent-hi), var(--tr-accent));
+  box-shadow:
+    inset 0 1px 0 var(--tr-plan-btn-inset),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.08),
+    0 1px 1px rgba(31, 58, 48, 0.1),
+    var(--tr-plan-shadow-button);
+}
+
+.tr-plan-btn--primary:active:not(:disabled) {
+  transform: translateY(1px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 1px 3px rgba(0, 0, 0, 0.16),
+    0 1px 2px rgba(31, 58, 48, 0.1);
+  filter: brightness(0.97);
+}
+
+.tr-plan-btn--soft {
+  color: var(--tr-accent-deep);
+  background-color: var(--tr-accent-soft);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    0 1px 2px rgba(31, 58, 48, 0.05);
+}
+
+.tr-plan-btn--soft:active:not(:disabled) {
+  transform: translateY(1px);
+  box-shadow: inset 0 1px 3px rgba(31, 58, 48, 0.12);
+}
+
+.tr-plan-btn--quiet {
+  color: var(--tr-ink-2);
+  background-color: var(--tr-surface);
+  box-shadow:
+    inset 0 0 0 1px var(--tr-hairline),
+    0 1px 2px rgba(31, 58, 48, 0.04);
+}
+
+.tr-plan-btn--quiet:active:not(:disabled) {
+  transform: translateY(1px);
+  box-shadow: inset 0 0 0 1px var(--tr-hairline);
+}
+
+/* Settled/complete: no lift, no invitation to press again. */
+.tr-plan-btn--done {
+  color: var(--tr-ink-3);
+  background-color: var(--tr-surface-2);
+  box-shadow: none;
+}
+
+.tr-plan-btn:disabled {
+  opacity: 0.45;
+  transform: none;
+  filter: none;
+}
+
+/* Selectable pill (needs / dietary / pace). Selected = accent WASH with a
+ * hairline in the accent, not a solid slab — twelve solid pills in a row was
+ * the other half of "온통 진 녹색". */
+.tr-plan-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-height: 38px;
+  padding-inline: 13px;
+  border-radius: 9999px;
+  font-weight: 600;
+  box-shadow: inset 0 0 0 1px var(--tr-hairline);
+  background-color: var(--tr-surface);
+  color: var(--tr-ink-2);
+  transition:
+    transform var(--tr-dur-fast, 120ms) var(--tr-ease-out, ease),
+    box-shadow var(--tr-dur-fast, 120ms) var(--tr-ease-out, ease),
+    background-color var(--tr-dur-fast, 120ms) var(--tr-ease-out, ease);
+}
+
+.tr-plan-chip:active {
+  transform: translateY(1px);
+}
+
+.tr-plan-chip[aria-pressed='true'],
+.tr-plan-chip[data-selected='true'] {
+  background-color: var(--tr-accent-soft);
+  color: var(--tr-accent-deep);
+  box-shadow:
+    inset 0 0 0 1.5px var(--tr-accent),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+
+/* Segmented control (the three planner tabs). One recessed track, one raised
+ * thumb — the thumb is the only lifted thing, so the selected tab is obvious
+ * without painting it the full CTA color. */
+.tr-plan-seg {
+  background-color: var(--tr-surface-2);
+  border-radius: 14px;
+  box-shadow: inset 0 1px 2px rgba(31, 58, 48, 0.07);
+  padding: 3px;
+}
+
+.tr-plan-seg-item {
+  border-radius: 11px;
+  color: var(--tr-ink-2);
+  transition:
+    background-color var(--tr-dur-fast, 120ms) var(--tr-ease-out, ease),
+    color var(--tr-dur-fast, 120ms) var(--tr-ease-out, ease),
+    box-shadow var(--tr-dur-fast, 120ms) var(--tr-ease-out, ease);
+}
+
+.tr-plan-seg-item[aria-selected='true'] {
+  background-color: var(--tr-surface);
+  color: var(--tr-accent-deep);
+  box-shadow:
+    0 1px 1px rgba(31, 58, 48, 0.06),
+    0 2px 6px rgba(31, 58, 48, 0.08);
+}
+
+/* Dark inverts which way "recessed" runs: the light recipe would make the
+ * selected thumb DARKER than its track, which reads as a hole, not a key. */
+.dark .tr-plan-root .tr-plan-seg,
+.tr-plan-root.dark .tr-plan-seg {
+  background-color: rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.45);
+}
+
+.dark .tr-plan-root .tr-plan-seg-item[aria-selected='true'],
+.tr-plan-root.dark .tr-plan-seg-item[aria-selected='true'] {
+  background-color: var(--tr-surface-2);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Pale tinted tile behind a section icon. */
+.tr-plan-tile {
+  background-color: var(--tr-accent-soft);
+  color: var(--tr-accent-deep);
 }
 
 .tr-plan-line-clamp-2 {
@@ -1075,8 +1323,16 @@
   .tr-btn-flat,
   .tr-press,
   .tr-knob,
-  .tr-plan-course-card {
+  .tr-plan-course-card,
+  .tr-plan-btn,
+  .tr-plan-chip,
+  .tr-plan-seg-item {
     transition: none;
+  }
+  /* The press translate is motion too — the shadow change still reads. */
+  .tr-plan-btn:active,
+  .tr-plan-chip:active {
+    transform: none;
   }
 }
 

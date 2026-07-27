@@ -43,6 +43,7 @@ import { koreanAllergyCardLines } from '@/lib/tour-room/allergyCard';
 import { formatMinutes, haversineKm, totalDriveMinutes, type LatLng } from '@/lib/itinerary-builder/distance';
 import { ROOM_LOCALES, normalizeRoomLocale, type RoomLocale } from '@/lib/tour-room/snapshot';
 import { useTourRoomSession } from '@/hooks/useTourRoomSession';
+import { useResolvedTheme } from '@/hooks/useTourRoomSettings';
 import { useBackTrap } from '@/hooks/useBackTrap';
 import Sheet from '@/components/tour-mode/Sheet';
 import TimeWheel from '@/components/tour-mode/cockpit/TimeWheel';
@@ -1710,6 +1711,21 @@ const FIXED_ITIN_COPY: Record<RoomLocale, { eyebrow: string; note: string }> = {
 
 export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
   const { state, join, roomSession } = useTourRoomSession(bookingId);
+  /**
+   * 🔴 The planner is the one tour-mode surface that opens with NO shell above
+   * it (the invite email links straight here), so nothing was ever applying the
+   * guest's stored theme: `.dark .tr-plan-root` existed in the CSS but could
+   * never match, and a dark-mode guest got a full-white page in the hand at
+   * 6am. The class goes on the root itself — the CSS now carries the self-form.
+   *
+   * Skin (`data-tr-skin`) is deliberately NOT threaded through: a skin block
+   * outranks `.tr-plan-root` and would replace half this screen's palette while
+   * leaving the planner-only tokens (--tr-accent-hi) behind, i.e. a gradient
+   * whose two stops come from different families. The planner keeps its own
+   * palette on purpose; that is what `.tr-plan-root` is for.
+   */
+  const { theme } = useResolvedTheme();
+  const themeClass = theme === 'dark' ? 'dark' : '';
   const attempted = useRef(false);
   const [locale, setLocale] = useState<RoomLocale>(() => detectLocale());
   const copy = COPY[locale];
@@ -2371,7 +2387,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
   // ── render ────────────────────────────────────────────────────────────────
   if (state.status === 'idle' || state.status === 'joining' || (state.status === 'joined' && !plan && !loadError)) {
     return (
-      <div className="tr-root mx-auto flex min-h-dvh w-full flex-col bg-[var(--tr-canvas)]" aria-busy="true">
+      <div className={`tr-root mx-auto flex min-h-dvh w-full flex-col bg-[var(--tr-canvas)] ${themeClass}`} aria-busy="true">
         <div className="mx-auto flex w-full max-w-2xl flex-1 flex-col gap-3 px-4 pt-8">
           <div className="tr-skeleton h-6 w-48 rounded-full" />
           <div className="tr-skeleton h-10 w-full rounded-xl" />
@@ -2388,7 +2404,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
 
   if (state.status === 'error' || loadError || !plan) {
     return (
-      <div className="tr-root flex min-h-dvh items-center justify-center bg-[var(--tr-canvas)] px-6">
+      <div className={`tr-root flex min-h-dvh items-center justify-center bg-[var(--tr-canvas)] px-6 ${themeClass}`}>
         <div className="tr-card max-w-md px-5 py-6 text-center">
           <p className="tr-body text-[var(--tr-ink)]">{copy.joinError}</p>
         </div>
@@ -2410,7 +2426,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
   if (!plan.tour.is_private) {
     const fx = FIXED_ITIN_COPY[locale] ?? FIXED_ITIN_COPY.en;
     return (
-      <div className="tr-safe-top tr-root tr-plan-root mx-auto min-h-dvh w-full bg-[var(--tr-canvas)] pb-16" data-locale={locale}>
+      <div className={`tr-safe-top tr-root tr-plan-root mx-auto min-h-dvh w-full bg-[var(--tr-canvas)] pb-16 ${themeClass}`} data-locale={locale}>
         <div className="tr-safe-bottom mx-auto w-full max-w-xl px-4 pt-4">
           <header className="tr-plan-hero">
             <div className="flex items-start justify-between gap-4">
@@ -2420,19 +2436,19 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                   {tourTitle || copy.title}
                 </h1>
               </div>
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-white/10 text-[var(--tr-plan-hero-ink)]">
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[var(--tr-plan-hero-chip)] text-[var(--tr-plan-hero-ink)]">
                 <IconJourney size={TR_ICON.nav} aria-hidden />
               </span>
             </div>
             <div className="mt-4 flex flex-wrap gap-2">
               {plan.tour.date && (
-                <span className="tr-label inline-flex min-h-9 items-center gap-1.5 rounded-full bg-white/10 px-3 font-semibold text-[var(--tr-plan-hero-ink)]">
+                <span className="tr-label inline-flex min-h-8 items-center gap-1.5 rounded-full bg-[var(--tr-plan-hero-chip)] px-3 font-semibold text-[var(--tr-plan-hero-ink)]">
                   <IconTime size={TR_ICON.meta} aria-hidden />
                   {copy.tourDay} {plan.tour.date}
                 </span>
               )}
               {plan.tour.total_hours && (
-                <span className="tr-label inline-flex min-h-9 items-center rounded-full bg-white/10 px-3 font-semibold text-[var(--tr-plan-hero-ink)]">
+                <span className="tr-label inline-flex min-h-8 items-center rounded-full bg-[var(--tr-plan-hero-chip)] px-3 font-semibold text-[var(--tr-plan-hero-ink)]">
                   {copy.courseHours(plan.tour.total_hours)}
                 </span>
               )}
@@ -2456,7 +2472,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
 
           <a
             href={roomHref}
-            className="tr-body mt-6 flex min-h-[50px] w-full items-center justify-center gap-2 rounded-2xl bg-[var(--tr-accent)] px-4 font-bold text-[var(--tr-bubble-me-ink)] active:scale-[0.99]"
+            className="tr-plan-btn tr-plan-btn--primary tr-plan-btn--block tr-plan-btn--tap tr-body mt-5"
           >
             {copy.backToRoom}
           </a>
@@ -2471,7 +2487,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
        bar and reserve the fixed submit bar + home indicator at the bottom
        (pb-32 alone left the last card under the bar on notched phones). */
     <div
-      className="tr-safe-top tr-root tr-plan-root mx-auto min-h-dvh w-full bg-[var(--tr-canvas)]"
+      className={`tr-safe-top tr-root tr-plan-root mx-auto min-h-dvh w-full bg-[var(--tr-canvas)] ${themeClass}`}
       data-locale={locale}
       style={{ paddingBottom: 'calc(8rem + env(safe-area-inset-bottom, 0px))' }}
     >
@@ -2489,24 +2505,24 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
               href={roomHref}
               aria-label="홈으로"
               data-testid="plan-home"
-              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-white/10 text-[var(--tr-plan-hero-ink)] active:scale-95"
+              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[var(--tr-plan-hero-chip)] text-[var(--tr-plan-hero-ink)] active:scale-95"
             >
               <IconTabMap size={TR_ICON.nav} aria-hidden />
             </a>
           </div>
           <div className="mt-4 flex flex-wrap gap-2">
             {plan.tour.date && (
-              <span className="tr-label inline-flex min-h-9 items-center gap-1.5 rounded-full bg-white/10 px-3 font-semibold text-[var(--tr-plan-hero-ink)]">
+              <span className="tr-label inline-flex min-h-8 items-center gap-1.5 rounded-full bg-[var(--tr-plan-hero-chip)] px-3 font-semibold text-[var(--tr-plan-hero-ink)]">
                 <IconTime size={TR_ICON.meta} aria-hidden />
                 {copy.tourDay} {plan.tour.date}
               </span>
             )}
             {plan.tour.total_hours && (
-              <span className="tr-label inline-flex min-h-9 items-center rounded-full bg-white/10 px-3 font-semibold text-[var(--tr-plan-hero-ink)]">
+              <span className="tr-label inline-flex min-h-8 items-center rounded-full bg-[var(--tr-plan-hero-chip)] px-3 font-semibold text-[var(--tr-plan-hero-ink)]">
                 {copy.courseHours(plan.tour.total_hours)}
               </span>
             )}
-            <span className="tr-label inline-flex min-h-9 items-center rounded-full bg-white/10 px-3 text-[var(--tr-plan-hero-muted)]">
+            <span className="tr-label inline-flex min-h-8 items-center rounded-full bg-[var(--tr-plan-hero-chip)] px-3 text-[var(--tr-plan-hero-muted)]">
               {copy.kstNote}
             </span>
           </div>
@@ -2548,7 +2564,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
               type="button"
               onClick={() => void claimLead()}
               disabled={claimBusy}
-              className="tr-btn-flat tr-label mt-2.5 inline-flex min-h-11 items-center rounded-full bg-[var(--tr-surface-2)] px-4 font-semibold text-[var(--tr-ink)] disabled:opacity-40"
+              className="tr-plan-btn tr-plan-btn--soft tr-plan-btn--sm tr-label mt-2.5"
               data-testid="plan-claim-lead"
             >
               {copy.claimLead}
@@ -2559,7 +2575,10 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
         {/* tabs */}
         {canEdit && !isConfirmed && (
           <>
-            <div role="tablist" className="mt-5 grid grid-cols-3 gap-1 rounded-2xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] p-1 shadow-[var(--tr-plan-shadow-soft)]">
+            {/* A segmented control, not three CTAs: one recessed track with a
+                single raised thumb. Painting the active tab in the full accent
+                made three loud greens compete with the real submit button. */}
+            <div role="tablist" className="tr-plan-seg mt-5 grid grid-cols-3 gap-1">
               {tabItems.map(([key, label, Icon]) => (
                 <button
                   key={key}
@@ -2567,11 +2586,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                   role="tab"
                   aria-selected={tab === key}
                   onClick={() => setTab(key)}
-                  className={`tr-label text-cjk-safe flex min-h-[46px] items-center justify-center gap-1.5 rounded-xl px-2 text-center font-bold transition ${
-                    tab === key
-                      ? 'bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)] shadow-[var(--tr-plan-shadow-button)]'
-                      : 'text-[var(--tr-ink-2)] hover:bg-[var(--tr-surface-2)]'
-                  }`}
+                  className="tr-plan-seg-item tr-label text-cjk-safe flex min-h-[42px] items-center justify-center gap-1.5 px-2 text-center font-bold"
                 >
                   <Icon size={TR_ICON.meta} strokeWidth={TR_STROKE.small} aria-hidden />
                   {label}
@@ -2618,7 +2633,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                             data-testid={`plan-course-option-${course.index}`}
                           >
                             <div className="flex items-start gap-3">
-                              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[var(--tr-accent-soft)] text-[var(--tr-accent-deep)]">
+                              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl tr-plan-tile">
                                 <IconJourney size={TR_ICON.action} aria-hidden />
                               </span>
                               <div className="min-w-0 flex-1">
@@ -2644,7 +2659,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                                 /* 장소 목록이 아직이면 누를 수 없게 한다. 예전에는
                                    눌려도 poiByKey가 비어 조용히 아무 일도 안 일어났다. */
                                 disabled={!canEdit || (!course.isCustom && poisState !== 'ready')}
-                                className="tr-btn-raised tr-label ml-auto inline-flex min-h-11 items-center rounded-full bg-[var(--tr-accent)] px-4 font-semibold text-[var(--tr-on-accent)] disabled:opacity-40"
+                                className="tr-plan-btn tr-plan-btn--primary tr-plan-btn--sm tr-label ml-auto"
                                 data-testid={`plan-course-apply-${course.index}`}
                               >
                                 {course.isCustom ? ui.courseOptionCustom : ui.courseOptionApply}
@@ -2700,7 +2715,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                   return (
                     <article key={template.id} className="tr-card tr-plan-course-card px-4 py-4">
                       <div className="flex items-start gap-3">
-                        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[var(--tr-accent-soft)] text-[var(--tr-accent-deep)]">
+                        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl tr-plan-tile">
                           <IconJourney size={TR_ICON.action} aria-hidden />
                         </span>
                         <div className="min-w-0 flex-1">
@@ -2732,7 +2747,10 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                       <button
                         type="button"
                         onClick={() => setPreviewTemplate(template)}
-                        className="tr-body mt-3 flex min-h-[46px] w-full items-center justify-center gap-2 rounded-2xl bg-[var(--tr-accent)] px-4 font-bold text-[var(--tr-bubble-me-ink)] shadow-[var(--tr-plan-shadow-button)] transition active:scale-[0.99]"
+                        /* Previewing commits nothing — soft tier. The loud one
+                           lives in the preview sheet's footer, on the button
+                           that actually replaces the day. */
+                        className="tr-plan-btn tr-plan-btn--soft tr-plan-btn--block tr-plan-btn--tap tr-label mt-3"
                       >
                         <IconAsk size={TR_ICON.chip} aria-hidden />
                         {ui.previewCourse}
@@ -2804,10 +2822,8 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                         type="button"
                         onClick={() => addPoiStop(poi)}
                         disabled={added}
-                        className={`tr-label text-cjk-safe inline-flex min-h-[44px] shrink-0 items-center gap-1 rounded-full px-3 font-bold ${
-                          added
-                            ? 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-3)]'
-                            : 'bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]'
+                        className={`tr-plan-btn tr-plan-btn--sm tr-plan-btn--tap tr-label text-cjk-safe shrink-0 ${
+                          added ? 'tr-plan-btn--done' : 'tr-plan-btn--soft'
                         }`}
                       >
                         {added ? <IconSuccess size={TR_ICON.meta} aria-hidden /> : <IconPlus size={TR_ICON.meta} aria-hidden />}
@@ -2820,7 +2836,8 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                 <button
                   type="button"
                   onClick={() => setGoogleOpen((v) => !v)}
-                  className="tr-label mt-3 inline-flex min-h-[44px] items-center gap-1.5 rounded-full bg-[var(--tr-accent-soft)] px-3 font-bold text-[var(--tr-accent-deep)]"
+                  aria-expanded={googleOpen}
+                  className="tr-plan-btn tr-plan-btn--quiet tr-plan-btn--sm tr-plan-btn--tap tr-label mt-3"
                 >
                   <IconArrived size={TR_ICON.meta} aria-hidden />
                   {copy.googleToggle}
@@ -2842,7 +2859,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
             {/* tab ③ delegate */}
             {tab === 'delegate' && (
               <div className="tr-card mt-3 px-4 py-5">
-                <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[var(--tr-accent-soft)] text-[var(--tr-accent-deep)]">
+                <span className="flex h-11 w-11 items-center justify-center rounded-2xl tr-plan-tile">
                   <IconConcierge size={TR_ICON.action} aria-hidden />
                 </span>
                 <p className="tr-title mt-3 font-bold leading-snug text-[var(--tr-ink)]">{copy.delegateTitle}</p>
@@ -2850,7 +2867,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                 <button
                   type="button"
                   onClick={() => void delegatePlan()}
-                  className="tr-body mt-4 flex min-h-[48px] w-full items-center justify-center gap-2 rounded-2xl bg-[var(--tr-accent)] px-4 font-bold text-[var(--tr-bubble-me-ink)] shadow-[var(--tr-plan-shadow-button)]"
+                  className="tr-plan-btn tr-plan-btn--primary tr-plan-btn--block tr-plan-btn--tap tr-body mt-4"
                 >
                   <IconConcierge size={TR_ICON.chip} aria-hidden />
                   {copy.delegateCta}
@@ -2865,7 +2882,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
           <section className="mt-6">
             <div className="flex items-center justify-between gap-3">
               <h2 className="tr-body flex items-center gap-2 font-bold text-[var(--tr-ink)]">
-                <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[var(--tr-accent-soft)] text-[var(--tr-accent-deep)]">
+                <span className="flex h-8 w-8 items-center justify-center rounded-xl tr-plan-tile">
                   <IconJourney size={TR_ICON.chip} aria-hidden />
                 </span>
                 {copy.yourDay}
@@ -2897,7 +2914,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                           field and a three-tile action column at all times: ~430px
                           per stop, so four stops filled two screens. */}
                       <div className="flex items-center gap-2.5 px-3 py-2.5">
-                        <span className="tr-label flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-[var(--tr-accent-soft)] font-bold text-[var(--tr-accent-deep)]">
+                        <span className="tr-label flex h-8 w-8 shrink-0 items-center justify-center rounded-xl tr-plan-tile font-bold">
                           {index + 1}
                         </span>
                         <button
@@ -2953,7 +2970,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                               <button
                                 type="button"
                                 onClick={() => setTimeSheetFor(stop.id)}
-                                className="tr-label min-h-9 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 font-semibold text-[var(--tr-ink)]"
+                                className="tr-plan-btn tr-plan-btn--quiet tr-plan-btn--sm tr-label font-semibold !text-[var(--tr-ink)]"
                                 data-testid={`plan-stop-time-${index + 1}`}
                               >
                                 {stop.arrival_planned ?? '--:--'}
@@ -3112,7 +3129,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                         );
                       setTimeSheetFor(null);
                     }}
-                    className="tr-label mt-3 min-h-11 w-full rounded-2xl bg-[var(--tr-surface-2)] font-semibold text-[var(--tr-ink-2)]"
+                    className="tr-plan-btn tr-plan-btn--quiet tr-plan-btn--block tr-plan-btn--tap tr-label mt-3"
                     data-testid="plan-time-clear"
                   >
                     {copy.timeClear}
@@ -3161,7 +3178,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
         {canEdit && !isConfirmed && (
           <section className="tr-card mt-6 px-4 py-4">
             <h2 className="tr-body flex items-center gap-2 font-bold text-[var(--tr-ink)]">
-              <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[var(--tr-accent-soft)] text-[var(--tr-accent-deep)]">
+              <span className="flex h-8 w-8 items-center justify-center rounded-xl tr-plan-tile">
                 <IconPerson size={TR_ICON.chip} aria-hidden />
               </span>
               {copy.needsTitle}
@@ -3197,7 +3214,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                 onClick={() => setTimeSheetFor('departure')}
                 disabled={!canEdit}
                 aria-label={copy.departureTitle}
-                className="tr-label mt-2 min-h-11 w-32 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 font-semibold text-[var(--tr-ink)] disabled:opacity-40"
+                className="tr-plan-btn tr-plan-btn--quiet tr-plan-btn--sm tr-label mt-2 w-32 font-semibold !text-[var(--tr-ink)]"
                 data-testid="plan-departure-time"
               >
                 {departureTime ?? '--:--'}
@@ -3255,11 +3272,10 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                   key={key}
                   onClick={() => mutateNeeds({ [key]: !needs[key] } as Partial<NeedsState>)}
                   aria-pressed={needs[key]}
-                  className={`tr-label min-h-[44px] rounded-full border px-3 font-medium ${
-                    needs[key]
-                      ? 'border-[var(--tr-accent)] bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]'
-                      : 'border-[var(--tr-hairline)] bg-[var(--tr-surface)] text-[var(--tr-ink-2)]'
-                  }`}
+                  /* Selected = accent WASH + accent hairline (.tr-plan-chip
+                     reads aria-pressed). A dozen solid accent pills in a row
+                     was the other half of the "온통 진 녹색" report. */
+                  className="tr-plan-chip tr-label text-cjk-safe"
                 >
                   {label}
                 </button>
@@ -3283,11 +3299,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                       })
                     }
                     aria-pressed={active}
-                    className={`tr-label min-h-[44px] rounded-full border px-3 font-medium ${
-                      active
-                        ? 'border-[var(--tr-accent)] bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]'
-                        : 'border-[var(--tr-hairline)] bg-[var(--tr-surface)] text-[var(--tr-ink-2)]'
-                    }`}
+                    className="tr-plan-chip tr-label text-cjk-safe"
                   >
                     {label}
                   </button>
@@ -3311,11 +3323,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                   key={key}
                   onClick={() => mutateNeeds({ pace: key })}
                   aria-pressed={needs.pace === key}
-                  className={`tr-label text-cjk-safe min-h-[44px] flex-1 rounded-full border px-3 font-medium ${
-                    needs.pace === key
-                      ? 'border-[var(--tr-accent)] bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]'
-                      : 'border-[var(--tr-hairline)] bg-[var(--tr-surface)] text-[var(--tr-ink-2)]'
-                  }`}
+                  className="tr-plan-chip tr-label text-cjk-safe flex-1"
                 >
                   {label}
                 </button>
@@ -3447,7 +3455,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                         </div>
                         <div className="min-w-0 flex-1">
                           <div className="flex items-center gap-2">
-                            <span className="tr-meta flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[var(--tr-accent-soft)] font-bold text-[var(--tr-accent-deep)]">
+                            <span className="tr-meta flex h-6 w-6 shrink-0 items-center justify-center rounded-full tr-plan-tile font-bold">
                               {index + 1}
                             </span>
                             <p className="tr-card-text truncate font-bold text-[var(--tr-ink)]">{stop.title}</p>
@@ -3472,7 +3480,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                     <button
                       type="button"
                       onClick={() => setReplaceArmed(false)}
-                      className="tr-body flex min-h-[50px] flex-1 items-center justify-center rounded-2xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-4 font-bold text-[var(--tr-ink-2)]"
+                      className="tr-plan-btn tr-plan-btn--quiet tr-plan-btn--tap tr-body flex-1"
                     >
                       {ui.cancel}
                     </button>
@@ -3482,7 +3490,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                         applyTemplate(previewTemplate);
                         closePreview();
                       }}
-                      className="tr-body flex min-h-[50px] flex-1 items-center justify-center gap-2 rounded-2xl bg-[var(--tr-accent)] px-4 font-bold text-[var(--tr-bubble-me-ink)] shadow-[var(--tr-plan-shadow-button)]"
+                      className="tr-plan-btn tr-plan-btn--primary tr-plan-btn--tap tr-body flex-1"
                     >
                       <IconSuccess size={TR_ICON.chip} aria-hidden />
                       {ui.replaceApply}
@@ -3500,7 +3508,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                       closePreview();
                     }
                   }}
-                  className="tr-body flex min-h-[50px] w-full items-center justify-center gap-2 rounded-2xl bg-[var(--tr-accent)] px-4 font-bold text-[var(--tr-bubble-me-ink)] shadow-[var(--tr-plan-shadow-button)]"
+                  className="tr-plan-btn tr-plan-btn--primary tr-plan-btn--block tr-plan-btn--tap tr-body"
                 >
                   <IconSuccess size={TR_ICON.chip} aria-hidden />
                   {copy.useCourse}
@@ -3525,7 +3533,8 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
               type="button"
               onClick={() => void submitPlan()}
               disabled={stops.length === 0 || saveState === 'saving' || submitBusy}
-              className="tr-body flex min-h-[48px] shrink-0 items-center justify-center gap-2 rounded-2xl bg-[var(--tr-accent)] px-5 font-bold text-[var(--tr-bubble-me-ink)] shadow-[var(--tr-plan-shadow-button)] disabled:opacity-50"
+              /* The one loud button on the screen — this is the commit. */
+              className="tr-plan-btn tr-plan-btn--primary tr-plan-btn--tap tr-body shrink-0 px-5"
             >
               <IconSubmit size={TR_ICON.chip} aria-hidden />
               {saveState === 'saving' || submitBusy ? copy.submitting : copy.submit}
