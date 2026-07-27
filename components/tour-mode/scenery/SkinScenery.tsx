@@ -87,6 +87,7 @@ export const SKIN_SCENERY_SPECS: Record<ScenerySkin, SceneSpec> = {
       stoneShade: '#b7a68f',
       face: '#6f6152',
       suit: '#4a5a66',
+      skin: '#f2c9a3',
       tewak: '#e8734f',
       tangerine: '#f0a04a',
       leaf: '#7f9c6e',
@@ -101,6 +102,7 @@ export const SKIN_SCENERY_SPECS: Record<ScenerySkin, SceneSpec> = {
       stoneShade: '#52463a',
       face: '#1a130c',
       suit: '#2e3b46',
+      skin: '#c9a37e',
       tewak: '#c47646',
       tangerine: '#d69653',
       leaf: '#5a6a47',
@@ -140,9 +142,11 @@ export const SKIN_SCENERY_SPECS: Record<ScenerySkin, SceneSpec> = {
       foam: '#ffffff',
       pagoda: '#c4a9a0',
       pagodaRoof: '#8a7473',
+      bridge: '#ffffff',
       rail: '#c9a08e',
-      capsule: '#ee8f66',
-      capsuleWin: '#fdf3ec',
+      capsule: '#f2b23c',
+      capsuleTrim: '#ffffff',
+      capsuleWin: '#3e4550',
       gull: '#7f97a2',
       sun: '#f6bd8d',
     },
@@ -153,8 +157,10 @@ export const SKIN_SCENERY_SPECS: Record<ScenerySkin, SceneSpec> = {
       foam: '#35444e',
       pagoda: '#453c38',
       pagodaRoof: '#58504b',
+      bridge: '#55636e',
       rail: '#4f403a',
-      capsule: '#d97a52',
+      capsule: '#c9902e',
+      capsuleTrim: '#d8ccb8',
       capsuleWin: '#f0c98a',
       gull: '#5f6f79',
       sun: '#d8e2ea',
@@ -206,23 +212,38 @@ function Bird({ x, y, s = 1, stroke }: { x: number; y: number; s?: number; strok
   );
 }
 
-/** 돌하르방 — chubby basalt grandpa: mushroom hat, dot eyes, tiny smile. */
+/**
+ * 돌하르방 v2 — reference round (owner-supplied flat-vector refs, 2026-07-27).
+ * The real statue's signature marks, caricatured: 벙거지 hat with a proper
+ * BRIM ledge, huge bulging eyes (왕방울 눈 — the icon, not dots), a broad
+ * blunt nose, and the two hands STAGGERED on the belly (one above the other,
+ * how every real 하르방 stands). Porous-basalt dots finish the read.
+ */
 function Dolharubang({ x, y, s = 1, c }: { x: number; y: number; s?: number; c: Palette }) {
   return (
     <g transform={`translate(${x} ${y}) scale(${s})`}>
-      {/* body + head */}
-      <path d="M-13 44 Q-16 10 -10 -4 Q-6 -14 0 -14 Q6 -14 10 -4 Q16 10 13 44 Z" fill={c.stone} />
-      {/* hat */}
-      <path d="M-12 -10 Q0 -26 12 -10 Q6 -15 0 -15 Q-6 -15 -12 -10 Z" fill={c.stoneShade} />
-      <ellipse cx="0" cy="-11" rx="12" ry="4.5" fill={c.stoneShade} />
-      {/* folded arms */}
-      <path d="M-11 12 Q0 20 11 12" fill="none" stroke={c.stoneShade} strokeWidth="3.5" strokeLinecap="round" />
-      <path d="M-11 22 Q0 30 11 22" fill="none" stroke={c.stoneShade} strokeWidth="3.5" strokeLinecap="round" />
-      {/* face — dot eyes, big nose, smile */}
-      <circle cx="-4.5" cy="-4" r="1.6" fill={c.face} />
-      <circle cx="4.5" cy="-4" r="1.6" fill={c.face} />
-      <path d="M0 -3 Q2.4 1 0 3.4" fill="none" stroke={c.face} strokeWidth="1.8" strokeLinecap="round" />
-      <path d="M-3.4 6.5 Q0 9.5 3.4 6.5" fill="none" stroke={c.face} strokeWidth="1.6" strokeLinecap="round" />
+      {/* body + head (one tapered mass, like the carved stone) */}
+      <path d="M-14 44 Q-17 8 -10 -5 Q-6 -15 0 -15 Q6 -15 10 -5 Q17 8 14 44 Z" fill={c.stone} />
+      {/* 벙거지 — dome + wide brim ledge */}
+      <path d="M-11 -13 Q0 -27 11 -13 Z" fill={c.stoneShade} />
+      <ellipse cx="0" cy="-12" rx="13.5" ry="4.8" fill={c.stoneShade} />
+      {/* 왕방울 눈 — big protruding ovals with a glint */}
+      <ellipse cx="-5" cy="-4.5" rx="2.9" ry="3.5" fill={c.face} />
+      <ellipse cx="5" cy="-4.5" rx="2.9" ry="3.5" fill={c.face} />
+      <circle cx="-4.1" cy="-5.7" r="0.9" fill={c.stone} />
+      <circle cx="5.9" cy="-5.7" r="0.9" fill={c.stone} />
+      {/* broad blunt nose (shaded so it reads carved) */}
+      <path d="M-2 -3.5 Q-2.8 3 0 4.8 Q2.8 3 2 -3.5 Q0 -5.2 -2 -3.5 Z" fill={c.stoneShade} />
+      {/* soft mouth */}
+      <path d="M-2.6 8.8 Q0 10.8 2.6 8.8" fill="none" stroke={c.face} strokeWidth="1.5" strokeLinecap="round" />
+      {/* hands on the belly — STAGGERED, right above left */}
+      <path d="M-11 14 Q-1 19 11 15" fill="none" stroke={c.stoneShade} strokeWidth="3.6" strokeLinecap="round" />
+      <path d="M-11 25 Q1 30 11 26" fill="none" stroke={c.stoneShade} strokeWidth="3.6" strokeLinecap="round" />
+      {/* porous basalt dots */}
+      <circle cx="-7.5" cy="2" r="1" fill={c.stoneShade} opacity="0.55" />
+      <circle cx="8" cy="7" r="1" fill={c.stoneShade} opacity="0.55" />
+      <circle cx="-6" cy="34" r="1.1" fill={c.stoneShade} opacity="0.55" />
+      <circle cx="6.5" cy="38" r="1" fill={c.stoneShade} opacity="0.55" />
     </g>
   );
 }
@@ -386,12 +407,30 @@ function JejuScene(c: Palette): ReactNode {
           opacity="0.8"
         />
       ))}
-      {/* 해녀 — bobbing beside her 테왁 float */}
+      {/* 해녀 v2 — black hood + FACE + round goggles, hugging her 테왁
+          (net lines over the orange float = the real thing), fins kicking
+          behind with a splash. */}
       <g>
-        <circle cx={205} cy={246} r="8" fill={c.suit} />
-        <path d="M197 245 h16" stroke={c.foam} strokeWidth="2" strokeLinecap="round" />
-        <path d="M213 252 q8 -3 12 2" fill="none" stroke={c.suit} strokeWidth="4" strokeLinecap="round" />
-        <circle cx={235} cy={252} r="6.5" fill={c.tewak} />
+        <path d="M177 247 q6 -5 12 0" fill="none" stroke={c.foam} strokeWidth="2" strokeLinecap="round" opacity="0.9" />
+        <path d="M172 253 q5 -4 10 0" fill="none" stroke={c.foam} strokeWidth="1.6" strokeLinecap="round" opacity="0.8" />
+        {/* fins up mid-kick */}
+        <path d="M186 247 q-9 -1 -12 -8 q9 -1 14 4 Z" fill={c.suit} />
+        <path d="M190 251 q-8 1 -12 -4 q7 -2 12 0 Z" fill={c.suit} />
+        {/* body hump + hooded head */}
+        <ellipse cx="201" cy="249" rx="10" ry="6" fill={c.suit} />
+        <circle cx="213" cy="240" r="7.5" fill={c.suit} />
+        {/* face inside the hood */}
+        <circle cx="215" cy="241" r="4.2" fill={c.skin} />
+        {/* round diving goggles + strap over the hood */}
+        <circle cx="216.5" cy="239.5" r="2.5" fill="none" stroke={c.foam} strokeWidth="1.5" />
+        <path d="M206.5 238 Q212 233.5 219.5 236.5" fill="none" stroke={c.foam} strokeWidth="1.4" strokeLinecap="round" />
+        <path d="M214 244.4 q1.6 1.3 3.2 0" fill="none" stroke={c.face} strokeWidth="1.1" strokeLinecap="round" />
+        {/* arm wrapped over the float */}
+        <path d="M219 245 Q227 246 231.5 250" fill="none" stroke={c.suit} strokeWidth="4" strokeLinecap="round" />
+        {/* 테왁 — orange float with its net */}
+        <circle cx="237" cy="252" r="7.5" fill={c.tewak} />
+        <path d="M230.5 249 Q237 256 243.5 249 M233 258 Q237 252.5 241 258" fill="none" stroke={c.suit} strokeWidth="1.2" strokeLinecap="round" />
+        <circle cx="234" cy="249" r="1.6" fill={c.foam} opacity="0.85" />
       </g>
       {/* foreground sand + the stone grandpas (all inside the phone window) */}
       <path d="M330 300 Q500 262 720 282 V300 Z" fill={c.sand} />
@@ -423,18 +462,26 @@ function SeoulScene(c: Palette): ReactNode {
         <path d="M168 256 Q250 230 332 256 L324 256 Q326 272 314 274 L186 274 Q174 272 176 256 Z" />
         <rect x="192" y="274" width="116" height="26" rx="3" />
       </g>
-      {/* 한강 + 대교 */}
+      {/* 한강 + 한강대교 — reference round: the real bridge is a TIED-ARCH,
+          arches rising ABOVE the deck with hangers (the first cut bowed
+          under the deck and read as a generic viaduct). */}
       <rect x="0" y="276" width="720" height="24" fill={c.river} />
       <g>
-        <rect x="420" y="254" width="300" height="5" rx="2.5" fill={c.bridge} />
+        <rect x="420" y="260" width="300" height="4.5" rx="2.25" fill={c.bridge} />
         <path
-          d="M436 276 q 34 -26 68 0 M504 276 q 34 -26 68 0 M572 276 q 34 -26 68 0 M640 276 q 34 -26 68 0"
+          d="M436 262 q 34 -30 68 0 M504 262 q 34 -30 68 0 M572 262 q 34 -30 68 0 M640 262 q 34 -30 68 0"
           fill="none"
           stroke={c.bridge}
-          strokeWidth="4"
+          strokeWidth="3"
           strokeLinecap="round"
         />
-        <path d="M436 276 V258 M708 276 V258" stroke={c.bridge} strokeWidth="4" strokeLinecap="round" />
+        <path
+          d="M453 251 V262 M470 247.5 V262 M487 251 V262 M521 251 V262 M538 247.5 V262 M555 251 V262 M589 251 V262 M606 247.5 V262 M623 251 V262 M657 251 V262 M674 247.5 V262 M691 251 V262"
+          stroke={c.bridge}
+          strokeWidth="1.6"
+          strokeLinecap="round"
+        />
+        <path d="M436 276 V262 M504 276 V262 M572 276 V262 M640 276 V262 M708 276 V262" stroke={c.bridge} strokeWidth="4" strokeLinecap="round" />
       </g>
       {[478, 540, 602].map((x, i) => (
         <path key={i} d={`M${x} 286 h18`} stroke={c.glint} strokeWidth="2.5" strokeLinecap="round" opacity="0.85" />
@@ -450,8 +497,30 @@ function SeoulScene(c: Palette): ReactNode {
 function BusanScene(c: Palette): ReactNode {
   return (
     <>
-      {/* sunset sun on the horizon */}
+      {/* sunset sun on the horizon, behind the bridge */}
       <path d="M252 252 a 26 26 0 0 1 52 0 Z" fill={c.sun} />
+      {/* 광안대교 — reference round (owner-supplied Busan vector): H-frame
+          twin towers piered into the sea, one main cable swooping tower to
+          tower, vertical hangers to the deck, deck running off-frame right.
+          Drawn before the sea so the piers sink into the water band. */}
+      <g>
+        <path d="M316 252 V164 M329 252 V164 M512 252 V164 M525 252 V164" stroke={c.bridge} strokeWidth="4.5" strokeLinecap="round" />
+        <path d="M312 171 H333 M508 171 H529" stroke={c.bridge} strokeWidth="3.5" strokeLinecap="round" />
+        <rect x="236" y="208" width="484" height="4.5" rx="2.25" fill={c.bridge} />
+        <path
+          d="M240 205 Q280 164 322 163 Q420 204 518 163 Q622 184 720 202"
+          fill="none"
+          stroke={c.bridge}
+          strokeWidth="2.5"
+          strokeLinecap="round"
+        />
+        <path
+          d="M268 190 V208 M296 175 V208 M348 177 V208 M372 183 V208 M396 186 V208 M420 187 V208 M444 186 V208 M468 183 V208 M492 177 V208 M556 172 V208 M600 181 V208 M648 190 V208 M692 197 V208"
+          stroke={c.bridge}
+          strokeWidth="1.8"
+          strokeLinecap="round"
+        />
+      </g>
       {/* sea + foam */}
       <rect x="0" y="252" width="720" height="48" fill={c.sea} />
       {[190, 330, 470].map((x, i) => (
@@ -476,22 +545,30 @@ function BusanScene(c: Palette): ReactNode {
       </g>
       {/* 해운대 beach, foreground right */}
       <path d="M240 300 Q460 268 720 284 V300 Z" fill={c.sand} />
-      {/* 스카이캡슐 — the coastal Blueline rail hugs the shore at mid height
-          (a sky-high rail read as goalposts through the home cards); the
-          chat strip keeps the gulls + clouds instead. */}
+      {/* 스카이캡슐 v2 — reference round (owner photo): chunky YELLOW cab,
+          white roof cap + white lower skirt, one dark glass band split into
+          panes, the round number badge, dark bogie riding a beam with a thin
+          running tube on top. Mid-height rail = visible on the home canvas. */}
       <g>
-        <path d="M396 150 H720" stroke={c.rail} strokeWidth="5" strokeLinecap="round" />
+        <path d="M396 152 H720" stroke={c.rail} strokeWidth="6" strokeLinecap="round" />
+        <path d="M396 147.5 H720" stroke={c.rail} strokeWidth="1.8" strokeLinecap="round" />
         {[420, 500, 580, 660].map((x) => (
-          <path key={x} d={`M${x} 150 V262`} stroke={c.rail} strokeWidth="3.5" strokeLinecap="round" />
+          <path key={x} d={`M${x} 154 V262`} stroke={c.rail} strokeWidth="3.5" strokeLinecap="round" />
         ))}
         <g>
-          <rect x="446" y="118" width="54" height="30" rx="13" fill={c.capsule} />
-          <rect x="459" y="126" width="22" height="13" rx="6" fill={c.capsuleWin} />
-          <circle cx="460" cy="150" r="4.5" fill={c.rail} />
-          <circle cx="484" cy="150" r="4.5" fill={c.rail} />
+          <rect x="462" y="140" width="46" height="8" rx="2.5" fill={c.capsuleWin} />
+          <rect x="452" y="102" width="66" height="42" rx="12" fill={c.capsule} />
+          <rect x="460" y="111" width="50" height="16" rx="7" fill={c.capsuleWin} />
+          <rect x="474.5" y="111" width="3" height="16" fill={c.capsule} />
+          <rect x="489" y="111" width="3" height="16" fill={c.capsule} />
+          <rect x="458" y="98" width="54" height="9" rx="4.5" fill={c.capsuleTrim} />
+          <rect x="496" y="93.5" width="11" height="5" rx="2" fill={c.rail} />
+          <rect x="452" y="132" width="66" height="7" rx="3.5" fill={c.capsuleTrim} />
+          <circle cx="464" cy="130" r="3.2" fill={c.capsuleTrim} />
+          <circle cx="464" cy="130" r="1.5" fill={c.capsule} />
         </g>
       </g>
-      <Cloud x={560} y={40} s={0.7} fill={c.foam} />
+      <Cloud x={584} y={40} s={0.7} fill={c.foam} />
       <Bird x={330} y={40} stroke={c.gull} />
       <Bird x={365} y={28} s={0.75} stroke={c.gull} />
       <Bird x={470} y={56} s={0.85} stroke={c.gull} />
