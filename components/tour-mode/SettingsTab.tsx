@@ -176,15 +176,20 @@ function Toggle({ checked, onChange, label }: { checked: boolean; onChange: (v: 
       aria-checked={checked}
       aria-label={label}
       onClick={() => onChange(!checked)}
-      className={`tr-press relative h-8 w-[52px] shrink-0 rounded-full transition-colors duration-[var(--tr-dur-base)] ${
+      /* 컴팩트 스위치 (사용자 지시 2026-07-27): 트랙 높이가 노브를 꼭 맞게
+         감싼다(패딩 2px) — 32px 트랙에 24px 노브는 위아래가 뚱뚱하게 남았다.
+         시각은 26px로 줄이되 히트영역은 after 확장으로 44px 유지. */
+      className={`tr-press relative h-[26px] min-h-0 w-11 min-w-0 shrink-0 rounded-full transition-colors duration-[var(--tr-dur-base)] after:absolute after:-inset-x-1 after:-inset-y-2.5 after:content-[''] ${
         checked ? 'bg-[var(--tr-accent)]' : 'bg-[var(--tr-bubble-system)]'
       }`}
     >
       <span
-        className={`tr-knob absolute top-1 h-6 w-6 rounded-full shadow ${
+        /* 병합: T-D6 상태분리 색(고대비 스킨에서 흰 노브 소실 방지) ×
+           컴팩트 지오메트리(22px 노브, 2px 패딩). */
+        className={`tr-knob absolute top-[2px] h-[22px] w-[22px] rounded-full shadow ${
           checked
-            ? 'left-[24px] bg-[var(--tr-bubble-me-ink)]'
-            : 'left-1 border border-[var(--tr-hairline)] bg-[var(--tr-surface)]'
+            ? 'left-5 bg-[var(--tr-bubble-me-ink)]'
+            : 'left-[2px] border border-[var(--tr-hairline)] bg-[var(--tr-surface)]'
         }`}
       />
     </button>
