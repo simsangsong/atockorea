@@ -11,6 +11,7 @@
 import { useMemo } from 'react';
 import type { OpsRoomStream } from '@/hooks/useOpsChannels';
 import { roomHue } from '@/components/tour-mode/guide/GuideConsole';
+import ChatListRow from '@/components/tour-mode/chatlist/ChatListRow';
 import type { AttentionItem, AttentionReason } from '@/lib/tour-ops/attention';
 import {
   isRecent,
@@ -188,61 +189,51 @@ export default function OpsDashboardTab({
               const hue = roomHue(room.booking_id);
 
               return (
-                <button
+                <ChatListRow
                   key={room.id}
-                  type="button"
-                  data-testid="ops-room-card"
+                  testId="ops-room-card"
+                  linkTestId="ops-room-open"
                   onClick={() => onOpenRoom(room.id)}
-                  className={`block w-full rounded-2xl border text-left transition-colors ${
-                    sos
-                      ? 'border-[var(--tr-danger-soft)] bg-[var(--tr-danger-soft)] ring-1 ring-[var(--tr-danger-soft)]   '
-                      : 'border-[var(--tr-hairline)] bg-[var(--tr-surface)] active:bg-[var(--tr-surface-2)]'
-                  }`}
-                  style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto 84px' }}
-                >
-                  <div className="flex items-center gap-3 px-4 py-3">
-                    <span
-                      className="flex size-9 shrink-0 items-center justify-center rounded-full tr-card-text font-bold text-white"
-                      style={{ backgroundColor: `hsl(${hue} 55% 45%)` }}
-                    >
-                      {sos ? '🆘' : (room.booking?.contact_name ?? 'G').trim().charAt(0).toUpperCase()}
-                    </span>
-                    <div className="min-w-0 flex-1">
-                      <p className="flex items-center gap-1.5 tr-body font-semibold text-[var(--tr-ink)]">
-                        <span className="truncate">{room.booking?.contact_name ?? '게스트'}</span>
-                        <span className="shrink-0 font-normal text-[var(--tr-ink-3)]">
-                          {room.booking?.number_of_guests ?? 1}명 · {room.booking?.preferred_language ?? 'en'}
-                        </span>
-                        {isLive && (
-                          <span className="ml-0.5 inline-flex shrink-0 items-center gap-1 rounded-full bg-[var(--tr-safe-soft)] px-1.5 py-0.5 tr-meta font-bold text-[var(--tr-safe)] ">
-                            <span className="size-1.5 rounded-full bg-[var(--tr-safe)]" />
-                            LIVE
-                          </span>
-                        )}
-                        {room.onboard_ack && <span className="shrink-0 tr-meta">🚌</span>}
-                      </p>
-                      <p className="mt-0.5 truncate tr-label text-[var(--tr-ink-2)]">
-                        <span className="text-[var(--tr-ink-2)]">{senderLabel(lastSource?.sender_role)}</span>{' '}
-                        {lastText}
-                      </p>
-                    </div>
-                    <div className="flex shrink-0 flex-col items-end gap-1">
-                      <span className="tr-meta text-[var(--tr-ink-3)]">{kstTimeLabel(lastAt)}</span>
-                      {unreadCount > 0 && (
-                        <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-[var(--tr-accent)] px-1.5 tr-meta font-bold text-white">
-                          {unreadCount > 99 ? '99+' : unreadCount}
+                  alarm={Boolean(sos)}
+                  hue={hue}
+                  avatar={sos ? '🆘' : (room.booking?.contact_name ?? 'G').trim().charAt(0).toUpperCase()}
+                  title={room.booking?.contact_name ?? '게스트'}
+                  meta={`${room.booking?.number_of_guests ?? 1}명 · ${room.booking?.preferred_language ?? 'en'}`}
+                  badges={
+                    <>
+                      {isLive && (
+                        <span className="tr-meta inline-flex shrink-0 items-center gap-1 rounded-full bg-[var(--tr-safe-soft)] px-1.5 py-0.5 font-bold text-[var(--tr-safe)]">
+                          <span className="size-1.5 rounded-full bg-[var(--tr-safe)]" />
+                          LIVE
                         </span>
                       )}
-                    </div>
-                  </div>
-                  {sos && (
-                    <p className="border-t border-[var(--tr-danger-soft)] px-4 py-2 tr-label text-[var(--tr-danger)] ">
-                      {sos.metadata.sender_name && <b>{sos.metadata.sender_name}: </b>}
-                      {sos.metadata.note ?? 'SOS 발생'}
-                      {typeof sos.metadata.latitude === 'number' && ' · 📍 위치 포함'}
-                    </p>
-                  )}
-                </button>
+                      {room.onboard_ack && <span className="tr-meta shrink-0">🚌</span>}
+                    </>
+                  }
+                  preview={
+                    <>
+                      <span className="text-[var(--tr-ink-2)]">{senderLabel(lastSource?.sender_role)}</span>{' '}
+                      {lastText}
+                    </>
+                  }
+                  time={kstTimeLabel(lastAt)}
+                  indicator={
+                    unreadCount > 0 ? (
+                      <span className="tr-meta flex h-5 min-w-5 items-center justify-center rounded-full bg-[var(--tr-accent)] px-1.5 font-bold text-[var(--tr-on-accent)]">
+                        {unreadCount > 99 ? '99+' : unreadCount}
+                      </span>
+                    ) : null
+                  }
+                  footer={
+                    sos ? (
+                      <p className="tr-label border-t border-[var(--tr-danger)] px-4 py-2 text-[var(--tr-danger)]">
+                        {sos.metadata.sender_name && <b>{sos.metadata.sender_name}: </b>}
+                        {sos.metadata.note ?? 'SOS 발생'}
+                        {typeof sos.metadata.latitude === 'number' && ' · 📍 위치 포함'}
+                      </p>
+                    ) : null
+                  }
+                />
               );
             })}
           </div>

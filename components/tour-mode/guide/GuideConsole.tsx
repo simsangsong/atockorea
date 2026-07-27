@@ -51,6 +51,7 @@ import { useTourManifest } from '@/hooks/useTourManifest';
 import { useResolvedTourTheme } from '@/hooks/useResolvedTourTheme';
 import Cockpit, { type CockpitLifecycle, type CockpitRoom } from '@/components/tour-mode/cockpit/Cockpit';
 import { roomHue } from '@/lib/tour-room/hue';
+import ChatListRow from '@/components/tour-mode/chatlist/ChatListRow';
 import { chatListClock, kstToday } from '@/lib/tour-room/time';
 import { OPERATOR_PRESETS } from '@/lib/tour-room/operatorPresets';
 import { primeAudio } from '@/lib/tour-room/tts';
@@ -635,78 +636,60 @@ export default function GuideConsole() {
               const badge = planBadge(room.day_plan?.status);
               const awaitingReply = room.last_message?.sender_role === 'customer';
               return (
-                <div key={room.booking_id} className="flex items-center" data-testid="room-card">
-                  <a
-                    href={roomHref(room.booking_id)}
-                    className="flex min-h-[64px] min-w-0 flex-1 items-center gap-3 py-2 pl-3.5 active:bg-[var(--tr-surface-2)]"
-                    data-testid="room-chat"
-                  >
-                    <span
-                      className="tr-body flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl font-bold text-white"
-                      style={{ backgroundColor: `hsl(${roomHue(room.booking_id)} 55% 52%)` }}
-                      aria-hidden
-                    >
-                      {(room.contact_name ?? 'G').trim()[0]?.toUpperCase()}
-                    </span>
-                    <span className="min-w-0 flex-1">
-                      <span className="flex items-center gap-1.5">
-                        <span className="tr-card-text truncate font-bold text-[var(--tr-ink)]">
-                          {room.contact_name ?? '게스트'}
+                <ChatListRow
+                  key={room.booking_id}
+                  testId="room-card"
+                  linkTestId="room-chat"
+                  href={roomHref(room.booking_id)}
+                  hue={roomHue(room.booking_id)}
+                  avatar={(room.contact_name ?? 'G').trim()[0]?.toUpperCase()}
+                  title={room.contact_name ?? '게스트'}
+                  meta={`${room.number_of_guests ?? 1}명`}
+                  badges={
+                    <>
+                      {room.onboard_ack && (
+                        <span className="inline-flex shrink-0 items-center text-[var(--tr-safe)]" title="탑승 확인">
+                          <IconDone size={TR_ICON.meta} aria-hidden />
                         </span>
-                        <span className="tr-meta tr-num shrink-0 text-[var(--tr-ink-3)]">
-                          {room.number_of_guests ?? 1}명
-                        </span>
-                        {room.onboard_ack && (
-                          <span className="inline-flex shrink-0 items-center text-[var(--tr-safe)]" title="탑승 확인">
-                            <IconDone size={TR_ICON.meta} aria-hidden />
-                          </span>
-                        )}
-                        {badge && (
-                          <span
-                            className={`tr-meta text-cjk-safe shrink-0 rounded-full px-1.5 py-0.5 font-bold ${
-                              badge.tone === 'review'
-                                ? 'bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]'
-                                : 'bg-[var(--tr-accent-soft)] text-[var(--tr-ink-2)]'
-                            }`}
-                          >
-                            {badge.label}
-                          </span>
-                        )}
-                      </span>
-                      <span
-                        className={`tr-meta mt-0.5 line-clamp-1 ${
-                          awaitingReply
-                            ? 'font-semibold text-[var(--tr-ink)]'
-                            : 'text-[var(--tr-ink-3)]'
-                        }`}
-                      >
-                        {koPreview(room.last_message)}
-                      </span>
-                    </span>
-                    <span className="ml-1 flex shrink-0 flex-col items-end gap-1.5 self-start pt-1.5">
-                      <span className="tr-meta tr-num text-[var(--tr-ink-3)]">
-                        {chatListClock(room.last_message?.created_at)}
-                      </span>
-                      {awaitingReply && (
-                        <span
-                          className="h-2 w-2 rounded-full bg-[var(--tr-danger)]"
-                          data-testid="room-unread-dot"
-                          title="답장 필요"
-                        />
                       )}
-                    </span>
-                  </a>
-                  <button
-                    type="button"
-                    onClick={() => setActionBookingId(room.booking_id)}
-                    aria-label={`${room.contact_name ?? '게스트'} 더보기`}
-                    aria-haspopup="dialog"
-                    className="mr-1 flex h-11 w-10 shrink-0 items-center justify-center rounded-full text-[var(--tr-ink-3)] active:bg-[var(--tr-surface-2)]"
-                    data-testid="room-more"
-                  >
-                    <IconMore size={TR_ICON.action} aria-hidden />
-                  </button>
-                </div>
+                      {badge && (
+                        <span
+                          className={`tr-meta text-cjk-safe shrink-0 rounded-full px-1.5 py-0.5 font-bold ${
+                            badge.tone === 'review'
+                              ? 'bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]'
+                              : 'bg-[var(--tr-accent-soft)] text-[var(--tr-ink-2)]'
+                          }`}
+                        >
+                          {badge.label}
+                        </span>
+                      )}
+                    </>
+                  }
+                  preview={koPreview(room.last_message)}
+                  previewEmphasised={awaitingReply}
+                  time={chatListClock(room.last_message?.created_at)}
+                  indicator={
+                    awaitingReply ? (
+                      <span
+                        className="h-2 w-2 rounded-full bg-[var(--tr-danger)]"
+                        data-testid="room-unread-dot"
+                        title="답장 필요"
+                      />
+                    ) : null
+                  }
+                  action={
+                    <button
+                      type="button"
+                      onClick={() => setActionBookingId(room.booking_id)}
+                      aria-label={`${room.contact_name ?? '게스트'} 더보기`}
+                      aria-haspopup="dialog"
+                      className="mr-1 flex h-11 w-10 shrink-0 items-center justify-center rounded-full text-[var(--tr-ink-3)] active:bg-[var(--tr-surface-2)]"
+                      data-testid="room-more"
+                    >
+                      <IconMore size={TR_ICON.action} aria-hidden />
+                    </button>
+                  }
+                />
               );
             })}
           </div>

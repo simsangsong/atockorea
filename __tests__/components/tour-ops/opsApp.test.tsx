@@ -150,7 +150,9 @@ describe('OpsApp (W3)', () => {
   it('opens the room drawer with the REST backlog and sends an admin message', async () => {
     await renderOnDashboard();
 
-    fireEvent.click(screen.getAllByTestId('ops-room-card')[1]); // Alex's room
+    // O4 — the card wrapper still carries the SOS footer, so the tap target is
+    // its own element now (shared ChatListRow).
+    fireEvent.click(screen.getAllByTestId('ops-room-open')[1]); // Alex's room
     await waitFor(() => expect(screen.getByPlaceholderText(/관제 메시지/)).toBeInTheDocument());
     const drawer = screen.getByRole('dialog', { name: '룸 대화' });
     await waitFor(() => expect(within(drawer).getByText('hello')).toBeInTheDocument());
