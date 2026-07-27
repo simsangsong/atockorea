@@ -141,6 +141,7 @@ URL을 직접 쳐야만 열린다. 어드민 페이지 49개 중 3개.
 | `targetMany` | `lib/tour-room/messageTarget.ts` | 다중 대상 메시지 |
 | `buildWhatsAppMessage` | `lib/ops/whatsapp/wa-deep-link.ts` | |
 | `servingHours` · `exclusionReasons` | `lib/ops/dining/*` | |
+| ~~`buildRuleFromCluster`~~ | `lib/ops/parse/mining.ts` | **DE5로 승격** — 단순 미사용이 아니라 학습 루프가 끊긴 것이었다. 2차 감사(D12)가 라이브 수치로 확인. |
 
 ### 기능 누락이 아니라 중복인 것 (정리 대상)
 
