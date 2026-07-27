@@ -21,6 +21,7 @@ import {
 import AppManual from '@/components/tour-mode/AppManual';
 import InstallCard from '@/components/tour-mode/InstallCard';
 import SkinPicker from '@/components/tour-mode/SkinPicker';
+import LanguageSelect from '@/components/tour-mode/LanguageSelect';
 import CompanionInviteCard from '@/components/tour-mode/CompanionInviteCard';
 import type { ManualKind } from '@/lib/tour-room/appManual';
 import {
@@ -63,6 +64,8 @@ interface SettingsCopy {
   textSize: string;
   textNormal: string;
   textLarge: string;
+  /** R3v2 — the language dropdown sheet's close button. */
+  close: string;
 }
 
 const COPY: Record<RoomLocale, SettingsCopy> = {
@@ -85,6 +88,7 @@ const COPY: Record<RoomLocale, SettingsCopy> = {
     textSize: 'Text size',
     textNormal: 'Normal',
     textLarge: 'Large',
+    close: 'Close',
   },
   ko: {
     language: '언어',
@@ -105,6 +109,7 @@ const COPY: Record<RoomLocale, SettingsCopy> = {
     textSize: '글자 크기',
     textNormal: '보통',
     textLarge: '크게',
+    close: '닫기',
   },
   ja: {
     language: '言語',
@@ -125,6 +130,7 @@ const COPY: Record<RoomLocale, SettingsCopy> = {
     textSize: '文字サイズ',
     textNormal: '標準',
     textLarge: '大きい',
+    close: '閉じる',
   },
   es: {
     language: 'Idioma',
@@ -145,6 +151,7 @@ const COPY: Record<RoomLocale, SettingsCopy> = {
     textSize: 'Tamaño del texto',
     textNormal: 'Normal',
     textLarge: 'Grande',
+    close: 'Cerrar',
   },
   zh: {
     language: '语言',
@@ -165,6 +172,7 @@ const COPY: Record<RoomLocale, SettingsCopy> = {
     textSize: '字体大小',
     textNormal: '标准',
     textLarge: '大',
+    close: '关闭',
   },
   fr: {
     language: 'Langue',
@@ -185,6 +193,7 @@ const COPY: Record<RoomLocale, SettingsCopy> = {
     textSize: 'Taille du texte',
     textNormal: 'Normale',
     textLarge: 'Grande',
+    close: 'Fermer',
   },
   de: {
     language: 'Sprache',
@@ -205,6 +214,7 @@ const COPY: Record<RoomLocale, SettingsCopy> = {
     textSize: 'Textgröße',
     textNormal: 'Normal',
     textLarge: 'Groß',
+    close: 'Schließen',
   },
   ru: {
     language: 'Язык',
@@ -225,6 +235,7 @@ const COPY: Record<RoomLocale, SettingsCopy> = {
     textSize: 'Размер текста',
     textNormal: 'Обычный',
     textLarge: 'Крупный',
+    close: 'Закрыть',
   },
   it: {
     language: 'Lingua',
@@ -245,6 +256,7 @@ const COPY: Record<RoomLocale, SettingsCopy> = {
     textSize: 'Dimensione del testo',
     textNormal: 'Normale',
     textLarge: 'Grande',
+    close: 'Chiudi',
   },
 };
 
@@ -407,30 +419,15 @@ export default function SettingsTab({
         <div className="mt-3">
           <p className="tr-label font-semibold text-[var(--tr-ink)]">{copy.appLanguage}</p>
           <p className="tr-meta mt-0.5 leading-snug text-[var(--tr-ink-3)]">{copy.appLanguageHint}</p>
-          <div className="mt-2 grid grid-cols-3 gap-1.5">
-            {ROOM_LOCALES.map((code) => (
-              <button
-                key={code}
-                type="button"
-                onClick={() => onLocaleChange(code)}
-                data-testid={`app-locale-${code}`}
-                aria-pressed={locale === code}
-                /* R3 — flag + native name, one chip grammar shared with the
-                   chat-language control below. */
-                className={`tr-press flex min-h-[52px] items-center justify-center gap-1.5 rounded-xl px-2 transition-colors duration-[var(--tr-dur-fast)] ${
-                  locale === code
-                    ? 'bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)] shadow-[var(--tr-tile-shadow)]'
-                    : 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]'
-                }`}
-              >
-                <span className="tr-card-text leading-none" aria-hidden>
-                  {localeFlag(code)}
-                </span>
-                <span className={`tr-card-text text-cjk-safe ${locale === code ? 'font-bold' : ''}`}>
-                  {LOCALE_NAME[code]}
-                </span>
-              </button>
-            ))}
+          <div className="mt-2">
+            <LanguageSelect
+              testId="app-language-select"
+              label={copy.appLanguage}
+              closeLabel={copy.close}
+              value={locale}
+              options={ROOM_LOCALES.map((code) => ({ value: code, label: LOCALE_NAME[code] }))}
+              onChange={(next) => onLocaleChange(next as RoomLocale)}
+            />
           </div>
         </div>
 
@@ -438,41 +435,15 @@ export default function SettingsTab({
           <div className="mt-4 border-t border-[var(--tr-hairline)] pt-3" data-testid="chat-language-section">
             <p className="tr-label font-semibold text-[var(--tr-ink)]">{copy.chatLanguage}</p>
             <p className="tr-meta mt-0.5 leading-snug text-[var(--tr-ink-3)]">{copy.chatLanguageHint}</p>
-            {/* R3 — the same flag-chip grammar as the app language above. A
-                native <select> looked like a different app; 32 languages stay
-                reachable as a horizontally scrolling chip rail, with the
-                current pick pinned first via Auto. */}
-            <div
-              className="mt-2 flex flex-wrap gap-1.5"
-              role="radiogroup"
-              aria-label={copy.chatLanguage}
-              data-testid="chat-language-chips"
-            >
-              {[{ code: '', name: copy.chatAuto }, ...CHAT_LANGUAGES].map((lang) => {
-                const active = (chatLocale ?? '') === lang.code;
-                return (
-                  <button
-                    key={lang.code || 'auto'}
-                    type="button"
-                    role="radio"
-                    aria-checked={active}
-                    onClick={() => onChatLocaleChange(lang.code)}
-                    data-testid={`chat-locale-${lang.code || 'auto'}`}
-                    className={`tr-press flex min-h-[40px] items-center gap-1.5 rounded-full px-3 transition-colors duration-[var(--tr-dur-fast)] ${
-                      active
-                        ? 'bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]'
-                        : 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]'
-                    }`}
-                  >
-                    <span className="tr-card-text leading-none" aria-hidden>
-                      {lang.code ? localeFlag(lang.code) : '🌐'}
-                    </span>
-                    <span className={`tr-label text-cjk-safe ${active ? 'font-bold' : 'font-medium'}`}>
-                      {lang.name}
-                    </span>
-                  </button>
-                );
-              })}
+            <div className="mt-2">
+              <LanguageSelect
+                testId="chat-language-select"
+                label={copy.chatLanguage}
+                closeLabel={copy.close}
+                value={chatLocale ?? ''}
+                options={[{ value: '', label: copy.chatAuto }, ...CHAT_LANGUAGES.map((l) => ({ value: l.code, label: l.name }))]}
+                onChange={onChatLocaleChange}
+              />
             </div>
           </div>
         )}

@@ -72,13 +72,15 @@ describe('SettingsTab', () => {
   it('reports a language change through the callback (server re-join is the caller`s job)', () => {
     const onLocaleChange = jest.fn();
     render(<SettingsTab locale="en" onLocaleChange={onLocaleChange} />);
-    fireEvent.click(screen.getByText('日本語'));
+    // R3v2 — the app language is a dropdown: open it, then pick.
+    fireEvent.click(screen.getByTestId('app-language-select'));
+    fireEvent.click(screen.getByTestId('app-language-select-option-ja'));
     expect(onLocaleChange).toHaveBeenCalledWith('ja');
   });
 
   it('hides the chat-language picker unless onChatLocaleChange is provided', () => {
     render(<SettingsTab locale="en" onLocaleChange={jest.fn()} />);
-    expect(screen.queryByTestId('chat-language-chips')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('chat-language-select')).not.toBeInTheDocument();
   });
 
   it('reports a chat-language pick (any LLM language) through the callback', () => {
@@ -91,12 +93,14 @@ describe('SettingsTab', () => {
         onChatLocaleChange={onChatLocaleChange}
       />,
     );
-    // R3 — the native <select> became a flag-chip radiogroup (same grammar as
-    // the app-language chips). Thai is outside the 9 room UI locales — it
-    // proves the chat plane is still unbounded by the UI chrome.
-    fireEvent.click(screen.getByTestId('chat-locale-th'));
+    // R3v2 — a premium dropdown (sheet) replaces both the native <select> and
+    // the chip wall. Thai is outside the 9 room UI locales — it proves the
+    // chat plane is still unbounded by the UI chrome.
+    fireEvent.click(screen.getByTestId('chat-language-select'));
+    fireEvent.click(screen.getByTestId('chat-language-select-option-th'));
     expect(onChatLocaleChange).toHaveBeenCalledWith('th');
-    fireEvent.click(screen.getByTestId('chat-locale-auto'));
+    fireEvent.click(screen.getByTestId('chat-language-select'));
+    fireEvent.click(screen.getByTestId('chat-language-select-option-auto'));
     expect(onChatLocaleChange).toHaveBeenCalledWith('');
   });
 });
