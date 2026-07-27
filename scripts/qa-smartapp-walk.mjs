@@ -183,31 +183,42 @@ try {
   await pickGuestSkin('classic');
   await shot('07-guest-settings-skin-picker');
 
-  // ── L-D8 — app-language spot checks: French + German (register, tab-label
+  // ── L-D8 — app-language spot checks: French + German (register, and tab-label
   // width: "Einstellungen"/"Impostazioni" are the longest labels). ──
-  await page.waitForSelector('[data-testid="app-locale-fr"]', { timeout: 8000 });
-  await page.click('[data-testid="app-locale-fr"]');
-  // A locale change re-joins the room → the shell REMOUNTS onto Home.
-  await page.waitForTimeout(900);
+  //
+  // R3v2 replaced the flag-chip grid with a dropdown (`LanguageSelect`), so the
+  // per-locale testids this block used to click no longer exist; it also still
+  // asked for `zh-TW`, which has not been a room locale since the 5→9 change.
+  const pickAppLocale = async (code) => {
+    await page.waitForSelector('[data-testid="app-language-select"]', { timeout: 8000 });
+    await page.click('[data-testid="app-language-select"]');
+    await page.waitForSelector(`[data-testid="app-language-select-option-${code}"]`, { timeout: 8000 });
+    await page.click(`[data-testid="app-language-select-option-${code}"]`);
+    // A locale change re-joins the room → the shell REMOUNTS onto Home.
+    await page.waitForTimeout(1000);
+  };
+  const backToSettings = async () =>
+    page.locator('[data-testid="room-tabbar"] [role="tab"]').last().click();
+
+  await pickAppLocale('fr');
   await shot('08h-guest-home-fr');
-  await page.locator('[data-testid="room-tabbar"] [role="tab"]').last().click();
-  await page.waitForSelector('[data-testid="app-locale-de"]', { timeout: 8000 });
+  await backToSettings();
+  await page.waitForTimeout(600);
   await shot('08-guest-settings-fr');
-  await page.click('[data-testid="app-locale-de"]');
-  await page.waitForTimeout(900);
+
+  await pickAppLocale('de');
   await shot('09h-guest-home-de');
-  await page.locator('[data-testid="room-tabbar"] [role="tab"]').last().click();
-  await page.waitForSelector('[data-testid="app-locale-zh-TW"]', { timeout: 8000 });
+  await backToSettings();
+  await page.waitForTimeout(600);
   await shot('09-guest-settings-de');
-  // Traditional Chinese: the two Chinese buttons must read 简体中文 / 繁體中文.
-  await page.click('[data-testid="app-locale-zh-TW"]');
-  await page.waitForTimeout(900);
-  await shot('09t-guest-home-zh-TW');
-  await page.locator('[data-testid="room-tabbar"] [role="tab"]').last().click();
-  await page.waitForSelector('[data-testid="app-locale-en"]', { timeout: 8000 });
-  await shot('09s-guest-settings-zh-TW');
-  await page.click('[data-testid="app-locale-en"]');
-  await page.waitForTimeout(700);
+
+  // Simplified Chinese closes the sweep, then back to English for the rest.
+  await pickAppLocale('zh');
+  await shot('09t-guest-home-zh');
+  await backToSettings();
+  await page.waitForTimeout(600);
+  await shot('09s-guest-settings-zh');
+  await pickAppLocale('en');
 
   // ── staff shell ──
   await page.goto(BASE + fx.guideUrl, { waitUntil: 'domcontentloaded', timeout: 60000 });

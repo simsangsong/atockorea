@@ -277,7 +277,7 @@ export default function OpsGuestMessagingView({
         style={{ paddingTop: 'calc(env(safe-area-inset-top, 0px) + 8px)' }}
       >
         <div className="flex min-h-[40px] items-center justify-between gap-2">
-          <h2 className="text-cjk-safe text-[15px] font-bold">
+          <h2 className="text-cjk-safe tr-body font-bold">
             {openTour ? openTour.tourTitle ?? '투어' : '손님 안내 보내기'}
           </h2>
           <div className="flex items-center gap-1">
@@ -289,7 +289,7 @@ export default function OpsGuestMessagingView({
                   setPreview(null);
                   setResult(null);
                 }}
-                className="text-cjk-safe h-10 rounded-lg px-2 text-[12px] font-semibold text-[var(--tr-ink-2)]"
+                className="text-cjk-safe h-10 rounded-lg px-2 tr-label font-semibold text-[var(--tr-ink-2)]"
               >
                 목록으로
               </button>
@@ -323,7 +323,7 @@ export default function OpsGuestMessagingView({
             >
               <ChevronLeft className="size-4" />
             </button>
-            <span className="min-w-[92px] text-center text-[14px] font-bold tabular-nums">{date}</span>
+            <span className="min-w-[92px] text-center tr-body font-bold tabular-nums">{date}</span>
             <button
               type="button"
               onClick={() => setDate(addDays(date, 1))}
@@ -332,7 +332,7 @@ export default function OpsGuestMessagingView({
             >
               <ChevronRight className="size-4" />
             </button>
-            <p className="text-cjk-body ml-auto text-[11px] text-[var(--tr-ink-3)]">투어 {groups.length}개</p>
+            <p className="text-cjk-body ml-auto tr-meta text-[var(--tr-ink-3)]">투어 {groups.length}개</p>
           </div>
         )}
       </header>
@@ -341,9 +341,9 @@ export default function OpsGuestMessagingView({
         {/* ── 1단계: 그날의 투어 고르기 ─────────────────────────────── */}
         {!openTour ? (
           loading ? (
-            <p className="py-12 text-center text-[13px] text-[var(--tr-ink-3)]">불러오는 중…</p>
+            <p className="py-12 text-center tr-card-text text-[var(--tr-ink-3)]">불러오는 중…</p>
           ) : groups.length === 0 ? (
-            <p className="text-cjk-body py-12 text-center text-[13px] text-[var(--tr-ink-3)]">
+            <p className="text-cjk-body py-12 text-center tr-card-text text-[var(--tr-ink-3)]">
               이 날짜에 투어룸이 없습니다.
             </p>
           ) : (
@@ -361,8 +361,8 @@ export default function OpsGuestMessagingView({
                   >
                     <Users className="size-4 shrink-0 text-[var(--tr-ink-3)]" />
                     <div className="min-w-0 flex-1">
-                      <p className="text-cjk-body truncate text-[14px] font-bold">{g.tourTitle ?? '투어'}</p>
-                      <p className="text-[11px] text-[var(--tr-ink-3)] tabular-nums">
+                      <p className="text-cjk-body truncate tr-body font-bold">{g.tourTitle ?? '투어'}</p>
+                      <p className="tr-meta text-[var(--tr-ink-3)] tabular-nums">
                         {g.city ? `${g.city} · ` : ''}방 {g.roomCount} · 손님 {g.guestTotal}명
                       </p>
                     </div>
@@ -387,7 +387,7 @@ export default function OpsGuestMessagingView({
                   type="button"
                   onClick={() => setMode(t.key)}
                   aria-pressed={mode === t.key}
-                  className={`flex flex-1 items-center justify-center gap-1.5 rounded-md py-2 text-[12px] font-semibold transition-colors ${
+                  className={`flex flex-1 items-center justify-center gap-1.5 rounded-md py-2 tr-label font-semibold transition-colors ${
                     mode === t.key ? 'bg-[var(--tr-surface)] text-[var(--tr-ink)] shadow-sm' : 'text-[var(--tr-ink-3)]'
                   }`}
                 >
@@ -407,7 +407,7 @@ export default function OpsGuestMessagingView({
             ) : (
               <div className="space-y-3">
                 <div className="flex flex-wrap items-center gap-2">
-                  <label className="flex items-center gap-1.5 text-[11px] font-semibold text-[var(--tr-ink-2)]">
+                  <label className="flex items-center gap-1.5 tr-meta font-semibold text-[var(--tr-ink-2)]">
                     <span className="text-cjk-safe">문구</span>
                     <select
                       value={preset}
@@ -416,7 +416,7 @@ export default function OpsGuestMessagingView({
                         setPreset(next);
                         if (openTour) void loadPreview(openTour, next);
                       }}
-                      className="h-9 rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 text-[12px]"
+                      className="h-9 rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 tr-label"
                     >
                       {WA_PRESETS.map((p) => (
                         <option key={p.key} value={p.key}>
@@ -426,7 +426,7 @@ export default function OpsGuestMessagingView({
                     </select>
                   </label>
                   {preview?.templateSource && (
-                    <span className="text-cjk-safe rounded-full bg-[var(--tr-surface-2)] px-2 py-1 text-[10px] font-semibold text-[var(--tr-ink-2)]">
+                    <span className="text-cjk-safe rounded-full bg-[var(--tr-surface-2)] px-2 py-1 tr-meta font-semibold text-[var(--tr-ink-2)]">
                       {TEMPLATE_SOURCE_LABEL[preview.templateSource] ?? preview.templateSource}
                     </span>
                   )}
@@ -437,7 +437,7 @@ export default function OpsGuestMessagingView({
                     실패를 단언하면 운영자는 멀쩡한 예보를 포기하고 손으로 적는다. */}
                 <div className="flex items-start gap-2 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2">
                   <CloudSun className="mt-0.5 size-4 shrink-0 text-[var(--tr-ink-3)]" />
-                  <p className="text-cjk-body text-[12px] leading-relaxed text-[var(--tr-ink-2)]">
+                  <p className="text-cjk-body tr-label leading-relaxed text-[var(--tr-ink-2)]">
                     {previewLoading || !preview
                       ? '예보 확인 중…'
                       : preview.forecast
@@ -447,42 +447,42 @@ export default function OpsGuestMessagingView({
                 </div>
 
                 {previewLoading ? (
-                  <p className="py-10 text-center text-[13px] text-[var(--tr-ink-3)]">미리보기 만드는 중…</p>
+                  <p className="py-10 text-center tr-card-text text-[var(--tr-ink-3)]">미리보기 만드는 중…</p>
                 ) : (
                   <>
                     <label className="block">
-                      <span className="text-cjk-safe mb-1 block text-[11px] font-semibold text-[var(--tr-ink-2)]">
+                      <span className="text-cjk-safe mb-1 block tr-meta font-semibold text-[var(--tr-ink-2)]">
                         제목
                       </span>
                       <input
                         value={subject}
                         onChange={(e) => setSubject(e.target.value)}
-                        className="h-11 w-full rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 text-[14px]"
+                        className="h-11 w-full rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 tr-body"
                         data-testid="bulk-subject"
                       />
                     </label>
                     <label className="block">
-                      <span className="text-cjk-safe mb-1 block text-[11px] font-semibold text-[var(--tr-ink-2)]">
+                      <span className="text-cjk-safe mb-1 block tr-meta font-semibold text-[var(--tr-ink-2)]">
                         내용 — 여기서 고친 그대로 나갑니다
                       </span>
                       <textarea
                         value={body}
                         onChange={(e) => setBody(e.target.value)}
                         rows={10}
-                        className="w-full rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2 text-[13px] leading-relaxed"
+                        className="w-full rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2 tr-card-text leading-relaxed"
                         data-testid="bulk-body"
                       />
                     </label>
 
                     {notEmailable.length > 0 && (
                       <div className="rounded-xl border border-amber-300 bg-amber-50 px-3 py-2 dark:bg-amber-500/10">
-                        <p className="flex items-start gap-1.5 text-[12px] font-bold text-amber-900 dark:text-amber-200">
+                        <p className="flex items-start gap-1.5 tr-label font-bold text-amber-900 dark:text-amber-200">
                           <AlertTriangle className="mt-0.5 size-3.5 shrink-0" />
                           <span className="text-cjk-body">
                             이메일 주소가 없어 {notEmailable.length}명은 제외됩니다 — 왓츠앱 탭에서 보내주세요.
                           </span>
                         </p>
-                        <p className="text-cjk-body mt-1 pl-5 text-[11px] text-amber-800 dark:text-amber-300">
+                        <p className="text-cjk-body mt-1 pl-5 tr-meta text-amber-800 dark:text-amber-300">
                           {notEmailable.map((r) => r.guestName).join(', ')}
                         </p>
                       </div>
@@ -494,7 +494,7 @@ export default function OpsGuestMessagingView({
                         ⚠ 저장되는 것은 **첫 수신자의 로케일** 한 벌이다 — 여러 언어를
                         한 번에 덮어쓰면 다른 언어 손님에게 엉뚱한 말이 나간다. */}
                     <div className="flex flex-wrap items-center gap-2 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2">
-                      <p className="text-cjk-body min-w-0 flex-1 text-[11px] leading-relaxed text-[var(--tr-ink-3)]">
+                      <p className="text-cjk-body min-w-0 flex-1 tr-meta leading-relaxed text-[var(--tr-ink-3)]">
                         이 문구를 <b>{editLocale}</b> 손님용 <b>이 투어 전용</b>으로 저장할 수 있어요.
                         {preview?.templateSource === 'tour' ? ' (현재 전용 문구 사용 중)' : ''}
                       </p>
@@ -502,7 +502,7 @@ export default function OpsGuestMessagingView({
                         type="button"
                         onClick={() => void saveTourTemplate()}
                         disabled={savingTemplate || !body.trim()}
-                        className="text-cjk-safe h-9 shrink-0 rounded-lg border border-[var(--tr-hairline)] px-2.5 text-[11px] font-semibold text-[var(--tr-ink-2)] disabled:opacity-50"
+                        className="text-cjk-safe h-9 shrink-0 rounded-lg border border-[var(--tr-hairline)] px-2.5 tr-meta font-semibold text-[var(--tr-ink-2)] disabled:opacity-50"
                         data-testid="save-tour-template"
                       >
                         {savingTemplate ? '저장 중…' : '이 투어 문구로 저장'}
@@ -512,7 +512,7 @@ export default function OpsGuestMessagingView({
                           type="button"
                           onClick={() => void revertTourTemplate()}
                           disabled={savingTemplate}
-                          className="text-cjk-safe h-9 shrink-0 rounded-lg border border-[var(--tr-hairline)] px-2.5 text-[11px] font-semibold text-[var(--tr-ink-3)] disabled:opacity-50"
+                          className="text-cjk-safe h-9 shrink-0 rounded-lg border border-[var(--tr-hairline)] px-2.5 tr-meta font-semibold text-[var(--tr-ink-3)] disabled:opacity-50"
                         >
                           기본으로 되돌리기
                         </button>
@@ -523,7 +523,7 @@ export default function OpsGuestMessagingView({
                       type="button"
                       onClick={() => void send()}
                       disabled={sending || emailable === 0 || !subject.trim() || !body.trim()}
-                      className="flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-[var(--tr-ink)] text-[14px] font-bold text-[var(--tr-canvas)] disabled:opacity-50"
+                      className="flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-[var(--tr-ink)] tr-body font-bold text-[var(--tr-canvas)] disabled:opacity-50"
                       data-testid="bulk-send"
                     >
                       {sending ? <Loader2 className="size-4 animate-spin" /> : <Send className="size-4" />}
@@ -532,7 +532,7 @@ export default function OpsGuestMessagingView({
 
                     {result && (
                       <div className="rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2.5">
-                        <p className="flex items-center gap-1.5 text-[13px] font-bold">
+                        <p className="flex items-center gap-1.5 tr-card-text font-bold">
                           <CheckCircle2 className="size-4 text-emerald-600" />
                           <span className="text-cjk-body">
                             발송 {result.sent} · 실패 {result.failed} · 제외 {result.skipped}
@@ -541,7 +541,7 @@ export default function OpsGuestMessagingView({
                         {result.failures.length > 0 && (
                           <ul className="mt-1.5 space-y-0.5 pl-5">
                             {result.failures.map((f) => (
-                              <li key={f.guestName} className="text-cjk-body list-disc text-[11px] text-[var(--tr-danger)]">
+                              <li key={f.guestName} className="text-cjk-body list-disc tr-meta text-[var(--tr-danger)]">
                                 {f.guestName}: {f.error}
                               </li>
                             ))}
@@ -550,7 +550,7 @@ export default function OpsGuestMessagingView({
                         {result.skippedDetail.length > 0 && (
                           <ul className="mt-1.5 space-y-0.5 pl-5">
                             {result.skippedDetail.map((s) => (
-                              <li key={s.guestName} className="text-cjk-body list-disc text-[11px] text-[var(--tr-ink-3)]">
+                              <li key={s.guestName} className="text-cjk-body list-disc tr-meta text-[var(--tr-ink-3)]">
                                 {s.guestName}: {SKIP_REASON_LABEL[s.reason] ?? s.reason}
                               </li>
                             ))}
@@ -563,24 +563,24 @@ export default function OpsGuestMessagingView({
                         그 사실을 숨기지 않는다. */}
                     {preview && preview.recipients.length > 0 && (
                       <details className="rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2">
-                        <summary className="text-cjk-safe cursor-pointer text-[12px] font-semibold text-[var(--tr-ink-2)]">
+                        <summary className="text-cjk-safe cursor-pointer tr-label font-semibold text-[var(--tr-ink-2)]">
                           수신자별 미리보기 ({preview.recipients.length}명)
                         </summary>
                         <ul className="mt-2 space-y-2">
                           {preview.recipients.map((r) => (
                             <li key={r.bookingId} className="rounded-lg bg-[var(--tr-surface-2)] px-2.5 py-2">
-                              <p className="text-[12px] font-bold">
+                              <p className="tr-label font-bold">
                                 {r.guestName}{' '}
                                 <span className="font-normal text-[var(--tr-ink-3)]">
                                   {r.locale} · {r.email ?? '이메일 없음'}
                                 </span>
                               </p>
                               {r.missing.length > 0 && (
-                                <p className="text-cjk-body mt-0.5 text-[11px] text-[var(--tr-danger)]">
+                                <p className="text-cjk-body mt-0.5 tr-meta text-[var(--tr-danger)]">
                                   비어 있는 항목: {r.missing.join(', ')}
                                 </p>
                               )}
-                              <pre className="mt-1 whitespace-pre-wrap text-[11px] leading-relaxed text-[var(--tr-ink-2)]">
+                              <pre className="mt-1 whitespace-pre-wrap tr-meta leading-relaxed text-[var(--tr-ink-2)]">
                                 {r.body}
                               </pre>
                             </li>

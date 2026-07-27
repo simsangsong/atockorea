@@ -384,10 +384,10 @@ export default function OpsApp() {
           <div className="flex min-w-0 items-center gap-1.5">
             {/* min-w-0 플렉스 자식이라 좁은 화면에서 눌린다. 보호가 없으면
                 "관제센터"가 글자 단위로 쪼개진다 (CLAUDE.md P1-5). */}
-            <h1 className="text-cjk-safe text-[15px] font-bold tracking-tight">투어 관제센터</h1>
+            <h1 className="text-cjk-safe tr-body font-bold tracking-tight">투어 관제센터</h1>
             {/* Connection state with a visible label (a bare dot's tooltip
                 never shows on touch — the primary ops device). */}
-            <span className="flex shrink-0 items-center gap-1 text-[10px] font-medium text-[var(--tr-ink-3)]">
+            <span className="flex shrink-0 items-center gap-1 tr-meta font-medium text-[var(--tr-ink-3)]">
               <span
                 className={`size-2 rounded-full ${
                   connection === 'realtime'
@@ -401,7 +401,7 @@ export default function OpsApp() {
             </span>
           </div>
           <div className="flex shrink-0 items-center gap-2">
-            <p className="text-[12px] text-[var(--tr-ink-3)]">
+            <p className="tr-label text-[var(--tr-ink-3)]">
               {date} · 룸 {rooms.length}
               {sosCount > 0 && <span className="ml-1.5 font-semibold text-[var(--tr-danger)]">🆘 {sosCount}</span>}
             </p>
@@ -532,7 +532,7 @@ export default function OpsApp() {
                  they must survive the O1 chrome rewrite. Label text alone is
                  not a stable handle: it is Korean copy that O2 will re-typeset. */
               data-testid={`ops-tab-${key}`}
-              className={`relative flex h-[64px] flex-1 flex-col items-center justify-center gap-0.5 text-[10px] font-medium transition-colors ${
+              className={`relative flex h-[64px] flex-1 flex-col items-center justify-center gap-0.5 tr-meta font-medium transition-colors ${
                 active ? 'text-[var(--tr-ink)]' : 'text-[var(--tr-ink-3)]'
               }`}
             >
@@ -540,7 +540,7 @@ export default function OpsApp() {
                 <Icon className={`size-5 ${key === 'sos' && badge ? 'text-[var(--tr-danger)]' : ''}`} />
                 {badge ? (
                   <span
-                    className={`absolute -right-2.5 -top-1.5 flex h-4 min-w-4 items-center justify-center rounded-full px-1 text-[9px] font-bold text-white ${
+                    className={`absolute -right-2.5 -top-1.5 flex h-4 min-w-4 items-center justify-center rounded-full px-1 tr-meta font-bold text-white ${
                       key === 'sos' ? 'bg-red-500 animate-pulse' : 'bg-blue-500'
                     }`}
                   >

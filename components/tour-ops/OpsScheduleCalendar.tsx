@@ -120,7 +120,7 @@ export default function OpsScheduleCalendar({
         style={{ paddingTop: 'calc(env(safe-area-inset-top, 0px) + 8px)' }}
       >
         <div className="flex min-h-[40px] items-center justify-between gap-2">
-          <h2 className="text-cjk-safe text-[15px] font-bold">근무 · 배차 달력</h2>
+          <h2 className="text-cjk-safe tr-body font-bold">근무 · 배차 달력</h2>
           <div className="flex items-center gap-1">
             <a
               href={`/api/admin/tour-ops/schedule?period=${period}&axis=${axis}&format=xlsx`}
@@ -157,7 +157,7 @@ export default function OpsScheduleCalendar({
           >
             <ChevronLeft className="size-4" />
           </button>
-          <span className="min-w-[76px] text-center text-[14px] font-bold tabular-nums">{period}</span>
+          <span className="min-w-[76px] text-center tr-body font-bold tabular-nums">{period}</span>
           <button
             type="button"
             onClick={() => step(1)}
@@ -174,7 +174,7 @@ export default function OpsScheduleCalendar({
                 type="button"
                 onClick={() => setAxis(a.key)}
                 aria-pressed={axis === a.key}
-                className={`text-cjk-safe rounded-md px-2.5 py-1.5 text-[12px] font-semibold transition-colors ${
+                className={`text-cjk-safe rounded-md px-2.5 py-1.5 tr-label font-semibold transition-colors ${
                   axis === a.key
                     ? 'bg-[var(--tr-surface)] text-[var(--tr-ink)] shadow-sm'
                     : 'text-[var(--tr-ink-3)]'
@@ -187,7 +187,7 @@ export default function OpsScheduleCalendar({
         </div>
 
         {issueTotal > 0 && (
-          <p className="text-cjk-body mt-1.5 text-[11px] font-semibold text-[var(--tr-danger)]">
+          <p className="text-cjk-body mt-1.5 tr-meta font-semibold text-[var(--tr-danger)]">
             확인이 필요한 칸 {issueTotal}개
           </p>
         )}
@@ -195,21 +195,21 @@ export default function OpsScheduleCalendar({
 
       <div className="min-h-0 flex-1 overflow-auto px-3 py-3">
         {data?.truncated && (
-          <p className="text-cjk-body mb-2 rounded-lg bg-amber-100 px-3 py-2 text-[11px] leading-relaxed text-amber-900 dark:bg-amber-500/15 dark:text-amber-200">
+          <p className="text-cjk-body mb-2 rounded-lg bg-amber-100 px-3 py-2 tr-meta leading-relaxed text-amber-900 dark:bg-amber-500/15 dark:text-amber-200">
             조회 상한에 닿았습니다. 아래 표는 <b>최소값</b>입니다.
           </p>
         )}
         {!!data?.undatedCount && (
-          <p className="text-cjk-body mb-2 rounded-lg bg-amber-100 px-3 py-2 text-[11px] leading-relaxed text-amber-900 dark:bg-amber-500/15 dark:text-amber-200">
+          <p className="text-cjk-body mb-2 rounded-lg bg-amber-100 px-3 py-2 tr-meta leading-relaxed text-amber-900 dark:bg-amber-500/15 dark:text-amber-200">
             날짜를 확인할 수 없는 배차 {data.undatedCount}건은 표에 없습니다. (룸·그룹에 투어일이
             없는 배차)
           </p>
         )}
 
         {loading && !data ? (
-          <p className="py-12 text-center text-[13px] text-[var(--tr-ink-3)]">불러오는 중…</p>
+          <p className="py-12 text-center tr-card-text text-[var(--tr-ink-3)]">불러오는 중…</p>
         ) : !data || data.rows.length === 0 ? (
-          <p className="text-cjk-body py-12 text-center text-[13px] text-[var(--tr-ink-3)]">
+          <p className="text-cjk-body py-12 text-center tr-card-text text-[var(--tr-ink-3)]">
             {axis === 'guide'
               ? '등록된 가이드가 없습니다.'
               : '등록된 차량이 없습니다. 차량 관리에서 번호판을 먼저 등록해 주세요.'}
@@ -217,7 +217,7 @@ export default function OpsScheduleCalendar({
         ) : (
           /* P1-5 — min-w 없이는 31개 열이 짜부라져 한글 헤더가 세로로 무너진다. */
           <div className="overflow-x-auto rounded-xl border border-[var(--tr-hairline)]">
-            <table className="w-full min-w-[900px] border-collapse text-[12px]">
+            <table className="w-full min-w-[900px] border-collapse tr-label">
               <thead>
                 <tr className="bg-[var(--tr-surface-2)]">
                   <th className="text-cjk-safe sticky left-0 z-10 min-w-[112px] bg-[var(--tr-surface-2)] px-2 py-1.5 text-left font-semibold">
@@ -236,7 +236,7 @@ export default function OpsScheduleCalendar({
                               : 'text-[var(--tr-ink-3)]'
                       }`}
                     >
-                      <span className="block text-[9px] leading-none">{WEEKDAY_LABELS[d.weekday]}</span>
+                      <span className="block tr-meta leading-none">{WEEKDAY_LABELS[d.weekday]}</span>
                       <span className="block leading-tight">{d.day}</span>
                     </th>
                   ))}
@@ -252,7 +252,7 @@ export default function OpsScheduleCalendar({
                     >
                       <span className="text-cjk-safe block max-w-[104px]">{row.subject.label}</span>
                       {row.subject.sublabel ? (
-                        <span className="text-cjk-safe block max-w-[104px] text-[10px] text-[var(--tr-ink-3)]">
+                        <span className="text-cjk-safe block max-w-[104px] tr-meta text-[var(--tr-ink-3)]">
                           {row.subject.sublabel}
                         </span>
                       ) : null}
@@ -273,7 +273,7 @@ export default function OpsScheduleCalendar({
                                   ? cell.issues.map((i) => ISSUE_LABEL[i]).join(' · ')
                                   : undefined
                               }
-                              className={`m-0.5 flex size-[22px] items-center justify-center rounded text-[10px] font-bold tabular-nums ${
+                              className={`m-0.5 flex size-[22px] items-center justify-center rounded tr-meta font-bold tabular-nums ${
                                 issue
                                   ? ISSUE_TONE[issue]
                                   : resting
@@ -289,7 +289,7 @@ export default function OpsScheduleCalendar({
                         </td>
                       );
                     })}
-                    <td className="px-1 text-center text-[11px] font-bold tabular-nums">{row.total}</td>
+                    <td className="px-1 text-center tr-meta font-bold tabular-nums">{row.total}</td>
                   </tr>
                 ))}
               </tbody>
@@ -297,7 +297,7 @@ export default function OpsScheduleCalendar({
           </div>
         )}
 
-        <ul className="mt-3 flex flex-wrap gap-x-3 gap-y-1 text-[10px] text-[var(--tr-ink-3)]">
+        <ul className="mt-3 flex flex-wrap gap-x-3 gap-y-1 tr-meta text-[var(--tr-ink-3)]">
           <li className="flex items-center gap-1">
             <span className="size-2.5 rounded-sm bg-emerald-400" /> 정상
           </li>
@@ -325,25 +325,25 @@ export default function OpsScheduleCalendar({
             className="max-h-[70dvh] w-full max-w-sm overflow-y-auto rounded-t-2xl bg-[var(--tr-surface)] p-4 sm:rounded-2xl"
             onClick={(e) => e.stopPropagation()}
           >
-            <p className="text-cjk-safe text-[14px] font-bold">
+            <p className="text-cjk-safe tr-body font-bold">
               {openCell.row.subject.label} · {openCell.cell.date}
             </p>
             {openCell.cell.issues.length > 0 && (
-              <p className="text-cjk-body mt-1 text-[12px] font-semibold text-[var(--tr-danger)]">
+              <p className="text-cjk-body mt-1 tr-label font-semibold text-[var(--tr-danger)]">
                 {openCell.cell.issues.map((i) => ISSUE_LABEL[i]).join(' · ')}
               </p>
             )}
             {openCell.cell.unavailable && (
-              <p className="text-cjk-body mt-1 text-[12px] text-amber-700">휴무로 등록된 날입니다.</p>
+              <p className="text-cjk-body mt-1 tr-label text-amber-700">휴무로 등록된 날입니다.</p>
             )}
             <ul className="mt-2 space-y-1.5">
               {openCell.cell.items.length === 0 ? (
-                <li className="text-[12px] text-[var(--tr-ink-3)]">배정 없음</li>
+                <li className="tr-label text-[var(--tr-ink-3)]">배정 없음</li>
               ) : (
                 openCell.cell.items.map((item) => (
                   <li
                     key={item.id}
-                    className="rounded-lg border border-[var(--tr-hairline)] px-2.5 py-1.5 text-[12px]"
+                    className="rounded-lg border border-[var(--tr-hairline)] px-2.5 py-1.5 tr-label"
                   >
                     <span className={item.status === 'cancelled' ? 'line-through opacity-60' : ''}>{item.label}</span>
                     {item.startTime ? (
@@ -361,7 +361,7 @@ export default function OpsScheduleCalendar({
             <button
               type="button"
               onClick={() => setOpenCell(null)}
-              className="mt-3 h-11 w-full rounded-xl bg-[var(--tr-surface-2)] text-[13px] font-semibold"
+              className="mt-3 h-11 w-full rounded-xl bg-[var(--tr-surface-2)] tr-card-text font-semibold"
             >
               <span className="text-cjk-safe">닫기</span>
             </button>

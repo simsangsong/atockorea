@@ -154,7 +154,7 @@ export default function OpsReviewQueueView({ onClose }: { onClose: () => void })
         style={{ paddingTop: 'calc(env(safe-area-inset-top, 0px) + 8px)' }}
       >
         <div className="flex min-h-[40px] items-center justify-between">
-          <h2 className="text-[15px] font-bold">인박스 리뷰 큐{reviewCount > 0 ? ` (${reviewCount})` : ''}</h2>
+          <h2 className="tr-body font-bold">인박스 리뷰 큐{reviewCount > 0 ? ` (${reviewCount})` : ''}</h2>
           <div className="flex items-center gap-1">
             <button
               type="button"
@@ -186,7 +186,7 @@ export default function OpsReviewQueueView({ onClose }: { onClose: () => void })
               type="button"
               onClick={() => setFilter(key)}
               aria-pressed={filter === key}
-              className={`text-cjk-safe h-8 rounded-full px-3.5 text-[12px] font-semibold ${
+              className={`text-cjk-safe h-8 rounded-full px-3.5 tr-label font-semibold ${
                 filter === key
                   ? 'bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]'
                   : 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]'
@@ -199,9 +199,9 @@ export default function OpsReviewQueueView({ onClose }: { onClose: () => void })
       </header>
 
       <div className="flex-1 overflow-y-auto px-3 py-2 pb-8">
-        {loading && <p className="mt-16 text-center text-[13px] text-[var(--tr-ink-3)]">불러오는 중…</p>}
+        {loading && <p className="mt-16 text-center tr-card-text text-[var(--tr-ink-3)]">불러오는 중…</p>}
         {!loading && logs.length === 0 && (
-          <p className="mt-16 text-center text-[13px] text-[var(--tr-ink-3)]">
+          <p className="mt-16 text-center tr-card-text text-[var(--tr-ink-3)]">
             {filter === 'review' ? '리뷰 대기 항목이 없습니다. ✅' : '인박스 로그가 없습니다.'}
           </p>
         )}
@@ -230,33 +230,33 @@ export default function OpsReviewQueueView({ onClose }: { onClose: () => void })
                   aria-expanded={expanded}
                 >
                   <p className="flex items-center gap-1.5">
-                    <span className={`rounded px-1.5 py-0.5 text-[9px] font-bold ${badge.cls}`}>{badge.label}</span>
-                    <span className="rounded bg-[var(--tr-surface-2)] px-1.5 py-0.5 text-[9px] font-bold uppercase text-[var(--tr-ink-2)]">
+                    <span className={`rounded px-1.5 py-0.5 tr-meta font-bold ${badge.cls}`}>{badge.label}</span>
+                    <span className="rounded bg-[var(--tr-surface-2)] px-1.5 py-0.5 tr-meta font-bold uppercase text-[var(--tr-ink-2)]">
                       {log.channel ?? '?'}
                     </span>
-                    <span className="text-[10px] text-[var(--tr-ink-3)]">{log.intent ?? '-'}</span>
+                    <span className="tr-meta text-[var(--tr-ink-3)]">{log.intent ?? '-'}</span>
                     {typeof log.confidence === 'number' && (
-                      <span className="text-[10px] tabular-nums text-[var(--tr-ink-3)]">
+                      <span className="tr-meta tabular-nums text-[var(--tr-ink-3)]">
                         {(log.confidence * 100).toFixed(0)}%
                       </span>
                     )}
                     <span className="flex-1" />
-                    <span className="shrink-0 text-[10px] tabular-nums text-[var(--tr-ink-3)]">
+                    <span className="shrink-0 tr-meta tabular-nums text-[var(--tr-ink-3)]">
                       {kstTimeLabel(log.created_at)}
                     </span>
                   </p>
-                  <p className="mt-1 truncate text-[13px] text-[var(--tr-ink)]">
+                  <p className="mt-1 truncate tr-card-text text-[var(--tr-ink)]">
                     {first
                       ? `${first.lead_name ?? '?'} · ${first.party_size ?? '?'}명 · ${first.product_name ?? '(상품명 없음)'} · ${first.tour_date ?? '(날짜 없음)'}`
                       : log.error ?? '(요약 없음)'}
                   </p>
-                  {first?.reason && <p className="mt-0.5 text-[11px] text-amber-700 dark:text-amber-300">사유: {first.reason}</p>}
+                  {first?.reason && <p className="mt-0.5 tr-meta text-amber-700 dark:text-amber-300">사유: {first.reason}</p>}
                 </button>
 
                 {expanded && (
                   <div className="border-t border-[var(--tr-hairline)] px-3 py-2.5">
                     {items.map((item, i) => (
-                      <p key={i} className="text-[12px] text-[var(--tr-ink-2)]">
+                      <p key={i} className="tr-label text-[var(--tr-ink-2)]">
                         #{i + 1} {item.lead_name ?? '?'} · {item.party_size ?? '?'}명 · {item.product_name ?? '-'} ·{' '}
                         {item.tour_date ?? '-'} · 픽업 {item.pickup ?? '-'} · ext {item.external_booking_id ?? '-'} →{' '}
                         {item.commit_result ?? '-'}
@@ -266,7 +266,7 @@ export default function OpsReviewQueueView({ onClose }: { onClose: () => void })
 
                     {actionable && unmapped && (
                       <div className="mt-2 rounded-lg bg-[var(--tr-surface-2)] p-2.5">
-                        <p className="text-[11px] font-semibold text-[var(--tr-ink-2)]">
+                        <p className="tr-meta font-semibold text-[var(--tr-ink-2)]">
                           미매핑 상품 해결 — “{first?.product_name ?? ''}”
                         </p>
                         <div className="mt-1.5 flex flex-wrap gap-1.5">
@@ -274,7 +274,7 @@ export default function OpsReviewQueueView({ onClose }: { onClose: () => void })
                             value={mapTourId}
                             onChange={(e) => setMapTourId(e.target.value)}
                             aria-label="투어 선택"
-                            className="h-9 min-w-0 flex-1 rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 text-[12px] text-[var(--tr-ink)]"
+                            className="h-9 min-w-0 flex-1 rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 tr-label text-[var(--tr-ink)]"
                           >
                             <option value="">투어 선택…</option>
                             {tours.map((t) => (
@@ -288,7 +288,7 @@ export default function OpsReviewQueueView({ onClose }: { onClose: () => void })
                             value={mapKind}
                             onChange={(e) => setMapKind(e.target.value === 'private' ? 'private' : 'join')}
                             aria-label="투어 종류"
-                            className="h-9 rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 text-[12px] text-[var(--tr-ink)]"
+                            className="h-9 rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 tr-label text-[var(--tr-ink)]"
                           >
                             <option value="join">조인(버스)</option>
                             <option value="private">프라이빗</option>
@@ -309,7 +309,7 @@ export default function OpsReviewQueueView({ onClose }: { onClose: () => void })
                                 log.id,
                               )
                             }
-                            className="h-9 rounded-lg bg-blue-600 px-3 text-[12px] font-semibold text-white disabled:opacity-40"
+                            className="h-9 rounded-lg bg-blue-600 px-3 tr-label font-semibold text-white disabled:opacity-40"
                           >
                             매핑 + 재커밋
                           </button>
@@ -324,7 +324,7 @@ export default function OpsReviewQueueView({ onClose }: { onClose: () => void })
                             type="button"
                             disabled={busyId === log.id}
                             onClick={() => void post({ action: 'approve', logId: log.id }, log.id)}
-                            className="h-9 rounded-lg bg-emerald-600 px-3 text-[12px] font-semibold text-white disabled:opacity-40"
+                            className="h-9 rounded-lg bg-emerald-600 px-3 tr-label font-semibold text-white disabled:opacity-40"
                           >
                             승인 커밋
                           </button>
@@ -333,7 +333,7 @@ export default function OpsReviewQueueView({ onClose }: { onClose: () => void })
                           type="button"
                           disabled={busyId === log.id}
                           onClick={() => void post({ action: 'ignore', logId: log.id }, log.id)}
-                          className="h-9 rounded-lg bg-[var(--tr-surface-2)] px-3 text-[12px] font-semibold text-[var(--tr-ink-2)] disabled:opacity-40"
+                          className="h-9 rounded-lg bg-[var(--tr-surface-2)] px-3 tr-label font-semibold text-[var(--tr-ink-2)] disabled:opacity-40"
                         >
                           무시
                         </button>

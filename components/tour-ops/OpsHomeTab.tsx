@@ -214,7 +214,7 @@ export default function OpsHomeTab({
         {stats.map(({ label, value, tone }) => (
           <div key={label} className="rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-1 py-2.5 text-center">
             <p
-              className={`text-[17px] font-bold tabular-nums ${
+              className={`tr-title font-bold tabular-nums ${
                 tone === 'red' && value
                   ? 'text-red-600 dark:text-red-400'
                   : tone === 'amber' && value
@@ -226,7 +226,7 @@ export default function OpsHomeTab({
             >
               {value}
             </p>
-            <p className="mt-0.5 text-[10px] text-[var(--tr-ink-3)]">{label}</p>
+            <p className="mt-0.5 tr-meta text-[var(--tr-ink-3)]">{label}</p>
           </div>
         ))}
       </div>
@@ -238,21 +238,21 @@ export default function OpsHomeTab({
           onClick={() => onNavigate('sos')}
           className="flex w-full items-center justify-between rounded-2xl border border-red-200 bg-red-50 dark:border-red-500/50 dark:bg-red-950/40 px-4 py-3 text-left"
         >
-          <span className="text-[13px] font-bold text-red-700 dark:text-red-100">
+          <span className="tr-card-text font-bold text-red-700 dark:text-red-100">
             <span className="animate-pulse">🆘</span> 활성 SOS {sosCount}건 — 지금 확인
           </span>
-          <span className="text-[12px] text-red-600 dark:text-red-300">SOS 탭 →</span>
+          <span className="tr-label text-red-600 dark:text-red-300">SOS 탭 →</span>
         </button>
       )}
 
       {/* §11.E 일일 보고서 발송 결과 배너 */}
       {reportState === 'sent' && (
-        <div className="rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-2.5 text-[12px] font-semibold text-emerald-700 dark:border-emerald-500/50 dark:bg-emerald-950/40 dark:text-emerald-200">
+        <div className="rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-2.5 tr-label font-semibold text-emerald-700 dark:border-emerald-500/50 dark:bg-emerald-950/40 dark:text-emerald-200">
           ✓ 일일 보고서 발송 완료 — {reportMsg}
         </div>
       )}
       {reportState === 'error' && (
-        <div className="rounded-2xl border border-red-200 bg-red-50 px-4 py-2.5 text-[12px] font-semibold text-red-700 dark:border-red-500/50 dark:bg-red-950/40 dark:text-red-200">
+        <div className="rounded-2xl border border-red-200 bg-red-50 px-4 py-2.5 tr-label font-semibold text-red-700 dark:border-red-500/50 dark:bg-red-950/40 dark:text-red-200">
           보고서 발송 실패 — {reportMsg}
         </div>
       )}
@@ -268,14 +268,14 @@ export default function OpsHomeTab({
                 </span>
                 {badge ? (
                   <span
-                    className={`absolute -right-2 -top-1.5 flex h-4 min-w-4 items-center justify-center rounded-full px-1 text-[9px] font-bold ${badgeClass(badgeTone)}`}
+                    className={`absolute -right-2 -top-1.5 flex h-4 min-w-4 items-center justify-center rounded-full px-1 tr-meta font-bold ${badgeClass(badgeTone)}`}
                   >
                     {badge > 99 ? '99+' : badge}
                   </span>
                 ) : null}
               </span>
-              <span className="mt-2.5 block text-[13px] font-semibold text-[var(--tr-ink)]">{title}</span>
-              <span className="mt-0.5 block text-[11px] leading-snug text-[var(--tr-ink-3)]">{desc}</span>
+              <span className="mt-2.5 block tr-card-text font-semibold text-[var(--tr-ink)]">{title}</span>
+              <span className="mt-0.5 block tr-meta leading-snug text-[var(--tr-ink-3)]">{desc}</span>
             </>
           );
           const className =

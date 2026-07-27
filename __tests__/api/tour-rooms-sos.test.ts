@@ -13,6 +13,7 @@ import { requestGate } from '@/lib/durable-rate-limit';
 import { sendEmail } from '@/lib/email';
 import { signRoomSession } from '@/lib/tour-room/access';
 import { sendOpsPush } from '@/lib/tour-ops/push';
+import { ROOM_LOCALES } from '@/lib/tour-room/snapshot';
 
 jest.mock('@/lib/auth', () => ({ getAuthUser: jest.fn(), requireAdmin: jest.fn() }));
 jest.mock('@/lib/supabase', () => ({ createServerClient: jest.fn() }));
@@ -136,7 +137,7 @@ describe('POST /api/tour-rooms/[bookingId]/sos (T7.3)', () => {
       note: 'lost near the temple',
     });
     // zero-LLM template with all 5 locales
-    expect(Object.keys(db.inserted[0].translations as object).sort()).toEqual(['de', 'en', 'es', 'fr', 'it', 'ja', 'ko', 'ru', 'zh']);
+    expect(Object.keys(db.inserted[0].translations as object).sort()).toEqual([...ROOM_LOCALES].sort());
     // ops mail fired (async fire-and-forget — flush microtasks)
     await new Promise((resolve) => setTimeout(resolve, 0));
     const mail = sendEmailMock.mock.calls[0][0];

@@ -43,8 +43,13 @@ describe('buildInviteEmail — 5 locales', () => {
     // French instead of falling back — the region tag is stripped, not the
     // language. 'pt' below is still the unsupported-language case.
     expect(resolveInviteLocale('fr-FR')).toBe('fr');
-    // zh-TW → zh (region stripped).
-    expect(resolveInviteLocale('zh-TW')).toBe('zh');
+    // zh-TW is a room locale in its own right now (10th, 2026-07-27), so it
+    // must NOT be folded to Simplified — that was the whole point of adding
+    // it. Other Chinese regions still resolve to Simplified.
+    expect(resolveInviteLocale('zh-TW')).toBe('zh-TW');
+    expect(resolveInviteLocale('zh-Hant')).toBe('zh-TW');
+    expect(resolveInviteLocale('zh-CN')).toBe('zh');
+    expect(resolveInviteLocale('zh')).toBe('zh');
     expect(resolveInviteLocale('pt')).toBe('en');
   });
 

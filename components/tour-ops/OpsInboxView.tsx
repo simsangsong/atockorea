@@ -89,7 +89,7 @@ export default function OpsInboxView({
         style={{ paddingTop: 'calc(env(safe-area-inset-top, 0px) + 8px)' }}
       >
         <div className="flex min-h-[40px] items-center justify-between">
-          <h2 className="text-[15px] font-bold">메시지 모아보기</h2>
+          <h2 className="tr-body font-bold">메시지 모아보기</h2>
           <button
             type="button"
             onClick={onClose}
@@ -111,7 +111,7 @@ export default function OpsInboxView({
               type="button"
               onClick={() => setFilter(key)}
               aria-pressed={filter === key}
-              className={`text-cjk-safe h-8 rounded-full px-3.5 text-[12px] font-semibold ${
+              className={`text-cjk-safe h-8 rounded-full px-3.5 tr-label font-semibold ${
                 filter === key
                   ? 'bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]'
                   : 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]'
@@ -125,7 +125,7 @@ export default function OpsInboxView({
 
       <div className="flex-1 overflow-y-auto px-3 py-2 pb-8">
         {rows.length === 0 ? (
-          <p className="mt-16 text-center text-[13px] text-[var(--tr-ink-3)]">
+          <p className="mt-16 text-center tr-card-text text-[var(--tr-ink-3)]">
             {filter === 'customer' ? '오늘 손님 메시지가 아직 없습니다.' : '오늘 메시지가 아직 없습니다.'}
           </p>
         ) : (
@@ -138,7 +138,7 @@ export default function OpsInboxView({
                   className="w-full rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2.5 text-left active:bg-[var(--tr-surface-2)]"
                 >
                   <p className="flex items-baseline justify-between gap-2">
-                    <span className="min-w-0 truncate text-[12px] font-semibold text-[var(--tr-ink-2)]">
+                    <span className="min-w-0 truncate tr-label font-semibold text-[var(--tr-ink-2)]">
                       <span
                         className={
                           row.senderRole === 'customer'
@@ -154,11 +154,11 @@ export default function OpsInboxView({
                       {row.guestName}
                       {row.tourTitle && <span className="font-normal text-[var(--tr-ink-3)]"> · {row.tourTitle}</span>}
                     </span>
-                    <span className="shrink-0 text-[10px] tabular-nums text-[var(--tr-ink-3)]">
+                    <span className="shrink-0 tr-meta tabular-nums text-[var(--tr-ink-3)]">
                       {kstTimeLabel(row.createdAt)}
                     </span>
                   </p>
-                  <p className="mt-1 line-clamp-2 text-[13px] leading-snug text-[var(--tr-ink)]">{row.text}</p>
+                  <p className="mt-1 line-clamp-2 tr-card-text leading-snug text-[var(--tr-ink)]">{row.text}</p>
                 </button>
               </li>
             ))}

@@ -135,7 +135,7 @@ export default function OpsAutopilotView({ onClose }: { onClose: () => void }) {
         style={{ paddingTop: 'calc(env(safe-area-inset-top, 0px) + 8px)' }}
       >
         <div className="flex min-h-[40px] items-center justify-between gap-2">
-          <h2 className="text-cjk-safe text-[15px] font-bold">오토파일럿</h2>
+          <h2 className="text-cjk-safe tr-body font-bold">오토파일럿</h2>
           <div className="flex items-center gap-1">
             <button
               type="button"
@@ -156,7 +156,7 @@ export default function OpsAutopilotView({ onClose }: { onClose: () => void }) {
           </div>
         </div>
 
-        <p className="text-cjk-body mt-0.5 text-[11px] leading-relaxed text-[var(--tr-ink-3)]">
+        <p className="text-cjk-body mt-0.5 tr-meta leading-relaxed text-[var(--tr-ink-3)]">
           자동으로 배정하거나 발송하지 않습니다. 향후 2주를 점검해 <b>사람이 볼 것</b>만 모읍니다.
         </p>
 
@@ -165,7 +165,7 @@ export default function OpsAutopilotView({ onClose }: { onClose: () => void }) {
             type="button"
             onClick={() => void runNow()}
             disabled={running}
-            className="flex h-10 items-center gap-1.5 rounded-lg bg-[var(--tr-ink)] px-3 text-[12px] font-bold text-[var(--tr-canvas)] disabled:opacity-60"
+            className="flex h-10 items-center gap-1.5 rounded-lg bg-[var(--tr-ink)] px-3 tr-label font-bold text-[var(--tr-canvas)] disabled:opacity-60"
             data-testid="autopilot-run"
           >
             {running ? <Loader2 className="size-3.5 animate-spin" /> : <RefreshCw className="size-3.5" />}
@@ -175,24 +175,24 @@ export default function OpsAutopilotView({ onClose }: { onClose: () => void }) {
             type="button"
             onClick={() => setShowResolved((v) => !v)}
             aria-pressed={showResolved}
-            className={`text-cjk-safe h-10 rounded-lg px-3 text-[12px] font-semibold ${
+            className={`text-cjk-safe h-10 rounded-lg px-3 tr-label font-semibold ${
               showResolved ? 'bg-[var(--tr-surface-2)] text-[var(--tr-ink)]' : 'text-[var(--tr-ink-3)]'
             }`}
           >
             처리한 것도 보기
           </button>
-          <span className="ml-auto text-[11px] font-semibold tabular-nums text-[var(--tr-ink-2)]">
+          <span className="ml-auto tr-meta font-semibold tabular-nums text-[var(--tr-ink-2)]">
             처리할 항목 {open.length}
           </span>
         </div>
-        {lastRun && <p className="mt-1 text-[11px] text-[var(--tr-ink-3)]">{lastRun}</p>}
+        {lastRun && <p className="mt-1 tr-meta text-[var(--tr-ink-3)]">{lastRun}</p>}
       </header>
 
       <div className="min-h-0 flex-1 overflow-y-auto px-3 py-3">
         {loading && rows.length === 0 ? (
-          <p className="py-12 text-center text-[13px] text-[var(--tr-ink-3)]">불러오는 중…</p>
+          <p className="py-12 text-center tr-card-text text-[var(--tr-ink-3)]">불러오는 중…</p>
         ) : rows.length === 0 ? (
-          <p className="text-cjk-body py-12 text-center text-[13px] text-[var(--tr-ink-3)]">
+          <p className="text-cjk-body py-12 text-center tr-card-text text-[var(--tr-ink-3)]">
             처리할 항목이 없습니다. [지금 점검]으로 향후 2주를 확인해 보세요.
           </p>
         ) : (
@@ -213,13 +213,13 @@ export default function OpsAutopilotView({ onClose }: { onClose: () => void }) {
                     <Icon className="size-3.5" />
                   </span>
                   <div className="min-w-0 flex-1">
-                    <p className="text-cjk-body text-[13px] font-bold">{row.title}</p>
+                    <p className="text-cjk-body tr-card-text font-bold">{row.title}</p>
                     {row.detail && (
-                      <p className="text-cjk-body mt-0.5 text-[11px] leading-relaxed text-[var(--tr-ink-3)]">
+                      <p className="text-cjk-body mt-0.5 tr-meta leading-relaxed text-[var(--tr-ink-3)]">
                         {row.detail}
                       </p>
                     )}
-                    <p className="mt-0.5 text-[10px] text-[var(--tr-ink-3)]">
+                    <p className="mt-0.5 tr-meta text-[var(--tr-ink-3)]">
                       {KIND_LABEL[row.kind] ?? row.kind}
                       {resolved && row.resolved_by ? ` · ${row.status === 'done' ? '처리' : '무시'} ${row.resolved_by}` : ''}
                     </p>
@@ -227,7 +227,7 @@ export default function OpsAutopilotView({ onClose }: { onClose: () => void }) {
                     <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
                       <Link
                         href={actionHref(row)}
-                        className="text-cjk-safe rounded-md border border-[var(--tr-hairline)] px-2 py-1 text-[11px] font-semibold text-[var(--tr-ink-2)]"
+                        className="text-cjk-safe rounded-md border border-[var(--tr-hairline)] px-2 py-1 tr-meta font-semibold text-[var(--tr-ink-2)]"
                       >
                         {ACTION_LABEL[row.kind] ?? '화면으로'} →
                       </Link>
@@ -236,7 +236,7 @@ export default function OpsAutopilotView({ onClose }: { onClose: () => void }) {
                           type="button"
                           disabled={busyId === row.id}
                           onClick={() => void setStatus(row, 'suggested')}
-                          className="text-cjk-safe rounded-md border border-[var(--tr-hairline)] px-2 py-1 text-[11px] font-semibold text-[var(--tr-ink-3)] disabled:opacity-50"
+                          className="text-cjk-safe rounded-md border border-[var(--tr-hairline)] px-2 py-1 tr-meta font-semibold text-[var(--tr-ink-3)] disabled:opacity-50"
                         >
                           되돌리기
                         </button>
@@ -246,7 +246,7 @@ export default function OpsAutopilotView({ onClose }: { onClose: () => void }) {
                             type="button"
                             disabled={busyId === row.id}
                             onClick={() => void setStatus(row, 'done')}
-                            className="flex items-center gap-1 rounded-md border border-[var(--tr-hairline)] px-2 py-1 text-[11px] font-semibold text-emerald-600 disabled:opacity-50"
+                            className="flex items-center gap-1 rounded-md border border-[var(--tr-hairline)] px-2 py-1 tr-meta font-semibold text-emerald-600 disabled:opacity-50"
                           >
                             <Check className="size-3" />
                             <span className="text-cjk-safe">처리함</span>
@@ -255,7 +255,7 @@ export default function OpsAutopilotView({ onClose }: { onClose: () => void }) {
                             type="button"
                             disabled={busyId === row.id}
                             onClick={() => void setStatus(row, 'dismissed')}
-                            className="flex items-center gap-1 rounded-md border border-[var(--tr-hairline)] px-2 py-1 text-[11px] font-semibold text-[var(--tr-ink-3)] disabled:opacity-50"
+                            className="flex items-center gap-1 rounded-md border border-[var(--tr-hairline)] px-2 py-1 tr-meta font-semibold text-[var(--tr-ink-3)] disabled:opacity-50"
                           >
                             <X className="size-3" />
                             <span className="text-cjk-safe">무시</span>

@@ -39,13 +39,18 @@ export const dynamic = 'force-dynamic';
  *        and persists it on the row.
  */
 
-/** Pre-translated capsules (P-D10 — zero LLM, room 5-locale convention). */
+/** Pre-translated capsules (P-D10 — zero LLM, every ROOM_LOCALES key). */
 const PLAN_CONFIRMED: Record<string, string> = {
   en: 'Today’s itinerary is confirmed — check the Today tab for the updated schedule.',
   ko: '오늘의 일정이 확정되었어요 — 오늘 탭에서 확인해 주세요.',
   ja: '本日の行程が確定しました。「本日」タブでご確認ください。',
   es: 'El itinerario de hoy está confirmado: revísalo en la pestaña de Hoy.',
   zh: '今日行程已确定——请在“今日”标签查看。',
+  'zh-TW': '今日行程已確定——請在「今日」分頁查看。',
+  fr: 'L’itinéraire du jour est confirmé — consultez l’onglet Aujourd’hui.',
+  de: 'Der heutige Ablauf steht fest — im Tab „Heute“ finden Sie den aktuellen Plan.',
+  ru: 'Маршрут на сегодня подтверждён — расписание во вкладке «Сегодня».',
+  it: 'L’itinerario di oggi è confermato — lo trova nella scheda Oggi.',
 };
 
 /**
@@ -60,6 +65,11 @@ const PLAN_UPDATED: Record<string, string> = {
   ja: '本日の行程が変更されました。「本日」タブで最新の予定をご確認ください。',
   es: 'El itinerario de hoy ha cambiado: revisa la pestaña de Hoy para verlo actualizado.',
   zh: '今日行程有变更——请在“今日”标签查看最新安排。',
+  'zh-TW': '今日行程有變更——請在「今日」分頁查看最新安排。',
+  fr: 'L’itinéraire du jour a changé — consultez l’onglet Aujourd’hui pour le programme actuel.',
+  de: 'Der heutige Ablauf hat sich geändert — im Tab „Heute“ steht der aktuelle Plan.',
+  ru: 'Маршрут на сегодня изменился — актуальное расписание во вкладке «Сегодня».',
+  it: 'L’itinerario di oggi è cambiato — nella scheda Oggi trova il programma aggiornato.',
 };
 
 const PLAN_SUBMITTED: Record<string, string> = {
@@ -68,6 +78,11 @@ const PLAN_SUBMITTED: Record<string, string> = {
   ja: 'ご希望の行程をガイドに送信しました。確認のうえ確定します。',
   es: 'Tu itinerario deseado fue enviado al guía; lo revisará y confirmará.',
   zh: '您的心愿行程已发送给导游——确认后将为您敲定。',
+  'zh-TW': '您的心願行程已送給導遊——確認後將為您敲定。',
+  fr: 'Votre itinéraire souhaité a été envoyé au guide — il l’examinera et le confirmera.',
+  de: 'Ihr Wunschablauf ist beim Guide eingegangen — er prüft ihn und bestätigt.',
+  ru: 'Ваш пожелаемый маршрут отправлен гиду — он проверит и подтвердит его.',
+  it: 'Il suo itinerario desiderato è stato inviato alla guida, che lo verificherà e confermerà.',
 };
 
 const PLAN_DELEGATED: Record<string, string> = {
@@ -76,6 +91,11 @@ const PLAN_DELEGATED: Record<string, string> = {
   ja: '本日のコースはガイドにお任せいただきました。最適なルートをご用意します。',
   es: 'Dejaste el recorrido de hoy en manos del guía; preparará la mejor ruta.',
   zh: '今天的路线已交给导游安排——将为您准备最优行程。',
+  'zh-TW': '今天的路線已交給導遊安排——將為您準備最佳行程。',
+  fr: 'Vous avez confié le parcours du jour au guide — il préparera le meilleur itinéraire.',
+  de: 'Sie haben die heutige Route dem Guide überlassen — er stellt die beste Strecke zusammen.',
+  ru: 'Вы доверили сегодняшний маршрут гиду — он подготовит для вас лучший вариант.',
+  it: 'Ha affidato il percorso di oggi alla guida, che preparerà l’itinerario migliore.',
 };
 
 const MAX_STOPS = 20;

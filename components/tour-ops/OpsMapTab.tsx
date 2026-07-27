@@ -18,7 +18,7 @@ const OpsMapCanvas = dynamic(() => import('@/components/tour-ops/OpsMapCanvas'),
   ssr: false,
   loading: () => (
     <div className="flex h-full min-h-[300px] items-center justify-center rounded-2xl bg-[var(--tr-surface)]">
-      <span className="text-[13px] text-[var(--tr-ink-3)]">지도를 불러오는 중…</span>
+      <span className="tr-card-text text-[var(--tr-ink-3)]">지도를 불러오는 중…</span>
     </div>
   ),
 });
@@ -52,7 +52,7 @@ export default function OpsMapTab({
       <div className="h-[52dvh] min-h-[300px]">
         <OpsMapCanvas rooms={mapRooms} onSelectRoom={onSelectRoom} />
       </div>
-      <p className="px-1 text-[11px] text-[var(--tr-ink-3)]">
+      <p className="px-1 tr-meta text-[var(--tr-ink-3)]">
         위치 공유 중 {sharingCount}명 — 마커를 탭하면 해당 룸이 열립니다.
       </p>
       <div className="flex flex-wrap gap-1.5">
@@ -61,7 +61,7 @@ export default function OpsMapTab({
             key={room.roomId}
             type="button"
             onClick={() => onSelectRoom(room.roomId)}
-            className="flex h-11 items-center gap-1.5 rounded-full border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3.5 text-[12px] text-[var(--tr-ink-2)]"
+            className="flex h-11 items-center gap-1.5 rounded-full border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3.5 tr-label text-[var(--tr-ink-2)]"
           >
             <span
               className="size-2.5 rounded-full"
@@ -71,7 +71,7 @@ export default function OpsMapTab({
             {room.locations.length > 0 && <span className="text-[var(--tr-ink-3)]">{room.locations.length}</span>}
           </button>
         ))}
-        {mapRooms.length === 0 && <p className="text-[12px] text-[var(--tr-ink-3)]">이 날짜에 활성 룸이 없습니다.</p>}
+        {mapRooms.length === 0 && <p className="tr-label text-[var(--tr-ink-3)]">이 날짜에 활성 룸이 없습니다.</p>}
       </div>
     </div>
   );

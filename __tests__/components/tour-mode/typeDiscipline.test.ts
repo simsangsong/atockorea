@@ -18,7 +18,16 @@
 import fs from 'fs';
 import path from 'path';
 
-const ROOT = path.join(process.cwd(), 'components', 'tour-mode');
+/**
+ * O2 (2026-07-27) — the ops center joins the same rule. It carried 359 raw
+ * `text-[Npx]` declarations, every one of them outside the --tr-font-scale
+ * slider, and §A-1 of the ops plan had estimated "100+". One guard over both
+ * trees, not two copies that drift.
+ */
+const ROOTS = [
+  path.join(process.cwd(), 'components', 'tour-mode'),
+  path.join(process.cwd(), 'components', 'tour-ops'),
+];
 
 /** Tailwind font-size utilities (responsive/state variants, !important, any
  *  size step incl. 5xl+, and arbitrary px/rem/em values). */
@@ -58,6 +67,11 @@ const TEXT_ALLOWLIST: Record<string, { pattern: string; reason: string }[]> = {
     { pattern: 'text-3xl', reason: 'driving-gate CTA / titles' },
     { pattern: 'text-4xl', reason: 'PIN input at arm-length' },
   ],
+  'OpsSosTab.tsx': [
+    // 🟢 in the "no active SOS" empty state is a pictograph, not typography —
+    // same call as ChatFeed's reaction picker.
+    { pattern: 'text-3xl', reason: 'empty-state emoji glyph size' },
+  ],
   'GuideSeatDashboard.tsx': [
     // Legend numeral inside a fixed 16px circle; tr-meta's 14px line box clips.
     { pattern: 'text-[9px]', reason: 'seat-legend numeral in 16px dot' },
@@ -87,13 +101,17 @@ function walk(dir: string): string[] {
   return out;
 }
 
-const files = walk(ROOT);
+const files = ROOTS.flatMap(walk);
+const relative = (file: string) => {
+  const root = ROOTS.find((r) => file.startsWith(r)) ?? process.cwd();
+  return path.relative(path.dirname(root), file).split(path.sep).join('/');
+};
 
-describe('tour-mode type discipline (U4-D7)', () => {
+describe('tour-mode + tour-ops type discipline (U4-D7 / O2)', () => {
   it('uses only the tr-* typography scale (no Tailwind text sizing)', () => {
     const violations: string[] = [];
     for (const file of files) {
-      const rel = path.relative(ROOT, file).replace(/\\/g, '/');
+      const rel = relative(file);
       const base = path.basename(file);
       const allowed = TEXT_ALLOWLIST[base] ?? [];
       const lines = fs.readFileSync(file, 'utf8').split('\n');
@@ -109,9 +127,14 @@ describe('tour-mode type discipline (U4-D7)', () => {
   });
 
   it('imports lucide icons through the barrel (icons.ts), not directly', () => {
+    // tour-mode ONLY. The barrel exists so the room's icon language stays
+    // swappable in one place (U-D3/U4-D6); the ops center is a different
+    // surface with its own icon set, and O2 extends the TYPE scale to it, not
+    // this. Widening the rule here would have been a scope expansion the plan
+    // never asked for.
     const violations: string[] = [];
-    for (const file of files) {
-      const rel = path.relative(ROOT, file).replace(/\\/g, '/');
+    for (const file of files.filter((f) => f.startsWith(ROOTS[0]))) {
+      const rel = relative(file);
       const base = path.basename(file);
       if (LUCIDE_ALLOWLIST.has(base)) continue;
       const lines = fs.readFileSync(file, 'utf8').split('\n');

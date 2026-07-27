@@ -183,6 +183,7 @@ describe('POST /api/tour-rooms/[bookingId]/vision-ask (T4.7)', () => {
       ja: 'Japanese',
       es: 'Spanish',
       zh: 'Simplified Chinese',
+      'zh-TW': 'Traditional Chinese',
       fr: 'French',
       de: 'German',
       ru: 'Russian',
