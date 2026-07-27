@@ -25,6 +25,8 @@
 
 2026-07-27 2차 측정(`GROQ_API_KEY` 확보 후). **groq이 `stt-router.ts`의 1순위**이므로 이쪽이 실제 프로덕션 값이다.
 
+✅ 프로덕션(`shen-xiangsongs-projects/atockorea`)에는 `GROQ_API_KEY`가 **2026-07-19부터 이미 설정돼 있다** — 로컬 `.env.local`에만 없어서 1차 측정이 openai 경로로 잡혔던 것. 즉 아래 groq 숫자가 라이브 값이고, 1차 측정의 whisper-1 숫자는 로컬 아티팩트였다. ⚠ 그날 이후 키를 재발급했다면 프로덕션이 죽은 키를 들고 있을 수 있다. 검증법: 음성 메시지 1건을 보내고 `tour_room_messages.metadata->'stt'->>'fallback_reason_codes'`에 `primary_error`가 찍히는지 본다(2026-07-27 기준 음성 메시지 **0건** — 이 경로는 프로덕션에서 아직 한 번도 안 돌았다).
+
 | 프로바이더/모델 | medium OFF | medium ON | long OFF | long ON |
 |---|---:|---:|---:|---:|
 | **groq/whisper-large-v3-turbo** | 730 | **447** | 443 | 480 |
