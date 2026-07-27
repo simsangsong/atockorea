@@ -55,6 +55,30 @@ const COPY: Record<
     walk: '步行导航',
     stale: (m) => `${m} 分钟前的位置 — 可能已经移动`,
   },
+  fr: {
+    title: 'Retrouver mon guide',
+    away: (d) => `à ${d}`,
+    walk: 'Itinéraire à pied',
+    stale: (m) => `Dernière position il y a ${m} min — il a pu se déplacer`,
+  },
+  de: {
+    title: 'Guide finden',
+    away: (d) => `${d} entfernt`,
+    walk: 'Route zu Fuß',
+    stale: (m) => `Letzter Standort vor ${m} Min. — kann sich geändert haben`,
+  },
+  ru: {
+    title: 'Найти гида',
+    away: (d) => `${d} от вас`,
+    walk: 'Маршрут пешком',
+    stale: (m) => `Позиция ${m} мин назад — гид мог переместиться`,
+  },
+  it: {
+    title: 'Trova la mia guida',
+    away: (d) => `a ${d}`,
+    walk: 'Percorso a piedi',
+    stale: (m) => `Posizione di ${m} min fa — potrebbe essersi spostata`,
+  },
 };
 
 const ARROWS = ['⬆️', '↗️', '➡️', '↘️', '⬇️', '↙️', '⬅️', '↖️'];

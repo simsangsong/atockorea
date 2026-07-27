@@ -147,6 +147,74 @@ const COPY: Record<
     install: '安装应用',
     roles: { guide: '导游', driver: '司机', admin: 'AtoC Korea', customer: '旅客' },
   },
+  fr: {
+    media: 'Photos et vidéos',
+    files: 'Fichiers',
+    links: 'Liens',
+    shortcuts: 'Raccourcis',
+    members: 'Membres',
+    empty: 'Rien pour l’instant',
+    schedule: 'Aujourd’hui',
+    map: 'Carte',
+    settings: 'Réglages',
+    concierge: 'Guide intelligent',
+    emergency: 'Urgence',
+    close: 'Fermer',
+    display: { light: 'Clair', dark: 'Sombre', system: 'Auto' },
+    install: 'Installer l’app',
+    roles: { guide: 'Guide', driver: 'Chauffeur', admin: 'AtoC Korea', customer: 'Voyageur' },
+  },
+  de: {
+    media: 'Fotos & Videos',
+    files: 'Dateien',
+    links: 'Links',
+    shortcuts: 'Schnellzugriff',
+    members: 'Mitglieder',
+    empty: 'Noch nichts da',
+    schedule: 'Heute',
+    map: 'Karte',
+    settings: 'Einstellungen',
+    concierge: 'Smart Guide',
+    emergency: 'Notfall',
+    close: 'Schließen',
+    display: { light: 'Hell', dark: 'Dunkel', system: 'Auto' },
+    install: 'App installieren',
+    roles: { guide: 'Guide', driver: 'Fahrer', admin: 'AtoC Korea', customer: 'Reisender' },
+  },
+  ru: {
+    media: 'Фото и видео',
+    files: 'Файлы',
+    links: 'Ссылки',
+    shortcuts: 'Быстрый доступ',
+    members: 'Участники',
+    empty: 'Пока пусто',
+    schedule: 'Сегодня',
+    map: 'Карта',
+    settings: 'Настройки',
+    concierge: 'Умный гид',
+    emergency: 'SOS',
+    close: 'Закрыть',
+    display: { light: 'Светлая', dark: 'Темная', system: 'Авто' },
+    install: 'Установить',
+    roles: { guide: 'Гид', driver: 'Водитель', admin: 'AtoC Korea', customer: 'Путешественник' },
+  },
+  it: {
+    media: 'Foto e video',
+    files: 'File',
+    links: 'Link',
+    shortcuts: 'Scorciatoie',
+    members: 'Membri',
+    empty: 'Ancora niente qui',
+    schedule: 'Oggi',
+    map: 'Mappa',
+    settings: 'Impostazioni',
+    concierge: 'Guida smart',
+    emergency: 'Emergenza',
+    close: 'Chiudi',
+    display: { light: 'Chiaro', dark: 'Scuro', system: 'Auto' },
+    install: 'Installa l’app',
+    roles: { guide: 'Guida', driver: 'Autista', admin: 'AtoC Korea', customer: 'Viaggiatore' },
+  },
 };
 
 interface DrawerParticipant {
@@ -306,7 +374,15 @@ export default function RoomDrawer({
                     ? 'La sesión expiró: vuelve a abrir la sala desde tu enlace.'
                     : locale === 'zh'
                       ? '会话已过期 — 请通过邀请链接重新打开房间。'
-                      : 'Session expired — reopen the room from your invite link.'}
+                      : locale === 'fr'
+                        ? 'Session expirée — rouvrez l’espace tour depuis votre lien d’invitation.'
+                        : locale === 'de'
+                          ? 'Sitzung abgelaufen — öffnen Sie den Tour-Raum erneut über Ihren Einladungslink.'
+                          : locale === 'ru'
+                            ? 'Сессия истекла — откройте комнату заново по ссылке-приглашению.'
+                            : locale === 'it'
+                              ? 'Sessione scaduta — riapri la stanza dal tuo link d’invito.'
+                              : 'Session expired — reopen the room from your invite link.'}
             </p>
           )}
           {/* ① 모아보기 — 사진/동영상 */}

@@ -82,6 +82,10 @@ export const VEHICLE_POINT: Record<RoomLocale, string> = {
   ja: '車両',
   es: 'el vehículo',
   zh: '车辆',
+  fr: 'le véhicule',
+  de: 'das Fahrzeug',
+  ru: 'автомобиль',
+  it: 'il veicolo',
 };
 
 const FOLLOW_LINE: Record<FollowMode, Record<RoomLocale, string>> = {
@@ -91,6 +95,10 @@ const FOLLOW_LINE: Record<FollowMode, Record<RoomLocale, string>> = {
     ja: 'ここからはスタッフについて移動してください。',
     es: 'Desde aquí, sigan al personal, por favor.',
     zh: '从这里开始请跟随工作人员移动。',
+    fr: 'À partir d’ici, veuillez suivre le personnel.',
+    de: 'Ab hier folgen Sie bitte dem Personal.',
+    ru: 'Дальше, пожалуйста, следуйте за персоналом.',
+    it: 'Da qui in poi seguite lo staff, per favore.',
   },
   free: {
     en: 'Free viewing here — explore at your own pace.',
@@ -98,6 +106,10 @@ const FOLLOW_LINE: Record<FollowMode, Record<RoomLocale, string>> = {
     ja: 'ここは自由見学です — ご自身のペースでお楽しみください。',
     es: 'Visita libre — recorran a su ritmo.',
     zh: '此处为自由参观 — 请按自己的节奏游览。',
+    fr: 'Visite libre ici — explorez à votre rythme.',
+    de: 'Hier freie Besichtigung — erkunden Sie alles in Ihrem Tempo.',
+    ru: 'Здесь свободный осмотр — гуляйте в своем темпе.',
+    it: 'Qui la visita è libera — esplorate al vostro ritmo.',
   },
 };
 
@@ -109,6 +121,10 @@ const EVENT_LINE: Record<EventStatus, Record<RoomLocale, string>> = {
     ja: '本日確認済み：{event} は開催されます。✓',
     es: 'Confirmado para hoy: {event} se realiza. ✓',
     zh: '今日已确认：{event} 正常进行。✓',
+    fr: 'Confirmé pour aujourd’hui: {event} a bien lieu. ✓',
+    de: 'Für heute bestätigt: {event} findet statt. ✓',
+    ru: 'Подтверждено на сегодня: {event} состоится. ✓',
+    it: 'Confermato per oggi: {event} si svolge regolarmente. ✓',
   },
   off: {
     en: 'Please note: {event} is NOT running today.',
@@ -116,6 +132,10 @@ const EVENT_LINE: Record<EventStatus, Record<RoomLocale, string>> = {
     ja: 'ご案内：本日 {event} は開催されません。',
     es: 'Aviso: hoy NO se realiza {event}.',
     zh: '请注意：今日 {event} 不进行。',
+    fr: 'À noter: {event} n’a PAS lieu aujourd’hui.',
+    de: 'Bitte beachten: {event} findet heute NICHT statt.',
+    ru: 'Обратите внимание: {event} сегодня НЕ проводится.',
+    it: 'Attenzione: oggi {event} NON si svolge.',
   },
 };
 
@@ -125,6 +145,10 @@ const TICKET_LINE: Record<RoomLocale, string> = {
   ja: 'ここは入場券が必要です — チケット売り場でご購入ください。',
   es: 'Aquí se necesita entrada — cómprenla en la taquilla, por favor.',
   zh: '这里需要门票 — 请在售票处购买。',
+  fr: 'L’entrée est payante ici — achetez votre billet à la billetterie.',
+  de: 'Hier braucht man Eintrittskarten — bitte kaufen Sie Ihre am Ticketschalter.',
+  ru: 'Здесь нужны входные билеты — купите их, пожалуйста, в кассе.',
+  it: 'Qui serve il biglietto d’ingresso — compratelo in biglietteria, per favore.',
 };
 
 /** J1 — priced variant ({price} = pre-formatted ₩ amount, locale-neutral). */
@@ -134,6 +158,10 @@ const TICKET_LINE_PRICED: Record<RoomLocale, string> = {
   ja: 'ここの入場料は大人1名{price}です — チケット売り場でご購入ください。',
   es: 'La entrada aquí cuesta {price} por adulto — cómprenla en la taquilla, por favor.',
   zh: '这里的门票为每位成人{price} — 请在售票处购买。',
+  fr: 'L’entrée coûte {price} par adulte — achetez votre billet à la billetterie.',
+  de: 'Der Eintritt kostet hier {price} pro Erwachsenem — bitte kaufen Sie Ihr Ticket am Ticketschalter.',
+  ru: 'Входной билет для взрослого стоит {price} — купите его, пожалуйста, в кассе.',
+  it: 'L’ingresso qui costa {price} per adulto — comprate il biglietto in biglietteria, per favore.',
 };
 
 /** ₩5,000-style formatting (the won symbol reads in every room locale). */
@@ -151,6 +179,10 @@ export const BUNDLE_COPY: Record<
   ja: { meeting: '集合時間', follow: 'スタッフ引率', free: '自由見学', ticket: 'チケット必要', route: 'おすすめ順路', parking: '駐車位置', map: '地図' },
   es: { meeting: 'Hora de reunión', follow: 'Sigan al personal', free: 'Visita libre', ticket: 'Entrada necesaria', route: 'Ruta sugerida', parking: 'Aparcamiento', map: 'Mapa' },
   zh: { meeting: '集合时间', follow: '跟随工作人员', free: '自由参观', ticket: '需要门票', route: '推荐路线', parking: '停车位置', map: '地图' },
+  fr: { meeting: 'Heure de rendez-vous', follow: 'Suivez le personnel', free: 'Visite libre', ticket: 'Billet requis', route: 'Parcours conseillé', parking: 'Parking', map: 'Carte' },
+  de: { meeting: 'Treffzeit', follow: 'Dem Personal folgen', free: 'Freie Besichtigung', ticket: 'Ticket nötig', route: 'Empfohlene Route', parking: 'Parkplatz', map: 'Karte' },
+  ru: { meeting: 'Время сбора', follow: 'Следуйте за персоналом', free: 'Свободный осмотр', ticket: 'Нужен билет', route: 'Рекомендуемый маршрут', parking: 'Парковка', map: 'Карта' },
+  it: { meeting: 'Orario di ritrovo', follow: 'Seguite lo staff', free: 'Visita libera', ticket: 'Serve il biglietto', route: 'Percorso consigliato', parking: 'Parcheggio', map: 'Mappa' },
 };
 
 export interface ComposeBundleArgs {

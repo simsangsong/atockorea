@@ -47,6 +47,10 @@ export const COMPANION_FULL_MESSAGE: Record<string, string> = {
   ja: 'この予約はすでに登録可能な端末数に達しています。予約された方かガイドにご連絡ください。',
   es: 'Esta reserva ya tiene todos sus dispositivos registrados. Consulta con quien hizo la reserva o avisa al guía.',
   zh: '此预订的可注册设备已用完。请联系预订人或导游。',
+  fr: 'Tous les appareils autorisés pour cette réservation sont déjà enregistrés. Demandez à la personne qui a réservé de partager son écran, ou contactez le guide.',
+  de: 'Für diese Buchung sind bereits alle Geräte registriert. Bitten Sie die buchende Person, ihren Bildschirm zu teilen, oder wenden Sie sich an den Guide.',
+  ru: 'Для этого бронирования уже зарегистрированы все устройства. Попросите оформившего бронь показать свой экран или свяжитесь с гидом.',
+  it: 'Questa prenotazione ha già registrato tutti i dispositivi disponibili. Chiedi a chi ha prenotato di condividere lo schermo, oppure contatta la guida.',
 };
 
 export function companionFullMessage(locale: string | null | undefined): string {

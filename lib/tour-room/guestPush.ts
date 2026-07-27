@@ -21,6 +21,10 @@ const TITLE: Record<string, string> = {
   ja: 'AtoC Korea — ツアー',
   es: 'AtoC Korea — tu tour',
   zh: 'AtoC Korea — 我的行程',
+  fr: 'AtoC Korea — votre visite',
+  de: 'AtoC Korea — Ihre Tour',
+  ru: 'AtoC Korea — ваш тур',
+  it: 'AtoC Korea — il tuo tour',
 };
 
 const DRIVER_TITLE = '🚐 손님 메시지';

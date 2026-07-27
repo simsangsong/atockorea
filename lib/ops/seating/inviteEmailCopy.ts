@@ -44,6 +44,10 @@ const COPY: Record<CopyKey, Record<RoomLocale, string>> = {
     zh: '加入您的行程群组 — {tour_name}',
     ja: 'ツアーグループへの参加 — {tour_name}',
     es: 'Únase a su grupo de tour — {tour_name}',
+    fr: 'Rejoignez votre groupe de tour — {tour_name}',
+    de: 'Jetzt Ihrer Tour-Gruppe beitreten — {tour_name}',
+    ru: 'Присоединяйтесь к группе тура — {tour_name}',
+    it: 'Unisciti al gruppo del tuo tour — {tour_name}',
   },
   greeting: {
     en: 'Hi {guest_name},',
@@ -51,6 +55,10 @@ const COPY: Record<CopyKey, Record<RoomLocale, string>> = {
     zh: '您好，{guest_name}：',
     ja: '{guest_name}様、こんにちは。',
     es: 'Hola {guest_name}:',
+    fr: 'Bonjour {guest_name},',
+    de: 'Hallo {guest_name},',
+    ru: 'Здравствуйте, {guest_name}!',
+    it: 'Ciao {guest_name},',
   },
   intro: {
     en: "You're confirmed for {tour_name} on {tour_date}. Tap the button below to open your tour room.",
@@ -58,6 +66,10 @@ const COPY: Record<CopyKey, Record<RoomLocale, string>> = {
     zh: '您已确认参加 {tour_date} 的{tour_name}。请点击下方按钮打开您的行程群组。',
     ja: '{tour_date}の{tour_name}のご予約が確定しました。下のボタンからツアールームを開いてください。',
     es: 'Su reserva para {tour_name} el {tour_date} está confirmada. Toque el botón de abajo para abrir su sala de tour.',
+    fr: 'Votre réservation pour {tour_name} le {tour_date} est confirmée. Touchez le bouton ci-dessous pour ouvrir votre espace tour.',
+    de: 'Ihre Buchung für {tour_name} am {tour_date} ist bestätigt. Tippen Sie auf den Button unten, um Ihren Tour-Raum zu öffnen.',
+    ru: 'Ваша бронь подтверждена: {tour_name}, {tour_date}. Нажмите кнопку ниже, чтобы открыть комнату тура.',
+    it: 'La tua prenotazione per {tour_name} del {tour_date} è confermata. Tocca il pulsante qui sotto per aprire la tua stanza del tour.',
   },
   // §K B0.3 — 이 문구는 claim 단계를 설명하던 것이었다("명단에서 본인 이름을
   // 선택"). 개인 링크 전환 이후 그 화면은 **존재하지 않는다** — 문구를 그대로
@@ -68,6 +80,10 @@ const COPY: Record<CopyKey, Record<RoomLocale, string>> = {
     zh: '下方链接为您专属，无需选择姓名即可直接打开您的行程群组，座位可在其中选择。',
     ja: '下のリンクはお客様専用です。お名前を選ぶ必要はなく、そのままツアールームが開きます。座席はその中でお選びいただけます。',
     es: 'El enlace de abajo es solo suyo: abre directamente su sala de tour, sin tener que elegir su nombre. Puede elegir su asiento allí.',
+    fr: 'Le lien ci-dessous est strictement personnel — il ouvre directement votre espace tour, sans nom à choisir. Vous pourrez y sélectionner votre siège pour la journée.',
+    de: 'Der Link unten gilt nur für Sie — er öffnet Ihren Tour-Raum direkt, ganz ohne Namensauswahl. Ihren Sitzplatz für den Tag wählen Sie darin aus.',
+    ru: 'Ссылка ниже — только ваша: она сразу открывает комнату тура, выбирать имя не нужно. Место на день можно выбрать внутри.',
+    it: 'Il link qui sotto è solo tuo — apre subito la tua stanza del tour, senza dover scegliere il nome. All’interno potrai scegliere il posto per la giornata.',
   },
   cta: {
     en: 'Open your tour room',
@@ -75,6 +91,10 @@ const COPY: Record<CopyKey, Record<RoomLocale, string>> = {
     zh: '打开我的行程群组',
     ja: 'ツアールームを開く',
     es: 'Abrir su sala de tour',
+    fr: 'Ouvrir mon espace tour',
+    de: 'Meinen Tour-Raum öffnen',
+    ru: 'Открыть комнату тура',
+    it: 'Apri la tua stanza del tour',
   },
   fallback: {
     en: "If the button doesn't work, open this link:",
@@ -82,6 +102,10 @@ const COPY: Record<CopyKey, Record<RoomLocale, string>> = {
     zh: '如果按钮无法使用，请打开此链接：',
     ja: 'ボタンが動作しない場合は、このリンクを開いてください：',
     es: 'Si el botón no funciona, abra este enlace:',
+    fr: 'Si le bouton ne fonctionne pas, ouvrez ce lien:',
+    de: 'Falls der Button nicht funktioniert, öffnen Sie diesen Link:',
+    ru: 'Если кнопка не работает, откройте эту ссылку:',
+    it: 'Se il pulsante non funziona, apri questo link:',
   },
   closing: {
     en: 'See you on the tour!',
@@ -89,6 +113,10 @@ const COPY: Record<CopyKey, Record<RoomLocale, string>> = {
     zh: '期待与您同行！',
     ja: 'ツアーでお会いしましょう！',
     es: '¡Nos vemos en el tour!',
+    fr: 'À bientôt pour le tour!',
+    de: 'Bis bald auf der Tour!',
+    ru: 'До встречи на туре!',
+    it: 'Ci vediamo al tour!',
   },
   signoff: {
     en: 'AtoC Korea',
@@ -96,6 +124,10 @@ const COPY: Record<CopyKey, Record<RoomLocale, string>> = {
     zh: 'AtoC Korea',
     ja: 'AtoC Korea',
     es: 'AtoC Korea',
+    fr: 'AtoC Korea',
+    de: 'AtoC Korea',
+    ru: 'AtoC Korea',
+    it: 'AtoC Korea',
   },
 };
 
@@ -129,7 +161,19 @@ function escapeHtml(value: string): string {
  */
 export function buildInviteEmail(rawLocale: string | null | undefined, vars: InviteEmailVars): InviteEmailContent {
   const locale = resolveInviteLocale(rawLocale);
-  const guestName = (vars.guestName || '').trim() || (locale === 'ko' ? '손님' : 'Guest');
+  const guestName =
+    (vars.guestName || '').trim() ||
+    (locale === 'ko'
+      ? '손님'
+      : locale === 'fr'
+        ? 'Invité'
+        : locale === 'de'
+          ? 'Gast'
+          : locale === 'ru'
+            ? 'Гость'
+            : locale === 'it'
+              ? 'Ospite'
+              : 'Guest');
   // wa.me와 같은 변수로 넘긴다 — 이름만 맞춘 게 아니라 값의 출처도 같다.
   const interp: MessageVars = {
     guestName,

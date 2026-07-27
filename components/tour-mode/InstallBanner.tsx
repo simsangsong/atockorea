@@ -62,6 +62,34 @@ const COPY: Record<RoomLocale, { title: string; body: string; install: string; i
     iosGuide: '点按分享按钮，然后选择"添加到主屏幕"。',
     dismiss: '暂不',
   },
+  fr: {
+    title: 'Ajoutez votre espace tour à l’écran d’accueil',
+    body: 'Un seul geste pour retrouver votre tour en direct.',
+    install: 'Installer',
+    iosGuide: 'Touchez l’icône de partage, puis « Sur l’écran d’accueil ».',
+    dismiss: 'Plus tard',
+  },
+  de: {
+    title: 'Tour-Raum zum Home-Bildschirm hinzufügen',
+    body: 'Ein Tipp vom Home-Bildschirm direkt in Ihre Live-Tour.',
+    install: 'Installieren',
+    iosGuide: 'Tippen Sie auf Teilen und dann auf „Zum Home-Bildschirm“.',
+    dismiss: 'Später',
+  },
+  ru: {
+    title: 'Добавьте Tour Room на экран «Домой»',
+    body: 'Одно касание — и вы сразу в своем туре.',
+    install: 'Установить',
+    iosGuide: 'Нажмите «Поделиться», затем «На экран Домой».',
+    dismiss: 'Позже',
+  },
+  it: {
+    title: 'Aggiungi Tour Room alla schermata Home',
+    body: 'Un tocco dalla schermata Home per entrare nel tour dal vivo.',
+    install: 'Installa',
+    iosGuide: 'Tocca l’icona Condividi, poi “Aggiungi alla schermata Home”.',
+    dismiss: 'Più tardi',
+  },
 };
 
 function isIosSafari(ua: string): boolean {

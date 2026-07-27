@@ -8,7 +8,7 @@ import { humanizePoiKey, resolveDaySchedule } from '@/lib/tour-room/dayPlan';
 import { renderNextLegLine, type NextLegMeta } from '@/lib/tour-room/eta';
 import { estimateNextLeg } from '@/lib/tour-room/eta.server';
 import { broadcastToRoom } from '@/lib/tour-room/realtime';
-import { normalizeRoomLocale, ROOM_LOCALES } from '@/lib/tour-room/snapshot';
+import { normalizeRoomLocale, ROOM_LOCALES, CORE_TRANSLATION_LOCALES } from '@/lib/tour-room/snapshot';
 import { resolveSpotContent } from '@/lib/tour-room/spotContent';
 import { fetchArrivalFacilityPins } from '@/lib/tour-room/facilityPins.server';
 import { fetchArrivalVideoCard } from '@/lib/tour-room/poiVideos.server';
@@ -84,7 +84,7 @@ function numberOrNull(value: unknown): number | null {
 /** T2-2 pattern: translate operator-typed text, verbatim on failure (R-6). */
 async function tryTranslate(text: string): Promise<Record<string, string> | null> {
   try {
-    return (await translateTextForLocales(text, [...ROOM_LOCALES])).translations;
+    return (await translateTextForLocales(text, [...CORE_TRANSLATION_LOCALES])).translations;
   } catch (error) {
     console.warn('arrival-bundle translation failed, using verbatim:', error);
     return null;

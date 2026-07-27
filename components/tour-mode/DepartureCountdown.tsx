@@ -106,6 +106,42 @@ const ADD_COPY: Record<
     failure: 'No se pudo añadir tiempo. Inténtalo de nuevo.',
     cancel: 'Cancelar',
   },
+  fr: {
+    button: '+ Ajouter du temps',
+    sheetTitle: 'Ajouter du temps',
+    option: (h) => (h === 1 ? '+1 heure' : `+${h} heures`),
+    cashNote: 'Payez le chauffeur en espèces à la fin du tour.',
+    success: (h) => `${h} ${h === 1 ? 'heure ajoutée' : 'heures ajoutées'} ✓`,
+    failure: 'Impossible d’ajouter du temps. Veuillez réessayer.',
+    cancel: 'Annuler',
+  },
+  de: {
+    button: '+ Zeit hinzufügen',
+    sheetTitle: 'Zeit hinzufügen',
+    option: (h) => (h === 1 ? '+1 Stunde' : `+${h} Stunden`),
+    cashNote: 'Zahlen Sie am Ende der Tour bar an den Fahrer.',
+    success: (h) => `${h} ${h === 1 ? 'Stunde' : 'Stunden'} hinzugefügt ✓`,
+    failure: 'Zeit konnte nicht hinzugefügt werden. Bitte erneut versuchen.',
+    cancel: 'Abbrechen',
+  },
+  ru: {
+    button: '+ Добавить время',
+    sheetTitle: 'Добавить время',
+    option: (h) => `+${h} ч`,
+    cashNote: 'Оплатите водителю наличными в конце тура.',
+    success: (h) => `Добавлено ${h} ч ✓`,
+    failure: 'Не удалось добавить время. Попробуйте еще раз.',
+    cancel: 'Отмена',
+  },
+  it: {
+    button: '+ Aggiungi tempo',
+    sheetTitle: 'Aggiungi tempo extra',
+    option: (h) => (h === 1 ? '+1 ora' : `+${h} ore`),
+    cashNote: 'Paga l’autista in contanti alla fine del tour.',
+    success: (h) => `${h} ${h === 1 ? 'ora aggiunta' : 'ore aggiunte'} ✓`,
+    failure: 'Impossibile aggiungere tempo. Riprova.',
+    cancel: 'Annulla',
+  },
 };
 
 const COPY: Record<
@@ -140,6 +176,30 @@ const COPY: Record<
     endsAt: 'Termina hacia',
     remaining: 'restante',
     ended: 'El tiempo incluido terminó',
+    hm: (h, m) => (h > 0 ? `${h} h ${m} min` : `${m} min`),
+  },
+  fr: {
+    endsAt: 'Fin prévue vers',
+    remaining: 'Il reste',
+    ended: 'Le temps inclus est terminé',
+    hm: (h, m) => (h > 0 ? `${h} h ${m} min` : `${m} min`),
+  },
+  de: {
+    endsAt: 'Endet gegen',
+    remaining: 'Noch',
+    ended: 'Enthaltene Zeit abgelaufen',
+    hm: (h, m) => (h > 0 ? `${h} Std. ${m} Min.` : `${m} Min.`),
+  },
+  ru: {
+    endsAt: 'Закончится около',
+    remaining: 'Осталось',
+    ended: 'Включенное время истекло',
+    hm: (h, m) => (h > 0 ? `${h} ч ${m} мин` : `${m} мин`),
+  },
+  it: {
+    endsAt: 'Termina verso',
+    remaining: 'Ancora',
+    ended: 'Il tempo incluso è terminato',
     hm: (h, m) => (h > 0 ? `${h} h ${m} min` : `${m} min`),
   },
 };

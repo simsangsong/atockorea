@@ -34,6 +34,10 @@ const ETIQUETTE_LINES: Array<Record<RoomLocale, string>> = [
     ja: '現地でのマナーについて — 皆さまが気持ちよく過ごせるように。🏞',
     es: 'Algunas normas locales: hacen el día más fácil para todos. 🏞',
     zh: '几点当地礼仪 — 让大家的一天都更顺利。🏞',
+    fr: 'Quelques usages locaux — ils rendent la journée plus agréable pour tous. 🏞',
+    de: 'Ein paar lokale Gepflogenheiten — sie machen den Tag für alle angenehmer. 🏞',
+    ru: 'Несколько местных правил — с ними день пройдет спокойнее для всех. 🏞',
+    it: 'Qualche regola di buone maniere locale — rende la giornata più piacevole per tutti. 🏞',
   },
   {
     en: 'Korean tourist sites are entirely non-smoking, including outdoor areas — fines reach ₩100,000.',
@@ -41,6 +45,10 @@ const ETIQUETTE_LINES: Array<Record<RoomLocale, string>> = [
     ja: '韓国の観光地は屋外を含め全面禁煙です — 過料は最大10万ウォンです。',
     es: 'Los lugares turísticos coreanos son totalmente libres de humo, incluso al aire libre: la multa llega a ₩100.000.',
     zh: '韩国景区全面禁烟，包括户外区域 — 罚款最高10万韩元。',
+    fr: 'Les sites touristiques coréens sont entièrement non-fumeurs, même en extérieur — l’amende peut atteindre 100 000 ₩.',
+    de: 'Koreanische Sehenswürdigkeiten sind komplett rauchfrei, auch im Freien — es drohen Bußgelder bis zu 100.000 ₩.',
+    ru: 'Туристические места в Корее полностью свободны от курения, включая открытые зоны — штраф достигает 100 000 вон.',
+    it: 'Nei siti turistici coreani è vietato fumare ovunque, anche all’aperto — le multe arrivano a 100.000 ₩.',
   },
   {
     en: 'At temples and royal tombs, keep your voice low, stay on the marked paths, and ask before photographing people.',
@@ -48,6 +56,10 @@ const ETIQUETTE_LINES: Array<Record<RoomLocale, string>> = [
     ja: '寺院や王陵では声を抑え、指定された道を通り、人を撮影する際はひと言お声がけください。',
     es: 'En templos y tumbas reales, hablen bajo, sigan los caminos señalizados y pidan permiso antes de fotografiar a alguien.',
     zh: '在寺庙与王陵请放低音量、沿指定路线参观，拍摄他人前请先征得同意。',
+    fr: 'Dans les temples et les tombes royales, parlez à voix basse, restez sur les chemins balisés et demandez avant de photographier quelqu’un.',
+    de: 'In Tempeln und Königsgräbern bitte leise sprechen, auf den markierten Wegen bleiben und vor dem Fotografieren von Personen um Erlaubnis fragen.',
+    ru: 'В храмах и королевских гробницах говорите тихо, ходите только по обозначенным дорожкам и спрашивайте разрешение, прежде чем фотографировать людей.',
+    it: 'Nei templi e nelle tombe reali parla a bassa voce, resta sui sentieri segnalati e chiedi il permesso prima di fotografare le persone.',
   },
   {
     en: 'Public bins are rare in Korea — please carry your rubbish back to the vehicle.',
@@ -55,6 +67,10 @@ const ETIQUETTE_LINES: Array<Record<RoomLocale, string>> = [
     ja: '韓国は街のゴミ箱が少ないです — ゴミは車両までお持ちください。',
     es: 'Las papeleras públicas escasean en Corea: traigan su basura de vuelta al vehículo.',
     zh: '韩国街头垃圾桶很少 — 请将垃圾带回车上。',
+    fr: 'Les poubelles publiques sont rares en Corée — merci de rapporter vos déchets jusqu’au véhicule.',
+    de: 'Öffentliche Mülleimer sind in Korea selten — bitte nehmen Sie Ihren Müll mit zurück zum Fahrzeug.',
+    ru: 'Урны на улицах Кореи встречаются редко — пожалуйста, забирайте мусор с собой до машины.',
+    it: 'In Corea i cestini pubblici sono rari — riporta i tuoi rifiuti fino al veicolo.',
   },
   {
     en: 'Please be back at the meeting point before the countdown at the top of your screen runs out — the whole group waits for the last person.',
@@ -62,6 +78,10 @@ const ETIQUETTE_LINES: Array<Record<RoomLocale, string>> = [
     ja: '画面上部のカウントダウンが終わる前に集合場所へお戻りください — 最後のお一人を全員でお待ちすることになります。',
     es: 'Vuelvan al punto de encuentro antes de que acabe la cuenta atrás de la parte superior: todo el grupo espera al último.',
     zh: '请在屏幕顶部倒计时结束前回到集合点 — 全团都会等待最后一位。',
+    fr: 'Merci de revenir au point de rendez-vous avant la fin du compte à rebours en haut de votre écran — tout le groupe attend la dernière personne.',
+    de: 'Bitte seien Sie zurück am Treffpunkt, bevor der Countdown oben auf Ihrem Bildschirm abläuft — die ganze Gruppe wartet auf die letzte Person.',
+    ru: 'Пожалуйста, возвращайтесь на место сбора до того, как истечет обратный отсчет вверху экрана — вся группа ждет последнего.',
+    it: 'Torna al punto di ritrovo prima che finisca il conto alla rovescia in cima allo schermo — tutto il gruppo aspetta l’ultima persona.',
   },
   {
     en: 'Please do not talk to the driver while the vehicle is moving (Korean traffic law). Use the one-tap phrases in the message box instead — "restroom", "too cold", "carsick" and more are already translated.',
@@ -69,6 +89,10 @@ const ETIQUETTE_LINES: Array<Record<RoomLocale, string>> = [
     ja: '走行中は運転手に話しかけないでください（道路交通法）。代わりにメッセージ入力欄のワンタップ定型文をご利用ください — トイレ・寒い・車酔いなど翻訳済みです。',
     es: 'No hablen con el conductor en marcha (ley de tráfico coreana). Usen las frases de un toque del cuadro de mensajes: «baño», «hace frío», «mareo» y más ya están traducidas.',
     zh: '行驶中请勿与司机交谈（道路交通法）。请改用消息输入框里的一键短语 — 洗手间、太冷、晕车等都已翻译好。',
+    fr: 'Merci de ne pas parler au chauffeur pendant que le véhicule roule (code de la route coréen). Utilisez plutôt les phrases prêtes à l’envoi dans la zone de message — « toilettes », « trop froid », « mal des transports » et bien d’autres sont déjà traduites.',
+    de: 'Bitte sprechen Sie den Fahrer nicht an, während das Fahrzeug fährt (koreanisches Verkehrsrecht). Nutzen Sie stattdessen die Ein-Tipp-Phrasen im Nachrichtenfeld — „Toilette“, „zu kalt“, „Reiseübelkeit“ und mehr sind bereits übersetzt.',
+    ru: 'Пожалуйста, не разговаривайте с водителем во время движения (правила дорожного движения Кореи). Вместо этого используйте готовые фразы в поле сообщения — «туалет», «слишком холодно», «укачивает» и другие уже переведены.',
+    it: 'Non parlare con l’autista mentre il veicolo è in movimento (codice della strada coreano). Usa invece le frasi rapide nella casella dei messaggi — "bagno", "troppo freddo", "mal d’auto" e altre sono già tradotte.',
   },
 ];
 
@@ -111,6 +135,34 @@ export const ETIQUETTE_COPY: Record<
     time: '集合时间',
     driver: '与司机沟通',
     presetHint: '一键短语就在下方的消息输入框里。',
+  },
+  fr: {
+    title: 'Savoir-vivre et horaires',
+    sites: 'Sur les sites',
+    time: 'Heures de rendez-vous',
+    driver: 'Parler au chauffeur',
+    presetHint: 'Les phrases prêtes à l’envoi sont dans la zone de message ci-dessous.',
+  },
+  de: {
+    title: 'Verhalten & Zeiten',
+    sites: 'An den Sehenswürdigkeiten',
+    time: 'Treffzeiten',
+    driver: 'Mit dem Fahrer sprechen',
+    presetHint: 'Die Ein-Tipp-Phrasen finden Sie unten im Nachrichtenfeld.',
+  },
+  ru: {
+    title: 'Этикет и время',
+    sites: 'В местах посещения',
+    time: 'Время сбора',
+    driver: 'Общение с водителем',
+    presetHint: 'Готовые фразы — в поле сообщения ниже.',
+  },
+  it: {
+    title: 'Buone maniere e orari',
+    sites: 'Nei luoghi visitati',
+    time: 'Orari di ritrovo',
+    driver: 'Parlare con l’autista',
+    presetHint: 'Le frasi rapide sono nella casella dei messaggi qui sotto.',
   },
 };
 

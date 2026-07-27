@@ -142,6 +142,10 @@ const APPROACH_LINE: Record<RoomLocale, string> = {
   ja: 'まもなく到着：{spot} — 約{dist}先です。',
   es: 'Próxima parada: {spot} — a unos {dist}.',
   zh: '即将到达：{spot} — 前方约{dist}。',
+  fr: 'Bientôt: {spot} — à environ {dist}.',
+  de: 'Gleich erreicht: {spot} — noch etwa {dist}.',
+  ru: 'Скоро: {spot} — примерно через {dist}.',
+  it: 'In arrivo: {spot} — a circa {dist}.',
 };
 
 /** Card chrome for the preview (badge + map link), 5 locales, zero-LLM. */
@@ -151,6 +155,10 @@ export const APPROACH_COPY: Record<RoomLocale, { badge: string; map: string; pre
   ja: { badge: 'まもなく到着', map: '地図', preview: '到着前のプレビュー' },
   es: { badge: 'Próxima parada', map: 'Mapa', preview: 'Un vistazo antes de llegar' },
   zh: { badge: '即将到达', map: '地图', preview: '到达前先看一眼' },
+  fr: { badge: 'Bientôt', map: 'Carte', preview: 'Un aperçu avant d’arriver' },
+  de: { badge: 'Gleich da', map: 'Karte', preview: 'Ein kurzer Blick vor der Ankunft' },
+  ru: { badge: 'Скоро', map: 'Карта', preview: 'Коротко о месте перед прибытием' },
+  it: { badge: 'In arrivo', map: 'Mappa', preview: 'Un’anteprima prima di arrivare' },
 };
 
 export interface ApproachTextArgs {

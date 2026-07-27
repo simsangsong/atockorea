@@ -74,6 +74,10 @@ const NEXT_LEG_LINE: Record<RoomLocale, string> = {
   ja: '次の移動：{title} — {dist}、約{min}分。',
   es: 'Siguiente: {title} — {dist}, unos {min} min.',
   zh: '下一站：{title} — {dist}，约{min}分钟。',
+  fr: 'Prochaine étape: {title} — {dist}, environ {min} min.',
+  de: 'Als Nächstes: {title} — {dist}, etwa {min} Min.',
+  ru: 'Дальше: {title} — {dist}, около {min} мин.',
+  it: 'Prossima tappa: {title} — {dist}, circa {min} min.',
 };
 
 /** The bundle's tail line, per locale ({title} interpolates verbatim). */

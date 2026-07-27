@@ -153,7 +153,10 @@ export function formatRemaining(remainingMs: number): string {
 
 /** Locale-formatted wall-clock time for the banner (AC: 로케일별 시간 포맷). */
 export function formatTargetTime(targetMs: number, locale: string): string {
-  const tag = { en: 'en-US', ko: 'ko-KR', ja: 'ja-JP', es: 'es-ES', zh: 'zh-CN' }[locale] ?? 'en-US';
+  const tag =
+    { en: 'en-US', ko: 'ko-KR', ja: 'ja-JP', es: 'es-ES', zh: 'zh-CN', fr: 'fr-FR', de: 'de-DE', ru: 'ru-RU', it: 'it-IT' }[
+      locale
+    ] ?? 'en-US';
   return new Intl.DateTimeFormat(tag, { hour: 'numeric', minute: '2-digit', timeZone: 'Asia/Seoul' }).format(
     new Date(targetMs),
   );

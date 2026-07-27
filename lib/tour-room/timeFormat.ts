@@ -15,6 +15,10 @@ export const LOCALE_TAG: Record<RoomLocale, string> = {
   ja: 'ja-JP',
   es: 'es-ES',
   zh: 'zh-CN',
+  fr: 'fr-FR',
+  de: 'de-DE',
+  ru: 'ru-RU',
+  it: 'it-IT',
 };
 
 const TODAY_LABEL: Record<RoomLocale, string> = {
@@ -23,6 +27,10 @@ const TODAY_LABEL: Record<RoomLocale, string> = {
   ja: '今日',
   es: 'Hoy',
   zh: '今天',
+  fr: 'Aujourd’hui',
+  de: 'Heute',
+  ru: 'Сегодня',
+  it: 'Oggi',
 };
 
 /**

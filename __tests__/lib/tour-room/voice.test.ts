@@ -175,13 +175,15 @@ describe('speakMessage ladder (T2.9)', () => {
   });
 });
 
-describe('P0-6 utteranceLang — languages outside the 5 room locales', () => {
+describe('P0-6 utteranceLang — languages outside the room locales', () => {
   it('maps room locales, and passes through a chat-bridge language instead of throwing', () => {
     expect(utteranceLang('ko')).toBe('ko-KR');
-    // A French-speaking guest (chat_locale) used to crash TTS_LANG[locale].split.
-    expect(() => utteranceLang('fr')).not.toThrow();
-    expect(utteranceLang('fr')).toBe('fr');
-    expect(hasLocaleVoice([{ lang: 'fr-FR' }], 'fr' as never)).toBe(true);
+    // fr graduated into ROOM_LOCALES (2026-07-27) — it now maps properly.
+    expect(utteranceLang('fr')).toBe('fr-FR');
+    // A Thai-speaking guest (chat_locale) used to crash TTS_LANG[locale].split.
+    expect(() => utteranceLang('th')).not.toThrow();
+    expect(utteranceLang('th')).toBe('th');
+    expect(hasLocaleVoice([{ lang: 'th-TH' }], 'th' as never)).toBe(true);
   });
 });
 

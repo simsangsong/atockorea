@@ -59,6 +59,34 @@ const COPY: Record<
     open: '地图',
     settlement: (n, total) => `💰 待确认支出${n}笔 (${total})——请在聊天中确认。`,
   },
+  fr: {
+    delay: (m) => `🚐 Le véhicule a ~${m} min de retard — merci de patienter.`,
+    parking: '🅿️ Véhicule garé — touchez pour voir l’épingle.',
+    arrived: '🚐 Votre véhicule est arrivé — touchez pour voir l’épingle.',
+    open: 'Carte',
+    settlement: (n, total) => `💰 ${n} dépense${n > 1 ? 's' : ''} à confirmer (${total}) — voir le chat.`,
+  },
+  de: {
+    delay: (m) => `🚐 Fahrzeug ca. ${m} Min. verspätet — danke fürs Warten.`,
+    parking: '🅿️ Fahrzeug geparkt — tippen für den Pin.',
+    arrived: '🚐 Ihr Fahrzeug ist da — tippen für den Pin.',
+    open: 'Karte',
+    settlement: (n, total) => `💰 ${n} Ausgabe${n > 1 ? 'n' : ''} zu bestätigen (${total}) — siehe Chat.`,
+  },
+  ru: {
+    delay: (m) => `🚐 Машина задерживается примерно на ${m} мин — спасибо за ожидание.`,
+    parking: '🅿️ Машина припаркована — нажмите, чтобы увидеть метку.',
+    arrived: '🚐 Ваша машина прибыла — нажмите, чтобы увидеть метку.',
+    open: 'Карта',
+    settlement: (n, total) => `💰 Подтвердите расходы: ${n} (${total}) — детали в чате.`,
+  },
+  it: {
+    delay: (m) => `🚐 Il veicolo è in ritardo di ~${m} min — grazie per l’attesa.`,
+    parking: '🅿️ Veicolo parcheggiato — tocca per vedere il pin.',
+    arrived: '🚐 Il tuo veicolo è arrivato — tocca per vedere il pin.',
+    open: 'Mappa',
+    settlement: (n, total) => `💰 ${n} spes${n > 1 ? 'e' : 'a'} da confermare (${total}) — guarda la chat.`,
+  },
 };
 
 export default function SecondaryCardBanner({

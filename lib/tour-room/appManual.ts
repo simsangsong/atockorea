@@ -30,6 +30,10 @@ export const MANUAL_TITLE: Record<RoomLocale, string> = {
   ja: 'アプリの使い方',
   es: 'Cómo funciona esta app',
   zh: '应用使用指南',
+  fr: 'Comment fonctionne cette app',
+  de: 'So funktioniert die App',
+  ru: 'Как работает приложение',
+  it: 'Come funziona l’app',
 };
 
 export const MANUAL_CTA: Record<RoomLocale, string> = {
@@ -38,6 +42,10 @@ export const MANUAL_CTA: Record<RoomLocale, string> = {
   ja: 'わかりました',
   es: 'Entendido',
   zh: '知道了',
+  fr: 'Compris',
+  de: 'Verstanden',
+  ru: 'Понятно',
+  it: 'Ho capito',
 };
 
 export const MANUAL_SECTIONS: ManualSection[] = [
@@ -51,6 +59,10 @@ export const MANUAL_SECTIONS: ManualSection[] = [
       ja: '自分の言語でチャット',
       es: 'Chatea en tu idioma',
       zh: '用您的语言聊天',
+      fr: 'Discutez dans votre langue',
+      de: 'Chatten in Ihrer Sprache',
+      ru: 'Чат на вашем языке',
+      it: 'Chatta nella tua lingua',
     },
     body: {
       en: 'Everything here translates automatically — text, photos, and voice messages all reach the team in Korean, and replies come back in your language.',
@@ -58,6 +70,10 @@ export const MANUAL_SECTIONS: ManualSection[] = [
       ja: 'すべてのメッセージは自動翻訳されます — テキスト・写真・音声が韓国語で伝わり、返信はあなたの言語で届きます。',
       es: 'Todo se traduce automáticamente: texto, fotos y mensajes de voz llegan al equipo en coreano y las respuestas vuelven en tu idioma.',
       zh: '所有消息都会自动翻译 — 文字、照片和语音以韩语传达给团队，回复则以您的语言送达。',
+      fr: 'Tout est traduit automatiquement — textes, photos et messages vocaux parviennent à l’équipe en coréen, et les réponses vous reviennent dans votre langue.',
+      de: 'Alles hier wird automatisch übersetzt — Texte, Fotos und Sprachnachrichten erreichen das Team auf Koreanisch, und die Antworten kommen in Ihrer Sprache zurück.',
+      ru: 'Все сообщения переводятся автоматически — текст, фото и голосовые доходят до команды на корейском, а ответы приходят на вашем языке.',
+      it: 'Tutto qui si traduce automaticamente — testi, foto e messaggi vocali arrivano al team in coreano, e le risposte tornano nella tua lingua.',
     },
   },
   {
@@ -70,6 +86,10 @@ export const MANUAL_SECTIONS: ManualSection[] = [
       ja: '各スポットで到着カード',
       es: 'Tarjetas de llegada en cada parada',
       zh: '每站都有到达卡片',
+      fr: 'Cartes d’arrivée à chaque étape',
+      de: 'Ankunftskarten an jedem Stopp',
+      ru: 'Карточки прибытия на каждой остановке',
+      it: 'Card di arrivo a ogni tappa',
     },
     body: {
       en: "When you arrive somewhere, a card lands here with the meeting time, a restroom map, the parking pin, and a mini guide to the spot — check it before you wander off.",
@@ -77,6 +97,10 @@ export const MANUAL_SECTIONS: ManualSection[] = [
       ja: '到着すると、集合時間・トイレ地図・駐車位置・ミニガイドが入ったカードが届きます — 散策の前にご確認ください。',
       es: 'Al llegar a un lugar, aquí aparece una tarjeta con la hora de reunión, el mapa de baños, el pin del aparcamiento y una mini guía: revísala antes de explorar.',
       zh: '到达景点后，这里会收到一张卡片，包含集合时间、洗手间地图、停车位置和小导览 — 游览前请先查看。',
+      fr: 'À chaque arrivée, une carte apparaît ici avec l’heure de rendez-vous, la carte des toilettes, l’emplacement du parking et un mini-guide du lieu — consultez-la avant de partir explorer.',
+      de: 'Sobald Sie irgendwo ankommen, erscheint hier eine Karte mit Treffzeit, Toilettenplan, Park-Pin und einem Mini-Guide zum Ort — am besten kurz ansehen, bevor Sie losziehen.',
+      ru: 'Когда вы куда-то прибываете, здесь появляется карточка со временем сбора, картой туалетов, отметкой парковки и мини-гидом по месту — загляните в нее, прежде чем идти гулять.',
+      it: 'Quando arrivi in un posto, qui compare una card con l’orario di ritrovo, la mappa dei bagni, il pin del parcheggio e una mini guida del luogo — dagli un’occhiata prima di andare in giro.',
     },
   },
   {
@@ -89,6 +113,10 @@ export const MANUAL_SECTIONS: ManualSection[] = [
       ja: '集合時間カウントダウン',
       es: 'Cuenta regresiva de reunión',
       zh: '集合时间倒计时',
+      fr: 'Compte à rebours du rendez-vous',
+      de: 'Countdown zur Treffzeit',
+      ru: 'Отсчет до времени сбора',
+      it: 'Conto alla rovescia per il ritrovo',
     },
     body: {
       en: 'Your phone nudges you 10 and 5 minutes before the meeting time, and a live countdown appears at the top for the last 3 minutes. Please keep notifications on and come back a little early.',
@@ -96,6 +124,10 @@ export const MANUAL_SECTIONS: ManualSection[] = [
       ja: '集合の10分前と5分前に通知が届き、3分前からは画面上部にカウントダウンが表示されます。通知をオンにして少し早めにお戻りください。',
       es: 'El teléfono te avisa 10 y 5 minutos antes de la hora de reunión, y en los últimos 3 minutos aparece una cuenta regresiva arriba. Mantén las notificaciones activadas y vuelve con antelación.',
       zh: '集合前 10 分钟和 5 分钟手机会提醒您，最后 3 分钟屏幕顶部会显示倒计时。请开启通知并提前返回。',
+      fr: 'Votre téléphone vous prévient 10 et 5 minutes avant l’heure de rendez-vous, et un compte à rebours s’affiche en haut pendant les 3 dernières minutes. Gardez les notifications activées et revenez un peu en avance.',
+      de: 'Ihr Handy erinnert Sie 10 und 5 Minuten vor der Treffzeit, und in den letzten 3 Minuten läuft oben ein Countdown. Bitte lassen Sie Benachrichtigungen an und kommen Sie etwas früher zurück.',
+      ru: 'Телефон напомнит вам за 10 и за 5 минут до времени сбора, а в последние 3 минуты вверху экрана появится отсчет. Держите уведомления включенными и возвращайтесь чуть раньше.',
+      it: 'Il telefono ti avvisa 10 e 5 minuti prima dell’orario di ritrovo, e negli ultimi 3 minuti in alto compare un conto alla rovescia. Tieni le notifiche attive e torna con un po’ di anticipo.',
     },
   },
   {
@@ -108,6 +140,10 @@ export const MANUAL_SECTIONS: ManualSection[] = [
       ja: 'ワンタップリクエスト',
       es: 'Peticiones de un toque',
       zh: '一键请求',
+      fr: 'Demandes en un geste',
+      de: 'Anfragen per Fingertipp',
+      ru: 'Запросы в одно касание',
+      it: 'Richieste con un tocco',
     },
     body: {
       en: "Above the chat box: I'm running late · need a stop · I'm lost · pick me up here (shares your location once) · change my drop-off. One tap reaches the team instantly.",
@@ -115,6 +151,10 @@ export const MANUAL_SECTIONS: ManualSection[] = [
       ja: 'チャット欄の上のボタン：遅れています・少し止まりたい・道に迷いました・ここに迎えに来て（現在地を1回共有）・降車地点を変更。ワンタップでチームに届きます。',
       es: 'Sobre el chat: voy tarde · necesito parar · estoy perdido · recógeme aquí (comparte tu ubicación una vez) · cambiar bajada. Un toque y el equipo lo recibe al instante.',
       zh: '聊天框上方的按钮：我会迟到 · 想停一下 · 我迷路了 · 来这里接我（一次性共享位置）· 更改下车点。一键即可传达给团队。',
+      fr: 'Au-dessus de la zone de saisie: je suis en retard · besoin d’un arrêt · je suis perdu · venez me chercher ici (partage votre position une fois) · modifier ma dépose. Un seul geste, et l’équipe est prévenue aussitôt.',
+      de: 'Über dem Chatfeld: Ich verspäte mich · Kurze Pause nötig · Ich habe mich verlaufen · Holen Sie mich hier ab (teilt Ihren Standort einmalig) · Ausstieg ändern. Ein Fingertipp genügt, und das Team weiß sofort Bescheid.',
+      ru: 'Над полем чата: я опаздываю · нужна остановка · я потерялся · заберите меня здесь (позиция отправится один раз) · изменить место высадки. Одно касание — и команда сразу в курсе.',
+      it: 'Sopra la casella di chat: sono in ritardo · serve una sosta · mi sono perso · vieni a prendermi qui (condivide la tua posizione una volta) · cambia il punto di discesa. Un tocco e il team lo riceve all’istante.',
     },
   },
   {
@@ -127,6 +167,10 @@ export const MANUAL_SECTIONS: ManualSection[] = [
       ja: '緊急時',
       es: 'Emergencia',
       zh: '紧急情况',
+      fr: 'Urgence',
+      de: 'Notfall',
+      ru: 'Экстренная ситуация',
+      it: 'Emergenza',
     },
     body: {
       en: 'The SOS button alerts the driver/staff AND the operations center at the same time. For medical emergencies in Korea, dial 119.',
@@ -134,6 +178,10 @@ export const MANUAL_SECTIONS: ManualSection[] = [
       ja: 'SOSボタンはドライバー/スタッフと運営センターへ同時に通知します。医療緊急時は119へ電話してください。',
       es: 'El botón SOS avisa al conductor/personal Y al centro de operaciones a la vez. Para emergencias médicas en Corea, marca 119.',
       zh: 'SOS 按钮会同时通知司机/工作人员和运营中心。医疗紧急情况请拨打 119。',
+      fr: 'Le bouton SOS alerte en même temps le chauffeur/le personnel ET le centre des opérations. En cas d’urgence médicale en Corée, composez le 119.',
+      de: 'Der SOS-Knopf alarmiert gleichzeitig den Fahrer bzw. das Personal UND unsere Zentrale. Bei einem medizinischen Notfall in Korea wählen Sie die 119.',
+      ru: 'Кнопка SOS одновременно оповещает водителя/персонал И оперативный центр. При медицинской экстренной ситуации в Корее звоните 119.',
+      it: 'Il pulsante SOS avvisa contemporaneamente autista/staff E la centrale operativa. Per le emergenze mediche in Corea chiama il 119.',
     },
   },
   {
@@ -146,6 +194,10 @@ export const MANUAL_SECTIONS: ManualSection[] = [
       ja: '当日の精算',
       es: 'Gastos del día',
       zh: '当日费用结算',
+      fr: 'Frais du jour',
+      de: 'Ausgaben am Tourtag',
+      ru: 'Расходы в день тура',
+      it: 'Spese della giornata',
     },
     body: {
       en: 'Tickets the driver buys for you, parking, or overtime appear here as cards — confirm each one with a tap, then settle in cash at the end of the day. Receipts attach to the card.',
@@ -153,6 +205,10 @@ export const MANUAL_SECTIONS: ManualSection[] = [
       ja: 'ドライバーが立て替えたチケット・駐車料金・延長料金はカードで表示されます — タップで確認し、1日の終わりに現金で精算します。領収書もカードに添付されます。',
       es: 'Las entradas que compra el conductor, el parking o las horas extra aparecen aquí como tarjetas: confírmalas con un toque y liquida en efectivo al final del día. Los recibos se adjuntan.',
       zh: '司机代买的门票、停车费或超时费会以卡片形式显示 — 点击确认，当天结束时以现金结算。收据也会附在卡片上。',
+      fr: 'Les billets achetés pour vous par le chauffeur, le parking ou les heures supplémentaires apparaissent ici sous forme de cartes — confirmez chacune d’un geste, puis réglez en espèces en fin de journée. Les reçus sont joints à la carte.',
+      de: 'Tickets, die der Fahrer für Sie kauft, Parkgebühren oder Überstunden erscheinen hier als Karten — bestätigen Sie jede per Fingertipp und rechnen Sie am Ende des Tages bar ab. Belege hängen an der Karte.',
+      ru: 'Билеты, которые водитель покупает за вас, парковка и дополнительные часы появляются здесь в виде карточек — подтверждайте каждую касанием, а в конце дня рассчитайтесь наличными. Чеки прикрепляются к карточке.',
+      it: 'I biglietti che l’autista compra per te, il parcheggio o gli straordinari compaiono qui come card — confermali con un tocco e a fine giornata salda in contanti. Le ricevute restano allegate alla card.',
     },
   },
   {
@@ -165,6 +221,10 @@ export const MANUAL_SECTIONS: ManualSection[] = [
       ja: '役割のご案内',
       es: 'Quién hace qué',
       zh: '角色说明',
+      fr: 'Qui fait quoi',
+      de: 'Wer macht was',
+      ru: 'Кто за что отвечает',
+      it: 'Chi fa cosa',
     },
     body: {
       en: 'The on-site staff takes care of your SAFETY and the day’s operations — boarding, meeting times, emergencies. The sightseeing commentary comes from the Smart Guide right here in the app, in your language.',
@@ -172,6 +232,10 @@ export const MANUAL_SECTIONS: ManualSection[] = [
       ja: '現場スタッフは安全と運営（乗降・集合・緊急対応）を担当します。観光解説はこのアプリのスマートガイドが、あなたの言語でお届けします。',
       es: 'El personal en el lugar se ocupa de tu SEGURIDAD y de la operación del día: abordaje, horas de reunión, emergencias. El comentario turístico lo ofrece la Smart Guide aquí en la app, en tu idioma.',
       zh: '现场工作人员负责您的安全与当日运营 — 上下车、集合时间、紧急应对。景点讲解由本应用的智能导览以您的语言提供。',
+      fr: 'Le personnel sur place s’occupe de votre SÉCURITÉ et du déroulement de la journée — embarquement, heures de rendez-vous, urgences. Les commentaires touristiques viennent du Guide intelligent, ici même dans l’app, dans votre langue.',
+      de: 'Das Personal vor Ort kümmert sich um Ihre SICHERHEIT und den Tagesablauf — Einstieg, Treffzeiten, Notfälle. Die Sehenswürdigkeiten erklärt Ihnen der Smart Guide direkt hier in der App, in Ihrer Sprache.',
+      ru: 'Персонал на месте отвечает за вашу БЕЗОПАСНОСТЬ и ход дня — посадку, время сбора, экстренные случаи. Экскурсионные комментарии дает Умный гид прямо здесь, в приложении, на вашем языке.',
+      it: 'Lo staff sul posto si occupa della tua SICUREZZA e dell’operativo della giornata — salita a bordo, orari di ritrovo, emergenze. Il commento turistico arriva dalla Guida smart proprio qui nell’app, nella tua lingua.',
     },
   },
   {
@@ -184,6 +248,10 @@ export const MANUAL_SECTIONS: ManualSection[] = [
       ja: 'ドライバー＋スマートガイド',
       es: 'Tu conductor + la Smart Guide',
       zh: '司机 + 智能导览',
+      fr: 'Votre chauffeur + le Guide intelligent',
+      de: 'Ihr Fahrer + der Smart Guide',
+      ru: 'Ваш водитель + Умный гид',
+      it: 'Il tuo autista + la Guida smart',
     },
     body: {
       en: 'Your driver focuses on safe driving and the route. Commentary, tips, and answers come from the Smart Guide in this app — ask anything by text, photo, or voice.',
@@ -191,6 +259,10 @@ export const MANUAL_SECTIONS: ManualSection[] = [
       ja: 'ドライバーは安全運転と移動に集中します。解説・ヒント・質問への回答はこのアプリのスマートガイドが担当 — テキスト・写真・音声で何でも聞いてください。',
       es: 'Tu conductor se concentra en conducir con seguridad. El comentario, los consejos y las respuestas vienen de la Smart Guide de esta app: pregunta lo que sea por texto, foto o voz.',
       zh: '司机专注于安全驾驶和路线。讲解、贴士和答疑由本应用的智能导览负责 — 可以用文字、照片或语音随时提问。',
+      fr: 'Votre chauffeur se concentre sur la conduite et l’itinéraire. Commentaires, conseils et réponses viennent du Guide intelligent de cette app — posez vos questions par texte, photo ou message vocal.',
+      de: 'Ihr Fahrer konzentriert sich auf sicheres Fahren und die Route. Erklärungen, Tipps und Antworten kommen vom Smart Guide in dieser App — fragen Sie einfach per Text, Foto oder Sprachnachricht.',
+      ru: 'Водитель сосредоточен на безопасном вождении и маршруте. Комментарии, советы и ответы дает Умный гид в этом приложении — спрашивайте что угодно текстом, фото или голосом.',
+      it: 'Il tuo autista si concentra sulla guida sicura e sul percorso. Commenti, consigli e risposte arrivano dalla Guida smart di questa app — chiedi qualsiasi cosa con testo, foto o voce.',
     },
   },
 ];

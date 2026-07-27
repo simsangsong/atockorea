@@ -236,6 +236,42 @@ const COPY: Record<RoomLocale, VehicleEtaCopy> = {
     notSharing: '尚未共享位置',
     pickupWindow: '正在前往接您',
   },
+  fr: {
+    title: 'Position du chauffeur',
+    button: 'Voir le véhicule',
+    eta: 'Environ {min} min · {dist}',
+    age: 'Position il y a {n} min',
+    justNow: 'Position à l’instant',
+    notSharing: 'Position pas encore partagée',
+    pickupWindow: 'En route pour venir vous chercher',
+  },
+  de: {
+    title: 'Fahrer-Standort',
+    button: 'Fahrzeug anzeigen',
+    eta: 'Etwa {min} Min. · {dist}',
+    age: 'Standort vor {n} Min.',
+    justNow: 'Standort gerade eben',
+    notSharing: 'Standort noch nicht geteilt',
+    pickupWindow: 'Auf dem Weg zu Ihrer Abholung',
+  },
+  ru: {
+    title: 'Где водитель',
+    button: 'Показать машину',
+    eta: 'Около {min} мин · {dist}',
+    age: 'Позиция {n} мин назад',
+    justNow: 'Позиция только что',
+    notSharing: 'Геопозиция пока не передается',
+    pickupWindow: 'Уже едет за вами',
+  },
+  it: {
+    title: 'Posizione dell’autista',
+    button: 'Vedi il veicolo',
+    eta: 'Circa {min} min · {dist}',
+    age: 'Posizione di {n} min fa',
+    justNow: 'Posizione di un attimo fa',
+    notSharing: 'Posizione non ancora condivisa',
+    pickupWindow: 'Sta venendo a prenderti',
+  },
 };
 
 export function vehicleEtaCopy(locale: RoomLocale): VehicleEtaCopy {

@@ -55,6 +55,30 @@ const COPY: Record<RoomLocale, { message: string; android: string; ios: string; 
     ios: '点按 ⋯ 或分享按钮 → "在 Safari 中打开"',
     dismiss: '关闭',
   },
+  fr: {
+    message: 'Ce navigateur intégré limite les fonctions vocales et de localisation.',
+    android: 'Ouvrir dans Chrome',
+    ios: 'Touchez ⋯ ou l’icône de partage → « Ouvrir dans Safari »',
+    dismiss: 'Fermer',
+  },
+  de: {
+    message: 'Dieser In-App-Browser schränkt Sprach- und Standortfunktionen ein.',
+    android: 'In Chrome öffnen',
+    ios: 'Tippen Sie auf ⋯ oder das Teilen-Symbol → „In Safari öffnen“',
+    dismiss: 'Schließen',
+  },
+  ru: {
+    message: 'Встроенный браузер приложения ограничивает голосовые функции и геолокацию.',
+    android: 'Открыть в Chrome',
+    ios: 'Нажмите ⋯ или значок «Поделиться» → «Открыть в Safari»',
+    dismiss: 'Закрыть',
+  },
+  it: {
+    message: 'Questo browser in-app limita le funzioni vocali e di posizione.',
+    android: 'Apri in Chrome',
+    ios: 'Tocca ⋯ o l’icona di condivisione → "Apri in Safari"',
+    dismiss: 'Chiudi',
+  },
 };
 
 export default function WebviewEscapeBanner() {

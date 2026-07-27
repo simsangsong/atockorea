@@ -72,10 +72,10 @@ const KIND_COLOR: Record<FacilityKind, string> = {
 
 /** Default label when a pin has neither a localized nor a neutral name. */
 const KIND_DEFAULT_LABEL: Record<FacilityKind, Record<RoomLocale, string>> = {
-  restroom: { en: 'Restroom', ko: '화장실', zh: '洗手间', ja: 'トイレ', es: 'Baño' },
-  photo: { en: 'Photo spot', ko: '포토스팟', zh: '拍照点', ja: '写真スポット', es: 'Foto' },
-  restaurant: { en: 'Restaurant', ko: '맛집', zh: '餐厅', ja: 'レストラン', es: 'Restaurante' },
-  ticket_booth: { en: 'Ticket booth', ko: '매표소', zh: '售票处', ja: 'チケット売り場', es: 'Taquilla' },
+  restroom: { en: 'Restroom', ko: '화장실', zh: '洗手间', ja: 'トイレ', es: 'Baño', fr: 'Toilettes', de: 'Toilette', ru: 'Туалет', it: 'Bagno' },
+  photo: { en: 'Photo spot', ko: '포토스팟', zh: '拍照点', ja: '写真スポット', es: 'Foto', fr: 'Spot photo', de: 'Fotospot', ru: 'Фотоспот', it: 'Punto foto' },
+  restaurant: { en: 'Restaurant', ko: '맛집', zh: '餐厅', ja: 'レストラン', es: 'Restaurante', fr: 'Restaurant', de: 'Restaurant', ru: 'Ресторан', it: 'Ristorante' },
+  ticket_booth: { en: 'Ticket booth', ko: '매표소', zh: '售票处', ja: 'チケット売り場', es: 'Taquilla', fr: 'Billetterie', de: 'Ticketschalter', ru: 'Касса', it: 'Biglietteria' },
 };
 
 function isFiniteCoord(lat: unknown, lng: unknown): boolean {

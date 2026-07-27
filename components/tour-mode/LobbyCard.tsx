@@ -73,6 +73,38 @@ const COPY: Record<
     vehicleTitle: '乘坐车辆',
     chatHint: '导游的通知会显示在这里。有问题随时在下方留言。',
   },
+  fr: {
+    dday: (n) => (n === 0 ? 'Aujourd’hui' : `J-${n}`),
+    title: 'Votre espace tour est prêt',
+    meetOn: 'Rendez-vous le',
+    pickupTitle: 'Prise en charge',
+    vehicleTitle: 'Votre véhicule',
+    chatHint: 'Les messages de votre guide arriveront ici. Une question? Écrivez-nous quand vous voulez.',
+  },
+  de: {
+    dday: (n) => (n === 0 ? 'Heute' : n === 1 ? 'Noch 1 Tag' : `Noch ${n} Tage`),
+    title: 'Ihr Tour-Raum ist bereit',
+    meetOn: 'Wir treffen uns am',
+    pickupTitle: 'Abholung',
+    vehicleTitle: 'Ihr Fahrzeug',
+    chatHint: 'Nachrichten Ihres Guides kommen hier an. Fragen? Schreiben Sie uns jederzeit.',
+  },
+  ru: {
+    dday: (n) => (n === 0 ? 'Сегодня' : `Осталось ${n} дн.`),
+    title: 'Ваша комната тура готова',
+    meetOn: 'Встречаемся',
+    pickupTitle: 'Трансфер',
+    vehicleTitle: 'Ваш транспорт',
+    chatHint: 'Сообщения гида будут приходить сюда. Есть вопросы? Пишите в любое время.',
+  },
+  it: {
+    dday: (n) => (n === 0 ? 'Oggi' : n === 1 ? 'Manca 1 giorno' : `Mancano ${n} giorni`),
+    title: 'La tua stanza del tour è pronta',
+    meetOn: 'Ci vediamo il',
+    pickupTitle: 'Pick-up',
+    vehicleTitle: 'Il tuo veicolo',
+    chatHint: 'I messaggi della guida arriveranno qui. Domande? Scrivici quando vuoi.',
+  },
 };
 
 /**

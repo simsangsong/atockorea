@@ -17,6 +17,10 @@ const ONLINE_LABEL: Record<RoomLocale, (n: number) => string> = {
   ja: (n) => `${n}人オンライン`,
   es: (n) => `${n} en línea`,
   zh: (n) => `${n}人在线`,
+  fr: (n) => `${n} en ligne`,
+  de: (n) => `${n} online`,
+  ru: (n) => `${n} в сети`,
+  it: (n) => `${n} online`,
 };
 
 export default function PresenceBar({

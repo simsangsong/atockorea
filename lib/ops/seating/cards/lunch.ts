@@ -48,6 +48,10 @@ const LUNCH_HEADER: Record<RoomLocale, string> = {
   ja: '昼食のご案内 🍜',
   es: 'Sobre el almuerzo 🍜',
   zh: '午餐说明 🍜',
+  fr: 'À propos du déjeuner 🍜',
+  de: 'Zum Mittagessen 🍜',
+  ru: 'Об обеде 🍜',
+  it: 'A proposito del pranzo 🍜',
 };
 
 const NOT_INCLUDED: Record<RoomLocale, string> = {
@@ -56,6 +60,10 @@ const NOT_INCLUDED: Record<RoomLocale, string> = {
   ja: '昼食はツアー料金に含まれていません — お好きなお店で各自お支払いください。',
   es: 'El almuerzo no está incluido en el precio: eligen ustedes el sitio y pagan allí.',
   zh: '午餐不含在行程费用内 — 由您自行选择餐厅并现场付款。',
+  fr: 'Le déjeuner n’est pas compris dans le prix du tour — vous choisissez votre restaurant et réglez sur place.',
+  de: 'Das Mittagessen ist im Tourpreis nicht enthalten — Sie wählen selbst ein Lokal und zahlen dort.',
+  ru: 'Обед не включен в стоимость тура — вы сами выбираете место и оплачиваете на месте.',
+  it: 'Il pranzo non è incluso nel prezzo del tour — scegli tu il posto e paghi lì.',
 };
 
 /**
@@ -71,6 +79,10 @@ const INCLUDED: Record<TourKind, Record<RoomLocale, string>> = {
     ja: '本日は昼食が含まれています — スタッフがレストランへご案内します。',
     es: 'El almuerzo está incluido hoy: el personal les llevará al restaurante.',
     zh: '今天含午餐 — 工作人员会带您前往餐厅。',
+    fr: 'Le déjeuner est compris aujourd’hui — l’équipe vous accompagnera au restaurant.',
+    de: 'Heute ist das Mittagessen inklusive — das Team bringt Sie zum Restaurant.',
+    ru: 'Сегодня обед включен — сотрудники проводят вас в ресторан.',
+    it: 'Oggi il pranzo è incluso — lo staff ti accompagnerà al ristorante.',
   },
   private: {
     en: 'Lunch is included today — your driver will take you to the restaurant.',
@@ -78,6 +90,10 @@ const INCLUDED: Record<TourKind, Record<RoomLocale, string>> = {
     ja: '本日は昼食が含まれています — ドライバーがレストランへご案内します。',
     es: 'El almuerzo está incluido hoy: su conductor les llevará al restaurante.',
     zh: '今天含午餐 — 司机会带您前往餐厅。',
+    fr: 'Le déjeuner est compris aujourd’hui — votre chauffeur vous accompagnera au restaurant.',
+    de: 'Heute ist das Mittagessen inklusive — Ihr Fahrer bringt Sie zum Restaurant.',
+    ru: 'Сегодня обед включен — водитель проводит вас в ресторан.',
+    it: 'Oggi il pranzo è incluso — il tuo autista ti accompagnerà al ristorante.',
   },
 };
 
@@ -87,6 +103,10 @@ const PICKS: Record<RoomLocale, string> = {
   ja: 'ランチスポット付近では、徒歩時間と地図リンク付きのおすすめ店をご自身の言語でお送りします。',
   es: 'Cerca de la parada de comida les enviaremos sugerencias de restaurantes en su idioma, con tiempo a pie y enlace al mapa.',
   zh: '在午餐地点附近，我们会用您的语言发送餐厅推荐，附步行时间与地图链接。',
+  fr: 'Près de la pause déjeuner, nous vous enverrons des suggestions de restaurants dans votre langue, avec le temps de marche et un lien vers la carte.',
+  de: 'In der Nähe des Mittagsstopps schicken wir Ihnen Restaurantvorschläge in Ihrer Sprache — mit Gehzeit und Kartenlink.',
+  ru: 'Рядом с местом обеда мы пришлем подборку ресторанов на вашем языке — с временем пешком и ссылкой на карту.',
+  it: 'Vicino alla tappa del pranzo ti invieremo qualche ristorante consigliato nella tua lingua, con tempo a piedi e link alla mappa.',
 };
 
 const INTAKE_PROMPT: Record<RoomLocale, string> = {
@@ -95,6 +115,10 @@ const INTAKE_PROMPT: Record<RoomLocale, string> = {
   ja: '食事制限はありますか？下からタップいただくと、本日のお店の提案すべてに反映されます。',
   es: '¿Alguna necesidad alimentaria? Márquenla abajo y la tendremos en cuenta en todas las sugerencias de hoy.',
   zh: '有饮食方面的需要吗？在下方点选，今天所有餐厅推荐都会据此调整。',
+  fr: 'Des restrictions alimentaires? Indiquez-les ci-dessous — toutes les suggestions de restaurants d’aujourd’hui en tiendront compte.',
+  de: 'Besondere Ernährungswünsche? Einfach unten antippen — alle heutigen Restaurantvorschläge berücksichtigen sie.',
+  ru: 'Есть пожелания по питанию? Отметьте их ниже — все сегодняшние рекомендации ресторанов будут их учитывать.',
+  it: 'Esigenze alimentari? Toccale qui sotto — ne terremo conto in tutti i ristoranti consigliati oggi.',
 };
 
 /** Card chrome — the 5-locale labels the guest component renders. */
@@ -141,6 +165,38 @@ export const LUNCH_COPY: Record<
     failed: '保存失败 — 请再试一次',
     none: '无限制',
     hint: '随时可以修改。',
+  },
+  fr: {
+    title: 'Déjeuner',
+    intake: 'Restrictions alimentaires',
+    saved: 'Enregistré — vos suggestions en tiendront compte',
+    failed: 'Échec de l’enregistrement — réessayez',
+    none: 'Aucune restriction',
+    hint: 'Vous pouvez modifier cela à tout moment.',
+  },
+  de: {
+    title: 'Mittagessen',
+    intake: 'Ernährungswünsche',
+    saved: 'Gespeichert — wird bei den Vorschlägen berücksichtigt',
+    failed: 'Speichern fehlgeschlagen — bitte erneut antippen',
+    none: 'Keine Einschränkungen',
+    hint: 'Sie können das jederzeit ändern.',
+  },
+  ru: {
+    title: 'Обед',
+    intake: 'Пожелания по питанию',
+    saved: 'Сохранено — учтем в рекомендациях',
+    failed: 'Не удалось сохранить — нажмите еще раз',
+    none: 'Без ограничений',
+    hint: 'Это можно изменить в любой момент.',
+  },
+  it: {
+    title: 'Pranzo',
+    intake: 'Esigenze alimentari',
+    saved: 'Salvato — ne terremo conto nei consigli',
+    failed: 'Salvataggio non riuscito — riprova',
+    none: 'Nessuna restrizione',
+    hint: 'Puoi cambiarlo quando vuoi.',
   },
 };
 

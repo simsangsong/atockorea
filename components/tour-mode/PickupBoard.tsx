@@ -60,6 +60,34 @@ const COPY: Record<
     scheduled: '预定接送时间',
     mapHint: '大巴实时位置请看地图标签',
   },
+  fr: {
+    title: 'Prise en charge de ce matin',
+    stop: (n, total) => `Votre arrêt: ${n} sur ${total}`,
+    eta: (min) => `Le bus est à environ ${min} min`,
+    scheduled: 'Heure prévue',
+    mapHint: 'La position du bus en direct est dans l’onglet Carte',
+  },
+  de: {
+    title: 'Abholung heute Morgen',
+    stop: (n, total) => `Ihre Abholung ist Stopp ${n} von ${total}`,
+    eta: (min) => `Der Bus ist etwa ${min} Min. entfernt`,
+    scheduled: 'Geplante Abholzeit',
+    mapHint: 'Die Live-Position des Busses finden Sie im Karten-Tab',
+  },
+  ru: {
+    title: 'Трансфер этим утром',
+    stop: (n, total) => `Ваша посадка — остановка ${n} из ${total}`,
+    eta: (min) => `Автобус будет примерно через ${min} мин`,
+    scheduled: 'Время по расписанию',
+    mapHint: 'Положение автобуса — на вкладке «Карта»',
+  },
+  it: {
+    title: 'Pick-up di stamattina',
+    stop: (n, total) => `La tua fermata è la ${n} di ${total}`,
+    eta: (min) => `Il bus è a circa ${min} min`,
+    scheduled: 'Orario previsto',
+    mapHint: 'La posizione del bus in tempo reale è nella scheda Mappa',
+  },
 };
 
 const PICKUP_PRESET_KEYS = ['arrived', 'running_late'] as const;
@@ -70,6 +98,10 @@ const ONBOARD_COPY: Record<RoomLocale, { button: string; done: string }> = {
   ja: { button: '乗車しました', done: '乗車済み ✓' },
   es: { button: 'Ya estoy en el bus', done: 'A bordo ✓' },
   zh: { button: '我已上车', done: '已上车 ✓' },
+  fr: { button: 'Je suis à bord', done: 'À bord ✓' },
+  de: { button: 'Ich bin im Bus', done: 'An Bord ✓' },
+  ru: { button: 'Я в автобусе', done: 'На борту ✓' },
+  it: { button: 'Sono a bordo', done: 'A bordo ✓' },
 };
 
 export default function PickupBoard({

@@ -12,7 +12,7 @@ import {
 import { recordRoomEvent } from '@/lib/tour-room/events';
 import { broadcastToRoom } from '@/lib/tour-room/realtime';
 import { sendDriverRoomPush, sendGuestRoomPush } from '@/lib/tour-room/guestPush';
-import { normalizeRoomLocale, ROOM_LOCALES } from '@/lib/tour-room/snapshot';
+import { normalizeRoomLocale, CORE_TRANSLATION_LOCALES } from '@/lib/tour-room/snapshot';
 import { translateTextForLocales } from '@/lib/openai-server';
 import { sendEmail } from '@/lib/email';
 import { sendOpsPush } from '@/lib/tour-ops/push';
@@ -245,7 +245,7 @@ export async function POST(
     let noteByLocale: Record<string, string> | null = null;
     if (note) {
       try {
-        noteByLocale = (await translateTextForLocales(note, [...ROOM_LOCALES])).translations;
+        noteByLocale = (await translateTextForLocales(note, [...CORE_TRANSLATION_LOCALES])).translations;
       } catch {
         noteByLocale = null;
       }

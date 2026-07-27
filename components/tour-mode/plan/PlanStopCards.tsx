@@ -25,6 +25,20 @@ export interface PlanStopCardsLabels {
   details: string;
 }
 
+/**
+ * The product-detail drawer speaks the six CONTENT locales (tour-product
+ * pages); the four UI locales added 2026-07-27 (fr/de/ru/it) have no product
+ * content yet, so their drawer falls back to English content — the UI chrome
+ * around it stays in the guest's language.
+ */
+const DRAWER_CONTENT_LOCALES = ['en', 'ko', 'ja', 'zh', 'zh-TW', 'es'] as const;
+type DrawerContentLocale = (typeof DRAWER_CONTENT_LOCALES)[number];
+function drawerContentLocale(locale: RoomLocale): DrawerContentLocale {
+  return (DRAWER_CONTENT_LOCALES as readonly string[]).includes(locale)
+    ? (locale as DrawerContentLocale)
+    : 'en';
+}
+
 function stopPhoto(stop: ItineraryStop): string | null {
   if (stop.image) return stop.image;
   if (stop.images && stop.images.length > 0) return stop.images[0];
@@ -151,7 +165,7 @@ export default function PlanStopCards({
         open={Boolean(drawerStop)}
         onClose={() => setDrawerStop(null)}
         sectionUi={sectionUi}
-        locale={locale}
+        locale={drawerContentLocale(locale)}
       />
     </>
   );

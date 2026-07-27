@@ -65,13 +65,17 @@ import type { ReactionAgg } from '@/hooks/useTourRoomChannel';
 /** Quick emoji set for the reaction row (Phase 2c). */
 const REACTION_EMOJI = ['👍', '❤️', '😂', '😮', '🙏'];
 
-const READ_LABEL: Record<RoomLocale, string> = { en: 'Read', ko: '읽음', ja: '既読', es: 'Leído', zh: '已读' };
+const READ_LABEL: Record<RoomLocale, string> = { en: 'Read', ko: '읽음', ja: '既読', es: 'Leído', zh: '已读', fr: 'Lu', de: 'Gelesen', ru: 'Прочитано', it: 'Letto' };
 const TYPING_LABEL: Record<RoomLocale, string> = {
   en: 'typing…',
   ko: '입력 중…',
   ja: '入力中…',
   es: 'escribiendo…',
   zh: '正在输入…',
+  fr: 'écrit…',
+  de: 'schreibt…',
+  ru: 'печатает…',
+  it: 'sta scrivendo…',
 };
 import { buildFeedItems, type FeedItem } from '@/lib/tour-room/messageGroups';
 import { formatBubbleTime, formatDateSeparator } from '@/lib/tour-room/timeFormat';
@@ -90,6 +94,10 @@ const EARLIER_LABEL: Record<RoomLocale, string> = {
   ja: '以前のメッセージを表示',
   es: 'Ver mensajes anteriores',
   zh: '查看更早的消息',
+  fr: 'Voir les messages précédents',
+  de: 'Frühere Nachrichten anzeigen',
+  ru: 'Показать более ранние сообщения',
+  it: 'Mostra i messaggi precedenti',
 };
 
 /**
@@ -107,6 +115,10 @@ const EMPTY_COPY: Record<'customer' | 'operator', Record<RoomLocale, string>> = 
     ja: 'まだメッセージはありません — ガイドのご案内はここに届きます。',
     es: 'Aún no hay mensajes: los avisos de tu guía aparecerán aquí.',
     zh: '还没有消息 — 导游的通知会显示在这里。',
+    fr: 'Pas encore de messages — les infos de votre guide arriveront ici.',
+    de: 'Noch keine Nachrichten — Hinweise Ihres Guides erscheinen hier.',
+    ru: 'Сообщений пока нет — новости от гида появятся здесь.',
+    it: 'Ancora nessun messaggio — gli avvisi della tua guida appariranno qui.',
   },
   operator: {
     en: 'No messages yet — say hello to your guests, or send a quick reply.',
@@ -114,6 +126,10 @@ const EMPTY_COPY: Record<'customer' | 'operator', Record<RoomLocale, string>> = 
     ja: 'まだメッセージはありません — お客様に最初のご案内を送りましょう。',
     es: 'Aún no hay mensajes: envía el primer aviso a tus viajeros.',
     zh: '还没有消息 — 先给客人发送第一条通知吧。',
+    fr: 'Pas encore de messages — envoyez un premier mot à vos voyageurs.',
+    de: 'Noch keine Nachrichten — senden Sie Ihren Gästen einen ersten Hinweis.',
+    ru: 'Сообщений пока нет — отправьте гостям первое сообщение.',
+    it: 'Ancora nessun messaggio — manda un primo saluto ai tuoi ospiti.',
   },
 };
 
@@ -127,6 +143,10 @@ const UNREAD_LABEL: Record<RoomLocale, string> = {
   ja: 'ここから未読',
   es: 'Mensajes nuevos',
   zh: '以下为未读消息',
+  fr: 'Nouveaux messages',
+  de: 'Neue Nachrichten',
+  ru: 'Новые сообщения',
+  it: 'Nuovi messaggi',
 };
 
 const ROLE_LABEL: Record<RoomLocale, Record<string, string>> = {
@@ -135,6 +155,10 @@ const ROLE_LABEL: Record<RoomLocale, Record<string, string>> = {
   ja: { guide: 'ガイド', admin: 'AtoC Korea', driver: 'ドライバー' },
   es: { guide: 'Guía', admin: 'AtoC Korea', driver: 'Conductor' },
   zh: { guide: '导游', admin: 'AtoC Korea', driver: '司机' },
+  fr: { guide: 'Guide', admin: 'AtoC Korea', driver: 'Chauffeur' },
+  de: { guide: 'Guide', admin: 'AtoC Korea', driver: 'Fahrer' },
+  ru: { guide: 'Гид', admin: 'AtoC Korea', driver: 'Водитель' },
+  it: { guide: 'Guida', admin: 'AtoC Korea', driver: 'Autista' },
 };
 
 /** Long-press action-sheet labels (Phase 2b). */
@@ -144,6 +168,10 @@ const ACTION_COPY: Record<RoomLocale, { title: string; reply: string; copy: stri
   ja: { title: 'メッセージ', reply: '返信', copy: 'コピー', original: '原文を表示', translated: '翻訳を表示', close: '閉じる', copied: 'コピーしました' },
   es: { title: 'Mensaje', reply: 'Responder', copy: 'Copiar', original: 'Ver original', translated: 'Ver traducción', close: 'Cerrar', copied: 'Copiado' },
   zh: { title: '消息', reply: '回复', copy: '复制', original: '查看原文', translated: '查看翻译', close: '关闭', copied: '已复制' },
+  fr: { title: 'Message', reply: 'Répondre', copy: 'Copier', original: 'Voir l’original', translated: 'Voir la traduction', close: 'Fermer', copied: 'Copié' },
+  de: { title: 'Nachricht', reply: 'Antworten', copy: 'Kopieren', original: 'Original anzeigen', translated: 'Übersetzung anzeigen', close: 'Schließen', copied: 'Kopiert' },
+  ru: { title: 'Сообщение', reply: 'Ответить', copy: 'Копировать', original: 'Показать оригинал', translated: 'Показать перевод', close: 'Закрыть', copied: 'Скопировано' },
+  it: { title: 'Messaggio', reply: 'Rispondi', copy: 'Copia', original: 'Mostra originale', translated: 'Mostra traduzione', close: 'Chiudi', copied: 'Copiato' },
 };
 
 /** Attachment metadata carried on image/file messages (Phase 1 route). */
@@ -186,6 +214,10 @@ const A11Y: Record<RoomLocale, { actions: string; scrollLatest: string }> = {
   ja: { actions: 'メッセージ操作', scrollLatest: '最新メッセージへ移動' },
   es: { actions: 'Acciones del mensaje', scrollLatest: 'Ir a los mensajes recientes' },
   zh: { actions: '消息操作', scrollLatest: '滚动到最新消息' },
+  fr: { actions: 'Actions du message', scrollLatest: 'Aller aux derniers messages' },
+  de: { actions: 'Nachrichtenaktionen', scrollLatest: 'Zu den neuesten Nachrichten springen' },
+  ru: { actions: 'Действия с сообщением', scrollLatest: 'К последним сообщениям' },
+  it: { actions: 'Azioni del messaggio', scrollLatest: 'Vai agli ultimi messaggi' },
 };
 
 export default function ChatFeed({

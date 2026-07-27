@@ -51,6 +51,10 @@ const TAB_LABEL: Record<
   ja: { home: 'ホーム', chat: 'チャット', map: '地図', schedule: '本日', settings: '設定' },
   es: { home: 'Inicio', chat: 'Chat', map: 'Mapa', schedule: 'Hoy', settings: 'Ajustes' },
   zh: { home: '首页', chat: '聊天', map: '地图', schedule: '今日', settings: '设置' },
+  fr: { home: 'Accueil', chat: 'Chat', map: 'Carte', schedule: 'Aujourd’hui', settings: 'Réglages' },
+  de: { home: 'Start', chat: 'Chat', map: 'Karte', schedule: 'Heute', settings: 'Einstellungen' },
+  ru: { home: 'Главная', chat: 'Чат', map: 'Карта', schedule: 'Сегодня', settings: 'Настройки' },
+  it: { home: 'Home', chat: 'Chat', map: 'Mappa', schedule: 'Oggi', settings: 'Impostazioni' },
 };
 
 /** P0-5 — the rich stop cards are view-only here; only "Details" is used. */
@@ -60,6 +64,10 @@ const STOP_CARD_LABELS: Record<RoomLocale, { add: string; added: string; details
   ja: { add: '追加', added: '追加済み', details: '詳細' },
   es: { add: 'Añadir', added: 'Añadido', details: 'Detalles' },
   zh: { add: '添加', added: '已添加', details: '详情' },
+  fr: { add: 'Ajouter', added: 'Ajouté', details: 'Détails' },
+  de: { add: 'Hinzufügen', added: 'Hinzugefügt', details: 'Details' },
+  ru: { add: 'Добавить', added: 'Добавлено', details: 'Подробнее' },
+  it: { add: 'Aggiungi', added: 'Aggiunto', details: 'Dettagli' },
 };
 
 const MAP_SOON: Record<RoomLocale, string> = {
@@ -68,6 +76,10 @@ const MAP_SOON: Record<RoomLocale, string> = {
   ja: 'ライブマップは近日公開です。',
   es: 'El mapa en vivo llegará pronto.',
   zh: '实时地图即将上线。',
+  fr: 'La carte en direct arrive bientôt.',
+  de: 'Die Live-Karte kommt bald.',
+  ru: 'Карта в реальном времени скоро появится.',
+  it: 'La mappa in tempo reale arriva presto.',
 };
 
 const CONNECTION_HINT: Record<RoomLocale, { reconnecting: string; offline: string }> = {
@@ -76,6 +88,10 @@ const CONNECTION_HINT: Record<RoomLocale, { reconnecting: string; offline: strin
   ja: { reconnecting: '再接続中…', offline: 'オフライン — 再試行中' },
   es: { reconnecting: 'Reconectando…', offline: 'Sin conexión — reintentando' },
   zh: { reconnecting: '重新连接中…', offline: '离线 — 重试中' },
+  fr: { reconnecting: 'Reconnexion…', offline: 'Hors ligne — nouvelle tentative' },
+  de: { reconnecting: 'Verbindung wird wiederhergestellt…', offline: 'Offline — neuer Versuch' },
+  ru: { reconnecting: 'Переподключение…', offline: 'Нет сети — повторная попытка' },
+  it: { reconnecting: 'Riconnessione…', offline: 'Offline — nuovo tentativo' },
 };
 
 const CLOSE_LABEL: Record<RoomLocale, string> = {
@@ -84,6 +100,10 @@ const CLOSE_LABEL: Record<RoomLocale, string> = {
   ja: '閉じる',
   es: 'Cerrar',
   zh: '关闭',
+  fr: 'Fermer',
+  de: 'Schließen',
+  ru: 'Закрыть',
+  it: 'Chiudi',
 };
 
 /** 손님 노출 아이콘 버튼의 스크린리더 라벨 — ko 하드코딩 금지 (감사 #3). */
@@ -93,6 +113,10 @@ const BACK_LABEL: Record<RoomLocale, string> = {
   ja: '戻る',
   es: 'Atrás',
   zh: '返回',
+  fr: 'Retour',
+  de: 'Zurück',
+  ru: 'Назад',
+  it: 'Indietro',
 };
 const DRAWER_LABEL: Record<RoomLocale, string> = {
   en: 'Menu',
@@ -100,6 +124,10 @@ const DRAWER_LABEL: Record<RoomLocale, string> = {
   ja: 'メニュー',
   es: 'Menú',
   zh: '菜单',
+  fr: 'Menu',
+  de: 'Menü',
+  ru: 'Меню',
+  it: 'Menu',
 };
 
 /**

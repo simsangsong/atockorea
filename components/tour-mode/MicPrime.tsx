@@ -53,6 +53,30 @@ const COPY: Record<
     deniedTitle: '麦克风已被禁用',
     deniedHow: '点击地址栏的🔒/ⓘ图标 → 网站设置 → 允许麦克风，然后刷新页面。',
   },
+  fr: {
+    allow: '🎤 Autoriser le micro',
+    whyPrompt: 'Activez le micro pour parler — nous transcrivons et traduisons pour vous.',
+    deniedTitle: 'Le micro est bloqué',
+    deniedHow: 'Touchez l’icône 🔒/ⓘ dans la barre d’adresse → Paramètres du site → autoriser le micro, puis rechargez.',
+  },
+  de: {
+    allow: '🎤 Mikrofon erlauben',
+    whyPrompt: 'Aktivieren Sie das Mikrofon zum Sprechen — wir transkribieren und übersetzen für Sie.',
+    deniedTitle: 'Mikrofon ist blockiert',
+    deniedHow: 'Tippen Sie auf das 🔒/ⓘ-Symbol in der Adressleiste → Website-Einstellungen → Mikrofon erlauben, dann neu laden.',
+  },
+  ru: {
+    allow: '🎤 Разрешить микрофон',
+    whyPrompt: 'Включите микрофон, чтобы говорить — речь распознается и переводится автоматически.',
+    deniedTitle: 'Микрофон заблокирован',
+    deniedHow: 'Нажмите значок 🔒/ⓘ в адресной строке → Настройки сайта → разрешите микрофон и обновите страницу.',
+  },
+  it: {
+    allow: '🎤 Consenti microfono',
+    whyPrompt: 'Attiva il microfono per parlare: trascriviamo e traduciamo noi per te.',
+    deniedTitle: 'Il microfono è bloccato',
+    deniedHow: 'Tocca l’icona 🔒/ⓘ nella barra degli indirizzi → Impostazioni sito → consenti il microfono e ricarica.',
+  },
 };
 
 export default function MicPrime({
