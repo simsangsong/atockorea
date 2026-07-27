@@ -52,7 +52,7 @@ export default function PlanTourItinerary({
     <section className="flex flex-col gap-3" data-testid="plan-tour-itinerary">
       <div className="tr-card px-4 py-4">
         <div className="flex items-start gap-3">
-          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[var(--tr-accent-soft)] text-[var(--tr-accent-deep)]">
+          <span className="tr-plan-tile flex h-10 w-10 shrink-0 items-center justify-center rounded-xl">
             <IconHighlight size={TR_ICON.action} aria-hidden />
           </span>
           <div className="min-w-0 flex-1">
@@ -72,7 +72,7 @@ export default function PlanTourItinerary({
           <button
             type="button"
             onClick={onApplyAll}
-            className="tr-body mt-3 flex min-h-[46px] w-full items-center justify-center gap-2 rounded-2xl bg-[var(--tr-accent)] px-4 font-bold text-[var(--tr-bubble-me-ink)] shadow-[var(--tr-plan-shadow-button)] transition active:scale-[0.99]"
+            className="tr-plan-btn tr-plan-btn--primary tr-plan-btn--block tr-plan-btn--tap tr-label mt-3"
             data-testid="plan-tour-apply-all"
           >
             <IconPlus size={TR_ICON.chip} aria-hidden />

@@ -64,6 +64,30 @@ function resolve(skin: TourSkin, theme: 'light' | 'dark'): Tokens {
   return out;
 }
 
+/**
+ * The /tour-mode/plan editor (.tr-plan-root) re-declares most of the palette on
+ * top of .tr-root. It was OUTSIDE this gate, which is how it shipped an ink-3
+ * that missed 4.5:1 on its own canvas — and how `--tr-on-accent` could be read
+ * by three components while being declared by none.
+ *
+ * Cascade note: .tr-plan-root is (0,1,0), so a skin block (0,2,0) outranks it
+ * for tokens the skin sets. The planner element carries BOTH classes, so the
+ * honest resolution is skin-first, then the planner block for what it declares
+ * at equal-or-later weight — which for the tokens below is everything it sets,
+ * since .tr-plan-root sits after every skin block in the file and skins do not
+ * set the planner-only tokens. Worst case for a skinned planner is the skin's
+ * accent family, already gated above.
+ */
+function resolvePlan(theme: 'light' | 'dark'): Tokens {
+  const wanted = ['.tr-plan-root'];
+  if (theme === 'dark') wanted.push('.dark .tr-plan-root');
+  const out: Tokens = resolve('classic', theme);
+  for (const block of BLOCKS) {
+    if (block.parts.some((part) => wanted.includes(part))) Object.assign(out, block.tokens);
+  }
+  return out;
+}
+
 // ---- WCAG math --------------------------------------------------------------
 
 function hexToRgb(hex: string): [number, number, number] | null {
@@ -102,6 +126,11 @@ const PAIRS: Array<[string, string, number]> = [
   ['bubble-me-ink', 'bubble-me', 4.5],
   ['bubble-in-ink', 'bubble-in', 4.5],
   ['bubble-me-ink', 'accent', 4.5],
+  // 🔴 2026-07-28: read by three components, declared by none. An undeclared
+  // custom property makes `color: var(--tr-on-accent)` an invalid substitution,
+  // so the label INHERITED the surrounding dark ink and disappeared into the
+  // deep-pine button under it. Gated now, everywhere accent is.
+  ['on-accent', 'accent', 4.5],
   ['accent-deep', 'canvas', 4.5],
   ['ink', 'home-tile', 4.5],
   ['safe', 'surface', 3.0],
@@ -145,6 +174,32 @@ describe('skin contrast gate (T-D7)', () => {
             failures.push(`${skin}/${theme}: ${fg} on ${bg} = ${r.toFixed(2)} < ${min}`);
           }
         }
+      }
+    }
+    expect(failures).toEqual([]);
+  });
+
+  it('the planner scope (.tr-plan-root) clears the same floors', () => {
+    const failures: string[] = [];
+    // accent-soft is an opaque wash in this scope, so the chip ink is gated too.
+    const planPairs: Array<[string, string, number]> = [
+      ...PAIRS,
+      ['accent-deep', 'accent-soft', 4.5],
+      ['ink-2', 'surface-2', 4.5],
+    ];
+    for (const theme of THEMES) {
+      const tokens = resolvePlan(theme);
+      for (const [fg, bg, min] of planPairs) {
+        const fgv = tokens[fg];
+        const bgv = tokens[bg];
+        if (!fgv || !bgv) {
+          failures.push(`plan/${theme}: missing token ${!fgv ? fg : bg}`);
+          continue;
+        }
+        const r = ratio(fgv, bgv);
+        // Dark mode washes are rgba() by design — skip what WCAG math can't see.
+        if (Number.isNaN(r)) continue;
+        if (r < min) failures.push(`plan/${theme}: ${fg} on ${bg} = ${r.toFixed(2)} < ${min}`);
       }
     }
     expect(failures).toEqual([]);
