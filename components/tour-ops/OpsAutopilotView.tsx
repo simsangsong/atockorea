@@ -42,9 +42,9 @@ const KIND_ICON: Record<SuggestionKind, typeof UserX> = {
 };
 
 const SEVERITY_TONE: Record<SuggestionRow['severity'], string> = {
-  high: 'border-red-300 bg-red-50 text-red-600 dark:border-red-500/40 dark:bg-red-500/10 dark:text-red-300',
+  high: 'border-[var(--tr-danger-soft)] bg-[var(--tr-danger-soft)] text-[var(--tr-danger)]   ',
   medium:
-    'border-amber-300 bg-amber-50 text-amber-700 dark:border-amber-500/40 dark:bg-amber-500/10 dark:text-amber-200',
+    'border-[var(--tr-warn-soft)] bg-[var(--tr-warn-soft)] text-[var(--tr-warn)]   ',
   low: 'border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]',
 };
 
@@ -246,7 +246,7 @@ export default function OpsAutopilotView({ onClose }: { onClose: () => void }) {
                             type="button"
                             disabled={busyId === row.id}
                             onClick={() => void setStatus(row, 'done')}
-                            className="flex items-center gap-1 rounded-md border border-[var(--tr-hairline)] px-2 py-1 tr-meta font-semibold text-emerald-600 disabled:opacity-50"
+                            className="flex items-center gap-1 rounded-md border border-[var(--tr-hairline)] px-2 py-1 tr-meta font-semibold text-[var(--tr-safe)] disabled:opacity-50"
                           >
                             <Check className="size-3" />
                             <span className="text-cjk-safe">처리함</span>

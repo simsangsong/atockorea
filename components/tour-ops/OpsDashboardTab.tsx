@@ -131,7 +131,7 @@ export default function OpsDashboardTab({
     <div className="space-y-4 pb-4">
       {attention.length > 0 && (
         <section data-testid="ops-attention-queue">
-          <h2 className="px-1 pb-1.5 tr-card-text font-semibold text-amber-700 dark:text-amber-300">응대 필요 {attention.length}</h2>
+          <h2 className="px-1 pb-1.5 tr-card-text font-semibold text-[var(--tr-warn)] ">응대 필요 {attention.length}</h2>
           <div className="space-y-2">
             {attention.map((item) => {
               const room = roomById.get(item.roomId);
@@ -140,18 +140,18 @@ export default function OpsDashboardTab({
                   key={`${item.roomId}-${item.reason}`}
                   type="button"
                   onClick={() => onOpenRoom(item.roomId)}
-                  className="block w-full rounded-2xl border border-amber-200 bg-amber-50 dark:border-amber-500/40 dark:bg-amber-950/30 px-4 py-3 text-left"
+                  className="block w-full rounded-2xl border border-[var(--tr-warn-soft)] bg-[var(--tr-warn-soft)]   px-4 py-3 text-left"
                 >
-                  <p className="flex items-center gap-2 tr-card-text font-semibold text-amber-700 dark:text-amber-200">
-                    <span className="shrink-0 rounded-full bg-amber-500/20 px-2 py-0.5 tr-meta font-bold">
+                  <p className="flex items-center gap-2 tr-card-text font-semibold text-[var(--tr-warn)] ">
+                    <span className="shrink-0 rounded-full bg-[var(--tr-warn)] px-2 py-0.5 tr-meta font-bold">
                       {ATTENTION_LABELS[item.reason]}
                     </span>
                     <span className="truncate">{room?.booking?.contact_name ?? '게스트'}</span>
-                    <span className="ml-auto shrink-0 tr-meta font-normal text-amber-600 dark:text-amber-400/70">
+                    <span className="ml-auto shrink-0 tr-meta font-normal text-[var(--tr-warn)] ">
                       {kstTimeLabel(item.created_at)}
                     </span>
                   </p>
-                  {item.excerpt && <p className="mt-1 truncate tr-label text-amber-700 dark:text-amber-100/80">{item.excerpt}</p>}
+                  {item.excerpt && <p className="mt-1 truncate tr-label text-[var(--tr-warn)] ">{item.excerpt}</p>}
                 </button>
               );
             })}
@@ -195,7 +195,7 @@ export default function OpsDashboardTab({
                   onClick={() => onOpenRoom(room.id)}
                   className={`block w-full rounded-2xl border text-left transition-colors ${
                     sos
-                      ? 'border-red-200 bg-red-50 ring-1 ring-red-200 dark:border-red-500/60 dark:bg-red-950/40 dark:ring-red-500/40'
+                      ? 'border-[var(--tr-danger-soft)] bg-[var(--tr-danger-soft)] ring-1 ring-[var(--tr-danger-soft)]   '
                       : 'border-[var(--tr-hairline)] bg-[var(--tr-surface)] active:bg-[var(--tr-surface-2)]'
                   }`}
                   style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto 84px' }}
@@ -214,8 +214,8 @@ export default function OpsDashboardTab({
                           {room.booking?.number_of_guests ?? 1}명 · {room.booking?.preferred_language ?? 'en'}
                         </span>
                         {isLive && (
-                          <span className="ml-0.5 inline-flex shrink-0 items-center gap-1 rounded-full bg-emerald-500/15 px-1.5 py-0.5 tr-meta font-bold text-emerald-700 dark:text-emerald-400">
-                            <span className="size-1.5 rounded-full bg-emerald-400" />
+                          <span className="ml-0.5 inline-flex shrink-0 items-center gap-1 rounded-full bg-[var(--tr-safe)] px-1.5 py-0.5 tr-meta font-bold text-[var(--tr-safe)] ">
+                            <span className="size-1.5 rounded-full bg-[var(--tr-safe)]" />
                             LIVE
                           </span>
                         )}
@@ -229,14 +229,14 @@ export default function OpsDashboardTab({
                     <div className="flex shrink-0 flex-col items-end gap-1">
                       <span className="tr-meta text-[var(--tr-ink-3)]">{kstTimeLabel(lastAt)}</span>
                       {unreadCount > 0 && (
-                        <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-blue-500 px-1.5 tr-meta font-bold text-white">
+                        <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-[var(--tr-accent)] px-1.5 tr-meta font-bold text-white">
                           {unreadCount > 99 ? '99+' : unreadCount}
                         </span>
                       )}
                     </div>
                   </div>
                   {sos && (
-                    <p className="border-t border-red-500/20 px-4 py-2 tr-label text-red-600 dark:text-red-300">
+                    <p className="border-t border-[var(--tr-danger)] px-4 py-2 tr-label text-[var(--tr-danger)] ">
                       {sos.metadata.sender_name && <b>{sos.metadata.sender_name}: </b>}
                       {sos.metadata.note ?? 'SOS 발생'}
                       {typeof sos.metadata.latitude === 'number' && ' · 📍 위치 포함'}

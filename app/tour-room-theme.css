@@ -63,6 +63,12 @@
   --tr-safe-soft: #dce9e2;
   --tr-danger: #dc2626;
   --tr-danger-soft: #fee2e2;
+  /* O3 — 주의(경고). `--tr-danger`와 같은 성격이라 **스킨별로 재정의하지
+     않는다**: 경고는 배경 취향과 무관하게 "주의"로 읽혀야 하고, 스킨 10종에
+     호박색을 손으로 맞추면 그중 하나는 반드시 흐려진다. 대비는 skinContrast
+     게이트가 전 스킨×테마에서 검사한다. */
+  --tr-warn: #734b00;
+  --tr-warn-soft: #fdf0d5;
 
   /* Geometry */
   --tr-radius-bubble: 18px;
@@ -122,6 +128,8 @@
   --tr-safe-soft: rgba(63, 107, 88, 0.22);
   --tr-danger: #f87171;
   --tr-danger-soft: rgba(220, 38, 38, 0.22);
+  --tr-warn: #e8b04b;
+  --tr-warn-soft: rgba(232, 176, 75, 0.20);
 
   --tr-shadow-overlay: 0 4px 16px rgba(0, 0, 0, 0.45);
 

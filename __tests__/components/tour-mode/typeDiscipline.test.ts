@@ -126,6 +126,31 @@ describe('tour-mode + tour-ops type discipline (U4-D7 / O2)', () => {
     expect(violations).toEqual([]);
   });
 
+  /**
+   * O3 — colour follows typography. 272 hardcoded Tailwind palette utilities
+   * (amber/red/emerald/blue/slate) bypassed the semantic tokens, so they
+   * ignored the skin, ignored dark mode unless someone remembered a `dark:`
+   * twin, and drifted apart file by file. Without a gate they come back — the
+   * typography sweep proved that in this very repo.
+   *
+   * tour-ops only: the guest app still carries deliberate palette use in
+   * illustrations and avatar hues, and widening this rule now would be a scope
+   * expansion the plan didn't ask for.
+   */
+  it('tour-ops paints with semantic tokens, not raw palette utilities', () => {
+    const PALETTE =
+      /(?:^|[\s'"`:])!?(?:dark:)?(?:bg|text|border|ring|from|to|via)-(?:amber|emerald|red|blue|slate|green|orange|yellow|indigo|purple|pink)-\d{2,3}(?=$|[\s'"`])/;
+    const violations: string[] = [];
+    for (const file of files.filter((f) => f.startsWith(ROOTS[1]))) {
+      const lines = fs.readFileSync(file, 'utf8').split('\n');
+      lines.forEach((line, i) => {
+        const match = line.match(PALETTE);
+        if (match) violations.push(`${relative(file)}:${i + 1} → ${match[0].trim()}`);
+      });
+    }
+    expect(violations).toEqual([]);
+  });
+
   it('imports lucide icons through the barrel (icons.ts), not directly', () => {
     // tour-mode ONLY. The barrel exists so the room's icon language stays
     // swappable in one place (U-D3/U4-D6); the ops center is a different

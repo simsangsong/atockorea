@@ -121,7 +121,7 @@ function PushToggleSection() {
         /* 컴팩트 스위치(2026-07-27) — 트랙 26px가 노브 22px를 2px 패딩으로
            감싼다. 히트영역은 after 확장으로 44px 유지. */
         className={`relative h-[26px] min-h-0 w-11 min-w-0 shrink-0 rounded-full transition-colors disabled:opacity-50 after:absolute after:-inset-x-1 after:-inset-y-2.5 after:content-[''] ${
-          on ? 'bg-emerald-500' : 'bg-[var(--tr-ink-3)]'
+          on ? 'bg-[var(--tr-safe)]' : 'bg-[var(--tr-ink-3)]'
         }`}
       >
         <span
@@ -181,7 +181,7 @@ export default function OpsSettingsTab({
             role="switch"
             aria-checked={soundOn}
             onClick={() => onSoundChange(!soundOn)}
-            className={`relative h-[26px] min-h-0 w-11 min-w-0 shrink-0 rounded-full transition-colors after:absolute after:-inset-x-1 after:-inset-y-2.5 after:content-[''] ${soundOn ? 'bg-emerald-500' : 'bg-[var(--tr-ink-3)]'}`}
+            className={`relative h-[26px] min-h-0 w-11 min-w-0 shrink-0 rounded-full transition-colors after:absolute after:-inset-x-1 after:-inset-y-2.5 after:content-[''] ${soundOn ? 'bg-[var(--tr-safe)]' : 'bg-[var(--tr-ink-3)]'}`}
           >
             <span
               className={`absolute top-[2px] h-[22px] w-[22px] rounded-full bg-white transition-transform ${

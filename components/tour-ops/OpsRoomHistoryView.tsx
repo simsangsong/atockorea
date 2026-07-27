@@ -23,10 +23,10 @@ import { shiftMonth } from '@/lib/ops/guides/availability';
 type Filter = 'dead' | 'all' | 'active' | 'quiet' | 'closed';
 
 const HEALTH_TONE: Record<RoomHealth, string> = {
-  dead: 'bg-red-100 text-red-700 dark:bg-red-500/15 dark:text-red-200',
-  quiet: 'bg-amber-100 text-amber-800 dark:bg-amber-500/15 dark:text-amber-200',
-  active: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300',
-  closed: 'bg-slate-200 text-slate-600 dark:bg-slate-500/20 dark:text-slate-300',
+  dead: 'bg-[var(--tr-danger-soft)] text-[var(--tr-danger)]  ',
+  quiet: 'bg-[var(--tr-warn-soft)] text-[var(--tr-warn)]  ',
+  active: 'bg-[var(--tr-safe-soft)] text-[var(--tr-safe)]  ',
+  closed: 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-3)]  ',
 };
 
 const FILTERS: Array<{ key: Filter; label: string }> = [
@@ -188,7 +188,7 @@ export default function OpsRoomHistoryView({
 
       <div className="min-h-0 flex-1 overflow-y-auto px-3 py-3">
         {data?.truncated && (
-          <p className="text-cjk-body mb-2 rounded-lg bg-amber-100 px-3 py-2 tr-meta leading-relaxed text-amber-900 dark:bg-amber-500/15 dark:text-amber-200">
+          <p className="text-cjk-body mb-2 rounded-lg bg-[var(--tr-warn-soft)] px-3 py-2 tr-meta leading-relaxed text-[var(--tr-warn)]  ">
             이 달의 하위 데이터가 조회 상한에 닿았습니다. 아래 집계는 <b>최소값</b>이며 실제
             메시지·참가자 수는 더 많을 수 있습니다.
           </p>

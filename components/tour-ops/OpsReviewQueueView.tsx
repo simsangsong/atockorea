@@ -51,12 +51,12 @@ interface TourOption {
 type Filter = 'review' | 'all';
 
 const RESULT_BADGE: Record<string, { label: string; cls: string }> = {
-  review_queued: { label: '리뷰 대기', cls: 'bg-amber-100 text-amber-800 dark:bg-amber-500/15 dark:text-amber-200' },
-  failed: { label: '실패', cls: 'bg-red-100 text-red-700 dark:bg-red-500/15 dark:text-red-200' },
-  auto_committed: { label: 'auto', cls: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300' },
-  cancelled: { label: '취소 처리', cls: 'bg-slate-200 text-slate-700 dark:bg-slate-500/20 dark:text-slate-200' },
-  changed: { label: '변경 처리', cls: 'bg-blue-100 text-blue-700 dark:bg-blue-500/15 dark:text-blue-200' },
-  ignored: { label: '무시됨', cls: 'bg-slate-200 text-slate-500 dark:bg-slate-500/15 dark:text-slate-400' },
+  review_queued: { label: '리뷰 대기', cls: 'bg-[var(--tr-warn-soft)] text-[var(--tr-warn)]  ' },
+  failed: { label: '실패', cls: 'bg-[var(--tr-danger-soft)] text-[var(--tr-danger)]  ' },
+  auto_committed: { label: 'auto', cls: 'bg-[var(--tr-safe-soft)] text-[var(--tr-safe)]  ' },
+  cancelled: { label: '취소 처리', cls: 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-3)]  ' },
+  changed: { label: '변경 처리', cls: 'bg-[var(--tr-accent-soft)] text-[var(--tr-accent)]  ' },
+  ignored: { label: '무시됨', cls: 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-3)]  ' },
 };
 
 export default function OpsReviewQueueView({ onClose }: { onClose: () => void }) {
@@ -250,7 +250,7 @@ export default function OpsReviewQueueView({ onClose }: { onClose: () => void })
                       ? `${first.lead_name ?? '?'} · ${first.party_size ?? '?'}명 · ${first.product_name ?? '(상품명 없음)'} · ${first.tour_date ?? '(날짜 없음)'}`
                       : log.error ?? '(요약 없음)'}
                   </p>
-                  {first?.reason && <p className="mt-0.5 tr-meta text-amber-700 dark:text-amber-300">사유: {first.reason}</p>}
+                  {first?.reason && <p className="mt-0.5 tr-meta text-[var(--tr-warn)] ">사유: {first.reason}</p>}
                 </button>
 
                 {expanded && (
@@ -309,7 +309,7 @@ export default function OpsReviewQueueView({ onClose }: { onClose: () => void })
                                 log.id,
                               )
                             }
-                            className="h-9 rounded-lg bg-blue-600 px-3 tr-label font-semibold text-white disabled:opacity-40"
+                            className="h-9 rounded-lg bg-[var(--tr-accent)] px-3 tr-label font-semibold text-white disabled:opacity-40"
                           >
                             매핑 + 재커밋
                           </button>
@@ -324,7 +324,7 @@ export default function OpsReviewQueueView({ onClose }: { onClose: () => void })
                             type="button"
                             disabled={busyId === log.id}
                             onClick={() => void post({ action: 'approve', logId: log.id }, log.id)}
-                            className="h-9 rounded-lg bg-emerald-600 px-3 tr-label font-semibold text-white disabled:opacity-40"
+                            className="h-9 rounded-lg bg-[var(--tr-safe)] px-3 tr-label font-semibold text-white disabled:opacity-40"
                           >
                             승인 커밋
                           </button>

@@ -57,10 +57,10 @@ function worstIssue(issues: CellIssue[]): CellIssue | null {
 }
 
 const ISSUE_TONE: Record<CellIssue, string> = {
-  overlap: 'bg-red-500 text-white',
-  problem: 'bg-red-500 text-white',
-  on_rest_day: 'bg-amber-500 text-white',
-  double: 'bg-amber-200 text-amber-900 dark:bg-amber-500/30 dark:text-amber-100',
+  overlap: 'bg-[var(--tr-danger)] text-white',
+  problem: 'bg-[var(--tr-danger)] text-white',
+  on_rest_day: 'bg-[var(--tr-warn)] text-white',
+  double: 'bg-[var(--tr-warn-soft)] text-[var(--tr-warn)]  ',
 };
 
 export default function OpsScheduleCalendar({
@@ -195,12 +195,12 @@ export default function OpsScheduleCalendar({
 
       <div className="min-h-0 flex-1 overflow-auto px-3 py-3">
         {data?.truncated && (
-          <p className="text-cjk-body mb-2 rounded-lg bg-amber-100 px-3 py-2 tr-meta leading-relaxed text-amber-900 dark:bg-amber-500/15 dark:text-amber-200">
+          <p className="text-cjk-body mb-2 rounded-lg bg-[var(--tr-warn-soft)] px-3 py-2 tr-meta leading-relaxed text-[var(--tr-warn)]  ">
             조회 상한에 닿았습니다. 아래 표는 <b>최소값</b>입니다.
           </p>
         )}
         {!!data?.undatedCount && (
-          <p className="text-cjk-body mb-2 rounded-lg bg-amber-100 px-3 py-2 tr-meta leading-relaxed text-amber-900 dark:bg-amber-500/15 dark:text-amber-200">
+          <p className="text-cjk-body mb-2 rounded-lg bg-[var(--tr-warn-soft)] px-3 py-2 tr-meta leading-relaxed text-[var(--tr-warn)]  ">
             날짜를 확인할 수 없는 배차 {data.undatedCount}건은 표에 없습니다. (룸·그룹에 투어일이
             없는 배차)
           </p>
@@ -230,9 +230,9 @@ export default function OpsScheduleCalendar({
                         d.isToday
                           ? 'text-[var(--tr-accent)]'
                           : d.weekday === 0
-                            ? 'text-red-500'
+                            ? 'text-[var(--tr-danger)]'
                             : d.weekday === 6
-                              ? 'text-blue-500'
+                              ? 'text-[var(--tr-accent)]'
                               : 'text-[var(--tr-ink-3)]'
                       }`}
                     >
@@ -278,7 +278,7 @@ export default function OpsScheduleCalendar({
                                   ? ISSUE_TONE[issue]
                                   : resting
                                     ? 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-3)]'
-                                    : 'bg-emerald-100 text-emerald-800 dark:bg-emerald-500/20 dark:text-emerald-200'
+                                    : 'bg-[var(--tr-safe-soft)] text-[var(--tr-safe)]  '
                               }`}
                             >
                               {resting ? '휴' : live}
@@ -299,16 +299,16 @@ export default function OpsScheduleCalendar({
 
         <ul className="mt-3 flex flex-wrap gap-x-3 gap-y-1 tr-meta text-[var(--tr-ink-3)]">
           <li className="flex items-center gap-1">
-            <span className="size-2.5 rounded-sm bg-emerald-400" /> 정상
+            <span className="size-2.5 rounded-sm bg-[var(--tr-safe)]" /> 정상
           </li>
           <li className="flex items-center gap-1">
-            <span className="size-2.5 rounded-sm bg-amber-300" /> 하루 2건 이상
+            <span className="size-2.5 rounded-sm bg-[var(--tr-warn)]" /> 하루 2건 이상
           </li>
           <li className="flex items-center gap-1">
-            <span className="size-2.5 rounded-sm bg-amber-500" /> 휴무일 배정
+            <span className="size-2.5 rounded-sm bg-[var(--tr-warn)]" /> 휴무일 배정
           </li>
           <li className="flex items-center gap-1">
-            <span className="size-2.5 rounded-sm bg-red-500" /> 시간 겹침 · 정원 초과
+            <span className="size-2.5 rounded-sm bg-[var(--tr-danger)]" /> 시간 겹침 · 정원 초과
           </li>
           <li className="flex items-center gap-1">
             <span className="size-2.5 rounded-sm bg-[var(--tr-surface-2)]" /> 휴무
@@ -318,7 +318,7 @@ export default function OpsScheduleCalendar({
 
       {openCell && (
         <div
-          className="fixed inset-0 z-[60] flex items-end justify-center bg-slate-950/40 sm:items-center"
+          className="fixed inset-0 z-[60] flex items-end justify-center bg-[var(--tr-surface-2)] sm:items-center"
           onClick={() => setOpenCell(null)}
         >
           <div
@@ -334,7 +334,7 @@ export default function OpsScheduleCalendar({
               </p>
             )}
             {openCell.cell.unavailable && (
-              <p className="text-cjk-body mt-1 tr-label text-amber-700">휴무로 등록된 날입니다.</p>
+              <p className="text-cjk-body mt-1 tr-label text-[var(--tr-warn)]">휴무로 등록된 날입니다.</p>
             )}
             <ul className="mt-2 space-y-1.5">
               {openCell.cell.items.length === 0 ? (
