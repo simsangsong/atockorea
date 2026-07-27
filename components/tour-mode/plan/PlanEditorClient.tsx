@@ -44,6 +44,11 @@ import { ROOM_LOCALES, normalizeRoomLocale, type RoomLocale } from '@/lib/tour-r
 import { useTourRoomSession } from '@/hooks/useTourRoomSession';
 import { useBackTrap } from '@/hooks/useBackTrap';
 import PlanTourItinerary from '@/components/tour-mode/plan/PlanTourItinerary';
+import {
+  isCourseOptionItinerary,
+  toCourseOptions,
+  type CourseOption,
+} from '@/lib/tour-room/courseOptions';
 import PlanStopCards from '@/components/tour-mode/plan/PlanStopCards';
 import type { ItineraryStop } from '@/components/product-tour-static/_shared/tourProductDetailSectionTypes';
 import { MAX_PLAN_STOPS, tourStopToEditorStop } from '@/lib/tour-room/planTourStops';
@@ -147,6 +152,8 @@ interface PlanCopy {
   loading: string;
   joinError: string;
   memberReadOnly: string;
+  /** P-D19 — 같은 예약의 다른 기기에서 편집 중일 때 넘겨받는 버튼. */
+  claimLead: string;
   confirmedNote: string;
   submittedNote: string;
   delegatedNote: string;
@@ -216,6 +223,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     loading: 'Opening your planner…',
     joinError: 'We couldn’t open this link. Please use the latest link from your email, or message us.',
     memberReadOnly: 'Only the lead traveller can edit the plan — you’ll see the finished day here.',
+    claimLead: 'Edit on this device',
     confirmedNote: 'Your guide confirmed this itinerary. To change something, just ask in the tour room chat.',
     submittedNote: 'Sent to your guide — they’ll review and confirm it.',
     delegatedNote: 'You’ve left the course to your guide. Tell us any wishes in the tour room chat!',
@@ -295,6 +303,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     loading: '플래너를 여는 중…',
     joinError: '링크를 열 수 없어요. 이메일의 최신 링크로 다시 시도하거나 채팅으로 문의해 주세요.',
     memberReadOnly: '일정 편집은 대표 여행자만 할 수 있어요 — 완성된 일정이 여기에 표시돼요.',
+    claimLead: '이 기기에서 편집하기',
     confirmedNote: '가이드가 일정을 확정했어요. 변경하고 싶은 게 있으면 투어룸 채팅으로 알려주세요.',
     submittedNote: '가이드에게 전달했어요 — 확인 후 확정해 드려요.',
     delegatedNote: '가이드에게 코스를 맡겼어요. 바라는 점은 투어룸 채팅으로 알려주세요!',
@@ -373,6 +382,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     loading: 'プランナーを開いています…',
     joinError: 'リンクを開けませんでした。メールの最新リンクからお試しください。',
     memberReadOnly: 'プラン編集は代表者のみ可能です。完成した行程がここに表示されます。',
+    claimLead: 'この端末で編集する',
     confirmedNote: 'ガイドが行程を確定しました。変更はツアールームのチャットでご相談ください。',
     submittedNote: 'ガイドに送信しました。確認のうえ確定します。',
     delegatedNote: 'コースはガイドにお任せいただきました。ご希望はチャットでどうぞ!',
@@ -450,6 +460,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     loading: '正在打开行程规划…',
     joinError: '无法打开此链接。请使用邮件中的最新链接,或在聊天中联系我们。',
     memberReadOnly: '只有主要旅客可以编辑行程——完成后会显示在这里。',
+    claimLead: '在本设备上编辑',
     confirmedNote: '导游已确定行程。如需调整,请在旅行房间聊天中告诉我们。',
     submittedNote: '已发送给导游——确认后将为您敲定。',
     delegatedNote: '已交给导游安排。有任何心愿请在聊天中告诉我们!',
@@ -527,6 +538,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     loading: '正在開啟行程規劃…',
     joinError: '無法開啟這個連結。請使用電子郵件中的最新連結，或在聊天中與我們聯絡。',
     memberReadOnly: '只有主要旅客可以編輯行程——完成後會顯示在這裡。',
+    claimLead: '在本裝置上編輯',
     confirmedNote: '導遊已確認行程。如需調整，請在旅遊房間聊天中告訴我們。',
     submittedNote: '已傳送給導遊——確認後就會為您定案。',
     delegatedNote: '已交給導遊安排。有任何心願請在聊天中告訴我們！',
@@ -604,6 +616,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     loading: 'Abriendo tu planificador…',
     joinError: 'No pudimos abrir este enlace. Usa el enlace más reciente de tu correo o escríbenos.',
     memberReadOnly: 'Solo el viajero principal puede editar el plan; aquí verás el día terminado.',
+    claimLead: 'Editar en este dispositivo',
     confirmedNote: 'Tu guía confirmó el itinerario. Para cambios, escríbenos en el chat del tour.',
     submittedNote: 'Enviado a tu guía: lo revisará y confirmará.',
     delegatedNote: 'Dejaste el recorrido en manos del guía. ¡Comparte tus deseos en el chat!',
@@ -683,6 +696,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     loading: 'Ouverture de votre planificateur…',
     joinError: 'Impossible d’ouvrir ce lien. Utilisez le lien le plus récent de votre e-mail, ou écrivez-nous.',
     memberReadOnly: 'Seul le voyageur principal peut modifier le programme — la journée finalisée s’affichera ici.',
+    claimLead: 'Modifier sur cet appareil',
     confirmedNote: 'Votre guide a confirmé cet itinéraire. Pour un changement, écrivez-nous dans le chat du tour.',
     submittedNote: 'Envoyé à votre guide — il le vérifiera et le confirmera.',
     delegatedNote: 'Vous avez confié le parcours à votre guide. Partagez vos envies dans le chat du tour!',
@@ -762,6 +776,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     loading: 'Planer wird geöffnet…',
     joinError: 'Dieser Link ließ sich nicht öffnen. Bitte nutzen Sie den neuesten Link aus Ihrer E-Mail oder schreiben Sie uns.',
     memberReadOnly: 'Nur der Hauptreisende kann den Plan bearbeiten — der fertige Tag erscheint hier.',
+    claimLead: 'Auf diesem Gerät bearbeiten',
     confirmedNote: 'Ihr Guide hat diese Route bestätigt. Änderungswünsche einfach im Tour-Chat mitteilen.',
     submittedNote: 'An Ihren Guide gesendet — er prüft und bestätigt.',
     delegatedNote: 'Sie haben die Route Ihrem Guide überlassen. Wünsche gern im Tour-Chat teilen!',
@@ -841,6 +856,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     loading: 'Открываем планировщик…',
     joinError: 'Не удалось открыть эту ссылку. Используйте самую свежую ссылку из письма или напишите нам.',
     memberReadOnly: 'Редактировать план может только главный путешественник — готовый день появится здесь.',
+    claimLead: 'Редактировать на этом устройстве',
     confirmedNote: 'Гид подтвердил маршрут. Если хотите что-то изменить, напишите в чат тура.',
     submittedNote: 'Отправлено гиду — он проверит и подтвердит.',
     delegatedNote: 'Вы доверили маршрут гиду. Пожелания пишите в чат тура!',
@@ -920,6 +936,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     loading: 'Apertura del tuo planner…',
     joinError: 'Non siamo riusciti ad aprire questo link. Usa il link più recente della tua email o scrivici.',
     memberReadOnly: 'Solo il viaggiatore principale può modificare il piano — qui vedrai la giornata completata.',
+    claimLead: 'Modifica su questo dispositivo',
     confirmedNote: 'La tua guida ha confermato l’itinerario. Per cambiare qualcosa, chiedi pure nella chat della stanza del tour.',
     submittedNote: 'Inviato alla tua guida — lo controllerà e confermerà.',
     delegatedNote: 'Hai affidato il percorso alla tua guida. Racconta i tuoi desideri nella chat della stanza del tour!',
@@ -1150,6 +1167,11 @@ interface PlanStatusCopy {
   tourItinAdd: string;
   tourItinAdded: string;
   tourItinDetails: string;
+  /** P0 — 전세 상품의 "코스 택1". 정류지가 아니라 선택지다. */
+  courseOptionTitle: string;
+  courseOptionSub: string;
+  courseOptionApply: string;
+  courseOptionCustom: string;
 }
 
 const PLAN_STATUS_COPY: Record<RoomLocale, PlanStatusCopy> = {
@@ -1176,6 +1198,10 @@ const PLAN_STATUS_COPY: Record<RoomLocale, PlanStatusCopy> = {
     tourItinAdd: 'Add',
     tourItinAdded: 'Added',
     tourItinDetails: 'Details',
+    courseOptionTitle: 'Choose your route',
+    courseOptionSub: 'This charter runs one route for the day. Pick one to fill your plan — you can still edit every stop after.',
+    courseOptionApply: 'Use this route',
+    courseOptionCustom: 'Choose places myself',
   },
   ko: {
     saveRateLimited: '저장이 너무 잦아요. 잠시 후 다시 시도해 주세요.',
@@ -1200,6 +1226,10 @@ const PLAN_STATUS_COPY: Record<RoomLocale, PlanStatusCopy> = {
     tourItinAdd: '담기',
     tourItinAdded: '담김',
     tourItinDetails: '자세히',
+    courseOptionTitle: '코스를 하나 고르세요',
+    courseOptionSub: '이 상품은 하루에 코스 하나를 돕니다. 하나를 고르면 일정이 채워지고, 이후 정류지는 자유롭게 고칠 수 있어요.',
+    courseOptionApply: '이 코스로 하기',
+    courseOptionCustom: '직접 고르기',
   },
   ja: {
     saveRateLimited: '保存が頻繁すぎます。少し待ってから再試行してください。',
@@ -1224,6 +1254,10 @@ const PLAN_STATUS_COPY: Record<RoomLocale, PlanStatusCopy> = {
     tourItinAdd: '追加',
     tourItinAdded: '追加済み',
     tourItinDetails: '詳細',
+    courseOptionTitle: 'コースを1つお選びください',
+    courseOptionSub: 'このチャーターは1日1コースです。1つ選ぶと日程が埋まり、あとから各スポットを編集できます。',
+    courseOptionApply: 'このコースにする',
+    courseOptionCustom: '自分で選ぶ',
   },
   zh: {
     saveRateLimited: '保存太频繁了。请稍候再试。',
@@ -1248,6 +1282,10 @@ const PLAN_STATUS_COPY: Record<RoomLocale, PlanStatusCopy> = {
     tourItinAdd: '添加',
     tourItinAdded: '已添加',
     tourItinDetails: '详情',
+    courseOptionTitle: '请选择一条路线',
+    courseOptionSub: '该包车行程每天走一条路线。选择后将自动填入日程，之后仍可逐一修改。',
+    courseOptionApply: '就选这条路线',
+    courseOptionCustom: '我自己选地点',
   },
   'zh-TW': {
     saveRateLimited: '儲存太頻繁了。請稍候再試。',
@@ -1272,6 +1310,10 @@ const PLAN_STATUS_COPY: Record<RoomLocale, PlanStatusCopy> = {
     tourItinAdd: '加入',
     tourItinAdded: '已加入',
     tourItinDetails: '詳情',
+    courseOptionTitle: '請選擇一條路線',
+    courseOptionSub: '本包車行程每天走一條路線。選擇後會自動填入日程，之後仍可逐一修改。',
+    courseOptionApply: '就選這條路線',
+    courseOptionCustom: '我自己選地點',
   },
   es: {
     saveRateLimited: 'Demasiados guardados seguidos. Espera un momento e inténtalo de nuevo.',
@@ -1296,6 +1338,10 @@ const PLAN_STATUS_COPY: Record<RoomLocale, PlanStatusCopy> = {
     tourItinAdd: 'Añadir',
     tourItinAdded: 'Añadido',
     tourItinDetails: 'Detalles',
+    courseOptionTitle: 'Elige tu ruta',
+    courseOptionSub: 'Este chárter recorre una ruta al día. Elige una para completar tu plan; luego podrás editar cada parada.',
+    courseOptionApply: 'Usar esta ruta',
+    courseOptionCustom: 'Elegir yo los lugares',
   },
   fr: {
     saveRateLimited: 'Enregistrements trop rapprochés. Patientez un instant, puis réessayez.',
@@ -1320,6 +1366,10 @@ const PLAN_STATUS_COPY: Record<RoomLocale, PlanStatusCopy> = {
     tourItinAdd: 'Ajouter',
     tourItinAdded: 'Ajouté',
     tourItinDetails: 'Détails',
+    courseOptionTitle: 'Choisissez votre itinéraire',
+    courseOptionSub: 'Cette formule parcourt un itinéraire par jour. Choisissez-en un pour remplir votre programme ; vous pourrez ensuite modifier chaque étape.',
+    courseOptionApply: 'Choisir cet itinéraire',
+    courseOptionCustom: 'Choisir moi-même les lieux',
   },
   de: {
     saveRateLimited: 'Zu viele Speicherungen kurz nacheinander. Bitte kurz warten und erneut versuchen.',
@@ -1344,6 +1394,10 @@ const PLAN_STATUS_COPY: Record<RoomLocale, PlanStatusCopy> = {
     tourItinAdd: 'Hinzufügen',
     tourItinAdded: 'Hinzugefügt',
     tourItinDetails: 'Details',
+    courseOptionTitle: 'Wählen Sie Ihre Route',
+    courseOptionSub: 'Diese Charter-Tour fährt eine Route pro Tag. Wählen Sie eine, um den Plan zu füllen — jeden Stopp können Sie danach ändern.',
+    courseOptionApply: 'Diese Route nehmen',
+    courseOptionCustom: 'Orte selbst auswählen',
   },
   ru: {
     saveRateLimited: 'Слишком частое сохранение. Подождите немного и попробуйте снова.',
@@ -1368,6 +1422,10 @@ const PLAN_STATUS_COPY: Record<RoomLocale, PlanStatusCopy> = {
     tourItinAdd: 'Добавить',
     tourItinAdded: 'Добавлено',
     tourItinDetails: 'Подробнее',
+    courseOptionTitle: 'Выберите маршрут',
+    courseOptionSub: 'В этой аренде — один маршрут на день. Выберите его, чтобы заполнить план; каждую остановку потом можно изменить.',
+    courseOptionApply: 'Выбрать этот маршрут',
+    courseOptionCustom: 'Выбрать места самому',
   },
   it: {
     saveRateLimited: 'Troppi salvataggi ravvicinati. Attendi un attimo e riprova.',
@@ -1392,6 +1450,10 @@ const PLAN_STATUS_COPY: Record<RoomLocale, PlanStatusCopy> = {
     tourItinAdd: 'Aggiungi',
     tourItinAdded: 'Aggiunto',
     tourItinDetails: 'Dettagli',
+    courseOptionTitle: 'Scelga il suo itinerario',
+    courseOptionSub: 'Questo servizio percorre un itinerario al giorno. Ne scelga uno per comporre il programma; potrà modificare ogni tappa dopo.',
+    courseOptionApply: 'Usa questo itinerario',
+    courseOptionCustom: 'Scelgo io i luoghi',
   },
 };
 
@@ -1806,13 +1868,22 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
         const res = await authedFetch('/plan', { method: 'PUT', body: JSON.stringify(body) });
         const data = (await res.json().catch(() => ({}))) as PlanSaveResponse;
         if (!res.ok) {
-          if (res.status === 409) {
+          /**
+           * 🔴 P1 — 409(가이드가 확정)와 403(이 기기는 대표자가 아님)은 **영구
+           * 실패**다. 예전에는 403이 일반 실패로 떨어져 "다음 수정 때 다시
+           * 시도해요"를 보여줬는데, 아무리 고쳐도 저장되지 않으므로 그건 거짓말이다
+           * (사용자 리포트 2026-07-27의 `Couldn't save`). 서버 진실을 다시 읽어
+           * 화면을 읽기전용으로 바꾼다.
+           */
+          if (res.status === 409 || res.status === 403) {
             setSaveState('idle');
             const synced = await resyncLockedPlan();
             if (!synced) setSaveState('error');
             return null;
           }
           setSaveState(res.status === 429 ? 'rate_limited' : 'error');
+          // 어떤 실패였는지 남긴다 — 한 문장짜리 안내만으로는 다음에 또 못 고친다.
+          console.warn('[plan] save failed', res.status, data);
           return null;
         }
         applySaveResponse(data);
@@ -2001,6 +2072,46 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
     scheduleAutosave(draft);
   };
 
+  /**
+   * P0 — 전세 상품은 "정류지 목록"이 아니라 "코스 택1"을 싣고 온다. 그걸 그대로
+   * 일정으로 가져오면 코스 네 개가 관광지 네 곳으로 들어앉는다(사용자 리포트
+   * 2026-07-27). 구조로 판별해 선택지면 코스 카드로 렌더한다.
+   */
+  const courseOptions = useMemo(
+    () => (isCourseOptionItinerary(tourStops) ? toCourseOptions(tourStops) : null),
+    [tourStops],
+  );
+
+  /** 코스 하나 → 그 코스의 실제 장소들이 정류지가 된다. */
+  const applyCourseOption = (course: CourseOption) => {
+    if (course.isCustom) {
+      // 커스텀 코스는 정류지를 만들지 않는다 — 고르라고 만든 것이므로 피커를 연다.
+      setTab('pick');
+      return;
+    }
+    const nextStops = course.poiKeys
+      .map((key) => poiByKey.get(key))
+      .filter((poi): poi is NonNullable<typeof poi> => Boolean(poi))
+      .slice(0, MAX_PLAN_STOPS)
+      .map((poi, i) => ({
+        id: `poi-${poi.poi_key}-${i}`,
+        source: 'poi' as const,
+        poi_key: poi.poi_key,
+        title: poiName(poi, locale),
+        stop_type: 'sight',
+        duration_min: poi.default_stay_minutes ?? 60,
+        lat: poi.lat,
+        lng: poi.lng,
+      }));
+    if (nextStops.length === 0) return;
+    const draft = { stops: nextStops, needs: latestDraft.current.needs, stopsChanged: true };
+    if (outcome === 'delegated') setOutcome(null);
+    setStops(nextStops);
+    setWarnings([]);
+    setTab('pick');
+    scheduleAutosave(draft);
+  };
+
   // …or add a single itinerary stop (deduped by poi_key, capped at MAX_PLAN_STOPS).
   const addTourStop = (stop: ItineraryStop) => {
     const poi = stop._poi_meta?.poi_key ? poiByKey.get(stop._poi_meta.poi_key) : undefined;
@@ -2047,6 +2158,9 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
   }, [previewTemplate, authedFetch, locale]);
 
   const submitPlan = async () => {
+    // save()는 can_edit을 확인했는데 submit/delegate는 안 했다 — 대표자가 아닌
+    // 기기에서도 요청이 나가 403을 받았다.
+    if (!plan?.viewer.can_edit) return;
     if (submittingRef.current) return;
     submittingRef.current = true;
     setSubmitBusy(true);
@@ -2061,7 +2175,24 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
     }
   };
 
+  /**
+   * P-D19 — 같은 예약의 다른 기기가 편집자로 잡혀 있을 때 여기서 넘겨받는다.
+   * 동행자(개인 초대로 들어온 기기)는 서버가 403으로 막는다.
+   */
+  const [claimBusy, setClaimBusy] = useState(false);
+  const claimLead = async () => {
+    if (claimBusy) return;
+    setClaimBusy(true);
+    try {
+      const res = await authedFetch('/plan/claim-lead', { method: 'POST' });
+      if (res.ok) await resyncLockedPlan();
+    } finally {
+      setClaimBusy(false);
+    }
+  };
+
   const delegatePlan = async () => {
+    if (!plan?.viewer.can_edit) return;
     if (saveTimer.current) clearTimeout(saveTimer.current);
     saveTimer.current = null;
     setSaveState('saving');
@@ -2299,6 +2430,17 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
         {!plan.viewer.can_edit && !isConfirmed && !plan.viewer.is_lead && (
           <div className="tr-card mt-4 px-4 py-3">
             <p className="tr-card-text text-[var(--tr-ink-2)]">{copy.memberReadOnly}</p>
+            {/* 막다른 골목을 만들지 않는다: 같은 예약의 다른 기기(브라우저 ↔ PWA)가
+                편집자로 잡혀 있을 뿐이면 여기서 넘겨받는다. */}
+            <button
+              type="button"
+              onClick={() => void claimLead()}
+              disabled={claimBusy}
+              className="tr-btn-flat tr-label mt-2.5 inline-flex min-h-11 items-center rounded-full bg-[var(--tr-surface-2)] px-4 font-semibold text-[var(--tr-ink)] disabled:opacity-40"
+              data-testid="plan-claim-lead"
+            >
+              {copy.claimLead}
+            </button>
           </div>
         )}
 
@@ -2328,6 +2470,80 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
             {/* tab ① courses */}
             {tab === 'courses' && (
               <div className="mt-3 flex flex-col gap-3">
+                {/* P0 — 코스 택1 상품은 "일정"이 아니라 "선택지"를 싣고 온다.
+                    정류지 카드로 렌더하면 네 코스가 네 관광지가 된다. */}
+                {courseOptions ? (
+                  <section aria-labelledby="plan-course-options">
+                    <h2
+                      id="plan-course-options"
+                      className="tr-title font-bold text-[var(--tr-ink)]"
+                    >
+                      {ui.courseOptionTitle}
+                    </h2>
+                    <p className="tr-label mt-1 leading-relaxed text-[var(--tr-ink-2)]">
+                      {ui.courseOptionSub}
+                    </p>
+                    <div className="mt-3 flex flex-col gap-3">
+                      {courseOptions.map((course) => {
+                        const places = course.poiKeys
+                          .map((key) => poiByKey.get(key))
+                          .filter(Boolean)
+                          .map((poi) => poiName(poi!, locale));
+                        const preview = (
+                          course.isCustom
+                            ? course.candidatePoiKeys
+                                .map((key) => poiByKey.get(key))
+                                .filter(Boolean)
+                                .map((poi) => poiName(poi!, locale))
+                            : places
+                        )
+                          .slice(0, 4)
+                          .join(' · ');
+                        return (
+                          <article
+                            key={course.index}
+                            className="tr-card tr-plan-course-card px-4 py-4"
+                            data-testid={`plan-course-option-${course.index}`}
+                          >
+                            <div className="flex items-start gap-3">
+                              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[var(--tr-accent-soft)] text-[var(--tr-accent-deep)]">
+                                <IconJourney size={TR_ICON.action} aria-hidden />
+                              </span>
+                              <div className="min-w-0 flex-1">
+                                <h3 className="tr-title font-bold leading-snug text-[var(--tr-ink)]">
+                                  {course.name}
+                                </h3>
+                                {preview && (
+                                  <p className="tr-label tr-plan-line-clamp-2 mt-1.5 leading-relaxed text-[var(--tr-ink-2)]">
+                                    {preview}
+                                  </p>
+                                )}
+                              </div>
+                            </div>
+                            <div className="mt-3 flex flex-wrap items-center gap-2">
+                              {!course.isCustom && (
+                                <span className="tr-label inline-flex min-h-8 items-center rounded-full bg-[var(--tr-surface-2)] px-3 text-[var(--tr-ink-2)]">
+                                  {copy.courseStops(places.length)}
+                                </span>
+                              )}
+                              <button
+                                type="button"
+                                onClick={() => applyCourseOption(course)}
+                                /* 장소 목록이 아직이면 누를 수 없게 한다. 예전에는
+                                   눌려도 poiByKey가 비어 조용히 아무 일도 안 일어났다. */
+                                disabled={!canEdit || (!course.isCustom && poisState !== 'ready')}
+                                className="tr-btn-raised tr-label ml-auto inline-flex min-h-11 items-center rounded-full bg-[var(--tr-accent)] px-4 font-semibold text-[var(--tr-on-accent)] disabled:opacity-40"
+                                data-testid={`plan-course-apply-${course.index}`}
+                              >
+                                {course.isCustom ? ui.courseOptionCustom : ui.courseOptionApply}
+                              </button>
+                            </div>
+                          </article>
+                        );
+                      })}
+                    </div>
+                  </section>
+                ) : (
                 <PlanTourItinerary
                   stops={tourStops}
                   locale={locale}
@@ -2346,6 +2562,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                   onApplyAll={applyTourItinerary}
                   onAddStop={addTourStop}
                 />
+                )}
                 {templatesState === 'loading' && (
                   <div className="tr-card px-4 py-4" role="status">
                     <p className="tr-card-text font-medium text-[var(--tr-ink-2)]">{ui.templatesLoading}</p>
