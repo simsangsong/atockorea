@@ -32,7 +32,7 @@ import { ITINERARY_BUILDER_ENABLED } from "@/lib/itinerary-builder/builder-visib
 const DEFAULT_REGION: RegionSlug = "busan";
 
 const POI_SELECT =
-  "poi_key, name_en, name_ko, names_other_locales, content_locales, region, category, default_image_url, default_stay_minutes, lat, lng, stop_role, is_attraction, is_operational, builder_profile_source, builder_profile_version, poi_meta, description, highlights, images, why_on_route, smart_notes, visit_basics, convenience";
+  "poi_key, name_en, name_ko, names_other_locales, content_locales, content_locale_status, region, category, default_image_url, default_stay_minutes, lat, lng, stop_role, is_attraction, is_operational, builder_profile_source, builder_profile_version, poi_meta, description, highlights, images, why_on_route, smart_notes, visit_basics, convenience";
 
 /**
  * B5/K3: builder POI metadata changes rarely (admin POI editor / photo imports),

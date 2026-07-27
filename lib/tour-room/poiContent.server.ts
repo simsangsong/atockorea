@@ -49,6 +49,17 @@ interface MatchPoiRow {
   convenience: Record<string, unknown> | null;
   smart_notes: Record<string, unknown> | null;
   content_locales: Record<string, PoiLocaleEntry> | null;
+  /** A4 review gate — a locale is served only when this says 'approved'. */
+  content_locale_status: Record<string, string> | null;
+}
+
+/**
+ * A4 — fail-closed by design. Absent status means NOT approved, so content
+ * written without a review decision stages invisibly instead of publishing
+ * itself. Everything live at migration time was seeded 'approved'.
+ */
+function isApproved(row: MatchPoiRow, locale: string): boolean {
+  return row.content_locale_status?.[locale] === 'approved';
 }
 
 function stringList(value: unknown, limit: number): string[] {
@@ -74,11 +85,16 @@ function firstImage(row: MatchPoiRow): string | undefined {
 /** Build one locale's briefing out of a POI row, or null when it has no prose. */
 function briefingFor(row: MatchPoiRow, locale: RoomLocale): { content: SpotArrivalContent; lang: RoomLocale } | null {
   const byLocale = row.content_locales ?? {};
-  const exact = byLocale[locale];
-  const entry = exact ?? byLocale.en;
+  // A4 — an unapproved locale is invisible: it falls through to English exactly
+  // as an untranslated one would, rather than publishing itself.
+  const exact = isApproved(row, locale) ? byLocale[locale] : undefined;
+  const englishOk = isApproved(row, 'en');
+  const entry = exact ?? (englishOk ? byLocale.en : undefined);
   const lang: RoomLocale = exact ? locale : 'en';
+  // The row's own columns ARE the English master, so they ride the same gate.
+  if (!exact && !englishOk) return null;
 
-  // The top-level columns are the English master; a locale entry overrides it.
+  // A locale entry overrides the master.
   const description = (entry?.description ?? (lang === 'en' ? row.description : null) ?? '').trim();
   const highlights = stringList(entry?.highlights ?? (lang === 'en' ? row.highlights : null), 6);
   if (!description && highlights.length === 0) return null;
@@ -128,7 +144,7 @@ export async function withMatchPoiContent(
     const { data } = await supabase
       .from('match_pois')
       .select(
-        'poi_key, name_en, description, highlights, images, default_image_url, visit_basics, convenience, smart_notes, content_locales',
+        'poi_key, name_en, description, highlights, images, default_image_url, visit_basics, convenience, smart_notes, content_locales, content_locale_status',
       )
       .eq('poi_key', poiKey)
       .maybeSingle();

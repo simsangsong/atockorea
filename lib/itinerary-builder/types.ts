@@ -31,6 +31,8 @@ export interface MatchPoiRow {
   names_other_locales: Record<string, string> | null;
   /** Per-locale rich stop content copied from static tour itineraryStops. */
   content_locales?: Record<string, PoiLocalizedContent> | null;
+  /** A4 review gate — per-locale approval for content_locales. */
+  content_locale_status?: Record<string, string> | null;
   region: string;
   category: string | null;
   default_image_url: string | null;

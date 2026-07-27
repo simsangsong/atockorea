@@ -25,6 +25,8 @@ const ROW = {
     en: { name: 'Seopjikoji', description: 'A headland of wind and rapeseed.', highlights: ['Cliff walk'] },
     ko: { name: '섭지코지', description: '바람과 유채의 곶.', highlights: ['절벽 산책'], insider_tip: '등대까지 걸어가세요.' },
   },
+  // A4 — the review gate is fail-closed, so a fixture must say what is approved.
+  content_locale_status: { en: 'approved', ko: 'approved' },
 };
 
 function fakeDb(row: unknown = ROW) {
@@ -87,5 +89,49 @@ describe('withMatchPoiContent', () => {
   it('adds nothing for a POI row with no prose at all', async () => {
     const bare = { ...ROW, description: null, highlights: [], content_locales: {} };
     expect(await withMatchPoiContent(fakeDb(bare), 'seopjikoji', ['en'], {})).toEqual({});
+  });
+});
+
+describe('withMatchPoiContent — A4 review gate', () => {
+  it('does not serve a locale that has not been approved', async () => {
+    // The whole reason the gate exists: machine translation lands in
+    // content_locales, and until a human approves it the guest must not see it
+    // — and must not HEAR it, since the arrival card speaks this text.
+    const staged = {
+      ...ROW,
+      content_locales: {
+        ...ROW.content_locales,
+        fr: { name: 'Seopjikoji', description: 'Traduction automatique non relue.' },
+      },
+      content_locale_status: { en: 'approved', ko: 'approved', fr: 'pending' },
+    };
+    const merged = await withMatchPoiContent(fakeDb(staged), 'seopjikoji', ['fr'], {});
+    expect(merged.fr?.content.description).toBe('A headland of wind and rapeseed.');
+    expect(merged.fr?.lang).toBe('en');
+  });
+
+  it('serves it the moment it is approved', async () => {
+    const approved = {
+      ...ROW,
+      content_locales: { ...ROW.content_locales, fr: { name: 'Seopjikoji', description: 'Un cap de vent.' } },
+      content_locale_status: { en: 'approved', ko: 'approved', fr: 'approved' },
+    };
+    const merged = await withMatchPoiContent(fakeDb(approved), 'seopjikoji', ['fr'], {});
+    expect(merged.fr?.content.description).toBe('Un cap de vent.');
+    expect(merged.fr?.lang).toBe('fr');
+  });
+
+  it('treats a missing status as NOT approved', async () => {
+    // Fail-closed: a writer that forgets to set a status stages content
+    // invisibly rather than publishing it by accident.
+    const ungated = { ...ROW, content_locale_status: null };
+    expect(await withMatchPoiContent(fakeDb(ungated), 'seopjikoji', ['ko', 'en'], {})).toEqual({});
+  });
+
+  it('withholds the English master too when English is unapproved', async () => {
+    const koOnly = { ...ROW, content_locale_status: { ko: 'approved' } };
+    const merged = await withMatchPoiContent(fakeDb(koOnly), 'seopjikoji', ['ko', 'en'], {});
+    expect(merged.ko?.content.description).toBe('바람과 유채의 곶.');
+    expect(merged.en).toBeUndefined();
   });
 });
