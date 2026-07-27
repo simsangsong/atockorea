@@ -126,6 +126,7 @@ import { extensionForMime } from '@/lib/tour-room/recorder';
 import { detectTtsTier, primeAudio, speakWithDevice } from '@/lib/tour-room/tts';
 import { pickupBoardState } from '@/lib/tour-room/pickup';
 import type { RoomLocale, PickupSequenceStop } from '@/lib/tour-room/snapshot';
+import { DEFAULT_REVIEW_POLICY, type RoomReviewPolicy } from '@/lib/tour-room/reviewPolicy';
 import type { RoomLocation } from '@/hooks/useTourRoomChannel';
 import type { VoiceTranscribeResult } from '@/components/tour-mode/Composer';
 
@@ -445,7 +446,16 @@ function TourRoomLive({
     schedule?: Array<Record<string, unknown>>;
     /** §11.D D4 — the active day plan carries the guest-set departure time. */
     day_plan?: { departure_time?: string | null } | null;
+    /** OTA 심사 대비 — 서버가 예약 채널로 정한 리뷰/보상 정책. */
+    review_policy?: RoomReviewPolicy;
   };
+  /**
+   * 배포 경계에서 이미 join을 마친 세션의 스냅샷에는 이 필드가 없다. 그때는
+   * 자사 기본값(= 지금까지의 동작)으로 떨어진다. 그 창에서 OTA 손님에게 쿠폰
+   * 블록이 잠깐 보일 수 있지만 `timeline-coupon` 라우트가 채널을 다시 보고
+   * 거절하므로 **발급은 일어나지 않는다** — 계약 실체가 남는 쪽은 막혀 있다.
+   */
+  const reviewPolicy = snapshot.review_policy ?? DEFAULT_REVIEW_POLICY;
   const {
     messages,
     connection,
@@ -993,7 +1003,7 @@ function TourRoomLive({
                 tourTime={snapshot.booking?.tour_time ?? null}
                 pickupPoints={snapshot.booking?.pickup_points}
                 busPayload={(snapshot.bus_detail as { payload?: unknown } | null | undefined)?.payload}
-                tourSlug={(snapshot.booking?.tours as { slug?: string } | null | undefined)?.slug ?? null}
+                reviewPolicy={reviewPolicy}
                 canSignal={!readOnly && data.lifecycle === 'live'}
                 showConcierge={!readOnly}
                 isPrivate={manualKind === 'private'}
@@ -1103,7 +1113,7 @@ function TourRoomLive({
               messages={messages}
               bookingId={bookingId}
               roomSession={data.session}
-              tourSlug={(snapshot.booking?.tours as { slug?: string } | null | undefined)?.slug ?? null}
+              reviewPolicy={reviewPolicy}
               variant={readOnly ? 'ended' : 'live'}
             />
           )}

@@ -34,6 +34,7 @@ import {
   type TravelTimelineData,
 } from '@/lib/tour-room/timeline';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
+import type { RoomReviewPolicy } from '@/lib/tour-room/reviewPolicy';
 import type { RoomMessage } from '@/hooks/useTourRoomChannel';
 
 const CLOSE_LABEL: Record<RoomLocale, string> = {
@@ -175,14 +176,15 @@ function TimelineBody({
   copy,
   bookingId,
   roomSession,
-  reviewHref,
+  reviewPolicy,
 }: {
   data: TravelTimelineData;
   copy: (typeof TIMELINE_COPY)[RoomLocale];
   bookingId: string;
   roomSession: string;
-  reviewHref: string;
+  reviewPolicy: RoomReviewPolicy;
 }) {
+  const { reviewHref, reviewExternal, rewardAllowed } = reviewPolicy;
   return (
     <div data-testid="timeline-panel">
       {data.stopCount === 0 && data.photoCount === 0 ? (
@@ -238,18 +240,29 @@ function TimelineBody({
         </>
       )}
 
-      <RewardBlock data={data} copy={copy} bookingId={bookingId} roomSession={roomSession} />
+      {/* OTA 예약에는 자사 쿠폰을 제안하지 않는다 (reviewPolicy.ts). 라우트도
+          같은 판단으로 발급을 거절하므로 여기는 화면 절제일 뿐이다. */}
+      {rewardAllowed && (
+        <RewardBlock data={data} copy={copy} bookingId={bookingId} roomSession={roomSession} />
+      )}
 
-      {/* V4.3 — review CTA, always shown, decoupled from the reward. */}
-      <a
-        href={reviewHref}
-        data-testid="timeline-review"
-        className="tr-label mt-3 flex min-h-[44px] items-center justify-center gap-1.5 rounded-full border border-[var(--tr-hairline)] font-semibold text-[var(--tr-ink)]"
-      >
-        <IconReview size={TR_ICON.chip} className="text-[var(--tr-accent-deep)]" aria-hidden />
-        {copy.reviewCta}
-      </a>
-      <p className="tr-meta mt-1.5 text-center text-[var(--tr-ink-3)]">{copy.reviewHint}</p>
+      {/* V4.3 — review CTA, decoupled from the reward. 2026-07-28: 도착지가
+          예약 채널에 따라 갈린다 — 자사 예약은 자사 리뷰 앵커, OTA 예약은 그
+          OTA 리스팅. 리스팅 URL이 없으면 CTA 자체가 뜨지 않는다. */}
+      {reviewHref && (
+        <>
+          <a
+            href={reviewHref}
+            {...(reviewExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+            data-testid="timeline-review"
+            className="tr-label mt-3 flex min-h-[44px] items-center justify-center gap-1.5 rounded-full border border-[var(--tr-hairline)] font-semibold text-[var(--tr-ink)]"
+          >
+            <IconReview size={TR_ICON.chip} className="text-[var(--tr-accent-deep)]" aria-hidden />
+            {copy.reviewCta}
+          </a>
+          <p className="tr-meta mt-1.5 text-center text-[var(--tr-ink-3)]">{copy.reviewHint}</p>
+        </>
+      )}
     </div>
   );
 }
@@ -265,7 +278,7 @@ export function TravelTimelineSheet({
   messages,
   bookingId,
   roomSession,
-  tourSlug,
+  reviewPolicy,
 }: {
   open: boolean;
   onClose: () => void;
@@ -273,11 +286,10 @@ export function TravelTimelineSheet({
   messages: RoomMessage[];
   bookingId: string;
   roomSession: string;
-  tourSlug?: string | null;
+  reviewPolicy: RoomReviewPolicy;
 }) {
   const data = useMemo(() => buildTravelTimeline(messages), [messages]);
   const copy = TIMELINE_COPY[locale];
-  const reviewHref = tourSlug ? `/tour-product/${tourSlug}#reviews` : '/mypage';
 
   return (
     <Sheet
@@ -291,7 +303,13 @@ export function TravelTimelineSheet({
         </span>
       }
     >
-      <TimelineBody data={data} copy={copy} bookingId={bookingId} roomSession={roomSession} reviewHref={reviewHref} />
+      <TimelineBody
+        data={data}
+        copy={copy}
+        bookingId={bookingId}
+        roomSession={roomSession}
+        reviewPolicy={reviewPolicy}
+      />
     </Sheet>
   );
 }
@@ -306,14 +324,14 @@ export default function TravelTimelineEntry({
   messages,
   bookingId,
   roomSession,
-  tourSlug,
+  reviewPolicy,
   variant,
 }: {
   locale: RoomLocale;
   messages: RoomMessage[];
   bookingId: string;
   roomSession: string;
-  tourSlug?: string | null;
+  reviewPolicy: RoomReviewPolicy;
   variant: 'live' | 'ended';
 }) {
   const [open, setOpen] = useState(false);
@@ -348,7 +366,7 @@ export default function TravelTimelineEntry({
         messages={messages}
         bookingId={bookingId}
         roomSession={roomSession}
-        tourSlug={tourSlug}
+        reviewPolicy={reviewPolicy}
       />
     </>
   );

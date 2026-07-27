@@ -7,7 +7,10 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import TravelTimelineEntry from '@/components/tour-mode/TravelTimeline';
 import { TIMELINE_COPY } from '@/lib/tour-room/timeline';
 import { ROOM_LOCALES } from '@/lib/tour-room/snapshot';
+import { resolveReviewPolicy } from '@/lib/tour-room/reviewPolicy';
 import type { RoomMessage } from '@/hooks/useTourRoomChannel';
+
+const DIRECT = resolveReviewPolicy({ source: 'tour_product', tourSlug: 'jeju-south-1day' });
 
 const COMPLETE: RoomMessage[] = [
   { id: 'a1', sender_role: 'system', source_text: 'arrived', created_at: '2099-07-20T03:00:00Z', metadata: { kind: 'spot_arrival', spot_title: 'Jusangjeolli' } },
@@ -22,7 +25,7 @@ function renderEntry(overrides: Partial<Parameters<typeof TravelTimelineEntry>[0
       messages={COMPLETE}
       bookingId="booking-1"
       roomSession="session"
-      tourSlug="jeju-south-1day"
+      reviewPolicy={DIRECT}
       variant="live"
       {...overrides}
     />,
@@ -55,9 +58,44 @@ describe('TravelTimelineEntry (V4)', () => {
   });
 
   it('falls back to mypage for the review link without a slug', () => {
-    renderEntry({ tourSlug: null });
+    renderEntry({ reviewPolicy: resolveReviewPolicy({ source: 'tour_product', tourSlug: null }) });
     fireEvent.click(screen.getByTestId('timeline-open'));
     expect(screen.getByTestId('timeline-review')).toHaveAttribute('href', '/mypage');
+  });
+
+  /**
+   * OTA 심사 대비 (2026-07-28) — Klook/GYG 예약에서는 자사 마켓플레이스로도,
+   * 자사 쿠폰으로도 나가는 길이 없어야 한다.
+   */
+  describe('OTA-sourced bookings', () => {
+    it('sends the review CTA to the OTA listing in a new tab, and offers no coupon', () => {
+      renderEntry({
+        reviewPolicy: resolveReviewPolicy({
+          source: 'klook',
+          tourSlug: 'jeju-south-1day',
+          otaListingUrl: 'https://www.klook.com/activity/12345-jeju/',
+        }),
+      });
+      fireEvent.click(screen.getByTestId('timeline-open'));
+
+      const review = screen.getByTestId('timeline-review');
+      expect(review).toHaveAttribute('href', 'https://www.klook.com/activity/12345-jeju/');
+      expect(review).toHaveAttribute('target', '_blank');
+      expect(review).toHaveAttribute('rel', 'noopener noreferrer');
+
+      // 완주한 타임라인인데도 보상 블록이 아예 없다.
+      expect(screen.queryByTestId('timeline-reward-ready')).not.toBeInTheDocument();
+      expect(screen.queryByTestId('timeline-claim')).not.toBeInTheDocument();
+    });
+
+    it('hides the review CTA entirely rather than linking our own product page', () => {
+      renderEntry({
+        reviewPolicy: resolveReviewPolicy({ source: 'gyg', tourSlug: 'jeju-south-1day' }),
+      });
+      fireEvent.click(screen.getByTestId('timeline-open'));
+      expect(screen.queryByTestId('timeline-review')).not.toBeInTheDocument();
+      expect(screen.queryByTestId('timeline-reward-ready')).not.toBeInTheDocument();
+    });
   });
 
   it('offers a claim when complete and shows the granted code', async () => {
@@ -93,10 +131,26 @@ describe('TravelTimelineEntry (V4)', () => {
 
   it('renders nothing mid-tour with no content, but always in the ended view', () => {
     const { container, rerender } = render(
-      <TravelTimelineEntry locale="en" messages={[]} bookingId="b" roomSession="s" variant="live" />,
+      <TravelTimelineEntry
+        locale="en"
+        messages={[]}
+        bookingId="b"
+        roomSession="s"
+        reviewPolicy={DIRECT}
+        variant="live"
+      />,
     );
     expect(container.querySelector('[data-testid="timeline-open"]')).toBeNull();
-    rerender(<TravelTimelineEntry locale="en" messages={[]} bookingId="b" roomSession="s" variant="ended" />);
+    rerender(
+      <TravelTimelineEntry
+        locale="en"
+        messages={[]}
+        bookingId="b"
+        roomSession="s"
+        reviewPolicy={DIRECT}
+        variant="ended"
+      />,
+    );
     expect(screen.getByTestId('timeline-open')).toBeInTheDocument();
   });
 

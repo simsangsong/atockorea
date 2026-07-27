@@ -38,7 +38,7 @@ import {
 
 /** Superset of the booking columns the three room routes selected. */
 export const ROOM_BOOKING_COLUMNS =
-  'id, user_id, tour_id, merchant_id, tour_date, contact_name, contact_email, contact_phone, preferred_language';
+  'id, user_id, tour_id, merchant_id, tour_date, contact_name, contact_email, contact_phone, preferred_language, source';
 
 export interface RoomBooking {
   id: string;
@@ -50,6 +50,12 @@ export interface RoomBooking {
   contact_email: string | null;
   contact_phone: string | null;
   preferred_language: string | null;
+  /**
+   * 판매 채널(`klook`/`gyg`/`viator`/`tour_product`/…). 룸 라우트 전부가 쓰는
+   * 컬럼 목록에 얹은 이유는 리뷰 CTA와 쿠폰이 이 값 하나로 갈리기 때문이다 —
+   * `lib/tour-room/reviewPolicy.ts` 참고.
+   */
+  source: string | null;
 }
 
 export interface TourRoom {

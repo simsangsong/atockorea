@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { requestGate, clientIpKey } from '@/lib/durable-rate-limit';
 import { ensureRoom, resolveRoomActor } from '@/lib/tour-room/access';
+import { isOtaChannel, normalizeBookingChannel } from '@/lib/tour-room/reviewPolicy';
 import { buildTravelTimeline } from '@/lib/tour-room/timeline';
 import type { RoomMessage } from '@/hooks/useTourRoomChannel';
 
@@ -35,6 +36,20 @@ export async function POST(
       return NextResponse.json({ error: resolved.error }, { status: resolved.status });
     }
     const { booking, actor, authUserId } = resolved;
+
+    /**
+     * OTA 심사 대비 (2026-07-28) — Klook/GYG/Viator로 들어온 손님에게는 자사
+     * 쿠폰을 발급하지 않는다. 화면에서도 감추지만(TravelTimeline), **여기가
+     * 진짜 게이트다**: UI만 감추면 라우트가 그대로 살아 있어 OTA 손님 앞으로
+     * 발급된 자사 쿠폰이 `coupon_grants`에 남고, 그게 심사보다 무거운 계약
+     * 실체가 된다. 레이트리밋보다 앞에 두어 조회조차 하지 않는다.
+     */
+    if (isOtaChannel(normalizeBookingChannel(booking.source))) {
+      return NextResponse.json(
+        { eligible: false, granted: false, reason: 'not_available' },
+        { status: 200 },
+      );
+    }
 
     const gateKey =
       actor.kind === 'session' ? `participant:${actor.sessionPayload.participantId}` : clientIpKey(req.headers);
