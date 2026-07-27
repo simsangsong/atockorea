@@ -23,7 +23,8 @@ import { CalendarRange, Home, LayoutDashboard, Map as MapIcon, Moon, RefreshCw, 
 import { supabase } from '@/lib/supabase';
 import { kstToday } from '@/lib/tour-room/time';
 import { useOpsChannels, type OpsChannelDescriptor } from '@/hooks/useOpsChannels';
-import { useOpsTheme } from '@/components/tour-ops/opsTheme';
+import { migrateLegacyOpsTheme } from '@/components/tour-ops/opsTheme';
+import { useResolvedTheme, useTourRoomSettings } from '@/hooks/useTourRoomSettings';
 import { computeAttention } from '@/lib/tour-ops/attention';
 import { startSosAlarmVisuals, stopSosAlarmVisuals, vibrateSos } from '@/lib/tour-ops/alerts';
 import { getOpsToken, playSosSound, type OpsRoom, type SosInfo, type SosMetadata } from '@/components/tour-ops/opsShared';
@@ -66,9 +67,13 @@ export default function OpsApp() {
   // Hub sheets (룸·링크 관리 / 메시지 모아보기) ride over every tab like the
   // room drawer does.
   const [managerOpen, setManagerOpen] = useState(false);
-  // Ops-wide light/dark — toggles `.dark` on the tr-root, flipping the tr-*
-  // vars + `dark:` semantics across every tab and overlay.
-  const [opsTheme, toggleOpsTheme] = useOpsTheme();
+  // U-D9 — one device preference, not two. The ops center used to persist its
+  // own `tour_ops_theme`, so the same dispatcher flipping between the guide
+  // console and here got two different answers about their own taste. Both now
+  // read the shared device store; `skin` rides along for the same reason
+  // (U-D1: skin yes, scenery no — this is a dense tool, not a lounge).
+  const { theme: opsTheme, toggle: toggleOpsTheme, setTheme } = useResolvedTheme();
+  const { settings: deviceSettings } = useTourRoomSettings();
   const [inboxOpen, setInboxOpen] = useState(false);
   // Phase 2 A-6 — 인박스 리뷰 큐 시트 (파싱 review_queued/failed 처리).
   const [reviewOpen, setReviewOpen] = useState(false);
@@ -131,6 +136,17 @@ export default function OpsApp() {
   useEffect(() => {
     connectionRef.current = connection;
   });
+
+  // U-D9 — carry the retired `tour_ops_theme` over to the shared store once,
+  // so a dispatcher who had chosen dark here doesn't get bounced to light on
+  // the first load after the merge. Clears the old keys either way.
+  useEffect(() => {
+    const legacy = migrateLegacyOpsTheme();
+    if (legacy) setTheme(legacy);
+    // Intentionally once per mount: the migration is idempotent because it
+    // removes the keys it reads.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Gap-fill: fold each room's aggregate last_message into the live stream so
   // messages that arrived while the socket was down (recovered only by the
@@ -349,10 +365,19 @@ export default function OpsApp() {
          default. Every tab + overlay is on tr-* chrome + `dark:` semantics now,
          so the old `.ops-light` override is gone. */
       className={`tr-root min-h-dvh bg-[var(--tr-canvas)] text-[var(--tr-ink)] ${opsTheme === 'dark' ? 'dark' : ''}`}
+      /* U-D1 — the skin travels with the person (they cross between the guide
+         console and here all day), but SkinScenery does not: this is a dense
+         tool and a wallpaper illustration behind a manifest table is noise. */
+      data-tr-skin={deviceSettings.skin}
       style={{ paddingBottom: 'calc(72px + env(safe-area-inset-bottom, 0px))' }}
     >
+      {/* U-D4 — chrome, not a white bar. `--tr-chrome` fuses the header with
+          the canvas the way the smart app's does; the divider and the
+          backdrop-blur both existed to separate a *differently coloured* bar
+          from the content, so they go with it. `tr-chrome-line-b` keeps a
+          hairline only for the skins that ask for one. */}
       <header
-        className="sticky top-0 z-30 border-b border-[var(--tr-hairline)] bg-[var(--tr-surface)] backdrop-blur"
+        className="tr-chrome-line-b sticky top-0 z-30 bg-[var(--tr-chrome)]"
         style={{ paddingTop: 'env(safe-area-inset-top, 0px)' }}
       >
         <div className="flex min-h-[52px] items-center justify-between gap-2 px-4">
@@ -492,7 +517,7 @@ export default function OpsApp() {
       )}
 
       <nav
-        className="fixed inset-x-0 bottom-0 z-40 flex items-stretch border-t border-[var(--tr-hairline)] bg-[var(--tr-surface)] backdrop-blur"
+        className="tr-chrome-line-t fixed inset-x-0 bottom-0 z-40 flex items-stretch bg-[var(--tr-chrome)]"
         style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
       >
         {tabs.map(({ key, label, icon: Icon, badge }) => {
@@ -503,6 +528,10 @@ export default function OpsApp() {
               type="button"
               onClick={() => selectTab(key)}
               aria-current={active ? 'page' : undefined}
+              /* O0 — the walk harness drives the ops center through these, so
+                 they must survive the O1 chrome rewrite. Label text alone is
+                 not a stable handle: it is Korean copy that O2 will re-typeset. */
+              data-testid={`ops-tab-${key}`}
               className={`relative flex h-[64px] flex-1 flex-col items-center justify-center gap-0.5 text-[10px] font-medium transition-colors ${
                 active ? 'text-[var(--tr-ink)]' : 'text-[var(--tr-ink-3)]'
               }`}

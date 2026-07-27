@@ -14,6 +14,7 @@
  */
 
 import { useCallback, useSyncExternalStore } from 'react';
+import { useMediaQuery } from '@/hooks/useMediaQuery';
 
 const STORAGE_KEY = 'tour_mode_settings';
 
@@ -170,4 +171,30 @@ export function useTourRoomSettings(): {
     writeTourRoomSettings(patch);
   }, []);
   return { settings, update };
+}
+
+/**
+ * U-D9 — 'system' resolved to a concrete theme, plus the toggle that flips it.
+ *
+ * This one line (`theme === 'system' ? systemDark : theme`) was being written
+ * out at each call site; the ops center joining as a fourth consumer is the
+ * point where a second definition starts to drift from the first. `setTheme`
+ * writes an explicit light/dark — a toggle that put 'system' back would be a
+ * control the user cannot predict.
+ */
+export function useResolvedTheme(): {
+  theme: 'light' | 'dark';
+  preference: TourRoomSettings['theme'];
+  setTheme: (theme: 'light' | 'dark') => void;
+  toggle: () => void;
+} {
+  const { settings, update } = useTourRoomSettings();
+  const systemDark = useMediaQuery('(prefers-color-scheme: dark)');
+  const theme = settings.theme === 'system' ? (systemDark ? 'dark' : 'light') : settings.theme;
+  const setTheme = useCallback((next: 'light' | 'dark') => update({ theme: next }), [update]);
+  const toggle = useCallback(
+    () => update({ theme: theme === 'dark' ? 'light' : 'dark' }),
+    [theme, update],
+  );
+  return { theme, preference: settings.theme, setTheme, toggle };
 }

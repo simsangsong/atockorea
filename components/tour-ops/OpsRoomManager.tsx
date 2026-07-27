@@ -21,7 +21,7 @@ import { toast } from 'sonner';
 import { CarFront, Copy, Loader2, Mail, Moon, Plus, QrCode, RefreshCw, Sun, X } from 'lucide-react';
 import { getOpsToken } from '@/components/tour-ops/opsShared';
 import GuideRestNotice from '@/components/tour-ops/GuideRestNotice';
-import { useOpsTheme } from '@/components/tour-ops/opsTheme';
+import { useResolvedTheme, useTourRoomSettings } from '@/hooks/useTourRoomSettings';
 import { useConfirmSheet } from '@/components/tour-mode/ConfirmSheet';
 
 interface ManagedBooking {
@@ -135,8 +135,10 @@ export default function OpsRoomManager({
   onRoomsChanged: () => void;
 }) {
   const [viewDate, setViewDate] = useState(date);
-  // Shared with the whole 관제센터 (OpsApp shell) — one switch everywhere.
-  const [theme, toggleTheme] = useOpsTheme();
+  // U-D9 — shared with the whole 관제센터 AND with the guide console: one
+  // device preference, not an ops-only one (see components/tour-ops/opsTheme.ts).
+  const { theme, toggle: toggleTheme } = useResolvedTheme();
+  const { settings: deviceSettings } = useTourRoomSettings();
   const [bookings, setBookings] = useState<ManagedBooking[]>([]);
   const [loading, setLoading] = useState(true);
   const [busy, setBusy] = useState<string | null>(null); // `${bookingId}:${action}`
@@ -262,6 +264,7 @@ export default function OpsRoomManager({
          drives the dark palette + semantic `dark:` badges (the shell already
          nests these, but this fixed overlay stays correct if rendered alone). */
       className={`tr-root fixed inset-0 z-50 flex flex-col ${theme === 'dark' ? 'dark' : ''} ${T.root}`}
+      data-tr-skin={deviceSettings.skin}
       data-testid="ops-room-manager"
     >
       <header

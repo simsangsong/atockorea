@@ -224,12 +224,50 @@ describe('weatherLocaleOf', () => {
   });
 
   it('falls back to English for a locale it has no copy for', () => {
-    expect(weatherLocaleOf('de')).toBe('en');
+    // 'de' used to be the example here — it is covered now (G1 후속), so the
+    // case needs a language the room genuinely doesn't speak, or this test
+    // would quietly re-assert the bug that was just fixed.
+    expect(weatherLocaleOf('pt')).toBe('en');
+    expect(weatherLocaleOf('th')).toBe('en');
     expect(weatherLocaleOf(null)).toBe('en');
   });
 
   it('strips the region from ordinary locales', () => {
     expect(weatherLocaleOf('en-GB')).toBe('en');
     expect(weatherLocaleOf('ja_JP')).toBe('ja');
+  });
+});
+
+/**
+ * G1 후속 — 룸이 9로케일인데 날씨는 6이라 fr/de/ru/it가 en으로 폴백했다.
+ * 그 결과는 크래시가 아니라 **프랑스어 안내문 속 영어 한 줄**이었고, 손님이
+ * 그 문장을 보고 옷을 고른다. 계약을 테스트로 못박아 둔다.
+ */
+describe('로케일 커버리지 — 룸 9로케일이 전부 자기 언어로 답한다', () => {
+  const ROOM = ['en', 'ko', 'zh', 'ja', 'es', 'fr', 'de', 'ru', 'it'] as const;
+
+  it('weatherLocaleOf는 룸 로케일을 en으로 떨어뜨리지 않는다', () => {
+    for (const locale of ROOM) {
+      expect(weatherLocaleOf(locale)).toBe(locale);
+    }
+    // 지역 변형도 기본 언어로 접힌다.
+    expect(weatherLocaleOf('fr-CA')).toBe('fr');
+    expect(weatherLocaleOf('de-AT')).toBe('de');
+    // 번체는 룸 로케일이 아니지만 별도로 유지된다.
+    expect(weatherLocaleOf('zh-TW')).toBe('zh-TW');
+    // 모르는 언어만 영어로 간다.
+    expect(weatherLocaleOf('pt')).toBe('en');
+  });
+
+  it('신규 4개 로케일이 실제로 그 언어의 문장을 낸다 — 영어 복사본이 아니다', () => {
+    const base = forecast({ weatherCode: 61, precipProbability: 60, tempMinC: 3, tempMaxC: 9 });
+    const english = weatherLine(base, 'en');
+    for (const locale of ['fr', 'de', 'ru', 'it'] as const) {
+      const line = weatherLine(base, locale);
+      expect(line).not.toBe(english);
+      expect(line).toContain('3–9°C');
+      expect(clothingAdvice(base, locale).length).toBeGreaterThan(20);
+      expect(clothingAdvice(base, locale)).not.toBe(clothingAdvice(base, 'en'));
+    }
   });
 });
