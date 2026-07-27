@@ -259,3 +259,257 @@ export function resolveSpotContent(
   // Tier 3 — template message only.
   return { content: null, tier: 'none' };
 }
+
+// ---------------------------------------------------------------------------
+// A1 — per-locale resolution (one card, every language in the room).
+//
+// The arrival routes used to resolve content ONCE, for whoever triggered the
+// stop, and put that single blob in the message metadata. The arrived LINE was
+// correctly 10-locale (renderSpotEventTranslations) but the briefing BODY —
+// the part that carries the actual guiding — was whatever language the driver's
+// device asked for. A mixed-language room (the whole premise of the chat
+// bridge) therefore showed most guests the wrong language on the richest card
+// the app has.
+//
+// Resolution now runs per room locale. `lang` records the language the prose is
+// ACTUALLY in, which is NOT always the key:
+//   - curated content covers 6 locales today (en/es/ja/ko/zh/zh-TW), so fr/de/
+//     ru/it fall back to English;
+//   - the poi_kb fact sheet is English-only, full stop.
+// A2 (voice) reads `lang`, never the key — otherwise a French guest would hear
+// English prose forced through a fr-FR voice.
+// ---------------------------------------------------------------------------
+
+/** Mirrors MAX_TTS_TEXT_CHARS in tts-server.ts (client-safe copy). */
+export const MAX_SPOKEN_CHARS = 1200;
+
+export type SpotContentTier = 'curated' | 'poi_kb' | 'generated' | 'none';
+
+/** One locale's briefing + the language its prose is actually written in. */
+export interface ResolvedSpotContent {
+  content: SpotArrivalContent;
+  lang: RoomLocale;
+  tier: SpotContentTier;
+}
+
+/** Room locale → that locale's briefing. Absent key = nothing to show. */
+export type SpotContentByLocale = Partial<Record<RoomLocale, ResolvedSpotContent>>;
+
+/** Like `resolveSpotContent`, but reports which language it landed on. */
+export function resolveSpotContentFor(spot: SpotContentSource, locale: RoomLocale): ResolvedSpotContent | null {
+  // Tier 1 — curated jsonb. Exact locale wins; English is the honest fallback.
+  if (isNonEmptyObject(spot.content)) {
+    const byLocale = spot.content as Record<string, unknown>;
+    const exact = byLocale[locale];
+    if (isNonEmptyObject(exact)) {
+      return { content: { name: spot.title, ...(exact as SpotArrivalContent) }, lang: locale, tier: 'curated' };
+    }
+    if (isNonEmptyObject(byLocale.en)) {
+      return { content: { name: spot.title, ...(byLocale.en as SpotArrivalContent) }, lang: 'en', tier: 'curated' };
+    }
+  }
+
+  // Tier 2 — poi_kb fact sheet. English-only by construction.
+  const kb = poiKbEntry(spot.poi_key);
+  if (kb && (isNonEmptyObject(kb.visitBasics) || isNonEmptyObject(kb.convenience) || isNonEmptyObject(kb.smartNotes))) {
+    return {
+      content: {
+        name: spot.title,
+        visitBasics: kb.visitBasics,
+        convenience: kb.convenience,
+        smartNotes: kb.smartNotes,
+      },
+      lang: 'en',
+      tier: 'poi_kb',
+    };
+  }
+
+  return null;
+}
+
+/** Resolve one spot for every locale present in the room. */
+export function resolveSpotContentForLocales(
+  spot: SpotContentSource,
+  locales: readonly string[],
+): SpotContentByLocale {
+  const byLocale: SpotContentByLocale = {};
+  for (const raw of locales) {
+    if (!ROOM_LOCALES.includes(raw as RoomLocale)) continue;
+    const locale = raw as RoomLocale;
+    if (byLocale[locale]) continue;
+    const resolved = resolveSpotContentFor(spot, locale);
+    if (resolved) byLocale[locale] = resolved;
+  }
+  return byLocale;
+}
+
+// ---------------------------------------------------------------------------
+// Wire shape.
+//
+// Storing one full briefing per locale would put up to 8 × ~6 KB of prose in a
+// single message's metadata — and most of those copies are byte-identical,
+// because every locale without curated content falls back to the same English
+// text. So the wire form is keyed by LANGUAGE and carries a locale→language
+// map beside it: 8 locales that all fall back to English cost one blob.
+// ---------------------------------------------------------------------------
+
+/** The `spot_arrival` / `arrival_bundle` metadata fields A1 adds. */
+export interface SpotContentPack {
+  /** Language → the briefing written in it. Deduped. */
+  content_by_lang: Partial<Record<RoomLocale, SpotArrivalContent>>;
+  /** Room locale → which language it is served (identity when covered). */
+  content_langs: Partial<Record<RoomLocale, RoomLocale>>;
+}
+
+/**
+ * The only keys the arrival card and the concierge actually read.
+ *
+ * The curated jsonb is a whole page payload — `galleryItems`, `imageCredits`,
+ * `_poi_meta`, route bookkeeping. Shipping all of it once per language turned a
+ * single arrival into a 22 KB realtime broadcast, and put internal metadata on
+ * the wire for no reason. Project to what renders.
+ */
+const WIRE_KEYS = [
+  'name',
+  'description',
+  'image',
+  'images',
+  'highlights',
+  'visitBasics',
+  'convenience',
+  'smartNotes',
+  'alternate',
+] as const;
+
+function projectForWire(content: SpotArrivalContent): SpotArrivalContent {
+  const slim: Record<string, unknown> = {};
+  for (const key of WIRE_KEYS) {
+    const value = (content as Record<string, unknown>)[key];
+    if (value !== undefined && value !== null && value !== '') slim[key] = value;
+  }
+  return slim as SpotArrivalContent;
+}
+
+/** Fold per-locale resolution into the deduped wire shape. */
+export function packSpotContent(byLocale: SpotContentByLocale): SpotContentPack | null {
+  const pack: SpotContentPack = { content_by_lang: {}, content_langs: {} };
+  let any = false;
+  for (const key of Object.keys(byLocale) as RoomLocale[]) {
+    const resolved = byLocale[key];
+    if (!resolved) continue;
+    any = true;
+    pack.content_langs[key] = resolved.lang;
+    if (!pack.content_by_lang[resolved.lang]) {
+      pack.content_by_lang[resolved.lang] = projectForWire(resolved.content);
+    }
+  }
+  return any ? pack : null;
+}
+
+/**
+ * Client-safe picker: the briefing THIS viewer should see, and the language it
+ * is really written in (which the voice layer must use).
+ *
+ * Falls back to the legacy single-locale `content` field so arrival messages
+ * posted before A1 keep rendering exactly as they did.
+ */
+export function pickSpotContent(
+  metadata: Record<string, unknown> | null | undefined,
+  viewerLocale: RoomLocale,
+): { content: SpotArrivalContent; lang: RoomLocale } | null {
+  const byLang = metadata?.content_by_lang as SpotContentPack['content_by_lang'] | undefined;
+  const langs = metadata?.content_langs as SpotContentPack['content_langs'] | undefined;
+  if (isNonEmptyObject(byLang)) {
+    const lang = langs?.[viewerLocale] ?? (byLang[viewerLocale] ? viewerLocale : 'en');
+    const content = byLang[lang] ?? byLang.en ?? Object.values(byLang)[0];
+    if (isNonEmptyObject(content)) {
+      return { content: content as SpotArrivalContent, lang: (byLang[lang] ? lang : 'en') as RoomLocale };
+    }
+  }
+  const legacy = metadata?.content;
+  if (isNonEmptyObject(legacy)) {
+    // Pre-A1 rows never recorded a language; the safest assumption for the
+    // voice layer is the room default, which is what they were resolved as.
+    return { content: legacy as SpotArrivalContent, lang: viewerLocale };
+  }
+  return null;
+}
+
+/**
+ * A2 — the words a guest actually HEARS at a stop.
+ *
+ * A live guide talks; the card made guests read, and the story was even folded
+ * behind "More details". This composes the same resolved content into one
+ * spoken paragraph, ordered the way a guide narrates: name → story →
+ * highlights → the practical notes worth saying out loud.
+ *
+ * Falls back to the fact rows when there is no prose, because that is the only
+ * tier 82 of today's POIs have — "restrooms are by the main entrance, parking
+ * is paid" is still guiding, and staying silent is not.
+ */
+export function composeSpotNarration(content: SpotArrivalContent | null | undefined): string {
+  if (!content) return '';
+  const parts: string[] = [];
+  const push = (value: unknown) => {
+    const text = speechSafe(typeof value === 'string' ? value : '');
+    if (text) parts.push(/[.!?。！？]$/.test(text) ? text : `${text}.`);
+  };
+
+  push(content.name);
+  push(content.description);
+  for (const highlight of content.highlights ?? []) push(highlight);
+
+  const hasProse = Boolean(content.description) || (content.highlights?.length ?? 0) > 0;
+  if (!hasProse) {
+    // Fact-sheet tier: speak what a guide would actually mention on arrival.
+    push(content.visitBasics?.hours);
+    push(content.visitBasics?.admission);
+    push(content.convenience?.restroom);
+    push(content.convenience?.parking);
+  }
+  push(content.smartNotes?.photo);
+  push(content.smartNotes?.tip);
+
+  // Nothing but the name is not narration — keep the button off the card.
+  if (parts.length <= 1) return '';
+  return trimToSentence(parts.join(' '), MAX_SPOKEN_CHARS);
+}
+
+/**
+ * Curated briefings are written for the EYE — the live rows are full of
+ * `**bold**`, markdown links and heading marks. Handed to a speech engine
+ * verbatim those become spoken asterisks or mangled words, so strip the
+ * formatting before anything is said out loud.
+ */
+export function speechSafe(raw: string): string {
+  return raw
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, '')      // images say nothing
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')   // links: keep the words, drop the URL
+    .replace(/`{1,3}([^`]*)`{1,3}/g, '$1')
+    .replace(/(\*\*|__)(.*?)\1/g, '$2')
+    .replace(/(^|[\s(])[*_]([^*_\n]+)[*_](?=[\s).,!?]|$)/g, '$1$2')
+    .replace(/^\s{0,3}#{1,6}\s*/gm, '')
+    .replace(/^\s{0,3}[-*+]\s+/gm, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+/**
+ * Cut to the budget on a sentence boundary. A hard slice() ends mid-word, and
+ * a voice that stops mid-word sounds broken rather than brief.
+ */
+function trimToSentence(text: string, limit: number): string {
+  if (text.length <= limit) return text;
+  const window = text.slice(0, limit);
+  const lastStop = Math.max(
+    window.lastIndexOf('. '),
+    window.lastIndexOf('。'),
+    window.lastIndexOf('! '),
+    window.lastIndexOf('? '),
+  );
+  // Only honour the boundary if it keeps most of the budget — otherwise a stray
+  // early period would throw away the whole briefing.
+  if (lastStop > limit * 0.5) return window.slice(0, lastStop + 1).trim();
+  const lastSpace = window.lastIndexOf(' ');
+  return `${(lastSpace > 0 ? window.slice(0, lastSpace) : window).trim()}…`;
+}

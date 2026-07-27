@@ -17,6 +17,9 @@ jest.mock('@/lib/tour-room/recorder', () => ({
 }));
 jest.mock('@/lib/tour-room/tts', () => ({
   primeAudio: jest.fn(),
+  isAudioPrimed: jest.fn(() => false),
+  stopSpeaking: jest.fn(),
+  speakNarration: jest.fn(async () => 'device'),
   speakWithDevice: jest.fn(async () => true),
   TTS_LANG: { en: 'en-US', ko: 'ko-KR', ja: 'ja-JP', es: 'es-ES', zh: 'zh-CN' },
 }));

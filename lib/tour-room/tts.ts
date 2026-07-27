@@ -123,6 +123,11 @@ export interface ServerTtsTarget {
   messageId: string;
   locale: RoomLocale;
   roomSession: string;
+  /**
+   * A2 — which spoken track. 'narration' asks the server to speak the arrival
+   * card's briefing instead of the one-line message body.
+   */
+  part?: 'body' | 'narration';
 }
 
 /** Tier 2 — fetch the cached/generated mp3 URL, play via HTML5 Audio. */
@@ -131,7 +136,7 @@ export async function playServerTts(target: ServerTtsTarget): Promise<boolean> {
     const res = await fetch(
       `/api/tour-rooms/${encodeURIComponent(target.bookingId)}/tts?messageId=${encodeURIComponent(
         target.messageId,
-      )}&locale=${target.locale}`,
+      )}&locale=${target.locale}${target.part === 'narration' ? '&part=narration' : ''}`,
       { headers: { 'x-tour-room-auth': target.roomSession } },
     );
     if (!res.ok) return false;
@@ -163,6 +168,48 @@ export async function speakMessage(
   if (tier === 'device' && (await speakWithDevice(text, target.locale, synth))) return 'device';
   if (await playServerTts(target)) return 'server';
   return 'none';
+}
+
+/**
+ * A2 — speak a spot briefing.
+ *
+ * `lang` is the language the briefing PROSE is in, which is not always the
+ * guest's locale: curated content covers 6 locales and the poi_kb fact sheet is
+ * English-only, so a French guest may be looking at English text. Forcing that
+ * through a fr-FR voice produces gibberish, so both the voice check and the
+ * utterance use `lang` while the card's own labels stay in the guest's locale.
+ */
+export async function speakNarration(
+  text: string,
+  target: ServerTtsTarget & { lang: RoomLocale },
+  synth?: SynthLike | null,
+): Promise<TtsTier> {
+  if (!text.trim()) return 'none';
+  const tier = await detectTtsTier(target.lang, synth);
+  if (tier === 'device' && (await speakWithDevice(text, target.lang, synth))) return 'device';
+  if (await playServerTts({ ...target, part: 'narration' })) return 'server';
+  return 'none';
+}
+
+/**
+ * Stop whatever is currently speaking — both ladder tiers. Needed because the
+ * arrival card offers pause, and because a new arrival must not talk over the
+ * previous one.
+ */
+export function stopSpeaking(synth: SynthLike | null = typeof window !== 'undefined' ? (window.speechSynthesis as unknown as SynthLike) : null): void {
+  try {
+    synth?.cancel?.();
+  } catch {
+    /* engine already idle */
+  }
+  try {
+    if (warmAudio && !warmAudio.paused) {
+      warmAudio.pause();
+      warmAudio.currentTime = 0;
+    }
+  } catch {
+    /* element not playing */
+  }
 }
 
 // ---------------------------------------------------------------------------

@@ -3,12 +3,12 @@ import { createServerClient } from '@/lib/supabase';
 import { requestGate } from '@/lib/durable-rate-limit';
 import { ensureRoom, resolveRoomActor, type RoomDbClient } from '@/lib/tour-room/access';
 import { recordRoomEvent } from '@/lib/tour-room/events';
-import { getGeneratedSpotContent, refCandidatesFor } from '@/lib/tour-room/generatedContent';
+import { getGeneratedSpotContentForLocales, refCandidatesFor } from '@/lib/tour-room/generatedContent';
 import { humanizePoiKey } from '@/lib/tour-room/dayPlan';
 import { haversineM } from '@/lib/tour-room/geo';
 import { broadcastToRoom } from '@/lib/tour-room/realtime';
-import { normalizeRoomLocale } from '@/lib/tour-room/snapshot';
-import { resolveSpotContent } from '@/lib/tour-room/spotContent';
+import { getRoomTranslationTargets, normalizeRoomLocale } from '@/lib/tour-room/snapshot';
+import { packSpotContent, resolveSpotContentForLocales } from '@/lib/tour-room/spotContent';
 import { fetchArrivalVideoCard } from '@/lib/tour-room/poiVideos.server';
 import { kstToday } from '@/lib/tour-room/time';
 import { maybePostDiningForStop, runAfterResponse } from '@/lib/ops/dining/post.server';
@@ -217,19 +217,29 @@ export async function POST(
       content: null,
       tier: 'none',
     };
+    // A1 — the preview carries every room language too; a teaser in the wrong
+    // language is as useless as no teaser.
+    let pack: ReturnType<typeof packSpotContent> = null;
     try {
-      content = resolveSpotContent({ title: spot.title, content: spot.content, poi_key: spot.poi_key }, viewerLocale);
-      if (!content.content) {
-        const generated = await getGeneratedSpotContent(
+      const previewLocales = [
+        ...new Set([viewerLocale, ...(await getRoomTranslationTargets(supabase, room.id))]),
+      ];
+      const spotSource = { title: spot.title, content: spot.content, poi_key: spot.poi_key };
+      let byLocale = resolveSpotContentForLocales(spotSource, previewLocales);
+      if (Object.keys(byLocale).length === 0) {
+        byLocale = await getGeneratedSpotContentForLocales(
           supabase,
           booking.id,
           refCandidatesFor({ poi_key: spot.poi_key, title: spot.title }),
-          viewerLocale,
+          previewLocales,
         );
-        if (generated) content = { content: generated.content, tier: 'generated' };
       }
+      pack = packSpotContent(byLocale);
+      const viewerResolved = byLocale[viewerLocale] ?? Object.values(byLocale)[0] ?? null;
+      content = { content: viewerResolved?.content ?? null, tier: viewerResolved?.tier ?? 'none' };
     } catch {
       content = { content: null, tier: 'none' };
+      pack = null;
     }
 
     const videoCard = await fetchArrivalVideoCard(supabase, poiKey).catch(() => null);
@@ -244,6 +254,7 @@ export async function POST(
       poi_lng: coords.lng,
       triggered_by_role: actor.role,
       ...(content.content ? { content: content.content, content_tier: content.tier } : {}),
+      ...(pack ?? {}),
       ...(videoCard ? { video_card: videoCard } : {}),
     };
 

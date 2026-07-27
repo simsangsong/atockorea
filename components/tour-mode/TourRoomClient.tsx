@@ -542,7 +542,7 @@ function TourRoomLive({
   // must be read at the event, not in render scope).
   const maybeAnswerInline = (text: string, nowMs: number) => {
     if (viewerRole !== 'customer' || readOnly) return;
-    const arrival = latestArrivalContext(messages);
+    const arrival = latestArrivalContext(messages, locale);
     const tourDate = snapshot.booking?.tour_date ?? null;
     const notice = activeNotice(messages, tourDate, nowMs);
     const ctx: Tier0Context = {

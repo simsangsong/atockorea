@@ -2,8 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { requestGate } from '@/lib/durable-rate-limit';
 import { ensureRoom, resolveRoomActor } from '@/lib/tour-room/access';
-import { ensureRoomTts, TTS_BUCKET, type TtsStorageClient } from '@/lib/tour-room/tts-server';
+import { ensureRoomTts, TTS_BUCKET, type TtsPart, type TtsStorageClient } from '@/lib/tour-room/tts-server';
 import { normalizeRoomLocale } from '@/lib/tour-room/snapshot';
+import { composeSpotNarration, pickSpotContent } from '@/lib/tour-room/spotContent';
 
 export const dynamic = 'force-dynamic';
 
@@ -42,9 +43,36 @@ export async function GET(
     if (!messageId) {
       return NextResponse.json({ error: 'messageId is required' }, { status: 400 });
     }
-    const locale = normalizeRoomLocale(req.nextUrl.searchParams.get('locale'));
+    const requestedLocale = normalizeRoomLocale(req.nextUrl.searchParams.get('locale'));
+    const part: TtsPart = req.nextUrl.searchParams.get('part') === 'narration' ? 'narration' : 'body';
 
     const room = await ensureRoom(supabase, booking);
+
+    // A2 — the narration track speaks the arrival card's briefing, which may be
+    // written in a different language than the viewer's locale (curated content
+    // covers 6 locales, poi_kb is English-only). Cache and voice both follow the
+    // language the PROSE is in, never the requester's locale.
+    let locale = requestedLocale;
+    let narrationText: string | null = null;
+    if (part === 'narration') {
+      const { data: card } = await supabase
+        .from('tour_room_messages')
+        .select('id, room_id, metadata')
+        .eq('id', messageId)
+        .maybeSingle();
+      if (!card || (card as { room_id?: string }).room_id !== room.id) {
+        return NextResponse.json({ error: 'Message not found in this room' }, { status: 404 });
+      }
+      const picked = pickSpotContent(
+        (card as { metadata?: Record<string, unknown> }).metadata,
+        requestedLocale,
+      );
+      narrationText = composeSpotNarration(picked?.content);
+      if (!narrationText) {
+        return NextResponse.json({ error: 'Message has no speakable text' }, { status: 422 });
+      }
+      locale = picked?.lang ?? requestedLocale;
+    }
 
     // Cache hit — zero paid calls, no rate limit.
     const { data: cached } = await supabase
@@ -52,6 +80,7 @@ export async function GET(
       .select('storage_path, duration_ms')
       .eq('message_id', messageId)
       .eq('locale', locale)
+      .eq('part', part)
       .maybeSingle();
     if (cached?.storage_path) {
       const { data: pub } = supabase.storage.from(TTS_BUCKET).getPublicUrl(cached.storage_path);
@@ -81,11 +110,14 @@ export async function GET(
       return NextResponse.json({ error: 'Message not found in this room' }, { status: 404 });
     }
 
-    const url = await ensureRoomTts(supabase as unknown as TtsStorageClient, room.id, message, locale);
+    const url = await ensureRoomTts(supabase as unknown as TtsStorageClient, room.id, message, locale, {
+      part,
+      ...(narrationText ? { text: narrationText } : {}),
+    });
     if (!url) {
       return NextResponse.json({ error: 'Message has no speakable text' }, { status: 422 });
     }
-    return NextResponse.json({ url, cached: false, durationMs: null });
+    return NextResponse.json({ url, cached: false, durationMs: null, lang: locale });
   } catch (error) {
     console.error('GET /api/tour-rooms/[bookingId]/tts error:', error);
     return NextResponse.json(

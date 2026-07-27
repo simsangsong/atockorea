@@ -28,6 +28,7 @@ import { selectFacilityPins, type FacilityPin } from '@/lib/tour-room/facilityPi
 import { BUNDLE_COPY, formatTicketKrw, renderEventLine, type ArrivalBundleMeta } from '@/lib/tour-room/arrivalBundle';
 import ArrivalVideoCard from '@/components/tour-mode/ArrivalVideoCard';
 import { isVideoCardMeta } from '@/lib/tour-room/poiVideos';
+import { pickSpotContent } from '@/lib/tour-room/spotContent';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
 function mapsUrl(lat: number, lng: number): string {
@@ -38,11 +39,17 @@ export default function ArrivalBundleCard({
   meta,
   arrivedLine,
   locale,
+  auth = null,
+  autoPlay = false,
 }: {
   meta: ArrivalBundleMeta;
   /** First line of the translated bundle text ("You have arrived near …"). */
   arrivedLine: string;
   locale: RoomLocale;
+  /** A2 — room auth for the server-TTS rung on the embedded briefing. */
+  auth?: { bookingId: string; messageId: string; roomSession: string } | null;
+  /** A2 — speak the briefing on arrival (guests only, primed sessions only). */
+  autoPlay?: boolean;
 }) {
   const copy = BUNDLE_COPY[locale];
   const point = meta.meeting_point_i18n?.[locale]?.trim() || meta.meeting_point || null;
@@ -58,7 +65,9 @@ export default function ArrivalBundleCard({
       ? { lat: meta.parking_lat, lng: meta.parking_lng }
       : null;
 
-  const hasContent = Boolean(meta.content && Object.keys(meta.content).length > 0);
+  // A1 — the bundle carries one briefing per language; pick this viewer's.
+  const briefing = pickSpotContent(meta as unknown as Record<string, unknown>, locale);
+  const hasContent = Boolean(briefing);
 
   return (
     <div className="tr-stagger flex flex-col gap-2" data-testid="arrival-bundle-card">
@@ -183,13 +192,16 @@ export default function ArrivalBundleCard({
       {isVideoCardMeta(meta.video_card) ? <ArrivalVideoCard meta={meta.video_card} locale={locale} /> : null}
 
       {/* the spot briefing itself (3-tier content) */}
-      {hasContent && meta.content ? (
+      {briefing ? (
         <SpotArrivalCard
-          content={meta.content}
+          content={briefing.content}
           messageText={arrivedLine}
           audioUrl={meta.audio_url ?? null}
           locale={locale}
+          lang={briefing.lang}
           contentTier={meta.content_tier ?? null}
+          auth={auth}
+          autoPlay={autoPlay}
         />
       ) : null}
     </div>

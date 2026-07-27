@@ -8,8 +8,9 @@
  * (§H), lucide row icons (U-D3).
  */
 
-import { useRef, useState } from 'react';
-import { primeAudio } from '@/lib/tour-room/tts';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { isAudioPrimed, primeAudio, speakNarration, stopSpeaking } from '@/lib/tour-room/tts';
+import { composeSpotNarration } from '@/lib/tour-room/spotContent';
 import {
   IconAdmission,
   IconArrived,
@@ -30,17 +31,20 @@ import {
 import type { SpotArrivalContent } from '@/lib/tour-room/spotContent';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
-const COPY: Record<RoomLocale, { arrived: string; more: string; less: string; audio: string; aiBadge: string }> = {
-  en: { arrived: 'You’ve arrived', more: 'More details', less: 'Show less', audio: 'Play audio guide', aiBadge: 'AI-generated guide — verify details locally' },
-  ko: { arrived: '도착했어요', more: '자세히 보기', less: '접기', audio: '오디오 가이드 듣기', aiBadge: 'AI 생성 안내 — 세부 정보는 현장에서 확인하세요' },
-  ja: { arrived: '到着しました', more: '詳しく見る', less: '閉じる', audio: '音声ガイドを再生', aiBadge: 'AI生成ガイド — 詳細は現地でご確認ください' },
-  es: { arrived: 'Has llegado', more: 'Ver más', less: 'Ver menos', audio: 'Reproducir audioguía', aiBadge: 'Guía generada por IA — verifica los detalles en el lugar' },
-  zh: { arrived: '已到达', more: '查看详情', less: '收起', audio: '播放语音导览', aiBadge: 'AI生成指南 — 详情请以现场为准' },
-  'zh-TW': { arrived: '已抵達', more: '查看詳情', less: '收合', audio: '播放語音導覽', aiBadge: 'AI 生成導覽——詳情請以現場為準' },
-  fr: { arrived: 'Vous êtes arrivé', more: 'Plus de détails', less: 'Réduire', audio: 'Écouter l’audioguide', aiBadge: 'Guide généré par IA — vérifiez les détails sur place' },
-  de: { arrived: 'Sie sind angekommen', more: 'Mehr Details', less: 'Weniger anzeigen', audio: 'Audioguide abspielen', aiBadge: 'KI-generierte Infos — Details bitte vor Ort prüfen' },
-  ru: { arrived: 'Вы на месте', more: 'Подробнее', less: 'Свернуть', audio: 'Включить аудиогид', aiBadge: 'Описание создано ИИ — детали уточняйте на месте' },
-  it: { arrived: 'Sei arrivato', more: 'Più dettagli', less: 'Mostra meno', audio: 'Ascolta l’audioguida', aiBadge: 'Guida generata dall’IA — verifica i dettagli sul posto' },
+const COPY: Record<
+  RoomLocale,
+  { arrived: string; more: string; less: string; audio: string; audioUnavailable: string; aiBadge: string }
+> = {
+  en: { arrived: 'You’ve arrived', more: 'More details', less: 'Show less', audio: 'Play audio guide', aiBadge: 'AI-generated guide — verify details locally', audioUnavailable: 'Voice unavailable' },
+  ko: { arrived: '도착했어요', more: '자세히 보기', less: '접기', audio: '오디오 가이드 듣기', aiBadge: 'AI 생성 안내 — 세부 정보는 현장에서 확인하세요', audioUnavailable: '음성을 재생할 수 없어요' },
+  ja: { arrived: '到着しました', more: '詳しく見る', less: '閉じる', audio: '音声ガイドを再生', aiBadge: 'AI生成ガイド — 詳細は現地でご確認ください', audioUnavailable: '音声を再生できません' },
+  es: { arrived: 'Has llegado', more: 'Ver más', less: 'Ver menos', audio: 'Reproducir audioguía', aiBadge: 'Guía generada por IA — verifica los detalles en el lugar', audioUnavailable: 'Voz no disponible' },
+  zh: { arrived: '已到达', more: '查看详情', less: '收起', audio: '播放语音导览', aiBadge: 'AI生成指南 — 详情请以现场为准', audioUnavailable: '语音暂不可用' },
+  'zh-TW': { arrived: '已抵達', more: '查看詳情', less: '收合', audio: '播放語音導覽', aiBadge: 'AI 生成導覽——詳情請以現場為準', audioUnavailable: '語音暫時無法播放' },
+  fr: { arrived: 'Vous êtes arrivé', more: 'Plus de détails', less: 'Réduire', audio: 'Écouter l’audioguide', aiBadge: 'Guide généré par IA — vérifiez les détails sur place', audioUnavailable: 'Voix indisponible' },
+  de: { arrived: 'Sie sind angekommen', more: 'Mehr Details', less: 'Weniger anzeigen', audio: 'Audioguide abspielen', aiBadge: 'KI-generierte Infos — Details bitte vor Ort prüfen', audioUnavailable: 'Stimme nicht verfügbar' },
+  ru: { arrived: 'Вы на месте', more: 'Подробнее', less: 'Свернуть', audio: 'Включить аудиогид', aiBadge: 'Описание создано ИИ — детали уточняйте на месте', audioUnavailable: 'Голос недоступен' },
+  it: { arrived: 'Sei arrivato', more: 'Più dettagli', less: 'Mostra meno', audio: 'Ascolta l’audioguida', aiBadge: 'Guida generata dall’IA — verifica i dettagli sul posto', audioUnavailable: 'Voce non disponibile' },
 };
 
 const BASIC_ROWS: Array<{ Icon: typeof IconHours; pick: (c: SpotArrivalContent) => string | undefined }> = [
@@ -61,6 +65,9 @@ export default function SpotArrivalCard({
   audioUrl,
   locale,
   contentTier,
+  lang,
+  auth,
+  autoPlay = false,
 }: {
   content: SpotArrivalContent;
   /** The translated template line ("You have arrived near …"). */
@@ -69,11 +76,22 @@ export default function SpotArrivalCard({
   locale: RoomLocale;
   /** P-D16 — 'generated' shows the AI-provenance badge (honesty rule). */
   contentTier?: string | null;
+  /**
+   * A2 — the language `content`'s prose is actually written in. Defaults to the
+   * viewer's locale; differs whenever the briefing fell back to English.
+   */
+  lang?: RoomLocale;
+  /** Room auth for the server-TTS rung. Absent = device voice only. */
+  auth?: { bookingId: string; messageId: string; roomSession: string } | null;
+  /** A2 — speak on arrival without a tap (only once audio is already primed). */
+  autoPlay?: boolean;
 }) {
   const [expanded, setExpanded] = useState(false);
   const [playing, setPlaying] = useState(false);
+  const [voiceFailed, setVoiceFailed] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const copy = COPY[locale];
+  const proseLang = lang ?? locale;
 
   const rows = BASIC_ROWS.map((row) => ({ Icon: row.Icon, text: row.pick(content) })).filter(
     (row): row is { Icon: typeof IconHours; text: string } => Boolean(row.text),
@@ -81,20 +99,62 @@ export default function SpotArrivalCard({
   const visibleRows = expanded ? rows : rows.slice(0, 3);
   const highlights = (content.highlights ?? []).slice(0, expanded ? 6 : 2);
 
-  const toggleAudio = () => {
-    primeAudio();
-    if (!audioUrl) return;
-    if (!audioRef.current) {
-      audioRef.current = new Audio(audioUrl);
-      audioRef.current.addEventListener('ended', () => setPlaying(false));
-    }
-    if (playing) {
-      audioRef.current.pause();
-      setPlaying(false);
-    } else {
-      void audioRef.current.play().then(() => setPlaying(true)).catch(() => setPlaying(false));
-    }
+  // A2 — the words a guide would say out loud. A pre-recorded track always
+  // wins; otherwise the TTS ladder speaks the same briefing the card shows.
+  const narration = useMemo(() => composeSpotNarration(content), [content]);
+  const canSpeak = Boolean(audioUrl) || Boolean(narration);
+
+  const stop = () => {
+    stopSpeaking();
+    audioRef.current?.pause();
+    setPlaying(false);
   };
+
+  const play = () => {
+    primeAudio();
+    if (audioUrl) {
+      if (!audioRef.current) {
+        audioRef.current = new Audio(audioUrl);
+        audioRef.current.addEventListener('ended', () => setPlaying(false));
+      }
+      setPlaying(true);
+      void audioRef.current.play().catch(() => setPlaying(false));
+      return;
+    }
+    if (!narration) return;
+    setPlaying(true);
+    void speakNarration(narration, {
+      bookingId: auth?.bookingId ?? '',
+      messageId: auth?.messageId ?? '',
+      roomSession: auth?.roomSession ?? '',
+      locale,
+      lang: proseLang,
+    })
+      .then((tier) => {
+        // 'none' means neither rung produced sound — say so instead of leaving
+        // a button that looks like it worked (the P0-6 lesson).
+        if (tier === 'none') setVoiceFailed(true);
+      })
+      .catch(() => setVoiceFailed(true))
+      .finally(() => setPlaying(false));
+  };
+
+  const toggleAudio = () => (playing ? stop() : play());
+
+  // Arrival should FEEL like a guide starting to talk: when the guest has
+  // already unlocked audio this session, the briefing speaks itself. Never on
+  // a cold session — an unprimed autoplay is silently rejected on mobile, and
+  // blaring without a prior gesture would be hostile anyway.
+  const autoPlayedRef = useRef(false);
+  useEffect(() => {
+    if (!autoPlay || autoPlayedRef.current || !canSpeak || !isAudioPrimed()) return;
+    autoPlayedRef.current = true;
+    play();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [autoPlay, canSpeak]);
+
+  // Leaving the feed (or a second arrival) must not leave a voice talking.
+  useEffect(() => () => stopSpeaking(), []);
 
   return (
     <div className="tr-card mx-auto w-full max-w-[95%] overflow-hidden" data-testid="spot-arrival-card">
@@ -134,8 +194,10 @@ export default function SpotArrivalCard({
           </p>
         )}
 
-        {content.description && expanded && (
-          <p className="tr-card-text mt-2 text-[var(--tr-ink)]">{content.description}</p>
+        {/* A2 — the story is the point of the card, so it is no longer folded
+            behind "More details". A guide does not make you ask twice. */}
+        {content.description && (
+          <p className="tr-card-text text-cjk-body mt-2 text-[var(--tr-ink)]">{content.description}</p>
         )}
 
         {highlights.length > 0 && (
@@ -164,18 +226,28 @@ export default function SpotArrivalCard({
         )}
 
         <div className="mt-3 flex items-center gap-2">
-          {audioUrl && (
+          {canSpeak && (
             <button
               type="button"
               onClick={toggleAudio}
-              className="tr-label flex min-h-[44px] items-center gap-1.5 rounded-full bg-[var(--tr-accent)] px-4 font-semibold text-[var(--tr-bubble-me-ink)]"
-              data-testid="spot-audio-button"
+              // P0-6 — a failed attempt keeps the control TAPPABLE (audio often
+              // unlocks a moment later); only the glyph goes honest.
+              className={`tr-label flex min-h-[44px] items-center gap-1.5 rounded-full px-4 font-semibold ${
+                voiceFailed
+                  ? 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]'
+                  : 'bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]'
+              }`}
+              data-testid={voiceFailed ? 'spot-audio-unavailable' : 'spot-audio-button'}
             >
-              {playing ? <IconPause size={TR_ICON.meta} aria-hidden /> : <IconPlay size={TR_ICON.meta} aria-hidden />}
-              {copy.audio}
+              {playing ? (
+                <IconPause size={TR_ICON.meta} aria-hidden />
+              ) : (
+                <IconPlay size={TR_ICON.meta} aria-hidden />
+              )}
+              {voiceFailed ? copy.audioUnavailable : copy.audio}
             </button>
           )}
-          {(rows.length > 3 || content.description || (content.highlights ?? []).length > 2) && (
+          {(rows.length > 3 || (content.highlights ?? []).length > 2) && (
             <button
               type="button"
               onClick={() => setExpanded((v) => !v)}

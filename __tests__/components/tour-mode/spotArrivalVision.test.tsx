@@ -27,6 +27,9 @@ jest.mock('@/lib/tour-room/recorder', () => ({
 }));
 jest.mock('@/lib/tour-room/tts', () => ({
   primeAudio: jest.fn(),
+  isAudioPrimed: jest.fn(() => false),
+  stopSpeaking: jest.fn(),
+  speakNarration: jest.fn(async () => 'device'),
   speakWithDevice: jest.fn(async () => true),
   speakMessage: jest.fn(async () => 'device'),
   TTS_LANG: { en: 'en-US', ko: 'ko-KR', ja: 'ja-JP', es: 'es-ES', zh: 'zh-CN' },
@@ -58,11 +61,38 @@ describe('SpotArrivalCard (T4.5)', () => {
     expect(card).toHaveTextContent('A seaside temple founded in 1376.');
   });
 
-  it('shows the audio button only with a pre-recorded guide', () => {
-    const { rerender } = render(<SpotArrivalCard content={CONTENT} messageText="x" locale="en" />);
-    expect(screen.queryByTestId('spot-audio-button')).not.toBeInTheDocument();
-    rerender(<SpotArrivalCard content={CONTENT} messageText="x" audioUrl="https://cdn.test/a.mp3" locale="en" />);
+  // A2 — the button used to require a pre-recorded mp3, and all 11 curated
+  // spots have audio_url = null, so it had never once appeared in production.
+  // Any briefing with something worth saying now offers a voice.
+  it('offers a voice whenever there is something to narrate', () => {
+    render(<SpotArrivalCard content={CONTENT} messageText="x" locale="en" />);
     expect(screen.getByTestId('spot-audio-button')).toBeInTheDocument();
+  });
+
+  it('stays silent when the briefing is only a name', () => {
+    render(<SpotArrivalCard content={{ name: 'Nowhere' }} messageText="x" locale="en" />);
+    expect(screen.queryByTestId('spot-audio-button')).not.toBeInTheDocument();
+  });
+
+  it('speaks the briefing in the language its prose is written in', () => {
+    const { speakNarration } = jest.requireMock('@/lib/tour-room/tts');
+    speakNarration.mockClear();
+    // A French guest looking at an English fact sheet: labels stay French, the
+    // voice must not force English words through a fr-FR engine.
+    render(
+      <SpotArrivalCard
+        content={CONTENT}
+        messageText="x"
+        locale="fr"
+        lang="en"
+        auth={{ bookingId: 'b1', messageId: 'm1', roomSession: 's1' }}
+      />,
+    );
+    fireEvent.click(screen.getByTestId('spot-audio-button'));
+    expect(speakNarration).toHaveBeenCalledWith(
+      expect.stringContaining('A seaside temple founded in 1376.'),
+      expect.objectContaining({ lang: 'en', locale: 'fr', messageId: 'm1' }),
+    );
   });
 });
 

@@ -5,13 +5,17 @@ import { ensureRoom, resolveRoomActor } from '@/lib/tour-room/access';
 import { recordRoomEvent } from '@/lib/tour-room/events';
 import {
   generateSpotContent,
-  getGeneratedSpotContent,
+  getGeneratedSpotContentForLocales,
   refCandidatesFor,
 } from '@/lib/tour-room/generatedContent';
 import { humanizePoiKey } from '@/lib/tour-room/dayPlan';
 import { broadcastToRoom } from '@/lib/tour-room/realtime';
-import { normalizeRoomLocale } from '@/lib/tour-room/snapshot';
-import { renderSpotEventTranslations, resolveSpotContent } from '@/lib/tour-room/spotContent';
+import { getRoomTranslationTargets, normalizeRoomLocale } from '@/lib/tour-room/snapshot';
+import {
+  packSpotContent,
+  renderSpotEventTranslations,
+  resolveSpotContentForLocales,
+} from '@/lib/tour-room/spotContent';
 import { fetchArrivalFacilityPins } from '@/lib/tour-room/facilityPins.server';
 import { fetchArrivalVideoCard } from '@/lib/tour-room/poiVideos.server';
 
@@ -108,18 +112,25 @@ export async function POST(
       spot: spot.title,
     });
     const viewerLocale = normalizeRoomLocale(body.locale, normalizeRoomLocale(booking.preferred_language));
-    let content: { content: import('@/lib/tour-room/spotContent').SpotArrivalContent | null; tier: string } =
-      resolveSpotContent({ title: spot.title, content: spot.content, poi_key: spot.poi_key }, viewerLocale);
+    const room = await ensureRoom(supabase, booking);
+
+    // A1 — resolve the briefing for EVERY language in the room, not just the
+    // locale of the device that tapped [도착]. The arrived line was always
+    // 10-locale; the briefing body used to inherit the driver's language.
+    const roomLocales = [...new Set([viewerLocale, ...(await getRoomTranslationTargets(supabase, room.id))])];
+    const spotSource = { title: spot.title, content: spot.content, poi_key: spot.poi_key };
+    let byLocale = resolveSpotContentForLocales(spotSource, roomLocales);
 
     // P-D16 — the 'generated' tier sits between poi_kb and the honest null:
     // a booking-scoped, critic-verified mini-guide from the auto pipeline.
     const refs = refCandidatesFor({ poi_key: spot.poi_key, title: spot.title });
-    if (!content.content) {
-      const generated = await getGeneratedSpotContent(supabase, booking.id, refs, viewerLocale);
-      if (generated) content = { content: generated.content, tier: 'generated' };
+    if (Object.keys(byLocale).length === 0) {
+      byLocale = await getGeneratedSpotContentForLocales(supabase, booking.id, refs, roomLocales);
     }
+    const pack = packSpotContent(byLocale);
+    const viewerContent = byLocale[viewerLocale] ?? Object.values(byLocale)[0] ?? null;
+    const content = { content: viewerContent?.content ?? null, tier: viewerContent?.tier ?? 'none' };
 
-    const room = await ensureRoom(supabase, booking);
     // W2.1 — ride the spot's restroom/photo pins in the arrival metadata.
     const facilityPins = await fetchArrivalFacilityPins(supabase, spot.poi_key);
     // W3/J4 — approved POI video renders ride the arrival card (best-effort).
@@ -145,6 +156,7 @@ export async function POST(
           manual: true,
           triggered_by_role: actor.role,
           ...(content.content ? { content: content.content, content_tier: content.tier } : {}),
+          ...(pack ?? {}),
           ...(facilityPins.length ? { facility_pins: facilityPins } : {}),
           ...(videoCard ? { video_card: videoCard } : {}),
         },
@@ -173,14 +185,23 @@ export async function POST(
       const spotPoiKey = spot.poi_key;
       void (async () => {
         try {
+          // A1 — generate for every language in the room, so the follow-up
+          // card lands in each guest's own language rather than the driver's.
           const generatedRow = await generateSpotContent(supabase, {
             bookingId: booking.id,
             title: spotTitle,
             poiKey: spotPoiKey,
-            locales: [viewerLocale],
+            locales: roomLocales,
           });
           if (!generatedRow) return;
-          const followup = await getGeneratedSpotContent(supabase, booking.id, refs, viewerLocale);
+          const followupByLocale = await getGeneratedSpotContentForLocales(
+            supabase,
+            booking.id,
+            refs,
+            roomLocales,
+          );
+          const followupPack = packSpotContent(followupByLocale);
+          const followup = followupByLocale[viewerLocale] ?? Object.values(followupByLocale)[0] ?? null;
           if (!followup) return;
           const { data: followupMessage } = await supabase
             .from('tour_room_messages')
@@ -201,6 +222,7 @@ export async function POST(
                 generated_followup: true,
                 content: followup.content,
                 content_tier: 'generated',
+                ...(followupPack ?? {}),
               },
             })
             .select()
