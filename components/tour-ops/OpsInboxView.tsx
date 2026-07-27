@@ -9,6 +9,7 @@
  */
 
 import { useMemo, useState } from 'react';
+import { useEscapeClose } from '@/hooks/useEscapeClose';
 import { X } from 'lucide-react';
 import type { OpsRoomStream } from '@/hooks/useOpsChannels';
 import {
@@ -79,6 +80,9 @@ export default function OpsInboxView({
   onClose: () => void;
   onOpenRoom: (roomId: string) => void;
 }) {
+  // O5 — Escape closes this overlay. It covers the whole screen, and on the
+  // desktop the board actually runs on, 닫기 was the only way out.
+  useEscapeClose(onClose);
   const [filter, setFilter] = useState<Filter>('customer');
   const rows = useMemo(() => buildInboxRows(rooms, streams, filter), [rooms, streams, filter]);
 

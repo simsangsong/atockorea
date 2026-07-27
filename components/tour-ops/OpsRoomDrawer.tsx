@@ -10,6 +10,7 @@
  */
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useEscapeClose } from '@/hooks/useEscapeClose';
 import { toast } from 'sonner';
 import { MapPin, Phone, X } from 'lucide-react';
 import type { OpsRoomStream } from '@/hooks/useOpsChannels';
@@ -48,6 +49,9 @@ export default function OpsRoomDrawer({
   onDelivered: (message: RoomMessage) => void;
   onSeen: () => void;
 }) {
+  // O5 — Escape closes this overlay. It covers the whole screen, and on the
+  // desktop the board actually runs on, 닫기 was the only way out.
+  useEscapeClose(onClose);
   const [backlog, setBacklog] = useState<RoomMessage[]>([]);
   const [backlogLoading, setBacklogLoading] = useState(true);
   const [pending, setPending] = useState<RoomMessage[]>([]);

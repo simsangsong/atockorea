@@ -12,6 +12,7 @@
  */
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useEscapeClose } from '@/hooks/useEscapeClose';
 import { toast } from 'sonner';
 import { RefreshCw, X } from 'lucide-react';
 import { getOpsToken, kstTimeLabel } from '@/components/tour-ops/opsShared';
@@ -60,6 +61,9 @@ const RESULT_BADGE: Record<string, { label: string; cls: string }> = {
 };
 
 export default function OpsReviewQueueView({ onClose }: { onClose: () => void }) {
+  // O5 — Escape closes this overlay. It covers the whole screen, and on the
+  // desktop the board actually runs on, 닫기 was the only way out.
+  useEscapeClose(onClose);
   const [filter, setFilter] = useState<Filter>('review');
   const [logs, setLogs] = useState<ReviewLog[]>([]);
   const [loading, setLoading] = useState(true);

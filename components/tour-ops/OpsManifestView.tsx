@@ -12,6 +12,7 @@
  */
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useEscapeClose } from '@/hooks/useEscapeClose';
 import { toast } from 'sonner';
 import { Check, ChevronDown, ChevronUp, Copy, Mail, MessageCircle, Pencil, RefreshCw, X } from 'lucide-react';
 import { getOpsToken } from '@/components/tour-ops/opsShared';
@@ -668,6 +669,9 @@ function WaTemplateEditor({
   onClose: () => void;
   onSaved: () => void;
 }) {
+  // O5 — Escape closes this editor. The walk never opened it, so only the
+  // source-derived guard caught that it was missing.
+  useEscapeClose(onClose);
   const [locale, setLocale] = useState<WaLocale>('en');
   const [draft, setDraft] = useState('');
   const [busy, setBusy] = useState(false);

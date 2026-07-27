@@ -17,6 +17,7 @@
  */
 
 import { useCallback, useEffect, useState } from 'react';
+import { useEscapeClose } from '@/hooks/useEscapeClose';
 import { toast } from 'sonner';
 import { CarFront, Copy, Loader2, Mail, Moon, Plus, QrCode, RefreshCw, Sun, X } from 'lucide-react';
 import { getOpsToken } from '@/components/tour-ops/opsShared';
@@ -134,6 +135,9 @@ export default function OpsRoomManager({
   onOpenRoom: (roomId: string, view?: 'chat' | 'vehicle') => void;
   onRoomsChanged: () => void;
 }) {
+  // O5 — Escape closes this overlay. It covers the whole screen, and on the
+  // desktop the board actually runs on, 닫기 was the only way out.
+  useEscapeClose(onClose);
   const [viewDate, setViewDate] = useState(date);
   // U-D9 — shared with the whole 관제센터 AND with the guide console: one
   // device preference, not an ops-only one (see components/tour-ops/opsTheme.ts).

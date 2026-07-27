@@ -13,6 +13,7 @@
  */
 
 import { useCallback, useEffect, useState } from 'react';
+import { useEscapeClose } from '@/hooks/useEscapeClose';
 import Link from 'next/link';
 import { toast } from 'sonner';
 import { AlertTriangle, Bus, Check, Loader2, Receipt, RefreshCw, Send, UserX, Wallet, X } from 'lucide-react';
@@ -49,6 +50,9 @@ const SEVERITY_TONE: Record<SuggestionRow['severity'], string> = {
 };
 
 export default function OpsAutopilotView({ onClose }: { onClose: () => void }) {
+  // O5 — Escape closes this overlay. It covers the whole screen, and on the
+  // desktop the board actually runs on, 닫기 was the only way out.
+  useEscapeClose(onClose);
   const [rows, setRows] = useState<SuggestionRow[]>([]);
   const [loading, setLoading] = useState(true);
   const [running, setRunning] = useState(false);

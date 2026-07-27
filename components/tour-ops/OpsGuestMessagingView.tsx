@@ -17,6 +17,7 @@
  */
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useEscapeClose } from '@/hooks/useEscapeClose';
 import { toast } from 'sonner';
 import {
   AlertTriangle,
@@ -83,6 +84,9 @@ export default function OpsGuestMessagingView({
   initialDate: string;
   onClose: () => void;
 }) {
+  // O5 — Escape closes this overlay. It covers the whole screen, and on the
+  // desktop the board actually runs on, 닫기 was the only way out.
+  useEscapeClose(onClose);
   // 기본값이 **내일**인 이유: 이 화면의 주 용도가 D-1 안내다.
   const [date, setDate] = useState(() => addDays(initialDate, 1));
   const [groups, setGroups] = useState<TourGroup[]>([]);
