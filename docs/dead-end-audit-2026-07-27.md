@@ -218,6 +218,6 @@ delete-user-without-profile,send-verification-code,verify-code}` ·
 | DE3 차량 줄을 살아 있는 배차로 | ✅ |
 | DE4 `courseToStopSeeds` 중복 제거 | ✅ |
 | **DE6 없는 테이블 16개 생성 + 상설 게이트** | 완료 |
-| DE5 파서 학습 루프 승격 화면 | 저장소는 생겼다. 승격 UI 는 남음 |
+| **DE5 파서 학습 루프 승격 화면** | 완료 — /admin/parse-rules + 라우트 2종 + DB CHECK 하한 |
 | TIER 2 11건 | 결정 대기 (사장님 우선순위) |
 | TIER 3 잔해 정리 | 결정 대기 |
