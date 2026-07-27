@@ -153,9 +153,29 @@ DE5를 파고들다 나왔다. 승격 화면이 없는 게 문제가 아니라 *
 **상설 게이트:** `__tests__/audit/schemaDrift.test.ts` — 스냅샷과 소스의 `.from()`을
 대조해 **새 드리프트를 즉시 실패**시킨다. 없는 테이블을 심어 실패를 확인한 뒤 통과를 믿었다.
 
-## TIER 2 — 로직만 있고 아무도 부르지 않는다
+## TIER 2 — 재분류 (2026-07-28) 🔴 원래 분류가 과장이었다
 
-전부 테스트는 통과한다. 화면에 붙일지는 **결정 사항**이라 여기 목록으로만 남긴다.
+"로직만 있고 아무도 안 부른다"를 곧장 "기능이 없다"로 읽었는데, **하나씩 짚어보니
+대부분 그 기능은 이미 있고 다른 곳에 인라인으로 구현돼 있었다.** 확인한 것:
+
+| 함수 | 실제 상태 |
+|---|---|
+| `hasTimelineContent` | 중복 — `HomeTab`의 `hasTimeline`이 같은 판정을 인라인으로 한다 |
+| `pendingReclaims` | 중복 — 재등록 화면이 `?status=pending`으로 서버에서 이미 거른다 |
+| `toggleCardId` · `moveCardId` | 중복 — 카드세트 화면이 이미 구성·순서·포함 여부를 정한다 |
+| `assignedCountsFor` | 중복 — 추천 라우트와 `recommendGuides`에 각각 인라인 |
+| `resolveTourKind` | 미사용 추상화 — `price_type`은 다른 경로로 이미 쓰인다 |
+| `suggestPartySeats` | 진짜 미구현이지만 **불필요** — 전부 호텔픽업이라 좌석판을 안 쓴다 |
+| `rankTier0Candidates` · `potentialCallsSaved` | 진짜 미구현. AI 호출 절감 리포트(내부 최적화 보조) |
+| `targetMany` | 진짜 미구현 — 손님 여러 명 골라 한 번에 보내기(`targetOne`·전체공지는 있다) |
+| `unknownTokens` | ✅ 처리됨 — 문구 편집 화면 경고 |
+| `getLearningHealth` | ✅ 처리됨 — 파서 학습 화면 |
+
+**결론: 사장님이 못 쓰고 있던 기능은 여기에 없다.** 남은 둘(`targetMany` 다중 선택
+발송, Tier0 절감 리포트)은 있으면 좋은 것이지 빠진 것이 아니다.
+
+교훈: "export 를 아무도 안 부른다"는 **중복의 신호이기도 하다.** 기능 부재로 단정하기
+전에 그 기능이 다른 이름으로 이미 도는지 확인해야 한다.
 
 | 함수 | 파일 | 원래 용도(주석 기준) |
 |---|---|---|
@@ -221,6 +241,7 @@ delete-user-without-profile,send-verification-code,verify-code}` ·
 | **DE5 파서 학습 루프 승격 화면** | 완료 — /admin/parse-rules + 라우트 2종 + DB CHECK 하한 |
 | **DE7 픽업 표준지점 사전 화면** | 완료 — /admin/pickup-dictionary + 큐 승인 |
 | TIER 2 `unknownTokens` | 완료 — 문구 편집 화면이 미치환 토큰을 경고한다 |
-| TIER 2 나머지 10건 | 결정 대기 (사장님 우선순위) |
+| TIER 2 재분류 | 완료 — 대부분 중복이었다. 미구현 2건은 선택 사항 |
+| **DE8 손님이 자기 픽업 디테일을 못 봤다** | 완료 — 리졸버 단일화(관제는 보이고 손님은 안 보이던 상태) |
 | TIER 3 잔해 | **그대로 둔다** — 전부 가드/레이트리밋이 있고, 지우기는 위험이 확인됐다 |
 | TIER 3 잔해 정리 | 결정 대기 |
