@@ -45,6 +45,7 @@ import { ROOM_LOCALES, normalizeRoomLocale, type RoomLocale } from '@/lib/tour-r
 import { useTourRoomSession } from '@/hooks/useTourRoomSession';
 import { useBackTrap } from '@/hooks/useBackTrap';
 import Sheet from '@/components/tour-mode/Sheet';
+import TimeWheel from '@/components/tour-mode/cockpit/TimeWheel';
 import PlanTourItinerary from '@/components/tour-mode/plan/PlanTourItinerary';
 import {
   isCourseOptionItinerary,
@@ -187,6 +188,8 @@ interface PlanCopy {
   needsTitle: string;
   needsHint: string;
   departureTitle: string;
+  /** P3 — clear the chosen time from the wheel sheet. */
+  timeClear: string;
   departureHint: string;
   adults: string;
   children: string;
@@ -258,6 +261,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     needsTitle: 'About your party',
     needsHint: 'Helps your guide prepare — shared only with your guide.',
     departureTitle: 'Departure time (KST)',
+    timeClear: 'Clear time',
     departureHint: 'When your driver picks you up — your day’s included hours count from here.',
     adults: 'Adults',
     children: 'Children',
@@ -339,6 +343,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     needsTitle: '여행 정보',
     needsHint: '가이드 준비에만 사용돼요 — 가이드에게만 공유됩니다.',
     departureTitle: '출발 시각 (KST)',
+    timeClear: '시각 지우기',
     departureHint: '기사님이 픽업하는 시각이에요 — 오늘의 포함 시간이 여기서부터 계산돼요.',
     adults: '성인',
     children: '아동',
@@ -419,6 +424,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     needsTitle: '旅の情報',
     needsHint: 'ガイドの準備にのみ使用され、ガイドにのみ共有されます。',
     departureTitle: '出発時刻 (KST)',
+    timeClear: '時刻をクリア',
     departureHint: 'ドライバーがお迎えする時刻です。本日の含まれる時間はここから計算されます。',
     adults: '大人',
     children: '子ども',
@@ -498,6 +504,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     needsTitle: '出行信息',
     needsHint: '仅用于导游准备,只与导游共享。',
     departureTitle: '出发时间 (KST)',
+    timeClear: '清除时间',
     departureHint: '司机接您的时间——今天的包含时长从此刻开始计算。',
     adults: '成人',
     children: '儿童',
@@ -577,6 +584,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     needsTitle: '旅遊資訊',
     needsHint: '僅供導遊準備行程使用，只會與導遊分享。',
     departureTitle: '出發時間 (KST)',
+    timeClear: '清除時間',
     departureHint: '司機接您的時間——今天包含的時數從這時開始計算。',
     adults: '成人',
     children: '兒童',
@@ -656,6 +664,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     needsTitle: 'Sobre tu grupo',
     needsHint: 'Solo para preparar tu tour; se comparte únicamente con tu guía.',
     departureTitle: 'Hora de salida (KST)',
+    timeClear: 'Borrar la hora',
     departureHint: 'Cuando tu conductor te recoge — las horas incluidas del día cuentan desde aquí.',
     adults: 'Adultos',
     children: 'Niños',
@@ -737,6 +746,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     needsTitle: 'Votre groupe',
     needsHint: 'Aide votre guide à se préparer — partagé uniquement avec lui.',
     departureTitle: 'Heure de départ (KST)',
+    timeClear: 'Effacer l’heure',
     departureHint: 'L’heure de votre prise en charge — les heures incluses de la journée comptent à partir de là.',
     adults: 'Adultes',
     children: 'Enfants',
@@ -818,6 +828,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     needsTitle: 'Ihre Gruppe',
     needsHint: 'Hilft Ihrem Guide bei der Vorbereitung — nur mit ihm geteilt.',
     departureTitle: 'Abfahrtszeit (KST)',
+    timeClear: 'Zeit löschen',
     departureHint: 'Wann Ihr Fahrer Sie abholt — ab hier zählen die inkludierten Stunden des Tages.',
     adults: 'Erwachsene',
     children: 'Kinder',
@@ -899,6 +910,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     needsTitle: 'О вашей группе',
     needsHint: 'Поможет гиду подготовиться — видит только ваш гид.',
     departureTitle: 'Время выезда (KST)',
+    timeClear: 'Убрать время',
     departureHint: 'Когда водитель вас заберет — включенные часы дня считаются с этого момента.',
     adults: 'Взрослые',
     children: 'Дети',
@@ -980,6 +992,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     needsTitle: 'Il tuo gruppo',
     needsHint: 'Aiuta la guida a prepararsi — condiviso solo con la tua guida.',
     departureTitle: 'Orario di partenza (KST)',
+    timeClear: 'Cancella l’ora',
     departureHint: 'Quando l’autista viene a prenderti — le ore incluse della giornata contano da qui.',
     adults: 'Adulti',
     children: 'Bambini',
@@ -2198,6 +2211,13 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
   const [expandedStopId, setExpandedStopId] = useState<string | null>(null);
   /** P2 — the stop whose ⋯ sheet is open (reorder / remove). */
   const [actionStopId, setActionStopId] = useState<string | null>(null);
+  /**
+   * P3 — which time the wheel is editing: a stop id, or 'departure'.
+   * `<input type="time">` renders in the DEVICE locale, which is why an
+   * English planner showed "오후 9:01" on the owner's phone. It also draws OS
+   * chrome in the middle of an app that has its own.
+   */
+  const [timeSheetFor, setTimeSheetFor] = useState<string | null>(null);
   const claimLead = async () => {
     if (claimBusy) return;
     setClaimBusy(true);
@@ -2854,19 +2874,17 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                           data-testid={`plan-stop-detail-${index + 1}`}
                         >
                           <div className="flex flex-wrap items-center gap-2">
-                            <label className="tr-meta flex items-center gap-1 text-[var(--tr-ink-3)]">
+                            <span className="tr-meta flex items-center gap-1 text-[var(--tr-ink-3)]">
                               {copy.timeLabel}
-                              <input
-                                type="time"
-                                value={stop.arrival_planned ?? ''}
-                                onChange={(e) =>
-                                  mutateStops((prev) =>
-                                    prev.map((s) => (s.id === stop.id ? { ...s, arrival_planned: e.target.value || null } : s)),
-                                  )
-                                }
-                                className="tr-label min-h-9 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2.5 text-[var(--tr-ink)]"
-                              />
-                            </label>
+                              <button
+                                type="button"
+                                onClick={() => setTimeSheetFor(stop.id)}
+                                className="tr-label min-h-9 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 font-semibold text-[var(--tr-ink)]"
+                                data-testid={`plan-stop-time-${index + 1}`}
+                              >
+                                {stop.arrival_planned ?? '--:--'}
+                              </button>
+                            </span>
                             <label className="tr-meta flex items-center gap-1 text-[var(--tr-ink-3)]">
                               {copy.durationLabel}
                               <select
@@ -2980,6 +2998,55 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
               );
             })()}
 
+            {/* P3 — one wheel serves every time in this screen. The native
+                picker leaked the device locale into a 10-locale planner and drew
+                OS chrome inside an app that has its own. */}
+            {timeSheetFor && canEdit && (() => {
+              const forDeparture = timeSheetFor === 'departure';
+              const stop = forDeparture ? null : stops.find((s) => s.id === timeSheetFor);
+              if (!forDeparture && !stop) return null;
+              const current = forDeparture ? (departureTime ?? '') : (stop?.arrival_planned ?? '');
+              const commit = (hhmm: string) => {
+                if (forDeparture) {
+                  mutateDeparture(hhmm);
+                } else {
+                  mutateStops((prev) =>
+                    prev.map((s) => (s.id === timeSheetFor ? { ...s, arrival_planned: hhmm } : s)),
+                  );
+                }
+              };
+              return (
+                <Sheet
+                  open
+                  onClose={() => setTimeSheetFor(null)}
+                  title={forDeparture ? copy.departureTitle : (stop?.title ?? copy.timeLabel)}
+                  closeLabel={ui.cancel}
+                >
+                  <TimeWheel
+                    value={current}
+                    onChange={commit}
+                    restAt="09:00"
+                    testId="plan-time-wheel"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => {
+                      if (forDeparture) mutateDeparture(null);
+                      else
+                        mutateStops((prev) =>
+                          prev.map((s) => (s.id === timeSheetFor ? { ...s, arrival_planned: null } : s)),
+                        );
+                      setTimeSheetFor(null);
+                    }}
+                    className="tr-label mt-3 min-h-11 w-full rounded-2xl bg-[var(--tr-surface-2)] font-semibold text-[var(--tr-ink-2)]"
+                    data-testid="plan-time-clear"
+                  >
+                    {copy.timeClear}
+                  </button>
+                </Sheet>
+              );
+            })()}
+
             {/* plan-wide warnings (overrun) */}
             {warnings.some((w) => w.code === 'overrun') && plan.tour.total_hours && (
               <div className="tr-card mt-3 border border-[var(--tr-danger-soft,#f3d6d6)] px-4 py-3">
@@ -3033,15 +3100,16 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
               <p className="tr-meta font-semibold uppercase tracking-wide text-[var(--tr-ink-3)]">
                 {copy.departureTitle}
               </p>
-              <label className="mt-2 flex items-center gap-2 text-[var(--tr-ink-2)]">
-                <input
-                  type="time"
-                  value={departureTime ?? ''}
-                  onChange={(e) => mutateDeparture(e.target.value || null)}
-                  className="tr-label min-h-9 w-32 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 text-[var(--tr-ink)]"
-                  aria-label={copy.departureTitle}
-                />
-              </label>
+              <button
+                type="button"
+                onClick={() => setTimeSheetFor('departure')}
+                disabled={!canEdit}
+                aria-label={copy.departureTitle}
+                className="tr-label mt-2 min-h-11 w-32 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 font-semibold text-[var(--tr-ink)] disabled:opacity-40"
+                data-testid="plan-departure-time"
+              >
+                {departureTime ?? '--:--'}
+              </button>
               <p className="tr-meta mt-1 text-[var(--tr-ink-3)]">{copy.departureHint}</p>
             </div>
 

@@ -69,6 +69,11 @@ async function renderPlanner() {
 }
 
 beforeEach(() => {
+  // jsdom에는 Element.scrollTo가 없다. TimeWheel은 선택 값으로 다이얼을 굴리므로
+  // 폴리필이 없으면 컴포넌트가 아니라 환경 때문에 터진다.
+  if (!('scrollTo' in Element.prototype)) {
+    Object.defineProperty(Element.prototype, 'scrollTo', { value: () => {}, writable: true });
+  }
   useTourRoomSessionMock.mockReturnValue({
     state: { status: 'joined' },
     join: jest.fn(async () => ({ participant: { locale: 'en' } })),
@@ -154,5 +159,41 @@ describe('P2 — 순서·삭제는 ⋯ 시트로', () => {
     await waitFor(() => expect(screen.queryByTestId('plan-stop-move-down')).not.toBeInTheDocument());
     expect(within(screen.getByTestId('plan-stop-row-1')).getByText('Seopjikoji')).toBeInTheDocument();
     expect(within(screen.getByTestId('plan-stop-row-2')).getByText('Seongsan Ilchulbong')).toBeInTheDocument();
+  });
+});
+
+/**
+ * P3 — `<input type="time">` renders in the DEVICE locale, which is how an
+ * English planner showed "오후 9:01" on the owner's Korean phone, and it draws
+ * OS chrome inside an app that has its own. Times now go through the app's
+ * TimeWheel, in a sheet.
+ */
+describe('P3 — 시간 입력은 앱의 다이얼로', () => {
+  it('플래너에 네이티브 시간 입력이 없다', async () => {
+    installFetch();
+    await renderPlanner();
+    fireEvent.click(screen.getByTestId('plan-stop-row-1'));
+    await screen.findByTestId('plan-stop-detail-1');
+
+    const natives = document.querySelectorAll('input[type="time"]');
+    expect(natives).toHaveLength(0);
+  });
+
+  it('시각 칩을 누르면 다이얼 시트가 열리고, 고른 값이 행 요약에 반영된다', async () => {
+    installFetch();
+    await renderPlanner();
+    fireEvent.click(screen.getByTestId('plan-stop-row-2'));
+    fireEvent.click(await screen.findByTestId('plan-stop-time-2'));
+
+    expect(await screen.findByTestId('plan-time-wheel')).toBeInTheDocument();
+    expect(screen.getByTestId('plan-time-clear')).toBeInTheDocument();
+  });
+
+  it('출발 시각도 같은 다이얼을 쓴다 — 화면에 입력 문법이 두 벌이면 안 된다', async () => {
+    installFetch();
+    await renderPlanner();
+
+    fireEvent.click(screen.getByTestId('plan-departure-time'));
+    expect(await screen.findByTestId('plan-time-wheel')).toBeInTheDocument();
   });
 });
