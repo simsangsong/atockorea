@@ -78,34 +78,34 @@ export const SKIN_SCENERY_SPECS: Record<ScenerySkin, SceneSpec> = {
   },
   jeju: {
     light: {
-      mountain: '#e5d2b4',
-      sea: '#cfe0d9',
-      sand: '#eeddc2',
+      mountain: '#c3ddc0',
+      sea: '#c6e4de',
+      sand: '#eee3c8',
       cloud: '#ffffff',
       foam: '#ffffff',
-      stone: '#c9b8a4',
-      stoneShade: '#b7a68f',
-      face: '#6f6152',
+      stone: '#c6b6a2',
+      stoneShade: '#b2a189',
+      face: '#6b5e4f',
       suit: '#4a5a66',
       skin: '#f2c9a3',
       tewak: '#e8734f',
       tangerine: '#f0a04a',
-      leaf: '#7f9c6e',
+      leaf: '#6f9260',
     },
     dark: {
-      mountain: '#241c14',
-      sea: '#1f2019',
-      sand: '#211a12',
-      cloud: '#322a1f',
+      mountain: '#1e2a20',
+      sea: '#17231f',
+      sand: '#201a10',
+      cloud: '#2c3a2e',
       foam: '#3d4a41',
-      stone: '#3f352a',
-      stoneShade: '#52463a',
-      face: '#1a130c',
+      stone: '#3c352a',
+      stoneShade: '#4f4636',
+      face: '#17110b',
       suit: '#2e3b46',
       skin: '#c9a37e',
       tewak: '#c47646',
       tangerine: '#d69653',
-      leaf: '#5a6a47',
+      leaf: '#52633f',
     },
     bandKeys: ['mountain', 'sea', 'sand'],
   },
@@ -136,36 +136,28 @@ export const SKIN_SCENERY_SPECS: Record<ScenerySkin, SceneSpec> = {
   },
   busan: {
     light: {
-      sea: '#d5e2e4',
-      sand: '#f2d7c8',
-      headland: '#ecc9b8',
+      sea: '#b7d7e6',
+      sand: '#eee0c6',
       foam: '#ffffff',
-      pagoda: '#c4a9a0',
-      pagodaRoof: '#8a7473',
       bridge: '#ffffff',
-      rail: '#c9a08e',
+      rail: '#9db4c2',
       capsule: '#f2b23c',
       capsuleTrim: '#ffffff',
-      capsuleWin: '#3e4550',
-      gull: '#7f97a2',
-      sun: '#f6bd8d',
+      capsuleWin: '#37414c',
+      gull: '#64808f',
     },
     dark: {
-      sea: '#191e24',
-      sand: '#1a1512',
-      headland: '#161a20',
+      sea: '#151e26',
+      sand: '#17130e',
       foam: '#35444e',
-      pagoda: '#453c38',
-      pagodaRoof: '#58504b',
       bridge: '#55636e',
-      rail: '#4f403a',
+      rail: '#3f4c57',
       capsule: '#c9902e',
       capsuleTrim: '#d8ccb8',
       capsuleWin: '#f0c98a',
-      gull: '#5f6f79',
-      sun: '#d8e2ea',
+      gull: '#56656e',
     },
-    bandKeys: ['sea', 'sand', 'headland'],
+    bandKeys: ['sea', 'sand'],
   },
   blossom: {
     light: {
@@ -497,12 +489,15 @@ function SeoulScene(c: Palette): ReactNode {
 function BusanScene(c: Palette): ReactNode {
   return (
     <>
-      {/* sunset sun on the horizon, behind the bridge */}
-      <path d="M252 252 a 26 26 0 0 1 52 0 Z" fill={c.sun} />
-      {/* 광안대교 — reference round (owner-supplied Busan vector): H-frame
-          twin towers piered into the sea, one main cable swooping tower to
-          tower, vertical hangers to the deck, deck running off-frame right.
-          Drawn before the sea so the piers sink into the water band. */}
+      {/* owner revision 2026-07-27: blue sky + blue sea, DECLUTTERED — the
+          sunset sun and the Yonggungsa cliff came out; the scene is now the
+          reference poster's cast: sun disc, Gwangan Bridge, sea, one beach
+          wedge, the Sky Capsule, gulls. */}
+      {/* high white sun disc (the uploaded Busan poster grammar) */}
+      <circle cx="196" cy="56" r="20" fill={c.foam} opacity="0.9" />
+      {/* 광안대교 — H-frame twin towers piered into the sea, one main cable
+          swooping tower to tower, hangers to the deck, deck running
+          off-frame right. Drawn before the sea so the piers sink in. */}
       <g>
         <path d="M316 252 V164 M329 252 V164 M512 252 V164 M525 252 V164" stroke={c.bridge} strokeWidth="4.5" strokeLinecap="round" />
         <path d="M312 171 H333 M508 171 H529" stroke={c.bridge} strokeWidth="3.5" strokeLinecap="round" />
@@ -523,10 +518,10 @@ function BusanScene(c: Palette): ReactNode {
       </g>
       {/* sea + foam */}
       <rect x="0" y="252" width="720" height="48" fill={c.sea} />
-      {[190, 330, 470].map((x, i) => (
+      {[210, 430].map((x, i) => (
         <path
           key={i}
-          d={`M${x} 266 q 12 -6 24 0 q 12 6 24 0`}
+          d={`M${x} 268 q 12 -6 24 0 q 12 6 24 0`}
           fill="none"
           stroke={c.foam}
           strokeWidth="2.5"
@@ -534,15 +529,6 @@ function BusanScene(c: Palette): ReactNode {
           opacity="0.8"
         />
       ))}
-      {/* 용궁사 — cliff rock + a chunky little stone pagoda */}
-      <path d="M110 300 V246 Q168 218 226 246 Q252 262 264 300 Z" fill={c.headland} />
-      <g>
-        <rect x="168" y="212" width="40" height="13" rx="3" fill={c.pagoda} />
-        <rect x="173" y="194" width="30" height="12" rx="3" fill={c.pagoda} />
-        <rect x="178" y="177" width="20" height="11" rx="3" fill={c.pagoda} />
-        <path d="M162 212 h52 M168 194 h40 M174 177 h28" stroke={c.pagodaRoof} strokeWidth="4.5" strokeLinecap="round" />
-        <path d="M188 171 v-9" stroke={c.pagodaRoof} strokeWidth="3" strokeLinecap="round" />
-      </g>
       {/* 해운대 beach, foreground right */}
       <path d="M240 300 Q460 268 720 284 V300 Z" fill={c.sand} />
       {/* 스카이캡슐 v2 — reference round (owner photo): chunky YELLOW cab,
@@ -568,10 +554,9 @@ function BusanScene(c: Palette): ReactNode {
           <circle cx="464" cy="130" r="1.5" fill={c.capsule} />
         </g>
       </g>
-      <Cloud x={584} y={40} s={0.7} fill={c.foam} />
+      <Cloud x={594} y={38} s={0.7} fill={c.foam} />
       <Bird x={330} y={40} stroke={c.gull} />
       <Bird x={365} y={28} s={0.75} stroke={c.gull} />
-      <Bird x={470} y={56} s={0.85} stroke={c.gull} />
     </>
   );
 }
