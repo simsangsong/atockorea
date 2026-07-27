@@ -422,10 +422,10 @@ export default function OpsRoomVehiclePanel({ roomId }: { roomId: string }) {
               🔴 이 숫자는 운영자 전용이다 — 손님 표면에 잔여/매진으로 새지 않는다(B2-D1). */}
           {capacity?.over && (
             <div
-              className="rounded-xl bg-amber-50 p-3 dark:bg-amber-950/40"
+              className="rounded-xl bg-[var(--tr-warn-soft)] p-3 "
               data-testid="capacity-warning"
             >
-              <p className="flex items-center gap-1.5 tr-label font-bold text-amber-700 dark:text-amber-400">
+              <p className="flex items-center gap-1.5 tr-label font-bold text-[var(--tr-warn)] ">
                 <AlertTriangle className="size-3.5" />
                 {capacity.headcount}명 — 정원 {capacity.capacity} 초과({capacity.overBy}명)
               </p>
@@ -445,7 +445,7 @@ export default function OpsRoomVehiclePanel({ roomId }: { roomId: string }) {
                     type="button"
                     disabled={busy}
                     onClick={() => void setGroupCapacity(capacity.headcount)}
-                    className="mt-2 h-9 rounded-lg bg-amber-600 px-3 tr-meta font-bold text-white disabled:opacity-40"
+                    className="mt-2 h-9 rounded-lg bg-[var(--tr-warn)] px-3 tr-meta font-bold text-white disabled:opacity-40"
                     data-testid="raise-group-capacity"
                   >
                     이 날짜만 정원 {capacity.headcount}로 올리기
@@ -696,7 +696,7 @@ function VehicleCard({
           </span>
         )}
         {vehicle.has_override && (
-          <span className="shrink-0 rounded bg-amber-100 px-1.5 py-0.5 tr-meta font-semibold text-amber-700 dark:bg-amber-500/15 dark:text-amber-200">
+          <span className="shrink-0 rounded bg-[var(--tr-warn-soft)] px-1.5 py-0.5 tr-meta font-semibold text-[var(--tr-warn)]  ">
             오버라이드
           </span>
         )}
@@ -733,7 +733,7 @@ function VehicleCard({
         </select>
       </label>
       {selectedLayout && !selectedLayout.is_verified && (
-        <p className="mb-2 flex items-start gap-1 tr-meta text-amber-700 dark:text-amber-300">
+        <p className="mb-2 flex items-start gap-1 tr-meta text-[var(--tr-warn)] ">
           <AlertTriangle className="mt-0.5 size-3 shrink-0" />이 배치도는 아직 실차 사진 대조가 안 됐어요.
         </p>
       )}
@@ -1048,7 +1048,7 @@ function ConflictSheet({
         style={{ paddingBottom: 'calc(env(safe-area-inset-bottom, 0px) + 16px)' }}
       >
         <p className="mb-2 flex items-center gap-1.5 tr-body font-bold text-[var(--tr-ink)]">
-          <AlertTriangle className="size-4 text-amber-600" /> 좌석이 이미 배정돼 있어요
+          <AlertTriangle className="size-4 text-[var(--tr-warn)]" /> 좌석이 이미 배정돼 있어요
         </p>
         <p className="mb-3 tr-label leading-relaxed text-[var(--tr-ink-2)]">{conflict.message}</p>
 

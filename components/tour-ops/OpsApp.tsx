@@ -391,10 +391,10 @@ export default function OpsApp() {
               <span
                 className={`size-2 rounded-full ${
                   connection === 'realtime'
-                    ? 'bg-emerald-400'
+                    ? 'bg-[var(--tr-safe)]'
                     : connection === 'connecting'
-                      ? 'bg-slate-500'
-                      : 'bg-amber-400 animate-pulse'
+                      ? 'bg-[var(--tr-surface-2)]'
+                      : 'bg-[var(--tr-warn)] animate-pulse'
                 }`}
               />
               {connection === 'realtime' ? '실시간' : connection === 'connecting' ? '연결 중' : '백업'}
@@ -541,7 +541,7 @@ export default function OpsApp() {
                 {badge ? (
                   <span
                     className={`absolute -right-2.5 -top-1.5 flex h-4 min-w-4 items-center justify-center rounded-full px-1 tr-meta font-bold text-white ${
-                      key === 'sos' ? 'bg-red-500 animate-pulse' : 'bg-blue-500'
+                      key === 'sos' ? 'bg-[var(--tr-danger)] animate-pulse' : 'bg-[var(--tr-accent)]'
                     }`}
                   >
                     {badge > 99 ? '99+' : badge}

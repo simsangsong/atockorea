@@ -475,14 +475,14 @@ export default function OpsGuestMessagingView({
                     </label>
 
                     {notEmailable.length > 0 && (
-                      <div className="rounded-xl border border-amber-300 bg-amber-50 px-3 py-2 dark:bg-amber-500/10">
-                        <p className="flex items-start gap-1.5 tr-label font-bold text-amber-900 dark:text-amber-200">
+                      <div className="rounded-xl border border-[var(--tr-warn-soft)] bg-[var(--tr-warn-soft)] px-3 py-2 ">
+                        <p className="flex items-start gap-1.5 tr-label font-bold text-[var(--tr-warn)] ">
                           <AlertTriangle className="mt-0.5 size-3.5 shrink-0" />
                           <span className="text-cjk-body">
                             이메일 주소가 없어 {notEmailable.length}명은 제외됩니다 — 왓츠앱 탭에서 보내주세요.
                           </span>
                         </p>
-                        <p className="text-cjk-body mt-1 pl-5 tr-meta text-amber-800 dark:text-amber-300">
+                        <p className="text-cjk-body mt-1 pl-5 tr-meta text-[var(--tr-warn)] ">
                           {notEmailable.map((r) => r.guestName).join(', ')}
                         </p>
                       </div>
@@ -533,7 +533,7 @@ export default function OpsGuestMessagingView({
                     {result && (
                       <div className="rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2.5">
                         <p className="flex items-center gap-1.5 tr-card-text font-bold">
-                          <CheckCircle2 className="size-4 text-emerald-600" />
+                          <CheckCircle2 className="size-4 text-[var(--tr-safe)]" />
                           <span className="text-cjk-body">
                             발송 {result.sent} · 실패 {result.failed} · 제외 {result.skipped}
                           </span>

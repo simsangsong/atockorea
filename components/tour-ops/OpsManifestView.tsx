@@ -362,9 +362,9 @@ export default function OpsManifestView({
         <span className="font-bold text-[var(--tr-ink)]">
           총 {totals.pax}명 · {totals.teams}팀
         </span>
-        <span className="text-emerald-700 dark:text-emerald-300">발송 {totals.contacted}</span>
+        <span className="text-[var(--tr-safe)] ">발송 {totals.contacted}</span>
         {totals.uncontacted > 0 && (
-          <span className="text-amber-700 dark:text-amber-300">미연락 {totals.uncontacted}</span>
+          <span className="text-[var(--tr-warn)] ">미연락 {totals.uncontacted}</span>
         )}
         {/* §2-6 — 메일이 나갔는지를 화면에서 못 보면 같은 사람에게 또 보낸다. */}
         {totals.emailed > 0 && (
@@ -443,7 +443,7 @@ export default function OpsManifestView({
 
       {/* 룸 초대 이메일 일괄 발송 — D10 확인 게이트 (명시적 2차 클릭 요구) */}
       {emailConfirm && (
-        <div className="flex flex-wrap items-center gap-2 border-b border-[var(--tr-hairline)] bg-amber-50 px-4 py-2 dark:bg-amber-500/10">
+        <div className="flex flex-wrap items-center gap-2 border-b border-[var(--tr-hairline)] bg-[var(--tr-warn-soft)] px-4 py-2 ">
           <span className="tr-label text-[var(--tr-ink)]">
             이메일 있는 게스트 <b>{emailEligible}팀</b>에게 <b>각자의 개인 링크</b>를 보냅니다.
             이름을 고르는 화면 없이 바로 투어룸이 열립니다.
@@ -505,7 +505,7 @@ export default function OpsManifestView({
             type="button"
             onClick={() => void bulkNext()}
             disabled={bulkCursor >= bulkList.length}
-            className="h-8 rounded-lg bg-emerald-600 px-3 tr-label font-semibold text-white disabled:opacity-40"
+            className="h-8 rounded-lg bg-[var(--tr-safe)] px-3 tr-label font-semibold text-white disabled:opacity-40"
           >
             {bulkCursor >= bulkList.length ? '완료' : `다음 열기 (${bulkCursor + 1}번째)`}
           </button>
@@ -525,7 +525,7 @@ export default function OpsManifestView({
       <div className="min-h-0 flex-1 space-y-2 overflow-y-auto px-3 py-2 pb-6">
         {loading && <p className="mt-8 text-center tr-label text-[var(--tr-ink-3)]">명단을 불러오는 중…</p>}
         {!loading && loadError && (
-          <p className="mt-8 text-center tr-label text-red-600 dark:text-red-400">{loadError}</p>
+          <p className="mt-8 text-center tr-label text-[var(--tr-danger)] ">{loadError}</p>
         )}
         {!loading && !loadError && bookings.length === 0 && (
           <p className="mt-8 text-center tr-label text-[var(--tr-ink-3)]">이 날짜의 예약이 없습니다.</p>
@@ -589,7 +589,7 @@ export default function OpsManifestView({
                               {highlights.map((tag) => (
                                 <span
                                   key={tag}
-                                  className="rounded bg-amber-100 px-1.5 py-0.5 tr-meta font-bold text-amber-800 dark:bg-amber-500/15 dark:text-amber-200"
+                                  className="rounded bg-[var(--tr-warn-soft)] px-1.5 py-0.5 tr-meta font-bold text-[var(--tr-warn)]  "
                                 >
                                   ⚠ {HIGHLIGHT_LABELS[tag] ?? tag}
                                 </span>
@@ -608,7 +608,7 @@ export default function OpsManifestView({
                           className={`flex h-9 shrink-0 items-center gap-1 rounded-lg px-2.5 tr-meta font-semibold disabled:opacity-30 ${
                             opened
                               ? 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]'
-                              : 'bg-emerald-600 text-white'
+                              : 'bg-[var(--tr-safe)] text-white'
                           }`}
                           aria-label="WhatsApp 열기"
                         >
@@ -621,7 +621,7 @@ export default function OpsManifestView({
                           disabled={sent}
                           className={`flex h-9 shrink-0 items-center gap-1 rounded-lg px-2 tr-meta font-semibold ${
                             sent
-                              ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300'
+                              ? 'bg-[var(--tr-safe-soft)] text-[var(--tr-safe)]  '
                               : 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]'
                           }`}
                           aria-label="발송 완료 체크"

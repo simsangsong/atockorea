@@ -105,6 +105,10 @@ const PAIRS: Array<[string, string, number]> = [
   ['accent-deep', 'canvas', 4.5],
   ['ink', 'home-tile', 4.5],
   ['safe', 'surface', 3.0],
+  // O3 — 경고 색은 신설되자마자 게이트에 들어간다. 스킨별로 재정의하지 않으므로
+  // 한 값이 10스킨 × 라이트/다크 전부에서 읽혀야 한다.
+  ['warn', 'surface', 4.5],
+  ['warn', 'canvas', 4.5],
 ];
 
 const THEMES = ['light', 'dark'] as const;

@@ -263,7 +263,7 @@ export default function CardSetEditor({
       )}
 
       {noStartCard && (
-        <p className="flex items-start gap-1.5 tr-meta leading-relaxed text-amber-700 dark:text-amber-300">
+        <p className="flex items-start gap-1.5 tr-meta leading-relaxed text-[var(--tr-warn)] ">
           <Info className="mt-0.5 size-3 shrink-0" />
           시작 브리핑을 빼면 이 투어는 <b>푸시 알림이 한 건도 나가지 않아요</b>. 나머지 카드는 앱을 열어야 보입니다.
         </p>

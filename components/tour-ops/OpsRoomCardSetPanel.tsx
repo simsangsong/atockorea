@@ -131,7 +131,7 @@ export default function OpsRoomCardSetPanel({ roomId, tourId }: { roomId: string
   return (
     <div className="min-h-[200px] flex-1 space-y-3 overflow-y-auto px-4 py-3">
       {data.migration_pending && (
-        <p className="flex items-start gap-1.5 rounded-xl border border-amber-300 bg-amber-50 p-2.5 tr-meta leading-relaxed text-amber-800 dark:border-amber-500/30 dark:bg-amber-950/40 dark:text-amber-200">
+        <p className="flex items-start gap-1.5 rounded-xl border border-[var(--tr-warn-soft)] bg-[var(--tr-warn-soft)] p-2.5 tr-meta leading-relaxed text-[var(--tr-warn)]   ">
           <TriangleAlert className="mt-0.5 size-3.5 shrink-0" />
           카드 세트 테이블이 아직 없어요(마이그레이션 미적용). 지금은 <b>코드 기본 5장</b>이 그대로 나가고,
           저장은 되지 않습니다.
@@ -207,7 +207,7 @@ export default function OpsRoomCardSetPanel({ roomId, tourId }: { roomId: string
                     >
                       <p className="mb-1 flex items-center gap-1.5 tr-label font-bold text-[var(--tr-ink)]">
                         {card.will_send ? (
-                          <CheckCircle2 className="size-3.5 shrink-0 text-emerald-600" />
+                          <CheckCircle2 className="size-3.5 shrink-0 text-[var(--tr-safe)]" />
                         ) : (
                           <MinusCircle className="size-3.5 shrink-0 text-[var(--tr-ink-3)]" />
                         )}

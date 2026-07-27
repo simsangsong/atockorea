@@ -265,7 +265,7 @@ export default function OpsRoomDrawer({
         )}
 
         {sos && (
-          <div className="flex items-center gap-2 border-b border-red-200 bg-red-50 px-4 py-2.5 tr-label text-red-700 dark:border-red-500/30 dark:bg-red-950/50 dark:text-red-200">
+          <div className="flex items-center gap-2 border-b border-[var(--tr-danger-soft)] bg-[var(--tr-danger-soft)] px-4 py-2.5 tr-label text-[var(--tr-danger)]   ">
             <span className="animate-pulse">🆘</span>
             <span className="min-w-0 flex-1 truncate">
               {sos.metadata.sender_name && <b>{sos.metadata.sender_name}: </b>}
@@ -273,7 +273,7 @@ export default function OpsRoomDrawer({
             </span>
             {typeof sos.metadata.latitude === 'number' && (
               <a
-                className="flex h-11 shrink-0 items-center gap-1 rounded-lg bg-red-500/20 px-3 font-semibold text-red-700 dark:text-red-100"
+                className="flex h-11 shrink-0 items-center gap-1 rounded-lg bg-[var(--tr-danger)] px-3 font-semibold text-[var(--tr-danger)] "
                 href={`https://maps.google.com/?q=${sos.metadata.latitude},${sos.metadata.longitude}`}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -296,9 +296,9 @@ export default function OpsRoomDrawer({
                 <div
                   className={`max-w-[82%] rounded-2xl px-3 py-2 tr-card-text leading-relaxed ${
                     mine
-                      ? `bg-blue-600 text-white ${message._local ? 'opacity-60' : ''}`
+                      ? `bg-[var(--tr-accent)] text-white ${message._local ? 'opacity-60' : ''}`
                       : message.sender_role === 'guide'
-                        ? 'bg-amber-100 text-amber-800 dark:bg-amber-500/15 dark:text-amber-100'
+                        ? 'bg-[var(--tr-warn-soft)] text-[var(--tr-warn)]  '
                         : 'bg-[var(--tr-surface-2)] text-[var(--tr-ink)]'
                   }`}
                 >
@@ -311,7 +311,7 @@ export default function OpsRoomDrawer({
                   <p className="whitespace-pre-wrap break-words">
                     {mine ? message.source_text : opsReadableText(message)}
                   </p>
-                  <p className={`mt-0.5 text-right tr-meta ${mine ? 'text-blue-100' : 'text-[var(--tr-ink-3)]'}`}>
+                  <p className={`mt-0.5 text-right tr-meta ${mine ? 'text-[var(--tr-on-accent)]' : 'text-[var(--tr-ink-3)]'}`}>
                     {message._local ? '전송 중…' : kstTimeLabel(message.created_at)}
                   </p>
                 </div>
@@ -355,7 +355,7 @@ export default function OpsRoomDrawer({
             <button
               type="submit"
               disabled={sending || !draft.trim()}
-              className="h-11 shrink-0 rounded-xl bg-blue-600 px-4 tr-body font-semibold text-white disabled:opacity-40"
+              className="h-11 shrink-0 rounded-xl bg-[var(--tr-accent)] px-4 tr-body font-semibold text-white disabled:opacity-40"
             >
               발신
             </button>

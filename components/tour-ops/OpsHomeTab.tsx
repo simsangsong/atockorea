@@ -202,10 +202,10 @@ export default function OpsHomeTab({
 
   const badgeClass = (tone?: 'red' | 'amber' | 'blue') =>
     tone === 'red'
-      ? 'bg-red-500 text-white'
+      ? 'bg-[var(--tr-danger)] text-white'
       : tone === 'amber'
-        ? 'bg-amber-400 text-slate-950'
-        : 'bg-blue-500 text-white';
+        ? 'bg-[var(--tr-warn)] text-[var(--tr-ink-3)]'
+        : 'bg-[var(--tr-accent)] text-white';
 
   return (
     <div className="space-y-4 pb-4">
@@ -216,11 +216,11 @@ export default function OpsHomeTab({
             <p
               className={`tr-title font-bold tabular-nums ${
                 tone === 'red' && value
-                  ? 'text-red-600 dark:text-red-400'
+                  ? 'text-[var(--tr-danger)] '
                   : tone === 'amber' && value
-                    ? 'text-amber-700 dark:text-amber-300'
+                    ? 'text-[var(--tr-warn)] '
                     : tone === 'emerald' && value
-                      ? 'text-emerald-700 dark:text-emerald-400'
+                      ? 'text-[var(--tr-safe)] '
                       : 'text-[var(--tr-ink)]'
               }`}
             >
@@ -236,23 +236,23 @@ export default function OpsHomeTab({
         <button
           type="button"
           onClick={() => onNavigate('sos')}
-          className="flex w-full items-center justify-between rounded-2xl border border-red-200 bg-red-50 dark:border-red-500/50 dark:bg-red-950/40 px-4 py-3 text-left"
+          className="flex w-full items-center justify-between rounded-2xl border border-[var(--tr-danger-soft)] bg-[var(--tr-danger-soft)]   px-4 py-3 text-left"
         >
-          <span className="tr-card-text font-bold text-red-700 dark:text-red-100">
+          <span className="tr-card-text font-bold text-[var(--tr-danger)] ">
             <span className="animate-pulse">🆘</span> 활성 SOS {sosCount}건 — 지금 확인
           </span>
-          <span className="tr-label text-red-600 dark:text-red-300">SOS 탭 →</span>
+          <span className="tr-label text-[var(--tr-danger)] ">SOS 탭 →</span>
         </button>
       )}
 
       {/* §11.E 일일 보고서 발송 결과 배너 */}
       {reportState === 'sent' && (
-        <div className="rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-2.5 tr-label font-semibold text-emerald-700 dark:border-emerald-500/50 dark:bg-emerald-950/40 dark:text-emerald-200">
+        <div className="rounded-2xl border border-[var(--tr-safe-soft)] bg-[var(--tr-safe-soft)] px-4 py-2.5 tr-label font-semibold text-[var(--tr-safe)]   ">
           ✓ 일일 보고서 발송 완료 — {reportMsg}
         </div>
       )}
       {reportState === 'error' && (
-        <div className="rounded-2xl border border-red-200 bg-red-50 px-4 py-2.5 tr-label font-semibold text-red-700 dark:border-red-500/50 dark:bg-red-950/40 dark:text-red-200">
+        <div className="rounded-2xl border border-[var(--tr-danger-soft)] bg-[var(--tr-danger-soft)] px-4 py-2.5 tr-label font-semibold text-[var(--tr-danger)]   ">
           보고서 발송 실패 — {reportMsg}
         </div>
       )}

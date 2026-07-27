@@ -53,12 +53,12 @@ interface MintedLink {
 type LinkRole = 'customer' | 'guide' | 'driver';
 
 const CHANNEL_BADGES: Record<string, { label: string; cls: string }> = {
-  gyg: { label: 'GYG', cls: 'bg-orange-500/15 text-orange-500' },
+  gyg: { label: 'GYG', cls: 'bg-[var(--tr-warn)] text-[var(--tr-warn)]' },
   viator: { label: 'Viator', cls: 'bg-teal-500/15 text-teal-600' },
   klook: { label: 'Klook', cls: 'bg-rose-500/15 text-rose-500' },
-  direct: { label: '직접', cls: 'bg-blue-500/15 text-blue-500' },
-  test: { label: 'TEST', cls: 'bg-slate-500/20 text-slate-500' },
-  other: { label: '기타', cls: 'bg-slate-500/20 text-slate-500' },
+  direct: { label: '직접', cls: 'bg-[var(--tr-accent)] text-[var(--tr-accent)]' },
+  test: { label: 'TEST', cls: 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-3)]' },
+  other: { label: '기타', cls: 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-3)]' },
 };
 
 /**
@@ -84,8 +84,8 @@ function palette() {
     qrIdle: 'text-[var(--tr-ink-3)]',
     badgeNoRoom: 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]',
     badgeClosed: 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-3)]',
-    badgeActive: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300',
-    badgeCustomer: 'bg-blue-100 text-blue-700 dark:bg-blue-500/15 dark:text-blue-300',
+    badgeActive: 'bg-[var(--tr-safe-soft)] text-[var(--tr-safe)]  ',
+    badgeCustomer: 'bg-[var(--tr-accent-soft)] text-[var(--tr-accent)]  ',
     badgeGuide: 'bg-violet-100 text-violet-700 dark:bg-violet-500/15 dark:text-violet-300',
     input:
       'border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)]',
@@ -339,7 +339,7 @@ export default function OpsRoomManager({
         <button
           type="button"
           onClick={() => setCreateOpen(true)}
-          className="flex h-9 shrink-0 items-center gap-1 rounded-lg bg-blue-600 px-3 tr-label font-bold text-white"
+          className="flex h-9 shrink-0 items-center gap-1 rounded-lg bg-[var(--tr-accent)] px-3 tr-label font-bold text-white"
           data-testid="manual-booking-open"
         >
           <Plus className="size-4" /> 예약 만들기
@@ -362,7 +362,7 @@ export default function OpsRoomManager({
             <button
               type="button"
               onClick={() => setCreateOpen(true)}
-              className="mt-4 inline-flex h-11 items-center gap-1.5 rounded-xl bg-blue-600 px-5 tr-card-text font-bold text-white"
+              className="mt-4 inline-flex h-11 items-center gap-1.5 rounded-xl bg-[var(--tr-accent)] px-5 tr-card-text font-bold text-white"
               data-testid="manual-booking-open-empty"
             >
               <Plus className="size-4" /> OTA · 테스트 예약 만들기
@@ -430,7 +430,7 @@ export default function OpsRoomManager({
                           type="button"
                           onClick={() => void dispatchInvites(booking)}
                           disabled={busy === `${booking.id}:dispatch`}
-                          className="flex h-10 items-center justify-center gap-1.5 rounded-xl bg-blue-600 tr-label font-semibold text-white disabled:opacity-50"
+                          className="flex h-10 items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-accent)] tr-label font-semibold text-white disabled:opacity-50"
                         >
                           {busy === `${booking.id}:dispatch` ? (
                             <Loader2 className="size-4 animate-spin" />
@@ -519,12 +519,12 @@ export default function OpsRoomManager({
           onClick={() => setQrOpen(null)}
         >
           <div className="w-full max-w-xs rounded-2xl bg-white p-5 text-center" onClick={(e) => e.stopPropagation()}>
-            <p className="tr-card-text font-semibold text-slate-900">{qrOpen.title}</p>
+            <p className="tr-card-text font-semibold text-[var(--tr-ink-3)]">{qrOpen.title}</p>
             {qrOpen.link.qr_data_url ? (
               // eslint-disable-next-line @next/next/no-img-element -- data URL QR, next/image gains nothing
               <img src={qrOpen.link.qr_data_url} alt="QR 코드" className="mx-auto mt-3 w-full max-w-[240px]" />
             ) : (
-              <p className="mt-3 tr-label text-slate-500">QR 생성 실패 — 링크를 복사해 전달하세요.</p>
+              <p className="mt-3 tr-label text-[var(--tr-ink-3)]">QR 생성 실패 — 링크를 복사해 전달하세요.</p>
             )}
             <button
               type="button"
@@ -533,7 +533,7 @@ export default function OpsRoomManager({
                   ok ? toast.success('링크를 복사했습니다') : toast.error('복사 실패'),
                 );
               }}
-              className="mt-3 flex h-10 w-full items-center justify-center gap-1.5 rounded-xl bg-slate-900 tr-card-text font-semibold text-white"
+              className="mt-3 flex h-10 w-full items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-surface-2)] tr-card-text font-semibold text-white"
             >
               <Copy className="size-4" /> 링크 복사
             </button>
@@ -545,7 +545,7 @@ export default function OpsRoomManager({
                     ok ? toast.success('일정(/plan) 링크를 복사했습니다') : toast.error('복사 실패'),
                   );
                 }}
-                className="mt-2 flex h-10 w-full items-center justify-center gap-1.5 rounded-xl bg-amber-500 tr-card-text font-semibold text-white"
+                className="mt-2 flex h-10 w-full items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-warn)] tr-card-text font-semibold text-white"
               >
                 <Copy className="size-4" /> 일정 만들기 링크 복사
               </button>
@@ -553,7 +553,7 @@ export default function OpsRoomManager({
             <button
               type="button"
               onClick={() => setQrOpen(null)}
-              className="mt-2 h-9 w-full rounded-xl tr-card-text font-medium text-slate-500"
+              className="mt-2 h-9 w-full rounded-xl tr-card-text font-medium text-[var(--tr-ink-3)]"
             >
               닫기
             </button>
@@ -611,7 +611,7 @@ function LinkAction({
         disabled={busy}
         aria-label={`${label} QR`}
         className={`flex w-10 items-center justify-center border-l disabled:opacity-50 ${T.linkDivider} ${
-          minted ? 'text-emerald-500' : T.qrIdle
+          minted ? 'text-[var(--tr-safe)]' : T.qrIdle
         }`}
       >
         <QrCode className="size-4" />
@@ -796,7 +796,7 @@ function ManualBookingSheet({
           type="button"
           onClick={() => void submit()}
           disabled={saving}
-          className="mt-5 flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-blue-600 tr-body font-bold text-white disabled:opacity-50"
+          className="mt-5 flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-[var(--tr-accent)] tr-body font-bold text-white disabled:opacity-50"
           data-testid="mb-submit"
         >
           {saving ? <Loader2 className="size-5 animate-spin" /> : <Plus className="size-5" />}
