@@ -19,6 +19,7 @@ import ArrivalVideoCard from '@/components/tour-mode/ArrivalVideoCard';
 import { APPROACH_COPY, type ApproachCardMeta } from '@/lib/tour-room/approach';
 import { formatDistance } from '@/lib/tour-room/eta';
 import { isVideoCardMeta } from '@/lib/tour-room/poiVideos';
+import { pickSpotContent } from '@/lib/tour-room/spotContent';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
 function mapsUrl(lat: number, lng: number): string {
@@ -33,8 +34,10 @@ export default function ApproachCard({
   locale: RoomLocale;
 }) {
   const copy = APPROACH_COPY[locale];
-  const hero = meta.content?.image ?? meta.content?.images?.[0] ?? null;
-  const teaser = meta.content?.description?.trim() || null;
+  // A1 — the preview carries one teaser per language; show this viewer's.
+  const preview = pickSpotContent(meta as unknown as Record<string, unknown>, locale)?.content ?? null;
+  const hero = preview?.image ?? preview?.images?.[0] ?? null;
+  const teaser = preview?.description?.trim() || null;
   const coords =
     typeof meta.poi_lat === 'number' && typeof meta.poi_lng === 'number'
       ? { lat: meta.poi_lat, lng: meta.poi_lng }

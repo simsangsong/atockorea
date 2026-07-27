@@ -19,7 +19,7 @@ jest.mock('@/lib/tour-room/events', () => ({ recordRoomEvent: jest.fn(async () =
 jest.mock('@/lib/tour-room/realtime', () => ({ broadcastToRoom: jest.fn(async () => ({ ok: true })) }));
 jest.mock('@/lib/tour-room/guestPush', () => ({ sendGuestRoomPush: jest.fn(async () => ({ sent: 0, pruned: 0 })) }));
 jest.mock('@/lib/tour-room/generatedContent', () => ({
-  getGeneratedSpotContent: jest.fn(async () => null),
+  getGeneratedSpotContentForLocales: jest.fn(async () => ({})),
   refCandidatesFor: jest.fn(() => []),
 }));
 jest.mock('@/lib/openai-server', () => ({

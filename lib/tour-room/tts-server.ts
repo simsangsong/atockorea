@@ -33,6 +33,16 @@ export interface RoomTtsMessage {
   translations?: Record<string, string> | null;
 }
 
+/**
+ * A2 — which spoken track a request wants.
+ *
+ *   'body'      the message text (what the ladder has always spoken);
+ *   'narration' the spot briefing behind an arrival card — the part a live
+ *               guide would actually say out loud, which used to be readable
+ *               only, and only after tapping "More details".
+ */
+export type TtsPart = 'body' | 'narration';
+
 /** The text a locale actually hears: its translation, else the original. */
 export function speakableText(message: RoomTtsMessage, locale: string): string {
   const translations = message.translations ?? {};
@@ -40,32 +50,41 @@ export function speakableText(message: RoomTtsMessage, locale: string): string {
 }
 
 /**
- * Ensure a cached mp3 exists for (message, locale); returns its public URL or
- * null when the message has nothing speakable. Safe under races: concurrent
+ * Ensure a cached mp3 exists for (message, locale, part); returns its public
+ * URL or null when there is nothing speakable. Safe under races: concurrent
  * generators upload identical content to the same path and upsert the same
  * UNIQUE cache row.
+ *
+ * `options.text` overrides the message body — narration is composed from the
+ * card metadata, not stored as message text. `locale` must be the language the
+ * text is genuinely written in, so eight room locales that all fall back to
+ * English share one mp3 instead of paying for eight identical generations.
  */
 export async function ensureRoomTts(
   supabase: TtsStorageClient,
   roomId: string,
   message: RoomTtsMessage,
   locale: string,
+  options: { part?: TtsPart; text?: string } = {},
 ): Promise<string | null> {
+  const part: TtsPart = options.part ?? 'body';
   const { data: cached } = await supabase
     .from('tour_room_tts_cache')
     .select('storage_path')
     .eq('message_id', message.id)
     .eq('locale', locale)
+    .eq('part', part)
     .maybeSingle();
   if (cached?.storage_path) {
     return supabase.storage.from(TTS_BUCKET).getPublicUrl(cached.storage_path).data.publicUrl;
   }
 
-  const text = speakableText(message, locale);
+  const text = (options.text ?? speakableText(message, locale)).trim().slice(0, MAX_TTS_TEXT_CHARS);
   if (!text) return null;
 
   const audio = await generateSpeechMp3(text, locale);
-  const storagePath = `tour-room-tts/${roomId}/${message.id}-${locale}.mp3`;
+  const suffix = part === 'body' ? '' : `-${part}`;
+  const storagePath = `tour-room-tts/${roomId}/${message.id}-${locale}${suffix}.mp3`;
   const { error: uploadError } = await supabase.storage
     .from(TTS_BUCKET)
     .upload(storagePath, Buffer.from(audio), { contentType: 'audio/mpeg', upsert: true });
@@ -73,7 +92,10 @@ export async function ensureRoomTts(
 
   await supabase
     .from('tour_room_tts_cache')
-    .upsert({ message_id: message.id, locale, storage_path: storagePath }, { onConflict: 'message_id,locale' });
+    .upsert(
+      { message_id: message.id, locale, part, storage_path: storagePath },
+      { onConflict: 'message_id,locale,part' },
+    );
 
   return supabase.storage.from(TTS_BUCKET).getPublicUrl(storagePath).data.publicUrl;
 }

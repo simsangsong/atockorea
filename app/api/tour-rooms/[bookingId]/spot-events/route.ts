@@ -3,10 +3,15 @@ import { createServerClient } from '@/lib/supabase';
 import { requestGate, clientIpKey } from '@/lib/durable-rate-limit';
 import { ensureRoom, resolveRoomActor } from '@/lib/tour-room/access';
 import { broadcastToRoom } from '@/lib/tour-room/realtime';
-import { CORE_TRANSLATION_LOCALES, normalizeRoomLocale } from '@/lib/tour-room/snapshot';
 import {
+  CORE_TRANSLATION_LOCALES,
+  getRoomTranslationTargets,
+  normalizeRoomLocale,
+} from '@/lib/tour-room/snapshot';
+import {
+  packSpotContent,
   renderSpotEventTranslations,
-  resolveSpotContent,
+  resolveSpotContentForLocales,
   type SpotEventKind,
 } from '@/lib/tour-room/spotContent';
 import { fetchArrivalFacilityPins } from '@/lib/tour-room/facilityPins.server';
@@ -138,9 +143,21 @@ export async function POST(
 
     // D-5: locale-resolved rich content rides the arrival metadata
     // (curated content jsonb → poi_kb fact sheet → none, 3-tier).
+    // A1 — resolved for every language in the room, deduped by language on the
+    // wire; `viewerLocale` only decides the legacy single-locale `content`
+    // field that pre-A1 clients still read.
     const viewerLocale = normalizeRoomLocale(body.locale, normalizeRoomLocale(booking.preferred_language));
-    const resolved_content =
-      eventType === 'arrived' ? resolveSpotContent(spot, viewerLocale) : { content: null, tier: 'none' as const };
+    const arrivalLocales =
+      eventType === 'arrived'
+        ? [...new Set([viewerLocale, ...targetLocales, ...(await getRoomTranslationTargets(supabase, room.id))])]
+        : [];
+    const byLocale = eventType === 'arrived' ? resolveSpotContentForLocales(spot, arrivalLocales) : {};
+    const pack = packSpotContent(byLocale);
+    const viewerResolved = byLocale[viewerLocale] ?? Object.values(byLocale)[0] ?? null;
+    const resolved_content = {
+      content: viewerResolved?.content ?? null,
+      tier: viewerResolved?.tier ?? ('none' as const),
+    };
 
     // W2.1 — the current spot's restroom/photo pins ride the arrival metadata
     // so the guest's Tier0 answer can attach a scoped map card with zero network.
@@ -158,6 +175,7 @@ export async function POST(
       ...(resolved_content.content
         ? { content: resolved_content.content, content_tier: resolved_content.tier }
         : {}),
+      ...(pack ?? {}),
       ...(facilityPins.length ? { facility_pins: facilityPins } : {}),
       ...eventPayload,
     };

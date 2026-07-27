@@ -3,13 +3,22 @@ import { createServerClient } from '@/lib/supabase';
 import { requestGate } from '@/lib/durable-rate-limit';
 import { ensureRoom, resolveRoomActor } from '@/lib/tour-room/access';
 import { recordRoomEvent } from '@/lib/tour-room/events';
-import { getGeneratedSpotContent, refCandidatesFor } from '@/lib/tour-room/generatedContent';
+import { getGeneratedSpotContentForLocales, refCandidatesFor } from '@/lib/tour-room/generatedContent';
 import { humanizePoiKey, resolveDaySchedule } from '@/lib/tour-room/dayPlan';
 import { renderNextLegLine, type NextLegMeta } from '@/lib/tour-room/eta';
 import { estimateNextLeg } from '@/lib/tour-room/eta.server';
 import { broadcastToRoom } from '@/lib/tour-room/realtime';
-import { normalizeRoomLocale, ROOM_LOCALES, CORE_TRANSLATION_LOCALES } from '@/lib/tour-room/snapshot';
-import { resolveSpotContent } from '@/lib/tour-room/spotContent';
+import {
+  getRoomTranslationTargets,
+  normalizeRoomLocale,
+  ROOM_LOCALES,
+  CORE_TRANSLATION_LOCALES,
+} from '@/lib/tour-room/snapshot';
+import {
+  packSpotContent,
+  resolveSpotContent,
+  resolveSpotContentForLocales,
+} from '@/lib/tour-room/spotContent';
 import { fetchArrivalFacilityPins } from '@/lib/tour-room/facilityPins.server';
 import { fetchArrivalVideoCard } from '@/lib/tour-room/poiVideos.server';
 import {
@@ -469,14 +478,22 @@ export async function POST(
         // No on-demand generation here — the bundle must send instantly; a
         // content-less stop still ships the meeting/follow/ticket lines and
         // guests can ask the concierge.
-        let content: {
+        // A1 — every language in THIS room (the bundle fans out per booking,
+        // so each room resolves its own set).
+        const bundleLocales = [
+          ...new Set([viewerLocale, ...(await getRoomTranslationTargets(supabase, room.id))]),
+        ];
+        const spotSource = { title: spot.title, content: spot.content, poi_key: spot.poi_key };
+        let byLocale = resolveSpotContentForLocales(spotSource, bundleLocales);
+        if (Object.keys(byLocale).length === 0) {
+          byLocale = await getGeneratedSpotContentForLocales(supabase, target.id, refs, bundleLocales);
+        }
+        const pack = packSpotContent(byLocale);
+        const viewerResolved = byLocale[viewerLocale] ?? Object.values(byLocale)[0] ?? null;
+        const content: {
           content: import('@/lib/tour-room/spotContent').SpotArrivalContent | null;
           tier: string;
-        } = resolveSpotContent({ title: spot.title, content: spot.content, poi_key: spot.poi_key }, viewerLocale);
-        if (!content.content) {
-          const generated = await getGeneratedSpotContent(supabase, target.id, refs, viewerLocale);
-          if (generated) content = { content: generated.content, tier: 'generated' };
-        }
+        } = { content: viewerResolved?.content ?? null, tier: viewerResolved?.tier ?? 'none' };
 
         const metadata = {
           kind: 'arrival_bundle',
@@ -500,6 +517,7 @@ export async function POST(
           ...(meetingTime && hasPin ? { meeting_lat: lat, meeting_lng: lng } : {}),
           ...(hasPin ? { parking_lat: lat, parking_lng: lng, pin_id: pinId } : {}),
           ...(content.content ? { content: content.content, content_tier: content.tier } : {}),
+          ...(pack ?? {}),
           ...(facilityPins.length ? { facility_pins: facilityPins } : {}),
           ...(videoCard ? { video_card: videoCard } : {}),
           ...(nextLeg ? { next_leg: nextLeg } : {}),

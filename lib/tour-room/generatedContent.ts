@@ -22,7 +22,7 @@ import { incrWindowCounted } from '@/lib/durable-rate-limit';
 import { chatCompletion } from '@/lib/ai/router';
 import type { RoomDbClient } from '@/lib/tour-room/access';
 import { ROOM_LOCALES, type RoomLocale } from '@/lib/tour-room/snapshot';
-import type { SpotArrivalContent } from '@/lib/tour-room/spotContent';
+import type { SpotArrivalContent, SpotContentByLocale } from '@/lib/tour-room/spotContent';
 
 export interface PlaceFacts {
   name?: string;
@@ -371,6 +371,52 @@ export async function getGeneratedSpotContent(
     return null;
   } catch {
     return null;
+  }
+}
+
+/**
+ * A1 — the same lookup, resolved for every locale in the room at once.
+ *
+ * One query instead of one per locale, and each entry carries the language its
+ * prose is genuinely in so the voice layer never speaks English through a
+ * French voice (see spotContent.ts `ResolvedSpotContent`).
+ */
+export async function getGeneratedSpotContentForLocales(
+  supabase: RoomDbClient,
+  bookingId: string,
+  refs: string[],
+  locales: readonly string[],
+): Promise<SpotContentByLocale> {
+  const byLocale: SpotContentByLocale = {};
+  if (refs.length === 0) return byLocale;
+  try {
+    const { data } = await supabase
+      .from('generated_spot_content')
+      .select('poi_ref, title, content_locales, status')
+      .eq('booking_id', bookingId)
+      .in('poi_ref', refs)
+      .eq('status', 'ready');
+    const rows = (data ?? []) as Array<{ poi_ref: string; title: string; content_locales: Record<string, SpotArrivalContent> }>;
+    // refs are ordered best-match-first; the first ref that has a row wins.
+    const row = refs.map((ref) => rows.find((r) => r.poi_ref === ref)).find(Boolean);
+    if (!row) return byLocale;
+
+    for (const raw of locales) {
+      if (!ROOM_LOCALES.includes(raw as RoomLocale)) continue;
+      const locale = raw as RoomLocale;
+      if (byLocale[locale]) continue;
+      const exact = row.content_locales?.[locale];
+      const content = exact ?? row.content_locales?.en;
+      if (!content || Object.keys(content).length === 0) continue;
+      byLocale[locale] = {
+        content: { name: row.title, ...content },
+        lang: exact ? locale : 'en',
+        tier: 'generated',
+      };
+    }
+    return byLocale;
+  } catch {
+    return byLocale;
   }
 }
 

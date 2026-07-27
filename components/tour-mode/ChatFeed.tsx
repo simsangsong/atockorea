@@ -82,7 +82,8 @@ import { buildFeedItems, type FeedItem } from '@/lib/tour-room/messageGroups';
 import { formatBubbleTime, formatDateSeparator } from '@/lib/tour-room/timeFormat';
 import { kstToday } from '@/lib/tour-room/time';
 import type { RoomMessage } from '@/hooks/useTourRoomChannel';
-import type { SpotArrivalContent } from '@/lib/tour-room/spotContent';
+import { pickSpotContent } from '@/lib/tour-room/spotContent';
+import { useTourRoomSettings } from '@/hooks/useTourRoomSettings';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 import type { TextScaleStep } from '@/hooks/useTourRoomSettings';
 
@@ -354,6 +355,13 @@ export default function ChatFeed({
   const items: FeedItem[] = useMemo(() => buildFeedItems(visible, viewerRole), [visible, viewerRole]);
   const todayKey = kstToday();
 
+  // A2 — arrival briefings speak under the SAME "read aloud" switch that
+  // already governs guide notices. Deliberately not a separate default-on
+  // preference: primeAudio() unlocks on the first tap anywhere in the room, so
+  // a default-on autoplay would have twenty phones on a bus talking at once.
+  const { settings: roomSettings } = useTourRoomSettings();
+  const speakArrivals = roomSettings.autoRead && viewerRole === 'customer';
+
   // Phase 2d — the id of my newest delivered bubble (the one that shows "Read").
   const myLastReadableId = useMemo(() => {
     for (let i = messages.length - 1; i >= 0; i -= 1) {
@@ -462,10 +470,13 @@ export default function ChatFeed({
           // T4.5 — geofence arrivals with resolved content render as the rich
           // briefing card; content-less arrivals fall through to the plain
           // system capsule (3-tier degradation, T4.3).
-          const arrivalContent =
+          // A1 — the briefing is now stored per language; pick the one THIS
+          // viewer reads (pre-A1 rows fall back to the single `content` blob).
+          const arrivalPick =
             message.metadata?.kind === 'spot_arrival'
-              ? (message.metadata.content as SpotArrivalContent | undefined)
-              : undefined;
+              ? pickSpotContent(message.metadata, viewerLocale)
+              : null;
+          const arrivalContent = arrivalPick?.content;
 
           const body = (() => {
             if (message.metadata?.kind === 'extra_ledger') {
@@ -493,6 +504,8 @@ export default function ChatFeed({
                     meta={message.metadata as unknown as ArrivalBundleMeta}
                     arrivedLine={text.split('\n')[0] ?? text}
                     locale={viewerLocale}
+                    auth={tts ? { ...tts, messageId: message.id } : null}
+                    autoPlay={isNew && speakArrivals}
                   />
                 </div>
               );
@@ -592,7 +605,13 @@ export default function ChatFeed({
                       messageText={displayText(message, viewerLocale, originals.has(message.id), preferredLocale)}
                       audioUrl={(message.metadata?.audio_url as string | null | undefined) ?? null}
                       locale={viewerLocale}
+                      lang={arrivalPick?.lang}
                       contentTier={(message.metadata?.content_tier as string | null | undefined) ?? null}
+                      auth={tts ? { ...tts, messageId: message.id } : null}
+                      // A2 — only the arrival that just landed speaks, and only
+                      // for guests: an operator console must never start talking
+                      // while its owner is driving.
+                      autoPlay={isNew && speakArrivals}
                     />
                   ) : null}
                 </div>

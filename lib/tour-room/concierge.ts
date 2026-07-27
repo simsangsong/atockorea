@@ -24,7 +24,7 @@
  */
 
 import { ROOM_LOCALES, type RoomLocale } from '@/lib/tour-room/snapshot';
-import type { SpotArrivalContent } from '@/lib/tour-room/spotContent';
+import { pickSpotContent, type SpotArrivalContent } from '@/lib/tour-room/spotContent';
 import type { RoomLifecycle } from '@/lib/tour-room/time';
 import { selectFacilityPins, type FacilityKind, type FacilityPin } from '@/lib/tour-room/facilityPins';
 
@@ -874,8 +874,13 @@ const EMPTY_ARRIVAL: ArrivalContext = { spotTitle: null, content: null, poiKey: 
  */
 const ARRIVAL_KINDS = new Set(['spot_arrival', 'arrival_bundle']);
 
-function arrivalFrom(metadata: Record<string, unknown>): ArrivalContext {
-  const content = metadata.content;
+function arrivalFrom(metadata: Record<string, unknown>, locale?: RoomLocale): ArrivalContext {
+  // A1 — Tier0 answers quote this briefing verbatim ("restrooms are by the
+  // main entrance"), so it must be the asker's language, not whichever one the
+  // arrival happened to be triggered in. `pickSpotContent` falls back to the
+  // legacy single-locale blob for rows posted before A1.
+  const picked = locale ? pickSpotContent(metadata, locale) : null;
+  const content = picked?.content ?? metadata.content;
   const rawPins = metadata.facility_pins;
   return {
     spotTitle: typeof metadata.spot_title === 'string' ? metadata.spot_title : null,
@@ -896,13 +901,13 @@ function arrivalFrom(metadata: Record<string, unknown>): ArrivalContext {
  * That still beats a null context — the approaching stop is the one the guest
  * is asking about.
  */
-export function latestArrivalContext(messages: MessageLike[]): ArrivalContext {
+export function latestArrivalContext(messages: MessageLike[], locale?: RoomLocale): ArrivalContext {
   let weak: ArrivalContext | null = null;
   for (let i = messages.length - 1; i >= 0; i -= 1) {
     const metadata = messages[i]?.metadata;
     if (!metadata || typeof metadata.kind !== 'string') continue;
-    if (ARRIVAL_KINDS.has(metadata.kind)) return arrivalFrom(metadata);
-    if (!weak && metadata.kind === 'approach_card') weak = arrivalFrom(metadata);
+    if (ARRIVAL_KINDS.has(metadata.kind)) return arrivalFrom(metadata, locale);
+    if (!weak && metadata.kind === 'approach_card') weak = arrivalFrom(metadata, locale);
   }
   return weak ?? EMPTY_ARRIVAL;
 }

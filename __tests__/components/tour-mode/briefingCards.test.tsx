@@ -26,6 +26,9 @@ import type { RoomMessage } from '@/hooks/useTourRoomChannel';
 
 jest.mock('@/lib/tour-room/tts', () => ({
   primeAudio: jest.fn(),
+  isAudioPrimed: jest.fn(() => false),
+  stopSpeaking: jest.fn(),
+  speakNarration: jest.fn(async () => 'device'),
   speakWithDevice: jest.fn(async () => true),
   speakMessage: jest.fn(async () => 'device'),
   TTS_LANG: { en: 'en-US', ko: 'ko-KR', ja: 'ja-JP', es: 'es-ES', zh: 'zh-CN' },

@@ -37,7 +37,10 @@ function fakeDb(config: FakeConfig = {}) {
         return chain;
       });
       chain.maybeSingle = jest.fn(async () => {
-        const key = `${filters.message_id}:${filters.locale}`;
+        // A2 — a message has more than one spoken track, so the cache key
+        // carries `part`; a narration lookup must never hit the body's row.
+        const part = (filters.part as string | undefined) ?? 'body';
+        const key = `${filters.message_id}:${filters.locale}${part === 'body' ? '' : `:${part}`}`;
         const path = config.cache?.[key];
         return { data: path ? { storage_path: path } : null, error: null };
       });
@@ -100,6 +103,40 @@ describe('ensureRoomTts', () => {
     const url = await ensureRoomTts(db, 'r1', { id: 'm2', source_text: '  ', translations: {} }, 'en');
     expect(url).toBeNull();
     expect(speechMock).not.toHaveBeenCalled();
+  });
+});
+
+describe('ensureRoomTts — narration track (A2)', () => {
+  it('speaks the supplied briefing, not the one-line message body', async () => {
+    const db = fakeDb();
+    const url = await ensureRoomTts(db, 'r1', MESSAGE, 'en', {
+      part: 'narration',
+      text: 'Haedong Yonggungsa. A seaside temple.',
+    });
+    expect(speechMock).toHaveBeenCalledWith('Haedong Yonggungsa. A seaside temple.', 'en');
+    expect(url).toContain('m1-en-narration.mp3');
+    expect(db.upserts[0]).toMatchObject({ message_id: 'm1', locale: 'en', part: 'narration' });
+  });
+
+  it('does not serve the body recording to a narration request', async () => {
+    // The whole point of `part`: the body row for this message already exists.
+    const db = fakeDb({ cache: { 'm1:en': 'tour-room-tts/r1/m1-en.mp3' } });
+    await ensureRoomTts(db, 'r1', MESSAGE, 'en', { part: 'narration', text: 'A seaside temple.' });
+    expect(speechMock).toHaveBeenCalledWith('A seaside temple.', 'en');
+  });
+
+  it('reuses a cached narration across every locale that shares the language', async () => {
+    const db = fakeDb({ cache: { 'm1:en:narration': 'tour-room-tts/r1/m1-en-narration.mp3' } });
+    const url = await ensureRoomTts(db, 'r1', MESSAGE, 'en', { part: 'narration', text: 'ignored' });
+    expect(url).toBe('https://cdn.test/tour-room-tts/r1/m1-en-narration.mp3');
+    expect(speechMock).not.toHaveBeenCalled();
+  });
+
+  it('keeps the body track on its original path (no cache invalidation)', async () => {
+    const db = fakeDb();
+    await ensureRoomTts(db, 'r1', MESSAGE, 'ja');
+    expect(db.uploads).toEqual(['tour-audio/tour-room-tts/r1/m1-ja.mp3']);
+    expect(db.upserts[0]).toMatchObject({ part: 'body' });
   });
 });
 

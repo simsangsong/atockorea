@@ -81,7 +81,7 @@ export default function ConciergePanel({
 
   const ctx: Tier0Context = useMemo(() => {
     const nowMs = Date.now();
-    const arrival = latestArrivalContext(messages);
+    const arrival = latestArrivalContext(messages, locale);
     const notice = activeNotice(messages, tourDate, nowMs);
     return {
       spotTitle: arrival.spotTitle,

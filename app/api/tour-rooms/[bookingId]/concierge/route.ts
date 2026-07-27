@@ -300,7 +300,7 @@ export async function POST(
     const feed = ((recentMessages ?? []) as unknown as RoomMessage[]).reverse();
 
     const nowMs = Date.now();
-    const arrival = latestArrivalContext(feed);
+    const arrival = latestArrivalContext(feed, locale);
     const notice = activeNotice(feed, booking.tour_date, nowMs);
     const lifecycle = roomLifecycle(booking.tour_date, nowMs);
     const ctx: Tier0Context = {

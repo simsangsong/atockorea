@@ -19,7 +19,7 @@ jest.mock('@/lib/durable-rate-limit', () => ({ requestGate: jest.fn(), clientIpK
 jest.mock('@/lib/tour-room/events', () => ({ recordRoomEvent: jest.fn(async () => ({ inserted: true, event: null })) }));
 jest.mock('@/lib/tour-room/realtime', () => ({ broadcastToRoom: jest.fn(async () => ({ ok: true })) }));
 jest.mock('@/lib/tour-room/generatedContent', () => ({
-  getGeneratedSpotContent: jest.fn(async () => null),
+  getGeneratedSpotContentForLocales: jest.fn(async () => ({})),
   refCandidatesFor: jest.fn(() => []),
 }));
 
@@ -28,7 +28,7 @@ const createServerClientMock = createServerClient as jest.Mock;
 const requestGateMock = requestGate as jest.Mock;
 const recordRoomEventMock = recordRoomEvent as jest.Mock;
 const broadcastMock = jest.requireMock('@/lib/tour-room/realtime').broadcastToRoom as jest.Mock;
-const generatedMock = jest.requireMock('@/lib/tour-room/generatedContent').getGeneratedSpotContent as jest.Mock;
+const generatedMock = jest.requireMock('@/lib/tour-room/generatedContent').getGeneratedSpotContentForLocales as jest.Mock;
 
 const BOOKING = {
   id: 'b1',
@@ -138,7 +138,7 @@ beforeEach(() => {
   getAuthUserMock.mockResolvedValue(null);
   requestGateMock.mockResolvedValue({ allowed: true, retryAfterMs: 0 });
   recordRoomEventMock.mockResolvedValue({ inserted: true, event: null });
-  generatedMock.mockResolvedValue(null);
+  generatedMock.mockResolvedValue({});
 });
 
 describe('POST /approach — auth + validation', () => {
@@ -318,7 +318,9 @@ describe('POST /approach — degradation', () => {
   it('the generated tier fills in when curated and poi_kb are empty', async () => {
     const db = fakeDb();
     createServerClientMock.mockReturnValue(db);
-    generatedMock.mockResolvedValue({ content: { name: 'Seongsan', description: 'Generated blurb.' } });
+    generatedMock.mockResolvedValue({
+      en: { content: { name: 'Seongsan', description: 'Generated blurb.' }, lang: 'en', tier: 'generated' },
+    });
     const res = await approachPOST(fakeReq(customerSession(), validBody()), params());
     expect(res.status).toBe(201);
     const meta = db.inserts.tour_room_messages[0].metadata as Record<string, unknown>;
