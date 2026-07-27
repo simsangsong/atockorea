@@ -9,10 +9,10 @@
  */
 
 import { useState } from 'react';
+import { TOUR_TYPE_PRESETS } from '@/lib/ops/guides/tourTypes';
 import { Loader2, Plus } from 'lucide-react';
 import type { RateRow, ResolvedRateRow } from '../_types';
 
-const TOUR_TYPE_PRESETS = ['private', 'bus', 'cruise', 'walking'];
 
 const inputCls =
   'h-11 w-full rounded-xl border border-slate-200 bg-white px-3 text-[14px] text-slate-900 placeholder:text-slate-400 focus:border-slate-400 focus:outline-none';

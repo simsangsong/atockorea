@@ -16,10 +16,10 @@
  */
 
 import { useState } from 'react';
+import { TOUR_TYPE_PRESETS } from '@/lib/ops/guides/tourTypes';
 import { AlertTriangle, CalendarDays, Check, Clock, Loader2, Mail, Plus, ShieldAlert, Trash2, Undo2, X } from 'lucide-react';
 import type { AssignmentDraft, AssignmentListRow, ConflictItem, PendingOverride } from '../_types';
 
-const TOUR_TYPE_PRESETS = ['private', 'bus', 'cruise', 'walking'];
 
 const inputCls =
   'h-11 w-full rounded-xl border border-slate-200 bg-white px-3 text-[14px] text-slate-900 placeholder:text-slate-400 focus:border-slate-400 focus:outline-none';
