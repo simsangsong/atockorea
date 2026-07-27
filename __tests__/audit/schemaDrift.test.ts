@@ -32,28 +32,11 @@ const SNAPSHOT = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'db-tables.j
  * 쓰거나, 그 코드를 지워라. 목록은 줄어드는 방향으로만 움직여야 한다.
  */
 const KNOWN_MISSING: Record<string, string> = {
-  // ── OTA 파서 학습 루프 (DE5). 저장소가 없어 실패를 모으기만 하고 못 배운다.
-  ops_parse_observations: 'DE5 — recordObservation 이 에러를 삼켜 조용히 전부 실패해 왔다',
-  ops_parse_metrics: 'DE5 — 퍼널 계측이 저장되지 않는다',
-  ops_parse_format_templates: 'DE5 — 포맷 템플릿 저장소 없음',
-  ops_parse_learning_health: 'DE5 — 뷰 부재. health.ts 는 null 을 "측정 불가"로 처리(설계된 폴백)',
-  // ── 픽업 정규화. OTA 픽업지 표기를 표준 지점으로 모으는 사전이 통째로 없다.
-  ops_pickup_locations: 'DE5 — 픽업 표준 지점 사전 부재',
-  ops_pickup_aliases: 'DE5 — 픽업 표기 별칭 부재',
-  ops_pickup_learning_queue: 'DE5 — 픽업 학습 큐 부재(queuePickupProposal 도 best-effort 삼킴)',
-  // ── 크루즈. 선박·기항 데이터가 앉을 자리가 없다(크루즈 트랙 진행 중).
-  ops_cruise_ships: '크루즈 트랙 — 선박 마스터 부재',
-  ops_cruise_ship_aliases: '크루즈 트랙 — 선박명 별칭 부재',
-  ops_cruise_port_calls: '크루즈 트랙 — 기항 스케줄 부재(파서 백스톱이 이걸 본다)',
-  // ── 사이트 설정 / CMS. 읽기는 빈 값으로 조용히 떨어지고 저장은 실패한다.
-  site_settings: '🔴 CMS 오버라이드·홈 카드 이미지·시스템 설정이 저장되지 않는다',
-  // ── 애널리틱스 롤업.
-  analytics_events_daily: '어드민 분석 롤업 테이블 부재',
-  analytics_sessions_daily: '어드민 분석 롤업 테이블 부재',
-  // ── 옛 마켓플레이스 계층(TIER 3). 테이블을 만들 게 아니라 코드를 지울 후보.
-  notifications: 'TIER 3 잔해 — 표면 없음. 만들지 말고 지울 대상',
-  email_replies: '어드민 메일 답장 기록이 남지 않는다',
-  error_logs: '클라이언트 에러 로그가 저장되지 않는다',
+  // 2026-07-28 기준 비어 있다 — 발견된 16건은 전부 해소됐다.
+  //   · 11건은 실제로 없어서 만들었다(site_settings · 픽업 3 · 파서 4 · 크루즈 3 · email_replies · notifications)
+  //   · analytics_events_daily / analytics_sessions_daily 는 **머티리얼라이즈드 뷰**라
+  //     원래 있었는데 스냅샷 쿼리가 pg_matviews 를 안 봐서 없는 것으로 오판했다
+  //   · error_logs 는 insert 블록이 통째로 주석 안이라 참조 자체가 아니었다
 };
 
 function sourceFiles(): string[] {
@@ -76,8 +59,13 @@ function referencedTables(): Map<string, string[]> {
   const found = new Map<string, string[]>();
   for (const f of sourceFiles()) {
     const raw = fs.readFileSync(path.join(ROOT, f), 'utf8');
-    // 버킷은 테이블이 아니다 — 지우고 나서 본다.
-    const body = raw.replace(/storage\s*\.\s*from\(\s*['"][a-z0-9_-]+['"]\s*\)/g, '');
+    const body = raw
+      // 주석 안의 코드는 실행되지 않는다. `error_logs` 는 insert 블록 전체가
+      // /* */ 로 감싸져 있는데도 "라이브에 없는 테이블"로 잡혔다.
+      .replace(/\/\*[\s\S]*?\*\//g, '')
+      .replace(/^\s*\/\/.*$/gm, '')
+      // 버킷은 테이블이 아니다 — `avatars` 가 이렇게 잡혔다.
+      .replace(/storage\s*\.\s*from\(\s*['"][a-z0-9_-]+['"]\s*\)/g, '');
     for (const m of body.matchAll(/(?<!storage)\.from\(\s*['"]([a-z0-9_]+)['"]\s*\)/g)) {
       const list = found.get(m[1]) ?? [];
       if (!list.includes(f)) list.push(f);
