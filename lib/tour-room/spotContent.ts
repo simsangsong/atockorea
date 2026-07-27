@@ -283,7 +283,7 @@ export function resolveSpotContent(
 /** Mirrors MAX_TTS_TEXT_CHARS in tts-server.ts (client-safe copy). */
 export const MAX_SPOKEN_CHARS = 1200;
 
-export type SpotContentTier = 'curated' | 'poi_kb' | 'generated' | 'none';
+export type SpotContentTier = 'curated' | 'match_poi' | 'poi_kb' | 'generated' | 'none';
 
 /** One locale's briefing + the language its prose is actually written in. */
 export interface ResolvedSpotContent {

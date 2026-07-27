@@ -22,6 +22,7 @@ import {
   resolveSpotContentForLocales,
 } from '../lib/tour-room/spotContent';
 import { ROOM_LOCALES, type RoomLocale } from '../lib/tour-room/snapshot';
+import { withMatchPoiContent } from '../lib/tour-room/poiContent.server';
 
 config({ path: '.env.local' });
 config({ path: '../../../.env.local' });
@@ -90,6 +91,40 @@ async function main(): Promise<void> {
     `\n${spots.length} spots · ${silent} with no content · largest wire payload ${wireMax.toFixed(1)} KB · ${problems} problems`,
   );
   console.log(`(room locales checked: ${ROOM.join(', ')} of ${ROOM_LOCALES.length} supported)`);
+
+  // A3 — coverage across the POI master, i.e. every stop a private charter can
+  // pick. This is the number that decides whether a driver-only tour is guided
+  // or silent, and it is the reason the match_pois tier exists.
+  const { data: allPois } = await db.from('match_pois').select('poi_key').order('poi_key');
+  const keys = ((allPois ?? []) as Array<{ poi_key: string }>).map((r) => r.poi_key);
+  const byTier: Record<string, number> = {};
+  const spoken: Record<string, number> = {};
+  const native: Record<string, number> = {};
+  for (const key of keys) {
+    const base = resolveSpotContentForLocales({ title: key, content: null, poi_key: key }, ROOM);
+    const merged = await withMatchPoiContent(db as never, key, ROOM, base);
+    const tier = merged.en?.tier ?? merged[ROOM[0]]?.tier ?? 'none';
+    byTier[tier] = (byTier[tier] ?? 0) + 1;
+    for (const locale of ROOM) {
+      const entry = merged[locale];
+      if (!composeSpotNarration(entry?.content)) continue;
+      spoken[locale] = (spoken[locale] ?? 0) + 1;
+      // Falling back to English still says something, but it is NOT the guest's
+      // language — counting the two together would flatter the number.
+      if (entry?.lang === locale) native[locale] = (native[locale] ?? 0) + 1;
+    }
+  }
+  console.log(`\n── POI master coverage (${keys.length} stops a charter can pick) ──`);
+  console.log(`  tier: ${JSON.stringify(byTier)}`);
+  for (const locale of ROOM) {
+    const n = spoken[locale] ?? 0;
+    const own = native[locale] ?? 0;
+    const pct = (v: number) => `${Math.round((v / keys.length) * 100)}%`;
+    console.log(
+      `  [${locale}] speaks at ${n}/${keys.length} stops (${pct(n)}) — ${own} in ${locale} (${pct(own)}), ${n - own} falling back to English`,
+    );
+  }
+
   if (problems > 0) process.exit(1);
 }
 

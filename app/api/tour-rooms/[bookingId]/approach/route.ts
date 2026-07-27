@@ -10,6 +10,7 @@ import { broadcastToRoom } from '@/lib/tour-room/realtime';
 import { getRoomTranslationTargets, normalizeRoomLocale } from '@/lib/tour-room/snapshot';
 import { packSpotContent, resolveSpotContentForLocales } from '@/lib/tour-room/spotContent';
 import { fetchArrivalVideoCard } from '@/lib/tour-room/poiVideos.server';
+import { withMatchPoiContent } from '@/lib/tour-room/poiContent.server';
 import { kstToday } from '@/lib/tour-room/time';
 import { maybePostDiningForStop, runAfterResponse } from '@/lib/ops/dining/post.server';
 import {
@@ -226,6 +227,8 @@ export async function POST(
       ];
       const spotSource = { title: spot.title, content: spot.content, poi_key: spot.poi_key };
       let byLocale = resolveSpotContentForLocales(spotSource, previewLocales);
+      // A3 — the POI master is where the teaser prose actually lives.
+      byLocale = await withMatchPoiContent(supabase, spot.poi_key, previewLocales, byLocale);
       if (Object.keys(byLocale).length === 0) {
         byLocale = await getGeneratedSpotContentForLocales(
           supabase,

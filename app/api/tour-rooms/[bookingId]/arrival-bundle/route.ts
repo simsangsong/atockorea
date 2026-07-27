@@ -21,6 +21,7 @@ import {
 } from '@/lib/tour-room/spotContent';
 import { fetchArrivalFacilityPins } from '@/lib/tour-room/facilityPins.server';
 import { fetchArrivalVideoCard } from '@/lib/tour-room/poiVideos.server';
+import { withMatchPoiContent } from '@/lib/tour-room/poiContent.server';
 import {
   arrivalProfileFromRow,
   composeArrivalBundleText,
@@ -485,6 +486,8 @@ export async function POST(
         ];
         const spotSource = { title: spot.title, content: spot.content, poi_key: spot.poi_key };
         let byLocale = resolveSpotContentForLocales(spotSource, bundleLocales);
+        // A3 — POI-master story on top of whatever facts the tiers found.
+        byLocale = await withMatchPoiContent(supabase, spot.poi_key, bundleLocales, byLocale);
         if (Object.keys(byLocale).length === 0) {
           byLocale = await getGeneratedSpotContentForLocales(supabase, target.id, refs, bundleLocales);
         }

@@ -17,6 +17,7 @@ import {
   resolveSpotContentForLocales,
 } from '@/lib/tour-room/spotContent';
 import { fetchArrivalFacilityPins } from '@/lib/tour-room/facilityPins.server';
+import { withMatchPoiContent } from '@/lib/tour-room/poiContent.server';
 import { fetchArrivalVideoCard } from '@/lib/tour-room/poiVideos.server';
 
 export const dynamic = 'force-dynamic';
@@ -120,6 +121,8 @@ export async function POST(
     const roomLocales = [...new Set([viewerLocale, ...(await getRoomTranslationTargets(supabase, room.id))])];
     const spotSource = { title: spot.title, content: spot.content, poi_key: spot.poi_key };
     let byLocale = resolveSpotContentForLocales(spotSource, roomLocales);
+    // A3 — layer the POI master's story over the fact sheet (curated stays king).
+    byLocale = await withMatchPoiContent(supabase, spot.poi_key, roomLocales, byLocale);
 
     // P-D16 — the 'generated' tier sits between poi_kb and the honest null:
     // a booking-scoped, critic-verified mini-guide from the auto pipeline.
