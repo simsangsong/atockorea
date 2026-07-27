@@ -18,7 +18,19 @@ import path from 'node:path';
 import { findIncompleteLocaleBlocks } from '@/lib/audit/localeBlocks';
 import { ROOM_LOCALES } from '@/lib/tour-room/snapshot';
 
-const SCANNED_DIRS = ['components/tour-mode', 'components/tour-ops', 'lib/tour-room', 'lib/ops'];
+/**
+ * 🔴 `app/api/tour-rooms` 가 처음엔 빠져 있었다 — **이 게이트를 만들게 한 결함이
+ * 정확히 거기 있었는데도**(vision-ask 의 5개짜리 LOCALE_NAME). 병렬 세션이
+ * 10번째 로케일 zh-TW 를 추가했을 때 컴포넌트 카피는 전부 채웠지만 그 라우트는
+ * 또 빠졌고, 게이트는 초록이었다. 발견 지점을 스캔하지 않는 가드는 가드가 아니다.
+ */
+const SCANNED_DIRS = [
+  'components/tour-mode',
+  'components/tour-ops',
+  'lib/tour-room',
+  'lib/ops',
+  'app/api/tour-rooms',
+];
 
 /**
  * 의도적 부분집합만 여기 적는다. **이유 없이 추가 금지** — 이 목록이 늘어나면

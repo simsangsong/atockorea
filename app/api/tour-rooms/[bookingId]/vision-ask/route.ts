@@ -34,6 +34,7 @@ const LOCALE_NAME: Record<string, string> = {
   ja: 'Japanese',
   es: 'Spanish',
   zh: 'Simplified Chinese',
+  'zh-TW': 'Traditional Chinese',
   fr: 'French',
   de: 'German',
   ru: 'Russian',

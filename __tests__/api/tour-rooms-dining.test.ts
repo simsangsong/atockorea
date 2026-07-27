@@ -15,6 +15,7 @@ import { recordRoomEvent } from '@/lib/tour-room/events';
 import { signRoomSession } from '@/lib/tour-room/access';
 import { recommendDining, recordShown } from '@/lib/ops/dining/recommend.server';
 import type { DiningCardMeta } from '@/lib/ops/dining/card';
+import { ROOM_LOCALES } from '@/lib/tour-room/snapshot';
 
 jest.mock('@/lib/auth', () => ({ getAuthUser: jest.fn() }));
 jest.mock('@/lib/supabase', () => ({ createServerClient: jest.fn() }));
@@ -256,7 +257,7 @@ describe('POST /dining — operator post: true', () => {
     expect(meta.fanout).toBeUndefined();
 
     const translations = row.translations as Record<string, string>;
-    expect(Object.keys(translations).sort()).toEqual(['de', 'en', 'es', 'fr', 'it', 'ja', 'ko', 'ru', 'zh']);
+    expect(Object.keys(translations).sort()).toEqual([...ROOM_LOCALES].sort());
     expect(translations.ko).toContain('Seongsan Ilchulbong');
 
     expect(recordRoomEventMock).toHaveBeenCalledWith(

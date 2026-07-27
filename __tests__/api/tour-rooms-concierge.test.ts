@@ -15,6 +15,7 @@ import { chatCompletion } from '@/lib/ai/router';
 import { broadcastToRoom } from '@/lib/tour-room/realtime';
 import { logChatTurn } from '@/lib/support/chat-logger';
 import { signRoomSession } from '@/lib/tour-room/access';
+import { ROOM_LOCALES } from '@/lib/tour-room/snapshot';
 
 jest.mock('@/lib/auth', () => ({ getAuthUser: jest.fn(), requireAdmin: jest.fn() }));
 jest.mock('@/lib/supabase', () => ({ createServerClient: jest.fn() }));
@@ -179,7 +180,7 @@ describe('POST /api/tour-rooms/[bookingId]/concierge', () => {
     expect(message.metadata).toMatchObject({ kind: 'concierge_escalation', asked_by_role: 'customer' });
     expect((message.metadata as { question: string }).question).toContain('refund');
     // Pre-translated 5-locale capsule, question verbatim.
-    expect(Object.keys(message.translations as object).sort()).toEqual(['de', 'en', 'es', 'fr', 'it', 'ja', 'ko', 'ru', 'zh']);
+    expect(Object.keys(message.translations as object).sort()).toEqual([...ROOM_LOCALES].sort());
     expect(String(message.source_text)).toContain('Alex');
     expect(broadcastMock).toHaveBeenCalledTimes(1);
     expect(chatCompletionMock).not.toHaveBeenCalled();
