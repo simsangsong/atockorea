@@ -482,6 +482,15 @@ export function composeSpotNarration(content: SpotArrivalContent | null | undefi
  * formatting before anything is said out loud.
  */
 export function speechSafe(raw: string): string {
+  return stripMarkdown(raw);
+}
+
+/**
+ * Shared markdown cleanup. Used by the voice (asterisks get read aloud) and by
+ * short display strings like the highlight chips, where emphasis inside a
+ * two-line pill is noise rather than hierarchy.
+ */
+export function stripMarkdown(raw: string): string {
   return raw
     .replace(/!\[[^\]]*\]\([^)]*\)/g, '')      // images say nothing
     .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')   // links: keep the words, drop the URL
@@ -492,6 +501,39 @@ export function speechSafe(raw: string): string {
     .replace(/^\s{0,3}[-*+]\s+/gm, '')
     .replace(/\s+/g, ' ')
     .trim();
+}
+
+/**
+ * Display counterpart to `speechSafe`: the briefings are authored in markdown
+ * (`**bold**`), and the card renders `content.description` as plain text, so a
+ * guest reads the asterisks. That was invisible while only the 11 curated spots
+ * showed a description; wiring the POI master took it to 119.
+ *
+ * Emphasis is kept as emphasis rather than stripped — the authors bolded the
+ * place name and the key facts on purpose — and everything else markdown-ish is
+ * cleaned the same way the voice cleans it.
+ */
+export interface EmphasisPart {
+  text: string;
+  bold: boolean;
+}
+
+export function splitEmphasis(raw: string | null | undefined): EmphasisPart[] {
+  if (!raw) return [];
+  const parts: EmphasisPart[] = [];
+  // Only **strong** is treated as emphasis. Single `*`/`_` appear inside real
+  // prose often enough (measurements, transliterations) that treating them as
+  // markup does more damage than it repairs.
+  // [\s\S] rather than the `s` flag — the tsconfig target predates dotAll.
+  const pattern = /\*\*([\s\S]+?)\*\*/g;
+  let last = 0;
+  for (let match = pattern.exec(raw); match; match = pattern.exec(raw)) {
+    if (match.index > last) parts.push({ text: raw.slice(last, match.index), bold: false });
+    parts.push({ text: match[1], bold: true });
+    last = match.index + match[0].length;
+  }
+  if (last < raw.length) parts.push({ text: raw.slice(last), bold: false });
+  return parts.filter((part) => part.text.length > 0);
 }
 
 /**
