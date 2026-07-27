@@ -20,6 +20,7 @@ import Avatar from '@/components/tour-mode/Avatar';
 import Lightbox from '@/components/tour-mode/Lightbox';
 import type { DrawerAttachmentItem, DrawerLinkItem } from '@/lib/tour-room/drawer';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
+import { useInstallPrompt } from '@/hooks/useInstallPrompt';
 import { useTourRoomSettings } from '@/hooks/useTourRoomSettings';
 import {
   IconClose,
@@ -57,6 +58,8 @@ const COPY: Record<
     close: string;
     /** C-D1 — the theme control moved out of the header into this tile. */
     display: { light: string; dark: string; system: string };
+    /** T-D2 — the PWA install tile (hidden when no install path exists). */
+    install: string;
     roles: Record<string, string>;
   }
 > = {
@@ -74,6 +77,7 @@ const COPY: Record<
     emergency: 'Emergency',
     close: 'Close',
     display: { light: 'Light', dark: 'Dark', system: 'Auto' },
+    install: 'Install app',
     roles: { guide: 'Guide', driver: 'Driver', admin: 'AtoC Korea', customer: 'Traveller' },
   },
   ko: {
@@ -90,6 +94,7 @@ const COPY: Record<
     emergency: '긴급',
     close: '닫기',
     display: { light: '라이트', dark: '다크', system: '자동' },
+    install: '앱 설치',
     roles: { guide: '가이드', driver: '기사님', admin: 'AtoC Korea', customer: '여행자' },
   },
   ja: {
@@ -106,6 +111,7 @@ const COPY: Record<
     emergency: '緊急',
     close: '閉じる',
     display: { light: 'ライト', dark: 'ダーク', system: '自動' },
+    install: 'アプリ追加',
     roles: { guide: 'ガイド', driver: 'ドライバー', admin: 'AtoC Korea', customer: '旅行者' },
   },
   es: {
@@ -122,6 +128,7 @@ const COPY: Record<
     emergency: 'Emergencia',
     close: 'Cerrar',
     display: { light: 'Claro', dark: 'Oscuro', system: 'Auto' },
+    install: 'Instalar app',
     roles: { guide: 'Guía', driver: 'Conductor', admin: 'AtoC Korea', customer: 'Viajero' },
   },
   zh: {
@@ -138,6 +145,7 @@ const COPY: Record<
     emergency: '紧急',
     close: '关闭',
     display: { light: '浅色', dark: '深色', system: '自动' },
+    install: '安装应用',
     roles: { guide: '导游', driver: '司机', admin: 'AtoC Korea', customer: '旅客' },
   },
 };
@@ -181,6 +189,10 @@ export default function RoomDrawer({
   // is the quick control now (Settings tab keeps the full segmented one).
   // Cycling must NOT close the drawer: the user is previewing looks.
   const { settings: deviceSettings, update: updateSettings } = useTourRoomSettings();
+  // T-D2 — install tile: native mode prompts in place (dialog overlays the
+  // drawer); iOS mode routes to Settings, where the install card (top zone)
+  // carries the share-sheet steps.
+  const { mode: installMode, promptInstall } = useInstallPrompt();
   const themeCycle = { light: 'dark', dark: 'system', system: 'light' } as const;
   const ThemeIcon =
     deviceSettings.theme === 'light'
@@ -274,7 +286,7 @@ export default function RoomDrawer({
             type="button"
             onClick={onClose}
             aria-label={copy.close}
-            className="flex h-11 w-9 items-center justify-center rounded-full text-[var(--tr-ink-2)] active:bg-[var(--tr-surface-2)]"
+            className="flex h-11 w-10 items-center justify-center rounded-full text-[var(--tr-ink-2)] active:bg-[var(--tr-surface-2)]"
             data-testid="drawer-close"
           >
             <IconClose size={TR_ICON.nav} strokeWidth={TR_STROKE.default} aria-hidden />
@@ -421,6 +433,28 @@ export default function RoomDrawer({
                   {copy.display[deviceSettings.theme]}
                 </span>
               </button>
+              {installMode !== 'unavailable' && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    if (installMode === 'native') {
+                      void promptInstall();
+                    } else {
+                      onClose();
+                      onSelectTab('settings');
+                    }
+                  }}
+                  data-testid="drawer-install-tile"
+                  className="tr-home-card tr-press flex min-h-[68px] flex-col items-center justify-center gap-1.5 px-1 py-2"
+                >
+                  <span className="tr-chip tr-chip--accent relative flex h-10 w-10 items-center justify-center !rounded-[13px]">
+                    <IconInstall size={TR_ICON.action} strokeWidth={TR_STROKE.default} aria-hidden />
+                  </span>
+                  <span className="tr-meta text-cjk-safe max-w-full font-medium text-[var(--tr-ink)]">
+                    {copy.install}
+                  </span>
+                </button>
+              )}
             </div>
           </section>
 

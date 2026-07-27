@@ -7,6 +7,12 @@
  * variables — this dial makes ANY wall-clock time (1-minute steps) one
  * thumb-flick away. Two scroll-snap columns, 44px rows, no external deps.
  *
+ * T-D3 (docs/pwa-ui-theme-design-master-plan-2026-07-27.md): the dial is
+ * deliberately COMPACT — 3 visible rows on a ≤248px column pair, only the
+ * committed row at display size. The first cut (5 full-width rows of bold
+ * numbers) read as a wall of digits ("커도 너무 큰데", owner review). Row
+ * height stays 44px — the touch-target floor is inviolable.
+ *
  * `value` is an HH:MM string; an empty/invalid value shows a neutral resting
  * position (`restAt`) WITHOUT committing it — the first scroll or tap commits.
  * That keeps the arrival sheet's "no default meeting time" rule intact
@@ -16,7 +22,7 @@
 import { useCallback, useEffect, useRef } from 'react';
 
 const ITEM_H = 44; // px per row — also the tap-target floor
-const VISIBLE = 5; // odd → one centered selection row
+const VISIBLE = 3; // odd → one centered selection row (T-D3 compact dial)
 
 const HOURS = Array.from({ length: 24 }, (_, i) => i);
 const MINUTES = Array.from({ length: 60 }, (_, i) => i);
@@ -100,7 +106,7 @@ function WheelColumn({
           className={`flex w-full snap-center items-center justify-center tabular-nums transition-colors duration-[var(--tr-dur-fast)] ${
             committed && position === v
               ? 'tr-display text-[var(--tr-ink)]'
-              : 'tr-body-lg font-semibold text-[var(--tr-ink-3)]'
+              : 'tr-body font-medium text-[var(--tr-ink-3)]'
           }`}
           style={{ height: ITEM_H }}
         >
@@ -136,27 +142,29 @@ export default function TimeWheel({
 
   return (
     <div className="relative rounded-2xl bg-[var(--tr-surface)]" data-testid={testId}>
-      {/* center selection band */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-x-3 top-1/2 -translate-y-1/2 rounded-xl bg-[var(--tr-surface-2)]"
-        style={{ height: ITEM_H }}
-      />
       {/* fade masks so the wheel reads as a dial, not a list */}
       <div
-        className="pointer-events-none absolute inset-x-0 top-0 z-10 h-10 rounded-t-2xl bg-gradient-to-b from-[var(--tr-surface)] to-transparent"
+        className="pointer-events-none absolute inset-x-0 top-0 z-10 h-8 rounded-t-2xl bg-gradient-to-b from-[var(--tr-surface)] to-transparent"
         aria-hidden
       />
       <div
-        className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-10 rounded-b-2xl bg-gradient-to-t from-[var(--tr-surface)] to-transparent"
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-8 rounded-b-2xl bg-gradient-to-t from-[var(--tr-surface)] to-transparent"
         aria-hidden
       />
-      <div className="relative flex items-stretch px-3">
-        <WheelColumn values={HOURS} position={hour} committed={committed} onPick={pickHour} />
-        <div className="tr-display flex items-center text-[var(--tr-ink-2)]" aria-hidden>
-          :
+      <div className="relative mx-auto w-full max-w-[248px]">
+        {/* center selection band — hugs the dial, not the card */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-1 top-1/2 -translate-y-1/2 rounded-xl bg-[var(--tr-surface-2)]"
+          style={{ height: ITEM_H }}
+        />
+        <div className="relative flex items-stretch px-3">
+          <WheelColumn values={HOURS} position={hour} committed={committed} onPick={pickHour} />
+          <div className="tr-title flex items-center font-bold text-[var(--tr-ink-2)]" aria-hidden>
+            :
+          </div>
+          <WheelColumn values={MINUTES} position={minute} committed={committed} onPick={pickMinute} />
         </div>
-        <WheelColumn values={MINUTES} position={minute} committed={committed} onPick={pickMinute} />
       </div>
     </div>
   );

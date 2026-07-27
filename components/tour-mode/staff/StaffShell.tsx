@@ -23,6 +23,7 @@
  */
 
 import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react';
+import SkinScenery from '@/components/tour-mode/scenery/SkinScenery';
 import { useKeyboardOpen } from '@/components/tour-mode/useKeyboardOpen';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { useTourRoomSettings, textScaleFactor } from '@/hooks/useTourRoomSettings';
@@ -172,7 +173,10 @@ export default function StaffShell({
 
         {/* ---- Tab panels -------------------------------------------- */}
         <div className="relative flex min-h-0 flex-1 flex-col">
-          <div ref={panelRef} className="mx-auto flex min-h-0 w-full flex-1 flex-col overflow-y-auto px-4 pb-6 pt-3">
+          {/* T-D5 — skin scenery behind the staff panels too (same wallpaper
+              grammar as the guest room; contrast skin renders nothing). */}
+          <SkinScenery skin={deviceSettings.skin} dark={theme === 'dark'} />
+          <div ref={panelRef} className="relative z-[1] mx-auto flex min-h-0 w-full flex-1 flex-col overflow-y-auto px-4 pb-6 pt-3">
             {tab === 'chat' && (
               <div className="tr-anim-panel-in" data-testid="staff-tab-chat">
                 {chat}

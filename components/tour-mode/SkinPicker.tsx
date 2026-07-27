@@ -25,6 +25,10 @@ const SKIN_NAME: Record<RoomLocale, Record<TourSkin, string>> = {
     winter: 'Winter',
     forest: 'Forest',
     meadow: 'Meadow',
+    jeju: 'Jeju',
+    seoul: 'Seoul',
+    busan: 'Busan',
+    blossom: 'Blossom',
     contrast: 'High contrast',
   },
   ko: {
@@ -33,6 +37,10 @@ const SKIN_NAME: Record<RoomLocale, Record<TourSkin, string>> = {
     winter: '겨울',
     forest: '숲',
     meadow: '들녘',
+    jeju: '제주',
+    seoul: '서울',
+    busan: '부산',
+    blossom: '벚꽃',
     contrast: '고대비',
   },
   ja: {
@@ -41,6 +49,10 @@ const SKIN_NAME: Record<RoomLocale, Record<TourSkin, string>> = {
     winter: 'ウィンター',
     forest: 'フォレスト',
     meadow: 'メドウ',
+    jeju: '済州',
+    seoul: 'ソウル',
+    busan: '釜山',
+    blossom: 'さくら',
     contrast: 'ハイコントラスト',
   },
   es: {
@@ -49,6 +61,10 @@ const SKIN_NAME: Record<RoomLocale, Record<TourSkin, string>> = {
     winter: 'Invierno',
     forest: 'Bosque',
     meadow: 'Pradera',
+    jeju: 'Jeju',
+    seoul: 'Seúl',
+    busan: 'Busan',
+    blossom: 'Cerezo',
     contrast: 'Alto contraste',
   },
   zh: {
@@ -57,17 +73,27 @@ const SKIN_NAME: Record<RoomLocale, Record<TourSkin, string>> = {
     winter: '冬日',
     forest: '森林',
     meadow: '草原',
+    jeju: '济州',
+    seoul: '首尔',
+    busan: '釜山',
+    blossom: '樱花',
     contrast: '高对比',
   },
 };
 
-/** Light-variant poster colors — keep in sync with app/tour-room-theme.css. */
-const SWATCH: Record<TourSkin, { canvas: string; bubbleIn: string; bubbleMe: string }> = {
-  classic: { canvas: '#eef1ee', bubbleIn: '#fcfcfb', bubbleMe: '#2e5e4e' },
-  sky: { canvas: '#b9cddd', bubbleIn: '#fdfefe', bubbleMe: '#2e5e4e' },
-  winter: { canvas: '#dde8f2', bubbleIn: '#ffffff', bubbleMe: '#46708f' },
-  forest: { canvas: '#e4e8cd', bubbleIn: '#fbfaf2', bubbleMe: '#52702c' },
-  meadow: { canvas: '#d6e6e2', bubbleIn: '#fdfefd', bubbleMe: '#37705f' },
+/** Light-variant poster colors — keep in sync with app/tour-room-theme.css.
+ *  `hill` is the T-D5 scenery hint: a soft horizon arc in the swatch for
+ *  skins that carry a SkinScenery scene (contrast deliberately has none). */
+const SWATCH: Record<TourSkin, { canvas: string; bubbleIn: string; bubbleMe: string; hill?: string }> = {
+  classic: { canvas: '#eef1ee', bubbleIn: '#fcfcfb', bubbleMe: '#2e5e4e', hill: '#dbe4d8' },
+  sky: { canvas: '#b9cddd', bubbleIn: '#fdfefe', bubbleMe: '#2e5e4e', hill: '#dbe7ef' },
+  winter: { canvas: '#dde8f2', bubbleIn: '#ffffff', bubbleMe: '#46708f', hill: '#c9d9e9' },
+  forest: { canvas: '#e4e8cd', bubbleIn: '#fbfaf2', bubbleMe: '#52702c', hill: '#cfd8ab' },
+  meadow: { canvas: '#d6e6e2', bubbleIn: '#fdfefd', bubbleMe: '#37705f', hill: '#c0d9cc' },
+  jeju: { canvas: '#f6e8d5', bubbleIn: '#fdfaf4', bubbleMe: '#a34d14', hill: '#ecd6b5' },
+  seoul: { canvas: '#e7e5f0', bubbleIn: '#fdfdfe', bubbleMe: '#55519b', hill: '#d3d0e6' },
+  busan: { canvas: '#fae3da', bubbleIn: '#fffbf9', bubbleMe: '#20596f', hill: '#f2cfc1' },
+  blossom: { canvas: '#f8e6ec', bubbleIn: '#fefcfd', bubbleMe: '#99465f', hill: '#f0cedb' },
   contrast: { canvas: '#ffffff', bubbleIn: '#efefef', bubbleMe: '#111111' },
 };
 
@@ -98,6 +124,13 @@ export default function SkinPicker({ locale }: { locale: RoomLocale }) {
               style={{ background: sw.canvas }}
               aria-hidden
             >
+              {/* T-D5 — scenery hint: one soft horizon arc where a scene lives. */}
+              {sw.hill && (
+                <span
+                  className="absolute -bottom-3 -left-2 block h-6 w-14 rounded-[100%]"
+                  style={{ background: sw.hill }}
+                />
+              )}
               <span
                 className="absolute left-1.5 top-2 block h-3 w-8 rounded-full rounded-bl-[3px]"
                 style={{ background: sw.bubbleIn }}

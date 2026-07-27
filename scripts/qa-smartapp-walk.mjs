@@ -19,7 +19,9 @@ import path from 'path';
 const OUT = path.join(process.env.SHOT_DIR ?? '.', 'shots');
 mkdirSync(OUT, { recursive: true });
 const fx = JSON.parse(readFileSync('scripts/.sim-fixtures.json', 'utf8'));
-const BASE = 'http://localhost:3161';
+// Override when :3161 is held by another session's server — shooting a
+// DIFFERENT worktree's code is worse than failing.
+const BASE = process.env.WALK_BASE ?? 'http://localhost:3161';
 
 const browser = await chromium.launch();
 const ctx = await browser.newContext({
@@ -44,6 +46,17 @@ const dismissManual = async () => {
     await page.waitForTimeout(500);
   }
 };
+/** T-D2 — headless Chromium never fires beforeinstallprompt; synthesize one
+ *  so the install card / drawer tile / home row render for the camera. */
+const armInstallPrompt = async () => {
+  await page.evaluate(() => {
+    const ev = new Event('beforeinstallprompt');
+    ev.prompt = () => Promise.resolve();
+    Object.defineProperty(ev, 'userChoice', { value: Promise.resolve({ outcome: 'dismissed' }) });
+    window.dispatchEvent(ev);
+  });
+  await page.waitForTimeout(300);
+};
 /** Pick a skin via the guest Settings tab (assumes room is open). */
 const pickGuestSkin = async (skin) => {
   await page.locator('[data-testid="room-tabbar"] [role="tab"]').last().click({ timeout: 10000 });
@@ -58,7 +71,11 @@ try {
   await page.waitForSelector('[data-testid="room-tabbar"]', { timeout: 30000 });
   await page.waitForTimeout(1500);
   await dismissManual();
+  await armInstallPrompt();
   await shot('01-guest-home-light');
+  if (!(await page.locator('[data-testid="install-card"]').count())) {
+    errors.push('WALK: install card missing on home after synthetic beforeinstallprompt');
+  }
 
   await page.locator('[data-testid="room-tabbar"] [role="tab"]').nth(1).click({ timeout: 10000 });
   await page.waitForSelector('[data-testid="chat-feed"]', { timeout: 15000 });
@@ -84,15 +101,47 @@ try {
   await page.click('[data-testid="drawer-close"]');
   await page.waitForTimeout(400);
 
-  // ── skins on the guest chat ──
-  for (const skin of ['sky', 'winter', 'forest', 'meadow', 'contrast']) {
+  // ── skins on the guest chat (scenery band + palette per skin) ──
+  for (const skin of ['sky', 'winter', 'forest', 'meadow', 'jeju', 'seoul', 'busan', 'blossom', 'contrast']) {
     await pickGuestSkin(skin);
     await page.locator('[data-testid="room-tabbar"] [role="tab"]').nth(1).click();
     await page.waitForSelector('[data-testid="chat-feed"]', { timeout: 15000 });
     await page.waitForTimeout(600);
     await shot(`05-guest-chat-skin-${skin}`);
+    if (skin === 'contrast' && (await page.locator('[data-testid="skin-scenery"]').count())) {
+      errors.push('WALK: contrast skin must not render scenery');
+    }
   }
-  // contrast + dark = the 고대비 look
+  // scenery on the home canvas (launcher grammar) for two landmark skins.
+  // Home is the BOTTOM-LEFT tab — exactly under Next dev's "N" indicator in
+  // headless, so dispatch the click on the element directly (prod-irrelevant).
+  for (const skin of ['jeju', 'busan']) {
+    await pickGuestSkin(skin);
+    await page.$eval('[data-testid="room-tabbar"] [role="tab"]', (el) => el.click());
+    await page.waitForTimeout(700);
+    await shot(`05h-guest-home-skin-${skin}`);
+  }
+  // night scene: jeju dark via the drawer 화면 모드 tile
+  await pickGuestSkin('jeju');
+  await page.locator('[data-testid="room-tabbar"] [role="tab"]').nth(1).click();
+  await page.waitForSelector('[data-testid="chat-feed"]', { timeout: 15000 });
+  await page.click('[data-testid="room-drawer-open"]');
+  await page.waitForSelector('[data-testid="drawer-theme-tile"]', { timeout: 8000 });
+  await page.click('[data-testid="drawer-theme-tile"]'); // system → light
+  await page.click('[data-testid="drawer-theme-tile"]'); // light → dark
+  await page.click('[data-testid="drawer-close"]');
+  await page.waitForTimeout(700);
+  await shot('05n-guest-chat-jeju-dark');
+  await page.click('[data-testid="room-drawer-open"]');
+  await page.waitForSelector('[data-testid="drawer-theme-tile"]', { timeout: 8000 });
+  await page.click('[data-testid="drawer-theme-tile"]'); // dark → system
+  await page.click('[data-testid="drawer-close"]');
+  await page.waitForTimeout(400);
+  // contrast + dark = the 고대비 look (re-pick: the night-scene block above
+  // left the skin on jeju)
+  await pickGuestSkin('contrast');
+  await page.locator('[data-testid="room-tabbar"] [role="tab"]').nth(1).click();
+  await page.waitForSelector('[data-testid="chat-feed"]', { timeout: 15000 });
   await page.click('[data-testid="room-drawer-open"]');
   await page.waitForSelector('[data-testid="drawer-theme-tile"]', { timeout: 8000 });
   await page.click('[data-testid="drawer-theme-tile"]'); // system → light
@@ -112,6 +161,7 @@ try {
   await page.goto(BASE + fx.guideUrl, { waitUntil: 'domcontentloaded', timeout: 60000 });
   await page.waitForSelector('[data-testid="staff-shell"]', { timeout: 30000 });
   await page.waitForTimeout(1500);
+  await armInstallPrompt();
   await shot('10-staff-chat-list');
 
   // pinned rows: 전체 공지 sheet (daytools) with target picker + presets
@@ -187,6 +237,44 @@ try {
   await page.waitForSelector('[data-testid="skin-classic"]', { timeout: 8000 });
   await page.click('[data-testid="skin-classic"]');
   await page.click('[data-testid="staff-theme-system"]');
+
+  // ── cockpit: compact TimeWheel (T-D3) via ⋮ → 운전 모드 → 일정·도착 ──
+  await page.$eval('[data-testid="staff-tab-btn-chat"]', (el) => el.click());
+  await page.waitForTimeout(600);
+  const more2 = page.locator('[data-testid="room-more"]').first();
+  if (await more2.count()) {
+    await more2.click();
+    await page.waitForSelector('[data-testid="guest-action-sheet"]', { timeout: 8000 });
+    const driveBtn = page.locator('[data-testid="guest-action-sheet"] >> text=운전 모드').first();
+    if (await driveBtn.count()) {
+      await driveBtn.click();
+      const opened = await page
+        .waitForSelector('[data-testid="cockpit-actions-toggle"]', { timeout: 20000 })
+        .catch(() => null);
+      if (opened) {
+        await page.waitForTimeout(1200);
+        await page.click('[data-testid="cockpit-actions-toggle"]');
+        await page.waitForTimeout(500);
+        const scheduleAction = page.locator('text=일정·도착').first();
+        if (await scheduleAction.count()) {
+          await scheduleAction.click();
+          const arrival = page.locator('[data-testid="cockpit-open-arrival"]').first();
+          if (await arrival.count()) {
+            await arrival.click();
+            await page.waitForSelector('[data-testid="arrival-time-input"]', { timeout: 10000 });
+            await page.waitForTimeout(700);
+            await shot('19-cockpit-arrival-timewheel');
+            await page.keyboard.press('Escape');
+          } else {
+            errors.push('WALK: no arrival button (schedule empty?)');
+          }
+        }
+        await page.click('[data-testid="cockpit-exit"]').catch(() => {});
+      } else {
+        errors.push('WALK: cockpit did not open from 운전 모드');
+      }
+    }
+  }
 
   console.log('WALK OK');
 } catch (e) {

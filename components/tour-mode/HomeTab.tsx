@@ -18,6 +18,7 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
+import InstallCard from '@/components/tour-mode/InstallCard';
 import LobbyCard from '@/components/tour-mode/LobbyCard';
 import { firstPickup, vehicleLineFromPayload } from '@/components/tour-mode/LobbyCard';
 import QuickSignalBar from '@/components/tour-mode/QuickSignalBar';
@@ -513,6 +514,11 @@ export default function HomeTab({
             </button>
           ),
         )}
+      </div>
+
+      {/* ---- Install entry (T-D2) — self-hides when no install path. -- */}
+      <div className="mt-1.5">
+        <InstallCard locale={locale} surface="home" />
       </div>
 
       {/* ---- More row ------------------------------------------------ */}

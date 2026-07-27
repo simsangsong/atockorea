@@ -1035,7 +1035,6 @@ function TourRoomLive({
           locale={locale}
           onLocaleChange={onLocaleChange}
           manualKind={manualKind}
-          viewerRole={viewerRole === 'guide' || viewerRole === 'driver' ? viewerRole : 'customer'}
           {...(viewerRole === 'customer'
             ? {
                 chatLocale: chatLocaleOverride,
