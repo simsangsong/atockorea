@@ -2517,7 +2517,12 @@ export function Screen({ children }: { children: React.ReactNode }) {
   return (
     <div className={dark ? 'dark' : ''}>
       <div
-        className="tr-root relative mx-auto flex h-[100dvh] max-w-lg flex-col bg-[var(--tr-canvas)]"
+        /* R9 — /tour-mode ships `black-translucent`, so in standalone the
+           web view starts UNDER the status bar and ends under the home
+           indicator. The shells pad their own chrome; this root had nothing
+           to inherit, which put the cockpit's top bar under the clock and its
+           drive controls under the home indicator. */
+        className="tr-safe-top tr-safe-bottom tr-root relative mx-auto flex h-[100dvh] max-w-lg flex-col bg-[var(--tr-canvas)]"
         data-testid="driver-console"
       >
         {children}

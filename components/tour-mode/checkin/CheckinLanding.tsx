@@ -254,7 +254,11 @@ export default function CheckinLanding({
   // primaryBtn size correctly when it renders as an <a> (welcome-open-room).
   const shell = (node: ReactNode) => (
     <div className={dark ? 'dark' : ''}>
-      <div className="tr-root min-h-dvh bg-[var(--tr-canvas)] px-4" data-locale={locale} lang={locale}>
+      <div
+        className="tr-safe-top tr-safe-bottom tr-root min-h-dvh bg-[var(--tr-canvas)] px-4"
+        data-locale={locale}
+        lang={locale}
+      >
         {node}
       </div>
     </div>

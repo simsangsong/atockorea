@@ -121,7 +121,7 @@ export default function TourModeEntry() {
     'tr-body mt-1 w-full rounded-[var(--tr-radius-input)] bg-[var(--tr-surface)] px-4 py-2.5 text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)] focus:outline-none focus:ring-2 focus:ring-[var(--tr-accent)]';
 
   return (
-    <div className="tr-root min-h-dvh bg-[var(--tr-canvas)]">
+    <div className="tr-safe-top tr-safe-bottom tr-root min-h-dvh bg-[var(--tr-canvas)]">
       <div className="mx-auto w-full max-w-md px-4 pb-16 pt-10">
         <h1 className="tr-display font-semibold leading-snug text-[var(--tr-ink)]">{copy.title}</h1>
         <p className="tr-body mt-2 text-[var(--tr-ink-2)]">{copy.subtitle}</p>
