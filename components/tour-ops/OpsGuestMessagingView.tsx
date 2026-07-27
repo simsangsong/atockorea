@@ -37,6 +37,7 @@ import { getOpsToken } from '@/components/tour-ops/opsShared';
 import OpsManifestView from '@/components/tour-ops/OpsManifestView';
 import { WA_PRESETS, type WaPresetKey } from '@/lib/ops/whatsapp/presets';
 import { SKIP_REASON_LABEL } from '@/lib/ops/messaging/guestMessage';
+import { unknownTokens } from '@/lib/ops/messaging/template';
 import type { DailyForecast } from '@/lib/ops/weather/forecast';
 
 interface TourGroup {
@@ -477,6 +478,25 @@ export default function OpsGuestMessagingView({
                         data-testid="bulk-body"
                       />
                     </label>
+
+                    {/* DE — `unknownTokens` 는 만들어졌지만 아무도 부르지 않았다.
+                        주석이 이미 말하고 있었다: "템플릿 편집 화면이 '이건 안
+                        채워집니다'라고 말할 수 있어야 한다." 링크 자리가 빈 채로
+                        나가는 메시지가 가장 흔한 사고인데, 오타 난 토큰은 치환되지
+                        않고 `{room_lnk}` 처럼 **그대로 손님에게 간다.** */}
+                    {unknownTokens(body).length > 0 && (
+                      <div
+                        className="rounded-xl bg-[var(--tr-warn-soft)] px-3 py-2"
+                        data-testid="unknown-token-warning"
+                      >
+                        <p className="flex items-start gap-1.5 tr-label font-bold text-[var(--tr-warn)]">
+                          <AlertTriangle className="mt-0.5 size-3.5 shrink-0" />
+                          <span className="text-cjk-body">
+                            {unknownTokens(body).join(', ')} 는 채워지지 않고 그대로 나갑니다
+                          </span>
+                        </p>
+                      </div>
+                    )}
 
                     {notEmailable.length > 0 && (
                       <div className="rounded-xl border border-[var(--tr-warn-soft)] bg-[var(--tr-warn-soft)] px-3 py-2 ">
