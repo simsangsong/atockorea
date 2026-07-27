@@ -9,7 +9,7 @@ import { sendGuestRoomPush } from '@/lib/tour-room/guestPush';
 import { getQuickReplyPreset } from '@/lib/tour-room/quickReplies';
 import { getOperatorPreset } from '@/lib/tour-room/operatorPresets';
 import { renderSpotEventTranslations } from '@/lib/tour-room/spotContent';
-import { ROOM_LOCALES } from '@/lib/tour-room/snapshot';
+import { CORE_TRANSLATION_LOCALES } from '@/lib/tour-room/snapshot';
 import { pregenerateGuideNoticeTts, type TtsStorageClient } from '@/lib/tour-room/tts-server';
 
 export const dynamic = 'force-dynamic';
@@ -41,7 +41,7 @@ export const dynamic = 'force-dynamic';
 const MAX_TEXT_CHARS = 2000;
 // §D A4.1 — 로케일 목록은 ROOM_LOCALES 하나뿐이다. 여기 다시 적으면
 // 로케일이 하나 늘어나는 날 이 파일만 조용히 5개로 남는다.
-const DEFAULT_TARGET_LOCALES: string[] = [...ROOM_LOCALES];
+const DEFAULT_TARGET_LOCALES: string[] = [...CORE_TRANSLATION_LOCALES];
 
 export async function POST(req: NextRequest) {
   try {
@@ -148,7 +148,7 @@ export async function POST(req: NextRequest) {
       let pointByLocale: Record<string, string> | null = null;
       if (point) {
         try {
-          pointByLocale = (await translateTextForLocales(point, [...ROOM_LOCALES])).translations;
+          pointByLocale = (await translateTextForLocales(point, [...CORE_TRANSLATION_LOCALES])).translations;
         } catch (translationError) {
           console.warn('notice point translation failed, using verbatim:', translationError);
           pointByLocale = null;

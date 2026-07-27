@@ -13,9 +13,24 @@ import { mergeTranslationTargets } from '@/lib/tour-room/chatLocale';
 import { resolveDaySchedule, type DayPlanRow, type ScheduleSource } from '@/lib/tour-room/dayPlan';
 import { roomLifecycle, type RoomLifecycle } from '@/lib/tour-room/time';
 
-/** Locales the room UI + translation targeting understand (D-8). */
-export const ROOM_LOCALES = ['en', 'ko', 'zh', 'ja', 'es'] as const;
+/**
+ * Locales the room UI understands (D-8; fr/de/ru/it added 2026-07-27,
+ * docs/smartapp-ui-locale-expansion-fr-de-ru-it-2026-07-27.md L-D1).
+ * Every static copy Record in the app is keyed by this union — extending it
+ * turns tsc into the completeness gate.
+ */
+export const ROOM_LOCALES = ['en', 'ko', 'zh', 'ja', 'es', 'fr', 'de', 'ru', 'it'] as const;
 export type RoomLocale = (typeof ROOM_LOCALES)[number];
+
+/**
+ * L-D1 — the FROZEN LLM-fanout base. Routes that translate content against a
+ * static locale list (message fallback targets, arrival bundles, signal
+ * notes…) pin to THIS, not ROOM_LOCALES, so adding UI locales never silently
+ * multiplies translation cost. Dynamic targeting (getRoomTranslationTargets)
+ * is participant-driven and already picks up new-locale guests only when one
+ * is actually in the room.
+ */
+export const CORE_TRANSLATION_LOCALES = ['en', 'ko', 'zh', 'ja', 'es'] as const;
 
 /** Normalize a client-reported locale to a room locale ('zh-TW' → 'zh'). */
 export function normalizeRoomLocale(value: unknown, fallback: RoomLocale = 'en'): RoomLocale {

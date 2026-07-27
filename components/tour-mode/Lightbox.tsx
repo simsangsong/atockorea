@@ -19,6 +19,10 @@ const A11Y: Record<RoomLocale, { close: string; download: string; viewer: string
   ja: { close: '閉じる', download: 'ダウンロード', viewer: '写真ビューア' },
   es: { close: 'Cerrar', download: 'Descargar', viewer: 'Visor de fotos' },
   zh: { close: '关闭', download: '下载', viewer: '图片查看器' },
+  fr: { close: 'Fermer', download: 'Télécharger', viewer: 'Visionneuse photo' },
+  de: { close: 'Schließen', download: 'Herunterladen', viewer: 'Fotoansicht' },
+  ru: { close: 'Закрыть', download: 'Скачать', viewer: 'Просмотр фото' },
+  it: { close: 'Chiudi', download: 'Scarica', viewer: 'Visualizzatore foto' },
 };
 
 export default function Lightbox({

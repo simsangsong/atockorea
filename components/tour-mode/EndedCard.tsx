@@ -72,6 +72,42 @@ const COPY: Record<
     lostFailed: '申报未能发送 — 请通过邮件告知我们。',
     lostPrompt: '您遗落了什么？在哪里？（例：黑色钱包，12号座位）',
   },
+  fr: {
+    title: 'Ce tour est terminé',
+    body: 'Merci d’avoir voyagé avec nous! Le chat est désormais en lecture seule.',
+    lostTitle: 'Vous avez oublié quelque chose?',
+    lostAction: 'Signaler un objet oublié',
+    lostSent: 'Signalé — le chauffeur et le guide vérifieront le véhicule. ✓',
+    lostFailed: 'Impossible d’envoyer le signalement — écrivez-nous par e-mail.',
+    lostPrompt: 'Qu’avez-vous oublié, et où? (ex.: portefeuille noir, siège 12)',
+  },
+  de: {
+    title: 'Diese Tour ist beendet',
+    body: 'Danke, dass Sie mit uns unterwegs waren! Der Chat ist jetzt schreibgeschützt.',
+    lostTitle: 'Etwas liegen gelassen?',
+    lostAction: 'Fundsache melden',
+    lostSent: 'Gemeldet — Fahrer und Guide prüfen das Fahrzeug. ✓',
+    lostFailed: 'Meldung konnte nicht gesendet werden — schreiben Sie uns bitte per E-Mail.',
+    lostPrompt: 'Was haben Sie wo liegen lassen? (z. B. schwarze Geldbörse, Sitz 12)',
+  },
+  ru: {
+    title: 'Тур завершен',
+    body: 'Спасибо, что путешествовали с нами! Чат теперь доступен только для чтения.',
+    lostTitle: 'Что-то забыли?',
+    lostAction: 'Сообщить о забытой вещи',
+    lostSent: 'Сообщение отправлено — водитель и гид проверят машину. ✓',
+    lostFailed: 'Не удалось отправить — напишите нам на почту.',
+    lostPrompt: 'Что и где вы оставили? (например: черный кошелек, место 12)',
+  },
+  it: {
+    title: 'Questo tour è terminato',
+    body: 'Grazie per aver viaggiato con noi! La chat ora è in sola lettura.',
+    lostTitle: 'Hai dimenticato qualcosa?',
+    lostAction: 'Segnala un oggetto smarrito',
+    lostSent: 'Segnalato — autista e guida controlleranno il veicolo. ✓',
+    lostFailed: 'Impossibile inviare la segnalazione — scrivici via e-mail.',
+    lostPrompt: 'Cosa hai dimenticato e dove? (es.: portafoglio nero, posto 12)',
+  },
 };
 
 export default function EndedCard({
@@ -92,8 +128,8 @@ export default function EndedCard({
   const copy = COPY[locale];
   const [state, setState] = useState<'idle' | 'busy' | 'sent' | 'failed'>('idle');
   // M1 — in-app prompt (native dialogs banned on tour surfaces, M-D6).
-  const SEND: Record<RoomLocale, string> = { en: 'Send', ko: '보내기', ja: '送信', es: 'Enviar', zh: '发送' };
-  const CANCEL: Record<RoomLocale, string> = { en: 'Cancel', ko: '취소', ja: 'キャンセル', es: 'Cancelar', zh: '取消' };
+  const SEND: Record<RoomLocale, string> = { en: 'Send', ko: '보내기', ja: '送信', es: 'Enviar', zh: '发送', fr: 'Envoyer', de: 'Senden', ru: 'Отправить', it: 'Invia' };
+  const CANCEL: Record<RoomLocale, string> = { en: 'Cancel', ko: '취소', ja: 'キャンセル', es: 'Cancelar', zh: '取消', fr: 'Annuler', de: 'Abbrechen', ru: 'Отмена', it: 'Annulla' };
   const { prompt, sheet } = useConfirmSheet({ confirm: SEND[locale], cancel: CANCEL[locale] });
   const subject = encodeURIComponent(
     `Lost item — ${bookingReference ? `booking ${bookingReference}` : 'tour room'}`,

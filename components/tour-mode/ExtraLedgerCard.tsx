@@ -69,6 +69,42 @@ const COPY: Record<
     status: { logged: '待您确认', confirmed: '已确认', settled: '已现金结清', voided: '已取消' },
     kind: { advance: '代付', ticket: '门票', overtime: '超时', extension: '延长', parking: '停车', pickup: '接送费', other: '支出' },
   },
+  fr: {
+    title: 'Dépense du voyage',
+    cashNote: 'Règlement en espèces avec votre guide aujourd’hui',
+    confirm: 'Confirmer',
+    confirming: 'Confirmation…',
+    receipt: 'Voir le reçu',
+    status: { logged: 'En attente de confirmation', confirmed: 'Confirmé', settled: 'Réglé en espèces', voided: 'Annulé' },
+    kind: { advance: 'Avancé pour vous', ticket: 'Billet d’entrée', overtime: 'Heures sup.', extension: 'Prolongation', parking: 'Parking', pickup: 'Frais de prise en charge', other: 'Dépense' },
+  },
+  de: {
+    title: 'Reiseausgabe',
+    cashNote: 'Barzahlung heute an Ihren Guide',
+    confirm: 'Bestätigen',
+    confirming: 'Wird bestätigt…',
+    receipt: 'Beleg ansehen',
+    status: { logged: 'Wartet auf Ihre Bestätigung', confirmed: 'Bestätigt', settled: 'Bar beglichen', voided: 'Storniert' },
+    kind: { advance: 'Für Sie ausgelegt', ticket: 'Eintrittskarte', overtime: 'Überstunden', extension: 'Verlängerung', parking: 'Parken', pickup: 'Abholgebühr', other: 'Ausgabe' },
+  },
+  ru: {
+    title: 'Расход в поездке',
+    cashNote: 'Наличный расчет с гидом в день тура',
+    confirm: 'Подтвердить',
+    confirming: 'Подтверждение…',
+    receipt: 'Посмотреть чек',
+    status: { logged: 'Ожидает вашего подтверждения', confirmed: 'Подтверждено', settled: 'Оплачено наличными', voided: 'Отменено' },
+    kind: { advance: 'Оплачено за вас', ticket: 'Входной билет', overtime: 'Сверхурочные', extension: 'Продление', parking: 'Парковка', pickup: 'Плата за трансфер', other: 'Расход' },
+  },
+  it: {
+    title: 'Spesa del viaggio',
+    cashNote: 'Da saldare oggi in contanti con la tua guida',
+    confirm: 'Conferma',
+    confirming: 'Conferma in corso…',
+    receipt: 'Vedi ricevuta',
+    status: { logged: 'In attesa di conferma', confirmed: 'Confermato', settled: 'Saldato in contanti', voided: 'Annullato' },
+    kind: { advance: 'Anticipato per te', ticket: 'Biglietto d’ingresso', overtime: 'Straordinario', extension: 'Prolungamento', parking: 'Parcheggio', pickup: 'Costo pick-up', other: 'Spesa' },
+  },
 };
 
 export interface ExtraLedgerMeta {

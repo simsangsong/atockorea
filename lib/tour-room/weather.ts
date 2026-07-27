@@ -78,6 +78,10 @@ const BASE_LINE: Record<RoomLocale, string> = {
   ja: '🌤️ 本日の天気：{tmin}–{tmax}°C、降水確率{rain}%。',
   es: '🌤️ El clima de hoy: {tmin}–{tmax}°C, prob. de lluvia {rain}%.',
   zh: '🌤️ 今日天气：{tmin}–{tmax}°C，降水概率{rain}%。',
+  fr: '🌤️ Météo du jour: {tmin}–{tmax}°C, risque de pluie {rain}%.',
+  de: '🌤️ Wetter heute: {tmin}–{tmax}°C, Regenwahrscheinlichkeit {rain}%.',
+  ru: '🌤️ Погода сегодня: {tmin}–{tmax}°C, вероятность дождя {rain}%.',
+  it: '🌤️ Meteo di oggi: {tmin}–{tmax}°C, probabilità di pioggia {rain}%.',
 };
 
 const HINT_RAIN: Record<RoomLocale, string> = {
@@ -86,6 +90,10 @@ const HINT_RAIN: Record<RoomLocale, string> = {
   ja: '傘をお持ちください。',
   es: 'Lleva paraguas.',
   zh: '请携带雨伞。',
+  fr: 'Prenez un parapluie.',
+  de: 'Nehmen Sie einen Regenschirm mit.',
+  ru: 'Возьмите зонт.',
+  it: 'Porta l’ombrello.',
 };
 const HINT_COLD: Record<RoomLocale, string> = {
   en: 'A warm layer is recommended.',
@@ -93,6 +101,10 @@ const HINT_COLD: Record<RoomLocale, string> = {
   ja: '暖かい上着をおすすめします。',
   es: 'Se recomienda una capa de abrigo.',
   zh: '建议穿保暖外套。',
+  fr: 'Prévoyez une couche chaude.',
+  de: 'Etwas Warmes zum Überziehen ist zu empfehlen.',
+  ru: 'Пригодится теплая одежда.',
+  it: 'Porta qualcosa di caldo.',
 };
 const HINT_WIND: Record<RoomLocale, string> = {
   en: 'It will be windy — a windbreaker helps.',
@@ -100,6 +112,10 @@ const HINT_WIND: Record<RoomLocale, string> = {
   ja: '風が強いです — ウインドブレーカーがあると安心です。',
   es: 'Habrá viento: una cortavientos ayuda.',
   zh: '风较大 — 建议穿防风衣。',
+  fr: 'Il y aura du vent — un coupe-vent sera utile.',
+  de: 'Es wird windig — eine Windjacke hilft.',
+  ru: 'Будет ветрено — пригодится ветровка.',
+  it: 'Sarà ventoso — una giacca antivento aiuta.',
 };
 
 /** Rule-based clothing hint (rain > cold > wind; one hint max, keep it calm). */

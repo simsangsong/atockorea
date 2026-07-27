@@ -65,6 +65,34 @@ const COPY: Record<RoomLocale, NudgeCopy> = {
     later: 'Quizás después',
     close: 'Cerrar',
   },
+  fr: {
+    title: 'Préparez l’itinéraire de demain',
+    body: 'Choisissez vos étapes dès maintenant: votre chauffeur et votre guide sauront exactement où aller — moins d’allers-retours le jour J, plus de temps pour en profiter.',
+    cta: 'Planifier ma journée',
+    later: 'Plus tard',
+    close: 'Fermer',
+  },
+  de: {
+    title: 'Planen Sie die Route für morgen',
+    body: 'Legen Sie Ihre Stopps jetzt fest — so wissen Fahrer und Guide genau, wohin es geht. Weniger Abstimmung am Tourtag, mehr Zeit zum Genießen.',
+    cta: 'Tag planen',
+    later: 'Vielleicht später',
+    close: 'Schließen',
+  },
+  ru: {
+    title: 'Спланируйте маршрут на завтра',
+    body: 'Выберите остановки заранее — водитель и гид будут точно знать, куда ехать. Меньше согласований в день тура, больше времени на впечатления.',
+    cta: 'Составить план',
+    later: 'Может, позже',
+    close: 'Закрыть',
+  },
+  it: {
+    title: 'Pianifica il percorso di domani',
+    body: 'Scegli ora le tue tappe: autista e guida sapranno esattamente dove andare — meno coordinamento il giorno del tour, più tempo per godertelo.',
+    cta: 'Pianifica la giornata',
+    later: 'Magari dopo',
+    close: 'Chiudi',
+  },
 };
 
 interface PlanStatusResponse {

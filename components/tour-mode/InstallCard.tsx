@@ -63,6 +63,34 @@ const COPY: Record<RoomLocale, InstallCopy> = {
     iosStep1: '点按 Safari 的分享按钮',
     iosStep2: '选择"添加到主屏幕"',
   },
+  fr: {
+    title: 'Ajouter à l’écran d’accueil',
+    body: 'Un seul geste depuis votre écran d’accueil pour rejoindre votre tour.',
+    install: 'Installer',
+    iosStep1: 'Touchez le bouton de partage dans Safari',
+    iosStep2: 'Choisissez « Sur l’écran d’accueil »',
+  },
+  de: {
+    title: 'Zum Home-Bildschirm hinzufügen',
+    body: 'Ein Tipp auf dem Home-Bildschirm — direkt in Ihre Tour.',
+    install: 'Installieren',
+    iosStep1: 'Tippen Sie in Safari auf Teilen',
+    iosStep2: 'Wählen Sie „Zum Home-Bildschirm“',
+  },
+  ru: {
+    title: 'На экран «Домой»',
+    body: 'Одно касание с экрана «Домой» — и вы в своем туре.',
+    install: 'Установить',
+    iosStep1: 'Нажмите кнопку «Поделиться» в Safari',
+    iosStep2: 'Выберите «На экран Домой»',
+  },
+  it: {
+    title: 'Aggiungi alla schermata Home',
+    body: 'Un tocco dalla schermata Home e sei nel tuo tour.',
+    install: 'Installa',
+    iosStep1: 'Tocca il pulsante Condividi in Safari',
+    iosStep2: 'Scegli “Aggiungi alla schermata Home”',
+  },
 };
 
 export default function InstallCard({

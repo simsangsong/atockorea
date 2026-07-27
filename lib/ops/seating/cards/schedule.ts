@@ -44,6 +44,10 @@ const HEADER: Record<RoomLocale, string> = {
   ja: '本日の予定 🗓',
   es: 'El plan de hoy 🗓',
   zh: '今日行程 🗓',
+  fr: 'Programme du jour 🗓',
+  de: 'Der Plan für heute 🗓',
+  ru: 'План на сегодня 🗓',
+  it: 'Il programma di oggi 🗓',
 };
 
 const FOOTER: Record<RoomLocale, string> = {
@@ -52,6 +56,10 @@ const FOOTER: Record<RoomLocale, string> = {
   ja: '交通状況で時間は前後します — 最新の予定は常にスケジュールタブでご確認いただけます。',
   es: 'Los horarios cambian con el tráfico: la versión en vivo está siempre en la pestaña de itinerario.',
   zh: '时间会随路况调整 — 最新行程随时可在行程标签页查看。',
+  fr: 'Les horaires varient selon la circulation — la version à jour est toujours dans l’onglet Programme.',
+  de: 'Die Zeiten verschieben sich mit dem Verkehr — die aktuelle Version steht immer im Tab „Heute“.',
+  ru: 'Время может сдвигаться из-за пробок — актуальная версия всегда на вкладке «Сегодня».',
+  it: 'Gli orari cambiano con il traffico — la versione aggiornata è sempre nella scheda Programma.',
 };
 
 const MORE: Record<RoomLocale, string> = {
@@ -60,6 +68,10 @@ const MORE: Record<RoomLocale, string> = {
   ja: '…ほか{n}か所はスケジュールタブでご確認ください',
   es: '…y {n} más en la pestaña de itinerario',
   zh: '…另有{n}处，请见行程标签页',
+  fr: '…et {n} de plus dans l’onglet Programme',
+  de: '…und {n} weitere im Tab „Heute“',
+  ru: '…и еще {n} на вкладке «Сегодня»',
+  it: '…e altre {n} nella scheda Programma',
 };
 
 /** Card chrome — the 5-locale labels the guest component renders. */
@@ -69,6 +81,10 @@ export const SCHEDULE_COPY: Record<RoomLocale, { title: string; stopCount: strin
   ja: { title: '本日の予定', stopCount: '{n}か所', noTime: '時間未定', footnote: FOOTER.ja },
   es: { title: 'El plan de hoy', stopCount: '{n} paradas', noTime: 'Hora por confirmar', footnote: FOOTER.es },
   zh: { title: '今日行程', stopCount: '{n}处', noTime: '时间待定', footnote: FOOTER.zh },
+  fr: { title: 'Programme du jour', stopCount: '{n} étapes', noTime: 'Heure à confirmer', footnote: FOOTER.fr },
+  de: { title: 'Der Plan für heute', stopCount: '{n} Stopps', noTime: 'Zeit wird noch bestätigt', footnote: FOOTER.de },
+  ru: { title: 'План на сегодня', stopCount: 'Остановок: {n}', noTime: 'Время уточняется', footnote: FOOTER.ru },
+  it: { title: 'Il programma di oggi', stopCount: '{n} tappe', noTime: 'Orario da confermare', footnote: FOOTER.it },
 };
 
 /** Resolver output → the preview rows (titles kept verbatim, empties dropped). */

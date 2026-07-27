@@ -39,6 +39,10 @@ const TEMPLATES: Record<GuestSignalType, (args: SignalArgs) => Record<string, st
     ja: `🕒 ${name ?? 'ゲスト'}が少し遅れています — 少々お待ちください。`,
     es: `🕒 ${name ?? 'Un huésped'} llega un poco tarde; gracias por esperar.`,
     zh: `🕒 ${name ?? '客人'}稍有延迟——请稍候。`,
+    fr: `🕒 ${name ?? 'Un voyageur'} a un peu de retard — merci de patienter.`,
+    de: `🕒 ${name ?? 'Ein Gast'} verspätet sich etwas — danke fürs Warten.`,
+    ru: `🕒 ${name ?? 'Гость'} немного опаздывает — спасибо за ожидание.`,
+    it: `🕒 ${name ?? 'Un ospite'} è un po’ in ritardo — grazie per l’attesa.`,
   }),
   rest_stop: ({ name }) => ({
     en: `🚻 ${name ?? 'A guest'} asked for a quick stop when convenient.`,
@@ -46,6 +50,10 @@ const TEMPLATES: Record<GuestSignalType, (args: SignalArgs) => Record<string, st
     ja: `🚻 ${name ?? 'ゲスト'}が短い休憩を希望しています — 都合の良い場所でお願いします。`,
     es: `🚻 ${name ?? 'Un huésped'} pidió una parada corta cuando sea posible.`,
     zh: `🚻 ${name ?? '客人'}请求方便时短暂停车。`,
+    fr: `🚻 ${name ?? 'Un voyageur'} demande un court arrêt dès que possible.`,
+    de: `🚻 ${name ?? 'Ein Gast'} bittet bei Gelegenheit um einen kurzen Stopp.`,
+    ru: `🚻 ${name ?? 'Гость'} просит короткую остановку, когда будет удобно.`,
+    it: `🚻 ${name ?? 'Un ospite'} chiede una breve sosta appena possibile.`,
   }),
   lost: ({ name, mapsUrl }) => ({
     en: `🧭 ${name ?? 'A guest'} may be lost${mapsUrl ? ` — location: ${mapsUrl}` : ' — please check in the chat.'}`,
@@ -53,6 +61,10 @@ const TEMPLATES: Record<GuestSignalType, (args: SignalArgs) => Record<string, st
     ja: `🧭 ${name ?? 'ゲスト'}が道に迷ったようです${mapsUrl ? ` — 位置: ${mapsUrl}` : ' — チャットでご確認ください。'}`,
     es: `🧭 ${name ?? 'Un huésped'} puede estar perdido${mapsUrl ? `; ubicación: ${mapsUrl}` : '; revisa el chat.'}`,
     zh: `🧭 ${name ?? '客人'}可能迷路了${mapsUrl ? `——位置：${mapsUrl}` : '——请在聊天中确认。'}`,
+    fr: `🧭 ${name ?? 'Un voyageur'} semble perdu${mapsUrl ? ` — position: ${mapsUrl}` : ' — vérifiez dans le chat.'}`,
+    de: `🧭 ${name ?? 'Ein Gast'} hat sich womöglich verlaufen${mapsUrl ? ` — Standort: ${mapsUrl}` : ' — bitte im Chat nachsehen.'}`,
+    ru: `🧭 ${name ?? 'Гость'}, возможно, потерялся${mapsUrl ? ` — местоположение: ${mapsUrl}` : ' — проверьте в чате.'}`,
+    it: `🧭 ${name ?? 'Un ospite'} potrebbe essersi perso${mapsUrl ? ` — posizione: ${mapsUrl}` : ' — controlla nella chat.'}`,
   }),
   lost_item: ({ name, note }) => ({
     en: `🧳 Lost-item report from ${name ?? 'a guest'}${note ? ` — "${note}"` : ' — something may have been left in the vehicle'}. Please check and reply here.`,
@@ -60,6 +72,10 @@ const TEMPLATES: Record<GuestSignalType, (args: SignalArgs) => Record<string, st
     ja: `🧳 ${name ?? 'ゲスト'}より忘れ物のご連絡${note ? `——「${note}」` : ' — 車内に忘れ物があるかもしれません'}。ご確認のうえこちらへご返信ください。`,
     es: `🧳 Aviso de objeto perdido de ${name ?? 'un huésped'}${note ? `: "${note}"` : ': puede haber quedado algo en el vehículo'}. Revísalo y responde aquí.`,
     zh: `🧳 ${name ?? '客人'}的失物报告${note ? `——「${note}」` : '——可能有物品落在车上'}。请确认后在此回复。`,
+    fr: `🧳 Objet oublié signalé par ${name ?? 'un voyageur'}${note ? ` — « ${note} »` : ' — quelque chose a peut-être été laissé dans le véhicule'}. Merci de vérifier et de répondre ici.`,
+    de: `🧳 Fundsache gemeldet von ${name ?? 'einem Gast'}${note ? ` — „${note}“` : ' — womöglich wurde etwas im Fahrzeug vergessen'}. Bitte prüfen und hier antworten.`,
+    ru: `🧳 Сообщение о забытой вещи от ${name ?? 'гостя'}${note ? ` — «${note}»` : ' — возможно, что-то осталось в машине'}. Проверьте и ответьте здесь.`,
+    it: `🧳 Oggetto smarrito segnalato da ${name ?? 'un ospite'}${note ? ` — “${note}”` : ' — qualcosa potrebbe essere rimasto nel veicolo'}. Controlla e rispondi qui.`,
   }),
   pickup_request: ({ name, mapsUrl }) => ({
     en: `🚕 ${name ?? 'A guest'} asks to be picked up here${mapsUrl ? ` — location: ${mapsUrl}` : ' — please check in the chat.'}`,
@@ -67,6 +83,10 @@ const TEMPLATES: Record<GuestSignalType, (args: SignalArgs) => Record<string, st
     ja: `🚕 ${name ?? 'ゲスト'}がこの場所への迎車を希望しています${mapsUrl ? ` — 位置: ${mapsUrl}` : ' — チャットでご確認ください。'}`,
     es: `🚕 ${name ?? 'Un huésped'} pide que lo recojan aquí${mapsUrl ? `; ubicación: ${mapsUrl}` : '; revisa el chat.'}`,
     zh: `🚕 ${name ?? '客人'}请求在此处接载${mapsUrl ? `——位置：${mapsUrl}` : '——请在聊天中确认。'}`,
+    fr: `🚕 ${name ?? 'Un voyageur'} demande à être pris en charge ici${mapsUrl ? ` — position: ${mapsUrl}` : ' — vérifiez dans le chat.'}`,
+    de: `🚕 ${name ?? 'Ein Gast'} bittet um Abholung an diesem Ort${mapsUrl ? ` — Standort: ${mapsUrl}` : ' — bitte im Chat nachsehen.'}`,
+    ru: `🚕 ${name ?? 'Гость'} просит забрать его здесь${mapsUrl ? ` — местоположение: ${mapsUrl}` : ' — проверьте в чате.'}`,
+    it: `🚕 ${name ?? 'Un ospite'} chiede di essere prelevato qui${mapsUrl ? ` — posizione: ${mapsUrl}` : ' — controlla nella chat.'}`,
   }),
   dropoff_change: ({ name, mapsUrl, note }) => ({
     en: `📍 ${name ?? 'A guest'} requests a different drop-off point${note ? `: ${note}` : ''}.${mapsUrl ? ` Location: ${mapsUrl}` : ''}`,
@@ -74,6 +94,10 @@ const TEMPLATES: Record<GuestSignalType, (args: SignalArgs) => Record<string, st
     ja: `📍 ${name ?? 'ゲスト'}が降車地点の変更を希望しています${note ? `：${note}` : ''}。${mapsUrl ? ` 位置: ${mapsUrl}` : ''}`,
     es: `📍 ${name ?? 'Un huésped'} solicita otro punto de bajada${note ? `: ${note}` : ''}.${mapsUrl ? ` Ubicación: ${mapsUrl}` : ''}`,
     zh: `📍 ${name ?? '客人'}请求更改下车地点${note ? `：${note}` : ''}。${mapsUrl ? ` 位置：${mapsUrl}` : ''}`,
+    fr: `📍 ${name ?? 'Un voyageur'} demande un autre point de dépose${note ? `: ${note}` : ''}.${mapsUrl ? ` Position: ${mapsUrl}` : ''}`,
+    de: `📍 ${name ?? 'Ein Gast'} wünscht einen anderen Ausstiegspunkt${note ? `: ${note}` : ''}.${mapsUrl ? ` Standort: ${mapsUrl}` : ''}`,
+    ru: `📍 ${name ?? 'Гость'} просит изменить место высадки${note ? `: ${note}` : ''}.${mapsUrl ? ` Местоположение: ${mapsUrl}` : ''}`,
+    it: `📍 ${name ?? 'Un ospite'} chiede un altro punto di discesa${note ? `: ${note}` : ''}.${mapsUrl ? ` Posizione: ${mapsUrl}` : ''}`,
   }),
   rally_overdue: () => ({
     en: '⏰ Meeting time has passed — part of the party hasn’t returned yet. The guide is checking.',
@@ -81,6 +105,10 @@ const TEMPLATES: Record<GuestSignalType, (args: SignalArgs) => Record<string, st
     ja: '⏰ 集合時間を過ぎました — まだ戻っていない方がいます。ガイドが確認しています。',
     es: '⏰ Pasó la hora de reunión y parte del grupo no ha vuelto. El guía lo está verificando.',
     zh: '⏰ 已过集合时间——还有同行者未返回。导游正在确认。',
+    fr: '⏰ L’heure de rendez-vous est passée — une partie du groupe n’est pas encore revenue. Le guide vérifie.',
+    de: '⏰ Die Treffzeit ist vorbei — ein Teil der Gruppe ist noch nicht zurück. Der Guide prüft das gerade.',
+    ru: '⏰ Время сбора прошло — часть группы еще не вернулась. Гид выясняет.',
+    it: '⏰ L’orario di ritrovo è passato — parte del gruppo non è ancora tornata. La guida sta controllando.',
   }),
 };
 

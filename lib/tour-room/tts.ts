@@ -27,6 +27,10 @@ export const TTS_LANG: Record<RoomLocale, string> = {
   ja: 'ja-JP',
   es: 'es-ES',
   zh: 'zh-CN',
+  fr: 'fr-FR',
+  de: 'de-DE',
+  ru: 'ru-RU',
+  it: 'it-IT',
 };
 
 export interface VoiceLike {

@@ -62,6 +62,10 @@ const TRAY_LABEL: Record<RoomLocale, { photo: string; camera: string }> = {
   ja: { photo: '写真・ファイル', camera: '写真で質問' },
   es: { photo: 'Foto', camera: 'Preguntar' },
   zh: { photo: '照片·文件', camera: '拍照提问' },
+  fr: { photo: 'Photo', camera: 'Question photo' },
+  de: { photo: 'Foto', camera: 'Foto-Frage' },
+  ru: { photo: 'Фото', camera: 'Фотовопрос' },
+  it: { photo: 'Foto', camera: 'Chiedi con foto' },
 };
 
 const A11Y: Record<RoomLocale, { attach: string; askPhoto: string; recordVoice: string; send: string }> = {
@@ -70,6 +74,10 @@ const A11Y: Record<RoomLocale, { attach: string; askPhoto: string; recordVoice: 
   ja: { attach: '写真・ファイルを添付', askPhoto: '写真について質問', recordVoice: '音声メッセージを録音', send: '送信' },
   es: { attach: 'Adjuntar foto o archivo', askPhoto: 'Preguntar sobre una foto', recordVoice: 'Grabar un mensaje de voz', send: 'Enviar' },
   zh: { attach: '添加照片或文件', askPhoto: '询问照片', recordVoice: '录制语音消息', send: '发送' },
+  fr: { attach: 'Joindre une photo ou un fichier', askPhoto: 'Poser une question sur une photo', recordVoice: 'Enregistrer un message vocal', send: 'Envoyer' },
+  de: { attach: 'Foto oder Datei anhängen', askPhoto: 'Frage zu einem Foto stellen', recordVoice: 'Sprachnachricht aufnehmen', send: 'Senden' },
+  ru: { attach: 'Прикрепить фото или файл', askPhoto: 'Задать вопрос по фото', recordVoice: 'Записать голосовое сообщение', send: 'Отправить' },
+  it: { attach: 'Allega una foto o un file', askPhoto: 'Fai una domanda su una foto', recordVoice: 'Registra un messaggio vocale', send: 'Invia' },
 };
 
 const PLACEHOLDER: Record<RoomLocale, string> = {
@@ -78,6 +86,10 @@ const PLACEHOLDER: Record<RoomLocale, string> = {
   ja: 'メッセージを入力',
   es: 'Mensaje',
   zh: '发送消息',
+  fr: 'Message',
+  de: 'Nachricht',
+  ru: 'Сообщение',
+  it: 'Messaggio',
 };
 
 const VOICE_COPY: Record<
@@ -124,6 +136,38 @@ const VOICE_COPY: Record<
     cancel: '取消',
     done: '完成',
   },
+  fr: {
+    transcribing: 'Écoute et transcription…',
+    confirmHint: 'Vérifiez le texte, puis envoyez',
+    micDenied: 'Le micro est bloqué — autorisez-le dans les réglages du navigateur.',
+    sttFailed: 'Nous n’avons pas bien compris — réessayez.',
+    cancel: 'Annuler',
+    done: 'Terminé',
+  },
+  de: {
+    transcribing: 'Hört zu und schreibt mit…',
+    confirmHint: 'Text prüfen, dann senden',
+    micDenied: 'Das Mikrofon ist blockiert — erlauben Sie es in den Browser-Einstellungen.',
+    sttFailed: 'Das kam nicht richtig an — bitte noch einmal.',
+    cancel: 'Abbrechen',
+    done: 'Fertig',
+  },
+  ru: {
+    transcribing: 'Слушаю и записываю…',
+    confirmHint: 'Проверьте текст и отправьте',
+    micDenied: 'Микрофон заблокирован — разрешите его в настройках браузера.',
+    sttFailed: 'Не удалось разобрать — попробуйте еще раз.',
+    cancel: 'Отмена',
+    done: 'Готово',
+  },
+  it: {
+    transcribing: 'Ascolto e scrivo…',
+    confirmHint: 'Controlla il testo, poi invia',
+    micDenied: 'Il microfono è bloccato — consentilo nelle impostazioni del browser.',
+    sttFailed: 'Non ho capito bene — riprova.',
+    cancel: 'Annulla',
+    done: 'Fatto',
+  },
 };
 
 export interface VoiceTranscribeResult {
@@ -148,6 +192,10 @@ const VISION_COPY: Record<
   ja: { placeholder: '写真について質問（任意）', private_: '自分だけ', share: 'ルームに共有', ask: '質問する', asking: '確認中…', failed: '分析できませんでした — もう一度お試しください。', close: '閉じる' },
   es: { placeholder: 'Pregunta sobre la foto (opcional)', private_: 'Solo yo', share: 'Compartir', ask: 'Preguntar', asking: 'Analizando…', failed: 'No se pudo analizar — inténtalo de nuevo.', close: 'Cerrar' },
   zh: { placeholder: '关于这张照片的问题（可选）', private_: '仅自己可见', share: '分享到房间', ask: '提问', asking: '识别中…', failed: '无法识别 — 请重试。', close: '关闭' },
+  fr: { placeholder: 'Posez une question sur cette photo (facultatif)', private_: 'Moi uniquement', share: 'Partager avec le groupe', ask: 'Demander', asking: 'Analyse…', failed: 'Analyse impossible — réessayez.', close: 'Fermer' },
+  de: { placeholder: 'Frage zu diesem Foto (optional)', private_: 'Nur ich', share: 'Mit dem Raum teilen', ask: 'Fragen', asking: 'Wird geprüft…', failed: 'Analyse fehlgeschlagen — bitte erneut versuchen.', close: 'Schließen' },
+  ru: { placeholder: 'Спросите об этом фото (необязательно)', private_: 'Только мне', share: 'Поделиться с комнатой', ask: 'Спросить', asking: 'Смотрю…', failed: 'Не удалось распознать — попробуйте снова.', close: 'Закрыть' },
+  it: { placeholder: 'Chiedi qualcosa su questa foto (facoltativo)', private_: 'Solo io', share: 'Condividi con la stanza', ask: 'Chiedi', asking: 'Analizzo…', failed: 'Analisi non riuscita — riprova.', close: 'Chiudi' },
 };
 
 const MAX_TEXTAREA_PX = 128; // ~5 lines of tr-body
@@ -164,6 +212,10 @@ const ATTACH_COPY: Record<
   ja: { caption: 'キャプションを追加（任意）', send: '送信', sending: '送信中…', cancel: 'キャンセル', tooBig: 'ファイルが大きすぎます。' },
   es: { caption: 'Añadir un pie de foto (opcional)', send: 'Enviar', sending: 'Enviando…', cancel: 'Cancelar', tooBig: 'El archivo es demasiado grande.' },
   zh: { caption: '添加说明（可选）', send: '发送', sending: '发送中…', cancel: '取消', tooBig: '文件太大了。' },
+  fr: { caption: 'Ajouter une légende (facultatif)', send: 'Envoyer', sending: 'Envoi…', cancel: 'Annuler', tooBig: 'Le fichier est trop volumineux.' },
+  de: { caption: 'Beschreibung hinzufügen (optional)', send: 'Senden', sending: 'Wird gesendet…', cancel: 'Abbrechen', tooBig: 'Die Datei ist zu groß.' },
+  ru: { caption: 'Добавить подпись (необязательно)', send: 'Отправить', sending: 'Отправка…', cancel: 'Отмена', tooBig: 'Файл слишком большой.' },
+  it: { caption: 'Aggiungi una didascalia (facoltativo)', send: 'Invia', sending: 'Invio…', cancel: 'Annulla', tooBig: 'Il file è troppo grande.' },
 };
 
 const ATTACH_MAX_IMAGE = 8 * 1024 * 1024;

@@ -231,15 +231,15 @@ export function dietaryFromSpecialRequests(text: unknown): DietaryTag[] {
 
 /** Zero-LLM chip labels, 5 room locales. */
 export const DIETARY_LABELS: Record<DietaryFilterTag, Record<RoomLocale, string>> = {
-  vegetarian: { en: 'Vegetarian', ko: '채식', ja: 'ベジタリアン', es: 'Vegetariano', zh: '素食' },
-  vegan: { en: 'Vegan', ko: '비건', ja: 'ヴィーガン', es: 'Vegano', zh: '纯素' },
-  halal: { en: 'Halal', ko: '할랄', ja: 'ハラル', es: 'Halal', zh: '清真' },
-  no_pork: { en: 'No pork', ko: '돼지고기 제외', ja: '豚肉なし', es: 'Sin cerdo', zh: '不含猪肉' },
-  no_seafood: { en: 'No seafood', ko: '해산물 제외', ja: '魚介類なし', es: 'Sin mariscos', zh: '不含海鲜' },
-  no_shellfish: { en: 'No shellfish', ko: '조개·갑각류 제외', ja: '貝・甲殻類なし', es: 'Sin crustáceos', zh: '不含贝类' },
-  no_nuts: { en: 'No nuts', ko: '견과류 제외', ja: 'ナッツなし', es: 'Sin frutos secos', zh: '不含坚果' },
-  gluten_free: { en: 'Gluten-free', ko: '글루텐 프리', ja: 'グルテンフリー', es: 'Sin gluten', zh: '无麸质' },
-  kids: { en: 'Kid-friendly', ko: '아이 동반', ja: '子ども連れ', es: 'Para niños', zh: '适合儿童' },
+  vegetarian: { en: 'Vegetarian', ko: '채식', ja: 'ベジタリアン', es: 'Vegetariano', zh: '素食', fr: 'Végétarien', de: 'Vegetarisch', ru: 'Вегетарианское', it: 'Vegetariano' },
+  vegan: { en: 'Vegan', ko: '비건', ja: 'ヴィーガン', es: 'Vegano', zh: '纯素', fr: 'Végétalien', de: 'Vegan', ru: 'Веганское', it: 'Vegano' },
+  halal: { en: 'Halal', ko: '할랄', ja: 'ハラル', es: 'Halal', zh: '清真', fr: 'Halal', de: 'Halal', ru: 'Халяль', it: 'Halal' },
+  no_pork: { en: 'No pork', ko: '돼지고기 제외', ja: '豚肉なし', es: 'Sin cerdo', zh: '不含猪肉', fr: 'Sans porc', de: 'Ohne Schweinefleisch', ru: 'Без свинины', it: 'Senza maiale' },
+  no_seafood: { en: 'No seafood', ko: '해산물 제외', ja: '魚介類なし', es: 'Sin mariscos', zh: '不含海鲜', fr: 'Sans fruits de mer', de: 'Ohne Meeresfrüchte', ru: 'Без морепродуктов', it: 'Senza frutti di mare' },
+  no_shellfish: { en: 'No shellfish', ko: '조개·갑각류 제외', ja: '貝・甲殻類なし', es: 'Sin crustáceos', zh: '不含贝类', fr: 'Sans crustacés', de: 'Ohne Schalentiere', ru: 'Без моллюсков и ракообразных', it: 'Senza crostacei' },
+  no_nuts: { en: 'No nuts', ko: '견과류 제외', ja: 'ナッツなし', es: 'Sin frutos secos', zh: '不含坚果', fr: 'Sans fruits à coque', de: 'Ohne Nüsse', ru: 'Без орехов', it: 'Senza frutta a guscio' },
+  gluten_free: { en: 'Gluten-free', ko: '글루텐 프리', ja: 'グルテンフリー', es: 'Sin gluten', zh: '无麸质', fr: 'Sans gluten', de: 'Glutenfrei', ru: 'Без глютена', it: 'Senza glutine' },
+  kids: { en: 'Kid-friendly', ko: '아이 동반', ja: '子ども連れ', es: 'Para niños', zh: '适合儿童', fr: 'Adapté aux enfants', de: 'Kinderfreundlich', ru: 'Подходит для детей', it: 'Adatto ai bambini' },
 };
 
 /**
@@ -255,6 +255,10 @@ export const DIETARY_CAUTION: Record<RoomLocale, string> = {
   ja: '明らかに合わないお店は除いていますが、材料はお店で必ずご確認ください。',
   es: 'Hemos descartado los casos evidentes, pero confirma tú mismo los ingredientes en el restaurante.',
   zh: '我们已排除明显不符的店家，但请您亲自向餐厅确认食材。',
+  fr: 'Nous avons écarté les incompatibilités évidentes, mais merci de confirmer les ingrédients directement auprès du restaurant.',
+  de: 'Wir haben offensichtliche Konflikte aussortiert, aber bitte bestätigen Sie die Zutaten selbst direkt im Restaurant.',
+  ru: 'Мы убрали явно неподходящие места, но, пожалуйста, уточните состав блюд в самом ресторане.',
+  it: 'Abbiamo escluso i posti chiaramente non adatti, ma verifica sempre gli ingredienti direttamente con il ristorante.',
 };
 
 /** Localized chip label with a safe fallback to the raw tag. */

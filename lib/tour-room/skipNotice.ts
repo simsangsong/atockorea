@@ -21,6 +21,10 @@ const REASON_LABEL: Record<SkipReason, Record<RoomLocale, string>> = {
     ja: '本日休業のため',
     es: 'hoy está cerrado',
     zh: '今日休息',
+    fr: 'c’est jour de fermeture',
+    de: 'dort ist Ruhetag',
+    ru: 'там выходной',
+    it: 'è giorno di chiusura',
   },
   weather: {
     en: 'because of the weather',
@@ -28,6 +32,10 @@ const REASON_LABEL: Record<SkipReason, Record<RoomLocale, string>> = {
     ja: '天候のため',
     es: 'por el clima',
     zh: '因天气原因',
+    fr: 'à cause de la météo',
+    de: 'wegen des Wetters',
+    ru: 'из-за погоды',
+    it: 'per via del meteo',
   },
   crowd: {
     en: 'it is too crowded right now',
@@ -35,6 +43,10 @@ const REASON_LABEL: Record<SkipReason, Record<RoomLocale, string>> = {
     ja: '現在大変混雑しているため',
     es: 'está demasiado lleno ahora',
     zh: '现在过于拥挤',
+    fr: 'il y a trop de monde en ce moment',
+    de: 'es ist dort gerade zu voll',
+    ru: 'сейчас там слишком много людей',
+    it: 'in questo momento è troppo affollato',
   },
   guest_request: {
     en: 'at your party’s request',
@@ -42,6 +54,10 @@ const REASON_LABEL: Record<SkipReason, Record<RoomLocale, string>> = {
     ja: 'お客様のご要望により',
     es: 'a petición de su grupo',
     zh: '应贵团要求',
+    fr: 'à la demande de votre groupe',
+    de: 'auf Wunsch Ihrer Gruppe',
+    ru: 'по просьбе вашей группы',
+    it: 'su richiesta del vostro gruppo',
   },
   time: {
     en: 'to keep today’s timing on track',
@@ -49,6 +65,10 @@ const REASON_LABEL: Record<SkipReason, Record<RoomLocale, string>> = {
     ja: '本日のスケジュール調整のため',
     es: 'para mantener el horario del día',
     zh: '为保证今日行程时间',
+    fr: 'pour tenir l’horaire du jour',
+    de: 'damit der Zeitplan aufgeht',
+    ru: 'чтобы уложиться в график',
+    it: 'per rispettare la tabella di marcia',
   },
 };
 
@@ -58,6 +78,10 @@ const CAPSULE: Record<RoomLocale, string> = {
   ja: '🔄 予定変更：本日{stop}はスキップします — {reason}。残りの日程は調整済みです。',
   es: '🔄 Cambio de plan: hoy se omite {stop} — {reason}. El resto del itinerario se ha ajustado.',
   zh: '🔄 行程变更：今日跳过{stop} — {reason}。其余行程已作调整。',
+  fr: '🔄 Mise à jour du programme: nous ne visiterons pas {stop} aujourd’hui — {reason}. Le reste du parcours a été ajusté.',
+  de: '🔄 Planänderung: {stop} entfällt heute — {reason}. Der restliche Ablauf wurde angepasst.',
+  ru: '🔄 Изменение плана: {stop} сегодня пропускаем — {reason}. Остальное расписание скорректировано.',
+  it: '🔄 Aggiornamento del programma: oggi saltiamo {stop} — {reason}. Il resto dell’itinerario è stato adattato.',
 };
 
 function isSkipReason(value: unknown): value is SkipReason {

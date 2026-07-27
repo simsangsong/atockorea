@@ -49,6 +49,10 @@ const TEMPLATES: Record<SpotEventKind, Record<RoomLocale, string>> = {
     ja: '{spot}の近くに到着しました。',
     es: 'Has llegado cerca de {spot}.',
     zh: '您已到达{spot}附近。',
+    fr: 'Vous voici près de {spot}.',
+    de: 'Sie sind in der Nähe von {spot} angekommen.',
+    ru: 'Мы на месте — рядом {spot}.',
+    it: 'Sei nei pressi di {spot}.',
   },
   arrived_audio: {
     en: 'You have arrived near {spot}. Tap the audio guide button to play the guide.',
@@ -56,6 +60,10 @@ const TEMPLATES: Record<SpotEventKind, Record<RoomLocale, string>> = {
     ja: '{spot}の近くに到着しました。オーディオガイドボタンで解説を再生できます。',
     es: 'Has llegado cerca de {spot}. Toca el botón de audioguía para escucharla.',
     zh: '您已到达{spot}附近。点击语音导览按钮即可收听讲解。',
+    fr: 'Vous voici près de {spot}. Touchez le bouton audioguide pour lancer le commentaire.',
+    de: 'Sie sind in der Nähe von {spot} angekommen. Tippen Sie auf den Audioguide-Button, um die Erklärung zu hören.',
+    ru: 'Мы на месте — рядом {spot}. Нажмите кнопку аудиогида, чтобы послушать рассказ.',
+    it: 'Sei nei pressi di {spot}. Tocca il pulsante dell’audioguida per ascoltare la spiegazione.',
   },
   audio_played: {
     en: 'Audio guide started for {spot}.',
@@ -63,6 +71,10 @@ const TEMPLATES: Record<SpotEventKind, Record<RoomLocale, string>> = {
     ja: '{spot}のオーディオガイドを開始しました。',
     es: 'Audioguía iniciada para {spot}.',
     zh: '已开始播放{spot}的语音导览。',
+    fr: 'Audioguide lancé pour {spot}.',
+    de: 'Audioguide für {spot} gestartet.',
+    ru: 'Аудиогид запущен: {spot}.',
+    it: 'Audioguida avviata per {spot}.',
   },
   meeting_notice: {
     en: 'Please gather at {point}.',
@@ -70,6 +82,10 @@ const TEMPLATES: Record<SpotEventKind, Record<RoomLocale, string>> = {
     ja: '{point}にお集まりください。',
     es: 'Por favor, reúnanse en {point}.',
     zh: '请在{point}集合。',
+    fr: 'Merci de vous rassembler au point de rendez-vous: {point}.',
+    de: 'Bitte sammeln Sie sich am Treffpunkt: {point}.',
+    ru: 'Пожалуйста, соберитесь у места сбора: {point}.',
+    it: 'Radunatevi al punto di ritrovo: {point}.',
   },
   meeting_notice_timed: {
     en: 'Meeting time is {time}. Please gather at {point}.',
@@ -77,6 +93,10 @@ const TEMPLATES: Record<SpotEventKind, Record<RoomLocale, string>> = {
     ja: '集合時間は{time}です。{point}にお集まりください。',
     es: 'La hora de reunión es {time}. Por favor, reúnanse en {point}.',
     zh: '集合时间为{time}。请在{point}集合。',
+    fr: 'Heure de rendez-vous: {time}. Point de rendez-vous: {point}.',
+    de: 'Treffzeit ist {time} Uhr. Bitte sammeln Sie sich am Treffpunkt: {point}.',
+    ru: 'Время сбора — {time}. Место сбора: {point}.',
+    it: 'Orario di ritrovo: {time}. Punto di ritrovo: {point}.',
   },
   free_time: {
     en: 'Free time until {time} — please be back at {point} by then.',
@@ -84,6 +104,10 @@ const TEMPLATES: Record<SpotEventKind, Record<RoomLocale, string>> = {
     ja: '{time}まで自由時間です — 時間までに{point}へお戻りください。',
     es: 'Tiempo libre hasta las {time} — vuelve a {point} para entonces.',
     zh: '自由活动至{time} — 请届时回到{point}。',
+    fr: 'Temps libre jusqu’à {time} — soyez de retour d’ici là. Point de rendez-vous: {point}.',
+    de: 'Freizeit bis {time} Uhr — seien Sie bis dahin bitte zurück. Treffpunkt: {point}.',
+    ru: 'Свободное время до {time} — пожалуйста, вернитесь к этому времени. Место сбора: {point}.',
+    it: 'Tempo libero fino alle {time} — tornate entro quell’ora. Punto di ritrovo: {point}.',
   },
   free_time_cancelled: {
     en: 'Free time has ended — please gather at {point} now.',
@@ -91,6 +115,10 @@ const TEMPLATES: Record<SpotEventKind, Record<RoomLocale, string>> = {
     ja: '自由時間は終了しました — 今すぐ{point}にお集まりください。',
     es: 'El tiempo libre ha terminado — reúnanse en {point} ahora.',
     zh: '自由活动结束 — 请立即在{point}集合。',
+    fr: 'Le temps libre est terminé — rejoignez maintenant le point de rendez-vous: {point}.',
+    de: 'Die Freizeit ist beendet — bitte kommen Sie jetzt zum Treffpunkt: {point}.',
+    ru: 'Свободное время закончилось — пожалуйста, сразу подходите к месту сбора: {point}.',
+    it: 'Il tempo libero è finito — radunatevi subito al punto di ritrovo: {point}.',
   },
   onboard_ack: {
     en: "I'm on the bus. 🚌",
@@ -98,6 +126,10 @@ const TEMPLATES: Record<SpotEventKind, Record<RoomLocale, string>> = {
     ja: 'バスに乗りました。🚌',
     es: 'Ya estoy en el bus. 🚌',
     zh: '我已上车。🚌',
+    fr: 'Je suis dans le bus. 🚌',
+    de: 'Ich bin im Bus. 🚌',
+    ru: 'Я в автобусе. 🚌',
+    it: 'Sono sul bus. 🚌',
   },
   sos: {
     en: '🆘 EMERGENCY — I need help right now. Please contact me immediately.',
@@ -105,6 +137,10 @@ const TEMPLATES: Record<SpotEventKind, Record<RoomLocale, string>> = {
     ja: '🆘 緊急 — 今すぐ助けが必要です。至急ご連絡ください。',
     es: '🆘 EMERGENCIA — Necesito ayuda ahora mismo. Contáctenme de inmediato.',
     zh: '🆘 紧急 — 我现在需要帮助，请立即联系我。',
+    fr: '🆘 URGENCE — j’ai besoin d’aide immédiatement. Contactez-moi tout de suite.',
+    de: '🆘 NOTFALL — ich brauche sofort Hilfe. Bitte kontaktieren Sie mich umgehend.',
+    ru: '🆘 SOS — мне срочно нужна помощь. Пожалуйста, свяжитесь со мной немедленно.',
+    it: '🆘 EMERGENZA — ho bisogno di aiuto adesso. Contattatemi subito.',
   },
 };
 

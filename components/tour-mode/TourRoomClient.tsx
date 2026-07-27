@@ -109,6 +109,10 @@ const RETRY_COPY: Record<RoomLocale, (n: number) => string> = {
   ja: (n) => `${n}件送信失敗 — 再送する`,
   es: (n) => `${n} sin enviar — reintentar`,
   zh: (n) => `${n}条发送失败 — 点击重发`,
+  fr: (n) => `${n} non envoyé(s) — touchez pour renvoyer`,
+  de: (n) => `${n} nicht gesendet — zum erneuten Senden tippen`,
+  ru: (n) => `Не отправлено: ${n} — нажмите, чтобы отправить снова`,
+  it: (n) => `${n} non inviati — tocca per reinviare`,
 };
 import SettingsTab from '@/components/tour-mode/SettingsTab';
 import { useTourRoomSession, getOrCreateDeviceKey, type TourRoomJoinResult } from '@/hooks/useTourRoomSession';
@@ -201,6 +205,10 @@ const MANIFEST_CLOSE_LABEL: Record<RoomLocale, string> = {
   ja: '閉じる',
   es: 'Cerrar',
   zh: '关闭',
+  fr: 'Fermer',
+  de: 'Schließen',
+  ru: 'Закрыть',
+  it: 'Chiudi',
 };
 
 const MANIFEST_SHEET_TITLE: Record<RoomLocale, string> = {
@@ -209,6 +217,10 @@ const MANIFEST_SHEET_TITLE: Record<RoomLocale, string> = {
   ja: '名簿・座席',
   es: 'Lista y asientos',
   zh: '名单·座位',
+  fr: 'Liste et sièges',
+  de: 'Gästeliste & Sitzplätze',
+  ru: 'Список и места',
+  it: 'Elenco e posti',
 };
 
 export default function TourRoomClient({ bookingId }: { bookingId: string }) {

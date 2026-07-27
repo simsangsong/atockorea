@@ -157,6 +157,25 @@ try {
   await pickGuestSkin('classic');
   await shot('07-guest-settings-skin-picker');
 
+  // ── L-D8 — app-language spot checks: French + German (register, tab-label
+  // width: "Einstellungen"/"Impostazioni" are the longest labels). ──
+  await page.waitForSelector('[data-testid="app-locale-fr"]', { timeout: 8000 });
+  await page.click('[data-testid="app-locale-fr"]');
+  // A locale change re-joins the room → the shell REMOUNTS onto Home.
+  await page.waitForTimeout(900);
+  await shot('08h-guest-home-fr');
+  await page.locator('[data-testid="room-tabbar"] [role="tab"]').last().click();
+  await page.waitForSelector('[data-testid="app-locale-de"]', { timeout: 8000 });
+  await shot('08-guest-settings-fr');
+  await page.click('[data-testid="app-locale-de"]');
+  await page.waitForTimeout(900);
+  await shot('09h-guest-home-de');
+  await page.locator('[data-testid="room-tabbar"] [role="tab"]').last().click();
+  await page.waitForSelector('[data-testid="app-locale-en"]', { timeout: 8000 });
+  await shot('09-guest-settings-de');
+  await page.click('[data-testid="app-locale-en"]');
+  await page.waitForTimeout(700);
+
   // ── staff shell ──
   await page.goto(BASE + fx.guideUrl, { waitUntil: 'domcontentloaded', timeout: 60000 });
   await page.waitForSelector('[data-testid="staff-shell"]', { timeout: 30000 });

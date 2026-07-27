@@ -54,6 +54,10 @@ export const MAP_FOLLOW_LABEL: Record<'customer' | 'operator', Record<RoomLocale
     ja: 'ガイドを追跡',
     es: 'Seguir al guía',
     zh: '跟随导游',
+    fr: 'Suivre le guide',
+    de: 'Guide folgen',
+    ru: 'Следовать за гидом',
+    it: 'Segui la guida',
   },
   operator: {
     en: 'View guests',
@@ -61,6 +65,10 @@ export const MAP_FOLLOW_LABEL: Record<'customer' | 'operator', Record<RoomLocale
     ja: 'お客様の位置',
     es: 'Ver a los viajeros',
     zh: '查看客人位置',
+    fr: 'Voir les voyageurs',
+    de: 'Gäste anzeigen',
+    ru: 'Показать гостей',
+    it: 'Vedi gli ospiti',
   },
 };
 

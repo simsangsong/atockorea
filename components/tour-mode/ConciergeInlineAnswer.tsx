@@ -33,6 +33,10 @@ const MORE_LABEL: Record<RoomLocale, string> = {
   ja: 'さらに質問',
   es: 'Preguntar más',
   zh: '继续提问',
+  fr: 'Poser une autre question',
+  de: 'Weiter fragen',
+  ru: 'Спросить еще',
+  it: 'Chiedi altro',
 };
 
 const DISMISS_LABEL: Record<RoomLocale, string> = {
@@ -41,6 +45,10 @@ const DISMISS_LABEL: Record<RoomLocale, string> = {
   ja: '閉じる',
   es: 'Cerrar',
   zh: '关闭',
+  fr: 'Fermer',
+  de: 'Schließen',
+  ru: 'Закрыть',
+  it: 'Chiudi',
 };
 
 export default function ConciergeInlineAnswer({

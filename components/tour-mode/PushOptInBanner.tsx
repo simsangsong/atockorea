@@ -61,6 +61,42 @@ const COPY: Record<
     blocked: '通知已被浏览器阻止。请在设置中允许后重新打开。',
     stopped: '暂时无法开启提醒，请稍后再试。',
   },
+  fr: {
+    text: '🔔 Recevoir une alerte pour les heures de rendez-vous et les retards du véhicule?',
+    enable: 'Activer',
+    later: 'Plus tard',
+    done: 'Notifications activées — rendez-vous et retards uniquement.',
+    failed: 'Activation impossible — touchez pour réessayer.',
+    blocked: 'Les notifications sont bloquées. Autorisez-les dans les réglages du navigateur, puis rouvrez.',
+    stopped: 'Impossible d’activer les notifications pour l’instant. Réessayez plus tard.',
+  },
+  de: {
+    text: '🔔 Benachrichtigung bei Treffzeiten und Fahrzeugverspätungen erhalten?',
+    enable: 'Aktivieren',
+    later: 'Später',
+    done: 'Benachrichtigungen an — nur Treffzeiten und Verspätungen.',
+    failed: 'Aktivierung fehlgeschlagen — zum erneuten Versuch tippen.',
+    blocked: 'Benachrichtigungen sind blockiert. Erlauben Sie sie in den Browser-Einstellungen und öffnen Sie neu.',
+    stopped: 'Benachrichtigungen lassen sich gerade nicht aktivieren. Bitte später erneut versuchen.',
+  },
+  ru: {
+    text: '🔔 Присылать уведомления о времени сбора и задержках машины?',
+    enable: 'Включить',
+    later: 'Позже',
+    done: 'Уведомления включены — только время сбора и задержки.',
+    failed: 'Не удалось включить — нажмите, чтобы повторить.',
+    blocked: 'Уведомления заблокированы. Разрешите их в настройках браузера и откройте заново.',
+    stopped: 'Сейчас включить уведомления не получается. Попробуйте позже.',
+  },
+  it: {
+    text: '🔔 Vuoi un avviso per orari di ritrovo e ritardi del veicolo?',
+    enable: 'Attiva',
+    later: 'Più tardi',
+    done: 'Avvisi attivi — solo ritrovi e ritardi.',
+    failed: 'Attivazione non riuscita — tocca per riprovare.',
+    blocked: 'Le notifiche sono bloccate. Consentile nelle impostazioni del browser e riapri.',
+    stopped: 'Al momento non è possibile attivare gli avvisi. Riprova più tardi.',
+  },
 };
 
 function urlBase64ToUint8Array(base64String: string): Uint8Array {

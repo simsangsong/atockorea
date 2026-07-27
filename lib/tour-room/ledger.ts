@@ -41,8 +41,8 @@ type Bundle = { source_locale: string; source_text: string; translations: Record
 /** The recipient noun per locale — a guide-less private tour settles to the
  *  driver directly, so the capsule must name the right person. */
 const RECIPIENT: Record<ExtraPayer, Record<string, string>> = {
-  guide: { en: 'your guide', ko: '가이드', ja: 'ガイド', es: 'tu guía', zh: '导游' },
-  driver: { en: 'your driver', ko: '기사님', ja: 'ドライバー', es: 'tu conductor', zh: '司机' },
+  guide: { en: 'your guide', ko: '가이드', ja: 'ガイド', es: 'tu guía', zh: '导游', fr: 'votre guide', de: 'Ihrem Guide', ru: 'гидом', it: 'la tua guida' },
+  driver: { en: 'your driver', ko: '기사님', ja: 'ドライバー', es: 'tu conductor', zh: '司机', fr: 'votre chauffeur', de: 'Ihrem Fahrer', ru: 'водителем', it: 'il tuo autista' },
 };
 
 const TEMPLATES: Record<ExtraStatus, (item: string, krw: string, who: Record<string, string>) => Record<string, string>> = {
@@ -52,6 +52,10 @@ const TEMPLATES: Record<ExtraStatus, (item: string, krw: string, who: Record<str
     ja: `💰 立替を記録: ${item} — ${krw}。当日${who.ja}へ現金精算です — ご確認ください。`,
     es: `💰 Gasto registrado: ${item} — ${krw}. Se liquida hoy en efectivo con ${who.es}; confírmalo.`,
     zh: `💰 已记录费用:${item} — ${krw}。当日与${who.zh}现金结算——请确认。`,
+    fr: `💰 Dépense enregistrée: ${item} — ${krw}. Règlement en espèces aujourd’hui avec ${who.fr} — merci de confirmer.`,
+    de: `💰 Ausgabe erfasst: ${item} — ${krw}. Barabrechnung heute mit ${who.de} — bitte bestätigen.`,
+    ru: `💰 Расход записан: ${item} — ${krw}. Расчет наличными сегодня с ${who.ru} — подтвердите, пожалуйста.`,
+    it: `💰 Spesa registrata: ${item} — ${krw}. Si salda oggi in contanti con ${who.it} — conferma per favore.`,
   }),
   confirmed: (item, krw) => ({
     en: `✅ Confirmed: ${item} — ${krw}.`,
@@ -59,6 +63,10 @@ const TEMPLATES: Record<ExtraStatus, (item: string, krw: string, who: Record<str
     ja: `✅ 確認済み: ${item} — ${krw}。`,
     es: `✅ Confirmado: ${item} — ${krw}.`,
     zh: `✅ 已确认:${item} — ${krw}。`,
+    fr: `✅ Confirmé: ${item} — ${krw}.`,
+    de: `✅ Bestätigt: ${item} — ${krw}.`,
+    ru: `✅ Подтверждено: ${item} — ${krw}.`,
+    it: `✅ Confermato: ${item} — ${krw}.`,
   }),
   settled: (item, krw) => ({
     en: `💵 Settled in cash: ${item} — ${krw}. Thank you!`,
@@ -66,6 +74,10 @@ const TEMPLATES: Record<ExtraStatus, (item: string, krw: string, who: Record<str
     ja: `💵 現金受領済み: ${item} — ${krw}。ありがとうございました!`,
     es: `💵 Liquidado en efectivo: ${item} — ${krw}. ¡Gracias!`,
     zh: `💵 已现金结清:${item} — ${krw}。谢谢!`,
+    fr: `💵 Réglé en espèces: ${item} — ${krw}. Merci!`,
+    de: `💵 Bar beglichen: ${item} — ${krw}. Vielen Dank!`,
+    ru: `💵 Оплачено наличными: ${item} — ${krw}. Спасибо!`,
+    it: `💵 Saldato in contanti: ${item} — ${krw}. Grazie!`,
   }),
   voided: (item, krw) => ({
     en: `↩️ Cancelled: ${item} — ${krw}.`,
@@ -73,6 +85,10 @@ const TEMPLATES: Record<ExtraStatus, (item: string, krw: string, who: Record<str
     ja: `↩️ 取消: ${item} — ${krw}。`,
     es: `↩️ Cancelado: ${item} — ${krw}.`,
     zh: `↩️ 已取消:${item} — ${krw}。`,
+    fr: `↩️ Annulé: ${item} — ${krw}.`,
+    de: `↩️ Storniert: ${item} — ${krw}.`,
+    ru: `↩️ Отменено: ${item} — ${krw}.`,
+    it: `↩️ Annullato: ${item} — ${krw}.`,
   }),
 };
 
@@ -116,6 +132,10 @@ export function renderSettlementSummary(
     ja: `🧾 本日の支出: ${lines} — 合計 ${total}。ガイドへ現金でご精算ください。現金が必要な場合はコンビニATM(GS25/CU)で海外カードが使えます。`,
     es: `🧾 Gastos de hoy: ${lines} — total ${total}. Liquida en efectivo con tu guía. ¿Necesitas efectivo? Los cajeros de tiendas (GS25/CU) aceptan tarjetas internacionales.`,
     zh: `🧾 今日支出:${lines} — 合计 ${total}。请与导游现金结算。需要现金?便利店ATM(GS25/CU)支持国际卡取现。`,
+    fr: `🧾 Dépenses du jour: ${lines} — total ${total}. Merci de régler en espèces auprès de votre guide. Besoin d’espèces? Les distributeurs des supérettes (GS25/CU) acceptent les cartes internationales.`,
+    de: `🧾 Ausgaben heute: ${lines} — gesamt ${total}. Bitte begleichen Sie den Betrag bar bei Ihrem Guide. Bargeld nötig? Automaten in Convenience-Stores (GS25/CU) nehmen internationale Karten.`,
+    ru: `🧾 Расходы за сегодня: ${lines} — итого ${total}. Рассчитайтесь, пожалуйста, наличными с гидом. Нужны наличные? Банкоматы в магазинах GS25/CU принимают международные карты.`,
+    it: `🧾 Spese di oggi: ${lines} — totale ${total}. Salda in contanti con la tua guida. Ti servono contanti? Gli ATM dei minimarket (GS25/CU) accettano carte internazionali.`,
   };
   return { source_locale: 'en', source_text: translations.en, translations };
 }

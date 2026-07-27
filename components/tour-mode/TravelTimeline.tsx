@@ -42,6 +42,10 @@ const CLOSE_LABEL: Record<RoomLocale, string> = {
   ja: '閉じる',
   es: 'Cerrar',
   zh: '关闭',
+  fr: 'Fermer',
+  de: 'Schließen',
+  ru: 'Закрыть',
+  it: 'Chiudi',
 };
 
 type ClaimState =

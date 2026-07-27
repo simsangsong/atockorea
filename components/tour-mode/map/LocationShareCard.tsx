@@ -56,6 +56,38 @@ const COPY: Record<
     keepOn: '请保持屏幕常亮以持续共享。',
     unsupported: '此浏览器不支持位置共享 — 仍可查看地图。',
   },
+  fr: {
+    title: 'Partager ma position',
+    consent: 'Seulement tant que cet écran est ouvert, et uniquement avec votre guide et votre groupe. Désactivable à tout moment.',
+    sharing: 'Partage en direct — visible sur la carte du groupe',
+    denied: 'La localisation est bloquée. Autorisez-la pour ce site dans les réglages du navigateur, puis rouvrez.',
+    keepOn: 'Gardez l’écran allumé pour que le partage reste actif.',
+    unsupported: 'Ce navigateur ne peut pas partager la position — la carte montre quand même les autres.',
+  },
+  de: {
+    title: 'Meinen Standort teilen',
+    consent: 'Nur solange dieser Bildschirm geöffnet ist und nur mit Ihrem Guide und Ihrer Gruppe. Jederzeit abschaltbar.',
+    sharing: 'Live geteilt — auf der Gruppenkarte sichtbar',
+    denied: 'Standort ist blockiert. Erlauben Sie ihn für diese Seite in den Browser-Einstellungen und öffnen Sie neu.',
+    keepOn: 'Lassen Sie den Bildschirm an, damit das Teilen aktiv bleibt.',
+    unsupported: 'Dieser Browser kann den Standort nicht teilen — die Karte zeigt weiterhin alle anderen.',
+  },
+  ru: {
+    title: 'Делиться геопозицией',
+    consent: 'Только пока открыт этот экран и только с гидом и вашей группой. Можно выключить в любой момент.',
+    sharing: 'Геопозиция транслируется — видно на карте группы',
+    denied: 'Геолокация заблокирована. Разрешите ее для этого сайта в настройках браузера и откройте заново.',
+    keepOn: 'Не гасите экран, чтобы трансляция продолжалась.',
+    unsupported: 'Этот браузер не может делиться геопозицией — карта по-прежнему показывает остальных.',
+  },
+  it: {
+    title: 'Condividi la mia posizione',
+    consent: 'Solo finché questa schermata è aperta, solo con la tua guida e il tuo gruppo. Puoi disattivarla quando vuoi.',
+    sharing: 'Condivisione in diretta — visibile sulla mappa del gruppo',
+    denied: 'La posizione è bloccata. Consentila per questo sito nelle impostazioni del browser e riapri.',
+    keepOn: 'Tieni lo schermo acceso perché la condivisione resti attiva.',
+    unsupported: 'Questo browser non può condividere la posizione — la mappa mostra comunque gli altri.',
+  },
 };
 
 export default function LocationShareCard({
