@@ -28,7 +28,18 @@ export function normalizeBuilderLocale(raw: string | null | undefined): Locale |
   return null;
 }
 
+/**
+ * A4 — the same review gate the tour-room arrival tier honours.
+ *
+ * `normalizeBuilderLocale` happens to exclude fr/de/ru/it today, so machine
+ * translation could not reach this path anyway. That is an accident of the
+ * allowlist, not a gate: the day someone adds a locale there, unreviewed text
+ * would ship. Check the status here so the guarantee survives that edit.
+ *
+ * Fail-closed — absent status means not approved.
+ */
 function contentForLocale(poi: MatchPoiRow, locale: Locale): PoiLocalizedContent | null {
+  if (poi.content_locale_status?.[locale] !== 'approved') return null;
   const raw = poi.content_locales?.[locale];
   return isRecord(raw) ? raw : null;
 }
