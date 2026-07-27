@@ -86,6 +86,43 @@ URL을 직접 쳐야만 열린다. 어드민 페이지 49개 중 3개.
 **결과:** 관제에서 새 방식으로 배차해도 손님 홈의 차량 줄은 계속 비어 있다.
 (라이브 `tour_bus_details` 2행은 옛날에 손으로 넣은 것, `ops_room_vehicles`는 1행.)
 
+## 2차 감사 — 탐지기의 사각지대를 메움 (2026-07-28)
+
+1차 감사(D1~D10)는 전부 **"코드에서 코드로 가는 길"**만 봤다. 그런데 사장님이 보고한 노쇼는
+그 길이 **있었다** — 라우트도 호출부도 있었다. 못 쓴 이유는 그 호출부가 좌석 카드 안에 있었고
+**좌석이 배정된 적이 없어서** 카드가 아예 안 열렸기 때문이다.
+
+즉 1차 탐지기 5종은 **"길은 있는데 데이터가 없어 못 지나가는" 유형을 하나도 못 잡는다.**
+노쇼는 사장님이 말해줘서 안 것이지 감사가 찾은 게 아니다. 그래서 D12를 추가했다.
+
+**D12 — 라이브의 빈 테이블 → 그 테이블의 쓰기 경로 → 그 경로가 UI에서 닿는가.**
+닿지 않으면 첫 행이 영원히 안 생기고, 그 테이블을 읽는 기능 전체가 죽은 채로 남는다.
+
+빈 테이블 27개를 돌려 판정한 결과:
+
+- **정산·세무 체인은 무사하다.** `ops_guide_settlements` · `ops_settlement_periods` ·
+  `ops_entity_ledger` · `ops_remittances` · `ops_intercompany_invoices`가 전부 비어 있지만,
+  쓰기 경로가 `/admin/guide-settlements`와 `/admin/ops-finance/periods`(둘 다 도달 가능)에
+  걸려 있다. **비어 있는 이유는 아직 배정이 없어서지 잠긴 게 아니다.**
+- `ops_briefing_card_sets` · `ops_guest_notes` · `tour_room_message_reactions` 등도 쓰기
+  경로가 살아 있다 — 아직 안 쓴 것뿐.
+- ⚠ D12 자체도 두 번 틀렸다: `.from(t)`와 `.insert(`가 400자 이상 떨어지면 놓쳤고,
+  테이블명을 상수로 두는 파일(`const CARD_SET_TABLE = ...`)을 통째로 놓쳤다. 둘 다 고쳤다.
+
+### DE5 — OTA 파서 학습 루프가 쓰기 쪽에서 끊겨 있다 🔴
+
+라이브: `ops_parse_failures` **38건** 쌓임 · `ops_parse_rules` **0건**.
+
+- `ops_parse_rules`를 만지는 **API 라우트가 하나도 없다.** `lib/ops/parse/rules.ts`는 SELECT만 한다.
+- 실패 뭉치를 규칙으로 바꾸는 `buildRuleFromCluster`(`mining.ts:224`)는 **소비처 0**.
+  그 안에서만 쓰이는 `isMineable`·`patternFingerprint`도 따라서 죽어 있다.
+- `rule-governance.ts:9` 주석은 *"the status route calls `canPromoteToActive()`"*라고 적어
+  두었지만 **그 라우트가 존재하지 않는다.** `canPromoteToActive`의 유일한 등장이 이 주석이다.
+
+즉 파서는 실패를 **모으기만** 하고 아무것도 배우지 않는다. 승격 정책 자체는 이미 모듈에
+박혀 있다(승격 메타데이터 필수 + DB CHECK가 하한). 그래서 정책 결정이 필요한 게 아니라,
+**사람이 승격하는 화면 + 라우트가 없을 뿐**이다.
+
 ## TIER 2 — 로직만 있고 아무도 부르지 않는다
 
 전부 테스트는 통과한다. 화면에 붙일지는 **결정 사항**이라 여기 목록으로만 남긴다.
@@ -149,5 +186,6 @@ delete-user-without-profile,send-verification-code,verify-code}` ·
 | DE1 조인투어 일괄 초대 발급 | ✅ |
 | DE3 차량 줄을 살아 있는 배차로 | ✅ |
 | DE4 `courseToStopSeeds` 중복 제거 | ✅ |
-| TIER 2 12건 | 결정 대기 (사장님 우선순위) |
+| **DE5 파서 학습 루프 승격 경로** | 🔴 미착수 — 결정이 아니라 결함 |
+| TIER 2 11건 | 결정 대기 (사장님 우선순위) |
 | TIER 3 잔해 정리 | 결정 대기 |
