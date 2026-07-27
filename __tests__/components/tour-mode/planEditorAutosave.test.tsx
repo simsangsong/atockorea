@@ -152,7 +152,10 @@ it('autosaves stops: [] when the last stop is removed', async () => {
   await renderPlanner();
   jest.useFakeTimers();
 
-  fireEvent.click(screen.getByLabelText('Remove stop'));
+  // P2 — 삭제는 행 위의 타일이 아니라 ⋯ 시트 안에 있다(행을 한 줄로 접으면서
+  // ↑/↓/🗑 타일 세 개를 앱의 기존 시트 문법으로 옮겼다).
+  fireEvent.click(screen.getByTestId('plan-stop-actions-1'));
+  fireEvent.click(screen.getByTestId('plan-stop-remove'));
   await flushAutosave();
 
   await waitFor(() => expect(putBodies).toHaveLength(1));

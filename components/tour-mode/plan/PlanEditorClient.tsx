@@ -34,6 +34,7 @@ import {
   IconSuccess,
   IconTabMap,
   IconTrash,
+  IconMore,
   IconWarn,
   TR_ICON,
   TR_STROKE,
@@ -43,6 +44,8 @@ import { formatMinutes, haversineKm, totalDriveMinutes, type LatLng } from '@/li
 import { ROOM_LOCALES, normalizeRoomLocale, type RoomLocale } from '@/lib/tour-room/snapshot';
 import { useTourRoomSession } from '@/hooks/useTourRoomSession';
 import { useBackTrap } from '@/hooks/useBackTrap';
+import Sheet from '@/components/tour-mode/Sheet';
+import TimeWheel from '@/components/tour-mode/cockpit/TimeWheel';
 import PlanTourItinerary from '@/components/tour-mode/plan/PlanTourItinerary';
 import {
   isCourseOptionItinerary,
@@ -178,11 +181,15 @@ interface PlanCopy {
   minutes: (n: number) => string;
   memoPlaceholder: string;
   removeStop: string;
+  /** P2 — the ⋯ that holds reorder + remove. */
+  stopActions: string;
   moveUp: string;
   moveDown: string;
   needsTitle: string;
   needsHint: string;
   departureTitle: string;
+  /** P3 — clear the chosen time from the wheel sheet. */
+  timeClear: string;
   departureHint: string;
   adults: string;
   children: string;
@@ -248,11 +255,13 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     minutes: (n) => `${n}min`,
     memoPlaceholder: 'Request for this stop (optional)',
     removeStop: 'Remove stop',
+    stopActions: 'Stop options',
     moveUp: 'Move up',
     moveDown: 'Move down',
     needsTitle: 'About your party',
     needsHint: 'Helps your guide prepare — shared only with your guide.',
     departureTitle: 'Departure time (KST)',
+    timeClear: 'Clear time',
     departureHint: 'When your driver picks you up — your day’s included hours count from here.',
     adults: 'Adults',
     children: 'Children',
@@ -328,11 +337,13 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     minutes: (n) => `${n}분`,
     memoPlaceholder: '이 장소 요청사항 (선택)',
     removeStop: '삭제',
+    stopActions: '정류지 옵션',
     moveUp: '위로',
     moveDown: '아래로',
     needsTitle: '여행 정보',
     needsHint: '가이드 준비에만 사용돼요 — 가이드에게만 공유됩니다.',
     departureTitle: '출발 시각 (KST)',
+    timeClear: '시각 지우기',
     departureHint: '기사님이 픽업하는 시각이에요 — 오늘의 포함 시간이 여기서부터 계산돼요.',
     adults: '성인',
     children: '아동',
@@ -407,11 +418,13 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     minutes: (n) => `${n}分`,
     memoPlaceholder: 'このスポットへのご要望(任意)',
     removeStop: '削除',
+    stopActions: 'スポットの操作',
     moveUp: '上へ',
     moveDown: '下へ',
     needsTitle: '旅の情報',
     needsHint: 'ガイドの準備にのみ使用され、ガイドにのみ共有されます。',
     departureTitle: '出発時刻 (KST)',
+    timeClear: '時刻をクリア',
     departureHint: 'ドライバーがお迎えする時刻です。本日の含まれる時間はここから計算されます。',
     adults: '大人',
     children: '子ども',
@@ -485,11 +498,13 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     minutes: (n) => `${n}分钟`,
     memoPlaceholder: '对此地点的要求(可选)',
     removeStop: '删除',
+    stopActions: '地点选项',
     moveUp: '上移',
     moveDown: '下移',
     needsTitle: '出行信息',
     needsHint: '仅用于导游准备,只与导游共享。',
     departureTitle: '出发时间 (KST)',
+    timeClear: '清除时间',
     departureHint: '司机接您的时间——今天的包含时长从此刻开始计算。',
     adults: '成人',
     children: '儿童',
@@ -563,11 +578,13 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     minutes: (n) => `${n}分鐘`,
     memoPlaceholder: '對這個地點的需求（選填）',
     removeStop: '刪除',
+    stopActions: '地點選項',
     moveUp: '上移',
     moveDown: '下移',
     needsTitle: '旅遊資訊',
     needsHint: '僅供導遊準備行程使用，只會與導遊分享。',
     departureTitle: '出發時間 (KST)',
+    timeClear: '清除時間',
     departureHint: '司機接您的時間——今天包含的時數從這時開始計算。',
     adults: '成人',
     children: '兒童',
@@ -641,11 +658,13 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     minutes: (n) => `${n}min`,
     memoPlaceholder: 'Petición para esta parada (opcional)',
     removeStop: 'Eliminar',
+    stopActions: 'Opciones de la parada',
     moveUp: 'Subir',
     moveDown: 'Bajar',
     needsTitle: 'Sobre tu grupo',
     needsHint: 'Solo para preparar tu tour; se comparte únicamente con tu guía.',
     departureTitle: 'Hora de salida (KST)',
+    timeClear: 'Borrar la hora',
     departureHint: 'Cuando tu conductor te recoge — las horas incluidas del día cuentan desde aquí.',
     adults: 'Adultos',
     children: 'Niños',
@@ -721,11 +740,13 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     minutes: (n) => `${n} min`,
     memoPlaceholder: 'Demande pour cette étape (facultatif)',
     removeStop: 'Retirer l’étape',
+    stopActions: 'Options de l’étape',
     moveUp: 'Monter',
     moveDown: 'Descendre',
     needsTitle: 'Votre groupe',
     needsHint: 'Aide votre guide à se préparer — partagé uniquement avec lui.',
     departureTitle: 'Heure de départ (KST)',
+    timeClear: 'Effacer l’heure',
     departureHint: 'L’heure de votre prise en charge — les heures incluses de la journée comptent à partir de là.',
     adults: 'Adultes',
     children: 'Enfants',
@@ -801,11 +822,13 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     minutes: (n) => `${n} Min.`,
     memoPlaceholder: 'Wunsch für diesen Stopp (optional)',
     removeStop: 'Stopp entfernen',
+    stopActions: 'Optionen für den Stopp',
     moveUp: 'Nach oben',
     moveDown: 'Nach unten',
     needsTitle: 'Ihre Gruppe',
     needsHint: 'Hilft Ihrem Guide bei der Vorbereitung — nur mit ihm geteilt.',
     departureTitle: 'Abfahrtszeit (KST)',
+    timeClear: 'Zeit löschen',
     departureHint: 'Wann Ihr Fahrer Sie abholt — ab hier zählen die inkludierten Stunden des Tages.',
     adults: 'Erwachsene',
     children: 'Kinder',
@@ -881,11 +904,13 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     minutes: (n) => `${n} мин`,
     memoPlaceholder: 'Пожелание к этому месту (необязательно)',
     removeStop: 'Удалить место',
+    stopActions: 'Действия с остановкой',
     moveUp: 'Выше',
     moveDown: 'Ниже',
     needsTitle: 'О вашей группе',
     needsHint: 'Поможет гиду подготовиться — видит только ваш гид.',
     departureTitle: 'Время выезда (KST)',
+    timeClear: 'Убрать время',
     departureHint: 'Когда водитель вас заберет — включенные часы дня считаются с этого момента.',
     adults: 'Взрослые',
     children: 'Дети',
@@ -961,11 +986,13 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     minutes: (n) => `${n} min`,
     memoPlaceholder: 'Richiesta per questa tappa (facoltativo)',
     removeStop: 'Rimuovi tappa',
+    stopActions: 'Opzioni della tappa',
     moveUp: 'Sposta su',
     moveDown: 'Sposta giù',
     needsTitle: 'Il tuo gruppo',
     needsHint: 'Aiuta la guida a prepararsi — condiviso solo con la tua guida.',
     departureTitle: 'Orario di partenza (KST)',
+    timeClear: 'Cancella l’ora',
     departureHint: 'Quando l’autista viene a prenderti — le ore incluse della giornata contano da qui.',
     adults: 'Adulti',
     children: 'Bambini',
@@ -2180,6 +2207,17 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
    * 동행자(개인 초대로 들어온 기기)는 서버가 403으로 막는다.
    */
   const [claimBusy, setClaimBusy] = useState(false);
+  /** P2 — one stop expands at a time; the rest stay one line tall. */
+  const [expandedStopId, setExpandedStopId] = useState<string | null>(null);
+  /** P2 — the stop whose ⋯ sheet is open (reorder / remove). */
+  const [actionStopId, setActionStopId] = useState<string | null>(null);
+  /**
+   * P3 — which time the wheel is editing: a stop id, or 'departure'.
+   * `<input type="time">` renders in the DEVICE locale, which is why an
+   * English planner showed "오후 9:01" on the owner's phone. It also draws OS
+   * chrome in the middle of an app that has its own.
+   */
+  const [timeSheetFor, setTimeSheetFor] = useState<string | null>(null);
   const claimLead = async () => {
     if (claimBusy) return;
     setClaimBusy(true);
@@ -2771,14 +2809,32 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
               <ol className="mt-2 flex flex-col gap-2">
                 {stops.map((stop, index) => {
                   const stopWarnings = warnings.filter((w) => w.stop_id === stop.id);
+                  const expanded = expandedStopId === stop.id;
+                  const meta = [
+                    stop.arrival_planned ?? null,
+                    stop.duration_min ? copy.minutes(stop.duration_min) : null,
+                  ]
+                    .filter(Boolean)
+                    .join(' · ');
                   return (
-                    <li key={stop.id} className="tr-card px-3.5 py-3.5">
-                      <div className="flex items-start gap-2.5">
-                        <span className="tr-label mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-[var(--tr-accent-soft)] font-bold text-[var(--tr-accent-deep)]">
+                    <li key={stop.id} className="tr-card overflow-hidden">
+                      {/* P2 — the collapsed row is ONE line (~56px). It used to
+                          carry a time input, a stay select, a full-width request
+                          field and a three-tile action column at all times: ~430px
+                          per stop, so four stops filled two screens. */}
+                      <div className="flex items-center gap-2.5 px-3 py-2.5">
+                        <span className="tr-label flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-[var(--tr-accent-soft)] font-bold text-[var(--tr-accent-deep)]">
                           {index + 1}
                         </span>
-                        <div className="min-w-0 flex-1">
-                          <p className="tr-card-text font-semibold text-[var(--tr-ink)]">
+                        <button
+                          type="button"
+                          onClick={() => setExpandedStopId(expanded ? null : stop.id)}
+                          aria-expanded={expanded}
+                          disabled={!canEdit}
+                          className="min-w-0 flex-1 text-left disabled:cursor-default"
+                          data-testid={`plan-stop-row-${index + 1}`}
+                        >
+                          <p className="tr-card-text text-cjk-safe font-semibold text-[var(--tr-ink)]">
                             {stop.title}
                             {stop.source === 'google' && (
                               <span className="tr-meta ml-1.5 rounded bg-[var(--tr-surface-2)] px-1.5 py-0.5 text-[var(--tr-ink-3)]">
@@ -2786,119 +2842,210 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                               </span>
                             )}
                           </p>
-                          {canEdit ? (
-                            <div className="mt-2 flex flex-wrap items-center gap-2">
-                              <label className="tr-meta flex items-center gap-1 text-[var(--tr-ink-3)]">
-                                {copy.timeLabel}
-                                <input
-                                  type="time"
-                                  value={stop.arrival_planned ?? ''}
-                                  onChange={(e) =>
-                                    mutateStops((prev) =>
-                                      prev.map((s) => (s.id === stop.id ? { ...s, arrival_planned: e.target.value || null } : s)),
-                                    )
-                                  }
-                                  className="tr-label min-h-9 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2.5 text-[var(--tr-ink)]"
+                          {(meta || stopWarnings.length > 0) && (
+                            <p className="tr-meta mt-0.5 flex items-center gap-1.5 text-[var(--tr-ink-3)]">
+                              {stopWarnings.length > 0 && (
+                                <IconWarn
+                                  size={TR_ICON.meta}
+                                  aria-hidden
+                                  className="shrink-0 text-[var(--tr-danger)]"
                                 />
-                              </label>
-                              <label className="tr-meta flex items-center gap-1 text-[var(--tr-ink-3)]">
-                                {copy.durationLabel}
-                                <select
-                                  value={stop.duration_min ?? 60}
-                                  onChange={(e) =>
-                                    mutateStops((prev) =>
-                                      prev.map((s) =>
-                                        s.id === stop.id ? { ...s, duration_min: Number.parseInt(e.target.value, 10) } : s,
-                                      ),
-                                    )
-                                  }
-                                  className="tr-label min-h-9 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2.5 text-[var(--tr-ink)]"
-                                >
-                                  {DURATION_OPTIONS.map((min) => (
-                                    <option key={min} value={min}>
-                                      {copy.minutes(min)}
-                                    </option>
-                                  ))}
-                                </select>
-                              </label>
-                            </div>
-                          ) : (
-                            <p className="tr-meta mt-1 text-[var(--tr-ink-3)]">
-                              {stop.arrival_planned ? `${stop.arrival_planned} · ` : ''}
-                              {stop.duration_min ? copy.minutes(stop.duration_min) : ''}
+                              )}
+                              {meta || copy.timeLabel}
                             </p>
                           )}
-                          {canEdit && (
-                            <input
-                              type="text"
-                              value={stop.memo_guest ?? ''}
-                              onChange={(e) =>
-                                mutateStops((prev) =>
-                                  prev.map((s) => (s.id === stop.id ? { ...s, memo_guest: e.target.value } : s)),
-                                )
-                              }
-                              placeholder={copy.memoPlaceholder}
-                              maxLength={500}
-                              className="tr-label mt-2 w-full rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2 text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)] focus:border-[var(--tr-accent)] focus:outline-none"
-                            />
-                          )}
-                          {stopWarnings.map((w) => (
-                            <p key={w.code} className="tr-meta mt-1.5 flex items-center gap-1 font-semibold text-[var(--tr-danger)]">
-                              <IconWarn size={TR_ICON.meta} aria-hidden />
-                              {w.code === 'closed'
-                                ? copy.warnClosed(w.title ?? stop.title)
-                                : copy.warnOutOfRegion(w.title ?? stop.title)}
-                            </p>
-                          ))}
-                        </div>
+                        </button>
                         {canEdit && (
-                          <div className="flex shrink-0 flex-col items-center gap-1">
-                            <button
-                              type="button"
-                              aria-label={copy.moveUp}
-                              disabled={index === 0}
-                              onClick={() =>
-                                mutateStops((prev) => {
-                                  const next = [...prev];
-                                  [next[index - 1], next[index]] = [next[index], next[index - 1]];
-                                  return next;
-                                })
-                              }
-                              className="flex h-9 w-9 items-center justify-center rounded-xl bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)] transition active:scale-95 disabled:opacity-40"
-                            >
-                              <IconMoveUp size={TR_ICON.chip} aria-hidden />
-                            </button>
-                            <button
-                              type="button"
-                              aria-label={copy.moveDown}
-                              disabled={index === stops.length - 1}
-                              onClick={() =>
-                                mutateStops((prev) => {
-                                  const next = [...prev];
-                                  [next[index], next[index + 1]] = [next[index + 1], next[index]];
-                                  return next;
-                                })
-                              }
-                              className="flex h-9 w-9 items-center justify-center rounded-xl bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)] transition active:scale-95 disabled:opacity-40"
-                            >
-                              <IconMoveDown size={TR_ICON.chip} aria-hidden />
-                            </button>
-                            <button
-                              type="button"
-                              aria-label={copy.removeStop}
-                              onClick={() => mutateStops((prev) => prev.filter((s) => s.id !== stop.id))}
-                              className="flex h-9 w-9 items-center justify-center rounded-xl bg-[var(--tr-danger-soft)] text-[var(--tr-danger)] transition active:scale-95"
-                            >
-                              <IconTrash size={TR_ICON.chip} aria-hidden />
-                            </button>
-                          </div>
+                          <button
+                            type="button"
+                            aria-label={copy.stopActions}
+                            onClick={() => setActionStopId(stop.id)}
+                            className="flex h-11 w-9 shrink-0 items-center justify-center rounded-xl text-[var(--tr-ink-3)] active:bg-[var(--tr-surface-2)]"
+                            data-testid={`plan-stop-actions-${index + 1}`}
+                          >
+                            <IconMore size={TR_ICON.action} aria-hidden />
+                          </button>
                         )}
                       </div>
+
+                      {canEdit && expanded && (
+                        <div
+                          className="tr-anim-panel-in border-t border-[var(--tr-hairline)] px-3 py-3"
+                          data-testid={`plan-stop-detail-${index + 1}`}
+                        >
+                          <div className="flex flex-wrap items-center gap-2">
+                            <span className="tr-meta flex items-center gap-1 text-[var(--tr-ink-3)]">
+                              {copy.timeLabel}
+                              <button
+                                type="button"
+                                onClick={() => setTimeSheetFor(stop.id)}
+                                className="tr-label min-h-9 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 font-semibold text-[var(--tr-ink)]"
+                                data-testid={`plan-stop-time-${index + 1}`}
+                              >
+                                {stop.arrival_planned ?? '--:--'}
+                              </button>
+                            </span>
+                            <label className="tr-meta flex items-center gap-1 text-[var(--tr-ink-3)]">
+                              {copy.durationLabel}
+                              <select
+                                value={stop.duration_min ?? 60}
+                                onChange={(e) =>
+                                  mutateStops((prev) =>
+                                    prev.map((s) =>
+                                      s.id === stop.id ? { ...s, duration_min: Number.parseInt(e.target.value, 10) } : s,
+                                    ),
+                                  )
+                                }
+                                className="tr-label min-h-9 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2.5 text-[var(--tr-ink)]"
+                              >
+                                {DURATION_OPTIONS.map((min) => (
+                                  <option key={min} value={min}>
+                                    {copy.minutes(min)}
+                                  </option>
+                                ))}
+                              </select>
+                            </label>
+                          </div>
+                          <input
+                            type="text"
+                            value={stop.memo_guest ?? ''}
+                            onChange={(e) =>
+                              mutateStops((prev) =>
+                                prev.map((s) => (s.id === stop.id ? { ...s, memo_guest: e.target.value } : s)),
+                              )
+                            }
+                            placeholder={copy.memoPlaceholder}
+                            maxLength={500}
+                            className="tr-label mt-2 w-full rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2 text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)] focus:border-[var(--tr-accent)] focus:outline-none"
+                          />
+                        </div>
+                      )}
+
+                      {stopWarnings.map((w) => (
+                        <p
+                          key={w.code}
+                          className="tr-meta flex items-center gap-1 border-t border-[var(--tr-hairline)] px-3 py-2 font-semibold text-[var(--tr-danger)]"
+                        >
+                          <IconWarn size={TR_ICON.meta} aria-hidden />
+                          {w.code === 'closed'
+                            ? copy.warnClosed(w.title ?? stop.title)
+                            : copy.warnOutOfRegion(w.title ?? stop.title)}
+                        </p>
+                      ))}
                     </li>
                   );
                 })}
               </ol>
             )}
+
+            {/* P2 — reorder + remove moved off the row into the app's ⋯ sheet
+                grammar (the same one the chat list uses). Three always-visible
+                tiles per stop were the bulk of the old row's height. */}
+            {actionStopId && canEdit && (() => {
+              const idx = stops.findIndex((s) => s.id === actionStopId);
+              if (idx < 0) return null;
+              const close = () => setActionStopId(null);
+              const act = (fn: (prev: EditorStop[]) => EditorStop[]) => {
+                mutateStops(fn);
+                close();
+              };
+              return (
+                <Sheet open onClose={close} title={stops[idx].title} closeLabel={ui.cancel}>
+                  <div className="tr-card divide-y divide-[var(--tr-hairline)] overflow-hidden">
+                    <button
+                      type="button"
+                      disabled={idx === 0}
+                      onClick={() =>
+                        act((prev) => {
+                          const next = [...prev];
+                          [next[idx - 1], next[idx]] = [next[idx], next[idx - 1]];
+                          return next;
+                        })
+                      }
+                      className="tr-card-text flex min-h-[52px] w-full items-center gap-3 px-4 text-left text-[var(--tr-ink)] disabled:opacity-40"
+                      data-testid="plan-stop-move-up"
+                    >
+                      <IconMoveUp size={TR_ICON.action} aria-hidden />
+                      {copy.moveUp}
+                    </button>
+                    <button
+                      type="button"
+                      disabled={idx === stops.length - 1}
+                      onClick={() =>
+                        act((prev) => {
+                          const next = [...prev];
+                          [next[idx], next[idx + 1]] = [next[idx + 1], next[idx]];
+                          return next;
+                        })
+                      }
+                      className="tr-card-text flex min-h-[52px] w-full items-center gap-3 px-4 text-left text-[var(--tr-ink)] disabled:opacity-40"
+                      data-testid="plan-stop-move-down"
+                    >
+                      <IconMoveDown size={TR_ICON.action} aria-hidden />
+                      {copy.moveDown}
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => act((prev) => prev.filter((s) => s.id !== actionStopId))}
+                      className="tr-card-text flex min-h-[52px] w-full items-center gap-3 px-4 text-left font-semibold text-[var(--tr-danger)]"
+                      data-testid="plan-stop-remove"
+                    >
+                      <IconTrash size={TR_ICON.action} aria-hidden />
+                      {copy.removeStop}
+                    </button>
+                  </div>
+                </Sheet>
+              );
+            })()}
+
+            {/* P3 — one wheel serves every time in this screen. The native
+                picker leaked the device locale into a 10-locale planner and drew
+                OS chrome inside an app that has its own. */}
+            {timeSheetFor && canEdit && (() => {
+              const forDeparture = timeSheetFor === 'departure';
+              const stop = forDeparture ? null : stops.find((s) => s.id === timeSheetFor);
+              if (!forDeparture && !stop) return null;
+              const current = forDeparture ? (departureTime ?? '') : (stop?.arrival_planned ?? '');
+              const commit = (hhmm: string) => {
+                if (forDeparture) {
+                  mutateDeparture(hhmm);
+                } else {
+                  mutateStops((prev) =>
+                    prev.map((s) => (s.id === timeSheetFor ? { ...s, arrival_planned: hhmm } : s)),
+                  );
+                }
+              };
+              return (
+                <Sheet
+                  open
+                  onClose={() => setTimeSheetFor(null)}
+                  title={forDeparture ? copy.departureTitle : (stop?.title ?? copy.timeLabel)}
+                  closeLabel={ui.cancel}
+                >
+                  <TimeWheel
+                    value={current}
+                    onChange={commit}
+                    restAt="09:00"
+                    testId="plan-time-wheel"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => {
+                      if (forDeparture) mutateDeparture(null);
+                      else
+                        mutateStops((prev) =>
+                          prev.map((s) => (s.id === timeSheetFor ? { ...s, arrival_planned: null } : s)),
+                        );
+                      setTimeSheetFor(null);
+                    }}
+                    className="tr-label mt-3 min-h-11 w-full rounded-2xl bg-[var(--tr-surface-2)] font-semibold text-[var(--tr-ink-2)]"
+                    data-testid="plan-time-clear"
+                  >
+                    {copy.timeClear}
+                  </button>
+                </Sheet>
+              );
+            })()}
 
             {/* plan-wide warnings (overrun) */}
             {warnings.some((w) => w.code === 'overrun') && plan.tour.total_hours && (
@@ -2953,15 +3100,16 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
               <p className="tr-meta font-semibold uppercase tracking-wide text-[var(--tr-ink-3)]">
                 {copy.departureTitle}
               </p>
-              <label className="mt-2 flex items-center gap-2 text-[var(--tr-ink-2)]">
-                <input
-                  type="time"
-                  value={departureTime ?? ''}
-                  onChange={(e) => mutateDeparture(e.target.value || null)}
-                  className="tr-label min-h-9 w-32 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 text-[var(--tr-ink)]"
-                  aria-label={copy.departureTitle}
-                />
-              </label>
+              <button
+                type="button"
+                onClick={() => setTimeSheetFor('departure')}
+                disabled={!canEdit}
+                aria-label={copy.departureTitle}
+                className="tr-label mt-2 min-h-11 w-32 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 font-semibold text-[var(--tr-ink)] disabled:opacity-40"
+                data-testid="plan-departure-time"
+              >
+                {departureTime ?? '--:--'}
+              </button>
               <p className="tr-meta mt-1 text-[var(--tr-ink-3)]">{copy.departureHint}</p>
             </div>
 
