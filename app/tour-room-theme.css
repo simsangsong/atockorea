@@ -347,48 +347,50 @@
  * landmarks — SkinScenery.tsx owns the drawing; these blocks own the light).
  * Same invariants as above: danger untouched, accent ↔ bubble-me-ink ≥4.5. */
 
-/* ── jeju 제주 — tangerine cream over basalt; Hallasan + 돌하르방 scene. */
+/* ── jeju 제주 — mint green field (owner revision 2026-07-27: 연녹색·민트),
+ * the tangerine stays in the ACCENT family only — 귤 on green, the island's
+ * own pairing. Hallasan + 돌하르방 scene rides the mint. */
 .tr-root[data-tr-skin='jeju'] {
-  --tr-canvas: #f6e8d5;
-  --tr-surface: #fdfaf4;
-  --tr-surface-2: #f1e5d2;
-  --tr-hairline: rgba(58, 42, 18, 0.1);
+  --tr-canvas: #dcefdd;
+  --tr-surface: #fbfdf9;
+  --tr-surface-2: #e6f2e4;
+  --tr-hairline: rgba(26, 42, 30, 0.1);
   --tr-bubble-me: #a34d14;
   --tr-bubble-me-ink: #fdf3e7;
-  --tr-bubble-in: #fdfaf4;
-  --tr-bubble-in-ink: #221b12;
-  --tr-bubble-system: rgba(58, 42, 18, 0.08);
-  --tr-bubble-system-ink: #5f5443;
-  --tr-ink: #221b12;
-  --tr-ink-2: #5b5344;
-  --tr-ink-3: #665a47;
+  --tr-bubble-in: #fbfdf9;
+  --tr-bubble-in-ink: #1b211c;
+  --tr-bubble-system: rgba(26, 42, 30, 0.07);
+  --tr-bubble-system-ink: #4f5c52;
+  --tr-ink: #1b211c;
+  --tr-ink-2: #525f56;
+  --tr-ink-3: #5b6a60;
   --tr-accent: #a34d14;
-  --tr-accent-deep: #191009;
-  --tr-accent-soft: #f3ddc2;
-  --tr-home-canvas: linear-gradient(180deg, #f9eedd 0%, #f4e3cb 100%);
-  --tr-home-tile: #fdfaf4;
+  --tr-accent-deep: #131a14;
+  --tr-accent-soft: #e9f2e2;
+  --tr-home-canvas: linear-gradient(180deg, #e6f3e5 0%, #d8ecd9 100%);
+  --tr-home-tile: #fbfdf9;
   --tr-chip-grad-accent: linear-gradient(140deg, #c77a3d 0%, #9c4d18 100%);
 }
 .dark .tr-root[data-tr-skin='jeju'],
 .tr-root.dark[data-tr-skin='jeju'] {
-  --tr-canvas: #1a1410;
-  --tr-surface: #221b15;
-  --tr-surface-2: #2b231b;
-  --tr-hairline: rgba(236, 229, 219, 0.1);
+  --tr-canvas: #131a15;
+  --tr-surface: #1a231c;
+  --tr-surface-2: #232e25;
+  --tr-hairline: rgba(228, 238, 230, 0.1);
   --tr-bubble-me: #e0a878;
   --tr-bubble-me-ink: #241304;
-  --tr-bubble-in: #2b231b;
-  --tr-bubble-in-ink: #ece5db;
-  --tr-bubble-system: rgba(236, 229, 219, 0.08);
-  --tr-bubble-system-ink: #b3a998;
-  --tr-ink: #ece5db;
-  --tr-ink-2: #b3a998;
-  --tr-ink-3: #8d8270;
+  --tr-bubble-in: #232e25;
+  --tr-bubble-in-ink: #e4ece5;
+  --tr-bubble-system: rgba(228, 238, 230, 0.08);
+  --tr-bubble-system-ink: #a9b6ab;
+  --tr-ink: #e4ece5;
+  --tr-ink-2: #a9b6ab;
+  --tr-ink-3: #83917f;
   --tr-accent: #e0a878;
   --tr-accent-deep: #ffffff;
   --tr-accent-soft: rgba(224, 168, 120, 0.16);
-  --tr-home-canvas: linear-gradient(180deg, #1c1611 0%, #16110d 100%);
-  --tr-home-tile: #221b15;
+  --tr-home-canvas: linear-gradient(180deg, #161f18 0%, #111710 100%);
+  --tr-home-tile: #1a231c;
   --tr-chip-grad-accent: linear-gradient(135deg, #d09a6a 0%, #8a5a2e 100%);
 }
 
@@ -441,28 +443,30 @@
   --tr-chip-grad-accent: linear-gradient(135deg, #9591d0 0%, #57538f 100%);
 }
 
-/* ── busan 부산 — sunset peach + deep marine; Haeundae + Sky Capsule scene. */
+/* ── busan 부산 — blue sky over blue sea (owner revision 2026-07-27:
+ * 파란 하늘 푸른 바다 — the sunset peach clashed with the scene); deep
+ * marine signature, Gwangan Bridge + Sky Capsule scene. */
 .tr-root[data-tr-skin='busan'] {
-  --tr-canvas: #fae3da;
-  --tr-surface: #fffbf9;
-  --tr-surface-2: #f6e6de;
-  --tr-hairline: rgba(64, 32, 24, 0.1);
+  --tr-canvas: #cfe7f0;
+  --tr-surface: #fdfeff;
+  --tr-surface-2: #e2eef4;
+  --tr-hairline: rgba(23, 36, 43, 0.1);
   --tr-bubble-me: #20596f;
   --tr-bubble-me-ink: #eef7fa;
-  --tr-bubble-in: #fffbf9;
-  --tr-bubble-in-ink: #251a19;
-  --tr-bubble-system: rgba(64, 32, 24, 0.08);
-  --tr-bubble-system-ink: #5d5350;
-  --tr-ink: #251a19;
-  --tr-ink-2: #5f5150;
-  --tr-ink-3: #6b5a55;
+  --tr-bubble-in: #fdfeff;
+  --tr-bubble-in-ink: #17242b;
+  --tr-bubble-system: rgba(20, 40, 52, 0.08);
+  --tr-bubble-system-ink: #4c5f6a;
+  --tr-ink: #17242b;
+  --tr-ink-2: #4a5c66;
+  --tr-ink-3: #4f616b;
   --tr-accent: #20596f;
-  --tr-accent-deep: #171012;
-  --tr-accent-soft: #dceaf0;
+  --tr-accent-deep: #101a1f;
+  --tr-accent-soft: #d8eaf2;
   --tr-safe: #31707f;
   --tr-safe-soft: rgba(32, 89, 111, 0.14);
-  --tr-home-canvas: linear-gradient(180deg, #fcece4 0%, #f8ddd2 100%);
-  --tr-home-tile: #fffbf9;
+  --tr-home-canvas: linear-gradient(180deg, #dbeef7 0%, #c9e3ef 100%);
+  --tr-home-tile: #fdfeff;
   --tr-chip-grad-accent: linear-gradient(140deg, #4585a0 0%, #1e5570 100%);
 }
 .dark .tr-root[data-tr-skin='busan'],
