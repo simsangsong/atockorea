@@ -351,9 +351,9 @@
  * the tangerine stays in the ACCENT family only — 귤 on green, the island's
  * own pairing. Hallasan + 돌하르방 scene rides the mint. */
 .tr-root[data-tr-skin='jeju'] {
-  --tr-canvas: #dcefdd;
+  --tr-canvas: #e9f5ea;
   --tr-surface: #fbfdf9;
-  --tr-surface-2: #e6f2e4;
+  --tr-surface-2: #edf6ec;
   --tr-hairline: rgba(26, 42, 30, 0.1);
   --tr-bubble-me: #a34d14;
   --tr-bubble-me-ink: #fdf3e7;
@@ -366,8 +366,8 @@
   --tr-ink-3: #5b6a60;
   --tr-accent: #a34d14;
   --tr-accent-deep: #131a14;
-  --tr-accent-soft: #e9f2e2;
-  --tr-home-canvas: linear-gradient(180deg, #e6f3e5 0%, #d8ecd9 100%);
+  --tr-accent-soft: #eff6ec;
+  --tr-home-canvas: linear-gradient(180deg, #f0f8f0 0%, #e3f1e4 100%);
   --tr-home-tile: #fbfdf9;
   --tr-chip-grad-accent: linear-gradient(140deg, #c77a3d 0%, #9c4d18 100%);
 }
