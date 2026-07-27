@@ -427,7 +427,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "shortCardDescription": "3つのユネスコ世界遺産——漢拏山(ハルラサン)、城山日出峰、万丈窟溶岩洞窟——を、生きた海女（ヘニョ）の素潜り実演、柱状節理の断崖、海へ落ちる正房瀑布とつなぐ、密度の高い全島ルート。済州を象徴するハイライトを、1日に凝縮しました。"
     },
     "price": {
-      "amountLabel": "93"
+      "amountLabel": "80"
     }
   },
   "jeju-hydrangea-festival-tour-east-route": {

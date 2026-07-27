@@ -138,6 +138,7 @@ export {
   Palette as IconPalette,
   QrCode as IconQr,
   StickyNote as IconNote,
+  BookOpen as IconManual,
   Clock3 as IconTime,
   UserRound as IconPerson,
   Crosshair as IconRecenter,

@@ -11,6 +11,7 @@
 
 import type { ReactNode } from 'react';
 import { CHAT_LANGUAGES } from '@/lib/tour-room/languages';
+import { localeFlag } from '@/lib/tour-room/localeFlags';
 import { ROOM_LOCALES, type RoomLocale } from '@/lib/tour-room/snapshot';
 import {
   useTourRoomSettings,
@@ -414,13 +415,20 @@ export default function SettingsTab({
                 onClick={() => onLocaleChange(code)}
                 data-testid={`app-locale-${code}`}
                 aria-pressed={locale === code}
-                className={`tr-card-text tr-press min-h-[44px] rounded-xl px-2 transition-colors duration-[var(--tr-dur-fast)] ${
+                /* R3 — flag + native name, one chip grammar shared with the
+                   chat-language control below. */
+                className={`tr-press flex min-h-[52px] items-center justify-center gap-1.5 rounded-xl px-2 transition-colors duration-[var(--tr-dur-fast)] ${
                   locale === code
-                    ? 'bg-[var(--tr-accent)] font-semibold text-[var(--tr-bubble-me-ink)]'
+                    ? 'bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)] shadow-[var(--tr-tile-shadow)]'
                     : 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]'
                 }`}
               >
-                {LOCALE_NAME[code]}
+                <span className="tr-card-text leading-none" aria-hidden>
+                  {localeFlag(code)}
+                </span>
+                <span className={`tr-card-text text-cjk-safe ${locale === code ? 'font-bold' : ''}`}>
+                  {LOCALE_NAME[code]}
+                </span>
               </button>
             ))}
           </div>
@@ -430,19 +438,42 @@ export default function SettingsTab({
           <div className="mt-4 border-t border-[var(--tr-hairline)] pt-3" data-testid="chat-language-section">
             <p className="tr-label font-semibold text-[var(--tr-ink)]">{copy.chatLanguage}</p>
             <p className="tr-meta mt-0.5 leading-snug text-[var(--tr-ink-3)]">{copy.chatLanguageHint}</p>
-            <select
-              value={chatLocale ?? ''}
-              onChange={(e) => onChatLocaleChange(e.target.value)}
-              className="tr-card-text mt-2 min-h-[44px] w-full rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] px-3 text-[var(--tr-ink)] focus:border-[var(--tr-accent)] focus:outline-none"
-              data-testid="chat-language-select"
+            {/* R3 — the same flag-chip grammar as the app language above. A
+                native <select> looked like a different app; 32 languages stay
+                reachable as a horizontally scrolling chip rail, with the
+                current pick pinned first via Auto. */}
+            <div
+              className="mt-2 flex flex-wrap gap-1.5"
+              role="radiogroup"
+              aria-label={copy.chatLanguage}
+              data-testid="chat-language-chips"
             >
-              <option value="">{copy.chatAuto}</option>
-              {CHAT_LANGUAGES.map((lang) => (
-                <option key={lang.code} value={lang.code}>
-                  {lang.name}
-                </option>
-              ))}
-            </select>
+              {[{ code: '', name: copy.chatAuto }, ...CHAT_LANGUAGES].map((lang) => {
+                const active = (chatLocale ?? '') === lang.code;
+                return (
+                  <button
+                    key={lang.code || 'auto'}
+                    type="button"
+                    role="radio"
+                    aria-checked={active}
+                    onClick={() => onChatLocaleChange(lang.code)}
+                    data-testid={`chat-locale-${lang.code || 'auto'}`}
+                    className={`tr-press flex min-h-[40px] items-center gap-1.5 rounded-full px-3 transition-colors duration-[var(--tr-dur-fast)] ${
+                      active
+                        ? 'bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]'
+                        : 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]'
+                    }`}
+                  >
+                    <span className="tr-card-text leading-none" aria-hidden>
+                      {lang.code ? localeFlag(lang.code) : '🌐'}
+                    </span>
+                    <span className={`tr-label text-cjk-safe ${active ? 'font-bold' : 'font-medium'}`}>
+                      {lang.name}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
         )}
       </section>
