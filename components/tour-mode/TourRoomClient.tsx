@@ -927,6 +927,7 @@ function TourRoomLive({
             bookingId={bookingId}
             roomSession={data.session}
             canSignal={viewerRole === 'customer' && !readOnly}
+            viewerRole={viewerRole}
           />
           {/* §11.D D4 — PRIVATE-tour departure countdown (client-derived). Shows
               only for a private tour with a guest-set departure time; hidden for

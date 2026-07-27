@@ -93,9 +93,9 @@ describe('buildWhatsAppDeepLink', () => {
   })
 })
 
-describe('presets (6 locale × 5)', () => {
-  it('ships 5 presets, each with all 6 locales non-empty', () => {
-    expect(WA_PRESETS).toHaveLength(5)
+describe('presets (6 locale × 6)', () => {
+  it('ships 6 presets, each with all 6 locales non-empty', () => {
+    expect(WA_PRESETS).toHaveLength(6)
     for (const preset of WA_PRESETS) {
       for (const locale of WA_LOCALES) {
         expect(preset.bodies[locale]).toBeTruthy()

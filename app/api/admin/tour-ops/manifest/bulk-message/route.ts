@@ -16,6 +16,12 @@ import {
   type RecipientInput,
 } from '@/lib/ops/messaging/guestMessage';
 import { getForecastCached, loadTemplate, sendLogRow } from '@/lib/ops/messaging/guestMessageLoad';
+import {
+  cruiseCallLabel,
+  cruiseVarsFromCall,
+  pickCruiseCall,
+  type CruiseCallRow,
+} from '@/lib/ops/cruise/schedule';
 
 export const dynamic = 'force-dynamic';
 
@@ -115,7 +121,7 @@ async function loadContext(
   date: string,
 ) {
   const [{ data: tour }, { data: bookings, error }] = await Promise.all([
-    supabase.from('tours').select('id, title, city').eq('id', tourId).maybeSingle(),
+    supabase.from('tours').select('id, slug, title, city').eq('id', tourId).maybeSingle(),
     supabase
       .from('bookings')
       .select(
@@ -127,8 +133,37 @@ async function loadContext(
   ]);
   if (error) throw new Error(error.message);
   return {
-    tour: (tour as { id: string; title: string | null; city: string | null } | null) ?? null,
+    tour:
+      (tour as { id: string; slug: string | null; title: string | null; city: string | null } | null) ??
+      null,
     rows: (bookings ?? []) as unknown as BookingRow[],
+  };
+}
+
+/**
+ * 크루즈 D-1 (docs/cruise-jeju-shore-excursion-2026.md) — 투어일의 기항을
+ * 찾아 {cruise_*} 변수를 만든다. 배가 여러 척이고 투어에 항구 힌트가 없으면
+ * 자동 선택하지 않는다(missing 배지 + 패널의 배 선택 칩이 정답).
+ */
+async function loadCruiseContext(
+  supabase: ReturnType<typeof createServerClient>,
+  date: string,
+  tour: { title: string | null; slug: string | null } | null,
+  cruiseCallId: string | null,
+) {
+  const { data } = await supabase
+    .from('cruise_calls')
+    .select('id, call_date, berth, port, ship, arrive_at, depart_at, passengers')
+    .eq('call_date', date)
+    .order('arrive_at', { ascending: true });
+  const calls = (data ?? []) as CruiseCallRow[];
+  const selected =
+    (cruiseCallId ? calls.find((c) => c.id === cruiseCallId) : null) ??
+    pickCruiseCall(calls, { title: tour?.title ?? null, slug: tour?.slug ?? null });
+  return {
+    calls: calls.map((c) => ({ id: c.id, label: cruiseCallLabel(c), ship: c.ship, port: c.port })),
+    selectedId: selected?.id ?? null,
+    cruise: selected ? cruiseVarsFromCall(selected) : null,
   };
 }
 
@@ -179,6 +214,12 @@ export async function GET(req: NextRequest) {
     // 예보는 **투어일** 기준이다. D-1 안내를 전날 저녁에 보내므로 "내일 날씨"가 곧 투어일 날씨.
     const forecast = await getForecastCached(supabase, tour?.city ?? null, date);
 
+    // 크루즈 D-1 — 기항 스케줄에서 선박·입항/출항·복귀 보장 시각을 프리필한다.
+    const cruiseCtx =
+      preset === 'cruise_d1'
+        ? await loadCruiseContext(supabase, date, tour, sp.get('cruiseCallId'))
+        : null;
+
     // 미리보기는 기본적으로 링크를 발급하지 않는다 — 확인만 하려고 토큰을
     // 20개 찍어내면 실제로 보내지 않은 링크가 원장에 남는다. 단 `mint=1`
     // (wa.me/mailto 프리필로 바로 보내는 가이드 흐름)은 실링크가 필수다.
@@ -228,7 +269,13 @@ export async function GET(req: NextRequest) {
       const composed = composeForRecipient(
         { body: tpl.body, subject: tpl.subject ?? defaultEmailSubject(preset, tour?.title ?? null) },
         input,
-        { tourName: tour?.title ?? null, tourDate: date, operatorName: 'AtoC Korea', forecast },
+        {
+          tourName: tour?.title ?? null,
+          tourDate: date,
+          operatorName: 'AtoC Korea',
+          forecast,
+          cruise: cruiseCtx?.cruise ?? null,
+        },
       );
       recipients.push({
         ...composed,
@@ -251,6 +298,9 @@ export async function GET(req: NextRequest) {
       templateSource,
       recipients,
       previewedBy: actorEmail,
+      // 크루즈 D-1 — 그날 기항 목록 + 선택된 배. 패널이 배 선택 칩을 그린다.
+      cruiseCalls: cruiseCtx?.calls ?? null,
+      cruiseCallId: cruiseCtx?.selectedId ?? null,
     });
   } catch (e) {
     if (e instanceof AdminAuthFailure) return adminAuthJsonResponse(e);
@@ -294,6 +344,19 @@ export async function POST(req: NextRequest) {
 
     const forecast = await getForecastCached(supabase, tour?.city ?? null, date);
 
+    // 크루즈 D-1 — 미리보기가 고른 배(cruiseCallId)를 그대로 쓴다. POST는
+    // 수신자별 토큰을 다시 채우므로, 여기서도 컨텍스트가 있어야 편집 본문의
+    // {cruise_*}가 빈 채로 나가지 않는다.
+    const cruiseCtx =
+      preset === 'cruise_d1'
+        ? await loadCruiseContext(
+            supabase,
+            date,
+            tour,
+            typeof body.cruiseCallId === 'string' ? body.cruiseCallId : null,
+          )
+        : null;
+
     // 발송 대상에게만 개인 링크를 발급한다(미리보기는 발급하지 않는다).
     const recipients: RecipientInput[] = [];
     for (const row of targets) {
@@ -320,7 +383,13 @@ export async function POST(req: NextRequest) {
     const plan = planBulkEmail(
       { body: editedBody, subject: editedSubject },
       recipients,
-      { tourName: tour?.title ?? null, tourDate: date, operatorName: 'AtoC Korea', forecast },
+      {
+        tourName: tour?.title ?? null,
+        tourDate: date,
+        operatorName: 'AtoC Korea',
+        forecast,
+        cruise: cruiseCtx?.cruise ?? null,
+      },
     );
 
     let sent = 0;

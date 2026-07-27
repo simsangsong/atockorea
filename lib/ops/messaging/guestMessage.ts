@@ -94,6 +94,13 @@ export interface ComposeContext {
   tourDate?: string | null;
   operatorName?: string | null;
   forecast?: DailyForecast | null;
+  /** 크루즈 D-1 — 그날 기항 변수(HH:MM KST). null = 스케줄 미매칭(missing 배지). */
+  cruise?: {
+    cruiseShip: string;
+    cruiseArrive: string;
+    cruiseDepart: string;
+    cruiseReturnBy: string;
+  } | null;
 }
 
 export interface ComposedMessage {
@@ -130,6 +137,10 @@ export function composeForRecipient(
     operatorName: ctx.operatorName ?? null,
     weather,
     clothing,
+    cruiseShip: ctx.cruise?.cruiseShip ?? null,
+    cruiseArrive: ctx.cruise?.cruiseArrive ?? null,
+    cruiseDepart: ctx.cruise?.cruiseDepart ?? null,
+    cruiseReturnBy: ctx.cruise?.cruiseReturnBy ?? null,
   };
 
   const rawBody = renderTemplate(template.body, vars);

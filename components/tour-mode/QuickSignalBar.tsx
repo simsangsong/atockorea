@@ -7,7 +7,7 @@
  * Fires POST /signals; the server fans out the 5-locale capsule.
  */
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useConfirmSheet } from '@/components/tour-mode/ConfirmSheet';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
@@ -26,6 +26,11 @@ const COPY: Record<
     dropPrompt: string;
     ok: string;
     cancel: string;
+    meet: string;
+    meetConfirm: string;
+    photoAsk: string;
+    photoCaption: string;
+    skip: string;
   }
 > = {
   en: {
@@ -41,6 +46,11 @@ const COPY: Record<
     dropPrompt: 'Where would you like to be dropped off? (place name)',
     ok: 'Share',
     cancel: 'Cancel',
+    meet: '📍 Meet me here',
+    meetConfirm: 'Send your exact location so your driver can navigate right to you?',
+    photoAsk: 'Add one photo of this spot',
+    photoCaption: '📍 What I can see from here',
+    skip: 'Skip',
   },
   ko: {
     late: '🕒 늦어요',
@@ -55,6 +65,11 @@ const COPY: Record<
     dropPrompt: '어디에서 내리고 싶으세요? (장소 이름)',
     ok: '공유',
     cancel: '취소',
+    meet: '📍 여기서 만나요',
+    meetConfirm: '기사님이 바로 내비로 찾아올 수 있게 정확한 위치를 보낼까요?',
+    photoAsk: '보이는 풍경 사진 1장 더하기',
+    photoCaption: '📍 지금 여기서 보이는 풍경이에요',
+    skip: '건너뛰기',
   },
   ja: {
     late: '🕒 遅れています',
@@ -69,6 +84,11 @@ const COPY: Record<
     dropPrompt: 'どこで降りたいですか？（場所の名前）',
     ok: '共有する',
     cancel: 'キャンセル',
+    meet: '📍 ここで会いましょう',
+    meetConfirm: 'ドライバーがナビで直行できるよう、正確な現在地を送信しますか?',
+    photoAsk: '見えている景色を1枚追加',
+    photoCaption: '📍 いまここから見える景色です',
+    skip: 'スキップ',
   },
   es: {
     late: '🕒 Voy tarde',
@@ -83,6 +103,11 @@ const COPY: Record<
     dropPrompt: '¿Dónde quieres bajarte? (nombre del lugar)',
     ok: 'Compartir',
     cancel: 'Cancelar',
+    meet: '📍 Encuéntrame aquí',
+    meetConfirm: '¿Enviar tu ubicación exacta para que el conductor navegue hasta ti?',
+    photoAsk: 'Añadir una foto del lugar',
+    photoCaption: '📍 Esto es lo que veo desde aquí',
+    skip: 'Omitir',
   },
   zh: {
     late: '🕒 我会迟到',
@@ -97,6 +122,11 @@ const COPY: Record<
     dropPrompt: '您想在哪里下车？（地点名称）',
     ok: '共享',
     cancel: '取消',
+    meet: '📍 在这里见面',
+    meetConfirm: '发送您的准确位置，让司机直接导航到您身边？',
+    photoAsk: '再拍一张眼前的照片',
+    photoCaption: '📍 这是我现在看到的景象',
+    skip: '跳过',
   },
   fr: {
     late: '🕒 J’arrive en retard',
@@ -186,11 +216,31 @@ export default function QuickSignalBar({
   const copy = COPY[locale];
   const [busy, setBusy] = useState<string | null>(null);
   const [outcome, setOutcome] = useState<'sent' | 'failed' | null>(null);
+  // M-D4 — after the exact-location pin lands, ONE photo makes the spot
+  // unmistakable. The camera input opens right away; skipping is fine — the
+  // pin is already sent either way.
+  const photoInputRef = useRef<HTMLInputElement | null>(null);
+  const [photoAsk, setPhotoAsk] = useState(false);
   // M1 — in-app confirm/prompt sheet (native dialogs banned on tour surfaces).
   const { confirm, prompt, sheet } = useConfirmSheet({ confirm: copy.ok, cancel: copy.cancel });
 
+  const sendPhoto = async (file: File) => {
+    try {
+      const form = new FormData();
+      form.append('attachment', file);
+      form.append('caption', copy.photoCaption);
+      await fetch(`/api/tour-rooms/${encodeURIComponent(bookingId)}/messages`, {
+        method: 'POST',
+        headers: { 'x-tour-room-auth': roomSession },
+        body: form,
+      });
+    } catch {
+      /* the pin already went out — the photo is best-effort */
+    }
+  };
+
   const fire = async (
-    type: 'running_late' | 'rest_stop' | 'lost' | 'pickup_request' | 'dropoff_change',
+    type: 'running_late' | 'rest_stop' | 'lost' | 'pickup_request' | 'dropoff_change' | 'share_location',
   ) => {
     setBusy(type);
     try {
@@ -206,6 +256,19 @@ export default function QuickSignalBar({
           return;
         }
         coords = await currentPosition();
+      }
+      // M-D4 — "meet me exactly here": pin + (optional) one photo.
+      if (type === 'share_location') {
+        if (!(await confirm({ message: copy.meetConfirm }))) {
+          setBusy(null);
+          return;
+        }
+        coords = await currentPosition();
+        if (!coords) {
+          setOutcome('failed');
+          setBusy(null);
+          return;
+        }
       }
       // A3 — drop-off change: the guest names the place (translated server-side).
       if (type === 'dropoff_change') {
@@ -225,6 +288,11 @@ export default function QuickSignalBar({
       // a guest who pressed "I'm lost" walks away believing the guide knows.
       // The chat below IS the fallback — but only if we say so.
       setOutcome(res.ok ? 'sent' : 'failed');
+      // M-D4 — pin delivered → offer the one photo that nails the spot.
+      if (res.ok && type === 'share_location') {
+        setPhotoAsk(true);
+        photoInputRef.current?.click();
+      }
     } catch {
       setOutcome('failed');
     } finally {
@@ -246,7 +314,7 @@ export default function QuickSignalBar({
     <div className="mb-1.5 flex items-center gap-1.5 overflow-x-auto" data-testid="quick-signal-bar">
       {outcome ? (
         <span
-          className={`tr-label px-1 py-1 font-semibold ${
+          className={`tr-label shrink-0 whitespace-nowrap px-1 py-1 font-semibold ${
             outcome === 'sent' ? 'text-[var(--tr-safe)]' : 'text-[var(--tr-danger)]'
           }`}
           aria-live="polite"
@@ -257,13 +325,17 @@ export default function QuickSignalBar({
       ) : (
         (
           [
+            ['share_location', copy.meet],
             ['running_late', copy.late],
             ['rest_stop', copy.rest],
             ['lost', copy.lost],
             ['pickup_request', copy.pickup],
             ['dropoff_change', copy.drop],
           ] as Array<
-            ['running_late' | 'rest_stop' | 'lost' | 'pickup_request' | 'dropoff_change', string]
+            [
+              'share_location' | 'running_late' | 'rest_stop' | 'lost' | 'pickup_request' | 'dropoff_change',
+              string,
+            ]
           >
         ).map(([type, label]) => (
           <button
@@ -277,6 +349,36 @@ export default function QuickSignalBar({
             {busy === type ? '…' : label}
           </button>
         ))
+      )}
+      {/* M-D4 — the one-photo follow-up. capture=environment opens the rear
+          camera directly on phones; picking a photo sends it through the
+          normal attachment pipeline with a 5-locale caption. */}
+      <input
+        ref={photoInputRef}
+        type="file"
+        accept="image/*"
+        capture="environment"
+        className="sr-only"
+        data-testid="meet-photo-input"
+        onChange={(e) => {
+          const file = e.target.files?.[0] ?? null;
+          e.target.value = '';
+          setPhotoAsk(false);
+          if (file) void sendPhoto(file);
+        }}
+      />
+      {/* iOS Safari may refuse a programmatic input.click() this long after
+          the tap gesture — the hint doubles as the manual (re)open button, so
+          the photo path never dead-ends. */}
+      {photoAsk && !outcome && (
+        <button
+          type="button"
+          onClick={() => photoInputRef.current?.click()}
+          className="tr-meta tr-press shrink-0 rounded-full bg-[var(--tr-surface-2)] px-3 py-1.5 font-semibold text-[var(--tr-ink)]"
+          data-testid="meet-photo-hint"
+        >
+          📷 {copy.photoAsk}
+        </button>
       )}
       {sheet}
     </div>

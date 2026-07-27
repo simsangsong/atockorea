@@ -108,4 +108,9 @@ export const WA_TEMPLATE_VARIABLES: { token: string; label: string }[] = [
   // (`stripEmptyTokenLines`) — 빈 라벨이 남은 메시지를 보내지 않기 위해서다.
   { token: '{weather}', label: '투어일 날씨 (자동)' },
   { token: '{clothing}', label: '착장 안내 (자동)' },
+  // 크루즈 D-1 — 기항 스케줄(cruise_calls)에서 자동으로 채워진다.
+  { token: '{cruise_ship}', label: '크루즈명 (자동)' },
+  { token: '{cruise_arrive}', label: '입항 시각 (자동)' },
+  { token: '{cruise_depart}', label: '출항 시각 (자동)' },
+  { token: '{cruise_return_by}', label: '복귀 보장 시각 = 출항 1시간 전 (자동)' },
 ]

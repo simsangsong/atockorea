@@ -119,14 +119,21 @@ export default function LocationShareCard({
           aria-checked={enabled}
           disabled={denied || unsupported}
           onClick={() => onToggle(!enabled)}
-          className={`relative h-8 w-[52px] shrink-0 rounded-full transition-colors disabled:opacity-40 ${
+          /* 컴팩트 스위치 — SettingsTab.Toggle과 동일 지오메트리(트랙 26px가
+             노브 22px를 2px 패딩으로 감싼다), 히트영역은 after로 44px 유지. */
+          className={`relative h-[26px] min-h-0 w-11 min-w-0 shrink-0 rounded-full transition-colors disabled:opacity-40 after:absolute after:-inset-x-1 after:-inset-y-2.5 after:content-[''] ${
             enabled ? 'bg-[var(--tr-safe)]' : 'bg-[var(--tr-bubble-system)]'
           }`}
           data-testid="location-toggle"
         >
           <span
-            className={`tr-knob absolute top-1 h-6 w-6 rounded-full bg-white shadow ${
-              enabled ? 'left-[24px]' : 'left-1'
+            /* T-D6와 같은 상태분리 색 — 고대비 다크에선 safe가 흰색이라
+               흰 노브가 트랙에 파묻힌다; bubble-me-ink는 전 스킨에서
+               액센트/세이프 계열 위에 보이는 페어링 불변식의 색이다. */
+            className={`tr-knob absolute top-[2px] h-[22px] w-[22px] rounded-full shadow ${
+              enabled
+                ? 'left-5 bg-[var(--tr-bubble-me-ink)]'
+                : 'left-[2px] border border-[var(--tr-hairline)] bg-[var(--tr-surface)]'
             }`}
           />
         </button>

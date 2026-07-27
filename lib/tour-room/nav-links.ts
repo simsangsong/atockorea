@@ -54,3 +54,33 @@ export function kakaoWebRouteUrl(dest: NavDestination): string {
 export function tmapUrl(dest: NavDestination): string {
   return `tmap://route?goalname=${encodedName(dest, '목적지')}&goalx=${dest.lng}&goaly=${dest.lat}`;
 }
+
+/**
+ * M-D2 (docs/meet-exactly-master-plan-2026-07-27.md) — role-aware nav chips
+ * for a shared pin. One coordinate system everywhere (WGS84: browser GPS =
+ * Google = what Kakao's link API accepts — no conversion layer):
+ *   staff  → KakaoNavi app scheme first (the nav Korean drivers actually run),
+ *            Kakao Maps web as the no-app fallback, TMAP alongside.
+ *   guest  → Google Maps (the app foreigners have) + Naver walking.
+ * Staff labels are Korean on purpose (P-D10 — staff surfaces are ko-only);
+ * guest labels are brand names, locale-neutral.
+ */
+export interface NavChip {
+  key: string;
+  label: string;
+  href: string;
+}
+
+export function navChipsFor(audience: 'staff' | 'guest', dest: NavDestination): NavChip[] {
+  if (audience === 'staff') {
+    return [
+      { key: 'kakao-navi', label: '카카오내비', href: kakaoNaviUrl(dest) },
+      { key: 'kakao-web', label: '카카오맵', href: kakaoWebRouteUrl(dest) },
+      { key: 'tmap', label: '티맵', href: tmapUrl(dest) },
+    ];
+  }
+  return [
+    { key: 'google', label: 'Google Maps', href: googleDirectionsUrl(dest, 'walking') },
+    { key: 'naver', label: 'NAVER', href: naverWalkUrl(dest) },
+  ];
+}

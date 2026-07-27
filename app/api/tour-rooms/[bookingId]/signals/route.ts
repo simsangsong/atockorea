@@ -17,6 +17,7 @@ import { translateTextForLocales } from '@/lib/openai-server';
 import { sendEmail } from '@/lib/email';
 import { sendOpsPush } from '@/lib/tour-ops/push';
 import { inPostTourWindow, roomLifecycle } from '@/lib/tour-room/time';
+import { isPrivateTour } from '@/lib/tour-room/tourKind';
 
 export const dynamic = 'force-dynamic';
 
@@ -50,6 +51,9 @@ export async function POST(
       lng?: unknown;
       noticeId?: unknown;
       note?: unknown;
+      // M-D3 meeting_propose — HH:MM KST + the guest-typed meeting place.
+      time?: unknown;
+      point?: unknown;
     };
 
     const type = (GUEST_SIGNAL_TYPES as readonly string[]).includes(body.type as string)
@@ -90,6 +94,21 @@ export async function POST(
       const lifecycle = roomLifecycle(booking.tour_date);
       if (lifecycle === 'ended' && !inPostTourWindow(booking.tour_date)) {
         return NextResponse.json({ error: 'post_tour_window_closed' }, { status: 403 });
+      }
+    }
+
+    // M-D3/M-D5 — customers SET the meeting only on PRIVATE (charter) tours:
+    // a join tour runs a fixed rally schedule, so the button never shows and
+    // the server refuses regardless. D-1 (lobby) is intentionally allowed —
+    // "만남시간과 만남장소, 하루 전에도" is the whole point.
+    if (type === 'meeting_propose') {
+      const { data: tourRow } = await supabase
+        .from('tours')
+        .select('price_type')
+        .eq('id', booking.tour_id)
+        .maybeSingle();
+      if (!isPrivateTour((tourRow as { price_type?: string | null } | null)?.price_type ?? null)) {
+        return NextResponse.json({ error: 'private_tour_only' }, { status: 403 });
       }
     }
 
@@ -156,19 +175,46 @@ export async function POST(
       return NextResponse.json({ message: message ?? null }, { status: 201 });
     }
 
-    // lost / pickup_request / dropoff_change: optional one-shot pin with a TTL
-    // (§C-7 — no tracking, ever). A3: the pickup pin says "come get me HERE";
-    // the dropoff pin marks the requested new drop-off point.
+    // lost / pickup_request / dropoff_change / share_location: optional
+    // one-shot pin with a TTL (§C-7 — no tracking, ever). A3: the pickup pin
+    // says "come get me HERE"; guest_spot is the M-D4 "meet me exactly here"
+    // pin. meeting_propose intentionally writes NO pins row — its coordinates
+    // live on the message metadata (the meeting_notice contract the banner
+    // reads), and a 30-minute TTL would silently expire a D-1 meeting.
     const PIN_KIND: Partial<Record<GuestSignalType, string>> = {
       lost: 'lost_me',
       pickup_request: 'pickup',
       dropoff_change: 'dropoff',
+      share_location: 'guest_spot',
     };
     const latRaw = typeof body.lat === 'string' ? Number(body.lat) : body.lat;
     const lngRaw = typeof body.lng === 'string' ? Number(body.lng) : body.lng;
     const lat = typeof latRaw === 'number' && Number.isFinite(latRaw) && Math.abs(latRaw) <= 90 ? latRaw : null;
     const lng = typeof lngRaw === 'number' && Number.isFinite(lngRaw) && Math.abs(lngRaw) <= 180 ? lngRaw : null;
-    const withPin = Boolean(PIN_KIND[type]) && lat !== null && lng !== null;
+    const hasCoords = lat !== null && lng !== null;
+    const withPin = Boolean(PIN_KIND[type]) && hasCoords;
+    // M-D3 — the meeting's coordinates ride the message metadata, not a pin row.
+    const meetingCoords = type === 'meeting_propose' && hasCoords;
+
+    // M-D3 — meeting_propose contract: the TIME drives the countdown banner
+    // (required); the place is a typed name and/or the current-location pin —
+    // at least one, or the driver has nowhere to navigate.
+    const meetTime =
+      type === 'meeting_propose' && typeof body.time === 'string' && /^([01]\d|2[0-3]):[0-5]\d$/.test(body.time.trim())
+        ? body.time.trim()
+        : undefined;
+    const meetPoint =
+      type === 'meeting_propose' && typeof body.point === 'string'
+        ? body.point.trim().slice(0, 120) || undefined
+        : undefined;
+    if (type === 'meeting_propose') {
+      if (!meetTime) {
+        return NextResponse.json({ error: 'time (HH:MM) is required' }, { status: 400 });
+      }
+      if (!meetPoint && !hasCoords) {
+        return NextResponse.json({ error: 'point or lat/lng is required' }, { status: 400 });
+      }
+    }
 
     let pinId: string | null = null;
     if (withPin) {
@@ -190,12 +236,12 @@ export async function POST(
     }
 
     // A3/B2 / T2-2 — guest-typed free text (dropoff place · lost-item "black
-    // wallet, seat 12"): translate it so the Korean operator reads it natively
-    // (verbatim fallback on failure).
+    // wallet, seat 12" · M-D3 meeting place): translate it so the Korean
+    // operator reads it natively (verbatim fallback on failure).
     const note =
       (type === 'dropoff_change' || type === 'lost_item') && typeof body.note === 'string'
         ? body.note.trim().slice(0, 200) || undefined
-        : undefined;
+        : meetPoint;
     let noteByLocale: Record<string, string> | null = null;
     if (note) {
       try {
@@ -209,8 +255,9 @@ export async function POST(
       type,
       {
         name: displayName,
-        mapsUrl: withPin ? googleMapsPinUrl(lat!, lng!) : undefined,
+        mapsUrl: withPin || meetingCoords ? googleMapsPinUrl(lat!, lng!) : undefined,
         note,
+        time: meetTime,
       },
       noteByLocale,
     );
@@ -227,10 +274,21 @@ export async function POST(
         translations: bundle.translations,
         target_locales: Object.keys(bundle.translations),
         metadata: {
-          kind: `guest_${type}`,
+          // M-D3 — meeting_propose speaks the guide's meeting_notice contract,
+          // so NoticeBanner's countdown / warnings / rally ladder run unchanged.
+          kind: type === 'meeting_propose' ? 'meeting_notice' : `guest_${type}`,
           signal_type: type,
           sent_by_role: actor.role,
           ...(withPin ? { lat, lng, pin_id: pinId } : {}),
+          ...(type === 'meeting_propose'
+            ? {
+                proposed_by: actor.role,
+                meeting_time: meetTime,
+                ...(note ? { meeting_point: note } : {}),
+                ...(noteByLocale ? { meeting_point_i18n: noteByLocale } : {}),
+                ...(meetingCoords ? { meeting_lat: lat, meeting_lng: lng } : {}),
+              }
+            : {}),
         },
       })
       .select()
@@ -239,9 +297,14 @@ export async function POST(
 
     await broadcastToRoom(room, 'message', { message });
 
-    // A3 — pickup/dropoff requests must reach the operator who is likely in a
-    // nav app: ring the driver/guide devices (fire-and-forget).
-    if (type === 'pickup_request' || type === 'dropoff_change') {
+    // A3/M-D3 — location-bearing requests must reach the operator who is
+    // likely in a nav app: ring the driver/guide devices (fire-and-forget).
+    if (
+      type === 'pickup_request' ||
+      type === 'dropoff_change' ||
+      type === 'share_location' ||
+      type === 'meeting_propose'
+    ) {
       const line = bundle.translations.ko ?? bundle.source_text;
       void sendDriverRoomPush(supabase, booking.id, {
         body: line.slice(0, 160),
