@@ -44,7 +44,7 @@ const PLAN = {
   tour: { date: '2026-07-28', region: 'jeju', total_hours: 9, guide_curated: false, is_private: true },
 };
 
-function installFetch() {
+function installFetch(seatBody: unknown = { state: 'none', seat_number: null }) {
   const puts: Array<Record<string, unknown>> = [];
   global.fetch = jest.fn(async (input: RequestInfo | URL, init?: RequestInit) => {
     const url = String(input);
@@ -52,6 +52,7 @@ function installFetch() {
     if (url.includes('/plan/templates')) return jsonResponse({ region: 'jeju', templates: [] });
     if (url.includes('/api/itinerary-builder/pois')) return jsonResponse({ pois: [] });
     if (url.includes('/tour-itinerary')) return jsonResponse({ stops: [] });
+    if (url.includes('/my-seat')) return jsonResponse(seatBody);
     if (url.includes('/plan') && method === 'PUT') {
       puts.push(JSON.parse(String(init?.body ?? '{}')) as Record<string, unknown>);
       return jsonResponse({ day_plan: { ...PLAN.day_plan, version: 2 }, feasibility: { warnings: [] } });
@@ -195,5 +196,36 @@ describe('P3 — 시간 입력은 앱의 다이얼로', () => {
 
     fireEvent.click(screen.getByTestId('plan-departure-time'));
     expect(await screen.findByTestId('plan-time-wheel')).toBeInTheDocument();
+  });
+});
+
+/**
+ * P4 — "전날 좌석 지정하려니까 좌석 지정 버튼도 기능도 없네."
+ *
+ * 관찰은 맞았지만 재리뷰 결론은 "선택"이 아니라 "보기"였다: 라이브
+ * `ops_seat_assignments`가 0행이고, 좌석은 배차(스태프 행위)에 매달려 있으며,
+ * 리포트의 예약은 차 1대짜리 프라이빗 charter라 좌석 개념이 없다. 그래서
+ * **없는 기능을 있는 척하지 않고, 왜 없는지 말해 준다.**
+ */
+describe('P4 — 좌석은 정직한 세 상태로 보인다', () => {
+  it('배정됐으면 좌석 번호를 보여준다', async () => {
+    installFetch({ state: 'assigned', seat_number: '12' });
+    await renderPlanner();
+    const row = await screen.findByTestId('plan-my-seat');
+    expect(within(row).getByText(/Seat 12/)).toBeInTheDocument();
+  });
+
+  it('차량은 붙었지만 아직 배정 전이면 언제 정해지는지 말한다', async () => {
+    installFetch({ state: 'pending', seat_number: null });
+    await renderPlanner();
+    const row = await screen.findByTestId('plan-my-seat');
+    expect(within(row).getByText(/assigns seats on the day/i)).toBeInTheDocument();
+  });
+
+  it('🔴 좌석 배치가 없는 상품이면 그렇다고 말한다 — 없는 버튼을 찾게 두지 않는다', async () => {
+    installFetch({ state: 'none', seat_number: null });
+    await renderPlanner();
+    const row = await screen.findByTestId('plan-my-seat');
+    expect(within(row).getByText(/no seat assignment/i)).toBeInTheDocument();
   });
 });

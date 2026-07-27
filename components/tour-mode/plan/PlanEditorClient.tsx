@@ -190,6 +190,11 @@ interface PlanCopy {
   departureTitle: string;
   /** P3 — clear the chosen time from the wheel sheet. */
   timeClear: string;
+  /** P4 — 좌석 3상태. 없는 기능을 있는 척하지 않고, 있는 정보는 숨기지 않는다. */
+  seatTitle: string;
+  seatAssigned: (seat: string) => string;
+  seatPending: string;
+  seatNone: string;
   departureHint: string;
   adults: string;
   children: string;
@@ -262,6 +267,10 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     needsHint: 'Helps your guide prepare — shared only with your guide.',
     departureTitle: 'Departure time (KST)',
     timeClear: 'Clear time',
+    seatTitle: 'Your seat',
+    seatAssigned: (seat) => `Seat ${seat}`,
+    seatPending: 'Your guide assigns seats on the day.',
+    seatNone: 'This tour has no seat assignment — one vehicle for your party.',
     departureHint: 'When your driver picks you up — your day’s included hours count from here.',
     adults: 'Adults',
     children: 'Children',
@@ -344,6 +353,10 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     needsHint: '가이드 준비에만 사용돼요 — 가이드에게만 공유됩니다.',
     departureTitle: '출발 시각 (KST)',
     timeClear: '시각 지우기',
+    seatTitle: '내 좌석',
+    seatAssigned: (seat) => `${seat}번 좌석`,
+    seatPending: '좌석은 가이드가 당일 배정해요.',
+    seatNone: '이 투어는 좌석 지정이 없어요 — 일행 전용 차량 한 대예요.',
     departureHint: '기사님이 픽업하는 시각이에요 — 오늘의 포함 시간이 여기서부터 계산돼요.',
     adults: '성인',
     children: '아동',
@@ -425,6 +438,10 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     needsHint: 'ガイドの準備にのみ使用され、ガイドにのみ共有されます。',
     departureTitle: '出発時刻 (KST)',
     timeClear: '時刻をクリア',
+    seatTitle: 'お座席',
+    seatAssigned: (seat) => `${seat}番`,
+    seatPending: '座席は当日ガイドが割り当てます。',
+    seatNone: 'このツアーに座席指定はありません（ご一行専用の1台です）。',
     departureHint: 'ドライバーがお迎えする時刻です。本日の含まれる時間はここから計算されます。',
     adults: '大人',
     children: '子ども',
@@ -505,6 +522,10 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     needsHint: '仅用于导游准备,只与导游共享。',
     departureTitle: '出发时间 (KST)',
     timeClear: '清除时间',
+    seatTitle: '我的座位',
+    seatAssigned: (seat) => `${seat}号座`,
+    seatPending: '座位由导游在当天安排。',
+    seatNone: '本行程没有座位指定——一辆车专属于您一行。',
     departureHint: '司机接您的时间——今天的包含时长从此刻开始计算。',
     adults: '成人',
     children: '儿童',
@@ -585,6 +606,10 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     needsHint: '僅供導遊準備行程使用，只會與導遊分享。',
     departureTitle: '出發時間 (KST)',
     timeClear: '清除時間',
+    seatTitle: '我的座位',
+    seatAssigned: (seat) => `${seat}號座`,
+    seatPending: '座位由導遊在當天安排。',
+    seatNone: '本行程沒有座位指定——一輛車專屬於您一行。',
     departureHint: '司機接您的時間——今天包含的時數從這時開始計算。',
     adults: '成人',
     children: '兒童',
@@ -665,6 +690,10 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     needsHint: 'Solo para preparar tu tour; se comparte únicamente con tu guía.',
     departureTitle: 'Hora de salida (KST)',
     timeClear: 'Borrar la hora',
+    seatTitle: 'Tu asiento',
+    seatAssigned: (seat) => `Asiento ${seat}`,
+    seatPending: 'Tu guía asigna los asientos el mismo día.',
+    seatNone: 'Este tour no asigna asientos: un vehículo para tu grupo.',
     departureHint: 'Cuando tu conductor te recoge — las horas incluidas del día cuentan desde aquí.',
     adults: 'Adultos',
     children: 'Niños',
@@ -747,6 +776,10 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     needsHint: 'Aide votre guide à se préparer — partagé uniquement avec lui.',
     departureTitle: 'Heure de départ (KST)',
     timeClear: 'Effacer l’heure',
+    seatTitle: 'Votre place',
+    seatAssigned: (seat) => `Place ${seat}`,
+    seatPending: 'Votre guide attribue les places le jour même.',
+    seatNone: 'Ce tour n’attribue pas de places : un véhicule pour votre groupe.',
     departureHint: 'L’heure de votre prise en charge — les heures incluses de la journée comptent à partir de là.',
     adults: 'Adultes',
     children: 'Enfants',
@@ -829,6 +862,10 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     needsHint: 'Hilft Ihrem Guide bei der Vorbereitung — nur mit ihm geteilt.',
     departureTitle: 'Abfahrtszeit (KST)',
     timeClear: 'Zeit löschen',
+    seatTitle: 'Ihr Sitzplatz',
+    seatAssigned: (seat) => `Platz ${seat}`,
+    seatPending: 'Ihr Guide vergibt die Plätze am Tag selbst.',
+    seatNone: 'Diese Tour vergibt keine Sitzplätze — ein Fahrzeug für Ihre Gruppe.',
     departureHint: 'Wann Ihr Fahrer Sie abholt — ab hier zählen die inkludierten Stunden des Tages.',
     adults: 'Erwachsene',
     children: 'Kinder',
@@ -911,6 +948,10 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     needsHint: 'Поможет гиду подготовиться — видит только ваш гид.',
     departureTitle: 'Время выезда (KST)',
     timeClear: 'Убрать время',
+    seatTitle: 'Ваше место',
+    seatAssigned: (seat) => `Место ${seat}`,
+    seatPending: 'Гид распределяет места в день тура.',
+    seatNone: 'В этом туре места не распределяются — отдельный автомобиль для вашей группы.',
     departureHint: 'Когда водитель вас заберет — включенные часы дня считаются с этого момента.',
     adults: 'Взрослые',
     children: 'Дети',
@@ -993,6 +1034,10 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     needsHint: 'Aiuta la guida a prepararsi — condiviso solo con la tua guida.',
     departureTitle: 'Orario di partenza (KST)',
     timeClear: 'Cancella l’ora',
+    seatTitle: 'Il suo posto',
+    seatAssigned: (seat) => `Posto ${seat}`,
+    seatPending: 'La guida assegna i posti il giorno stesso.',
+    seatNone: 'Questo tour non assegna posti: un veicolo per il suo gruppo.',
     departureHint: 'Quando l’autista viene a prenderti — le ore incluse della giornata contano da qui.',
     adults: 'Adulti',
     children: 'Bambini',
@@ -2030,6 +2075,27 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
     [scheduleAutosave],
   );
 
+  useEffect(() => {
+    if (state.status !== 'joined' || !roomSession) return;
+    let cancelled = false;
+    void (async () => {
+      try {
+        const res = await authedFetch('/my-seat');
+        if (!res.ok) return;
+        const body = (await res.json()) as { state?: string; seat_number?: string | null };
+        if (cancelled) return;
+        if (body.state === 'assigned' || body.state === 'pending' || body.state === 'none') {
+          setSeat({ state: body.state, seat_number: body.seat_number ?? null });
+        }
+      } catch {
+        /* 좌석 줄이 없다고 플래너가 못 쓰이면 안 된다 — 조용히 생략한다. */
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [state.status, roomSession, authedFetch]);
+
   const addPoiStop = (poi: PickerPoi) => {
     mutateStops((prev) => [
       ...prev,
@@ -2218,6 +2284,14 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
    * chrome in the middle of an app that has its own.
    */
   const [timeSheetFor, setTimeSheetFor] = useState<string | null>(null);
+  /**
+   * P4 — read-only seat. Guest self-selection is deliberately NOT here:
+   * ops has never assigned a seat (0 rows live) and seats hang off a
+   * vehicle assignment, so a picker would be an empty screen.
+   */
+  const [seat, setSeat] = useState<{ state: 'assigned' | 'pending' | 'none'; seat_number: string | null } | null>(
+    null,
+  );
   const claimLead = async () => {
     if (claimBusy) return;
     setClaimBusy(true);
@@ -3097,6 +3171,24 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
             {/* D4 — plan-level daily departure time (KST). Countdown target =
                 departure + base included hours (Jeju 9h / Busan 8h). */}
             <div className="mt-3">
+              {seat && (
+                <div
+                  className="mb-3 flex items-center gap-2 rounded-xl bg-[var(--tr-surface-2)] px-3 py-2.5"
+                  data-testid="plan-my-seat"
+                >
+                  <IconPerson size={TR_ICON.chip} aria-hidden className="shrink-0 text-[var(--tr-ink-3)]" />
+                  <span className="tr-meta font-semibold uppercase tracking-wide text-[var(--tr-ink-3)]">
+                    {copy.seatTitle}
+                  </span>
+                  <span className="tr-card-text text-cjk-body ml-auto text-right text-[var(--tr-ink)]">
+                    {seat.state === 'assigned' && seat.seat_number
+                      ? copy.seatAssigned(seat.seat_number)
+                      : seat.state === 'pending'
+                        ? copy.seatPending
+                        : copy.seatNone}
+                  </span>
+                </div>
+              )}
               <p className="tr-meta font-semibold uppercase tracking-wide text-[var(--tr-ink-3)]">
                 {copy.departureTitle}
               </p>
