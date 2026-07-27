@@ -120,29 +120,72 @@ describe('speakMessage ladder (T2.9)', () => {
     expect(global.fetch).not.toHaveBeenCalled();
   });
 
-  it('device speech errors → server fallback plays the cached mp3', async () => {
+  // V0.3 — 서버 tier 는 스트리밍 라우트를 먼저 문다. 성공하면 JSON 왕복이 아예
+  // 없다(전체 버퍼 대기 2281ms + 업로드 218ms 를 건너뛴다).
+  it('device speech errors → server tier streams, no JSON round trip', async () => {
     const synth = fakeSynth({ voices: [{ lang: 'ko-KR' }], speakOutcome: 'error' });
+    const created: Array<{ play: jest.Mock; src?: string }> = [];
+    (global as { Audio?: unknown }).Audio = jest.fn(() => {
+      const el = { play: jest.fn(async () => undefined), src: undefined as string | undefined };
+      created.push(el);
+      return el;
+    });
+    const tier = await speakMessage('안내입니다', target, synth);
+    expect(tier).toBe('server');
+    expect(created[0].src).toContain('/api/tour-rooms/b1/tts/stream?messageId=m1&locale=ko&rs=rs');
+    expect(created[0].play).toHaveBeenCalled();
+    expect(global.fetch).not.toHaveBeenCalled();
+  });
+
+  // 스트리밍 라우트가 없는 배포(롤백 중)나 스트림을 못 무는 엔진에서도 소리는 나야 한다.
+  it('streaming route fails → falls back to the JSON url', async () => {
+    const synth = fakeSynth({ voices: [] });
     (global.fetch as jest.Mock).mockResolvedValue({
       ok: true,
       json: async () => ({ url: 'https://cdn.test/a.mp3' }),
     });
-    const play = jest.fn(async () => undefined);
-    // jsdom has no Audio playback — stub the constructor.
-    (global as { Audio?: unknown }).Audio = jest.fn(() => ({ play }));
-    const tier = await speakMessage('안내입니다', target, synth);
+    const created: Array<{ play: jest.Mock; src?: string }> = [];
+    (global as { Audio?: unknown }).Audio = jest.fn(() => {
+      const el = {
+        // 스트리밍 시도(첫 호출)만 실패시킨다.
+        play: jest.fn(async () => {
+          if (el.src?.includes('/tts/stream')) throw new Error('cannot play');
+        }),
+        src: undefined as string | undefined,
+      };
+      created.push(el);
+      return el;
+    });
+    const tier = await speakMessage('안내입니다', { ...target, locale: 'en' }, { ...synth, addEventListener: undefined } as never);
     expect(tier).toBe('server');
     expect(global.fetch).toHaveBeenCalledWith(
-      expect.stringContaining('/api/tour-rooms/b1/tts?messageId=m1&locale=ko'),
+      expect.stringContaining('/api/tour-rooms/b1/tts?messageId=m1&locale=en'),
       expect.objectContaining({ headers: { 'x-tour-room-auth': 'rs' } }),
     );
-    expect(play).toHaveBeenCalled();
+    expect(created.at(-1)!.src).toBe('https://cdn.test/a.mp3');
   });
 
   it('every tier fails → none (voice-unavailable badge, §O-2 ③)', async () => {
     const synth = fakeSynth({ voices: [] });
     (global.fetch as jest.Mock).mockResolvedValue({ ok: false });
+    (global as { Audio?: unknown }).Audio = jest.fn(() => ({
+      play: jest.fn(async () => {
+        throw new Error('cannot play');
+      }),
+      src: undefined as string | undefined,
+    }));
     const tier = await speakMessage('hello', { ...target, locale: 'en' }, { ...synth, addEventListener: undefined } as never);
     expect(tier).toBe('none');
+  });
+
+  // playFromSrc 는 절대 던지면 안 된다 — 던지면 사다리의 다음 단이 통째로 사라진다.
+  it('audio 요소가 addEventListener 를 안 가져도 사다리가 살아 있다', async () => {
+    const synth = fakeSynth({ voices: [] });
+    (global.fetch as jest.Mock).mockResolvedValue({ ok: false });
+    (global as { Audio?: unknown }).Audio = jest.fn(() => ({ play: jest.fn(async () => undefined) }));
+    await expect(
+      speakMessage('hello', { ...target, locale: 'en' }, { ...synth, addEventListener: undefined } as never),
+    ).resolves.toBe('server');
   });
 
   // P0-6 — iOS/webview only lets you play an element that already played during
@@ -160,17 +203,14 @@ describe('speakMessage ladder (T2.9)', () => {
     primeAudio(); // the user gesture: one element created and played (silence)
     expect(created).toHaveLength(1);
 
-    (global.fetch as jest.Mock).mockResolvedValue({
-      ok: true,
-      json: async () => ({ url: 'https://cdn.test/warm.mp3' }),
-    });
     const synth = fakeSynth({ voices: [] });
     const tier = await speakMessage('안내입니다', target, { ...synth, addEventListener: undefined } as never);
 
     expect(tier).toBe('server');
     // No SECOND element was constructed — the warmed one had its src swapped.
     expect(created).toHaveLength(1);
-    expect(created[0].src).toBe('https://cdn.test/warm.mp3');
+    // V0.3 — 이제 그 src 는 스트리밍 라우트다.
+    expect(created[0].src).toContain('/tts/stream?messageId=m1&locale=ko&rs=rs');
     expect(created[0].play).toHaveBeenCalledTimes(2); // silence, then the mp3
   });
 });

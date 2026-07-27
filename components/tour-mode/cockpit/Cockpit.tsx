@@ -30,7 +30,7 @@ import { useGeoWatcher } from '@/hooks/useGeoWatcher';
 import { DRIVER_QUICK_REPLIES } from '@/lib/tour-room/quickReplies';
 import { startVoiceRecording } from '@/lib/tour-room/recorder';
 import { isDeviceSttSupported, startDeviceStt } from '@/lib/tour-room/deviceStt';
-import { primeAudio } from '@/lib/tour-room/tts';
+import { primeAudio, serverTtsStreamUrl } from '@/lib/tour-room/tts';
 import MicPrime from '@/components/tour-mode/MicPrime';
 import ActionGrid, { type ActionGridItem } from '@/components/tour-mode/ActionGrid';
 import GuideSeatDashboard from '@/components/tour-mode/guide/GuideSeatDashboard';
@@ -599,21 +599,14 @@ export default function Cockpit({
       playedRef.current.add(message.id);
       // A caption-less photo/file has nothing to speak (the image is on screen).
       if (readMessageAttachment(message) && !message.source_text.trim()) continue;
-      void (async () => {
-        try {
-          const res = await fetch(
-            `/api/tour-rooms/${bookingId}/tts?messageId=${encodeURIComponent(message.id)}&locale=ko`,
-            { headers: { 'x-tour-room-auth': session } },
-          );
-          const data = await res.json();
-          if (res.ok && data?.url) {
-            audioQueueRef.current.push(data.url);
-            playNext();
-          }
-        } catch {
-          // silent — the text bubble is still on screen
-        }
-      })();
+      // V0.3 — 스트리밍 URL 을 큐에 바로 넣는다. 예전에는 JSON 라우트로 URL 을
+      // 먼저 받아왔는데, 그 왕복 동안 TTS 전체 버퍼(2281ms)와 스토리지 업로드가
+      // 끝나기를 기다려야 했다. 기사는 손님 말을 들으려고 서 있는 사람이라 이
+      // 경로의 지연이 가장 아프다. 실패하면 playNext 의 onerror 가 다음으로 넘긴다.
+      audioQueueRef.current.push(
+        serverTtsStreamUrl({ bookingId, messageId: message.id, locale: 'ko', roomSession: session }),
+      );
+      playNext();
     }
   }, [messages, bookingId, session, playNext]);
 

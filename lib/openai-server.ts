@@ -49,7 +49,11 @@ export async function translateTextForLocales(
   return translateTextViaRouter(text, targetLocales);
 }
 
-export async function generateSpeechMp3(text: string, locale: string): Promise<ArrayBuffer> {
+/**
+ * 두 TTS 진입점(버퍼형·스트리밍형)이 **같은 요청**을 보내야 한다. 파라미터가
+ * 갈리면 스트리밍으로 들은 음성과 캐시에 적재된 음성이 달라진다.
+ */
+async function requestSpeech(text: string, locale: string): Promise<Response> {
   const res = await fetch(`${OPENAI_API_BASE}/audio/speech`, {
     method: 'POST',
     headers: {
@@ -69,8 +73,29 @@ export async function generateSpeechMp3(text: string, locale: string): Promise<A
     const message = await res.text();
     throw new Error(`OpenAI speech generation failed: ${message}`);
   }
+  return res;
+}
 
-  return res.arrayBuffer();
+export async function generateSpeechMp3(text: string, locale: string): Promise<ArrayBuffer> {
+  return (await requestSpeech(text, locale)).arrayBuffer();
+}
+
+/**
+ * V0.3 — 같은 음성을 **스트림으로**. 전체 버퍼를 기다리지 않고 첫 청크부터
+ * 재생할 수 있다.
+ *
+ * 실측 근거(`scripts/qa-voice-latency.mjs`, 2026-07-27, medium 발화 p50):
+ *   전체 버퍼 대기 2281ms  vs  첫 바이트 1292ms
+ * 발화가 길수록 격차가 커진다(long: 2735ms vs 891ms — 3배). 안내가 길수록
+ * 이득이 크다는 뜻이라, 가이드 공지처럼 긴 문장에서 특히 유효하다.
+ */
+export async function generateSpeechStream(
+  text: string,
+  locale: string,
+): Promise<ReadableStream<Uint8Array>> {
+  const res = await requestSpeech(text, locale);
+  if (!res.body) throw new Error('OpenAI speech generation returned no body');
+  return res.body;
 }
 
 export async function generateCoursePayload(locale: string, sourcePayload: unknown): Promise<{

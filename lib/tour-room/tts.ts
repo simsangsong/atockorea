@@ -125,8 +125,59 @@ export interface ServerTtsTarget {
   roomSession: string;
 }
 
+/**
+ * P0-6 — reuse the gesture-warmed element (see primeAudio). A fresh
+ * `new Audio(url)` created after an await has no user activation left and
+ * iOS Safari / in-app webviews reject its play(), which is what left the
+ * speaker stuck on the muted glyph.
+ *
+ * play() 는 소스가 못 읽히면 대개 reject 하지만 엔진마다 다르다 — `error`
+ * 이벤트도 같이 지켜봐야 404/JSON 응답에서 조용히 성공했다고 보고하지 않는다.
+ */
+async function playFromSrc(src: string): Promise<boolean> {
+  try {
+    const audio = warmAudio ?? new Audio();
+    audio.src = src;
+    // 못 읽히는 소스는 대개 play() 가 reject 하지만 엔진마다 다르다. `error` 도
+    // 같이 본다 — 404/JSON 응답에서 조용히 "재생됨"이라고 보고하면 안 된다.
+    // 🔴 이 함수는 **절대 던지지 않는다**: playServerTts 의 사다리가 false 를
+    // 보고 다음 단으로 내려가는 구조라, 예외가 새면 폴백 자체가 사라진다.
+    let errored = false;
+    if (typeof audio.addEventListener === 'function') {
+      audio.addEventListener('error', () => {
+        errored = true;
+      }, { once: true });
+    }
+    await audio.play();
+    return !errored;
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * V0.3 — 생성과 동시에 재생. 캐시 미스 첫 청취자가 전체 버퍼(2281ms)+업로드(218ms)
+ * +두 번째 왕복을 기다리는 대신 첫 바이트(1292ms)에 소리가 난다. 캐시 히트면
+ * 라우트가 CDN 으로 302 하므로 기존과 동일하다.
+ *
+ * `rs` 쿼리 인증을 쓰는 이유: `<audio>` 는 요청 헤더를 못 싣는다. 라우트가
+ * 원래부터 지원하는 경로다(`access.ts` resolveRoomActor).
+ */
+export function serverTtsStreamUrl(target: ServerTtsTarget): string {
+  return (
+    `/api/tour-rooms/${encodeURIComponent(target.bookingId)}/tts/stream` +
+    `?messageId=${encodeURIComponent(target.messageId)}` +
+    `&locale=${target.locale}` +
+    `&rs=${encodeURIComponent(target.roomSession)}`
+  );
+}
+
 /** Tier 2 — fetch the cached/generated mp3 URL, play via HTML5 Audio. */
 export async function playServerTts(target: ServerTtsTarget): Promise<boolean> {
+  // 스트리밍 우선. 실패하면 JSON 경로로 떨어진다 — 라우트가 없는 배포(롤백 중)나
+  // 스트림을 못 물리는 엔진에서도 소리는 나야 한다.
+  if (await playFromSrc(serverTtsStreamUrl(target))) return true;
+
   try {
     const res = await fetch(
       `/api/tour-rooms/${encodeURIComponent(target.bookingId)}/tts?messageId=${encodeURIComponent(
@@ -137,14 +188,7 @@ export async function playServerTts(target: ServerTtsTarget): Promise<boolean> {
     if (!res.ok) return false;
     const { url } = (await res.json()) as { url?: string };
     if (!url) return false;
-    // P0-6 — reuse the gesture-warmed element (see primeAudio). A fresh
-    // `new Audio(url)` created after the await has no user activation left and
-    // iOS Safari / in-app webviews reject its play(), which is what left the
-    // speaker stuck on the muted glyph.
-    const audio = warmAudio ?? new Audio();
-    audio.src = url;
-    await audio.play();
-    return true;
+    return playFromSrc(url);
   } catch {
     return false;
   }
