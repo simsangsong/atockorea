@@ -341,14 +341,19 @@ export interface EvidenceLookupResult {
  */
 export async function hasEvidenceFor(
   supabase: EvidenceLookupClient,
-  opts: { roomVehicleId: string; seatNumber: number; evidenceId?: string | null },
+  opts:
+    | { roomVehicleId: string; seatNumber: number; evidenceId?: string | null }
+    | { bookingId: string; evidenceId?: string | null },
 ): Promise<EvidenceLookupResult> {
   try {
-    let query = supabase
-      .from('ops_no_show_evidence')
-      .select('id')
-      .eq('room_vehicle_id', opts.roomVehicleId)
-      .eq('seat_number', opts.seatNumber);
+    let query = supabase.from('ops_no_show_evidence').select('id');
+    if ('bookingId' in opts) {
+      // N1 — a join tour whose seats were never assigned has no seat to key on.
+      // The person is the identity; the seat is an optimisation.
+      query = query.eq('booking_id', opts.bookingId);
+    } else {
+      query = query.eq('room_vehicle_id', opts.roomVehicleId).eq('seat_number', opts.seatNumber);
+    }
     if (opts.evidenceId) query = query.eq('id', opts.evidenceId);
     const { data, error } = await query.order('recorded_at', { ascending: false }).limit(1);
     if (error) {

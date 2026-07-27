@@ -54,7 +54,8 @@ export default function GuideRatesPanel({
         <h4 className="mb-2 text-[13px] font-bold text-slate-800">현재 적용 단가</h4>
         {resolved.length === 0 ? (
           <p className="rounded-xl bg-slate-50 px-3 py-4 text-center text-[13px] text-slate-500">
-            등록된 단가가 없습니다. 아래에서 추가하세요.
+            아직 일비(단가)가 없습니다. 여기서 정해 두면 배정할 때마다 금액을 적지
+            않아도 되고, 월 정산서와 간이지급명세서가 이 값으로 자동 계산됩니다.
           </p>
         ) : (
           <ul className="divide-y divide-slate-100 overflow-hidden rounded-xl border border-slate-200">

@@ -65,6 +65,7 @@ export default function GuideGuestCard({
   onMessage,
   note,
   onSaveNote,
+  onNoShow,
 }: {
   row: RosterRow;
   onClose: () => void;
@@ -81,6 +82,18 @@ export default function GuideGuestCard({
    * 버튼이 나오지 않는다(기존 호출부 무변경).
    */
   onMessage?: (bookingId: string) => void;
+  /**
+   * N1 (owner report 2026-07-27) — mark this guest a no-show.
+   *
+   * The evidence flow existed but hung off a SEAT, and ops has never assigned
+   * one, so on a join tour it could not be reached at all. The morning surface
+   * is this roster card, where the identity is the person.
+   *
+   * Absent → the button offers to mark. Already absent → it offers to undo.
+   * Undo is frictionless on purpose (§5.4b D12 asymmetric friction): only the
+   * marking needs proof.
+   */
+  onNoShow?: (bookingId: string, action: 'mark' | 'clear') => void;
 }) {
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState(note?.note ?? '');
@@ -231,6 +244,22 @@ export default function GuideGuestCard({
         >
           <IconTabChat size={TR_ICON.meta} aria-hidden />
           이 손님에게만 메시지
+        </button>
+      )}
+
+      {onNoShow && (
+        <button
+          type="button"
+          onClick={() => onNoShow(row.bookingId, row.status === 'absent' ? 'clear' : 'mark')}
+          className={`tr-label text-cjk-safe mt-2 flex w-full items-center justify-center gap-1.5 rounded-xl px-3 py-2.5 font-bold active:scale-[0.99] ${
+            row.status === 'absent'
+              ? 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]'
+              : 'bg-[var(--tr-danger-soft)] text-[var(--tr-danger)]'
+          }`}
+          data-testid="guest-no-show"
+        >
+          <IconWarn size={TR_ICON.meta} aria-hidden />
+          {row.status === 'absent' ? '노쇼 취소' : '노쇼 처리 (증거 남기기)'}
         </button>
       )}
 
