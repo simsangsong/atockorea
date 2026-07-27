@@ -662,10 +662,13 @@
  * active room locale on the root as data-locale. */
 .tr-root[data-locale='ja'] .tr-body,
 .tr-root[data-locale='zh'] .tr-body,
+.tr-root[data-locale='zh-TW'] .tr-body,
 .tr-root[data-locale='ja'] .tr-body-lg,
 .tr-root[data-locale='zh'] .tr-body-lg,
+.tr-root[data-locale='zh-TW'] .tr-body-lg,
 .tr-root[data-locale='ja'] .tr-card-text,
-.tr-root[data-locale='zh'] .tr-card-text {
+.tr-root[data-locale='zh'] .tr-card-text,
+.tr-root[data-locale='zh-TW'] .tr-card-text {
   line-height: 1.55;
 }
 /* Korean reads dense at 1.45 too — a half-step, not the full ja/zh 1.55

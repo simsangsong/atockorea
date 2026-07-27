@@ -59,6 +59,13 @@ const COPY: Record<
     open: '地图',
     settlement: (n, total) => `💰 待确认支出${n}笔 (${total})——请在聊天中确认。`,
   },
+  'zh-TW': {
+    delay: (m) => `🚐 車輛預計晚約${m}分鐘——請稍候。`,
+    parking: '🅿️ 車輛已停好——點一下查看位置。',
+    arrived: '🚐 車輛已抵達——點一下查看位置。',
+    open: '地圖',
+    settlement: (n, total) => `💰 待確認支出${n}筆 (${total})——請在聊天中確認。`,
+  },
   fr: {
     delay: (m) => `🚐 Le véhicule a ~${m} min de retard — merci de patienter.`,
     parking: '🅿️ Véhicule garé — touchez pour voir l’épingle.',

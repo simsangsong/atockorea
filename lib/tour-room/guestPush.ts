@@ -21,6 +21,7 @@ const TITLE: Record<string, string> = {
   ja: 'AtoC Korea — ツアー',
   es: 'AtoC Korea — tu tour',
   zh: 'AtoC Korea — 我的行程',
+  'zh-TW': 'AtoC Korea — 我的行程',
   fr: 'AtoC Korea — votre visite',
   de: 'AtoC Korea — Ihre Tour',
   ru: 'AtoC Korea — ваш тур',

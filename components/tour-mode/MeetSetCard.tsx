@@ -93,6 +93,18 @@ const COPY: Record<
     failed: '未能发送——请重试或在聊天中告知。',
     needPlace: '请填写地点名称，或保持位置图钉开启。',
   },
+  'zh-TW': {
+    title: '確定見面安排',
+    hint: '私人團由您決定——選好時間和地點，司機會收到可導航的定位圖釘。',
+    time: '時間',
+    place: '地點',
+    placePh: '例如：飯店大廳、1樓卡地亞門前…',
+    usePin: '同時傳送我目前位置的圖釘',
+    submit: '傳送給司機和導遊',
+    sent: '見面安排已確定——司機已收到定位 ✓',
+    failed: '未能傳送——請重試或在聊天中告知。',
+    needPlace: '請填寫地點名稱，或保持位置圖釘開啟。',
+  },
   fr: {
     title: 'Fixer le rendez-vous',
     hint: 'Votre tour, votre choix — choisissez l’heure et le lieu. Votre chauffeur reçoit un repère navigable.',

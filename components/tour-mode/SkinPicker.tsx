@@ -79,6 +79,18 @@ const SKIN_NAME: Record<RoomLocale, Record<TourSkin, string>> = {
     blossom: '樱花',
     contrast: '高对比',
   },
+  'zh-TW': {
+    classic: '經典',
+    sky: '天空',
+    winter: '冬日',
+    forest: '森林',
+    meadow: '草原',
+    jeju: '濟州',
+    seoul: '首爾',
+    busan: '釜山',
+    blossom: '櫻花',
+    contrast: '高對比',
+  },
   fr: {
     classic: 'Classique',
     sky: 'Ciel',

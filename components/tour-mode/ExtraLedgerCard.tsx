@@ -69,6 +69,15 @@ const COPY: Record<
     status: { logged: '待您确认', confirmed: '已确认', settled: '已现金结清', voided: '已取消' },
     kind: { advance: '代付', ticket: '门票', overtime: '超时', extension: '延长', parking: '停车', pickup: '接送费', other: '支出' },
   },
+  'zh-TW': {
+    title: '行程支出',
+    cashNote: '當日與導遊現金結算',
+    confirm: '確認',
+    confirming: '確認中…',
+    receipt: '查看收據',
+    status: { logged: '待您確認', confirmed: '已確認', settled: '已現金結清', voided: '已取消' },
+    kind: { advance: '代墊', ticket: '門票', overtime: '超時', extension: '延長', parking: '停車', pickup: '接送費', other: '支出' },
+  },
   fr: {
     title: 'Dépense du voyage',
     cashNote: 'Règlement en espèces avec votre guide aujourd’hui',

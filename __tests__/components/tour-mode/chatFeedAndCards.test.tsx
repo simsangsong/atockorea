@@ -22,6 +22,7 @@ const GUIDE_MESSAGE: RoomMessage = {
     ja: '午後3時に駐車場に集合します。',
     es: 'Nos reunimos a las 3pm en el estacionamiento.',
     zh: '下午3点在停车场集合。',
+    'zh-TW': '下午3點在停車場集合。',
     fr: 'Rendez-vous à 15 h sur le parking.',
     de: 'Wir treffen uns um 15 Uhr auf dem Parkplatz.',
     ru: 'Встречаемся в 15:00 на парковке.',

@@ -56,6 +56,14 @@ const COPY: Record<
     keepOn: '请保持屏幕常亮以持续共享。',
     unsupported: '此浏览器不支持位置共享 — 仍可查看地图。',
   },
+  'zh-TW': {
+    title: '分享我的位置',
+    consent: '僅在此頁面開啟時，僅與導遊和同團成員分享。隨時可以關閉。',
+    sharing: '即時分享中 — 顯示在群組地圖上',
+    denied: '位置已被封鎖。請在瀏覽器設定中允許本網站的位置權限後重新開啟。',
+    keepOn: '請保持螢幕常亮以持續分享。',
+    unsupported: '此瀏覽器不支援位置分享 — 仍可查看地圖。',
+  },
   fr: {
     title: 'Partager ma position',
     consent: 'Seulement tant que cet écran est ouvert, et uniquement avec votre guide et votre groupe. Désactivable à tout moment.',

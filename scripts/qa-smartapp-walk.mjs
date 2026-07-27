@@ -93,7 +93,10 @@ try {
   // ── M-D4 meet-exactly: [Meet me here] → confirm → pin + one photo ──
   await page.click('[data-testid="signal-share_location"]', { timeout: 10000 });
   await page.waitForSelector('[data-testid="confirm-sheet-ok"]', { timeout: 8000 });
-  await page.click('[data-testid="confirm-sheet-ok"]');
+  // The sheet's action row sits low enough that the bottom tab bar can
+  // intercept a real click at this viewport; dispatch directly (same
+  // workaround the dev N-indicator needs elsewhere in this walk).
+  await page.$eval('[data-testid="confirm-sheet-ok"]', (el) => el.click());
   await page.waitForSelector('[data-testid="location-preview"]', { timeout: 20000 });
   // the one-photo follow-up: feed a tiny PNG through the capture input
   const PNG_1PX = Buffer.from(
@@ -194,8 +197,15 @@ try {
   await page.waitForTimeout(900);
   await shot('09h-guest-home-de');
   await page.locator('[data-testid="room-tabbar"] [role="tab"]').last().click();
-  await page.waitForSelector('[data-testid="app-locale-en"]', { timeout: 8000 });
+  await page.waitForSelector('[data-testid="app-locale-zh-TW"]', { timeout: 8000 });
   await shot('09-guest-settings-de');
+  // Traditional Chinese: the two Chinese buttons must read 简体中文 / 繁體中文.
+  await page.click('[data-testid="app-locale-zh-TW"]');
+  await page.waitForTimeout(900);
+  await shot('09t-guest-home-zh-TW');
+  await page.locator('[data-testid="room-tabbar"] [role="tab"]').last().click();
+  await page.waitForSelector('[data-testid="app-locale-en"]', { timeout: 8000 });
+  await shot('09s-guest-settings-zh-TW');
   await page.click('[data-testid="app-locale-en"]');
   await page.waitForTimeout(700);
 

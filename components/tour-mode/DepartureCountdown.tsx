@@ -97,6 +97,15 @@ const ADD_COPY: Record<
     failure: '增加时间失败，请重试。',
     cancel: '取消',
   },
+  'zh-TW': {
+    button: '+ 增加時間',
+    sheetTitle: '增加時間',
+    option: (h) => `+${h}小時`,
+    cashNote: '行程結束時請以現金支付給司機。',
+    success: (h) => `已增加${h}小時 ✓`,
+    failure: '增加時間失敗，請重試。',
+    cancel: '取消',
+  },
   es: {
     button: '+ Añadir tiempo',
     sheetTitle: 'Añadir tiempo extra',
@@ -171,6 +180,12 @@ const COPY: Record<
     remaining: '剩余',
     ended: '包含时间已结束',
     hm: (h, m) => (h > 0 ? `${h}小时${m}分` : `${m}分`),
+  },
+  'zh-TW': {
+    endsAt: '預計結束',
+    remaining: '剩餘',
+    ended: '包含時間已結束',
+    hm: (h, m) => (h > 0 ? `${h}小時${m}分` : `${m}分`),
   },
   es: {
     endsAt: 'Termina hacia',

@@ -36,6 +36,7 @@ const COPY: Record<RoomLocale, { arrived: string; more: string; less: string; au
   ja: { arrived: '到着しました', more: '詳しく見る', less: '閉じる', audio: '音声ガイドを再生', aiBadge: 'AI生成ガイド — 詳細は現地でご確認ください' },
   es: { arrived: 'Has llegado', more: 'Ver más', less: 'Ver menos', audio: 'Reproducir audioguía', aiBadge: 'Guía generada por IA — verifica los detalles en el lugar' },
   zh: { arrived: '已到达', more: '查看详情', less: '收起', audio: '播放语音导览', aiBadge: 'AI生成指南 — 详情请以现场为准' },
+  'zh-TW': { arrived: '已抵達', more: '查看詳情', less: '收合', audio: '播放語音導覽', aiBadge: 'AI 生成導覽——詳情請以現場為準' },
   fr: { arrived: 'Vous êtes arrivé', more: 'Plus de détails', less: 'Réduire', audio: 'Écouter l’audioguide', aiBadge: 'Guide généré par IA — vérifiez les détails sur place' },
   de: { arrived: 'Sie sind angekommen', more: 'Mehr Details', less: 'Weniger anzeigen', audio: 'Audioguide abspielen', aiBadge: 'KI-generierte Infos — Details bitte vor Ort prüfen' },
   ru: { arrived: 'Вы на месте', more: 'Подробнее', less: 'Свернуть', audio: 'Включить аудиогид', aiBadge: 'Описание создано ИИ — детали уточняйте на месте' },

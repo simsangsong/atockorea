@@ -71,3 +71,22 @@
 - [x] L4 게이트 — tsc 0 · jest 146스위트/1582(감수 후 1604) green(5로케일 박제 테스트 3파일 갱신) · `npm run build` · walk 33컷 콘솔 0 + fr/de 홈·설정 육안(탭바 „Einstellungen“/« Réglages » 수납 확인). **관찰된 사전존재 니트(무접촉)**: es `Faltan 1 días`(LobbyCard dday n=1).
 - [x] L5 — main 전진분(#500 등) 머지: 유일 충돌 guestSignals.ts = 정확히만나기(핀 URL 별도 줄 문법 + share_location/meeting_propose 신설)와 교차 → **main 신문법 채택 + 9로케일 이식**, MeetSetCard·QuickSignalBar 신키 5종도 4언어 완성. 게이트 재통과 후 **PR #501 머지(8f9424ad)**.
 - ⚠ 기록: 로케일 변경은 룸 재조인→셸이 홈 탭으로 리마운트(walk에 문서화). CORE_TRANSLATION_LOCALES 덕에 LLM 팬아웃 비용은 fr/de/ru/it 손님이 실제 입장할 때만 발생.
+
+## §F 후속 라운드 — zh-TW(번체) 추가 + 니트 수정 (2026-07-27)
+
+**사용자 지시:** "수정할거 수정하고 이번엔 zh-TW도 locale 추가".
+
+**F-D1 정규화 특례(신규 계약).** `ROOM_LOCALES`에 `'zh-TW'` 추가(10종, zh 바로 뒤). 지금까지 `normalizeRoomLocale`은 **모든 태그를 기저 언어로 접었다**(`zh-TW`→`zh`) — 그 폴딩을 깨야 번체가 산다. 규칙: `zh-tw|zh-hk|zh-mo|zh-hant*` → `'zh-TW'`, 그 외는 종전대로 기저 언어. `entryCopy.normalize`(기기 로케일 감지)도 동일 규칙으로 맞춤 — 대만/홍콩 기기가 자동으로 번체로 착지한다.
+**F-D2 언어 이름 분화.** 버튼이 둘 다 "中文"이면 고를 수 없다 → `zh: 简体中文` / `zh-TW: 繁體中文`.
+**F-D3 파생 인프라.** LOCALE_TAG/TTS_LANG `zh-TW`, CJK 행간 CSS 셀렉터에 `[data-locale='zh-TW']` 추가(번체도 1.55), 느슨한 Record 3곳(guestPush 타이틀·companion 정원초과·notices Intl 태그) 수동 수거.
+**F-D4 LLM 팬아웃 불변.** `CORE_TRANSLATION_LOCALES`는 **5종 그대로** — 번체 UI 추가가 번역 호출을 늘리지 않는다(번체 손님이 실제 입장하면 동적 타깃이 알아서 합류).
+**F-D5 번역 규율.** 간체의 기계 변환 금지 — 대만 어휘 강제(訊息/網路/影片/計程車/設定/螢幕/主畫面/便利商店/QR Code/帳戶/登入/預設/智慧…), 「」 인용부호, Apple zh-TW 실문구「加入主畫面」.
+
+**니트 수정(감수 기록분):** es 복수형 3건 — LobbyCard `Falta 1 día`, checkinCopy welcomeParty/partyPrompt를 라벨형으로.
+**A1 원장:** 이번 트랙 신규 3종(InstallCard·SkinScenery·useInstallPrompt) 등록 — 원장 테스트가 먼저 울었다(규율대로 작동).
+
+**실행 로그:**
+- [x] F0 인프라(정본·정규화·파생·CSS·언어명) + 니트 3건
+- [x] F1 번역 65파일(에이전트 3기 중 2기가 세션 한도로 중단 → 잔여 15파일 직접 완료: dining 2·seating 6·tour-room 5·PlanEditor 1 등)
+- [x] F2 테스트 갱신 — `singleSourceOfTruth`(5→10 스냅샷, **main에서 이미 깨져 있던 것**)·timeFormat·chatFeed 픽스처·A1 원장
+- [ ] F3 대만 원어민 감수 → F4 게이트(tsc·jest·build·walk zh-TW 컷) → F5 머지

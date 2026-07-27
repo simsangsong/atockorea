@@ -27,6 +27,7 @@ export const TTS_LANG: Record<RoomLocale, string> = {
   ja: 'ja-JP',
   es: 'es-ES',
   zh: 'zh-CN',
+  'zh-TW': 'zh-TW',
   fr: 'fr-FR',
   de: 'de-DE',
   ru: 'ru-RU',

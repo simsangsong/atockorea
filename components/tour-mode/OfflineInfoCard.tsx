@@ -92,6 +92,18 @@ const COPY: Record<
     hoursAgo: (n: number) => `${n}小时前`,
     daysAgo: (n: number) => `${n}天前`,
   },
+  'zh-TW': {
+    title: '📴 已離線 — 已儲存的資訊',
+    meeting: '集合',
+    nextStops: '今日',
+    numbers: '緊急：119（急救）· 112（警察）· 1330（翻譯）',
+    note: '訊號恢復後將自動重新連線。',
+    savedAgo: (a: string) => `（${a}儲存）`,
+    justNow: '剛剛',
+    minutesAgo: (n: number) => `${n}分鐘前`,
+    hoursAgo: (n: number) => `${n}小時前`,
+    daysAgo: (n: number) => `${n}天前`,
+  },
   fr: {
     title: '📴 Hors ligne — infos enregistrées',
     meeting: 'Rendez-vous',

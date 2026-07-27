@@ -19,7 +19,7 @@ import { roomLifecycle, type RoomLifecycle } from '@/lib/tour-room/time';
  * Every static copy Record in the app is keyed by this union — extending it
  * turns tsc into the completeness gate.
  */
-export const ROOM_LOCALES = ['en', 'ko', 'zh', 'ja', 'es', 'fr', 'de', 'ru', 'it'] as const;
+export const ROOM_LOCALES = ['en', 'ko', 'zh', 'zh-TW', 'ja', 'es', 'fr', 'de', 'ru', 'it'] as const;
 export type RoomLocale = (typeof ROOM_LOCALES)[number];
 
 /**
@@ -32,10 +32,17 @@ export type RoomLocale = (typeof ROOM_LOCALES)[number];
  */
 export const CORE_TRANSLATION_LOCALES = ['en', 'ko', 'zh', 'ja', 'es'] as const;
 
-/** Normalize a client-reported locale to a room locale ('zh-TW' → 'zh'). */
+/**
+ * Normalize a client-reported locale to a room locale. Traditional-script
+ * Chinese tags (zh-TW/zh-HK/zh-MO and any zh-Hant-*) map to 'zh-TW'
+ * (2026-07-27); every other tag folds to its base language.
+ */
 export function normalizeRoomLocale(value: unknown, fallback: RoomLocale = 'en'): RoomLocale {
   if (typeof value !== 'string') return fallback;
   const lower = value.trim().toLowerCase();
+  if (lower === 'zh-tw' || lower === 'zh-hk' || lower === 'zh-mo' || lower.startsWith('zh-hant')) {
+    return 'zh-TW';
+  }
   const base = lower.split('-')[0];
   return (ROOM_LOCALES as readonly string[]).includes(base) ? (base as RoomLocale) : fallback;
 }

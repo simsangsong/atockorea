@@ -24,6 +24,7 @@ const LIVE_LABEL: Record<RoomLocale, string> = {
   ja: 'ガイド・ライブ',
   es: 'Guía · en vivo',
   zh: '导游 · 直播',
+  'zh-TW': '導遊 · 直播',
   fr: 'Guide · en direct',
   de: 'Guide · live',
   ru: 'Гид · в эфире',

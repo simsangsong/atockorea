@@ -147,6 +147,23 @@ const COPY: Record<
     install: '安装应用',
     roles: { guide: '导游', driver: '司机', admin: 'AtoC Korea', customer: '旅客' },
   },
+  'zh-TW': {
+    media: '照片/影片',
+    files: '檔案',
+    links: '連結',
+    shortcuts: '捷徑',
+    members: '成員',
+    empty: '目前還沒有內容',
+    schedule: '今日',
+    map: '地圖',
+    settings: '設定',
+    concierge: '智慧導覽',
+    emergency: '緊急',
+    close: '關閉',
+    display: { light: '淺色', dark: '深色', system: '自動' },
+    install: '安裝 App',
+    roles: { guide: '導遊', driver: '司機', admin: 'AtoC Korea', customer: '旅客' },
+  },
   fr: {
     media: 'Photos et vidéos',
     files: 'Fichiers',
@@ -374,7 +391,9 @@ export default function RoomDrawer({
                     ? 'La sesión expiró: vuelve a abrir la sala desde tu enlace.'
                     : locale === 'zh'
                       ? '会话已过期 — 请通过邀请链接重新打开房间。'
-                      : locale === 'fr'
+                      : locale === 'zh-TW'
+                        ? '登入狀態已過期——請透過邀請連結重新開啟房間。'
+                        : locale === 'fr'
                         ? 'Session expirée — rouvrez l’espace tour depuis votre lien d’invitation.'
                         : locale === 'de'
                           ? 'Sitzung abgelaufen — öffnen Sie den Tour-Raum erneut über Ihren Einladungslink.'

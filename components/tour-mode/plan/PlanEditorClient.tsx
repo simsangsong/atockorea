@@ -40,7 +40,7 @@ import {
 } from '@/components/tour-mode/icons';
 import { koreanAllergyCardLines } from '@/lib/tour-room/allergyCard';
 import { formatMinutes, haversineKm, totalDriveMinutes, type LatLng } from '@/lib/itinerary-builder/distance';
-import { ROOM_LOCALES, type RoomLocale } from '@/lib/tour-room/snapshot';
+import { ROOM_LOCALES, normalizeRoomLocale, type RoomLocale } from '@/lib/tour-room/snapshot';
 import { useTourRoomSession } from '@/hooks/useTourRoomSession';
 import { useBackTrap } from '@/hooks/useBackTrap';
 import PlanTourItinerary from '@/components/tour-mode/plan/PlanTourItinerary';
@@ -520,6 +520,83 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     allergyCardTitle: '🍽️ 餐厅出示卡(韩语)',
     allergyCardHint: '出示给餐厅工作人员——用韩语说明您的饮食要求。',
   },
+  'zh-TW': {
+    title: '規劃您的一日行程',
+    tourDay: '出遊日',
+    kstNote: '所有時間均為韓國時間 (KST)',
+    loading: '正在開啟行程規劃…',
+    joinError: '無法開啟這個連結。請使用電子郵件中的最新連結，或在聊天中與我們聯絡。',
+    memberReadOnly: '只有主要旅客可以編輯行程——完成後會顯示在這裡。',
+    confirmedNote: '導遊已確認行程。如需調整，請在旅遊房間聊天中告訴我們。',
+    submittedNote: '已傳送給導遊——確認後就會為您定案。',
+    delegatedNote: '已交給導遊安排。有任何心願請在聊天中告訴我們！',
+    tabCourses: '推薦路線',
+    tabPick: '自己挑選',
+    tabDelegate: '交給導遊',
+    useCourse: '從這條路線開始',
+    courseStops: (n) => `${n}站`,
+    courseHours: (h) => `約${h}小時`,
+    replaceConfirm: '要用這條路線取代目前的行程嗎？',
+    searchPlaceholder: '搜尋景點…',
+    googleToggle: '找不到嗎？用 Google 地圖搜尋',
+    googlePlaceholder: '搜尋區域內的任何地點…',
+    googleLoading: '正在載入 Google 搜尋…',
+    add: '加入',
+    added: '已加入',
+    yourDay: '我的一天',
+    emptyStops: '還沒有加入景點——從推薦路線開始，或在上方挑選。',
+    estimated: (total) => `含車程預估 ${total}`,
+    timeLabel: '時間 (KST)',
+    durationLabel: '停留',
+    minutes: (n) => `${n}分鐘`,
+    memoPlaceholder: '對這個地點的需求（選填）',
+    removeStop: '刪除',
+    moveUp: '上移',
+    moveDown: '下移',
+    needsTitle: '旅遊資訊',
+    needsHint: '僅供導遊準備行程使用，只會與導遊分享。',
+    departureTitle: '出發時間 (KST)',
+    departureHint: '司機接您的時間——今天包含的時數從這時開始計算。',
+    adults: '成人',
+    children: '兒童',
+    childAges: '孩子年齡',
+    childAgesPlaceholder: '例如：5, 8',
+    stroller: '嬰兒推車',
+    wheelchair: '輪椅',
+    luggage: '大件行李',
+    dietaryTitle: '飲食',
+    dietary: {
+      vegetarian: '素食',
+      vegan: '純素',
+      halal: '清真',
+      no_pork: '不吃豬肉',
+      no_seafood: '不吃海鮮',
+      no_shellfish: '不吃貝類',
+      no_nuts: '不吃堅果',
+      gluten_free: '無麩質',
+    },
+    allergyPlaceholder: '過敏情況（請詳細說明）',
+    paceTitle: '步調',
+    pace: { relaxed: '悠閒', standard: '標準', packed: '多看多玩' },
+    notePlaceholder: '想對導遊說的話（選填）',
+    warningsTitle: '請留意',
+    warnOverrun: (over, budget) => `這份行程比預訂時數（${budget}）多出約${over}——導遊可能會調整。`,
+    warnClosed: (title) => `${title}在出遊日似乎公休。`,
+    warnOutOfRegion: (title) => `${title}在一般服務範圍之外——需要導遊確認。`,
+    warnCrossIsland: (surcharge) =>
+      `同一天同時遊覽東部與西/南部屬於跨島行程 → 需加收${surcharge}（僅作提醒，不會阻擋行程）`,
+    saving: '儲存中…',
+    saved: '已儲存',
+    saveError: '儲存失敗——下次修改時會再試一次。',
+    submit: '傳送給導遊',
+    submitting: '傳送中…',
+    delegateTitle: '讓導遊為您設計一天',
+    delegateDesc: '導遊會考量天氣、人潮和路線，為您準備最合適的行程。在下方留下想法就會納入安排。',
+    delegateCta: '交給導遊',
+    backToRoom: '開啟旅遊房間',
+    allergyCardTitle: '🍽️ 餐廳出示卡（韓文）',
+    allergyCardHint: '出示給餐廳工作人員——以韓文說明您的飲食需求。',
+  },
   es: {
     title: 'Planea tu día de tour',
     tourDay: 'Día del tour',
@@ -929,8 +1006,8 @@ function detectLocale(): RoomLocale {
   // Server always 'en' (Node ≥21 exposes the SERVER's navigator.language —
   // trusting it breaks hydration for non-en devices); client detects for real.
   if (typeof window === 'undefined' || typeof navigator === 'undefined') return 'en';
-  const base = (navigator.language || 'en').toLowerCase().split('-')[0];
-  return (ROOM_LOCALE_VALUES as readonly string[]).includes(base) ? (base as RoomLocale) : 'en';
+  // normalizeRoomLocale keeps zh-TW whole (a bare split folds it to 'zh').
+  return normalizeRoomLocale(navigator.language || 'en', 'en');
 }
 
 function scrubTokenFromUrl(): void {
@@ -1171,6 +1248,30 @@ const PLAN_STATUS_COPY: Record<RoomLocale, PlanStatusCopy> = {
     tourItinAdd: '添加',
     tourItinAdded: '已添加',
     tourItinDetails: '详情',
+  },
+  'zh-TW': {
+    saveRateLimited: '儲存太頻繁了。請稍候再試。',
+    templatesLoading: '正在載入推薦路線…',
+    templatesEmpty: '這個地區目前還沒有推薦路線。',
+    templatesError: '無法載入推薦路線。',
+    placesLoading: '正在載入景點…',
+    placesEmpty: '沒有符合的景點。',
+    placesError: '無法載入景點。您仍可使用 Google 地圖搜尋。',
+    googleError: '目前無法使用 Google 地圖搜尋。',
+    previewCourse: '預覽路線',
+    previewTitle: '路線預覽',
+    previewStops: '景點',
+    previewTotal: '總計',
+    previewDriving: '車程',
+    previewClose: '關閉路線預覽',
+    replaceApply: '取代',
+    cancel: '取消',
+    tourItinTitle: '本次行程路線',
+    tourItinSub: '導遊將帶您走的路線。可以加入想去的景點，或直接從這份行程開始。',
+    tourItinApplyAll: '從這份行程開始',
+    tourItinAdd: '加入',
+    tourItinAdded: '已加入',
+    tourItinDetails: '詳情',
   },
   es: {
     saveRateLimited: 'Demasiados guardados seguidos. Espera un momento e inténtalo de nuevo.',
@@ -1446,6 +1547,10 @@ const FIXED_ITIN_COPY: Record<RoomLocale, { eyebrow: string; note: string }> = {
   zh: {
     eyebrow: '固定行程',
     note: '本行程按我们团队规划好的固定路线进行，无需自行安排。今天的行程如下:',
+  },
+  'zh-TW': {
+    eyebrow: '固定行程',
+    note: '本行程依我們團隊規劃好的固定路線進行，不必自行安排。今天的行程如下：',
   },
   es: {
     eyebrow: 'Itinerario fijo',
