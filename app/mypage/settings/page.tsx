@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { toast } from 'sonner';
 import { useTranslations, locales, type Locale } from '@/lib/i18n';
+import { localeLabels } from '@/lib/locale';
 import { validateAppPassword } from '@/lib/password-policy';
 import { MyPageSection } from '@/components/mypage/MyPageSection';
 import { MYPAGE_SURFACE_PAGE, MYPAGE_FOCUS_RING } from '@/lib/mypage-ui';
@@ -608,12 +609,14 @@ export default function AccountSettingsPage() {
               onChange={(e) => setFormData({ ...formData, language: e.target.value })}
               className={inputClass}
             >
-              <option value="en">English</option>
-              <option value="ko">한국어</option>
-              <option value="zh">中文 (简体)</option>
-              <option value="zh-TW">中文 (繁體)</option>
-              <option value="ja">日本語</option>
-              <option value="es">Español</option>
+              {/* Rendered from the site's locale list — the hand-written option
+                  list froze at six, so a guest already reading the site in
+                  French could not name that as their account language. */}
+              {locales.map((code) => (
+                <option key={code} value={code}>
+                  {localeLabels[code]}
+                </option>
+              ))}
             </select>
           </div>
           <div>
