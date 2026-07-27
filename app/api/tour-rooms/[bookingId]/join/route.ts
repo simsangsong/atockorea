@@ -1,6 +1,7 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextRequest, NextResponse, after } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { requestGate, clientIpKey } from '@/lib/durable-rate-limit';
+import { backfillRoomLocale } from '@/lib/tour-room/backfillTranslations.server';
 import {
   ensureRoom,
   resolveRoomActor,
@@ -141,6 +142,28 @@ export async function POST(
       .select()
       .single();
     if (participantError) throw participantError;
+
+    /**
+     * V0.5 — 스태프 메시지 팬아웃이 CORE 5종 바닥을 버리고 참여자 기준으로 좁아졌다
+     * (`messages/route.ts` fallbackTargetLocales). 그 바닥이 덮고 있던 구멍이
+     * **늦게 합류한 기기**다: 과거 메시지에 이 언어 번역이 없으면 원문이 보인다.
+     * 여기서 메운다. 이미 번역된 메시지는 건드리지 않으므로 재입장해도 콜이 늘지 않는다.
+     *
+     * 🔴 `after()` 인 이유: 입장이 번역을 기다리면 안 된다. 전달은 백필 안의
+     * 브로드캐스트가 한다 — 이 기기는 join 응답 직후 스냅샷을 이미 받았을 것이다.
+     */
+    const scheduleBackfill = () => {
+      const locales = [...new Set([locale, chatLocale].filter((v): v is string => Boolean(v)))];
+      for (const target of locales) void backfillRoomLocale(supabase, room, target);
+    };
+    try {
+      after(scheduleBackfill);
+    } catch {
+      // `after()` 는 요청 스코프 밖에서 던진다(핸들러를 직접 부르는 단위 테스트).
+      // 백필이 입장을 막을 이유는 없으니 넘어가되 **조용히는 아니다**: 프로덕션
+      // 로그에 이게 보이면 V0.5 의 구멍이 다시 열린 것이다(늦은 합류자가 원문을 봄).
+      console.warn('[tour-room] join backfill skipped — after() unavailable outside a request scope');
+    }
 
     // §5.2 C-6 — a device that entered through the lead's companion link is
     // never a lead candidate, not even in an empty room. Without this, a

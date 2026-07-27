@@ -38,11 +38,24 @@ function parseLocales(value: unknown, fallback = DEFAULT_TARGET_LOCALES): string
  * sent still gets a translated bubble instead of the raw Korean — plus any
  * arbitrary chat languages guests have written in (chat_locale).
  */
-function fallbackTargetLocales(senderRole: string, participantLocales: string[]): string[] {
-  if (senderRole === 'customer') {
-    return participantLocales.length > 0 ? participantLocales : DEFAULT_TARGET_LOCALES;
-  }
-  return [...new Set([...DEFAULT_TARGET_LOCALES, ...participantLocales])].slice(0, MAX_TRANSLATION_TARGETS);
+/**
+ * V0.5 — 실제로 방에 있는 사람의 언어로만 번역한다.
+ *
+ * 예전에는 스태프(가이드·기사) 메시지가 `CORE_TRANSLATION_LOCALES`(en·ko·zh·ja·es)
+ * 를 **바닥으로 깔고** 참여자 로케일을 합쳤다. 영어 손님 1명 + 한국어 기사인 방에서도
+ * 5개 언어를 번역했다는 뜻이다. 실측(2026-07-27): 4로케일 1409ms vs 1로케일 1033ms
+ * — 아무도 읽지 않는 번역에 376ms 와 비용의 60% 를 썼다.
+ *
+ * 그 바닥이 공짜였던 건 아니고, **늦게 합류한 기기의 구멍을 덮고 있었다**. 이제
+ * 그 구멍은 join 의 `backfillRoomLocale` 이 명시적으로 닫는다(§V0.5 백필).
+ *
+ * 참여자를 아직 아무도 모를 때만 CORE 로 떨어진다 — 그때는 누가 읽을지 모르므로
+ * 넓게 거는 쪽이 맞다.
+ */
+function fallbackTargetLocales(participantLocales: string[]): string[] {
+  return participantLocales.length > 0
+    ? participantLocales.slice(0, MAX_TRANSLATION_TARGETS)
+    : DEFAULT_TARGET_LOCALES;
 }
 
 /** PA-3: sender role is server-authoritative, derived from the resolved actor. */
@@ -163,7 +176,7 @@ export async function POST(
     // in whatever language the guest actually typed. Explicit client
     // targetLocales and the legacy defaults remain the fallback.
     const participantLocales = await getRoomTranslationTargets(supabase, room.id);
-    const targetLocales = parseLocales(targetLocalesRaw, fallbackTargetLocales(senderRole, participantLocales));
+    const targetLocales = parseLocales(targetLocalesRaw, fallbackTargetLocales(participantLocales));
 
     // Kakao-grade attachment: validate → rate-gate → upload → carry the
     // attachment metadata. The optional caption stays in `text` (translated below).
