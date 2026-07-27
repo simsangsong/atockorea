@@ -394,3 +394,137 @@ describe('lib/ai/router', () => {
     });
   });
 });
+
+/**
+ * §V0.6 — 헤지. 실측(2026-07-27)에서 translate p50 이 1.0~1.4초인데 꼬리가 2.3초+
+ * 였고 gemini 가 18회 중 3회 503 을 뱉었다. 조인 타임아웃은 정당하게 느린 팬아웃을
+ * 죽이므로, 1순위를 살려둔 채 2순위를 나란히 띄워 꼬리만 자른다.
+ */
+describe('provider hedging (V0.6)', () => {
+  const OLD_ENV = process.env;
+
+  beforeEach(() => {
+    process.env = { ...OLD_ENV };
+    delete process.env.DEEPSEEK_API_KEY;
+    process.env.GEMINI_API_KEY = 'g-key';
+    process.env.OPENAI_API_KEY = 'o-key';
+  });
+  afterEach(() => {
+    process.env = OLD_ENV;
+  });
+
+  /** `delayMs` 뒤에 응답하는 프로바이더. url 로 누가 불렸는지 가른다. */
+  function slowFetch(plan: Record<string, { delayMs: number; content?: string; status?: number }>) {
+    return jest.fn(async (url: string) => {
+      const key = String(url).includes('generativelanguage') ? 'gemini' : 'openai';
+      const step = plan[key];
+      if (!step) throw new Error(`unexpected provider call: ${url}`);
+      await new Promise((r) => setTimeout(r, step.delayMs));
+      if (step.status && step.status >= 400) {
+        return { ok: false, status: step.status, json: async () => ({ error: { message: 'boom' } }) };
+      }
+      return okCompletion(step.content ?? 'hedged');
+    });
+  }
+
+  it('1순위가 임계값 전에 답하면 2순위를 아예 부르지 않는다', async () => {
+    process.env.TOUR_AI_TRANSLATE_HEDGE_AFTER_MS = '200';
+    const fetchMock = slowFetch({ gemini: { delayMs: 10, content: 'fast' } });
+    global.fetch = fetchMock as unknown as typeof fetch;
+
+    const result = await chatCompletion('translate', [{ role: 'user', content: 'hi' }]);
+    expect(result.content).toBe('fast');
+    expect(result.provider).toBe('gemini');
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+  });
+
+  it('1순위가 느리면 2순위를 병렬로 띄우고 먼저 온 쪽을 쓴다', async () => {
+    process.env.TOUR_AI_TRANSLATE_HEDGE_AFTER_MS = '50';
+    const fetchMock = slowFetch({
+      gemini: { delayMs: 5_000, content: 'slow-gemini' },
+      openai: { delayMs: 20, content: 'hedge-won' },
+    });
+    global.fetch = fetchMock as unknown as typeof fetch;
+
+    const started = Date.now();
+    const result = await chatCompletion('translate', [{ role: 'user', content: 'hi' }]);
+    // 느린 1순위를 기다리지 않았다.
+    expect(Date.now() - started).toBeLessThan(2_000);
+    expect(result.content).toBe('hedge-won');
+    expect(result.provider).toBe('openai');
+    expect(fetchMock).toHaveBeenCalledTimes(2);
+  });
+
+  it('헤지를 띄웠어도 1순위가 먼저 끝나면 1순위를 쓴다 (버리지 않는다)', async () => {
+    process.env.TOUR_AI_TRANSLATE_HEDGE_AFTER_MS = '20';
+    const fetchMock = slowFetch({
+      gemini: { delayMs: 60, content: 'primary-still-won' },
+      openai: { delayMs: 5_000, content: 'hedge-too-slow' },
+    });
+    global.fetch = fetchMock as unknown as typeof fetch;
+
+    const result = await chatCompletion('translate', [{ role: 'user', content: 'hi' }]);
+    expect(result.content).toBe('primary-still-won');
+    expect(result.provider).toBe('gemini');
+  });
+
+  it('임계값 전에 실패하면 헤지 없이 그냥 다음 단으로 (중복 호출 없음)', async () => {
+    process.env.TOUR_AI_TRANSLATE_HEDGE_AFTER_MS = '500';
+    const fetchMock = slowFetch({
+      gemini: { delayMs: 5, status: 503 },
+      openai: { delayMs: 5, content: 'fallback' },
+    });
+    global.fetch = fetchMock as unknown as typeof fetch;
+
+    const result = await chatCompletion('translate', [{ role: 'user', content: 'hi' }]);
+    expect(result.content).toBe('fallback');
+    expect(result.provider).toBe('openai');
+    expect(fetchMock).toHaveBeenCalledTimes(2); // 1순위 1 + 2순위 1, 헤지 중복 없음
+  });
+
+  it('둘 다 실패하면 두 실패가 모두 보고된다 (로그가 반쪽이면 안 된다)', async () => {
+    process.env.TOUR_AI_TRANSLATE_HEDGE_AFTER_MS = '20';
+    const fetchMock = slowFetch({
+      gemini: { delayMs: 60, status: 503 },
+      openai: { delayMs: 30, status: 500 },
+    });
+    global.fetch = fetchMock as unknown as typeof fetch;
+
+    await expect(chatCompletion('translate', [{ role: 'user', content: 'hi' }])).rejects.toThrow(AiRouterError);
+    try {
+      await chatCompletion('translate', [{ role: 'user', content: 'hi' }]);
+    } catch (error) {
+      const reasons = (error as AiRouterError & { attempts?: Array<{ provider: string }> }).attempts ?? [];
+      expect(reasons.map((a) => a.provider).sort()).toEqual(['gemini', 'openai']);
+    }
+  });
+
+  it('배치 경로는 헤지하지 않는다 — 사람이 기다리는 호출이 아니다', async () => {
+    process.env.DEEPSEEK_API_KEY = 'd-key';
+    const fetchMock = jest.fn(async (url: string) => {
+      if (String(url).includes('deepseek')) {
+        await new Promise((r) => setTimeout(r, 300));
+        return okCompletion('batch');
+      }
+      throw new Error(`batch must not hedge; called ${url}`);
+    });
+    global.fetch = fetchMock as unknown as typeof fetch;
+
+    const result = await chatCompletion('batch', [{ role: 'user', content: 'hi' }]);
+    expect(result.provider).toBe('deepseek');
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+  });
+
+  it('HEDGE_AFTER_MS=0 이면 예전 순차 동작 그대로', async () => {
+    process.env.TOUR_AI_TRANSLATE_HEDGE_AFTER_MS = '0';
+    const fetchMock = slowFetch({
+      gemini: { delayMs: 200, content: 'sequential' },
+      openai: { delayMs: 1, content: 'must-not-be-called' },
+    });
+    global.fetch = fetchMock as unknown as typeof fetch;
+
+    const result = await chatCompletion('translate', [{ role: 'user', content: 'hi' }]);
+    expect(result.content).toBe('sequential');
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+  });
+});

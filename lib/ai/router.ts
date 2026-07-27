@@ -125,6 +125,27 @@ function timeoutMsFor(purpose: AiPurpose): number {
   return purpose === 'caption' ? 3_000 : 8_000;
 }
 
+/**
+ * §V0.6 — 이 시간 안에 1순위가 답하지 않으면 2순위를 **나란히** 띄운다(1순위는
+ * 계속 달린다). 0 이거나 미설정이면 헤지 없음 = 예전 순차 동작 그대로.
+ *
+ * 실시간 경로에만 켠다. translate/caption 은 사람이 말하는 중에 기다리는 호출이고,
+ * batch/vision 은 아니다. 임계값은 실측 p50 위에 잡았다(2026-07-27, medium 발화):
+ *   translate 1로케일 ~1.0초 · 4로케일 ~1.4초, 꼬리 2.3초+
+ * 1200ms 면 정상 호출 대부분은 헤지 없이 끝나고 꼬리만 잘린다. 너무 낮추면
+ * 절반이 헤지하면서 비용만 두 배가 된다 — 낮추기 전에 반드시 다시 재라.
+ *
+ * 🔴 왜 타임아웃을 조이지 않고 헤지인가: translate 는 로케일 수와 원문 길이에 따라
+ * **정당하게** 느려진다. 조인 타임아웃은 정상 호출을 죽이고 재시도로 더 느려진다.
+ */
+function hedgeAfterMsFor(purpose: AiPurpose): number {
+  const configured = Number(envFor(purpose, 'HEDGE_AFTER_MS'));
+  if (Number.isFinite(configured) && configured >= 0) return configured;
+  if (purpose === 'translate') return 1_200;
+  if (purpose === 'caption') return 900;
+  return 0;
+}
+
 export interface ChatMessageContentPart {
   type: 'text' | 'image_url' | 'input_audio';
   [key: string]: unknown;
@@ -243,6 +264,143 @@ async function unsupportedParamFrom(res: Response): Promise<string | null> {
   return param;
 }
 
+type ProviderAttempt =
+  | {
+      ok: true;
+      content: string;
+      provider: AiProvider;
+      model: string;
+      usage: ProviderUsage | null | undefined;
+      latencyMs: number;
+    }
+  | { ok: false; provider: AiProvider; model: string; reason: string };
+
+/** 한 프로바이더에 한 번. **던지지 않는다** — 실패도 결과값이다. */
+async function attemptProvider(
+  resolved: ResolvedProvider,
+  messages: ChatMessage[],
+  maxOutputTokens: number,
+  timeoutMs: number,
+  options?: ChatCompletionOptions,
+): Promise<ProviderAttempt> {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  const startedAt = Date.now();
+  const post = (payload: Record<string, unknown>) =>
+    fetch(`${resolved.baseUrl.replace(/\/$/, '')}/chat/completions`, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${resolved.apiKey}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+      signal: controller.signal,
+    });
+
+  try {
+    let body = buildCompletionBody(resolved, messages, maxOutputTokens, options);
+    let res = await post(body);
+
+    /**
+     * 🔴 A 400 naming a parameter is a request we can fix, not a provider
+     * that is down. Drop the parameter it named and ask once more.
+     *
+     * This is not hypothetical: production logs showed
+     * `{provider:'openai', model:'gpt-5-mini', reason:'http_400'}` on every
+     * single attempt, because the gpt-5 family rejects `max_tokens` (wants
+     * `max_completion_tokens`) and rejects any `temperature` but the
+     * default. The last leg of the fallback chain had therefore never once
+     * worked — and nobody noticed, because it is only ever reached when the
+     * legs in front of it fail, which is exactly when no one is looking.
+     *
+     * Read from the error body rather than a hardcoded model list, so the
+     * next time a provider renames something the router adapts instead of
+     * quietly losing its fallback again.
+     */
+    if (res.status === 400) {
+      const offending = await unsupportedParamFrom(res);
+      if (offending && offending in body) {
+        const { [offending]: _dropped, ...retryBody } = body as Record<string, unknown>;
+        void _dropped;
+        body = retryBody as typeof body;
+        console.warn(
+          `[ai-router] ${resolved.provider}/${resolved.model} rejected "${offending}" — retrying without it`,
+        );
+        res = await post(body);
+      }
+    }
+
+    if (!res.ok) {
+      // Carry WHY. `http_400` alone is what let a permanently broken
+      // fallback read like a transient blip for months.
+      const detail = (await readErrorBody(res))?.error?.message ?? '';
+      return {
+        ok: false,
+        provider: resolved.provider,
+        model: resolved.model,
+        reason: detail ? `http_${res.status}: ${detail.slice(0, 160)}` : `http_${res.status}`,
+      };
+    }
+
+    const data = (await res.json()) as {
+      choices?: Array<{ message?: { content?: string | null } }>;
+      usage?: ProviderUsage | null;
+    };
+    const content = data.choices?.[0]?.message?.content?.trim();
+    if (!content) {
+      return { ok: false, provider: resolved.provider, model: resolved.model, reason: 'empty_completion' };
+    }
+    return {
+      ok: true,
+      content,
+      provider: resolved.provider,
+      model: resolved.model,
+      usage: data.usage,
+      latencyMs: Date.now() - startedAt,
+    };
+  } catch (error) {
+    const aborted = error instanceof Error && error.name === 'AbortError';
+    return {
+      ok: false,
+      provider: resolved.provider,
+      model: resolved.model,
+      reason: aborted ? `timeout_${timeoutMs}ms` : error instanceof Error ? error.message : String(error),
+    };
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+const STILL_RUNNING = Symbol('still-running');
+
+/** `ms` 안에 끝나면 그 값, 아니면 STILL_RUNNING. **약속은 계속 달린다.** */
+async function settleWithin<T>(task: Promise<T>, ms: number): Promise<T | typeof STILL_RUNNING> {
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  const delay = new Promise<typeof STILL_RUNNING>((resolve) => {
+    timer = setTimeout(() => resolve(STILL_RUNNING), ms);
+  });
+  try {
+    return await Promise.race([task, delay]);
+  } finally {
+    if (timer) clearTimeout(timer);
+  }
+}
+
+/** 먼저 성공한 쪽. 전부 실패하면 모든 실패를 돌려준다(로그가 반쪽이 되면 안 된다). */
+async function firstSuccess(
+  tasks: Array<Promise<ProviderAttempt>>,
+): Promise<{ winner: ProviderAttempt & { ok: true } } | { failures: ProviderAttempt[] }> {
+  try {
+    const winner = await Promise.any(
+      tasks.map((task) => task.then((outcome) => (outcome.ok ? outcome : Promise.reject(outcome)))),
+    );
+    return { winner: winner as ProviderAttempt & { ok: true } };
+  } catch {
+    // Promise.any 는 전부 거절된 뒤에야 거절한다 — 이 시점에 모두 확정돼 있다.
+    return { failures: await Promise.all(tasks) };
+  }
+}
+
 export async function chatCompletion(
   purpose: AiPurpose,
   messages: ChatMessage[],
@@ -255,110 +413,78 @@ export async function chatCompletion(
 
   const attempts: Array<{ provider: AiProvider; model: string; reason: string }> = [];
   const timeoutMs = timeoutMsFor(purpose);
+  const hedgeAfterMs = hedgeAfterMsFor(purpose);
   // §L-D5 — an omitted cap is a default, not "unbounded".
   const maxOutputTokens = resolveMaxOutputTokens(purpose, options?.maxOutputTokens);
 
-  for (const resolved of chain) {
-    const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), timeoutMs);
-    const startedAt = Date.now();
-    try {
-      let body = buildCompletionBody(resolved, messages, maxOutputTokens, options);
-      let res = await fetch(`${resolved.baseUrl.replace(/\/$/, '')}/chat/completions`, {
-        method: 'POST',
-        headers: {
-          Authorization: `Bearer ${resolved.apiKey}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(body),
-        signal: controller.signal,
-      });
-
-      /**
-       * 🔴 A 400 naming a parameter is a request we can fix, not a provider
-       * that is down. Drop the parameter it named and ask once more.
-       *
-       * This is not hypothetical: production logs showed
-       * `{provider:'openai', model:'gpt-5-mini', reason:'http_400'}` on every
-       * single attempt, because the gpt-5 family rejects `max_tokens` (wants
-       * `max_completion_tokens`) and rejects any `temperature` but the
-       * default. The last leg of the fallback chain had therefore never once
-       * worked — and nobody noticed, because it is only ever reached when the
-       * legs in front of it fail, which is exactly when no one is looking.
-       *
-       * Read from the error body rather than a hardcoded model list, so the
-       * next time a provider renames something the router adapts instead of
-       * quietly losing its fallback again.
-       */
-      if (res.status === 400) {
-        const offending = await unsupportedParamFrom(res);
-        if (offending && offending in body) {
-          const { [offending]: _dropped, ...retryBody } = body as Record<string, unknown>;
-          void _dropped;
-          body = retryBody as typeof body;
-          console.warn(
-            `[ai-router] ${resolved.provider}/${resolved.model} rejected "${offending}" — retrying without it`,
-          );
-          res = await fetch(`${resolved.baseUrl.replace(/\/$/, '')}/chat/completions`, {
-            method: 'POST',
-            headers: {
-              Authorization: `Bearer ${resolved.apiKey}`,
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(body),
-            signal: controller.signal,
-          });
-        }
-      }
-
-      if (!res.ok) {
-        // Carry WHY. `http_400` alone is what let a permanently broken
-        // fallback read like a transient blip for months.
-        const detail = (await readErrorBody(res))?.error?.message ?? '';
-        attempts.push({
-          provider: resolved.provider,
-          model: resolved.model,
-          reason: detail ? `http_${res.status}: ${detail.slice(0, 160)}` : `http_${res.status}`,
-        });
-        continue;
-      }
-
-      const data = (await res.json()) as {
-        choices?: Array<{ message?: { content?: string | null } }>;
-        usage?: ProviderUsage | null;
-      };
-      const content = data.choices?.[0]?.message?.content?.trim();
-      if (!content) {
-        attempts.push({ provider: resolved.provider, model: resolved.model, reason: 'empty_completion' });
-        continue;
-      }
-
-      if (attempts.length > 0) {
-        console.warn(`[ai-router] ${purpose} demoted to ${resolved.provider} after:`, attempts);
-      }
-      // §L L0 — one metering point for every call site, present and future.
-      // Deliberately not awaited: telemetry may not add a round trip to a
-      // guest-facing answer (§L-D1).
-      meter({
-        purpose,
-        provider: resolved.provider,
-        model: resolved.model,
-        usage: data.usage,
-        latencyMs: Date.now() - startedAt,
-        outcome: 'ok',
-        context: options?.usage,
-      });
-      return { content, provider: resolved.provider, model: resolved.model };
-    } catch (error) {
-      const aborted = error instanceof Error && error.name === 'AbortError';
-      attempts.push({
-        provider: resolved.provider,
-        model: resolved.model,
-        reason: aborted ? `timeout_${timeoutMs}ms` : error instanceof Error ? error.message : String(error),
-      });
-    } finally {
-      clearTimeout(timer);
+  const succeed = (outcome: ProviderAttempt & { ok: true }): ChatCompletionResult => {
+    if (attempts.length > 0) {
+      console.warn(`[ai-router] ${purpose} demoted to ${outcome.provider} after:`, attempts);
     }
+    // §L L0 — one metering point for every call site, present and future.
+    // Deliberately not awaited: telemetry may not add a round trip to a
+    // guest-facing answer (§L-D1).
+    meter({
+      purpose,
+      provider: outcome.provider,
+      model: outcome.model,
+      usage: outcome.usage,
+      latencyMs: outcome.latencyMs,
+      outcome: 'ok',
+      context: options?.usage,
+    });
+    return { content: outcome.content, provider: outcome.provider, model: outcome.model };
+  };
+
+  for (let index = 0; index < chain.length; index += 1) {
+    const primary = attemptProvider(chain[index], messages, maxOutputTokens, timeoutMs, options);
+    const next = chain[index + 1];
+
+    // 헤지가 꺼져 있거나 뒤에 댈 프로바이더가 없으면 예전 그대로 순차.
+    if (!hedgeAfterMs || !next) {
+      const outcome = await primary;
+      if (outcome.ok) return succeed(outcome);
+      attempts.push({ provider: outcome.provider, model: outcome.model, reason: outcome.reason });
+      continue;
+    }
+
+    const early = await settleWithin(primary, hedgeAfterMs);
+    if (early !== STILL_RUNNING) {
+      if (early.ok) return succeed(early);
+      attempts.push({ provider: early.provider, model: early.model, reason: early.reason });
+      continue; // 빨리 실패했으면 헤지할 이유가 없다 — 그냥 다음 단으로.
+    }
+
+    /**
+     * §V0.6 — 느린 1순위를 **버리지 않고** 2순위를 나란히 띄운다.
+     *
+     * 타임아웃을 조이는 대신 헤지를 쓰는 이유: translate 는 로케일 수와 원문
+     * 길이에 따라 정당하게 느려질 수 있어서(실측 1로케일 ~1.0초, 4로케일 최대
+     * 2.3초), 조인 타임아웃은 정상 호출을 죽이고 재시도로 **더** 느려진다.
+     * 헤지는 정상 호출을 살려둔 채 꼬리만 자른다.
+     *
+     * 🔴 비용: 진 쪽도 실제로 청구된다. §L L0 불변식("모든 completion 은 한 행")을
+     * 지키려고 진 쪽도 계측한다 — 성공 건수는 조금 부풀지만, 기록되지 않는 비용보다
+     * 낫다. 발동 빈도는 hedgeAfterMs 로 조절한다(기본값은 실측 p50 위에 잡았다).
+     */
+    console.warn(`[ai-router] ${purpose} hedging to ${next.provider} after ${hedgeAfterMs}ms`);
+    const hedge = attemptProvider(next, messages, maxOutputTokens, timeoutMs, options);
+    const raced = await firstSuccess([primary, hedge]);
+
+    if ('winner' in raced) {
+      // 진 쪽은 아직 달리고 있을 수 있다. 끝나고 나서 성공했다면 그 completion 도
+      // 실제로 청구된 것이므로 계측한다 — 버린 응답이라고 비용까지 사라지지 않는다.
+      for (const task of [primary, hedge]) {
+        void task.then((outcome) => {
+          if (outcome !== raced.winner && outcome.ok) meterDiscarded(purpose, outcome, options);
+        });
+      }
+      return succeed(raced.winner);
+    }
+    for (const failure of raced.failures) {
+      if (!failure.ok) attempts.push({ provider: failure.provider, model: failure.model, reason: failure.reason });
+    }
+    index += 1; // 헤지가 이미 chain[index+1] 을 시도했다 — 두 번 하지 않는다.
   }
 
   // A total ladder failure is still a cost event worth seeing: it is the shape
@@ -373,6 +499,29 @@ export async function chatCompletion(
     context: options?.usage,
   });
   throw new AiRouterError(`All AI providers failed for ${purpose}`, attempts);
+}
+
+/**
+ * 헤지에서 **진** completion 의 비용 기록.
+ *
+ * 응답은 버렸지만 프로바이더는 이미 청구했다. §L L0 의 불변식은 "모든 completion 은
+ * 한 행"이고, 그걸 지키는 쪽이 성공 건수가 조금 부푸는 것보다 낫다 — 기록되지 않는
+ * 비용은 다음 사람이 청구서를 보고서야 알게 된다.
+ */
+function meterDiscarded(
+  purpose: AiPurpose,
+  outcome: ProviderAttempt & { ok: true },
+  options?: ChatCompletionOptions,
+): void {
+  meter({
+    purpose,
+    provider: outcome.provider,
+    model: outcome.model,
+    usage: outcome.usage,
+    latencyMs: outcome.latencyMs,
+    outcome: 'ok',
+    context: options?.usage,
+  });
 }
 
 /**
