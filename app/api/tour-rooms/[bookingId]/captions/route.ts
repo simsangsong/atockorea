@@ -5,6 +5,7 @@ import { requestGate } from '@/lib/durable-rate-limit';
 import { chatCompletion, translateTextViaRouter, AiRouterError } from '@/lib/ai/router';
 import { transcribeAudioFile } from '@/lib/openai-server';
 import { ensureRoom, resolveRoomActor } from '@/lib/tour-room/access';
+import { roomSttPrompt } from '@/lib/tour-room/sttPrompt.server';
 import { broadcastToRoom } from '@/lib/tour-room/realtime';
 import { getParticipantLocales } from '@/lib/tour-room/snapshot';
 
@@ -94,8 +95,13 @@ async function transcribeThenTranslate(
   audio: File,
   targetLocales: string[],
   usage?: { bookingId?: string | null },
+  /**
+   * V0.1 — 오늘 일정의 고유명사. 빈 문자열이면 필드를 **생략**한다: `prompt=''`
+   * 전송과 미전송은 프로바이더에 따라 다르게 동작한다.
+   */
+  sttPrompt?: string,
 ): Promise<CaptionResult> {
-  const transcribed = await transcribeAudioFile(audio, {});
+  const transcribed = await transcribeAudioFile(audio, sttPrompt ? { prompt: sttPrompt } : {});
   const sourceText = transcribed.text.trim();
   if (!sourceText) throw new Error('empty_transcript');
   let translations: Record<string, string> = {};
@@ -173,6 +179,13 @@ export async function POST(
 
     let result: CaptionResult;
     if (audio) {
+      // V0.1 — 오늘 가는 곳 이름을 STT 에 미리 알려준다. 룸별 5분 캐시라
+      // 첫 청크에서만 DB 를 친다. 실패는 '' 이고 바이어싱 없이 그대로 진행한다.
+      const sttPrompt = await roomSttPrompt(supabase, {
+        bookingId: booking.id,
+        tourDate: booking.tour_date,
+        tourId: booking.tour_id,
+      });
       // P0-1: the default caption chat models (gemini-2.5-flash-lite / gpt-5-mini)
       // do NOT accept `input_audio`, so the one-call multimodal primary failed
       // 100% of the time (confirmed via ops_ai_usage) and only added a dead ~3s
@@ -186,10 +199,10 @@ export async function POST(
           result = await transcribeAndTranslate(audio, targetLocales, { bookingId: booking.id });
         } catch (error) {
           console.warn('[captions] multimodal path failed, falling back to stt-router:', error);
-          result = await transcribeThenTranslate(audio, targetLocales, { bookingId: booking.id });
+          result = await transcribeThenTranslate(audio, targetLocales, { bookingId: booking.id }, sttPrompt);
         }
       } else {
-        result = await transcribeThenTranslate(audio, targetLocales, { bookingId: booking.id });
+        result = await transcribeThenTranslate(audio, targetLocales, { bookingId: booking.id }, sttPrompt);
       }
     } else {
       // Tier A — the transcript is already text; one translation call.

@@ -125,6 +125,7 @@ async function repeat(times, fn) {
 }
 
 const OPENAI = 'https://api.openai.com/v1';
+const GROQ = 'https://api.groq.com/openai/v1';
 const GEMINI_OPENAI = 'https://generativelanguage.googleapis.com/v1beta/openai';
 
 function openaiKey() {
@@ -132,6 +133,19 @@ function openaiKey() {
   if (!key) throw new Error('OPENAI_API_KEY missing');
   return key;
 }
+
+/** stt-router.ts 와 같은 두 프로바이더. Groq 키가 없으면 그 행은 건너뛴다. */
+const STT_PROVIDERS = {
+  openai: { base: OPENAI, key: () => openaiKey() },
+  groq: {
+    base: GROQ,
+    key: () => {
+      const key = process.env.GROQ_API_KEY;
+      if (!key) throw new Error('GROQ_API_KEY missing');
+      return key;
+    },
+  },
+};
 
 // ---------------------------------------------------------------------------
 // A. TTS — 전체 버퍼(현재 구현) vs 스트리밍 TTFB
@@ -175,20 +189,22 @@ async function ttsStreamTtfb(text, model) {
 // B. STT
 // ---------------------------------------------------------------------------
 
-async function sttOnce(audio, model, prompt) {
+async function sttOnce(audio, provider, model, prompt) {
+  const def = STT_PROVIDERS[provider];
   const body = new FormData();
   body.append('model', model);
   body.append('file', new File([new Uint8Array(audio)], 'utterance.mp3', { type: 'audio/mpeg' }));
+  // stt-router.ts supportsVerboseJson — whisper 계열만 verbose_json 을 받는다.
   body.append('response_format', /whisper/i.test(model) ? 'verbose_json' : 'json');
   if (prompt) body.append('prompt', prompt.slice(0, 900));
 
   const started = performance.now();
-  const res = await fetch(`${OPENAI}/audio/transcriptions`, {
+  const res = await fetch(`${def.base}/audio/transcriptions`, {
     method: 'POST',
-    headers: { Authorization: `Bearer ${openaiKey()}` },
+    headers: { Authorization: `Bearer ${def.key()}` },
     body,
   });
-  if (!res.ok) throw new Error(`stt ${model}: ${res.status} ${(await res.text()).slice(0, 160)}`);
+  if (!res.ok) throw new Error(`stt ${provider}/${model}: ${res.status} ${(await res.text()).slice(0, 160)}`);
   const data = await res.json();
   return { ms: performance.now() - started, text: (data.text ?? '').trim() };
 }
@@ -307,7 +323,7 @@ async function measureStorage(buffer, runs) {
 // ---------------------------------------------------------------------------
 
 const pad = (v, w = 6) => `${Math.round(v)}`.padStart(w);
-const row = (label, s, extra = '') => `  ${label.padEnd(40)} ${pad(s.min)} ${pad(s.p50)} ${pad(s.p95)}  (n=${s.n}) ${extra}`;
+const row = (label, s, extra = '') => `  ${label.padEnd(50)} ${pad(s.min)} ${pad(s.p50)} ${pad(s.p95)}  (n=${s.n}) ${extra}`;
 
 async function main() {
   console.log('='.repeat(100));
@@ -344,21 +360,35 @@ async function main() {
   }
 
   // -- B --------------------------------------------------------------------
-  console.log('[B] STT — 모델별 + 용어 바이어싱(prompt) ON/OFF');
-  const STT_MODELS = ['whisper-1', 'gpt-4o-mini-transcribe'];
+  console.log('[B] STT — 프로바이더·모델별 + 용어 바이어싱(prompt) ON/OFF');
+  // groq 가 stt-router.ts 의 STT_PRIMARY_PROVIDER 기본값이므로 맨 앞에 둔다.
+  const STT_MODELS = [
+    ['groq', 'whisper-large-v3-turbo'],
+    ['groq', 'whisper-large-v3'],
+    ['openai', 'whisper-1'],
+    ['openai', 'gpt-4o-mini-transcribe'],
+  ];
 
-  for (const model of STT_MODELS) {
+  for (const [provider, model] of STT_MODELS) {
+    if (provider === 'groq' && !process.env.GROQ_API_KEY) {
+      console.log(`  (skip) ${provider}/${model} — GROQ_API_KEY 없음`);
+      continue;
+    }
     for (const phrase of PHRASES) {
       const audio = audioByPhrase.get(phrase.id);
       if (!audio) continue;
       for (const biased of [false, true]) {
-        const result = await repeat(RUNS, () => sttOnce(audio, model, biased ? GLOSSARY_PROMPT : undefined));
+        const result = await repeat(RUNS, () =>
+          sttOnce(audio, provider, model, biased ? GLOSSARY_PROMPT : undefined),
+        );
         const s = stats(result.samples);
         const transcript = result.last?.text ?? '';
         const keep = keepRate(transcript, phrase.mustKeep);
-        console.log(row(`${model} · ${phrase.id} · bias=${biased ? 'ON ' : 'OFF'}`, s, `용어보존 ${Math.round(keep * 100)}%`));
+        console.log(
+          row(`${provider}/${model} · ${phrase.id} · bias=${biased ? 'ON ' : 'OFF'}`, s, `용어보존 ${Math.round(keep * 100)}%`),
+        );
         if (keep < 1) console.log(`       → "${transcript}"`);
-        report.stt[`${model}/${phrase.id}/bias-${biased}`] = { ...s, keepRate: keep, transcript };
+        report.stt[`${provider}/${model}/${phrase.id}/bias-${biased}`] = { ...s, keepRate: keep, transcript };
       }
     }
     console.log('');
@@ -396,28 +426,43 @@ async function main() {
   // -- E --------------------------------------------------------------------
   console.log('[E] 합성 E2E 예산 — medium 발화, p50, 서버 구간만');
   const g = (obj, key, field = 'p50') => obj?.[key]?.[field] ?? 0;
-  const sttSlow = g(report.stt, 'whisper-1/medium/bias-true');
-  const sttFast = g(report.stt, 'gpt-4o-mini-transcribe/medium/bias-true');
+  // 현재 = 라우터 기본 사다리의 1순위(groq turbo). 없으면 openai whisper-1.
+  const sttSlow =
+    g(report.stt, 'groq/whisper-large-v3-turbo/medium/bias-true') ||
+    g(report.stt, 'openai/whisper-1/medium/bias-true');
+  // 최적화 = medium/bias-ON 중 실측 최속.
+  const sttCandidates = Object.entries(report.stt)
+    .filter(([key]) => key.endsWith('/medium/bias-true'))
+    .map(([key, value]) => ({ key, p50: value.p50 }))
+    .sort((a, b) => a.p50 - b.p50);
+  const sttFast = sttCandidates[0]?.p50 ?? 0;
+  const sttFastName = sttCandidates[0]?.key.replace('/medium/bias-true', '') ?? '?';
   const mt1 = g(report.mt, 'medium · ko→en');
   const mt5 = g(report.mt, 'medium · ko→4로케일');
   const ttsCurrent = report.tts['gpt-4o-mini-tts/medium']?.full?.p50 ?? 0;
-  const ttsFast = report.tts['tts-1/medium']?.streamTtfb?.p50 ?? 0;
+  // 모델 고정이 아니라 medium 스트리밍 TTFB 실측 최속을 쓴다 — tts-1 이 항상
+  // 빠르다는 가정은 2026-07-27 측정에서 이미 반증됐다(§B-3).
+  const ttsFast = Math.min(
+    ...Object.entries(report.tts)
+      .filter(([key]) => key.endsWith('/medium'))
+      .map(([, value]) => value.streamTtfb?.p50 ?? Infinity),
+  );
   const storage = report.storage?.p50 ?? 0;
 
   const current = sttSlow + mt5 + ttsCurrent + storage;
   const optimized = sttFast + mt1 + ttsFast;
 
   console.log('  현재 아키텍처 (비동기 메시지 경로를 그대로 통화에 쓸 경우)');
-  console.log(`    STT  whisper-1                 ${pad(sttSlow)}`);
+  console.log(`    STT  라우터 1순위               ${pad(sttSlow)}`);
   console.log(`    MT   다로케일 팬아웃            ${pad(mt5)}`);
   console.log(`    TTS  gpt-4o-mini-tts 전체버퍼   ${pad(ttsCurrent)}`);
   console.log(`    저장 supabase 업로드            ${pad(storage)}`);
   console.log(`    ${'합계'.padEnd(28)} ${pad(current)} ms`);
   console.log('');
-  console.log('  통화 최적화 아키텍처 (1:1 타깃 · 빠른 모델 · 스트리밍 · 저장 없음)');
-  console.log(`    STT  gpt-4o-mini-transcribe    ${pad(sttFast)}`);
+  console.log('  통화 최적화 아키텍처 (1:1 타깃 · 최속 모델 · 스트리밍 · 저장 없음)');
+  console.log(`    STT  ${sttFastName.padEnd(26)}${pad(sttFast)}`);
   console.log(`    MT   1로케일                   ${pad(mt1)}`);
-  console.log(`    TTS  tts-1 TTFB               ${pad(ttsFast)}`);
+  console.log(`    TTS  스트리밍 TTFB             ${pad(ttsFast)}`);
   console.log(`    ${'합계'.padEnd(28)} ${pad(optimized)} ms`);
   console.log('');
   console.log(`  서버 구간 절감: ${Math.round(current - optimized)} ms (${current > 0 ? Math.round((1 - optimized / current) * 100) : 0}%)`);

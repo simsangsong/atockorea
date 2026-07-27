@@ -5,6 +5,7 @@ import { ensureRoom, resolveRoomActor, type RoomActor, type RoomBooking } from '
 import { broadcastToRoom } from '@/lib/tour-room/realtime';
 import { CORE_TRANSLATION_LOCALES, getRoomTranslationTargets } from '@/lib/tour-room/snapshot';
 import { normalizeChatLocale, MAX_TRANSLATION_TARGETS } from '@/lib/tour-room/chatLocale';
+import { roomSttPrompt } from '@/lib/tour-room/sttPrompt.server';
 import { getQuickReplyPreset } from '@/lib/tour-room/quickReplies';
 import { renderSpotEventTranslations } from '@/lib/tour-room/spotContent';
 import { pregenerateGuideNoticeTts, type TtsStorageClient } from '@/lib/tour-room/tts-server';
@@ -220,7 +221,21 @@ export async function POST(
     }
 
     if (audioFile) {
-      const transcribed = await transcribeAudioFile(audioFile, { prompt: sttPrompt });
+      // V0.1 — 용어 바이어싱은 **서버가 채운다**. 이 필드는 원래 클라이언트가 보내는
+      // 값이었는데 2026-07-27 전수 확인 결과 보내는 클라이언트가 하나도 없어서, 훅만
+      // 배선되고 내내 비어 있었다. 클라 값이 오면 존중하고, 없으면 오늘 일정에서
+      // 만든다 — 새 호출부가 잊어도 바이어싱이 빠지지 않는다.
+      const resolvedSttPrompt =
+        sttPrompt ||
+        (await roomSttPrompt(supabase, {
+          bookingId: (booking as RoomBooking).id,
+          tourDate: (booking as RoomBooking).tour_date,
+          tourId: (booking as RoomBooking).tour_id,
+        }));
+      const transcribed = await transcribeAudioFile(
+        audioFile,
+        resolvedSttPrompt ? { prompt: resolvedSttPrompt } : {},
+      );
       text = transcribed.text;
       messageMetadata = {
         ...messageMetadata,
