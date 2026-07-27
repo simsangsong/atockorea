@@ -34,6 +34,7 @@ import {
   IconSuccess,
   IconTabMap,
   IconTrash,
+  IconMore,
   IconWarn,
   TR_ICON,
   TR_STROKE,
@@ -43,6 +44,7 @@ import { formatMinutes, haversineKm, totalDriveMinutes, type LatLng } from '@/li
 import { ROOM_LOCALES, normalizeRoomLocale, type RoomLocale } from '@/lib/tour-room/snapshot';
 import { useTourRoomSession } from '@/hooks/useTourRoomSession';
 import { useBackTrap } from '@/hooks/useBackTrap';
+import Sheet from '@/components/tour-mode/Sheet';
 import PlanTourItinerary from '@/components/tour-mode/plan/PlanTourItinerary';
 import {
   isCourseOptionItinerary,
@@ -178,6 +180,8 @@ interface PlanCopy {
   minutes: (n: number) => string;
   memoPlaceholder: string;
   removeStop: string;
+  /** P2 — the ⋯ that holds reorder + remove. */
+  stopActions: string;
   moveUp: string;
   moveDown: string;
   needsTitle: string;
@@ -248,6 +252,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     minutes: (n) => `${n}min`,
     memoPlaceholder: 'Request for this stop (optional)',
     removeStop: 'Remove stop',
+    stopActions: 'Stop options',
     moveUp: 'Move up',
     moveDown: 'Move down',
     needsTitle: 'About your party',
@@ -328,6 +333,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     minutes: (n) => `${n}분`,
     memoPlaceholder: '이 장소 요청사항 (선택)',
     removeStop: '삭제',
+    stopActions: '정류지 옵션',
     moveUp: '위로',
     moveDown: '아래로',
     needsTitle: '여행 정보',
@@ -407,6 +413,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     minutes: (n) => `${n}分`,
     memoPlaceholder: 'このスポットへのご要望(任意)',
     removeStop: '削除',
+    stopActions: 'スポットの操作',
     moveUp: '上へ',
     moveDown: '下へ',
     needsTitle: '旅の情報',
@@ -485,6 +492,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     minutes: (n) => `${n}分钟`,
     memoPlaceholder: '对此地点的要求(可选)',
     removeStop: '删除',
+    stopActions: '地点选项',
     moveUp: '上移',
     moveDown: '下移',
     needsTitle: '出行信息',
@@ -563,6 +571,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     minutes: (n) => `${n}分鐘`,
     memoPlaceholder: '對這個地點的需求（選填）',
     removeStop: '刪除',
+    stopActions: '地點選項',
     moveUp: '上移',
     moveDown: '下移',
     needsTitle: '旅遊資訊',
@@ -641,6 +650,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     minutes: (n) => `${n}min`,
     memoPlaceholder: 'Petición para esta parada (opcional)',
     removeStop: 'Eliminar',
+    stopActions: 'Opciones de la parada',
     moveUp: 'Subir',
     moveDown: 'Bajar',
     needsTitle: 'Sobre tu grupo',
@@ -721,6 +731,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     minutes: (n) => `${n} min`,
     memoPlaceholder: 'Demande pour cette étape (facultatif)',
     removeStop: 'Retirer l’étape',
+    stopActions: 'Options de l’étape',
     moveUp: 'Monter',
     moveDown: 'Descendre',
     needsTitle: 'Votre groupe',
@@ -801,6 +812,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     minutes: (n) => `${n} Min.`,
     memoPlaceholder: 'Wunsch für diesen Stopp (optional)',
     removeStop: 'Stopp entfernen',
+    stopActions: 'Optionen für den Stopp',
     moveUp: 'Nach oben',
     moveDown: 'Nach unten',
     needsTitle: 'Ihre Gruppe',
@@ -881,6 +893,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     minutes: (n) => `${n} мин`,
     memoPlaceholder: 'Пожелание к этому месту (необязательно)',
     removeStop: 'Удалить место',
+    stopActions: 'Действия с остановкой',
     moveUp: 'Выше',
     moveDown: 'Ниже',
     needsTitle: 'О вашей группе',
@@ -961,6 +974,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     minutes: (n) => `${n} min`,
     memoPlaceholder: 'Richiesta per questa tappa (facoltativo)',
     removeStop: 'Rimuovi tappa',
+    stopActions: 'Opzioni della tappa',
     moveUp: 'Sposta su',
     moveDown: 'Sposta giù',
     needsTitle: 'Il tuo gruppo',
@@ -2180,6 +2194,10 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
    * 동행자(개인 초대로 들어온 기기)는 서버가 403으로 막는다.
    */
   const [claimBusy, setClaimBusy] = useState(false);
+  /** P2 — one stop expands at a time; the rest stay one line tall. */
+  const [expandedStopId, setExpandedStopId] = useState<string | null>(null);
+  /** P2 — the stop whose ⋯ sheet is open (reorder / remove). */
+  const [actionStopId, setActionStopId] = useState<string | null>(null);
   const claimLead = async () => {
     if (claimBusy) return;
     setClaimBusy(true);
@@ -2771,14 +2789,32 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
               <ol className="mt-2 flex flex-col gap-2">
                 {stops.map((stop, index) => {
                   const stopWarnings = warnings.filter((w) => w.stop_id === stop.id);
+                  const expanded = expandedStopId === stop.id;
+                  const meta = [
+                    stop.arrival_planned ?? null,
+                    stop.duration_min ? copy.minutes(stop.duration_min) : null,
+                  ]
+                    .filter(Boolean)
+                    .join(' · ');
                   return (
-                    <li key={stop.id} className="tr-card px-3.5 py-3.5">
-                      <div className="flex items-start gap-2.5">
-                        <span className="tr-label mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-[var(--tr-accent-soft)] font-bold text-[var(--tr-accent-deep)]">
+                    <li key={stop.id} className="tr-card overflow-hidden">
+                      {/* P2 — the collapsed row is ONE line (~56px). It used to
+                          carry a time input, a stay select, a full-width request
+                          field and a three-tile action column at all times: ~430px
+                          per stop, so four stops filled two screens. */}
+                      <div className="flex items-center gap-2.5 px-3 py-2.5">
+                        <span className="tr-label flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-[var(--tr-accent-soft)] font-bold text-[var(--tr-accent-deep)]">
                           {index + 1}
                         </span>
-                        <div className="min-w-0 flex-1">
-                          <p className="tr-card-text font-semibold text-[var(--tr-ink)]">
+                        <button
+                          type="button"
+                          onClick={() => setExpandedStopId(expanded ? null : stop.id)}
+                          aria-expanded={expanded}
+                          disabled={!canEdit}
+                          className="min-w-0 flex-1 text-left disabled:cursor-default"
+                          data-testid={`plan-stop-row-${index + 1}`}
+                        >
+                          <p className="tr-card-text text-cjk-safe font-semibold text-[var(--tr-ink)]">
                             {stop.title}
                             {stop.source === 'google' && (
                               <span className="tr-meta ml-1.5 rounded bg-[var(--tr-surface-2)] px-1.5 py-0.5 text-[var(--tr-ink-3)]">
@@ -2786,119 +2822,163 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                               </span>
                             )}
                           </p>
-                          {canEdit ? (
-                            <div className="mt-2 flex flex-wrap items-center gap-2">
-                              <label className="tr-meta flex items-center gap-1 text-[var(--tr-ink-3)]">
-                                {copy.timeLabel}
-                                <input
-                                  type="time"
-                                  value={stop.arrival_planned ?? ''}
-                                  onChange={(e) =>
-                                    mutateStops((prev) =>
-                                      prev.map((s) => (s.id === stop.id ? { ...s, arrival_planned: e.target.value || null } : s)),
-                                    )
-                                  }
-                                  className="tr-label min-h-9 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2.5 text-[var(--tr-ink)]"
+                          {(meta || stopWarnings.length > 0) && (
+                            <p className="tr-meta mt-0.5 flex items-center gap-1.5 text-[var(--tr-ink-3)]">
+                              {stopWarnings.length > 0 && (
+                                <IconWarn
+                                  size={TR_ICON.meta}
+                                  aria-hidden
+                                  className="shrink-0 text-[var(--tr-danger)]"
                                 />
-                              </label>
-                              <label className="tr-meta flex items-center gap-1 text-[var(--tr-ink-3)]">
-                                {copy.durationLabel}
-                                <select
-                                  value={stop.duration_min ?? 60}
-                                  onChange={(e) =>
-                                    mutateStops((prev) =>
-                                      prev.map((s) =>
-                                        s.id === stop.id ? { ...s, duration_min: Number.parseInt(e.target.value, 10) } : s,
-                                      ),
-                                    )
-                                  }
-                                  className="tr-label min-h-9 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2.5 text-[var(--tr-ink)]"
-                                >
-                                  {DURATION_OPTIONS.map((min) => (
-                                    <option key={min} value={min}>
-                                      {copy.minutes(min)}
-                                    </option>
-                                  ))}
-                                </select>
-                              </label>
-                            </div>
-                          ) : (
-                            <p className="tr-meta mt-1 text-[var(--tr-ink-3)]">
-                              {stop.arrival_planned ? `${stop.arrival_planned} · ` : ''}
-                              {stop.duration_min ? copy.minutes(stop.duration_min) : ''}
+                              )}
+                              {meta || copy.timeLabel}
                             </p>
                           )}
-                          {canEdit && (
-                            <input
-                              type="text"
-                              value={stop.memo_guest ?? ''}
-                              onChange={(e) =>
-                                mutateStops((prev) =>
-                                  prev.map((s) => (s.id === stop.id ? { ...s, memo_guest: e.target.value } : s)),
-                                )
-                              }
-                              placeholder={copy.memoPlaceholder}
-                              maxLength={500}
-                              className="tr-label mt-2 w-full rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2 text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)] focus:border-[var(--tr-accent)] focus:outline-none"
-                            />
-                          )}
-                          {stopWarnings.map((w) => (
-                            <p key={w.code} className="tr-meta mt-1.5 flex items-center gap-1 font-semibold text-[var(--tr-danger)]">
-                              <IconWarn size={TR_ICON.meta} aria-hidden />
-                              {w.code === 'closed'
-                                ? copy.warnClosed(w.title ?? stop.title)
-                                : copy.warnOutOfRegion(w.title ?? stop.title)}
-                            </p>
-                          ))}
-                        </div>
+                        </button>
                         {canEdit && (
-                          <div className="flex shrink-0 flex-col items-center gap-1">
-                            <button
-                              type="button"
-                              aria-label={copy.moveUp}
-                              disabled={index === 0}
-                              onClick={() =>
-                                mutateStops((prev) => {
-                                  const next = [...prev];
-                                  [next[index - 1], next[index]] = [next[index], next[index - 1]];
-                                  return next;
-                                })
-                              }
-                              className="flex h-9 w-9 items-center justify-center rounded-xl bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)] transition active:scale-95 disabled:opacity-40"
-                            >
-                              <IconMoveUp size={TR_ICON.chip} aria-hidden />
-                            </button>
-                            <button
-                              type="button"
-                              aria-label={copy.moveDown}
-                              disabled={index === stops.length - 1}
-                              onClick={() =>
-                                mutateStops((prev) => {
-                                  const next = [...prev];
-                                  [next[index], next[index + 1]] = [next[index + 1], next[index]];
-                                  return next;
-                                })
-                              }
-                              className="flex h-9 w-9 items-center justify-center rounded-xl bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)] transition active:scale-95 disabled:opacity-40"
-                            >
-                              <IconMoveDown size={TR_ICON.chip} aria-hidden />
-                            </button>
-                            <button
-                              type="button"
-                              aria-label={copy.removeStop}
-                              onClick={() => mutateStops((prev) => prev.filter((s) => s.id !== stop.id))}
-                              className="flex h-9 w-9 items-center justify-center rounded-xl bg-[var(--tr-danger-soft)] text-[var(--tr-danger)] transition active:scale-95"
-                            >
-                              <IconTrash size={TR_ICON.chip} aria-hidden />
-                            </button>
-                          </div>
+                          <button
+                            type="button"
+                            aria-label={copy.stopActions}
+                            onClick={() => setActionStopId(stop.id)}
+                            className="flex h-11 w-9 shrink-0 items-center justify-center rounded-xl text-[var(--tr-ink-3)] active:bg-[var(--tr-surface-2)]"
+                            data-testid={`plan-stop-actions-${index + 1}`}
+                          >
+                            <IconMore size={TR_ICON.action} aria-hidden />
+                          </button>
                         )}
                       </div>
+
+                      {canEdit && expanded && (
+                        <div
+                          className="tr-anim-panel-in border-t border-[var(--tr-hairline)] px-3 py-3"
+                          data-testid={`plan-stop-detail-${index + 1}`}
+                        >
+                          <div className="flex flex-wrap items-center gap-2">
+                            <label className="tr-meta flex items-center gap-1 text-[var(--tr-ink-3)]">
+                              {copy.timeLabel}
+                              <input
+                                type="time"
+                                value={stop.arrival_planned ?? ''}
+                                onChange={(e) =>
+                                  mutateStops((prev) =>
+                                    prev.map((s) => (s.id === stop.id ? { ...s, arrival_planned: e.target.value || null } : s)),
+                                  )
+                                }
+                                className="tr-label min-h-9 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2.5 text-[var(--tr-ink)]"
+                              />
+                            </label>
+                            <label className="tr-meta flex items-center gap-1 text-[var(--tr-ink-3)]">
+                              {copy.durationLabel}
+                              <select
+                                value={stop.duration_min ?? 60}
+                                onChange={(e) =>
+                                  mutateStops((prev) =>
+                                    prev.map((s) =>
+                                      s.id === stop.id ? { ...s, duration_min: Number.parseInt(e.target.value, 10) } : s,
+                                    ),
+                                  )
+                                }
+                                className="tr-label min-h-9 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2.5 text-[var(--tr-ink)]"
+                              >
+                                {DURATION_OPTIONS.map((min) => (
+                                  <option key={min} value={min}>
+                                    {copy.minutes(min)}
+                                  </option>
+                                ))}
+                              </select>
+                            </label>
+                          </div>
+                          <input
+                            type="text"
+                            value={stop.memo_guest ?? ''}
+                            onChange={(e) =>
+                              mutateStops((prev) =>
+                                prev.map((s) => (s.id === stop.id ? { ...s, memo_guest: e.target.value } : s)),
+                              )
+                            }
+                            placeholder={copy.memoPlaceholder}
+                            maxLength={500}
+                            className="tr-label mt-2 w-full rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2 text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)] focus:border-[var(--tr-accent)] focus:outline-none"
+                          />
+                        </div>
+                      )}
+
+                      {stopWarnings.map((w) => (
+                        <p
+                          key={w.code}
+                          className="tr-meta flex items-center gap-1 border-t border-[var(--tr-hairline)] px-3 py-2 font-semibold text-[var(--tr-danger)]"
+                        >
+                          <IconWarn size={TR_ICON.meta} aria-hidden />
+                          {w.code === 'closed'
+                            ? copy.warnClosed(w.title ?? stop.title)
+                            : copy.warnOutOfRegion(w.title ?? stop.title)}
+                        </p>
+                      ))}
                     </li>
                   );
                 })}
               </ol>
             )}
+
+            {/* P2 — reorder + remove moved off the row into the app's ⋯ sheet
+                grammar (the same one the chat list uses). Three always-visible
+                tiles per stop were the bulk of the old row's height. */}
+            {actionStopId && canEdit && (() => {
+              const idx = stops.findIndex((s) => s.id === actionStopId);
+              if (idx < 0) return null;
+              const close = () => setActionStopId(null);
+              const act = (fn: (prev: EditorStop[]) => EditorStop[]) => {
+                mutateStops(fn);
+                close();
+              };
+              return (
+                <Sheet open onClose={close} title={stops[idx].title} closeLabel={ui.cancel}>
+                  <div className="tr-card divide-y divide-[var(--tr-hairline)] overflow-hidden">
+                    <button
+                      type="button"
+                      disabled={idx === 0}
+                      onClick={() =>
+                        act((prev) => {
+                          const next = [...prev];
+                          [next[idx - 1], next[idx]] = [next[idx], next[idx - 1]];
+                          return next;
+                        })
+                      }
+                      className="tr-card-text flex min-h-[52px] w-full items-center gap-3 px-4 text-left text-[var(--tr-ink)] disabled:opacity-40"
+                      data-testid="plan-stop-move-up"
+                    >
+                      <IconMoveUp size={TR_ICON.action} aria-hidden />
+                      {copy.moveUp}
+                    </button>
+                    <button
+                      type="button"
+                      disabled={idx === stops.length - 1}
+                      onClick={() =>
+                        act((prev) => {
+                          const next = [...prev];
+                          [next[idx], next[idx + 1]] = [next[idx + 1], next[idx]];
+                          return next;
+                        })
+                      }
+                      className="tr-card-text flex min-h-[52px] w-full items-center gap-3 px-4 text-left text-[var(--tr-ink)] disabled:opacity-40"
+                      data-testid="plan-stop-move-down"
+                    >
+                      <IconMoveDown size={TR_ICON.action} aria-hidden />
+                      {copy.moveDown}
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => act((prev) => prev.filter((s) => s.id !== actionStopId))}
+                      className="tr-card-text flex min-h-[52px] w-full items-center gap-3 px-4 text-left font-semibold text-[var(--tr-danger)]"
+                      data-testid="plan-stop-remove"
+                    >
+                      <IconTrash size={TR_ICON.action} aria-hidden />
+                      {copy.removeStop}
+                    </button>
+                  </div>
+                </Sheet>
+              );
+            })()}
 
             {/* plan-wide warnings (overrun) */}
             {warnings.some((w) => w.code === 'overrun') && plan.tour.total_hours && (
