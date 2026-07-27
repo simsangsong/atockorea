@@ -18,6 +18,7 @@ import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from 
 import { useRouter } from 'next/navigation';
 import EmergencyCard from '@/components/tour-mode/EmergencyCard';
 import Sheet from '@/components/tour-mode/Sheet';
+import SkinScenery from '@/components/tour-mode/scenery/SkinScenery';
 import PlanStopCards from '@/components/tour-mode/plan/PlanStopCards';
 import { useKeyboardOpen } from '@/components/tour-mode/useKeyboardOpen';
 import { useTourRoomSettings, textScaleFactor } from '@/hooks/useTourRoomSettings';
@@ -559,14 +560,18 @@ export default function RoomShell({
             tab === 'home' ? '[background:var(--tr-home-canvas)]' : ''
           }`}
         >
+          {/* T-D5 — skin scenery: bottom wallpaper band; content scrolls over
+              it. z-0 under the (z-[1]) panel wrapper; contrast skin renders
+              nothing. */}
+          <SkinScenery skin={deviceSettings.skin} dark={theme === 'dark'} />
           {/* In-flow (not an overlay) so a notice/parking banner never covers the
               Settings language picker or other tab content — it pushes content
               down instead of floating over it. */}
           {banner && (
-            <div className="z-20 mx-auto w-full max-w-2xl shrink-0 px-3 pt-2">{banner}</div>
+            <div className="relative z-20 mx-auto w-full max-w-2xl shrink-0 px-3 pt-2">{banner}</div>
           )}
 
-          <div className="mx-auto flex min-h-0 w-full max-w-2xl flex-1 flex-col">
+          <div className="relative z-[1] mx-auto flex min-h-0 w-full max-w-2xl flex-1 flex-col">
             {tab === 'home' && home && (
               <div className="tr-anim-panel-in min-h-0 flex-1 overflow-y-auto px-3 py-3" data-testid="home-panel">
                 {home({

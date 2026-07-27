@@ -183,6 +183,13 @@
   --tr-ink: #e6ebf0;
   --tr-ink-2: #a7b2bc;
   --tr-ink-3: #7e8a95;
+  /* Cascade gap fix (2026-07-27): the sky LIGHT block outranks the base dark
+   * block for tokens it sets (equal specificity, later in file), so dark-sky
+   * was inheriting the LIGHT accent-soft/safe family. Every token the light
+   * block touches must be re-declared here. */
+  --tr-accent-soft: rgba(143, 191, 169, 0.16);
+  --tr-safe: #5f9c85;
+  --tr-safe-soft: rgba(63, 107, 88, 0.22);
   --tr-home-canvas: linear-gradient(180deg, #131a21 0%, #0e1419 100%);
   --tr-home-tile: #171e25;
 }
@@ -333,6 +340,203 @@
   --tr-home-canvas: linear-gradient(180deg, #121815 0%, #0e1412 100%);
   --tr-home-tile: #161d1a;
   --tr-chip-grad-accent: linear-gradient(135deg, #7fb3a0 0%, #43705f 100%);
+}
+
+/* ---- Ambient pastel skins (T-D4, pwa-ui-theme plan 2026-07-27) ---------
+ * Four Korea-mood pastels, each paired with a SkinScenery scene (caricature
+ * landmarks — SkinScenery.tsx owns the drawing; these blocks own the light).
+ * Same invariants as above: danger untouched, accent ↔ bubble-me-ink ≥4.5. */
+
+/* ── jeju 제주 — tangerine cream over basalt; Hallasan + 돌하르방 scene. */
+.tr-root[data-tr-skin='jeju'] {
+  --tr-canvas: #f6e8d5;
+  --tr-surface: #fdfaf4;
+  --tr-surface-2: #f1e5d2;
+  --tr-hairline: rgba(58, 42, 18, 0.1);
+  --tr-bubble-me: #a34d14;
+  --tr-bubble-me-ink: #fdf3e7;
+  --tr-bubble-in: #fdfaf4;
+  --tr-bubble-in-ink: #221b12;
+  --tr-bubble-system: rgba(58, 42, 18, 0.08);
+  --tr-bubble-system-ink: #5f5443;
+  --tr-ink: #221b12;
+  --tr-ink-2: #5b5344;
+  --tr-ink-3: #665a47;
+  --tr-accent: #a34d14;
+  --tr-accent-deep: #191009;
+  --tr-accent-soft: #f3ddc2;
+  --tr-home-canvas: linear-gradient(180deg, #f9eedd 0%, #f4e3cb 100%);
+  --tr-home-tile: #fdfaf4;
+  --tr-chip-grad-accent: linear-gradient(140deg, #c77a3d 0%, #9c4d18 100%);
+}
+.dark .tr-root[data-tr-skin='jeju'],
+.tr-root.dark[data-tr-skin='jeju'] {
+  --tr-canvas: #1a1410;
+  --tr-surface: #221b15;
+  --tr-surface-2: #2b231b;
+  --tr-hairline: rgba(236, 229, 219, 0.1);
+  --tr-bubble-me: #e0a878;
+  --tr-bubble-me-ink: #241304;
+  --tr-bubble-in: #2b231b;
+  --tr-bubble-in-ink: #ece5db;
+  --tr-bubble-system: rgba(236, 229, 219, 0.08);
+  --tr-bubble-system-ink: #b3a998;
+  --tr-ink: #ece5db;
+  --tr-ink-2: #b3a998;
+  --tr-ink-3: #8d8270;
+  --tr-accent: #e0a878;
+  --tr-accent-deep: #ffffff;
+  --tr-accent-soft: rgba(224, 168, 120, 0.16);
+  --tr-home-canvas: linear-gradient(180deg, #1c1611 0%, #16110d 100%);
+  --tr-home-tile: #221b15;
+  --tr-chip-grad-accent: linear-gradient(135deg, #d09a6a 0%, #8a5a2e 100%);
+}
+
+/* ── seoul 서울 — dawn lavender over the Han; Namsan + palace-roof scene. */
+.tr-root[data-tr-skin='seoul'] {
+  --tr-canvas: #e7e5f0;
+  --tr-surface: #fdfdfe;
+  --tr-surface-2: #eae8f2;
+  --tr-hairline: rgba(35, 32, 54, 0.1);
+  --tr-bubble-me: #55519b;
+  --tr-bubble-me-ink: #f2f1fa;
+  --tr-bubble-in: #fdfdfe;
+  --tr-bubble-in-ink: #1c1a26;
+  --tr-bubble-system: rgba(30, 28, 54, 0.08);
+  --tr-bubble-system-ink: #545165;
+  --tr-ink: #1c1a26;
+  --tr-ink-2: #55516b;
+  --tr-ink-3: #5d5871;
+  --tr-accent: #55519b;
+  --tr-accent-deep: #14121d;
+  --tr-accent-soft: #e0ddf0;
+  --tr-safe: #5a568f;
+  --tr-safe-soft: rgba(85, 81, 155, 0.14);
+  --tr-home-canvas: linear-gradient(180deg, #edeaf6 0%, #e2dfee 100%);
+  --tr-home-tile: #fdfdfe;
+  --tr-chip-grad-accent: linear-gradient(140deg, #7b77c0 0%, #4c4890 100%);
+}
+.dark .tr-root[data-tr-skin='seoul'],
+.tr-root.dark[data-tr-skin='seoul'] {
+  --tr-canvas: #14131c;
+  --tr-surface: #1b1a25;
+  --tr-surface-2: #242230;
+  --tr-hairline: rgba(232, 231, 240, 0.1);
+  --tr-bubble-me: #a7a3dc;
+  --tr-bubble-me-ink: #14122b;
+  --tr-bubble-in: #242230;
+  --tr-bubble-in-ink: #e8e7f0;
+  --tr-bubble-system: rgba(232, 231, 240, 0.08);
+  --tr-bubble-system-ink: #aaa8bc;
+  --tr-ink: #e8e7f0;
+  --tr-ink-2: #aaa8bc;
+  --tr-ink-3: #85829c;
+  --tr-accent: #a7a3dc;
+  --tr-accent-deep: #ffffff;
+  --tr-accent-soft: rgba(167, 163, 220, 0.16);
+  --tr-safe: #8f8cc4;
+  --tr-safe-soft: rgba(167, 163, 220, 0.2);
+  --tr-home-canvas: linear-gradient(180deg, #16151f 0%, #100f17 100%);
+  --tr-home-tile: #1b1a25;
+  --tr-chip-grad-accent: linear-gradient(135deg, #9591d0 0%, #57538f 100%);
+}
+
+/* ── busan 부산 — sunset peach + deep marine; Haeundae + Sky Capsule scene. */
+.tr-root[data-tr-skin='busan'] {
+  --tr-canvas: #fae3da;
+  --tr-surface: #fffbf9;
+  --tr-surface-2: #f6e6de;
+  --tr-hairline: rgba(64, 32, 24, 0.1);
+  --tr-bubble-me: #20596f;
+  --tr-bubble-me-ink: #eef7fa;
+  --tr-bubble-in: #fffbf9;
+  --tr-bubble-in-ink: #251a19;
+  --tr-bubble-system: rgba(64, 32, 24, 0.08);
+  --tr-bubble-system-ink: #5d5350;
+  --tr-ink: #251a19;
+  --tr-ink-2: #5f5150;
+  --tr-ink-3: #6b5a55;
+  --tr-accent: #20596f;
+  --tr-accent-deep: #171012;
+  --tr-accent-soft: #dceaf0;
+  --tr-safe: #31707f;
+  --tr-safe-soft: rgba(32, 89, 111, 0.14);
+  --tr-home-canvas: linear-gradient(180deg, #fcece4 0%, #f8ddd2 100%);
+  --tr-home-tile: #fffbf9;
+  --tr-chip-grad-accent: linear-gradient(140deg, #4585a0 0%, #1e5570 100%);
+}
+.dark .tr-root[data-tr-skin='busan'],
+.tr-root.dark[data-tr-skin='busan'] {
+  --tr-canvas: #121418;
+  --tr-surface: #191c21;
+  --tr-surface-2: #22262c;
+  --tr-hairline: rgba(233, 236, 239, 0.1);
+  --tr-bubble-me: #8fc0d8;
+  --tr-bubble-me-ink: #0d1b22;
+  --tr-bubble-in: #22262c;
+  --tr-bubble-in-ink: #e9ecef;
+  --tr-bubble-system: rgba(233, 236, 239, 0.08);
+  --tr-bubble-system-ink: #a8b0b8;
+  --tr-ink: #e9ecef;
+  --tr-ink-2: #a8b0b8;
+  --tr-ink-3: #7f8993;
+  --tr-accent: #8fc0d8;
+  --tr-accent-deep: #ffffff;
+  --tr-accent-soft: rgba(143, 192, 216, 0.16);
+  --tr-safe: #6fa7bd;
+  --tr-safe-soft: rgba(143, 192, 216, 0.2);
+  --tr-home-canvas: linear-gradient(180deg, #141619 0%, #0f1114 100%);
+  --tr-home-tile: #191c21;
+  --tr-chip-grad-accent: linear-gradient(135deg, #7db3cd 0%, #3f7791 100%);
+}
+
+/* ── blossom 벚꽃 — cherry pastel + deep rose; petal-drift scene. */
+.tr-root[data-tr-skin='blossom'] {
+  --tr-canvas: #f8e6ec;
+  --tr-surface: #fefcfd;
+  --tr-surface-2: #f4e4ea;
+  --tr-hairline: rgba(64, 26, 40, 0.1);
+  --tr-bubble-me: #99465f;
+  --tr-bubble-me-ink: #fbf1f4;
+  --tr-bubble-in: #fefcfd;
+  --tr-bubble-in-ink: #231a1e;
+  --tr-bubble-system: rgba(64, 26, 40, 0.07);
+  --tr-bubble-system-ink: #5e5157;
+  --tr-ink: #231a1e;
+  --tr-ink-2: #5f5257;
+  --tr-ink-3: #6b585f;
+  --tr-accent: #99465f;
+  --tr-accent-deep: #1a1114;
+  --tr-accent-soft: #f5dbe3;
+  --tr-safe: #96556c;
+  --tr-safe-soft: rgba(153, 70, 95, 0.13);
+  --tr-home-canvas: linear-gradient(180deg, #fbecf1 0%, #f5dfe7 100%);
+  --tr-home-tile: #fefcfd;
+  --tr-chip-grad-accent: linear-gradient(140deg, #c06f88 0%, #8f4058 100%);
+}
+.dark .tr-root[data-tr-skin='blossom'],
+.tr-root.dark[data-tr-skin='blossom'] {
+  --tr-canvas: #1a1417;
+  --tr-surface: #221a1e;
+  --tr-surface-2: #2c2127;
+  --tr-hairline: rgba(238, 230, 233, 0.1);
+  --tr-bubble-me: #d8a3b4;
+  --tr-bubble-me-ink: #26131a;
+  --tr-bubble-in: #2c2127;
+  --tr-bubble-in-ink: #eee6e9;
+  --tr-bubble-system: rgba(238, 230, 233, 0.08);
+  --tr-bubble-system-ink: #b7aab0;
+  --tr-ink: #eee6e9;
+  --tr-ink-2: #b7aab0;
+  --tr-ink-3: #8f8087;
+  --tr-accent: #d8a3b4;
+  --tr-accent-deep: #ffffff;
+  --tr-accent-soft: rgba(216, 163, 180, 0.16);
+  --tr-safe: #bd8899;
+  --tr-safe-soft: rgba(216, 163, 180, 0.2);
+  --tr-home-canvas: linear-gradient(180deg, #1c1518 0%, #151013 100%);
+  --tr-home-tile: #221a1e;
+  --tr-chip-grad-accent: linear-gradient(135deg, #c893a6 0%, #7e4f61 100%);
 }
 
 /* ── contrast 고대비 — the accessibility skin (저시력, KakaoTalk 고대비).

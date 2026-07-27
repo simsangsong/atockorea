@@ -4,6 +4,7 @@
  */
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import RoomDrawer from '@/components/tour-mode/RoomDrawer';
+import { __setInstallPromptStateForTests, type BeforeInstallPromptEvent } from '@/hooks/useInstallPrompt';
 
 const IMG = {
   id: 'm1',
@@ -103,5 +104,50 @@ describe('RoomDrawer (U4-D5)', () => {
     mount({ onClose });
     fireEvent.keyDown(window, { key: 'Escape' });
     expect(onClose).toHaveBeenCalled();
+  });
+
+  describe('install tile (T-D2)', () => {
+    afterEach(() => __setInstallPromptStateForTests({ deferred: null, installed: false }));
+
+    it('is absent when no install path exists', () => {
+      mockMedia();
+      mount();
+      expect(screen.queryByTestId('drawer-install-tile')).not.toBeInTheDocument();
+    });
+
+    it('native mode: tapping the tile fires the captured prompt in place', async () => {
+      mockMedia();
+      const prompt = jest.fn().mockResolvedValue(undefined);
+      __setInstallPromptStateForTests({
+        deferred: Object.assign(new Event('beforeinstallprompt'), {
+          prompt,
+          userChoice: Promise.resolve({ outcome: 'dismissed' as const }),
+        }) as BeforeInstallPromptEvent,
+      });
+      const onClose = jest.fn();
+      const onSelectTab = jest.fn();
+      mount({ onClose, onSelectTab });
+      fireEvent.click(screen.getByTestId('drawer-install-tile'));
+      await waitFor(() => expect(prompt).toHaveBeenCalled());
+      // native prompt overlays the drawer — no close, no tab switch
+      expect(onSelectTab).not.toHaveBeenCalled();
+    });
+
+    it('iOS mode: the tile routes to Settings, where the install card sits on top', () => {
+      mockMedia();
+      const realUa = window.navigator.userAgent;
+      Object.defineProperty(window.navigator, 'userAgent', {
+        value: 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) Version/17.5 Safari/604.1',
+        configurable: true,
+      });
+      __setInstallPromptStateForTests({ deferred: null });
+      const onClose = jest.fn();
+      const onSelectTab = jest.fn();
+      mount({ onClose, onSelectTab });
+      fireEvent.click(screen.getByTestId('drawer-install-tile'));
+      expect(onClose).toHaveBeenCalled();
+      expect(onSelectTab).toHaveBeenCalledWith('settings');
+      Object.defineProperty(window.navigator, 'userAgent', { value: realUa, configurable: true });
+    });
   });
 });
