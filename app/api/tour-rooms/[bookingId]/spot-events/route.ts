@@ -15,6 +15,7 @@ import {
   type SpotEventKind,
 } from '@/lib/tour-room/spotContent';
 import { fetchArrivalFacilityPins } from '@/lib/tour-room/facilityPins.server';
+import { withMatchPoiContent } from '@/lib/tour-room/poiContent.server';
 
 export const dynamic = 'force-dynamic';
 
@@ -151,7 +152,11 @@ export async function POST(
       eventType === 'arrived'
         ? [...new Set([viewerLocale, ...targetLocales, ...(await getRoomTranslationTargets(supabase, room.id))])]
         : [];
-    const byLocale = eventType === 'arrived' ? resolveSpotContentForLocales(spot, arrivalLocales) : {};
+    let byLocale = eventType === 'arrived' ? resolveSpotContentForLocales(spot, arrivalLocales) : {};
+    // A3 — geofence arrivals get the POI master's story too.
+    if (eventType === 'arrived') {
+      byLocale = await withMatchPoiContent(supabase, spot.poi_key, arrivalLocales, byLocale);
+    }
     const pack = packSpotContent(byLocale);
     const viewerResolved = byLocale[viewerLocale] ?? Object.values(byLocale)[0] ?? null;
     const resolved_content = {
