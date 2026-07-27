@@ -405,13 +405,13 @@ export default function OpsRoomVehiclePanel({ roomId }: { roomId: string }) {
   return (
     <div className="min-h-[200px] flex-1 space-y-3 overflow-y-auto px-4 py-3">
       {loading ? (
-        <p className="text-center text-[12px] text-[var(--tr-ink-3)]">차량 정보를 불러오는 중…</p>
+        <p className="text-center tr-label text-[var(--tr-ink-3)]">차량 정보를 불러오는 중…</p>
       ) : (
         <>
           {vehicles.length === 0 && !adding && (
             <div className="rounded-xl border border-dashed border-[var(--tr-hairline)] p-4 text-center">
               <Bus className="mx-auto mb-2 size-6 text-[var(--tr-ink-3)]" />
-              <p className="text-[12px] text-[var(--tr-ink-2)]">
+              <p className="tr-label text-[var(--tr-ink-2)]">
                 아직 차량이 배정되지 않았어요. 배차해야 손님이 좌석을 고를 수 있어요.
               </p>
             </div>
@@ -425,19 +425,19 @@ export default function OpsRoomVehiclePanel({ roomId }: { roomId: string }) {
               className="rounded-xl bg-amber-50 p-3 dark:bg-amber-950/40"
               data-testid="capacity-warning"
             >
-              <p className="flex items-center gap-1.5 text-[12px] font-bold text-amber-700 dark:text-amber-400">
+              <p className="flex items-center gap-1.5 tr-label font-bold text-amber-700 dark:text-amber-400">
                 <AlertTriangle className="size-3.5" />
                 {capacity.headcount}명 — 정원 {capacity.capacity} 초과({capacity.overBy}명)
               </p>
               {capacity.bottleneck === 'seats' ? (
-                <p className="mt-1 text-[11px] text-[var(--tr-ink-2)]">
+                <p className="mt-1 tr-meta text-[var(--tr-ink-2)]">
                   좌석이 모자라요. 아래에서 2호차를 붙이면 좌석이 늘어나고, 같은 그룹의 좌석판·명단이 함께 반영돼요.
                 </p>
               ) : (
                 <>
                   {/* 🔴 실효 정원 = min(상품 정원, 좌석수). 병목이 상품이면 차를
                       붙여도 숫자가 안 움직인다 — 그 사실을 먼저 말한다. */}
-                  <p className="mt-1 text-[11px] text-[var(--tr-ink-2)]">
+                  <p className="mt-1 tr-meta text-[var(--tr-ink-2)]">
                     지금은 <b>상품 정원 {capacity.capacity}</b>이 한도예요. 2호차를 붙여도 이 숫자는 그대로라,
                     이 날짜만 정원을 올려야 해요.
                   </p>
@@ -445,7 +445,7 @@ export default function OpsRoomVehiclePanel({ roomId }: { roomId: string }) {
                     type="button"
                     disabled={busy}
                     onClick={() => void setGroupCapacity(capacity.headcount)}
-                    className="mt-2 h-9 rounded-lg bg-amber-600 px-3 text-[11px] font-bold text-white disabled:opacity-40"
+                    className="mt-2 h-9 rounded-lg bg-amber-600 px-3 tr-meta font-bold text-white disabled:opacity-40"
                     data-testid="raise-group-capacity"
                   >
                     이 날짜만 정원 {capacity.headcount}로 올리기
@@ -456,7 +456,7 @@ export default function OpsRoomVehiclePanel({ roomId }: { roomId: string }) {
           )}
 
           {capacity && !capacity.over && capacity.capacity !== null && vehicles.length > 0 && (
-            <p className="text-center text-[11px] text-[var(--tr-ink-3)]" data-testid="capacity-ok">
+            <p className="text-center tr-meta text-[var(--tr-ink-3)]" data-testid="capacity-ok">
               {capacity.headcount}명 / 정원 {capacity.capacity}
             </p>
           )}
@@ -483,7 +483,7 @@ export default function OpsRoomVehiclePanel({ roomId }: { roomId: string }) {
               type="button"
               onClick={() => void undo()}
               disabled={busy}
-              className="flex h-11 w-full items-center justify-center gap-1.5 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] text-[12px] font-semibold text-[var(--tr-ink-2)] disabled:opacity-40"
+              className="flex h-11 w-full items-center justify-center gap-1.5 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] tr-label font-semibold text-[var(--tr-ink-2)] disabled:opacity-40"
             >
               <RotateCcw className="size-3.5" /> 방금 변경 되돌리기
             </button>
@@ -502,7 +502,7 @@ export default function OpsRoomVehiclePanel({ roomId }: { roomId: string }) {
             <button
               type="button"
               onClick={() => setAdding(true)}
-              className="flex h-11 w-full items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-accent)] text-[12px] font-semibold text-[var(--tr-bubble-me-ink)]"
+              className="flex h-11 w-full items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-accent)] tr-label font-semibold text-[var(--tr-bubble-me-ink)]"
             >
               <Plus className="size-4" /> {vehicles.length > 0 ? `${vehicles.length + 1}호차 배정` : '차량 배정'}
             </button>
@@ -566,7 +566,7 @@ function MasterVehicleField({
   const selected = options.find((option) => option.id === masterId) ?? null;
   return (
     <>
-      <label className="mb-1 block text-[11px] font-semibold text-[var(--tr-ink-2)]">
+      <label className="mb-1 block tr-meta font-semibold text-[var(--tr-ink-2)]">
         차량번호 <span className="font-normal text-[var(--tr-ink-3)]">(선택 — 당일 확인 후 입력해도 돼요)</span>
         <input
           value={plate}
@@ -578,14 +578,14 @@ function MasterVehicleField({
           maxLength={32}
           placeholder="예: 12가 3456 — 아직 몰라도 비워 두세요"
           data-testid="vehicle-plate-input"
-          className="mt-1 h-10 w-full rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 text-[13px] font-normal text-[var(--tr-ink)]"
+          className="mt-1 h-10 w-full rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 tr-card-text font-normal text-[var(--tr-ink)]"
         />
       </label>
 
       {/* 등록 차량은 지름길일 뿐이다. 한 대도 없으면 아예 보여주지 않는다 —
           렌트 운영에서 "등록된 차량이 없어요"는 고칠 것이 아니라 정상이다. */}
       {options.length > 0 && (
-        <label className="mb-2 block text-[11px] font-semibold text-[var(--tr-ink-2)]">
+        <label className="mb-2 block tr-meta font-semibold text-[var(--tr-ink-2)]">
           자주 쓰는 차량에서 채우기 <span className="font-normal text-[var(--tr-ink-3)]">(선택)</span>
           <select
             value={masterId}
@@ -596,7 +596,7 @@ function MasterVehicleField({
               onMasterChange(next, option);
               if (option) onPlateChange(option.display_plate);
             }}
-            className="mt-1 h-10 w-full rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 text-[13px] font-normal text-[var(--tr-ink)]"
+            className="mt-1 h-10 w-full rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 tr-card-text font-normal text-[var(--tr-ink)]"
           >
             <option value="">— 선택 안 함 —</option>
             {options.map((option) => (
@@ -608,7 +608,7 @@ function MasterVehicleField({
         </label>
       )}
       {selected && (
-        <p className="mb-2 text-[11px] text-[var(--tr-ink-3)]">
+        <p className="mb-2 tr-meta text-[var(--tr-ink-3)]">
           등록 차량 <b>{selected.display_plate}</b>에 연결돼 있어요. 번호를 고치면 연결이 풀립니다.
         </p>
       )}
@@ -671,13 +671,13 @@ function VehicleCard({
         <Bus className="size-4 shrink-0 text-[var(--tr-ink-2)]" />
         {ordinal ? (
           <span
-            className="shrink-0 rounded-full bg-[var(--tr-accent-soft)] px-1.5 py-0.5 text-[10px] font-bold text-[var(--tr-accent)]"
+            className="shrink-0 rounded-full bg-[var(--tr-accent-soft)] px-1.5 py-0.5 tr-meta font-bold text-[var(--tr-accent)]"
             data-testid="vehicle-ordinal"
           >
             {ordinal}호차
           </span>
         ) : null}
-        <p className="min-w-0 flex-1 truncate text-[13px] font-bold text-[var(--tr-ink)]">
+        <p className="min-w-0 flex-1 truncate tr-card-text font-bold text-[var(--tr-ink)]">
           {layoutLabel(vehicle)}
           {vehicle.plate_number ? <span className="ml-1.5 font-normal">{vehicle.plate_number}</span> : null}
         </p>
@@ -689,14 +689,14 @@ function VehicleCard({
         {!vehicle.plate_number && (
           <span
             title="번호판을 적으면 기사 링크에 뒤 4자리 PIN이 걸립니다. 지금은 링크만으로 입장됩니다."
-            className="text-cjk-safe shrink-0 rounded bg-[var(--tr-surface-2)] px-1.5 py-0.5 text-[10px] font-semibold text-[var(--tr-ink-3)]"
+            className="text-cjk-safe shrink-0 rounded bg-[var(--tr-surface-2)] px-1.5 py-0.5 tr-meta font-semibold text-[var(--tr-ink-3)]"
             data-testid="vehicle-pin-open"
           >
             PIN 미설정
           </span>
         )}
         {vehicle.has_override && (
-          <span className="shrink-0 rounded bg-amber-100 px-1.5 py-0.5 text-[10px] font-semibold text-amber-700 dark:bg-amber-500/15 dark:text-amber-200">
+          <span className="shrink-0 rounded bg-amber-100 px-1.5 py-0.5 tr-meta font-semibold text-amber-700 dark:bg-amber-500/15 dark:text-amber-200">
             오버라이드
           </span>
         )}
@@ -711,18 +711,18 @@ function VehicleCard({
         </button>
       </div>
 
-      <p className="mb-2 text-[11px] text-[var(--tr-ink-2)]">
+      <p className="mb-2 tr-meta text-[var(--tr-ink-2)]">
         정원 {vehicle.capacity ?? vehicle.total_seats}석 · 배정 {seated}석 · 체크인 {checkedIn}석
       </p>
 
       {/* 타입이 먼저다 — 렌트라 배차 시점에 확정된 것은 차종·좌석수뿐이다. */}
-      <label className="mb-2 block text-[11px] font-semibold text-[var(--tr-ink-2)]">
+      <label className="mb-2 block tr-meta font-semibold text-[var(--tr-ink-2)]">
         차량 타입 <span className="font-normal text-[var(--tr-ink-3)]">(필수 — 좌석수·좌석판이 여기서 나와요)</span>
         <select
           value={layoutId}
           onChange={(event) => setLayoutId(event.target.value)}
           data-testid="vehicle-type-select"
-          className="mt-1 h-10 w-full rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 text-[13px] font-normal text-[var(--tr-ink)]"
+          className="mt-1 h-10 w-full rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 tr-card-text font-normal text-[var(--tr-ink)]"
         >
           {layouts.map((layout) => (
             <option key={layout.id} value={layout.id}>
@@ -733,7 +733,7 @@ function VehicleCard({
         </select>
       </label>
       {selectedLayout && !selectedLayout.is_verified && (
-        <p className="mb-2 flex items-start gap-1 text-[11px] text-amber-700 dark:text-amber-300">
+        <p className="mb-2 flex items-start gap-1 tr-meta text-amber-700 dark:text-amber-300">
           <AlertTriangle className="mt-0.5 size-3 shrink-0" />이 배치도는 아직 실차 사진 대조가 안 됐어요.
         </p>
       )}
@@ -751,12 +751,12 @@ function VehicleCard({
         onPlateChange={setPlate}
       />
 
-      <label className="mb-2 block text-[11px] font-semibold text-[var(--tr-ink-2)]">
+      <label className="mb-2 block tr-meta font-semibold text-[var(--tr-ink-2)]">
         기사 (입장한 스태프)
         <select
           value={driverParticipantId}
           onChange={(event) => setDriverParticipantId(event.target.value)}
-          className="mt-1 h-10 w-full rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 text-[13px] font-normal text-[var(--tr-ink)]"
+          className="mt-1 h-10 w-full rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 tr-card-text font-normal text-[var(--tr-ink)]"
         >
           <option value="">— 미지정 —</option>
           {drivers.map((driver) => (
@@ -767,21 +767,21 @@ function VehicleCard({
         </select>
       </label>
 
-      <label className="mb-2 block text-[11px] font-semibold text-[var(--tr-ink-2)]">
+      <label className="mb-2 block tr-meta font-semibold text-[var(--tr-ink-2)]">
         기사 이름 (입장 전 표시용)
         <input
           value={driverName}
           onChange={(event) => setDriverName(event.target.value)}
           maxLength={60}
           placeholder="예: 김기사"
-          className="mt-1 h-10 w-full rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 text-[13px] font-normal text-[var(--tr-ink)]"
+          className="mt-1 h-10 w-full rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 tr-card-text font-normal text-[var(--tr-ink)]"
         />
       </label>
 
       {/* 차량 사진(옵션). 렌트라 실제로 온 차는 사진이 가장 정확한 기록이다 —
           번호판 텍스트와 달리 사진에는 오타가 없다. 없는 것이 정상 상태다. */}
       <div className="mb-2">
-        <p className="mb-1 text-[11px] font-semibold text-[var(--tr-ink-2)]">
+        <p className="mb-1 tr-meta font-semibold text-[var(--tr-ink-2)]">
           차량 사진 <span className="font-normal text-[var(--tr-ink-3)]">(선택)</span>
         </p>
         {vehicle.photo_url ? (
@@ -799,14 +799,14 @@ function VehicleCard({
               type="button"
               disabled={busy}
               onClick={onPhotoClear}
-              className="h-9 rounded-lg border border-[var(--tr-hairline)] px-2.5 text-[11px] font-semibold text-[var(--tr-ink-2)] disabled:opacity-40"
+              className="h-9 rounded-lg border border-[var(--tr-hairline)] px-2.5 tr-meta font-semibold text-[var(--tr-ink-2)] disabled:opacity-40"
               data-testid="vehicle-photo-clear"
             >
               사진 내리기
             </button>
           </div>
         ) : (
-          <label className="flex h-10 w-full cursor-pointer items-center justify-center gap-1.5 rounded-lg border border-dashed border-[var(--tr-hairline)] text-[11px] font-semibold text-[var(--tr-ink-2)]">
+          <label className="flex h-10 w-full cursor-pointer items-center justify-center gap-1.5 rounded-lg border border-dashed border-[var(--tr-hairline)] tr-meta font-semibold text-[var(--tr-ink-2)]">
             <Camera className="size-3.5" />
             사진 첨부 (당일 찍어서 올려도 돼요)
             <input
@@ -827,7 +827,7 @@ function VehicleCard({
       <div className="flex gap-2">
         <a
           href={`/admin/vehicle-layouts?override=${encodeURIComponent(vehicle.id)}`}
-          className="flex h-10 flex-1 items-center justify-center rounded-lg border border-[var(--tr-hairline)] text-[12px] font-semibold text-[var(--tr-ink-2)]"
+          className="flex h-10 flex-1 items-center justify-center rounded-lg border border-[var(--tr-hairline)] tr-label font-semibold text-[var(--tr-ink-2)]"
         >
           배치도 오버라이드
         </a>
@@ -844,7 +844,7 @@ function VehicleCard({
               driver_name: driverName,
             })
           }
-          className="flex h-10 flex-1 items-center justify-center gap-1.5 rounded-lg bg-[var(--tr-accent)] text-[12px] font-semibold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
+          className="flex h-10 flex-1 items-center justify-center gap-1.5 rounded-lg bg-[var(--tr-accent)] tr-label font-semibold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
         >
           {busy ? <Loader2 className="size-3.5 animate-spin" /> : null} 저장
         </button>
@@ -877,7 +877,7 @@ function NewVehicleForm({
   return (
     <div className="rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] p-3">
       <div className="mb-2 flex items-center gap-2">
-        <p className="text-cjk-safe flex-1 text-[13px] font-bold text-[var(--tr-ink)]">새 차량 배정</p>
+        <p className="text-cjk-safe flex-1 tr-card-text font-bold text-[var(--tr-ink)]">새 차량 배정</p>
         <button
           type="button"
           onClick={onCancel}
@@ -888,13 +888,13 @@ function NewVehicleForm({
         </button>
       </div>
       {/* 타입만 골라도 배차가 끝난다. 번호판·등록차량은 그 아래 옵션이다. */}
-      <label className="mb-2 block text-[11px] font-semibold text-[var(--tr-ink-2)]">
+      <label className="mb-2 block tr-meta font-semibold text-[var(--tr-ink-2)]">
         차량 타입 <span className="font-normal text-[var(--tr-ink-3)]">(이것만 골라도 배차돼요)</span>
         <select
           value={layoutId}
           onChange={(event) => setLayoutId(event.target.value)}
           data-testid="new-vehicle-type-select"
-          className="mt-1 h-10 w-full rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 text-[13px] font-normal text-[var(--tr-ink)]"
+          className="mt-1 h-10 w-full rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 tr-card-text font-normal text-[var(--tr-ink)]"
         >
           {layouts.map((layout) => (
             <option key={layout.id} value={layout.id}>
@@ -916,7 +916,7 @@ function NewVehicleForm({
       <select
         value={driverParticipantId}
         onChange={(event) => setDriverParticipantId(event.target.value)}
-        className="mb-2 h-10 w-full rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 text-[13px] text-[var(--tr-ink)]"
+        className="mb-2 h-10 w-full rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 tr-card-text text-[var(--tr-ink)]"
       >
         <option value="">기사 — 미지정</option>
         {drivers.map((driver) => (
@@ -930,7 +930,7 @@ function NewVehicleForm({
         onChange={(event) => setDriverName(event.target.value)}
         placeholder="기사 이름 (입장 전 표시용)"
         maxLength={60}
-        className="mb-2 h-10 w-full rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 text-[13px] text-[var(--tr-ink)]"
+        className="mb-2 h-10 w-full rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 tr-card-text text-[var(--tr-ink)]"
       />
       <button
         type="button"
@@ -944,7 +944,7 @@ function NewVehicleForm({
             driver_name: driverName,
           })
         }
-        className="h-11 w-full rounded-xl bg-[var(--tr-accent)] text-[12px] font-semibold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
+        className="h-11 w-full rounded-xl bg-[var(--tr-accent)] tr-label font-semibold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
       >
         배정하기
       </button>
@@ -982,26 +982,26 @@ function SeatShortfallSheet({
         style={{ paddingBottom: 'calc(env(safe-area-inset-bottom, 0px) + 16px)' }}
         data-testid="seat-shortfall-sheet"
       >
-        <p className="mb-2 flex items-center gap-1.5 text-[14px] font-bold text-[var(--tr-ink)]">
+        <p className="mb-2 flex items-center gap-1.5 tr-body font-bold text-[var(--tr-ink)]">
           <AlertTriangle className="size-4 text-rose-600" /> 앉을 자리가 모자라요
         </p>
-        <p className="mb-3 text-[12px] leading-relaxed text-[var(--tr-ink-2)]">{shortfall.message}</p>
+        <p className="mb-3 tr-label leading-relaxed text-[var(--tr-ink-2)]">{shortfall.message}</p>
 
-        <div className="mb-3 flex items-center justify-between rounded-xl bg-[var(--tr-surface-2)] p-3 text-[12px]">
+        <div className="mb-3 flex items-center justify-between rounded-xl bg-[var(--tr-surface-2)] p-3 tr-label">
           <span className="text-[var(--tr-ink-2)]">좌석</span>
           <span className="font-bold text-[var(--tr-ink)]">
             {shortfall.seatsBefore}석 → {shortfall.seatsAfter}석 · 인원 {shortfall.headcount}명
           </span>
         </div>
 
-        <label className="mb-3 block text-[11px] font-semibold text-[var(--tr-ink-2)]">
+        <label className="mb-3 block tr-meta font-semibold text-[var(--tr-ink-2)]">
           그래도 진행하는 이유 (기록에 남아요)
           <input
             value={reason}
             onChange={(event) => setReason(event.target.value)}
             maxLength={200}
             placeholder="예: 차량 고장 대차 — 2명은 택시 이동"
-            className="mt-1 h-10 w-full rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 text-[13px] font-normal text-[var(--tr-ink)]"
+            className="mt-1 h-10 w-full rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 tr-card-text font-normal text-[var(--tr-ink)]"
             data-testid="seat-shortfall-reason"
           />
         </label>
@@ -1011,14 +1011,14 @@ function SeatShortfallSheet({
             type="button"
             disabled={busy || !ready}
             onClick={() => onProceed(reason.trim())}
-            className="h-11 w-full rounded-xl border border-rose-300 text-[12px] font-semibold text-rose-600 disabled:opacity-40"
+            className="h-11 w-full rounded-xl border border-rose-300 tr-label font-semibold text-rose-600 disabled:opacity-40"
           >
             사유를 남기고 진행
           </button>
           <button
             type="button"
             onClick={onCancel}
-            className="h-11 w-full rounded-xl bg-[var(--tr-accent)] text-[12px] font-semibold text-[var(--tr-bubble-me-ink)]"
+            className="h-11 w-full rounded-xl bg-[var(--tr-accent)] tr-label font-semibold text-[var(--tr-bubble-me-ink)]"
           >
             취소하고 차를 먼저 붙이기
           </button>
@@ -1047,19 +1047,19 @@ function ConflictSheet({
         className="relative max-h-[80dvh] w-full overflow-y-auto rounded-t-3xl border-t border-[var(--tr-hairline)] bg-[var(--tr-surface)] p-4"
         style={{ paddingBottom: 'calc(env(safe-area-inset-bottom, 0px) + 16px)' }}
       >
-        <p className="mb-2 flex items-center gap-1.5 text-[14px] font-bold text-[var(--tr-ink)]">
+        <p className="mb-2 flex items-center gap-1.5 tr-body font-bold text-[var(--tr-ink)]">
           <AlertTriangle className="size-4 text-amber-600" /> 좌석이 이미 배정돼 있어요
         </p>
-        <p className="mb-3 text-[12px] leading-relaxed text-[var(--tr-ink-2)]">{conflict.message}</p>
+        <p className="mb-3 tr-label leading-relaxed text-[var(--tr-ink-2)]">{conflict.message}</p>
 
         {conflict.lost.length > 0 && (
           <div className="mb-3 rounded-xl bg-[var(--tr-surface-2)] p-3">
-            <p className="mb-1.5 text-[11px] font-semibold text-[var(--tr-ink-2)]">
+            <p className="mb-1.5 tr-meta font-semibold text-[var(--tr-ink-2)]">
               새 배치도에 없는 좌석 ({conflict.lost.length}석)
             </p>
             <ul className="space-y-1">
               {conflict.lost.map((row) => (
-                <li key={row.seat_number} className="text-[11px] text-[var(--tr-ink)]">
+                <li key={row.seat_number} className="tr-meta text-[var(--tr-ink)]">
                   <b>{row.seat_number}번</b> {row.guest_label || '—'}
                   {row.checked_in ? ' · 체크인 완료' : ''}
                 </li>
@@ -1073,7 +1073,7 @@ function ConflictSheet({
             type="button"
             disabled={busy}
             onClick={() => onChoose('keep')}
-            className="h-11 w-full rounded-xl bg-[var(--tr-accent)] text-[12px] font-semibold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
+            className="h-11 w-full rounded-xl bg-[var(--tr-accent)] tr-label font-semibold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
           >
             같은 번호 좌석은 유지 ({conflict.lost.length}석만 해제)
           </button>
@@ -1081,19 +1081,19 @@ function ConflictSheet({
             type="button"
             disabled={busy}
             onClick={() => onChoose('clear')}
-            className="h-11 w-full rounded-xl border border-rose-300 text-[12px] font-semibold text-rose-600 disabled:opacity-40"
+            className="h-11 w-full rounded-xl border border-rose-300 tr-label font-semibold text-rose-600 disabled:opacity-40"
           >
             전 좌석 해제하고 다시 받기 ({conflict.assigned.length}석)
           </button>
           <button
             type="button"
             onClick={onCancel}
-            className="h-11 w-full rounded-xl border border-[var(--tr-hairline)] text-[12px] font-semibold text-[var(--tr-ink-2)]"
+            className="h-11 w-full rounded-xl border border-[var(--tr-hairline)] tr-label font-semibold text-[var(--tr-ink-2)]"
           >
             취소
           </button>
         </div>
-        <p className="mt-3 text-[11px] leading-relaxed text-[var(--tr-ink-3)]">
+        <p className="mt-3 tr-meta leading-relaxed text-[var(--tr-ink-3)]">
           어느 쪽을 고르든 해제된 배정은 기록에 남아요 — 바로 뒤에 나오는 [되돌리기]로 복구할 수 있어요.
         </p>
       </div>

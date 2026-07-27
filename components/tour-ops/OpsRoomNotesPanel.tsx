@@ -86,13 +86,13 @@ export default function OpsRoomNotesPanel({ roomId, guests }: { roomId: string; 
 
   return (
     <div className="min-h-[160px] flex-1 space-y-2 overflow-y-auto px-4 py-3" data-testid="ops-notes-panel">
-      <p className="flex items-center gap-1.5 text-[11px] font-semibold text-[var(--tr-ink-3)]">
+      <p className="flex items-center gap-1.5 tr-meta font-semibold text-[var(--tr-ink-3)]">
         <StickyNote className="size-3" />
         운영 메모 <span className="font-normal">(손님에게 보이지 않음 · 투어 후 30일 자동 삭제)</span>
       </p>
 
       {guests.length === 0 && (
-        <p className="py-6 text-center text-[12px] text-[var(--tr-ink-3)]">이 그룹에 손님이 없어요.</p>
+        <p className="py-6 text-center tr-label text-[var(--tr-ink-3)]">이 그룹에 손님이 없어요.</p>
       )}
 
       {guests.map((guest) => {
@@ -104,7 +104,7 @@ export default function OpsRoomNotesPanel({ roomId, guests }: { roomId: string; 
             className="rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] p-2.5"
             data-testid="ops-note-row"
           >
-            <p className="text-[12px] font-bold text-[var(--tr-ink)]">{guest.name}</p>
+            <p className="tr-label font-bold text-[var(--tr-ink)]">{guest.name}</p>
             {isEditing ? (
               <>
                 <textarea
@@ -113,13 +113,13 @@ export default function OpsRoomNotesPanel({ roomId, guests }: { roomId: string; 
                   maxLength={GUEST_NOTE_MAX}
                   rows={3}
                   autoFocus
-                  className="mt-1.5 w-full rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2.5 py-2 text-[12px] text-[var(--tr-ink)]"
+                  className="mt-1.5 w-full rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2.5 py-2 tr-label text-[var(--tr-ink)]"
                 />
                 <div className="mt-1.5 flex justify-end gap-2">
                   <button
                     type="button"
                     onClick={() => setEditing(null)}
-                    className="h-8 rounded-lg px-3 text-[11px] font-medium text-[var(--tr-ink-2)]"
+                    className="h-8 rounded-lg px-3 tr-meta font-medium text-[var(--tr-ink-2)]"
                   >
                     취소
                   </button>
@@ -127,7 +127,7 @@ export default function OpsRoomNotesPanel({ roomId, guests }: { roomId: string; 
                     type="button"
                     disabled={busy}
                     onClick={() => void save(guest.bookingId, draft)}
-                    className="h-8 rounded-lg bg-[var(--tr-accent)] px-3 text-[11px] font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
+                    className="h-8 rounded-lg bg-[var(--tr-accent)] px-3 tr-meta font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
                   >
                     저장
                   </button>
@@ -140,13 +140,13 @@ export default function OpsRoomNotesPanel({ roomId, guests }: { roomId: string; 
                   setDraft(note?.note ?? '');
                   setEditing(guest.bookingId);
                 }}
-                className="mt-1 w-full text-left text-[12px] leading-relaxed text-[var(--tr-ink-2)]"
+                className="mt-1 w-full text-left tr-label leading-relaxed text-[var(--tr-ink-2)]"
               >
                 {note?.note ? (
                   <>
                     <span className="whitespace-pre-wrap">{note.note}</span>
                     {/* 출처를 지우지 않는다 — 메모는 사실이 아니라 관찰이다. */}
-                    <span className="mt-0.5 block text-[10px] text-[var(--tr-ink-3)]">{noteAttribution(note)}</span>
+                    <span className="mt-0.5 block tr-meta text-[var(--tr-ink-3)]">{noteAttribution(note)}</span>
                   </>
                 ) : (
                   <span className="text-[var(--tr-ink-3)]">탭해서 메모 추가</span>

@@ -627,7 +627,6 @@
 .tr-name {
   font-size: calc(13px * var(--tr-font-scale, 1));
   line-height: 1.3;
-  font-weight: 600;
 }
 .tr-meta {
   font-size: calc(11px * var(--tr-font-scale, 1));
@@ -636,7 +635,6 @@
 .tr-title {
   font-size: calc(15px * var(--tr-font-scale, 1));
   line-height: 1.35;
-  font-weight: 600;
 }
 .tr-card-text {
   font-size: calc(13px * var(--tr-font-scale, 1));
@@ -645,12 +643,34 @@
 .tr-label {
   font-size: calc(12px * var(--tr-font-scale, 1));
   line-height: 1.35;
-  font-weight: 500;
 }
 /* U4-D7: hero/section display size — staff console heroes, sheet titles. */
 .tr-display {
   font-size: calc(20px * var(--tr-font-scale, 1));
   line-height: 1.3;
+}
+
+/* 🔴 O2 — each step's canonical weight, at ZERO specificity.
+ *
+ * This file is loaded after Tailwind's utilities and is unlayered, so a plain
+ * `.tr-label { font-weight: 500 }` BEAT `font-semibold` at the call site. ~75
+ * places in the app were written as `tr-label font-semibold` / `tr-title
+ * font-bold` and were being silently rendered one step lighter than the author
+ * asked for. (Tailwind v3 wants `@layer` in the same file as the `@tailwind`
+ * directives, so the layer fix isn't available here.)
+ *
+ * `:where()` contributes nothing to specificity, so these stay the default and
+ * any authored font-* utility now wins — which is what a scale should do. */
+:where(.tr-name) {
+  font-weight: 600;
+}
+:where(.tr-title) {
+  font-weight: 600;
+}
+:where(.tr-label) {
+  font-weight: 500;
+}
+:where(.tr-display) {
   font-weight: 700;
 }
 /* U4-D7: counters/prices/times align in columns. Pairs with any size class. */

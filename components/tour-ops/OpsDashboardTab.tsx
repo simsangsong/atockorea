@@ -102,20 +102,20 @@ export default function OpsDashboardTab({
   }, [rooms, sosRooms, streams]);
 
   if (loading && rooms.length === 0) {
-    return <p className="mt-12 text-center text-sm text-[var(--tr-ink-3)]">불러오는 중…</p>;
+    return <p className="mt-12 text-center tr-body text-[var(--tr-ink-3)]">불러오는 중…</p>;
   }
   // Distinguish a genuine "no rooms today" from a fetch failure — the latter
   // must never read as "no tours" on the SOS-monitoring surface.
   if (loadError && rooms.length === 0) {
     return (
       <div className="mt-12 text-center">
-        <p className="text-sm font-medium text-[var(--tr-ink)]">불러오기에 실패했어요</p>
-        <p className="mt-1 text-[12px] text-[var(--tr-ink-3)]">네트워크를 확인한 뒤 다시 시도해 주세요.</p>
+        <p className="tr-body font-medium text-[var(--tr-ink)]">불러오기에 실패했어요</p>
+        <p className="mt-1 tr-label text-[var(--tr-ink-3)]">네트워크를 확인한 뒤 다시 시도해 주세요.</p>
         {onRetry && (
           <button
             type="button"
             onClick={onRetry}
-            className="mt-3 min-h-[44px] rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] px-5 text-[13px] font-semibold text-[var(--tr-ink)]"
+            className="mt-3 min-h-[44px] rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] px-5 tr-card-text font-semibold text-[var(--tr-ink)]"
           >
             다시 시도
           </button>
@@ -124,14 +124,14 @@ export default function OpsDashboardTab({
     );
   }
   if (rooms.length === 0) {
-    return <p className="mt-12 text-center text-sm text-[var(--tr-ink-3)]">이 날짜에 활성 룸이 없습니다.</p>;
+    return <p className="mt-12 text-center tr-body text-[var(--tr-ink-3)]">이 날짜에 활성 룸이 없습니다.</p>;
   }
 
   return (
     <div className="space-y-4 pb-4">
       {attention.length > 0 && (
         <section data-testid="ops-attention-queue">
-          <h2 className="px-1 pb-1.5 text-[13px] font-semibold text-amber-700 dark:text-amber-300">응대 필요 {attention.length}</h2>
+          <h2 className="px-1 pb-1.5 tr-card-text font-semibold text-amber-700 dark:text-amber-300">응대 필요 {attention.length}</h2>
           <div className="space-y-2">
             {attention.map((item) => {
               const room = roomById.get(item.roomId);
@@ -142,16 +142,16 @@ export default function OpsDashboardTab({
                   onClick={() => onOpenRoom(item.roomId)}
                   className="block w-full rounded-2xl border border-amber-200 bg-amber-50 dark:border-amber-500/40 dark:bg-amber-950/30 px-4 py-3 text-left"
                 >
-                  <p className="flex items-center gap-2 text-[13px] font-semibold text-amber-700 dark:text-amber-200">
-                    <span className="shrink-0 rounded-full bg-amber-500/20 px-2 py-0.5 text-[10px] font-bold">
+                  <p className="flex items-center gap-2 tr-card-text font-semibold text-amber-700 dark:text-amber-200">
+                    <span className="shrink-0 rounded-full bg-amber-500/20 px-2 py-0.5 tr-meta font-bold">
                       {ATTENTION_LABELS[item.reason]}
                     </span>
                     <span className="truncate">{room?.booking?.contact_name ?? '게스트'}</span>
-                    <span className="ml-auto shrink-0 text-[10px] font-normal text-amber-600 dark:text-amber-400/70">
+                    <span className="ml-auto shrink-0 tr-meta font-normal text-amber-600 dark:text-amber-400/70">
                       {kstTimeLabel(item.created_at)}
                     </span>
                   </p>
-                  {item.excerpt && <p className="mt-1 truncate text-[12px] text-amber-700 dark:text-amber-100/80">{item.excerpt}</p>}
+                  {item.excerpt && <p className="mt-1 truncate tr-label text-amber-700 dark:text-amber-100/80">{item.excerpt}</p>}
                 </button>
               );
             })}
@@ -162,11 +162,11 @@ export default function OpsDashboardTab({
       {groups.map((group) => (
         <section key={group.key}>
           <div className="flex items-baseline justify-between gap-2 px-1 pb-1.5">
-            <h2 className="min-w-0 truncate text-[13px] font-semibold text-[var(--tr-ink-2)]">
+            <h2 className="min-w-0 truncate tr-card-text font-semibold text-[var(--tr-ink-2)]">
               {group.title}
               {group.city ? <span className="ml-1 font-normal text-[var(--tr-ink-3)]">· {group.city}</span> : null}
             </h2>
-            <span className="shrink-0 text-[11px] text-[var(--tr-ink-3)]">
+            <span className="shrink-0 tr-meta text-[var(--tr-ink-3)]">
               룸 {group.rooms.length} · 탑승 {group.boarded}/{group.rooms.length} · {group.guests}명
             </span>
           </div>
@@ -202,41 +202,41 @@ export default function OpsDashboardTab({
                 >
                   <div className="flex items-center gap-3 px-4 py-3">
                     <span
-                      className="flex size-9 shrink-0 items-center justify-center rounded-full text-[13px] font-bold text-white"
+                      className="flex size-9 shrink-0 items-center justify-center rounded-full tr-card-text font-bold text-white"
                       style={{ backgroundColor: `hsl(${hue} 55% 45%)` }}
                     >
                       {sos ? '🆘' : (room.booking?.contact_name ?? 'G').trim().charAt(0).toUpperCase()}
                     </span>
                     <div className="min-w-0 flex-1">
-                      <p className="flex items-center gap-1.5 text-[14px] font-semibold text-[var(--tr-ink)]">
+                      <p className="flex items-center gap-1.5 tr-body font-semibold text-[var(--tr-ink)]">
                         <span className="truncate">{room.booking?.contact_name ?? '게스트'}</span>
                         <span className="shrink-0 font-normal text-[var(--tr-ink-3)]">
                           {room.booking?.number_of_guests ?? 1}명 · {room.booking?.preferred_language ?? 'en'}
                         </span>
                         {isLive && (
-                          <span className="ml-0.5 inline-flex shrink-0 items-center gap-1 rounded-full bg-emerald-500/15 px-1.5 py-0.5 text-[9px] font-bold text-emerald-700 dark:text-emerald-400">
+                          <span className="ml-0.5 inline-flex shrink-0 items-center gap-1 rounded-full bg-emerald-500/15 px-1.5 py-0.5 tr-meta font-bold text-emerald-700 dark:text-emerald-400">
                             <span className="size-1.5 rounded-full bg-emerald-400" />
                             LIVE
                           </span>
                         )}
-                        {room.onboard_ack && <span className="shrink-0 text-[10px]">🚌</span>}
+                        {room.onboard_ack && <span className="shrink-0 tr-meta">🚌</span>}
                       </p>
-                      <p className="mt-0.5 truncate text-[12px] text-[var(--tr-ink-2)]">
+                      <p className="mt-0.5 truncate tr-label text-[var(--tr-ink-2)]">
                         <span className="text-[var(--tr-ink-2)]">{senderLabel(lastSource?.sender_role)}</span>{' '}
                         {lastText}
                       </p>
                     </div>
                     <div className="flex shrink-0 flex-col items-end gap-1">
-                      <span className="text-[10px] text-[var(--tr-ink-3)]">{kstTimeLabel(lastAt)}</span>
+                      <span className="tr-meta text-[var(--tr-ink-3)]">{kstTimeLabel(lastAt)}</span>
                       {unreadCount > 0 && (
-                        <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-blue-500 px-1.5 text-[10px] font-bold text-white">
+                        <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-blue-500 px-1.5 tr-meta font-bold text-white">
                           {unreadCount > 99 ? '99+' : unreadCount}
                         </span>
                       )}
                     </div>
                   </div>
                   {sos && (
-                    <p className="border-t border-red-500/20 px-4 py-2 text-[12px] text-red-600 dark:text-red-300">
+                    <p className="border-t border-red-500/20 px-4 py-2 tr-label text-red-600 dark:text-red-300">
                       {sos.metadata.sender_name && <b>{sos.metadata.sender_name}: </b>}
                       {sos.metadata.note ?? 'SOS 발생'}
                       {typeof sos.metadata.latitude === 'number' && ' · 📍 위치 포함'}

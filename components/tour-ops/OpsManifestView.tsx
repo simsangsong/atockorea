@@ -65,7 +65,7 @@ function EmailTrace({ booking }: { booking: ManifestBooking }) {
   const when = shortKst(booking.emailAt);
   if (booking.emailStatus === 'sent') {
     return (
-      <p className="mt-0.5 text-[10px] text-[var(--tr-ink-3)]" data-testid="manifest-email-trace">
+      <p className="mt-0.5 tr-meta text-[var(--tr-ink-3)]" data-testid="manifest-email-trace">
         <Mail className="mr-0.5 inline size-3 align-[-1px]" />
         메일 발송{when ? ` ${when}` : ''}
         {booking.emailSubject ? ` · ${booking.emailSubject}` : ''}
@@ -73,7 +73,7 @@ function EmailTrace({ booking }: { booking: ManifestBooking }) {
     );
   }
   return (
-    <p className="mt-0.5 text-[10px] font-semibold text-rose-600 dark:text-rose-400" data-testid="manifest-email-trace">
+    <p className="mt-0.5 tr-meta font-semibold text-rose-600 dark:text-rose-400" data-testid="manifest-email-trace">
       <Mail className="mr-0.5 inline size-3 align-[-1px]" />
       메일 {booking.emailStatus === 'skipped' ? '제외' : '실패'}
       {booking.emailError ? ` — ${booking.emailError}` : ''}
@@ -358,7 +358,7 @@ export default function OpsManifestView({
   return (
     <div className="flex min-h-0 flex-1 flex-col" data-testid="ops-manifest">
       {/* 카운터 바 */}
-      <div className="flex items-center gap-2 border-b border-[var(--tr-hairline)] px-4 py-2 text-[12px]">
+      <div className="flex items-center gap-2 border-b border-[var(--tr-hairline)] px-4 py-2 tr-label">
         <span className="font-bold text-[var(--tr-ink)]">
           총 {totals.pax}명 · {totals.teams}팀
         </span>
@@ -381,7 +381,7 @@ export default function OpsManifestView({
         {/* M2 — 이 투어 전용 문구가 쓰이는 중이면 말해 준다. 어느 문구가 나가는지
             모른 채 보내면, 고쳐 둔 문구가 반영됐는지 확인할 방법이 없다. */}
         {templateSource === 'tour' && (
-          <span className="text-cjk-safe rounded-full bg-[var(--tr-surface-2)] px-2 py-0.5 text-[10px] font-semibold text-[var(--tr-ink-2)]">
+          <span className="text-cjk-safe rounded-full bg-[var(--tr-surface-2)] px-2 py-0.5 tr-meta font-semibold text-[var(--tr-ink-2)]">
             투어 전용 문구
           </span>
         )}
@@ -389,7 +389,7 @@ export default function OpsManifestView({
           value={presetKey}
           onChange={(e) => setPresetKey(e.target.value as WaPresetKey)}
           aria-label="WhatsApp 프리셋"
-          className="h-8 rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] px-2 text-[12px] text-[var(--tr-ink)]"
+          className="h-8 rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] px-2 tr-label text-[var(--tr-ink)]"
         >
           {WA_PRESETS.map((p) => (
             <option key={p.key} value={p.key}>
@@ -402,7 +402,7 @@ export default function OpsManifestView({
         <button
           type="button"
           onClick={() => setEditorOpen(true)}
-          className="flex h-8 items-center gap-1 rounded-lg bg-[var(--tr-surface-2)] px-2.5 text-[11px] font-semibold text-[var(--tr-ink)]"
+          className="flex h-8 items-center gap-1 rounded-lg bg-[var(--tr-surface-2)] px-2.5 tr-meta font-semibold text-[var(--tr-ink)]"
           data-testid="wa-template-edit"
         >
           <Pencil className="size-3.5" />
@@ -416,7 +416,7 @@ export default function OpsManifestView({
           }}
           disabled={emailBusy || emailEligible === 0}
           aria-label="룸 초대 이메일 일괄 발송"
-          className="flex h-8 items-center gap-1 rounded-lg bg-[var(--tr-surface-2)] px-2.5 text-[11px] font-semibold text-[var(--tr-ink)] disabled:opacity-40"
+          className="flex h-8 items-center gap-1 rounded-lg bg-[var(--tr-surface-2)] px-2.5 tr-meta font-semibold text-[var(--tr-ink)] disabled:opacity-40"
         >
           <Mail className="size-3.5" />
           룸 초대 이메일
@@ -444,7 +444,7 @@ export default function OpsManifestView({
       {/* 룸 초대 이메일 일괄 발송 — D10 확인 게이트 (명시적 2차 클릭 요구) */}
       {emailConfirm && (
         <div className="flex flex-wrap items-center gap-2 border-b border-[var(--tr-hairline)] bg-amber-50 px-4 py-2 dark:bg-amber-500/10">
-          <span className="text-[12px] text-[var(--tr-ink)]">
+          <span className="tr-label text-[var(--tr-ink)]">
             이메일 있는 게스트 <b>{emailEligible}팀</b>에게 <b>각자의 개인 링크</b>를 보냅니다.
             이름을 고르는 화면 없이 바로 투어룸이 열립니다.
             <br />
@@ -458,7 +458,7 @@ export default function OpsManifestView({
             type="button"
             onClick={() => void sendBulkInvite()}
             disabled={emailBusy}
-            className="h-8 rounded-lg bg-[var(--tr-accent)] px-3 text-[12px] font-semibold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
+            className="h-8 rounded-lg bg-[var(--tr-accent)] px-3 tr-label font-semibold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
           >
             {emailBusy ? '발송 중…' : '확인 발송'}
           </button>
@@ -466,7 +466,7 @@ export default function OpsManifestView({
             type="button"
             onClick={() => setEmailConfirm(false)}
             disabled={emailBusy}
-            className="h-8 rounded-lg px-2 text-[12px] text-[var(--tr-ink-2)]"
+            className="h-8 rounded-lg px-2 tr-label text-[var(--tr-ink-2)]"
           >
             취소
           </button>
@@ -478,15 +478,15 @@ export default function OpsManifestView({
       {inviteLink && (
         <div className="flex items-center gap-2 border-b border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] px-4 py-2">
           <Mail className="size-3.5 shrink-0 text-[var(--tr-ink-3)]" />
-          <span className="shrink-0 text-[11px] font-medium text-[var(--tr-ink-2)]">이메일 없는 예약용 폴백</span>
-          <span className="min-w-0 flex-1 truncate text-[11px] text-[var(--tr-ink-2)]" title={inviteLink}>
+          <span className="shrink-0 tr-meta font-medium text-[var(--tr-ink-2)]">이메일 없는 예약용 폴백</span>
+          <span className="min-w-0 flex-1 truncate tr-meta text-[var(--tr-ink-2)]" title={inviteLink}>
             {inviteLink}
           </span>
           <button
             type="button"
             onClick={() => void copyInviteLink()}
             aria-label="초대 링크 복사"
-            className="flex h-8 shrink-0 items-center gap-1 rounded-lg bg-[var(--tr-surface)] px-2.5 text-[11px] font-semibold text-[var(--tr-ink)]"
+            className="flex h-8 shrink-0 items-center gap-1 rounded-lg bg-[var(--tr-surface)] px-2.5 tr-meta font-semibold text-[var(--tr-ink)]"
           >
             <Copy className="size-3.5" />
             복사
@@ -497,7 +497,7 @@ export default function OpsManifestView({
       {/* 일괄 순차 오픈 바 */}
       {selected.size > 0 && (
         <div className="flex items-center gap-2 border-b border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] px-4 py-2">
-          <span className="text-[12px] text-[var(--tr-ink-2)]">
+          <span className="tr-label text-[var(--tr-ink-2)]">
             선택 {selected.size}팀 · {Math.min(bulkCursor, bulkList.length)}/{bulkList.length} 열림
           </span>
           <span className="flex-1" />
@@ -505,7 +505,7 @@ export default function OpsManifestView({
             type="button"
             onClick={() => void bulkNext()}
             disabled={bulkCursor >= bulkList.length}
-            className="h-8 rounded-lg bg-emerald-600 px-3 text-[12px] font-semibold text-white disabled:opacity-40"
+            className="h-8 rounded-lg bg-emerald-600 px-3 tr-label font-semibold text-white disabled:opacity-40"
           >
             {bulkCursor >= bulkList.length ? '완료' : `다음 열기 (${bulkCursor + 1}번째)`}
           </button>
@@ -515,7 +515,7 @@ export default function OpsManifestView({
               setSelected(new Set());
               setBulkCursor(0);
             }}
-            className="h-8 rounded-lg px-2 text-[12px] text-[var(--tr-ink-2)]"
+            className="h-8 rounded-lg px-2 tr-label text-[var(--tr-ink-2)]"
           >
             해제
           </button>
@@ -523,12 +523,12 @@ export default function OpsManifestView({
       )}
 
       <div className="min-h-0 flex-1 space-y-2 overflow-y-auto px-3 py-2 pb-6">
-        {loading && <p className="mt-8 text-center text-[12px] text-[var(--tr-ink-3)]">명단을 불러오는 중…</p>}
+        {loading && <p className="mt-8 text-center tr-label text-[var(--tr-ink-3)]">명단을 불러오는 중…</p>}
         {!loading && loadError && (
-          <p className="mt-8 text-center text-[12px] text-red-600 dark:text-red-400">{loadError}</p>
+          <p className="mt-8 text-center tr-label text-red-600 dark:text-red-400">{loadError}</p>
         )}
         {!loading && !loadError && bookings.length === 0 && (
-          <p className="mt-8 text-center text-[12px] text-[var(--tr-ink-3)]">이 날짜의 예약이 없습니다.</p>
+          <p className="mt-8 text-center tr-label text-[var(--tr-ink-3)]">이 날짜의 예약이 없습니다.</p>
         )}
 
         {groups.map((group) => {
@@ -541,13 +541,13 @@ export default function OpsManifestView({
                 className="flex w-full items-center gap-2 px-3 py-2.5 text-left"
                 aria-expanded={!isCollapsed}
               >
-                <span className="min-w-0 flex-1 truncate text-[13px] font-bold text-[var(--tr-ink)]">
+                <span className="min-w-0 flex-1 truncate tr-card-text font-bold text-[var(--tr-ink)]">
                   {group.firstPickupTime && (
                     <span className="mr-1.5 tabular-nums text-[var(--tr-accent)]">{group.firstPickupTime}</span>
                   )}
                   {group.displayName}
                 </span>
-                <span className="shrink-0 text-[11px] text-[var(--tr-ink-3)]">
+                <span className="shrink-0 tr-meta text-[var(--tr-ink-3)]">
                   {group.teamCount}팀 {group.paxCount}명
                 </span>
                 {isCollapsed ? <ChevronDown className="size-4 shrink-0" /> : <ChevronUp className="size-4 shrink-0" />}
@@ -572,15 +572,15 @@ export default function OpsManifestView({
                           className="size-4 shrink-0 accent-emerald-600"
                         />
                         <div className="min-w-0 flex-1">
-                          <p className="truncate text-[13px] font-semibold text-[var(--tr-ink)]">
+                          <p className="truncate tr-card-text font-semibold text-[var(--tr-ink)]">
                             {booking.contactName ?? '게스트'}
                             <span className="ml-1 font-normal text-[var(--tr-ink-3)]">{booking.partySize}명</span>
                             {booking.source && (
-                              <span className="ml-1.5 rounded bg-[var(--tr-surface-2)] px-1 py-0.5 text-[9px] font-bold uppercase text-[var(--tr-ink-2)]">
+                              <span className="ml-1.5 rounded bg-[var(--tr-surface-2)] px-1 py-0.5 tr-meta font-bold uppercase text-[var(--tr-ink-2)]">
                                 {SOURCE_BADGE[booking.source] ?? booking.source}
                               </span>
                             )}
-                            <span className="ml-1 text-[10px] text-[var(--tr-ink-3)]">
+                            <span className="ml-1 tr-meta text-[var(--tr-ink-3)]">
                               {booking.preferredLanguage ?? 'en'}
                             </span>
                           </p>
@@ -589,7 +589,7 @@ export default function OpsManifestView({
                               {highlights.map((tag) => (
                                 <span
                                   key={tag}
-                                  className="rounded bg-amber-100 px-1.5 py-0.5 text-[9px] font-bold text-amber-800 dark:bg-amber-500/15 dark:text-amber-200"
+                                  className="rounded bg-amber-100 px-1.5 py-0.5 tr-meta font-bold text-amber-800 dark:bg-amber-500/15 dark:text-amber-200"
                                 >
                                   ⚠ {HIGHLIGHT_LABELS[tag] ?? tag}
                                 </span>
@@ -605,7 +605,7 @@ export default function OpsManifestView({
                           type="button"
                           onClick={() => void openWa(booking)}
                           disabled={!resolveWhatsAppDigits({ phone: booking.contactPhone, whatsapp: booking.whatsapp })}
-                          className={`flex h-9 shrink-0 items-center gap-1 rounded-lg px-2.5 text-[11px] font-semibold disabled:opacity-30 ${
+                          className={`flex h-9 shrink-0 items-center gap-1 rounded-lg px-2.5 tr-meta font-semibold disabled:opacity-30 ${
                             opened
                               ? 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]'
                               : 'bg-emerald-600 text-white'
@@ -619,7 +619,7 @@ export default function OpsManifestView({
                           type="button"
                           onClick={() => void markSent(booking)}
                           disabled={sent}
-                          className={`flex h-9 shrink-0 items-center gap-1 rounded-lg px-2 text-[11px] font-semibold ${
+                          className={`flex h-9 shrink-0 items-center gap-1 rounded-lg px-2 tr-meta font-semibold ${
                             sent
                               ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300'
                               : 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]'
@@ -714,7 +714,7 @@ function WaTemplateEditor({
         data-testid="wa-template-editor"
       >
         <div className="mb-2 flex items-center gap-2">
-          <p className="flex-1 text-[14px] font-bold text-[var(--tr-ink)]">
+          <p className="flex-1 tr-body font-bold text-[var(--tr-ink)]">
             왓츠앱 문구 — {preset.label}
           </p>
           <button
@@ -735,7 +735,7 @@ function WaTemplateEditor({
               onClick={() => setLocale(code)}
               aria-pressed={locale === code}
               className={
-                'min-h-[32px] rounded-full px-2.5 text-[11px] font-semibold ' +
+                'min-h-[32px] rounded-full px-2.5 tr-meta font-semibold ' +
                 (locale === code
                   ? 'bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]'
                   : 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]')
@@ -750,12 +750,12 @@ function WaTemplateEditor({
           value={draft}
           onChange={(event) => setDraft(event.target.value)}
           rows={10}
-          className="mb-2 w-full rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] p-2 text-[13px] leading-relaxed text-[var(--tr-ink)]"
+          className="mb-2 w-full rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] p-2 tr-card-text leading-relaxed text-[var(--tr-ink)]"
           data-testid="wa-template-body"
         />
         {/* 토큰을 적어 두지 않으면 운영자가 이름을 손으로 박아 넣고, 그 문구는
             다음 손님에게도 그 이름으로 나간다. */}
-        <p className="mb-3 text-[11px] leading-relaxed text-[var(--tr-ink-3)]">
+        <p className="mb-3 tr-meta leading-relaxed text-[var(--tr-ink-3)]">
           쓸 수 있는 자리표시자: {'{guestName} {tourName} {tourDate} {pickupPoint} {pickupTime} {roomLink} {weather} {clothing}'}
           <br />
           예보가 없는 날은 {'{weather}'} 줄이 통째로 빠집니다 — 빈 「날씨: 」는 나가지 않아요.
@@ -772,7 +772,7 @@ function WaTemplateEditor({
                 `${locale} 문구를 이 투어 전용으로 저장했어요.`,
               )
             }
-            className="h-11 w-full rounded-xl bg-[var(--tr-accent)] text-[12px] font-semibold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
+            className="h-11 w-full rounded-xl bg-[var(--tr-accent)] tr-label font-semibold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
             data-testid="wa-template-save"
           >
             이 투어 전용으로 저장
@@ -787,7 +787,7 @@ function WaTemplateEditor({
                 '기본 문구로 되돌렸어요.',
               )
             }
-            className="h-11 w-full rounded-xl border border-[var(--tr-hairline)] text-[12px] font-semibold text-[var(--tr-ink-2)] disabled:opacity-40"
+            className="h-11 w-full rounded-xl border border-[var(--tr-hairline)] tr-label font-semibold text-[var(--tr-ink-2)] disabled:opacity-40"
             data-testid="wa-template-revert"
           >
             기본으로 되돌리기

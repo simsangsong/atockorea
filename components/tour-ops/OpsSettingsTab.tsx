@@ -99,8 +99,8 @@ function PushToggleSection() {
   if (state === 'unsupported') {
     return (
       <div className="p-4">
-        <h2 className="text-[13px] font-semibold text-[var(--tr-ink)]">푸시 알림</h2>
-        <p className="mt-1 text-[12px] text-[var(--tr-ink-3)]">이 브라우저는 Web Push를 지원하지 않습니다.</p>
+        <h2 className="tr-card-text font-semibold text-[var(--tr-ink)]">푸시 알림</h2>
+        <p className="mt-1 tr-label text-[var(--tr-ink-3)]">이 브라우저는 Web Push를 지원하지 않습니다.</p>
       </div>
     );
   }
@@ -108,8 +108,8 @@ function PushToggleSection() {
   return (
     <div className="flex items-center justify-between p-4">
       <div>
-        <h2 className="text-[13px] font-semibold text-[var(--tr-ink)]">푸시 알림</h2>
-        <p className="mt-0.5 text-[11px] text-[var(--tr-ink-3)]">앱을 닫아도 SOS·도움요청을 이 기기로 알립니다.</p>
+        <h2 className="tr-card-text font-semibold text-[var(--tr-ink)]">푸시 알림</h2>
+        <p className="mt-0.5 tr-meta text-[var(--tr-ink-3)]">앱을 닫아도 SOS·도움요청을 이 기기로 알립니다.</p>
       </div>
       <button
         type="button"
@@ -158,23 +158,23 @@ export default function OpsSettingsTab({
   // instead of six loose full cards (the ops center's biggest density win).
   return (
     <div className="space-y-3 pb-4">
-      <p className="px-1 text-[11px] font-semibold uppercase tracking-wide text-[var(--tr-ink-3)]">알림 · 모니터링</p>
+      <p className="px-1 tr-meta font-semibold uppercase tracking-wide text-[var(--tr-ink-3)]">알림 · 모니터링</p>
       <section className="divide-y divide-[var(--tr-hairline)] overflow-hidden rounded-2xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)]">
         <div className="p-4">
-          <h2 className="text-[13px] font-semibold text-[var(--tr-ink)]">모니터링 날짜</h2>
+          <h2 className="tr-card-text font-semibold text-[var(--tr-ink)]">모니터링 날짜</h2>
           <input
             type="date"
             value={date}
             onChange={(event) => onDateChange(event.target.value)}
-            className="mt-2 h-11 w-full rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] px-3 text-[14px] text-[var(--tr-ink)]"
+            className="mt-2 h-11 w-full rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] px-3 tr-body text-[var(--tr-ink)]"
           />
-          <p className="mt-1.5 text-[11px] text-[var(--tr-ink-3)]">해당 날짜의 모든 투어룸을 구독합니다.</p>
+          <p className="mt-1.5 tr-meta text-[var(--tr-ink-3)]">해당 날짜의 모든 투어룸을 구독합니다.</p>
         </div>
 
         <div className="flex items-center justify-between p-4">
           <div>
-            <h2 className="text-[13px] font-semibold text-[var(--tr-ink)]">SOS 사운드</h2>
-            <p className="mt-0.5 text-[11px] text-[var(--tr-ink-3)]">새 SOS 수신 시 경보음을 울립니다.</p>
+            <h2 className="tr-card-text font-semibold text-[var(--tr-ink)]">SOS 사운드</h2>
+            <p className="mt-0.5 tr-meta text-[var(--tr-ink-3)]">새 SOS 수신 시 경보음을 울립니다.</p>
           </div>
           <button
             type="button"
@@ -194,16 +194,16 @@ export default function OpsSettingsTab({
         <PushToggleSection />
       </section>
 
-      <p className="px-1 pt-1 text-[11px] font-semibold uppercase tracking-wide text-[var(--tr-ink-3)]">연결 · 앱</p>
+      <p className="px-1 pt-1 tr-meta font-semibold uppercase tracking-wide text-[var(--tr-ink-3)]">연결 · 앱</p>
       <section className="divide-y divide-[var(--tr-hairline)] overflow-hidden rounded-2xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)]">
         <div className="p-4">
-          <h2 className="text-[13px] font-semibold text-[var(--tr-ink)]">연결 상태</h2>
-          <p className="mt-1 text-[12px] text-[var(--tr-ink-2)]">{CONNECTION_LABELS[connection]}</p>
+          <h2 className="tr-card-text font-semibold text-[var(--tr-ink)]">연결 상태</h2>
+          <p className="mt-1 tr-label text-[var(--tr-ink-2)]">{CONNECTION_LABELS[connection]}</p>
         </div>
 
         <div className="p-4">
-          <h2 className="text-[13px] font-semibold text-[var(--tr-ink)]">홈 화면에 설치</h2>
-          <p className="mt-1 text-[12px] leading-relaxed text-[var(--tr-ink-2)]">
+          <h2 className="tr-card-text font-semibold text-[var(--tr-ink)]">홈 화면에 설치</h2>
+          <p className="mt-1 tr-label leading-relaxed text-[var(--tr-ink-2)]">
             Android Chrome: 메뉴 ⋮ → &quot;앱 설치&quot;. iOS Safari: 공유 → &quot;홈 화면에 추가&quot;.
             설치하면 관제센터가 단독 앱으로 열립니다.
           </p>
@@ -212,7 +212,7 @@ export default function OpsSettingsTab({
 
       <Link
         href="/admin"
-        className="block rounded-2xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] p-4 text-[13px] font-medium text-[var(--tr-ink)] active:bg-[var(--tr-surface-2)]"
+        className="block rounded-2xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] p-4 tr-card-text font-medium text-[var(--tr-ink)] active:bg-[var(--tr-surface-2)]"
       >
         ← 어드민 대시보드로
       </Link>

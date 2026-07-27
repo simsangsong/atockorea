@@ -171,13 +171,13 @@ export default function OpsRoomDrawer({
       >
         <header className="flex items-center gap-3 border-b border-[var(--tr-hairline)] px-4 py-3">
           <div className="min-w-0 flex-1">
-            <p className="truncate text-[15px] font-bold text-[var(--tr-ink)]">
+            <p className="truncate tr-body font-bold text-[var(--tr-ink)]">
               {room.booking?.contact_name ?? '게스트'}
               <span className="ml-1.5 font-normal text-[var(--tr-ink-3)]">
                 {room.booking?.number_of_guests ?? 1}명 · {room.booking?.preferred_language ?? 'en'}
               </span>
             </p>
-            <p className="truncate text-[12px] text-[var(--tr-ink-2)]">
+            <p className="truncate tr-label text-[var(--tr-ink-2)]">
               {room.tour?.title ?? ''} · 입장 {joined.length}명
               {locations.length > 0 && ` · 위치공유 ${locations.length}`}
             </p>
@@ -193,7 +193,7 @@ export default function OpsRoomDrawer({
           )}
           <a
             href={`/admin/orders/${room.booking_id}`}
-            className="flex h-11 shrink-0 items-center rounded-xl bg-[var(--tr-surface-2)] px-3 text-[12px] font-medium text-[var(--tr-ink-2)]"
+            className="flex h-11 shrink-0 items-center rounded-xl bg-[var(--tr-surface-2)] px-3 tr-label font-medium text-[var(--tr-ink-2)]"
           >
             주문
           </a>
@@ -202,7 +202,7 @@ export default function OpsRoomDrawer({
             href={`/admin/tour-ops/no-show-evidence/${room.id}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex h-11 shrink-0 items-center rounded-xl bg-[var(--tr-surface-2)] px-3 text-[12px] font-medium text-[var(--tr-ink-2)]"
+            className="flex h-11 shrink-0 items-center rounded-xl bg-[var(--tr-surface-2)] px-3 tr-label font-medium text-[var(--tr-ink-2)]"
           >
             증거
           </a>
@@ -235,7 +235,7 @@ export default function OpsRoomDrawer({
                 type="button"
                 onClick={() => setView(key)}
                 aria-pressed={view === key}
-                className={`text-cjk-safe h-8 rounded-full px-3.5 text-[12px] font-semibold ${
+                className={`text-cjk-safe h-8 rounded-full px-3.5 tr-label font-semibold ${
                   view === key
                     ? 'bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]'
                     : 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]'
@@ -265,7 +265,7 @@ export default function OpsRoomDrawer({
         )}
 
         {sos && (
-          <div className="flex items-center gap-2 border-b border-red-200 bg-red-50 px-4 py-2.5 text-[12px] text-red-700 dark:border-red-500/30 dark:bg-red-950/50 dark:text-red-200">
+          <div className="flex items-center gap-2 border-b border-red-200 bg-red-50 px-4 py-2.5 tr-label text-red-700 dark:border-red-500/30 dark:bg-red-950/50 dark:text-red-200">
             <span className="animate-pulse">🆘</span>
             <span className="min-w-0 flex-1 truncate">
               {sos.metadata.sender_name && <b>{sos.metadata.sender_name}: </b>}
@@ -287,14 +287,14 @@ export default function OpsRoomDrawer({
 
         {view === 'chat' && (
         <div ref={feedRef} className="min-h-[200px] flex-1 space-y-2 overflow-y-auto px-4 py-3">
-          {backlogLoading && feed.length === 0 && <p className="text-center text-[12px] text-[var(--tr-ink-3)]">피드를 불러오는 중…</p>}
-          {!backlogLoading && feed.length === 0 && <p className="text-center text-[12px] text-[var(--tr-ink-3)]">아직 메시지가 없습니다.</p>}
+          {backlogLoading && feed.length === 0 && <p className="text-center tr-label text-[var(--tr-ink-3)]">피드를 불러오는 중…</p>}
+          {!backlogLoading && feed.length === 0 && <p className="text-center tr-label text-[var(--tr-ink-3)]">아직 메시지가 없습니다.</p>}
           {feed.map((message) => {
             const mine = message.sender_role === 'admin';
             return (
               <div key={message.id} className={`flex ${mine ? 'justify-end' : 'justify-start'}`}>
                 <div
-                  className={`max-w-[82%] rounded-2xl px-3 py-2 text-[13px] leading-relaxed ${
+                  className={`max-w-[82%] rounded-2xl px-3 py-2 tr-card-text leading-relaxed ${
                     mine
                       ? `bg-blue-600 text-white ${message._local ? 'opacity-60' : ''}`
                       : message.sender_role === 'guide'
@@ -303,7 +303,7 @@ export default function OpsRoomDrawer({
                   }`}
                 >
                   {!mine && (
-                    <p className="mb-0.5 text-[10px] font-semibold text-[var(--tr-ink-2)]">
+                    <p className="mb-0.5 tr-meta font-semibold text-[var(--tr-ink-2)]">
                       {senderLabel(message.sender_role)}
                     </p>
                   )}
@@ -311,7 +311,7 @@ export default function OpsRoomDrawer({
                   <p className="whitespace-pre-wrap break-words">
                     {mine ? message.source_text : opsReadableText(message)}
                   </p>
-                  <p className={`mt-0.5 text-right text-[10px] ${mine ? 'text-blue-100' : 'text-[var(--tr-ink-3)]'}`}>
+                  <p className={`mt-0.5 text-right tr-meta ${mine ? 'text-blue-100' : 'text-[var(--tr-ink-3)]'}`}>
                     {message._local ? '전송 중…' : kstTimeLabel(message.created_at)}
                   </p>
                 </div>
@@ -331,7 +331,7 @@ export default function OpsRoomDrawer({
                 type="button"
                 disabled={sending}
                 onClick={() => void send({ presetKey: preset.key }, preset.text.ko)}
-                className="flex h-11 shrink-0 items-center gap-1 rounded-full border border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] px-3.5 text-[12px] text-[var(--tr-ink-2)] disabled:opacity-40"
+                className="flex h-11 shrink-0 items-center gap-1 rounded-full border border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] px-3.5 tr-label text-[var(--tr-ink-2)] disabled:opacity-40"
               >
                 <span>{preset.emoji}</span>
                 {preset.text.ko}
@@ -350,12 +350,12 @@ export default function OpsRoomDrawer({
               onChange={(event) => setDraft(event.target.value)}
               maxLength={2000}
               placeholder="관제 메시지 (자동 번역되어 전달)"
-              className="h-11 min-w-0 flex-1 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] px-3 text-[14px] text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)]"
+              className="h-11 min-w-0 flex-1 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] px-3 tr-body text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)]"
             />
             <button
               type="submit"
               disabled={sending || !draft.trim()}
-              className="h-11 shrink-0 rounded-xl bg-blue-600 px-4 text-[14px] font-semibold text-white disabled:opacity-40"
+              className="h-11 shrink-0 rounded-xl bg-blue-600 px-4 tr-body font-semibold text-white disabled:opacity-40"
             >
               발신
             </button>

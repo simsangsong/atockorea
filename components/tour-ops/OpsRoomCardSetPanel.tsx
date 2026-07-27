@@ -114,14 +114,14 @@ export default function OpsRoomCardSetPanel({ roomId, tourId }: { roomId: string
   if (loading) {
     return (
       <div className="min-h-[200px] flex-1 px-4 py-3">
-        <p className="text-center text-[12px] text-[var(--tr-ink-3)]">카드 세트를 불러오는 중…</p>
+        <p className="text-center tr-label text-[var(--tr-ink-3)]">카드 세트를 불러오는 중…</p>
       </div>
     );
   }
   if (!data) {
     return (
       <div className="min-h-[200px] flex-1 px-4 py-3">
-        <p className="text-center text-[12px] text-[var(--tr-ink-3)]">카드 세트를 불러오지 못했어요.</p>
+        <p className="text-center tr-label text-[var(--tr-ink-3)]">카드 세트를 불러오지 못했어요.</p>
       </div>
     );
   }
@@ -131,7 +131,7 @@ export default function OpsRoomCardSetPanel({ roomId, tourId }: { roomId: string
   return (
     <div className="min-h-[200px] flex-1 space-y-3 overflow-y-auto px-4 py-3">
       {data.migration_pending && (
-        <p className="flex items-start gap-1.5 rounded-xl border border-amber-300 bg-amber-50 p-2.5 text-[11px] leading-relaxed text-amber-800 dark:border-amber-500/30 dark:bg-amber-950/40 dark:text-amber-200">
+        <p className="flex items-start gap-1.5 rounded-xl border border-amber-300 bg-amber-50 p-2.5 tr-meta leading-relaxed text-amber-800 dark:border-amber-500/30 dark:bg-amber-950/40 dark:text-amber-200">
           <TriangleAlert className="mt-0.5 size-3.5 shrink-0" />
           카드 세트 테이블이 아직 없어요(마이그레이션 미적용). 지금은 <b>코드 기본 5장</b>이 그대로 나가고,
           저장은 되지 않습니다.
@@ -151,7 +151,7 @@ export default function OpsRoomCardSetPanel({ roomId, tourId }: { roomId: string
       {tourId && (
         <a
           href={`/admin/tour-ops/card-sets?tour_id=${encodeURIComponent(tourId)}`}
-          className="flex h-11 items-center justify-center gap-1.5 rounded-xl border border-[var(--tr-hairline)] text-[12px] font-semibold text-[var(--tr-ink-2)]"
+          className="flex h-11 items-center justify-center gap-1.5 rounded-xl border border-[var(--tr-hairline)] tr-label font-semibold text-[var(--tr-ink-2)]"
         >
           <ExternalLink className="size-3.5" />
           {data.tour_title ? `"${data.tour_title}" 상품 기본값 편집` : '상품 기본값 편집'}
@@ -162,7 +162,7 @@ export default function OpsRoomCardSetPanel({ roomId, tourId }: { roomId: string
         <button
           type="button"
           onClick={() => setShowPreview((current) => !current)}
-          className="flex h-11 w-full items-center justify-center gap-1.5 text-[12px] font-semibold text-[var(--tr-ink-2)]"
+          className="flex h-11 w-full items-center justify-center gap-1.5 tr-label font-semibold text-[var(--tr-ink-2)]"
         >
           <Eye className="size-3.5" />
           {showPreview ? '미리보기 닫기' : '지금 [투어 시작]을 누르면 나갈 카드 미리보기'}
@@ -171,14 +171,14 @@ export default function OpsRoomCardSetPanel({ roomId, tourId }: { roomId: string
         {showPreview && (
           <div className="space-y-2 border-t border-[var(--tr-hairline)] p-3">
             {!preview && (
-              <p className="text-[11px] text-[var(--tr-ink-3)]">
+              <p className="tr-meta text-[var(--tr-ink-3)]">
                 미리보기를 만들지 못했어요 (룸에 투어·날짜 정보가 없을 수 있어요).
               </p>
             )}
             {preview && (
               <>
                 <div className="flex flex-wrap items-center gap-1.5">
-                  <span className="rounded-full bg-[var(--tr-surface-2)] px-2 py-0.5 text-[10px] font-semibold text-[var(--tr-ink-2)]">
+                  <span className="rounded-full bg-[var(--tr-surface-2)] px-2 py-0.5 tr-meta font-semibold text-[var(--tr-ink-2)]">
                     {preview.tour_kind === 'private' ? '프라이빗 차터 문구' : '조인투어 문구'}
                   </span>
                   {PREVIEW_LOCALES.map((code) => (
@@ -187,7 +187,7 @@ export default function OpsRoomCardSetPanel({ roomId, tourId }: { roomId: string
                       type="button"
                       onClick={() => setLocale(code)}
                       aria-pressed={locale === code}
-                      className={`text-cjk-safe h-7 rounded-full px-2.5 text-[11px] font-semibold ${
+                      className={`text-cjk-safe h-7 rounded-full px-2.5 tr-meta font-semibold ${
                         locale === code
                           ? 'bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]'
                           : 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]'
@@ -205,7 +205,7 @@ export default function OpsRoomCardSetPanel({ roomId, tourId }: { roomId: string
                       key={card.id}
                       className="rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] p-2.5"
                     >
-                      <p className="mb-1 flex items-center gap-1.5 text-[12px] font-bold text-[var(--tr-ink)]">
+                      <p className="mb-1 flex items-center gap-1.5 tr-label font-bold text-[var(--tr-ink)]">
                         {card.will_send ? (
                           <CheckCircle2 className="size-3.5 shrink-0 text-emerald-600" />
                         ) : (
@@ -213,17 +213,17 @@ export default function OpsRoomCardSetPanel({ roomId, tourId }: { roomId: string
                         )}
                         {label}
                         {card.pushes && card.will_send && (
-                          <span className="rounded bg-[var(--tr-surface)] px-1.5 py-0.5 text-[10px] font-semibold text-[var(--tr-ink-2)]">
+                          <span className="rounded bg-[var(--tr-surface)] px-1.5 py-0.5 tr-meta font-semibold text-[var(--tr-ink-2)]">
                             푸시
                           </span>
                         )}
                       </p>
                       {card.will_send ? (
-                        <p className="whitespace-pre-wrap break-words text-[11px] leading-relaxed text-[var(--tr-ink-2)]">
+                        <p className="whitespace-pre-wrap break-words tr-meta leading-relaxed text-[var(--tr-ink-2)]">
                           {card.translations?.[locale] ?? card.translations?.en ?? ''}
                         </p>
                       ) : (
-                        <p className="text-[11px] text-[var(--tr-ink-3)]">
+                        <p className="tr-meta text-[var(--tr-ink-3)]">
                           {card.skipped_reason === 'already_sent'
                             ? '이미 발송된 카드예요 — 다시 나가지 않습니다.'
                             : '보낼 내용이 없어 발송되지 않아요 (예: 해석된 일정 없음).'}
@@ -232,7 +232,7 @@ export default function OpsRoomCardSetPanel({ roomId, tourId }: { roomId: string
                     </div>
                   );
                 })}
-                <p className="text-[10px] leading-relaxed text-[var(--tr-ink-3)]">
+                <p className="tr-meta leading-relaxed text-[var(--tr-ink-3)]">
                   미리보기는 실제 발송 경로와 같은 계산을 씁니다. 이 화면을 여는 것만으로는 아무것도 발송되지
                   않아요.
                 </p>

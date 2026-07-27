@@ -273,8 +273,8 @@ export default function OpsRoomManager({
       >
         <div className="mx-auto flex min-h-[52px] w-full max-w-3xl items-center justify-between">
         <div>
-          <h2 className="text-[15px] font-bold">룸 · 링크 관리</h2>
-          <p className={`text-[11px] ${T.sub}`}>{viewDate} · 예약 {bookings.length}건</p>
+          <h2 className="tr-body font-bold">룸 · 링크 관리</h2>
+          <p className={`tr-meta ${T.sub}`}>{viewDate} · 예약 {bookings.length}건</p>
         </div>
         <div className="flex items-center gap-1">
           <button
@@ -316,7 +316,7 @@ export default function OpsRoomManager({
           type="button"
           onClick={() => setViewDate((d) => shiftDate(d, -1))}
           aria-label="이전 날짜"
-          className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-[15px] font-bold ${T.secondaryBtn}`}
+          className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg tr-body font-bold ${T.secondaryBtn}`}
         >
           ◀
         </button>
@@ -324,14 +324,14 @@ export default function OpsRoomManager({
           type="date"
           value={viewDate}
           onChange={(e) => e.target.value && setViewDate(e.target.value)}
-          className={`h-9 w-40 shrink-0 rounded-lg border px-2 text-center text-[13px] font-semibold ${T.input}`}
+          className={`h-9 w-40 shrink-0 rounded-lg border px-2 text-center tr-card-text font-semibold ${T.input}`}
           data-testid="date-input"
         />
         <button
           type="button"
           onClick={() => setViewDate((d) => shiftDate(d, 1))}
           aria-label="다음 날짜"
-          className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-[15px] font-bold ${T.secondaryBtn}`}
+          className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg tr-body font-bold ${T.secondaryBtn}`}
         >
           ▶
         </button>
@@ -339,7 +339,7 @@ export default function OpsRoomManager({
         <button
           type="button"
           onClick={() => setCreateOpen(true)}
-          className="flex h-9 shrink-0 items-center gap-1 rounded-lg bg-blue-600 px-3 text-[12px] font-bold text-white"
+          className="flex h-9 shrink-0 items-center gap-1 rounded-lg bg-blue-600 px-3 tr-label font-bold text-white"
           data-testid="manual-booking-open"
         >
           <Plus className="size-4" /> 예약 만들기
@@ -352,17 +352,17 @@ export default function OpsRoomManager({
       <GuideRestNotice date={viewDate} />
       <div className="mx-auto w-full max-w-3xl">
         {loading && bookings.length === 0 ? (
-          <p className={`mt-16 text-center text-[13px] ${T.sub}`}>불러오는 중…</p>
+          <p className={`mt-16 text-center tr-card-text ${T.sub}`}>불러오는 중…</p>
         ) : bookings.length === 0 ? (
           <div className="mt-16 text-center">
-            <p className={`text-[13px] ${T.sub}`}>{viewDate}에 예약이 없습니다.</p>
-            <p className={`mt-1 text-[12px] ${T.sub}`}>
+            <p className={`tr-card-text ${T.sub}`}>{viewDate}에 예약이 없습니다.</p>
+            <p className={`mt-1 tr-label ${T.sub}`}>
               OTA(GYG·Viator·Klook)·전화 예약·테스트 룸은 직접 등록할 수 있어요.
             </p>
             <button
               type="button"
               onClick={() => setCreateOpen(true)}
-              className="mt-4 inline-flex h-11 items-center gap-1.5 rounded-xl bg-blue-600 px-5 text-[13px] font-bold text-white"
+              className="mt-4 inline-flex h-11 items-center gap-1.5 rounded-xl bg-blue-600 px-5 tr-card-text font-bold text-white"
               data-testid="manual-booking-open-empty"
             >
               <Plus className="size-4" /> OTA · 테스트 예약 만들기
@@ -371,7 +371,7 @@ export default function OpsRoomManager({
         ) : (
           [...groups.entries()].map(([title, rows]) => (
             <section key={title} className="mb-4">
-              <h3 className={`mb-1.5 px-1 text-[12px] font-semibold ${T.groupTitle}`}>
+              <h3 className={`mb-1.5 px-1 tr-label font-semibold ${T.groupTitle}`}>
                 {title} <span className={`font-normal ${T.groupCount}`}>· {rows.length}팀</span>
               </h3>
               <div className="space-y-2">
@@ -390,39 +390,39 @@ export default function OpsRoomManager({
                         className="flex w-full items-start justify-between gap-2 text-left disabled:cursor-default"
                       >
                         <div className="min-w-0">
-                          <p className="truncate text-[14px] font-semibold">
+                          <p className="truncate tr-body font-semibold">
                             {booking.contact_name ?? '게스트'}
-                            <span className={`ml-1.5 text-[12px] font-normal ${T.nameMeta}`}>
+                            <span className={`ml-1.5 tr-label font-normal ${T.nameMeta}`}>
                               {booking.number_of_guests ?? 1}명 · {booking.preferred_language ?? 'en'}
                               {booking.tour_time ? ` · ${booking.tour_time.slice(0, 5)}` : ''}
                             </span>
                           </p>
                           <p className="mt-0.5 flex flex-wrap items-center gap-1">
                             {channel && (
-                              <span className={`rounded-full px-2 py-0.5 text-[10px] font-bold ${channel.cls}`}>
+                              <span className={`rounded-full px-2 py-0.5 tr-meta font-bold ${channel.cls}`}>
                                 {channel.label}
                               </span>
                             )}
                             <span
-                              className={`rounded-full px-2 py-0.5 text-[10px] font-semibold ${
+                              className={`rounded-full px-2 py-0.5 tr-meta font-semibold ${
                                 !room ? T.badgeNoRoom : room.status === 'closed' ? T.badgeClosed : T.badgeActive
                               }`}
                             >
                               {!room ? '룸 없음' : room.status === 'closed' ? '룸 닫힘' : '룸 활성'}
                             </span>
                             {booking.invite.customer_active && (
-                              <span className={`rounded-full px-2 py-0.5 text-[10px] font-medium ${T.badgeCustomer}`}>
+                              <span className={`rounded-full px-2 py-0.5 tr-meta font-medium ${T.badgeCustomer}`}>
                                 손님 링크 발급됨
                               </span>
                             )}
                             {booking.invite.guide_active && (
-                              <span className={`rounded-full px-2 py-0.5 text-[10px] font-medium ${T.badgeGuide}`}>
+                              <span className={`rounded-full px-2 py-0.5 tr-meta font-medium ${T.badgeGuide}`}>
                                 운영자 링크 발급됨
                               </span>
                             )}
                           </p>
                         </div>
-                        {room && <span className={`shrink-0 text-[11px] ${T.sub}`}>룸 열기 →</span>}
+                        {room && <span className={`shrink-0 tr-meta ${T.sub}`}>룸 열기 →</span>}
                       </button>
 
                       <div className="mt-2.5 grid grid-cols-2 gap-1.5">
@@ -430,7 +430,7 @@ export default function OpsRoomManager({
                           type="button"
                           onClick={() => void dispatchInvites(booking)}
                           disabled={busy === `${booking.id}:dispatch`}
-                          className="flex h-10 items-center justify-center gap-1.5 rounded-xl bg-blue-600 text-[12px] font-semibold text-white disabled:opacity-50"
+                          className="flex h-10 items-center justify-center gap-1.5 rounded-xl bg-blue-600 tr-label font-semibold text-white disabled:opacity-50"
                         >
                           {busy === `${booking.id}:dispatch` ? (
                             <Loader2 className="size-4 animate-spin" />
@@ -446,7 +446,7 @@ export default function OpsRoomManager({
                             type="button"
                             onClick={() => onOpenRoom(room.id, 'vehicle')}
                             data-testid={`manager-vehicle-${booking.id}`}
-                            className="flex h-10 items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-accent)] text-[12px] font-semibold text-[var(--tr-bubble-me-ink)]"
+                            className="flex h-10 items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-accent)] tr-label font-semibold text-[var(--tr-bubble-me-ink)]"
                           >
                             <CarFront className="size-4" />
                             차량 배정
@@ -457,7 +457,7 @@ export default function OpsRoomManager({
                             type="button"
                             onClick={() => void setRoomStatus(booking, room.status === 'closed' ? 'active' : 'closed')}
                             disabled={busy === `${booking.id}:status`}
-                            className={`flex h-10 items-center justify-center gap-1.5 rounded-xl text-[12px] font-semibold disabled:opacity-50 ${T.secondaryBtn}`}
+                            className={`flex h-10 items-center justify-center gap-1.5 rounded-xl tr-label font-semibold disabled:opacity-50 ${T.secondaryBtn}`}
                           >
                             {room.status === 'closed' ? '룸 재개' : '룸 닫기'}
                           </button>
@@ -466,7 +466,7 @@ export default function OpsRoomManager({
                             type="button"
                             onClick={() => void mintLink(booking, 'customer')}
                             disabled={busy === `${booking.id}:customer`}
-                            className={`flex h-10 items-center justify-center gap-1.5 rounded-xl text-[12px] font-semibold disabled:opacity-50 ${T.secondaryBtn}`}
+                            className={`flex h-10 items-center justify-center gap-1.5 rounded-xl tr-label font-semibold disabled:opacity-50 ${T.secondaryBtn}`}
                           >
                             룸 만들기 + 링크
                           </button>
@@ -519,12 +519,12 @@ export default function OpsRoomManager({
           onClick={() => setQrOpen(null)}
         >
           <div className="w-full max-w-xs rounded-2xl bg-white p-5 text-center" onClick={(e) => e.stopPropagation()}>
-            <p className="text-[13px] font-semibold text-slate-900">{qrOpen.title}</p>
+            <p className="tr-card-text font-semibold text-slate-900">{qrOpen.title}</p>
             {qrOpen.link.qr_data_url ? (
               // eslint-disable-next-line @next/next/no-img-element -- data URL QR, next/image gains nothing
               <img src={qrOpen.link.qr_data_url} alt="QR 코드" className="mx-auto mt-3 w-full max-w-[240px]" />
             ) : (
-              <p className="mt-3 text-[12px] text-slate-500">QR 생성 실패 — 링크를 복사해 전달하세요.</p>
+              <p className="mt-3 tr-label text-slate-500">QR 생성 실패 — 링크를 복사해 전달하세요.</p>
             )}
             <button
               type="button"
@@ -533,7 +533,7 @@ export default function OpsRoomManager({
                   ok ? toast.success('링크를 복사했습니다') : toast.error('복사 실패'),
                 );
               }}
-              className="mt-3 flex h-10 w-full items-center justify-center gap-1.5 rounded-xl bg-slate-900 text-[13px] font-semibold text-white"
+              className="mt-3 flex h-10 w-full items-center justify-center gap-1.5 rounded-xl bg-slate-900 tr-card-text font-semibold text-white"
             >
               <Copy className="size-4" /> 링크 복사
             </button>
@@ -545,7 +545,7 @@ export default function OpsRoomManager({
                     ok ? toast.success('일정(/plan) 링크를 복사했습니다') : toast.error('복사 실패'),
                   );
                 }}
-                className="mt-2 flex h-10 w-full items-center justify-center gap-1.5 rounded-xl bg-amber-500 text-[13px] font-semibold text-white"
+                className="mt-2 flex h-10 w-full items-center justify-center gap-1.5 rounded-xl bg-amber-500 tr-card-text font-semibold text-white"
               >
                 <Copy className="size-4" /> 일정 만들기 링크 복사
               </button>
@@ -553,7 +553,7 @@ export default function OpsRoomManager({
             <button
               type="button"
               onClick={() => setQrOpen(null)}
-              className="mt-2 h-9 w-full rounded-xl text-[13px] font-medium text-slate-500"
+              className="mt-2 h-9 w-full rounded-xl tr-card-text font-medium text-slate-500"
             >
               닫기
             </button>
@@ -600,7 +600,7 @@ function LinkAction({
         type="button"
         onClick={onMint}
         disabled={busy}
-        className={`flex flex-1 items-center justify-center gap-1.5 text-[12px] font-semibold disabled:opacity-50 ${T.linkText}`}
+        className={`flex flex-1 items-center justify-center gap-1.5 tr-label font-semibold disabled:opacity-50 ${T.linkText}`}
       >
         {busy ? <Loader2 className="size-4 animate-spin" /> : <Copy className="size-3.5" />}
         {label}
@@ -705,7 +705,7 @@ function ManualBookingSheet({
     }
   };
 
-  const field = `h-11 w-full rounded-xl border px-3 text-[14px] ${T.input}`;
+  const field = `h-11 w-full rounded-xl border px-3 tr-body ${T.input}`;
 
   return (
     <div className="fixed inset-0 z-[70] flex items-end justify-center bg-black/60" onClick={onClose}>
@@ -715,18 +715,18 @@ function ManualBookingSheet({
         data-testid="manual-booking-sheet"
       >
         <div className="flex items-center justify-between">
-          <h3 className="text-[16px] font-bold">수동 예약 등록</h3>
+          <h3 className="tr-title font-bold">수동 예약 등록</h3>
           <button type="button" onClick={onClose} aria-label="닫기" className={`rounded-lg p-2 ${T.iconBtn}`}>
             <X className="size-5" />
           </button>
         </div>
-        <p className={`mt-0.5 text-[12px] ${T.label}`}>
+        <p className={`mt-0.5 tr-label ${T.label}`}>
           OTA·전화 예약·테스트용 — 등록 즉시 룸/링크/일정/기사 콘솔이 전부 작동합니다. 결제는 청구되지 않아요.
         </p>
 
         <div className="mt-4 space-y-3">
           <div>
-            <label className={`mb-1 block text-[12px] font-semibold ${T.label}`}>채널</label>
+            <label className={`mb-1 block tr-label font-semibold ${T.label}`}>채널</label>
             <select value={channel} onChange={(e) => setChannel(e.target.value)} className={field}>
               {CHANNEL_OPTIONS.map((option) => (
                 <option key={option.value} value={option.value}>{option.label}</option>
@@ -734,7 +734,7 @@ function ManualBookingSheet({
             </select>
           </div>
           <div>
-            <label className={`mb-1 block text-[12px] font-semibold ${T.label}`}>투어 *</label>
+            <label className={`mb-1 block tr-label font-semibold ${T.label}`}>투어 *</label>
             <select value={tourId} onChange={(e) => setTourId(e.target.value)} className={field} data-testid="mb-tour">
               {tours.length === 0 && <option value="">불러오는 중…</option>}
               {tours.map((tour) => (
@@ -746,35 +746,35 @@ function ManualBookingSheet({
           </div>
           <div className="grid grid-cols-2 gap-2">
             <div>
-              <label className={`mb-1 block text-[12px] font-semibold ${T.label}`}>투어일 *</label>
+              <label className={`mb-1 block tr-label font-semibold ${T.label}`}>투어일 *</label>
               <input type="date" value={tourDate} onChange={(e) => setTourDate(e.target.value)} className={field} data-testid="mb-date" />
             </div>
             <div>
-              <label className={`mb-1 block text-[12px] font-semibold ${T.label}`}>시작 시간</label>
+              <label className={`mb-1 block tr-label font-semibold ${T.label}`}>시작 시간</label>
               <input type="time" value={tourTime} onChange={(e) => setTourTime(e.target.value)} className={field} />
             </div>
           </div>
           <div>
-            <label className={`mb-1 block text-[12px] font-semibold ${T.label}`}>고객명 *</label>
+            <label className={`mb-1 block tr-label font-semibold ${T.label}`}>고객명 *</label>
             <input value={contactName} onChange={(e) => setContactName(e.target.value)} placeholder="예: Caroline Anne" className={field} data-testid="mb-name" />
           </div>
           <div>
-            <label className={`mb-1 block text-[12px] font-semibold ${T.label}`}>이메일 (초대 메일 수신 — OTA 릴레이 주소 OK)</label>
+            <label className={`mb-1 block tr-label font-semibold ${T.label}`}>이메일 (초대 메일 수신 — OTA 릴레이 주소 OK)</label>
             <input value={contactEmail} onChange={(e) => setContactEmail(e.target.value)} placeholder="customer-xxx@reply.getyourguide.com" className={field} />
           </div>
           <div className="grid grid-cols-2 gap-2">
             <div>
-              <label className={`mb-1 block text-[12px] font-semibold ${T.label}`}>전화</label>
+              <label className={`mb-1 block tr-label font-semibold ${T.label}`}>전화</label>
               <input value={contactPhone} onChange={(e) => setContactPhone(e.target.value)} placeholder="+33..." className={field} />
             </div>
             <div>
-              <label className={`mb-1 block text-[12px] font-semibold ${T.label}`}>인원</label>
+              <label className={`mb-1 block tr-label font-semibold ${T.label}`}>인원</label>
               <input type="number" min={1} max={40} value={guests} onChange={(e) => setGuests(e.target.value)} className={field} />
             </div>
           </div>
           <div className="grid grid-cols-2 gap-2">
             <div>
-              <label className={`mb-1 block text-[12px] font-semibold ${T.label}`}>손님 언어</label>
+              <label className={`mb-1 block tr-label font-semibold ${T.label}`}>손님 언어</label>
               <select value={language} onChange={(e) => setLanguage(e.target.value)} className={field}>
                 {LANGUAGE_OPTIONS.map((lang) => (
                   <option key={lang} value={lang}>{lang}</option>
@@ -782,12 +782,12 @@ function ManualBookingSheet({
               </select>
             </div>
             <div>
-              <label className={`mb-1 block text-[12px] font-semibold ${T.label}`}>금액 (참고용, ₩)</label>
+              <label className={`mb-1 block tr-label font-semibold ${T.label}`}>금액 (참고용, ₩)</label>
               <input inputMode="numeric" value={totalPrice} onChange={(e) => setTotalPrice(e.target.value)} placeholder="97000" className={field} />
             </div>
           </div>
           <div>
-            <label className={`mb-1 block text-[12px] font-semibold ${T.label}`}>외부 예약번호 (GYG ref 등)</label>
+            <label className={`mb-1 block tr-label font-semibold ${T.label}`}>외부 예약번호 (GYG ref 등)</label>
             <input value={externalRef} onChange={(e) => setExternalRef(e.target.value)} placeholder="GYGBLHK75KZ3" className={field} />
           </div>
         </div>
@@ -796,7 +796,7 @@ function ManualBookingSheet({
           type="button"
           onClick={() => void submit()}
           disabled={saving}
-          className="mt-5 flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-blue-600 text-[15px] font-bold text-white disabled:opacity-50"
+          className="mt-5 flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-blue-600 tr-body font-bold text-white disabled:opacity-50"
           data-testid="mb-submit"
         >
           {saving ? <Loader2 className="size-5 animate-spin" /> : <Plus className="size-5" />}

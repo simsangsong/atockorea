@@ -128,10 +128,10 @@ export default function CardSetEditor({
   return (
     <div className="space-y-3">
       <div className="flex flex-wrap items-center gap-1.5">
-        <span className="rounded-full bg-[var(--tr-surface-2)] px-2.5 py-1 text-[11px] font-semibold text-[var(--tr-ink-2)]">
+        <span className="rounded-full bg-[var(--tr-surface-2)] px-2.5 py-1 tr-meta font-semibold text-[var(--tr-ink-2)]">
           현재 적용: {SOURCE_LABEL[resolved.card_ids_source]}
         </span>
-        <span className="text-[11px] text-[var(--tr-ink-3)]">{cardIds.length}장 · 위에서부터 순서대로 발송</span>
+        <span className="tr-meta text-[var(--tr-ink-3)]">{cardIds.length}장 · 위에서부터 순서대로 발송</span>
       </div>
 
       <ol className="space-y-2">
@@ -141,19 +141,19 @@ export default function CardSetEditor({
           return (
             <li key={id} className="rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] p-3">
               <div className="flex items-start gap-2">
-                <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-[var(--tr-accent-soft)] text-[10px] font-bold text-[var(--tr-accent-deep)]">
+                <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-[var(--tr-accent-soft)] tr-meta font-bold text-[var(--tr-accent-deep)]">
                   {index + 1}
                 </span>
                 <div className="min-w-0 flex-1">
-                  <p className="text-[13px] font-bold text-[var(--tr-ink)]">
+                  <p className="tr-card-text font-bold text-[var(--tr-ink)]">
                     {card.label}
                     {card.pushes && (
-                      <span className="ml-1.5 rounded bg-[var(--tr-surface)] px-1.5 py-0.5 text-[10px] font-semibold text-[var(--tr-ink-2)]">
+                      <span className="ml-1.5 rounded bg-[var(--tr-surface)] px-1.5 py-0.5 tr-meta font-semibold text-[var(--tr-ink-2)]">
                         푸시
                       </span>
                     )}
                   </p>
-                  <p className="mt-0.5 text-[11px] leading-relaxed text-[var(--tr-ink-2)]">{card.summary}</p>
+                  <p className="mt-0.5 tr-meta leading-relaxed text-[var(--tr-ink-2)]">{card.summary}</p>
                 </div>
                 <div className="flex shrink-0 gap-1">
                   <button
@@ -178,7 +178,7 @@ export default function CardSetEditor({
                     type="button"
                     onClick={() => remove(id)}
                     disabled={busy || cardIds.length <= 1}
-                    className="h-8 rounded-lg border border-[var(--tr-hairline)] px-2 text-[11px] font-semibold text-[var(--tr-ink-2)] disabled:opacity-30"
+                    className="h-8 rounded-lg border border-[var(--tr-hairline)] px-2 tr-meta font-semibold text-[var(--tr-ink-2)] disabled:opacity-30"
                   >
                     제외
                   </button>
@@ -200,10 +200,10 @@ export default function CardSetEditor({
                     }
                   />
                   <span className="min-w-0">
-                    <span className="block text-[12px] font-semibold text-[var(--tr-ink)]">
+                    <span className="block tr-label font-semibold text-[var(--tr-ink)]">
                       {card.option.label}
                     </span>
-                    <span className="block text-[11px] leading-relaxed text-[var(--tr-ink-3)]">
+                    <span className="block tr-meta leading-relaxed text-[var(--tr-ink-3)]">
                       {card.option.help}
                     </span>
                   </span>
@@ -212,8 +212,8 @@ export default function CardSetEditor({
 
               {card.option?.group === 'lunch' && (
                 <label className="mt-2 block rounded-lg bg-[var(--tr-surface)] p-2">
-                  <span className="block text-[12px] font-semibold text-[var(--tr-ink)]">{card.option.label}</span>
-                  <span className="mb-1.5 block text-[11px] leading-relaxed text-[var(--tr-ink-3)]">
+                  <span className="block tr-label font-semibold text-[var(--tr-ink)]">{card.option.label}</span>
+                  <span className="mb-1.5 block tr-meta leading-relaxed text-[var(--tr-ink-3)]">
                     {card.option.help}
                   </span>
                   <select
@@ -230,7 +230,7 @@ export default function CardSetEditor({
                         },
                       }))
                     }
-                    className="h-10 w-full rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] px-2 text-[13px] text-[var(--tr-ink)]"
+                    className="h-10 w-full rounded-lg border border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] px-2 tr-card-text text-[var(--tr-ink)]"
                   >
                     <option value="inherit">투어 상품 설정 그대로</option>
                     <option value="yes">점심 포함으로 안내</option>
@@ -245,7 +245,7 @@ export default function CardSetEditor({
 
       {excluded.length > 0 && (
         <div className="rounded-xl border border-dashed border-[var(--tr-hairline)] p-3">
-          <p className="mb-1.5 text-[11px] font-semibold text-[var(--tr-ink-2)]">제외된 카드</p>
+          <p className="mb-1.5 tr-meta font-semibold text-[var(--tr-ink-2)]">제외된 카드</p>
           <div className="flex flex-wrap gap-1.5">
             {excluded.map((card) => (
               <button
@@ -253,7 +253,7 @@ export default function CardSetEditor({
                 type="button"
                 onClick={() => add(card.id)}
                 disabled={busy}
-                className="h-8 rounded-full border border-[var(--tr-hairline)] px-3 text-[11px] font-medium text-[var(--tr-ink-2)] disabled:opacity-40"
+                className="h-8 rounded-full border border-[var(--tr-hairline)] px-3 tr-meta font-medium text-[var(--tr-ink-2)] disabled:opacity-40"
               >
                 + {card.label}
               </button>
@@ -263,13 +263,13 @@ export default function CardSetEditor({
       )}
 
       {noStartCard && (
-        <p className="flex items-start gap-1.5 text-[11px] leading-relaxed text-amber-700 dark:text-amber-300">
+        <p className="flex items-start gap-1.5 tr-meta leading-relaxed text-amber-700 dark:text-amber-300">
           <Info className="mt-0.5 size-3 shrink-0" />
           시작 브리핑을 빼면 이 투어는 <b>푸시 알림이 한 건도 나가지 않아요</b>. 나머지 카드는 앱을 열어야 보입니다.
         </p>
       )}
 
-      <p className="flex items-start gap-1.5 rounded-lg bg-[var(--tr-surface-2)] p-2 text-[11px] leading-relaxed text-[var(--tr-ink-3)]">
+      <p className="flex items-start gap-1.5 rounded-lg bg-[var(--tr-surface-2)] p-2 tr-meta leading-relaxed text-[var(--tr-ink-3)]">
         <Info className="mt-0.5 size-3 shrink-0" />
         카드 <b>문구</b>는 여기서 바꿀 수 없어요. 5개 언어로 미리 번역된 고정 문구라서 자유 입력을 열면 번역되지
         않은 한국어가 손님에게 그대로 나갑니다. 특정 룸에만 하고 싶은 말이 있으면 관제 공지로 보내주세요.
@@ -281,7 +281,7 @@ export default function CardSetEditor({
             type="button"
             onClick={onClear}
             disabled={busy}
-            className="flex h-11 flex-1 items-center justify-center gap-1.5 rounded-xl border border-[var(--tr-hairline)] text-[12px] font-semibold text-[var(--tr-ink-2)] disabled:opacity-40"
+            className="flex h-11 flex-1 items-center justify-center gap-1.5 rounded-xl border border-[var(--tr-hairline)] tr-label font-semibold text-[var(--tr-ink-2)] disabled:opacity-40"
           >
             <RotateCcw className="size-3.5" /> {inheritLabel}으로 되돌리기
           </button>
@@ -290,7 +290,7 @@ export default function CardSetEditor({
           type="button"
           onClick={save}
           disabled={busy || !dirty}
-          className="flex h-11 flex-1 items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-accent)] text-[12px] font-semibold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
+          className="flex h-11 flex-1 items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-accent)] tr-label font-semibold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
         >
           {busy ? <Loader2 className="size-3.5 animate-spin" /> : null} 저장
         </button>

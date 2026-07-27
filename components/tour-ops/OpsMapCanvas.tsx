@@ -89,7 +89,7 @@ export default function OpsMapCanvas({
   if (!isLoaded) {
     return (
       <div className="flex h-full min-h-[300px] items-center justify-center rounded-2xl bg-[var(--tr-surface)]">
-        <span className="text-[13px] text-[var(--tr-ink-3)]">지도를 불러오는 중…</span>
+        <span className="tr-card-text text-[var(--tr-ink-3)]">지도를 불러오는 중…</span>
       </div>
     );
   }

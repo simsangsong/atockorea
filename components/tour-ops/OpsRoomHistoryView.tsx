@@ -97,7 +97,7 @@ export default function OpsRoomHistoryView({
         style={{ paddingTop: 'calc(env(safe-area-inset-top, 0px) + 8px)' }}
       >
         <div className="flex min-h-[40px] items-center justify-between gap-2">
-          <h2 className="text-cjk-safe text-[15px] font-bold">투어룸 생성 내역</h2>
+          <h2 className="text-cjk-safe tr-body font-bold">투어룸 생성 내역</h2>
           <div className="flex items-center gap-1">
             <a
               href={`/api/admin/tour-ops/rooms/monthly/export?period=${period}&format=xlsx`}
@@ -134,7 +134,7 @@ export default function OpsRoomHistoryView({
           >
             <ChevronLeft className="size-4" />
           </button>
-          <span className="min-w-[76px] text-center text-[14px] font-bold tabular-nums">{period}</span>
+          <span className="min-w-[76px] text-center tr-body font-bold tabular-nums">{period}</span>
           <button
             type="button"
             onClick={() => step(1)}
@@ -144,7 +144,7 @@ export default function OpsRoomHistoryView({
             <ChevronRight className="size-4" />
           </button>
           {summary && (
-            <p className="text-cjk-body ml-auto text-right text-[11px] leading-tight text-[var(--tr-ink-3)]">
+            <p className="text-cjk-body ml-auto text-right tr-meta leading-tight text-[var(--tr-ink-3)]">
               방 {summary.roomCount} · 손님 {summary.guestTotal}명
               <br />
               메시지 {summary.messageTotal}
@@ -173,7 +173,7 @@ export default function OpsRoomHistoryView({
                 type="button"
                 onClick={() => setFilter(f.key)}
                 aria-pressed={on}
-                className={`text-cjk-safe shrink-0 rounded-full px-3 py-1.5 text-[12px] font-semibold transition-colors ${
+                className={`text-cjk-safe shrink-0 rounded-full px-3 py-1.5 tr-label font-semibold transition-colors ${
                   on
                     ? 'bg-[var(--tr-ink)] text-[var(--tr-canvas)]'
                     : 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]'
@@ -188,16 +188,16 @@ export default function OpsRoomHistoryView({
 
       <div className="min-h-0 flex-1 overflow-y-auto px-3 py-3">
         {data?.truncated && (
-          <p className="text-cjk-body mb-2 rounded-lg bg-amber-100 px-3 py-2 text-[11px] leading-relaxed text-amber-900 dark:bg-amber-500/15 dark:text-amber-200">
+          <p className="text-cjk-body mb-2 rounded-lg bg-amber-100 px-3 py-2 tr-meta leading-relaxed text-amber-900 dark:bg-amber-500/15 dark:text-amber-200">
             이 달의 하위 데이터가 조회 상한에 닿았습니다. 아래 집계는 <b>최소값</b>이며 실제
             메시지·참가자 수는 더 많을 수 있습니다.
           </p>
         )}
 
         {loading && !data ? (
-          <p className="py-12 text-center text-[13px] text-[var(--tr-ink-3)]">불러오는 중…</p>
+          <p className="py-12 text-center tr-card-text text-[var(--tr-ink-3)]">불러오는 중…</p>
         ) : rows.length === 0 ? (
-          <p className="text-cjk-body py-12 text-center text-[13px] text-[var(--tr-ink-3)]">
+          <p className="text-cjk-body py-12 text-center tr-card-text text-[var(--tr-ink-3)]">
             {filter === 'dead'
               ? '손님이 안 들어온 방이 없습니다 👍'
               : '이 조건에 해당하는 방이 없습니다.'}
@@ -213,23 +213,23 @@ export default function OpsRoomHistoryView({
                 >
                   <div className="flex items-start gap-2">
                     <div className="min-w-0 flex-1">
-                      <p className="flex items-center gap-1.5 text-[14px] font-bold">
+                      <p className="flex items-center gap-1.5 tr-body font-bold">
                         <span className="tabular-nums">{r.tourDate ?? '날짜 미상'}</span>
                         <span className="text-[var(--tr-ink-3)]">·</span>
                         <span className="truncate">{r.contactName ?? '이름 없음'}</span>
                       </p>
-                      <p className="truncate text-[12px] text-[var(--tr-ink-2)]">
+                      <p className="truncate tr-label text-[var(--tr-ink-2)]">
                         {r.tourTitle ?? '상품 미상'}
                         {r.city ? ` · ${r.city}` : ''}
                       </p>
-                      <p className="mt-0.5 text-[11px] text-[var(--tr-ink-3)] tabular-nums">
+                      <p className="mt-0.5 tr-meta text-[var(--tr-ink-3)] tabular-nums">
                         예약 {r.guests ?? '?'}명 · 입장 {r.guestCount}명 · 초대 {r.inviteCount}
                         {r.liveInviteCount !== r.inviteCount ? `(유효 ${r.liveInviteCount})` : ''} · 메시지{' '}
                         {r.guestMessageCount}/{r.messageCount}
                       </p>
                     </div>
                     <span
-                      className={`text-cjk-safe shrink-0 rounded-full px-2 py-0.5 text-[10px] font-bold ${HEALTH_TONE[r.health]}`}
+                      className={`text-cjk-safe shrink-0 rounded-full px-2 py-0.5 tr-meta font-bold ${HEALTH_TONE[r.health]}`}
                     >
                       {ROOM_HEALTH_LABEL[r.health]}
                     </span>
