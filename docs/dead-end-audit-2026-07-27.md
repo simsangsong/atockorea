@@ -219,5 +219,8 @@ delete-user-without-profile,send-verification-code,verify-code}` ·
 | DE4 `courseToStopSeeds` 중복 제거 | ✅ |
 | **DE6 없는 테이블 16개 생성 + 상설 게이트** | 완료 |
 | **DE5 파서 학습 루프 승격 화면** | 완료 — /admin/parse-rules + 라우트 2종 + DB CHECK 하한 |
-| TIER 2 11건 | 결정 대기 (사장님 우선순위) |
+| **DE7 픽업 표준지점 사전 화면** | 완료 — /admin/pickup-dictionary + 큐 승인 |
+| TIER 2 `unknownTokens` | 완료 — 문구 편집 화면이 미치환 토큰을 경고한다 |
+| TIER 2 나머지 10건 | 결정 대기 (사장님 우선순위) |
+| TIER 3 잔해 | **그대로 둔다** — 전부 가드/레이트리밋이 있고, 지우기는 위험이 확인됐다 |
 | TIER 3 잔해 정리 | 결정 대기 |
