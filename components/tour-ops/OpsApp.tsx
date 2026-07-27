@@ -503,6 +503,10 @@ export default function OpsApp() {
               type="button"
               onClick={() => selectTab(key)}
               aria-current={active ? 'page' : undefined}
+              /* O0 — the walk harness drives the ops center through these, so
+                 they must survive the O1 chrome rewrite. Label text alone is
+                 not a stable handle: it is Korean copy that O2 will re-typeset. */
+              data-testid={`ops-tab-${key}`}
               className={`relative flex h-[64px] flex-1 flex-col items-center justify-center gap-0.5 text-[10px] font-medium transition-colors ${
                 active ? 'text-[var(--tr-ink)]' : 'text-[var(--tr-ink-3)]'
               }`}

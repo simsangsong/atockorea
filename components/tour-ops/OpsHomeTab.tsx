@@ -280,12 +280,21 @@ export default function OpsHomeTab({
           );
           const className =
             'block min-h-[104px] rounded-2xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] p-3.5 text-left transition-colors active:bg-[var(--tr-surface-2)]';
+          // O0 — every ops overlay is reached through one of these tiles, so the
+          // walk opens them by key rather than by Korean title text (which O2
+          // re-typesets and O5 may reword).
           return href ? (
-            <a key={key} href={href} className={className}>
+            <a key={key} href={href} className={className} data-testid={`ops-tile-${key}`}>
               {body}
             </a>
           ) : (
-            <button key={key} type="button" onClick={onClick} className={className}>
+            <button
+              key={key}
+              type="button"
+              onClick={onClick}
+              className={className}
+              data-testid={`ops-tile-${key}`}
+            >
               {body}
             </button>
           );
