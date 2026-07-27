@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { resolvePickupDetail } from '@/lib/bookings/pickupDetail';
 import { createServerClient } from '@/lib/supabase';
 import { requireAdmin } from '@/lib/auth';
 import type { ManifestBooking } from '@/lib/ops/manifest/group';
@@ -125,15 +126,11 @@ export async function GET(req: NextRequest) {
     }
 
     const manifest: ManifestBooking[] = rows.map((row) => {
-      const point = Array.isArray(row.pickup_points) ? row.pickup_points[0] : row.pickup_points;
-      const meta = row.ota_raw_meta ?? {};
-      const pickupName =
-        (point?.name as string | undefined) ??
-        (typeof meta.pickup_normalized === 'string' ? meta.pickup_normalized : null) ??
-        (typeof meta.pickup_raw === 'string' ? meta.pickup_raw : null);
-      const pickupTime =
-        (point?.pickup_time as string | undefined) ??
-        (typeof meta.pickup_time === 'string' ? meta.pickup_time : null);
+      // DE8 — 손님 스냅샷과 **같은 리졸버**. 이 로직이 여기에만 인라인으로
+      // 있었기 때문에, 같은 예약의 픽업을 가이드는 보고 손님은 못 봤다.
+      const detail = resolvePickupDetail(row);
+      const pickupName = detail?.name ?? null;
+      const pickupTime = detail?.pickup_time ?? null;
       const wa = waByBooking.get(row.id);
       const email = emailByBooking.get(row.id);
       return {

@@ -9,6 +9,7 @@
  */
 
 import type { RoomBooking, RoomDbClient, TourRoom } from '@/lib/tour-room/access';
+import { pickupDetailAsJoin, resolvePickupDetail } from '@/lib/bookings/pickupDetail';
 import { mergeTranslationTargets } from '@/lib/tour-room/chatLocale';
 import { resolveDaySchedule, type DayPlanRow, type ScheduleSource } from '@/lib/tour-room/dayPlan';
 import {
@@ -242,6 +243,7 @@ export async function buildRoomSnapshot(
         .from('bookings')
         .select(
           `id, booking_reference, tour_date, tour_time, number_of_guests, contact_name, itinerary,
+           ota_raw_meta,
            tours ( id, slug, title, city, image_url, schedule, price_type ),
            pickup_points ( id, name, address, lat, lng, pickup_time )`,
         )
@@ -274,7 +276,9 @@ export async function buildRoomSnapshot(
       tourId && booking.tour_date
         ? supabase
             .from('bookings')
-            .select('id, pickup_points ( id, name, lat, lng, pickup_time )')
+            // DE8 — 실제 픽업 값은 대부분 ota_raw_meta 에 있다. 이걸 안 읽으면
+            // 픽업 순서가 통째로 비어 손님이 자기 차례를 못 본다.
+            .select('id, ota_raw_meta, pickup_points ( id, name, lat, lng, pickup_time )')
             .eq('tour_id', tourId)
             .eq('tour_date', booking.tour_date)
         : Promise.resolve({ data: [], error: null }),
@@ -328,7 +332,9 @@ export async function buildRoomSnapshot(
           number_of_guests: bookingRow.number_of_guests ?? null,
           contact_name: bookingRow.contact_name ?? null,
           tours: tour,
-          pickup_points: bookingRow.pickup_points ?? null,
+          // DE8 — 관제 명단과 **같은 리졸버**. 예전에는 스냅샷만 구조화된 지점을
+          // 읽어서, 같은 예약을 가이드는 보고 손님은 못 보는 상태였다.
+          pickup_points: pickupDetailAsJoin(resolvePickupDetail(bookingRow)),
         }
       : null,
     messages,
@@ -371,17 +377,19 @@ export function buildPickupSequence(
 ): PickupSequenceStop[] {
   const stops: PickupSequenceStop[] = [];
   if (!Array.isArray(rows)) return stops; // degraded snapshot section (read bundle contract)
-  for (const row of rows as Array<{ id: string; pickup_points: unknown }>) {
-    const point = Array.isArray(row.pickup_points) ? row.pickup_points[0] : row.pickup_points;
-    if (!point || typeof point !== 'object') continue;
-    const p = point as { id?: string; name?: string; lat?: number; lng?: number; pickup_time?: string };
+  for (const row of rows as Array<{ id: string; pickup_points: unknown; ota_raw_meta?: unknown }>) {
+    // DE8 — 예약 한 건의 픽업은 한 곳에서만 해석한다. 예전에는 여기서 구조화된
+    // 지점만 읽어, 실제 값이 ota_raw_meta 에 있는 라이브 예약은 순서에서 통째로
+    // 빠졌다(= 손님이 자기 차례를 못 봄).
+    const detail = resolvePickupDetail(row);
+    if (!detail) continue;
     stops.push({
       booking_id: row.id,
-      pickup_point_id: p.id ?? null,
-      name: p.name ?? null,
-      lat: typeof p.lat === 'number' ? p.lat : null,
-      lng: typeof p.lng === 'number' ? p.lng : null,
-      pickup_time: p.pickup_time ?? null,
+      pickup_point_id: detail.pickup_point_id,
+      name: detail.name,
+      lat: detail.lat,
+      lng: detail.lng,
+      pickup_time: detail.pickup_time,
     });
   }
   return stops.sort((a, b) => {
