@@ -32,6 +32,7 @@ import {
 
 const PRESETS: Array<{ key: string; label: string }> = [
   { key: 'pickup_d1', label: '픽업 안내 (D-1)' },
+  { key: 'cruise_d1', label: '크루즈 D-1' },
   { key: 'room_invite', label: '룸 초대·좌석' },
   { key: 'day_pass', label: '당일 체크인' },
   { key: 'thanks', label: '종료 감사' },
@@ -53,6 +54,9 @@ interface AnnouncePayload {
   tourTitle: string | null;
   forecast: unknown;
   recipients: AnnounceRecipient[];
+  /** 크루즈 D-1 — 그날 기항 목록(배 선택 칩)과 서버가 고른 배. */
+  cruiseCalls?: Array<{ id: string; label: string; ship: string; port: string }> | null;
+  cruiseCallId?: string | null;
 }
 
 function buildMailto(email: string, subject: string | null, body: string): string {
@@ -73,6 +77,9 @@ export default function GuideAnnouncePanel({
   tourDate: string;
 }) {
   const [preset, setPreset] = useState('pickup_d1');
+  // 크루즈 D-1 — 같은 날 배가 여러 척이면 서버는 지어내지 않는다(missing 배지).
+  // 여기서 배를 고르면 cruiseCallId로 다시 받아와 문구가 채워진다.
+  const [cruiseCallId, setCruiseCallId] = useState<string | null>(null);
   const [data, setData] = useState<AnnouncePayload | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -92,6 +99,7 @@ export default function GuideAnnouncePanel({
         mint: '1',
         rt: token,
       });
+      if (cruiseCallId) qs.set('cruiseCallId', cruiseCallId);
       const res = await fetch(`/api/admin/tour-ops/manifest/bulk-message?${qs.toString()}`, {
         cache: 'no-store',
       });
@@ -104,7 +112,7 @@ export default function GuideAnnouncePanel({
     } finally {
       setLoading(false);
     }
-  }, [token, tourId, tourDate, preset]);
+  }, [token, tourId, tourDate, preset, cruiseCallId]);
 
   useEffect(() => {
     void load();
@@ -130,7 +138,10 @@ export default function GuideAnnouncePanel({
           <button
             key={p.key}
             type="button"
-            onClick={() => setPreset(p.key)}
+            onClick={() => {
+              setPreset(p.key);
+              setCruiseCallId(null);
+            }}
             aria-pressed={preset === p.key}
             className={`tr-label text-cjk-safe shrink-0 rounded-full border px-3 py-2 font-bold active:scale-95 ${
               preset === p.key
@@ -143,6 +154,37 @@ export default function GuideAnnouncePanel({
           </button>
         ))}
       </div>
+
+      {/* 크루즈 D-1 — 그날 기항 배 목록. 한 척이면 자동, 여러 척이면 여기서
+          고른다(고르기 전엔 {cruise_*}가 missing 배지로 남는다 — 지어내지 않음). */}
+      {preset === 'cruise_d1' && (data?.cruiseCalls?.length ?? 0) > 0 && (
+        <div className="flex flex-wrap gap-1.5" data-testid="announce-cruise-calls">
+          {data!.cruiseCalls!.map((c) => {
+            const active = (data?.cruiseCallId ?? null) === c.id;
+            return (
+              <button
+                key={c.id}
+                type="button"
+                onClick={() => setCruiseCallId(c.id)}
+                aria-pressed={active}
+                className={`tr-meta shrink-0 rounded-full border px-2.5 py-1.5 font-semibold active:scale-95 ${
+                  active
+                    ? 'border-[var(--tr-accent)] bg-[var(--tr-accent-soft)] text-[var(--tr-accent)]'
+                    : 'border-[var(--tr-hairline)] text-[var(--tr-ink-2)]'
+                }`}
+                data-testid={`announce-cruise-${c.id}`}
+              >
+                🛳️ {c.label}
+              </button>
+            );
+          })}
+        </div>
+      )}
+      {preset === 'cruise_d1' && data && (data.cruiseCalls?.length ?? 0) === 0 && (
+        <p className="tr-label rounded-xl bg-[var(--tr-danger-soft)] px-3 py-2 font-medium text-[var(--tr-danger)]" data-testid="announce-cruise-none">
+          이 날짜({tourDate})에 등록된 크루즈 기항이 없어요 — 선석배정 동기화(scripts/sync-cruise-schedule.ts)를 확인해 주세요.
+        </p>
+      )}
 
       <p className="tr-meta leading-snug text-[var(--tr-ink-3)]">
         버튼을 누르면 왓츠앱/메일 앱이 문구가 채워진 채 열려요 — <b>전송은 직접</b> 누릅니다.

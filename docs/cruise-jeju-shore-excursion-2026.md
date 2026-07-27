@@ -87,6 +87,14 @@ Mitsui Ocean Fuji(540·8~11월 ×5) · Asuka 3(744·×2) — 10~11h 체류, ja �
 - **W4 WiFi SOP**: v1=기사 폰 핫스팟(기기 0원), v2=에그 2대/차(1대는 자유시간에 리드 게스트 지참 — 길잃음 신호·복귀 카운트다운이 손님을 따라가야 함). 분실 보증금 규정 1줄.
 - **버퍼 불변식**: 복귀 = 출항 90분 전(all-aboard 통상 60분 전 + 30분 여유). 오전 8h 기항 = 실가용 6h, 오후 7.5h 기항 = 5.5h. 코스는 이 안에서만 설계.
 
+## §F-2 구현됨 (2026-07-27) — D-1 크루즈 자동 프리필
+
+- **`cruise_calls` 테이블 라이브** + `scripts/sync-cruise-schedule.ts`(도청 export 전량 미러링, 오늘 이후 delete→insert, 파싱 100행 미만이면 중단하는 포맷변경 가드). 현재 미래 665행 시드됨. 월 1회 실행 권장.
+- **토큰 4종**: `{cruise_ship}` `{cruise_arrive}` `{cruise_depart}` `{cruise_return_by}`(=출항 −60분, 사용자 확정 "출항 1시간 전 복귀 보장"). 계약은 `lib/ops/messaging/template.ts`.
+- **프리셋 `cruise_d1`** 6로케일 — ① 입항/출항 시각 ② "탑승 크루즈가 {cruise_ship}이 아니면 회신" 확인 요청 ③ 복귀 보장 문구. 관제 M4(OpsGuestMessagingView)와 가이드 패널(GuideAnnouncePanel) 양쪽에 노출.
+- **배 선택 규칙**(`lib/ops/cruise/schedule.ts pickCruiseCall`): 1척=자동, 복수+투어명/슬러그 항구 힌트=그 항구(복수면 최대 정원), 힌트 없으면 **지어내지 않고** missing 배지 + 패널 배 선택 칩.
+- 내부 코스 버퍼는 §F의 90분 유지 — 손님 약속 문구만 60분(언더프로미스).
+
 ## §G 부록 — 잔여 155회 전체 달력 (2026-07-27 기준 선석배정)
 
 | 날짜 | 시간 | 항구 | 유형 | 선박 | 정원 | 체류 |

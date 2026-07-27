@@ -33,6 +33,17 @@ export interface MessageVars {
   weather?: string | null;
   /** M1 — 착장 안내 한두 문장. */
   clothing?: string | null;
+  /**
+   * 크루즈 D-1 (docs/cruise-jeju-shore-excursion-2026.md) — 그날 기항에서
+   * 자동으로 채워진다(`cruise_calls`). 스케줄이 안 잡히면 **넣지 않는다**:
+   * cruise_d1 템플릿의 토큰이 missing 배지로 남아 운영자가 배를 고르게 된다.
+   */
+  cruiseShip?: string | null;
+  /** HH:MM (KST) */
+  cruiseArrive?: string | null;
+  cruiseDepart?: string | null;
+  /** 출항 60분 전 — 손님에게 약속하는 복귀 시각. */
+  cruiseReturnBy?: string | null;
 }
 
 /**
@@ -56,6 +67,10 @@ export const TEMPLATE_TOKENS = {
   '{operator}': (v: MessageVars) => v.operatorName ?? 'AtoC Korea',
   '{weather}': (v: MessageVars) => v.weather ?? '',
   '{clothing}': (v: MessageVars) => v.clothing ?? '',
+  '{cruise_ship}': (v: MessageVars) => v.cruiseShip ?? '',
+  '{cruise_arrive}': (v: MessageVars) => v.cruiseArrive ?? '',
+  '{cruise_depart}': (v: MessageVars) => v.cruiseDepart ?? '',
+  '{cruise_return_by}': (v: MessageVars) => v.cruiseReturnBy ?? '',
 } as const satisfies Record<string, (v: MessageVars) => string>;
 
 /**
