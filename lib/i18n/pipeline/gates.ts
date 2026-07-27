@@ -71,7 +71,13 @@ export function numberMultiset(text: string): string[] {
     new RegExp(`(\\d)${DIGIT_SEPARATORS.source}(\\d{3})(?!\\d)`, 'g'),
     '$1$2',
   );
-  return (collapsed.match(/\d+/g) ?? []).slice().sort();
+  // 🔴 선행 0은 값이 아니라 서식이다. 날짜를 현지 관례로 다시 쓰면 자리수가 채워진다 —
+  // 원문 `6/18–7/5`(en) → `18/06–05/07`(fr)은 **같은 값**인데, 문자열로 비교하면
+  // `06`≠`6`이라 "숫자 소실"로 잡혔다(2026-07-28 POI 번역 실측 오탐, 4개 언어 동시 탈락).
+  // 이 함수의 계약은 "서식은 무시하고 값만 비교한다"이므로 여기서 정규화한다.
+  return (collapsed.match(/\d+/g) ?? [])
+    .map((n) => n.replace(/^0+(?=\d)/, ''))
+    .sort();
 }
 
 /** 멀티셋 차집합 — a에는 있는데 b에는 없는 원소(중복 횟수까지 고려). */

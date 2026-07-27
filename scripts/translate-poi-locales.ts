@@ -334,7 +334,12 @@ async function main(): Promise<void> {
       }
       if (!outcome.target) {
         const fails = outcome.findings.filter((f) => f.severity === 'fail');
-        console.log(`게이트 탈락 — ${fails.slice(0, 2).map((f) => `${f.gate} ${f.pointer}`).join(', ')}`);
+        // The message carries which value moved — without it a G3 failure is
+        // indistinguishable between "the model altered a number" and "the gate
+        // mis-parsed a date", and those need opposite responses.
+        console.log(
+          `게이트 탈락 — ${fails.slice(0, 3).map((f) => `${f.gate} ${f.pointer}: ${f.message}`).join(' | ')}`,
+        );
         failed += 1;
         continue;
       }

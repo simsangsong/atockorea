@@ -93,7 +93,16 @@ describe('G3 숫자 — 값 변조 검출, 서식 변경 허용 (H2)', () => {
 
   it('천단위 구분기호는 합치고 날짜 구분점은 합치지 않는다', () => {
     expect(numberMultiset('1.100 m')).toEqual(['1100']);
-    expect(numberMultiset('02.07.2007')).toEqual(['02', '07', '2007']);
+    // 날짜는 여전히 세 개의 값으로 남는다(구분점을 합치지 않는다).
+    // 선행 0은 값이 아니라 서식이므로 정규화된다 — 아래 케이스가 그 이유다.
+    expect(numberMultiset('02.07.2007')).toEqual(['2', '2007', '7']);
+  });
+
+  it('날짜를 현지 표기로 다시 써도 값 소실로 보지 않는다', () => {
+    // 2026-07-28 실측: 원문 `6/18–7/5`(en) → `18/06–05/07`(fr). 같은 값인데
+    // `06`≠`6` 문자열 비교 때문에 4개 언어에서 동시에 G3 fail이 났다.
+    const f = checkNumbers('festival 6/18–7/5', 'festival du 18/06 au 05/07', '/p');
+    expect(f.filter((x) => x.severity === 'fail')).toHaveLength(0);
   });
 });
 
