@@ -68,7 +68,13 @@ type Phase =
 function JoinShell({ dark, locale, children }: { dark: boolean; locale: RoomLocale; children: ReactNode }) {
   return (
     <div className={dark ? 'dark' : ''}>
-      <div className="tr-root min-h-dvh bg-[var(--tr-canvas)] px-4 pb-10" data-locale={locale} lang={locale}>
+      <div className="tr-safe-top tr-root min-h-dvh bg-[var(--tr-canvas)] px-4"
+        // pb-10 composed with the inset rather than replaced: the home
+        // indicator eats the last ~34px in standalone.
+        style={{ paddingBottom: 'calc(2.5rem + env(safe-area-inset-bottom, 0px))' }}
+        data-locale={locale}
+        lang={locale}
+      >
         {children}
       </div>
     </div>
