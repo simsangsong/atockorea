@@ -141,6 +141,11 @@ const COPY: Record<
     dropPrompt: 'Où souhaitez-vous descendre? (nom du lieu)',
     ok: 'Partager',
     cancel: 'Annuler',
+    meet: '📍 Retrouvez-moi ici',
+    meetConfirm: 'Envoyer votre position exacte pour que le chauffeur navigue jusqu’à vous?',
+    photoAsk: 'Ajoutez une photo de l’endroit',
+    photoCaption: '📍 Ce que je vois d’ici',
+    skip: 'Passer',
   },
   de: {
     late: '🕒 Ich verspäte mich',
@@ -155,6 +160,11 @@ const COPY: Record<
     dropPrompt: 'Wo möchten Sie aussteigen? (Name des Ortes)',
     ok: 'Teilen',
     cancel: 'Abbrechen',
+    meet: '📍 Treffen Sie mich hier',
+    meetConfirm: 'Ihren genauen Standort senden, damit der Fahrer direkt zu Ihnen navigiert?',
+    photoAsk: 'Ein Foto von diesem Ort hinzufügen',
+    photoCaption: '📍 Das sehe ich von hier',
+    skip: 'Überspringen',
   },
   ru: {
     late: '🕒 Я опаздываю',
@@ -169,6 +179,11 @@ const COPY: Record<
     dropPrompt: 'Где вы хотите выйти? (название места)',
     ok: 'Поделиться',
     cancel: 'Отмена',
+    meet: '📍 Встретьте меня здесь',
+    meetConfirm: 'Отправить точное местоположение, чтобы водитель проложил маршрут прямо к вам?',
+    photoAsk: 'Добавьте одно фото этого места',
+    photoCaption: '📍 Вот что я вижу отсюда',
+    skip: 'Пропустить',
   },
   it: {
     late: '🕒 Sono in ritardo',
@@ -183,6 +198,11 @@ const COPY: Record<
     dropPrompt: 'Dove vuoi scendere? (nome del luogo)',
     ok: 'Condividi',
     cancel: 'Annulla',
+    meet: '📍 Vieni da me qui',
+    meetConfirm: 'Inviare la tua posizione esatta così l’autista arriva dritto da te?',
+    photoAsk: 'Aggiungi una foto di questo punto',
+    photoCaption: '📍 Ecco cosa vedo da qui',
+    skip: 'Salta',
   },
 };
 
