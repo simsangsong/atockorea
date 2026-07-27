@@ -95,8 +95,13 @@ export default function LocationShareCard({
           data-testid="location-toggle"
         >
           <span
-            className={`tr-knob absolute top-[2px] h-[22px] w-[22px] rounded-full bg-white shadow ${
-              enabled ? 'left-5' : 'left-[2px]'
+            /* T-D6와 같은 상태분리 색 — 고대비 다크에선 safe가 흰색이라
+               흰 노브가 트랙에 파묻힌다; bubble-me-ink는 전 스킨에서
+               액센트/세이프 계열 위에 보이는 페어링 불변식의 색이다. */
+            className={`tr-knob absolute top-[2px] h-[22px] w-[22px] rounded-full shadow ${
+              enabled
+                ? 'left-5 bg-[var(--tr-bubble-me-ink)]'
+                : 'left-[2px] border border-[var(--tr-hairline)] bg-[var(--tr-surface)]'
             }`}
           />
         </button>

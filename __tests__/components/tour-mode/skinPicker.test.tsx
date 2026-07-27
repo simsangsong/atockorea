@@ -36,7 +36,7 @@ beforeEach(() => {
 });
 
 describe('SkinPicker (C-D6)', () => {
-  it('renders all six skins with classic checked by default', () => {
+  it('renders every skin in TOUR_SKINS with classic checked by default', () => {
     render(<SkinPicker locale="ko" />);
     for (const skin of TOUR_SKINS) {
       expect(screen.getByTestId(`skin-${skin}`)).toBeInTheDocument();

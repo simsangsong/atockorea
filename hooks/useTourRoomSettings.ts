@@ -46,8 +46,23 @@ export function textScaleFactor(step: TextScaleStep): number {
  * background skin. Each value maps to a `.tr-root[data-tr-skin]` token block
  * (light + dark variants) in app/tour-room-theme.css. 'classic' is the deep
  * pine baseline and stamps no overrides.
+ *
+ * T-D4 (docs/pwa-ui-theme-design-master-plan-2026-07-27.md) adds four ambient
+ * Korea-mood pastels (jeju/seoul/busan/blossom), each with a SkinScenery
+ * scene. 'contrast' stays LAST — the accessibility skin closes the picker.
  */
-export const TOUR_SKINS = ['classic', 'sky', 'winter', 'forest', 'meadow', 'contrast'] as const;
+export const TOUR_SKINS = [
+  'classic',
+  'sky',
+  'winter',
+  'forest',
+  'meadow',
+  'jeju',
+  'seoul',
+  'busan',
+  'blossom',
+  'contrast',
+] as const;
 export type TourSkin = (typeof TOUR_SKINS)[number];
 export const DEFAULT_TOUR_SKIN: TourSkin = 'classic';
 

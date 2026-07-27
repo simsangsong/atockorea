@@ -13,6 +13,7 @@
 
 import { useState } from 'react';
 import { OPS_PHONE } from '@/components/tour-mode/cockpit/Cockpit';
+import InstallCard from '@/components/tour-mode/InstallCard';
 import SkinPicker from '@/components/tour-mode/SkinPicker';
 import { useTourRoomSettings, TEXT_SCALE_STEPS, type TextScaleStep } from '@/hooks/useTourRoomSettings';
 import {
@@ -184,6 +185,9 @@ export default function StaffSettings() {
           </div>
         </div>
       </section>
+
+      {/* T-D2 — 스태프도 매일 여는 앱: 설치 진입점 상설 (자기 은닉형). */}
+      <InstallCard locale="ko" surface="staff" />
 
       {OPS_PHONE ? (
         <a

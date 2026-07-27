@@ -10,7 +10,6 @@
  */
 
 import type { ReactNode } from 'react';
-import { quickRepliesForRole, type QuickReplyRole } from '@/lib/tour-room/quickReplies';
 import { CHAT_LANGUAGES } from '@/lib/tour-room/languages';
 import { ROOM_LOCALES, type RoomLocale } from '@/lib/tour-room/snapshot';
 import {
@@ -19,6 +18,7 @@ import {
   type TextScaleStep,
 } from '@/hooks/useTourRoomSettings';
 import AppManual from '@/components/tour-mode/AppManual';
+import InstallCard from '@/components/tour-mode/InstallCard';
 import SkinPicker from '@/components/tour-mode/SkinPicker';
 import CompanionInviteCard from '@/components/tour-mode/CompanionInviteCard';
 import type { ManualKind } from '@/lib/tour-room/appManual';
@@ -164,6 +164,11 @@ const COPY: Record<RoomLocale, SettingsCopy> = {
 };
 
 function Toggle({ checked, onChange, label }: { checked: boolean; onChange: (v: boolean) => void; label: string }) {
+  // T-D6 ① — knob color is state-split instead of hard white: checked rides
+  // the accent, so bubble-me-ink (the ≥4.5 pairing invariant) is the one color
+  // guaranteed visible on it in EVERY skin — hard white vanished on the
+  // high-contrast dark skin, whose accent IS white. Unchecked uses surface +
+  // hairline so the knob keeps a silhouette on the muted track in dark themes.
   return (
     <button
       type="button"
@@ -179,7 +184,13 @@ function Toggle({ checked, onChange, label }: { checked: boolean; onChange: (v: 
       }`}
     >
       <span
-        className={`tr-knob absolute top-[2px] h-[22px] w-[22px] rounded-full bg-white shadow ${checked ? 'left-5' : 'left-[2px]'}`}
+        /* 병합: T-D6 상태분리 색(고대비 스킨에서 흰 노브 소실 방지) ×
+           컴팩트 지오메트리(22px 노브, 2px 패딩). */
+        className={`tr-knob absolute top-[2px] h-[22px] w-[22px] rounded-full shadow ${
+          checked
+            ? 'left-5 bg-[var(--tr-bubble-me-ink)]'
+            : 'left-[2px] border border-[var(--tr-hairline)] bg-[var(--tr-surface)]'
+        }`}
       />
     </button>
   );
@@ -202,7 +213,7 @@ function SegmentedControl<T extends string>({
           type="button"
           onClick={() => onChange(option.value)}
           aria-pressed={value === option.value}
-          className={`tr-label tr-press flex min-h-[36px] flex-1 items-center justify-center gap-1 rounded-lg font-medium transition-colors duration-[var(--tr-dur-fast)] ${
+          className={`tr-label tr-press flex min-h-[44px] flex-1 items-center justify-center gap-1 rounded-lg font-medium transition-colors duration-[var(--tr-dur-fast)] ${
             value === option.value
               ? 'bg-[var(--tr-surface)] text-[var(--tr-ink)] shadow-sm'
               : 'text-[var(--tr-ink-2)]'
@@ -221,7 +232,6 @@ export default function SettingsTab({
   chatLocale,
   onChatLocaleChange,
   manualKind,
-  viewerRole = 'customer',
   companionInvite,
 }: {
   locale: RoomLocale;
@@ -234,8 +244,6 @@ export default function SettingsTab({
   onChatLocaleChange?: (code: string) => void;
   /** A5 — usage-manual shape; absent hides the manual card (non-room surfaces). */
   manualKind?: ManualKind;
-  /** A6 — which role's quick-reply set to preview in the reminder card. */
-  viewerRole?: QuickReplyRole;
   /**
    * §5.2 C-6 — auth for the lead-only [동행자 초대] card. Absent hides it
    * (staff surfaces); present, the card still self-hides unless the server
@@ -260,6 +268,10 @@ export default function SettingsTab({
           locale={locale}
         />
       ) : null}
+      {/* T-D2 — persistent install entry point, top zone on purpose: the
+          drawer's iOS install tile lands here (no scroll hunt). Self-hides
+          when already standalone / no install path exists. */}
+      <InstallCard locale={locale} />
       {/* A5 — display mode promoted above the language card so the theme
           control is discoverable without scrolling. */}
       <section className="tr-card p-4">
@@ -420,19 +432,6 @@ export default function SettingsTab({
         </div>
       </section>
 
-      {/* Quick replies always send in every language — shown here as a reminder of what a tap sends. */}
-      <section className="tr-card p-4">
-        <div className="flex flex-wrap gap-1.5">
-          {quickRepliesForRole(viewerRole).map((preset) => (
-            <span
-              key={preset.key}
-              className="tr-meta rounded-full bg-[var(--tr-surface-2)] px-2.5 py-1 text-[var(--tr-ink-2)]"
-            >
-              {preset.emoji} {preset.text[locale]}
-            </span>
-          ))}
-        </div>
-      </section>
     </div>
   );
 }
