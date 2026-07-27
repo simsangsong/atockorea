@@ -8,8 +8,11 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import RoomShell from '@/components/tour-mode/RoomShell';
 import HomeTab from '@/components/tour-mode/HomeTab';
 import { kstToday } from '@/lib/tour-room/time';
+import { resolveReviewPolicy, type RoomReviewPolicy } from '@/lib/tour-room/reviewPolicy';
 import type { RoomMessage } from '@/hooks/useTourRoomChannel';
 import type { VehicleLocationLike } from '@/lib/tour-room/vehicleEta';
+
+const DIRECT_POLICY = resolveReviewPolicy({ source: 'tour_product', tourSlug: 'busan-signature' });
 
 const messages: RoomMessage[] = [
   {
@@ -29,6 +32,7 @@ function renderRoom({
   schedule = [] as Array<Record<string, unknown>>,
   isPrivate = true,
   locations,
+  reviewPolicy = DIRECT_POLICY,
 }: {
   lifecycle: 'lobby' | 'live' | 'ended';
   withHome?: boolean;
@@ -37,6 +41,7 @@ function renderRoom({
   schedule?: Array<Record<string, unknown>>;
   isPrivate?: boolean;
   locations?: Record<string, VehicleLocationLike>;
+  reviewPolicy?: RoomReviewPolicy;
 }) {
   return render(
     <RoomShell
@@ -63,7 +68,7 @@ function renderRoom({
                 tourTime="09:00:00"
                 pickupPoints={{ name: 'Seomyeon Stn Exit 2' }}
                 busPayload={{ vehicle_number: '48버 1234' }}
-                tourSlug="busan-signature"
+                reviewPolicy={reviewPolicy}
                 canSignal={canSignal}
                 showConcierge={showConcierge}
                 isPrivate={isPrivate}

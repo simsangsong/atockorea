@@ -33,6 +33,7 @@ const BOOKING: RoomBooking = {
   contact_email: 'alex@example.com',
   contact_phone: null,
   preferred_language: 'en',
+  source: 'tour_product',
 };
 
 function fakeDb(options?: {

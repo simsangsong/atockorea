@@ -48,6 +48,7 @@ import {
   TR_STROKE,
 } from '@/components/tour-mode/icons';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
+import type { RoomReviewPolicy } from '@/lib/tour-room/reviewPolicy';
 import type { VehicleLocationLike } from '@/lib/tour-room/vehicleEta';
 import type { RoomMessage } from '@/hooks/useTourRoomChannel';
 
@@ -403,6 +404,8 @@ interface Tile {
   Icon: typeof IconTabChat;
   tone?: 'accent' | 'danger';
   href?: string;
+  /** href가 우리 오리진 밖(OTA 리스팅)이면 next/link 대신 새 탭 <a>로 연다. */
+  external?: boolean;
   onPress?: () => void;
   dot?: boolean;
 }
@@ -419,7 +422,7 @@ export default function HomeTab({
   tourTime,
   pickupPoints,
   busPayload,
-  tourSlug,
+  reviewPolicy,
   canSignal,
   showConcierge,
   isPrivate,
@@ -436,7 +439,11 @@ export default function HomeTab({
   tourTime?: string | null;
   pickupPoints?: unknown;
   busPayload?: unknown;
-  tourSlug?: string | null;
+  /**
+   * OTA 심사 대비 — 리뷰 CTA가 어디로 갈지(또는 아예 안 뜰지)와 자사 쿠폰
+   * 허용 여부. 서버가 예약 채널로 정해 스냅샷에 실어 보낸다.
+   */
+  reviewPolicy: RoomReviewPolicy;
   canSignal: boolean;
   showConcierge: boolean;
   /**
@@ -463,7 +470,11 @@ export default function HomeTab({
   const timelineData = useMemo(() => buildTravelTimeline(messages), [messages]);
   const hasTimeline = timelineData.stopCount > 0 || timelineData.photoCount > 0;
   const vehicleLine = vehicleLineFromPayload(busPayload);
-  const reviewHref = tourSlug ? `/tour-product/${tourSlug}#reviews` : '/mypage';
+  const reviewHref = reviewPolicy.reviewHref;
+  // 외부(OTA)로 나가는 링크는 새 탭 + rel 가드. 자사 경로는 그대로 앱 안에서.
+  const reviewLinkProps = reviewPolicy.reviewExternal
+    ? { target: '_blank' as const, rel: 'noopener noreferrer' }
+    : {};
 
   // §11.C C3 — the guest's own meeting point is the vehicle-ETA destination.
   const pickupPoint = firstPickup(pickupPoints);
@@ -513,8 +524,16 @@ export default function HomeTab({
   if (lifecycle === 'ended' || hasTimeline) {
     tiles.push({ key: 'timeline', label: copy.tiles.timeline, Icon: IconJourney, onPress: () => setSheet('timeline') });
   }
-  if (lifecycle === 'ended') {
-    tiles.push({ key: 'review', label: copy.tiles.review, Icon: IconReview, href: reviewHref });
+  // reviewHref가 null이면 CTA 자체를 만들지 않는다 — OTA 예약인데 그 플랫폼의
+  // 리스팅 URL이 없는 경우다. 자사 상품 페이지로 폴백하지 않는 것이 요점.
+  if (lifecycle === 'ended' && reviewHref) {
+    tiles.push({
+      key: 'review',
+      label: copy.tiles.review,
+      Icon: IconReview,
+      href: reviewHref,
+      external: reviewPolicy.reviewExternal,
+    });
   }
   tiles.push({ key: 'sos', label: copy.tiles.sos, Icon: IconTileSos, tone: 'danger', onPress: api.openEmergency });
 
@@ -639,7 +658,18 @@ export default function HomeTab({
       {/* ---- Feature grid ------------------------------------------- */}
       <div className="tr-stagger grid grid-cols-3 gap-1.5" data-testid="home-grid">
         {tiles.map((tile) =>
-          tile.href ? (
+          tile.href && tile.external ? (
+            <a
+              key={tile.key}
+              href={tile.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid={`home-tile-${tile.key}`}
+              className={tileClass}
+            >
+              {tileInner(tile)}
+            </a>
+          ) : tile.href ? (
             <Link key={tile.key} href={tile.href} data-testid={`home-tile-${tile.key}`} className={tileClass}>
               {tileInner(tile)}
             </Link>
@@ -725,7 +755,7 @@ export default function HomeTab({
         messages={messages}
         bookingId={bookingId}
         roomSession={roomSession}
-        tourSlug={tourSlug}
+        reviewPolicy={reviewPolicy}
       />
 
       {/* ---- More sheet ---------------------------------------------- */}
@@ -755,13 +785,20 @@ export default function HomeTab({
             <span className="tr-card-text flex-1 font-medium text-[var(--tr-ink)]">{copy.settingsRow}</span>
             <IconChevronRight size={TR_ICON.action} className="shrink-0 text-[var(--tr-ink-3)]" aria-hidden />
           </button>
-          <a href={reviewHref} className="flex min-h-[52px] w-full items-center gap-3 text-left">
-            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]">
-              <IconReview size={TR_ICON.action} aria-hidden />
-            </span>
-            <span className="tr-card-text flex-1 font-medium text-[var(--tr-ink)]">{copy.reviewRow}</span>
-            <IconChevronRight size={TR_ICON.action} className="shrink-0 text-[var(--tr-ink-3)]" aria-hidden />
-          </a>
+          {reviewHref && (
+            <a
+              href={reviewHref}
+              {...reviewLinkProps}
+              data-testid="home-more-review"
+              className="flex min-h-[52px] w-full items-center gap-3 text-left"
+            >
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]">
+                <IconReview size={TR_ICON.action} aria-hidden />
+              </span>
+              <span className="tr-card-text flex-1 font-medium text-[var(--tr-ink)]">{copy.reviewRow}</span>
+              <IconChevronRight size={TR_ICON.action} className="shrink-0 text-[var(--tr-ink-3)]" aria-hidden />
+            </a>
+          )}
         </div>
       </Sheet>
     </div>

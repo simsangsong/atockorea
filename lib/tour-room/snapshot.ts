@@ -11,6 +11,14 @@
 import type { RoomBooking, RoomDbClient, TourRoom } from '@/lib/tour-room/access';
 import { mergeTranslationTargets } from '@/lib/tour-room/chatLocale';
 import { resolveDaySchedule, type DayPlanRow, type ScheduleSource } from '@/lib/tour-room/dayPlan';
+import {
+  DEFAULT_REVIEW_POLICY,
+  externalReviewPlatformFor,
+  isOtaChannel,
+  normalizeBookingChannel,
+  resolveReviewPolicy,
+  type RoomReviewPolicy,
+} from '@/lib/tour-room/reviewPolicy';
 import { roomLifecycle, type RoomLifecycle } from '@/lib/tour-room/time';
 
 /**
@@ -122,6 +130,11 @@ export interface RoomSnapshot {
   schedule_source: ScheduleSource;
   /** W0.2 — the active private-mode day plan, when one owns the schedule. */
   day_plan: DayPlanRow | null;
+  /**
+   * OTA 심사 대비 — 이 예약의 리뷰 CTA 도착지와 자사 쿠폰 허용 여부.
+   * 서버가 정해서 내려보낸다(클라가 채널을 해석하지 않는다).
+   */
+  review_policy: RoomReviewPolicy;
 }
 
 /** DE3 — the live dispatch row that actually carries today's vehicle. */
@@ -166,6 +179,43 @@ export function resolveBusDetail(
 /** Participant columns safe to share with the whole room (no device_key/user_id). */
 const PARTICIPANT_PUBLIC_COLUMNS =
   'id, role, display_name, locale, location_sharing, tts_capable, last_seen_at, last_read_at, created_at';
+
+/**
+ * 리뷰 CTA·쿠폰 정책을 예약 채널로 정한다 (reviewPolicy.ts 참고).
+ *
+ * OTA 예약일 때만 `tour_external_reviews`를 한 번 더 읽는다 — 자사 예약이
+ * 대부분이고, 그쪽은 조회 없이 곧장 결정되기 때문이다. 이 조회가 실패해도
+ * 정책은 살아 있다(리스팅 URL이 없는 것과 같게 처리되어 CTA만 숨는다).
+ */
+async function loadReviewPolicy(
+  supabase: RoomDbClient,
+  source: string | null,
+  tourSlug: string | null,
+): Promise<RoomReviewPolicy> {
+  const channel = normalizeBookingChannel(source);
+  if (!isOtaChannel(channel)) {
+    return resolveReviewPolicy({ source, tourSlug });
+  }
+
+  const platform = externalReviewPlatformFor(channel);
+  if (!platform || !tourSlug) return resolveReviewPolicy({ source, tourSlug });
+
+  let otaListingUrl: string | null = null;
+  try {
+    const { data } = await supabase
+      .from('tour_external_reviews')
+      .select('source_url')
+      .eq('tour_product_slug', tourSlug)
+      .eq('platform', platform)
+      .eq('is_visible', true)
+      .maybeSingle();
+    otaListingUrl = (data as { source_url?: string | null } | null)?.source_url ?? null;
+  } catch {
+    /* 읽기 실패 = 리스팅 URL 없음. 자사 페이지로 폴백하지 않는 것이 요점이다. */
+  }
+
+  return resolveReviewPolicy({ source, tourSlug, otaListingUrl });
+}
 
 export async function buildRoomSnapshot(
   supabase: RoomDbClient,
@@ -258,6 +308,14 @@ export async function buildRoomSnapshot(
     locale,
   });
 
+  const reviewPolicy = bookingRow
+    ? await loadReviewPolicy(
+        supabase,
+        booking.source ?? null,
+        (tour as { slug?: string | null } | null)?.slug ?? null,
+      )
+    : DEFAULT_REVIEW_POLICY;
+
   return {
     room,
     lifecycle: roomLifecycle(booking.tour_date),
@@ -291,6 +349,7 @@ export async function buildRoomSnapshot(
         : resolvedSchedule.schedule,
     schedule_source: resolvedSchedule.source,
     day_plan: resolvedSchedule.dayPlan,
+    review_policy: reviewPolicy,
   };
 }
 
