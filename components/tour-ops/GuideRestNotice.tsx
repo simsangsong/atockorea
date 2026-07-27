@@ -53,7 +53,7 @@ export default function GuideRestNotice({ date }: { date: string }) {
 
   return (
     <p
-      className="mx-auto mb-2 flex w-full max-w-3xl items-start gap-1.5 rounded-xl bg-[var(--tr-warn)] px-3 py-2 tr-label font-medium text-[var(--tr-warn)] "
+      className="mx-auto mb-2 flex w-full max-w-3xl items-start gap-1.5 rounded-xl bg-[var(--tr-warn-soft)] px-3 py-2 tr-label font-medium text-[var(--tr-warn)] "
       data-testid="guide-rest-notice"
     >
       <CalendarOff className="mt-0.5 size-3.5 shrink-0" />

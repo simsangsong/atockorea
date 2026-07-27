@@ -318,7 +318,7 @@ export default function OpsScheduleCalendar({
 
       {openCell && (
         <div
-          className="fixed inset-0 z-[60] flex items-end justify-center bg-[var(--tr-surface-2)] sm:items-center"
+          className="fixed inset-0 z-[60] flex items-end justify-center bg-[var(--tr-hairline)] sm:items-center"
           onClick={() => setOpenCell(null)}
         >
           <div

@@ -143,7 +143,7 @@ export default function OpsDashboardTab({
                   className="block w-full rounded-2xl border border-[var(--tr-warn-soft)] bg-[var(--tr-warn-soft)]   px-4 py-3 text-left"
                 >
                   <p className="flex items-center gap-2 tr-card-text font-semibold text-[var(--tr-warn)] ">
-                    <span className="shrink-0 rounded-full bg-[var(--tr-warn)] px-2 py-0.5 tr-meta font-bold">
+                    <span className="shrink-0 rounded-full bg-[var(--tr-warn-soft)] px-2 py-0.5 tr-meta font-bold">
                       {ATTENTION_LABELS[item.reason]}
                     </span>
                     <span className="truncate">{room?.booking?.contact_name ?? '게스트'}</span>
@@ -214,7 +214,7 @@ export default function OpsDashboardTab({
                           {room.booking?.number_of_guests ?? 1}명 · {room.booking?.preferred_language ?? 'en'}
                         </span>
                         {isLive && (
-                          <span className="ml-0.5 inline-flex shrink-0 items-center gap-1 rounded-full bg-[var(--tr-safe)] px-1.5 py-0.5 tr-meta font-bold text-[var(--tr-safe)] ">
+                          <span className="ml-0.5 inline-flex shrink-0 items-center gap-1 rounded-full bg-[var(--tr-safe-soft)] px-1.5 py-0.5 tr-meta font-bold text-[var(--tr-safe)] ">
                             <span className="size-1.5 rounded-full bg-[var(--tr-safe)]" />
                             LIVE
                           </span>
@@ -236,7 +236,7 @@ export default function OpsDashboardTab({
                     </div>
                   </div>
                   {sos && (
-                    <p className="border-t border-[var(--tr-danger)] px-4 py-2 tr-label text-[var(--tr-danger)] ">
+                    <p className="border-t border-[var(--tr-danger-soft)] px-4 py-2 tr-label text-[var(--tr-danger)] ">
                       {sos.metadata.sender_name && <b>{sos.metadata.sender_name}: </b>}
                       {sos.metadata.note ?? 'SOS 발생'}
                       {typeof sos.metadata.latitude === 'number' && ' · 📍 위치 포함'}

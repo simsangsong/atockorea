@@ -53,12 +53,12 @@ interface MintedLink {
 type LinkRole = 'customer' | 'guide' | 'driver';
 
 const CHANNEL_BADGES: Record<string, { label: string; cls: string }> = {
-  gyg: { label: 'GYG', cls: 'bg-[var(--tr-warn)] text-[var(--tr-warn)]' },
+  gyg: { label: 'GYG', cls: 'bg-[var(--tr-warn-soft)] text-[var(--tr-warn)]' },
   viator: { label: 'Viator', cls: 'bg-teal-500/15 text-teal-600' },
   klook: { label: 'Klook', cls: 'bg-rose-500/15 text-rose-500' },
-  direct: { label: '직접', cls: 'bg-[var(--tr-accent)] text-[var(--tr-accent)]' },
-  test: { label: 'TEST', cls: 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-3)]' },
-  other: { label: '기타', cls: 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-3)]' },
+  direct: { label: '직접', cls: 'bg-[var(--tr-accent-soft)] text-[var(--tr-accent)]' },
+  test: { label: 'TEST', cls: 'bg-[var(--tr-hairline)] text-[var(--tr-ink-3)]' },
+  other: { label: '기타', cls: 'bg-[var(--tr-hairline)] text-[var(--tr-ink-3)]' },
 };
 
 /**
