@@ -132,6 +132,7 @@ export function renderSettlementSummary(
     ja: `🧾 本日の支出: ${lines} — 合計 ${total}。ガイドへ現金でご精算ください。現金が必要な場合はコンビニATM(GS25/CU)で海外カードが使えます。`,
     es: `🧾 Gastos de hoy: ${lines} — total ${total}. Liquida en efectivo con tu guía. ¿Necesitas efectivo? Los cajeros de tiendas (GS25/CU) aceptan tarjetas internacionales.`,
     zh: `🧾 今日支出:${lines} — 合计 ${total}。请与导游现金结算。需要现金?便利店ATM(GS25/CU)支持国际卡取现。`,
+    'zh-TW': `🧾 今日支出：${lines} — 合計 ${total}。請與導遊以現金結算。需要現金嗎？便利商店 ATM（GS25／CU）可用國際金融卡提領。`,
     fr: `🧾 Dépenses du jour: ${lines} — total ${total}. Merci de régler en espèces auprès de votre guide. Besoin d’espèces? Les distributeurs des supérettes (GS25/CU) acceptent les cartes internationales.`,
     de: `🧾 Ausgaben heute: ${lines} — gesamt ${total}. Bitte begleichen Sie den Betrag bar bei Ihrem Guide. Bargeld nötig? Automaten in Convenience-Stores (GS25/CU) nehmen internationale Karten.`,
     ru: `🧾 Расходы за сегодня: ${lines} — итого ${total}. Рассчитайтесь, пожалуйста, наличными с гидом. Нужны наличные? Банкоматы в магазинах GS25/CU принимают международные карты.`,

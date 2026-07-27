@@ -253,6 +253,8 @@ export const CONCIERGE_COPY: Record<
     error: '出了點問題 — 請再試一次或詢問導遊。',
     send: '提問',
     hint: '有問題儘管問',
+    photoAsk: '用照片提問',
+    photoAsking: '正在辨識照片…',
     entryRow: '向智慧導覽提問',
     aiLabel: '智慧導覽 · AI',
   },

@@ -195,6 +195,7 @@ const COPY: Record<RoomLocale, SettingsCopy> = {
     textSize: '文字大小',
     textNormal: '標準',
     textLarge: '大',
+    close: '關閉',
   },
   fr: {
     language: 'Langue',
