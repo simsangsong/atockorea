@@ -15,7 +15,14 @@
  * 순수 계층(문구 생성)과 IO 계층(fetch)을 나눠 둔다. 문구는 네트워크 없이 테스트된다.
  */
 
-export const WEATHER_LOCALES = ['en', 'ko', 'zh', 'zh-TW', 'es', 'ja'] as const;
+/**
+ * G1 후속(2026-07-27) — 룸이 9로케일인데 여기는 6이었다. `weatherLocaleOf`가
+ * fr/de/ru/it를 en으로 폴백해서, **프랑스어 안내문 안에 영어 날씨 한 줄**이
+ * 섞여 나갔다. 손님이 이 문장을 보고 옷을 고르는데 읽지 못하면 문장이 없는 것만
+ * 못하다. 크루즈 서구권(fr/de/it)이 지금 실제 타깃이라 더 미룰 이유가 없다.
+ * `zh-TW`는 룸 로케일이 아니지만 번체 손님을 위해 유지한다.
+ */
+export const WEATHER_LOCALES = ['en', 'ko', 'zh', 'zh-TW', 'es', 'ja', 'fr', 'de', 'ru', 'it'] as const;
 export type WeatherLocale = (typeof WEATHER_LOCALES)[number];
 
 /** 라이브에 존재하는 도시. 없는 도시는 예보를 만들지 않는다(지어내지 않는다). */
@@ -71,12 +78,12 @@ export function skyFromCode(code: number): SkyState {
 }
 
 const SKY_LABEL: Record<SkyState, Record<WeatherLocale, string>> = {
-  clear: { en: 'clear', ko: '맑음', zh: '晴', 'zh-TW': '晴', es: 'despejado', ja: '晴れ' },
-  cloudy: { en: 'cloudy', ko: '흐림', zh: '多云', 'zh-TW': '多雲', es: 'nublado', ja: 'くもり' },
-  rain: { en: 'rain', ko: '비', zh: '有雨', 'zh-TW': '有雨', es: 'lluvia', ja: '雨' },
-  snow: { en: 'snow', ko: '눈', zh: '有雪', 'zh-TW': '有雪', es: 'nieve', ja: '雪' },
-  storm: { en: 'thunderstorms', ko: '뇌우', zh: '雷雨', 'zh-TW': '雷雨', es: 'tormenta', ja: '雷雨' },
-  fog: { en: 'fog', ko: '안개', zh: '有雾', 'zh-TW': '有霧', es: 'niebla', ja: '霧' },
+  clear: { en: 'clear', ko: '맑음', zh: '晴', 'zh-TW': '晴', es: 'despejado', ja: '晴れ', fr: 'ciel dégagé', de: 'klar', ru: 'ясно', it: 'sereno' },
+  cloudy: { en: 'cloudy', ko: '흐림', zh: '多云', 'zh-TW': '多雲', es: 'nublado', ja: 'くもり', fr: 'nuageux', de: 'bewölkt', ru: 'облачно', it: 'nuvoloso' },
+  rain: { en: 'rain', ko: '비', zh: '有雨', 'zh-TW': '有雨', es: 'lluvia', ja: '雨', fr: 'pluie', de: 'Regen', ru: 'дождь', it: 'pioggia' },
+  snow: { en: 'snow', ko: '눈', zh: '有雪', 'zh-TW': '有雪', es: 'nieve', ja: '雪', fr: 'neige', de: 'Schnee', ru: 'снег', it: 'neve' },
+  storm: { en: 'thunderstorms', ko: '뇌우', zh: '雷雨', 'zh-TW': '雷雨', es: 'tormenta', ja: '雷雨', fr: 'orages', de: 'Gewitter', ru: 'гроза', it: 'temporali' },
+  fog: { en: 'fog', ko: '안개', zh: '有雾', 'zh-TW': '有霧', es: 'niebla', ja: '霧', fr: 'brouillard', de: 'Nebel', ru: 'туман', it: 'nebbia' },
 };
 
 const RAIN_NOTE: Record<WeatherLocale, (p: number) => string> = {
@@ -86,6 +93,10 @@ const RAIN_NOTE: Record<WeatherLocale, (p: number) => string> = {
   'zh-TW': (p) => `降雨機率 ${p}%`,
   es: (p) => `${p}% de probabilidad de lluvia`,
   ja: (p) => `降水確率 ${p}%`,
+  fr: (p) => `${p} % de risque de pluie`,
+  de: (p) => `${p} % Regenwahrscheinlichkeit`,
+  ru: (p) => `вероятность дождя ${p}%`,
+  it: (p) => `${p}% di probabilità di pioggia`,
 };
 
 /**
@@ -166,6 +177,50 @@ const CLOTHING: Record<WeatherLocale, Record<string, string>> = {
     rain: '傘またはレインウェアと、濡れても平気な靴をご用意ください。',
     snow: '足元が滑りやすいため、滑りにくい靴をおすすめします。',
     wind: '風が強めです — ウインドブレーカーがあると安心です。',
+  },
+  fr: {
+    freezing: 'Manteau d’hiver, gants et bonnet — il fera en dessous de zéro.',
+    cold: 'Un manteau chaud et plusieurs couches que vous pourrez retirer.',
+    cool: 'Une veste ou un cardigan — les matinées et les soirées sont fraîches.',
+    mild: 'Quelques couches légères suffisent.',
+    warm: 'Des vêtements légers et respirants, et de la crème solaire.',
+    hot: 'Vêtements légers, chapeau et beaucoup d’eau — il fera chaud.',
+    rain: 'Prenez un parapluie ou un imperméable, et des chaussures qui supportent le sol mouillé.',
+    snow: 'Portez des chaussures antidérapantes — le sol peut être glissant.',
+    wind: 'Il y aura du vent : un coupe-vent est utile.',
+  },
+  de: {
+    freezing: 'Dicker Wintermantel, Handschuhe und Mütze — es wird unter null Grad.',
+    cold: 'Ein warmer Mantel und Schichten, die Sie an- und ausziehen können.',
+    cool: 'Eine Jacke oder Strickjacke — morgens und abends ist es kühl.',
+    mild: 'Leichte Schichten genügen.',
+    warm: 'Leichte, atmungsaktive Kleidung und Sonnenschutz.',
+    hot: 'Leichte Kleidung, ein Hut und viel Wasser — es wird heiß.',
+    rain: 'Nehmen Sie Regenschirm oder Regenjacke mit, und Schuhe für nassen Boden.',
+    snow: 'Tragen Sie Schuhe mit gutem Profil — der Boden kann rutschig sein.',
+    wind: 'Es wird windig, eine winddichte Schicht hilft.',
+  },
+  ru: {
+    freezing: 'Тёплое зимнее пальто, перчатки и шапка — будет ниже нуля.',
+    cold: 'Тёплое пальто и несколько слоёв, которые можно снять.',
+    cool: 'Куртка или кардиган — утром и вечером прохладно.',
+    mild: 'Достаточно лёгких слоёв одежды.',
+    warm: 'Лёгкая дышащая одежда и солнцезащитный крем.',
+    hot: 'Лёгкая одежда, головной убор и много воды — будет жарко.',
+    rain: 'Возьмите зонт или дождевик и обувь для мокрой погоды.',
+    snow: 'Наденьте обувь с нескользящей подошвой — может быть скользко.',
+    wind: 'Будет ветрено, пригодится ветрозащитный слой.',
+  },
+  it: {
+    freezing: 'Cappotto invernale pesante, guanti e cappello — si andrà sotto zero.',
+    cold: 'Un cappotto caldo e strati che può togliere o aggiungere.',
+    cool: 'Una giacca o un cardigan — mattina e sera sono fresche.',
+    mild: 'Bastano capi leggeri a strati.',
+    warm: 'Abiti leggeri e traspiranti, e crema solare.',
+    hot: 'Abiti leggeri, cappello e molta acqua — farà caldo.',
+    rain: 'Porti ombrello o giacca impermeabile e scarpe adatte al bagnato.',
+    snow: 'Indossi scarpe con buona presa — il terreno può essere scivoloso.',
+    wind: 'Ci sarà vento: uno strato antivento aiuta.',
   },
 };
 

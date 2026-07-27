@@ -72,7 +72,9 @@ describe('SettingsTab', () => {
   it('reports a language change through the callback (server re-join is the caller`s job)', () => {
     const onLocaleChange = jest.fn();
     render(<SettingsTab locale="en" onLocaleChange={onLocaleChange} />);
-    fireEvent.click(screen.getByText('日本語'));
+    // R3v2 — the app language is a dropdown: open it, then pick.
+    fireEvent.click(screen.getByTestId('app-language-select'));
+    fireEvent.click(screen.getByTestId('app-language-select-option-ja'));
     expect(onLocaleChange).toHaveBeenCalledWith('ja');
   });
 
@@ -91,10 +93,15 @@ describe('SettingsTab', () => {
         onChatLocaleChange={onChatLocaleChange}
       />,
     );
-    const select = screen.getByTestId('chat-language-select');
-    // French is outside the 5 room UI locales — proves the plane is unbounded.
-    fireEvent.change(select, { target: { value: 'fr' } });
-    expect(onChatLocaleChange).toHaveBeenCalledWith('fr');
+    // R3v2 — a premium dropdown (sheet) replaces both the native <select> and
+    // the chip wall. Thai is outside the 9 room UI locales — it proves the
+    // chat plane is still unbounded by the UI chrome.
+    fireEvent.click(screen.getByTestId('chat-language-select'));
+    fireEvent.click(screen.getByTestId('chat-language-select-option-th'));
+    expect(onChatLocaleChange).toHaveBeenCalledWith('th');
+    fireEvent.click(screen.getByTestId('chat-language-select'));
+    fireEvent.click(screen.getByTestId('chat-language-select-option-auto'));
+    expect(onChatLocaleChange).toHaveBeenCalledWith('');
   });
 });
 

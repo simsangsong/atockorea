@@ -722,18 +722,26 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
               {galleryPhotos.length > 1 && (
                 <span
                   aria-hidden
-                  className="pointer-events-none absolute right-16 top-4 flex h-9 items-center gap-1.5 rounded-full bg-white/85 px-2.5 text-[11px] font-semibold tabular-nums text-foreground shadow-md backdrop-blur-md transition-transform duration-200 group-hover:scale-[1.03]"
+                  style={{ top: 'calc(1rem + env(safe-area-inset-top, 0px))' }}
+                  className="pointer-events-none absolute right-16 flex h-9 items-center gap-1.5 rounded-full bg-white/85 px-2.5 text-[11px] font-semibold tabular-nums text-foreground shadow-md backdrop-blur-md transition-transform duration-200 group-hover:scale-[1.03]"
                 >
                   <Maximize2 className="h-3 w-3" strokeWidth={2.25} />
                   {activeImageIndex + 1}/{galleryPhotos.length}
                 </span>
               )}
 
+              {/* Owner device report 2026-07-27 — this drawer is `fixed top-0`,
+                  so inside the installed PWA the status bar sat on top of the
+                  close button and it read as "cut off by the header". `env()`
+                  is 0 in a normal browser tab, so the marketing page is
+                  unchanged. Same reasoning for the counter badge above and the
+                  scroll body's bottom inset below. */}
               <button
                 type="button"
                 onClick={onClose}
                 aria-label="Close"
-                className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full border border-white/30 bg-white/15 text-white backdrop-blur-md transition-all hover:bg-white/25 active:scale-95"
+                style={{ top: 'calc(1rem + env(safe-area-inset-top, 0px))' }}
+                className="absolute right-4 flex h-10 w-10 items-center justify-center rounded-full border border-white/30 bg-white/15 text-white backdrop-blur-md transition-all hover:bg-white/25 active:scale-95"
               >
                 <X className="h-5 w-5" strokeWidth={2} />
               </button>
@@ -788,7 +796,10 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
             )}
 
             {/* Scrollable body */}
-            <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain">
+            <div
+              className="min-h-0 flex-1 overflow-y-auto overscroll-contain"
+              style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
+            >
               <div className="space-y-5 p-5">
                 {/* Header — time + name + category */}
                 <div>
@@ -1146,7 +1157,10 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
                   </div>
 
                   {/* Modal body — premium typographic description */}
-                  <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain bg-white">
+                  <div
+                    className="min-h-0 flex-1 overflow-y-auto overscroll-contain bg-white"
+                    style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
+                  >
                     <article className="px-5 py-6 sm:px-6 sm:py-8">
                       {(() => {
                         // One `seen` set per modal render: a key term gets the

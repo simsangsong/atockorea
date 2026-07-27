@@ -487,7 +487,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "shortCardDescription": "A high-intensity full-island route linking three UNESCO World Heritage sites — Hallasan, Seongsan Ilchulbong and Manjanggul lava tube — with a living haenyeo free-diving show, the Jusangjeolli columnar cliffs and the ocean-falling Jeongbang Waterfall. Jeju's signature highlights, concentrated into a single day."
       },
       "price": {
-        "amountLabel": "93"
+        "amountLabel": "80"
       }
     },
     "jeju-hydrangea-festival-tour-east-route": {
@@ -1349,7 +1349,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "shortCardDescription": "한라산, 성산일출봉, 만장굴 용암동굴까지 유네스코 세계유산 3곳을 연결하고, 살아 있는 해녀 물질 시연, 주상절리 절벽, 바다로 떨어지는 정방폭포를 더한 고밀도 전 지역 코스입니다. 제주의 대표 명소를 하루에 응축한 일정입니다."
       },
       "price": {
-        "amountLabel": "93"
+        "amountLabel": "80"
       }
     },
     "jeju-hydrangea-festival-tour-east-route": {
@@ -2211,7 +2211,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "shortCardDescription": "一条高强度的全岛线路，串联三处联合国教科文组织世界遗产——汉拿山、城山日出峰与万丈窟熔岩洞，并融入海女徒手潜水现场表演、柱状节理海崖以及直泻入海的正房瀑布。济州的标志性精华，浓缩于一日之内。"
       },
       "price": {
-        "amountLabel": "93"
+        "amountLabel": "80"
       }
     },
     "jeju-hydrangea-festival-tour-east-route": {
@@ -3073,7 +3073,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "shortCardDescription": "一條高強度的全島路線，串聯三處聯合國教科文組織世界遺產——漢拏山、城山日出峰與萬丈窟熔岩洞——並結合現場海女自由潛水表演、柱狀節理海崖，以及直落入海的正房瀑布。濟州的代表性精華，濃縮於一日之內。"
       },
       "price": {
-        "amountLabel": "93"
+        "amountLabel": "80"
       }
     },
     "jeju-hydrangea-festival-tour-east-route": {
@@ -3934,7 +3934,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "shortCardDescription": "Una ruta intensa por toda la isla que enlaza tres sitios del Patrimonio Mundial de la UNESCO —Hallasan, Seongsan Ilchulbong y el tubo de lava de Manjanggul— con un espectáculo en vivo de buceo libre de las haenyeo, los acantilados columnares de Jusangjeolli y la cascada Jeongbang que cae al océano. Los atractivos emblemáticos de Jeju, concentrados en un solo día."
       },
       "price": {
-        "amountLabel": "93"
+        "amountLabel": "80"
       }
     },
     "jeju-hydrangea-festival-tour-east-route": {
@@ -4794,7 +4794,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "shortCardDescription": "3つのユネスコ世界遺産——漢拏山(ハルラサン)、城山日出峰、万丈窟溶岩洞窟——を、生きた海女（ヘニョ）の素潜り実演、柱状節理の断崖、海へ落ちる正房瀑布とつなぐ、密度の高い全島ルート。済州を象徴するハイライトを、1日に凝縮しました。"
       },
       "price": {
-        "amountLabel": "93"
+        "amountLabel": "80"
       }
     },
     "jeju-hydrangea-festival-tour-east-route": {
@@ -5230,5 +5230,9 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "amountLabel": "49"
       }
     }
-  }
+  },
+  "fr": {},
+  "de": {},
+  "it": {},
+  "ru": {}
 };

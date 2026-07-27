@@ -150,7 +150,7 @@ const SWATCH: Record<TourSkin, { canvas: string; bubbleIn: string; bubbleMe: str
   winter: { canvas: '#dde8f2', bubbleIn: '#ffffff', bubbleMe: '#46708f', hill: '#c9d9e9' },
   forest: { canvas: '#e4e8cd', bubbleIn: '#fbfaf2', bubbleMe: '#52702c', hill: '#cfd8ab' },
   meadow: { canvas: '#d6e6e2', bubbleIn: '#fdfefd', bubbleMe: '#37705f', hill: '#c0d9cc' },
-  jeju: { canvas: '#dcefdd', bubbleIn: '#fbfdf9', bubbleMe: '#a34d14', hill: '#c3ddc0' },
+  jeju: { canvas: '#e9f5ea', bubbleIn: '#fbfdf9', bubbleMe: '#a34d14', hill: '#d3e5d0' },
   seoul: { canvas: '#e7e5f0', bubbleIn: '#fdfdfe', bubbleMe: '#55519b', hill: '#d3d0e6' },
   busan: { canvas: '#cfe7f0', bubbleIn: '#fdfeff', bubbleMe: '#20596f', hill: '#b7d7e6' },
   blossom: { canvas: '#f8e6ec', bubbleIn: '#fefcfd', bubbleMe: '#99465f', hill: '#f0cedb' },

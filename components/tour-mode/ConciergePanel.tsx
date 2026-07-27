@@ -29,7 +29,7 @@ import {
 } from '@/lib/tour-room/concierge';
 import { activeNotice } from '@/lib/tour-room/notices';
 import { roomLifecycle } from '@/lib/tour-room/time';
-import { IconConcierge, IconConciergeSend, TR_ICON, TR_STROKE } from '@/components/tour-mode/icons';
+import { IconCamera, IconConcierge, IconConciergeSend, TR_ICON, TR_STROKE } from '@/components/tour-mode/icons';
 import FacilityMapCard from '@/components/tour-mode/FacilityMapCard';
 import DiningCard from '@/components/tour-mode/DiningCard';
 import type { DiningCardMeta } from '@/lib/ops/dining/card';
@@ -53,6 +53,7 @@ export default function ConciergePanel({
   schedule,
   messages,
   tourDate,
+  onVisionAsk,
 }: {
   bookingId: string;
   roomSession: string;
@@ -60,11 +61,21 @@ export default function ConciergePanel({
   schedule: ScheduleItemLike[];
   messages: RoomMessage[];
   tourDate: string | null;
+  /**
+   * R7 — photo questions inside the Smart Guide sheet. The manual promises
+   * "send a photo of a sign or a dish"; until now that lived only in the chat
+   * composer, so the sheet quietly lacked the button guests were told about.
+   * Absent (read-only / ended rooms) hides the camera button.
+   */
+  onVisionAsk?: (file: File, options: { question: string; share: boolean }) => Promise<{ answer: string } | null>;
 }) {
   const copy = CONCIERGE_COPY[locale];
   const [thread, setThread] = useState<ThreadEntry[]>([]);
   const [input, setInput] = useState('');
   const [busy, setBusy] = useState(false);
+  // A photo round trip is visibly slower than a text one, so it says so.
+  const [busyLabel, setBusyLabel] = useState<string | null>(null);
+  const photoInputRef = useRef<HTMLInputElement | null>(null);
   const idRef = useRef(0);
   const threadRef = useRef<HTMLDivElement | null>(null);
 
@@ -126,6 +137,26 @@ export default function ConciergePanel({
       push('assistant', copy.error);
     } finally {
       setBusy(false);
+    }
+  };
+
+  // R7 — photo questions inside the sheet: same vision-ask route the composer
+  // uses, and the answer lands in this thread via the existing push().
+  const askPhoto = async (file: File) => {
+    if (!onVisionAsk || busy) return;
+    const question = input.trim();
+    push('user', question || copy.photoAsk);
+    setInput('');
+    setBusyLabel(copy.photoAsking);
+    setBusy(true);
+    try {
+      const result = await onVisionAsk(file, { question, share: false });
+      push('assistant', result?.answer ?? copy.error);
+    } catch {
+      push('assistant', copy.error);
+    } finally {
+      setBusy(false);
+      setBusyLabel(null);
     }
   };
 
@@ -245,13 +276,44 @@ export default function ConciergePanel({
           )}
           {busy && (
             <div className="flex items-center gap-2 pl-8" data-testid="concierge-thinking">
-              <span className="tr-meta text-[var(--tr-ink-3)]">{copy.thinking}</span>
+              <span className="tr-meta text-[var(--tr-ink-3)]">{busyLabel ?? copy.thinking}</span>
             </div>
           )}
         </div>
       )}
 
       <div className="flex items-end gap-2">
+        {onVisionAsk && (
+          <>
+            <input
+              ref={photoInputRef}
+              type="file"
+              accept="image/*"
+              capture="environment"
+              className="sr-only"
+              data-testid="concierge-photo-input"
+              onChange={(event) => {
+                const file = event.target.files?.[0] ?? null;
+                event.target.value = '';
+                if (file) void askPhoto(file);
+              }}
+            />
+            {/* Same accent-soft pair as the quick chips above, not neutral grey:
+                the owner's report was that this capability looked absent, so it
+                has to read as an offered action. */}
+            <button
+              type="button"
+              onClick={() => photoInputRef.current?.click()}
+              disabled={busy}
+              aria-label={copy.photoAsk}
+              title={copy.photoAsk}
+              className="tr-press flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[var(--tr-accent-soft)] text-[var(--tr-accent-deep)] disabled:opacity-40"
+              data-testid="concierge-photo"
+            >
+              <IconCamera size={TR_ICON.action} strokeWidth={TR_STROKE.default} aria-hidden />
+            </button>
+          </>
+        )}
         <input
           type="text"
           value={input}

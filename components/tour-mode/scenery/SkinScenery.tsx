@@ -78,8 +78,8 @@ export const SKIN_SCENERY_SPECS: Record<ScenerySkin, SceneSpec> = {
   },
   jeju: {
     light: {
-      mountain: '#c3ddc0',
-      sea: '#c6e4de',
+      mountain: '#d3e5d0',
+      sea: '#d4ebe6',
       sand: '#eee3c8',
       cloud: '#ffffff',
       foam: '#ffffff',

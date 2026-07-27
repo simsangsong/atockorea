@@ -427,7 +427,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "shortCardDescription": "一條高強度的全島路線，串聯三處聯合國教科文組織世界遺產——漢拏山、城山日出峰與萬丈窟熔岩洞——並結合現場海女自由潛水表演、柱狀節理海崖，以及直落入海的正房瀑布。濟州的代表性精華，濃縮於一日之內。"
     },
     "price": {
-      "amountLabel": "93"
+      "amountLabel": "80"
     }
   },
   "jeju-hydrangea-festival-tour-east-route": {

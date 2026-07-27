@@ -136,7 +136,7 @@ describe('POST /api/tour-rooms/[bookingId]/sos (T7.3)', () => {
       note: 'lost near the temple',
     });
     // zero-LLM template with all 5 locales
-    expect(Object.keys(db.inserted[0].translations as object).sort()).toEqual(['en', 'es', 'ja', 'ko', 'zh']);
+    expect(Object.keys(db.inserted[0].translations as object).sort()).toEqual(['de', 'en', 'es', 'fr', 'it', 'ja', 'ko', 'ru', 'zh']);
     // ops mail fired (async fire-and-forget — flush microtasks)
     await new Promise((resolve) => setTimeout(resolve, 0));
     const mail = sendEmailMock.mock.calls[0][0];

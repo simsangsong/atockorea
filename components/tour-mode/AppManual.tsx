@@ -12,7 +12,7 @@
  */
 
 import { useEffect, useState } from 'react';
-import { IconScrollDown, TR_ICON, TR_STROKE } from '@/components/tour-mode/icons';
+import { IconManual, IconScrollDown, TR_ICON, TR_STROKE } from '@/components/tour-mode/icons';
 import Sheet from '@/components/tour-mode/Sheet';
 import {
   MANUAL_CTA,
@@ -82,29 +82,40 @@ export default function AppManual({
   };
 
   if (variant === 'inline') {
+    // R4 — this is the first-run onboarding door, but it used to be a grey
+    // card that read like a divider. It is now a physical button in the
+    // accent material (tr-btn-physical): pressable depth, gloss chip, and
+    // the app's signature color, so it is unmistakably a thing to tap.
     return (
-      <section className="tr-card" data-testid="app-manual-inline">
+      <section data-testid="app-manual-inline">
         <button
           type="button"
           onClick={() => setExpanded((v) => !v)}
           aria-expanded={expanded}
-          className="flex min-h-[52px] w-full items-center gap-2 px-4 py-3 text-left"
+          className="tr-btn-physical flex min-h-[56px] w-full items-center gap-3 px-4 py-3 text-left"
+          style={{ background: 'var(--tr-chip-grad-accent)' }}
           data-testid="app-manual-toggle"
         >
-          <h3 className="tr-card-text min-w-0 flex-1 font-semibold text-[var(--tr-ink)]">
-            📖 {MANUAL_TITLE[locale]}
+          <span
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[12px] bg-white/15"
+            aria-hidden
+          >
+            <IconManual size={TR_ICON.action} strokeWidth={TR_STROKE.default} />
+          </span>
+          <h3 className="tr-card-text text-cjk-safe min-w-0 flex-1 font-bold">
+            {MANUAL_TITLE[locale]}
           </h3>
           <IconScrollDown
             size={TR_ICON.action}
             strokeWidth={TR_STROKE.default}
             aria-hidden
-            className={`shrink-0 text-[var(--tr-ink-3)] transition-transform duration-200 ${
+            className={`shrink-0 opacity-80 transition-transform duration-200 ${
               expanded ? 'rotate-180' : ''
             }`}
           />
         </button>
         {expanded && (
-          <div className="px-4 pb-4" data-testid="app-manual-body">
+          <div className="tr-card mt-1.5 px-4 py-4" data-testid="app-manual-body">
             <SectionList kind={kind} locale={locale} />
           </div>
         )}

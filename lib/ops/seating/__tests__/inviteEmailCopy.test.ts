@@ -39,7 +39,10 @@ describe('buildInviteEmail — 5 locales', () => {
     const en = buildInviteEmail('en', VARS);
     expect(buildInviteEmail('xx', VARS).subject).toBe(en.subject);
     expect(buildInviteEmail(null, VARS).subject).toBe(en.subject);
-    expect(buildInviteEmail('fr-FR', VARS).subject).toBe(en.subject);
+    // fr became a supported room locale (5 → 9), so fr-FR now resolves to
+    // French instead of falling back — the region tag is stripped, not the
+    // language. 'pt' below is still the unsupported-language case.
+    expect(resolveInviteLocale('fr-FR')).toBe('fr');
     // zh-TW → zh (region stripped).
     expect(resolveInviteLocale('zh-TW')).toBe('zh');
     expect(resolveInviteLocale('pt')).toBe('en');

@@ -11,6 +11,7 @@
 
 import type { ReactNode } from 'react';
 import { CHAT_LANGUAGES } from '@/lib/tour-room/languages';
+import { localeFlag } from '@/lib/tour-room/localeFlags';
 import { ROOM_LOCALES, type RoomLocale } from '@/lib/tour-room/snapshot';
 import {
   useTourRoomSettings,
@@ -20,6 +21,7 @@ import {
 import AppManual from '@/components/tour-mode/AppManual';
 import InstallCard from '@/components/tour-mode/InstallCard';
 import SkinPicker from '@/components/tour-mode/SkinPicker';
+import LanguageSelect from '@/components/tour-mode/LanguageSelect';
 import CompanionInviteCard from '@/components/tour-mode/CompanionInviteCard';
 import type { ManualKind } from '@/lib/tour-room/appManual';
 import {
@@ -64,6 +66,8 @@ interface SettingsCopy {
   textSize: string;
   textNormal: string;
   textLarge: string;
+  /** R3v2 — the language dropdown sheet's close button. */
+  close: string;
 }
 
 const COPY: Record<RoomLocale, SettingsCopy> = {
@@ -86,6 +90,7 @@ const COPY: Record<RoomLocale, SettingsCopy> = {
     textSize: 'Text size',
     textNormal: 'Normal',
     textLarge: 'Large',
+    close: 'Close',
   },
   ko: {
     language: '언어',
@@ -106,6 +111,7 @@ const COPY: Record<RoomLocale, SettingsCopy> = {
     textSize: '글자 크기',
     textNormal: '보통',
     textLarge: '크게',
+    close: '닫기',
   },
   ja: {
     language: '言語',
@@ -126,6 +132,7 @@ const COPY: Record<RoomLocale, SettingsCopy> = {
     textSize: '文字サイズ',
     textNormal: '標準',
     textLarge: '大きい',
+    close: '閉じる',
   },
   es: {
     language: 'Idioma',
@@ -146,6 +153,7 @@ const COPY: Record<RoomLocale, SettingsCopy> = {
     textSize: 'Tamaño del texto',
     textNormal: 'Normal',
     textLarge: 'Grande',
+    close: 'Cerrar',
   },
   zh: {
     language: '语言',
@@ -166,6 +174,7 @@ const COPY: Record<RoomLocale, SettingsCopy> = {
     textSize: '字体大小',
     textNormal: '标准',
     textLarge: '大',
+    close: '关闭',
   },
   'zh-TW': {
     language: '語言',
@@ -206,6 +215,7 @@ const COPY: Record<RoomLocale, SettingsCopy> = {
     textSize: 'Taille du texte',
     textNormal: 'Normale',
     textLarge: 'Grande',
+    close: 'Fermer',
   },
   de: {
     language: 'Sprache',
@@ -226,6 +236,7 @@ const COPY: Record<RoomLocale, SettingsCopy> = {
     textSize: 'Textgröße',
     textNormal: 'Normal',
     textLarge: 'Groß',
+    close: 'Schließen',
   },
   ru: {
     language: 'Язык',
@@ -246,6 +257,7 @@ const COPY: Record<RoomLocale, SettingsCopy> = {
     textSize: 'Размер текста',
     textNormal: 'Обычный',
     textLarge: 'Крупный',
+    close: 'Закрыть',
   },
   it: {
     language: 'Lingua',
@@ -266,6 +278,7 @@ const COPY: Record<RoomLocale, SettingsCopy> = {
     textSize: 'Dimensione del testo',
     textNormal: 'Normale',
     textLarge: 'Grande',
+    close: 'Chiudi',
   },
 };
 
@@ -428,23 +441,15 @@ export default function SettingsTab({
         <div className="mt-3">
           <p className="tr-label font-semibold text-[var(--tr-ink)]">{copy.appLanguage}</p>
           <p className="tr-meta mt-0.5 leading-snug text-[var(--tr-ink-3)]">{copy.appLanguageHint}</p>
-          <div className="mt-2 grid grid-cols-3 gap-1.5">
-            {ROOM_LOCALES.map((code) => (
-              <button
-                key={code}
-                type="button"
-                onClick={() => onLocaleChange(code)}
-                data-testid={`app-locale-${code}`}
-                aria-pressed={locale === code}
-                className={`tr-card-text tr-press min-h-[44px] rounded-xl px-2 transition-colors duration-[var(--tr-dur-fast)] ${
-                  locale === code
-                    ? 'bg-[var(--tr-accent)] font-semibold text-[var(--tr-bubble-me-ink)]'
-                    : 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]'
-                }`}
-              >
-                {LOCALE_NAME[code]}
-              </button>
-            ))}
+          <div className="mt-2">
+            <LanguageSelect
+              testId="app-language-select"
+              label={copy.appLanguage}
+              closeLabel={copy.close}
+              value={locale}
+              options={ROOM_LOCALES.map((code) => ({ value: code, label: LOCALE_NAME[code] }))}
+              onChange={(next) => onLocaleChange(next as RoomLocale)}
+            />
           </div>
         </div>
 
@@ -452,19 +457,16 @@ export default function SettingsTab({
           <div className="mt-4 border-t border-[var(--tr-hairline)] pt-3" data-testid="chat-language-section">
             <p className="tr-label font-semibold text-[var(--tr-ink)]">{copy.chatLanguage}</p>
             <p className="tr-meta mt-0.5 leading-snug text-[var(--tr-ink-3)]">{copy.chatLanguageHint}</p>
-            <select
-              value={chatLocale ?? ''}
-              onChange={(e) => onChatLocaleChange(e.target.value)}
-              className="tr-card-text mt-2 min-h-[44px] w-full rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] px-3 text-[var(--tr-ink)] focus:border-[var(--tr-accent)] focus:outline-none"
-              data-testid="chat-language-select"
-            >
-              <option value="">{copy.chatAuto}</option>
-              {CHAT_LANGUAGES.map((lang) => (
-                <option key={lang.code} value={lang.code}>
-                  {lang.name}
-                </option>
-              ))}
-            </select>
+            <div className="mt-2">
+              <LanguageSelect
+                testId="chat-language-select"
+                label={copy.chatLanguage}
+                closeLabel={copy.close}
+                value={chatLocale ?? ''}
+                options={[{ value: '', label: copy.chatAuto }, ...CHAT_LANGUAGES.map((l) => ({ value: l.code, label: l.name }))]}
+                onChange={onChatLocaleChange}
+              />
+            </div>
           </div>
         )}
       </section>

@@ -4,6 +4,7 @@
  */
 import { act, fireEvent, render, screen } from '@testing-library/react';
 import OpsRoomManager from '@/components/tour-ops/OpsRoomManager';
+import { __resetTourRoomSettingsForTests } from '@/hooks/useTourRoomSettings';
 
 jest.mock('@/components/tour-ops/opsShared', () => ({ getOpsToken: jest.fn(async () => 'tok') }));
 jest.mock('sonner', () => ({ toast: { success: jest.fn(), error: jest.fn() } }));
@@ -29,18 +30,33 @@ beforeEach(() => {
 });
 
 describe('OpsRoomManager (Ops Freedom)', () => {
-  it('defaults to LIGHT theme and toggles to dark (persisted)', async () => {
+  it('toggles to dark and persists to the SHARED device store (U-D9)', async () => {
     await act(async () => {
       render(<OpsRoomManager date="2026-07-18" onClose={noop} onOpenRoom={noop} onRoomsChanged={noop} />);
     });
-    // W1.2 — the palette is now theme-independent tr-* vars; the theme is
+    // W1.2 — the palette is theme-independent tr-* vars; the theme is
     // expressed by toggling `.dark` on the tr-root (which flips the vars).
     const root = screen.getByTestId('ops-room-manager');
     expect(root.classList.contains('tr-root')).toBe(true);
     expect(root.classList.contains('dark')).toBe(false);
     fireEvent.click(screen.getByTestId('theme-toggle'));
     expect(root.classList.contains('dark')).toBe(true);
-    expect(window.localStorage.getItem('tour_ops_theme')).toBe('dark');
+    // 🔴 U-D9: this used to write `tour_ops_theme`, an ops-only key, so the
+    // same person got two different answers about their own taste depending on
+    // which console they were in. It writes the shared device store now.
+    expect(JSON.parse(window.localStorage.getItem('tour_mode_settings') ?? '{}').theme).toBe('dark');
+    expect(window.localStorage.getItem('tour_ops_theme')).toBeNull();
+  });
+
+  it('wears the device skin so the guide console and 관제 look like one app', async () => {
+    window.localStorage.setItem('tour_mode_settings', JSON.stringify({ skin: 'forest' }));
+    // The settings store memoises its snapshot at module scope; without this
+    // the component reads the default that an earlier test already cached.
+    __resetTourRoomSettingsForTests();
+    await act(async () => {
+      render(<OpsRoomManager date="2026-07-18" onClose={noop} onOpenRoom={noop} onRoomsChanged={noop} />);
+    });
+    expect(screen.getByTestId('ops-room-manager').getAttribute('data-tr-skin')).toBe('forest');
   });
 
   it('empty day still offers date nav + manual booking creation', async () => {

@@ -142,3 +142,44 @@ describe('ConciergePanel (V2.2)', () => {
     await waitFor(() => expect(screen.getByText(CONCIERGE_COPY.ko.error)).toBeInTheDocument());
   });
 });
+
+/**
+ * R7 (owner device report 2026-07-27) — the manual promises "send a photo of a
+ * sign or a dish" inside the Smart Guide, but the sheet had no camera button:
+ * vision-ask lived only in the chat composer. The button is now here, wired to
+ * the same route, and it is hidden when the room can't ask (read-only/ended).
+ */
+describe('Smart Guide photo question (R7)', () => {
+  const base = {
+    bookingId: 'b1',
+    roomSession: 'sess-1',
+    locale: 'en' as const,
+    schedule: [],
+    messages: [],
+    tourDate: '2026-07-27',
+  };
+
+  it('hides the camera button when no vision handler is supplied', () => {
+    render(<ConciergePanel {...base} />);
+    expect(screen.queryByTestId('concierge-photo')).not.toBeInTheDocument();
+  });
+
+  it('sends the picked photo through the vision handler and shows the answer in the thread', async () => {
+    const onVisionAsk = jest.fn(
+      async (_file: File, _options: { question: string; share: boolean }) => ({
+        answer: 'Grilled pork belly — not spicy.',
+      }),
+    );
+    render(<ConciergePanel {...base} onVisionAsk={onVisionAsk} />);
+
+    fireEvent.change(screen.getByTestId('concierge-input'), { target: { value: 'is this spicy?' } });
+    const file = new File(['x'], 'dish.jpg', { type: 'image/jpeg' });
+    fireEvent.change(screen.getByTestId('concierge-photo-input'), { target: { files: [file] } });
+
+    await waitFor(() => expect(onVisionAsk).toHaveBeenCalledTimes(1));
+    expect(onVisionAsk.mock.calls[0][1]).toEqual({ question: 'is this spicy?', share: false });
+    expect(await screen.findByText('Grilled pork belly — not spicy.')).toBeInTheDocument();
+    // the typed question rides along as the thread's user turn
+    expect(screen.getByText('is this spicy?')).toBeInTheDocument();
+  });
+});

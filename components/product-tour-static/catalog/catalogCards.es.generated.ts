@@ -426,7 +426,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "shortCardDescription": "Una ruta intensa por toda la isla que enlaza tres sitios del Patrimonio Mundial de la UNESCO —Hallasan, Seongsan Ilchulbong y el tubo de lava de Manjanggul— con un espectáculo en vivo de buceo libre de las haenyeo, los acantilados columnares de Jusangjeolli y la cascada Jeongbang que cae al océano. Los atractivos emblemáticos de Jeju, concentrados en un solo día."
     },
     "price": {
-      "amountLabel": "93"
+      "amountLabel": "80"
     }
   },
   "jeju-hydrangea-festival-tour-east-route": {
