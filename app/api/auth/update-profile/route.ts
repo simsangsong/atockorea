@@ -1,8 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { mergeMypagePreferences } from '@/lib/mypage-preferences-merge';
+import { locales } from '@/lib/locale';
 
-const ALLOWED_LANGUAGE_PREFERENCE = new Set(['en', 'ko', 'zh', 'zh-TW', 'es', 'ja']);
+/**
+ * Derived from the site's locale list rather than restated. The hand-written
+ * copy of this set froze at the original six and silently dropped fr/de/it/ru
+ * on the floor after they launched — `has()` returning false is indistinguishable
+ * from "field not sent", so the request still answered 200.
+ */
+const ALLOWED_LANGUAGE_PREFERENCE = new Set<string>(locales);
 
 /**
  * PATCH /api/auth/update-profile
