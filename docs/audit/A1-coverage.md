@@ -174,6 +174,8 @@ A1 소관 **65개** · A2 소관 10개(가이드·기사 면) · W-트랙 신규
 | `staff/StaffSettings.tsx` | W2/W5 | ✅ 신규 — 테마 세그·글자크기·사용설명 아코디언(스토어는 기존 `useTourRoomSettings` 검증 경유) + C-D6 배경 테마 피커 |
 | `staff/GuideAnnouncePanel.tsx` | 리뷰라운드(#488) | ✅ 신규 — `guideAnnouncePanel.test.tsx`(프리셋·수신자 wa.me/mailto·변수누락 배지) + walk `13-staff-announce` 실렌더 |
 | `SkinPicker.tsx` | C-D6(chat-ui-theme 2026-07-27) | ✅ 신규 — `skinPicker.test.tsx` 5케이스(6스킨 렌더·persist·라벨 로케일·양 셸 스탬프) + walk 스킨 매트릭스 실렌더 |
+| `InstallCard.tsx` | T-D2(PWA 설치, PR#495) | ✅ 신규 — 설치 진입점 카드(네이티브 프롬프트/iOS 공유시트 안내), `useInstallPrompt` 4표면 배선 |
+| `scenery/SkinScenery.tsx` | T-D5(풍경 9씬, PR#495) | ✅ 신규 — 스킨별 SVG 풍경(시그니처 상단 스트립·다크=밤), 고대비 스킨은 렌더 없음 |
 | `MeetSetCard.tsx` | M-D5(meet-exactly 2026-07-27) | ✅ 신규 — `meetExactly.test.tsx` 3케이스(시간 게이트·장소/핀 필수·meeting_propose 페이로드) · 프라이빗 전용은 서버 403 테스트가 짝 |
 
 ## 🔴 플랜 대비 조정

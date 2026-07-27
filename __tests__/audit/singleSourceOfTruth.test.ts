@@ -73,8 +73,10 @@ describe('🔴 로케일 목록은 하나뿐이다', () => {
   const literalRe = /\[\s*(['"])(en|ko|zh|ja|es)\1(\s*,\s*(['"])(en|ko|zh|ja|es)\4){4}\s*,?\s*\]/;
 
   it('정본이 존재한다', () => {
-    expect(ROOM_LOCALES).toHaveLength(5);
-    expect([...ROOM_LOCALES].sort()).toEqual(['en', 'es', 'ja', 'ko', 'zh']);
+    // 2026-07-27: the room UI grew 5 → 9 (fr/de/ru/it). The point of this
+    // assertion is that ONE list is canonical, not that it has five entries.
+    expect(ROOM_LOCALES).toHaveLength(9);
+    expect([...ROOM_LOCALES].sort()).toEqual(['de', 'en', 'es', 'fr', 'it', 'ja', 'ko', 'ru', 'zh']);
   });
 
   it('🔴 정본 밖 어디에도 5로케일 배열 리터럴이 없다', () => {

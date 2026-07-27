@@ -427,7 +427,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "shortCardDescription": "한라산, 성산일출봉, 만장굴 용암동굴까지 유네스코 세계유산 3곳을 연결하고, 살아 있는 해녀 물질 시연, 주상절리 절벽, 바다로 떨어지는 정방폭포를 더한 고밀도 전 지역 코스입니다. 제주의 대표 명소를 하루에 응축한 일정입니다."
     },
     "price": {
-      "amountLabel": "93"
+      "amountLabel": "80"
     }
   },
   "jeju-hydrangea-festival-tour-east-route": {

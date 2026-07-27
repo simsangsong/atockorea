@@ -427,7 +427,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "shortCardDescription": "A high-intensity full-island route linking three UNESCO World Heritage sites — Hallasan, Seongsan Ilchulbong and Manjanggul lava tube — with a living haenyeo free-diving show, the Jusangjeolli columnar cliffs and the ocean-falling Jeongbang Waterfall. Jeju's signature highlights, concentrated into a single day."
     },
     "price": {
-      "amountLabel": "93"
+      "amountLabel": "80"
     }
   },
   "jeju-hydrangea-festival-tour-east-route": {

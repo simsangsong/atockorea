@@ -179,7 +179,7 @@ describe('POST /api/tour-rooms/[bookingId]/concierge', () => {
     expect(message.metadata).toMatchObject({ kind: 'concierge_escalation', asked_by_role: 'customer' });
     expect((message.metadata as { question: string }).question).toContain('refund');
     // Pre-translated 5-locale capsule, question verbatim.
-    expect(Object.keys(message.translations as object).sort()).toEqual(['en', 'es', 'ja', 'ko', 'zh']);
+    expect(Object.keys(message.translations as object).sort()).toEqual(['de', 'en', 'es', 'fr', 'it', 'ja', 'ko', 'ru', 'zh']);
     expect(String(message.source_text)).toContain('Alex');
     expect(broadcastMock).toHaveBeenCalledTimes(1);
     expect(chatCompletionMock).not.toHaveBeenCalled();

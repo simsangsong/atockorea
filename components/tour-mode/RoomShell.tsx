@@ -21,6 +21,7 @@ import Sheet from '@/components/tour-mode/Sheet';
 import SkinScenery from '@/components/tour-mode/scenery/SkinScenery';
 import PlanStopCards from '@/components/tour-mode/plan/PlanStopCards';
 import { useKeyboardOpen } from '@/components/tour-mode/useKeyboardOpen';
+import { useBackTrap } from '@/hooks/useBackTrap';
 import { useTourRoomSettings, textScaleFactor } from '@/hooks/useTourRoomSettings';
 import {
   IconBack,
@@ -409,35 +410,18 @@ export default function RoomShell({
     return backHref ? 'exit' : 'noop';
   };
 
-  // Latest-closure ref so the popstate listener (registered once) always calls
-  // the current goBack without re-subscribing every render.
-  const goBackRef = useRef(goBack);
-  useEffect(() => {
-    goBackRef.current = goBack;
-  });
-
   const handleBack = () => {
     if (goBack() === 'exit' && backHref) router.push(backHref);
   };
 
-  // Trap the hardware/browser back button: a sentinel history entry means a
-  // back press fires popstate (which we consume with an in-room step) instead
-  // of leaving the PWA. Only exits to backHref when nothing is left to pop.
-  useEffect(() => {
-    window.history.pushState({ tourRoomGuard: true }, '');
-    const onPop = () => {
-      const result = goBackRef.current();
-      if (result === 'exit' && backHref) {
-        router.push(backHref);
-      } else {
-        // stayed (sheet/tab) or customer-at-root: re-arm the sentinel so the
-        // next back press is trapped too, never exiting to the browser.
-        window.history.pushState({ tourRoomGuard: true }, '');
-      }
-    };
-    window.addEventListener('popstate', onPop);
-    return () => window.removeEventListener('popstate', onPop);
-  }, [backHref, router]);
+  // R2 — the hardware/browser back trap now lives in a shared hook, so every
+  // standalone PWA surface (the /plan editor, check-in, join) gets the same
+  // guarantee this shell has had since T1.6 instead of quitting the app.
+  useBackTrap(() => {
+    const result = goBack();
+    if (result === 'exit' && backHref) router.push(backHref);
+    return result;
+  });
 
   const degraded = connection === 'offline' || connection === 'connecting';
   const connectionHint =

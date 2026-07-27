@@ -18,8 +18,11 @@ const manifest: MetadataRoute.Manifest = {
   scope: '/tour-mode',
   display: 'standalone',
   orientation: 'portrait',
-  background_color: '#faf9f6',
-  theme_color: '#111827',
+  // R5 — the splash/ground matches the black mark-only icon set
+  // (scripts/make-pwa-icons.mjs); a cream splash behind a black tile read as
+  // two different apps during launch.
+  background_color: '#0b0b0c',
+  theme_color: '#0b0b0c',
   icons: [
     { src: '/pwa/icon-192.png', sizes: '192x192', type: 'image/png' },
     { src: '/pwa/icon-512.png', sizes: '512x512', type: 'image/png' },

@@ -42,6 +42,7 @@ import { koreanAllergyCardLines } from '@/lib/tour-room/allergyCard';
 import { formatMinutes, haversineKm, totalDriveMinutes, type LatLng } from '@/lib/itinerary-builder/distance';
 import { ROOM_LOCALES, type RoomLocale } from '@/lib/tour-room/snapshot';
 import { useTourRoomSession } from '@/hooks/useTourRoomSession';
+import { useBackTrap } from '@/hooks/useBackTrap';
 import PlanTourItinerary from '@/components/tour-mode/plan/PlanTourItinerary';
 import PlanStopCards from '@/components/tour-mode/plan/PlanStopCards';
 import type { ItineraryStop } from '@/components/product-tour-static/_shared/tourProductDetailSectionTypes';
@@ -1502,6 +1503,24 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
   const [tourStops, setTourStops] = useState<ItineraryStop[]>([]);
   const [tourTitle, setTourTitle] = useState<string | null>(null);
   const [submitBusy, setSubmitBusy] = useState(false);
+  // R2 — this page opens standalone from the invite email, so a hardware back
+  // press used to close the installed PWA outright. One press now closes the
+  // open preview/picker, then steps 담기→추천, and only then leaves.
+  useBackTrap(() => {
+    if (previewTemplate) {
+      setPreviewTemplate(null);
+      return 'stayed';
+    }
+    if (googleOpen) {
+      setGoogleOpen(false);
+      return 'stayed';
+    }
+    if (tab !== 'courses') {
+      setTab('courses');
+      return 'stayed';
+    }
+    return 'noop';
+  });
   const hydrated = useRef(false);
   const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const latestDraft = useRef<DraftSnapshot>({ stops: [], needs });
@@ -2043,8 +2062,8 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
   if (!plan.tour.is_private) {
     const fx = FIXED_ITIN_COPY[locale] ?? FIXED_ITIN_COPY.en;
     return (
-      <div className="tr-root tr-plan-root mx-auto min-h-dvh w-full bg-[var(--tr-canvas)] pb-16" data-locale={locale}>
-        <div className="mx-auto w-full max-w-xl px-4 pt-4">
+      <div className="tr-safe-top tr-root tr-plan-root mx-auto min-h-dvh w-full bg-[var(--tr-canvas)] pb-16" data-locale={locale}>
+        <div className="tr-safe-bottom mx-auto w-full max-w-xl px-4 pt-4">
           <header className="tr-plan-hero">
             <div className="flex items-start justify-between gap-4">
               <div className="min-w-0">
@@ -2099,7 +2118,15 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
   }
 
   return (
-    <div className="tr-root tr-plan-root mx-auto min-h-dvh w-full bg-[var(--tr-canvas)] pb-32" data-locale={locale}>
+    /* R1 — this page opens standalone from an email link, so it has no app
+       header/footer to inherit safe areas from: pad the top for the status
+       bar and reserve the fixed submit bar + home indicator at the bottom
+       (pb-32 alone left the last card under the bar on notched phones). */
+    <div
+      className="tr-safe-top tr-root tr-plan-root mx-auto min-h-dvh w-full bg-[var(--tr-canvas)]"
+      data-locale={locale}
+      style={{ paddingBottom: 'calc(8rem + env(safe-area-inset-bottom, 0px))' }}
+    >
       <div className="mx-auto w-full max-w-xl px-4 pt-4">
         {/* header */}
         <header className="tr-plan-hero">
@@ -2924,7 +2951,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
 
       {/* sticky submit bar */}
       {canEdit && !isConfirmed && tab !== 'delegate' && stops.length > 0 && (
-        <div className="fixed inset-x-0 bottom-0 border-t border-[var(--tr-hairline)] bg-[var(--tr-surface)]/95 px-4 py-3 backdrop-blur">
+        <div className="tr-safe-bottom fixed inset-x-0 bottom-0 border-t border-[var(--tr-hairline)] bg-[var(--tr-surface)]/95 px-4 py-3 backdrop-blur">
           <div className="mx-auto flex w-full max-w-xl items-center gap-3">
             <span className="tr-label min-w-0 flex-1 truncate font-semibold text-[var(--tr-ink-3)]" aria-live="polite">
               {saveState === 'saving' && copy.saving}

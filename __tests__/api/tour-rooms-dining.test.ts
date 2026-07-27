@@ -256,7 +256,7 @@ describe('POST /dining — operator post: true', () => {
     expect(meta.fanout).toBeUndefined();
 
     const translations = row.translations as Record<string, string>;
-    expect(Object.keys(translations).sort()).toEqual(['en', 'es', 'ja', 'ko', 'zh']);
+    expect(Object.keys(translations).sort()).toEqual(['de', 'en', 'es', 'fr', 'it', 'ja', 'ko', 'ru', 'zh']);
     expect(translations.ko).toContain('Seongsan Ilchulbong');
 
     expect(recordRoomEventMock).toHaveBeenCalledWith(

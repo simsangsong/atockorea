@@ -78,7 +78,7 @@ describe('SettingsTab', () => {
 
   it('hides the chat-language picker unless onChatLocaleChange is provided', () => {
     render(<SettingsTab locale="en" onLocaleChange={jest.fn()} />);
-    expect(screen.queryByTestId('chat-language-select')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('chat-language-chips')).not.toBeInTheDocument();
   });
 
   it('reports a chat-language pick (any LLM language) through the callback', () => {
@@ -91,10 +91,13 @@ describe('SettingsTab', () => {
         onChatLocaleChange={onChatLocaleChange}
       />,
     );
-    const select = screen.getByTestId('chat-language-select');
-    // French is outside the 5 room UI locales — proves the plane is unbounded.
-    fireEvent.change(select, { target: { value: 'fr' } });
-    expect(onChatLocaleChange).toHaveBeenCalledWith('fr');
+    // R3 — the native <select> became a flag-chip radiogroup (same grammar as
+    // the app-language chips). Thai is outside the 9 room UI locales — it
+    // proves the chat plane is still unbounded by the UI chrome.
+    fireEvent.click(screen.getByTestId('chat-locale-th'));
+    expect(onChatLocaleChange).toHaveBeenCalledWith('th');
+    fireEvent.click(screen.getByTestId('chat-locale-auto'));
+    expect(onChatLocaleChange).toHaveBeenCalledWith('');
   });
 });
 
