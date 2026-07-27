@@ -89,4 +89,8 @@
 - [x] F0 인프라(정본·정규화·파생·CSS·언어명) + 니트 3건
 - [x] F1 번역 65파일(에이전트 3기 중 2기가 세션 한도로 중단 → 잔여 15파일 직접 완료: dining 2·seating 6·tour-room 5·PlanEditor 1 등)
 - [x] F2 테스트 갱신 — `singleSourceOfTruth`(5→10 스냅샷, **main에서 이미 깨져 있던 것**)·timeFormat·chatFeed 픽스처·A1 원장
-- [ ] F3 대만 원어민 감수 → F4 게이트(tsc·jest·build·walk zh-TW 컷) → F5 머지
+- [x] F3 대만 원어민 감수(4패스 병렬) — 실오역 교정: **申報(세관 신고)→回報**(분실물) · **代付→代墊**(대납) · **考斯特/大巴**(대륙 차량명)→人座/遊覽車 · 短語→常用語句 · 點下→點選 · 首個行程→第一站 · 帶好隨身物品→記得帶走. 용어 통일: 손님 앱=旅遊房間(예약·이메일 표면은 간체와 동일하게 行程群組 유지) · 智慧導覽 · 旅程紀錄(HomeTab 타일이 시트와 어긋나 있던 것 수정).
+- [x] **F3.5 배관 결함 2건(이번 라운드 최대 수확)** — ① 감지기 6곳이 각자 `split('-')[0]`/`slice(0,2)` 사본을 갖고 zh-TW를 zh로 접고 있었다(companion·companionCopy·checkinCopy·joinCopy·inviteEmailCopy·플랜에디터) → 전부 정본 `normalizeRoomLocale`에 위임. ② **컨시어지 INTENT/GUARDRAIL 키워드가 간체 전용** — 번체 입력 시 Tier-0은 물론 **긴급 가드레일까지 미작동**이었다 → 차이나는 번체 변형 추가(救護車·醫院·受傷·暈倒·失去意識·心臟病·發作 + 叫救護車·需要急救).
+- [x] F4 게이트 — tsc 0 · jest **155스위트/1674 green** · `npm run build` · walk 35컷 콘솔 0 + zh-TW 홈·설정 실렌더. ⚠walk 회복: 확인시트 OK 버튼이 탭바에 가려 클릭 인터셉트 → `$eval` 직접 디스패치(dev 오버레이 회피와 같은 패턴).
+- [x] F5 — main 전진분 머지(앱 매뉴얼 전면 개편·컨시어지 photoAsk·SettingsTab close·**localeBlockCompleteness 신규 가드**) 충돌 3건 해소 후 zh-TW 재이식. 그 신규 가드가 tsc 사각지대의 마지막 누락(정산 요약 캡슐)을 잡았다. **PR #510 머지(ad424230)**.
+- ⚠ 다음 사람에게: 로케일 추가 시 **tsc + localeBlockCompleteness + singleSourceOfTruth + A1 원장** 네 가드가 순서대로 운다. 원장은 컴포넌트 신설 시, 나머지는 로케일 확장 시. 셋 다 이번 라운드에서 실제로 울었고 전부 옳았다.
