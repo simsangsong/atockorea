@@ -49,7 +49,9 @@ type Tab = 'profile' | 'rates' | 'calendar' | 'assignments';
 
 const TABS: Array<{ key: Tab; label: string; icon: typeof User }> = [
   { key: 'profile', label: '프로필', icon: User },
-  { key: 'rates', label: '단가', icon: Coins },
+  // N2 — 사장님은 이걸 "일비"라고 부른다. 기능은 이미 있는데 탭 이름이
+  // 달라서 못 찾았다(리포트 2026-07-27). 두 단어를 같이 적는다.
+  { key: 'rates', label: '일비·단가', icon: Coins },
   { key: 'calendar', label: '휴무', icon: CalendarDays },
   { key: 'assignments', label: '배정', icon: ClipboardList },
 ];

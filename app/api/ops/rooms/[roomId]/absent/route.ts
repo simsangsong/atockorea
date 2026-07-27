@@ -44,9 +44,67 @@ export async function POST(
     const roomVehicleId = String(body.roomVehicleId || '');
     const seatNumber = Number(body.seatNumber);
     const action = body.action === 'clear' ? 'clear' : body.action === 'mark' ? 'mark' : null;
-    if (!roomVehicleId || !Number.isInteger(seatNumber) || !action) {
+    /**
+     * N1 — a no-show can be keyed by BOOKING, not only by seat.
+     *
+     * Ops has never assigned a seat in production (ops_seat_assignments is
+     * empty), so on a join tour the seat map is blank and the seat-keyed path
+     * — the only one there was — could never be reached. The guide works from
+     * the roster in the morning, where the identity is the person.
+     *
+     * Marking a booking does NOT charge anyone: the no-show fee is captured by
+     * the explicit admin action at /api/admin/orders/[id]/settle, and that is
+     * left exactly as it was.
+     */
+    const bookingId = typeof body.bookingId === 'string' ? body.bookingId.trim() : '';
+    if (!action) {
+      return NextResponse.json({ error: 'action(mark|clear) is required' }, { status: 400 });
+    }
+    if (bookingId) {
+      let evidenceId: string | null = null;
+      if (action === 'mark') {
+        const lookup = await hasEvidenceFor(supabase, {
+          bookingId,
+          evidenceId: typeof body.evidenceId === 'string' ? body.evidenceId : null,
+        });
+        if (!lookup.found) {
+          return NextResponse.json(
+            { error: 'evidence_required', message: '현장 사진·위치 증거를 먼저 남겨야 노쇼 처리할 수 있어요.' },
+            { status: 400 },
+          );
+        }
+        evidenceId = lookup.evidenceId;
+      }
+      // The booking must belong to THIS room — a staff token for one room must
+      // not be able to mark someone else's guest absent.
+      const { data: roomRow } = await supabase
+        .from('tour_rooms')
+        .select('booking_id')
+        .eq('id', roomId)
+        .maybeSingle();
+      const roomBookingId = (roomRow as { booking_id?: string } | null)?.booking_id ?? null;
+      const { data: participantRow } = await supabase
+        .from('tour_room_participants')
+        .select('id')
+        .eq('room_id', roomId)
+        .eq('booking_id', bookingId)
+        .limit(1)
+        .maybeSingle();
+      if (roomBookingId !== bookingId && !participantRow) {
+        return NextResponse.json({ error: 'booking_not_in_room' }, { status: 404 });
+      }
+
+      const { error: bookingError } = await supabase
+        .from('bookings')
+        .update({ status: action === 'mark' ? 'no_show' : 'confirmed' })
+        .eq('id', bookingId);
+      if (bookingError) throw bookingError;
+
+      return NextResponse.json({ ok: true, bookingId, action, evidenceId });
+    }
+    if (!roomVehicleId || !Number.isInteger(seatNumber)) {
       return NextResponse.json(
-        { error: 'roomVehicleId, seatNumber, action(mark|clear) are required' },
+        { error: 'roomVehicleId + seatNumber, or bookingId, are required' },
         { status: 400 },
       );
     }

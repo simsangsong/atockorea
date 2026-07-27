@@ -88,8 +88,18 @@ export async function POST(
 
     const roomVehicleId = str(form.get('roomVehicleId'));
     const seatNumber = num(form.get('seatNumber'));
-    if (!roomVehicleId || !Number.isInteger(seatNumber)) {
-      return NextResponse.json({ error: 'roomVehicleId, seatNumber are required' }, { status: 400 });
+    /**
+     * N1 — evidence can be recorded against a BOOKING when there is no seat.
+     * Live ops has never assigned one, so requiring a seat made the whole
+     * no-show chain unreachable on join tours.
+     */
+    const bodyBookingId = str(form.get('bookingId'));
+    const seatKeyed = Boolean(roomVehicleId) && Number.isInteger(seatNumber);
+    if (!seatKeyed && !bodyBookingId) {
+      return NextResponse.json(
+        { error: 'roomVehicleId + seatNumber, or bookingId, are required' },
+        { status: 400 },
+      );
     }
 
     const validation = validateEvidenceInput({
@@ -106,21 +116,46 @@ export async function POST(
     const value = validation.value;
 
     // 좌석 실재 확인 — absent 라우트와 동일한 방식(차량이 이 룸 소속인지 → 배정 행).
-    const vehicles = await loadRoomVehicles(supabase, roomId);
-    if (!vehicles.some((v) => v.id === roomVehicleId)) {
-      return NextResponse.json({ error: 'vehicle_not_in_room' }, { status: 404 });
+    // N1: 좌석 키가 없으면 예약이 이 룸의 것인지로 대신 확인한다.
+    let target: { id: string; booking_id: string; guest_label: string | null } | null = null;
+    let evidenceBookingId = bodyBookingId;
+
+    if (seatKeyed) {
+      const vehicles = await loadRoomVehicles(supabase, roomId);
+      if (!vehicles.some((v) => v.id === roomVehicleId)) {
+        return NextResponse.json({ error: 'vehicle_not_in_room' }, { status: 404 });
+      }
+      const rows = await loadAssignments(supabase, [roomVehicleId]);
+      const found = rows.find((a) => a.seat_number === seatNumber);
+      if (!found) return NextResponse.json({ error: 'seat_not_assigned' }, { status: 404 });
+      target = { id: found.id, booking_id: found.booking_id, guest_label: found.guest_label ?? null };
+      evidenceBookingId = found.booking_id;
+    } else {
+      const { data: roomRow } = await supabase
+        .from('tour_rooms')
+        .select('booking_id')
+        .eq('id', roomId)
+        .maybeSingle();
+      const roomBookingId = (roomRow as { booking_id?: string } | null)?.booking_id ?? null;
+      const { data: participantRow } = await supabase
+        .from('tour_room_participants')
+        .select('id')
+        .eq('room_id', roomId)
+        .eq('booking_id', evidenceBookingId)
+        .limit(1)
+        .maybeSingle();
+      if (roomBookingId !== evidenceBookingId && !participantRow) {
+        return NextResponse.json({ error: 'booking_not_in_room' }, { status: 404 });
+      }
     }
-    const rows = await loadAssignments(supabase, [roomVehicleId]);
-    const target = rows.find((a) => a.seat_number === seatNumber);
-    if (!target) return NextResponse.json({ error: 'seat_not_assigned' }, { status: 404 });
 
     // 표시명은 마스킹본만 저장한다 (§5.2 — "Massimo Cassina" → "Massimo C.").
-    let rawLabel = target.guest_label ?? '';
+    let rawLabel = target?.guest_label ?? '';
     if (!rawLabel) {
       const { data: booking } = await supabase
         .from('bookings')
         .select('id, contact_name')
-        .eq('id', target.booking_id)
+        .eq('id', evidenceBookingId)
         .maybeSingle();
       rawLabel = ((booking as { contact_name?: string | null } | null)?.contact_name) ?? '';
     }
@@ -169,10 +204,10 @@ export async function POST(
       .from('ops_no_show_evidence')
       .insert({
         room_id: roomId,
-        room_vehicle_id: roomVehicleId,
-        seat_number: seatNumber,
-        booking_id: target.booking_id,
-        seat_assignment_id: target.id,
+        room_vehicle_id: seatKeyed ? roomVehicleId : null,
+        seat_number: seatKeyed ? seatNumber : null,
+        booking_id: evidenceBookingId,
+        seat_assignment_id: target?.id ?? null,
         guest_label: guestLabel,
         photo_path: paths.originalPath,
         watermarked_path: watermarkedPath,
@@ -197,7 +232,7 @@ export async function POST(
 
     await recordRoomEvent(supabase, {
       roomId: room.id,
-      bookingId: target.booking_id,
+      bookingId: evidenceBookingId,
       type: 'no_show_evidence',
       actorRole: actor.role === 'admin' ? 'admin' : actor.role,
       payload: {

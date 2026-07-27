@@ -81,6 +81,8 @@ export default function GuideSeatDashboard({
   const [seatTarget, setSeatTarget] = useState<SeatTarget | null>(null);
   // D12 — [노쇼 처리] 탭이 여는 증거 캡처 시트의 대상 좌석.
   const [evidenceTarget, setEvidenceTarget] = useState<SeatTarget | null>(null);
+  /** N1 — the same evidence sheet, keyed by booking when there is no seat. */
+  const [evidenceBookingId, setEvidenceBookingId] = useState<string | null>(null);
   const [qrOpen, setQrOpen] = useState(false);
   // §5.4b 픽업그룹 색 오버레이 — 기본 OFF (상태색 단독 판독이 기본 뷰).
   const [pickupColors, setPickupColors] = useState(false);
@@ -159,6 +161,14 @@ export default function GuideSeatDashboard({
       action,
       ...(evidenceId ? { evidenceId } : {}),
     });
+  /**
+   * N1 — the roster path: no seat, so the booking is the key. Ops has never
+   * assigned a seat in production, which is why the seat-only flow above was
+   * unreachable on a join tour.
+   */
+  const markAbsentByBooking = (bid: string, action: 'mark' | 'clear', evidenceId?: string) =>
+    mutate('absent', { bookingId: bid, action, ...(evidenceId ? { evidenceId } : {}) });
+
   const assignSeat = (t: SeatTarget, targetBookingId: string) => {
     const label = bookings.find((b) => b.id === targetBookingId)?.contactName ?? undefined;
     return mutate('seats', {
@@ -486,6 +496,12 @@ export default function GuideSeatDashboard({
                     }
                   : undefined
               }
+              onNoShow={(bid, action) => {
+                setCardBookingId(null);
+                // Marking needs proof first; undoing is frictionless (D12).
+                if (action === 'mark') setEvidenceBookingId(bid);
+                else void markAbsentByBooking(bid, 'clear');
+              }}
             />
           </div>
         </div>
@@ -539,6 +555,21 @@ export default function GuideSeatDashboard({
             const t = evidenceTarget;
             setEvidenceTarget(null);
             void markAbsent(t, 'mark', evidenceId);
+          }}
+        />
+      )}
+
+      {/* N1 — the same capture sheet, keyed by booking. */}
+      {evidenceBookingId && anchorRoomId && (
+        <NoShowEvidenceSheet
+          bookingId={evidenceBookingId}
+          roomId={anchorRoomId}
+          token={token}
+          onClose={() => setEvidenceBookingId(null)}
+          onRecorded={(evidenceId) => {
+            const bid = evidenceBookingId;
+            setEvidenceBookingId(null);
+            void markAbsentByBooking(bid, 'mark', evidenceId);
           }}
         />
       )}
@@ -676,12 +707,16 @@ const GPS_TIMEOUT_MS = 8000;
  */
 function NoShowEvidenceSheet({
   target,
+  bookingId,
   roomId,
   token,
   onClose,
   onRecorded,
 }: {
-  target: SeatTarget;
+  /** Seat-keyed capture (seat map path). */
+  target?: SeatTarget;
+  /** N1 — booking-keyed capture (roster path, no seat assigned). */
+  bookingId?: string;
   roomId: string;
   token: string;
   onClose: () => void;
@@ -735,8 +770,12 @@ function NoShowEvidenceSheet({
     try {
       const form = new FormData();
       form.append('photo', photo);
-      form.append('roomVehicleId', target.roomVehicleId);
-      form.append('seatNumber', String(target.seatNumber));
+      if (target) {
+        form.append('roomVehicleId', target.roomVehicleId);
+        form.append('seatNumber', String(target.seatNumber));
+      } else if (bookingId) {
+        form.append('bookingId', bookingId);
+      }
       form.append('capturedAt', new Date().toISOString());
       if (gps.kind === 'ok') {
         form.append('latitude', String(gps.latitude));
@@ -771,7 +810,9 @@ function NoShowEvidenceSheet({
       <button type="button" aria-label="닫기" className="absolute inset-0 bg-black/40" onClick={onClose} />
       <div className="relative z-10 max-h-[88dvh] w-full max-w-sm overflow-y-auto rounded-t-2xl bg-[var(--tr-surface)] p-4 sm:rounded-2xl">
         <div className="mb-1 flex items-center justify-between">
-          <p className="tr-title font-bold text-[var(--tr-ink)]">{target.seatNumber}번 좌석 노쇼 증거</p>
+          <p className="tr-title font-bold text-[var(--tr-ink)]">
+            {target ? `${target.seatNumber}번 좌석 노쇼 증거` : '노쇼 증거'}
+          </p>
           <button
             type="button"
             onClick={onClose}
