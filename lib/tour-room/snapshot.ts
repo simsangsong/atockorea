@@ -124,6 +124,45 @@ export interface RoomSnapshot {
   day_plan: DayPlanRow | null;
 }
 
+/** DE3 — the live dispatch row that actually carries today's vehicle. */
+type RoomVehicleRow = {
+  plate_number: string | null;
+  driver_name: string | null;
+  vehicle_layouts?: { model?: string | null; display_name?: Record<string, string> | null } | null;
+};
+
+/**
+ * DE3 (진입점 감사 2026-07-27) — 손님 화면의 차량 안내 줄이 죽은 테이블을 읽고 있었다.
+ *
+ * `tour_bus_details`를 읽는 곳은 4군데인데, **쓰는** 곳은 어떤 UI도 부르지 않는
+ * `POST /api/admin/tours/[id]/bus-detail` 하나뿐이었다. `driver.ts`의 주석이 이미
+ * "the old sheet"라고 적어 두었듯 살아 있는 배차는 `ops_room_vehicles`다. 그래서
+ * 관제가 정상적으로 배차해도 손님 홈의 차량 줄은 영원히 비어 있었다.
+ *
+ * 옛 시트가 남아 있으면 그것을 존중한다(손으로 넣은 값이 이긴다 — 운영자가 일부러
+ * 적은 것을 코드가 덮으면 안 된다). 없을 때만 배차에서 만들어 준다. 모양은
+ * `vehicleLineFromPayload`가 이미 읽는 느슨한 payload 그대로라, 소비처는 무변경이다.
+ */
+export function resolveBusDetail(
+  legacy: Record<string, unknown> | null,
+  dispatch: RoomVehicleRow | null,
+): Record<string, unknown> | null {
+  const legacyPayload = legacy?.payload;
+  const legacyHasContent =
+    legacyPayload && typeof legacyPayload === 'object' && Object.keys(legacyPayload as object).length > 0;
+  if (legacyHasContent) return legacy;
+  if (!dispatch) return legacy;
+
+  const model = dispatch.vehicle_layouts?.display_name?.ko ?? dispatch.vehicle_layouts?.model ?? null;
+  const payload: Record<string, string> = {};
+  if (model) payload.vehicle_model = model;
+  if (dispatch.plate_number) payload.plate_number = dispatch.plate_number;
+  if (dispatch.driver_name) payload.driver_name = dispatch.driver_name;
+  // 배차는 됐지만 타입·번호판·기사 셋 다 비어 있으면 보여줄 것이 없다.
+  if (Object.keys(payload).length === 0) return legacy;
+  return { payload, source: 'ops_room_vehicles' };
+}
+
 /** Participant columns safe to share with the whole room (no device_key/user_id). */
 const PARTICIPANT_PUBLIC_COLUMNS =
   'id, role, display_name, locale, location_sharing, tts_capable, last_seen_at, last_read_at, created_at';
@@ -137,7 +176,17 @@ export async function buildRoomSnapshot(
 ): Promise<RoomSnapshot> {
   const tourId = booking.tour_id;
 
-  const [bookingRes, messagesRes, participantsRes, locationsRes, spotsRes, facilitiesRes, busRes, pickupSeqRes] =
+  const [
+    bookingRes,
+    messagesRes,
+    participantsRes,
+    locationsRes,
+    spotsRes,
+    facilitiesRes,
+    busRes,
+    pickupSeqRes,
+    roomVehicleRes,
+  ] =
     await Promise.all([
       supabase
         .from('bookings')
@@ -179,6 +228,14 @@ export async function buildRoomSnapshot(
             .eq('tour_id', tourId)
             .eq('tour_date', booking.tour_date)
         : Promise.resolve({ data: [], error: null }),
+      // DE3 — 살아 있는 배차. 2호차가 붙어도 손님이 탈 차는 이 룸에 붙은 첫 차다.
+      supabase
+        .from('ops_room_vehicles')
+        .select('plate_number, driver_name, vehicle_layouts ( model, display_name )')
+        .eq('room_id', room.id)
+        .order('created_at', { ascending: true })
+        .limit(1)
+        .maybeSingle(),
     ]);
 
   // The snapshot is a read bundle: any individual failure degrades to an
@@ -221,7 +278,10 @@ export async function buildRoomSnapshot(
     locations: (locationsRes?.data ?? []) as Array<Record<string, unknown>>,
     tour_guide_spots: (spotsRes?.data ?? []) as Array<Record<string, unknown>>,
     tour_facilities: (facilitiesRes?.data ?? []) as Array<Record<string, unknown>>,
-    bus_detail: (busRes?.data ?? null) as Record<string, unknown> | null,
+    bus_detail: resolveBusDetail(
+      (busRes?.data ?? null) as Record<string, unknown> | null,
+      (roomVehicleRes?.data ?? null) as RoomVehicleRow | null,
+    ),
     pickup_sequence: buildPickupSequence(
       (pickupSeqRes?.data ?? []) as Array<{ id: string; pickup_points: unknown }>,
     ),

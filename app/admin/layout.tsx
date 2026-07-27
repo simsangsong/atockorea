@@ -12,12 +12,15 @@ import {
   Bus,
   ChevronDown,
   CircleHelp,
+  Clapperboard,
   ClipboardList,
+  Crosshair,
   ImageUp,
   Inbox,
   Landmark,
   LayoutDashboard,
   LayoutList,
+  LifeBuoy,
   LogOut,
   Mail,
   MapPin,
@@ -58,7 +61,14 @@ type AdminMenuGroup = {
 };
 
 /**
- * 사이드바 IA — 6그룹 23항목.
+ * 사이드바 IA — 6그룹 26항목.
+ *
+ * 2026-07-27 진입점 감사(DE2): 완성된 화면 3개가 이 배열에도 없고 다른 화면에서
+ * 링크되지도 않아 **URL을 직접 쳐야만** 열렸다 — 상담 티켓, 투어모드 스팟 좌표,
+ * POI 동영상 검수. 셋 다 코드는 완성이었고 테스트도 통과했다. 특히 동영상 검수는
+ * 승인해야만 도착 카드에 영상이 나가므로, 화면이 잠긴 동안 업로드된 렌더는 전부
+ * `pending_review`에 머물렀다. `__tests__/audit/adminPageReachability.test.ts`가
+ * 이 실패 모드를 상설로 막는다.
  *
  * 이전에는 23개가 평면으로 나열돼 있어 스캔이 불가능했고, `NEW` 뱃지가 12개라
  * 강조가 강조의 기능을 잃었다(전부 NEW면 아무것도 NEW가 아니다). 그래서 뱃지는
@@ -77,6 +87,7 @@ const adminMenuGroups: AdminMenuGroup[] = [
       { path: '/admin/orders', label: '주문 관리', icon: ClipboardList },
       { path: '/admin/inbox', label: '수신함', icon: Inbox },
       { path: '/admin/contacts', label: '문의 관리', icon: MessageSquareText },
+      { path: '/admin/support', label: '상담 티켓', icon: LifeBuoy },
       { path: '/admin/emails', label: '받은 메일', icon: Mail },
     ],
   },
@@ -113,6 +124,8 @@ const adminMenuGroups: AdminMenuGroup[] = [
     items: [
       { path: '/admin/match-pois', label: '매칭 POI 관리', icon: MapPin },
       { path: '/admin/facility-pins', label: '편의시설 핀', icon: Toilet },
+      { path: '/admin/tour-mode-spots', label: '투어모드 스팟 좌표', icon: Crosshair },
+      { path: '/admin/poi-videos', label: 'POI 동영상 검수', icon: Clapperboard },
       { path: '/admin/dining-cache', label: '다이닝 캐시', icon: Utensils },
       { path: '/admin/analytics', label: '데이터 분석', icon: BarChart3 },
       { path: '/admin/chatbot-analytics', label: '챗봇 분석', icon: Bot },

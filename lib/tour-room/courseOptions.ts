@@ -90,12 +90,9 @@ export function toCourseOptions(stops: readonly ItineraryStop[]): CourseOption[]
   });
 }
 
-/**
- * 코스 하나 → 플래너 정류지 초안.
- *
- * `poi_key`만 넣는다: 이름·좌표는 `match_pois`가 서버에서 채우므로 여기서 이름을
- * 복사하면 로케일이 굳어버린다(플래너는 10로케일이다).
+/*
+ * (제거됨 2026-07-27, 진입점 감사 DE) `courseToStopSeeds` 는 P0에서 만들었지만
+ * 아무도 부르지 않았다. 클라이언트는 좌표·기본 체류시간까지 필요해서
+ * `PlanEditorClient.applyCourseOption` 에 다시 짰고, 이 함수는 순수 중복으로만
+ * 남았다. 두 벌이 되면 언젠가 한쪽만 고쳐진다.
  */
-export function courseToStopSeeds(course: CourseOption): Array<{ poi_key: string }> {
-  return course.poiKeys.map((poi_key) => ({ poi_key }));
-}

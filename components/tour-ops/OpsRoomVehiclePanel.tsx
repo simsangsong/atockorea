@@ -21,7 +21,7 @@
 
 import { useCallback, useEffect, useState } from 'react';
 import { toast } from 'sonner';
-import { AlertTriangle, Bus, Camera, Loader2, Plus, RotateCcw, Trash2, X } from 'lucide-react';
+import { AlertTriangle, Bus, Camera, Link as LinkIcon, Loader2, Plus, RotateCcw, Trash2, X } from 'lucide-react';
 import { getOpsToken } from '@/components/tour-ops/opsShared';
 
 /** §K B2.4 — 그룹 정원 판정(운영자 전용). */
@@ -156,6 +156,10 @@ export default function OpsRoomVehiclePanel({ roomId }: { roomId: string }) {
   const [conflict, setConflict] = useState<Conflict | null>(null);
   const [shortfall, setShortfall] = useState<Shortfall | null>(null);
   const [undoEventId, setUndoEventId] = useState<string | null>(null);
+  /** DE1 — 방금 발급한 조인투어 초대 링크(발급 전에는 null). */
+  const [claimLink, setClaimLink] = useState<{ url: string; qr_data_url: string | null; expires_at: string } | null>(
+    null,
+  );
 
   const load = useCallback(async () => {
     setLoading(true);
@@ -257,6 +261,36 @@ export default function OpsRoomVehiclePanel({ roomId }: { roomId: string }) {
       setBusy(false);
     }
   }, [undoEventId, roomId, load]);
+
+  /**
+   * DE1 — 조인투어 일괄 초대 링크 발급.
+   *
+   * 재발급은 기존 링크를 폐기하지 않는다(links 라우트와 같은 규칙: additive).
+   * 투어 당일 아침에 다시 눌러도 이미 들어온 손님이 튕기지 않는다는 뜻이다.
+   */
+  const mintClaimLink = useCallback(async () => {
+    setBusy(true);
+    try {
+      const res = await authedFetch(`/api/admin/tour-ops/rooms/${encodeURIComponent(roomId)}/claim-link`, {
+        method: 'POST',
+      });
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(json?.error || '초대 링크를 발급하지 못했어요.');
+      setClaimLink({ url: json.url, qr_data_url: json.qr_data_url ?? null, expires_at: json.expires_at });
+      let copied = false;
+      try {
+        await navigator.clipboard.writeText(json.url);
+        copied = true;
+      } catch {
+        /* 클립보드 거부 — 링크는 화면에 그대로 보인다 */
+      }
+      toast.success(copied ? '초대 링크를 복사했어요.' : '초대 링크를 발급했어요.');
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : '초대 링크를 발급하지 못했어요.');
+    } finally {
+      setBusy(false);
+    }
+  }, [roomId]);
 
   /**
    * §K B2.4 — 이 날짜만 정원을 올린다(B2-D3 그룹 예외).
@@ -507,6 +541,45 @@ export default function OpsRoomVehiclePanel({ roomId }: { roomId: string }) {
               <Plus className="size-4" /> {vehicles.length > 0 ? `${vehicles.length + 1}호차 배정` : '차량 배정'}
             </button>
           )}
+
+          {/* DE1 (진입점 감사 2026-07-27) — 조인투어 일괄 초대 링크.
+              발급 라우트·손님 합류 화면(JoinFlow 568줄)·명단에서 본인 고르기까지
+              전부 완성돼 있었는데 **발급 버튼이 없었다**. 라이브 원장의
+              role='room_claim' 이 0건이었던 이유다. 관제는 예약 1건당 링크만
+              뽑을 수 있었고, 20명 조인투어면 20번을 따로 보내야 했다.
+
+              차량이 붙는 룸에 발급한다 — 좌석 선택이 이 roomId를 앵커로 쓴다. */}
+          <section className="rounded-xl border border-[var(--tr-hairline)] p-3" data-testid="claim-link-section">
+            <p className="tr-label text-cjk-safe font-bold text-[var(--tr-ink)]">조인투어 일괄 초대</p>
+            <p className="mt-1 tr-meta text-cjk-body text-[var(--tr-ink-2)]">
+              링크 하나를 이 차 손님 전체에게 보내세요. 손님이 열면 명단에서 본인을 고르고, 그 순간 개인 링크가
+              발급돼요. 예약마다 따로 발급할 필요가 없어요.
+            </p>
+            <button
+              type="button"
+              disabled={busy}
+              onClick={() => void mintClaimLink()}
+              className="mt-2 flex h-11 w-full items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-surface-2)] tr-label font-semibold text-[var(--tr-ink)] disabled:opacity-40"
+              data-testid="mint-claim-link"
+            >
+              <LinkIcon className="size-4" /> {claimLink ? '초대 링크 다시 발급' : '초대 링크 발급'}
+            </button>
+            {claimLink && (
+              <div className="mt-2 space-y-2">
+                <p className="tr-meta break-all text-[var(--tr-ink-2)]" data-testid="claim-link-url">
+                  {claimLink.url}
+                </p>
+                {claimLink.qr_data_url && (
+                  /* 버스 앞에서 QR을 띄워 손님이 찍게 하는 것이 실제 사용법이다. */
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img src={claimLink.qr_data_url} alt="초대 QR" className="mx-auto size-40 rounded-lg bg-white p-1" />
+                )}
+                <p className="tr-meta text-[var(--tr-ink-3)]">
+                  만료: {claimLink.expires_at.slice(0, 10)} (투어 다음날)
+                </p>
+              </div>
+            )}
+          </section>
         </>
       )}
 
